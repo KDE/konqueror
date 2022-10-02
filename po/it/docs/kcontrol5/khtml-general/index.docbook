@@ -1,0 +1,212 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Italian "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article lang="&language;" id="konq-general-behavior">
+<title
+>Comportamento generale di &konqueror;</title>
+<articleinfo>
+
+<authorgroup>
+<author
+>&Burkhard.Lueck;</author>
+<othercredit role="translator"
+><firstname
+>Paolo</firstname
+><surname
+>Zamponi</surname
+><affiliation
+><address
+><email
+>zapaolo@email.it</email
+></address
+></affiliation
+><contrib
+>Traduzione e manutenzione</contrib
+></othercredit
+><othercredit role="translator"
+><firstname
+>Federico</firstname
+><surname
+>Zenith</surname
+><affiliation
+><address
+><email
+>federico.zenith@member.fsf.org</email
+></address
+></affiliation
+><contrib
+>Traduzione della documentazione</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>08/11/2016</date>
+<releaseinfo
+>Applications 16.12</releaseinfo>
+
+</articleinfo>
+<para
+>In queste pagine troverai impostazioni per le pagine iniziali e il comportamento della navigazione a schede per le modalità di gestione dei file e di navigazione di &konqueror;.</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Quando Konqueror si avvia</guilabel
+></term>
+<listitem>
+<para
+>Quest'opzione determina quale pagina visualizzare all'avvio di &konqueror;: la pagina introduttiva, la tua pagina iniziale, una pagina vuota o la pagina dei segnalibri. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Pagina iniziale</guilabel
+></term>
+<listitem
+><para
+>Questo è l'&URL; (per esempio una cartella o una pagina Web)che visualizzerà &konqueror; in modalità browser quando verrà premuto il pulsante <guibutton
+>Pagina iniziale</guibutton
+> nella barra degli strumenti. Puoi impostare un percorso per renderlo la tua <guilabel
+>Pagina iniziale</guilabel
+> scrivendo nel campo di testo, o usando l'icona <guiicon
+>sfoglia</guiicon
+> per selezionare una cartella locale. &konqueror; deve essere riavviato affinché le modifiche abbiano effetto.</para>
+<para
+>Quando si usa &konqueror; come gestore dei file, il pulsante <guilabel
+>Pagina iniziale</guilabel
+> della barra viene sostituito dal pulsante <guilabel
+>Cartella Home</guilabel
+>, che rimanda invece alla cartella Home locale.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Apri i collegamenti in una nuova scheda invece che in una nuova finestra</guilabel
+></term>
+<listitem
+><para
+>Come impostazione predefinita &konqueror; usa una finestra per pagina, ma è in grado di aprire più <firstterm
+>schede</firstterm
+> in una sola finestra. Inoltre, sempre come impostazione predefinita, &konqueror; ha una scorciatoia con il &MMB; per aprire qualsiasi collegamento in una nuova finestra. Se abiliti <guilabel
+>Apri i collegamenti in una nuova scheda invece che in una nuova finestra</guilabel
+> puoi fare clic con il &MMB; su un collegamento per aprirlo in una nuova scheda.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Apri le finestre a comparsa in una nuova scheda invece che in una nuova finestra</guilabel
+></term>
+<listitem
+><para
+>Se le finestre a comparsa di JavaScript si devono aprire in una nuova scheda o in una nuova finestra, se sono permesse.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Apri come scheda in una finestra di Konqueror già aperta quando l'URL viene chiamato esternamente</guilabel
+></term>
+<listitem
+><para
+>Quando fai clic su un &URL; in un altro programma di &kde;, o quando chiami <command
+>kfmclient</command
+> per aprire un &URL;, nel desktop attuale verrà cercato un &konqueror; non minimizzato, e, se ce n'è uno, l'&URL; verrà aperto come una scheda al suo interno. Altrimenti si aprirà una nuova finestra di &konqueror; con l'&URL; richiesto.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Apri le nuove schede dietro alle altre</guilabel
+></term>
+<listitem
+><para
+>Se usi la navigazione a schede puoi scegliere se quando viene aperta una nuova scheda essa diventa quella attiva (la <quote
+>frontale</quote
+>), o se vain fondo. Con una connessione a Internet lenta, o quando guardi una pagina che ha una serie di collegamenti, potresti preferire far caricare le nuove schede sullo sfondo mentre continui a leggere. In questo caso abilita questa impostazione. Disabilitala se preferisci andare direttamente alla nuova pagina, lasciando quella vecchia sullo sfondo per poterci tornare dopo.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Apri nuova scheda dopo l'attuale</guilabel
+></term>
+<listitem
+><para
+>Questo metterà ogni nuova scheda dopo quella da cui è stata aperta, invece di metterla dopo l'ultima.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Nascondi la barra delle schede quando ce n'è solo una aperta</guilabel
+></term>
+<listitem
+><para
+>Questo farà visualizzare la barra delle schede solo se ce ne sono due o più, diversamente sarà sempre visualizzata.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Mostra il pulsante di chiusura sulle linguette</guilabel
+></term>
+<listitem
+><para
+>Questo mostrerà un pulsante di chiusura in ogni linguetta al posto dell'icona del sito Web.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Clic centrale su una linguetta per chiuderne la scheda</guilabel
+></term>
+<listitem
+><para
+>Quando fai clic con il pulsante centrale o con la rotellina del mouse chiuderai la scheda. &konqueror; deve essere riavviato per rendere effettiva la modifica.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Chiedi conferma alla chiusura di finestre con più schede</guilabel
+></term>
+<listitem
+><para
+>Se chiudi una finestra di &konqueror; contenente diverse schede aperte, &konqueror; chiederà se sei sicuro di volerla chiudere. Puoi attivare e disattivare questo comportamento con questa casella.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Torna alla scheda di prima quando si chiude l'attuale</guilabel
+></term>
+<listitem
+><para
+>Quando si spunta questo, verrà attivata la scheda usata o aperta in precedenza quando chiudi quella che è attualmente attiva, invece di quella a destra della scheda attuale.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</article>

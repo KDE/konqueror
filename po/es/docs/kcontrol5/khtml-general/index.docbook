@@ -1,0 +1,210 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Spanish "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article lang="&language;" id="konq-general-behavior">
+<title
+>Comportamiento general de &konqueror;</title>
+<articleinfo>
+
+<authorgroup>
+<author
+>&Burkhard.Lueck;</author>
+<othercredit role="translator"
+> <firstname
+>Rocío</firstname
+> <surname
+>Gallego</surname
+> <affiliation
+><address
+><email
+>traducciones@rociogallego.com</email
+></address
+></affiliation
+> <contrib
+>Traducción</contrib
+> </othercredit
+><othercredit role="translator"
+><firstname
+>Cristina Yenyxe</firstname
+><surname
+>González García</surname
+><affiliation
+><address
+><email
+>the.blue.valkyrie@gmail.com</email
+></address
+></affiliation
+><contrib
+>Traductor</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2016-11-08</date>
+<releaseinfo
+>Aplicaciones 16.12</releaseinfo>
+
+</articleinfo>
+<para
+>En esta página se encuentran las preferencias para las páginas de inicio y el comportamiento de la navegación en pestañas tanto del gestor de archivos de &konqueror; como del modo navegación.</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Cuando se inicie Konqueror</guilabel
+></term>
+<listitem>
+<para
+>Esta opción determina qué página se muestra cuando se inicia &konqueror;, la página de introducción, su página de inicio, una página en blanco o su página de marcadores. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Página de inicio</guilabel
+></term>
+<listitem
+><para
+>Esta es la &URL; (&eg;, una carpeta o un a página web) a la que saltará &konqueror; cuando está en modo navegador y se pulsa el botón <guibutton
+>Página de inicio</guibutton
+> de la barra de herramientas. Se puede establecer una ruta para su <guilabel
+>Página de inicio</guilabel
+> escribiéndola en el área de texto o utilizando el icono <guiicon
+>navegar</guiicon
+> para seleccionar una carpeta local. Es necesario reiniciar &konqueror; para que los cambios tengan efecto.</para>
+<para
+>Cuando &konqueror; se utiliza en modo de gestor de archivos, el botón <guilabel
+>Página de inicio</guilabel
+> de la barra de herramientas se sustituye por un botón <guilabel
+>Carpeta personal</guilabel
+>, el cual hace que aparezca su carpeta personal.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Abrir enlaces en una nueva pestaña en lugar de en una nueva ventana</guilabel
+></term>
+<listitem
+><para
+>De manera predeterminada, &konqueror; muestra una sola ventana por página, pero tiene la capacidad de abrir varias <firstterm
+>pestaña</firstterm
+> dentro de una sola ventana. También de manera predeterminada, &konqueror; tiene un acceso rápido en el &MMB; para abrir cualquier enlace en una nueva ventana. Si activa la opción <guilabel
+>Abrir enlaces en una nueva pestaña en lugar de en una nueva ventana</guilabel
+> puede hacer clic con el &MMB; sobre un enlace para abrir un enlace en una nueva pestaña.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Abrir ventanas emergentes en una nueva pestaña en lugar de en una nueva ventana</guilabel
+></term>
+<listitem
+><para
+>Indica si las ventanas emergentes JavaScript, si están permitidas, se abren en una nueva pestaña o en una nueva ventana.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Abrir como pestaña en una sesión existente de Konqueror cuando la URL se llama de manera externa</guilabel
+></term>
+<listitem
+><para
+>Cuando se hace clic en una &URL; en otro programa &kde; o cuando se invoca a un kmfclient para abrir una &URL;, se busca en el escritorio actual una sesión de &konqueror; que no esté minimizada y si se encuentra, la &URL; se abre una nueva pestaña en él. Si no, se abre una nueva ventana de &konqueror; con la &URL; solicitada.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Abrir nuevas pestañas en segundo plano</guilabel
+></term>
+<listitem
+><para
+>Si está utilizando la navegación en pestañas, puede elegir si la nueva pestaña que abra se convierte en la pestaña activa (<quote
+>al frente</quote
+>) o si se abre en segundo plano. Cuando se usa una conexión de Internet lenta o cuando se navega por una página que tiene una lista de cabeceras u otros enlaces en una lista, puede que quiera que las nuevas pestañas se carguen en segundo plano mientras continúa leyendo. En ese caso, active esta opción. Si prefiere ir directamente a la nueva página dejando la anterior en segundo plano, desactívela.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Abrir nueva pestaña tras la pestaña actual</guilabel
+></term>
+<listitem
+><para
+>Esto abre una nueva pestaña abierta desde una página tras la pestaña actual, en lugar de tras la última pestaña.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Ocultar la barra de pestañas cuando solo haya una pestaña abierta</guilabel
+></term>
+<listitem
+><para
+>Esto mostrará la barra de pestañas solo si hay dos o más pestañas. Si no se marca, se mostrará siempre.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Mostrar botón de cierre en las pestañas</guilabel
+></term>
+<listitem
+><para
+>Esto mostrará botones de cierre dentro de cada pestaña, en lugar de los iconos del sitio web.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Clic en una pestaña con el botón central para cerrarla</guilabel
+></term>
+<listitem
+><para
+>Cuando haga clic en una pestaña con el botón central o con la rueda del ratón, se cerrará la pestaña. Es necesario reiniciar &konqueror; para que los cambios tengan efecto.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Confirmar el cierre de ventanas con varias pestañas</guilabel
+></term>
+<listitem
+><para
+>Si cierra una ventana de &konqueror; que tiene varias pestañas abiertas, &konqueror; le preguntará si está seguro de que quiere cerrarla. Puede conmutar este comportamiento con esta casilla de verificación.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Activar la anterior pestaña en uso cuando se cierre la pestaña actual</guilabel
+></term>
+<listitem
+><para
+>Cuando se marca esta opción, la pestaña utilizada o abierta anteriormente se activará cuando cierre la pestaña activa actualmente, en lugar de la que está a la derecha de la pestaña actual.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</article>

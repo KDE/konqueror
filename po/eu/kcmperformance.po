@@ -1,0 +1,222 @@
+# Translation of kcmperformance.po to Euskara/Basque (eu).
+# Copyright (C) 2003-2018, Free Software Foundation.
+# This file is distributed under the same license as the applications package.
+# KDE euskaratzeko proiektuaren arduraduna <xalba@euskalnet.net>.
+#
+# Translators:
+# Marcos  <marcos@euskalgnu.org>, 2003, 2005.
+# Juan Irigoien <juanirigoien@irakasle.net>, 2004.
+# Ion Gaztañaga <igaztanaga@gmail.com>, 2005.
+# marcos <marcos@euskalgnu.org>, 2006, 2007.
+# Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2011.
+# Iñigo Salvador Azurmendi <xalba@euskalnet.net>, 2018.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmperformance\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-21 00:16+0000\n"
+"PO-Revision-Date: 2018-08-09 20:32+0100\n"
+"Last-Translator: Iñigo Salvador Azurmendi <xalba@euskalnet.net>\n"
+"Language-Team: Basque <kde-i18n-doc@kde.org>\n"
+"Language: eu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 2.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: kcmperformance.cpp:28
+#, kde-format
+msgid ""
+"<h1>KDE Performance</h1> You can configure settings that improve KDE "
+"performance here."
+msgstr ""
+"<h1>KDEren performantzia</h1> KDEren performantzia hobetzeko ezarpenak "
+"konfigura ditzakezu hemen."
+
+#: kcmperformance.cpp:35
+#, kde-format
+msgid "Konqueror"
+msgstr "Konqueror"
+
+#: kcmperformance.cpp:38
+#, kde-format
+msgid "System"
+msgstr "Sistema"
+
+#: kcmperformance.cpp:63
+#, kde-format
+msgid ""
+"<h1>Konqueror Performance</h1> You can configure several settings that "
+"improve Konqueror performance here. These include options for reusing "
+"already running instances and for keeping instances preloaded."
+msgstr ""
+"<h1>Konqueror-en performantzia</h1> Konqueror-en performantzia hobetzeko "
+"hainbat ezarpen konfigura ditzakezu hemen. Barne hartzen ditu dagoeneko "
+"ibiltzen ari diren instantziak berrerabiltzeko eta instantziak aurretiaz "
+"zamatuta izateko aukerak."
+
+#: konqueror.cpp:24
+#, kde-format
+msgid ""
+"<p>If enabled, an instance of Konqueror will be preloaded after the ordinary "
+"Plasma startup sequence.</p><p>This will make the first Konqueror window "
+"open faster, but at the expense of longer Plasma startup times (but you will "
+"be able to work while it is loading, so you may not even notice that it is "
+"taking longer).</p>"
+msgstr ""
+"<p>Gaituta badago, Konquerorren instantzia bat aurre-zamatuko da Plasmaren "
+"abiatze sekuentzia arruntaren ostean.</p><p>Honek Konquerorren lehen leihoa "
+"azkarrago irekitzea eragingo du, Plasma abio denbora luzatzearen ordainean "
+"(lan egiterik izango duzu hura zamatu bitartean, eta agian ez duzu nabaritu "
+"ere egingo luzatzen ari denik).</p>"
+
+#: konqueror.cpp:30
+#, kde-format
+msgid ""
+"<p>If enabled, Konqueror will always try to have one preloaded instance "
+"ready; preloading a new instance in the background whenever there is not one "
+"available, so that windows will always open quickly.</p><p><b>Warning:</b> "
+"In some cases, it is actually possible that this will reduce perceived "
+"performance.</p>"
+msgstr ""
+"<p>Gaituta badago, Konqueror beti saiatuko da aurre-zamatutako instantzia "
+"bat prest izaten; atzealdean instantzia berri bat aurre-zamatuta bat ere "
+"eskuragarri ez dagoenean, leiho hori beti azkar abiatuko da.</p><p><b>Abisua:"
+"</b> Batzuetan, izan daiteke honek hautemandako performantzia txikitzea.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
+#: konqueror_ui.ui:17
+#, kde-format
+msgid "Preloading"
+msgstr "Aurre-zamatzea"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_preload_on_startup)
+#: konqueror_ui.ui:23
+#, kde-format
+msgid "Preload an instance after desktop startup"
+msgstr "Aurre-zamatu instantzia bat mahaigaina abiatu ondoren"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_always_have_preloaded)
+#: konqueror_ui.ui:30
+#, kde-format
+msgid "Always try to have one preloaded instance"
+msgstr "Saiatu beti aurre-zamatutako instantzia bat izaten"
+
+#: system.cpp:22
+#, kde-format
+msgid ""
+"<p>During startup KDE needs to perform a check of its system configuration "
+"(mimetypes, installed applications, etc.), and in case the configuration has "
+"changed since the last time, the system configuration cache (KSyCoCa) needs "
+"to be updated.</p><p>This option delays the check, which avoid scanning all "
+"directories containing files describing the system during KDE startup, thus "
+"making KDE startup faster. However, in the rare case the system "
+"configuration has changed since the last time, and the change is needed "
+"before this delayed check takes place, this option may lead to various "
+"problems (missing applications in the K Menu, reports from applications "
+"about missing required mimetypes, etc.).</p><p>Changes of system "
+"configuration mostly happen by (un)installing applications. It is therefore "
+"recommended to turn this option temporarily off while (un)installing "
+"applications.</p>"
+msgstr ""
+"<p>Abiatzean KDE-k bere sistemaren konfigurazioa egiaztatu behar du (MIME "
+"motak, instalatutako aplikazioak, eta abar) eta konfigurazio aldatu bada, "
+"sistemaren konfigurazio cache-a (KSyCoCa) eguneratu behar du.</p><p>Aukera "
+"honek egiaztapena atzeratzen du sistema deskribatzen duten fitxategiak "
+"dituzten direktorio guztien eskaneatzea saihestuz. Hala ere, sistemaren "
+"konfigurazioa aldatzen denean, eta atzeratutako aldaketa egiaztapenaren "
+"aurretik behar bada, aukera honek arazoak sor ditzake (K Menuan aplikazioak "
+"eta beharrezko MIME motak faltatzea).</p><p>Sistemaren konfigurazioaren "
+"aldaketak aplikazioak instalatzean eta kentzean sortzen dira gehienbat. "
+"Beraz gomendagarria da aukera hau desgaitzea aplikazioak instalatzean.</"
+"p><p>Hau dela eta, ez da aukera hau erabiltzea gomendatzen. KDE-ren "
+"kraskatze-kudeatzaileak ez du aztarnarik emango erroreen jakinarazpenerako "
+"aukera hau gaituta badago.</p> "
+
+#. i18n: ectx: property (title), widget (QGroupBox, gb_)
+#: system_ui.ui:8
+#, kde-format
+msgid "System Configuration"
+msgstr "Sistemaren konfigurazioa"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_disable_kbuildsycoca)
+#: system_ui.ui:14
+#, kde-format
+msgid "Disable &system configuration startup check"
+msgstr "Desgaitu &sistema-konfigurazioaren abioko egiaztatzea"
+
+#. i18n: ectx: property (text), widget (QLabel, label_kbuildsycoca)
+#: system_ui.ui:21
+#, kde-format
+msgid ""
+"This option may in rare cases lead to various problems. Consult the What's "
+"This (Shift+F1) help for details."
+msgstr ""
+"Aukera honek kasu bakan batzutan hainbat arazo eragin ditzake. Kontsultatu "
+"Zer da hau (Maius+F1) laguntza xehetasun gehiago izateko."
+
+#~ msgid ""
+#~ "<p>If non-zero, this option allows keeping Konqueror instances in memory "
+#~ "after all their windows have been closed, up to the number specified in "
+#~ "this option.</p><p>When a new Konqueror instance is needed, one of these "
+#~ "preloaded instances will be reused instead, improving responsiveness at "
+#~ "the expense of the memory required by the preloaded instances.</p>"
+#~ msgstr ""
+#~ "<p>Zero ez baldin bada, aukera honen bitartez, leiho guztiak itxi ostean "
+#~ "zenbakiaz adierazten den Konqueror-en instantzia kopurua gorde daiteke "
+#~ "memorian. </p><p>Konqueror-en instantzia berria behar denean, aurrez "
+#~ "kargatutako instantzia hauetariko bat erabiliko da sistemaren erantzuna "
+#~ "hobetuz, betiere instantzia hauek gordetzeko behar den memoriaren lepotik."
+#~ "</p>"
+
+#, fuzzy
+#~| msgid "Maximum number of instances kept &preloaded:"
+#~ msgid "&Maximum number of instances kept preloaded:"
+#~ msgstr "A&urrekargatuko diren instantzien kopuru handiena:"
+
+#~ msgid ""
+#~ "Disables the minimization of memory usage and allows you to make each "
+#~ "browsing activity independent from the others"
+#~ msgstr ""
+#~ "Memoria erabileraren minimizazioa desgaitzen du, eta arakatze iharduera "
+#~ "bakoitza besteengandik banatzen utziko dizu."
+
+#~ msgid ""
+#~ "<p>With this option activated, only one instance of Konqueror used for "
+#~ "file browsing will exist in the memory of your computer at any moment, no "
+#~ "matter how many file browsing windows you open, thus reducing resource "
+#~ "requirements.</p><p>Be aware that this also means that, if something goes "
+#~ "wrong, all your file browsing windows will be closed simultaneously</p>"
+#~ msgstr ""
+#~ "<p>Aukera hau aktibatuz gero, betiere Konqueror-en instantzia bakarra "
+#~ "egongo da  ordenagailuaren memorian fitxategiak arakatzeko, berdin "
+#~ "diolarik zenbat fitxategi-arakatze leiho daukazun irekita, modu horretan "
+#~ "baliabideak  aurreztuz. </p><p>Kontuan izan honen ondorioz zera gerta "
+#~ "daitekeela: zerbait txarto balebil, fitxategi-arakatzailearen leiho "
+#~ "guztiak batera itxiko liratekeela.</p>"
+
+#~ msgid ""
+#~ "<p>With this option activated, only one instance of Konqueror will exist "
+#~ "in the memory of your computer at any moment, no matter how many browsing "
+#~ "windows you open, thus reducing resource requirements.</p><p>Be aware "
+#~ "that this also means that, if something goes wrong, all your browsing "
+#~ "windows will be closed simultaneously.</p>"
+#~ msgstr ""
+#~ "<p>Aukera hau aktibatuz gero, betiere Konqueror-en instantzia bakarra "
+#~ "egongo da ordenagailuaren memorian, berdin diolarik zenbat arakatze leiho "
+#~ "ireki duzun, era horretan baliabideak aurreztuz. </p><p>Kontuan izan "
+#~ "honen ondorioz zera gerta daitekeela: zerbait txarto balebil, "
+#~ "arakatzailearen leiho guztiak batera itxiko liratekeela.</p>"
+
+#~ msgid "Minimize Memory Usage"
+#~ msgstr "Minimizatu memoriaren erabilera"
+
+#~ msgid "&Never"
+#~ msgstr "&Inoiz ere ez"
+
+#~ msgid "For &file browsing only (recommended)"
+#~ msgstr "&Fitxategiak arakatzeko soilik (gomendatua)"
+
+#~ msgid "Alwa&ys (use with care)"
+#~ msgstr "&Beti (kontuz erabili)"

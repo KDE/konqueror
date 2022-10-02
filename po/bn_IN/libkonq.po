@@ -1,0 +1,223 @@
+# translation of libkonq.po to Bengali INDIA
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Runa Bhattacharjee <runab@redhat.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2009-01-12 12:35+0530\n"
+"Last-Translator: Runa Bhattacharjee <runab@redhat.com>\n"
+"Language-Team: Bengali INDIA <fedora-trans-bn_IN@redhat.com>\n"
+"Language: bn_IN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "খুলুন (&O)"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "ফোল্ডার নির্মাণ করুন...(&F)"
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "পুনরুদ্ধার (&R)"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "আবর্জনার বাক্স ফাঁকা করুন (&E)"
+
+#: src/konq_popupmenu.cpp:312
+#, fuzzy, kde-format
+#| msgid "&Empty Trash Bin"
+msgid "&Configure Trash Bin"
+msgstr "আবর্জনার বাক্স ফাঁকা করুন (&E)"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "বর্তমান পৃষ্ঠা বুকমার্ক করুন (&B)"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "বর্তমান অবস্থান বুকমার্ক করুন (&B)"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "বর্তমান ফোল্ডার বুকমার্ক করুন (&B)"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "বর্তমান লিংক বুকমার্ক করুন (&B)"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "বর্তমান ফাইল লিংক করুন (&B)"
+
+#: src/konq_popupmenu.cpp:379
+#, kde-format
+msgid "Preview In"
+msgstr "ঝলক প্রদর্শনে ব্যবহৃত হবে"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "বিবিধ বৈশিষ্ট্য (&P)"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy To"
+#~ msgstr "চিহ্নিত স্থানে কপি করুন"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "চিহ্নিত স্থানে স্থানান্তর করুন"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "ব্যক্তিগত ফোল্ডার"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "Root ফোল্ডার"
+
+#~ msgctxt "@title:menu in Copy To or Move To submenu"
+#~ msgid "Browse..."
+#~ msgstr "ব্রাউজ করুন..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "এইখানে কপি করুন"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "এইখানে স্থানান্তর করুন"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "কোনো ফোল্ডারকে নিজের মধ্যে স্থাপন করা সম্ভব নয়"
+
+#~ msgid "&Move Here"
+#~ msgstr "এইখানে স্থানান্ত করুন (&M)"
+
+#~ msgid "&Copy Here"
+#~ msgstr "এইখানে কপি করুন (&C)"
+
+#~ msgid "&Link Here"
+#~ msgstr "এইখানের লিংক করুন (&L)"
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "ওয়াল-পেপার রূপে নির্ধারণ করুন (&W)"
+
+#~ msgid "C&ancel"
+#~ msgstr "বাতিল করুন (&a)"
+
+#, fuzzy
+#~| msgid "Create New"
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "নতুন নির্মাণ করুন"
+
+#, fuzzy
+#~| msgid "Enter folder name:"
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "ফোল্ডারের নাম লিখুন:"
+
+#, fuzzy
+#~| msgid "Create New"
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "নতুন নির্মাণ করুন"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "নতুন ফোল্ডার"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "নতুন ফোল্ডার"
+
+#, fuzzy
+#~| msgid "Enter folder name:"
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "ফোল্ডারের নাম লিখুন:"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "নতুন ফোল্ডার"
+
+#~ msgid "Share"
+#~ msgstr "যৌথ ব্যবহার"
+
+#~ msgid "Create New"
+#~ msgstr "নতুন নির্মাণ করুন"
+
+#~ msgid "Link to Device"
+#~ msgstr "ডিভাইসের সাথে সংযুক্ত করুন"
+
+#~ msgid "<qt>The template file <b>%1</b> does not exist.</qt>"
+#~ msgstr "<qt><b>%1</b> নামক টেমপ্লেট ফাইল বর্তমানে উপস্থিত নেই।</qt>"
+
+#~ msgid "File name:"
+#~ msgstr "ফাইলের নাম:"
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Actions"
+#~ msgstr "কর্ম (&A)"
+
+#, fuzzy
+#~| msgid "&Open With"
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With"
+#~ msgstr "উল্লিখিত অ্যাপ্লিকেশন সহযোগে খুলুন (&O)"
+
+#, fuzzy
+#~| msgid "&Other..."
+#~ msgctxt "@action:inmenu Open With"
+#~ msgid "&Other..."
+#~ msgstr "অন্যান্য...(&O)"
+
+#, fuzzy
+#~| msgid "&Open With..."
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With..."
+#~ msgstr "উল্লিখিত অ্যাপ্লিকেশন সহযোগে খুলুন...(&O)"
+
+#~ msgid "Open &with %1"
+#~ msgstr "%1 সহযোগে খুলুন (&w)"

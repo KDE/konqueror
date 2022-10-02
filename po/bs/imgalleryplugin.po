@@ -1,0 +1,298 @@
+# translation of imgalleryplugin.po to bosanski
+# Bojan Bozovic <bole89@infosky.net>, 2003.
+# Toplica Tanaskovic <toptan@kde.org.yu>, 2003.
+# Chusslove Illich <caslav.ilic@gmx.net>, 2005, 2009.
+# Slobodan Simic <simicsl@verat.net>, 2008, 2009.
+# KDE 4 <megaribi@epn.ba>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: imgalleryplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"PO-Revision-Date: 2012-10-08 10:55+0000\n"
+"Last-Translator: Samir Ribić <Unknown>\n"
+"Language-Team: bosanski <bs@li.org>\n"
+"Language: bs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2013-01-16 05:31+0000\n"
+"X-Generator: Launchpad (build 16420)\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+#: imgallerydialog.cpp:37
+#, kde-format
+msgctxt "@title:window"
+msgid "Create Image Gallery"
+msgstr "Napravi galeriju slika"
+
+#: imgallerydialog.cpp:38
+#, kde-format
+msgid "Create"
+msgstr "Napravi"
+
+#: imgallerydialog.cpp:48 imgallerydialog.cpp:84
+#, kde-format
+msgid "Image Gallery for %1"
+msgstr "Galerija slika za %1"
+
+#: imgallerydialog.cpp:76
+#, kde-format
+msgid "Look"
+msgstr "Izgled"
+
+#: imgallerydialog.cpp:77
+#, kde-format
+msgid "Page Look"
+msgstr "Izgled stranice"
+
+#: imgallerydialog.cpp:85
+#, kde-format
+msgid "&Page title:"
+msgstr "&Naslov stranice:"
+
+#: imgallerydialog.cpp:93
+#, kde-format
+msgid "I&mages per row:"
+msgstr "&Slika po vrsti:"
+
+#: imgallerydialog.cpp:95
+#, kde-format
+msgid "Show image file &name"
+msgstr "Prikaži &ime datoteke slike"
+
+#: imgallerydialog.cpp:99
+#, kde-format
+msgid "Show image file &size"
+msgstr "Prikaži &veličinu datoteke slike"
+
+#: imgallerydialog.cpp:103
+#, kde-format
+msgid "Show image &dimensions"
+msgstr "Prikaži &dimenzije slike"
+
+#: imgallerydialog.cpp:114
+#, kde-format
+msgid "Fon&t name:"
+msgstr "Ime fon&ta:"
+
+#: imgallerydialog.cpp:122
+#, kde-format
+msgid "Font si&ze:"
+msgstr "Ve&ličina fonta:"
+
+#: imgallerydialog.cpp:126
+#, kde-format
+msgid "&Foreground color:"
+msgstr "&Boja ispisa:"
+
+#: imgallerydialog.cpp:130
+#, kde-format
+msgid "&Background color:"
+msgstr "&Boja pozadine:"
+
+#: imgallerydialog.cpp:136 imgallerydialog.cpp:137
+#, kde-format
+msgid "Folders"
+msgstr "Direktoriji"
+
+#: imgallerydialog.cpp:145
+#, kde-format
+msgid "&Save to HTML file:"
+msgstr "&Sačuvaj u HTML datoteku:"
+
+#: imgallerydialog.cpp:147
+#, kde-format
+msgid "<p>The name of the HTML file this gallery will be saved to.</p>"
+msgstr "<p>Ime HTML datoteke u kome će se sačuvati ova galerija.</p>"
+
+#: imgallerydialog.cpp:150
+#, kde-format
+msgid "&Recurse subfolders"
+msgstr "&Rekurzivno kroz poddirektorije"
+
+#: imgallerydialog.cpp:152
+#, kde-format
+msgid ""
+"<p>Whether subfolders should be included for the image gallery creation or "
+"not.</p>"
+msgstr ""
+"<p>Da li bi podirektoriji trebalo da budu uključeni pri pravljenju galerije "
+"slika ili ne.</p>"
+
+#: imgallerydialog.cpp:163
+#, kde-format
+msgid "Endless"
+msgstr "Beskonačno"
+
+#: imgallerydialog.cpp:165
+#, kde-format
+msgid ""
+"<p>You can limit the number of folders the image gallery creator will "
+"traverse to by setting an upper bound for the recursion depth.</p>"
+msgstr ""
+"<p>Broj direktorija koje će stvaralac galerije slika obići možete ograničiti "
+"postavljanjem gornje granice za dubinu rekurzije.</p>"
+
+#: imgallerydialog.cpp:168
+#, kde-format
+msgid "Rec&ursion depth:"
+msgstr "&Dubina rekurzije:"
+
+#: imgallerydialog.cpp:172
+#, kde-format
+msgid "Copy or&iginal files"
+msgstr "Kopiraj or&iginalne datoteke"
+
+#: imgallerydialog.cpp:174
+#, kde-format
+msgid ""
+"<p>This makes a copy of all images and the gallery will refer to these "
+"copies instead of the original images.</p>"
+msgstr ""
+"<p>Pravi kopiju svih slika, i galerija će se odnositi na te kopije umjesto "
+"na originalne slike.</p>"
+
+#: imgallerydialog.cpp:179
+#, kde-format
+msgid "Use &comment file"
+msgstr "Koristi datoteku sa &komentarima"
+
+#: imgallerydialog.cpp:181
+#, kde-format
+msgid ""
+"<p>If you enable this option you can specify a comment file which will be "
+"used for generating subtitles for the images.</p><p>For details about the "
+"file format please see the \"What's This?\" help below.</p>"
+msgstr ""
+"<p>Ako omogućite ovu opciju možete precizirati datoteku sa komentarima koja "
+"će biti korišćena za generisanje titlova za slike.</p><p>Za detalje o "
+"formatu datoteke pogledajte „Šta je ovo?“ ispod.</p>"
+
+#: imgallerydialog.cpp:190
+#, kde-format
+msgid ""
+"<p>You can specify the name of the comment file here. The comment file "
+"contains the subtitles for the images. The format of this file is:</"
+"p><p>FILENAME1:<br />Description<br /><br />FILENAME2:<br />Description<br /"
+"><br />and so on</p>"
+msgstr ""
+"<p>Ovdje možete navesti ime datoteke sa komentarima. Datoteka sa komentarima "
+"sadrži titlove slika. Format ove datoteke je:</p><p>Ime datoteke1: <br /"
+">Opis<br /><br />Ime datoteke2:<br />Opis<br /><br />itd.</p>"
+
+#: imgallerydialog.cpp:200
+#, kde-format
+msgid "Comments &file:"
+msgstr "&Datoteka sa komentarima:"
+
+#: imgallerydialog.cpp:210 imgallerydialog.cpp:211
+#, kde-format
+msgid "Thumbnails"
+msgstr "Sličice"
+
+#: imgallerydialog.cpp:224
+#, kde-format
+msgid "Image f&ormat:"
+msgstr ""
+
+#: imgallerydialog.cpp:232
+#, kde-format
+msgid "Thumbnail size:"
+msgstr "Veličina sličice:"
+
+#: imgallerydialog.cpp:235
+#, kde-format
+msgid "&Set different color depth:"
+msgstr "&Postavi različitu dubinu boja:"
+
+#: imgallerydialog.cpp:246
+#, kde-format
+msgid "Color depth:"
+msgstr ""
+
+#: imgalleryplugin.cpp:52
+#, kde-format
+msgid "&Create Image Gallery..."
+msgstr "&Napravi galeriju slika..."
+
+#: imgalleryplugin.cpp:62
+#, kde-format
+msgid "Could not create the plugin, please report a bug."
+msgstr "Nisam uspio da napravim priključak, prijavite ovo kao grešku."
+
+#: imgalleryplugin.cpp:68
+#, kde-format
+msgid "Creating an image gallery works only on local folders."
+msgstr "Pravljenje galerije slika funkcioniše samo u lokalnim direktorijima."
+
+#: imgalleryplugin.cpp:88
+#, kde-format
+msgid "Creating thumbnails"
+msgstr "Pravim sličice"
+
+#: imgalleryplugin.cpp:111 imgalleryplugin.cpp:275
+#, kde-format
+msgid "Could not create folder: %1"
+msgstr "Ne mogu da napravim direktorij: %1"
+
+#: imgalleryplugin.cpp:173
+#, kde-format
+msgid "<i>Number of images</i>: %1"
+msgstr "<i>Broj slika</i>: %1"
+
+#: imgalleryplugin.cpp:174
+#, kde-format
+msgid "<i>Created on</i>: %1"
+msgstr "<i>Napravljeno</i>: %1"
+
+#: imgalleryplugin.cpp:179
+#, kde-format
+msgid "<i>Subfolders</i>:"
+msgstr "<i>Poddirektoriji</i>:"
+
+#: imgalleryplugin.cpp:212
+#, kde-format
+msgid ""
+"Created thumbnail for: \n"
+"%1"
+msgstr ""
+"Napravio sam sličicu za: \n"
+"%1"
+
+#: imgalleryplugin.cpp:215
+#, kde-format
+msgid ""
+"Creating thumbnail for: \n"
+"%1\n"
+" failed"
+msgstr ""
+"Pravljenje sličice za: \n"
+"%1\n"
+" nije uspjelo"
+
+#: imgalleryplugin.cpp:230
+#, kde-format
+msgid "KiB"
+msgstr "KiB"
+
+#: imgalleryplugin.cpp:344 imgalleryplugin.cpp:439
+#, kde-format
+msgid "Could not open file: %1"
+msgstr "Ne mogu da otvorim datoteku: %1"
+
+#. i18n: ectx: Menu (tools)
+#: kimgallery.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "Ala&tke"
+
+#~ msgid "Image format f&or the thumbnails:"
+#~ msgstr "Format z&a sličice:"
+
+#~ msgctxt "@title:window"
+#~ msgid "Configure"
+#~ msgstr "Podesi"

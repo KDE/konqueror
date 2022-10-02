@@ -1,0 +1,89 @@
+# translation of searchbarplugin.po to bosanski
+# Vedran Ljubovic <vljubovic@smartnet.ba>, 2004, 2005.
+# KDE 4 <megaribi@epn.ba>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: searchbarplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-25 00:45+0000\n"
+"PO-Revision-Date: 2013-01-23 22:30+0000\n"
+"Last-Translator: Vedran Ljubovic <vljubovic@smartnet.ba>\n"
+"Language-Team: bosanski <bs@li.org>\n"
+"Language: bs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2013-01-24 05:20+0000\n"
+"X-Generator: Launchpad (build 16445)\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+#: searchbar.cpp:65
+#, kde-format
+msgid ""
+"Search Bar<p>Enter a search term. Click on the icon to change search mode or "
+"provider.</p>"
+msgstr ""
+"Traka za Pretragu<p>Unesite uslove pretrage. Kliknite na ikonu da "
+"promijenite način pretrage ili dobavljača.</p>"
+
+#: searchbar.cpp:70
+#, kde-format
+msgid "Search Bar"
+msgstr "Traka za Pretragu"
+
+#: searchbar.cpp:75
+#, kde-format
+msgid "Focus Searchbar"
+msgstr "Fokusiraj Pretražnu Traku"
+
+#: searchbar.cpp:267
+#, fuzzy, kde-format
+#| msgid "Find in This Page"
+msgid "Find in Page..."
+msgstr "Pronađi na ovoj stranici"
+
+#: searchbar.cpp:287
+#, kde-format
+msgid "Find in This Page"
+msgstr "Pronađi na ovoj stranici"
+
+#: searchbar.cpp:299
+#, kde-format
+msgid "Select Search Engines..."
+msgstr "Izaberi motor pretrage..."
+
+#: searchbar.cpp:318
+#, kde-format
+msgid "Add %1..."
+msgstr "Dodaj %1..."
+
+#. i18n: ectx: ToolBar (locationToolBar)
+#: searchbarplugin.rc:3
+#, kde-format
+msgid "Search Toolbar"
+msgstr "Traka sa alatima za pretragu"
+
+#: WebShortcutWidget.cpp:33
+#, kde-format
+msgid "Set Uri Shortcuts"
+msgstr "Postavljanje URI prečica"
+
+#: WebShortcutWidget.cpp:47
+#, kde-format
+msgid "Name:"
+msgstr "Ime:"
+
+#: WebShortcutWidget.cpp:51
+#, kde-format
+msgid "Shortcuts:"
+msgstr "Prečice:"
+
+#~ msgid "Enable Suggestion"
+#~ msgstr "Uključi sugestije"
+
+#~ msgid "Cancel"
+#~ msgstr "Odustani"
+
+#~ msgid "OK"
+#~ msgstr "U redu"

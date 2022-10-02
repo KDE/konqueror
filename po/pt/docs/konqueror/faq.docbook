@@ -1,0 +1,311 @@
+<chapter id="faq">
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>José</firstname
+><surname
+>Pires</surname
+><affiliation
+><address
+><email
+>zepires@gmail.com</email
+></address
+></affiliation
+><contrib
+>Tradução</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2010-10-24</date>
+<releaseinfo
+>&kde; 4.5</releaseinfo>
+</chapterinfo>
+
+<title
+>Perguntas e Respostas</title>
+
+<qandaset>
+
+<!-- Link is dead, unfortunately. I suppose this is a more general thing anyway
+<qandaentry>
+<question
+><para
+>How can I browse web sites using non latin
+ scripts?</para
+></question>
+<answer
+><para
+>Detailed instructions can be found at <ulink
+url="http://www.konqueror.org/i18n.html"
+>http://www.konqueror.org/i18n.html</ulink
+></para
+></answer>
+</qandaentry>
+-->
+
+<qandaentry>
+<question
+><para
+>Posso correr o &konqueror; a partir de outro gestor de janelas?</para
+></question>
+
+<answer
+><para
+>Basta instalar o &Qt;, as 'kdelibs' e o 'kdebase', e poderá lançar o &konqueror; a partir do seu gestor de janelas favorito. Ele deverá funcionar perfeitamente, mas se não o fizer (os programadores do &kde; não testam esse caso com frequência), comunique-o ao <ulink url="http://bugs.kde.org"
+>http://bugs.kde.org</ulink
+> e tente executar o <application
+>kdeinit</application
+> antes de executar o &konqueror; ; normalmente isto ajuda.</para
+></answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Onde é que o &konqueror; guarda todos os seus dados de configuração?</para
+></question>
+<answer
+><para
+>Geralmente na pasta <filename
+>~/.kde</filename
+> (esta poderá ser a <filename
+>~/.kde4</filename
+> no seu sistema, dependendo de como o &kde; foi instalado). Não altere estes ficheiros a menos que saiba o que está a fazer.</para>
+
+<itemizedlist>
+
+<listitem
+><para
+>A pasta <filename class="directory"
+>~/.kde/share/apps/konqueror/profiles</filename
+> contém os ficheiros individuais com as configurações de cada um dos seus <link linkend="save-settings"
+>perfis. </link
+></para
+></listitem>
+
+<listitem
+><para
+>Os seus favoritos são guardados em <filename class="directory"
+>~/.kde/share/apps/konqueror/bookmarks.xml</filename
+></para
+></listitem>
+<listitem
+><para
+>Os 'cookies' são guardados em <filename class="directory"
+>~/.kde/share/apps/kcookiejar/cookies</filename
+></para
+></listitem>
+<listitem
+><para
+>O seu histórico, o qual é usado na funcionalidade de completação automática, está em <filename
+>~/.kde/share/config/konq_history</filename
+></para
+></listitem>
+
+<listitem
+><para
+>Na pasta <filename class="directory"
+>~/.kde/share/config/</filename
+> os ficheiros <filename
+>konqiconviewrc</filename
+>, <filename
+>konqlistviewrc</filename
+> e <filename
+>konquerorrc</filename
+> contêm um conjunto vasto de configurações gerais.</para
+></listitem>
+
+<listitem
+><para
+>A pasta <filename class="directory"
+>~/.kde/share/cache-<replaceable
+>máquina</replaceable
+>/http/</filename
+> contém a 'cache' do navegador.</para
+></listitem>
+
+<listitem
+><para
+>A Barra Lateral usa os ficheiros e subpastas do <filename class="directory"
+>~/.kde/share/apps/konqsidebartng</filename
+></para
+></listitem>
+</itemizedlist>
+
+<para
+>Todas as configurações específicas de cada pasta são colocadas nos ficheiros <literal role="extension"
+>.directory</literal
+> em cada uma das pastas em particular.</para
+></answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Como é que limpo o ficheiro de histórico?</para
+></question>
+<answer
+><para
+>Existem dois <quote
+>históricos</quote
+>:</para>
+<itemizedlist>
+<listitem
+><para
+>Um é usado para a completação de texto na barra de Localização. Para o limpar, carregue com o botão <mousebutton
+>direito</mousebutton
+> no campo de texto e escolha a opção <guimenuitem
+>Limpar o Histórico</guimenuitem
+>.</para>
+</listitem>
+<listitem
+><para
+>O outro é o registo das localizações visitadas. Seleccione a página de Histórico na Barra Lateral, carregue com o botão <mousebutton
+>direito</mousebutton
+> num item e escolha <guimenuitem
+>Remover o Item</guimenuitem
+> (<keycap
+>Del</keycap
+>) para remover apenas esse item ou <guimenuitem
+>Limpar o Histórico</guimenuitem
+> para limpar todos os itens.</para
+></listitem>
+</itemizedlist>
+<note
+><para
+>Poderá também usar a aplicação <application
+>Sweeper</application
+> do módulo 'kdeutils', a qual lhe permite limpar os 'cookies', 'favicons', o histórico da Web e a 'cache', os itens de completação dos formulários e as políticas de 'cache' das páginas Web visitadas.</para
+></note>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Como é que activo, desactivo ou limpo a 'cache' do navegador?</para
+></question
+> <answer>
+<para
+>Se o utilizador seleccionar a <menuchoice
+><guimenu
+>Navegação Web</guimenu
+><guimenuitem
+>'Cache'</guimenuitem
+></menuchoice
+> na janela que aparece, ao seleccionar a opção <menuchoice
+><guimenu
+>Configuração</guimenu
+><guimenuitem
+>Configurar o Konqueror... </guimenuitem
+></menuchoice
+>, ser-lhe-á apresentada uma janela onde poderá desactivar a 'cache', limpá-la ou definir o seu tamanho, assim como poderá alterar a política de 'cache'.</para>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Como é que posso alterar os tempos-limite usados pelo &konqueror; ao navegar na Web?</para
+></question
+> <answer>
+<para
+>Na categoria <guilabel
+>Internet e Conectividade</guilabel
+> do &systemsettings;, na página <menuchoice
+><guimenu
+>Configuração da Rede</guimenu
+> <guimenuitem
+>Preferências da Ligação</guimenuitem
+></menuchoice
+>.</para>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Como é que eu defino a minha página <quote
+>pessoal</quote
+> - a página que é carregada no arranque?</para
+></question>
+<answer
+><para
+>O &konqueror; tem uma <guilabel
+>Página Inicial</guilabel
+> que é usada no modo de navegação Web e uma <guilabel
+>Pasta Pessoal</guilabel
+> usada no modo de gestão de ficheiros.</para>
+
+<para
+>Para mudar esta configuração, invoque o <menuchoice
+><guimenu
+>Configuração</guimenu
+><guimenuitem
+>Configurar o Konqueror</guimenuitem
+><guilabel
+>Geral</guilabel
+></menuchoice
+>.</para>
+
+<para
+>Para definir a página inicial do &konqueror;, no modo de gestão de ficheiros, seleccione a opção <guilabel
+>Mostrar a Página Introdutória</guilabel
+>, <guilabel
+>Mostrar a Minha Página PEssoal</guilabel
+>, <guilabel
+>Mostrar uma Página em Branco</guilabel
+> ou <guilabel
+>Mostrar os Meus Favoritos</guilabel
+> na lista chamada <guilabel
+>Quando o Konqueror é iniciado</guilabel
+>.</para>
+
+<para
+>No modo de navegação, o &konqueror; começa com o item <guilabel
+>Página pessoal</guilabel
+>.</para>
+
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Não encontrei a resposta à minha pergunta aqui.</para
+></question
+> 
+<answer>
+<para
+>Veja em <ulink url="http://www.konqueror.org/faq.html"
+> http://www.konqueror.org/faq.html</ulink
+> ou em <ulink url="http://www.konqueror.org/konq-java.html"
+> http://www.konqueror.org/konq-java.html</ulink
+>.</para>
+<para
+>Poderá encontrar mais informações no <ulink url="http://forum.kde.org/"
+> Fórum da Comunidade KDE</ulink
+> ou na <ulink url="http://userbase.kde.org/Konqueror"
+> página da Base de Utilizadores do KDE sobre o Konqueror</ulink
+>.</para>
+</answer>
+</qandaentry>
+
+</qandaset>
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

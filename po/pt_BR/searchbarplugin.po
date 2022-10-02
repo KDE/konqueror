@@ -1,0 +1,94 @@
+# Tradução do searchbarplugin.po para Brazilian Portuguese
+# Lisiane Sztoltz Teixeira <lisiane@conectiva.com.br>, 2004.
+# Fernando Boaglio <fernando@boaglio.com>, 2005.
+# Diniz Bortolotto <diniz.bortolotto@gmail.com>, 2007.
+# Fábio Nogueira <deb-user-ba@ubuntu.com>, 2008.
+# Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2009, 2022.
+# André Marcelo Alvarenga <andrealvarenga@gmx.net>, 2009, 2010, 2011.
+# Marcus Gama <marcus.gama@gmail.com>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: searchbarplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-25 00:45+0000\n"
+"PO-Revision-Date: 2022-08-05 18:45-0300\n"
+"Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
+"Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 21.12.3\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: searchbar.cpp:65
+#, kde-format
+msgid ""
+"Search Bar<p>Enter a search term. Click on the icon to change search mode or "
+"provider.</p>"
+msgstr ""
+"Barra de pesquisa<p>Digite um termo de pesquisa. Clique no ícone para "
+"alterar o modo ou o site de pesquisa.</p>"
+
+#: searchbar.cpp:70
+#, kde-format
+msgid "Search Bar"
+msgstr "Barra de pesquisa"
+
+#: searchbar.cpp:75
+#, kde-format
+msgid "Focus Searchbar"
+msgstr "Foco na barra de pesquisa"
+
+#: searchbar.cpp:267
+#, kde-format
+msgid "Find in Page..."
+msgstr "Localizar na página..."
+
+#: searchbar.cpp:287
+#, kde-format
+msgid "Find in This Page"
+msgstr "Localizar nesta página"
+
+#: searchbar.cpp:299
+#, kde-format
+msgid "Select Search Engines..."
+msgstr "Selecionar mecanismo de pesquisa..."
+
+#: searchbar.cpp:318
+#, kde-format
+msgid "Add %1..."
+msgstr "Adicionar %1..."
+
+#. i18n: ectx: ToolBar (locationToolBar)
+#: searchbarplugin.rc:3
+#, kde-format
+msgid "Search Toolbar"
+msgstr "Barra de ferramentas de pesquisa"
+
+#: WebShortcutWidget.cpp:33
+#, kde-format
+msgid "Set Uri Shortcuts"
+msgstr "Definir atalhos de URIs"
+
+#: WebShortcutWidget.cpp:47
+#, kde-format
+msgid "Name:"
+msgstr "Nome:"
+
+#: WebShortcutWidget.cpp:51
+#, kde-format
+msgid "Shortcuts:"
+msgstr "Atalhos:"
+
+#~ msgid "Enable Suggestion"
+#~ msgstr "Habilitar sugestões"
+
+#~ msgid "Cancel"
+#~ msgstr "Cancelar"
+
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#~ msgid "Ok"
+#~ msgstr "OK"

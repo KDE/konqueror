@@ -1,0 +1,223 @@
+# tradução do kcmperformance.po para Brazilian Portuguese
+# Copyright (C) 2003, 2004, 2007, 2009 Free Software Foundation, Inc.
+#
+# Lisiane Sztoltz <lisiane@conectiva.com.br>, 2003.
+# Henrique Pinto <stampede@coltec.ufmg.br>, 2003.
+# Lisiane Sztoltz Teixeira <lisiane@conectiva.com.br>, 2004.
+# Diniz Bortolotto <diniz.bortolotto@gmail.com>, 2007.
+# Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2009, 2017.
+# André Marcelo Alvarenga <andrealvarenga@gmx.net>, 2009, 2011.
+# Marcus Gama <marcus.gama@gmail.com>, 2012.
+# Camila Moura <camila.moura@kde.org>, 2017.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmperformance\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-21 00:16+0000\n"
+"PO-Revision-Date: 2017-04-28 18:05-0300\n"
+"Last-Translator: Camila Moura <camila.moura@kde.org>\n"
+"Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 2.0\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: kcmperformance.cpp:28
+#, kde-format
+msgid ""
+"<h1>KDE Performance</h1> You can configure settings that improve KDE "
+"performance here."
+msgstr ""
+"<h1>Desempenho do KDE</h1> Você pode alterar aqui as configurações que podem "
+"melhorar a performance do KDE."
+
+#: kcmperformance.cpp:35
+#, kde-format
+msgid "Konqueror"
+msgstr "Konqueror"
+
+#: kcmperformance.cpp:38
+#, kde-format
+msgid "System"
+msgstr "Sistema"
+
+#: kcmperformance.cpp:63
+#, kde-format
+msgid ""
+"<h1>Konqueror Performance</h1> You can configure several settings that "
+"improve Konqueror performance here. These include options for reusing "
+"already running instances and for keeping instances preloaded."
+msgstr ""
+"<h1>Desempenho do Konqueror</h1> Aqui você pode configurar diversas opções "
+"que melhoram o desempenho do Konqueror. Isto inclui opções para reutilização "
+"de instâncias em execução e para manutenção de instâncias pré-carregadas."
+
+#: konqueror.cpp:24
+#, kde-format
+msgid ""
+"<p>If enabled, an instance of Konqueror will be preloaded after the ordinary "
+"Plasma startup sequence.</p><p>This will make the first Konqueror window "
+"open faster, but at the expense of longer Plasma startup times (but you will "
+"be able to work while it is loading, so you may not even notice that it is "
+"taking longer).</p>"
+msgstr ""
+"<p>Se habilitada, uma instância do Konqueror será pré-carregada após "
+"inicialização do Plasma.</p><p>Isto fará com que a primeira janela do "
+"Konqueror abra mais rapidamente, mesmo que inicialização do Plasma seja mais "
+"longa (mas como é possível trabalhar enquanto estiver carregando, você pode "
+"nem notar que leva mais tempo).</p>"
+
+#: konqueror.cpp:30
+#, kde-format
+msgid ""
+"<p>If enabled, Konqueror will always try to have one preloaded instance "
+"ready; preloading a new instance in the background whenever there is not one "
+"available, so that windows will always open quickly.</p><p><b>Warning:</b> "
+"In some cases, it is actually possible that this will reduce perceived "
+"performance.</p>"
+msgstr ""
+"<p>Se habilitado, o Konqueror tentará ter sempre uma instância pronta e pré-"
+"carregada; carrega antecipadamente uma nova instância em segundo plano, "
+"sempre que não existir uma disponível, de modo que as janelas abram "
+"rapidamente.</p><p><b>Aviso:</b> Em alguns casos, é possível que esta opção "
+"tenha um efeito negativo no desempenho.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
+#: konqueror_ui.ui:17
+#, kde-format
+msgid "Preloading"
+msgstr "Pré-carregamento"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_preload_on_startup)
+#: konqueror_ui.ui:23
+#, kde-format
+msgid "Preload an instance after desktop startup"
+msgstr "Pré-carregar uma instância após a inicialização do KDE"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_always_have_preloaded)
+#: konqueror_ui.ui:30
+#, kde-format
+msgid "Always try to have one preloaded instance"
+msgstr "Sempre tentar ter uma instância pré-carregada"
+
+#: system.cpp:22
+#, kde-format
+msgid ""
+"<p>During startup KDE needs to perform a check of its system configuration "
+"(mimetypes, installed applications, etc.), and in case the configuration has "
+"changed since the last time, the system configuration cache (KSyCoCa) needs "
+"to be updated.</p><p>This option delays the check, which avoid scanning all "
+"directories containing files describing the system during KDE startup, thus "
+"making KDE startup faster. However, in the rare case the system "
+"configuration has changed since the last time, and the change is needed "
+"before this delayed check takes place, this option may lead to various "
+"problems (missing applications in the K Menu, reports from applications "
+"about missing required mimetypes, etc.).</p><p>Changes of system "
+"configuration mostly happen by (un)installing applications. It is therefore "
+"recommended to turn this option temporarily off while (un)installing "
+"applications.</p>"
+msgstr ""
+"<p>Durante a inicialização, o KDE precisa executar uma verificação da "
+"configuração do seu sistema (tipos MIME, aplicativos instalados, etc.), e no "
+"caso da configuração ter sido modificada desde a última vez, o cache da "
+"configuração do sistema (KSyCoCa) precisa ser atualizado.</p><p>Esta opção "
+"atrasa a verificação, que evita a procura em todas as pastas que contém "
+"arquivos que descrevam o sistema durante a inicialização do KDE, tornando a "
+"inicialização do KDE mais rápida. No entanto, em casos raros, a configuração "
+"do sistema pode ter sido modificada desde o último acesso, e a modificação é "
+"necessária antes que esta verificação atrasada ocorra. Esta opção pode "
+"trazer vários problemas (perda de aplicativos no menu K, aplicativos "
+"reportando a perda de tipos MIME necessários, etc).</p><p>As alterações na "
+"configuração do sistema ocorrem mais frequentemente através da "
+"(des)instalação dos aplicativos. É recomendado, portanto, desabilitar "
+"temporariamente esta opção, enquanto aplicativos são (des)instalados.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gb_)
+#: system_ui.ui:8
+#, kde-format
+msgid "System Configuration"
+msgstr "Configuração do sistema"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_disable_kbuildsycoca)
+#: system_ui.ui:14
+#, kde-format
+msgid "Disable &system configuration startup check"
+msgstr "Desabilitar a verificação da configuração do &sistema ao iniciar"
+
+#. i18n: ectx: property (text), widget (QLabel, label_kbuildsycoca)
+#: system_ui.ui:21
+#, kde-format
+msgid ""
+"This option may in rare cases lead to various problems. Consult the What's "
+"This (Shift+F1) help for details."
+msgstr ""
+"Esta opção pode, em casos raros, ocasionar vários problemas. Para mais "
+"detalhes, consulte a ajuda O que é isto (Shift+F1)."
+
+#~ msgid ""
+#~ "<p>If non-zero, this option allows keeping Konqueror instances in memory "
+#~ "after all their windows have been closed, up to the number specified in "
+#~ "this option.</p><p>When a new Konqueror instance is needed, one of these "
+#~ "preloaded instances will be reused instead, improving responsiveness at "
+#~ "the expense of the memory required by the preloaded instances.</p>"
+#~ msgstr ""
+#~ "<p>Se for diferente de zero, esta opção permite manter as instâncias do "
+#~ "Konqueror na memória, após o fechamento de todas as suas janelas, acima "
+#~ "do número especificado nesta opção.</p><p>Quando for necessária uma nova "
+#~ "instância do Konqueror, uma das pré-carregadas será reutilizada, "
+#~ "melhorando o tempo de resposta com o uso da memória das instâncias pré-"
+#~ "carregadas.</p>"
+
+#, fuzzy
+#~| msgid "Maximum number of instances kept &preloaded:"
+#~ msgid "&Maximum number of instances kept preloaded:"
+#~ msgstr "Número máximo de instâncias a manter &pré-carregadas:"
+
+#~ msgid ""
+#~ "Disables the minimization of memory usage and allows you to make each "
+#~ "browsing activity independent from the others"
+#~ msgstr ""
+#~ "Desabilita a minimização do uso da memória e permite-lhe fazer com que "
+#~ "cada atividade de navegação seja independente uma das outras"
+
+#~ msgid ""
+#~ "<p>With this option activated, only one instance of Konqueror used for "
+#~ "file browsing will exist in the memory of your computer at any moment, no "
+#~ "matter how many file browsing windows you open, thus reducing resource "
+#~ "requirements.</p><p>Be aware that this also means that, if something goes "
+#~ "wrong, all your file browsing windows will be closed simultaneously</p>"
+#~ msgstr ""
+#~ "<p>Com esta opção ativada, somente uma instância do Konqueror usada para "
+#~ "navegação de arquivos estará na memória do seu computador, "
+#~ "independentemente de quantas janelas de navegação de arquivos você abrir, "
+#~ "reduzindo os recursos necessários para esta tarefa.</p><p>Lembre-se de "
+#~ "que isto também significa que, se algo errado acontecer, todas as suas "
+#~ "janelas de navegação de arquivos serão fechadas simultaneamente.</p>"
+
+#~ msgid ""
+#~ "<p>With this option activated, only one instance of Konqueror will exist "
+#~ "in the memory of your computer at any moment, no matter how many browsing "
+#~ "windows you open, thus reducing resource requirements.</p><p>Be aware "
+#~ "that this also means that, if something goes wrong, all your browsing "
+#~ "windows will be closed simultaneously.</p>"
+#~ msgstr ""
+#~ "<p>Com esta opção ativada, somente uma instância do Konqueror estará na "
+#~ "memória do seu computador, independentemente de quantas janelas de "
+#~ "navegação de arquivos você abrir, reduzindo os recursos necessários para "
+#~ "esta tarefa.</p><p>Lembre-se de que isto também significa que, se algo "
+#~ "errado acontecer, todas as suas janelas de navegação de arquivos serão "
+#~ "fechadas simultaneamente.</p>"
+
+#~ msgid "Minimize Memory Usage"
+#~ msgstr "Minimizar o uso da memória"
+
+#~ msgid "&Never"
+#~ msgstr "&Nunca"
+
+#~ msgid "For &file browsing only (recommended)"
+#~ msgstr "S&omente para navegação de arquivos (recomendado)"
+
+#~ msgid "Alwa&ys (use with care)"
+#~ msgstr "&Sempre (use com cuidado)"

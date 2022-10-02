@@ -1,0 +1,94 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % French "INCLUDE"
+> <!-- change language only here -->
+]>
+<!-- extragear has another adblock ? -->
+<article lang="&language;" id="khtml-adblock">
+<articleinfo>
+<title
+>Filtres AdBlocK</title>
+<authorgroup>
+<author
+>&Krishna.Tateneni; &Krishna.Tateneni.mail;</author>
+&traducteurDamienRaudeMorvan; &traducteurEricBischoff; &traducteurJoelleCornavin; &traducteurYvesDessertine; &traducteurPierreBuard; 
+</authorgroup>
+
+<date
+>08-11-2016</date>
+<releaseinfo
+>Applications 16.12</releaseinfo>
+</articleinfo>
+
+<para
+>AdBlock de &konqueror; permet de remplacer ou supprimer les images et cadres de pages web correspondant a une série de filtres.</para>
+
+<para
+>L'option <guilabel
+>Activer les filtres</guilabel
+> active ou désactive l'utilisation de la liste des filtres par URL.</para>
+<para
+>Si <guilabel
+>Cacher les images filtrées</guilabel
+> est cochée, les images bloquées seront complètement supprimées de la page et l'espace qu'elles occupaient sera libéré. Si cette option est désactivée, alors un espace de la pages restera réservé pour les images filtrées.</para>
+
+<variablelist>
+<varlistentry id="khtml-adblock-manual">
+<term
+><guilabel
+>Filtre manuel</guilabel
+></term>
+<listitem>
+<para
+>La majeure partie de cet onglet consiste en une liste d'URL devant être comparées aux noms d'images et de cadres afin de décider des actions de filtrage. Des caractères jokers peuvent être employés comme expressions rationnelles pour les noms de fichiers.</para>
+
+<para
+>Les filtres peuvent s'écrire avec un joker pour les noms de fichiers (par exemple http://www.site.com/pub*) ou à l'aide d'une expression rationnelle complète, encadrée par des barres obliques (par exemple //(pubs|régie)\./).</para>
+
+<para
+>Toutes les chaînes peuvent être précédées des caractères <literal
+>@@</literal
+> pour autoriser des &URL; ; ces règles seront prioritaire par rapport aux autres filtres de blocage.</para>
+
+<para
+><guilabel
+>Importer...</guilabel
+> et <guilabel
+>Exporter...</guilabel
+> servent respectivement à lire et enregistrer une liste de filtres contenue dans un fichier de texte brut. Le fichier commence par l'en-tête <userinput
+>[AdBlock]</userinput
+> suivi des filtres, ligne après ligne. Un « point d'exclamation » (<userinput
+> ! </userinput
+>) en début de ligne, tout comme l'en-tête, désigne un ligne commentée et peut servir à expliciter ou nommer des séries de filtres.</para>
+
+<para
+>Sélectionnez une ligne de la liste pour la modifier avec le champ d'édition ou la supprimer. À l'inverse, saisissez un nouveau filtre ici et ajoutez-le à la liste avec le bouton <guibutton
+> Insérer</guibutton
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry id="khtml-adblock-automatic">
+<term
+><guilabel
+>Filtre automatique</guilabel
+></term>
+<listitem>
+<para
+>Cet onglet affiche une liste de filtres AdBlock avec leurs &URL; prédéfinies. Pour activer une entrée, cochez la case jouxtant le nom du filtre et ajuster l'<guilabel
+>Intervalle de mise à jour automatique</guilabel
+> (7 jours par défaut). </para>
+</listitem>
+</varlistentry>
+  
+</variablelist>
+
+<para
+>Si des filtres AdBlock sont activés, une icône sera présente sur la barre d'état, à droite. Un clic avec le &BDS; sur cette icône ouvrira le menu contextuel dont les actions permettront d'afficher contenant tous les éléments filtrables de la page web, d'ouvrir le module de la &configurationDuSysteme; ou de désactiver temporairement les filtres pour une page ou tout un site.</para>
+
+<para
+>Un clic avec le &BGS; affichera une boîte de dialogue contenant tous les éléments filtrables de la page ouverte. Il est possible d'ajouter de nouveau filtres directement à partir de cette boîte sans avoir à ouvrir le module de la &configurationDuSysteme;.</para>
+
+</article>

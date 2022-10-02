@@ -1,0 +1,95 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Brazilian-Portuguese "INCLUDE">
+]>
+<article id="history" lang="&language;">
+<title
+>Barra lateral de histórico</title>
+<articleinfo>
+<authorgroup>
+<author
+>&Burkhard.Lueck;</author>
+<othercredit role="translator"
+><firstname
+>Marcus</firstname
+><surname
+>Gama</surname
+><affiliation
+><address
+><email
+>marcus.gama@gmail.com</email
+></address
+></affiliation
+><contrib
+>Tradução</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>24/11/2009</date>
+<releaseinfo
+>&kde; 4.4</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Configurações do sistema</keyword>
+<keyword
+>histórico</keyword>
+</keywordset>
+</articleinfo>
+
+<para
+>Esta janela permite-lhe configurar a barra lateral do histórico. </para>
+
+<variablelist>
+<varlistentry
+><term
+><guilabel
+>Limites</guilabel
+></term>
+<listitem
+><para
+>As opções nesta seção poderão ser usadas para definir o tamanho máximo do seu histórico e definir um período após o qual os itens serão automaticamente removidos. </para
+></listitem>
+</varlistentry>
+
+<varlistentry
+><term
+><guilabel
+>Fontes personalizadas</guilabel
+></term>
+<listitem
+><para
+>Aqui você poderá definir também alguns tipos de fonte diferentes para os &URL;'s antigos e novos, clicando no botão <guibutton
+>Escolher fonte</guibutton
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry
+><term
+><guilabel
+>Detalhes</guilabel
+></term>
+<listitem
+><para
+>A opção <guilabel
+>Dicas detalhadas</guilabel
+> controla a quantidade de informação que é apresentada ao passar o cursor do mouse sobre um item da página de histórico.</para>
+<para
+>Se estiver assinalada, é apresentado o número de visitas, bem como as datas da primeira e última visita, além do URL.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Selecionar a opção <guibutton
+>Limpar histórico</guibutton
+> irá apagar toda as informações do histórico. </para>
+</article>

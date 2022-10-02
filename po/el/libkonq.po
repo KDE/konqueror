@@ -1,0 +1,361 @@
+# translation of libkonq.po to greek
+# translation of libkonq.po to
+# Copyright (C) 2000, 2002, 2003, 2004, 2005, 2007 Free Software Foundation, Inc.
+#
+# Dimitris Kamenopoulos<el97146@mail.ntua.gr>, 2000.
+# Stergios Dramis <sdramis@egnatia.ee.auth.gr>, 2002-2004.
+# Spiros Georgaras <sngeorgaras@otenet.gr>, 2005, 2007.
+# Spiros Georgaras <sng@hellug.gr>, 2007.
+# Toussis Manolis <manolis@koppermind.homelinux.org>, 2007, 2008, 2009.
+# Dimitrios Glentadakis <dglent@gmail.com>, 2010, 2011.
+# Stelios <sstavra@gmail.com>, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2021-06-20 10:15+0300\n"
+"Last-Translator: Stelios <sstavra@gmail.com>\n"
+"Language-Team: Greek <kde-i18n-el@kde.org>\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 20.04.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "Ά&νοιγμα"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "Δημιουργία &φακέλου..."
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "&Επαναφορά"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr "Εμφάνιση αρχικού καταλόγου"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr "Εμφάνιση αρχικού αρχείου"
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "Ά&δειασμα του Κάδου Απορριμμάτων"
+
+#: src/konq_popupmenu.cpp:312
+#, kde-format
+msgid "&Configure Trash Bin"
+msgstr "&Ρύθμιση του κάδου απορριμμάτων"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "&Σελιδοδείκτης σε αυτήν τη σελίδα"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "&Σελιδοδείκτης σε αυτή την τοποθεσία"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "&Σελιδοδείκτης σε αυτόν το φάκελο"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "&Σελιδοδείκτης σε αυτόν το δεσμό"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "&Σελιδοδείκτης σε αυτό το αρχείο"
+
+#: src/konq_popupmenu.cpp:379
+#, kde-format
+msgid "Preview In"
+msgstr "Προεπισκόπηση σε"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr "Άνοιγμα τερματικού εδώ"
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "&Ιδιότητες"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy To"
+#~ msgstr "Αντιγραφή σε"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "Μετακίνηση σε"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "Προσωπικός φάκελος"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "Ριζικός φάκελος"
+
+#~ msgctxt "@title:menu in Copy To or Move To submenu"
+#~ msgid "Browse..."
+#~ msgstr "Περιήγηση..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "Αντιγραφή εδώ"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "Μετακίνηση εδώ"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "Δεν μπορείτε να αφήσετε έναν κατάλογο στον εαυτό του"
+
+#~ msgid "File name for dropped contents:"
+#~ msgstr "Όνομα αρχείου για περιεχόμενα ρίψης:"
+
+#~ msgid "&Move Here"
+#~ msgstr "Μετακίνησ&η εδώ"
+
+#~ msgid "&Copy Here"
+#~ msgstr "Αντι&γραφή εδώ"
+
+#~ msgid "&Link Here"
+#~ msgstr "&Δεσμός εδώ"
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "Ορισμός ως &ταπετσαρία"
+
+#~ msgid "C&ancel"
+#~ msgstr "&Ακύρωση"
+
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "Δημιουργία καταλόγου"
+
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "Εισάγετε ένα διαφορετικό όνομα"
+
+#~ msgid ""
+#~ "The name \"%1\" starts with a dot, so the directory will be hidden by "
+#~ "default."
+#~ msgstr ""
+#~ "Το όνομα «%1» ξεκινά με μία τελεία, οπότε ο κατάλογος θα είναι κρυφός από "
+#~ "προεπιλογή."
+
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "Δημιουργία κρυφού καταλόγου;"
+
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "Νέος φάκελος"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "Νέος φάκελος"
+
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "Εισάγετε όνομα φακέλου:"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "Επικόλληση ενός φακέλου"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One File"
+#~ msgstr "Επικόλληση ενός αρχείου"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Item"
+#~ msgid_plural "Paste %1 Items"
+#~ msgstr[0] "Επικόλληση ενός αντικειμένου"
+#~ msgstr[1] "Επικόλληση %1 αντικειμένων"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste Clipboard Contents..."
+#~ msgstr "Επικόλληση περιεχομένων του πρόχειρου..."
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste"
+#~ msgstr "Επικόλληση"
+
+#~ msgid ""
+#~ "Restores this file or directory, back to the location where it was "
+#~ "deleted from initially"
+#~ msgstr ""
+#~ "Επαναφορά του αρχείου ή καταλόγου, στην τοποθεσία που βρισκόταν όταν "
+#~ "διαγράφηκε"
+
+#~ msgid ""
+#~ "Opens a new file manager window showing the target of this link, in its "
+#~ "parent directory."
+#~ msgstr ""
+#~ "Άνοιγμα ενός νέου παραθύρου διαχείρισης αρχείων με εμφάνιση του "
+#~ "προορισμού του δεσμού, στον γονικό του κατάλογο."
+
+#~ msgid "Share"
+#~ msgstr "Κοινή χρήση"
+
+#~ msgctxt "@info"
+#~ msgid "Close"
+#~ msgstr "Κλείσιμο"
+
+#~ msgid "Close"
+#~ msgstr "Κλείσιμο"
+
+#~ msgid "Error: %1"
+#~ msgstr "Σφάλμα: %1"
+
+#~ msgid "Create New"
+#~ msgstr "Δημιουργία νέου"
+
+#~ msgid "Link to Device"
+#~ msgstr "Δεσμός σε συσκευή"
+
+#~ msgid "<qt>The template file <b>%1</b> does not exist.</qt>"
+#~ msgstr "<qt>Το αρχείο προτύπου <b>%1</b> δεν υπάρχει.</qt>"
+
+#~ msgid "File name:"
+#~ msgstr "Όνομα αρχείου:"
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Actions"
+#~ msgstr "Ε&νέργειες"
+
+#, fuzzy
+#~| msgid "&Open With"
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With"
+#~ msgstr "Ά&νοιγμα με"
+
+#, fuzzy
+#~| msgid "&Other..."
+#~ msgctxt "@action:inmenu Open With"
+#~ msgid "&Other..."
+#~ msgstr "Ά&λλο..."
+
+#, fuzzy
+#~| msgid "&Open With..."
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With..."
+#~ msgstr "Ά&νοιγμα με..."
+
+#~ msgid "Open &with %1"
+#~ msgstr "Άνοιγμα &με %1"
+
+#~ msgid "Open in New &Window"
+#~ msgstr "Άνοιγμα σε νέο &παράθυρο"
+
+#~ msgid "Open the trash in a new window"
+#~ msgstr "Άνοιγμα του Κάδου Απορριμμάτων σε ένα νέο παράθυρο"
+
+#~ msgid "Open the medium in a new window"
+#~ msgstr "Άνοιγμα του μέσου σε νέο παράθυρο"
+
+#~ msgid "Open the document in a new window"
+#~ msgstr "Άνοιγμα του εγγράφου σε ένα νέο παράθυρο"
+
+#~ msgid "Directory"
+#~ msgstr "Κατάλογος"
+
+#~ msgid "Moving"
+#~ msgstr "Μετακίνηση"
+
+#~ msgid "Source"
+#~ msgstr "Πηγή"
+
+#~ msgid "Destination"
+#~ msgstr "Προορισμός"
+
+#~ msgid "Deleting"
+#~ msgstr "Διαγραφή"
+
+#~ msgid "File"
+#~ msgstr "Αρχείο"
+
+#~ msgid "Und&o"
+#~ msgstr "Αναί&ρεση"
+
+#~ msgid "Und&o: Copy"
+#~ msgstr "&Αναίρεση: Αντιγραφή"
+
+#~ msgid "Und&o: Link"
+#~ msgstr "&Αναίρεση: Δεσμός"
+
+#~ msgid "Und&o: Move"
+#~ msgstr "&Αναίρεση: Μετακίνηση"
+
+#~ msgid "Und&o: Rename"
+#~ msgstr "&Αναίρεση: Μετονομασία"
+
+#~ msgid "Und&o: Trash"
+#~ msgstr "&Αναίρεση: Μετακίνηση στον Κάδο Απορριμμάτων"
+
+#~ msgid "Und&o: Create Folder"
+#~ msgstr "&Αναίρεση: Δημιουργία φακέλου"
+
+#~ msgid ""
+#~ "The file %1 was copied from %2, but since then it has apparently been "
+#~ "modified at %3.\n"
+#~ "Undoing the copy will delete the file, and all modifications will be "
+#~ "lost.\n"
+#~ "Are you sure you want to delete %4?"
+#~ msgstr ""
+#~ "Το αρχείο %1 αντιγράφηκε από το %2, αλλά εν τω μεταξύ άλλαξε στο %3.\n"
+#~ "Η αναίρεση της αντιγραφής θα διαγράψει το αρχείο και όλες οι αλλαγές θα "
+#~ "χαθούν.\n"
+#~ "Θέλετε σίγουρα να διαγράψετε το %4?"
+
+#~ msgid "Undo File Copy Confirmation"
+#~ msgstr "Επιβεβαίωση αναίρεσης αντιγραφής αρχείου"
+
+#~ msgid "Do you really want to delete this item?"
+#~ msgid_plural "Do you really want to delete these %1 items?"
+#~ msgstr[0] "Θέλετε πραγματικά να διαγράψετε αυτό το αντικείμενο;"
+#~ msgstr[1] "Θέλετε πραγματικά να διαγράψετε αυτά τα %1 αντικείμενα;"
+
+#~ msgid "Delete Files"
+#~ msgstr "Διαγραφή αρχείων"
+
+#~ msgid "Do you really want to move this item to the trash?"
+#~ msgid_plural "Do you really want to move these %1 items to the trash?"
+#~ msgstr[0] ""
+#~ "Θέλετε πραγματικά να μετακινήσετε αυτό το αντικείμενο στον κάδο "
+#~ "απορριμμάτων;"
+#~ msgstr[1] ""
+#~ "Θέλετε πραγματικά να μετακινήσετε αυτά τα %1 αντικείμενα στον κάδο "
+#~ "απορριμμάτων;"
+
+#~ msgid "Move to Trash"
+#~ msgstr "Μετακίνηση στον Κάδο Απορριμμάτων"
+
+#~ msgctxt "Verb"
+#~ msgid "&Trash"
+#~ msgstr "Με&τακίνηση στον Κάδο Απορριμμάτων"
+
+#, fuzzy
+#~| msgid "Und&o"
+#~ msgid "Und&o: %1"
+#~ msgstr "Αναί&ρεση"

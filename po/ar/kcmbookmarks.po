@@ -1,0 +1,1421 @@
+# translation of kcmkio.po to Arabic
+# translation of kcmkio.po to
+# Copyright (C) 2001,2002,2003, 2004, 2006, 2007, 2008, 2009 Free Software Foundation, Inc.
+# Mohammed Yousif <mhdyousif@gmx.net>, 2001.
+# Isam Bayazidi <bayazidi@arabeyes.org>, 2002.
+# Ammar Tabbaa <atabba@kacst.edu.sa>, 2004.
+# محمد سعد  Mohamed SAAD <metehyi@free.fr>, 2006.
+# AbdulAziz AlSharif <a.a-a.s@hotmail.com>, 2007.
+# عبدالعزيز الشريف <a.a-a.s@hotmail.com>, 2007.
+# Youssef Chahibi <chahibi@gmail.com>, 2007.
+# zayed <zayed.alsaidi@gmail.com>, 2008, 2009.
+# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2010, 2021.
+# Safa Alfulaij <safa1996alfulaij@gmail.com>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkio\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2021-12-11 18:05+0400\n"
+"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
+"Language-Team: ar\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 21.07.70\n"
+
+#: bookmarks.cpp:92
+#, kde-format
+msgid ""
+"<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
+"page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
+"\">bookmarks:/</a>.</p>"
+msgstr ""
+"<h1>علاماتي</h1><p>تسمح لك هذه الوحدة بضبط صفحة العلامات. </p><p>يمكنك "
+"الوصول إلى صفحة العلامات من <a href=\"bookmarks:/\">bookmarks:/</a>.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: bookmarks.ui:16
+#, kde-format
+msgid "Bookmarks"
+msgstr "العلامات"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowRoot)
+#: bookmarks.ui:23
+#, kde-format
+msgid ""
+"If this option is unchecked, bookmarks at the root of the hierarchy (not in "
+"a folder) are not displayed.\n"
+"If checked, they are gathered in a \"root\" folder."
+msgstr ""
+"إن لم يُعلَّم ها الخيار، لن تُعرض العلامات التي في جذر الهرم (ليست في مجلد).\n"
+"إذا عُلِّم، ستُجمع في مجلد \"الجذر\"."
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowRoot)
+#: bookmarks.ui:26
+#, kde-format
+msgid "&Show bookmarks without folder"
+msgstr "أ&ظهر العلامات بلا مجلد"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbFlattenTree)
+#: bookmarks.ui:37
+#, kde-format
+msgid ""
+"Sub-folders are shown within their parent by default. If you activate this "
+"option, sub-folders are displayed on their own.\n"
+"It looks less nice but it may help if you have a very big folder you want to "
+"spread in two columns."
+msgstr ""
+"تُعرض المجلدات الفرعية في أبواتها افتراضيًا. إن فعّلت هذا الخيار، ستُعرض "
+"المجلدات الفرعية منفصلة.\n"
+"قد يبدو هذا أقل جمالًا ولكن قد يكون مفيدًا إذا كنت تملك مجلد ضخم وتريد عرضه في "
+"عمودين منفصلين."
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbFlattenTree)
+#: bookmarks.ui:40
+#, kde-format
+msgid "&Flatten bookmarks tree"
+msgstr "س&طّح شجرة العلامات"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowPlaces)
+#: bookmarks.ui:47
+#, kde-format
+msgid ""
+"Show a box with KDE places (Home, Network, ...). Useful if you use konqueror "
+"as a file manager."
+msgstr ""
+"يُظهر مربعًا بأماكن كدي (المنزل، الشبكة، ...). مفيد إن كنت تستخدم كنكر كمدير "
+"للملفات."
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowPlaces)
+#: bookmarks.ui:50
+#, kde-format
+msgid "Show system &places"
+msgstr "أظهر أ&ماكن النظام"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: bookmarks.ui:63
+#, kde-format
+msgid "General Settings"
+msgstr "إعدادات عامة"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, label)
+#: bookmarks.ui:71
+#, kde-format
+msgid ""
+"Folders are automatically distributed in several columns. The optimal number "
+"of columns depends on the width of the konqueror window and the number of "
+"bookmarks you have."
+msgstr ""
+"تتوزع المجلدات آليًا في عدّة أعمدة. عدد الأعمدة المثالي يعتمد على عرض نافذة "
+"كنكر وعدد العلامات التي فيها."
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: bookmarks.ui:74
+#, kde-format
+msgid "Number of columns to show:"
+msgstr "عدد الأعمدة لعرضها:"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowBackgrounds)
+#: bookmarks.ui:109
+#, kde-format
+msgid "Disable it on slow system to disable background images."
+msgstr "عطلّه في الأنظمة البطيئة أو عطّل صور الخلفية."
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowBackgrounds)
+#: bookmarks.ui:112
+#, kde-format
+msgid "Show folder &backgrounds"
+msgstr "أظهر &خلفيات المجلدات"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, groupBox_3)
+#: bookmarks.ui:138
+#, kde-format
+msgid "How much disk space is used to cache the pixmaps"
+msgstr "كمية مساحة القرص المستخدمة في خبيئة الصور النقطية"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: bookmarks.ui:141
+#, kde-format
+msgid "Pixmap Cache"
+msgstr "خبيئة الصور النقطية"
+
+#. i18n: ectx: property (text), widget (QLabel, lbMaxCacheSize)
+#: bookmarks.ui:150
+#, kde-format
+msgid "Disk cache size:"
+msgstr "حجم خبيئة القرص:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, sbCacheSize)
+#: bookmarks.ui:163
+#, kde-format
+msgid " kB"
+msgstr " ك.بايت"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, clearCacheButton)
+#: bookmarks.ui:173
+#, kde-format
+msgid "Clear the pixmap cache"
+msgstr "امحُ خبيئة الصور النقطية"
+
+#. i18n: ectx: property (text), widget (QPushButton, clearCacheButton)
+#: bookmarks.ui:176
+#, kde-format
+msgid "&Clear Cache"
+msgstr "امحُ ال&خبيئة"
+
+#~ msgid ""
+#~ "<h1>Cache</h1><p>This module lets you configure your cache settings.</"
+#~ "p><p>The cache is an internal memory in Konqueror where recently read web "
+#~ "pages are stored. If you want to retrieve a web page again that you have "
+#~ "recently read, it will not be downloaded from the Internet, but rather "
+#~ "retrieved from the cache, which is a lot faster.</p>"
+#~ msgstr ""
+#~ "<h1>الخبيئة</h1><p>تسمح لك هذه الوحدة بضبط إعدادات الخبيئة.</p><p>الخبيئة "
+#~ "هي ذاكرة داخلية في كنكر تُخزَّن فيها بصفحات الوِب التي قرأتها حديثًا. إذا رغبت "
+#~ "في جلب صفحة الوِب مجدّدًا؛ لن تُنزَّل من الإنترنت من جديد، بل ستُجلب من الخبيئة، "
+#~ "وهذا أسرع بكثير من تنزيلها.</p>"
+
+#~ msgid ""
+#~ "Check this box if you want the web pages you visit to be stored on your "
+#~ "hard disk for quicker access. The stored pages will only be updated as "
+#~ "needed instead of on every visit to that site. This is especially useful "
+#~ "if you have a slow connection to the Internet."
+#~ msgstr ""
+#~ "علّم هذا إذا كنت ترغب في تخزين صفحات الوِب التي زرتها على القرص الصلب وهذا "
+#~ "للوصول السريع إليها. ستُحدَّث الصفحات المُخزَّنة فقط عند الحاجة، بدلاً من  كلّ "
+#~ "زيارة لذاك الموقع. هذه الميزة مفيدة بشكل خاص إذا كان لديك اتصال بطيء "
+#~ "بالإنترنت."
+
+#~ msgid "&Use cache"
+#~ msgstr "اس&تخدم الخبيئة"
+
+#~ msgid "Policy"
+#~ msgstr "السياسة"
+
+#~ msgid ""
+#~ "Verify whether the cached web page is valid before attempting to fetch "
+#~ "the web page again."
+#~ msgstr ""
+#~ "تحقّق فيما إذا كانت صفحة الوِب المُخبَّئة صالحة قبل محاولة جلب صفحة الوِب مجدّدًا."
+
+#~ msgid "&Keep cache in sync"
+#~ msgstr "&حافظ على مزامنة الخبيئة"
+
+#~ msgid ""
+#~ "Always use documents from the cache when available. You can still use the "
+#~ "reload button to synchronize the cache with the remote host."
+#~ msgstr ""
+#~ "استخدم المستندات من الخبيئة عندما تكون متوفّرة. ما زال يمكنك استخدام زرّ "
+#~ "إعادة التحميل لمزامنة الخبيئة مع المضيف البعيد."
+
+#~ msgid "Use cache whenever &possible"
+#~ msgstr "استخدم الخبيئة كلّما أم&كن"
+
+#~ msgid ""
+#~ "Do not fetch web pages that are not already stored in the cache. Offline "
+#~ "mode prevents you from viewing pages that you have not previously visited."
+#~ msgstr ""
+#~ "لا تجلب صفحات الوِب غير المخزّنة في الخبيئة. يمنعك وضع عدم الاتصال من عرض "
+#~ "صفحات لم تزرها من قبل."
+
+#~ msgid "O&ffline browsing mode"
+#~ msgstr "وضع التصفّح ب&دون اتصال"
+
+#~ msgid "Disk cache &size:"
+#~ msgstr "ح&جم خبيئة القرص:"
+
+#~ msgid " KiB"
+#~ msgstr " ك.بايت"
+
+#~ msgid "C&lear Cache"
+#~ msgstr "ا&محُ الخبيئة"
+
+#~ msgid ""
+#~ "Unable to start the cookie handler service.\n"
+#~ "You will not be able to manage the cookies that are stored on your "
+#~ "computer."
+#~ msgstr ""
+#~ "تعذّر بدأ خدمة التعامل مع الكعكات.\n"
+#~ "لن تستطيع إدارة الكعكات المخزّنة على الحاسوب."
+
+#~ msgid "&Policy"
+#~ msgstr "ال&سياسة"
+
+#~ msgid "&Management"
+#~ msgstr "ال&إدارة"
+
+#~ msgid ""
+#~ "<p><h1>Cookies</h1> Cookies contain information that Konqueror (or other "
+#~ "KDE applications using the HTTP protocol) stores on your computer, "
+#~ "initiated by a remote Internet server. This means that a web server can "
+#~ "store information about you and your browsing activities on your machine "
+#~ "for later use. You might consider this an invasion of privacy.</p><p> "
+#~ "However, cookies are useful in certain situations. For example, they are "
+#~ "often used by Internet shops, so you can 'put things into a shopping "
+#~ "basket'. Some sites require you have a browser that supports cookies.</"
+#~ "p><p> Because most people want a compromise between privacy and the "
+#~ "benefits cookies offer, KDE offers you the ability to customize the way "
+#~ "it handles cookies. So you might want to set KDE's default policy to ask "
+#~ "you whenever a server wants to set a cookie, allowing you to decide. For "
+#~ "your favorite shopping web sites that you trust, you might want to set "
+#~ "the policy to accept, then you can access the web sites without being "
+#~ "prompted every time KDE receives a cookie.</p>"
+#~ msgstr ""
+#~ "<p><h1>الكعكات</h1>تحوي الكعكات معلومات يخزّنها كنكر (أو أيّ تطبيق كدي أخر "
+#~ "يستخدم ميفاق HTTP )على الحاسوب، وهي تبدأ بطلب من خادوم الإنترنت البعيد. "
+#~ "هذا يعني أنّ خادوم الوِب يمكنه تخزين معلومات عنك وعن نشاطات المتصفّح في "
+#~ "الحاسوب لكي يستخدمها في وقت لاحق، قد تعتبر هذا انتهاكًا لخصوصيتك.</p><p> "
+#~ "على أيّ حال، قد تكون الكعكات مفيدة في بعض الأحيان. فعلى سبيل المثال، "
+#~ "تُستخدم الكعكات في المتاجر الإلكترونية لتُنشئ سلة مشتريات. بعض المواقع تطلب "
+#~ "أن يكون المتصفّح داعمًا للكعكات.</p><p> وبسبب أنّ أغلب الناس تريد أن توازن "
+#~ "بين الخصوصية ومنافع الكعكات، فإنّ كدي توفّر لك إمكانية تخصيص طريقة التعامل "
+#~ "مع الكعكات. فقد ترغب أن تعيّن سياسة كدي الافتراضية لسؤالك فيما كان الخادوم "
+#~ "يودّ تعيين كعكة، سامحًا لك بأن ترفض. قد ترغب بتعيين السياسة للسماح بكعكات "
+#~ "مواقع الوِب للشراء المفضّلة لديك والتي تثق بها، فيمكنك الوصول إلى الموقع "
+#~ "دون الحاجة إلى تأكيدك لاستقبال كدي الكعكة في كلّ مرة.</p>"
+
+#~ msgid "D-Bus Communication Error"
+#~ msgstr "خطأ تواصل مع D-Bus"
+
+#~ msgid "Unable to delete all the cookies as requested."
+#~ msgstr "تعذّر حذف كلّ الكعكات كما طُلِب."
+
+#~ msgid "Unable to delete cookies as requested."
+#~ msgstr "تعذّر حذف الكعكات كما طُلِب."
+
+#~ msgid "<h1>Cookie Management Quick Help</h1>"
+#~ msgstr "<h1>المساعدة السريعة لإدارة الكعكات</h1>"
+
+#~ msgid "Information Lookup Failure"
+#~ msgstr "فشل في البحث عن المعلومات"
+
+#~ msgid ""
+#~ "Unable to retrieve information about the cookies stored on your computer."
+#~ msgstr "تعذّر استرجاع معلومات حول الكعكات المخزّنة على الحاسوب."
+
+#~ msgid "End of session"
+#~ msgstr "نهاية الجلسة"
+
+#~ msgid "Yes"
+#~ msgstr "نعم"
+
+#~ msgid "Search"
+#~ msgstr "ابحث عن"
+
+#~ msgid "Search interactively for domains and hosts"
+#~ msgstr "ابحث بشكل تفاعلي عن المجالات والمضيفين"
+
+#~ msgid "Site"
+#~ msgstr "الموقع"
+
+#~ msgid "Cookie Name"
+#~ msgstr "اسم الكعكة"
+
+#~ msgid "D&elete"
+#~ msgstr "ا&حذف"
+
+#~ msgid "Delete A&ll"
+#~ msgstr "احذف ال&كلّ"
+
+#~ msgid "Configure &Policy..."
+#~ msgstr "اضبط ال&سياسة..."
+
+#~ msgid "&Reload List"
+#~ msgstr "أ&عد تحميل القائمة"
+
+#~ msgid "Details"
+#~ msgstr "تفاصيل"
+
+#~ msgid "Name:"
+#~ msgstr "الاسم:"
+
+#~ msgid "Value:"
+#~ msgstr "القيمة:"
+
+#~ msgid "Domain:"
+#~ msgstr "المجال:"
+
+#~ msgid "Path:"
+#~ msgstr "المسار:"
+
+#~ msgid "Expires:"
+#~ msgstr "تنتهي في:"
+
+#~ msgid "Secure:"
+#~ msgstr "آمن:"
+
+#~ msgctxt "@title:window"
+#~ msgid "Change Cookie Policy"
+#~ msgstr "غيّر سياسة الكعكات"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Cookie Policy"
+#~ msgstr "سياسة كعكات جديدة"
+
+#~ msgid ""
+#~ "<qt>A policy already exists for<center><b>%1</b></center>Do you want to "
+#~ "replace it?</qt>"
+#~ msgstr ""
+#~ "<qt>هناك سياسة موجودة بالفعل لِـ<center><b>%1</b></center>أتريد استبدالها؟"
+#~ "</qt>"
+
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Policy"
+#~ msgstr "سياسة مكرّرة"
+
+#~ msgid "Replace"
+#~ msgstr "استبدل"
+
+#~ msgid ""
+#~ "Unable to communicate with the cookie handler service.\n"
+#~ "Any changes you made will not take effect until the service is restarted."
+#~ msgstr ""
+#~ "تعذّر التواصل مع خدمة التعامل مع الكعكات.\n"
+#~ "أيّ تعديلات قمت بها لن تُطبَّق حتّى يُعاد تشغيل الخدمة."
+
+#, fuzzy
+#~ msgid ""
+#~ "<p><h1>Cookies</h1> Cookies contain information that Konqueror (or any "
+#~ "other KDE application using the HTTP protocol) stores on your computer "
+#~ "from a remote Internet server. This means that a web server can store "
+#~ "information about you and your browsing activities on your machine for "
+#~ "later use. You might consider this an invasion of privacy.</p><p>However, "
+#~ "cookies are useful in certain situations. For example, they are often "
+#~ "used by Internet shops, so you can 'put things into a shopping basket'. "
+#~ "Some sites require you have a browser that supports cookies.</"
+#~ "p><p>Because most people want a compromise between privacy and the "
+#~ "benefits cookies offer, KDE offers you the ability to customize the way "
+#~ "it handles cookies. You might, for example want to set KDE's default "
+#~ "policy to ask you whenever a server wants to set a cookie or simply "
+#~ "reject or accept everything. For example, you might choose to accept all "
+#~ "cookies from your favorite shopping web site. For this all you have to do "
+#~ "is either browse to that particular site and when you are presented with "
+#~ "the cookie dialog box, click on <i> This domain </i> under the 'apply to' "
+#~ "tab and choose accept or simply specify the name of the site in the <i> "
+#~ "Domain Specific Policy </i> tab and set it to accept. This enables you to "
+#~ "receive cookies from trusted web sites without being asked every time KDE "
+#~ "receives a cookie.</p>"
+#~ msgstr ""
+#~ "<p><h1>الكعك</h1>يحوي الكعك على معلومات يخزنها الكونكيور (أو أي تطبيق كدي "
+#~ "أخر يستعمل بروتوكول HTTP )على جهازك ، وهي تنشئ بطلب من خادم الإنترنت "
+#~ "البعيد. هذا يعني أن خادم الويب يستطيع تخزين معلومات عنك وعن نشاطات متصفحك "
+#~ "في حاسوبك لكي يستخدمها في وقت لاحق ، ربما قد تعتبر هذا انتهاكا لخصوصيتك.</"
+#~ "p><p> على كل حال قد تكون الكعك مفيدة في بعض الأحيان ،  فعلى سبيل المثال ، "
+#~ "تستخدم الكعك في المتاجر الإلكتروني لتنشئ سلة مشتريات . بعض المواقع تطلب "
+#~ "أن يكون المتصفح داعما للكعك.</p><p> و بسبب أن أغلب الناس تريد أن توازن "
+#~ "بين الخصوصية و المنافع الكعك ؛ فإن كيدي توفر لك القدرة على تخصيص طريقة "
+#~ "التعامل مع الكعك . فقد ترغب أن تجعل سياسة كيدي هي طلب الإذن لأي خادم يريد "
+#~ "أن ينشئ كعك ، وقد ترغب في السماح للمتاجرك الإلكترونية المفضلة التي تثق "
+#~ "فيها أن تنشئ كعك كما تريد ، فيمكنك وضع سياسة قبول الكعك بدون طلب الإذن "
+#~ "لهذه المواقع. </p> كل ما عليك هو أن تذهب إلى ذاك الموقع و عندما يظهر لك "
+#~ "مربع حوار الكعك ، انقر على <i> هذا المجال </i> تحت لسان 'طبق على' و اختر "
+#~ "اسمح أو  حدد بكل بساطة اسم الموقع في لسان <i> سياسة المجالات الخاصة </i> "
+#~ "ثم وافق على قبولها ، هذا يمكنك من استقبال كعك من المواقع الموثوقة بدون "
+#~ "الحاجة إلى سؤالك كل مرة تستقبل فيها الكعك."
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt>\n"
+#~ "<p>Enable cookie support. Normally you will want to have cookie support "
+#~ "enabled and customize it to suit your privacy needs.</p><p>\n"
+#~ "Please note that disabling cookie support might make many web sites "
+#~ "unbrowsable.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "<p>مكّن دعم الكعكات. عادة سترغب في تمكين دعم الكعكات وتخصيصها لتلائم حاجتك "
+#~ "للخصوصية.</p><p>\n"
+#~ "من فضلك لاحظ أن تعطيل دعم الكعكات سيجعلك غير قادر على تصفح الكثير من "
+#~ "مواقع الشبكة .</p>\n"
+#~ "</qt>"
+
+#~ msgid "Enable coo&kies"
+#~ msgstr "مكّن ال&كعكات"
+
+#~ msgid "Only acce&pt cookies from originating server"
+#~ msgstr "ا&قبل الكعكات من الخادم الأصلي فقط"
+
+#~ msgid "Automaticall&y accept session cookies"
+#~ msgstr "اقبل كعكات الجلسة آ&ليًا"
+
+#~ msgid "Default Policy"
+#~ msgstr "السياسة الافتراضية"
+
+#~ msgid "Accep&t all cookies"
+#~ msgstr "ا&قبل كلّ الكعكات"
+
+#~ msgid "Accept &until end of session"
+#~ msgstr "اقبل حتّى ن&هاية الجلسة"
+
+#~ msgid "Ask &for confirmation"
+#~ msgstr "اطلب ال&تأكيد"
+
+#~ msgid "Re&ject all cookies"
+#~ msgstr "ارف&ض كلّ الكعكات"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "To add a new policy, simply click on the <b>Add...</b> button and supply "
+#~ "the necessary information. To change an existing policy, use the "
+#~ "<b>Change...</b> button and choose the new policy from the policy dialog "
+#~ "box. Clicking on the <b>Delete</b> button will remove the currently "
+#~ "selected policy causing the default policy setting to be used for that "
+#~ "domain, whereas <b>Delete All</b> will remove all the site specific "
+#~ "policies.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>ع\n"
+#~ "لإضافة سياسة جديدة، ببساطة انقر زرّ <b>أضف...</b> وأدخِل المعلومات "
+#~ "الضرورية. ولتغيير سياسة موجودة، استخدم زرّ <b>غيّر...</b> واختر السياسة "
+#~ "الجديدة من مربع حواري السياسات. نقر الزرّ <b>احذف</b> سيزيل السياسة "
+#~ "المحدّدة حاليًا مسبّبًا استخدام السياسة الافتراضية لذاك المجال. بينما الزرّ "
+#~ "<b>احذف الكلّ</b> يزيل كلّ السياسات الخاصّة بهذا المجال.\n"
+#~ "</qt>"
+
+#~ msgid "Site Policy"
+#~ msgstr "سياسة الموقع"
+
+#~ msgid "Search interactively for domains"
+#~ msgstr "ابحث بشكل تفاعلي عن المجالات"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "List of sites for which you have set a specific cookie policy. Specific "
+#~ "policies override the default policy setting for these sites.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "قائمة المواقع التي وضعت لها سياسة كعكات محدّدة. السياسات المحدّدة ستتجاوز "
+#~ "إعدادات السياسة الافتراضية لهذه المواقع.\n"
+#~ "</qt>"
+
+#~ msgid "Domain"
+#~ msgstr "المجال"
+
+#~ msgid "&New..."
+#~ msgstr "&جديد..."
+
+#~ msgid "Chan&ge..."
+#~ msgstr "&غيّر..."
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the host or domain to which this policy applies, e.g. <b>www.kde."
+#~ "org</b> or <b>.kde.org</b>.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "أدخِل اسم المضيف أو المجال الذي ستُطبَّق السياسة عليه. مثلاً <b>www.kde.org</"
+#~ "b> أو <b>.kde.org</b>.\n"
+#~ "</qt>"
+
+#~ msgid "Site name:"
+#~ msgstr "اسم الموقع:"
+
+#~ msgid ""
+#~ "Enter the host or domain name, e.g. .kde.org, this policy applies to."
+#~ msgstr ""
+#~ "أدخِل اسم المضيف أو المجال، مثلًا \"‎.kde.org\"، التي ستُطبَّق السياسة عليه."
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Select the desired policy:\n"
+#~ "<ul>\n"
+#~ "<li><b>Accept</b> - Allows this site to set cookies</li>\n"
+#~ "<li><b>Accept until end of session</b> - Allows this site to set cookies "
+#~ "but they will expire at the end of the session.</li>\n"
+#~ "<li><b>Reject</b> - Refuse all cookies sent from this site</li>\n"
+#~ "<li><b>Ask</b> - Prompt when cookies are received from this site</li>\n"
+#~ "</ul>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "اختر السياسة التي ترغب بها:\n"
+#~ "<ul>\n"
+#~ "<li><b>اقبل</b> - السماح لهذا الموقع بتعيين كعكات</li>\n"
+#~ "<li><b>ارفض</b> - رفض كلّ الكعكات التي يرسلها هذا الموقع</li>\n"
+#~ "<li><b>اسألني</b> - السؤال كلّما استُقبِلت كعكات من هذا الموقع</li>\n"
+#~ "</ul>\n"
+#~ "</qt>"
+
+#~ msgid "Policy:"
+#~ msgstr "السياسة:"
+
+#~ msgid "Accept"
+#~ msgstr "اقبل"
+
+#~ msgid "Accept until end of session"
+#~ msgstr "اقبل حتّى نهاية الجلسة"
+
+#~ msgid "Reject"
+#~ msgstr "ارفض"
+
+#~ msgid "Ask"
+#~ msgstr "اسألني"
+
+#~ msgid "Disable Passive FTP"
+#~ msgstr "عطّل FTP السلبي"
+
+#, fuzzy
+#~ msgid ""
+#~ "When FTP connections are passive the client connects to the server, "
+#~ "instead of the other way round, so firewalls do not block the connection; "
+#~ "old FTP servers may not support Passive FTP though."
+#~ msgstr ""
+#~ "في اتصال FTP السلبي، ، يقوم العميل بالاتصال بالخادم بدلا أن يتصل الخادم "
+#~ "بالعميل ؛ لذا لا يستطيع الجدار الناري منع الاتصال ، ولكن قد لا تدعم خوادم "
+#~ "FTP القديم الـ FTP السلبي."
+
+#~ msgid "Mark partially uploaded files"
+#~ msgstr "علّم الملفات المرفوعة &جزئيًا"
+
+#~ msgid ""
+#~ "While a file is being uploaded its extension is \".part\". When fully "
+#~ "uploaded it is renamed to its real name."
+#~ msgstr ""
+#~ "أثناء رفع ملف سيكون امتداده \"‎\".part. عند انتهاء الرفع ستُعاد تسميته إلى "
+#~ "اسمه الحقيقي."
+
+#, fuzzy
+#~ msgid ""
+#~ "<h1>Proxy</h1><p>A proxy server is an intermediate program that sits "
+#~ "between your machine and the Internet and provides services such as web "
+#~ "page caching and/or filtering.</p><p>Caching proxy servers give you "
+#~ "faster access to sites you have already visited by locally storing or "
+#~ "caching the content of those pages; filtering proxy servers, on the other "
+#~ "hand, provide the ability to block out requests for ads, spam, or "
+#~ "anything else you want to block.</p><p><u>Note:</u> Some proxy servers "
+#~ "provide both services.</p>"
+#~ msgstr ""
+#~ "ب<h1>الوكيل</h1><p>خادوم الوكيل هو برنامج يتوسّط بين الجهاز والإنترنت، "
+#~ "ويقدّم خدمات مثل التخزين المؤقت لصفحات الإنترنت و/أو التنقية.</p><p>خوادم "
+#~ "التخزين المؤقت تعطيك سرعة النفاذ عالية للمواقع التي زرتها من قبل بواسطة "
+#~ "تخزين هذه محتويات هذه المواقع بشكل مؤقت ، أما خوادم التقنيةأو الترشيح فيه "
+#~ "تعطيك القدرة على منع الإعلانات أو السخام أو أي شيء أخر تريد منعه.</"
+#~ "p><p><u>ملاحظة:</u> بعض خوادم التنقية تقدم كلا الخدمتين.</p>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Setup proxy configuration.\n"
+#~ "<p>\n"
+#~ "A proxy server is an intermediate machine that sits between your computer "
+#~ "and the Internet and provides services such as web page caching and "
+#~ "filtering. Caching proxy servers give you faster access to web sites you "
+#~ "have already visited by locally storing or caching those pages; filtering "
+#~ "proxy servers usually provide the ability to block out requests for ads, "
+#~ "spam, or anything else you want to block.\n"
+#~ "<p>\n"
+#~ "If you are uncertain whether or not you need to use a proxy server to "
+#~ "connect to the Internet, consult your Internet service provider's setup "
+#~ "guide or your system administrator.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<h1>الوكيل</h1><p>خادم الوكيل هو برنامج يتوسط بين جهازك و الإنترنت ، و "
+#~ "يقوم بتقديم خدمات  مثل التخزين المؤقت لصفحات الإنترنت و/أو التنقية.</"
+#~ "p><p>خوادم التخزين المؤقت تعطيك سرعة النفاذ عالية للمواقع التي زرتها من "
+#~ "قبل بواسطة تخزين هذه محتويات هذه المواقع بشكل مؤقت ، أما خوادم التقنيةأو "
+#~ "الترشيح فيه تعطيك القدرة على منع الإعلانات أو السخام أو أي شيء أخر تريد "
+#~ "منعه.</p><p><u>ملاحظة:</u> بعض خوادم التنقية تقدم كلا الخدمتين.</p>"
+
+#~ msgid "Connect to the Internet directly."
+#~ msgstr "اتصل بالإنترنت مباشرة."
+
+#~ msgid "No Proxy"
+#~ msgstr "لا وكيل"
+
+#~ msgid "Detect proxy configuration automatically"
+#~ msgstr "اكتشف تضبيط الوكيل آليًا"
+
+#~ msgid "Use the specified proxy script to configure the proxy settings."
+#~ msgstr "استخدم سكرِبت الوكيل المحدّد لضبط إعدادات الوكيل."
+
+#, fuzzy
+#~ msgid "Use proxy auto configuration URL:"
+#~ msgstr "استخدم عنوان "
+
+#~ msgid "Enter the address for the proxy configuration script."
+#~ msgstr "أدخِل عنوان سكرِبت ضبط الوكيل."
+
+#~ msgid "Use system proxy configuration:"
+#~ msgstr "استخدم تضبيط وكيل النظام:"
+
+#~ msgid ""
+#~ "<qt>Attempt automatic discovery of the environment variables used for "
+#~ "setting system wide proxy information.<p> This feature works by searching "
+#~ "for commonly used variable names such as HTTP_PROXY, FTP_PROXY and "
+#~ "NO_PROXY.</qt>"
+#~ msgstr ""
+#~ "<qt>محاولة اكتشاف متغيّر البيئة المُستخدَم لمعلومات الوسيط في كامل النظام "
+#~ "آليًا.<p> تعمل هذه الميزة عبر بحث أسماء المتغيّرات المُستخدَمة بكثرة مثل "
+#~ "HTTP_PROXY، و FTP_PROXY و NO_PROXY.</qt>"
+
+#~ msgid "Auto D&etect"
+#~ msgstr "ا&كتشف آليًا"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the name of the environment variable, e.g. <b>HTTP_PROXY</b>, used "
+#~ "to store the address of the HTTP proxy server.<p>\n"
+#~ "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~ "attempt automatic discovery of this variable.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "أدخِل اسم متغيّر البيئة، مثلًا <b>HTTP_PROXY</b>، ليُستخدم في تخزين عنوان "
+#~ "خادوم وكيل HTTP.<p>\n"
+#~ "بشكل بديل، يمكنك نقر زرّ <b>\"اكتشف آليًا\"</b> لمحاولة اكتشاف هذا المتغيّر "
+#~ "آليًا.</p>\n"
+#~ "</qt>"
+
+#~ msgid "HTTP Proxy:"
+#~ msgstr "وكيل HTTP:"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the name of the environment variable, e.g. <b>HTTPS_PROXY</b>, used "
+#~ "to store the address of the HTTPS proxy server.<p>\n"
+#~ "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~ "attempt an automatic discovery of this variable.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "أدخِل اسم متغيّر البيئة، مثلًا <b>HTTPS_PROXY</b>، ليُستخدم في تخزين عنوان "
+#~ "خادوم وكيل HTTPS.<p>\n"
+#~ "بشكل بديل، يمكنك نقر زرّ <b>\"اكتشف آليًا\"</b> لمحاولة اكتشاف هذا المتغيّر "
+#~ "آليًا.</p>\n"
+#~ "</qt>"
+
+#~ msgid "SSL Proxy:"
+#~ msgstr "وكيل SSL:"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the name of the environment variable, e.g. <b>FTP_PROXY</b>, used "
+#~ "to store the address of the FTP proxy server.<p>\n"
+#~ "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~ "attempt an automatic discovery of this variable.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "أدخِل اسم متغيّر البيئة، مثلًا <b>FTP_PROXY</b>، ليُستخدم في تخزين عنوان "
+#~ "خادوم وكيل FTP.<p>\n"
+#~ "بشكل بديل، يمكنك نقر زرّ <b>\"اكتشف آليًا\"</b> لمحاولة اكتشاف هذا المتغيّر "
+#~ "آليًا.</p>\n"
+#~ "</qt>"
+
+#~ msgid "FTP Proxy:"
+#~ msgstr "وكيل FTP:"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the name of the environment variable, e.g. <b>SOCKS_PROXY</b>, used "
+#~ "to store the address of the SOCKS proxy server.<p>\n"
+#~ "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~ "attempt an automatic discovery of this variable.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "أدخِل اسم متغيّر البيئة، مثلًا <b>SOCKS_PROXY</b>، ليُستخدم في تخزين عنوان "
+#~ "خادوم وكيل SOCKS.<p>\n"
+#~ "بشكل بديل، يمكنك نقر زرّ <b>\"اكتشف آليًا\"</b> لمحاولة اكتشاف هذا المتغيّر "
+#~ "آليًا.</p>\n"
+#~ "</qt>"
+
+#~ msgid "SOCKS Proxy:"
+#~ msgstr "وكيل SOCKS:"
+
+#~ msgid ""
+#~ "<qt>Enter the name of the environment variable, e.g. <b>SOCKS_PROXY</b>, "
+#~ "used to store the address of the SOCKS proxy server.<p>Alternatively, you "
+#~ "can click on the <b>\"Auto Detect\"</b> button to attempt an automatic "
+#~ "discovery of this variable.</p></qt>"
+#~ msgstr ""
+#~ "<qt>أدخِل اسم متغيّر البيئة، مثلًا <b>SOCKS_PROXY</b>، ليُستخدم في تخزين "
+#~ "عنوان خادوم وكيل SOCKS.<p>بشكل بديل، يمكنك نقر زرّ <b>\"اكتشف آليًا\"</b> "
+#~ "لمحاولة اكتشاف هذا المتغيّر آليًا.</p></qt>"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the environment variable, e.g. <b>NO_PROXY</b>, used to store the "
+#~ "addresses of sites for which the proxy server should not be used.<p>\n"
+#~ "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~ "attempt an automatic discovery of this variable.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "أدخِل اسم متغيّر البيئة، مثلًا <b>NO_PROXY</b>، ليُستخدم في تخزين عنوانين "
+#~ "المواقع التي لا يجب استخدام خادوم وكيل فيها.<p>\n"
+#~ "بشكل بديل، يمكنك نقر زرّ <b>\"اكتشف آليًا\"</b> لمحاولة اكتشاف هذا المتغيّر "
+#~ "آليًا.</p>\n"
+#~ "</qt>"
+
+#~ msgid "Exceptions:"
+#~ msgstr "الاستثناءات:"
+
+#~ msgid ""
+#~ "<qt>Enter the environment variable, e.g. <b>NO_PROXY</b>, used to store "
+#~ "the addresses of sites for which the above proxy settings should not be "
+#~ "used.<p>Alternatively, you can click on the <b>\"Auto Detect\"</b> button "
+#~ "to attempt an automatic discovery of this variable.</p></qt>"
+#~ msgstr ""
+#~ "<qt>أدخِل اسم متغيّر البيئة، مثلًا <b>NO_PROXY</b>، ليُستخدم في تخزين عنوانين "
+#~ "المواقع التي لا يجب استخدام خادوم وكيل فيها. <p>بشكل بديل، يمكنك نقر زرّ "
+#~ "<b>\"اكتشف آليًا\"</b> لمحاولة اكتشاف هذا المتغيّر آليًا.</p></qt>"
+
+#~ msgid "Show the &value of the environment variables"
+#~ msgstr "أظهر قيم مت&غيّرات البيئية"
+
+#~ msgid "Manually enter proxy server configuration information."
+#~ msgstr "أدخِل معلومات ضبط خادوم الوكيل يدويًا."
+
+#~ msgid "Use manually specified proxy configuration:"
+#~ msgstr "استخدم ضبط الوكيل المحدّد يدويًا:"
+
+#~ msgid "Enter the address of the HTTP proxy server."
+#~ msgstr "أدخِل عنوان خادوم وكيل HTTP."
+
+#~ msgid "Port:"
+#~ msgstr "المنفذ:"
+
+#~ msgid "Enter the port number of the HTTP proxy server."
+#~ msgstr "أدخِل رقم منفذ خادوم وكيل HTTP."
+
+#~ msgid "Use this proxy server for a&ll protocols"
+#~ msgstr "استخدم خادوم الوكيل هذا ل&كلّ الموافيق"
+
+#~ msgid "Enter the address of the HTTPS proxy server."
+#~ msgstr "أدخِل عنوان خادوم وكيل HTTPS."
+
+#~ msgid "Enter the port number of the HTTPS proxy server."
+#~ msgstr "أدخِل رقم منفذ خادوم وكيل HTTPS."
+
+#~ msgid "Enter the address of the FTP proxy server."
+#~ msgstr "أدخِل عنوان خادوم وكيل FTP."
+
+#~ msgid "Enter the port number of the FTP proxy server."
+#~ msgstr "أدخِل رقم منفذ خادوم وكيل FTP."
+
+#~ msgid "Enter the address of the SOCKS proxy server."
+#~ msgstr "أدخِل عنوان خادوم وكيل SOCKS."
+
+#~ msgid "Enter the port number of the SOCKS proxy server."
+#~ msgstr "أدخِل رقم منفذ خادوم وكيل SOCKS."
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Check this box if you want the above proxy settings to apply only to the "
+#~ "addresses listed in the <i>Exceptions</i> list.</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "علّم هذا المربع إن أردت أن تُطبَّق إعدادات الوكيل أعلاه فقط إلى العناوين "
+#~ "المسردة في قائمة <i>الاستثناءات</i>.</qt>"
+
+#~ msgid "Use proxy settings only for addresses in the Exceptions list"
+#~ msgstr "استخدم إعدادات الوكيل فقط مع العناوين في قائمة الاستثناءات"
+
+#~ msgid ""
+#~ "You have to restart the running applications for these changes to take "
+#~ "effect."
+#~ msgstr "عليك إعادة تشغيل التطبيقات العاملة لتُطبَّق هذه التغييرات."
+
+#~ msgctxt "@title:window"
+#~ msgid "Update Failed"
+#~ msgstr "فشل التحديث"
+
+#~ msgid "You have to restart KDE for these changes to take effect."
+#~ msgstr "عليك إعادة تشغيل كدي لتطبيق التغييرات."
+
+#~ msgid "Timeout Values"
+#~ msgstr "قِيَم المهلة"
+
+#~ msgid ""
+#~ "Here you can set timeout values. You might want to tweak them if your "
+#~ "connection is very slow. The maximum allowed value is 1 second."
+#~ msgid_plural ""
+#~ "Here you can set timeout values. You might want to tweak them if your "
+#~ "connection is very slow. The maximum allowed value is %1 seconds."
+#~ msgstr[0] ""
+#~ "يمكنك من هنا تعيين قِيَم المهلة. قد ترغب بتغييرها إذا كان اتصالك بالإنترنت "
+#~ "بطيء جدًا. أكبر قيمة ممكنة هي 0 ثانية."
+#~ msgstr[1] ""
+#~ "يمكنك من هنا تعيين قِيَم المهلة. قد ترغب بتغييرها إذا كان اتصالك بالإنترنت "
+#~ "بطيء جدًا. أكبر قيمة ممكنة هي ثانية واحدة."
+#~ msgstr[2] ""
+#~ "يمكنك من هنا تعيين قِيَم المهلة. قد ترغب بتغييرها إذا كان اتصالك بالإنترنت "
+#~ "بطيء جدًا. أكبر قيمة ممكنة هي ثانيتين."
+#~ msgstr[3] ""
+#~ "يمكنك من هنا تعيين قِيَم المهلة. قد ترغب بتغييرها إذا كان اتصالك بالإنترنت "
+#~ "بطيء جدًا. أكبر قيمة ممكنة هي %1 ثوان."
+#~ msgstr[4] ""
+#~ "يمكنك من هنا تعيين قِيَم المهلة. قد ترغب بتغييرها إذا كان اتصالك بالإنترنت "
+#~ "بطيء جدًا. أكبر قيمة ممكنة هي %1 ثانية."
+#~ msgstr[5] ""
+#~ "يمكنك من هنا تعيين قِيَم المهلة. قد ترغب بتغييرها إذا كان اتصالك بالإنترنت "
+#~ "بطيء جدًا. أكبر قيمة ممكنة هي %1 ثانية."
+
+#~ msgid " second"
+#~ msgid_plural " seconds"
+#~ msgstr[0] " ث"
+#~ msgstr[1] " ث"
+#~ msgstr[2] " ث"
+#~ msgstr[3] " ث"
+#~ msgstr[4] " ث"
+#~ msgstr[5] " ث"
+
+#~ msgid "Soc&ket read:"
+#~ msgstr "&قراءة المقبس:"
+
+#~ msgid "Pro&xy connect:"
+#~ msgstr "الاتصال بال&وكيل:"
+
+#~ msgid "Server co&nnect:"
+#~ msgstr "الاتصال بال&خادوم:"
+
+#~ msgid "&Server response:"
+#~ msgstr "ر&دّ الخادوم:"
+
+#~ msgid "FTP Options"
+#~ msgstr "خيارات FTP"
+
+#~ msgid "Enable passive &mode (PASV)"
+#~ msgstr "مكّن الو&ضع السلبي (PASV)"
+
+#~ msgid ""
+#~ "Enables FTP's \"passive\" mode. This is required to allow FTP to work "
+#~ "from behind firewalls."
+#~ msgstr ""
+#~ "مكّن وضع \"passive\" لِـ FTP. هذا ضروري للسماح لِ FTP بالعمل وراء جدار النار."
+
+#~ msgid "Mark &partially uploaded files"
+#~ msgstr "علّم الملفات المرفوعة جزئيًا"
+
+#~ msgid ""
+#~ "<p>Marks partially uploaded FTP files.</p><p>When this option is enabled, "
+#~ "partially uploaded files will have a \".part\" extension. This extension "
+#~ "will be removed once the transfer is complete.</p>"
+#~ msgstr ""
+#~ "<p>يعلّم ملفات FTP المرفوعة جزئيًا.</p><p>عند تمكين هذا الخيار، ستملك "
+#~ "الملفات المرفوعة جزئيًا الامتداد ‎\".part\". هذا الامتداد سيُزال ما إن تكتمل "
+#~ "عملية النقل.</p>"
+
+#~ msgid ""
+#~ "<h1>Network Preferences</h1>Here you can define the behavior of KDE "
+#~ "programs when using Internet and network connections. If you experience "
+#~ "timeouts or use a modem to connect to the Internet, you might want to "
+#~ "adjust these settings."
+#~ msgstr ""
+#~ "<h1>تفضيلات الشبكة</h1>يمكنك من هنا تعريف سلوك برامج كدي عند استخدام "
+#~ "الإنترنت واتصالات الشبكة. إذا عانيت من مشاكل انتهاء المهلة أو كنت تستخدم "
+#~ "مودمًا، قد ترغب بتغيير هذه القيم."
+
+#~ msgid "These settings apply to network browsing only."
+#~ msgstr "تُطبَّق هذه الإعدادات فقط لتصفّح الشبكة."
+
+#~ msgid "Default user name:"
+#~ msgstr "اسم المستخدم الافتراضي:"
+
+#~ msgid "Default password:"
+#~ msgstr "كلمة المرور الافتراضية:"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add Identification"
+#~ msgstr "أضف تعريفًا"
+
+#~ msgctxt "@title:window"
+#~ msgid "Modify Identification"
+#~ msgstr "عدّل التعريف"
+
+#~ msgid ""
+#~ "<qt><center>Found an existing identification for<br/><b>%1</b><br/>Do you "
+#~ "want to replace it?</center></qt>"
+#~ msgstr ""
+#~ "<qt><center>عُثر على تعريف موجود لِـ<br/><b>%1</b><br/>أتريد استبداله؟</"
+#~ "center></qt>"
+
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Identification"
+#~ msgstr "تعريف مكرّر"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Send the browser identification to web sites.<p>\n"
+#~ "<u>NOTE:</u> Many sites rely on this information to display pages "
+#~ "properly, hence, it is highly recommended that you do not totally disable "
+#~ "this feature but rather customize it.<p>\n"
+#~ "By default, only minimal identification information is sent to remote "
+#~ "sites. The identification text that will be sent is shown below.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "أرسل تعريف المتصفّح إلى مواقع الوِب.<p>\n"
+#~ "<u>ملاحظة:</u> تعتمد الكثير من المواقع على هذه المعلومات لعرض الصفحات "
+#~ "بشكل صحيح، لذا من المستحسن بشدّة ألّا تعطّل هذه الميزة كليًّا بل تخصّصها.<p>\n"
+#~ "افتراضيًا، فقط معلومات التعريف الدنيا ستُرسَل إلى المواقع البعيدة. نصّ "
+#~ "التعريف الذي سيُرسَل ظاهر أدناه.\n"
+#~ "</qt>"
+
+#~ msgid "&Send identification"
+#~ msgstr "أ&رسل التعريف"
+
+#~ msgid ""
+#~ "The browser identification text sent to the sites you visit. Use the "
+#~ "provided options to customize it."
+#~ msgstr ""
+#~ "نصّ تعريف المتصفّح ليُرسَل إلى المواقع التي تزورها. استخدم الخيارات المُوفَّرة "
+#~ "لتخصيصه."
+
+#~ msgid "Default Identification"
+#~ msgstr "التعريف الافتراضي"
+
+#~ msgid ""
+#~ "The browser identification text sent to the sites you visit. You can "
+#~ "customize it using the options provided below."
+#~ msgstr ""
+#~ "نصّ تعريف المتصفّح ليُرسَل إلى المواقع التي تزورها. يمكنك تخصيصه باستخدام "
+#~ "الخيارات المُوفَّرة أدناه."
+
+#~ msgid ""
+#~ "Includes your operating system's name in the browser identification text."
+#~ msgstr "يضمّن اسم نظام التشغيل في نصّ تعريف المتصفّح."
+
+#~ msgid "Add operating s&ystem name"
+#~ msgstr "أضف اسم ن&ظام تشغيل"
+
+#~ msgid ""
+#~ "Includes your operating system's version number in the browser "
+#~ "identification text."
+#~ msgstr "يضمّن رقم إصدار نظام التشغيل في نصّ تعريف المتصفّح."
+
+#~ msgid "Add operating system &version"
+#~ msgstr "أضف إ&صدار نظام التشغيل"
+
+#~ msgid "Includes your machine's CPU type in the browser identification text."
+#~ msgstr "يضمّن نوع معالج الآلة في نصّ تعريف المتصفّح."
+
+#~ msgid "Add &machine (processor) type"
+#~ msgstr "أضف نوع ال&جهاز (المعالج)"
+
+#~ msgid ""
+#~ "Includes your language settings in the browser identification text to "
+#~ "obtain localized versions of the page."
+#~ msgstr ""
+#~ "يضمّن إعدادات اللغة في نصّ تعريف المتصفّح للحصول على إصدارات مُعرَّبة من الصفحة."
+
+#~ msgid "Add lang&uage information"
+#~ msgstr "أضف معلومات الل&غة"
+
+#~ msgid "Site Specific Identification"
+#~ msgstr "تعريف محدّد للمواقع"
+
+#~ msgid "Site Name"
+#~ msgstr "اسم الموقع"
+
+#~ msgid "Identification"
+#~ msgstr "التعريف"
+
+#~ msgid "User Agent"
+#~ msgstr "وكيل المستخدم"
+
+#~ msgid "Add new identification text for a site."
+#~ msgstr "أضف نصّ تعريف جديد لموقع ما."
+
+#~ msgid "Change the selected identifier text."
+#~ msgstr "غيّر نصّ التعريف المحدّد."
+
+#~ msgid "Delete the selected identifier text."
+#~ msgstr "احذف نصّ التعريف المحدّد."
+
+#~ msgid "Delete all identifiers."
+#~ msgstr "احذف كلّ التعريفات."
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the site or domain name where a fake browser identification should "
+#~ "be used.<p>\n"
+#~ "<u>NOTE:</u> Wildcard syntax such as \\\"*,?\\\" is NOT allowed: instead, "
+#~ "use the top level address of a site to make generic matches; for example, "
+#~ "if you want all KDE sites to receive a fake browser identification, you "
+#~ "would enter <code>kde.org</code> - the fake identity would then be sent "
+#~ "to any KDE site that ends with <code>kde.org</code>.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "أدخِل اسم الموقع أو المجال الذي سيُستخدَم فيه تعريف زائف.<p>\n"
+#~ "<u>ملاحظة: </u> أحرف البدل مثل \\\"*,?\\\" لا يُسمح باستخدامها. بدلاً من "
+#~ "ذلك أدخِل عنوان المستوى الأعلى للموقع لعمل مطابقة عامّة لكلّ المواقع "
+#~ "الموجودة تحته. على سبيل المثال، إذا أردت أن تستقبل كلّ مواقع كدي تعريفًا "
+#~ "وهميًا، أدخِل <code>kde.org</code>. سيُرسَل التعريف الزائف عندها إلى أيّ موقع "
+#~ "كدي ينتهي بِـ <code>kde.org</code>.</p>\n"
+#~ "</qt>"
+
+#~ msgid "&When browsing the following site:"
+#~ msgstr "عند تصفّح ال&موقع التالي:"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Select the browser identification to use whenever contacting the site you "
+#~ "specified above.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "اختر تعريف المتصفّح المُستخدَم متى ما اتّصلت بالموقع الذي حدّدته بالأعلى.\n"
+#~ "</qt>"
+
+#~ msgid "&Use the following identification:"
+#~ msgstr "استخدم ال&تعريف التالي:"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "The actual browser identification text that will be sent to the remote "
+#~ "machine.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "نصّ تعريف المتصفّح الحقيقي الذي سيُرسَل إلى الآلة البعيدة.\n"
+#~ "</qt>"
+
+#~ msgid "Real identification:"
+#~ msgstr "التعريف الحقيقي:"
+
+#~ msgid "Treat &all cookies as session cookies"
+#~ msgstr "ا&عتبر كلّ الكعكات ككعكات الجلسة"
+
+#~ msgid ""
+#~ "Enter the port number of the HTTP proxy server. Default is 8080. Another "
+#~ "common value is 3128."
+#~ msgstr ""
+#~ "أدخل رقم المنفذ الخاص بخادم الوكيل الخاص بالـHTTP. الرقم الافتراضي هو "
+#~ "8080. من الأرقام الأخرى الشائعة عادة 3128."
+
+#~ msgid ""
+#~ "Enter the port number of the FTP proxy server. Default 8080. Another "
+#~ "common value is 3128."
+#~ msgstr ""
+#~ "أدخل رقم المنفذ الخاص بخادم الوكيل الخاص بالـFTP. الرقم الافتراضي هو "
+#~ "8080. من الأرقام الأخرى الشائعة عادة 3128."
+
+#, fuzzy
+#~| msgid "Variable Proxy Configuration"
+#~ msgctxt "@title:window"
+#~ msgid "Variable Proxy Configuration"
+#~ msgstr "تشكيل الوكيل المتغير"
+
+#~ msgid "You must specify at least one valid proxy environment variable."
+#~ msgstr "يجب عليك تحديد وكيل بيئي متغير صالح على الأقل."
+
+#~ msgid ""
+#~ "<qt>Make sure you entered the actual environment variable name rather "
+#~ "than its value. For example, if the environment variable is <br /"
+#~ "><b>HTTP_PROXY=http://localhost:3128</b><br /> you need to enter "
+#~ "<b>HTTP_PROXY</b> here instead of the actual value http://localhost:3128."
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>تأكد من أنك أدخلت اسم المتغير البيئة بدلا عن قيمته. على سبيل المثال "
+#~ "إذا كان متغير البيئة هو  <br /><b>HTTP_PROXY=http://localhost:3128</"
+#~ "b><br /> فإنك بحاجة إلى إدخال<b>HTTP_PROXY</b> بدلا عن القيمة الحقيقية "
+#~ "http://localhost:3128.</qt>"
+
+#, fuzzy
+#~| msgid "Invalid Proxy Setup"
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Proxy Setup"
+#~ msgstr "إعداد غير صالح للوكيل"
+
+#~ msgid "Successfully verified."
+#~ msgstr "تم التحقق بنجاح"
+
+#, fuzzy
+#~| msgid "Proxy Setup"
+#~ msgctxt "@title:window"
+#~ msgid "Proxy Setup"
+#~ msgstr "إعداد الوكيل"
+
+#~ msgid ""
+#~ "Did not detect any environment variables commonly used to set system wide "
+#~ "proxy information."
+#~ msgstr ""
+#~ "لم يتم العثور على أي من أسماء المتغيرات البيئية شائعة الاستخدام لإعداد "
+#~ "معلومات الوكيل الخاصة بالنظام ككل."
+
+#~ msgid ""
+#~ "<qt>To learn about the variable names the automatic detection process "
+#~ "searches for, press OK, click on the quick help button on the window "
+#~ "title bar of the previous dialog and then click on the \"<b>Auto Detect</"
+#~ "b>\" button.</qt>"
+#~ msgstr ""
+#~ "<qt>لتتعرف على أسماء المتغيرات التي تبحث عنها عملية الاكتشاف التلقائي، "
+#~ "اضغط على زر موافق، ثم إنقر على زر المساعدة السريعة الموجود في شريط عنوان "
+#~ "النافذة  من مربع الحوار \"<b>تشكيل الوكيل المتغير</b>\" ثم انقر على زر "
+#~ "\"<b>اكتشف تلقائياً</b>\".</qt>"
+
+#, fuzzy
+#~| msgid "Automatic Proxy Variable Detection"
+#~ msgctxt "@title:window"
+#~ msgid "Automatic Proxy Variable Detection"
+#~ msgstr "تحديد متغير الوكيل آلياً."
+
+#, fuzzy
+#~| msgid "Manual Proxy Configuration"
+#~ msgctxt "@title:window"
+#~ msgid "Manual Proxy Configuration"
+#~ msgstr "تشكيل الوكيل يدوياً"
+
+#, fuzzy
+#~| msgid "Invalid Proxy Setting"
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Proxy Setting"
+#~ msgstr "إعداد غير صالح للوكيل"
+
+#~ msgid ""
+#~ "One or more of the specified proxy settings are invalid. The incorrect "
+#~ "entries are highlighted."
+#~ msgstr ""
+#~ "واحد أو أكثر من إعدادات الوكيل المحددة غير صالحة. الخانات الغير صحيحة هي "
+#~ "البارزة."
+
+#~ msgid "You entered a duplicate address. Please try again."
+#~ msgstr "قمت بإدخال عنوان مكرر. من فضلك حاول مرة ثانية."
+
+#~ msgid "<qt><center><b>%1</b></center> is already in the list.</qt>"
+#~ msgstr "<qt><center><b>%1</b></center> موجود في القائمة.</qt>"
+
+#, fuzzy
+#~| msgid "Duplicate Entry"
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Entry"
+#~ msgstr "مدخلة مكررة"
+
+#, fuzzy
+#~| msgid "New Exception"
+#~ msgctxt "@title:window"
+#~ msgid "New Exception"
+#~ msgstr "استثناء جديد"
+
+#, fuzzy
+#~| msgid "Change Exception"
+#~ msgctxt "@title:window"
+#~ msgid "Change Exception"
+#~ msgstr "غيّر استثناء"
+
+#, fuzzy
+#~| msgid "Invalid Entry"
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Entry"
+#~ msgstr "مدخلة غير صالحة"
+
+#~ msgid "The address you have entered is not valid."
+#~ msgstr "العنوان الذي قمت بإدخاله غير صالح"
+
+#~ msgid ""
+#~ "<qt>Make sure none of the addresses or URLs you specified contain invalid "
+#~ "or wildcard characters such as spaces, asterisks (*), or question "
+#~ "marks(?).<br /><br /><u>Examples of VALID entries:</u><br /><code>http://"
+#~ "mycompany.com, 192.168.10.1, mycompany.com, localhost, http://localhost</"
+#~ "code><br /><br /><u>Examples of INVALID entries:</u><br /><code>http://my "
+#~ "company.com, http:/mycompany,com file:/localhost</code></qt>"
+#~ msgstr ""
+#~ "<qt>تأكد من أن العناوين التي تحددها لا تحتوي على محتويات غير صالحة أو "
+#~ "محارف علامات مثل الفراغ ، و النجمة (*), أو علامة الاستفهام(؟).<br /><br /"
+#~ "> <u>أمثلة على مدخلات صحيحة:</u><br /><code>http://mycompany.com, "
+#~ "192.168.10.1, mycompany.com, localhost, http://localhost</code><br /><br /"
+#~ "><u>أمثلة على مدخلات غير صحيحة:</u><br /><code>http://my company.com, "
+#~ "http:/mycompany,com file:/localhost</code></qt>"
+
+#~ msgid "Enter the URL or address that should use the above proxy settings:"
+#~ msgstr "أدخل العنوان الذي يجب أن يستخدم إعدادات الوكيل أعلاه:"
+
+#~ msgid ""
+#~ "Enter the address or URL that should be excluded from using the above "
+#~ "proxy settings:"
+#~ msgstr "أدخل العنوان الذي يجب استثنائه من استخدام إعدادات الوكيل أعلاه:"
+
+#~ msgid ""
+#~ "<qt>Enter a valid address or URL.<br /><br /><b><u>NOTE:</u></b> Wildcard "
+#~ "matching such as <code>*.kde.org</code> is not supported. If you want to "
+#~ "match any host in the <code>.kde.org</code> domain, e.g. <code>printing."
+#~ "kde.org</code>, then simply enter <code>.kde.org</code>.</qt>"
+#~ msgstr ""
+#~ "<qt>أدخل عنوان صحيحا. .<br /><br /><b><u>ملاحظة:</u></b> علاماتالمطابقة "
+#~ "مثل<code>*.kde.org</code> غير مدعومة. إذا رغبت في مطابقة أي مستضيف في "
+#~ "مجال <code>.kde.org</code> على سبيل المثال <code>printing.kde.org</"
+#~ "code>فعليك بكل بساطة إدخال <code>.kde.org</code>.</qt>"
+
+#~ msgid ""
+#~ "The address of the automatic proxy configuration script is invalid. "
+#~ "Please correct this problem before proceeding. Otherwise, your changes "
+#~ "will be ignored."
+#~ msgstr ""
+#~ "عنوان مخطوط تشكيلة الوكيل الآلية غير صحيحة. الرجاء تصحيح هذه المشكلة قبل "
+#~ "المتابعة. وإلا فإن تغيراتك سوف ستُتجاهل."
+
+#~ msgid ""
+#~ "<qt>The proxy settings you specified are invalid.<br /><br />Please click "
+#~ "on the <b>Setup...</b> button and correct the problem before proceeding; "
+#~ "otherwise your changes will be ignored.</qt>"
+#~ msgstr ""
+#~ "<qt>إعدادات الوكيل التي حدتتها غير صالحة.<br /><br />رجاءا انقرعلى زر "
+#~ "<b>إعداد...</b> وصحح المشكلة قبل المواصلة ؛ و إلا فإن تغيراتك ستُتجاهل. </"
+#~ "qt>"
+
+#~ msgid "H&TTP:"
+#~ msgstr "H&TTP"
+
+#~ msgid "HTTP&S:"
+#~ msgstr "HTTP&S"
+
+#~ msgid "&FTP:"
+#~ msgstr "&FTP"
+
+#~ msgid "NO &PROXY:"
+#~ msgstr "بدون و&كيل"
+
+#~ msgid ""
+#~ "<qt>Verify whether or not the environment variable names you supplied are "
+#~ "valid. If an environment variable is not found, the associated labels "
+#~ "will be <b>highlighted</b> to indicate that they are invalid.</qt>"
+#~ msgstr ""
+#~ "<qt>التحقق من فيما إذا كانت أسماء المتغيرات البيئية التي أدخلتها صحيحة أم "
+#~ "لا. إذا لم يتم العثور على متغير بيئي ما، فسيتم <b>إبراز</b> التسميات "
+#~ "المقترنة به لبيان عدم صحتها.</qt>"
+
+#~ msgid "&Verify"
+#~ msgstr "&تحقق"
+
+#~ msgid "Connect to the &Internet directly"
+#~ msgstr "اتصل بالإنترنت &مباشرة"
+
+#~ msgid "Use preset proxy environment &variables"
+#~ msgstr "استخدم المت&غيرات البيئية المعدة مسبقاً للوكيل"
+
+#~ msgid "Show the proxy environment variable configuration dialog."
+#~ msgstr "أظهر حوار تشكيل متغيرات بيئة الوكيل."
+
+#~ msgid "Setup..."
+#~ msgstr "إعداد..."
+
+#~ msgid "&Manually specify the proxy settings"
+#~ msgstr "حدّد إعدادات الوكيل يدو&ياً"
+
+#~ msgid "Show the manual proxy configuration dialog."
+#~ msgstr "أظهر حوار الضبط اليدوي للوكيل ."
+
+#~ msgid "Authori&zation"
+#~ msgstr "الت&رخيص"
+
+#~ msgid "Prompt for login information whenever it is required."
+#~ msgstr "أطلب معلومات تسجيل الدخول كلما دعت الحاجة."
+
+#~ msgid "Prompt as &needed"
+#~ msgstr "السؤال عند ال&حاجة"
+
+#~ msgid "Use this login information."
+#~ msgstr "استخدم معلومات  الود&لوج التالية."
+
+#~ msgid ""
+#~ "Use information specified here to login into proxy servers as needed."
+#~ msgstr "استخدم المعلومات أدناه للولوج إلى خوادم الوكيل عند الحاجة."
+
+#~ msgid "Username:"
+#~ msgstr "اسم المستخدم:"
+
+#~ msgid "Login name."
+#~ msgstr "اسم الدخول."
+
+#~ msgid "Login password."
+#~ msgstr "كلمة سر الدخول."
+
+#~ msgid "Password:"
+#~ msgstr "كلمة السر:"
+
+#~ msgid "O&ptions"
+#~ msgstr "&خيارات "
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Use persistent proxy connection.<p>\n"
+#~ "Although a persistent proxy connection is faster, note that it only works "
+#~ "correctly with proxies that are fully HTTP 1.1 compliant. Do <b>not</b> "
+#~ "use this option in combination with non-HTTP 1.1 compliant proxy servers "
+#~ "such as JunkBuster and WWWOfle.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "استخدم اتصال دائم مع الوكيل.<p>\n"
+#~ "بالرغم من أن استخدام اتصال دائم مع الوكيل أسرع، غير أنه يعمل بشكل صحيح "
+#~ "فقط مع خوادم الوكيل المتوافقة بشكل كامل مع HTTP 1.1.  <b>لا تقم</b> "
+#~ "باستخدام هذا الخيار مع خوادم الوكيل غير المتوافقة مع HTTP 1.1 مثل "
+#~ "JunkBuster أو  WWWOfle.\n"
+#~ "</qt>"
+
+#~ msgid "Use persistent connections to proxy"
+#~ msgstr "استخدم اتصالات دائمة مع الوكيل."
+
+#~ msgid "Ser&vers"
+#~ msgstr "الخ&وادم"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Reverse the use of the exception list. Checking this box will result in "
+#~ "the proxy servers being used only when the requested URL matches one of "
+#~ "the addresses listed here.<p>This feature is useful if all you want or "
+#~ "need is to use a proxy server  for a few specific sites.<p>If you have "
+#~ "more complex requirements you might want to use a configuration script.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "عكس استخدام قائمة الاستثناءات. وضع علامة على المربع سيجعل استخدام خوادم "
+#~ "الوكيل قاصراً فقط على عناوين الـ URL التي تتطابق مع تلك الموجودة في هذه "
+#~ "القائمة. <p>هذه الميزة مفيدة إذا كان كل ما تريده أو تحتاجه هو استخدام "
+#~ "خادم الوكيل مع مواقع محدّدة قليلة العدد. <p>ربما ترغب باستخدام مخطوط تشكيل "
+#~ "إذا كان لديك متطلبات معقدة.\n"
+#~ "</qt>"
+
+#~ msgid "Remove all proxy exception addresses from the list."
+#~ msgstr "أزل جميع عناوين إستثناء الوكيل من القائمة."
+
+#~ msgid "D&elete All"
+#~ msgstr "ا&حذف الكل"
+
+#~ msgid "Remove the selected proxy exception address from the list."
+#~ msgstr "أزل عنوان استثناء وكيل مُحدد من القائمة."
+
+#~ msgid "De&lete"
+#~ msgstr "ا&حذف"
+
+#~ msgid "Add new proxy exception address to the list."
+#~ msgstr "أضف عنوان استثناء  وكيل إلى القائمة."
+
+#~ msgid "Change the selected proxy exception address."
+#~ msgstr "غيّر عنوان إستثناء الوكيل المُحدد."
+
+#~ msgid "C&hange..."
+#~ msgstr "غ&يّر..."
+
+#~ msgid "&Domain name:"
+#~ msgstr "اسم الم&جال:"
+
+#~ msgid "Includes your platform type in the browser identification text"
+#~ msgstr "إضافة نوع المنصة الخاصة بك لنص تعرّيف المتصفح"
+
+#~ msgid "Add &platform name"
+#~ msgstr "أضف اسم م&نصة"
+
+#~ msgid "Domain [Group]"
+#~ msgstr "المجال (المجموعة)"
+
+#~ msgid "Host [Set By]"
+#~ msgstr "المضيف (إعداد بواسطة)"
+
+#~ msgid "&Windows Shares"
+#~ msgstr "موارد ال&ويندوز المشاركة"
+
+#~ msgid "&LISa Daemon"
+#~ msgstr "ر&قيب LISa"
+
+#~ msgid "lan:/ Iosla&ve"
+#~ msgstr "lan:/ Iosla&ve"

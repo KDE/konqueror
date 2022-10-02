@@ -1,0 +1,2359 @@
+# kcmkonqhtml Bahasa Melayu (Malay) (ms)
+# Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>, 2004, 2008, 2009, 2010.
+# Sharuzzaman Ahmat Raslan <sharuzzaman@gmail.com>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkonqhtml\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-24 00:46+0000\n"
+"PO-Revision-Date: 2011-01-12 20:46+0800\n"
+"Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@gmail.com>\n"
+"Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
+"Language: ms\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Sharuzzaman Ahmat Raslan"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "sharuzzaman@myrealbox.com"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pShowMMBInTabs)
+#: advancedTabOptions.ui:21
+#, kde-format
+msgid ""
+"This will open a new tab instead of a new window in various situations, such "
+"as choosing a link or a folder with the middle mouse button."
+msgstr ""
+"Ini akan membuka tab baru dan bukan tetingkap baru dalam pelbagai keadaan, "
+"seperti memilih pautan atau folder dengan butang tetikus tengah."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pShowMMBInTabs)
+#: advancedTabOptions.ui:24
+#, kde-format
+msgid "Open &links in new tab instead of in new window"
+msgstr "Membuka &pautan dalam tab baru dan bukan dalam tetingkap baru"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPopupsWithinTabs)
+#: advancedTabOptions.ui:31
+#, kde-format
+msgid ""
+"Whether or not JavaScript popups if allowed shall open in a new tab or in a "
+"new window."
+msgstr ""
+"Sama ada JavaScript akan popup, jika dibenarkan, akan dibuka dalam tab baru "
+"atau dalam tetingkap baru."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pPopupsWithinTabs)
+#: advancedTabOptions.ui:34
+#, kde-format
+msgid "Open pop&ups in new tab instead of in new window"
+msgstr "Membuka &popup dalam tab baru dan bukan tetingkap baru"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pKonquerorTabforExternalURL)
+#: advancedTabOptions.ui:41
+#, kde-format
+msgid ""
+"When you click a URL in another KDE program or call kfmclient to open a URL, "
+"the current desktop will be searched for a non-minimized Konqueror and, if "
+"found, the URL opened as a new tab within it. Otherwise a new Konqueror "
+"window will be opened with the required URL."
+msgstr ""
+"Apabila anda klik URL dalam program KDE lain atau panggil kfmclient untuk "
+"membuka URL, desktop semasa akan dicari untuk Konqueror tak diminimumkan "
+"dan, jika ditemui, URL dibuka sebagai tab baru dalam URL. Jika tidak "
+"tetingkap Konqueror baru akan dibuka dengan URL yang diperlukan."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pKonquerorTabforExternalURL)
+#: advancedTabOptions.ui:44
+#, kde-format
+msgid "Open as tab in existing Konqueror when URL is called externally"
+msgstr ""
+"Membuka sebagai tab dalam Konqueror sedia ada apabila URL dipanggil secara "
+"luaran"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pNewTabsInBackground)
+#: advancedTabOptions.ui:51
+#, kde-format
+msgid ""
+"This will open a new tab in the background, instead of in the foreground."
+msgstr ""
+"Ini akan membuka tab baru dalam latar belakang, bukan dalam latar depan."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
+#: advancedTabOptions.ui:54
+#, kde-format
+msgid "O&pen new tabs in the background"
+msgstr "&Buka tab baru dalam latar belakang"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pOpenAfterCurrentPage)
+#: advancedTabOptions.ui:61
+#, kde-format
+msgid ""
+"This will open a new tab opened from a page after the current tab, instead "
+"of after the last tab."
+msgstr ""
+"Ini akan membuka tab baru yang dibuka dari satu halaman selepas tab semasa, "
+"bukan selepas tab terakhir."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pOpenAfterCurrentPage)
+#: advancedTabOptions.ui:64
+#, kde-format
+msgid "Open &new tab after current tab"
+msgstr "Buka tab &baru selepas tab semasa"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pDynamicTabbarHide)
+#: advancedTabOptions.ui:71
+#, kde-format
+msgid ""
+"This will display the tab bar only if there are two or more tabs. Otherwise "
+"it will always be displayed."
+msgstr ""
+"Ini akan memaparkan bar tab hanya jika terdapat dua atau lebih tab. Jika "
+"tidak ia akan sentiasa dipaparkan."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pDynamicTabbarHide)
+#: advancedTabOptions.ui:74
+#, kde-format
+msgid "Hide the tab bar when only one tab is open"
+msgstr "Sembunyikan bar tab apabila hanya satu tab dibuka"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
+#: advancedTabOptions.ui:81
+#, fuzzy, kde-format
+#| msgid ""
+#| "This will display close buttons inside each tab instead of websites' "
+#| "icons."
+msgid "This will display close buttons inside each tab."
+msgstr ""
+"Ini akan memaparkan butang tutup dalam setiap tab dan bukan ikon laman web."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pPermanentCloseButton)
+#: advancedTabOptions.ui:84
+#, fuzzy, kde-format
+msgid "&Show close button on tabs"
+msgstr "Papar buka"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pMiddleClickClose)
+#: advancedTabOptions.ui:91
+#, fuzzy, kde-format
+msgid ""
+"When you click on a tab using the middle mouse button or mouse wheel, it "
+"will close that tab."
+msgstr "buka a atau Konqueror hingga for hingga"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pMiddleClickClose)
+#: advancedTabOptions.ui:94
+#, fuzzy, kde-format
+msgid "Middle-click on a tab to close it"
+msgstr "Tengah buka a hingga"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabConfirm)
+#: advancedTabOptions.ui:101
+#, kde-format
+msgid ""
+"This will ask you whether you are sure you want to close a window when it "
+"has multiple tabs opened in it."
+msgstr ""
+"Ini akan menanya anda sama ada anda pasti ingin menutup tetingkap apabila ia "
+"mempunyai berbilang tab dibuka di dalamnya."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pTabConfirm)
+#: advancedTabOptions.ui:104
+#, kde-format
+msgid "Confirm &when closing windows with multiple tabs"
+msgstr "Sahkan &apabila menutup tetingkap dengan berbilang tab"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabCloseActivatePrevious)
+#: advancedTabOptions.ui:111
+#, kde-format
+msgid ""
+"When checking this the previous used or opened tab will be activated when "
+"you close the current active tab instead of the one right to the current tab."
+msgstr ""
+"Apabila menandakan ini, tab yang diguna atau dibuka sebelumnya akan "
+"diaktifkan apabila anda menutup tab aktif dan bukan tab di kanan tab semasa."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pTabCloseActivatePrevious)
+#: advancedTabOptions.ui:114
+#, fuzzy, kde-format
+msgid "Activate previously used tab when closing the current tab"
+msgstr "Aktifkan"
+
+#: appearance.cpp:39
+#, kde-format
+msgctxt "@title:tab"
+msgid "General"
+msgstr "Umum"
+
+#: appearance.cpp:40
+#, kde-format
+msgctxt "@title:tab"
+msgid "Fonts"
+msgstr "Font"
+
+#: appearance.cpp:41
+#, kde-format
+msgctxt "@title:tab"
+msgid "Stylesheets"
+msgstr "Lembaran Gaya"
+
+#. i18n: ectx: property (title), widget (QGroupBox, GroupBox3_2)
+#: appearance.cpp:48 css/csscustom.ui:296
+#, kde-format
+msgid "Images"
+msgstr "Imej"
+
+#: appearance.cpp:52
+#, kde-format
+msgid "A&utomatically load images"
+msgstr "Mem&uatkan imej secara automatik"
+
+#: appearance.cpp:53
+#, kde-format
+msgid ""
+"<html>If this box is checked, Konqueror will automatically load any images "
+"that are embedded in a web page. Otherwise, it will display placeholders for "
+"the images, and you can then manually load the images by clicking on the "
+"image button.<br />Unless you have a very slow network connection, you will "
+"probably want to check this box to enhance your browsing experience.</html>"
+msgstr ""
+"<html>Jika kekotak ini ditandakan, Konqueror akan secara automatik memuatkan "
+"sebarang imej yang terdapat di laman web. Jika tidak, ia akan memaparkan "
+"pemegang untuk gambar, dan anda boleh secara manual memuatkan gambar dengan "
+"menklik pada butang imej.<br />Melainkan anda mempunya sambungan rangkaian "
+"yang amat perlahan, anda mungkin perlu untuk menandakan kekotak ini untuk "
+"meningkatkan kelajuan pelungsuran anda.</html>"
+
+#: appearance.cpp:63
+#, kde-format
+msgid "Dra&w frame around not completely loaded images"
+msgstr "&Lukis bingkai sekeliling imej yang tidak sepenuhnya dimuatkan"
+
+#: appearance.cpp:64
+#, kde-format
+msgid ""
+"<html>If this box is checked, Konqueror will draw a frame as a placeholder "
+"around images embedded in a web page that are not yet fully loaded.<br />You "
+"will probably want to check this box to enhance your browsing experience, "
+"especially if have a slow network connection.</html>"
+msgstr ""
+"<html>Jika kotak ini ditandakan, Konqueror akan melukis bingkai sebagai "
+"pemegang disekeliling imej yang ada dalam laman web yang anda belum lagi "
+"dimuatkan sepenuhnya.<br />Anda mungkin hendak menandakan kotak ini untuk "
+"meningkatkan pengalaman pelungsuran, terutama jika mempunyai sambungan "
+"rangkaian perlahan.</html>"
+
+#: appearance.cpp:74
+#, kde-format
+msgctxt "animations"
+msgid "Enabled"
+msgstr "Aktifkan"
+
+#: appearance.cpp:75
+#, kde-format
+msgctxt "animations"
+msgid "Disabled"
+msgstr "Nyahaktifkan"
+
+#: appearance.cpp:76
+#, kde-format
+msgid "Show Only Once"
+msgstr "Paparkan Hanya Sekali"
+
+#: appearance.cpp:77
+#, kde-format
+msgid ""
+"<html>Controls how Konqueror shows animated images:<br /><ul><li><b>Enabled</"
+"b>: Show all animations completely.</li><li><b>Disabled</b>: Never show "
+"animations, show the starting image only.</li><li><b>Show only once</b>: "
+"Show all animations completely but do not repeat them.</li></ul></html>"
+msgstr ""
+"<html>Mengawal bagaimana Konqueror memaparkan imej beranimasi:<br /"
+"><ul><li><b>Diaktifkan</b>: Papar semua animasi keseluruhan.</"
+"li><li><b>Dimatikan</b>: Tidak memaparkan animasi, papar imej permulaan "
+"sahaja.</li><li><b>Papar hanya sekali</b>: Papar semua animasi keseluruhan "
+"tetapi tidak mengulanginya.</li></ul></html>"
+
+#: appearance.cpp:82
+#, kde-format
+msgid "A&nimations:"
+msgstr "&Animasi:"
+
+#: appearance.cpp:85 htmlopts.cpp:110
+#, kde-format
+msgctxt "@title:group"
+msgid "Miscellaneous"
+msgstr "Pelbagai"
+
+#: appearance.cpp:90
+#, kde-format
+msgctxt "underline"
+msgid "Enabled"
+msgstr "Diaktifkan"
+
+#: appearance.cpp:91
+#, kde-format
+msgctxt "underline"
+msgid "Disabled"
+msgstr "Dinyahaktifkan"
+
+#: appearance.cpp:92
+#, kde-format
+msgid "Only on Hover"
+msgstr "Hanya dalam Hover"
+
+#: appearance.cpp:93
+#, kde-format
+msgid "Und&erline links:"
+msgstr "&Garis bawah pautan:"
+
+#: appearance.cpp:96
+#, fuzzy, kde-format
+msgid ""
+"<html>Controls how Konqueror handles underlining hyperlinks:<br /"
+"><ul><li><b>Enabled</b>: Always underline links</li><li><b>Disabled</b>: "
+"Never underline links</li><li><b>Only on Hover</b>: Underline when the mouse "
+"is moved over the link</li></ul><br /><i>Note: The site's CSS definitions "
+"can override this value.</i></html>"
+msgstr ""
+"<html> Konqueror<br /><ul><li><b> Diaktifkan</b> Sentiasa</li><li><b> "
+"Dimatikan</b> Tidak sekali</li><li><b> buka</b> Garis Bawah ialah pautan</"
+"li></ul><br /><i> Nota s CSS</i></html>"
+
+#: appearance.cpp:105
+#, kde-format
+msgid "When Efficient"
+msgstr ""
+
+#: appearance.cpp:106
+#, kde-format
+msgctxt "smooth scrolling"
+msgid "Always"
+msgstr "Sentiasa"
+
+#: appearance.cpp:107
+#, kde-format
+msgctxt "soft scrolling"
+msgid "Never"
+msgstr "Tidak sekali"
+
+#: appearance.cpp:108
+#, fuzzy, kde-format
+msgid "S&mooth scrolling:"
+msgstr "Rata:"
+
+#: appearance.cpp:110
+#, fuzzy, kde-format
+msgid ""
+"<html>Determines whether Konqueror should use smooth steps to scroll HTML "
+"pages, or whole steps:<br /><ul><li><b>Always</b>: Always use smooth steps "
+"when scrolling.</li><li><b>Never</b>: Never use smooth scrolling, scroll "
+"with whole steps instead.</li><li><b>When Efficient</b>: Only use smooth "
+"scrolling on pages where it can be achieved with moderate usage of system "
+"resources.</li></ul></html>"
+msgstr ""
+"<html> Konqueror hingga HTML halaman atau<br /><ul><li><b> Sentiasa</b> "
+"Sentiasa</li><li><b> Tidak sekali</b> Tidak sekali</li><li><b></b> buka "
+"halaman bagi</li></ul></html>"
+
+#: appearance.cpp:119
+#, kde-format
+msgid ""
+"<h1>Konqueror Fonts</h1>On this page, you can configure which fonts "
+"Konqueror should use to display the web pages you view."
+msgstr ""
+"<h1>Fon Konqueror</h1>Dalam halaman ini, anda boleh konfigur fon Konqueror "
+"mana patut digunakan untuk memaparkan laman web yang anda lihat."
+
+#: appearance.cpp:131
+#, kde-format
+msgid "Font Si&ze"
+msgstr "Sai&z Font"
+
+#: appearance.cpp:134 appearance.cpp:152
+#, kde-format
+msgid "This is the relative font size Konqueror uses to display web sites."
+msgstr ""
+"Ini adalah saiz relatif font Konqueror gunakan untuk memaparkan laman web."
+
+#: appearance.cpp:138
+#, kde-format
+msgid "M&inimum font size:"
+msgstr "Sa&iz font minimum:"
+
+#: appearance.cpp:142
+#, kde-format
+msgid ""
+"Konqueror will never display text smaller than this size,<br />overriding "
+"any other settings."
+msgstr ""
+"Konqueror tidak akan memaparkan teks lebih kecil dari saiz ini,<br /"
+">mengatasi semua tetapan lain"
+
+#: appearance.cpp:147
+#, kde-format
+msgid "&Medium font size:"
+msgstr "&Saiz font sederhana: "
+
+#: appearance.cpp:160
+#, kde-format
+msgid "S&tandard font:"
+msgstr "Fon&t piawai:"
+
+#: appearance.cpp:161
+#, kde-format
+msgid "This is the font used to display normal text in a web page."
+msgstr ""
+"Ini adalah font yang digunakan untuk memaparkan teks normal dalam laman web."
+
+#: appearance.cpp:165
+#, kde-format
+msgid "&Fixed font:"
+msgstr "&Font tetap:"
+
+#: appearance.cpp:166
+#, kde-format
+msgid ""
+"This is the font used to display fixed-width (i.e. non-proportional) text."
+msgstr ""
+"Ini adalah font yang digunakan untuk memaparkan teks lebar-tetap (cth. bukan-"
+"berkadar)"
+
+#: appearance.cpp:170
+#, kde-format
+msgid "S&erif font:"
+msgstr "Font S&erif:"
+
+#: appearance.cpp:171
+#, kde-format
+msgid "This is the font used to display text that is marked up as serif."
+msgstr ""
+"Ini adalah font yang digunakan untuk memaparkan teks yang ditanda sebagai "
+"serif."
+
+#: appearance.cpp:175
+#, kde-format
+msgid "Sa&ns serif font:"
+msgstr "Font Sa&ns serif:"
+
+#: appearance.cpp:176
+#, kde-format
+msgid "This is the font used to display text that is marked up as sans-serif."
+msgstr ""
+"Ini adalah font yang digunakan untuk memaparkan teks yang ditanda sebagai "
+"sans-serif."
+
+#: appearance.cpp:180
+#, kde-format
+msgid "C&ursive font:"
+msgstr "Font C&ursive:"
+
+#: appearance.cpp:181
+#, kde-format
+msgid "This is the font used to display text that is marked up as italic."
+msgstr ""
+"Ini adalah font yang digunakan untuk memaparkan teks yang ditanda sebagai "
+"italik."
+
+#: appearance.cpp:185
+#, kde-format
+msgid "Fantas&y font:"
+msgstr "Font Fantas&y:"
+
+#: appearance.cpp:186
+#, kde-format
+msgid ""
+"This is the font used to display text that is marked up as a fantasy font."
+msgstr ""
+"Ini adalah font yang digunakan untuk memaparkan teks yang ditanda sebagai "
+"font fantasy."
+
+#: appearance.cpp:195
+#, kde-format
+msgid "Font &size adjustment for this encoding:"
+msgstr "Perubahan &saiz font untuk pengenkodan ini:"
+
+#: appearance.cpp:203 appearance.cpp:401
+#, kde-format
+msgid "Use Language Encoding"
+msgstr "Guna Pengenkodan Bahasa"
+
+#: appearance.cpp:205
+#, kde-format
+msgid "Default encoding:"
+msgstr "Pengenkodan default:"
+
+#: appearance.cpp:207
+#, kde-format
+msgid ""
+"Select the default encoding to be used; normally, you will be fine with 'Use "
+"language encoding' and should not have to change this."
+msgstr ""
+"Pilih pengekodan piawai yang hendak diguna; biasanya, anda akan selesa "
+"dengan 'Guna pengekodan bahasa' dan jangan ubah ini."
+
+#. i18n: ectx: property (whatsThis), widget (QWidget, CSSConfigWidget)
+#. i18n: ectx: property (whatsThis), widget (QWidget, CSSCustomDialog)
+#: css/cssconfig.ui:5 css/csscustom.ui:13
+#, kde-format
+msgid ""
+"<b>Stylesheets</b><p>See http://www.w3.org/Style/CSS for further information "
+"on cascading style sheets.</p>"
+msgstr ""
+"<b>Gaya Lata</b><p>Lihat http://www.w3.org/Style/CSS untuk maklumat lanjut "
+"berkaitanLembaran Gaya Lata (CSS).</p>"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, ButtonGroup1)
+#: css/cssconfig.ui:17
+#, kde-format
+msgid ""
+"<b>Stylesheets</b><p>Use this groupbox to determine how Konqueror will "
+"render style sheets.</p>"
+msgstr ""
+"<b>Stylesheets</b><p>Guna kekotak kumpulan untuk menentukan bagaimana "
+"Konqueror akan melakarkan style sheet.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, ButtonGroup1)
+#: css/cssconfig.ui:20
+#, fuzzy, kde-format
+msgid "Stylesheets"
+msgstr "Lemabaran Gaya"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, useDefault)
+#: css/cssconfig.ui:26
+#, kde-format
+msgid ""
+"<b>Use default stylesheet</b><p>Select this option to use the default "
+"stylesheet.</p>"
+msgstr ""
+"<b>Guna stylesheet default</b><p>Pilih pilihan ini untuk menggunakan "
+"stylesheet default.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useDefault)
+#: css/cssconfig.ui:29
+#, kde-format
+msgid "Us&e default stylesheet"
+msgstr "Guna gaya lata default"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, useUser)
+#: css/cssconfig.ui:39
+#, kde-format
+msgid ""
+"<b>Use user-defined stylesheet</b><p>If this box is checked, Konqueror will "
+"try to load a user-defined style sheet as specified in the location below. "
+"The style sheet allows you to completely override the way web pages are "
+"rendered in your browser. The file specified should contain a valid style "
+"sheet (see http://www.w3.org/Style/CSS for further information on cascading "
+"style sheets).</p>"
+msgstr ""
+"<b>Guna lembaran gaya takrifan pengguna</b><p>IJika kotak ini disemak, "
+"Konqueror akan cuba memuatkan lembaran gaya takrifan pengguna seperti yang "
+"dinyatakan dalam lokasi di bawah. Lembaran gaya membolehkan anda menulis "
+"tindih sepenuhnya cara halaman direalisasikan dalam pelayar anda. Fail yang "
+"dinyatakan hendaklah mengandungi lembaran gaya sah (lihat http://www.w3.org/"
+"Style/CSS Untuk maklumat lanjut tentang lembaran gaya melata).</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useUser)
+#: css/cssconfig.ui:42
+#, kde-format
+msgid "Use &user-defined stylesheet"
+msgstr "Guna stylesheet ditakrif pengg&una"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, useAccess)
+#: css/cssconfig.ui:94
+#, kde-format
+msgid ""
+"<b>Use accessibility stylesheet</b><p>Selecting this option will allow you "
+"to define a default font, font size, and font color with a few simple clicks "
+"of the mouse. Simply wander over to the Customize... dialog and pick out "
+"your desired options.</p>"
+msgstr ""
+"<b>Guna lembaran gaya kebolehaksesan</b><p>Memilih opsyen ini akan "
+"membolehkan anda mentakrif fon, saiz fon, dan warna fon piawai dengan "
+"beberapa klik mudah pada tetikus. Rayau dalam dialog Suaikan... dan pilih "
+"opsyen yang anda kehendaki.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useAccess)
+#: css/cssconfig.ui:97
+#, kde-format
+msgid "U&se accessibility stylesheet"
+msgstr "Guna helaian gaya kebolehcapaian"
+
+#. i18n: ectx: property (text), widget (QPushButton, customize)
+#: css/cssconfig.ui:137
+#, kde-format
+msgid "Custom&ize..."
+msgstr "Tetapkan send&iri..."
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox7)
+#: css/csscustom.ui:21
+#, kde-format
+msgid ""
+"<b>Font family</b><p>A font family is a group of fonts that resemble one "
+"another, with family members that are e.g. bold, italic, or any number of "
+"the above.</p>"
+msgstr ""
+"<b>Keluarga fon</b><p>Keluarga fon ialah kumpulan fon yang menghimpunkan "
+"satu sama lain, dengan ahli keluarga yang misalnya huruf tebal, italik, atau "
+"sebarang nombor di atas.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, GroupBox7)
+#: css/csscustom.ui:24
+#, kde-format
+msgid "Font Family"
+msgstr "Keluarga Font"
+
+#. i18n: ectx: property (text), widget (QLabel, txtBaseFontFamily)
+#: css/csscustom.ui:30
+#, kde-format
+msgid "Base family:"
+msgstr "Keluarga asas:"
+
+#. i18n: ectx: property (whatsThis), widget (QFontComboBox, fontFamily)
+#: css/csscustom.ui:37
+#, kde-format
+msgid "<p>This is the currently selected font family</p>"
+msgstr "<p>Ini adalah keluarga font dipilih semasa</p>"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, sameFamily)
+#: css/csscustom.ui:44
+#, kde-format
+msgid ""
+"<b>Use same family for all text</b><p>Select this option to override custom "
+"fonts everywhere in favor of the base font.</p>"
+msgstr ""
+"<b>Guna keluarga sama bagi semua teks</b><p>Pilih opsyen ini untuk menulis "
+"tindih fon langganan di mana-mana di atas fon asas.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, sameFamily)
+#: css/csscustom.ui:47
+#, kde-format
+msgid "Use same family for all text"
+msgstr "Gunakan keluarga sama untuk semua teks"
+
+#. i18n: ectx: property (title), widget (QGroupBox, GroupBox3)
+#: css/csscustom.ui:57
+#, kde-format
+msgid "Font Size"
+msgstr "Saiz Font"
+
+#. i18n: ectx: property (text), widget (QLabel, txtFontsize)
+#: css/csscustom.ui:63
+#, kde-format
+msgid "Base font si&ze:"
+msgstr "Sai&z font asas:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:80
+#, kde-format
+msgid "7"
+msgstr "7"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:85
+#, kde-format
+msgid "8"
+msgstr "8"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:90
+#, kde-format
+msgid "9"
+msgstr "9"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:95
+#, kde-format
+msgid "10"
+msgstr "10"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:100
+#, kde-format
+msgid "11"
+msgstr "11"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:105
+#, kde-format
+msgid "12"
+msgstr "12"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:110
+#, kde-format
+msgid "14"
+msgstr "14"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:115
+#, kde-format
+msgid "16"
+msgstr "16"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:120
+#, kde-format
+msgid "20"
+msgstr "20"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:125
+#, kde-format
+msgid "24"
+msgstr "24"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:130
+#, kde-format
+msgid "32"
+msgstr "32"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:135
+#, kde-format
+msgid "48"
+msgstr "48"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:140
+#, kde-format
+msgid "64"
+msgstr "64"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, dontScale)
+#: css/csscustom.ui:148
+#, kde-format
+msgid ""
+"<b>Use same size for all elements</b><p>Select this option to override "
+"custom font sizes in favor of the base font size. All fonts will be "
+"displayed in the same size.</p>"
+msgstr ""
+"<b>Guna saiz yang sama untuk semua elemen</b><p>Pilih pilihan ini untuk "
+"mengatasi saiz font tersendiri berdasarkan saiz font asas. Semua font akan "
+"dipaparkan dalam saiz yang sama</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, dontScale)
+#: css/csscustom.ui:151
+#, kde-format
+msgid "&Use same size for all elements"
+msgstr "G&una saiz sama untuk semua elemen"
+
+#. i18n: ectx: property (title), widget (QGroupBox, ButtonGroup2)
+#: css/csscustom.ui:161
+#, kde-format
+msgid "Colors"
+msgstr "Warna"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, blackOnWhite)
+#: css/csscustom.ui:183
+#, kde-format
+msgid "<b>Black on White</b><p>This is what you normally see.</p>"
+msgstr "<b>Hitam pada Putih</b><p>Ini adalah yang anda biasa lihat.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, blackOnWhite)
+#: css/csscustom.ui:186
+#, kde-format
+msgid "&Black on white"
+msgstr "Hitam atas puti&h"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, whiteOnBlack)
+#: css/csscustom.ui:196
+#, kde-format
+msgid "<b>White on Black</b><p>This is your classic inverse color scheme.</p>"
+msgstr ""
+"<b>Putih pada Hitam</b><p>Ini adalah skema warna klasik terbalik anda.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, whiteOnBlack)
+#: css/csscustom.ui:199
+#, kde-format
+msgid "&White on black"
+msgstr "Putih atas hita&m"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, customColor)
+#: css/csscustom.ui:206
+#, kde-format
+msgid ""
+"<b>Custom</b><p>Select this option to define a custom color for the default "
+"font.</p>"
+msgstr ""
+"<b>Langganan</b><p>Pilih opsyen ini untuk mentakrif warna langganan untuk "
+"fon piawai.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, customColor)
+#: css/csscustom.ui:209
+#, kde-format
+msgid "Cus&tom"
+msgstr "&Tersendiri"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, txtBackground)
+#: css/csscustom.ui:219
+#, kde-format
+msgid ""
+"<b>Background</b><p>This background color is the one displayed behind the "
+"text by default. A background image will override this.</p>"
+msgstr ""
+"<b>Latar Belakang</b><p>Warna latar belakang ini adalah warna yang "
+"dipaparkan di belakang teks menurut piawai. Imej latar belakang akan menulis "
+"tindih opsyen ini</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, txtBackground)
+#: css/csscustom.ui:222
+#, kde-format
+msgid "Bac&kground:"
+msgstr "Latarbela&kang:"
+
+#. i18n: ectx: property (whatsThis), widget (KColorButton, backgroundColorButton)
+#: css/csscustom.ui:238
+#, kde-format
+msgid ""
+"<b>Background</b><p>Behind this door lays the ability to choose a custom "
+"default background.</p>"
+msgstr ""
+"<b>Latar Belakang</b><p>Di belakang pintu ini terdapat keupayaan untuk "
+"memilih latar belakang piawai langganan.</p>"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, sameColor)
+#: css/csscustom.ui:248
+#, kde-format
+msgid ""
+"<b>Use same color for all text</b><p>Select this option to apply your chosen "
+"color to the default font as well as any custom fonts as specified in a "
+"stylesheet.</p>"
+msgstr ""
+"<b>Guna warna sama untuk semua teks</b><p>Pilih opsyen ini untuk "
+"melaksanakan warna pilihan anda pada fon piawai serta sebarang fon langganan "
+"seperti yang dinyatakan dalam lembaran gaya.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, sameColor)
+#: css/csscustom.ui:251
+#, kde-format
+msgid "Use same color for all text"
+msgstr "Gunakan warna sama untuk semua teks"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, txtForeground)
+#. i18n: ectx: property (whatsThis), widget (KColorButton, foregroundColorButton)
+#: css/csscustom.ui:261 css/csscustom.ui:280
+#, kde-format
+msgid ""
+"<b>Foreground color</b><p>The foreground color is the color that the text is "
+"drawn in.</p>"
+msgstr ""
+"<b>Warna latar depan</b><p>Warna latar depan adalah warna dalam teks yang "
+"dilukis.</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, txtForeground)
+#: css/csscustom.ui:264
+#, kde-format
+msgid "&Foreground:"
+msgstr "&Latardepan:"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox3_2)
+#: css/csscustom.ui:293
+#, kde-format
+msgid "<b>Images</b>"
+msgstr "<b>Imej</b>"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, hideImages)
+#: css/csscustom.ui:302
+#, kde-format
+msgid ""
+"<b>Suppress images</b><p>Selecting this will prevent Konqueror from loading "
+"images.</p>"
+msgstr ""
+"<b>Halang imej</b><p>Memilih ini akan menghalang Konqueror dari memuatkan "
+"imej.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, hideImages)
+#: css/csscustom.ui:305
+#, kde-format
+msgid "&Suppress images"
+msgstr "&Halang imej"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, hideBackground)
+#: css/csscustom.ui:312
+#, kde-format
+msgid ""
+"<b>Suppress background images</b><p>Selecting this option will prevent "
+"Konqueror from loading background images.</p>"
+msgstr ""
+"<b>Tindas imej latar belakang </b><p>Memilih opsyen ini akan menghalang "
+"Konqueror daripada memuatkan imej latar belakang.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, hideBackground)
+#: css/csscustom.ui:315
+#, kde-format
+msgid "Suppress background images"
+msgstr "Halang imej latarbelakang"
+
+#. i18n: ectx: property (title), widget (QGroupBox, previewBox)
+#: css/csscustom.ui:347
+#, kde-format
+msgid "Preview"
+msgstr "Pralihat"
+
+#: css/kcmcss.cpp:51
+#, kde-format
+msgid ""
+"<h1>Konqueror Stylesheets</h1> This module allows you to apply your own "
+"color and font settings to Konqueror by using stylesheets (CSS). You can "
+"either specify options or apply your own self-written stylesheet by pointing "
+"to its location.<br /> Note that these settings will always have precedence "
+"before all other settings made by the site author. This can be useful to "
+"visually impaired people or for web pages that are unreadable due to bad "
+"design."
+msgstr ""
+"<h1>Lembaran Gaya Konqueror</h1> Modul ini membolehkan anda menetapkan "
+"tetapan warna dan font anda sendiri dalam Konqueror dengan menggunakan "
+"lembaran gaya (CSS). Anda boleh sama ada nyatakan pilihan atau terapkan "
+"lembaran gaya ditulis sendiri dengan menuding ke lokasinya.<br /> Perhatian "
+"bahawa tetapan ini akan sentiasa mempunyai keutamaan sebelum tetapan lain "
+"dibuat oleh pengarang laman web. Ini berguna kepada orang cacat penglihatan "
+"atau untuk laman web yang tidak boleh dibaca disebabkan oleh reka bentuk "
+"yang tidak bagus."
+
+#: css/kcmcss.cpp:336
+#, fuzzy, kde-format
+#| msgid ""
+#| "<html>\n"
+#| "\n"
+#| "<h1>Heading 1</h1>\n"
+#| "<h2>Heading 2</h2>\n"
+#| "<h3>Heading 3</h3>\n"
+#| "\n"
+#| "<p>User defined stylesheets allow increased\n"
+#| "accessibility for visually handicapped\n"
+#| "people.</p>\n"
+#| "\n"
+#| "</html>\n"
+msgid ""
+"<html>\n"
+"<head>\n"
+"<style>\n"
+"<!--\n"
+"%1\n"
+"-->\n"
+"</style>\n"
+"</head>\n"
+"<body>\n"
+"<h1>Heading 1</h1>\n"
+"<h2>Heading 2</h2>\n"
+"<h3>Heading 3</h3>\n"
+"\n"
+"<p>User-defined stylesheets allow increased\n"
+"accessibility for visually handicapped\n"
+"people.</p>\n"
+"\n"
+"</body>\n"
+"</html>\n"
+msgstr ""
+"<html>\n"
+"\n"
+"<h1>Heading 1</h1><br/>\n"
+"<h2>Heading 2</h2><br/>\n"
+"<h3>Heading 3</h3><br/>\n"
+"\n"
+"<p>Helaian gaya ditakrif pengguna membenarkan peningkatan\n"
+"kebolehcapaian untuk mereka yang mengalami kecacatan\n"
+"penglihatan.</p>\n"
+"\n"
+"</html>\n"
+
+#: domainlistview.cpp:37
+#, kde-format
+msgid "Host/Domain"
+msgstr "Hos/Domain"
+
+#: domainlistview.cpp:37
+#, kde-format
+msgid "Policy"
+msgstr "Polisi"
+
+#: domainlistview.cpp:45
+#, kde-format
+msgid "&New..."
+msgstr "&Baru..."
+
+#: domainlistview.cpp:49
+#, kde-format
+msgid "Chan&ge..."
+msgstr "&Tukar..."
+
+#: domainlistview.cpp:53
+#, kde-format
+msgid "De&lete"
+msgstr "&Padam"
+
+#: domainlistview.cpp:57
+#, kde-format
+msgid "&Import..."
+msgstr "&Import..."
+
+#: domainlistview.cpp:63
+#, kde-format
+msgid "&Export..."
+msgstr "&Eksport..."
+
+#: domainlistview.cpp:71
+#, kde-format
+msgid "Click on this button to manually add a host or domain specific policy."
+msgstr ""
+"Klik butang ini untuk menambahkan polisi spesifik host atau domain secara "
+"manual."
+
+#: domainlistview.cpp:73
+#, kde-format
+msgid ""
+"Click on this button to change the policy for the host or domain selected in "
+"the list box."
+msgstr ""
+"Klik butang ini untuk mengubah dasar bagi hos atau domain yang dipilih di "
+"dalam kotak senarai."
+
+#: domainlistview.cpp:75
+#, kde-format
+msgid ""
+"Click on this button to delete the policy for the host or domain selected in "
+"the list box."
+msgstr ""
+"Klik butang ini untuk menghapuskan dasar bagi hos atau domain yang dipilih "
+"di dalam kotak senarai."
+
+#: domainlistview.cpp:122
+#, kde-format
+msgid "You must first select a policy to be changed."
+msgstr "Anda mesti pertama sekali memilih polisi untuk diubah."
+
+#: domainlistview.cpp:149
+#, kde-format
+msgid "You must first select a policy to delete."
+msgstr "Anda mesti pertama sekali memilih polisi untuk dipadam."
+
+#: domainlistview.cpp:187 policydlg.cpp:63
+#, kde-format
+msgid "Use Global"
+msgstr "Guna Global"
+
+#: domainlistview.cpp:189 policydlg.cpp:63
+#, kde-format
+msgid "Accept"
+msgstr "Terima"
+
+#: domainlistview.cpp:191 policydlg.cpp:63
+#, kde-format
+msgid "Reject"
+msgstr "Tolak"
+
+#: filteropts.cpp:48
+#, kde-format
+msgid "Enable filters"
+msgstr "Hidupkan tapisan"
+
+#: filteropts.cpp:51
+#, kde-format
+msgid "Hide filtered images"
+msgstr "Sembunyi imej ditapis"
+
+#: filteropts.cpp:58
+#, fuzzy, kde-format
+#| msgid "Enable filters"
+msgid "Manual Filter"
+msgstr "Hidupkan tapisan"
+
+#: filteropts.cpp:76
+#, kde-format
+msgid "Search:"
+msgstr "Cari:"
+
+#: filteropts.cpp:84
+#, kde-format
+msgid ""
+"<qt>Filter expression (e.g. <tt>http://www.example.com/ad/*</tt>, <a href="
+"\"filterhelp\">more information</a>):"
+msgstr ""
+
+#: filteropts.cpp:100
+#, kde-format
+msgid "Automatic Filter"
+msgstr ""
+
+#: filteropts.cpp:109
+#, kde-format
+msgid "Automatic update interval:"
+msgstr ""
+
+#: filteropts.cpp:114
+#, fuzzy, kde-format
+#| msgid "day"
+#| msgid_plural "days"
+msgid " day"
+msgid_plural " days"
+msgstr[0] " hari"
+msgstr[1] " hari"
+
+#: filteropts.cpp:120
+#, kde-format
+msgid "Insert"
+msgstr "Selit"
+
+#: filteropts.cpp:123
+#, kde-format
+msgid "Update"
+msgstr "Kemaskini"
+
+#: filteropts.cpp:126
+#, kde-format
+msgid "Remove"
+msgstr "Buang"
+
+#: filteropts.cpp:130
+#, kde-format
+msgid "Import..."
+msgstr "Import..."
+
+#: filteropts.cpp:133
+#, kde-format
+msgid "Export..."
+msgstr "Eksport..."
+
+#: filteropts.cpp:140
+#, kde-format
+msgid ""
+"<qt>More information on <a href=\"importhelp\">import format</a>, <a href="
+"\"exporthelp\">export format</a>"
+msgstr ""
+
+#: filteropts.cpp:154
+#, fuzzy, kde-format
+msgid ""
+"Enable or disable AdBlocK filters. When enabled, a set of URL expressions "
+"should be defined in the filter list for blocking to take effect."
+msgstr "Hidupkan atau dibolehkan a bagi hingga inci penapis for hingga."
+
+#: filteropts.cpp:156
+#, fuzzy, kde-format
+msgid ""
+"When enabled blocked images will be removed from the page completely, "
+"otherwise a placeholder 'blocked' image will be used."
+msgstr "dibolehkan halaman a imej."
+
+#: filteropts.cpp:163
+#, fuzzy, kde-format
+msgid ""
+"This is the list of URL filters that will be applied to all embedded images "
+"and media objects."
+msgstr "ialah bagi URL hingga semua dan bingkai inci lebih atas bagi."
+
+#: filteropts.cpp:167
+#, kde-format
+msgid ""
+"<qt><p>Enter an expression to filter. Filters can be defined as either:"
+"<ul><li>a shell-style wildcard, e.g. <tt>http://www.example.com/ads*</tt>, "
+"the wildcards <tt>*?[]</tt> may be used</li><li>a full regular expression by "
+"surrounding the string with '<tt>/</tt>', e.g. <tt>/\\/(ad|banner)\\./</tt></"
+"li></ul><p>Any filter string can be preceded by '<tt>@@</tt>' to whitelist "
+"(allow) any matching URL, which takes priority over any blacklist (blocking) "
+"filter."
+msgstr ""
+
+#: filteropts.cpp:183
+#, kde-format
+msgid ""
+"<qt><p>The filter import format is a plain text file. Blank lines, comment "
+"lines starting with '<tt>!</tt>' and the header line <tt>[AdBlock]</tt> are "
+"ignored. Any other line is added as a filter expression."
+msgstr ""
+
+#: filteropts.cpp:188
+#, kde-format
+msgid ""
+"<qt><p>The filter export format is a plain text file. The file begins with a "
+"header line <tt>[AdBlock]</tt>, then all of the filters follow each on a "
+"separate line."
+msgstr ""
+
+#: filteropts.cpp:256
+#, kde-format
+msgid "Import Filters"
+msgstr ""
+
+#: filteropts.cpp:301
+#, kde-format
+msgid "Export Filters"
+msgstr ""
+
+#: filteropts.cpp:436
+#, fuzzy, kde-format
+msgid ""
+"<h1>Konqueror AdBlocK</h1> Konqueror AdBlocK allows you to create a list of "
+"filters that are checked against linked images and frames. URL's that match "
+"are either discarded or replaced with a placeholder image. "
+msgstr ""
+"<h1> Konqueror</h1> Konqueror hingga a bagi dan bingkai URL s atau a imej "
+
+#: filteropts.cpp:558
+#, kde-format
+msgid "Name"
+msgstr "Nama"
+
+#: filteropts.cpp:559
+#, kde-format
+msgid "URL"
+msgstr "URL"
+
+#: generalopts.cpp:53
+#, kde-format
+msgid "Tabbed Browsing"
+msgstr "Pelayaran Bertab"
+
+#: generalopts.cpp:79
+#, kde-format
+msgctxt ""
+"The user chose to use a custom start page but left the corresponding field "
+"empty"
+msgid "Please, insert the custom start page"
+msgstr ""
+
+#: generalopts.cpp:85
+#, fuzzy, kde-format
+msgctxt "@label:listbox"
+msgid "When &Konqueror starts:"
+msgstr "&Konqueror:"
+
+#: generalopts.cpp:94
+#, fuzzy, kde-format
+msgctxt "@item:inlistbox"
+msgid "Show Introduction Page"
+msgstr "Papar Pengenalan Halaman"
+
+#: generalopts.cpp:95
+#, fuzzy, kde-format
+msgctxt "@item:inlistbox"
+msgid "Show My Start Page"
+msgstr "Papar Rumah Halaman"
+
+#: generalopts.cpp:96
+#, fuzzy, kde-format
+msgctxt "@item:inlistbox"
+msgid "Show Blank Page"
+msgstr "Papar Hitam Halaman"
+
+#: generalopts.cpp:97
+#, fuzzy, kde-format
+msgctxt "@item:inlistbox"
+msgid "Show My Bookmarks"
+msgstr "Papar Tanda Laman"
+
+#: generalopts.cpp:103
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Select Start Page"
+msgstr "Pilih Rumah Halaman"
+
+#: generalopts.cpp:107
+#, kde-format
+msgid "This is the URL of the web page Konqueror will show when starting."
+msgstr ""
+
+#: generalopts.cpp:118
+#, fuzzy, kde-format
+msgid "Home page:"
+msgstr "Rumah halaman:"
+
+#: generalopts.cpp:121
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Select Home Page"
+msgstr "Pilih Rumah Halaman"
+
+#: generalopts.cpp:126
+#, fuzzy, kde-format
+msgid ""
+"This is the URL of the web page where Konqueror will jump to when the \"Home"
+"\" button is pressed."
+msgstr ""
+"ialah URL bagi halaman Konqueror hingga Rumah ialah Konqueror ialah a fail "
+"hingga setempat."
+
+#: generalopts.cpp:134
+#, kde-format
+msgid "Default web browser engine:"
+msgstr ""
+
+#: generalopts.cpp:143
+#, kde-format
+msgid "When splitting a view"
+msgstr ""
+
+#: generalopts.cpp:147
+#, kde-format
+msgid "Always duplicate current view"
+msgstr ""
+
+#: generalopts.cpp:148
+#, kde-format
+msgid "Duplicate current view only for local files"
+msgstr ""
+
+#: htmlopts.cpp:36
+#, kde-format
+msgid ""
+"<h1>Konqueror Browser</h1> Here you can configure Konqueror's browser "
+"functionality. Please note that the file manager functionality has to be "
+"configured using the \"File Manager\" configuration module. You can make "
+"some settings how Konqueror should handle the HTML code in the web pages it "
+"loads. It is usually not necessary to change anything here."
+msgstr ""
+"<h1>Pelayar Konqueror</h1> Di sini anda boleh konfigur kefungsian pelayar "
+"Konqueror. Ambil perhatian bahawa kefungsian pengurus fail perlu dikonfigur "
+"menggunakan modul konfigurasi \"Pengurus Fail\" Anda boleh membuat beberapa "
+"seting bagaimana konqueror patut mengendalikan kod HTML dalam laman web yang "
+"ia muatkan. Biasanya tiada apa yang perlu diubah di sini.."
+
+#: htmlopts.cpp:44
+#, kde-format
+msgid "Boo&kmarks"
+msgstr "&Tanda Buku"
+
+#: htmlopts.cpp:47
+#, kde-format
+msgid "Ask for name and folder when adding bookmarks"
+msgstr "Tanya nama dan folder apabila menambah tanda buku"
+
+#: htmlopts.cpp:50
+#, kde-format
+msgid ""
+"If this box is checked, Konqueror will allow you to change the title of the "
+"bookmark and choose a folder in which to store it when you add a new "
+"bookmark."
+msgstr ""
+"Jika kotak disemak, Konqueror akan membolehkan anda mengubah tajuk tanda "
+"buku dan memilih dalam folder mana ia hendak disimpan apabila anda menambah "
+"tanda buku baru."
+
+#: htmlopts.cpp:56
+#, kde-format
+msgid "Show only marked bookmarks in bookmark toolbar"
+msgstr "Paparkan hanya tanda buku bertanda dalam bar alat tanda buku"
+
+#: htmlopts.cpp:58
+#, kde-format
+msgid ""
+"If this box is checked, Konqueror will show only those bookmarks in the "
+"bookmark toolbar which you have marked to do so in the bookmark editor."
+msgstr ""
+"Jika kotak ini ditandakan, Konqueror akan memaparkan hanya tanda buku dalam "
+"bar alat tanda buku yang telah tandakan dalam editor tanda buku."
+
+#: htmlopts.cpp:65
+#, kde-format
+msgid "Form Com&pletion"
+msgstr "&Pelengkap Borang"
+
+#: htmlopts.cpp:69
+#, kde-format
+msgid ""
+"If this box is checked, Konqueror will remember the data you enter in web "
+"forms and suggest it in similar fields for all forms."
+msgstr ""
+"Jika kotak ini ditandakan, Konqueror akan ingat data yang anda masukkan "
+"dalam borang web dan menyarankannya dalam medan serupa bagi semua borang."
+
+#: htmlopts.cpp:75
+#, kde-format
+msgid "&Maximum completions:"
+msgstr "Pelengkapan &maksimum:"
+
+#: htmlopts.cpp:77
+#, kde-format
+msgid ""
+"Here you can select how many values Konqueror will remember for a form field."
+msgstr ""
+"Di sini anda boleh pilih berapa banyak nilai yang Konqueror akan ingat bagi "
+"satu medan borang."
+
+#: htmlopts.cpp:84
+#, kde-format
+msgid "Mouse Beha&vior"
+msgstr "&Peri Laku Tetikus"
+
+#: htmlopts.cpp:87
+#, kde-format
+msgid "Chan&ge cursor over links"
+msgstr "&Ubah kursor dalam pautan"
+
+#: htmlopts.cpp:89
+#, kde-format
+msgid ""
+"If this option is set, the shape of the cursor will change (usually to a "
+"hand) if it is moved over a hyperlink."
+msgstr ""
+"Jika opsyen ini diset, bentuk kursor akan berubah (biasanya bentuk tangan) "
+"jika ia dialihkan dalam hiperpautan."
+
+#: htmlopts.cpp:93
+#, kde-format
+msgid "M&iddle click opens URL in selection"
+msgstr "Klik &tengah membuka URL dalam pemilihan"
+
+#: htmlopts.cpp:96
+#, kde-format
+msgid ""
+"If this box is checked, you can open the URL in the selection by middle "
+"clicking on a Konqueror view."
+msgstr ""
+"Jika kotak ini ditandakan, anda boleh buka URL dalam pemilihan tersebut "
+"dengan mengklik tengah dalam paparan konqueror."
+
+#: htmlopts.cpp:100
+#, kde-format
+msgid "Right click goes &back in history"
+msgstr "Klik kanan membawa anda &kembali ke sejarah"
+
+#: htmlopts.cpp:103
+#, kde-format
+msgid ""
+"If this box is checked, you can go back in history by right clicking on a "
+"Konqueror view. To access the context menu, press the right mouse button and "
+"move."
+msgstr ""
+"Jika kotak ini disemak, anda boleh kembali ke sejarah dengan mengklik kanan "
+"dalam paparan Konqueror. Untuk mengakses menu konteks, tekan butang kanan "
+"tetikus dan gerak."
+
+#: htmlopts.cpp:113
+#, kde-format
+msgid "Allow automatic delayed &reloading/redirecting"
+msgstr ""
+"Membolehkan &pemuatan semula/pengarahan semula dilengahkan secara automatik"
+
+#: htmlopts.cpp:114
+#, kde-format
+msgid ""
+"Some web pages request an automatic reload or redirection after a certain "
+"period of time. By unchecking this box Konqueror will ignore these requests."
+msgstr ""
+"Sesetengah laman web meminta muat semula automatik atau penghalaan semula "
+"automatik selepas tempoh masa tertentu. Dengan menyahsemak kotak ini, "
+"Konqueror akan mengabaikan permintaan ini."
+
+#: htmlopts.cpp:120
+#, fuzzy, kde-format
+msgid "Enable Access Ke&y activation with Ctrl key"
+msgstr "Hidupkan Akses Kekunci Ctrl"
+
+#: htmlopts.cpp:121
+#, fuzzy, kde-format
+msgid ""
+"Pressing the Ctrl key when viewing webpages activates Access Keys. "
+"Unchecking this box will disable this accessibility feature. (Konqueror "
+"needs to be restarted for this change to take effect.)"
+msgstr "Ctrl KDE s Akses kotak Konqueror hingga for hingga"
+
+#: htmlopts.cpp:125
+#, kde-format
+msgid "Send the DNT header to tell web sites you do not want to be tracked"
+msgstr ""
+
+#: htmlopts.cpp:126
+#, kde-format
+msgid ""
+"Check this box if you want to inform a web site that you do not want your "
+"web browsing habits tracked."
+msgstr ""
+
+#: htmlopts.cpp:130
+#, kde-format
+msgid "Offer to save website passwords"
+msgstr ""
+
+#: htmlopts.cpp:131
+#, kde-format
+msgid "Uncheck this box to prevent being prompted to save website passwords"
+msgstr ""
+
+#: htmlopts.cpp:136
+#, kde-format
+msgid "Display online PDF files using WebEngine"
+msgstr ""
+
+#: htmlopts.cpp:137
+#, kde-format
+msgid ""
+"Uncheck this box to display online PDF files as configured in System Settings"
+msgstr ""
+
+#: javaopts.cpp:78
+#, kde-format
+msgid "Enable Ja&va globally"
+msgstr "Aktifkan &Java secara global"
+
+#: javaopts.cpp:93
+#, kde-format
+msgid "Java Runtime Settings"
+msgstr "Seting Masa Laksana Java"
+
+#: javaopts.cpp:97
+#, kde-format
+msgid "&Use security manager"
+msgstr "&Guna pengurus sekuriti"
+
+#: javaopts.cpp:101
+#, kde-format
+msgid "Use &KIO"
+msgstr "Guna &KIO"
+
+#: javaopts.cpp:105
+#, fuzzy, kde-format
+msgid "Shu&tdown applet server when inactive for more than"
+msgstr "for lebih"
+
+#: javaopts.cpp:117
+#, fuzzy, kde-format
+#| msgid " sec"
+msgid " second"
+msgid_plural " seconds"
+msgstr[0] " saat"
+msgstr[1] " saat"
+
+#: javaopts.cpp:123
+#, kde-format
+msgid "&Path to Java executable, or 'java':"
+msgstr "&Laluan ke Java boleh laksana, atau 'java'."
+
+#: javaopts.cpp:127
+#, kde-format
+msgid "Additional Java a&rguments:"
+msgstr "&Argumen Java tambahan:"
+
+#: javaopts.cpp:132
+#, kde-format
+msgid ""
+"Enables the execution of scripts written in Java that can be contained in "
+"HTML pages. Note that, as with any browser, enabling active contents can be "
+"a security problem."
+msgstr ""
+"Aktifkan pelaksanaan skrip yang ditulis dalam Java yang mungkin terkandung "
+"dalam laman HTML. Ambil perhatian bahawa dengan mana-mana pelayar, "
+"mengaktifkan kandungan aktif boleh menimbulkan masalah keselamatan."
+
+#: javaopts.cpp:135
+#, fuzzy, kde-format
+msgid ""
+"<p>This box contains the domains and hosts you have set a specific Java "
+"policy for. This policy will be used instead of the default policy for "
+"enabling or disabling Java applets on pages sent by these domains or hosts.</"
+"p><p>Select a policy and use the controls on the right to modify it.</p>"
+msgstr ""
+"<p> kotak mengandungi dan a Java for bagi default for atau Java buka halaman "
+"atau</p><p> Pilih a dan buka kanan hingga</p>"
+
+#: javaopts.cpp:142
+#, kde-format
+msgid ""
+"Click this button to choose the file that contains the Java policies. These "
+"policies will be merged with the existing ones. Duplicate entries are "
+"ignored."
+msgstr ""
+"Klik butang ini untuk memilih fail yang mengandungi dasar Java. Dasar ini "
+"akan dicantumkan dengan dasar sedia ada. Entri duplikat diabaikan."
+
+#: javaopts.cpp:145
+#, kde-format
+msgid ""
+"Click this button to save the Java policy to a zipped file. The file, named "
+"<b>java_policy.tgz</b>, will be saved to a location of your choice."
+msgstr ""
+"Klik butang ini untuk menyimpan dasar Java ke dalam fail zip. Fail, dinamai "
+"<b>java_policy.tgz</b>, akan disimpan ke lokasi pilihan anda."
+
+#: javaopts.cpp:149
+#, kde-format
+msgid ""
+"Here you can set specific Java policies for any particular host or domain. "
+"To add a new policy, simply click the <i>New...</i> button and supply the "
+"necessary information requested by the dialog box. To change an existing "
+"policy, click on the <i>Change...</i> button and choose the new policy from "
+"the policy dialog box. Clicking on the <i>Delete</i> button will remove the "
+"selected policy, causing the default policy setting to be used for that "
+"domain."
+msgstr ""
+"Di sini anda boleh set dasar Java khusus bagi sebarang hos atau domain "
+"tertentu. Untuk menambah dasar baru, hanya klik butang <i>Baru...</i> dan "
+"bekalkan maklumat perlu yang diminta oleh kotak dialog. Untuk mengubah dasar "
+"sedia ada, klik butang <i>Ubah...</i> dan pilih dasar baru dari kotak dialog "
+"dasar. Mengklik butang <i>Hapus</i> akan membuang dasar yang dipilih, "
+"menyebabkan seting dasar piawai digunakan untuk domain tersebut."
+
+#: javaopts.cpp:162
+#, kde-format
+msgid ""
+"Enabling the security manager will cause the jvm to run with a Security "
+"Manager in place. This will keep applets from being able to read and write "
+"to your file system, creating arbitrary sockets, and other actions which "
+"could be used to compromise your system. Disable this option at your own "
+"risk. You can modify your $HOME/.java.policy file with the Java policytool "
+"utility to give code downloaded from certain sites more permissions."
+msgstr ""
+"Mengaktifkan pengurus keselamatan akan menyebabkan jvm berjalan dengan "
+"Pengurus Keselamatan yang ada. Ini akan menghindarkan aplet daripada dapat "
+"dibaca atau ditulis dalam sistem fail anda, mewujudkan soket arbitrari, dan "
+"tindakan lain yang boleh digunakan untuk berkompromi dengan sistem anda. "
+"Nyahaktifkan opsyen ini atas tanggungjawab sendiri. Anda boleh mengubah suai "
+"fail $HOME/.java.policy dengan kemudahan alat dasar untuk memberikan kod "
+"yang dimuat turun dari laman web tertentu dengan keizinan yang lebih."
+
+#: javaopts.cpp:170
+#, kde-format
+msgid "Enabling this will cause the jvm to use KIO for network transport "
+msgstr ""
+"Mengaktifkan ini akan menyebabkan jvm menggunakan KIO untuk pengangkutan "
+"rangkaian"
+
+#: javaopts.cpp:172
+#, kde-format
+msgid ""
+"Enter the path to the java executable. If you want to use the jre in your "
+"path, simply leave it as 'java'. If you need to use a different jre, enter "
+"the path to the java executable (e.g. /usr/lib/jdk/bin/java), or the path to "
+"the directory that contains 'bin/java' (e.g. /opt/IBMJava2-13)."
+msgstr ""
+"Masukkan laluan ke dalam java boleh laksana. Jika anda ingin menggunakan jre "
+"dalam laluan anda, hanya biarkan sebagai 'java'. Jika anda perlu menggunakan "
+"jre yang berbeza, masukkan laluan ke dalam java boleh laksana (misalnya /usr/"
+"lib/jdk/bin/java), atau laluan ke direktori yang mengandungi 'bin/"
+"java' (misalnya /opt/IBMJava2-13)."
+
+#: javaopts.cpp:177
+#, kde-format
+msgid ""
+"If you want special arguments to be passed to the virtual machine, enter "
+"them here."
+msgstr ""
+"Jika anda ingin argumen khusus dihantar ke mesin maya, masukkan ia di sini."
+
+#: javaopts.cpp:179
+#, kde-format
+msgid ""
+"When all the applets have been destroyed, the applet server should shut "
+"down. However, starting the jvm takes a lot of time. If you would like to "
+"keep the java process running while you are browsing, you can set the "
+"timeout value to whatever you like. To keep the java process running for the "
+"whole time that the konqueror process is, leave the Shutdown Applet Server "
+"checkbox unchecked."
+msgstr ""
+"Apabila semua aplet telah dimusnahkan, pelayan aplet hendaklah ditutup. "
+"Bagaimanapun, bermula dengan jvm akan mengambil masa yang panjang. Jika anda "
+"mahu proses java terus berjalan semasa anda belayar, anda boleh set nilai "
+"waktu rehat kepada nilai yang anda suka. Untuk memastikan proses java "
+"berjalan sepanjang masa proses konqueror berjalan, biarkan kotak semak "
+"Pelayan Aplet Tutup tidak bertanda."
+
+#: javaopts.cpp:288
+#, kde-format
+msgctxt "@title:group"
+msgid "Doma&in-Specific"
+msgstr "Khusus Doma&in"
+
+#: javaopts.cpp:323
+#, fuzzy, kde-format
+#| msgid "New Java Policy"
+msgctxt "@title:window"
+msgid "New Java Policy"
+msgstr "Dasar Java Baru"
+
+#: javaopts.cpp:326
+#, fuzzy, kde-format
+#| msgid "Change Java Policy"
+msgctxt "@title:window"
+msgid "Change Java Policy"
+msgstr "Ubah Dasar Java"
+
+#: javaopts.cpp:330
+#, kde-format
+msgid "&Java policy:"
+msgstr "Dasar &Java:"
+
+#: javaopts.cpp:331
+#, kde-format
+msgid "Select a Java policy for the above host or domain."
+msgstr "Pilih dasar Java untuk hos atau domain di atas."
+
+#: jsopts.cpp:50
+#, kde-format
+msgid "Ena&ble JavaScript globally"
+msgstr "&Aktifkan JavaScript secara global"
+
+#: jsopts.cpp:51
+#, kde-format
+msgid ""
+"Enables the execution of scripts written in ECMA-Script (also known as "
+"JavaScript) that can be contained in HTML pages. Note that, as with any "
+"browser, enabling scripting languages can be a security problem."
+msgstr ""
+"Aktifkan pelaksanaan skrip yang ditulis dalam Skrip ECMA (juga dikenal "
+"sebagai JavaScript) yang mungkin terkandung dalam halaman HTML. Ambil "
+"perhatian bahawa, seperti mana-mana pelayar, mengaktifkan bahasa skrip boleh "
+"menimbulkan masalah keselamatan."
+
+#: jsopts.cpp:59
+#, kde-format
+msgid "Debugging"
+msgstr "Nyahpepijat"
+
+#: jsopts.cpp:63
+#, kde-format
+msgid "Enable debu&gger"
+msgstr "Aktifkan &penyahpepijat"
+
+#: jsopts.cpp:64
+#, kde-format
+msgid "Enables builtin JavaScript debugger."
+msgstr "Aktifkan penyahpepijat JavaScript terbina dalam."
+
+#: jsopts.cpp:68
+#, kde-format
+msgid "Report &errors"
+msgstr "Laporkan &ralat"
+
+#: jsopts.cpp:69
+#, kde-format
+msgid ""
+"Enables the reporting of errors that occur when JavaScript code is executed."
+msgstr ""
+"Mengaktifkan pelaporan ralat yang berlaku apabila kod JavaScript "
+"dilaksanakan."
+
+#: jsopts.cpp:79
+#, kde-format
+msgid ""
+"Here you can set specific JavaScript policies for any particular host or "
+"domain. To add a new policy, simply click the <i>New...</i> button and "
+"supply the necessary information requested by the dialog box. To change an "
+"existing policy, click on the <i>Change...</i> button and choose the new "
+"policy from the policy dialog box. Clicking on the <i>Delete</i> button will "
+"remove the selected policy causing the default policy setting to be used for "
+"that domain. The <i>Import</i> and <i>Export</i> button allows you to easily "
+"share your policies with other people by allowing you to save and retrieve "
+"them from a zipped file."
+msgstr ""
+"Di sini anda boleh set dasar JavaScript khusus bagi sebarang hos atau domain "
+"tertentu. Untuk menambah dasar, hanya klik butang <i>Baru...</i> dan "
+"bekalkan maklumat perlu yang diminta oleh kotak dialog. Untuk mengubah dasar "
+"sedia ada, klik butang <i>Ubah...</i> dan pilih dasar baru dari kotak dialog "
+"dasar. Mengklik butang <i>Hapus</i> akan membuang dasar yang dipilih "
+"menyebabkan seting dasar piawai digunakan untuk domain tersebut. Butang "
+"<i>Import</i> dan <i>Eksport</i> membolehkan anda dengan mudah berkongsi "
+"dasar anda dengan orang lain dengan membenarkan anda menyimpan dan "
+"mendapatkannya kembali dari fail zip."
+
+#: jsopts.cpp:89
+#, fuzzy, kde-format
+msgid ""
+"<p>This box contains the domains and hosts you have set a specific "
+"JavaScript policy for. This policy will be used instead of the default "
+"policy for enabling or disabling JavaScript on pages sent by these domains "
+"or hosts.</p><p>Select a policy and use the controls on the right to modify "
+"it.</p>"
+msgstr ""
+"<p> kotak mengandungi dan a JavaScript for bagi default for atau JavaScript "
+"buka halaman atau</p><p> Pilih a dan buka kanan hingga</p>"
+
+#: jsopts.cpp:96
+#, kde-format
+msgid ""
+"Click this button to choose the file that contains the JavaScript policies. "
+"These policies will be merged with the existing ones. Duplicate entries are "
+"ignored."
+msgstr ""
+"Klik butang ini untuk memilih fail yang mengandungi dasar JavaScript. Dasar "
+"ini akan bercantum dengan dasar sedia ada Entri duplikat diabaikan."
+
+#: jsopts.cpp:99
+#, kde-format
+msgid ""
+"Click this button to save the JavaScript policy to a zipped file. The file, "
+"named <b>javascript_policy.tgz</b>, will be saved to a location of your "
+"choice."
+msgstr ""
+"Klik butang ini untuk menyimpan dasar JavaScript ke dalam fail zip. Fail, "
+"dinamai <b>javascript_policy.tgz</b>, akan disimpan ke lokasi pilihan anda.."
+
+#: jsopts.cpp:105
+#, kde-format
+msgid "Global JavaScript Policies"
+msgstr "Dasar JavaScript Global"
+
+#: jsopts.cpp:173
+#, kde-format
+msgctxt "@title:group"
+msgid "Do&main-Specific"
+msgstr "Khusus &Domain"
+
+#: jsopts.cpp:212
+#, fuzzy, kde-format
+#| msgid "New JavaScript Policy"
+msgctxt "@title:window"
+msgid "New JavaScript Policy"
+msgstr "Dasar JavaSkript Baru"
+
+#: jsopts.cpp:215
+#, fuzzy, kde-format
+#| msgid "Change JavaScript Policy"
+msgctxt "@title:window"
+msgid "Change JavaScript Policy"
+msgstr "Ubah Dasar JavaScript"
+
+#: jsopts.cpp:219
+#, kde-format
+msgid "JavaScript policy:"
+msgstr "Dasar JavaScript:"
+
+#: jsopts.cpp:220
+#, kde-format
+msgid "Select a JavaScript policy for the above host or domain."
+msgstr "Pilih dasar JavaScript untuk hos dan domain di atas."
+
+#: jsopts.cpp:222
+#, kde-format
+msgid "Domain-Specific JavaScript Policies"
+msgstr "Dasar JavaScript Khusus Domain"
+
+#: jspolicies.cpp:132
+#, kde-format
+msgid "Open new windows:"
+msgstr "Buka tetingkap baru:"
+
+#: jspolicies.cpp:140 jspolicies.cpp:194 jspolicies.cpp:231 jspolicies.cpp:268
+#: jspolicies.cpp:308
+#, kde-format
+msgid "Use global"
+msgstr "Guna global"
+
+#: jspolicies.cpp:141 jspolicies.cpp:195 jspolicies.cpp:232 jspolicies.cpp:269
+#: jspolicies.cpp:309
+#, kde-format
+msgid "Use setting from global policy."
+msgstr "Guna seting daripada dasar global."
+
+#: jspolicies.cpp:147 jspolicies.cpp:201 jspolicies.cpp:238 jspolicies.cpp:275
+#: jspolicies.cpp:315
+#, kde-format
+msgid "Allow"
+msgstr "Benarkan"
+
+#: jspolicies.cpp:148
+#, kde-format
+msgid "Accept all popup window requests."
+msgstr "Terima semua tetingkap popup yang diminta."
+
+#: jspolicies.cpp:153
+#, kde-format
+msgid "Ask"
+msgstr "Tanya"
+
+#: jspolicies.cpp:154
+#, kde-format
+msgid "Prompt every time a popup window is requested."
+msgstr "Gesa setiap kali tetingkap popup diminta."
+
+#: jspolicies.cpp:159
+#, kde-format
+msgid "Deny"
+msgstr "Halang"
+
+#: jspolicies.cpp:160
+#, kde-format
+msgid "Reject all popup window requests."
+msgstr "Tolak semua permintaan tetingkap popup."
+
+#: jspolicies.cpp:165
+#, kde-format
+msgid "Smart"
+msgstr "Pintar"
+
+#: jspolicies.cpp:166
+#, kde-format
+msgid ""
+"Accept popup window requests only when links are activated through an "
+"explicit mouse click or keyboard operation."
+msgstr ""
+"Terima permintaan tetingkap popup hanya apabila pautan diaktifkan melalui "
+"klik tetikus jelas atau operasi papan kekunci."
+
+#: jspolicies.cpp:173
+#, fuzzy, kde-format
+msgid ""
+"If you disable this, Konqueror will stop interpreting the <i>window.open()</"
+"i> JavaScript command. This is useful if you regularly visit sites that make "
+"extensive use of this command to pop up ad banners.<br /><br /><b>Note:</b> "
+"Disabling this option might also break certain sites that require <i>window."
+"open()</i> for proper operation. Use this feature carefully."
+msgstr ""
+"Konqueror<i></i> JavaScript ialah bagi hingga<br /><br /><b> Nota</b><i></i> "
+"for Guna."
+
+#: jspolicies.cpp:187
+#, kde-format
+msgid "Resize window:"
+msgstr "Saiz semula tetingkap:"
+
+#: jspolicies.cpp:202
+#, kde-format
+msgid "Allow scripts to change the window size."
+msgstr "Benarkan skrip mengubah saiz tetingkap."
+
+#: jspolicies.cpp:207 jspolicies.cpp:244 jspolicies.cpp:281 jspolicies.cpp:321
+#, kde-format
+msgid "Ignore"
+msgstr "Abai"
+
+#: jspolicies.cpp:208
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to change the window size. The web page will "
+"<i>think</i> it changed the size but the actual window is not affected."
+msgstr ""
+"Abaikan cubaan skrip untuk mengubah saiz tetingkap. Laman web akan<i>fikir</"
+"i> ia telah mengubah saiz tetapi tetingkap sebenar tidak dipengaruhi."
+
+#: jspolicies.cpp:215
+#, kde-format
+msgid ""
+"Some websites change the window size on their own by using <i>window."
+"resizeBy()</i> or <i>window.resizeTo()</i>. This option specifies the "
+"treatment of such attempts."
+msgstr ""
+"Sesetengah laman web web mengubah saiz tetingkapnya sendiri dengan "
+"menggunakan <i>window.resizeBy()</i> atau <i>window.resizeTo()</i>. Opsyen "
+"ini menetapkan layanan terhadap cubaan tersebut."
+
+#: jspolicies.cpp:224
+#, kde-format
+msgid "Move window:"
+msgstr "Alih tetingkap:"
+
+#: jspolicies.cpp:239
+#, kde-format
+msgid "Allow scripts to change the window position."
+msgstr "Benarkan skrip mengubah posisi tetingkap."
+
+#: jspolicies.cpp:245
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to change the window position. The web page will "
+"<i>think</i> it moved the window but the actual position is not affected."
+msgstr ""
+"Abaikan cubaan skrip untuk mengubah posisi tetingkap. Laman web akan "
+"<i>fikir</i> ia telah mengalihkan tetingkap tetapi posisi sebenar tidak "
+"terjejas."
+
+#: jspolicies.cpp:252
+#, kde-format
+msgid ""
+"Some websites change the window position on their own by using <i>window."
+"moveBy()</i> or <i>window.moveTo()</i>. This option specifies the treatment "
+"of such attempts."
+msgstr ""
+"Sesetengah laman web web mengubah posisi tetingkapnya sendiri dengan "
+"<i>window.moveBy()</i> atau <i>window.moveTo()</i>. Opsyen ini menetapkan "
+"layanan terhadap cubaan tersebut."
+
+#: jspolicies.cpp:261
+#, kde-format
+msgid "Focus window:"
+msgstr "Fokus tetingkap:"
+
+#: jspolicies.cpp:276
+#, kde-format
+msgid "Allow scripts to focus the window."
+msgstr "Benarkan skrip memfokus tetingkap."
+
+#: jspolicies.cpp:282
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to focus the window. The web page will <i>think</"
+"i> it brought the focus to the window but the actual focus will remain "
+"unchanged."
+msgstr ""
+"Abaikan cubaan skrip untuk memfokus tetingkap. Laman web akan <i>fikir</i> "
+"ia membawa fokus ke tetingkap tetapi fokus sebenar kekal tak berubah."
+
+#: jspolicies.cpp:290
+#, kde-format
+msgid ""
+"Some websites set the focus to their browser window on their own by using "
+"<i>window.focus()</i>. This usually leads to the window being moved to the "
+"front interrupting whatever action the user was dedicated to at that time. "
+"This option specifies the treatment of such attempts."
+msgstr ""
+"Sesetengah laman web mengeset fokus ke tetingkap pelayarnya sendiri dengan "
+"menggunakan <i>window.focus()</i>. Ini biasanya menyebabkan tetingkap "
+"beralih ke depan, menyampuk apa jua tindakan yang ditujukan kepada pengguna "
+"pada masa itu. Opsyen ini menetapkan layanan terhadap cubaan tersebut."
+
+#: jspolicies.cpp:301
+#, kde-format
+msgid "Modify status bar text:"
+msgstr "Ubah suai teks bar status:"
+
+#: jspolicies.cpp:316
+#, kde-format
+msgid "Allow scripts to change the text of the status bar."
+msgstr "Benarkan skrip mengubah teks bar status."
+
+#: jspolicies.cpp:322
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to change the status bar text. The web page will "
+"<i>think</i> it changed the text but the actual text will remain unchanged."
+msgstr ""
+"Abaikan cubaan skrip untuk mengubah teks bar status. Laman web akan "
+"<i>fikir</i> ia telah mengubah teks tetapi teks sebenar akan kekal tak "
+"berubah."
+
+#: jspolicies.cpp:330
+#, kde-format
+msgid ""
+"Some websites change the status bar text by setting <i>window.status</i> or "
+"<i>window.defaultStatus</i>, thus sometimes preventing displaying the real "
+"URLs of hyperlinks. This option specifies the treatment of such attempts."
+msgstr ""
+"Sesetengah laman web mengubah teks bar status dengan mengeset <i>window."
+"status</i> atau <i>window.defaultStatus</i>, dengan ini kadang-kadang "
+"mencegah pemaparan URL sebenar hiperpautan. Opsyen ini menetapkan layanan "
+"terhadap cubaan tersebut."
+
+#: main.cpp:43
+#, kde-format
+msgid "Konqueror Browsing Control Module"
+msgstr "Modul Kawalan Pelayaran Konqueror"
+
+#: main.cpp:45
+#, kde-format
+msgid "(c) 1999 - 2001 The Konqueror Developers"
+msgstr "(c) 1999 - 2001 The Konqueror Developers"
+
+#: main.cpp:47
+#, kde-format
+msgid "Waldo Bastian"
+msgstr "Waldo Bastian"
+
+#: main.cpp:48
+#, kde-format
+msgid "David Faure"
+msgstr "David Faure"
+
+#: main.cpp:49
+#, kde-format
+msgid "Matthias Kalle Dalheimer"
+msgstr "Matthias Kalle Dalheimer"
+
+#: main.cpp:50
+#, kde-format
+msgid "Lars Knoll"
+msgstr "Lars Knoll"
+
+#: main.cpp:51
+#, kde-format
+msgid "Dirk Mueller"
+msgstr "Dirk Mueller"
+
+#: main.cpp:52
+#, kde-format
+msgid "Daniel Molkentin"
+msgstr "Daniel Molkentin"
+
+#: main.cpp:53
+#, kde-format
+msgid "Wynn Wilkes"
+msgstr "Wynn Wilkes"
+
+#: main.cpp:55
+#, kde-format
+msgid "Leo Savernik"
+msgstr "Leo Savernik"
+
+#: main.cpp:55
+#, kde-format
+msgid ""
+"JavaScript access controls\n"
+"Per-domain policies extensions"
+msgstr ""
+"Kawalan akses JavaScript\n"
+"Lanjutan dasar per domain"
+
+#: main.cpp:67
+#, kde-format
+msgid "&Java"
+msgstr "&Java"
+
+#: main.cpp:71
+#, kde-format
+msgid "Java&Script"
+msgstr "Java&Script"
+
+#: main.cpp:111
+#, fuzzy, kde-format
+msgid ""
+"<h2>JavaScript</h2>On this page, you can configure whether JavaScript "
+"programs embedded in web pages should be allowed to be executed by Konqueror."
+"<h2>Java</h2>On this page, you can configure whether Java applets embedded "
+"in web pages should be allowed to be executed by Konqueror.<br /><br /"
+"><b>Note:</b> Active content is always a security risk, which is why "
+"Konqueror allows you to specify very fine-grained from which hosts you want "
+"to execute Java and/or JavaScript programs."
+msgstr ""
+"<h2> JavaScript</h2> On halaman JavaScript inci halaman hingga Konqueror<h2> "
+"Java</h2> On halaman Java inci halaman hingga Konqueror<br /><br /><b> Nota</"
+"b> Aktif ialah a ialah Konqueror hingga hingga Java dan atau JavaScript."
+
+#: policydlg.cpp:30
+#, fuzzy, kde-format
+#| msgid "Domain-Specific Policies"
+msgctxt "@title:window"
+msgid "Domain-Specific Policies"
+msgstr "Dasar Khusus Domain"
+
+#: policydlg.cpp:47
+#, kde-format
+msgid "&Host or domain name:"
+msgstr "Nama &hos atau domain:"
+
+#: policydlg.cpp:55
+#, kde-format
+msgid ""
+"Enter the name of a host (like www.kde.org) or a domain, starting with a dot "
+"(like .kde.org or .org)"
+msgstr ""
+"Masukkan nama hos (seperti www.kde.org) atau domain, bermula dengan titik "
+"(seperti .kde.org or .org)"
+
+#: policydlg.cpp:139
+#, kde-format
+msgid "You must first enter a domain name."
+msgstr "Anda mesti masukkan nama domain dulu."
+
+#~ msgid "Accept languages:"
+#~ msgstr "Terima bahasa:"
+
+#~ msgid "Accept character sets:"
+#~ msgstr "Terima set aksara:"
+
+#~ msgid "Plugins"
+#~ msgstr "Plugin"
+
+#~ msgid "Folders"
+#~ msgstr "Folder"
+
+#~ msgid "&Remove"
+#~ msgstr "&Buang"
+
+#~ msgid "&New"
+#~ msgstr "&Baru"
+
+#~ msgid "Do&wn"
+#~ msgstr "&Bawah"
+
+#~ msgid "&Up"
+#~ msgstr "&Atas"
+
+#~ msgid "Click here to scan for newly installed Netscape plugins now."
+#~ msgstr ""
+#~ "Klik di sini sekarang untuk imbas plugin Netscape yang baru dipasang."
+
+#~ msgid "&Scan for Plugins"
+#~ msgstr "Imba&s for Plugin"
+
+#~ msgid "Here you can see a list of the Netscape plugins KDE has found."
+#~ msgstr "Di sini anda boleh lihat senarai plugin Netscape yang KDE temui."
+
+#~ msgid "Information"
+#~ msgstr "Maklumat"
+
+#~ msgid "Value"
+#~ msgstr "Nilai"
+
+#~ msgid "Global Settings"
+#~ msgstr "Seting Global"
+
+#~ msgid "&Enable plugins globally"
+#~ msgstr "&Mengaktifkan plugin secara global"
+
+#~ msgid "Only allow &HTTP and HTTPS URLs for plugins"
+#~ msgstr "Hanya benarkan URL &HTTP dan HTTPS untuk plugin"
+
+#~ msgid "&Load plugins on demand only"
+#~ msgstr "&Muatkan plugin atas permintaan sahaja"
+
+#~ msgid "CPU priority for plugins: %1"
+#~ msgstr "Keutamaan CPU untuk plugin: %1"
+
+#~ msgid "Domain-Specific Settin&gs"
+#~ msgstr "&Seting Khusus Domain"
+
+#~ msgid ""
+#~ "Enables the execution of plugins that can be contained in HTML pages, e."
+#~ "g. Macromedia Flash. Note that, as with any browser, enabling active "
+#~ "contents can be a security problem."
+#~ msgstr ""
+#~ "Menggaktifkan pelaksanaan plugin yang boleh didapatkan dalam halaman "
+#~ "HTML, misalnya Macromedia Flash. Ambil perhatian bahawa, seperti mana-"
+#~ "mana pelayar, mengaktifkan kandungan aktif boleh menimbulkan masalah "
+#~ "keselamatan."
+
+#, fuzzy
+#~ msgid ""
+#~ "<p>This box contains the domains and hosts you have set a specific plugin "
+#~ "policy for. This policy will be used instead of the default policy for "
+#~ "enabling or disabling plugins on pages sent by these domains or hosts.</"
+#~ "p><p>Select a policy and use the controls on the right to modify it.</p>"
+#~ msgstr ""
+#~ "<p> kotak mengandungi dan a plug masuk for bagi default for atau buka "
+#~ "halaman atau</p><p> Pilih a dan buka kanan hingga</p>"
+
+#~ msgid ""
+#~ "Click this button to choose the file that contains the plugin policies. "
+#~ "These policies will be merged with the existing ones. Duplicate entries "
+#~ "are ignored."
+#~ msgstr ""
+#~ "Klik butang ini untuk memilih fail yang mengandungi dasar plugin. Dasar "
+#~ "ini akan bercantum dengan dasar sedia ada. Entri duplikat diabaikan."
+
+#~ msgid ""
+#~ "Click this button to save the plugin policy to a zipped file. The file, "
+#~ "named <b>plugin_policy.tgz</b>, will be saved to a location of your "
+#~ "choice."
+#~ msgstr ""
+#~ "Klik butang ini untuk menyimpan dasar plugin ke dalam fail zip. Fail, "
+#~ "bernama <b>plugin-policy.tgz</b>, akan disimpan di lokasi pilihan anda."
+
+#~ msgid ""
+#~ "Here you can set specific plugin policies for any particular host or "
+#~ "domain. To add a new policy, simply click the <i>New...</i> button and "
+#~ "supply the necessary information requested by the dialog box. To change "
+#~ "an existing policy, click on the <i>Change...</i> button and choose the "
+#~ "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
+#~ "button will remove the selected policy causing the default policy setting "
+#~ "to be used for that domain."
+#~ msgstr ""
+#~ "Di sini anda boleh set dasar plugin khusus bagi mana-mana hos atau "
+#~ "domain. Untuk menambah dasar baru, hanya  klik butang <i>Baru...</i> dan "
+#~ "bekalkan maklumat perlu yang diminta oleh kotak dialog. Untuk mengubah "
+#~ "dasar sedia ada, klik butang <i>Ubah...</i> dan pilih dasar baru dari "
+#~ "kotak dilog dasar. Mengklik butang <i>Hapus</i> akan membuang dasar yang "
+#~ "dipilih menyebabkan seting dasar piawai digunakan bagi domain tersebut."
+
+#~ msgctxt "lowest priority"
+#~ msgid "lowest"
+#~ msgstr "terendah"
+
+#~ msgctxt "low priority"
+#~ msgid "low"
+#~ msgstr "rendah"
+
+#~ msgctxt "medium priority"
+#~ msgid "medium"
+#~ msgstr "sederhana"
+
+#~ msgctxt "high priority"
+#~ msgid "high"
+#~ msgstr "tinggi"
+
+#~ msgctxt "highest priority"
+#~ msgid "highest"
+#~ msgstr "tertinggi"
+
+#~ msgid ""
+#~ "<h1>Konqueror Plugins</h1> The Konqueror web browser can use Netscape "
+#~ "plugins to show special content, just like the Navigator does. Please "
+#~ "note that the way you have to install Netscape plugins may depend on your "
+#~ "distribution. A typical place to install them is, for example, '/opt/"
+#~ "netscape/plugins'."
+#~ msgstr ""
+#~ "<h1>Plugin Konqueror</h1> Pelayar web Konqueror boleh menggunakan plugin "
+#~ "Netscape untuk memaparkan kandungan khas, sama seperti Navigator. Ambil "
+#~ "perhatian bahawa cara anda memasang plugin Netscape bergantung pada "
+#~ "pengagihan anda. Tempat biasa untuk memasangnya ialah, misalnya, '/opt/"
+#~ "netscape/plugins'."
+
+#~ msgid ""
+#~ "Do you want to apply your changes before the scan? Otherwise the changes "
+#~ "will be lost."
+#~ msgstr ""
+#~ "Anda ingin laksanakan perubahan sebelum imbasan? Jika tidak perubahan "
+#~ "akan hilang."
+
+#~ msgid ""
+#~ "The nspluginscan executable cannot be found. Netscape plugins will not be "
+#~ "scanned."
+#~ msgstr ""
+#~ "nspluginscan boleh laksana tidak dapat ditemui. Plugin Netscape tidak "
+#~ "akan diimbas."
+
+#~ msgid "Scanning for plugins"
+#~ msgstr "Mengimbas plugin"
+
+#, fuzzy
+#~| msgid "Select Plugin Scan Folder"
+#~ msgctxt "@title:window"
+#~ msgid "Select Plugin Scan Folder"
+#~ msgstr "Pilih Folder Imbas Plugin"
+
+#~ msgid "Netscape Plugins"
+#~ msgstr "Plugin Nestscape"
+
+#~ msgid "Plugin"
+#~ msgstr "Plugin"
+
+#~ msgid "MIME type"
+#~ msgstr "Jenis MIME"
+
+#~ msgid "Description"
+#~ msgstr "Huraian"
+
+#~ msgid "Suffixes"
+#~ msgstr "Awalan"
+
+#~ msgid "Doma&in-Specific"
+#~ msgstr "Khusus &Domain"
+
+#, fuzzy
+#~| msgid "New Plugin Policy"
+#~ msgctxt "@title:window"
+#~ msgid "New Plugin Policy"
+#~ msgstr "Dasar Plugin Baru"
+
+#, fuzzy
+#~| msgid "Change Plugin Policy"
+#~ msgctxt "@title:window"
+#~ msgid "Change Plugin Policy"
+#~ msgstr "Ubah Dasar Plugin"
+
+#~ msgid "&Plugin policy:"
+#~ msgstr "Dasar &plugin:"
+
+#~ msgid "Select a plugin policy for the above host or domain."
+#~ msgstr "Pilih dasar plugin bagi hos atau domain di atas."
+
+#, fuzzy
+#~| msgid "Sa&ns serif font:"
+#~ msgid "Sans Serif"
+#~ msgstr "Font Sa&ns serif:"
+
+#, fuzzy
+#~| msgid "S&tandard font:"
+#~ msgid "Standard Symbols L"
+#~ msgstr "Fon&t piawai:"
+
+#~ msgid "kcmkonqhtml"
+#~ msgstr "kcmkonqhtml"

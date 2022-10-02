@@ -1,0 +1,181 @@
+<chapter id="save-settings">
+
+<chapterinfo>
+<authorgroup>
+<author
+><personname
+><firstname
+>Pamela</firstname
+> <surname
+>Roberts</surname
+></personname
+></author>
+<othercredit role="translator"
+><firstname
+>Dragan</firstname
+><surname
+>Pantelić</surname
+><affiliation
+><address
+><email
+>falcon-10@gmx.de</email
+></address
+></affiliation
+><contrib
+>prevod</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>26. 2. 2010.</date>
+<releaseinfo
+>KDE 4.4</releaseinfo>
+</chapterinfo>
+
+<title
+>Upisivanje postavki i profila</title>
+<sect1 id="save-settings-general">
+<title
+>Opšte postavke</title>
+<para
+>Kad zatvarate <application
+>K‑osvajač</application
+>, vaše trenutne postavke menija <guimenu
+>Prikaz</guimenu
+> (kao što su stavke <guimenuitem
+>Način prikaza</guimenuitem
+>, <guimenuitem
+>Koristi index.html</guimenuitem
+>, <guimenuitem
+>Prikazuj skrivene fajlove</guimenuitem
+>) ne upisuju se automatski kao podrazumevane. Međutim, možete reći <application
+>K‑osvajaču</application
+> da ih zapamti odabirom <menuchoice
+><guimenu
+>Podešavanje</guimenu
+><guimenuitem
+>Sačuvaj profil prikaza kao...</guimenuitem
+></menuchoice
+>; trenutne postavke postaće podrazumevane za naredna pokretanja <application
+>K‑osvajača</application
+>.</para>
+
+<para
+>No, za tekuću fasciklu možete zadati i zasebne postavke menija <guimenu
+>Prikaz</guimenu
+>. Da ovo uradite, idite na <menuchoice
+><guimenu
+>Prikaz</guimenu
+> <guimenuitem
+>Podesi svojstva prikaza...</guimenuitem
+></menuchoice
+> i izmenite postavke prikaza po želji. Zatim primenite svojstva prikaza na tekuću fasciklu, što će u njoj stvoriti fajl <filename
+>.directory</filename
+> koji će sadržati postavke. Postavke posebne po fascikli uklanjate ili isto u ovom dijalogu, ili prostim brisanjem fajla <filename
+>.directory</filename
+>.</para>
+<note
+><para
+>Zgodna upotreba ove mogućnosti je kada imate fasciklu punu slika. Za nju možete postaviti da se prikazuju sličice kad je otvorite (preko <menuchoice
+><guisubmenu
+>Način prikaza</guisubmenu
+> <guimenuitem
+>Ikone</guimenuitem
+></menuchoice
+> i <guimenuitem
+>Pregled</guimenuitem
+> u meniju <guimenu
+>Prikaz</guimenu
+>), a da to ne važi za ostale fascikle.</para
+></note>
+</sect1>
+
+<sect1 id="save-settings-view-profiles">
+<title
+>Profili prikaza</title>
+<para
+><application
+>K‑osvajač</application
+> može da sačuva ceo skup opcija kao <emphasis
+>profil prikaza</emphasis
+>. Neki profili prikaza deo su standardne instalacije <application
+>K‑osvajača</application
+>, npr. <property
+>Pregledanje Weba</property
+>, <property
+>Upravljanje fajlovima</property
+>, <property
+>Razvoj za KDE</property
+>, <property
+>Ponoćni komandir</property
+> i <property
+>Pregledanje sa jezičcima</property
+>, a možete dodati i sopstvene.</para>
+
+<para
+>Za izmenu profila prikaza, recimo <property
+>Pregledanje Weba</property
+>, učitajte profil pomoću <menuchoice
+><guimenu
+>Podešavanje</guimenu
+><guisubmenu
+>Učitaj profil prikaza</guisubmenu
+><guimenuitem
+>Pregledanje Weba</guimenuitem
+> </menuchoice
+> i izmenite postavke <application
+>K‑osvajača</application
+> kako želite. Zatim izaberite <menuchoice
+><guimenu
+>Podešavanje</guimenu
+><guimenuitem
+>Sačuvaj profil prikaza kao...</guimenuitem
+></menuchoice
+>. U dijalogu koji dobijete, možete izmeniti ime profila, tako da napravite novi profil s tim imenom, ili ostaviti ime kakvo jeste, da izmenite trenutni profil. Ako izaberete <guilabel
+>Sačuvaj URL‑ove u profilu</guilabel
+>, trenutni URL učitaće se zajedno sa tim profilom prikaza. Ovo funkcioniše slično kao „domaća stranica“ u mnogim veb pregledačima. Ako želite da se <application
+>K‑osvajač</application
+> pokrene sa praznim prozorom, pre nego što sačuvate profil unesite u traku lokacije <userinput
+>about:blank</userinput
+>.</para>
+
+<note
+><para
+>Možete napraviti i ikonu površi za pokretanje <application
+>K‑osvajača</application
+> sa novostvorenim profilom. Prvo napravite ikonu tako što kliknete desnim na unos <application
+>K‑osvajača</application
+> u meniju pokretača programa, pa iz kontekstnog menija izaberete <guimenuitem
+>Dodaj na površ</guimenuitem
+>. Otvorite dijalog postavki nove ikone na površi tako što kliknete na ikonu alatke. Izmenite <guilabel
+>Naredba:</guilabel
+> pod jezičkom <guilabel
+>Program</guilabel
+> da glasi <userinput
+><command
+>kfmclient</command
+> <option
+>openProfile <replaceable
+>Moj‑novi‑profil</replaceable
+></option
+></userinput
+>, gde je <replaceable
+>Moj‑novi‑profil</replaceable
+> ime koje želite za profil. Zatim promenite ime ikone na <userinput
+>Moj‑novi‑profil</userinput
+> ili nešto slično.</para
+></note>
+
+</sect1>
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

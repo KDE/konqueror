@@ -1,0 +1,459 @@
+# translation of kcmkio.po to Kurdish
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Erdal Ronahi <erdal.ronahi@nospam.gmail.com>, 2007, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkio\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2009-01-06 14:34+0200\n"
+"Last-Translator: Erdal Ronahi <erdal.ronahi@nospam.gmail.com>\n"
+"Language-Team: Kurdish <kde-i18n-doc@lists.kde.org>\n"
+"Language: ku\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: bookmarks.cpp:92
+#, kde-format
+msgid ""
+"<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
+"page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
+"\">bookmarks:/</a>.</p>"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: bookmarks.ui:16
+#, kde-format
+msgid "Bookmarks"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowRoot)
+#: bookmarks.ui:23
+#, kde-format
+msgid ""
+"If this option is unchecked, bookmarks at the root of the hierarchy (not in "
+"a folder) are not displayed.\n"
+"If checked, they are gathered in a \"root\" folder."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowRoot)
+#: bookmarks.ui:26
+#, kde-format
+msgid "&Show bookmarks without folder"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbFlattenTree)
+#: bookmarks.ui:37
+#, kde-format
+msgid ""
+"Sub-folders are shown within their parent by default. If you activate this "
+"option, sub-folders are displayed on their own.\n"
+"It looks less nice but it may help if you have a very big folder you want to "
+"spread in two columns."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbFlattenTree)
+#: bookmarks.ui:40
+#, kde-format
+msgid "&Flatten bookmarks tree"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowPlaces)
+#: bookmarks.ui:47
+#, kde-format
+msgid ""
+"Show a box with KDE places (Home, Network, ...). Useful if you use konqueror "
+"as a file manager."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowPlaces)
+#: bookmarks.ui:50
+#, kde-format
+msgid "Show system &places"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: bookmarks.ui:63
+#, kde-format
+msgid "General Settings"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, label)
+#: bookmarks.ui:71
+#, kde-format
+msgid ""
+"Folders are automatically distributed in several columns. The optimal number "
+"of columns depends on the width of the konqueror window and the number of "
+"bookmarks you have."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: bookmarks.ui:74
+#, kde-format
+msgid "Number of columns to show:"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowBackgrounds)
+#: bookmarks.ui:109
+#, kde-format
+msgid "Disable it on slow system to disable background images."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowBackgrounds)
+#: bookmarks.ui:112
+#, kde-format
+msgid "Show folder &backgrounds"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, groupBox_3)
+#: bookmarks.ui:138
+#, kde-format
+msgid "How much disk space is used to cache the pixmaps"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: bookmarks.ui:141
+#, kde-format
+msgid "Pixmap Cache"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, lbMaxCacheSize)
+#: bookmarks.ui:150
+#, fuzzy, kde-format
+#| msgid "Disk cache &size:"
+msgid "Disk cache size:"
+msgstr "&Mezinahiya pêşbîra dîskê:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, sbCacheSize)
+#: bookmarks.ui:163
+#, kde-format
+msgid " kB"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, clearCacheButton)
+#: bookmarks.ui:173
+#, kde-format
+msgid "Clear the pixmap cache"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, clearCacheButton)
+#: bookmarks.ui:176
+#, kde-format
+msgid "&Clear Cache"
+msgstr "Pêşbîrê pa&qij bike"
+
+#~ msgid "&Use cache"
+#~ msgstr "Pêşbir bi &kar bîne"
+
+#~ msgid "Disk cache &size:"
+#~ msgstr "&Mezinahiya pêşbîra dîskê:"
+
+#~ msgid "C&lear Cache"
+#~ msgstr "Pêşbîrê paqij bike"
+
+#~ msgid "&Management"
+#~ msgstr "&Gerînendetî"
+
+#~ msgid "End of session"
+#~ msgstr "Dawiya Danişînê"
+
+#~ msgid "Yes"
+#~ msgstr "Erê"
+
+#~ msgid "Search"
+#~ msgstr "Lêgerîn"
+
+#, fuzzy
+#~| msgid "Site Name"
+#~ msgid "Site"
+#~ msgstr "Navê Sîteyê"
+
+#, fuzzy
+#~| msgid "Site Name"
+#~ msgid "Cookie Name"
+#~ msgstr "Navê Sîteyê"
+
+#~ msgid "D&elete"
+#~ msgstr "D&elete"
+
+#~ msgid "Delete A&ll"
+#~ msgstr "He&mûyan Jê Bibe"
+
+#~ msgid "&Reload List"
+#~ msgstr "Lîsteyê ji nû ve &bar bike"
+
+#~ msgid "Details"
+#~ msgstr "Kîtekît"
+
+#~ msgid "Name:"
+#~ msgstr "Nav:"
+
+#~ msgid "Value:"
+#~ msgstr "Nirx:"
+
+#~ msgid "Path:"
+#~ msgstr "Rêç:"
+
+#~ msgid "Secure:"
+#~ msgstr "Ewle:"
+
+#, fuzzy
+#~| msgid "End of session"
+#~ msgid "Accept &until end of session"
+#~ msgstr "Dawiya Danişînê"
+
+#~ msgid "&New..."
+#~ msgstr "&Nû..."
+
+#~ msgid "Chan&ge..."
+#~ msgstr "&Guherandin..."
+
+#, fuzzy
+#~| msgid "Site Name"
+#~ msgid "Site name:"
+#~ msgstr "Navê Sîteyê"
+
+#~ msgid "Accept"
+#~ msgstr "Pejirandin"
+
+#, fuzzy
+#~| msgid "End of session"
+#~ msgid "Accept until end of session"
+#~ msgstr "Dawiya Danişînê"
+
+#~ msgid "Reject"
+#~ msgstr "Redkirin"
+
+#~ msgid "Ask"
+#~ msgstr "Pirsîn"
+
+#~ msgid "Disable Passive FTP"
+#~ msgstr "FTP ya pasîf neçalak bike"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "No Proxy"
+#~ msgstr "&Cihgir"
+
+#, fuzzy
+#~| msgid "Enter the address of the FTP proxy server."
+#~ msgid "Enter the address for the proxy configuration script."
+#~ msgstr "Navnîşana pêşkêşkara cihgira FTP binivîse."
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "HTTP Proxy:"
+#~ msgstr "&Cihgir"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "SSL Proxy:"
+#~ msgstr "&Cihgir"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "FTP Proxy:"
+#~ msgstr "&Cihgir"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "SOCKS Proxy:"
+#~ msgstr "&Cihgir"
+
+#, fuzzy
+#~| msgid "E&xceptions"
+#~ msgid "Exceptions:"
+#~ msgstr "&Awarte"
+
+#~ msgid "Enter the address of the HTTP proxy server."
+#~ msgstr "Navnîşana pêşkêşkara cihgira HTTP binivîse."
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTP proxy server."
+#~ msgid "Enter the port number of the HTTP proxy server."
+#~ msgstr "Navnîşana pêşkêşkara cihgira HTTP binivîse."
+
+#~ msgid "Enter the address of the HTTPS proxy server."
+#~ msgstr "Navnîşana pêşkêşkara cihgira HTTPS binivîse."
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTPS proxy server."
+#~ msgid "Enter the port number of the HTTPS proxy server."
+#~ msgstr "Navnîşana pêşkêşkara cihgira HTTPS binivîse."
+
+#~ msgid "Enter the address of the FTP proxy server."
+#~ msgstr "Navnîşana pêşkêşkara cihgira FTP binivîse."
+
+#, fuzzy
+#~| msgid "Enter the address of the FTP proxy server."
+#~ msgid "Enter the port number of the FTP proxy server."
+#~ msgstr "Navnîşana pêşkêşkara cihgira FTP binivîse."
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTPS proxy server."
+#~ msgid "Enter the address of the SOCKS proxy server."
+#~ msgstr "Navnîşana pêşkêşkara cihgira HTTPS binivîse."
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTPS proxy server."
+#~ msgid "Enter the port number of the SOCKS proxy server."
+#~ msgstr "Navnîşana pêşkêşkara cihgira HTTPS binivîse."
+
+#~ msgid ""
+#~ "You have to restart the running applications for these changes to take "
+#~ "effect."
+#~ msgstr ""
+#~ "Da ku ev guherand bibandor bibin, sepanên çalak ji nû ve bide destpêkirin."
+
+#, fuzzy
+#~| msgid "Update Failed"
+#~ msgctxt "@title:window"
+#~ msgid "Update Failed"
+#~ msgstr "Rojanekirin biserneket"
+
+#~ msgid "You have to restart KDE for these changes to take effect."
+#~ msgstr "Da ku ev guherand bibandor bibin, KDE ji nû ve bide destpêkirin."
+
+#, fuzzy
+#~| msgid " sec"
+#~ msgid " second"
+#~ msgid_plural " seconds"
+#~ msgstr[0] " çir"
+#~ msgstr[1] " çir"
+
+#~ msgid "&Server response:"
+#~ msgstr "Bersiva &pêşkêşkarê:"
+
+#~ msgid "FTP Options"
+#~ msgstr "Opsiyonên FTP"
+
+#~ msgid "Default user name:"
+#~ msgstr "Navê bikarhêner ê standard:"
+
+#~ msgid "Default password:"
+#~ msgstr "Şîfreya standard"
+
+#~ msgid "Site Name"
+#~ msgstr "Navê Sîteyê"
+
+#, fuzzy
+#~| msgid "Proxy Setup"
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Proxy Setup"
+#~ msgstr "Sazkirina Cihgirê"
+
+#, fuzzy
+#~| msgid "Proxy Setup"
+#~ msgctxt "@title:window"
+#~ msgid "Proxy Setup"
+#~ msgstr "Sazkirina Cihgirê"
+
+#, fuzzy
+#~| msgid "New Exception"
+#~ msgctxt "@title:window"
+#~ msgid "New Exception"
+#~ msgstr "Awerteya Nû"
+
+#, fuzzy
+#~| msgid "Change Exception"
+#~ msgctxt "@title:window"
+#~ msgid "Change Exception"
+#~ msgstr "Awerteyê Biguherîne"
+
+#, fuzzy
+#~| msgid "Invalid Entry"
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Entry"
+#~ msgstr "Ketana Nederbasdar"
+
+#~ msgid "The address you have entered is not valid."
+#~ msgstr "Navnîşana te nivîsî ne derbasdar e."
+
+#~ msgid "H&TTP:"
+#~ msgstr "H&TTP:"
+
+#~ msgid "HTTP&S:"
+#~ msgstr "HTTP&S:"
+
+#~ msgid "&FTP:"
+#~ msgstr "&FTP:"
+
+#~ msgid "NO &PROXY:"
+#~ msgstr "BÊ &CIHGIR"
+
+#~ msgid "Setup..."
+#~ msgstr "Sazkirin..."
+
+#~ msgid "Authori&zation"
+#~ msgstr "&Destûrdayîn"
+
+#~ msgid "Username:"
+#~ msgstr "Navê Bikarhêner:"
+
+#~ msgid "Login name."
+#~ msgstr "Navê têketinê."
+
+#~ msgid "Login password."
+#~ msgstr "Şîfreya têketinê."
+
+#~ msgid "Password:"
+#~ msgstr "Şîfre:"
+
+#~ msgid "O&ptions"
+#~ msgstr "Opsiyon"
+
+#~ msgid "Ser&vers"
+#~ msgstr "&Pêşkêşkar"
+
+#~ msgid "D&elete All"
+#~ msgstr "Hemûyan &Jê Bibe"
+
+#~ msgid "De&lete"
+#~ msgstr "&Jêbirin "
+
+#~ msgid "C&hange..."
+#~ msgstr "&Guherandin..."
+
+#~ msgid "&Windows Shares"
+#~ msgstr "&Parvekirinên Windowsê"
+
+#~ msgid "&LISa Daemon"
+#~ msgstr "Daemona &LISa"
+
+#~ msgid "&Search:"
+#~ msgstr "&Lêgerîn:"
+
+#~ msgid "&Test"
+#~ msgstr "&Test"
+
+#~ msgid "kcmsocks"
+#~ msgstr "kcmsocks"
+
+#~ msgid "KDE SOCKS Control Module"
+#~ msgstr "Modula kontrola KDE SOCKS"
+
+#~ msgid "(c) 2001 George Staikos"
+#~ msgstr "(c) 2001 George Staikos"
+
+#~ msgid "George Staikos"
+#~ msgstr "George Staikos"
+
+#~ msgid "SOCKS Support"
+#~ msgstr "Piştgiriya SOCKS"
+
+#~ msgid "&Path:"
+#~ msgstr "&Rêç:"
+
+#~ msgid "Path"
+#~ msgstr "Rêç"
+
+#~ msgid "&Add"
+#~ msgstr "&Têxistin"
+
+#~ msgid "&Remove"
+#~ msgstr "&Rakirin"

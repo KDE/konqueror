@@ -1,0 +1,103 @@
+# translation of uachangerplugin.po to Frysk
+# Copyright (C) 2003, 2004, 2007 Free Software Foundation, Inc.
+#
+# Rinse de Vries <rinse@kde.nl>, 2003, 2004.
+# Rinse de Vries <rinsedevries@kde.nl>, 2004, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: uachangerplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"PO-Revision-Date: 2007-08-04 21:13+0200\n"
+"Last-Translator: Rinse de Vries <rinsedevries@kde.nl>\n"
+"Language-Team: Frysk <kde-i18n-fry@kde.org>\n"
+"Language: fy\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: uachangerplugin.cpp:43
+#, kde-format
+msgid "Change Browser Identification"
+msgstr "Blêder-identifikaasje wizigje"
+
+#: uachangerplugin.cpp:108
+#, kde-format
+msgid "Other"
+msgstr "Oare"
+
+#: uachangerplugin.cpp:136
+#, fuzzy, kde-format
+#| msgid "Version %1"
+msgctxt "%1 = browser version (e.g. 2.0)"
+msgid "Version %1"
+msgstr "Ferzje %1"
+
+#: uachangerplugin.cpp:139
+#, fuzzy, kde-format
+#| msgid "%1 %2 on %3"
+msgctxt "%1 = browser name, %2 = browser version (e.g. Firefox, 2.0)"
+msgid "%1 %2"
+msgstr "%1 %2 op %3"
+
+#: uachangerplugin.cpp:143
+#, fuzzy, kde-format
+#| msgid "Version %1 on %2"
+msgctxt "%1 = browser version, %2 = platform (e.g. 2.0, Windows XP)"
+msgid "Version %1 on %2"
+msgstr "Ferzje %1 op %2"
+
+#: uachangerplugin.cpp:146
+#, fuzzy, kde-format
+#| msgid "%1 %2 on %3"
+msgctxt ""
+"%1 = browser name, %2 = browser version, %3 = platform (e.g. Firefox, 2.0, "
+"Windows XP)"
+msgid "%1 %2 on %3"
+msgstr "%1 %2 op %3"
+
+#: uachangerplugin.cpp:199
+#, kde-format
+msgid "Default Identification"
+msgstr "Standert identifikaasje"
+
+#. i18n("Reload Identifications"), this,
+#. SLOT(slotReloadDescriptions()),
+#. 0, ++count );
+#: uachangerplugin.cpp:227
+#, kde-format
+msgid "Apply to Entire Site"
+msgstr "Tapasse op de hiele webstee"
+
+#: uachangerplugin.cpp:233
+#, kde-format
+msgid "Configure..."
+msgstr "Ynstelle..."
+
+#. i18n: ectx: Menu (tools)
+#: uachangerplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "H&elpmiddels"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: uachangerplugin.rc:8
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "Ekstra arkbalke"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Douwe"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr " "
+
+#~ msgid "Change Browser &Identification"
+#~ msgstr "Blêder&identifikaasje wizigje"
+
+#~ msgid "Identify As"
+#~ msgstr "Identifisearje as"

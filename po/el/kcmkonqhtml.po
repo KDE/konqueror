@@ -1,0 +1,2484 @@
+# translation of kcmkonqhtml.po to Greek
+# translation of kcmkonqhtml.po to
+# Copyright (C) 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008 Free Software Foundation, Inc.
+#
+# Dimitris Kamenopoulos <el97146@mail.ntua.gr>, 2000-2002.
+# Stergios Dramis <sdramis@egnatia.ee.auth.gr>, 2002-2004.
+# Spiros Georgaras <sngeorgaras@otenet.gr>, 2005, 2006, 2007, 2008.
+# Toussis Manolis <koppermind@yahoo.com>, 2005.
+# Toussis Manolis <manolis@koppermind.homelinux.org>, 2005, 2007, 2008, 2009.
+# Spiros Georgaras <sng@hellug.gr>, 2007, 2008.
+# Petros Vidalis <p_vidalis@hotmail.com>, 2009, 2010.
+# Dimitrios Glentadakis <dglent@gmail.com>, 2010, 2011, 2012, 2014.
+# Stelios <sstavra@gmail.com>, 2017, 2020, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkonqhtml\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-24 00:46+0000\n"
+"PO-Revision-Date: 2021-06-20 10:13+0300\n"
+"Last-Translator: Stelios <sstavra@gmail.com>\n"
+"Language-Team: Greek <kde-i18n-el@kde.org>\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 20.04.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Σπύρος Γεωργαράς,Τούσης Μανώλης, Πέτρος Βιδάλης"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+"sngeorgaras@otenet.gr, manolis@koppermind@homelinux.org, p_vidalis@hotmail."
+"com"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pShowMMBInTabs)
+#: advancedTabOptions.ui:21
+#, kde-format
+msgid ""
+"This will open a new tab instead of a new window in various situations, such "
+"as choosing a link or a folder with the middle mouse button."
+msgstr ""
+"Αυτό θα ανοίξει μια νέα καρτέλα αντί νέο παράθυρο σε διάφορες περιπτώσεις, "
+"όπως επιλέγοντας ένα δεσμό ή ένα φάκελο με το μεσαίο πλήκτρο του ποντικιού."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pShowMMBInTabs)
+#: advancedTabOptions.ui:24
+#, kde-format
+msgid "Open &links in new tab instead of in new window"
+msgstr "Άνοιγμα &δεσμών σε νέα καρτέλα αντί σε νέο παράθυρο"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPopupsWithinTabs)
+#: advancedTabOptions.ui:31
+#, kde-format
+msgid ""
+"Whether or not JavaScript popups if allowed shall open in a new tab or in a "
+"new window."
+msgstr ""
+"Αν τα αναδυόμενα παράθυρα JavaScript (αν είναι ενεργοποιημένα) θα ανοίγουν "
+"σε νέα καρτέλα ή σε νέο παράθυρο."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pPopupsWithinTabs)
+#: advancedTabOptions.ui:34
+#, kde-format
+msgid "Open pop&ups in new tab instead of in new window"
+msgstr "Άνοιγμα αναδυόμενων παραθύρων σε νέα καρτέ&λα αντί σε νέο παράθυρο"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pKonquerorTabforExternalURL)
+#: advancedTabOptions.ui:41
+#, kde-format
+msgid ""
+"When you click a URL in another KDE program or call kfmclient to open a URL, "
+"the current desktop will be searched for a non-minimized Konqueror and, if "
+"found, the URL opened as a new tab within it. Otherwise a new Konqueror "
+"window will be opened with the required URL."
+msgstr ""
+"Όταν πατάτε σε ένα URL σε κάποιο άλλο πρόγραμμα του KDE ή καλείτε το "
+"kfmclient για να ανοίξετε ένα URL, η τρέχουσα επιφάνεια εργασίας θα "
+"αναζητηθεί για έναν μη ελαχιστοποιημένο Konqueror και, αν βρεθεί κάποιος, το "
+"URL θα ανοιχτεί σαν μια νέα καρτέλα σε αυτόν. Αλλιώς ένα νέο παράθυρο "
+"Konqueror θα ανοιχτεί με το ζητούμενο URL."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pKonquerorTabforExternalURL)
+#: advancedTabOptions.ui:44
+#, kde-format
+msgid "Open as tab in existing Konqueror when URL is called externally"
+msgstr ""
+"Άνοιγμα ως καρτέλα στο ήδη ανοιχτό παράθυρο του Konqueror όταν το URL "
+"καλείται εξωτερικά"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pNewTabsInBackground)
+#: advancedTabOptions.ui:51
+#, kde-format
+msgid ""
+"This will open a new tab in the background, instead of in the foreground."
+msgstr "Αυτό θα ανοίξει μια νέα καρτέλα στο παρασκήνιο αντί για το προσκήνιο."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
+#: advancedTabOptions.ui:54
+#, kde-format
+msgid "O&pen new tabs in the background"
+msgstr "Άνοι&γμα νέων καρτελών στο παρασκήνιο"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pOpenAfterCurrentPage)
+#: advancedTabOptions.ui:61
+#, kde-format
+msgid ""
+"This will open a new tab opened from a page after the current tab, instead "
+"of after the last tab."
+msgstr ""
+"Αυτό θα ανοίξει μια νέα καρτέλα μετά την τρέχουσα καρτέλα αντί για μετά την "
+"τελευταία καρτέλα."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pOpenAfterCurrentPage)
+#: advancedTabOptions.ui:64
+#, kde-format
+msgid "Open &new tab after current tab"
+msgstr "Άνοιγμα &νέας καρτέλας μετά την τρέχουσα καρτέλα"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pDynamicTabbarHide)
+#: advancedTabOptions.ui:71
+#, kde-format
+msgid ""
+"This will display the tab bar only if there are two or more tabs. Otherwise "
+"it will always be displayed."
+msgstr ""
+"Αυτό θα προβάλλει τη γραμμή καρτελών μόνο όταν υπάρχουν δύο ή περισσότερες "
+"καρτέλες. Αλλιώς θα προβάλλεται πάντα."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pDynamicTabbarHide)
+#: advancedTabOptions.ui:74
+#, kde-format
+msgid "Hide the tab bar when only one tab is open"
+msgstr "Απόκρυψη της γραμμής καρτελών όταν μόνο μία καρτέλα είναι ανοικτή"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
+#: advancedTabOptions.ui:81
+#, kde-format
+msgid "This will display close buttons inside each tab."
+msgstr "Θα εμφανίζεται το κουμπί κλεισίματος μέσα σε κάθε καρτέλα."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pPermanentCloseButton)
+#: advancedTabOptions.ui:84
+#, kde-format
+msgid "&Show close button on tabs"
+msgstr "&Εμφάνιση κουμπιού κλεισίματος στις καρτέλες"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pMiddleClickClose)
+#: advancedTabOptions.ui:91
+#, kde-format
+msgid ""
+"When you click on a tab using the middle mouse button or mouse wheel, it "
+"will close that tab."
+msgstr ""
+"Όταν κάνετε κλικ σε μια καρτέλα με το μεσαίο κουμπί του ποντικιού ή με το "
+"ροδάκι, η καρτέλα θα κλείσει."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pMiddleClickClose)
+#: advancedTabOptions.ui:94
+#, kde-format
+msgid "Middle-click on a tab to close it"
+msgstr "Μεσαίο κλικ σε μια καρτέλα για το κλείσιμό της"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabConfirm)
+#: advancedTabOptions.ui:101
+#, kde-format
+msgid ""
+"This will ask you whether you are sure you want to close a window when it "
+"has multiple tabs opened in it."
+msgstr ""
+"Αυτό θα σας ρωτήσει αν είσαστε σίγουροι ότι θέλετε να κλείσετε ένα παράθυρο "
+"το οποίο περιέχει πολλές καρτέλες ανοικτές."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pTabConfirm)
+#: advancedTabOptions.ui:104
+#, kde-format
+msgid "Confirm &when closing windows with multiple tabs"
+msgstr "Επιβεβαί&ωση κατά το κλείσιμο παραθύρων με πολλές καρτέλες"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabCloseActivatePrevious)
+#: advancedTabOptions.ui:111
+#, kde-format
+msgid ""
+"When checking this the previous used or opened tab will be activated when "
+"you close the current active tab instead of the one right to the current tab."
+msgstr ""
+"Αν αυτό είναι ενεργοποιημένο, όταν κλείσετε την τρέχουσα καρτέλα θα "
+"ενεργοποιηθεί η τελευταία χρησιμοποιημένη ή ανοικτή καρτέλα αντί αυτής που "
+"είναι αμέσως δεξιά της τρέχουσας καρτέλας."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pTabCloseActivatePrevious)
+#: advancedTabOptions.ui:114
+#, kde-format
+msgid "Activate previously used tab when closing the current tab"
+msgstr ""
+"Ενεργοποίηση της τελευταίας χρησιμοποιημένης καρτέλας όταν κλείσει η τρέχουσα"
+
+#: appearance.cpp:39
+#, kde-format
+msgctxt "@title:tab"
+msgid "General"
+msgstr "Γενικά"
+
+#: appearance.cpp:40
+#, kde-format
+msgctxt "@title:tab"
+msgid "Fonts"
+msgstr "Γραμματοσειρές"
+
+#: appearance.cpp:41
+#, kde-format
+msgctxt "@title:tab"
+msgid "Stylesheets"
+msgstr "Φύλλα στυλ"
+
+#. i18n: ectx: property (title), widget (QGroupBox, GroupBox3_2)
+#: appearance.cpp:48 css/csscustom.ui:296
+#, kde-format
+msgid "Images"
+msgstr "Εικόνες"
+
+#: appearance.cpp:52
+#, kde-format
+msgid "A&utomatically load images"
+msgstr "Α&υτόματη φόρτωση εικόνων"
+
+#: appearance.cpp:53
+#, kde-format
+msgid ""
+"<html>If this box is checked, Konqueror will automatically load any images "
+"that are embedded in a web page. Otherwise, it will display placeholders for "
+"the images, and you can then manually load the images by clicking on the "
+"image button.<br />Unless you have a very slow network connection, you will "
+"probably want to check this box to enhance your browsing experience.</html>"
+msgstr ""
+"<html>Αν αυτή η επιλογή είναι ενεργοποιημένη, ο Konqueror θα φορτώνει "
+"αυτόματα τις εικόνες που είναι ενσωματωμένες στις ιστοσελίδες. Αλλιώς, θα "
+"εμφανίζει δεσμευμένες θέσεις για τις εικόνες, και μπορείτε μετά να τις "
+"φορτώσετε πατώντας το κουμπί της εικόνας.<br />Εκτός αν έχετε πολύ αργή "
+"σύνδεση στο δίκτυο, μάλλον θα θέλετε να ενεργοποιήσετε αυτήν την επιλογή για "
+"να χαίρεστε πιο πολύ την περιήγησή σας.</html>"
+
+#: appearance.cpp:63
+#, kde-format
+msgid "Dra&w frame around not completely loaded images"
+msgstr "Εμ&φάνιση πλαισίου γύρω από εικόνες που δεν έχουν φορτωθεί πλήρως"
+
+#: appearance.cpp:64
+#, kde-format
+msgid ""
+"<html>If this box is checked, Konqueror will draw a frame as a placeholder "
+"around images embedded in a web page that are not yet fully loaded.<br />You "
+"will probably want to check this box to enhance your browsing experience, "
+"especially if have a slow network connection.</html>"
+msgstr ""
+"<html>Αν αυτό είναι ενεργοποιημένο, ο Konqueror θα εμφανίζει ένα πλαίσιο "
+"γύρω από τις εικόνες μιας ιστοσελίδας.<br />Ειδικά αν έχετε αργή σύνδεση στο "
+"δίκτυο, θα πρέπει να ενεργοποιήσετε αυτό το πλαίσιο για να βελτιώσετε την "
+"ποιότητα της περιήγησής σας.</html>"
+
+#: appearance.cpp:74
+#, kde-format
+msgctxt "animations"
+msgid "Enabled"
+msgstr "Ενεργοποιημένες"
+
+#: appearance.cpp:75
+#, kde-format
+msgctxt "animations"
+msgid "Disabled"
+msgstr "Απενεργοποιημένες"
+
+#: appearance.cpp:76
+#, kde-format
+msgid "Show Only Once"
+msgstr "Εμφάνιση μόνο μία φορά"
+
+#: appearance.cpp:77
+#, kde-format
+msgid ""
+"<html>Controls how Konqueror shows animated images:<br /><ul><li><b>Enabled</"
+"b>: Show all animations completely.</li><li><b>Disabled</b>: Never show "
+"animations, show the starting image only.</li><li><b>Show only once</b>: "
+"Show all animations completely but do not repeat them.</li></ul></html>"
+msgstr ""
+"<html>Ρυθμίζει το πως ο Konqueror εμφανίζει τις κινούμενες εικόνες:<br /"
+"><ul><li><b>Ενεργοποιημένη</b>: Εμφάνιση όλων των εφέ κίνησης.</"
+"li><li><b>Απενεργοποιημένη</b>: Ποτέ να μη γίνεται προβολή εφέ κίνησης, μόνο "
+"εμφάνιση της πρώτης εικόνας.</li><li><b>Εμφάνιση μόνο μία φορά</b>: Εμφάνιση "
+"όλων των εφέ κίνησης αλλά επανάληψη τους μόνο μία φορά.</li></ul></html>"
+
+#: appearance.cpp:82
+#, kde-format
+msgid "A&nimations:"
+msgstr "&Εφέ κίνησης:"
+
+#: appearance.cpp:85 htmlopts.cpp:110
+#, kde-format
+msgctxt "@title:group"
+msgid "Miscellaneous"
+msgstr "Διάφορα"
+
+#: appearance.cpp:90
+#, kde-format
+msgctxt "underline"
+msgid "Enabled"
+msgstr "Ενεργοποιημένη"
+
+#: appearance.cpp:91
+#, kde-format
+msgctxt "underline"
+msgid "Disabled"
+msgstr "Απενεργοποιημένη"
+
+#: appearance.cpp:92
+#, kde-format
+msgid "Only on Hover"
+msgstr "Μόνο κάτω από το ποντίκι"
+
+#: appearance.cpp:93
+#, kde-format
+msgid "Und&erline links:"
+msgstr "&Υπογράμμιση δεσμών:"
+
+#: appearance.cpp:96
+#, kde-format
+msgid ""
+"<html>Controls how Konqueror handles underlining hyperlinks:<br /"
+"><ul><li><b>Enabled</b>: Always underline links</li><li><b>Disabled</b>: "
+"Never underline links</li><li><b>Only on Hover</b>: Underline when the mouse "
+"is moved over the link</li></ul><br /><i>Note: The site's CSS definitions "
+"can override this value.</i></html>"
+msgstr ""
+"<html>Ρυθμίζει το πως ο Konqueror μεταχειρίζεται τους υπογραμμισμένους "
+"υπερδεσμούς:<br /><ul><li><b>Ενεργοποιημένη</b>: Πάντα να υπογραμμίζονται οι "
+"δεσμοί</li><li><b>Απενεργοποιημένη</b>: Ποτέ να μην υπογραμμίζονται οι "
+"δεσμοί</li><li><b>Μόνο κάτω από το ποντίκι</b>: Υπογράμμιση όταν το ποντίκι "
+"μετακινείται πάνω από το δεσμό</li></ul><br /><i>Σημείωση: Οι ορισμοί CSS "
+"της ιστοσελίδας μπορεί να υπερκαλύψουν αυτή τη ρύθμιση.</i></html>"
+
+#: appearance.cpp:105
+#, kde-format
+msgid "When Efficient"
+msgstr "Αν είναι εφικτό"
+
+#: appearance.cpp:106
+#, kde-format
+msgctxt "smooth scrolling"
+msgid "Always"
+msgstr "Πάντα"
+
+#: appearance.cpp:107
+#, kde-format
+msgctxt "soft scrolling"
+msgid "Never"
+msgstr "Ποτέ"
+
+#: appearance.cpp:108
+#, kde-format
+msgid "S&mooth scrolling:"
+msgstr "Ο&μαλή κύλιση:"
+
+#: appearance.cpp:110
+#, kde-format
+msgid ""
+"<html>Determines whether Konqueror should use smooth steps to scroll HTML "
+"pages, or whole steps:<br /><ul><li><b>Always</b>: Always use smooth steps "
+"when scrolling.</li><li><b>Never</b>: Never use smooth scrolling, scroll "
+"with whole steps instead.</li><li><b>When Efficient</b>: Only use smooth "
+"scrolling on pages where it can be achieved with moderate usage of system "
+"resources.</li></ul></html>"
+msgstr ""
+"<html>Καθορίζει αν ο Konqueror θα χρησιμοποιεί ομαλή κύλιση των σελίδων "
+"HTML , ή ολόκληρα βήματα κύλισης:<br /><ul><li><b>Πάντα</b>: Πάντα χρήση "
+"ομαλών βημάτων κατά την κύλιση.</li><li><b>Ποτέ</b>: Χωρίς χρήση ομαλής "
+"κύλισης, χρήση ολόκληρων βημάτων.</li><li><b>Αν είναι εφικτό</b>: Χρήση "
+"ομαλής κύλισης σε σελίδες όπου μπορεί αυτό να επιτευχθεί με μέση χρήση των "
+"πόρων του συστήματος.</li></ul></html>"
+
+#: appearance.cpp:119
+#, kde-format
+msgid ""
+"<h1>Konqueror Fonts</h1>On this page, you can configure which fonts "
+"Konqueror should use to display the web pages you view."
+msgstr ""
+"<h1>Γραμματοσειρές του Konqueror</h1>Σε αυτήν τη σελίδα, μπορείτε να "
+"ρυθμίσετε ποιες γραμματοσειρές θα χρησιμοποιεί ο Konqueror για την εμφάνιση "
+"των ιστοσελίδων."
+
+#: appearance.cpp:131
+#, kde-format
+msgid "Font Si&ze"
+msgstr "&Μέγεθος γραμματοσειράς"
+
+#: appearance.cpp:134 appearance.cpp:152
+#, kde-format
+msgid "This is the relative font size Konqueror uses to display web sites."
+msgstr ""
+"Αυτό είναι το σχετικό μέγεθος γραμματοσειράς που χρησιμοποιεί ο Konqueror "
+"για την εμφάνιση των ιστοσελίδων."
+
+#: appearance.cpp:138
+#, kde-format
+msgid "M&inimum font size:"
+msgstr "&Ελάχιστο μέγεθος γραμματοσειράς:"
+
+#: appearance.cpp:142
+#, kde-format
+msgid ""
+"Konqueror will never display text smaller than this size,<br />overriding "
+"any other settings."
+msgstr ""
+"Ο Konqueror δε θα εμφανίσει ποτέ κείμενο μικρότερο από αυτό το μέγεθος, <br /"
+"> αγνοώντας οποιεσδήποτε άλλες ρυθμίσεις."
+
+#: appearance.cpp:147
+#, kde-format
+msgid "&Medium font size:"
+msgstr "&Μεσαίο μέγεθος γραμματοσειράς:"
+
+#: appearance.cpp:160
+#, kde-format
+msgid "S&tandard font:"
+msgstr "&Τυπική γραμματοσειρά:"
+
+#: appearance.cpp:161
+#, kde-format
+msgid "This is the font used to display normal text in a web page."
+msgstr ""
+"Αυτή είναι η γραμματοσειρά που χρησιμοποιείται για την εμφάνιση του "
+"κανονικού κειμένου σε μια ιστοσελίδα."
+
+#: appearance.cpp:165
+#, kde-format
+msgid "&Fixed font:"
+msgstr "&Γραμματοσειρά σταθερού πλάτους:"
+
+#: appearance.cpp:166
+#, kde-format
+msgid ""
+"This is the font used to display fixed-width (i.e. non-proportional) text."
+msgstr ""
+"Αυτή είναι η γραμματοσειρά που χρησιμοποιείται για την εμφάνιση κειμένου με "
+"σταθερό πλάτος."
+
+#: appearance.cpp:170
+#, kde-format
+msgid "S&erif font:"
+msgstr "Γραμματοσειρά S&erif:"
+
+#: appearance.cpp:171
+#, kde-format
+msgid "This is the font used to display text that is marked up as serif."
+msgstr ""
+"Αυτή είναι η γραμματοσειρά που χρησιμοποιείται για την εμφάνιση του κειμένου "
+"που είναι σημειωμένο σαν serif."
+
+#: appearance.cpp:175
+#, kde-format
+msgid "Sa&ns serif font:"
+msgstr "Γραμματοσειρά Sa&ns serif:"
+
+#: appearance.cpp:176
+#, kde-format
+msgid "This is the font used to display text that is marked up as sans-serif."
+msgstr ""
+"Αυτή είναι η γραμματοσειρά που χρησιμοποιείται για την εμφάνιση του κειμένου "
+"που είναι σημειωμένο σαν sans-serif."
+
+#: appearance.cpp:180
+#, kde-format
+msgid "C&ursive font:"
+msgstr "Γραμματοσειρά C&ursive:"
+
+#: appearance.cpp:181
+#, kde-format
+msgid "This is the font used to display text that is marked up as italic."
+msgstr ""
+"Αυτή είναι η γραμματοσειρά που χρησιμοποιείται για την εμφάνιση του κειμένου "
+"που είναι σημειωμένο σαν πλάγιο."
+
+#: appearance.cpp:185
+#, kde-format
+msgid "Fantas&y font:"
+msgstr "Γραμματοσειρά Fantas&y:"
+
+#: appearance.cpp:186
+#, kde-format
+msgid ""
+"This is the font used to display text that is marked up as a fantasy font."
+msgstr ""
+"Αυτή είναι η γραμματοσειρά που χρησιμοποιείται για την εμφάνιση του κειμένου "
+"που είναι σημειωμένο σαν fantasy."
+
+#: appearance.cpp:195
+#, kde-format
+msgid "Font &size adjustment for this encoding:"
+msgstr "Προσαρμογή &μεγέθους γραμματοσειράς γι' αυτή την κωδικοποίηση:"
+
+#: appearance.cpp:203 appearance.cpp:401
+#, kde-format
+msgid "Use Language Encoding"
+msgstr "Χρήση κωδικοποίησης γλώσσας"
+
+#: appearance.cpp:205
+#, kde-format
+msgid "Default encoding:"
+msgstr "Προκαθορισμένη κωδικοποίηση:"
+
+#: appearance.cpp:207
+#, kde-format
+msgid ""
+"Select the default encoding to be used; normally, you will be fine with 'Use "
+"language encoding' and should not have to change this."
+msgstr ""
+"Επιλέξτε την προκαθορισμένη κωδικοποίηση που θα χρησιμοποιηθεί. Κανονικά, θα "
+"είστε εντάξει, με το 'Χρήση κωδικοποίησης γλώσσας' και δε θα χρειαστεί να "
+"την αλλάξετε."
+
+#. i18n: ectx: property (whatsThis), widget (QWidget, CSSConfigWidget)
+#. i18n: ectx: property (whatsThis), widget (QWidget, CSSCustomDialog)
+#: css/cssconfig.ui:5 css/csscustom.ui:13
+#, kde-format
+msgid ""
+"<b>Stylesheets</b><p>See http://www.w3.org/Style/CSS for further information "
+"on cascading style sheets.</p>"
+msgstr ""
+"<b>Φύλλα στυλ</b><p>Δείτε το http://www.w3.org/Style/CSS για περισσότερες "
+"πληροφορίες για τα διαδοχικά φύλλα στυλ.</p>"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, ButtonGroup1)
+#: css/cssconfig.ui:17
+#, kde-format
+msgid ""
+"<b>Stylesheets</b><p>Use this groupbox to determine how Konqueror will "
+"render style sheets.</p>"
+msgstr ""
+"<b>Φύλλα στυλ</b><p>Χρησιμοποιήστε αυτό το παράθυρο για να καθορίσετε το πως "
+"ο Konqueror θα εμφανίζει τα φύλλα στυλ.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, ButtonGroup1)
+#: css/cssconfig.ui:20
+#, kde-format
+msgid "Stylesheets"
+msgstr "Φύλλα στυλ"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, useDefault)
+#: css/cssconfig.ui:26
+#, kde-format
+msgid ""
+"<b>Use default stylesheet</b><p>Select this option to use the default "
+"stylesheet.</p>"
+msgstr ""
+"<b>Χρήση του προκαθορισμένου φύλλου στυλ</b><p> Με αυτή την επιλογή μπορείτε "
+"να χρησιμοποιήσετε το προκαθορισμένο φύλλο στυλ.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useDefault)
+#: css/cssconfig.ui:29
+#, kde-format
+msgid "Us&e default stylesheet"
+msgstr "&Χρήση του προκαθορισμένου φύλλου στυλ"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, useUser)
+#: css/cssconfig.ui:39
+#, kde-format
+msgid ""
+"<b>Use user-defined stylesheet</b><p>If this box is checked, Konqueror will "
+"try to load a user-defined style sheet as specified in the location below. "
+"The style sheet allows you to completely override the way web pages are "
+"rendered in your browser. The file specified should contain a valid style "
+"sheet (see http://www.w3.org/Style/CSS for further information on cascading "
+"style sheets).</p>"
+msgstr ""
+"<b>Χρήση φύλλου στυλ καθορισμένου από το χρήστη</b><p>Αν αυτό το πλαίσιο "
+"είναι ενεργοποιημένο, ο Konqueror θα προσπαθήσει να φορτώσει ένα φύλλο στυλ "
+"που είναι καθορισμένο από το χρήστη και βρίσκεται στην παρακάτω τοποθεσία. "
+"Το φύλλο στυλ, σας επιτρέπει να παρακάμψετε τελείως τον τρόπο με τον οποίο "
+"οι ιστοσελίδες εμφανίζονται στον περιηγητή σας. Το αρχείο που ορίζεται "
+"πρέπει να περιέχει ένα έγκυρο φύλλο στυλ (δείτε το http://www.w3.org/Style/"
+"CSS για περισσότερες πληροφορίες για τα διαδοχικά φύλλα στυλ).</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useUser)
+#: css/cssconfig.ui:42
+#, kde-format
+msgid "Use &user-defined stylesheet"
+msgstr "Χρήση φύλλου στυλ καθορισμένου από το &χρήστη"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, useAccess)
+#: css/cssconfig.ui:94
+#, kde-format
+msgid ""
+"<b>Use accessibility stylesheet</b><p>Selecting this option will allow you "
+"to define a default font, font size, and font color with a few simple clicks "
+"of the mouse. Simply wander over to the Customize... dialog and pick out "
+"your desired options.</p>"
+msgstr ""
+"<b>Χρήση φύλλου στυλ προσιτότητας</b><p>Χρησιμοποιώντας αυτή την επιλογή "
+"μπορείτε να ορίσετε μια προσαρμοσμένη γραμματοσειρά, μέγεθος γραμματοσειράς, "
+"και χρώμα γραμματοσειράς με μερικά μόνο κλικ του ποντικιού. Απλά "
+"περιηγηθείτε σε αυτή την καρτέλα και επιλέξτε τις επιθυμητές επιλογές σας.</"
+"p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useAccess)
+#: css/cssconfig.ui:97
+#, kde-format
+msgid "U&se accessibility stylesheet"
+msgstr "&Χρήση φύλλου στυλ προσιτότητας"
+
+#. i18n: ectx: property (text), widget (QPushButton, customize)
+#: css/cssconfig.ui:137
+#, kde-format
+msgid "Custom&ize..."
+msgstr "Πρ&οσαρμογή..."
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox7)
+#: css/csscustom.ui:21
+#, kde-format
+msgid ""
+"<b>Font family</b><p>A font family is a group of fonts that resemble one "
+"another, with family members that are e.g. bold, italic, or any number of "
+"the above.</p>"
+msgstr ""
+"<b>Οικογένεια γραμματοσειράς</b><p>Μια οικογένεια γραμματοσειράς είναι μια "
+"ομάδα γραμματοσειρών που μοιάζουν μεταξύ τους, με τα μέλη της οικογένειας να "
+"είναι π.χ. έντονο, πλάγιο, ή οποιοσδήποτε αριθμός από τα παραπάνω.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, GroupBox7)
+#: css/csscustom.ui:24
+#, kde-format
+msgid "Font Family"
+msgstr "Οικογένεια γραμματοσειράς"
+
+#. i18n: ectx: property (text), widget (QLabel, txtBaseFontFamily)
+#: css/csscustom.ui:30
+#, kde-format
+msgid "Base family:"
+msgstr "Βασική οικογένεια:"
+
+#. i18n: ectx: property (whatsThis), widget (QFontComboBox, fontFamily)
+#: css/csscustom.ui:37
+#, kde-format
+msgid "<p>This is the currently selected font family</p>"
+msgstr "<p>Αυτή είναι η τρέχουσα επιλεγμένη οικογένεια γραμματοσειράς</p>"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, sameFamily)
+#: css/csscustom.ui:44
+#, kde-format
+msgid ""
+"<b>Use same family for all text</b><p>Select this option to override custom "
+"fonts everywhere in favor of the base font.</p>"
+msgstr ""
+"<b>Χρήση της ίδιας οικογένειας για όλα τα κείμενα</b><p>Με αυτή την επιλογή "
+"μπορείτε να παρακάμψετε τις προσαρμοσμένες γραμματοσειρές παντού προς όφελος "
+"της βασικής γραμματοσειράς.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, sameFamily)
+#: css/csscustom.ui:47
+#, kde-format
+msgid "Use same family for all text"
+msgstr "Χρήση της ίδιας οικογένειας για όλα τα κείμενα"
+
+#. i18n: ectx: property (title), widget (QGroupBox, GroupBox3)
+#: css/csscustom.ui:57
+#, kde-format
+msgid "Font Size"
+msgstr "Μέγεθος γραμματοσειράς"
+
+#. i18n: ectx: property (text), widget (QLabel, txtFontsize)
+#: css/csscustom.ui:63
+#, kde-format
+msgid "Base font si&ze:"
+msgstr "Μέ&γεθος γραμματοσειράς βάσης:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:80
+#, kde-format
+msgid "7"
+msgstr "7"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:85
+#, kde-format
+msgid "8"
+msgstr "8"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:90
+#, kde-format
+msgid "9"
+msgstr "9"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:95
+#, kde-format
+msgid "10"
+msgstr "10"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:100
+#, kde-format
+msgid "11"
+msgstr "11"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:105
+#, kde-format
+msgid "12"
+msgstr "12"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:110
+#, kde-format
+msgid "14"
+msgstr "14"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:115
+#, kde-format
+msgid "16"
+msgstr "16"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:120
+#, kde-format
+msgid "20"
+msgstr "20"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:125
+#, kde-format
+msgid "24"
+msgstr "24"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:130
+#, kde-format
+msgid "32"
+msgstr "32"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:135
+#, kde-format
+msgid "48"
+msgstr "48"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:140
+#, kde-format
+msgid "64"
+msgstr "64"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, dontScale)
+#: css/csscustom.ui:148
+#, kde-format
+msgid ""
+"<b>Use same size for all elements</b><p>Select this option to override "
+"custom font sizes in favor of the base font size. All fonts will be "
+"displayed in the same size.</p>"
+msgstr ""
+"<b>Χρήση ίδιου μεγέθους για όλα τα στοιχεία</b><p>Με αυτή την επιλογή "
+"μπορείτε να παρακάμψετε τα προκαθορισμένα μεγέθη των γραμματοσειρών προς "
+"όφελος του βασικού μεγέθους γραμματοσειράς. Όλες οι γραμματοσειρές θα "
+"εμφανίζονται με το ίδιο μέγεθος.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, dontScale)
+#: css/csscustom.ui:151
+#, kde-format
+msgid "&Use same size for all elements"
+msgstr "&Χρήση ίδιου μεγέθους για όλα τα στοιχεία"
+
+#. i18n: ectx: property (title), widget (QGroupBox, ButtonGroup2)
+#: css/csscustom.ui:161
+#, kde-format
+msgid "Colors"
+msgstr "Χρώματα"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, blackOnWhite)
+#: css/csscustom.ui:183
+#, kde-format
+msgid "<b>Black on White</b><p>This is what you normally see.</p>"
+msgstr "<b>Μαύρο πάνω σε άσπρο</b><p>Αυτό είναι που βλέπετε συνήθως.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, blackOnWhite)
+#: css/csscustom.ui:186
+#, kde-format
+msgid "&Black on white"
+msgstr "&Μαύρο πάνω σε άσπρο"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, whiteOnBlack)
+#: css/csscustom.ui:196
+#, kde-format
+msgid "<b>White on Black</b><p>This is your classic inverse color scheme.</p>"
+msgstr ""
+"<b>Άσπρο πάνω σε μαύρο</b><p>Αυτό είναι το κλασικό αντίστροφο θέμα χρωμάτων."
+"</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, whiteOnBlack)
+#: css/csscustom.ui:199
+#, kde-format
+msgid "&White on black"
+msgstr "Ά&σπρο πάνω σε μαύρο"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, customColor)
+#: css/csscustom.ui:206
+#, kde-format
+msgid ""
+"<b>Custom</b><p>Select this option to define a custom color for the default "
+"font.</p>"
+msgstr ""
+"<b>Προσαρμοσμένο</b><p>Με αυτή την επιλογή μπορείτε να ορίσετε ένα χρώμα για "
+"την προκαθορισμένη γραμματοσειρά.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, customColor)
+#: css/csscustom.ui:209
+#, kde-format
+msgid "Cus&tom"
+msgstr "Προσαρμοσμέ&νο"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, txtBackground)
+#: css/csscustom.ui:219
+#, kde-format
+msgid ""
+"<b>Background</b><p>This background color is the one displayed behind the "
+"text by default. A background image will override this.</p>"
+msgstr ""
+"<b>Φόντο</b><p>Αυτό το χρώμα φόντου είναι το χρώμα που εμφανίζεται πίσω από "
+"το κείμενο. Μια εικόνα φόντου θα το παρακάμψει.</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, txtBackground)
+#: css/csscustom.ui:222
+#, kde-format
+msgid "Bac&kground:"
+msgstr "&Φόντο:"
+
+#. i18n: ectx: property (whatsThis), widget (KColorButton, backgroundColorButton)
+#: css/csscustom.ui:238
+#, kde-format
+msgid ""
+"<b>Background</b><p>Behind this door lays the ability to choose a custom "
+"default background.</p>"
+msgstr ""
+"<b>Φόντο</b><p>Πίσω από αυτή την πόρτα βρίσκεται η δυνατότητα επιλογής ενός "
+"προσαρμοσμένου προκαθορισμένου φόντου.</p>"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, sameColor)
+#: css/csscustom.ui:248
+#, kde-format
+msgid ""
+"<b>Use same color for all text</b><p>Select this option to apply your chosen "
+"color to the default font as well as any custom fonts as specified in a "
+"stylesheet.</p>"
+msgstr ""
+"<b>Χρήση ίδιου χρώματος για όλα τα κείμενα</b><p>Με αυτή την επιλογή "
+"μπορείτε να εφαρμόσετε το επιλεγμένο χρώμα σας στη προκαθορισμένη "
+"γραμματοσειρά καθώς και σε κάθε γραμματοσειρά που είναι ορισμένη σε ένα "
+"φύλλο στυλ.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, sameColor)
+#: css/csscustom.ui:251
+#, kde-format
+msgid "Use same color for all text"
+msgstr "Χρήση ίδιου χρώματος για όλα τα κείμενα"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, txtForeground)
+#. i18n: ectx: property (whatsThis), widget (KColorButton, foregroundColorButton)
+#: css/csscustom.ui:261 css/csscustom.ui:280
+#, kde-format
+msgid ""
+"<b>Foreground color</b><p>The foreground color is the color that the text is "
+"drawn in.</p>"
+msgstr ""
+"<b>Χρώμα προσκηνίου</b><p>Το χρώμα προσκηνίου είναι το χρώμα πάνω στο οποίο "
+"εμφανίζεται το κείμενο.</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, txtForeground)
+#: css/csscustom.ui:264
+#, kde-format
+msgid "&Foreground:"
+msgstr "Πρ&οσκήνιο:"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox3_2)
+#: css/csscustom.ui:293
+#, kde-format
+msgid "<b>Images</b>"
+msgstr "<b>Εικόνες</b>"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, hideImages)
+#: css/csscustom.ui:302
+#, kde-format
+msgid ""
+"<b>Suppress images</b><p>Selecting this will prevent Konqueror from loading "
+"images.</p>"
+msgstr ""
+"<b>Απόκρυψη εικόνων</b><p>Επιλέγοντας αυτό θα εμποδίσετε τον Konqueror από "
+"τη φόρτωση εικόνων.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, hideImages)
+#: css/csscustom.ui:305
+#, kde-format
+msgid "&Suppress images"
+msgstr "Απόκρυ&ψη εικόνων"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, hideBackground)
+#: css/csscustom.ui:312
+#, kde-format
+msgid ""
+"<b>Suppress background images</b><p>Selecting this option will prevent "
+"Konqueror from loading background images.</p>"
+msgstr ""
+"<b>Απόκρυψη εικόνων φόντου</b><p>Με αυτή την επιλογή θα εμποδίσετε τον "
+"Konqueror από τη φόρτωση εικόνων φόντου.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, hideBackground)
+#: css/csscustom.ui:315
+#, kde-format
+msgid "Suppress background images"
+msgstr "Απόκρυψη εικόνων φόντου"
+
+#. i18n: ectx: property (title), widget (QGroupBox, previewBox)
+#: css/csscustom.ui:347
+#, kde-format
+msgid "Preview"
+msgstr "Προεπισκόπηση"
+
+#: css/kcmcss.cpp:51
+#, kde-format
+msgid ""
+"<h1>Konqueror Stylesheets</h1> This module allows you to apply your own "
+"color and font settings to Konqueror by using stylesheets (CSS). You can "
+"either specify options or apply your own self-written stylesheet by pointing "
+"to its location.<br /> Note that these settings will always have precedence "
+"before all other settings made by the site author. This can be useful to "
+"visually impaired people or for web pages that are unreadable due to bad "
+"design."
+msgstr ""
+"<h1>Φύλλα στυλ Konqueror</h1> Αυτό το άρθρωμα σας επιτρέπει να εφαρμόσετε "
+"τις δικές σας ρυθμίσεις για τα χρώματα και τις γραμματοσειρές στον Konqueror "
+"με τη χρήση φύλλων στυλ (CSS). Μπορείτε είτε να ρυθμίσετε επιλογές είτε να "
+"εφαρμόσετε το δικό σας φύλλο στυλ με το να ορίσετε την τοποθεσία του.<br /> "
+"Σημειώστε ότι αυτές οι ρυθμίσεις θα υπερισχύουν όλων των άλλων ρυθμίσεων που "
+"έγιναν από το συγγραφέα της ιστοσελίδας. Αυτό μπορεί να είναι χρήσιμο για "
+"τους ανθρώπους με μειωμένη όραση ή για ιστοσελίδες που η ανάγνωσή τους είναι "
+"δύσκολη λόγω κακού σχεδιασμού."
+
+#: css/kcmcss.cpp:336
+#, kde-format
+msgid ""
+"<html>\n"
+"<head>\n"
+"<style>\n"
+"<!--\n"
+"%1\n"
+"-->\n"
+"</style>\n"
+"</head>\n"
+"<body>\n"
+"<h1>Heading 1</h1>\n"
+"<h2>Heading 2</h2>\n"
+"<h3>Heading 3</h3>\n"
+"\n"
+"<p>User-defined stylesheets allow increased\n"
+"accessibility for visually handicapped\n"
+"people.</p>\n"
+"\n"
+"</body>\n"
+"</html>\n"
+msgstr ""
+"<html>\n"
+"<head>\n"
+"<style>\n"
+"<!--\n"
+"%1\n"
+"-->\n"
+"</style>\n"
+"</head>\n"
+"<body>\n"
+"<h1>Κεφαλίδα 1</h1>\n"
+"<h2>Κεφαλίδα 2</h2>\n"
+"<h3>Κεφαλίδα 3</h3>\n"
+"\n"
+"<p>Τα ορισμένα από το χρήστη φύλλα αισθητικής\n"
+"επικάλυψης επιτρέπουν αυξημένη προσβασιμότητα\n"
+"σε ανθρώπους με μειωμένη όραση.</p>\n"
+"\n"
+"</body>\n"
+"</html>\n"
+
+#: domainlistview.cpp:37
+#, kde-format
+msgid "Host/Domain"
+msgstr "Υπολογιστής/Τομέας"
+
+#: domainlistview.cpp:37
+#, kde-format
+msgid "Policy"
+msgstr "Πολιτική"
+
+#: domainlistview.cpp:45
+#, kde-format
+msgid "&New..."
+msgstr "&Νέo..."
+
+#: domainlistview.cpp:49
+#, kde-format
+msgid "Chan&ge..."
+msgstr "Αλλα&γή..."
+
+#: domainlistview.cpp:53
+#, kde-format
+msgid "De&lete"
+msgstr "Διαγραφ&ή"
+
+#: domainlistview.cpp:57
+#, kde-format
+msgid "&Import..."
+msgstr "Εισαγ&ωγή..."
+
+#: domainlistview.cpp:63
+#, kde-format
+msgid "&Export..."
+msgstr "Ε&ξαγωγή..."
+
+#: domainlistview.cpp:71
+#, kde-format
+msgid "Click on this button to manually add a host or domain specific policy."
+msgstr ""
+"Πατήστε αυτό το κουμπί για να προσθέσετε μόνοι σας μια ειδική πολιτική για "
+"υπολογιστή ή τομέα."
+
+#: domainlistview.cpp:73
+#, kde-format
+msgid ""
+"Click on this button to change the policy for the host or domain selected in "
+"the list box."
+msgstr ""
+"Πατήστε αυτό το κουμπί για να αλλάξετε την πολιτική για τον επιλεγμένο "
+"υπολογιστή ή τομέα σε αυτό το πλαίσιο λίστας."
+
+#: domainlistview.cpp:75
+#, kde-format
+msgid ""
+"Click on this button to delete the policy for the host or domain selected in "
+"the list box."
+msgstr ""
+"Πατήστε αυτό το κουμπί για να διαγράψετε την πολιτική για τον επιλεγμένο "
+"υπολογιστή ή τομέα σε αυτό το πλαίσιο λίστας."
+
+#: domainlistview.cpp:122
+#, kde-format
+msgid "You must first select a policy to be changed."
+msgstr "Πρέπει πρώτα να επιλέξετε μια πολιτική για να τροποποιηθεί."
+
+#: domainlistview.cpp:149
+#, kde-format
+msgid "You must first select a policy to delete."
+msgstr "Πρέπει πρώτα να επιλέξετε μια πολιτική για να διαγραφεί."
+
+#: domainlistview.cpp:187 policydlg.cpp:63
+#, kde-format
+msgid "Use Global"
+msgstr "Χρήση καθολικής"
+
+#: domainlistview.cpp:189 policydlg.cpp:63
+#, kde-format
+msgid "Accept"
+msgstr "Αποδοχή"
+
+#: domainlistview.cpp:191 policydlg.cpp:63
+#, kde-format
+msgid "Reject"
+msgstr "Απόρριψη"
+
+#: filteropts.cpp:48
+#, kde-format
+msgid "Enable filters"
+msgstr "Ενεργοποίηση φίλτρων"
+
+#: filteropts.cpp:51
+#, kde-format
+msgid "Hide filtered images"
+msgstr "Απόκρυψη φιλτραρισμένων εικόνων"
+
+#: filteropts.cpp:58
+#, kde-format
+msgid "Manual Filter"
+msgstr "Χειροκίνητο φίλτρο"
+
+#: filteropts.cpp:76
+#, kde-format
+msgid "Search:"
+msgstr "Αναζήτηση:"
+
+#: filteropts.cpp:84
+#, kde-format
+msgid ""
+"<qt>Filter expression (e.g. <tt>http://www.example.com/ad/*</tt>, <a href="
+"\"filterhelp\">more information</a>):"
+msgstr ""
+"<qt>Έκφραση φίλτρου (π.χ. <tt>http://www.example.com/ad/*</tt>, <a href="
+"\"filterhelp\">περισσότερες πληροφορίες</a>):"
+
+#: filteropts.cpp:100
+#, kde-format
+msgid "Automatic Filter"
+msgstr "Αυτόματο φίλτρο"
+
+#: filteropts.cpp:109
+#, kde-format
+msgid "Automatic update interval:"
+msgstr "Χρονικό διάστημα αυτόματης ενημέρωσης:"
+
+#: filteropts.cpp:114
+#, kde-format
+msgid " day"
+msgid_plural " days"
+msgstr[0] " ημέρα"
+msgstr[1] " ημέρες"
+
+#: filteropts.cpp:120
+#, kde-format
+msgid "Insert"
+msgstr "Εισαγωγή"
+
+#: filteropts.cpp:123
+#, kde-format
+msgid "Update"
+msgstr "Ενημέρωση"
+
+#: filteropts.cpp:126
+#, kde-format
+msgid "Remove"
+msgstr "Αφαίρεση"
+
+#: filteropts.cpp:130
+#, kde-format
+msgid "Import..."
+msgstr "Εισαγωγή..."
+
+#: filteropts.cpp:133
+#, kde-format
+msgid "Export..."
+msgstr "Εξαγωγή..."
+
+#: filteropts.cpp:140
+#, kde-format
+msgid ""
+"<qt>More information on <a href=\"importhelp\">import format</a>, <a href="
+"\"exporthelp\">export format</a>"
+msgstr ""
+"<qt>Περισσότερες πληροφορίες για <a href=\"importhelp\">μορφή εισαγωγής</a>, "
+"<a href=\"exporthelp\">μορφή εξαγωγής</a>"
+
+#: filteropts.cpp:154
+#, kde-format
+msgid ""
+"Enable or disable AdBlocK filters. When enabled, a set of URL expressions "
+"should be defined in the filter list for blocking to take effect."
+msgstr ""
+"Ενεργοποίηση ή απενεργοποίηση των φίλτρων AdBlocK. Όταν ενεργοποιηθεί, θα "
+"πρέπει να οριστεί, στη λίστα των φίλτρων, ένα σύνολο διευθύνσεων ώστε να "
+"αρχίσει να λειτουργεί το μπλοκάρισμα."
+
+#: filteropts.cpp:156
+#, kde-format
+msgid ""
+"When enabled blocked images will be removed from the page completely, "
+"otherwise a placeholder 'blocked' image will be used."
+msgstr ""
+"Όταν ενεργοποιηθεί, οι μπλοκαρισμένες εικόνες θα αφαιρεθούν εντελώς από τη "
+"σελίδα αλλιώς θα χρησιμοποιηθεί ένα πλαίσιο ένδειξης θέσης με τη σήμανση "
+"'μπλοκαρισμένη' εικόνα."
+
+#: filteropts.cpp:163
+#, kde-format
+msgid ""
+"This is the list of URL filters that will be applied to all embedded images "
+"and media objects."
+msgstr ""
+"Αυτή είναι η λίστα των φίλτρων διευθύνσεων που θα εφαρμοστούν σε όλες τις "
+"ενσωματωμένες εικόνες και όλα τα αντικείμενα των μέσων."
+
+#: filteropts.cpp:167
+#, kde-format
+msgid ""
+"<qt><p>Enter an expression to filter. Filters can be defined as either:"
+"<ul><li>a shell-style wildcard, e.g. <tt>http://www.example.com/ads*</tt>, "
+"the wildcards <tt>*?[]</tt> may be used</li><li>a full regular expression by "
+"surrounding the string with '<tt>/</tt>', e.g. <tt>/\\/(ad|banner)\\./</tt></"
+"li></ul><p>Any filter string can be preceded by '<tt>@@</tt>' to whitelist "
+"(allow) any matching URL, which takes priority over any blacklist (blocking) "
+"filter."
+msgstr ""
+"<qt><p>Εισάγετε μια έκφραση για φιλτράρισμα. Τα φίλτρα μπορούν να οριστούν "
+"ως εξής:<ul><li>ένα σύμβολο υποκατάστασης τύπου γραμμής εντολών, π.χ. "
+"<tt>http://www.example.com/ads*</tt>, μπορούν να χρησιμοποιηθούν τα σύμβολα "
+"υποκατάστασης <tt>*?[]</tt></li><li>μια πλήρης κανονική έκφραση "
+"περιστοιχίζοντας τη συμβολοσειρά με «<tt>/</tt>», π.χ. <tt>/\\/(ad|"
+"banner)\\./</tt></li></ul><p>Σε οποιοδήποτε φίλτρο, αν προηγηθεί το «<tt>@@</"
+"tt>» όλα τα URL που ταιριάζουν προστίθενται στη λευκή λίστα (επιτρεπόμενα), "
+"η οποία είναι σε προτεραιότητα σε σχέση με τα φίλτρα στη μαύρη λίστα (φραγή)."
+
+#: filteropts.cpp:183
+#, kde-format
+msgid ""
+"<qt><p>The filter import format is a plain text file. Blank lines, comment "
+"lines starting with '<tt>!</tt>' and the header line <tt>[AdBlock]</tt> are "
+"ignored. Any other line is added as a filter expression."
+msgstr ""
+"<qt><p>Η μορφή εισαγωγής είναι ένα απλό αρχείο κειμένου. Κενές γραμμές, "
+"γραμμές σχολίων ξεκινώντας με '<tt>!</tt>' και η γραμμή της κεφαλίδας "
+"<tt>[AdBlock]</tt> αγνοούνται. Οποιαδήποτε άλλη γραμμή προστίθεται ως "
+"έκφραση του φίλτρου."
+
+#: filteropts.cpp:188
+#, kde-format
+msgid ""
+"<qt><p>The filter export format is a plain text file. The file begins with a "
+"header line <tt>[AdBlock]</tt>, then all of the filters follow each on a "
+"separate line."
+msgstr ""
+"<qt><p>Η μορφή εξαγωγής είναι ένα απλό αρχείο κειμένου. Το αρχείο ξεκινάει "
+"με  την κεφαλίδα  <tt>[AdBlock]</tt>, και μετά ακολουθούν όλα τα φίλτρα σε "
+"ξεχωριστές γραμμές."
+
+#: filteropts.cpp:256
+#, kde-format
+msgid "Import Filters"
+msgstr "Φίλτρα εισαγωγής"
+
+#: filteropts.cpp:301
+#, kde-format
+msgid "Export Filters"
+msgstr "Φίλτρα εξαγωγής"
+
+#: filteropts.cpp:436
+#, kde-format
+msgid ""
+"<h1>Konqueror AdBlocK</h1> Konqueror AdBlocK allows you to create a list of "
+"filters that are checked against linked images and frames. URL's that match "
+"are either discarded or replaced with a placeholder image. "
+msgstr ""
+"<h1>AdBlocK του Konqueror </h1> Το AdBlocK του Konqueror σας επιτρέπει να "
+"δημιουργήσετε μία λίστα φίλτρων που ελέγχουν τις εικόνες και τα πλαίσια μιας "
+"ιστοσελίδας. Οι URL's που ταιριάζουν είτε απορρίπτονται εντελώς ή "
+"αντικαθίστανται με μία εικόνα πλαισίου ένδειξης θέσης. "
+
+#: filteropts.cpp:558
+#, kde-format
+msgid "Name"
+msgstr "Όνομα"
+
+#: filteropts.cpp:559
+#, kde-format
+msgid "URL"
+msgstr "URL"
+
+#: generalopts.cpp:53
+#, kde-format
+msgid "Tabbed Browsing"
+msgstr "Περιήγηση με καρτέλες"
+
+#: generalopts.cpp:79
+#, kde-format
+msgctxt ""
+"The user chose to use a custom start page but left the corresponding field "
+"empty"
+msgid "Please, insert the custom start page"
+msgstr ""
+
+#: generalopts.cpp:85
+#, kde-format
+msgctxt "@label:listbox"
+msgid "When &Konqueror starts:"
+msgstr "Όταν εκκινείται ο &Konqueror:"
+
+#: generalopts.cpp:94
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Show Introduction Page"
+msgstr "Εμφάνιση εισαγωγικής σελίδας"
+
+#: generalopts.cpp:95
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Show My Start Page"
+msgstr "Εμφάνιση της αρχικής σελίδας μου"
+
+#: generalopts.cpp:96
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Show Blank Page"
+msgstr "Εμφάνιση κενής σελίδας"
+
+#: generalopts.cpp:97
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Show My Bookmarks"
+msgstr "Εμφάνιση των σελιδοδεικτών μου"
+
+#: generalopts.cpp:103
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Start Page"
+msgstr "Επιλογή αρχικής σελίδας"
+
+#: generalopts.cpp:107
+#, kde-format
+msgid "This is the URL of the web page Konqueror will show when starting."
+msgstr ""
+"Αυτό είναι το URL της σελίδας την οποία ο Konqueror θα εμφανίσει στην έναρξη"
+
+#: generalopts.cpp:118
+#, kde-format
+msgid "Home page:"
+msgstr "Αρχική σελίδα:"
+
+#: generalopts.cpp:121
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Home Page"
+msgstr "Επιλογή αρχικής σελίδας"
+
+#: generalopts.cpp:126
+#, kde-format
+msgid ""
+"This is the URL of the web page where Konqueror will jump to when the \"Home"
+"\" button is pressed."
+msgstr ""
+"Αυτό είναι το URL όπου ο Konqueror θα πηγαίνει όταν πατήσετε το κουμπί "
+"\"Σπίτι\"."
+
+#: generalopts.cpp:134
+#, kde-format
+msgid "Default web browser engine:"
+msgstr "Προκαθορισμένη μηχανή περιήγησης ιστού:"
+
+#: generalopts.cpp:143
+#, kde-format
+msgid "When splitting a view"
+msgstr "Όταν διαιρείται μια προβολή"
+
+#: generalopts.cpp:147
+#, kde-format
+msgid "Always duplicate current view"
+msgstr "Πάντα να διπλασιάζεται η τρέχουσα προβολή"
+
+#: generalopts.cpp:148
+#, kde-format
+msgid "Duplicate current view only for local files"
+msgstr "Να διπλασιάζεται η τρέχουσα προβολή μόνο για τοπικά αρχεία"
+
+#: htmlopts.cpp:36
+#, kde-format
+msgid ""
+"<h1>Konqueror Browser</h1> Here you can configure Konqueror's browser "
+"functionality. Please note that the file manager functionality has to be "
+"configured using the \"File Manager\" configuration module. You can make "
+"some settings how Konqueror should handle the HTML code in the web pages it "
+"loads. It is usually not necessary to change anything here."
+msgstr ""
+"<h1>Περιηγητής Konqueror</h1> Εδώ μπορείτε να ρυθμίσετε τη λειτουργία του "
+"περιηγητή Konqueror. Παρακαλώ σημειώστε ότι η λειτουργία του διαχειριστή "
+"αρχείων πρέπει να ρυθμιστεί χρησιμοποιώντας το άρθρωμα ελέγχου "
+"\"Διαχειριστής αρχείων\". Μπορείτε να κάνετε μερικές ρυθμίσεις για το πως ο "
+"Konqueror θα χειρίζεται τον κώδικα HTML στις ιστοσελίδες που φορτώνει. "
+"Συνήθως δεν είναι απαραίτητο να αλλάξετε κάτι εδώ."
+
+#: htmlopts.cpp:44
+#, kde-format
+msgid "Boo&kmarks"
+msgstr "Σελιδοδεί&κτες"
+
+#: htmlopts.cpp:47
+#, kde-format
+msgid "Ask for name and folder when adding bookmarks"
+msgstr "Ερώτηση για όνομα και φάκελο όταν γίνεται προσθήκη σελιδοδείκτη"
+
+#: htmlopts.cpp:50
+#, kde-format
+msgid ""
+"If this box is checked, Konqueror will allow you to change the title of the "
+"bookmark and choose a folder in which to store it when you add a new "
+"bookmark."
+msgstr ""
+"Αν αυτή η επιλογή είναι ενεργοποιημένη, ο Konqueror θα σας επιτρέπει να "
+"αλλάξετε τον τίτλο του σελιδοδείκτη και να επιλέξετε ένα φάκελο στον οποίο "
+"θα τον αποθηκεύσει όταν κάνετε προσθήκη νέου σελιδοδείκτη."
+
+#: htmlopts.cpp:56
+#, kde-format
+msgid "Show only marked bookmarks in bookmark toolbar"
+msgstr "Εμφάνιση μόνο μαρκαρισμένων σελιδοδεικτών στη γραμμή εργαλείων"
+
+#: htmlopts.cpp:58
+#, kde-format
+msgid ""
+"If this box is checked, Konqueror will show only those bookmarks in the "
+"bookmark toolbar which you have marked to do so in the bookmark editor."
+msgstr ""
+"Αν αυτή η επιλογή είναι ενεργοποιημένη, ο Konqueror  θα εμφανίζει στη γραμμή "
+"εργαλείων μόνο εκείνους τους σελιδοδείκτες τους οποίους έχετε μαρκάρει στον "
+"επεξεργαστή σελιδοδεικτών."
+
+#: htmlopts.cpp:65
+#, kde-format
+msgid "Form Com&pletion"
+msgstr "Συμ&πλήρωση φόρμας"
+
+#: htmlopts.cpp:69
+#, kde-format
+msgid ""
+"If this box is checked, Konqueror will remember the data you enter in web "
+"forms and suggest it in similar fields for all forms."
+msgstr ""
+"Αν αυτό είναι ενεργοποιημένο, ο Konqueror θα θυμάται τα δεδομένα που δίνετε "
+"σε φόρμες ιστού και θα τα προτείνει σε παρόμοια πεδία για όλες τις φόρμες."
+
+#: htmlopts.cpp:75
+#, kde-format
+msgid "&Maximum completions:"
+msgstr "&Μέγιστες συμπληρώσεις:"
+
+#: htmlopts.cpp:77
+#, kde-format
+msgid ""
+"Here you can select how many values Konqueror will remember for a form field."
+msgstr ""
+"Εδώ μπορείτε να διαλέξετε το πλήθος των τιμών που θα θυμάται ο Konqueror για "
+"ένα πεδίο φόρμας."
+
+#: htmlopts.cpp:84
+#, kde-format
+msgid "Mouse Beha&vior"
+msgstr "Συμπεριφορά &ποντικιού"
+
+#: htmlopts.cpp:87
+#, kde-format
+msgid "Chan&ge cursor over links"
+msgstr "Αλλα&γή του δρομέα πάνω από δεσμούς"
+
+#: htmlopts.cpp:89
+#, kde-format
+msgid ""
+"If this option is set, the shape of the cursor will change (usually to a "
+"hand) if it is moved over a hyperlink."
+msgstr ""
+"Αν αυτή επιλογή ενεργοποιηθεί, το σχήμα του ποντικιού θα αλλάζει (συνήθως σε "
+"ένα χέρι), αν βρεθεί πάνω από έναν υπερδεσμό."
+
+#: htmlopts.cpp:93
+#, kde-format
+msgid "M&iddle click opens URL in selection"
+msgstr "Το μεσαίο κλ&ικ ανοίγει το επιλεγμένο URL"
+
+#: htmlopts.cpp:96
+#, kde-format
+msgid ""
+"If this box is checked, you can open the URL in the selection by middle "
+"clicking on a Konqueror view."
+msgstr ""
+"Αν αυτό είναι ενεργοποιημένο, μπορείτε να ανοίξετε το επιλεγμένο URL "
+"κάνοντας μεσαίο κλικ σε μία προβολή του Konqueror."
+
+#: htmlopts.cpp:100
+#, kde-format
+msgid "Right click goes &back in history"
+msgstr "Το δεξί κλικ πάει &πίσω στο ιστορικό"
+
+#: htmlopts.cpp:103
+#, kde-format
+msgid ""
+"If this box is checked, you can go back in history by right clicking on a "
+"Konqueror view. To access the context menu, press the right mouse button and "
+"move."
+msgstr ""
+"Αν αυτό αυτό είναι ενεργοποιημένο, μπορείτε να πάτε πίσω στο ιστορικό "
+"κάνοντας δεξί κλικ σε ένα παράθυρο του Konqueror. Για να προσπελάσετε το "
+"σχετικό μενού πατήστε το δεξί πλήκτρο του ποντικιού και μετακινηθείτε."
+
+#: htmlopts.cpp:113
+#, kde-format
+msgid "Allow automatic delayed &reloading/redirecting"
+msgstr "Επιτρέπεται η καθυστερημένη &επαναφόρτωση/ανακατεύθυνση"
+
+#: htmlopts.cpp:114
+#, kde-format
+msgid ""
+"Some web pages request an automatic reload or redirection after a certain "
+"period of time. By unchecking this box Konqueror will ignore these requests."
+msgstr ""
+"Μερικές ιστοσελίδες ζητάνε μια αυτόματη επαναφόρτωση ή ανακατεύθυνση μετά "
+"από την πάροδο ενός χρονικού διαστήματος. Απενεργοποιώντας αυτό το πλαίσιο ο "
+"Konqueror θα αγνοήσει αυτές τις αιτήσεις."
+
+#: htmlopts.cpp:120
+#, kde-format
+msgid "Enable Access Ke&y activation with Ctrl key"
+msgstr "Ενεργοποίηση των &Πλήκτρων πρόσβασης με το πλήκτρο Ctrl"
+
+#: htmlopts.cpp:121
+#, kde-format
+msgid ""
+"Pressing the Ctrl key when viewing webpages activates Access Keys. "
+"Unchecking this box will disable this accessibility feature. (Konqueror "
+"needs to be restarted for this change to take effect.)"
+msgstr ""
+"Πατώντας το πλήκτρο Ctrl κατά την εμφάνιση ιστοσελίδων ενεργοποιείτε τα "
+"Πλήκτρα πρόσβασης. Απενεργοποιώντας αυτήν την επιλογή θα αναιρέσετε την "
+"προσβασιμότητα αυτού του χαρακτηριστικού. (Θα πρέπει να γίνει επανεκκίνηση "
+"του Konqueror για να εφαρμοστεί η αλλαγή)"
+
+#: htmlopts.cpp:125
+#, kde-format
+msgid "Send the DNT header to tell web sites you do not want to be tracked"
+msgstr ""
+"Αποστολή των επικεφαλίδων DNT (Do Not Track) για να πείτε στις ιστοσελίδες "
+"ότι δεν επιθυμείτε την ιχνηλάτιση"
+
+#: htmlopts.cpp:126
+#, kde-format
+msgid ""
+"Check this box if you want to inform a web site that you do not want your "
+"web browsing habits tracked."
+msgstr ""
+"Επιλέξτε αυτό το πλαίσιο αν θέλετε να ενημερώσετε μια ιστοσελίδα ότι δεν "
+"επιθυμείτε την ιχνηλάτιση των συνηθειών σας κατά την περιήγηση."
+
+#: htmlopts.cpp:130
+#, kde-format
+msgid "Offer to save website passwords"
+msgstr "Προσφορά για αποθήκευση κωδικών πρόσβασης σε ιστοχώρους"
+
+#: htmlopts.cpp:131
+#, kde-format
+msgid "Uncheck this box to prevent being prompted to save website passwords"
+msgstr ""
+"Αναιρέστε την επιλογή στο πλαίσιο αυτό για να αποφύγετε την προτροπή για "
+"αποθήκευση κωδικών πρόσβασης σε ιστοχώρους"
+
+#: htmlopts.cpp:136
+#, kde-format
+msgid "Display online PDF files using WebEngine"
+msgstr "Διαδικτυακή εμφάνιση PDF αρχείων με χρήση WebEngine"
+
+#: htmlopts.cpp:137
+#, kde-format
+msgid ""
+"Uncheck this box to display online PDF files as configured in System Settings"
+msgstr ""
+"Αναιρέστε αυτήν την επιλογή για να εμφανίζονται τα PDF αρχεία σύμφωνα με τη "
+"διαμόρφωση στις Ρυθμίσεις συστήματος"
+
+#: javaopts.cpp:78
+#, kde-format
+msgid "Enable Ja&va globally"
+msgstr "Καθολική ενεργοποίηση Ja&va"
+
+#: javaopts.cpp:93
+#, kde-format
+msgid "Java Runtime Settings"
+msgstr "Ρυθμίσεις εκτέλεσης Java"
+
+#: javaopts.cpp:97
+#, kde-format
+msgid "&Use security manager"
+msgstr "Χρήση διαχειριστή ασ&φαλείας"
+
+#: javaopts.cpp:101
+#, kde-format
+msgid "Use &KIO"
+msgstr "Χρήση &KIO"
+
+#: javaopts.cpp:105
+#, kde-format
+msgid "Shu&tdown applet server when inactive for more than"
+msgstr "&Τερματισμός εξυπηρετητή μικροεφαρμογών όταν είναι ανενεργός για"
+
+#: javaopts.cpp:117
+#, kde-format
+msgid " second"
+msgid_plural " seconds"
+msgstr[0] " δευτερόλεπτο"
+msgstr[1] " δευτερόλεπτα"
+
+#: javaopts.cpp:123
+#, kde-format
+msgid "&Path to Java executable, or 'java':"
+msgstr "&Διαδρομή για το εκτελέσιμο της Java, ή 'java':"
+
+#: javaopts.cpp:127
+#, kde-format
+msgid "Additional Java a&rguments:"
+msgstr "Πρόσθετα ο&ρίσματα της Java:"
+
+#: javaopts.cpp:132
+#, kde-format
+msgid ""
+"Enables the execution of scripts written in Java that can be contained in "
+"HTML pages. Note that, as with any browser, enabling active contents can be "
+"a security problem."
+msgstr ""
+"Ενεργοποιεί την εκτέλεση σεναρίων γραμμένων σε Java που μπορεί να "
+"περιέχονται σε σελίδες HTML. Σημειώστε ότι, όπως και σε οποιοδήποτε άλλο "
+"περιηγητή, η ενεργοποίηση ενεργών περιεχομένων μπορεί να είναι ένα πρόβλημα "
+"στον τομέα της ασφάλειας."
+
+#: javaopts.cpp:135
+#, kde-format
+msgid ""
+"<p>This box contains the domains and hosts you have set a specific Java "
+"policy for. This policy will be used instead of the default policy for "
+"enabling or disabling Java applets on pages sent by these domains or hosts.</"
+"p><p>Select a policy and use the controls on the right to modify it.</p>"
+msgstr ""
+"<p>Αυτό το πλαίσιο περιέχει τους τομείς και τους υπολογιστές για τους "
+"οποίους έχετε καθορίσει μια ειδική πολιτική Java. Αυτή η πολιτική θα "
+"χρησιμοποιείται, αντί της προκαθορισμένης, για την ενεργοποίηση ή την "
+"απενεργοποίηση μικροεφαρμογών Java σε σελίδες που στέλνονται από αυτούς τους "
+"τομείς ή τους υπολογιστές. </p><p>Επιλέξτε μια πολιτική και χρησιμοποιήστε "
+"τα χειριστήρια στα δεξιά για να την τροποποιήσετε.</p>"
+
+#: javaopts.cpp:142
+#, kde-format
+msgid ""
+"Click this button to choose the file that contains the Java policies. These "
+"policies will be merged with the existing ones. Duplicate entries are "
+"ignored."
+msgstr ""
+"Πατήστε αυτό το κουμπί για να επιλέξετε το αρχείο που περιέχει τις πολιτικές "
+"Java. Αυτές οι πολιτικές θα συγχωνευτούν με τις ήδη υπάρχουσες. Διπλές "
+"καταχωρίσεις αγνοούνται."
+
+#: javaopts.cpp:145
+#, kde-format
+msgid ""
+"Click this button to save the Java policy to a zipped file. The file, named "
+"<b>java_policy.tgz</b>, will be saved to a location of your choice."
+msgstr ""
+"Πατήστε αυτό το κουμπί για να αποθηκευτεί η πολιτική Java σε ένα συμπιεσμένο "
+"αρχείο. Το αρχείο, με όνομα <b>java_policy.tgz</b>, θα αποθηκευτεί σε μια "
+"τοποθεσία της επιλογής σας."
+
+#: javaopts.cpp:149
+#, kde-format
+msgid ""
+"Here you can set specific Java policies for any particular host or domain. "
+"To add a new policy, simply click the <i>New...</i> button and supply the "
+"necessary information requested by the dialog box. To change an existing "
+"policy, click on the <i>Change...</i> button and choose the new policy from "
+"the policy dialog box. Clicking on the <i>Delete</i> button will remove the "
+"selected policy, causing the default policy setting to be used for that "
+"domain."
+msgstr ""
+"Εδώ μπορείτε να ορίσετε συγκεκριμένες πολιτικές Java για οποιοδήποτε "
+"υπολογιστή ή τομέα. Για να προσθέσετε μια νέα πολιτική, απλά πατήστε το "
+"κουμπί <i>Νέο...</i> και δώστε τις απαραίτητες πληροφορίες που ζητούνται από "
+"το πλαίσιο διαλόγου. Για να αλλάξετε μια υπάρχουσα πολιτική, πατήστε το "
+"κουμπί <i>Αλλαγή...</i> και επιλέξτε τη νέα πολιτική από το παράθυρο "
+"διαλόγου πολιτικής. Πατώντας το κουμπί <i>Διαγραφή</i> η επιλεγμένη πολιτική "
+"θα αφαιρεθεί, με αποτέλεσμα να χρησιμοποιείται η προκαθορισμένη πολιτική για "
+"αυτόν τον τομέα."
+
+#: javaopts.cpp:162
+#, kde-format
+msgid ""
+"Enabling the security manager will cause the jvm to run with a Security "
+"Manager in place. This will keep applets from being able to read and write "
+"to your file system, creating arbitrary sockets, and other actions which "
+"could be used to compromise your system. Disable this option at your own "
+"risk. You can modify your $HOME/.java.policy file with the Java policytool "
+"utility to give code downloaded from certain sites more permissions."
+msgstr ""
+"Η ενεργοποίηση του διαχειριστή ασφαλείας θα κάνει την jvm να τρέχει με ένα "
+"Διαχειριστή Ασφαλείας ενεργοποιημένο. Αυτό θα εμποδίσει τις μικροεφαρμογές "
+"να διαβάζουν και να γράφουν στο σύστημα αρχείων σας, να δημιουργούν "
+"αυθαίρετες υποδοχές και γενικά να θέτουν σε κίνδυνο την ασφάλεια του "
+"συστήματός σας. Απενεργοποιήστε αυτή την επιλογή με δική σας ευθύνη. "
+"Μπορείτε να τροποποιήσετε το αρχείο $HOME/.java.policy με το εργαλείο Java "
+"policytool για να δώσετε στον κώδικα που προέρχεται από συγκεκριμένους "
+"δικτυακούς τόπους περισσότερες άδειες."
+
+#: javaopts.cpp:170
+#, kde-format
+msgid "Enabling this will cause the jvm to use KIO for network transport "
+msgstr ""
+"Ενεργοποιώντας αυτό θα οδηγήσει το jvm να χρησιμοποιεί το KIO δικτυακή "
+"μεταφορά "
+
+#: javaopts.cpp:172
+#, kde-format
+msgid ""
+"Enter the path to the java executable. If you want to use the jre in your "
+"path, simply leave it as 'java'. If you need to use a different jre, enter "
+"the path to the java executable (e.g. /usr/lib/jdk/bin/java), or the path to "
+"the directory that contains 'bin/java' (e.g. /opt/IBMJava2-13)."
+msgstr ""
+"Δώστε τη διαδρομή για το εκτελέσιμο της java. Αν θέλετε να χρησιμοποιήσετε "
+"το jre που είναι στο path σας, απλά αφήστε το σαν 'java'. Αν θέλετε να "
+"χρησιμοποιήσετε κάποιο άλλο jre, δώστε την πλήρη διαδρομή για το εκτελέσιμο "
+"java (π.χ. /usr/lib/jdk/bin/java), ή τη διαδρομή για τον κατάλογο που "
+"περιέχει το 'bin/java' (π.χ. /opt/IBMJava2-13)."
+
+#: javaopts.cpp:177
+#, kde-format
+msgid ""
+"If you want special arguments to be passed to the virtual machine, enter "
+"them here."
+msgstr ""
+"Αν θέλετε να περάσετε ειδικά ορίσματα στην εικονική μηχανή, εισάγετε τα εδώ."
+
+#: javaopts.cpp:179
+#, kde-format
+msgid ""
+"When all the applets have been destroyed, the applet server should shut "
+"down. However, starting the jvm takes a lot of time. If you would like to "
+"keep the java process running while you are browsing, you can set the "
+"timeout value to whatever you like. To keep the java process running for the "
+"whole time that the konqueror process is, leave the Shutdown Applet Server "
+"checkbox unchecked."
+msgstr ""
+"Όταν όλες οι μικροεφαρμογές έχουν καταστραφεί, ο εξυπηρετητής μικροεφαρμογών "
+"θα πρέπει να τερματίζεται. Ωστόσο, η εκκίνηση του jvm παίρνει πολύ χρόνο. Αν "
+"θέλετε να διατηρηθεί η διεργασία της java να εκτελείται όσο εσείς "
+"περιηγείστε, μπορείτε να θέσετε το χρονικό όριο σε όποια τιμή επιθυμείτε. "
+"Για να μην τερματίζεται ποτέ η διεργασία της java όσο τρέχει ο konqueror, "
+"αφήστε αυτό το πλαίσιο επιλογής, Τερματισμός εξυπηρετητή μικροεφαρμογών, "
+"κενό."
+
+#: javaopts.cpp:288
+#, kde-format
+msgctxt "@title:group"
+msgid "Doma&in-Specific"
+msgstr "Ανάλογα με τον &τομέα"
+
+#: javaopts.cpp:323
+#, kde-format
+msgctxt "@title:window"
+msgid "New Java Policy"
+msgstr "Νέα πολιτική Java"
+
+#: javaopts.cpp:326
+#, kde-format
+msgctxt "@title:window"
+msgid "Change Java Policy"
+msgstr "Αλλαγή πολιτικής Java"
+
+#: javaopts.cpp:330
+#, kde-format
+msgid "&Java policy:"
+msgstr "Πολιτική &Java:"
+
+#: javaopts.cpp:331
+#, kde-format
+msgid "Select a Java policy for the above host or domain."
+msgstr "Επιλέξτε μια πολιτική Java για τον παραπάνω υπολογιστή ή τομέα."
+
+#: jsopts.cpp:50
+#, kde-format
+msgid "Ena&ble JavaScript globally"
+msgstr "Καθολική &ενεργοποίηση JavaScript"
+
+#: jsopts.cpp:51
+#, kde-format
+msgid ""
+"Enables the execution of scripts written in ECMA-Script (also known as "
+"JavaScript) that can be contained in HTML pages. Note that, as with any "
+"browser, enabling scripting languages can be a security problem."
+msgstr ""
+"Ενεργοποιεί την εκτέλεση σεναρίων γραμμένων σε ECMA-Script (γνωστή επίσης "
+"και σαν JacaScript) που μπορεί να περιέχονται σε σελίδες HTML. Σημειώστε "
+"ότι, όπως και σε οποιοδήποτε άλλο περιηγητή, η ενεργοποίηση γλωσσών σεναρίων "
+"μπορεί να είναι ένα πρόβλημα στον τομέα της ασφάλειας."
+
+#: jsopts.cpp:59
+#, kde-format
+msgid "Debugging"
+msgstr "Αποσφαλμάτωση"
+
+#: jsopts.cpp:63
+#, kde-format
+msgid "Enable debu&gger"
+msgstr "Ενεργοποίηση &αποσφαλματωτή"
+
+#: jsopts.cpp:64
+#, kde-format
+msgid "Enables builtin JavaScript debugger."
+msgstr "Ενεργοποιεί τον ενσωματωμένο αποσφαλματωτή JavaScript."
+
+#: jsopts.cpp:68
+#, kde-format
+msgid "Report &errors"
+msgstr "Αναφορά &σφαλμάτων"
+
+#: jsopts.cpp:69
+#, kde-format
+msgid ""
+"Enables the reporting of errors that occur when JavaScript code is executed."
+msgstr ""
+"Ενεργοποιεί την αναφορά των σφαλμάτων που συμβαίνουν κατά την εκτέλεση "
+"κώδικα JavaScript."
+
+#: jsopts.cpp:79
+#, kde-format
+msgid ""
+"Here you can set specific JavaScript policies for any particular host or "
+"domain. To add a new policy, simply click the <i>New...</i> button and "
+"supply the necessary information requested by the dialog box. To change an "
+"existing policy, click on the <i>Change...</i> button and choose the new "
+"policy from the policy dialog box. Clicking on the <i>Delete</i> button will "
+"remove the selected policy causing the default policy setting to be used for "
+"that domain. The <i>Import</i> and <i>Export</i> button allows you to easily "
+"share your policies with other people by allowing you to save and retrieve "
+"them from a zipped file."
+msgstr ""
+"Εδώ μπορείτε να ορίσετε συγκεκριμένες πολιτικές JavaScript για οποιοδήποτε "
+"υπολογιστή ή τομέα. Για να προσθέσετε μια νέα πολιτική, πατήστε το κουμπί "
+"<i>Νέο...</i> και δώστε τις απαραίτητες πληροφορίες που ζητούνται από το "
+"πλαίσιο διαλόγου. Για να αλλάξετε μια υπάρχουσα πολιτική, πατήστε το κουμπί "
+"<i>Αλλαγή...</i> και επιλέξτε τη νέα πολιτική από το παράθυρο διαλόγου "
+"πολιτικής. Πατώντας το κουμπί <i>Διαγραφή</i> η επιλεγμένη πολιτική θα "
+"αφαιρεθεί, με αποτέλεσμα να χρησιμοποιείται η προκαθορισμένη πολιτική για "
+"αυτόν τον τομέα. Το κουμπί <i>Εισαγωγή</i> και <i>Εξαγωγή</i> σας επιτρέπει "
+"να μοιραστείτε εύκολα τις πολιτικές σας με άλλους, επιτρέποντάς σας να τις "
+"αποθηκεύσετε και να τις ανακτήσετε από ένα συμπιεσμένο αρχείο."
+
+#: jsopts.cpp:89
+#, kde-format
+msgid ""
+"<p>This box contains the domains and hosts you have set a specific "
+"JavaScript policy for. This policy will be used instead of the default "
+"policy for enabling or disabling JavaScript on pages sent by these domains "
+"or hosts.</p><p>Select a policy and use the controls on the right to modify "
+"it.</p>"
+msgstr ""
+"<p>Αυτό το πλαίσιο περιέχει τους τομείς και τους υπολογιστές για τους "
+"οποίους έχετε καθορίσει μια ειδική πολιτική JavaScript. Αυτή η πολιτική θα "
+"χρησιμοποιείται, αντί της προκαθορισμένης, για την ενεργοποίηση ή την "
+"απενεργοποίηση της JavaScript σε σελίδες που στέλνονται από αυτούς τους "
+"τομείς ή τους υπολογιστές. </p><p>Επιλέξτε μια πολιτική και χρησιμοποιήστε "
+"τα χειριστήρια στα δεξιά για να την τροποποιήσετε.</p>"
+
+#: jsopts.cpp:96
+#, kde-format
+msgid ""
+"Click this button to choose the file that contains the JavaScript policies. "
+"These policies will be merged with the existing ones. Duplicate entries are "
+"ignored."
+msgstr ""
+"Πατήστε αυτό το κουμπί για να επιλέξετε το αρχείο που περιέχει τις πολιτικές "
+"JavaScript. Αυτές οι πολιτικές θα συγχωνευτούν με τις ήδη υπάρχουσες. Διπλές "
+"εισαγωγές αγνοούνται."
+
+#: jsopts.cpp:99
+#, kde-format
+msgid ""
+"Click this button to save the JavaScript policy to a zipped file. The file, "
+"named <b>javascript_policy.tgz</b>, will be saved to a location of your "
+"choice."
+msgstr ""
+"Πατήστε αυτό το κουμπί για να αποθηκευτεί η πολιτική JavaScript σε ένα "
+"συμπιεσμένο αρχείο. Το αρχείο, με όνομα <b>javascript_policy.tgz</b>, θα "
+"αποθηκευτεί σε μια τοποθεσία της επιλογής σας."
+
+#: jsopts.cpp:105
+#, kde-format
+msgid "Global JavaScript Policies"
+msgstr "Καθολικές πολιτικές JavaScript"
+
+#: jsopts.cpp:173
+#, kde-format
+msgctxt "@title:group"
+msgid "Do&main-Specific"
+msgstr "Ανάλογα με τον &τομέα"
+
+#: jsopts.cpp:212
+#, kde-format
+msgctxt "@title:window"
+msgid "New JavaScript Policy"
+msgstr "Νέα πολιτική JavaScript"
+
+#: jsopts.cpp:215
+#, kde-format
+msgctxt "@title:window"
+msgid "Change JavaScript Policy"
+msgstr "Αλλαγή πολιτικής JavaScript"
+
+#: jsopts.cpp:219
+#, kde-format
+msgid "JavaScript policy:"
+msgstr "Πολιτική JavaScript:"
+
+#: jsopts.cpp:220
+#, kde-format
+msgid "Select a JavaScript policy for the above host or domain."
+msgstr "Επιλέξτε μια πολιτική JavaScript για τον παραπάνω υπολογιστή ή τομέα."
+
+#: jsopts.cpp:222
+#, kde-format
+msgid "Domain-Specific JavaScript Policies"
+msgstr "Πολιτικές JavaScript ανάλογα με τον τομέα"
+
+#: jspolicies.cpp:132
+#, kde-format
+msgid "Open new windows:"
+msgstr "Άνοιγμα νέων παραθύρων:"
+
+#: jspolicies.cpp:140 jspolicies.cpp:194 jspolicies.cpp:231 jspolicies.cpp:268
+#: jspolicies.cpp:308
+#, kde-format
+msgid "Use global"
+msgstr "Χρήση καθολικής"
+
+#: jspolicies.cpp:141 jspolicies.cpp:195 jspolicies.cpp:232 jspolicies.cpp:269
+#: jspolicies.cpp:309
+#, kde-format
+msgid "Use setting from global policy."
+msgstr "Χρήση ρύθμισης από την καθολική πολιτική."
+
+#: jspolicies.cpp:147 jspolicies.cpp:201 jspolicies.cpp:238 jspolicies.cpp:275
+#: jspolicies.cpp:315
+#, kde-format
+msgid "Allow"
+msgstr "Επιτρέπεται"
+
+#: jspolicies.cpp:148
+#, kde-format
+msgid "Accept all popup window requests."
+msgstr "Αποδοχή όλων των αιτήσεων για αναδυόμενα παράθυρα."
+
+#: jspolicies.cpp:153
+#, kde-format
+msgid "Ask"
+msgstr "Ερώτηση"
+
+#: jspolicies.cpp:154
+#, kde-format
+msgid "Prompt every time a popup window is requested."
+msgstr "Ερώτηση κάθε φορά που γίνεται αίτηση για αναδυόμενο παράθυρο."
+
+#: jspolicies.cpp:159
+#, kde-format
+msgid "Deny"
+msgstr "Απαγορεύεται"
+
+#: jspolicies.cpp:160
+#, kde-format
+msgid "Reject all popup window requests."
+msgstr "Απόρριψη όλων των αιτήσεων για άνοιγμα αναδυόμενων παραθύρων."
+
+#: jspolicies.cpp:165
+#, kde-format
+msgid "Smart"
+msgstr "Έξυπνη"
+
+#: jspolicies.cpp:166
+#, kde-format
+msgid ""
+"Accept popup window requests only when links are activated through an "
+"explicit mouse click or keyboard operation."
+msgstr ""
+"Αποδοχή αιτήσεων αναδυόμενων παραθύρων μόνο όταν οι δεσμοί ενεργοποιούνται "
+"με το πάτημα ενός πλήκτρου του ποντικιού ή με κάποια ενέργεια μέσω του "
+"πληκτρολογίου."
+
+#: jspolicies.cpp:173
+#, kde-format
+msgid ""
+"If you disable this, Konqueror will stop interpreting the <i>window.open()</"
+"i> JavaScript command. This is useful if you regularly visit sites that make "
+"extensive use of this command to pop up ad banners.<br /><br /><b>Note:</b> "
+"Disabling this option might also break certain sites that require <i>window."
+"open()</i> for proper operation. Use this feature carefully."
+msgstr ""
+"Αν απενεργοποιήσετε αυτό, ο Konqueror θα πάψει να ερμηνεύει την εντολή "
+"JavaScript <i>window.open()</i>. Αυτό είναι χρήσιμο αν επισκέπτεστε τακτικά "
+"ιστοσελίδες που χρησιμοποιούν κατά κόρον αυτή την εντολή για να εμφανίσουν "
+"διαφημιστικά παράθυρα.<br /><br /><b>Σημείωση:</b> Η απενεργοποίηση αυτής "
+"της εντολής μπορεί επίσης να κάνει αδύνατη την εμφάνιση κάποιων ιστοσελίδων "
+"που απαιτούν την εντολή <i>window.open()</i> για σωστή λειτουργία. "
+"Χρησιμοποιήστε αυτή τη δυνατότητα προσεκτικά."
+
+#: jspolicies.cpp:187
+#, kde-format
+msgid "Resize window:"
+msgstr "Αλλαγή μεγέθους παραθύρου:"
+
+#: jspolicies.cpp:202
+#, kde-format
+msgid "Allow scripts to change the window size."
+msgstr "Να επιτρέπεται σε σενάρια να αλλάζουν το μέγεθος του παραθύρου."
+
+#: jspolicies.cpp:207 jspolicies.cpp:244 jspolicies.cpp:281 jspolicies.cpp:321
+#, kde-format
+msgid "Ignore"
+msgstr "Αγνόηση"
+
+#: jspolicies.cpp:208
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to change the window size. The web page will "
+"<i>think</i> it changed the size but the actual window is not affected."
+msgstr ""
+"Να αγνοούνται οι προσπάθειες των σεναρίων να αλλάξουν το μέγεθος του "
+"παραθύρου. Η ιστοσελίδα θα <i>νομίζει</i> ότι άλλαξε το μέγεθος του "
+"παραθύρου αλλά το πραγματικό παράθυρο δε θα επηρεάζεται."
+
+#: jspolicies.cpp:215
+#, kde-format
+msgid ""
+"Some websites change the window size on their own by using <i>window."
+"resizeBy()</i> or <i>window.resizeTo()</i>. This option specifies the "
+"treatment of such attempts."
+msgstr ""
+"Μερικές ιστοσελίδες αλλάζουν το μέγεθος του παραθύρου μόνες τους "
+"χρησιμοποιώντας την <i>window.resizeBy()</i> ή <i>window.resizeTo()</i>. "
+"Αυτή η επιλογή ορίζει τη διαχείριση τέτοιων προσπαθειών."
+
+#: jspolicies.cpp:224
+#, kde-format
+msgid "Move window:"
+msgstr "Μετακίνηση παραθύρου:"
+
+#: jspolicies.cpp:239
+#, kde-format
+msgid "Allow scripts to change the window position."
+msgstr "Να επιτρέπεται σε σενάρια να αλλάζουν τη θέση του παραθύρου."
+
+#: jspolicies.cpp:245
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to change the window position. The web page will "
+"<i>think</i> it moved the window but the actual position is not affected."
+msgstr ""
+"Να αγνοούνται οι προσπάθειες των σεναρίων να αλλάξουν τη θέση του παραθύρου. "
+"Η ιστοσελίδα θα <i>νομίζει</i> ότι άλλαξε τη θέση του παραθύρου αλλά η "
+"πραγματική θέση δε θα επηρεάζεται."
+
+#: jspolicies.cpp:252
+#, kde-format
+msgid ""
+"Some websites change the window position on their own by using <i>window."
+"moveBy()</i> or <i>window.moveTo()</i>. This option specifies the treatment "
+"of such attempts."
+msgstr ""
+"Μερικές ιστοσελίδες αλλάζουν τη θέση του παραθύρου μόνες τους "
+"χρησιμοποιώντας την <i>window.moveBy()</i> ή <i>window.moveTo()</i>. Αυτή η "
+"επιλογή ορίζει τη διαχείριση τέτοιων προσπαθειών."
+
+#: jspolicies.cpp:261
+#, kde-format
+msgid "Focus window:"
+msgstr "Εστίαση παραθύρου:"
+
+#: jspolicies.cpp:276
+#, kde-format
+msgid "Allow scripts to focus the window."
+msgstr "Να επιτρέπεται σε σενάρια να εστιάζουν ένα παράθυρο."
+
+#: jspolicies.cpp:282
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to focus the window. The web page will <i>think</"
+"i> it brought the focus to the window but the actual focus will remain "
+"unchanged."
+msgstr ""
+"Να αγνοούνται οι προσπάθειες των σεναρίων να εστιάζουν ένα παράθυρο. Η "
+"ιστοσελίδα θα <i>νομίζει</i> ότι εστίασε στο παράθυρο αλλά η πραγματική "
+"εστίαση δε θα αλλάζει."
+
+#: jspolicies.cpp:290
+#, kde-format
+msgid ""
+"Some websites set the focus to their browser window on their own by using "
+"<i>window.focus()</i>. This usually leads to the window being moved to the "
+"front interrupting whatever action the user was dedicated to at that time. "
+"This option specifies the treatment of such attempts."
+msgstr ""
+"Μερικές ιστοσελίδες ορίζουν την εστίαση στο παράθυρο τους μόνες τους "
+"χρησιμοποιώντας την <i>window.focus()</i>. Αυτό συνήθως οδηγεί στο να "
+"μετακινείται το παράθυρο εμπρός, διακόπτοντας οποιαδήποτε ενέργεια με την "
+"οποία ήταν απασχολημένος ο χρήστης εκείνη τη στιγμή. Αυτή η επιλογή ορίζει "
+"τη διαχείριση τέτοιων προσπαθειών."
+
+#: jspolicies.cpp:301
+#, kde-format
+msgid "Modify status bar text:"
+msgstr "Τροποποίηση του κειμένου της γραμμής κατάστασης:"
+
+#: jspolicies.cpp:316
+#, kde-format
+msgid "Allow scripts to change the text of the status bar."
+msgstr ""
+"Να επιτρέπεται σε σενάρια να τροποποιούν το κείμενο της γραμμής κατάστασης."
+
+#: jspolicies.cpp:322
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to change the status bar text. The web page will "
+"<i>think</i> it changed the text but the actual text will remain unchanged."
+msgstr ""
+"Να αγνοούνται οι προσπάθειες των σεναρίων να τροποποιήσουν το κείμενο της "
+"γραμμής κατάστασης. Η ιστοσελίδα θα <i>νομίζει</i> ότι άλλαξε το κείμενο "
+"αλλά η το πραγματικό κείμενο δε θα αλλάξει."
+
+#: jspolicies.cpp:330
+#, kde-format
+msgid ""
+"Some websites change the status bar text by setting <i>window.status</i> or "
+"<i>window.defaultStatus</i>, thus sometimes preventing displaying the real "
+"URLs of hyperlinks. This option specifies the treatment of such attempts."
+msgstr ""
+"Μερικές ιστοσελίδες τροποποιούν το κείμενο της γραμμής κατάστασης ορίζοντας "
+"το <i>window.status()</i> ή το <i>window.defaultStatus</i>, και έτσι μερικές "
+"φορές εμποδίζουν την εμφάνιση των πραγματικών URL ή υπερδεσμών. Αυτή η "
+"επιλογή ορίζει τη διαχείριση τέτοιων προσπαθειών."
+
+#: main.cpp:43
+#, kde-format
+msgid "Konqueror Browsing Control Module"
+msgstr "Άρθρωμα ελέγχου της περιήγησης με τον Konqueror"
+
+#: main.cpp:45
+#, kde-format
+msgid "(c) 1999 - 2001 The Konqueror Developers"
+msgstr "(c) 1999 - 2001 Οι προγραμματιστές του Konqueror"
+
+#: main.cpp:47
+#, kde-format
+msgid "Waldo Bastian"
+msgstr "Waldo Bastian"
+
+#: main.cpp:48
+#, kde-format
+msgid "David Faure"
+msgstr "David Faure"
+
+#: main.cpp:49
+#, kde-format
+msgid "Matthias Kalle Dalheimer"
+msgstr "Matthias Kalle Dalheimer"
+
+#: main.cpp:50
+#, kde-format
+msgid "Lars Knoll"
+msgstr "Lars Knoll"
+
+#: main.cpp:51
+#, kde-format
+msgid "Dirk Mueller"
+msgstr "Dirk Mueller"
+
+#: main.cpp:52
+#, kde-format
+msgid "Daniel Molkentin"
+msgstr "Daniel Molkentin"
+
+#: main.cpp:53
+#, kde-format
+msgid "Wynn Wilkes"
+msgstr "Wynn Wilkes"
+
+#: main.cpp:55
+#, kde-format
+msgid "Leo Savernik"
+msgstr "Leo Savernik"
+
+#: main.cpp:55
+#, kde-format
+msgid ""
+"JavaScript access controls\n"
+"Per-domain policies extensions"
+msgstr ""
+"Ελεγκτές πρόσβασης JavaScript\n"
+"Επεκτάσεις πολιτικής ανά τομέα"
+
+#: main.cpp:67
+#, kde-format
+msgid "&Java"
+msgstr "&Java"
+
+#: main.cpp:71
+#, kde-format
+msgid "Java&Script"
+msgstr "Java&Script"
+
+#: main.cpp:111
+#, kde-format
+msgid ""
+"<h2>JavaScript</h2>On this page, you can configure whether JavaScript "
+"programs embedded in web pages should be allowed to be executed by Konqueror."
+"<h2>Java</h2>On this page, you can configure whether Java applets embedded "
+"in web pages should be allowed to be executed by Konqueror.<br /><br /"
+"><b>Note:</b> Active content is always a security risk, which is why "
+"Konqueror allows you to specify very fine-grained from which hosts you want "
+"to execute Java and/or JavaScript programs."
+msgstr ""
+"<h2>JavaScript</h2>Σε αυτήν τη σελίδα μπορείτε να ρυθμίσετε αν τα "
+"προγράμματα JavaScript που είναι ενσωματωμένα σε κάποιες ιστοσελίδες θα "
+"επιτρέπεται να εκτελούνται από τον Konqueror.<h2>Java</h2>Σε αυτήν τη σελίδα "
+"μπορείτε να ρυθμίσετε αν οι μικροεφαρμογές Java που είναι ενσωματωμένες σε "
+"κάποιες ιστοσελίδες θα επιτρέπεται να εκτελούνται από τον Konqueror.<br /"
+"><br /><b>Σημείωση:</b> Το ενεργό περιεχόμενο πάντα θέτει σε κίνδυνο την "
+"ασφάλεια του συστήματός σας, γι' αυτό και ο Konqueror σας επιτρέπει να "
+"καθορίζετε λεπτομερώς από ποιους υπολογιστές θέλετε να εκτελείται "
+"προγράμματα Java και/ή JavaScript."
+
+#: policydlg.cpp:30
+#, kde-format
+msgctxt "@title:window"
+msgid "Domain-Specific Policies"
+msgstr "Πολιτικές ανάλογα με τον τομέα"
+
+#: policydlg.cpp:47
+#, kde-format
+msgid "&Host or domain name:"
+msgstr "Όνομα &υπολογιστή ή τομέα:"
+
+#: policydlg.cpp:55
+#, kde-format
+msgid ""
+"Enter the name of a host (like www.kde.org) or a domain, starting with a dot "
+"(like .kde.org or .org)"
+msgstr ""
+"Δώστε το όνομα ενός υπολογιστή (όπως www.kde.org) ή ενός τομέα ξεκινώντας με "
+"τελεία, (όπως .kde.org ή .org)"
+
+#: policydlg.cpp:139
+#, kde-format
+msgid "You must first enter a domain name."
+msgstr "Πρέπει πρώτα να δώσετε ένα όνομα τομέα."
+
+#~ msgid "Accept languages:"
+#~ msgstr "Αποδοχή γλωσσών:"
+
+#~ msgid "Accept character sets:"
+#~ msgstr "Αποδοχή συνόλων χαρακτήρων:"
+
+#~ msgid "Plugins"
+#~ msgstr "Πρόσθετα"
+
+#~ msgid "Folders"
+#~ msgstr "Φάκελοι"
+
+#~ msgid "&Remove"
+#~ msgstr "Α&φαίρεση"
+
+#~ msgid "&New"
+#~ msgstr "&Νέο"
+
+#~ msgid "Do&wn"
+#~ msgstr "Κάτ&ω"
+
+#~ msgid "&Up"
+#~ msgstr "&Πάνω"
+
+#~ msgid "Click here to scan for newly installed Netscape plugins now."
+#~ msgstr ""
+#~ "Πατήστε εδώ για να να γίνει αναζήτηση για νέα πρόσθετα του Netscape τώρα."
+
+#~ msgid "&Scan for Plugins"
+#~ msgstr "&Σάρωση για πρόσθετα"
+
+#~ msgid "Here you can see a list of the Netscape plugins KDE has found."
+#~ msgstr "Εδώ μπορείτε να δείτε μια λίστα των προσθέτων που βρήκε το KDE."
+
+#~ msgid "Information"
+#~ msgstr "Πληροφορίες"
+
+#~ msgid "Value"
+#~ msgstr "Τιμή"
+
+#~ msgid "Global Settings"
+#~ msgstr "Καθολικές ρυθμίσεις"
+
+#~ msgid "&Enable plugins globally"
+#~ msgstr "Καθολική &ενεργοποίηση προσθέτων"
+
+#~ msgid "Only allow &HTTP and HTTPS URLs for plugins"
+#~ msgstr "Επιτρέπονται μόνο &HTTP και HTTPS URL για τα πρόσθετα"
+
+#~ msgid "&Load plugins on demand only"
+#~ msgstr "&Φόρτωση προσθέτων μόνο κατόπιν αιτήσεως"
+
+#~ msgid "CPU priority for plugins: %1"
+#~ msgstr "Προτεραιότητα ΚΜΕ για πρόσθετα: %1"
+
+#~ msgid "Domain-Specific Settin&gs"
+#~ msgstr "&Ρυθμίσεις ανάλογα με τον τομέα"
+
+#~ msgid ""
+#~ "Enables the execution of plugins that can be contained in HTML pages, e."
+#~ "g. Macromedia Flash. Note that, as with any browser, enabling active "
+#~ "contents can be a security problem."
+#~ msgstr ""
+#~ "Ενεργοποιεί την εκτέλεση προσθέτων που μπορεί να περιέχονται σε σελίδες "
+#~ "HTML, π.χ. Macromedia Flash. Σημειώστε επίσης ότι, όπως και σε "
+#~ "οποιοδήποτε άλλο περιηγητή, η ενεργοποίηση ενεργών περιεχομένων μπορεί να "
+#~ "είναι ένα πρόβλημα στον τομέα της ασφάλειας."
+
+#~ msgid ""
+#~ "<p>This box contains the domains and hosts you have set a specific plugin "
+#~ "policy for. This policy will be used instead of the default policy for "
+#~ "enabling or disabling plugins on pages sent by these domains or hosts.</"
+#~ "p><p>Select a policy and use the controls on the right to modify it.</p>"
+#~ msgstr ""
+#~ "<p>Αυτό το πλαίσιο περιέχει τους τομείς και τους υπολογιστές για τους "
+#~ "οποίους έχετε καθορίσει μια ειδική πολιτική προσθέτου. Αυτή η πολιτική θα "
+#~ "χρησιμοποιείται, αντί της προκαθορισμένης, για την ενεργοποίηση ή την "
+#~ "απενεργοποίηση προσθέτων σε σελίδες που στέλνονται από αυτούς τους τομείς "
+#~ "ή τους υπολογιστές. </p><p>Επιλέξτε μια πολιτική και χρησιμοποιήστε τα "
+#~ "χειριστήρια στα δεξιά για να την τροποποιήσετε.</p>"
+
+#~ msgid ""
+#~ "Click this button to choose the file that contains the plugin policies. "
+#~ "These policies will be merged with the existing ones. Duplicate entries "
+#~ "are ignored."
+#~ msgstr ""
+#~ "Πατήστε αυτό το κουμπί για να επιλέξετε το αρχείο που περιέχει τις "
+#~ "πολιτικές προσθέτου. Αυτές οι πολιτικές θα συγχωνευτούν με τις ήδη "
+#~ "υπάρχουσες. Διπλές καταχωρίσεις αγνοούνται."
+
+#~ msgid ""
+#~ "Click this button to save the plugin policy to a zipped file. The file, "
+#~ "named <b>plugin_policy.tgz</b>, will be saved to a location of your "
+#~ "choice."
+#~ msgstr ""
+#~ "Πατήστε αυτό το κουμπί για να αποθηκευτεί η πολιτική προσθέτου σε ένα "
+#~ "συμπιεσμένο αρχείο. Το αρχείο, με όνομα <b>plugin_policy.tgz</b>, θα "
+#~ "αποθηκευτεί σε μια τοποθεσία της επιλογής σας."
+
+#~ msgid ""
+#~ "Here you can set specific plugin policies for any particular host or "
+#~ "domain. To add a new policy, simply click the <i>New...</i> button and "
+#~ "supply the necessary information requested by the dialog box. To change "
+#~ "an existing policy, click on the <i>Change...</i> button and choose the "
+#~ "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
+#~ "button will remove the selected policy causing the default policy setting "
+#~ "to be used for that domain."
+#~ msgstr ""
+#~ "Εδώ μπορείτε να ορίσετε συγκεκριμένες πολιτικές προσθέτου για οποιοδήποτε "
+#~ "υπολογιστή ή τομέα. Για να προσθέσετε μια νέα πολιτική, πατήστε το κουμπί "
+#~ "<i>Νέο...</i> και δώστε τις απαραίτητες πληροφορίες που ζητούνται από το "
+#~ "πλαίσιο διαλόγου. Για να αλλάξετε μια υπάρχουσα πολιτική, πατήστε το "
+#~ "κουμπί <i>Αλλαγή...</i> και επιλέξτε τη νέα πολιτική από το παράθυρο "
+#~ "διαλόγου πολιτικής. Πατώντας το κουμπί <i>Διαγραφή</i> η επιλεγμένη "
+#~ "πολιτική θα αφαιρεθεί, με αποτέλεσμα να χρησιμοποιείται η προκαθορισμένη "
+#~ "πολιτική για αυτόν τον τομέα."
+
+#~ msgctxt "lowest priority"
+#~ msgid "lowest"
+#~ msgstr "χαμηλότερη"
+
+#~ msgctxt "low priority"
+#~ msgid "low"
+#~ msgstr "χαμηλή"
+
+#~ msgctxt "medium priority"
+#~ msgid "medium"
+#~ msgstr "μέση"
+
+#~ msgctxt "high priority"
+#~ msgid "high"
+#~ msgstr "υψηλή"
+
+#~ msgctxt "highest priority"
+#~ msgid "highest"
+#~ msgstr "υψηλότερη"
+
+#~ msgid ""
+#~ "<h1>Konqueror Plugins</h1> The Konqueror web browser can use Netscape "
+#~ "plugins to show special content, just like the Navigator does. Please "
+#~ "note that the way you have to install Netscape plugins may depend on your "
+#~ "distribution. A typical place to install them is, for example, '/opt/"
+#~ "netscape/plugins'."
+#~ msgstr ""
+#~ "<h1>Πρόσθετα του Konqueror</h1> Ο περιηγητής ιστοσελίδων Konqueror μπορεί "
+#~ "να χρησιμοποιήσει πρόσθετα του Netscape για να εμφανίσει ειδικό "
+#~ "περιεχόμενο, όπως και ο Netscape Navigator. Παρακαλώ σημειώστε ότι ο "
+#~ "τρόπος με τον οποίο πρέπει να εγκαταστήσετε τα πρόσθετα Netscape μπορεί "
+#~ "να εξαρτάται από τη διανομή σας. Μια τυπική τοποθεσία για την εγκατάσταση "
+#~ "τους είναι, για παράδειγμα, το '/opt/netscape/plugins'."
+
+#~ msgid ""
+#~ "Do you want to apply your changes before the scan? Otherwise the changes "
+#~ "will be lost."
+#~ msgstr ""
+#~ "Θέλετε να εφαρμοστούν οι αλλαγές σας πριν την αναζήτηση; Αλλιώς οι "
+#~ "αλλαγές θα χαθούν."
+
+#~ msgid ""
+#~ "The nspluginscan executable cannot be found. Netscape plugins will not be "
+#~ "scanned."
+#~ msgstr ""
+#~ "Το εκτελέσιμο nspluginscan δεν είναι δυνατό να βρεθεί. Τα πρόσθετα του "
+#~ "Netscape δε θα αναζητηθούν."
+
+#~ msgid "Scanning for plugins"
+#~ msgstr "Αναζήτηση για πρόσθετα"
+
+#~ msgctxt "@title:window"
+#~ msgid "Select Plugin Scan Folder"
+#~ msgstr "Επιλογή φακέλου αναζήτησης προσθέτων"
+
+#~ msgid "Netscape Plugins"
+#~ msgstr "Πρόσθετα Netscape"
+
+#~ msgid "Plugin"
+#~ msgstr "Πρόσθετο"
+
+#~ msgid "MIME type"
+#~ msgstr "Τύπος MIME"
+
+#~ msgid "Description"
+#~ msgstr "Περιγραφή"
+
+#~ msgid "Suffixes"
+#~ msgstr "Καταλήξεις"
+
+#~ msgid "Doma&in-Specific"
+#~ msgstr "Ανάλογα με τον &τομέα"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Plugin Policy"
+#~ msgstr "Νέα πολιτική πρόσθετου"
+
+#~ msgctxt "@title:window"
+#~ msgid "Change Plugin Policy"
+#~ msgstr "Αλλαγή πολιτικής πρόσθετου"
+
+#~ msgid "&Plugin policy:"
+#~ msgstr "Πολιτική &προσθέτου:"
+
+#~ msgid "Select a plugin policy for the above host or domain."
+#~ msgstr ""
+#~ "Επιλέξτε μια πολιτική προσθέτου για τον παραπάνω υπολογιστή ή τομέα."
+
+#, fuzzy
+#~| msgid "Sa&ns serif font:"
+#~ msgid "Sans Serif"
+#~ msgstr "Γραμματοσειρά Sa&ns serif:"
+
+#, fuzzy
+#~| msgid "S&tandard font:"
+#~ msgid "Standard Symbols L"
+#~ msgstr "&Τυπική γραμματοσειρά:"
+
+#~ msgid "kcmkonqhtml"
+#~ msgstr "kcmkonqhtml"
+
+#~ msgid ""
+#~ "<html>\n"
+#~ "<head>\n"
+#~ "<style>\n"
+#~ "<!--\n"
+#~ msgstr ""
+#~ "<html>\n"
+#~ "<head>\n"
+#~ "<style>\n"
+#~ "<!--\n"
+
+#~ msgid "Expression (e.g. http://www.example.com/ad/*):"
+#~ msgstr "Έκφραση (π.χ. http://www.example.com/ad/*):"
+
+#~ msgid ""
+#~ "Enter an expression to filter. Expressions can be defined as either a "
+#~ "filename style wildcard e.g. http://www.example.com/ads* or as a full "
+#~ "regular expression by surrounding the string with '/' e.g.  //(ad|"
+#~ "banner)\\./"
+#~ msgstr ""
+#~ "Εισάγετε μια έκφραση που θα φιλτραριστεί. Οι εκφράσεις μπορούν να "
+#~ "οριστούν σαν ένα μοτίβο τύπου ονόματος αρχείου π.χ. http://www.example."
+#~ "com/ads* ή σαν μια πλήρη κανονική έκφραση βάζοντάς τη μέσα σε  '/'. Π."
+#~ "χ.   //(ad|banner)\\./"
+
+#~ msgid "Enable completion of &forms"
+#~ msgstr "Ενεργοποίηση συμπλήρωσης &φορμών"
+
+#~ msgid "App&let server timeout:"
+#~ msgstr "Χρονικό όριο εξυπηρετητή &μικροεφαρμογών:"

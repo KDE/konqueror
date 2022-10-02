@@ -1,0 +1,454 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Swedish "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="kcmcss" lang="&language;">
+<articleinfo>
+<title
+>Utseende</title>
+<authorgroup>
+<author
+>&Lauri.Watts; &Lauri.Watts.mail;</author>
+<othercredit role="translator"
+> <firstname
+>Stefan</firstname
+> <surname
+>Asserhäll</surname
+> <affiliation
+><address
+><email
+>stefan.asserhall@bredband.net</email
+></address
+></affiliation
+> <contrib
+>Översättare</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2016-11-08</date>
+<releaseinfo
+>Program 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>CSS</keyword>
+<keyword
+>Utseende</keyword>
+<keyword
+>Teckensnitt</keyword>
+<keyword
+>CSS</keyword>
+<keyword
+>Stilmallar</keyword>
+<keyword
+>Handikappstöd</keyword>
+</keywordset>
+
+</articleinfo>
+
+<sect1 id="appearance">
+<title
+>Utseende</title>
+<para
+>Den här modulen består av tre flikar med inställningsalternativ för hur webbsidor visas.</para>
+
+<sect2 id="general">
+<title
+>Allmänt</title
+> <!-- modified copy from khtml/index.docbook <sect2 id="kbrowse-html"-->
+
+<para
+>Kryssrutan som heter <guilabel
+>Ladda bilder automatiskt</guilabel
+>, låter dig välja om bilder på webbsidor normalt laddas. Om du inte har en mycket långsam anslutning, vill du nog lämna den här markerad, eftersom många webbsidor är svåra att använda utan bilder. Om du inte väljer att ladda bilder automatiskt, kan du fortfarande titta på sidans text, och sedan ladda bilderna om du behöver dem.</para>
+
+<para
+>Om <guilabel
+>Rita en ram runt bilder som inte laddats fullständigt</guilabel
+> är markerad kommer &konqueror; att rita en ram som platsmarkör för bilder som är inbäddade i en webbsida och ännu inte har laddats fullständigt. Du bör antagligen markera den här rutan för att förbättra din upplevelse av Internet, i synnerhet om du har en långsam nätverksanslutning.</para>
+
+<para
+>Många webbsidor använder animerade GIF-bilder, som kan vara mycket irriterande, och i vissa fall ett riktigt slöseri med systemresurser. Alternativet <guilabel
+>Animeringar</guilabel
+> låter dig välja när animeringar är aktiverade. Normalt är de aktiverade, men du kan ändra detta till inaktiverade, eller att bara visa dem en gång, även om filen själv innehåller instruktioner om att animeringen ska köras flera gånger, eller kontinuerligt.</para>
+
+<para
+>Nästa alternativet är <guilabel
+>Stryk under länkar:</guilabel
+> Du kan välja att <guilabel
+>Aktiverat</guilabel
+> stryka under länkar. Om det här alternativet är valt, visas all text på en webbsida som fungerar som en länk med ett understruket teckensnitt. Medan många webbsidor använder färger för att skilja på text som fungerar som en länk, gör understrykning det mycket lätt att få syn på länkar.</para>
+
+<para
+>Om du inte tycker om understrukna länkar, kan du välja <guilabel
+>Inaktiverat</guilabel
+>, så att inga länkar är understrukna. Eller så kan du välja något mittemellan, <guilabel
+>Bara vid musflyttning</guilabel
+>, så att länkar blir understrukna medan muspekaren befinner sig över dem, och inte understrukna annars.</para>
+
+<note
+><para
+>Platsens stilmallsdefinitioner kan överskrida värdet.</para
+></note>
+
+<para
+><guilabel
+>Jämn panorering</guilabel
+> bestämmer om &konqueror; ska använda jämna steg för att panorera &HTML;-sidor, eller hela steg. <itemizedlist>
+<listitem
+><para
+><guilabel
+>Alltid</guilabel
+>: Använd alltid jämna steg vid panorering.</para
+></listitem>
+<listitem
+><para
+><guilabel
+>Aldrig</guilabel
+>: Använd aldrig jämna steg, utan panorera alltid med hela steg.</para
+></listitem>
+<listitem
+><para
+><guilabel
+>Om effektivt</guilabel
+>: Använd bara jämn panorering på sidor där det kan uppnås med begränsad användning av systemresurser.</para
+></listitem>
+</itemizedlist>
+</para>
+
+</sect2>
+
+<sect2 id="fonts"
+> <!-- modified copy from khtml/index.docbook <sect2 id="kbrowse-appearance"-->
+<title
+>Teckensnitt</title>
+<para
+>Under den här fliken kan du välja olika alternativ som har med teckensnittsanvändning att göra. Även om formen och storleken på teckensnitt ofta är en del av en webbsidas formgivning, kan du välja en del förval som &konqueror; använder.</para>
+
+<para
+>Det första du kan ställa in här är teckensnittsstorleken. Det finns två inställningar som fungerar tillsammans för att ge dig en bekväm surfupplevelse.</para>
+
+<para
+>För det första kan du ställa in <guilabel
+>Minsta teckenstorlek</guilabel
+>. Det betyder att även om teckenstorleken ställs in specifikt på sidan du visar, ignorerar &konqueror; instruktionen och visar aldrig mindre teckenstorlek än du anger här.</para>
+
+<para
+>Därefter kan du ställa in en <guilabel
+>Mellanteckenstorlek</guilabel
+>. Det är inte bara normal storlek för text, som används när sidan inte anger någon storlek, utan används också som grundstorlek när relativa teckenstorlekar beräknas. Om &HTML;-instruktionen <quote
+>smaller</quote
+> anges betyder det mindre än storleken du väljer med det här alternativet.</para>
+
+<para
+>För båda alternativen, kan du välja den exakta teckensnittsstorleken i punkter genom att använda upp/ner-kontrollen (eller bara skriva in värdet) intill alternativnamnet.</para>
+
+<para
+>De här alternativen är oberoende av varandra. Sidor som inte anger en teckenstorlek, eller begär den normala, visas med storleken som du anger med <guilabel
+>Mellanteckenstorlek</guilabel
+>, medan alla sidor som begär en storlek som är mindre än din inställning av <guilabel
+>Minsta teckenstorlek</guilabel
+>, istället visas med den storleken. Inget påverkar det andra.</para>
+
+<para
+>Återstående alternativ är till för att koppla ihop teckensnitten med olika typer av taggar som används på &HTML;-sidor. Observera att många webbsidor kan överskrida inställningarna. För vilken teckensnittstyp som helst (standard, fast,, serif, etc.) kan du välja ett annat teckensnitt om du vill.</para>
+
+<para
+>Under det här kan du välja en <guilabel
+>Justering av teckensnittsstorlek för den här kodningen</guilabel
+>. Ibland är teckensnitten som du vill använda för en viss kodning eller språk mycket större eller mindre än vanligt, och då kan du använda den här inställningen för att få dem att passa in.</para>
+
+<para
+>Du kan ställa in en standardkodning som &konqueror; ska anta att sidor har när den visar dem. Förvalt är <guilabel
+>Använd språkets kodning</guilabel
+>, men du kan ändra det till vilken kodning som helst som finns i listan.</para>
+
+</sect2>
+
+<sect2 id="stylesheets">
+
+<title
+>Stilmallar</title>
+
+<sect3>
+<title
+>Inledning</title>
+
+<para
+><acronym
+>CSS</acronym
+> stilmallar påverkar sättet som webbsidor visas. <acronym
+>CSS</acronym
+> står för <emphasis
+>C</emphasis
+>ascading <emphasis
+>S</emphasis
+>tyle <emphasis
+>S</emphasis
+>heets.</para>
+
+<para
+>&kde; kan använda sina egna stilmallar, baserad på enkla förval och det färgschema som du använder för ditt skrivbord. &kde; kan också använda en stilmall som du har skrivit själv. Slutligen kan du ange en stilmall i den här modulen. Alternativen i den här modulen är avstämda för handikappstöd, särskilt för människor med nedsatt syn.</para>
+
+<para
+>Valen som görs här påverkar alla &kde;-program som visar HTML med &kde;:s egen visare, som kallas khtml. Bland dessa finns &kmail;, &khelpcenter; och förstås &konqueror;. Valen här påverkar inte andra webbläsare som &firefox;.</para>
+
+</sect3>
+
+<sect3 id="css-general">
+<title
+>Stilmallar</title>
+
+<para
+>Den här delen innehåller följande alternativ:</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Använd förvald stillmall</guilabel
+></term>
+<listitem>
+<para
+>&kde; använder den förvalda stilmallen. En del färger kommer att väljas från de som är definierade i det färgschema som du valt. De flesta inställningar överskrids av sidan som du tittar på.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Använd användardefinierad stilmall</guilabel
+></term>
+<listitem>
+<para
+>&kde; använder en stilmall som du har skrivit själv. Du kan använda knappen bläddra för att hitta stilmallen på ditt system. <acronym
+>CSS</acronym
+>-filer har traditionellt haft filändelsen <literal role="extension"
+>.css</literal
+>, men det krävs inte.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Använd stilmall för handikappstöd</guilabel
+></term>
+<listitem>
+<para
+>Använd inställningarna definierade i dialogrutan <guilabel
+>Anpassa</guilabel
+>. Genom att aktivera det här alternativet aktiveras också knappen <guibutton
+>Anpassa</guibutton
+> för att visa en dialogruta där stilmallens inställningar kan definieras.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect3>
+
+<sect3 id="css-customize">
+<title
+>Egen</title>
+
+<para
+>I den här dialogrutan kan du ställa in en användarstilmall. Alternativen som är tillgängliga är bara en delmängd av de instruktioner som du kan lägga till i en stilmall, och de är avsedda för människor med nedsatt syn, så att användare kan skapa stilmallar som gör att webbsidor och &kde;:s hjälpfiler blir mer läsbara.</para>
+
+<para
+>Alternativen i den här dialogrutan är inte aktiverade om du inte väljer <guilabel
+>Använd stilmall för handikappstöd</guilabel
+>.</para>
+
+<sect4>
+<title
+><guilabel
+>Teckensnittsfamilj</guilabel
+></title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Basteckensnittsfamilj</guilabel
+></term>
+<listitem>
+<para
+>Välj en teckensnittsfamilj som används för brödtext.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Använd samma familj för all text</guilabel
+></term>
+<listitem>
+<para
+>Om du aktiverar detta, kommer samma teckensnittsfamilj användas för all text, oberoende av inställningarna på sidan du tittar på. Det här är användbart för sidor som använder ett dekorativt eller svårläst teckensnitt för rubriker.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect4>
+
+<sect4>
+<title
+>Teckensnittsstorlek</title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Basteckensnittsstorlek</guilabel
+></term>
+<listitem>
+<para
+>Det här är den förvalda storleken för text på sidan. Många webbsidor ställer in sina teckenstorlekar i förhållande till den här storleken, med <quote
+>larger</quote
+> eller <quote
+>+1</quote
+> för att göra texten större, och <quote
+>smaller</quote
+> eller <quote
+>-1</quote
+> för att göra den mindre.</para>
+<para
+>Många skapar sina webbsidor på plattformar där den normala textstorleken är för stor för den vanliga användaren att läsa, så det är mycket vanligt att stöta på webbsidor som har tvingat teckensnittet att bli mindre på det här sättet.</para>
+<para
+>Den här inställningen låter dig ange det förinställda teckensnittet till en behaglig storlek, så att de relativa storlekarna också förstoras nog för att upplevas som behagliga.</para>
+<para
+>Glöm inte bort att du också kan låta &konqueror; använda en minsta storlek, så att text <emphasis
+>aldrig</emphasis
+> blir för liten att läsa. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Använd samma storlek för alla element</guilabel
+></term>
+<listitem>
+<para
+>Om du aktiverar det här alternativet, visas all text med din specificerade teckensnittsstorlek, oavsett vilka instruktioner sidan innehåller. Relativa sidstorlekar, som beskrivits tidigare, och till och med specifika instruktioner om att texten ska visas med en viss storlek överskrids här.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect4>
+
+<sect4>
+<title
+>Bilder</title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Stäng av bilder</guilabel
+></term>
+<listitem>
+<para
+>Om du inte vill se bilder, kan du stänga av det här.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Stäng av bakgrundsbilder</guilabel
+></term>
+<listitem>
+<para
+>Ett stort problem för användare med nedsatt syn är att bakgrundsbilder inte ger tillräcklig kontrast för att låta dem läsa texten. Du kan stänga av bakgrundsbilder här, oberoende av ditt val ovan att visa alla bilder.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect4>
+
+<sect4>
+<title
+>Färger</title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Svart på vit</guilabel
+></term>
+<listitem>
+<para
+>Många med nedsatt syn tycker att svart text på en vit skärm ger bäst kontrast, och är lättast att läsa. Om detta gäller för dig, kan du välja det här.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Vit på svart</guilabel
+></term>
+<listitem>
+<para
+>Många andra tycker att motsatsen gäller, att vit text på en svart skärm är lättare att läsa.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Egen</guilabel
+></term>
+<listitem>
+<para
+>Andra tycker att helt svartvitt, i vilken ordning som helst, är svårt att läsa. Här kan du välja egna färger för både <guilabel
+>Bakgrund </guilabel
+> och <guilabel
+>Förgrund</guilabel
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Använd samma färg för all text</guilabel
+></term>
+<listitem>
+<para
+>Många webbplatser använder en annan, ofta kontrasterande färg för rubriker och andra utsmyckningar. Om detta stör din förmåga att läsa innehållet, kan du markera rutan för att låta &kde; använda färgerna du har valt ovan för all text.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect4>
+
+<sect4>
+<title
+>Förhandsgranska</title>
+
+<para
+><guibutton
+>Förhandsgranskning</guibutton
+> låter dig se effekten av dina ändringar. Flera olika rubriktyper visas med din stilmall, och en mening med den förvalda brödtexten.</para>
+
+<para
+>Det bör låta dig finjustera stilmallen till du har någonting som du kan läsa bekvämt.</para>
+
+<para
+>Trevlig webbläsning!</para>
+
+</sect4>
+
+</sect3>
+
+</sect2>
+
+</sect1>
+
+</article>

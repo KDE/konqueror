@@ -1,0 +1,2976 @@
+# translation of kget.po to 
+# translation of kget.po to
+# translation of kget.po to
+# translation of kget.po to
+# Copyright (C) 2004 Free Software Foundation, Inc.
+# Ambalam <tamilpc@ambalam.com>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kget\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2004-11-23 02:35-0800\n"
+"Last-Translator: Tamil PC <tamilpc@ambalam.com>\n"
+"Language-Team:  <tamilpc@ambalam.com>\n"
+"Language: ta\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: kget_plugin.cpp:56
+#, fuzzy, kde-format
+msgid "Download Manager"
+msgstr "இறக்குபவர்"
+
+#: kget_plugin.cpp:62
+#, fuzzy, kde-format
+msgid "Show Drop Target"
+msgstr "கைவிடப்பட்ட குறிக்கோளை காட்டு"
+
+#: kget_plugin.cpp:69
+#, kde-format
+msgid "List All Links"
+msgstr "அனைத்து இணைப்புகளையும் பட்டியலிடு"
+
+#: kget_plugin.cpp:74
+#, fuzzy, kde-format
+#| msgid "List All Links"
+msgid "List Selected Links"
+msgstr "அனைத்து இணைப்புகளையும் பட்டியலிடு"
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No downloadable links were found."
+msgstr ""
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No Links"
+msgstr "இணைப்பு இல்லை"
+
+#. i18n: ectx: Menu (tools)
+#: konqueror_kget_browser_integration.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr ""
+
+#, fuzzy
+#~ msgid "New Group"
+#~ msgstr "முன்னிருப்பு அடைவு"
+
+#, fuzzy
+#~ msgid "Network and Downloads"
+#~ msgstr "குறிப்பீடு முற்றுப்பெறாத இறக்கு"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Verification"
+#~ msgstr "சேருமிடம்:"
+
+#, fuzzy
+#~ msgctxt "integration of KGet with other applications"
+#~ msgid "Integration"
+#~ msgstr "Konqueror "
+
+#, fuzzy
+#~| msgid "Advanced"
+#~ msgctxt "Advanced Options"
+#~ msgid "Advanced"
+#~ msgstr "கூடுதல்"
+
+#~ msgid "Advanced Options"
+#~ msgstr "கூடுதல் தேர்வுகள்"
+
+#, fuzzy
+#~ msgid "Transfer Plugins"
+#~ msgstr "திறந்த மாற்றல்"
+
+#~ msgid "KGet"
+#~ msgstr "KGet"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#, fuzzy
+#~ msgctxt "start transfergroup downloads"
+#~ msgid "Start"
+#~ msgstr "ம்றுபடியும் துவங்கு"
+
+#, fuzzy
+#~ msgctxt "stop transfergroup downloads"
+#~ msgid "Stop"
+#~ msgstr "வேகம்"
+
+#, fuzzy
+#~ msgid "KGet is downloading %1 file"
+#~ msgid_plural "KGet is downloading %1 files"
+#~ msgstr[0] "இறக்குபவர்"
+#~ msgstr[1] "இறக்குபவர்"
+
+#, fuzzy
+#~| msgid ""
+#~| "Error while writing file:\n"
+#~| "%1"
+#~ msgid "Error trying to get %1"
+#~ msgstr ""
+#~ "கோப்பினைப் எழுதுவதில் பிழை:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Are you sure that you want to remove the group named %1?"
+#~ msgstr "நீங்கள் கண்டிப்பாக இந்த மாற்றங்களை நீக்க வேண்டுமா?"
+
+#, fuzzy
+#~ msgid "Remove Group"
+#~ msgstr "முன்னிருப்பு அடைவு"
+
+#, fuzzy
+#~ msgid "Are you sure that you want to remove the following groups?"
+#~ msgstr "நீங்கள் கண்டிப்பாக இந்த மாற்றங்களை நீக்க வேண்டுமா?"
+
+#, fuzzy
+#~ msgid "Remove groups"
+#~ msgstr "முன்னிருப்பு அடைவு"
+
+#, fuzzy
+#~ msgid "Download added"
+#~ msgstr "இறக்குதல் திரும்ப தொடங்கியது "
+
+#, fuzzy
+#~ msgid ""
+#~ "The file %1 already exists.\n"
+#~ "Overwrite?"
+#~ msgstr ""
+#~ "சேரும் கோப்பு \n"
+#~ "%1\n"
+#~ "முன்பே உள்ளது.\n"
+#~ "நீங்கள் மேல் எழுத விரும்புகிறீர்களா ?"
+
+#, fuzzy
+#~ msgid "My Downloads"
+#~ msgstr "இறக்குதல் திரும்ப தொடங்கியது "
+
+#, fuzzy
+#~ msgid "New Download"
+#~ msgstr "இறக்குபவர்"
+
+#~ msgid ""
+#~ "Malformed URL:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Malformed URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URL, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Malformed URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Download it again?"
+#~ msgstr "இறக்குபவர்"
+
+#, fuzzy
+#~ msgid "Delete it and download again?"
+#~ msgstr "இறக்குபவர்"
+
+#, fuzzy
+#~ msgid "File already downloaded. Download anyway?"
+#~ msgstr ""
+#~ "முன்பே சேமிக்கப்பட்ட URL\n"
+#~ "%1\n"
+#~ "மறுபடியும் இறக்கு?"
+
+#, fuzzy
+#~ msgid "File already exists"
+#~ msgstr ""
+#~ "சேரும் கோப்பு \n"
+#~ "%1\n"
+#~ "முன்பே உள்ளது.\n"
+#~ "நீங்கள் மேல் எழுத விரும்புகிறீர்களா ?"
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is a directory."
+#~ msgstr ""
+#~ "அடைவாக இருப்பதால்\n"
+#~ "%1\n"
+#~ "அழிக்கப்படவில்லை."
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is not a local file."
+#~ msgstr ""
+#~ "இது போது கோப்பாக இல்லாததால்\n"
+#~ "%1\n"
+#~ "அழிக்கப்படவில்லை."
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Download completed"
+#~ msgstr "பதிவிறக்கம் முடிந்துவிட்டது"
+
+#, fuzzy
+#~ msgid "Download started"
+#~ msgstr "இறக்குதல் திரும்ப தொடங்கியது "
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Resolve"
+#~ msgstr "திறந்த மாற்றல்"
+
+#, fuzzy
+#~ msgid "KGet is now closing, as all downloads have completed."
+#~ msgstr "பதிவிறக்கம் முடிந்துவிட்டது"
+
+#, fuzzy
+#~ msgid "The computer will now turn off, as all downloads have completed."
+#~ msgstr "பதிவிறக்கம் முடிந்துவிட்டது"
+
+#, fuzzy
+#~ msgctxt "Shutting down computer"
+#~ msgid "Shutdown"
+#~ msgstr "தானாக முடிதல் உண்டு"
+
+#, fuzzy
+#~ msgid ""
+#~ "The computer will now suspend to disk, as all downloads have completed."
+#~ msgstr "பதிவிறக்கம் முடிந்துவிட்டது"
+
+#, fuzzy
+#~ msgid ""
+#~ "The computer will now suspend to RAM, as all downloads have completed."
+#~ msgstr "பதிவிறக்கம் முடிந்துவிட்டது"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgctxt "Suspending computer"
+#~ msgid "Suspending"
+#~ msgstr "காலவரையிடுதல்"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgctxt "abort the proposed action"
+#~ msgid "Abort"
+#~ msgstr "எழுத்துரு"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Downloads completed"
+#~ msgstr "பதிவிறக்கம் முடிந்துவிட்டது"
+
+#, fuzzy
+#~ msgctxt "file in a filesystem"
+#~ msgid "File"
+#~ msgstr "கோப்பினை திற"
+
+#, fuzzy
+#~ msgctxt "status of the download"
+#~ msgid "Status"
+#~ msgstr "ம்றுபடியும் துவங்கு"
+
+#, fuzzy
+#~| msgid " Size: %1 "
+#~ msgctxt "size of the download"
+#~ msgid "Size"
+#~ msgstr "அளவு: %1 "
+
+#, fuzzy
+#~ msgid "KGet Transfer"
+#~ msgstr "திறந்த மாற்றல்"
+
+#, fuzzy
+#~ msgctxt "the type of the hash, e.g. MD5"
+#~ msgid "Type"
+#~ msgstr "கோப்புப் வகை"
+
+#~ msgid "Stalled"
+#~ msgstr "நிறுவப்பட்டது"
+
+#, fuzzy
+#~ msgid "Downloading...."
+#~ msgstr "இறக்குதல் திரும்ப தொடங்கியது "
+
+#, fuzzy
+#~| msgid "Delayed"
+#~ msgctxt "transfer state: delayed"
+#~ msgid "Delayed"
+#~ msgstr "தாமதமானவை"
+
+#, fuzzy
+#~ msgctxt "transfer state: stopped"
+#~ msgid "Stopped"
+#~ msgstr "வேகம்"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgctxt "transfer state: aborted"
+#~ msgid "Aborted"
+#~ msgstr "எழுத்துரு"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "transfer state: finished"
+#~ msgid "Finished"
+#~ msgstr "முடிந்தது"
+
+#, fuzzy
+#~ msgctxt "changing the destination of the file"
+#~ msgid "Changing destination"
+#~ msgstr "சேருமிடத்தை &திற"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgctxt "name of download"
+#~ msgid "Name"
+#~ msgstr "பெயர்"
+
+#, fuzzy
+#~ msgctxt "status of download"
+#~ msgid "Status"
+#~ msgstr "ம்றுபடியும் துவங்கு"
+
+#, fuzzy
+#~ msgctxt "progress of download"
+#~ msgid "Progress"
+#~ msgstr "முன்னேற்ற உரையாடல்"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgctxt "speed of download"
+#~ msgid "Speed"
+#~ msgstr "வேகம்"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgctxt "remaining time of download"
+#~ msgid "Remaining Time"
+#~ msgstr "Rem. நேரம்"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "No download destination specified."
+#~ msgstr "சேருமிடம்:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Invalid download destination specified."
+#~ msgstr "சேருமிடம்:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Download destination is not writeable."
+#~ msgstr "சேருமிடம்:"
+
+#, fuzzy
+#~| msgid "Malformed URL:\n"
+#~ msgid "Malformed URL."
+#~ msgstr "Malformed URL:\n"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid "Malformed URL, protocol missing."
+#~ msgstr ""
+#~ "Malformed URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid "Malformed URL, host missing."
+#~ msgstr ""
+#~ "Malformed URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid ""
+#~ "Invalid download destination specified:\n"
+#~ "%1"
+#~ msgstr "சேருமிடம்:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid ""
+#~ "Download destination is not writeable:\n"
+#~ "%1"
+#~ msgstr "சேருமிடம்:"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URL, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Malformed URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "File already exists. Overwrite it?"
+#~ msgstr ""
+#~ "சேரும் கோப்பு \n"
+#~ "%1\n"
+#~ "முன்பே உள்ளது.\n"
+#~ "நீங்கள் மேல் எழுத விரும்புகிறீர்களா ?"
+
+#, fuzzy
+#~ msgid ""
+#~ "File already exists:\n"
+#~ "%1\n"
+#~ "Overwrite it?"
+#~ msgstr ""
+#~ "சேரும் கோப்பு \n"
+#~ "%1\n"
+#~ "முன்பே உள்ளது.\n"
+#~ "நீங்கள் மேல் எழுத விரும்புகிறீர்களா ?"
+
+#, fuzzy
+#~| msgid "Malformed URL:\n"
+#~ msgid "Malformed URLs."
+#~ msgstr "Malformed URL:\n"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid "Malformed URLs, protocol missing."
+#~ msgstr ""
+#~ "Malformed URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid "Malformed URLs, host missing."
+#~ msgstr ""
+#~ "Malformed URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Malformed URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Malformed URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Malformed URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Files exist already. Overwrite them?"
+#~ msgstr ""
+#~ "சேரும் கோப்பு \n"
+#~ "%1\n"
+#~ "முன்பே உள்ளது.\n"
+#~ "நீங்கள் மேல் எழுத விரும்புகிறீர்களா ?"
+
+#~ msgid "Question"
+#~ msgstr "கேள்வி"
+
+#, fuzzy
+#~ msgctxt "on a question"
+#~ msgid "No all"
+#~ msgstr "பொது"
+
+#, fuzzy
+#~| msgid "Local File Name"
+#~ msgid "Engine name:"
+#~ msgstr "உள்ளக கோப்புப் பெயர் "
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "transfer state: connecting"
+#~ msgid "Connecting...."
+#~ msgstr "இணைப்பு"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Set Script File"
+#~ msgstr "விவரிப்பு"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "Transfer State: Finished"
+#~ msgid "Finished"
+#~ msgstr "முடிந்தது"
+
+#, fuzzy
+#~ msgid "Downloading Metalink File...."
+#~ msgstr "இறக்குதல் திரும்ப தொடங்கியது "
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Redownload Metalink"
+#~ msgstr "பதிவிறக்கம் முடிந்துவிட்டது"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgid "File Selection"
+#~ msgstr "காலவரையிடுதல்"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "the string that is used to modify an url"
+#~ msgid "Change string"
+#~ msgstr "இணைப்பு"
+
+#, fuzzy
+#~ msgid "Append"
+#~ msgstr "வேகம்"
+
+#, fuzzy
+#~ msgid "Replace file"
+#~ msgstr "கோப்பினை திற"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "transfer state: running"
+#~ msgid "Running...."
+#~ msgstr "இணைப்பு"
+
+#, fuzzy
+#~| msgid "Address (URL)"
+#~ msgid "IP Address"
+#~ msgstr "முகவரி (URL)"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Down Speed"
+#~ msgstr "வேகம்"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Up Speed"
+#~ msgstr "வேகம்"
+
+#, fuzzy
+#~| msgid "Docked"
+#~ msgid "Choked"
+#~ msgstr "ஒதுக்கப்பட்டது"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgid "Score"
+#~ msgstr "மூலம்"
+
+#, fuzzy
+#~ msgid "Downloaded"
+#~ msgstr "இறக்குதல் திரும்ப தொடங்கியது "
+
+#, fuzzy
+#~ msgid "Interesting"
+#~ msgstr "Konqueror "
+
+#, fuzzy
+#~ msgid "Download speed"
+#~ msgstr "இறக்குதல் திரும்ப தொடங்கியது "
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Upload speed"
+#~ msgstr "வேகம்"
+
+#, fuzzy
+#~| msgid "Count"
+#~ msgid "Chunk"
+#~ msgstr "எண்ணிக்கை"
+
+#, fuzzy
+#~ msgid "Progress"
+#~ msgstr "முன்னேற்ற உரையாடல்"
+
+#, fuzzy
+#~ msgid "Files"
+#~ msgstr "கோப்பினை திற"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of the chunk"
+#~ msgstr "முயற்சிகளின் எண்ணிக்கை"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Download speed of the chunk"
+#~ msgstr "பதிவிறக்கம் முடிந்துவிட்டது"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed"
+#~ msgstr "வேகம்"
+
+#, fuzzy
+#~ msgid "Status"
+#~ msgstr "ம்றுபடியும் துவங்கு"
+
+#, fuzzy
+#~ msgid "File"
+#~ msgstr "கோப்பினை திற"
+
+#, fuzzy
+#~ msgid "Advanced Details for %1"
+#~ msgstr "முன்னிருப்பு அடைவு"
+
+#, fuzzy
+#~ msgid "Trackers"
+#~ msgstr "&வெற்றிகரமான மாற்றல்"
+
+#, fuzzy
+#~ msgctxt "Open file"
+#~ msgid "Open"
+#~ msgstr "கோப்பினை திற"
+
+#, fuzzy
+#~ msgid "Download first"
+#~ msgstr "இறக்குதல் திரும்ப தொடங்கியது "
+
+#, fuzzy
+#~ msgid "Download normally"
+#~ msgstr "முன்னிருப்பு அடைவு"
+
+#, fuzzy
+#~ msgid "Download last"
+#~ msgstr "இறக்குதல் திரும்ப தொடங்கியது "
+
+#, fuzzy
+#~ msgid "Do Not Download"
+#~ msgstr "இறக்குபவர்"
+
+#, fuzzy
+#~| msgid "Download Selected Files"
+#~ msgid "Delete File(s)"
+#~ msgstr "தேர்ந்தெடுத்த கோப்புக்ளை கீழ் இறக்கு"
+
+#, fuzzy
+#~ msgid "Move File"
+#~ msgstr "கோப்பினை திற"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Seeders"
+#~ msgstr "வேகம்"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Leechers"
+#~ msgstr "வேகம்"
+
+#, fuzzy
+#~ msgid "Times Downloaded"
+#~ msgstr "இறக்குதல் திரும்ப தொடங்கியது "
+
+#, fuzzy
+#~ msgctxt "Download normally(not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "பொது"
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 %"
+#~ msgstr " %1/s "
+
+#, fuzzy
+#~ msgctxt "Download Normal (not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "பொது"
+
+#, fuzzy
+#~| msgid "Advanced Options"
+#~ msgid "&Advanced Details"
+#~ msgstr "கூடுதல் தேர்வுகள்"
+
+#, fuzzy
+#~ msgid "&Scan Files"
+#~ msgstr "கோப்பினை திற"
+
+#, fuzzy
+#~ msgid "Downloading Torrent File...."
+#~ msgstr "இறக்குதல் திரும்ப தொடங்கியது "
+
+#, fuzzy
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading...."
+#~ msgstr "இறக்குதல் திரும்ப தொடங்கியது "
+
+#, fuzzy
+#~| msgid ""
+#~| "Folder does not exist:\n"
+#~| "%1"
+#~ msgid "Torrent file does not exist"
+#~ msgstr ""
+#~ "இந்த அடைவு இல்லை:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Analyzing torrent...."
+#~ msgstr "இறக்குதல் திரும்ப தொடங்கியது "
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgctxt "Transfer status: seeding"
+#~ msgid "Seeding...."
+#~ msgstr "காலவரையிடுதல்"
+
+#, fuzzy
+#~| msgid "Default Folder"
+#~ msgid "Select a default torrent folder"
+#~ msgstr "முன்னிருப்பு அடைவு"
+
+#, fuzzy
+#~ msgid "Select a default temporary folder"
+#~ msgstr "முன்னிருப்பு அடைவு"
+
+#, fuzzy
+#~| msgid "Import Text &File..."
+#~ msgid "Import dropped files"
+#~ msgstr "கோப்பில் உரையை ஏற்று"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgid "File Properties"
+#~ msgstr "காலவரையிடுதல்"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a filename."
+#~ msgstr "இதர்நெட்"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter at least one URL."
+#~ msgstr "இதர்நெட்"
+
+#, fuzzy
+#~ msgid "Metalink Version 4.0 file (*.meta4)"
+#~ msgstr "கோப்பினை திற"
+
+#, fuzzy
+#~ msgid "Metalink Version 3.0 file (*.metalink)"
+#~ msgstr "கோப்பினை திற"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "Import Links"
+#~ msgstr "இணைப்பு இல்லை"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgctxt "Download the items which have been selected"
+#~ msgid "&Download Checked"
+#~ msgstr "பதிவிறக்கம் முடிந்துவிட்டது"
+
+#, fuzzy
+#~| msgid "Local File Name"
+#~ msgid "File Name"
+#~ msgstr "உள்ளக கோப்புப் பெயர் "
+
+#~ msgid "Description"
+#~ msgstr "விவரிப்பு"
+
+#, fuzzy
+#~ msgctxt "list header: type of file"
+#~ msgid "File Type"
+#~ msgstr "கோப்புப் வகை"
+
+#~ msgid "Location (URL)"
+#~ msgstr "இடம்"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgctxt "The priority of the mirror"
+#~ msgid "Priority"
+#~ msgstr "எழுத்துரு"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "Number of paralell connections to the mirror"
+#~ msgid "Connections"
+#~ msgstr "இணைப்பு"
+
+#, fuzzy
+#~| msgid "Location (URL)"
+#~ msgctxt "Location = country"
+#~ msgid "Location"
+#~ msgstr "இடம்"
+
+#, fuzzy
+#~ msgid "Download again"
+#~ msgstr "இறக்குபவர்"
+
+#, fuzzy
+#~ msgctxt "Delete selected history-item"
+#~ msgid "Delete selected"
+#~ msgstr "எந்த கோப்பும் தேர்வு செய்யப்படவில்லை"
+
+#, fuzzy
+#~ msgid "Open file"
+#~ msgstr "கோப்பினை திற"
+
+#, fuzzy
+#~ msgid "Transfer History"
+#~ msgstr "திறந்த மாற்றல்"
+
+#, fuzzy
+#~ msgid "&Open File"
+#~ msgstr "கோப்பினை திற"
+
+#, fuzzy
+#~ msgctxt "The transfer is stopped"
+#~ msgid "Stopped"
+#~ msgstr "வேகம்"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "The transfer is finished"
+#~ msgid "Finished"
+#~ msgstr "முடிந்தது"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgid "Source File"
+#~ msgstr "மூலம்"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Destination"
+#~ msgstr "சேருமிடம்:"
+
+#, fuzzy
+#~| msgid "Timer"
+#~ msgid "Time"
+#~ msgstr "நேரம் காட்டி"
+
+#, fuzzy
+#~ msgid "File Size"
+#~ msgstr "கோப்பினை திற"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "the transfer has been finished"
+#~ msgid "Finished"
+#~ msgstr "முடிந்தது"
+
+#, fuzzy
+#~| msgid "To: %1"
+#~ msgctxt "an error happened in connection with the user input"
+#~ msgid "Error:"
+#~ msgstr "To: %1"
+
+#, fuzzy
+#~| msgid "unknown"
+#~ msgctxt "trust level"
+#~ msgid "Unknown"
+#~ msgstr "அறியாத"
+
+#, fuzzy
+#~ msgctxt "pgp signature is not verified"
+#~ msgid "Failed"
+#~ msgstr "கோப்பினை திற"
+
+#, fuzzy
+#~| msgid "To: %1"
+#~ msgid "Error:"
+#~ msgstr "To: %1"
+
+#, fuzzy
+#~ msgid "Information:"
+#~ msgstr "Konqueror "
+
+#, fuzzy
+#~ msgid "Transfer Details"
+#~ msgstr "மாற்று: %1 "
+
+#, fuzzy
+#~ msgid "Transfer Verification for %1"
+#~ msgstr "முன்னிருப்பு அடைவு"
+
+#, fuzzy
+#~ msgid "Rename File"
+#~ msgstr "முன்னிருப்பு அடைவு"
+
+#, fuzzy
+#~ msgid "Rename %1 to:"
+#~ msgstr "முன்னிருப்பு அடைவு"
+
+#, fuzzy
+#~ msgid "&Rename"
+#~ msgstr "முன்னிருப்பு அடைவு"
+
+#, fuzzy
+#~ msgid "Rename Group..."
+#~ msgid_plural "Rename Groups..."
+#~ msgstr[0] "முன்னிருப்பு அடைவு"
+#~ msgstr[1] "முன்னிருப்பு அடைவு"
+
+#, fuzzy
+#~| msgid "Sticky"
+#~ msgctxt "fix position for droptarget"
+#~ msgid "Sticky"
+#~ msgstr "நீளமாக"
+
+#, fuzzy
+#~| msgid "KGet"
+#~ msgid "Quit KGet"
+#~ msgstr "KGet"
+
+#, fuzzy
+#~ msgid "The dropped file is a KGet Transfer List"
+#~ msgstr "திறந்த மாற்றல்"
+
+#, fuzzy
+#~ msgid "&Download"
+#~ msgstr "இறக்குதல் திரும்ப தொடங்கியது "
+
+#, fuzzy
+#~ msgid "&Load transfer list"
+#~ msgstr "திறந்த மாற்றல்"
+
+#, fuzzy
+#~ msgid "Show Main Window"
+#~ msgstr "முக்கிய சாளரத்தை துவக்கத்தில் காட்டு"
+
+#, fuzzy
+#~ msgid "Hide Main Window"
+#~ msgstr "சாளரப் பதிவேடு மறை"
+
+#, fuzzy
+#~| msgid "Drop target"
+#~ msgid "Drop Target"
+#~ msgstr "குறிக்கோளை விடு"
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgctxt "%1 filename, %2 total size, %3 status"
+#~ msgid "%1(%2) %3"
+#~ msgstr " %1/s "
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgctxt ""
+#~ "%1 filename, %2 percent complete, %3 downloaded out of %4 total size, %5 "
+#~ "status"
+#~ msgid "%1(%2% %3/%4) %5"
+#~ msgstr " %1/s "
+
+#, fuzzy
+#~ msgid "Hiding drop target"
+#~ msgstr "விடுக் குறிக்கோளை மறை"
+
+#, fuzzy
+#~ msgid "Transfer Settings for %1"
+#~ msgstr "முன்னிருப்பு அடைவு"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Destination unmodified"
+#~ msgstr "சேருமிடம்:"
+
+#, fuzzy
+#~| msgid "%1% of %2 - %3"
+#~ msgid "%1 of %2"
+#~ msgstr "%1% of %2 - %3"
+
+#, fuzzy
+#~ msgid "Group Settings for %1"
+#~ msgstr "முன்னிருப்பு அடைவு"
+
+#, fuzzy
+#~| msgid "%1/s"
+#~ msgctxt "@item speed of transfer per seconds"
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#, fuzzy
+#~| msgid "Local File Name"
+#~ msgctxt "@label"
+#~ msgid "File name"
+#~ msgstr "உள்ளக கோப்புப் பெயர் "
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "@label Progress of transfer"
+#~ msgid "Finished"
+#~ msgstr "முடிந்தது"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgctxt "@label Speed of transfer"
+#~ msgid "Speed"
+#~ msgstr "வேகம்"
+
+#, fuzzy
+#~ msgctxt "@label Status of transfer"
+#~ msgid "Status"
+#~ msgstr "ம்றுபடியும் துவங்கு"
+
+#, fuzzy
+#~ msgctxt "@action:button start a transfer"
+#~ msgid "Start"
+#~ msgstr "ம்றுபடியும் துவங்கு"
+
+#, fuzzy
+#~ msgctxt "@action:button"
+#~ msgid "Stop"
+#~ msgstr "வேகம்"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgctxt "@action:button"
+#~ msgid "Remove"
+#~ msgstr "திறந்த மாற்றல்"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgctxt "@label Download from"
+#~ msgid "Source:"
+#~ msgstr "மூலம்"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgctxt "@action"
+#~ msgid "Settings"
+#~ msgstr "காலவரையிடுதல்"
+
+#, fuzzy
+#~| msgctxt "OK as in 'finished'"
+#~| msgid "OK"
+#~ msgctxt "@action:button"
+#~ msgid "OK"
+#~ msgstr "சரி"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgctxt "@action Refresh download list every x (seconds)"
+#~ msgid "Refresh download list every"
+#~ msgstr "பதிவிறக்கம் முடிந்துவிட்டது"
+
+#, fuzzy
+#~ msgctxt "@action:button"
+#~ msgid "Save Settings"
+#~ msgstr "மாற்று: %1 "
+
+#, fuzzy
+#~ msgctxt "@title"
+#~ msgid "Downloads"
+#~ msgstr "இறக்குதல் திரும்ப தொடங்கியது "
+
+#~ msgid "An advanced download manager for KDE"
+#~ msgstr "கூடுதல் KDEயின் இறக்குபவர்"
+
+#~ msgid "Start KGet with drop target"
+#~ msgstr "Start KGet with drop target"
+
+#, fuzzy
+#~| msgid "Start KGet with drop target"
+#~ msgid "Start KGet with hidden main window"
+#~ msgstr "Start KGet with drop target"
+
+#, fuzzy
+#~| msgid "Start KGet with drop target"
+#~ msgid "Start KGet without drop target animation"
+#~ msgstr "Start KGet with drop target"
+
+#~ msgid "URL(s) to download"
+#~ msgstr "இறக்கப்பட வேண்டிய URL(s) "
+
+#, fuzzy
+#~ msgid "KGet Transfer List"
+#~ msgstr "திறந்த மாற்றல்"
+
+#, fuzzy
+#~ msgid "Export Transfers"
+#~ msgstr "மாறப்படும் பட்டியலை ஏற்று"
+
+#, fuzzy
+#~| msgid "&Import Transfer List..."
+#~ msgid "&Import Transfers..."
+#~ msgstr "மாறப்படும் பட்டியலை இறக்கு"
+
+#, fuzzy
+#~ msgid "&Export Transfers List..."
+#~ msgstr "மாறப்படும் பட்டியலை ஏற்று"
+
+#, fuzzy
+#~ msgid "&Export Transfers as Plain Text..."
+#~ msgstr "மாறப்படும் பட்டியலை ஏற்று"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Top Priority"
+#~ msgstr "எழுத்துரு"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Least Priority"
+#~ msgstr "எழுத்துரு"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Increase Priority"
+#~ msgstr "எழுத்துரு"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Decrease Priority"
+#~ msgstr "எழுத்துரு"
+
+#, fuzzy
+#~ msgid "Auto-Paste Mode"
+#~ msgstr "தானாக ஒட்டும் வகை"
+
+#, fuzzy
+#~ msgid ""
+#~ "<b>Auto paste</b> button toggles the auto-paste mode on and off.\n"
+#~ "When set, KGet will periodically scan the clipboard for URLs and paste "
+#~ "them automatically."
+#~ msgstr ""
+#~ "<b>தானியங்கி ஒட்டு</b>பொத்தான்களே தானியங்கி ஒட்டுகளை மாற்றி அமைக்கின்றன\n"
+#~ "இயக்கு அல்லது இயக்காதே.\n"
+#~ "\n"
+#~ "அமைக்கப்பட்டவுடன், KGet காலவரை முறைப்படி இடைநிலைப்பலகையில் வருடிக் கொள்கின்றன\n"
+#~ "URLs  மற்றும் ஒட்டவதையும் தானியக்குகின்றன."
+
+#, fuzzy
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Remove Selected"
+#~ msgstr "மறுபடியும் தொடங்கு"
+
+#, fuzzy
+#~| msgid "Download Selected Files"
+#~ msgctxt "delete all finished transfers"
+#~ msgid "Remove All Finished"
+#~ msgstr "தேர்ந்தெடுத்த கோப்புக்ளை கீழ் இறக்கு"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgctxt "redownload selected transfer item"
+#~ msgid "Redownload Selected"
+#~ msgstr "பதிவிறக்கம் முடிந்துவிட்டது"
+
+#, fuzzy
+#~ msgid "Start / Resume Selected"
+#~ msgstr "எந்த கோப்பும் தேர்வு செய்யப்படவில்லை"
+
+#, fuzzy
+#~ msgid "Stop Selected"
+#~ msgstr "எந்த கோப்பும் தேர்வு செய்யப்படவில்லை"
+
+#, fuzzy
+#~ msgid "Stop"
+#~ msgstr "வேகம்"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Remove"
+#~ msgstr "திறந்த மாற்றல்"
+
+#, fuzzy
+#~ msgid "Open Destination"
+#~ msgstr "சேருமிடத்தை &திற"
+
+#, fuzzy
+#~ msgid "Open File"
+#~ msgstr "கோப்பினை திற"
+
+#, fuzzy
+#~ msgid "Show Details"
+#~ msgstr ""
+#~ "மொழிப்பெயர்ப்பாளரின் மின்னஞ்சல்\n"
+#~ "உங்கள்  மின்னஞ்சல்"
+
+#, fuzzy
+#~ msgid "Copy URL to Clipboard"
+#~ msgstr "URLயை கிளிப்போர்டில் படியெடு"
+
+#, fuzzy
+#~ msgid "&Transfer History"
+#~ msgstr "திறந்த மாற்றல்"
+
+#, fuzzy
+#~ msgid "&Group Settings"
+#~ msgstr "முன்னிருப்பு அடைவு"
+
+#, fuzzy
+#~ msgid "&Transfer Settings"
+#~ msgstr "மாற்று: %1 "
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "Import &Links..."
+#~ msgstr "இணைப்பு இல்லை"
+
+#, fuzzy
+#~ msgid ""
+#~ "This is the first time you have run KGet.\n"
+#~ "Would you like to enable KGet as the download manager for Konqueror?"
+#~ msgstr ""
+#~ " KGet யை நீங்கள் முதல் முறையாக செயல்படுத்தியுள்ளீர்.\n"
+#~ "Do you want to enable integration with Konqueror?"
+
+#, fuzzy
+#~ msgid "Konqueror Integration"
+#~ msgstr "Konqueror "
+
+#, fuzzy
+#~ msgid ""
+#~ "Some transfers are still running.\n"
+#~ "Are you sure you want to close KGet?"
+#~ msgstr ""
+#~ "சில பரிமாற்றங்கள் நிகழ்ந்து கொண்டிருக்கிறது.\n"
+#~ "KGet மூடுவதை நீங்கள் விரும்புகிறீர்களா?"
+
+#, fuzzy
+#~ msgid "Enter Group Name"
+#~ msgstr "vijay"
+
+#, fuzzy
+#~ msgid "Group name:"
+#~ msgstr "vijay"
+
+#, fuzzy
+#~| msgid "Are you sure you want to delete this transfer?"
+#~ msgid "Are you sure you want to delete the selected transfer?"
+#~ msgid_plural "Are you sure you want to delete the selected transfers?"
+#~ msgstr[0] "\"நீங்கள் கண்டிப்பாக இந்த மாற்றத்தை நீக்க வேண்டுமா?\""
+#~ msgstr[1] "\"நீங்கள் கண்டிப்பாக இந்த மாற்றத்தை நீக்க வேண்டுமா?\""
+
+#, fuzzy
+#~ msgid "Confirm transfer delete"
+#~ msgstr "திறந்த மாற்றல்"
+
+#, fuzzy
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "vijay"
+
+#, fuzzy
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr ""
+#~ "மொழிப்பெயர்ப்பாளரின் மின்னஞ்சல்\n"
+#~ "உங்கள்  மின்னஞ்சல்"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Automatic verification:"
+#~ msgstr "விவரிப்பு"
+
+#, fuzzy
+#~| msgid "Automation Options"
+#~ msgid "Automatic verification"
+#~ msgstr "இணைய விருப்பங்கள்"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Keyservers:"
+#~ msgstr "வேகம்"
+
+#, fuzzy
+#~| msgid "Move to &End"
+#~ msgid "Move &Up"
+#~ msgstr "இறுதிக்கு செல்"
+
+#, fuzzy
+#~| msgid "Move to &End"
+#~ msgid "Move &Down"
+#~ msgstr "இறுதிக்கு செல்"
+
+#, fuzzy
+#~ msgid "Rename"
+#~ msgstr "முன்னிருப்பு அடைவு"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Limit Maximum Downloads Per Group"
+#~ msgstr "பதிவிறக்கம் முடிந்துவிட்டது"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of downloads:"
+#~ msgstr "முயற்சிகளின் எண்ணிக்கை"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed Limit"
+#~ msgstr "வேகம்"
+
+#, fuzzy
+#~ msgid "Global download limit:"
+#~ msgstr "இறக்குதல் திரும்ப தொடங்கியது "
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid " KiB/s"
+#~ msgstr " %1 KB/s "
+
+#, fuzzy
+#~ msgid "Global upload limit:"
+#~ msgstr "இறக்குதல் திரும்ப தொடங்கியது "
+
+#, fuzzy
+#~ msgid "Per transfer:"
+#~ msgstr "&வெற்றிகரமான மாற்றல்"
+
+#, fuzzy
+#~ msgid "Reconnect on Error or Broken Connection"
+#~ msgstr "துண்டிக்கப்பட்ட இணைப்பில்"
+
+#~ msgid "Number of retries:"
+#~ msgstr "முயற்சிகளின் எண்ணிக்கை"
+
+#, fuzzy
+#~ msgid "Retry after:"
+#~ msgstr "பின் இணைக்கப்பட்டவை"
+
+#, fuzzy
+#~ msgid "After Completing Downloads"
+#~ msgstr "இறக்கிய பின் தானே முடியும்"
+
+#, fuzzy
+#~ msgid "Auto shutdown"
+#~ msgstr "தானாக முடிதல் உண்டு"
+
+#, fuzzy
+#~ msgid "Auto disconnect"
+#~ msgstr "தானாக துண்டித்தல் உண்டு"
+
+#, fuzzy
+#~ msgid "Enable Web Interface"
+#~ msgstr "இயங்கு படத்தை பயன்படுத்து"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Port:"
+#~ msgstr "எழுத்துரு"
+
+#, fuzzy
+#~ msgid "Startup"
+#~ msgstr "ம்றுபடியும் துவங்கு"
+
+#, fuzzy
+#~ msgid "Enable animations"
+#~ msgstr "இயங்கு படத்தை பயன்படுத்து"
+
+#, fuzzy
+#~ msgid "Show drop target"
+#~ msgstr "கைவிடப்பட்ட குறிக்கோளை காட்டு"
+
+#, fuzzy
+#~ msgid "Enable system tray icon"
+#~ msgstr "இயங்கு படத்தை பயன்படுத்து"
+
+#, fuzzy
+#~ msgid "Execute action after all downloads have been finished:"
+#~ msgstr "பதிவிறக்கம் முடிந்துவிட்டது"
+
+#, fuzzy
+#~ msgid "At startup:"
+#~ msgstr "ம்றுபடியும் துவங்கு"
+
+#, fuzzy
+#~ msgid "Restore Download State"
+#~ msgstr "இறக்குதல் திரும்ப தொடங்கியது "
+
+#, fuzzy
+#~ msgid "Start All Downloads"
+#~ msgstr "குறிப்பீடு முற்றுப்பெறாத இறக்கு"
+
+#, fuzzy
+#~ msgid "Stop All Downloads"
+#~ msgstr "குறிப்பீடு முற்றுப்பெறாத இறக்கு"
+
+#, fuzzy
+#~ msgid "History"
+#~ msgstr "திறந்த மாற்றல்"
+
+#, fuzzy
+#~ msgid "History backend:"
+#~ msgstr "திறந்த மாற்றல்"
+
+#, fuzzy
+#~ msgid "Use as download manager for Konqueror:"
+#~ msgstr "கூடுதல் KDEயின் இறக்குபவர்"
+
+#, fuzzy
+#~ msgid "Monitor clipboard for files to download"
+#~ msgstr "நீங்கள் எந்தக் கோப்புகளையும் இறக்குவதற்கு தேர்வு செய்யப்படவில்லை."
+
+#, fuzzy
+#~| msgid "Local File Name"
+#~ msgid "Engine Name"
+#~ msgstr "உள்ளக கோப்புப் பெயர் "
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of connections per URL:"
+#~ msgstr "முயற்சிகளின் எண்ணிக்கை"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgid "File Settings"
+#~ msgstr "காலவரையிடுதல்"
+
+#, fuzzy
+#~| msgid "Local File Name"
+#~ msgid "Filename:"
+#~ msgstr "உள்ளக கோப்புப் பெயர் "
+
+#, fuzzy
+#~| msgid "Log Window"
+#~ msgid "Login Info"
+#~ msgstr "சாளர பதிவேடு"
+
+#, fuzzy
+#~ msgid "Username:"
+#~ msgstr "முன்னிருப்பு அடைவு"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Path:"
+#~ msgstr "எழுத்துரு"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Description:"
+#~ msgstr "விவரிப்பு"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of simultaneous file downloads:"
+#~ msgstr "முயற்சிகளின் எண்ணிக்கை"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of mirrors per file:"
+#~ msgstr "முயற்சிகளின் எண்ணிக்கை"
+
+#, fuzzy
+#~ msgid "Mode:"
+#~ msgstr "அடைவுகள்"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Remove Tracker"
+#~ msgstr "திறந்த மாற்றல்"
+
+#, fuzzy
+#~ msgid "Update Trackers"
+#~ msgstr "&வெற்றிகரமான மாற்றல்"
+
+#, fuzzy
+#~ msgid "Remove Webseed"
+#~ msgstr "மறுபடியும் தொடங்கு"
+
+#, fuzzy
+#~| msgid "Total"
+#~ msgid "Total:"
+#~ msgstr "மொத்தம்"
+
+#, fuzzy
+#~ msgid "Downloaded:"
+#~ msgstr "இறக்குதல் திரும்ப தொடங்கியது "
+
+#, fuzzy
+#~| msgid " Size: %1 "
+#~ msgid "Size:"
+#~ msgstr "அளவு: %1 "
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of chunks found:"
+#~ msgstr "முயற்சிகளின் எண்ணிக்கை"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of chunks failed:"
+#~ msgstr "முயற்சிகளின் எண்ணிக்கை"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of chunks not downloaded:"
+#~ msgstr "முயற்சிகளின் எண்ணிக்கை"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of chunks downloaded:"
+#~ msgstr "முயற்சிகளின் எண்ணிக்கை"
+
+#, fuzzy
+#~ msgid "Stats"
+#~ msgstr "ம்றுபடியும் துவங்கு"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Seeders:"
+#~ msgstr "வேகம்"
+
+#, fuzzy
+#~ msgid "Download speed:"
+#~ msgstr "இறக்குதல் திரும்ப தொடங்கியது "
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Upload speed:"
+#~ msgstr "வேகம்"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgctxt "source-file"
+#~ msgid "Source:"
+#~ msgstr "மூலம்"
+
+#, fuzzy
+#~ msgid "Upload limit per transfer:"
+#~ msgstr "இறக்குதல் திரும்ப தொடங்கியது "
+
+#, fuzzy
+#~| msgid "Limits"
+#~ msgid "No Limit"
+#~ msgstr "எல்லைகள்"
+
+#, fuzzy
+#~ msgid "Download limit per transfer:"
+#~ msgstr "இறக்குதல் திரும்ப தொடங்கியது "
+
+#~ msgid "Folders"
+#~ msgstr "அடைவுகள்"
+
+#, fuzzy
+#~| msgid "Default Folder"
+#~ msgid "Default torrent folder:"
+#~ msgstr "முன்னிருப்பு அடைவு"
+
+#, fuzzy
+#~| msgid "Default Folder"
+#~ msgid "Default temporary folder"
+#~ msgstr "முன்னிருப்பு அடைவு"
+
+#, fuzzy
+#~| msgid "Resumed"
+#~ msgid "Required"
+#~ msgstr "Resumed"
+
+#, fuzzy
+#~| msgid "Total size is %1 bytes"
+#~ msgid "File size (in bytes):"
+#~ msgstr "மொத்த அளவு %1 பைட்டுகள்"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Verification:"
+#~ msgstr "விவரிப்பு"
+
+#, fuzzy
+#~ msgid "*.metalink *.meta4|Metalink file (*.metalink *.meta4)"
+#~ msgstr "கோப்பினை திற"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgid "Date and time:"
+#~ msgstr "Rem. நேரம்"
+
+#, fuzzy
+#~ msgid "Version:"
+#~ msgstr "விரிவாக்கம்"
+
+#, fuzzy
+#~| msgid "Log"
+#~ msgid "Logo:"
+#~ msgstr "பதிவேடு"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "Name:"
+#~ msgstr "பெயர்"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Name of the publisher"
+#~ msgstr "முயற்சிகளின் எண்ணிக்கை"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "URL to the publisher"
+#~ msgstr "முயற்சிகளின் எண்ணிக்கை"
+
+#, fuzzy
+#~ msgctxt "Files as in files on a server"
+#~ msgid "Files:"
+#~ msgstr "கோப்பினை திற"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "&Import Links"
+#~ msgstr "இணைப்பு இல்லை"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgid "Contains"
+#~ msgstr "இணைப்பு"
+
+#, fuzzy
+#~ msgid "Does Not Contain"
+#~ msgstr "இறக்குபவர்"
+
+#, fuzzy
+#~ msgctxt "Check as in mark, not as in verify"
+#~ msgid "Chec&k Selected"
+#~ msgstr "எந்த கோப்பும் தேர்வு செய்யப்படவில்லை"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of connections:"
+#~ msgstr "முயற்சிகளின் எண்ணிக்கை"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a URL"
+#~ msgstr "இதர்நெட்"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Priority:"
+#~ msgstr "எழுத்துரு"
+
+#, fuzzy
+#~| msgid "Location (URL)"
+#~ msgid "Location:"
+#~ msgstr "இடம்"
+
+#, fuzzy
+#~| msgid "Offline mode"
+#~ msgctxt "View modes"
+#~ msgid "View Modes"
+#~ msgstr "தொடர்பற்ற முறை"
+
+#, fuzzy
+#~ msgid "Date"
+#~ msgstr "ம்றுபடியும் துவங்கு"
+
+#, fuzzy
+#~ msgid "Filter History"
+#~ msgstr "திறந்த மாற்றல்"
+
+#, fuzzy
+#~ msgctxt "delete selected transfer"
+#~ msgid "Delete Selected"
+#~ msgstr "எந்த கோப்பும் தேர்வு செய்யப்படவில்லை"
+
+#, fuzzy
+#~ msgid "Download"
+#~ msgstr "இறக்குதல் திரும்ப தொடங்கியது "
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgctxt "hash as a hash of type md5, sha1 etc."
+#~ msgid "Hash:"
+#~ msgstr "எழுத்துரு"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgid "Remaining Time:"
+#~ msgstr "Rem. நேரம்"
+
+#, fuzzy
+#~ msgid "Transfer Settings"
+#~ msgstr "மாற்று: %1 "
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Download Destination:"
+#~ msgstr "சேருமிடம்:"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgctxt "No value has been set"
+#~ msgid "Not set"
+#~ msgstr "இணைப்பு இல்லை"
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid " KiB"
+#~ msgstr " %1 KB/s "
+
+#, fuzzy
+#~ msgid "Upload Limit:"
+#~ msgstr "இறக்குதல் திரும்ப தொடங்கியது "
+
+#, fuzzy
+#~ msgid "Download Limit:"
+#~ msgstr "இறக்குதல் திரும்ப தொடங்கியது "
+
+#, fuzzy
+#~| msgid "Maximum open connections:"
+#~ msgid "Maximum Share Ratio:"
+#~ msgstr "அதிகபட்ச திறந்த இணைப்புகள்"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgctxt "verification of the download (e.g. by using MD5)"
+#~ msgid "Verification"
+#~ msgstr "சேருமிடம்:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Creation:"
+#~ msgstr "சேருமிடம்:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Expiration:"
+#~ msgstr "சேருமிடம்:"
+
+#, fuzzy
+#~ msgid "Group Settings"
+#~ msgstr "முன்னிருப்பு அடைவு"
+
+#, fuzzy
+#~| msgid "Default Folder"
+#~ msgid "Default folder:"
+#~ msgstr "முன்னிருப்பு அடைவு"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Maximum download speed:"
+#~ msgstr "பதிவிறக்கம் முடிந்துவிட்டது"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Maximum upload speed:"
+#~ msgstr "பதிவிறக்கம் முடிந்துவிட்டது"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Destination:"
+#~ msgstr "சேருமிடம்:"
+
+#, fuzzy
+#~ msgid "Transfer group:"
+#~ msgstr "&வெற்றிகரமான மாற்றல்"
+
+#, fuzzy
+#~ msgid "&File"
+#~ msgstr "கோப்பினை திற"
+
+#, fuzzy
+#~ msgid "&Downloads"
+#~ msgstr "இறக்குதல் திரும்ப தொடங்கியது "
+
+#~ msgid "There are no links in the active frame of the current HTML page."
+#~ msgstr "இந்த HTMLல் பக்கத்தில் நடப்பில் உள்ள சட்டத்தில் தொடர்பு இல்லை"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Remove Tag"
+#~ msgstr "திறந்த மாற்றல்"
+
+#, fuzzy
+#~ msgid "Tag Settings for the groups"
+#~ msgstr "முன்னிருப்பு அடைவு"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgid "Tag Settings"
+#~ msgstr "காலவரையிடுதல்"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Available tags:"
+#~ msgstr "திறந்த மாற்றல்"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a new Tag"
+#~ msgstr "இதர்நெட்"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a new tag"
+#~ msgstr "இதர்நெட்"
+
+#, fuzzy
+#~| msgctxt "OK as in 'finished'"
+#~| msgid "OK"
+#~ msgid "OK"
+#~ msgstr "சரி"
+
+#, fuzzy
+#~| msgid "To: %1"
+#~ msgid "Error: %1"
+#~ msgstr "To: %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open log file %1 : %2"
+#~ msgstr ""
+#~ "கோப்பினை திறக்க முடியாது\"\n"
+#~ "%1\""
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not write to file:\n"
+#~| "%1"
+#~ msgid "Cannot write to %1 : %2"
+#~ msgstr ""
+#~ "கோப்பினை எழுத முடியாது:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Copy file from: %1"
+#~ msgid "Cannot read from %1"
+#~ msgstr "%1 கோப்பிலிருந்து பதிவு செய்"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot create directory %1"
+#~ msgstr ""
+#~ "கோப்பினைப் படிக்க முடியாது\"\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file: %1"
+#~ msgstr ""
+#~ "கோப்பினைப் படிக்க முடியாது\"\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot seek in file : %1"
+#~ msgstr ""
+#~ "கோப்பினை திறக்க முடியாது\"\n"
+#~ "%1\""
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgid "Connections"
+#~ msgstr "இணைப்பு"
+
+#, fuzzy
+#~ msgid "Tracker"
+#~ msgstr "&வெற்றிகரமான மாற்றல்"
+
+#, fuzzy
+#~| msgid "Not Deleted"
+#~ msgid "Not connected"
+#~ msgstr "அழிக்கவில்லை"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "Not in use"
+#~ msgstr "இணைப்பு இல்லை"
+
+#, fuzzy
+#~| msgid "Connection Type"
+#~ msgid "Connection closed"
+#~ msgstr "இணைப்பு வகை"
+
+#, fuzzy
+#~| msgid "Connection Type"
+#~ msgid "Connected"
+#~ msgstr "இணைப்பு வகை"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgid "Connecting"
+#~ msgstr "இணைப்பு"
+
+#, fuzzy
+#~| msgid ""
+#~| "The specified file does not exist:\n"
+#~| "%1"
+#~ msgid "The directory %1 does not exist"
+#~ msgstr ""
+#~ "குறிப்பிடப்பட்ட கோப்பு இயக்கத்தில் இல்லைt:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open index file %1 : %2"
+#~ msgstr ""
+#~ "கோப்பினை திறக்க முடியாது\"\n"
+#~ "%1\""
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot create file %1 : %2"
+#~ msgstr ""
+#~ "கோப்பினைப் படிக்க முடியாது\"\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not write to file:\n"
+#~| "%1"
+#~ msgid "Failed to write last chunk to DND file : %1"
+#~ msgstr ""
+#~ "கோப்பினை எழுத முடியாது:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file %1 : %2"
+#~ msgstr ""
+#~ "கோப்பினைப் படிக்க முடியாது\"\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Failed to seek file %1 : %2"
+#~ msgstr ""
+#~ "கோப்பினைப் படிக்க முடியாது\"\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Error while reading file:\n"
+#~| "%1"
+#~ msgid "Error reading from %1"
+#~ msgstr ""
+#~ "கோப்பினைப் படிக்கும் போது பிழை:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not write to file:\n"
+#~| "%1"
+#~ msgid "Failed to write to file %1 : %2"
+#~ msgstr ""
+#~ "கோப்பினை எழுத முடியாது:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open file %1 : %2"
+#~ msgstr ""
+#~ "கோப்பினை திறக்க முடியாது\"\n"
+#~ "%1\""
+
+#, fuzzy
+#~| msgid "Not Deleted"
+#~ msgid "Not started"
+#~ msgstr "அழிக்கவில்லை"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgctxt "Status of a torrent file"
+#~ msgid "Seeding"
+#~ msgstr "காலவரையிடுதல்"
+
+#, fuzzy
+#~ msgid "Downloading"
+#~ msgstr "இறக்குதல் திரும்ப தொடங்கியது "
+
+#, fuzzy
+#~ msgid "Stopped"
+#~ msgstr "வேகம்"
+
+#, fuzzy
+#~| msgid "Queueing"
+#~ msgid "Queued for seeding"
+#~ msgstr "வரிசையில்"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Queued for downloading"
+#~ msgstr "முயற்சிகளின் எண்ணிக்கை"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open file %1: %2"
+#~ msgstr ""
+#~ "கோப்பினை திறக்க முடியாது\"\n"
+#~ "%1\""
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot create index file: %1"
+#~ msgstr ""
+#~ "கோப்பினைப் படிக்க முடியாது\"\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open file : %1 : %2"
+#~ msgstr ""
+#~ "கோப்பினை திறக்க முடியாது\"\n"
+#~ "%1\""
+
+#, fuzzy
+#~| msgid "Not Deleted"
+#~ msgid "Delete"
+#~ msgstr "அழிக்கவில்லை"
+
+#, fuzzy
+#~ msgid "Details for: %1"
+#~ msgstr "முன்னிருப்பு அடைவு"
+
+#, fuzzy
+#~ msgid "All downloads"
+#~ msgstr "குறிப்பீடு முற்றுப்பெறாத இறக்கு"
+
+#, fuzzy
+#~ msgid "Finished downloads"
+#~ msgstr "முடிந்தது"
+
+#, fuzzy
+#~ msgid "Transfers:"
+#~ msgstr "&வெற்றிகரமான மாற்றல்"
+
+#, fuzzy
+#~ msgid "Downloads"
+#~ msgstr "இறக்குதல் திரும்ப தொடங்கியது "
+
+#, fuzzy
+#~ msgid "Transfer details:"
+#~ msgstr "மாற்று: %1 "
+
+#, fuzzy
+#~ msgid "Transfer List"
+#~ msgstr "திறந்த மாற்றல்"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of threads:"
+#~ msgstr "முயற்சிகளின் எண்ணிக்கை"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Name of the license"
+#~ msgstr "முயற்சிகளின் எண்ணிக்கை"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "URL to the license"
+#~ msgstr "முயற்சிகளின் எண்ணிக்கை"
+
+#, fuzzy
+#~| msgid "Delayed"
+#~ msgctxt "The transfer is delayed"
+#~ msgid "Delayed"
+#~ msgstr "தாமதமானவை"
+
+#~ msgid ""
+#~ "Destination file \n"
+#~ "%1\n"
+#~ "already exists.\n"
+#~ "Do you want to overwrite it?"
+#~ msgstr ""
+#~ "சேரும் கோப்பு \n"
+#~ "%1\n"
+#~ "முன்பே உள்ளது.\n"
+#~ "நீங்கள் மேல் எழுத விரும்புகிறீர்களா ?"
+
+#, fuzzy
+#~ msgid "Overwrite destination"
+#~ msgstr "சேருமிடத்தை &திற"
+
+#~ msgid "Queued"
+#~ msgstr "வரிசையிடப்பட்டவை"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Current Tracker"
+#~ msgstr "திறந்த மாற்றல்"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgid "Scrape"
+#~ msgstr "மூலம்"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Available Trackers"
+#~ msgstr "திறந்த மாற்றல்"
+
+#, fuzzy
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Delete Selected"
+#~ msgstr "எந்த கோப்பும் தேர்வு செய்யப்படவில்லை"
+
+#, fuzzy
+#~| msgid "We are online."
+#~ msgid "We are sorry"
+#~ msgstr "உடன் நிகழ் வகையில் உள்ளோம். "
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Rename transfer"
+#~ msgstr "திறந்த மாற்றல்"
+
+#, fuzzy
+#~ msgid "Download URL again?"
+#~ msgstr "இறக்குபவர்"
+
+#, fuzzy
+#~ msgctxt "file in a filsystem"
+#~ msgid "File"
+#~ msgstr "கோப்பினை திற"
+
+#, fuzzy
+#~ msgid "Are you sure that you want to remove all selected groups?"
+#~ msgstr "நீங்கள் கண்டிப்பாக இந்த மாற்றங்களை நீக்க வேண்டுமா?"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "Name"
+#~ msgstr "பெயர்"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgid "Remaining Time"
+#~ msgstr "Rem. நேரம்"
+
+#, fuzzy
+#~ msgid "KGet - Download Manager"
+#~ msgstr "இறக்குபவர்"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgctxt "@label transfer source"
+#~ msgid "Source:"
+#~ msgstr "மூலம்"
+
+#, fuzzy
+#~| msgid "0 B/s"
+#~ msgid "kBi"
+#~ msgstr "0 B/s"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file : %1"
+#~ msgstr ""
+#~ "கோப்பினைப் படிக்க முடியாது\"\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "&Transfer History..."
+#~ msgstr "திறந்த மாற்றல்"
+
+#, fuzzy
+#~ msgid "&Group Settings..."
+#~ msgstr "முன்னிருப்பு அடைவு"
+
+#, fuzzy
+#~ msgid "&Transfer Settings..."
+#~ msgstr "மாற்று: %1 "
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed limit"
+#~ msgstr "வேகம்"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Download Speed:"
+#~ msgstr "பதிவிறக்கம் முடிந்துவிட்டது"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Upload Speed:"
+#~ msgstr "வேகம்"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "&Import links"
+#~ msgstr "இணைப்பு இல்லை"
+
+#, fuzzy
+#~| msgid "Not Deleted"
+#~ msgid "&Delete"
+#~ msgstr "அழிக்கவில்லை"
+
+#, fuzzy
+#~ msgid "Default Download Folders"
+#~ msgstr "முன்னிருப்பு அடைவு"
+
+#, fuzzy
+#~| msgid "Extension"
+#~ msgid "File Extension"
+#~ msgstr "விரிவாக்கம்"
+
+#~ msgid "Default Folder"
+#~ msgstr "முன்னிருப்பு அடைவு"
+
+#, fuzzy
+#~ msgid "Set as default folder"
+#~ msgstr "முன்னிருப்பு அடைவு"
+
+#, fuzzy
+#~ msgid "extRegExp, defaultFolder"
+#~ msgstr "முன்னிருப்பு அடைவு"
+
+#, fuzzy
+#~ msgid "Downloading.."
+#~ msgstr "இறக்குதல் திரும்ப தொடங்கியது "
+
+#, fuzzy
+#~ msgid "Advanced-Details for %1"
+#~ msgstr "முன்னிருப்பு அடைவு"
+
+#, fuzzy
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading.."
+#~ msgstr "இறக்குதல் திரும்ப தொடங்கியது "
+
+#, fuzzy
+#~ msgid "Downloads number:"
+#~ msgstr "இறக்குபவர்"
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 GB"
+#~ msgstr " %1/s "
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 MB"
+#~ msgstr " %1/s "
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid "%1 KB"
+#~ msgstr " %1 KB/s "
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 B"
+#~ msgstr " %1/s "
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid "%1 KB/s"
+#~ msgstr " %1 KB/s "
+
+#, fuzzy
+#~| msgid "0 B/s"
+#~ msgid "kBi/s"
+#~ msgstr "0 B/s"
+
+#~ msgid "Not Deleted"
+#~ msgstr "அழிக்கவில்லை"
+
+#, fuzzy
+#~ msgid "Konqueror Integration disabled"
+#~ msgstr "Konqueror "
+
+#~ msgid "Show main window at startup"
+#~ msgstr "முக்கிய சாளரத்தை துவக்கத்தில் காட்டு"
+
+#, fuzzy
+#~ msgid "<speed>"
+#~ msgstr "வேகம்"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgid "<remaining time>"
+#~ msgstr "Rem. நேரம்"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file %1"
+#~ msgstr ""
+#~ "கோப்பினைப் படிக்க முடியாது\"\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Error while writing file:\n"
+#~| "%1"
+#~ msgid "Error writing to %1 : %2"
+#~ msgstr ""
+#~ "கோப்பினைப் எழுதுவதில் பிழை:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Error while writing file:\n"
+#~| "%1"
+#~ msgid "Error writing to %1"
+#~ msgstr ""
+#~ "கோப்பினைப் எழுதுவதில் பிழை:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "List All Links"
+#~ msgid "&List Links"
+#~ msgstr "அனைத்து இணைப்புகளையும் பட்டியலிடு"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file"
+#~ msgstr ""
+#~ "கோப்பினைப் படிக்க முடியாது\"\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgctxt "Download normally(not as first or last"
+#~ msgid "Normal"
+#~ msgstr "பொது"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Bittorrent-Speedlimits"
+#~ msgstr "வேகம்"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed-Limits"
+#~ msgstr "வேகம்"
+
+#, fuzzy
+#~ msgid " of "
+#~ msgstr "%1 of %2"
+
+#, fuzzy
+#~ msgid "Download Folder"
+#~ msgstr "முன்னிருப்பு அடைவு"
+
+#, fuzzy
+#~ msgid "Hide Drop Target"
+#~ msgstr "விடுக் குறிக்கோளை மறை"
+
+#, fuzzy
+#~ msgid "Hide drop target"
+#~ msgstr "விடுக் குறிக்கோளை மறை"
+
+#~ msgid ""
+#~ "Already saving URL\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Already saving URL\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Default Group"
+#~ msgstr "முன்னிருப்பு அடைவு"
+
+#, fuzzy
+#~ msgid "DlgAdvanced"
+#~ msgstr "கூடுதல்"
+
+#, fuzzy
+#~ msgid "Delete Group."
+#~ msgstr "முன்னிருப்பு அடைவு"
+
+#, fuzzy
+#~ msgid "Hide Me"
+#~ msgstr "கோப்புப் பெயர்"
+
+#~ msgid ""
+#~ "Each row consists of exactly one\n"
+#~ "extension type and one folder."
+#~ msgstr ""
+#~ "ஒவ்வொரு வரியும் கண்டிப்பாக ஒரு\n"
+#~ "நீட்டுதல் மற்றும் ஒரு ஆவணம் இருக்கும்"
+
+#~ msgid "&Dock"
+#~ msgstr "ஒதுங்குதல்"
+
+#~ msgid "Source Label"
+#~ msgstr "மூலக்கோப்பு தலைப்புகள்"
+
+#~ msgid "&Keep this window open after the operation is complete."
+#~ msgstr "இந்த செயல்பாடுகள் முடிந்தவுடன் சாளரத்தை திறந்து வைக்கவும்"
+
+#~ msgid "Not resumed"
+#~ msgstr "மீண்டும் துவங்கவில்லை"
+
+#~ msgid "Automation"
+#~ msgstr "தானியங்கி"
+
+#~ msgid "System"
+#~ msgstr "அமைப்பு"
+
+#~ msgid "Maximize"
+#~ msgstr "அதிக அளவு"
+
+#~ msgid "Minimize"
+#~ msgstr "குறைந்த அளவு"
+
+#~ msgid ""
+#~ "This is a folder and not a file:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "இது அடைவு, கோப்பில்லை :\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "You do not have read permission for the file:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "இந்த கோப்பினை படிக்க உங்களுக்கு அனுமதியில்லை:\n"
+#~ "%1"
+
+#~ msgid "Could only read %1 bytes of %2."
+#~ msgstr "%1யை படிக்க மட்டும் முடியும் %2 ன் பைட்டுகள்."
+
+#~ msgid ""
+#~ "File %1 exists.\n"
+#~ "Do you want to replace it?"
+#~ msgstr ""
+#~ "File %1 exists.\n"
+#~ "நீங்கள் மாற்றியமைக்க விரும்புகிறீர்களா?"
+
+#~ msgid ""
+#~ "Failed to make a backup copy of %1.\n"
+#~ "Continue anyway?"
+#~ msgstr ""
+#~ "Failed to make a backup copy of %1.\n"
+#~ "Continue anyway?"
+
+#~ msgid ""
+#~ "Could not open file for writing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "எழுத்திற்கு கோப்பினை திறக்க முடியாது\n"
+#~ "%1"
+
+#~ msgid "Could only write %1 bytes of %2."
+#~ msgstr " \"%2வில் %1 பைட்டை மட்டும் எழுத முடியும்"
+
+#~ msgid "Welcome to KGet"
+#~ msgstr " KGet க்கு நல்வரவு  "
+
+#~ msgid "Could not create valid socket"
+#~ msgstr "அனுமதிக்கப்பட்ட சாக்கெட்டை உருவாக்கமுடியாது"
+
+#~ msgid "Offline"
+#~ msgstr "காத்திருத்தல்"
+
+#~ msgid "Starting offline"
+#~ msgstr "காத்திருத்தலை துவக்குதல்"
+
+#~ msgid "&Open Individual Window"
+#~ msgstr "தனி சாளரத்தை திற"
+
+#~ msgid "Move to &Beginning"
+#~ msgstr "தொடக்கத்திற்கு செல்"
+
+#~ msgid "&Pause"
+#~ msgstr "இடை நிறுத்தம்"
+
+#~ msgid "&Queue"
+#~ msgstr "வரிசை"
+
+#~ msgid "&Timer"
+#~ msgstr "நேரம் காட்டி"
+
+#~ msgid "De&lay"
+#~ msgstr "மெதுவாக"
+
+#~ msgid "Use &Animation"
+#~ msgstr "இயக்கு படத்தை பயன்படுத்து"
+
+#~ msgid "&Expert Mode"
+#~ msgstr "தேர்ந்தெடுப்பு வகை"
+
+#~ msgid "&Use-Last-Folder Mode"
+#~ msgstr "கடைசி அடைவு வகையை பயன்படுத்து"
+
+#~ msgid "Auto-&Disconnect Mode"
+#~ msgstr "Auto-&Disconnect Mode"
+
+#~ msgid "Auto-S&hutdown Mode"
+#~ msgstr "Auto-S&hutdown Mode"
+
+#~ msgid "&Offline Mode"
+#~ msgstr "காத்திருப்பு வகை"
+
+#~ msgid "Show &Log Window"
+#~ msgstr "பதிவு சாளரத்தை காட்டு"
+
+#~ msgid " Files: %1 "
+#~ msgstr "கோப்புகள்: %1 "
+
+#~ msgid " Size: %1 KB "
+#~ msgstr "அளவு: %1 KB "
+
+#~ msgid " Time: %1 "
+#~ msgstr "நேரம்:%1 "
+
+#~ msgid ""
+#~ "<b>Resume</b> button starts selected transfers\n"
+#~ "and sets their mode to <i>queued</i>."
+#~ msgstr ""
+#~ "<b>தொடர்<b>பொத்தான் தேர்ந்தெடுக்கப்பட்டுள்ள மாற்றங்களை துவக்கும்\n"
+#~ "மற்றும் அவற்றின் வகையை அமைக்கும்<i>queued</i> "
+
+#~ msgid ""
+#~ "<b>Pause</b> button stops selected transfers\n"
+#~ "and sets their mode to <i>delayed</i>."
+#~ msgstr ""
+#~ "<b>இடை நிறுத்தம்<b> பொத்தான் தேர்ந்தெடுக்கப்பட்டுள்ள மாற்றங்களை நிறுத்தும்\n"
+#~ "மற்றும் அவற்றின் வகையை அமைக்கும்<i>தாமதிக்கப்படும்</i> "
+
+#~ msgid ""
+#~ "<b>Delete</b> button removes selected transfers\n"
+#~ "from the list."
+#~ msgstr ""
+#~ "<b>நீக்கு<b>பொத்தான் தேர்ந்தெடுக்கப்பட்டுள்ள மாற்றங்களை\n"
+#~ "பட்டியலிலிருந்து அகற்றும்"
+
+#~ msgid ""
+#~ "<b>Restart</b> button is a convenience button\n"
+#~ "that simply does Pause and Resume."
+#~ msgstr ""
+#~ "\"<b>துவக்கு<b>பொத்தான் \n"
+#~ "மூலம் தற்காலிக நிறுத்தம் மற்றும் மீண்டும் துவக்குதலை எளிதாக செய்யலாம்"
+
+#~ msgid ""
+#~ "<b>Queued</b> button sets the mode of selected\n"
+#~ "transfers to <i>queued</i>.\n"
+#~ "\n"
+#~ "It is a radio button -- you can choose between\n"
+#~ "three modes."
+#~ msgstr ""
+#~ "<b>வரிசைப்படுத்து</b>பொத்தானே வகையை தேர்ந்தெடுக்கின்றன\n"
+#~ "பரிமாற்றம் <i>வரிசைப்படுத்து</i>.\n"
+#~ "\n"
+#~ "இது விருப்ப பொத்தான்-- நீங்கள் தேர்ந்தெடுக்கவும்\n"
+#~ "மூன்று வகைகளில்."
+
+#~ msgid ""
+#~ "<b>Scheduled</b> button sets the mode of selected\n"
+#~ "transfers to <i>scheduled</i>.\n"
+#~ "\n"
+#~ "It is a radio button -- you can choose between\n"
+#~ "three modes."
+#~ msgstr ""
+#~ "<b>ஒழுங்குபடுத்து</b>தேர்ந்தெடுப்பதை பொத்தான்களே நிர்ணயிக்கின்றன\n"
+#~ "பரிமாற்றம்<i>ஒழுங்குபடுத்து</i>.\n"
+#~ "\n"
+#~ "இது விருப்ப பொத்தான்-- நீங்கள் தேர்ந்தெடுக்கவும்\n"
+#~ "மூன்று வகைகளில்."
+
+#~ msgid ""
+#~ "<b>Delayed</b> button sets the mode of selected\n"
+#~ "transfers to <i>delayed</i>.This also causes the selected transfers to "
+#~ "stop.\n"
+#~ "\n"
+#~ "It is a radio button -- you can choose between\n"
+#~ "three modes."
+#~ msgstr ""
+#~ "<b>தாமதிக்கப்பட்டது</b> பொத்தானே வகையை தேர்ந்தெடுக்கின்றன\n"
+#~ "பரிமாற்றம்<i>தாமதிக்கப்பட்டது</i>.இவைகளே பரிமாற்றத்தை தடுக்க காரணமாகிறது\n"
+#~ "\n"
+#~ "இது விருப்ப பொத்தான்-- நீங்கள் தேர்ந்தெடுக்கவும்\n"
+#~ "மூன்று வகைகளில்."
+
+#~ msgid ""
+#~ "<b>Preferences</b> button opens a preferences dialog\n"
+#~ "where you can set various options.\n"
+#~ "\n"
+#~ "Some of these options can be more easily set using the toolbar."
+#~ msgstr ""
+#~ "<b>முன்னுரிமை</b>முன்னுரிமை உரையாடல் பொத்தானால் திறக்கப்படுகின்றன\n"
+#~ "அங்கே நீங்கள் பல விருப்பத் தேர்வுகளை அமைக்கலாம்.\n"
+#~ "\n"
+#~ "ஒரு சில விருப்பத் தேர்வுகளை கருவிப்பட்டையை கொண்டு சுலபமாக அமைக்கலாம்."
+
+#~ msgid ""
+#~ "<b>Log window</b> button opens a log window.\n"
+#~ "The log window records all program events that occur\n"
+#~ "while KGet is running."
+#~ msgstr ""
+#~ "<b>சாளர லாக்</b>பொத்தான்களே சாளர லாக்கை திறக்கின்றன.\n"
+#~ "எல்லா நிகழ்வுகளையும் சாளர லாக் பதிக்கின்றன\n"
+#~ " KGet இயங்கிக் கொண்டிருக்கையில்."
+
+#~ msgid ""
+#~ "<b>Paste transfer</b> button adds a URL from\n"
+#~ "the clipboard as a new transfer.\n"
+#~ "\n"
+#~ "This way you can easily copy&paste URLs between\n"
+#~ "applications."
+#~ msgstr ""
+#~ "<b>பரிமாற்ற ஒட்டு</b> URL லிருந்து பொத்தான்களே கூட்டுகின்றன\n"
+#~ "பரிமாற்ற பலகையே புதிய பரிமாற்றமாகிறது.\n"
+#~ "\n"
+#~ "This way you can easily copy&paste URLs between\n"
+#~ "applications."
+
+#~ msgid ""
+#~ "<b>Expert mode</b> button toggles the expert mode\n"
+#~ "on and off.\n"
+#~ "\n"
+#~ "Expert mode is recommended for experienced users.\n"
+#~ "When set, you will not be \"bothered\" by confirmation\n"
+#~ "messages.\n"
+#~ "<b>Important!</b>\n"
+#~ "Turn it on if you are using auto-disconnect or\n"
+#~ "auto-shutdown features and you want KGet to disconnect \n"
+#~ "or shut down without asking."
+#~ msgstr ""
+#~ "<b>நிபுண வகை</b> button toggles the expert mode\n"
+#~ "on and off.\n"
+#~ "\n"
+#~ "Expert mode is recommended for experienced users.\n"
+#~ "When set, you will not be \"bothered\" by confirmation\n"
+#~ "messages.\n"
+#~ "<b>Important!</b>\n"
+#~ "Turn it on if you are using auto-disconnect or\n"
+#~ "auto-shutdown features and you want KGet to disconnect \n"
+#~ "or shut down without asking."
+
+#~ msgid ""
+#~ "<b>Use last folder</b> button toggles the\n"
+#~ "use-last-folder feature on and off.\n"
+#~ "\n"
+#~ "When set, KGet will ignore the folder settings\n"
+#~ "and put all new added transfers into the folder\n"
+#~ "where the last transfer was put."
+#~ msgstr ""
+#~ "<b>கடைசி ஆவணத்தை பயன்படுத்து</b> பொத்தான்களே மாற்றியமைக்கின்றன\n"
+#~ "கடைசி ஆவணத்தை பயன்படுத்து இயக்கு அல்லது இயக்காதே.\n"
+#~ "\n"
+#~ "அமைக்கப்பட்டால், KGet  ஆவண அமைப்புகளை தவிர்க்கின்றன\n"
+#~ "மற்றும் எல்லா புதிய பரிமாற்றத்தை ஆவணத்தில் கூட்டுக\n"
+#~ "எங்கே கடைசி பரிமாற்றம் புகுத்தப்பட்டதோ அந்த இடத்திலேயே அமை."
+
+#~ msgid ""
+#~ "<b>Auto disconnect</b> button toggles the auto-disconnect\n"
+#~ "mode on and off.\n"
+#~ "\n"
+#~ "When set, KGet will disconnect automatically\n"
+#~ "after all queued transfers are finished.\n"
+#~ "\n"
+#~ "<b>Important!</b>\n"
+#~ "Also turn on the expert mode when you want KGet\n"
+#~ "to disconnect without asking."
+#~ msgstr ""
+#~ "<b>தானியங்கி துண்டிப்பு</b> தானியங்கி துண்டிப்பு பொத்தான்களே மாற்றியமைக்கின்றன\n"
+#~ "வகையை இயக்கு அல்லது இயக்காதே.\n"
+#~ "\n"
+#~ "அமைக்கப்பட்டால், KGet தானியங்கி துண்டிப்பு ஏற்படுத்திக் கொள்ளும்\n"
+#~ "பரிமாற்றங்கள் வரிசைபடுத்தப்பட்டு முடியும்.\n"
+#~ "\n"
+#~ "<b>முக்கியம்!</b>\n"
+#~ "மேலும் நிபுண வகையை விரும்பினால் இயக்கு KGet\n"
+#~ "அல்லது கேட்காமலே துண்டி."
+
+#~ msgid ""
+#~ "<b>Auto shutdown</b> button toggles the auto-shutdown\n"
+#~ "mode on and off.\n"
+#~ "\n"
+#~ "When set, KGet will quit automatically\n"
+#~ "after all queued transfers are finished.\n"
+#~ "<b>Important!</b>\n"
+#~ "Also turn on the expert mode when you want KGet\n"
+#~ "to quit without asking."
+#~ msgstr ""
+#~ "<b>தானியங்கி பணிநிறுத்தம்</b>தானியங்கி பணிநிறுத்தம் பொத்தான்களே மாற்றியமைக்கின்றன\n"
+#~ "வகையை இயக்கு அல்லது இயக்காதே.\n"
+#~ "\n"
+#~ "அமைக்கப்பட்டால், KGet தானியங்கி வெளியேற்றும்\n"
+#~ "பரிமாற்றங்கள் வரிசைபடுத்தப்பட்டு முடியும்.\n"
+#~ "<b>முக்கியம்!</b>\n"
+#~ "மேலும் நிபுண வகையை விரும்பினால் இயக்கு KGet\n"
+#~ "அல்லது கேட்காமலே இணைப்பைத் துண்டி."
+
+#~ msgid ""
+#~ "<b>Offline mode</b> button toggles the offline mode\n"
+#~ "on and off.\n"
+#~ "\n"
+#~ "When set, KGet will act as if it was not connected\n"
+#~ "to the Internet.\n"
+#~ "\n"
+#~ "You can browse offline, while still being able to add\n"
+#~ "new transfers as queued."
+#~ msgstr ""
+#~ "<b>இயக்கமில்லா வகை</b>இயக்கமில்லா வகையை பொத்தான்களே மாற்றியமைக்கின்றன\n"
+#~ "இயக்கு அல்லது இயக்காதே.\n"
+#~ "\n"
+#~ "அமைந்துவிட்டால் When set, KGet இணைக்கப்படுகின்றன\n"
+#~ "இணையத்தளத்துடன்.\n"
+#~ "\n"
+#~ "தாங்களே இணையத்தளத்துடன் கூடலாம்\n"
+#~ "புதிய பரிமாற்றம் வரிசைப்படுத்தடும்."
+
+#~ msgid ""
+#~ "<b>Drop target</b> button toggles the window style\n"
+#~ "between a normal window and a drop target.\n"
+#~ "\n"
+#~ "When set, the main window will be hidden and\n"
+#~ "instead a small shaped window will appear.\n"
+#~ "\n"
+#~ "You can show/hide a normal window with a simple click\n"
+#~ "on a shaped window."
+#~ msgstr ""
+#~ "<b>அடைவை விடு</b> சாளர பாணியை பொத்தானே மாற்றி அமைக்கின்றன\n"
+#~ "சாதாரண சாளரத்திற்கும் அடையை விடு இடையே.\n"
+#~ "\n"
+#~ "அமைந்த பிறகு முக்கிய சாளரத்தை மறைக்கின்றன மற்றும்\n"
+#~ "சிறிய சாளரம் தெரிவதற்கு பதில்.\n"
+#~ "\n"
+#~ "ஒரு சாதாரண சொடுக்கால் நீங்கள் காட்ட/மறைக்க\n"
+#~ "அளவான சாளரத்தில்."
+
+#~ msgid ""
+#~ "*.kgt|*.kgt\n"
+#~ "*|All Files"
+#~ msgstr ""
+#~ "*.kgt|*.kgt\n"
+#~ "*[அனைத்து கோப்புகளும்"
+
+#~ msgid "Quitting..."
+#~ msgstr "வெளியேறுதல்"
+
+#~ msgid ""
+#~ "The transfer you wanted to delete completed before it could be deleted."
+#~ msgid_plural ""
+#~ "%n transfers you wanted to delete completed before they could be deleted."
+#~ msgstr[0] "பரிமாற்றத்தில் அழிக்க விரும்பியது முன்னரே அழிக்கப்பட்டு விட்டது."
+#~ msgstr[1] "%1 பரிமாற்றத்தில் அழிக்க விரும்பியது முன்னரே அழிக்கப்பட்டு விட்டது. "
+
+#, fuzzy
+#~ msgid "Stopping all jobs"
+#~ msgstr "அனைத்து வேலையையும் நிறுத்து "
+
+#~ msgid "Starting another queued job."
+#~ msgstr "Starting another queued job."
+
+#~ msgid "Offline mode on."
+#~ msgstr "தொடர்பில்லாத வகையை ஆக்கு"
+
+#~ msgid "Offline mode off."
+#~ msgstr "தொடர்பில்லாத வகையை நீக்கு"
+
+#~ msgid "Expert mode on."
+#~ msgstr "வரி வடிவம் ஆக்கு"
+
+#~ msgid "Expert mode off."
+#~ msgstr "வரி வடிவம் நீக்கு"
+
+#~ msgid "Use last folder on."
+#~ msgstr "கடைசி அடைவு உண்டு பயன்படுத்து"
+
+#~ msgid "Use last folder off."
+#~ msgstr "கடைசி அடைவு நீக்குதலை பயன்படுத்து"
+
+#~ msgid "Auto disconnect off."
+#~ msgstr "தானாக துண்டித்தல் இல்லை"
+
+#~ msgid "Auto shutdown off."
+#~ msgstr "தானாக முடிதல் இல்லை"
+
+#~ msgid "Auto paste on."
+#~ msgstr "தானாக ஒட்டுதலை ஆக்கு"
+
+#~ msgid "Auto paste off."
+#~ msgstr "தானாக ஒட்டுதலை நீக்கு"
+
+#, fuzzy
+#~ msgid "<b>Transfers:</b> %1 "
+#~ msgstr "மாற்று: %1 "
+
+#, fuzzy
+#~ msgid "<br /><b>Files:</b> %1 "
+#~ msgstr "கோப்புகள்: %1 "
+
+#, fuzzy
+#~ msgid "<br /><b>Size:</b> %1 "
+#~ msgstr "அளவு: %1 "
+
+#, fuzzy
+#~ msgid "<br /><b>Time:</b> %1 "
+#~ msgstr "நேரம்:%1 "
+
+#~ msgid "Do you really want to disconnect?"
+#~ msgstr "நீங்கள் இணைப்பை துண்டிக்க விருப்புகிறீர்களா"
+
+#, fuzzy
+#~ msgid "Disconnect"
+#~ msgstr "இணைப்பில்லாத"
+
+#~ msgid "Disconnecting..."
+#~ msgstr "இணைப்பில்லாத"
+
+#~ msgid "We are offline."
+#~ msgstr "தொடர்பில்லாத வகையில் உள்ளோம்."
+
+#~ msgid "Id"
+#~ msgstr "Id"
+
+#~ msgid "Mixed"
+#~ msgstr "கலந்த"
+
+#~ msgid "Separated"
+#~ msgstr "தனிமைப்படுத்திய"
+
+#~ msgid "Add new transfers as:"
+#~ msgstr "புதிதாக மாற்றங்களை சேர்:"
+
+#~ msgid "Iconified"
+#~ msgstr "சின்னமாக்கப்பட்டது"
+
+#~ msgid "Advanced individual windows"
+#~ msgstr "கூடுதல் தனி சாளரங்கள்"
+
+#~ msgid "Remove files from a list after success"
+#~ msgstr "வெற்றிக்கு பின் கோப்பை பட்டியலிலிருந்து விலக்கு"
+
+#~ msgid "Get file sizes"
+#~ msgstr "கோப்பின் அளவை வாங்கு"
+
+#, fuzzy
+#~ msgid "Expert mode (do not prompt for Cancel or Delete)"
+#~ msgstr "Expert mode (Do not prompt for Cancel or Delete)"
+
+#~ msgid "Show individual windows"
+#~ msgstr "தனி சாளரத்தை காட்டு"
+
+#~ msgid " min"
+#~ msgstr "குறைந்தபட்ச"
+
+#~ msgid "Auto disconnect after completing downloads"
+#~ msgstr "இறக்கிய பின் தானாகவே இணைப்பை துண்டி "
+
+#~ msgid "Autosave file list every:"
+#~ msgstr " Autosave file list every:"
+
+#~ msgid "Timed disconnect"
+#~ msgstr "துண்டிக்கப்பட்ட நேரம்"
+
+#~ msgid "Disconnect command:"
+#~ msgstr "துண்டிக்கப்பட்ட ஆணை "
+
+#~ msgid "Auto paste from clipboard"
+#~ msgstr "கிளிப்போர்டிலிருந்து தானே ஒட்டுதல்"
+
+#~ msgid "Reconnect Options"
+#~ msgstr "பின் இணைக்கப்பட்ட விருப்பங்கள்"
+
+#~ msgid "On login or timeout error"
+#~ msgstr "உள்ளிடும் போது அல்லது வெளியேறும் நேரத்தில் பிழை "
+
+#~ msgid "Timeout Options"
+#~ msgstr "வெளியிடும் நேரத்தின் விருப்பங்கள்"
+
+#~ msgid "If no data arrives in:"
+#~ msgstr "எந்த செய்தியும் வரவில்லை என்றால்:"
+
+#~ msgid "If server cannot resume:"
+#~ msgstr "சேவையகம் மீண்டும் தொடங்காவிட்டால்"
+
+#~ msgid "Permanent"
+#~ msgstr "நிரந்தரம்"
+
+#~ msgid "PLIP"
+#~ msgstr "PLIP"
+
+#~ msgid "SLIP"
+#~ msgstr "SLIP"
+
+#~ msgid "PPP"
+#~ msgstr "PPP"
+
+#~ msgid "ISDN"
+#~ msgstr "ISDN"
+
+#~ msgid "Link number:"
+#~ msgstr "தொடர்பு எண்:"
+
+#~ msgid "Limits Options"
+#~ msgstr "எல்லை விருப்பங்கள்"
+
+#~ msgid "Minimum network bandwidth:"
+#~ msgstr "குறைந்தபட்ச பிணைய அலைவரிசை"
+
+#~ msgid "Maximum network bandwidth:"
+#~ msgstr "அதிகபட்ச பிணைய அலைவரிசை"
+
+#~ msgid " bytes/sec"
+#~ msgstr " bytes/sec"
+
+#~ msgid "Window style:"
+#~ msgstr "சாளரத்தின் வகை:"
+
+#~ msgid "Attempt number %1"
+#~ msgstr "%1 முயற்சி எண்"
+
+#~ msgid "Pausing"
+#~ msgstr "கடந்த"
+
+#~ msgid "Delaying"
+#~ msgstr "தாமதம்"
+
+#~ msgid "The file size does not match."
+#~ msgstr "கோப்பின் அளவு சேரவில்லை. "
+
+#~ msgid "File Size checked"
+#~ msgstr "கோப்பின் அளவு சரிபார்க்கப்பட்டது"
+
+#~ msgid "S"
+#~ msgstr "S"
+
+#~ msgid "%"
+#~ msgstr "%"

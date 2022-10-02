@@ -1,0 +1,2697 @@
+# translation of konqueror.po to galician
+# Galician translation of konqueror.
+# Copyright (C) 2000 Jesús Bravo Álvarez.
+# Jesús Bravo Álvarez <jba@pobox.com>, 2000.
+# Xabi García <xabigf@gmx.net>, 2003, 2004.
+# Xabier García Feal <xabigf@gmx.net>, 2005.
+# Xabi G. Feal <xabigf@gmx.net>, 2006, 2007.
+# mvillarino <mvillarino@users.sourceforge.net>, 2007, 2008, 2009.
+# marce villarino <mvillarino@users.sourceforge.net>, 2009.
+# marce villarino <mvillarino@gmail.com>, 2009.
+# Marce Villarino <mvillarino@kde-espana.es>, 2009, 2011, 2012, 2013, 2014.
+# Adrián Chaves Fernández (Gallaecio) <adriyetichaves@gmail.com>, 2017.
+# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019, 2020.
+#
+# Proxecto Trasno - Adaptación do software libre á lingua galega:  Se desexas
+# colaborar connosco, podes atopar máis información en http://trasno.gpul.org
+#
+# First Version: 2000-09-02 18:09+0200
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-22 00:44+0000\n"
+"PO-Revision-Date: 2020-01-12 13:07+0100\n"
+"Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
+"Language-Team: Galician <proxecto@trasno.gal>\n"
+"Language: gl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 19.08.3\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Jesús Bravo Álvarez, Xabi G. Feal, marce villarino"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "jba@pobox.com, xabigf@gmx.net, mvillarino@users.sourceforge.net"
+
+#: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4881
+#: src/konqmainwindow.cpp:4927
+#, kde-format
+msgid "no name"
+msgstr "sen nome"
+
+#: src/konqextensionmanager.cpp:50
+#, fuzzy, kde-format
+#| msgid "Configure Extensions..."
+msgctxt "@title:window"
+msgid "Configure Extensions"
+msgstr "Configurar as extensións…"
+
+#: src/konqextensionmanager.cpp:70
+#, kde-format
+msgid "Extensions"
+msgstr "Extensións"
+
+#: src/konqfactory.cpp:67
+#, kde-format
+msgid ""
+"There was an error loading the module %1.\n"
+"The diagnostics is:\n"
+"%2"
+msgstr ""
+"Produciuse un erro ao cargar o módulo %1.\n"
+"O diagnóstico é:\n"
+"%2"
+
+#: src/konqframestatusbar.cpp:108
+#, kde-format
+msgid ""
+"Checking this box on at least two views sets those views as 'linked'. Then, "
+"when you change directories in one view, the other views linked with it will "
+"automatically update to show the current directory. This is especially "
+"useful with different types of views, such as a directory tree with an icon "
+"view or detailed view, and possibly a terminal emulator window."
+msgstr ""
+"Se marca esta opción en polo menos dúas vistas, estas serán «ligadas». Deste "
+"xeito, cando cambie de directorio nunha vista, as ligadas a ela "
+"actualizaranse automaticamente para mostrar o directorio actual. Isto é "
+"especialmente útil con distintos tipos de vistas, como unha árbore de "
+"directorios cunha vista de iconas ou unha vista detallada, e posibelmente "
+"unha xanela de terminal."
+
+#: src/konqframestatusbar.cpp:154
+#, kde-format
+msgid "Close View"
+msgstr "Pechar a vista"
+
+#: src/konqframestatusbar.cpp:232
+#, kde-format
+msgid "%1/s"
+msgstr "%1/s"
+
+#: src/konqframestatusbar.cpp:234
+#, kde-format
+msgid "Stalled"
+msgstr "Atascado"
+
+#: src/konqguiclients.cpp:51
+#, kde-format
+msgid "Preview &in %1"
+msgstr "Pre&visualizar en %1"
+
+#: src/konqguiclients.cpp:118
+#, kde-format
+msgid "Show %1"
+msgstr "Mostrar %1"
+
+#: src/konqhistorydialog.cpp:39
+#, kde-format
+msgctxt "@title:window"
+msgid "History"
+msgstr "Historial"
+
+#: src/konqhistorydialog.cpp:55 src/konqhistoryview.cpp:140
+#, kde-format
+msgctxt "@action:inmenu Parent of 'By Name' and 'By Date'"
+msgid "Sort"
+msgstr "Ordenar"
+
+#: src/konqhistorymodel.cpp:119
+#, kde-format
+msgid ""
+"<qt><center><b>%1</b></center><hr />Last visited: %2<br />First visited: "
+"%3<br />Number of times visited: %4</qt>"
+msgstr ""
+"<qt><center><b>%1</b></center><hr/>Última visita: %2<br/>Primeira visita: "
+"%3<br/>Número de visitas: %4</qt>"
+
+#: src/konqhistorymodel.cpp:213
+#, kde-format
+msgid "Local"
+msgstr "Local"
+
+#: src/konqhistorymodel.cpp:216
+#, kde-format
+msgid "Miscellaneous"
+msgstr "Diversos"
+
+#: src/konqhistoryview.cpp:53 src/konqmainwindow.cpp:4412
+#, kde-format
+msgid "Open in New &Window"
+msgstr "Abrir nunha &xanela nova"
+
+#: src/konqhistoryview.cpp:58
+#, kde-format
+msgid "Open in New Tab"
+msgstr "Abrir nun novo separador"
+
+#: src/konqhistoryview.cpp:63
+#, fuzzy, kde-format
+#| msgid "Open in New Tab"
+msgid "Open in Current Tab"
+msgstr "Abrir nun novo separador"
+
+#: src/konqhistoryview.cpp:67
+#, kde-format
+msgid "&Copy Link Address"
+msgstr "&Copiar o enderezo da ligazón"
+
+#: src/konqhistoryview.cpp:72
+#, kde-format
+msgid "&Remove Entry"
+msgstr "&Retirar a entrada"
+
+#: src/konqhistoryview.cpp:79
+#, kde-format
+msgid "C&lear History"
+msgstr "&Limpar o historial"
+
+#: src/konqhistoryview.cpp:84
+#, kde-format
+msgid "&Preferences..."
+msgstr "&Preferencias…"
+
+#: src/konqhistoryview.cpp:91
+#, kde-format
+msgid "By &Name"
+msgstr "Segundo o &nome"
+
+#: src/konqhistoryview.cpp:97
+#, kde-format
+msgid "By &Date"
+msgstr "Segundo a &data"
+
+#: src/konqhistoryview.cpp:107
+#, kde-format
+msgid "Search in history"
+msgstr "Buscar no historial"
+
+#: src/konqhistoryview.cpp:168
+#, kde-format
+msgid "Do you really want to clear the entire history?"
+msgstr "Seguro que quere limpar o historial enteiro?"
+
+#: src/konqhistoryview.cpp:169
+#, kde-format
+msgctxt "@title:window"
+msgid "Clear History?"
+msgstr "Desexa limpar o historial?"
+
+#: src/konqmain.cpp:170
+#, kde-format
+msgid "Konqueror"
+msgstr "Konqueror"
+
+#: src/konqmain.cpp:171
+#, kde-format
+msgid "Web browser, file manager and document viewer."
+msgstr "Navegador web, xestor de ficheiros e visor de documentos."
+
+#: src/konqmain.cpp:173
+#, kde-format
+msgid "(C) 1999-2016, The Konqueror developers"
+msgstr "© 1999-2016 Desenvolvedores de Konqueror"
+
+#: src/konqmain.cpp:176
+#, kde-format
+msgid "Stefano Crocco"
+msgstr "Stefano Crocco"
+
+#: src/konqmain.cpp:176
+#, kde-format
+msgid "Current maintainer"
+msgstr "Mantedor actual."
+
+#: src/konqmain.cpp:177
+#, kde-format
+msgid "David Faure"
+msgstr "David Faure"
+
+#: src/konqmain.cpp:177
+#, kde-format
+msgid ""
+"Developer (framework, parts, JavaScript, I/O library) and former maintainer"
+msgstr ""
+"Desenvolvedor (framework, compoñentes, JavaScript, biblioteca de E/S) e "
+"antigo mantedor."
+
+#: src/konqmain.cpp:178
+#, kde-format
+msgid "Simon Hausmann"
+msgstr "Simon Hausmann"
+
+#: src/konqmain.cpp:178
+#, kde-format
+msgid "Developer (framework, parts)"
+msgstr "Desenvolvedor (infraestrutura, compoñentes)."
+
+#: src/konqmain.cpp:179
+#, kde-format
+msgid "Michael Reiher"
+msgstr "Michael Reiher"
+
+#: src/konqmain.cpp:179 src/konqmain.cpp:207 src/konqmain.cpp:213
+#, kde-format
+msgid "Developer (framework)"
+msgstr "Desenvolvedor (infraestrutura)."
+
+#: src/konqmain.cpp:180
+#, kde-format
+msgid "Matthias Welk"
+msgstr "Matthias Welk"
+
+#: src/konqmain.cpp:180
+#, kde-format
+msgid "Developer"
+msgstr "Desenvolvedor."
+
+#: src/konqmain.cpp:181
+#, kde-format
+msgid "Alexander Neundorf"
+msgstr "Alexander Neundorf"
+
+#: src/konqmain.cpp:181
+#, kde-format
+msgid "Developer (List views)"
+msgstr "Desenvolvedor (Vistas en lista)."
+
+#: src/konqmain.cpp:182
+#, kde-format
+msgid "Michael Brade"
+msgstr "Michael Brade"
+
+#: src/konqmain.cpp:182
+#, kde-format
+msgid "Developer (List views, I/O library)"
+msgstr "Desenvolvedor (Vistas en lista, biblioteca de E/S)."
+
+#: src/konqmain.cpp:183
+#, kde-format
+msgid "Lars Knoll"
+msgstr "Lars Knoll"
+
+#: src/konqmain.cpp:183 src/konqmain.cpp:184 src/konqmain.cpp:185
+#: src/konqmain.cpp:187 src/konqmain.cpp:188 src/konqmain.cpp:190
+#: src/konqmain.cpp:191 src/konqmain.cpp:192 src/konqmain.cpp:193
+#: src/konqmain.cpp:195
+#, kde-format
+msgid "Developer (HTML rendering engine)"
+msgstr "Desenvolvedor (motor de representación de HTML)."
+
+#: src/konqmain.cpp:184
+#, kde-format
+msgid "Dirk Mueller"
+msgstr "Dirk Mueller"
+
+#: src/konqmain.cpp:185
+#, kde-format
+msgid "Peter Kelly"
+msgstr "Peter Kelly"
+
+#: src/konqmain.cpp:186
+#, kde-format
+msgid "Waldo Bastian"
+msgstr "Waldo Bastian"
+
+#: src/konqmain.cpp:186
+#, kde-format
+msgid "Developer (HTML rendering engine, I/O library)"
+msgstr "Desenvolvedor (motor de representación de HTML, biblioteca de E/S)."
+
+#: src/konqmain.cpp:187
+#, kde-format
+msgid "Germain Garand"
+msgstr "Germain Garand"
+
+#: src/konqmain.cpp:188
+#, kde-format
+msgid "Leo Savernik"
+msgstr "Leo Savernik"
+
+#: src/konqmain.cpp:189
+#, kde-format
+msgid "Stephan Kulow"
+msgstr "Stephan Kulow"
+
+#: src/konqmain.cpp:189
+#, kde-format
+msgid ""
+"Developer (HTML rendering engine, I/O library, regression test framework)"
+msgstr ""
+"Desenvolvedor (motor de representación de HTML, biblioteca de E/S, "
+"infraestrutura de probas de regresión)."
+
+#: src/konqmain.cpp:190
+#, kde-format
+msgid "Antti Koivisto"
+msgstr "Antti Koivisto"
+
+#: src/konqmain.cpp:191
+#, kde-format
+msgid "Zack Rusin"
+msgstr "Zack Rusin"
+
+#: src/konqmain.cpp:192
+#, kde-format
+msgid "Tobias Anton"
+msgstr "Tobias Anton"
+
+#: src/konqmain.cpp:193
+#, kde-format
+msgid "Lubos Lunak"
+msgstr "Lubos Lunak"
+
+#: src/konqmain.cpp:194
+#, kde-format
+msgid "Maks Orlovich"
+msgstr "Maks Orlovich"
+
+#: src/konqmain.cpp:194 src/konqmain.cpp:196
+#, kde-format
+msgid "Developer (HTML rendering engine, JavaScript)"
+msgstr "Desenvolvedor (motor de representación de HTML, JavaScript)"
+
+#: src/konqmain.cpp:195
+#, kde-format
+msgid "Allan Sandfeld Jensen"
+msgstr "Allan Sandfeld Jensen"
+
+#: src/konqmain.cpp:196
+#, kde-format
+msgid "Apple Safari Developers"
+msgstr "Os desenvolvedores do Safari de Apple"
+
+#: src/konqmain.cpp:197
+#, kde-format
+msgid "Harri Porten"
+msgstr "Harri Porten"
+
+#: src/konqmain.cpp:197
+#, kde-format
+msgid "Developer (JavaScript)"
+msgstr "Desenvolvedor (JavaScript)"
+
+#: src/konqmain.cpp:198
+#, kde-format
+msgid "Koos Vriezen"
+msgstr "Koos Vriezen"
+
+#: src/konqmain.cpp:198
+#, kde-format
+msgid "Developer (Java applets and other embedded objects)"
+msgstr "Desenvolvedor (miniaplicativos de Java e outros obxectos incluídos)"
+
+#: src/konqmain.cpp:199
+#, kde-format
+msgid "Matt Koss"
+msgstr "Matt Koss"
+
+#: src/konqmain.cpp:199 src/konqmain.cpp:200
+#, kde-format
+msgid "Developer (I/O library)"
+msgstr "Desenvolvedor (biblioteca de E/S)"
+
+#: src/konqmain.cpp:200
+#, kde-format
+msgid "Alex Zepeda"
+msgstr "Alex Zepeda"
+
+#: src/konqmain.cpp:201
+#, kde-format
+msgid "Richard Moore"
+msgstr "Richard Moore"
+
+#: src/konqmain.cpp:201 src/konqmain.cpp:202
+#, kde-format
+msgid "Developer (Java applet support)"
+msgstr "Desenvolvedor (compatibilidade con miniaplicativos de Java)"
+
+#: src/konqmain.cpp:202
+#, kde-format
+msgid "Dima Rogozin"
+msgstr "Dima Rogozin"
+
+#: src/konqmain.cpp:203
+#, kde-format
+msgid "Wynn Wilkes"
+msgstr "Wynn Wilkes"
+
+#: src/konqmain.cpp:203
+#, kde-format
+msgid ""
+"Developer (Java 2 security manager support,\n"
+" and other major improvements to applet support)"
+msgstr ""
+"Desenvolvedor (compatibilidade co xestor de seguridade de Java 2,\n"
+"e outras melloras na compatibilidade con miniaplicativos)"
+
+#: src/konqmain.cpp:204
+#, kde-format
+msgid "Stefan Schimanski"
+msgstr "Stefan Schimanski"
+
+#: src/konqmain.cpp:204
+#, kde-format
+msgid "Developer (Netscape plugin support)"
+msgstr "Desenvolvedor (compatibilidade con complementos de Netscape)"
+
+#: src/konqmain.cpp:205
+#, kde-format
+msgid "George Staikos"
+msgstr "George Staikos"
+
+#: src/konqmain.cpp:205
+#, kde-format
+msgid "Developer (SSL, Netscape plugins)"
+msgstr "Desenvolvedor (SSL, complementos de Netscape)"
+
+#: src/konqmain.cpp:206
+#, kde-format
+msgid "Dawit Alemayehu"
+msgstr "Dawit Alemayehu"
+
+#: src/konqmain.cpp:206
+#, kde-format
+msgid "Developer (I/O library, Authentication support)"
+msgstr "Desenvolvedor (Biblioteca de E/S, funcionalidade de autenticación)"
+
+#: src/konqmain.cpp:207
+#, kde-format
+msgid "Carsten Pfeiffer"
+msgstr "Carsten Pfeiffer"
+
+#: src/konqmain.cpp:208
+#, kde-format
+msgid "Torsten Rahn"
+msgstr "Torsten Rahn"
+
+#: src/konqmain.cpp:208
+#, kde-format
+msgid "Graphics/icons"
+msgstr "Gráficos/iconas"
+
+#: src/konqmain.cpp:209
+#, kde-format
+msgid "Torben Weis"
+msgstr "Torben Weis"
+
+#: src/konqmain.cpp:209
+#, kde-format
+msgid "KFM author"
+msgstr "Autor de KFM"
+
+#: src/konqmain.cpp:210
+#, kde-format
+msgid "Joseph Wenninger"
+msgstr "Joseph Wenninger"
+
+#: src/konqmain.cpp:210
+#, kde-format
+msgid "Developer (navigation panel framework)"
+msgstr "Desenvolvedor (infraestrutura de panel de navegación)"
+
+#: src/konqmain.cpp:211
+#, kde-format
+msgid "Stephan Binner"
+msgstr "Stephan Binner"
+
+#: src/konqmain.cpp:211
+#, kde-format
+msgid "Developer (misc stuff)"
+msgstr "Desenvolvedor (traballo diverso)"
+
+#: src/konqmain.cpp:212
+#, kde-format
+msgid "Ivor Hewitt"
+msgstr "Ivor Hewitt"
+
+#: src/konqmain.cpp:212
+#, kde-format
+msgid "Developer (AdBlock filter)"
+msgstr "Desenvolvedor (filtro AdBlock)"
+
+#: src/konqmain.cpp:213
+#, kde-format
+msgid "Eduardo Robles Elvira"
+msgstr "Eduardo Robles Elvira"
+
+#: src/konqmain.cpp:223
+#, kde-format
+msgid "Start without a default window, when called without URLs"
+msgstr "Comezar sen unha xanela predeterminada, cando se chama sen URL"
+
+#: src/konqmain.cpp:224
+#, kde-format
+msgid ""
+"Preload for later use. This mode does not support URLs on the command line"
+msgstr ""
+"Precargar para usar máis tarde. Este modo non admite URL na liña de ordes"
+
+#: src/konqmain.cpp:225
+#, kde-format
+msgid "Profile to open (DEPRECATED, IGNORED)"
+msgstr "Perfil para abrir (OBSOLETO, IGNORADO)"
+
+#: src/konqmain.cpp:225
+#, kde-format
+msgid "profile"
+msgstr "perfil"
+
+#: src/konqmain.cpp:226
+#, kde-format
+msgid "List available sessions"
+msgstr "Listar as sesións dispoñíbeis"
+
+#: src/konqmain.cpp:227
+#, kde-format
+msgid "Session to open"
+msgstr "Sesión para abrir"
+
+#: src/konqmain.cpp:227
+#, kde-format
+msgid "session"
+msgstr "sesión"
+
+#: src/konqmain.cpp:228
+#, kde-format
+msgid "Mimetype to use for this URL (e.g. text/html or inode/directory)"
+msgstr ""
+"Tipo MIME a empregar para este URL (p.ex. text/html ou inode/directory)"
+
+#: src/konqmain.cpp:228
+#, kde-format
+msgid "mimetype"
+msgstr "tipo MIME"
+
+#: src/konqmain.cpp:229
+#, kde-format
+msgid "Part to use (e.g. khtml or kwebkitpart)"
+msgstr "A compoñente para usar (p.ex. khtml ou kwebkitpart)"
+
+#: src/konqmain.cpp:229
+#, kde-format
+msgid "service"
+msgstr "servizo"
+
+#: src/konqmain.cpp:230
+#, kde-format
+msgid ""
+"For URLs that point to files, opens the directory and selects the file, "
+"instead of opening the actual file"
+msgstr ""
+"Para URL que apuntan a ficheiros, abre o directorio e escolle o ficheiro, no "
+"canto de abrir realmente o ficheiro"
+
+#: src/konqmain.cpp:231
+#, kde-format
+msgid "The files/URLs opened by the application will be deleted after use"
+msgstr ""
+"Os ficheiros ou enderezos URL abertos pola aplicación eliminaranse despois "
+"de usalos"
+
+#: src/konqmain.cpp:233
+#, kde-format
+msgid "Location to open"
+msgstr "Lugar para abrir"
+
+#: src/konqmainwindow.cpp:658
+#, kde-format
+msgctxt "@title:tab"
+msgid "Loading..."
+msgstr "Estase a cargar…"
+
+#: src/konqmainwindow.cpp:690
+#, kde-format
+msgid "Access denied"
+msgstr "Acceso denegado"
+
+#: src/konqmainwindow.cpp:1465
+#, kde-format
+msgid "Open File"
+msgstr "Abrir o ficheiro"
+
+#: src/konqmainwindow.cpp:1548
+#, kde-format
+msgid "Canceled."
+msgstr "Cancelado."
+
+#: src/konqmainwindow.cpp:1584
+#, kde-format
+msgid ""
+"This page contains changes that have not been submitted.\n"
+"Reloading the page will discard these changes."
+msgstr ""
+"Esta páxina contén cambios que non se enviaron.\n"
+"Se carga de novo a páxina descartará estes cambios."
+
+#: src/konqmainwindow.cpp:1585 src/konqmainwindow.cpp:2282
+#: src/konqmainwindow.cpp:2375 src/konqmainwindow.cpp:2407
+#: src/konqmainwindow.cpp:2450 src/konqmainwindow.cpp:2472
+#: src/konqmainwindow.cpp:4849
+#, kde-format
+msgctxt "@title:window"
+msgid "Discard Changes?"
+msgstr "Desexa descartar os cambios?"
+
+#: src/konqmainwindow.cpp:1585 src/konqmainwindow.cpp:2282
+#: src/konqmainwindow.cpp:2375 src/konqmainwindow.cpp:2407
+#: src/konqmainwindow.cpp:2450 src/konqmainwindow.cpp:2473
+#: src/konqmainwindow.cpp:4849
+#, kde-format
+msgid "&Discard Changes"
+msgstr "&Descartar os cambios"
+
+#: src/konqmainwindow.cpp:1952 src/konqmainwindow.cpp:1958
+#, kde-format
+msgid "Home Folder"
+msgstr "Cartafol persoal"
+
+#: src/konqmainwindow.cpp:1953 src/konqmainwindow.cpp:3424
+#, kde-format
+msgid "Home"
+msgstr "Páxina de inicio"
+
+#: src/konqmainwindow.cpp:1959
+#, kde-format
+msgid "Navigate to your 'Home Folder'"
+msgstr "Ir ao seu «Cartafol persoal»"
+
+#: src/konqmainwindow.cpp:1960
+#, kde-format
+msgid "Navigate to your local 'Home Folder'"
+msgstr "Ir ao seu «Cartafol persoal» local"
+
+#. i18n: ectx: label, entry, group (UserSettings)
+#: src/konqmainwindow.cpp:1963 src/konqueror.kcfg:16
+#, kde-format
+msgid "Home Page"
+msgstr "Páxina de inicio"
+
+#: src/konqmainwindow.cpp:1965
+#, kde-format
+msgid "Navigate to your 'Home Page'"
+msgstr "Ir á súa «Páxina de inicio»"
+
+#: src/konqmainwindow.cpp:1966
+#, kde-format
+msgid ""
+"<html>Navigate to your 'Home Page'<br /><br />You can configure the location "
+"where this button takes you under <b>Settings -> Configure Konqueror -> "
+"General</b>.</html>"
+msgstr ""
+"<html>Ir á súa «Páxina de inicio»<br /><br />Pode configurar o lugar ao que "
+"o leva este botón en <b>Configuración -> Configurar Konqueror -> Xeral</b>.</"
+"html>"
+
+#: src/konqmainwindow.cpp:2281
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Detaching the tab will discard these changes."
+msgstr ""
+"Este separador contén cambios que non se enviaron.\n"
+"Se desprende o separador descartaranse os cambios."
+
+#: src/konqmainwindow.cpp:2374
+#, kde-format
+msgid ""
+"This view contains changes that have not been submitted.\n"
+"Closing the view will discard these changes."
+msgstr ""
+"Esta vista contén cambios que non se enviaron.\n"
+"Se pecha a vista descartará os cambios."
+
+#: src/konqmainwindow.cpp:2406
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Closing the tab will discard these changes."
+msgstr ""
+"Este separador contén cambios que non se enviaron.\n"
+"Se pecha o separador descartará os cambios."
+
+#: src/konqmainwindow.cpp:2432
+#, kde-format
+msgid "Do you really want to close all other tabs?"
+msgstr "Seguro que quere pechar os outros separadores?"
+
+#: src/konqmainwindow.cpp:2433 src/konqmainwindow.cpp:3505 src/konqtabs.cpp:335
+#, kde-format
+msgid "Close &Other Tabs"
+msgstr "Pechar os &outros separadores"
+
+#: src/konqmainwindow.cpp:2433
+#, kde-format
+msgctxt "@title:window"
+msgid "Close Other Tabs Confirmation"
+msgstr "Confirmación do peche dos outros separadores"
+
+#: src/konqmainwindow.cpp:2449
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Closing other tabs will discard these changes."
+msgstr ""
+"Este separador contén cambios que aínda non se enviaron.\n"
+"Se pecha os outros separadores descartará os cambios."
+
+#: src/konqmainwindow.cpp:2471
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Reloading all tabs will discard these changes."
+msgstr ""
+"Este separador contén cambios que aínda non se enviaron.\n"
+"Se carga de novo os separadores descartará os cambios."
+
+#: src/konqmainwindow.cpp:2513
+#, kde-format
+msgctxt "@title:window"
+msgid "Enter Target"
+msgstr "Inserir o destino"
+
+#: src/konqmainwindow.cpp:2520
+#, kde-format
+msgid "<qt><b>%1</b> is not valid</qt>"
+msgstr "<qt><b>%1</b> non é correcto</qt>"
+
+#: src/konqmainwindow.cpp:2530
+#, kde-format
+msgid "Copy selected files from %1 to:"
+msgstr "Copiar os ficheiros escollidos de %1 a:"
+
+#: src/konqmainwindow.cpp:2543
+#, kde-format
+msgid "Move selected files from %1 to:"
+msgstr "Mover os ficheiros escollidos de %1 a:"
+
+#: src/konqmainwindow.cpp:2717
+#, kde-format
+msgctxt "This menu entry empties the closed items history"
+msgid "Empty Closed Items History"
+msgstr "Baleirar o historial de elementos pechados"
+
+#: src/konqmainwindow.cpp:2740
+#, kde-format
+msgid "Save As..."
+msgstr "Gardar como…"
+
+#: src/konqmainwindow.cpp:2742
+#, kde-format
+msgid "Manage..."
+msgstr "Xestionar…"
+
+#: src/konqmainwindow.cpp:3333
+#, kde-format
+msgid "New &Window"
+msgstr "Nova &xanela"
+
+#: src/konqmainwindow.cpp:3338
+#, kde-format
+msgid "&Duplicate Window"
+msgstr "&Duplicar a xanela"
+
+#: src/konqmainwindow.cpp:3343
+#, kde-format
+msgid "Send &Link Address..."
+msgstr "Enviar o enderezo da &ligazón…"
+
+#: src/konqmainwindow.cpp:3347
+#, kde-format
+msgid "S&end File..."
+msgstr "Enviar o &ficheiro…"
+
+#: src/konqmainwindow.cpp:3351
+#, kde-format
+msgid "&Open Location"
+msgstr "Abrir o &lugar"
+
+#: src/konqmainwindow.cpp:3357
+#, kde-format
+msgid "&Open File..."
+msgstr "Abrir o &ficheiro…"
+
+#: src/konqmainwindow.cpp:3362
+#, kde-format
+msgid "&Find File..."
+msgstr "Atopar un &ficheiro…"
+
+#: src/konqmainwindow.cpp:3371
+#, kde-format
+msgid "Lock to Current Location"
+msgstr "Trancar na localización actual"
+
+#: src/konqmainwindow.cpp:3374
+#, kde-format
+msgctxt "This option links konqueror views"
+msgid "Lin&k View"
+msgstr "Li&gar a vista"
+
+#: src/konqmainwindow.cpp:3379
+#, kde-format
+msgid "&Up"
+msgstr "&Subir"
+
+#: src/konqmainwindow.cpp:3389
+#, kde-format
+msgid "Closed Items"
+msgstr "Elementos pechados"
+
+#: src/konqmainwindow.cpp:3402
+#, kde-format
+msgid "Sessions"
+msgstr "Sesións"
+
+#: src/konqmainwindow.cpp:3429
+#, kde-format
+msgctxt "@action:inmenu Go"
+msgid "Most Often Visited"
+msgstr "As visitadas máis a miúdo"
+
+#: src/konqmainwindow.cpp:3433
+#, kde-format
+msgctxt "@action:inmenu Go"
+msgid "Recently Visited"
+msgstr "As visitadas recentemente"
+
+#: src/konqmainwindow.cpp:3442
+#, kde-format
+msgctxt "@action:inmenu Go"
+msgid "Show History"
+msgstr "Mostrar o historial"
+
+#: src/konqmainwindow.cpp:3455
+#, kde-format
+msgid "Configure Extensions..."
+msgstr "Configurar as extensións…"
+
+#: src/konqmainwindow.cpp:3459
+#, kde-format
+msgid "Configure Spell Checking..."
+msgstr "Configurar a corrección ortográfica…"
+
+#: src/konqmainwindow.cpp:3465
+#, kde-format
+msgid "Split View &Left/Right"
+msgstr "Dividir a vista en &esquerda/dereita"
+
+#: src/konqmainwindow.cpp:3470
+#, kde-format
+msgid "Split View &Top/Bottom"
+msgstr "Dividir a vista en &superior/inferior"
+
+#: src/konqmainwindow.cpp:3475 src/konqtabs.cpp:456
+#, kde-format
+msgid "&New Tab"
+msgstr "&Novo separador"
+
+#: src/konqmainwindow.cpp:3484
+#, kde-format
+msgid "&Duplicate Current Tab"
+msgstr "&Duplicar o separador actual"
+
+#: src/konqmainwindow.cpp:3489
+#, kde-format
+msgid "Detach Current Tab"
+msgstr "Desprender o separador actual"
+
+#: src/konqmainwindow.cpp:3494
+#, kde-format
+msgid "&Close Active View"
+msgstr "&Pechar a vista activa"
+
+#: src/konqmainwindow.cpp:3499
+#, kde-format
+msgid "Close Current Tab"
+msgstr "Pechar o separador actual"
+
+#: src/konqmainwindow.cpp:3509
+#, kde-format
+msgid "Activate Next Tab"
+msgstr "Activar o seguinte separador"
+
+#: src/konqmainwindow.cpp:3513
+#, kde-format
+msgid "Activate Previous Tab"
+msgstr "Activar o separador anterior"
+
+#: src/konqmainwindow.cpp:3520
+#, kde-format
+msgid "Activate Tab %1"
+msgstr "Activar o separador %1"
+
+#: src/konqmainwindow.cpp:3525
+#, kde-format
+msgid "Move Tab Left"
+msgstr "Mover o separador á esquerda"
+
+#: src/konqmainwindow.cpp:3530
+#, kde-format
+msgid "Move Tab Right"
+msgstr "Mover o separador á dereita"
+
+#: src/konqmainwindow.cpp:3538
+#, kde-format
+msgid "Dump Debug Info"
+msgstr "Envorcar a información de depuración"
+
+#: src/konqmainwindow.cpp:3556
+#, kde-format
+msgid "&Reload"
+msgstr "&Cargar de novo"
+
+#: src/konqmainwindow.cpp:3561 src/konqtabs.cpp:313
+#, kde-format
+msgid "&Reload All Tabs"
+msgstr "&Cargar de novo os separadores"
+
+#: src/konqmainwindow.cpp:3569
+#, kde-format
+msgid "&Force Reload"
+msgstr "&Forzar a recarga"
+
+#: src/konqmainwindow.cpp:3595
+#, kde-format
+msgid "&Stop"
+msgstr "&Deter"
+
+#: src/konqmainwindow.cpp:3604
+#, kde-format
+msgid "Throbber"
+msgstr "Indicador de actividade"
+
+#: src/konqmainwindow.cpp:3608 src/konqmainwindow.cpp:3611
+#, kde-format
+msgid "L&ocation: "
+msgstr "L&ugar: "
+
+#: src/konqmainwindow.cpp:3618
+#, kde-format
+msgid "Location Bar"
+msgstr "Barra de lugar"
+
+#: src/konqmainwindow.cpp:3624
+#, kde-format
+msgid ""
+"<html>Location Bar<br /><br />Enter a web address or search term.</html>"
+msgstr ""
+"<html>Barra de enderezo<br /><br />Insira un enderezo web ou un termo a "
+"buscar.</html>"
+
+#: src/konqmainwindow.cpp:3628
+#, kde-format
+msgid "Clear Location Bar"
+msgstr "Baleirar a barra de lugares"
+
+#: src/konqmainwindow.cpp:3632
+#, kde-format
+msgid ""
+"<html>Clear Location bar<br /><br />Clears the contents of the location bar."
+"</html>"
+msgstr ""
+"<html>Baleirar a barra de lugares<br /><br />Baleira o contido da barra de "
+"lugares.</html>"
+
+#: src/konqmainwindow.cpp:3637
+#, kde-format
+msgid "&Bookmarks"
+msgstr "&Marcadores"
+
+#: src/konqmainwindow.cpp:3665
+#, kde-format
+msgid "Kon&queror Introduction"
+msgstr "Introdución a Kon&queror"
+
+#: src/konqmainwindow.cpp:3670
+#, kde-format
+msgid "Go"
+msgstr "Ir a"
+
+#: src/konqmainwindow.cpp:3672
+#, kde-format
+msgid ""
+"<html>Go<br /><br />Goes to the page that has been entered into the location "
+"bar.</html>"
+msgstr ""
+"<html>Ir a<br /><br />Vai á páxina inserida na barra de lugares.</html>"
+
+#: src/konqmainwindow.cpp:3678
+#, kde-format
+msgid ""
+"<html>Enter the parent folder<br /><br />For instance, if the current "
+"location is file:/home/%1 clicking this button will take you to file:/home.</"
+"html>"
+msgstr ""
+"<html>Entrar no cartafol superior<br /><br />Por exemplo, se a localización "
+"actual é file:/home/%1 premendo este botón irá a file:/home.</html>"
+
+#: src/konqmainwindow.cpp:3681
+#, kde-format
+msgid "Enter the parent folder"
+msgstr "Entrar no cartafol superior"
+
+#: src/konqmainwindow.cpp:3683 src/konqmainwindow.cpp:3684
+#, kde-format
+msgid "Move backwards one step in the browsing history"
+msgstr "Mover cara atrás un paso no historial de navegación"
+
+#: src/konqmainwindow.cpp:3686 src/konqmainwindow.cpp:3687
+#, kde-format
+msgid "Move forward one step in the browsing history"
+msgstr "Mover cara diante un paso no historial de navegación"
+
+#: src/konqmainwindow.cpp:3689 src/konqmainwindow.cpp:3690
+#, kde-format
+msgid "Move backwards one step in the closed tabs history"
+msgstr "Mover cara atrás un paso no historial de separadores pechados"
+
+#: src/konqmainwindow.cpp:3692
+#, kde-format
+msgid ""
+"<html>Reload the currently displayed document<br /><br />This may, for "
+"example, be needed to refresh web pages that have been modified since they "
+"were loaded, in order to make the changes visible.</html>"
+msgstr ""
+"<html>Cargar de novo o documento mostrado<br /><br />Isto podería, por "
+"exemplo, ser preciso para actualizar as páxinas web que fosen modificadas "
+"desde que se cargasen, de xeito que os cambios sexan visíbeis.</html>"
+
+#: src/konqmainwindow.cpp:3695
+#, kde-format
+msgid "Reload the currently displayed document"
+msgstr "Cargar de novo o documento mostrado"
+
+#: src/konqmainwindow.cpp:3697
+#, kde-format
+msgid ""
+"<html>Reload all currently displayed documents in tabs<br /><br />This may, "
+"for example, be needed to refresh web pages that have been modified since "
+"they were loaded, in order to make the changes visible.</html>"
+msgstr ""
+"<html>Cargar de novo os documentos mostrados nos separadores<br /><br />Isto "
+"podería, por exemplo, ser preciso para actualizar páxinas web que se "
+"modificaron desde que se cargaron, de xeito que os cambios sexan visíbeis.</"
+"html>"
+
+#: src/konqmainwindow.cpp:3700
+#, kde-format
+msgid "Reload all currently displayed document in tabs"
+msgstr "Cargar de novo os documentos mostrados nos separadores"
+
+#: src/konqmainwindow.cpp:3702
+#, kde-format
+msgid ""
+"<html>Stop loading the document<br /><br />All network transfers will be "
+"stopped and Konqueror will display the content that has been received so far."
+"</html>"
+msgstr ""
+"<html>Deter a carga do documento<br /><br />Todas as transferencias de rede "
+"deteranse e Konqueror mostrará o contido que fose recibido ata agora.</html>"
+
+#: src/konqmainwindow.cpp:3706
+#, kde-format
+msgid ""
+"<html>Reload the currently displayed document<br /><br />This may, for "
+"example, be needed to refresh web pages that have been modified since they "
+"were loaded, in order to make the changes visible. Any images on the page "
+"are downloaded again, even if cached copies exist.</html>"
+msgstr ""
+"<html>Cargar de novo o documento mostrado<br /><br />Isto podería, por "
+"exemplo, ser preciso para actualizar páxinas web que se modificasen desde "
+"que se cargaron, de xeito que os cambios sexan visíbeis. As imaxes da páxina "
+"descárganse de novo, mesmo se existe unha copia na caché.</html>"
+
+#: src/konqmainwindow.cpp:3710
+#, kde-format
+msgid ""
+"Force a reload of the currently displayed document and any contained images"
+msgstr ""
+"Obriga a que se cargue de novo o documento que se está a mostrar e as imaxes "
+"que contén"
+
+#: src/konqmainwindow.cpp:3712
+#, kde-format
+msgid "Stop loading the document"
+msgstr "Deter a carga do documento"
+
+#: src/konqmainwindow.cpp:3714
+#, kde-format
+msgid ""
+"<html>Cut the currently selected text or item(s) and move it to the system "
+"clipboard<br /><br />This makes it available to the <b>Paste</b> command in "
+"Konqueror and other KDE applications.</html>"
+msgstr ""
+"<html>Cortar o texto ou os elementos escollidos e movelos ao portapapeis do "
+"sistema<br /><br />Isto pono a disposición da orde <b>Pegar</b> en Konqueror "
+"e noutras aplicacións de KDE.</html>"
+
+#: src/konqmainwindow.cpp:3718
+#, kde-format
+msgid "Move the selected text or item(s) to the clipboard"
+msgstr "Mover o texto/elementos escollidos ao portapapeis"
+
+#: src/konqmainwindow.cpp:3720
+#, kde-format
+msgid ""
+"<html>Copy the currently selected text or item(s) to the system "
+"clipboard<br /><br />This makes it available to the <b>Paste</b> command in "
+"Konqueror and other KDE applications.</html>"
+msgstr ""
+"<html>Copiar o texto ou os elementos escollidos no portapapeis<br /><br /"
+">Isto pono a disposición da orde <b>Pegar</b> en Konqueror e outras "
+"aplicacións de KDE.</html>"
+
+#: src/konqmainwindow.cpp:3724
+#, kde-format
+msgid "Copy the selected text or item(s) to the clipboard"
+msgstr "Copiar o texto/elementos escollidos ao portapapeis"
+
+#: src/konqmainwindow.cpp:3726
+#, kde-format
+msgid ""
+"<html>Paste the previously cut or copied clipboard contents<br /><br />This "
+"also works for text copied or cut from other KDE applications.</html>"
+msgstr ""
+"<html>Pegar o contido do portapapeis<br /><br />Isto tamén é correcto para "
+"texto copiado ou cortado doutras aplicacións de KDE.</html>"
+
+#: src/konqmainwindow.cpp:3729
+#, kde-format
+msgid "Paste the clipboard contents"
+msgstr "Pegar o contido do portapapeis"
+
+#: src/konqmainwindow.cpp:3731
+#, kde-format
+msgid ""
+"<html>Print the currently displayed document<br /><br />You will be "
+"presented with a dialog where you can set various options, such as the "
+"number of copies to print and which printer to use.<br /><br />This dialog "
+"also provides access to special KDE printing services such as creating a PDF "
+"file from the current document.</html>"
+msgstr ""
+"<html>Imprimir o documento que se mostra<br /><br />Presentaráselle un "
+"diálogo onde poida estabelecer varias opcións, como o número de copias para "
+"imprimir ou a impresora a empregar.<br /><br />Este diálogo tamén fornece "
+"acceso a servizos especiais de impresión de KDE, como crear un ficheiro PDF "
+"a partir do documento actual.</html>"
+
+#: src/konqmainwindow.cpp:3737
+#, kde-format
+msgid "Print the current document"
+msgstr "Imprimir este documento"
+
+#: src/konqmainwindow.cpp:3739
+#, kde-format
+msgid ""
+"A locked view cannot change folders. Use in combination with 'link view' to "
+"explore many files from one folder"
+msgstr ""
+"Nunha vista trancada non se pode cambiar de cartafol. Úseo xunto con «ligar "
+"vista» para examinar moitos ficheiros desde un cartafol."
+
+#: src/konqmainwindow.cpp:3740
+#, kde-format
+msgid ""
+"Sets the view as 'linked'. A linked view follows folder changes made in "
+"other linked views."
+msgstr ""
+"Estabelece a vista como «ligada». Unha vista ligada segue os cambios de "
+"cartafol feitos noutras vistas ligadas."
+
+#: src/konqmainwindow.cpp:3744
+#, fuzzy, kde-format
+#| msgid "C&lose Current Tab"
+msgid "&Inspect Current Page"
+msgstr "Pechar o separador actua&l"
+
+#: src/konqmainwindow.cpp:3745
+#, kde-format
+msgid ""
+"<html>Shows the developer tools for the current page<br/><br/>The current "
+"view is split in two and the developer tools are displayed in the second half"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3746
+#, kde-format
+msgid "Shows the developer tools for the current page"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3912
+#, kde-format
+msgid "Copy &Files..."
+msgstr "Copiar os &ficheiros…"
+
+#: src/konqmainwindow.cpp:3916
+#, kde-format
+msgid "M&ove Files..."
+msgstr "M&over os ficheiros…"
+
+#: src/konqmainwindow.cpp:4245
+#, kde-format
+msgid ""
+"You have requested to open more than 20 bookmarks in tabs. This might take a "
+"while. Continue?"
+msgstr ""
+"Pediu abrir máis de 20 marcadores en separadores. Isto pode levar un tempo, "
+"quere continuar?"
+
+#: src/konqmainwindow.cpp:4247
+#, kde-format
+msgctxt "@title:window"
+msgid "Open bookmarks folder in new tabs"
+msgstr "Abrir o cartafol de marcadores en novos separadores"
+
+#: src/konqmainwindow.cpp:4405
+#, kde-format
+msgid "Open in T&his Window"
+msgstr "Abrir nesta &xanela"
+
+#: src/konqmainwindow.cpp:4406
+#, kde-format
+msgid "Open the document in current window"
+msgstr "Abrir o documento na xanela actual"
+
+#: src/konqmainwindow.cpp:4413
+#, kde-format
+msgid "Open the document in a new window"
+msgstr "Abre o documento nunha nova xanela"
+
+#: src/konqmainwindow.cpp:4419
+#, kde-format
+msgid "Open in &New Tab"
+msgstr "Abrir nun &novo separador"
+
+#: src/konqmainwindow.cpp:4421
+#, kde-format
+msgid "Open the document in a new tab"
+msgstr "Abre o documento nun novo separador"
+
+#: src/konqmainwindow.cpp:4637
+#, kde-format
+msgid "&Open With"
+msgstr "&Abrir con"
+
+#: src/konqmainwindow.cpp:4650
+#, kde-format
+msgid "Open with %1"
+msgstr "Abrir con %1"
+
+#: src/konqmainwindow.cpp:4698
+#, kde-format
+msgctxt "@action:inmenu View"
+msgid "&View Mode"
+msgstr "Modo da &vista"
+
+#: src/konqmainwindow.cpp:4815
+#, kde-format
+msgid ""
+"You have multiple tabs open in this window, are you sure you want to quit?"
+msgstr "Ten varios separadores abertos nesta xanela, seguro que quere saír?"
+
+#: src/konqmainwindow.cpp:4817
+#, kde-format
+msgctxt "@title:window"
+msgid "Confirmation"
+msgstr "Confirmación"
+
+#: src/konqmainwindow.cpp:4819
+#, kde-format
+msgid "C&lose Current Tab"
+msgstr "Pechar o separador actua&l"
+
+#: src/konqmainwindow.cpp:4845
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Closing the window will discard these changes."
+msgstr ""
+"Este separador contén cambios que non se enviaron.\n"
+"Se pecha a xanela descartaranse os cambios."
+
+#: src/konqmainwindow.cpp:4846
+#, kde-format
+msgid ""
+"This page contains changes that have not been submitted.\n"
+"Closing the window will discard these changes."
+msgstr ""
+"Esta páxina contén cambios que non se enviaron.\n"
+"Se pecha a xanela descartaranse os cambios."
+
+#: src/konqmainwindow.cpp:5003
+#, kde-format
+msgid ""
+"Your sidebar is not functional or unavailable. A new entry cannot be added."
+msgstr ""
+"A barra lateral non é funcional ou non está dispoñíbel. Non se pode engadir "
+"unha nova entrada."
+
+#: src/konqmainwindow.cpp:5003 src/konqmainwindow.cpp:5010
+#, kde-format
+msgctxt "@title:window"
+msgid "Web Sidebar"
+msgstr "Barra lateral web"
+
+#: src/konqmainwindow.cpp:5008
+#, kde-format
+msgid "Add new web extension \"%1\" to your sidebar?"
+msgstr "Desexa engadir a nova extensión web «%1» á barra lateral?"
+
+#: src/konqmainwindow.cpp:5010
+#, kde-format
+msgid "Add"
+msgstr "Engadir"
+
+#: src/konqmainwindow.cpp:5010
+#, kde-format
+msgid "Do Not Add"
+msgstr "Non engadir"
+
+#: src/konqmainwindow.cpp:5358
+#, kde-format
+msgid ""
+"There appears to be a configuration error. You have associated Konqueror "
+"with %1, but it cannot handle this file type."
+msgstr ""
+"Semella que hai un erro de configuración. Asociou Konqueror con %1, pero non "
+"pode manexar este tipo de ficheiro."
+
+#: src/konqmainwindow.cpp:5439
+#, kde-format
+msgid ""
+"Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
+"proxy will be used\n"
+"\n"
+" QtWebEngine only support a fixed proxy, so proxy auto-configuration (PAC) "
+"and Web Proxy Auto-Discovery protocol can't be used with QtWebEngine. If you "
+"need a proxy, please select the system proxy configuration or specify a "
+"proxy URL manually in the settings dialog. Do you want to change proxy "
+"settings now?"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5444
+#, kde-format
+msgid "Unsupported proxy configuration"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5444
+#, kde-format
+msgid "Don't use a proxy"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5445 src/konqmainwindow.cpp:5463
+#, fuzzy, kde-format
+#| msgid "Show Configuration Button"
+msgid "Show proxy configuration dialog"
+msgstr "Mostrar o botón de configuración"
+
+#: src/konqmainwindow.cpp:5459
+#, kde-format
+msgid ""
+"Your proxy configuration can't be used with the QtWebEngine HTML engine "
+"because it doesn't support having different proxies for the HTTP and HTTPS "
+"protocols. Your current settings are:<p><b>HTTP proxy:</b> <tt>%1</tt></"
+"p><p><b>HTTPS proxy: </b><tt>%2</tt></p>What do you want to do?"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5462
+#, kde-format
+msgid "Conflicting proxy configuration"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5463
+#, kde-format
+msgid "Use HTTP proxy (only this time)"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5463
+#, kde-format
+msgid "Use HTTPS proxy (only this time)"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5540
+#, kde-format
+msgid ""
+"You have entered Complete Full Screen mode (the user interface is completely "
+"hidden). You can exit it by pressing the keyboard shortcut for Full Screen "
+"Mode (%1)"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: src/konqnewsessiondlg_base.ui:28
+#, kde-format
+msgid "Save open &tabs and windows for easy retrieval"
+msgstr "Lembrar as xanelas e &separadores abertos para recuperalos facilmente"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_pAllWindows)
+#: src/konqnewsessiondlg_base.ui:34
+#, kde-format
+msgid "A&ll open windows"
+msgstr "Todas as xane&las abertas"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_pCurrentWindow)
+#: src/konqnewsessiondlg_base.ui:44
+#, kde-format
+msgid "Onl&y current window"
+msgstr "Só a &xanela actual"
+
+#. i18n: ectx: property (text), widget (QLabel, lblSessionName)
+#: src/konqnewsessiondlg_base.ui:56
+#, kde-format
+msgid "Session n&ame:"
+msgstr "Nome d&a sesión:"
+
+#: src/konqsessiondlg.cpp:60
+#, kde-format
+msgctxt "@title:window"
+msgid "Manage Sessions"
+msgstr "Xestionar as sesións"
+
+#: src/konqsessiondlg.cpp:168
+#, kde-format
+msgctxt "@title:window"
+msgid "Rename Session"
+msgstr "Renomear a sesión"
+
+#: src/konqsessiondlg.cpp:215
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Session"
+msgstr "Gardar a sesión"
+
+#: src/konqsessiondlg.cpp:251
+#, kde-format
+msgid ""
+"A session with the name '%1' already exists, do you want to overwrite it?"
+msgstr "Xa existe unha sesión co nome «%1», quere sobrescribila?"
+
+#: src/konqsessiondlg.cpp:252
+#, kde-format
+msgctxt "@title:window"
+msgid "Session exists. Overwrite?"
+msgstr "Esa sesión xa existe. Desexa sobrescribila?"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pNewButton)
+#: src/konqsessiondlg_base.ui:26
+#, kde-format
+msgctxt "@action:button New session"
+msgid "New..."
+msgstr "Nova…"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pSaveCurrentButton)
+#: src/konqsessiondlg_base.ui:33
+#, kde-format
+msgctxt "@action:button Save current session"
+msgid "Save Current..."
+msgstr "Gardar a actual…"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pRenameButton)
+#: src/konqsessiondlg_base.ui:40
+#, kde-format
+msgctxt "@action:button Rename session"
+msgid "Rename..."
+msgstr "Renomear…"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pDeleteButton)
+#: src/konqsessiondlg_base.ui:47
+#, kde-format
+msgctxt "@action:button Delete session"
+msgid "Delete"
+msgstr "Eliminar"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pOpenTabsInsideCurrentWindow)
+#. i18n: ectx: label, entry, group (Trash)
+#: src/konqsessiondlg_base.ui:73 src/konqueror.kcfg:517
+#, kde-format
+msgid "Open tabs inside current window"
+msgstr "Abrir os separadores na xanela actual"
+
+#: src/konqsessionmanager.cpp:86
+#, kde-format
+msgctxt "@title:window"
+msgid "Restore Session?"
+msgstr "Desexa recuperar a sesión?"
+
+#: src/konqsessionmanager.cpp:107
+#, kde-format
+msgid ""
+"Konqueror did not close correctly. Would you like to restore these previous "
+"sessions?"
+msgstr ""
+"Konqueror non se pechou correctamente. Desexa recuperar estas sesións "
+"previas?"
+
+#: src/konqsessionmanager.cpp:119
+#, kde-format
+msgctxt "@tooltip:session list"
+msgid "Uncheck the sessions you do not want to be restored"
+msgstr "Desmarque as sesións que non queira recuperar"
+
+#: src/konqsessionmanager.cpp:152
+#, kde-format
+msgctxt "@item:treewidget"
+msgid "Window %1"
+msgstr "Xanela %1"
+
+#: src/konqsessionmanager.cpp:190
+#, kde-format
+msgid "Do not ask again"
+msgstr "Non preguntar máis"
+
+#: src/konqsessionmanager.cpp:204
+#, kde-format
+msgctxt "@action:button yes"
+msgid "Restore Session"
+msgstr "Recuperar a sesión"
+
+#: src/konqsessionmanager.cpp:205
+#, kde-format
+msgctxt "@action:button no"
+msgid "Do Not Restore"
+msgstr "Non recuperalas"
+
+#: src/konqsessionmanager.cpp:206
+#, kde-format
+msgctxt "@action:button ask later"
+msgid "Ask Me Later"
+msgstr "Preguntarme máis tarde"
+
+#: src/konqstatusbarmessagelabel.cpp:67
+#, kde-format
+msgctxt "@info"
+msgid "Close"
+msgstr "Pechar"
+
+#: src/konqstatusbarmessagelabel.cpp:68
+#, kde-format
+msgid "Close"
+msgstr "Pechar"
+
+#: src/konqstatusbarmessagelabel.cpp:147
+#, kde-format
+msgid "Error: %1"
+msgstr "Erro: %1"
+
+#: src/konqtabs.cpp:51
+#, kde-format
+msgid ""
+"This bar contains the list of currently open tabs. Click on a tab to make it "
+"active. You can also use keyboard shortcuts to navigate through tabs. The "
+"text on the tab shows the content currently open in it; place your mouse "
+"over the tab to see the full title, in case it has been shortened to fit the "
+"tab width."
+msgstr ""
+"Esta barra contén unha lista dos separadores abertos. Prema un separador "
+"para activar a páxina. Pode tamén usar os atallos de teclado para navegar "
+"polos separadores. O texto do separador mostra o contido que estea aberto na "
+"páxina, poña o rato no separador para ver o título completo no caso de "
+"truncarse para couber dentro do separador."
+
+#: src/konqtabs.cpp:86
+#, kde-format
+msgid "Open a new tab"
+msgstr "Abrir un novo separador"
+
+#: src/konqtabs.cpp:95
+#, kde-format
+msgid "Close the current tab"
+msgstr "Pechar o separador actual"
+
+#: src/konqtabs.cpp:461
+#, kde-format
+msgid "&Duplicate Tab"
+msgstr "&Duplicar o separador"
+
+#: src/konqtabs.cpp:466
+#, kde-format
+msgid "&Reload Tab"
+msgstr "&Cargar de novo o separador"
+
+#: src/konqtabs.cpp:473
+#, kde-format
+msgid "Other Tabs"
+msgstr "Outros separadores"
+
+#: src/konqtabs.cpp:478
+#, kde-format
+msgid "D&etach Tab"
+msgstr "D&esprender o separador"
+
+#: src/konqtabs.cpp:484
+#, kde-format
+msgid "&Close Tab"
+msgstr "&Pechar o separador"
+
+#. i18n: ectx: label, entry, group (UserSettings)
+#: src/konqueror.kcfg:11
+#, kde-format
+msgid "Start Page"
+msgstr "Páxina de inicio"
+
+#. i18n: ectx: whatsthis, entry, group (UserSettings)
+#: src/konqueror.kcfg:12
+#, kde-format
+msgid "This is the URL of the web page where Konqueror will start from."
+msgstr "Este é o URL da páxina web de inicio de Konqueror."
+
+#. i18n: ectx: whatsthis, entry, group (UserSettings)
+#: src/konqueror.kcfg:17
+#, kde-format
+msgid ""
+"This is the URL of the web page where Konqueror will jump to when the \\"
+"\"Home\\\" button is pressed."
+msgstr ""
+"Este é o URL da páxina web que Konqueror abrirá cando prema o botón «Inicio»."
+
+#. i18n: ectx: label, entry, group (UndoManagerSettings)
+#: src/konqueror.kcfg:26
+#, kde-format
+msgid "Maximum number of Closed Items"
+msgstr "&Número máximo de elementos pechados"
+
+#. i18n: ectx: whatsthis, entry, group (UndoManagerSettings)
+#: src/konqueror.kcfg:27
+#, kde-format
+msgid ""
+"This sets the maximum number of closed items that will be stored in memory. "
+"This limit will not be surpassed."
+msgstr ""
+"Isto indica o número máximo de elementos pechados que se gardarán na "
+"memoria. Este límite non se pasará nunca."
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:36
+#, kde-format
+msgid "Open folders in separate windows"
+msgstr "Abrir os cartafoles en xanelas separadas"
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:37
+#, kde-format
+msgid ""
+"If this option is checked, Konqueror will open a new window when you open a "
+"folder, rather than showing that folder's contents in the current window."
+msgstr ""
+"Se marca esta opción, Konqueror abrirá unha nova xanela cando abra un "
+"cartafol, no canto mostrar o contido do cartafol na xanela actual."
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:42
+#, kde-format
+msgid "Show file tips"
+msgstr "Mostrar as axudas dos ficheiros"
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:43
+#, kde-format
+msgid ""
+"Here you can control if, when moving the mouse over a file, you want to see "
+"a small popup window with additional information about that file"
+msgstr ""
+"Aquí pode indicar se quere ver unha pequena xanela contextual contendo "
+"información adicional sobre o ficheiro cando pase o rato sobre un ficheiro."
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:54
+#, kde-format
+msgid "Show previews in file tips"
+msgstr "Mostrar vistas previas nas axudas do ficheiro"
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:55
+#, kde-format
+msgid ""
+"Here you can control if you want the popup window to contain a larger "
+"preview for the file, when moving the mouse over it"
+msgstr ""
+"Aquí pode indicar se quere que a xanela de axuda contextual conteña unha "
+"vista previa máis grande do ficheiro, cando pase o rato sobre el."
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:60
+#, kde-format
+msgid "Show 'Delete' menu entries which bypass the trashcan"
+msgstr "Mostrar as entradas «Eliminar» no menu, para circunvalar o lixo"
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:61
+#, kde-format
+msgid ""
+"Check this if you want 'Delete' menu commands to be displayed on the desktop "
+"and in the file manager's menus and context menus. You can always delete "
+"files when hidden by holding the Shift key while calling 'Move to Trash'."
+msgstr ""
+"Marque esta opción se quere mostrar as ordes «Eliminar» nos menús do "
+"escritorio e do xestor de ficheiros. Aínda así poderá eliminar os ficheiros "
+"se mantén a tecla Maiús premida mentres executa o «Botar no lixo»."
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:153 src/konqueror.kcfg:154
+#, kde-format
+msgid "Number of Open With items in the File menu"
+msgstr "Número de elementos Abrir con no menú Ficheiro"
+
+#. i18n: ectx: label, entry, group (HTML Settings)
+#: src/konqueror.kcfg:163
+#, kde-format
+msgid "Standard font"
+msgstr "Tipo de letra estándar"
+
+#. i18n: ectx: whatsthis, entry, group (HTML Settings)
+#: src/konqueror.kcfg:164
+#, kde-format
+msgid "This is the font used to display text in Konqueror windows."
+msgstr ""
+"Este é o tipo de letra que se empregará para mostrar texto nas xanelas de "
+"Konqueror."
+
+#. i18n: ectx: label, entry, group (HistorySettings)
+#: src/konqueror.kcfg:314
+#, kde-format
+msgid "Maximum number of history items per view"
+msgstr "Número máximo de elementos do historial por vista"
+
+#. i18n: ectx: label, entry, group (Trash)
+#: src/konqueror.kcfg:504
+#, kde-format
+msgid "Ask confirmation for deleting a file."
+msgstr "Pedir a confirmación cando se elimine un ficheiro."
+
+#. i18n: ectx: whatsthis, entry, group (Trash)
+#: src/konqueror.kcfg:505
+#, kde-format
+msgid ""
+"This option tells Konqueror whether to ask for a confirmation when you "
+"delete a file without using the trash folder. Warning, deleted files can not "
+"be recovered, so it is recommended to leave this confirmation enabled."
+msgstr ""
+"Esta opción indícalle a Konqueror se debe pedir unha confirmación cando se "
+"elimine un ficheiro sen empregar o cartafol do lixo. Aviso: os ficheiros "
+"eliminados non se poden recuperar, polo que se recomenda deixar activada "
+"esta opción."
+
+#. i18n: ectx: label, entry, group (Trash)
+#: src/konqueror.kcfg:510
+#, kde-format
+msgid "Ask confirmation for move to trash"
+msgstr "Pedir confirmación cando se deite no fixo"
+
+#. i18n: ectx: whatsthis, entry, group (Trash)
+#: src/konqueror.kcfg:511
+#, kde-format
+msgid ""
+"This option tells Konqueror whether to ask for a confirmation when you move "
+"the file to your trash folder, from where it can be recovered very easily."
+msgstr ""
+"Esta opción dille a Konqueror se debe ou non pedir confirmación cando mova o "
+"ficheiro ao cartafol do lixo, de onde o pode recuperar facilmente."
+
+#. i18n: ectx: whatsthis, entry, group (Trash)
+#: src/konqueror.kcfg:518
+#, kde-format
+msgid ""
+"If true, when opening a session from within the sessions dialog the tabs "
+"will be opened inside current window."
+msgstr ""
+"Se a escolle, cando se abra unha sesión no diálogo de sesións os separadores "
+"abriranse dentro da xanela actual."
+
+#. i18n: ectx: Menu (file)
+#: src/konqueror.rc:5
+#, kde-format
+msgid "&File"
+msgstr "&Ficheiro"
+
+#. i18n: ectx: Menu (edit)
+#: src/konqueror.rc:24
+#, kde-format
+msgid "&Edit"
+msgstr "&Editar"
+
+#. i18n: ectx: Menu (view)
+#: src/konqueror.rc:33
+#, kde-format
+msgid "&View"
+msgstr "&Vista"
+
+#. i18n: ectx: Menu (go)
+#: src/konqueror.rc:44
+#, kde-format
+msgid "&Go"
+msgstr "&Ir a"
+
+#. i18n: ectx: Menu (tools)
+#: src/konqueror.rc:54
+#, kde-format
+msgid "&Tools"
+msgstr ""
+
+#. i18n: ectx: Menu (settings)
+#: src/konqueror.rc:59
+#, kde-format
+msgid "&Settings"
+msgstr "&Configuración"
+
+#. i18n: ectx: Menu (window)
+#: src/konqueror.rc:77
+#, kde-format
+msgid "&Window"
+msgstr "&Xanela"
+
+#. i18n: ectx: Menu (help)
+#: src/konqueror.rc:93
+#, kde-format
+msgid "&Help"
+msgstr "A&xuda"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: src/konqueror.rc:98
+#, kde-format
+msgid "Main Toolbar"
+msgstr "Barra de ferramentas Principal"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: src/konqueror.rc:109
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "Barra de ferramentas Extra"
+
+#. i18n: ectx: ToolBar (locationToolBar)
+#: src/konqueror.rc:116
+#, kde-format
+msgid "Location Toolbar"
+msgstr "Barra de ferramentas de lugares"
+
+#. i18n: ectx: ToolBar (bookmarkToolBar)
+#: src/konqueror.rc:122
+#, kde-format
+msgid "Bookmark Toolbar"
+msgstr "Barra de Marcadores"
+
+#: src/konqundomanager.cpp:90 src/konqundomanager.cpp:252
+#, kde-format
+msgid "Und&o: Closed Tab"
+msgstr "&Desfacer: pechouse un separador"
+
+#: src/konqundomanager.cpp:92 src/konqundomanager.cpp:103
+#: src/konqundomanager.cpp:147
+#, kde-format
+msgid "Und&o: Closed Window"
+msgstr "&Desfacer: Pechar unha xanela"
+
+#: src/konqundomanager.cpp:105
+#, kde-format
+msgid "Und&o"
+msgstr "&Desfacer"
+
+#: src/konqview.cpp:1162
+#, kde-format
+msgid ""
+"The page you are trying to view is the result of posted form data. If you "
+"resend the data, any action the form carried out (such as search or online "
+"purchase) will be repeated. "
+msgstr ""
+"A páxina que intenta ver é o resultado dun formulario de envío de datos. Se "
+"envía de novo os datos, calquera acción que realice o formulario (unha busca "
+"ou mercar por Internet) repetirase. "
+
+#: src/konqview.cpp:1164
+#, kde-format
+msgctxt "@title:window"
+msgid "Warning"
+msgstr "Aviso"
+
+#: src/konqview.cpp:1164
+#, kde-format
+msgid "Resend"
+msgstr "Enviar de novo"
+
+#: src/urlloader.cpp:253
+#, kde-format
+msgctxt "Execute an executable file"
+msgid "Execute it"
+msgstr ""
+
+#: src/urlloader.cpp:258
+#, kde-format
+msgctxt ""
+"The user has to decide whether to execute an executable file or display it"
+msgid ""
+"<tt>%1</tt> can be executed. Do you want to execute it or to display it?"
+msgstr ""
+
+#: src/urlloader.cpp:259
+#, kde-format
+msgctxt "Display an executable file"
+msgid "Display it"
+msgstr ""
+
+#: src/urlloader.cpp:263
+#, kde-format
+msgctxt "The user has to decide whether to execute an executable file or not"
+msgid "<tt>%1</tt> can be executed. Do you want to execute it?"
+msgstr ""
+
+#: src/urlloader.cpp:438
+#, fuzzy, kde-format
+#| msgid "Save As..."
+msgid "Save As"
+msgstr "Gardar como…"
+
+#~ msgid "File Management"
+#~ msgstr "Xestión de ficheiros"
+
+#~ msgid "Web Browsing"
+#~ msgstr "Navegación web"
+
+#~ msgctxt "@title:window"
+#~ msgid "Configure"
+#~ msgstr "Configurar"
+
+#~ msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
+#~ msgid "Be free."
+#~ msgstr "Proxecto Trasno."
+
+#~ msgid ""
+#~ "Konqueror is a web browser, file manager and universal document viewer."
+#~ msgstr ""
+#~ "Konqueror é un navegador web, xestor de ficheiros e visor universal de "
+#~ "documentos."
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "Starting Points"
+#~ msgstr "Puntos de inicio"
+
+#~ msgid "Introduction"
+#~ msgstr "Introdución"
+
+#~ msgid "Tips"
+#~ msgstr "Consellos"
+
+#~ msgid "Specifications"
+#~ msgstr "Especificacións"
+
+#~ msgid "Your personal files"
+#~ msgstr "Os seus ficheiros persoais"
+
+#~ msgid "Trash"
+#~ msgstr "Lixo"
+
+#~ msgid "Browse and restore the trash"
+#~ msgstr "Navegar e recuperar o lixo"
+
+#~ msgid "Network Folders"
+#~ msgstr "Cartafoles en rede"
+
+#~ msgid "Shared files and folders"
+#~ msgstr "Ficheiros e cartafoles compartidos"
+
+#~ msgid "Bookmarks"
+#~ msgstr "Marcadores"
+
+#~ msgid "Quick access to your bookmarks"
+#~ msgstr "Acceso rápido aos seus marcadores"
+
+#~ msgid "Next: An Introduction to Konqueror"
+#~ msgstr "Seguinte: Unha introdución a Konqueror"
+
+#~ msgid "Search the Web"
+#~ msgstr "Buscar na web"
+
+#~ msgid ""
+#~ "Konqueror makes working with and managing your files easy. You can browse "
+#~ "both local and networked folders while enjoying advanced features such as "
+#~ "the powerful sidebar and file previews."
+#~ msgstr ""
+#~ "Konqueror fai doado o traballo e xestión dos ficheiros. Pode examinar "
+#~ "tanto cartafoles en rede como locais mentres goza de características "
+#~ "avanzadas como unha barra lateral moi potente e vistas previas dos "
+#~ "ficheiros."
+
+#~ msgid ""
+#~ "Konqueror is also a full featured and easy to use web browser which you "
+#~ "can use to explore the Internet. Enter the address (e.g. <a href=\"http://"
+#~ "www.kde.org\">http://www.kde.org</a>) of a web page you would like to "
+#~ "visit in the location bar and press Enter, or choose an entry from the "
+#~ "Bookmarks menu."
+#~ msgstr ""
+#~ "Konqueror é tamén un navegador web con moitas características e de uso "
+#~ "doado que pode usar para explorar Internet. Simplemente insira o enderezo "
+#~ "de Internet (p.ex. <a href=\"http://www.kde.org\"> http://www.kde.org</"
+#~ "a>) da páxina que desexe visitar e prema Intro, ou escolla unha das "
+#~ "entradas no seu menú de Marcadores."
+
+#~ msgid ""
+#~ "To return to the previous location, press the back button <img width='16' "
+#~ "height='16' src=\"%1\"></img> in the toolbar. "
+#~ msgstr ""
+#~ "Para volver á páxina anterior, prema o botón atrás <img width='16' "
+#~ "height='16' src=\"%1\"></img> na barra de ferramentas. "
+
+#~ msgid ""
+#~ "To quickly go to your Home folder press the home button <img width='16' "
+#~ "height='16' src=\"%1\"></img>."
+#~ msgstr ""
+#~ "Se quere ir axiña ao seu cartafol persoal, prema o botón persoal <img "
+#~ "width='16' height='16' src=\"%1\"></img>."
+
+#~ msgid ""
+#~ "For more detailed documentation on Konqueror click <a href=\"%1\">here</"
+#~ "a>."
+#~ msgstr ""
+#~ "Para ler unha documentación máis detallada sobre Konqueror prema <a href="
+#~ "\"%1\">aquí</a>."
+
+#~ msgid "Next: Tips & Tricks"
+#~ msgstr "Seguinte: Consellos e trucos"
+
+#~ msgid ""
+#~ "Konqueror is designed to embrace and support Internet standards. The aim "
+#~ "is to fully implement the officially sanctioned standards from "
+#~ "organizations such as the W3 and OASIS, while also adding extra support "
+#~ "for other common usability features that arise as de facto standards "
+#~ "across the Internet. Along with this support, for such functions as "
+#~ "favicons, Web Shortcuts, and <A HREF=\"%1\">XBEL bookmarks</A>, Konqueror "
+#~ "also implements:"
+#~ msgstr ""
+#~ "Konqueror está deseñado para ser compatíbel con e fomentar os estándares "
+#~ "de Internet. O obxectivo é realizar completamente os estándares "
+#~ "oficialmente promulgados por organizacións como W3 e OASIS, engadindo "
+#~ "ademais compatibilidade adicional con outras características de "
+#~ "usabilidade moi comúns en Internet. Xunto con esta compatibilidade, que "
+#~ "inclúe iconas favoritas, Palabras clave de Internet e <A HREF="
+#~ "\"%1\">Marcadores XBEL</A>, Konqueror tamén realiza:"
+
+#~ msgid "Supported standards"
+#~ msgstr "Estándares compatíbeis"
+
+#~ msgid "Additional requirements*"
+#~ msgstr "Requirimentos adicionais*"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+#~ msgstr ""
+#~ "<A HREF=\"%2\">HTML 4.01</A> baseado en <A HREF=\"%1\">DOM</A> (Nivel 1, "
+#~ "parcialmente Nivel 2)"
+
+#~ msgid "built-in"
+#~ msgstr "incorporado"
+
+#~ msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
+#~ msgstr "<A HREF=\"%1\">Follas de estilo</A> (CSS 1, parcialmente CSS 2)"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Edición 3 (equivale aproximadamente a "
+#~ "JavaScript 1.5)"
+
+#~ msgid ""
+#~ "JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
+#~ msgstr ""
+#~ "JavaScript está desactivado (globalmente). Active JavaScript <A HREF="
+#~ "\"%1\">aquí</A>."
+
+#~ msgid ""
+#~ "JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\"
+#~ "\">here</A>."
+#~ msgstr ""
+#~ "JavaScript está activado (globalmente). Configure JavaScript <A HREF=\\"
+#~ "\"%1\\\">aquí</A>."
+
+#~ msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
+#~ msgstr "Compatibilidade con <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> seguro"
+
+#~ msgid ""
+#~ "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">OpenJDK</A> or <A HREF="
+#~ "\"%2\">Sun/Oracle</A>)"
+#~ msgstr ""
+#~ "VM compatíbel con JDK 1.2.0 (Java 2) (<A HREF=\"%1\">OpenJDK</A> ou <A "
+#~ "HREF=\"%2\">Sun/Oracle</A>)"
+
+#~ msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
+#~ msgstr "Active Java (globalmente) <A HREF=\"%1\">aquí</A>."
+
+#~ msgid ""
+#~ "NPAPI <A HREF=\"%2\">plugins</A> (for viewing <A HREF="
+#~ "\"%1\">Flash<SUP>&reg;</SUP></A>, etc.)"
+#~ msgstr ""
+#~ "<A HREF=\"%2\">Complementos</A> NPAPI (para ver <A HREF="
+#~ "\"%1\">Flash<SUP>&reg;</SUP></A>, etc.)"
+
+#~ msgid "Secure Sockets Layer"
+#~ msgstr "Capa segura de sockets"
+
+#~ msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
+#~ msgstr "(TLS/SSL v2/3) para comunicacións seguras de ata 168bit"
+
+#~ msgid "OpenSSL"
+#~ msgstr "OpenSSL"
+
+#~ msgid "Bidirectional 16bit unicode support"
+#~ msgstr "Compatibilidade con unicode bidireccional de 16bit"
+
+#~ msgid "AutoCompletion for forms"
+#~ msgstr "Completación automática de formularios"
+
+#~ msgctxt "Title of an html 'group box' explaining konqueror features"
+#~ msgid "General"
+#~ msgstr "Xeral"
+
+#~ msgid "Feature"
+#~ msgstr "Característica"
+
+#~ msgid "Details"
+#~ msgstr "Detalles"
+
+#~ msgid "Image formats"
+#~ msgstr "Formatos de imaxe"
+
+#~ msgid "PNG<br />JPG<br />GIF"
+#~ msgstr "PNG<br />JPG<br />GIF"
+
+#~ msgid "Transfer protocols"
+#~ msgstr "Protocolos de transferencia"
+
+#~ msgid "HTTP 1.1 (including gzip/bzip2 compression)"
+#~ msgstr "HTTP 1.1 (incluíndo compresión gzip/bzip2)"
+
+#~ msgid "FTP"
+#~ msgstr "FTP"
+
+#~ msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpCenter)...</A>"
+#~ msgstr ""
+#~ "e <A HREF=\"%1\">moitos máis (consulte os Kioslaves en KHelpCenter)…</A>"
+
+#~ msgctxt "A feature of Konqueror"
+#~ msgid "URL-Completion"
+#~ msgstr "Completación de URL"
+
+#~ msgid "Manual"
+#~ msgstr "Manual"
+
+#~ msgid "Popup"
+#~ msgstr "Xanela emerxente"
+
+#~ msgid "(Short-) Automatic"
+#~ msgstr "(Curta-) Automático"
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "<a href=\"%1\">Return to Starting Points</a>"
+#~ msgstr "<a href=\"%1\">Volver aos puntos de inicio</a>"
+
+#~ msgid "Tips & Tricks"
+#~ msgstr "Consellos e trucos"
+
+#~ msgid ""
+#~ "Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, "
+#~ "using Google, for the search phrase \"KDE\". There are a lot of Web-"
+#~ "Shortcuts predefined to make searching for software or looking up certain "
+#~ "words in an encyclopedia a breeze. You can even <a href=\"%1\">create "
+#~ "your own</a> Web-Shortcuts."
+#~ msgstr ""
+#~ "Uso de atallos web: se escribe «gg: KDE», pode buscar por Internet, "
+#~ "mediante Google, a palabra «KDE». Hai moitos atallos web predefinidos "
+#~ "para buscar programas ou termos en enciclopedias. Mesmo pode <a href="
+#~ "\"%1\">crear os seus propios</a> atallos web."
+
+#~ msgid ""
+#~ "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
+#~ "the HTML toolbar to increase the font size on your web page."
+#~ msgstr ""
+#~ "Use o botón de aumento <img width='16' height='16' src=\"%1\"></img> na "
+#~ "barra de ferramentas para incrementar o tamaño das letras na páxina web."
+
+#~ msgid ""
+#~ "When you want to paste a new address into the Location toolbar you might "
+#~ "want to clear the current entry by pressing the black arrow with the "
+#~ "white cross <img width='16' height='16' src=\"%1\"></img> in the toolbar."
+#~ msgstr ""
+#~ "Cando queira pegar un enderezo na barra de enderezos podería querer "
+#~ "limpar a entrada actual premendo a frecha negra coa cruz branca <img "
+#~ "width='16' height='16' src=\"%1\"></img> na barra de ferramentas."
+
+#~ msgid ""
+#~ "To create a link on your desktop pointing to the current page, simply "
+#~ "drag the icon (favicon) that is to the left of the Location toolbar, drop "
+#~ "it on to the desktop, and choose \"Icon\"."
+#~ msgstr ""
+#~ "Para crear unha ligazón no escritorio que apunte á páxina actual, "
+#~ "simplemente arrastre a icona da esquerda da barra de lugar, déixea sobre "
+#~ "o escritorio e escolla «Icona»."
+
+#~ msgid ""
+#~ "You can also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen "
+#~ "Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
+#~ "sessions."
+#~ msgstr ""
+#~ "Tamén pode atopar o <img width='16' height='16' src=\"%1\" /> «Modo a "
+#~ "pantalla completa» no menú de configuración. Esta característica é moi "
+#~ "útil para sesións de «Conversa»."
+
+#~ msgid ""
+#~ "Divide et impera (lat. \"Divide and conquer\") - by splitting a window "
+#~ "into two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> "
+#~ "Split View Left/Right) you can make Konqueror appear the way you like."
+#~ msgstr ""
+#~ "Divide et impera (do lat. «Divide e conquire»): dividindo a xanela en "
+#~ "dúas partes (ppr ex. Xanela -> <img width='16' height='16' src=\"%1\" /"
+#~ ">Dividir a xanela en esquerda/dereita) pode facer que Konqueror se axuste "
+#~ "aos seus gustos."
+
+#~ msgid ""
+#~ "Use the <a href=\"%1\">user-agent</a> feature if the website you are "
+#~ "visiting asks you to use a different browser (and do not forget to send a "
+#~ "complaint to the webmaster!)"
+#~ msgstr ""
+#~ "Use a funcionalidade <a href=\"%1\">user-agent</a> se o sitio web que "
+#~ "está a visitar require un navegador distinto (e non esqueza enviar unha "
+#~ "queixa ao responsábel do sitio!)"
+
+#~ msgid ""
+#~ "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
+#~ "ensures that you can keep track of the pages you have visited recently."
+#~ msgstr ""
+#~ "O <img width='16' height='16' src=\"%1\"></img> historial na barra "
+#~ "lateral garante non perderlle a pista ás páxinas visitadas recentemente."
+
+#~ msgid ""
+#~ "Use a caching <a href=\"%1\">proxy</a> to speed up your Internet "
+#~ "connection."
+#~ msgstr ""
+#~ "Use un <A HREF=\"%1\">proxy</A> caché para acelerar a conexión a Internet."
+
+#~ msgid ""
+#~ "Advanced users will appreciate the Konsole which you can embed into "
+#~ "Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
+#~ "Terminal Emulator)."
+#~ msgstr ""
+#~ "Os usuarios avanzados estimarán Konsole, que se pode incluír en Konqueror "
+#~ "(Configuración -> <img width='16' height='16' SRC=\"%1\"></img> Mostrar o "
+#~ "emulador de terminal)."
+
+#~ msgid "Next: Specifications"
+#~ msgstr "Seguinte: Especificacións"
+
+#~ msgid "Installed Plugins"
+#~ msgstr "Complementos instalados"
+
+#~ msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
+#~ msgstr ""
+#~ "<td>Complemento</td><td>Descrición</td><td>Ficheiro</td><td>Tipos</td>"
+
+#~ msgid "Installed"
+#~ msgstr "Instalado"
+
+#~ msgid ""
+#~ "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
+#~ msgstr ""
+#~ "<td>Tipo Mime</td><td>Descrición</td><td>Sufixos</td><td>Complemento</td>"
+
+#~ msgid "&Open"
+#~ msgstr "&Abrir"
+
+#~ msgid ""
+#~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">plugins</A> (for "
+#~ "viewing <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
+#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Video, etc.)"
+#~ msgstr ""
+#~ "<A HREF=\"%4\">Complemento</A> de Netscape Communicator<SUP>&reg;</SUP> "
+#~ "(para ver <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
+#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Video, etc.)"
+
+#~ msgid "http://konqueror.kde.org"
+#~ msgstr "http://konqueror.kde.org"
+
+#~ msgid "Limits"
+#~ msgstr "Límites"
+
+#~ msgid "URLs e&xpire after"
+#~ msgstr "Os URL cad&ucan despois de"
+
+#~ msgid "Maximum &number of URLs:"
+#~ msgstr "&Número máximo de URL:"
+
+#~ msgid "Custom Fonts For"
+#~ msgstr "Fontes personalizadas para"
+
+#~ msgid "URLs newer than"
+#~ msgstr "URL máis novos que"
+
+#~ msgid "Choose Font..."
+#~ msgstr "Escoller o tipo de letra..."
+
+#~ msgid "URLs older than"
+#~ msgstr "URL máis vellos que"
+
+#~ msgid ""
+#~ "Shows the number of times visited and the dates of the first and last "
+#~ "visits, in addition to the URL"
+#~ msgstr ""
+#~ "Mostra o número de veces que a visitou e as datas da primeira e última "
+#~ "visita, ademais do URL"
+
+#~ msgid "Detailed tooltips"
+#~ msgstr "Axudiñas detalladas"
+
+#~ msgid "Clear History"
+#~ msgstr "Limpar o historial"
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "History Sidebar Module"
+#~ msgstr "Módulo da barra lateral co historial"
+
+#~ msgctxt "@title:tab"
+#~ msgid "History"
+#~ msgstr "Historial"
+
+#~ msgid "Minute"
+#~ msgid_plural "Minutes"
+#~ msgstr[0] "Minuto"
+#~ msgstr[1] "Minutos"
+
+#~ msgid "Day"
+#~ msgid_plural "Days"
+#~ msgstr[0] "Día"
+#~ msgstr[1] "Días"
+
+#~ msgid "<h1>History Sidebar</h1> You can configure the history sidebar here."
+#~ msgstr ""
+#~ "<h1>Historial na barra lateral</h1> Aquí pode configurar o historial da "
+#~ "barra lateral."
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Places Sidebar Module"
+#~ msgstr "Módulo da barra lateral de lugares"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Places"
+#~ msgstr "Lugares"
+
+#~ msgid "Extended Sidebar"
+#~ msgstr "Barra lateral ampliada"
+
+#~ msgid "Rollback to System Default"
+#~ msgstr "Regresar á predeterminada do sistema"
+
+#~ msgid "Configure Sidebar"
+#~ msgstr "Configurar a barra lateral"
+
+#~ msgid "Add New"
+#~ msgstr "Engadir un novo"
+
+#~ msgid "Multiple Views"
+#~ msgstr "Múltiplas vistas"
+
+#~ msgid "Show Tabs Left"
+#~ msgstr "Mostrar as lapelas á esquerda"
+
+#~ msgid "Close Sidebar"
+#~ msgstr "Pechar a barra lateral"
+
+#~ msgid "This entry already exists."
+#~ msgstr "Esta entrada xa existe."
+
+#~ msgid ""
+#~ "<qt>This removes all your entries from the sidebar and adds the system "
+#~ "default ones.<br /><b>This procedure is irreversible</b><br />Do you want "
+#~ "to proceed?</qt>"
+#~ msgstr ""
+#~ "<qt>Isto borra todas as entradas da barra lateral e engade as entradas "
+#~ "predeterminadas do sistema.<br /><b>Este procedemento é irreversíbel</"
+#~ "b><br /> Desexa continuar?</qt>"
+
+#~ msgid "Show Tabs Right"
+#~ msgstr "Mostrar as lapelas á dereita"
+
+#~ msgctxt "@title:window"
+#~ msgid "Set Name"
+#~ msgstr "Escoller o nome"
+
+#~ msgid "Enter the name:"
+#~ msgstr "Escriba o nome:"
+
+#~ msgid "Enter a URL:"
+#~ msgstr "Escriba o URL:"
+
+#~ msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
+#~ msgstr "<qt>Desexa realmente eliminar a páxina <b>%1</b>?</qt>"
+
+#~ msgid ""
+#~ "You have hidden the sidebar configuration button. To make it visible "
+#~ "again, click the right mouse button on any of the sidebar buttons and "
+#~ "select \"Show Configuration Button\"."
+#~ msgstr ""
+#~ "Agochou o botón de configuración da barra lateral. Para facelo visíbel de "
+#~ "novo, prema co botón dereito do rato en calquera dos botóns da barra "
+#~ "lateral e escolla «Mostrar o botón de configuración»."
+
+#~ msgid "Set Name..."
+#~ msgstr "Estabelecer o nome..."
+
+#~ msgid "Set URL..."
+#~ msgstr "Estabelecer o URL..."
+
+#~ msgid "Set Icon..."
+#~ msgstr "Estabelecer a icona..."
+
+#~ msgid "Remove"
+#~ msgstr "Eliminar"
+
+#~ msgid "Web module"
+#~ msgstr "Módulo web"
+
+#~ msgid "&Create New Folder"
+#~ msgstr "&Crear un cartafol novo"
+
+#~ msgid "Delete Folder"
+#~ msgstr "Borrar o cartafol"
+
+#~ msgid "Delete Bookmark"
+#~ msgstr "Borrar o marcador"
+
+#~ msgid "Properties"
+#~ msgstr "Propriedades"
+
+#~ msgid "Open in New Window"
+#~ msgstr "Abrir nunha nova xanela"
+
+#~ msgid "Open Folder in Tabs"
+#~ msgstr "Abrir o cartafol en lapelas"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "Copiar o enderezo da ligazón"
+
+#~ msgctxt "@title:window"
+#~ msgid "Create New Bookmark Folder"
+#~ msgstr "Crear un novo cartafol de marcadores"
+
+#~ msgid "New folder:"
+#~ msgstr "Novo cartafol:"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark folder\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "Desexa realmente borrar o cartafol de marcadores\n"
+#~ "«%1»?"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "Desexa realmente borrar o marcador\n"
+#~ "«%1»?"
+
+#~ msgctxt "@title:window"
+#~ msgid "Bookmark Folder Deletion"
+#~ msgstr "Borrado dun cartafol de marcadores"
+
+#~ msgctxt "@title:window"
+#~ msgid "Bookmark Deletion"
+#~ msgstr "Borrado dun marcador"
+
+#~ msgctxt "@title:window"
+#~ msgid "Bookmark Properties"
+#~ msgstr "Propiedades do marcador"
+
+#~ msgid "&Update"
+#~ msgstr "&Actualizar"
+
+#~ msgid "Name:"
+#~ msgstr "Nome:"
+
+#~ msgid "Location:"
+#~ msgstr "Localización:"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add Bookmark"
+#~ msgstr "Engadir un marcador"
+
+#~ msgid "Cannot find parent item %1 in the tree. Internal error."
+#~ msgstr "Non foi posíbel atopar o ítem pai %1 na árbore. Erro interno."
+
+#~ msgid "&Create New Folder..."
+#~ msgstr "&Crear un cartafol novo..."
+
+#~ msgid "Move to Trash"
+#~ msgstr "Deitar no lixo"
+
+#~ msgid "Rename"
+#~ msgstr "Mudar o nome"
+
+#~ msgid "Delete Link"
+#~ msgstr "Borrar a ligazón"
+
+#~ msgid "New Folder"
+#~ msgstr "Novo cartafol"
+
+#~ msgctxt "@title:window"
+#~ msgid "Create New Folder"
+#~ msgstr "Crear un cartafol novo"
+
+#~ msgid "Enter folder name:"
+#~ msgstr "Escriba o nome do cartafol:"
+
+#~ msgctxt "@label"
+#~ msgid "Name:"
+#~ msgstr "Nome:"
+
+#~ msgctxt "@label"
+#~ msgid "Path or URL:"
+#~ msgstr "Ruta ou URL:"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add folder sidebar module"
+#~ msgstr "Engadir o módulo de cartafoles da barra lateral"
+
+#~ msgid "&Open Link"
+#~ msgstr "&Abrir a ligazón"
+
+#~ msgid "Set &Automatic Reload"
+#~ msgstr "Estabelecer a &recarga automática"
+
+#~ msgctxt "@title:window"
+#~ msgid "Set Refresh Timeout (0 disables)"
+#~ msgstr "Estabelecer o tempo límite da actualización (0 desactivado)"
+
+#~ msgid " minute"
+#~ msgid_plural " minutes"
+#~ msgstr[0] " minuto"
+#~ msgstr[1] " minutos"
+
+#~ msgid " second"
+#~ msgid_plural " seconds"
+#~ msgstr[0] " segundo"
+#~ msgstr[1] " segundos"
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Web Sidebar Module"
+#~ msgstr "Módulo web da barra lateral"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add web sidebar module"
+#~ msgstr "Engadir o módulo web da barra lateral"
+
+#~ msgid "&Use index.html"
+#~ msgstr "&Usar index.html"
+
+#~ msgid "If present, open index.html when entering a folder."
+#~ msgstr "Abrir o ficheiro index.html ao entrar nun cartafol, se existe."
+
+#~ msgid ""
+#~ "<em>Tuning Tip:</em> If you want the Konqueror web browser to start "
+#~ "faster, you can turn off this information screen by clicking <a href="
+#~ "\"%1\">here</a>. You can re-enable it by choosing the Help -> Konqueror "
+#~ "Introduction menu option, and then pressing Settings -> Save View Profile "
+#~ "As... -> \"Web Browsing\"."
+#~ msgstr ""
+#~ "<em>Consello de optimización:</em> Se quere que o navegador Konqueror se "
+#~ "inicie máis axiña, pode desactivar esta pantalla de información premendo "
+#~ "<a href=\"%1\">aquí</a>. Pode activala de novo en Axuda -> Menú de "
+#~ "introdución a Konqueror, e logo premendo en Configuración -> Gardar "
+#~ "perfil da vista «Navegación por Internet»."
+
+#~ msgid ""
+#~ "Do you want to disable showing the introduction in the webbrowsing "
+#~ "profile?"
+#~ msgstr ""
+#~ "Desexa desactivar mostrar a introdución no perfil de navegación web?"
+
+#~ msgctxt "@title:window"
+#~ msgid "Faster Startup?"
+#~ msgstr "Desexa iniciar rapidamente?"
+
+#~ msgid "Disable"
+#~ msgstr "Desactivar"
+
+#~ msgid "Keep"
+#~ msgstr "Manter"
+
+#~ msgid "Profile to open"
+#~ msgstr "Perfil para abrir"
+
+#~ msgid "List available profiles"
+#~ msgstr "Listar os perfís dispoñíbeis"
+
+#~ msgid "&Save View Profile As..."
+#~ msgstr "Gardar o perfil da vi&sta como..."
+
+#~ msgid "C&onfigure View Profiles..."
+#~ msgstr "&Configurar os perfís de vista..."
+
+#~ msgid "Load &View Profile"
+#~ msgstr "Cargar un perfil de &vista"
+
+#~ msgctxt "@title:window"
+#~ msgid "Profile Management"
+#~ msgstr "Xestión de perfís"
+
+#~ msgid "&Rename Profile"
+#~ msgstr "&Mudar o nome do perfil"
+
+#~ msgid "&Delete Profile"
+#~ msgstr "&Borrar o perfil"
+
+#~ msgid "&Profile name:"
+#~ msgstr "Nome do &perfil:"
+
+#~ msgid "Save &URLs in profile"
+#~ msgstr "Gardar os &URL no perfil"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window.\n"
+#~ "Loading a view profile will close them."
+#~ msgstr ""
+#~ "Ten varias lapelas abertas nesta xanela.\n"
+#~ "Se carga un perfil de vista pecharanse."
+
+#~ msgid "Load View Profile"
+#~ msgstr "Cargar un perfil de vista"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Loading a profile will discard these changes."
+#~ msgstr ""
+#~ "Esta páxina contén mudanzas que non foron enviadas.\n"
+#~ "Se carga un perfil esqueceranse estas mudanzas."
+
+#~ msgid " day"
+#~ msgid_plural " days"
+#~ msgstr[0] " día"
+#~ msgstr[1] " días"

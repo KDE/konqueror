@@ -1,0 +1,2975 @@
+# translation of kget.po to Tajik
+# translation of kget.po to Тоҷикӣ
+# Copyright (C) 2004 Free Software Foundation, Inc.
+# 2004, infoDev, a World Bank organization
+# 2004, Khujand Computer Technologies, Inc.
+# Roger V Kovacs, <rkovacs@khujand.org>, 2004.
+msgid ""
+msgstr ""
+"Project-Id-Version: kget\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2004-07-26 11:18+0000\n"
+"Last-Translator: Hiromon\n"
+"Language-Team:  Tajik\n"
+"Language: tg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0.1\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: kget_plugin.cpp:56
+#, fuzzy, kde-format
+msgid "Download Manager"
+msgstr "Мудири Боркунӣ"
+
+#: kget_plugin.cpp:62
+#, fuzzy, kde-format
+msgid "Show Drop Target"
+msgstr "Намоиш додани Ҳадафи Кашолакунӣ"
+
+#: kget_plugin.cpp:69
+#, kde-format
+msgid "List All Links"
+msgstr "Рӯйхати Ҳамаи Пайвастагиҳо"
+
+#: kget_plugin.cpp:74
+#, fuzzy, kde-format
+#| msgid "List All Links"
+msgid "List Selected Links"
+msgstr "Рӯйхати Ҳамаи Пайвастагиҳо"
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No downloadable links were found."
+msgstr ""
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No Links"
+msgstr "Пайвандҳо нестанд"
+
+#. i18n: ectx: Menu (tools)
+#: konqueror_kget_browser_integration.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr ""
+
+#, fuzzy
+#~ msgid "New Group"
+#~ msgstr "Феҳрист бо Нобаёнӣ"
+
+#, fuzzy
+#~ msgid "Network and Downloads"
+#~ msgstr "Нишонакунии боркуниҳои нотамом"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Verification"
+#~ msgstr "Мақсад:"
+
+#, fuzzy
+#~ msgctxt "integration of KGet with other applications"
+#~ msgid "Integration"
+#~ msgstr "Муттаҳидгардӣ бо Konqueror"
+
+#, fuzzy
+#~| msgid "Advanced"
+#~ msgctxt "Advanced Options"
+#~ msgid "Advanced"
+#~ msgstr "Пешрафта"
+
+#~ msgid "Advanced Options"
+#~ msgstr "Интихоботҳои Беҳбудшуда"
+
+#, fuzzy
+#~ msgid "Transfer Plugins"
+#~ msgstr "Кушодани вогузорӣ:"
+
+#~ msgid "KGet"
+#~ msgstr "KGet"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/с"
+
+#, fuzzy
+#~ msgctxt "start transfergroup downloads"
+#~ msgid "Start"
+#~ msgstr "&Боз оғоз намудан"
+
+#, fuzzy
+#~ msgctxt "stop transfergroup downloads"
+#~ msgid "Stop"
+#~ msgstr "Суръат"
+
+#, fuzzy
+#~ msgid "KGet is downloading %1 file"
+#~ msgid_plural "KGet is downloading %1 files"
+#~ msgstr[0] "Мудири Боркунӣ"
+#~ msgstr[1] "Мудири Боркунӣ"
+
+#, fuzzy
+#~| msgid ""
+#~| "Error while writing file:\n"
+#~| "%1"
+#~ msgid "Error trying to get %1"
+#~ msgstr ""
+#~ "Хатогӣ ҳангоми навиштани файл:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Are you sure that you want to remove the group named %1?"
+#~ msgstr "Дар ҳақиқат мехоҳед, ки ин вогузориҳоро нобуд созед?"
+
+#, fuzzy
+#~ msgid "Remove Group"
+#~ msgstr "Феҳрист бо Нобаёнӣ"
+
+#, fuzzy
+#~ msgid "Are you sure that you want to remove the following groups?"
+#~ msgstr "Дар ҳақиқат мехоҳед, ки ин вогузориҳоро нобуд созед?"
+
+#, fuzzy
+#~ msgid "Remove groups"
+#~ msgstr "Феҳрист бо Нобаёнӣ"
+
+#, fuzzy
+#~ msgid "Download added"
+#~ msgstr "Боркунӣ идома дода шудааст"
+
+#, fuzzy
+#~ msgid ""
+#~ "The file %1 already exists.\n"
+#~ "Overwrite?"
+#~ msgstr ""
+#~ "Файли мақсад \n"
+#~ "%1\n"
+#~ "аллакай мавҷуд аст.\n"
+#~ "Онро рӯиҳам навиштан мехоҳед?"
+
+#, fuzzy
+#~ msgid "My Downloads"
+#~ msgstr "Боркунӣ идома дода шудааст"
+
+#, fuzzy
+#~ msgid "New Download"
+#~ msgstr "Мудири Боркунӣ"
+
+#~ msgid ""
+#~ "Malformed URL:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "URL-и нодуруст:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URL, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "URL-и нодуруст:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Download it again?"
+#~ msgstr "Мудири Боркунӣ"
+
+#, fuzzy
+#~ msgid "Delete it and download again?"
+#~ msgstr "Мудири Боркунӣ"
+
+#, fuzzy
+#~ msgid "File already downloaded. Download anyway?"
+#~ msgstr ""
+#~ "URL аллакай захира шудааст\n"
+#~ "%1\n"
+#~ "Бори дигар бор кунам?"
+
+#, fuzzy
+#~ msgid "File already exists"
+#~ msgstr ""
+#~ "Файли мақсад \n"
+#~ "%1\n"
+#~ "аллакай мавҷуд аст.\n"
+#~ "Онро рӯиҳам навиштан мехоҳед?"
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is a directory."
+#~ msgstr ""
+#~ "Радкунии нобудсозии\n"
+#~ "%1\n"
+#~ "аз баски он раҳнамо аст."
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is not a local file."
+#~ msgstr ""
+#~ "Радкунии нобудсозии\n"
+#~ "%1\n"
+#~ "аз баски он файли маҳаллӣ аст."
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Download completed"
+#~ msgstr "Боркуни ба итмом расид"
+
+#, fuzzy
+#~ msgid "Download started"
+#~ msgstr "Боркунӣ идома дода шудааст"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Resolve"
+#~ msgstr "Кушодани Вогузорӣ"
+
+#, fuzzy
+#~ msgid "KGet is now closing, as all downloads have completed."
+#~ msgstr "Боркуни ба итмом расид"
+
+#, fuzzy
+#~ msgid "The computer will now turn off, as all downloads have completed."
+#~ msgstr "Боркуни ба итмом расид"
+
+#, fuzzy
+#~ msgctxt "Shutting down computer"
+#~ msgid "Shutdown"
+#~ msgstr "Баромадани худкор фаъол сохта шудааст."
+
+#, fuzzy
+#~ msgid ""
+#~ "The computer will now suspend to disk, as all downloads have completed."
+#~ msgstr "Боркуни ба итмом расид"
+
+#, fuzzy
+#~ msgid ""
+#~ "The computer will now suspend to RAM, as all downloads have completed."
+#~ msgstr "Боркуни ба итмом расид"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgctxt "Suspending computer"
+#~ msgid "Suspending"
+#~ msgstr "Ба нақшагирӣ"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgctxt "abort the proposed action"
+#~ msgid "Abort"
+#~ msgstr "Ҳуруф:"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Downloads completed"
+#~ msgstr "Боркуни ба итмом расид"
+
+#, fuzzy
+#~ msgctxt "file in a filesystem"
+#~ msgid "File"
+#~ msgstr "Кушодани &Файл"
+
+#, fuzzy
+#~ msgctxt "status of the download"
+#~ msgid "Status"
+#~ msgstr "&Боз оғоз намудан"
+
+#, fuzzy
+#~| msgid " Size: %1 "
+#~ msgctxt "size of the download"
+#~ msgid "Size"
+#~ msgstr " Андоза: %1 "
+
+#, fuzzy
+#~ msgid "KGet Transfer"
+#~ msgstr "Кушодани вогузорӣ:"
+
+#, fuzzy
+#~ msgctxt "the type of the hash, e.g. MD5"
+#~ msgid "Type"
+#~ msgstr "Навъи Файл"
+
+#~ msgid "Stalled"
+#~ msgstr "Боздошта"
+
+#, fuzzy
+#~ msgid "Downloading...."
+#~ msgstr "Боркунӣ идома дода шудааст"
+
+#, fuzzy
+#~| msgid "Delayed"
+#~ msgctxt "transfer state: delayed"
+#~ msgid "Delayed"
+#~ msgstr "Ба ақиб гузошта"
+
+#, fuzzy
+#~ msgctxt "transfer state: stopped"
+#~ msgid "Stopped"
+#~ msgstr "Суръат"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgctxt "transfer state: aborted"
+#~ msgid "Aborted"
+#~ msgstr "Ҳуруф:"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "transfer state: finished"
+#~ msgid "Finished"
+#~ msgstr "Тайёр"
+
+#, fuzzy
+#~ msgctxt "changing the destination of the file"
+#~ msgid "Changing destination"
+#~ msgstr "Кушодани &Мақсад"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgctxt "name of download"
+#~ msgid "Name"
+#~ msgstr "Ном"
+
+#, fuzzy
+#~ msgctxt "status of download"
+#~ msgid "Status"
+#~ msgstr "&Боз оғоз намудан"
+
+#, fuzzy
+#~ msgctxt "progress of download"
+#~ msgid "Progress"
+#~ msgstr "Муколамаи Амалиёт"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgctxt "speed of download"
+#~ msgid "Speed"
+#~ msgstr "Суръат"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgctxt "remaining time of download"
+#~ msgid "Remaining Time"
+#~ msgstr "Вақт Боқӣ мондааст"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "No download destination specified."
+#~ msgstr "Мақсад:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Invalid download destination specified."
+#~ msgstr "Мақсад:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Download destination is not writeable."
+#~ msgstr "Мақсад:"
+
+#, fuzzy
+#~| msgid "Malformed URL:\n"
+#~ msgid "Malformed URL."
+#~ msgstr "URL-и нодуруст:\n"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid "Malformed URL, protocol missing."
+#~ msgstr ""
+#~ "URL-и нодуруст:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid "Malformed URL, host missing."
+#~ msgstr ""
+#~ "URL-и нодуруст:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid ""
+#~ "Invalid download destination specified:\n"
+#~ "%1"
+#~ msgstr "Мақсад:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid ""
+#~ "Download destination is not writeable:\n"
+#~ "%1"
+#~ msgstr "Мақсад:"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URL, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "URL-и нодуруст:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "File already exists. Overwrite it?"
+#~ msgstr ""
+#~ "Файли мақсад \n"
+#~ "%1\n"
+#~ "аллакай мавҷуд аст.\n"
+#~ "Онро рӯиҳам навиштан мехоҳед?"
+
+#, fuzzy
+#~ msgid ""
+#~ "File already exists:\n"
+#~ "%1\n"
+#~ "Overwrite it?"
+#~ msgstr ""
+#~ "Файли мақсад \n"
+#~ "%1\n"
+#~ "аллакай мавҷуд аст.\n"
+#~ "Онро рӯиҳам навиштан мехоҳед?"
+
+#, fuzzy
+#~| msgid "Malformed URL:\n"
+#~ msgid "Malformed URLs."
+#~ msgstr "URL-и нодуруст:\n"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid "Malformed URLs, protocol missing."
+#~ msgstr ""
+#~ "URL-и нодуруст:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid "Malformed URLs, host missing."
+#~ msgstr ""
+#~ "URL-и нодуруст:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "URL-и нодуруст:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "URL-и нодуруст:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "URL-и нодуруст:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Files exist already. Overwrite them?"
+#~ msgstr ""
+#~ "Файли мақсад \n"
+#~ "%1\n"
+#~ "аллакай мавҷуд аст.\n"
+#~ "Онро рӯиҳам навиштан мехоҳед?"
+
+#~ msgid "Question"
+#~ msgstr "Суол"
+
+#, fuzzy
+#~ msgctxt "on a question"
+#~ msgid "No all"
+#~ msgstr "Муқаррарӣ"
+
+#, fuzzy
+#~| msgid "Local File Name"
+#~ msgid "Engine name:"
+#~ msgstr "Номи Файли Маҳаллӣ"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "transfer state: connecting"
+#~ msgid "Connecting...."
+#~ msgstr "Алоқа"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Set Script File"
+#~ msgstr "Тавсифот"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "Transfer State: Finished"
+#~ msgid "Finished"
+#~ msgstr "Тайёр"
+
+#, fuzzy
+#~ msgid "Downloading Metalink File...."
+#~ msgstr "Боркунӣ идома дода шудааст"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Redownload Metalink"
+#~ msgstr "Боркуни ба итмом расид"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgid "File Selection"
+#~ msgstr "Ба нақшагирӣ"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "the string that is used to modify an url"
+#~ msgid "Change string"
+#~ msgstr "Алоқа"
+
+#, fuzzy
+#~ msgid "Append"
+#~ msgstr "Суръат"
+
+#, fuzzy
+#~ msgid "Replace file"
+#~ msgstr "Кушодани &Файл"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "transfer state: running"
+#~ msgid "Running...."
+#~ msgstr "Алоқа"
+
+#, fuzzy
+#~| msgid "Address (URL)"
+#~ msgid "IP Address"
+#~ msgstr "Суроға (URL)"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Down Speed"
+#~ msgstr "Суръат"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Up Speed"
+#~ msgstr "Суръат"
+
+#, fuzzy
+#~| msgid "Docked"
+#~ msgid "Choked"
+#~ msgstr "Пайваст гашта"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgid "Score"
+#~ msgstr "Сарчашма:"
+
+#, fuzzy
+#~ msgid "Downloaded"
+#~ msgstr "Боркунӣ идома дода шудааст"
+
+#, fuzzy
+#~ msgid "Interesting"
+#~ msgstr "Муттаҳидгардӣ бо Konqueror"
+
+#, fuzzy
+#~ msgid "Download speed"
+#~ msgstr "Боркунӣ идома дода шудааст"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Upload speed"
+#~ msgstr "Суръат"
+
+#, fuzzy
+#~| msgid "Count"
+#~ msgid "Chunk"
+#~ msgstr "Кӯшиш"
+
+#, fuzzy
+#~ msgid "Progress"
+#~ msgstr "Муколамаи Амалиёт"
+
+#, fuzzy
+#~ msgid "Files"
+#~ msgstr "Кушодани &Файл"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of the chunk"
+#~ msgstr "Шумораи кӯшишҳо:"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Download speed of the chunk"
+#~ msgstr "Боркуни ба итмом расид"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed"
+#~ msgstr "Суръат"
+
+#, fuzzy
+#~ msgid "Status"
+#~ msgstr "&Боз оғоз намудан"
+
+#, fuzzy
+#~ msgid "File"
+#~ msgstr "Кушодани &Файл"
+
+#, fuzzy
+#~ msgid "Advanced Details for %1"
+#~ msgstr "Феҳрист бо Нобаёнӣ"
+
+#, fuzzy
+#~ msgid "Trackers"
+#~ msgstr "&Интиқол"
+
+#, fuzzy
+#~ msgctxt "Open file"
+#~ msgid "Open"
+#~ msgstr "Кушодани &Файл"
+
+#, fuzzy
+#~ msgid "Download first"
+#~ msgstr "Боркунӣ идома дода шудааст"
+
+#, fuzzy
+#~ msgid "Download normally"
+#~ msgstr "Феҳрист бо Нобаёнӣ"
+
+#, fuzzy
+#~ msgid "Download last"
+#~ msgstr "Боркунӣ идома дода шудааст"
+
+#, fuzzy
+#~ msgid "Do Not Download"
+#~ msgstr "Мудири Боркунӣ"
+
+#, fuzzy
+#~| msgid "Download Selected Files"
+#~ msgid "Delete File(s)"
+#~ msgstr "Боркунии Файлҳои Интихобшуда"
+
+#, fuzzy
+#~ msgid "Move File"
+#~ msgstr "Кушодани &Файл"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Seeders"
+#~ msgstr "Суръат"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Leechers"
+#~ msgstr "Суръат"
+
+#, fuzzy
+#~ msgid "Times Downloaded"
+#~ msgstr "Боркунӣ идома дода шудааст"
+
+#, fuzzy
+#~ msgctxt "Download normally(not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "Муқаррарӣ"
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 %"
+#~ msgstr " %1/с "
+
+#, fuzzy
+#~ msgctxt "Download Normal (not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "Муқаррарӣ"
+
+#, fuzzy
+#~| msgid "Advanced Options"
+#~ msgid "&Advanced Details"
+#~ msgstr "Интихоботҳои Беҳбудшуда"
+
+#, fuzzy
+#~ msgid "&Scan Files"
+#~ msgstr "Кушодани &Файл"
+
+#, fuzzy
+#~ msgid "Downloading Torrent File...."
+#~ msgstr "Боркунӣ идома дода шудааст"
+
+#, fuzzy
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading...."
+#~ msgstr "Боркунӣ идома дода шудааст"
+
+#, fuzzy
+#~| msgid ""
+#~| "Folder does not exist:\n"
+#~| "%1"
+#~ msgid "Torrent file does not exist"
+#~ msgstr ""
+#~ "Феҳрист мавҷуд нест:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Analyzing torrent...."
+#~ msgstr "Боркунӣ идома дода шудааст"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgctxt "Transfer status: seeding"
+#~ msgid "Seeding...."
+#~ msgstr "Ба нақшагирӣ"
+
+#, fuzzy
+#~| msgid "Default Folder"
+#~ msgid "Select a default torrent folder"
+#~ msgstr "Феҳрист бо Нобаёнӣ"
+
+#, fuzzy
+#~ msgid "Select a default temporary folder"
+#~ msgstr "Феҳрист бо Нобаёнӣ"
+
+#, fuzzy
+#~| msgid "Import Text &File..."
+#~ msgid "Import dropped files"
+#~ msgstr "Воридоти &Файли Матнӣ..."
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgid "File Properties"
+#~ msgstr "Ба нақшагирӣ"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a filename."
+#~ msgstr "Ethernet"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter at least one URL."
+#~ msgstr "Ethernet"
+
+#, fuzzy
+#~ msgid "Metalink Version 4.0 file (*.meta4)"
+#~ msgstr "Кушодани &Файл"
+
+#, fuzzy
+#~ msgid "Metalink Version 3.0 file (*.metalink)"
+#~ msgstr "Кушодани &Файл"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "Import Links"
+#~ msgstr "Пайвандҳо нестанд"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgctxt "Download the items which have been selected"
+#~ msgid "&Download Checked"
+#~ msgstr "Боркуни ба итмом расид"
+
+#, fuzzy
+#~| msgid "Local File Name"
+#~ msgid "File Name"
+#~ msgstr "Номи Файли Маҳаллӣ"
+
+#~ msgid "Description"
+#~ msgstr "Тавсифот"
+
+#, fuzzy
+#~ msgctxt "list header: type of file"
+#~ msgid "File Type"
+#~ msgstr "Навъи Файл"
+
+#~ msgid "Location (URL)"
+#~ msgstr "Ҷойгиршавӣ (URL)"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgctxt "The priority of the mirror"
+#~ msgid "Priority"
+#~ msgstr "Ҳуруф:"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "Number of paralell connections to the mirror"
+#~ msgid "Connections"
+#~ msgstr "Алоқа"
+
+#, fuzzy
+#~| msgid "Location (URL)"
+#~ msgctxt "Location = country"
+#~ msgid "Location"
+#~ msgstr "Ҷойгиршавӣ (URL)"
+
+#, fuzzy
+#~ msgid "Download again"
+#~ msgstr "Мудири Боркунӣ"
+
+#, fuzzy
+#~ msgctxt "Delete selected history-item"
+#~ msgid "Delete selected"
+#~ msgstr "Ягон Файл Интихоб нашудааст"
+
+#, fuzzy
+#~ msgid "Open file"
+#~ msgstr "Кушодани &Файл"
+
+#, fuzzy
+#~ msgid "Transfer History"
+#~ msgstr "Кушодани вогузорӣ:"
+
+#, fuzzy
+#~ msgid "&Open File"
+#~ msgstr "Кушодани &Файл"
+
+#, fuzzy
+#~ msgctxt "The transfer is stopped"
+#~ msgid "Stopped"
+#~ msgstr "Суръат"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "The transfer is finished"
+#~ msgid "Finished"
+#~ msgstr "Тайёр"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgid "Source File"
+#~ msgstr "Сарчашма:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Destination"
+#~ msgstr "Мақсад:"
+
+#, fuzzy
+#~| msgid "Timer"
+#~ msgid "Time"
+#~ msgstr "Вақтсанҷ"
+
+#, fuzzy
+#~ msgid "File Size"
+#~ msgstr "Кушодани &Файл"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "the transfer has been finished"
+#~ msgid "Finished"
+#~ msgstr "Тайёр"
+
+#, fuzzy
+#~| msgid "To: %1"
+#~ msgctxt "an error happened in connection with the user input"
+#~ msgid "Error:"
+#~ msgstr "Ба: %1"
+
+#, fuzzy
+#~| msgid "unknown"
+#~ msgctxt "trust level"
+#~ msgid "Unknown"
+#~ msgstr "ношинос"
+
+#, fuzzy
+#~ msgctxt "pgp signature is not verified"
+#~ msgid "Failed"
+#~ msgstr "Кушодани &Файл"
+
+#, fuzzy
+#~| msgid "To: %1"
+#~ msgid "Error:"
+#~ msgstr "Ба: %1"
+
+#, fuzzy
+#~ msgid "Information:"
+#~ msgstr "Муттаҳидгардӣ бо Konqueror"
+
+#, fuzzy
+#~ msgid "Transfer Details"
+#~ msgstr "Вогузориҳо: %1"
+
+#, fuzzy
+#~ msgid "Transfer Verification for %1"
+#~ msgstr "Феҳрист бо Нобаёнӣ"
+
+#, fuzzy
+#~ msgid "Rename File"
+#~ msgstr "Феҳрист бо Нобаёнӣ"
+
+#, fuzzy
+#~ msgid "Rename %1 to:"
+#~ msgstr "Феҳрист бо Нобаёнӣ"
+
+#, fuzzy
+#~ msgid "&Rename"
+#~ msgstr "Феҳрист бо Нобаёнӣ"
+
+#, fuzzy
+#~ msgid "Rename Group..."
+#~ msgid_plural "Rename Groups..."
+#~ msgstr[0] "Феҳрист бо Нобаёнӣ"
+#~ msgstr[1] "Феҳрист бо Нобаёнӣ"
+
+#, fuzzy
+#~| msgid "Sticky"
+#~ msgctxt "fix position for droptarget"
+#~ msgid "Sticky"
+#~ msgstr "Часбанда"
+
+#, fuzzy
+#~| msgid "KGet"
+#~ msgid "Quit KGet"
+#~ msgstr "KGet"
+
+#, fuzzy
+#~ msgid "The dropped file is a KGet Transfer List"
+#~ msgstr "Кушодани вогузорӣ:"
+
+#, fuzzy
+#~ msgid "&Download"
+#~ msgstr "Боркунӣ идома дода шудааст"
+
+#, fuzzy
+#~ msgid "&Load transfer list"
+#~ msgstr "Кушодани вогузорӣ:"
+
+#, fuzzy
+#~ msgid "Show Main Window"
+#~ msgstr "Тирезаи асосиро дар оғозёбӣ нишон додан"
+
+#, fuzzy
+#~ msgid "Hide Main Window"
+#~ msgstr "Пинҳонкунии Тирезаи &Номнавис"
+
+#, fuzzy
+#~| msgid "Drop target"
+#~ msgid "Drop Target"
+#~ msgstr "Ҳадафи кашолакунӣ"
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgctxt "%1 filename, %2 total size, %3 status"
+#~ msgid "%1(%2) %3"
+#~ msgstr " %1/с "
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgctxt ""
+#~ "%1 filename, %2 percent complete, %3 downloaded out of %4 total size, %5 "
+#~ "status"
+#~ msgid "%1(%2% %3/%4) %5"
+#~ msgstr " %1/с "
+
+#, fuzzy
+#~ msgid "Hiding drop target"
+#~ msgstr "Пинҳон кардани Ҳадафи Кашолакунӣ"
+
+#, fuzzy
+#~ msgid "Transfer Settings for %1"
+#~ msgstr "Феҳрист бо Нобаёнӣ"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Destination unmodified"
+#~ msgstr "Мақсад:"
+
+#, fuzzy
+#~| msgid "%1% of %2 - %3"
+#~ msgid "%1 of %2"
+#~ msgstr "%1% аз %2 - %3"
+
+#, fuzzy
+#~ msgid "Group Settings for %1"
+#~ msgstr "Феҳрист бо Нобаёнӣ"
+
+#, fuzzy
+#~| msgid "%1/s"
+#~ msgctxt "@item speed of transfer per seconds"
+#~ msgid "%1/s"
+#~ msgstr "%1/с"
+
+#, fuzzy
+#~| msgid "Local File Name"
+#~ msgctxt "@label"
+#~ msgid "File name"
+#~ msgstr "Номи Файли Маҳаллӣ"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "@label Progress of transfer"
+#~ msgid "Finished"
+#~ msgstr "Тайёр"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgctxt "@label Speed of transfer"
+#~ msgid "Speed"
+#~ msgstr "Суръат"
+
+#, fuzzy
+#~ msgctxt "@label Status of transfer"
+#~ msgid "Status"
+#~ msgstr "&Боз оғоз намудан"
+
+#, fuzzy
+#~ msgctxt "@action:button start a transfer"
+#~ msgid "Start"
+#~ msgstr "&Боз оғоз намудан"
+
+#, fuzzy
+#~ msgctxt "@action:button"
+#~ msgid "Stop"
+#~ msgstr "Суръат"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgctxt "@action:button"
+#~ msgid "Remove"
+#~ msgstr "Кушодани Вогузорӣ"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgctxt "@label Download from"
+#~ msgid "Source:"
+#~ msgstr "Сарчашма:"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgctxt "@action"
+#~ msgid "Settings"
+#~ msgstr "Ба нақшагирӣ"
+
+#, fuzzy
+#~| msgctxt "OK as in 'finished'"
+#~| msgid "OK"
+#~ msgctxt "@action:button"
+#~ msgid "OK"
+#~ msgstr "Тайёр"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgctxt "@action Refresh download list every x (seconds)"
+#~ msgid "Refresh download list every"
+#~ msgstr "Боркуни ба итмом расид"
+
+#, fuzzy
+#~ msgctxt "@action:button"
+#~ msgid "Save Settings"
+#~ msgstr "Вогузориҳо: %1"
+
+#, fuzzy
+#~ msgctxt "@title"
+#~ msgid "Downloads"
+#~ msgstr "Боркунӣ идома дода шудааст"
+
+#~ msgid "An advanced download manager for KDE"
+#~ msgstr "Мудири мукаммалгаштаи боркунӣ барои KDE"
+
+#~ msgid "Start KGet with drop target"
+#~ msgstr "Оғози KGet бо мақсади кашолакунӣ"
+
+#, fuzzy
+#~| msgid "Start KGet with drop target"
+#~ msgid "Start KGet with hidden main window"
+#~ msgstr "Оғози KGet бо мақсади кашолакунӣ"
+
+#, fuzzy
+#~| msgid "Start KGet with drop target"
+#~ msgid "Start KGet without drop target animation"
+#~ msgstr "Оғози KGet бо мақсади кашолакунӣ"
+
+#~ msgid "URL(s) to download"
+#~ msgstr "URL(ҳо) барои боркунӣ"
+
+#, fuzzy
+#~ msgid "KGet Transfer List"
+#~ msgstr "Кушодани вогузорӣ:"
+
+#, fuzzy
+#~ msgid "Export Transfers"
+#~ msgstr "&Содироти Рӯйхати Интиқол..."
+
+#, fuzzy
+#~| msgid "&Import Transfer List..."
+#~ msgid "&Import Transfers..."
+#~ msgstr "&Воридоти Рӯйхати Интиқол..."
+
+#, fuzzy
+#~ msgid "&Export Transfers List..."
+#~ msgstr "&Содироти Рӯйхати Интиқол..."
+
+#, fuzzy
+#~ msgid "&Export Transfers as Plain Text..."
+#~ msgstr "&Содироти Рӯйхати Интиқол..."
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Top Priority"
+#~ msgstr "Ҳуруф:"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Least Priority"
+#~ msgstr "Ҳуруф:"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Increase Priority"
+#~ msgstr "Ҳуруф:"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Decrease Priority"
+#~ msgstr "Ҳуруф:"
+
+#, fuzzy
+#~ msgid "Auto-Paste Mode"
+#~ msgstr "Усули &Худҷойгузорӣ"
+
+#, fuzzy
+#~ msgid ""
+#~ "<b>Auto paste</b> button toggles the auto-paste mode on and off.\n"
+#~ "When set, KGet will periodically scan the clipboard for URLs and paste "
+#~ "them automatically."
+#~ msgstr ""
+#~ "Тугмаи <b>Худчасбонидан</b> усули худчасбониданро\n"
+#~ "фаъол/хомӯш месозад.\n"
+#~ "\n"
+#~ "Агар ин хосият барпо шуда бошад, KGet ба таври\n"
+#~ "даврӣ силули мухобиротиро сканер мекунад ва аз он ҷо ба таври худкор URL-"
+#~ "ро ҷойгузорӣ мекунад."
+
+#, fuzzy
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Remove Selected"
+#~ msgstr "&Идома додан"
+
+#, fuzzy
+#~| msgid "Download Selected Files"
+#~ msgctxt "delete all finished transfers"
+#~ msgid "Remove All Finished"
+#~ msgstr "Боркунии Файлҳои Интихобшуда"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgctxt "redownload selected transfer item"
+#~ msgid "Redownload Selected"
+#~ msgstr "Боркуни ба итмом расид"
+
+#, fuzzy
+#~ msgid "Start / Resume Selected"
+#~ msgstr "Ягон Файл Интихоб нашудааст"
+
+#, fuzzy
+#~ msgid "Stop Selected"
+#~ msgstr "Ягон Файл Интихоб нашудааст"
+
+#, fuzzy
+#~ msgid "Stop"
+#~ msgstr "Суръат"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Remove"
+#~ msgstr "Кушодани Вогузорӣ"
+
+#, fuzzy
+#~ msgid "Open Destination"
+#~ msgstr "Кушодани &Мақсад"
+
+#, fuzzy
+#~ msgid "Open File"
+#~ msgstr "Кушодани &Файл"
+
+#, fuzzy
+#~ msgid "Show Details"
+#~ msgstr "H_Abrorova@rambler.ru"
+
+#, fuzzy
+#~ msgid "Copy URL to Clipboard"
+#~ msgstr "&Нусхабардории URL ба Силули Мухобиротӣ"
+
+#, fuzzy
+#~ msgid "&Transfer History"
+#~ msgstr "Кушодани вогузорӣ:"
+
+#, fuzzy
+#~ msgid "&Group Settings"
+#~ msgstr "Феҳрист бо Нобаёнӣ"
+
+#, fuzzy
+#~ msgid "&Transfer Settings"
+#~ msgstr "Вогузориҳо: %1"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "Import &Links..."
+#~ msgstr "Пайвандҳо нестанд"
+
+#, fuzzy
+#~ msgid ""
+#~ "This is the first time you have run KGet.\n"
+#~ "Would you like to enable KGet as the download manager for Konqueror?"
+#~ msgstr ""
+#~ "Ин бори аввлест, ки шумо KGet-ро сар медиҳед.\n"
+#~ "Муттаҳидгардӣ бо Konqueror-ро даргиронам?"
+
+#, fuzzy
+#~ msgid "Konqueror Integration"
+#~ msgstr "Муттаҳидгардӣ бо Konqueror"
+
+#, fuzzy
+#~ msgid ""
+#~ "Some transfers are still running.\n"
+#~ "Are you sure you want to close KGet?"
+#~ msgstr ""
+#~ "Баъзе вогузориҳо то ба ҳол фаъоланд.\n"
+#~ "Дар ҳақиқат мехоҳед, ки KGet-ро хомӯш созед?"
+
+#, fuzzy
+#~ msgid "Enter Group Name"
+#~ msgstr "Абророва Хиромон"
+
+#, fuzzy
+#~ msgid "Group name:"
+#~ msgstr "Абророва Хиромон"
+
+#, fuzzy
+#~| msgid "Are you sure you want to delete this transfer?"
+#~ msgid "Are you sure you want to delete the selected transfer?"
+#~ msgid_plural "Are you sure you want to delete the selected transfers?"
+#~ msgstr[0] "Дар ҳақиқат мехоҳед, ки ин вогузориро нобуд созед?"
+#~ msgstr[1] "Дар ҳақиқат мехоҳед, ки ин вогузориро нобуд созед?"
+
+#, fuzzy
+#~ msgid "Confirm transfer delete"
+#~ msgstr "Кушодани вогузорӣ:"
+
+#, fuzzy
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Абророва Хиромон"
+
+#, fuzzy
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "H_Abrorova@rambler.ru"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Automatic verification:"
+#~ msgstr "Тавсифот"
+
+#, fuzzy
+#~| msgid "Automation Options"
+#~ msgid "Automatic verification"
+#~ msgstr "Хосиятҳои Худкорсозӣ"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Keyservers:"
+#~ msgstr "Суръат"
+
+#, fuzzy
+#~| msgid "Move to &End"
+#~ msgid "Move &Up"
+#~ msgstr "Ҷойивазкунӣ ба &Охир"
+
+#, fuzzy
+#~| msgid "Move to &End"
+#~ msgid "Move &Down"
+#~ msgstr "Ҷойивазкунӣ ба &Охир"
+
+#, fuzzy
+#~ msgid "Rename"
+#~ msgstr "Феҳрист бо Нобаёнӣ"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Limit Maximum Downloads Per Group"
+#~ msgstr "Боркуни ба итмом расид"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of downloads:"
+#~ msgstr "Шумораи кӯшишҳо:"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed Limit"
+#~ msgstr "Суръат"
+
+#, fuzzy
+#~ msgid "Global download limit:"
+#~ msgstr "Боркунӣ идома дода шудааст"
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid " KiB/s"
+#~ msgstr " %1 KБ/с "
+
+#, fuzzy
+#~ msgid "Global upload limit:"
+#~ msgstr "Боркунӣ идома дода шудааст"
+
+#, fuzzy
+#~ msgid "Per transfer:"
+#~ msgstr "&Интиқол"
+
+#, fuzzy
+#~ msgid "Reconnect on Error or Broken Connection"
+#~ msgstr "Ҳангоми шикасти пайвастшавӣ"
+
+#~ msgid "Number of retries:"
+#~ msgstr "Шумораи кӯшишҳо:"
+
+#, fuzzy
+#~ msgid "Retry after:"
+#~ msgstr "Бозпайвастшавӣ баъди:"
+
+#, fuzzy
+#~ msgid "After Completing Downloads"
+#~ msgstr "Баромадани худкор баъди ба итмомрасии боркуниҳо"
+
+#, fuzzy
+#~ msgid "Auto shutdown"
+#~ msgstr "Баромадани худкор фаъол сохта шудааст."
+
+#, fuzzy
+#~ msgid "Auto disconnect"
+#~ msgstr "Худкандашавӣ фаъол сохта шудааст."
+
+#, fuzzy
+#~ msgid "Enable Web Interface"
+#~ msgstr "Истифодаи тасвири мутаҳаррик"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Port:"
+#~ msgstr "Ҳуруф:"
+
+#, fuzzy
+#~ msgid "Startup"
+#~ msgstr "&Боз оғоз намудан"
+
+#, fuzzy
+#~ msgid "Enable animations"
+#~ msgstr "Истифодаи тасвири мутаҳаррик"
+
+#, fuzzy
+#~ msgid "Show drop target"
+#~ msgstr "Намоиш додани Ҳадафи Кашолакунӣ"
+
+#, fuzzy
+#~ msgid "Enable system tray icon"
+#~ msgstr "Истифодаи тасвири мутаҳаррик"
+
+#, fuzzy
+#~ msgid "Execute action after all downloads have been finished:"
+#~ msgstr "Боркуни ба итмом расид"
+
+#, fuzzy
+#~ msgid "At startup:"
+#~ msgstr "&Боз оғоз намудан"
+
+#, fuzzy
+#~ msgid "Restore Download State"
+#~ msgstr "Боркунӣ идома дода шудааст"
+
+#, fuzzy
+#~ msgid "Start All Downloads"
+#~ msgstr "Нишонакунии боркуниҳои нотамом"
+
+#, fuzzy
+#~ msgid "Stop All Downloads"
+#~ msgstr "Нишонакунии боркуниҳои нотамом"
+
+#, fuzzy
+#~ msgid "History"
+#~ msgstr "Кушодани вогузорӣ:"
+
+#, fuzzy
+#~ msgid "History backend:"
+#~ msgstr "Кушодани вогузорӣ:"
+
+#, fuzzy
+#~ msgid "Use as download manager for Konqueror:"
+#~ msgstr "Мудири мукаммалгаштаи боркунӣ барои KDE"
+
+#, fuzzy
+#~ msgid "Monitor clipboard for files to download"
+#~ msgstr "Шумо ягон файлро барои боркунӣ интихоб накардаед."
+
+#, fuzzy
+#~| msgid "Local File Name"
+#~ msgid "Engine Name"
+#~ msgstr "Номи Файли Маҳаллӣ"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of connections per URL:"
+#~ msgstr "Шумораи кӯшишҳо:"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgid "File Settings"
+#~ msgstr "Ба нақшагирӣ"
+
+#, fuzzy
+#~| msgid "Local File Name"
+#~ msgid "Filename:"
+#~ msgstr "Номи Файли Маҳаллӣ"
+
+#, fuzzy
+#~| msgid "Log Window"
+#~ msgid "Login Info"
+#~ msgstr "Тирезаи Номнавис"
+
+#, fuzzy
+#~ msgid "Username:"
+#~ msgstr "Феҳрист бо Нобаёнӣ"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Path:"
+#~ msgstr "Ҳуруф:"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Description:"
+#~ msgstr "Тавсифот"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of simultaneous file downloads:"
+#~ msgstr "Шумораи кӯшишҳо:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of mirrors per file:"
+#~ msgstr "Шумораи кӯшишҳо:"
+
+#, fuzzy
+#~ msgid "Mode:"
+#~ msgstr "Феҳристҳо"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Remove Tracker"
+#~ msgstr "Кушодани Вогузорӣ"
+
+#, fuzzy
+#~ msgid "Update Trackers"
+#~ msgstr "&Интиқол"
+
+#, fuzzy
+#~ msgid "Remove Webseed"
+#~ msgstr "&Идома додан"
+
+#, fuzzy
+#~| msgid "Total"
+#~ msgid "Total:"
+#~ msgstr "Ҳамагӣ"
+
+#, fuzzy
+#~ msgid "Downloaded:"
+#~ msgstr "Боркунӣ идома дода шудааст"
+
+#, fuzzy
+#~| msgid " Size: %1 "
+#~ msgid "Size:"
+#~ msgstr " Андоза: %1 "
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of chunks found:"
+#~ msgstr "Шумораи кӯшишҳо:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of chunks failed:"
+#~ msgstr "Шумораи кӯшишҳо:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of chunks not downloaded:"
+#~ msgstr "Шумораи кӯшишҳо:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of chunks downloaded:"
+#~ msgstr "Шумораи кӯшишҳо:"
+
+#, fuzzy
+#~ msgid "Stats"
+#~ msgstr "&Боз оғоз намудан"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Seeders:"
+#~ msgstr "Суръат"
+
+#, fuzzy
+#~ msgid "Download speed:"
+#~ msgstr "Боркунӣ идома дода шудааст"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Upload speed:"
+#~ msgstr "Суръат"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgctxt "source-file"
+#~ msgid "Source:"
+#~ msgstr "Сарчашма:"
+
+#, fuzzy
+#~ msgid "Upload limit per transfer:"
+#~ msgstr "Боркунӣ идома дода шудааст"
+
+#, fuzzy
+#~| msgid "Limits"
+#~ msgid "No Limit"
+#~ msgstr "Маҳдудиятҳо"
+
+#, fuzzy
+#~ msgid "Download limit per transfer:"
+#~ msgstr "Боркунӣ идома дода шудааст"
+
+#~ msgid "Folders"
+#~ msgstr "Феҳристҳо"
+
+#, fuzzy
+#~| msgid "Default Folder"
+#~ msgid "Default torrent folder:"
+#~ msgstr "Феҳрист бо Нобаёнӣ"
+
+#, fuzzy
+#~| msgid "Default Folder"
+#~ msgid "Default temporary folder"
+#~ msgstr "Феҳрист бо Нобаёнӣ"
+
+#, fuzzy
+#~| msgid "Resumed"
+#~ msgid "Required"
+#~ msgstr "Барқароршуда"
+
+#, fuzzy
+#~| msgid "Total size is %1 bytes"
+#~ msgid "File size (in bytes):"
+#~ msgstr "Андозаи умумӣ ин %1 байтҳо"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Verification:"
+#~ msgstr "Тавсифот"
+
+#, fuzzy
+#~ msgid "*.metalink *.meta4|Metalink file (*.metalink *.meta4)"
+#~ msgstr "Кушодани &Файл"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgid "Date and time:"
+#~ msgstr "Вақт Боқӣ мондааст"
+
+#, fuzzy
+#~ msgid "Version:"
+#~ msgstr "Вусъат"
+
+#, fuzzy
+#~| msgid "Log"
+#~ msgid "Logo:"
+#~ msgstr "Номнавис"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "Name:"
+#~ msgstr "Ном"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Name of the publisher"
+#~ msgstr "Шумораи кӯшишҳо:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "URL to the publisher"
+#~ msgstr "Шумораи кӯшишҳо:"
+
+#, fuzzy
+#~ msgctxt "Files as in files on a server"
+#~ msgid "Files:"
+#~ msgstr "Кушодани &Файл"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "&Import Links"
+#~ msgstr "Пайвандҳо нестанд"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgid "Contains"
+#~ msgstr "Алоқа"
+
+#, fuzzy
+#~ msgid "Does Not Contain"
+#~ msgstr "Мудири Боркунӣ"
+
+#, fuzzy
+#~ msgctxt "Check as in mark, not as in verify"
+#~ msgid "Chec&k Selected"
+#~ msgstr "Ягон Файл Интихоб нашудааст"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of connections:"
+#~ msgstr "Шумораи кӯшишҳо:"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a URL"
+#~ msgstr "Ethernet"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Priority:"
+#~ msgstr "Ҳуруф:"
+
+#, fuzzy
+#~| msgid "Location (URL)"
+#~ msgid "Location:"
+#~ msgstr "Ҷойгиршавӣ (URL)"
+
+#, fuzzy
+#~| msgid "Offline mode"
+#~ msgctxt "View modes"
+#~ msgid "View Modes"
+#~ msgstr "Усули худмухтор"
+
+#, fuzzy
+#~ msgid "Date"
+#~ msgstr "&Боз оғоз намудан"
+
+#, fuzzy
+#~ msgid "Filter History"
+#~ msgstr "Кушодани вогузорӣ:"
+
+#, fuzzy
+#~ msgctxt "delete selected transfer"
+#~ msgid "Delete Selected"
+#~ msgstr "Ягон Файл Интихоб нашудааст"
+
+#, fuzzy
+#~ msgid "Download"
+#~ msgstr "Боркунӣ идома дода шудааст"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgctxt "hash as a hash of type md5, sha1 etc."
+#~ msgid "Hash:"
+#~ msgstr "Ҳуруф:"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgid "Remaining Time:"
+#~ msgstr "Вақт Боқӣ мондааст"
+
+#, fuzzy
+#~ msgid "Transfer Settings"
+#~ msgstr "Вогузориҳо: %1"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Download Destination:"
+#~ msgstr "Мақсад:"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgctxt "No value has been set"
+#~ msgid "Not set"
+#~ msgstr "Пайвандҳо нестанд"
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid " KiB"
+#~ msgstr " %1 KБ/с "
+
+#, fuzzy
+#~ msgid "Upload Limit:"
+#~ msgstr "Боркунӣ идома дода шудааст"
+
+#, fuzzy
+#~ msgid "Download Limit:"
+#~ msgstr "Боркунӣ идома дода шудааст"
+
+#, fuzzy
+#~| msgid "Maximum open connections:"
+#~ msgid "Maximum Share Ratio:"
+#~ msgstr "Шумораи калонтарини пайвастшавиҳои кушод:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgctxt "verification of the download (e.g. by using MD5)"
+#~ msgid "Verification"
+#~ msgstr "Мақсад:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Creation:"
+#~ msgstr "Мақсад:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Expiration:"
+#~ msgstr "Мақсад:"
+
+#, fuzzy
+#~ msgid "Group Settings"
+#~ msgstr "Феҳрист бо Нобаёнӣ"
+
+#, fuzzy
+#~| msgid "Default Folder"
+#~ msgid "Default folder:"
+#~ msgstr "Феҳрист бо Нобаёнӣ"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Maximum download speed:"
+#~ msgstr "Боркуни ба итмом расид"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Maximum upload speed:"
+#~ msgstr "Боркуни ба итмом расид"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Destination:"
+#~ msgstr "Мақсад:"
+
+#, fuzzy
+#~ msgid "Transfer group:"
+#~ msgstr "&Интиқол"
+
+#, fuzzy
+#~ msgid "&File"
+#~ msgstr "Кушодани &Файл"
+
+#, fuzzy
+#~ msgid "&Downloads"
+#~ msgstr "Боркунӣ идома дода шудааст"
+
+#~ msgid "There are no links in the active frame of the current HTML page."
+#~ msgstr "Дар чаҳорчӯбаи фаъоли саҳифаи зерини HTML ягон пайвастҳо нестанд."
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Remove Tag"
+#~ msgstr "Кушодани Вогузорӣ"
+
+#, fuzzy
+#~ msgid "Tag Settings for the groups"
+#~ msgstr "Феҳрист бо Нобаёнӣ"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgid "Tag Settings"
+#~ msgstr "Ба нақшагирӣ"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Available tags:"
+#~ msgstr "Кушодани Вогузорӣ"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a new Tag"
+#~ msgstr "Ethernet"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a new tag"
+#~ msgstr "Ethernet"
+
+#, fuzzy
+#~| msgctxt "OK as in 'finished'"
+#~| msgid "OK"
+#~ msgid "OK"
+#~ msgstr "Тайёр"
+
+#, fuzzy
+#~| msgid "To: %1"
+#~ msgid "Error: %1"
+#~ msgstr "Ба: %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open log file %1 : %2"
+#~ msgstr ""
+#~ "Файл кушода намешавад:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not write to file:\n"
+#~| "%1"
+#~ msgid "Cannot write to %1 : %2"
+#~ msgstr ""
+#~ "Ба файл навишта намешавад:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Copy file from: %1"
+#~ msgid "Cannot read from %1"
+#~ msgstr "Нусхабардории файл аз: %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot create directory %1"
+#~ msgstr ""
+#~ "Файл хонда намешавад:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file: %1"
+#~ msgstr ""
+#~ "Файл хонда намешавад:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot seek in file : %1"
+#~ msgstr ""
+#~ "Файл кушода намешавад:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgid "Connections"
+#~ msgstr "Алоқа"
+
+#, fuzzy
+#~ msgid "Tracker"
+#~ msgstr "&Интиқол"
+
+#, fuzzy
+#~| msgid "Not Deleted"
+#~ msgid "Not connected"
+#~ msgstr "Нобуд Нагаштааст"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "Not in use"
+#~ msgstr "Пайвандҳо нестанд"
+
+#, fuzzy
+#~| msgid "Connection Type"
+#~ msgid "Connection closed"
+#~ msgstr "Навъи Алоқа"
+
+#, fuzzy
+#~| msgid "Connection Type"
+#~ msgid "Connected"
+#~ msgstr "Навъи Алоқа"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgid "Connecting"
+#~ msgstr "Алоқа"
+
+#, fuzzy
+#~| msgid ""
+#~| "The specified file does not exist:\n"
+#~| "%1"
+#~ msgid "The directory %1 does not exist"
+#~ msgstr ""
+#~ "Файли таъиншуда мавҷуд нест:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open index file %1 : %2"
+#~ msgstr ""
+#~ "Файл кушода намешавад:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot create file %1 : %2"
+#~ msgstr ""
+#~ "Файл хонда намешавад:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not write to file:\n"
+#~| "%1"
+#~ msgid "Failed to write last chunk to DND file : %1"
+#~ msgstr ""
+#~ "Ба файл навишта намешавад:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file %1 : %2"
+#~ msgstr ""
+#~ "Файл хонда намешавад:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Failed to seek file %1 : %2"
+#~ msgstr ""
+#~ "Файл хонда намешавад:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Error while reading file:\n"
+#~| "%1"
+#~ msgid "Error reading from %1"
+#~ msgstr ""
+#~ "Хатогӣ ҳангоми хондани файл:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not write to file:\n"
+#~| "%1"
+#~ msgid "Failed to write to file %1 : %2"
+#~ msgstr ""
+#~ "Ба файл навишта намешавад:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open file %1 : %2"
+#~ msgstr ""
+#~ "Файл кушода намешавад:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Not Deleted"
+#~ msgid "Not started"
+#~ msgstr "Нобуд Нагаштааст"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgctxt "Status of a torrent file"
+#~ msgid "Seeding"
+#~ msgstr "Ба нақшагирӣ"
+
+#, fuzzy
+#~ msgid "Downloading"
+#~ msgstr "Боркунӣ идома дода шудааст"
+
+#, fuzzy
+#~ msgid "Stopped"
+#~ msgstr "Суръат"
+
+#, fuzzy
+#~| msgid "Queueing"
+#~ msgid "Queued for seeding"
+#~ msgstr "Ба саф гузоштан"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Queued for downloading"
+#~ msgstr "Шумораи кӯшишҳо:"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open file %1: %2"
+#~ msgstr ""
+#~ "Файл кушода намешавад:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot create index file: %1"
+#~ msgstr ""
+#~ "Файл хонда намешавад:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open file : %1 : %2"
+#~ msgstr ""
+#~ "Файл кушода намешавад:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Not Deleted"
+#~ msgid "Delete"
+#~ msgstr "Нобуд Нагаштааст"
+
+#, fuzzy
+#~ msgid "Details for: %1"
+#~ msgstr "Феҳрист бо Нобаёнӣ"
+
+#, fuzzy
+#~ msgid "All downloads"
+#~ msgstr "Нишонакунии боркуниҳои нотамом"
+
+#, fuzzy
+#~ msgid "Finished downloads"
+#~ msgstr "Тайёр"
+
+#, fuzzy
+#~ msgid "Transfers:"
+#~ msgstr "&Интиқол"
+
+#, fuzzy
+#~ msgid "Downloads"
+#~ msgstr "Боркунӣ идома дода шудааст"
+
+#, fuzzy
+#~ msgid "Transfer details:"
+#~ msgstr "Вогузориҳо: %1"
+
+#, fuzzy
+#~ msgid "Transfer List"
+#~ msgstr "Кушодани вогузорӣ:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of threads:"
+#~ msgstr "Шумораи кӯшишҳо:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Name of the license"
+#~ msgstr "Шумораи кӯшишҳо:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "URL to the license"
+#~ msgstr "Шумораи кӯшишҳо:"
+
+#, fuzzy
+#~| msgid "Delayed"
+#~ msgctxt "The transfer is delayed"
+#~ msgid "Delayed"
+#~ msgstr "Ба ақиб гузошта"
+
+#~ msgid ""
+#~ "Destination file \n"
+#~ "%1\n"
+#~ "already exists.\n"
+#~ "Do you want to overwrite it?"
+#~ msgstr ""
+#~ "Файли мақсад \n"
+#~ "%1\n"
+#~ "аллакай мавҷуд аст.\n"
+#~ "Онро рӯиҳам навиштан мехоҳед?"
+
+#, fuzzy
+#~ msgid "Overwrite destination"
+#~ msgstr "Кушодани &Мақсад"
+
+#~ msgid "Queued"
+#~ msgstr "Дар саф гузошташуда"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Current Tracker"
+#~ msgstr "Кушодани Вогузорӣ"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgid "Scrape"
+#~ msgstr "Сарчашма:"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Available Trackers"
+#~ msgstr "Кушодани Вогузорӣ"
+
+#, fuzzy
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Delete Selected"
+#~ msgstr "Ягон Файл Интихоб нашудааст"
+
+#, fuzzy
+#~| msgid "We are online."
+#~ msgid "We are sorry"
+#~ msgstr "Мо дар шабака ҳастем."
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Rename transfer"
+#~ msgstr "Кушодани Вогузорӣ"
+
+#, fuzzy
+#~ msgid "Download URL again?"
+#~ msgstr "Мудири Боркунӣ"
+
+#, fuzzy
+#~ msgctxt "file in a filsystem"
+#~ msgid "File"
+#~ msgstr "Кушодани &Файл"
+
+#, fuzzy
+#~ msgid "Are you sure that you want to remove all selected groups?"
+#~ msgstr "Дар ҳақиқат мехоҳед, ки ин вогузориҳоро нобуд созед?"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "Name"
+#~ msgstr "Ном"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgid "Remaining Time"
+#~ msgstr "Вақт Боқӣ мондааст"
+
+#, fuzzy
+#~ msgid "KGet - Download Manager"
+#~ msgstr "Мудири Боркунӣ"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgctxt "@label transfer source"
+#~ msgid "Source:"
+#~ msgstr "Сарчашма:"
+
+#, fuzzy
+#~| msgid "0 B/s"
+#~ msgid "kBi"
+#~ msgstr "0 Б/с"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file : %1"
+#~ msgstr ""
+#~ "Файл хонда намешавад:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "&Transfer History..."
+#~ msgstr "Кушодани вогузорӣ:"
+
+#, fuzzy
+#~ msgid "&Group Settings..."
+#~ msgstr "Феҳрист бо Нобаёнӣ"
+
+#, fuzzy
+#~ msgid "&Transfer Settings..."
+#~ msgstr "Вогузориҳо: %1"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed limit"
+#~ msgstr "Суръат"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Download Speed:"
+#~ msgstr "Боркуни ба итмом расид"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Upload Speed:"
+#~ msgstr "Суръат"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "&Import links"
+#~ msgstr "Пайвандҳо нестанд"
+
+#, fuzzy
+#~| msgid "Not Deleted"
+#~ msgid "&Delete"
+#~ msgstr "Нобуд Нагаштааст"
+
+#, fuzzy
+#~ msgid "Default Download Folders"
+#~ msgstr "Феҳрист бо Нобаёнӣ"
+
+#, fuzzy
+#~| msgid "Extension"
+#~ msgid "File Extension"
+#~ msgstr "Вусъат"
+
+#~ msgid "Default Folder"
+#~ msgstr "Феҳрист бо Нобаёнӣ"
+
+#, fuzzy
+#~ msgid "Set as default folder"
+#~ msgstr "Феҳрист бо Нобаёнӣ"
+
+#, fuzzy
+#~ msgid "extRegExp, defaultFolder"
+#~ msgstr "Феҳрист бо Нобаёнӣ"
+
+#, fuzzy
+#~ msgid "Downloading.."
+#~ msgstr "Боркунӣ идома дода шудааст"
+
+#, fuzzy
+#~ msgid "Advanced-Details for %1"
+#~ msgstr "Феҳрист бо Нобаёнӣ"
+
+#, fuzzy
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading.."
+#~ msgstr "Боркунӣ идома дода шудааст"
+
+#, fuzzy
+#~ msgid "Downloads number:"
+#~ msgstr "Мудири Боркунӣ"
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 GB"
+#~ msgstr " %1/с "
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 MB"
+#~ msgstr " %1/с "
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid "%1 KB"
+#~ msgstr " %1 KБ/с "
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 B"
+#~ msgstr " %1/с "
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid "%1 KB/s"
+#~ msgstr " %1 KБ/с "
+
+#, fuzzy
+#~| msgid "0 B/s"
+#~ msgid "kBi/s"
+#~ msgstr "0 Б/с"
+
+#~ msgid "Not Deleted"
+#~ msgstr "Нобуд Нагаштааст"
+
+#, fuzzy
+#~ msgid "Konqueror Integration disabled"
+#~ msgstr "Муттаҳидгардӣ бо Konqueror"
+
+#~ msgid "Show main window at startup"
+#~ msgstr "Тирезаи асосиро дар оғозёбӣ нишон додан"
+
+#, fuzzy
+#~ msgid "<speed>"
+#~ msgstr "Суръат"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgid "<remaining time>"
+#~ msgstr "Вақт Боқӣ мондааст"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file %1"
+#~ msgstr ""
+#~ "Файл хонда намешавад:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Error while writing file:\n"
+#~| "%1"
+#~ msgid "Error writing to %1 : %2"
+#~ msgstr ""
+#~ "Хатогӣ ҳангоми навиштани файл:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Error while writing file:\n"
+#~| "%1"
+#~ msgid "Error writing to %1"
+#~ msgstr ""
+#~ "Хатогӣ ҳангоми навиштани файл:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "List All Links"
+#~ msgid "&List Links"
+#~ msgstr "Рӯйхати Ҳамаи Пайвастагиҳо"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file"
+#~ msgstr ""
+#~ "Файл хонда намешавад:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgctxt "Download normally(not as first or last"
+#~ msgid "Normal"
+#~ msgstr "Муқаррарӣ"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Bittorrent-Speedlimits"
+#~ msgstr "Суръат"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed-Limits"
+#~ msgstr "Суръат"
+
+#, fuzzy
+#~ msgid " of "
+#~ msgstr "%1 аз %2"
+
+#, fuzzy
+#~ msgid "Download Folder"
+#~ msgstr "Феҳрист бо Нобаёнӣ"
+
+#, fuzzy
+#~ msgid "Hide Drop Target"
+#~ msgstr "Пинҳон кардани Ҳадафи Кашолакунӣ"
+
+#, fuzzy
+#~ msgid "Hide drop target"
+#~ msgstr "Пинҳон кардани Ҳадафи Кашолакунӣ"
+
+#~ msgid ""
+#~ "Already saving URL\n"
+#~ "%1"
+#~ msgstr ""
+#~ "URL аллакай захира шудааст\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Default Group"
+#~ msgstr "Феҳрист бо Нобаёнӣ"
+
+#, fuzzy
+#~ msgid "DlgAdvanced"
+#~ msgstr "Пешрафта"
+
+#, fuzzy
+#~ msgid "Delete Group."
+#~ msgstr "Феҳрист бо Нобаёнӣ"
+
+#, fuzzy
+#~ msgid "Hide Me"
+#~ msgstr "Номи Файл"
+
+#~ msgid ""
+#~ "Each row consists of exactly one\n"
+#~ "extension type and one folder."
+#~ msgstr ""
+#~ "Ҳар сатр албатта аз як навъи тавсиа\n"
+#~ "ва як феҳрист иборат аст."
+
+#~ msgid "&Dock"
+#~ msgstr "&Док"
+
+#~ msgid "Source Label"
+#~ msgstr "Нишонаи Сарчашма"
+
+#~ msgid "&Keep this window open after the operation is complete."
+#~ msgstr "Ин тирезаро баъди он ки амал ба итмом мерасад кушода &нигоҳ доред."
+
+#~ msgid "Not resumed"
+#~ msgstr "Барқарор нашуда"
+
+#~ msgid "Automation"
+#~ msgstr "Худкорсозӣ"
+
+#~ msgid "System"
+#~ msgstr "Система"
+
+#~ msgid "Maximize"
+#~ msgstr "Кушодан"
+
+#~ msgid "Minimize"
+#~ msgstr "Печонидан"
+
+#~ msgid ""
+#~ "This is a folder and not a file:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Ин феҳрист аст на ин ки файл:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "You do not have read permission for the file:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Шумо рухсати хондани ин фалро надоред:\n"
+#~ "%1"
+
+#~ msgid "Could only read %1 bytes of %2."
+#~ msgstr "Танҳо %1 битҳо аз %2 хонда шуд."
+
+#~ msgid ""
+#~ "File %1 exists.\n"
+#~ "Do you want to replace it?"
+#~ msgstr ""
+#~ "Файли %1 мавҷуд аст.\n"
+#~ "Оё онро ҷой иваз кардан мехоҳед?"
+
+#~ msgid ""
+#~ "Failed to make a backup copy of %1.\n"
+#~ "Continue anyway?"
+#~ msgstr ""
+#~ "Нокомӣ ҳангоми сохтани нусхаи захиравии %1.\n"
+#~ "Ба ҳар ҳол давом диҳам?"
+
+#~ msgid ""
+#~ "Could not open file for writing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Файлро барои навиштан кушода намешавад:\n"
+#~ "%1"
+
+#~ msgid "Could only write %1 bytes of %2."
+#~ msgstr "Аз %1 байтҳо танҳо %2 навишта шуд."
+
+#~ msgid "Welcome to KGet"
+#~ msgstr "Марҳамат ба KGet"
+
+#~ msgid "Could not create valid socket"
+#~ msgstr "Офаридани бастагоҳи дуруст нашуда истодааст"
+
+#~ msgid "Offline"
+#~ msgstr "Худмухтор"
+
+#~ msgid "Starting offline"
+#~ msgstr "Оғозёбии худмухтор"
+
+#~ msgid "&Open Individual Window"
+#~ msgstr "&Кушодани Тирезаи Алоҳида"
+
+#~ msgid "Move to &Beginning"
+#~ msgstr "Ҷойивазкунӣ ба &Аввал"
+
+#~ msgid "&Pause"
+#~ msgstr "&Таваққуф"
+
+#~ msgid "&Queue"
+#~ msgstr "&Саф"
+
+#~ msgid "&Timer"
+#~ msgstr "&Вақтсанҷ"
+
+#~ msgid "De&lay"
+#~ msgstr "&Таъхир"
+
+#~ msgid "Use &Animation"
+#~ msgstr "Истифодаи &Тасвири Мутаҳаррик"
+
+#~ msgid "&Expert Mode"
+#~ msgstr "Усули &Кордон"
+
+#~ msgid "&Use-Last-Folder Mode"
+#~ msgstr "Усули &Истифодабарии Феҳристи Охирон"
+
+#~ msgid "Auto-&Disconnect Mode"
+#~ msgstr "Усули &Худкандашавӣ"
+
+#~ msgid "Auto-S&hutdown Mode"
+#~ msgstr "Усули &Худмахкамкунӣ"
+
+#~ msgid "&Offline Mode"
+#~ msgstr "Усули &Худмухтор"
+
+#~ msgid "Show &Log Window"
+#~ msgstr "Нишондиҳии Тирезаи &Номнавис"
+
+#~ msgid " Files: %1 "
+#~ msgstr " Файлҳо: %1 "
+
+#~ msgid " Size: %1 KB "
+#~ msgstr "Андоза: %1 KБ "
+
+#~ msgid " Time: %1 "
+#~ msgstr " Вақт: %1 "
+
+#~ msgid ""
+#~ "<b>Resume</b> button starts selected transfers\n"
+#~ "and sets their mode to <i>queued</i>."
+#~ msgstr ""
+#~ "Тугмаи <b>Давомдиҳӣ</b>вогузориҳои интихобшударо сар медиҳад\n"
+#~ "ва онҳоро дар усули <i>сафбандӣ</i> барпо месозад."
+
+#~ msgid ""
+#~ "<b>Pause</b> button stops selected transfers\n"
+#~ "and sets their mode to <i>delayed</i>."
+#~ msgstr ""
+#~ "Тугмаи <b>Таваққуф</b> вогузориҳои интихобшударо бозмедорад\n"
+#~ "ва онҳоро дар усули <i>Таъхир</i> барпо месозад."
+
+#~ msgid ""
+#~ "<b>Delete</b> button removes selected transfers\n"
+#~ "from the list."
+#~ msgstr ""
+#~ "Тугмаи <b>Нобуд кардан</b> вогузориҳои интихобшударо\n"
+#~ "аз рӯйхат хориҷ мекунад."
+
+#~ msgid ""
+#~ "<b>Restart</b> button is a convenience button\n"
+#~ "that simply does Pause and Resume."
+#~ msgstr ""
+#~ "Тугмаи <b>боз оғоз кардан</b> вазифаҳои\n"
+#~ " тугмаҳои Таваққуф ва Давомдиҳиро иҷро менамояд."
+
+#~ msgid ""
+#~ "<b>Queued</b> button sets the mode of selected\n"
+#~ "transfers to <i>queued</i>.\n"
+#~ "\n"
+#~ "It is a radio button -- you can choose between\n"
+#~ "three modes."
+#~ msgstr ""
+#~ "Тугмаи <b>Сафбандӣ</b> вогузориҳои интихобшударо\n"
+#~ "дар намуди <i>дар саф гузошта</i>барпо месозад.\n"
+#~ "\n"
+#~ "Ин тугмаи радио аст -- шумо аз байни се усул\n"
+#~ " интихоб карда метавонед."
+
+#~ msgid ""
+#~ "<b>Scheduled</b> button sets the mode of selected\n"
+#~ "transfers to <i>scheduled</i>.\n"
+#~ "\n"
+#~ "It is a radio button -- you can choose between\n"
+#~ "three modes."
+#~ msgstr ""
+#~ "Тугмаи <b>Ҷадвалбандӣ шуда</b> вогузориҳои интихобшударо\n"
+#~ " дар усули <i>ҷадвалбандӣ шуда</i> барпо месозад.\n"
+#~ "\n"
+#~ "Ин тугмаи радио аст -- шумо аз байни се усул\n"
+#~ " интихоб карда метавонед."
+
+#~ msgid ""
+#~ "<b>Delayed</b> button sets the mode of selected\n"
+#~ "transfers to <i>delayed</i>.This also causes the selected transfers to "
+#~ "stop.\n"
+#~ "\n"
+#~ "It is a radio button -- you can choose between\n"
+#~ "three modes."
+#~ msgstr ""
+#~ "Тугмаи <b>Таваққуф шуда</b> вогузориҳои интихобшударо\n"
+#~ " дар усули <i>таваққуф шуда</i> барпо месозад.Инчунин он боиси истодани "
+#~ "вогузориҳои интихобшуда шуда метавонад\n"
+#~ "Ин тугмаи радио аст -- шумо аз байни се усул\n"
+#~ " интихоб карда метавонед."
+
+#~ msgid ""
+#~ "<b>Preferences</b> button opens a preferences dialog\n"
+#~ "where you can set various options.\n"
+#~ "\n"
+#~ "Some of these options can be more easily set using the toolbar."
+#~ msgstr ""
+#~ "Тугмаи <b>Имтиёзҳо</b> муколамаи имтиёздорро мекушояд, ки дар он\n"
+#~ "шумо хосиятҳои гуногунро барпо карда метавонед.\n"
+#~ "\n"
+#~ "Баъзеи аз ин хосиятҳоро ба осонӣ ба воситаи панели асбобҳо барпо кардан "
+#~ "лозим аст."
+
+#~ msgid ""
+#~ "<b>Log window</b> button opens a log window.\n"
+#~ "The log window records all program events that occur\n"
+#~ "while KGet is running."
+#~ msgstr ""
+#~ "Тугмаи <b>Тирезаи номнасвис</b> тирезаи номнависро мекушояд.\n"
+#~ "Тирезаи номнавис ҳамаи ҳодисаҳои барномавиеро, ки\n"
+#~ "ҳангоми иҷроиши KGet ба амал меоянд, сабт мекунад."
+
+#~ msgid ""
+#~ "<b>Paste transfer</b> button adds a URL from\n"
+#~ "the clipboard as a new transfer.\n"
+#~ "\n"
+#~ "This way you can easily copy&paste URLs between\n"
+#~ "applications."
+#~ msgstr ""
+#~ "Тугмаи <b>Часбонидани вогузорӣ</b> аз силули мухобиротӣ\n"
+#~ "URL-ро ҳамчун вогузории нав илова мекунад.\n"
+#~ "\n"
+#~ "Ҳамин тавр шумо ба осонӣ &часбонидани URL-ро\n"
+#~ "байни замимаҳо нусха бардошта метавонед."
+
+#~ msgid ""
+#~ "<b>Expert mode</b> button toggles the expert mode\n"
+#~ "on and off.\n"
+#~ "\n"
+#~ "Expert mode is recommended for experienced users.\n"
+#~ "When set, you will not be \"bothered\" by confirmation\n"
+#~ "messages.\n"
+#~ "<b>Important!</b>\n"
+#~ "Turn it on if you are using auto-disconnect or\n"
+#~ "auto-shutdown features and you want KGet to disconnect \n"
+#~ "or shut down without asking."
+#~ msgstr ""
+#~ "Тугмаи <b>Усули кордон</b> усули кордонро\n"
+#~ "фаъол/хомӯш месозад.\n"
+#~ "\n"
+#~ "Усули кордон барои корвандони кордон маслиҳат дода мешавад.\n"
+#~ "Агар барпо гашта бошад, шуморо бо саволҳои тасдиқот\n"
+#~ "\"халалдор\" намекунад.\n"
+#~ "<b>Муҳим аст!</b>\n"
+#~ "Ин усулро даргиронед, агар шумо хусусиятҳои худкандашавӣ\n"
+#~ "ё баромадани худкорро истифода баред ва агар хоҳед, ки KGet\n"
+#~ "бе пурсиш канда шавад ё барояд."
+
+#~ msgid ""
+#~ "<b>Use last folder</b> button toggles the\n"
+#~ "use-last-folder feature on and off.\n"
+#~ "\n"
+#~ "When set, KGet will ignore the folder settings\n"
+#~ "and put all new added transfers into the folder\n"
+#~ "where the last transfer was put."
+#~ msgstr ""
+#~ "Тугмаи <b>Феҳристи охиронро истифода баред</b> хусусияти\n"
+#~ "истифодабарии феҳристи охиронро фаъол/хомӯш месозад.\n"
+#~ "\n"
+#~ "Агар ин хосият барпо шуда бошад, KGet гузоришҳои феҳристро\n"
+#~ "рад мекунад ва ҳамаи вогузориҳои нави илова шударо ба феҳристе,\n"
+#~ "ки дар он вогузории охирон ворид гардида буд, мегузорад."
+
+#~ msgid ""
+#~ "<b>Auto disconnect</b> button toggles the auto-disconnect\n"
+#~ "mode on and off.\n"
+#~ "\n"
+#~ "When set, KGet will disconnect automatically\n"
+#~ "after all queued transfers are finished.\n"
+#~ "\n"
+#~ "<b>Important!</b>\n"
+#~ "Also turn on the expert mode when you want KGet\n"
+#~ "to disconnect without asking."
+#~ msgstr ""
+#~ "Тугмаи <b>Кандашавии худкор</b> усули худкандашавиро\n"
+#~ "фаъол/хомӯш месозад.\n"
+#~ "\n"
+#~ "Агар ин хосият барпо шуда бошад, KGet баъди ба охиррасии\n"
+#~ "ҳамаи вогузориҳои дар сафбуда, ба таври худкор канда мешавад.\n"
+#~ "\n"
+#~ "<b>Муҳим аст!</b>\n"
+#~ "Инчунин усули кордонро фаъол созед, агар хоҳед, ки KGet\n"
+#~ "бе пурсиш канда шавад."
+
+#~ msgid ""
+#~ "<b>Auto shutdown</b> button toggles the auto-shutdown\n"
+#~ "mode on and off.\n"
+#~ "\n"
+#~ "When set, KGet will quit automatically\n"
+#~ "after all queued transfers are finished.\n"
+#~ "<b>Important!</b>\n"
+#~ "Also turn on the expert mode when you want KGet\n"
+#~ "to quit without asking."
+#~ msgstr ""
+#~ "Тугмаи <b>Баромадани худкор</b> усули баромадани худкорро\n"
+#~ "фаъол/хомӯш месозад.\n"
+#~ "\n"
+#~ "Агар ин хосият барпо шуда бошад, KGet баъди ба охиррасии\n"
+#~ "ҳамаи вогузориҳои дар сафбуда, ба таври худкор мебарояд.\n"
+#~ "<b>Муҳим аст!</b>\n"
+#~ "Инчунин усули кордонро фаъол созед, агар хоҳед, ки KGet\n"
+#~ "бе пурсиш барояд."
+
+#~ msgid ""
+#~ "<b>Offline mode</b> button toggles the offline mode\n"
+#~ "on and off.\n"
+#~ "\n"
+#~ "When set, KGet will act as if it was not connected\n"
+#~ "to the Internet.\n"
+#~ "\n"
+#~ "You can browse offline, while still being able to add\n"
+#~ "new transfers as queued."
+#~ msgstr ""
+#~ "Тугмаи <b>Усули худмухтор</b> усули худмухторро\n"
+#~ "фаъол/хомӯш месозад.\n"
+#~ "\n"
+#~ "Агар ин хосият барпо шуда бошад, KGet ба мисли он, ки\n"
+#~ "вай ба Интернет пайваст шудааст, кор мекунад.\n"
+#~ "\n"
+#~ "Дар ин усул шумо метавонед вогузориҳои\n"
+#~ "навро дар саф гузоред."
+
+#~ msgid ""
+#~ "<b>Drop target</b> button toggles the window style\n"
+#~ "between a normal window and a drop target.\n"
+#~ "\n"
+#~ "When set, the main window will be hidden and\n"
+#~ "instead a small shaped window will appear.\n"
+#~ "\n"
+#~ "You can show/hide a normal window with a simple click\n"
+#~ "on a shaped window."
+#~ msgstr ""
+#~ "Тугмаи <b>Ҳадафи кашолакунӣ</b> навъи тирезаеро байни\n"
+#~ "тирезаи муқаррарӣ ва ҳадафи кашолакунӣ гузариш мекунад.\n"
+#~ "\n"
+#~ "Агар ин хосият барпо шуда бошад, тирезаи асосӣ пинҳон мешавад\n"
+#~ "ва ба ҷои он тирезаи хурди шаклдор пайдо мешавад.\n"
+#~ "\n"
+#~ "Шумо тирезаи муқаррариро ба воситаи ангуштзанӣ ба тирезаи\n"
+#~ "шаклдор нишон/пинҳон карда метавонед."
+
+#~ msgid ""
+#~ "*.kgt|*.kgt\n"
+#~ "*|All Files"
+#~ msgstr ""
+#~ "*.kgt|*.kgt\n"
+#~ "*|Ҳамаи Файлҳо"
+
+#~ msgid "Quitting..."
+#~ msgstr "Баромадан..."
+
+#, fuzzy
+#~ msgid ""
+#~ "The transfer you wanted to delete completed before it could be deleted."
+#~ msgid_plural ""
+#~ "%n transfers you wanted to delete completed before they could be deleted."
+#~ msgstr[0] ""
+#~ "%1 transfers you wanted to delete completed before they could be deleted."
+
+#, fuzzy
+#~ msgid "Stopping all jobs"
+#~ msgstr "Таваққуфи ҳамаи супоришҳо"
+
+#~ msgid "Starting another queued job."
+#~ msgstr "Сардиҳии дагар супориши дар сафбуда."
+
+#~ msgid "Offline mode on."
+#~ msgstr "Усули худмухтор фаъол гардидааст."
+
+#~ msgid "Offline mode off."
+#~ msgstr "Усули худмухтор хомӯш гардидааст."
+
+#~ msgid "Expert mode on."
+#~ msgstr "Усули кордон фаъол гардидааст."
+
+#~ msgid "Expert mode off."
+#~ msgstr "Усули кордон хомӯш гардидааст."
+
+#~ msgid "Use last folder on."
+#~ msgstr "Истифодабарии феҳристи охирон фаъол сохта шудааст."
+
+#~ msgid "Use last folder off."
+#~ msgstr "Истифодабарии феҳристи охирон хомӯш карда шудааст."
+
+#~ msgid "Auto disconnect off."
+#~ msgstr "Худкандашавӣ хомӯш карда шудааст."
+
+#~ msgid "Auto shutdown off."
+#~ msgstr "Баромадани худкор хомӯш карда шудааст."
+
+#~ msgid "Auto paste on."
+#~ msgstr "Ҷойгузории худкор фаъол сохта шудааст."
+
+#~ msgid "Auto paste off."
+#~ msgstr "Ҷойгузории худкор хомӯш карда шудааст."
+
+#, fuzzy
+#~ msgid "<b>Transfers:</b> %1 "
+#~ msgstr "Вогузориҳо: %1"
+
+#, fuzzy
+#~ msgid "<br /><b>Files:</b> %1 "
+#~ msgstr " Файлҳо: %1 "
+
+#, fuzzy
+#~ msgid "<br /><b>Size:</b> %1 "
+#~ msgstr " Андоза: %1 "
+
+#, fuzzy
+#~ msgid "<br /><b>Time:</b> %1 "
+#~ msgstr " Вақт: %1 "
+
+#~ msgid "Do you really want to disconnect?"
+#~ msgstr "Дар ҳақиқат канда шудан мехоҳед?"
+
+#, fuzzy
+#~ msgid "Disconnect"
+#~ msgstr "Кандашавӣ..."
+
+#~ msgid "Disconnecting..."
+#~ msgstr "Кандашавӣ..."
+
+#~ msgid "We are offline."
+#~ msgstr "Мо дар усули худмухторем."
+
+#~ msgid "Id"
+#~ msgstr "Шиноса"
+
+#~ msgid "Mixed"
+#~ msgstr "Омехта"
+
+#~ msgid "Separated"
+#~ msgstr "Ҷудогашта"
+
+#~ msgid "Add new transfers as:"
+#~ msgstr "Иловакунии вогузориҳои нав ҳамчун:"
+
+#~ msgid "Iconified"
+#~ msgstr "Хурд карда шуда"
+
+#~ msgid "Advanced individual windows"
+#~ msgstr "Тирезаҳои алоҳидаи мукаммалгашта "
+
+#~ msgid "Remove files from a list after success"
+#~ msgstr "Баъди боркунии бомуввафақият хориҷкунии файлҳо аз рӯйхат"
+
+#~ msgid "Get file sizes"
+#~ msgstr "Гирифтани андозаҳои файл"
+
+#, fuzzy
+#~ msgid "Expert mode (do not prompt for Cancel or Delete)"
+#~ msgstr "Усули кордон (Барои Бекоркунӣ ва ё Нобудкунӣ тасдиқотро намепурсад)"
+
+#~ msgid "Show individual windows"
+#~ msgstr "Нишондиҳии тирезаҳои алоҳида"
+
+#~ msgid " min"
+#~ msgstr " дақиқа"
+
+#~ msgid "Auto disconnect after completing downloads"
+#~ msgstr "Кандашавии худкор баъди ба итмомрасии боркуниҳо"
+
+#~ msgid "Autosave file list every:"
+#~ msgstr "Захиракунии худкори рӯйхати файлҳо баъди ҳар:"
+
+#~ msgid "Timed disconnect"
+#~ msgstr "Кандашавии ба нақша гирифта"
+
+#~ msgid "Disconnect command:"
+#~ msgstr "Фармони кандашавӣ:"
+
+#~ msgid "Auto paste from clipboard"
+#~ msgstr "Ҷойгузории худкор аз силули мухобироти"
+
+#~ msgid "Reconnect Options"
+#~ msgstr "Хосиятҳои Бозпайвастшавӣ"
+
+#~ msgid "On login or timeout error"
+#~ msgstr "Ҳангоми хатогии воридшавӣ ё итмомрасии вақт"
+
+#~ msgid "Timeout Options"
+#~ msgstr "Хосиятҳои Мӯҳлати интизорӣ"
+
+#~ msgid "If no data arrives in:"
+#~ msgstr "Агар додаҳо ворид нашаванд дар мӯҳлати:"
+
+#~ msgid "If server cannot resume:"
+#~ msgstr "Агар хидматрасон давом дода натавонад:"
+
+#~ msgid "Permanent"
+#~ msgstr "Доимӣ"
+
+#~ msgid "PLIP"
+#~ msgstr "PLIP"
+
+#~ msgid "SLIP"
+#~ msgstr "SLIP"
+
+#~ msgid "PPP"
+#~ msgstr "PPP"
+
+#~ msgid "ISDN"
+#~ msgstr "ISDN"
+
+#~ msgid "Link number:"
+#~ msgstr "Шумораи пайвастҳо:"
+
+#~ msgid "Limits Options"
+#~ msgstr "Хосиятҳои Маҳдудиятҳо"
+
+#~ msgid "Minimum network bandwidth:"
+#~ msgstr "Бари хурдтарини маҷро:"
+
+#~ msgid "Maximum network bandwidth:"
+#~ msgstr "Бари калонтарини маҷро:"
+
+#~ msgid " bytes/sec"
+#~ msgstr " Байт/сония"
+
+#~ msgid "Window style:"
+#~ msgstr "Навъи тиреза:"
+
+#~ msgid "Attempt number %1"
+#~ msgstr "Рақами кӯшиш %1"
+
+#~ msgid "Pausing"
+#~ msgstr "Таваққуфнамоӣ"
+
+#~ msgid "Delaying"
+#~ msgstr "Ақибгузорӣ"
+
+#~ msgid "The file size does not match."
+#~ msgstr "Андозаи файл мувофиқат намекунад."
+
+#~ msgid "File Size checked"
+#~ msgstr "Андозаи Файл санҷида шудааст"
+
+#~ msgid "S"
+#~ msgstr "Ҳолат"
+
+#~ msgid "%"
+#~ msgstr "%"

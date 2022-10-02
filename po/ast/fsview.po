@@ -1,0 +1,432 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# enolp <enolp@softastur.org>, 2016, 2017, 2018, 2019, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"PO-Revision-Date: 2020-11-12 16:42+0100\n"
+"Last-Translator: enolp <enolp@softastur.org>\n"
+"Language-Team: Asturian <alministradores@softastur.org>\n"
+"Language: ast\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 20.08.3\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Softastur"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "alministradores@softastur.org"
+
+#: fsview.cpp:35 fsview.cpp:413
+#, kde-format
+msgid "Name"
+msgstr "Nome"
+
+#: fsview.cpp:36
+#, kde-format
+msgid "Size"
+msgstr "Tamañu"
+
+#: fsview.cpp:37
+#, kde-format
+msgid "File Count"
+msgstr "Númberu de ficheros"
+
+#: fsview.cpp:38
+#, kde-format
+msgid "Directory Count"
+msgstr "Númberu de direutorios"
+
+#: fsview.cpp:39
+#, kde-format
+msgid "Last Modified"
+msgstr "Última modificación"
+
+#: fsview.cpp:40 fsview.cpp:414
+#, kde-format
+msgid "Owner"
+msgstr "Dueñu"
+
+#: fsview.cpp:41 fsview.cpp:415
+#, kde-format
+msgid "Group"
+msgstr "Grupu"
+
+#: fsview.cpp:42 fsview.cpp:416
+#, kde-format
+msgid "Mime Type"
+msgstr "Tipu MIME"
+
+#: fsview.cpp:283
+#, kde-format
+msgid "Go To"
+msgstr "Dir a"
+
+#: fsview.cpp:284 fsview_part.cpp:106
+#, kde-format
+msgid "Stop at Depth"
+msgstr "Parar na fondura"
+
+#: fsview.cpp:285 fsview_part.cpp:103
+#, kde-format
+msgid "Stop at Area"
+msgstr "Parar nel área"
+
+#: fsview.cpp:286
+#, kde-format
+msgid "Stop at Name"
+msgstr "Parar nel nome"
+
+#: fsview.cpp:292
+#, kde-format
+msgid "Go Up"
+msgstr "Xubir"
+
+#: fsview.cpp:294
+#, kde-format
+msgid "Stop Refresh"
+msgstr "Parar refrescu"
+
+#: fsview.cpp:296
+#, kde-format
+msgid "Refresh"
+msgstr "Refrescar"
+
+#: fsview.cpp:301
+#, kde-format
+msgid "Refresh '%1'"
+msgstr "Refrescar «%1»"
+
+#: fsview.cpp:313 fsview_part.cpp:113
+#, kde-format
+msgid "Color Mode"
+msgstr "Mou de color"
+
+#: fsview.cpp:316 fsview_part.cpp:109
+#, kde-format
+msgid "Visualization"
+msgstr "Visualización"
+
+#: fsview.cpp:411
+#, kde-format
+msgid "None"
+msgstr "Nengún"
+
+#: fsview.cpp:412
+#, kde-format
+msgid "Depth"
+msgstr "Fondura"
+
+#: fsview_part.cpp:69
+#, kde-format
+msgid "Read 1 folder, in %2"
+msgid_plural "Read %1 folders, in %2"
+msgstr[0] "Lleóse 1 carpeta en %2"
+msgstr[1] "Lleéronse %1 carpetes en %2"
+
+#: fsview_part.cpp:73
+#, kde-format
+msgid "1 folder"
+msgid_plural "%1 folders"
+msgstr[0] "1 carpeta"
+msgstr[1] "%1 carpetes"
+
+#: fsview_part.cpp:87
+#, kde-format
+msgid ""
+"<p>This is the FSView plugin, a graphical browsing mode showing filesystem "
+"utilization by using a tree map visualization.</p><p>Note that in this mode, "
+"automatic updating when filesystem changes are made is intentionally <b>not</"
+"b> done.</p><p>For details on usage and options available, see the online "
+"help under menu 'Help/FSView Manual'.</p>"
+msgstr ""
+"<p>Esti ye'l plugin de FSView, un mou de restolar gráficu qu'amuesa l'usu de "
+"los sistemes de ficheros usando la visualización de mapa n'árbole.</p> "
+"<p>Decátate que nesti mou <b>nun se sofita intencionadamente</b> "
+"l'anovamientu automáticu de ficheros o direutorios cuando se-yos faen "
+"cambeos dende fuera.</p><p>Pa más detalles tocante al usu y opciones "
+"disponibles, mira'l manual en llinia d'ayuda sol menú de «Help/FSView "
+"Manual».</p>"
+
+#: fsview_part.cpp:119
+#, kde-format
+msgid "&FSView Manual"
+msgstr "Manual de &FSView"
+
+#: fsview_part.cpp:121
+#, kde-format
+msgid "Show FSView manual"
+msgstr "Abre'l manual de FSView"
+
+#: fsview_part.cpp:122
+#, kde-format
+msgid "Opens the help browser with the FSView documentation"
+msgstr "Abre'l restolador d'ayuda cola documentación de FSView"
+
+#: fsview_part.cpp:154
+#, kde-format
+msgctxt "@action:inmenu File"
+msgid "Move to Trash"
+msgstr "Mover a la papelera"
+
+#: fsview_part.cpp:161
+#, kde-format
+msgctxt "@action:inmenu File"
+msgid "Delete"
+msgstr "Desaniciar"
+
+#: fsview_part.cpp:166
+#, kde-format
+msgctxt "@action:inmenu Edit"
+msgid "&Edit File Type..."
+msgstr "&Editar el tipu del ficheru…"
+
+#: fsview_part.cpp:170
+#, kde-format
+msgctxt "@action:inmenu File"
+msgid "Properties"
+msgstr "Propiedaes"
+
+#: fsview_part.cpp:203
+#, kde-format
+msgid ""
+"FSView intentionally does not support automatic updates when changes are "
+"made to files or directories, currently visible in FSView, from the "
+"outside.\n"
+"For details, see the 'Help/FSView Manual'."
+msgstr ""
+"FSView nun sofita de mou intencionáu l'anovamientu automáticu de ficheros o "
+"direutorios (visibles anguaño en FSView) cuando se-yos faen cambeos dende "
+"fuera.\n"
+"Pa más detalles, mira «Help/FSView Manual» nel manual d'ayuda."
+
+#. i18n: ectx: Menu (edit)
+#: fsview_part.rc:4
+#, kde-format
+msgid "&Edit"
+msgstr "&Editar"
+
+#. i18n: ectx: Menu (view)
+#: fsview_part.rc:13
+#, kde-format
+msgid "&View"
+msgstr "&Ver"
+
+#. i18n: ectx: Menu (help)
+#: fsview_part.rc:20
+#, kde-format
+msgid "&Help"
+msgstr "&Ayuda"
+
+#: main.cpp:23
+#, kde-format
+msgid "FSView"
+msgstr "FSView"
+
+#: main.cpp:24
+#, kde-format
+msgid "Filesystem Viewer"
+msgstr "Visor de sistemes de ficheros"
+
+#: main.cpp:26
+#, kde-format
+msgid "(c) 2002, Josef Weidendorfer"
+msgstr "(c) 2002, Josef Weidendorfer"
+
+#: main.cpp:33
+#, kde-format
+msgid "View filesystem starting from this folder"
+msgstr "Visualiza'l sistema de ficheros comenzando per esta carpeta"
+
+#: treemap.cpp:1436
+#, kde-format
+msgid "Text %1"
+msgstr "Testu %1"
+
+#: treemap.cpp:3163
+#, kde-format
+msgid "Recursive Bisection"
+msgstr "Biseición recursiva"
+
+#: treemap.cpp:3165
+#, kde-format
+msgid "Columns"
+msgstr "Columnes"
+
+#: treemap.cpp:3167
+#, kde-format
+msgid "Rows"
+msgstr "Fileres"
+
+#: treemap.cpp:3169
+#, kde-format
+msgid "Always Best"
+msgstr "Siempres el meyor"
+
+#: treemap.cpp:3171
+#, kde-format
+msgid "Best"
+msgstr "El meyor"
+
+#: treemap.cpp:3173
+#, kde-format
+msgid "Alternate (V)"
+msgstr "Alternar verticalmente"
+
+#: treemap.cpp:3175
+#, kde-format
+msgid "Alternate (H)"
+msgstr "Alternar horizontalmente"
+
+#: treemap.cpp:3177
+#, kde-format
+msgid "Horizontal"
+msgstr "Horizontal"
+
+#: treemap.cpp:3179
+#, kde-format
+msgid "Vertical"
+msgstr "Vertical"
+
+#: treemap.cpp:3231
+#, kde-format
+msgid "Nesting"
+msgstr "Añeramientu"
+
+#: treemap.cpp:3235
+#, kde-format
+msgid "Border"
+msgstr "Berbesu"
+
+#: treemap.cpp:3238
+#, kde-format
+msgid "Correct Borders Only"
+msgstr "Correxir namás los berbesos"
+
+#: treemap.cpp:3241
+#, kde-format
+msgid "Width %1"
+msgstr "Anchor %1"
+
+#: treemap.cpp:3244
+#, kde-format
+msgid "Allow Rotation"
+msgstr "Permitir voltéu"
+
+#: treemap.cpp:3245
+#, kde-format
+msgid "Shading"
+msgstr "Solombres"
+
+#: treemap.cpp:3256
+#, kde-format
+msgid "Visible"
+msgstr "Visible"
+
+#: treemap.cpp:3257
+#, kde-format
+msgid "Take Space From Children"
+msgstr "Garrar l'espaciu de los fíos"
+
+#: treemap.cpp:3261
+#, kde-format
+msgid "Top Left"
+msgstr "Esquierda cimera"
+
+#: treemap.cpp:3264
+#, kde-format
+msgid "Top Center"
+msgstr "Centru cimeru"
+
+#: treemap.cpp:3267
+#, kde-format
+msgid "Top Right"
+msgstr "Derecha cimera"
+
+#: treemap.cpp:3270
+#, kde-format
+msgid "Bottom Left"
+msgstr "Esquierda baxera"
+
+#: treemap.cpp:3273
+#, kde-format
+msgid "Bottom Center"
+msgstr "Centru baxeru"
+
+#: treemap.cpp:3276
+#, kde-format
+msgid "Bottom Right"
+msgstr "Derecha cimera"
+
+#: treemap.cpp:3343
+#, kde-format
+msgid "No %1 Limit"
+msgstr "Ensin llende de %1"
+
+#: treemap.cpp:3402
+#, kde-format
+msgid "No Area Limit"
+msgstr "Ensin llende d'area"
+
+#: treemap.cpp:3408
+#, kde-format
+msgid "Area of '%1' (%2)"
+msgstr "Área de «%1» (%2)"
+
+#: treemap.cpp:3420 treemap.cpp:3433
+#, kde-format
+msgid "1 Pixel"
+msgid_plural "%1 Pixels"
+msgstr[0] "1 píxel"
+msgstr[1] "%1 píxeles"
+
+#: treemap.cpp:3437
+#, kde-format
+msgid "Double Area Limit (to %1)"
+msgstr "Doblar la llende del área (a %1)"
+
+#: treemap.cpp:3439
+#, kde-format
+msgid "Halve Area Limit (to %1)"
+msgstr "Dixebrar la llende del área (a %1)"
+
+#: treemap.cpp:3475
+#, kde-format
+msgid "No Depth Limit"
+msgstr "Ensin llende de fondura"
+
+#: treemap.cpp:3481
+#, kde-format
+msgid "Depth of '%1' (%2)"
+msgstr "Fondura de «%1» (%2)"
+
+#: treemap.cpp:3493 treemap.cpp:3506
+#, kde-format
+msgid "Depth %1"
+msgstr "Fondura %1"
+
+#: treemap.cpp:3510
+#, kde-format
+msgid "Decrement (to %1)"
+msgstr "Decrementar (a %1)"
+
+#: treemap.cpp:3512
+#, kde-format
+msgid "Increment (to %1)"
+msgstr "Incrementar (a %1)"
+
+#~ msgid "Filesystem Utilization Viewer"
+#~ msgstr "Visor del usu de los sistemes de ficheros"
+
+#~ msgid "(c) 2003-2005, Josef Weidendorfer"
+#~ msgstr "(c) 2003-2005, Josef Weidendorfer"

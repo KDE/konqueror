@@ -1,0 +1,65 @@
+# Copyright (C) 2006, 2007, 2009 Free Software Foundation, Inc.
+# translation of akregator_konqplugin.po to Macedonian
+#
+# Tome Boshevski <tome@lugola.net>, 2006.
+# Bozidar Proevski <bobibobi@freemail.com.mk>, 2006, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: akregator_konqplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2009-01-01 22:41+0100\n"
+"Last-Translator: Bozidar Proevski <bobibobi@freemail.com.mk>\n"
+"Language-Team: Macedonian <mkde-l10n@lists.sourceforge.net>\n"
+"Language: mk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: Plural-Forms: nplurals=3; plural=n%10==1 ? 0 : n%10==2 ? 1 : "
+"2;\n"
+
+#: akregatorplugin.cpp:63
+#, fuzzy, kde-format
+#| msgid "Add Feed to Akregator"
+msgctxt "@action:inmenu"
+msgid "Add Feed to Akregator"
+msgstr "Додај канал во Акрегатор"
+
+#: konqfeedicon.cpp:127
+#, kde-format
+msgid "Add Feed to Akregator"
+msgstr "Додај канал во Акрегатор"
+
+#: konqfeedicon.cpp:129
+#, kde-format
+msgid "Add Feeds to Akregator"
+msgstr "Додај канали во Акрегатор"
+
+#: konqfeedicon.cpp:138
+#, kde-format
+msgid "Add All Found Feeds to Akregator"
+msgstr "Додај ги сите пронајдени канали во Акрегатор"
+
+#: konqfeedicon.cpp:162
+#, kde-format
+msgid "Subscribe to site updates (using news feed)"
+msgstr ""
+"Пријави се на ажурирањата на веб-локацијата (користејќи го каналот за "
+"новости)"
+
+#: pluginutil.cpp:36 pluginutil.cpp:46
+#, kde-format
+msgid "Imported Feeds"
+msgstr "Внесени канали"
+
+#: pluginutil.cpp:38
+#, kde-format
+msgid "Unable to contact Akregator via D-Bus"
+msgstr ""
+
+#: pluginutil.cpp:39
+#, kde-format
+msgctxt "@title:window"
+msgid "D-Bus call failed"
+msgstr ""

@@ -1,0 +1,456 @@
+# Translation for webarchiver.po to Euskara/Basque (eu).
+# Copyright (C) 2020, This file is copyright:
+# This file is distributed under the same license as the konqueror package.
+# KDE euskaratzeko proiektuko arduraduna <xalba@euskalnet.net>.
+#
+# Translators:
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2020-12-25 22:40+0100\n"
+"Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
+"Language-Team: Basque <kde-i18n-eu@kde.org>\n"
+"Language: eu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 20.12.0\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Iñigo Salvador Azurmendi"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "xalba@euskalnet.net"
+
+#: app/archivedialog.cpp:76
+#, kde-format
+msgid "Untitled"
+msgstr "Izengabea"
+
+#: app/archivedialog.cpp:92
+#, kde-format
+msgid "Create Archive"
+msgstr "Sortu artxiboa"
+
+#: app/archivedialog.cpp:108
+#, kde-format
+msgid "The URL of the page that is to be archived"
+msgstr "Artxibatu beharreko orriaren URLa"
+
+#: app/archivedialog.cpp:111
+#, kde-format
+msgid "Source &URL:"
+msgstr "Sorburu &URL:"
+
+#: app/archivedialog.cpp:120
+#, kde-format
+msgid "Web archive (*.war)"
+msgstr "Web artxiboa (*.war)"
+
+#: app/archivedialog.cpp:121
+#, kde-format
+msgid "Tar archive (*.tar)"
+msgstr "Tar artxiboa (*.tar)"
+
+#: app/archivedialog.cpp:122
+#, kde-format
+msgid "Zip archive (*.zip)"
+msgstr "Zip artxiboa (*.zip)"
+
+#: app/archivedialog.cpp:123
+#, kde-format
+msgid "Directory"
+msgstr "Direktorioa"
+
+#: app/archivedialog.cpp:128
+#, kde-format
+msgid "The file or directory where the archived page will be saved"
+msgstr "Artxibatutako orria gordeko den direktorioa"
+
+#: app/archivedialog.cpp:129
+#, kde-format
+msgid "&Save to:"
+msgstr "&Gorde hemen:"
+
+#: app/archivedialog.cpp:131
+#, kde-format
+msgid "Options"
+msgstr "Aukerak"
+
+#: app/archivedialog.cpp:141
+#, kde-format
+msgid " second"
+msgid_plural " seconds"
+msgstr[0] " segundo"
+msgstr[1] " segundo"
+
+#: app/archivedialog.cpp:142
+#, kde-format
+msgid "None"
+msgstr "Bat ere ez"
+
+#: app/archivedialog.cpp:212
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The web archive download cannot use the current proxy settings. No proxy "
+"will be used."
+msgstr ""
+"Web-artxiboaren zama-jaitsierak ezin ditu erabili uneko ordezkari-ezarpenak. "
+"Ez da ordezkaririk erabiliko."
+
+#: app/archivedialog.cpp:351
+#, kde-format
+msgctxt "@info"
+msgid "The save location is not valid."
+msgstr "Gordetzeko kokalekuak ez du balio."
+
+#: app/archivedialog.cpp:371
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Cannot find the wget(1) command,<nl/>see <link>%1</link>."
+msgstr "Ezin da aurkitu wget(1) komandoa, <nl/>begiratu <link>%1</link>."
+
+#: app/archivedialog.cpp:393
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Cannot verify destination<nl/><filename>%1</filename><nl/>%2"
+msgstr "Ezin da jomuga egiaztatu<nl/><filename>%1</filename><nl/>%2"
+
+#: app/archivedialog.cpp:410
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The archive directory<nl/><filename>%1</filename><nl/>already exists as a "
+"file."
+msgstr ""
+"Ondoko artxibo-direktorioa<nl/><filename>%1</filename><nl/>lehendik ere "
+"badago fitxategi gisa."
+
+#: app/archivedialog.cpp:411
+#, kde-kuit-format
+msgctxt "@info"
+msgid "The archive directory<nl/><filename>%1</filename><nl/>already exists."
+msgstr ""
+"Ondoko artxibo-direktorioa<nl/><filename>%1</filename><nl/>lehendik ere "
+"badago."
+
+#: app/archivedialog.cpp:415
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The archive file<nl/><filename>%1</filename><nl/>already exists as a "
+"directory."
+msgstr ""
+"Ondoko artxibo-fitxategia<nl/><filename>%1</filename><nl/>lehendik ere "
+"badago direktorio gisa."
+
+#: app/archivedialog.cpp:416
+#, kde-kuit-format
+msgctxt "@info"
+msgid "The archive file <nl/><filename>%1</filename><nl/>already exists."
+msgstr ""
+"Ondoko artxibo-fitxategi <nl/><filename>%1</filename><nl/>lehendik ere "
+"badago."
+
+#: app/archivedialog.cpp:420
+#, kde-format
+msgid "Archive Already Exists"
+msgstr "Artxiboa badago lehendik"
+
+#: app/archivedialog.cpp:450
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Cannot delete original archive<nl/><filename>%1</filename><nl/>%2"
+msgstr "Ezin da jatorrizko artxiboa ezabatu<nl/><filename>%1</filename><nl/>%2"
+
+#: app/archivedialog.cpp:467
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Cannot create a temporary directory<nl/><filename>%1</filename><nl/>"
+msgstr ""
+"Ezin da aldi baterako direktorioa sortu<nl/><filename>%1</filename><nl/>"
+
+#: app/archivedialog.cpp:539
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Cannot start the archiver process <filename>%1</filename>"
+msgstr "Ezin da abiatu artxibatzeko <filename>%1</filename> prozesua"
+
+#: app/archivedialog.cpp:555
+#, kde-kuit-format
+msgctxt "@info"
+msgid "The download process was interrupted."
+msgstr "Zama-jaisteko prozesua eten egin da."
+
+#: app/archivedialog.cpp:556
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>The download process <filename>%1</filename> failed with signal %2.</"
+"para>"
+msgstr ""
+"<para><filename>%1</filename> zama-jaisteko prozesuak huts egin du %2 "
+"seinalearekin.</para>"
+
+#: app/archivedialog.cpp:561
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>The download process <filename>%1</filename> failed with status %2.</"
+"para>"
+msgstr ""
+"<para><filename>%1</filename> zama-jaisteko prozesuak huts egin du %2 "
+"egoerarekin.</para>"
+
+#: app/archivedialog.cpp:565
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>This may simply indicate a 404 error for some of the page elements.</"
+"para>"
+msgstr "<para>Honek orriko elementu batzuen 404 errorea adieraz lezake.</para>"
+
+#: app/archivedialog.cpp:571
+#, kde-kuit-format
+msgctxt "@info"
+msgid "<para>Retain the partial web archive?</para>"
+msgstr "<para>Web artxibo partziala atxiki?</para>"
+
+#: app/archivedialog.cpp:572
+#, kde-format
+msgid "Retain Archive?"
+msgstr "Artxiboa atxiki?"
+
+#: app/archivedialog.cpp:573
+#, kde-format
+msgid "Retain"
+msgstr "Atxiki"
+
+#: app/archivedialog.cpp:577
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Creating the web archive failed."
+msgstr "Web artxiboa sortzea huts egin du."
+
+#: app/archivedialog.cpp:721
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Cannot copy archive to<nl/><filename>%1</filename><nl/>%2"
+msgstr "Ezin da artxiboa<nl/><filename>%1</filename>-(e)ra kopiatu<nl/>%2"
+
+#: app/archivedialog.cpp:751
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Cannot set permissions on<nl/><filename>%1</filename><nl/>%2"
+msgstr "Ezin dira baimenak<nl/><filename>%1</filename>-(e)an ezarri<nl/>%2"
+
+#: app/archivedialog.cpp:759
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Web archive saved as<nl/><filename><link>%1</link></filename>"
+msgstr "Web artxiboa honela gorde da<nl/><filename><link>%1</link></filename>"
+
+#: app/main.cpp:26
+#, kde-format
+msgid "Web Archiver"
+msgstr "Web artxibatzailea"
+
+#: app/main.cpp:27
+#, kde-format
+msgid "0.0.1"
+msgstr "0.0.1"
+
+#: app/main.cpp:28
+#, kde-format
+msgid "Archive a web page"
+msgstr "Artxibatu web-orri bat"
+
+#: app/main.cpp:30
+#, kde-format
+msgid "Copyright (c) 2020 Jonathan Marten"
+msgstr "Copyright (c) 2020 Jonathan Marten"
+
+#: app/main.cpp:34
+#, kde-format
+msgid "Jonathan Marten"
+msgstr "Jonathan Marten"
+
+#: app/main.cpp:46
+#, kde-format
+msgid "URL of the web page to archive"
+msgstr "Artxibatu beharreko web-orriaren URLa"
+
+#: app/main.cpp:46
+#, kde-format
+msgid "url"
+msgstr "URL"
+
+#. i18n: ectx: label, entry (WaitTime), group (Options)
+#: app/settings.kcfg:10
+#, kde-format
+msgid "Wait time:"
+msgstr "Itxaronaldia:"
+
+#. i18n: ectx: tooltip, entry (WaitTime), group (Options)
+#: app/settings.kcfg:11
+#, kde-format
+msgid "The wait time between item requests, to reduce web server load"
+msgstr ""
+"Elementuen eskaeren arteko itxaronaldia, web-zerbitzarien zama arintzeko"
+
+#. i18n: ectx: label, entry (NoProxy), group (Options)
+#: app/settings.kcfg:18
+#, kde-format
+msgid "Do not use proxy"
+msgstr "Ez erabili ordezkaririk"
+
+#. i18n: ectx: tooltip, entry (NoProxy), group (Options)
+#: app/settings.kcfg:19
+#, kde-format
+msgid "Do not use the system proxy settings to fetch the web page"
+msgstr "Ez erabili sistemako ordezkariaren ezarpenak web-orria ekartzeko"
+
+#. i18n: ectx: label, entry (RandomWait), group (Options)
+#: app/settings.kcfg:24
+#, kde-format
+msgid "Randomise wait time"
+msgstr "Itxaronaldia ausazkoa egin"
+
+#. i18n: ectx: tooltip, entry (RandomWait), group (Options)
+#: app/settings.kcfg:25
+#, kde-format
+msgid "Vary the wait time between requests, to confuse server log analysis"
+msgstr ""
+"Aldatu eskaeren arteko itxaronaldia, zerbitzari-egunkarien analisia nahasteko"
+
+#. i18n: ectx: label, entry (FixExtensions), group (Options)
+#: app/settings.kcfg:30
+#, kde-format
+msgid "Save in standard web archive format"
+msgstr "Gorde web-artxibo formatu estandarrean"
+
+#. i18n: ectx: tooltip, entry (FixExtensions), group (Options)
+#: app/settings.kcfg:37
+#, kde-format
+msgid ""
+"<p>Save downloaded files all in a single directory, with file name "
+"extensions suitable for local browsing.\n"
+"                        For example, the main HTML page will always be "
+"called \"index.html\" and a remote .php page will be saved with the "
+"standard .html extension.</p>\n"
+"               <p>Leave this option turned on to produce a standard web "
+"archive (.war) file.</p>\n"
+"               <p>If this option is turned off, then the files will be saved "
+"exactly as downloaded.\n"
+"                        This means that they may be in subdirectories "
+"reflecting the structure of the original web site, and extensions will not "
+"be adjusted.\n"
+"                        Note that the download may not work correctly if the "
+"original URL refers to a directory but does not end with a slash.</p>\n"
+"      "
+msgstr ""
+"<p>Gorde zama-jaitsitako fitxategiak, denak direktorio bakarrean, lokalean "
+"arakatzerako fitxategi-izen luzapen egokiekin.\n"
+"                        Adibidez, HTML orri nagusia beti izendatuko da "
+"«index.html» eta urruneko .php orri bat .html hedapen estandarrarekin "
+"gordeko da.</p>\n"
+"               <p>Utzi aukera hau piztuta web-artxibo fitxategi estandar bat "
+"(.war) sortzeko.</p>\n"
+"               <p>Aukera hau itzaltzen bada, fitxategiak zama-jaitsi "
+"bezalaxe gordeko dira.\n"
+"                        Horrek esan nahi du jatorrizko web-guneko egitura "
+"islatuz azpidirektorioetan egon daitezkeela, eta luzapenak ez dira "
+"egokituko.\n"
+"                        Kontuan izan balitekeela zama-jaitsitakoa ond ez "
+"ibiltzea, jatorrizko URLa direktorio batena izanda «/» batekin amaitzen ez "
+"bada.</p>\n"
+"      "
+
+#. i18n: ectx: label, entry (RunInTerminal), group (Options)
+#: app/settings.kcfg:42
+#, kde-format
+msgid "Run in terminal"
+msgstr "Exekutatu terminalean"
+
+#. i18n: ectx: tooltip, entry (RunInTerminal), group (Options)
+#: app/settings.kcfg:45
+#, kde-format
+msgid ""
+"<p>Run the download process in a terminal window. Close the terminal window "
+"when the download has finished.</p>\n"
+"               <p>If this option is turned off then the download will run in "
+"the background. Its progress output should appear in the session log file.</"
+"p>\n"
+"      "
+msgstr ""
+"<p>Exekutatu zama-jaisteko prozesua terminal-leiho batean. Itxi terminalaren "
+"leihoa zama-jaitsiera amaitzean.</p>\n"
+"               <p>Aukera hau itzaltzen bada, zama-jaitsiera atzeko planoan "
+"ibiliko da. Haren aurrerapenaren irteerakoa saioaren egunkari fitxategian "
+"agertu beharko litzateke.</p>\n"
+"      "
+
+#. i18n: ectx: label, entry (CloseWhenFinished), group (Options)
+#: app/settings.kcfg:50
+#, kde-format
+msgid "Close when finished"
+msgstr "Itxi amaitutakoan"
+
+#. i18n: ectx: tooltip, entry (CloseWhenFinished), group (Options)
+#: app/settings.kcfg:51
+#, kde-format
+msgid "Close this window when the download has finished successfully"
+msgstr "Itxi leiho hau zama-jaitsiera ondo amaitu denean"
+
+#. i18n: ectx: label, entry (ArchiveType), group (Options)
+#: app/settings.kcfg:56
+#, kde-format
+msgid "Archive &type:"
+msgstr "Artxibo mo&ta:"
+
+#. i18n: ectx: tooltip, entry (ArchiveType), group (Options)
+#: app/settings.kcfg:57
+#, kde-format
+msgid "The type of web archive to save"
+msgstr "Gorde beharreko web-artxibo mota"
+
+#: plugin_webarchiver.cpp:31
+#, kde-format
+msgid "Archive Web Page..."
+msgstr "Artxibatu web-orria..."
+
+#: plugin_webarchiver.cpp:49
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Cannot find the <command>kcreatewebarchive</command> executable,<nl/>check "
+"the plugin and helper installation."
+msgstr ""
+"Ezin da <command>kcreatewebarchive</command> exekutagarria aurkitu,<nl/"
+">egiaztatu pluginaren eta laguntzailearen instalazioa."
+
+#: plugin_webarchiver.cpp:50
+#, kde-format
+msgid "Cannot Create Web Archive"
+msgstr "Ezin da sortu web-artxiboa"
+
+#. i18n: ectx: Menu (tools)
+#: webarchiverplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "&Tresnak"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: webarchiverplugin.rc:8
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "Tresna-barra gehigarria"

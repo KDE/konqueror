@@ -1,0 +1,103 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Swedish "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="filemanager" lang="&language;">
+<articleinfo>
+<title
+>Filhantering</title>
+<authorgroup>
+<author
+>&Mike.McBride; &Mike.McBride.mail;</author>
+<othercredit role="translator"
+> <firstname
+>Stefan</firstname
+> <surname
+>Asserhäll</surname
+> <affiliation
+><address
+><email
+>stefan.asserhall@bredband.net</email
+></address
+></affiliation
+> <contrib
+>Översättare</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2016-11-08</date>
+<releaseinfo
+>Program 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Systeminställningar</keyword>
+<keyword
+>filhanterare</keyword>
+</keywordset>
+</articleinfo>
+
+<para
+>I de här modulerna kan du ställa in olika aspekter av &konqueror;s filhanteringsfunktionalitet. </para>
+
+<note
+><para
+>&konqueror;s webbläsningsfunktionalitet har sin <ulink url="help:/kcontrol/khtml- behavior/index.html"
+>egen inställningsmodul</ulink
+>.</para
+></note>
+
+<variablelist>
+<title
+><guilabel
+>Diverse inställningar</guilabel
+></title>
+<varlistentry>
+<term
+><guilabel
+>Öppna kataloger i egna fönster</guilabel
+></term>
+<listitem
+> <para
+>Om det här alternativet är valt, skapas ett nytt &konqueror;-fönster när du öppnar en katalog, istället för att visa den katalogens innehåll i det nuvarande fönstret.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Visa menyalternativet 'Ta bort' som går förbi papperskorgen</guilabel
+></term>
+<listitem>
+<para
+>Markera det här om du vill att menyalternativ för <quote
+>Ta bort</quote
+> ska visas på skrivbordet och i filhanterarens menyer och sammanhangsberoende menyer. Du kan alltid ta bort filer genom att hålla nere skifttangenten när <guimenuitem
+>Flytta till papperskorg</guimenuitem
+> används.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Inställningarna för &konqueror;s filhanteringsläge på sidorna <guilabel
+>Visningslägen</guilabel
+>, <guilabel
+>Navigering</guilabel
+>, <guilabel
+>Tjänster</guilabel
+>, <guilabel
+>Allmänt</guilabel
+> och <guilabel
+>Papperskorg</guilabel
+> används också av &dolphin;. </para>
+
+</article>

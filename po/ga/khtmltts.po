@@ -1,0 +1,61 @@
+# Irish translation of khtmlkttsd
+# Copyright (C) 2009 This_file_is_part_of_KDE
+# This file is distributed under the same license as the khtmlkttsd package.
+# Kevin Scannell <kscanne@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdebase/khtmlkttsd.po\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2004-12-20 22:26-0500\n"
+"Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
+"Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
+"Language: ga\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n < 11 ? "
+"3 : 4\n"
+
+#: khtmltts.cpp:33
+#, kde-format
+msgid "&Speak Text"
+msgstr "&Abair Téacs"
+
+#. i18n: ectx: Menu (tools)
+#: khtmlttsplugin.rc:5
+#, kde-format
+msgid "&Tools"
+msgstr "&Uirlisí"
+
+#. i18n: ectx: ToolBar (speechToolbar)
+#: khtmlttsplugin.rc:10
+#, kde-format
+msgid "Speech Toolbar"
+msgstr "Barra Uirlisí Cainte"
+
+#~ msgctxt "@title:window"
+#~ msgid "Starting Jovie Text-to-Speech Service Failed"
+#~ msgstr "Níorbh fhéidir Seirbhís Téacs-go-Caint Jovie a thosú"
+
+#~ msgid "The D-Bus call say() failed."
+#~ msgstr "Theip ar ghlao D-Bus say()."
+
+#~ msgctxt "@title:window"
+#~ msgid "D-Bus Call Failed"
+#~ msgstr "Theip ar ghlao D-Bus"
+
+#~ msgid "Starting KTTSD Failed"
+#~ msgstr "Theip ar thosú KTTSD"
+
+#~ msgid "You cannot read anything except web pages with this plugin."
+#~ msgstr "Ní féidir ach leathanaigh Ghréasáin a léamh leis an mbreiseán seo."
+
+#~ msgid "Cannot Read Source"
+#~ msgstr "Ní Féidir an Fhoinse a Léamh"
+
+#~ msgid "The D-Bus call supportsMarkup failed."
+#~ msgstr "Theip ar ghlao supportsMarkup D-Bus."
+
+#~ msgid "The D-Bus call setText failed."
+#~ msgstr "Theip ar ghlao setText D-Bus."

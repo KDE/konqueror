@@ -1,0 +1,2117 @@
+<chapter id="commands">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>Gunnhild</firstname
+><surname
+>Lurås</surname
+><affiliation
+><address
+><email
+>gluras@c2i.net</email
+></address
+></affiliation
+><contrib
+></contrib
+></othercredit
+> 
+</authorgroup>
+<date
+>2003-11-06</date
+> <releaseinfo
+>3.2</releaseinfo
+> </chapterinfo>
+
+<title
+>Kommandoreferanse</title>
+
+<note
+><para
+>Snarveistastene i dette kapittelet er de som er standard. De kan selvfølgelig <link linkend="configshort"
+>endres</link
+>. </para
+></note>
+
+<sect1 id="specshort">
+<title
+>Spesielle snarveier</title>
+<para
+>Det er noen nyttige snarveier som ikke vises i noen av menyene:</para>
+<variablelist>
+
+<varlistentry>
+<term
+><keycap
+>F6</keycap
+></term>
+<listitem>
+<para
+>Setter tekstboksen i adressefeltet aktiv.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><keycombo action="simul"
+>&Ctrl;<keycap
+>]</keycap
+></keycombo
+></term>
+<listitem>
+<para
+>Aktiverer neste faneside.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><keycombo action="simul"
+>&Ctrl;<keycap
+>[</keycap
+></keycombo
+></term>
+<listitem>
+<para
+>Aktiverer forrige faneside.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+
+</sect1>
+
+<sect1 id="menubar">
+<title
+>Menylinja</title
+> <para
+>Merk at noen menyoppføringer bare vises når de kan brukes på fila du har åpen i &konqueror;. Når du for eksempel ser på innholdet i en mappe, vises ikke oppføringen <menuchoice
+><guimenu
+>Rediger</guimenu
+><guimenuitem
+>Finn …</guimenuitem
+></menuchoice
+>.</para>
+<sect2 id="menu-location">
+<title
+><guimenu
+>Adressemenyen</guimenu
+></title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Adresse</guimenu
+> <guimenuitem
+>Nytt vindu</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Åpne et annet &konqueror;-vindu.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Adresse</guimenu
+> <guimenuitem
+>Nytt faneblad</guimenuitem
+> </menuchoice
+></term
+> 
+<listitem
+><para
+>Åpne et annet &konqueror;-vindu som inneholder en tom side.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>D</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Adresse</guimenu
+> <guimenuitem
+>Kopier vindu</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Åpne et annet &konqueror;-vindu som er en kopi av det aktive.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Adresse</guimenu
+> <guimenuitem
+>Åpne adresse …</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Åpne en mappe eller fil ved å skrive inn stien (f.eks. <filename class="directory"
+>/home/pam</filename
+> eller <filename
+>/home/pam/fred.txt</filename
+>) i en enkel dialogboks.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Adresse</guimenu
+><guimenuitem
+>Send lenkel</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Send en epost med en link til gjeldende adresse.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Adresse</guimenu
+><guimenuitem
+>Send fil</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Send en epost med den valgte fila som vedlegg.</para
+></listitem>
+</varlistentry>
+
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Adresse</guimenu
+><guimenuitem
+>Lagre bakgrunnsbilde som …</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Virker bare hvis du ser på en nettside med et bakgrunnsbilde. Åpner <guilabel
+>Lagre som …</guilabel
+> for å lagre bakgrunnsbildet til din egen datamaskin.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Adresse</guimenu
+> <guimenuitem
+>Lagre som …</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Virker bare hvis du ser på et dokument eller nettside, bruker dialogboksen <guilabel
+>Lagre som …</guilabel
+> for å la deg lagre en kopi til din egen datamaskin.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Adresse</guimenu
+><guimenuitem
+>Lagre ramme som …</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Lik som <guimenuitem
+>Lagre som …</guimenuitem
+> men for nettsider som bruker rammer.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>P</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Addresse</guimenu
+> <guimenuitem
+>Skriv ut …</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Skriv ut.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Adresse</guimenu
+><guimenuitem
+>Skriv ut ramme</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Skriv ut den valgte rammen i en nettside.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Adresse</guimenu
+><guimenuitem
+>Åpne med Netscape/Mozilla</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Åpne nettsiden du ser på i &konqueror; i &Netscape;/<application
+>Mozilla</application
+> også.</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Adresse</guimenu
+> <guimenuitem
+>Avslutt</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Stenge av denne instansen av &konqueror;.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-edit">
+<title
+><guimenu
+>Redigeringsmenyen</guimenu
+></title>
+
+<note
+><para
+>De fleste elementene på menylinja <guimenu
+>Rediger</guimenu
+> kan også finnes ved å klikke med &RMB; på et ledig område av visningen.</para
+></note>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Rediger</guimenu
+> <guimenuitem
+>Angre</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Lar deg noen ganger gjøre om en feil handling.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>X</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Rediger</guimenu
+> <guimenuitem
+>Klipp ut</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Legger de valgte elementene til utklippstavla. Hvis du så <guimenuitem
+>Limer dem inn</guimenuitem
+> så flyttes de fra den originale plasseringen til den nye.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Rediger</guimenu
+> <guimenuitem
+>Kopier</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Kopier valgte element(er) til utklippstavla.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Rediger</guimenu
+> <guimenuitem
+>Lim inn</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Lim inn element(er) fra utklippstavla til den gjeldende mappa.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>F2</keycap
+></shortcut
+><guimenu
+>Redigere</guimenu
+><guimenuitem
+> Endre navn</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Lar deg endre navn på en fil eller mappe uten å måtte åpne dialogboksen <guimenuitem
+>Egenskaper …</guimenuitem
+>. </para
+></listitem>
+</varlistentry>
+
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>Delete</keycap
+></shortcut
+><guimenu
+>Rediger</guimenu
+><guimenuitem
+>Flytt til papirkurven</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Flytt valgte elementer til papirkurvmappa.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Shift;<keycap
+>Delete</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Rediger</guimenu
+> <guimenuitem
+>Slett</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Slett valgte element(er).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>F7</keycap
+></shortcut
+> <guimenu
+>Rediger</guimenu
+> <guimenuitem
+>Kopier filer</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Kopier de(t) valgte elementet/ene til en annen mappe.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Rediger</guimenu
+> <guimenuitem
+>Flytt filer</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Flytt de(t) valgte elementet/ene til en annen mappe.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Rediger</guimenu
+> <guimenuitem
+>Lag ny</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Lag en lenke til et program, <acronym
+> URL</acronym
+>, Diskett eller&CD-ROM;, eller lag en ny mappe eller tekst eller &HTML;-fil. Se delen <link linkend="making"
+>Lag ny …</link
+> for flere detaljer.</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Rediger</guimenu
+> <guimenuitem
+>Rediger filtype …</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Åpner dialogboksen <guilabel
+>Rediger filtype</guilabel
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Rediger</guimenu
+> <guimenuitem
+>Egenskaper …</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Åpner dialogboksen <guilabel
+>Rediger egenskaper</guilabel
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Rediger</guimenu
+><guisubmenu
+>Utvalg</guisubmenu
+> </menuchoice
+></term>
+<listitem
+><para
+>Inneholder en del valg for å endre elementene som er markert i &konqueror;-vinduet: <variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>+</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Rediger</guimenu
+> <guisubmenu
+>Utvalg</guisubmenu
+><guimenuitem
+>Velg …</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Sammen med <guimenuitem
+>Fjern merking …</guimenuitem
+>, <guimenuitem
+>Fjern all merking</guimenuitem
+> og <guimenuitem
+>Omvendt merking</guimenuitem
+>, er dette en enkel og kraftfull måte å velge mange filer på.</para>
+<para
+>Denne henter fram en enkel dialogboks der du kan skrive inn et filnavn med jokertegnene * og ?, f.eks. får du fram aller filene som ender på <literal role="extension"
+>.html</literal
+> hvis du skriver inn <literal role="extension"
+>*.html</literal
+>, mens <filename
+>?a*</filename
+> velger alle filene som har a som andre tegn i navnet sitt.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>-</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Rediger</guimenu
+><guisubmenu
+>Utvalg</guisubmenu
+> <guimenuitem
+>Fjern merking …</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Velg bort filer eller mapper via en dialog som likner den som brukes av <guimenuitem
+>Velg …</guimenuitem
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>U</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Rediger</guimenu
+><guisubmenu
+>Utvalg</guisubmenu
+> <guimenuitem
+>Fjern all merking</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Fjern merking fra alle merka filer eller mapper.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>*</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Rediger</guimenu
+><guisubmenu
+>Utvalg</guisubmenu
+> <guimenuitem
+>Omvendt merking</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Snur den gjeldende merkinga, slik at umerka filer blir merka og omvendt.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>U</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Rediger</guimenu
+> <guisubmenu
+>Utvalg</guisubmenu
+><guimenuitem
+>Merk alle</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Velger all teksten i en &HTML;-side eller i en tekstside som forhåndsvises, du kan <guimenuitem
+>Kopiere</guimenuitem
+> den og <guimenuitem
+>Lime inn</guimenuitem
+> i et tekstbehandlingsprogram.</para
+></listitem
+> </varlistentry>
+</variablelist>
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>F</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Rediger</guimenu
+> <guimenuitem
+>Finn …</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Finn en tekststreng i en tekstside du forhåndsviser eller i en &HTML;-side.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>F3</keycap
+></shortcut
+> <guimenu
+>Rediger</guimenu
+> <guimenuitem
+>Finn neste</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Finn den neste oppføringen av tekststrengen i teksten eller &HTML;-siden.</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Redigere</guimenu
+><guimenuitem
+>Gå til linje …</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Gå til en spesiell linje i forhåndsvisningen av en tekstside.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-view">
+
+<title
+><guimenu
+>Vis</guimenu
+>-menyen</title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Vis</guimenu
+><guisubmenu
+>Visningsmodus …</guisubmenu
+> </menuchoice
+></term>
+<listitem
+><para
+>Velger <guimenuitem
+>Ikon-</guimenuitem
+>, <guimenuitem
+>Multikolonne-</guimenuitem
+>, <guimenuitem
+>Tre</guimenuitem
+>-, <guimenuitem
+>Detaljert liste</guimenuitem
+>- eller <guimenuitem
+>Tekst</guimenuitem
+>-visningsmodus.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Vis</guimenu
+><guimenuitem
+>Bruk index.html</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Hvis en valgt mappe inneholder en fil med navnet <filename
+>index.html</filename
+>, vil den åpnes som en nettside heller enn mappa som en filliste.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Vis</guimenu
+><guimenuitem
+>Lås i denne posisjonen</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Låser til denne adressa. </para
+></listitem>
+</varlistentry>
+	  
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Vis</guimenu
+><guimenuitem
+>Lås opp alle visninger</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Låser opp alle visninger. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Vis</guimenu
+><guimenuitem
+> Lenkevisning</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Lenker den gjeldende visningen til andre i et flervisningsvindu.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>F5</keycap
+></shortcut
+> <guimenu
+>Vis</guimenu
+> <guimenuitem
+>Last inn på nytt</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Last inn på nytt.</para
+></listitem>
+</varlistentry>
+	  
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>Esc</keycap
+></shortcut
+> <guimenu
+>Vis</guimenu
+> <guimenuitem
+>Stopp</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Stopp innlasting (veldig nyttig når du surfer på nettet).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Vis</guimenu
+><guimenuitem
+>Ikonstørrelse</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Velg ikonstørrelsen når du ser på en mappe i ikonvisning.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Vis</guimenu
+><guisubmenu
+>Sorter</guisubmenu
+> </menuchoice
+></term>
+<listitem
+><para
+>Velger rekkefølgen elementene blir presentert i vinduet når du er i ikon- eller multikolonnevisning.</para
+></listitem>
+</varlistentry>
+	  
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Vis</guimenu
+><guimenuitem
+>Sorter uten å skille mellom store og små bokstaver</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Velg om sorteringsorden i tre-, tekst- eller detaljert listevisning tar hensyn til store og små bokstaver.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>U</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Vis</guimenu
+> <guimenuitem
+>Vis dokumentkilden</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Vis kildeteksten til dokumentet.</para>
+<para
+>Bare tilgjengelig hvis du ser på et dokument eller en &HTML;-side.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Vis</guimenu
+><guimenuitem
+>Vis rammekilde</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Vis kildekoden til dokumentet i ramma</para>
+<para
+>Virker bare hvis du ser på en nettside som bruker rammer. Likner <guimenuitem
+>Vis dokumentkilde</guimenuitem
+>. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>I</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Vis</guimenu
+> <guimenuitem
+>Vis dokumentinformasjon</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Vis dokunemtinformasjon, slik som tittel, &URL; og &HTTP;-filhoder brukt for å hente dokumentet.</para>
+<para
+>Bare tilgjengelig hvis du ser på et dokument eller en &HTMl;-side.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Vis</guimenu
+><guimenuitem
+>Sikkerhet …</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Forteller deg om den gjeldende nett-tilknytningen er sikret med <acronym
+>SSL</acronym
+> og lar deg hente opp dialogboksen <guilabel
+>kryptografioppsett …</guilabel
+>. <mousebutton
+>Venstre</mousebutton
+>-klikk på hengelåsen på menylinjen gjør det samme.</para
+></listitem
+> </varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Vis</guimenu
+><guimenuitem
+>Velg koding</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Velg koding</para>
+<para
+>Lar deg velge tegnkoding som brukes for å vise &HTML;-sider. <guimenuitem
+>Auto</guimenuitem
+> er vanligvis det beste valget.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Vis</guimenu
+><guisubmenu
+>Forhåndsvisning</guisubmenu
+> </menuchoice
+></term>
+<listitem
+><para
+>Lar deg velge å vise miniatyrer av bilder, tekstfiler eller &HTML;-sider istedenfor de normale ikonene i ikon- eller multikolonnevisning.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Vis</guimenu
+><guimenuitem
+>Vis skjulte filer</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Vis skjulte filer (.).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Vis</guimenu
+><guimenuitem
+>Vis detaljer …</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Lar deg velge hvilke fil- og mappedetaljer som vises i tre-, tekst- og detaljert listevisning.</para
+></listitem>
+</varlistentry>
+
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Vis</guimenu
+><guimenuitem
+>Bakgrunnsfarge …</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Velg bakgrunnsfarge i filbehandlermodus. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Vis</guimenu
+><guimenuitem
+>Bakgrunnsbilde …</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Velg bakgrunnsbilde for filbehandlingsmodus. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-go">
+<title
+><guimenu
+>Gå til</guimenu
+>-menyen</title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Alt;<keysym
+>Pil opp</keysym
+></keycombo
+></shortcut
+><guimenu
+>Gå til</guimenu
+><guimenuitem
+>Opp</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Gå opp et nivå i mappehierarkiet.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Alt;<keysym
+>Pil venstre</keysym
+></keycombo
+></shortcut
+><guimenu
+>Gå til</guimenu
+><guimenuitem
+>Tilbake</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Gå til den forrige visninga.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Alt;<keysym
+>Pil høyre</keysym
+></keycombo
+></shortcut
+><guimenu
+>Gå til</guimenu
+><guimenuitem
+>Fram</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Du kan bare gå fram hvis du akkurat har gått tilbake.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Home</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Gå til</guimenu
+><guimenuitem
+>Hjemme-URL</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Gå til hjemmemappa.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+> Gå til</guimenu
+><guimenuitem
+>Program</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Åpner mappa som inneholder programmene dine.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Gå</guimenu
+> til <guimenuitem
+>Papirkurv</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Åpner mappa<filename class="directory"
+>Papirkurv</filename
+> i et eget vindu.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Gå til</guimenu
+><guimenuitem
+>Maler</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Åpner mappa <filename class="directory"
+>Maler</filename
+> i et eget vindu.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Gå til</guimenu
+><guimenuitem
+>Autostart</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Åpner mappa <filename class="directory"
+>Autostart</filename
+> i et eget vindu.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Vis</guimenu
+><guisubmenu
+>Oftest besøkte</guisubmenu
+> </menuchoice
+></term>
+<listitem>
+<para
+>Viser en undermeny som viser de &URL;ene du besøker oftest. Velg en av disse, så åpner &konqueror; den &URL;-en.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-bookmarks">
+<title
+><guimenu
+>Bokmerkemenyen</guimenu
+></title>
+
+<note
+><para
+>Se delen <link linkend="bookmarks"
+>Å bruke bokmerker</link
+> i denne manualen for en fullstendig beskrivelse av disse menyene. </para
+></note>
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>B</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Bokmerker</guimenu
+><guimenuitem
+>Legg til bokmerke</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Legg gjeldende valg til bokmerkene dine.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Bokmerker</guimenu
+><guimenuitem
+>Bomkerkefaner som mappe …</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Opprett en bokmerkemappe som inneholder lenker til alle &URL;der som nå er åpne i &konqueror;-faner. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Bokmerker</guimenu
+><guimenuitem
+>Rediger bokmerker …</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Åpner <link linkend="bookmarks"
+>Bokmerkeredigereren</link
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Bokmerker</guimenu
+><guimenuitem
+>Ny bokmerkemappe …</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Lag en ny mappe i bokmerkemappa di.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-tools">
+<title
+><guimenu
+>Verktøy</guimenu
+>-menyen</title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Alt;<keycap
+>F2</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Verktøy</guimenu
+> <guimenuitem
+>Kjør kommando …</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Kjør et program ved å skrive inn navnet i en enkel dialogboks.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>T</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Verktøy</guimenu
+> <guimenuitem
+>Åpne terminal</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Åpner et &konsole;-terminalvindu.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Verktøy</guimenu
+> <guimenuitem
+>Finn fil…</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Åpner &kfind;-programmet.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Hvis du har installert programtillegg til &konqueror; vil det være flere oppføringer i <guimenu
+>Verktøy</guimenu
+>-menyen. Se kapittelet om <link linkend="konq-plugin"
+>&konqueror; programtillegg</link
+> for flere detaljer.</para>
+</sect2>
+
+<sect2 id="menu-settings">
+<title
+><guimenu
+>Innstillings</guimenu
+>menyen</title>
+
+<note
+><para
+>Se også delen om <link linkend="save-settings"
+>Lagre innstillinger og profiler</link
+>.</para
+></note>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>M</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Innstillinger</guimenu
+> <guimenuitem
+>Vis menylinje</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Vis/skjul menylinja.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Innstillinger</guimenu
+> <guimenuitem
+>Verktøylinjer</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Åpner en undermeny der du kan velge å vise eller skjule de forskjellige verktøylinjene.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>F</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Innstillinger</guimenu
+> <guimenuitem
+>Fullskjermmodus</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Endrer &konqueror; til fullskjermkjøring, slik at &konqueror;-vinduet bruker hele skjermen og ikke har de vanlige vindusdekorasjonene. Trykk på <guiicon
+>Ut av fullskjermkjøring</guiicon
+> på verktøylinja, eller trykk <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>F</keycap
+></keycombo
+> for å avslutte fullskjermkjøring.</para>
+</listitem>
+</varlistentry>
+
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Innstillinger</guimenu
+><guimenuitem
+>Visningsinnstillinger lagret i mappe</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Lagre Visningsegenskaper i gjeldende mappe. Hvis dette velges, blir det skrevet en fil <filename
+>.directory</filename
+> i gjeldende mappe der de innstillingene du sist brukte til å se på mappa blir lagret. Når du åpner mappa i &konqueror; blir innstillingene lastet inn igjen.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Innstillinger</guimenu
+><guimenuitem
+>Fjern mappeegenskaper</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Slett innstillingene som ble lagret i <guimenuitem
+>Visningsinnstillinger lagret i mappe</guimenuitem
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Innstillinger</guimenu
+> <guisubmenu
+>Last visningsprofil</guisubmenu
+> </menuchoice
+></term>
+<listitem
+><para
+>Last inn innstillingene som hører til en bestemt visningsprofil.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Innstillinger</guimenu
+><guimenuitem
+>Lagre visningsprofil "<replaceable
+>Profilnavn</replaceable
+>"…</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Lagre gjeldende innstillinger i gjeldende visningsprofil.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Innstillinger</guimenu
+> <guimenuitem
+>Tilpass visningsprofiler …</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Lar deg laste inn en eksisterende profil eller lage en ny.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Innstillinger</guimenu
+> <guimenuitem
+>Tilpass hurtigtaster …</guimenuitem
+> </menuchoice
+></term
+> <listitem
+><para
+>Lar deg se på og endre innstillingene for snarveistaster i &konqueror;, altså koblingene mellom handlinger som <guimenuitem
+>kopier</guimenuitem
+> og tastene eller kombiansjonene av taster slik som <keycombo action="simul"
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+>. Hvis du gjør dette, pass på så du ikke kopierer en snarvei som allerede eksisterer.</para>
+</listitem
+></varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Innstillinger</guimenu
+> <guimenuitem
+>Tilpass verktøylinjer …</guimenuitem
+> </menuchoice
+></term
+> <listitem
+><para
+>Lar deg tilpasse addresselinja, hoved- og ekstra verktøylinjer. Se delen <link linkend="configure-bars"
+>Endre linjer</link
+>. </para
+></listitem
+> </varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Innstillinger</guimenu
+> <guimenuitem
+>Tilpass &konqueror; …</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Lar deg tilpasse filbehandleren, filtilknytninger, leseren, internettnøkkelord, informasjonskapsler, mellomtjener, kryptografi, brukeragent eller verktøylinjer ved å hente fram den riktige dialogboksen.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Innstillinger</guimenu
+> <guimenuitem
+>Tilpass stavekontroll …</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Viser dialogboksen for oppsett av stavekontrollen, der du kan endre innstillinger for stavekontroll i &konqueror;.</para>
+</listitem>
+</varlistentry>
+
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-window">
+<title
+><guimenu
+>Vindu</guimenu
+>-menyen</title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>V</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Vindu</guimenu
+> <guimenuitem
+>Delt visning venstre/høyre</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Delt visning venstre/høyre.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>T</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Vindu</guimenu
+> <guimenuitem
+>Delt visning topp/bunn</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Delt visning topp/bunn.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>F</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Vindu</guimenu
+> <guimenuitem
+>Fjern aktiv visning</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Fjern aktiv visning.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Vindu</guimenu
+> <guimenuitem
+>Nytt faneblad</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Åpner et nytt, tomt, faneblad.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>D</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Vindu</guimenu
+> <guimenuitem
+>Dupliser gjeldende faneblad</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Åpner en kopi av fanebladet.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>B</keycap
+></keycombo
+></shortcut
+> <guimenu
+></guimenu
+>Vindu<guimenuitem
+>Koble fra gjeldende faneblad</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Viser gjeldende faneblad i en ny &konqueror;-instans.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>W</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Vindu</guimenu
+> <guimenuitem
+>Steng gjeldende faneblad</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Stenger gjeldende faneblad.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>Pil venstre</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Vindu</guimenu
+> <guimenuitem
+>Flytt fane til venstre</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Flytt gjeldende fane en plass til venstre i fanelista.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>Pil høyre</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Vindu</guimenu
+> <guimenuitem
+>Flytt fane til høyre</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Flytt gjeldende fane en plass til høyre i fanelista.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Vindu</guimenu
+> <guimenuitem
+>Vis terminalemulator</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Åpner en liten tekstterminalvisning nederst i hovedvinduet.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>F9</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Vindu</guimenu
+> <guimenuitem
+>Vis navigasjonspanel</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Slår &konqueror;s navigasjonspanel av og på. Se <xref linkend="sidebar"/>.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-help">
+<title
+><guimenu
+>Hjelp</guimenu
+>-menyen</title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Hjelp</guimenu
+> <guimenuitem
+>&konqueror; Håndboka</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Se på dette dokumentet.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Shift;<keycap
+>F1</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Hjelp</guimenu
+> <guimenuitem
+>Hva er dette?</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Tegner et spørsmålstegn (?) ved siden av musemarkøren. Når du trykker på et vinduselement, slik som <guiicon
+>Stopp</guiicon
+>-knappen, vil du få fram en kort forklaring. See <link linkend="bubble"
+>Verktøytips og Hva er dette?</link
+> .</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Hjelp</guimenu
+><guimenuitem
+>&konqueror; introduksjon</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Se introduksjonssidene du fikk første gangen &konqueror; startet, igjen.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Hjelp</guimenu
+> <guimenuitem
+>Rapporter feil …</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Rapporter feil.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Hjelp</guimenu
+> <guimenuitem
+>Om &konqueror;</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Vis en kort informasjon om versjonsnummer, forfattere og lisensavtalen til &konqueror;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Hjelp</guimenu
+><guimenuitem
+>Om KDE …</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Vis informasjon om &kde;-versjonen du kjører.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+</sect1>
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

@@ -1,0 +1,95 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Swedish "INCLUDE">
+]>
+<article id="history" lang="&language;">
+<title
+>Historiksidopanel</title>
+<articleinfo>
+<authorgroup>
+<author
+>&Burkhard.Lueck;</author>
+<othercredit role="translator"
+> <firstname
+>Stefan</firstname
+> <surname
+>Asserhäll</surname
+> <affiliation
+><address
+><email
+>stefan.asserhall@bredband.net</email
+></address
+></affiliation
+> <contrib
+>Översättare</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2009-11-24</date>
+<releaseinfo
+>&kde; 4.4</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Systeminställningar</keyword>
+<keyword
+>Historik</keyword>
+</keywordset>
+</articleinfo>
+
+<para
+>Dialogrutan låter dig anpassa historiksidorutan. </para>
+
+<variablelist>
+<varlistentry
+><term
+><guilabel
+>Gränser</guilabel
+></term>
+<listitem
+><para
+>Alternativen i den här delen kan användas för att ställa in historikens maximala storlek, och ställa in en tid då objekt automatiskt tas bort. </para
+></listitem>
+</varlistentry>
+
+<varlistentry
+><term
+><guilabel
+>Eget teckensnitt</guilabel
+></term>
+<listitem
+><para
+>Här kan du också ställa in olika teckensnitt för nya och gamla webbadresser, genom att använda knappen <guibutton
+>Välj teckensnitt</guibutton
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry
+><term
+><guilabel
+>Detaljer</guilabel
+></term>
+<listitem
+><para
+>Kryssrutan <guilabel
+>Detaljerade verktygstips</guilabel
+> styr hur mycket information som visas när du håller muspekaren över ett objekt på historiksidan.</para>
+<para
+>Om markerad, visas antal gånger besökt och datum för första och senaste besöket, förutom webbadressen.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Att välja <guibutton
+>Rensa historik</guibutton
+> rensar hela historiken fullständigt. </para>
+</article>

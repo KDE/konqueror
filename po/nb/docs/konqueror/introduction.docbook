@@ -1,0 +1,95 @@
+<chapter id="introduction">
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>Gunnhild</firstname
+><surname
+>Lurås</surname
+><affiliation
+><address
+><email
+>gluras@c2i.net</email
+></address
+></affiliation
+><contrib
+></contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2010-02-08</date>
+<releaseinfo
+>4.4</releaseinfo>
+</chapterinfo>
+
+<title
+>Oversikt</title>
+
+<para
+><emphasis
+>&konqueror;</emphasis
+> er en avansert <link linkend="filemanager"
+> filbehandler</link
+> for &kde; programvaremiljøet. Den gir filbehandlingsfunksjoner fra enkle klipp-ut/kopier og lim inn-operasjoner til avansert fillesing lokalt og over nettverk. Mappeinnhold kan vises på forskjellige tekst-og-ikon-<link linkend="viewmode"
+>visningsmåter</link
+>, som kan inkludere bokmerke-forhåndsvisning av filinnhold. Fil- og mappeegenskaper kan enkelt vises og endres, og programmer startes ved et enkelt klikk med &LMB;.</para>
+
+<para
+>I &kde; SC 4 er &dolphin; standard filbehandler. Du kan endre standardkomponent for å bla i mapper ved å åpne <guimenu
+>Standardprogrammer</guimenu
+> i &systemsettings; og velge &konqueror; som filbehandler.</para>
+
+<para
+><emphasis
+>&konqueror;</emphasis
+> er en <acronym
+>HTML</acronym
+> 4.01 kompatibel <link linkend="browser"
+>nettleser</link
+> med innebygd støtte for JavaScript (ECMA-262), <acronym
+>CSS</acronym
+> (Cascading Style Sheets) og skrift som leses fra høyre mot venstre (som arabisk og hebraisk). Den gir støtte for trygg kjøring av &Java;appleter, &Netscape;-programtillegg for å vise &Flash;, &RealAudio; og &RealVideo; og <acronym
+>SSL</acronym
+> for sikker kommunikasjon. Avanserte funksjoner inkluderer automatisk &URL;- og skjemautfylling, muligheten til å importere bokmerker fra andre lesere og surfing med faner. </para>
+
+<para
+><emphasis
+>&konqueror;</emphasis
+> er også er fullt ut funksjonell <link linkend="ftp"
+>FTP</link
+> klient.</para>
+
+<para
+><emphasis
+>&konqueror;</emphasis
+> er et universell visningsprogram, som kan vise bilder og dokumenter uten å måtte starte et annet program. Den gjør dette ved å kapsle inn komponenter (&kde;-deler) fra andre programmer; fra <application
+>Gwenview</application
+> for å vise bilder, &okular; for <acronym
+>PDF</acronym
+> og &PostScript;-dokumenter og fra de forskjellige &koffice;-programmene for deres dokumenttyper. </para>
+
+<para
+><emphasis
+>&konqueror;</emphasis
+> er et program som alle kan <link linkend="config"
+>tilpasse</link
+> til deres egne behov, alt fra å endre stil og størrelse på tekst og ikoner til å velge hvilke elementer som dukker opp på menylinja, endre antallet og posisjonen på verktøylinjene og til og med definere nye snarveistaster. Forskjellige <link linkend="save-settings"
+>tilpasningsprofiler</link
+> kan lagres for å så hentes inn ved behov. </para>
+
+</chapter>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

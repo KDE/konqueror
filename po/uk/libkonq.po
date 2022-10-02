@@ -1,0 +1,267 @@
+# Translation of libkonq.po to Ukrainian
+# Copyright (C) 2002-2020 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# Dmytro Kovalov <kov@tokyo.email.ne.jp>, 2002.
+# Eugene Onischenko <oneugene@ukr.net>, 2002, 2004, 2005.
+# Andriy Rysin <rysin@kde.org>, 2002, 2003, 2004.
+# Ivan Petrouchtchak <fr.ivan@ukrainian-orthodox.org>, 2004, 2005, 2006, 2007, 2008.
+# Yuri Chornoivan <yurchor@ukr.net>, 2008, 2009, 2010, 2011, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2020-11-26 08:43+0200\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 20.11.70\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "&Відкрити"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "Створити &теку..."
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "&Відновити"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr "Показати початковий каталог"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr "Показати початковий файл"
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "С&порожнити смітник"
+
+#: src/konq_popupmenu.cpp:312
+#, kde-format
+msgid "&Configure Trash Bin"
+msgstr "&Налаштувати смітник"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "&Зробити закладку на цій сторінці"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "&Зробити закладку на цій адресі"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "&Зробити закладку на цій теці"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "&Зробити закладку на цьому посиланні"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "&Зробити закладку на цьому файлі"
+
+#: src/konq_popupmenu.cpp:379
+#, kde-format
+msgid "Preview In"
+msgstr "Перегляд в"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr "Викликати термінал тут"
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "В&ластивості"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy To"
+#~ msgstr "Скопіювати до"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "Пересунути до"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "Тека домівки"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "Коренева тека"
+
+#~ msgctxt "@title:menu in Copy To or Move To submenu"
+#~ msgid "Browse..."
+#~ msgstr "Навігація..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "Скопіювати сюди"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "Пересунути сюди"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "Не можна кинути теку саму на себе"
+
+#~ msgid "File name for dropped contents:"
+#~ msgstr "Назва файла для змісту кидання:"
+
+#~ msgid "&Move Here"
+#~ msgstr "Пере&сунути"
+
+#~ msgid "&Copy Here"
+#~ msgstr "С&копіювати"
+
+#~ msgid "&Link Here"
+#~ msgstr "Створити по&силання"
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "Встановити як &шпалери"
+
+#~ msgid "C&ancel"
+#~ msgstr "&Скасувати"
+
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "Створити каталог"
+
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "Ввести іншу назву"
+
+#~ msgid ""
+#~ "The name \"%1\" starts with a dot, so the directory will be hidden by "
+#~ "default."
+#~ msgstr ""
+#~ "Назва «%1» починається з крапки, отже типово каталог буде приховано."
+
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "Створити прихований каталог?"
+
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "Нова тека"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "Створення теки"
+
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "Введіть назву теки:"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "Вставити одну теку"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One File"
+#~ msgstr "Вставити один файл"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Item"
+#~ msgid_plural "Paste %1 Items"
+#~ msgstr[0] "Вставити %1 елемент"
+#~ msgstr[1] "Вставити %1 елементи"
+#~ msgstr[2] "Вставити %1 елементів"
+#~ msgstr[3] "Вставити %1 елемент"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste Clipboard Contents..."
+#~ msgstr "Вставити вміст кишені..."
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste"
+#~ msgstr "Вставити"
+
+#~ msgid ""
+#~ "Restores this file or directory, back to the location where it was "
+#~ "deleted from initially"
+#~ msgstr ""
+#~ "Відновити цей файл або каталог у тому місці, з якого його було вилучено."
+
+#~ msgid ""
+#~ "Opens a new file manager window showing the target of this link, in its "
+#~ "parent directory."
+#~ msgstr ""
+#~ "Відкриває нове вікно інструмента керування файлами з показаною ціллю "
+#~ "цього посилання у його батьківському каталозі."
+
+#~ msgid "Share"
+#~ msgstr "Спільний"
+
+#~ msgctxt "@info"
+#~ msgid "Close"
+#~ msgstr "Закрити"
+
+#~ msgid "Close"
+#~ msgstr "Закрити"
+
+#~ msgid "Error: %1"
+#~ msgstr "Помилка: %1"
+
+#~ msgid "Create New"
+#~ msgstr "Створити"
+
+#~ msgid "Link to Device"
+#~ msgstr "Посилання на пристрій"
+
+#~ msgid "<qt>The template file <b>%1</b> does not exist.</qt>"
+#~ msgstr "<qt>Файла шаблону <b>%1</b> не існує.</qt>"
+
+#~ msgid "File name:"
+#~ msgstr "Назва файла:"
+
+#~ msgid ""
+#~ "Basic links can only point to local files or directories.\n"
+#~ "Please use \"Link to Location\" for remote URLs."
+#~ msgstr ""
+#~ "Базові посилання можуть вказувати лише на локальні файли або каталоги.\n"
+#~ "Будь ласка, використовуйте для віддалених адрес «Посилання на адресу»."
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Actions"
+#~ msgstr "&Дії"
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With"
+#~ msgstr "В&ідкрити за допомогою"
+
+#~ msgctxt "@action:inmenu Open With"
+#~ msgid "&Other..."
+#~ msgstr "Ін&ша..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With..."
+#~ msgstr "Від&крити за допомогою..."
+
+#~ msgid "Open &with %1"
+#~ msgstr "Відкрити &у %1"

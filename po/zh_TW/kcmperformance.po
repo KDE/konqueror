@@ -1,0 +1,143 @@
+# translation of kcmperformance.po to Chinese Traditional
+# traditional Chinese translation for kcmperformance.po.
+# Copyright (C) 2003, 2007 Free Software Foundation, Inc.
+# Bo-Chau Chen <b8802046@mail.ntust.edu.tw>, 2003.
+# Wong King Chi <stanley18fan0k@yahoo.com.hk>, 2005.
+# Frank Weng (a.k.a. Franklin) <franklin@mail.everfocus.com.tw>, 2007.
+# Jeff Huang <s8321414@gmail.com>, 2016, 2017.
+#
+# Franklin Weng <franklin at goodhorse dot idv dot tw>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmperformance\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-21 00:16+0000\n"
+"PO-Revision-Date: 2017-03-23 20:39+0800\n"
+"Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
+"Language-Team: Chinese <kde-i18n-doc@kde.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 2.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: kcmperformance.cpp:28
+#, kde-format
+msgid ""
+"<h1>KDE Performance</h1> You can configure settings that improve KDE "
+"performance here."
+msgstr "<h1>KDE Performanace</h1>在這裡，你可以設定組態來增加 KDE 的效能。"
+
+#: kcmperformance.cpp:35
+#, kde-format
+msgid "Konqueror"
+msgstr "Konqueror"
+
+#: kcmperformance.cpp:38
+#, kde-format
+msgid "System"
+msgstr "系統"
+
+#: kcmperformance.cpp:63
+#, kde-format
+msgid ""
+"<h1>Konqueror Performance</h1> You can configure several settings that "
+"improve Konqueror performance here. These include options for reusing "
+"already running instances and for keeping instances preloaded."
+msgstr ""
+"<h1>Konqueror Performance</h1>您可以設定數種組態來增加 Konqueror 的效能。這些"
+"組態包括重用已執行實體和預先載入實體"
+
+#: konqueror.cpp:24
+#, kde-format
+msgid ""
+"<p>If enabled, an instance of Konqueror will be preloaded after the ordinary "
+"Plasma startup sequence.</p><p>This will make the first Konqueror window "
+"open faster, but at the expense of longer Plasma startup times (but you will "
+"be able to work while it is loading, so you may not even notice that it is "
+"taking longer).</p>"
+msgstr ""
+"<p>這個選項啟動後，一個 Konqueror 實體會在 Plasma 啓動後被預先載入。</p> <p>"
+"雖然可以減少首次啟動 Konqueror 所需的時間，但也會減慢 Plasma 啓動速度。（不"
+"過，您仍然可以在載入期間使用電腦，所以您可能没有注意到）</p>"
+
+#: konqueror.cpp:30
+#, kde-format
+msgid ""
+"<p>If enabled, Konqueror will always try to have one preloaded instance "
+"ready; preloading a new instance in the background whenever there is not one "
+"available, so that windows will always open quickly.</p><p><b>Warning:</b> "
+"In some cases, it is actually possible that this will reduce perceived "
+"performance.</p>"
+msgstr ""
+"<p>這個選項啟動後，在任何時候 Konqueror 都會盡力預留一個實體，即只要沒有 "
+"Konqueror 實體時，KDE 會在背景載入一個，這樣 Konqueror 視窗在任何時候都會快速"
+"開啓。</p> <p><b>警告：</b>在一些情況下，這會使性能有所下降。</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
+#: konqueror_ui.ui:17
+#, kde-format
+msgid "Preloading"
+msgstr "預先載入中"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_preload_on_startup)
+#: konqueror_ui.ui:23
+#, kde-format
+msgid "Preload an instance after desktop startup"
+msgstr "在桌面啟動後，預先載入一個實體"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_always_have_preloaded)
+#: konqueror_ui.ui:30
+#, kde-format
+msgid "Always try to have one preloaded instance"
+msgstr "嘗試預先載入一個實體"
+
+#: system.cpp:22
+#, kde-format
+msgid ""
+"<p>During startup KDE needs to perform a check of its system configuration "
+"(mimetypes, installed applications, etc.), and in case the configuration has "
+"changed since the last time, the system configuration cache (KSyCoCa) needs "
+"to be updated.</p><p>This option delays the check, which avoid scanning all "
+"directories containing files describing the system during KDE startup, thus "
+"making KDE startup faster. However, in the rare case the system "
+"configuration has changed since the last time, and the change is needed "
+"before this delayed check takes place, this option may lead to various "
+"problems (missing applications in the K Menu, reports from applications "
+"about missing required mimetypes, etc.).</p><p>Changes of system "
+"configuration mostly happen by (un)installing applications. It is therefore "
+"recommended to turn this option temporarily off while (un)installing "
+"applications.</p>"
+msgstr ""
+"<p>KDE 啓動時需要對系統組態進行檢查（如MIME 類型，已安裝的程式等），如果組態"
+"在上一次啓動之後變更過，那麼它的快取（KSyCoCa）便需要被更新。</p> <p>這個選項"
+"可以延遲檢查動作，使 KDE 啓動時不再對舆組態有關的目錄進行掃描。如此，便可以加"
+"快啓動速度。不過在一些罕見的情況下，變更需要在檢查之前生效，這樣做會導致某些"
+"問題（如 K 選單中的程式不見了，應用程式報告所需 MIME 類型不存在等）。</p> <p>"
+"由於這種變更大部分是由安裝/反安裝應用程式所致的，所以我們建議在那時候暫時關閉"
+"選項。</p> <p>正因如此，我們不建議您使用。選項啓動時 KDE 錯誤控制程式將不會提"
+"供回溯追蹤。（您將需要關閉選項，然後重現錯誤，或開啓錯誤控制程式的開發者模"
+"式）</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gb_)
+#: system_ui.ui:8
+#, kde-format
+msgid "System Configuration"
+msgstr "系統組態"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_disable_kbuildsycoca)
+#: system_ui.ui:14
+#, kde-format
+msgid "Disable &system configuration startup check"
+msgstr "關閉啟動時系統組態的檢查"
+
+#. i18n: ectx: property (text), widget (QLabel, label_kbuildsycoca)
+#: system_ui.ui:21
+#, kde-format
+msgid ""
+"This option may in rare cases lead to various problems. Consult the What's "
+"This (Shift+F1) help for details."
+msgstr ""
+"在一些罕見的情況下，這個選項會導致某些問題。詳細資料請查詢「這是什麼」(Shift"
+"+F1)。"

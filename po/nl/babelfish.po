@@ -1,0 +1,254 @@
+# translation of babelfish.po to Dutch
+# translation of babelfish.po to
+# Copyright (C) 2003, 2004, 2005, 2007 Free Software Foundation, Inc.
+# Proefgelezen op 20 Jan 2001 door Douwe van der Schaaf <dvdsch@bigfoot.com>
+#
+# Samuel <samuel.derous@skynet.be>, 2003.
+# Rinse de Vries <rinse@kde.nl>, 2003, 2004.
+# Wilbert Berendsen <wbsoft@xs4all.nl>, 2003.
+# Tom Albers <tomalbers@kde.nl>, 2004.
+# Rinse de Vries <RinseDeVries@home.nl>, 2005.
+# Rinse de Vries <rinsedevries@kde.nl>, 2007.
+# Freek de Kruijf <freekdekruijf@kde.nl>, 2010, 2011, 2017, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: babelfish\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"PO-Revision-Date: 2021-04-01 12:49+0200\n"
+"Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
+"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 20.12.3\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Rinse de Vries,Freek de Kruijf - t/m 2021"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "rinsedevries@kde.nl,freekdekruijf@kde.nl"
+
+#. i18n: ectx: Menu (tools)
+#: babelfishplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "H&ulpmiddelen"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: babelfishplugin.rc:8
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "Extra werkbalk"
+
+#: plugin_babelfish.cpp:35
+#, kde-format
+msgid "Translate Web Page"
+msgstr "Webpagina vertalen"
+
+#: plugin_babelfish.cpp:43
+#, kde-format
+msgid "Translate Web &Page"
+msgstr "Web&pagina vertalen"
+
+#: plugin_babelfish.cpp:80
+#, kde-format
+msgid "&English To"
+msgstr "Van &Engels naar"
+
+#: plugin_babelfish.cpp:83
+#, kde-format
+msgid "&French To"
+msgstr "Van &Frans naar"
+
+#: plugin_babelfish.cpp:86
+#, kde-format
+msgid "&German To"
+msgstr "Van &Duits naar"
+
+#: plugin_babelfish.cpp:89
+#, kde-format
+msgid "&Greek To"
+msgstr "Van &Grieks naar"
+
+#: plugin_babelfish.cpp:92
+#, kde-format
+msgid "&Spanish To"
+msgstr "Van &Spaans naar"
+
+#: plugin_babelfish.cpp:95
+#, kde-format
+msgid "&Portuguese To"
+msgstr "Van &Portugees naar"
+
+#: plugin_babelfish.cpp:98
+#, kde-format
+msgid "&Italian To"
+msgstr "Van &Italiaans naar"
+
+#: plugin_babelfish.cpp:101
+#, kde-format
+msgid "&Dutch To"
+msgstr "Van &Nederlands naar"
+
+#: plugin_babelfish.cpp:104
+#, kde-format
+msgid "&Russian To"
+msgstr "Van &Russisch naar"
+
+#: plugin_babelfish.cpp:120
+#, kde-format
+msgid "&Chinese (Simplified)"
+msgstr "&Chinees (Vereenvoudigd)"
+
+#: plugin_babelfish.cpp:121
+#, kde-format
+msgid "Chinese (&Traditional)"
+msgstr "Chinees (&Traditioneel)"
+
+#: plugin_babelfish.cpp:122 plugin_babelfish.cpp:135
+#, kde-format
+msgid "&Dutch"
+msgstr "&Nederlands"
+
+#: plugin_babelfish.cpp:123 plugin_babelfish.cpp:144 plugin_babelfish.cpp:146
+#: plugin_babelfish.cpp:148 plugin_babelfish.cpp:150 plugin_babelfish.cpp:152
+#: plugin_babelfish.cpp:154 plugin_babelfish.cpp:156
+#, kde-format
+msgid "&French"
+msgstr "&Frans"
+
+#: plugin_babelfish.cpp:124 plugin_babelfish.cpp:137
+#, kde-format
+msgid "&German"
+msgstr "D&uits"
+
+#: plugin_babelfish.cpp:125 plugin_babelfish.cpp:138
+#, kde-format
+msgid "&Greek"
+msgstr "&Grieks"
+
+#: plugin_babelfish.cpp:126 plugin_babelfish.cpp:139
+#, kde-format
+msgid "&Italian"
+msgstr "&Italiaans"
+
+#: plugin_babelfish.cpp:127
+#, kde-format
+msgid "&Japanese"
+msgstr "&Japans"
+
+#: plugin_babelfish.cpp:128
+#, kde-format
+msgid "&Korean"
+msgstr "&Koreaans"
+
+#: plugin_babelfish.cpp:129
+#, kde-format
+msgid "&Norwegian"
+msgstr "&Noors"
+
+#: plugin_babelfish.cpp:130 plugin_babelfish.cpp:140
+#, kde-format
+msgid "&Portuguese"
+msgstr "&Portugees"
+
+#: plugin_babelfish.cpp:131 plugin_babelfish.cpp:142
+#, kde-format
+msgid "&Russian"
+msgstr "&Russisch"
+
+#: plugin_babelfish.cpp:132 plugin_babelfish.cpp:141
+#, kde-format
+msgid "&Spanish"
+msgstr "&Spaans"
+
+#: plugin_babelfish.cpp:133
+#, kde-format
+msgid "T&hai"
+msgstr "T&hai"
+
+#: plugin_babelfish.cpp:134
+#, kde-format
+msgid "&Arabic"
+msgstr "&Arabisch"
+
+#: plugin_babelfish.cpp:136 plugin_babelfish.cpp:143 plugin_babelfish.cpp:145
+#: plugin_babelfish.cpp:147 plugin_babelfish.cpp:149 plugin_babelfish.cpp:151
+#: plugin_babelfish.cpp:153 plugin_babelfish.cpp:155
+#, kde-format
+msgid "&English"
+msgstr "&Engels"
+
+#: plugin_babelfish.cpp:178
+#, kde-format
+msgid "&Chinese (Simplified) to English"
+msgstr "Van &Chinees (Vereenvoudigd) naar Engels"
+
+#: plugin_babelfish.cpp:179
+#, kde-format
+msgid "Chinese (&Traditional) to English"
+msgstr "Van Chinees (&Traditioneel) naar Engels"
+
+#: plugin_babelfish.cpp:188
+#, kde-format
+msgid "&Japanese to English"
+msgstr "van &Japans naar Engels"
+
+#: plugin_babelfish.cpp:189
+#, kde-format
+msgid "&Korean to English"
+msgstr "van &Koreaans naar Engels"
+
+#: plugin_babelfish.cpp:257
+#, kde-format
+msgctxt "@title:window"
+msgid "Malformed URL"
+msgstr "Ongeldig URL-adres"
+
+#: plugin_babelfish.cpp:258
+#, kde-format
+msgid "The URL you entered is not valid, please correct it and try again."
+msgstr ""
+"Het URL-adres dat u opgaf is niet geldig. Corrigeer dit en probeer het "
+"nogmaals."
+
+#: plugin_babelfish.cpp:268
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"You are viewing this page over a secure connection.<nl/><nl/>The URL of the "
+"page will sent to the online translation service,<nl/>which may fetch the "
+"insecure version of the page."
+msgstr ""
+"U bekijkt deze pagina over een beveiligde verbinding.<nl/><nl/>De URL van de "
+"pagina zal naar de online vertalingenservice iets verzenden,<nl/>die de "
+"onbeveiligde versie van de pagina kan ophalen."
+
+#: plugin_babelfish.cpp:272
+#, kde-format
+msgctxt "@title:window"
+msgid "Security Warning"
+msgstr "Beveiligingswaarschuwing"
+
+#~ msgid "&Russian to English"
+#~ msgstr "van &Russisch naar Engels"
+
+#~ msgid "Cannot Translate Source"
+#~ msgstr "Bron kan niet vertaald worden"
+
+#~ msgid "Only web pages can be translated using this plugin."
+#~ msgstr "Alleen webpagina's kunnen met deze plugin vertaald worden."
+
+#~ msgid "Only full webpages can be translated for this language pair."
+#~ msgstr ""
+#~ "Alleen volledige webpagina's kunnen met deze twee talen worden vertaald."
+
+#~ msgid "Translation Error"
+#~ msgstr "Vertaalfout"

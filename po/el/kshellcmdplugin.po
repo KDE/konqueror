@@ -1,0 +1,1962 @@
+#
+# Dimitrios Glentadakis <dglent@gmail.com>, 2010, 2011, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2012-04-08 14:02+0200\n"
+"Last-Translator: Dimitrios Glentadakis <dglent@gmail.com>\n"
+"Language-Team: Greek <kde-i18n-el@kde.org>\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. i18n: ectx: Menu (tools)
+#: konq_shellcmdplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "Ερ&γαλεία"
+
+#: kshellcmdexecutor.cpp:106
+#, kde-format
+msgid "Input Required:"
+msgstr "Απαιτούνται στοιχεία:"
+
+#: kshellcmdplugin.cpp:32
+#, kde-format
+msgid "&Execute Shell Command..."
+msgstr "&Εκτέλεση εντολής κελύφους..."
+
+#: kshellcmdplugin.cpp:41
+#, kde-format
+msgid ""
+"KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a bug."
+msgstr ""
+"KShellCmdPlugin::slotExecuteShellCommand: Σφάλμα προγράμματος. Παρακαλώ "
+"κάντε μια αναφορά σφάλματος."
+
+#: kshellcmdplugin.cpp:51
+#, kde-format
+msgid "Executing shell commands works only on local directories."
+msgstr "Η εκτέλεση εντολών κελύφους δουλεύει μόνο σε τοπικούς καταλόγους."
+
+#: kshellcmdplugin.cpp:73
+#, kde-format
+msgctxt "@title:window"
+msgid "Execute Shell Command"
+msgstr "Εκτέλεση εντολής κελύφους"
+
+#: kshellcmdplugin.cpp:74
+#, kde-format
+msgid "Execute shell command in current directory:"
+msgstr "Εκτέλεση εντολής κελύφους στον τρέχοντα κατάλογο:"
+
+#: kshellcmdplugin.cpp:85
+#, kde-format
+msgid "Output from command: \"%1\""
+msgstr "Αποτέλεσμα στην έξοδο εντολής: \"%1\""
+
+#~ msgid "no name"
+#~ msgstr "χωρίς όνομα"
+
+#~ msgid "Configure"
+#~ msgstr "Ρύθμιση"
+
+#~ msgid "Extensions"
+#~ msgstr "Πρόσθετα"
+
+#~ msgid ""
+#~ "There was an error loading the module %1.\n"
+#~ "The diagnostics is:\n"
+#~ "%2"
+#~ msgstr ""
+#~ "Υπήρξε ένα σφάλμα κατά τη φόρτωση του αρθρώματος %1.\n"
+#~ "Τα διαγνωστικά είναι:\n"
+#~ "%2"
+
+#~ msgid "Konqueror"
+#~ msgstr "Konqueror"
+
+#~ msgid "Web browser, file manager and document viewer."
+#~ msgstr ""
+#~ "Περιηγητής ιστοσελίδων, διαχειριστής αρχείων και προβολέας εγγράφων."
+
+#~ msgid "(C) 1999-2008, The Konqueror developers"
+#~ msgstr "(c) 1999-2008, Οι προγραμματιστές του Konqueror"
+
+#~ msgid "http://konqueror.kde.org"
+#~ msgstr "http://konqueror.kde.org"
+
+#~ msgid "David Faure"
+#~ msgstr "David Faure"
+
+#~ msgid "Developer (framework, parts, JavaScript, I/O library) and maintainer"
+#~ msgstr ""
+#~ "Προγραμματιστής (πλαίσιο εργασίας, τμήματα, JavaScript, βιβλιοθήκη I/O) "
+#~ "και συντηρητής"
+
+#~ msgid "Simon Hausmann"
+#~ msgstr "Simon Hausmann"
+
+#~ msgid "Developer (framework, parts)"
+#~ msgstr "Προγραμματιστής (πλαίσιο εργασίας, τμήματα)"
+
+#~ msgid "Michael Reiher"
+#~ msgstr "Michael Reiher"
+
+#~ msgid "Developer (framework)"
+#~ msgstr "Προγραμματιστής (πλαίσιο εργασίας)"
+
+#~ msgid "Matthias Welk"
+#~ msgstr "Matthias Welk"
+
+#~ msgid "Developer"
+#~ msgstr "Προγραμματιστής"
+
+#~ msgid "Alexander Neundorf"
+#~ msgstr "Alexander Neundorf"
+
+#~ msgid "Developer (List views)"
+#~ msgstr "Προγραμματιστής (προβολές λίστας)"
+
+#~ msgid "Michael Brade"
+#~ msgstr "Michael Brade"
+
+#~ msgid "Developer (List views, I/O library)"
+#~ msgstr "Προγραμματιστής (προβολές λίστας, βιβλιοθήκη Ι/Ο)"
+
+#~ msgid "Lars Knoll"
+#~ msgstr "Lars Knoll"
+
+#~ msgid "Developer (HTML rendering engine)"
+#~ msgstr "Προγραμματιστής (μηχανή αποτύπωσης HTML)"
+
+#~ msgid "Dirk Mueller"
+#~ msgstr "Dirk Mueller"
+
+#~ msgid "Peter Kelly"
+#~ msgstr "Peter Kelly"
+
+#~ msgid "Waldo Bastian"
+#~ msgstr "Waldo Bastian"
+
+#~ msgid "Developer (HTML rendering engine, I/O library)"
+#~ msgstr "Προγραμματιστής (μηχανή αποτύπωσης ΗΤΜL, βιβλιοθήκη Ι/Ο)"
+
+#~ msgid "Germain Garand"
+#~ msgstr "Germain Garand"
+
+#~ msgid "Leo Savernik"
+#~ msgstr "Leo Savernik"
+
+#~ msgid "Stephan Kulow"
+#~ msgstr "Stephan Kulow"
+
+#~ msgid ""
+#~ "Developer (HTML rendering engine, I/O library, regression test framework)"
+#~ msgstr ""
+#~ "Προγραμματιστής (μηχανή αποτύπωσης ΗΤΜL, βιβλιοθήκη Ι/Ο, πλαίσιο εργασίας "
+#~ "ελέγχου αναδρομής)"
+
+#~ msgid "Antti Koivisto"
+#~ msgstr "Antti Koivisto"
+
+#~ msgid "Zack Rusin"
+#~ msgstr "Zack Rusin"
+
+#~ msgid "Tobias Anton"
+#~ msgstr "Tobias Anton"
+
+#~ msgid "Lubos Lunak"
+#~ msgstr "Lubos Lunak"
+
+#~ msgid "Maks Orlovich"
+#~ msgstr "Maks Orlovich"
+
+#~ msgid "Developer (HTML rendering engine, JavaScript)"
+#~ msgstr "Προγραμματιστής (μηχανή αποτύπωσης HTML, JavaScript)"
+
+#~ msgid "Allan Sandfeld Jensen"
+#~ msgstr "Allan Sandfeld Jensen"
+
+#~ msgid "Apple Safari Developers"
+#~ msgstr "Apple Safari Developers"
+
+#~ msgid "Harri Porten"
+#~ msgstr "Harri Porten"
+
+#~ msgid "Developer (JavaScript)"
+#~ msgstr "Προγραμματιστής (JavaScript)"
+
+#~ msgid "Koos Vriezen"
+#~ msgstr "Koos Vriezen"
+
+#~ msgid "Developer (Java applets and other embedded objects)"
+#~ msgstr ""
+#~ "Προγραμματιστής (μικροεφαρμογές Java και άλλα ενσωματωμένα αντικείμενα)"
+
+#~ msgid "Matt Koss"
+#~ msgstr "Matt Koss"
+
+#~ msgid "Developer (I/O library)"
+#~ msgstr "Προγραμματιστής (βιβλιοθήκη Ι/Ο)"
+
+#~ msgid "Alex Zepeda"
+#~ msgstr "Alex Zepeda"
+
+#~ msgid "Richard Moore"
+#~ msgstr "Richard Moore"
+
+#~ msgid "Developer (Java applet support)"
+#~ msgstr "Προγραμματιστής (υποστήριξη μικροεφαρμογών Java)"
+
+#~ msgid "Dima Rogozin"
+#~ msgstr "Dima Rogozin"
+
+#~ msgid "Wynn Wilkes"
+#~ msgstr "Wynn Wilkes"
+
+#~ msgid ""
+#~ "Developer (Java 2 security manager support,\n"
+#~ " and other major improvements to applet support)"
+#~ msgstr ""
+#~ "Προγραμματιστής (υποστήριξη διαχειριστή ασφάλειας Java 2,\n"
+#~ " και άλλες σημαντικές βελτιώσεις στην υποστήριξη μικροεφαρμογών)"
+
+#~ msgid "Stefan Schimanski"
+#~ msgstr "Stefan Schimanski"
+
+#~ msgid "Developer (Netscape plugin support)"
+#~ msgstr "Προγραμματιστής (υποστήριξη προσθέτων Netscape)"
+
+#~ msgid "George Staikos"
+#~ msgstr "Γιώργος Στάικος"
+
+#~ msgid "Developer (SSL, Netscape plugins)"
+#~ msgstr "Προγραμματιστής (SSL, πρόσθετα Netscape)"
+
+#~ msgid "Dawit Alemayehu"
+#~ msgstr "Dawit Alemayehu"
+
+#~ msgid "Developer (I/O library, Authentication support)"
+#~ msgstr "Προγραμματιστής (βιβλιοθήκη Ι/Ο, υποστήριξη ταυτοποίησης)"
+
+#~ msgid "Carsten Pfeiffer"
+#~ msgstr "Carsten Pfeiffer"
+
+#~ msgid "Torsten Rahn"
+#~ msgstr "Torsten Rahn"
+
+#~ msgid "Graphics/icons"
+#~ msgstr "Γραφικά/εικονίδια"
+
+#~ msgid "Torben Weis"
+#~ msgstr "Torben Weis"
+
+#~ msgid "KFM author"
+#~ msgstr "Συγγραφέας KFM"
+
+#~ msgid "Joseph Wenninger"
+#~ msgstr "Joseph Wenninger"
+
+#~ msgid "Developer (navigation panel framework)"
+#~ msgstr "Προγραμματιστής (πλαίσιο εργασίας πίνακα πλοήγησης)"
+
+#~ msgid "Stephan Binner"
+#~ msgstr "Stephan Binner"
+
+#~ msgid "Developer (misc stuff)"
+#~ msgstr "Προγραμματιστής (διάφορες εργασίες)"
+
+#~ msgid "Ivor Hewitt"
+#~ msgstr "Ivor Hewitt"
+
+#~ msgid "Developer (AdBlock filter)"
+#~ msgstr "Προγραμματιστής (φίλτρα AdBlock)"
+
+#~ msgid "Eduardo Robles Elvira"
+#~ msgstr "Eduardo Robles Elvira"
+
+#~ msgid ""
+#~ "Checking this box on at least two views sets those views as 'linked'. "
+#~ "Then, when you change directories in one view, the other views linked "
+#~ "with it will automatically update to show the current directory. This is "
+#~ "especially useful with different types of views, such as a directory tree "
+#~ "with an icon view or detailed view, and possibly a terminal emulator "
+#~ "window."
+#~ msgstr ""
+#~ "Ενεργοποιώντας αυτό το πλαίσιο σε τουλάχιστον δύο σετ προβολών, "
+#~ "'συνδέετε' αυτές τις προβολές. Τότε, όταν αλλάζετε καταλόγους σε μια "
+#~ "προβολή, οι άλλες, συνδεδεμένες με αυτήν προβολές θα ενημερωθούν αυτόματα "
+#~ "ώστε να δείχνουν τον τρέχοντα κατάλογο. Αυτό είναι ιδιαίτερα χρήσιμο με "
+#~ "διαφορετικά είδη προβολών, όπως ένα δέντρο καταλόγων με μια προβολή "
+#~ "εικονιδίων ή λεπτομερή προβολή και πιθανό με ένα παράθυρο προσομοιωτή "
+#~ "τερματικού."
+
+#~ msgid "Close View"
+#~ msgstr "Αφαίρεση προβολής"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#~ msgid "Stalled"
+#~ msgstr "Σταματημένο"
+
+#~ msgid "Preview &in %1"
+#~ msgstr "Προεπισκόπηση &σε %1"
+
+#~ msgid "Show %1"
+#~ msgstr "Εμφάνιση %1"
+
+#~ msgctxt "@title:window"
+#~ msgid "History"
+#~ msgstr "Ιστορικό"
+
+#~ msgctxt "@action:inmenu Parent of 'By Name' and 'By Date'"
+#~ msgid "Sort"
+#~ msgstr "Ταξινόμηση"
+
+#~ msgid ""
+#~ "<qt><center><b>%1</b></center><hr />Last visited: %2<br />First visited: "
+#~ "%3<br />Number of times visited: %4</qt>"
+#~ msgstr ""
+#~ "<qt><center><b>%1</b></center><hr />Τελευταία επίσκεψη: %2<br />Πρώτη "
+#~ "επίσκεψη: %3<br />Πλήθος επισκέψεων: %4</qt>"
+
+#~ msgid "Local"
+#~ msgstr "Τοπικό"
+
+#~ msgid "Miscellaneous"
+#~ msgstr "Διάφορα"
+
+#~ msgid "Open in New &Window"
+#~ msgstr "Άνοιγμα σε νέο &παράθυρο"
+
+#~ msgid "Open in New Tab"
+#~ msgstr "Άνοιγμα σε νέα καρτέλα"
+
+#~ msgid "&Copy Link Address"
+#~ msgstr "Αντιγραφή &διεύθυνσης δεσμού"
+
+#~ msgid "&Remove Entry"
+#~ msgstr "Α&φαίρεση καταχώρησης"
+
+#~ msgid "C&lear History"
+#~ msgstr "&Καθαρισμός ιστορικού"
+
+#~ msgid "&Preferences..."
+#~ msgstr "&Προτιμήσεις..."
+
+#~ msgid "By &Name"
+#~ msgstr "Κατ' όν&ομα"
+
+#~ msgid "By &Date"
+#~ msgstr "Κατά &ημερομηνία"
+
+#~ msgid "Search in history"
+#~ msgstr "Αναζήτηση ιστορικού"
+
+#~ msgid "Do you really want to clear the entire history?"
+#~ msgstr "Θέλετε πραγματικά να σβηστεί όλο το ιστορικό;"
+
+#~ msgid "Clear History?"
+#~ msgstr "Καθαρισμός ιστορικού;"
+
+#~ msgid "Start without a default window, when called without URLs"
+#~ msgstr ""
+#~ "Εκκίνηση χωρίς προκαθορισμένο παράθυρο, όταν καλείται χωρίς διευθύνσεις "
+#~ "ιστοσελίδων"
+
+#~ msgid ""
+#~ "Preload for later use. This mode does not support URLs on the command line"
+#~ msgstr ""
+#~ "Προφόρτωση για μετέπειτα χρήση. Αυτή η λειτουργία δεν υποστηρίζει "
+#~ "διευθύνσεις ιστοσελίδων στην γραμμή εντολών"
+
+#~ msgid "Profile to open"
+#~ msgstr "Προφίλ για άνοιγμα"
+
+#~ msgid "List available profiles"
+#~ msgstr "Εμφάνιση διαθέσιμων προφίλ"
+
+#~ msgid "List available sessions"
+#~ msgstr "Εμφάνιση διαθέσιμων συνεδριών"
+
+#~ msgid "Session to open"
+#~ msgstr "Συνεδρία προς άνοιγμα"
+
+#~ msgid "Mimetype to use for this URL (e.g. text/html or inode/directory)"
+#~ msgstr ""
+#~ "Τύπος mime που θα χρησιμοποιηθεί για αυτό το URL, (π.χ. text/html ή inode/"
+#~ "directory)"
+
+#~ msgid "Part to use (e.g. khtml or kwebkitpart)"
+#~ msgstr "Τμήμα προς χρήση (π.χ. khtml ή kwebkit)"
+
+#~ msgid ""
+#~ "For URLs that point to files, opens the directory and selects the file, "
+#~ "instead of opening the actual file"
+#~ msgstr ""
+#~ "Για URL που δείχνουν σε αρχεία, άνοιξε το φάκελο και επίλεξε το αρχείο, "
+#~ "αντί να ανοίξεις το ίδιο το αρχείο"
+
+#~ msgid "Location to open"
+#~ msgstr "Τοποθεσία για άνοιγμα"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Loading..."
+#~ msgstr "Φόρτωση..."
+
+#~ msgid "Canceled."
+#~ msgstr "Ακυρώθηκε."
+
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Reloading the page will discard these changes."
+#~ msgstr ""
+#~ "Αυτή η σελίδα περιέχει αλλαγές που δεν έχουν υποβληθεί.\n"
+#~ "H επαναφόρτωση της σελίδας θα οδηγήσει σε απόρριψη αυτών των αλλαγών."
+
+#~ msgid "Discard Changes?"
+#~ msgstr "Απόρριψη αλλαγών;"
+
+#~ msgid "&Discard Changes"
+#~ msgstr "&Απόρριψη αλλαγών"
+
+#~ msgid "File Management"
+#~ msgstr "Διαχείριση αρχείων"
+
+#~ msgid "Web Browsing"
+#~ msgstr "Περιήγηση"
+
+#~ msgid "Home Folder"
+#~ msgstr "Προσωπικός φάκελος"
+
+#~ msgid "Home"
+#~ msgstr "Αρχική"
+
+#~ msgid "Navigate to your 'Home Folder'"
+#~ msgstr "Μετάβαση στον 'Προσωπικό φάκελό' σας"
+
+#~ msgid "Navigate to your local 'Home Folder'"
+#~ msgstr "Μετάβαση στον τοπικό 'Προσωπικό φάκελό' σας"
+
+#~ msgid "Home Page"
+#~ msgstr "Αρχική σελίδα"
+
+#~ msgid "Navigate to your 'Home Page'"
+#~ msgstr "Μετάβαση στην 'Προσωπική σελίδα' σας"
+
+#~ msgid ""
+#~ "<html>Navigate to your 'Home Page'<br /><br />You can configure the "
+#~ "location where this button takes you under <b>Settings -> Configure "
+#~ "Konqueror -> General</b>.</html>"
+#~ msgstr ""
+#~ "<html>Πλοήγηση στην 'Προσωπική σελίδα' σας<br /><br />Μπορείτε να "
+#~ "ρυθμίσετε  την τοποθεσία που αυτό το κουμπί σας πηγαίνει στο <b>Ρυθμίσεις -> Ρύθμιση "
+#~ "Konqueror -> Γενικά</b>.</html>"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Detaching the tab will discard these changes."
+#~ msgstr ""
+#~ "Αυτή η καρτέλα περιέχει αλλαγές που δεν έχουν υποβληθεί.\n"
+#~ "Η αποσύνδεση της καρτέλας θα οδηγήσει σε απόρριψη αυτών των αλλαγών."
+
+#~ msgid ""
+#~ "This view contains changes that have not been submitted.\n"
+#~ "Closing the view will discard these changes."
+#~ msgstr ""
+#~ "Αυτή η προβολή περιέχει αλλαγές που δεν έχουν υποβληθεί.\n"
+#~ "Το κλείσιμο της προβολής θα οδηγήσει σε απόρριψη αυτών των αλλαγών."
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the tab will discard these changes."
+#~ msgstr ""
+#~ "Αυτή η καρτέλα περιέχει αλλαγές που δεν έχουν υποβληθεί.\n"
+#~ "Το κλείσιμο της καρτέλας θα οδηγήσει σε απόρριψη αυτών των αλλαγών."
+
+#~ msgid "Do you really want to close all other tabs?"
+#~ msgstr "Θέλετε πραγματικά να κλείσετε όλες τις άλλες καρτέλες;"
+
+#~ msgid "Close Other Tabs Confirmation"
+#~ msgstr "Κλείσιμο των άλλων καρτελών"
+
+#~ msgid "Close &Other Tabs"
+#~ msgstr "Κλείσιμο των ά&λλων καρτελών"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing other tabs will discard these changes."
+#~ msgstr ""
+#~ "Αυτή η καρτέλα περιέχει αλλαγές που δεν έχουν υποβληθεί.\n"
+#~ "Το κλείσιμο άλλων καρτελών θα οδηγήσει σε απόρριψη αυτών των αλλαγών."
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Reloading all tabs will discard these changes."
+#~ msgstr ""
+#~ "Αυτή η καρτέλα περιέχει αλλαγές που δεν έχουν υποβληθεί.\n"
+#~ "Η επαναφόρτωση άλλων καρτελών θα οδηγήσει σε απόρριψη αυτών των αλλαγών."
+
+#~ msgid "Enter Target"
+#~ msgstr "Δώστε προορισμό"
+
+#~ msgid "<qt><b>%1</b> is not valid</qt>"
+#~ msgstr "<qt><b>Το %1</b> δεν είναι έγκυρο</qt>"
+
+#~ msgid "Copy selected files from %1 to:"
+#~ msgstr "Αντιγραφή επιλεγμένων αρχείων από %1 σε:"
+
+#~ msgid "Move selected files from %1 to:"
+#~ msgstr "Μετακίνηση επιλεγμένων αρχείων από %1 σε:"
+
+#~ msgctxt "This menu entry empties the closed items history"
+#~ msgid "Empty Closed Items History"
+#~ msgstr "Καθάρισμα ιστορικού κλεισμένων αντικειμένων"
+
+#~ msgid "Save As..."
+#~ msgstr "Αποθήκευση ως..."
+
+#~ msgid "Manage..."
+#~ msgstr "Διαχείριση..."
+
+#~ msgid "New &Window"
+#~ msgstr "Νέο &παράθυρο"
+
+#~ msgid "&Duplicate Window"
+#~ msgstr "&Αντίγραφο παραθύρου"
+
+#~ msgid "Send &Link Address..."
+#~ msgstr "Αποστολή &δεσμού..."
+
+#~ msgid "S&end File..."
+#~ msgstr "&Αποστολή αρχείου..."
+
+#~ msgid "&Open Location"
+#~ msgstr "Άνοιγμα &τοποθεσίας"
+
+#~ msgid "&Open File..."
+#~ msgstr "Ά&νοιγμα αρχείου..."
+
+#~ msgid "&Find File..."
+#~ msgstr "&Αναζήτηση αρχείου..."
+
+#~ msgid "&Use index.html"
+#~ msgstr "&Χρήση του index.html"
+
+#~ msgid "Lock to Current Location"
+#~ msgstr "Κλείδωμα στην τρέχουσα τοποθεσία"
+
+#~ msgctxt "This option links konqueror views"
+#~ msgid "Lin&k View"
+#~ msgstr "&Σύνδεση προβολής"
+
+#~ msgid "&Up"
+#~ msgstr "&Πάνω"
+
+#~ msgid "Closed Items"
+#~ msgstr "Κλειστά αντικείμενα"
+
+#~ msgid "Sessions"
+#~ msgstr "Συνεδρίες"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Most Often Visited"
+#~ msgstr "Πιο συχνές επισκέψεις"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Recently Visited"
+#~ msgstr "Πρόσφατες επισκέψεις"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History"
+#~ msgstr "Εμφάνιση ιστορικού"
+
+#~ msgid "&Save View Profile As..."
+#~ msgstr "&Αποθήκευση προφίλ προβολής ως..."
+
+#~ msgid "Configure Extensions..."
+#~ msgstr "Ρύθμιση πρόσθετων..."
+
+#~ msgid "Configure Spell Checking..."
+#~ msgstr "Ρύθμιση του ορθογραφικού ελέγχου..."
+
+#~ msgid "Split View &Left/Right"
+#~ msgstr "Διαίρεση προβολής σε αρ&ιστερό/δεξί"
+
+#~ msgid "Split View &Top/Bottom"
+#~ msgstr "Διαίρεση προβολής σε πάν&ω/κάτω"
+
+#~ msgid "&New Tab"
+#~ msgstr "&Νέα καρτέλα"
+
+#~ msgid "&Duplicate Current Tab"
+#~ msgstr "&Αντίγραφο τρέχουσας καρτέλας"
+
+#~ msgid "Detach Current Tab"
+#~ msgstr "Αποσύνδεση τρέχουσας καρτέλας"
+
+#~ msgid "&Close Active View"
+#~ msgstr "Α&φαίρεση ενεργού προβολής"
+
+#~ msgid "Close Current Tab"
+#~ msgstr "Κλείσιμο τρέχουσας καρτέλας"
+
+#~ msgid "Activate Next Tab"
+#~ msgstr "Ενεργοποίηση της επόμενης καρτέλας"
+
+#~ msgid "Activate Previous Tab"
+#~ msgstr "Ενεργοποίηση προηγούμενης καρτέλας"
+
+#~ msgid "Activate Tab %1"
+#~ msgstr "Ενεργοποίηση της καρτέλας %1"
+
+#~ msgid "Move Tab Left"
+#~ msgstr "Μετακίνηση καρτέλας αριστερά"
+
+#~ msgid "Move Tab Right"
+#~ msgstr "Μετακίνηση καρτέλας δεξιά"
+
+#~ msgid "Dump Debug Info"
+#~ msgstr "Αποτύπωση πληροφοριών αποσφαλμάτωσης"
+
+#~ msgid "C&onfigure View Profiles..."
+#~ msgstr "&Ρύθμιση προφίλ προβολής..."
+
+#~ msgid "Load &View Profile"
+#~ msgstr "Φόρτωση προφίλ &προβολής"
+
+#~ msgid "&Reload"
+#~ msgstr "&Επαναφόρτωση"
+
+#~ msgid "&Reload All Tabs"
+#~ msgstr "&Επαναφόρτωση όλων των καρτελών"
+
+#~ msgid "&Force Reload"
+#~ msgstr "&Εξαναγκασμός επαναφόρτωσης"
+
+#~ msgid "&Stop"
+#~ msgstr "&Διακοπή"
+
+#~ msgid "Throbber"
+#~ msgstr "Εικονίδιο ένδειξης δραστηριότητας"
+
+#~ msgid "L&ocation: "
+#~ msgstr "Τ&οποθεσία: "
+
+#~ msgid "Location Bar"
+#~ msgstr "Γραμμή τοποθεσίας"
+
+#~ msgid ""
+#~ "<html>Location Bar<br /><br />Enter a web address or search term.</html>"
+#~ msgstr ""
+#~ "<html>Γραμμή τοποθεσίας<br /><br />Εισάγετε μια διεύθυνση ιστοσελίδας ή "
+#~ "έναν όρο αναζήτησης.</html>"
+
+#~ msgid "Clear Location Bar"
+#~ msgstr "Καθαρισμός γραμμής τοποθεσίας"
+
+#~ msgid ""
+#~ "<html>Clear Location bar<br /><br />Clears the contents of the location "
+#~ "bar.</html>"
+#~ msgstr ""
+#~ "<html>Καθαρισμός γραμμής τοποθεσίας<br /><br />Καθαρίζει τα περιεχόμενα "
+#~ "της γραμμής τοποθεσίας.</html>"
+
+#~ msgid "&Bookmarks"
+#~ msgstr "&Σελιδοδείκτες"
+
+#~ msgid "Kon&queror Introduction"
+#~ msgstr "Ει&σαγωγή στον Konqueror"
+
+#~ msgid "Go"
+#~ msgstr "Μετάβαση"
+
+#~ msgid ""
+#~ "<html>Go<br /><br />Goes to the page that has been entered into the "
+#~ "location bar.</html>"
+#~ msgstr ""
+#~ "<html>Μετάβαση<br /><br />Πηγαίνει στη σελίδα που δόθηκε στη γραμμή "
+#~ "τοποθεσίας.</html>"
+
+#~ msgid ""
+#~ "<html>Enter the parent folder<br /><br />For instance, if the current "
+#~ "location is file:/home/%1 clicking this button will take you to file:/"
+#~ "home.</html>"
+#~ msgstr ""
+#~ "<html>Είσοδος στο γονικό φάκελο<br /><br />Για παράδειγμα, αν η τρέχουσα "
+#~ "τοποθεσία είναι file:/home/%1 κάνοντας κλικ σε αυτό το κουμπί θα πάτε στο "
+#~ "file:/home.</html>"
+
+#~ msgid "Enter the parent folder"
+#~ msgstr "Είσοδος στο γονικό φάκελο"
+
+#~ msgid "Move backwards one step in the browsing history"
+#~ msgstr "Μετακίνηση ένα βήμα πίσω, στην περιήγηση ιστορικού"
+
+#~ msgid "Move forward one step in the browsing history"
+#~ msgstr "Μετακίνηση ένα βήμα μπροστά, στην περιήγηση ιστορικού"
+
+#~ msgid "Move backwards one step in the closed tabs history"
+#~ msgstr "Μετακίνηση ένα βήμα πίσω, στο ιστορικό κλεισμένων καρτελών"
+
+#~ msgid ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.</html>"
+#~ msgstr ""
+#~ "<html>Επαναφόρτωση του τρέχοντος προβαλλομένου εγγράφου <br /><br />Αυτό, "
+#~ "για παράδειγμα, μπορεί να φανεί χρήσιμο όταν πρέπει να ανανεωθούν "
+#~ "ιστοσελίδες των οποίων το περιεχόμενο έχει αλλάξει από τότε που "
+#~ "φορτώθηκαν, ώστε να εμφανιστούν οι αλλαγές αυτές.</html>"
+
+#~ msgid "Reload the currently displayed document"
+#~ msgstr "Επαναφόρτωση του τρέχοντος προβαλλομένου εγγράφου"
+
+#~ msgid ""
+#~ "<html>Reload all currently displayed documents in tabs<br /><br />This "
+#~ "may, for example, be needed to refresh web pages that have been modified "
+#~ "since they were loaded, in order to make the changes visible.</html>"
+#~ msgstr ""
+#~ "<html>Επαναφόρτωση των προβαλλομένων εγγράφων σε όλες τις καρτέλες <br /> "
+#~ "<br /> Αυτό, για παράδειγμα, μπορεί να φανεί χρήσιμο όταν πρέπει να "
+#~ "ανανεωθούν ιστοσελίδες των οποίων το περιεχόμενο έχει αλλάξει από τότε "
+#~ "που φορτώθηκαν, ώστε να εμφανιστούν οι αλλαγές αυτές.</html>"
+
+#~ msgid "Reload all currently displayed document in tabs"
+#~ msgstr "Επαναφόρτωση όλων των εμφανιζόμενων εγγράφων στις καρτέλες"
+
+#~ msgid ""
+#~ "<html>Stop loading the document<br /><br />All network transfers will be "
+#~ "stopped and Konqueror will display the content that has been received so "
+#~ "far.</html>"
+#~ msgstr ""
+#~ "<html>Σταμάτημα φόρτωσης του εγγράφου <br /><br />Όλες οι δικτυακές "
+#~ "συναλλαγές θα σταματήσουν και ο Konqueror θα εμφανίσει το περιεχόμενο το "
+#~ "οποίο λήφθηκε μέχρι τώρα.</html>"
+
+#~ msgid ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.  Any images on "
+#~ "the page are downloaded again, even if cached copies exist.</html>"
+#~ msgstr ""
+#~ "<html>Επαναφόρτωση του τρέχοντος προβαλλομένου εγγράφου <br /><br />Αυτό,  για παράδειγμα, μπορεί να φανεί χρήσιμο όταν πρέπει να ανανεωθούν "
+#~ "ιστοσελίδες των οποίων το περιεχόμενο έχει αλλάξει από τότε που "
+#~ "φορτώθηκαν, ώστε να εμφανιστούν οι αλλαγές αυτές. Κάθε εικόνα της σελίδας "
+#~ "θα ληφθεί ξανά, ακόμη και  αν υπάρχουν αντίγραφά της στη λανθάνουσα μνήμη.</html>"
+
+#~ msgid ""
+#~ "Force a reload of the currently displayed document and any contained "
+#~ "images"
+#~ msgstr ""
+#~ "Εξαναγκασμός επαναφόρτωσης του εμφανιζόμενου εγγράφου και κάθε εικόνα που "
+#~ "περιέχει"
+
+#~ msgid "Stop loading the document"
+#~ msgstr "Σταμάτημα φόρτωσης του εγγράφου"
+
+#~ msgid ""
+#~ "<html>Cut the currently selected text or item(s) and move it to the "
+#~ "system clipboard<br /><br />This makes it available to the <b>Paste</b> "
+#~ "command in Konqueror and other KDE applications.</html>"
+#~ msgstr ""
+#~ "<html>Αποκοπή του τρέχοντος επιλεγμένου κειμένου ή αντικειμένου(ων) και "
+#~ "μετακίνηση του στο πρόχειρο του συστήματος<br /><br /> Αυτό το κάνει "
+#~ "διαθέσιμο στην εντολή <b>Επικόλληση</b> στον Konqueror και σε άλλες "
+#~ "εφαρμογές του KDE.</html>"
+
+#~ msgid "Move the selected text or item(s) to the clipboard"
+#~ msgstr "Μετακίνηση του επιλεγμένου κειμένου ή αντικειμένου(ων) στο πρόχειρο"
+
+#~ msgid ""
+#~ "<html>Copy the currently selected text or item(s) to the system "
+#~ "clipboard<br /><br />This makes it available to the <b>Paste</b> command "
+#~ "in Konqueror and other KDE applications.</html>"
+#~ msgstr ""
+#~ "<html>Αντιγραφή του τρέχοντος επιλεγμένου κειμένου ή αντικείμενου(ων) στο "
+#~ "πρόχειρο του συστήματος <br /><br />Αυτό το κάνει διαθέσιμο στην εντολή "
+#~ "<b>Επικόλληση</b> στον Konqueror και σε άλλες εφαρμογές του KDE.</html>"
+
+#~ msgid "Copy the selected text or item(s) to the clipboard"
+#~ msgstr "Αντιγραφή του επιλεγμένου κείμενου ή αντικείμενου(ων) στο πρόχειρο"
+
+#~ msgid ""
+#~ "<html>Paste the previously cut or copied clipboard contents<br /><br /"
+#~ ">This also works for text copied or cut from other KDE applications.</"
+#~ "html>"
+#~ msgstr ""
+#~ "<html>Επικόλληση των περιεχόμενων του πρόχειρου που αποκόπηκαν ή "
+#~ "αντιγράφηκαν προηγουμένως<br /><br />Αυτό λειτουργεί επίσης για κείμενο "
+#~ "που αντιγράφτηκε ή αποκόπηκε από άλλες εφαρμογές του KDE.</html>"
+
+#~ msgid "Paste the clipboard contents"
+#~ msgstr "Επικόλληση των περιεχόμενων του πρόχειρου"
+
+#~ msgid ""
+#~ "<html>Print the currently displayed document<br /><br />You will be "
+#~ "presented with a dialog where you can set various options, such as the "
+#~ "number of copies to print and which printer to use.<br /><br />This "
+#~ "dialog also provides access to special KDE printing services such as "
+#~ "creating a PDF file from the current document.</html>"
+#~ msgstr ""
+#~ "<html>Εκτύπωση τρέχοντος προβαλλόμενου εγγράφου<br /><br />Θα εμφανιστεί "
+#~ "ένας διάλογος όπου μπορείτε να ορίσετε διάφορες επιλογές, όπως τον αριθμό "
+#~ "των αντιγράφων για εκτύπωση και ποιος εκτυπωτής θα χρησιμοποιηθεί.<br /"
+#~ "><br />Αυτός ο διάλογος προσφέρει επίσης πρόσβαση στις ειδικές υπηρεσίες "
+#~ "εκτύπωσης του KDE όπως στη δημιουργία ενός αρχείου PDF από το τρέχον "
+#~ "έγγραφο.</html>"
+
+#~ msgid "Print the current document"
+#~ msgstr "Εκτύπωση τρέχοντος εγγράφου"
+
+#~ msgid "If present, open index.html when entering a folder."
+#~ msgstr "Άνοιγμα, αν υπάρχει, του index.html κατά την είσοδο σε ένα φάκελο."
+
+#~ msgid ""
+#~ "A locked view cannot change folders. Use in combination with 'link view' "
+#~ "to explore many files from one folder"
+#~ msgstr ""
+#~ "Σε μια κλειδωμένη προβολή δεν μπορείτε να αλλάξετε φάκελο. Χρησιμοποιήστε "
+#~ "το σε συνδυασμό με τη 'Σύνδεση προβολής' για να εξερευνήσετε πολλά αρχεία "
+#~ "από ένα φάκελο"
+
+#~ msgid ""
+#~ "Sets the view as 'linked'. A linked view follows folder changes made in "
+#~ "other linked views."
+#~ msgstr ""
+#~ "Κάνει μια προβολή 'συνδεδεμένη'. Μια συνδεδεμένη προβολή ακολουθεί τις "
+#~ "αλλαγές φακέλου που γίνονται σε άλλες συνδεδεμένες προβολές."
+
+#~ msgid "Copy &Files..."
+#~ msgstr "Αντιγραφή &αρχείων..."
+
+#~ msgid "M&ove Files..."
+#~ msgstr "&Μετακίνηση αρχείων..."
+
+#~ msgid ""
+#~ "You have requested to open more than 20 bookmarks in tabs. This might "
+#~ "take a while. Continue?"
+#~ msgstr ""
+#~ "Ζητήσατε το άνοιγμα περισσότερων από 20 σελιδοδεικτών σε καρτέλες. Αυτό "
+#~ "μπορεί να διαρκέσει λίγο. Συνέχεια;"
+
+#~ msgid "Open bookmarks folder in new tabs"
+#~ msgstr "Άνοιγμα φακέλου σελιδοδεικτών σε νέες καρτέλες"
+
+#~ msgid "Open in T&his Window"
+#~ msgstr "Άνοιγμα σε αυτό το &παράθυρο"
+
+#~ msgid "Open the document in current window"
+#~ msgstr "Άνοιγμα του εγγράφου στο τρέχον παράθυρο"
+
+#~ msgid "Open the document in a new window"
+#~ msgstr "Άνοιγμα του εγγράφου σε ένα νέο παράθυρο"
+
+#~ msgid "Open in &New Tab"
+#~ msgstr "Άνοιγμα σε &νέα καρτέλα"
+
+#~ msgid "Open the document in a new tab"
+#~ msgstr "Άνοιγμα του εγγράφου σε μια νέα καρτέλα"
+
+#~ msgid "&Open With"
+#~ msgstr "Άνοιγμα &με"
+
+#~ msgid "Open with %1"
+#~ msgstr "Άνοιγμα με %1"
+
+#~ msgctxt "@action:inmenu View"
+#~ msgid "&View Mode"
+#~ msgstr "Κατάσταση &προβολής"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window, are you sure you want to quit?"
+#~ msgstr ""
+#~ "Έχετε πολλαπλές καρτέλες ανοικτές σε αυτό το παράθυρο, σίγουρα θέλετε να "
+#~ "το κλείσετε;"
+
+#~ msgid "Confirmation"
+#~ msgstr "Επιβεβαίωση"
+
+#~ msgid "C&lose Current Tab"
+#~ msgstr "&Κλείσιμο τρέχουσας καρτέλας"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the window will discard these changes."
+#~ msgstr ""
+#~ "Αυτή η καρτέλα περιέχει αλλαγές που δεν έχουν υποβληθεί.\n"
+#~ "Το κλείσιμο του παραθύρου θα οδηγήσει σε απόρριψη αυτών των αλλαγών."
+
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Closing the window will discard these changes."
+#~ msgstr ""
+#~ "Αυτή η σελίδα περιέχει τροποποιήσεις που δεν έχουν υποβληθεί.\n"
+#~ " Το κλείσιμο του παραθύρου θα οδηγήσει σε απόρριψη αυτών των αλλαγών."
+
+#~ msgid ""
+#~ "Your sidebar is not functional or unavailable. A new entry cannot be "
+#~ "added."
+#~ msgstr ""
+#~ "Η πλευρική μπάρα σας δε λειτουργεί ή δεν είναι διαθέσιμη. Μια νέα "
+#~ "καταχώρηση είναι αδύνατο να προστεθεί."
+
+#~ msgid "Web Sidebar"
+#~ msgstr "Πλευρική μπάρα ιστοσελίδων"
+
+#~ msgid "Add new web extension \"%1\" to your sidebar?"
+#~ msgstr "Προσθήκη νέας επέκτασης ιστοσελίδων \"%1\" στην πλευρική σας μπάρα;"
+
+#~ msgid "Add"
+#~ msgstr "Προσθήκη"
+
+#~ msgid "Do Not Add"
+#~ msgstr "Να μην προστεθεί"
+
+#~ msgid ""
+#~ "There appears to be a configuration error. You have associated Konqueror "
+#~ "with %1, but it cannot handle this file type."
+#~ msgstr ""
+#~ "Φαίνεται πως υπάρχει σφάλμα ρύθμισης. Έχετε συσχετίσει τον Konqueror με "
+#~ "το %1, αλλά δεν μπορεί να χειριστεί αυτόν τον τύπο αρχείων."
+
+#~ msgid "Profile Management"
+#~ msgstr "Διαχείριση προφίλ"
+
+#~ msgid "&Rename Profile"
+#~ msgstr "&Μετονομασία προφίλ"
+
+#~ msgid "&Delete Profile"
+#~ msgstr "&Διαγραφή προφίλ"
+
+#~ msgid "Manage Sessions"
+#~ msgstr "Διαχείριση συνεδριών"
+
+#~ msgid "&Open"
+#~ msgstr "Ά&νοιγμα"
+
+#~ msgid "Rename Session"
+#~ msgstr "Μετονομασία συνεδρίας"
+
+#~ msgid "Save Session"
+#~ msgstr "Αποθήκευση συνεδρίας"
+
+#~ msgid ""
+#~ "A session with the name '%1' already exists, do you want to overwrite it?"
+#~ msgstr ""
+#~ "Μια συνεδρία με το όνομα '%1' υπάρχει ήδη, επιθυμείτε την αντικατάστασή "
+#~ "της;"
+
+#~ msgid "Session exists. Overwrite?"
+#~ msgstr "Υπάρχουσα συνεδρία. Αντικατάσταση;"
+
+#~ msgid ""
+#~ "Konqueror did not close correctly. Would you like to restore the previous "
+#~ "session?"
+#~ msgstr ""
+#~ "Ο Konqueror δεν έκλεισε σωστά. Επιθυμείτε την επαναφορά της συνεδρίας;"
+
+#~ msgid "Restore Session?"
+#~ msgstr "Επαναφορά συνεδρίας;"
+
+#~ msgid "Restore Session"
+#~ msgstr "Επαναφορά συνεδρίας"
+
+#~ msgid "Do Not Restore"
+#~ msgstr "Χωρίς επαναφορά"
+
+#~ msgid "Ask Me Later"
+#~ msgstr "Ερώτηση αργότερα"
+
+#~ msgid ""
+#~ "This bar contains the list of currently open tabs. Click on a tab to make "
+#~ "it active. You can also use keyboard shortcuts to navigate through tabs. "
+#~ "The text on the tab shows the content currently open in it; place your "
+#~ "mouse over the tab to see the full title, in case it has been shortened "
+#~ "to fit the tab width."
+#~ msgstr ""
+#~ "Αυτή η μπάρα περιέχει τη λίστα των ανοικτών καρτελών. Κάντε κλικ σε μία "
+#~ "καρτέλα για να την κάνετε ενεργή. Μπορείτε επίσης να χρησιμοποιήσετε το "
+#~ "πληκτρολόγιο για τη μετακίνηση από τη μία καρτέλα στην άλλη. Το κείμενο "
+#~ "στην καρτέλα εμφανίζει το περιεχόμενο της τοποθεσίας ιστού που είναι "
+#~ "ανοικτός σε αυτήν: τοποθετήστε το ποντίκι πάνω στην καρτέλα για να δείτε "
+#~ "τον πλήρη τίτλο, σε περίπτωση που έχει κοπεί για να χωράει στην καρτέλα."
+
+#~ msgid "Open a new tab"
+#~ msgstr "Άνοιγμα νέας καρτέλας"
+
+#~ msgid "Close the current tab"
+#~ msgstr "Κλείσιμο τρέχουσας καρτέλας"
+
+#~ msgid "&Duplicate Tab"
+#~ msgstr "&Αντίγραφο καρτέλας"
+
+#~ msgid "&Reload Tab"
+#~ msgstr "&Επαναφόρτωση καρτέλας"
+
+#~ msgid "Other Tabs"
+#~ msgstr "Άλλες καρτέλες"
+
+#~ msgid "D&etach Tab"
+#~ msgstr "&Αποσύνδεση καρτέλας"
+
+#~ msgid "&Close Tab"
+#~ msgstr "&Κλείσιμο καρτέλας"
+
+#~ msgid "Und&o: Closed Tab"
+#~ msgstr "Αναίρεση: Κλείσιμ&ο καρτέλας"
+
+#~ msgid "Und&o: Closed Window"
+#~ msgstr "Αναίρεση: Κλείσιμ&ο παραθύρου"
+
+#~ msgid "Und&o"
+#~ msgstr "Αναί&ρεση"
+
+#~ msgid ""
+#~ "The page you are trying to view is the result of posted form data. If you "
+#~ "resend the data, any action the form carried out (such as search or "
+#~ "online purchase) will be repeated. "
+#~ msgstr ""
+#~ "Η σελίδα που προσπαθείτε να προβάλετε είναι το αποτέλεσμα απεσταλμένων "
+#~ "δεδομένων φόρμας. Αν ξαναστείλετε τα δεδομένα οποιαδήποτε ενέργεια που "
+#~ "εκτέλεσε η φόρμα (όπως αναζήτηση η διαδικτυακή αγορά) θα επαναληφθεί. "
+
+#~ msgid "Warning"
+#~ msgstr "Προειδοποίηση"
+
+#~ msgid "Resend"
+#~ msgstr "Αποστολή ξανά"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window.\n"
+#~ "Loading a view profile will close them."
+#~ msgstr ""
+#~ "Έχετε πολλαπλές καρτέλες ανοικτές σε αυτό το παράθυρο.\n"
+#~ "Η φόρτωση ενός προφίλ προβολής θα τις κλείσει."
+
+#~ msgid "Load View Profile"
+#~ msgstr "Φόρτωση προφίλ προβολής"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Loading a profile will discard these changes."
+#~ msgstr ""
+#~ "Αυτή η καρτέλα περιέχει αλλαγές που δεν έχουν υποβληθεί.\n"
+#~ "Η φόρτωση ενός προφίλ θα οδηγήσει σε αναίρεση αυτών των αλλαγών."
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "History Sidebar Module"
+#~ msgstr "Άρθρωμα πλευρικής μπάρας ιστορικού"
+
+#~ msgctxt "@title:tab"
+#~ msgid "History"
+#~ msgstr "Ιστορικό"
+
+#~ msgid " day"
+#~ msgid_plural " days"
+#~ msgstr[0] " ημέρα"
+#~ msgstr[1] " ημέρες"
+
+#~ msgid "Minute"
+#~ msgid_plural "Minutes"
+#~ msgstr[0] "Λεπτό"
+#~ msgstr[1] "Λεπτά"
+
+#~ msgid "Day"
+#~ msgid_plural "Days"
+#~ msgstr[0] " Ημέρα"
+#~ msgstr[1] " Ημέρες"
+
+#~ msgid "<h1>History Sidebar</h1> You can configure the history sidebar here."
+#~ msgstr ""
+#~ "<h1>Πλευρική μπάρα ιστορικού</h1> Εδώ μπορείτε να ρυθμίσετε την πλευρική "
+#~ "μπάρα ιστορικού."
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Places Sidebar Module"
+#~ msgstr "Άρθρωμα πλευρικής μπάρας τοποθεσιών"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Places"
+#~ msgstr "Τοποθεσίες"
+
+#~ msgid "Extended Sidebar"
+#~ msgstr "Εκτεταμένη πλευρική μπάρα"
+
+#~ msgid "Rollback to System Default"
+#~ msgstr "Επαναφορά στο προκαθορισμένο του συστήματος"
+
+#~ msgid "Configure Sidebar"
+#~ msgstr "Ρύθμιση πλευρικής μπάρας"
+
+#~ msgid "Add New"
+#~ msgstr "Προσθήκη νέου"
+
+#~ msgid "Multiple Views"
+#~ msgstr "Πολλαπλές προβολές"
+
+#~ msgid "Show Tabs Left"
+#~ msgstr "Εμφάνιση καρτελών στα αριστερά"
+
+#~ msgid "Show Configuration Button"
+#~ msgstr "Εμφάνιση κουμπιού ρύθμισης"
+
+#~ msgid "Close Sidebar"
+#~ msgstr "Κλείσιμο πλευρικής μπάρας"
+
+#~ msgid "This entry already exists."
+#~ msgstr "Αυτή η καταχώριση υπάρχει ήδη."
+
+#~ msgid ""
+#~ "<qt>This removes all your entries from the sidebar and adds the system "
+#~ "default ones.<br /><b>This procedure is irreversible</b><br />Do you want "
+#~ "to proceed?</qt>"
+#~ msgstr ""
+#~ "<qt>Αυτό αφαιρεί όλες τις καταχωρήσεις σας από την πλευρική μπάρα και "
+#~ "προσθέτει τις προκαθορισμένες του συστήματος.<br /><b>Αυτή η διαδικασία "
+#~ "είναι μη αναστρέψιμη</b><br />Επιθυμείτε να προχωρήσετε;</qt>"
+
+#~ msgid "Show Tabs Right"
+#~ msgstr "Εμφάνιση καρτελών δεξιά"
+
+#~ msgid "Set Name"
+#~ msgstr "Ορισμός ονόματος"
+
+#~ msgid "Enter the name:"
+#~ msgstr "Εισάγετε το όνομα:"
+
+#~ msgid "Enter a URL:"
+#~ msgstr "Δώστε ένα URL:"
+
+#~ msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
+#~ msgstr "<qt>Θέλετε πραγματικά να αφαιρέσετε την <b>%1</b> καρτέλα;</qt>"
+
+#~ msgid ""
+#~ "You have hidden the sidebar configuration button. To make it visible "
+#~ "again, click the right mouse button on any of the sidebar buttons and "
+#~ "select \"Show Configuration Button\"."
+#~ msgstr ""
+#~ "Κρύψατε το κουμπί ρύθμισης της πλευρικής μπάρας. Για να το εμφανίσετε "
+#~ "πάλι, κάνετε κλικ με το δεξί πλήκτρο του ποντικιού σε οποιοδήποτε από τα "
+#~ "κουμπιά της πλευρικής μπάρας και επιλέξτε \"Εμφάνιση κουμπιού ρύθμισης\"."
+
+#~ msgid "Set Name..."
+#~ msgstr "Ορισμός ονόματος..."
+
+#~ msgid "Set URL..."
+#~ msgstr "Ορισμός URL..."
+
+#~ msgid "Set Icon..."
+#~ msgstr "Ορισμός εικονιδίου..."
+
+#~ msgid "Remove"
+#~ msgstr "Αφαίρεση"
+
+#~ msgid "Web module"
+#~ msgstr "Άρθρωμα διαδικτύου"
+
+#~ msgid "&Create New Folder"
+#~ msgstr "&Δημιουργία νέου φακέλου"
+
+#~ msgid "Delete Folder"
+#~ msgstr "Διαγραφή φακέλου"
+
+#~ msgid "Delete Bookmark"
+#~ msgstr "Διαγραφή σελιδοδείκτη"
+
+#~ msgid "Properties"
+#~ msgstr "Ιδιότητες"
+
+#~ msgid "Open in New Window"
+#~ msgstr "Άνοιγμα σε νέο παράθυρο"
+
+#~ msgid "Open Folder in Tabs"
+#~ msgstr "Άνοιγμα φακέλου σε καρτέλες"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "Αντιγραφή δεσμού"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark folder\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "Σίγουρα θέλετε να αφαιρέσετε το φάκελο σελιδοδεικτών\n"
+#~ "\"%1\";"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "Σίγουρα θέλετε να αφαιρέσετε το σελιδοδείκτη\n"
+#~ "\"%1\";"
+
+#~ msgid "Bookmark Folder Deletion"
+#~ msgstr "Διαγραφή φακέλου σελιδοδεικτών"
+
+#~ msgid "Bookmark Deletion"
+#~ msgstr "Διαγραφή σελιδοδεικτών"
+
+#~ msgid "Bookmark Properties"
+#~ msgstr "Ιδιότητες σελιδοδείκτη"
+
+#~ msgid "&Update"
+#~ msgstr "Ενη&μέρωση"
+
+#~ msgid "Name:"
+#~ msgstr "Όνομα:"
+
+#~ msgid "Location:"
+#~ msgstr "Τοποθεσία:"
+
+#~ msgid "Add Bookmark"
+#~ msgstr "Προσθήκη σελιδοδείκτη"
+
+#~ msgid "Cannot find parent item %1 in the tree. Internal error."
+#~ msgstr ""
+#~ "Δεν είναι δυνατό να βρεθεί το γονικό αντικείμενο %1 στο δέντρο. Εσωτερικό "
+#~ "σφάλμα."
+
+#~ msgid "&Create New Folder..."
+#~ msgstr "&Δημιουργία νέου φακέλου..."
+
+#~ msgid "Move to Trash"
+#~ msgstr "Μετακίνηση στα απορρίμματα"
+
+#~ msgid "Rename"
+#~ msgstr "Μετονομασία"
+
+#~ msgid "Delete Link"
+#~ msgstr "Διαγραφή δεσμού"
+
+#~ msgid "New Folder"
+#~ msgstr "Νέος φάκελος"
+
+#~ msgid "Create New Folder"
+#~ msgstr "Δημιουργία νέου φακέλου"
+
+#~ msgid "Enter folder name:"
+#~ msgstr "Εισάγετε όνομα φακέλου:"
+
+#~ msgctxt "@label"
+#~ msgid "Name:"
+#~ msgstr "Όνομα:"
+
+#~ msgctxt "@label"
+#~ msgid "Path or URL:"
+#~ msgstr "Διαδρομή ή διεύθυνση ιστοσελίδας:"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add folder sidebar module"
+#~ msgstr "Προσθήκη φακέλου αρθρώματος πλευρικής μπάρας"
+
+#~ msgid "&Open Link"
+#~ msgstr "Άνοιγμα &δεσμού"
+
+#~ msgid "Set &Automatic Reload"
+#~ msgstr "Ορισμός &αυτόματης επαναφόρτωσης"
+
+#~ msgid "Set Refresh Timeout (0 disables)"
+#~ msgstr "Ορισμός χρονικού ορίου ανανέωσης (0 για απενεργοποίηση)"
+
+#~ msgid " min"
+#~ msgstr " λεπτά"
+
+#~ msgid " sec"
+#~ msgstr " δευτερόλεπτα"
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Web Sidebar Module"
+#~ msgstr "Άρθρωμα πλευρικής μπάρας διαδικτύου"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add web sidebar module"
+#~ msgstr "Προσθήκη πλευρικής μπάρας διαδικτύου"
+
+#~ msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
+#~ msgid "Be free."
+#~ msgstr "Ελευθερωθείτε."
+
+#~ msgid ""
+#~ "Konqueror is a web browser, file manager and universal document viewer."
+#~ msgstr ""
+#~ "Ο Konqueror είναι ο διαχειριστής αρχείων σας, ο περιηγητής ιστοσελίδων "
+#~ "σας και ο καθολικός προβολέας των εγγράφων σας."
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "Starting Points"
+#~ msgstr "Σημεία εκκίνησης"
+
+#~ msgid "Introduction"
+#~ msgstr "Εισαγωγή"
+
+#~ msgid "Tips"
+#~ msgstr "Συμβουλές"
+
+#~ msgid "Specifications"
+#~ msgstr "Προδιαγραφές"
+
+#~ msgid "Your personal files"
+#~ msgstr "Τα προσωπικά σας αρχεία"
+
+#~ msgid "Trash"
+#~ msgstr "Κάδος Απορριμμάτων"
+
+#~ msgid "Browse and restore the trash"
+#~ msgstr "Προβολή και αποκατάσταση διαγραμμένων αρχείων"
+
+#~ msgid "Network Folders"
+#~ msgstr "Φάκελοι δικτύου"
+
+#~ msgid "Shared files and folders"
+#~ msgstr "Κοινά αρχεία και φάκελοι"
+
+#~ msgid "Bookmarks"
+#~ msgstr "Σελιδοδείκτες"
+
+#~ msgid "Quick access to your bookmarks"
+#~ msgstr "Γρήγορη πρόσβαση στους σελιδοδείκτες σας"
+
+#~ msgid "Next: An Introduction to Konqueror"
+#~ msgstr "Επόμενο: Εισαγωγή στον Konqueror"
+
+#~ msgid "Search the Web"
+#~ msgstr "Αναζήτηση στο διαδίκτυο"
+
+#~ msgid ""
+#~ "Konqueror makes working with and managing your files easy. You can browse "
+#~ "both local and networked folders while enjoying advanced features such as "
+#~ "the powerful sidebar and file previews."
+#~ msgstr ""
+#~ "Ο Konqueror κάνει την εργασία με τα αρχεία σας εύκολη. Μπορείτε να "
+#~ "περιηγείστε σε τοπικούς και δικτυακούς φακέλους ενώ απολαμβάνετε "
+#~ "προχωρημένα χαρακτηριστικά όπως η πανίσχυρη πλευρική μπάρα και η "
+#~ "προεπισκόπηση αρχείων."
+
+#~ msgid ""
+#~ "Konqueror is also a full featured and easy to use web browser which you "
+#~ "can use to explore the Internet. Enter the address (e.g. <a href=\"http://"
+#~ "www.kde.org\">http://www.kde.org</a>) of a web page you would like to "
+#~ "visit in the location bar and press Enter, or choose an entry from the "
+#~ "Bookmarks menu."
+#~ msgstr ""
+#~ "Ο Konqueror είναι επίσης ένας πλούσιος χαρακτηριστικών και εύκολος στη "
+#~ "χρήση περιηγητής ιστοσελίδων με τον οποίο μπορείτε να εξερευνήσετε το "
+#~ "διαδίκτυο. Απλά δώστε τη διεύθυνση της ιστοσελίδας που θέλετε (π.χ. <a "
+#~ "href=\"http://www.kde.org\">http://www.kde.org</a>) και πατήστε Enter, ή "
+#~ "επιλέξτε μια από τις καταχωρήσεις στο μενού σελιδοδεικτών σας."
+
+#~ msgid ""
+#~ "To return to the previous location, press the back button <img width='16' "
+#~ "height='16' src=\"%1\"></img> in the toolbar. "
+#~ msgstr ""
+#~ "Αν επιθυμείτε να πάτε πίσω στην προηγούμενη ιστοσελίδα, πατήστε το κουμπί "
+#~ "<img width='16' height='16' src=\"%1\"></img> στη γραμμή εργαλείων. "
+
+#~ msgid ""
+#~ "To quickly go to your Home folder press the  home button <img width='16' "
+#~ "height='16' src=\"%1\"></img>."
+#~ msgstr ""
+#~ "Αν θέλετε να πάτε γρήγορα στον προσωπικό σας φάκελο, πατήστε το κουμπί "
+#~ "'Σπίτι' <img width='16' height='16' src=\"%1\"></img>."
+
+#~ msgid ""
+#~ "For more detailed documentation on Konqueror click <a href=\"%1\">here</"
+#~ "a>."
+#~ msgstr ""
+#~ "Για πιο λεπτομερή τεκμηρίωση του Konqueror κάντε κλικ <A HREF=\"%1\">εδώ</"
+#~ "A>."
+
+#~ msgid ""
+#~ "<em>Tuning Tip:</em> If you want the Konqueror web browser to start "
+#~ "faster, you can turn off this information screen by clicking <a href="
+#~ "\"%1\">here</a>. You can re-enable it by choosing the Help -> Konqueror "
+#~ "Introduction menu option, and then pressing Settings -> Save View Profile "
+#~ "As... -> \"Web Browsing\"."
+#~ msgstr ""
+#~ "<em>Σημείωση:</em> Αν θέλετε ο περιηγητής ιστοσελίδων Konqueror να ξεκινά "
+#~ "ταχύτερα, μπορείτε να απενεργοποιήσετε αυτή την οθόνη πληροφοριών "
+#~ "κάνοντας κλικ <a href=\"%1\">εδώ</a>. Μπορείτε να την ενεργοποιήσετε ξανά "
+#~ "επιλέγοντας Βοήθεια -> Εισαγωγή στον Konqueror, και μετά Ρυθμίσεις -> "
+#~ "Αποθήκευση προφίλ προβολής ως... -> \"Περιήγηση ιστού\"."
+
+#~ msgid "Next: Tips &amp; Tricks"
+#~ msgstr "Επόμενο: Συμβουλές"
+
+#~ msgid ""
+#~ "Konqueror is designed to embrace and support Internet standards. The aim "
+#~ "is to fully implement the officially sanctioned standards from "
+#~ "organizations such as the W3 and OASIS, while also adding extra support "
+#~ "for other common usability features that arise as de facto standards "
+#~ "across the Internet. Along with this support, for such functions as "
+#~ "favicons, Web Shortcuts, and <A HREF=\"%1\">XBEL bookmarks</A>, Konqueror "
+#~ "also implements:"
+#~ msgstr ""
+#~ "Ο Konqueror έχει σχεδιασθεί για να περικλείει και να υποστηρίζει τα "
+#~ "πρότυπα του διαδικτύου. Ο στόχος είναι να υλοποιηθούν πλήρως τα επίσημα "
+#~ "επικυρωμένα πρότυπα οργανισμών όπως το W3 και το OASIS, με ταυτόχρονη "
+#~ "προσθήκη επιπλέον υποστήριξης για άλλες κοινές λειτουργίες που προκύπτουν "
+#~ "από τα de facto πρότυπα στο διαδίκτυο. Μαζί με αυτή την υποστήριξη, για "
+#~ "λειτουργίες όπως τα favicons, συντομεύσεις για το διαδίκτυο και οι <A "
+#~ "HREF=\"%1\">σελιδοδείκτες XBEL</A>, ο Konqueror επίσης υλοποιεί:"
+
+#~ msgid "Supported standards"
+#~ msgstr "Υποστηριζόμενα πρότυπα"
+
+#~ msgid "Additional requirements*"
+#~ msgstr "Πρόσθετες απαιτήσεις*"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+#~ msgstr ""
+#~ "<A HREF=\"%2\">HTML 4.01</A> βασισμένη σε <A HREF=\"%1\">DOM</A> (Επίπεδο "
+#~ "1, μερικώς Επίπεδο 2)"
+
+#~ msgid "built-in"
+#~ msgstr "ενσωματωμένο"
+
+#~ msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
+#~ msgstr "<A HREF=\"%1\">Διαδοχικά φύλλα στυλ</A> (CSS 1, μερικώς CSS 2)"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Έκδοση 3 (χονδρικά ισοδύναμη της Javascript "
+#~ "1.5)"
+
+#~ msgid ""
+#~ "JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
+#~ msgstr ""
+#~ "JavaScript απενεργοποιημένη (καθολικά). Ενεργοποιήστε την JavaScript <A "
+#~ "HREF=\"%1\">εδώ</A>."
+
+#~ msgid ""
+#~ "JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\"
+#~ "\">here</A>."
+#~ msgstr ""
+#~ "JavaScript ενεργοποιημένη (καθολικά). Ρυθμίστε την JavaScript <A HREF=\\"
+#~ "\"%1\\\">εδώ</A>."
+
+#~ msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
+#~ msgstr "Υποστήριξη Ασφαλούς <A HREF=\"%1\">Java</A><SUP>&reg;</SUP>"
+
+#~ msgid ""
+#~ "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">IBM</A> or <A HREF="
+#~ "\"%2\">Sun/Oracle</A>)"
+#~ msgstr ""
+#~ "JDK 1.2.0 (Java 2) συμβατή VM (<A HREF=\"%1\">IBM</A> or <A HREF="
+#~ "\"%2\">Sun/Oracle</A>)"
+
+#~ msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
+#~ msgstr "Ενεργοποιήστε τη Java (καθολικά) <A HREF=\"%1\">εδώ</A>."
+
+#~ msgid ""
+#~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">plugins</A> (for "
+#~ "viewing <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
+#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Video, etc.)"
+#~ msgstr ""
+#~ "<A HREF=\"%4\">Πρόσθετα</A> του Netscape Communicator<SUP>&reg;</SUP> "
+#~ "(για προβολή <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
+#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Video, κτλ.)"
+
+#~ msgid "Secure Sockets Layer"
+#~ msgstr "Στρώμα ασφαλών υποδοχών"
+
+#~ msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
+#~ msgstr "(TLS/SSL v2/3) για ασφαλή επικοινωνία έως 168bit"
+
+#~ msgid "OpenSSL"
+#~ msgstr "OpenSSL"
+
+#~ msgid "Bidirectional 16bit unicode support"
+#~ msgstr "Υποστήριξη διπλής κατεύθυνσης 16-bit Unicode"
+
+#~ msgid "AutoCompletion for forms"
+#~ msgstr "Αυτόματη συμπλήρωση για φόρμες"
+
+#~ msgctxt "Title of an html 'group box' explaining konqueror features"
+#~ msgid "General"
+#~ msgstr "Γενικά"
+
+#~ msgid "Feature"
+#~ msgstr "Χαρακτηριστικό"
+
+#~ msgid "Details"
+#~ msgstr "Λεπτομέρειες"
+
+#~ msgid "Image formats"
+#~ msgstr "Τύποι εικόνων"
+
+#~ msgid "PNG<br />JPG<br />GIF"
+#~ msgstr "PNG<br />JPG<br />GIF"
+
+#~ msgid "Transfer protocols"
+#~ msgstr "Πρωτόκολλα μεταφοράς"
+
+#~ msgid "HTTP 1.1 (including gzip/bzip2 compression)"
+#~ msgstr "HTTP 1.1 (συμπεριλαμβανομένης συμπίεσης gzip/bzip2)"
+
+#~ msgid "FTP"
+#~ msgstr "FTP"
+
+#~ msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpcenter)...</A>"
+#~ msgstr ""
+#~ "και <A HREF=\"%1\">πολλά περισσότερα (δείτε το Kioslaves στο "
+#~ "KHelpcenter)...</A>"
+
+#~ msgctxt "A feature of Konqueror"
+#~ msgid "URL-Completion"
+#~ msgstr "Συμπλήρωση URL"
+
+#~ msgid "Manual"
+#~ msgstr "Χειροκίνητη"
+
+#~ msgid "Popup"
+#~ msgstr "Αναδυόμενο μενού"
+
+#~ msgid "(Short-) Automatic"
+#~ msgstr "(Ταξινόμηση-) Αυτόματη"
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "<a href=\"%1\">Return to Starting Points</a>"
+#~ msgstr "<a href=\"%1\">Επιστροφή στα σημεία εκκίνησης</a>"
+
+#~ msgid "Tips &amp; Tricks"
+#~ msgstr "Συμβουλές"
+
+#~ msgid ""
+#~ "Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, "
+#~ "using Google, for the search phrase \"KDE\". There are a lot of Web-"
+#~ "Shortcuts predefined to make searching for software or looking up certain "
+#~ "words in an encyclopedia a breeze. You can even <a href=\"%1\">create "
+#~ "your own</a> Web-Shortcuts."
+#~ msgstr ""
+#~ "Χρησιμοποιήστε συντομεύσεις για το διαδίκτυο: πληκτρολογώντας \"gg: KDE\" "
+#~ "κάποιος μπορεί να αναζητήσει στο διαδίκτυο χρησιμοποιώντας το Google για "
+#~ "τη φράση \"KDE\". Υπάρχουν πολλές τέτοιες προκαθορισμένες Συντομεύσεις "
+#~ "ιστοσελίδων για να κάνουν πανεύκολη την αναζήτηση λογισμικού ή την "
+#~ "αναζήτηση κάποιων λέξεων σε μια εγκυκλοπαίδεια. Μπορείτε ακόμα και να <A "
+#~ "HREF=\"%1\">φτιάξετε τις δικές σας</A> Συντομεύσεις ιστοσελίδων."
+
+#~ msgid ""
+#~ "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
+#~ "the HTML toolbar to increase the font size on your web page."
+#~ msgstr ""
+#~ "Χρησιμοποιήστε το κουμπί μεγέθυνσης <img width='16' height='16' src="
+#~ "\"%1\"></img>στη γραμμή εργαλείων HTML για να μεγαλώσετε τα γράμματα στην "
+#~ "ιστοσελίδα σας."
+
+#~ msgid ""
+#~ "When you want to paste a new address into the Location toolbar you might "
+#~ "want to clear the current entry by pressing the black arrow with the "
+#~ "white cross <img width='16' height='16' src=\"%1\"></img> in the toolbar."
+#~ msgstr ""
+#~ "Όταν θέλετε να επικολλήσετε μια νέα διεύθυνση στη Γραμμή τοποθεσίας, ίσως "
+#~ "να θέλετε να καθαρίσετε την τρέχουσα διεύθυνση πατώντας το μαύρο βελάκι "
+#~ "με τον άσπρο σταυρό <img width='16' height='16' src=\"%1\"></img> στη "
+#~ "γραμμή εργαλείων."
+
+#~ msgid ""
+#~ "To create a link on your desktop pointing to the current page, simply "
+#~ "drag the icon (favicon) that is to the left of the Location toolbar, drop "
+#~ "it on to the desktop, and choose \"Icon\"."
+#~ msgstr ""
+#~ "Για να δημιουργήσετε ένα δεσμό με την τρέχουσα σελίδα στην επιφάνεια "
+#~ "εργασίας σας, απλά σύρετε το εικονίδιο (favicon) που βρίσκεται στα "
+#~ "αριστερά της γραμμής εργαλείων τοποθεσίας, αφήστε την στην επιφάνεια "
+#~ "εργασίας και επιλέξτε «εικονίδιο»."
+
+#~ msgid ""
+#~ "You can also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen "
+#~ "Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
+#~ "sessions."
+#~ msgstr ""
+#~ "Μπορείτε επίσης να βρείτε τη <img width='16' height='16' src=\"%1\" />"
+#~ "\"Λειτουργία πλήρους οθόνης\" στο μενού Παράθυρο. Αυτή η λειτουργία είναι "
+#~ "πολύ χρήσιμη για συνεδρίες  \"Talk\"."
+
+#~ msgid ""
+#~ "Divide et impera (lat. \"Divide and conquer\") - by splitting a window "
+#~ "into two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> "
+#~ "Split View Left/Right) you can make Konqueror appear the way you like. "
+#~ "You can even load some example view-profiles (e.g. Midnight Commander), "
+#~ "or create your own ones."
+#~ msgstr ""
+#~ "Divide et impera (λατ. \"Διαίρει και βασίλευε\") - χωρίζοντας ένα "
+#~ "παράθυρο σε δύο μέρη (π.χ. Παράθυρο -><img width='16' height='16' src="
+#~ "\"%1\" /> Διαίρεση προβολής σε αριστερό/δεξί) μπορείτε να κάνετε τον "
+#~ "Konqueror να φαίνεται όπως θέλετε. Μπορείτε ακόμα να φορτώσετε μερικά "
+#~ "έτοιμα προφίλ προβολής (π.χ. Midnight Commander) ή να δημιουργήσετε τα "
+#~ "δικά σας."
+
+#~ msgid ""
+#~ "Use the <a href=\"%1\">user-agent</a> feature if the website you are "
+#~ "visiting asks you to use a different browser (and do not forget to send a "
+#~ "complaint to the webmaster!)"
+#~ msgstr ""
+#~ "Χρησιμοποιήστε το χαρακτηριστικό <A HREF=\"%1\">πράκτορας-χρήστη</A> αν η "
+#~ "ιστοσελίδα που επισκέπτεστε απαιτεί κάποιον άλλο περιηγητή (και μη "
+#~ "ξεχάσετε να στείλετε μια διαμαρτυρία στον webmaster!)"
+
+#~ msgid ""
+#~ "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
+#~ "ensures that you can keep track of the pages you have visited recently."
+#~ msgstr ""
+#~ "Το <img width='16' height='16' src=\"%1\"></img> Ιστορικό στην πλευρική "
+#~ "μπάρα εξασφαλίζει τη διατήρηση των σελίδων που επισκεφθήκατε πρόσφατα."
+
+#~ msgid ""
+#~ "Use a caching <a href=\"%1\">proxy</a> to speed up your Internet "
+#~ "connection."
+#~ msgstr ""
+#~ "Χρησιμοποιήστε ένα <A HREF=\"%1\">διαμεσολαβητή</A> για να επιταχύνετε τη "
+#~ "σύνδεσή σας στο διαδίκτυο."
+
+#~ msgid ""
+#~ "Advanced users will appreciate the Konsole which you can embed into "
+#~ "Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
+#~ "Terminal Emulator)."
+#~ msgstr ""
+#~ "Οι προχωρημένοι χρήστες θα εκτιμήσουν το Konsole που μπορείτε να "
+#~ "ενσωματώσετε στον Konqueror (Ρυθμίσεις -> <img width='16' height='16' SRC="
+#~ "\"%1\"></img>   Εμφάνιση προσομοιωτή τερματικού)."
+
+#~ msgid "Next: Specifications"
+#~ msgstr "Επόμενο: Προδιαγραφές"
+
+#~ msgid "Installed Plugins"
+#~ msgstr "Εγκατεστημένα πρόσθετα"
+
+#~ msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
+#~ msgstr "<td>Πρόσθετο</td><td>Περιγραφή</td><td>Αρχείο</td><td>Τύποι</td>"
+
+#~ msgid "Installed"
+#~ msgstr "Εγκατεστημένο"
+
+#~ msgid ""
+#~ "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
+#~ msgstr ""
+#~ "<td>Τύπος mime</td><td>Περιγραφή</td><td>Καταλήξεις</td><td>Πρόσθετο</td>"
+
+#~ msgid ""
+#~ "Do you want to disable showing the introduction in the webbrowsing "
+#~ "profile?"
+#~ msgstr ""
+#~ "Θέλετε πραγματικά να απενεργοποιήσετε την προβολή της Εισαγωγής στο "
+#~ "προφίλ περιήγησης ιστοσελίδων;"
+
+#~ msgid "Faster Startup?"
+#~ msgstr "Επιτάχυνση της εκκίνησης;"
+
+#~ msgid "Disable"
+#~ msgstr "Απενεργοποίηση"
+
+#~ msgid "Keep"
+#~ msgstr "Διατήρηση"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Σπύρος Γεωργαράς, Τούσης Μανώλης"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "sng@hellug.gr, manolis@koppermind.homelinux.org"
+
+#~ msgid "&File"
+#~ msgstr "&Αρχείο"
+
+#~ msgid "&Edit"
+#~ msgstr "&Επεξεργασία"
+
+#~ msgid "&View"
+#~ msgstr "Π&ροβολή"
+
+#~ msgid "&Go"
+#~ msgstr "&Μετάβαση"
+
+#~ msgid "&Settings"
+#~ msgstr "Ρ&υθμίσεις"
+
+#~ msgid "&Window"
+#~ msgstr "Παρά&θυρο"
+
+#~ msgid "&Help"
+#~ msgstr "&Βοήθεια"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Κύρια γραμμή εργαλείων"
+
+#~ msgid "Extra Toolbar"
+#~ msgstr "Επιπρόσθετη γραμμή εργαλείων"
+
+#~ msgid "Location Toolbar"
+#~ msgstr "Γραμμή εργαλείων Τοποθεσίας"
+
+#~ msgid "Bookmark Toolbar"
+#~ msgstr "Γραμμή εργαλείων Σελιδοδεικτών"
+
+#~ msgid "Save open tabs and windows for easy retrieval"
+#~ msgstr "Αποθήκευση ανοιχτών καρτελών και παραθύρων για την εύκολη επαναφορά"
+
+#~ msgid "&Session name:"
+#~ msgstr "Όνομα &συνεδρίας:"
+
+#~ msgid "&Profile name:"
+#~ msgstr "Ό&νομα προφίλ:"
+
+#~ msgid "Save &URLs in profile"
+#~ msgstr "Αποθήκευση των &URL στο προφίλ"
+
+#~ msgctxt "@action:button New session"
+#~ msgid "New..."
+#~ msgstr "Νέα"
+
+#~ msgctxt "@action:button Save current session"
+#~ msgid "Save Current"
+#~ msgstr "Αποθήκευση τρέχουσας"
+
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename..."
+#~ msgstr "Μετονομασία..."
+
+#~ msgctxt "@action:button Delete session"
+#~ msgid "Delete"
+#~ msgstr "Διαγραφή"
+
+#~ msgid "Open tabs inside current window"
+#~ msgstr "Άνοιγμα καρτελών στο τρέχον παράθυρο"
+
+#~ msgid "Limits"
+#~ msgstr "Όρια"
+
+#~ msgid "URLs e&xpire after"
+#~ msgstr "Τα URL λή&γουν μετά από"
+
+#~ msgid "Maximum &number of URLs:"
+#~ msgstr "Μέγιστο &πλήθος URL:"
+
+#~ msgid "Custom Fonts For"
+#~ msgstr "Προσαρμοσμένες γραμματοσειρές για"
+
+#~ msgid "URLs newer than"
+#~ msgstr "URL νεότερα από"
+
+#~ msgid "Choose Font..."
+#~ msgstr "Επιλογή γραμματοσειράς..."
+
+#~ msgid "URLs older than"
+#~ msgstr "URL παλιότερα από"
+
+#~ msgid ""
+#~ "Shows the number of times visited and the dates of the first and last "
+#~ "visits, in addition to the URL"
+#~ msgstr ""
+#~ "Εκτός από το URL δείχνει και το πλήθος των επισκέψεων καθώς και τις "
+#~ "ημερομηνίες πρώτης και τελευταίας επίσκεψης"
+
+#~ msgid "Detailed tooltips"
+#~ msgstr "Λεπτομερείς υποδείξεις"
+
+#~ msgid "Clear History"
+#~ msgstr "Καθαρισμός ιστορικού"
+
+#~ msgid ""
+#~ "This is the URL of the web page where Konqueror (as web browser) will "
+#~ "jump to when the \\\"Home\\\" button is pressed. When Konqueror is "
+#~ "started as a file manager, that button makes it jump to your local home "
+#~ "folder instead."
+#~ msgstr ""
+#~ "Αυτό είναι το URL (π.χ. ένας φάκελος ή μια ιστοσελίδα) όπου ο Konqueror "
+#~ "θα μεταβεί όταν πατήσετε το κουμπί \"Σπίτι\". Αν ο Konqueror εκκινηθεί ως "
+#~ "διαχειριστής αρχείων, το κουμπί αυτό εκτελεί μετάβαση στον τοπικά "
+#~ "προσωπικό σας φάκελο."
+
+#~ msgid "Maximum number of Closed Items"
+#~ msgstr "Μέγιστος αριμός κλειστών αντικειμένων"
+
+#~ msgid ""
+#~ "This sets the maximum number of closed items that will be stored in "
+#~ "memory. This limit will not be surpassed."
+#~ msgstr ""
+#~ "Ορισμός του μέγιστου αριθμού των κλειστών αντικειμένων που θα "
+#~ "αποθηκεύονται στη μνήμη. Αυτό το όριο δε θα ξεπεραστεί σε καμία περίπτωση."
+
+#~ msgid "Open folders in separate windows"
+#~ msgstr "Άνοιγμα φακέλων σε ξεχωριστά παράθυρα"
+
+#~ msgid ""
+#~ "If this option is checked, Konqueror will open a new window when you open "
+#~ "a folder, rather than showing that folder's contents in the current "
+#~ "window."
+#~ msgstr ""
+#~ "Αν αυτή η επιλογή είναι ενεργοποιημένη, ο Konqueror θα ανοίγει ένα νέο "
+#~ "παράθυρο όταν ανοίγετε ένα φάκελο, αντί να δείχνει τα περιεχόμενα του "
+#~ "φακέλου στο τρέχον παράθυρο."
+
+#~ msgid "Show file tips"
+#~ msgstr "Εμφάνιση συμβουλών αρχείων"
+
+#~ msgid ""
+#~ "Here you can control if, when moving the mouse over a file, you want to "
+#~ "see a small popup window with additional information about that file"
+#~ msgstr ""
+#~ "Εδώ μπορείτε να ελέγξετε αν με την κίνησή σας πάνω σε ένα αρχείο, θα "
+#~ "εμφανίζεται ένα μικρό αναδυόμενο παράθυρο με επιπλέον πληροφορίες σχετικά "
+#~ "με το αρχείο"
+
+#~ msgid "Show previews in file tips"
+#~ msgstr "Εμφάνιση προεπισκόπησης στις συμβουλές αρχείων"
+
+#~ msgid ""
+#~ "Here you can control if you want the popup window to contain a larger "
+#~ "preview for the file, when moving the mouse over it"
+#~ msgstr ""
+#~ "Εδώ μπορείτε να ελέγξετε αν επιθυμείτε το αναδυόμενο παράθυρο συμβουλής "
+#~ "αρχείων θα εμφανίζει προεπισκόπηση του αρχείου με την κίνησή σας πάνω σε "
+#~ "αυτό με το ποντίκι"
+
+#~ msgid "Show 'Delete' menu entries which bypass the trashcan"
+#~ msgstr ""
+#~ "Εμφάνιση καταχωρήσεων 'Διαγραφή' που παρακάμπτουν τον κάδο απορριμμάτων"
+
+#~ msgid ""
+#~ "Check this if you want 'Delete' menu commands to be displayed on the "
+#~ "desktop and in the file manager's menus and context menus. You can always "
+#~ "delete files when hidden by holding the Shift key while calling 'Move to "
+#~ "Trash'."
+#~ msgstr ""
+#~ "Επιλέξτε αυτό αν θέλετε να εμφανίζονται οι εντολές μενού 'Διαγραφή' στο "
+#~ "σχετικό μενού στην επιφάνεια εργασίας και στο διαχειριστή αρχείων. "
+#~ "Μπορείτε πάντα να διαγράφετε αρχεία, όταν η εντολή είναι σε απόκρυψη, "
+#~ "κρατώντας πατημένο το πλήκτρο Shift καθώς καλείτε την 'Μετακίνηση στον "
+#~ "κάδο απορριμμάτων'."
+
+#~ msgid "Number of Open With items in the File menu"
+#~ msgstr "Πλήθος αντικειμένων ανοίγματος στο μενού αρχείο"
+
+#~ msgid "Standard font"
+#~ msgstr "Τυπική γραμματοσειρά"
+
+#~ msgid "This is the font used to display text in Konqueror windows."
+#~ msgstr ""
+#~ "Αυτή είναι η γραμματοσειρά εμφάνισης κειμένου στα παράθυρα του Konqueror."
+
+#~ msgid "Maximum number of history items per view"
+#~ msgstr "Μέγιστος αριθμός αντικειμένων ιστορικού ανά προβολή"
+
+#~ msgid "Ask confirmation for deleting a file."
+#~ msgstr "Ερώτηση επιβεβαίωσης διαγραφής αρχείων."
+
+#~ msgid ""
+#~ "This option tells Konqueror whether to ask for a confirmation when you "
+#~ "delete a file without using the trash folder. Warning, deleted files can "
+#~ "not be recovered, so it is recommended to leave this confirmation enabled."
+#~ msgstr ""
+#~ "Αυτή η επιλογή ορίζει αν ο Konqueror θα ζητά επιβεβαίωση όταν διαγράφετε "
+#~ "ένα αρχείο χωρίς τη χρήση του κάδου απορριμμάτων. Προσοχή, καθώς τα "
+#~ "διαγραμμένα αρχεία δεν μπορούν να επανέλθουν, γι' αυτό προτείνεται να "
+#~ "αφήσετε την επιβεβαίωση ενεργή."
+
+#~ msgid "Ask confirmation for move to trash"
+#~ msgstr "Επιβεβαίωση για μετακίνηση στα απορρίμματα"
+
+#~ msgid ""
+#~ "This option tells Konqueror whether to ask for a confirmation when you "
+#~ "move the file to your trash folder, from where it can be recovered very "
+#~ "easily."
+#~ msgstr ""
+#~ "Αυτή η επιλογή ορίζει αν ο Konqueror θα ζητά επιβεβαίωση όταν μετακινείτε "
+#~ "ένα αρχείο στον κάδο απορριμμάτων σας, από όπου μπορεί το αρχείο να "
+#~ "επανέλθει εύκολα."
+
+#~ msgid ""
+#~ "If true, when opening a session from within the sessions dialog the tabs "
+#~ "will be opened inside current window."
+#~ msgstr ""
+#~ "Αν είναι ενεργό, κατά το άνοιγμα μιας συνεδρίας από το διάλογο συνεδριών, "
+#~ "οι καρτέλες θα ανοιχτούν μέσα στο τρέχον παράθυρο."
+
+#~ msgid "Hide %1"
+#~ msgstr "Απόκρυψη %1"
+
+#~ msgid "The &konqueror; Handbook"
+#~ msgstr "Το εγχειρίδιο του &konqueror;"
+
+#~ msgid "&Pamela.Roberts; &Pamela.Roberts.mail;"
+#~ msgstr "&Pamela.Roberts; &Pamela.Roberts.mail;"
+
+#~ msgid "The &kde; Team"
+#~ msgstr "Η ομάδα του &kde;"
+
+#~ msgid "ROLES_OF_TRANSLATORS"
+#~ msgstr ""
+#~ "<othercredit role=\"translator\"><firstname>Δημήτριος</"
+#~ "firstname><surname>Γλενταδάκης</"
+#~ "surname><affiliation><address><email>dglent@gmail.com</email></address></"
+#~ "affiliation><contrib>Μεταφραστής</contrib></othercredit>"
+
+#~ msgid "&Erwan.Loisant;"
+#~ msgstr "&Erwan.Loisant;"
+
+#~ msgid "&Pamela.Roberts;"
+#~ msgstr "&Pamela.Roberts;"
+
+#~ msgid "2002-09-22"
+#~ msgstr "2002-09-22"
+
+#~ msgid "<releaseinfo>3.1</releaseinfo>"
+#~ msgstr "<releaseinfo>3.1</releaseinfo>"
+
+#~ msgid ""
+#~ "&konqueror; is &kde;'s advanced File Manager, Web Browser and Universal "
+#~ "Viewing Application."
+#~ msgstr ""
+#~ "Ο &konqueror;, είναι ο προχωρημένος διαχειριστής αρχείων, περιηγητής "
+#~ "ιστού και καθολικός προβολέας των εγγράφων του &kde;."
+
+#~ msgid "<keyword>KDE</keyword>"
+#~ msgstr "<keyword>KDE</keyword>"
+
+#~ msgid "Kdebase"
+#~ msgstr "Kdebase"
+
+#~ msgid "Browser"
+#~ msgstr "Περιηγητής"
+
+#~ msgid ""
+#~ "&konqueror; is part of the kdebase package which an essential part of "
+#~ "&kde;."
+#~ msgstr ""
+#~ "Ο &konqueror; αποτελεί μέρος του πακέτου kdebase το οποίο είναι "
+#~ "ουσιαστικό κομμάτι του &kde;."
+
+#~ msgid ""
+#~ "For instructions on acquiring &kde; please see <ulink url=\"http://www."
+#~ "kde.org\">http://www.kde.org</ulink>."
+#~ msgstr ""
+#~ "Για οδηγίες σχετικά με την απόκτηση του &kde; παρακαλώ δείτε στο <ulink "
+#~ "url=\"http://www.kde.org\">http://www.kde.org</ulink>."
+
+#~ msgid ""
+#~ "For further information about &konqueror; you might like to visit <ulink "
+#~ "url=\"http://www.konqueror.org\">http://www.konqueror.org</ulink>."
+#~ msgstr ""
+#~ "Για περισσότερες πληροφορίες σχετικά με τον &konqueror; μπορείτε να "
+#~ "βρείτε στο <ulink url=\"http://www.konqueror.org\">http://www.konqueror."
+#~ "org</ulink>."
+
+#~ msgid "CREDIT_FOR_TRANSLATORS"
+#~ msgstr "<para>Δημήτριος Γλενταδάκης<email>dglent@gmail.com</email></para>"

@@ -1,0 +1,2300 @@
+# KDE breton translation
+# Thierry Vignaud <tvignaud@mandriva.com>, 2004-2005
+msgid ""
+msgstr ""
+"Project-Id-Version: desktop.po\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2004-09-22 16:11+0200\n"
+"Last-Translator: Thierry Vignaud <tvignaud@mandriva.com>\n"
+"Language-Team: Brezhoneg <ofisk.bzh@wanadoo.fr>\n"
+"Language: br\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.5.1\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. i18n: ectx: Menu (tools)
+#: konq_shellcmdplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "&Ostilhoù"
+
+#: kshellcmdexecutor.cpp:106
+#, kde-format
+msgid "Input Required:"
+msgstr ""
+
+#: kshellcmdplugin.cpp:32
+#, kde-format
+msgid "&Execute Shell Command..."
+msgstr "Seveniñ un urzhiad shell ..."
+
+#: kshellcmdplugin.cpp:41
+#, kde-format
+msgid ""
+"KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a bug."
+msgstr ""
+
+#: kshellcmdplugin.cpp:51
+#, kde-format
+msgid "Executing shell commands works only on local directories."
+msgstr ""
+
+#: kshellcmdplugin.cpp:73
+#, fuzzy, kde-format
+#| msgid "Execute Shell Command"
+msgctxt "@title:window"
+msgid "Execute Shell Command"
+msgstr "Seveniñ an urzhiad shell"
+
+#: kshellcmdplugin.cpp:74
+#, kde-format
+msgid "Execute shell command in current directory:"
+msgstr "Seveniñ an urzhiad shell e-barzh ar renkell red :"
+
+#: kshellcmdplugin.cpp:85
+#, kde-format
+msgid "Output from command: \"%1\""
+msgstr ""
+
+#, fuzzy
+#~| msgctxt "NAME OF TRANSLATORS"
+#~| msgid "Your names"
+#~ msgid "no name"
+#~ msgstr "Thierry Vignaud, Jañ-Mai Drapier"
+
+#~ msgid "Configure"
+#~ msgstr "Kefluniañ"
+
+#~ msgid "Extensions"
+#~ msgstr "Astennoù"
+
+#~ msgid "Konqueror"
+#~ msgstr "Konqueror"
+
+#~ msgid "Web browser, file manager and document viewer."
+#~ msgstr "Furcher ar Gwiad, merour restroù, gweller teuloù."
+
+#, fuzzy
+#~| msgid "(C) 1999-2007, The Konqueror developers"
+#~ msgid "(C) 1999-2008, The Konqueror developers"
+#~ msgstr "(c) 1999-2007, Diorroerien Konqueror"
+
+#~ msgid "http://konqueror.kde.org"
+#~ msgstr "http://konqueror.kde.org"
+
+#~ msgid "David Faure"
+#~ msgstr "David Faure"
+
+#~ msgid "Simon Hausmann"
+#~ msgstr "Simon Hausmann"
+
+#, fuzzy
+#~| msgid "developer (JavaScript)"
+#~ msgid "Developer (framework, parts)"
+#~ msgstr "Diorroer (JavaScript)"
+
+#~ msgid "Michael Reiher"
+#~ msgstr "Michael Reiher"
+
+#, fuzzy
+#~ msgid "Developer (framework)"
+#~ msgstr "diorroer (JavaScript)"
+
+#~ msgid "Matthias Welk"
+#~ msgstr "Matthias Welk"
+
+#~ msgid "Developer"
+#~ msgstr "Diorroer"
+
+#~ msgid "Alexander Neundorf"
+#~ msgstr "Alexander Neundorf"
+
+#, fuzzy
+#~| msgid "developer (misc stuff)"
+#~ msgid "Developer (List views)"
+#~ msgstr "diorroer (traoù a bep seurt)"
+
+#~ msgid "Michael Brade"
+#~ msgstr "Michael Brade"
+
+#~ msgid "Lars Knoll"
+#~ msgstr "Lars Knoll"
+
+#~ msgid "Dirk Mueller"
+#~ msgstr "Dirk Mueller"
+
+#~ msgid "Peter Kelly"
+#~ msgstr "Peter Kelly"
+
+#~ msgid "Waldo Bastian"
+#~ msgstr "Waldo Bastian"
+
+#~ msgid "Germain Garand"
+#~ msgstr "Germain Garand"
+
+#~ msgid "Leo Savernik"
+#~ msgstr "Leo Savernik"
+
+#~ msgid "Stephan Kulow"
+#~ msgstr "Stephan Kulow"
+
+#~ msgid "Antti Koivisto"
+#~ msgstr "Antti Koivisto"
+
+#~ msgid "Zack Rusin"
+#~ msgstr "Zack Rusin"
+
+#~ msgid "Tobias Anton"
+#~ msgstr "Tobias Anton"
+
+#~ msgid "Lubos Lunak"
+#~ msgstr "Lubos Lunak"
+
+#, fuzzy
+#~| msgid "developer (JavaScript)"
+#~ msgid "Developer (HTML rendering engine, JavaScript)"
+#~ msgstr "diorroer (JavaScript)"
+
+#~ msgid "Allan Sandfeld Jensen"
+#~ msgstr "Allan Sandfeld Jensen"
+
+#~ msgid "Apple Safari Developers"
+#~ msgstr "Diorroerien Safari Apple"
+
+#~ msgid "Harri Porten"
+#~ msgstr "Harri Porten"
+
+#~ msgid "Developer (JavaScript)"
+#~ msgstr "Diorroer (JavaScript)"
+
+#~ msgid "Koos Vriezen"
+#~ msgstr "Koos Vriezen"
+
+#~ msgid "Matt Koss"
+#~ msgstr "Matt Koss"
+
+#~ msgid "Alex Zepeda"
+#~ msgstr "Alex Zepeda"
+
+#~ msgid "Richard Moore"
+#~ msgstr "Richard Moore"
+
+#, fuzzy
+#~| msgid "developer (JavaScript)"
+#~ msgid "Developer (Java applet support)"
+#~ msgstr "diorroer (JavaScript)"
+
+#~ msgid "Dima Rogozin"
+#~ msgstr "Dima Rogozin"
+
+#~ msgid "Wynn Wilkes"
+#~ msgstr "Wynn Wilkes"
+
+#~ msgid "Stefan Schimanski"
+#~ msgstr "Stefan Schimanski"
+
+#, fuzzy
+#~| msgid "developer (SSL, Netscape plugins)"
+#~ msgid "Developer (Netscape plugin support)"
+#~ msgstr "diorroer (SSL, lugentoù Netscape)"
+
+#~ msgid "George Staikos"
+#~ msgstr "George Staikos"
+
+#~ msgid "Developer (SSL, Netscape plugins)"
+#~ msgstr "Diorroer (SSL, lugentoù Netscape)"
+
+#~ msgid "Dawit Alemayehu"
+#~ msgstr "Dawit Alemayehu"
+
+#~ msgid "Carsten Pfeiffer"
+#~ msgstr "Carsten Pfeiffer"
+
+#~ msgid "Torsten Rahn"
+#~ msgstr "Torsten Rahn"
+
+#~ msgid "Graphics/icons"
+#~ msgstr "Grafikoù/arlunoù"
+
+#~ msgid "Torben Weis"
+#~ msgstr "Torben Weis"
+
+#~ msgid "KFM author"
+#~ msgstr "Oberour KFM"
+
+#~ msgid "Joseph Wenninger"
+#~ msgstr "Joseph Wenninger"
+
+#, fuzzy
+#~| msgid "Close Navigation Panel"
+#~ msgid "Developer (navigation panel framework)"
+#~ msgstr "Serriñ banell &furchal"
+
+#~ msgid "Stephan Binner"
+#~ msgstr "Stephan Binner"
+
+#~ msgid "Developer (misc stuff)"
+#~ msgstr "Diorroer (traoù a bep seurt)"
+
+#~ msgid "Ivor Hewitt"
+#~ msgstr "Ivor Hewitt"
+
+#~ msgid "Developer (AdBlock filter)"
+#~ msgstr "Diorroer (sil AdBlock)"
+
+#~ msgid "Close View"
+#~ msgstr "Serriñ ar gwell"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#, fuzzy
+#~| msgid "Preview in %1"
+#~ msgid "Preview &in %1"
+#~ msgstr "Rakgwel e-barzh %1"
+
+#~ msgid "Show %1"
+#~ msgstr "Diskouez %1"
+
+#, fuzzy
+#~| msgid "History"
+#~ msgctxt "@title:window"
+#~ msgid "History"
+#~ msgstr "Istor"
+
+#, fuzzy
+#~| msgid "Sort"
+#~ msgctxt "@action:inmenu Parent of 'By Name' and 'By Date'"
+#~ msgid "Sort"
+#~ msgstr "Rummañ"
+
+#, fuzzy
+#~| msgid "Local file"
+#~ msgid "Local"
+#~ msgstr "Restr lec'hel"
+
+#~ msgid "Miscellaneous"
+#~ msgstr "A bep seurt"
+
+#~ msgid "Open in New &Window"
+#~ msgstr "Digeriñ en ur prenestr &nevez"
+
+#~ msgid "Open in New Tab"
+#~ msgstr "Digeriñ en ur vevennig nevez"
+
+#, fuzzy
+#~| msgid "Copy Link Address"
+#~ msgid "&Copy Link Address"
+#~ msgstr "Eilañ chomlec'h al liamm"
+
+#~ msgid "&Remove Entry"
+#~ msgstr "&Dilemel ar bouetadur"
+
+#~ msgid "C&lear History"
+#~ msgstr "&Goullonderiñ an istor"
+
+#~ msgid "&Preferences..."
+#~ msgstr "&Dibaboù ..."
+
+#~ msgid "By &Name"
+#~ msgstr "Evit &anv"
+
+#~ msgid "By &Date"
+#~ msgstr "Evit &deiziad"
+
+#, fuzzy
+#~| msgid "Clear History"
+#~ msgid "Search in history"
+#~ msgstr "Goullonderiñ an istorig"
+
+#~ msgid "Do you really want to clear the entire history?"
+#~ msgstr "Ha fellout a ra deoc'h da goullonderiñ an holl istorig ?"
+
+#~ msgid "Clear History?"
+#~ msgstr "Goullonderiñ an istor ?"
+
+#~ msgid "Profile to open"
+#~ msgstr "Profil da zigeriñ"
+
+#, fuzzy
+#~| msgid "Location to open"
+#~ msgid "Session to open"
+#~ msgstr "Lec'hiadur da zigeriñ"
+
+#~ msgid "Location to open"
+#~ msgstr "Lec'hiadur da zigeriñ"
+
+#~ msgid "Canceled."
+#~ msgstr "Nullet."
+
+#~ msgid "Discard Changes?"
+#~ msgstr "Lemel ar c'hemmoù ?"
+
+#~ msgid "&Discard Changes"
+#~ msgstr "&Lemel ar c'hemmoù"
+
+#~ msgid "File Management"
+#~ msgstr "Mererezh ar restroù"
+
+#~ msgid "Web Browsing"
+#~ msgstr "Furchal ar Gwiad"
+
+#~ msgid "Home Folder"
+#~ msgstr "Renkell ar gêr"
+
+#, fuzzy
+#~| msgid "Home"
+#~ msgid "Home"
+#~ msgstr "Du-mañ"
+
+#, fuzzy
+#~| msgid "Navigate to your 'Home Location'"
+#~ msgid "Navigate to your 'Home Folder'"
+#~ msgstr "Furchal war-zu « lec'hiadur ho gêr »"
+
+#, fuzzy
+#~| msgid "Navigate to your 'Home Location'"
+#~ msgid "Navigate to your local 'Home Folder'"
+#~ msgstr "Furchal war-zu « lec'hiadur ho gêr »"
+
+#, fuzzy
+#~| msgid "Home"
+#~ msgid "Home Page"
+#~ msgstr "Du-mañ"
+
+#, fuzzy
+#~| msgid "Navigate to your 'Home Location'"
+#~ msgid "Navigate to your 'Home Page'"
+#~ msgstr "Furchal war-zu « lec'hiadur ho gêr »"
+
+#~ msgid "Do you really want to close all other tabs?"
+#~ msgstr "Ha fellout a ra deoc'h da serriñ ar bevennigoù all ?"
+
+#~ msgid "Close Other Tabs Confirmation"
+#~ msgstr "Kadarnadur serriñ ar bevennigoù all"
+
+#~ msgid "Close &Other Tabs"
+#~ msgstr "Serriñ ar bevennigoù &all"
+
+#~ msgid "Enter Target"
+#~ msgstr "Roit ar wenn"
+
+#~ msgid "<qt><b>%1</b> is not valid</qt>"
+#~ msgstr "<qt><b>%1</b> a zo siek</qt>"
+
+#~ msgid "Copy selected files from %1 to:"
+#~ msgstr "Eilañ ar restroù dibabet eus %1 e :"
+
+#~ msgid "Move selected files from %1 to:"
+#~ msgstr "Fiñval ar restroù dibabet eus %1 e :"
+
+#, fuzzy
+#~| msgid "Clear History"
+#~ msgctxt "This menu entry empties the closed items history"
+#~ msgid "Empty Closed Items History"
+#~ msgstr "Goullonderiñ an istorig"
+
+#, fuzzy
+#~| msgid "Set Name..."
+#~ msgid "Save As..."
+#~ msgstr "Lakaat an anv ..."
+
+#, fuzzy
+#~| msgid "Chan&ge..."
+#~ msgid "Manage..."
+#~ msgstr "Kemmañ ..."
+
+#~ msgid "New &Window"
+#~ msgstr "Prenestr &Nevez"
+
+#~ msgid "&Duplicate Window"
+#~ msgstr "&Eilañ ar prenestr"
+
+#~ msgid "Send &Link Address..."
+#~ msgstr "Kas chomlec'h al &liamm ..."
+
+#~ msgid "S&end File..."
+#~ msgstr "&Kas ar restr ..."
+
+#~ msgid "&Open Location"
+#~ msgstr "&Digeriñ ul lec'hiadur"
+
+#~ msgid "&Open File..."
+#~ msgstr "&Digeriñ ur restr ..."
+
+#~ msgid "&Find File..."
+#~ msgstr "&Klask restr ..."
+
+#~ msgid "&Use index.html"
+#~ msgstr "&Implijit index.html"
+
+#, fuzzy
+#~| msgid "Lin&k View"
+#~ msgctxt "This option links konqueror views"
+#~ msgid "Lin&k View"
+#~ msgstr "Gwell &Liamm"
+
+#~ msgid "&Up"
+#~ msgstr "&Huel"
+
+#, fuzzy
+#~| msgid "Copy Items"
+#~ msgid "Closed Items"
+#~ msgstr "Eilañ an traoù"
+
+#, fuzzy
+#~| msgid "Permissions"
+#~ msgid "Sessions"
+#~ msgstr "Aotreoù"
+
+#, fuzzy
+#~| msgid "Most Often Visited"
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Most Often Visited"
+#~ msgstr "URLoù a vez gwellet d'al liesañ"
+
+#, fuzzy
+#~| msgid "History"
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History"
+#~ msgstr "Istor"
+
+#, fuzzy
+#~| msgid "&Save View Profile..."
+#~ msgid "&Save View Profile As..."
+#~ msgstr "&Enrollañ gwell ar profil ..."
+
+#~ msgid "Configure Extensions..."
+#~ msgstr "Kefluniañ an Astennoù ..."
+
+#~ msgid "Configure Spell Checking..."
+#~ msgstr "Kefluniañ Gwiriekaat ar Skritur ..."
+
+#~ msgid "&New Tab"
+#~ msgstr "Bevennig &nevez"
+
+#~ msgid "&Duplicate Current Tab"
+#~ msgstr "&Eilañ ar vevennig red"
+
+#~ msgid "Detach Current Tab"
+#~ msgstr "Distagañ ar vevennig red"
+
+#~ msgid "&Close Active View"
+#~ msgstr "&Serriñ ar gwell oberiant"
+
+#~ msgid "Close Current Tab"
+#~ msgstr "Serriñ ar vevennig red"
+
+#~ msgid "Activate Next Tab"
+#~ msgstr "Bevaat ar vevennig a heul"
+
+#~ msgid "Activate Previous Tab"
+#~ msgstr "Bevaat ar vevennig diaraok"
+
+#~ msgid "Activate Tab %1"
+#~ msgstr "Bevaat ar vevennig %1"
+
+#~ msgid "Move Tab Left"
+#~ msgstr "Dilec'hiañ ar vevennig a gleiz"
+
+#~ msgid "Move Tab Right"
+#~ msgstr "Dilec'hiañ ar vevennig a zehou"
+
+#~ msgid "C&onfigure View Profiles..."
+#~ msgstr "Kefluniañ gwell ar pr&ofiloù ..."
+
+#~ msgid "Load &View Profile"
+#~ msgstr "Kargañ ur &profil gwell"
+
+#~ msgid "&Reload"
+#~ msgstr "&Adkargañ"
+
+#~ msgid "&Reload All Tabs"
+#~ msgstr "&Adkargañ an holl vevennigoù"
+
+#, fuzzy
+#~| msgid "&Reload"
+#~ msgid "&Force Reload"
+#~ msgstr "&Adkargañ"
+
+#~ msgid "&Stop"
+#~ msgstr "&Plaenaozañ"
+
+#~ msgid "L&ocation: "
+#~ msgstr "L&ec'hiadur : "
+
+#~ msgid "Location Bar"
+#~ msgstr "Barrenn al lec'hiadur"
+
+#~ msgid "Clear Location Bar"
+#~ msgstr "Goullonderiñ an URL"
+
+#, fuzzy
+#~| msgid "Clear Location bar<p>Clears the content of the location bar."
+#~ msgid ""
+#~ "<html>Clear Location bar<br /><br />Clears the contents of the location "
+#~ "bar.</html>"
+#~ msgstr ""
+#~ "Goullonderiñ an URL<p>Goullonderiñ a ra endalc'had barrenn al lec'hiadur."
+
+#~ msgid "&Bookmarks"
+#~ msgstr "&Sinedoù"
+
+#~ msgid "Kon&queror Introduction"
+#~ msgstr "Digoradur da gKon&queror"
+
+#~ msgid "Go"
+#~ msgstr "Mont"
+
+#~ msgid "Reload the currently displayed document"
+#~ msgstr "Adkargañ an teul a zo gwelet"
+
+#, fuzzy
+#~| msgid "Reload the currently displayed document"
+#~ msgid ""
+#~ "Force a reload of the currently displayed document and any contained "
+#~ "images"
+#~ msgstr "Adkargañ an teul a zo gwelet"
+
+#~ msgid "Stop loading the document"
+#~ msgstr "Paouez da kargañ an teul"
+
+#~ msgid "Copy the selected text or item(s) to the clipboard"
+#~ msgstr "Eilañ ar skrid pe an tra(où) dibabet er golver"
+
+#~ msgid "Paste the clipboard contents"
+#~ msgstr "Pegañ endalc'had ar golver"
+
+#~ msgid "Print the current document"
+#~ msgstr "Moulañ an teul red"
+
+#~ msgid "Copy &Files..."
+#~ msgstr "Eilañ ar &restroù ..."
+
+#~ msgid "M&ove Files..."
+#~ msgstr "&Fiñval ar &restroù ..."
+
+#, fuzzy
+#~| msgid "Open Folder in Tabs"
+#~ msgid "Open bookmarks folder in new tabs"
+#~ msgstr "Digeriñ ar renkell er bevennigoù"
+
+#~ msgid "Open in T&his Window"
+#~ msgstr "Digeriñ er prenestr-&se"
+
+#~ msgid "Open the document in current window"
+#~ msgstr "Digeriñ an teul er prenestr-red"
+
+#~ msgid "Open the document in a new window"
+#~ msgstr "Digeriñ an teul en ur prenestr &nevez"
+
+#~ msgid "Open in &New Tab"
+#~ msgstr "Digeriñ en ur vevennig &nevez"
+
+#~ msgid "Open the document in a new tab"
+#~ msgstr "Digeriñ an teul en ur vevennig nevez"
+
+#, fuzzy
+#~| msgid "Open with %1"
+#~ msgid "&Open With"
+#~ msgstr "Digeriñ gant « %1 »"
+
+#~ msgid "Open with %1"
+#~ msgstr "Digeriñ gant « %1 »"
+
+#, fuzzy
+#~| msgid "&View Mode"
+#~ msgctxt "@action:inmenu View"
+#~ msgid "&View Mode"
+#~ msgstr "Mod &gwell"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window, are you sure you want to quit?"
+#~ msgstr ""
+#~ "M'och eus meur a bevennigoù digor er prenestr-mañ; Ha sur oc'h e fell "
+#~ "deoc'h kuitaat ?"
+
+#~ msgid "Confirmation"
+#~ msgstr "Kadarnadur"
+
+#~ msgid "C&lose Current Tab"
+#~ msgstr "S&erriñ ar vevennig red"
+
+#~ msgid "Add"
+#~ msgstr "Ouzhpennañ"
+
+#~ msgid "Do Not Add"
+#~ msgstr "Ne ouzhpennit ket"
+
+#~ msgid "Profile Management"
+#~ msgstr "Mererezh ar profiloù"
+
+#~ msgid "&Rename Profile"
+#~ msgstr "&Adenvel ar profil"
+
+#~ msgid "&Delete Profile"
+#~ msgstr "&Lemel ar profil"
+
+#, fuzzy
+#~| msgid "&Management"
+#~ msgid "Manage Sessions"
+#~ msgstr "&Mererezh"
+
+#, fuzzy
+#~| msgid "&Open Link"
+#~ msgid "&Open"
+#~ msgstr "&Digeriñ ul liamm"
+
+#, fuzzy
+#~| msgid "End of session"
+#~ msgid "Rename Session"
+#~ msgstr "Echu eo an dalc'h"
+
+#, fuzzy
+#~| msgid "End of session"
+#~ msgid "Restore Session?"
+#~ msgstr "Echu eo an dalc'h"
+
+#, fuzzy
+#~| msgid "End of session"
+#~ msgid "Restore Session"
+#~ msgstr "Echu eo an dalc'h"
+
+#, fuzzy
+#~| msgid "As New Folder"
+#~ msgid "Ask Me Later"
+#~ msgstr "Evel renkell nevez"
+
+#~ msgid "Open a new tab"
+#~ msgstr "Digeriñ ur vevennig nevez"
+
+#~ msgid "Close the current tab"
+#~ msgstr "Serriñ ar vevennig red"
+
+#~ msgid "&Duplicate Tab"
+#~ msgstr "&Eilañ ar vevennig"
+
+#~ msgid "&Reload Tab"
+#~ msgstr "&Adkargañ ar vevennig"
+
+#~ msgid "Other Tabs"
+#~ msgstr "Bevennigoù all"
+
+#~ msgid "D&etach Tab"
+#~ msgstr "Distagañ ar vevennig"
+
+#~ msgid "&Close Tab"
+#~ msgstr "&Serriñ ar vevennig"
+
+#, fuzzy
+#~| msgid "&Close Tab"
+#~ msgid "Und&o: Closed Tab"
+#~ msgstr "&Serriñ ar vevennig"
+
+#, fuzzy
+#~| msgid "&Close Tab"
+#~ msgid "Und&o: Closed Window"
+#~ msgstr "&Serriñ ar vevennig"
+
+#~ msgid "Warning"
+#~ msgstr "Diwallit"
+
+#~ msgid "Resend"
+#~ msgstr "Adkas"
+
+#~ msgid "Load View Profile"
+#~ msgstr "K&argañ ur profil gwell"
+
+#, fuzzy
+#~| msgid "History"
+#~ msgctxt "@title:tab"
+#~ msgid "History"
+#~ msgstr "Istor"
+
+#~ msgid " day"
+#~ msgid_plural " days"
+#~ msgstr[0] " deizioù"
+
+#~ msgid "Minute"
+#~ msgid_plural "Minutes"
+#~ msgstr[0] " munudoù"
+
+#~ msgid "Day"
+#~ msgid_plural "Days"
+#~ msgstr[0] " deizioù"
+
+#, fuzzy
+#~| msgid "Replace"
+#~ msgctxt "@title:tab"
+#~ msgid "Places"
+#~ msgstr "Erlec'hiañ"
+
+#~ msgid "Add New"
+#~ msgstr "Ouzhpennañ un hini nevez"
+
+#~ msgid "Multiple Views"
+#~ msgstr "Lies gwel"
+
+#~ msgid "Show Configuration Button"
+#~ msgstr "Diskouez nozel ar gefluniadur"
+
+#, fuzzy
+#~| msgid "Close View"
+#~ msgid "Close Sidebar"
+#~ msgstr "Serriñ ar gwell"
+
+#~ msgid "This entry already exists."
+#~ msgstr "Ar vouetadur-mañ a zo c'hoazh."
+
+#, fuzzy
+#~| msgid "Move Tab Right"
+#~ msgid "Show Tabs Right"
+#~ msgstr "Dilec'hiañ ar vevennig a zehou"
+
+#~ msgid "Set Name"
+#~ msgstr "Lakaat an anv"
+
+#~ msgid "Enter the name:"
+#~ msgstr "Roit an anv :"
+
+#~ msgid "Enter a URL:"
+#~ msgstr "Roit un URL :"
+
+#~ msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
+#~ msgstr ""
+#~ "<qt>Ha fellout a ra deoc'h da vat lemel ar vevennig <b>%1</b> ?</qt>"
+
+#~ msgid "Set Name..."
+#~ msgstr "Lakaat an anv ..."
+
+#~ msgid "Set URL..."
+#~ msgstr "Lakaat an URL ..."
+
+#~ msgid "Set Icon..."
+#~ msgstr "Lakaat an arlun ..."
+
+#~ msgid "Remove"
+#~ msgstr "Lemel"
+
+#~ msgid "&Create New Folder"
+#~ msgstr "Krouiñ ur renkell &nevez"
+
+#~ msgid "Delete Folder"
+#~ msgstr "Distruj ar renkell"
+
+#~ msgid "Delete Bookmark"
+#~ msgstr "Distruj ar sinedoù"
+
+#~ msgid "Properties"
+#~ msgstr "Perzhioù"
+
+#~ msgid "Open in New Window"
+#~ msgstr "Digeriñ en ur prenestr nevez"
+
+#~ msgid "Open Folder in Tabs"
+#~ msgstr "Digeriñ ar renkell er bevennigoù"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "Eilañ chomlec'h al liamm"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark folder\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "Ha sur oc'h bezañ mennet da zilemel ar renkell sined\n"
+#~ "« %1 » ?"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "Ha sur oc'h bezañ mennet da zilemel ar sined\n"
+#~ "« %1 » ?"
+
+#~ msgid "Bookmark Folder Deletion"
+#~ msgstr "O lemel ur renkell sined"
+
+#~ msgid "Bookmark Deletion"
+#~ msgstr "Emaon o tistruj ar sined"
+
+#~ msgid "Bookmark Properties"
+#~ msgstr "Perzhioù ar sinedoù"
+
+#~ msgid "&Update"
+#~ msgstr "&Hizivaat"
+
+#~ msgid "Name:"
+#~ msgstr "Anv :"
+
+#~ msgid "Location:"
+#~ msgstr "Lec'hiadur :"
+
+#~ msgid "Add Bookmark"
+#~ msgstr "Ouzhpennañ ur sined"
+
+#~ msgid "&Create New Folder..."
+#~ msgstr "Krouiñ ur renkell &nevez ..."
+
+#, fuzzy
+#~| msgid "&Move to Trash"
+#~ msgid "Move to Trash"
+#~ msgstr "&Fiñval d'ar pod-lastez"
+
+#~ msgid "Rename"
+#~ msgstr "Adenvel"
+
+#~ msgid "Delete Link"
+#~ msgstr "Dilemel al Liamm"
+
+#~ msgid "New Folder"
+#~ msgstr "Renkell nevez"
+
+#~ msgid "Create New Folder"
+#~ msgstr "Krouiñ ur renkell nevez"
+
+#~ msgid "Enter folder name:"
+#~ msgstr "Roit anv ar renkell :"
+
+#, fuzzy
+#~| msgid "Name:"
+#~ msgctxt "@label"
+#~ msgid "Name:"
+#~ msgstr "Anv :"
+
+#, fuzzy
+#~| msgid "Show URL"
+#~ msgctxt "@label"
+#~ msgid "Path or URL:"
+#~ msgstr "Diskouez an URL"
+
+#~ msgid "&Open Link"
+#~ msgstr "&Digeriñ ul liamm"
+
+#~ msgid " min"
+#~ msgstr " mun"
+
+#~ msgid " sec"
+#~ msgstr " eil"
+
+#, fuzzy
+#~| msgid "Web browser, file manager and document viewer."
+#~ msgid ""
+#~ "Konqueror is a web browser, file manager and universal document viewer."
+#~ msgstr "Furcher ar Gwiad, merour restroù, gweller teuloù."
+
+#, fuzzy
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "Starting Points"
+#~ msgstr "Kefluniadur"
+
+#~ msgid "Introduction"
+#~ msgstr "Digoradur"
+
+#~ msgid "Tips"
+#~ msgstr "Lagadennoù"
+
+#~ msgid "Your personal files"
+#~ msgstr "Restroù deoc'h"
+
+#~ msgid "Trash"
+#~ msgstr "Pod-lastez"
+
+#~ msgid "Network Folders"
+#~ msgstr "Renkelloù rouedad"
+
+#~ msgid "Shared files and folders"
+#~ msgstr "Restroù rannet ha renkelloù rannet"
+
+#, fuzzy
+#~| msgid "&Bookmarks"
+#~ msgid "Bookmarks"
+#~ msgstr "&Sinedoù"
+
+#~ msgid "Next: An Introduction to Konqueror"
+#~ msgstr "Hini a-heul: Un digoradur da gKonqueror"
+
+#~ msgid "Search the Web"
+#~ msgstr "Klask ouzh ar genrouedad"
+
+#~ msgid "OpenSSL"
+#~ msgstr "OpenSSL"
+
+#, fuzzy
+#~| msgid "&General"
+#~ msgctxt "Title of an html 'group box' explaining konqueror features"
+#~ msgid "General"
+#~ msgstr "&Pennañ"
+
+#~ msgid "Feature"
+#~ msgstr "Arc'hwel"
+
+#~ msgid "Details"
+#~ msgstr "Munudoù"
+
+#~ msgid "Image formats"
+#~ msgstr "Furmadoù ar skeudennoù"
+
+#~ msgid "Transfer protocols"
+#~ msgstr "Komenadoù treuzkas :"
+
+#~ msgid "FTP"
+#~ msgstr "FTP"
+
+#, fuzzy
+#~| msgid "URL-Completion"
+#~ msgctxt "A feature of Konqueror"
+#~ msgid "URL-Completion"
+#~ msgstr "Klokadur URL"
+
+#~ msgid "Manual"
+#~ msgstr "Diwar zorn"
+
+#~ msgid "Installed Plugins"
+#~ msgstr "Lugentoù staliaet"
+
+#~ msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
+#~ msgstr "<td>Lugent</td><td>Deskrivadur</td><td>Restr</td><td>Seurt</td>"
+
+#~ msgid "Installed"
+#~ msgstr "Staliaet"
+
+#~ msgid ""
+#~ "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
+#~ msgstr ""
+#~ "<td>Seurt Mime</td><td>Deskrivadur</td><td>Dibennoù-ger</td><td>Lugent</"
+#~ "td>"
+
+#~ msgid "Disable"
+#~ msgstr "Marvaat "
+
+#~ msgid "Keep"
+#~ msgstr "Mirout"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Thierry Vignaud, Jañ-Mai Drapier"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "tvignaud@mandriva.com, jdrapier@club-internet.fr"
+
+#~ msgid "&File"
+#~ msgstr "&Restr"
+
+#~ msgid "&Edit"
+#~ msgstr "&Aozañ"
+
+#~ msgid "&View"
+#~ msgstr "&Gwel"
+
+#~ msgid "&Go"
+#~ msgstr "&Mont"
+
+#~ msgid "&Settings"
+#~ msgstr "&Kefluniadur"
+
+#~ msgid "&Window"
+#~ msgstr "&Prenestr"
+
+#~ msgid "&Help"
+#~ msgstr "&Skoazell"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Barrenn kentañ an ostilhoù"
+
+#~ msgid "Extra Toolbar"
+#~ msgstr "Barenn ouzhpenn"
+
+#~ msgid "Location Toolbar"
+#~ msgstr "Barrenn ostilhoù al lec'hiadur"
+
+#~ msgid "Bookmark Toolbar"
+#~ msgstr "Barrenn ostilhoù ar Sinedoù"
+
+#~ msgid "&Profile name:"
+#~ msgstr "Anv ar &profil :"
+
+#~ msgid "Save &URLs in profile"
+#~ msgstr "Enrollañ &URLioù er profil"
+
+#, fuzzy
+#~| msgid "&New..."
+#~ msgctxt "@action:button New session"
+#~ msgid "New..."
+#~ msgstr "&Nevez ..."
+
+#, fuzzy
+#~| msgid "Close Current Tab"
+#~ msgctxt "@action:button Save current session"
+#~ msgid "Save Current"
+#~ msgstr "Serriñ ar vevennig red"
+
+#, fuzzy
+#~| msgid "Rename"
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename..."
+#~ msgstr "Adenvel"
+
+#, fuzzy
+#~| msgid "D&elete"
+#~ msgctxt "@action:button Delete session"
+#~ msgid "Delete"
+#~ msgstr "&Dilemel"
+
+#, fuzzy
+#~| msgid "Open the document in current window"
+#~ msgid "Open tabs inside current window"
+#~ msgstr "Digeriñ an teul er prenestr-red"
+
+#~ msgid "Maximum &number of URLs:"
+#~ msgstr "&Niver uhelañ a URLoù :"
+
+#~ msgid "Custom Fonts For"
+#~ msgstr "Nodrezh diouzoc'h evit"
+
+#~ msgid "URLs newer than"
+#~ msgstr "URLioù nevezoc'h evit"
+
+#~ msgid "Choose Font..."
+#~ msgstr "Dibab an nodrezh ..."
+
+#~ msgid "URLs older than"
+#~ msgstr "URLioù koshoc'h evit"
+
+#~ msgid "Detailed tooltips"
+#~ msgstr "Lagadennoù gant munudoù"
+
+#~ msgid "Clear History"
+#~ msgstr "Goullonderiñ an istorig"
+
+#, fuzzy
+#~| msgid "Maximum &number of URLs:"
+#~ msgid "Maximum number of Closed Items"
+#~ msgstr "&Niver uhelañ a URLoù :"
+
+#~ msgid "Open folders in separate windows"
+#~ msgstr "Digeriñ ar renkellioù er prenester all"
+
+#~ msgid "Show file tips"
+#~ msgstr "Diskouez lagadennoù ar restr"
+
+#, fuzzy
+#~ msgid "Show previews in file tips"
+#~ msgstr "Diskouez lagadennoù ar restr"
+
+#~ msgid "Standard font"
+#~ msgstr "Nodrezh standard"
+
+#~ msgid "This is the font used to display text in Konqueror windows."
+#~ msgstr "Setu an nodrezh implij da ziskouez skrid er prenestr Konqueror."
+
+#, fuzzy
+#~ msgid "Ask confirmation for deleting a file."
+#~ msgstr "Kadarnadur"
+
+#, fuzzy
+#~ msgid "Ask confirmation for move to trash"
+#~ msgstr "Kadarnadur"
+
+#~ msgid "Hide %1"
+#~ msgstr "Kuzhat %1"
+
+#~ msgid "Bookmark This Location"
+#~ msgstr "Ouzhpennañ ur sined evit al lec'hiadur-se"
+
+#~ msgid ""
+#~ "Malformed URL\n"
+#~ "%1"
+#~ msgstr ""
+#~ "URL siek\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Protocol not supported\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Komenad anskoraet\n"
+#~ "%1"
+
+#~ msgid "My Bookmarks"
+#~ msgstr "Ma sinedoù"
+
+#~ msgid "&Save View Profile \"%1\"..."
+#~ msgstr "&Enrollañ profil gwell « %1 » ..."
+
+#~ msgid "Configure Navigation Panel"
+#~ msgstr "Kefluniañ banell &furchal"
+
+#~ msgid "Close Navigation Panel"
+#~ msgstr "Serriñ banell &furchal"
+
+#~ msgid "Select Type"
+#~ msgstr "Dibab ar seurt"
+
+#~ msgid "Select type:"
+#~ msgstr "Dibabit ar rizh :"
+
+#~ msgid "<qt><b>%1</b> does not exist</qt>"
+#~ msgstr "<qt>N'eo ket endeo <b>%1</b></qt>"
+
+#~ msgid "Minutes"
+#~ msgstr "Munutoù"
+
+#~ msgid "Days"
+#~ msgstr "Deizioù"
+
+#~ msgid "Reload"
+#~ msgstr "Adkargañ"
+
+#~ msgid "Default"
+#~ msgstr "Dre ziouer"
+
+#, fuzzy
+#~| msgid "New..."
+#~ msgctxt "@action:button New session"
+#~ msgid "New"
+#~ msgstr "Nevez ..."
+
+#, fuzzy
+#~| msgid "Rename"
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename"
+#~ msgstr "Adenvel"
+
+#~ msgid "Joseph WENNINGER"
+#~ msgstr "Joseph WENNINGER"
+
+#~ msgid "G E N E R A L"
+#~ msgstr "H O L L E K"
+
+#, fuzzy
+#~| msgid "<img width='16' height='16' src=\"%1\">"
+#~ msgid "<img width='16' height='16' src=\"%1\"></img>"
+#~ msgstr "<img width='16' height='16' src=\"%1\">"
+
+#~ msgid "Applications"
+#~ msgstr "Arloadoù"
+
+#~ msgid "Installed programs"
+#~ msgstr "Programmoù staliaet"
+
+#~ msgid "&Location"
+#~ msgstr "&Lec'hiadur"
+
+#~ msgid "Open &Terminal"
+#~ msgstr "Digeriñ un &termenell"
+
+#, fuzzy
+#~| msgid "&Close Tab"
+#~ msgid "Closed Tabs"
+#~ msgstr "&Serriñ ar vevennig"
+
+#~ msgid "Unknown"
+#~ msgstr "Dianav"
+
+#~ msgid "Save &window size in profile"
+#~ msgstr "Enrollañ ment ar &brenestr er profil"
+
+#~ msgid "&Speak Text"
+#~ msgstr "&Distagañ ar skrid"
+
+#~ msgid "Cannot Read source"
+#~ msgstr "N'em eus ket lenn an tarzh"
+
+#~ msgid "Starting KTTSD Failed"
+#~ msgstr "Sac'het eo loc'hañ KTTSD"
+
+#~ msgid "Speech Toolbar"
+#~ msgstr "Barenn ostilh komz"
+
+#~ msgid "Conquer your Desktop!"
+#~ msgstr "Aloubiñ ho purev !"
+
+#~ msgid "Disks and removable media"
+#~ msgstr "Pladennoù ha media lem-laka"
+
+#~ msgid "Settings"
+#~ msgstr "Kefluniadur"
+
+#~ msgid "Desktop configuration"
+#~ msgstr "Kefluniadur ar burev"
+
+#~ msgid "Home &URL:"
+#~ msgstr "&URL ar gêr :"
+
+#~ msgid "&Edit File Type..."
+#~ msgstr "&Aozañ seurt ar restr ..."
+
+#~ msgid "S&ystem"
+#~ msgstr "R&eizhiad"
+
+#~ msgid "App&lications"
+#~ msgstr "&Meziantoù"
+
+#~ msgid "&Network Folders"
+#~ msgstr "&Renkelloù rouedad"
+
+#~ msgid "Sett&ings"
+#~ msgstr "&Dibarzhoù"
+
+#~ msgid "Autostart"
+#~ msgstr "Emloc'h"
+
+#~ msgid "kfmclient"
+#~ msgstr "kfmclient"
+
+#~ msgid "Arguments for command"
+#~ msgstr "Arventennoù evit ar meziant"
+
+#~ msgid ""
+#~ "\n"
+#~ "Syntax:\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Ereadurezh :\n"
+
+#~ msgid "Profile %1 not found\n"
+#~ msgstr "N'eo ket bet kavet ar profil %1\n"
+
+#~ msgid "Syntax Error: Not enough arguments\n"
+#~ msgstr "Fazi ereadurezh : N'eus ket a-walc'h a arventennoù\n"
+
+#~ msgid "Invalid Proxy Setting"
+#~ msgstr "N'eo ket mat kefluniadur ar proksi"
+
+#~ msgid "<qt><center><b>%1</b></center> is already in the list.</qt>"
+#~ msgstr "<qt><center><b>%1</b></center> a zo c'hoazh er roll</qt>"
+
+#~ msgid "Duplicate Entry"
+#~ msgstr "Eilañ ar vouetadur"
+
+#, fuzzy
+#~ msgid "Change Exception"
+#~ msgstr "Kemmañ an &arlun ..."
+
+#~ msgid "Invalid Entry"
+#~ msgstr "Siek eo ar bouetadur"
+
+#~ msgid "Default user name:"
+#~ msgstr "Anv an arveriad dre ziouer :"
+
+#~ msgid "Default password:"
+#~ msgstr "Tremenger dre ziouer :"
+
+#~ msgid "Accept"
+#~ msgstr "Aotren"
+
+#~ msgid "Reject"
+#~ msgstr "Nac'h"
+
+#~ msgid "Ask"
+#~ msgstr "Goulenn"
+
+#~ msgid "Timeout Values"
+#~ msgstr "Gwerzhioù an amzer-hont"
+
+#~ msgid "Soc&ket read:"
+#~ msgstr "Lenn ur so&ket :"
+
+#~ msgid "Pro&xy connect:"
+#~ msgstr "Kevreadenn ouzh ur servijer prok&si :"
+
+#~ msgid "Server co&nnect:"
+#~ msgstr "Ke&vreadenn ouzh ur servijer :"
+
+#~ msgid "&Server response:"
+#~ msgstr "Respont ar &servijer :"
+
+#~ msgid "FTP Options"
+#~ msgstr "Dibaboù FTP"
+
+#, fuzzy
+#~ msgid "D-Bus Communication Error"
+#~ msgstr "Kadarnadur"
+
+#~ msgid "<h1>Cookies Management Quick Help</h1>"
+#~ msgstr "<h1>Skoazell gant mererezh ar topinoù</h1"
+
+#~ msgid "Yes"
+#~ msgstr "Ya"
+
+#~ msgid "&Windows Shares"
+#~ msgstr "Rannadur prenestrer"
+
+#~ msgid "&LISa Daemon"
+#~ msgstr "Diaoul &LISa"
+
+#, fuzzy
+#~ msgid "Duplicate Identification"
+#~ msgstr "&Eilañ ar vevennig red"
+
+#, fuzzy
+#~ msgid "Variable Proxy Configuration"
+#~ msgstr "Kefluniadur ar burev"
+
+#~ msgid "Invalid Proxy Setup"
+#~ msgstr "N'eo ket mat kefluniadur ar proksi"
+
+#~ msgid "Proxy Setup"
+#~ msgstr "Kefluniañ ar proksi"
+
+#~ msgid "&Policy"
+#~ msgstr "&Politikerez"
+
+#~ msgid "kcmsocks"
+#~ msgstr "kcmsocks"
+
+#~ msgid "KDE SOCKS Control Module"
+#~ msgstr "Mollad SOCKS evit KDE"
+
+#~ msgid "(c) 2001 George Staikos"
+#~ msgstr "(c) 2001 George Staikos"
+
+#~ msgid "SOCKS could not be loaded."
+#~ msgstr "Ne ket possubl da kargañ SOCKS."
+
+#~ msgid "You have to restart KDE for these changes to take effect."
+#~ msgstr "Red eo deoc'h da adloc'hañ KDE evit arloañ ar c'hemmoù."
+
+#~ msgid "New Cookie Policy"
+#~ msgstr "Politikerez nevez evit an toupinoù"
+
+#~ msgid "Change Cookie Policy"
+#~ msgstr "Kemmañ politikerez an toupinoù"
+
+#~ msgid ""
+#~ "<qt>A policy already exists for<center><b>%1</b></center>Do you want to "
+#~ "replace it?</qt>"
+#~ msgstr ""
+#~ "<qt>Ur bolitikerez a zo c'hoazh evit <center><b>%1</b></center>. Fellout "
+#~ "a ra deoc'h resklañ anezhi ?</qt>"
+
+#~ msgid "Duplicate Policy"
+#~ msgstr "Eilañ ar politikerez"
+
+#~ msgid "&Proxy"
+#~ msgstr "&Proksi"
+
+#~ msgid "&SOCKS"
+#~ msgstr "&SOCKS"
+
+#~ msgid "Menu Editor"
+#~ msgstr "Aozer lañserioù"
+
+#~ msgid "Menu"
+#~ msgstr "Meuziad"
+
+#~ msgid "Move Up"
+#~ msgstr "Pignit"
+
+#~ msgid "Move Down"
+#~ msgstr "Diskennit"
+
+#~ msgid ""
+#~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "
+#~ "file manager here."
+#~ msgstr ""
+#~ "<h1>Emzalc'h Konqueror</h1> Amañ e c'hellit kefluniañ penaos Konqueror en "
+#~ "em zalc'h evel ur merour restroù."
+
+#~ msgid "Misc Options"
+#~ msgstr "Dibarzhoù a bep seurt"
+
+#~ msgid "Open folders in separate &windows"
+#~ msgstr "Digeriñ renkelloù er &brenester all"
+
+#~ msgid "Show file &tips"
+#~ msgstr "Diskouez &lagadennoù ar restr"
+
+#~ msgid "&Move to trash"
+#~ msgstr "&Fiñval d'ar pod-lastez"
+
+#~ msgid "Sound Files"
+#~ msgstr "Restroù klevet"
+
+#~ msgid "&Left button:"
+#~ msgstr "Nozel a-&gleiz :"
+
+#~ msgid "Right b&utton:"
+#~ msgstr "Nozel a-zehou :"
+
+#~ msgid "No Action"
+#~ msgstr "Ober ebet"
+
+#~ msgid "Window List Menu"
+#~ msgstr "Meuziad listenn ar prenester"
+
+#~ msgid "Desktop Menu"
+#~ msgstr "Meuziad ar burevioù"
+
+#~ msgid "Application Menu"
+#~ msgstr "Meuziad ar meziantoù"
+
+#~ msgid "Bookmarks Menu"
+#~ msgstr "Meuziad ar sinedoù"
+
+#~ msgid "Custom Menu 1"
+#~ msgstr "Meuziad diouzoc'h 1"
+
+#~ msgid "Custom Menu 2"
+#~ msgstr "Meuziad diouzoc'h 1"
+
+#~ msgid "Select Protocols"
+#~ msgstr "Dibabit ar c'homenadoù"
+
+#~ msgid "Local Protocols"
+#~ msgstr "Komenadoù lec'hel"
+
+#~ msgid "Internet Protocols"
+#~ msgstr "Komenadoù ar genrouedad"
+
+#~ msgid "&Maximum file size:"
+#~ msgstr "Ment &uhelañ ar restr :"
+
+#~ msgid " MB"
+#~ msgstr " Mo"
+
+#~ msgid "&Use thumbnails embedded in files"
+#~ msgstr "&Implijit ar skeudennigoù enframmet er restroù"
+
+#~ msgid "&Behavior"
+#~ msgstr "&Emzalc'h"
+
+#~ msgid "Des&ktop path:"
+#~ msgstr "&Hent ar burev :"
+
+#~ msgid "A&utostart path:"
+#~ msgstr "Hent e&mloc'h :"
+
+#~ msgid "D&ocuments path:"
+#~ msgstr "Hent an &teulioù :"
+
+#~ msgid "Desktop"
+#~ msgstr "Burev"
+
+#~ msgid "Confirmation Required"
+#~ msgstr "Red eo da gadarnaat"
+
+#~ msgid "Move"
+#~ msgstr "Fiñval"
+
+#~ msgid "KEditFileType"
+#~ msgstr "KEditFileType"
+
+#~ msgid "(c) 2000, KDE developers"
+#~ msgstr "(c) 2000, Diorroerien KDE"
+
+#~ msgid "%1 File"
+#~ msgstr "Restr %1"
+
+#~ msgid "Edit File Type %1"
+#~ msgstr "Aozañ seurt ar restr %1"
+
+#~ msgid "Create New File Type %1"
+#~ msgstr "Krouiñ ur seurt restr nevez %1"
+
+#~ msgid "Create New File Type"
+#~ msgstr "Krouiñ ur seurt restr nevez"
+
+#~ msgid "Group:"
+#~ msgstr "Strollad :"
+
+#~ msgid "Type name:"
+#~ msgstr "Anv ar seurt :"
+
+#~ msgid "Show file in embedded viewer"
+#~ msgstr "Diskouez ar restr el lenner enframmet"
+
+#, fuzzy
+#~ msgid "Show file in separate viewer"
+#~ msgstr "Digeriñ ar renkellioù er prenester all"
+
+#~ msgid "Add Service"
+#~ msgstr "Ouzhpennañ ur servij"
+
+#~ msgid "Select service:"
+#~ msgstr "Dibabit ar servij :"
+
+#~ msgid "Known Types"
+#~ msgstr "Seurtoù anavet"
+
+#~ msgid "Add..."
+#~ msgstr "Ouzhpennañ ..."
+
+#~ msgid "&Remove"
+#~ msgstr "&Lemel"
+
+#~ msgid "Filename Patterns"
+#~ msgstr "Sil an anv restroù"
+
+#~ msgid "Remove the selected filename pattern."
+#~ msgstr "Lemel ar sil anv restr dibabet."
+
+#~ msgid "Description"
+#~ msgstr "Deskrivadur"
+
+#~ msgid "Add New Extension"
+#~ msgstr "Ouzhpennañ un astenn nevez"
+
+#~ msgid "Extension:"
+#~ msgstr "Astenn :"
+
+#~ msgid "Use settings for '%1' group"
+#~ msgstr "Implijit dibarzhoù evit ar strollad '%1'"
+
+#~ msgid "%1 (%2)"
+#~ msgstr "%1 (%2)"
+
+#~ msgid "Move &Up"
+#~ msgstr "&Pignit"
+
+#~ msgid "Move &Down"
+#~ msgstr "&Diskennit"
+
+#~ msgid "Edit..."
+#~ msgstr "Aozañ ..."
+
+#~ msgid "None"
+#~ msgstr "Ebet"
+
+#~ msgid "You are not authorized to remove this service."
+#~ msgstr "N'helles ket gallet lemel ar servij-mañ."
+
+#~ msgid "The service <b>%1</b> can not be removed."
+#~ msgstr "Ne m'eus ket dilemelet ar servij <b>%1</b>."
+
+#~ msgid "Global Settings"
+#~ msgstr "Dibarzhoù hollek"
+
+#~ msgid "&Enable plugins globally"
+#~ msgstr "&Bevaat al lugentoù evit an holl re"
+
+#~ msgid "&Load plugins on demand only"
+#~ msgstr "&Kargañ al lugentoù pa vez goulennet hepken"
+
+#~ msgid "Netscape Plugins"
+#~ msgstr "Lugentoù Netscape"
+
+#~ msgctxt "low priority"
+#~ msgid "low"
+#~ msgstr "izel"
+
+#~ msgctxt "medium priority"
+#~ msgid "medium"
+#~ msgstr "krenn"
+
+#~ msgctxt "high priority"
+#~ msgid "high"
+#~ msgstr "uhel"
+
+#~ msgid "Scanning for plugins"
+#~ msgstr "Emaon o tielfennañ evit lugentoù"
+
+#~ msgid "Cancel"
+#~ msgstr "Nullañ"
+
+#~ msgid "Plugin"
+#~ msgstr "Lugent"
+
+#~ msgid "MIME type"
+#~ msgstr "Rizh MIME"
+
+#~ msgid "Suffixes"
+#~ msgstr "Dibennoù-ger"
+
+#~ msgid "New Plugin Policy"
+#~ msgstr "Politikerez nevez evit al lugentoù"
+
+#~ msgid "Change Plugin Policy"
+#~ msgstr "Kemmañ politikerez al lugentoù"
+
+#~ msgid "&Plugin policy:"
+#~ msgstr "Politikerez al &lugentoù :"
+
+#~ msgid "Host/Domain"
+#~ msgstr "Ostiz/domani"
+
+#~ msgid "Policy"
+#~ msgstr "Politikerez"
+
+#~ msgid "De&lete"
+#~ msgstr "&Dilemel"
+
+#~ msgid "&Import..."
+#~ msgstr "&Enporzh ..."
+
+#~ msgid "&Export..."
+#~ msgstr "&Ezporzh ..."
+
+#~ msgid "You must first select a policy to delete."
+#~ msgstr "Ret eo deoc'h reiñ ur politikerez da lemel."
+
+#~ msgid "Use Global"
+#~ msgstr "Implij an hini hollek"
+
+#~ msgid "Accept languages:"
+#~ msgstr "Aotren ar yezhoù :"
+
+#~ msgid "Accept character sets:"
+#~ msgstr "Aotren arouezennegoù :"
+
+#~ msgid "Select Home Folder"
+#~ msgstr "Dibabit renkell ar gêr"
+
+#~ msgid "Tabbed Browsing"
+#~ msgstr "Furchal gant bevennigoù"
+
+#~ msgid "Open new windows:"
+#~ msgstr "Digeriñ prenester nevez :"
+
+#~ msgid "Use global"
+#~ msgstr "Implij an hini hollek"
+
+#~ msgid "Use setting from global policy."
+#~ msgstr "Implijit dibarzh ar politikerez hollek."
+
+#~ msgid "Allow"
+#~ msgstr "Aotreañ"
+
+#~ msgid "Deny"
+#~ msgstr "Nac'h"
+
+#~ msgid "Smart"
+#~ msgstr "Poellek"
+
+#~ msgid "Resize window:"
+#~ msgstr "Adventañ ar prenestr :"
+
+#~ msgid "Ignore"
+#~ msgstr "Tremen e-biou"
+
+#~ msgid "Move window:"
+#~ msgstr "Dilec'hiañ ar prenestr :"
+
+#~ msgid "Focus window:"
+#~ msgstr "Focus ouzh ar brenestr :"
+
+#~ msgid "kcmkonqhtml"
+#~ msgstr "kcmkonqhtml"
+
+#~ msgid "Konqueror Browsing Control Module"
+#~ msgstr "Mollad kren furchal gant Konqueror"
+
+#~ msgid "(c) 1999 - 2001 The Konqueror Developers"
+#~ msgstr "(c) 1999 - 2001 Diorroerien Konqueror"
+
+#~ msgid "&Java"
+#~ msgstr "&Java"
+
+#~ msgid "Java&Script"
+#~ msgstr "Java&Script"
+
+#~ msgid "Enable filters"
+#~ msgstr "Bevaat ar siloù"
+
+#, fuzzy
+#~ msgid "Hide filtered images"
+#~ msgstr "Kuzhat ment ar restr"
+
+#~ msgid "Insert"
+#~ msgstr "Enlakaat"
+
+#~ msgid "Update"
+#~ msgstr "Bremañaat"
+
+#~ msgid "Import..."
+#~ msgstr "Enporzh ..."
+
+#~ msgid "Export..."
+#~ msgstr "Ezporzh ..."
+
+#~ msgid "Font Si&ze"
+#~ msgstr "&Ment an nodrezh"
+
+#, fuzzy
+#~ msgid "This is the relative font size Konqueror uses to display web sites."
+#~ msgstr "Setu an nodrezh implij da ziskouez skrid er prenestr Konqueror."
+
+#~ msgid "M&inimum font size:"
+#~ msgstr "Ment &izelañ an nodrezh :"
+
+#~ msgid "&Medium font size:"
+#~ msgstr "Ment &kreiz an nodrezh :"
+
+#~ msgid "S&tandard font:"
+#~ msgstr "Nodrezh s&tandard :"
+
+#~ msgid "This is the font used to display normal text in a web page."
+#~ msgstr "Setu an nodrezh implij da ziskouez skrid boas er bajenn gwiad."
+
+#~ msgid "&Fixed font:"
+#~ msgstr "Nodrezh &ingal :"
+
+#, fuzzy
+#~ msgid ""
+#~ "This is the font used to display fixed-width (i.e. non-proportional) text."
+#~ msgstr "Setu an nodrezh implij da ziskouez skrid er prenestr Konqueror."
+
+#~ msgid "S&erif font:"
+#~ msgstr "Nodrezh S&erif :"
+
+#, fuzzy
+#~ msgid "This is the font used to display text that is marked up as serif."
+#~ msgstr "Setu an nodrezh implij da ziskouez skrid er prenestr Konqueror."
+
+#~ msgid "Sa&ns serif font:"
+#~ msgstr "Nodrezh sa&ns serif :"
+
+#, fuzzy
+#~ msgid ""
+#~ "This is the font used to display text that is marked up as sans-serif."
+#~ msgstr "Setu an nodrezh implij da ziskouez skrid er prenestr Konqueror."
+
+#, fuzzy
+#~ msgid "This is the font used to display text that is marked up as italic."
+#~ msgstr "Setu an nodrezh implij da ziskouez skrid er prenestr Konqueror."
+
+#, fuzzy
+#~ msgid ""
+#~ "This is the font used to display text that is marked up as a fantasy font."
+#~ msgstr "Setu an nodrezh implij da ziskouez skrid er prenestr Konqueror."
+
+#~ msgid "Default encoding:"
+#~ msgstr "Kodadur dre ziouer :"
+
+#~ msgid "Use Language Encoding"
+#~ msgstr "Implijit kodadur ar yezh"
+
+#~ msgid "Boo&kmarks"
+#~ msgstr "&Sinedoù"
+
+#, fuzzy
+#~ msgid "Form Com&pletion"
+#~ msgstr "Klokadur URL"
+
+#~ msgid "Mouse Beha&vior"
+#~ msgstr "Emzalc'h al logodenn"
+
+#~ msgid "Chan&ge cursor over links"
+#~ msgstr "Ke&mmañ ar reti war al liammoù ..."
+
+#~ msgid "A&utomatically load images"
+#~ msgstr "Kargañ ar skeudennoù ent e&mgefreek"
+
+#~ msgid "Und&erline links:"
+#~ msgstr "Isl&inañ an ereoù :"
+
+#~ msgctxt "underline"
+#~ msgid "Enabled"
+#~ msgstr "Bev"
+
+#~ msgctxt "underline"
+#~ msgid "Disabled"
+#~ msgstr "Dizoberiet"
+
+#~ msgid "A&nimations:"
+#~ msgstr "B&uhezadurioù :"
+
+#~ msgctxt "animations"
+#~ msgid "Enabled"
+#~ msgstr "Bev"
+
+#~ msgctxt "animations"
+#~ msgid "Disabled"
+#~ msgstr "Marv"
+
+#, fuzzy
+#~ msgid "Show Only Once"
+#~ msgstr "Diskouez ar perc'henn"
+
+#~ msgid "&Host or domain name:"
+#~ msgstr "Anv an &ostiz pe anv an domani :"
+
+#~ msgid "You must first enter a domain name."
+#~ msgstr "Ret eo deoc'h reiñ anv un domani da gentañ."
+
+#~ msgid "Ena&ble JavaScript globally"
+#~ msgstr "Be&vaat JavaScript evit an holl re"
+
+#~ msgid "Report &errors"
+#~ msgstr "Reiñ da c'houzout ar fazioù ..."
+
+#~ msgid "Enable debu&gger"
+#~ msgstr "Bevaat an diz&raener"
+
+#~ msgid "Global JavaScript Policies"
+#~ msgstr "Politikerez hollek war JavaScript"
+
+#~ msgid "New JavaScript Policy"
+#~ msgstr "Politikerez nevez evit JavaScript"
+
+#~ msgid "Change JavaScript Policy"
+#~ msgstr "Kemmañ politikerez JavaScript"
+
+#~ msgid "JavaScript policy:"
+#~ msgstr "Politikerez JavaScript :"
+
+#~ msgid "Enable Ja&va globally"
+#~ msgstr "Bevaat Ja&va evit an holl re"
+
+#~ msgid "&Use security manager"
+#~ msgstr "&Implijout ar merour surantez"
+
+#~ msgid "Use &KIO"
+#~ msgstr "Implijit &KIO"
+
+#~ msgid "App&let server timeout:"
+#~ msgstr "Amzer-hont servijer an arloadigoù :"
+
+#~ msgid "Additional Java a&rguments:"
+#~ msgstr "A&rventennoù Java ouzhpenn :"
+
+#~ msgid "New Java Policy"
+#~ msgstr "Politikerez nevez evit Java"
+
+#~ msgid "Change Java Policy"
+#~ msgstr "Kemmañ politikerez Java"
+
+#~ msgid "&Java policy:"
+#~ msgstr "Politikerez &Java :"
+
+#~ msgid "Select a Java policy for the above host or domain."
+#~ msgstr "Dibabit ur volitikerez Java evit an ostiz pe an domani."
+
+#~ msgid "&Filters"
+#~ msgstr "&Siloù"
+
+#~ msgid "System"
+#~ msgstr "Reizhiad"
+
+#~ msgid "Remove Folder Properties"
+#~ msgstr "Lemel dibarzhoù ar renkell"
+
+#~ msgid "Create Folder..."
+#~ msgstr "Krouiñ ur renkell ..."
+
+#~ msgid "&Delete"
+#~ msgstr "&Distruj"
+
+#~ msgid "&Rename"
+#~ msgstr "&Adenvel"
+
+#~ msgid "N&umber of desktops: "
+#~ msgstr "N&iver a burevoù : "
+
+#~ msgid "Desktop &Names"
+#~ msgstr "&Anv ar burevioù"
+
+#~ msgid "Desktop %1:"
+#~ msgstr "Burev %1 :"
+
+#~ msgid "Here you can enter the name for desktop %1"
+#~ msgstr "Amañ e c'hellit reiñ anv ar burev %1"
+
+#~ msgid "Desktop %1"
+#~ msgstr "Burev %1"
+
+#, fuzzy
+#~ msgid "Rename icons in&line"
+#~ msgstr "&Adenvel ar profil"
+
+#~ msgid "&Standard font:"
+#~ msgstr "&Nodrezh reoliek :"
+
+#~ msgid "Font si&ze:"
+#~ msgstr "&Ment an nodrezh :"
+
+#~ msgid "This is the font size used to display text in Konqueror windows."
+#~ msgstr ""
+#~ "Setu ment an nodrezh implij da ziskouez skrid er prenestr Konqueror."
+
+#~ msgid "Normal te&xt color:"
+#~ msgstr "Liv ar s&krid reoliek :"
+
+#, fuzzy
+#~ msgid "This is the color used to display text in Konqueror windows."
+#~ msgstr "Setu an nodrezh implij da ziskouez skrid er prenestr Konqueror."
+
+#~ msgid "&Text background color:"
+#~ msgstr "Liv drekleur ar skrid :"
+
+#~ msgid "H&eight for icon text:"
+#~ msgstr "Uh&eler skrid an arlun :"
+
+#~ msgid "&Width for icon text:"
+#~ msgstr "&Ledander skrid an arlunioù :"
+
+#~ msgid "&Underline filenames"
+#~ msgstr "&Islinañ anvioù ar restroù"
+
+#~ msgid "Display file sizes in b&ytes"
+#~ msgstr "Diskouez mentoù ar restroù gant okted"
+
+#~ msgid " line"
+#~ msgid_plural " lines"
+#~ msgstr[0] " mun"
+
+#~ msgid " pixel"
+#~ msgid_plural " pixels"
+#~ msgstr[0] " piksel"
+
+#~ msgid ""
+#~ "<h1>Appearance</h1> You can configure how Konqueror looks as a file "
+#~ "manager here."
+#~ msgstr ""
+#~ "<h1>Neuziadur</h1> Amañ e c'hellit kefluniañ penaos Konqueror az zo "
+#~ "gwellet evel a merour restroù."
+
+#~ msgid "&Appearance"
+#~ msgstr "&Neuziadur"
+
+#~ msgid "MS Windows encoding:"
+#~ msgstr "Kodadur MS Windows :"
+
+#~ msgid "&Show network operations in a single window"
+#~ msgstr "&Diskouez an oberoù rouedad e-barzh ur prenestr e-unan"
+
+#~ msgid "Preview In"
+#~ msgstr "Rakgwel e-barzh"
+
+#~ msgid "&Open Location..."
+#~ msgstr "&Digeriñ ul lec'hiadur ..."
+
+#~ msgid "Animated Logo"
+#~ msgstr "Logo buhezet"
+
+#~ msgid "Selection"
+#~ msgstr "Diuzadenn"
+
+#~ msgid "Icon Size"
+#~ msgstr "Ment an arlun"
+
+#~ msgid "Show Details"
+#~ msgstr "Diskouez ar munudoù"
+
+#~ msgid "MimeType"
+#~ msgstr "RizhMime"
+
+#~ msgid "Size"
+#~ msgstr "Ment"
+
+#~ msgid "Modified"
+#~ msgstr "Kemmet"
+
+#~ msgid "Accessed"
+#~ msgstr "Diwezhañ"
+
+#~ msgid "Created"
+#~ msgstr "Krouet"
+
+#~ msgid "Owner"
+#~ msgstr "Perc'henn"
+
+#~ msgid "Group"
+#~ msgstr "Strollad"
+
+#~ msgid "Link"
+#~ msgstr "Liamm"
+
+#~ msgid "URL"
+#~ msgstr "URL"
+
+#~ msgid "File Type"
+#~ msgstr "Rizh ar restr"
+
+#~ msgid "Select files:"
+#~ msgstr "Dibabit restroù :"
+
+#~ msgid "Unselect files:"
+#~ msgstr "Andibab an holl restroù :"
+
+#~ msgid "Show &File Type"
+#~ msgstr "Diskouez &seurt ar restr"
+
+#~ msgid "Hide &File Type"
+#~ msgstr "Kuzhat &seurt ar restr"
+
+#~ msgid "Show MimeType"
+#~ msgstr "Diskouez ar seurt Mime"
+
+#~ msgid "Show &Link Destination"
+#~ msgstr "Diskouez al &liamm dehaezadur"
+
+#~ msgid "Show Filesize"
+#~ msgstr "Diskouez ment ar restr"
+
+#~ msgid "Hide Filesize"
+#~ msgstr "Kuzhat ment ar restr"
+
+#~ msgid "Show Owner"
+#~ msgstr "Diskouez ar perc'henn"
+
+#~ msgid "Hide Owner"
+#~ msgstr "Kuzhat ar perc'henn"
+
+#~ msgid "Show Group"
+#~ msgstr "Diskouez ar strollad"
+
+#~ msgid "Hide Group"
+#~ msgstr "Kuzhat ar strollad"
+
+#~ msgid "Show Permissions"
+#~ msgstr "Diskouez an aotroù"
+
+#~ msgid "Hide Permissions"
+#~ msgstr "Kuzhat an aotreoù"
+
+#~ msgid "Se&lect..."
+#~ msgstr "&Diuzit ..."
+
+#~ msgid "Unselect..."
+#~ msgstr "Andibab ..."
+
+#~ msgid "Unselect All"
+#~ msgstr "Andibab an holl re"
+
+#~ msgid "&Invert Selection"
+#~ msgstr "&Eilpennañ an diuz"
+
+#~ msgid "Show &Hidden Files"
+#~ msgstr "Diskouez ar restroù &kuzhet"
+
+#~ msgid "Name"
+#~ msgstr "Anv"
+
+#~ msgid "Filename"
+#~ msgstr "Anv ar restr"
+
+#~ msgid "&Preview"
+#~ msgstr "&Rakgwel"
+
+#~ msgid "Enable Previews"
+#~ msgstr "Bevaat ar rakgweloù"
+
+#~ msgid "Disable Previews"
+#~ msgstr "Marvaat ar rakgweloù"
+
+#~ msgid "By Name (Case Sensitive)"
+#~ msgstr "Evit Anv (Evezhiek ouzh ar c'hef)"
+
+#~ msgid "By Name (Case Insensitive)"
+#~ msgstr "Evit Anv (dievezhiek ouzh ar c'hef)"
+
+#~ msgid "By Size"
+#~ msgstr "Evit Ment"
+
+#~ msgid "By Type"
+#~ msgstr "Gant ar seurt"
+
+#~ msgid "By Date"
+#~ msgstr "Evit Deiziad"
+
+#~ msgid "Folders First"
+#~ msgstr "Renkelloù da gentañ"
+
+#~ msgid "Selects all items"
+#~ msgstr "Dibab a ra pep tra"
+
+#~ msgid "Unselects all selected items"
+#~ msgstr "Andibab an holl draoù dibabet"
+
+#~ msgid "Treeview Toolbar"
+#~ msgstr "Barrenn ostilhoù ar gwel gwezenn"
+
+#~ msgid "&Icon Size"
+#~ msgstr "Ment an &arlun"
+
+#~ msgid "S&ort"
+#~ msgstr "&Rummañ"
+
+#~ msgid "Iconview Toolbar"
+#~ msgstr "Barrenn ostilhoù gwel an arlun"
+
+#~ msgid "Iconview Extra Toolbar"
+#~ msgstr "Barrenn ostilhoù ouzhpenn gwel an arlun"
+
+#, fuzzy
+#~ msgid "Rename icons inline"
+#~ msgstr "&Adenvel ar profil"
+
+#~ msgid "Tools"
+#~ msgstr "Ostilhoù"
+
+#~ msgid "Statusbar"
+#~ msgstr "Barren a stad"
+
+#~ msgid "C&hange URL"
+#~ msgstr "Kemmañ an &URL"
+
+#~ msgid "&New Bookmark"
+#~ msgstr "Sined &nevez"
+
+#~ msgid "&Insert Separator"
+#~ msgstr "&Enlakaat un troc'h"
+
+#~ msgid "Show in T&oolbar"
+#~ msgstr "Diskouez e barrenn an ostilhoù"
+
+#~ msgid "Hide in T&oolbar"
+#~ msgstr "Kuzhat e barrenn an &ostilhoù"
+
+#~ msgid "&Expand All Folders"
+#~ msgstr "&Digeriñ an holl renkelloù"
+
+#~ msgid "Collapse &All Folders"
+#~ msgstr "Serriñ an &holl renkelloù"
+
+#~ msgid "&Open in Konqueror"
+#~ msgstr "&Digeriñ er Konqueror"
+
+#~ msgid "Check &Status"
+#~ msgstr "Gwiriekaat ar &stad"
+
+#~ msgid "Import &Netscape Bookmarks..."
+#~ msgstr "Enporzh ar sinedoù &Netscape ..."
+
+#~ msgid "Import &Opera Bookmarks..."
+#~ msgstr "Enporzh ar sinedoù &Opera ..."
+
+#~ msgid "Import &Galeon Bookmarks..."
+#~ msgstr "Enporzh ar sinedoù &Galeon ..."
+
+#~ msgid "Import &KDE2/KDE3 Bookmarks..."
+#~ msgstr "Enporzh ar sinedoù &KDE2/KDE3 ..."
+
+#~ msgid "Import &IE Bookmarks..."
+#~ msgstr "Enporzh ar sinedoù &IE ..."
+
+#~ msgid "Import &Mozilla Bookmarks..."
+#~ msgstr "Enporzh ar sinedoù &Mozilla ..."
+
+#~ msgid "Export to &Netscape Bookmarks"
+#~ msgstr "Ezporzh e sinedoù &Netscape ..."
+
+#~ msgid "Export to &Opera Bookmarks..."
+#~ msgstr "Ezporzh e sinedoù &Opera ..."
+
+#~ msgid "Export to &HTML Bookmarks..."
+#~ msgstr "Ezporzh e sinedoù &HTML ..."
+
+#~ msgid "Export to &IE Bookmarks..."
+#~ msgstr "Ezporzh e sinedoù &IE ..."
+
+#~ msgid "Export to &Mozilla Bookmarks..."
+#~ msgstr "Ezporzh e sinedoù &Mozilla ..."
+
+#~ msgid "Cut Items"
+#~ msgstr "Troc'hañ an traoù"
+
+#~ msgid "Create New Bookmark Folder"
+#~ msgstr "Krouiñ ur renkell &nevez ar sinedoù"
+
+#~ msgid "New folder:"
+#~ msgstr "Renkell nevez :"
+
+#~ msgid "Delete Items"
+#~ msgstr "Lemel an traoù"
+
+#~ msgid "Icon"
+#~ msgstr "Arlun"
+
+#~ msgid "Comment:"
+#~ msgstr "Askelenn :"
+
+#~ msgid "Insert Separator"
+#~ msgstr "Enlakaat un troc'h"
+
+#~ msgid "Create Folder"
+#~ msgstr "Krouiñ ur renkell"
+
+#~ msgid "Copy %1"
+#~ msgstr "Eilañ %1"
+
+#~ msgid "Create Bookmark"
+#~ msgstr "Krouiñ ur sined"
+
+#~ msgid "Renaming"
+#~ msgstr "Emaon oc'h adenvel"
+
+#~ msgid "Show"
+#~ msgstr "Diskouez"
+
+#~ msgid "Hide"
+#~ msgstr "Kuzhat"
+
+#~ msgid "Move Items"
+#~ msgstr "Fiñval an traoù"
+
+#~ msgid "No favicon found"
+#~ msgstr "Favicon ebet"
+
+#~ msgid "Updating favicon..."
+#~ msgstr "Emaon o bremañaat ar favicon ..."
+
+#~ msgid "Import %1 Bookmarks"
+#~ msgstr "Enporzh sinedoù %1"
+
+#~ msgid "%1 Bookmarks"
+#~ msgstr "Sinedoù %1"
+
+#~ msgid "%1 Import"
+#~ msgstr "Enporzh %1"
+
+#~ msgid "*.xml|KDE Bookmark Files (*.xml)"
+#~ msgstr "*.xml|Restroù sined KDE (*.xml)"
+
+#~ msgid "KBookmarkMerger"
+#~ msgstr "KBookmarkMerger"
+
+#~ msgid "Copyright © 2005 Frerich Raabe"
+#~ msgstr "Copyright © 2005 Frerich Raabe"
+
+#~ msgid "Original author"
+#~ msgstr "Oberour kentañ"
+
+#~ msgid "Comment"
+#~ msgstr "Askelenn"
+
+#~ msgid "Status"
+#~ msgstr "Stad"
+
+#~ msgid "Folder"
+#~ msgstr "Renkell"
+
+#~ msgid "Empty Folder"
+#~ msgstr "Renkell goullo"
+
+#~ msgid "File to edit"
+#~ msgstr "Restr da aozañ"
+
+#~ msgid "Bookmark Editor"
+#~ msgstr "Aozer ar sinedoù"
+
+#~ msgid "Konqueror Bookmarks Editor"
+#~ msgstr "Aozer ar sinedoù Konqueror"
+
+#~ msgid "Initial author"
+#~ msgstr "Oberour kentañ"
+
+#~ msgid "Author"
+#~ msgstr "Oberour"
+
+#~ msgid "Checking..."
+#~ msgstr "Emaon o wiriekaat ..."
+
+#~ msgid "Error "
+#~ msgstr "Fazi "
+
+#~ msgid "Ok"
+#~ msgstr "Mat eo"
+
+#~ msgid "Se&arch:"
+#~ msgstr "&Klask :"
+
+#~ msgid "Clear Search"
+#~ msgstr "Goullonderiñ ar glask"

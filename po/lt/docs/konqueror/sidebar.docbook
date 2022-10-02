@@ -1,0 +1,369 @@
+<chapter id="sidebar">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>Tomas</firstname
+><surname
+>Straupis</surname
+><affiliation
+><address
+><email
+>tomasstraupis@gmail.com</email
+></address
+></affiliation
+><contrib
+>Vertė</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2010-02-26</date>
+<releaseinfo
+>&kde; 4.4</releaseinfo>
+</chapterinfo>
+
+<title
+>Šoninė juosta</title>
+
+<para
+>Šoninė juosta matoma kaip atskiras rodinys, esantis kairėje &konqueror; lango pusėje. Ją galimą įjungti per meniu <menuchoice
+><guimenu
+>Nustatymai</guimenu
+><guimenuitem
+>Rodyti: šoninė juosta</guimenuitem
+></menuchoice
+> arba įjungti ar išjungti spaudžiant mygtuką <keycap
+>F9</keycap
+>.</para>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="dirtree.png"/></imageobject>
+<textobject>
+<phrase
+>Su šonine juosta</phrase
+>  
+</textobject>
+</mediaobject>
+
+<para
+>Joje yra keletas kortelių. Spauskite <mousebutton
+>kairįjį</mousebutton
+> pelės mygtuką norėdami peržiūrėti atitinkamos kortelės turinį. Spaudžiant <mousebutton
+>kairįjį</mousebutton
+> mygtuką ant jau matomo puslapio sumažins šoninę juosta tiek, kad būtų matomi tik kortelių ženkliukai.</para>
+<variablelist>
+
+<varlistentry>
+<term
+><guilabel
+>Žymelės</guilabel
+></term>
+<listitem
+><para
+>Šiame puslapyje rodomos į medžio formos hierarchiją sudėliotos žymelės. <mousebutton
+>Kairiu</mousebutton
+> pelės mygtuko paspaudimu pažymėtas elementas atidaromas pagrindiniame lange.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Istorija</guilabel
+></term>
+<listitem
+><para
+>Šiame puslapyje medžio formos hierarchija rodoma jūsų naršymo istorija. <mousebutton
+>Kairiu</mousebutton
+> pelės spragtelėjimu galite atverti elementą pagrindiniame lange. Spragtelėje <mousebutton
+>dešiniu</mousebutton
+> mygtuku ir kontekstiniame meniu parinkę <guimenuitem
+>Atverti naujame lange</guimenuitem
+> galite atverti elementą naujame &konqueror; lange.</para>
+<para
+>Pašalinti elementą iš istorijos galite spragtelėję <mousebutton
+>dešiniu</mousebutton
+> mygtuku ir pasirinkę <guimenuitem
+>Pašalinti įrašą</guimenuitem
+>. Parinkę <guimenuitem
+>Išvalyti istoriją</guimenuitem
+> panaikinsite absoliučiai visus istorijos įrašus.</para>
+<para
+>Kontekstiniame meniu, kuris rodomas spragtelėjus <mousebutton
+>dešiniuoju</mousebutton
+> mygtuku, galite pasirinkti, ar istorinius įrašus rikiuoti pagal pavadinimą, ar pagal datą.</para>
+<para
+>Tame pačiame kontekstiniame meniu parinkę <guimenuitem
+>Pasirinkimai...</guimenuitem
+> pasieksite <guilabel
+>Istorijos šalutinės juostos</guilabel
+> valdymo modulį. Čia galėsite nurodyti maksimalų istorijos įrašų skaičių, nurodyti periodą, po kurio įrašai automatiškai ištrinami iš istorijos. Taipogi galite parinkti skirtingus šriftus naujoms ir senoms nuorodoms. Parinktis <guilabel
+>Detalios įrankių etiketės</guilabel
+> nurodo, kiek informacijos rodoma užvedus pelės žymeklį virš įrašo istorijoje.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Namų aplankas</guilabel
+></term>
+<listitem
+><para
+>Šiame puslapyje medžio principu rodomi jūsų namų aplanko poaplankiai. Pastebėtina, kad čia nerodomi <quote
+>paslėpti</quote
+> aplankai (tai aplankai, kurių pavadinimas prasideda tašku). <mousebutton
+>Kairiu</mousebutton
+> spragtelėjimu galite atverti elementą pagrindiniame lange. <mousebutton
+>Dešiniuoju</mousebutton
+> spragtelėjimu atversite kontekstinį meniu, kurio pagalba galėsite atverti aplanką naujame lange arba naujoje kortelėje. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Tinklas</guilabel
+></term>
+<listitem
+><para
+>Šiame puslapyje turi būti rodomos svarbios jūsų tinklo jungtys, nors čia gali būti rodomi ir jūsų vietiniai aplankai. Vėlgi jūs <mousebutton
+>kairiu</mousebutton
+> spragtelėjimu galite atverti elementą pagrindiniame lange, o <mousebutton
+>dešiniu</mousebutton
+> – atversite meniu su platesniu pasirinkimų sąrašu.</para>
+<para
+><guilabel
+>Tinklo</guilabel
+> puslapyje rodomi aplankai laikomi aplanke <filename class="directory"
+> ~/.kde/share/apps/konqsidebartng/virtual_folders/remote/</filename
+>. Čia galite sukurti naujus elementus lygiai taip pat, kaip kuriate paprastus poaplankius. Šop aplanko elementai laikomi kaip <literal role="extension"
+>.desktop</literal
+> failai ir gali būti sukurti &konqueror; meniu <guimenu
+>Keisti</guimenu
+> punktu  <menuchoice
+><guisubmenu
+>Sukurti naują</guisubmenu
+><guimenuitem
+>Nuorodą į vietą (URL)...</guimenuitem
+></menuchoice
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Šakninis aplankas</guilabel
+></term>
+<listitem
+><para
+><guilabel
+>Šakninio aplanko</guilabel
+> kelias yra <filename class="directory"
+>/</filename
+>, kuris yra pradinis jūsų vietinės sistemos aplankas. Išskleidę aplanką <quote
+>Root</quote
+>, pamatysite kitą aplanką, kurio pavadinimas <filename class="directory"
+>root</filename
+>. Tai sistemos administratoriaus (super naudotojo) aplnkas – jo namų aplankas. Čia taip pat rasite aplanką <filename class="directory"
+>home</filename
+>, kurieme turėtumėte rasti ir jūsų <quote
+>Namų</quote
+> aplanką.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Paslaugos</guilabel
+></term>
+<listitem
+><para
+>Šio puslapio pagalba gaunate greitą prieigą prie sekančių paslaugų: </para>
+<para
+><guilabel
+>Programos</guilabel
+>, <guilabel
+>Audio CD naršyklė</guilabel
+> ir <guilabel
+>Šriftai</guilabel
+>.</para>
+<!-- not in 4.4
+<para
+><guilabel
+>Devices</guilabel
+>. This shows your hard disc 
+partitions, floppy and &CD-ROM;. <mousebutton
+>Left</mousebutton
+> click on 
+a device or partition name to mount it and display its contents in the main 
+view.  A mounted device or partition can be unmounted by <mousebutton
+>right
+</mousebutton
+> clicking on the device name and selecting <guimenuitem
+>Unmount
+</guimenuitem
+> from the pop up menu.
+</para>
+<para
+>The <guilabel
+>LAN Browser</guilabel
+> allows you to browse other 
+machines connected to your Local Area Network.</para>
+<para
+>The <guilabel
+>Print System Browser</guilabel
+> tree gives you quick 
+access to &kde;'s print manager <application
+>Kprinter</application
+>.</para>
+-->
+</listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Šalutinės juostą galima konfigūruoti spragtelėjus <mousebutton
+>dešiniu</mousebutton
+> mygtuku ant tuščios zonos po apatine kortele arba spragtelėjus <mousebutton
+>kairiu mygtuku</mousebutton
+> ant <guilabel
+>Konfigūracdijos mygtuko</guilabel
+> ženkliuko (jis įjungiamas per kontekstinį meniu). Tai padarius pamatysite meniu su sekančiomis parinktimis:</para>
+<variablelist>
+
+<varlistentry>
+<term
+><guisubmenu
+>Pridėti naują</guisubmenu
+></term>
+<listitem
+><para
+>Ši parinktis leidžia šalutinėje juostoje pridėti naują kortelę. Naujoje kortelėje gali būti įvairūs šalutinės juostos moduliai arba naujas <guimenuitem
+>aplankas</guimenuitem
+>. Paskutinė šio meniu parinktis leidžia atstatyti standartinius sistemos nustatymus.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Keli rodiniai</guimenuitem
+></term>
+<listitem
+><para
+>Įjungus šią parinktį šalutinė juosta padalinama taip, kad vienu metu būtų matomi du kortelių puslapiai.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Rodyti korteles kairėje</guimenuitem
+>, <guimenuitem
+>Rodyti korteles dešinėje</guimenuitem
+></term>
+<listitem
+><para
+>Šia parinktimi nurodote, kurioje šalutinės juostos pusėje turi būti rodomos kortelės.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Rodyti konfigūracijos mygtuką</guimenuitem
+></term>
+<listitem
+><para
+>Čia nurodota, ar reikia rodyti <guilabel
+>Konfigūracijos mygtuko</guilabel
+> ženkliuką.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+><mousebutton
+>Dešinys</mousebutton
+> spragtelėjimas ant kortelių ženkliukų atveria šias parinktis:</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guimenuitem
+>Nustatyti vardą</guimenuitem
+></term>
+<listitem
+><para
+>Čia galite pakeisti puslapio pavadinimą</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Nustatyti nuorodą</guimenuitem
+></term>
+<listitem
+><para
+>Čia galite pakeisti puslapyje rodomo aplanko nuorodą (kelią).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Nustatyti ženkliuką</guimenuitem
+></term>
+<listitem
+><para
+>Kortelės ženkliuko pakeitimas.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Pašalinti</guimenuitem
+></term>
+<listitem
+><para
+>Pašalinti kortelę iš šalutinės juostos.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Konfigūruoti šalutinę juostą</guimenuitem
+></term>
+<listitem
+><para
+>Paskutinis elementas siūlo šalutinės juostos konfigūravimo submeniu, aprašytą aukščiau.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

@@ -1,0 +1,232 @@
+# translation of kcmperformance.po to Khmer
+# Khoem Sokhem <khoemsokhem@khmeros.info>, 2005, 2007, 2008, 2010.
+# Auk Piseth <piseth_dv@khmeros.info>, 2007.
+# Sokun <sokun_poch@khmeros.info>, 2007.
+# Eng Vannak <evannak@khmeros.info>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmperformance\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-21 00:16+0000\n"
+"PO-Revision-Date: 2010-06-08 14:00+0700\n"
+"Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
+"Language-Team: Khmer <support@khmeros.info>\n"
+"Language: km\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: kcmperformance.cpp:28
+#, kde-format
+msgid ""
+"<h1>KDE Performance</h1> You can configure settings that improve KDE "
+"performance here."
+msgstr ""
+"<h1>ដំណើរ​ការ​របស់​ KDE</h1> អ្នក​អាច​កំណត់​រចនាសម្ព័ន្ធ​ការ​កំណត់​ដែល​ធ្វើ​ឲ្យ​ដំណើរ​ការ​របស់ KDE កាន់​តែ​"
+"ប្រសើរ​នៅ​ទីនេះ ។​"
+
+#: kcmperformance.cpp:35
+#, kde-format
+msgid "Konqueror"
+msgstr "Konqueror"
+
+#: kcmperformance.cpp:38
+#, kde-format
+msgid "System"
+msgstr "ប្រព័ន្ធ"
+
+#: kcmperformance.cpp:63
+#, kde-format
+msgid ""
+"<h1>Konqueror Performance</h1> You can configure several settings that "
+"improve Konqueror performance here. These include options for reusing "
+"already running instances and for keeping instances preloaded."
+msgstr ""
+"<h1>ដំណើរ​ការរបស់ Konqueror</h1> អ្នក​អាច​កំណត់​រចនាសម្ព័ន្ធ​ការ​កំណត់​ជាច្រើន​ដែល​ធ្វើ​ឲ្យ​ដំណើរ​ការ​"
+"របស់ Konqueror កាន់​តែ​ប្រសើរ​នៅ​ទីនេះ ។ ទាំងនេះ​រួម​បញ្ចូល​ជម្រើស​សម្រាប់​ប្រើ​វត្ថុ​ដែល​រត់​រួច​ឡើង​វិញ និង​"
+"សម្រាប់​រក្សា​ទុក​វត្ថុ​ដែល​បាន​បើក​ជាមុន ។​"
+
+#: konqueror.cpp:24
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>If enabled, an instance of Konqueror will be preloaded after the "
+#| "ordinary KDE startup sequence.</p><p>This will make the first Konqueror "
+#| "window open faster, but at the expense of longer KDE startup times (but "
+#| "you will be able to work while it is loading, so you may not even notice "
+#| "that it is taking longer).</p>"
+msgid ""
+"<p>If enabled, an instance of Konqueror will be preloaded after the ordinary "
+"Plasma startup sequence.</p><p>This will make the first Konqueror window "
+"open faster, but at the expense of longer Plasma startup times (but you will "
+"be able to work while it is loading, so you may not even notice that it is "
+"taking longer).</p>"
+msgstr ""
+"<p>​បើ​អនុញ្ញាត បង្អួច​របស់ Konqueror នឹង​ត្រូវ​បាន​ផ្ទុក​ជាមុន បន្ទាប់​ពី​លំដាប់​ចាប់ផ្ដើម KDE ធម្មតា ។</"
+"p><p>ការ​នេះ​នឹង​ធ្វើ​ឲ្យ​បង្អួច Konqueror ដំបូង​គេ​បើក​យ៉ាង​លឿន ប៉ុន្ដែ​ចំណាយ​ពេល​វេលា​យ៉ាង​ច្រើន នៅ​ពេល​"
+"ចាប់​ផ្ដើម KDE (ប៉ុន្ដែ អ្នក​នឹង​អាច​ធ្វើ​ការ​ខណៈ​ពេល​វា​កំពុង​ផ្ទុក ដូច្នេះ អ្នក​មិន​អាច​សម្គាល់​ថា វា​នឹង​ចំណាយ​"
+"ពេល​យូរ​នោះ​ទេ) ។</p>"
+
+#: konqueror.cpp:30
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>If enabled, KDE will always try to have one preloaded Konqueror "
+#| "instance ready; preloading a new instance in the background whenever "
+#| "there is not one available, so that windows will always open quickly.</"
+#| "p><p><b>Warning:</b> In some cases, it is actually possible that this "
+#| "will reduce perceived performance.</p>"
+msgid ""
+"<p>If enabled, Konqueror will always try to have one preloaded instance "
+"ready; preloading a new instance in the background whenever there is not one "
+"available, so that windows will always open quickly.</p><p><b>Warning:</b> "
+"In some cases, it is actually possible that this will reduce perceived "
+"performance.</p>"
+msgstr ""
+"<p>បើ​អនុញ្ញាត KDE នឹង​ព្យាយាម​​ធ្វើ​ឲ្យ​វត្ថុ Konqueror ដែល​បាន​ផ្ទុក​ជាមុន​មួយ​រួចរាល់​ ការ​ផ្ទុក​បង្អួច​ថ្មី​"
+"មួយ​ក្នុង​ផ្ទៃ​ខាងក្រោយ​ពេល​គ្មាន​បង្អួច​​មួយ​សោះ ដូច្នេះ​បង្អួច​នឹង​បើក​​យ៉ាង​លឿន ។</p><p><b>ការ​ព្រមាន ៖</"
+"b>​ក្នុង​ករណី​ខ្លះ វា​ពិ​ត​ជា​អាច​ធ្វើ​​ដូច​នេះ​បាន​ដើម្បី​កាត់​បន្ថយ​ដំណើរ​ការ​ដែល​បាន​សង្កេត ។</p>"
+
+#  i18n: file konqueror_ui.ui line 64
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
+#: konqueror_ui.ui:17
+#, kde-format
+msgid "Preloading"
+msgstr "ការ​ផ្ទុក​ជាមុន"
+
+#  i18n: file konqueror_ui.ui line 118
+#. i18n: ectx: property (text), widget (QCheckBox, cb_preload_on_startup)
+#: konqueror_ui.ui:23
+#, fuzzy, kde-format
+#| msgid "Preload an instance after KDE startup"
+msgid "Preload an instance after desktop startup"
+msgstr "ផ្ទុក​វត្ថុ​ជាមុន បន្ទាប់​ពី​ចាប់ផ្ដើម KDE"
+
+#  i18n: file konqueror_ui.ui line 126
+#. i18n: ectx: property (text), widget (QCheckBox, cb_always_have_preloaded)
+#: konqueror_ui.ui:30
+#, fuzzy, kde-format
+#| msgid "Always try to have at least one preloaded instance"
+msgid "Always try to have one preloaded instance"
+msgstr "ព្យាយាម​ផ្ទុក​វត្ថុ​​យ៉ាង​ហោច​ណាស់​មួយ​ជានិច្ច"
+
+#: system.cpp:22
+#, kde-format
+msgid ""
+"<p>During startup KDE needs to perform a check of its system configuration "
+"(mimetypes, installed applications, etc.), and in case the configuration has "
+"changed since the last time, the system configuration cache (KSyCoCa) needs "
+"to be updated.</p><p>This option delays the check, which avoid scanning all "
+"directories containing files describing the system during KDE startup, thus "
+"making KDE startup faster. However, in the rare case the system "
+"configuration has changed since the last time, and the change is needed "
+"before this delayed check takes place, this option may lead to various "
+"problems (missing applications in the K Menu, reports from applications "
+"about missing required mimetypes, etc.).</p><p>Changes of system "
+"configuration mostly happen by (un)installing applications. It is therefore "
+"recommended to turn this option temporarily off while (un)installing "
+"applications.</p>"
+msgstr ""
+"<p>ក្នុង​កំឡុង​ពេល​ចាប់ផ្តើម KDE ត្រូវ​ការ​ពិនិត្យ​ការ​កំណត់​រចនាសម្ព័ន្ធ​របស់​វា (ប្រភេទ mime កម្មវិធី​ដែល​"
+"បាន​ដំឡើង ។ល។) ហើយ​ក្នុង​ករណី​ដែល​ការ​កំណត់​រចនាសម្ព័ន្ធ​បាន​ផ្លាស់ប្ដូរ​តាំង​ពី​ពេល​ចុង​ក្រោយ ឃ្លាំង​សម្ងាត់​កំណត់​"
+"រចនាសម្ព័ន្ធ​ប្រព័ន្ធ (KSyCoCa) តម្រូវ​ឲ្យ​ធ្វើបច្ចុប្បន្នភាព ។</p><p>ជម្រើស​នេះ ពន្យារ​ពេល​ពិនិត្យ "
+"ដែល​ជៀស​វាង​ការ​ស្កេន​គ្រប់​ថត​ទាំងអស់ ​ដែល​មាន​ឯកសារ​ពិពណ៌នា​អំពី​ប្រព័ន្ធ​កំឡុង​ពេល​ចាប់​ផ្ដើម KDE ដូច្នេះ​ធ្វើ "
+"KDE ចាប់ផ្ដើម​កាន់​តែ​លឿន ។ ទោះជា​យ៉ាង​ណា​ក៏​ដោយ ក្នុង​ករណី​ដ៏​កម្រ ការ​កំណត់​រចនាសម្ព័ន្ធ​ប្រព័ន្ធ​បាន​"
+"ផ្លាស់ប្ដូរ​តាំង​ពី​ពេល​ចុង​ក្រោយ និង​ការ​ផ្លាស់ប្ដូរ​ត្រូវ​ការ​មុន​ការ​ពិនិត្យ​ដែល​បាន​ពន្យារ​ពេល​កើត​ឡើង ជម្រើស​នេះ​"
+"អាច​បណ្ដាល​ឲ្យ​មាន​បញ្ហា​ជា​ច្រើន (ការ​បាត់បង់​កម្មវិធី​ក្នុង​ម៉ឺនុយ K របាយការណ៍​ពី​កម្មវិធី​ដែល​បាត់​បង់​ប្រភេទ "
+"mime ដែល​ត្រូវ​ការ ។ល។) ។</p><p>ការ​ផ្លាស់ប្ដូរ​ការ​កំណត់​រចនាសម្ព័ន្ធ​ប្រព័ន្ធ​ភាគ​ច្រើន​កើត​ឡើង​ដោយ​ការ​"
+"ដំឡើង ឬ​លុប​កម្មវិធី ។ ដូច្នេះ វា​ត្រូវ​បាន​ផ្ដល់​អនុសាសន៍ ឲ្យ​បិទ​ជម្រើស​នេះ​ជា​បណ្ដោះ​អាសន្ន ខណៈ​ពេល​ដំឡើង ឬ​"
+"លុប​កម្មវិធី ។</p><p>ដូច្នេះ ការ​ប្រើ​ជម្រើស​នេះ​មិន​ត្រូវ​បាន​ផ្ដល់​អនុសាសន៍​ទេ ។ អ្នក​ដោះស្រាយ​ការ​គាំង​"
+"របស់ KDE នឹង​មិន​ព្រម​ផ្ដល់​ការ​តាម​ដាន​សម្រាប់​របាយការណ៍​កំហុស​នេះ ​ដែល​ជម្រើស​នេះ​បាន​បើក (អ្នក​នឹង​ត្រូវ​"
+"បង្កើត​វា​ម្ដង​ទៀត ​នៅ​ពេល​ដែល​ជម្រើស​នេះ​បាន​បិទ ឬ​បើក​នៅ​លើ​របៀប​អ្នក​បង្កើត​សម្រាប់​អ្នក​ដោះស្រាយ​បញ្ហា​"
+"នីមួយៗ) ។</p>"
+
+#  i18n: file system_ui.ui line 24
+#. i18n: ectx: property (title), widget (QGroupBox, gb_)
+#: system_ui.ui:8
+#, kde-format
+msgid "System Configuration"
+msgstr "ការ​កំណត់​រចនាសម្ព័ន្ធ​ប្រព័ន្ធ"
+
+#  i18n: file system_ui.ui line 35
+#. i18n: ectx: property (text), widget (QCheckBox, cb_disable_kbuildsycoca)
+#: system_ui.ui:14
+#, kde-format
+msgid "Disable &system configuration startup check"
+msgstr "មិន​អនុញ្ញាត​ការ​ពិនិត្យ​ពេល​ចាប់ផ្ដើម​ការ​កំណត់​រចនា​សម្ព័ន្ធ​ប្រព័ន្ធ"
+
+#  i18n: file system_ui.ui line 43
+#. i18n: ectx: property (text), widget (QLabel, label_kbuildsycoca)
+#: system_ui.ui:21
+#, kde-format
+msgid ""
+"This option may in rare cases lead to various problems. Consult the What's "
+"This (Shift+F1) help for details."
+msgstr ""
+"ជម្រើស​នេះ​ក្នុង​ករណី​កំរ​នាំ​ឲ្យ​មាន​បញ្ហា​ផ្សេងៗ ។ ពិគ្រោះ​ជាមួយ​ជំនួយ នេះ​ជា​អ្វី (ប្ដូរ (Shift+F1)) "
+"សម្រាប់​លម្អិត ។"
+
+#~ msgid ""
+#~ "<p>If non-zero, this option allows keeping Konqueror instances in memory "
+#~ "after all their windows have been closed, up to the number specified in "
+#~ "this option.</p><p>When a new Konqueror instance is needed, one of these "
+#~ "preloaded instances will be reused instead, improving responsiveness at "
+#~ "the expense of the memory required by the preloaded instances.</p>"
+#~ msgstr ""
+#~ "<p>បើ​មិន​សូន្យ ជម្រើស​នេះ​អនុញ្ញាត​ឲ្យ​រក្សា​ទុក​វត្ថុ​របស់ Konqueror ក្នុង​សតិ​បន្ទាប់​ពី​បង្អួច​របស់​ពួក​វា​"
+#~ "ទាំង​អស់​ត្រូវ​បាន​បិទ អាស្រ័យ​លើ​លេខ​ដែល​បាន​បញ្ជាក់​លម្អិត​ក្នុង​ជម្រើស​នេះ ។</p><p>នៅ​ពេល​ "
+#~ "Konqueror ត្រូវ​ការ​បង្អួច​​ថ្មី​មួយ វា​នឹង​ប្រើ​​បង្អួច​មួយ​ក្នុង​ចំណោម​បង្អួច​ទាំងនោះ​​បាន​ផ្ទុក​ជាមុនជំនួស​វិញ​ម្តង ​​"
+#~ "ការ​បង្កើន​ភាព​អើពើ​ទាមទារ​ឲ្យ​ចំណាយ​សតិ​ដោយ​ជំនួស​បង្អួច​ដែល​បាន​ផ្ទុក​ជាមុន ។</p>"
+
+#  i18n: file konqueror_ui.ui line 83
+#, fuzzy
+#~| msgid "Maximum number of instances kept &preloaded:"
+#~ msgid "&Maximum number of instances kept preloaded:"
+#~ msgstr "ចំនួន​វត្ថុ​អតិបរមា​ដែល​នៅ​តែ​ផ្ទុក​ជាមុន ៖"
+
+#~ msgid ""
+#~ "Disables the minimization of memory usage and allows you to make each "
+#~ "browsing activity independent from the others"
+#~ msgstr ""
+#~ "មិន​អនុញ្ញាត​ការ​បង្រួម​អប្បបរមា​នៃ​ការ​ប្រើប្រាស់​សតិ និង​អនុញ្ញាត​ឲ្យ​អ្នក​ធ្វើ​ឲ្យ​សកម្មភាព​រុករក​នីមួយៗ​មិន​"
+#~ "អាស្រ័យ​សកម្មភាព​ផ្សេង​ទៀត"
+
+#~ msgid ""
+#~ "<p>With this option activated, only one instance of Konqueror used for "
+#~ "file browsing will exist in the memory of your computer at any moment, no "
+#~ "matter how many file browsing windows you open, thus reducing resource "
+#~ "requirements.</p><p>Be aware that this also means that, if something goes "
+#~ "wrong, all your file browsing windows will be closed simultaneously</p>"
+#~ msgstr ""
+#~ "<p>ជាមួយ​ជម្រើស​ដែល​​សកម្ម​នេះ មាន​តែ​​វត្ថុ​មួយ​របស់ Konqueror ប៉ុណ្ណោះ​ ដែល​បាន​ប្រើ​សម្រាប់ ​រក​មើល​"
+#~ "ឯកសារ​ដែល​មាន​នៅ​ក្នុង​សតិ​នៃ​កុំព្យូទ័រ​របស់​អ្នក ដោយ​មិន​ខ្វល់​ថា​អ្នក​បើក​បង្អួច​រក​មើល ឯកសារ​ចំនួន​ប៉ុន្មាន​ទេ "
+#~ "ធ្វើ​ដូច្នេះ​ដើម្បី​កាត់​បន្ថយ​តម្រូវ​ការ​ធនធាន ។</p><p>សូម​ជ្រាប​ថា​ វា​ក៏​មាន​ន័យ​ផង​ដែរ​ថា បើ​មាន​អ្វី​ខុស​"
+#~ "បង្អួច​រក​មើល​ឯកសារ​របស់​អ្នក ទាំងអស់​នឹង​ត្រូវ​បាន​បិទ​ក្នុង​ពេល​ដំណាល​គ្នា</p>"
+
+#~ msgid ""
+#~ "<p>With this option activated, only one instance of Konqueror will exist "
+#~ "in the memory of your computer at any moment, no matter how many browsing "
+#~ "windows you open, thus reducing resource requirements.</p><p>Be aware "
+#~ "that this also means that, if something goes wrong, all your browsing "
+#~ "windows will be closed simultaneously.</p>"
+#~ msgstr ""
+#~ "<p>ជាមួយ​ជម្រើស​ដែល​សកម្ម​នេះ មាន​តែ​វត្ថុ​របស់ Konqueror មួយ​ប៉ុណ្ណោះ ដែល​បាន​ប្រើ​សម្រាប់​ការ រក​"
+#~ "មើល​ឯកសារ ដែល​មាន​នៅ​ក្នុង​សតិ​នៃ​កុំព្យូទ័រ​របស់​អ្នក ដោយ​មិន​ខ្វល់​ថា​អ្នក​បើក​​បង្អួច​រក​មើល​ឯកសារ​ចំនួន​ប៉ុន្មាន​"
+#~ "ទេ ធ្វើ​ដូច្នេះ​ដើម្បី​កាត់​បន្ថយ​តម្រូវ​ការ​ធនធាន ។</p><p>សូម​ជ្រាប​ថា វា​​ក៏​មាន​ន័យ ផង​ដែរ​ថា បើ​មាន​"
+#~ "អ្វី​ខុស បង្អួច​រក​មើល​ឯកសារ​របស់​អ្នក​ទាំង​អស់ នឹង​ត្រូវ​បាន​បិទ​ក្នុង​ពេល​ដំណាល​គ្នា ។</p>"
+
+#  i18n: file konqueror_ui.ui line 27
+#~ msgid "Minimize Memory Usage"
+#~ msgstr "បង្រួម​ការ​ប្រើប្រាស់​សតិ​អប្បបរមា"
+
+#  i18n: file konqueror_ui.ui line 38
+#~ msgid "&Never"
+#~ msgstr "កុំ"
+
+#  i18n: file konqueror_ui.ui line 46
+#~ msgid "For &file browsing only (recommended)"
+#~ msgstr "សម្រាប់​តែ​ការ​រុករក​ឯកសារ (ផ្ដល់​អនុសាសន៍)"
+
+#  i18n: file konqueror_ui.ui line 54
+#~ msgid "Alwa&ys (use with care)"
+#~ msgstr "ជានិច្ច (ប្រើ​ដោយ​យក​ចិត្ត​ទុក​ដាក់)"

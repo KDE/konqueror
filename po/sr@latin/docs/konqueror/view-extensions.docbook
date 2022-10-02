@@ -1,0 +1,189 @@
+<chapter id="view-extensions">
+
+<title
+>Proširenja režima prikaza</title>
+
+<!--filemanager mode:
+default Icons/Details/Columns (Dolphin), File Size View (konq-plugins)
+additional Terminal Emulator (Konsole), File Replace View (kdewebdev), Cervisia (kdesdk), Radial Map (Filelight-kdeutils) and more
+browser mode:
+default KHTML, WebKit, Embedded Advanced Text Editor
+additional KImageMapEditor+KLinkStatusPart (kdewebdev) and more
+  -->
+<para
+><application
+>K‑osvajač</application
+> pruža još neke prikaze pod <menuchoice
+><guimenu
+>Prikaz</guimenu
+> <guisubmenu
+>Način prikaza</guisubmenu
+></menuchoice
+> u režimu menadžera fajlova i pregledača, kada su instalirani odgovarajući programi i priključci.</para>
+<para
+>U režimu menadžera fajlova, dodatni prikazi su <guimenuitem
+>Kružna mapa</guimenuitem
+> iz programa Filelight i <guimenuitem
+>Prikaz veličine fajla</guimenuitem
+> preko <application
+>K‑osvajačevog</application
+> priključka.</para>
+
+<sect1 id="fsview">
+<sect1info>
+<authorgroup>
+<author
+><personname
+><firstname
+>Jozef</firstname
+> <surname
+>Vajdendorfer</surname
+></personname
+> <email
+>Josef.Weidendorfer@gmx.de</email
+> </author>
+
+</authorgroup>
+<date
+>16. 5. 2011.</date>
+<releaseinfo
+>KDE 4.7</releaseinfo>
+</sect1info>
+
+<title
+>FSView — prikaz fajl sistema</title>
+<sect2>
+<title
+>Uvod</title>
+
+<para
+>Priključak FSView za <application
+>K‑osvajač</application
+> pruža još jedan režim prikaza za objekte MIME tipa <literal
+>inode/directory</literal
+>, za lokalne fajlove. Može se uzeti kao alternativa raznim prikazima ikona i spiskova pri pregledanju sadržaja lokalnog fajl sistema.</para>
+
+<para
+>Jedinstveno svojstvo FSViewa je u tome što može da prikaže cele ugnežđene hijerarhije fascikli, koristeći tzv. mapu stabla za grafičku predstavu. Mape stabla omogućavaju sagledavanje metrike objekata u ugnežđenim strukturama: svaki objekat se predstavlja pravougaonikom površine srazmerne metrici. Zbir metrika dečijih objekata mora biti jednak ili manji od metrike roditeljskog.</para>
+
+<para
+>U FSViewu za metriku se uzimaju veličine fajlova i fascikli, pri čemu se veličina fascikle definiše kao zbir veličina svih njenih podstavki. Ovako se veliki fajlovi, čak i oni duboko u hijerarhiji fascikli, lako mogu uočiti preko velikih  pravougaonika. FSView se može shvatiti kao grafička i interaktivna varijanta Unix naredbe <command
+>du</command
+>.</para>
+
+<para
+>Uklapanje FSViewa u <application
+>K‑osvajač</application
+> omogućava korišćenje standardnih mogućnosti, poput kontekstnih menija nad fajlovima i radnjama osetljivim na MIME tipove. Ali je odlučeno da se promene u fajl sistemu ne nadziru automatski: ako izvan <application
+>K‑osvajača</application
+> obrišete fajl prikazan u FSViewu, morate ručno ažurirati prikaz, npr. pritiskom na <keycap
+>F5</keycap
+>, da biste videli izmenu. Ovo je zbog toga što bi inače potencijalno ogroman broj fajlova morao da bude nadziran, što bi moglo dovesti do prevelikog trošenja resursa sistema radi jedne sporedne mogućnosti.</para>
+
+</sect2>
+
+<sect2>
+<title
+>Mogućnosti vizuelizacije</title>
+
+<para
+>Ovaj odeljak detaljno opisuje grafičku predstavu FSViewa.</para>
+
+<sect3>
+<title
+>Opcije iscrtavanja stavki</title>
+
+<para
+>Stavku u mapi stabla čini jedan pravougaonik koji predstavlja fajl ili fasciklu u fajl sistemu. Radi lakšeg kretanja, date su razne opcije za bojenje i etiketiranje pravougaonika.</para>
+
+<para
+>Boja pravougaonika može da se izmeni pomoću <menuchoice
+><guimenu
+>Prikaz</guimenu
+><guisubmenu
+>Režim boja</guisubmenu
+></menuchoice
+>. Boja može ili predstavljati dubinu, čime se lakše sagledava ugnežđivanje, ili neki od atributa fajla, poput imena, vlasnika, grupe ili MIME tipa.</para>
+
+<para
+>Etiketu pravougaonika mogu činiti različiti atributi fajla ili fascikle. Za svaki atribut možete izabrati da li će se uopšte videti, pa onda da li samo ako ima dovoljno mesta ili će se potreban prostor oduzimati od dece (čime se narušava koncepcija čiste mape stabla). Pored ovoga, možete zadati i relativnu lokaciju etikete u pravougaoniku.</para>
+
+</sect3>
+
+<sect3>
+<title
+>Algoritmi za iscrtavanje mape stabla</title>
+
+<para
+>Za algoritme iscrtavanja mape stabla treba da važi pravilo da je površina pravougaonika srazmerna metrici stavke. Kod mapa stabla u FSViewu, ovo pravilo nije uvek zadovoljeno. Na primer, iscrtavaju se ivice koje oduzimaju nešto prostora, što se prenosi na gubitak prostora u dečjim stavkama. (Što je pravougaonik bliži kvadratu, to se manje prostora gubi na ivice.)</para>
+
+<para
+>Slično, za dobar pregled bolje je da svaki pravougaonik ima bar ime za etiketu. Možete izabrati da se uvek rezerviše dovoljno prostora za etiketu, ili da se etikete iscrtavaju samo ako ima dovoljno slobodnog prostora. U potonjem slučaju, pomažu vam oblačići koji iskaču kada se miš zadrži nad stavkom. Oblačići prikazuju podatke o stavci, zajedno sa roditeljskim fasciklama sve do korene stavke mape stabla.</para>
+
+<para
+>Način na koji se prostor stavke deli u podzone za decu prepušta se izvedbama. Najbolje je ostvariti takvu podelu u kojoj ima što više pravougaonika bliskih kvadratu, što zbog etiketa što zbog manjeg gubitka prostora na ivice. Najbolje metode u ovom smislu su po vrstama, po kolonama i rekurzivna bisekcija.</para>
+
+<para
+>Preko stavke menija <menuchoice
+><guimenu
+>Prikaz</guimenu
+><guimenuitem
+>Stani na površini</guimenuitem
+></menuchoice
+> možete odrediti najmanju površinu koju stavka mora imati da bi bila iscrtana. Ako stavka sadrži neprikazane dečije stavke, njen prostor biće prošaran da bi se ukazalo na to.</para>
+
+</sect3>
+
+</sect2>
+
+<sect2>
+<title
+>Korisničko sučelje</title>
+
+<para
+>FSView podržava biranje više stavki, slično prikazu ikona i spiska, tako da neke radnje možete izvršiti istovremeno nad više fajlova. Jedan klik mišem uvek bira jednu stavku pod pokazivačem. Klik mišem uz držanje tastera <keycap
+>Shift</keycap
+> bira opseg, dok klik uz držanje tastera <keycap
+>Ctrl</keycap
+> obrće izbor. Kada izaberete jednu stavku, više ne možete izabrati njene podstavke. Izbor stavke takođe će poništiti eventualni prethodni izbor njenih roditeljskih stavki.</para>
+
+<para
+>Kroz mapu stabla možete se kretati i tastaturom: tasteri strelica <keycap
+>Levo</keycap
+> i <keycap
+>Desno</keycap
+> premeštaju tekuću stavku između srodnika, a strelice <keycap
+>Dole</keycap
+> i <keycap
+>Gore</keycap
+> pomeraju kroz hijerarhiju ugnežđivanja. <keycap
+>Space</keycap
+> bira stavku, u kombinaciji sa <keycap
+>Shiftom</keycap
+> bira opseg stavki, a sa <keycap
+>Ctrlom</keycap
+> obrće izabranost tekuće stavke. Pritisnite <keycap
+>Enter</keycap
+> da izvršite radnju otvaranja nad tekućom stavkom.</para>
+
+</sect2>
+
+<sect2>
+<title
+>Zasluge i licenca</title>
+<para
+>FSView je prvobitno zamišljen kao mali probni program i poduka za upotrebu vidžeta <classname
+>TreeMap</classname
+>, razvijenog u okviru KCacheGrinda.</para>
+<para
+>© <personname
+><firstname
+>Jozef</firstname
+> <surname
+>Vajdendorfer</surname
+></personname
+>, licenca OJL 2.</para>
+</sect2>
+
+</sect1>
+</chapter>

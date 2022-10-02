@@ -1,0 +1,97 @@
+# Translation of libkonq to Norwegian Nynorsk
+#
+# Gaute Hvoslef Kvalnes <gaute@verdsveven.com>, 1999, 2000, 2002, 2003, 2004, 2005.
+# Karl Ove Hufthammer <karl@huftis.org>, 2007, 2008, 2009, 2015, 2020.
+# Eirik U. Birkeland <eirbir@gmail.com>, 2008, 2009, 2010, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2020-12-12 00:24+0100\n"
+"Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
+"Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
+"Language: nn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 21.03.70\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "&Opna"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "Lag &mappe …"
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "&Gjenopprett"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr "Vel opphavsmappe"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr "Vis opphavsfil"
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "&Tøm papirkorga"
+
+#: src/konq_popupmenu.cpp:312
+#, kde-format
+msgid "&Configure Trash Bin"
+msgstr "&Set opp papirkorga"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "Lag &bokmerke til denne sida"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "Lag &bokmerke til denne adressa"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "Lag &bokmerke til denne mappa"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "Lag &bokmerke til denne lenkja"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "Lag &bokmerke til denne fila"
+
+#: src/konq_popupmenu.cpp:379
+#, kde-format
+msgid "Preview In"
+msgstr "Førehandsvis i"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr "Opna terminal her"
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "&Eigenskapar"

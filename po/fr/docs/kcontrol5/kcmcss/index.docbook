@@ -1,0 +1,440 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % French "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="kcmcss" lang="&language;">
+<articleinfo>
+<title
+>Apparence</title>
+<authorgroup>
+<author
+>&Lauri.Watts; &Lauri.Watts.mail;</author>
+&traducteurYvesDessertine; &traducteurPierreBuard; 
+</authorgroup>
+
+<date
+>08-11-2016</date>
+<releaseinfo
+>Applications 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>CSS</keyword>
+<keyword
+>Apparence</keyword>
+<keyword
+>Police</keyword>
+<keyword
+>CSS</keyword>
+<keyword
+>Feuilles de style</keyword>
+<keyword
+>Accessibilité</keyword>
+</keywordset>
+
+</articleinfo>
+
+<sect1 id="appearance">
+<title
+>Apparence</title>
+<para
+>Ce module est composé de trois onglets permettant de configurer la manière d'afficher les pages web.</para>
+
+<sect2 id="general">
+<title
+>Général</title
+> <!-- modified copy from khtml/index.docbook <sect2 id="kbrowse-html"-->
+
+<para
+>La case à cocher intitulée <guilabel
+>Charger automatiquement les images</guilabel
+> détermine si les images des pages web seront chargées par défaut. À moins d'avoir une connexion lente, vous souhaiterez sûrement la laisser cochée puisque la navigation sur certains sites devient ardue sans images. Si l'option est décochée, vous verrez tout de même le texte des pages et charger les images si nécessaire.</para>
+
+<para
+>Si <guilabel
+>Dessiner un cadre autour des images partiellement chargées</guilabel
+> est cochée, &konqueror; dessinera un cadre autour des emplacements d'images pas encore chargées. Vous souhaiterez sûrement activer cette option pour faciliter votre navigation, surtout si votre connexion réseau est lente.</para>
+
+<para
+>De nombreuses pages web utilisent des images GIF animées pouvant être agaçantes et, parfois, représenter un réel gaspillage de vos ressources système. L'option <guilabel
+>Animations</guilabel
+> permet de choisir la façon dont ces animations seront activées. Elles sont activées par défaut mais vous pouvez les désactiver ou ne les lancer qu'une seule fois, même si le fichier lui-même contient des instructions pour les relancer plusieurs fois, voire indéfiniment.</para>
+
+<para
+>L'option suivante s'intitule <guilabel
+>Souligner les liens</guilabel
+>. Elle permet d'<guilabel
+>Activer</guilabel
+> le soulignement des liens. Si ce choix est retenu, tout texte faisant office de lien dans une pages web sera souligné. Bien que beaucoup de pages les distinguent grâce à des couleurs différentes du texte, les souligner facilite leur identification.</para>
+
+<para
+>Si vous ne souhaitez pas souligner pas les liens, choisissez <guilabel
+>Désactivé</guilabel
+>. Vous pouvez aussi choisir la position intermédiaire <guilabel
+>Seulement au-dessus</guilabel
+> afin que le soulignement n'intervienne qu'au passage de la souris sur les liens et pas le reste du temps.</para>
+
+<note
+><para
+>Les règles CSS du site peuvent outre-passer ce réglage.</para
+></note>
+
+<para
+><guilabel
+>Défilement doux</guilabel
+> détermine si &konqueror; utilise le défilement doux ou des intervalles entiers pour faire défiler les pages &HTML; : <itemizedlist>
+<listitem
+><para
+><guilabel
+>Toujours</guilabel
+> : toujours utiliser le défilement doux.</para
+></listitem>
+<listitem
+><para
+><guilabel
+>Jamais</guilabel
+> : ne jamais utiliser le défilement doux, uniquement des intervalles entiers.</para
+></listitem>
+<listitem
+><para
+><guilabel
+>Lorsque c'est possible</guilabel
+> : le défilement doux sera employé sur les pages ne faisant qu'une utilisation modérée des ressources du système.</para
+></listitem>
+</itemizedlist>
+</para>
+
+</sect2>
+
+<sect2 id="fonts"
+> <!-- modified copy from khtml/index.docbook <sect2 id="kbrowse-appearance"-->
+<title
+>Polices</title>
+<para
+>Sur cet onglet, vous pouvez choisir de nombreuses options relatives à l'utilisation des polices. Bien que la forme et la taille des polices soient définies par les concepteurs d'une page web, vous pouvez choisir certains paramètres par défaut que &konqueror; utilisera.</para>
+
+<para
+>La taille de la police est le premier aspect définissable ici. Deux paramètres contribuent à votre confort de navigation.</para>
+
+<para
+>Pour commencer, vous pouvez définir une <guilabel
+>Taille de police minimale</guilabel
+>. Cela signifie que même si la page vue nécessite une taille de police précise, &konqueror; l'ignorera et n'affichera pas de police inférieure à la taille définie ici.</para>
+
+<para
+>Ensuite intervient la <guilabel
+>Taille de police moyenne</guilabel
+>. Elle ne correspond pas uniquement à la taille par défaut du texte, utilisée lorsque la page ne spécifie pas de taille, mais elle peut également servir de référence à partir de laquelle calculer les autres tailles de polices. C'est-à-dire que l'instruction &HTML; <quote
+>smaller</quote
+> signifiera une taille inférieure à celle définie par cette option.</para>
+
+<para
+>Dans les deux cas, vous pouvez choisir la taille de police exacte, en points, à l'aide du compteur rotatif (ou simplement en la saisissant) à côté du nom de l'option.</para>
+
+<para
+>Ces options sont indépendantes l'une de l'autre. Les pages ne précisant pas de taille de police, ou nécessitant une valeur par défaut, utiliseront la <guilabel
+>Taille de police moyenne</guilabel
+> pour s'afficher, alors que les pages dont la taille de police serait inférieure à celle définie par la <guilabel
+>Taille de police minimale</guilabel
+> ne pourront descendre en dessous. L'une n'affecte pas l'autre.</para>
+
+<para
+>Les autres options associent des polices aux différents codes utilisés par les pages &HTML;. Notez que beaucoup de pages ignorent ces réglages. Pour chaque type de police (standard, fixe, serif, &etc;), sélectionnez celle qui vous plais.</para>
+
+<para
+>Au-dessous, vous pouvez spécifier un <guilabel
+>Ajustement de la taille des police pour cet encodage</guilabel
+>. Parfois, les polices que vous désirez employer, pour un encodage ou une langue spécifique, diffèrent en taille par rapport à la moyenne. Ce paramètre permet d'atténuer ces divergences.</para>
+
+<para
+>Vous pouvez définir l'encodage par défaut de &konqueror; pour le rendu des pages. La valeur initiale est <guilabel
+>Utiliser l'encodage de votre langue</guilabel
+> mais il est possible de préciser n'importe quel encodage de la liste déroulante.</para>
+
+</sect2>
+
+<sect2 id="stylesheets">
+
+<title
+>Feuilles de style</title>
+
+<sect3>
+<title
+>Introduction</title>
+
+<para
+>Les feuilles de style <acronym
+>CSS</acronym
+> affectent l'apparence des pages web. <acronym
+>CSS</acronym
+> signifie <emphasis
+>C</emphasis
+>ascading <emphasis
+>S</emphasis
+>tyle <emphasis
+>S</emphasis
+>heets (feuilles de style en cascade).</para>
+
+<para
+>&kde; peut utiliser sa propre feuille de style, créée à partir de réglages simples et du modèle de couleurs de votre bureau. &kde; peut également utiliser une feuille de style écrite par vos soins. Enfin, vous pouvez spécifier une feuille de style dans ce module. Les options présentées sont conçues à des fins d'accessibilité, spécialement pour les personnes ayant une visibilité affaiblie.</para>
+
+<para
+>Vos choix faits ici affecteront toutes les applications de &kde; affichant du format « HTML » avec le moteur de rendu de &kde; nommé « KHTML ». Ceci inclut &kmail;, le &centreAide; et, évidemment, &konqueror;. Les choix effectués ici n'affectent pas les autres navigateurs tels que &firefox;.</para>
+
+</sect3>
+
+<sect3 id="css-general">
+<title
+>Feuilles de style</title>
+
+<para
+>Cette section comporte les options suivantes :</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Utiliser la feuille de style par défaut</guilabel
+></term>
+<listitem>
+<para
+>&kde; utilisera la feuille de style par défaut. Certaines couleurs seront sélectionnées parmi celles définies dans le modèle de couleurs que vous avez choisi. La plupart de ces réglages seront aisément supplantés par la page que vous consulterez.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Utiliser une feuille de style personnalisée</guilabel
+></term>
+<listitem>
+<para
+>&kde; utilisera une feuille de style écrite par vos soins. Vous pouvez utiliser le bouton parcourir pour localiser la feuille de style sur votre système. Les fichiers <acronym
+>CSS</acronym
+> ont traditionnellement l'extension <literal role="extension"
+>.css</literal
+>, mais ceci n'est pas obligatoire.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Utiliser la feuille de style d'accessibilité</guilabel
+></term>
+<listitem>
+<para
+>Utilise les réglages définis dans la boîte de dialogue <guilabel
+>Personnaliser...</guilabel
+>. L'activation de cette option rendra accessible le bouton <guilabel
+>Personnaliser...</guilabel
+> qui lancera une boîte de dialogue permettant de définir les paramètres de la feuille de style.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect3>
+
+<sect3 id="css-customize">
+<title
+>Personnaliser...</title>
+
+<para
+>Définissez ici votre feuille de style utilisateur. Les options disponibles ne sont qu'un sous-ensemble des instructions que vous pouvez ajouter dans une feuille de style et sont spécialement adaptées aux personnes dont la vision est affaiblie pour leur permettre d'améliorer la lisibilité des pages web et des fichiers d'aides de &kde;.</para>
+
+<para
+>Les options de cette page seront désactivées tant que vous n'aurez pas sélectionné <guilabel
+>Utiliser la feuille de style d'accessibilité</guilabel
+>.</para>
+
+<sect4>
+<title
+><guilabel
+>Famille de police</guilabel
+></title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Famille de base</guilabel
+></term>
+<listitem>
+<para
+>Choisissez une famille de polices à utiliser pour le corps du texte.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Utiliser la même famille dans tous les textes</guilabel
+></term>
+<listitem>
+<para
+>Si vous activez cette option, la même famille de polices sera utilisée pour tous les textes, quels que soient les réglages de la page affichée. Ceci est pratique lorsqu'elles utilisent une police décorative ou pour les en-têtes difficiles à lire.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect4>
+
+<sect4>
+<title
+>Taille de la police</title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Taille de la police de base</guilabel
+></term>
+<listitem>
+<para
+>Ceci est la taille par défaut pour le texte de la page. Beaucoup de sites web règlent leurs tailles de polices par rapport à cette valeur en utilisant <quote
+>larger</quote
+> ou <quote
+>+1</quote
+> pour agrandir la taille du texte et <quote
+>smaller</quote
+> ou <quote
+>-1</quote
+> pour la réduire.</para>
+<para
+>Beaucoup de personnes créent leurs pages web sur des plates-formes où la taille moyenne du texte est trop grande pour le lecteur, obligeant le recourt à des artifices pour obtenir des polices plus petites.</para>
+<para
+>Ce paramètre vous permettra de régler la taille de la police utilisée par défaut afin qu'elle soit plus confortable, les tailles relatives en ressortiront ainsi agrandies, rendant la lecture plus agréable.</para>
+<para
+>N'oubliez pas que vous pouvez forcer &konqueror; à ne pas afficher du texte en dessous d'une taille minimum, de sorte qu'il ne soit <emphasis
+>jamais</emphasis
+> trop petit. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Utiliser la même taille pour tous les éléments</guilabel
+></term>
+<listitem>
+<para
+>Si vous activez cette option, tous les textes seront affichés avec la taille de police spécifiée, quelles que soient les instructions que comporte la page. Les tailles relatives des polices telles que décrites précédemment, et même les instructions spécifiques obligeant le texte à être affiché à une certaine taille, seront supplantées ici.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect4>
+
+<sect4>
+<title
+>Images</title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Ne pas charger les images</guilabel
+></term>
+<listitem>
+<para
+>Si vous ne souhaitez pas voir d'images, désactivez-les ici.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Ne pas charger les images de fond</guilabel
+></term>
+<listitem>
+<para
+>Un problème majeur pour les utilisateurs à la vision affaiblie, se sont les images de fond dont le contraste est insuffisant pour leur permettre de lire le texte. Vous pouvez désactiver ces images de fond ici, indépendamment de votre choix de voir toutes les images.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect4>
+
+<sect4>
+<title
+>Couleurs</title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Noir sur blanc</guilabel
+></term>
+<listitem>
+<para
+>Beaucoup de personnes ayant une vision affaiblie trouvent que le texte noir sur un écran blanc donne un meilleur contraste, en plus d'en faciliter la lecture. Si ceci s'applique à vous, sélectionnez ce réglage.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Blanc sur noir</guilabel
+></term>
+<listitem>
+<para
+>D'autres préféreront le réglage opposé, c'est-à-dire que le texte blanc sur un écran noir est plus facile à lire.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Personnalisée</guilabel
+></term>
+<listitem>
+<para
+>Enfin, ceux pour qui du noir et blanc pur, dans n'importe quel ordre, est difficile à lire pourront ajuster ici les couleurs à la fois pour le <guilabel
+>Fond</guilabel
+> et pour le <guilabel
+>Texte</guilabel
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Utiliser la même couleur pour tout texte</guilabel
+></term>
+<listitem>
+<para
+>Beaucoup de sites web utilisent une couleur différente, souvent contrastée pour les en-têtes et autres fioritures. Si ceci interfère avec votre capacité à lire le contenu, vous pouvez cocher cette case pour que &kde; applique à tout le texte les couleurs choisies au-dessus.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect4>
+
+<sect4>
+<title
+>Aperçu</title>
+
+<para
+>La section <guilabel
+>Aperçu</guilabel
+> permet de voir l'effet de vos modifications. Différents types d'en-têtes y sont affichés à l'aide de votre feuille de style, accompagnés d'une phrase dans le corps de texte.</para>
+
+<para
+>Ceci devrait vous permettre d'ajuster au mieux votre feuille de style jusqu'à obtenir quelque chose que vous puissiez lire confortablement.</para>
+
+<para
+>Bon surf !</para>
+
+</sect4>
+
+</sect3>
+
+</sect2>
+
+</sect1>
+
+</article>

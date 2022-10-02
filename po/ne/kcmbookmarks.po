@@ -1,0 +1,2029 @@
+# translation of kcmkio.po to Nepali
+# Nabin Gautam <nabin@mpp.org.np>, 2006, 2007.
+# Mahesh Subedi <submanesh@gmail.com>, 2007.
+# shyam krishna bal <shyamkrishna_bal@yahoo.com>, 2007.
+# Shyam Krishna Bal <shyamkrishna_bal@yahoo.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkio\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2007-11-04 18:29+0545\n"
+"Last-Translator: Shyam Krishna Bal <shyamkrishna_bal@yahoo.com>\n"
+"Language-Team: Nepali <info@mpp.org.np>\n"
+"Language: ne\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n !=1\n"
+"\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: bookmarks.cpp:92
+#, kde-format
+msgid ""
+"<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
+"page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
+"\">bookmarks:/</a>.</p>"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: bookmarks.ui:16
+#, kde-format
+msgid "Bookmarks"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowRoot)
+#: bookmarks.ui:23
+#, kde-format
+msgid ""
+"If this option is unchecked, bookmarks at the root of the hierarchy (not in "
+"a folder) are not displayed.\n"
+"If checked, they are gathered in a \"root\" folder."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowRoot)
+#: bookmarks.ui:26
+#, kde-format
+msgid "&Show bookmarks without folder"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbFlattenTree)
+#: bookmarks.ui:37
+#, kde-format
+msgid ""
+"Sub-folders are shown within their parent by default. If you activate this "
+"option, sub-folders are displayed on their own.\n"
+"It looks less nice but it may help if you have a very big folder you want to "
+"spread in two columns."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbFlattenTree)
+#: bookmarks.ui:40
+#, kde-format
+msgid "&Flatten bookmarks tree"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowPlaces)
+#: bookmarks.ui:47
+#, kde-format
+msgid ""
+"Show a box with KDE places (Home, Network, ...). Useful if you use konqueror "
+"as a file manager."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowPlaces)
+#: bookmarks.ui:50
+#, kde-format
+msgid "Show system &places"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: bookmarks.ui:63
+#, kde-format
+msgid "General Settings"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, label)
+#: bookmarks.ui:71
+#, kde-format
+msgid ""
+"Folders are automatically distributed in several columns. The optimal number "
+"of columns depends on the width of the konqueror window and the number of "
+"bookmarks you have."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: bookmarks.ui:74
+#, kde-format
+msgid "Number of columns to show:"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowBackgrounds)
+#: bookmarks.ui:109
+#, kde-format
+msgid "Disable it on slow system to disable background images."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowBackgrounds)
+#: bookmarks.ui:112
+#, kde-format
+msgid "Show folder &backgrounds"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, groupBox_3)
+#: bookmarks.ui:138
+#, kde-format
+msgid "How much disk space is used to cache the pixmaps"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: bookmarks.ui:141
+#, kde-format
+msgid "Pixmap Cache"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, lbMaxCacheSize)
+#: bookmarks.ui:150
+#, fuzzy, kde-format
+#| msgid "Disk cache &size:"
+msgid "Disk cache size:"
+msgstr "डिस्क क्यास साइज:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, sbCacheSize)
+#: bookmarks.ui:163
+#, kde-format
+msgid " kB"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, clearCacheButton)
+#: bookmarks.ui:173
+#, kde-format
+msgid "Clear the pixmap cache"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, clearCacheButton)
+#: bookmarks.ui:176
+#, fuzzy, kde-format
+#| msgid "C&lear Cache"
+msgid "&Clear Cache"
+msgstr "क्यास खाली गर्नुहोस्"
+
+#~ msgid ""
+#~ "<h1>Cache</h1><p>This module lets you configure your cache settings.</"
+#~ "p><p>The cache is an internal memory in Konqueror where recently read web "
+#~ "pages are stored. If you want to retrieve a web page again that you have "
+#~ "recently read, it will not be downloaded from the Internet, but rather "
+#~ "retrieved from the cache, which is a lot faster.</p>"
+#~ msgstr ""
+#~ "<h1>क्यास</h1><p>यो मोड्युलले तपाईँको क्यास सेटिङ कन्फिगर गर्न दिन्छ ।</p><p> क्यास "
+#~ "कन्क्वेरर भित्रको आन्तरिक स्मृति हो जहाँ हालै पढिएका वेब पृष्ठ भण्डारण गरिएको हुन्छ । "
+#~ "यदि तपाईँले हालै पढेको वेब पृष्ठ पुन: प्राप्त गर्न चाहनुहुन्छ भने, यसलाई इन्टरनेटबाट "
+#~ "डाउनलोड गर्नु पर्दैन, बरू क्यासबाट प्राप्त गर्न सकिन्छ, जुन धेरै छिटो हुन्छ ।</p>"
+
+#~ msgid ""
+#~ "Check this box if you want the web pages you visit to be stored on your "
+#~ "hard disk for quicker access. The stored pages will only be updated as "
+#~ "needed instead of on every visit to that site. This is especially useful "
+#~ "if you have a slow connection to the Internet."
+#~ msgstr ""
+#~ "यदि तपाईँले अवलोकन गरेका वेब पृष्ठ छिटो पहुँचताका लागि हार्ड डिस्कमा भण्डारण गर्न "
+#~ "चाहनुहुन्छ भने यो बाकस जाँच गर्नुहोस् । भण्डारण गरिएका पृष्ठ त्यो साइटको प्रत्येक "
+#~ "अवलोकनको साटोमा आवश्यकता अनुसार मात्र अद्यावधिक गरिन्छ । यदि तपाईँको इन्टरनेटमा "
+#~ "जडान ढिलो भएमा विशेष रुपमा यो उपयोगी हुन्छ ।"
+
+#~ msgid "&Use cache"
+#~ msgstr "क्यास प्रयोग गर्नुहोस्"
+
+#~ msgid "Policy"
+#~ msgstr "नीति"
+
+#~ msgid ""
+#~ "Verify whether the cached web page is valid before attempting to fetch "
+#~ "the web page again."
+#~ msgstr ""
+#~ "वेब पृष्ठ फेरि तान्ने प्रयास गर्नुभन्दा पहिले क्यास गरिएको वेब पृष्ठ वैद्य  छ की छैन रुजू "
+#~ "गर्नुहोस् ।"
+
+#~ msgid "&Keep cache in sync"
+#~ msgstr "sync मा क्यास राख्नुहोस्"
+
+#~ msgid ""
+#~ "Always use documents from the cache when available. You can still use the "
+#~ "reload button to synchronize the cache with the remote host."
+#~ msgstr ""
+#~ "उपलब्ध भएको बेलामा सधैँ क्यासबाट कागजात प्रयोग गर्नुहोस् । तपाईँले टाढाको होस्टसँग "
+#~ "क्यास समक्रमण गर्न अझै पनि रिलोड बटन प्रयोग गर्न सक्नुहुन्छ ।"
+
+#~ msgid "Use cache whenever &possible"
+#~ msgstr "सम्भव भएको बेलामा क्यास प्रयोग गर्नुहोस्"
+
+#~ msgid ""
+#~ "Do not fetch web pages that are not already stored in the cache. Offline "
+#~ "mode prevents you from viewing pages that you have not previously visited."
+#~ msgstr ""
+#~ "क्यासमा पहिलेनै भण्डारण नभएका वेब पृष्ठ नतान्नुहोस् । अफलाइन मोडले तपाईँलाई पहिल "
+#~ "नगएको पृष्ठ हेर्नबाट रोक्दछ ।"
+
+#~ msgid "O&ffline browsing mode"
+#~ msgstr "अफलाइन ब्राउजिङ मोड"
+
+#~ msgid "Disk cache &size:"
+#~ msgstr "डिस्क क्यास साइज:"
+
+#~ msgid "C&lear Cache"
+#~ msgstr "क्यास खाली गर्नुहोस्"
+
+#~ msgid ""
+#~ "Unable to start the cookie handler service.\n"
+#~ "You will not be able to manage the cookies that are stored on your "
+#~ "computer."
+#~ msgstr ""
+#~ "कुकी ह्यान्डलर सेवा सुरु गर्न अक्षम ।\n"
+#~ "तपाईँको कम्प्युटरमा भण्डारण गरिएका कुकीहरू प्रबन्ध गर्न तपाईँ सक्षम हुन पर्ने हुदैन ।"
+
+#~ msgid "&Policy"
+#~ msgstr "नीति"
+
+#~ msgid "&Management"
+#~ msgstr "व्यवस्थापन"
+
+#~ msgid ""
+#~ "<p><h1>Cookies</h1> Cookies contain information that Konqueror (or other "
+#~ "KDE applications using the HTTP protocol) stores on your computer, "
+#~ "initiated by a remote Internet server. This means that a web server can "
+#~ "store information about you and your browsing activities on your machine "
+#~ "for later use. You might consider this an invasion of privacy.</p><p> "
+#~ "However, cookies are useful in certain situations. For example, they are "
+#~ "often used by Internet shops, so you can 'put things into a shopping "
+#~ "basket'. Some sites require you have a browser that supports cookies.</"
+#~ "p><p> Because most people want a compromise between privacy and the "
+#~ "benefits cookies offer, KDE offers you the ability to customize the way "
+#~ "it handles cookies. So you might want to set KDE's default policy to ask "
+#~ "you whenever a server wants to set a cookie, allowing you to decide. For "
+#~ "your favorite shopping web sites that you trust, you might want to set "
+#~ "the policy to accept, then you can access the web sites without being "
+#~ "prompted every time KDE receives a cookie.</p>"
+#~ msgstr ""
+#~ "<p><h1>कुकी</h1> कुकीले कन्क्वेररले (वा HTTP प्रोटोकल प्रयोग गर्ने अन्य केडीई अनुप्रयोग) "
+#~ "तपाईँको कम्प्युटरमा भण्डारण गरेका, टाढाको इन्टरनेट सर्भरद्वारा प्रारम्भ गरेका, सूचना "
+#~ "समावेश गर्छ । यसको अर्थ वेब सर्भरले पछिका प्रयोगका लागि तपाईँ र तपाईँको मेशिनमा "
+#~ "तपाईँका ब्राउजिङ प्रक्रिया बारेका सूचना भण्डारण गर्न सक्छ । तपाईँले यसलाई निजीपनको "
+#~ "चढाईँ ठान्न सक्नुहुन्छ । </p><p> तापनि, कुकी निश्चित अवस्थामा उपयोगि हुन्छन । "
+#~ "उदाहरणका लागि, तिनीहरू धैरैजसो इन्टरनेट संस्थाद्वारा प्रयोग गर्छन, त्यसैले तपाईँले "
+#~ "'वस्तुहरू किनमेल बाकसमा राख्न' सक्नुहुन्छ । केही साइटमा तपाईँलाई कुकी समर्थन गर्ने "
+#~ "ब्राउजर आवश्यक हुन्छ । </p><p> किनभने धेरै मानिस निजीपना र कुकी प्रस्ताव लाभको "
+#~ "बीचमा सम्झौता गर्न चाहन्छन, केडीई ले तपाईँलाई कुकी ह्यान्डल गर्ने तरिका अनुकूल गर्ने "
+#~ "क्षमता प्रस्ताव गर्छ । त्यसैले तपाईँले सर्भरले जतिबेला पनि तपाईँलाई निर्णय गर्न दिदैँ कुकी "
+#~ "सेट गर्न चाहन्छ, बुझ्न केडीई को पूर्वनिर्धारित नीति सेट गर्न चाहन सक्नुहुन्छ । तपाईँले "
+#~ "विश्वास गर्ने मनपर्ने किनमेल वेब साइटका लागि, स्वीकार गर्न तपाईँ नीति सेट गर्न चाहन "
+#~ "सक्नहुन्छ, त्यसपछि तपाईँले वेब साइटको प्रबर्धन बिना वेब साइटको पहुँच प्राप्त गर्न सक्नुहुन्छ "
+#~ "हरेक समय केडीईले कुकी प्राप्त गर्छ ।</p>"
+
+#~ msgid "D-Bus Communication Error"
+#~ msgstr "D-Bus सञ्चार त्रुटि"
+
+#~ msgid "Unable to delete all the cookies as requested."
+#~ msgstr "अनुरोध गरिए अनुरुप सबै कुकी मेट्न अक्षम ।"
+
+#~ msgid "Unable to delete cookies as requested."
+#~ msgstr "अनुरोध गरिए अनुरुप कुकी मेट्न अक्षम ।"
+
+#, fuzzy
+#~| msgid "<h1>Cookies Management Quick Help</h1>"
+#~ msgid "<h1>Cookie Management Quick Help</h1>"
+#~ msgstr "<h1>कुकी व्यवस्थापन शीघ्र मद्दत</h1>"
+
+#~ msgid "Information Lookup Failure"
+#~ msgstr "सूचना खोजी असफल"
+
+#~ msgid ""
+#~ "Unable to retrieve information about the cookies stored on your computer."
+#~ msgstr "तपाईँको कम्प्युटरमा भण्डारण गरिएका कुकीका बारेमा सूचना पुन: प्राप्त गर्न अक्षम ।"
+
+#~ msgid "End of session"
+#~ msgstr "सत्रको अन्त्य"
+
+#~ msgid "Yes"
+#~ msgstr "हो"
+
+#, fuzzy
+#~| msgid "&Search:"
+#~ msgid "Search"
+#~ msgstr "खोज्नुहोस्:"
+
+#~ msgid "Search interactively for domains and hosts"
+#~ msgstr "डोमेन र होस्टका लागि अन्तरक्रियात्मक रुपमा खोज्नुहोस्"
+
+#, fuzzy
+#~| msgid "Site Name"
+#~ msgid "Site"
+#~ msgstr "साइट नाम"
+
+#, fuzzy
+#~| msgid "Site Name"
+#~ msgid "Cookie Name"
+#~ msgstr "साइट नाम"
+
+#~ msgid "D&elete"
+#~ msgstr "मेट्नुहोस्"
+
+#~ msgid "Delete A&ll"
+#~ msgstr "सबै मेट्नुहोस्"
+
+#, fuzzy
+#~| msgid "Change &Policy..."
+#~ msgid "Configure &Policy..."
+#~ msgstr "नीति परिवर्तन गर्नुहोस्..."
+
+#~ msgid "&Reload List"
+#~ msgstr "सूची रिलोड गर्नुहोस्"
+
+#~ msgid "Details"
+#~ msgstr "विवरण"
+
+#~ msgid "Name:"
+#~ msgstr "नाम:"
+
+#~ msgid "Value:"
+#~ msgstr "मान:"
+
+#~ msgid "Domain:"
+#~ msgstr "डोमेन:"
+
+#~ msgid "Path:"
+#~ msgstr "मार्ग:"
+
+#~ msgid "Expires:"
+#~ msgstr "समाप्त हुन्छ:"
+
+#~ msgid "Secure:"
+#~ msgstr "सुरक्षित:"
+
+#, fuzzy
+#~| msgid "Change Cookie Policy"
+#~ msgctxt "@title:window"
+#~ msgid "Change Cookie Policy"
+#~ msgstr "कुकी नीति परिवर्तन गर्नुहोस्"
+
+#, fuzzy
+#~| msgid "New Cookie Policy"
+#~ msgctxt "@title:window"
+#~ msgid "New Cookie Policy"
+#~ msgstr "नयाँ कुकी नीति"
+
+#~ msgid ""
+#~ "<qt>A policy already exists for<center><b>%1</b></center>Do you want to "
+#~ "replace it?</qt>"
+#~ msgstr ""
+#~ "<qt>यसका लागि नीति पहिल्यै अवस्थित छ<center><b>%1</b></center>तपाईँ यसलाई "
+#~ "बदल्न चाहनुहुन्छ ?</qt>"
+
+#, fuzzy
+#~| msgid "Duplicate Policy"
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Policy"
+#~ msgstr "नक्कली नीति"
+
+#~ msgid "Replace"
+#~ msgstr "बदल्नुहोस्"
+
+#~ msgid ""
+#~ "Unable to communicate with the cookie handler service.\n"
+#~ "Any changes you made will not take effect until the service is restarted."
+#~ msgstr ""
+#~ "कुकी ह्यान्डलर कार्यसँग सञ्चार गर्न अक्षम ।\n"
+#~ "कार्य फेरि सुरु नगरेसम्म तपाईँले गर्नुभएको परिवर्तनले काम गर्दैन ।"
+
+#~ msgid ""
+#~ "<p><h1>Cookies</h1> Cookies contain information that Konqueror (or any "
+#~ "other KDE application using the HTTP protocol) stores on your computer "
+#~ "from a remote Internet server. This means that a web server can store "
+#~ "information about you and your browsing activities on your machine for "
+#~ "later use. You might consider this an invasion of privacy.</p><p>However, "
+#~ "cookies are useful in certain situations. For example, they are often "
+#~ "used by Internet shops, so you can 'put things into a shopping basket'. "
+#~ "Some sites require you have a browser that supports cookies.</"
+#~ "p><p>Because most people want a compromise between privacy and the "
+#~ "benefits cookies offer, KDE offers you the ability to customize the way "
+#~ "it handles cookies. You might, for example want to set KDE's default "
+#~ "policy to ask you whenever a server wants to set a cookie or simply "
+#~ "reject or accept everything. For example, you might choose to accept all "
+#~ "cookies from your favorite shopping web site. For this all you have to do "
+#~ "is either browse to that particular site and when you are presented with "
+#~ "the cookie dialog box, click on <i> This domain </i> under the 'apply to' "
+#~ "tab and choose accept or simply specify the name of the site in the <i> "
+#~ "Domain Specific Policy </i> tab and set it to accept. This enables you to "
+#~ "receive cookies from trusted web sites without being asked every time KDE "
+#~ "receives a cookie.</p>"
+#~ msgstr ""
+#~ "<p><h1>कुकी</h1> कुकीले कन्क्वेररले (वा HTTP प्रोटोकल प्रयोग गर्ने कुनै पनि अन्य केडीई "
+#~ "अनुप्रयोग) तपाईँको कम्प्युटरमा टाढाको इन्टरनेट सर्भरबाट भण्डारण गरेका सूचना समावेश गर्छ "
+#~ "। यसको अर्थ वेब सर्भरले पछिका प्रयोगका लागि तपाईँ र तपाईँको मेशिनमा तपाईँका "
+#~ "ब्राउजिङ प्रक्रिया बारेका सूचना भण्डारण गर्न सक्छ । तपाईँले यसलाई निजीपना बिरुद्ध "
+#~ "ठान्न सक्नुहुन्छ ।</p><p>तापनि कुकी, निश्चित अवस्थामा उपयोगि हुन्छन । उदाहरणका "
+#~ "लागि, तिनीहरू इन्टरनेट धेरैजसो संस्थाद्वारा प्रयोग गरिन्छन्, त्यसैले तपाईँले 'वस्तुहरू किनमेल "
+#~ "बास्केटमा राख्न' सक्नुहुन्छ । केही साइटमा तपाईँलाई कुकी समर्थन गर्ने ब्राउजर आवश्यक हुन्छ ।"
+#~ "</p><p> किनभने धेरै जसो मानिस नीजिपना र कुकी प्रस्ताव लाभ बीचमा सम्झौता गर्न "
+#~ "चाहन्छन, केडीई ले तपाईँलाई कुकी ह्यान्डल गर्ने तरिका अनुकूल गर्ने क्षमता प्रस्ताव गर्छ । "
+#~ "तपाईँ उदाहरणका लागि, सर्भरले जतिबेलामापनि कुकी सेट गर्न चाहन्छ वा केवल प्रत्येक वस्तु "
+#~ "स्वीकार वा अस्वीकार गर्छ बुझ्न केडीई को पूर्वनिर्धारित नीति सेट गर्न चाहनुहुन्छ । "
+#~ "उदाहरणका लागि तपाईँलाई मनपर्ने किनमेल वेब साइटबाट सबै कुकी स्वीकार गर्न रोज्न "
+#~ "सक्नुहुन्छ । यो सबैका लागि तपाईँ कुकी संवाद बाकससँग प्रस्तुत हुदाँ यात त्यो बिशेष साइटमा "
+#~ "ब्राउज गर्नुपर्छ,<i> यो डोमेन </i> तलको 'लागू गर्नुहोस्' ट्याबमा क्लिक गर्नुहोस् र "
+#~ "स्वीकार रोज्नुहोस् वा केवल <i> डोमेन निर्दिष्ट नीति </i> ट्याबमा साइटको नाम "
+#~ "निर्दिष्ट गर्नुहोस् र यसलाई स्वीकार गर्न सेट गर्नुहोस् । यसले तपाईँलाई बिश्वाशिला वेब "
+#~ "साइटबाट कुकी प्राप्त गर्न  सक्षम पार्छ केडीई ले कसैलाई नसोधिकन हरेक पटक कुकी प्राप्त "
+#~ "गर्छ ।</p>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Enable cookie support. Normally you will want to have cookie support "
+#~| "enabled and customize it to suit your privacy needs.<p>\n"
+#~| "Please note that disabling cookie support might make many web sites "
+#~| "unbrowsable.\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "<p>Enable cookie support. Normally you will want to have cookie support "
+#~ "enabled and customize it to suit your privacy needs.</p><p>\n"
+#~ "Please note that disabling cookie support might make many web sites "
+#~ "unbrowsable.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "कुकी समर्थन सक्षम पार्नुहोस् । समायन्यत: यसमा तपाईँको निजीपन आवश्यकता मिलाउन कुकी "
+#~ "समर्थन सक्षम र अनुकूल पार्न चाहनुहुन्छ ।<p>\n"
+#~ "कृपया याद गर्नुहोस् कुकी समर्थन अक्षम पार्दा धेरै वेब साइटलाई ब्राउज गर्न नसकिने वनाउन "
+#~ "सक्छ ।\n"
+#~ "</qt>"
+
+#~ msgid "Enable coo&kies"
+#~ msgstr "कुकी सक्षम पार्नुहोस्"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Reject the so called third-party cookies. These are cookies that "
+#~ "originate from a site other than the one you are currently browsing. For "
+#~ "example, if you visit <b>www.foobar.com</b> while this option is on, only "
+#~ "cookies that originate from www.foobar.com will be processed per your "
+#~ "settings. Cookies from any other site will be rejected. This reduces the "
+#~ "chances of site operators compiling a profile about your daily browsing "
+#~ "habits.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "तेस्रो पक्षका भनिने कुकी अस्वीकार गर्नुहोस् । ति कुकी तपाईँको हालैको ब्राउजिङबाट नभई "
+#~ "साइटबाट निकालिएका हुन् । उदाहरणका लागि, यदि तपाईँले <b>www.foobar.com</b> "
+#~ "अवलोकन गर्नुहुन्छ भने यो विकल्प खुला भएको बेलामा, www.foobar.com बाट निकालिएका "
+#~ "कुकी मात्र तपाईँको सेटिङमा अघि बढाइन्छ । अन्य साइटका कुनै पनि कुकी अस्वीकार गरिने छ "
+#~ "। यसले साइट सञ्चालकलाई तपाईँको दैनिक ब्राउज गर्ने बानीको बारेमा प्रोफाइल कम्पाइल "
+#~ "गर्ने सम्भाव्यता घटाउँछ ।\n"
+#~ "</qt>"
+
+#~ msgid "Only acce&pt cookies from originating server"
+#~ msgstr "सर्भरबाट निकालिएका कुकीमात्र स्वीकार गर्नुहोस्"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Automatically accept temporary cookies meant to expire at the end of the "
+#~| "current session. Such cookies will not be stored in your computer's hard "
+#~| "drive or storage device. Instead, they are deleted when you close all "
+#~| "applications (e.g. your browser) that use them.<p>\n"
+#~| "<u>NOTE:</u> Checking this option along with the next one will override "
+#~| "your default as well as site specific cookie policies. However, doing so "
+#~| "also increases your privacy since all cookies will be removed when the "
+#~| "current session ends.\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<p>\n"
+#~ "Automatically accept temporary cookies meant to expire at the end of the "
+#~ "current session. Such cookies will not be stored in your computer's hard "
+#~ "drive or storage device. Instead, they are deleted when you close all "
+#~ "applications (e.g. your browser) that use them.</p><p><u>NOTE</u> "
+#~ "Checking this option overrides your default as well as site specific "
+#~ "cookie policies for session cookies.</p>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "हालको सत्रको अन्त्यमा म्याद समाप्त गर्न अस्थायी कुकी माध्यम स्वत: स्वीकार गर्छ । "
+#~ "त्यस्ता कुकी तपाईँको कम्प्युटरको हार्ड ड्राइभ वा भण्डारण यन्त्रमा भण्डारण गरिने छैन । "
+#~ "बरु, तपाईँले तिनीहरूलाई प्रयोग गर्ने सबै अनुप्रयोग (जस्तै: तपाईँको ब्राउजर) बन्द गर्ने "
+#~ "बेलामा तिनीहरू मेटिन्छन् ।<p>\n"
+#~ "<u>द्रष्टव्य:</u> यो विकल्प पछिल्लो एकमा जाँच गर्दा तपाईँको पूर्वनिर्धारित साथै साइट "
+#~ "नर्दिष्ट कुकी नीति अधिलेखन गर्नेछ । तापनि,त्यसो गर्दा हालको सत्रको अन्त्य गर्ने बेलामा "
+#~ "सबै कुकी हटाउने छ तपाईँको निजीपना पनि बढाउछ ।\n"
+#~ "</qt>"
+
+#~ msgid "Automaticall&y accept session cookies"
+#~ msgstr "सत्र कुकी स्वत: स्वीकार गर्नुहोस्"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Determines how cookies received from a remote machine will be handled: \n"
+#~| "<ul>\n"
+#~| "<li><b>Ask</b> will cause KDE to ask for your confirmation whenever a "
+#~| "server wants to set a cookie.</li>\n"
+#~| "<li><b>Accept</b> will cause cookies to be accepted without prompting "
+#~| "you.</li>\n"
+#~| "<li><b>Reject</b> will cause the cookiejar to refuse all cookies it "
+#~| "receives.</li>\n"
+#~| "</ul><p>\n"
+#~| "<u>NOTE:</u> Domain specific policies, which can be set below, always "
+#~| "take precedence over the default policy.\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Determines how cookies received from a remote machine will be handled: \n"
+#~ "<ul>\n"
+#~ "<li><b>Ask</b> will cause KDE to ask for your confirmation whenever a "
+#~ "server wants to set a cookie.</li>\n"
+#~ "<li><b>Accept</b> will cause cookies to be accepted without prompting you."
+#~ "</li>\n"
+#~ "<li><b>Accept until end of session</b> will cause cookies to be accepted "
+#~ "but they will expire at the end of the session.</li>\n"
+#~ "<li><b>Reject</b> will cause the cookiejar to refuse all cookies it "
+#~ "receives.</li>\n"
+#~ "</ul><p>\n"
+#~ "<u>NOTE:</u> Domain specific policies, which can be set below, always "
+#~ "take precedence over the default policy.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "टाढाको मेसिनबाट प्राप्त भएका कुकी कसरी ह्यान्डल गर्ने निर्धारण गर्छ:\n"
+#~ "<ul>\n"
+#~ "<li><b>सोधाइ</b> यसका कारणले सर्भरले कुकी सेट गर्दा तपाईँको यकीनका लागि केडीई ले "
+#~ "सोध्दछ ।\"</li>\n"
+#~ "<li><b>स्वीकार</b> यसका कारणले तपाईँलाई प्रस्तुत नगरि कुकी स्वीकार हुनेछ ।</li>\n"
+#~ "<li><b>अस्वीकार</b> यसका कारणले कुकीजारले सबै कुकी अस्वीकार गर्न प्राप्त गर्छ ।</"
+#~ "li>\n"
+#~ "</ul><p>\n"
+#~ "<u>द्रष्टव्य:</u> डोमेन निर्दिष्ट नीति, जसलाई तल सेट गर्न सकिन्छ, पूर्वनिर्धारित नीति "
+#~ "भन्दा सधैँ अग्रता उपलब्ध गर्नुहोस् ।\n"
+#~ "</qt>"
+
+#~ msgid "Default Policy"
+#~ msgstr "पूर्वनिर्धारित नीति"
+
+#~ msgid "Accep&t all cookies"
+#~ msgstr "सबै कुकी स्वीकार गर्नुहोस्"
+
+#, fuzzy
+#~| msgid "End of session"
+#~ msgid "Accept &until end of session"
+#~ msgstr "सत्रको अन्त्य"
+
+#~ msgid "Ask &for confirmation"
+#~ msgstr "यकीनका लागि सोध्नुहोस्"
+
+#~ msgid "Re&ject all cookies"
+#~ msgstr "सबै कुकी अस्वीकार गर्नुहोस्"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "To add a new policy, simply click on the <b>Add...</b> button and supply "
+#~ "the necessary information. To change an existing policy, use the "
+#~ "<b>Change...</b> button and choose the new policy from the policy dialog "
+#~ "box. Clicking on the <b>Delete</b> button will remove the currently "
+#~ "selected policy causing the default policy setting to be used for that "
+#~ "domain, whereas <b>Delete All</b> will remove all the site specific "
+#~ "policies.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "नयाँ नीति थप्न, केवल <b>थप्नुहोस्...</b> बटनमा क्लिक गर्नुहोस् र आवश्यक सूचना दिनुहोस् "
+#~ "। अवस्थित नीति परिवर्तन गर्न,<b>परिवर्तन गर्नुहोस्...</b>बटन प्रयोग गर्नुहोस् र नीति "
+#~ "संवाद बाकसबाट नयाँ नीति रोज्नुहोस् । <b>मेट्नुहोस्</b> बटनमा क्लिक गर्दा डोमेनका लागि "
+#~ "पूर्वनिर्धारित नीति सेटिङ प्रयोग प्रयोग हुनुपर्ने कारणले हाल चयन गरिएका नीति हटाउने छ "
+#~ "अत:<b>सबै मेट्नुहोस्</b> ले सबै साइट निर्दिष्ट नीति हटाउछ ।\n"
+#~ "</qt>"
+
+#~ msgid "Site Policy"
+#~ msgstr "साइट नीति"
+
+#~ msgid "Search interactively for domains"
+#~ msgstr "डोमेन अन्तरक्रियात्मक रुपमा खोज्नुहोस्"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "List of sites for which you have set a specific cookie policy. Specific "
+#~ "policies override the default policy setting for these sites.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "साइटको सूचीका लागि तपाईँले निर्दिष्ट कुकी नीति सेट गर्नुभएको छ । निर्दिष्ट नीतिले यि "
+#~ "सेटिङका लागि पूर्वनिर्धारित नीति सेटिङ अधिरोहण गर्छ ।\n"
+#~ "</qt>"
+
+#~ msgid "Domain"
+#~ msgstr "डोमेन"
+
+#~ msgid "&New..."
+#~ msgstr "नयाँ..."
+
+#~ msgid "Chan&ge..."
+#~ msgstr "परिवर्तन गर्नुहोस्..."
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the host or domain to which this policy applies, e.g. <b>www.kde."
+#~ "org</b> or <b>.kde.org</b>.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "यो नीति लागू हुने ठाउँमा होस्ट वा डोमेन प्रविष्ट गर्नुहोस्, जस्तै:<b>www.kde.org</b> "
+#~ "or <b>.kde.org</b> ।\n"
+#~ "</qt>"
+
+#, fuzzy
+#~| msgid "Site Name"
+#~ msgid "Site name:"
+#~ msgstr "साइट नाम"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Select the desired policy:\n"
+#~| "<ul>\n"
+#~| "<li><b>Accept</b> - Allows this site to set cookies</li>\n"
+#~| "<li><b>Reject</b> - Refuse all cookies sent from this site</li>\n"
+#~| "<li><b>Ask</b> - Prompt when cookies are received from this site</li>\n"
+#~| "</ul>\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Select the desired policy:\n"
+#~ "<ul>\n"
+#~ "<li><b>Accept</b> - Allows this site to set cookies</li>\n"
+#~ "<li><b>Accept until end of session</b> - Allows this site to set cookies "
+#~ "but they will expire at the end of the session.</li>\n"
+#~ "<li><b>Reject</b> - Refuse all cookies sent from this site</li>\n"
+#~ "<li><b>Ask</b> - Prompt when cookies are received from this site</li>\n"
+#~ "</ul>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "अपेक्षा गरिएको नीति चयन गर्नुहोस्:\n"
+#~ "<ul>\n"
+#~ "<li><b>स्वीकार</b> - यो साइटले कुकी सेट गर्न अनुमति दिन्छ</li>\n"
+#~ "<li><b>अस्वीकार</b> - यो साइटबाट पठाएका सबै कुकी अस्वीकार गर्नुहोस्</li>\n"
+#~ "<li><b>सोध्नुहोस्</b> - यो साइटबाट कुकी प्राप्त हुदा प्रवर्धन गर्नुहोस्</li>\n"
+#~ "</ul>\n"
+#~ "</qt>"
+
+#, fuzzy
+#~| msgid "&Policy:"
+#~ msgid "Policy:"
+#~ msgstr "नीति:"
+
+#~ msgid "Accept"
+#~ msgstr "स्वीकार गर्नुहोस्"
+
+#, fuzzy
+#~| msgid "End of session"
+#~ msgid "Accept until end of session"
+#~ msgstr "सत्रको अन्त्य"
+
+#~ msgid "Reject"
+#~ msgstr "अस्वीकार गर्नुहोस्"
+
+#~ msgid "Ask"
+#~ msgstr "सोध्नुहोस्"
+
+#~ msgid "Disable Passive FTP"
+#~ msgstr "निस्क्रिय FTP अक्षम पार्नुहोस्"
+
+#~ msgid ""
+#~ "When FTP connections are passive the client connects to the server, "
+#~ "instead of the other way round, so firewalls do not block the connection; "
+#~ "old FTP servers may not support Passive FTP though."
+#~ msgstr ""
+#~ "FTP  जडान निस्क्रिय भएको बेलामा क्लाइन्टले अन्य तरिकाको साटोमा सर्भरमा जडान गर्छ, "
+#~ "त्यसैले फाइरवालले जडान रोक्दैन; तापनि पुरानो FTP सर्भरले निस्क्रिय FTP समर्थन नगर्न "
+#~ "सक्छ ।"
+
+#~ msgid "Mark partially uploaded files"
+#~ msgstr "अपलोड गरिएका फाइल आंशिक रुपमा चिन्ह लगाउनुहोस्"
+
+#~ msgid ""
+#~ "While a file is being uploaded its extension is \".part\". When fully "
+#~ "uploaded it is renamed to its real name."
+#~ msgstr ""
+#~ "फाइल अपलोड भइराखेको बेलामा यसको विस्तार \".part\" हो । पुरै अपलोड भएपछि यसको "
+#~ "वास्तविक नाममा पुन: नामकरण हुन्छ ।"
+
+#~ msgid ""
+#~ "<h1>Proxy</h1><p>A proxy server is an intermediate program that sits "
+#~ "between your machine and the Internet and provides services such as web "
+#~ "page caching and/or filtering.</p><p>Caching proxy servers give you "
+#~ "faster access to sites you have already visited by locally storing or "
+#~ "caching the content of those pages; filtering proxy servers, on the other "
+#~ "hand, provide the ability to block out requests for ads, spam, or "
+#~ "anything else you want to block.</p><p><u>Note:</u> Some proxy servers "
+#~ "provide both services.</p>"
+#~ msgstr ""
+#~ "<h1>प्रोक्सी</h1><p>एउटा प्रोक्सी सर्भर इन्टरनेट र तपाईँको मेशिनको बीचमा बस्ने "
+#~ "कार्यक्रम हो र वेब पेज क्यासिङ र/वा फिल्टर गर्ने कार्य उपलब्ध गराउँछ ।</p><p> क्यासिङ "
+#~ "प्रोक्सी सर्भरले साइटमा छिटो पहुँच प्रदान गर्छ तपाईँले ती पृष्ठको सामाग्री पहिलेनै "
+#~ "स्थानीय भण्डारण वा क्यासिङद्वारा अवलोकन गर्नुभएको छ; अर्को तिर, प्रोक्सी सर्भर "
+#~ "फिल्टर गर्दा ads, spam, वा तपाईँले रोक्न चाहेको कुनै पनि वस्तु रोक्ने क्षमता प्रदान गर्छ "
+#~ "।</p><p><u>द्रष्टव्य:</u> केही प्रोक्सी सर्भरले दुवै कार्य उपलब्ध गर्छन् ।</p>"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Setup proxy configuration.\n"
+#~ "<p>\n"
+#~ "A proxy server is an intermediate machine that sits between your computer "
+#~ "and the Internet and provides services such as web page caching and "
+#~ "filtering. Caching proxy servers give you faster access to web sites you "
+#~ "have already visited by locally storing or caching those pages; filtering "
+#~ "proxy servers usually provide the ability to block out requests for ads, "
+#~ "spam, or anything else you want to block.\n"
+#~ "<p>\n"
+#~ "If you are uncertain whether or not you need to use a proxy server to "
+#~ "connect to the Internet, consult your Internet service provider's setup "
+#~ "guide or your system administrator.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "प्रोक्सी कन्फिरेसन सेटअप गर्नुहोस् ।\n"
+#~ "<p>\n"
+#~ "प्रोक्सी सर्भर तपाईँको कम्प्युटर र इन्टरनेट बिचमा बस्ने मेशिन हो र वेब पृष्ठ क्यासिङ र "
+#~ "फिल्टरिङ जस्ता कार्य उपलब्ध गराउछ । क्यासिङ प्रोक्सी सर्भरले ति पृष्ठहरूको स्थानीय "
+#~ "भण्डारण वा क्यासिङद्वारा पहिलेनै अबलोकन गरेका वेब साइटहरूमा छिटो पहुँच दिन्छ; "
+#~ "फिल्टरिङ प्रोक्सी सर्भरले सधैँ ads, spam का लागि बाह्य अनुरोध रोक्न वा तपाईँले रोक्न "
+#~ "चाहेका कुनै पनि वस्तु रोक्न क्षमता प्रदान गर्छ ।\n"
+#~ "<p>\n"
+#~ "यदि तपाईँ इन्टरनेट जडान गर्न प्रोक्सी सर्भर प्रयोग गर्न आवश्यक छ वा छैन निश्चिन्त "
+#~ "हुनुहुन्न भने, तपाईँको इन्टरनेट सेवा उपलब्धकर्ताको सेटअप मार्गदर्शक वा प्रणाली प्रशासकसँग "
+#~ "परामर्श लिनुहोस् ।\n"
+#~ "</qt>"
+
+#~ msgid "Connect to the Internet directly."
+#~ msgstr "सिधै इन्टरनेटमा जडान गर्नुहोस् ।"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "No Proxy"
+#~ msgstr "प्रोक्सी"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Automatically detect and configure the proxy settings.<p>\n"
+#~ "Automatic detection is performed using the <b>Web Proxy Auto-Discovery "
+#~ "Protocol (WPAD)</b>.<p>\n"
+#~ "<b>NOTE:</b> This option might not work properly or not work at all in "
+#~ "some UNIX/Linux distributions. If you encounter a problem when using this "
+#~ "option, please check the FAQ section at http://konqueror.kde.org.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "प्रोक्सी सेटिङ स्वचालित रुपमा पत्ता लगाउँछ र कन्फिगर गर्छ<p>\n"
+#~ "स्वचालित पत्ता लगाउने <b>स्वत: प्रकाशन वेब प्रोक्सी (WPAD)</b> प्रयोग गरेर सम्पादन "
+#~ "गर्छ ।<p>\n"
+#~ "<b>द्रष्टव्य:</b> यो विकल्पले उचित तरिकाले कार्य गर्दैन वा केही UNIX/Linux वितरणमा "
+#~ "सबै कार्य गर्दैन । यदि तपाईँले यो विकल्प प्रयोग गर्ने बेलामा समस्या सामना गर्न परेमा, "
+#~ "कृपया http://konqueror.kde.org. मा FAQ सेक्सन जाँच गर्नुहोस् ।\n"
+#~ "</qt>"
+
+#, fuzzy
+#~| msgid "U&se the following proxy configuration URL"
+#~ msgid "Detect proxy configuration automatically"
+#~ msgstr "निम्न प्रोक्सी कन्फिगरेसन यूआरएल प्रयोग गर्नुहोस्"
+
+#, fuzzy
+#~| msgid "Use the specified proxy script URL to configure the proxy settings."
+#~ msgid "Use the specified proxy script to configure the proxy settings."
+#~ msgstr "प्रोक्सी सेटिङ कन्फिगर गर्न निर्दिष्ट गरिएको प्रोक्सी स्क्रिप्ट प्रयोग गर्नुहोस् ।"
+
+#, fuzzy
+#~| msgid "U&se the following proxy configuration URL"
+#~ msgid "Use proxy auto configuration URL:"
+#~ msgstr "निम्न प्रोक्सी कन्फिगरेसन यूआरएल प्रयोग गर्नुहोस्"
+
+#~ msgid "Enter the address for the proxy configuration script."
+#~ msgstr "प्रोक्सी कन्फिगरेसन स्क्रिप्टका लागि ठेगाना प्रविष्ट गर्नुहोस् ।"
+
+#, fuzzy
+#~| msgid "U&se the following proxy configuration URL"
+#~ msgid "Use system proxy configuration:"
+#~ msgstr "निम्न प्रोक्सी कन्फिगरेसन यूआरएल प्रयोग गर्नुहोस्"
+
+#~ msgid ""
+#~ "<qt>Attempt automatic discovery of the environment variables used for "
+#~ "setting system wide proxy information.<p> This feature works by searching "
+#~ "for commonly used variable names such as HTTP_PROXY, FTP_PROXY and "
+#~ "NO_PROXY.</qt>"
+#~ msgstr ""
+#~ "<qt>हरेक प्रणालीमा प्रोक्सी सूचना सेटिङ गर्नाका लागि परिवेश चलको प्रयोग गर्न स्वत: "
+#~ "पत्ता लगाउने प्रयास गर्नुहोस् ।<p> यो आकृतिले समान्यत: प्रयोग भएका चल नाम जस्तै: "
+#~ "HTTP_PROXY, FTP_PROXY र NO_PROXY खोजेर कार्य गर्छ ।</qt>"
+
+#, fuzzy
+#~| msgid "Auto &Detect"
+#~ msgid "Auto D&etect"
+#~ msgstr "स्वत: पत्ता लगाउने"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Enter the name of the environment variable, e.g. <b>HTTP_PROXY</b>, used "
+#~| "to store the address of the HTTP proxy server.<p>\n"
+#~| "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~| "attempt automatic discovery of this variable.\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the name of the environment variable, e.g. <b>HTTP_PROXY</b>, used "
+#~ "to store the address of the HTTP proxy server.<p>\n"
+#~ "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~ "attempt automatic discovery of this variable.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "परिवेश चलको नाम प्रविष्ट गर्नुहोस्, जस्तै: <b>HTTP_PROXY</b>, HTTP प्रोक्सी सर्भरको "
+#~ "ठेगाना भण्डारण गर्न प्रयोग गरिन्छ ।<p>\n"
+#~ "वैकल्पिक रुपमा, तपाईँले यो चलको स्वचालित रुपमा पत्ता लगाउने प्रयास गर्न <b>\"स्वत: "
+#~ "पत्ता लगाउने\"</b> बटनमा क्लिक गर्न सक्नुहुन्छ ।\n"
+#~ "</qt>"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "HTTP Proxy:"
+#~ msgstr "प्रोक्सी"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Enter the name of the environment variable, e.g. <b>HTTPS_PROXY</b>, "
+#~| "used to store the address of the HTTPS proxy server.<p>\n"
+#~| "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~| "attempt an automatic discovery of this variable.\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the name of the environment variable, e.g. <b>HTTPS_PROXY</b>, used "
+#~ "to store the address of the HTTPS proxy server.<p>\n"
+#~ "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~ "attempt an automatic discovery of this variable.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "परिवेश चलको नाम प्रविष्ट गर्नुहोस्, जस्तै: <b>HTTPS_PROXY</b>, HTTPS प्रोक्सी "
+#~ "सर्भरको ठेगाना भण्डारण गर्न प्रयोग गरिन्छ ।<p>\n"
+#~ "वैकल्पिक रुपमा, तपाईँले यो चलको स्वचालित रुपमा पत्ता लगाउने प्रयास गर्न<b>\"स्वत: "
+#~ "पत्ता लगाउने\"</b> बटनमा क्लिक गर्न सक्नुहुन्छ ।\n"
+#~ "</qt>"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "SSL Proxy:"
+#~ msgstr "प्रोक्सी"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Enter the name of the environment variable, e.g. <b>FTP_PROXY</b>, used "
+#~| "to store the address of the FTP proxy server.<p>\n"
+#~| "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~| "attempt an automatic discovery of this variable.\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the name of the environment variable, e.g. <b>FTP_PROXY</b>, used "
+#~ "to store the address of the FTP proxy server.<p>\n"
+#~ "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~ "attempt an automatic discovery of this variable.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "परिवेश चलको नाम प्रविष्ट गर्नुहोस्, जस्तै: <b>FTP_PROXY</b>, FTP प्रोक्सी सर्भरको "
+#~ "ठेगाना भण्डारण गर्न प्रयोग गरिन्छ ।<p>\n"
+#~ "वैकल्पिक रुपमा, तपाईँले यो चलको स्वत: पत्तालगाउने प्रयास गर्न<b>\"स्वत: पत्ता लगाउने"
+#~ "\"</b> बटनमा क्लिक गर्न सक्नुहुन्छ ।\n"
+#~ "</qt>"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "FTP Proxy:"
+#~ msgstr "प्रोक्सी"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Enter the name of the environment variable, e.g. <b>HTTPS_PROXY</b>, "
+#~| "used to store the address of the HTTPS proxy server.<p>\n"
+#~| "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~| "attempt an automatic discovery of this variable.\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the name of the environment variable, e.g. <b>SOCKS_PROXY</b>, used "
+#~ "to store the address of the SOCKS proxy server.<p>\n"
+#~ "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~ "attempt an automatic discovery of this variable.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "परिवेश चलको नाम प्रविष्ट गर्नुहोस्, जस्तै: <b>HTTPS_PROXY</b>, HTTPS प्रोक्सी "
+#~ "सर्भरको ठेगाना भण्डारण गर्न प्रयोग गरिन्छ ।<p>\n"
+#~ "वैकल्पिक रुपमा, तपाईँले यो चलको स्वचालित रुपमा पत्ता लगाउने प्रयास गर्न<b>\"स्वत: "
+#~ "पत्ता लगाउने\"</b> बटनमा क्लिक गर्न सक्नुहुन्छ ।\n"
+#~ "</qt>"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "SOCKS Proxy:"
+#~ msgstr "प्रोक्सी"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Enter the name of the environment variable, e.g. <b>HTTPS_PROXY</b>, "
+#~| "used to store the address of the HTTPS proxy server.<p>\n"
+#~| "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~| "attempt an automatic discovery of this variable.\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>Enter the name of the environment variable, e.g. <b>SOCKS_PROXY</b>, "
+#~ "used to store the address of the SOCKS proxy server.<p>Alternatively, you "
+#~ "can click on the <b>\"Auto Detect\"</b> button to attempt an automatic "
+#~ "discovery of this variable.</p></qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "परिवेश चलको नाम प्रविष्ट गर्नुहोस्, जस्तै: <b>HTTPS_PROXY</b>, HTTPS प्रोक्सी "
+#~ "सर्भरको ठेगाना भण्डारण गर्न प्रयोग गरिन्छ ।<p>\n"
+#~ "वैकल्पिक रुपमा, तपाईँले यो चलको स्वचालित रुपमा पत्ता लगाउने प्रयास गर्न<b>\"स्वत: "
+#~ "पत्ता लगाउने\"</b> बटनमा क्लिक गर्न सक्नुहुन्छ ।\n"
+#~ "</qt>"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the environment variable, e.g. <b>NO_PROXY</b>, used to store the "
+#~ "addresses of sites for which the proxy server should not be used.<p>\n"
+#~ "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~ "attempt an automatic discovery of this variable.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "परिवेश चल प्रविष्ट गर्नुहोस्, जस्तै: <b>NO_PROXY</b>, प्रयोग गर्न नहुने प्रोक्सी सर्भरका "
+#~ "लागि साइटको ठेगाना भण्डारण गर्न प्रयोग गरिन्छ ।<p>\n"
+#~ "वैकल्पिक रुपमा, तपाईँले यो चलक स्वत: पत्ता लगाउने प्रयास गर्न<b>\"स्वत: पत्ता लगाउने"
+#~ "\"</b> बटन क्लिक गर्न सक्नुहुन्छ ।\n"
+#~ "</qt>"
+
+#, fuzzy
+#~| msgid "E&xceptions"
+#~ msgid "Exceptions:"
+#~ msgstr "अपवाद"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Enter the environment variable, e.g. <b>NO_PROXY</b>, used to store the "
+#~| "addresses of sites for which the proxy server should not be used.<p>\n"
+#~| "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~| "attempt an automatic discovery of this variable.\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>Enter the environment variable, e.g. <b>NO_PROXY</b>, used to store "
+#~ "the addresses of sites for which the above proxy settings should not be "
+#~ "used.<p>Alternatively, you can click on the <b>\"Auto Detect\"</b> button "
+#~ "to attempt an automatic discovery of this variable.</p></qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "परिवेश चल प्रविष्ट गर्नुहोस्, जस्तै: <b>NO_PROXY</b>, प्रयोग गर्न नहुने प्रोक्सी सर्भरका "
+#~ "लागि साइटको ठेगाना भण्डारण गर्न प्रयोग गरिन्छ ।<p>\n"
+#~ "वैकल्पिक रुपमा, तपाईँले यो चलक स्वत: पत्ता लगाउने प्रयास गर्न<b>\"स्वत: पत्ता लगाउने"
+#~ "\"</b> बटन क्लिक गर्न सक्नुहुन्छ ।\n"
+#~ "</qt>"
+
+#~ msgid "Show the &value of the environment variables"
+#~ msgstr "परिवेश चलको मान देखाउनुहोस्"
+
+#~ msgid "Manually enter proxy server configuration information."
+#~ msgstr "प्रोक्सी सर्भर कन्फिगरेसन सूचना म्यानुअल तरिकाले प्रविष्ट गर्नुहोस् ।"
+
+#, fuzzy
+#~| msgid "A&utomatically detect proxy configuration"
+#~ msgid "Use manually specified proxy configuration:"
+#~ msgstr "प्रोक्सी कन्फिगरेसन स्वचालित रुपमा पत्ता लगाउनुहोस्"
+
+#~ msgid "Enter the address of the HTTP proxy server."
+#~ msgstr "HTTP प्रोक्सी सर्भरको ठेगाना प्रविष्ट गर्नुहोस् ।"
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTP proxy server."
+#~ msgid "Enter the port number of the HTTP proxy server."
+#~ msgstr "HTTP प्रोक्सी सर्भरको ठेगाना प्रविष्ट गर्नुहोस् ।"
+
+#, fuzzy
+#~| msgid "&Use the same proxy server for all protocols"
+#~ msgid "Use this proxy server for a&ll protocols"
+#~ msgstr "सबै प्रोटोकलका लागि समान प्रोक्सी सर्भर प्रयोग गर्नुहोस्"
+
+#~ msgid "Enter the address of the HTTPS proxy server."
+#~ msgstr "HTTPS प्रोक्सी सर्भरको ठेगाना प्रविष्ट गर्नुहोस् ।"
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTPS proxy server."
+#~ msgid "Enter the port number of the HTTPS proxy server."
+#~ msgstr "HTTPS प्रोक्सी सर्भरको ठेगाना प्रविष्ट गर्नुहोस् ।"
+
+#~ msgid "Enter the address of the FTP proxy server."
+#~ msgstr "FTP प्रोक्सी सर्भरको ठेगाना प्रविष्ट गर्नुहोस् ।"
+
+#, fuzzy
+#~| msgid "Enter the address of the FTP proxy server."
+#~ msgid "Enter the port number of the FTP proxy server."
+#~ msgstr "FTP प्रोक्सी सर्भरको ठेगाना प्रविष्ट गर्नुहोस् ।"
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTPS proxy server."
+#~ msgid "Enter the address of the SOCKS proxy server."
+#~ msgstr "HTTPS प्रोक्सी सर्भरको ठेगाना प्रविष्ट गर्नुहोस् ।"
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTPS proxy server."
+#~ msgid "Enter the port number of the SOCKS proxy server."
+#~ msgstr "HTTPS प्रोक्सी सर्भरको ठेगाना प्रविष्ट गर्नुहोस् ।"
+
+#, fuzzy
+#~| msgid "Use proxy only for entries in this list"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Check this box if you want the above proxy settings to apply only to the "
+#~ "addresses listed in the <i>Exceptions</i> list.</qt>"
+#~ msgstr "यो सूचीमा प्रविष्टिका लागि मात्र प्रोक्सी प्रयोग गर्नुहोस्"
+
+#, fuzzy
+#~| msgid "Use proxy only for entries in this list"
+#~ msgid "Use proxy settings only for addresses in the Exceptions list"
+#~ msgstr "यो सूचीमा प्रविष्टिका लागि मात्र प्रोक्सी प्रयोग गर्नुहोस्"
+
+#~ msgid ""
+#~ "You have to restart the running applications for these changes to take "
+#~ "effect."
+#~ msgstr ""
+#~ "यी परिवर्तनका लागि प्रभाव पत्ता लगाउन तपाईँले चलेका अनुप्रयोग पुन: सुरु गर्नु पर्छ ।"
+
+#, fuzzy
+#~| msgid "Update Failed"
+#~ msgctxt "@title:window"
+#~ msgid "Update Failed"
+#~ msgstr "अद्यावधिक असफल भयो"
+
+#~ msgid "You have to restart KDE for these changes to take effect."
+#~ msgstr "तपाईँले यी परिवर्तनका लागि प्रभाव पत्ता लगाउन केडीई पुन: सुरु गर्नुपर्छ ।"
+
+#~ msgid "Timeout Values"
+#~ msgstr "समय समाप्ति मान"
+
+#, fuzzy
+#~| msgid ""
+#~| "Here you can set timeout values. You might want to tweak them if your "
+#~| "connection is very slow. The maximum allowed value is %1 seconds."
+#~ msgid ""
+#~ "Here you can set timeout values. You might want to tweak them if your "
+#~ "connection is very slow. The maximum allowed value is 1 second."
+#~ msgid_plural ""
+#~ "Here you can set timeout values. You might want to tweak them if your "
+#~ "connection is very slow. The maximum allowed value is %1 seconds."
+#~ msgstr[0] ""
+#~ "तपाईँले यहाँ समय समाप्ति मान सेट गर्न सक्नुहुन्छ । यदि तपाईँको जडान निकै ढिलो भएमा "
+#~ "तिनीहरूलाई तान्न खोज्नु होला ! अधिकतम अनुमति दिएको मान %1 सेकेन्ड छ ।"
+#~ msgstr[1] ""
+#~ "तपाईँले यहाँ समय समाप्ति मान सेट गर्न सक्नुहुन्छ । यदि तपाईँको जडान निकै ढिलो भएमा "
+#~ "तिनीहरूलाई तान्न खोज्नु होला ! अधिकतम अनुमति दिएको मान %1 सेकेन्ड छ ।"
+
+#, fuzzy
+#~| msgid " sec"
+#~ msgid " second"
+#~ msgid_plural " seconds"
+#~ msgstr[0] " सेकेन्ड"
+#~ msgstr[1] " सेकेन्ड"
+
+#~ msgid "Soc&ket read:"
+#~ msgstr "सकेट पढाइ:"
+
+#~ msgid "Pro&xy connect:"
+#~ msgstr "प्रोक्सी जडान गर्नुहोस्:"
+
+#~ msgid "Server co&nnect:"
+#~ msgstr "सर्भर जडान गर्नुहोस्:"
+
+#~ msgid "&Server response:"
+#~ msgstr "सर्भर प्रतिक्रिया:"
+
+#~ msgid "FTP Options"
+#~ msgstr "एफटीपी विकल्प"
+
+#~ msgid "Enable passive &mode (PASV)"
+#~ msgstr "निस्क्रिय मोड सक्षम पार्नुहोस् (PASV)"
+
+#~ msgid ""
+#~ "Enables FTP's \"passive\" mode. This is required to allow FTP to work "
+#~ "from behind firewalls."
+#~ msgstr ""
+#~ "FTP को \"निस्क्रिय\" मोड सक्षम पार्छ । पछिका फायरवालबाट कार्य गर्न FTP लाई "
+#~ "अनुमति दिन आवश्यक छ ।"
+
+#~ msgid "Mark &partially uploaded files"
+#~ msgstr "आंशिक रुपमा अपलोड गरिएका फाइल चिन्ह लगाउनुहोस् ।"
+
+#~ msgid ""
+#~ "<p>Marks partially uploaded FTP files.</p><p>When this option is enabled, "
+#~ "partially uploaded files will have a \".part\" extension. This extension "
+#~ "will be removed once the transfer is complete.</p>"
+#~ msgstr ""
+#~ "<p>आंशिक रुपमा अपलोड गरिएका FTP फाइल चिन्ह लगाउँछ ।</p><p>यो विकल्प सक्षम "
+#~ "पारिएको बेलामा, आंशिक रुपमा अपलोड गरिएका फाइल \".part\" विस्तार हुनेछन् । यो "
+#~ "विस्तारले एउटा स्थानान्तरण समाप्त हटाउने छ ।</p>"
+
+#~ msgid ""
+#~ "<h1>Network Preferences</h1>Here you can define the behavior of KDE "
+#~ "programs when using Internet and network connections. If you experience "
+#~ "timeouts or use a modem to connect to the Internet, you might want to "
+#~ "adjust these settings."
+#~ msgstr ""
+#~ "<h1>सञ्जाल प्राथमिकता</h1>यहाँ तपाईँले इन्टरनेट प्रयोग गर्दा र सञ्जाल जडान गर्ने "
+#~ "बेलामा केडीई कार्यक्रमको व्यवहार परिभाषित गर्न सक्नुहुन्छ । यदि तपाईँलाई समयसमाप्ति "
+#~ "वा इन्टरनेटमा जडान गर्न मोडेम प्रयोग गर्न ज्ञान भएमा, तपाईँले यी सेटिङ समायोजन गर्न "
+#~ "चाहनुहुन्छ ।"
+
+#~ msgid "Default user name:"
+#~ msgstr "पूर्वनिर्धारित प्रयोगकर्ता नाम:"
+
+#~ msgid "Default password:"
+#~ msgstr "पूर्वनिर्धारित पासवर्ड:"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p><h1>Windows Shares</h1>Konqueror is able to access shared windows "
+#~| "filesystems if properly configured. If there is a specific computer from "
+#~| "which you want to browse, fill in the <em>Browse server</em> field. This "
+#~| "is mandatory if you do not run Samba locally. The <em>Broadcast address</"
+#~| "em> and <em>WINS address</em> fields will also be available, if you use "
+#~| "the native code, or the location of the 'smb.conf' file from which the "
+#~| "options are read, when using Samba. In any case, the broadcast address "
+#~| "(interfaces in smb.conf) must be set up if it is guessed incorrectly or "
+#~| "you have multiple cards. A WINS server usually improves performance, and "
+#~| "reduces the network load a lot.</p><p>The bindings are used to assign a "
+#~| "default user for a given server, possibly with the corresponding "
+#~| "password, or for accessing specific shares. If you choose to, new "
+#~| "bindings will be created for logins and shares accessed during browsing. "
+#~| "You can edit all of them from here. Passwords will be stored locally, "
+#~| "and scrambled so as to render them unreadable to the human eye. For "
+#~| "security reasons, you may not want to do that, as entries with passwords "
+#~| "are clearly indicated as such.</p>"
+#~ msgid ""
+#~ "<p><h1>Windows Shares</h1>Konqueror is able to access shared Microsoft "
+#~ "Windows file systems, if properly configured. If there is a specific "
+#~ "computer from which you want to browse, fill in the <em>Browse server</"
+#~ "em> field. This is mandatory if you are not running Samba locally. The "
+#~ "<em>Broadcast address</em> and <em>WINS address</em> fields will also be "
+#~ "available, if you use the native code, or the location of the 'smb.conf' "
+#~ "file from which the options are read, when using Samba. In any case, the "
+#~ "broadcast address (interfaces in smb.conf) must be set up if it is "
+#~ "guessed incorrectly or you have multiple cards. A WINS server usually "
+#~ "improves performance, and reduces the network load a lot.</p><p>The "
+#~ "bindings are used to assign a default user for a given server, possibly "
+#~ "with the corresponding password, or for accessing specific shares. If you "
+#~ "choose to, new bindings will be created for logins and shares accessed "
+#~ "during browsing. You can edit all of them from here. Passwords will be "
+#~ "stored locally, and scrambled so as to render them unreadable to the "
+#~ "human eye. For security reasons, you may not want to do that, as entries "
+#~ "with passwords are clearly indicated as such.</p>"
+#~ msgstr ""
+#~ "<p><h1>विन्डोज सेयर</h1> कन्क्वेरर उचित तरिकाले कन्फिगर भएमा बाँडिएका विन्डोज "
+#~ "प्रणालीमा पँहुच प्राप्त गर्न सक्षम छ । यसि तपाईँले ब्राउज गर्न चाहेको ठाउँमा निर्दिष्ट "
+#~ "कम्प्युटर स्वरुप छ भने, <em>ब्राउज सर्भर</em> फाँटमा भर्नुहोस् । यदि तपाईँ साम्बा "
+#~ "स्थानीय रुपमा चलाउनुहुन्न भने यो अनवार्य छ । यदि तपाईँ साम्बा प्रयोग गर्ने बेलामा नेटिभ "
+#~ "कोड वा विकल्प पढिने ठाउँबाट 'smb.conf' फाइल प्रयोग गर्नुहुन्छ भने, <em>प्रसारण "
+#~ "ठेगाना</em> र <em>WINS ठेगाना</em> फाँट पनि उपलब्ध हुनेछ । कुनै पनि केसमा, यदि यो "
+#~ "गलत तरिकाले अनुमाग गर्नु भएको छ वा तपाईँसँग बहुभागिय कार्ड भएमा प्रसारण ठेगाना "
+#~ "(इन्टरफेस smb.conf मा) सेट अप हुनुपर्छ । WINS सर्भरले सधैँ सम्पादन सुधार गर्छ, र धेरै "
+#~ "सञ्जाल लोड घटाउँछ ।<p>दिएका सर्भरका लागि पूर्वनिर्धारित प्रयोगकर्ता मानाङ्कन गर्न, "
+#~ "सम्भवत: सङ्गत पासवर्डसँग, वा निर्दिष्ट सेयर पहुँचका लागि बाइन्डिङ प्रयोग गरिन्छ । यदि "
+#~ "तपाईँले यसलाई रोज्दा, लगइनका लागि नयाँ बाइन्डिङ सिर्जना हुनेछन् र ब्राउजिङ गर्दा पहुँच "
+#~ "बाँडफाँड हुन्छन् । तपाईँले तिनीहरूलाई यहाँबाट सम्पादन गर्न सक्नुहुन्छ । तिनीहरूलाई सिधै "
+#~ "आँखाले पढ्न योग्य हुन नदिन पासवर्ड स्थानीय रुपमा भण्डारण , र अस्तव्यस्त गरिने छन् । "
+#~ "सुरक्षाका कारणले, तपाईँ त्यसो गर्न चाहनुहुन्न, पासवर्ड सँगका प्रविष्टिले त्यस्तो इङ्गित "
+#~ "गर्छ ।<p>"
+
+#, fuzzy
+#~| msgid "Add Identification"
+#~ msgctxt "@title:window"
+#~ msgid "Add Identification"
+#~ msgstr "पहिचान थप्नुहोस्"
+
+#, fuzzy
+#~| msgid "Modify Identification"
+#~ msgctxt "@title:window"
+#~ msgid "Modify Identification"
+#~ msgstr "पहिचान परिमार्जन गर्नुहोस्"
+
+#~ msgid ""
+#~ "<qt><center>Found an existing identification for<br/><b>%1</b><br/>Do you "
+#~ "want to replace it?</center></qt>"
+#~ msgstr ""
+#~ "<qt><center>यसका लागि अवस्थित पहिचान फेला पर्यो<br/><b>%1</b><br/>के तपाईँ "
+#~ "यसलाई प्रतिस्थापन गर्न चाहनुहुन्छ?</center></qt>"
+
+#, fuzzy
+#~| msgid "Duplicate Identification"
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Identification"
+#~ msgstr "नक्कली पहिचान"
+
+#~ msgid ""
+#~ "<p><h1>Browser Identification</h1> The browser-identification module "
+#~ "allows you to have full control over how Konqueror will identify itself "
+#~ "to web sites you browse.</p><p>This ability to fake identification is "
+#~ "necessary because some web sites do not display properly when they detect "
+#~ "that they are not talking to current versions of either Netscape "
+#~ "Navigator or Internet Explorer, even if the browser actually supports all "
+#~ "the necessary features to render those pages properly. For such sites, "
+#~ "you can use this feature to try to browse them. Please understand that "
+#~ "this might not always work, since such sites might be using non-standard "
+#~ "web protocols and or specifications.</p><p><u>NOTE:</u> To obtain "
+#~ "specific help on a particular section of the dialog box, simply click on "
+#~ "the quick help button on the window title bar, then click on the section "
+#~ "for which you are seeking help.</p>"
+#~ msgstr ""
+#~ "<p><h1>ब्राउजर पहिचान</h1> ब्राउजर पहिचान मोड्युलले तपाईँले ब्राउज गरेको वेब साइटमा "
+#~ "यो आफैँले कसरी कन्क्वेरर पहिचान गर्नेछ नियन्त्रण गर्न अनुमति दन्छ ।</p><p>नक्कल पहिचान "
+#~ "गर्न यो क्षमता आवश्यक छ किनभने तिनीहरूले यात नेटस्केप नेभिगेटर वा इन्टरनेट अन्वेषकको "
+#~ "हालको संस्करणसँग कुराकानी नभएको पत्ता लगाउँदा केही वेब साइटले उचित तरिकाले प्रदर्शन "
+#~ "गर्दैनन्, तापनि ब्राउजरले ती पृष्ठ उचित तरिकाले रेन्डर गर्न सबै आवश्यक बिशेषता वास्तविक "
+#~ "रुपले समर्थन गर्छन । त्यस्ता साइटका लागि, तिनीहरूलाई ब्राउज गर्न तपाईँले यि आकृति "
+#~ "प्रयोग गर्न सक्नुहुन्छ । कृपया त्यो याद गर्नुहोस् त्यस्ता साइटले अमानक वेब प्रोटोकल र वा "
+#~ "विवरण प्रयोग गरिराखे देखि, यसले सधैँ कार्य नगर्न सक्छ ।</p><p><u>द्रष्टव्य:</u> संवाद "
+#~ "बाकसको विशेष खण्डमा निश्चित मद्दत प्राप्त गर्न, केबल सञ्झ्यालमा शीर्षक पट्टीको छिटो "
+#~ "मद्दत बटनमा क्लिक गर्नुहोस्, त्यसपछि तपाईँले मद्दत खोजेको खण्डमा क्लिक गर्नुहोस् ।</p>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Here you can modify the default browser-identification text or set a "
+#~| "site <code>(eg. www.kde.org)</code> or a domain <code>(eg. kde.org)</"
+#~| "code> specific identification text.<p>\n"
+#~| "To add a new site specific identification text, click the <code>New</"
+#~| "code> button and supply the necessary information. To change an existing "
+#~| "site specific entry, click on the <code>Change</code> button. The "
+#~| "<code>Delete</code> button will remove the selected site specific "
+#~| "identification text, causing the default setting to be used for that "
+#~| "site or domain.\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Here you can modify the default browser-identification text or set a site "
+#~ "<code>(eg. www.kde.org)</code> or a domain <code>(eg. kde.org)</code> "
+#~ "specific identification text.<p>\n"
+#~ "To add a new site-specific identification text, click the <code>New</"
+#~ "code> button and supply the necessary information. To change an existing "
+#~ "site-specific entry, click on the <code>Change</code> button. The "
+#~ "<code>Delete</code> button will remove the selected site-specific "
+#~ "identification text, causing the default setting to be used for that site "
+#~ "or domain.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "यहाँ तपाईँले पूर्वनिर्धारित ब्राउजर पहिचान पाठ परिमार्जन गर्न सक्नुहुन्छ वा "
+#~ "साइट<code>(eg. www.kde.org)</code> वा डोमेन <code>(eg. kde.org)</code> "
+#~ "निर्दिष्ट पहिचान पाठ सेट गर्न सक्नुहुन्छ ।<p>\n"
+#~ "नयाँ साइट निर्दिष्ट पहिचान पाठ थप्न, <code>नयाँ</code> बटनमा क्लिक गर्नुहोस् र "
+#~ "आवश्यक सूचना वितरण गर्नुहोस् । अवस्थित साइट निर्दिष्ट प्रविष्टि परिवर्तन गर्न, "
+#~ "<code>परिवर्तन</code> बटन क्लिक गर्नुहोस् । त्यो साइट वा डोमेनका लागि सेटिङ प्रयोग "
+#~ "गर्नुपर्ने कारणले <code>मेट्नुहोस्</code> बटनले चयन गरिएको साइट निर्दिष्ट पहिचान पाठ "
+#~ "हटाउने छ ।\n"
+#~ "</qt>"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Send the browser identification to web sites.<p>\n"
+#~ "<u>NOTE:</u> Many sites rely on this information to display pages "
+#~ "properly, hence, it is highly recommended that you do not totally disable "
+#~ "this feature but rather customize it.<p>\n"
+#~ "By default, only minimal identification information is sent to remote "
+#~ "sites. The identification text that will be sent is shown below.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "वेब साइटमा ब्राउजरको पहिचान पठाउनुहोस् ।<p>\n"
+#~ "<u>द्रष्टव्य:</u>धेरै साइटले पृष्ठ उचित तरिकाले प्रदर्शन गर्न यो सूचनामा विश्वास गर्छन्, "
+#~ "त्यसैले, तपाईँलाई यो सल्लाह दिइन्छ कि यो आकृतिलाई पुर्णतया अक्षम नपार्नुहोस् बरु यसालाई "
+#~ "अनुकूल गर्नुहोस् ।<p>\n"
+#~ "पूर्वनिर्धारित अनुरुप, न्यूनतम पहिचान सूचना मात्र टाढाको साइटमा पठाइन्छ । पठाइने "
+#~ "पहिचान पाठ तल देखाएको छ ।\n"
+#~ "</qt>"
+
+#~ msgid "&Send identification"
+#~ msgstr "पहिचान पठाउनुहोस्"
+
+#~ msgid ""
+#~ "The browser identification text sent to the sites you visit. Use the "
+#~ "provided options to customize it."
+#~ msgstr ""
+#~ "तपाईँले अवलोकन गर्ने साइटमा ब्राउजर पहिचान पाठ पठाउछ । यसलाई अनुकूल गर्न उपलब्ध "
+#~ "विकल्प प्रयोग गर्नुहोस् ।"
+
+#~ msgid "Default Identification"
+#~ msgstr "पूर्वनिर्धारित पहिचान"
+
+#~ msgid ""
+#~ "The browser identification text sent to the sites you visit. You can "
+#~ "customize it using the options provided below."
+#~ msgstr ""
+#~ "तपाईँले अवलोकन गर्ने साइटमा ब्राउजर पहिचान पाठ पठाउछ । तपाईँले यसलाई तल उपलब्ध "
+#~ "विकल्प प्रयोग गरेर अनुकूल गर्न सक्नुहुन्छ ।"
+
+#~ msgid ""
+#~ "Includes your operating system's name in the browser identification text."
+#~ msgstr "ब्राउजर पहिचान पाठमा तपाईँको सञ्चालन प्रणालीको नाम समावेश गर्छ ।"
+
+#~ msgid "Add operating s&ystem name"
+#~ msgstr "सञ्चालन प्रणाली नाम थप्नुहोस्"
+
+#~ msgid ""
+#~ "Includes your operating system's version number in the browser "
+#~ "identification text."
+#~ msgstr "ब्राउजर पहिचान पाठमा तपाईँको सञ्चालन प्रणालीको संस्करण सङ्ख्या समावेश गर्छ ।"
+
+#~ msgid "Add operating system &version"
+#~ msgstr "सञ्चालन प्रणाली संस्करण थप्नुहोस्"
+
+#~ msgid "Includes your machine's CPU type in the browser identification text."
+#~ msgstr "ब्राउजर पहिचान पाठमा तपाईँको मेशिनको CPU प्रकार समावेश गर्छ ।"
+
+#~ msgid "Add &machine (processor) type"
+#~ msgstr "मेशिन (प्रोसेसर) प्रकार थप्नुहोस्"
+
+#, fuzzy
+#~| msgid ""
+#~| "Includes your language settings in the browser identification text to "
+#~| "obtain localised versions of the page."
+#~ msgid ""
+#~ "Includes your language settings in the browser identification text to "
+#~ "obtain localized versions of the page."
+#~ msgstr ""
+#~ "पृष्ठको स्थानीयकृत संस्करण प्राप्त गर्न ब्राउजर पहिचान पाठमा तपाईँको भाषा सेटिङ समावेश "
+#~ "गर्छ ।"
+
+#~ msgid "Add lang&uage information"
+#~ msgstr "भाषा सूचना थप्नुहोस्"
+
+#~ msgid "Site Specific Identification"
+#~ msgstr "साइट निर्दिष्ट पहिचान"
+
+#~ msgid "Site Name"
+#~ msgstr "साइट नाम"
+
+#~ msgid "Identification"
+#~ msgstr "पहिचान"
+
+#~ msgid "User Agent"
+#~ msgstr "प्रयोगकर्ता एजेन्ट"
+
+#~ msgid "Add new identification text for a site."
+#~ msgstr "साइटका लागि नयाँ पहिचान पाठ थप्नुहोस् ।"
+
+#~ msgid "Change the selected identifier text."
+#~ msgstr "चयन गरेको पहिचायक पाठ परिवर्तन गर्नुहोस् ।"
+
+#~ msgid "Delete the selected identifier text."
+#~ msgstr "चयन गरेको पहिचायक पाठ मेट्नुहोस् ।"
+
+#~ msgid "Delete all identifiers."
+#~ msgstr "सबै पहिचायक मेट्नुहोस् ।"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Enter the site or domain name where a fake browser identification should "
+#~| "be used.<p>\n"
+#~| "<u>NOTE:</u> Wildcard syntax such as \\\"*,?\\\" is NOT allowed: "
+#~| "instead, use the top level address of a site to make generic matches; "
+#~| "for example, if you want all KDE sites to receive a fake browser "
+#~| "identification, you would enter <code>.kde.org</code> - the fake "
+#~| "identity would then be sent to any KDE site that ends with <code>.kde."
+#~| "org</code>.\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the site or domain name where a fake browser identification should "
+#~ "be used.<p>\n"
+#~ "<u>NOTE:</u> Wildcard syntax such as \\\"*,?\\\" is NOT allowed: instead, "
+#~ "use the top level address of a site to make generic matches; for example, "
+#~ "if you want all KDE sites to receive a fake browser identification, you "
+#~ "would enter <code>kde.org</code> - the fake identity would then be sent "
+#~ "to any KDE site that ends with <code>kde.org</code>.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "नक्कली ब्राउजर पहिचान प्रयोग गर्ने ठाउँमा साइट वा डोमेनको नाम प्रविष्ट गर्नुहोस् ।"
+#~ "<p>\n"
+#~ "<u>द्रष्टव्य:</u> वाइल्डकार्ड वाक्य संरचना जस्तै:\\\"*,?\\\" अनुमति छैन: साटोमा, "
+#~ "जेनेरिक मिल्दो बनाउन साइटको माथिल्लो तहको ठेगाना प्रयोग गर्नुहोस्; उदाहरणका लागि, "
+#~ "यदि तपाईँ सबै केडीई साइटको नक्लल ब्राउजर पहिचान प्राप्त गर्न चाहनुहुन्छ भने, तपाईँले "
+#~ "<code>.kde.org</code> प्रविष्ट गर्न सक्नुहुन्छ - त्यसपछि नक्कल पहिचान <code>.kde."
+#~ "org</code> मा अन्त्य हुने कुनै केडीई साइटमा पठाइने छ ।\n"
+#~ "</qt>"
+
+#~ msgid "&When browsing the following site:"
+#~ msgstr "निम्न साइट ब्राउज गर्दा:"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Select the browser identification to use whenever contacting the site you "
+#~ "specified above.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "तपाईँले माथि निर्दिष्ट गरेको साइट सम्पर्क गर्दा प्रयोग गर्न ब्राउजर पहिचान चयन "
+#~ "गर्नुहोस् ।\n"
+#~ "</qt>"
+
+#~ msgid "&Use the following identification:"
+#~ msgstr "निम्न पहिचान प्रयोग गर्नुहोस्:"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "The actual browser identification text that will be sent to the remote "
+#~ "machine.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "टाढाको मेशिनमा पठाउने वास्तविक ब्राउजर पहिचान पाठ\n"
+#~ "</qt>"
+
+#~ msgid "Real identification:"
+#~ msgstr "वास्तविक पहिचान:"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Treat all cookies as session cookies. Session cookies are small pieces "
+#~| "of data that are temporarily stored in your computer's memory until you "
+#~| "quit or close all applications (e.g. your browser) that use them. Unlike "
+#~| "regular cookies, session cookies are never stored on your hard drive or "
+#~| "other storage medium.<p>\n"
+#~| "<u>NOTE:</u> Checking this option along with the previous one will "
+#~| "override your default as well as site specific cookie policies. However, "
+#~| "doing so also increases your privacy since all cookies will be removed "
+#~| "when the current session ends.\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "<p>Treat all cookies as session cookies. Session cookies are small pieces "
+#~ "of data that are temporarily stored in your computer's memory until you "
+#~ "quit or close all applications (e.g. your browser) that use them. Unlike "
+#~ "regular cookies, session cookies are never stored on your hard drive or "
+#~ "other storage medium.</p><p>\n"
+#~ "<u>NOTE:</u> Checking this option along with the previous one will "
+#~ "override your default as well as site specific cookie policies. However, "
+#~ "doing so also increases your privacy since all cookies will be removed "
+#~ "when the current session ends.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "सबै कुकीलाई सत्र कुकीको रुपमा व्यवहार गर्नुहोस् । सत्र कुकी तिनीहरूलाई प्रयोग गर्ने सबै "
+#~ "अनुप्रयोग (जस्तै: तपाईँको ब्राउजर) अन्त्य वा बन्द नगरेसम्म तपाईँको कम्प्युटरको स्मृतिमा "
+#~ "अस्थायी रुपमा भण्डारण गरिएका डाटाका साना टुक्रा हुन् । मन नपराएका नियमित कुकी, "
+#~ "सत्र कुकी तपाईँको हार्ड ड्राइभ वा अन्य भण्डारण माध्यम कहिले पनि भण्डारण गरिदैन ।<p>\n"
+#~ "<u>द्रष्टव्य:</u> यो विकल्प अघिल्लोमा जाँच गर्दा तपाईँको पूर्वनिर्धारित साथै साइट "
+#~ "निर्दिष्ट गरिएको कुकी नीति अधिलेखन हुनेछ । तापनि त्यसो गर्दा हालको सत्रको अन्त्य गर्ने "
+#~ "बेलामा सबै कुकी हटाउने छ तपाईँको निजीपना पनि बढाउछ ।\n"
+#~ "</qt>"
+
+#~ msgid "Treat &all cookies as session cookies"
+#~ msgstr "सबै कुकीलाई सत्र कुकीको रुपमा व्यवहार गर्नुहोस्"
+
+#~ msgid ""
+#~ "Enter the port number of the HTTP proxy server. Default is 8080. Another "
+#~ "common value is 3128."
+#~ msgstr ""
+#~ "HTTP प्रोक्सी सर्भरको पोर्ट सङ्ख्या प्रविष्ट गर्नुहोस् । पूर्वनिर्धारित ८०८० हो । अर्को "
+#~ "साझा मान ३१२८ हो ।"
+
+#~ msgid ""
+#~ "Enter the port number of the FTP proxy server. Default 8080. Another "
+#~ "common value is 3128."
+#~ msgstr ""
+#~ "FTP प्रोक्सी सर्भरको पोर्ट सङ्ख्या प्रविष्ट गर्नुहोस् । पूर्वनिर्धारित ८०८० हो । अर्को "
+#~ "साझा मान ३१२८ हो ।"
+
+#, fuzzy
+#~| msgid "Variable Proxy Configuration"
+#~ msgctxt "@title:window"
+#~ msgid "Variable Proxy Configuration"
+#~ msgstr "चल प्रोक्सी कन्फिगरेसन"
+
+#~ msgid "You must specify at least one valid proxy environment variable."
+#~ msgstr "तपाईँले कम्तिमा एउटा वैद्य प्रोक्सी परिवेश चल निर्दिष्ट गर्नुपर्छ ।"
+
+#~ msgid ""
+#~ "<qt>Make sure you entered the actual environment variable name rather "
+#~ "than its value. For example, if the environment variable is <br /"
+#~ "><b>HTTP_PROXY=http://localhost:3128</b><br /> you need to enter "
+#~ "<b>HTTP_PROXY</b> here instead of the actual value http://localhost:3128."
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>तपाईँ यसको मानको सट्टामा वास्तविक परिवेश चलको नाम प्रविष्टि गर्नुभएकोमा "
+#~ "निश्चिन्त हुनुहोस् , उदाहरणका लागि, यदि परिवेश चल<br /><b>HTTP_PROXY=http://"
+#~ "localhost:3128</b><br> भएमा तपाईँले यहाँ http://localhost:3128 वास्तविक मानको "
+#~ "साटोमा<b>HTTP_PROXY</b> प्रविष्ट गर्न आवश्यक हुन्छ ।</qt>"
+
+#, fuzzy
+#~| msgid "Invalid Proxy Setup"
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Proxy Setup"
+#~ msgstr "अवैध प्रोक्सी सेटअप"
+
+#~ msgid "Successfully verified."
+#~ msgstr "सफलतापूर्वक रुजू गरियो ।"
+
+#, fuzzy
+#~| msgid "Proxy Setup"
+#~ msgctxt "@title:window"
+#~ msgid "Proxy Setup"
+#~ msgstr "प्रोक्सी सेटअप"
+
+#~ msgid ""
+#~ "Did not detect any environment variables commonly used to set system wide "
+#~ "proxy information."
+#~ msgstr ""
+#~ "हरेक प्रणालीमा प्रोक्सी सूचना सेट गर्न सामान्यतया प्रयोग गरिएका कुनै पनि परिवेश चल "
+#~ "पत्ता लगाएन ।"
+
+#~ msgid ""
+#~ "<qt>To learn about the variable names the automatic detection process "
+#~ "searches for, press OK, click on the quick help button on the window "
+#~ "title bar of the previous dialog and then click on the \"<b>Auto Detect</"
+#~ "b>\" button.</qt>"
+#~ msgstr ""
+#~ "<qt>स्वचालित पत्ता लगाउने प्रक्रियाले खोजी गर्ने चल नामको बारेमा सिक्न, 'ठीक छ' बटन "
+#~ "थिच्नुहोस्, अघिल्लो संवादमा सञ्झ्याल शीर्षकपट्टीको शीघ्र मद्दत बटनमा क्लिक गर्नुहोस् र "
+#~ "\"<b>स्वत: पत्ता लगाउने</b>\" बटनमा क्लिक गर्नुहोस् ।</qt>"
+
+#, fuzzy
+#~| msgid "Automatic Proxy Variable Detection"
+#~ msgctxt "@title:window"
+#~ msgid "Automatic Proxy Variable Detection"
+#~ msgstr "स्वचालित प्रोक्सी चल पत्ता लगाउने"
+
+#, fuzzy
+#~| msgid "Manual Proxy Configuration"
+#~ msgctxt "@title:window"
+#~ msgid "Manual Proxy Configuration"
+#~ msgstr "म्यानुअल प्रोक्सी कन्फिगरेसन"
+
+#, fuzzy
+#~| msgid "Invalid Proxy Setting"
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Proxy Setting"
+#~ msgstr "अवैध प्रोक्सी सेटिङ"
+
+#~ msgid ""
+#~ "One or more of the specified proxy settings are invalid. The incorrect "
+#~ "entries are highlighted."
+#~ msgstr ""
+#~ "निर्दिष्ट गरिएका एक वा बढी प्रोक्सी सेटिङ अवैध छन् । गलत प्रविष्टि हाइलाइट गरिएका "
+#~ "छन् ।"
+
+#~ msgid "You entered a duplicate address. Please try again."
+#~ msgstr "तपाईँले नक्कली ठेगाना प्रविष्टि गर्नुभयो । कृपया पुन: प्रयास गर्नुहोस् ।"
+
+#~ msgid "<qt><center><b>%1</b></center> is already in the list.</qt>"
+#~ msgstr "<qt><center><b>%1</b></center> पहिले नै सूचीमा छ ।</qt>"
+
+#, fuzzy
+#~| msgid "Duplicate Entry"
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Entry"
+#~ msgstr "नक्कल प्रविष्टि"
+
+#, fuzzy
+#~| msgid "New Exception"
+#~ msgctxt "@title:window"
+#~ msgid "New Exception"
+#~ msgstr "नयाँ अपवाद"
+
+#, fuzzy
+#~| msgid "Change Exception"
+#~ msgctxt "@title:window"
+#~ msgid "Change Exception"
+#~ msgstr "अपवाद परिवर्तन गर्नुहोस्"
+
+#, fuzzy
+#~| msgid "Invalid Entry"
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Entry"
+#~ msgstr "अवैध प्रविष्टि"
+
+#~ msgid "The address you have entered is not valid."
+#~ msgstr "तपाईँले प्रविष्टि गरेका ठेगाना अवैध छ ।"
+
+#~ msgid ""
+#~ "<qt>Make sure none of the addresses or URLs you specified contain invalid "
+#~ "or wildcard characters such as spaces, asterisks (*), or question "
+#~ "marks(?).<br /><br /><u>Examples of VALID entries:</u><br /><code>http://"
+#~ "mycompany.com, 192.168.10.1, mycompany.com, localhost, http://localhost</"
+#~ "code><br /><br /><u>Examples of INVALID entries:</u><br /><code>http://my "
+#~ "company.com, http:/mycompany,com file:/localhost</code></qt>"
+#~ msgstr ""
+#~ "<qt>तपाईँले निर्दिष्ट गरेका कुनै पनि ठेगाना वा यूआरएलको अवैध वा वाइल्डकार्ड क्यारेक्टर "
+#~ "भएको निश्चिन्त हुनुहोस् जस्तै: स्पेस, यास्ट्रिक (*), वा प्रश्न चिन्ह (?) ।<br /><br /"
+#~ "><u>वैद्य प्रविष्टिको उदाहरण:</u><br/><code>http://mycompany.com, "
+#~ "192.168.10.1, mycompany.com, localhost, http://localhost</code><p><u>अवैध "
+#~ "प्रविष्टिको उदाहरण:</u><br/><code>http://my company.com, http:/mycompany,"
+#~ "com file:/localhost</code></qt>"
+
+#~ msgid "Enter the URL or address that should use the above proxy settings:"
+#~ msgstr "माथिको प्रोक्सी सेटिङ प्रयोग गर्ने यूआरएल वा ठेगाना प्रविष्ट गर्नुहोस्:"
+
+#~ msgid ""
+#~ "Enter the address or URL that should be excluded from using the above "
+#~ "proxy settings:"
+#~ msgstr ""
+#~ "माथिको प्रोक्सी सेटिङ प्रयोग गरेर यसबाट निकाल्नु पर्ने ठेगाना वा यूआरएल प्रविष्ट "
+#~ "गर्नुहोस्:"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>Enter a valid address or url.<br /><br /><b><u>NOTE:</u></b> "
+#~| "Wildcard matching such as <code>*.kde.org</code> is not supported. If "
+#~| "you want to match any host in the <code>.kde.org</code> domain, e.g. "
+#~| "<code>printing.kde.org</code>, then simply enter <code>.kde.org</code></"
+#~| "qt>"
+#~ msgid ""
+#~ "<qt>Enter a valid address or URL.<br /><br /><b><u>NOTE:</u></b> Wildcard "
+#~ "matching such as <code>*.kde.org</code> is not supported. If you want to "
+#~ "match any host in the <code>.kde.org</code> domain, e.g. <code>printing."
+#~ "kde.org</code>, then simply enter <code>.kde.org</code>.</qt>"
+#~ msgstr ""
+#~ "<qt>वैद्य ठेगाना वा url प्रविष्ट गर्नुहोस् ।<br /><br /><b><u>द्रष्टव्य:</u></b> "
+#~ "वाइल्डकार्ड सँग मिल्ने जस्तै:<code>*.kde.org</code> समर्थित छैन । यदि तपाईँ कुनै पनि "
+#~ "होस्ट <code>.kde.org</code> डोमेनमा मिलाउन चाहनुहुन्छ भने, जस्तै: <code>printing."
+#~ "kde.org</code>, केवल <code>.kde.org</code></qt> प्रविष्ट गर्नुहोस् ।"
+
+#~ msgid ""
+#~ "The address of the automatic proxy configuration script is invalid. "
+#~ "Please correct this problem before proceeding. Otherwise, your changes "
+#~ "will be ignored."
+#~ msgstr ""
+#~ "स्वचालित प्रोक्सी कन्फिगरेसन स्क्रिप्टको ठेगाना अवैध छ । कृपया अघि बढ्न यो समस्या सुधार "
+#~ "गर्नुहोस् । अन्यथा, तपाईँका परिवर्तनहरू उपेक्षा गरिन्छ ।"
+
+#~ msgid ""
+#~ "<qt>The proxy settings you specified are invalid.<br /><br />Please click "
+#~ "on the <b>Setup...</b> button and correct the problem before proceeding; "
+#~ "otherwise your changes will be ignored.</qt>"
+#~ msgstr ""
+#~ "<qt>तपाईँले निर्दिष्ट गरेका प्रोक्सी सेटिङ अवैध छन् ।<br /><br />कृपया <b>सेटअप...</"
+#~ "b> बटनमा क्लिक गर्नुहोस् र अघि बढ्न भन्दा पहिले समस्या सुधार्नुहोस्; अन्यथा तपाईँका "
+#~ "परिवर्तनहरू उपेक्षा गरिन्छ ।</qt>"
+
+#~ msgid "H&TTP:"
+#~ msgstr "HTTP:"
+
+#~ msgid "HTTP&S:"
+#~ msgstr "HTTPS:"
+
+#~ msgid "&FTP:"
+#~ msgstr "FTP:"
+
+#~ msgid "NO &PROXY:"
+#~ msgstr "प्रोक्सी छैन:"
+
+#~ msgid ""
+#~ "<qt>Verify whether or not the environment variable names you supplied are "
+#~ "valid. If an environment variable is not found, the associated labels "
+#~ "will be <b>highlighted</b> to indicate that they are invalid.</qt>"
+#~ msgstr ""
+#~ "<qt>तपाईँले वितरण गरेका परिवेश चलको नाम वैद्य छ की छैन रुजु गर्नुहोस् । यदि परिवेश चल "
+#~ "फेला नपरेमा, सम्बन्धित लेबुल तिनीहरू अवैध भएको सङ्केत गर्न<b>हाइलाइट</b> हुनेछ ।</qt>"
+
+#~ msgid "&Verify"
+#~ msgstr "रुजू गर्नुहोस्"
+
+#~ msgid "Connect to the &Internet directly"
+#~ msgstr "सिधै इन्टरनेटमा जडान गर्नुहोस्"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Use environment variables to configure the proxy settings.<p>\n"
+#~ "Environment variables such as <b>HTTP_PROXY</b> and <b>NO_PROXY</b> are "
+#~ "usually used in multi-user UNIX installations, where both graphical and "
+#~ "non-graphical applications need to share the same proxy configuration "
+#~ "information.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "प्रोक्सी सेटिङ कन्फिगर गर्न परिवेश चल प्रयोग गर्नुहोस् ।<p>\n"
+#~ "परिवेश चल जस्तै: <b>HTTP_PROXY</b> र <b>NO_PROXY</b> सधैँ बहुविध प्रयोगकर्ता UNIX "
+#~ "स्थापनामा प्रयोग गरिन्छ, जहाँ दुबै ग्राफिकल र ग्राफिकल नभएका अनुप्रयोगले समान प्रोक्सी "
+#~ "कन्फिगरेसन सूचना आदान-प्रदान गर्नु आवश्यक हुन्छ ।\n"
+#~ "</qt>"
+
+#~ msgid "Use preset proxy environment &variables"
+#~ msgstr "प्रिसेट प्रोक्सी परिवेश चल प्रयोग गर्नुहोस्"
+
+#~ msgid "Show the proxy environment variable configuration dialog."
+#~ msgstr "प्रोक्सी परिवेश चल कन्फिगरेसन संवाद देखाउनुहोस् ।"
+
+#~ msgid "Setup..."
+#~ msgstr "सेटअप..."
+
+#~ msgid "&Manually specify the proxy settings"
+#~ msgstr "प्रोक्सी सेटिङ म्यानुअल तरिकाले निर्दिष्ट गर्नुहोस्"
+
+#~ msgid "Show the manual proxy configuration dialog."
+#~ msgstr "म्यानुअल प्रोक्सी कन्फिगरेसन संवाद देखाउनुहोस् ।"
+
+#~ msgid "Authori&zation"
+#~ msgstr "प्रमाणीकरण"
+
+#~ msgid "Prompt for login information whenever it is required."
+#~ msgstr "यो आवश्यक हुँदा लगइन सूचनाका लागि प्रोम्ट गर्नुहोस्"
+
+#~ msgid "Prompt as &needed"
+#~ msgstr "आवश्यकता अनुसार प्रोम्ट गर्नुहोस्"
+
+#, fuzzy
+#~| msgid "Use the following lo&gin information."
+#~ msgid "Use this login information."
+#~ msgstr "निम्न लगइन सूचना प्रयोग गर्नुहोस् ।"
+
+#, fuzzy
+#~| msgid "Use the information below to login into proxy servers as needed."
+#~ msgid ""
+#~ "Use information specified here to login into proxy servers as needed."
+#~ msgstr "आवश्यकता अनुसार प्रोक्सी सर्भरमा लगइन गर्न तलका सूचना प्रयोग गर्नुहोस् ।"
+
+#~ msgid "Username:"
+#~ msgstr "प्रयोगकर्ता नाम:"
+
+#~ msgid "Login name."
+#~ msgstr "लगइन नाम ।"
+
+#~ msgid "Login password."
+#~ msgstr "लगइन पासवर्ड ।"
+
+#~ msgid "Password:"
+#~ msgstr "पासवर्ड:"
+
+#~ msgid "O&ptions"
+#~ msgstr "विकल्प"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Use persistent proxy connection.<p>\n"
+#~ "Although a persistent proxy connection is faster, note that it only works "
+#~ "correctly with proxies that are fully HTTP 1.1 compliant. Do <b>not</b> "
+#~ "use this option in combination with non-HTTP 1.1 compliant proxy servers "
+#~ "such as JunkBuster and WWWOfle.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "स्थायी प्रोक्सी जडान प्रयोग गर्नुहोस् ।<p>\n"
+#~ "स्थायी प्रोक्सी जडान छिटो भयता पनि, याद गर्नुहोस् यसले पुर्ण रुपमा HTTP 1.1 "
+#~ "आज्ञाकारी प्रोक्सीसँग मात्र उचित तरिकाले कार्य गर्छ । यो विकल्प HTTP 1.1 आज्ञाकारी "
+#~ "नभएका प्रोक्सी सर्भरको संयोजनमा प्रयोग <b>नगर्नुहोस्</b> जस्तै: जन्क बस्टर र "
+#~ "WWWOfle.\n"
+#~ "</qt>"
+
+#~ msgid "Use persistent connections to proxy"
+#~ msgstr "प्रोक्सीमा स्थायी जडान प्रयोग गर्नुहोस्"
+
+#~ msgid "Ser&vers"
+#~ msgstr "सर्भर"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Reverse the use of the exception list. Checking this box will result in "
+#~ "the proxy servers being used only when the requested URL matches one of "
+#~ "the addresses listed here.<p>This feature is useful if all you want or "
+#~ "need is to use a proxy server  for a few specific sites.<p>If you have "
+#~ "more complex requirements you might want to use a configuration script.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "अपेक्षित सूचीको प्रयोग उल्टाउनुहोस् । यो बाकसको जाँच गर्दा अनुरोध गरिएको यू आर एल "
+#~ "यहाँ सूचीकृत गरिएको एउटा ठेगानासँग मिलेमा मात्र परिणाम स्वरुप प्रोक्सी सर्भर प्रयोग "
+#~ "भइराखेको हुन्छ ।<p> यदि तपाईँ सबै केही निर्दिष्ट साइटका लागि प्रोक्सी सर्भर प्रयोग "
+#~ "गर्न आवश्यक ठानेमा वा चाहेमा यो आकृति उपयोगी हुन्छ ।<p> यदि तपाईँसँग अझै जटिल "
+#~ "आवश्यकता भएमा कन्फिगरेसन स्क्रिप्ट प्रयोग गर्न चाहन सक्नु हुन्छ ।\n"
+#~ "</qt>"
+
+#~ msgid "Remove all proxy exception addresses from the list."
+#~ msgstr "यो सूचीबाट सबै प्रोक्सी अपवाद ठेगाना हटाउनुहोस् ।"
+
+#~ msgid "D&elete All"
+#~ msgstr "सबै मेट्नुहोस्"
+
+#~ msgid "Remove the selected proxy exception address from the list."
+#~ msgstr "यो सूचीवाट चयन गरिएका प्रोक्सी अपवाद ठेगाना हटाउनुहोस् ।"
+
+#~ msgid "De&lete"
+#~ msgstr "मेट्नुहोस्"
+
+#~ msgid "Add new proxy exception address to the list."
+#~ msgstr "सूचीमा नयाँ प्रोक्सी अपवाद ठेगाना थप्नुहोस् ।"
+
+#~ msgid "Change the selected proxy exception address."
+#~ msgstr "चयन गरिएका प्रोक्सी अपवाद ठेगाना परिवर्तन गर्नुहोस् ।"
+
+#~ msgid "C&hange..."
+#~ msgstr "परिवर्तन गर्नुहोस्..."
+
+#~ msgid "&Domain name:"
+#~ msgstr "डोमेन नाम:"
+
+#~ msgid "Includes your platform type in the browser identification text"
+#~ msgstr "ब्राउजर पहिचान पाठमा तपाईँको प्लेटफर्म प्रकार समावेश गर्छ"
+
+#~ msgid "Add &platform name"
+#~ msgstr "प्लेटफर्म नाम थप्नुहोस्"
+
+#~ msgid "Domain [Group]"
+#~ msgstr "डोमेन [समूह]"
+
+#~ msgid "Host [Set By]"
+#~ msgstr "होस्ट [यसद्वारा सेट गरिएको]"
+
+#~ msgid ""
+#~ "<h1>Local Network Browsing</h1>Here you setup your <b>\"Network "
+#~ "Neighborhood\"</b>. You can use either the LISa daemon and the lan:/ "
+#~ "ioslave, or the ResLISa daemon and the rlan:/ ioslave.<br /><br />About "
+#~ "the <b>LAN ioslave</b> configuration:<br /> If you select it, the "
+#~ "ioslave, <i>if available</i>, will check whether the host supports this "
+#~ "service when you open this host. Please note that paranoid people might "
+#~ "consider even this to be an attack.<br /><i>Always</i> means that you "
+#~ "will always see the links for the services, regardless of whether they "
+#~ "are actually offered by the host. <i>Never</i> means that you will never "
+#~ "have the links to the services. In both cases you will not contact the "
+#~ "host, so nobody will ever regard you as an attacker.<br /><br />More "
+#~ "information about <b>LISa</b> can be found at <a href=\"http://lisa-home."
+#~ "sourceforge.net\">the LISa Homepage</a> or contact Alexander Neundorf &lt;"
+#~ "<a href=\"mailto:neundorf@kde.org\">neundorf@kde.org</a>&gt;."
+#~ msgstr ""
+#~ "<h1>स्थानीय सञ्जाल ब्राउजिङ</h1>यहाँ तपाईँले <b>\"सञ्जाल छिमेकी\"</b> सेटअप गर्नुहोस् "
+#~ "। तपाईँले यात LISa डेइमन र Ian:/ ioslave, वा ResLISa डेइमन र rlan:/ ioslave "
+#~ "प्रयोग गर्न सक्नुहुन्छ ।<br /><br /> <b>LAN ioslave</b> बारेमा कन्फिगरेसन:<br> यदि "
+#~ "तपाईँले यसलाई चयन गरेमा, ioslave, <i>उपलब्ध भएमा</i>, यो होस्ट खोल्ने बेलामा यो "
+#~ "कार्य होस्टले समर्थन गर्छ गर्दैन जाँच गर्नेछ । कृपया याद गर्नुहोस् पारानोइड मानिसले "
+#~ "बिचार गर्नसक्छ तापनि यो एउटा हमला हुन सक्छ ।<br><i>सधैँ</i> भनेको कार्यका लागि "
+#~ "तपाईँले सधैँ लिङ्क देख्नुहुन्छ, साथै तिनीहरू होस्टद्वारा वास्तवमै प्रस्तावित भएको वास्था "
+#~ "नगर्नुहोस् । <i>कहिले पनि होइन</i> भनेको तपाईँको किहिले पनि कार्यमा लिङ्क हुनेछैन । "
+#~ "दुबै केसमा तपाईँले होस्टमा सम्पर्क गर्नु हुने छैन, त्यसैले कसैले पनि तपाईँलाई आक्रमणकारीको "
+#~ "रुपमा वास्ता गर्ने छैन ।<br><br><b>LISa</b> को बारेमा अझै सूचना <a href=\"http://"
+#~ "lisa-home.sourceforge.net\">the LISa Homepage</a> वा Alexander Neundorf "
+#~ "&lt;<a href=\"mailto:neundorf@kde.org\">neundorf@kde.org</a>&gt; सम्पर्क "
+#~ "गरेर फेला पार्न सकिन्छ ।"
+
+#~ msgid "&Windows Shares"
+#~ msgstr "विण्डोज साझेदारी"
+
+#~ msgid "&LISa Daemon"
+#~ msgstr "LISa डेइमन"
+
+#~ msgid "lan:/ Iosla&ve"
+#~ msgstr "lan:/ Ioslave"
+
+#~ msgid "&Search:"
+#~ msgstr "खोज्नुहोस्:"
+
+#~ msgid "&SOCKS"
+#~ msgstr "SOCKS"
+
+#~ msgid "SOCKS"
+#~ msgstr "SOCKS"
+
+#~ msgid ""
+#~ "Check this to enable SOCKS4 and SOCKS5 support in KDE applications and I/"
+#~ "O subsystems."
+#~ msgstr ""
+#~ "केडीई अनुप्रयोग र आगत/निर्गत उप प्रणालीमा SOCKS4 र SOCKS5 समर्थन सक्षम पार्न यो "
+#~ "जाँच गर्नुहोस् ।"
+
+#~ msgid "&Enable SOCKS support"
+#~ msgstr "SOCKS समर्थन सक्षम पार्नुहोस्"
+
+#~ msgid "Click here to test SOCKS support."
+#~ msgstr "SOCKS समर्थन परीक्षण गर्न यहाँ क्लिक गर्नुहोस् ।"
+
+#~ msgid "&Test"
+#~ msgstr "परीक्षण"
+
+#~ msgid "SOCKS Implementation"
+#~ msgstr "SOCKS कार्यान्वयन"
+
+#~ msgid ""
+#~ "Select custom if you wish to use an unlisted SOCKS library. Please note "
+#~ "that this may not always work as it depends on the API of the library "
+#~ "which you specify (below)."
+#~ msgstr ""
+#~ "यदि तपाईँ सूचीकृत नगरिएको SOCKS प्रयोग गर्न चाहनुहुन्छ भने अनुकूल चयन गर्नुहोस् । कृपया "
+#~ "यसले तपाईँले निर्दिष्ट गरेको (तल) लाइब्रेरीको API मा अधारित रुपमा सधैँ कार्य नगर्न सक्छ "
+#~ "भन्ने याद राख्नुहोस् ।"
+
+#~ msgid "Use &custom library"
+#~ msgstr "अनुकूल लाइब्रेरी प्रयोग गर्नुहोस्"
+
+#~ msgid "Enter the path to an unsupported SOCKS library."
+#~ msgstr "एउटा असमर्थीत SOCKS लाइब्रेरीमा मार्ग प्रविष्ट गर्नुहोस् ।"
+
+#~ msgid ""
+#~ "If you select Autodetect, then KDE will automatically search for an "
+#~ "implementation of SOCKS on your computer."
+#~ msgstr ""
+#~ "यदि तपाईँले स्वत: पत्ता लगाउने चयन गरेमा, केडीई ले तपाईँको कम्प्युटरमा SOCKS को "
+#~ "कार्यान्वयनका लागि स्वत: खोज्नेछ ।"
+
+#~ msgid "A&uto detect"
+#~ msgstr "स्वत: पत्ता लगाउने"
+
+#~ msgid "This will force KDE to use NEC SOCKS if it can be found."
+#~ msgstr "यदि यो फेला पार्न सकेमा यसले NEC SOCKS प्रयोग गर्न केडीई लाई बाध्य गर्नेछ ।"
+
+#~ msgid "&NEC SOCKS"
+#~ msgstr "NEC SOCKS"
+
+#~ msgid "This will force KDE to use Dante if it can be found."
+#~ msgstr "यदि यो फेला पार्न सकेमा यसले Dante प्रयोग गर्न केडीई लाई बाध्य गर्नेछ ।"
+
+#~ msgid "&Dante"
+#~ msgstr "Dante"
+
+#~ msgid ""
+#~ "Here you can specify additional directories to search for the SOCKS "
+#~ "libraries. /usr/lib, /usr/local/lib, /usr/local/socks5/lib and /opt/"
+#~ "socks5/lib are already searched by default."
+#~ msgstr ""
+#~ "तपाईँले यहाँ SOCKS लाइब्रेरी खोज्नका लागि थप डाइरेक्टरी निर्दिष्ट गर्न सक्नुहुन्छ । /usr/"
+#~ "lib, /usr/local/lib, /usr/local/socks5/lib र /opt/socks5/lib पहिले नै "
+#~ "पूर्वनिर्धारितद्वारा खोजिएका छन् ।"
+
+#~ msgid "Additional Library Search Paths"
+#~ msgstr "थप लाइब्रेरी खोजी मार्ग"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Nabin Gautam, श्यामकृष्ण बल"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "nabin@mpp.org.np,shyamkrishna_bal@yahoo.com"
+
+#~ msgid "kcmsocks"
+#~ msgstr "kcmsocks"
+
+#~ msgid "KDE SOCKS Control Module"
+#~ msgstr "केडीई SOCKS नियन्त्रण मोड्युल"
+
+#~ msgid "(c) 2001 George Staikos"
+#~ msgstr "(सी) २००१ जर्ज स्टेकस"
+
+#~ msgid "George Staikos"
+#~ msgstr "जर्ज स्टेकस"
+
+#~ msgid "These changes will only apply to newly started applications."
+#~ msgstr "यी परिवर्तन नयाँ सुरु गरिएको अनुप्रयोगमा मात्र लागू हुनेछ ।"
+
+#~ msgid "SOCKS Support"
+#~ msgstr "SOCKS समर्थन"
+
+#~ msgid "Success: SOCKS was found and initialized."
+#~ msgstr "सफलता: SOCKS फेला पर्यो र सुरुआत गरियो ।"
+
+#~ msgid "SOCKS could not be loaded."
+#~ msgstr "SOCKS लोड गर्न सकिने छैन ।"
+
+#~ msgid ""
+#~ "<h1>SOCKS</h1><p>This module allows you to configure KDE support for a "
+#~ "SOCKS server or proxy.</p><p>SOCKS is a protocol to traverse firewalls as "
+#~ "described in <a href=\"http://rfc.net/rfc1928.html\">RFC 1928</a>.</p> "
+#~ "<p>If you have no idea what this is and if your system administrator does "
+#~ "not tell you to use it, leave it disabled.</p>"
+#~ msgstr ""
+#~ "<h1>SOCKS</h1><p>यो मोड्युलले तपाईँलाई SOCKS सर्भर प्रोक्सीका लागि केडीई समर्थन "
+#~ "कन्फिगर गर्न अनुमति दिन्छ ।</p><p>SOCKS <a href=\"http://rfc.net/rfc1928.html"
+#~ "\">RFC 1928</a> मा वर्णन गरिए अनुरुपको वारपार गर्ने प्रोटोकल हो । <p>यदि "
+#~ "तपाईँलाई यो के हो र थाहा नभाएमा र तपाईँको प्रणाली प्रशासकले यसलाई प्रयोग गर्न "
+#~ "भनेको छैन भने, यसलाई अक्षम पारिएको रुपमा छोड्नुहोस् ।</p>"
+
+#~ msgid "&Path:"
+#~ msgstr "मार्ग:"
+
+#~ msgid "This is the list of additional paths that will be searched."
+#~ msgstr "यो त्यसले खोज्ने थप मार्गको सूची हो ।"
+
+#~ msgid "Path"
+#~ msgstr "मार्ग"
+
+#~ msgid "&Add"
+#~ msgstr "थप्नुहोस्"
+
+#~ msgid "&Remove"
+#~ msgstr "हटाउनुहोस्"
+
+#~ msgid "This is the configuration for the samba client only, not the server."
+#~ msgstr "यो कन्फिगरेसन सर्भरका लागि नभइ साम्बा क्लाइन्टका लागि मात्र हो ।"
+
+#~ msgid "&OK"
+#~ msgstr "ठीक छ"
+
+#~ msgid "&Cancel"
+#~ msgstr "रद्द गर्नुहोस्"
+
+#~ msgid ""
+#~ "List of sites for which the specified identification text will be used "
+#~ "instead of the default one."
+#~ msgstr ""
+#~ "पूर्वनिर्धारितको साटोमा प्रयोग हुने निर्दिष्ट पहिचान पाठका लागि साइटको सूची ।"
+
+#~ msgid "MS Windows encoding:"
+#~ msgstr "एमएस विन्डोज सङ्केतन:"

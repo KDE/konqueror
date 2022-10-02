@@ -1,0 +1,834 @@
+# Gujarati Translation of kcmkio.po.
+# Copyright (C) 2008 This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Kartik Mistry <kartik.mistry@gmail.com>, 2008.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkio-gu\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2009-05-17 18:10+0530\n"
+"Last-Translator: Kartik Mistry <kartik.mistry@gmail.com>\n"
+"Language-Team: Gujarati <kde-i18n-doc@kde.org>\n"
+"Language: gu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: bookmarks.cpp:92
+#, kde-format
+msgid ""
+"<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
+"page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
+"\">bookmarks:/</a>.</p>"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: bookmarks.ui:16
+#, kde-format
+msgid "Bookmarks"
+msgstr "બુકમાર્ક્સ"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowRoot)
+#: bookmarks.ui:23
+#, kde-format
+msgid ""
+"If this option is unchecked, bookmarks at the root of the hierarchy (not in "
+"a folder) are not displayed.\n"
+"If checked, they are gathered in a \"root\" folder."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowRoot)
+#: bookmarks.ui:26
+#, kde-format
+msgid "&Show bookmarks without folder"
+msgstr "ફોલ્ડર વગર બૂકમાર્ક્સ દર્શાવો (&S)"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbFlattenTree)
+#: bookmarks.ui:37
+#, kde-format
+msgid ""
+"Sub-folders are shown within their parent by default. If you activate this "
+"option, sub-folders are displayed on their own.\n"
+"It looks less nice but it may help if you have a very big folder you want to "
+"spread in two columns."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbFlattenTree)
+#: bookmarks.ui:40
+#, kde-format
+msgid "&Flatten bookmarks tree"
+msgstr "સીધા બુકમાર્ક્સ વૃક્ષ (&F)"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowPlaces)
+#: bookmarks.ui:47
+#, kde-format
+msgid ""
+"Show a box with KDE places (Home, Network, ...). Useful if you use konqueror "
+"as a file manager."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowPlaces)
+#: bookmarks.ui:50
+#, kde-format
+msgid "Show system &places"
+msgstr "સિસ્ટમ જગ્યાઓ દર્શાવો (&p)"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: bookmarks.ui:63
+#, kde-format
+msgid "General Settings"
+msgstr "સામાન્ય ગોઠવણીઓ"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, label)
+#: bookmarks.ui:71
+#, kde-format
+msgid ""
+"Folders are automatically distributed in several columns. The optimal number "
+"of columns depends on the width of the konqueror window and the number of "
+"bookmarks you have."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: bookmarks.ui:74
+#, kde-format
+msgid "Number of columns to show:"
+msgstr "હરોળો દર્શાવવાની સંખ્યા:"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowBackgrounds)
+#: bookmarks.ui:109
+#, kde-format
+msgid "Disable it on slow system to disable background images."
+msgstr "ધીમી સિસ્ટમમાં પાશ્વભાગ ચિત્રો નિષ્ક્રિય કરવા તેને નિષ્ક્રિય કરો."
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowBackgrounds)
+#: bookmarks.ui:112
+#, kde-format
+msgid "Show folder &backgrounds"
+msgstr "ફોલ્ડરનો પાશ્વભાગ દર્શાવો (&b)"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, groupBox_3)
+#: bookmarks.ui:138
+#, kde-format
+msgid "How much disk space is used to cache the pixmaps"
+msgstr "પિક્સમેપ્સનાં કૅશ માટે કેટલી ડિસ્ક જગ્યા વપરાવી જોઇએ"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: bookmarks.ui:141
+#, kde-format
+msgid "Pixmap Cache"
+msgstr "પિક્સમેપ કૅશ"
+
+#. i18n: ectx: property (text), widget (QLabel, lbMaxCacheSize)
+#: bookmarks.ui:150
+#, kde-format
+msgid "Disk cache size:"
+msgstr "ડિસ્ક કૅશ માપ:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, sbCacheSize)
+#: bookmarks.ui:163
+#, kde-format
+msgid " kB"
+msgstr " કેબી"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, clearCacheButton)
+#: bookmarks.ui:173
+#, kde-format
+msgid "Clear the pixmap cache"
+msgstr "પિક્સમેપ કૅશ સાફ કરો"
+
+#. i18n: ectx: property (text), widget (QPushButton, clearCacheButton)
+#: bookmarks.ui:176
+#, kde-format
+msgid "&Clear Cache"
+msgstr "કૅશ સાફ કરો"
+
+#~ msgid "&Use cache"
+#~ msgstr "કૅશ વાપરો (&U)"
+
+#~ msgid "Policy"
+#~ msgstr "નિતી"
+
+#~ msgid "&Keep cache in sync"
+#~ msgstr "કૅશને એકસમાન રાખો (&K)"
+
+#~ msgid "Use cache whenever &possible"
+#~ msgstr "જ્યાં સુધી શક્ય હોય ત્યાં સુધી કૅશ વાપરો (&p)"
+
+#~ msgid "O&ffline browsing mode"
+#~ msgstr "ઓફલાઇન બ્રાઉઝિંગ સ્થિતિ (&f)"
+
+#~ msgid "Disk cache &size:"
+#~ msgstr "ડિસ્ક કૅશ માપ (&s):"
+
+#~ msgid "C&lear Cache"
+#~ msgstr "કૅશ સાફ કરો (&l)"
+
+#~ msgid "&Policy"
+#~ msgstr "નિતી (&P)"
+
+#~ msgid "&Management"
+#~ msgstr "સંચાલન (&M)"
+
+#~ msgid "D-Bus Communication Error"
+#~ msgstr "ડી-બસ સંદેશાવ્યવહાર ક્ષતિ"
+
+#~ msgid "Unable to delete all the cookies as requested."
+#~ msgstr "વિનંતી કરેલ બધી કૂકીઓ દૂર કરવામાં અસક્ષમ."
+
+#~ msgid "Unable to delete cookies as requested."
+#~ msgstr "વિનંતી કરેલ કૂકીઓ દૂર કરવામાં અસક્ષમ."
+
+#~ msgid "<h1>Cookie Management Quick Help</h1>"
+#~ msgstr "<h1>કુકીઓ વ્યવસ્થાની ઝડપી મદદ</h1>"
+
+#~ msgid "Information Lookup Failure"
+#~ msgstr "માહિતી શોધવાની ક્ષતિ"
+
+#~ msgid ""
+#~ "Unable to retrieve information about the cookies stored on your computer."
+#~ msgstr "તમારા કોમ્પ્યુટરમાં સંગ્રહ કરેલ કૂકીઓ વિશેની માહિતી પાછી લાવવામાં અસક્ષમ."
+
+#~ msgid "End of session"
+#~ msgstr "સત્રનો અંત"
+
+#~ msgid "Yes"
+#~ msgstr "હા"
+
+#~ msgid "Search"
+#~ msgstr "શોધ"
+
+#~ msgid "Search interactively for domains and hosts"
+#~ msgstr "ડોમેઇન્સ અને હોસ્ટ્સ માટે ચાલાક શોધ કરો"
+
+#, fuzzy
+#~| msgid "Site Name"
+#~ msgid "Site"
+#~ msgstr "સાઇટ નામ"
+
+#, fuzzy
+#~| msgid "Site Name"
+#~ msgid "Cookie Name"
+#~ msgstr "સાઇટ નામ"
+
+#~ msgid "D&elete"
+#~ msgstr "દૂર કરો (&e)"
+
+#~ msgid "Delete A&ll"
+#~ msgstr "બધું દૂર કરો (&l)"
+
+#, fuzzy
+#~| msgid "Change &Policy..."
+#~ msgid "Configure &Policy..."
+#~ msgstr "નિતી બદલો (&P)..."
+
+#~ msgid "&Reload List"
+#~ msgstr "યાદી ફરી લાવો (&R)"
+
+#~ msgid "Details"
+#~ msgstr "વિગતો"
+
+#~ msgid "Name:"
+#~ msgstr "નામ:"
+
+#~ msgid "Value:"
+#~ msgstr "કિંમત:"
+
+#~ msgid "Domain:"
+#~ msgstr "ડોમેઇન:"
+
+#~ msgid "Path:"
+#~ msgstr "માર્ગ:"
+
+#~ msgid "Expires:"
+#~ msgstr "સમાપ્તિ:"
+
+#~ msgid "Secure:"
+#~ msgstr "સલામત:"
+
+#, fuzzy
+#~| msgid "Change Cookie Policy"
+#~ msgctxt "@title:window"
+#~ msgid "Change Cookie Policy"
+#~ msgstr "કૂકી નિતી બદલો"
+
+#, fuzzy
+#~| msgid "New Cookie Policy"
+#~ msgctxt "@title:window"
+#~ msgid "New Cookie Policy"
+#~ msgstr "નવી કૂકી નિતી"
+
+#, fuzzy
+#~| msgid "Duplicate Policy"
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Policy"
+#~ msgstr "નકલી નિતી"
+
+#~ msgid "Replace"
+#~ msgstr "બદલો"
+
+#~ msgid "Enable coo&kies"
+#~ msgstr "કુકીઓ સક્રિય કરો (&k)"
+
+#~ msgid "Only acce&pt cookies from originating server"
+#~ msgstr "મૂળભૂત સર્વરમાંથી કૂકીઓ સ્વિકારો (&p)"
+
+#~ msgid "Automaticall&y accept session cookies"
+#~ msgstr "સત્ર કુકીઓને આપમેળે સ્વિકારો (&y)"
+
+#~ msgid "Default Policy"
+#~ msgstr "મૂળભૂત નિતી"
+
+#~ msgid "Accep&t all cookies"
+#~ msgstr "બધી કૂકીઓ સ્વિકારો (&t)"
+
+#, fuzzy
+#~| msgid "End of session"
+#~ msgid "Accept &until end of session"
+#~ msgstr "સત્રનો અંત"
+
+#~ msgid "Ask &for confirmation"
+#~ msgstr "ખાતરી માટે પૂછો (&f)"
+
+#~ msgid "Re&ject all cookies"
+#~ msgstr "બધી કૂકીઓ નકારો (&j)"
+
+#~ msgid "Site Policy"
+#~ msgstr "સાઇટ નિતી"
+
+#~ msgid "Search interactively for domains"
+#~ msgstr "ડોમેઇન્સ માટે ચાલાક શોધ કરો"
+
+#~ msgid "Domain"
+#~ msgstr "ડોમેઇન"
+
+#~ msgid "&New..."
+#~ msgstr "નવું (&N)..."
+
+#~ msgid "Chan&ge..."
+#~ msgstr "બદલો (&g)..."
+
+#, fuzzy
+#~| msgid "Site Name"
+#~ msgid "Site name:"
+#~ msgstr "સાઇટ નામ"
+
+#, fuzzy
+#~| msgid "&Policy:"
+#~ msgid "Policy:"
+#~ msgstr "નિતી (&P):"
+
+#~ msgid "Accept"
+#~ msgstr "સ્વીકારો"
+
+#, fuzzy
+#~| msgid "End of session"
+#~ msgid "Accept until end of session"
+#~ msgstr "સત્રનો અંત"
+
+#~ msgid "Reject"
+#~ msgstr "નકારો"
+
+#~ msgid "Ask"
+#~ msgstr "પૂછો"
+
+#~ msgid "Disable Passive FTP"
+#~ msgstr "નિષ્ક્રિય FTP અસક્રિય કરો"
+
+#~ msgid "Mark partially uploaded files"
+#~ msgstr "આંશિક રીતે અપલોડ કરવામાં આવેલ ફાઇલો તરીકે નિશાની કરો"
+
+#~ msgid "Connect to the Internet directly."
+#~ msgstr "ઇન્ટરનેટ સાથે સીધા જ જોડાઓ."
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "No Proxy"
+#~ msgstr "પ્રોક્સી (&P)"
+
+#, fuzzy
+#~| msgid "U&se proxy configuration URL:"
+#~ msgid "Detect proxy configuration automatically"
+#~ msgstr "નીચેનું પ્રોક્સી રૂપરેખાંકન URL વાપરો:"
+
+#, fuzzy
+#~| msgid "A&utomatically detect proxy configuration"
+#~ msgid "Use the specified proxy script to configure the proxy settings."
+#~ msgstr "પ્રોક્સી રૂપરેખાંકન આપમેળે શોધો (&u)"
+
+#, fuzzy
+#~| msgid "U&se proxy configuration URL:"
+#~ msgid "Use proxy auto configuration URL:"
+#~ msgstr "નીચેનું પ્રોક્સી રૂપરેખાંકન URL વાપરો:"
+
+#~ msgid "Enter the address for the proxy configuration script."
+#~ msgstr "પ્રોક્સી રૂપરેખાંકન સ્ક્રિપ્ટ માટેનું સરનામું દાખલ કરો."
+
+#, fuzzy
+#~| msgid "U&se proxy configuration URL:"
+#~ msgid "Use system proxy configuration:"
+#~ msgstr "નીચેનું પ્રોક્સી રૂપરેખાંકન URL વાપરો:"
+
+#, fuzzy
+#~| msgid "Auto &Detect"
+#~ msgid "Auto D&etect"
+#~ msgstr "આપમેળે શોધો (&D)"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "HTTP Proxy:"
+#~ msgstr "પ્રોક્સી (&P)"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "SSL Proxy:"
+#~ msgstr "પ્રોક્સી (&P)"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "FTP Proxy:"
+#~ msgstr "પ્રોક્સી (&P)"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "SOCKS Proxy:"
+#~ msgstr "પ્રોક્સી (&P)"
+
+#, fuzzy
+#~| msgid "O&ptions"
+#~ msgid "Exceptions:"
+#~ msgstr "વિકલ્પો (&p)"
+
+#~ msgid "Show the &value of the environment variables"
+#~ msgstr "એન્વાર્યમેન્ટ વેરીએબલ્સની કિંમત બતાવો (&v)"
+
+#~ msgid "Manually enter proxy server configuration information."
+#~ msgstr "પ્રોક્સી સર્વર રૂપરેખાંકન માહિતી જાતે દાખલ કરો."
+
+#, fuzzy
+#~| msgid "A&utomatically detect proxy configuration"
+#~ msgid "Use manually specified proxy configuration:"
+#~ msgstr "પ્રોક્સી રૂપરેખાંકન આપમેળે શોધો (&u)"
+
+#~ msgid "Enter the address of the HTTP proxy server."
+#~ msgstr "HTTP પ્રોક્સી સર્વરનું સરનામું દાખલ કરો."
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTP proxy server."
+#~ msgid "Enter the port number of the HTTP proxy server."
+#~ msgstr "HTTP પ્રોક્સી સર્વરનું સરનામું દાખલ કરો."
+
+#, fuzzy
+#~| msgid "&Use the same proxy server for all protocols"
+#~ msgid "Use this proxy server for a&ll protocols"
+#~ msgstr "બધા પ્રોટોકલ્સ માટે સરખું જ પ્રોક્સી સર્વર વાપરો (&U)"
+
+#~ msgid "Enter the address of the HTTPS proxy server."
+#~ msgstr "HTTPS પ્રોક્સી સર્વરનું સરનામું દાખલ કરો."
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTPS proxy server."
+#~ msgid "Enter the port number of the HTTPS proxy server."
+#~ msgstr "HTTPS પ્રોક્સી સર્વરનું સરનામું દાખલ કરો."
+
+#~ msgid "Enter the address of the FTP proxy server."
+#~ msgstr "FTP પ્રોક્સી સર્વરનું સરનામું દાખલ કરો."
+
+#, fuzzy
+#~| msgid "Enter the address of the FTP proxy server."
+#~ msgid "Enter the port number of the FTP proxy server."
+#~ msgstr "FTP પ્રોક્સી સર્વરનું સરનામું દાખલ કરો."
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTPS proxy server."
+#~ msgid "Enter the address of the SOCKS proxy server."
+#~ msgstr "HTTPS પ્રોક્સી સર્વરનું સરનામું દાખલ કરો."
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTPS proxy server."
+#~ msgid "Enter the port number of the SOCKS proxy server."
+#~ msgstr "HTTPS પ્રોક્સી સર્વરનું સરનામું દાખલ કરો."
+
+#, fuzzy
+#~| msgid "Use proxy only for entries in this list"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Check this box if you want the above proxy settings to apply only to the "
+#~ "addresses listed in the <i>Exceptions</i> list.</qt>"
+#~ msgstr "આ યાદીનાં દાખલાઓ માટે જ પ્રોક્સી વાપરો"
+
+#, fuzzy
+#~| msgid "Use proxy only for entries in this list"
+#~ msgid "Use proxy settings only for addresses in the Exceptions list"
+#~ msgstr "આ યાદીનાં દાખલાઓ માટે જ પ્રોક્સી વાપરો"
+
+#, fuzzy
+#~| msgid "Update Failed"
+#~ msgctxt "@title:window"
+#~ msgid "Update Failed"
+#~ msgstr "સુધારા નિષ્ફળ ગયા"
+
+#~ msgid "You have to restart KDE for these changes to take effect."
+#~ msgstr "ફેરફારો અમલમાં મૂકવા માટે તમારે KDE ફરી શરૂ કરવું પડશે."
+
+#~ msgid "Timeout Values"
+#~ msgstr "સમયસમાપ્તિ કીંમતો"
+
+#, fuzzy
+#~| msgid " sec"
+#~ msgid " second"
+#~ msgid_plural " seconds"
+#~ msgstr[0] " સેક"
+#~ msgstr[1] " સેક"
+
+#~ msgid "Soc&ket read:"
+#~ msgstr "સોકેટ વાંચન (&k):"
+
+#~ msgid "Pro&xy connect:"
+#~ msgstr "પ્રોક્સી જોડાણ (&x):"
+
+#~ msgid "Server co&nnect:"
+#~ msgstr "સર્વર જોડાણ (&n):"
+
+#~ msgid "&Server response:"
+#~ msgstr "સર્વર જવાબ (&S):"
+
+#~ msgid "FTP Options"
+#~ msgstr "FTP વિકલ્પો"
+
+#~ msgid "Enable passive &mode (PASV)"
+#~ msgstr "અસક્રિય સ્થિતિ (PASV) સક્રિય બનાવો (&m)"
+
+#~ msgid "Mark &partially uploaded files"
+#~ msgstr "આંશિક રીતે અપલોડ કરેલ ફાઇલો તરીકે નિશાની કરો (&p)"
+
+#~ msgid "These settings apply to network browsing only."
+#~ msgstr "આ ગોઠવણીઓ માત્ર નેટવર્ક શોધખોળ ને જ લાગુ પડે છે."
+
+#~ msgid "Default user name:"
+#~ msgstr "મૂળભૂત વપરાશકર્તા નામ:"
+
+#~ msgid "Default password:"
+#~ msgstr "મૂળભૂત પાસવર્ડ:"
+
+#, fuzzy
+#~| msgid "Add Identification"
+#~ msgctxt "@title:window"
+#~ msgid "Add Identification"
+#~ msgstr "ઓળખ ઉમેરો"
+
+#, fuzzy
+#~| msgid "Modify Identification"
+#~ msgctxt "@title:window"
+#~ msgid "Modify Identification"
+#~ msgstr "ઓળખ બદલો"
+
+#, fuzzy
+#~| msgid "Duplicate Identification"
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Identification"
+#~ msgstr "નકલી ઓળખ"
+
+#~ msgid "&Send identification"
+#~ msgstr "ઓળખ મોકલો (&S)"
+
+#~ msgid "Default Identification"
+#~ msgstr "મૂળભૂત ઓળખ"
+
+#~ msgid "Add operating s&ystem name"
+#~ msgstr "ઓપરેટિંગ સિસ્ટમનું નામ ઉમેરો (&y)"
+
+#~ msgid "Add operating system &version"
+#~ msgstr "ઓપરેટિંગ સિસ્ટમની આવૃત્તિ ઉમેરો (&v)"
+
+#~ msgid "Add &machine (processor) type"
+#~ msgstr "મશીન (પ્રોસેસર) પ્રકાર ઉમેરો (&m)"
+
+#~ msgid "Add lang&uage information"
+#~ msgstr "ભાષાની માહિતી ઉમેરો (&u)"
+
+#~ msgid "Site Specific Identification"
+#~ msgstr "સાઇટને સંબંધિત ઓળખ"
+
+#~ msgid "Site Name"
+#~ msgstr "સાઇટ નામ"
+
+#~ msgid "Identification"
+#~ msgstr "ઓળખ"
+
+#~ msgid "User Agent"
+#~ msgstr "વપરાશકર્તા એજન્ટ"
+
+#~ msgid "Add new identification text for a site."
+#~ msgstr "આ સાઇટ માટે નવી ઓળખ ઉમેરો."
+
+#~ msgid "Change the selected identifier text."
+#~ msgstr "પસંદ કરેલ ઓળખ લખાણ બદલો."
+
+#~ msgid "Delete the selected identifier text."
+#~ msgstr "પસંદ કરેલ ઓળખ લખાણ દૂર કરો."
+
+#~ msgid "Delete all identifiers."
+#~ msgstr "બધી ઓળખ દૂર કરો."
+
+#~ msgid "&When browsing the following site:"
+#~ msgstr "જ્યારે નીચેની સાઇટ જોતાં હોવ ત્યારે (&W):"
+
+#~ msgid "&Use the following identification:"
+#~ msgstr "નીચેની ઓળખ વાપરો (&U):"
+
+#~ msgid "Real identification:"
+#~ msgstr "ખરી ઓળખ:"
+
+#~ msgid "Treat &all cookies as session cookies"
+#~ msgstr "બધી કૂકીઓને સત્ર કૂકીઓ તરીકે ઓળખો (&a)"
+
+#, fuzzy
+#~| msgid "Variable Proxy Configuration"
+#~ msgctxt "@title:window"
+#~ msgid "Variable Proxy Configuration"
+#~ msgstr "ચલ પ્રોક્સી રુપરેખાંકન"
+
+#~ msgid "You must specify at least one valid proxy environment variable."
+#~ msgstr "તમારે ઓછામાં ઓછો એક યોગ્ય પ્રોક્સી એન્વાર્યમેન્ટ ચલ દાખલ કરવો જ પડશે."
+
+#, fuzzy
+#~| msgid "Invalid Proxy Setup"
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Proxy Setup"
+#~ msgstr "અયોગ્ય પ્રોક્સી ગોઠવણી"
+
+#~ msgid "Successfully verified."
+#~ msgstr "સફળતાપૂર્વક ચકાસાઇ ગયું."
+
+#, fuzzy
+#~| msgid "Proxy Setup"
+#~ msgctxt "@title:window"
+#~ msgid "Proxy Setup"
+#~ msgstr "પ્રોક્સી ગોઠવણી"
+
+#, fuzzy
+#~| msgid "Automatic Proxy Variable Detection"
+#~ msgctxt "@title:window"
+#~ msgid "Automatic Proxy Variable Detection"
+#~ msgstr "આપમેળે પ્રોક્સી ચલ શોધ"
+
+#, fuzzy
+#~| msgid "Manual Proxy Configuration"
+#~ msgctxt "@title:window"
+#~ msgid "Manual Proxy Configuration"
+#~ msgstr "જાતે પ્રોક્સી રુપરેખાંકન"
+
+#, fuzzy
+#~| msgid "Invalid Proxy Setting"
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Proxy Setting"
+#~ msgstr "અયોગ્ય પ્રોક્સી ગોઠવણી"
+
+#~ msgid "You entered a duplicate address. Please try again."
+#~ msgstr "તમે સમાન સરનામું દાખલ કરેલ છે. મહેરબાની કરી ફરી પ્રયત્ન કરો."
+
+#~ msgid "<qt><center><b>%1</b></center> is already in the list.</qt>"
+#~ msgstr "<qt><center><b>%1</b></center> પહેલેથી યાદીમાં છે.</qt>"
+
+#, fuzzy
+#~| msgid "Duplicate Entry"
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Entry"
+#~ msgstr "સમાન દાખલો"
+
+#, fuzzy
+#~| msgid "Invalid Entry"
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Entry"
+#~ msgstr "અયોગ્ય દાખલો"
+
+#~ msgid "The address you have entered is not valid."
+#~ msgstr "તમે દાખલ કરેલ સરનામું યોગ્ય નથી."
+
+#~ msgid "Enter the URL or address that should use the above proxy settings:"
+#~ msgstr "ઉપરની પ્રોકસી ગોઠવણીઓ ઉપયોગ કરે તેવું URL અથવા સરનામું દાખલ કરો:"
+
+#~ msgid "H&TTP:"
+#~ msgstr "H&TTP:"
+
+#~ msgid "HTTP&S:"
+#~ msgstr "HTTP&S:"
+
+#~ msgid "&FTP:"
+#~ msgstr "&FTP:"
+
+#~ msgid "NO &PROXY:"
+#~ msgstr "કોઇ પ્રોક્સી નહી (&P):"
+
+#~ msgid "&Verify"
+#~ msgstr "ચકાસો (&V)"
+
+#~ msgid "Connect to the &Internet directly"
+#~ msgstr "ઇન્ટરનેટ સાથે સીધા જ જોડાઓ (&I)"
+
+#~ msgid "Use preset proxy environment &variables"
+#~ msgstr "પહેલેથી નક્કી કરેલ પ્રોક્સી એન્વાર્યમેન્ટ વેરીએબલ્સ વાપરો (&v)"
+
+#~ msgid "Show the proxy environment variable configuration dialog."
+#~ msgstr "પ્રોક્સી એન્વાર્યમેન્ટ વેરીએબલ રૂપરેખાંકન સંવાદ બતાવો."
+
+#~ msgid "Setup..."
+#~ msgstr "ગોઠવણી..."
+
+#~ msgid "&Manually specify the proxy settings"
+#~ msgstr "પ્રોક્સી ગોઠવણીઓ જાતે જ સ્પષ્ટ કરો (&M)"
+
+#~ msgid "Show the manual proxy configuration dialog."
+#~ msgstr "જાતે પ્રોક્સી રૂપરેખાંકન માટેનો સંવાદ બતાવો."
+
+#~ msgid "Authori&zation"
+#~ msgstr "સત્તાધિકરણ (&z)"
+
+#~ msgid "Prompt for login information whenever it is required."
+#~ msgstr "જ્યારે જરૂરી હોય ત્યારે પ્રવેશ માહિતી માટે પૂછો."
+
+#~ msgid "Prompt as &needed"
+#~ msgstr "જરૂર પડે ત્યારે પૂછો (&n)"
+
+#~ msgid "Use this login information."
+#~ msgstr "નીચેની પ્રવેશ માહિતી વાપરો."
+
+#~ msgid ""
+#~ "Use information specified here to login into proxy servers as needed."
+#~ msgstr ""
+#~ "જ્યારે જરૂરી હોય ત્યારે પ્રોકસી સર્વર્સમાં પ્રવેશ કરવા માટે અહીં સ્પષ્ટ કરેલ માહિતી વાપરો."
+
+#~ msgid "Username:"
+#~ msgstr "વપરાશકર્તાનામ:"
+
+#~ msgid "Login name."
+#~ msgstr "પ્રવેશ નામ."
+
+#~ msgid "Login password."
+#~ msgstr "પ્રવેશ પાસવર્ડ"
+
+#~ msgid "Password:"
+#~ msgstr "પાસવર્ડ:"
+
+#~ msgid "Use persistent connections to proxy"
+#~ msgstr "પ્રોક્સી માટે સ્થાયી જોડાણો વાપરો"
+
+#~ msgid "Ser&vers"
+#~ msgstr "સર્વર્સ (&v)"
+
+#~ msgid "D&elete All"
+#~ msgstr "બધુ દૂર કરો (&e)"
+
+#~ msgid "De&lete"
+#~ msgstr "દૂર કરો (&l)"
+
+#~ msgid "C&hange..."
+#~ msgstr "બદલો (&h)..."
+
+#~ msgid "&Domain name:"
+#~ msgstr "ડોમેઇન નામ (&D):"
+
+#~ msgid "Add &platform name"
+#~ msgstr "પ્લેટફોર્મનું નામ ઉમેરો (&p)"
+
+#~ msgid "Domain [Group]"
+#~ msgstr "ડોમેઇન [સમૂહ]"
+
+#~ msgid "Host [Set By]"
+#~ msgstr "યજમાન [વડે ગોઠવેલ]"
+
+#~ msgid "&Windows Shares"
+#~ msgstr "વિન્ડોઝ ભાગીદારી (&W)"
+
+#~ msgid "&LISa Daemon"
+#~ msgstr "&LISa ડેમન"
+
+#~ msgid "lan:/ Iosla&ve"
+#~ msgstr "lan:/ Iosla&ve"
+
+#~ msgctxt "just a placeholder; do not translate"
+#~ msgid "KSqueezedTextLabel"
+#~ msgstr "KSqueezedTextLabel"
+
+#~ msgid "&Search:"
+#~ msgstr "શોધો (&S):"
+
+#~ msgid "<qt>\n"
+#~ msgstr "<qt>\n"
+
+#~ msgid "&SOCKS"
+#~ msgstr "&SOCKS"
+
+#~ msgid "SOCKS"
+#~ msgstr "SOCKS"
+
+#~ msgid "&Enable SOCKS support"
+#~ msgstr "SOCKS આધાર સક્રિય કરો (&E)"
+
+#~ msgid "Click here to test SOCKS support."
+#~ msgstr "SOCKS આધાર ચકાસવા માટે અહીં ક્લિક કરો."
+
+#~ msgid "&Test"
+#~ msgstr "ચકાસણી (&T)"
+
+#~ msgid "SOCKS Implementation"
+#~ msgstr "SOCKS અમલીકરણ"
+
+#~ msgid "Use &custom library"
+#~ msgstr "પોતાની લાઇબ્રેરી વાપરો (&c)"
+
+#~ msgid "A&uto detect"
+#~ msgstr "આપમેળે શોધો (&u)"
+
+#~ msgid "&NEC SOCKS"
+#~ msgstr "&NEC SOCKS"
+
+#~ msgid "&Dante"
+#~ msgstr "&Dante"
+
+#~ msgid "Additional Library Search Paths"
+#~ msgstr "વધારાનાં લાઇબ્રેરી શોધ માર્ગો"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "કાર્તિક મિસ્ત્રી"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "kartik.mistry@gmail.com"
+
+#~ msgid "kcmsocks"
+#~ msgstr "kcmsocks"
+
+#~ msgid "KDE SOCKS Control Module"
+#~ msgstr "KDE SOCKS નિયંત્રણ મોડ્યુલ"
+
+#~ msgid "(c) 2001 George Staikos"
+#~ msgstr "(c) ૨૦૦૧ જયોર્જ સ્ટાઇકોસ"
+
+#~ msgid "George Staikos"
+#~ msgstr "જ્યોર્જ સ્ટાઇકોસ"
+
+#~ msgid "SOCKS Support"
+#~ msgstr "SOCKS આધાર"
+
+#~ msgid "Success: SOCKS was found and initialized."
+#~ msgstr "સફળતા: SOCKS મળ્યું અને શરૂ કરવામાં આવ્યું હતું."
+
+#~ msgid "SOCKS could not be loaded."
+#~ msgstr "SOCKS લાવી શકાતું નથી."
+
+#~ msgid "&Path:"
+#~ msgstr "માર્ગ (&P):"
+
+#~ msgid "Path"
+#~ msgstr "માર્ગ"
+
+#~ msgid "&Add"
+#~ msgstr "ઉમેરો (&A)"
+
+#~ msgid "&Remove"
+#~ msgstr "દૂર કરો (&R)"

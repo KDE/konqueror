@@ -1,0 +1,87 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Continental-Chinese "INCLUDE">
+]>
+<article id="history" lang="&language;">
+<title
+>历史侧栏</title>
+<articleinfo>
+<authorgroup>
+<author
+>&Burkhard.Lueck;</author>
+<author
+><firstname
+>Yunhe</firstname
+> <surname
+>Guo</surname
+></author
+> 
+</authorgroup>
+
+<date
+>2009-11-24</date>
+<releaseinfo
+>&kde; 4.4</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>系统设置</keyword>
+<keyword
+>历史</keyword>
+</keywordset>
+</articleinfo>
+
+<para
+>此对话框允许您对配置历史侧栏 </para>
+
+<variablelist>
+<varlistentry
+><term
+><guilabel
+>限制</guilabel
+></term>
+<listitem
+><para
+>本节中的选项可以用来设置历史记录的最大限制和设置项目自动移除的时间。 </para
+></listitem>
+</varlistentry>
+
+<varlistentry
+><term
+><guilabel
+>自定义字体</guilabel
+></term>
+<listitem
+><para
+>您也可以在这里通过<guibutton
+>选择字体</guibutton
+>按钮为新旧 &URL; 设置不同的字体。 </para
+></listitem>
+</varlistentry>
+
+<varlistentry
+><term
+><guilabel
+>细节</guilabel
+></term>
+<listitem
+><para
+>当您把鼠标指针悬停在历史页面的某个项上面时，系统提示信息的多少由<guilabel
+>细节提示</guilabel
+>复选框控制。</para>
+<para
+>如果选中，除了 URL 还会显示访问次数，第一次和最后一次访问日期。</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>选择<guibutton
+>清除历史</guibutton
+>将会清除全部历史记录。 </para>
+</article>

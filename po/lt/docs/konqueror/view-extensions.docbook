@@ -1,0 +1,177 @@
+<chapter id="view-extensions">
+
+<title
+>Žiūrėjimo būdų plėtiniai</title>
+
+<!--filemanager mode:
+default Icons/Details/Columns (Dolphin), File Size View (konq-plugins)
+additional Terminal Emulator (Konsole), File Replace View (kdewebdev), Cervisia (kdesdk), Radial Map (Filelight-kdeutils) and more
+browser mode:
+default KHTML, WebKit, Embedded Advanced Text Editor
+additional KImageMapEditor+KLinkStatusPart (kdewebdev) and more
+  -->
+<para
+>&konqueror; failų tvarkyklės ir naršyklės režime leis pasirinkti papildomus rodinius meniu šakoje <menuchoice
+><guimenu
+>Rodymas</guimenu
+> <guisubmenu
+>Žiūrėjimo būdas</guisubmenu
+></menuchoice
+>, jei bus įdiegti atitinkami priedai.</para>
+<para
+>Failų tvarkyklės režimas turi papildomus rodinius: <guimenuitem
+>Radialinis žemėlapis</guimenuitem
+> (iš programos <application
+>Filelight</application
+>) bei &konqueror; priedo teikiamą <guimenuitem
+>Failų dydžio vaizdą</guimenuitem
+>.</para>
+
+<sect1 id="fsview">
+<sect1info>
+<authorgroup>
+<author
+><personname
+><firstname
+>Josef</firstname
+> <surname
+>Weidendorfer</surname
+></personname
+> <address
+><email
+>Josef.Weidendorfer@gmx.de</email
+></address
+> </author>
+
+</authorgroup>
+<date
+>2011-05-16</date>
+<releaseinfo
+>&kde; 4.7</releaseinfo>
+</sect1info>
+
+<title
+>&fsview; – failų sistemos vaizdas</title>
+<sect2>
+<title
+>Įvadas</title>
+
+<para
+>&fsview; priedas – tai dar vienas &konqueror; žiūrėjimo būdas, skirtas <literal
+>inode/directory</literal
+> tipo objektams vietinėse failų sistemose. Jį galima vadinti įvairių ženkliukų ir sąrašų rodinių alternatyva, skirta jūsų vietinės failų sistemos naršymui.</para>
+
+<para
+>Unikali &fsview; savybė yra ta, kad jis gali rodyti pilną kelių lygmenų aplankų struktūros hierarchiją naudojant taip vadinamą medžio žemėlapį. Medžio žemėlapiai leidžia objektų metriką rodyti įdėtinėje struktūroje: kiekvieną objektą atitinka stačiakampis, kurio plotas yra proporcingas jo metrikai. Vaikų metrikų suma bus lygi arba mažesnė už tėvo metriką.</para>
+
+<para
+>&fsview; atveju pasirinkta failų ir aplankų dydžio metrika, kur aplanko dydis - tai visų jo failų ir vidinių aplankų dydžių suma. Tokiu būdu dideli failai, net kai jie paslėpti giliai aplankų hierarchijoje gali būti labai greitai pastebėti dėl jų didelių stačiakampių. Taigi galima sakyti, kad &fsview; – tai grafinė ir interaktyvi &UNIX; komandos <command
+>du</command
+> versija.</para>
+
+<para
+>&fsview; integracija į Konquerorį leidžia naudoti standartines funkcijas, tokias kaip kontekstinis meniu bei nuo failo mime tipo priklausantys veiksmai. Buvo nuspręsta nekurti automatinio vaizdo atnaujinimo po failų sistemos pasikeitimo: jei jūs &fsview; rodomą failą ištrinsite naudodami kitą programą nei &konqueror;, jūs turėsite rankiniu būdu atnaujinti vaizdą spausdami <keycap
+>F5</keycap
+>. To priežastis yra potencialiai didžiulis skaičius failų, kurių pakeitimus tektų stebėti, kas savo ruožtu sunaudotų nepagrįstai daug sistemos resursų pakankamai mažai savybei.</para>
+
+</sect2>
+
+<sect2>
+<title
+>Vaizdavimo savybės</title>
+
+<para
+>Šiame skyriuje detaliai paaiškinamas grafinis &fsview; vaizdavimas.</para>
+
+<sect3>
+<title
+>Elementų paišymo parinktys</title>
+
+<para
+>&fsview; medžio žemėlapio vaizdavimo elementas – tai stačiakampis, vaizduojantis jūsų failų sistemos failą arba aplanką. Aiškesniam naršymui stačiakampiai turi reikšmingas spalvinimo ir žymėjimo parinktis.</para>
+
+<para
+>Stačiakampio spalvą galima keisti naudojant meniu <menuchoice
+><guimenu
+>Rodymas</guimenu
+><guisubmenu
+>Spalvų veiksena</guisubmenu
+></menuchoice
+>. Galite pasirinkti arba <guimenuitem
+>Gylį</guimenuitem
+>, leidžianti aiškiai pastebėti vidinius aplankus, arba spalvinį skirtingų failų atributų, tokiu kaip pavadinimas, savininkas, grupė ar mime tipas, vaizdavimą.</para>
+
+<para
+>Stačiakampį galima žymėti įvairiais atitinkamo failo ar aplanko atributais. Atributų atveju galite pasirinkti, ar jie apskritai turėtų būti rodomi, ar tik tada, kai yra vietos, ar vieta turėtų būti atimama iš vaikų (taip įveliant klaidų į gryną medžio žemėlapio paišymą). Taipogi galite pasirinkti, kurioje stačiakampio pusėje turėtų būti rodoma žymė.</para>
+
+</sect3>
+
+<sect3>
+<title
+>Medžio žemėlapio paišymo algoritmai</title>
+
+<para
+>Medžio žemėlapio paišymo algoritmuose turi būti laikomasi taisyklės, kad plotas turi būti proporcingas pasirinktai metrikai. &fsview; medžio žemėlapis ne visada laikosi šios taisyklės: mes paišome rėmelius, kurie vaizduoja vidinių elementų turėjimą, o šie rėmeliai užima vietą elemento, kuris gali lengvai pasimesti tarp vaikinių elementų. Pastebėtina, kad rėmeliui prarandama mažiau erdvės, jei stačiakampis yra kvadratas.</para>
+
+<para
+>Geresniam orientavimuisi patogu leisti kiekvienam stačiakampiui turėti žymą, kuri irgi užima vietą. Yra galimybė priverstinai paišyti žymas visuose stačiakampiuose jei reikia juos padidinus arba tik tuose, kuriuose yra pakankamai laisvos vietos. Paskutiniuoju atveju užvedus pelės žymeklį virš stačiakampio labai padės rodomas patarimas su atitinkama žyma. Patarimuose rodoma informacija apie elementą, virš kurio yra pelės žymeklis, kartu su jo ryšiu su tėvu iki pat šakninio medžio žemėlapio elemento.</para>
+
+<para
+>Kaip vieta paskirstoma vaikams priklauso nuo įgyvendinimo. Visada geriau stengtis plotą skirstyti taip, kad stačiakampiai būtų kiek galima artimesni kvadratui, nes taip ir žymas paišyti geriau, ir mažiau vietos prarandama rėmeliams. Tokiu atžvilgiu geriausias metodas yra <guilabel
+>Eilutės</guilabel
+>, <guilabel
+>Stulpeliai</guilabel
+> arba <guilabel
+>Rekursyvi bisekcija</guilabel
+>.</para>
+
+<para
+>Meniu punkte <menuchoice
+><guimenu
+>Rodymas</guimenu
+><guimenuitem
+>Sustoti ties vieta</guimenuitem
+></menuchoice
+> galite pasirinkti, kokie mažiausi plotai dar bus paišomi. Vietoje mažesnių bus paišomas bendras fonas, vaizduojantis vaikų užimamą vietą.</para>
+
+</sect3>
+
+</sect2>
+
+<sect2>
+<title
+>Vartotojo sąsaja</title>
+
+<para
+>&fsview;, kaip ir ženkliukų ar sąrašo rodiniai, leidžia parinkti daugiau nei vieną elementą. Tokiu būdu veiksmus galima atlikti su daugiau nei vienu elementu vienu metu. Vienas pelės paspaudimas visada pažymi vieną elementą po pelės žymekliu. Spaudžiant pelę laikant mygtuką &Shift; bus pažymimas intervalas, o &Ctrl; pažymės ar nužymės vieną elementą. Pastebėtina, kad pažymėjus elementą, nebegalima pažymėti jo vaikinių elementų. Pažymėjus elementą, pažymėjimas bus nuimtas nuo visų tėvinių elementų.</para>
+
+<para
+>Medžio žemėlapyje galima judėti ir naudojant klaviatūrą: klavišai <keycap
+>Kairėn</keycap
+> ir <keycap
+>Dešinėn</keycap
+> perkelia dabartinį elementą tarp vieno lygio elementų, o mygtukai <keycap
+>Aukštyn</keycap
+> ir <keycap
+>Žemyn</keycap
+> juda hierarchija aukštyn arba žemyn. <keycap
+>Tarpas</keycap
+> pažymi elementą, kartu su &Shift; vykdo intervalo žymėjimą, o kartu su nuspaustu &Ctrl; įjungia arba išjungia dabartinio elemento pažymėjimą. Norėdami atidaryti dabartinį elementą spauskite <keycap
+>Enter</keycap
+>.</para>
+
+</sect2>
+
+<sect2>
+<title
+>Padėkos ir licencija</title>
+<para
+>Pagal pradinį sumanymą &fsview; turėjo būti maža bandomoji programa, skirta medžio žemėlapio bandymams ir mokymui programoje <application
+>KCachegrind</application
+>.</para>
+<para
+>(c) Josef Weidendorfer, licencija: GPL V2.</para>
+</sect2>
+
+</sect1>
+</chapter>

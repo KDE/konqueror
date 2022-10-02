@@ -1,0 +1,3893 @@
+# translation of konqueror.po to Cymraeg
+# Translation of konqueror.po to Cymraeg
+# Bwrdd Gwaith yn Gymraeg.
+# Copyright (C) 2003 Free Software Foundation, Inc.
+# www.kyfieithu.co.uk<kyfieithu@dotmon.com>  2003.
+# KGyfieithu <kyfieithu@dotmon.com>, 2003.
+# KD at KGyfieithu <kyfieithu@dotmon.com>, 2003.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-22 00:44+0000\n"
+"PO-Revision-Date: 2003-12-27 14:40+0000\n"
+"Last-Translator: KD at KGyfieithu <kyfieithu@dotmon.com>\n"
+"Language-Team: Cymraeg <cy@li.org>\n"
+"Language: cy\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.2\n"
+"\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Owain Green,KGyfieithu"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "owaing@oceanfree.net,kyfieithu@dotmon.com"
+
+#: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4881
+#: src/konqmainwindow.cpp:4927
+#, fuzzy, kde-format
+#| msgctxt "NAME OF TRANSLATORS"
+#| msgid "Your names"
+msgid "no name"
+msgstr "Owain Green drwy KGyfieithu"
+
+#: src/konqextensionmanager.cpp:50
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Configure Extensions"
+msgstr "Ffurfweddu Gwirio Sillafu..."
+
+#: src/konqextensionmanager.cpp:70
+#, kde-format
+msgid "Extensions"
+msgstr ""
+
+#: src/konqfactory.cpp:67
+#, kde-format
+msgid ""
+"There was an error loading the module %1.\n"
+"The diagnostics is:\n"
+"%2"
+msgstr ""
+"Bu gwall wrth lwytho'r modiwl %1.\n"
+"Dyma'r ddiagnosteg:\n"
+" %2"
+
+#: src/konqframestatusbar.cpp:108
+#, kde-format
+msgid ""
+"Checking this box on at least two views sets those views as 'linked'. Then, "
+"when you change directories in one view, the other views linked with it will "
+"automatically update to show the current directory. This is especially "
+"useful with different types of views, such as a directory tree with an icon "
+"view or detailed view, and possibly a terminal emulator window."
+msgstr ""
+"Mae llenwi'r y blwch yma, ar o leiaf dau olwg, yn 'cysylltu'  y golygon "
+"hynny at ei gilydd. Wedyn, pan newidiwch gyfeiriadur mewn un golwg, "
+"diweddara'r golygon cysylltiedig eraill yn awtomatig i ddangos y cyfeiriadur "
+"cyfredol. Mae hyn yn arbennig o ddefnyddiol gyda golygon o sawl math "
+"gwahanol, megis coeden cyfeiriaduron â golwg eiconig neu manwl, a ffenestr "
+"efelychu terfynell o bosib."
+
+#: src/konqframestatusbar.cpp:154
+#, fuzzy, kde-format
+msgid "Close View"
+msgstr "Datgloi Golwg"
+
+#: src/konqframestatusbar.cpp:232
+#, kde-format
+msgid "%1/s"
+msgstr "%1/s"
+
+#: src/konqframestatusbar.cpp:234
+#, kde-format
+msgid "Stalled"
+msgstr "Wedi Seibio"
+
+#: src/konqguiclients.cpp:51
+#, fuzzy, kde-format
+#| msgid "Preview in %1"
+msgid "Preview &in %1"
+msgstr "Rhagolygon mewn %1"
+
+#: src/konqguiclients.cpp:118
+#, kde-format
+msgid "Show %1"
+msgstr "Dangos %1"
+
+#: src/konqhistorydialog.cpp:39
+#, fuzzy, kde-format
+#| msgid "History"
+msgctxt "@title:window"
+msgid "History"
+msgstr "Hanes"
+
+#: src/konqhistorydialog.cpp:55 src/konqhistoryview.cpp:140
+#, fuzzy, kde-format
+#| msgid "Sort"
+msgctxt "@action:inmenu Parent of 'By Name' and 'By Date'"
+msgid "Sort"
+msgstr "Trefnu"
+
+#: src/konqhistorymodel.cpp:119
+#, fuzzy, kde-format
+msgid ""
+"<qt><center><b>%1</b></center><hr />Last visited: %2<br />First visited: "
+"%3<br />Number of times visited: %4</qt>"
+msgstr ""
+"<qt><center><b>%4</b></center><hr>Ymweliad diwethaf: %1<br>Ymweliad cyntaf: "
+"%2<br>Nifer ymweliadau: %3</qt>"
+
+#: src/konqhistorymodel.cpp:213
+#, fuzzy, kde-format
+#| msgid "Local file"
+msgid "Local"
+msgstr "Ffeil Lleol"
+
+#: src/konqhistorymodel.cpp:216
+#, kde-format
+msgid "Miscellaneous"
+msgstr ""
+
+#: src/konqhistoryview.cpp:53 src/konqmainwindow.cpp:4412
+#, kde-format
+msgid "Open in New &Window"
+msgstr "Agor mewn Ffenestr &Newydd"
+
+#: src/konqhistoryview.cpp:58
+#, kde-format
+msgid "Open in New Tab"
+msgstr "Agor mewn Tab Newydd"
+
+#: src/konqhistoryview.cpp:63
+#, fuzzy, kde-format
+#| msgid "Open in New Tab"
+msgid "Open in Current Tab"
+msgstr "Agor mewn Tab Newydd"
+
+#: src/konqhistoryview.cpp:67
+#, fuzzy, kde-format
+#| msgid "Copy Link Address"
+msgid "&Copy Link Address"
+msgstr "Copïo Cyfeiriad Cyswllt"
+
+#: src/konqhistoryview.cpp:72
+#, kde-format
+msgid "&Remove Entry"
+msgstr "&Gwaredu Cofnod"
+
+#: src/konqhistoryview.cpp:79
+#, kde-format
+msgid "C&lear History"
+msgstr "C&lirio'r Hanes"
+
+#: src/konqhistoryview.cpp:84
+#, kde-format
+msgid "&Preferences..."
+msgstr ""
+
+#: src/konqhistoryview.cpp:91
+#, kde-format
+msgid "By &Name"
+msgstr "Gan &Enw"
+
+#: src/konqhistoryview.cpp:97
+#, kde-format
+msgid "By &Date"
+msgstr "Gan &Ddyddiad"
+
+#: src/konqhistoryview.cpp:107
+#, fuzzy, kde-format
+#| msgid "Clear History"
+msgid "Search in history"
+msgstr "Gwaredu Hanes"
+
+#: src/konqhistoryview.cpp:168
+#, kde-format
+msgid "Do you really want to clear the entire history?"
+msgstr "Ydych wir am glirio'r hanes gyfan?"
+
+#: src/konqhistoryview.cpp:169
+#, fuzzy, kde-format
+#| msgid "Clear History?"
+msgctxt "@title:window"
+msgid "Clear History?"
+msgstr "Clirio'r Hanes?"
+
+#: src/konqmain.cpp:170
+#, kde-format
+msgid "Konqueror"
+msgstr "Konqueror "
+
+#: src/konqmain.cpp:171
+#, fuzzy, kde-format
+#| msgid "Web browser, file manager, ..."
+msgid "Web browser, file manager and document viewer."
+msgstr "Porydd gwe, rheolwr ffeil, ..."
+
+#: src/konqmain.cpp:173
+#, fuzzy, kde-format
+msgid "(C) 1999-2016, The Konqueror developers"
+msgstr "(c) 1999-2003, y datblygwyr Konqueror "
+
+#: src/konqmain.cpp:176
+#, kde-format
+msgid "Stefano Crocco"
+msgstr ""
+
+#: src/konqmain.cpp:176
+#, kde-format
+msgid "Current maintainer"
+msgstr ""
+
+#: src/konqmain.cpp:177
+#, kde-format
+msgid "David Faure"
+msgstr ""
+
+#: src/konqmain.cpp:177
+#, fuzzy, kde-format
+msgid ""
+"Developer (framework, parts, JavaScript, I/O library) and former maintainer"
+msgstr "datblygwr (rhannau, rhaglengell M/A) a chynhaliwr"
+
+#: src/konqmain.cpp:178
+#, kde-format
+msgid "Simon Hausmann"
+msgstr ""
+
+#: src/konqmain.cpp:178
+#, fuzzy, kde-format
+#| msgid "developer (framework, parts)"
+msgid "Developer (framework, parts)"
+msgstr "datblygwr (fframwaith, rhannau)"
+
+#: src/konqmain.cpp:179
+#, kde-format
+msgid "Michael Reiher"
+msgstr ""
+
+#: src/konqmain.cpp:179 src/konqmain.cpp:207 src/konqmain.cpp:213
+#, fuzzy, kde-format
+#| msgid "developer (framework)"
+msgid "Developer (framework)"
+msgstr "datblygwr (fframwaith)"
+
+#: src/konqmain.cpp:180
+#, kde-format
+msgid "Matthias Welk"
+msgstr ""
+
+#: src/konqmain.cpp:180
+#, fuzzy, kde-format
+#| msgid "developer"
+msgid "Developer"
+msgstr "datblygwr"
+
+#: src/konqmain.cpp:181
+#, kde-format
+msgid "Alexander Neundorf"
+msgstr ""
+
+#: src/konqmain.cpp:181
+#, fuzzy, kde-format
+#| msgid "developer (List views)"
+msgid "Developer (List views)"
+msgstr "datblygwr (Golygon rhestr)"
+
+#: src/konqmain.cpp:182
+#, kde-format
+msgid "Michael Brade"
+msgstr ""
+
+#: src/konqmain.cpp:182
+#, fuzzy, kde-format
+#| msgid "developer (List views, I/O lib)"
+msgid "Developer (List views, I/O library)"
+msgstr "datblygwr (Golygon rhestr, rhaglengell M/A)"
+
+#: src/konqmain.cpp:183
+#, kde-format
+msgid "Lars Knoll"
+msgstr ""
+
+#: src/konqmain.cpp:183 src/konqmain.cpp:184 src/konqmain.cpp:185
+#: src/konqmain.cpp:187 src/konqmain.cpp:188 src/konqmain.cpp:190
+#: src/konqmain.cpp:191 src/konqmain.cpp:192 src/konqmain.cpp:193
+#: src/konqmain.cpp:195
+#, fuzzy, kde-format
+#| msgid "developer (HTML rendering engine)"
+msgid "Developer (HTML rendering engine)"
+msgstr "datblygwr (peiriant llunio HTML)"
+
+#: src/konqmain.cpp:184
+#, kde-format
+msgid "Dirk Mueller"
+msgstr ""
+
+#: src/konqmain.cpp:185
+#, kde-format
+msgid "Peter Kelly"
+msgstr ""
+
+#: src/konqmain.cpp:186
+#, kde-format
+msgid "Waldo Bastian"
+msgstr ""
+
+#: src/konqmain.cpp:186
+#, fuzzy, kde-format
+#| msgid "developer (HTML rendering engine, I/O lib)"
+msgid "Developer (HTML rendering engine, I/O library)"
+msgstr "datblygwr (peiriant llunio HTML, rhaglengell M/A)"
+
+#: src/konqmain.cpp:187
+#, kde-format
+msgid "Germain Garand"
+msgstr ""
+
+#: src/konqmain.cpp:188
+#, kde-format
+msgid "Leo Savernik"
+msgstr ""
+
+#: src/konqmain.cpp:189
+#, kde-format
+msgid "Stephan Kulow"
+msgstr ""
+
+#: src/konqmain.cpp:189
+#, fuzzy, kde-format
+msgid ""
+"Developer (HTML rendering engine, I/O library, regression test framework)"
+msgstr "datblygwr (peiriant llunio HTML, rhaglengell M/A)"
+
+#: src/konqmain.cpp:190
+#, kde-format
+msgid "Antti Koivisto"
+msgstr ""
+
+#: src/konqmain.cpp:191
+#, kde-format
+msgid "Zack Rusin"
+msgstr ""
+
+#: src/konqmain.cpp:192
+#, kde-format
+msgid "Tobias Anton"
+msgstr ""
+
+#: src/konqmain.cpp:193
+#, kde-format
+msgid "Lubos Lunak"
+msgstr ""
+
+#: src/konqmain.cpp:194
+#, kde-format
+msgid "Maks Orlovich"
+msgstr ""
+
+#: src/konqmain.cpp:194 src/konqmain.cpp:196
+#, fuzzy, kde-format
+msgid "Developer (HTML rendering engine, JavaScript)"
+msgstr "datblygwr (peiriant llunio HTML)"
+
+#: src/konqmain.cpp:195
+#, kde-format
+msgid "Allan Sandfeld Jensen"
+msgstr ""
+
+#: src/konqmain.cpp:196
+#, kde-format
+msgid "Apple Safari Developers"
+msgstr ""
+
+#: src/konqmain.cpp:197
+#, kde-format
+msgid "Harri Porten"
+msgstr ""
+
+#: src/konqmain.cpp:197
+#, fuzzy, kde-format
+#| msgid "developer (JavaScript)"
+msgid "Developer (JavaScript)"
+msgstr "datblygwr (JavaScript)"
+
+#: src/konqmain.cpp:198
+#, kde-format
+msgid "Koos Vriezen"
+msgstr ""
+
+#: src/konqmain.cpp:198
+#, fuzzy, kde-format
+msgid "Developer (Java applets and other embedded objects)"
+msgstr "datblygwr (cynhaliaeth rhaglennigion Java)"
+
+#: src/konqmain.cpp:199
+#, kde-format
+msgid "Matt Koss"
+msgstr ""
+
+#: src/konqmain.cpp:199 src/konqmain.cpp:200
+#, fuzzy, kde-format
+#| msgid "developer (I/O lib)"
+msgid "Developer (I/O library)"
+msgstr "datblygwr (rhaglengell M/A)"
+
+#: src/konqmain.cpp:200
+#, kde-format
+msgid "Alex Zepeda"
+msgstr ""
+
+#: src/konqmain.cpp:201
+#, kde-format
+msgid "Richard Moore"
+msgstr ""
+
+#: src/konqmain.cpp:201 src/konqmain.cpp:202
+#, fuzzy, kde-format
+#| msgid "developer (Java applet support)"
+msgid "Developer (Java applet support)"
+msgstr "datblygwr (cynhaliaeth rhaglennigion Java)"
+
+#: src/konqmain.cpp:202
+#, kde-format
+msgid "Dima Rogozin"
+msgstr ""
+
+#: src/konqmain.cpp:203
+#, kde-format
+msgid "Wynn Wilkes"
+msgstr ""
+
+#: src/konqmain.cpp:203
+#, fuzzy, kde-format
+#| msgid ""
+#| "developer (Java 2 security manager support,\n"
+#| " and other major improvements to applet support)"
+msgid ""
+"Developer (Java 2 security manager support,\n"
+" and other major improvements to applet support)"
+msgstr ""
+"datblygwr (cynhaliaeth trefnydd diogelwch Java 2,\n"
+" a gwelliannau mawr i gynhaliaeth rhaglennigion)"
+
+#: src/konqmain.cpp:204
+#, kde-format
+msgid "Stefan Schimanski"
+msgstr ""
+
+#: src/konqmain.cpp:204
+#, fuzzy, kde-format
+#| msgid "developer (Netscape plugin support)"
+msgid "Developer (Netscape plugin support)"
+msgstr "datblygwr (cynhaliaeth ategion Netscape)"
+
+#: src/konqmain.cpp:205
+#, kde-format
+msgid "George Staikos"
+msgstr ""
+
+#: src/konqmain.cpp:205
+#, fuzzy, kde-format
+#| msgid "developer (SSL, Netscape plugins)"
+msgid "Developer (SSL, Netscape plugins)"
+msgstr "datblygwr (SSL, cynhaliaeth ategion Netscape)"
+
+#: src/konqmain.cpp:206
+#, kde-format
+msgid "Dawit Alemayehu"
+msgstr ""
+
+#: src/konqmain.cpp:206
+#, fuzzy, kde-format
+#| msgid "developer (I/O lib, Authentication support)"
+msgid "Developer (I/O library, Authentication support)"
+msgstr "datblygwr (rhaglengell M/A, cynhaliaeth dilysiant)"
+
+#: src/konqmain.cpp:207
+#, kde-format
+msgid "Carsten Pfeiffer"
+msgstr ""
+
+#: src/konqmain.cpp:208
+#, kde-format
+msgid "Torsten Rahn"
+msgstr ""
+
+#: src/konqmain.cpp:208
+#, fuzzy, kde-format
+#| msgid "graphics/icons"
+msgid "Graphics/icons"
+msgstr "graffeg/eiconau"
+
+#: src/konqmain.cpp:209
+#, kde-format
+msgid "Torben Weis"
+msgstr ""
+
+#: src/konqmain.cpp:209
+#, fuzzy, kde-format
+#| msgid "kfm author"
+msgid "KFM author"
+msgstr "awdur kfm"
+
+#: src/konqmain.cpp:210
+#, kde-format
+msgid "Joseph Wenninger"
+msgstr ""
+
+#: src/konqmain.cpp:210
+#, fuzzy, kde-format
+#| msgid "developer (navigation panel framework)"
+msgid "Developer (navigation panel framework)"
+msgstr "datblygwr (fframwaith panel llywio)"
+
+#: src/konqmain.cpp:211
+#, kde-format
+msgid "Stephan Binner"
+msgstr ""
+
+#: src/konqmain.cpp:211
+#, fuzzy, kde-format
+msgid "Developer (misc stuff)"
+msgstr "datblygwr (Golygon rhestr)"
+
+#: src/konqmain.cpp:212
+#, kde-format
+msgid "Ivor Hewitt"
+msgstr ""
+
+#: src/konqmain.cpp:212
+#, fuzzy, kde-format
+msgid "Developer (AdBlock filter)"
+msgstr "datblygwr (fframwaith)"
+
+#: src/konqmain.cpp:213
+#, kde-format
+msgid "Eduardo Robles Elvira"
+msgstr ""
+
+#: src/konqmain.cpp:223
+#, fuzzy, kde-format
+msgid "Start without a default window, when called without URLs"
+msgstr "Dechrau heb ffenestr rhagosodedig"
+
+#: src/konqmain.cpp:224
+#, kde-format
+msgid ""
+"Preload for later use. This mode does not support URLs on the command line"
+msgstr ""
+
+#: src/konqmain.cpp:225
+#, kde-format
+msgid "Profile to open (DEPRECATED, IGNORED)"
+msgstr ""
+
+#: src/konqmain.cpp:225
+#, kde-format
+msgid "profile"
+msgstr ""
+
+#: src/konqmain.cpp:226
+#, fuzzy, kde-format
+msgid "List available sessions"
+msgstr "Rhestru'r proffilau sydd ar gael."
+
+#: src/konqmain.cpp:227
+#, fuzzy, kde-format
+msgid "Session to open"
+msgstr "Lleoliad i agor."
+
+#: src/konqmain.cpp:227
+#, fuzzy, kde-format
+#| msgid "Permissions"
+msgid "session"
+msgstr "Caniatadau"
+
+#: src/konqmain.cpp:228
+#, fuzzy, kde-format
+msgid "Mimetype to use for this URL (e.g. text/html or inode/directory)"
+msgstr ""
+"Math MIME i ddefnyddio i'r URL hwn, (e.e. text/html neu inode/directory)."
+
+#: src/konqmain.cpp:228
+#, kde-format
+msgid "mimetype"
+msgstr ""
+
+#: src/konqmain.cpp:229
+#, kde-format
+msgid "Part to use (e.g. khtml or kwebkitpart)"
+msgstr ""
+
+#: src/konqmain.cpp:229
+#, fuzzy, kde-format
+msgid "service"
+msgstr "Dewis ffeiliau:"
+
+#: src/konqmain.cpp:230
+#, kde-format
+msgid ""
+"For URLs that point to files, opens the directory and selects the file, "
+"instead of opening the actual file"
+msgstr ""
+
+#: src/konqmain.cpp:231
+#, kde-format
+msgid "The files/URLs opened by the application will be deleted after use"
+msgstr ""
+
+#: src/konqmain.cpp:233
+#, fuzzy, kde-format
+msgid "Location to open"
+msgstr "Lleoliad i agor."
+
+#: src/konqmainwindow.cpp:658
+#, kde-format
+msgctxt "@title:tab"
+msgid "Loading..."
+msgstr ""
+
+#: src/konqmainwindow.cpp:690
+#, fuzzy, kde-format
+#| msgid "Accessed"
+msgid "Access denied"
+msgstr "Hygyrchwyd"
+
+#: src/konqmainwindow.cpp:1465
+#, fuzzy, kde-format
+#| msgid "S&end File..."
+msgid "Open File"
+msgstr "A&nfon Ffeil"
+
+#: src/konqmainwindow.cpp:1548
+#, kde-format
+msgid "Canceled."
+msgstr "Wedi'i ddiddymu"
+
+#: src/konqmainwindow.cpp:1584
+#, kde-format
+msgid ""
+"This page contains changes that have not been submitted.\n"
+"Reloading the page will discard these changes."
+msgstr ""
+
+#: src/konqmainwindow.cpp:1585 src/konqmainwindow.cpp:2282
+#: src/konqmainwindow.cpp:2375 src/konqmainwindow.cpp:2407
+#: src/konqmainwindow.cpp:2450 src/konqmainwindow.cpp:2472
+#: src/konqmainwindow.cpp:4849
+#, fuzzy, kde-format
+#| msgid "Discard Changes?"
+msgctxt "@title:window"
+msgid "Discard Changes?"
+msgstr "Taflu Newidiadau?"
+
+#: src/konqmainwindow.cpp:1585 src/konqmainwindow.cpp:2282
+#: src/konqmainwindow.cpp:2375 src/konqmainwindow.cpp:2407
+#: src/konqmainwindow.cpp:2450 src/konqmainwindow.cpp:2473
+#: src/konqmainwindow.cpp:4849
+#, kde-format
+msgid "&Discard Changes"
+msgstr "&Taflu Newidiadau"
+
+#: src/konqmainwindow.cpp:1952 src/konqmainwindow.cpp:1958
+#, kde-format
+msgid "Home Folder"
+msgstr "Plygell Cartref"
+
+#: src/konqmainwindow.cpp:1953 src/konqmainwindow.cpp:3424
+#, fuzzy, kde-format
+#| msgid "Home"
+msgid "Home"
+msgstr "Cartref"
+
+#: src/konqmainwindow.cpp:1959
+#, fuzzy, kde-format
+msgid "Navigate to your 'Home Folder'"
+msgstr "Llywio i'ch 'URL gartref' neu hafan"
+
+#: src/konqmainwindow.cpp:1960
+#, fuzzy, kde-format
+msgid "Navigate to your local 'Home Folder'"
+msgstr "Llywio i'ch 'URL gartref' neu hafan"
+
+#. i18n: ectx: label, entry, group (UserSettings)
+#: src/konqmainwindow.cpp:1963 src/konqueror.kcfg:16
+#, fuzzy, kde-format
+#| msgid "Home"
+msgid "Home Page"
+msgstr "Cartref"
+
+#: src/konqmainwindow.cpp:1965
+#, fuzzy, kde-format
+msgid "Navigate to your 'Home Page'"
+msgstr "Llywio i'ch 'URL gartref' neu hafan"
+
+#: src/konqmainwindow.cpp:1966
+#, fuzzy, kde-format
+msgid ""
+"<html>Navigate to your 'Home Page'<br /><br />You can configure the location "
+"where this button takes you under <b>Settings -> Configure Konqueror -> "
+"General</b>.</html>"
+msgstr ""
+"Llywio i'ch 'URL gartref' neu hafan<p>Gallwch ffurfweddu'r lleoliad i ble'r "
+"â'r botwm yma a chi yn y <b>Ganolfan Reolaeth KDE</b>, o dan <b>Trefnydd "
+"Ffeiliau</b>/<b>Ymddygiad</b>."
+
+#: src/konqmainwindow.cpp:2281
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Detaching the tab will discard these changes."
+msgstr ""
+
+#: src/konqmainwindow.cpp:2374
+#, kde-format
+msgid ""
+"This view contains changes that have not been submitted.\n"
+"Closing the view will discard these changes."
+msgstr ""
+
+#: src/konqmainwindow.cpp:2406
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Closing the tab will discard these changes."
+msgstr ""
+
+#: src/konqmainwindow.cpp:2432
+#, fuzzy, kde-format
+msgid "Do you really want to close all other tabs?"
+msgstr "Ydych wir am glirio'r hanes gyfan?"
+
+#: src/konqmainwindow.cpp:2433 src/konqmainwindow.cpp:3505 src/konqtabs.cpp:335
+#, kde-format
+msgid "Close &Other Tabs"
+msgstr "Cau Tabiau &Eraill"
+
+#: src/konqmainwindow.cpp:2433
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Close Other Tabs Confirmation"
+msgstr "Cau Tabiau &Eraill"
+
+#: src/konqmainwindow.cpp:2449
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Closing other tabs will discard these changes."
+msgstr ""
+
+#: src/konqmainwindow.cpp:2471
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Reloading all tabs will discard these changes."
+msgstr ""
+
+#: src/konqmainwindow.cpp:2513
+#, fuzzy, kde-format
+#| msgid "Enter Target"
+msgctxt "@title:window"
+msgid "Enter Target"
+msgstr "Mewnosodwch Targed"
+
+#: src/konqmainwindow.cpp:2520
+#, fuzzy, kde-format
+msgid "<qt><b>%1</b> is not valid</qt>"
+msgstr "<qt>Nid yw <b>%1</b> yn ddilys<qt>"
+
+#: src/konqmainwindow.cpp:2530
+#, fuzzy, kde-format
+msgid "Copy selected files from %1 to:"
+msgstr "Copio ffeiliau dewisiedig o"
+
+#: src/konqmainwindow.cpp:2543
+#, fuzzy, kde-format
+msgid "Move selected files from %1 to:"
+msgstr "Symud ffeiliau dewisiedig o"
+
+#: src/konqmainwindow.cpp:2717
+#, fuzzy, kde-format
+#| msgid "Clear History"
+msgctxt "This menu entry empties the closed items history"
+msgid "Empty Closed Items History"
+msgstr "Gwaredu Hanes"
+
+#: src/konqmainwindow.cpp:2740
+#, fuzzy, kde-format
+msgid "Save As..."
+msgstr "Gosod URL..."
+
+#: src/konqmainwindow.cpp:2742
+#, fuzzy, kde-format
+msgid "Manage..."
+msgstr "Ne&wid Eicon..."
+
+#: src/konqmainwindow.cpp:3333
+#, kde-format
+msgid "New &Window"
+msgstr "&Ffenestr Newydd"
+
+#: src/konqmainwindow.cpp:3338
+#, kde-format
+msgid "&Duplicate Window"
+msgstr "&Dyblygu Ffenestr"
+
+#: src/konqmainwindow.cpp:3343
+#, fuzzy, kde-format
+msgid "Send &Link Address..."
+msgstr "Anfon &Cyswllt"
+
+#: src/konqmainwindow.cpp:3347
+#, kde-format
+msgid "S&end File..."
+msgstr "A&nfon Ffeil"
+
+#: src/konqmainwindow.cpp:3351
+#, fuzzy, kde-format
+#| msgid "Open Location"
+msgid "&Open Location"
+msgstr "Agor Lleoliad"
+
+#: src/konqmainwindow.cpp:3357
+#, fuzzy, kde-format
+#| msgid "S&end File..."
+msgid "&Open File..."
+msgstr "A&nfon Ffeil"
+
+#: src/konqmainwindow.cpp:3362
+#, kde-format
+msgid "&Find File..."
+msgstr "&Canfod Ffeil..."
+
+#: src/konqmainwindow.cpp:3371
+#, kde-format
+msgid "Lock to Current Location"
+msgstr "Cloi i'r Lleoliad Cyfredol"
+
+#: src/konqmainwindow.cpp:3374
+#, fuzzy, kde-format
+#| msgid "Lin&k View"
+msgctxt "This option links konqueror views"
+msgid "Lin&k View"
+msgstr "Cysyll&tu Golwg"
+
+#: src/konqmainwindow.cpp:3379
+#, kde-format
+msgid "&Up"
+msgstr "I &Fyny"
+
+#: src/konqmainwindow.cpp:3389
+#, fuzzy, kde-format
+#| msgid "Copy Items"
+msgid "Closed Items"
+msgstr "Copïo Eitemau"
+
+#: src/konqmainwindow.cpp:3402
+#, fuzzy, kde-format
+#| msgid "Permissions"
+msgid "Sessions"
+msgstr "Caniatadau"
+
+#: src/konqmainwindow.cpp:3429
+#, fuzzy, kde-format
+#| msgid "Most Often Visited"
+msgctxt "@action:inmenu Go"
+msgid "Most Often Visited"
+msgstr "Wedi'i Ymweld yr Amlaf"
+
+#: src/konqmainwindow.cpp:3433
+#, kde-format
+msgctxt "@action:inmenu Go"
+msgid "Recently Visited"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3442
+#, fuzzy, kde-format
+#| msgid "History"
+msgctxt "@action:inmenu Go"
+msgid "Show History"
+msgstr "Hanes"
+
+#: src/konqmainwindow.cpp:3455
+#, fuzzy, kde-format
+msgid "Configure Extensions..."
+msgstr "Ffurfweddu Gwirio Sillafu..."
+
+#: src/konqmainwindow.cpp:3459
+#, kde-format
+msgid "Configure Spell Checking..."
+msgstr "Ffurfweddu Gwirio Sillafu..."
+
+#: src/konqmainwindow.cpp:3465
+#, kde-format
+msgid "Split View &Left/Right"
+msgstr "Hollti Golwg &Chwith/Dde"
+
+#: src/konqmainwindow.cpp:3470
+#, kde-format
+msgid "Split View &Top/Bottom"
+msgstr "Hollti Golwg &Pen/Gwaelod"
+
+#: src/konqmainwindow.cpp:3475 src/konqtabs.cpp:456
+#, kde-format
+msgid "&New Tab"
+msgstr "Tab &Newydd"
+
+#: src/konqmainwindow.cpp:3484
+#, kde-format
+msgid "&Duplicate Current Tab"
+msgstr "&Dyblygu'r Tab Cyfredol"
+
+#: src/konqmainwindow.cpp:3489
+#, kde-format
+msgid "Detach Current Tab"
+msgstr "Datglymu'r Tab Cyfredol"
+
+#: src/konqmainwindow.cpp:3494
+#, fuzzy, kde-format
+msgid "&Close Active View"
+msgstr "&Gwaredu'r Olwg Weithredol"
+
+#: src/konqmainwindow.cpp:3499
+#, kde-format
+msgid "Close Current Tab"
+msgstr "Cau'r Tab Cyfredol"
+
+#: src/konqmainwindow.cpp:3509
+#, kde-format
+msgid "Activate Next Tab"
+msgstr "Gweithredu'r Tab Nesaf"
+
+#: src/konqmainwindow.cpp:3513
+#, kde-format
+msgid "Activate Previous Tab"
+msgstr "Gweithredu'r Tab Cynt"
+
+#: src/konqmainwindow.cpp:3520
+#, fuzzy, kde-format
+msgid "Activate Tab %1"
+msgstr "Gweithredu'r Tab Nesaf"
+
+#: src/konqmainwindow.cpp:3525
+#, kde-format
+msgid "Move Tab Left"
+msgstr "Symud Tab i'r Chwith"
+
+#: src/konqmainwindow.cpp:3530
+#, kde-format
+msgid "Move Tab Right"
+msgstr "Symud Tab i'r Dde"
+
+#: src/konqmainwindow.cpp:3538
+#, kde-format
+msgid "Dump Debug Info"
+msgstr "Tomenu Gwybodaeth Dadnamu"
+
+#: src/konqmainwindow.cpp:3556
+#, fuzzy, kde-format
+msgid "&Reload"
+msgstr "&Ail-lwytho bob tab"
+
+#: src/konqmainwindow.cpp:3561 src/konqtabs.cpp:313
+#, kde-format
+msgid "&Reload All Tabs"
+msgstr "&Ail-lwytho bob tab"
+
+#: src/konqmainwindow.cpp:3569
+#, fuzzy, kde-format
+msgid "&Force Reload"
+msgstr "&Ail-lwytho bob tab"
+
+#: src/konqmainwindow.cpp:3595
+#, kde-format
+msgid "&Stop"
+msgstr "&Atal"
+
+#: src/konqmainwindow.cpp:3604
+#, kde-format
+msgid "Throbber"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3608 src/konqmainwindow.cpp:3611
+#, kde-format
+msgid "L&ocation: "
+msgstr "Ll&eoliad:"
+
+#: src/konqmainwindow.cpp:3618
+#, kde-format
+msgid "Location Bar"
+msgstr "Bar Lleoliad"
+
+#: src/konqmainwindow.cpp:3624
+#, fuzzy, kde-format
+#| msgid "Location Bar<p>Enter a web address or search term."
+msgid ""
+"<html>Location Bar<br /><br />Enter a web address or search term.</html>"
+msgstr "Bar Lleoliad<p>Rhowch cyfeiriad gwê neu derm chwilio."
+
+#: src/konqmainwindow.cpp:3628
+#, kde-format
+msgid "Clear Location Bar"
+msgstr "Clirio'r Bar Lleoliad"
+
+#: src/konqmainwindow.cpp:3632
+#, fuzzy, kde-format
+#| msgid "Clear Location bar<p>Clears the content of the location bar."
+msgid ""
+"<html>Clear Location bar<br /><br />Clears the contents of the location bar."
+"</html>"
+msgstr "Clirio'r Bar Lleoliad<p>Cliria gynnwys y bar lleoliad."
+
+#: src/konqmainwindow.cpp:3637
+#, fuzzy, kde-format
+msgid "&Bookmarks"
+msgstr "&Tudnod"
+
+#: src/konqmainwindow.cpp:3665
+#, kde-format
+msgid "Kon&queror Introduction"
+msgstr "Cyflwyniad Kon&queror"
+
+#: src/konqmainwindow.cpp:3670
+#, kde-format
+msgid "Go"
+msgstr "Ewch"
+
+#: src/konqmainwindow.cpp:3672
+#, fuzzy, kde-format
+#| msgid "Go<p>Goes to the page that has been entered into the location bar."
+msgid ""
+"<html>Go<br /><br />Goes to the page that has been entered into the location "
+"bar.</html>"
+msgstr "Ewch<p>Â i'r dudalen a roddir yn y bar lleoliad."
+
+#: src/konqmainwindow.cpp:3678
+#, fuzzy, kde-format
+#| msgid ""
+#| "Enter the parent folder<p>For instance, if the current location is file:/"
+#| "home/%1 clicking this button will take you to file:/home."
+msgid ""
+"<html>Enter the parent folder<br /><br />For instance, if the current "
+"location is file:/home/%1 clicking this button will take you to file:/home.</"
+"html>"
+msgstr ""
+"Mynd i'r blygell riant<p>Er enghraifft, os file:/home/%1 yw'r lleoliad "
+"cyfredol, â'r botwm yma â chi i file:/home"
+
+#: src/konqmainwindow.cpp:3681
+#, kde-format
+msgid "Enter the parent folder"
+msgstr "Mynd i mewn i'r blygell riant"
+
+#: src/konqmainwindow.cpp:3683 src/konqmainwindow.cpp:3684
+#, kde-format
+msgid "Move backwards one step in the browsing history"
+msgstr "Symud yn ôl un cam drwy'r hanes pori"
+
+#: src/konqmainwindow.cpp:3686 src/konqmainwindow.cpp:3687
+#, kde-format
+msgid "Move forward one step in the browsing history"
+msgstr "Symud ymlaen un cam drwy'r hanes pori"
+
+#: src/konqmainwindow.cpp:3689 src/konqmainwindow.cpp:3690
+#, fuzzy, kde-format
+#| msgid "Move backwards one step in the browsing history"
+msgid "Move backwards one step in the closed tabs history"
+msgstr "Symud yn ôl un cam drwy'r hanes pori"
+
+#: src/konqmainwindow.cpp:3692
+#, fuzzy, kde-format
+#| msgid ""
+#| "Reload the currently displayed document<p>This may, for example, be "
+#| "needed to refresh webpages that have been modified since they were "
+#| "loaded, in order to make the changes visible."
+msgid ""
+"<html>Reload the currently displayed document<br /><br />This may, for "
+"example, be needed to refresh web pages that have been modified since they "
+"were loaded, in order to make the changes visible.</html>"
+msgstr ""
+"Ail-lwytho'r ddogfen arddangosedig cyfredol<p>Gall bod angen hwn i adfywio "
+"tudalennau gwê, er enghraifft rhai sydd wedi eu addasu ers eu llwytho, er "
+"mwyn dangos y newidiadau."
+
+#: src/konqmainwindow.cpp:3695
+#, kde-format
+msgid "Reload the currently displayed document"
+msgstr "Ail-lwytho'r ddogfen arddangosedig cyfredol"
+
+#: src/konqmainwindow.cpp:3697
+#, fuzzy, kde-format
+msgid ""
+"<html>Reload all currently displayed documents in tabs<br /><br />This may, "
+"for example, be needed to refresh web pages that have been modified since "
+"they were loaded, in order to make the changes visible.</html>"
+msgstr ""
+"Ail-lwytho'r ddogfen arddangosedig cyfredol<p>Gall bod angen hwn i adfywio "
+"tudalennau gwê, er enghraifft rhai sydd wedi eu addasu ers eu llwytho, er "
+"mwyn dangos y newidiadau."
+
+#: src/konqmainwindow.cpp:3700
+#, fuzzy, kde-format
+msgid "Reload all currently displayed document in tabs"
+msgstr "Ail-lwytho'r ddogfen arddangosedig cyfredol"
+
+#: src/konqmainwindow.cpp:3702
+#, fuzzy, kde-format
+#| msgid ""
+#| "Stop loading the document<p>All network transfers will be stopped and "
+#| "Konqueror will display the content that has been received so far."
+msgid ""
+"<html>Stop loading the document<br /><br />All network transfers will be "
+"stopped and Konqueror will display the content that has been received so far."
+"</html>"
+msgstr ""
+"Atal llwytho'r ddogfen<p>Terfynir pob drosglwyddiad rhwydwaith, a dengys "
+"Konqueror y cynnwys a dderbyniwyd hyd hynny."
+
+#: src/konqmainwindow.cpp:3706
+#, fuzzy, kde-format
+#| msgid ""
+#| "Reload the currently displayed document<p>This may, for example, be "
+#| "needed to refresh webpages that have been modified since they were "
+#| "loaded, in order to make the changes visible."
+msgid ""
+"<html>Reload the currently displayed document<br /><br />This may, for "
+"example, be needed to refresh web pages that have been modified since they "
+"were loaded, in order to make the changes visible. Any images on the page "
+"are downloaded again, even if cached copies exist.</html>"
+msgstr ""
+"Ail-lwytho'r ddogfen arddangosedig cyfredol<p>Gall bod angen hwn i adfywio "
+"tudalennau gwê, er enghraifft rhai sydd wedi eu addasu ers eu llwytho, er "
+"mwyn dangos y newidiadau."
+
+#: src/konqmainwindow.cpp:3710
+#, fuzzy, kde-format
+msgid ""
+"Force a reload of the currently displayed document and any contained images"
+msgstr "Ail-lwytho'r ddogfen arddangosedig cyfredol"
+
+#: src/konqmainwindow.cpp:3712
+#, kde-format
+msgid "Stop loading the document"
+msgstr "Atal llwytho'r ddogfen"
+
+#: src/konqmainwindow.cpp:3714
+#, fuzzy, kde-format
+#| msgid ""
+#| "Cut the currently selected text or item(s) and move it to the system "
+#| "clipboard<p> This makes it available to the <b>Paste</b> command in "
+#| "Konqueror and other KDE applications."
+msgid ""
+"<html>Cut the currently selected text or item(s) and move it to the system "
+"clipboard<br /><br />This makes it available to the <b>Paste</b> command in "
+"Konqueror and other KDE applications.</html>"
+msgstr ""
+"Torri'r testun neu eitem(au) dewisiedig cyfredol a'i(/u) symud i'r "
+"gludfwrdd<p> Mae hyn yn ei wneud ar gael i'r gorchymyn <b>Gludo</b> yn "
+"Konqueror a chymhwysiadau eraill KDE."
+
+#: src/konqmainwindow.cpp:3718
+#, kde-format
+msgid "Move the selected text or item(s) to the clipboard"
+msgstr "Symud y testun neu eitem(au) dewisiedig i'r gludfwrdd"
+
+#: src/konqmainwindow.cpp:3720
+#, fuzzy, kde-format
+#| msgid ""
+#| "Copy the currently selected text or item(s) to the system "
+#| "clipboard<p>This makes it available to the <b>Paste</b> command in "
+#| "Konqueror and other KDE applications."
+msgid ""
+"<html>Copy the currently selected text or item(s) to the system "
+"clipboard<br /><br />This makes it available to the <b>Paste</b> command in "
+"Konqueror and other KDE applications.</html>"
+msgstr ""
+"Copïo'r testun neu eitem(au) dewisiedig cyfredol i'r clipfwrdd<p> Mae hyn yn "
+"ei wneud ar gael i'r gorchymyn <b>Gludo</b> yn Konqueror a chymhwysiadau "
+"eraill KDE."
+
+#: src/konqmainwindow.cpp:3724
+#, kde-format
+msgid "Copy the selected text or item(s) to the clipboard"
+msgstr "Copïo'r testun neu eitem(au) dewisiedig cyfredol i'r clipfwrdd"
+
+#: src/konqmainwindow.cpp:3726
+#, fuzzy, kde-format
+#| msgid ""
+#| "Paste the previously cut or copied clipboard contents<p>This also works "
+#| "for text copied or cut from other KDE applications."
+msgid ""
+"<html>Paste the previously cut or copied clipboard contents<br /><br />This "
+"also works for text copied or cut from other KDE applications.</html>"
+msgstr ""
+"Gludo cynnwys y gludfwrdd a dorwyd neu gopïwyd gynt<p>Gweithia hyn hefyd "
+"gyda testun wedi ei gopïo neu'i dorri o gymhwysiadau eraill KDE."
+
+#: src/konqmainwindow.cpp:3729
+#, kde-format
+msgid "Paste the clipboard contents"
+msgstr "Gludo cynnwys y gludfwrdd"
+
+#: src/konqmainwindow.cpp:3731
+#, fuzzy, kde-format
+#| msgid ""
+#| "Print the currently displayed document<p>You will be presented with a "
+#| "dialog where you can set various options, such as the number of copies to "
+#| "print and which printer to use.<p>This dialog also provides access to "
+#| "special KDE printing services such as creating a PDF file from the "
+#| "current document."
+msgid ""
+"<html>Print the currently displayed document<br /><br />You will be "
+"presented with a dialog where you can set various options, such as the "
+"number of copies to print and which printer to use.<br /><br />This dialog "
+"also provides access to special KDE printing services such as creating a PDF "
+"file from the current document.</html>"
+msgstr ""
+"Argraffu'r ddogfen arddangosedig cyfredol<p>Cyflwynir ymgom i chi lle "
+"gallwch osod amryw osodion, megis y nifer o gopïau i'w argraffu, a pha "
+"argraffydd i'w ddefnyddio.<p>Darpara'r ymgom yma hefyd hygyrchedd i "
+"wasanaethau argraffu arbennig KDE, megis creu ffeil PDF o'r ddogfen cyfredol."
+
+#: src/konqmainwindow.cpp:3737
+#, kde-format
+msgid "Print the current document"
+msgstr "Argraffu'r ddogfen cyfredol"
+
+#: src/konqmainwindow.cpp:3739
+#, fuzzy, kde-format
+msgid ""
+"A locked view cannot change folders. Use in combination with 'link view' to "
+"explore many files from one folder"
+msgstr ""
+"Ni all golwg wedi'i gloi newid plygyll.  Defnyddiwch ynghyd â 'golwg "
+"gyswllt' i archwilio sawl ffeil o un blygell"
+
+#: src/konqmainwindow.cpp:3740
+#, kde-format
+msgid ""
+"Sets the view as 'linked'. A linked view follows folder changes made in "
+"other linked views."
+msgstr ""
+"Gosoda'r golwg yn 'olwg gyswllt'. Dilyna golygion cyswllt newidion plygell a "
+"wnaed mewn golygon cyswllt eraill."
+
+#: src/konqmainwindow.cpp:3744
+#, fuzzy, kde-format
+#| msgid "C&lose Current Tab"
+msgid "&Inspect Current Page"
+msgstr "C&au'r Tab Cyfredol"
+
+#: src/konqmainwindow.cpp:3745
+#, kde-format
+msgid ""
+"<html>Shows the developer tools for the current page<br/><br/>The current "
+"view is split in two and the developer tools are displayed in the second half"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3746
+#, kde-format
+msgid "Shows the developer tools for the current page"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3912
+#, kde-format
+msgid "Copy &Files..."
+msgstr "Copïo &Ffeiliau..."
+
+#: src/konqmainwindow.cpp:3916
+#, kde-format
+msgid "M&ove Files..."
+msgstr "S&ymud Ffeiliau..."
+
+#: src/konqmainwindow.cpp:4245
+#, kde-format
+msgid ""
+"You have requested to open more than 20 bookmarks in tabs. This might take a "
+"while. Continue?"
+msgstr ""
+
+#: src/konqmainwindow.cpp:4247
+#, fuzzy, kde-format
+#| msgid "Open Folder in Tabs"
+msgctxt "@title:window"
+msgid "Open bookmarks folder in new tabs"
+msgstr "Agor Plygell mewn Tabiau"
+
+#: src/konqmainwindow.cpp:4405
+#, kde-format
+msgid "Open in T&his Window"
+msgstr "Agor yn y Ffenest &Hon"
+
+#: src/konqmainwindow.cpp:4406
+#, fuzzy, kde-format
+msgid "Open the document in current window"
+msgstr "Agor y ddogfen mewn ffenestr newydd"
+
+#: src/konqmainwindow.cpp:4413
+#, kde-format
+msgid "Open the document in a new window"
+msgstr "Agor y ddogfen mewn ffenestr newydd"
+
+#: src/konqmainwindow.cpp:4419
+#, kde-format
+msgid "Open in &New Tab"
+msgstr "Agor mewn Tab &Newydd"
+
+#: src/konqmainwindow.cpp:4421
+#, kde-format
+msgid "Open the document in a new tab"
+msgstr "Agor y ddogfen mewn tab newydd"
+
+#: src/konqmainwindow.cpp:4637
+#, fuzzy, kde-format
+#| msgid "Open with %1"
+msgid "&Open With"
+msgstr "Agor gyda %1"
+
+#: src/konqmainwindow.cpp:4650
+#, kde-format
+msgid "Open with %1"
+msgstr "Agor gyda %1"
+
+#: src/konqmainwindow.cpp:4698
+#, fuzzy, kde-format
+#| msgid "&View Mode"
+msgctxt "@action:inmenu View"
+msgid "&View Mode"
+msgstr "Modd &Golwg"
+
+#: src/konqmainwindow.cpp:4815
+#, fuzzy, kde-format
+msgid ""
+"You have multiple tabs open in this window, are you sure you want to quit?"
+msgstr ""
+"Mae gennych amryw dabiau ar agor yn y ffenestr hon; a ydych yn sicr eich bod "
+"am ei chau?"
+
+#: src/konqmainwindow.cpp:4817
+#, fuzzy, kde-format
+#| msgid "Confirmation"
+msgctxt "@title:window"
+msgid "Confirmation"
+msgstr "Cadarnhâd"
+
+#: src/konqmainwindow.cpp:4819
+#, kde-format
+msgid "C&lose Current Tab"
+msgstr "C&au'r Tab Cyfredol"
+
+#: src/konqmainwindow.cpp:4845
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Closing the window will discard these changes."
+msgstr ""
+
+#: src/konqmainwindow.cpp:4846
+#, kde-format
+msgid ""
+"This page contains changes that have not been submitted.\n"
+"Closing the window will discard these changes."
+msgstr ""
+
+#: src/konqmainwindow.cpp:5003
+#, kde-format
+msgid ""
+"Your sidebar is not functional or unavailable. A new entry cannot be added."
+msgstr ""
+"Nid yw'ch bar ochr yn gweithio, neu nid yw ar gael. Nid oes modd ychwanegu "
+"cofnod newydd."
+
+#: src/konqmainwindow.cpp:5003 src/konqmainwindow.cpp:5010
+#, fuzzy, kde-format
+#| msgid "Web Sidebar"
+msgctxt "@title:window"
+msgid "Web Sidebar"
+msgstr "Bar Ochr Gwê"
+
+#: src/konqmainwindow.cpp:5008
+#, kde-format
+msgid "Add new web extension \"%1\" to your sidebar?"
+msgstr "Ychwanegu estyniad gwê newydd \"%1\" i'ch bar ochr?"
+
+#: src/konqmainwindow.cpp:5010
+#, fuzzy, kde-format
+msgid "Add"
+msgstr "Cyfeiriad"
+
+#: src/konqmainwindow.cpp:5010
+#, kde-format
+msgid "Do Not Add"
+msgstr "Na Ychwaneger"
+
+#: src/konqmainwindow.cpp:5358
+#, kde-format
+msgid ""
+"There appears to be a configuration error. You have associated Konqueror "
+"with %1, but it cannot handle this file type."
+msgstr ""
+"Ymddengys bod gwall ffurfweddu.  Rydych wedi cysylltu Konqueror efo %1, ond "
+"ni all drin y math yma o ffeil."
+
+#: src/konqmainwindow.cpp:5439
+#, kde-format
+msgid ""
+"Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
+"proxy will be used\n"
+"\n"
+" QtWebEngine only support a fixed proxy, so proxy auto-configuration (PAC) "
+"and Web Proxy Auto-Discovery protocol can't be used with QtWebEngine. If you "
+"need a proxy, please select the system proxy configuration or specify a "
+"proxy URL manually in the settings dialog. Do you want to change proxy "
+"settings now?"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5444
+#, fuzzy, kde-format
+msgid "Unsupported proxy configuration"
+msgstr "Dangos Botwm Ffurfweddu"
+
+#: src/konqmainwindow.cpp:5444
+#, kde-format
+msgid "Don't use a proxy"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5445 src/konqmainwindow.cpp:5463
+#, fuzzy, kde-format
+#| msgid "Show Configuration Button"
+msgid "Show proxy configuration dialog"
+msgstr "Dangos Botwm Ffurfweddu"
+
+#: src/konqmainwindow.cpp:5459
+#, kde-format
+msgid ""
+"Your proxy configuration can't be used with the QtWebEngine HTML engine "
+"because it doesn't support having different proxies for the HTTP and HTTPS "
+"protocols. Your current settings are:<p><b>HTTP proxy:</b> <tt>%1</tt></"
+"p><p><b>HTTPS proxy: </b><tt>%2</tt></p>What do you want to do?"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5462
+#, fuzzy, kde-format
+msgid "Conflicting proxy configuration"
+msgstr "Dangos Botwm Ffurfweddu"
+
+#: src/konqmainwindow.cpp:5463
+#, kde-format
+msgid "Use HTTP proxy (only this time)"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5463
+#, kde-format
+msgid "Use HTTPS proxy (only this time)"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5540
+#, kde-format
+msgid ""
+"You have entered Complete Full Screen mode (the user interface is completely "
+"hidden). You can exit it by pressing the keyboard shortcut for Full Screen "
+"Mode (%1)"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: src/konqnewsessiondlg_base.ui:28
+#, kde-format
+msgid "Save open &tabs and windows for easy retrieval"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_pAllWindows)
+#: src/konqnewsessiondlg_base.ui:34
+#, fuzzy, kde-format
+msgid "A&ll open windows"
+msgstr "Agor mewn Ffenestr Newydd"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_pCurrentWindow)
+#: src/konqnewsessiondlg_base.ui:44
+#, fuzzy, kde-format
+msgid "Onl&y current window"
+msgstr "Agor y ddogfen mewn ffenestr newydd"
+
+#. i18n: ectx: property (text), widget (QLabel, lblSessionName)
+#: src/konqnewsessiondlg_base.ui:56
+#, fuzzy, kde-format
+#| msgid "Permissions"
+msgid "Session n&ame:"
+msgstr "Caniatadau"
+
+#: src/konqsessiondlg.cpp:60
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Manage Sessions"
+msgstr "Newid &Sylwad"
+
+#: src/konqsessiondlg.cpp:168
+#, fuzzy, kde-format
+#| msgid "Renaming"
+msgctxt "@title:window"
+msgid "Rename Session"
+msgstr "Ailenwi"
+
+#: src/konqsessiondlg.cpp:215
+#, fuzzy, kde-format
+#| msgid "Renaming"
+msgctxt "@title:window"
+msgid "Save Session"
+msgstr "Ailenwi"
+
+#: src/konqsessiondlg.cpp:251
+#, kde-format
+msgid ""
+"A session with the name '%1' already exists, do you want to overwrite it?"
+msgstr ""
+
+#: src/konqsessiondlg.cpp:252
+#, kde-format
+msgctxt "@title:window"
+msgid "Session exists. Overwrite?"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pNewButton)
+#: src/konqsessiondlg_base.ui:26
+#, fuzzy, kde-format
+msgctxt "@action:button New session"
+msgid "New..."
+msgstr "&Plygell Newydd"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pSaveCurrentButton)
+#: src/konqsessiondlg_base.ui:33
+#, fuzzy, kde-format
+#| msgid "Close Current Tab"
+msgctxt "@action:button Save current session"
+msgid "Save Current..."
+msgstr "Cau'r Tab Cyfredol"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pRenameButton)
+#: src/konqsessiondlg_base.ui:40
+#, fuzzy, kde-format
+#| msgid "Rename"
+msgctxt "@action:button Rename session"
+msgid "Rename..."
+msgstr "Ail-enwi"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pDeleteButton)
+#: src/konqsessiondlg_base.ui:47
+#, fuzzy, kde-format
+msgctxt "@action:button Delete session"
+msgid "Delete"
+msgstr "&Dileu Proffil"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pOpenTabsInsideCurrentWindow)
+#. i18n: ectx: label, entry, group (Trash)
+#: src/konqsessiondlg_base.ui:73 src/konqueror.kcfg:517
+#, fuzzy, kde-format
+msgid "Open tabs inside current window"
+msgstr "Agor y ddogfen mewn ffenestr newydd"
+
+#: src/konqsessionmanager.cpp:86
+#, fuzzy, kde-format
+#| msgid "Renaming"
+msgctxt "@title:window"
+msgid "Restore Session?"
+msgstr "Ailenwi"
+
+#: src/konqsessionmanager.cpp:107
+#, kde-format
+msgid ""
+"Konqueror did not close correctly. Would you like to restore these previous "
+"sessions?"
+msgstr ""
+
+#: src/konqsessionmanager.cpp:119
+#, kde-format
+msgctxt "@tooltip:session list"
+msgid "Uncheck the sessions you do not want to be restored"
+msgstr ""
+
+#: src/konqsessionmanager.cpp:152
+#, fuzzy, kde-format
+#| msgid "&Window"
+msgctxt "@item:treewidget"
+msgid "Window %1"
+msgstr "&Ffenestr"
+
+#: src/konqsessionmanager.cpp:190
+#, kde-format
+msgid "Do not ask again"
+msgstr ""
+
+#: src/konqsessionmanager.cpp:204
+#, fuzzy, kde-format
+#| msgid "Renaming"
+msgctxt "@action:button yes"
+msgid "Restore Session"
+msgstr "Ailenwi"
+
+#: src/konqsessionmanager.cpp:205
+#, kde-format
+msgctxt "@action:button no"
+msgid "Do Not Restore"
+msgstr ""
+
+#: src/konqsessionmanager.cpp:206
+#, fuzzy, kde-format
+#| msgid "As New Folder"
+msgctxt "@action:button ask later"
+msgid "Ask Me Later"
+msgstr "Fel Plygell Newydd"
+
+#: src/konqstatusbarmessagelabel.cpp:67
+#, fuzzy, kde-format
+msgctxt "@info"
+msgid "Close"
+msgstr "Datgloi Golwg"
+
+#: src/konqstatusbarmessagelabel.cpp:68
+#, fuzzy, kde-format
+msgid "Close"
+msgstr "Datgloi Golwg"
+
+#: src/konqstatusbarmessagelabel.cpp:147
+#, fuzzy, kde-format
+#| msgid "Error "
+msgid "Error: %1"
+msgstr "Gwall "
+
+#: src/konqtabs.cpp:51
+#, kde-format
+msgid ""
+"This bar contains the list of currently open tabs. Click on a tab to make it "
+"active. You can also use keyboard shortcuts to navigate through tabs. The "
+"text on the tab shows the content currently open in it; place your mouse "
+"over the tab to see the full title, in case it has been shortened to fit the "
+"tab width."
+msgstr ""
+
+#: src/konqtabs.cpp:86
+#, kde-format
+msgid "Open a new tab"
+msgstr "Agor tab newydd"
+
+#: src/konqtabs.cpp:95
+#, kde-format
+msgid "Close the current tab"
+msgstr "Cau'r tab cyfredol"
+
+#: src/konqtabs.cpp:461
+#, kde-format
+msgid "&Duplicate Tab"
+msgstr "&Dyblygu Tab"
+
+#: src/konqtabs.cpp:466
+#, fuzzy, kde-format
+msgid "&Reload Tab"
+msgstr "&Ail-lwytho bob tab"
+
+#: src/konqtabs.cpp:473
+#, fuzzy, kde-format
+msgid "Other Tabs"
+msgstr "Cau Tabiau &Eraill"
+
+#: src/konqtabs.cpp:478
+#, kde-format
+msgid "D&etach Tab"
+msgstr "D&atglymu Tab"
+
+#: src/konqtabs.cpp:484
+#, kde-format
+msgid "&Close Tab"
+msgstr "&Cau Tab"
+
+#. i18n: ectx: label, entry, group (UserSettings)
+#: src/konqueror.kcfg:11
+#, kde-format
+msgid "Start Page"
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry, group (UserSettings)
+#: src/konqueror.kcfg:12
+#, kde-format
+msgid "This is the URL of the web page where Konqueror will start from."
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry, group (UserSettings)
+#: src/konqueror.kcfg:17
+#, kde-format
+msgid ""
+"This is the URL of the web page where Konqueror will jump to when the \\"
+"\"Home\\\" button is pressed."
+msgstr ""
+
+#. i18n: ectx: label, entry, group (UndoManagerSettings)
+#: src/konqueror.kcfg:26
+#, fuzzy, kde-format
+#| msgid "Maximum &number of URLs:"
+msgid "Maximum number of Closed Items"
+msgstr "&Nifer Mwyaf o URLau"
+
+#. i18n: ectx: whatsthis, entry, group (UndoManagerSettings)
+#: src/konqueror.kcfg:27
+#, kde-format
+msgid ""
+"This sets the maximum number of closed items that will be stored in memory. "
+"This limit will not be surpassed."
+msgstr ""
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:36
+#, fuzzy, kde-format
+msgid "Open folders in separate windows"
+msgstr "Agor Plygell mewn Tabiau"
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:37
+#, kde-format
+msgid ""
+"If this option is checked, Konqueror will open a new window when you open a "
+"folder, rather than showing that folder's contents in the current window."
+msgstr ""
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:42
+#, kde-format
+msgid "Show file tips"
+msgstr "Dangos cynghorion ffeil"
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:43
+#, kde-format
+msgid ""
+"Here you can control if, when moving the mouse over a file, you want to see "
+"a small popup window with additional information about that file"
+msgstr ""
+"Yma gallwch reoli os, pan yn symud y lygoden uwchlaw ffeil, rydych am weld "
+"naidlen fach â gwybodaeth ychwanegol am y ffeil yna."
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:54
+#, kde-format
+msgid "Show previews in file tips"
+msgstr "Dangos rhagolygon mewn cynghorion ffeil"
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:55
+#, kde-format
+msgid ""
+"Here you can control if you want the popup window to contain a larger "
+"preview for the file, when moving the mouse over it"
+msgstr ""
+"ma gallwch reoli os ydych am i'r naidlen gynnwys rhagolwg mwy i'r ffeil, pan "
+"yn symud y lygoden drosti."
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:60
+#, kde-format
+msgid "Show 'Delete' menu entries which bypass the trashcan"
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:61
+#, kde-format
+msgid ""
+"Check this if you want 'Delete' menu commands to be displayed on the desktop "
+"and in the file manager's menus and context menus. You can always delete "
+"files when hidden by holding the Shift key while calling 'Move to Trash'."
+msgstr ""
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:153 src/konqueror.kcfg:154
+#, kde-format
+msgid "Number of Open With items in the File menu"
+msgstr ""
+
+#. i18n: ectx: label, entry, group (HTML Settings)
+#: src/konqueror.kcfg:163
+#, kde-format
+msgid "Standard font"
+msgstr "Wynebfath safonol: "
+
+#. i18n: ectx: whatsthis, entry, group (HTML Settings)
+#: src/konqueror.kcfg:164
+#, kde-format
+msgid "This is the font used to display text in Konqueror windows."
+msgstr ""
+"Dyma'r wynebfath a ddefnyddir i ddangos testun mewn ffenestri Konqueror."
+
+#. i18n: ectx: label, entry, group (HistorySettings)
+#: src/konqueror.kcfg:314
+#, kde-format
+msgid "Maximum number of history items per view"
+msgstr ""
+
+#. i18n: ectx: label, entry, group (Trash)
+#: src/konqueror.kcfg:504
+#, fuzzy, kde-format
+msgid "Ask confirmation for deleting a file."
+msgstr "Cadarnhâd"
+
+#. i18n: ectx: whatsthis, entry, group (Trash)
+#: src/konqueror.kcfg:505
+#, kde-format
+msgid ""
+"This option tells Konqueror whether to ask for a confirmation when you "
+"delete a file without using the trash folder. Warning, deleted files can not "
+"be recovered, so it is recommended to leave this confirmation enabled."
+msgstr ""
+
+#. i18n: ectx: label, entry, group (Trash)
+#: src/konqueror.kcfg:510
+#, fuzzy, kde-format
+msgid "Ask confirmation for move to trash"
+msgstr "Cadarnhâd"
+
+#. i18n: ectx: whatsthis, entry, group (Trash)
+#: src/konqueror.kcfg:511
+#, kde-format
+msgid ""
+"This option tells Konqueror whether to ask for a confirmation when you move "
+"the file to your trash folder, from where it can be recovered very easily."
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry, group (Trash)
+#: src/konqueror.kcfg:518
+#, kde-format
+msgid ""
+"If true, when opening a session from within the sessions dialog the tabs "
+"will be opened inside current window."
+msgstr ""
+
+#. i18n: ectx: Menu (file)
+#: src/konqueror.rc:5
+#, fuzzy, kde-format
+msgid "&File"
+msgstr "&Plygell"
+
+#. i18n: ectx: Menu (edit)
+#: src/konqueror.rc:24
+#, kde-format
+msgid "&Edit"
+msgstr ""
+
+#. i18n: ectx: Menu (view)
+#: src/konqueror.rc:33
+#, fuzzy, kde-format
+msgid "&View"
+msgstr "Cysyll&tu Golwg"
+
+#. i18n: ectx: Menu (go)
+#: src/konqueror.rc:44
+#, kde-format
+msgid "&Go"
+msgstr "&Ewch"
+
+#. i18n: ectx: Menu (tools)
+#: src/konqueror.rc:54
+#, fuzzy, kde-format
+msgid "&Tools"
+msgstr "Offer"
+
+#. i18n: ectx: Menu (settings)
+#: src/konqueror.rc:59
+#, fuzzy, kde-format
+msgid "&Settings"
+msgstr "Gosodiadau"
+
+#. i18n: ectx: Menu (window)
+#: src/konqueror.rc:77
+#, kde-format
+msgid "&Window"
+msgstr "&Ffenestr"
+
+#. i18n: ectx: Menu (help)
+#: src/konqueror.rc:93
+#, kde-format
+msgid "&Help"
+msgstr ""
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: src/konqueror.rc:98
+#, fuzzy, kde-format
+msgid "Main Toolbar"
+msgstr "Bar Lleoliad"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: src/konqueror.rc:109
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "Bar Offer Ychwanegol"
+
+#. i18n: ectx: ToolBar (locationToolBar)
+#: src/konqueror.rc:116
+#, kde-format
+msgid "Location Toolbar"
+msgstr "Bar Lleoliad"
+
+#. i18n: ectx: ToolBar (bookmarkToolBar)
+#: src/konqueror.rc:122
+#, kde-format
+msgid "Bookmark Toolbar"
+msgstr "Bar Tudnodau"
+
+#: src/konqundomanager.cpp:90 src/konqundomanager.cpp:252
+#, fuzzy, kde-format
+#| msgid "&Close Tab"
+msgid "Und&o: Closed Tab"
+msgstr "&Cau Tab"
+
+#: src/konqundomanager.cpp:92 src/konqundomanager.cpp:103
+#: src/konqundomanager.cpp:147
+#, fuzzy, kde-format
+#| msgid "&Close Tab"
+msgid "Und&o: Closed Window"
+msgstr "&Cau Tab"
+
+#: src/konqundomanager.cpp:105
+#, kde-format
+msgid "Und&o"
+msgstr ""
+
+#: src/konqview.cpp:1162
+#, kde-format
+msgid ""
+"The page you are trying to view is the result of posted form data. If you "
+"resend the data, any action the form carried out (such as search or online "
+"purchase) will be repeated. "
+msgstr ""
+"Mae'r dudalen rydych yn ceisio ei weld yn ganlyniad o ddata ffurflen "
+"bostedig. Os ail-anfonwch y data, ailadroddir unrhyw weithred (megis "
+"chwiliad neu brynu ar-lein)."
+
+#: src/konqview.cpp:1164
+#, kde-format
+msgctxt "@title:window"
+msgid "Warning"
+msgstr ""
+
+#: src/konqview.cpp:1164
+#, kde-format
+msgid "Resend"
+msgstr "Ail-anfon"
+
+#: src/urlloader.cpp:253
+#, kde-format
+msgctxt "Execute an executable file"
+msgid "Execute it"
+msgstr ""
+
+#: src/urlloader.cpp:258
+#, kde-format
+msgctxt ""
+"The user has to decide whether to execute an executable file or display it"
+msgid ""
+"<tt>%1</tt> can be executed. Do you want to execute it or to display it?"
+msgstr ""
+
+#: src/urlloader.cpp:259
+#, kde-format
+msgctxt "Display an executable file"
+msgid "Display it"
+msgstr ""
+
+#: src/urlloader.cpp:263
+#, kde-format
+msgctxt "The user has to decide whether to execute an executable file or not"
+msgid "<tt>%1</tt> can be executed. Do you want to execute it?"
+msgstr ""
+
+#: src/urlloader.cpp:438
+#, fuzzy, kde-format
+msgid "Save As"
+msgstr "Gosod URL..."
+
+#~ msgid ""
+#~ "Malformed URL\n"
+#~ "%1"
+#~ msgstr ""
+#~ "URL annilys\n"
+#~ " %1"
+
+#, fuzzy
+#~| msgid "Profile Management"
+#~ msgid "File Management"
+#~ msgstr "Trefnu Proffilau"
+
+#~ msgid "Web Browsing"
+#~ msgstr "Pori'r Wê"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Configure"
+#~ msgstr "Ffurfweddu Bar Ochr"
+
+#, fuzzy
+#~| msgid "Web browser, file manager, ..."
+#~ msgid ""
+#~ "Konqueror is a web browser, file manager and universal document viewer."
+#~ msgstr "Porydd gwe, rheolwr ffeil, ..."
+
+#, fuzzy
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "Starting Points"
+#~ msgstr "Goso&diadau"
+
+#~ msgid "Introduction"
+#~ msgstr "Cyflwyniad"
+
+#~ msgid "Tips"
+#~ msgstr "Cynghorion"
+
+#~ msgid "Specifications"
+#~ msgstr "Penodiadau"
+
+#~ msgid "Trash"
+#~ msgstr "Sbwriel"
+
+#, fuzzy
+#~ msgid "Network Folders"
+#~ msgstr "Plygell Newydd:"
+
+#, fuzzy
+#~ msgid "Bookmarks"
+#~ msgstr "&Tudnod"
+
+#, fuzzy
+#~ msgid "Next: An Introduction to Konqueror"
+#~ msgstr "Cyflwyniad"
+
+#, fuzzy
+#~ msgid ""
+#~ "Konqueror is also a full featured and easy to use web browser which you "
+#~ "can use to explore the Internet. Enter the address (e.g. <a href=\"http://"
+#~ "www.kde.org\">http://www.kde.org</a>) of a web page you would like to "
+#~ "visit in the location bar and press Enter, or choose an entry from the "
+#~ "Bookmarks menu."
+#~ msgstr ""
+#~ "Dim ond rhoi cyfeiriad Rhyngrwyd (e.e. <a href=\"http://www.kde.org "
+#~ "\">http://www.kde.org</a>) y dudalen wê a gwasgu Dychwelyd sydd angen, "
+#~ "neu dewiswch cofnod yn eich dewislen Tudnodau."
+
+#, fuzzy
+#~ msgid ""
+#~ "To return to the previous location, press the back button <img width='16' "
+#~ "height='16' src=\"%1\"></img> in the toolbar. "
+#~ msgstr ""
+#~ "Os hoffech fynd yn ôl i'r dudalen wê flaenorol, gwasgwch y botwm <IMG "
+#~ "WIDTH=16 HEIGHT=16 SRC=\"%1\"> &nbsp;(\"Yn ôl\") yn y bar offer."
+
+#, fuzzy
+#~ msgid ""
+#~ "To quickly go to your Home folder press the home button <img width='16' "
+#~ "height='16' src=\"%1\"></img>."
+#~ msgstr ""
+#~ "Os hoffech fynd yn ôl i'r dudalen wê flaenorol, gwasgwch y botwm <IMG "
+#~ "WIDTH=16 HEIGHT=16 SRC=\"%1\"> &nbsp;(\"Yn ôl\") yn y bar offer."
+
+#~ msgid ""
+#~ "For more detailed documentation on Konqueror click <a href=\"%1\">here</"
+#~ "a>."
+#~ msgstr ""
+#~ "Am ddogfennaeth mwy manwl am Konqueror cliciwch <A HREF=\"%1\">yma</A>."
+
+#, fuzzy
+#~| msgid ""
+#~| "Konqueror is designed to embrace and support Internet standards. The aim "
+#~| "is to fully implement the officially sanctioned standards from "
+#~| "organizations such as the W3 and OASIS, while also adding extra support "
+#~| "for other common usability features that arise as de facto standards "
+#~| "across the Internet. Along with this support, for such functions as "
+#~| "favicons, Internet Keywords, and <A HREF=\"%1\">XBEL bookmarks</A>, "
+#~| "Konqueror also implements:"
+#~ msgid ""
+#~ "Konqueror is designed to embrace and support Internet standards. The aim "
+#~ "is to fully implement the officially sanctioned standards from "
+#~ "organizations such as the W3 and OASIS, while also adding extra support "
+#~ "for other common usability features that arise as de facto standards "
+#~ "across the Internet. Along with this support, for such functions as "
+#~ "favicons, Web Shortcuts, and <A HREF=\"%1\">XBEL bookmarks</A>, Konqueror "
+#~ "also implements:"
+#~ msgstr ""
+#~ "Dyluniwyd Konqueror i groesawi a chynnal safonau'r Rhyngrwyd. "
+#~ "Gweithredu'n llawn safonau swyddogol oddiwrth gyrff fel W3 ac OASIS yw'r "
+#~ "amcan, tra hefyd yn atodi cynhaliaeth ychwanegol i nodweddion "
+#~ "defnyddioldeb cyffredin sy'n ymddangos yn safonau mewn ffaith ar hyd a "
+#~ "lled y Rhyngrwyd. Ynghyd â chynhaliaeth i nodweddion megis hoffeiconau, "
+#~ "geiriau allweddol Rhyngrwyd, a tudnodau <a href=\"%1\">XBEL bookmarks</"
+#~ "a>, gweithreda Konqueror hefyd:"
+
+#~ msgid "Supported standards"
+#~ msgstr "Safonau cynnaledig"
+
+#~ msgid "Additional requirements*"
+#~ msgstr "Gofynion Ychwanegol*"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+#~ msgstr ""
+#~ "<a href=\"%1\">DOM</a>Sail  (Lefel 1, Level 2 rhannol)<a href=\"%2 "
+#~ "\">HTML 4.01</a>"
+
+#~ msgid "built-in"
+#~ msgstr "mewnadeiladedig"
+
+#~ msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
+#~ msgstr ""
+#~ "<a href=\"%1\">Dalennau Arddull Rhaeadru (CSS)</a> (CSS 1,  CSS 2 rhannol)"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
+#~ msgstr "<a href=\"%1\">ECMA-262</a> Rhifyn 3 (yn fras fel JavaScript 1.5)"
+
+#~ msgid ""
+#~ "JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
+#~ msgstr ""
+#~ "JavaScript analluog (yn eang). Galluogwch JavaScript <a href=\"%1\">yma</"
+#~ "a>."
+
+#~ msgid ""
+#~ "JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\"
+#~ "\">here</A>."
+#~ msgstr ""
+#~ "JavaScript galluog (yn eang). Analluogwch JavaScript <A HREF=\\\"%1\\"
+#~ "\">yma</ A>."
+
+#~ msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
+#~ msgstr "Cynhaliaeth <a href=\"%1\">Java</a><sup>&reg;</sup> diogel"
+
+#, fuzzy
+#~| msgid ""
+#~| "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">Blackdown</A>, <A HREF="
+#~| "\"%2\">IBM</A> or <A HREF=\"%3\">Sun</A>)"
+#~ msgid ""
+#~ "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">OpenJDK</A> or <A HREF="
+#~ "\"%2\">Sun/Oracle</A>)"
+#~ msgstr ""
+#~ "VM cyfaddas â JDK 1.2.0 (Java 2) (<a href=\"%1\">Blackdown</a>, <a href="
+#~ "\"%2 \">IBM</a> neu <a href=\"%3\">Sun</a>)"
+
+#~ msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
+#~ msgstr "Galluogwch Java (yn eang) <a href=\"%1\">yma</a>."
+
+#~ msgid "Secure Sockets Layer"
+#~ msgstr "Haen Socedi Diogel (SSL)"
+
+#~ msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
+#~ msgstr "(TLS/SSL f2/3) ar gyfer cyfathrebu diogel hyd at 168did"
+
+#~ msgid "OpenSSL"
+#~ msgstr "OpenSSL"
+
+#~ msgid "Bidirectional 16bit unicode support"
+#~ msgstr "Cynhaliaeth unicode deuffordd 16did"
+
+#~ msgid "AutoCompletion for forms"
+#~ msgstr "Hunan-Gwblhau i ffurflenni"
+
+#~ msgid "Feature"
+#~ msgstr "Nodwedd"
+
+#~ msgid "Details"
+#~ msgstr "Manylion"
+
+#~ msgid "Image formats"
+#~ msgstr "Fformatau Delwedd"
+
+#~ msgid "Transfer protocols"
+#~ msgstr "Protocolau trosglwyddo"
+
+#~ msgid "HTTP 1.1 (including gzip/bzip2 compression)"
+#~ msgstr "HTTP 1.1 (gan gynnwys cywasgu gzip/bzip2)"
+
+#~ msgid "FTP"
+#~ msgstr "FTP"
+
+#, fuzzy
+#~| msgid "and <A HREF=\"%1\">many more...</A>"
+#~ msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpCenter)...</A>"
+#~ msgstr "a <a href=\"%1\">llawer  mwy...</a>"
+
+#, fuzzy
+#~| msgid "URL-Completion"
+#~ msgctxt "A feature of Konqueror"
+#~ msgid "URL-Completion"
+#~ msgstr "Cwblhâd-URL"
+
+#~ msgid "Manual"
+#~ msgstr "Â llaw"
+
+#~ msgid "Popup"
+#~ msgstr "Neidiol"
+
+#~ msgid "(Short-) Automatic"
+#~ msgstr "(Byr-) Awtomatig"
+
+#, fuzzy
+#~ msgid ""
+#~ "Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, "
+#~ "using Google, for the search phrase \"KDE\". There are a lot of Web-"
+#~ "Shortcuts predefined to make searching for software or looking up certain "
+#~ "words in an encyclopedia a breeze. You can even <a href=\"%1\">create "
+#~ "your own</a> Web-Shortcuts."
+#~ msgstr ""
+#~ "Defnyddiwch Allweddeiriau-Rhyngrwyd a Byrlwybrau-Gwê! Trwy deipio \"gg:KDE"
+#~ "\" gellir chwilio'r Rhyngrwyd, gan ddefnyddio Google, am y cymal chwilio "
+#~ "\"KDE\". Mae llawer o Byrlwybrau-Gwê wedi'u rhagosod i wneud chwilio am "
+#~ "feddalwedd neu canfod geiriau penodol mewn gwyddoniadur yn hawdd. Gallwch "
+#~ "hyd yn oed <a href=\"%1 \">greu Byrlwybrau-Gwê eich hun</a>!"
+
+#, fuzzy
+#~ msgid ""
+#~ "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
+#~ "the HTML toolbar to increase the font size on your web page."
+#~ msgstr ""
+#~ "Defnyddiwch y botwm chwyddo <IMG WIDTH=16 HEIGHT=16 SRC=\"%1\">  &nbsp; "
+#~ "yn y bar offer i godi maint y wynebfath ar eich tudalen wê."
+
+#, fuzzy
+#~ msgid ""
+#~ "When you want to paste a new address into the Location toolbar you might "
+#~ "want to clear the current entry by pressing the black arrow with the "
+#~ "white cross <img width='16' height='16' src=\"%1\"></img> in the toolbar."
+#~ msgstr ""
+#~ "Pan ydych am ludo cyfeiriad newydd i'r bar offer Lleoliad efallai hoffech "
+#~ "glirio'r gofnod cyfredol drwy wasgu'r saeth ddu â'r groes wen &nbsp;<IMG "
+#~ "WIDTH=16 HEIGHT=16 SRC=\"%1\"> &nbsp; yn y bar offer."
+
+#, fuzzy
+#~| msgid ""
+#~| "To create a link on your desktop pointing to the current page, simply "
+#~| "drag the \"Location\" label that is to the left of the Location toolbar, "
+#~| "drop it on to the desktop, and choose \"Link\"."
+#~ msgid ""
+#~ "To create a link on your desktop pointing to the current page, simply "
+#~ "drag the icon (favicon) that is to the left of the Location toolbar, drop "
+#~ "it on to the desktop, and choose \"Icon\"."
+#~ msgstr ""
+#~ "I greu cyswllt ar eich penbwrdd sy'n pwyntio at y dudalen gyfredol, "
+#~ "llusgwch y label \"Lleoliad\" sydd i'r chwith o'r bar offer Lleoliad, "
+#~ "gollyngwch ef ar y penbwrdd, a dewiswch \"Cysylltu\"."
+
+#, fuzzy
+#~ msgid ""
+#~ "You can also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen "
+#~ "Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
+#~ "sessions."
+#~ msgstr ""
+#~ "Gallwch ganfod \"modd sgrîn lawn\" <IMG WIDTH=16 HEIGHT=16 SRC=\"%1\"> "
+#~ "&nbsp; yn y ddewislen Ffenestr. Mae'r nodwedd yma'n ddefnyddiol iawn mewn "
+#~ "sesiynau \"Siarad\"."
+
+#, fuzzy
+#~ msgid ""
+#~ "Divide et impera (lat. \"Divide and conquer\") - by splitting a window "
+#~ "into two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> "
+#~ "Split View Left/Right) you can make Konqueror appear the way you like."
+#~ msgstr ""
+#~ "Divide et impera (Lladin \"Rhannwch a gorchfygwch\") - trwy rannu "
+#~ "ffenestr yn ddwy ran (e.e. Ffenestr -> <IMG WIDTH=16 HEIGHT=16 SRC="
+#~ "\"%1\"> &nbsp;  Hollti Golwg Chwith/Dde) gallwch addasu Konqueror i "
+#~ "edrych fel y dymunwch. Gallwch hyd yn oed lwytho proffilau-golwg (e.e. "
+#~ "Midnight Commander), neu greu rhai eich hun."
+
+#, fuzzy
+#~ msgid ""
+#~ "Use the <a href=\"%1\">user-agent</a> feature if the website you are "
+#~ "visiting asks you to use a different browser (and do not forget to send a "
+#~ "complaint to the webmaster!)"
+#~ msgstr ""
+#~ "Defnyddiwch y nodwedd <a href=\"%1\">asiant-defnyddiwr</a> os gofynna'r "
+#~ "wefan yr ymwelwch â hi i ddefnyddio porwr gwahanol (a peidiwch anghofio "
+#~ "anfon cwyn at y gwefeistr!)"
+
+#, fuzzy
+#~ msgid ""
+#~ "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
+#~ "ensures that you can keep track of the pages you have visited recently."
+#~ msgstr ""
+#~ "Mae'r <IMG WIDTH=16 HEIGHT=16 SRC=\"%1\"> &nbsp;  Hanes yn eich Bar Ochr "
+#~ "yn sicrhau bod cofnod gennych o'r tudalennau yr ydych wedi ymweld â nhw "
+#~ "yn ddiweddar."
+
+#~ msgid ""
+#~ "Use a caching <a href=\"%1\">proxy</a> to speed up your Internet "
+#~ "connection."
+#~ msgstr ""
+#~ "Defnyddiwch <a href=\"%1\">ddirprwy</a> strorfa dros dro i gyflymu'ch "
+#~ "cysylltiad i'r Rhyngrwyd."
+
+#, fuzzy
+#~ msgid ""
+#~ "Advanced users will appreciate the Konsole which you can embed into "
+#~ "Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
+#~ "Terminal Emulator)."
+#~ msgstr ""
+#~ "Bydd defnyddwyr uwch yn gwerthfawrogi'r Konsole y gellir mewnadeiladu yng "
+#~ "Konqueror (Ffenestr -> <IMG WIDTH=16 HEIGHT=16 SRC=\"%1\">  &nbsp;  "
+#~ "Dangos Efelychydd Terfynell)."
+
+#, fuzzy
+#~ msgid "Next: Specifications"
+#~ msgstr "Penodiadau"
+
+#~ msgid "Installed Plugins"
+#~ msgstr "Ategion a Osodir"
+
+#~ msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
+#~ msgstr "<td>Ategyn</td><td>Disgrifiad</td><td>Ffeil</td><td>Mathau</td>"
+
+#~ msgid "Installed"
+#~ msgstr "Wedi'u Gosod"
+
+#~ msgid ""
+#~ "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
+#~ msgstr ""
+#~ "<td>Math Mime</td><td>Disgrifiad</td><td>Ôlddodiadau</td><td>Ategyn</td>"
+
+#, fuzzy
+#~| msgid "&Open Link"
+#~ msgid "&Open"
+#~ msgstr "&Agor Cyswllt"
+
+#~ msgid ""
+#~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">plugins</A> (for "
+#~ "viewing <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
+#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Video, etc.)"
+#~ msgstr ""
+#~ "<a href=\"%4\">Ategion</a>  Netscape Communicator<sup>&reg;</sup> (i "
+#~ "ddangos <a href=\"%1\">Flash<sup>&reg;</sup></a>, <a href=\"%2 "
+#~ "\">Real<sup>&reg;</sup></a>Audio, <a href=\"%3\">Real<sup>&reg;</sup></"
+#~ "a>Video, ayyb)"
+
+#~ msgid "http://konqueror.kde.org"
+#~ msgstr "http://konqueror.kde.org"
+
+#~ msgid "Limits"
+#~ msgstr "Terfynau"
+
+#~ msgid "URLs e&xpire after"
+#~ msgstr "URLau yn &darfod ar ôl"
+
+#~ msgid "Maximum &number of URLs:"
+#~ msgstr "&Nifer Mwyaf o URLau"
+
+#~ msgid "Custom Fonts For"
+#~ msgstr "Addasu Ffont Am"
+
+#~ msgid "URLs newer than"
+#~ msgstr "URLau iau na"
+
+#~ msgid "Choose Font..."
+#~ msgstr "Dewis Ffont..."
+
+#~ msgid "URLs older than"
+#~ msgstr "URLau hyn na"
+
+#~ msgid ""
+#~ "Shows the number of times visited and the dates of the first and last "
+#~ "visits, in addition to the URL"
+#~ msgstr ""
+#~ "Dengys nifer ymweliadau, a dyddiadau'r ymweliad cyntaf a'r olaf, yn "
+#~ "ogystal a'r URL"
+
+#~ msgid "Detailed tooltips"
+#~ msgstr "Cymorth offer manwl"
+
+#~ msgid "Clear History"
+#~ msgstr "Gwaredu Hanes"
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "History Sidebar Module"
+#~ msgstr "Bar Ochr Gwê"
+
+#, fuzzy
+#~| msgid "History"
+#~ msgctxt "@title:tab"
+#~ msgid "History"
+#~ msgstr "Hanes"
+
+#~ msgid "<h1>History Sidebar</h1> You can configure the history sidebar here."
+#~ msgstr "<h1>Bar Ochr Hanes</h1> Gallwch ffurfweddu'r bar ochr hanes yma."
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Places Sidebar Module"
+#~ msgstr "Bar Ochr Gwê"
+
+#, fuzzy
+#~ msgctxt "@title:tab"
+#~ msgid "Places"
+#~ msgstr "Ail-enwi"
+
+#~ msgid "Extended Sidebar"
+#~ msgstr "Bar Ochr Estynedig"
+
+#~ msgid "Rollback to System Default"
+#~ msgstr "Rholio'n ôl i Ragosodyn y Cysawd"
+
+#~ msgid "Configure Sidebar"
+#~ msgstr "Ffurfweddu Bar Ochr"
+
+#~ msgid "Add New"
+#~ msgstr "Ychwanegu Un Newydd"
+
+#~ msgid "Multiple Views"
+#~ msgstr "Golygon Lluosol"
+
+#~ msgid "Show Tabs Left"
+#~ msgstr "Dangos Tabiau ar y Chwith"
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgid "Close Sidebar"
+#~ msgstr "Bar Ochr Gwê"
+
+#~ msgid "This entry already exists."
+#~ msgstr "Mae'r gofnod hon yn bodoli eisioes."
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>This removes all your entries from the sidebar and adds the system "
+#~| "default ones.<BR><B>This procedure is irreversible</B><BR>Do you want to "
+#~| "proceed?</qt>"
+#~ msgid ""
+#~ "<qt>This removes all your entries from the sidebar and adds the system "
+#~ "default ones.<br /><b>This procedure is irreversible</b><br />Do you want "
+#~ "to proceed?</qt>"
+#~ msgstr ""
+#~ "<qt>Gwareda hwn holl gofnodion eich bar ochr ac ychwanega rai rhagosod y "
+#~ "cysawd.<BR><B>Nid oes modd datwneud y weithred hon</B>.<BR>A ydych am "
+#~ "fynd ymlaen?</qt>"
+
+#, fuzzy
+#~| msgid "Move Tab Right"
+#~ msgid "Show Tabs Right"
+#~ msgstr "Symud Tab i'r Dde"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Set Name"
+#~ msgstr "Enw"
+
+#, fuzzy
+#~ msgid "Enter the name:"
+#~ msgstr "Mewnosodwch enw cyfeiriadur:"
+
+#~ msgid "Enter a URL:"
+#~ msgstr "Rhowch URL:"
+
+#~ msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
+#~ msgstr "<qt>Ydych wir am waredu'r tab<b>%1</b>?</qt>"
+
+#, fuzzy
+#~| msgid ""
+#~| "You have hidden the navigation panel configuration button. To make it "
+#~| "visible again, click the right mouse button on any of the navigation "
+#~| "panel buttons and select \"Show Configuration Button\"."
+#~ msgid ""
+#~ "You have hidden the sidebar configuration button. To make it visible "
+#~ "again, click the right mouse button on any of the sidebar buttons and "
+#~ "select \"Show Configuration Button\"."
+#~ msgstr ""
+#~ "Fe guddioch botwm ffurfweddu y panel llywio. I'w ddangos eto, cliciwch "
+#~ "botwm dde y llygoden ar unrhyw fotwm ar y panel llywio a dewiswch "
+#~ "\"Dangos Botwm Ffurfweddu\"."
+
+#, fuzzy
+#~ msgid "Set Name..."
+#~ msgstr "Gosod URL..."
+
+#~ msgid "Set URL..."
+#~ msgstr "Gosod URL..."
+
+#~ msgid "Set Icon..."
+#~ msgstr "Gosod Eicon..."
+
+#, fuzzy
+#~ msgid "Remove"
+#~ msgstr "Ail-enwi"
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgid "Web module"
+#~ msgstr "Bar Ochr Gwê"
+
+#~ msgid "&Create New Folder"
+#~ msgstr "&Creu Plygell Newydd"
+
+#~ msgid "Delete Folder"
+#~ msgstr "Dileu Plygell"
+
+#~ msgid "Delete Bookmark"
+#~ msgstr "Dileu y Tudnod"
+
+#, fuzzy
+#~ msgid "Properties"
+#~ msgstr "Gwaredu Priodweddau Plygell"
+
+#~ msgid "Open in New Window"
+#~ msgstr "Agor mewn Ffenestr Newydd"
+
+#~ msgid "Open Folder in Tabs"
+#~ msgstr "Agor Plygell mewn Tabiau"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "Copïo Cyfeiriad Cyswllt"
+
+#, fuzzy
+#~| msgid "Create New Bookmark Folder"
+#~ msgctxt "@title:window"
+#~ msgid "Create New Bookmark Folder"
+#~ msgstr "Creu Plygell Newydd i Tudnodau"
+
+#~ msgid "New folder:"
+#~ msgstr "Plygell Newydd:"
+
+#, fuzzy
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark folder\n"
+#~ "\"%1\"?"
+#~ msgstr "Ydych wir eisiau gwaredu'r plygell tudnodau yma?"
+
+#, fuzzy
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark\n"
+#~ "\"%1\"?"
+#~ msgstr "Ydych wir eisiau gwaredu'r tudnod yma?"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Bookmark Folder Deletion"
+#~ msgstr "Golygydd Tudnodau"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Bookmark Deletion"
+#~ msgstr "Golygydd Tudnodau"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Bookmark Properties"
+#~ msgstr "Gwaredu Priodweddau Plygell"
+
+#, fuzzy
+#~ msgid "&Update"
+#~ msgstr "I &Fyny"
+
+#~ msgid "Name:"
+#~ msgstr "Enw:"
+
+#~ msgid "Location:"
+#~ msgstr "Lleoliad:"
+
+#, fuzzy
+#~| msgid "Add Bookmark"
+#~ msgctxt "@title:window"
+#~ msgid "Add Bookmark"
+#~ msgstr "Ychwanegu Tudnod"
+
+#, fuzzy
+#~ msgid "Cannot find parent item %1 in the tree. Internal error."
+#~ msgstr "Methu canfod eitem riant %1 yn y goeden. Gwall mewnol."
+
+#~ msgid "&Create New Folder..."
+#~ msgstr "&Creu Plygell Newydd..."
+
+#, fuzzy
+#~| msgid "&Move to Trash"
+#~ msgid "Move to Trash"
+#~ msgstr "&Symud i'r Sbwriel"
+
+#~ msgid "Rename"
+#~ msgstr "Ail-enwi"
+
+#, fuzzy
+#~ msgid "Delete Link"
+#~ msgstr "&Dileu Proffil"
+
+#~ msgid "New Folder"
+#~ msgstr "Plygell Newydd:"
+
+#, fuzzy
+#~| msgid "Create New Folder"
+#~ msgctxt "@title:window"
+#~ msgid "Create New Folder"
+#~ msgstr "Creu Plygell Newydd"
+
+#~ msgid "Enter folder name:"
+#~ msgstr "Rhowch enw'r blygell:"
+
+#, fuzzy
+#~| msgid "Name:"
+#~ msgctxt "@label"
+#~ msgid "Name:"
+#~ msgstr "Enw:"
+
+#, fuzzy
+#~| msgid "Show URL"
+#~ msgctxt "@label"
+#~ msgid "Path or URL:"
+#~ msgstr "Dangos URL"
+
+#~ msgid "&Open Link"
+#~ msgstr "&Agor Cyswllt"
+
+#, fuzzy
+#~ msgid "Set &Automatic Reload"
+#~ msgstr "(Byr-) Awtomatig"
+
+#, fuzzy
+#~| msgid " min"
+#~ msgid " minute"
+#~ msgid_plural " minutes"
+#~ msgstr[0] "munud"
+#~ msgstr[1] "munud"
+
+#, fuzzy
+#~| msgid " sec"
+#~ msgid " second"
+#~ msgid_plural " seconds"
+#~ msgstr[0] "eil"
+#~ msgstr[1] "eil"
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Web Sidebar Module"
+#~ msgstr "Bar Ochr Gwê"
+
+#~ msgid "&Use index.html"
+#~ msgstr "&Defnyddio index.html"
+
+#~ msgid "If present, open index.html when entering a folder."
+#~ msgstr "Agor index.html wrth fynd i blygell, os mae'n bresennol."
+
+#, fuzzy
+#~ msgid ""
+#~ "<em>Tuning Tip:</em> If you want the Konqueror web browser to start "
+#~ "faster, you can turn off this information screen by clicking <a href="
+#~ "\"%1\">here</a>. You can re-enable it by choosing the Help -> Konqueror "
+#~ "Introduction menu option, and then pressing Settings -> Save View Profile "
+#~ "As... -> \"Web Browsing\"."
+#~ msgstr ""
+#~ "<i>Cynghoryn Addasu:</i>Os hoffech i'r porydd gwê Konqueror ddechrau'n "
+#~ "gynt, gallwch ddiffodd y sgrîn wybodaeth yma trwy glicio <a href="
+#~ "\"%1\">yma</a>. Gallwch ei adfer drwy ddewis y dewisiad dewislen Cymorth -"
+#~ "> Cyflwyniad Konqueror, ac yna gwasgu Gosodiadau -> Cadw Proffil Golwg "
+#~ "\"Pori Gwê\"."
+
+#~ msgid ""
+#~ "Do you want to disable showing the introduction in the webbrowsing "
+#~ "profile?"
+#~ msgstr "Hoffech analluogi dangos y cyflwyniad yn y proffil pori gwê?"
+
+#, fuzzy
+#~| msgid "Faster Startup?"
+#~ msgctxt "@title:window"
+#~ msgid "Faster Startup?"
+#~ msgstr "Dechrau Cyflymach?"
+
+#~ msgid "Disable"
+#~ msgstr "Analluogi"
+
+#~ msgid "Keep"
+#~ msgstr "Cadw"
+
+#, fuzzy
+#~ msgid "Profile to open"
+#~ msgstr "Proffeil i agor."
+
+#, fuzzy
+#~ msgid "List available profiles"
+#~ msgstr "Rhestru'r proffilau sydd ar gael."
+
+#, fuzzy
+#~| msgid "&Save View Profile..."
+#~ msgid "&Save View Profile As..."
+#~ msgstr "&Cadw Proffil Golwg..."
+
+#~ msgid "C&onfigure View Profiles..."
+#~ msgstr "Ff&urfweddu Proffilau Golwg..."
+
+#~ msgid "Load &View Profile"
+#~ msgstr "Llwytho Proffil &Golwg"
+
+#, fuzzy
+#~| msgid "Profile Management"
+#~ msgctxt "@title:window"
+#~ msgid "Profile Management"
+#~ msgstr "Trefnu Proffilau"
+
+#~ msgid "&Rename Profile"
+#~ msgstr "&Ail-enwi Proffil"
+
+#~ msgid "&Delete Profile"
+#~ msgstr "&Dileu Proffil"
+
+#~ msgid "&Profile name:"
+#~ msgstr "Enw &Proffil:"
+
+#~ msgid "Save &URLs in profile"
+#~ msgstr "Cadw &URLau yn y proffil"
+
+#, fuzzy
+#~ msgid ""
+#~ "You have multiple tabs open in this window.\n"
+#~ "Loading a view profile will close them."
+#~ msgstr ""
+#~ "Mae gennych amryw dabiau ar agor yn y ffenestr hon; a ydych yn sicr eich "
+#~ "bod am ei chau?"
+
+#~ msgid "Load View Profile"
+#~ msgstr "Llwytho Proffil Golwg"
+
+#~ msgid "Input Required:"
+#~ msgstr "Angen Mewnbwn:"
+
+#~ msgid "&Execute Shell Command..."
+#~ msgstr "&Gweithredu Gorchymyn Plisgyn..."
+
+#~ msgid "Executing shell commands works only on local directories."
+#~ msgstr ""
+#~ "Mae gweithredu gorchmynion plisgyn yn gweithio ar gyfeiriaduron lleol yn "
+#~ "unig."
+
+#~ msgid "Execute Shell Command"
+#~ msgstr "Gweithredu Gorchymyn Plisgyn"
+
+#~ msgid "Execute shell command in current directory:"
+#~ msgstr "Gweithredu gorchymyn plisgyn yn y cyfeiriadur cyfredol:"
+
+#~ msgid "Output from command: \"%1\""
+#~ msgstr "Allbwn o'r gorchymyn: \"%1\""
+
+#~ msgid "Hide %1"
+#~ msgstr "Cuddio %1"
+
+#, fuzzy
+#~| msgid "Web SideBar Plugin"
+#~ msgid "SideBar Test Plugin"
+#~ msgstr "Ategyn Bar Ochr Gwê"
+
+#~ msgid "Bookmark This Location"
+#~ msgstr "Tudnodi'r Lleoliad Yma"
+
+#~ msgid ""
+#~ "Protocol not supported\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Ni chynhelir protocol\n"
+#~ " %1"
+
+#, fuzzy
+#~ msgid "Cannot create the find part, check your installation."
+#~ msgstr "Methu creu'r rhan ganfod, gwiriwch eich gosodiad."
+
+#, fuzzy
+#~ msgid "My Bookmarks"
+#~ msgstr "Nôdau Tudalen"
+
+#, fuzzy
+#~ msgid "Preload for later use"
+#~ msgstr "Cynlwytho er defnydd nes ymlaen"
+
+#~ msgid "&Save View Profile \"%1\"..."
+#~ msgstr "&Cadw Proffil Golwg \"%1\"..."
+
+#~ msgid "Configure Navigation Panel"
+#~ msgstr "Ffurfweddu'r Panel Llywio"
+
+#~ msgid "Close Navigation Panel"
+#~ msgstr "Cau'r Panel Llywio"
+
+#~ msgid "Select Type"
+#~ msgstr "Dewiswch Fath"
+
+#~ msgid "Select type:"
+#~ msgstr "Dewiswch fath:"
+
+#~ msgid "Web SideBar Plugin"
+#~ msgstr "Ategyn Bar Ochr Gwê"
+
+#, fuzzy
+#~ msgid "<qt><b>%1</b> does not exist</qt>"
+#~ msgstr "<qt>Nid yw <b>%1</b> yn bodoli<qt>"
+
+#~ msgid "Minutes"
+#~ msgstr "Munud"
+
+#~ msgid "Days"
+#~ msgstr "Dydd"
+
+#, fuzzy
+#~ msgid "Your sidebar is not functional or unavailable."
+#~ msgstr ""
+#~ "Nid yw'ch bar ochr yn gweithio, neu nid yw ar gael. Nid oes modd "
+#~ "ychwanegu cofnod newydd."
+
+#, fuzzy
+#~ msgid "Reload"
+#~ msgstr "&Ail-lwytho bob tab"
+
+#, fuzzy
+#~ msgctxt "@action:button New session"
+#~ msgid "New"
+#~ msgstr "&Plygell Newydd"
+
+#, fuzzy
+#~| msgid "Rename"
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename"
+#~ msgstr "Ail-enwi"
+
+#~ msgid "G E N E R A L"
+#~ msgstr "C Y FF R E D I N O L"
+
+#~ msgid "Applications"
+#~ msgstr "Cymhwysiadau"
+
+#, fuzzy
+#~ msgid "Installed programs"
+#~ msgstr "Ategion a Osodir"
+
+#~ msgid "&Location"
+#~ msgstr "&Lleoliad"
+
+#~ msgid "Open &Terminal"
+#~ msgstr "Agor &Terfynell"
+
+#, fuzzy
+#~| msgid "&Close Tab"
+#~ msgid "Closed Tabs"
+#~ msgstr "&Cau Tab"
+
+#~ msgid "Unknown"
+#~ msgstr "Anhysbys"
+
+#~ msgid "Save &window size in profile"
+#~ msgstr "Cadw &maint ffenestri yn y proffil"
+
+#, fuzzy
+#~ msgid "Speech Toolbar"
+#~ msgstr "Bar Offer Golwg Coeden"
+
+#~ msgid "Conquer your Desktop!"
+#~ msgstr "Gorchfygwch eich Penbwrdd!"
+
+#~ msgid "Settings"
+#~ msgstr "Gosodiadau"
+
+#, fuzzy
+#~ msgid "Desktop configuration"
+#~ msgstr "Dangos Botwm Ffurfweddu"
+
+#~ msgid "&Edit File Type..."
+#~ msgstr "&Golygu Math Ffeil..."
+
+#~ msgid "S&ystem"
+#~ msgstr "C&ysawd:"
+
+#~ msgid "App&lications"
+#~ msgstr "Cym&hwysiadau"
+
+#, fuzzy
+#~ msgid "&Network Folders"
+#~ msgstr "Plygell Newydd:"
+
+#~ msgid "Sett&ings"
+#~ msgstr "Goso&diadau"
+
+#~ msgid "Autostart"
+#~ msgstr "Hunan-gychwyn"
+
+#, fuzzy
+#~ msgid "Profile %1 not found\n"
+#~ msgstr "Proffeil i agor."
+
+#, fuzzy
+#~ msgid "<qt><center><b>%1</b></center> is already in the list.</qt>"
+#~ msgstr "<qt>Nid yw <b>%1</b> yn ddilys<qt>"
+
+#, fuzzy
+#~ msgid "Duplicate Entry"
+#~ msgstr "&Dyblygu Tab"
+
+#, fuzzy
+#~ msgid "Change Exception"
+#~ msgstr "Ne&wid Eicon..."
+
+#, fuzzy
+#~ msgid "Default user name:"
+#~ msgstr "Rhowch enw'r blygell:"
+
+#, fuzzy
+#~ msgid "Reject"
+#~ msgstr "&Ailosod"
+
+#, fuzzy
+#~ msgid "D-Bus Communication Error"
+#~ msgstr "Cadarnhâd"
+
+#, fuzzy
+#~ msgid "&Windows Shares"
+#~ msgstr "&Ffenestr"
+
+#, fuzzy
+#~ msgid "Add Identification"
+#~ msgstr "Penodiadau"
+
+#, fuzzy
+#~ msgid "Duplicate Identification"
+#~ msgstr "&Dyblygu'r Tab Cyfredol"
+
+#, fuzzy
+#~ msgid "Update Failed"
+#~ msgstr "Diweddaru Hoffeicon"
+
+#, fuzzy
+#~ msgid "Duplicate Policy"
+#~ msgstr "&Dyblygu Ffenestr"
+
+#, fuzzy
+#~| msgid "Manual"
+#~ msgid "Menu"
+#~ msgstr "Â llaw"
+
+#, fuzzy
+#~ msgid "Move Up"
+#~ msgstr "Symud %1"
+
+#, fuzzy
+#~ msgid "Move Down"
+#~ msgstr "&Ffenestr Newydd"
+
+#, fuzzy
+#~ msgid ""
+#~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "
+#~ "file manager here."
+#~ msgstr "<h1>Bar Ochr Hanes</h1> Gallwch ffurfweddu'r bar ochr hanes yma."
+
+#, fuzzy
+#~ msgid "Open folders in separate &windows"
+#~ msgstr "Agor Plygell mewn Tabiau"
+
+#, fuzzy
+#~ msgid "Show file &tips"
+#~ msgstr "Dangos cynghorion ffeil"
+
+#, fuzzy
+#~ msgid "Show &previews in file tips"
+#~ msgstr "Dangos rhagolygon mewn cynghorion ffeil"
+
+#, fuzzy
+#~ msgid ""
+#~ "Here you can control if you want the popup window to contain a larger "
+#~ "preview for the file, when moving the mouse over it."
+#~ msgstr ""
+#~ "ma gallwch reoli os ydych am i'r naidlen gynnwys rhagolwg mwy i'r ffeil, "
+#~ "pan yn symud y lygoden drosti."
+
+#, fuzzy
+#~ msgid "&Move to trash"
+#~ msgstr "&Symud i'r Sbwriel"
+
+#~ msgid "Sound Files"
+#~ msgstr "Ffeiliau Sain"
+
+#, fuzzy
+#~ msgid "No Action"
+#~ msgstr "&Lleoliad"
+
+#, fuzzy
+#~ msgid "Desktop Menu"
+#~ msgstr "Dangos Botwm Ffurfweddu"
+
+#, fuzzy
+#~ msgid "Application Menu"
+#~ msgstr "Cymhwysiadau"
+
+#, fuzzy
+#~ msgid "Bookmarks Menu"
+#~ msgstr "Tudnod"
+
+#, fuzzy
+#~ msgid "Custom Menu 1"
+#~ msgstr "Addasu Ffont Am"
+
+#, fuzzy
+#~ msgid "Custom Menu 2"
+#~ msgstr "Addasu Ffont Am"
+
+#, fuzzy
+#~ msgid "Select Protocols"
+#~ msgstr "Dewis ffeiliau:"
+
+#, fuzzy
+#~ msgid "Local Protocols"
+#~ msgstr "Protocolau trosglwyddo"
+
+#, fuzzy
+#~ msgid "Internet Protocols"
+#~ msgstr "Protocolau trosglwyddo"
+
+#, fuzzy
+#~ msgid "A&utostart path:"
+#~ msgstr "Hunan-gychwyn"
+
+#, fuzzy
+#~ msgid "Confirmation Required"
+#~ msgstr "Cadarnhâd"
+
+#, fuzzy
+#~ msgid "Move"
+#~ msgstr "Symud %1"
+
+#, fuzzy
+#~ msgid "KEditFileType"
+#~ msgstr "&Golygu Math Ffeil..."
+
+#, fuzzy
+#~ msgid "(c) 2000, KDE developers"
+#~ msgstr "(h) 2000 - 2003, datblygwyr KDE"
+
+#, fuzzy
+#~ msgid "Edit File Type %1"
+#~ msgstr "&Golygu Math Ffeil..."
+
+#, fuzzy
+#~ msgid "Create New File Type %1"
+#~ msgstr "Creu Plygell Newydd"
+
+#, fuzzy
+#~ msgid "Create New File Type"
+#~ msgstr "Creu Plygell Newydd"
+
+#, fuzzy
+#~ msgid "Group:"
+#~ msgstr "Grŵp"
+
+#, fuzzy
+#~ msgid "Type name:"
+#~ msgstr "Ail-enwi"
+
+#, fuzzy
+#~ msgid "Show file in separate viewer"
+#~ msgstr "Agor Plygell mewn Tabiau"
+
+#, fuzzy
+#~ msgid "&Remove"
+#~ msgstr "&Ail-enwi"
+
+#, fuzzy
+#~ msgid "Filename Patterns"
+#~ msgstr "Enw Ffeil"
+
+#, fuzzy
+#~ msgid "Description"
+#~ msgstr "Dewisiad"
+
+#, fuzzy
+#~ msgid "Move &Up"
+#~ msgstr "Symud %1"
+
+#, fuzzy
+#~ msgid "Global Settings"
+#~ msgstr "Gosodiadau"
+
+#, fuzzy
+#~ msgid "Domain-Specific Settin&gs"
+#~ msgstr "Penodiadau"
+
+#, fuzzy
+#~ msgid "Netscape Plugins"
+#~ msgstr "Ategion a Osodir"
+
+#, fuzzy
+#~ msgid "Cancel"
+#~ msgstr "Wedi'i ddiddymu"
+
+#, fuzzy
+#~ msgid "De&lete"
+#~ msgstr "&Dileu Proffil"
+
+#, fuzzy
+#~ msgid "&Import..."
+#~ msgstr "&Mewnforio"
+
+#, fuzzy
+#~ msgid "&Export..."
+#~ msgstr "&Allforio"
+
+#, fuzzy
+#~ msgid "Select Home Folder"
+#~ msgstr "Dileu Plygell"
+
+#, fuzzy
+#~ msgid "Tabbed Browsing"
+#~ msgstr "Pori'r Wê"
+
+#, fuzzy
+#~ msgid "Smart"
+#~ msgstr "Trefnu"
+
+#, fuzzy
+#~ msgid "Resize window:"
+#~ msgstr "Ail-anfon"
+
+#, fuzzy
+#~ msgid "Move window:"
+#~ msgstr "&Ffenestr Newydd"
+
+#, fuzzy
+#~ msgid "(c) 1999 - 2001 The Konqueror Developers"
+#~ msgstr "(c) 1999-2003, y datblygwyr Konqueror "
+
+#, fuzzy
+#~ msgid "Java&Script"
+#~ msgstr "datblygwr (JavaScript)"
+
+#, fuzzy
+#~ msgid "Enable filters"
+#~ msgstr "Dangos Rhagolygon"
+
+#, fuzzy
+#~ msgid "Hide filtered images"
+#~ msgstr "Dangos Maint Ffeil"
+
+#, fuzzy
+#~ msgid "Update"
+#~ msgstr "Diweddaru Hoffeicon"
+
+#, fuzzy
+#~ msgid "Import..."
+#~ msgstr "&Mewnforio"
+
+#, fuzzy
+#~ msgid "Export..."
+#~ msgstr "&Allforio"
+
+#, fuzzy
+#~ msgid "Font Si&ze"
+#~ msgstr "Maint Eicon"
+
+#, fuzzy
+#~ msgid "This is the relative font size Konqueror uses to display web sites."
+#~ msgstr ""
+#~ "Dyma'r wynebfath a ddefnyddir i ddangos testun mewn ffenestri Konqueror."
+
+#, fuzzy
+#~ msgid "S&tandard font:"
+#~ msgstr "Wynebfath safonol: "
+
+#, fuzzy
+#~ msgid "This is the font used to display normal text in a web page."
+#~ msgstr ""
+#~ "Dyma'r wynebfath a ddefnyddir i ddangos testun mewn ffenestri Konqueror."
+
+#, fuzzy
+#~ msgid ""
+#~ "This is the font used to display fixed-width (i.e. non-proportional) text."
+#~ msgstr ""
+#~ "Dyma'r wynebfath a ddefnyddir i ddangos testun mewn ffenestri Konqueror."
+
+#, fuzzy
+#~ msgid "This is the font used to display text that is marked up as serif."
+#~ msgstr ""
+#~ "Dyma'r wynebfath a ddefnyddir i ddangos testun mewn ffenestri Konqueror."
+
+#, fuzzy
+#~ msgid "Sa&ns serif font:"
+#~ msgstr "Wynebfath safonol: "
+
+#, fuzzy
+#~ msgid ""
+#~ "This is the font used to display text that is marked up as sans-serif."
+#~ msgstr ""
+#~ "Dyma'r wynebfath a ddefnyddir i ddangos testun mewn ffenestri Konqueror."
+
+#, fuzzy
+#~ msgid "C&ursive font:"
+#~ msgstr "Trefnu dychweliadus"
+
+#, fuzzy
+#~ msgid "This is the font used to display text that is marked up as italic."
+#~ msgstr ""
+#~ "Dyma'r wynebfath a ddefnyddir i ddangos testun mewn ffenestri Konqueror."
+
+#, fuzzy
+#~ msgid ""
+#~ "This is the font used to display text that is marked up as a fantasy font."
+#~ msgstr ""
+#~ "Dyma'r wynebfath a ddefnyddir i ddangos testun mewn ffenestri Konqueror."
+
+#, fuzzy
+#~ msgid "Boo&kmarks"
+#~ msgstr "Tudnod"
+
+#, fuzzy
+#~ msgid "Form Com&pletion"
+#~ msgstr "Cwblhâd-URL"
+
+#, fuzzy
+#~ msgid "Enable completion of &forms"
+#~ msgstr "Hunan-Gwblhau i ffurflenni"
+
+#, fuzzy
+#~ msgctxt "underline"
+#~ msgid "Enabled"
+#~ msgstr "Wedi'u Gosod"
+
+#, fuzzy
+#~ msgctxt "underline"
+#~ msgid "Disabled"
+#~ msgstr "Analluogi"
+
+#, fuzzy
+#~ msgid "A&nimations:"
+#~ msgstr "Cym&hwysiadau"
+
+#, fuzzy
+#~ msgctxt "animations"
+#~ msgid "Enabled"
+#~ msgstr "Wedi'u Gosod"
+
+#, fuzzy
+#~ msgctxt "animations"
+#~ msgid "Disabled"
+#~ msgstr "Analluogi"
+
+#, fuzzy
+#~ msgid "Show Only Once"
+#~ msgstr "Dangos Perchennog"
+
+#, fuzzy
+#~ msgid "Enable Ja&va globally"
+#~ msgstr "Galluogwch Java (yn eang) <a href=\"%1\">yma</a>."
+
+#, fuzzy
+#~ msgid "Additional Java a&rguments:"
+#~ msgstr "Gofynion Ychwanegol*"
+
+#, fuzzy
+#~ msgid "&Filters"
+#~ msgstr "&Plygell"
+
+#, fuzzy
+#~ msgid "System"
+#~ msgstr "C&ysawd:"
+
+#~ msgid "No permissions to write to %1"
+#~ msgstr "Dim caniatadau i ysgrifennu i %1"
+
+#~ msgid "Remove Folder Properties"
+#~ msgstr "Gwaredu Priodweddau Plygell"
+
+#~ msgid "Create Folder..."
+#~ msgstr "Creu Plygell..."
+
+#, fuzzy
+#~ msgid "&Delete"
+#~ msgstr "&Dileu Proffil"
+
+#~ msgid "&Rename"
+#~ msgstr "&Ail-enwi"
+
+#, fuzzy
+#~ msgid "Desktop &Names"
+#~ msgstr "Enw"
+
+#, fuzzy
+#~| msgid "Move backwards one step in the browsing history<p>"
+#~ msgid "Move backwards one step in the browsing history<br /><br />"
+#~ msgstr "Symud yn ôl un cam drwy'r hanes pori<p>"
+
+#, fuzzy
+#~| msgid "Move forward one step in the browsing history<p>"
+#~ msgid "Move forward one step in the browsing history<br /><br />"
+#~ msgstr "Symud ymlaen un cam drwy'r hanes pori<p>"
+
+#, fuzzy
+#~ msgid "Rename icons in&line"
+#~ msgstr "Ailenwi eiconau mewnlinell  "
+
+#, fuzzy
+#~ msgid ""
+#~ "Checking this option will allow files to be renamed by clicking directly "
+#~ "on the icon name. "
+#~ msgstr ""
+#~ "Bydd britho'r dewisiad yma yn gadael i ffeiliau eu ailenwi gan glicio yn "
+#~ "uniongyrchol ar enw'r eicon. "
+
+#, fuzzy
+#~ msgid "&Standard font:"
+#~ msgstr "Wynebfath safonol: "
+
+#, fuzzy
+#~ msgid "Font si&ze:"
+#~ msgstr "Maint Eicon"
+
+#, fuzzy
+#~ msgid "This is the font size used to display text in Konqueror windows."
+#~ msgstr ""
+#~ "Dyma'r wynebfath a ddefnyddir i ddangos testun mewn ffenestri Konqueror."
+
+#, fuzzy
+#~ msgid "This is the color used to display text in Konqueror windows."
+#~ msgstr ""
+#~ "Dyma'r wynebfath a ddefnyddir i ddangos testun mewn ffenestri Konqueror."
+
+#, fuzzy
+#~ msgid "&Underline filenames"
+#~ msgstr "Datddewis ffeiliau:"
+
+#, fuzzy
+#~ msgid " line"
+#~ msgid_plural " lines"
+#~ msgstr[0] "munud"
+#~ msgstr[1] "munud"
+
+#, fuzzy
+#~ msgid ""
+#~ "<h1>Appearance</h1> You can configure how Konqueror looks as a file "
+#~ "manager here."
+#~ msgstr "<h1>Bar Ochr Hanes</h1> Gallwch ffurfweddu'r bar ochr hanes yma."
+
+#~ msgid ""
+#~ "Thanks to <a href=\"%1\">DCOP</a> you can have full control over "
+#~ "Konqueror using a script."
+#~ msgstr ""
+#~ "Diolch i <a href=\"%1\">DCOP</a> mae gennych reolaeth gyflawn dros "
+#~ "Konqueror drwy ddefnyddio sgriptiau."
+
+#~ msgid "Preview In"
+#~ msgstr "Rhagolygon mewn"
+
+#~ msgid "&Open Location..."
+#~ msgstr "&Agor Lleoliad..."
+
+#~ msgid "Animated Logo"
+#~ msgstr "Logo Bywluniedig"
+
+#~ msgid "Selection"
+#~ msgstr "Dewisiad"
+
+#~ msgid "Icon Size"
+#~ msgstr "Maint Eicon"
+
+#~ msgid "Show Details"
+#~ msgstr "Dangos Manylion"
+
+#~ msgid "Detailed Listview Toolbar"
+#~ msgstr "Bar Offer Golwg Rhestr Manwl"
+
+#~ msgid "MimeType"
+#~ msgstr "Math MIME"
+
+#~ msgid "Size"
+#~ msgstr "Maint"
+
+#~ msgid "Modified"
+#~ msgstr "Addaswyd"
+
+#~ msgid "Created"
+#~ msgstr "Crëwyd"
+
+#~ msgid "Owner"
+#~ msgstr "Perchennog"
+
+#~ msgid "Group"
+#~ msgstr "Grŵp"
+
+#~ msgid "Link"
+#~ msgstr "Cyswllt"
+
+#~ msgid "URL"
+#~ msgstr "URL"
+
+#~ msgid "File Type"
+#~ msgstr "Math Ffeil"
+
+#~ msgid "Select files:"
+#~ msgstr "Dewis ffeiliau:"
+
+#~ msgid "Unselect files:"
+#~ msgstr "Datddewis ffeiliau:"
+
+#~ msgid "Show &Modification Time"
+#~ msgstr "Dangos Amser &Addasu"
+
+#, fuzzy
+#~ msgid "Hide &Modification Time"
+#~ msgstr "Dangos Amser &Addasu"
+
+#~ msgid "Show &File Type"
+#~ msgstr "Dangos Math &Ffeil"
+
+#, fuzzy
+#~ msgid "Hide &File Type"
+#~ msgstr "Math Ffeil"
+
+#~ msgid "Show MimeType"
+#~ msgstr "Dangos Math MIME"
+
+#, fuzzy
+#~ msgid "Hide MimeType"
+#~ msgstr "Math MIME"
+
+#~ msgid "Show &Access Time"
+#~ msgstr "Dangos Amser &Hygyrchu"
+
+#, fuzzy
+#~ msgid "Hide &Access Time"
+#~ msgstr "Dangos Amser &Hygyrchu"
+
+#~ msgid "Show &Creation Time"
+#~ msgstr "Dangos Amser &Creu"
+
+#, fuzzy
+#~ msgid "Hide &Creation Time"
+#~ msgstr "Dangos Amser &Creu"
+
+#~ msgid "Show &Link Destination"
+#~ msgstr "Dangos Cyrchfan C&yswllt"
+
+#, fuzzy
+#~ msgid "Hide &Link Destination"
+#~ msgstr "Dangos Cyrchfan C&yswllt"
+
+#~ msgid "Show Filesize"
+#~ msgstr "Dangos Maint Ffeil"
+
+#, fuzzy
+#~ msgid "Hide Filesize"
+#~ msgstr "Dangos Maint Ffeil"
+
+#~ msgid "Show Owner"
+#~ msgstr "Dangos Perchennog"
+
+#, fuzzy
+#~ msgid "Hide Owner"
+#~ msgstr "Perchennog"
+
+#~ msgid "Show Group"
+#~ msgstr "Dangos Grŵp"
+
+#, fuzzy
+#~ msgid "Hide Group"
+#~ msgstr "Grŵp"
+
+#~ msgid "Show Permissions"
+#~ msgstr "Dangos Caniatadau"
+
+#, fuzzy
+#~ msgid "Hide Permissions"
+#~ msgstr "Caniatadau"
+
+#~ msgid "Se&lect..."
+#~ msgstr "De&wis..."
+
+#~ msgid "Unselect..."
+#~ msgstr "Datddewis..."
+
+#~ msgid "Unselect All"
+#~ msgstr "Datddewis Popeth"
+
+#~ msgid "&Invert Selection"
+#~ msgstr "&Gwrthdroi Dewisiad"
+
+#~ msgid "Show &Hidden Files"
+#~ msgstr "Dangos Ffeiliau &Cudd"
+
+#~ msgid "Case Insensitive Sort"
+#~ msgstr "Trefnu (llythrennau mawr/bach ddim o bwys)"
+
+#~ msgid "Name"
+#~ msgstr "Enw"
+
+#~ msgid "You must take the file out of the trash before being able to use it."
+#~ msgstr ""
+#~ "Rhaid i chi gymryd y ffeil allan o'r sbwriel cyn allu ei ddefnyddio."
+
+#~ msgid "View &As"
+#~ msgstr "Gweld &fel"
+
+#~ msgid "Filename"
+#~ msgstr "Enw Ffeil"
+
+#~ msgid "Toggle displaying of hidden dot files"
+#~ msgstr "Dangos/cuddio ffeiliau dot cudd"
+
+#~ msgid "&Folder Icons Reflect Contents"
+#~ msgstr "Adlewyrcha Eiconau &Plygell eu Cynnwys"
+
+#~ msgid "&Preview"
+#~ msgstr "&Rhagolwg"
+
+#, fuzzy
+#~ msgid "Enable Previews"
+#~ msgstr "Dangos Rhagolygon"
+
+#, fuzzy
+#~ msgid "Disable Previews"
+#~ msgstr "Dangos Rhagolygon"
+
+#~ msgid "By Name (Case Sensitive)"
+#~ msgstr "Gan Enw (llythrennau mawr/bach o bwys)"
+
+#~ msgid "By Name (Case Insensitive)"
+#~ msgstr "Gan Enw (llythrennau mawr/bach ddim o bwys)"
+
+#~ msgid "By Size"
+#~ msgstr "Gan Faint"
+
+#~ msgid "By Type"
+#~ msgstr "Gan Fath"
+
+#~ msgid "By Date"
+#~ msgstr "Gan Ddyddiad"
+
+#~ msgid "Folders First"
+#~ msgstr "Plygyll yn Gyntaf"
+
+#~ msgid "Descending"
+#~ msgstr "Disgynnol"
+
+#~ msgid "Allows selecting of file or folder items based on a given mask"
+#~ msgstr "Galluoga ddewis eitemau ffeil neu blygell ar sail masg a roddwyd"
+
+#~ msgid "Allows unselecting of file or folder items based on a given mask"
+#~ msgstr ""
+#~ "Galluoga ddatddewis eitemau ffeil neu blygell ar sail masg a roddwyd"
+
+#~ msgid "Selects all items"
+#~ msgstr "Dewisa pob eitem"
+
+#~ msgid "Unselects all selected items"
+#~ msgstr "Datddewisa pob eitem dewisiedig"
+
+#~ msgid "Inverts the current selection of items"
+#~ msgstr "Gwrthdroa'r dewisiad cyfredol o eitemau"
+
+#~ msgid "Treeview Toolbar"
+#~ msgstr "Bar Offer Golwg Coeden"
+
+#~ msgid "Info Listview Toolbar"
+#~ msgstr "Bar Offer Golwg Rhestr Gwybodaeth"
+
+#~ msgid "Multicolumn View Toolbar"
+#~ msgstr "Bar Offer Golwg Aml-golofn"
+
+#~ msgid "&Icon Size"
+#~ msgstr "Maint &Eicon"
+
+#~ msgid "S&ort"
+#~ msgstr "T&refnu"
+
+#~ msgid "Iconview Toolbar"
+#~ msgstr "Bar Offer Golwg Eicon"
+
+#~ msgid "Iconview Extra Toolbar"
+#~ msgstr "Bar Ychwanegol Golwg Eicon"
+
+#~ msgid "Rename icons inline"
+#~ msgstr "Ailenwi eiconau mewnlinell  "
+
+#~ msgid ""
+#~ "Checking this option will allow files to be renamed by clicking directly "
+#~ "on the icon name."
+#~ msgstr ""
+#~ "Bydd britho'r dewisiad yma yn gadael i ffeiliau eu ailenwi gan glicio yn "
+#~ "uniongyrchol ar enw'r eicon. "
+
+#~ msgid "Tools"
+#~ msgstr "Offer"
+
+#, fuzzy
+#~ msgid "Statusbar"
+#~ msgstr "Cyflwr"
+
+#, fuzzy
+#~ msgid "&Show Netscape Bookmarks in Konqueror"
+#~ msgstr "&Dangos Tudnodau Netscape mewn Ffenestri Konqueror"
+
+#~ msgid "C&hange URL"
+#~ msgstr "&Newid URL"
+
+#, fuzzy
+#~ msgid "&New Bookmark"
+#~ msgstr "&Tudnod"
+
+#~ msgid "&Insert Separator"
+#~ msgstr "&Mewnosod Gwahanydd"
+
+#~ msgid "&Sort Alphabetically"
+#~ msgstr "&Trefnu yn ôl yr wyddor"
+
+#~ msgid "Set as T&oolbar Folder"
+#~ msgstr "Gosod fel Cyfeiriadur Bar &Offer"
+
+#~ msgid "Show in T&oolbar"
+#~ msgstr "Dangos yn y Bar &Offer"
+
+#, fuzzy
+#~ msgid "Hide in T&oolbar"
+#~ msgstr "Dangos yn y Bar &Offer"
+
+#~ msgid "&Expand All Folders"
+#~ msgstr "&Ehangu Pob Plygell"
+
+#~ msgid "Collapse &All Folders"
+#~ msgstr "Cyfyngu &Pob Plygell"
+
+#~ msgid "&Open in Konqueror"
+#~ msgstr "&Agor yng Konqueror"
+
+#~ msgid "Check &Status"
+#~ msgstr "Gwirio &Cyflwr"
+
+#~ msgid "Check Status: &All"
+#~ msgstr "Gwirio Cyflwr: I &Gyd"
+
+#~ msgid "Update All &Favicons"
+#~ msgstr "Diweddaru Pob &Hoffeicon"
+
+#~ msgid "Cancel &Checks"
+#~ msgstr "Diddymu &Gwiriadau"
+
+#~ msgid "Cancel &Favicon Updates"
+#~ msgstr "Diddymu Diweddaru Pob &Hoffeicon"
+
+#~ msgid "Import &Netscape Bookmarks..."
+#~ msgstr "Mewnforio Tudnodau &Netscape"
+
+#~ msgid "Import &Opera Bookmarks..."
+#~ msgstr "Mewnforio Tudnodau &Opera"
+
+#~ msgid "Import All &Crash Sessions as Bookmarks..."
+#~ msgstr "Mewnforio Pob Sesiwn &Chwalfa fel Tudnodau..."
+
+#~ msgid "Import &Galeon Bookmarks..."
+#~ msgstr "Mewnforio Tudnodau &Galeon"
+
+#, fuzzy
+#~ msgid "Import &KDE2/KDE3 Bookmarks..."
+#~ msgstr "Mewnforio Tudnodau &KDE2"
+
+#~ msgid "Import &IE Bookmarks..."
+#~ msgstr "Mewnforio Tudnodau &IE"
+
+#~ msgid "Import &Mozilla Bookmarks..."
+#~ msgstr "Mewnforio Tudnodau &Mozilla"
+
+#~ msgid "Export to &Netscape Bookmarks"
+#~ msgstr "Allforio i Dudnodau &Netscape"
+
+#~ msgid "Export to &Opera Bookmarks..."
+#~ msgstr "Allforio i Dudnodau &Opera..."
+
+#~ msgid "Export to &HTML Bookmarks..."
+#~ msgstr "Allforio i Dudnodau &HTML..."
+
+#~ msgid "Export to &IE Bookmarks..."
+#~ msgstr "Allforio i Dudnodau &IE..."
+
+#~ msgid "Export to &Mozilla Bookmarks..."
+#~ msgstr "Allforio i Dudnodau &Mozilla..."
+
+#~ msgid "*.html|HTML Bookmark Listing"
+#~ msgstr "*.html|Rhestriad Tudnodau HTML "
+
+#~ msgid "Cut Items"
+#~ msgstr "Eitemau a Dorwyd"
+
+#~ msgid "Sort Alphabetically"
+#~ msgstr "Trefnu yn ôl yr wyddor"
+
+#~ msgid "Delete Items"
+#~ msgstr "Dileu Eitemau"
+
+#~ msgid "Icon"
+#~ msgstr "Eicon"
+
+#~ msgid "Comment:"
+#~ msgstr "Sylwad:"
+
+#~ msgid "First viewed:"
+#~ msgstr "Wedi ei wylio yn gyntaf:"
+
+#~ msgid "Viewed last:"
+#~ msgstr "Wedi ei wylio yn gynt:"
+
+#~ msgid "Times visited:"
+#~ msgstr "Nifer o weithiau a ymwelwyd:"
+
+#~ msgid "Insert Separator"
+#~ msgstr "Mewnosod Gwahanydd"
+
+#~ msgid "Create Folder"
+#~ msgstr "Creu Plygell"
+
+#~ msgid "Copy %1"
+#~ msgstr "Copïo %1"
+
+#~ msgid "Create Bookmark"
+#~ msgstr "Creu Tudnod"
+
+#~ msgid "%1 Change"
+#~ msgstr "%1 Newid"
+
+#~ msgid "Set as Bookmark Toolbar"
+#~ msgstr "Gosod fel Bar Offer Tudnod"
+
+#~ msgid "%1 in Bookmark Toolbar"
+#~ msgstr "%1 yn y Bar Tudnodau"
+
+#~ msgid "Show"
+#~ msgstr "Dangos"
+
+#~ msgid "Hide"
+#~ msgstr "Cuddio"
+
+#~ msgid "Move Items"
+#~ msgstr "Symud Eitemau"
+
+#~ msgid "No favicon found"
+#~ msgstr "Ni ganfuwyd hoffeicon"
+
+#~ msgid "Updating favicon..."
+#~ msgstr "Diweddaru hoffeicon..."
+
+#~ msgid "Import %1 Bookmarks"
+#~ msgstr "Mewnforio %1 Tudnod"
+
+#~ msgid "%1 Bookmarks"
+#~ msgstr "%1 Tudnod"
+
+#~ msgid "Import as a new subfolder or replace all the current bookmarks?"
+#~ msgstr "Mewnforio fel is-blygell newydd neu amnewid pob tudnod cyfredol?"
+
+#~ msgid "%1 Import"
+#~ msgstr "%1 Mewnforiad"
+
+#~ msgid "*.xbel|Galeon Bookmark Files (*.xbel)"
+#~ msgstr "*.xbel|Ffeiliau Tudnod Galeon (*.xbel)"
+
+#~ msgid "*.xml|KDE Bookmark Files (*.xml)"
+#~ msgstr "*.xml|Ffeiliau Tudnod KDE (*.xml)"
+
+#, fuzzy
+#~ msgid "KBookmarkMerger"
+#~ msgstr "Tudnod"
+
+#~ msgid "Original author"
+#~ msgstr "Awdur gwreiddiol"
+
+#, fuzzy
+#~ msgid "Drop Items"
+#~ msgstr "Gollwng Eitemau"
+
+#~ msgid "Comment"
+#~ msgstr "Sylwad"
+
+#~ msgid "Status"
+#~ msgstr "Cyflwr"
+
+#~ msgid "Folder"
+#~ msgstr "Plygell"
+
+#~ msgid "Empty Folder"
+#~ msgstr "Plygell wag"
+
+#, fuzzy
+#~ msgid "Import bookmarks from a file in Mozilla format"
+#~ msgstr "Allforio tudnodau i ffeil yn fformat Mozilla."
+
+#, fuzzy
+#~ msgid "Import bookmarks from a file in Netscape (4.x and earlier) format"
+#~ msgstr "Allforio tudnodau i ffeil yn fformat Netscape (4.x a chynharach)."
+
+#, fuzzy
+#~ msgid "Import bookmarks from a file in Internet Explorer's Favorites format"
+#~ msgstr "Allforio tudnodau i ffeil yn fformat Hoffiannau Internet Explorer."
+
+#, fuzzy
+#~ msgid "Import bookmarks from a file in Opera format"
+#~ msgstr "Allforio tudnodau i ffeil yn fformat Opera."
+
+#, fuzzy
+#~ msgid "Export bookmarks to a file in Mozilla format"
+#~ msgstr "Allforio tudnodau i ffeil yn fformat Mozilla."
+
+#, fuzzy
+#~ msgid "Export bookmarks to a file in Netscape (4.x and earlier) format"
+#~ msgstr "Allforio tudnodau i ffeil yn fformat Netscape (4.x a chynharach)."
+
+#, fuzzy
+#~ msgid "Export bookmarks to a file in a printable HTML format"
+#~ msgstr "Allforio tudnodau i ffeil mewn fformat HTML argraffadwy."
+
+#, fuzzy
+#~ msgid "Export bookmarks to a file in Internet Explorer's Favorites format"
+#~ msgstr "Allforio tudnodau i ffeil yn fformat Hoffiannau Internet Explorer."
+
+#, fuzzy
+#~ msgid "Export bookmarks to a file in Opera format"
+#~ msgstr "Allforio tudnodau i ffeil yn fformat Opera."
+
+#~ msgid "Open at the given position in the bookmarks file"
+#~ msgstr "Agor wrth leoliad penodol yn y ffeil tudnodau"
+
+#~ msgid "Set the user readable caption for example \"Konsole\""
+#~ msgstr ""
+#~ "Penodi'r egluryn a gellir ei ddarllen gan y defnyddiwr, e.e. \"Konsole\""
+
+#, fuzzy
+#~ msgid "Hide all browser related functions"
+#~ msgstr "Cuddio pob sywddogaeth sy'n ymwneud â phorydd."
+
+#~ msgid "File to edit"
+#~ msgstr "Ffeil i olygu"
+
+#~ msgid ""
+#~ "Another instance of %1 is already running, do you really want to open "
+#~ "another instance or continue work in the same instance?\n"
+#~ "Please note that, unfortunately, duplicate views are read-only."
+#~ msgstr ""
+#~ "Mae enghraifft arall o %1 eisioes yn rhedeg; ydych wir am agor enghraifft "
+#~ "arall neu dal i weithio yn yr un enghraifft?\n"
+#~ "Noder bod golygion dyblyg yn ddarllenadwy yn unig, yn anffodus."
+
+#~ msgid "Run Another"
+#~ msgstr "Agor Un Arall"
+
+#~ msgid "Continue in Same"
+#~ msgstr "Cadw Ymlaen yn yr un Wreiddiol"
+
+#~ msgid "Bookmark Editor"
+#~ msgstr "Golygydd Tudnodau"
+
+#~ msgid "Konqueror Bookmarks Editor"
+#~ msgstr "Golygydd Tudnodau Konqueror"
+
+#~ msgid "Initial author"
+#~ msgstr "Awdur gwreiddiol"
+
+#~ msgid "Author"
+#~ msgstr "Awdur"
+
+#~ msgid "You may only specify a single --export option."
+#~ msgstr "Cewch benodi un dewisiad --export yn unig."
+
+#~ msgid "You may only specify a single --import option."
+#~ msgstr "Cewch benodi un dewisiad --import yn unig."
+
+#~ msgid "Checking..."
+#~ msgstr "Gwirio..."
+
+#~ msgid "Ok"
+#~ msgstr "Iawn"
+
+#~ msgid "Se&arch:"
+#~ msgstr "&Chwiliad:"
+
+#~ msgid "Clear Search"
+#~ msgstr "Gwagu'r Chwiliad"

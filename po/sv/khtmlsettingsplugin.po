@@ -1,0 +1,116 @@
+# translation of khtmlsettingsplugin.po to Swedish
+# Översättning khtmlsettingsplugin.po till Svenska
+# Copyright (C) 2001, 2003, 2004, 2007, 2009 Free Software Foundation, Inc.
+#
+# Daniel Karlsson <chaotica@home.se>, 2001.
+# Mattias Newzella <newzella@linux.nu>, 2003.
+# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2004, 2007, 2009, 2011, 2016.
+msgid ""
+msgstr ""
+"Project-Id-Version: khtmlsettingsplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"PO-Revision-Date: 2016-08-03 18:44+0100\n"
+"Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 2.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. i18n: ectx: Menu (tools)
+#: khtmlsettingsplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "Verk&tyg"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: khtmlsettingsplugin.rc:8
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "Extra verktygsrad"
+
+#: settingsplugin.cpp:41
+#, kde-format
+msgid "HTML Settings"
+msgstr "HTML-inställningar"
+
+#: settingsplugin.cpp:46
+#, kde-format
+msgid "Java&Script"
+msgstr "Java&skript"
+
+#: settingsplugin.cpp:51
+#, kde-format
+msgid "&Java"
+msgstr "&Java"
+
+#: settingsplugin.cpp:56
+#, kde-format
+msgid "&Cookies"
+msgstr "&Kakor"
+
+#: settingsplugin.cpp:61
+#, kde-format
+msgid "&Plugins"
+msgstr "Insticks&program"
+
+#: settingsplugin.cpp:66
+#, kde-format
+msgid "Autoload &Images"
+msgstr "Ladda b&ilder automatiskt"
+
+#: settingsplugin.cpp:73
+#, kde-format
+msgid "Enable Pro&xy"
+msgstr "Aktivera pro&xy"
+
+#: settingsplugin.cpp:78
+#, kde-format
+msgid "Enable Cac&he"
+msgstr "Aktivera cac&he"
+
+#: settingsplugin.cpp:83
+#, kde-format
+msgid "Cache Po&licy"
+msgstr "Cachepo&licy"
+
+#: settingsplugin.cpp:85
+#, kde-format
+msgid "&Keep Cache in Sync"
+msgstr "Håll cachen syn&kroniserad"
+
+#: settingsplugin.cpp:86
+#, kde-format
+msgid "&Use Cache if Possible"
+msgstr "&Använd cache om möjligt"
+
+#: settingsplugin.cpp:87
+#, kde-format
+msgid "&Offline Browsing Mode"
+msgstr "Nedk&opplat webbläsningsläge"
+
+#: settingsplugin.cpp:180
+#, kde-format
+msgid ""
+"The cookie setting could not be changed, because the cookie daemon could not "
+"be contacted."
+msgstr ""
+"Inställningen av kakor kunde inte ändras, eftersom kakdemonen inte kunde "
+"kontaktas."
+
+#: settingsplugin.cpp:182
+#, kde-format
+msgctxt "@title:window"
+msgid "Cookie Settings Unavailable"
+msgstr "Inställning av kakor ej tillgänglig"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Stefan Asserhäll"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "stefan.asserhall@bredband.net"

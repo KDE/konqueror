@@ -1,0 +1,216 @@
+# Copyright (C) 2017 Free Software Foundation, Inc.
+#
+# Tamas Szanto <tszanto@interware.hu>, 2003.
+# Kiszel Kristóf <kiszel.kristof@gmail.com>, 2017.
+msgid ""
+msgstr ""
+"Project-Id-Version: KDE 4.1\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-21 00:16+0000\n"
+"PO-Revision-Date: 2017-03-01 17:42+0100\n"
+"Last-Translator: Kiszel Kristóf <kiszel.kristof@gmail.com>\n"
+"Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 2.0\n"
+
+#: kcmperformance.cpp:28
+#, kde-format
+msgid ""
+"<h1>KDE Performance</h1> You can configure settings that improve KDE "
+"performance here."
+msgstr ""
+"<h1>Teljesítménytuning</h1> Néhány, a KDE teljesítményét befolyásoló "
+"paraméter értékét lehet itt megváltoztatni."
+
+#: kcmperformance.cpp:35
+#, kde-format
+msgid "Konqueror"
+msgstr "Konqueror"
+
+#: kcmperformance.cpp:38
+#, kde-format
+msgid "System"
+msgstr "Rendszer"
+
+#: kcmperformance.cpp:63
+#, kde-format
+msgid ""
+"<h1>Konqueror Performance</h1> You can configure several settings that "
+"improve Konqueror performance here. These include options for reusing "
+"already running instances and for keeping instances preloaded."
+msgstr ""
+"<h1>Konqueror teljesítménytuning</h1> Néhány, a Konqueror teljesítményét "
+"befolyásoló paraméter értékét lehet itt megváltoztatni. Ilyen például: a "
+"programpéldányok újrafelhasználása vagy előre betöltése."
+
+#: konqueror.cpp:24
+#, kde-format
+msgid ""
+"<p>If enabled, an instance of Konqueror will be preloaded after the ordinary "
+"Plasma startup sequence.</p><p>This will make the first Konqueror window "
+"open faster, but at the expense of longer Plasma startup times (but you will "
+"be able to work while it is loading, so you may not even notice that it is "
+"taking longer).</p>"
+msgstr ""
+"<p>Ha ez be van jelölve, a Konqueror program egy példánya előre betöltődik a "
+"memóriába a Plasma indulásakor.</p><p>Így az első Konqueror-ablak gyorsabban "
+"fog megjelenni, de a KDE indulása tovább fog tartani. A Konqueror a "
+"betöltési folyamat végén indul el, hogy a betöltéssel párhuzamosan már "
+"lehessen dolgozni, ezért alig észrevehető a betöltés.</p>"
+
+#: konqueror.cpp:30
+#, kde-format
+msgid ""
+"<p>If enabled, Konqueror will always try to have one preloaded instance "
+"ready; preloading a new instance in the background whenever there is not one "
+"available, so that windows will always open quickly.</p><p><b>Warning:</b> "
+"In some cases, it is actually possible that this will reduce perceived "
+"performance.</p>"
+msgstr ""
+"<p>Ha ez be van jelölve, a Konqueror mindig megpróbál egy példányt a "
+"memóriában készenlétben tartani, hogy új ablak megnyitása gyorsan "
+"megtörténhessen.</p><p><b>Figyelem:</b> bizonyos esetekben előfordulhat, "
+"hogy az opció hatására mégis csökken a teljesítmény.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
+#: konqueror_ui.ui:17
+#, kde-format
+msgid "Preloading"
+msgstr "Előre betöltés"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_preload_on_startup)
+#: konqueror_ui.ui:23
+#, fuzzy, kde-format
+#| msgid "Preload an instance after KDE startup"
+msgid "Preload an instance after desktop startup"
+msgstr "Egy programpéldány előre betöltése a KDE indulásakor"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_always_have_preloaded)
+#: konqueror_ui.ui:30
+#, kde-format
+msgid "Always try to have one preloaded instance"
+msgstr ""
+"Lehetőleg mindig legyen egy előre betöltött, készenlétben álló programpéldány"
+
+#: system.cpp:22
+#, kde-format
+msgid ""
+"<p>During startup KDE needs to perform a check of its system configuration "
+"(mimetypes, installed applications, etc.), and in case the configuration has "
+"changed since the last time, the system configuration cache (KSyCoCa) needs "
+"to be updated.</p><p>This option delays the check, which avoid scanning all "
+"directories containing files describing the system during KDE startup, thus "
+"making KDE startup faster. However, in the rare case the system "
+"configuration has changed since the last time, and the change is needed "
+"before this delayed check takes place, this option may lead to various "
+"problems (missing applications in the K Menu, reports from applications "
+"about missing required mimetypes, etc.).</p><p>Changes of system "
+"configuration mostly happen by (un)installing applications. It is therefore "
+"recommended to turn this option temporarily off while (un)installing "
+"applications.</p>"
+msgstr ""
+"<p>Amikor a KDE elindul, ellenőrzi a rendszer néhány jellemzőjét (pl. a "
+"fájltípusokat, a telepített alkalmazásokat és egyéb változásokat). Ha úgy "
+"érzékeli, hogy a legutóbbi állapot óta változás történt, frissíti a KDE-"
+"beállítások belső gyorstárát (KSyCoCa). </p><p>Ha bejelöli ezt, az "
+"ellenőrzések csak később, nem az indulási szakaszban hajtódnak végre, ezért "
+"a KDE hamarabb el tud indulni. Azonban ritka esetekben előfordulhat, hogy ez "
+"a késleltetett ellenőrzés kisebb problémákat okoz a működésben (pl. hiányzó "
+"bejegyzések a KDE menüben, egyes alkalmazások hiányzó MIME-típusokra "
+"figyelmeztetnek).</p><p>A beállítások általában akkor változnak meg, ha egy "
+"alkalmazást telepítenek vagy eltávolítanak. Ezért érdemes ezt az opciót "
+"kikapcsolni arra az időre, amíg telepítések zajlanak.</p><p>Emiatt az opciót "
+"általában nem ajánlott bejelölni. A KDE hibabejelentő rendszere "
+"figyelmeztetést ad, és nem készít visszakövetési információt, ha ez az opció "
+"be van jelölve (az opció bekapcsolása után reprodukálni kell a hibát vagy a "
+"hibabejelentőt fejlesztői módba kell váltani).</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gb_)
+#: system_ui.ui:8
+#, kde-format
+msgid "System Configuration"
+msgstr "Rendszerbeállítás"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_disable_kbuildsycoca)
+#: system_ui.ui:14
+#, kde-format
+msgid "Disable &system configuration startup check"
+msgstr "A rendszerellenőrzés &kikapcsolása"
+
+#. i18n: ectx: property (text), widget (QLabel, label_kbuildsycoca)
+#: system_ui.ui:21
+#, kde-format
+msgid ""
+"This option may in rare cases lead to various problems. Consult the What's "
+"This (Shift+F1) help for details."
+msgstr ""
+"Bizonyos esetekben az opció használata problémákat okozhat. A Mi ez? (Shift"
+"+F1) funkcióval részletesebb leírás kérhető."
+
+#~ msgid ""
+#~ "<p>If non-zero, this option allows keeping Konqueror instances in memory "
+#~ "after all their windows have been closed, up to the number specified in "
+#~ "this option.</p><p>When a new Konqueror instance is needed, one of these "
+#~ "preloaded instances will be reused instead, improving responsiveness at "
+#~ "the expense of the memory required by the preloaded instances.</p>"
+#~ msgstr ""
+#~ "<p>Nullánál nagyobb érték esetén ez az opció lehetővé teszi a Konqueror "
+#~ "böngészőpéldányok megőrzését az utolsó ablak bezáródása után is, "
+#~ "legfeljebb a megadott darabszámig.</p><p>Ha új Konqueror-példányt kell "
+#~ "betölteni, a rendszer képes felhasználni a korábbról megőrzött példányt, "
+#~ "így gyorsabb lesz a betöltés. Hátrány viszont, hogy a betöltött példányok "
+#~ "tárolása memóriát foglal le.</p>"
+
+#, fuzzy
+#~| msgid "Maximum number of instances kept &preloaded:"
+#~ msgid "&Maximum number of instances kept preloaded:"
+#~ msgstr "Az előre be&töltött példányok száma:"
+
+#~ msgid ""
+#~ "Disables the minimization of memory usage and allows you to make each "
+#~ "browsing activity independent from the others"
+#~ msgstr ""
+#~ "Letiltja a memóriahasználat minimalizálását, függetlenné téve egymástól a "
+#~ "böngészőablakokat"
+
+#~ msgid ""
+#~ "<p>With this option activated, only one instance of Konqueror used for "
+#~ "file browsing will exist in the memory of your computer at any moment, no "
+#~ "matter how many file browsing windows you open, thus reducing resource "
+#~ "requirements.</p><p>Be aware that this also means that, if something goes "
+#~ "wrong, all your file browsing windows will be closed simultaneously</p>"
+#~ msgstr ""
+#~ "<p>Ha ez be van jelölve, csak egyetlen fájlböngészési célú példány fog "
+#~ "létezni a Konquerorból a számítógép memóriájában, függetlenül attól, hány "
+#~ "fájlkezelő ablak van megnyitva, csökkentve a rendszer terhelését.</"
+#~ "p><p>Figyelem: ha a programban hiba történik, akkor az összes "
+#~ "fájlböngészési ablak bezáródik!</p>"
+
+#~ msgid ""
+#~ "<p>With this option activated, only one instance of Konqueror will exist "
+#~ "in the memory of your computer at any moment, no matter how many browsing "
+#~ "windows you open, thus reducing resource requirements.</p><p>Be aware "
+#~ "that this also means that, if something goes wrong, all your browsing "
+#~ "windows will be closed simultaneously.</p>"
+#~ msgstr ""
+#~ "<p>Ha ez be van jelölve, akkor mindig csak egy példány fog létezni a "
+#~ "Konquerorból a számítógép memóriájában, függetlenül a megnyitott "
+#~ "böngészőablakok számától, csökkentve a rendszer terhelését.</"
+#~ "p><p>Figyelem: ha a programban hiba történik, akkor az összes "
+#~ "böngészőablak bezáródik.</p>"
+
+#~ msgid "Minimize Memory Usage"
+#~ msgstr "A memóriahasználat minimalizálása"
+
+#~ msgid "&Never"
+#~ msgstr "So&ha"
+
+#~ msgid "For &file browsing only (recommended)"
+#~ msgstr "Csak &fájlböngészésnél (ez a javasolt beállítás)"
+
+#~ msgid "Alwa&ys (use with care)"
+#~ msgstr "Min&dig (csak indokolt esetben ajánlott)"

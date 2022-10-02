@@ -1,0 +1,64 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Zlatko Popov <zlatkopopov@fsa-bg.org>, 2006, 2007, 2008.
+# Yasen Pramatarov <yasen@lindeas.com>, 2009, 2010, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2011-07-11 12:20+0300\n"
+"Last-Translator: Yasen Pramatarov <yasen@lindeas.com>\n"
+"Language-Team: Bulgarian <dict@fsa-bg.org>\n"
+"Language: bg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. i18n: ectx: Menu (tools)
+#: konq_shellcmdplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "&Инструменти"
+
+#: kshellcmdexecutor.cpp:106
+#, kde-format
+msgid "Input Required:"
+msgstr "Входни данни:"
+
+#: kshellcmdplugin.cpp:32
+#, kde-format
+msgid "&Execute Shell Command..."
+msgstr "Изп&ълнение на команда..."
+
+#: kshellcmdplugin.cpp:41
+#, kde-format
+msgid ""
+"KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a bug."
+msgstr ""
+"KShellCmdPlugin::slotExecuteShellCommand: Грешка в програмата. Моля, "
+"съобщете за нея."
+
+#: kshellcmdplugin.cpp:51
+#, kde-format
+msgid "Executing shell commands works only on local directories."
+msgstr "Изпълнението на команда работи само в локалните директории."
+
+#: kshellcmdplugin.cpp:73
+#, kde-format
+msgctxt "@title:window"
+msgid "Execute Shell Command"
+msgstr "Изпълнение на конзолна команда"
+
+#: kshellcmdplugin.cpp:74
+#, kde-format
+msgid "Execute shell command in current directory:"
+msgstr "Изпълнение на команда в текущата директория:"
+
+#: kshellcmdplugin.cpp:85
+#, kde-format
+msgid "Output from command: \"%1\""
+msgstr "Резултат от командата: \"%1\""

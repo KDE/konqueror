@@ -1,0 +1,427 @@
+# translation of fsview.po to Thai
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Thanomsub Noppaburana <donga.nb@gmail.com>, 2008, 2010.
+# Narachai Sakorn <narachai@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: fsview\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"PO-Revision-Date: 2010-03-06 09:48+0700\n"
+"Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
+"Language-Team: Thai <thai-l10n@googlegroups.com>\n"
+"Language: th\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.0\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "ถนอมทรัพย์ นพบูรณ์"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "donga.nb@gmail.com"
+
+#: fsview.cpp:35 fsview.cpp:413
+#, kde-format
+msgid "Name"
+msgstr "ชื่อ"
+
+#: fsview.cpp:36
+#, kde-format
+msgid "Size"
+msgstr "ขนาด"
+
+#: fsview.cpp:37
+#, kde-format
+msgid "File Count"
+msgstr "จำนวนแฟ้ม"
+
+#: fsview.cpp:38
+#, kde-format
+msgid "Directory Count"
+msgstr "จำนวนไดเรกทอรี"
+
+#: fsview.cpp:39
+#, kde-format
+msgid "Last Modified"
+msgstr "แก้ไขล่าสุด"
+
+#: fsview.cpp:40 fsview.cpp:414
+#, kde-format
+msgid "Owner"
+msgstr "เจ้าของ"
+
+#: fsview.cpp:41 fsview.cpp:415
+#, kde-format
+msgid "Group"
+msgstr "กลุ่ม"
+
+#: fsview.cpp:42 fsview.cpp:416
+#, kde-format
+msgid "Mime Type"
+msgstr "ประเภท Mime"
+
+#: fsview.cpp:283
+#, kde-format
+msgid "Go To"
+msgstr "ไปยัง"
+
+#: fsview.cpp:284 fsview_part.cpp:106
+#, kde-format
+msgid "Stop at Depth"
+msgstr "หยุดที่ความลึก"
+
+#: fsview.cpp:285 fsview_part.cpp:103
+#, kde-format
+msgid "Stop at Area"
+msgstr "หยุดที่พื้นที่"
+
+#: fsview.cpp:286
+#, kde-format
+msgid "Stop at Name"
+msgstr "หยุดที่ชื่อ"
+
+#: fsview.cpp:292
+#, kde-format
+msgid "Go Up"
+msgstr "ขึ้นหนึ่งระดับ"
+
+#: fsview.cpp:294
+#, kde-format
+msgid "Stop Refresh"
+msgstr "หยุดการปรับปรุงใหม่"
+
+#: fsview.cpp:296
+#, kde-format
+msgid "Refresh"
+msgstr "เรียกปรับปรุงใหม่"
+
+#: fsview.cpp:301
+#, kde-format
+msgid "Refresh '%1'"
+msgstr "เรียกปรับปรุง '%1' ใหม่"
+
+#: fsview.cpp:313 fsview_part.cpp:113
+#, kde-format
+msgid "Color Mode"
+msgstr "โหมดสี"
+
+#: fsview.cpp:316 fsview_part.cpp:109
+#, kde-format
+msgid "Visualization"
+msgstr "การแสดงผล"
+
+#: fsview.cpp:411
+#, kde-format
+msgid "None"
+msgstr "ไม่ต้อง"
+
+#: fsview.cpp:412
+#, kde-format
+msgid "Depth"
+msgstr "ความลึก"
+
+#: fsview_part.cpp:69
+#, kde-format
+msgid "Read 1 folder, in %2"
+msgid_plural "Read %1 folders, in %2"
+msgstr[0] "อ่านข้อมูล %1 โฟลเดอร์, ใน %2"
+
+#: fsview_part.cpp:73
+#, kde-format
+msgid "1 folder"
+msgid_plural "%1 folders"
+msgstr[0] "%1 โฟลเดอร์"
+
+#: fsview_part.cpp:87
+#, kde-format
+msgid ""
+"<p>This is the FSView plugin, a graphical browsing mode showing filesystem "
+"utilization by using a tree map visualization.</p><p>Note that in this mode, "
+"automatic updating when filesystem changes are made is intentionally <b>not</"
+"b> done.</p><p>For details on usage and options available, see the online "
+"help under menu 'Help/FSView Manual'.</p>"
+msgstr ""
+"<p>นี่คือส่วนต่อขยายของ FSView "
+"ที่เป็นโปรแกรมจัดการระบบแฟ้มที่แสดงผลแบบรายการต้นไม้แบบกราฟิก</p><p> "
+"และในรูปแบบการทำงานนี้การปรับปรุงอัตโนมัติเมื่อระบบแฟ้มเปลี่ยนแปลงไปยัง<b>ไม่</b>สมบูรณ์</"
+"p><p>สามารถดูข้อมูลการใช้งานและตัวเลือกเพิ่มเติมได้ที่ การช่วยเหลือออนไลน์ ในเมนู ช่วยเหลือ/"
+"คู่มือ FSView</p>"
+
+#: fsview_part.cpp:119
+#, kde-format
+msgid "&FSView Manual"
+msgstr "คู่มื&อ FSView"
+
+#: fsview_part.cpp:121
+#, kde-format
+msgid "Show FSView manual"
+msgstr "แสดงคู่มือ FSView"
+
+#: fsview_part.cpp:122
+#, kde-format
+msgid "Opens the help browser with the FSView documentation"
+msgstr "เปิดเบราว์เซอร์ความช่วยเหลือด้วยเอกสารคู่มือของ FSView"
+
+#: fsview_part.cpp:154
+#, kde-format
+msgctxt "@action:inmenu File"
+msgid "Move to Trash"
+msgstr "ทิ้งลงถังขยะ"
+
+#: fsview_part.cpp:161
+#, kde-format
+msgctxt "@action:inmenu File"
+msgid "Delete"
+msgstr "ลบทิ้ง"
+
+#: fsview_part.cpp:166
+#, kde-format
+msgctxt "@action:inmenu Edit"
+msgid "&Edit File Type..."
+msgstr "แก้ไ&ขประเภทแฟ้ม..."
+
+#: fsview_part.cpp:170
+#, kde-format
+msgctxt "@action:inmenu File"
+msgid "Properties"
+msgstr "คุณสมบัติ"
+
+#: fsview_part.cpp:203
+#, kde-format
+msgid ""
+"FSView intentionally does not support automatic updates when changes are "
+"made to files or directories, currently visible in FSView, from the "
+"outside.\n"
+"For details, see the 'Help/FSView Manual'."
+msgstr ""
+"FSView ไม่สนับสนุนการปรับปรุงอัตโนมัติเมื่อแฟ้มและไดเรกทอรีมีการปลี่ยนแปลง\n"
+"สำหรับข้อมูลเพิ่มเติม กรุณาดูที่ ช่วยเหลือ/คู่มือ FSView"
+
+#. i18n: ectx: Menu (edit)
+#: fsview_part.rc:4
+#, kde-format
+msgid "&Edit"
+msgstr "แ&ก้ไข"
+
+#. i18n: ectx: Menu (view)
+#: fsview_part.rc:13
+#, kde-format
+msgid "&View"
+msgstr "&มุมมอง"
+
+#. i18n: ectx: Menu (help)
+#: fsview_part.rc:20
+#, kde-format
+msgid "&Help"
+msgstr "&ช่วยเหลือ"
+
+#: main.cpp:23
+#, kde-format
+msgid "FSView"
+msgstr "FSView"
+
+#: main.cpp:24
+#, kde-format
+msgid "Filesystem Viewer"
+msgstr "เครื่องมือดูระบบแฟ้ม"
+
+#: main.cpp:26
+#, kde-format
+msgid "(c) 2002, Josef Weidendorfer"
+msgstr "สงวนลิขสิทธิ์ (c) 2002, Josef Weidendorfer"
+
+#: main.cpp:33
+#, kde-format
+msgid "View filesystem starting from this folder"
+msgstr "ดูระบบแฟ้มโดยเริ่มจากโฟลเดอร์นี้"
+
+#: treemap.cpp:1436
+#, kde-format
+msgid "Text %1"
+msgstr "ข้อความ %1"
+
+#: treemap.cpp:3163
+#, kde-format
+msgid "Recursive Bisection"
+msgstr "การแบ่งสองด้านแบบย้อนกลับ"
+
+#: treemap.cpp:3165
+#, kde-format
+msgid "Columns"
+msgstr "คอลัมน์"
+
+#: treemap.cpp:3167
+#, kde-format
+msgid "Rows"
+msgstr "แถว"
+
+#: treemap.cpp:3169
+#, kde-format
+msgid "Always Best"
+msgstr "ดีที่สุดเสมอ"
+
+#: treemap.cpp:3171
+#, kde-format
+msgid "Best"
+msgstr "ดีที่สุด"
+
+#: treemap.cpp:3173
+#, kde-format
+msgid "Alternate (V)"
+msgstr "ตัวเลือก (V)"
+
+#: treemap.cpp:3175
+#, kde-format
+msgid "Alternate (H)"
+msgstr "ตัวเลือก (H)"
+
+#: treemap.cpp:3177
+#, kde-format
+msgid "Horizontal"
+msgstr "ทางแนวนอน"
+
+#: treemap.cpp:3179
+#, kde-format
+msgid "Vertical"
+msgstr "ทางแนวตั้ง"
+
+#: treemap.cpp:3231
+#, kde-format
+msgid "Nesting"
+msgstr "การซ้อนใน"
+
+#: treemap.cpp:3235
+#, kde-format
+msgid "Border"
+msgstr "กรอบ"
+
+#: treemap.cpp:3238
+#, kde-format
+msgid "Correct Borders Only"
+msgstr "กรอบที่ถูกต้องเท่านั้น"
+
+#: treemap.cpp:3241
+#, kde-format
+msgid "Width %1"
+msgstr "กว้าง %1"
+
+#: treemap.cpp:3244
+#, kde-format
+msgid "Allow Rotation"
+msgstr "อนุญาตการหมุน"
+
+#: treemap.cpp:3245
+#, kde-format
+msgid "Shading"
+msgstr "การไล่สี"
+
+#: treemap.cpp:3256
+#, kde-format
+msgid "Visible"
+msgstr "มองเห็นได้"
+
+#: treemap.cpp:3257
+#, kde-format
+msgid "Take Space From Children"
+msgstr "ห่างจากเด็ก ๆ"
+
+#: treemap.cpp:3261
+#, kde-format
+msgid "Top Left"
+msgstr "ด้านบนซ้าย"
+
+#: treemap.cpp:3264
+#, kde-format
+msgid "Top Center"
+msgstr "ด้านบนตรงกลาง"
+
+#: treemap.cpp:3267
+#, kde-format
+msgid "Top Right"
+msgstr "ด้านบนขวา"
+
+#: treemap.cpp:3270
+#, kde-format
+msgid "Bottom Left"
+msgstr "ด้านล่างซ้าย"
+
+#: treemap.cpp:3273
+#, kde-format
+msgid "Bottom Center"
+msgstr "ด้านล่างตรงกลาง"
+
+#: treemap.cpp:3276
+#, kde-format
+msgid "Bottom Right"
+msgstr "ด้านล่างขวา"
+
+#: treemap.cpp:3343
+#, kde-format
+msgid "No %1 Limit"
+msgstr "ไม่มีการจำกัด %1"
+
+#: treemap.cpp:3402
+#, kde-format
+msgid "No Area Limit"
+msgstr "ไม่จำกัดพื้นที่"
+
+#: treemap.cpp:3408
+#, kde-format
+msgid "Area of '%1' (%2)"
+msgstr "พื้นที่ของ %1 (%2)"
+
+#: treemap.cpp:3420 treemap.cpp:3433
+#, kde-format
+msgid "1 Pixel"
+msgid_plural "%1 Pixels"
+msgstr[0] "%1 พิกเซล"
+
+#: treemap.cpp:3437
+#, kde-format
+msgid "Double Area Limit (to %1)"
+msgstr "การจำกัดพื้นที่สองเท่า (กับ %1)"
+
+#: treemap.cpp:3439
+#, kde-format
+msgid "Halve Area Limit (to %1)"
+msgstr "การจำกัดพื้นที่ครึ่งหนึ่ง (กับ %1)"
+
+#: treemap.cpp:3475
+#, kde-format
+msgid "No Depth Limit"
+msgstr "ไม่จำกัดความลึก"
+
+#: treemap.cpp:3481
+#, kde-format
+msgid "Depth of '%1' (%2)"
+msgstr "ความลึกของ %1 (%2)"
+
+#: treemap.cpp:3493 treemap.cpp:3506
+#, kde-format
+msgid "Depth %1"
+msgstr "ลึก %1"
+
+#: treemap.cpp:3510
+#, kde-format
+msgid "Decrement (to %1)"
+msgstr "ลด (กับ %1)"
+
+#: treemap.cpp:3512
+#, kde-format
+msgid "Increment (to %1)"
+msgstr "เพิ่ม (กับ %1)"
+
+#~ msgid "Filesystem Utilization Viewer"
+#~ msgstr "โปรแกรมจัดการระบบแฟ้ม"
+
+#~ msgid "(c) 2003-2005, Josef Weidendorfer"
+#~ msgstr "สวงนลิขสิทธิ์ 2546-2548, Josef Weidendorfer"

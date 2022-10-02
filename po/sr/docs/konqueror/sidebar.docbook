@@ -1,0 +1,387 @@
+<chapter id="sidebar">
+
+<chapterinfo>
+<authorgroup>
+<author
+><personname
+><firstname
+>Памела</firstname
+> <surname
+>Робертс</surname
+></personname
+></author>
+<othercredit role="translator"
+><firstname
+>Драган</firstname
+><surname
+>Пантелић</surname
+><affiliation
+><address
+><email
+>falcon-10@gmx.de</email
+></address
+></affiliation
+><contrib
+>превод</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>22. 11. 2011.</date>
+<releaseinfo
+>КДЕ 4.8</releaseinfo>
+</chapterinfo>
+
+<title
+>Бочна трака</title>
+
+<para
+>Бочна трака се јавља као засебан приказ на левој страни <application
+>К‑освајачевог</application
+> прозора. Може се укључити и искључити ставком менија <menuchoice
+><guimenu
+>Подешавање</guimenu
+><guimenuitem
+>Прикажи бочну траку</guimenuitem
+></menuchoice
+> или тастером <keycap
+>F9</keycap
+>.</para>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="dirtree.png"/></imageobject>
+<textobject>
+<phrase
+>Са бочном траком.</phrase
+>  
+</textobject>
+</mediaobject>
+
+<para
+>Садржи бројне странице са језичцима. Кликните <mousebutton
+>левим</mousebutton
+> на икону језичка да прикажете ту страницу. <mousebutton
+>Десни</mousebutton
+> клик на икону видљиве странице сажеће бочну траку, тако да се виде само иконе језичака.</para>
+<variablelist>
+
+<varlistentry>
+<term
+><guilabel
+>Обележивачи</guilabel
+></term>
+<listitem
+><para
+>Ова страница даје приказ стабла ваших обележивача. Кликните <mousebutton
+>левим</mousebutton
+> на ставку да је отворите у главном приказу.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Историјат</guilabel
+></term>
+<listitem
+><para
+>Ова страница даје приказ стабла вашег историјата прегледања. <mousebutton
+>Леви</mousebutton
+> клик на ставку отвориће је у главном приказу, а у новом прозору <application
+>К‑освајача</application
+> ако кликнете <mousebutton
+>десним</mousebutton
+> и одаберете <guimenuitem
+>Отвори у новом прозору</guimenuitem
+> из искачућег менија.</para>
+<para
+>Ставку из историјата можете уклонити помоћу <mousebutton
+>десним</mousebutton
+> кликом на њу, те одабиром <guimenuitem
+>Уклони ставку</guimenuitem
+>. Одабир <guimenuitem
+>Очисти историјат</guimenuitem
+> очистиће цео историјат.</para>
+<para
+>Искачући мени који добијате <mousebutton
+>десним</mousebutton
+> кликом на било коју ставку на страници историјата, такође вам даје могућност да поређате историјат по имену или по датуму.</para>
+<para
+>Избор <guimenuitem
+>Поставке...</guimenuitem
+> из овог искачућег менија издаје контролни модул бочне траке историјата. У њему можете постављати максималну величину историјата или време после којег се аутоматски уклањају ставке. Можете подесити и различите фонтове за нове и старе УРЛ‑ове. Кућица <guilabel
+>Детаљни облачићи</guilabel
+> контролише колико података се приказује кад лебдите показивачем миша изнад неке ставке на страници историјата.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Домаћа фасцикла</guilabel
+></term>
+<listitem
+><para
+>Ова страница даје приказ стабла потфасцикли ваше домаће фасцикле. Имајте у виду да „скривене“ фасцикле (чија имена почињу с тачком) нису приказане. Кликните <mousebutton
+>левим</mousebutton
+> на неку ставку да је отворите у главном приказу, или кликните <mousebutton
+>десним</mousebutton
+> да дозовете искачући мени из којег можете отворити потфасциклу или у новом прозору или као нову страну с језичком у главном приказу. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Мрежа</guilabel
+></term>
+<listitem
+><para
+>Ова страница даје приказ стабла ваших важних мрежних веза, мада могу бити укључене и локалне фасцикле. Опет, кликните <mousebutton
+>левим</mousebutton
+> на неку ставку да је отворите у главном приказу, или кликните <mousebutton
+>десним</mousebutton
+> за мени са опсежнијим могућностима.</para>
+<para
+>Фасцикле приказане на страници <guilabel
+>Мрежа</guilabel
+> држе се у фасцикли <filename class="directory"
+>~/.kde/share/apps/konqsidebartng/virtual_folders/remote/</filename
+>, а нове можете правити исто као што бисте било коју другу фасциклу. Ставке унутар ових фасцикли чувају се као <literal role="extension"
+>.desktop</literal
+> фајлови, и могу се стварати из <application
+>К‑освајача</application
+> опцијом <menuchoice
+><guisubmenu
+>Направи</guisubmenu
+><guimenuitem
+>Веза до локације (УРЛ)...</guimenuitem
+></menuchoice
+> у менију <guimenu
+>Уређивање</guimenu
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Корена фасцикла</guilabel
+></term>
+<listitem
+><para
+>Стабло корене фасцикле има путању <filename class="directory"
+>/</filename
+>, и основна је фасцикла система локалних фајлова. Ако проширите корену фасциклу, видеће нпр. фасциклу по имену <filename class="directory"
+>root</filename
+>, која је домаћа фасцикла систем-администратора, односно суперкорисника. Такође ћете видети фасциклу <filename class="directory"
+>home</filename
+>, у којој би опет требало да можете да видите сопствену домаћу фасциклу.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Сервиси</guilabel
+></term>
+<listitem
+><para
+>Ова страница обезбеђује брз приступ следећим сервисима: </para>
+<para
+><guilabel
+>програми</guilabel
+>, <guilabel
+>Прегледач аудио ЦД‑ова</guilabel
+> и <guilabel
+>Фонтови</guilabel
+>.</para>
+<!-- not in 4.4
+<para
+><guilabel
+>Devices</guilabel
+>. This shows your hard disc 
+partitions, floppy and &CD-ROM;. <mousebutton
+>Left</mousebutton
+> click on 
+a device or partition name to mount it and display its contents in the main 
+view.  A mounted device or partition can be unmounted by <mousebutton
+>right
+</mousebutton
+> clicking on the device name and selecting <guimenuitem
+>Unmount
+</guimenuitem
+> from the pop up menu.
+</para>
+<para
+>The <guilabel
+>LAN Browser</guilabel
+> allows you to browse other 
+machines connected to your Local Area Network.</para>
+<para
+>The <guilabel
+>Print System Browser</guilabel
+> tree gives you quick 
+access to &kde;'s print manager <application
+>Kprinter</application
+>.</para>
+-->
+</listitem>
+</varlistentry>
+<!-- begin copy from dolphin docbook-->
+<varlistentry>
+<term
+><guilabel
+>Места</guilabel
+></term>
+<listitem
+><para
+>Панел <guilabel
+>Места</guilabel
+> подразумевано је смештен на левој страни прозора. У њему су приказане све локације које сте обележили, као и сви дискови и други медијуми прикључени на рачунар. </para>
+<para
+>Најлакши начин да додате неку фасциклу под <guilabel
+>Места</guilabel
+> јесте да је превучете на панел. Другачије, можете кликнути десним на панел па изабрати <menuchoice
+><guimenuitem
+>Додај ставку...</guimenuitem
+></menuchoice
+> из контекстног менија. </para>
+</listitem>
+</varlistentry>
+<!-- end copy from dolphin docbook-->
+</variablelist>
+
+<para
+>Постава бочне траке може се мењати <mousebutton
+>десним</mousebutton
+> кликом на празан простор испод свих икона језичака, или <mousebutton
+>левим</mousebutton
+> кликом на икону дугмета за подешавање, које се активира из контекстног менија. Ово позива мени са следећим опцијама:</para>
+<variablelist>
+
+<varlistentry>
+<term
+><guisubmenu
+>Додај ново</guisubmenu
+></term>
+<listitem
+><para
+>Овим додајете нову страницу под језичком у бочну траку. Нова страница може садржати неки од модула или нови приказ стабла фасцикли. Последњом опцијом у овом подменију можете вратити стање на системски подразумевано.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Вишеструки прикази</guimenuitem
+></term>
+<listitem
+><para
+>Дели бочну траку тако да се одједном могу видети две странице с језичцима.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Језичци стоје лево</guimenuitem
+>, <guimenuitem
+>Језичци стоје десно</guimenuitem
+></term>
+<listitem
+><para
+>Одређује да ли су иконе језичака приказане на левој или десној страни бочне траке.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Дугме за подешавање</guimenuitem
+></term>
+<listitem
+><para
+>Употребите ову опцију да прикажете или сакријете икону дугмета за подешавање.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+><mousebutton
+>Десни</mousebutton
+> клик на икону језичка дозива мени са следећим опцијама:</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guimenuitem
+>Задавање имена</guimenuitem
+></term>
+<listitem
+><para
+>Промените назив странице.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Постави УРЛ...</guimenuitem
+></term>
+<listitem
+><para
+>Овом опцијом можете променити УРЛ (путању) фасцикле приказане страницом.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Постави икону...</guimenuitem
+></term>
+<listitem
+><para
+>Да измените икону језичка.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Уклони</guimenuitem
+></term>
+<listitem
+><para
+>Уклоните страницу с језичком са бочне траке.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Подеси бочну траку</guimenuitem
+></term>
+<listitem
+><para
+>Последња ставка даје мени за подешавање бочне траке, како је описано раније.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

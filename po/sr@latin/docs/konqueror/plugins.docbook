@@ -1,0 +1,889 @@
+<chapter id="plugins">
+
+<chapterinfo>
+<authorgroup>
+<author
+><personname
+><firstname
+>Pamela</firstname
+> <surname
+>Roberts</surname
+></personname
+></author>
+<othercredit role="translator"
+><firstname
+>Dragan</firstname
+><surname
+>Pantelić</surname
+><affiliation
+><address
+><email
+>falcon-10@gmx.de</email
+></address
+></affiliation
+><contrib
+>prevod</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>22. 11. 2011.</date>
+<releaseinfo
+>KDE 4.8</releaseinfo>
+</chapterinfo>
+
+
+<title
+>Priključci</title>
+
+<sect1 id="netscape-plugin">
+<title
+>Netscapeovi priključci</title>
+
+<para
+><application
+>K‑osvajač</application
+> trenutno podržava priključke za Netscape.</para>
+
+<para
+>Izborom <menuchoice
+><guimenu
+>Podešavanje</guimenu
+><guimenuitem
+>Podesi K‑osvajač...</guimenuitem
+> </menuchoice
+> dobijate dijalog za podešavanje. Idite na stranicu <guilabel
+>Priključci</guilabel
+>, koja sadrži dva jezička: pod <guilabel
+>Globalne postavke</guilabel
+> priključci se aktiviraju i podešava se njihovo ponašanje u <application
+>K‑osvajaču</application
+>, a pod <guilabel
+>Priključci</guilabel
+> nabrojani su pronađeni Netscapeovi priključci i ponuđeno skeniranje za drugima.</para>
+
+<para
+>Za više informacija pogledajte stranicu pomoći za <ulink url="help:/kcontrol/khtml-plugins/index.html"
+>priključke pregledača</ulink
+>.</para>
+
+</sect1>
+
+<!-- 
+missing from extragear base:
+minitools (Bookmarklets - Enables the use of bookmarklets)
+This plugin adds implementation for so-called bookmarklets. Bookmarklets are little
+Javascript programs which can be saved and used like normal web page bookmarks. Therefore,
+they are simple "one-click" tools that can add substantial functionality to the browser.
+http://blog.ssokolow.com/archives/2007/01/30/konqueror-with-bookmarklets/
+
+autorefresh
+This works on any readonly part (though currently it only plugs into
+khtmlpart). It lets you tell konqueror to refresh a page automatically
+after a specific period. This is useful for things like news pages,
+and should be very nice for people using kiosk mode
+
+rellinks
+Name=Document Relations
+Comment=Displays the document relations of a document
+
+adblock from baseapps+extragear
+Show all blockable html elements
+
+akregator
+This works on KHTMLPart and allows you to add feeds to Akregator directly from Konqueror.
+
+not ported to kde4 yet
+sidebar
+microformat
+mediarealfolder
+<listitem>
+<para
+><ulink url="help:/konq-plugins/mediaplayer/index.html"
+>The Embedded Media
+Player</ulink
+></para>
+
+konq plugins in other modules
+kdeutils 
+  filelight
+  ark?
+
+kdebase apps
+  kttsdplugin (browser mode ?)
+  shellcmdplugin (file manager mode)
+  
+kdenetwork
+  kget (browser mode)
+-->
+
+<sect1 id="konq-plugin">
+<title
+><application
+>K‑osvajačevi</application
+> priključci</title>
+
+<para
+>Izdanja <acronym
+>KDE‑a</acronym
+> sadrže neke korisne priključke koji se uklapaju u <application
+>K‑osvajač</application
+> na različite načine. Ukratko su predstavljeni u narednom.</para>
+
+<para
+>Upotrebite <menuchoice
+><guimenu
+>Podešavanje</guimenu
+><guimenuitem
+>Podesi proširenja...</guimenuitem
+></menuchoice
+> da otvorite dijalog sa svim instaliranim priključcima i izaberete one koje želite. Svim priključcima može se pristupiti kroz meni <guimenu
+>Alatke</guimenu
+>.</para>
+
+<para
+>U dijalogu će biti nabrojani samo priključci koji odgovaraju trenutnom režimu (menadžer fajlova ili pregledač).</para>
+
+<variablelist>
+<title
+>Režim pregledača</title>
+
+ <!--FIXME does not work any more, see also https://github.com/nltk/nltk/issues/265-->
+<varlistentry>
+<term
+>prevod veb stranice</term>
+<listitem
+><para
+>Koristi servis mašinskog prevođenja sa <ulink url="http://babelfish.yahoo.com/"
+>Yahooovog sajta Babelfish</ulink
+> da prevede tekuću HTML stranicu na bilo koji od ponuđenih jezika. Može se pokrenuti pomoću <menuchoice
+><guimenu
+>Alatke</guimenu
+><guisubmenu
+>Prevedi veb stranicu</guisubmenu
+></menuchoice
+>.</para>
+<para
+>Ako izaberete deo teksta na stranici, biće preveden samo taj deo umesto celog URL‑a.</para>
+
+<para
+>Servis Babelfish podržava samo ograničen broj jezika.</para>
+
+<important>
+<para
+>Mašinsko prevođenje nije savršeno! Babelfish će u najboljem slučaju dati grub prevod, a u najgorem nešto potpuno smešno. Nemojte donositi važne odluke prema onome što ste pročitali sa stranice prevedene Babelfishom, već prethodno obavezno potvrdite tačnost prevoda.</para>
+</important>
+
+<note
+> 
+<para
+>Cele veb stranice se mogu prevoditi samo kada su dostupne preko Weba. Za bilo šta drugo, idite direktno na sajt Babelfisha i tamo nalepite tekst koji želite da prevedete.</para>
+</note>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>prikazivač DOM stabla</term>
+<listitem>
+<para
+>Prikazivač DOM stabla omogućava programeru da prikaže stilove, atribute i elemente veb dokumenta.</para>
+<para
+>Izbor <menuchoice
+><guimenu
+>Alatke</guimenu
+><guisubmenu
+>Prikaži DOM stablo</guisubmenu
+></menuchoice
+> otvara novi prozor sa objektnim modelom dokumenta (DOM‑om) tekuće HTML stranice.</para>
+<para
+>Podrazumevano prikaz počinje od korenog čvora dokumenta, na primer <literal
+>documentElement</literal
+>. Svi ostali vidljivi čvorovi ili su deca ili potomci korenog.</para>
+<para
+>Ako želite da izmenite DOM stablo, moraćete za to da upotrebite neku spoljašnju skriptu.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>overivač veb stranice</term>
+<listitem>
+<para
+>Ovaj priključak koristi W3C‑ov overivač HTML‑a da overi tekuću stranicu, što je vrlo korisno pri izradi veb stranica.</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guimenuitem
+>Overi HTML (preko URI‑ja)</guimenuitem
+> i <guimenuitem
+>Overi HTML (otpremanjem)</guimenuitem
+></term>
+<listitem
+><para
+>Opcija overe HTML‑a omogućava vam da uporedite svoj HTML dokument sa propisanom sintaksom HTML‑a i dobijete izveštaj o eventualnim greškama. Overom obezbeđujete da se vaše veb stranice pravilno vide u svim pregledačima.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Overi CSS (preko URI‑ja)</guimenuitem
+></term>
+<listitem
+><para
+>Omogućava vam da overite CSS opis stila ugnežđen u HTML ili XHTML dokumentu. Pravilan CSS je ključan za održavanje usaglašenog izgleda vašeg veb sajta bez obzira na pregledač kojim mu se pristupa.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Overi veze</guimenuitem
+></term>
+<listitem
+><para
+>Potvrdite da među vezama na vašem sajtu nema preusmeravanja niti prekinutih veza. Ova alatka rekurzivno proverava sve veze na sajtu.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Overi stranicu</guimenuitem
+></term>
+<listitem
+><para
+>Overava tekuću stranicu ali bez prikaza rezultata u drugom prozoru ili jezičku, kao što to čine prethodne radnje. Upotrebom ove stavke aktivirate radnju <guimenuitem
+>Prikaži izveštaj overivača</guimenuitem
+> koja daje sažetak overavanja.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Podesi overivač...</guimenuitem
+></term>
+<listitem
+><para
+>Ovom stavkom možete pogledati i podesiti pretpodešene overivače kojim overavate svoj HTML i CSS</para
+></listitem>
+</varlistentry>
+</variablelist>
+</listitem>
+<!-- icon W3 right in statusbar
+&LBM; click context menu with items above but no Configure Validator
+ -->
+</varlistentry>
+
+<varlistentry>
+<term
+>postavke HTML‑a</term>
+<listitem
+><para
+>Izaberite <menuchoice
+><guimenu
+>Alatke</guimenu
+><guisubmenu
+>HTML postavke</guisubmenu
+></menuchoice
+> da uključite i isključite razne postavke HTML‑a bez posezanja u dijalog za podešavanje. </para>
+<variablelist>
+<varlistentry>
+<term
+><guimenuitem
+>JavaScript</guimenuitem
+></term>
+<listitem
+><para
+>Uključite ili isključite upotrebu JavaScripta u <application
+>K‑osvajaču</application
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Java</guimenuitem
+></term>
+<listitem
+><para
+>Uključite ili isključite upotrebu JavaScripta u <application
+>K‑osvajaču</application
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Kolačići</guimenuitem
+></term>
+<listitem
+><para
+>Uključite ili isključite upotrebu kolačića u <application
+>K‑osvajaču</application
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Priključci</guimenuitem
+></term>
+<listitem
+><para
+>Uključite ili isključite upotrebu instaliranih priključaka u <application
+>K‑osvajaču</application
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Samoučitavanje slika</guimenuitem
+></term>
+<listitem
+><para
+>Uključite ili isključite učitavanje slika na veb stranicama.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Uključi proksi</guimenuitem
+></term>
+<listitem
+><para
+>Aktivirajte ili deaktivirajte upotrebu proksija u <application
+>K‑osvajaču</application
+> kao pregledaču.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Uključi keš</guimenuitem
+></term>
+<listitem
+><para
+>Aktivirajte ili deaktivirajte upotrebu keša u <application
+>K‑osvajaču</application
+> kao pregledaču.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Ponašanje keša</guimenuitem
+></term>
+<listitem>
+<para
+>Podmeni <guimenu
+>Ponašanje keša</guimenu
+> omogućava vam da podesite kako <application
+>K‑osvajač</application
+> koristi keš. Mogućnosti su:</para>
+<itemizedlist>
+<listitem
+><para
+><guimenuitem
+>Održavaj keš sinhronizovanim</guimenuitem
+></para
+></listitem>
+<listitem
+><para
+><guimenuitem
+>Koristi keš ako je moguće</guimenuitem
+></para
+></listitem>
+<listitem
+><para
+><guimenuitem
+>Režim pretraživanja van veze</guimenuitem
+></para
+></listitem>
+</itemizedlist>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>izmenjivač korisničkog agenta</term>
+<listitem
+><para
+>Izaberite <menuchoice
+><guimenu
+>Alatke</guimenu
+><guisubmenu
+>Promeni identifikaciju pregledača</guisubmenu
+></menuchoice
+> za meni iz kojeg možete promeniti nisku korisničkog agenta bez posezanja u dijalog za podešavanje. </para>
+<para
+>Kroz ovaj priključak možete zadati identifikaciju pregledača i operativnog sistema prema domenu. Ovo je korisno ako pregledate sajtove koji dozvoljavaju pristup samo određenim veb pregledačima.</para>
+<variablelist>
+<varlistentry>
+<term
+><guimenuitem
+>Podrazumevana identifikacija</guimenuitem
+></term>
+<listitem
+><para
+>Podrazumevano zaglavlje „korisnički agent“ za <application
+>K‑osvajač</application
+> glasi <literal
+>Mozilla/5.0 (compatible; Konqueror/4.7) (KHTML/4.7, like Gecko)</literal
+>. Ako naiđete na sajt koji odbija pristup ovakvom pregledaču, promenite korisnički agent na jedno od dole navedenog.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>podmeni pregledača</term>
+<listitem
+><para
+>Naredne stavke menija čine spisak popularnih pregledača, kao što su Firefox, Internet Explorer, Netscapeov Navigator, Opera i Safari. Možete i ručno zadati neki drugi. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Primeni na ceo sajt</guimenuitem
+></term>
+<listitem
+><para
+>Ovom opcijom zadajete da se definisani korisnički agent primenjuje na svakoj stranici sajta koji trenutno posećujete.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Podešavanje</guimenuitem
+></term>
+<listitem
+><para
+>Izborom <guimenuitem
+>Podešavanje</guimenuitem
+> otvarate dijalog za podešavanje, u kome možete fino podesiti sve podatke o pregledaču i operativnom sistemu koji se šalju.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>arhiviranje veb stranice</term>
+<listitem
+><para
+>Pozvana pomoću <menuchoice
+><guimenu
+>Alatke</guimenu
+><guisubmenu
+>Arhiviraj veb stranicu...</guisubmenu
+></menuchoice
+>, ova alatka stvara arhivski fajl (<literal role="extension"
+>.war</literal
+>) za trenutno prikazanu veb stranicu, uključujući i sve slike. Kliknite <mousebutton
+>levim</mousebutton
+> na ime arhivskog fajla da prikažete sačuvanu stranu. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<variablelist>
+<title
+>Režim menadžera fajlova</title>
+
+<varlistentry>
+<term
+>filter prikaza fascikle</term>
+<listitem
+><para
+>Ovim upravljate preko <menuchoice
+><shortcut
+><keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>Shift</keycap
+><keycap
+>I</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Alatke</guimenu
+><guisubmenu
+>Prikaži filtersku traku</guisubmenu
+></menuchoice
+>, gde možete izabrati po tipu stavke koje se prikazuju u fascikli.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>galerija slika</term>
+<listitem
+><para
+>U režimu menadžera fajlova, možete odabrati <menuchoice
+><guimenu
+>Alatke</guimenu
+><guisubmenu
+>Napravi galeriju slika...</guisubmenu
+></menuchoice
+> (ili pritisnuti <keycombo
+><keycap
+>Ctrl</keycap
+><keycap
+>I</keycap
+></keycombo
+>) da stvorite HTML stranicu sa sličicama za sve slike u tekućoj fascikli. Podrazumevano ime HTML stranice je <filename
+>images.html</filename
+>, a sličice se stavljaju u novu fasciklu <filename
+>images</filename
+>.</para>
+<para
+>Kada pokrenete priključak za galeriju slika, pojaviće se dijalog u kome podešavate način stvaranja galerije.</para>
+
+<variablelist id="page_look_dialog">
+<title
+>Izgled stranice</title>
+<varlistentry>
+<term
+>Ovaj dijalog služi za podešavanje izgleda stranice galerije.</term>
+<listitem>
+  
+<screenshot>
+<screeninfo
+>Snimak ekrana dijaloga za izgled.</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="look.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Snimak ekrana.</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Naslov stranice:</guimenuitem
+></term>
+<listitem
+><para
+>Ova opcija daje polje u koje unosite željeni naslov stranice sa galerijom slika.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Slikâ po vrsti:</guimenuitem
+></term>
+<listitem
+><para
+>Ovu opciju čini klizač i brojčanik kojim podešavate broj sličica po jednoj vrsti u galeriji.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Prikaži ime fajla slike</guimenuitem
+></term>
+<listitem
+><para
+>Ovom kućicom određujete da li se vide imena fajlova ispod sličica u galeriji.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Prikaži veličinu fajla slike</guimenuitem
+></term>
+<listitem
+><para
+>Ovom kućicom određujete da li se vide veličine fajlova ispod sličica u galeriji.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Prikaži dimenzije slike</guimenuitem
+></term>
+<listitem
+><para
+>Ovom kućicom određujete da li se vide dimenzije slika ispod sličica u galeriji.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Ime fonta:</guimenuitem
+></term>
+<listitem
+><para
+>Ovaj padajući spisak omogućava biranje fonta koji se koristi za ispis tekst u galeriji.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Veličina fonta:</guimenuitem
+></term>
+<listitem
+><para
+>Ovim brojčanikom menjate veličinu izabranog fonta.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Boja ispisa:</guimenuitem
+></term>
+<listitem
+><para
+>Ova opcija daje birač boje ispisa u galeriji, pod koju spadaju sve zone sa tekstom.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Boja pozadine:</guimenuitem
+></term>
+<listitem
+><para
+>Ova opcija daje birač boje pozadine u galeriji.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<variablelist id="folders_dialog">
+<title
+>Fascikle</title>
+<varlistentry>
+<term
+>Kroz dijalog fascikli birate gde će galerija biti sačuvana. Ovde takođe možete podesiti koje se fascikle koriste.</term>
+<listitem>
+  
+<screenshot>
+<screeninfo
+>Snima dijaloga fascikli.</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="folders.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Snimak ekrana.</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Sačuvaj u HTML fajl:</guimenuitem
+></term>
+<listitem
+><para
+>Birač fajlova u kome određujete gde ćete sačuvati HTML stranicu načinjene galerije.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Rekurzivno kroz potfascikle</guimenuitem
+></term>
+<listitem
+><para
+>Ovom kućicom aktivirate rekurziju kroz potfascikle. Ako je kućica popunjena, aktiviraju se klizač i brojčanik za izbor dubine rekurzije.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Kopiraj izvorne fajlove</guimenuitem
+></term>
+<listitem
+><para
+>Ovom kućicom zadaje se stvaranje fascikle u koju treba kopirati izvorne slike sadržane u galeriji.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Upotrebi fajl sa komentarima</guimenuitem
+></term>
+<listitem
+><para
+>Ova kućica poziva birač fajlova radi zadavanja fajl sa komentarima za galeriju. Fajl sa komentarima sadrži podnaslove slike.</para>
+<para
+>Format ovog fajla je:</para>
+<programlisting
+># ovo je komentar, redovi koji počinju sa '#' ignorišu se
+IMEFAJLA1:
+Opis
+
+IMEFAJLA2:
+Opis
+</programlisting>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+<variablelist id="thumbnails_dialog">
+<title
+>Sličice</title>
+<varlistentry>
+<term
+>U dijalogu sličica podešavaju se svojstva sličica u galeriji.</term>
+<listitem>
+  
+<screenshot>
+<screeninfo
+>Snime ekrana sa dijalogom sličica.</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="thumbnails.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Snimak ekrana.</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Format sličica:</guimenuitem
+></term>
+<listitem
+><para
+>Iz ovog padajućeg spiska birate format u kome će sličice biti zapisane.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Veličina sličica:</guimenuitem
+></term>
+<listitem
+><para
+>Ova opcija daje klizač i brojčanik za podešavanje veličine sličica u galeriji.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Različita dubina boja:</guimenuitem
+></term>
+<listitem
+><para
+>Ova kućica aktivira padajući spisak za promenu dubine boja za sličice, ako želite da bude različita od one za izvornu sliku.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>pretraživačka traka</term>
+<listitem
+><para
+>Daje tekstualno polje za lak pristup pretraživačima poput Googlea. Kliknite na ikonu levo od polja da otvorite meni iz kojeg možete birati različite pretraživače i podešavati njihove <ulink url="help:/kcontrol/ebrowsing/index.html"
+>veb prečice</ulink
+>. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>priključak za naredbe školjke</term>
+<listitem
+><para
+>Ovaj priključak omogućava izvršavanje naredbi školjke u tekućoj fascikli, uz prikaz izlaza u zasebnom prozoru. </para
+></listitem>
+</varlistentry>
+
+<!--FIXME
+imagerotation context menu Actions -> Convert to -> JPEG,PNG,GIF,TIFF 
+(rotation disabled) always installed
+
+Additional Download Manager from KGet
+-->
+</variablelist>
+
+</sect1>
+
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

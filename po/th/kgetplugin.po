@@ -1,0 +1,3726 @@
+# translation of kget.po to Thai
+# Copyright (C) 2003, 2005, 2006, 2007, 2008 Free Software Foundation, Inc.
+#
+# Thanomsub Noppaburana <donga_n@yahoo.com>, 2003, 2005.
+# Sahachart Anukulkitch <drrider@gmail.com>, 2006, 2007.
+# Thanomsub Noppaburana <donga.nb@gmail.com>, 2008, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: kget\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2010-03-04 21:36+0700\n"
+"Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
+"Language-Team: Thai <thai-l10n@googlegroups.com>\n"
+"Language: th\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: kget_plugin.cpp:56
+#, kde-format
+msgid "Download Manager"
+msgstr "จัดการการดาวน์โหลด"
+
+#: kget_plugin.cpp:62
+#, kde-format
+msgid "Show Drop Target"
+msgstr "แสดงไอคอน หย่อนเพื่อดาวน์โหลด"
+
+#: kget_plugin.cpp:69
+#, kde-format
+msgid "List All Links"
+msgstr "แสดงที่อยู่เชื่อมโยงทั้งหมด"
+
+#: kget_plugin.cpp:74
+#, kde-format
+msgid "List Selected Links"
+msgstr "แสดงที่อยู่เชื่อมโยงต่าง ๆ ที่เลือกไว้"
+
+#: kget_plugin.cpp:170
+#, fuzzy, kde-format
+#| msgid "Download failed, no working URLs were found."
+msgid "No downloadable links were found."
+msgstr "การดาวน์โหลดล้มเหลว ไม่พบที่อยู่ URL ที่ทำงานได้"
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No Links"
+msgstr "ไม่มีที่อยู่เชื่อมโยงใด ๆ"
+
+#. i18n: ectx: Menu (tools)
+#: konqueror_kget_browser_integration.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "เ&ครื่องมือ"
+
+#, fuzzy
+#~| msgid "Unable to continue: KGet cannot download using this protocol."
+#~ msgid "Unable to communicate with the KGet download manager."
+#~ msgstr "ไม่สามารถทำต่อไปได้: 'ช่วยดาวน์โหลด-K' ไม่สามารถดาวน์โหลดโดยใช้โพรโทคอลนี้ได้"
+
+#~ msgid "Plugins"
+#~ msgstr "ส่วนเสริมต่าง ๆ"
+
+#~ msgid "New Group"
+#~ msgstr "กลุ่มใหม่"
+
+#~ msgid "Xml"
+#~ msgstr "Xml"
+
+#~ msgid "Sqlite"
+#~ msgstr "Sqlite"
+
+#~ msgid "Nepomuk"
+#~ msgstr "Nepomuk"
+
+#~ msgid "Turn Off Computer"
+#~ msgstr "ปิดคอมพิวเตอร์"
+
+#~ msgid "Hibernate Computer"
+#~ msgstr "จำศีล"
+
+#~ msgid "Suspend Computer"
+#~ msgstr "พักเครื่อง"
+
+#~ msgid "Appearance"
+#~ msgstr "รูปลักษณ์"
+
+#~ msgid "Change appearance settings"
+#~ msgstr "เปลี่ยนการตั้งค่ารูปลักษณ์"
+
+#~ msgid "Groups"
+#~ msgstr "กลุ่มต่าง ๆ"
+
+#~ msgid "Manage the groups"
+#~ msgstr "จัดการกลุ่มต่าง ๆ"
+
+#~ msgid "Network"
+#~ msgstr "เครือข่าย"
+
+#~ msgid "Network and Downloads"
+#~ msgstr "เครือข่ายและการดาวน์โหลด"
+
+#~ msgid "Web Interface"
+#~ msgstr "ส่วนติดต่อแบบเว็บ"
+
+#~ msgid "Control KGet over a Network or the Internet"
+#~ msgstr "ควบคุม 'ช่วยดาวน์โหลด-K' ผ่านทางเครือข่ายหรืออินเทอร์เน็ต"
+
+#~ msgid "Verification"
+#~ msgstr "การตรวจสอบ"
+
+#, fuzzy
+#~| msgid "Integration"
+#~ msgctxt "integration of KGet with other applications"
+#~ msgid "Integration"
+#~ msgstr "การใช้งานร่วม"
+
+#~ msgctxt "Advanced Options"
+#~ msgid "Advanced"
+#~ msgstr "ขั้นสูง"
+
+#~ msgid "Advanced Options"
+#~ msgstr "ตัวเลือกขั้นสูง"
+
+#~ msgid "Transfer Plugins"
+#~ msgstr "ส่วนเสริมการถ่ายโอนต่าง ๆ"
+
+#, fuzzy
+#~| msgid "Excluded:"
+#~ msgid "Include"
+#~ msgstr "ไม่รวม:"
+
+#, fuzzy
+#~| msgid "Excluded:"
+#~ msgid "Exclude"
+#~ msgstr "ไม่รวม:"
+
+#, fuzzy
+#~| msgid "Regular expression:"
+#~ msgid "Regular expression"
+#~ msgstr "เงื่อนไขการค้นหา:"
+
+#~ msgid "KGet"
+#~ msgstr "ช่วยดาวน์โหลด-K"
+
+#~ msgid "1 Item"
+#~ msgid_plural "%1 Items"
+#~ msgstr[0] "%1 รายการ"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/วินาที"
+
+#~ msgctxt "start transfergroup downloads"
+#~ msgid "Start"
+#~ msgstr "เริ่ม"
+
+#~ msgctxt "stop transfergroup downloads"
+#~ msgid "Stop"
+#~ msgstr "หยุด"
+
+#~ msgid "KGet is downloading %1 file"
+#~ msgid_plural "KGet is downloading %1 files"
+#~ msgstr[0] "'ช่วยดาวน์โหลด-K' กำลังทำการดาวน์โหลด %1 แฟ้ม"
+
+#~ msgid "Error trying to get %1"
+#~ msgstr "เกิดข้อผิดพลาดในการรับข้อมูล %1"
+
+#~ msgid "Are you sure that you want to remove the group named %1?"
+#~ msgstr "คุณแน่ใจหรือว่าต้องการจะลบกลุ่มที่ชื่อ %1 ออกไป ?"
+
+#~ msgid "Remove Group"
+#~ msgstr "ลบกลุ่มออกไป"
+
+#~ msgid "Are you sure that you want to remove the following groups?"
+#~ msgstr "คุณแน่ใจหรือว่าต้องการจะลบกลุ่มต่อไปนี้ออกไป ?"
+
+#~ msgid "Remove groups"
+#~ msgstr "ลบกลุ่มต่าง ๆ ออกไป"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>The following file has finished downloading:</p><p style=\"font-size: "
+#~| "small;\">                      %1</p>"
+#~ msgid ""
+#~ "<p>The following transfer has been added to the download list:</p><p "
+#~ "style=\"font-size: small;\">\\%1</p>"
+#~ msgstr ""
+#~ "<p>แฟ้มต่อไปนี้ถูกดาวน์โหลดมาเสร็จสมบูรณ์แล้ว:</p><p style=\"font-size: small;"
+#~ "\">                      %1</p>"
+
+#, fuzzy
+#~| msgid "Downloaded"
+#~ msgid "Download added"
+#~ msgstr "ดาวน์โหลดแล้ว"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>The following file has finished downloading:</p><p style=\"font-size: "
+#~| "small;\">                      %1</p>"
+#~ msgid "<p>The following transfer has been added to the download list:</p>"
+#~ msgstr ""
+#~ "<p>แฟ้มต่อไปนี้ถูกดาวน์โหลดมาเสร็จสมบูรณ์แล้ว:</p><p style=\"font-size: small;"
+#~ "\">                      %1</p>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>The following file has finished downloading:</p><p style=\"font-size: "
+#~| "small;\">                      %1</p>"
+#~ msgid "<p>The following transfers have been added to the download list:</p>"
+#~ msgstr ""
+#~ "<p>แฟ้มต่อไปนี้ถูกดาวน์โหลดมาเสร็จสมบูรณ์แล้ว:</p><p style=\"font-size: small;"
+#~ "\">                      %1</p>"
+
+#~ msgid ""
+#~ "The file %1 already exists.\n"
+#~ "Overwrite?"
+#~ msgstr ""
+#~ "มีแฟ้ม %1 อยู่ก่อนแล้ว\n"
+#~ "ต้องการจะเขียนทับหรือไม่ ?"
+
+#~ msgid "Overwrite existing file?"
+#~ msgstr "ต้องการจะเขียนทับแฟ้มที่มีอยู่ก่อนหรือไม่ ?"
+
+#~ msgid "Unable to save to: %1"
+#~ msgstr "ไม่สามารถบันทึกลง: %1 ได้"
+
+#~ msgid "My Downloads"
+#~ msgstr "การดาวน์โหลดของฉัน"
+
+#~ msgid "Protocol unsupported"
+#~ msgstr "โพรโทคอลที่ยังไม่รองรับ"
+
+#~ msgid "New Download"
+#~ msgstr "การดาวน์โหลดใหม่"
+
+#~ msgid "Enter URL:"
+#~ msgstr "ป้อนที่อยู่ URL:"
+
+#~ msgid "Save As"
+#~ msgstr "บันทึกเป็น"
+
+#~ msgid ""
+#~ "Malformed URL:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "รูปแบบที่อยู่ URL ไม่ถูกต้อง:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Malformed URL, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "รูปแบบที่อยู่ URL ไม่ถูกต้อง, ไม่มีส่วนโพรโทคอล:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "You have already completed a download from the location: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Download it again?"
+#~ msgstr ""
+#~ "คุณได้ทำการดาวน์โหลดเสร็จสมบูรณ์แล้วจากตำแหน่งต่อไปนี้: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "ต้องการจะทำการดาวน์โหลดมันอีกครั้งหรือไม่ ?"
+
+#~ msgid "Download it again?"
+#~ msgstr "ดาวน์โหลดอีกครั้งหรือไม่ ?"
+
+#~ msgid ""
+#~ "You have a download in progress from the location: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Delete it and download again?"
+#~ msgstr ""
+#~ "คุณอยู่ระหว่างทำการดาวน์โหลดจากตำแหน่งต่อไปนี้อยู่แล้ว: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "ต้องการจะลบมันแล้วดาวน์โหลดมันอีกครั้งหรือไม่ ?"
+
+#~ msgid "Delete it and download again?"
+#~ msgstr "ลบมันและดาวน์โหลดอีกครั้งหรือไม่ ?"
+
+#~ msgid "Directory is not writable"
+#~ msgstr "ไม่สามารถเขียนไปยังไดเรกทอรีได้"
+
+#~ msgid ""
+#~ "You have already downloaded that file from another location.\n"
+#~ "\n"
+#~ "Download and delete the previous one?"
+#~ msgstr ""
+#~ "คุณได้ทำการดาวน์โหลดแฟ้มนั้นเสร็จสมบูรณ์แล้วจากตำแหน่งอื่น ๆ\n"
+#~ "\n"
+#~ "ต้องการจะลบตัวก่อนหน้านี้ แล้วทำการดาวน์โหลดหรือไม่ ?"
+
+#~ msgid "File already downloaded. Download anyway?"
+#~ msgstr "แฟ้มถูกดาวน์โหลดเรียบร้อยแล้ว จะทำการดาวน์โหลดหรือไม่ ?"
+
+#~ msgid "You are already downloading the same file"
+#~ msgstr "คุณได้ทำการดาวน์โหลดแฟ้มเดียวกัน"
+
+#~ msgid "File already exists"
+#~ msgstr "มีแฟ้มอยู่ก่อนแล้ว"
+
+#, fuzzy
+#~| msgid ""
+#~| "<html><p>Plugin loader could not load the plugin:<br/><i>%1</i></p></"
+#~| "html>"
+#~ msgid "Plugin loader could not load the plugin: %1."
+#~ msgstr ""
+#~ "<html><p>ตัวโหลดส่วนเสริม ไม่สามารถโหลดส่วนเสริมต่อไปนี้ได้:<br/><i>%1</i></p></"
+#~ "html>"
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is a directory."
+#~ msgstr ""
+#~ "ยังไม่ได้ทำการลบ\n"
+#~ "%1\n"
+#~ "เนื่องจากมันเป็นไดเรกทอรี"
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is not a local file."
+#~ msgstr ""
+#~ "ยังไม่ได้ทำการลบ\n"
+#~ "%1\n"
+#~ "เนื่องจากมันไม่ได้เป็นแฟ้มในระบบ"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>The following file has finished downloading:</p><p style=\"font-size: "
+#~| "small;\">                      %1</p>"
+#~ msgid ""
+#~ "<p>The following file has finished downloading:</p><p style=\"font-size: "
+#~ "small;\">\\%1</p>"
+#~ msgstr ""
+#~ "<p>แฟ้มต่อไปนี้ถูกดาวน์โหลดมาเสร็จสมบูรณ์แล้ว:</p><p style=\"font-size: small;"
+#~ "\">                      %1</p>"
+
+#~ msgid "Download completed"
+#~ msgstr "การดาวน์โหลดเสร็จสมบูรณ์"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>The following file has finished downloading:</p><p style=\"font-size: "
+#~| "small;\">                      %1</p>"
+#~ msgid ""
+#~ "<p>The following transfer has been started:</p><p style=\"font-size: "
+#~ "small;\">\\%1</p>"
+#~ msgstr ""
+#~ "<p>แฟ้มต่อไปนี้ถูกดาวน์โหลดมาเสร็จสมบูรณ์แล้ว:</p><p style=\"font-size: small;"
+#~ "\">                      %1</p>"
+
+#, fuzzy
+#~| msgid "Download speed"
+#~ msgid "Download started"
+#~ msgstr "ความเร็วการดาวน์โหลด"
+
+#~ msgid "Error"
+#~ msgstr "ข้อผิดพลาด"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>The following file has finished downloading:</p><p style=\"font-size: "
+#~| "small;\">                      %1</p>"
+#~ msgid ""
+#~ "<p>There has been an error in the following transfer:</p><p style=\"font-"
+#~ "size: small;\">\\%1</p><p>The error message is:</p><p style=\"font-size: "
+#~ "small;\">\\%2</p>"
+#~ msgstr ""
+#~ "<p>แฟ้มต่อไปนี้ถูกดาวน์โหลดมาเสร็จสมบูรณ์แล้ว:</p><p style=\"font-size: small;"
+#~ "\">                      %1</p>"
+
+#, fuzzy
+#~| msgid "Remove"
+#~ msgid "Resolve"
+#~ msgstr "เอาออก"
+
+#~ msgid "KGet is now closing, as all downloads have completed."
+#~ msgstr ""
+#~ "กำลังจะออกจาก 'ช่วยดาวน์โหลด-K' เดี๋ยวนี้ เนื่องจากการดาวน์โหลดทั้งหมดได้เสร็จสิ้นแล้ว"
+
+#~ msgid "The computer will now turn off, as all downloads have completed."
+#~ msgstr "กำลังจะปิดคอมพิวเตอร์เดี๋ยวนี้ เนื่องจากการดาวน์โหลดทั้งหมดได้เสร็จสิ้นแล้ว"
+
+#~ msgctxt "Shutting down computer"
+#~ msgid "Shutdown"
+#~ msgstr "ปิดเครื่อง"
+
+#~ msgid ""
+#~ "The computer will now suspend to disk, as all downloads have completed."
+#~ msgstr "กำลังจะปิดพักเครื่องเดี๋ยวนี้ เนื่องจากการดาวน์โหลดทั้งหมดได้เสร็จสิ้นแล้ว"
+
+#~ msgctxt "Hibernating computer"
+#~ msgid "Hibernating"
+#~ msgstr "กำลังเตรียมการจำศีลเครื่อง"
+
+#~ msgid ""
+#~ "The computer will now suspend to RAM, as all downloads have completed."
+#~ msgstr ""
+#~ "กำลังจะพักเครื่องโดยเก็บสถานะไว้ใน RAM เดี๋ยวนี้ เนื่องจากการดาวน์โหลดทั้งหมดได้เสร็จสิ้นแล้ว"
+
+#~ msgctxt "Suspending computer"
+#~ msgid "Suspending"
+#~ msgstr "กำลังพักเครื่อง"
+
+#~ msgctxt "abort the proposed action"
+#~ msgid "Abort"
+#~ msgstr "ยุติ"
+
+#~ msgid "Downloads completed"
+#~ msgstr "การดาวน์โหลดเสร็จสมบูรณ์แล้ว"
+
+#~ msgctxt "file in a filesystem"
+#~ msgid "File"
+#~ msgstr "แฟ้ม"
+
+#~ msgctxt "status of the download"
+#~ msgid "Status"
+#~ msgstr "สถานะ"
+
+#~ msgctxt "size of the download"
+#~ msgid "Size"
+#~ msgstr "ขนาด"
+
+#~ msgctxt "checksum of a file"
+#~ msgid "Checksum"
+#~ msgstr "ผลรวมการตรวจสอบ"
+
+#~ msgctxt "signature of a file"
+#~ msgid "Signature"
+#~ msgstr "ลายเซ็น"
+
+#~ msgid "KGet Transfer"
+#~ msgstr "รายการการถ่ายโอนของ 'ช่วยดาวน์โหลด-K'"
+
+#~ msgctxt "the type of the hash, e.g. MD5"
+#~ msgid "Type"
+#~ msgstr "ประเภท"
+
+#~ msgctxt "verification-result of a file, can be true/false"
+#~ msgid "Verified"
+#~ msgstr "ตรวจความถูกต้องแล้ว"
+
+#~ msgid ""
+#~ "The key to verify the signature is missing, do you want to download it?"
+#~ msgstr ""
+#~ "กุญแจสำหรับใช้ในการตรวจความถูกต้องของลายเซ็นหายไป "
+#~ "คุณต้องการจะทำการดาวน์โหลดกุญแจหรือไม่ ?"
+
+#~ msgid ""
+#~ "The signature could not be verified for %1. See transfer settings for "
+#~ "more information."
+#~ msgstr ""
+#~ "ไม่สามารถตรวจความถูกต้องของลายเซ็นสำหรับ %1 ได้ โปรดดูที่การตั้งค่าการถ่ายโอน "
+#~ "เพื่อดูรายละเอียดเพิ่มเติม"
+
+#~ msgid "Signature not verified"
+#~ msgstr "ลายเซ็นยังไม่ได้ตรวจความถูกต้อง"
+
+#~ msgid ""
+#~ "No server for downloading keys is specified in settings. Downloading "
+#~ "aborted."
+#~ msgstr ""
+#~ "ยังไม่มีการตั้งค่าระบุเซิร์ฟเวอร์เก็บกุญแจใด ๆ ที่จะใช้ในการดาวน์โหลดกุญแจ การดาวน์โหลดถูกยุติ"
+
+#~ msgid "No key server"
+#~ msgstr "ไม่มีเซิร์ฟเวอร์เก็บกุญแจ"
+
+#~ msgid ""
+#~ "No useful key server found, key not downloaded. Add more servers to the "
+#~ "settings or restart KGet and retry downloading."
+#~ msgstr ""
+#~ "ไม่พบเซิร์ฟเวอร์เก็บกุญแจที่ใช้งานได้ กุญแจจึงไม่ถูกดาวน์โหลด "
+#~ "โปรดทำการเพิ่มเซิร์ฟเวอร์ในส่วนการตั้งค่าก่อน หรือเริ่มการทำงานของ 'ช่วยดาวน์โหลด-K' "
+#~ "ใหม่อีกครั้ง จากนั้นลองทำการดาวน์โหลดใหม่"
+
+#~ msgctxt "not available"
+#~ msgid "n/a"
+#~ msgstr "ไม่มีข้อมูล"
+
+#~ msgid "Stalled"
+#~ msgstr "หยุดกลางคัน"
+
+#~ msgid "Downloading...."
+#~ msgstr "กำลังดาวน์โหลด..."
+
+#~ msgctxt "transfer state: delayed"
+#~ msgid "Delayed"
+#~ msgstr "ถูกหน่วงเวลาแล้ว"
+
+#~ msgctxt "transfer state: stopped"
+#~ msgid "Stopped"
+#~ msgstr "หยุดแล้ว"
+
+#~ msgctxt "transfer state: aborted"
+#~ msgid "Aborted"
+#~ msgstr "ยุติแล้ว"
+
+#~ msgctxt "transfer state: finished"
+#~ msgid "Finished"
+#~ msgstr "เสร็จสิ้น"
+
+#~ msgctxt "changing the destination of the file"
+#~ msgid "Changing destination"
+#~ msgstr "กำลังเปลี่ยนปลายทาง"
+
+#~ msgctxt "name of download"
+#~ msgid "Name"
+#~ msgstr "ชื่อ"
+
+#~ msgctxt "status of download"
+#~ msgid "Status"
+#~ msgstr "สถานะ"
+
+#~ msgctxt "size of download"
+#~ msgid "Size"
+#~ msgstr "ขนาด"
+
+#~ msgctxt "progress of download"
+#~ msgid "Progress"
+#~ msgstr "ความคืบหน้า"
+
+#~ msgctxt "speed of download"
+#~ msgid "Speed"
+#~ msgstr "ความเร็ว"
+
+#~ msgctxt "remaining time of download"
+#~ msgid "Remaining Time"
+#~ msgstr "เวลาที่เหลือ"
+
+#, fuzzy
+#~| msgid "Directory is not writable"
+#~ msgid "Download directory is not writeable."
+#~ msgstr "ไม่สามารถเขียนไปยังไดเรกทอรีได้"
+
+#, fuzzy
+#~| msgid "Download Destination:"
+#~ msgid "No download destination specified."
+#~ msgstr "ปลายทางการดาวน์โหลด:"
+
+#, fuzzy
+#~| msgid "Download Destination:"
+#~ msgid "Invalid download destination specified."
+#~ msgstr "ปลายทางการดาวน์โหลด:"
+
+#, fuzzy
+#~| msgid "Download Destination:"
+#~ msgid "Download destination is not writeable."
+#~ msgstr "ปลายทางการดาวน์โหลด:"
+
+#, fuzzy
+#~| msgid "not specified"
+#~ msgid "No URL specified."
+#~ msgstr "ยังไม่ระบุ"
+
+#~ msgid "Malformed URL."
+#~ msgstr "รูปแบบที่อยู่ URL ไม่ถูกต้อง"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL, protocol missing:\n"
+#~| "%1"
+#~ msgid "Malformed URL, protocol missing."
+#~ msgstr ""
+#~ "รูปแบบที่อยู่ URL ไม่ถูกต้อง, ไม่มีส่วนโพรโทคอล:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL, protocol missing:\n"
+#~| "%1"
+#~ msgid "Malformed URL, host missing."
+#~ msgstr ""
+#~ "รูปแบบที่อยู่ URL ไม่ถูกต้อง, ไม่มีส่วนโพรโทคอล:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Directory is not writable"
+#~ msgid ""
+#~ "Download directory is not writeable:\n"
+#~ "%1"
+#~ msgstr "ไม่สามารถเขียนไปยังไดเรกทอรีได้"
+
+#, fuzzy
+#~| msgid "Download Destination:"
+#~ msgid ""
+#~ "Invalid download destination specified:\n"
+#~ "%1"
+#~ msgstr "ปลายทางการดาวน์โหลด:"
+
+#, fuzzy
+#~| msgid "Download Destination:"
+#~ msgid ""
+#~ "Download destination is not writeable:\n"
+#~ "%1"
+#~ msgstr "ปลายทางการดาวน์โหลด:"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL, protocol missing:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URL, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "รูปแบบที่อยู่ URL ไม่ถูกต้อง, ไม่มีส่วนโพรโทคอล:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "The file %1 already exists.\n"
+#~| "Overwrite?"
+#~ msgid "File already exists. Overwrite it?"
+#~ msgstr ""
+#~ "มีแฟ้ม %1 อยู่ก่อนแล้ว\n"
+#~ "ต้องการจะเขียนทับหรือไม่ ?"
+
+#, fuzzy
+#~| msgid ""
+#~| "You have already downloaded that file from another location.\n"
+#~| "\n"
+#~| "Download and delete the previous one?"
+#~ msgid ""
+#~ "You have already downloaded that file from another location.\n"
+#~ "Download and delete the previous one?"
+#~ msgstr ""
+#~ "คุณได้ทำการดาวน์โหลดแฟ้มนั้นเสร็จสมบูรณ์แล้วจากตำแหน่งอื่น ๆ\n"
+#~ "\n"
+#~ "ต้องการจะลบตัวก่อนหน้านี้ แล้วทำการดาวน์โหลดหรือไม่ ?"
+
+#, fuzzy
+#~| msgid ""
+#~| "You have already downloaded that file from another location.\n"
+#~| "\n"
+#~| "Download and delete the previous one?"
+#~ msgid ""
+#~ "You are already downloading that file from another location.\n"
+#~ "Download and delete the previous one?"
+#~ msgstr ""
+#~ "คุณได้ทำการดาวน์โหลดแฟ้มนั้นเสร็จสมบูรณ์แล้วจากตำแหน่งอื่น ๆ\n"
+#~ "\n"
+#~ "ต้องการจะลบตัวก่อนหน้านี้ แล้วทำการดาวน์โหลดหรือไม่ ?"
+
+#, fuzzy
+#~| msgid ""
+#~| "You have already completed a download from the location: \n"
+#~| "\n"
+#~| "%1\n"
+#~| "\n"
+#~| "Download it again?"
+#~ msgid ""
+#~ "You have already completed a download from that location. Download it "
+#~ "again?"
+#~ msgstr ""
+#~ "คุณได้ทำการดาวน์โหลดเสร็จสมบูรณ์แล้วจากตำแหน่งต่อไปนี้: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "ต้องการจะทำการดาวน์โหลดมันอีกครั้งหรือไม่ ?"
+
+#, fuzzy
+#~| msgid ""
+#~| "You have a download in progress from the location: \n"
+#~| "\n"
+#~| "%1\n"
+#~| "\n"
+#~| "Delete it and download again?"
+#~ msgid ""
+#~ "You have a download in progress from that location.\n"
+#~ "Delete it and download again?"
+#~ msgstr ""
+#~ "คุณอยู่ระหว่างทำการดาวน์โหลดจากตำแหน่งต่อไปนี้อยู่แล้ว: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "ต้องการจะลบมันแล้วดาวน์โหลดมันอีกครั้งหรือไม่ ?"
+
+#, fuzzy
+#~| msgid ""
+#~| "The file %1 already exists.\n"
+#~| "Overwrite?"
+#~ msgid ""
+#~ "File already exists:\n"
+#~ "%1\n"
+#~ "Overwrite it?"
+#~ msgstr ""
+#~ "มีแฟ้ม %1 อยู่ก่อนแล้ว\n"
+#~ "ต้องการจะเขียนทับหรือไม่ ?"
+
+#, fuzzy
+#~| msgid "Malformed URL."
+#~ msgid "Malformed URLs."
+#~ msgstr "รูปแบบที่อยู่ URL ไม่ถูกต้อง"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL, protocol missing:\n"
+#~| "%1"
+#~ msgid "Malformed URLs, protocol missing."
+#~ msgstr ""
+#~ "รูปแบบที่อยู่ URL ไม่ถูกต้อง, ไม่มีส่วนโพรโทคอล:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL, protocol missing:\n"
+#~| "%1"
+#~ msgid "Malformed URLs, host missing."
+#~ msgstr ""
+#~ "รูปแบบที่อยู่ URL ไม่ถูกต้อง, ไม่มีส่วนโพรโทคอล:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "รูปแบบที่อยู่ URL ไม่ถูกต้อง:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL, protocol missing:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "รูปแบบที่อยู่ URL ไม่ถูกต้อง, ไม่มีส่วนโพรโทคอล:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL, protocol missing:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "รูปแบบที่อยู่ URL ไม่ถูกต้อง, ไม่มีส่วนโพรโทคอล:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Directory is not writable"
+#~ msgid ""
+#~ "Destinations are not writable:\n"
+#~ "%1"
+#~ msgstr "ไม่สามารถเขียนไปยังไดเรกทอรีได้"
+
+#, fuzzy
+#~| msgid ""
+#~| "The file %1 already exists.\n"
+#~| "Overwrite?"
+#~ msgid "Files exist already. Overwrite them?"
+#~ msgstr ""
+#~ "มีแฟ้ม %1 อยู่ก่อนแล้ว\n"
+#~ "ต้องการจะเขียนทับหรือไม่ ?"
+
+#, fuzzy
+#~| msgid ""
+#~| "You have already completed a download from the location: \n"
+#~| "\n"
+#~| "%1\n"
+#~| "\n"
+#~| "Download it again?"
+#~ msgid ""
+#~ "You have already completed downloads at those destinations. Download them "
+#~ "again?"
+#~ msgstr ""
+#~ "คุณได้ทำการดาวน์โหลดเสร็จสมบูรณ์แล้วจากตำแหน่งต่อไปนี้: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "ต้องการจะทำการดาวน์โหลดมันอีกครั้งหรือไม่ ?"
+
+#, fuzzy
+#~| msgid ""
+#~| "You have a download in progress from the location: \n"
+#~| "\n"
+#~| "%1\n"
+#~| "\n"
+#~| "Delete it and download again?"
+#~ msgid ""
+#~ "You have downloads in progress to these destinations.\n"
+#~ "Delete them and download again?"
+#~ msgstr ""
+#~ "คุณอยู่ระหว่างทำการดาวน์โหลดจากตำแหน่งต่อไปนี้อยู่แล้ว: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "ต้องการจะลบมันแล้วดาวน์โหลดมันอีกครั้งหรือไม่ ?"
+
+#, fuzzy
+#~| msgid ""
+#~| "You have already completed a download from the location: \n"
+#~| "\n"
+#~| "%1\n"
+#~| "\n"
+#~| "Download it again?"
+#~ msgid ""
+#~ "You have already completed downloads from these locations. Download them "
+#~ "again?"
+#~ msgstr ""
+#~ "คุณได้ทำการดาวน์โหลดเสร็จสมบูรณ์แล้วจากตำแหน่งต่อไปนี้: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "ต้องการจะทำการดาวน์โหลดมันอีกครั้งหรือไม่ ?"
+
+#, fuzzy
+#~| msgid ""
+#~| "You have a download in progress from the location: \n"
+#~| "\n"
+#~| "%1\n"
+#~| "\n"
+#~| "Delete it and download again?"
+#~ msgid ""
+#~ "You have downloads in progress from these locations.\n"
+#~ "Delete them and download again?"
+#~ msgstr ""
+#~ "คุณอยู่ระหว่างทำการดาวน์โหลดจากตำแหน่งต่อไปนี้อยู่แล้ว: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "ต้องการจะลบมันแล้วดาวน์โหลดมันอีกครั้งหรือไม่ ?"
+
+#, fuzzy
+#~| msgid ""
+#~| "You have already completed a download from the location: \n"
+#~| "\n"
+#~| "%1\n"
+#~| "\n"
+#~| "Download it again?"
+#~ msgid ""
+#~ "You have already completed downloads at those destinations: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ " Download them again?"
+#~ msgstr ""
+#~ "คุณได้ทำการดาวน์โหลดเสร็จสมบูรณ์แล้วจากตำแหน่งต่อไปนี้: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "ต้องการจะทำการดาวน์โหลดมันอีกครั้งหรือไม่ ?"
+
+#, fuzzy
+#~| msgid ""
+#~| "You have a download in progress from the location: \n"
+#~| "\n"
+#~| "%1\n"
+#~| "\n"
+#~| "Delete it and download again?"
+#~ msgid ""
+#~ "You have downloads in progress to these destinations: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Delete them and download again?"
+#~ msgstr ""
+#~ "คุณอยู่ระหว่างทำการดาวน์โหลดจากตำแหน่งต่อไปนี้อยู่แล้ว: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "ต้องการจะลบมันแล้วดาวน์โหลดมันอีกครั้งหรือไม่ ?"
+
+#, fuzzy
+#~| msgid ""
+#~| "You have already completed a download from the location: \n"
+#~| "\n"
+#~| "%1\n"
+#~| "\n"
+#~| "Download it again?"
+#~ msgid ""
+#~ "You have already completed downloads from these locations: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Download them again?"
+#~ msgstr ""
+#~ "คุณได้ทำการดาวน์โหลดเสร็จสมบูรณ์แล้วจากตำแหน่งต่อไปนี้: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "ต้องการจะทำการดาวน์โหลดมันอีกครั้งหรือไม่ ?"
+
+#, fuzzy
+#~| msgid ""
+#~| "You have a download in progress from the location: \n"
+#~| "\n"
+#~| "%1\n"
+#~| "\n"
+#~| "Delete it and download again?"
+#~ msgid ""
+#~ "You have downloads in progress from these locations: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Delete them and download again?"
+#~ msgstr ""
+#~ "คุณอยู่ระหว่างทำการดาวน์โหลดจากตำแหน่งต่อไปนี้อยู่แล้ว: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "ต้องการจะลบมันแล้วดาวน์โหลดมันอีกครั้งหรือไม่ ?"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Question"
+#~ msgstr "คำอธิบาย"
+
+#, fuzzy
+#~| msgid "Deselect all"
+#~ msgctxt "on a question"
+#~ msgid "Yes all"
+#~ msgstr "ยกเลิกการเลือกทั้งหมด"
+
+#, fuzzy
+#~| msgctxt "Download normally(not as first or last)"
+#~| msgid "Normal"
+#~ msgctxt "on a question"
+#~ msgid "No all"
+#~ msgstr "ปกติ"
+
+#~ msgid "Insert Engine"
+#~ msgstr "แทรกบริการค้นหา"
+
+#~ msgid "Engine name:"
+#~ msgstr "ชื่อของบริการค้นหา:"
+
+#~ msgid "URL:"
+#~ msgstr "ที่อยู่ URL:"
+
+#~ msgid "The download (%1) could not be verified. Do you want to repair it?"
+#~ msgstr ""
+#~ "ไม่สามารถตรวจความถูกต้องของการดาวน์โหลด (%1) ได้ คุณต้องการจะซ่อมแซมมันหรือไม่ ?"
+
+#~ msgid ""
+#~ "The download (%1) could not be verified. Do you want to redownload it?"
+#~ msgstr ""
+#~ "ไม่สามารถตรวจความถูกต้องของการดาวน์โหลด (%1) ได้ คุณต้องการจะดาวน์โหลดมันใหม่หรือไม่ ?"
+
+#~ msgid "Verification failed."
+#~ msgstr "การตรวจความถูกต้องล้มเหลว"
+
+#~ msgctxt "transfer state: connecting"
+#~ msgid "Connecting...."
+#~ msgstr "กำลังเชื่อมต่อ..."
+
+#~ msgid "Add New Script"
+#~ msgstr "เพิ่มสคริปต์ใหม่"
+
+#~ msgid "Edit Script"
+#~ msgstr "แก้ไขสคริปต์"
+
+#~ msgid "Set Script File"
+#~ msgstr "ตั้งค่าแฟ้มสคริปต์"
+
+#~ msgctxt "Configure script"
+#~ msgid "Configure script"
+#~ msgstr "ปรับแต่งสคริปต์"
+
+#~ msgctxt "Transfer state: processing script"
+#~ msgid "Processing script...."
+#~ msgstr "กำลังประมวลผลสคริปต์...."
+
+#~ msgctxt "Transfer State: Finished"
+#~ msgid "Finished"
+#~ msgstr "เสร็จสิ้น"
+
+#~ msgctxt "Transfer State: Aborted"
+#~ msgid "Aborted"
+#~ msgstr "ยุติแล้ว"
+
+#, fuzzy
+#~| msgid "Downloading Torrent-File.."
+#~ msgid "Downloading Metalink File...."
+#~ msgstr "กำลังดาวน์โหลดแฟ้มทอร์เรนต์..."
+
+#, fuzzy
+#~| msgid ""
+#~| "The key to verify the signature is missing, do you want to download it?"
+#~ msgid ""
+#~ "A newer version of this Metalink might exist, do you want to download it?"
+#~ msgstr ""
+#~ "กุญแจสำหรับใช้ในการตรวจความถูกต้องของลายเซ็นหายไป "
+#~ "คุณต้องการจะทำการดาวน์โหลดกุญแจหรือไม่ ?"
+
+#, fuzzy
+#~| msgctxt "redownload selected transfer item"
+#~| msgid "Redownload Selected"
+#~ msgid "Redownload Metalink"
+#~ msgstr "ดาวน์โหลดที่เลือกใหม่อีกครั้ง"
+
+#~ msgid "Download failed, no working URLs were found."
+#~ msgstr "การดาวน์โหลดล้มเหลว ไม่พบที่อยู่ URL ที่ทำงานได้"
+
+#~ msgid ""
+#~ "The download could not be verified, do you want to repair (if repairing "
+#~ "does not work the download would be restarted) it?"
+#~ msgstr ""
+#~ "ไม่สามารถตรวจความถูกต้องของการดาวน์โหลดได้ คุณต้องการจะซ่อมแซมมันหรือไม่ "
+#~ "(หากการซ่อมแซมยังไม่ได้ผล จะทำการดาวน์โหลดใหม่อีกครั้ง) ?"
+
+#~ msgid "File Selection"
+#~ msgstr "การเลือกแฟ้ม"
+
+#~ msgid "Add item"
+#~ msgstr "เพิ่มรายการ"
+
+#~ msgid "%1 would become %2"
+#~ msgstr "%1 จะกลายเป็น %2"
+
+#~ msgctxt "the string that is used to modify an url"
+#~ msgid "Change string"
+#~ msgstr "เปลี่ยนข้อความ"
+
+#~ msgctxt "the mode defines how the url should be changed"
+#~ msgid "Change mode"
+#~ msgstr "เปลี่ยนโหมด"
+
+#~ msgctxt "the type of the checksum e.g. md5"
+#~ msgid "Checksum type"
+#~ msgstr "ประเภทของผลรวมการตรวจสอบ"
+
+#~ msgid "Append"
+#~ msgstr "เขียนต่อท้าย"
+
+#~ msgid "Replace file"
+#~ msgstr "เขียนทับแฟ้ม"
+
+#~ msgid "Replace file-ending"
+#~ msgstr "เขียนทับส่วนท้ายแฟ้ม"
+
+#~ msgctxt "transfer state: running"
+#~ msgid "Running...."
+#~ msgstr "กำลังทำงานอยู่..."
+
+#~ msgctxt "Choked"
+#~ msgid "Yes"
+#~ msgstr "ใช่"
+
+#~ msgctxt "Not choked"
+#~ msgid "No"
+#~ msgstr "ไม่ใช่"
+
+#~ msgctxt "Snubbed"
+#~ msgid "Yes"
+#~ msgstr "ใช่"
+
+#~ msgctxt "Not snubbed"
+#~ msgid "No"
+#~ msgstr "ไม่ใช่"
+
+#~ msgctxt "Interested"
+#~ msgid "Yes"
+#~ msgstr "ใช่"
+
+#~ msgctxt "Not Interested"
+#~ msgid "No"
+#~ msgstr "ไม่ใช่"
+
+#~ msgctxt "Interesting"
+#~ msgid "Yes"
+#~ msgstr "ใช่"
+
+#~ msgctxt "Not Interesting"
+#~ msgid "No"
+#~ msgstr "ไม่ใช่"
+
+#~ msgid "IP Address"
+#~ msgstr "ที่อยู่ไอพี"
+
+#~ msgid "Client"
+#~ msgstr "ไคลเอนต์"
+
+#~ msgid "Down Speed"
+#~ msgstr "ความเร็วดาวน์โหลด"
+
+#~ msgid "Up Speed"
+#~ msgstr "ความเร็วอัปโหลด"
+
+#~ msgid "Availability"
+#~ msgstr "ที่มีอยู่"
+
+#~ msgid "Score"
+#~ msgstr "คะแนน"
+
+#~ msgid "Upload Slot"
+#~ msgstr "ช่องอัปโหลด"
+
+#~ msgid "Requests"
+#~ msgstr "การร้องขอ"
+
+#~ msgid "Downloaded"
+#~ msgstr "ดาวน์โหลดแล้ว"
+
+#~ msgid "Uploaded"
+#~ msgstr "อัปโหลดแล้ว"
+
+#, fuzzy
+#~| msgid "Integration"
+#~ msgid "Interesting"
+#~ msgstr "การใช้งานร่วม"
+
+#~ msgid "IP address of the peer"
+#~ msgstr "เลขไอพีของจุดเชื่อมต่อตรง"
+
+#~ msgid "Which client the peer is using"
+#~ msgstr "โปรแกรมไคลเอนต์ที่จุดเชื่อมต่อตรงใช้งานอยู่"
+
+#~ msgid "Download speed"
+#~ msgstr "ความเร็วการดาวน์โหลด"
+
+#~ msgid "Upload speed"
+#~ msgstr "ความเร็วการอัปโหลด"
+
+#~ msgid "How much of the torrent's data the peer has"
+#~ msgstr "จุดเชื่อมต่อตรงมีข้อมูลของทอร์เรนท์อยู่เท่าไร"
+
+#~ msgid "The number of download and upload requests"
+#~ msgstr "จำนวนของการดาวน์โหลดและการอัปโหลดที่ร้องขอ"
+
+#~ msgid "How much data we have downloaded from this peer"
+#~ msgstr "จำนวนของข้อมูลที่เราได้ดาวน์โหลดมาจากจุดเชื่อมต่อตรงนี้มีจำนวนเท่าไร"
+
+#~ msgid "How much data we have uploaded to this peer"
+#~ msgstr "จำนวนของข้อมูลที่เราได้อัปโหลดไปให้จุดเชื่อมต่อตรงนี้มีจำนวนเท่าไร"
+
+#~ msgid "Chunk"
+#~ msgstr "ท่อนข้อมูล"
+
+#~ msgid "Progress"
+#~ msgstr "ความคืบหน้า"
+
+#~ msgid "Peer"
+#~ msgstr "เชื่อมต่อตรง"
+
+#~ msgid "Files"
+#~ msgstr "แฟ้มต่าง ๆ"
+
+#~ msgid "Number of the chunk"
+#~ msgstr "จำนวนท่อนข้อมูล"
+
+#~ msgid "Download progress of the chunk"
+#~ msgstr "ความคืบหน้าการดาวน์โหลดท่อนข้อมูล"
+
+#~ msgid "Which peer we are downloading it from"
+#~ msgstr "จุดเชื่อมต่อตรงจุดใดที่เราจะใช้ทำการดาวน์โหลดมัน"
+
+#~ msgid "Download speed of the chunk"
+#~ msgstr "ความเร็วของการดาวน์โหลดท่อนข้อมูล"
+
+#~ msgid "Which files the chunk is located in"
+#~ msgstr "แฟ้มใดที่ท่อนข้อมูลอยู่ภายใน"
+
+#~ msgid "URL"
+#~ msgstr "ที่อยู่ URL"
+
+#~ msgid "Speed"
+#~ msgstr "ความเร็ว"
+
+#~ msgid "Status"
+#~ msgstr "สถานะ"
+
+#~ msgid "Kick Peer"
+#~ msgstr "เตะการเชื่อมต่อตรง"
+
+#~ msgid "Ban Peer"
+#~ msgstr "แบนการเชื่อมต่อตรง"
+
+#~ msgid ""
+#~ "Cannot add the webseed %1, it is already part of the list of webseeds."
+#~ msgstr ""
+#~ "ไม่สามารถเพิ่มเว็บปล่อยข้อมูล %1 ได้ เนื่องจากมันอยู่เป็นส่วนหนึ่งของรายการเว็บซีดอยู่แล้ว"
+
+#~ msgid "Cannot remove webseed %1, it is part of the torrent."
+#~ msgstr "ไม่สามารถลบเว็บปล่อยข้อมูล %1 ออกได้ เนื่องจากมันอยู่เป็นส่วนหนึ่งของทอร์เรนต์"
+
+#~ msgid "File"
+#~ msgstr "แฟ้ม"
+
+#~ msgid "Size"
+#~ msgstr "ขนาด"
+
+#~ msgid "Advanced Details for %1"
+#~ msgstr "รายละเอียดเพิ่มเติมของ %1"
+
+#~ msgid "Trackers"
+#~ msgstr "แทร็กเกอร์"
+
+#~ msgid "Webseeds"
+#~ msgstr "เว็บปล่อยข้อมูล"
+
+#~ msgctxt "Open file"
+#~ msgid "Open"
+#~ msgstr "เปิด"
+
+#~ msgid "Download first"
+#~ msgstr "ดาวน์โหลดรายการแรก"
+
+#~ msgid "Download normally"
+#~ msgstr "ดาวน์โหลดปกติ"
+
+#~ msgid "Download last"
+#~ msgstr "ดาวน์โหลดรายการสุดท้าย"
+
+#~ msgid "Do Not Download"
+#~ msgstr "ไม่ต้องดาวน์โหลด"
+
+#~ msgid "Delete File(s)"
+#~ msgstr "ลบแฟ้ม"
+
+#~ msgid "Move File"
+#~ msgstr "ย้ายแฟ้ม"
+
+#~ msgid "Collapse Folder Tree"
+#~ msgstr "ยุบผังต้นไม้ของโฟลเดอร์"
+
+#~ msgid "Expand Folder Tree"
+#~ msgstr "ขยายผังต้นไม้ของโฟลเดอร์"
+
+#~ msgid ""
+#~ "You will lose all data in this file, are you sure you want to do this?"
+#~ msgid_plural ""
+#~ "You will lose all data in these files, are you sure you want to do this?"
+#~ msgstr[0] "คุณจะสูญเสียข้อมูลทั้งหมดที่อยู่ในแฟ้มเหล่านี้ แน่ใจหรือว่าต้องการจะทำเช่นนี้ ?"
+
+#~ msgid "Select a directory to move the data to."
+#~ msgstr "เลือกไดเรกทอรีที่จะย้ายข้อมูลไปเก็บไว้"
+
+#~ msgid "Url"
+#~ msgstr "ที่อยู่ Url"
+
+#~ msgid "Seeders"
+#~ msgstr "ผู้ปล่อยข้อมูล"
+
+#~ msgid "Leechers"
+#~ msgstr "ผู้ดึงข้อมูล"
+
+#~ msgid "Times Downloaded"
+#~ msgstr "เวลาที่ใช้ดาวน์โหลดมาแล้ว"
+
+#~ msgid "Next Update"
+#~ msgstr "ปรับปรุงครั้งต่อไป"
+
+#~ msgid "Priority"
+#~ msgstr "ความสำคัญ"
+
+#~ msgid "Preview"
+#~ msgstr "ตัวอย่าง"
+
+#~ msgctxt "Percent of File Downloaded"
+#~ msgid "% Complete"
+#~ msgstr "คืบหน้า (%)"
+
+#~ msgctxt "Download first"
+#~ msgid "First"
+#~ msgstr "รายการแรก"
+
+#~ msgctxt "Download last"
+#~ msgid "Last"
+#~ msgstr "รายการสุดท้าย"
+
+#~ msgctxt "Download normally(not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "ปกติ"
+
+#~ msgctxt "preview available"
+#~ msgid "Available"
+#~ msgstr "มีอยู่"
+
+#~ msgctxt "Preview pending"
+#~ msgid "Pending"
+#~ msgstr "ยังไม่เสร็จ"
+
+#~ msgctxt "No preview available"
+#~ msgid "No"
+#~ msgstr "ไม่"
+
+#~ msgid "%1 %"
+#~ msgstr "%1 %"
+
+#~ msgctxt "Preview available"
+#~ msgid "Available"
+#~ msgstr "ที่มีอยู่"
+
+#~ msgid "Add Tracker"
+#~ msgstr "เพิ่มแทร็กเกอร์"
+
+#~ msgid "Enter the URL of the tracker:"
+#~ msgstr "ป้อนที่อยู่ URL ของแทร็กเกอร์:"
+
+#~ msgid "There already is a tracker named <b>%1</b>."
+#~ msgstr "มีแทร็กเกอร์ที่ชื่อ <b>%1</b> อยู่แล้ว"
+
+#~ msgctxt "Download Normal (not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "รายการปกติ"
+
+#~ msgid "&Advanced Details"
+#~ msgstr "รายละเอียดเ&พิ่มเติม"
+
+#~ msgid "&Scan Files"
+#~ msgstr "&สแกนแฟ้มต่าง ๆ"
+
+#~ msgid "Downloading Torrent File...."
+#~ msgstr "กำลังดาวน์โหลดแฟ้มทอร์เรนต์..."
+
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading...."
+#~ msgstr "กำลังดาวน์โหลด..."
+
+#~ msgid "Cannot add a tracker to a private torrent."
+#~ msgstr "ไม่สามารถเพิ่มแทร็กเกอร์ไปยังทอร์เรนต์ส่วนตัวได้"
+
+#, fuzzy
+#~| msgid "The directory %1 does not exist"
+#~ msgid "Torrent file does not exist"
+#~ msgstr "ยังไม่มีไดเรกทอรี %1 อยู่"
+
+#~ msgid "Analyzing torrent...."
+#~ msgstr "กำลังวิเคราะห์แฟ้มทอร์เรนต์..."
+
+#~ msgctxt "Transfer status: seeding"
+#~ msgid "Seeding...."
+#~ msgstr "กำลังปล่อยข้อมูล.."
+
+#~ msgid "Error scanning data: %1"
+#~ msgstr "ผิดพลาดในการสแกนข้อมูล: %1"
+
+#~ msgid "Scanning data of <b>%1</b> :"
+#~ msgstr "กำลังสแกนข้อมูลของ <b>%1</b> :"
+
+#~ msgid "Select a default torrent folder"
+#~ msgstr "เลือกโฟลเดอร์ทอร์เรนต์ปริยาย"
+
+#~ msgid "Select a default temporary folder"
+#~ msgstr "เลือกโฟลเดอร์ทอร์เรนต์ชั่วคราวปริยาย"
+
+#~ msgid "Import dropped files"
+#~ msgstr "นำเข้าแฟ้มที่ถูกหย่อนลงมา"
+
+#~ msgctxt "comma, to seperate members of a list"
+#~ msgid ","
+#~ msgstr ","
+
+#~ msgid "File Properties"
+#~ msgstr "คุณสมบัติของแฟ้ม"
+
+#~ msgid "Enter a filename."
+#~ msgstr "ป้อนชื่อแฟ้ม"
+
+#~ msgid "The filename exists already, choose a different one."
+#~ msgstr "มีแฟ้มที่มีชื่อนี้อยู่ก่อนแล้ว โปรดเลือกเป็นชื่ออื่น"
+
+#~ msgid "Enter at least one URL."
+#~ msgstr "ป้อนที่อยู่ URL อย่างน้อยหนึ่งค่า"
+
+#~ msgid ""
+#~ "Required data entered; also consider entering additional information."
+#~ msgstr "ต้องการการป้อนข้อมูล เช่นเดียวกันกับการป้อนข้อมูลรายละเอียดเพิ่มเติม"
+
+#~ msgid "Unable to load: %1"
+#~ msgstr "ไม่สามารถโหลด: %1 ได้"
+
+#, fuzzy
+#~| msgid "Open file"
+#~ msgid "Metalink Version 4.0 file (*.meta4)"
+#~ msgstr "เปิดแฟ้ม"
+
+#, fuzzy
+#~| msgid "Open file"
+#~ msgid "Metalink Version 3.0 file (*.metalink)"
+#~ msgstr "เปิดแฟ้ม"
+
+#~ msgid "Define the saving location."
+#~ msgstr "กำหนดตำแหน่งที่จะใช้ในการบันทึ"
+
+#~ msgctxt "file as in file on hard drive"
+#~ msgid "Enter at least one file."
+#~ msgstr "ป้อนค่าอย่างน้อยหนึ่งแฟ้ม"
+
+#~ msgid "Import Links"
+#~ msgstr "นำเข้าที่อยู่เชื่อมโยงต่าง ๆ"
+
+#~ msgctxt "Download the items which have been selected"
+#~ msgid "&Download Checked"
+#~ msgstr "&ดาวน์โหลดตัวที่กาเลือกไว้"
+
+#~ msgid "Auxiliary header"
+#~ msgstr "ส่วนหัวเสริม"
+
+#~ msgid "File Name"
+#~ msgstr "ชื่อแฟ้ม"
+
+#~ msgid "Description"
+#~ msgstr "คำอธิบาย"
+
+#~ msgctxt "list header: type of file"
+#~ msgid "File Type"
+#~ msgstr "ประเภทแฟ้ม"
+
+#~ msgid "Location (URL)"
+#~ msgstr "ที่อยู่ (URL)"
+
+#~ msgid "Links in: %1 - KGet"
+#~ msgstr "ที่อยู่เชื่อมโยงใน: %1 :: ช่วยดาวน์โหลด-K"
+
+#~ msgid "&Select All Filtered"
+#~ msgstr "เลือก&ที่ถูกกรองทั้งหมด"
+
+#~ msgid "&Select All"
+#~ msgstr "เลือก&ทั้งหมด"
+
+#~ msgid "D&eselect All Filtered"
+#~ msgstr "ยกเ&ลิกการเลือกที่ถูกกรองทั้งหมด"
+
+#~ msgid "D&eselect All"
+#~ msgstr "ยกเ&ลิกการเลือกทั้งหมด"
+
+#~ msgid "not specified"
+#~ msgstr "ยังไม่ระบุ"
+
+#~ msgctxt "Mirror as in server, in url"
+#~ msgid "Mirror"
+#~ msgstr "มิเรอร์"
+
+#~ msgctxt "The priority of the mirror"
+#~ msgid "Priority"
+#~ msgstr "ลำดับความสำคัญ"
+
+#~ msgctxt "Number of paralell connections to the mirror"
+#~ msgid "Connections"
+#~ msgstr "การเชื่อมต่อต่าง ๆ"
+
+#~ msgctxt "Location = country"
+#~ msgid "Location"
+#~ msgstr "ตำแหน่ง"
+
+#~ msgid "Add mirror"
+#~ msgstr "เพิ่มมิเรอร์"
+
+#~ msgctxt "Adds the item and reopens the dialog to add a further item"
+#~ msgid "Add more"
+#~ msgstr "เพิ่มมากกว่า"
+
+#~ msgid "%1 has been successfully added."
+#~ msgstr "ทำการเพิ่ม %1 เรียบร้อยแล้ว"
+
+#~ msgid "Modify the used mirrors."
+#~ msgstr "แก้ไขมิเรอร์ต่าง ๆ ที่ใช้งาน"
+
+#~ msgid "Download again"
+#~ msgstr "ดาวน์โหลดอีกครั้ง"
+
+#~ msgctxt "Delete selected history-item"
+#~ msgid "Delete selected"
+#~ msgstr "ลบรายการที่เลือกไว้"
+
+#~ msgid "Open file"
+#~ msgstr "เปิดแฟ้ม"
+
+#~ msgid "Today"
+#~ msgstr "วันนี้"
+
+#~ msgid "Last week"
+#~ msgstr "อาทิตย์ก่อน"
+
+#~ msgid "Last Month"
+#~ msgstr "เดือนก่อน"
+
+#~ msgid "A long time ago"
+#~ msgstr "ก่อนหน้านั้น"
+
+#~ msgid "Under 10MiB"
+#~ msgstr "น้อยกว่า 10 เมกะไบต์"
+
+#~ msgid "Between 10MiB and 50MiB"
+#~ msgstr "ระหว่าง 10 เมกะไบต์ถึง 50 เมกะไบต์"
+
+#~ msgid "Between 50MiB and 100MiB"
+#~ msgstr "ระหว่าง 50 เมกะไบต์ - 100 เมกะไบต์"
+
+#~ msgid "More than 100MiB"
+#~ msgstr "มากกว่า 100 เมกะไบต์"
+
+#~ msgid "Transfer History"
+#~ msgstr "ประวัติการถ่ายโอน"
+
+#~ msgid "&Open File"
+#~ msgstr "เ&ปิดแฟ้ม"
+
+#~ msgctxt "The transfer is running"
+#~ msgid "Running"
+#~ msgstr "ทำงานอยู่"
+
+#~ msgctxt "The transfer is stopped"
+#~ msgid "Stopped"
+#~ msgstr "หยุดแล้ว"
+
+#~ msgctxt "The transfer is aborted"
+#~ msgid "Aborted"
+#~ msgstr "ยุติแล้ว"
+
+#~ msgctxt "The transfer is finished"
+#~ msgid "Finished"
+#~ msgstr "เสร็จแล้ว"
+
+#~ msgid "Source File"
+#~ msgstr "แฟ้มต้นทาง"
+
+#~ msgid "Destination"
+#~ msgstr "ปลายทาง"
+
+#~ msgid "Time"
+#~ msgstr "เวลา"
+
+#~ msgid "File Size"
+#~ msgstr "ขนาดแฟ้ม"
+
+#~ msgid "Less than 1MiB"
+#~ msgstr "น้อยกว่า 1 เมกะไบต์"
+
+#~ msgid "Between 1MiB-10MiB"
+#~ msgstr "ระหว่าง 1 - 10 เมกะไบต์"
+
+#~ msgid "Between 10MiB-100MiB"
+#~ msgstr "ระหว่าง 10 - 100 เมกะไบต์"
+
+#~ msgid "Between 100MiB-1GiB"
+#~ msgstr "ระหว่าง 100 เมกะไบต์ - 1 กิกะไบต์"
+
+#~ msgid "More than 1GiB"
+#~ msgstr "มากกว่า 1 กิกะไบต์"
+
+#~ msgid "Last month"
+#~ msgstr "เดือนก่อน"
+
+#~ msgctxt "the transfer has been finished"
+#~ msgid "Finished"
+#~ msgstr "เสร็จแล้ว"
+
+#, fuzzy
+#~| msgid "Error:"
+#~ msgctxt "an error happened in connection with the user input"
+#~ msgid "Error:"
+#~ msgstr "ข้อผิดพลาด:"
+
+#~ msgctxt "trust level"
+#~ msgid "Unknown"
+#~ msgstr "ไม่ทราบ"
+
+#~ msgctxt "trust level"
+#~ msgid "Undefined"
+#~ msgstr "ยังไม่กำหนด"
+
+#~ msgctxt "trust level"
+#~ msgid "Never"
+#~ msgstr "ไม่เลย"
+
+#~ msgctxt "trust level"
+#~ msgid "Marginal"
+#~ msgstr "เล็กน้อย"
+
+#~ msgctxt "trust level"
+#~ msgid "Full"
+#~ msgstr "เต็มที่"
+
+#~ msgctxt "trust level"
+#~ msgid "Ultimate"
+#~ msgstr "ขั้นสูงสุด"
+
+#~ msgctxt ""
+#~ "Signature here is meant in cryptographic terms, so the signature of a "
+#~ "file."
+#~ msgid "Signature of %1."
+#~ msgstr "ลายเซ็นของ %1"
+
+#~ msgid "This option is not supported for the current transfer."
+#~ msgstr "ตัวเลือกนี้ยังไม่ได้รับการรองรับจากการถ่ายโอนตัวปัจจุบัน"
+
+#~ msgid "You need to define a signature."
+#~ msgstr "คุณต้องทำการกำหนดลายเซ็นก่อน"
+
+#~ msgid ""
+#~ "No fingerprint could be found, check if the signature is correct or "
+#~ "verify the download."
+#~ msgstr ""
+#~ "ไม่พบอัตลักษณ์ โปรดตรวจสอบว่าได้ลายเซ็นถูกต้องหรือไม่ "
+#~ "หรือทำการตรวจความถูกต้องของการดาวน์โหลด"
+
+#~ msgid "The key has been revoked."
+#~ msgstr "กุญแจถูกเพิกถอนแล้ว"
+
+#~ msgid "The key is disabled."
+#~ msgstr "กุญแจถูกปิดการใช้งาน"
+
+#~ msgid "The key is invalid."
+#~ msgstr "กุญแจใช้ไม่ได้"
+
+#~ msgid "The key is expired."
+#~ msgstr "กุญแจหมดอายุแล้ว"
+
+#~ msgid "The key is not to be trusted."
+#~ msgstr "กุญแจยังไม่ได้รับการเชื่อถือ"
+
+#~ msgid "The key is to be trusted marginally."
+#~ msgstr "กุญแจยังไม่ได้รับการเชื่อถือเล็กน้อย"
+
+#~ msgid "The key is to be trusted fully."
+#~ msgstr "กุญแจยังไม่ได้รับการเชื่อถืออย่างเต็มที่"
+
+#~ msgid "The key is to be trusted ultimately."
+#~ msgstr "กุญแจยังไม่ได้รับการเชื่อถือขั้นสูงสุด"
+
+#~ msgid "Trust level of the key is unclear."
+#~ msgstr "ระดับความน่าเชื่อถือของกุญแจยังคลุมเครือ"
+
+#~ msgid "Unlimited"
+#~ msgstr "ไม่จำกัด"
+
+#~ msgctxt "pgp signature is verified"
+#~ msgid "Verified"
+#~ msgstr "ตรวจความถูกต้องแล้ว"
+
+#~ msgid "The signature has been verified successfully."
+#~ msgstr "ลายเซ็นได้รับตรวจความถูกต้องเสร็จเรียบร้อยแล้ว"
+
+#~ msgid "The signature has been verified successfully:"
+#~ msgstr "ลายเซ็นได้รับตรวจความถูกต้องเสร็จเรียบร้อยแล้ว:"
+
+#~ msgctxt "pgp signature is not verified"
+#~ msgid "Failed"
+#~ msgstr "ล้มเหลว"
+
+#~ msgid ""
+#~ "Caution: Verification failed. Either you entered the wrong signature, or "
+#~ "the data has been modified."
+#~ msgstr ""
+#~ "คำเตือน: การตรวจความถูกต้องล้มเหลว อาจจะเนื่องจากคุณได้ป้อนลายเซ็นที่ไม่ถูกต้องมาให้ "
+#~ "หรือข้อมูลอาจจะถูกแก้ไขดัดแปลงไปแล้ว"
+
+#~ msgid ""
+#~ "Verification not possible. Check the entered data, whether gpg-agent is "
+#~ "running, or whether you have an Internet connection (for retrieving keys.)"
+#~ msgstr ""
+#~ "การตรวจความถูกต้องเป็นไปไม่ได้ โปรดตรวจสอบข้อมูลที่ป้อนมา, โปรแกรม gpg-agent "
+#~ "กำลังทำงานอยู่หรือไม่ หรือคุณได้ทำการเชื่อมต่ออินเทอร์เน็ตแล้วหรือยัง (ใช้ในการรับกุญแจต่าง ๆ)"
+
+#~ msgid ""
+#~ "Feature is not supported, as KGet is not compiled with QPGME support."
+#~ msgstr ""
+#~ "ยังไม่รองรับคุณสมบัตินี้ เนื่องจากโปรแกรม 'ช่วยดาวน์โหลด-K' (KGet) "
+#~ "ไม่ได้ถูกคอมไพล์ให้รองรับ QPGME ด้วย"
+
+#~ msgid "Error:"
+#~ msgstr "ข้อผิดพลาด:"
+
+#~ msgid "Problems:"
+#~ msgstr "ปัญหาต่าง ๆ :"
+
+#~ msgid "Information:"
+#~ msgstr "ข้อมูลรายละเอียด:"
+
+#~ msgid "Select columns"
+#~ msgstr "เลือกคอลัมน์ต่าง ๆ"
+
+#~ msgid "Transfer Details"
+#~ msgstr "รายละเอียดการส่งถ่ายข้อมูล"
+
+#~ msgid "Add checksum"
+#~ msgstr "เพิ่มผลรวมการตรวจสอบ"
+
+#~ msgid "%1 %2 has been successfully added."
+#~ msgstr "%1 %2 ถูกเพิ่มไว้เสร็จเรียบร้อยแล้ว"
+
+#~ msgid "Transfer Verification for %1"
+#~ msgstr "การตรวจความถูกต้องของการส่งถ่ายข้อมูลของ %1"
+
+#~ msgid "%1 was successfully verified."
+#~ msgstr "ทำการตรวจความถูกต้องของ %1 เรียบร้อยแล้ว"
+
+#~ msgid "Verification successful"
+#~ msgstr "การตรวจความถูกต้องเสร็จเรียบร้อยแล้ว"
+
+#~ msgid "Rename File"
+#~ msgstr "เปลี่ยนชื่อแฟ้ม"
+
+#~ msgid "Rename %1 to:"
+#~ msgstr "เปลี่ยนชื่อแฟ้ม %1 ไปเป็น:"
+
+#~ msgid "&Rename"
+#~ msgstr "เ&ปลี่ยนชื่อ"
+
+#~ msgid "Delete Group"
+#~ msgid_plural "Delete Groups"
+#~ msgstr[0] "ลบกลุ่มต่าง ๆ"
+
+#~ msgid "Rename Group..."
+#~ msgid_plural "Rename Groups..."
+#~ msgstr[0] "เปลี่ยนชื่อกลุ่มต่าง ๆ ..."
+
+#~ msgctxt "fix position for droptarget"
+#~ msgid "Sticky"
+#~ msgstr "ปักหมุด"
+
+#~ msgid "Quit KGet"
+#~ msgstr "ออกจาก 'ช่วยดาวน์โหลด-K'"
+
+#~ msgid "The dropped file is a KGet Transfer List"
+#~ msgstr "แฟ้มที่หย่อนลงมาเป็นแฟ้มรายการถ่ายโอนของ 'ช่วยดาวน์โหลด-K'"
+
+#~ msgid "&Download"
+#~ msgstr "&ดาวน์โหลด"
+
+#~ msgid "&Load transfer list"
+#~ msgstr "เ&รียกรายการการถ่ายโอน"
+
+#~ msgid "Show Main Window"
+#~ msgstr "แสดงหน้าต่างหลัก"
+
+#~ msgid "Hide Main Window"
+#~ msgstr "ซ่อนหน้าต่างหลัก"
+
+#~ msgid "Drop Target"
+#~ msgstr "ไอคอน หย่อนเพื่อดาวน์โหลด"
+
+#~ msgid "You can drag download links into the drop target."
+#~ msgstr ""
+#~ "คุณสามารถลากที่อยู่เชื่อมโยงที่ต้องการดาวน์โหลดมาหย่อนไว้ที่ไอคอน หย่อนเพื่อดาวน์โหลดได้"
+
+#~ msgctxt "%1 filename, %2 total size, %3 status"
+#~ msgid "%1(%2) %3"
+#~ msgstr "%1(%2) %3"
+
+#~ msgctxt ""
+#~ "%1 filename, %2 percent complete, %3 downloaded out of %4 total size"
+#~ msgid "%1(%2% %3/%4) Speed:%5/s"
+#~ msgstr "%1(%2% %3/%4) ความเร็ว:%5/s"
+
+#~ msgctxt ""
+#~ "%1 filename, %2 percent complete, %3 downloaded out of %4 total size, %5 "
+#~ "status"
+#~ msgid "%1(%2% %3/%4) %5"
+#~ msgstr "%1(%2% %3/%4) %5"
+
+#~ msgid "Ready"
+#~ msgstr "พร้อม"
+
+#~ msgid ""
+#~ "Drop target has been hidden. If you want to show it again, go to Settings-"
+#~ ">Configure KGet->Look & Feel."
+#~ msgstr ""
+#~ "ไอคอน หย่อนเพื่อดาวน์โหลดถูกซ่อนไว้ ถ้าคุณต้องการที่จะแสดงมันอีกครั้ง ไปที่ ตั้งค่า-> ปรับแต่ง "
+#~ "'ช่วยดาวน์โหลด-K' -> รูปลักษณ์"
+
+#~ msgid "Hiding drop target"
+#~ msgstr "ซ่อนไอคอน หย่อนเพื่อดาวน์โหลด"
+
+#~ msgid "Transfer Settings for %1"
+#~ msgstr "การตั้งค่าการส่งถ่ายข้อมูลของ %1"
+
+#~ msgid ""
+#~ "Changing the destination did not work, the destination stays unmodified."
+#~ msgstr "การเปลี่ยนแปลงปลายทางทำงานไม่ได้ ปลายทางจะยังคงไม่ถูกแก้ไข"
+
+#~ msgid "Destination unmodified"
+#~ msgstr "ไม่มีการแก้ไขปลายทาง"
+
+#~ msgid "Average speed: %1/s"
+#~ msgstr "ความเร็วเฉลี่ย: %1/วินาที"
+
+#~ msgid "%1 of %2"
+#~ msgstr "%1 จากทั้งหมด %2"
+
+#~ msgid "Group Settings for %1"
+#~ msgstr "การตั้งค่ากลุ่มของ %1"
+
+#~ msgctxt "@info"
+#~ msgid "Unable to start the server: %1."
+#~ msgstr "ไม่สามารถเริ่มเซิร์ฟเวอร์: %1 ได้"
+
+#~ msgctxt "@item speed of transfer per seconds"
+#~ msgid "%1/s"
+#~ msgstr "%1/วินาที"
+
+#~ msgctxt "@label"
+#~ msgid "KGet Web Interface"
+#~ msgstr "ส่วนติดต่อแบบเว็บของ 'ช่วยดาวน์โหลด-K'"
+
+#~ msgctxt "@label number"
+#~ msgid "Nr"
+#~ msgstr "ลำดับ"
+
+#~ msgctxt "@label"
+#~ msgid "File name"
+#~ msgstr "ชื่อแฟ้ม"
+
+#~ msgctxt "@label Progress of transfer"
+#~ msgid "Finished"
+#~ msgstr "เสร็จแล้ว"
+
+#~ msgctxt "@label Speed of transfer"
+#~ msgid "Speed"
+#~ msgstr "ความเร็ว"
+
+#~ msgctxt "@label Status of transfer"
+#~ msgid "Status"
+#~ msgstr "สถานะ"
+
+#~ msgctxt "@action:button start a transfer"
+#~ msgid "Start"
+#~ msgstr "เริ่ม"
+
+#~ msgctxt "@action:button"
+#~ msgid "Stop"
+#~ msgstr "หยุด"
+
+#~ msgctxt "@action:button"
+#~ msgid "Remove"
+#~ msgstr "เอาออก"
+
+#~ msgctxt "@label Download from"
+#~ msgid "Source:"
+#~ msgstr "ต้นทาง:"
+
+#~ msgctxt "@label Save download to"
+#~ msgid "Saving to:"
+#~ msgstr "บันทึกไปยัง:"
+
+#~ msgctxt "@label Title in header"
+#~ msgid "Web Interface"
+#~ msgstr "ส่วนติดต่อแบบเว็บ"
+
+#~ msgctxt "@action"
+#~ msgid "Settings"
+#~ msgstr "ตั้งค่า"
+
+#~ msgctxt "@action"
+#~ msgid "Refresh"
+#~ msgstr "เรียกใหม่"
+
+#~ msgctxt "@action"
+#~ msgid "Enter URL: "
+#~ msgstr "ป้อนที่อยู่ URL:"
+
+#~ msgctxt "@action:button"
+#~ msgid "OK"
+#~ msgstr "ตกลง"
+
+#~ msgctxt "@action Refresh download list every x (seconds)"
+#~ msgid "Refresh download list every"
+#~ msgstr "ปรับปรุงรายการดาวน์โหลดใหม่ทุก"
+
+#~ msgctxt "@action (Refresh very x )seconds"
+#~ msgid "seconds"
+#~ msgstr " วินาที"
+
+#~ msgctxt "@action:button"
+#~ msgid "Save Settings"
+#~ msgstr "บันทึกการตั้งค่า"
+
+#~ msgctxt "@title"
+#~ msgid "Downloads"
+#~ msgstr "ดาวน์โหลด"
+
+#~ msgctxt "@label text in footer"
+#~ msgid "KGet Web Interface | Valid XHTML 1.0 Strict &amp; CSS"
+#~ msgstr "ส่วนติดต่อแบบเว็บของ 'ช่วยดาวน์โหลด-K' | รูปแบบ XHTML 1.0 &amp; CSS ที่ถูกต้อง"
+
+#~ msgid "An advanced download manager for KDE"
+#~ msgstr "เครื่องมือจัดการการดาวน์โหลดขั้นก้าวหน้าสำหรับ KDE"
+
+#~ msgid ""
+#~ "(C) 2005 - 2009, The KGet developers\n"
+#~ "(C) 2001 - 2002, Patrick Charbonnier\n"
+#~ "(C) 2002, Carsten Pfeiffer\n"
+#~ "(C) 1998 - 2000, Matej Koss"
+#~ msgstr ""
+#~ "สงวนลิขสิทธิ์ (C) 2005 - 2009, ทีมพัฒนา 'ช่วยดาวน์โหลด-K' (KGet)\n"
+#~ "สงวนลิขสิทธิ์ (C) 2001 - 2002, Patrick Charbonnier\n"
+#~ "สงวนลิขสิทธิ์ (C) 2002, Carsten Pfeiffer\n"
+#~ "สงวนลิขสิทธิ์ (C) 1998 - 2000, Matej Koss"
+
+#~ msgid "<a href=\"mailto:kget@kde.org\">kget@kde.org</a>"
+#~ msgstr "<a href=\"mailto:kget@kde.org\">kget@kde.org</a>"
+
+#~ msgid "Lukas Appelhans"
+#~ msgstr "Lukas Appelhans"
+
+#~ msgid "Maintainer, Core Developer, Torrent Plugin Author"
+#~ msgstr "ผู้ดูแล, ผู้พัฒนาหลัก, ผู้เขียนส่วนเสริมทอร์เรนต์"
+
+#~ msgid "Dario Massarin"
+#~ msgstr "Dario Massarin"
+
+#~ msgid "Core Developer"
+#~ msgstr "ผู้พัฒนาหลัก"
+
+#~ msgid "Urs Wolfer"
+#~ msgstr "Urs Wolfer"
+
+#~ msgid "Manolo Valdes"
+#~ msgstr "Manolo Valdes"
+
+#~ msgid "Core Developer, Multithreaded Plugin Author"
+#~ msgstr "ผู้พัฒนาหลัก, ผู้เขียนส่วนเสริมการทำงานแบบหลายเธรด"
+
+#~ msgid "Matthias Fuchs"
+#~ msgstr "Matthias Fuchs"
+
+#~ msgid "Javier Goday"
+#~ msgstr "Javier Goday"
+
+#~ msgid "Developer"
+#~ msgstr "ผู้พัฒนา"
+
+#~ msgid "Patrick Charbonnier"
+#~ msgstr "Patrick Charbonnier"
+
+#~ msgid "Former Developer"
+#~ msgstr "อดีตผู้พัฒนา"
+
+#~ msgid "Carsten Pfeiffer"
+#~ msgstr "Carsten Pfeiffer"
+
+#~ msgid "Matej Koss"
+#~ msgstr "Matej Koss"
+
+#~ msgid "Joris Guisson"
+#~ msgstr "Joris Guisson"
+
+#~ msgid "BTCore (KTorrent) Developer"
+#~ msgstr "ผู้พัฒนา BTCore (KTorrent)"
+
+#~ msgid "Mensur Zahirovic (Nookie)"
+#~ msgstr "Mensur Zahirovic (Nookie)"
+
+#~ msgid "Design of Web Interface"
+#~ msgstr "ออกแบบส่วนติดต่อเว็บ"
+
+#~ msgid "Start KGet with drop target"
+#~ msgstr "เริ่มงาน KGet พร้อมกับไอคอน หย่อนเพื่อดาวน์โหลด"
+
+#~ msgid "Start KGet with hidden main window"
+#~ msgstr "เริ่มงาน KGet โดยซ่อนหน้าต่างหลัก"
+
+#~ msgid "Start KGet without drop target animation"
+#~ msgstr "เริ่มงาน KGet โดยไม่ต้องมีภาพเคลื่อนไหวของไอคอน หย่อนเพื่อดาวน์โหลด"
+
+#~ msgid "Execute Unit Testing"
+#~ msgstr "ประมวลผลหน่วยการทดสอบ"
+
+#~ msgid "URL(s) to download"
+#~ msgstr "ที่อยู่ URL ที่จะดาวน์โหลด"
+
+#~ msgid "KGet Transfer List"
+#~ msgstr "รายการการถ่ายโอนของ KGet"
+
+#~ msgid "Export Transfers"
+#~ msgstr "ส่งออกรายการถ่ายโอน"
+
+#~ msgid "&New Download..."
+#~ msgstr "การดาวน์โหลดใ&หม่..."
+
+#~ msgid "&Import Transfers..."
+#~ msgstr "&นำเข้ารายการถ่ายโอนข้อมูล..."
+
+#~ msgid "&Export Transfers List..."
+#~ msgstr "&ส่งออกรายการถ่ายโอนข้อมูล..."
+
+#~ msgid "&Export Transfers as Plain Text..."
+#~ msgstr "&ส่งออกรายการถ่ายโอนข้อมูลเป็นข้อความธรรมดา..."
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Top Priority"
+#~ msgstr "ความสำคัญ"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Least Priority"
+#~ msgstr "ความสำคัญ"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Increase Priority"
+#~ msgstr "ความสำคัญ"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Decrease Priority"
+#~ msgstr "ความสำคัญ"
+
+#~ msgid "Set Icon..."
+#~ msgstr "ตั้งค่าไอคอน..."
+
+#~ msgid "Auto-Paste Mode"
+#~ msgstr "โหมดวางอัตโนมัติ"
+
+#~ msgid ""
+#~ "<b>Auto paste</b> button toggles the auto-paste mode on and off.\n"
+#~ "When set, KGet will periodically scan the clipboard for URLs and paste "
+#~ "them automatically."
+#~ msgstr ""
+#~ "ปุ่ม <b>วางอัตโนมัติ</b> ใช้เพื่อเปิดหรือปิดการทำงานของโหมดวางอัตโนมัติ\n"
+#~ "เมื่อเปิดใช้ 'ช่วยดาวน์โหลด-K' จะทำการตรวจหาที่อยู่ URL ในคลิปบอร์ดเป็นระยะและจะวางที่อยู่ "
+#~ "URL นั้นให้โดยอัตโนมัติ"
+
+#~ msgid "Use KGet as Konqueror Download Manager"
+#~ msgstr "ใช้ 'ช่วยดาวน์โหลด-K' เป็นตัวจัดการการดาวน์โหลดให้กับคอนเควอร์เรอร์"
+
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Remove Selected"
+#~ msgstr "ลบตัวที่เลือกไว้"
+
+#~ msgctxt "delete all finished transfers"
+#~ msgid "Remove All Finished"
+#~ msgstr "ลบตัวที่เสร็จแล้วทั้งหมด"
+
+#~ msgctxt "redownload selected transfer item"
+#~ msgid "Redownload Selected"
+#~ msgstr "ดาวน์โหลดที่เลือกใหม่อีกครั้ง"
+
+#~ msgid "Start / Resume All"
+#~ msgstr "เริ่ม/ทำต่อทั้งหมด"
+
+#~ msgid "Start / Resume Selected"
+#~ msgstr "เริ่ม/ทำต่อกับรายการที่เลือก"
+
+#~ msgid "Stop All"
+#~ msgstr "หยุดทั้งหมด"
+
+#~ msgid "Stop Selected"
+#~ msgstr "หยุดรายการที่เลือก"
+
+#~ msgid "Start / Resume"
+#~ msgstr "เริ่ม/ทำต่อ"
+
+#~ msgid "Stop"
+#~ msgstr "หยุด"
+
+#~ msgid "Remove"
+#~ msgstr "เอาออก"
+
+#~ msgid "Open Destination"
+#~ msgstr "เปิดแฟ้มปลายทาง"
+
+#~ msgid "Open File"
+#~ msgstr "เปิดแฟ้ม"
+
+#~ msgid "Show Details"
+#~ msgstr "แสดงรายละเอียดต่าง ๆ"
+
+#~ msgid "Copy URL to Clipboard"
+#~ msgstr "คัดลอกที่อยู่ URL ไปยังคลิปบอร์ด"
+
+#~ msgid "&Transfer History"
+#~ msgstr "ประวัติการ&ถ่ายโอน"
+
+#~ msgid "&Group Settings"
+#~ msgstr "ตั้งค่าต่าง ๆ ของ&กลุ่ม"
+
+#~ msgid "&Transfer Settings"
+#~ msgstr "ตั้งค่าต่าง ๆ ของการ&ส่งถ่ายข้อมูล"
+
+#~ msgid "Import &Links..."
+#~ msgstr "นำเข้าส่วนเ&ชื่อมโยงต่าง ๆ ..."
+
+#~ msgid ""
+#~ "This is the first time you have run KGet.\n"
+#~ "Would you like to enable KGet as the download manager for Konqueror?"
+#~ msgstr ""
+#~ "นี่เป็นครั้งแรกที่คุณเรียกใช้งาน 'ช่วยดาวน์โหลด-K' \n"
+#~ "คุณต้องการจะเปิดใช้งานเครื่องมือ 'ช่วยดาวน์โหลด-K' นี้ \n"
+#~ "ให้เป็นตัวจัดการการดาวน์โหลดของคอนเควอร์เรอร์หรือไม่ ?"
+
+#~ msgid "Konqueror Integration"
+#~ msgstr "ใช้งานร่วมกับคอนเควอร์เรอร์"
+
+#~ msgid "Enable"
+#~ msgstr "เปิดใช้งาน"
+
+#~ msgid "Do Not Enable"
+#~ msgstr "ไม่เปิดใช้"
+
+#~ msgid "All Openable Files"
+#~ msgstr "แฟ้มที่เปิดได้ทั้งหมด"
+
+#~ msgctxt "window title including overall download progress in percent"
+#~ msgid "KGet - %1%"
+#~ msgstr "ช่วยดาวน์โหลด-K :: %1%"
+
+#~ msgid ""
+#~ "Some transfers are still running.\n"
+#~ "Are you sure you want to close KGet?"
+#~ msgstr ""
+#~ "มีบางการถ่ายโอนข้อมูลที่กำลังทำงานอยู่\n"
+#~ "คุณแน่ใจหรือว่าต้องการจะปิด 'ช่วยดาวน์โหลด-K' ?"
+
+#~ msgid "Confirm Quit"
+#~ msgstr "ยืนยันการออก"
+
+#~ msgid "Enter Group Name"
+#~ msgstr "ป้อนชื่อกลุ่ม"
+
+#~ msgid "Group name:"
+#~ msgstr "ชื่อกลุ่ม:"
+
+#~ msgid "Are you sure you want to delete the selected transfer?"
+#~ msgid_plural "Are you sure you want to delete the selected transfers?"
+#~ msgstr[0] "คุณแน่ใจหรือว่าต้องการจะลบการส่งถ่ายข้อมูลตัวที่เลือกไว้ออกไป ?"
+
+#~ msgid "Confirm transfer delete"
+#~ msgstr "ยืนยันการลบการส่งถ่ายข้อมูล"
+
+#~ msgid ""
+#~ "KGet has been temporarily disabled as download manager for Konqueror. If "
+#~ "you want to disable it forever, go to Settings->Advanced and disable "
+#~ "\"Use as download manager for Konqueror\"."
+#~ msgstr ""
+#~ "'ช่วยดาวน์โหลด-K' ถูกปิดการใช้งานเป็นตัวจัดการการดาวน์โหลดของคอนเควอร์เรอร์ไว้ชั่วคราว "
+#~ "ถ้าคุณต้องการปิดความสามารถนี้ตลอดไป ให้ไปที่ การตั้งค่า -> เพิ่มเติม และปิดตัวเลือก "
+#~ "\"ใช้เป็นตัวจัดการการดาวน์โหลดของคอนเควอร์เรอร์\""
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "ถนอมทรัพย์ นพบูรณ์, สหชาติ อนุกูลกิจ"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "donga.nb@gmail.com, drrider@gmail.com"
+
+#~ msgid "Checksums"
+#~ msgstr "ผลรวมการตรวจสอบ (Checksum)"
+
+#~ msgid "Automatic verification:"
+#~ msgstr "การตรวจความถูกต้องอัตโนมัติ:"
+
+#~ msgid "Weak (fastest)"
+#~ msgstr "ไม่แข็งแรง (เร็วสุด)"
+
+#~ msgid "Strong (recommended)"
+#~ msgstr "แข็งแกร่ง (แนะนำให้ใช้)"
+
+#~ msgid "Strongest (slowest)"
+#~ msgstr "แข็งแกร่งที่สุด (ช้ามากที่สุด)"
+
+#~ msgid "Used checksum:"
+#~ msgstr "ใช้ผลรวมการตรวจสอบแบบ:"
+
+#~ msgid "Signature"
+#~ msgstr "ลายเซ็น"
+
+#~ msgid "Automatic verification"
+#~ msgstr "ทำการตรวจความถูกต้องอัตโนมัติ"
+
+#~ msgid "Automatic downloading of missing keys"
+#~ msgstr "ทำการดาวน์โหลดกุญแจที่หายไปให้โดยอัตโนมัติ"
+
+#~ msgid "Keyservers:"
+#~ msgstr "เซิร์ฟเวอร์เก็บกุญแจ:"
+
+#~ msgid "Move &Up"
+#~ msgstr "ย้าย&ขึ้น"
+
+#~ msgid "Move &Down"
+#~ msgstr "ย้าย&ลง"
+
+#~ msgid "Use default folders for groups as suggestion"
+#~ msgstr "แนะนำให้ใช้โฟลเดอร์ปริยายของกลุ่มต่าง ๆ"
+
+#~ msgid "Rename"
+#~ msgstr "เปลี่ยนชื่อ"
+
+#~ msgid "Select Icon..."
+#~ msgstr "เลือกไอคอน..."
+
+#~ msgid "Limit Maximum Downloads Per Group"
+#~ msgstr "จำกัดจำนวนการดาวน์โหลดสูงสุดต่อกลุ่ม"
+
+#~ msgid "Number of downloads:"
+#~ msgstr "จำนวนของการดาวน์โหลด:"
+
+#~ msgid "Downloads from the same server:"
+#~ msgstr "ดาวน์โหลดจากเซิร์ฟเวอร์เดียวกัน:"
+
+#~ msgid "Speed Limit"
+#~ msgstr "จำกัดความเร็ว"
+
+#~ msgid "Global download limit:"
+#~ msgstr "จำกัดการดาวน์โหลดทั่วไป:"
+
+#~ msgid " KiB/s"
+#~ msgstr " กิโลไบต์/วินาที"
+
+#~ msgid "Global upload limit:"
+#~ msgstr "จำกัดการอัปโหลดทั่วไป:"
+
+#~ msgid "Per transfer:"
+#~ msgstr "ต่อการถ่ายโอนข้อมูลแต่ละตัว:"
+
+#~ msgid "Reconnect on Error or Broken Connection"
+#~ msgstr "ทำการเชื่อมต่อใหม่เมื่อมีข้อผิดพลาดหรือการเชื่อมต่อเสียหาย"
+
+#~ msgid "Number of retries:"
+#~ msgstr "จำนวนครั้งของการลองใหม่:"
+
+#~ msgid "Retry after:"
+#~ msgstr "ลองใหม่หลังจาก:"
+
+#~ msgid " sec"
+#~ msgstr " วินาที"
+
+#~ msgid "After Completing Downloads"
+#~ msgstr "หลังจากดาวน์โหลดเสร็จ"
+
+#~ msgid "Auto shutdown"
+#~ msgstr "ปิดเครื่องอัตโนมัติ"
+
+#~ msgid "Auto disconnect"
+#~ msgstr "ยุติการเชื่อมต่ออัตโนมัติ"
+
+#~ msgid "Enable Web Interface"
+#~ msgstr "เปิดใช้การติดต่อแบบเว็บ"
+
+#~ msgid "Port:"
+#~ msgstr "พอร์ต:"
+
+#~ msgid "User:"
+#~ msgstr "ผู้ใช้:"
+
+#~ msgid "Password:"
+#~ msgstr "รหัสผ่าน:"
+
+#~ msgid "Startup"
+#~ msgstr "เริ่มโปรแกรม"
+
+#~ msgid "Show splashscreen"
+#~ msgstr "แสดงหน้าต่างเริ่มการทำงาน"
+
+#~ msgid "Enable animations"
+#~ msgstr "ใช้ภาพเคลื่อนไหว"
+
+#~ msgid "Enable popup tooltip"
+#~ msgstr "เปิดใช้งานหน้าต่างผุดแสดงทูลทิป"
+
+#~ msgid "Show drop target"
+#~ msgstr "แสดงไอคอนดาวน์โหลด"
+
+#~ msgid "Disable confirmation dialogs (less verbosity)"
+#~ msgstr "ปิดการใช้งานกล่องการถามยืนยัน (มีการแสดงผลน้อยลง)"
+
+#~ msgid "Enable system tray icon"
+#~ msgstr "เปิดใช้ไอคอนบนถาดระบบ"
+
+#~ msgid "Execute action after all downloads have been finished:"
+#~ msgstr "ประมวลผลการกระทำ เมื่อการดาวน์โหลดทั้งหมดได้เสร็จสิ้นแล้ว:"
+
+#~ msgid "At startup:"
+#~ msgstr "เมื่อเริ่มโปรแกรม:"
+
+#~ msgid "Restore Download State"
+#~ msgstr "เรียกคืนสถานะการดาวน์โหลด"
+
+#~ msgid "Start All Downloads"
+#~ msgstr "เริ่มการดาวน์โหลดทั้งหมด"
+
+#~ msgid "Stop All Downloads"
+#~ msgstr "หยุดการดาวน์โหลดทั้งหมด"
+
+#~ msgid "History"
+#~ msgstr "ประวัติการถ่ายโอน"
+
+#~ msgid "History backend:"
+#~ msgstr "ฐานข้อมูลสำหรับเก็บข้อมูลประวัติการถ่ายโอน:"
+
+#~ msgid "Enable KDE global progress tracking"
+#~ msgstr "เปิดใช้การติดตามความคืบหน้ากับทั้งระบบ KDE"
+
+#~ msgid "Show every single download "
+#~ msgstr "แสดงแต่ละการดาวน์โหลด"
+
+#~ msgid "Show overall progress"
+#~ msgstr "แสดงภาพรวมความคืบหน้า"
+
+#, fuzzy
+#~| msgid "Use as download manager for Konqueror"
+#~ msgid "Use as download manager for Konqueror:"
+#~ msgstr "ใช้เป็นตัวจัดการการดาวน์โหลดของคอนเควอร์เรอร์"
+
+#~ msgid "Monitor clipboard for files to download"
+#~ msgstr "เฝ้าดูคลิปบอร์ดเพื่อคอยดูว่ามีแฟ้มที่จะดาวน์โหลดหรือไม่"
+
+#~ msgid "Search Engines"
+#~ msgstr "บริการค้นหา"
+
+#~ msgid "Engine Name"
+#~ msgstr "ชื่อของบริการค้นหา"
+
+#~ msgid "New Engine..."
+#~ msgstr "บริการค้นหาตัวใหม่..."
+
+#~ msgid "Number of connections per URL:"
+#~ msgstr "จำนวนของการเชื่อมต่อต่อหนึ่งที่อยู่ URL:"
+
+#~ msgid "Use search engines"
+#~ msgstr "ใช้บริการค้นหา"
+
+#~ msgid "Search for verification information"
+#~ msgstr "ค้นหาข้อมูลการตรวจสอบความถูกต้อง"
+
+#~ msgid "File Settings"
+#~ msgstr "ตั้งค่าต่าง ๆ ของแฟ้ม"
+
+#~ msgid "Filename:"
+#~ msgstr "ชื่อแฟ้ม:"
+
+#~ msgid "Quality:"
+#~ msgstr "คุณภาพ:"
+
+#~ msgid "Best Quality (.mp4)"
+#~ msgstr "คุณภาพดีที่สุด (.mp4)"
+
+#~ msgid "Normal Quality (.flv)"
+#~ msgstr "คุณภาพปกติ (.flv)"
+
+#~ msgid ""
+#~ "Provide login info of your YouTube account in order to access restricted "
+#~ "media."
+#~ msgstr ""
+#~ "โปรดป้อนข้อมูลสำหรับการล็อกอินไปยังบัญชีผู้ใช้งาน YouTube ของคุณ "
+#~ "เพื่อเข้าใช้งานสื่อที่ถูกหวงห้ามเอาไว้"
+
+#~ msgid "Login Info"
+#~ msgstr "ข้อมูลการล็อกอิน"
+
+#~ msgid "Username:"
+#~ msgstr "ชื่อผู้ใช้:"
+
+#~ msgid ".netrc must have a hostname called 'youtube'."
+#~ msgstr "แฟ้ม .netrc จะต้องมีชื่อโฮสต์ที่เรียกว่า 'youtube' อยู่ด้วย"
+
+#~ msgid "User .netrc file"
+#~ msgstr "แฟ้ม .netrc ของผู้ใช้"
+
+#~ msgid "User Scripts"
+#~ msgstr "สคริปต์ของผู้ใช้"
+
+#~ msgid "Path"
+#~ msgstr "พาธ"
+
+#~ msgid "RegExp"
+#~ msgstr "เงื่อนไขการค้นหา"
+
+#~ msgid "New Script...."
+#~ msgstr "สคริปต์ใหม่...."
+
+#~ msgid "Edit...."
+#~ msgstr "แก้ไข...."
+
+#~ msgid "Configure...."
+#~ msgstr "ปรับแต่ง..."
+
+#~ msgid "Regexp:"
+#~ msgstr "เงื่อนไขการค้นหา:"
+
+#~ msgid "Path:"
+#~ msgstr "พาธ:"
+
+#~ msgid "Description:"
+#~ msgstr "คำอธิบาย:"
+
+#~ msgid "Select the files you want to be downloaded."
+#~ msgstr "เลือกแฟ้มต่าง ๆ ที่คุณต้องการจะทำการดาวน์โหลด"
+
+#~ msgid "Number of simultaneous file downloads:"
+#~ msgstr "จำนวนของการดาวน์โหลดพร้อม ๆ กัน:"
+
+#~ msgid "Number of mirrors per file:"
+#~ msgstr "จำนวนของมิเรอร์ต่าง ๆ ต่อหนึ่งแฟ้ม:"
+
+#~ msgid "Change string:"
+#~ msgstr "เปลี่ยนข้อความ:"
+
+#~ msgid "Mode:"
+#~ msgstr "โหมด:"
+
+#~ msgid "Checksum type:"
+#~ msgstr "ประเภทของผลรวมการตรวจสอบ:"
+
+#~ msgid "Result:"
+#~ msgstr "ผลลัพธ์:"
+
+#~ msgid "label"
+#~ msgstr "ป้าย"
+
+#~ msgid "Remove Tracker"
+#~ msgstr "ลบแทร็กเกอร์"
+
+#~ msgid "Change Tracker"
+#~ msgstr "เปลี่ยนแทร็กเกอร์"
+
+#~ msgid "Update Trackers"
+#~ msgstr "ปรับปรุงแทร็กเกอร์"
+
+#~ msgid "Restore Defaults"
+#~ msgstr "กลับไปใช้ค่าปริยาย"
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Webseed to add to the "
+#~ "torrent.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">Note: </span>Only http webseeds are supported.</p></body></"
+#~ "html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\">เว็บปล่อยข้อมูลที่จะเพิ่มไปยังทอร์เรนต์</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">ข้อควรทราบ: </span>รองรับเฉพาะเว็บปล่อยข้อมูลแบบ http เท่านั้น</p></"
+#~ "body></html>"
+
+#~ msgid "Add Webseed"
+#~ msgstr "เพิ่มเว็บปล่อยข้อมูล"
+
+#~ msgid "Remove Webseed"
+#~ msgstr "ลบเว็บปล่อยข้อมูล"
+
+#~ msgid "Chunks"
+#~ msgstr "ท่อน"
+
+#~ msgid "Total:"
+#~ msgstr "รวม:"
+
+#~ msgid "Currently downloading:"
+#~ msgstr "การดาวน์โหลดในปัจจุบัน:"
+
+#~ msgid "Downloaded:"
+#~ msgstr "ดาวน์โหลดแล้ว:"
+
+#~ msgid "Excluded:"
+#~ msgstr "ไม่รวม:"
+
+#~ msgid "Left:"
+#~ msgstr "คงเหลือ:"
+
+#~ msgid "Size:"
+#~ msgstr "ขนาด:"
+
+#~ msgid "Scanning data of torrent:"
+#~ msgstr "กำลังตรวจข้อมูลของทอร์เรนต์:"
+
+#~ msgid "Number of chunks found:"
+#~ msgstr "จำนวนท่อนข้อมูลที่พบ:"
+
+#~ msgid "Number of chunks failed:"
+#~ msgstr "จำนวนท่อนข้อมูลที่ล้มเหลว:"
+
+#~ msgid "Number of chunks not downloaded:"
+#~ msgstr "จำนวนท่อนข้อมูลที่ยังไม่ได้ดาวน์โหลด:"
+
+#~ msgid "Number of chunks downloaded:"
+#~ msgstr "จำนวนท่อนข้อมูลที่ดาวน์โหลดแล้ว:"
+
+#~ msgid "0"
+#~ msgstr "0"
+
+#~ msgid "Cancel"
+#~ msgstr "ยกเลิก"
+
+#~ msgid "Stats"
+#~ msgstr "สถิติ"
+
+#~ msgid "Seeders:"
+#~ msgstr "ผู้ปล่อยข้อมูล:"
+
+#~ msgid "<n>"
+#~ msgstr "<n>"
+
+#~ msgid "Download speed:"
+#~ msgstr "ความเร็วการดาวน์โหลด:"
+
+#~ msgid "Leechers:"
+#~ msgstr "ผู้ดึงข้อมูล:"
+
+#~ msgid "Upload speed:"
+#~ msgstr "ความเร็วการอัปโหลด:"
+
+#~ msgctxt "chunks left"
+#~ msgid "Left:"
+#~ msgstr "คงเหลือ:"
+
+#~ msgctxt "all chunks"
+#~ msgid "All:"
+#~ msgstr "ทั้งหมด:"
+
+#~ msgctxt "source-file"
+#~ msgid "Source:"
+#~ msgstr "ต้นทาง:"
+
+#~ msgid "Saving to:"
+#~ msgstr "บันทึกไปยัง:"
+
+#~ msgid "Upload limit per transfer:"
+#~ msgstr "จำกัดการอัปโหลดของแต่ละการถ่ายโอน:"
+
+#~ msgid "No Limit"
+#~ msgstr "ไม่จำกัด"
+
+#~ msgid "KiB"
+#~ msgstr " กิโลไบต์"
+
+#~ msgid "Download limit per transfer:"
+#~ msgstr "จำกัดการดาวน์โหลดของแต่ละการถ่ายโอน:"
+
+#, fuzzy
+#~| msgid "Enable popup tooltip"
+#~ msgid "Enable UTP protocol"
+#~ msgstr "เปิดใช้งานหน้าต่างผุดแสดงทูลทิป"
+
+#~ msgid "Folders"
+#~ msgstr "โฟลเดอร์ต่าง ๆ"
+
+#~ msgid "Default torrent folder:"
+#~ msgstr "โฟลเดอร์ทอร์เรนต์ปริยาย:"
+
+#~ msgid "Default temporary folder"
+#~ msgstr "โฟลเดอร์ชั่วคราวปริยาย"
+
+#~ msgid "Pre-allocate disk space"
+#~ msgstr "จองเนื้อที่บนดิสก์ไว้ก่อน"
+
+#~ msgctxt "General options."
+#~ msgid "General"
+#~ msgstr "ค่าทั่วไป"
+
+#~ msgid "Create partial checksums"
+#~ msgstr "สร้างค่าผลรวมการตรวจสอบ (Checksum) บางส่วน"
+
+#~ msgid "General URL:"
+#~ msgstr "ที่อยู่ URL ทั่วไป:"
+
+#~ msgid ""
+#~ "Automatically create checksums for the selected types. Keep in mind that "
+#~ "this might take a while."
+#~ msgstr ""
+#~ "ทำการสร้างค่าผลรวมการตรวจสอบ (Checksum) ให้กับประเภทที่เลือกไว้โดยอัตโนมัติ "
+#~ "ซึ่งอาจจะใช้เวลาพอสมควร"
+
+#~ msgid ""
+#~ "Enter URLs here if all the dropped files are on that server and in the "
+#~ "same directory. For each dropped file the URL would consist of the "
+#~ "entered part and the filename."
+#~ msgstr ""
+#~ "ป้อนที่อยู่ URL ต่าง ๆ ได้ที่นี่ หากแฟ้มต่าง ๆ "
+#~ "ที่ถูกหย่อนลงมาอยู่บนเซิร์ฟเวอร์และอยู่ในไดเรกทอรีเดียวกัน สำหรับแต่ละแฟ้มที่ถูกหย่อนลงมานี้ ที่อยู่ "
+#~ "URL จะประกอบไปด้วยส่วนที่ต้องเข้าไปใช้งาน และชื่อแฟ้ม"
+
+#~ msgid "Types of the checksums:"
+#~ msgstr "ประเภทของผลรวมการตรวจสอบ:"
+
+#~ msgid "Create checksums:"
+#~ msgstr "สร้างค่าผลรวมการตรวจสอบ:"
+
+#~ msgctxt "These entries are optional."
+#~ msgid "Optional"
+#~ msgstr "ตัวเลือกเสริม"
+
+#~ msgid "Optional data:"
+#~ msgstr "ข้อมูล (ตัวเลือกเสริม):"
+
+#~ msgid "Enter information that all chosen files share."
+#~ msgstr "ป้อนข้อมูลรายละเอียดที่จะใช้ร่วมกับกับแฟ้มต่าง ๆ ที่เลือกไว้"
+
+#~ msgid "Required"
+#~ msgstr "จำเป็นต้องใช้"
+
+#~ msgid "Used Mirrors:"
+#~ msgstr "มิเรอร์ต่าง ๆ ที่ใช้:"
+
+#~ msgid "Recommended"
+#~ msgstr "แนะนำให้ใช้"
+
+#~ msgid "File size (in bytes):"
+#~ msgstr "ขนาดแฟ้ม (เป็นไบต์):"
+
+#~ msgid "0123456789"
+#~ msgstr "0123456789"
+
+#~ msgid "Verification:"
+#~ msgstr "การตรวจความถูกต้อง:"
+
+#~ msgid "Optional"
+#~ msgstr "ตัวเลือกเสริม"
+
+#, fuzzy
+#~| msgid "Open file"
+#~ msgid "*.metalink *.meta4|Metalink file (*.metalink *.meta4)"
+#~ msgstr "เปิดแฟ้ม"
+
+#~ msgid "General information:"
+#~ msgstr "ข้อมูลทั่วไป:"
+
+#~ msgid "Origin:"
+#~ msgstr "ต้นกำเนิด:"
+
+#~ msgid "Dynamic:"
+#~ msgstr "ไม่ตายตัว:"
+
+#, fuzzy
+#~| msgid "Next Update In:"
+#~ msgid "Metalink published"
+#~ msgstr "ปรับปรุงครั้งต่อไปในอีก:"
+
+#~ msgid "Date and time:"
+#~ msgstr "วันและเวลา:"
+
+#~ msgid "Timezone offset:"
+#~ msgstr "ช่วงเหลื่อมเขตเวลา:"
+
+#~ msgid "Negative offset:"
+#~ msgstr "ช่วงลบค่าเป็นลบ:"
+
+#, fuzzy
+#~| msgid "Next Update In:"
+#~ msgid "Metalink updated"
+#~ msgstr "ปรับปรุงครั้งต่อไปในอีก:"
+
+#~ msgid "Identity"
+#~ msgstr "การแสดงตัว"
+
+#~ msgid "Version:"
+#~ msgstr "รุ่น:"
+
+#~ msgid "Logo:"
+#~ msgstr "โลโก้:"
+
+#~ msgid "URL to the logo"
+#~ msgstr "ที่อยู่ URL ของโลโก้"
+
+#~ msgid "The language of the file"
+#~ msgstr "ภาษาของแฟ้ม"
+
+#~ msgid "Language:"
+#~ msgstr "ภาษา:"
+
+#~ msgid "Operating systems:"
+#~ msgstr "ระบบปฏิบัติการ:"
+
+#~ msgid "Supported OSes, separated with commas"
+#~ msgstr "ระบบปฏิบัติการที่รองรับ แยกด้วยเครื่องหมายจุลภาค"
+
+#~ msgid "Copyright:"
+#~ msgstr "สงวนลิขสิทธิ์:"
+
+#~ msgid "Publisher:"
+#~ msgstr "ผู้จัดทำ:"
+
+#~ msgid "Name:"
+#~ msgstr "ชื่อ:"
+
+#~ msgid "publisher"
+#~ msgstr "ผู้จัดทำ"
+
+#~ msgid "Name of the publisher"
+#~ msgstr "ชื่อของผู้จัดทำ"
+
+#~ msgid "URL to the publisher"
+#~ msgstr "ที่อยู่ URL ของผู้จัดทำ"
+
+#~ msgctxt "Files as in files on a server"
+#~ msgid "Files:"
+#~ msgstr "แฟ้มต่าง ๆ :"
+
+#~ msgid "Add local files"
+#~ msgstr "เพิ่มแฟ้มต่าง ๆ ภายในระบบ"
+
+#~ msgid ""
+#~ "Add at least one file. Adding local files adds a lot of information "
+#~ "automatically."
+#~ msgstr ""
+#~ "เพิ่มแฟ้มอย่างน้อยหนึ่งแฟ้ม การเพิ่มแฟ้มต่าง ๆ ภายในระบบ "
+#~ "จะมีการเพิ่มข้อมูลรายละเอียดให้มากขึ้นโดยอัตโนมัติ"
+
+#~ msgid "Adding local files..."
+#~ msgstr "กำลังเพิ่มแฟ้มต่าง ๆ ภายในระบบ..."
+
+#~ msgid "You need to set mirrors for the entries with an icon."
+#~ msgstr "คุณต้องทำการตั้งค่ามิเรอร์ต่าง ๆ ของรายการต่าง ๆ ด้วยไอคอน"
+
+#~ msgid "&File with links to import:"
+#~ msgstr "แ&ฟ้มที่มีการเชื่อมโยงที่จะนำเข้า:"
+
+#~ msgid "&Import Links"
+#~ msgstr "&นำเข้าที่อยู่เชื่อมโยงต่าง ๆ"
+
+#~ msgid "Show:"
+#~ msgstr "แสดง:"
+
+#~ msgctxt "filter: show all file types"
+#~ msgid "&All"
+#~ msgstr "&ทั้งหมด"
+
+#~ msgid "&Videos"
+#~ msgstr "&วีดิทัศน์ต่าง ๆ"
+
+#~ msgid "Ima&ges"
+#~ msgstr "&ภาพต่าง ๆ"
+
+#~ msgid "A&udio"
+#~ msgstr "เ&สียง"
+
+#~ msgid "A&rchives"
+#~ msgstr "แฟ้ม&บีบอัดต่าง ๆ"
+
+#~ msgid "You can use wildcards for filtering."
+#~ msgstr "คุณสามารถใช้ไวลด์การ์ดต่าง ๆ ในการกรองได้"
+
+#~ msgid "Filter files here...."
+#~ msgstr "กรองแฟ้มต่าง ๆ ได้ที่นี่..."
+
+#~ msgid "Contains"
+#~ msgstr "บรรจุคำนี้อยู่"
+
+#~ msgid "Does Not Contain"
+#~ msgstr "ไม่ได้บรรจุคำนี้อยู่"
+
+#~ msgid "Inver&t Selection"
+#~ msgstr "ก&ลับค่าการเลือก"
+
+#~ msgctxt "Check as in mark, not as in verify"
+#~ msgid "Chec&k Selected"
+#~ msgstr "&กาตัวที่เลือกไว้"
+
+#~ msgid "Show &web content"
+#~ msgstr "แสดงเ&นื้อหาเว็บ"
+
+#~ msgid "Mirror:"
+#~ msgstr "มิเรอร์:"
+
+#~ msgid "Number of connections:"
+#~ msgstr "จำนวนของการเชื่อมต่อ:"
+
+#~ msgid "Enter a URL"
+#~ msgstr "ป้อนที่อยู่ URL"
+
+#~ msgid "Priority:"
+#~ msgstr "ระดับความสำคัญ:"
+
+#~ msgid "Optional: The priority of the mirror, 1 highest 999999 lowest."
+#~ msgstr "ตัวเลือกเสริม: ระดับความสำคัญของมิเรอร์, 1 มีค่าสูงสุด 999999 มีค่าต่ำสุด"
+
+#~ msgid "Location:"
+#~ msgstr "ตำแหน่ง:"
+
+#~ msgid "Clear History"
+#~ msgstr "ล้างประวัติการถ่ายโอน"
+
+#~ msgctxt "View modes"
+#~ msgid "View Modes"
+#~ msgstr "โหมดมุมมอง"
+
+#~ msgid "Select Ranges"
+#~ msgstr "เลือกช่วงต่าง ๆ"
+
+#~ msgid "Date"
+#~ msgstr "วันที่"
+
+#~ msgid "Host"
+#~ msgstr "โฮสต์"
+
+#~ msgid "Filter History"
+#~ msgstr "กรองประวัติการถ่ายโอน"
+
+#~ msgctxt "delete selected transfer"
+#~ msgid "Delete Selected"
+#~ msgstr "ลบที่เลือก"
+
+#~ msgid "Download"
+#~ msgstr "ดาวน์โหลด"
+
+#~ msgid "TextLabel"
+#~ msgstr "ป้ายข้อความ"
+
+#, fuzzy
+#~| msgid "Port:"
+#~ msgctxt "hash as a hash of type md5, sha1 etc."
+#~ msgid "Hash:"
+#~ msgstr "พอร์ต:"
+
+#~ msgid "Status:"
+#~ msgstr "สถานะ:"
+
+#~ msgid "Remaining Time:"
+#~ msgstr "เวลาที่เหลือ:"
+
+#~ msgid "Transfer Settings"
+#~ msgstr "ตั้งค่าการส่งถ่ายข้อมูล"
+
+#~ msgid "Download Destination:"
+#~ msgstr "ปลายทางการดาวน์โหลด:"
+
+#~ msgctxt "No value has been set"
+#~ msgid "Not set"
+#~ msgstr "ยังไม่ตั้งค่า"
+
+#~ msgid " KiB"
+#~ msgstr " กิโลไบต์"
+
+#~ msgid "Upload Limit:"
+#~ msgstr "จำกัดการอัปโหลด:"
+
+#~ msgid "Download Limit:"
+#~ msgstr "จำกัดการดาวน์โหลด:"
+
+#~ msgid "Maximum Share Ratio:"
+#~ msgstr "อัตราส่วนการแบ่งปันสูงสุด:"
+
+#~ msgid "Modify the mirrors used for downloading."
+#~ msgstr "แก้ไขมิเรอร์ต่าง ๆ ที่จะใช้ในการดาวน์โหลด"
+
+#~ msgctxt "The available mirrors (servers) for downloading"
+#~ msgid "Mirrors"
+#~ msgstr "มิเรอร์ต่าง ๆ"
+
+#~ msgctxt "verification of the download (e.g. by using MD5)"
+#~ msgid "Verification"
+#~ msgstr "การตรวจความถูกต้อง"
+
+#~ msgid "PGP signature:"
+#~ msgstr "ลายเซ็น PGP:"
+
+#~ msgid "Key"
+#~ msgstr "กุญแจ"
+
+#~ msgid "Issuer:"
+#~ msgstr "ผู้ออกให้:"
+
+#~ msgid "E-Mail:"
+#~ msgstr "อีเมล:"
+
+#~ msgid "Comment:"
+#~ msgstr "หมายเหตุ:"
+
+#~ msgid "Creation:"
+#~ msgstr "การสร้าง:"
+
+#~ msgid "Expiration:"
+#~ msgstr "การหมดอายุ:"
+
+#~ msgid "Trust:"
+#~ msgstr "ความน่าเชื่อถือ:"
+
+#~ msgid "Fingerprint:"
+#~ msgstr "อัตลักษณ์:"
+
+#~ msgid "Verify"
+#~ msgstr "ตรวจสอบ"
+
+#~ msgid "Group Settings"
+#~ msgstr "ตั้งค่าต่าง ๆ ของกลุ่ม"
+
+#~ msgid "Default folder:"
+#~ msgstr "โฟลเดอร์ปริยาย:"
+
+#~ msgid "Moves all transfers with the regular expression to this group"
+#~ msgstr "ย้ายการถ่ายโอนทั้งหมดที่เข้าคู่กับเงื่อนไขการค้นหาไปยังกลุ่มนี้"
+
+#~ msgid "Regular expression:"
+#~ msgstr "เงื่อนไขการค้นหา:"
+
+#~ msgid "*movies*"
+#~ msgstr "*ภาพยนตร์*"
+
+#~ msgid "Maximum download speed:"
+#~ msgstr "ความเร็วการดาวน์โหลดสูงสุด:"
+
+#~ msgid "Maximum upload speed:"
+#~ msgstr "ความเร็วการอัปโหลดสูงสุด:"
+
+#~ msgid "Destination:"
+#~ msgstr "ปลายทาง:"
+
+#~ msgid "Transfer group:"
+#~ msgstr "กลุ่มการถ่ายโอน:"
+
+#~ msgid "Verify the finished download with the selected checksum."
+#~ msgstr ""
+#~ "ตรวจสอบความถูกต้องของการดาวน์โหลดที่เสร็จสิ้นแล้ว ด้วยค่าผลรวมการตรวจสอบ (checksum) "
+#~ "ที่เลือกไว้"
+
+#~ msgid "&Verify"
+#~ msgstr "&ตรวจสอบความถูกต้อง"
+
+#~ msgid "Verifying:"
+#~ msgstr "การตรวจสอบความถูกต้อง:"
+
+#~ msgid "&File"
+#~ msgstr "แ&ฟ้ม"
+
+#~ msgid "&Downloads"
+#~ msgstr "&ดาวน์โหลด"
+
+#~ msgid "&Settings"
+#~ msgstr "&ตั้งค่า"
+
+#~ msgid "&Help"
+#~ msgstr "&ช่วยเหลือ"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "แถบเครื่องมือหลัก"
+
+#~ msgid "Sets to show the splashscreen while KGet is loading"
+#~ msgstr ""
+#~ "ตั้งค่าเพื่อให้มีการแสดงหน้าต่างเริ่มการทำงานในขณะที่กำลังโหลดโปรแกรม 'ช่วยดาวน์โหลด-K'"
+
+#~ msgid "The width of the columns in the history view"
+#~ msgstr "ความกว้างของคอลัมน์ต่าง ๆ ในมุมมองประวัติการถ่ายโอน"
+
+#~ msgid "List of the available search engines"
+#~ msgstr "รายการของบริการค้นหาที่มีให้เลือกใช้"
+
+#~ msgid "List of the available search engine URLs"
+#~ msgstr "รายการของที่อยู่ URL ของบริการค้นที่มีให้เลือกใช้"
+
+#~ msgid "List of the Regexp to match input URL"
+#~ msgstr "รายการของเงื่อนไขการค้นหาที่จะใช้ในการเข้าคู่กับที่อยู่ URL ที่ป้อนมา"
+
+#~ msgid "List of descriptions for user scripts"
+#~ msgstr "รายการคำอธิบายต่าง ๆ ของสคริปต์ต่าง ๆ ของผู้ใช้"
+
+#~ msgid "List of whether the script is enabled"
+#~ msgstr "รายการของสคริปต์ที่ถูกเปิดใช้งาน"
+
+#~ msgid "There are no links in the active frame of the current HTML page."
+#~ msgstr "ไม่มีที่อยู่เชื่อมโยงใด ๆ ในเฟรมที่ทำงานอยู่บนหน้าเอกสาร HTML ปัจจุบัน"
+
+#~ msgid "Form"
+#~ msgstr "จาก"
+
+#~ msgid "An error occurred...."
+#~ msgstr "เกิดข้อผิดพลาดขึ้น..."
+
+#~ msgid "Remove Tag"
+#~ msgstr "ลบป้ายกำกับ"
+
+#~ msgid "Add Tag"
+#~ msgstr "เพิ่มป้ายกำกับ"
+
+#~ msgid "Tag Settings for the groups"
+#~ msgstr "การตั้งค่าป้ายกำกับของกลุ่มต่าง ๆ"
+
+#~ msgid "Tag Settings"
+#~ msgstr "ตั้งค่าต่าง ๆ ของป้ายกำกับ"
+
+#~ msgid "Available tags:"
+#~ msgstr "ป้ายกำกับต่าง ๆ ที่มีให้เลือกใช้:"
+
+#~ msgid "Used tags:"
+#~ msgstr "ป้ายกำกับต่าง ๆ ที่ใช้:"
+
+#~ msgid "Enter a new Tag"
+#~ msgstr "ป้อนป้ายกำกับตัวใหม่"
+
+#~ msgid "Enter a new tag"
+#~ msgstr "ป้อนป้ายกำกับตัวใหม่"
+
+#~ msgid "Modify Tags..."
+#~ msgstr "แก้ไขป้ายกำกับต่าง ๆ ..."
+
+#~ msgid "Unable to continue: KGet cannot download using this protocol."
+#~ msgstr "ไม่สามารถทำต่อไปได้: 'ช่วยดาวน์โหลด-K' ไม่สามารถดาวน์โหลดโดยใช้โพรโทคอลนี้ได้"
+
+#~ msgid "The width of the columns in the main view"
+#~ msgstr "ความกว้างของคอลัมน์ต่าง ๆ ในมุมมองหลัก"
+
+#~ msgid "OK"
+#~ msgstr "ใช้ได้"
+
+#~ msgid "Announcing"
+#~ msgstr "ประกาศแจ้ง"
+
+#~| msgid "Error: "
+#~ msgid "Error: %1"
+#~ msgstr "ข้อผิดพลาด: %1"
+
+#~ msgid "Unknown client"
+#~ msgstr "ไคลเอนท์ที่ไม่รู้จัก"
+
+#~ msgid "1 day "
+#~ msgid_plural "%1 days "
+#~ msgstr[0] "%1 วัน "
+
+#~ msgid "Cannot open log file %1 : %2"
+#~ msgstr "ไม่สามารถเปิดแฟ้มปูมบันทึก %1 ได้ : %2"
+
+#~ msgid "Cannot write to %1 : %2"
+#~ msgstr "ไม่สามารถเขียนไปยัง %1 ได้ : %2"
+
+#~ msgid "Cannot read from %1"
+#~ msgstr "ไม่สามารถอ่านจาก %1 ได้"
+
+#~| msgid "Cannot create directory %1: %2"
+#~ msgid "Cannot create directory %1"
+#~ msgstr "ไม่สามารถสร้างไดเรกทอรี %1 ได้"
+
+#~ msgid "Cannot symlink %1 to %2: %3"
+#~ msgstr "ไม่สามารถสร้างการเชื่อมโยงสัญลักษณ์จาก %1 ไปยัง %2 ได้: %3"
+
+#~ msgid "Cannot move %1 to %2: %3"
+#~ msgstr "ไม่สามารถย้าย %1 ไปยัง %2 ได้: %3"
+
+#~ msgid "Cannot copy %1 to %2: %3"
+#~ msgstr "ไม่สามารถคัดลอก %1 ไปยัง %2 ได้: %3"
+
+#~ msgid "Cannot delete %1: %2"
+#~ msgstr "ไม่สามารถลบ %1 ได้: %2"
+
+#~ msgid "Cannot create %1: %2"
+#~ msgstr "ไม่สามารถสร้าง %1 ได้: %2"
+
+#~ msgid "Cannot calculate the filesize of %1: %2"
+#~ msgstr "ไม่สามารถคำนวณขนาดแฟ้มของ %1 ได้: %2"
+
+#~ msgid "Cannot calculate the filesize : %1"
+#~ msgstr "ไม่สามารถคำนวณขนาดแฟ้มได้ : %1"
+
+#~ msgid "Cannot open %1 : %2"
+#~ msgstr "ไม่สามารถเปิด %1 ได้ : %2"
+
+#~ msgid "Cannot expand file: %1"
+#~ msgstr "ไม่สามารถขยายแฟ้ม: %1"
+
+#~ msgid "Cannot seek in file : %1"
+#~ msgstr "ไม่สามารถสืบค้นในแฟ้ม : %1"
+
+#~ msgid "General"
+#~ msgstr "ทั่วไป"
+
+#~| msgid "Connecting"
+#~ msgid "Connections"
+#~ msgstr "การเชื่อมต่อต่าง ๆ"
+
+#~| msgid "Trackers"
+#~ msgid "Tracker"
+#~ msgstr "แทร็กเกอร์"
+
+#~ msgid "Disk Input/Output"
+#~ msgstr "ข้อมูลเข้า/ข้อมูลออกของดิสก์"
+
+#~ msgid "Not connected"
+#~ msgstr "ไม่มีการเชื่อมต่อ"
+
+#~| msgid "No Links"
+#~ msgid "Not in use"
+#~ msgstr "ไม่มีการใช้งาน"
+
+#~ msgid "Connection closed"
+#~ msgstr "ยุดิการเชื่อมต่อ"
+
+#~ msgid "Resolving proxy %1:%2"
+#~ msgstr "กำลังค้นแปลงค่าชื่อพร็อกซี %1:%2"
+
+#~ msgid "Resolving hostname %1"
+#~ msgstr "กำลังค้นแปลงค่าชื่อโฮสต์ %1"
+
+#~ msgid "Error: request failed: %1"
+#~ msgstr "ผิดพลาด: การร้องขอล้มเหลว: %1"
+
+#~ msgid "Connected"
+#~ msgstr "เชื่อมต่อแล้ว"
+
+#~ msgid "Error: Failed to connect to webseed"
+#~ msgstr "ล้มเหลวในการเชื่อมต่อไปยัง webseed"
+
+#~ msgid "Connecting"
+#~ msgstr "กำลังเชื่อมต่อ"
+
+#~ msgid "Failed to connect to webseed"
+#~ msgstr "ล้มเหลวในการเชื่อมต่อไปยัง webseed"
+
+#~ msgid "Failed to resolve hostname of webseed"
+#~ msgstr "ล้มเหลวในการแปลงชื่อโฮสต์ของ webseed"
+
+#~ msgid "Error: failed to connect, server not responding"
+#~ msgstr "ผิดพลาด: การเชื่อมต่อล้มเหลว เซิร์ฟเวอร์ไม่มีการตอบรับ"
+
+#~ msgid "Error: request timed out"
+#~ msgstr "ผิดพลาด: การร้องขอหมดเวลา"
+
+#~ msgid "Redirected without a new location."
+#~ msgstr "มีการเปลี่ยนทิศทางโดยปราศจากตำแหน่งใหม่"
+
+#~| msgid "%1 peers"
+#~ msgid "1 peer"
+#~ msgid_plural "%1 peers"
+#~ msgstr[0] "เชื่อมต่อตรง %1 จุด"
+
+#~ msgid "Illegal token: %1"
+#~ msgstr "ตั๋วใช้ไม่ได้: %1"
+
+#~ msgid "Decode error"
+#~ msgstr "ถอดรหัสผิดพลาด"
+
+#~ msgid "Unexpected end of input"
+#~ msgstr "จบส่วนข้อมูลอย่างไม่คาดคิด"
+
+#~ msgid "Cannot convert %1 to an int"
+#~ msgstr "ไม่สามารถแปลง %1 ไปเป็น int ได้"
+
+#~| msgid "Torrent is incomplete!"
+#~ msgid "Torrent is incomplete."
+#~ msgstr "ทอร์เรนต์ไม่สมบูรณ์"
+
+#~ msgid "Failed to open %1 : %2"
+#~ msgstr "ล้มเหลวในการเปิด %1 : %2"
+
+#~ msgid "Failed to create %1 : %2"
+#~ msgstr "ล้มเหลวในการสร้าง %1 : %2"
+
+#~ msgid "Cannot open index file %1 : %2"
+#~ msgstr "ไม่สามารถเปิดแฟ้มดัชนี %1 ได้ : %2"
+
+#~ msgid "Cannot create file %1 : %2"
+#~ msgstr "ไม่สามารถสร้างแฟ้ม %1 ได้ : %2"
+
+#~ msgid "Failed to write first chunk to DND file : %1"
+#~ msgstr "ล้มเหลวในการเขียนท่อนแรกไปยังแฟ้ม DND : %1"
+
+#~ msgid "Failed to write last chunk to DND file : %1"
+#~ msgstr "ล้มเหลวในการเขียนท่อนสุดท้ายไปยังแฟ้ม DND : %1"
+
+#~ msgid "Cannot open %1 for writing : readonly filesystem"
+#~ msgstr "ไม่สามารถเปิด %1 เพื่อทำการเขียนได้ : ระบบแฟ้มแบบอ่านได้อย่างเดียว"
+
+#~ msgid "Cannot expand file %1 : %2"
+#~ msgstr "ไม่สามารถขยายแฟ้ม %1 ได้ : %2"
+
+#~ msgid "Error : Reading past the end of the file %1"
+#~ msgstr "ผิดพลาด : การอ่านพบส่วนจบแฟ้ม %1 อย่างไม่ควรจะเป็น"
+
+#~ msgid "Failed to seek file %1 : %2"
+#~ msgstr "ล้มเหลวในการค้นตำแหน่งในแฟ้ม %1 : %2"
+
+#~ msgid "Error reading from %1"
+#~ msgstr "ผิดพลาดในการอ่านจาก %1"
+
+#~ msgid "Failed to write to file %1 : %2"
+#~ msgstr "ล้มเหลวในการเขียนไปยังแฟ้ม %1 : %2"
+
+#~ msgid "Cannot preallocate diskspace : %1"
+#~ msgstr "ไม่สามารถจองเนื้อที่บนดิสก์ไว้ก่อนได้ : %1"
+
+#~ msgid "Cannot open file %1 : %2"
+#~ msgstr "ไม่สามารถเปิดแฟ้ม %1 ได้ : %2"
+
+#~| msgid "Corrupted torrent!"
+#~ msgid "Corrupted torrent."
+#~ msgstr "ข้อมูลทอร์เรนต์เสียหาย"
+
+#~ msgid " Unable to open torrent file %1 : %2"
+#~ msgstr "ไม่สามารถเปิดแฟ้มทอร์เรนต์ %1 ได้ : %2"
+
+#~ msgid "Parse Error"
+#~ msgstr "การประมวลข้อมูลผิดพลาด"
+
+#~| msgid ""
+#~| "An error occurred while loading the torrent <b>%1</b>.<br/>The torrent "
+#~| "is probably corrupt or is not a torrent file."
+#~ msgid ""
+#~ "An error occurred while loading the torrent <b>%1</b>:<br/><b>%2</b><br/"
+#~ ">The torrent is probably corrupt or is not a valid torrent file."
+#~ msgstr ""
+#~ "เกิดข้อผิดพลาดขึ้นระหว่างทำการโหลดทอร์เรนต์ <b>%1</b>:<br/><b>%2</b><br/"
+#~ ">แฟ้มทอร์เรนต์อาจจะเสียหายหรือมันอาจจะไม่ใช่แฟ้มทอร์เรนต์ก็ได้"
+
+#~| msgid ""
+#~| "An error occurred while loading the torrent <b>%1</b>.<br/>The torrent "
+#~| "is probably corrupt or is not a torrent file."
+#~ msgid ""
+#~ "An error occurred while loading the torrent:<br/><b>%1</b><br/>The "
+#~ "torrent is probably corrupt or is not a valid torrent file."
+#~ msgstr ""
+#~ "เกิดข้อผิดพลาดขึ้นระหว่างทำการโหลดทอร์เรนต์: <b>%1</b><br/"
+#~ ">แฟ้มทอร์เรนต์อาจจะเสียหายหรือมันอาจจะไม่ใช่แฟ้มทอร์เรนต์ก็ได้"
+
+#~ msgid "Unable to create %1 : %2"
+#~ msgstr "ไม่สามารถสร้าง %1 ได้ : %2"
+
+#~ msgid ""
+#~ "You are already downloading this torrent %1, the list of trackers of both "
+#~ "torrents has been merged."
+#~ msgstr ""
+#~ "คุณได้ทำการดาวน์โฟลดแฟ้มทอร์เรนต์ %1 นี้ไปแล้ว, "
+#~ "รายการของแทร็กเกอร์จากทอร์เรนต์ทั้งคู่จะถูกรวมเข้าด้วยกัน"
+
+#~ msgid "You are already downloading the torrent %1"
+#~ msgstr "คุณได้ทำการดาวน์โหลดทอร์เรนต์ %1 ไปแล้ว"
+
+#~ msgid "Not started"
+#~ msgstr "ยังไม่ได้เริ่ม"
+
+#~ msgid "Seeding completed"
+#~ msgstr "การปล่อยข้อมูลเสร็จสมบูรณ์"
+
+#~| msgid "Seeding"
+#~ msgctxt "Status of a torrent file"
+#~ msgid "Seeding"
+#~ msgstr "กำลังปล่อยข้อมูล"
+
+#~ msgid "Downloading"
+#~ msgstr "กำลังดาวน์โหลด"
+
+#~ msgid "Stopped"
+#~ msgstr "หยุดแล้ว"
+
+#~ msgid "Allocating diskspace"
+#~ msgstr "จองเนื้อที่บนดิสก์ไว้ก่อน"
+
+#~ msgid "Queued for seeding"
+#~ msgstr "ถูกเข้าคิวรอการปล่อยข้อมูล"
+
+#~| msgid "Currently downloading:"
+#~ msgid "Queued for downloading"
+#~ msgstr "ถูกเข้าคิวรอทำการดาวน์โหลด"
+
+#~ msgid "Checking data"
+#~ msgstr "กำลังตรวจสอบข้อมูล"
+
+#~ msgid "Stopped. No space left on device."
+#~ msgstr "หยุดแล้ว ไม่มีเนื้อว่างเพียงพอบนดิสก์"
+
+#~ msgid "Cannot open file %1: %2"
+#~ msgstr "ไม่สามารถเปิดแฟ้ม %1 ได้: %2"
+
+#~ msgid "Cannot create index file: %1"
+#~ msgstr "ไม่สามารถสร้างแฟ้มดัชนีได้: %1"
+
+#~ msgid "Redirect without a redirect location"
+#~ msgstr "มีการเปลี่ยนทิศทางโดยปราศจากตำแหน่งของทิศทางใหม่"
+
+#~ msgid "Timeout contacting tracker %1"
+#~ msgstr "หมดเวลาในการติดต่อไปยังแทร็กเกอร์ %1"
+
+#~| msgid "Failed to resolve hostname of webseed"
+#~ msgid "Unable to resolve hostname %1"
+#~ msgstr "ล้มเหลวในการแปลงชื่อโฮสต์ %1"
+
+#~ msgid "Cannot bind to udp port %1 or the 10 following ports."
+#~ msgstr "ไม่สามารถใช้งานพอร์ต udp %1 หรือพอร์ต่าง ๆ 10 พอร์ตต่อไปนี้ได้"
+
+#~ msgid "Invalid response from tracker"
+#~ msgstr "การตอบสนองจากแทร็กเกอร์ไม่ถูกต้อง"
+
+#~ msgid "Invalid data from tracker"
+#~ msgstr "ข้อมูลจากแทร็กเกอร์ใช้ไม่ได้"
+
+#~ msgid "Invalid tracker URL"
+#~ msgstr "ที่อยู่ URL ของแทร็กเกอร์ใช้ไม่ได้"
+
+#~ msgid "Cannot open file : %1 : %2"
+#~ msgstr "ไม่สามารถเปิดแฟ้มต่อไปนี้ได้ : %1 : %2"
+
+#, fuzzy
+#~| msgid ""
+#~| "Another group with this name already exists\n"
+#~| "Please select a different name"
+#~ msgid ""
+#~ "Another group with this name already exists. Please select a different "
+#~ "name."
+#~ msgstr ""
+#~ "มีกลุ่มที่มีชื่อนี้อยู่ก่อนแล้ว\n"
+#~ "โปรดตั้งชื่อที่แตกต่างจากเดิม"
+
+#, fuzzy
+#~| msgid "Group name already in use"
+#~ msgid "Group Name Already in Use"
+#~ msgstr "กลุ่มที่ชื่อนี้มีการใช้งานอยู่แล้ว"
+
+#~ msgid "Add"
+#~ msgstr "เพิ่ม"
+
+#~ msgid "Delete"
+#~ msgstr "ลบ"
+
+#~ msgid "Configure..."
+#~ msgstr "ปรับแต่ง..."
+
+#~ msgid "Details for: %1"
+#~ msgstr "รายละเอียดของ: %1"
+
+#~ msgid "All downloads"
+#~ msgstr "การดาวน์โหลดทั้งหมด"
+
+#~ msgid "Finished downloads"
+#~ msgstr "การดาวน์โหลดที่เสร็จแล้ว"
+
+#~ msgid "Transfers:"
+#~ msgstr "การถ่ายโอนต่าง ๆ :"
+
+#~ msgid "Downloads"
+#~ msgstr "การดาวน์โหลดต่าง ๆ"
+
+#~ msgid "Transfer details:"
+#~ msgstr "รายละเอียดการถ่ายโอน:"
+
+#~ msgid "Transfer List"
+#~ msgstr "รายการการถ่ายโอน"
+
+#~ msgid "Expandable transfer details instead of separate tabs"
+#~ msgstr "ใช้มุมมองรายละเอียดของการถ่ายโอนที่สามารถขยายได้ แทนที่จะเป็นแท็บแยกกัน"
+
+#~ msgid "Threads"
+#~ msgstr "เธรดต่าง ๆ"
+
+#~ msgid "Number of threads:"
+#~ msgstr "จำนวนเธรด:"
+
+#, fuzzy
+#~| msgid "Number of threads:"
+#~ msgid "Name of the license"
+#~ msgstr "จำนวนเธรด:"
+
+#, fuzzy
+#~| msgid "Number of threads:"
+#~ msgid "URL to the license"
+#~ msgstr "จำนวนเธรด:"
+
+#~ msgctxt "The transfer is delayed"
+#~ msgid "Delayed"
+#~ msgstr "หน่วงเวลาแล้ว"
+
+#~ msgid ""
+#~ "Destination file \n"
+#~ "%1\n"
+#~ "already exists.\n"
+#~ "Do you want to overwrite it?"
+#~ msgstr ""
+#~ "มีแฟ้มปลายทาง \n"
+#~ "%1\n"
+#~ "อยู่ก่อนแล้ว\n"
+#~ "คุณต้องการจะเขียนทับมันหรือไม่ ?"
+
+#, fuzzy
+#~| msgid "Overwrite existing file?"
+#~ msgid "Overwrite destination"
+#~ msgstr "ต้องการจะเขียนทับแฟ้มที่มีอยู่หรือไม่ ?"
+
+#~ msgid "Cannot remove torrent default tracker."
+#~ msgstr "ไม่สามารถลบแทร็กเกอร์ปริยายของทอร์เรนต์ได้"
+
+#~ msgid "You cannot add trackers to a private torrent"
+#~ msgstr "คุณไม่สามารถเพิ่มแทร็กเกอร์ไปยังทอร์เรนต์ส่วนตัวได้"
+
+#~ msgid "Cannot migrate %1 : %2"
+#~ msgstr "ไม่สามารถผนวกรวม %1 ได้ : %2"
+
+#~ msgid ""
+#~ "The torrent %1 was started with a previous version of KTorrent. To make "
+#~ "sure this torrent still works with this version of KTorrent, we will "
+#~ "migrate this torrent. You will be asked for a location to save the "
+#~ "torrent to. If you press cancel, we will select your home directory."
+#~ msgstr ""
+#~ "ทอร์เรนต์ %1 ได้ถูกเริ่มด้วย KTorrent รุ่นก่อน และเพื่อให้มั่นใจว่าทอร์เรต์นี้จะยังคงทำงานได้กับ "
+#~ "KTorrent รุ่นนี้ด้วย เราจะทำการผนวกรวมทอร์เรนต์นี้ "
+#~ "และคุณจะถูกถามถึงตำแหน่งที่จะใช้บันทึกทอร์เรนต์ หากคุณกดปุ่ม ยกเลิก "
+#~ "เราจะเลือกไดเรกทอรีส่วนตัวของคุณเป็นที่บันทึกแทน"
+
+#~ msgid "Select Folder to Save To"
+#~ msgstr "เลือกโฟลเดอร์ที่จะบันทึกไป"
+
+#~ msgid "Queued"
+#~ msgstr "อยู่ในคิว"
+
+#~ msgid "Current Tracker"
+#~ msgstr "แทร็กเกอร์ปัจจุบัน"
+
+#, fuzzy
+#~| msgid "Score"
+#~ msgid "Scrape"
+#~ msgstr "คะแนน"
+
+#~ msgid "Available Trackers"
+#~ msgstr "แทร็กเกอร์ที่มีอยู่"
+
+#, fuzzy
+#~| msgid "Url"
+#~ msgid "Url:"
+#~ msgstr "ที่อยู่"
+
+#, fuzzy
+#~| msgctxt "@action"
+#~| msgid "Enter URL: "
+#~ msgid "Enter an url"
+#~ msgstr "ป้อนที่อยู่ URL:"
+
+#, fuzzy
+#~| msgid "Use search engines"
+#~ msgid "Urls list of the available search engines"
+#~ msgstr "ใช้เว็บบริการค้นหา"
+
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Delete Selected"
+#~ msgstr "ลบที่เลือก"
+
+#, fuzzy
+#~| msgid "Clear History"
+#~ msgid "We are sorry"
+#~ msgstr "ล้างประวัติการถ่ายโอน"
+
+#~ msgid "Rename transfer"
+#~ msgstr "เปลี่ยนชื่อการถ่ายโอนข้อมูล"
+
+#~ msgid "Download URL again?"
+#~ msgstr "ดาวน์โหลดจากที่อยู่ URL อีกครั้งหรือไม่ ?"
+
+#, fuzzy
+#~| msgid "File"
+#~ msgctxt "file in a filsystem"
+#~ msgid "File"
+#~ msgstr "แฟ้ม"
+
+#, fuzzy
+#~| msgid ""
+#~| "Are you sure that you want to remove\n"
+#~| "the group named %1?"
+#~ msgid "Are you sure that you want to remove all selected groups?"
+#~ msgstr ""
+#~ "คุณแน่ใจหรือว่าต้องการจะลบ\n"
+#~ "กลุ่มที่ชื่อ %1 ?"
+
+#~ msgid "Name"
+#~ msgstr "ชื่อ"
+
+#~ msgid "Remaining Time"
+#~ msgstr "เวลาที่เหลือ"
+
+#~ msgid "KGet - Download Manager"
+#~ msgstr "เครื่องมือจัดการการดาวน์โหลด K"
+
+#~ msgctxt "@label transfer source"
+#~ msgid "Source:"
+#~ msgstr "ต้นทาง:"
+
+#~ msgid "Minimal segment size:"
+#~ msgstr "ขนาดของส่วนที่เล็กที่สุด:"
+
+#~ msgid "kBi"
+#~ msgstr " กิโลไบต์"
+
+#~ msgid "Save data every:"
+#~ msgstr "บันทึกข้อมูลทุก:"
+
+#, fuzzy
+#~| msgid ""
+#~| "You will lose all data in these files, are you sure you want to do this ?"
+#~ msgid ""
+#~ "You will lose all data in these files, are you sure you want to do this?"
+#~ msgstr "คุณจะสูญเสียข้อมูลทั้งหมดที่อยู่ในแฟ้มเหล่านี้ แน่ใจหรือว่าต้องการจะทำเช่นนี้ ?"
+
+#~ msgid "Maintainer, Core Developer"
+#~ msgstr "ผู้ดูแล, ผู้พัฒนาหลัก"
+
+#~ msgid "Cannot expand file : %1"
+#~ msgstr "ไม่สามารถขยายแฟ้ม : %1"
+
+#~ msgid "Peers"
+#~ msgstr "เชื่อมต่อตรง"
+
+#~ msgid "Torrent has no announce or nodes field"
+#~ msgstr "ทอร์เรนต์ไม่มีการประกาศหรือช่องข้อมูลโหนด"
+
+#, fuzzy
+#~| msgid ""
+#~| "An error occurred while loading the torrent. The torrent is probably "
+#~| "corrupt or is not a torrent file.\n"
+#~| "%1"
+#~ msgid ""
+#~ "An error occurred while loading the torrent.\n"
+#~ "The torrent is probably corrupt or is not a torrent file."
+#~ msgstr ""
+#~ "เกิดข้อผิดพลาดขึ้นระหว่างทำการโหลดทอร์เรนต์ "
+#~ "แฟ้มทอร์เรนต์อาจจะเสียหายหรือมันอาจจะไม่ใช่แฟ้มทอร์เรนต์ก็ได้\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Select all"
+#~ msgid "&Select all"
+#~ msgstr "เลือกทั้งหมด"
+
+#~ msgid "&Transfer History..."
+#~ msgstr "ประ&วัติการถ่ายโอน..."
+
+#~ msgid "&Group Settings..."
+#~ msgstr "ตั้งค่าต่าง ๆ ของ&กลุ่ม..."
+
+#~ msgid "&Transfer Settings..."
+#~ msgstr "ตั้งค่าการ&ส่งถ่ายข้อมูล..."
+
+#, fuzzy
+#~| msgid "Download-Speed:"
+#~ msgid "Download Speed:"
+#~ msgstr "ความเร็วดาวน์โหลด:"
+
+#, fuzzy
+#~| msgid "Upload-Speed:"
+#~ msgid "Upload Speed:"
+#~ msgstr "ความเร็วอัปโหลด:"
+
+#, fuzzy
+#~| msgid "Import links"
+#~ msgid "&Import links"
+#~ msgstr "นำเข้าที่อยู่เชื่อมโยง"
+
+#~ msgid "The group name is empty"
+#~ msgstr "ชื่อกลุ่มว่าง"
+
+#, fuzzy
+#~| msgid ""
+#~| "A group can not have an empty name\n"
+#~| "Please select a new one"
+#~ msgid ""
+#~ "A group can not have an empty name.\n"
+#~ "Please select a new one."
+#~ msgstr ""
+#~ "ชื่อกลุ่มไม่สามารถว่างไว้ได้\n"
+#~ "โปรดเลือกค่าใหม่"
+
+#, fuzzy
+#~| msgid "You can not delete this group!"
+#~ msgid "You can not delete this group."
+#~ msgstr "คุณไม่สามารถลบกลุ่มนี้ได้ !"
+
+#, fuzzy
+#~| msgid "Delete"
+#~ msgid "&Delete"
+#~ msgstr "ลบ"
+
+#, fuzzy
+#~| msgid "Cancel"
+#~ msgid "&Cancel"
+#~ msgstr "ยกเลิก"
+
+#~ msgid "Default Download Folders"
+#~ msgstr "โฟลเดอร์เก็บการดาวน์โหลดปริยาย"
+
+#~ msgid "Folder and extension can not be empty."
+#~ msgstr "โฟลเดอร์และส่วนขยายไม่สามารถปล่อยว่างไว้ได้"
+
+#~ msgid "Ask save location for every new download"
+#~ msgstr "ถามถึงตำแหน่งสำหรับบันทึกการดาวน์โหลดตัวใหม่ทุกครั้ง"
+
+#~ msgid "Place new downloads inside default folder:"
+#~ msgstr "บันทึกการดาวน์โหลดตัวใหม่ไว้ในโฟลเดอร์ปริยาย:"
+
+#~ msgid "Except for specific file types"
+#~ msgstr "ยกเว้นชนิดแฟ้มที่ระบุ"
+
+#~ msgid "Specify extension and target folder:"
+#~ msgstr "ระบุนามสกุล (ส่วนขยาย) และโฟลเดอร์เป้าหมาย:"
+
+#, fuzzy
+#~| msgid "File-Extension"
+#~ msgid "File Extension"
+#~ msgstr "ส่วนขยายแฟ้ม"
+
+#~ msgid "Default Folder"
+#~ msgstr "โฟลเดอร์ปริยาย"
+
+#~ msgid "Edit"
+#~ msgstr "แก้ไข"
+
+#~ msgid ""
+#~ "Use a regular expression for the extension. \n"
+#~ "Examples: *.tar.gz or *movies*.zip"
+#~ msgstr ""
+#~ "ใช้นิพจน์เงื่อนไขการค้นหาสำหรับส่วนขยาย\n"
+#~ "ตัวอย่าง: *.tar.gz หรือ *movies*.zip"
+
+#~ msgid "Set as default folder"
+#~ msgstr "ตั้งเป็นโฟลเดอร์ปริยาย"
+
+#, fuzzy
+#~| msgid "Set as default folder"
+#~ msgid "extRegExp, defaultFolder"
+#~ msgstr "ตั้งเป็นโฟลเดอร์ปริยาย"
+
+#~ msgid "Downloading.."
+#~ msgstr "กำลังดาวน์โหลด.."
+
+#~ msgid "Advanced-Details for %1"
+#~ msgstr "รายละเอียดเพิ่มเติมของ %1"
+
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading.."
+#~ msgstr "กำลังดาวน์โหลด..."
+
+#~ msgctxt "@label Title in header"
+#~ msgid "Webinterface"
+#~ msgstr "ส่วนติดต่อแบบเว็บ"
+
+#~ msgid "Downloads number:"
+#~ msgstr "จำนวนการดาวน์โหลด"
+
+#~ msgid "Assigned Peers"
+#~ msgstr "เชื่อมต่อตรงที่จัดให้"
+
+#~ msgid "%1 GB"
+#~ msgstr "%1 กิกะไบต์"
+
+#~ msgid "%1 MB"
+#~ msgstr "%1 เมกะไบต์"
+
+#~ msgid "%1 KB"
+#~ msgstr "%1 กิโลไบต์"
+
+#~ msgid "%1 B"
+#~ msgstr "%1 ไบต์"
+
+#~ msgid "%1 KB/s"
+#~ msgstr "%1 กิโลไบต์/วินาที"
+
+#~ msgid ""
+#~ "An error occurred while loading the torrent.<br/>The torrent is probably "
+#~ "corrupt or is not a torrent file."
+#~ msgstr ""
+#~ "เกิดข้อผิดพลาดขึ้นระหว่างทำการโหลดทอร์เรนต์<br/> "
+#~ "แฟ้มทอร์เรนต์อาจจะเสียหายหรือมันอาจจะไม่ใช่แฟ้มทอร์เรนต์ก็ได้"
+
+#~ msgid "kBi/s"
+#~ msgstr " กิโลไบต์/วินาที"
+
+#~ msgid "Maximum Shared Ration: (0 if no limit)"
+#~ msgstr "อัตราสัดส่วนการแบ่งปันสูงสุด: (ใส่ค่า 0 หากไม่จำกัด)"
+
+#~ msgid "Start downloading files immediately after startup"
+#~ msgstr "เริ่มทำการดาวน์โหลดแฟ้มทันทีเมื่อเริ่มโปรแกรมแล้ว"
+
+#~ msgid "Not Deleted"
+#~ msgstr "ไม่ได้ลบ"
+
+#~ msgid "Konqueror Integration disabled"
+#~ msgstr "ปิดการใช้งานร่วมกับ Konqueror"
+
+#~ msgid "Show main window at startup"
+#~ msgstr "แสดงหน้าต่างหลักเมื่อเริ่มทำงาน"
+
+#~ msgid "More than 50MiB and 100MiB"
+#~ msgstr "มากกว่า 50 เมกะไบต์ถึง 100 เมกะไบต์"
+
+#~ msgid "<done> MiB of <todo> MiB"
+#~ msgstr "<done> เมกะไบต์ จาก <todo> เมกะไบต์"
+
+#~ msgid "<icon>"
+#~ msgstr "<icon>"
+
+#~ msgid "<status>"
+#~ msgstr "<status>"
+
+#~ msgid "<speed>"
+#~ msgstr "<speed>"
+
+#~ msgid "<remaining time>"
+#~ msgstr "<remaining time>"
+
+#~ msgid "Cannot expand file %1 : incomplete write"
+#~ msgstr "ไม่สามารถขยายแฟ้ม %1 ได้ : แฟ้มถูกเขียนมาไม่สมบูรณ์"
+
+#~ msgid "Cannot expand file %1"
+#~ msgstr "ไม่สามารถขยายแฟ้ม %1 ได้"
+
+#~ msgid "Error writing to %1 : %2"
+#~ msgstr "ผิดพลาดในการเขียนไปยัง %1 : %2"
+
+#~ msgid "Error writing to %1"
+#~ msgstr "ผิดพลาดในการเขียนไปยัง %1"
+
+#~ msgid "Tracker-Url:"
+#~ msgstr "ที่อยู่ของแทร็กเกอร์:"
+
+#, fuzzy
+#~| msgid "List All Links"
+#~ msgid "&List Links"
+#~ msgstr "แสดงรายการตำแหน่งเชื่อมโยงทั้งหมด"
+
+#~ msgid "Cannot expand file"
+#~ msgstr "ไม่สามารถขยายแฟ้มได้"
+
+#~ msgctxt "Download normally(not as first or last"
+#~ msgid "Normal"
+#~ msgstr "ปกติ"

@@ -1,0 +1,285 @@
+# Translation of imgalleryplugin to Norwegian Nynorsk
+#
+# Eirik U. Birkeland <eirbir@gmail.com>, 2008, 2011.
+# Karl Ove Hufthammer <karl@huftis.org>, 2008, 2009, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: imgalleryplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"PO-Revision-Date: 2020-12-12 00:24+0100\n"
+"Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
+"Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
+"Language: nn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 21.03.70\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#: imgallerydialog.cpp:37
+#, kde-format
+msgctxt "@title:window"
+msgid "Create Image Gallery"
+msgstr "Lag biletgalleri"
+
+#: imgallerydialog.cpp:38
+#, kde-format
+msgid "Create"
+msgstr "Opprett"
+
+#: imgallerydialog.cpp:48 imgallerydialog.cpp:84
+#, kde-format
+msgid "Image Gallery for %1"
+msgstr "Biletgalleri for %1"
+
+#: imgallerydialog.cpp:76
+#, kde-format
+msgid "Look"
+msgstr "Utsjånad"
+
+#: imgallerydialog.cpp:77
+#, kde-format
+msgid "Page Look"
+msgstr "Sideutsjånad"
+
+#: imgallerydialog.cpp:85
+#, kde-format
+msgid "&Page title:"
+msgstr "&Sidetittel:"
+
+#: imgallerydialog.cpp:93
+#, kde-format
+msgid "I&mages per row:"
+msgstr "B&ilete per rad:"
+
+#: imgallerydialog.cpp:95
+#, kde-format
+msgid "Show image file &name"
+msgstr "Vis &namn på biletfil"
+
+#: imgallerydialog.cpp:99
+#, kde-format
+msgid "Show image file &size"
+msgstr "Vis &filstorleik"
+
+#: imgallerydialog.cpp:103
+#, kde-format
+msgid "Show image &dimensions"
+msgstr "Vis &biletstorleik"
+
+#: imgallerydialog.cpp:114
+#, kde-format
+msgid "Fon&t name:"
+msgstr "Skrif&tnamn:"
+
+#: imgallerydialog.cpp:122
+#, kde-format
+msgid "Font si&ze:"
+msgstr "Skriftst&orleik:"
+
+#: imgallerydialog.cpp:126
+#, kde-format
+msgid "&Foreground color:"
+msgstr "&Framgrunnsfarge:"
+
+#: imgallerydialog.cpp:130
+#, kde-format
+msgid "&Background color:"
+msgstr "&Bakgrunnsfarge:"
+
+#: imgallerydialog.cpp:136 imgallerydialog.cpp:137
+#, kde-format
+msgid "Folders"
+msgstr "Mapper"
+
+#: imgallerydialog.cpp:145
+#, kde-format
+msgid "&Save to HTML file:"
+msgstr "&Lagra til HTML-fil:"
+
+#: imgallerydialog.cpp:147
+#, kde-format
+msgid "<p>The name of the HTML file this gallery will be saved to.</p>"
+msgstr "<p>Namnet på HTML-fila du vil lagra galleriet til.</p>"
+
+#: imgallerydialog.cpp:150
+#, kde-format
+msgid "&Recurse subfolders"
+msgstr "&Ta med undermapper"
+
+#: imgallerydialog.cpp:152
+#, kde-format
+msgid ""
+"<p>Whether subfolders should be included for the image gallery creation or "
+"not.</p>"
+msgstr "<p>Om undermapper skal vera med i biletgalleriet.</p>"
+
+#: imgallerydialog.cpp:163
+#, kde-format
+msgid "Endless"
+msgstr "Uendeleg"
+
+#: imgallerydialog.cpp:165
+#, kde-format
+msgid ""
+"<p>You can limit the number of folders the image gallery creator will "
+"traverse to by setting an upper bound for the recursion depth.</p>"
+msgstr ""
+"<p>Du kan avgrensa talet på mapper som skal vera med i biletgalleriet ved å "
+"velja ei øvre grense for mappedjupna.</p>"
+
+#: imgallerydialog.cpp:168
+#, kde-format
+msgid "Rec&ursion depth:"
+msgstr "&Mappedjupn:"
+
+#: imgallerydialog.cpp:172
+#, kde-format
+msgid "Copy or&iginal files"
+msgstr "Kopier &originalfilene"
+
+#: imgallerydialog.cpp:174
+#, kde-format
+msgid ""
+"<p>This makes a copy of all images and the gallery will refer to these "
+"copies instead of the original images.</p>"
+msgstr ""
+"<p>Lag ein kopi av alle bileta, slik at galleriet brukar kopiane i staden "
+"for dei opphavlege biletfilene.</p>"
+
+#: imgallerydialog.cpp:179
+#, kde-format
+msgid "Use &comment file"
+msgstr "Bruk &kommentarfil"
+
+#: imgallerydialog.cpp:181
+#, kde-format
+msgid ""
+"<p>If you enable this option you can specify a comment file which will be "
+"used for generating subtitles for the images.</p><p>For details about the "
+"file format please see the \"What's This?\" help below.</p>"
+msgstr ""
+"<p>Kryss av her dersom du vil velja ei fil med kommentarar som skal brukast "
+"som bilettekstar.</p><p>I hjelpeteksten «Kva er dette?» nedanfor finn du "
+"informasjon om filformatet.</p>"
+
+#: imgallerydialog.cpp:190
+#, kde-format
+msgid ""
+"<p>You can specify the name of the comment file here. The comment file "
+"contains the subtitles for the images. The format of this file is:</"
+"p><p>FILENAME1:<br />Description<br /><br />FILENAME2:<br />Description<br /"
+"><br />and so on</p>"
+msgstr ""
+"<p>Her kan du velja namnet på kommentarfila, som inneheld bilettekstane til "
+"bileta på formatet</p><p>FILNAMN1:<br />Skildring<br /><br />FILNAMN2:<br /"
+">Skildring<br /><br />og så vidare.</p>"
+
+#: imgallerydialog.cpp:200
+#, kde-format
+msgid "Comments &file:"
+msgstr "Kommentar&fil:"
+
+#: imgallerydialog.cpp:210 imgallerydialog.cpp:211
+#, kde-format
+msgid "Thumbnails"
+msgstr "Miniatyrbilete"
+
+#: imgallerydialog.cpp:224
+#, kde-format
+msgid "Image f&ormat:"
+msgstr "Biletf&ormat:"
+
+#: imgallerydialog.cpp:232
+#, kde-format
+msgid "Thumbnail size:"
+msgstr "Storleik på miniatyrbileta:"
+
+#: imgallerydialog.cpp:235
+#, kde-format
+msgid "&Set different color depth:"
+msgstr "&Vel ei anna fargedjupn:"
+
+#: imgallerydialog.cpp:246
+#, kde-format
+msgid "Color depth:"
+msgstr "Fargedjupn:"
+
+#: imgalleryplugin.cpp:52
+#, kde-format
+msgid "&Create Image Gallery..."
+msgstr "&Lag biletgalleri …"
+
+#: imgalleryplugin.cpp:62
+#, kde-format
+msgid "Could not create the plugin, please report a bug."
+msgstr "Klarte ikkje laga programtillegget. Du bør melda frå om denne feilen."
+
+#: imgalleryplugin.cpp:68
+#, kde-format
+msgid "Creating an image gallery works only on local folders."
+msgstr "Du kan berre laga biletgalleri i lokale mapper."
+
+#: imgalleryplugin.cpp:88
+#, kde-format
+msgid "Creating thumbnails"
+msgstr "Lagar miniatyrbilete"
+
+#: imgalleryplugin.cpp:111 imgalleryplugin.cpp:275
+#, kde-format
+msgid "Could not create folder: %1"
+msgstr "Klarte ikkje laga ny mappe: %1"
+
+#: imgalleryplugin.cpp:173
+#, kde-format
+msgid "<i>Number of images</i>: %1"
+msgstr "<i>Tal på bilete</i>: %1"
+
+#: imgalleryplugin.cpp:174
+#, kde-format
+msgid "<i>Created on</i>: %1"
+msgstr "<i>Laga</i>: %1"
+
+#: imgalleryplugin.cpp:179
+#, kde-format
+msgid "<i>Subfolders</i>:"
+msgstr "<i>Undermapper</i>:"
+
+#: imgalleryplugin.cpp:212
+#, kde-format
+msgid ""
+"Created thumbnail for: \n"
+"%1"
+msgstr ""
+"Laga miniatyrbilete for: \n"
+"%1"
+
+#: imgalleryplugin.cpp:215
+#, kde-format
+msgid ""
+"Creating thumbnail for: \n"
+"%1\n"
+" failed"
+msgstr ""
+"Klarte ikkje laga miniatyrbilete for: \n"
+"%1"
+
+#: imgalleryplugin.cpp:230
+#, kde-format
+msgid "KiB"
+msgstr "KiB"
+
+#: imgalleryplugin.cpp:344 imgalleryplugin.cpp:439
+#, kde-format
+msgid "Could not open file: %1"
+msgstr "Klarte ikkje opna fila: %1"
+
+#. i18n: ectx: Menu (tools)
+#: kimgallery.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "V&erktøy"

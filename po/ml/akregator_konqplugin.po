@@ -1,0 +1,61 @@
+# Translation of akregator_konqplugin.po to Malayalam
+# Copyright (C) 2008 This_file_is_part_of_KDE
+# Prasad.S.R <saysprasad@gmail.com>, 2008
+# This file is distributed under the same license as the akregator_konqplugin package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: akregator_konqplugin trunk\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2019-12-12 10:50+0000\n"
+"Last-Translator: Vivek KJ Pazhedath <vivekkj2004@gmail.com>\n"
+"Language-Team: Malayalam <Swathanthra|സ്വതന്ത്ര Malayalam|മലയാളം Computing|"
+"കമ്പ്യൂട്ടിങ്ങ് <smcdiscuss@googlegroups.com\n"
+"Language: ml\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: akregatorplugin.cpp:63
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Add Feed to Akregator"
+msgstr "അക്രെഗേറ്ററിലേക്ക് ഫീഡ് കൂട്ടിച്ചേര്‍ക്കുക"
+
+#: konqfeedicon.cpp:127
+#, kde-format
+msgid "Add Feed to Akregator"
+msgstr "അക്രിഗേറ്ററില്‍ ഫീഡ് കൂട്ടിച്ചേര്‍ക്കുക"
+
+#: konqfeedicon.cpp:129
+#, kde-format
+msgid "Add Feeds to Akregator"
+msgstr "അക്രിഗേറ്ററില്‍ ഫീഡുകള്‍ കൂട്ടി ച്ചേര്‍ക്കുക"
+
+#: konqfeedicon.cpp:138
+#, kde-format
+msgid "Add All Found Feeds to Akregator"
+msgstr "ലഭ്യമായ എല്ലാ ഫീഡുകളും അക്രിഗേറ്ററില്‍ കൂട്ടിച്ചേര്‍ക്കുക"
+
+#: konqfeedicon.cpp:162
+#, kde-format
+msgid "Subscribe to site updates (using news feed)"
+msgstr "സൈറ്റുകളിലെ പുതുമകളറിയാന്‍ വരിക്കാരനാകുക (വാര്‍ത്താ ഫീഡുകള്‍ ഉപയോഗിച്ച്)"
+
+#: pluginutil.cpp:36 pluginutil.cpp:46
+#, kde-format
+msgid "Imported Feeds"
+msgstr "കൊണ്ടുവന്ന ഫീഡുകള്‍"
+
+#: pluginutil.cpp:38
+#, kde-format
+msgid "Unable to contact Akregator via D-Bus"
+msgstr "ഡി-ബസ് വഴി അക്രിഗേറ്ററെ ബന്ധപ്പെടാൻ കഴിയുന്നില്ല"
+
+#: pluginutil.cpp:39
+#, kde-format
+msgctxt "@title:window"
+msgid "D-Bus call failed"
+msgstr "ഡി-ബസ് വിളി പരാജയപെട്ടു"

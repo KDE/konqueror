@@ -1,0 +1,2873 @@
+# Translation of kgetplugin to Croatian
+#
+# Translators: Andrija Piličić <pile@fly.srk.fer.hr>,Diana Ćorluka <dina@iskrameco.hr>,Hrvoje Spoljar <spole@x.pbf.hr>,Jerko Škifić <skific@riteh.hr>,Mato Kutlić <mate@iskraemeco.hr>,Nikola Planinac <>,Robert Avilov <ravilov@linux.hr>,Robert Pezer <rpezer@phy.hr>,Vlatko Kosturjak <kost@linux.hr>,
+# Marko Dimjasevic <marko@dimjasevic.net>, 2009, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: kget 0\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2010-05-26 11:56+0200\n"
+"Last-Translator: Marko Dimjasevic <marko@dimjasevic.net>\n"
+"Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
+"Language: hr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 1.0\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#: kget_plugin.cpp:56
+#, kde-format
+msgid "Download Manager"
+msgstr "Upravitelj preuzimanja"
+
+#: kget_plugin.cpp:62
+#, fuzzy, kde-format
+msgid "Show Drop Target"
+msgstr "Pokaži mjesto za spuštanje"
+
+#: kget_plugin.cpp:69
+#, fuzzy, kde-format
+msgid "List All Links"
+msgstr "Izlistaj sve veze"
+
+#: kget_plugin.cpp:74
+#, fuzzy, kde-format
+msgid "List Selected Links"
+msgstr "Izlistaj sve veze"
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No downloadable links were found."
+msgstr ""
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No Links"
+msgstr "Nema veza"
+
+#. i18n: ectx: Menu (tools)
+#: konqueror_kget_browser_integration.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr ""
+
+#~ msgid "Unable to communicate with the KGet download manager."
+#~ msgstr "Neuspjela komunikacija s Kgetom, upraviteljem preuzimanja."
+
+#, fuzzy
+#~ msgid "New Group"
+#~ msgstr "Uobičajeni direktorij"
+
+#, fuzzy
+#~ msgid "Network and Downloads"
+#~ msgstr "Označi delimična preuzimanja"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Verification"
+#~ msgstr "Odredište:"
+
+#, fuzzy
+#~ msgctxt "integration of KGet with other applications"
+#~ msgid "Integration"
+#~ msgstr "Integracija sa Konqueror-om"
+
+#, fuzzy
+#~| msgid "Advanced"
+#~ msgctxt "Advanced Options"
+#~ msgid "Advanced"
+#~ msgstr "&Napredno"
+
+#~ msgid "Advanced Options"
+#~ msgstr "Napredne mogućnosti"
+
+#, fuzzy
+#~ msgid "Transfer Plugins"
+#~ msgstr "Otvori prenos:"
+
+# pmap: =/nom=KGet/gen=KGeta/dat=KGetu/aku=KGet/ins=KGetom/_r=m/_b=j/
+#~ msgid "KGet"
+#~ msgstr "KGet"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#, fuzzy
+#~ msgctxt "start transfergroup downloads"
+#~ msgid "Start"
+#~ msgstr "Pokreni po&novo"
+
+#, fuzzy
+#~ msgctxt "stop transfergroup downloads"
+#~ msgid "Stop"
+#~ msgstr "Brzina"
+
+#, fuzzy
+#~ msgid "KGet is downloading %1 file"
+#~ msgid_plural "KGet is downloading %1 files"
+#~ msgstr[0] "Upravitelj Skidanja"
+#~ msgstr[1] "Upravitelj Skidanja"
+#~ msgstr[2] "Upravitelj Skidanja"
+
+#, fuzzy
+#~| msgid ""
+#~| "Error while writing file:\n"
+#~| "%1"
+#~ msgid "Error trying to get %1"
+#~ msgstr ""
+#~ "Greška prilikom pisanja datoteke:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Are you sure that you want to remove the group named %1?"
+#~ msgstr "Jeste li sigurni da želite obrisati ove prenose?"
+
+#, fuzzy
+#~ msgid "Remove Group"
+#~ msgstr "Uobičajeni direktorij"
+
+#, fuzzy
+#~ msgid "Are you sure that you want to remove the following groups?"
+#~ msgstr "Jeste li sigurni da želite obrisati ove prenose?"
+
+#, fuzzy
+#~ msgid "Remove groups"
+#~ msgstr "Uobičajeni direktorij"
+
+#, fuzzy
+#~ msgid "Download added"
+#~ msgstr "Preuzimanje je nastavljeno"
+
+#, fuzzy
+#~ msgid ""
+#~ "The file %1 already exists.\n"
+#~ "Overwrite?"
+#~ msgstr ""
+#~ "Odredišni datoteka \n"
+#~ "%1\n"
+#~ "već postoji.\n"
+#~ "Želite li da ga prebrišete?"
+
+#, fuzzy
+#~ msgid "My Downloads"
+#~ msgstr "Preuzimanje je nastavljeno"
+
+#~ msgid "New Download"
+#~ msgstr "Novo preuzimanje"
+
+#, fuzzy
+#~ msgid ""
+#~ "Malformed URL:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Pogrešno formiran URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid ""
+#~ "Malformed URL, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Pogrešno formiran URL:\n"
+#~ "%1"
+
+#~ msgid "Download it again?"
+#~ msgstr "Preuzeti ponovno?"
+
+#~ msgid "Delete it and download again?"
+#~ msgstr "Izbrisati i ponovno preuzeti?"
+
+#, fuzzy
+#~ msgid "File already downloaded. Download anyway?"
+#~ msgstr ""
+#~ "Već sam snimio URL\n"
+#~ "%1\n"
+#~ "Da ga preuzmem ponovo?"
+
+#, fuzzy
+#~ msgid "File already exists"
+#~ msgstr ""
+#~ "Odredišni datoteka \n"
+#~ "%1\n"
+#~ "već postoji.\n"
+#~ "Želite li da ga prebrišete?"
+
+#, fuzzy
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is a directory."
+#~ msgstr ""
+#~ "Ne mogu da obrišem\n"
+#~ "%1\n"
+#~ "zato jer je to direktorij."
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is not a local file."
+#~ msgstr ""
+#~ "Ne mogu da obrišem\n"
+#~ "%1\n"
+#~ "zato jer je to nije lokalni datoteka."
+
+#, fuzzy
+#~ msgid "Download completed"
+#~ msgstr "Preuzimanje je završeno"
+
+#, fuzzy
+#~ msgid "Download started"
+#~ msgstr "Preuzimanje je nastavljeno"
+
+#, fuzzy
+#~ msgid "Resolve"
+#~ msgstr "Otvori prenos"
+
+#, fuzzy
+#~ msgid "KGet is now closing, as all downloads have completed."
+#~ msgstr "Preuzimanje je završeno"
+
+#, fuzzy
+#~ msgid "The computer will now turn off, as all downloads have completed."
+#~ msgstr "Preuzimanje je završeno"
+
+#, fuzzy
+#~ msgctxt "Shutting down computer"
+#~ msgid "Shutdown"
+#~ msgstr "Automatsko gašenje računala je uključeno."
+
+#, fuzzy
+#~ msgid ""
+#~ "The computer will now suspend to disk, as all downloads have completed."
+#~ msgstr "Preuzimanje je završeno"
+
+#, fuzzy
+#~ msgid ""
+#~ "The computer will now suspend to RAM, as all downloads have completed."
+#~ msgstr "Preuzimanje je završeno"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgctxt "Suspending computer"
+#~ msgid "Suspending"
+#~ msgstr "Raspored"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgctxt "abort the proposed action"
+#~ msgid "Abort"
+#~ msgstr "Pismo:"
+
+#, fuzzy
+#~ msgid "Downloads completed"
+#~ msgstr "Preuzimanje je završeno"
+
+#, fuzzy
+#~ msgctxt "file in a filesystem"
+#~ msgid "File"
+#~ msgstr "Otvori &datoteku"
+
+#, fuzzy
+#~ msgctxt "status of the download"
+#~ msgid "Status"
+#~ msgstr "Pokreni po&novo"
+
+#, fuzzy
+#~| msgid " Size: %1 "
+#~ msgctxt "size of the download"
+#~ msgid "Size"
+#~ msgstr " Veličina: %1 "
+
+#~ msgid "KGet Transfer"
+#~ msgstr "Prijenos KGeta"
+
+#, fuzzy
+#~ msgctxt "the type of the hash, e.g. MD5"
+#~ msgid "Type"
+#~ msgstr "Tip datoteke"
+
+#~ msgid "Stalled"
+#~ msgstr "Zastalo"
+
+#, fuzzy
+#~ msgid "Downloading...."
+#~ msgstr "Preuzimanje je nastavljeno"
+
+#, fuzzy
+#~| msgid "Delayed"
+#~ msgctxt "transfer state: delayed"
+#~ msgid "Delayed"
+#~ msgstr "Odgođen"
+
+#, fuzzy
+#~ msgctxt "transfer state: stopped"
+#~ msgid "Stopped"
+#~ msgstr "Brzina"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgctxt "transfer state: aborted"
+#~ msgid "Aborted"
+#~ msgstr "Pismo:"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "transfer state: finished"
+#~ msgid "Finished"
+#~ msgstr "Završeno"
+
+#, fuzzy
+#~ msgctxt "changing the destination of the file"
+#~ msgid "Changing destination"
+#~ msgstr "Otvori &Odredište"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgctxt "name of download"
+#~ msgid "Name"
+#~ msgstr "Ime"
+
+#, fuzzy
+#~ msgctxt "status of download"
+#~ msgid "Status"
+#~ msgstr "Pokreni po&novo"
+
+#, fuzzy
+#~ msgctxt "progress of download"
+#~ msgid "Progress"
+#~ msgstr "Dijalog o napretku"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgctxt "speed of download"
+#~ msgid "Speed"
+#~ msgstr "Brzina"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgctxt "remaining time of download"
+#~ msgid "Remaining Time"
+#~ msgstr "Preostalo vrijeme"
+
+#, fuzzy
+#~| msgid "Download Destination:"
+#~ msgid "No download destination specified."
+#~ msgstr "Odredište preuzimanja:"
+
+#, fuzzy
+#~| msgid "Download Destination:"
+#~ msgid "Invalid download destination specified."
+#~ msgstr "Odredište preuzimanja:"
+
+#, fuzzy
+#~| msgid "Download Destination:"
+#~ msgid "Download destination is not writeable."
+#~ msgstr "Odredište preuzimanja:"
+
+#, fuzzy
+#~ msgid "Malformed URL."
+#~ msgstr "Pogrešno formiran URL:\n"
+
+#, fuzzy
+#~ msgid "Malformed URL, protocol missing."
+#~ msgstr ""
+#~ "Pogrešno formiran URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Malformed URL, host missing."
+#~ msgstr ""
+#~ "Pogrešno formiran URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Download Destination:"
+#~ msgid ""
+#~ "Invalid download destination specified:\n"
+#~ "%1"
+#~ msgstr "Odredište preuzimanja:"
+
+#, fuzzy
+#~| msgid "Download Destination:"
+#~ msgid ""
+#~ "Download destination is not writeable:\n"
+#~ "%1"
+#~ msgstr "Odredište preuzimanja:"
+
+#, fuzzy
+#~ msgid ""
+#~ "Malformed URL, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Pogrešno formiran URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "File already exists. Overwrite it?"
+#~ msgstr ""
+#~ "Odredišni datoteka \n"
+#~ "%1\n"
+#~ "već postoji.\n"
+#~ "Želite li da ga prebrišete?"
+
+#, fuzzy
+#~ msgid ""
+#~ "File already exists:\n"
+#~ "%1\n"
+#~ "Overwrite it?"
+#~ msgstr ""
+#~ "Odredišni datoteka \n"
+#~ "%1\n"
+#~ "već postoji.\n"
+#~ "Želite li da ga prebrišete?"
+
+#, fuzzy
+#~ msgid "Malformed URLs."
+#~ msgstr "Pogrešno formiran URL:\n"
+
+#, fuzzy
+#~ msgid "Malformed URLs, protocol missing."
+#~ msgstr ""
+#~ "Pogrešno formiran URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Malformed URLs, host missing."
+#~ msgstr ""
+#~ "Pogrešno formiran URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid ""
+#~ "Malformed URLs:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Pogrešno formiran URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid ""
+#~ "Malformed URLs, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Pogrešno formiran URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid ""
+#~ "Malformed URLs, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Pogrešno formiran URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Files exist already. Overwrite them?"
+#~ msgstr ""
+#~ "Odredišni datoteka \n"
+#~ "%1\n"
+#~ "već postoji.\n"
+#~ "Želite li da ga prebrišete?"
+
+#, fuzzy
+#~ msgid "Question"
+#~ msgstr "Pitanje"
+
+#, fuzzy
+#~ msgctxt "on a question"
+#~ msgid "No all"
+#~ msgstr "Obično"
+
+#, fuzzy
+#~ msgid "Engine name:"
+#~ msgstr "Lokalno ime datoteke"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "transfer state: connecting"
+#~ msgid "Connecting...."
+#~ msgstr "Veza"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Set Script File"
+#~ msgstr "Opis"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "Transfer State: Finished"
+#~ msgid "Finished"
+#~ msgstr "Završeno"
+
+#, fuzzy
+#~ msgid "Downloading Metalink File...."
+#~ msgstr "Preuzimanje je nastavljeno"
+
+#, fuzzy
+#~ msgid "Redownload Metalink"
+#~ msgstr "Preuzimanje je završeno"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgid "File Selection"
+#~ msgstr "Raspored"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "the string that is used to modify an url"
+#~ msgid "Change string"
+#~ msgstr "Veza"
+
+#, fuzzy
+#~ msgid "Append"
+#~ msgstr "Brzina"
+
+#, fuzzy
+#~ msgid "Replace file"
+#~ msgstr "Otvori &datoteku"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "transfer state: running"
+#~ msgid "Running...."
+#~ msgstr "Veza"
+
+#, fuzzy
+#~| msgid "Address (URL)"
+#~ msgid "IP Address"
+#~ msgstr "Adresa (URL)"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Down Speed"
+#~ msgstr "Brzina"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Up Speed"
+#~ msgstr "Brzina"
+
+#, fuzzy
+#~| msgid "Docked"
+#~ msgid "Choked"
+#~ msgstr "&Pristani"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgid "Score"
+#~ msgstr "Izvor:"
+
+#, fuzzy
+#~ msgid "Downloaded"
+#~ msgstr "Preuzimanje je nastavljeno"
+
+#, fuzzy
+#~ msgid "Interesting"
+#~ msgstr "Integracija sa Konqueror-om"
+
+#, fuzzy
+#~ msgid "Download speed"
+#~ msgstr "Preuzimanje je nastavljeno"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Upload speed"
+#~ msgstr "Brzina"
+
+#, fuzzy
+#~| msgid "Count"
+#~ msgid "Chunk"
+#~ msgstr "Brojanje"
+
+#, fuzzy
+#~ msgid "Progress"
+#~ msgstr "Dijalog o napretku"
+
+#, fuzzy
+#~ msgid "Files"
+#~ msgstr "Otvori &datoteku"
+
+#, fuzzy
+#~ msgid "Number of the chunk"
+#~ msgstr "Broj pokušaja:"
+
+#, fuzzy
+#~ msgid "Download speed of the chunk"
+#~ msgstr "Preuzimanje je završeno"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed"
+#~ msgstr "Brzina"
+
+#, fuzzy
+#~ msgid "Status"
+#~ msgstr "Pokreni po&novo"
+
+#, fuzzy
+#~ msgid "File"
+#~ msgstr "Otvori &datoteku"
+
+#, fuzzy
+#~ msgid "Advanced Details for %1"
+#~ msgstr "Uobičajeni direktorij"
+
+#, fuzzy
+#~ msgid "Trackers"
+#~ msgstr "&Prebaci"
+
+#, fuzzy
+#~ msgctxt "Open file"
+#~ msgid "Open"
+#~ msgstr "Otvori &datoteku"
+
+#, fuzzy
+#~ msgid "Download first"
+#~ msgstr "Preuzimanje je nastavljeno"
+
+#, fuzzy
+#~ msgid "Download normally"
+#~ msgstr "Uobičajeni direktorij"
+
+#, fuzzy
+#~ msgid "Download last"
+#~ msgstr "Preuzimanje je nastavljeno"
+
+#~ msgid "Do Not Download"
+#~ msgstr "Ne preuzimaj"
+
+#, fuzzy
+#~ msgid "Delete File(s)"
+#~ msgstr "Preuzmi odabrane datotekaove"
+
+#, fuzzy
+#~ msgid "Move File"
+#~ msgstr "Otvori &datoteku"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Seeders"
+#~ msgstr "Brzina"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Leechers"
+#~ msgstr "Brzina"
+
+#, fuzzy
+#~ msgid "Times Downloaded"
+#~ msgstr "Preuzimanje je nastavljeno"
+
+#, fuzzy
+#~ msgctxt "Download normally(not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "Obično"
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 %"
+#~ msgstr " %1/s "
+
+#, fuzzy
+#~ msgctxt "Download Normal (not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "Obično"
+
+#, fuzzy
+#~| msgid "Advanced Options"
+#~ msgid "&Advanced Details"
+#~ msgstr "Napredne mogućnosti"
+
+#, fuzzy
+#~ msgid "&Scan Files"
+#~ msgstr "Otvori &datoteku"
+
+#, fuzzy
+#~ msgid "Downloading Torrent File...."
+#~ msgstr "Preuzimanje je nastavljeno"
+
+#, fuzzy
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading...."
+#~ msgstr "Preuzimanje je nastavljeno"
+
+#, fuzzy
+#~ msgid "Torrent file does not exist"
+#~ msgstr ""
+#~ "Navedena datoteka ne postoji:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Analyzing torrent...."
+#~ msgstr "Preuzimanje je nastavljeno"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgctxt "Transfer status: seeding"
+#~ msgid "Seeding...."
+#~ msgstr "Raspored"
+
+#, fuzzy
+#~ msgid "Select a default torrent folder"
+#~ msgstr "Uobičajeni direktorij"
+
+#, fuzzy
+#~ msgid "Select a default temporary folder"
+#~ msgstr "Uobičajeni direktorij"
+
+#, fuzzy
+#~| msgid "Import Text &File..."
+#~ msgid "Import dropped files"
+#~ msgstr "&Uvoz tekstne datoteke..."
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgid "File Properties"
+#~ msgstr "Raspored"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a filename."
+#~ msgstr "Ethernet"
+
+#, fuzzy
+#~ msgid "Metalink Version 4.0 file (*.meta4)"
+#~ msgstr "Otvori &datoteku"
+
+#, fuzzy
+#~ msgid "Metalink Version 3.0 file (*.metalink)"
+#~ msgstr "Otvori &datoteku"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "Import Links"
+#~ msgstr "Nema veza"
+
+#, fuzzy
+#~ msgctxt "Download the items which have been selected"
+#~ msgid "&Download Checked"
+#~ msgstr "Preuzimanje je završeno"
+
+#, fuzzy
+#~ msgid "File Name"
+#~ msgstr "Lokalno ime datoteke"
+
+#~ msgid "Description"
+#~ msgstr "Opis"
+
+#, fuzzy
+#~ msgctxt "list header: type of file"
+#~ msgid "File Type"
+#~ msgstr "Tip datoteke"
+
+#, fuzzy
+#~ msgid "Location (URL)"
+#~ msgstr "Lokacija (URL)"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgctxt "The priority of the mirror"
+#~ msgid "Priority"
+#~ msgstr "Pismo:"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "Number of paralell connections to the mirror"
+#~ msgid "Connections"
+#~ msgstr "Veza"
+
+#, fuzzy
+#~ msgctxt "Location = country"
+#~ msgid "Location"
+#~ msgstr "Lokacija (URL)"
+
+#~ msgid "Download again"
+#~ msgstr "Ponovno preuzmi"
+
+#, fuzzy
+#~ msgctxt "Delete selected history-item"
+#~ msgid "Delete selected"
+#~ msgstr "Nije odabran nijedan datoteka"
+
+#, fuzzy
+#~ msgid "Open file"
+#~ msgstr "Otvori &datoteku"
+
+#, fuzzy
+#~ msgid "Transfer History"
+#~ msgstr "Otvori prenos:"
+
+#, fuzzy
+#~ msgid "&Open File"
+#~ msgstr "Otvori &datoteku"
+
+#, fuzzy
+#~ msgctxt "The transfer is stopped"
+#~ msgid "Stopped"
+#~ msgstr "Brzina"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "The transfer is finished"
+#~ msgid "Finished"
+#~ msgstr "Završeno"
+
+#~ msgid "Source File"
+#~ msgstr "Izvorna datoteka"
+
+#~ msgid "Destination"
+#~ msgstr "Odredište"
+
+#, fuzzy
+#~| msgid "Timer"
+#~ msgid "Time"
+#~ msgstr "Brojač vremena"
+
+#, fuzzy
+#~ msgid "File Size"
+#~ msgstr "Otvori &datoteku"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "the transfer has been finished"
+#~ msgid "Finished"
+#~ msgstr "Završeno"
+
+#, fuzzy
+#~ msgctxt "an error happened in connection with the user input"
+#~ msgid "Error:"
+#~ msgstr "u: %1"
+
+#, fuzzy
+#~| msgid "unknown"
+#~ msgctxt "trust level"
+#~ msgid "Unknown"
+#~ msgstr "nepoznato"
+
+#, fuzzy
+#~ msgctxt "pgp signature is not verified"
+#~ msgid "Failed"
+#~ msgstr "Otvori &datoteku"
+
+#, fuzzy
+#~ msgid "Error:"
+#~ msgstr "u: %1"
+
+#, fuzzy
+#~ msgid "Information:"
+#~ msgstr "Integracija sa Konqueror-om"
+
+#, fuzzy
+#~ msgid "Transfer Details"
+#~ msgstr "Transfera: %1"
+
+#, fuzzy
+#~ msgid "Transfer Verification for %1"
+#~ msgstr "Uobičajeni direktorij"
+
+#, fuzzy
+#~ msgid "Rename File"
+#~ msgstr "Uobičajeni direktorij"
+
+#, fuzzy
+#~ msgid "Rename %1 to:"
+#~ msgstr "Uobičajeni direktorij"
+
+#, fuzzy
+#~ msgid "&Rename"
+#~ msgstr "Uobičajeni direktorij"
+
+#, fuzzy
+#~ msgid "Rename Group..."
+#~ msgid_plural "Rename Groups..."
+#~ msgstr[0] "Uobičajeni direktorij"
+#~ msgstr[1] "Uobičajeni direktorij"
+#~ msgstr[2] "Uobičajeni direktorij"
+
+#, fuzzy
+#~| msgid "Sticky"
+#~ msgctxt "fix position for droptarget"
+#~ msgid "Sticky"
+#~ msgstr "Ljepljiv"
+
+#, fuzzy
+#~| msgid "KGet"
+#~ msgid "Quit KGet"
+#~ msgstr "KGet "
+
+#, fuzzy
+#~ msgid "The dropped file is a KGet Transfer List"
+#~ msgstr "Otvori prenos:"
+
+#, fuzzy
+#~ msgid "&Download"
+#~ msgstr "Preuzimanje je nastavljeno"
+
+#, fuzzy
+#~ msgid "&Load transfer list"
+#~ msgstr "Otvori prenos:"
+
+#, fuzzy
+#~ msgid "Show Main Window"
+#~ msgstr "Pokaži glavni prozor pri pokretanju"
+
+#, fuzzy
+#~ msgid "Hide Main Window"
+#~ msgstr "Prozor dnevnika"
+
+#, fuzzy
+#~ msgid "Drop Target"
+#~ msgstr "Mjesto za spuštanje"
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgctxt "%1 filename, %2 total size, %3 status"
+#~ msgid "%1(%2) %3"
+#~ msgstr " %1/s "
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgctxt ""
+#~ "%1 filename, %2 percent complete, %3 downloaded out of %4 total size, %5 "
+#~ "status"
+#~ msgid "%1(%2% %3/%4) %5"
+#~ msgstr " %1/s "
+
+#, fuzzy
+#~ msgid "Hiding drop target"
+#~ msgstr "Mes&to za spuštanje"
+
+#, fuzzy
+#~ msgid "Transfer Settings for %1"
+#~ msgstr "Uobičajeni direktorij"
+
+#~ msgid "Destination unmodified"
+#~ msgstr "Odredište nije promijenjeno"
+
+#, fuzzy
+#~| msgid "%1% of %2 - %3"
+#~ msgid "%1 of %2"
+#~ msgstr "%1% od %2 - %3"
+
+#, fuzzy
+#~ msgid "Group Settings for %1"
+#~ msgstr "Uobičajeni direktorij"
+
+#, fuzzy
+#~| msgid "%1/s"
+#~ msgctxt "@item speed of transfer per seconds"
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#, fuzzy
+#~ msgctxt "@label"
+#~ msgid "File name"
+#~ msgstr "Lokalno ime datoteke"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "@label Progress of transfer"
+#~ msgid "Finished"
+#~ msgstr "Završeno"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgctxt "@label Speed of transfer"
+#~ msgid "Speed"
+#~ msgstr "Brzina"
+
+#, fuzzy
+#~ msgctxt "@label Status of transfer"
+#~ msgid "Status"
+#~ msgstr "Pokreni po&novo"
+
+#, fuzzy
+#~ msgctxt "@action:button start a transfer"
+#~ msgid "Start"
+#~ msgstr "Pokreni po&novo"
+
+#, fuzzy
+#~ msgctxt "@action:button"
+#~ msgid "Stop"
+#~ msgstr "Brzina"
+
+#, fuzzy
+#~ msgctxt "@action:button"
+#~ msgid "Remove"
+#~ msgstr "Otvori prenos"
+
+#~ msgctxt "@label Download from"
+#~ msgid "Source:"
+#~ msgstr "Izvor:"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgctxt "@action"
+#~ msgid "Settings"
+#~ msgstr "Raspored"
+
+#, fuzzy
+#~ msgctxt "@action:button"
+#~ msgid "OK"
+#~ msgstr "Gotovo"
+
+#, fuzzy
+#~ msgctxt "@action Refresh download list every x (seconds)"
+#~ msgid "Refresh download list every"
+#~ msgstr "Preuzimanje je završeno"
+
+#, fuzzy
+#~ msgctxt "@action:button"
+#~ msgid "Save Settings"
+#~ msgstr "Transfera: %1"
+
+#, fuzzy
+#~ msgctxt "@title"
+#~ msgid "Downloads"
+#~ msgstr "Preuzimanje je nastavljeno"
+
+#~ msgid "An advanced download manager for KDE"
+#~ msgstr "Napredni upravitelj preuzimanja za KDE"
+
+#, fuzzy
+#~ msgid "Start KGet with drop target"
+#~ msgstr "Pokreni KGet sa mjestom za spuštanje"
+
+#, fuzzy
+#~ msgid "Start KGet with hidden main window"
+#~ msgstr "Pokreni KGet sa mjestom za spuštanje"
+
+#, fuzzy
+#~ msgid "Start KGet without drop target animation"
+#~ msgstr "Pokreni KGet sa mjestom za spuštanje"
+
+#, fuzzy
+#~ msgid "URL(s) to download"
+#~ msgstr "URL(ovi) za preuzimanje."
+
+#, fuzzy
+#~ msgid "KGet Transfer List"
+#~ msgstr "Otvori prenos:"
+
+#, fuzzy
+#~ msgid "Export Transfers"
+#~ msgstr "&Izvezi popis prenosa..."
+
+#, fuzzy
+#~ msgid "&Import Transfers..."
+#~ msgstr "&Uvezi popis prenosa..."
+
+#, fuzzy
+#~ msgid "&Export Transfers List..."
+#~ msgstr "&Izvezi popis prenosa..."
+
+#, fuzzy
+#~ msgid "&Export Transfers as Plain Text..."
+#~ msgstr "&Izvezi popis prenosa..."
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Top Priority"
+#~ msgstr "Pismo:"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Least Priority"
+#~ msgstr "Pismo:"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Increase Priority"
+#~ msgstr "Pismo:"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Decrease Priority"
+#~ msgstr "Pismo:"
+
+#, fuzzy
+#~ msgid "Auto-Paste Mode"
+#~ msgstr "Način rada au&tomatskog prenošenja"
+
+#, fuzzy
+#~ msgid ""
+#~ "<b>Auto paste</b> button toggles the auto-paste mode on and off.\n"
+#~ "When set, KGet will periodically scan the clipboard for URLs and paste "
+#~ "them automatically."
+#~ msgstr ""
+#~ "<b>Automatsko ispuštanje</b> uključuje\n"
+#~ "ili isključuje ovaj način rada rada.\n"
+#~ "\n"
+#~ "Kada je uključen, KGet će periodično provjeravati da u\n"
+#~ "odlagalištu slučajno nema neki URL; ako ga ima, ispustit će ga automatski."
+
+#~ msgid "Use KGet as Konqueror Download Manager"
+#~ msgstr "Koristi KGet kao upravitelja preuzimanja za Konqueror"
+
+#, fuzzy
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Remove Selected"
+#~ msgstr "&Nastavi"
+
+#, fuzzy
+#~ msgctxt "delete all finished transfers"
+#~ msgid "Remove All Finished"
+#~ msgstr "Preuzmi odabrane datotekaove"
+
+#, fuzzy
+#~ msgctxt "redownload selected transfer item"
+#~ msgid "Redownload Selected"
+#~ msgstr "Preuzimanje je završeno"
+
+#, fuzzy
+#~ msgid "Start / Resume Selected"
+#~ msgstr "Nije odabran nijedan datoteka"
+
+#, fuzzy
+#~ msgid "Stop Selected"
+#~ msgstr "Nije odabran nijedan datoteka"
+
+#, fuzzy
+#~ msgid "Stop"
+#~ msgstr "Brzina"
+
+#, fuzzy
+#~ msgid "Remove"
+#~ msgstr "Otvori prenos"
+
+#~ msgid "Open Destination"
+#~ msgstr "Otvori odredište"
+
+#, fuzzy
+#~ msgid "Open File"
+#~ msgstr "Otvori &datoteku"
+
+#, fuzzy
+#~ msgid "Show Details"
+#~ msgstr "lokalizacija@linux.hr"
+
+#, fuzzy
+#~ msgid "Copy URL to Clipboard"
+#~ msgstr "&Kopiraj URL u klipbord"
+
+#, fuzzy
+#~ msgid "&Transfer History"
+#~ msgstr "Otvori prenos:"
+
+#, fuzzy
+#~ msgid "&Group Settings"
+#~ msgstr "Uobičajeni direktorij"
+
+#, fuzzy
+#~ msgid "&Transfer Settings"
+#~ msgstr "Transfera: %1"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "Import &Links..."
+#~ msgstr "Nema veza"
+
+#~ msgid ""
+#~ "This is the first time you have run KGet.\n"
+#~ "Would you like to enable KGet as the download manager for Konqueror?"
+#~ msgstr ""
+#~ "Ovo je prvi put da ste pokrenuli KGet.\n"
+#~ "Želite li postaviti KGet kao upravitelja preuzimanja za Konqueror?"
+
+#, fuzzy
+#~ msgid "Konqueror Integration"
+#~ msgstr "Integracija sa Konqueror-om"
+
+#, fuzzy
+#~ msgid ""
+#~ "Some transfers are still running.\n"
+#~ "Are you sure you want to close KGet?"
+#~ msgstr ""
+#~ "Neki prenosi još uvijek nisu završeni.\n"
+#~ "Da li stvarno želite da zatvorite KGet?"
+
+#, fuzzy
+#~ msgid "Enter Group Name"
+#~ msgstr ""
+#~ "Andrija Piličić, Diana Ćorluka, Hrvoje Spoljar, Jerko Škifić, Mato "
+#~ "Kutlić, Nikola Planinac, Robert Avilov, Robert Pezer, Vlatko Kosturjak"
+
+#, fuzzy
+#~ msgid "Group name:"
+#~ msgstr ""
+#~ "Andrija Piličić, Diana Ćorluka, Hrvoje Spoljar, Jerko Škifić, Mato "
+#~ "Kutlić, Nikola Planinac, Robert Avilov, Robert Pezer, Vlatko Kosturjak"
+
+#, fuzzy
+#~| msgid "Are you sure you want to delete this transfer?"
+#~ msgid "Are you sure you want to delete the selected transfer?"
+#~ msgid_plural "Are you sure you want to delete the selected transfers?"
+#~ msgstr[0] "Jeste li sigurni da želite obrisati ovaj prijenos?"
+#~ msgstr[1] "Jeste li sigurni da želite obrisati ovaj prijenos?"
+#~ msgstr[2] "Jeste li sigurni da želite obrisati ovaj prijenos?"
+
+#, fuzzy
+#~ msgid "Confirm transfer delete"
+#~ msgstr "Otvori prenos:"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Marko Dimjašević"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "marko@dimjasevic.net"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Automatic verification:"
+#~ msgstr "Opis"
+
+#, fuzzy
+#~| msgid "Automation Options"
+#~ msgid "Automatic verification"
+#~ msgstr "Opcije automatizacije"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Keyservers:"
+#~ msgstr "Brzina"
+
+#, fuzzy
+#~| msgid "Move to &End"
+#~ msgid "Move &Up"
+#~ msgstr "&Premjesti na kraj"
+
+#, fuzzy
+#~| msgid "Move to &End"
+#~ msgid "Move &Down"
+#~ msgstr "&Premjesti na kraj"
+
+#, fuzzy
+#~ msgid "Rename"
+#~ msgstr "Uobičajeni direktorij"
+
+#, fuzzy
+#~ msgid "Limit Maximum Downloads Per Group"
+#~ msgstr "Preuzimanje je završeno"
+
+#, fuzzy
+#~ msgid "Number of downloads:"
+#~ msgstr "Broj pokušaja:"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed Limit"
+#~ msgstr "Brzina"
+
+#, fuzzy
+#~ msgid "Global download limit:"
+#~ msgstr "Preuzimanje je nastavljeno"
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid " KiB/s"
+#~ msgstr " %1 KB/s "
+
+#, fuzzy
+#~ msgid "Global upload limit:"
+#~ msgstr "Preuzimanje je nastavljeno"
+
+#, fuzzy
+#~ msgid "Per transfer:"
+#~ msgstr "&Prebaci"
+
+#, fuzzy
+#~ msgid "Reconnect on Error or Broken Connection"
+#~ msgstr "Pri prekinutim vezama"
+
+#, fuzzy
+#~ msgid "Number of retries:"
+#~ msgstr "Broj pokušaja:"
+
+#, fuzzy
+#~ msgid "Retry after:"
+#~ msgstr "Ponovno povezivanje posle:"
+
+#, fuzzy
+#~ msgid "After Completing Downloads"
+#~ msgstr "Automatsko gašenje računala po završenom prijenosu"
+
+#, fuzzy
+#~ msgid "Auto shutdown"
+#~ msgstr "Automatsko gašenje računala je uključeno."
+
+#, fuzzy
+#~ msgid "Auto disconnect"
+#~ msgstr "Automatsko prekidanje veze je uključeno."
+
+#, fuzzy
+#~ msgid "Enable Web Interface"
+#~ msgstr "Koristi animaciju"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Port:"
+#~ msgstr "Pismo:"
+
+#, fuzzy
+#~ msgid "Startup"
+#~ msgstr "Pokreni po&novo"
+
+#, fuzzy
+#~ msgid "Enable animations"
+#~ msgstr "Koristi animaciju"
+
+#, fuzzy
+#~ msgid "Show drop target"
+#~ msgstr "Pokaži mjesto za spuštanje"
+
+#, fuzzy
+#~ msgid "Enable system tray icon"
+#~ msgstr "Koristi animaciju"
+
+#, fuzzy
+#~ msgid "Execute action after all downloads have been finished:"
+#~ msgstr "Preuzimanje je završeno"
+
+#, fuzzy
+#~ msgid "At startup:"
+#~ msgstr "Pokreni po&novo"
+
+#, fuzzy
+#~ msgid "Restore Download State"
+#~ msgstr "Preuzimanje je nastavljeno"
+
+#, fuzzy
+#~ msgid "Start All Downloads"
+#~ msgstr "Označi delimična preuzimanja"
+
+#, fuzzy
+#~ msgid "Stop All Downloads"
+#~ msgstr "Označi delimična preuzimanja"
+
+#, fuzzy
+#~ msgid "History"
+#~ msgstr "Otvori prenos:"
+
+#, fuzzy
+#~ msgid "History backend:"
+#~ msgstr "Otvori prenos:"
+
+#, fuzzy
+#~| msgid "Use as download manager for Konqueror"
+#~ msgid "Use as download manager for Konqueror:"
+#~ msgstr "Koristi kao upravitelja preuzimanja za Konqueror"
+
+#, fuzzy
+#~ msgid "Engine Name"
+#~ msgstr "Lokalno ime datoteke"
+
+#, fuzzy
+#~ msgid "Number of connections per URL:"
+#~ msgstr "Broj pokušaja:"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgid "File Settings"
+#~ msgstr "Raspored"
+
+#, fuzzy
+#~ msgid "Filename:"
+#~ msgstr "Lokalno ime datoteke"
+
+#, fuzzy
+#~| msgid "Log Window"
+#~ msgid "Login Info"
+#~ msgstr "Prozor dnevnika"
+
+#, fuzzy
+#~ msgid "Username:"
+#~ msgstr "Uobičajeni direktorij"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Path:"
+#~ msgstr "Pismo:"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Description:"
+#~ msgstr "Opis"
+
+#, fuzzy
+#~ msgid "Number of simultaneous file downloads:"
+#~ msgstr "Broj pokušaja:"
+
+#, fuzzy
+#~ msgid "Number of mirrors per file:"
+#~ msgstr "Broj pokušaja:"
+
+#, fuzzy
+#~ msgid "Mode:"
+#~ msgstr "Mape"
+
+#, fuzzy
+#~ msgid "Remove Tracker"
+#~ msgstr "Otvori prenos"
+
+#, fuzzy
+#~ msgid "Update Trackers"
+#~ msgstr "&Prebaci"
+
+#, fuzzy
+#~ msgid "Remove Webseed"
+#~ msgstr "&Nastavi"
+
+#, fuzzy
+#~| msgid "Total"
+#~ msgid "Total:"
+#~ msgstr "Ukupno"
+
+#, fuzzy
+#~ msgid "Downloaded:"
+#~ msgstr "Preuzimanje je nastavljeno"
+
+#, fuzzy
+#~| msgid " Size: %1 "
+#~ msgid "Size:"
+#~ msgstr " Veličina: %1 "
+
+#, fuzzy
+#~ msgid "Number of chunks found:"
+#~ msgstr "Broj pokušaja:"
+
+#, fuzzy
+#~ msgid "Number of chunks failed:"
+#~ msgstr "Broj pokušaja:"
+
+#, fuzzy
+#~ msgid "Number of chunks not downloaded:"
+#~ msgstr "Broj pokušaja:"
+
+#, fuzzy
+#~ msgid "Number of chunks downloaded:"
+#~ msgstr "Broj pokušaja:"
+
+#, fuzzy
+#~ msgid "Stats"
+#~ msgstr "Pokreni po&novo"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Seeders:"
+#~ msgstr "Brzina"
+
+#, fuzzy
+#~ msgid "Download speed:"
+#~ msgstr "Preuzimanje je nastavljeno"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Upload speed:"
+#~ msgstr "Brzina"
+
+#~ msgctxt "source-file"
+#~ msgid "Source:"
+#~ msgstr "Izvor:"
+
+#, fuzzy
+#~ msgid "Upload limit per transfer:"
+#~ msgstr "Preuzimanje je nastavljeno"
+
+#, fuzzy
+#~| msgid "Limits"
+#~ msgid "No Limit"
+#~ msgstr "Granice"
+
+#, fuzzy
+#~ msgid "Download limit per transfer:"
+#~ msgstr "Preuzimanje je nastavljeno"
+
+#~ msgid "Folders"
+#~ msgstr "Mape"
+
+#, fuzzy
+#~ msgid "Default torrent folder:"
+#~ msgstr "Uobičajeni direktorij"
+
+#, fuzzy
+#~ msgid "Default temporary folder"
+#~ msgstr "Uobičajeni direktorij"
+
+#, fuzzy
+#~ msgid "Required"
+#~ msgstr "Nastavljeno"
+
+#, fuzzy
+#~| msgid "Total size is %1 bytes"
+#~ msgid "File size (in bytes):"
+#~ msgstr "Ukupna veličina je %1 bajtova"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Verification:"
+#~ msgstr "Opis"
+
+#, fuzzy
+#~ msgid "*.metalink *.meta4|Metalink file (*.metalink *.meta4)"
+#~ msgstr "Otvori &datoteku"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgid "Date and time:"
+#~ msgstr "Preostalo vrijeme"
+
+#, fuzzy
+#~ msgid "Version:"
+#~ msgstr "Nastavak"
+
+#, fuzzy
+#~| msgid "Log"
+#~ msgid "Logo:"
+#~ msgstr "Dnevnik"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "Name:"
+#~ msgstr "Ime"
+
+#, fuzzy
+#~ msgid "Name of the publisher"
+#~ msgstr "Broj pokušaja:"
+
+#, fuzzy
+#~ msgctxt "Files as in files on a server"
+#~ msgid "Files:"
+#~ msgstr "Otvori &datoteku"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "&Import Links"
+#~ msgstr "Nema veza"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgid "Contains"
+#~ msgstr "Veza"
+
+#~ msgid "Does Not Contain"
+#~ msgstr "Ne sadrži"
+
+#, fuzzy
+#~ msgctxt "Check as in mark, not as in verify"
+#~ msgid "Chec&k Selected"
+#~ msgstr "Nije odabran nijedan datoteka"
+
+#, fuzzy
+#~ msgid "Number of connections:"
+#~ msgstr "Broj pokušaja:"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a URL"
+#~ msgstr "Ethernet"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Priority:"
+#~ msgstr "Pismo:"
+
+#, fuzzy
+#~ msgid "Location:"
+#~ msgstr "Lokacija (URL)"
+
+#, fuzzy
+#~ msgctxt "View modes"
+#~ msgid "View Modes"
+#~ msgstr "Oflajn način rada"
+
+#, fuzzy
+#~ msgid "Date"
+#~ msgstr "Pokreni po&novo"
+
+#, fuzzy
+#~ msgid "Filter History"
+#~ msgstr "Otvori prenos:"
+
+#, fuzzy
+#~ msgctxt "delete selected transfer"
+#~ msgid "Delete Selected"
+#~ msgstr "Nije odabran nijedan datoteka"
+
+#, fuzzy
+#~ msgid "Download"
+#~ msgstr "Preuzimanje je nastavljeno"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgctxt "hash as a hash of type md5, sha1 etc."
+#~ msgid "Hash:"
+#~ msgstr "Pismo:"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgid "Remaining Time:"
+#~ msgstr "Preostalo vrijeme"
+
+#, fuzzy
+#~ msgid "Transfer Settings"
+#~ msgstr "Transfera: %1"
+
+#~ msgid "Download Destination:"
+#~ msgstr "Odredište preuzimanja:"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgctxt "No value has been set"
+#~ msgid "Not set"
+#~ msgstr "Nema veza"
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid " KiB"
+#~ msgstr " %1 KB/s "
+
+#, fuzzy
+#~ msgid "Upload Limit:"
+#~ msgstr "Preuzimanje je nastavljeno"
+
+#, fuzzy
+#~ msgid "Download Limit:"
+#~ msgstr "Preuzimanje je nastavljeno"
+
+#, fuzzy
+#~ msgid "Maximum Share Ratio:"
+#~ msgstr "Najveći broj otvorenih veza:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgctxt "verification of the download (e.g. by using MD5)"
+#~ msgid "Verification"
+#~ msgstr "Odredište:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Creation:"
+#~ msgstr "Odredište:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Expiration:"
+#~ msgstr "Odredište:"
+
+#, fuzzy
+#~ msgid "Group Settings"
+#~ msgstr "Uobičajeni direktorij"
+
+#, fuzzy
+#~ msgid "Default folder:"
+#~ msgstr "Uobičajeni direktorij"
+
+#, fuzzy
+#~ msgid "Maximum download speed:"
+#~ msgstr "Preuzimanje je završeno"
+
+#, fuzzy
+#~ msgid "Maximum upload speed:"
+#~ msgstr "Preuzimanje je završeno"
+
+#~ msgid "Destination:"
+#~ msgstr "Odredište:"
+
+#, fuzzy
+#~ msgid "Transfer group:"
+#~ msgstr "&Prebaci"
+
+#, fuzzy
+#~ msgid "&File"
+#~ msgstr "Otvori &datoteku"
+
+#, fuzzy
+#~ msgid "&Downloads"
+#~ msgstr "Preuzimanje je nastavljeno"
+
+#, fuzzy
+#~ msgid "There are no links in the active frame of the current HTML page."
+#~ msgstr "Nema veza u aktivnom okviru trenutne HTML strane."
+
+#, fuzzy
+#~ msgid "Remove Tag"
+#~ msgstr "Otvori prenos"
+
+#, fuzzy
+#~ msgid "Tag Settings for the groups"
+#~ msgstr "Uobičajeni direktorij"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgid "Tag Settings"
+#~ msgstr "Raspored"
+
+#, fuzzy
+#~ msgid "Available tags:"
+#~ msgstr "Otvori prenos"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a new Tag"
+#~ msgstr "Ethernet"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a new tag"
+#~ msgstr "Ethernet"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file %1 : %2"
+#~ msgstr ""
+#~ "Ne mogu pročitati datoteku:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Failed to seek file %1 : %2"
+#~ msgstr ""
+#~ "Ne mogu pročitati datoteku:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Error while reading file:\n"
+#~| "%1"
+#~ msgid "Error reading from %1"
+#~ msgstr ""
+#~ "Greška prilikom čitanja datoteke:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not write to file:\n"
+#~| "%1"
+#~ msgid "Failed to write to file %1 : %2"
+#~ msgstr ""
+#~ "Ne mogu pisati u datoteku:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open index file %1 : %2"
+#~ msgstr ""
+#~ "Ne mogu otvoriti datoteku:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot create file %1 : %2"
+#~ msgstr ""
+#~ "Ne mogu pročitati datoteku:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not write to file:\n"
+#~| "%1"
+#~ msgid "Failed to write last chunk to DND file : %1"
+#~ msgstr ""
+#~ "Ne mogu pisati u datoteku:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open file %1 : %2"
+#~ msgstr ""
+#~ "Ne mogu otvoriti datoteku:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "OK"
+#~ msgstr "Gotovo"
+
+#, fuzzy
+#~ msgid "Error: %1"
+#~ msgstr "u: %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "The specified file does not exist:\n"
+#~| "%1"
+#~ msgid "The directory %1 does not exist"
+#~ msgstr ""
+#~ "Navedena datoteka ne postoji:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Not started"
+#~ msgstr "Nije obrisan."
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgctxt "Status of a torrent file"
+#~ msgid "Seeding"
+#~ msgstr "Raspored"
+
+#, fuzzy
+#~ msgid "Downloading"
+#~ msgstr "Preuzimanje je nastavljeno"
+
+#, fuzzy
+#~ msgid "Stopped"
+#~ msgstr "Brzina"
+
+#, fuzzy
+#~ msgid "Queued for seeding"
+#~ msgstr "Ubacivanje u red"
+
+#, fuzzy
+#~ msgid "Queued for downloading"
+#~ msgstr "Broj pokušaja:"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open file %1: %2"
+#~ msgstr ""
+#~ "Ne mogu otvoriti datoteku:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot create index file: %1"
+#~ msgstr ""
+#~ "Ne mogu pročitati datoteku:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open file : %1 : %2"
+#~ msgstr ""
+#~ "Ne mogu otvoriti datoteku:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Not connected"
+#~ msgstr "Nije obrisan."
+
+#, fuzzy
+#~| msgid "Connection Type"
+#~ msgid "Connection closed"
+#~ msgstr "Tip veze: "
+
+#, fuzzy
+#~| msgid "Connection Type"
+#~ msgid "Connected"
+#~ msgstr "Tip veze: "
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgid "Connecting"
+#~ msgstr "Veza"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "Not in use"
+#~ msgstr "Nema veza"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not write to file:\n"
+#~| "%1"
+#~ msgid "Cannot write to %1 : %2"
+#~ msgstr ""
+#~ "Ne mogu pisati u datoteku:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Cannot read from %1"
+#~ msgstr "Kopiraj datoteka iz: %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open log file %1 : %2"
+#~ msgstr ""
+#~ "Ne mogu otvoriti datoteku:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot create directory %1"
+#~ msgstr ""
+#~ "Ne mogu pročitati datoteku:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file: %1"
+#~ msgstr ""
+#~ "Ne mogu pročitati datoteku:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot seek in file : %1"
+#~ msgstr ""
+#~ "Ne mogu otvoriti datoteku:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgid "Connections"
+#~ msgstr "Veza"
+
+#, fuzzy
+#~ msgid "Tracker"
+#~ msgstr "&Prebaci"
+
+#, fuzzy
+#~ msgid "Delete"
+#~ msgstr "Nije obrisan."
+
+#, fuzzy
+#~ msgid "Details for: %1"
+#~ msgstr "Uobičajeni direktorij"
+
+#, fuzzy
+#~ msgid "All downloads"
+#~ msgstr "Označi delimična preuzimanja"
+
+#, fuzzy
+#~ msgid "Finished downloads"
+#~ msgstr "Završeno"
+
+#, fuzzy
+#~ msgid "Transfers:"
+#~ msgstr "&Prebaci"
+
+#, fuzzy
+#~ msgid "Downloads"
+#~ msgstr "Preuzimanje je nastavljeno"
+
+#, fuzzy
+#~ msgid "Transfer details:"
+#~ msgstr "Transfera: %1"
+
+#, fuzzy
+#~ msgid "Transfer List"
+#~ msgstr "Otvori prenos:"
+
+#, fuzzy
+#~ msgid "Number of threads:"
+#~ msgstr "Broj pokušaja:"
+
+#, fuzzy
+#~ msgid "Name of the license"
+#~ msgstr "Broj pokušaja:"
+
+#, fuzzy
+#~| msgid "Delayed"
+#~ msgctxt "The transfer is delayed"
+#~ msgid "Delayed"
+#~ msgstr "Odgođen"
+
+#, fuzzy
+#~ msgid ""
+#~ "Destination file \n"
+#~ "%1\n"
+#~ "already exists.\n"
+#~ "Do you want to overwrite it?"
+#~ msgstr ""
+#~ "Odredišni datoteka \n"
+#~ "%1\n"
+#~ "već postoji.\n"
+#~ "Želite li da ga prebrišete?"
+
+#, fuzzy
+#~ msgid "Overwrite destination"
+#~ msgstr "Otvori &Odredište"
+
+#, fuzzy
+#~ msgid "Are you sure that you want to remove all selected groups?"
+#~ msgstr "Jeste li sigurni da želite obrisati ove prenose?"
+
+#, fuzzy
+#~ msgid "Rename transfer"
+#~ msgstr "Otvori prenos"
+
+#, fuzzy
+#~ msgid "Download URL again?"
+#~ msgstr "Upravitelj Skidanja"
+
+#~ msgid "Queued"
+#~ msgstr "Na čekanju (red)"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgctxt "@label transfer source"
+#~ msgid "Source:"
+#~ msgstr "Izvor:"
+
+#, fuzzy
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Delete Selected"
+#~ msgstr "Nije odabran nijedan datoteka"
+
+#, fuzzy
+#~| msgid "0 B/s"
+#~ msgid "kBi"
+#~ msgstr "0 B/s"
+
+#, fuzzy
+#~ msgid "Current Tracker"
+#~ msgstr "Otvori prenos"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgid "Scrape"
+#~ msgstr "Izvor:"
+
+#, fuzzy
+#~ msgid "Available Trackers"
+#~ msgstr "Otvori prenos"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file : %1"
+#~ msgstr ""
+#~ "Ne mogu pročitati datoteku:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "&Transfer History..."
+#~ msgstr "Otvori prenos:"
+
+#, fuzzy
+#~ msgid "&Group Settings..."
+#~ msgstr "Uobičajeni direktorij"
+
+#, fuzzy
+#~ msgid "&Transfer Settings..."
+#~ msgstr "Transfera: %1"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed limit"
+#~ msgstr "Brzina"
+
+#, fuzzy
+#~ msgid "Download Speed:"
+#~ msgstr "Preuzimanje je završeno"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Upload Speed:"
+#~ msgstr "Brzina"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "&Import links"
+#~ msgstr "Nema veza"
+
+#, fuzzy
+#~ msgid "&Delete"
+#~ msgstr "Nije obrisan."
+
+#, fuzzy
+#~ msgid "Default Download Folders"
+#~ msgstr "Uobičajeni direktorij"
+
+#, fuzzy
+#~| msgid "Extension"
+#~ msgid "File Extension"
+#~ msgstr "Nastavak"
+
+#, fuzzy
+#~ msgid "Default Folder"
+#~ msgstr "Uobičajeni direktorij"
+
+#, fuzzy
+#~ msgid "Set as default folder"
+#~ msgstr "Uobičajeni direktorij"
+
+#, fuzzy
+#~ msgid "extRegExp, defaultFolder"
+#~ msgstr "Uobičajeni direktorij"
+
+#, fuzzy
+#~ msgid "Downloading.."
+#~ msgstr "Preuzimanje je nastavljeno"
+
+#, fuzzy
+#~ msgid "Advanced-Details for %1"
+#~ msgstr "Uobičajeni direktorij"
+
+#, fuzzy
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading.."
+#~ msgstr "Preuzimanje je nastavljeno"
+
+#, fuzzy
+#~ msgid "Downloads number:"
+#~ msgstr "Upravitelj Skidanja"
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 GB"
+#~ msgstr " %1/s "
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 MB"
+#~ msgstr " %1/s "
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid "%1 KB"
+#~ msgstr " %1 KB/s "
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 B"
+#~ msgstr " %1/s "
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid "%1 KB/s"
+#~ msgstr " %1 KB/s "
+
+#, fuzzy
+#~| msgid "0 B/s"
+#~ msgid "kBi/s"
+#~ msgstr "0 B/s"
+
+#, fuzzy
+#~ msgid "Not Deleted"
+#~ msgstr "Nije obrisan."
+
+#, fuzzy
+#~ msgid "Konqueror Integration disabled"
+#~ msgstr "Integracija sa Konqueror-om"
+
+#, fuzzy
+#~ msgid "Show main window at startup"
+#~ msgstr "Pokaži glavni prozor pri pokretanju"
+
+#, fuzzy
+#~ msgid "<speed>"
+#~ msgstr "Brzina"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgid "<remaining time>"
+#~ msgstr "Preostalo vrijeme"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file %1"
+#~ msgstr ""
+#~ "Ne mogu pročitati datoteku:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Error while writing file:\n"
+#~| "%1"
+#~ msgid "Error writing to %1 : %2"
+#~ msgstr ""
+#~ "Greška prilikom pisanja datoteke:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Error while writing file:\n"
+#~| "%1"
+#~ msgid "Error writing to %1"
+#~ msgstr ""
+#~ "Greška prilikom pisanja datoteke:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "&List Links"
+#~ msgstr "Izlistaj sve veze"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file"
+#~ msgstr ""
+#~ "Ne mogu pročitati datoteku:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgctxt "Download normally(not as first or last"
+#~ msgid "Normal"
+#~ msgstr "Obično"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Bittorrent-Speedlimits"
+#~ msgstr "Brzina"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed-Limits"
+#~ msgstr "Brzina"
+
+#, fuzzy
+#~ msgid " of "
+#~ msgstr "%1 od %2"
+
+#, fuzzy
+#~ msgid "Download Folder"
+#~ msgstr "Uobičajeni direktorij"
+
+#, fuzzy
+#~ msgid "Hide Drop Target"
+#~ msgstr "Mes&to za spuštanje"
+
+#, fuzzy
+#~ msgid "Hide drop target"
+#~ msgstr "Mes&to za spuštanje"
+
+#~ msgid ""
+#~ "Already saving URL\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Već snimam URL\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Default Group"
+#~ msgstr "Uobičajeni direktorij"
+
+#, fuzzy
+#~ msgid "DlgAdvanced"
+#~ msgstr "&Napredno"
+
+#, fuzzy
+#~ msgid "Delete Group."
+#~ msgstr "Uobičajeni direktorij"
+
+#, fuzzy
+#~ msgid "Hide Me"
+#~ msgstr "Ime datoteke"
+
+#, fuzzy
+#~ msgid ""
+#~ "Each row consists of exactly one\n"
+#~ "extension type and one folder."
+#~ msgstr ""
+#~ "Svaka vrsta sadrži točno jedan\n"
+#~ "tip nastavka i jedan direktorij"
+
+#~ msgid "&Dock"
+#~ msgstr "&Pristani"
+
+#, fuzzy
+#~ msgid "Source Label"
+#~ msgstr "Ime izvora"
+
+#, fuzzy
+#~ msgid "&Keep this window open after the operation is complete."
+#~ msgstr "&Zadrži prozor otvorenim pošto se operacija završi."
+
+#, fuzzy
+#~ msgid "Not resumed"
+#~ msgstr "Nije nastavljeno"
+
+#~ msgid "Automation"
+#~ msgstr "Automatizacija"
+
+#~ msgid "System"
+#~ msgstr "Sustav"
+
+#~ msgid "Maximize"
+#~ msgstr "Maksimiziraj"
+
+#~ msgid "Minimize"
+#~ msgstr "Minimiziraj"
+
+#, fuzzy
+#~ msgid ""
+#~ "This is a folder and not a file:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Ovo je direktorij a ne datoteka:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid ""
+#~ "You do not have read permission for the file:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Nemate odgovarajuće privilegije za čitanje ove datoteke:\n"
+#~ "%1"
+
+#~ msgid "Could only read %1 bytes of %2."
+#~ msgstr "Uspio sam pročitati samo %1 bajtova od %2."
+
+#~ msgid ""
+#~ "File %1 exists.\n"
+#~ "Do you want to replace it?"
+#~ msgstr ""
+#~ "Datoteka %1 postoji.\n"
+#~ "Želite li je zamijeniti?"
+
+#~ msgid ""
+#~ "Failed to make a backup copy of %1.\n"
+#~ "Continue anyway?"
+#~ msgstr ""
+#~ "Nisam uspio napraviti sigurnosnu kopiju %1.\n"
+#~ "Da ipak nastavim ?"
+
+#~ msgid ""
+#~ "Could not open file for writing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Ne mogu otvoriti datoteku za pisanje:\n"
+#~ "%1"
+
+#~ msgid "Could only write %1 bytes of %2."
+#~ msgstr "Uspio sam zapisati %1 bajtova od %2."
+
+#, fuzzy
+#~ msgid "Welcome to KGet"
+#~ msgstr "Dobrodošli u KGet"
+
+#~ msgid "Could not create valid socket"
+#~ msgstr "Nemogu kreirati valjanu utičnicu"
+
+#~ msgid "Offline"
+#~ msgstr "Neumreženo"
+
+#, fuzzy
+#~ msgid "Starting offline"
+#~ msgstr "Pokretanje u oflajn način radau"
+
+#, fuzzy
+#~ msgid "&Open Individual Window"
+#~ msgstr "&Otvori samostalni prozor"
+
+#~ msgid "Move to &Beginning"
+#~ msgstr "&Premjesti na početak"
+
+#~ msgid "&Pause"
+#~ msgstr "&Pauziraj"
+
+#~ msgid "&Queue"
+#~ msgstr "&Niz"
+
+#~ msgid "&Timer"
+#~ msgstr "Š&toperica"
+
+#~ msgid "De&lay"
+#~ msgstr "K&ašnjenje"
+
+#~ msgid "Use &Animation"
+#~ msgstr "Koristi &animaciju"
+
+#~ msgid "&Expert Mode"
+#~ msgstr "&Ekspertni mod"
+
+#, fuzzy
+#~ msgid "&Use-Last-Folder Mode"
+#~ msgstr "Način rada upotrebe &posljednjeg direktorij"
+
+#~ msgid "Auto-&Disconnect Mode"
+#~ msgstr "Način rada &automatskog prekidanja veze"
+
+#~ msgid "Auto-S&hutdown Mode"
+#~ msgstr "Mod automatskog &gašenja računala"
+
+#, fuzzy
+#~ msgid "&Offline Mode"
+#~ msgstr "&Oflajn način rada"
+
+#~ msgid "Show &Log Window"
+#~ msgstr "&Prikaži dnevnik spajanja"
+
+#~ msgid " Files: %1 "
+#~ msgstr " Datoteke : %1 "
+
+#~ msgid " Size: %1 KB "
+#~ msgstr "Veličina: %1 KB"
+
+#~ msgid " Time: %1 "
+#~ msgstr " Vrijeme : %1 "
+
+#~ msgid ""
+#~ "<b>Resume</b> button starts selected transfers\n"
+#~ "and sets their mode to <i>queued</i>."
+#~ msgstr ""
+#~ "<b>Nastavi</b> dumge započima odabrane prijenose\n"
+#~ "i postavlja njihov način rada na <i>stavke u redu</i>."
+
+#~ msgid ""
+#~ "<b>Pause</b> button stops selected transfers\n"
+#~ "and sets their mode to <i>delayed</i>."
+#~ msgstr ""
+#~ "<b>Pauziraj</b> gumb zaustavlja odabrane prijenose\n"
+#~ "i postavlja njihov način rada na <i>odložen</i>."
+
+#~ msgid ""
+#~ "<b>Delete</b> button removes selected transfers\n"
+#~ "from the list."
+#~ msgstr ""
+#~ "Gumb <b>Obriši</b> uklanja odabrane prijenose\n"
+#~ "iz liste."
+
+#~ msgid ""
+#~ "<b>Restart</b> button is a convenience button\n"
+#~ "that simply does Pause and Resume."
+#~ msgstr ""
+#~ "<b>Započmi ponovo</b> gumb je tu čisto radi udobnosti.\n"
+#~ "koji jednostavno radi Pauziraj i Nastavi'."
+
+#~ msgid ""
+#~ "<b>Queued</b> button sets the mode of selected\n"
+#~ "transfers to <i>queued</i>.\n"
+#~ "\n"
+#~ "It is a radio button -- you can choose between\n"
+#~ "three modes."
+#~ msgstr ""
+#~ "<b>Stavke u redu</b> gumb postavlja način rada odabranih\n"
+#~ "prijenosa na <i>stavka u redu</i>.\n"
+#~ "\n"
+#~ "Ovo je opcijski gumb -- možete birati između\n"
+#~ "tri način rada."
+
+#~ msgid ""
+#~ "<b>Scheduled</b> button sets the mode of selected\n"
+#~ "transfers to <i>scheduled</i>.\n"
+#~ "\n"
+#~ "It is a radio button -- you can choose between\n"
+#~ "three modes."
+#~ msgstr ""
+#~ "Gumb <b>Zakazano</b> postavlja način rada označenih\n"
+#~ "prijenosa na <i>zakazano</i>.\n"
+#~ "\n"
+#~ "Ovo je ekskluzivni opcjski gumb -- možete birati\n"
+#~ "između tri način rada."
+
+#~ msgid ""
+#~ "<b>Delayed</b> button sets the mode of selected\n"
+#~ "transfers to <i>delayed</i>.This also causes the selected transfers to "
+#~ "stop.\n"
+#~ "\n"
+#~ "It is a radio button -- you can choose between\n"
+#~ "three modes."
+#~ msgstr ""
+#~ "Gumb <b>Odložen</b> postavlja način rada označenih\n"
+#~ "prijenosa na <i>odložen</i>. Ovo također zaustavlja označene prijenose.\n"
+#~ "\n"
+#~ "Ovo je ekskluzivno opcioni gumb, možete birati\n"
+#~ "između tri način rada."
+
+#~ msgid ""
+#~ "<b>Preferences</b> button opens a preferences dialog\n"
+#~ "where you can set various options.\n"
+#~ "\n"
+#~ "Some of these options can be more easily set using the toolbar."
+#~ msgstr ""
+#~ "<b>Podešavanja</b> gumb otvara dijalog za postavke\n"
+#~ "gdje možete podesiti razne opcije.\n"
+#~ "\n"
+#~ "Neke od ovih opcija možete lako podesiti koristeći traku sa alatima."
+
+#~ msgid ""
+#~ "<b>Log window</b> button opens a log window.\n"
+#~ "The log window records all program events that occur\n"
+#~ "while KGet is running."
+#~ msgstr ""
+#~ "Gumb <b>Prozor dnevnika</b> otvara prozor dnevnika.\n"
+#~ "Prozor dnevnika zapisuje sve programske događaje koji su se\n"
+#~ "dogodili za vrijeme rada KGeta."
+
+#~ msgid ""
+#~ "<b>Paste transfer</b> button adds a URL from\n"
+#~ "the clipboard as a new transfer.\n"
+#~ "\n"
+#~ "This way you can easily copy&paste URLs between\n"
+#~ "applications."
+#~ msgstr ""
+#~ "<b>Zalijepi prijenos</b>gumb dodaje URL iz\n"
+#~ "iz odlagališta kao novi prijnos.\n"
+#~ "\n"
+#~ "Na ovaj način možete lako kopirati i lijepiti URL između\n"
+#~ "programa."
+
+#~ msgid ""
+#~ "<b>Expert mode</b> button toggles the expert mode\n"
+#~ "on and off.\n"
+#~ "\n"
+#~ "Expert mode is recommended for experienced users.\n"
+#~ "When set, you will not be \"bothered\" by confirmation\n"
+#~ "messages.\n"
+#~ "<b>Important!</b>\n"
+#~ "Turn it on if you are using auto-disconnect or\n"
+#~ "auto-shutdown features and you want KGet to disconnect \n"
+#~ "or shut down without asking."
+#~ msgstr ""
+#~ "Gumb <b>Ekspertni način rada</b> isključuje ili\n"
+#~ "uključuje ekspertni način rada.\n"
+#~ "\n"
+#~ "Ekspertni način rada je preporučljiv za iskusne korisnike.\n"
+#~ "Ako je uključen, nećete više biti zamarani traženjem\n"
+#~ "potvrde za razne akcije.\n"
+#~ "<b>Važno!</b>\n"
+#~ "Uključite ovaj način rada ako koristite automatsko prekidanje\n"
+#~ "veze ili automatsko gašenje računala i želite da\n"
+#~ "KGet bez pitanja prekida vezu ili gasi računalo."
+
+#~ msgid ""
+#~ "<b>Use last folder</b> button toggles the\n"
+#~ "use-last-folder feature on and off.\n"
+#~ "\n"
+#~ "When set, KGet will ignore the folder settings\n"
+#~ "and put all new added transfers into the folder\n"
+#~ "where the last transfer was put."
+#~ msgstr ""
+#~ "Gumb <b>Koristi posljednji direktorij</b> uključuje\n"
+#~ "ili isključuje korištenje posljednjeg direktorija.\n"
+#~ "\n"
+#~ "Kada je uključeno, KGet će zanemariti postavke direktorija\n"
+#~ "i stavljat će novododane prijenose u direktorij gdje je\n"
+#~ "posljednji prijenos bio smješten."
+
+#~ msgid ""
+#~ "<b>Auto disconnect</b> button toggles the auto-disconnect\n"
+#~ "mode on and off.\n"
+#~ "\n"
+#~ "When set, KGet will disconnect automatically\n"
+#~ "after all queued transfers are finished.\n"
+#~ "\n"
+#~ "<b>Important!</b>\n"
+#~ "Also turn on the expert mode when you want KGet\n"
+#~ "to disconnect without asking."
+#~ msgstr ""
+#~ "Gumb <b>Automatsko prekidanje veze</b>prekidač automatski isključuje\n"
+#~ " ili isključuje ovaj način rada rada.\n"
+#~ "\n"
+#~ "Kada je uključen, KGet će automatski prekinuti vezu čim\n"
+#~ "su završeni svi prijenosi.\n"
+#~ "\n"
+#~ "<b>Važno!</b>\n"
+#~ "Trebali bi uključiti i stručni mod kad želite da KGet\n"
+#~ "prekine vezu bez pitanja."
+
+#~ msgid ""
+#~ "<b>Auto shutdown</b> button toggles the auto-shutdown\n"
+#~ "mode on and off.\n"
+#~ "\n"
+#~ "When set, KGet will quit automatically\n"
+#~ "after all queued transfers are finished.\n"
+#~ "<b>Important!</b>\n"
+#~ "Also turn on the expert mode when you want KGet\n"
+#~ "to quit without asking."
+#~ msgstr ""
+#~ "<b>Automatsko gašenje računala</b> uključuje ili\n"
+#~ "isključuje ovaj način rada rada.\n"
+#~ "\n"
+#~ "Kada je uključen, KGet će automatski završiti\n"
+#~ "sa radom kada se svi prijenosi završe.\n"
+#~ "<b>Važno!</b>\n"
+#~ "Trebali bi uključiti i ekspertski način rada\n"
+#~ "ako želite da KGet završi sa radom bez pitanja."
+
+#~ msgid ""
+#~ "<b>Offline mode</b> button toggles the offline mode\n"
+#~ "on and off.\n"
+#~ "\n"
+#~ "When set, KGet will act as if it was not connected\n"
+#~ "to the Internet.\n"
+#~ "\n"
+#~ "You can browse offline, while still being able to add\n"
+#~ "new transfers as queued."
+#~ msgstr ""
+#~ "Gumb <b>Način rada izvan mreže</b> uključuje ili isključuje\n"
+#~ "način rada rada izvan mreže.\n"
+#~ "\n"
+#~ "Ako je uključen, KGet će se ponašati kao da nije povezan\n"
+#~ "na Internet.\n"
+#~ "\n"
+#~ "U ovom način radau možete pretraživati, a ipak ćete moći\n"
+#~ "da dodajete nove transfere u red za čekanje."
+
+#~ msgid ""
+#~ "<b>Drop target</b> button toggles the window style\n"
+#~ "between a normal window and a drop target.\n"
+#~ "\n"
+#~ "When set, the main window will be hidden and\n"
+#~ "instead a small shaped window will appear.\n"
+#~ "\n"
+#~ "You can show/hide a normal window with a simple click\n"
+#~ "on a shaped window."
+#~ msgstr ""
+#~ "Gumb <b>Mjesto za spuštanje</b> prebacuje stil prozora\n"
+#~ "izmeću običnog prozora i mjesta za spuštanje.\n"
+#~ "\n"
+#~ "Ako je uključen, glavni prozor će biti sakriven i\n"
+#~ "umjesto njega pojaviće se jedino dijalog.\n"
+#~ "\n"
+#~ "Običan prozor možete sakriti ili otkriti jednostavnim\n"
+#~ "klikom na zasjenjeni prozor."
+
+#, fuzzy
+#~ msgid ""
+#~ "*.kgt|*.kgt\n"
+#~ "*|All Files"
+#~ msgstr ""
+#~ "*.kgt|*.kgt\n"
+#~ "*|Svi datoteke"
+
+#, fuzzy
+#~ msgid "Quitting..."
+#~ msgstr "Završavam..."
+
+#, fuzzy
+#~ msgid ""
+#~ "The transfer you wanted to delete completed before it could be deleted."
+#~ msgid_plural ""
+#~ "%n transfers you wanted to delete completed before they could be deleted."
+#~ msgstr[0] ""
+#~ "%1 prenos koji ste želeli da obrišete je završen prije nego što je mogao "
+#~ "biti obrisan."
+#~ msgstr[1] ""
+#~ "%1 prenosa koje ste želeli da obrišete su završena prije nego što su "
+#~ "mogli biti obrisani."
+#~ msgstr[2] ""
+#~ "%1 prenosa koje ste želeli da obrišete je završeno prije nego što su "
+#~ "mogli biti obrisani."
+
+#, fuzzy
+#~ msgid "Stopping all jobs"
+#~ msgstr "Pauziranje svih poslova"
+
+#, fuzzy
+#~ msgid "Starting another queued job."
+#~ msgstr "Otpočinjanje drugog posla iz reda."
+
+#, fuzzy
+#~ msgid "Offline mode on."
+#~ msgstr "Oflajn način rada je uključen."
+
+#, fuzzy
+#~ msgid "Offline mode off."
+#~ msgstr "Oflajn način rada je isključen."
+
+#, fuzzy
+#~ msgid "Expert mode on."
+#~ msgstr "Ekspertski način rada je uključen."
+
+#, fuzzy
+#~ msgid "Expert mode off."
+#~ msgstr "Ekspertski način rada je isključen."
+
+#, fuzzy
+#~ msgid "Use last folder on."
+#~ msgstr "Način rada upotrebe posljednjeg direktorija je uključen."
+
+#, fuzzy
+#~ msgid "Use last folder off."
+#~ msgstr "Način rada upotrebe posljednjeg direktorija je isključen."
+
+#~ msgid "Auto disconnect off."
+#~ msgstr "Automatsko prekidanje veze je isključeno."
+
+#~ msgid "Auto shutdown off."
+#~ msgstr "Automatsko gašenje računala je isključeno."
+
+#~ msgid "Auto paste on."
+#~ msgstr "Automatsko prenošenje je uključeno."
+
+#~ msgid "Auto paste off."
+#~ msgstr "Automatsko prenošenje je isključeno."
+
+#, fuzzy
+#~ msgid "<b>Transfers:</b> %1 "
+#~ msgstr "Transfera: %1"
+
+#, fuzzy
+#~ msgid "<br /><b>Files:</b> %1 "
+#~ msgstr " Datoteke : %1 "
+
+#, fuzzy
+#~ msgid "<br /><b>Size:</b> %1 "
+#~ msgstr " Veličina: %1 "
+
+#, fuzzy
+#~ msgid "<br /><b>Time:</b> %1 "
+#~ msgstr " Vrijeme : %1 "
+
+#~ msgid "Do you really want to disconnect?"
+#~ msgstr "Da li se stvarno želite odspojiti?"
+
+#, fuzzy
+#~ msgid "Disconnect"
+#~ msgstr "Prekid veze..."
+
+#~ msgid "Disconnecting..."
+#~ msgstr "Prekid veze..."
+
+#~ msgid "Id"
+#~ msgstr "Id"
+
+#~ msgid "Mixed"
+#~ msgstr "Izmiješan"
+
+#, fuzzy
+#~ msgid "Separated"
+#~ msgstr "Odvojeno"
+
+#~ msgid "Add new transfers as:"
+#~ msgstr "Dodaj nove prijenose kao:"
+
+#~ msgid "Iconified"
+#~ msgstr "Umanjeno"
+
+#~ msgid "Advanced individual windows"
+#~ msgstr "Napredni samostalni prozori"
+
+#, fuzzy
+#~ msgid "Remove files from a list after success"
+#~ msgstr "Ukloni datotekaove iz liste po uspješnom prenosu"
+
+#, fuzzy
+#~ msgid "Get file sizes"
+#~ msgstr "Dohvati veličine datotekaova"
+
+#, fuzzy
+#~ msgid "Show individual windows"
+#~ msgstr "Prikazuj samostalne prozore"
+
+#~ msgid " min"
+#~ msgstr " minuta"
+
+#~ msgid "Auto disconnect after completing downloads"
+#~ msgstr "Automatski prekini vezu po završenom preuzimanju"
+
+#~ msgid "Autosave file list every:"
+#~ msgstr "Automatski snimaj popis datoteka svakih:"
+
+#, fuzzy
+#~ msgid "Timed disconnect"
+#~ msgstr "Vremensko prekidanje veze"
+
+#, fuzzy
+#~ msgid "Disconnect command:"
+#~ msgstr "Naredba za prekidanje veze:"
+
+#~ msgid "Auto paste from clipboard"
+#~ msgstr "Automatsko prenošenje iz međumemorije"
+
+#, fuzzy
+#~ msgid "Reconnect Options"
+#~ msgstr "Opcije za ponovno povezivanje"
+
+#, fuzzy
+#~ msgid "On login or timeout error"
+#~ msgstr "Pri prijavljivanju ili poslije prekoračenja vremena"
+
+#, fuzzy
+#~ msgid "Timeout Options"
+#~ msgstr "Opcije prekoračenja vremena"
+
+#, fuzzy
+#~ msgid "If no data arrives in:"
+#~ msgstr "Ako podaci ne stignu za:"
+
+#, fuzzy
+#~ msgid "If server cannot resume:"
+#~ msgstr "ako poslužitelj ne može nastaviti"
+
+#~ msgid "Permanent"
+#~ msgstr "Trajno"
+
+#~ msgid "PLIP"
+#~ msgstr "PLIP"
+
+#~ msgid "SLIP"
+#~ msgstr "SLIP"
+
+#~ msgid "PPP"
+#~ msgstr "PPP"
+
+#~ msgid "ISDN"
+#~ msgstr "ISDN"
+
+#, fuzzy
+#~ msgid "Link number:"
+#~ msgstr "Broj veze:"
+
+#, fuzzy
+#~ msgid "Limits Options"
+#~ msgstr "Opcije ograničenja"
+
+#, fuzzy
+#~ msgid "Minimum network bandwidth:"
+#~ msgstr "Minimalni propusni opseg mreže:"
+
+#, fuzzy
+#~ msgid "Maximum network bandwidth:"
+#~ msgstr "Maksimalni propusni opseg mreže:"
+
+#~ msgid " bytes/sec"
+#~ msgstr "bit/sek"
+
+#, fuzzy
+#~ msgid "Window style:"
+#~ msgstr "Stil prozora:"
+
+#~ msgid "Attempt number %1"
+#~ msgstr "Pokušaj broj %1"
+
+#~ msgid "Pausing"
+#~ msgstr "Pauziram"
+
+#~ msgid "Delaying"
+#~ msgstr "Odgađam"
+
+#, fuzzy
+#~ msgid "The file size does not match."
+#~ msgstr ""
+#~ "Navedena datoteka ne postoji:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "File Size checked"
+#~ msgstr "Veličina datotekaa je proverena"
+
+#~ msgid "S"
+#~ msgstr "S"
+
+#~ msgid "%"
+#~ msgstr "%"

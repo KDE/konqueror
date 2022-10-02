@@ -1,0 +1,92 @@
+# Translation of dirfilterplugin.po to Euskara/Basque (eu).
+# Copyright (C) 2003-2018, Free Software Foundation.
+# This file is distributed under the same license as the applications package.
+# KDE euskaratzeko proiektuaren arduraduna <xalba@euskalnet.net>.
+#
+# Translators:
+# Marcos  <marcos@euskalgnu.org>, 2003, 2005.
+# Juan Irigoien <juanirigoien@yahoo.es>, 2004.
+# Iñigo Salvador Azurmendi <xalba@euskalnet.net>, 2011, 2018.
+# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: dirfilterplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2018-07-28 00:33+0100\n"
+"Last-Translator: Iñigo Salvador Azurmendi <xalba@euskalnet.net>\n"
+"Language-Team: Basque <kde-i18n-doc@kde.org>\n"
+"Language: eu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 2.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: dirfilterplugin.cpp:120
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Hide Filter Bar"
+msgstr "Ezkutatu iragazki-barra"
+
+#: dirfilterplugin.cpp:124
+#, kde-format
+msgctxt "@label:textbox"
+msgid "F&ilter:"
+msgstr "&Iragazkia:"
+
+#: dirfilterplugin.cpp:136
+#, kde-format
+msgctxt "@label:button"
+msgid "Filter by t&ype"
+msgstr "Iragazi &motaren arabera"
+
+#: dirfilterplugin.cpp:137
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Filter items by file type."
+msgstr "Iragazi elementuak fitxategi motaren arabera."
+
+#: dirfilterplugin.cpp:228
+#, kde-format
+msgctxt "@action:inmenu Tools"
+msgid "Show Filter Bar"
+msgstr "Erakutsi iragazte-barra"
+
+#: dirfilterplugin.cpp:322
+#, kde-format
+msgid "Use Multiple Filters"
+msgstr "Erabili askotariko iragazkiak"
+
+#: dirfilterplugin.cpp:328
+#, kde-format
+msgid "Show Count"
+msgstr "Erakutsi kopurua"
+
+#: dirfilterplugin.cpp:333
+#, kde-format
+msgid "Reset"
+msgstr "Berrezarri"
+
+#. i18n: ectx: Menu (tools)
+#: dirfilterplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "&Tresnak"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: dirfilterplugin.rc:8
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "Tresna-barra gehigarria"
+
+#~ msgid "Allow to filter the currently displayed items by filetype."
+#~ msgstr ""
+#~ "Baimendu unean bistaratutako elementuak fitxategi motaren arabera "
+#~ "iragaztea."
+
+#~ msgid "Only Show Items of Type"
+#~ msgstr "Motako elementuak soilik erakutsi"
+
+#~ msgid "Filter Field"
+#~ msgstr "Iragazkiaren eremua"

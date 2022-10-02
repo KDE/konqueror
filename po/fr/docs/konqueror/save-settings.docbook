@@ -1,0 +1,153 @@
+<chapter id="save-settings">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+&traducteurJoelleCornavin; &traducteurGerardDelafond;&traducteurLudovicGrossard; 
+</authorgroup>
+
+<date
+>26/02/2010</date>
+<releaseinfo
+>&kde; 4.4</releaseinfo>
+</chapterinfo>
+
+<title
+>Enregistrement de la configuration et des profils</title>
+<sect1 id="save-settings-general">
+<title
+>Configuration globale</title>
+<para
+>Lorsque vous fermez &konqueror;, vos paramètres de menu <guimenu
+>Affichage</guimenu
+> actuels (tels que les éléments <guimenuitem
+>Type d'affichage</guimenuitem
+>, <guimenuitem
+>Utiliser index.html</guimenuitem
+> et <guimenuitem
+>Afficher les fichiers cachés</guimenuitem
+>) ne sont pas automatiquement enregistrés comme valeurs par défaut ; cependant, &konqueror; peut se souvenir de ces réglages en choisissant <menuchoice
+><guimenu
+>Configuration</guimenu
+><guimenuitem
+>Enregistrer le rofil d'affichage sous...</guimenuitem
+></menuchoice
+> et les réglages actuels deviendront les options utilisées lors du prochain redémarrage de &konqueror;.</para>
+
+<para
+>Toutefois, vous pouvez également spécifier différents paramètres du menu <guimenu
+>Affichage</guimenu
+> pour un dossier individuel. Pour ce faire, sélectionnez <menuchoice
+><guimenu
+> Affichage</guimenu
+> <guimenuitem
+>Ajuster les propriétés d'affichage...</guimenuitem
+></menuchoice
+>, modifiez les paramètres <guimenu
+>Affichage</guimenu
+> de la boîte de dialogue pour ceux que vous désirez. Appliquez ensuite les propriétés d'affichage au <guilabel
+>dossier actuel</guilabel
+>. Cette action crée un fichier <filename
+>.directory</filename
+> dans ce dossier pour contenir les paramètres d'<guimenu
+>Affichage</guimenu
+>du dossier. Utilisez de nouveau cette boîte de dialogue pour supprimer les paramètres spécifiques du dossier (ou supprimez simplement le fichier <filename
+>.directory</filename
+>).</para>
+<note
+><para
+>L'utilisation de cette fonctionnalité est intéressante si vous avez un dossier rempli d'images. Vous pouvez configurer ce dossier particulier pour afficher des vignettes des images (en choisissant <menuchoice
+><guisubmenu
+>Type d'affichage</guisubmenu
+><guimenuitem
+>Icônes</guimenuitem
+></menuchoice
+> et <guimenuitem
+>Aperçu</guimenuitem
+> depuis le menu <guimenu
+>Affichage</guimenu
+>) lorsque vous l'ouvrez, alors que les images ne sont pas affichées sous forme de vignettes dans d'autres dossiers.</para
+></note>
+</sect1>
+
+<sect1 id="save-settings-view-profiles">
+<title
+>Profils d'affichage</title>
+<para
+>&konqueror; peut enregistrer tout un ensemble d'options dans un <quote
+>profil d'affichage</quote
+>. Certains profils font partie de l'installation standard de &konqueror;, comme <property
+>Navigateur web</property
+>, <property
+>Gestionnaire de fichiers</property
+>, <property
+>Développement de KDE</property
+>, <property
+>Midnight Commander</property
+> et <property
+>Navigation par onglets</property
+> ; mais vous pouvez ajouter les vôtres également.</para>
+
+<para
+>Pour modifier un profil d'affichage (disons le profil <property
+>Navigateur web</property
+>), chargez le profil avec <menuchoice
+><guimenu
+>Configuration</guimenu
+><guisubmenu
+>Charger un profil d'affichage</guisubmenu
+><guimenuitem
+>Navigateur web</guimenuitem
+> </menuchoice
+>, et modifiez les réglages de &konqueror; comme bon vous semble. Sélectionnez maintenant <menuchoice
+><guimenu
+>Configuration</guimenu
+><guimenuitem
+>Enregistrer le profil d'affichage sous...</guimenuitem
+></menuchoice
+>. Dans la boîte de dialogue qui apparaît, vous pouvez modifier le nom du profil, ce qui entraînera la création d'un nouveau profil portant ce nom, ou vous pouvez laisser le nom afin de modifier le profil actuel. Si vous sélectionnez <guilabel
+>Enregistrer les URL dans le profil</guilabel
+>, l'&URL; actuelle sera rechargée lorsque vous rechargerez ce profil. Ceci fonctionne comme la <quote
+>page de démarrage</quote
+> dans la plupart des navigateurs. Si vous voulez que &konqueror; démarre avec une fenêtre vide, saisissez <userinput
+>about:blank</userinput
+> dans la barre d'&URL; avant d'enregistrer le profil.</para>
+
+<note
+><para
+>Vous pouvez créer une icône de bureau pour démarrer &konqueror; avec votre nouveau profil. Créez d'abord une icône de bureau en cliquant avec le &BDS; sur l'élément &konqueror; du menu du lanceur d'applications. Choisissez ensuite <guimenuitem
+>Ajouter au bureau</guimenuitem
+> dans le menu contextuel. Ouvrez la boîte de dialogue de configuration de la nouvelle icône sur votre bureau, en cliquant sur l'icône <guiicon
+>Outils</guiicon
+>. Changez la <guilabel
+>commande</guilabel
+> dans l'onglet <guilabel
+>Application</guilabel
+> en <userinput
+><command
+>kfmclient</command
+> <option
+>openProfile <replaceable
+>Mon_nouveau_profil</replaceable
+></option
+></userinput
+>, <replaceable
+>Mon_nouveau_profil</replaceable
+> étant le nom donné au nouveau profil. Puis modifiez son nom pour un intitulé comme <filename
+>Mon_nouveau_profil</filename
+>.</para
+></note>
+
+</sect1>
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

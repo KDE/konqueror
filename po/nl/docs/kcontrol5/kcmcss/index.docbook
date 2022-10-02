@@ -1,0 +1,440 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Dutch "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="kcmcss" lang="&language;">
+<articleinfo>
+<title
+>Uiterlijk</title>
+<authorgroup>
+<author
+>&Lauri.Watts; &Lauri.Watts.mail;</author>
+&Niels.Reedijk;&Sander.Koning; 
+</authorgroup>
+
+<date
+>2016-11-08</date>
+<releaseinfo
+>Applications 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>CSS</keyword>
+<keyword
+>KDE</keyword>
+<keyword
+>Lettertype</keyword>
+<keyword
+>CSS</keyword>
+<keyword
+>Stijlbladen</keyword>
+<keyword
+>Toegankelijkheid</keyword>
+</keywordset>
+
+</articleinfo>
+
+<sect1 id="appearance">
+<title
+>Uiterlijk</title>
+<para
+>Deze module bestaat uit drie tabbladen met opties voor het instellen hoe webpagina's worden weergegeven.</para>
+
+<sect2 id="general">
+<title
+>Algemeen</title
+> <!-- modified copy from khtml/index.docbook <sect2 id="kbrowse-html"-->
+
+<para
+>Het keuzevakje genaamd <guilabel
+>Afbeeldingen automatisch laden</guilabel
+> stelt u in staat te bepalen of afbeeldingen in webpagina's standaard worden geladen. Tenzij u een erg langzame verbinding hebt, zult u waarschijnlijk deze optie geactiveerd laten, omdat er veel webpagina's zijn die moeilijk zijn te gebruiken zonder afbeeldingen. Als u de optie niet activeert om automatisch afbeeldingen te laden, dan kunt u toch de tekst op de pagina lezen en daarna de afbeeldingen laden als u ze nodig hebt.</para>
+
+<para
+>Als <guilabel
+>Teken een frame rond niet volledig geladen afbeeldingen</guilabel
+> is geactiveerd, zal &konqueror; een frame als een plaatshouder rond afbeeldingen ingebed in een webpagina tekenen, die nog niet volledig zijn geladen. U wilt waarschijnlijk dit vakje activeren om uw bladerervaring te verbeteren, speciaal als u een langzame netwerkverbinding hebt.</para>
+
+<para
+>Veel webpagina's gebruiken geanimeerde gif-afbeeldingen. Deze kunnen erg vervelend zijn en in sommige gevallen de snelheid van de computer behoorlijk naar beneden brengen. De optie <guilabel
+>Animaties</guilabel
+> optie laat u kiezen wanneer animaties worden afgespeeld. De standaard is altijd afspelen, maar u kunt dit uitschakelen of de animatie maar één keer laten afspelen, zelfs als deze instructies bevat om meerdere keren of zelfs continu af te spelen.</para>
+
+<para
+>De volgende instelling is <guilabel
+>Koppelingen onderstrepen:</guilabel
+>. U kunt er voor kiezen om koppelingen te onderstrepen <guilabel
+>Ingeschakeld</guilabel
+>. Als deze optie is geactiveerd, dan zal elke tekst op webpagina's die als een koppeling worden getoond worden in een lettertype met onderstreping. Terwijl er veel webpagina's zijn die een kleur gebruiken om tekst te laten zien die als een koppeling fungeert, maakt onderstrepen het erg gemakkelijk om deze te vinden.</para>
+
+<para
+>Als u niet houdt van onderstreepte koppelingen, dan kunt u <guilabel
+>Uitgeschakeld</guilabel
+> kiezen, zodat koppelingen niet onderstreept worden. Of u kunt een middenpositie kiezen <guilabel
+>Onder cursor</guilabel
+>, zodat koppelingen onderstreept worden als de muiscursor er boven rust en niet onderstreept is de rest van de tijd.</para>
+
+<note
+><para
+>De CSS-definities van de site kunnen deze waarde overschrijven.</para
+></note>
+
+<para
+><guilabel
+>Gladjes scrollen</guilabel
+> bepaalt of &konqueror; in gladde stapjes door &HTML;-pagina's scrolt of hele stappen neemt: <itemizedlist>
+<listitem
+><para
+><guilabel
+>Altijd</guilabel
+>: Gebruik altijd gladde stapjes bij scrollen.</para
+></listitem>
+<listitem
+><para
+><guilabel
+>Nooit</guilabel
+>: Gebruik nooit gladjes scrollen, scroll met hele stappen.</para
+></listitem>
+<listitem
+><para
+><guilabel
+>Wanneer efficiënt</guilabel
+>: Gebruik alleen gladjes scrollen op pagina's waar het kan worden gedaan met een middelmatig gebruik van systeembronnen.</para
+></listitem>
+</itemizedlist>
+</para>
+
+</sect2>
+
+<sect2 id="fonts"
+> <!-- modified copy from khtml/index.docbook <sect2 id="kbrowse-appearance"-->
+<title
+>Lettertypen</title>
+<para
+>Onder dit tabblad kunt u verschillende opties selecteren omtrent het gebruik van lettertypen. Alhoewel de vormen en de groottes van lettertypes veelal deel zijn van het ontwerp van een webpagina, kunt u enkele standaardinstellingen van &konqueror; instellen.</para>
+
+<para
+>Het eerste wat u kunt instellen is de lettergrootte. Er zijn twee instellingen die samenwerken om u comfortabel te laten surfen.</para>
+
+<para
+>Ten eerste kunt u een <guilabel
+>Minimale lettergrootte</guilabel
+> instellen. Dit betekent dat zelfs als de lettergrootte specifiek op de pagina, die u bekijkt, is ingesteld, &konqueror; deze instructie zal negeren en nooit een kleinere letter laat zien dan u hier hebt ingesteld.</para>
+
+<para
+>Vervolgens kunt u een <guilabel
+>Middel lettergrootte</guilabel
+> instellen. Dit is niet alleen de standaard grootte van tekst, als de pagina geen groottes spcificeert, maar wordt ook gebruikt als de basis grootte waartegen relatieve lettergrootten worden berekend. Dat betekent dat de &HTML; instructie <quote
+>smaller</quote
+>, betekent kleiner dan de grootte ingesteld in deze optie.</para>
+
+<para
+>Voor elke optie kunt u de exacte tekengrootte in punten selecteren door gebruik te maken van de pijltjes omhoog en omlaag (of gewoon door het getal in te typen), naast het label.</para>
+
+<para
+>Deze opties zijn onafhankelijk van elkaar. Pagina's die geen lettergrootte instellen of om de standaard vragen, zullen getoond worden met de grootte die u hebt ingesteld in <guilabel
+>Middel lettergrootte</guilabel
+>, terwijl elke pagina die vraagt om een grootte kleiner dan uw <guilabel
+>Minimale lettergrootte</guilabel
+> instelling zal in plaats daarvan die grootte tonen. De een heeft geen invloed op de ander.</para>
+
+<para
+>De overblijvende opties zijn voor de lettertypen gekoppeld aan verschillende typen van markering gebruikt in &HTML;-pagina's. Opmerking: veel webpagina's kunnen deze instellingen overschrijven. Voor elk lettertype (standaard, vast, serif, &etc;) kunt u, als u dat wilt, een verschillend lettertype kiezen.</para>
+
+<para
+>Daaronder kunt u een <guilabel
+>Aanpassing van tekengrootte voor deze codering</guilabel
+> instellen. Soms zijn de lettertypen die u wilt gebruiken voor een bepaalde codering of taal veel groter of kleiner dan gemiddeld, dus kunt u deze instelling gebruiken om dat correct in te stellen. </para>
+
+<para
+>U kunt een standaard codering voor pagina's instellen die &konqueror; zou moeten aannemen bij het weergeven ervan. De standaard instelling is <guilabel
+>Taalcodering gebruiken</guilabel
+>, maar u kunt het wijzigen naar elke codering beschikbaar in de lijst.</para>
+
+</sect2>
+
+<sect2 id="stylesheets">
+
+<title
+>Stijlbladen</title>
+
+<sect3>
+<title
+>Inleiding</title>
+
+<para
+><acronym
+>CSS</acronym
+>-stijlbladen beïnvloeden de manier waarop webpagina's worden getoond. <acronym
+>CSS</acronym
+> staat voor <emphasis
+>C</emphasis
+>ascading <emphasis
+>S</emphasis
+>tyle <emphasis
+>S</emphasis
+>heets.</para>
+
+<para
+>&kde; kan van zijn eigen stijlblad gebruik maken, dat gebaseerd is op eenvoudige standaardwaarden en het kleurenschema dat u voor uw bureablad gebruikt. &kde; kan ook een door u geschreven stijlblad gebruiken. Tevens kunt u een stijlblad opgeven in deze module. De opties die in deze module worden gepresenteerd zijn aangepast voor toegankelijkheidsdoelen, specifiek voor mensen met een verminderd gezichtsvermogen.</para>
+
+<para
+>Uw keuzes hier hebben effect in elke &kde;-toepassing die HTML met &kde;'s eigen weergavemodule,khtml, weergeeft. Dit omvat o.a. &kmail;, &khelpcenter; en natuurlijk &konqueror;. Uw keuzes hier hebben geen invloed op andere browsers zoals &firefox;.</para>
+
+</sect3>
+
+<sect3 id="css-general">
+<title
+>Stijlbladen</title>
+
+<para
+>Deze sectie bevat de volgende opties:</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Standaard stijlblad gebruiken</guilabel
+></term>
+<listitem>
+<para
+>&kde; gebruikt het standaard stijlblad. Sommige kleuren zullen standaard op de kleur staan die u heeft aangegeven in uw gekozen kleurenschema. De meeste instellingen kunnen overschreden worden door de pagina die u bekijkt.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Gebruikergedefinieerd stijlblad gebruiken</guilabel
+></term>
+<listitem>
+<para
+>&kde; gebruikt een door u geschreven stijlblad. U kunt de knop "Bladeren" gebruiken om het stijlblad op te zoeken. <acronym
+>CSS</acronym
+>-bestanden hebben traditioneel een extensie <literal role="extension"
+>.css</literal
+>, maar dit is niet vereist.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Toegankelijkheidsstijlblad gebruiken</guilabel
+></term>
+<listitem>
+<para
+>Gebruik de instellingen zoals gedefinieerd in de dialoog <guilabel
+>Aangepast</guilabel
+>. Deze optie activeert de knop <guilabel
+>Aangepast</guilabel
+> om een dialoog te starten om een stijlblad te definiëren.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect3>
+
+<sect3 id="css-customize">
+<title
+>Aanpassen</title>
+
+<para
+>In deze dialoog kunt u een gebruikergedefinieerd stijlblad instellen. De beschikbare opties zijn maar een deel van de opties die u in een stijlblad kunt toepassen en ze zijn gericht op mensen met een verminderd gezichtsvermogen, om gebruikers een stijlblad te kunnen laten maken dat webpagina's en de &kde; helpbestanden leesbaarder maakt.</para>
+
+<para
+>De opties in deze dialoog zijn gedeactiveerd totdat u <guilabel
+>Toegankelijkheidsstijlblad gebruiken</guilabel
+> hebt geactiveerd.</para>
+
+<sect4>
+<title
+><guilabel
+>Lettertypefamilie</guilabel
+></title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Basisfamilie</guilabel
+></term>
+<listitem>
+<para
+>Kies een lettertype om voor de hoofdtekst te gebruiken.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Dezelfde familie voor alle tekst gebruiken</guilabel
+></term>
+<listitem>
+<para
+>Als u dit activeert, wordt dezelfde lettertypefamilie gebruikt voor alle tekst, ongeacht de instellingen op de pagina die u bekijkt. Dit is handig voor pagina's die een decoratief of slecht leesbaar lettertype voor kopteksten gebruiken.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect4>
+
+<sect4>
+<title
+>Lettergrootte</title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Grootte van basislettertype</guilabel
+></term>
+<listitem>
+<para
+>Dit is de standaardgrootte voor tekst op een pagina. De meeste sites stellen hun lettertype relatief ten opzichte van deze standaard in door gebruik te maken van <quote
+>larger</quote
+> of <quote
+>+1</quote
+> om tekst groter te maken en <quote
+>smaller</quote
+> of <quote
+>-1</quote
+> om tekst kleiner te maken.</para>
+<para
+>Veel mensen ontwerpen hun webpagina's op platforms waar de gewone standaard tekstgrootte te groot is voor de gemiddelde gebruiker, dus u kunt vaak webpagina's tegenkomen die de lettergrootte op deze manier kleiner hebben geforceerd.</para>
+<para
+>Deze instelling geeft u de mogelijkheid om het standaard lettertype op een confortabele grootte in te stellen zodat de relatieve groottes genoeg vergroot worden om comfortabel te zijn.</para>
+<para
+>Vergeet niet dat u &konqueror; ook een minimale grootte kunt laten forceren zodat tekst <emphasis
+>nooit</emphasis
+> te klein is om te lezen. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Dezelfde grootte gebruiken voor alle elementen</guilabel
+></term>
+<listitem>
+<para
+>Als u deze optie activeert dan zal alle tekst worden gerenderd met de door u opgegeven lettergrootte ongeacht de instructies op de webpagina. Relatieve lettergroottes zoals eerder besproken, en zelfs instructies om tekst op een specifieke grootte weer te geven, worden genegeerd.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect4>
+
+<sect4>
+<title
+>Afbeeldingen</title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Afbeeldingen onderdrukken</guilabel
+></term>
+<listitem>
+<para
+>Als u geen afbeeldingen wilt zien, kunt u dat hier uitzetten.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Achtergrondafbeeldingen onderdrukken</guilabel
+></term>
+<listitem>
+<para
+>Een groot probleem voor gebruikers met een verminderd gezichtsvermogen is dat achtergrondafbeeldingen niet genoeg contrast geven om de tekst te lezen. U kunt achtergrond afbeeldingen hier uitschakelen, onafhankelijk van uw keuze om alle normale afbeeldingen te zien.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect4>
+
+<sect4>
+<title
+>Kleuren</title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Zwart op wit</guilabel
+></term>
+<listitem>
+<para
+>Veel mensen met een verminderd gezichtsvermogen vinden zwarte tekst op een witte achtergrond het beste contrast geven en het makkelijkst te lezen. Als dit op u van toepassing is, kunt u dat hier instellen.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Wit op zwart</guilabel
+></term>
+<listitem>
+<para
+>Veel andere mensen met een verminderd gezichtsvermogen vinden het tegenovergestelde waar, dus dat witte tekst op een zwart scherm gemakkelijker te lezen is.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Aangepast</guilabel
+></term>
+<listitem>
+<para
+>Weer andere mensen vinden dat puur zwart en wit in welke volgorde dan ook moelijk is om te lezen. U kunt dan aangepaste kleuren definieren voor zowel de <guilabel
+>Achtergrond</guilabel
+> als de <guilabel
+>Voorgrond</guilabel
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Dezelfde kleur voor alle tekst gebruiken</guilabel
+></term>
+<listitem>
+<para
+>Veel websites gebruiken een andere, vaak constrasterende kleur voor de koppen of andere tierelantijntjes. Als u hierdoor de inhoud moeilijk kunt lezen, kunt u dit keuzevakje inschakelen om &kde; voor alle tekst de kleuren te laten gebruiken die u boven heeft ingesteld.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect4>
+
+<sect4>
+<title
+>Voorbeeld</title>
+
+<para
+>De sectie <guilabel
+>Voorbeeld</guilabel
+> geeft u de mogelijkheid om het effect te zien van uw wijzigingen. Verschillende typen koptekst worden getoond in uw stijlblad, en een zin in de standaard hoofdtekst.</para>
+
+<para
+>Hiermee kunt u uw stijlblad fijn afstemmen totdat u iets hebt dat u comfortabel kunt lezen.</para>
+
+<para
+>Veel surfplezier!</para>
+
+</sect4>
+
+</sect3>
+
+</sect2>
+
+</sect1>
+
+</article>

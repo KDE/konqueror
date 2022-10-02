@@ -1,0 +1,244 @@
+# translation of babelfish.po to Thai
+# Copyright (C) 2003, 2008 Free Software Foundation, Inc.
+#
+# Thanomsub Noppaburana <donga_n@yahoo.com>, 2003.
+# Thanomsub Noppaburana <donga.nb@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: babelfish\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"PO-Revision-Date: 2008-12-14 12:24+0700\n"
+"Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
+"Language-Team: Thai <thai-l10n@googlegroups.com>\n"
+"Language: th\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "ถนอมทรัพย์ นพบูรณ์"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "donga.nb@gmail.com"
+
+#. i18n: ectx: Menu (tools)
+#: babelfishplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "เ&ครื่องมือ"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: babelfishplugin.rc:8
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "แถบเครื่องมือพิเศษ"
+
+#: plugin_babelfish.cpp:35
+#, kde-format
+msgid "Translate Web Page"
+msgstr "แปลภาษาบนหน้าเว็บ"
+
+#: plugin_babelfish.cpp:43
+#, kde-format
+msgid "Translate Web &Page"
+msgstr "แปลภาษาบนห&น้าเว็บ"
+
+#: plugin_babelfish.cpp:80
+#, kde-format
+msgid "&English To"
+msgstr "จากภาษา&อังกฤษ เป็น"
+
+#: plugin_babelfish.cpp:83
+#, kde-format
+msgid "&French To"
+msgstr "จากภาษา&ฝรั่งเศส เป็น"
+
+#: plugin_babelfish.cpp:86
+#, kde-format
+msgid "&German To"
+msgstr "จากภาษาเ&ยอรมัน เป็น"
+
+#: plugin_babelfish.cpp:89
+#, fuzzy, kde-format
+#| msgid "&French To"
+msgid "&Greek To"
+msgstr "จากภาษา&ฝรั่งเศส เป็น"
+
+#: plugin_babelfish.cpp:92
+#, kde-format
+msgid "&Spanish To"
+msgstr "จากภาษา&สเปน เป็น"
+
+#: plugin_babelfish.cpp:95
+#, kde-format
+msgid "&Portuguese To"
+msgstr "จากภาษาโ&ปรตุเกส เป็น"
+
+#: plugin_babelfish.cpp:98
+#, kde-format
+msgid "&Italian To"
+msgstr "จากภาษาอิ&ตาลี เป็น"
+
+#: plugin_babelfish.cpp:101
+#, kde-format
+msgid "&Dutch To"
+msgstr "จากภาษา&ดัทช์ เป็น"
+
+#: plugin_babelfish.cpp:104
+#, fuzzy, kde-format
+#| msgid "&Russian"
+msgid "&Russian To"
+msgstr "ภาษา&รัสเซีย"
+
+#: plugin_babelfish.cpp:120
+#, kde-format
+msgid "&Chinese (Simplified)"
+msgstr "จากภาษา&จีนประยุกต์ เป็น"
+
+#: plugin_babelfish.cpp:121
+#, kde-format
+msgid "Chinese (&Traditional)"
+msgstr "จากภาษาจีนดั้&งเดิม เป็น"
+
+#: plugin_babelfish.cpp:122 plugin_babelfish.cpp:135
+#, kde-format
+msgid "&Dutch"
+msgstr "ภาษา&ดัทช์"
+
+#: plugin_babelfish.cpp:123 plugin_babelfish.cpp:144 plugin_babelfish.cpp:146
+#: plugin_babelfish.cpp:148 plugin_babelfish.cpp:150 plugin_babelfish.cpp:152
+#: plugin_babelfish.cpp:154 plugin_babelfish.cpp:156
+#, kde-format
+msgid "&French"
+msgstr "ภาษา&ฝรั่งเศส"
+
+#: plugin_babelfish.cpp:124 plugin_babelfish.cpp:137
+#, kde-format
+msgid "&German"
+msgstr "ภาษาเ&ยอรมัน"
+
+#: plugin_babelfish.cpp:125 plugin_babelfish.cpp:138
+#, kde-format
+msgid "&Greek"
+msgstr ""
+
+#: plugin_babelfish.cpp:126 plugin_babelfish.cpp:139
+#, kde-format
+msgid "&Italian"
+msgstr "ภาษาอิ&ตาลี"
+
+#: plugin_babelfish.cpp:127
+#, kde-format
+msgid "&Japanese"
+msgstr "ภาษาญี่ปุ่&น"
+
+#: plugin_babelfish.cpp:128
+#, kde-format
+msgid "&Korean"
+msgstr "ภาษาเ&กาหลี"
+
+#: plugin_babelfish.cpp:129
+#, kde-format
+msgid "&Norwegian"
+msgstr "ภาษา&นอร์เวย์"
+
+#: plugin_babelfish.cpp:130 plugin_babelfish.cpp:140
+#, kde-format
+msgid "&Portuguese"
+msgstr "ภาษาโ&ปรตุเกส"
+
+#: plugin_babelfish.cpp:131 plugin_babelfish.cpp:142
+#, kde-format
+msgid "&Russian"
+msgstr "ภาษา&รัสเซีย"
+
+#: plugin_babelfish.cpp:132 plugin_babelfish.cpp:141
+#, kde-format
+msgid "&Spanish"
+msgstr "ภาษา&สเปน"
+
+#: plugin_babelfish.cpp:133
+#, kde-format
+msgid "T&hai"
+msgstr "ภาษาไ&ทย"
+
+#: plugin_babelfish.cpp:134
+#, kde-format
+msgid "&Arabic"
+msgstr ""
+
+#: plugin_babelfish.cpp:136 plugin_babelfish.cpp:143 plugin_babelfish.cpp:145
+#: plugin_babelfish.cpp:147 plugin_babelfish.cpp:149 plugin_babelfish.cpp:151
+#: plugin_babelfish.cpp:153 plugin_babelfish.cpp:155
+#, kde-format
+msgid "&English"
+msgstr "ภาษา&อังกฤษ"
+
+#: plugin_babelfish.cpp:178
+#, kde-format
+msgid "&Chinese (Simplified) to English"
+msgstr "จากภาษา&จีนประยุกต์ เป็นภาษาอังกฤษ"
+
+#: plugin_babelfish.cpp:179
+#, kde-format
+msgid "Chinese (&Traditional) to English"
+msgstr "จากภาษา&จีนดั้งเดิม เป็นภาษาอังกฤษ"
+
+#: plugin_babelfish.cpp:188
+#, kde-format
+msgid "&Japanese to English"
+msgstr "จากภาษา&ญี่ปุ่น เป็นภาษาอังกฤษ"
+
+#: plugin_babelfish.cpp:189
+#, kde-format
+msgid "&Korean to English"
+msgstr "จากภาษาเ&กาหลี เป็นภาษาอังกฤษ"
+
+#: plugin_babelfish.cpp:257
+#, fuzzy, kde-format
+#| msgid "Malformed URL"
+msgctxt "@title:window"
+msgid "Malformed URL"
+msgstr "รูปแบบที่อยู่ URL ไม่ถูกต้อง"
+
+#: plugin_babelfish.cpp:258
+#, kde-format
+msgid "The URL you entered is not valid, please correct it and try again."
+msgstr "ที่อยู่ URL ที่คุณป้อนมาใช้ไม่ได้หรือไม่ถูกต้อง โปรดแก้ไขก่อน แล้วลองใหม่อีกครั้ง"
+
+#: plugin_babelfish.cpp:268
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"You are viewing this page over a secure connection.<nl/><nl/>The URL of the "
+"page will sent to the online translation service,<nl/>which may fetch the "
+"insecure version of the page."
+msgstr ""
+
+#: plugin_babelfish.cpp:272
+#, kde-format
+msgctxt "@title:window"
+msgid "Security Warning"
+msgstr ""
+
+#~ msgid "&Russian to English"
+#~ msgstr "จากภาษา&รัสเซีย เป็นภาษาอังกฤษ"
+
+#~ msgid "Cannot Translate Source"
+#~ msgstr "ไม่สามารถแปลภาษาของต้นทางได้"
+
+#~ msgid "Only web pages can be translated using this plugin."
+#~ msgstr "มีเพียงหน้าเว็บต่าง ๆ ท่านั้นที่สามารถใช้การแปลขภาษาองส่วนเสริมนี้ได้"
+
+#~ msgid "Only full webpages can be translated for this language pair."
+#~ msgstr "มีเพียงหน้าเว็บที่สมบูรณ์เท่านั้น ที่สามารถถูกแปลภาษาเป็นคู่ภาษานี้ได้"
+
+#~ msgid "Translation Error"
+#~ msgstr "การแปลภาษาผิดพลาด"

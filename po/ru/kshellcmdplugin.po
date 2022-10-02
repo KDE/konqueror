@@ -1,0 +1,1956 @@
+# KDE3 - kdebase/konqueror.po Russian translation.
+# Copyright (C) 2005, KDE Russian translation team.
+# Leonid Kanter <leon@asplinux.ru> 2002-2004.
+# Evgeny Cherkashin <eugeneai@icc.ru>, 2000.
+# Gregory Mokhin <mokhin@bog.msu.ru>, 2000.
+# Andrey S. Cherepanov <sibskull@mail.ru>, 2001, 2002.
+# Leonid Kanter <leon@asplinux.ru>, 2004, 2005.
+# Andrey Cherepanov <sibskull@mail.ru>, 2005.
+# Gregory Mokhin <mok@kde.ru>, 2005.
+# Nick Shaforostoff <shafff@ukr.net>, 2006.
+# Andrey Cherepanov <skull@kde.ru>, 2009.
+# Alexander Potashev <aspotashev@gmail.com>, 2010, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2011-05-15 17:57+0400\n"
+"Last-Translator: Alexander Potashev <aspotashev@gmail.com>\n"
+"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#. i18n: ectx: Menu (tools)
+#: konq_shellcmdplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "С&ервис"
+
+#: kshellcmdexecutor.cpp:106
+#, kde-format
+msgid "Input Required:"
+msgstr "Требуется ввод:"
+
+#: kshellcmdplugin.cpp:32
+#, kde-format
+msgid "&Execute Shell Command..."
+msgstr "&Выполнить команду оболочки..."
+
+#: kshellcmdplugin.cpp:41
+#, kde-format
+msgid ""
+"KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a bug."
+msgstr ""
+"KShellCmdPlugin::slotExecuteShellCommand: ошибка в программе, пожалуйста, "
+"сообщите о ней."
+
+#: kshellcmdplugin.cpp:51
+#, kde-format
+msgid "Executing shell commands works only on local directories."
+msgstr "Выполнение команд оболочки возможно только в локальных папках."
+
+#: kshellcmdplugin.cpp:73
+#, kde-format
+msgctxt "@title:window"
+msgid "Execute Shell Command"
+msgstr "Выполнение команды оболочки"
+
+#: kshellcmdplugin.cpp:74
+#, kde-format
+msgid "Execute shell command in current directory:"
+msgstr "Выполнить команду оболочки в текущей папке:"
+
+#: kshellcmdplugin.cpp:85
+#, kde-format
+msgid "Output from command: \"%1\""
+msgstr "Результат выполнения команды: %1"
+
+#~ msgid "no name"
+#~ msgstr "без имени"
+
+#~ msgid "Configure"
+#~ msgstr "Настроить"
+
+#~ msgid "Extensions"
+#~ msgstr "Расширения"
+
+#~ msgid ""
+#~ "There was an error loading the module %1.\n"
+#~ "The diagnostics is:\n"
+#~ "%2"
+#~ msgstr ""
+#~ "Невозможно загрузить модуль %1.\n"
+#~ "Сообщение об ошибке:\n"
+#~ "%2"
+
+#~ msgid "Konqueror"
+#~ msgstr "Konqueror"
+
+#~ msgid "Web browser, file manager and document viewer."
+#~ msgstr "Веб-браузер, диспетчер файлов и программа просмотра документов."
+
+#~ msgid "(C) 1999-2008, The Konqueror developers"
+#~ msgstr "© Разработчики Konqueror, 1999-2008"
+
+#~ msgid "http://konqueror.kde.org"
+#~ msgstr "http://konqueror.kde.org"
+
+#~ msgid "David Faure"
+#~ msgstr "David Faure"
+
+#~ msgid "Developer (framework, parts, JavaScript, I/O library) and maintainer"
+#~ msgstr ""
+#~ "Разработчик (инфраструктура, JavaScript, библиотека ввода/вывода) и "
+#~ "текущее сопровождение"
+
+#~ msgid "Simon Hausmann"
+#~ msgstr "Simon Hausmann"
+
+#~ msgid "Developer (framework, parts)"
+#~ msgstr "Разработчик (инфраструктура, модули)"
+
+#~ msgid "Michael Reiher"
+#~ msgstr "Michael Reiher"
+
+#~ msgid "Developer (framework)"
+#~ msgstr "Разработчик (инфраструктура)"
+
+#~ msgid "Matthias Welk"
+#~ msgstr "Matthias Welk"
+
+#~ msgid "Developer"
+#~ msgstr "Разработчик"
+
+#~ msgid "Alexander Neundorf"
+#~ msgstr "Alexander Neundorf"
+
+#~ msgid "Developer (List views)"
+#~ msgstr "Разработчик (представление файловой системы списком)"
+
+#~ msgid "Michael Brade"
+#~ msgstr "Michael Brade"
+
+#~ msgid "Developer (List views, I/O library)"
+#~ msgstr ""
+#~ "Разработчик (представление файловой системы списком, библиотека ввода-"
+#~ "вывода)"
+
+#~ msgid "Lars Knoll"
+#~ msgstr "Lars Knoll"
+
+#~ msgid "Developer (HTML rendering engine)"
+#~ msgstr "Разработчик (показ HTML)"
+
+#~ msgid "Dirk Mueller"
+#~ msgstr "Dirk Mueller"
+
+#~ msgid "Peter Kelly"
+#~ msgstr "Peter Kelly"
+
+#~ msgid "Waldo Bastian"
+#~ msgstr "Waldo Bastian"
+
+#~ msgid "Developer (HTML rendering engine, I/O library)"
+#~ msgstr "Разработчик (показ HTML, библиотека ввода/вывода)"
+
+#~ msgid "Germain Garand"
+#~ msgstr "Germain Garand"
+
+#~ msgid "Leo Savernik"
+#~ msgstr "Leo Savernik"
+
+#~ msgid "Stephan Kulow"
+#~ msgstr "Stephan Kulow"
+
+#~ msgid ""
+#~ "Developer (HTML rendering engine, I/O library, regression test framework)"
+#~ msgstr ""
+#~ "Разработчик (показ HTML, библиотека ввода/вывода, инфраструктура "
+#~ "тестирования регрессии)"
+
+#~ msgid "Antti Koivisto"
+#~ msgstr "Antti Koivisto"
+
+#~ msgid "Zack Rusin"
+#~ msgstr "Zack Rusin"
+
+#~ msgid "Tobias Anton"
+#~ msgstr "Tobias Anton"
+
+#~ msgid "Lubos Lunak"
+#~ msgstr "Lubos Lunak"
+
+#~ msgid "Maks Orlovich"
+#~ msgstr "Maks Orlovich"
+
+#~ msgid "Developer (HTML rendering engine, JavaScript)"
+#~ msgstr "Разработчик (показ HTML, JavaScript)"
+
+#~ msgid "Allan Sandfeld Jensen"
+#~ msgstr "Allan Sandfeld Jensen"
+
+#~ msgid "Apple Safari Developers"
+#~ msgstr "Разработчики Apple Safari"
+
+#~ msgid "Harri Porten"
+#~ msgstr "Harri Porten"
+
+#~ msgid "Developer (JavaScript)"
+#~ msgstr "Разработчик (JavaScript)"
+
+#~ msgid "Koos Vriezen"
+#~ msgstr "Koos Vriezen"
+
+#~ msgid "Developer (Java applets and other embedded objects)"
+#~ msgstr "Разработчик (поддержка аплетов Java и других встроенных объектов)"
+
+#~ msgid "Matt Koss"
+#~ msgstr "Matt Koss"
+
+#~ msgid "Developer (I/O library)"
+#~ msgstr "Разработчик (библиотека ввода/вывода)"
+
+#~ msgid "Alex Zepeda"
+#~ msgstr "Alex Zepeda"
+
+#~ msgid "Richard Moore"
+#~ msgstr "Ричард Мур (Richard Moore)"
+
+#~ msgid "Developer (Java applet support)"
+#~ msgstr "Разработчик (поддержка аплетов Java)"
+
+#~ msgid "Dima Rogozin"
+#~ msgstr "Dima Rogozin"
+
+#~ msgid "Wynn Wilkes"
+#~ msgstr "Wynn Wilkes"
+
+#~ msgid ""
+#~ "Developer (Java 2 security manager support,\n"
+#~ " and other major improvements to applet support)"
+#~ msgstr ""
+#~ "Разработчик (поддержка диспетчера безопасности Java 2, \n"
+#~ " и другие важные улучшения в поддержке аплетов)"
+
+#~ msgid "Stefan Schimanski"
+#~ msgstr "Stefan Schimanski"
+
+#~ msgid "Developer (Netscape plugin support)"
+#~ msgstr "Разработчик (поддержка модулей Netscape)"
+
+#~ msgid "George Staikos"
+#~ msgstr "George Staikos"
+
+#~ msgid "Developer (SSL, Netscape plugins)"
+#~ msgstr "Разработчик (SSL, модули Netscape)"
+
+#~ msgid "Dawit Alemayehu"
+#~ msgstr "Dawit Alemayehu"
+
+#~ msgid "Developer (I/O library, Authentication support)"
+#~ msgstr "Разработчик (библиотека ввода/вывода, поддержка аутентификации)"
+
+#~ msgid "Carsten Pfeiffer"
+#~ msgstr "Carsten Pfeiffer"
+
+#~ msgid "Torsten Rahn"
+#~ msgstr "Torsten Rahn"
+
+#~ msgid "Graphics/icons"
+#~ msgstr "Графика и значки"
+
+#~ msgid "Torben Weis"
+#~ msgstr "Torben Weis"
+
+#~ msgid "KFM author"
+#~ msgstr "Автор KFM"
+
+#~ msgid "Joseph Wenninger"
+#~ msgstr "Joseph Wenninger"
+
+#~ msgid "Developer (navigation panel framework)"
+#~ msgstr "Разработчик (панель навигации)"
+
+#~ msgid "Stephan Binner"
+#~ msgstr "Stephan Binner"
+
+#~ msgid "Developer (misc stuff)"
+#~ msgstr "Разработчик (различные улучшения)"
+
+#~ msgid "Ivor Hewitt"
+#~ msgstr "Ivor Hewitt"
+
+#~ msgid "Developer (AdBlock filter)"
+#~ msgstr "Разработчик (фильтр AdBlock)"
+
+#~ msgid "Eduardo Robles Elvira"
+#~ msgstr "Eduardo Robles Elvira"
+
+#~ msgid ""
+#~ "Checking this box on at least two views sets those views as 'linked'. "
+#~ "Then, when you change directories in one view, the other views linked "
+#~ "with it will automatically update to show the current directory. This is "
+#~ "especially useful with different types of views, such as a directory tree "
+#~ "with an icon view or detailed view, and possibly a terminal emulator "
+#~ "window."
+#~ msgstr ""
+#~ "Активизация этого режима синхронизирует как минимум две панели. Так, если "
+#~ "изменится папка одной панели, другие панели, синхронизированные с ней, "
+#~ "автоматически обновятся и покажут эту папку. Весьма удобно при совместном "
+#~ "использовании различных типов панелей, таких как дерево папок с панелью "
+#~ "значков или списком файлов, и, возможно, окном эмулятора терминала."
+
+#~ msgid "Close View"
+#~ msgstr "Закрыть панель"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/с"
+
+#~ msgid "Stalled"
+#~ msgstr "Нет связи"
+
+#~ msgid "Preview &in %1"
+#~ msgstr "Просмотр &в %1"
+
+#~ msgid "Show %1"
+#~ msgstr ""
+#~ "Показать %1|/|Показать $[replace-pairs %1 'Эмулятор терминала' 'эмулятор "
+#~ "терминала' 'Боковая панель' 'боковую панель']"
+
+#~ msgctxt "@title:window"
+#~ msgid "History"
+#~ msgstr "Журнал"
+
+#~ msgctxt "@action:inmenu Parent of 'By Name' and 'By Date'"
+#~ msgid "Sort"
+#~ msgstr "Сортировка"
+
+#~ msgid ""
+#~ "<qt><center><b>%1</b></center><hr />Last visited: %2<br />First visited: "
+#~ "%3<br />Number of times visited: %4</qt>"
+#~ msgstr ""
+#~ "<qt><center><b>%1</b></center><hr /> последнее посещение: %2<br /> первое "
+#~ "посещение: %3<br /> всего посещений: %4</qt>"
+
+#~ msgid "Local"
+#~ msgstr "Файлы на компьютере"
+
+#~ msgid "Miscellaneous"
+#~ msgstr "Разное"
+
+#~ msgid "Open in New &Window"
+#~ msgstr "Открыть в &новом окне"
+
+#~ msgid "Open in New Tab"
+#~ msgstr "Открыть в новой вкладке"
+
+#~ msgid "&Copy Link Address"
+#~ msgstr "С&копировать адрес ссылки"
+
+#~ msgid "&Remove Entry"
+#~ msgstr "Удалить &элемент"
+
+#~ msgid "C&lear History"
+#~ msgstr "О&чистить журнал"
+
+#~ msgid "&Preferences..."
+#~ msgstr "&Настроить..."
+
+#~ msgid "By &Name"
+#~ msgstr "По &имени"
+
+#~ msgid "By &Date"
+#~ msgstr "По &дате"
+
+#~ msgid "Search in history"
+#~ msgstr "Поиск в журнале"
+
+#~ msgid "Do you really want to clear the entire history?"
+#~ msgstr "Вы действительно хотите очистить весь журнал?"
+
+#~ msgid "Clear History?"
+#~ msgstr "Очистить журнал?"
+
+#~ msgid "Start without a default window, when called without URLs"
+#~ msgstr "Запуск без окна по умолчанию, если запущено без указания адресов"
+
+#~ msgid ""
+#~ "Preload for later use. This mode does not support URLs on the command line"
+#~ msgstr ""
+#~ "Предварительно загрузить в память для дальнейшего использования. Этот "
+#~ "режим не поддерживает указание адресов URL в качестве аргументов."
+
+#~ msgid "Profile to open"
+#~ msgstr "Открыть профиль"
+
+#~ msgid "List available profiles"
+#~ msgstr "Список доступных профилей"
+
+#~ msgid "List available sessions"
+#~ msgstr "Список доступных сеансов"
+
+#~ msgid "Session to open"
+#~ msgstr "Открываемый сеанс"
+
+#~ msgid "Mimetype to use for this URL (e.g. text/html or inode/directory)"
+#~ msgstr ""
+#~ "Тип MIME для использования с этой ссылкой, (например, text/html или inode/"
+#~ "directory)"
+
+#~ msgid ""
+#~ "For URLs that point to files, opens the directory and selects the file, "
+#~ "instead of opening the actual file"
+#~ msgstr ""
+#~ "Для ссылки, которая указывают на файл, открыть папку и выбрать файл "
+#~ "вместо того, чтобы открыть файл"
+
+#~ msgid "Location to open"
+#~ msgstr "Адрес, который будет открыт"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Loading..."
+#~ msgstr "Загрузка..."
+
+#~ msgid "Canceled."
+#~ msgstr "Отменено."
+
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Reloading the page will discard these changes."
+#~ msgstr ""
+#~ "Эта страница содержит изменения, которые ещё не были переданы.\n"
+#~ "Обновление страницы приведёт к отклонению этих изменений."
+
+#~ msgid "Discard Changes?"
+#~ msgstr "Отклонить изменения?"
+
+#~ msgid "&Discard Changes"
+#~ msgstr "&Отклонить изменения"
+
+#~ msgid "File Management"
+#~ msgstr "Управление файлами"
+
+#~ msgid "Web Browsing"
+#~ msgstr "Веб-браузер"
+
+#~ msgid "Home Folder"
+#~ msgstr "Домашняя папка"
+
+#~ msgid "Home"
+#~ msgstr "Домашняя страница"
+
+#~ msgid "Navigate to your 'Home Folder'"
+#~ msgstr "Перейти в домашнюю папку"
+
+#~ msgid "Navigate to your local 'Home Folder'"
+#~ msgstr "Перейти в локальную домашнюю папку"
+
+#~ msgid "Home Page"
+#~ msgstr "Домашняя страница"
+
+#~ msgid "Navigate to your 'Home Page'"
+#~ msgstr "Перейти на домашнюю страницу"
+
+#~ msgid ""
+#~ "<html>Navigate to your 'Home Page'<br /><br />You can configure the "
+#~ "location where this button takes you under <b>Settings -> Configure "
+#~ "Konqueror -> General</b>.</html>"
+#~ msgstr ""
+#~ "<html>Переход на домашнюю страницу<br /><br />Вы можете указать адрес, по "
+#~ "которому вас отправит эта кнопка в меню <b>Настройка -> Настроить "
+#~ "Konqueror —> Главное</b>.</html>"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Detaching the tab will discard these changes."
+#~ msgstr ""
+#~ "Эта вкладка содержит изменения, которые ещё не были сохранены.\n"
+#~ "Отделение вкладки приведёт к отклонению этих изменений."
+
+#~ msgid ""
+#~ "This view contains changes that have not been submitted.\n"
+#~ "Closing the view will discard these changes."
+#~ msgstr ""
+#~ "Эта панель содержит изменения, которые ещё не были сохранены.\n"
+#~ "Закрытие панели приведёт к отклонению этих изменений."
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the tab will discard these changes."
+#~ msgstr ""
+#~ "Эта вкладка содержит изменения, которые ещё не были сохранены.\n"
+#~ "Закрытие вкладки приведёт к отклонению этих изменений."
+
+#~ msgid "Do you really want to close all other tabs?"
+#~ msgstr "Вы действительно хотите закрыть все остальные вкладки?"
+
+#~ msgid "Close Other Tabs Confirmation"
+#~ msgstr "Подтверждение закрытия других вкладок"
+
+#~ msgid "Close &Other Tabs"
+#~ msgstr "Закрыть &другие вкладки"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing other tabs will discard these changes."
+#~ msgstr ""
+#~ "Эта вкладка содержит изменения, которые ещё не были сохранены.\n"
+#~ "Закрытие других вкладок приведёт к отклонению этих изменений."
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Reloading all tabs will discard these changes."
+#~ msgstr ""
+#~ "Эта вкладка содержит изменения, которые ещё не были сохранены.\n"
+#~ "Обновление всех вкладок приведёт к отклонению этих изменений."
+
+#~ msgid "Enter Target"
+#~ msgstr "Введите цель"
+
+#~ msgid "<qt><b>%1</b> is not valid</qt>"
+#~ msgstr "<qt><b>%1</b> не действителен</qt>"
+
+#~ msgid "Copy selected files from %1 to:"
+#~ msgstr "Копировать выделенные файлы из %1 в:"
+
+#~ msgid "Move selected files from %1 to:"
+#~ msgstr "Переместить выделенные файлы из %1 в:"
+
+#~ msgctxt "This menu entry empties the closed items history"
+#~ msgid "Empty Closed Items History"
+#~ msgstr "Очистить журнал закрытых вкладок"
+
+#~ msgid "Save As..."
+#~ msgstr "Сохранить как..."
+
+#~ msgid "Manage..."
+#~ msgstr "&Управление сеансами..."
+
+#~ msgid "New &Window"
+#~ msgstr "&Новое окно"
+
+#~ msgid "&Duplicate Window"
+#~ msgstr "С&оздать копию окна"
+
+#~ msgid "Send &Link Address..."
+#~ msgstr "Отправить адрес &ссылки..."
+
+#~ msgid "S&end File..."
+#~ msgstr "Отправить &файл..."
+
+#~ msgid "&Open Location"
+#~ msgstr "Открыть &адрес"
+
+#~ msgid "&Open File..."
+#~ msgstr "Открыть &файл..."
+
+#~ msgid "&Find File..."
+#~ msgstr "&Найти файл..."
+
+#~ msgid "&Use index.html"
+#~ msgstr "&Использовать index.html"
+
+#~ msgid "Lock to Current Location"
+#~ msgstr "Заблокировать в текущем месте"
+
+#~ msgctxt "This option links konqueror views"
+#~ msgid "Lin&k View"
+#~ msgstr "С&вязать панель"
+
+#~ msgid "&Up"
+#~ msgstr "В&верх"
+
+#~ msgid "Closed Items"
+#~ msgstr "Закрытые вкладки"
+
+#~ msgid "Sessions"
+#~ msgstr "Сеансы"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Most Often Visited"
+#~ msgstr "Наиболее часто посещаемые"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Recently Visited"
+#~ msgstr "Последние посещённые"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History"
+#~ msgstr "Журнал"
+
+#~ msgid "&Save View Profile As..."
+#~ msgstr "Со&хранить профиль как..."
+
+#~ msgid "Configure Extensions..."
+#~ msgstr "Настроить расширения..."
+
+#~ msgid "Configure Spell Checking..."
+#~ msgstr "Настроить проверку орфографии..."
+
+#~ msgid "Split View &Left/Right"
+#~ msgstr "Разделить панель по &вертикали"
+
+#~ msgid "Split View &Top/Bottom"
+#~ msgstr "Разделить панель по &горизонтали"
+
+#~ msgid "&New Tab"
+#~ msgstr "&Новая вкладка"
+
+#~ msgid "&Duplicate Current Tab"
+#~ msgstr "С&оздать копию текущей вкладки"
+
+#~ msgid "Detach Current Tab"
+#~ msgstr "Отделить текущую вкладку"
+
+#~ msgid "&Close Active View"
+#~ msgstr "&Закрыть активную панель"
+
+#~ msgid "Close Current Tab"
+#~ msgstr "Закрыть текущую вкладку"
+
+#~ msgid "Activate Next Tab"
+#~ msgstr "Активировать следующую вкладку"
+
+#~ msgid "Activate Previous Tab"
+#~ msgstr "Активировать предыдущую вкладку"
+
+#~ msgid "Activate Tab %1"
+#~ msgstr "Активировать вкладку %1"
+
+#~ msgid "Move Tab Left"
+#~ msgstr "Переместить вкладку влево"
+
+#~ msgid "Move Tab Right"
+#~ msgstr "Переместить вкладку вправо"
+
+#~ msgid "Dump Debug Info"
+#~ msgstr "Вывести отладочную информацию"
+
+#~ msgid "C&onfigure View Profiles..."
+#~ msgstr "&Настроить профили просмотра..."
+
+#~ msgid "Load &View Profile"
+#~ msgstr "Использовать про&филь панели"
+
+#~ msgid "&Reload"
+#~ msgstr "О&бновить"
+
+#~ msgid "&Reload All Tabs"
+#~ msgstr "О&бновить все вкладки"
+
+#~ msgid "&Force Reload"
+#~ msgstr "О&бновить"
+
+#~ msgid "&Stop"
+#~ msgstr "О&становить"
+
+# Еще можно "Троббер". --aspotashev
+#~ msgid "Throbber"
+#~ msgstr "Индикатор работы"
+
+#~ msgid "L&ocation: "
+#~ msgstr "А&дрес: "
+
+#~ msgid "Location Bar"
+#~ msgstr "Строка адреса"
+
+#~ msgid ""
+#~ "<html>Location Bar<br /><br />Enter a web address or search term.</html>"
+#~ msgstr ""
+#~ "<html>Строка адреса<br /><br />Введите веб-адрес или строку поиска.</html>"
+
+#~ msgid "Clear Location Bar"
+#~ msgstr "Очистить строку адреса"
+
+#~ msgid ""
+#~ "<html>Clear Location bar<br /><br />Clears the contents of the location "
+#~ "bar.</html>"
+#~ msgstr ""
+#~ "<html>Очистить строку адреса<br /><br />Очищает содержимое строки адреса."
+#~ "</html>"
+
+#~ msgid "&Bookmarks"
+#~ msgstr "З&акладки"
+
+#~ msgid "Kon&queror Introduction"
+#~ msgstr "Введение в &Konqueror"
+
+#~ msgid "Go"
+#~ msgstr "Перейти"
+
+#~ msgid ""
+#~ "<html>Go<br /><br />Goes to the page that has been entered into the "
+#~ "location bar.</html>"
+#~ msgstr ""
+#~ "<html>Перейти<br /><br />Переходит к странице, адрес которой был введён в "
+#~ "строке адреса.</html>"
+
+#~ msgid ""
+#~ "<html>Enter the parent folder<br /><br />For instance, if the current "
+#~ "location is file:/home/%1 clicking this button will take you to file:/"
+#~ "home.</html>"
+#~ msgstr ""
+#~ "<html>Перейти в один уровень выше<br /><br />Например, если текущая папка "
+#~ "file:/home/%1, после нажатия этой кнопки она изменится на file:/home.</"
+#~ "html>"
+
+#~ msgid "Enter the parent folder"
+#~ msgstr "Перейти в один уровень выше"
+
+#~ msgid "Move backwards one step in the browsing history"
+#~ msgstr "Перейти на один шаг назад в журнале просмотра"
+
+#~ msgid "Move forward one step in the browsing history"
+#~ msgstr "Перейти на один шаг вперёд в журнале просмотра"
+
+#~ msgid "Move backwards one step in the closed tabs history"
+#~ msgstr "Перейти на один шаг назад в журнале закрытых вкладок"
+
+#~ msgid ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.</html>"
+#~ msgstr ""
+#~ "<html>Обновить текущий документ<br /><br />Эта функция может "
+#~ "понадобиться, например, для обновления веб-страниц, которые были изменены "
+#~ "после загрузки, с целью показа новой версии.</html>"
+
+#~ msgid "Reload the currently displayed document"
+#~ msgstr "Обновить текущий документ"
+
+#~ msgid ""
+#~ "<html>Reload all currently displayed documents in tabs<br /><br />This "
+#~ "may, for example, be needed to refresh web pages that have been modified "
+#~ "since they were loaded, in order to make the changes visible.</html>"
+#~ msgstr ""
+#~ "<html>Обновить все текущие документы во вкладках<br /><br />Эта функция "
+#~ "может понадобиться, например, для обновления веб-страниц, которые были "
+#~ "изменены после загрузки, с целью показа новой версии.</html>"
+
+#~ msgid "Reload all currently displayed document in tabs"
+#~ msgstr "Обновить все текущие документы во вкладках"
+
+#~ msgid ""
+#~ "<html>Stop loading the document<br /><br />All network transfers will be "
+#~ "stopped and Konqueror will display the content that has been received so "
+#~ "far.</html>"
+#~ msgstr ""
+#~ "<html>Остановить загрузку документа<br /><br />Передача данных будет "
+#~ "остановлена и Konqueror покажет уже полученные данные.</html>"
+
+#~ msgid ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.  Any images on "
+#~ "the page are downloaded again, even if cached copies exist.</html>"
+#~ msgstr ""
+#~ "<html>Обновить текущий документ<br /><br />Эта функция может "
+#~ "понадобиться, например, для обновления веб-страниц, которые были изменены "
+#~ "после загрузки, с целью показа новой версии. Все изображения на странице "
+#~ "будут загружены снова, даже если существуют копии в кэше.</html>"
+
+#~ msgid ""
+#~ "Force a reload of the currently displayed document and any contained "
+#~ "images"
+#~ msgstr ""
+#~ "Обновить все текущие документы и все содержащиеся в них изображения во "
+#~ "вкладках"
+
+#~ msgid "Stop loading the document"
+#~ msgstr "Остановить загрузку документа"
+
+#~ msgid ""
+#~ "<html>Cut the currently selected text or item(s) and move it to the "
+#~ "system clipboard<br /><br />This makes it available to the <b>Paste</b> "
+#~ "command in Konqueror and other KDE applications.</html>"
+#~ msgstr ""
+#~ "<html>Вырезает выделенный текст или набор элементов и перемещает их в "
+#~ "системный буфер обмена<br /><br />Вырезанные данные становятся доступными "
+#~ "для команды <b>Вставить</b> в Konqueror и других приложениях KDE.</html>"
+
+#~ msgid "Move the selected text or item(s) to the clipboard"
+#~ msgstr "Переместить выделенный текст/набор элементов в буфер обмена"
+
+#~ msgid ""
+#~ "<html>Copy the currently selected text or item(s) to the system "
+#~ "clipboard<br /><br />This makes it available to the <b>Paste</b> command "
+#~ "in Konqueror and other KDE applications.</html>"
+#~ msgstr ""
+#~ "<html>Копирует выделенный текст или набор элементов в системный буфер "
+#~ "обмена<br /><br />Таким образом текст или набор элементов становятся "
+#~ "доступными для пункта контекстного меню <b>Вставить</b> для Konqueror и "
+#~ "других приложений KDE.</html>"
+
+#~ msgid "Copy the selected text or item(s) to the clipboard"
+#~ msgstr "Скопировать выделенный текст/набор элементов в буфер обмена"
+
+#~ msgid ""
+#~ "<html>Paste the previously cut or copied clipboard contents<br /><br /"
+#~ ">This also works for text copied or cut from other KDE applications.</"
+#~ "html>"
+#~ msgstr ""
+#~ "<html>Вставить содержимое буфера<br /><br />Эта функция позволяет также "
+#~ "вставлять текст, скопированный в других приложениях KDE.</html>"
+
+#~ msgid "Paste the clipboard contents"
+#~ msgstr "Вставить содержимое буфера обмена"
+
+#~ msgid ""
+#~ "<html>Print the currently displayed document<br /><br />You will be "
+#~ "presented with a dialog where you can set various options, such as the "
+#~ "number of copies to print and which printer to use.<br /><br />This "
+#~ "dialog also provides access to special KDE printing services such as "
+#~ "creating a PDF file from the current document.</html>"
+#~ msgstr ""
+#~ "<html>Распечатать текущий документ<br /><br />Вам будет представлен "
+#~ "диалог, где вы сможете выбрать принтер, количество копий и другие "
+#~ "параметры печати. <br /><br /> Этот диалог также предоставляет доступ к "
+#~ "специальным возможностям системы печати KDE, таким как создание PDF на "
+#~ "основе текущего документа.</html>"
+
+#~ msgid "Print the current document"
+#~ msgstr "Распечатать текущий документ"
+
+#~ msgid "If present, open index.html when entering a folder."
+#~ msgstr "Если существует, открывать index.html при открытии папки."
+
+#~ msgid ""
+#~ "A locked view cannot change folders. Use in combination with 'link view' "
+#~ "to explore many files from one folder"
+#~ msgstr ""
+#~ "Заблокированная панель не может изменять папки. Эту возможность можно "
+#~ "использовать совместно с синхронизацией панелей, что позволяет видеть "
+#~ "большее количество файлов из одной папки"
+
+#~ msgid ""
+#~ "Sets the view as 'linked'. A linked view follows folder changes made in "
+#~ "other linked views."
+#~ msgstr ""
+#~ "Связывает эту панель с другой. Связанное окно дублирует изменения пути, "
+#~ "сделанные на другой панели."
+
+#~ msgid "Copy &Files..."
+#~ msgstr "Копировать &файлы..."
+
+#~ msgid "M&ove Files..."
+#~ msgstr "П&ереместить файлы..."
+
+#~ msgid ""
+#~ "You have requested to open more than 20 bookmarks in tabs. This might "
+#~ "take a while. Continue?"
+#~ msgstr ""
+#~ "Вы запросили открытие более двадцати закладок во вкладках. Это может "
+#~ "занять некоторое время. Продолжить?"
+
+#~ msgid "Open bookmarks folder in new tabs"
+#~ msgstr "Открыть папку закладок во вкладках"
+
+#~ msgid "Open in T&his Window"
+#~ msgstr "Открыть в &этом окне"
+
+#~ msgid "Open the document in current window"
+#~ msgstr "Открыть документ в текущем окне"
+
+#~ msgid "Open the document in a new window"
+#~ msgstr "Открыть документ в новом окне"
+
+#~ msgid "Open in &New Tab"
+#~ msgstr "Открыть в новой &вкладке"
+
+#~ msgid "Open the document in a new tab"
+#~ msgstr "Открыть документ в новой вкладке"
+
+#~ msgid "&Open With"
+#~ msgstr "&Открыть в"
+
+#~ msgid "Open with %1"
+#~ msgstr "Открыть в %1"
+
+#~ msgctxt "@action:inmenu View"
+#~ msgid "&View Mode"
+#~ msgstr "Режим &просмотра"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window, are you sure you want to quit?"
+#~ msgstr ""
+#~ "В этом окне открыто несколько вкладок, вы действительно хотите выйти?"
+
+#~ msgid "Confirmation"
+#~ msgstr "Подтверждение"
+
+#~ msgid "C&lose Current Tab"
+#~ msgstr "Зак&рыть текущую вкладку"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the window will discard these changes."
+#~ msgstr ""
+#~ "Эта вкладка содержит изменения, которые ещё не были сохранены.\n"
+#~ "Закрытие окна приведёт к отклонению этих изменений."
+
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Closing the window will discard these changes."
+#~ msgstr ""
+#~ "Эта страница содержит изменения, которые ещё не были сохранены.\n"
+#~ "Закрытие окна приведёт к отклонению этих изменений."
+
+#~ msgid ""
+#~ "Your sidebar is not functional or unavailable. A new entry cannot be "
+#~ "added."
+#~ msgstr ""
+#~ "Ваша боковая панель не работает или недоступна. Новая запись не может "
+#~ "быть добавлена."
+
+#~ msgid "Web Sidebar"
+#~ msgstr "Боковая панель Веб"
+
+#~ msgid "Add new web extension \"%1\" to your sidebar?"
+#~ msgstr "Добавить новое веб-расширение «%1» на вашу боковую панель?"
+
+#~ msgid "Add"
+#~ msgstr "Добавить"
+
+#~ msgid "Do Not Add"
+#~ msgstr "Не добавлять"
+
+#~ msgid ""
+#~ "There appears to be a configuration error. You have associated Konqueror "
+#~ "with %1, but it cannot handle this file type."
+#~ msgstr ""
+#~ "Обнаружена проблема с настройкой. Вы связали Konqueror с файлом %1, но он "
+#~ "не может обрабатывать файлы этого типа."
+
+#~ msgid "Profile Management"
+#~ msgstr "Управление профилями"
+
+#~ msgid "&Rename Profile"
+#~ msgstr "Пе&реименовать профиль"
+
+#~ msgid "&Delete Profile"
+#~ msgstr "&Удалить профиль"
+
+#~ msgid "Manage Sessions"
+#~ msgstr "Управление сеансами"
+
+#~ msgid "&Open"
+#~ msgstr "&Открыть"
+
+#~ msgid "Rename Session"
+#~ msgstr "Переименовать сеанс"
+
+#~ msgid "Save Session"
+#~ msgstr "Сохранить сеанс"
+
+#~ msgid ""
+#~ "A session with the name '%1' already exists, do you want to overwrite it?"
+#~ msgstr "Сеанс с именем «%1» уже существует. Заменить его?"
+
+#~ msgid "Session exists. Overwrite?"
+#~ msgstr "Сеанс уже существует. Заменить его?"
+
+#~ msgid ""
+#~ "Konqueror did not close correctly. Would you like to restore the previous "
+#~ "session?"
+#~ msgstr ""
+#~ "Работа Konqueror была завершена некорректно. Восстановить предыдущий "
+#~ "сеанс?"
+
+#~ msgid "Restore Session?"
+#~ msgstr "Восстановить сеанс?"
+
+#~ msgid "Restore Session"
+#~ msgstr "Восстановить сеанс"
+
+#~ msgid "Do Not Restore"
+#~ msgstr "Не восстанавливать"
+
+#~ msgid "Ask Me Later"
+#~ msgstr "Спросить позже"
+
+#~ msgid ""
+#~ "This bar contains the list of currently open tabs. Click on a tab to make "
+#~ "it active. You can also use keyboard shortcuts to navigate through tabs. "
+#~ "The text on the tab shows the content currently open in it; place your "
+#~ "mouse over the tab to see the full title, in case it has been shortened "
+#~ "to fit the tab width."
+#~ msgstr ""
+#~ "Эта панель содержит список текущих открытых вкладок. Нажмите на вкладке, "
+#~ "чтобы сделать её активной. Для перехода между вкладками можно "
+#~ "использовать комбинации клавиш клавиатуры. Текст на вкладках представляет "
+#~ "собой заголовок веб-сайта или путь, сокращённый до размера вкладки. "
+#~ "Наведите на него мышь, чтобы увидеть полный заголовок."
+
+#~ msgid "Open a new tab"
+#~ msgstr "Открыть новую вкладку"
+
+#~ msgid "Close the current tab"
+#~ msgstr "Закрыть текущую вкладку"
+
+#~ msgid "&Duplicate Tab"
+#~ msgstr "С&оздать копию вкладки"
+
+#~ msgid "&Reload Tab"
+#~ msgstr "Обновить &вкладку"
+
+#~ msgid "Other Tabs"
+#~ msgstr "Другие вкладки"
+
+#~ msgid "D&etach Tab"
+#~ msgstr "Отд&елить вкладку"
+
+#~ msgid "&Close Tab"
+#~ msgstr "&Закрыть вкладку"
+
+#~ msgid "Und&o: Closed Tab"
+#~ msgstr "Отменить &закрытие вкладки"
+
+#~ msgid "Und&o: Closed Window"
+#~ msgstr "Отменить &закрытие окна"
+
+#~ msgid "Und&o"
+#~ msgstr "О&тменить"
+
+#~ msgid ""
+#~ "The page you are trying to view is the result of posted form data. If you "
+#~ "resend the data, any action the form carried out (such as search or "
+#~ "online purchase) will be repeated. "
+#~ msgstr ""
+#~ "Страница, которую вы пытаетесь просмотреть, является результатом передачи "
+#~ "данных. Если вы отправите данные снова, действия, которые выполняет форма "
+#~ "(такие как поиск или покупка в интернет-магазинах) будут выполнены снова. "
+
+#~ msgid "Warning"
+#~ msgstr "Предупреждение"
+
+#~ msgid "Resend"
+#~ msgstr "Переслать"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window.\n"
+#~ "Loading a view profile will close them."
+#~ msgstr ""
+#~ "В этом окне открыто несколько вкладок.\n"
+#~ "Загрузка нового профиля приведёт к их закрытию."
+
+#~ msgid "Load View Profile"
+#~ msgstr "Загрузить профиль панели"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Loading a profile will discard these changes."
+#~ msgstr ""
+#~ "Эта вкладка содержит изменения, которые ещё не были сохранены.\n"
+#~ "Загрузка профиля приведёт к отклонению изменений."
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "History Sidebar Module"
+#~ msgstr "Модуль боковой панели журнала"
+
+#~ msgctxt "@title:tab"
+#~ msgid "History"
+#~ msgstr "Журнал"
+
+#~ msgid " day"
+#~ msgid_plural " days"
+#~ msgstr[0] " день"
+#~ msgstr[1] " дня"
+#~ msgstr[2] " дней"
+#~ msgstr[3] " день"
+
+#~ msgid "Minute"
+#~ msgid_plural "Minutes"
+#~ msgstr[0] "минута"
+#~ msgstr[1] "минуты"
+#~ msgstr[2] "минут"
+#~ msgstr[3] "минута"
+
+#~ msgid "Day"
+#~ msgid_plural "Days"
+#~ msgstr[0] "день"
+#~ msgstr[1] "дня"
+#~ msgstr[2] "дней"
+#~ msgstr[3] "день"
+
+#~ msgid "<h1>History Sidebar</h1> You can configure the history sidebar here."
+#~ msgstr "<h1>Журнал</h1> Здесь вы можете настроить боковую панель журнала."
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Places Sidebar Module"
+#~ msgstr "Модуль боковой панели «Точек входа»"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Places"
+#~ msgstr "Точки входа"
+
+#~ msgid "Extended Sidebar"
+#~ msgstr "Расширенная боковая панель"
+
+#~ msgid "Rollback to System Default"
+#~ msgstr "Откат к параметрам по умолчанию"
+
+#~ msgid "Configure Sidebar"
+#~ msgstr "Настроить боковую панель"
+
+#~ msgid "Add New"
+#~ msgstr "Добавить"
+
+#~ msgid "Multiple Views"
+#~ msgstr "Несколько видов"
+
+#~ msgid "Show Tabs Left"
+#~ msgstr "Показывать вкладки слева"
+
+#~ msgid "Show Configuration Button"
+#~ msgstr "Показывать кнопку настройки"
+
+#~ msgid "Close Sidebar"
+#~ msgstr "Закрыть боковую панель"
+
+#~ msgid "This entry already exists."
+#~ msgstr "Такая запись уже существует."
+
+#~ msgid ""
+#~ "<qt>This removes all your entries from the sidebar and adds the system "
+#~ "default ones.<br /><b>This procedure is irreversible</b><br />Do you want "
+#~ "to proceed?</qt>"
+#~ msgstr ""
+#~ "<qt>Удаляет все ваши элементы из боковой панели и устанавливает элементы "
+#~ "по умолчанию.<br /><b>Это действие нельзя отменить</b><br />Вы "
+#~ "действительно хотите продолжить?</qt>"
+
+#~ msgid "Show Tabs Right"
+#~ msgstr "Показывать вкладки справа"
+
+#~ msgid "Set Name"
+#~ msgstr "Установить имя"
+
+#~ msgid "Enter the name:"
+#~ msgstr "Введите имя:"
+
+#~ msgid "Enter a URL:"
+#~ msgstr "Введите ссылку:"
+
+#~ msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
+#~ msgstr "<qt>Удалить вкладку <b>%1</b>?</qt>"
+
+#~ msgid ""
+#~ "You have hidden the sidebar configuration button. To make it visible "
+#~ "again, click the right mouse button on any of the sidebar buttons and "
+#~ "select \"Show Configuration Button\"."
+#~ msgstr ""
+#~ "Вы скрыли кнопку настройки боковой панели. Чтобы снова сделать её "
+#~ "видимой, щёлкните правой кнопкой мыши на боковой панели и выберите "
+#~ "«Показывать кнопку настройки»."
+
+#~ msgid "Set Name..."
+#~ msgstr "Установить имя..."
+
+#~ msgid "Set URL..."
+#~ msgstr "Установить ссылку..."
+
+#~ msgid "Set Icon..."
+#~ msgstr "Установить значок..."
+
+#~ msgid "Remove"
+#~ msgstr "Удалить"
+
+#~ msgid "Web module"
+#~ msgstr "Веб-модуль боковой панели"
+
+#~ msgid "&Create New Folder"
+#~ msgstr "&Создать папку"
+
+#~ msgid "Delete Folder"
+#~ msgstr "Удалить папку"
+
+#~ msgid "Delete Bookmark"
+#~ msgstr "Удалить закладку"
+
+#~ msgid "Properties"
+#~ msgstr "Свойства"
+
+#~ msgid "Open in New Window"
+#~ msgstr "Открыть в новом окне"
+
+#~ msgid "Open Folder in Tabs"
+#~ msgstr "Открыть папку в новых вкладках"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "Скопировать адрес ссылки"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark folder\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "Удалить папку закладок\n"
+#~ "«%1»?"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "Удалить закладку\n"
+#~ "«%1»?"
+
+#~ msgid "Bookmark Folder Deletion"
+#~ msgstr "Удаление папки закладок"
+
+#~ msgid "Bookmark Deletion"
+#~ msgstr "Удаление закладки"
+
+#~ msgid "Bookmark Properties"
+#~ msgstr "Свойства закладки"
+
+#~ msgid "&Update"
+#~ msgstr "&Обновить"
+
+#~ msgid "Name:"
+#~ msgstr "Имя:"
+
+#~ msgid "Location:"
+#~ msgstr "Адрес:"
+
+#~ msgid "Add Bookmark"
+#~ msgstr "Добавить закладку"
+
+#~ msgid "Cannot find parent item %1 in the tree. Internal error."
+#~ msgstr ""
+#~ "Внутренняя ошибка: невозможно найти родительский элемент %1 в дереве."
+
+#~ msgid "&Create New Folder..."
+#~ msgstr "С&оздать папку..."
+
+#~ msgid "Move to Trash"
+#~ msgstr "Удалить в корзину"
+
+#~ msgid "Rename"
+#~ msgstr "Переименовать"
+
+#~ msgid "Delete Link"
+#~ msgstr "Удалить ссылку"
+
+#~ msgid "New Folder"
+#~ msgstr "Новая папка"
+
+#~ msgid "Create New Folder"
+#~ msgstr "Создать папку"
+
+#~ msgid "Enter folder name:"
+#~ msgstr "Введите имя папки:"
+
+#~ msgctxt "@label"
+#~ msgid "Name:"
+#~ msgstr "Название:"
+
+#~ msgctxt "@label"
+#~ msgid "Path or URL:"
+#~ msgstr "Путь или адрес:"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add folder sidebar module"
+#~ msgstr "Добавление модуля папки на боковую панель"
+
+#~ msgid "&Open Link"
+#~ msgstr "&Открыть ссылку"
+
+#~ msgid "Set &Automatic Reload"
+#~ msgstr "Установить &автоматическое обновление"
+
+#~ msgid "Set Refresh Timeout (0 disables)"
+#~ msgstr "Период обновления (0 - не обновлять)"
+
+#~ msgid " min"
+#~ msgstr " мин"
+
+#~ msgid " sec"
+#~ msgstr " с"
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Web Sidebar Module"
+#~ msgstr "Модуль боковой панели Веб"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add web sidebar module"
+#~ msgstr "Добавление веб-модуля боковой панели"
+
+#~ msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
+#~ msgid "Be free."
+#~ msgstr "Будьте свободными!"
+
+#~ msgid ""
+#~ "Konqueror is a web browser, file manager and universal document viewer."
+#~ msgstr ""
+#~ "Konqueror — веб-браузер, диспетчер файлов и универсальная программа "
+#~ "просмотра документов."
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "Starting Points"
+#~ msgstr "Первые шаги"
+
+#~ msgid "Introduction"
+#~ msgstr "Введение"
+
+#~ msgid "Tips"
+#~ msgstr "Советы"
+
+#~ msgid "Specifications"
+#~ msgstr "Спецификации"
+
+#~ msgid "Your personal files"
+#~ msgstr "Ваши личные файлы"
+
+#~ msgid "Trash"
+#~ msgstr "Корзина"
+
+#~ msgid "Browse and restore the trash"
+#~ msgstr "Просмотр и восстановление содержимого корзины"
+
+#~ msgid "Network Folders"
+#~ msgstr "Сетевые папки"
+
+#~ msgid "Shared files and folders"
+#~ msgstr "Общие файлы и папки"
+
+#~ msgid "Bookmarks"
+#~ msgstr "Закладки"
+
+#~ msgid "Quick access to your bookmarks"
+#~ msgstr "Быстрый доступ к вашим закладкам"
+
+#~ msgid "Next: An Introduction to Konqueror"
+#~ msgstr "Далее: Введение в Konqueror"
+
+#~ msgid "Search the Web"
+#~ msgstr "Поиск в Веб"
+
+#~ msgid ""
+#~ "Konqueror makes working with and managing your files easy. You can browse "
+#~ "both local and networked folders while enjoying advanced features such as "
+#~ "the powerful sidebar and file previews."
+#~ msgstr ""
+#~ "Konqueror значительно облегчает работу с файлами. Вы можете просматривать "
+#~ "как локальные, так и сетевые папки с использованием таких дополнительных "
+#~ "функций, как боковая панель и предварительный просмотр файлов."
+
+#~ msgid ""
+#~ "Konqueror is also a full featured and easy to use web browser which you "
+#~ "can use to explore the Internet. Enter the address (e.g. <a href=\"http://"
+#~ "www.kde.org\">http://www.kde.org</a>) of a web page you would like to "
+#~ "visit in the location bar and press Enter, or choose an entry from the "
+#~ "Bookmarks menu."
+#~ msgstr ""
+#~ "Konqueror — это также полнофункциональный и лёгкий в использовании веб-"
+#~ "браузер, который вы можете использовать для работы в Интернете. Введите "
+#~ "адрес (например <a href=\"http://www.kde.org\">http://www.kde.org</a>) "
+#~ "веб-страницы, которую вы хотите просмотреть, в строке адреса и нажмите "
+#~ "Enter, или выберите закладку из меню закладок."
+
+#~ msgid ""
+#~ "To return to the previous location, press the back button <img width='16' "
+#~ "height='16' src=\"%1\"></img> in the toolbar. "
+#~ msgstr ""
+#~ "Если вы хотите вернуться на предыдущую страницу, нажмите кнопку <img "
+#~ "width='16' height='16' src=\"%1\"></img> на панели инструментов."
+
+#~ msgid ""
+#~ "To quickly go to your Home folder press the  home button <img width='16' "
+#~ "height='16' src=\"%1\"></img>."
+#~ msgstr ""
+#~ "Чтобы быстро перейти в свою домашнюю папку, нажмите кнопку «Домой» <img "
+#~ "width='16' height='16' src=\"%1\"></img>."
+
+#~ msgid ""
+#~ "For more detailed documentation on Konqueror click <a href=\"%1\">here</"
+#~ "a>."
+#~ msgstr ""
+#~ "Подробную информацию о работе программы можно найти в <a href="
+#~ "\"%1\">руководстве пользователя Konqueror</a>."
+
+#~ msgid ""
+#~ "<em>Tuning Tip:</em> If you want the Konqueror web browser to start "
+#~ "faster, you can turn off this information screen by clicking <a href="
+#~ "\"%1\">here</a>. You can re-enable it by choosing the Help -> Konqueror "
+#~ "Introduction menu option, and then pressing Settings -> Save View Profile "
+#~ "As... -> \"Web Browsing\"."
+#~ msgstr ""
+#~ "<I>Совет по настройке:</I> если вы хотите, чтобы Konqueror запускался "
+#~ "быстрее, можете отключить это информационное окно <a href=\"%1\">здесь</"
+#~ "a>. Для того, чтобы снова включить его, выберите пункт меню Справка -> "
+#~ "Введение в Konqueror и затем Настройка -> Сохранить профиль как... -> "
+#~ "«Просмотр Веб»."
+
+#~ msgid "Next: Tips &amp; Tricks"
+#~ msgstr "Далее: Подсказки и советы"
+
+#~ msgid ""
+#~ "Konqueror is designed to embrace and support Internet standards. The aim "
+#~ "is to fully implement the officially sanctioned standards from "
+#~ "organizations such as the W3 and OASIS, while also adding extra support "
+#~ "for other common usability features that arise as de facto standards "
+#~ "across the Internet. Along with this support, for such functions as "
+#~ "favicons, Web Shortcuts, and <A HREF=\"%1\">XBEL bookmarks</A>, Konqueror "
+#~ "also implements:"
+#~ msgstr ""
+#~ "Разработка Konqueror ведётся на основе строгого согласия с стандартами "
+#~ "Интернета. Наша цель — полная поддержка официально утверждённых "
+#~ "стандартов от таких организаций, как W3 и OASIS, а также поддержка других "
+#~ "полезных возможностей, которые фактически стали стандартами Интернета. "
+#~ "Благодаря этой поддержке такие возможности, как значки сайтов, веб-"
+#~ "сокращения и <A HREF=\"%1\">Закладки XBEL</A> уже работают в Konqueror, и "
+#~ "кроме этого он реализует:"
+
+#~ msgid "Supported standards"
+#~ msgstr "Поддерживаемые стандарты"
+
+#~ msgid "Additional requirements*"
+#~ msgstr "Дополнительные сведения"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">DOM</A> (уровень 1, частично уровень 2), базирующийся на "
+#~ "<A HREF=\"%2\">HTML 4.01</A>"
+
+#~ msgid "built-in"
+#~ msgstr "встроено"
+
+#~ msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
+#~ msgstr "<A HREF=\"%1\">Каскадные таблицы стилей</A> (CSS 1, частично CSS 2)"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Редакция 3 (примерно соответствует Javascript "
+#~ "1.5)"
+
+#~ msgid ""
+#~ "JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
+#~ msgstr ""
+#~ "Javascript выключен (глобально). <A HREF=\"%1\">Включить</A> Javascript."
+
+#~ msgid ""
+#~ "JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\"
+#~ "\">here</A>."
+#~ msgstr ""
+#~ "Javascript включён глобально. <A HREF=\"%1\">Настроить</A> Javascript."
+
+#~ msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
+#~ msgstr "Поддержка защищённой <A HREF=\"%1\">Java</A>"
+
+#~ msgid ""
+#~ "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">IBM</A> or <A HREF="
+#~ "\"%2\">Sun/Oracle</A>)"
+#~ msgstr ""
+#~ "JDK 1.2.0 (Java 2)-совместимая виртуальная машина Java (<A HREF="
+#~ "\"%1\">IBM</A> or <A HREF=\"%2\">Sun/Oracle</A>)"
+
+#~ msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
+#~ msgstr "<A HREF=\"%1\">Включить</A> Java глобально."
+
+#~ msgid ""
+#~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">plugins</A> (for "
+#~ "viewing <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
+#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Video, etc.)"
+#~ msgstr ""
+#~ "<SUP>&reg;</SUP> <A HREF=\"%4\">модули</A> Netscape Communicator (для "
+#~ "просмотра <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
+#~ "\"%2\">Real<SUP>&reg;</SUP></A>Аудио, <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Видео, и т.д.)"
+
+#~ msgid "Secure Sockets Layer"
+#~ msgstr "Защищённое соединение (SSL)"
+
+#~ msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
+#~ msgstr "(TLS/SSL v2/3) для защищённых соединений с ключом до 168 бит"
+
+#~ msgid "OpenSSL"
+#~ msgstr "OpenSSL"
+
+#~ msgid "Bidirectional 16bit unicode support"
+#~ msgstr "Поддержка 16-бит Unicode"
+
+#~ msgid "AutoCompletion for forms"
+#~ msgstr "Автодополнение в формах"
+
+#~ msgctxt "Title of an html 'group box' explaining konqueror features"
+#~ msgid "General"
+#~ msgstr "Главное"
+
+#~ msgid "Feature"
+#~ msgstr "Возможность"
+
+#~ msgid "Details"
+#~ msgstr "Дополнительно"
+
+#~ msgid "Image formats"
+#~ msgstr "Форматы изображений"
+
+#~ msgid "PNG<br />JPG<br />GIF"
+#~ msgstr "PNG<br />JPG<br />GIF"
+
+#~ msgid "Transfer protocols"
+#~ msgstr "Протоколы передачи"
+
+#~ msgid "HTTP 1.1 (including gzip/bzip2 compression)"
+#~ msgstr "HTTP 1.1 (включая сжатие gzip/bzip2)"
+
+#~ msgid "FTP"
+#~ msgstr "FTP"
+
+#~ msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpcenter)...</A>"
+#~ msgstr ""
+#~ "и <A HREF=\"%1\">многое другое (смотрите раздел «Поддержка протоколов» в "
+#~ "Центре справки KDE)...</A>"
+
+#~ msgctxt "A feature of Konqueror"
+#~ msgid "URL-Completion"
+#~ msgstr "Автодополнение адресов"
+
+#~ msgid "Manual"
+#~ msgstr "Ручное"
+
+#~ msgid "Popup"
+#~ msgstr "Всплывающее"
+
+#~ msgid "(Short-) Automatic"
+#~ msgstr "Автоматическое"
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "<a href=\"%1\">Return to Starting Points</a>"
+#~ msgstr "<a href=\"%1\">Возвратиться к первым шагам</a>"
+
+#~ msgid "Tips &amp; Tricks"
+#~ msgstr "Подсказки и советы"
+
+#~ msgid ""
+#~ "Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, "
+#~ "using Google, for the search phrase \"KDE\". There are a lot of Web-"
+#~ "Shortcuts predefined to make searching for software or looking up certain "
+#~ "words in an encyclopedia a breeze. You can even <a href=\"%1\">create "
+#~ "your own</a> Web-Shortcuts."
+#~ msgstr ""
+#~ "Используйте веб-сокращения: набирая «gg:KDE», вы получаете результаты "
+#~ "поиска фразы «KDE» на сервере Google. По умолчанию в Konqueror есть много "
+#~ "сокращений для поиска программного обеспечения и значений слов в "
+#~ "энциклопедии. Вы даже можете <a href=\"%1\">создавать</a> собственные веб-"
+#~ "сокращения."
+
+#~ msgid ""
+#~ "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
+#~ "the HTML toolbar to increase the font size on your web page."
+#~ msgstr ""
+#~ "Используйте кнопки с лупой <img width='16' height='16' src=\"%1\"></img> "
+#~ "на панели инструментов HTML для увеличения или уменьшения размера шрифтов "
+#~ "на веб-странице."
+
+#~ msgid ""
+#~ "When you want to paste a new address into the Location toolbar you might "
+#~ "want to clear the current entry by pressing the black arrow with the "
+#~ "white cross <img width='16' height='16' src=\"%1\"></img> in the toolbar."
+#~ msgstr ""
+#~ "Если вы хотите вставить новый адрес в строку адреса Konqueror, вы можете "
+#~ "очистить текущий адрес, нажав на чёрную стрелку с белым крестиком <img "
+#~ "width='16' height='16' src=\"%1\"></img> на панели инструментов."
+
+#~ msgid ""
+#~ "To create a link on your desktop pointing to the current page, simply "
+#~ "drag the icon (favicon) that is to the left of the Location toolbar, drop "
+#~ "it on to the desktop, and choose \"Icon\"."
+#~ msgstr ""
+#~ "Чтобы создать ссылку на текущую страницу на своём рабочем столе, "
+#~ "перетащите на рабочий стол значок сайта, который находится слева от "
+#~ "строки ввода адреса, и выберите «Значок»."
+
+#~ msgid ""
+#~ "You can also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen "
+#~ "Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
+#~ "sessions."
+#~ msgstr ""
+#~ "В меню Настройка также можно найти <img width='16' height='16' src="
+#~ "\"%1\" />«Полноэкранный режим». Использование этой возможности очень "
+#~ "полезно, например, для показа презентаций."
+
+#~ msgid ""
+#~ "Divide et impera (lat. \"Divide and conquer\") - by splitting a window "
+#~ "into two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> "
+#~ "Split View Left/Right) you can make Konqueror appear the way you like. "
+#~ "You can even load some example view-profiles (e.g. Midnight Commander), "
+#~ "or create your own ones."
+#~ msgstr ""
+#~ "Divide et impera (лат. «Разделяй и властвуй») — разделяя окно на две "
+#~ "части (например, Окно-><img width='16' height='16' src=\"%1\" /> "
+#~ "Разделить панель по вертикали) вы можете настроить Konqueror так, как вам "
+#~ "нравится. Вы даже можете загружать некоторые примеры профилей просмотра "
+#~ "(например, Midnight Commander) или создать собственные профили."
+
+#~ msgid ""
+#~ "Use the <a href=\"%1\">user-agent</a> feature if the website you are "
+#~ "visiting asks you to use a different browser (and do not forget to send a "
+#~ "complaint to the webmaster!)"
+#~ msgstr ""
+#~ "Используйте <a href=\"%1\">user-agent</a> - возможность замаскироваться "
+#~ "под любой другой браузер, если при посещении сайта вам вдруг будет "
+#~ "предложено использовать именно его (и не забудьте послать жалобу веб-"
+#~ "мастеру!)"
+
+#~ msgid ""
+#~ "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
+#~ "ensures that you can keep track of the pages you have visited recently."
+#~ msgstr ""
+#~ "<img width='16' height='16' src=\"%1\"></img> Журнал на боковой панели "
+#~ "можно использовать для перехода на недавно открывавшиеся страницы."
+
+#~ msgid ""
+#~ "Use a caching <a href=\"%1\">proxy</a> to speed up your Internet "
+#~ "connection."
+#~ msgstr ""
+#~ "Используйте кэширующий <a href=\"%1\">прокси-сервер</a> для оптимизации "
+#~ "использования соединения с Интернетом."
+
+#~ msgid ""
+#~ "Advanced users will appreciate the Konsole which you can embed into "
+#~ "Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
+#~ "Terminal Emulator)."
+#~ msgstr ""
+#~ "Опытные пользователи оценят удобство Konsole, встроенной в Konqueror "
+#~ "(Настройка -> <img width='16' height='16' SRC=\"%1\"></img> Показать "
+#~ "эмулятор терминала)."
+
+#~ msgid "Next: Specifications"
+#~ msgstr "Далее: Спецификации"
+
+#~ msgid "Installed Plugins"
+#~ msgstr "Установленные модули"
+
+#~ msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
+#~ msgstr "<td>Модуль</td><td>Описание</td><td>Файл</td><td>Типы</td>"
+
+#~ msgid "Installed"
+#~ msgstr "Установлен"
+
+#~ msgid ""
+#~ "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
+#~ msgstr "<td>Тип MIME</td><td>Описание</td><td>Суффиксы</td><td>Модуль</td>"
+
+#~ msgid ""
+#~ "Do you want to disable showing the introduction in the webbrowsing "
+#~ "profile?"
+#~ msgstr "Вы хотите отключить показ заставки в профиле браузера?"
+
+#~ msgid "Faster Startup?"
+#~ msgstr "Быстрый запуск?"
+
+#~ msgid "Disable"
+#~ msgstr "Отключить"
+
+#~ msgid "Keep"
+#~ msgstr "Оставить"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Евгений Черкашин,Григорий Мохин,Андрей Черепанов,Леонид Кантер"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "eugeneai@icc.ru,mokhin@bog.msu.ru,skull@kde.ru,leon@asplinux.ru"
+
+#~ msgid "&File"
+#~ msgstr "&Файл"
+
+#~ msgid "&Edit"
+#~ msgstr "&Правка"
+
+#~ msgid "&View"
+#~ msgstr "&Вид"
+
+#~ msgid "&Go"
+#~ msgstr "Пере&ход"
+
+#~ msgid "&Settings"
+#~ msgstr "&Настройка"
+
+#~ msgid "&Window"
+#~ msgstr "&Окно"
+
+#~ msgid "&Help"
+#~ msgstr "&Справка"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Основная панель инструментов"
+
+#~ msgid "Extra Toolbar"
+#~ msgstr "Дополнительная панель инструментов"
+
+#~ msgid "Location Toolbar"
+#~ msgstr "Панель адреса"
+
+#~ msgid "Bookmark Toolbar"
+#~ msgstr "Панель закладок"
+
+#~ msgid "Save open tabs and windows for easy retrieval"
+#~ msgstr "Сохранить открытые вкладки и окна"
+
+#~ msgid "&Session name:"
+#~ msgstr "&Имя сеанса:"
+
+#~ msgid "&Profile name:"
+#~ msgstr "Имя &профиля:"
+
+#~ msgid "Save &URLs in profile"
+#~ msgstr "Сохранять &адреса вкладок в профиле"
+
+#~ msgctxt "@action:button New session"
+#~ msgid "New..."
+#~ msgstr "Создать..."
+
+#~ msgctxt "@action:button Save current session"
+#~ msgid "Save Current"
+#~ msgstr "Сохранить сеанс"
+
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename..."
+#~ msgstr "Переименовать..."
+
+#~ msgctxt "@action:button Delete session"
+#~ msgid "Delete"
+#~ msgstr "Удалить"
+
+#~ msgid "Open tabs inside current window"
+#~ msgstr "Открывать вкладки в текущем окне"
+
+#~ msgid "Limits"
+#~ msgstr "Ограничения"
+
+#~ msgid "URLs e&xpire after"
+#~ msgstr "Срок актуальности ссылки &истекает после"
+
+#~ msgid "Maximum &number of URLs:"
+#~ msgstr "Максимальное &количество ссылок:"
+
+#~ msgid "Custom Fonts For"
+#~ msgstr "Особые шрифты для"
+
+#~ msgid "URLs newer than"
+#~ msgstr "Ссылки новее, чем"
+
+#~ msgid "Choose Font..."
+#~ msgstr "Выбрать шрифт..."
+
+#~ msgid "URLs older than"
+#~ msgstr "Ссылки позже, чем"
+
+#~ msgid ""
+#~ "Shows the number of times visited and the dates of the first and last "
+#~ "visits, in addition to the URL"
+#~ msgstr ""
+#~ "Показывает количество посещений, дату первого и последнего посещения "
+#~ "вместе с адресом"
+
+#~ msgid "Detailed tooltips"
+#~ msgstr "Расширенные подсказки"
+
+#~ msgid "Clear History"
+#~ msgstr "Очистить журнал"
+
+#~ msgid ""
+#~ "This is the URL of the web page where Konqueror (as web browser) will "
+#~ "jump to when the \\\"Home\\\" button is pressed. When Konqueror is "
+#~ "started as a file manager, that button makes it jump to your local home "
+#~ "folder instead."
+#~ msgstr ""
+#~ "Адрес, на который Konqueror в режиме веб-браузера перейдёт при нажатии на "
+#~ "кнопку «Домашняя страница». В режиме диспетчера файлов при нажатии на эту "
+#~ "кнопку Konqueror перейдёт в локальную домашнюю папку."
+
+#~ msgid "Maximum number of Closed Items"
+#~ msgstr "Максимальное количество закрытых вкладок"
+
+#~ msgid ""
+#~ "This sets the maximum number of closed items that will be stored in "
+#~ "memory. This limit will not be surpassed."
+#~ msgstr ""
+#~ "Максимальное количество закрытых вкладок, которое будет хранится в памяти."
+
+#~ msgid "Open folders in separate windows"
+#~ msgstr "Открывать папки в отдельных окнах"
+
+#~ msgid ""
+#~ "If this option is checked, Konqueror will open a new window when you open "
+#~ "a folder, rather than showing that folder's contents in the current "
+#~ "window."
+#~ msgstr ""
+#~ "При включении этого параметра, папка будет открыта в новом окне вместо "
+#~ "текущего окна."
+
+#~ msgid "Show file tips"
+#~ msgstr "Показывать подсказки у файлов"
+
+#~ msgid ""
+#~ "Here you can control if, when moving the mouse over a file, you want to "
+#~ "see a small popup window with additional information about that file"
+#~ msgstr ""
+#~ "При включении этого параметра при наведении на файл в небольшом "
+#~ "всплывающем окне будет показана дополнительная информация о файле."
+
+#~ msgid "Show previews in file tips"
+#~ msgstr "Показывать миниатюру в подсказке"
+
+#~ msgid ""
+#~ "Here you can control if you want the popup window to contain a larger "
+#~ "preview for the file, when moving the mouse over it"
+#~ msgstr ""
+#~ "При включении этого параметра во всплывающей подсказке к файлу будет "
+#~ "показана миниатюра с его содержимым"
+
+#~ msgid "Show 'Delete' menu entries which bypass the trashcan"
+#~ msgstr "Добавить пункт «Удалить», не перемещающий файлы в корзину"
+
+#~ msgid ""
+#~ "Check this if you want 'Delete' menu commands to be displayed on the "
+#~ "desktop and in the file manager's menus and context menus. You can always "
+#~ "delete files when hidden by holding the Shift key while calling 'Move to "
+#~ "Trash'."
+#~ msgstr ""
+#~ "Включите этот параметр, если вам нужна команда «Удалить» в контекстных "
+#~ "меню рабочего стола и диспетчера файлов. Можно также всегда удалять "
+#~ "файлы, нажав кнопку Shift при использовании пункта меню «Переместить в "
+#~ "корзину»."
+
+#~ msgid "Number of Open With items in the File menu"
+#~ msgstr "Количество программ для открытия файла в меню"
+
+#~ msgid "Standard font"
+#~ msgstr "Стандартный шрифт"
+
+#~ msgid "This is the font used to display text in Konqueror windows."
+#~ msgstr "Шрифт для показа текста в окнах Konqueror."
+
+#~ msgid "Maximum number of history items per view"
+#~ msgstr "Количество элементов в журнале"
+
+#~ msgid "Ask confirmation for deleting a file."
+#~ msgstr "Подтверждение удаления файла"
+
+#~ msgid ""
+#~ "This option tells Konqueror whether to ask for a confirmation when you "
+#~ "delete a file without using the trash folder. Warning, deleted files can "
+#~ "not be recovered, so it is recommended to leave this confirmation enabled."
+#~ msgstr ""
+#~ "При включении этого параметра при реальном удалении файлов и папок без "
+#~ "помещения их в корзину будет показываться диалог подтверждения. Удалённые "
+#~ "таким образом файлы невозможно восстановить, поэтому рекомендуется "
+#~ "оставить этот параметр включённым."
+
+#~ msgid "Ask confirmation for move to trash"
+#~ msgstr "Подтверждение удаления в корзину"
+
+#~ msgid ""
+#~ "This option tells Konqueror whether to ask for a confirmation when you "
+#~ "move the file to your trash folder, from where it can be recovered very "
+#~ "easily."
+#~ msgstr ""
+#~ "При включении этого параметра при удалении файлов и папок в корзину будет "
+#~ "показываться диалог подтверждения."
+
+#~ msgid ""
+#~ "If true, when opening a session from within the sessions dialog the tabs "
+#~ "will be opened inside current window."
+#~ msgstr ""
+#~ "При включении этого параметра открытие сеанса будет осуществлено в "
+#~ "текущее окно."
+
+#~ msgid "Hide %1"
+#~ msgstr ""
+#~ "Скрыть %1|/|Скрыть $[replace-pairs %1 'Эмулятор терминала' 'эмулятор "
+#~ "терминала' 'Боковая панель' 'боковую панель']"
+
+#~ msgid "SideBar Test Plugin"
+#~ msgstr "Тестовый модуль боковой панели"
+
+#~ msgid "Bookmark This Location"
+#~ msgstr "Добавить закладку на этот адрес"
+
+#~ msgid ""
+#~ "Malformed URL\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Неверно сформированная ссылка\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Protocol not supported\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Протокол не поддерживается\n"
+#~ "%1"
+
+#~ msgid "Cannot create the find part, check your installation."
+#~ msgstr "Невозможно создать элемент поиска, проверьте вашу установку."
+
+#~ msgid "My Bookmarks"
+#~ msgstr "Мои закладки"
+
+#~ msgid "Preload for later use"
+#~ msgstr "Предварительная загрузка для более быстрой работы"
+
+#~ msgid "&Save View Profile \"%1\"..."
+#~ msgstr "&Сохранить профиль просмотра «%1»..."
+
+#~ msgid "Configure Navigation Panel"
+#~ msgstr "Настройка панели навигации"
+
+#~ msgid "Close Navigation Panel"
+#~ msgstr "Закрыть панель навигации"
+
+#~ msgid "Select Type"
+#~ msgstr "Выберите тип"
+
+#~ msgid "Select type:"
+#~ msgstr "Выберите тип:"
+
+#~ msgid "Web SideBar Plugin"
+#~ msgstr "Модуль боковой панели веб"
+
+#~ msgid "<qt><b>%1</b> does not exist</qt>"
+#~ msgstr "<qt><b>%1</b> не существует</qt>"
+
+#~ msgid "Minutes"
+#~ msgstr "Минут"
+
+#~ msgid "Days"
+#~ msgstr "Дней"
+
+#~ msgid "Your sidebar is not functional or unavailable."
+#~ msgstr "Ваша боковая панель не работает или недоступна."
+
+#~ msgid "Cannot find running history plugin in your sidebar."
+#~ msgstr "Невозможно показать журнал на боковой панели."
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History in Sidebar"
+#~ msgstr "Открыть журнал на боковой панели"
+
+#~ msgid "Select Remote Charset"
+#~ msgstr "Кодировка сетевого диска"
+
+#~ msgid "Reload"
+#~ msgstr "Обновить"
+
+#~ msgid "Default"
+#~ msgstr "По умолчанию"

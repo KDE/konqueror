@@ -1,0 +1,169 @@
+# translation of kfmclient.po to
+# Copyright (C) 2001,2002, 2004, 2006, 2007 Free Software Foundation, Inc.
+# Mohammed Ibrahim Halabi <mih_flyer@hotmail.com>, 2001.
+# Isam Bayazidi <bayazidi@arabeyes.org>, 2002.
+# Munzir Taha <munzir@kacst.edu.sa>, 2004.
+# محمد سعد  Mohamed SAAD <metehyi@free.fr>, 2006.
+# AbdulAziz AlSharif <a.a-a.s@hotmail.com>, 2007.
+# Youssef Chahibi <chahibi@gmail.com>, 2007.
+# Safa Alfulaij <safa1996alfulaij@gmail.com>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: kfmclient\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"PO-Revision-Date: 2014-07-19 22:42+0300\n"
+"Last-Translator: Safa Alfulaij <safa1996alfulaij@gmail.com>\n"
+"Language-Team: Arabic <doc@arabeyes.org>\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: kfmclient.cpp:49
+#, fuzzy, kde-format
+msgid "kfmclient"
+msgstr "kfmclient"
+
+#: kfmclient.cpp:57
+#, kde-format
+msgid "KDE tool for opening URLs from the command line"
+msgstr "أداة كدي لفتح العناوين من سطر الأوامر"
+
+#: kfmclient.cpp:65
+#, kde-format
+msgid "Non interactive use: no message boxes"
+msgstr "لا استخدام تفاعلي: لا حواريات"
+
+#: kfmclient.cpp:67
+#, kde-format
+msgid "Show available commands"
+msgstr "أظهر الأوامر المتوفّرة"
+
+#: kfmclient.cpp:69
+#, kde-format
+msgid "Command (see --commands)"
+msgstr "الأمر (طالع ‎--commands)"
+
+#: kfmclient.cpp:71
+#, kde-format
+msgid "Arguments for command"
+msgstr "معطيات الأمر"
+
+#: kfmclient.cpp:73
+#, kde-format
+msgid "The files/URLs opened by the application will be deleted after use"
+msgstr ""
+
+#: kfmclient.cpp:81
+#, kde-format
+msgid ""
+"\n"
+"Syntax:\n"
+msgstr ""
+"\n"
+"الصياغة:\n"
+
+#: kfmclient.cpp:82
+#, kde-format
+msgid ""
+"  kfmclient openURL 'url' ['mimetype']\n"
+"            # Opens a window showing 'url'.\n"
+"            #  'url' may be a relative path\n"
+"            #   or file name, such as . or subdir/\n"
+"            #   If 'url' is omitted, $HOME is used instead.\n"
+"\n"
+msgstr ""
+"  kfmclient openURL 'url' ['mimetype']\n"
+"            # يفتح نافذة تُظهر 'url'.\n"
+"            #   قد يكون 'url' مسارًا نسبيًا \n"
+"            #   أو اسم ملف، مثل . أو subdir/‎\n"
+"            #   إذا أُسقط 'url'،  سيُستخدَم ‎$HOME بدلًا منه.\n"
+"\n"
+
+#: kfmclient.cpp:87
+#, kde-format
+msgid ""
+"            # If 'mimetype' is specified, it will be used to determine the\n"
+"            #   component that Konqueror should use. For instance, set it "
+"to\n"
+"            #   text/html for a web page, to make it appear faster\n"
+"\n"
+msgstr ""
+"            # إذا حُدِّد 'mimetype'، سيُستخدَم لتحديد المكوّن الذي يجب\n"
+"            #   أن يستخدمه كنكر. مثلًا استخدم text/html لصفحة وِب،\n"
+"            #   لتظهر بشكل أسرع\n"
+"\n"
+
+#: kfmclient.cpp:91
+#, kde-format
+msgid ""
+"  kfmclient newTab 'url' ['mimetype']\n"
+"            # Same as above but opens a new tab with 'url' in an existing "
+"Konqueror\n"
+"            #   window on the current active desktop if possible.\n"
+"\n"
+msgstr ""
+"  kfmclient newTab 'url' ['mimetype']\n"
+"            # كما الذي في الأعلى، لكن هذا يفتح لسان جديد بِـ 'url' في نافذة "
+"موجودة\n"
+"            #   مسبقًا في كنكر على سطح المكتب النشط إذا كان ممكنًا.\n"
+"\n"
+
+#: kfmclient.cpp:271
+#, fuzzy, kde-format
+#| msgid "Syntax Error: Not enough arguments\n"
+msgid "Syntax error, not enough arguments\n"
+msgstr "خطأ صياغي، لا معطيات كافية\n"
+
+#: kfmclient.cpp:275
+#, fuzzy, kde-format
+#| msgid "Syntax Error: Too many arguments\n"
+msgid "Syntax error, too many arguments\n"
+msgstr "خطأ صياغي، الكثير من المعطيات\n"
+
+#: kfmclient.cpp:324
+#, fuzzy, kde-format
+#| msgid "Syntax Error: Unknown command '%1'\n"
+msgid "Syntax error, unknown command '%1'\n"
+msgstr "خطأ صياغي: الأمر '%1' مجهول\n"
+
+#~ msgid ""
+#~ "  kfmclient exec is deprecated and kept for compatibility with KDE 3. \n"
+#~ "            # See kioclient exec for more information.\n"
+#~ msgstr ""
+#~ "  kfmclient exec أُهمل وأُبقيَ للتوافقية مع كدي 3. \n"
+#~ "            # طالع kioclient exec لمعلومات أكثر.\n"
+
+#, fuzzy
+#~ msgid ""
+#~ "  kfmclient openProfile 'profile' ['url']\n"
+#~ "            # Opens a window using the given profile.\n"
+#~ "            #   'profile' is a file under ~/.kde/share/apps/konqueror/"
+#~ "profiles.\n"
+#~ "            #   'url' is an optional URL to open.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmclient openProfile 'profile' ['url']\n"
+#~ "            # يفتح نافذة باستخدام profile المعطى.\n"
+#~ "            #   'profile' هو ملف موجود في ‎~/.kde/share/apps/konqueror/"
+#~ "profiles.\n"
+#~ "            #   'url' هو عنوان اختياري للفتح.\n"
+#~ "\n"
+
+#, fuzzy
+#~ msgid "Profile '%1' not found\n"
+#~ msgstr "المواصفات %1 غير موجودة\n"

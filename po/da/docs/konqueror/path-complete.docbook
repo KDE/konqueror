@@ -1,0 +1,122 @@
+<chapter id="path-complete">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+&erik.kjaer.pedersen.role; 
+</authorgroup
+> <date
+>2003-11-05</date
+> <releaseinfo
+>3.2</releaseinfo
+> </chapterinfo>
+
+
+<title
+>Automatisk tekst-komplettering</title
+> 
+
+<para
+>Du kan få &konqueror; til at hjælpe dig når du skriver en sti eller &URL; ind i stedlinjen ved at aktivere en af <guimenuitem
+>Tekst-komplettering</guimenuitem
+>-egenskaberne. For at gøre dette skal man <mousebutton
+>højre</mousebutton
+>-klikke på en klar del af stedlinjens tekstindførelsfelt og vælge <guisubmenu
+>Tekst-komplettering</guisubmenu
+>. Dette vil lade dig vælge mellem følgende muligheder:</para>
+
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Ingen</guimenuitem
+></term>
+<listitem
+><para
+>Du får det du skriver og intet andet.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Manuel</guimenuitem
+></term>
+<listitem
+><para
+>Når du har skrevet en del af en sti eller &URL;, vil tryk på <keycombo action="simul"
+>&Ctrl;<keycap
+>E</keycap
+></keycombo
+> komplettere indgangen hvis det er muligt at gøre dette uden tvivl.</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Automatisk</guimenuitem
+></term>
+<listitem
+><para
+>Når du skriver i stedlinjevinduet vil &konqueror; automatisk udvide det skrevne ved at komplettere et muligt navn eller &URL; hvor de tilføjede tegn er fremhævede. Fortsæt med at skrive hvis det ikke er det du ønsker eller tryk på &Enter; for at acceptere det.</para
+></listitem>
+ </varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Drop-ned liste</guimenuitem
+></term>
+<listitem
+><para
+>Et drop-ned vindue vil komme tilsyne mens du skriver, der viser de mulige tilpasninger til det du har skrevet indtil videre. Når stien eller &URL;'en du ønsker viser sig i vinduet, dobbeltklik med &LMB;. Du kan bruge <keysym
+>Ned-pilen</keysym
+> og <keysym
+>Op-pilen</keysym
+> til at vælge det og så trykke på &Enter;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Kort automatisk</guimenuitem
+></term>
+<listitem
+><para
+>Dette er ligesom Automatisk tilstand bortset fra at det kun viderefører det du har skrevet så langt som til næste <keycap
+>/</keycap
+> symbol i stien eller &URL;. Tryk på <keycombo action="simul"
+>&Ctrl;<keycap
+>E</keycap
+></keycombo
+> for at acceptere forslaget, og &Enter; når den fuldstændige sti eller &URL; bliver vist.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+<para
+>Du bør prøve disse forskellige tilstande og vælge den der passer dig bedst.</para>
+<para
+>Historikken af nyligt besøgte &URL;'er som &konqueror; bruger til tekst-kompletteringsfunktionen kan ses og redigeres i <guilabel
+>Historik </guilabel
+>-siden af <link linkend="sidebar"
+>Navigationspanelet</link
+>.</para>
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

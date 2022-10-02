@@ -1,0 +1,1958 @@
+# translation of konqueror.po to Thai
+# Copyright (C) 2003, 2005, 2006, 2007, 2008 Free Software Foundation, Inc.
+#
+# Thanomsub Noppaburana <donga_n@yahoo.com>, 2003, 2005.
+# Narachai Sakorn <narachai@opentle.org>, 2005.
+# Sahachart Anukulkitch <drrider@gmail.com>, 2005, 2006, 2007.
+# Thanomsub Noppaburana <donga.nb@gmail.com>, 2008, 2010.
+# Phuwanat Sakornsakolpat <narachai@gmail.com>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2010-12-17 20:03+0700\n"
+"Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
+"Language-Team: Thai <thai-l10n@googlegroups.com>\n"
+"Language: th\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. i18n: ectx: Menu (tools)
+#: konq_shellcmdplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "เ&ครื่องมือ"
+
+#: kshellcmdexecutor.cpp:106
+#, kde-format
+msgid "Input Required:"
+msgstr "ต้องการการนำเข้า:"
+
+#: kshellcmdplugin.cpp:32
+#, kde-format
+msgid "&Execute Shell Command..."
+msgstr "ประมวลผลคำสั่งเชลล์..."
+
+#: kshellcmdplugin.cpp:41
+#, kde-format
+msgid ""
+"KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a bug."
+msgstr "KShellCmdPlugin::slotExecuteShellCommand: โปรแกรมผิดพลาด โปรดรายงานบั๊ก"
+
+#: kshellcmdplugin.cpp:51
+#, kde-format
+msgid "Executing shell commands works only on local directories."
+msgstr "ประมวลผลคำสั่งเชลล์ให้ทำงานเฉพาะกับไดเร็กทอรีภายในเท่านั้น"
+
+#: kshellcmdplugin.cpp:73
+#, fuzzy, kde-format
+#| msgid "Execute Shell Command"
+msgctxt "@title:window"
+msgid "Execute Shell Command"
+msgstr "ประมวลผลคำสั่งเชลล์..."
+
+#: kshellcmdplugin.cpp:74
+#, kde-format
+msgid "Execute shell command in current directory:"
+msgstr "ประมวลผลคำสั่งเชลล์ในไดเร็กทอรีปัจจุบัน:"
+
+#: kshellcmdplugin.cpp:85
+#, kde-format
+msgid "Output from command: \"%1\""
+msgstr "ผลลัพธ์จากคำสั่ง: \"%1\""
+
+#~ msgid "no name"
+#~ msgstr "ไม่มีชื่อ"
+
+#~ msgid "Configure"
+#~ msgstr "ปรับแต่ง"
+
+#~ msgid "Extensions"
+#~ msgstr "ส่วนขยาย"
+
+#~ msgid ""
+#~ "There was an error loading the module %1.\n"
+#~ "The diagnostics is:\n"
+#~ "%2"
+#~ msgstr ""
+#~ "เกิดข้อผิดพลาดในการโหลดมอดูล %1 ขึ้นมาทำงาน\n"
+#~ "ซึ่งตรวจสอบได้คือ:\n"
+#~ "%2"
+
+#~ msgid "Konqueror"
+#~ msgstr " Konqueror "
+
+#~ msgid "Web browser, file manager and document viewer."
+#~ msgstr "เว็บเบราว์เซอร์, เครื่องมือจัดการแฟ้ม และตัวแสดงเอกสาร"
+
+#~ msgid "(C) 1999-2008, The Konqueror developers"
+#~ msgstr "สงวนลิขสิทธิ์ (c) 1999-2008, กลุ่มผู้พัฒนา Konqueror "
+
+#~ msgid "http://konqueror.kde.org"
+#~ msgstr "http://konqueror.kde.org"
+
+#~ msgid "David Faure"
+#~ msgstr "David Faure"
+
+#~ msgid "Developer (framework, parts, JavaScript, I/O library) and maintainer"
+#~ msgstr "ผู้พัฒนา (เฟรมเวิร์ก, parts, จาวาสคริปต์, ไลบรารี I/O) และผู้ดูแล"
+
+#~ msgid "Simon Hausmann"
+#~ msgstr "Simon Hausmann"
+
+#~ msgid "Developer (framework, parts)"
+#~ msgstr "ผู้พัฒนา (เฟรมเวิร์ก, parts)"
+
+#~ msgid "Michael Reiher"
+#~ msgstr "Michael Reiher"
+
+#~ msgid "Developer (framework)"
+#~ msgstr "ผู้พัฒนา (เฟรมเวิร์ก)"
+
+#~ msgid "Matthias Welk"
+#~ msgstr "Matthias Welk"
+
+#~ msgid "Developer"
+#~ msgstr "ผู้พัฒนา"
+
+#~ msgid "Alexander Neundorf"
+#~ msgstr "Alexander Neundorf"
+
+#~ msgid "Developer (List views)"
+#~ msgstr "ผู้พัฒนา (มุมมองรายการ)"
+
+#~ msgid "Michael Brade"
+#~ msgstr "Michael Brade"
+
+#~ msgid "Developer (List views, I/O library)"
+#~ msgstr "ผู้พัฒนา (มุมมองรายการ, ไลบรารี I/O)"
+
+#~ msgid "Lars Knoll"
+#~ msgstr "Lars Knoll"
+
+#~ msgid "Developer (HTML rendering engine)"
+#~ msgstr "ผู้พัฒนา (กลไกแสดงผล HTML)"
+
+#~ msgid "Dirk Mueller"
+#~ msgstr "Dirk Mueller"
+
+#~ msgid "Peter Kelly"
+#~ msgstr "Peter Kelly"
+
+#~ msgid "Waldo Bastian"
+#~ msgstr "Waldo Bastian"
+
+#~ msgid "Developer (HTML rendering engine, I/O library)"
+#~ msgstr "ผู้พัฒนา (กลไกแสดงผล HTML, ไลบรารี I/O)"
+
+#~ msgid "Germain Garand"
+#~ msgstr "Germain Garand"
+
+#~ msgid "Leo Savernik"
+#~ msgstr "Leo Savernik"
+
+#~ msgid "Stephan Kulow"
+#~ msgstr "Stephan Kulow"
+
+#~ msgid ""
+#~ "Developer (HTML rendering engine, I/O library, regression test framework)"
+#~ msgstr "ผู้พัฒนา (กลไกแสดงผล HTML, ไลบรารี I/O, เฟรมเวิร์กทดสอบความถดถอย)"
+
+#~ msgid "Antti Koivisto"
+#~ msgstr "Antti Koivisto"
+
+#~ msgid "Zack Rusin"
+#~ msgstr "Zack Rusin"
+
+#~ msgid "Tobias Anton"
+#~ msgstr "Tobias Anton"
+
+#~ msgid "Lubos Lunak"
+#~ msgstr "Lubos Lunak"
+
+#~ msgid "Maks Orlovich"
+#~ msgstr "Maks Orlovich"
+
+#~ msgid "Developer (HTML rendering engine, JavaScript)"
+#~ msgstr "ผู้พัฒนา (กลไกแสดงผล HTML, จาวาสคริปต์)"
+
+#~ msgid "Allan Sandfeld Jensen"
+#~ msgstr "Allan Sandfeld Jensen"
+
+#~ msgid "Apple Safari Developers"
+#~ msgstr "กลุ่มผู้พัฒนา Safari ของ Apple"
+
+#~ msgid "Harri Porten"
+#~ msgstr "Harri Porten"
+
+#~ msgid "Developer (JavaScript)"
+#~ msgstr "ผู้พัฒนา (จาวาสคริปต์)"
+
+#~ msgid "Koos Vriezen"
+#~ msgstr "Koos Vriezen"
+
+#~ msgid "Developer (Java applets and other embedded objects)"
+#~ msgstr "ผู้พัฒนา (รองรับจาวาแอพเพล็ตและวัตถุฝังตัวชนิดอื่นๆ)"
+
+#~ msgid "Matt Koss"
+#~ msgstr "Matt Koss"
+
+#~ msgid "Developer (I/O library)"
+#~ msgstr "ผู้พัฒนา (ไลบรารี I/O)"
+
+#~ msgid "Alex Zepeda"
+#~ msgstr "Alex Zepeda"
+
+#~ msgid "Richard Moore"
+#~ msgstr "Richard Moore"
+
+#~ msgid "Developer (Java applet support)"
+#~ msgstr "ผู้พัฒนา (รองรับจาวาแอพเพล็ต)"
+
+#~ msgid "Dima Rogozin"
+#~ msgstr "Dima Rogozin"
+
+#~ msgid "Wynn Wilkes"
+#~ msgstr "Wynn Wilkes"
+
+#~ msgid ""
+#~ "Developer (Java 2 security manager support,\n"
+#~ " and other major improvements to applet support)"
+#~ msgstr ""
+#~ "ผู้พัฒนา (ตัวรักษาความปลอดภัยของจาวา 2\n"
+#~ "และการปรับปรุงหลักของส่วนรองรับแอพเพล็ต)"
+
+#~ msgid "Stefan Schimanski"
+#~ msgstr "Stefan Schimanski"
+
+#~ msgid "Developer (Netscape plugin support)"
+#~ msgstr "ผู้พัฒนา (รองรับโปรแกรมเสริมของเน็ตสเคป)"
+
+#~ msgid "George Staikos"
+#~ msgstr "George Staikos"
+
+#~ msgid "Developer (SSL, Netscape plugins)"
+#~ msgstr "ผู้พัฒนา (SSL, โปรแกรมเสริมของเน็ตสเคป)"
+
+#~ msgid "Dawit Alemayehu"
+#~ msgstr "Dawit Alemayehu"
+
+#~ msgid "Developer (I/O library, Authentication support)"
+#~ msgstr "ผู้พัฒนา (ส่วนไลบรารี I/O, การตรวจสอบสิทธิ์)"
+
+#~ msgid "Carsten Pfeiffer"
+#~ msgstr "Carsten Pfeiffer"
+
+#~ msgid "Torsten Rahn"
+#~ msgstr "Torsten Rahn"
+
+#~ msgid "Graphics/icons"
+#~ msgstr "กราฟิก/ภาพไอคอน"
+
+#~ msgid "Torben Weis"
+#~ msgstr "Torben Weis"
+
+#~ msgid "KFM author"
+#~ msgstr "ผู้เขียน kfm"
+
+#~ msgid "Joseph Wenninger"
+#~ msgstr "Joseph Wenninger"
+
+#~ msgid "Developer (navigation panel framework)"
+#~ msgstr "ผู้พัฒนา (ส่วนเฟรมเวิร์กแถบนำทาง)"
+
+#~ msgid "Stephan Binner"
+#~ msgstr "Stephan Binner"
+
+#~ msgid "Developer (misc stuff)"
+#~ msgstr "ผู้พัฒนา (ส่วนปลีกย่อย)"
+
+#~ msgid "Ivor Hewitt"
+#~ msgstr "Ivor Hewitt"
+
+#~ msgid "Developer (AdBlock filter)"
+#~ msgstr "ผู้พัฒนา (ตัวกรองการบล็อคโฆษณา)"
+
+#~ msgid "Eduardo Robles Elvira"
+#~ msgstr "Eduardo Robles Elvira"
+
+#~ msgid ""
+#~ "Checking this box on at least two views sets those views as 'linked'. "
+#~ "Then, when you change directories in one view, the other views linked "
+#~ "with it will automatically update to show the current directory. This is "
+#~ "especially useful with different types of views, such as a directory tree "
+#~ "with an icon view or detailed view, and possibly a terminal emulator "
+#~ "window."
+#~ msgstr ""
+#~ "เลือกตัวเลือกนี้ในมุมมอง อย่างน้อยสองมุมมอง และปรับมุมมองเหล่านั้น ให้เป็นแบบ 'เชื่อมต่อ' "
+#~ "จากนั้นเมื่อคุณเปลี่ยนไดเรกทอรีในมุมมองหนึ่ง มุมมองที่เชื่อมต่ออยู่ จะทำการปรับปรุงการแสดงผล "
+#~ "ให้เป็นไดเร็กทอรีปัจจุบันโดยอัตโนมัติ ซึ่งควรใช้ร่วมกับมุมมองที่ต่างประเภทกัน เช่น "
+#~ "มุมมองแบบต้นไม้ของไดเรกทอรี กับ มุมมองแบบไอคอน หรือ มุมมองแบบรายละเอียด "
+#~ "และอาจรวมถึง หน้าต่างจำลองการทำงานเทอร์มินัลด้วย"
+
+#~ msgid "Close View"
+#~ msgstr "ปิดมุมมอง"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/วินาที"
+
+#~ msgid "Stalled"
+#~ msgstr "หยุดทำงานชั่วคราว"
+
+#~ msgid "Preview &in %1"
+#~ msgstr "แสดงตัวอย่างใ&น %1"
+
+#~ msgid "Show %1"
+#~ msgstr "แสดง %1"
+
+#~ msgctxt "@title:window"
+#~ msgid "History"
+#~ msgstr "ประวัติการใช้"
+
+#~ msgctxt "@action:inmenu Parent of 'By Name' and 'By Date'"
+#~ msgid "Sort"
+#~ msgstr "เรียงลำดับ"
+
+#~ msgid ""
+#~ "<qt><center><b>%1</b></center><hr />Last visited: %2<br />First visited: "
+#~ "%3<br />Number of times visited: %4</qt>"
+#~ msgstr ""
+#~ "<qt><center><b>%1</b></center><hr>ไปมาล่าสุดเมื่อ: %2<br>ไปมาครั้งแรกเมื่อ: "
+#~ "%3<br>จำนวนครั้งที่ไปมา: %4</qt>"
+
+#~ msgid "Local"
+#~ msgstr "ภายในระบบ"
+
+#~ msgid "Miscellaneous"
+#~ msgstr "เบ็ดเตล็ด"
+
+#~ msgid "Open in New &Window"
+#~ msgstr "เปิ฿ดในหน้าต่างใหม่"
+
+#~ msgid "Open in New Tab"
+#~ msgstr "เปิดในแท็บใหม่"
+
+#~ msgid "&Copy Link Address"
+#~ msgstr "&คัดลอกที่อยู่ของส่วนเชื่อมโยง"
+
+#~ msgid "&Remove Entry"
+#~ msgstr "&ลบรายการ"
+
+#~ msgid "C&lear History"
+#~ msgstr "ล้า&งประวัติการใช้"
+
+#~ msgid "&Preferences..."
+#~ msgstr "&ปรับแต่งค่า..."
+
+#~ msgid "By &Name"
+#~ msgstr "ตาม&ชื่อ"
+
+#~ msgid "By &Date"
+#~ msgstr "ตาม&วันที่"
+
+#~ msgid "Search in history"
+#~ msgstr "ค้นหาในประวัติการใช้"
+
+#~ msgid "Do you really want to clear the entire history?"
+#~ msgstr "คุณต้องการล้างประวัติการใช้ที่มี จริงหรือไม่ ?"
+
+#~ msgid "Clear History?"
+#~ msgstr "จะล้างประวัติการใช้หรือไม่ ?"
+
+#~ msgid "Start without a default window, when called without URLs"
+#~ msgstr "เริ่มทำงานโดยไม่ใช้หน้าต่างโดยปริยาย เมื่อมีการเรียกใช้โดยไม่มีที่อยู่ URL"
+
+#~ msgid ""
+#~ "Preload for later use. This mode does not support URLs on the command line"
+#~ msgstr "ทำการพรีโหลดไว้ก่อนสำหรับใช้ในภายหลัง ซึ่งโหมดนี้จะไม่รองรับที่อยู่ URL บนบรรทัดคำสั่ง"
+
+#~ msgid "Profile to open"
+#~ msgstr "โพรไฟล์ที่จะเปิด"
+
+#~ msgid "List available profiles"
+#~ msgstr "รายการโพรไฟล์ที่มีอยู่"
+
+#~ msgid "List available sessions"
+#~ msgstr "รายการวาระงานที่มีอยู่"
+
+#~ msgid "Session to open"
+#~ msgstr "วาระงานที่จะเปิด"
+
+#~ msgid "Mimetype to use for this URL (e.g. text/html or inode/directory)"
+#~ msgstr ""
+#~ "ประเภท Mime ของแฟ้ม ที่จะใช้กับที่อยู่ URL นี้ (เช่น text/html หรือ inode/directory)"
+
+#~ msgid ""
+#~ "For URLs that point to files, opens the directory and selects the file, "
+#~ "instead of opening the actual file"
+#~ msgstr "สำหรับที่อยู่ URL ที่ชี้ไปที่แฟ้ม ให้เปิดไดเรกทอรีและเลือกที่แฟ้ม แทนที่จะเปิดแฟ้มจริง ๆ"
+
+#~ msgid "Location to open"
+#~ msgstr "ตำแหน่งที่จะเปิด"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Loading..."
+#~ msgstr "กำลังโหลด..."
+
+#~ msgid "Canceled."
+#~ msgstr "ยกเลิกแล้ว"
+
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Reloading the page will discard these changes."
+#~ msgstr ""
+#~ "หน้านี้มีการเปลี่ยนแปลงที่ยังไม่ได้ทำการส่งข้อมูล\n"
+#~ "การเรียกหน้านี้ใหม่จะเป็นการยกเลิกการเปลี่ยนแปลงที่มี"
+
+#~ msgid "Discard Changes?"
+#~ msgstr "จะละทิ้งการเปลี่ยนแปลงหรือไม่ ?"
+
+#~ msgid "&Discard Changes"
+#~ msgstr "ละ&ทิ้งการเปลี่ยนแปลง"
+
+#~ msgid "File Management"
+#~ msgstr "การจัดการแฟ้ม"
+
+#~ msgid "Web Browsing"
+#~ msgstr "การท่องเว็บ"
+
+#~ msgid "Home Folder"
+#~ msgstr "โฟลเดอร์ส่วนตัว"
+
+#~ msgid "Home"
+#~ msgstr "พื้นที่ส่วนตัว"
+
+#~ msgid "Navigate to your 'Home Folder'"
+#~ msgstr "ไปยัง 'โฟลเดอร์ส่วนตัว' ของคุณ"
+
+#~ msgid "Navigate to your local 'Home Folder'"
+#~ msgstr "ไปยัง 'โฟลเดอร์ส่วนตัว' ของคุณภายในระบบ"
+
+#~ msgid "Home Page"
+#~ msgstr "หน้าหลัก"
+
+#~ msgid "Navigate to your 'Home Page'"
+#~ msgstr "ไปยัง 'หน้าหลัก' ของคุณ"
+
+#~ msgid ""
+#~ "<html>Navigate to your 'Home Page'<br /><br />You can configure the "
+#~ "location where this button takes you under <b>Settings -> Configure "
+#~ "Konqueror -> General</b>.</html>"
+#~ msgstr ""
+#~ "<html>ไปยัง 'หน้าหลัก' ของคุณ <br /><br />คุณสามารถปรับแต่งตำแหน่งที่ปุ่มนี้ได้ที่ <b>ตั้งค่า "
+#~ "-> ปรับแต่ง Konqueror -> ค่าทั่วไป</b></html>"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Detaching the tab will discard these changes."
+#~ msgstr ""
+#~ "แท็บนี้มีการเปลี่ยนแปลงที่ยังไม่ได้ทำการส่งข้อมูล\n"
+#~ "การเลิกแนบแท็บจะเป็นการยกเลิกการเปลี่ยนแปลงที่มี"
+
+#~ msgid ""
+#~ "This view contains changes that have not been submitted.\n"
+#~ "Closing the view will discard these changes."
+#~ msgstr ""
+#~ "มุมมองนี้มีการเปลี่ยนแปลงที่ยังไม่ได้ทำการส่งข้อมูล\n"
+#~ "การเปลี่ยนมุมมองจะเป็นการยกเลิกการเปลี่ยนแปลงที่มี"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the tab will discard these changes."
+#~ msgstr ""
+#~ "แท็บนี้มีการเปลี่ยนแปลงที่ยังไม่ได้ทำการส่งข้อมูล\n"
+#~ "การปิดแท็บจะเป็นการยกเลิกการเปลี่ยนแปลงที่มี"
+
+#~ msgid "Do you really want to close all other tabs?"
+#~ msgstr "คุณต้องการปิดแท็บทั้งหมดจริงหรือไม่ ?"
+
+#~ msgid "Close Other Tabs Confirmation"
+#~ msgstr "ยืนยันการปิดแท็บอื่น ๆ"
+
+#~ msgid "Close &Other Tabs"
+#~ msgstr "ปิ&ดแท็บอื่น"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing other tabs will discard these changes."
+#~ msgstr ""
+#~ "แท็บนี้มีการเปลี่ยนแปลงที่ยังไม่ได้ทำการส่งข้อมูล\n"
+#~ "การปิดแท็บอื่น ๆ จะเป็นการยกเลิกการเปลี่ยนแปลงที่มี"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Reloading all tabs will discard these changes."
+#~ msgstr ""
+#~ "แท็บนี้มีการเปลี่ยนแปลงที่ยังไม่ได้ทำการส่งข้อมูล\n"
+#~ "การเรียกแท็บนี้ใหม่จะเป็นการยกเลิกการเปลี่ยนแปลงที่มี"
+
+#~ msgid "Enter Target"
+#~ msgstr "เติมปลายทาง"
+
+#~ msgid "<qt><b>%1</b> is not valid</qt>"
+#~ msgstr "<qt><b>%1</b> ใช้ไม่ได้</qt>"
+
+#~ msgid "Copy selected files from %1 to:"
+#~ msgstr "สำเนาแฟ้มที่เลือกจาก %1 ไปยัง :"
+
+#~ msgid "Move selected files from %1 to:"
+#~ msgstr "ย้ายแฟ้มที่เลือกจาก %1 ไปยัง :"
+
+#~ msgctxt "This menu entry empties the closed items history"
+#~ msgid "Empty Closed Items History"
+#~ msgstr "ล้างประวัติแท็บที่ปิดไปแล้ว"
+
+#~ msgid "Save As..."
+#~ msgstr "บันทึกเป็น..."
+
+#~ msgid "Manage..."
+#~ msgstr "จัดการ..."
+
+#~ msgid "New &Window"
+#~ msgstr "เปิ&ดหน้าต่างใหม่"
+
+#~ msgid "&Duplicate Window"
+#~ msgstr "เปิดแบบหน้าต่างนี้อี&กหน้าต่าง"
+
+#~ msgid "Send &Link Address..."
+#~ msgstr "ส่งที่อยู่ของส่วนเ&ชื่อมโยง..."
+
+#~ msgid "S&end File..."
+#~ msgstr "&ส่งแฟ้ม..."
+
+#~ msgid "&Open Location"
+#~ msgstr "เ&ปิดตำแหน่ง"
+
+#~ msgid "&Open File..."
+#~ msgstr "เ&ปิดแฟ้ม..."
+
+#~ msgid "&Find File..."
+#~ msgstr "ค้&นหาแฟ้ม..."
+
+#~ msgid "&Use index.html"
+#~ msgstr "ใ&ช้แฟ้ม index.html"
+
+#~ msgid "Lock to Current Location"
+#~ msgstr "ล็อคไปยังตำแหน่งปัจจุบัน"
+
+#~ msgctxt "This option links konqueror views"
+#~ msgid "Lin&k View"
+#~ msgstr "เชื่&อมมุมมอง"
+
+#~ msgid "&Up"
+#~ msgstr "&ขึ้น"
+
+#~ msgid "Closed Items"
+#~ msgstr "รายการที่ปิดไปแล้ว"
+
+#~ msgid "Sessions"
+#~ msgstr "วาระการใช้งาน"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Most Often Visited"
+#~ msgstr "ที่อยู่ที่เรียกใช้บ่อย"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Recently Visited"
+#~ msgstr "ที่อยู่ที่เรียกใช้เมื่อเร็ว ๆ นี้"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History"
+#~ msgstr "แสดงประวัติ"
+
+#~ msgid "&Save View Profile As..."
+#~ msgstr "&บันทึกโพรไฟล์มุมมองเป็น..."
+
+#~ msgid "Configure Extensions..."
+#~ msgstr "ปรับแต่งส่วนเสริม..."
+
+#~ msgid "Configure Spell Checking..."
+#~ msgstr "ปรับแต่งส่วนตรวจคำสะกด..."
+
+#~ msgid "Split View &Left/Right"
+#~ msgstr "แบ่งมุมมองซ้า&ย/ขวา"
+
+#~ msgid "Split View &Top/Bottom"
+#~ msgstr "แบ่งมุมมองบน/&ล่าง"
+
+#~ msgid "&New Tab"
+#~ msgstr "เปิดแท็บใ&หม่"
+
+#~ msgid "&Duplicate Current Tab"
+#~ msgstr "เปิดแท็บปัจจุบั&นซ้ำ"
+
+#~ msgid "Detach Current Tab"
+#~ msgstr "เลิกแนบแท็บปัจจุบัน"
+
+#~ msgid "&Close Active View"
+#~ msgstr "&ปิดมุมมองที่ทำงานอยู่"
+
+#~ msgid "Close Current Tab"
+#~ msgstr "ปิดแท็บปัจจุบัน"
+
+#~ msgid "Activate Next Tab"
+#~ msgstr "เรียกใช้งานแท็บถัดไป"
+
+#~ msgid "Activate Previous Tab"
+#~ msgstr "เรียกใช้งานแท็บก่อนหน้านี้"
+
+#~ msgid "Activate Tab %1"
+#~ msgstr "เรียกใช้แท็บ %1"
+
+#~ msgid "Move Tab Left"
+#~ msgstr "ย้ายแท็บไปด้านซ้าย"
+
+#~ msgid "Move Tab Right"
+#~ msgstr "ย้ายแท็บไปด้านขวา"
+
+#~ msgid "Dump Debug Info"
+#~ msgstr "ดึงข้อมูลดีบั๊ก"
+
+#~ msgid "C&onfigure View Profiles..."
+#~ msgstr "ป&รับแต่งโพรไฟล์มุมมอง..."
+
+#~ msgid "Load &View Profile"
+#~ msgstr "โหลดโพรไฟล์&มุมมอง"
+
+#~ msgid "&Reload"
+#~ msgstr "โ&หลดใหม่"
+
+#~ msgid "&Reload All Tabs"
+#~ msgstr "เรียกใช้แท็บทั้งห&มดใหม่"
+
+#~ msgid "&Force Reload"
+#~ msgstr "&บังคับให้โหลดใหม่"
+
+#~ msgid "&Stop"
+#~ msgstr "&หยุด"
+
+#~ msgid "Throbber"
+#~ msgstr "ภาพเคลื่อนไหวแสดงการทำงาน"
+
+#~ msgid "L&ocation: "
+#~ msgstr "ตำแ&หน่ง:"
+
+#~ msgid "Location Bar"
+#~ msgstr "แถบตำแหน่ง"
+
+#~ msgid ""
+#~ "<html>Location Bar<br /><br />Enter a web address or search term.</html>"
+#~ msgstr ""
+#~ "<html>แถบตำแหน่ง<br /><br />ใส่ตำแหน่งที่อยู่เว็บหรือข้อความที่ต้องการค้นหา</html>"
+
+#~ msgid "Clear Location Bar"
+#~ msgstr "ล้างแถบตำแหน่ง"
+
+#~ msgid ""
+#~ "<html>Clear Location bar<br /><br />Clears the contents of the location "
+#~ "bar.</html>"
+#~ msgstr "<html>ล้างแถบตำแหน่ง<br /><br />ล้างเนื้อหาของแถบป้อนตำแหน่ง</html>"
+
+#~ msgid "&Bookmarks"
+#~ msgstr "&ที่คั่นหน้า"
+
+#~ msgid "Kon&queror Introduction"
+#~ msgstr "แ&นะนำ Konqueror"
+
+#~ msgid "Go"
+#~ msgstr "ไป"
+
+#~ msgid ""
+#~ "<html>Go<br /><br />Goes to the page that has been entered into the "
+#~ "location bar.</html>"
+#~ msgstr "<html>ไป<br /><br />ไปยังหน้าเว็บตามที่อยู่ที่ใส่ไว้ในแถบตำแหน่ง</html>"
+
+#~ msgid ""
+#~ "<html>Enter the parent folder<br /><br />For instance, if the current "
+#~ "location is file:/home/%1 clicking this button will take you to file:/"
+#~ "home.</html>"
+#~ msgstr ""
+#~ "<html>เข้าไปยังโฟลเดอร์แม่ <br /><br /> เช่น หากตำแหน่งปัจจุบันคือ file:home/%1 "
+#~ "การคลิกที่ปุ่มนี้จะนำคุณไปยังตำแหน่ง file:/home</html>"
+
+#~ msgid "Enter the parent folder"
+#~ msgstr "เข้าไปยังโฟลเดอร์แม่"
+
+#~ msgid "Move backwards one step in the browsing history"
+#~ msgstr "ไปยังตำแหน่งก่อนหน้าหนึ่งระดับในประวัติการเรียกดู"
+
+#~ msgid "Move forward one step in the browsing history"
+#~ msgstr "ไปยังตำแหน่งถัดไปหนึ่งระดับในประวัติการเรียกดู"
+
+#~ msgid "Move backwards one step in the closed tabs history"
+#~ msgstr "ไปยังตำแหน่งก่อนหน้าหนึ่งระดับในประวัติการเรียกดู"
+
+#~ msgid ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.</html>"
+#~ msgstr ""
+#~ "<html>ทำการโหลดเอกสารที่กำลังแสดงอยู่ในปัจจุบันอีกครั้ง<br /><br /"
+#~ ">ซึ่งอาจจำเป็นในการรีเฟรชหน้าเว็บที่อาจจะมีการแก้ไขภายหลังจากที่หน้านั้นได้โหลดขึ้นมา "
+#~ "เพื่อให้เห็นสิ่งที่ได้ทำการแก้ไขเปลี่ยนแปลงไป</html>"
+
+#~ msgid "Reload the currently displayed document"
+#~ msgstr "เรียกเอกสารที่แสดงผลอยู่ในปัจจุบันใหม่อีกครั้ง"
+
+#~ msgid ""
+#~ "<html>Reload all currently displayed documents in tabs<br /><br />This "
+#~ "may, for example, be needed to refresh web pages that have been modified "
+#~ "since they were loaded, in order to make the changes visible.</html>"
+#~ msgstr ""
+#~ "<html>โหลดเอกสารทั้งหมดที่กำลังแสดงอยู่ในแท็บใหม่อีกครั้ง<br /><br /"
+#~ ">ซึ่งอาจจำเป็นในการรีเฟรชหน้าเว็บที่อาจจะมีการแก้ไขภายหลังจากที่หน้านั้นได้โหลดขึ้นมา "
+#~ "เพื่อให้เห็นสิ่งที่ได้ทำการแก้ไขเปลี่ยนแปลงไป</html>"
+
+#~ msgid "Reload all currently displayed document in tabs"
+#~ msgstr "เรียกเอกสารทั้งหมดที่แสดงผลอยู่ในปัจจุบันในแท็บใหม่อีกครั้ง"
+
+#~ msgid ""
+#~ "<html>Stop loading the document<br /><br />All network transfers will be "
+#~ "stopped and Konqueror will display the content that has been received so "
+#~ "far.</html>"
+#~ msgstr ""
+#~ "<html>หยุดเรียกเอกสาร<br /><br />การถ่ายโอนทั้งหมดทางเครือข่ายจะหยุดลง และ "
+#~ "Konqueror จะแสดงเนื้อหาที่ได้รับมาขณะนี้</html>"
+
+#~ msgid ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.  Any images on "
+#~ "the page are downloaded again, even if cached copies exist.</html>"
+#~ msgstr ""
+#~ "<html>ทำการโหลดเอกสารที่กำลังแสดงอยู่ในปัจจุบันใหม่อีกครั้ง<br /><br /"
+#~ ">ซึ่งอาจจำเป็นในการปรับปรุงหน้าเว็บที่อาจจะมีการแก้ไขภายหลังจากที่หน้านั้นได้โหลดขึ้นมา "
+#~ "เพื่อให้เห็นสิ่งที่ได้ทำการแก้ไขเปลี่ยนแปลงไป "
+#~ "โดยอาจจะมีการดาวน์โหลดรูปภาพบนหน้าเว็บใหม่อีกครั้ง แม้ว่าจะมีสำเนาอยู่ในแคชแล้วก็ตาม</"
+#~ "html>"
+
+#~ msgid ""
+#~ "Force a reload of the currently displayed document and any contained "
+#~ "images"
+#~ msgstr "บังคับให้ทำการเรียกเอกสารและรูปภาพทั้งหมดที่แสดงผลอยู่ในปัจจุบันใหม่อีกครั้ง"
+
+#~ msgid "Stop loading the document"
+#~ msgstr "หยุดการเรียกข้อมูลเอกสาร"
+
+#~ msgid ""
+#~ "<html>Cut the currently selected text or item(s) and move it to the "
+#~ "system clipboard<br /><br />This makes it available to the <b>Paste</b> "
+#~ "command in Konqueror and other KDE applications.</html>"
+#~ msgstr ""
+#~ "<html>ตัดข้อความหรือรายการที่เลือกไว้และย้ายไปที่คลิปบอร์ดของระบบ<br /><br /"
+#~ ">ซึ่งนี่จะทำให้สิ่งที่ถูกตัดไว้ใช้ได้กับคำสั่ง <b>วาง</b> ใน Konqueror และโปรแกรมอื่น ๆ ของ "
+#~ "KDE</html>"
+
+#~ msgid "Move the selected text or item(s) to the clipboard"
+#~ msgstr "ย้ายข้อความหรือรายการที่คุณเลือกไว้ไปยังคลิปบอร์ด"
+
+#~ msgid ""
+#~ "<html>Copy the currently selected text or item(s) to the system "
+#~ "clipboard<br /><br />This makes it available to the <b>Paste</b> command "
+#~ "in Konqueror and other KDE applications.</html>"
+#~ msgstr ""
+#~ "<html>คัดลอกข้อความ หรือรายการที่เลือกไว้ในปัจจุบัน ไปยังคลิปบอร์ดของระบบ <br /><br /"
+#~ ">ซึ่งจะทำให้สิ่งที่ได้คัดลอกไว้ใช้กับคำสั่ง <b>วาง</b> ใน Konqueror และโปรแกรมของ KDE "
+#~ "ได้</html>"
+
+#~ msgid "Copy the selected text or item(s) to the clipboard"
+#~ msgstr "คัดลอกข้อความหรือรายการที่คุณเลือกไว้ไปยังคลิปบอร์ดของระบบ"
+
+#~ msgid ""
+#~ "<html>Paste the previously cut or copied clipboard contents<br /><br /"
+#~ ">This also works for text copied or cut from other KDE applications.</"
+#~ "html>"
+#~ msgstr ""
+#~ "<html>วางเนื้อหาของคลิปบอร์ดที่ได้ตัดหรือคัดลอกไว้ก่อนหน้านี้<br /><br /> "
+#~ "นี่ยังใช้ได้กับข้อความที่ได้คัดลอก หรือตัดมาจากโปรแกรมของ KDE อื่นๆ ได้อีก</html>"
+
+#~ msgid "Paste the clipboard contents"
+#~ msgstr "วางเนื้อหาจากคลิปบอร์ด"
+
+#~ msgid ""
+#~ "<html>Print the currently displayed document<br /><br />You will be "
+#~ "presented with a dialog where you can set various options, such as the "
+#~ "number of copies to print and which printer to use.<br /><br />This "
+#~ "dialog also provides access to special KDE printing services such as "
+#~ "creating a PDF file from the current document.</html>"
+#~ msgstr ""
+#~ "<html>พิมพ์เอกสารที่แสดงอยู่ในปัจจุบัน<br /><br />คุณจะเห็นกล่องตอบโต้ "
+#~ "ที่จะให้คุณตั้งค่าตัวเลือกต่างๆ ได้ เช่น จำนวนสำเนาที่จะพิมพ์ และเครื่องพิมพ์ที่คุณจะใช้ <br /"
+#~ "><br />กล่องตอบโต้นี้ยังจะให้คุณสามารถเข้าถึงบริการการพิมพ์แบบพิเศษของ KDE เช่น "
+#~ "การสร้างแฟ้ม PDF จากเอกสารปัจจุบัน</html>"
+
+#~ msgid "Print the current document"
+#~ msgstr "พิมพ์เอกสารปัจจุบัน"
+
+#~ msgid "If present, open index.html when entering a folder."
+#~ msgstr "จะมีการเปิดแฟ้ม index.html (ถ้ามี) เมื่อเข้าไปในโฟลเดอร์"
+
+#~ msgid ""
+#~ "A locked view cannot change folders. Use in combination with 'link view' "
+#~ "to explore many files from one folder"
+#~ msgstr ""
+#~ "มุมมองที่ถูกล็อคไว้ไม่สามารถเปลี่ยนโฟลเดอร์ได้ ใช้ร่วมกับ 'มุมมองเชื่อมโยง' เพื่อดูแฟ้มต่างๆ "
+#~ "จากหนึ่งโฟลเดอร์"
+
+#~ msgid ""
+#~ "Sets the view as 'linked'. A linked view follows folder changes made in "
+#~ "other linked views."
+#~ msgstr ""
+#~ "ตั้งค่ามุมมองให้เป็นแบบ 'เชื่อมโยง' "
+#~ "มุมมองที่เชื่อมกันไว้จะคอยตามความเปลี่ยนแปลงของโฟลเดอร์ที่เกิดขึ้นในมุมมองอื่นที่โยงกันอยู่"
+
+#~ msgid "Copy &Files..."
+#~ msgstr "&สำเนาแฟ้ม..."
+
+#~ msgid "M&ove Files..."
+#~ msgstr "ย้า&ยแฟ้ม..."
+
+#~ msgid ""
+#~ "You have requested to open more than 20 bookmarks in tabs. This might "
+#~ "take a while. Continue?"
+#~ msgstr ""
+#~ "คุณได้ร้องขอทำการเปิดคั่นหน้าเป็นแท็บมากกว่า 20 รายการ ซึ่งอาจกินเวลานานพอสมควร "
+#~ "ต้องการทำต่อไปหรือไม่ ?"
+
+#~ msgid "Open bookmarks folder in new tabs"
+#~ msgstr "เปิดโฟลเดอร์ที่คั่นหน้าในแท็บใหม่"
+
+#~ msgid "Open in T&his Window"
+#~ msgstr "เปิดในหน้าต่าง&นี้"
+
+#~ msgid "Open the document in current window"
+#~ msgstr "เปิดเอกสารในหน้าต่างปัจจุบัน"
+
+#~ msgid "Open the document in a new window"
+#~ msgstr "เปิดเอกสารในหน้าต่างใหม่"
+
+#~ msgid "Open in &New Tab"
+#~ msgstr "เปิดในแ&ท็บใหม่"
+
+#~ msgid "Open the document in a new tab"
+#~ msgstr "เปิดเอกสารในแท็บใหม่"
+
+#~ msgid "&Open With"
+#~ msgstr "เปิดใช้&ด้วย"
+
+#~ msgid "Open with %1"
+#~ msgstr "เปิดใช้ด้วย %1"
+
+#~ msgctxt "@action:inmenu View"
+#~ msgid "&View Mode"
+#~ msgstr "แบบ&มุมมอง"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window, are you sure you want to quit?"
+#~ msgstr ""
+#~ "คุณได้เปิดใช้งานแท็บในหน้าต่างนี้ไว้อยู่หลายแท็บ \n"
+#~ "แน่ใจหรือว่าต้องการจะออกจากโปรแกรมจริง ๆ ?"
+
+#~ msgid "Confirmation"
+#~ msgstr "การยืนยัน"
+
+#~ msgid "C&lose Current Tab"
+#~ msgstr "ปิ&ดแท็บปัจจุบัน"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the window will discard these changes."
+#~ msgstr ""
+#~ "แท็บนี้มีการเปลี่ยนแปลงที่ยังไม่ได้ทำการส่งข้อมูล\n"
+#~ "การปิดหน้าต่างนี้จะเป็นการทิ้งการเปลี่ยนแปลงเหล่านี้ไป"
+
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Closing the window will discard these changes."
+#~ msgstr ""
+#~ "หน้าเว็บนี้มีการเปลี่ยนแปลงที่ยังไม่ได้ทำการส่งข้อมูล\n"
+#~ "การปิดหน้าต่างนี้จะเป็นการทิ้งการเปลี่ยนแปลงเหล่านี้ไป"
+
+#~ msgid ""
+#~ "Your sidebar is not functional or unavailable. A new entry cannot be "
+#~ "added."
+#~ msgstr "แถบด้านข้างของคุณใช้งานไม่ได้หรือไม่มี ไม่สามารถเพิ่มรายการใหม่ได้"
+
+#~ msgid "Web Sidebar"
+#~ msgstr "แถบด้านข้างเว็บ"
+
+#~ msgid "Add new web extension \"%1\" to your sidebar?"
+#~ msgstr "เพิ่มส่วนเสริมเว็บ \"%1\" ไปยังแถบด้านข้างหรือไม่ ?"
+
+#~ msgid "Add"
+#~ msgstr "เพิ่ม"
+
+#~ msgid "Do Not Add"
+#~ msgstr "ไม่เพิ่ม"
+
+#~ msgid ""
+#~ "There appears to be a configuration error. You have associated Konqueror "
+#~ "with %1, but it cannot handle this file type."
+#~ msgstr ""
+#~ "การปรับแต่งค่ามีความผิดพลาด คุณได้กำหนดให้ใช้ Konqueror กับ %1 "
+#~ "แต่มันไม่สามารถจัดการแฟ้มประเภทนี้ได้"
+
+#~ msgid "Profile Management"
+#~ msgstr "การจัดการโพรไฟล์"
+
+#~ msgid "&Rename Profile"
+#~ msgstr "เปลี่&ยนชื่อโพรไฟล์"
+
+#~ msgid "&Delete Profile"
+#~ msgstr "&ลบโพรไฟล์"
+
+#~ msgid "Manage Sessions"
+#~ msgstr "จัดการวาระการใช้งาน"
+
+#~ msgid "&Open"
+#~ msgstr "เ&ปิด"
+
+#~ msgid "Rename Session"
+#~ msgstr "เปลี่ยนชื่อวาระการใช้งาน"
+
+#~ msgid "Save Session"
+#~ msgstr "บันทึกวาระการใช้งาน"
+
+#~ msgid ""
+#~ "A session with the name '%1' already exists, do you want to overwrite it?"
+#~ msgstr "มีวาระการใช้งานที่ชื่อ '%1' อยู่แล้ว คุณต้องการจะเขียนทับมันหรือไม่ ?"
+
+#~ msgid "Session exists. Overwrite?"
+#~ msgstr "มีวาระการใช้งานอยู่แล้ว เขียนทับหรือไม่ ?"
+
+#~ msgid ""
+#~ "Konqueror did not close correctly. Would you like to restore the previous "
+#~ "session?"
+#~ msgstr ""
+#~ "โปรแกรม Konqueror ไม่ได้ถูกปิดโปรแกรมอย่างถูกต้อง "
+#~ "คุณต้องการจะเรียกคืนวาระการใช้งานก่อนหน้านี้หรือไม่ ?"
+
+#~ msgid "Restore Session?"
+#~ msgstr "เรียกคืนวาระงานเดิมหรือไม่ ?"
+
+#~ msgid "Restore Session"
+#~ msgstr "เรียกคืนวาระงาน"
+
+#~ msgid "Do Not Restore"
+#~ msgstr "ไม่ต้องเรียกคืน"
+
+#~ msgid "Ask Me Later"
+#~ msgstr "ถามอีกครั้งในภายหลัง"
+
+#~ msgid ""
+#~ "This bar contains the list of currently open tabs. Click on a tab to make "
+#~ "it active. You can also use keyboard shortcuts to navigate through tabs. "
+#~ "The text on the tab shows the content currently open in it; place your "
+#~ "mouse over the tab to see the full title, in case it has been shortened "
+#~ "to fit the tab width."
+#~ msgstr ""
+#~ "แถบนี้จะบรรจุรายการของแท็บที่เปิดใช้งานอยู่ในปัจจุบัน คลิกบนแท็บเพื่อเรียกใช้งานมัน "
+#~ "คุณสามารถใช้ปุ่มพิมพ์ลัดเพื่อสลับไปยังแท็บต่าง ๆ ได้ สำหรับข้อความที่อยู่บนแท็บนั้น "
+#~ "เป็นหัวเรื่องของเว็บไซต์ที่เปิดอยู่ในปัจจุบัน หากมันสั้นไปให้ใช้ตัวชี้ของเมาส์ไปอยู่เหนือแท็บ "
+#~ "เพื่อดูหัวเรื่องเต็ม ๆ ของเว็บไซต์"
+
+#~ msgid "Open a new tab"
+#~ msgstr "เปิดแท็บใหม่"
+
+#~ msgid "Close the current tab"
+#~ msgstr "ปิดแท็บปัจจุบัน"
+
+#~ msgid "&Duplicate Tab"
+#~ msgstr "เปิดแท็&บใหม่เหมือนแท็บนี้"
+
+#~ msgid "&Reload Tab"
+#~ msgstr "โห&ลดแท็บทั้งหมดใหม่"
+
+#~ msgid "Other Tabs"
+#~ msgstr "แท็บอื่น"
+
+#~ msgid "D&etach Tab"
+#~ msgstr "เลิกการแ&นบแท็บ"
+
+#~ msgid "&Close Tab"
+#~ msgstr "&ปิดแท็บ"
+
+#~ msgid "Und&o: Closed Tab"
+#~ msgstr "เลิ&กทำ: ปิดแท็บ"
+
+#~ msgid "Und&o: Closed Window"
+#~ msgstr "เลิกทำ: ปิดแท็บ"
+
+#~ msgid "Und&o"
+#~ msgstr "เลิ&กทำ"
+
+#~ msgid ""
+#~ "The page you are trying to view is the result of posted form data. If you "
+#~ "resend the data, any action the form carried out (such as search or "
+#~ "online purchase) will be repeated. "
+#~ msgstr ""
+#~ "หน้าที่คุณพยายามแสดงผลเป็นผลลัพธ์ของการส่งข้อมูลในแบบฟอร์ม ถ้าคุณส่งข้อมูลอีกครั้ง "
+#~ "การกระทำใด ๆ ที่แบบฟอร์มกำลังทำอยู่ (เช่น การค้นหา หรือการซื้อของออนไลน์) จะถูกกระทำซ้ำ"
+
+#~ msgid "Warning"
+#~ msgstr "คำเตือน"
+
+#~ msgid "Resend"
+#~ msgstr "ส่งอีกครั้ง"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window.\n"
+#~ "Loading a view profile will close them."
+#~ msgstr ""
+#~ "คุณได้เปิดแท็บไว้หลายแท็บบนหน้าต่างนี้\n"
+#~ "การเรียกใช้โพรไฟล์มุมมองจะเป็นการปิดแท็บ"
+
+#~ msgid "Load View Profile"
+#~ msgstr "เรียกใช้โพรไฟล์มุมมอง"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Loading a profile will discard these changes."
+#~ msgstr ""
+#~ "แท็บนี้มีส่วนเปลี่ยนแปลงที่ยังไม่ได้ส่งข้อมูล\n"
+#~ "การเรียกใช้โพรไฟล์จะเป็นการยกเลิกการเปลี่ยนแปลงที่มี"
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "History Sidebar Module"
+#~ msgstr "มอดูลแถบข้าง"
+
+#~ msgctxt "@title:tab"
+#~ msgid "History"
+#~ msgstr "ประวัติการใช้"
+
+#~ msgid " day"
+#~ msgid_plural " days"
+#~ msgstr[0] " วัน"
+
+#~ msgid "Minute"
+#~ msgid_plural "Minutes"
+#~ msgstr[0] "นาที"
+
+#~ msgid "Day"
+#~ msgid_plural "Days"
+#~ msgstr[0] "วัน"
+
+#~ msgid "<h1>History Sidebar</h1> You can configure the history sidebar here."
+#~ msgstr "<h1>แถบประวัติการใช้</h1> คุณสามารถปรับแต่งแถบประวัติการใช้งานด้านข้าง ได้ที่นี่"
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Places Sidebar Module"
+#~ msgstr "มอดูลแถบข้างที่หลัก ๆ"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Places"
+#~ msgstr "ที่หลัก ๆ"
+
+#~ msgid "Extended Sidebar"
+#~ msgstr "ส่วนขยาย-แถบบาร์ด้านข้าง"
+
+#~ msgid "Rollback to System Default"
+#~ msgstr "ย้อนกลับไปใช้ค่าปริยายของระบบ"
+
+#~ msgid "Configure Sidebar"
+#~ msgstr "ปรับแต่งแถบบาร์ด้านข้าง"
+
+#~ msgid "Add New"
+#~ msgstr "เพิ่มใหม่"
+
+#~ msgid "Multiple Views"
+#~ msgstr "หลายมุมมอง"
+
+#~ msgid "Show Tabs Left"
+#~ msgstr "แสดงแท็บทางด้านซ้าย"
+
+#~ msgid "Show Configuration Button"
+#~ msgstr "แสดงปุ่มปรับแต่ง"
+
+#~ msgid "Close Sidebar"
+#~ msgstr "ปิดแถบข้าง"
+
+#~ msgid "This entry already exists."
+#~ msgstr "มีรายการนี้อยู่แล้ว"
+
+#~ msgid ""
+#~ "<qt>This removes all your entries from the sidebar and adds the system "
+#~ "default ones.<br /><b>This procedure is irreversible</b><br />Do you want "
+#~ "to proceed?</qt>"
+#~ msgstr ""
+#~ "<qt>นี่จะเป็นการลบรายการทั้งหมดของคุณจากแถบด้านข้าง "
+#~ "และเพิ่มรายการโดยปริยายของระบบเข้ามาแทน<br /><b>ขั้นตอนนี้ไม่สามารถย้อนกลับได้</"
+#~ "b><br />คุณต้องการจะทำต่อหรือไม่?</qt>"
+
+#~ msgid "Show Tabs Right"
+#~ msgstr "แสดงแท็บด้านขวา"
+
+#~ msgid "Set Name"
+#~ msgstr "ตั้งชื่อ"
+
+#~ msgid "Enter the name:"
+#~ msgstr "ป้อนชื่อ:"
+
+#~ msgid "Enter a URL:"
+#~ msgstr "ป้อนที่อยู่ URL:"
+
+#~ msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
+#~ msgstr "<qt>คุณต้องการลบแท็บ <b>%1</b> จริงหรือไม่ ?</qt>"
+
+#~ msgid ""
+#~ "You have hidden the sidebar configuration button. To make it visible "
+#~ "again, click the right mouse button on any of the sidebar buttons and "
+#~ "select \"Show Configuration Button\"."
+#~ msgstr ""
+#~ "คุณได้ทำการซ่อนปุ่มปรับแต่งถาดข้างไว้ หากต้องการให้มันแสดงอีกครั้ง ให้คลิกเมาส์ปุ่มขวาบนที่ใด ๆ "
+#~ "ของปุ่มบนถาดนำร่อง แล้วเลือก \"แสดงปุ่มปรับแต่ง\""
+
+#~ msgid "Set Name..."
+#~ msgstr "ตั้งชื่อ..."
+
+#~ msgid "Set URL..."
+#~ msgstr "ตั้งที่อยู่ URL..."
+
+#~ msgid "Set Icon..."
+#~ msgstr "ตั้งค่าไอคอน..."
+
+#~ msgid "Remove"
+#~ msgstr "ลบออก"
+
+#~ msgid "Web module"
+#~ msgstr "มอดูลเว็บ"
+
+#~ msgid "&Create New Folder"
+#~ msgstr "ส&ร้างโฟลเดอร์ใหม่..."
+
+#~ msgid "Delete Folder"
+#~ msgstr "ลบโฟลเดอร์"
+
+#~ msgid "Delete Bookmark"
+#~ msgstr "ลบคั่นหน้า"
+
+#~ msgid "Properties"
+#~ msgstr "คุณสมบัติ"
+
+#~ msgid "Open in New Window"
+#~ msgstr "เปิดในหน้าต่างใหม่"
+
+#~ msgid "Open Folder in Tabs"
+#~ msgstr "เปิดโฟลเดอร์ในแท็บ"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "คัดลอกที่อยู่ของส่วนเชื่อมโยง"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark folder\n"
+#~ "\"%1\"?"
+#~ msgstr "คุณแน่ใจหรือไม่ที่ต้องจะลบโฟลเดอร์ที่คั่นหน้า \"%1\" นี้ ?"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark\n"
+#~ "\"%1\"?"
+#~ msgstr "คุณแน่ใจหรือไม่ที่ต้องการจะลบคั่นหน้า \"%1\" นี้ ?"
+
+#~ msgid "Bookmark Folder Deletion"
+#~ msgstr "เครื่องมือลบโฟลเดอร์ที่คั่นหน้า"
+
+#~ msgid "Bookmark Deletion"
+#~ msgstr "เครื่องมือลบที่คั่นหน้า"
+
+#~ msgid "Bookmark Properties"
+#~ msgstr "คุณสมบัติที่คั่นหน้า"
+
+#~ msgid "&Update"
+#~ msgstr "&อัปเดต"
+
+#~ msgid "Name:"
+#~ msgstr "ชื่อ:"
+
+#~ msgid "Location:"
+#~ msgstr "ตำแหน่ง:"
+
+#~ msgid "Add Bookmark"
+#~ msgstr "เพิ่มคั่นหน้า"
+
+#~ msgid "Cannot find parent item %1 in the tree. Internal error."
+#~ msgstr "ไม่สามารถค้นพบรายการแม่ %1 ในมุมมองต้นไม้ เกิดความผิดพลาดภายใน"
+
+#~ msgid "&Create New Folder..."
+#~ msgstr "ส&ร้างโฟลเดอร์ใหม่..."
+
+#~ msgid "Move to Trash"
+#~ msgstr "ทิ้งลงถังขยะ"
+
+#~ msgid "Rename"
+#~ msgstr "เปลี่ยนชื่อ"
+
+#~ msgid "Delete Link"
+#~ msgstr "ลบจุดเชื่อมโยง"
+
+#~ msgid "New Folder"
+#~ msgstr "โฟลเดอร์ใหม่"
+
+#~ msgid "Create New Folder"
+#~ msgstr "สร้างโฟลเดอร์ใหม่"
+
+#~ msgid "Enter folder name:"
+#~ msgstr "ป้อนชื่อโฟลเดอร์:"
+
+#~ msgctxt "@label"
+#~ msgid "Name:"
+#~ msgstr "ชื่อ:"
+
+#~ msgctxt "@label"
+#~ msgid "Path or URL:"
+#~ msgstr "พาธหรือที่อยู่ URL:"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add folder sidebar module"
+#~ msgstr "เพิ่มมอดูลแถบข้างโฟลเดอร์"
+
+#~ msgid "&Open Link"
+#~ msgstr "เ&ปิดจุดเชื่อมโยง"
+
+#~ msgid "Set &Automatic Reload"
+#~ msgstr "ตั้งค่าการอ่านใหม่&อัตโนมัติ"
+
+#~ msgid "Set Refresh Timeout (0 disables)"
+#~ msgstr "ตั้งค่าการหมดเวลาอ่านใหม่ (ยกเว้น 0)"
+
+#~ msgid " min"
+#~ msgstr " นาที"
+
+#~ msgid " sec"
+#~ msgstr " วินาที"
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Web Sidebar Module"
+#~ msgstr "มอดูลแถบข้างเว็บ"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add web sidebar module"
+#~ msgstr "เพิ่มมอดูลแถบข้างเว็บ"
+
+#~ msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
+#~ msgid "Be free."
+#~ msgstr "สู่เสรี"
+
+#~ msgid ""
+#~ "Konqueror is a web browser, file manager and universal document viewer."
+#~ msgstr ""
+#~ "Konqueror คือโปรแกรมเว็บเบราว์เซอร์, โปรแกรมจัดการแฟ้ม "
+#~ "และโปรแกรมดูเอกสารครอบจักรวาล"
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "Starting Points"
+#~ msgstr "หน้าเริ่มต้น"
+
+#~ msgid "Introduction"
+#~ msgstr "บทแนะนำ"
+
+#~ msgid "Tips"
+#~ msgstr "เคล็ดลับ"
+
+#~ msgid "Specifications"
+#~ msgstr "การรองรับข้อกำหนดต่าง ๆ"
+
+#~ msgid "Your personal files"
+#~ msgstr "ที่เก็บแฟ้มส่วนตัวของคุณ"
+
+#~ msgid "Trash"
+#~ msgstr "ถังขยะ"
+
+#~ msgid "Browse and restore the trash"
+#~ msgstr "เรียกดูและเรียกคืนสิ่งที่อยู่ในถังขยะ"
+
+#~ msgid "Network Folders"
+#~ msgstr "โฟลเดอร์บนเครือข่าย"
+
+#~ msgid "Shared files and folders"
+#~ msgstr "ที่เก็บแฟ้มและโฟลเดอร์ที่ใช้ร่วมกัน"
+
+#~ msgid "Bookmarks"
+#~ msgstr "ที่คั่นหน้า"
+
+#~ msgid "Quick access to your bookmarks"
+#~ msgstr "เข้าใช้คั่นหน้าของคุณแบบด่วน"
+
+#~ msgid "Next: An Introduction to Konqueror"
+#~ msgstr "ถัดไป: แนะนำ Konqueror "
+
+#~ msgid "Search the Web"
+#~ msgstr "ค้นหาจากเว็บ"
+
+#~ msgid ""
+#~ "Konqueror makes working with and managing your files easy. You can browse "
+#~ "both local and networked folders while enjoying advanced features such as "
+#~ "the powerful sidebar and file previews."
+#~ msgstr ""
+#~ "Konqueror สามารถใช้ทำงานและจัดการกับแฟ้มของคุณได้อย่างง่ายดาย "
+#~ "คุณสามารถใช้เรียกดูแฟ้มได้ ไม่ว่าจะเป็นแฟ้มภายในเครื่องของคุณเอง "
+#~ "หรือจะเป็นโฟลเดอร์บนเครือข่ายก็ได้เช่นกัน "
+#~ "นอกจากนี้แล้วยังมีคุณสมบัติพิเศษสำหรับช่วยในการใช้งานให้ง่ายขึ้นอีกมากมาย "
+#~ "เช่นถาดด้านข้างสำหรับการทำงานหลายอย่าง รวมไปถึงคุณสมบัติในการแสดงตัวอย่างของแฟ้มด้วย"
+
+#~ msgid ""
+#~ "Konqueror is also a full featured and easy to use web browser which you "
+#~ "can use to explore the Internet. Enter the address (e.g. <a href=\"http://"
+#~ "www.kde.org\">http://www.kde.org</a>) of a web page you would like to "
+#~ "visit in the location bar and press Enter, or choose an entry from the "
+#~ "Bookmarks menu."
+#~ msgstr ""
+#~ "Konqueror นั้นยังเป็นเว็บเบราว์เซอร์ที่มีความสามารถเต็มที่ และใช้งานได้ง่าย "
+#~ "ซึ่งคุณสามารถใช้ท่องอินเทอร์เน็ตได้ ใส่ที่อยู่ (เช่น <a href=\"http://www.kde.org\"> "
+#~ "http://www.kde.org</a>) ของหน้าเว็บที่คุณต้องการจะไปในแถบใส่ที่อยู่ตามด้วยการกดแป้นพิมพ์ "
+#~ "Enter หรืออาจจะเลือกที่อยู่ที่บันทึกไว้แล้วในรายการบนเมนู 'ที่คั่นหน้า' ก็ได้เช่นกัน"
+
+#~ msgid ""
+#~ "To return to the previous location, press the back button <img width='16' "
+#~ "height='16' src=\"%1\"></img> in the toolbar. "
+#~ msgstr ""
+#~ "หากคุณต้องการย้อนกลับไปที่ตำแหน่งที่เรียกใช้ก่อนหน้า ให้กดที่ปุ่ม <img width='16' "
+#~ "height='16' src=\"%1\"></img>ย้อนกลับ บนแถบเครื่องมือ"
+
+#~ msgid ""
+#~ "To quickly go to your Home folder press the  home button <img width='16' "
+#~ "height='16' src=\"%1\"></img>."
+#~ msgstr ""
+#~ "หากคุณต้องการไปยังโฟลเดอร์ส่วนตัวอย่างรวดเร็ว ให้กดที่ปุ่มโฟลเดอร์ส่วนตัว <img width=16 "
+#~ "height=16 src=\"%1\"></img>"
+
+#~ msgid ""
+#~ "For more detailed documentation on Konqueror click <a href=\"%1\">here</"
+#~ "a>."
+#~ msgstr "<A HREF=\"%1\">คลิกที่นี่</A> เพื่อดูเอกสารของ Konqueror ที่ละเอียดมากกว่านี้"
+
+#~ msgid ""
+#~ "<em>Tuning Tip:</em> If you want the Konqueror web browser to start "
+#~ "faster, you can turn off this information screen by clicking <a href="
+#~ "\"%1\">here</a>. You can re-enable it by choosing the Help -> Konqueror "
+#~ "Introduction menu option, and then pressing Settings -> Save View Profile "
+#~ "As... -> \"Web Browsing\"."
+#~ msgstr ""
+#~ "<em>เคล็ดลับการปรับแต่ง:</em> คุณสามารถปิดหน้าจอแสดงข้อมูลนี้ได้ หากต้องการให้ "
+#~ "Konqueror เริ่มการทำงานได้อย่างรวดเร็วขึ้น โดยการ<a href=\"%1\">คลิกที่นี่</a> "
+#~ "และคุณสามารถจะกลับมาเปิดใช้มันได้อีกเช่นเดียวกัน โดยเลือกที่เมนู 'ช่วยเหลือ' -> ตัวเลือกเมนู "
+#~ "'แนะนำ Konqueror ' เมื่อแสดงหน้าแนะนำ Konqueror เรียบร้อยแล้ว ให้เลือกเมนู 'ตั้งค่า' -"
+#~ ">บันทึกโพรไฟล์มุมมอง \"การท่องเว็บ\""
+
+#~ msgid "Next: Tips &amp; Tricks"
+#~ msgstr "ถัดไป: ลูกเล่นและเคล็ดลับการใช้งาน"
+
+#~ msgid ""
+#~ "Konqueror is designed to embrace and support Internet standards. The aim "
+#~ "is to fully implement the officially sanctioned standards from "
+#~ "organizations such as the W3 and OASIS, while also adding extra support "
+#~ "for other common usability features that arise as de facto standards "
+#~ "across the Internet. Along with this support, for such functions as "
+#~ "favicons, Web Shortcuts, and <A HREF=\"%1\">XBEL bookmarks</A>, Konqueror "
+#~ "also implements:"
+#~ msgstr ""
+#~ "Konqueror  ถูกออกแบบมาให้ใช้ และรองรับมาตรฐานอินเทอร์เน็ตต่าง ๆ "
+#~ "โดยมีเป้าหมายให้รองรับมาตรฐานต่าง ๆ ที่ถูกกำหนดไว้จากองค์กรที่ดูแลมาตรฐานเหล่านี้ เช่น W3 "
+#~ "และ OASIS ขณะเดียวกันก็ได้เพิ่มการรองรับคุณลักษณะพื้นฐานในการใช้งานอื่น ๆ "
+#~ "ที่มีการใช้อย่างแพร่หลายด้วย เช่น ฟังก์ชันแบบ favicons, ทางลัดเว็บ และ <A HREF="
+#~ "\"%1\">ที่คั่นหน้า XBEL</A> เป็นต้น นอกจากนี้ Konqueror "
+#~ "ยังถูกปรับแต่งให้รองรับส่วนเพิ่มเติมต่อไปนี้อีกด้วย:"
+
+#~ msgid "Supported standards"
+#~ msgstr "มาตรฐานที่รองรับ"
+
+#~ msgid "Additional requirements*"
+#~ msgstr "สิ่งที่ต้องการเพิ่มเติม*"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">DOM</A> (ระดับ 1, บางส่วนของระดับ 2) บนพื้นฐาน <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+
+#~ msgid "built-in"
+#~ msgstr "รองรับอยู่ภายใน"
+
+#~ msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
+#~ msgstr "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, บางส่วนของ CSS 2)"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
+#~ msgstr "<A HREF=\"%1\">ECMA-262</A> ปรับปรุงครั้งที่ 3 (เทียบได้กับจาวาสคริปต์ 1.5)"
+
+#~ msgid ""
+#~ "JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
+#~ msgstr ""
+#~ "ยังไม่เปิดใช้งานจาวาสคริปต์ (ทั้งระบบ) <A HREF=\"%1\">คลิกที่นี่</A>เพื่อเปิดใช้จาวาสคริปต์"
+
+#~ msgid ""
+#~ "JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\"
+#~ "\">here</A>."
+#~ msgstr ""
+#~ "เปิดใช้งานจาวาสคริปต์อยู่ (ทั้งระบบ) <A HREF=\\\"%1\\\">คลิกที่นี่</A> "
+#~ "เพื่อปรับแต่งจาวาสคริปต์"
+
+#~ msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
+#~ msgstr "รองรับความปลอดภัยของ <A HREF=\"%1\">จาวา</A><SUP>&reg;</SUP>"
+
+#~ msgid ""
+#~ "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">IBM</A> or <A HREF="
+#~ "\"%2\">Sun/Oracle</A>)"
+#~ msgstr ""
+#~ "VM ที่เทียบเท่ากับ JDK 1.2.0 (จาวา 2) (<A HREF=\"%1\">IBM</A>, <A  HREF="
+#~ "\"%2\">Sun/Oracle</A>)"
+
+#~ msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
+#~ msgstr "เปิดใช้งานจาวา (กับทั้งระบบ) <A HREF=\"%1\">ที่นี่</A>"
+
+#~ msgid ""
+#~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">plugins</A> (for "
+#~ "viewing <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
+#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Video, etc.)"
+#~ msgstr ""
+#~ "<A HREF=\"%4\">โปรแกรมเสริม</A>ของเน็ตสเคป<SUP>&reg;</SUP> (เพื่อใช้ดู <A HREF="
+#~ "\"%1\">Flash</A><SUP>&reg;</SUP>, <A HREF=\"%2\">Real<SUP> &reg;</SUP></"
+#~ "A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</SUP></A>Video เป็นต้น)"
+
+#~ msgid "Secure Sockets Layer"
+#~ msgstr "ชั้นของซ็อกเกตแบบปลอดภัย (SSL)"
+
+#~ msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
+#~ msgstr "(TLS/SSL v2/3) สำหรับการติดต่อแบบเข้ารหัสข้อมูลได้สูงถึง 168 บิต"
+
+#~ msgid "OpenSSL"
+#~ msgstr "OpenSSL"
+
+#~ msgid "Bidirectional 16bit unicode support"
+#~ msgstr "รองรับอักขระแบบยูนิโค้ด 2 ไบต์ 16 บิต"
+
+#~ msgid "AutoCompletion for forms"
+#~ msgstr "เติมช่องข้อมูลของฟอร์มให้สมบูรณ์"
+
+#~ msgctxt "Title of an html 'group box' explaining konqueror features"
+#~ msgid "General"
+#~ msgstr "ค่าทั่วไป"
+
+#~ msgid "Feature"
+#~ msgstr "คุณลักษณะ"
+
+#~ msgid "Details"
+#~ msgstr "รายละเอียด"
+
+#~ msgid "Image formats"
+#~ msgstr "ประเภทรูปภาพ"
+
+#~ msgid "PNG<br />JPG<br />GIF"
+#~ msgstr "PNG<br />JPG<br />GIF"
+
+#~ msgid "Transfer protocols"
+#~ msgstr "โพรโทคอลส่งถ่ายข้อมูล"
+
+#~ msgid "HTTP 1.1 (including gzip/bzip2 compression)"
+#~ msgstr "โพรโทคอล HTTP รุ่น 1.1 (และรองรับการบีบอัดข้อมูล gzip/bzip2 ด้วย)"
+
+#~ msgid "FTP"
+#~ msgstr "โพรโทคอล FTP"
+
+#~ msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpcenter)...</A>"
+#~ msgstr ""
+#~ "และ<A HREF=\"%1\">อื่น ๆ อีกมากมาย...(ดูเพิ่มเติมที่ Kioslaves ใน ศูนย์ช่วยเหลือ-K)</A>"
+
+#~ msgctxt "A feature of Konqueror"
+#~ msgid "URL-Completion"
+#~ msgstr "การทำที่อยู่ URL ให้สมบูรณ์"
+
+#~ msgid "Manual"
+#~ msgstr "แบบแก้ไขเอง"
+
+#~ msgid "Popup"
+#~ msgstr "แบบแสดงเป็นเมนูให้เลือก"
+
+#~ msgid "(Short-) Automatic"
+#~ msgstr "แบบ(ย่อ-) อัตโนมัติ"
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "<a href=\"%1\">Return to Starting Points</a>"
+#~ msgstr "<a href=\"%1\">กลับไปยังหน้าเริ่มต้น</a>"
+
+#~ msgid "Tips &amp; Tricks"
+#~ msgstr "ลูกเล่นและเคล็ดลับการใช้งาน"
+
+#~ msgid ""
+#~ "Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, "
+#~ "using Google, for the search phrase \"KDE\". There are a lot of Web-"
+#~ "Shortcuts predefined to make searching for software or looking up certain "
+#~ "words in an encyclopedia a breeze. You can even <a href=\"%1\">create "
+#~ "your own</a> Web-Shortcuts."
+#~ msgstr ""
+#~ "ใช้ทางลัดเว็บ: เช่น พิมพ์ \"gg: KDE\" จะเป็นการค้นหาคำว่า \"KDE\" "
+#~ "ผ่านเครื่องมือค้นหาของ Google  ซึ่งมีทางลัดเว็บมากมาย ที่ได้กำหนดไว้แล้ว "
+#~ "เพื่อให้การค้นหาเป็นไปอย่างง่ายดาย และแน่นอน คุณสามารถที่จะ<a href="
+#~ "\"%1\">สร้างทางลัดเว็บของคุณเอง</A>ก็ได้เช่นกัน"
+
+#~ msgid ""
+#~ "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
+#~ "the HTML toolbar to increase the font size on your web page."
+#~ msgstr ""
+#~ "ใช้ปุ่มแว่นปรับขยาย <img width='16' height='16' src=\"%1\"></img> บนแถบเครื่องมือ "
+#~ "HTMLเพื่อปรับเพิ่มขนาดตัวอักษรบนหน้าเว็บของคุณ"
+
+#~ msgid ""
+#~ "When you want to paste a new address into the Location toolbar you might "
+#~ "want to clear the current entry by pressing the black arrow with the "
+#~ "white cross <img width='16' height='16' src=\"%1\"></img> in the toolbar."
+#~ msgstr ""
+#~ "หากคุณต้องการวางตำแหน่งที่อยู่ใหม่เข้าไปยังแถบตำแหน่ง คุณอาจต้องการล้างค่าที่อยู่ที่มีอยู่เสียก่อน "
+#~ "ซึ่งสามารถล้างค่าได้ด้วยการกดปุ่มลูกศรกากบาทสีขาว <img width='16' height='16' src="
+#~ "\"%1\"> </img>ในแถบเครื่องมือ"
+
+#~ msgid ""
+#~ "To create a link on your desktop pointing to the current page, simply "
+#~ "drag the icon (favicon) that is to the left of the Location toolbar, drop "
+#~ "it on to the desktop, and choose \"Icon\"."
+#~ msgstr ""
+#~ "เพื่อสร้างการเชื่อมโยงซึ่งชี้มายังหน้าปัจจุบันนี้ไว้บนพื้นที่ทำงานของคุณเอง สามารถทำได้ง่าย ๆ "
+#~ "ด้วยการลากไอคอน (favicon) ซึ่งอยู่ทางซ้ายของแถบตำแหน่งที่อยู่ แล้วปล่อยลงบนพื้นที่ทำงาน "
+#~ "จากนั้นเลือกรายการ \"ไอคอน\" จากเมนูที่ปรากฎ"
+
+#~ msgid ""
+#~ "You can also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen "
+#~ "Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
+#~ "sessions."
+#~ msgstr ""
+#~ "คุณจะยังพบ <img width='16' height='16' src=\"%1\" /> \"โหมดเต็มหน้าจอ\" "
+#~ "ในเมนูการตั้งค่า คุณสมบัตินี้มีประโยชน์ในการใช้งานเซสชั่น \"Talk\""
+
+#~ msgid ""
+#~ "Divide et impera (lat. \"Divide and conquer\") - by splitting a window "
+#~ "into two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> "
+#~ "Split View Left/Right) you can make Konqueror appear the way you like. "
+#~ "You can even load some example view-profiles (e.g. Midnight Commander), "
+#~ "or create your own ones."
+#~ msgstr ""
+#~ "Divide et impera (ละติน \"แบ่งแยกและพิชิต) - โดยการแบ่งหน้าต่างออกเป็นสองส่วน (เช่น "
+#~ "อาจใช้ผ่านเมนู หน้าต่าง -> <img width='16' height='16' src=\"%1\"> แบ่งมุมมองซ้าย/"
+#~ "ขวา) คุณจะสามารถทำให้ Konqueror มีรูปลักษณ์อย่างที่คุณต้องการ คุณยังสามารถโหลด "
+#~ "โพรไฟล์มุมมองตัวอย่างบางโพรไฟล์ได้ (เช่น Midnight Commander) หรือสร้าง "
+#~ "โพรไฟล์ของตัวคุณเอง"
+
+#~ msgid ""
+#~ "Use the <a href=\"%1\">user-agent</a> feature if the website you are "
+#~ "visiting asks you to use a different browser (and do not forget to send a "
+#~ "complaint to the webmaster!)"
+#~ msgstr ""
+#~ "ใช้คุณสมบัติ <a href=\"%1\">การแสดงตัวของเบราว์เซอร์</a> หากเว็บไซต์ที่คุณไป "
+#~ "เรียกร้องให้คุณใช้เว็บเบราว์เซอร์ตัวอื่น (และอย่าลืมส่งคำติติงไปยังเว็บมาสเตอร์ "
+#~ "ของเว็บไซต์นั้นด้วยล่ะ!)"
+
+#~ msgid ""
+#~ "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
+#~ "ensures that you can keep track of the pages you have visited recently."
+#~ msgstr ""
+#~ "<img width='16' height='16' src=\"%1\"></"
+#~ "img>ประวัติการใช้งานในแถบด้านข้างของคุณ "
+#~ "จะช่วยให้คุณทราบได้ว่าคุณได้เรียกดูหน้าเว็บใดมาบ้างแล้ว"
+
+#~ msgid ""
+#~ "Use a caching <a href=\"%1\">proxy</a> to speed up your Internet "
+#~ "connection."
+#~ msgstr ""
+#~ "ใช้ระบบการเก็บแคชผ่านทาง<A HREF=\"%1\">พร็อกซี</"
+#~ "A>เพื่อเพิ่มความเร็วในการท่องอินเทอร์เน็ตของคุณ"
+
+#~ msgid ""
+#~ "Advanced users will appreciate the Konsole which you can embed into "
+#~ "Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
+#~ "Terminal Emulator)."
+#~ msgstr ""
+#~ "ผู้ใช้ที่เชี่ยวชาญจะประทับใจกับ Konsole ซึ่งคุณสามารถที่จะฝังมันเข้าไปใน Konqueror ได้ "
+#~ "(ตั้งค่า -> <img width='16' height='16' SRC=\"%1\"></img> แสดงตัวจำลองเทอร์มินัล)"
+
+#~ msgid "Next: Specifications"
+#~ msgstr "ถัดไป: การรองรับข้อกำหนดต่าง ๆ"
+
+#~ msgid "Installed Plugins"
+#~ msgstr "ส่วนเสริมที่ติดตั้งแล้ว"
+
+#~ msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
+#~ msgstr "<td>ส่วนเสริม</td><td>รายละเอียด</td><td>แฟ้ม</td><td>ประเภท</td>"
+
+#~ msgid "Installed"
+#~ msgstr "ติดตั้งแล้ว"
+
+#~ msgid ""
+#~ "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
+#~ msgstr ""
+#~ "<td>ชนิดแฟ้ม Mime</td><td>รายละเอียด</td><td>ส่วนต่อท้าย</td><td>โปรแกรมเสริม</"
+#~ "td>"
+
+#~ msgid ""
+#~ "Do you want to disable showing the introduction in the webbrowsing "
+#~ "profile?"
+#~ msgstr ""
+#~ "คุณต้องการให้ปิดไม่ให้แสดงหน้าแนะนำ Konqueror  ในโพรไฟล์การท่องเว็บ จริงหรือไม่ ?"
+
+#~ msgid "Faster Startup?"
+#~ msgstr "ต้องการให้เริ่มทำงานแบบรวดเร็วหรือไม่ ?"
+
+#~ msgid "Disable"
+#~ msgstr "ปิดการใช้งาน"
+
+#~ msgid "Keep"
+#~ msgstr "คงไว้"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "ถนอมทรัพย์ นพบูรณ์, สหชาติ อนุกูลกิจ"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "donga.nb@gmail.com, drrider@gmail.com"
+
+#~ msgid "&File"
+#~ msgstr "แ&ฟ้ม"
+
+#~ msgid "&Edit"
+#~ msgstr "แ&ก้ไข"
+
+#~ msgid "&View"
+#~ msgstr "&มุมมอง"
+
+#~ msgid "&Go"
+#~ msgstr "ไ&ป"
+
+#~ msgid "&Settings"
+#~ msgstr "&ตั้งค่า"
+
+#~ msgid "&Window"
+#~ msgstr "&หน้าต่าง"
+
+#~ msgid "&Help"
+#~ msgstr "&ช่วยเหลือ"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "แถบเครื่องมือหลัก"
+
+#~ msgid "Extra Toolbar"
+#~ msgstr "แถบเครื่องมือพิเศษ"
+
+#~ msgid "Location Toolbar"
+#~ msgstr "แถบตำแหน่ง"
+
+#~ msgid "Bookmark Toolbar"
+#~ msgstr "แถบเครื่องมือที่คั่นหน้า"
+
+#~ msgid "Save open tabs and windows for easy retrieval"
+#~ msgstr "บันทึกแท็บและหน้าต่างที่เปิดอยู่ เพื่อให้เรียกคืนค่าได้ง่าย"
+
+#~ msgid "&Session name:"
+#~ msgstr "ชื่อ&วาระการใช้งาน:"
+
+#~ msgid "&Profile name:"
+#~ msgstr "ชื่อโ&พรไฟล์:"
+
+#~ msgid "Save &URLs in profile"
+#~ msgstr "บันทึกที่อยู่ &URL ไว้ในโพรไฟล์"
+
+#~ msgctxt "@action:button New session"
+#~ msgid "New..."
+#~ msgstr "สร้างใหม่..."
+
+#~ msgctxt "@action:button Save current session"
+#~ msgid "Save Current"
+#~ msgstr "บันทึกการใช้ปัจจุบัน"
+
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename..."
+#~ msgstr "เปลี่ยนชื่อ..."
+
+#~ msgctxt "@action:button Delete session"
+#~ msgid "Delete"
+#~ msgstr "ลบทิ้ง"
+
+#~ msgid "Open tabs inside current window"
+#~ msgstr "เปิดแท็บไว้ภายในหน้าต่างปัจจุบัน"
+
+#~ msgid "Limits"
+#~ msgstr "จำกัด"
+
+#~ msgid "URLs e&xpire after"
+#~ msgstr "ที่อยู่ URL ห&มดอายุหลังจาก"
+
+#~ msgid "Maximum &number of URLs:"
+#~ msgstr "&จำนวนที่อยู่ URL สูงสุด:"
+
+#~ msgid "Custom Fonts For"
+#~ msgstr "กำหนดแบบอักษรเองสำหรับ"
+
+#~ msgid "URLs newer than"
+#~ msgstr "ที่อยู่ URL ที่ใหม่กว่า"
+
+#~ msgid "Choose Font..."
+#~ msgstr "เลือกแบบอักษร..."
+
+#~ msgid "URLs older than"
+#~ msgstr "ที่อยู่ URL ที่เก่ากว่า"
+
+#~ msgid ""
+#~ "Shows the number of times visited and the dates of the first and last "
+#~ "visits, in addition to the URL"
+#~ msgstr ""
+#~ "แสดงจำนวนครั้งที่เรียกชม รวมถึงวันที่ของการเยี่ยมชมครั้งแรกและครั้งล่าสุด เพิ่มไว้ในที่อยู่ URL "
+#~ "ด้วย"
+
+#~ msgid "Detailed tooltips"
+#~ msgstr "ทูลทิปรายละเอียด"
+
+#~ msgid "Clear History"
+#~ msgstr "ล้างประวัติการใช้"
+
+#~ msgid ""
+#~ "This is the URL of the web page where Konqueror (as web browser) will "
+#~ "jump to when the \\\"Home\\\" button is pressed. When Konqueror is "
+#~ "started as a file manager, that button makes it jump to your local home "
+#~ "folder instead."
+#~ msgstr ""
+#~ "นี่คือที่อยู่ URL (ตัวอย่างเช่น โฟลเดอร์ หรือหน้าเว็บ) ที่ Konqueror จะเรียกไปเมื่อมีการกดปุ่ม "
+#~ "\"หน้าหลัก\" และเมื่อ Konqueror ถูกใช้เป็นตัวจัดการแฟ้ม "
+#~ "การกดปุ่มนี้จะเรียกไปยังโฟลเดอร์ส่วนตัวของคุณแทน"
+
+#~ msgid "Maximum number of Closed Items"
+#~ msgstr "จำนวนสูงสุดของรายการที่ถูกปิดไปแล้ว"
+
+#~ msgid ""
+#~ "This sets the maximum number of closed items that will be stored in "
+#~ "memory. This limit will not be surpassed."
+#~ msgstr ""
+#~ "ส่วนนี้เป็นการตั้งค่าจำนวนสูงสุดของรายการที่ถูกปิดไปแล้ว ที่จะถูกจัดเก็บไว้ในหน่วยความจำ "
+#~ "ซึ่งค่านี้จะเป็นการจำกัดไม่ให้มีการจัดเก็บไว้เกินกว่าค่านี้"
+
+#~ msgid "Open folders in separate windows"
+#~ msgstr "เปิดโฟลเดอร์ต่า ๆ ในหน้าต่างแยกต่างหาก"
+
+#~ msgid ""
+#~ "If this option is checked, Konqueror will open a new window when you open "
+#~ "a folder, rather than showing that folder's contents in the current "
+#~ "window."
+#~ msgstr ""
+#~ "หากกาเลือกตัวเลือกนี้ จะทำให้ Konqueror ทำการเปิดหน้าต่างใหม่เมื่อคุณเปิดโฟลเดอร์ "
+#~ "แทนการแสดงเนื้อหาของโฟลเดอร์ในหน้าต่างปัจจุบัน"
+
+#~ msgid "Show file tips"
+#~ msgstr "แสดงเคล็ดลับแฟ้ม"
+
+#~ msgid ""
+#~ "Here you can control if, when moving the mouse over a file, you want to "
+#~ "see a small popup window with additional information about that file"
+#~ msgstr ""
+#~ "คุณสามารถกำหนดว่าจะให้มีการแสดงหน้าต่างผุดเล็ก ๆ ที่ใช้แสดงข้อมูลรายละเอียดเกี่ยวกับแฟ้มนั้น "
+#~ "ๆ เมื่อมีการเคลื่อนเมาส์มาอยู่เหนือรายการหรือไม่ได้ที่นี่"
+
+#~ msgid "Show previews in file tips"
+#~ msgstr "แสดงภาพตัวอย่างในเคล็ดลับแฟ้มด้วย"
+
+#~ msgid ""
+#~ "Here you can control if you want the popup window to contain a larger "
+#~ "preview for the file, when moving the mouse over it"
+#~ msgstr ""
+#~ "คุณสามารถกำหนดว่าจะให้มีการแสดงหน้าต่างผุดเล็ก ๆ ที่ใช้แสดงข้อมูลภาพตัวอย่างของแฟ้มนั้น ๆ "
+#~ "ที่ใหญ่ขึ้น เมื่อมีการเคลื่อนเมาส์มาอยู่เหนือรายการหรือไม่ได้ที่นี่"
+
+#~ msgid "Show 'Delete' menu entries which bypass the trashcan"
+#~ msgstr "แสดงรายการเมนู 'ลบ' ซึ่งจะเป็นการลบจริงแทนการทิ้งลงถังขยะ"
+
+#~ msgid ""
+#~ "Check this if you want 'Delete' menu commands to be displayed on the "
+#~ "desktop and in the file manager's menus and context menus. You can always "
+#~ "delete files when hidden by holding the Shift key while calling 'Move to "
+#~ "Trash'."
+#~ msgstr ""
+#~ "กาเลือกที่นี่ หากคุณต้องการให้คำสั่งเมนู 'ลบทิ้ง' "
+#~ "ปรากฏบนพื้นที่ทำงานและในเมนูคลิกขวาของตัวจัดการแฟ้ม นอกจากนี้ "
+#~ "คุณยังสามารถลบแฟ้มทิ้งได้เสมอ โดยการกดปุ่ม Shift ค้างไว้ ในขณะเรียกใช้คำสั่ง 'ทิ้งลงถังขยะ'"
+
+#~ msgid "Number of Open With items in the File menu"
+#~ msgstr "จำนวนของรายการ เปิดใช้ด้วย ในเมนู แฟ้ม"
+
+#~ msgid "Standard font"
+#~ msgstr "แบบอักษรมาตรฐาน"
+
+#~ msgid "This is the font used to display text in Konqueror windows."
+#~ msgstr "แบบอักษรมาตรฐานที่จะใช้แสดงข้อความในหน้าต่าง Konqueror"
+
+#~ msgid "Maximum number of history items per view"
+#~ msgstr "จำนวนสูงสุดของรายการประวัติการใช้ต่อมุมมอง"
+
+#~ msgid "Ask confirmation for deleting a file."
+#~ msgstr "ถามยืนยันก่อนทำการลบแฟ้ม"
+
+#~ msgid ""
+#~ "This option tells Konqueror whether to ask for a confirmation when you "
+#~ "delete a file without using the trash folder. Warning, deleted files can "
+#~ "not be recovered, so it is recommended to leave this confirmation enabled."
+#~ msgstr ""
+#~ "ตัวเลือกจะทำให้ Konqueror ทราบว่า ควรจะทำการถามยืนยันก่อนหรือไม่ "
+#~ "เมื่อคุณทำการลบแฟ้มโดยไม่ใช่เป็นการทิ้งแฟ้มลงในถังขยะ "
+#~ "ซึ่งการลบแฟ้มแบบนี้นั้นจะเป็นการลบอย่างถาวร และจะไม่สามารถกู้คืนแฟ้มนั้น ๆ ได้ "
+#~ "ดังนั้นจึงขอแนะนำให้คุณเปิดใช้งานตัวเลือกนี้ไว้เสมอ"
+
+#~ msgid "Ask confirmation for move to trash"
+#~ msgstr "ถามยืนยันก่อนทิ้งลงถังขยะ"
+
+#~ msgid ""
+#~ "This option tells Konqueror whether to ask for a confirmation when you "
+#~ "move the file to your trash folder, from where it can be recovered very "
+#~ "easily."
+#~ msgstr ""
+#~ "ตัวเลือกนี้จะบอกให้ Konqueror ทราบว่า ควรจะทำการถามยืนยันก่อนหรือไม่ "
+#~ "เมื่อคุณทำการทิ้งแฟ้มลงในโฟลเดอร์ถังขยะ ซึ่งจะทำให้สามารถกู้คืนแฟ้มเหล่านั้นได้ในภายหลัง"
+
+#~ msgid ""
+#~ "If true, when opening a session from within the sessions dialog the tabs "
+#~ "will be opened inside current window."
+#~ msgstr ""
+#~ "หากเลือกใช้ จะทำให้มีการเปิดแท็บภายในหน้าต่างปัจจุบัน "
+#~ "เมื่อมีการเปิดวาระจากภายในกล่องวาระการใช้"
+
+#~ msgid "Hide %1"
+#~ msgstr "ซ่อน %1"
+
+#~ msgid "SideBar Test Plugin"
+#~ msgstr "ส่วนเสริมทดสอบแถบข้าง"
+
+#~ msgid "Bookmark This Location"
+#~ msgstr "คั่นหน้าตำแหน่งนี้"
+
+#~ msgid ""
+#~ "Malformed URL\n"
+#~ "%1"
+#~ msgstr ""
+#~ "รูปแบบที่อยู่ URL ผิดพลาด\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Protocol not supported\n"
+#~ "%1"
+#~ msgstr ""
+#~ "ยังไม่รองรับโพรโทคอล\n"
+#~ " %1"
+
+#~ msgid "Cannot create the find part, check your installation."
+#~ msgstr "ไม่สามารถสร้างส่วนการค้นหา โปรดตรวจสอบการติดตั้งของคุณ"
+
+#~ msgid "My Bookmarks"
+#~ msgstr "คั่นหน้าของฉัน"
+
+#~ msgid "Preload for later use"
+#~ msgstr "โหลดไว้ล่วงหน้าเพื่อใช้ในภายหลัง"
+
+#~ msgid "&Save View Profile \"%1\"..."
+#~ msgstr "บั&นทึกโพรไฟล์มุมมอง \"%1\"..."
+
+#~ msgid "Configure Navigation Panel"
+#~ msgstr "ปรับแต่งแถบการนำทาง"
+
+#~ msgid "Close Navigation Panel"
+#~ msgstr "ปิดพาเนลการนำทาง"
+
+#~ msgid "Select Type"
+#~ msgstr "เลือกประเภท"
+
+#~ msgid "Select type:"
+#~ msgstr "เลือกประเภท:"
+
+#~ msgid "Web SideBar Plugin"
+#~ msgstr "โปรแกรมเสริมแถบบาร์ด้านข้างเว็บ"
+
+#~ msgid "<qt><b>%1</b> does not exist</qt>"
+#~ msgstr "<qt>ยังไม่มี <b>%1</b> อยู่</qt>"
+
+#~ msgid "Minutes"
+#~ msgstr "นาที"
+
+#~ msgid "Days"
+#~ msgstr "วัน"
+
+#~ msgid "Your sidebar is not functional or unavailable."
+#~ msgstr "แถบด้านข้างของคุณยังไม่มีอยู่หรือไม่สามารถทำงานได้"
+
+#~ msgid "Cannot find running history plugin in your sidebar."
+#~ msgstr "ไม่พบโปรแกรมเสริมประวัติการใช้งานในแถบด้านข้างของคุณ"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History in Sidebar"
+#~ msgstr "แสดงประวัติการใช้ในถาดข้าง"
+
+#~ msgid "Select Remote Charset"
+#~ msgstr "เลือกรหัสภาษาของเครื่องปลายทาง"
+
+#~ msgid "Reload"
+#~ msgstr "โหลดใหม่"
+
+#~ msgid "Default"
+#~ msgstr "ค่าปริยาย"
+
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename"
+#~ msgstr "เปลี่ยนชื่อ"
+
+#~ msgid ""
+#~ "Konqueror is your file manager, web browser and universal document viewer."
+#~ msgstr ""
+#~ "Konqueror คือโปรแกรมจัดการแฟ้ม, โปรแกรมท่องเว็บ และแสดงผลเอกสารรูปแบบต่าง ๆ "
+#~ "สำหรับคุณ"
+
+#~ msgid "Joseph WENNINGER"
+#~ msgstr "Joseph WENNINGER"
+
+#~ msgid "G E N E R A L"
+#~ msgstr "ทั่ ว ไ ป"
+
+#~ msgid "<img width='16' height='16' src=\"%1\"></img>"
+#~ msgstr "<img width='16' height='16' src=\"%1\"></img>"
+
+#~ msgid "Applications"
+#~ msgstr "โปรแกรม"
+
+#~ msgid "Installed programs"
+#~ msgstr "รายการโปรแกรมที่ได้ติดตั้งไว้แล้ว"
+
+#~ msgid "&Location"
+#~ msgstr "ตำแหน่ง"
+
+#~ msgid "Konqueror mode: FileManager or WebBrowser"
+#~ msgstr "โหมดของ Konqueror: ตัวจัดการแฟ้มหรือเว็บเบราว์เซอร์"
+
+#~ msgid "Open &Terminal"
+#~ msgstr "เปิดเทอร์มินัล"
+
+#~ msgid "Unknown"
+#~ msgstr "ไม่รู้จัก"
+
+#~ msgid "Save &window size in profile"
+#~ msgstr "บันทึกขนาดของหน้าต่างในโพรไฟล์"
+
+#~ msgid "&Speak Text"
+#~ msgstr "&ออกเสียงข้อความ"
+
+#~ msgid "You cannot read anything except web pages with this plugin, sorry."
+#~ msgstr "ขออภัย ด้วยปลั๊กอินนี้ คุณจะไม่สามารถอ่านอะไรอื่น ๆ ได้นอกจากหน้าเว็บ"
+
+#~ msgid "Cannot Read source"
+#~ msgstr "ไม่สามารถอ่านจากแหล่งได้"
+
+#~ msgid "Starting KTTSD Failed"
+#~ msgstr "การเริ่มงาน KTTSD ล้มเหลว"
+
+#~ msgid "The D-Bus call say() failed."
+#~ msgstr "การเรียก say() ของ D-Bus ล้มเหลว"
+
+#~ msgid "D-Bus Call Failed"
+#~ msgstr "การเรียก D-Bus ล้มเหลว"
+
+#~ msgid "Speech Toolbar"
+#~ msgstr "แถบเครื่องมือออกเสียง"

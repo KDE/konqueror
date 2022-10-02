@@ -1,0 +1,243 @@
+# translation of libkonq.po to
+# Danish translation of libkonq
+# Copyright (C).
+#
+# Erik Kjær Pedersen <erik@binghamton.edu>, 1999, 2002, 2003, 2004, 2005.
+# Martin Schlander <mschlander@opensuse.org>, 2008, 2009, 2010, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2011-11-28 18:41+0100\n"
+"Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
+"Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "Å&bn"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "Opret &mappe..."
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "&Genopret"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr "Vis oprindelig mappe"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr "Vis oprindelig fil"
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "&Tøm papirkurv"
+
+#: src/konq_popupmenu.cpp:312
+#, kde-format
+msgid "&Configure Trash Bin"
+msgstr "&Indstil papirkurv"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "Sæt &bogmærke ved denne side"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "Sæt &bogmærke ved denne placering"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "Sæt &bogmærke ved denne mappe"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "Sæt &bogmærke ved dette link"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "Sæt &bogmærke ved denne fil"
+
+#: src/konq_popupmenu.cpp:379
+#, kde-format
+msgid "Preview In"
+msgstr "Forhåndsvisning i"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "&Egenskaber"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy To"
+#~ msgstr "Kopiér til"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "Flyt til"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "Hjemmemappe"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "Rodmappe"
+
+#~ msgctxt "@title:menu in Copy To or Move To submenu"
+#~ msgid "Browse..."
+#~ msgstr "Gennemse..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "Kopiér hertil"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "Flyt hertil"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "Du kan ikke slippe en mappe på sig selv"
+
+#~ msgid "File name for dropped contents:"
+#~ msgstr "Filnavn for droppet indhold:"
+
+#~ msgid "&Move Here"
+#~ msgstr "&Flyt hertil"
+
+#~ msgid "&Copy Here"
+#~ msgstr "&Kopiér hertil"
+
+#~ msgid "&Link Here"
+#~ msgstr "&Link hertil"
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "Sæt som &baggrundsbillede"
+
+#~ msgid "C&ancel"
+#~ msgstr "&Annullér"
+
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "Opret mappe"
+
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "Angiv et andet navn"
+
+#~ msgid ""
+#~ "The name \"%1\" starts with a dot, so the directory will be hidden by "
+#~ "default."
+#~ msgstr ""
+#~ "Navnet \"%1\" begynder med et punktum, så mappen vil være skjult som "
+#~ "standard."
+
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "Opret skjult mappe?"
+
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "Ny mappe"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "Ny mappe"
+
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "Angiv mappenavn:"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "Indsæt én mappe"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One File"
+#~ msgstr "Indsæt én fil"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Item"
+#~ msgid_plural "Paste %1 Items"
+#~ msgstr[0] "Indsæt ét element"
+#~ msgstr[1] "Indsæt %1 elementer"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste Clipboard Contents..."
+#~ msgstr "Indsæt indhold af udklipsholder..."
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste"
+#~ msgstr "Indsæt"
+
+#~ msgid ""
+#~ "Restores this file or directory, back to the location where it was "
+#~ "deleted from initially"
+#~ msgstr ""
+#~ "Genskaber denne fil eller mappe, tilbage til placeringen hvorfra den "
+#~ "oprindeligt blev slettet"
+
+#~ msgid ""
+#~ "Opens a new file manager window showing the target of this link, in its "
+#~ "parent directory."
+#~ msgstr ""
+#~ "Åbner et nyt filhåndteringsvindue som viser målet for dette link, i sin "
+#~ "forældermappe."
+
+#~ msgid "Share"
+#~ msgstr "Del"
+
+#~ msgctxt "@info"
+#~ msgid "Close"
+#~ msgstr "Luk"
+
+#~ msgid "Close"
+#~ msgstr "Luk"
+
+#~ msgid "Error: %1"
+#~ msgstr "Fejl: %1"
+
+#~ msgid "Create New"
+#~ msgstr "Opret ny"
+
+#~ msgid "Link to Device"
+#~ msgstr "Link til enhed"
+
+#~ msgid "<qt>The template file <b>%1</b> does not exist.</qt>"
+#~ msgstr "<qt>Skabelonfilen <b>%1</b> eksisterer ikke.</qt>"
+
+#~ msgid "File name:"
+#~ msgstr "Filnavn:"
+
+#~ msgid ""
+#~ "Basic links can only point to local files or directories.\n"
+#~ "Please use \"Link to Location\" for remote URLs."
+#~ msgstr ""
+#~ "Basale links kan kun pege på lokale filer eller mapper.\n"
+#~ "Brug \"Link til placering\" til eksterne URL'er."

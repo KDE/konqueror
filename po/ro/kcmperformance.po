@@ -1,0 +1,235 @@
+# Traducerea kcmperformance.po în Română
+# translation of kcmperformance.po to Romanian
+# translation of @PACKAGE.po to @LANGUAGE
+# Copyright (C) 2003, 2004, 2005, 2008 Free Software Foundation, Inc.
+# Claudiu Costin <claudiuc@kde.org>, 2003, 2004, 2005.
+# Sergiu Bivol <sergiu@cip.md>, 2008.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmperformance\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-21 00:16+0000\n"
+"PO-Revision-Date: 2008-04-01 17:37+0300\n"
+"Last-Translator: Sergiu Bivol <sergiu-bivol@mail.md>\n"
+"Language-Team: Română\n"
+"Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"20)) ? 1 : 2;\n"
+
+#: kcmperformance.cpp:28
+#, kde-format
+msgid ""
+"<h1>KDE Performance</h1> You can configure settings that improve KDE "
+"performance here."
+msgstr ""
+"<h1>Performanța KDE</h1> Aici puteți configura setări care îmbunătățesc "
+"performanța KDE."
+
+#: kcmperformance.cpp:35
+#, kde-format
+msgid "Konqueror"
+msgstr "Konqueror"
+
+#: kcmperformance.cpp:38
+#, kde-format
+msgid "System"
+msgstr "Sistem"
+
+#: kcmperformance.cpp:63
+#, kde-format
+msgid ""
+"<h1>Konqueror Performance</h1> You can configure several settings that "
+"improve Konqueror performance here. These include options for reusing "
+"already running instances and for keeping instances preloaded."
+msgstr ""
+"<h1>Performanța Konqueror</h1> Aici puteți configura mai multe setări care "
+"îmbunătățesc performanța Konqueror printre care opțiuni pentru reutilizarea "
+"unei instanțe care rulează deja și menținerea în execuție a unor instanțe "
+"preîncărcate."
+
+#: konqueror.cpp:24
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>If enabled, an instance of Konqueror will be preloaded after the "
+#| "ordinary KDE startup sequence.</p><p>This will make the first Konqueror "
+#| "window open faster, but at the expense of longer KDE startup times (but "
+#| "you will be able to work while it is loading, so you may not even notice "
+#| "that it is taking longer).</p>"
+msgid ""
+"<p>If enabled, an instance of Konqueror will be preloaded after the ordinary "
+"Plasma startup sequence.</p><p>This will make the first Konqueror window "
+"open faster, but at the expense of longer Plasma startup times (but you will "
+"be able to work while it is loading, so you may not even notice that it is "
+"taking longer).</p>"
+msgstr ""
+"<p>Dacă este activată, după secvența normală de pornire a KDE va fi "
+"preîncărcată o instanță de Konqueror.</p><p>Acest lucru va face ca prima "
+"fereastră de Konqueror să se deschidă rapid, dar cu dezavantajul că pornirea "
+"KDE va dura un pic mai mult. Cu toate acestea puteți să lucrați fără "
+"probleme, astfel încît este foarte posibil să nici nu observați că pornirea "
+"durează ceva mai mult.</p>"
+
+#: konqueror.cpp:30
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>If enabled, KDE will always try to have one preloaded Konqueror "
+#| "instance ready; preloading a new instance in the background whenever "
+#| "there is not one available, so that windows will always open quickly.</"
+#| "p><p><b>Warning:</b> In some cases, it is actually possible that this "
+#| "will reduce perceived performance.</p>"
+msgid ""
+"<p>If enabled, Konqueror will always try to have one preloaded instance "
+"ready; preloading a new instance in the background whenever there is not one "
+"available, so that windows will always open quickly.</p><p><b>Warning:</b> "
+"In some cases, it is actually possible that this will reduce perceived "
+"performance.</p>"
+msgstr ""
+"<p>Dacă opțiunea este activată, KDE va încerca întotdeauna să aibă în "
+"execuție o instanță preîncărcată de Konqueror. O instanță nouă va fi "
+"preîncărcată în fundal ori de cîte ori nu există una disponibilă, astfel "
+"încît ferestrele vor fi deschise rapid.</p><p><b>Atenție:</b> În anumite "
+"cazuri este posibil ca acest lucru să reducă performanța percepută.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
+#: konqueror_ui.ui:17
+#, kde-format
+msgid "Preloading"
+msgstr "Preîncărcare"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_preload_on_startup)
+#: konqueror_ui.ui:23
+#, fuzzy, kde-format
+#| msgid "Preload an instance after KDE startup"
+msgid "Preload an instance after desktop startup"
+msgstr "Preîncarcă o instanță la pornirea KDE"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_always_have_preloaded)
+#: konqueror_ui.ui:30
+#, fuzzy, kde-format
+#| msgid "Always try to have at least one preloaded instance"
+msgid "Always try to have one preloaded instance"
+msgstr "Încercați să aveți preîncărcată măcar o instanță"
+
+#: system.cpp:22
+#, kde-format
+msgid ""
+"<p>During startup KDE needs to perform a check of its system configuration "
+"(mimetypes, installed applications, etc.), and in case the configuration has "
+"changed since the last time, the system configuration cache (KSyCoCa) needs "
+"to be updated.</p><p>This option delays the check, which avoid scanning all "
+"directories containing files describing the system during KDE startup, thus "
+"making KDE startup faster. However, in the rare case the system "
+"configuration has changed since the last time, and the change is needed "
+"before this delayed check takes place, this option may lead to various "
+"problems (missing applications in the K Menu, reports from applications "
+"about missing required mimetypes, etc.).</p><p>Changes of system "
+"configuration mostly happen by (un)installing applications. It is therefore "
+"recommended to turn this option temporarily off while (un)installing "
+"applications.</p>"
+msgstr ""
+"<p>La pornire, KDE execută o verificare a sistemului său de configurare "
+"(tipuri MIME, aplicații instalate etc.) și în cazul în care configurația s-a "
+"modificat, „cache”-ul de configurare al sistemului (KSyCoCa) trebuie "
+"actualizat.</p><p>Această opțiune întîrzie verificarea și evită astfel "
+"scanarea tuturor directoarele ce descriu sistemul KDE. În acest fel pornirea "
+"este mai rapidă. Totuși, în cazul (rar) în care a avut loc o modificare "
+"ultima dată și ea e necesară înainte de a avea loc această verificare, "
+"această opțiune poate să genereze un număr de probleme: aplicații lipsă în "
+"meniul K, aplicații ce raportează lipsa unor tipuri MIME etc.</p><p>În "
+"general modificările în sistem apar prin (dez)instalarea de aplicații. De "
+"aceea este recomandat să dezactivați temporar opțiunea la instalarea/"
+"dezinstalarea de aplicații.</p> <p>Din acest motiv nu este recomandată "
+"utilizarea opțiunii. Detectorul de erori KDE va refuza să ofere un "
+"\"backtrace\" pentru rapoartele de erori cînd această opțiune e activă. Va "
+"trebui să reproduceți eroarea cu opțiunea dezactivată sau să setați "
+"detectorul de erori în mdóul „programator”.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gb_)
+#: system_ui.ui:8
+#, kde-format
+msgid "System Configuration"
+msgstr "Configurare sistem"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_disable_kbuildsycoca)
+#: system_ui.ui:14
+#, kde-format
+msgid "Disable &system configuration startup check"
+msgstr "Dezactivează verificarea configurației &sistemului la pornire"
+
+#. i18n: ectx: property (text), widget (QLabel, label_kbuildsycoca)
+#: system_ui.ui:21
+#, kde-format
+msgid ""
+"This option may in rare cases lead to various problems. Consult the What's "
+"This (Shift+F1) help for details."
+msgstr ""
+"În cazuri foarte rare, această opțiune poate să genereze diferite probleme. "
+"Consultați ajutorul rapid „Ce înseamnă aceasta?” pentru detalii."
+
+#~ msgid ""
+#~ "<p>If non-zero, this option allows keeping Konqueror instances in memory "
+#~ "after all their windows have been closed, up to the number specified in "
+#~ "this option.</p><p>When a new Konqueror instance is needed, one of these "
+#~ "preloaded instances will be reused instead, improving responsiveness at "
+#~ "the expense of the memory required by the preloaded instances.</p>"
+#~ msgstr ""
+#~ "<p>Dacă această opțiune nu este zero, atunci Konqueror va menține activ "
+#~ "în memorie numărul de instanțe indicat, chiar dacă ați închis toate "
+#~ "ferestrele.</p><p> Atunci cînd este necesară o nouă instanță Konqueror, "
+#~ "va fi reutilizată una din instanțele preîncărcate. În acest fel este "
+#~ "îmbunătățit timpul de răspuns pe baza creșterii consumului de memorie "
+#~ "cerut de instanțele preîncărcate.</p>"
+
+#, fuzzy
+#~| msgid "Maximum number of instances kept &preloaded:"
+#~ msgid "&Maximum number of instances kept preloaded:"
+#~ msgstr "Numărul de instanțe &preîncărcate:"
+
+#~ msgid ""
+#~ "Disables the minimization of memory usage and allows you to make each "
+#~ "browsing activity independent from the others"
+#~ msgstr ""
+#~ "Dezactivează minimizarea utilizării memoriei și face ca fiecare "
+#~ "activitate de navigare să fie independentă de celelalte"
+
+#~ msgid ""
+#~ "<p>With this option activated, only one instance of Konqueror used for "
+#~ "file browsing will exist in the memory of your computer at any moment, no "
+#~ "matter how many file browsing windows you open, thus reducing resource "
+#~ "requirements.</p><p>Be aware that this also means that, if something goes "
+#~ "wrong, all your file browsing windows will be closed simultaneously</p>"
+#~ msgstr ""
+#~ "<p>Dacă această opțiune este activată, atunci în orice moment va exista "
+#~ "în memorie numai o instanță de Konqueror care este utilizată la navigarea "
+#~ "de fișiere, indiferent de numărul de ferestre deschise. În acest fel sînt "
+#~ "reduse cerințele de resurse.</p><p>Aveți grijă că dacă ceva nu merge cum "
+#~ "trebuie, vor fi închise toate ferestrele de navigare de fișiere.</p>"
+
+#~ msgid ""
+#~ "<p>With this option activated, only one instance of Konqueror will exist "
+#~ "in the memory of your computer at any moment, no matter how many browsing "
+#~ "windows you open, thus reducing resource requirements.</p><p>Be aware "
+#~ "that this also means that, if something goes wrong, all your browsing "
+#~ "windows will be closed simultaneously.</p>"
+#~ msgstr ""
+#~ "<p>Dacă această opțiune este activată, atunci în orice moment va exista "
+#~ "în memorie numai o instanță de Konqueror care este utilizată la navigare, "
+#~ "indiferent de numărul de ferestre deschise. În acest fel sînt reduse "
+#~ "cerințele de resurse.</p><p>Aveți grijă că dacă ceva nu merge cum "
+#~ "trebuie, vor fi închise toate ferestrele de navigare.</p>"
+
+#~ msgid "Minimize Memory Usage"
+#~ msgstr "Minimizează utilizarea memoriei"
+
+#~ msgid "&Never"
+#~ msgstr "&Niciodată"
+
+#~ msgid "For &file browsing only (recommended)"
+#~ msgstr "Numai pentru navigare de f&ișiere (recomandat)"
+
+#~ msgid "Alwa&ys (use with care)"
+#~ msgstr "În&totdeauna (utilizați cu grijă)"

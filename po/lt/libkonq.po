@@ -1,0 +1,227 @@
+# translation of libkonq.po to Lithuanian
+#
+# Darius Žitkevicius <skystis@splius.lt>, 2005.
+# Donatas Glodenis <dgvirtual@akl.lt>, 2005.
+# Tomas Straupis <tomasstraupis@gmail.com>, 2011.
+# Remigijus Jarmalavičius <remigijus@jarmalavicius.lt>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2019-07-14 14:08+0300\n"
+"Last-Translator: Moo\n"
+"Language-Team: Lithuanian <kde-i18n-doc@kde.org>\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
+"%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
+"X-Generator: Poedit 2.2.1\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "At&verti"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "Sukurti ap&lanką..."
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "A&tkurti"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr "Rodyti pradinį katalogą"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr "Rodyti pradinį failą"
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "&Išvalyti šiukšlinę"
+
+#: src/konq_popupmenu.cpp:312
+#, kde-format
+msgid "&Configure Trash Bin"
+msgstr "&Konfigūruoti šiukšlinę"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "Įtraukti šį puslapį į &žymeles"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "Įtraukti šią vietą į &žymeles"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "Įtraukti šį aplanką į &žymeles"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "Įtraukti šią nuorodą į &žymeles"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "Įtraukti šį failą į &žymeles"
+
+#: src/konq_popupmenu.cpp:379
+#, kde-format
+msgid "Preview In"
+msgstr "Peržiūra naudojant"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "&Savybės"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy To"
+#~ msgstr "Kopijuoti į"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "Perkelti į"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "Pradžios aplankas"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "Šakninis aplankas"
+
+#~ msgctxt "@title:menu in Copy To or Move To submenu"
+#~ msgid "Browse..."
+#~ msgstr "Naršyti..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "Kopijuoti čia"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "Perkelti čia"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "Negalima padėti aplanko į jį patį"
+
+#~ msgid "File name for dropped contents:"
+#~ msgstr "Nurodykite numesto turinio failo pavadinimą:"
+
+#~ msgid "&Move Here"
+#~ msgstr "&Perkelti čia"
+
+#~ msgid "&Copy Here"
+#~ msgstr "&Kopijuoti čia"
+
+#~ msgid "&Link Here"
+#~ msgstr "Padaryti &nuorodą čia"
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "Nustatyti kaip &apmušalą"
+
+#~ msgid "C&ancel"
+#~ msgstr "A&tšaukti"
+
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "Sukurti aplanką"
+
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "Įveskite kitokį pavadinimą"
+
+#~ msgid ""
+#~ "The name \"%1\" starts with a dot, so the directory will be hidden by "
+#~ "default."
+#~ msgstr ""
+#~ "Pavadinimas „%1“ prasideda tašku, taigi aplankas pagal nutylėjimą bus "
+#~ "paslėptas."
+
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "Sukurti paslėptą aplanką?"
+
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "Naujas aplankas"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "Naujas aplankas"
+
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "Įveskite aplanko vardą:"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "Padėti vieną aplanką"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One File"
+#~ msgstr "Padėti vieną failą"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Item"
+#~ msgid_plural "Paste %1 Items"
+#~ msgstr[0] "Padėti vieną objektą"
+#~ msgstr[1] "Padėti %1 objektus"
+#~ msgstr[2] "Padėti %1 objektų"
+#~ msgstr[3] "Padėti %1 objektą"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste Clipboard Contents..."
+#~ msgstr "Padėti talpyklės turinį..."
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste"
+#~ msgstr "Padėti"
+
+#~ msgid ""
+#~ "Restores this file or directory, back to the location where it was "
+#~ "deleted from initially"
+#~ msgstr ""
+#~ "Atstato šį failą ar aplanka atgal į tą pačią vietą, iš kurios jis buvo "
+#~ "ištrintas"
+
+#~ msgid ""
+#~ "Opens a new file manager window showing the target of this link, in its "
+#~ "parent directory."
+#~ msgstr ""
+#~ "Atveria naują failų tvarkyklės langą ir jame parodo šios nuorodos tikslą "
+#~ "jo tėviniame aplanke."
+
+#~ msgid "Share"
+#~ msgstr "Skirti bendram naudojimui"
+
+#~ msgctxt "@info"
+#~ msgid "Close"
+#~ msgstr "Užverti"
+
+#~ msgid "Close"
+#~ msgstr "Užverti"
+
+#~ msgid "Error: %1"
+#~ msgstr "Klaida: %1"

@@ -1,0 +1,63 @@
+# Danish translation of akregator_konqplugin
+#
+# Erik Kjær Pedersen <erik@binghamton.edu>, 2004, 2005.
+# Martin Schlander <mschlander@opensuse.org>, 2008, 2009, 2011, 2018, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: akregator_konqplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2020-02-13 19:37+0100\n"
+"Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
+"Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 18.12.3\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: akregatorplugin.cpp:63
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Add Feed to Akregator"
+msgstr "Føj feed til Akregator"
+
+#: konqfeedicon.cpp:127
+#, kde-format
+msgid "Add Feed to Akregator"
+msgstr "Tilføj feed til Akregator"
+
+#: konqfeedicon.cpp:129
+#, kde-format
+msgid "Add Feeds to Akregator"
+msgstr "Tilføj feeds til Akregator"
+
+#: konqfeedicon.cpp:138
+#, kde-format
+msgid "Add All Found Feeds to Akregator"
+msgstr "Tilføj alle fundne feeds til Akregator"
+
+#: konqfeedicon.cpp:162
+#, kde-format
+msgid "Subscribe to site updates (using news feed)"
+msgstr "Abbonér på hjemmesideopdateringer (med nyhedsfeeds)"
+
+#: pluginutil.cpp:36 pluginutil.cpp:46
+#, kde-format
+msgid "Imported Feeds"
+msgstr "Importerede feeds"
+
+#: pluginutil.cpp:38
+#, kde-format
+msgid "Unable to contact Akregator via D-Bus"
+msgstr "Kan ikke kontakte Akregator via D-Bus"
+
+#: pluginutil.cpp:39
+#, kde-format
+msgctxt "@title:window"
+msgid "D-Bus call failed"
+msgstr "D-Bus-kald mislykkedes"
+
+#~ msgid "Akregator feed icon - DBus Call failed"
+#~ msgstr "Akregator feed-ikon - DBus-kald mislykkedes"

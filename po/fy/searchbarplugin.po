@@ -1,0 +1,83 @@
+# translation of searchbarplugin.po to Frysk
+# Rinse de Vries <rinse@kde.nl>, 2004.
+# Rinse de Vries <rinsedevries@kde.nl>, 2004, 2005, 2007.
+# Bram Schoenmakers <bramschoenmakers@kde.nl>, 2006.
+# translation of searchbarplugin.po to
+msgid ""
+msgstr ""
+"Project-Id-Version: searchbarplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-25 00:45+0000\n"
+"PO-Revision-Date: 2008-07-02 14:01+0100\n"
+"Last-Translator: Berend Ytsma <berendy@gmail.com>\n"
+"Language-Team: Frysk <kde-i18n-fry@kde.org>\n"
+"Language: fy\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: searchbar.cpp:65
+#, kde-format
+msgid ""
+"Search Bar<p>Enter a search term. Click on the icon to change search mode or "
+"provider.</p>"
+msgstr ""
+"Sykbalke <p>Fier in sykterm yn. Klik op it byldkaike om de sykmodus of "
+"sykmasine te wizigjen.</p>"
+
+#: searchbar.cpp:70
+#, kde-format
+msgid "Search Bar"
+msgstr "Sykbalke"
+
+#: searchbar.cpp:75
+#, kde-format
+msgid "Focus Searchbar"
+msgstr "Sykbalke fokusje"
+
+#: searchbar.cpp:267
+#, fuzzy, kde-format
+#| msgid "Find in This Page"
+msgid "Find in Page..."
+msgstr "Sykje yn dizze side"
+
+#: searchbar.cpp:287
+#, kde-format
+msgid "Find in This Page"
+msgstr "Sykje yn dizze side"
+
+#: searchbar.cpp:299
+#, kde-format
+msgid "Select Search Engines..."
+msgstr "Sykmasines selektearje..."
+
+#: searchbar.cpp:318
+#, kde-format
+msgid "Add %1..."
+msgstr ""
+
+#. i18n: ectx: ToolBar (locationToolBar)
+#: searchbarplugin.rc:3
+#, kde-format
+msgid "Search Toolbar"
+msgstr "Arkbalke foar it sykjen"
+
+#: WebShortcutWidget.cpp:33
+#, kde-format
+msgid "Set Uri Shortcuts"
+msgstr ""
+
+#: WebShortcutWidget.cpp:47
+#, kde-format
+msgid "Name:"
+msgstr ""
+
+#: WebShortcutWidget.cpp:51
+#, kde-format
+msgid "Shortcuts:"
+msgstr ""
+
+#~ msgid "%1 Search"
+#~ msgstr "Sykje op %1"

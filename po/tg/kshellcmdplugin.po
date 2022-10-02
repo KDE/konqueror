@@ -1,0 +1,2932 @@
+# translation of konqueror.po to Tajik
+# Copyright (C) 2004 Free Software Foundation, Inc.
+# 2004, infoDev, a World Bank organization
+# 2004, Khujand Computer Technologies, Inc.
+# 2004, Youth Opportunities, NGO
+# Akmal Salomov <youth_opportunities@tajik.net>, 2004.
+# Victor Ibragimov <youth_opportunities@tajik.net>, 2004.
+# Marina Kolucheva <youth_opportunities@tajik.net>, 2004.
+# Erkin Pulatov <erkin_pulatov@mail.ru>, 2004.
+# Dilshod Marupov <kct_tj@yahoo.co.uk>, 2004.
+# Marina Kolucheva <youth_opportunities@tajik.net>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2010-01-28 14:23+0500\n"
+"Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
+"Language-Team: Tajik\n"
+"Language: tg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.3\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. i18n: ectx: Menu (tools)
+#: konq_shellcmdplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "&Хизматҳо"
+
+#: kshellcmdexecutor.cpp:106
+#, kde-format
+msgid "Input Required:"
+msgstr "Талаботи Воридкунӣ:"
+
+#: kshellcmdplugin.cpp:32
+#, kde-format
+msgid "&Execute Shell Command..."
+msgstr "&Иҷроиши Фармони Муқова..."
+
+#: kshellcmdplugin.cpp:41
+#, fuzzy, kde-format
+msgid ""
+"KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a bug."
+msgstr ""
+"KShellCmdPlugin::slotExecuteShellCommand: Ошибка в программе, пожалуйста, "
+"сообщите о ней."
+
+#: kshellcmdplugin.cpp:51
+#, kde-format
+msgid "Executing shell commands works only on local directories."
+msgstr "Иҷроиши фармонҳои муқова танҳо дар феҳристҳои маҳаллӣ амалӣ мегардад."
+
+#: kshellcmdplugin.cpp:73
+#, fuzzy, kde-format
+#| msgid "Execute Shell Command"
+msgctxt "@title:window"
+msgid "Execute Shell Command"
+msgstr "Иҷроиши Фармони Муқова"
+
+#: kshellcmdplugin.cpp:74
+#, kde-format
+msgid "Execute shell command in current directory:"
+msgstr "Иҷроиши фармонҳои муқова дар феҳристи ҷорӣ:"
+
+#: kshellcmdplugin.cpp:85
+#, kde-format
+msgid "Output from command: \"%1\""
+msgstr "Ҳосилнокии фармон: \"%1\""
+
+#~ msgid "no name"
+#~ msgstr "беном"
+
+#~ msgid "Configure"
+#~ msgstr "Танзимот"
+
+#~ msgid "Extensions"
+#~ msgstr "Иловагиҳо"
+
+#~ msgid ""
+#~ "There was an error loading the module %1.\n"
+#~ "The diagnostics is:\n"
+#~ "%2"
+#~ msgstr ""
+#~ "Хатогӣ ҳангоми боркунии воҳиди %1.\n"
+#~ "Ташхис оиди хатогӣ:\n"
+#~ "%2"
+
+#~ msgid "Konqueror"
+#~ msgstr "Konqueror"
+
+#~ msgid "Web browser, file manager and document viewer."
+#~ msgstr "Веб-Браузер. Мудири файлҳо и нишондиҳандаи файлҳо."
+
+#~ msgid "(C) 1999-2008, The Konqueror developers"
+#~ msgstr "(c) 1999-2008. Тайёркунандагони Konqueror"
+
+#~ msgid "http://konqueror.kde.org"
+#~ msgstr "http://konqueror.kde.org"
+
+#~ msgid "David Faure"
+#~ msgstr "David Faure"
+
+#~ msgid "Developer (framework, parts, JavaScript, I/O library) and maintainer"
+#~ msgstr ""
+#~ "Тайёркунанда (модулҳо, JavaScript, китобхонаи вуруд/хуруҷ) ва пуштибонӣ"
+
+#~ msgid "Simon Hausmann"
+#~ msgstr "Simon Hausmann"
+
+#~ msgid "Developer (framework, parts)"
+#~ msgstr "Тайёркунанда (сохтор, модулҳо)"
+
+#~ msgid "Michael Reiher"
+#~ msgstr "Michael Reiher"
+
+#~ msgid "Developer (framework)"
+#~ msgstr "Тайёркунанда (сохтор)"
+
+#~ msgid "Matthias Welk"
+#~ msgstr "Matthias Welk"
+
+#~ msgid "Developer"
+#~ msgstr "Тайёркунанда"
+
+#~ msgid "Alexander Neundorf"
+#~ msgstr "Alexander Neundorf"
+
+#~ msgid "Developer (List views)"
+#~ msgstr "Тайёркунанда (намоиши рӯйхати феҳрастҳо)"
+
+#~ msgid "Michael Brade"
+#~ msgstr "Michael Brade"
+
+#~ msgid "Developer (List views, I/O library)"
+#~ msgstr "Тайёркунанда (Рӯйхати феҳрастҳо, китобхонаи вуруд/хуруҷ)"
+
+#~ msgid "Lars Knoll"
+#~ msgstr "Lars Knoll"
+
+#~ msgid "Developer (HTML rendering engine)"
+#~ msgstr "Тайёркунанда(системаи намоиши HTML)"
+
+#~ msgid "Dirk Mueller"
+#~ msgstr "Dirk Mueller"
+
+#~ msgid "Peter Kelly"
+#~ msgstr "Peter Kelly"
+
+#~ msgid "Waldo Bastian"
+#~ msgstr "Waldo Bastian"
+
+#~ msgid "Developer (HTML rendering engine, I/O library)"
+#~ msgstr "Тайёркунанда(системаи намоиши, китобхонаи вуруд/хуруҷ)"
+
+#~ msgid "Germain Garand"
+#~ msgstr "Germain Garand"
+
+#~ msgid "Leo Savernik"
+#~ msgstr "Leo Savernik"
+
+#~ msgid "Stephan Kulow"
+#~ msgstr "Stephan Kulow"
+
+#~ msgid ""
+#~ "Developer (HTML rendering engine, I/O library, regression test framework)"
+#~ msgstr ""
+#~ "Тайёркунанда (системаи намоиши HTML, китобхонаи вуруд/хуруҷ, регрессияи "
+#~ "сохтори система)"
+
+#~ msgid "Antti Koivisto"
+#~ msgstr "Antti Koivisto"
+
+#~ msgid "Zack Rusin"
+#~ msgstr "Zack Rusin"
+
+#~ msgid "Tobias Anton"
+#~ msgstr "Tobias Anton"
+
+#~ msgid "Lubos Lunak"
+#~ msgstr "Lubos Lunak"
+
+#~ msgid "Developer (HTML rendering engine, JavaScript)"
+#~ msgstr "Тайёркунанда (системаи намоиши HTML, JavaScript)"
+
+#~ msgid "Allan Sandfeld Jensen"
+#~ msgstr "Allan Sandfeld Jensen"
+
+#~ msgid "Apple Safari Developers"
+#~ msgstr "Тайёркунандагони Apple Safari"
+
+#~ msgid "Harri Porten"
+#~ msgstr "Harri Porten"
+
+#~ msgid "Developer (JavaScript)"
+#~ msgstr "Тайёркунанда(JavaScript)"
+
+#~ msgid "Koos Vriezen"
+#~ msgstr "Koos Vriezen"
+
+#~ msgid "Developer (Java applets and other embedded objects)"
+#~ msgstr "Тайёркунанда (пуштибонии Java и дигар барномаҳои дарунсохт)"
+
+#~ msgid "Matt Koss"
+#~ msgstr "Matt Koss"
+
+#~ msgid "Developer (I/O library)"
+#~ msgstr "Тайёркунанда (китобхонаи вуруд/хуруҷ)"
+
+#~ msgid "Alex Zepeda"
+#~ msgstr "Alex Zepeda"
+
+#~ msgid "Richard Moore"
+#~ msgstr "Richard Moore"
+
+#~ msgid "Developer (Java applet support)"
+#~ msgstr "Тайёркунанда(пуштибонии Java)"
+
+#~ msgid "Dima Rogozin"
+#~ msgstr "Dima Rogozin"
+
+#~ msgid "Wynn Wilkes"
+#~ msgstr "Wynn Wilkes"
+
+#~ msgid ""
+#~ "Developer (Java 2 security manager support,\n"
+#~ " and other major improvements to applet support)"
+#~ msgstr ""
+#~ "Тайёркунанда (пуштибонии мудири амнияти Java 2, \n"
+#~ " ва дигар барномаҳои махсус барои беҳтаркунӣ)"
+
+#~ msgid "Stefan Schimanski"
+#~ msgstr "Stefan Schimanski"
+
+#~ msgid "Developer (Netscape plugin support)"
+#~ msgstr "Тайёркунанда (пуштибонии модулҳои Netscape)"
+
+#~ msgid "George Staikos"
+#~ msgstr "George Staikos"
+
+#~ msgid "Developer (SSL, Netscape plugins)"
+#~ msgstr "Тайёркунанда (SSL, модулҳои Netscape)"
+
+#~ msgid "Dawit Alemayehu"
+#~ msgstr "Dawit Alemayehu"
+
+#~ msgid "Developer (I/O library, Authentication support)"
+#~ msgstr "Тайёркунанда (китобхонаи вуруд/хуруҷ, пуштибонии муайянкунӣ)"
+
+#~ msgid "Carsten Pfeiffer"
+#~ msgstr "Carsten Pfeiffer"
+
+#~ msgid "Torsten Rahn"
+#~ msgstr "Torsten Rahn"
+
+#~ msgid "Graphics/icons"
+#~ msgstr "Графика/нишонаҳо"
+
+#~ msgid "Torben Weis"
+#~ msgstr "Torben Weis"
+
+#~ msgid "KFM author"
+#~ msgstr "Муаллифи KFM"
+
+#~ msgid "Joseph Wenninger"
+#~ msgstr "Joseph Wenninger"
+
+#~ msgid "Developer (navigation panel framework)"
+#~ msgstr "Тайёркунанда(сохтори панели идоракунӣ)"
+
+#~ msgid "Stephan Binner"
+#~ msgstr "Stephan Binner"
+
+#~ msgid "Developer (misc stuff)"
+#~ msgstr "Тайёркунанда (беҳтаринҳои гуногун)"
+
+#~ msgid "Ivor Hewitt"
+#~ msgstr "Ivor Hewitt"
+
+#~ msgid "Developer (AdBlock filter)"
+#~ msgstr "Тайёркунанда (фильтри AdBlock)"
+
+#~ msgid "Eduardo Robles Elvira"
+#~ msgstr "Eduardo Robles Elvira"
+
+#~ msgid ""
+#~ "Checking this box on at least two views sets those views as 'linked'. "
+#~ "Then, when you change directories in one view, the other views linked "
+#~ "with it will automatically update to show the current directory. This is "
+#~ "especially useful with different types of views, such as a directory tree "
+#~ "with an icon view or detailed view, and possibly a terminal emulator "
+#~ "window."
+#~ msgstr ""
+#~ "Фаъолсозии ин қутти камаш ду панелро ба ҳам 'пайваст' мекунад. Ҳамаин "
+#~ "тавр, агар шумо феҳристро дар ягон панел иваз кунед, дигар панелҳои ба он "
+#~ "пайвастшуда ба таври худкор барои нишон додани феҳристи ҷорӣ, нав "
+#~ "мешаванд. Махсусан он бо намудҳои гуногуни панелҳо хеле фоиданок аст, ба "
+#~ "монанди дарахти феҳрист бо панели тасвирҳо ё панели тафсилот ё мумкин аст "
+#~ "тирезаи намунасози поёна."
+
+#~ msgid "Close View"
+#~ msgstr "Кушодани намоиш"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/сония"
+
+#~ msgid "Stalled"
+#~ msgstr "Алоқа нест"
+
+#~ msgid "Preview &in %1"
+#~ msgstr "Пешнамоиш &дар %1"
+
+#~ msgid "Show %1"
+#~ msgstr "Нишон додани %1"
+
+#~ msgctxt "@title:window"
+#~ msgid "History"
+#~ msgstr "Таърих"
+
+#~ msgctxt "@action:inmenu Parent of 'By Name' and 'By Date'"
+#~ msgid "Sort"
+#~ msgstr "Тагурӯкунӣ"
+
+#~ msgid ""
+#~ "<qt><center><b>%1</b></center><hr />Last visited: %2<br />First visited: "
+#~ "%3<br />Number of times visited: %4</qt>"
+#~ msgstr ""
+#~ "<qt><center><b>%1</b></center><hr /> саҳифаи охирин: %2<br /> саҳифаи "
+#~ "аввалин: %3<br /> ҳамагӣ: %4</qt> "
+
+#~ msgid "Local"
+#~ msgstr "Файли маҳаллӣ"
+
+#~ msgid "Miscellaneous"
+#~ msgstr "Гуногун"
+
+#~ msgid "Open in New &Window"
+#~ msgstr "Кушодан дар &Тирезаи Нав"
+
+#~ msgid "Open in New Tab"
+#~ msgstr "Кушодан дар Ҷадвалбандии Нав"
+
+#, fuzzy
+#~| msgid "Copy Link Address"
+#~ msgid "&Copy Link Address"
+#~ msgstr "Нусхабардории суроғаи истинодҳо"
+
+#~ msgid "&Remove Entry"
+#~ msgstr "&Хориҷ кардани Элемент"
+
+#~ msgid "C&lear History"
+#~ msgstr "&Пок кардани Таърих"
+
+#~ msgid "&Preferences..."
+#~ msgstr "&Хусусиятҳо..."
+
+#~ msgid "By &Name"
+#~ msgstr "Бо &Ном"
+
+#~ msgid "By &Date"
+#~ msgstr "Бо &Сана"
+
+#, fuzzy
+#~| msgid "Clear History"
+#~ msgid "Search in history"
+#~ msgstr "Тоза кардани таърих"
+
+#~ msgid "Do you really want to clear the entire history?"
+#~ msgstr "Дар ҳақиқат мехоҳед, ки ҳамаи таърихро пок кунед?"
+
+#~ msgid "Clear History?"
+#~ msgstr "Таърихро Пок Кунам?"
+
+#, fuzzy
+#~| msgid "Start without a default window"
+#~ msgid "Start without a default window, when called without URLs"
+#~ msgstr "Бе тирезаи пешфарз оғоз намоед."
+
+#~ msgid "Profile to open"
+#~ msgstr "Тахассуси кушодашаванда"
+
+#~ msgid "List available profiles"
+#~ msgstr "Рӯйхати тахассусҳои дастрас"
+
+#~ msgid "List available sessions"
+#~ msgstr "Намоиши сеансҳои дастрас"
+
+#~ msgid "Session to open"
+#~ msgstr "Сеанси кушодашаванда"
+
+#~ msgid "Mimetype to use for this URL (e.g. text/html or inode/directory)"
+#~ msgstr ""
+#~ "Навъи Mime барои истифода бо ин URL, (масалан text/html ё inode/"
+#~ "directory)."
+
+#~ msgid ""
+#~ "For URLs that point to files, opens the directory and selects the file, "
+#~ "instead of opening the actual file"
+#~ msgstr ""
+#~ "Барои URLs, ки ба файлҳо нишон медиҳад, кушодани каталог ва интихоб файл "
+#~ "аз ба ҷои он, ки кушодани файл"
+
+#~ msgid "Location to open"
+#~ msgstr "Ҷойгиршавии кушодашаванда"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Loading..."
+#~ msgstr "Боркунӣ..."
+
+#~ msgid "Canceled."
+#~ msgstr "Бекор кардашуда."
+
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Reloading the page will discard these changes."
+#~ msgstr ""
+#~ "Ин саҳифа тағйиротҳои ирсолнашуда дорад.\n"
+#~ "Бозсозии ин саҳифа ҳамаи тағйиротҳоро тоза мекунад."
+
+#~ msgid "Discard Changes?"
+#~ msgstr "Дигаргуниҳоро қабул накунанд?"
+
+#~ msgid "&Discard Changes"
+#~ msgstr "&Қабул накардани дигаргуниҳо"
+
+#~ msgid "File Management"
+#~ msgstr "Идоракунии файлҳо"
+
+#~ msgid "Web Browsing"
+#~ msgstr "Намоиши саҳифаҳои Интернетӣ"
+
+#~ msgid "Home Folder"
+#~ msgstr "Ҷузвдони хонагӣ"
+
+#~ msgid "Home"
+#~ msgstr "Саҳифаи асосӣ"
+
+#~ msgid "Navigate to your 'Home Folder'"
+#~ msgstr "Ба «Саҳифаи асосӣ» идора кунед"
+
+#~ msgid "Navigate to your local 'Home Folder'"
+#~ msgstr "Ба «Саҳифаи асосӣ» идора кунед"
+
+#~ msgid "Home Page"
+#~ msgstr "Саҳифаи асосӣ"
+
+#~ msgid "Navigate to your 'Home Page'"
+#~ msgstr "Ба «Саҳифаи асосӣ» идора кунед"
+
+#~ msgid ""
+#~ "<html>Navigate to your 'Home Page'<br /><br />You can configure the "
+#~ "location where this button takes you under <b>Settings -> Configure "
+#~ "Konqueror -> General</b>.</html>"
+#~ msgstr ""
+#~ "<html>Ба «Саҳифаи асосӣ» идора кунед<br /><br />Шумо метавонед "
+#~ "ҷойгиршавии саҳифаро танзим кунед, бо истифодаи тугмаи <b>Хизматҳо -> "
+#~ "Танзимоти Konqueror -> Умумӣ</b>.</html>"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Detaching the tab will discard these changes."
+#~ msgstr ""
+#~ "Ин ҷадвалбанд дигаргуниҳоро нигоҳ медорад, ки ҳоло ҳам захира карда "
+#~ "нашудаанд.\n"
+#~ "Ҷудо кардани ҷадвалбанд ба қабул накардани ин дигаргуниҳо, меоварад."
+
+#~ msgid ""
+#~ "This view contains changes that have not been submitted.\n"
+#~ "Closing the view will discard these changes."
+#~ msgstr ""
+#~ "Ин панел дигаргуниҳоро нигоҳ медорад, ки ҳоло ҳам захира карда "
+#~ "нашудаанд.\n"
+#~ "Бастани панел ба қабул накардани ин дигаргуниҳо меоварад."
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the tab will discard these changes."
+#~ msgstr ""
+#~ "Ин ҷадвалбанд дигаргуниҳоро нигоҳ медорад, ки ҳоло ҳам захира карда "
+#~ "нашудаанд.\n"
+#~ "Бастани ҷадвалбанд ба қабул накардани ин дигаргуниҳо, меоварад."
+
+#~ msgid "Do you really want to close all other tabs?"
+#~ msgstr "Дар ҳақиқат мехоҳед, ки ҳамаи ҷадвалбандҳоропок кунед?"
+
+#~ msgid "Close Other Tabs Confirmation"
+#~ msgstr "Тасдиқи кушодани дигар ҷадвалбандҳо"
+
+#~ msgid "Close &Other Tabs"
+#~ msgstr "Пӯшидани &Дигар Ҷадвалбандиҳо"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing other tabs will discard these changes."
+#~ msgstr ""
+#~ "Ин ҷадвалбанд дигаргуниҳоро нигоҳ медорад, ки ҳоло ҳам захира карда "
+#~ "нашудаанд.\n"
+#~ "Бастани ҷадвалбандҳои дигар ба қабул накардани ин дигаргуниҳо, меоварад."
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Reloading all tabs will discard these changes."
+#~ msgstr ""
+#~ "Ин ҷадвалбанд дигаргуниҳоро нигоҳ медорад, ки ҳоло ҳам захира карда "
+#~ "нашудаанд.\n"
+#~ "Аз нав боргузории ҳамаи ҷадвалбандҳо ба қабул накардани ин дигаргуниҳо, "
+#~ "меоварад."
+
+#~ msgid "Enter Target"
+#~ msgstr "Мақсадро Ворид кунед"
+
+#~ msgid "<qt><b>%1</b> is not valid</qt>"
+#~ msgstr "<qt><b>%1</b> ҳақиқӣ нест<qt>"
+
+#~ msgid "Copy selected files from %1 to:"
+#~ msgstr "Нусхабардории файлҳои интихобшуда аз %1 ба:"
+
+#~ msgid "Move selected files from %1 to:"
+#~ msgstr "Таҳвилкунии файлҳои интихобшуда аз %1 ба:"
+
+#~ msgctxt "This menu entry empties the closed items history"
+#~ msgid "Empty Closed Items History"
+#~ msgstr "Тозакунии журнали замимаҳои хуруҷшуда"
+
+#~ msgid "Save As..."
+#~ msgstr "Захира кардан ҳамчун..."
+
+#~ msgid "Manage..."
+#~ msgstr "Идоракунӣ..."
+
+#~ msgid "New &Window"
+#~ msgstr "&Тирезаи Нав"
+
+#~ msgid "&Duplicate Window"
+#~ msgstr "&Ду нусха кардани Тиреза"
+
+#~ msgid "Send &Link Address..."
+#~ msgstr "Фиристодани суроға &истинодҳо..."
+
+#~ msgid "S&end File..."
+#~ msgstr "Фиристодани &Файл..."
+
+#~ msgid "&Open Location"
+#~ msgstr "&Кушодани макон"
+
+#~ msgid "&Open File..."
+#~ msgstr "Кушодани &файл..."
+
+#~ msgid "&Find File..."
+#~ msgstr "&Ҷустуҷӯи Файл..."
+
+#~ msgid "&Use index.html"
+#~ msgstr "&Истифода бурдани index.html"
+
+#~ msgid "Lock to Current Location"
+#~ msgstr "Бастани Маҳалли Ҷорӣ"
+
+#~ msgctxt "This option links konqueror views"
+#~ msgid "Lin&k View"
+#~ msgstr "Ҷузъбандии &панел"
+
+#~ msgid "&Up"
+#~ msgstr "&Ба боло"
+
+#~ msgid "Closed Items"
+#~ msgstr "замимаҳои хуруҷшуда"
+
+#~ msgid "Sessions"
+#~ msgstr "Сессияҳо"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Most Often Visited"
+#~ msgstr "Саҳифаҳои беҳтарин"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Recently Visited"
+#~ msgstr "Саҳифаҳои кушодашуда"
+
+#, fuzzy
+#~| msgid "Show History Sidebar"
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History"
+#~ msgstr "Намоиши таърих дар панели бағал"
+
+#, fuzzy
+#~| msgid "&Save View Profile..."
+#~ msgid "&Save View Profile As..."
+#~ msgstr "&Захиракунии Тахассуси Панел"
+
+#~ msgid "Configure Extensions..."
+#~ msgstr "Танзимоти иловагиҳо..."
+
+#~ msgid "Configure Spell Checking..."
+#~ msgstr "Батанзимдарории Имлосанҷ..."
+
+#~ msgid "Split View &Left/Right"
+#~ msgstr "Тақсими Панел ба &Чап/Рост"
+
+#~ msgid "Split View &Top/Bottom"
+#~ msgstr "Тақсими Панел ба &Боло/Поён"
+
+#~ msgid "&New Tab"
+#~ msgstr "Ҷадвалбандии &Нав"
+
+#~ msgid "&Duplicate Current Tab"
+#~ msgstr "&Ду нусха кардани Ҷадвалбандии Ҷорӣ"
+
+#~ msgid "Detach Current Tab"
+#~ msgstr "Ҷудо сохтани Ҷадвалбандии Ҷорӣ"
+
+#~ msgid "&Close Active View"
+#~ msgstr "&Хориҷ кардани панели фаъол"
+
+#~ msgid "Close Current Tab"
+#~ msgstr "Пӯшидани Ҷадвалбандии Ҷорӣ"
+
+#~ msgid "Activate Next Tab"
+#~ msgstr "Фаъолсозии Ҷадвалбандии Оянда"
+
+#~ msgid "Activate Previous Tab"
+#~ msgstr "Фаъолсозии Ҷадвалбандии Пешина"
+
+#~ msgid "Activate Tab %1"
+#~ msgstr "Фаъолсозии ҷадвалбандии %1"
+
+#~ msgid "Move Tab Left"
+#~ msgstr "Ҷойивазкунии Ҷадвалбандӣ ба Чап"
+
+#~ msgid "Move Tab Right"
+#~ msgstr "Ҷойивазкунии Ҷадвалбандӣ ба Рост"
+
+#~ msgid "Dump Debug Info"
+#~ msgstr "Баровардани Ахбороти Созкун"
+
+#~ msgid "C&onfigure View Profiles..."
+#~ msgstr "&Батанзимдарории Тахассуси Панел..."
+
+#~ msgid "Load &View Profile"
+#~ msgstr "Боркунии Тахассуси &Панел"
+
+#~ msgid "&Reload"
+#~ msgstr "&Бозсозӣ"
+
+#~ msgid "&Reload All Tabs"
+#~ msgstr "&Дубора боркунии Ҳамаи Ҷадвалбандиҳо"
+
+#~ msgid "&Force Reload"
+#~ msgstr "&Бозсозии маҷбур"
+
+#~ msgid "&Stop"
+#~ msgstr "&Истодан"
+
+#~ msgid "L&ocation: "
+#~ msgstr "&Ҷойгиршавӣ: "
+
+#~ msgid "Location Bar"
+#~ msgstr "Сатри Ҷойгиршавӣ"
+
+#~ msgid ""
+#~ "<html>Location Bar<br /><br />Enter a web address or search term.</html>"
+#~ msgstr ""
+#~ "<html>Панели суроға<br /><br />Номи суроға ё вожаномаи ҷустуҷӯиро ворид "
+#~ "кунед.</html>"
+
+#~ msgid "Clear Location Bar"
+#~ msgstr "Пок кардани Сатри Ҷойгиршавӣ"
+
+#~ msgid ""
+#~ "<html>Clear Location bar<br /><br />Clears the contents of the location "
+#~ "bar.</html>"
+#~ msgstr ""
+#~ "<html>Панели суроғаро тоза кунед<br /><br />Дорои панели суроға тоза "
+#~ "мекунад.</html>"
+
+#~ msgid "&Bookmarks"
+#~ msgstr "&Хатчӯбмонӣ"
+
+#~ msgid "Kon&queror Introduction"
+#~ msgstr "Муқаддимаи Kon&queror"
+
+#~ msgid "Go"
+#~ msgstr "Гузаштан"
+
+#~ msgid ""
+#~ "<html>Go<br /><br />Goes to the page that has been entered into the "
+#~ "location bar.</html>"
+#~ msgstr ""
+#~ "<html>Гузаштан<br /><br />Ба саҳифаи воридшудаи дар панели суроға "
+#~ "мегузарад.</html>"
+
+#~ msgid ""
+#~ "<html>Enter the parent folder<br /><br />For instance, if the current "
+#~ "location is file:/home/%1 clicking this button will take you to file:/"
+#~ "home.</html>"
+#~ msgstr ""
+#~ "<html>Кушодани ҷузвдони болоӣ<br /><br />Масалан, агар чойгиршавии "
+#~ "ҷузвдони ҷории file:/home/%1 мебошад, он гоҳ баъд аз зеркунии ин тугма "
+#~ "ҷойгиршавӣ ба file:/home иваз мекунад.</html>"
+
+#~ msgid "Enter the parent folder"
+#~ msgstr "Ворид кардани феҳристи дараҷаи баланд"
+
+#~ msgid "Move backwards one step in the browsing history"
+#~ msgstr "Дар таърихи баррасӣ як қадам ба пушт ҷой иваз кунед"
+
+#~ msgid "Move forward one step in the browsing history"
+#~ msgstr "Дар таърихи баррасӣ як қадам ба пеш ҷой иваз кунед"
+
+#~ msgid "Move backwards one step in the closed tabs history"
+#~ msgstr "Дар журнали замимаҳои хуруҷшуда ба як ҳадам қафо меравад"
+
+#~ msgid ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.</html>"
+#~ msgstr ""
+#~ "<html>Саҳифаи ҷориро бозсозӣ кунед<br /><br />Ин амалиёт барои бозсозӣ ва "
+#~ "намоиши саҳифаҳои Интернетии тағйиршуда лозим аст.</html>"
+
+#~ msgid "Reload the currently displayed document"
+#~ msgstr "Ҳуҷҷати намоишшудаи ҷориро дубора бор кунед"
+
+#~ msgid ""
+#~ "<html>Reload all currently displayed documents in tabs<br /><br />This "
+#~ "may, for example, be needed to refresh web pages that have been modified "
+#~ "since they were loaded, in order to make the changes visible.</html>"
+#~ msgstr ""
+#~ "<html>Бозсозии ҳамаи саҳифаҳои Интернеди дар замимаҳо<br /><br />Ин "
+#~ "амалиёт барои бозсозӣ ва намоиши саҳифаҳои Интернетии тағйиршуда лозим "
+#~ "аст.</html>"
+
+#~ msgid "Reload all currently displayed document in tabs"
+#~ msgstr "Ҳуҷҷати намоишшудаи ҷориро дубора дар ҷадвалбандҳо аз нав кунед"
+
+#~ msgid ""
+#~ "<html>Stop loading the document<br /><br />All network transfers will be "
+#~ "stopped and Konqueror will display the content that has been received so "
+#~ "far.</html>"
+#~ msgstr ""
+#~ "<html>Боркунии саҳифаро манъ кунед<br /><br />Интиқоли маълумот маън "
+#~ "мешавад ва Konqueror маълумоти боршуда нишон медиҳад.</html>"
+
+#~ msgid ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.  Any images on "
+#~ "the page are downloaded again, even if cached copies exist.</html>"
+#~ msgstr ""
+#~ "<html>Бозсозии саҳифаи ҷорӣ<br /><br />Ин амалиёт барои бозсозӣ ва "
+#~ "намоиши тасвирҳои саҳифаҳои Интернетии тағйиршуда лозим аст. Ҳамаи "
+#~ "тасвирҳои саҳифа аз нав бор карда мешаванд.</html>"
+
+#~ msgid ""
+#~ "Force a reload of the currently displayed document and any contained "
+#~ "images"
+#~ msgstr "Саҳфаи ҷорӣ ва ҳамаи майлумоти он ба маҷбур бозсозӣ кунед"
+
+#~ msgid "Stop loading the document"
+#~ msgstr "Боркунии ҳуҷҷатро боздоред"
+
+#~ msgid ""
+#~ "<html>Cut the currently selected text or item(s) and move it to the "
+#~ "system clipboard<br /><br />This makes it available to the <b>Paste</b> "
+#~ "command in Konqueror and other KDE applications.</html>"
+#~ msgstr ""
+#~ "<html>Матн ва маълумоти интихобшударо бурида мекунад ва ба хотираи "
+#~ "системавӣ нусха мегузарад<br /><br />Маълумоти буридашуда бо фармони "
+#~ "<b>Часпондан</b> дар барномаи    Konqueror ва дигар барномаҳои KDE "
+#~ "дастрас аст.</html>"
+
+#~ msgid "Move the selected text or item(s) to the clipboard"
+#~ msgstr "Матн ё пункт(ҳо)и интихобшударо ба силули мухобиротӣҷойиваз кунед"
+
+#~ msgid ""
+#~ "<html>Copy the currently selected text or item(s) to the system "
+#~ "clipboard<br /><br />This makes it available to the <b>Paste</b> command "
+#~ "in Konqueror and other KDE applications.</html>"
+#~ msgstr ""
+#~ "<html>Матн ва маълумоти интихобшударо ба хотираи системавӣ нусха "
+#~ "мегузарад<br /><br />Ин тавр, маълумоти нусхакардашда бо фармони "
+#~ "<b>Часпондан</b> дар барномаи    Konqueror ва дигар барномаҳои KDE "
+#~ "дастрас аст.</html>"
+
+#~ msgid "Copy the selected text or item(s) to the clipboard"
+#~ msgstr "Матн ё пункт(ҳо)-и интихобшударо ба силули мухобиротӣнусха бардоред"
+
+#~ msgid ""
+#~ "<html>Paste the previously cut or copied clipboard contents<br /><br /"
+#~ ">This also works for text copied or cut from other KDE applications.</"
+#~ "html>"
+#~ msgstr ""
+#~ "<html>Матн ва маълумоти аз хотираи системавӣ часпонда мекунад<br /><br /"
+#~ ">Ин амалиёт ҳам дар барномаи Konqueror ва дигар барномаҳои KDE дастрас "
+#~ "аст.</html>"
+
+#~ msgid "Paste the clipboard contents"
+#~ msgstr "Таркиби силули мухобиротро часбонед"
+
+#~ msgid ""
+#~ "<html>Print the currently displayed document<br /><br />You will be "
+#~ "presented with a dialog where you can set various options, such as the "
+#~ "number of copies to print and which printer to use.<br /><br />This "
+#~ "dialog also provides access to special KDE printing services such as "
+#~ "creating a PDF file from the current document.</html>"
+#~ msgstr ""
+#~ "<html>Саҳифаи нишоншударо чоп кунед<br /><br />Баъд аз интихоби ин "
+#~ "амалиёт, шумо метавонед номи принтер, миқдори саҳифаҳо барои чоп ва "
+#~ "параметрҳои дигар интихоб кунед. <br /><br /> Шумо ҳам метавонед бо "
+#~ "истифодаи ин амалиёт имконотҳои махсуси системаи чопкунии KDE, монанди "
+#~ "эҷоди файлҳои PDF дар дигар интихоб намоед.</html>"
+
+#~ msgid "Print the current document"
+#~ msgstr "Ҳуҷҷати ҷориро чоп кунед"
+
+#~ msgid "If present, open index.html when entering a folder."
+#~ msgstr ""
+#~ "Ҳангоми воридшавӣ ба феҳрист index.html-ро, агар зуҳур дошта бошад, "
+#~ "кушоед."
+
+#~ msgid ""
+#~ "A locked view cannot change folders. Use in combination with 'link view' "
+#~ "to explore many files from one folder"
+#~ msgstr ""
+#~ "Панели басташуда папкаҳоро иваз карда наметавонад. Якҷоя бо "
+#~ "'Синхронизатсияи панелҳо' истифода баред, ки имконияти истифодаи бисёр "
+#~ "файлҳоро аз як папкамедиҳад"
+
+#~ msgid ""
+#~ "Sets the view as 'linked'. A linked view follows folder changes made in "
+#~ "other linked views."
+#~ msgstr ""
+#~ "Панелро ҳамчун 'пайваста' барпо месозад. Панели пайваста тағиротҳои "
+#~ "феҳристро, ки дар дигар панелҳои пайваста ба амал меоянд, инъикос мекунад."
+
+#~ msgid "Copy &Files..."
+#~ msgstr "Нусха бардоштани &Файлҳо..."
+
+#~ msgid "M&ove Files..."
+#~ msgstr "&Ҷойивазкунии Файлҳо..."
+
+#~ msgid ""
+#~ "You have requested to open more than 20 bookmarks in tabs. This might "
+#~ "take a while. Continue?"
+#~ msgstr ""
+#~ "Шумо кушодани бисёр аз 20 замима дархост кардед. Ин метавонад бисёр вақт "
+#~ "мегирад. Давом медиҳед?"
+
+#~ msgid "Open bookmarks folder in new tabs"
+#~ msgstr "Кушодани ҷузвдони замимаҳо дар замимаи нав"
+
+#~ msgid "Open in T&his Window"
+#~ msgstr "Дар &ин тиреза кушоед"
+
+#~ msgid "Open the document in current window"
+#~ msgstr "Кушодани саҳифа дар тирезаи ҷорӣ"
+
+#~ msgid "Open the document in a new window"
+#~ msgstr "Ҳуҷҷатро дар тирезаи нав кушоед"
+
+#~ msgid "Open in &New Tab"
+#~ msgstr "Кушодан дар Ҷадвалбандии &Нав"
+
+#~ msgid "Open the document in a new tab"
+#~ msgstr "Ҳуҷҷатро дар ҷадвалбандии нав кушоед"
+
+#~ msgid "&Open With"
+#~ msgstr "&Кушодан бо"
+
+#~ msgid "Open with %1"
+#~ msgstr "Кушодан бо %1"
+
+#~ msgctxt "@action:inmenu View"
+#~ msgid "&View Mode"
+#~ msgstr "&Ҳолати намоиш"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window, are you sure you want to quit?"
+#~ msgstr ""
+#~ "Шумо бисёр ҷадвалбандиҳоро дар ин тиреза кушодаед, дар ҳақиқат мехоҳед "
+#~ "бароед?"
+
+#~ msgid "Confirmation"
+#~ msgstr "Тасдиқот"
+
+#~ msgid "C&lose Current Tab"
+#~ msgstr "Б&астани ҷадвалбандии ҷорӣ"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the window will discard these changes."
+#~ msgstr ""
+#~ "Ин ҷадвалбанд дигаргуниҳоро нигоҳ медорад, ки ҳоло ҳам захира карда "
+#~ "нашудаанд.\n"
+#~ "Бастани тиреза ба қабул накардани ин дигаргуниҳо меоварад"
+
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Closing the window will discard these changes."
+#~ msgstr ""
+#~ "Ин саҳифа дигаргуниҳоро нигоҳ медорад, ки ҳоло ҳам захира карда "
+#~ "нашудаанд.\n"
+#~ "Бастани тиреза ба қабул накардани ин дигаргуниҳо меоварад"
+
+#~ msgid ""
+#~ "Your sidebar is not functional or unavailable. A new entry cannot be "
+#~ "added."
+#~ msgstr ""
+#~ "Панели тарафи шумо ғайри фаъол аст ё ғайриимконпазир аст. Элементи нав "
+#~ "ҳамроҳ карда намешавад."
+
+#~ msgid "Web Sidebar"
+#~ msgstr "Панели Тарафи Шабакавӣ"
+
+#~ msgid "Add new web extension \"%1\" to your sidebar?"
+#~ msgstr "Ба панели тарафи шумо web паҳншавии навро \"%1\" илова кунам?"
+
+#~ msgid "Add"
+#~ msgstr "Илова"
+
+#~ msgid "Do Not Add"
+#~ msgstr "Рад кардан"
+
+#~ msgid ""
+#~ "There appears to be a configuration error. You have associated Konqueror "
+#~ "with %1, but it cannot handle this file type."
+#~ msgstr ""
+#~ "Хатогӣ дар батанзимдарорӣ пайдо шудааст. Шумо Konqueror-ро бо файли %1 "
+#~ "пайваст намудед, лекин он намуди зерини файлро коркардкарда наметавонад."
+
+#~ msgid "Profile Management"
+#~ msgstr "Идоракунии Тахассус"
+
+#~ msgid "&Rename Profile"
+#~ msgstr "&Тағири номи Тахассус"
+
+#~ msgid "&Delete Profile"
+#~ msgstr "&Нобуд кардани Тахассус"
+
+#~ msgid "Manage Sessions"
+#~ msgstr "Идоракунии сеансҳо"
+
+#~ msgid "&Open"
+#~ msgstr "&Кушодан"
+
+#, fuzzy
+#~| msgid "Rename session"
+#~ msgid "Rename Session"
+#~ msgstr "Тағйири номи сеанс"
+
+#~ msgid "Save Session"
+#~ msgstr "Захиракунии сеанс"
+
+#~ msgid ""
+#~ "A session with the name '%1' already exists, do you want to overwrite it?"
+#~ msgstr "Сеанс бо номи «%1» аллакай мавҷуд аст. Тағйир мекунед?"
+
+#~ msgid "Session exists. Overwrite?"
+#~ msgstr "Сеанс аллакай мавҷуд аст. Тағйир мекунед?"
+
+#, fuzzy
+#~| msgid ""
+#~| "Konqueror didn't close correctly. Would you like to restore session?"
+#~ msgid ""
+#~ "Konqueror did not close correctly. Would you like to restore the previous "
+#~ "session?"
+#~ msgstr ""
+#~ "Барномаи Konqueror бо хатогӣ хуруҷ карда шуд. Сеансро аз нав барқарор "
+#~ "месозед?"
+
+#~ msgid "Restore Session?"
+#~ msgstr "Сеансро барқарор месозед?"
+
+#~ msgid "Restore Session"
+#~ msgstr "Барқарорсозии сеанс"
+
+#~ msgid "Do Not Restore"
+#~ msgstr "Рад кардан"
+
+#~ msgid "Ask Me Later"
+#~ msgstr "Баъдтар амал кунед"
+
+#~ msgid ""
+#~ "This bar contains the list of currently open tabs. Click on a tab to make "
+#~ "it active. You can also use keyboard shortcuts to navigate through tabs. "
+#~ "The text on the tab shows the content currently open in it; place your "
+#~ "mouse over the tab to see the full title, in case it has been shortened "
+#~ "to fit the tab width."
+#~ msgstr ""
+#~ "Ин панел рӯйхати замимаҳои кушодашуда дорад. Барои фаъолсозии замима, "
+#~ "онро бо мӯш зер кунед. Барои иваз кардани замимаҳо, шумо метавонед "
+#~ "тугмаҳои клавиатураро истифода баред. Сарлавҳаи замима маънои номи "
+#~ "саҳифаи Интернетӣ ё роҳи ҷой дорад. Дарозии номи сарлавҳа аз дарозии "
+#~ "андозаи замима вобаста аст. Барои нишон кардани номи сарлавҳаи пур, "
+#~ "замимаро бо мӯш муайян кунед."
+
+#~ msgid "Open a new tab"
+#~ msgstr "Ҷадвалбандии навро кушоед"
+
+#~ msgid "Close the current tab"
+#~ msgstr "Ҷадвалбандии ҷориро пӯшед"
+
+#~ msgid "&Duplicate Tab"
+#~ msgstr "&Ду нусха кардани Ҷадвалбандӣ"
+
+#~ msgid "&Reload Tab"
+#~ msgstr "&Бозсозии замима"
+
+#~ msgid "Other Tabs"
+#~ msgstr "Замимаҳои дигар"
+
+#~ msgid "D&etach Tab"
+#~ msgstr "&Ҷудосозии Ҷадвалбандӣ"
+
+#~ msgid "&Close Tab"
+#~ msgstr "&Пӯшидани Ҷадвалбандӣ"
+
+#~ msgid "Und&o: Closed Tab"
+#~ msgstr "&Беко кардан: Хуруҷи замима"
+
+#~ msgid "Und&o: Closed Window"
+#~ msgstr "&Беко кардан: Замимаи хуруҷшуда"
+
+#~ msgid ""
+#~ "The page you are trying to view is the result of posted form data. If you "
+#~ "resend the data, any action the form carried out (such as search or "
+#~ "online purchase) will be repeated. "
+#~ msgstr ""
+#~ "Саҳифае, ки шумо кӯшиши азназаргузарониаш мекунед, ин натиҷаи фиристодани "
+#~ "додаҳо аст. Агар шумо додаҳоро аз нав фиристед, ҳамаи амалиёте, ки форма "
+#~ "иҷро мекунад (ба монанди ҷустуҷӯ ё хариди ғайрихудмухтор) такроран иҷро "
+#~ "мешавад."
+
+#~ msgid "Warning"
+#~ msgstr "Хабарнома"
+
+#~ msgid "Resend"
+#~ msgstr "Дубора фиристодан"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window.\n"
+#~ "Loading a view profile will close them."
+#~ msgstr ""
+#~ "Шумо бисёр ҷадвалбандиҳоро дар ин тиреза кушодаед.\n"
+#~ "Боргузории тахассуси нав ба баста шудани онҳо меоварад."
+
+#~ msgid "Load View Profile"
+#~ msgstr "Боркунии Тахассуси Панел"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Loading a profile will discard these changes."
+#~ msgstr ""
+#~ "Ин ҷадвалбанд дигаргуниҳоро нигоҳ медорад, ки ҳоло ҳам захира карда "
+#~ "нашудаанд.\n"
+#~ "Боркунии тахассус ба қабул накардани дигаргуниҳо меоварад"
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "History Sidebar Module"
+#~ msgstr "Панели Тарафи Шабакавӣ"
+
+#~ msgctxt "@title:tab"
+#~ msgid "History"
+#~ msgstr "Таърих"
+
+#~ msgid " day"
+#~ msgid_plural " days"
+#~ msgstr[0] " рӯз"
+#~ msgstr[1] " рӯз"
+
+#~ msgid "Minute"
+#~ msgid_plural "Minutes"
+#~ msgstr[0] "Дақиқа"
+#~ msgstr[1] "Дақиқа"
+
+#~ msgid "Day"
+#~ msgid_plural "Days"
+#~ msgstr[0] "Рӯз"
+#~ msgstr[1] "Рӯз"
+
+#~ msgid "<h1>History Sidebar</h1> You can configure the history sidebar here."
+#~ msgstr ""
+#~ "<h1>Панели Тарафии Таърих</h1> Шумо метавонед дар ин ҷо панели тарафии "
+#~ "таърихро ба танзим дароред."
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Places Sidebar Module"
+#~ msgstr "Панели Тарафи Шабакавӣ"
+
+#, fuzzy
+#~ msgctxt "@title:tab"
+#~ msgid "Places"
+#~ msgstr "Тағири ном"
+
+#~ msgid "Extended Sidebar"
+#~ msgstr "Панели Тарифии Паҳншуда"
+
+#~ msgid "Rollback to System Default"
+#~ msgstr "Барқарорсозии стандартҳои системавӣ"
+
+#~ msgid "Configure Sidebar"
+#~ msgstr "Батанзимдарории Панели Тарафӣ"
+
+#~ msgid "Add New"
+#~ msgstr "Иловаи нав"
+
+#~ msgid "Multiple Views"
+#~ msgstr "Бисёр Назарҳо"
+
+#~ msgid "Show Tabs Left"
+#~ msgstr "Нишон додани Ҷадвалбандиҳо аз Чап"
+
+#~ msgid "Show Configuration Button"
+#~ msgstr "Нишон додани Тугмаи Батанзимдарорӣ"
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgid "Close Sidebar"
+#~ msgstr "Панели Тарафи Шабакавӣ"
+
+#~ msgid "This entry already exists."
+#~ msgstr "Ин элемент аллакай мавҷуд аст."
+
+#~ msgid ""
+#~ "<qt>This removes all your entries from the sidebar and adds the system "
+#~ "default ones.<br /><b>This procedure is irreversible</b><br />Do you want "
+#~ "to proceed?</qt>"
+#~ msgstr ""
+#~ "<qt>Ҳамаи маълумот аз панели бағал тоза мекунед ва маълумоти аслӣ "
+#~ "барқарор месозад.<br /><b>Маълумоти тозашуда барқарор карда намешавад</"
+#~ "b><br />Давом медиҳед?</qt>"
+
+#~ msgid "Show Tabs Right"
+#~ msgstr "Намоиши замимаҳо аз тарафи рост"
+
+#~ msgid "Set Name"
+#~ msgstr "Ворид кардани ном"
+
+#~ msgid "Enter the name:"
+#~ msgstr "Ворид кардани ном"
+
+#~ msgid "Enter a URL:"
+#~ msgstr "URL-ро ворид кунед:"
+
+#~ msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
+#~ msgstr ""
+#~ "<qt>Дар ҳақиқат мехоҳед, ки <b>%1</b> ҷадвалбандиро хориҷ кунед?</qt>"
+
+#, fuzzy
+#~| msgid ""
+#~| "You have hidden the navigation panel configuration button. To make it "
+#~| "visible again, click the right mouse button on any of the navigation "
+#~| "panel buttons and select \"Show Configuration Button\"."
+#~ msgid ""
+#~ "You have hidden the sidebar configuration button. To make it visible "
+#~ "again, click the right mouse button on any of the sidebar buttons and "
+#~ "select \"Show Configuration Button\"."
+#~ msgstr ""
+#~ "Шумо тугмаи батанзимдарории панели навигатсиониро пинҳон кардед.Барои аз "
+#~ "нав дида тавонистани он, тугмаи чапи мушро дар панели навигатсия ангушт "
+#~ "занед ва \"Нишон додани Тугмаи Батанзимдарорӣ\"-ро интихоб кунед."
+
+#~ msgid "Set Name..."
+#~ msgstr "Танзими ном..."
+
+#~ msgid "Set URL..."
+#~ msgstr "Насби URL..."
+
+#~ msgid "Set Icon..."
+#~ msgstr "Насби тасвир..."
+
+#~ msgid "Remove"
+#~ msgstr "Тоза кардан"
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgid "Web module"
+#~ msgstr "Панели Тарафи Шабакавӣ"
+
+#~ msgid "&Create New Folder"
+#~ msgstr "&Сохтани папкаи нав"
+
+#~ msgid "Delete Folder"
+#~ msgstr "Хориҷ кардани папка"
+
+#~ msgid "Delete Bookmark"
+#~ msgstr "Хориҷ кардани ҷадвалбанд"
+
+#~ msgid "Properties"
+#~ msgstr "Имконотҳо"
+
+#~ msgid "Open in New Window"
+#~ msgstr "Кушодан дар Тирезаи Нав"
+
+#~ msgid "Open Folder in Tabs"
+#~ msgstr "Кушодани Феҳрист дар Ҷадвалбандиҳо"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "Нусхабардории суроғаи истинодҳо"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark folder\n"
+#~ "\"%1\"?"
+#~ msgstr "Шумо мехоҳед ҷузвдони замимаҳои «%1» тоза кунед?"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark\n"
+#~ "\"%1\"?"
+#~ msgstr "Замимаи «%1»ро тоза мекунед?"
+
+#~ msgid "Bookmark Folder Deletion"
+#~ msgstr "Нест кардани ҷузвдони замимаҳо"
+
+#~ msgid "Bookmark Deletion"
+#~ msgstr "Нест кардани замима"
+
+#~ msgid "Bookmark Properties"
+#~ msgstr "Лавозимотҳои ҷадвалбанд"
+
+#~ msgid "&Update"
+#~ msgstr "&Навсозӣ"
+
+#~ msgid "Name:"
+#~ msgstr "Ном:"
+
+#~ msgid "Location:"
+#~ msgstr "Ҷойгиршавӣ:"
+
+#~ msgid "Add Bookmark"
+#~ msgstr "Иловаи замима"
+
+#~ msgid "Cannot find parent item %1 in the tree. Internal error."
+#~ msgstr "Пункти болоии %1 дар дарахт пайдо нагардид. Хатогии дохилӣ."
+
+#~ msgid "&Create New Folder..."
+#~ msgstr "&Эҷоди ҷузвдони нав..."
+
+#, fuzzy
+#~| msgid "&Move to Trash"
+#~ msgid "Move to Trash"
+#~ msgstr "&Ҷойгиркунӣ ба Сабад"
+
+#~ msgid "Rename"
+#~ msgstr "Тағйири ном"
+
+#~ msgid "Delete Link"
+#~ msgstr "Нест кардани алоқа"
+
+#~ msgid "New Folder"
+#~ msgstr "Ҷузвдони нав"
+
+#~ msgid "Create New Folder"
+#~ msgstr "Эҷоди ҷузвдони нав..."
+
+#~ msgid "Enter folder name:"
+#~ msgstr "Вориди номи ҷузвдон:"
+
+#~ msgctxt "@label"
+#~ msgid "Name:"
+#~ msgstr "Ном:"
+
+#~ msgctxt "@label"
+#~ msgid "Path or URL:"
+#~ msgstr "Нишон додани URL"
+
+#~ msgid "&Open Link"
+#~ msgstr "&Кушодани Пайванд"
+
+#~ msgid "Set &Automatic Reload"
+#~ msgstr "Танзим кардани &худкорона аз нав кардан"
+
+#~ msgid "Set Refresh Timeout (0 disables)"
+#~ msgstr "Марҳилаи аз нав кардан (0 -нав накардан)"
+
+#~ msgid " min"
+#~ msgstr " дақ"
+
+#~ msgid " sec"
+#~ msgstr " сон"
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Web Sidebar Module"
+#~ msgstr "Панели Тарафи Шабакавӣ"
+
+#~ msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
+#~ msgid "Be free."
+#~ msgstr "Озод бошед."
+
+#~ msgid ""
+#~ "Konqueror is a web browser, file manager and universal document viewer."
+#~ msgstr ""
+#~ "Konqueror - веб-браузер, мудири файлҳо ва системаи хаматарафа барои "
+#~ "намоиши саҳифаҳо ва файлҳо."
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "Starting Points"
+#~ msgstr "Қадамҳои аввалин"
+
+#~ msgid "Introduction"
+#~ msgstr "Муқаддима"
+
+#~ msgid "Tips"
+#~ msgstr "Маслиҳатҳо"
+
+#~ msgid "Specifications"
+#~ msgstr "Хусусиятҳо"
+
+#~ msgid "Your personal files"
+#~ msgstr "Файлҳои шахсии шумо"
+
+#~ msgid "Trash"
+#~ msgstr "Сабад"
+
+#~ msgid "Browse and restore the trash"
+#~ msgstr "Намоиш ва барқарорсозии файлҳои сабад"
+
+#~ msgid "Network Folders"
+#~ msgstr "Ҷузвдонҳои шабака"
+
+#~ msgid "Shared files and folders"
+#~ msgstr "Файлҳо ва ҷузвдонҳои ба ҳама тақсимшуда"
+
+#, fuzzy
+#~| msgid "&Bookmarks"
+#~ msgid "Bookmarks"
+#~ msgstr "&Хатчӯбмонӣ"
+
+#~ msgid "Quick access to your bookmarks"
+#~ msgstr "Дастрасии тез ба замимаҳо"
+
+#~ msgid "Next: An Introduction to Konqueror"
+#~ msgstr "Навбатӣ: Муқаддимаи Konqueror"
+
+#~ msgid "Search the Web"
+#~ msgstr "Ҷустуҷӯи саҳифаҳо дар Интернет"
+
+#, fuzzy
+#~ msgid ""
+#~ "Konqueror makes working with and managing your files easy. You can browse "
+#~ "both local and networked folders while enjoying advanced features such as "
+#~ "the powerful sidebar and file previews."
+#~ msgstr ""
+#~ "Konqueror значительно облегчает работу с файлами. Вы можете просматривать "
+#~ "как локальные, так и сетевые папки с использованием таких дополнительных "
+#~ "функций, как боковая панель и предварительный просмотр файлов."
+
+#~ msgid ""
+#~ "Konqueror is also a full featured and easy to use web browser which you "
+#~ "can use to explore the Internet. Enter the address (e.g. <a href=\"http://"
+#~ "www.kde.org\">http://www.kde.org</a>) of a web page you would like to "
+#~ "visit in the location bar and press Enter, or choose an entry from the "
+#~ "Bookmarks menu."
+#~ msgstr ""
+#~ "Konqueror - ин барномаи веб-браузери хеле осон ва боқувват аст. Шумо "
+#~ "метавонед ин барномаи барои намоиши саҳифаҳои Интернетро истифода баред. "
+#~ "Суроғаи саҳифаро ворид кунед(масалан <a href=\"http://www.kde.tj\">http://"
+#~ "www.kde.tj</a>).  Шумо ҳам метавонед саҳифаи Интернетро аз рӯйхати "
+#~ "замимаҳо кушоед."
+
+#, fuzzy
+#~ msgid ""
+#~ "To return to the previous location, press the back button <img width='16' "
+#~ "height='16' src=\"%1\"></img> in the toolbar. "
+#~ msgstr ""
+#~ "Если вы хотите вернуться на предыдущую страницу, нажмите кнопку <img "
+#~ "width='16' height='16' src=\"%1\"></img> на панели инструментов."
+
+#, fuzzy
+#~ msgid ""
+#~ "To quickly go to your Home folder press the  home button <img width='16' "
+#~ "height='16' src=\"%1\"></img>."
+#~ msgstr ""
+#~ "Чтобы быстро перейти в свою домашнюю папку, нажмите кнопку «Домой» <img "
+#~ "width='16' height='16' src=\"%1\"></img>."
+
+#, fuzzy
+#~ msgid ""
+#~ "For more detailed documentation on Konqueror click <a href=\"%1\">here</"
+#~ "a>."
+#~ msgstr ""
+#~ "Для дополнительной информации о Konqueror нажмите <a href=\"%1\">здесь</"
+#~ "a>."
+
+#, fuzzy
+#~ msgid ""
+#~ "<em>Tuning Tip:</em> If you want the Konqueror web browser to start "
+#~ "faster, you can turn off this information screen by clicking <a href="
+#~ "\"%1\">here</a>. You can re-enable it by choosing the Help -> Konqueror "
+#~ "Introduction menu option, and then pressing Settings -> Save View Profile "
+#~ "As... -> \"Web Browsing\"."
+#~ msgstr ""
+#~ "<I>Совет по настройке:</I> Если вы хотите, чтобы Konqueror запускался "
+#~ "быстрее, можете отключить это информационное окно <a href=\"%1\">здесь</"
+#~ "a>. Для того чтобы снова включить его, выберите пункт меню Справка-"
+#~ ">Введение в Konqueror и затем Параметры->Сохранить профиль просмотра "
+#~ "«Просмотр Веб»."
+
+#, fuzzy
+#~ msgid "Next: Tips &amp; Tricks"
+#~ msgstr "Далее: Подсказки и советы"
+
+#, fuzzy
+#~| msgid ""
+#~| "Konqueror is designed to embrace and support Internet standards. The aim "
+#~| "is to fully implement the officially sanctioned standards from "
+#~| "organizations such as the W3 and OASIS, while also adding extra support "
+#~| "for other common usability features that arise as de facto standards "
+#~| "across the Internet. Along with this support, for such functions as "
+#~| "favicons, Internet Keywords, and <A HREF=\"%1\">XBEL bookmarks</A>, "
+#~| "Konqueror also implements:"
+#~ msgid ""
+#~ "Konqueror is designed to embrace and support Internet standards. The aim "
+#~ "is to fully implement the officially sanctioned standards from "
+#~ "organizations such as the W3 and OASIS, while also adding extra support "
+#~ "for other common usability features that arise as de facto standards "
+#~ "across the Internet. Along with this support, for such functions as "
+#~ "favicons, Web Shortcuts, and <A HREF=\"%1\">XBEL bookmarks</A>, Konqueror "
+#~ "also implements:"
+#~ msgstr ""
+#~ "Konqueror барои пуштибонии имумуҷиҳатаи низоммеъёрҳои Интернет тарҳрезӣ "
+#~ "шудааст. Мақсади мо ин амалисозии пуштибонии низомҳои расмӣ таъиншуда аз "
+#~ "ташкилотҳои ба монанди W3 ва OASIS ва инчунин пуштибонии дигар "
+#~ "хусусиятҳое, ки воқеъан низоммеъёрҳои Интернет гардидаанд, мебошад. Ба "
+#~ "туфайли ин пуштибонӣ вазифаҳои зерин ба монанди тасвирҳои сайтҳо, "
+#~ "Вожакалидҳои Интернет ва <A HREF=\"%1\">хатчӯбҳои XBEL</A>, аллакай дар "
+#~ "Konqueror кор мекунанд, ва ба ғайр аз ин он амалӣ месозад:"
+
+#~ msgid "Supported standards"
+#~ msgstr "Низоммеъёрҳои пуштибонишаванда"
+
+#~ msgid "Additional requirements*"
+#~ msgstr "Талаботҳои иловагӣ*"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">DOM</A> (Сатҳи 1, қисман Сатҳи 2), ки ба <A HREF="
+#~ "\"%2\">HTML 4.01</A> асос ёфтааст"
+
+#~ msgid "built-in"
+#~ msgstr "дарунсохта"
+
+#~ msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
+#~ msgstr "<A HREF=\"%1\">Варақаҳои Навъи Қабатӣ</A> (CSS 1, қисман CSS 2)"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Таҳрири 3 (ба JavaScript 1.5 тахминан "
+#~ "мувофиқат мекунад)"
+
+#~ msgid ""
+#~ "JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
+#~ msgstr ""
+#~ "JavaScript хомӯш шудааст (саросар). Даргиронидани JavaScript <A HREF="
+#~ "\"%1\">ин ҷо</A>."
+
+#~ msgid ""
+#~ "JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\"
+#~ "\">here</A>."
+#~ msgstr ""
+#~ "JavaScript даргиронида шудааст (саросар). Батанзимдарории JavaScript <A "
+#~ "HREF=\\\"%1\\\">ин ҷо</A>."
+
+#~ msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
+#~ msgstr "Пуштибонии ҳифзшудаи <A HREF=\"%1\">Java</A><SUP>&reg;</SUP>"
+
+#, fuzzy
+#~| msgid ""
+#~| "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">Blackdown</A>, <A HREF="
+#~| "\"%2\">IBM</A> or <A HREF=\"%3\">Sun</A>)"
+#~ msgid ""
+#~ "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">IBM</A> or <A HREF="
+#~ "\"%2\">Sun/Oracle</A>)"
+#~ msgstr ""
+#~ "JDK 1.2.0 (Java 2) ҳамсози VM (<A HREF=\"%1\">Blackdown</A>, <A HREF="
+#~ "\"%2\">IBM</A> or <A HREF=\"%3\">Sun</A>)"
+
+#~ msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
+#~ msgstr "Даргиронидани Java (саросар) <A HREF=\"%1\">ин ҷо</A>."
+
+#~ msgid ""
+#~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">plugins</A> (for "
+#~ "viewing <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
+#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Video, etc.)"
+#~ msgstr ""
+#~ "Маҷрогузори Netscape<SUP>&reg;</SUP> <A HREF=\"%4\">воридҳо</A> (барои "
+#~ "баррасии <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
+#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Video, ва ғайра)"
+
+#~ msgid "Secure Sockets Layer"
+#~ msgstr "Табақаи Бастагоҳҳои Бехатарӣ"
+
+#~ msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
+#~ msgstr "(TLS/SSL v2/3) барои алоқаҳои муҳофизатшаванда то168бит"
+
+#~ msgid "OpenSSL"
+#~ msgstr "OpenSSL"
+
+#~ msgid "Bidirectional 16bit unicode support"
+#~ msgstr "Пуштибонии дусӯяи 16бит unicode"
+
+#~ msgid "AutoCompletion for forms"
+#~ msgstr "Худхотимаёбӣ барои саҳифаҳо"
+
+#~ msgctxt "Title of an html 'group box' explaining konqueror features"
+#~ msgid "General"
+#~ msgstr "Умумӣ"
+
+#~ msgid "Feature"
+#~ msgstr "Хусусият"
+
+#~ msgid "Details"
+#~ msgstr "Ҷузъҳо"
+
+#~ msgid "Image formats"
+#~ msgstr "Шаклбанди симоҳо"
+
+#, fuzzy
+#~| msgid "PNG<br />MNG<br />JPG<br />GIF"
+#~ msgid "PNG<br />JPG<br />GIF"
+#~ msgstr "PNG<br />MNG<br />JPG<br />GIF"
+
+#~ msgid "Transfer protocols"
+#~ msgstr "Қарордодҳои интиқол"
+
+#~ msgid "HTTP 1.1 (including gzip/bzip2 compression)"
+#~ msgstr "HTTP 1.1 (бо дохилкунии фишурдани gzip/bzip2)"
+
+#~ msgid "FTP"
+#~ msgstr "FTP"
+
+#, fuzzy
+#~| msgid "and <A HREF=\"%1\">many more...</A>"
+#~ msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpcenter)...</A>"
+#~ msgstr "ва <A HREF=\"%1\">бисёр дигарҳо...</A>"
+
+#~ msgctxt "A feature of Konqueror"
+#~ msgid "URL-Completion"
+#~ msgstr "Пуркунии суроға"
+
+#~ msgid "Manual"
+#~ msgstr "Дастурӣ"
+
+#~ msgid "Popup"
+#~ msgstr "Ба рӯй мебаромада"
+
+#~ msgid "(Short-) Automatic"
+#~ msgstr "(Кӯтоҳ-) Худкор"
+
+#, fuzzy
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "<a href=\"%1\">Return to Starting Points</a>"
+#~ msgstr "<a href=\"%1\">Возвращение к первым шагам</a>"
+
+#, fuzzy
+#~ msgid "Tips &amp; Tricks"
+#~ msgstr "Подсказки и советы"
+
+#, fuzzy
+#~ msgid ""
+#~ "Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, "
+#~ "using Google, for the search phrase \"KDE\". There are a lot of Web-"
+#~ "Shortcuts predefined to make searching for software or looking up certain "
+#~ "words in an encyclopedia a breeze. You can even <a href=\"%1\">create "
+#~ "your own</a> Web-Shortcuts."
+#~ msgstr ""
+#~ "Используйте ключевые слова Интернета и веб-сокращения: Набирая \"gg:KDE"
+#~ "\", вы получаете результаты поиска фразы \"KDE\" на сервере Google. По "
+#~ "умолчанию в Konqueror есть много сокращений для поиска программного "
+#~ "обеспечения и значений слов в энциклопедии. Вы даже можете <a href="
+#~ "\"%1\">создавать</a> собственные веб-сокращения."
+
+#, fuzzy
+#~ msgid ""
+#~ "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
+#~ "the HTML toolbar to increase the font size on your web page."
+#~ msgstr ""
+#~ "Используйте кнопки с лупой <img width='16' height='16' src=\"%1\"></img> "
+#~ "на панели инструментов для увеличения или уменьшения размера шрифтов на "
+#~ "веб-странице."
+
+#, fuzzy
+#~ msgid ""
+#~ "When you want to paste a new address into the Location toolbar you might "
+#~ "want to clear the current entry by pressing the black arrow with the "
+#~ "white cross <img width='16' height='16' src=\"%1\"></img> in the toolbar."
+#~ msgstr ""
+#~ "Если вы хотите вставить новый адрес в строку адреса Konqueror, вы можете "
+#~ "очистить старый адрес, нажав на чёрную стрелку с белым крестиком <img "
+#~ "width='16' height='16' src=\"%1\"></img> на панели инструментов."
+
+#, fuzzy
+#~| msgid ""
+#~| "To create a link on your desktop pointing to the current page, simply "
+#~| "drag the \"Location\" label that is to the left of the Location toolbar, "
+#~| "drop it on to the desktop, and choose \"Link\"."
+#~ msgid ""
+#~ "To create a link on your desktop pointing to the current page, simply "
+#~ "drag the icon (favicon) that is to the left of the Location toolbar, drop "
+#~ "it on to the desktop, and choose \"Icon\"."
+#~ msgstr ""
+#~ "Барои офаридани пайванд дар мизи кории худ, дар саҳифаи ҷорӣ фақат "
+#~ "нишонаи \"Ҷойгиршави\"-ро, ки дар чапи панели асбобҳои Ҷойгиршавӣ мавҷуд "
+#~ "аст, кашола карда дар мизи кории худ ҷойгир кунед ва \"Пайванд\"-ро "
+#~ "интихоб кунед."
+
+#, fuzzy
+#~ msgid ""
+#~ "You can also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen "
+#~ "Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
+#~ "sessions."
+#~ msgstr ""
+#~ "В меню Параметры также можно найти <img width='16' height='16' src="
+#~ "\"%1\" />«Полноэкранный режим». Использование этой возможности очень "
+#~ "полезно, например, для презентаций."
+
+#, fuzzy
+#~ msgid ""
+#~ "Divide et impera (lat. \"Divide and conquer\") - by splitting a window "
+#~ "into two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> "
+#~ "Split View Left/Right) you can make Konqueror appear the way you like. "
+#~ "You can even load some example view-profiles (e.g. Midnight Commander), "
+#~ "or create your own ones."
+#~ msgstr ""
+#~ "Divide et impera (лат. «Разделяй и властвуй») - разделяя окно на две "
+#~ "части (например, Окно-><img width='16' height='16' src=\"%1\" /> "
+#~ "Разделить панель по вертикали) вы можете настроить Konqueror так, как вам "
+#~ "нравится. Вы даже можете загружать некоторые примеры профилей просмотра "
+#~ "(например, Midnight Commander) или создать собственные профили."
+
+#, fuzzy
+#~ msgid ""
+#~ "Use the <a href=\"%1\">user-agent</a> feature if the website you are "
+#~ "visiting asks you to use a different browser (and do not forget to send a "
+#~ "complaint to the webmaster!)"
+#~ msgstr ""
+#~ "Используйте <a href=\"%1\">user-agent</a> - возможность замаскироваться "
+#~ "под любой другой браузер, если при посещении сайта вам вдруг будет "
+#~ "предложено использовать именно его (и не забудьте послать жалобу веб-"
+#~ "мастеру!)"
+
+#, fuzzy
+#~ msgid ""
+#~ "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
+#~ "ensures that you can keep track of the pages you have visited recently."
+#~ msgstr ""
+#~ "<img width='16' height='16' src=\"%1\"></img> Журнал на боковой панели "
+#~ "можно использовать для перехода на недавно открывавшиеся страницы."
+
+#, fuzzy
+#~ msgid ""
+#~ "Use a caching <a href=\"%1\">proxy</a> to speed up your Internet "
+#~ "connection."
+#~ msgstr ""
+#~ "Используйте кэширующий <a href=\"%1\">прокси-сервер</a> для оптимизации "
+#~ "использования соединения с Интернетом."
+
+#, fuzzy
+#~ msgid ""
+#~ "Advanced users will appreciate the Konsole which you can embed into "
+#~ "Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
+#~ "Terminal Emulator)."
+#~ msgstr ""
+#~ "Опытные пользователи оценят удобство Konsole, встроенной в Konqueror "
+#~ "(Окно-><img width='16' height='16' SRC=\"%1\"></img> Показать эмулятор "
+#~ "терминала)."
+
+#~ msgid "Next: Specifications"
+#~ msgstr "Навбатӣ: Хусусиятҳо"
+
+#~ msgid "Installed Plugins"
+#~ msgstr "Воридҳои Коргузоришуда"
+
+#~ msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
+#~ msgstr "<td>Ворид</td><td>Шарҳдиҳӣ</td><td>Файл</td><td>Намудҳо</td>"
+
+#~ msgid "Installed"
+#~ msgstr "Коргузоришуда"
+
+#~ msgid ""
+#~ "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
+#~ msgstr ""
+#~ "<td>Навъи Mime</td><td>Шарҳдиҳӣ</td><td>Пасвандҳо</td><td>Ворид</td>"
+
+#~ msgid ""
+#~ "Do you want to disable showing the introduction in the webbrowsing "
+#~ "profile?"
+#~ msgstr "Мехоҳед, ки намоиши муқаддимаи тахассуси webбаррасро хомӯш созед?"
+
+#~ msgid "Faster Startup?"
+#~ msgstr "Оғозёбии Тезтар?"
+
+#~ msgid "Disable"
+#~ msgstr "Хомӯшкунӣ"
+
+#~ msgid "Keep"
+#~ msgstr "Нигоҳ доштан"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Виктор Ибрагимов,Абророва Хирмон,Ватаншоев Акмал"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "victor.ibragimov@gmail.com"
+
+#~ msgid "&File"
+#~ msgstr "&Файл"
+
+#~ msgid "&Edit"
+#~ msgstr "&Таҳрир"
+
+#~ msgid "&View"
+#~ msgstr "&Намоиш"
+
+#~ msgid "&Go"
+#~ msgstr "&Гузаштан"
+
+#~ msgid "&Settings"
+#~ msgstr "&Танзимот"
+
+#~ msgid "&Window"
+#~ msgstr "&Тиреза"
+
+#~ msgid "&Help"
+#~ msgstr "&Ёрӣ"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Панели асбобҳои асосӣ"
+
+#~ msgid "Extra Toolbar"
+#~ msgstr "Панели Асбобҳои Иловагӣ"
+
+#~ msgid "Location Toolbar"
+#~ msgstr "Панели Асбобҳои Ҷойгиршавӣ"
+
+#~ msgid "Bookmark Toolbar"
+#~ msgstr "Панели Асбобҳои Хатчӯб"
+
+#, fuzzy
+#~ msgid "Save open tabs and windows for easy retrieval"
+#~ msgstr "Сохранить открытые вкладки и окна для лёгкого доступа"
+
+#~ msgid "&Session name:"
+#~ msgstr "&Номи сеанс:"
+
+#~ msgid "&Profile name:"
+#~ msgstr "&Номи профил:"
+
+#~ msgid "Save &URLs in profile"
+#~ msgstr "&URL-ро дар тахассус захира кунед"
+
+#~ msgctxt "@action:button New session"
+#~ msgid "New..."
+#~ msgstr "Нав..."
+
+#~ msgctxt "@action:button Save current session"
+#~ msgid "Save Current"
+#~ msgstr "Захиракунии ҷорӣ"
+
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename..."
+#~ msgstr "Тағйири ном..."
+
+#~ msgctxt "@action:button Delete session"
+#~ msgid "Delete"
+#~ msgstr "Нест кардан"
+
+#~ msgid "Open tabs inside current window"
+#~ msgstr "Кушодани ҷадвалбандӣ дар тирезаи ҷорӣ"
+
+#~ msgid "Limits"
+#~ msgstr "Ҳудудҳо"
+
+#~ msgid "URLs e&xpire after"
+#~ msgstr "Мӯҳлати URL ба &итмом мерасад баъд аз"
+
+#~ msgid "Maximum &number of URLs:"
+#~ msgstr "&Шумораи зиёдтарини URL:"
+
+#~ msgid "Custom Fonts For"
+#~ msgstr "Ҳарфҳои махсус барои"
+
+#~ msgid "URLs newer than"
+#~ msgstr "URL навтар аст назар ба"
+
+#~ msgid "Choose Font..."
+#~ msgstr "Интихоби ҳарфҳо..."
+
+#~ msgid "URLs older than"
+#~ msgstr "URL кӯҳнатар аст назар ба"
+
+#~ msgid ""
+#~ "Shows the number of times visited and the dates of the first and last "
+#~ "visits, in addition to the URL"
+#~ msgstr ""
+#~ "Шумораи ташрифотро ва санаи ташрифоти аввалину охиринро бо иловаи URL "
+#~ "нишон медиҳад"
+
+#~ msgid "Detailed tooltips"
+#~ msgstr "Маслиҳатҳои ботафсил"
+
+#~ msgid "Clear History"
+#~ msgstr "Тоза кардани таърих"
+
+#, fuzzy
+#~| msgid "Maximum &number of URLs:"
+#~ msgid "Maximum number of Closed Items"
+#~ msgstr "&Шумораи зиёдтарини URL:"
+
+#, fuzzy
+#~ msgid "Open folders in separate windows"
+#~ msgstr "Кушодани Феҳрист дар Ҷадвалбандиҳо"
+
+#, fuzzy
+#~ msgid "Show file tips"
+#~ msgstr "Нишон додани Ҷузъҳо"
+
+#, fuzzy
+#~ msgid "Show previews in file tips"
+#~ msgstr "Нишон додани Ҷузъҳо"
+
+#, fuzzy
+#~ msgid "Ask confirmation for deleting a file."
+#~ msgstr "Тасдиқот"
+
+#, fuzzy
+#~ msgid "Ask confirmation for move to trash"
+#~ msgstr "Тасдиқот"
+
+#~ msgid "Hide %1"
+#~ msgstr "Пинҳонкунии %1"
+
+#, fuzzy
+#~| msgid "Web SideBar Plugin"
+#~ msgid "SideBar Test Plugin"
+#~ msgstr "Вориди Web Панели Тарафӣ"
+
+#~ msgid "Bookmark This Location"
+#~ msgstr "Хатчӯбкунии ин Маҳал"
+
+#~ msgid ""
+#~ "Malformed URL\n"
+#~ "%1"
+#~ msgstr ""
+#~ "URL-и нодуруст ташкилшуда\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Protocol not supported\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Қарордод пуштибонӣ намегардад\n"
+#~ "%1"
+
+#~ msgid "Cannot create the find part, check your installation."
+#~ msgstr ""
+#~ "Сохтани элементи ҷустуҷӯ муяссар карда намешавад, коргузории худро санҷед."
+
+#~ msgid "My Bookmarks"
+#~ msgstr "Хатчӯбмониҳои ман"
+
+#~ msgid "Preload for later use"
+#~ msgstr "Боргузории пешакӣ барои истифодаи оянда"
+
+#~ msgid "&Save View Profile \"%1\"..."
+#~ msgstr "&Захира кардани Тахассуси Назар \"%1\"..."
+
+#~ msgid "Configure Navigation Panel"
+#~ msgstr "Батанзимдарории Панели Навигатсионӣ"
+
+#~ msgid "Close Navigation Panel"
+#~ msgstr "Пӯшидани Панели Навигатсионӣ"
+
+#~ msgid "Select Type"
+#~ msgstr "Интихоби Намуд"
+
+#~ msgid "Select type:"
+#~ msgstr "Интихоби намуд:"
+
+#~ msgid "Web SideBar Plugin"
+#~ msgstr "Вориди Web Панели Тарафӣ"
+
+#~ msgid "<qt><b>%1</b> does not exist</qt>"
+#~ msgstr "<qt><b>%1</b> мавҷуд нест<qt>"
+
+#~ msgid "Minutes"
+#~ msgstr "Дақиқаҳо"
+
+#~ msgid "Days"
+#~ msgstr "Рӯзҳо"
+
+#~ msgid "Your sidebar is not functional or unavailable."
+#~ msgstr "Панели бағал кор намекунад ё дастнорас аст."
+
+#~ msgid "Cannot find running history plugin in your sidebar."
+#~ msgstr "Намоиши таърих дар панели бағал имконнопазир аст."
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History in Sidebar"
+#~ msgstr "Намоиши журнал дар панели бағал"
+
+#~ msgid "Select Remote Charset"
+#~ msgstr "Рамзгузории диски дурдаст"
+
+#~ msgid "Reload"
+#~ msgstr "Бозсозӣ"
+
+#~ msgid "Default"
+#~ msgstr "Стандартӣ"
+
+#, fuzzy
+#~ msgctxt "@action:button New session"
+#~ msgid "New"
+#~ msgstr "Папкаи Нав"
+
+#~| msgid "Rename"
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename"
+#~ msgstr "Тағири ном"
+
+#~ msgid "G E N E R A L"
+#~ msgstr "У М У М Ӣ"
+
+#, fuzzy
+#~ msgid "Applications"
+#~ msgstr "&Замимаҳо"
+
+#, fuzzy
+#~ msgid "Installed programs"
+#~ msgstr "Воридҳои Коргузоришуда"
+
+#~ msgid "&Location"
+#~ msgstr "&Ҷойгиршавӣ"
+
+#~ msgid "Open &Terminal"
+#~ msgstr "Кушодани &Поёна"
+
+#~| msgid "&Close Tab"
+#~ msgid "Closed Tabs"
+#~ msgstr "&Пӯшидани Ҷадвалбандӣ"
+
+#~ msgid "Unknown"
+#~ msgstr "Номаълум"
+
+#~ msgid "Save &window size in profile"
+#~ msgstr "Андозаи &тирезаро дар тахассус захира кунед"
+
+#, fuzzy
+#~ msgid "Speech Toolbar"
+#~ msgstr "Панели Асбобҳои Азназаргузаронӣдар намуди Дарахт"
+
+#~ msgid "Conquer your Desktop!"
+#~ msgstr "Барои худ Мизи кориро кушоед!"
+
+#, fuzzy
+#~ msgid "Settings"
+#~ msgstr "П&араметрҳо"
+
+#, fuzzy
+#~ msgid "Desktop configuration"
+#~ msgstr "Нишон додани Тугмаи Батанзимдарорӣ"
+
+#~ msgid "&Edit File Type..."
+#~ msgstr "&Таҳрири Навъи Файл..."
+
+#~ msgid "App&lications"
+#~ msgstr "&Замимаҳо"
+
+#, fuzzy
+#~ msgid "&Network Folders"
+#~ msgstr "Папкаи Нав"
+
+#~ msgid "Sett&ings"
+#~ msgstr "П&араметрҳо"
+
+#~ msgid "Autostart"
+#~ msgstr "Худоғозёбӣ"
+
+#, fuzzy
+#~ msgid "Profile %1 not found\n"
+#~ msgstr "Тахассуси кушодашаванда"
+
+#, fuzzy
+#~ msgid "<qt><center><b>%1</b></center> is already in the list.</qt>"
+#~ msgstr "<qt><b>%1</b> ҳақиқӣ нест<qt>"
+
+#, fuzzy
+#~ msgid "Duplicate Entry"
+#~ msgstr "&Ду нусха кардани Ҷадвалбандӣ"
+
+#, fuzzy
+#~ msgid "Change Exception"
+#~ msgstr "&Ивази Тасвир..."
+
+#, fuzzy
+#~ msgid "Default user name:"
+#~ msgstr "Ворид кардани номи папка:"
+
+#, fuzzy
+#~ msgid "Reject"
+#~ msgstr "Дубора фиристодан"
+
+#, fuzzy
+#~ msgid "D-Bus Communication Error"
+#~ msgstr "Тасдиқот"
+
+#, fuzzy
+#~ msgid "&Windows Shares"
+#~ msgstr "&Тиреза"
+
+#, fuzzy
+#~ msgid "Add Identification"
+#~ msgstr "Таъинот"
+
+#, fuzzy
+#~ msgid "Duplicate Identification"
+#~ msgstr "&Ду нусха кардани Ҷадвалбандии Ҷорӣ"
+
+#, fuzzy
+#~ msgid "Variable Proxy Configuration"
+#~ msgstr "Нишон додани Тугмаи Батанзимдарорӣ"
+
+#, fuzzy
+#~ msgid "Update Failed"
+#~ msgstr "Нав кардани Favicon"
+
+#, fuzzy
+#~ msgid "Duplicate Policy"
+#~ msgstr "&Ду нусха кардани Тиреза"
+
+#~| msgid "Manual"
+#~ msgid "Menu"
+#~ msgstr "Дастурӣ"
+
+#, fuzzy
+#~ msgid "Move Up"
+#~ msgstr "Ҷойивазкунии %1"
+
+#, fuzzy
+#~ msgid "Move Down"
+#~ msgstr "&Тирезаи Нав"
+
+#, fuzzy
+#~ msgid ""
+#~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "
+#~ "file manager here."
+#~ msgstr ""
+#~ "<h1>Панели Тарафии Таърих</h1> Шумо метавонед дар ин ҷо панели тарафии "
+#~ "таърихро ба танзим дароред."
+
+#, fuzzy
+#~ msgid "Open folders in separate &windows"
+#~ msgstr "Кушодани Феҳрист дар Ҷадвалбандиҳо"
+
+#, fuzzy
+#~ msgid "Show file &tips"
+#~ msgstr "Нишон додани Ҷузъҳо"
+
+#, fuzzy
+#~ msgid "&Move to trash"
+#~ msgstr "&Ҷойгиркунӣ ба Сабад"
+
+#~ msgid "Sound Files"
+#~ msgstr "Файлҳои Овозӣ"
+
+#, fuzzy
+#~ msgid "No Action"
+#~ msgstr "&Ҷойгиршавӣ"
+
+#, fuzzy
+#~ msgid "Desktop Menu"
+#~ msgstr "Нишон додани Тугмаи Батанзимдарорӣ"
+
+#, fuzzy
+#~ msgid "Application Menu"
+#~ msgstr "&Замимаҳо"
+
+#, fuzzy
+#~ msgid "Bookmarks Menu"
+#~ msgstr "Хатчӯб"
+
+#, fuzzy
+#~ msgid "Custom Menu 1"
+#~ msgstr "Ҳуруфҳои Махсус Барои"
+
+#, fuzzy
+#~ msgid "Custom Menu 2"
+#~ msgstr "Ҳуруфҳои Махсус Барои"
+
+#, fuzzy
+#~ msgid "Select Protocols"
+#~ msgstr "Файлҳоро ҷудо созед:"
+
+#, fuzzy
+#~ msgid "Local Protocols"
+#~ msgstr "Қарордодҳои интиқол"
+
+#, fuzzy
+#~ msgid "Internet Protocols"
+#~ msgstr "Қарордодҳои интиқол"
+
+#, fuzzy
+#~ msgid "A&utostart path:"
+#~ msgstr "Худоғозёбӣ"
+
+#, fuzzy
+#~ msgid "Confirmation Required"
+#~ msgstr "Тасдиқот"
+
+#, fuzzy
+#~ msgid "Move"
+#~ msgstr "Ҷойивазкунии %1"
+
+#, fuzzy
+#~ msgid "KEditFileType"
+#~ msgstr "&Таҳрири Навъи Файл..."
+
+#, fuzzy
+#~ msgid "(c) 2000, KDE developers"
+#~ msgstr "(c) 2000 - 2003, коргардонони KDE"
+
+#, fuzzy
+#~ msgid "Edit File Type %1"
+#~ msgstr "&Таҳрири Навъи Файл..."
+
+#, fuzzy
+#~ msgid "Create New File Type %1"
+#~ msgstr "Сохтани Папкаи Нав..."
+
+#, fuzzy
+#~ msgid "Create New File Type"
+#~ msgstr "Сохтани Папкаи Нав..."
+
+#, fuzzy
+#~ msgid "Group:"
+#~ msgstr "Гурӯҳ"
+
+#, fuzzy
+#~ msgid "Type name:"
+#~ msgstr "Тағири ном"
+
+#, fuzzy
+#~ msgid "Show file in separate viewer"
+#~ msgstr "Кушодани Феҳрист дар Ҷадвалбандиҳо"
+
+#, fuzzy
+#~ msgid "Select service:"
+#~ msgstr "Файлҳоро ҷудо созед:"
+
+#, fuzzy
+#~ msgid "&Remove"
+#~ msgstr "&Тағири ном"
+
+#, fuzzy
+#~ msgid "Filename Patterns"
+#~ msgstr "Номи файл"
+
+#, fuzzy
+#~ msgid "Description"
+#~ msgstr "Интихоб"
+
+#, fuzzy
+#~ msgid "Move &Up"
+#~ msgstr "Ҷойивазкунии %1"
+
+#, fuzzy
+#~ msgid "Global Settings"
+#~ msgstr "П&араметрҳо"
+
+#, fuzzy
+#~ msgid "Domain-Specific Settin&gs"
+#~ msgstr "Таъинот"
+
+#, fuzzy
+#~ msgid "Netscape Plugins"
+#~ msgstr "Воридҳои Коргузоришуда"
+
+#, fuzzy
+#~ msgid "Cancel"
+#~ msgstr "Бекор кардашуда."
+
+#, fuzzy
+#~ msgid "De&lete"
+#~ msgstr "Нобуд кардани истинод"
+
+#, fuzzy
+#~ msgid "&Import..."
+#~ msgstr "&Ворид кардан"
+
+#, fuzzy
+#~ msgid "&Export..."
+#~ msgstr "&Содир кардан"
+
+#, fuzzy
+#~ msgid "Select Home Folder"
+#~ msgstr "Хориҷ кардани папка"
+
+#, fuzzy
+#~ msgid "Open new windows:"
+#~ msgstr "Кушодан дар Тирезаи Нав"
+
+#, fuzzy
+#~ msgid "Smart"
+#~ msgstr "Тартибсозӣ"
+
+#, fuzzy
+#~ msgid "Resize window:"
+#~ msgstr "Дубора фиристодан"
+
+#, fuzzy
+#~ msgid "Move window:"
+#~ msgstr "&Тирезаи Нав"
+
+#, fuzzy
+#~ msgid "(c) 1999 - 2001 The Konqueror Developers"
+#~ msgstr "(c) 1999-2004, Коргардонони Konqueror"
+
+#, fuzzy
+#~ msgid "Java&Script"
+#~ msgstr "ташкилкунанда (JavaScript)"
+
+#, fuzzy
+#~ msgid "Enable filters"
+#~ msgstr "Тасвир кардани ташхиси муқадамот"
+
+#, fuzzy
+#~ msgid "Hide filtered images"
+#~ msgstr "Пинҳон кардани Андозаи Файл"
+
+#, fuzzy
+#~ msgid "Update"
+#~ msgstr "Нав кардани Favicon"
+
+#, fuzzy
+#~ msgid "Import..."
+#~ msgstr "&Ворид кардан"
+
+#, fuzzy
+#~ msgid "Export..."
+#~ msgstr "&Содир кардан"
+
+#, fuzzy
+#~ msgid "Font Si&ze"
+#~ msgstr "Андозаи Тасвир"
+
+#, fuzzy
+#~ msgid "C&ursive font:"
+#~ msgstr "Тартибсозии Бозгаштӣ"
+
+#, fuzzy
+#~ msgid "Boo&kmarks"
+#~ msgstr "Хатчӯб"
+
+#, fuzzy
+#~ msgid "Form Com&pletion"
+#~ msgstr "Хотимаёбии URL"
+
+#, fuzzy
+#~ msgid "Enable completion of &forms"
+#~ msgstr "Худхотимаёбӣ барои саҳифаҳо"
+
+#, fuzzy
+#~ msgctxt "underline"
+#~ msgid "Enabled"
+#~ msgstr "Коргузоришуда"
+
+#, fuzzy
+#~ msgctxt "underline"
+#~ msgid "Disabled"
+#~ msgstr "Тасвир накардани ташхиси муқадамот"
+
+#, fuzzy
+#~ msgid "A&nimations:"
+#~ msgstr "&Замимаҳо"
+
+#, fuzzy
+#~ msgctxt "animations"
+#~ msgid "Enabled"
+#~ msgstr "Коргузоришуда"
+
+#, fuzzy
+#~ msgctxt "animations"
+#~ msgid "Disabled"
+#~ msgstr "Тасвир накардани ташхиси муқадамот"
+
+#, fuzzy
+#~ msgid "Show Only Once"
+#~ msgstr "Нишон додани Соҳиб"
+
+#, fuzzy
+#~ msgid "Enable Ja&va globally"
+#~ msgstr "Даргиронидани Java (саросар) <A HREF=\"%1\">ин ҷо</A>."
+
+#, fuzzy
+#~ msgid "Additional Java a&rguments:"
+#~ msgstr "Талаботҳои иловагӣ*"
+
+#, fuzzy
+#~ msgid "&Filters"
+#~ msgstr "&Феҳрист"
+
+#~ msgid "No permissions to write to %1"
+#~ msgstr "Рухсат барои навиштан дар %1 нест"
+
+#~ msgid "Remove Folder Properties"
+#~ msgstr "Хориҷ кардани Хусусиятҳои Феҳрист"
+
+#~ msgid "Create Folder..."
+#~ msgstr "Офаридани Феҳрист..."
+
+#, fuzzy
+#~ msgid "&Delete"
+#~ msgstr "Нобуд кардани истинод"
+
+#~ msgid "&Rename"
+#~ msgstr "&Тағири ном"
+
+#, fuzzy
+#~ msgid "Desktop &Names"
+#~ msgstr "Ворид кардани ном"
+
+#~| msgid "Move backwards one step in the browsing history<p>"
+#~ msgid "Move backwards one step in the browsing history<br /><br />"
+#~ msgstr "Дар таърихи баррасӣ як қадам ба пушт ҷой иваз кунед<p>"
+
+#~| msgid "Move forward one step in the browsing history<p>"
+#~ msgid "Move forward one step in the browsing history<br /><br />"
+#~ msgstr "Дар таърихи баррасӣ як қадам ба пеш ҷой иваз кунед<p>"
+
+#, fuzzy
+#~ msgid "Rename icons in&line"
+#~ msgstr "&Тағири номи Тахассус"
+
+#, fuzzy
+#~ msgid "Font si&ze:"
+#~ msgstr "Андозаи Тасвир"
+
+#, fuzzy
+#~ msgid "&Underline filenames"
+#~ msgstr "Ҷудосозии файлҳоро бекор кунед:"
+
+#, fuzzy
+#~ msgid " line"
+#~ msgid_plural " lines"
+#~ msgstr[0] " дақиқаҳо"
+#~ msgstr[1] " дақиқаҳо"
+
+#, fuzzy
+#~ msgid ""
+#~ "<h1>Appearance</h1> You can configure how Konqueror looks as a file "
+#~ "manager here."
+#~ msgstr ""
+#~ "<h1>Панели Тарафии Таърих</h1> Шумо метавонед дар ин ҷо панели тарафии "
+#~ "таърихро ба танзим дароред."
+
+#, fuzzy
+#~ msgid ""
+#~ "Thanks to <a href=\"%1\">DCOP</a> you can have full control over "
+#~ "Konqueror using a script."
+#~ msgstr ""
+#~ "Ба туфайли <A HREF=\"%1\">DCOP</A> шумо метавонед Konqueror-ро ба воситаи "
+#~ "дастнависҳо пурра идора кунед."
+
+#~ msgid "Preview In"
+#~ msgstr "Аз назаргузаронии пешакӣ Дар"
+
+#~ msgid "&Open Location..."
+#~ msgstr "&Кушодани Маҳал..."
+
+#~ msgid "Animated Logo"
+#~ msgstr "Тамғаи Тасвири Мутаҳаррик"
+
+#~ msgid "Selection"
+#~ msgstr "Интихоб"
+
+#~ msgid "Icon Size"
+#~ msgstr "Андозаи Тасвир"
+
+#~ msgid "Show Details"
+#~ msgstr "Нишон додани Ҷузъҳо"
+
+#~ msgid "Detailed Listview Toolbar"
+#~ msgstr "Панели Асбобҳои Азназаргузаронии Ботафсил дар намуди Рӯйхат"
+
+#~ msgid "MimeType"
+#~ msgstr "Навъи Mime"
+
+#~ msgid "Size"
+#~ msgstr "Андоза"
+
+#~ msgid "Modified"
+#~ msgstr "Тағир додашуда"
+
+#~ msgid "Accessed"
+#~ msgstr "Дастёбишуда"
+
+#~ msgid "Created"
+#~ msgstr "Офарида шуда"
+
+#~ msgid "Owner"
+#~ msgstr "Соҳиб"
+
+#~ msgid "Group"
+#~ msgstr "Гурӯҳ"
+
+#~ msgid "Link"
+#~ msgstr "Пайванд"
+
+#~ msgid "URL"
+#~ msgstr "URL"
+
+#~ msgid "File Type"
+#~ msgstr "Навъи Файл"
+
+#~ msgid "Select files:"
+#~ msgstr "Файлҳоро ҷудо созед:"
+
+#~ msgid "Unselect files:"
+#~ msgstr "Ҷудосозии файлҳоро бекор кунед:"
+
+#~ msgid "Show &Modification Time"
+#~ msgstr "Нишон додани Вақти &Тағирот"
+
+#~ msgid "Hide &Modification Time"
+#~ msgstr "Пинҳон кардани &вақти тағирот"
+
+#~ msgid "Show &File Type"
+#~ msgstr "Нишон додани Навъи &Файл"
+
+#~ msgid "Hide &File Type"
+#~ msgstr "Пинҳон кардани намуди &файл"
+
+#~ msgid "Show MimeType"
+#~ msgstr "Нишон додани Навъи Mime"
+
+#~ msgid "Hide MimeType"
+#~ msgstr "Пинҳон кардани намуди Mime"
+
+#~ msgid "Show &Access Time"
+#~ msgstr "Пинҳон кардани &вақти дастёбӣ"
+
+#~ msgid "Hide &Access Time"
+#~ msgstr "Пинҳон кардани &вақти дастёбӣ "
+
+#~ msgid "Show &Creation Time"
+#~ msgstr "Нишон додани &вақти офариниш"
+
+#~ msgid "Hide &Creation Time"
+#~ msgstr "Пинҳон кардани &вақти офариниш"
+
+#~ msgid "Show &Link Destination"
+#~ msgstr "Нишон додани Ҷои таъиншудаи &Пайванд"
+
+#~ msgid "Hide &Link Destination"
+#~ msgstr "Пинҳон кардани &Ҷои таъиншудаи истинодҳо "
+
+#~ msgid "Show Filesize"
+#~ msgstr "Нишон додани Андозаи Файл"
+
+#~ msgid "Hide Filesize"
+#~ msgstr "Пинҳон кардани Андозаи Файл"
+
+#~ msgid "Show Owner"
+#~ msgstr "Нишон додани Соҳиб"
+
+#~ msgid "Hide Owner"
+#~ msgstr "Пинҳон кардани соҳиб"
+
+#~ msgid "Show Group"
+#~ msgstr "Нишон додани Гурӯҳ"
+
+#~ msgid "Hide Group"
+#~ msgstr "Пинҳон кардани гурӯҳ"
+
+#~ msgid "Show Permissions"
+#~ msgstr "Нишон додани рухсатҳо"
+
+#~ msgid "Hide Permissions"
+#~ msgstr "Пинҳон кардани рухсатҳо"
+
+#~ msgid "Se&lect..."
+#~ msgstr "&Ҷудосозии..."
+
+#~ msgid "Unselect..."
+#~ msgstr "Бекор кардани ҷудосозии..."
+
+#~ msgid "Unselect All"
+#~ msgstr "Бекор кардани ҷудосозии Ҳама"
+
+#~ msgid "&Invert Selection"
+#~ msgstr "Ҷудокунии &Баръакс"
+
+#~ msgid "Show &Hidden Files"
+#~ msgstr "Нишон додани Файлҳои &Пинҳонкардашуда"
+
+#~ msgid "Case Insensitive Sort"
+#~ msgstr "Тартибсозӣ Бе Ҳисоби Сабткунанда"
+
+#~ msgid "Name"
+#~ msgstr "Ном"
+
+#~ msgid "You must take the file out of the trash before being able to use it."
+#~ msgstr ""
+#~ "Шумо бояд файлро пеш аз имконияти истифодаи он аз сабад ба берун гиред."
+
+#, fuzzy
+#~ msgid "View &As"
+#~ msgstr "Азназаргузаронӣ &ҳамчун"
+
+#~ msgid "Filename"
+#~ msgstr "Номи файл"
+
+#~ msgid "Toggle displaying of hidden dot files"
+#~ msgstr "Намоиши замимаи файлҳои бо нуқта оғозёбандаи пинҳоншуда"
+
+#~ msgid "&Folder Icons Reflect Contents"
+#~ msgstr "&Феҳристи Тасвирҳо Таркибро Инъикос менамояд"
+
+#~ msgid "&Preview"
+#~ msgstr "&Азназаргузаронии Ибтидоӣ"
+
+#~ msgid "Enable Previews"
+#~ msgstr "Тасвир кардани ташхиси муқадамот"
+
+#~ msgid "Disable Previews"
+#~ msgstr "Тасвир накардани ташхиси муқадамот"
+
+#~ msgid "By Name (Case Sensitive)"
+#~ msgstr "Бо Ном (Бо Ҳисоби Сабткунанда)"
+
+#~ msgid "By Name (Case Insensitive)"
+#~ msgstr "Бо Ном (Бе Ҳисоби Сабткунанда)"
+
+#~ msgid "By Size"
+#~ msgstr "Бо Андоза"
+
+#~ msgid "By Type"
+#~ msgstr "Бо Намуд"
+
+#~ msgid "By Date"
+#~ msgstr "Бо Сана"
+
+#~ msgid "Folders First"
+#~ msgstr "Феҳристҳои Якум"
+
+#~ msgid "Descending"
+#~ msgstr "Бо Камшавӣ"
+
+#~ msgid "Allows selecting of file or folder items based on a given mask"
+#~ msgstr ""
+#~ "Имконияти ҷудосозии файл ё феҳристи пунктҳоро дар асоси ниқоби додашудаб "
+#~ "медиҳад"
+
+#~ msgid "Allows unselecting of file or folder items based on a given mask"
+#~ msgstr ""
+#~ "Имконияти бекор кардани ҷудосозии файл ё феҳристи пунктҳоро дар асоси "
+#~ "ниқоби додашудаб медиҳад"
+
+#~ msgid "Selects all items"
+#~ msgstr "Ҳама пунктҳоро ҷудо месозад"
+
+#~ msgid "Unselects all selected items"
+#~ msgstr "Ҷудосозии ҳамаи пунктҳои интихобшударо бекор мекунад"
+
+#~ msgid "Inverts the current selection of items"
+#~ msgstr "Баръакскунии ҷудосозии ҷории пунктҳо"
+
+#~ msgid "Treeview Toolbar"
+#~ msgstr "Панели Асбобҳои Азназаргузаронӣдар намуди Дарахт"
+
+#~ msgid "Info Listview Toolbar"
+#~ msgstr "Панели Асбобҳои Азназаргузаронии Ахборот дар намуди Рӯйхат"
+
+#~ msgid "Multicolumn View Toolbar"
+#~ msgstr "Панели Асбобҳои Азназаргузаронӣ дар бисёр Сутунҳо"
+
+#~ msgid "&Icon Size"
+#~ msgstr "Андозаи &Тасвир"
+
+#~ msgid "S&ort"
+#~ msgstr "&Тартибсозӣ"
+
+#~ msgid "Iconview Toolbar"
+#~ msgstr "Панели Асбобҳои Азназаргузаронӣ дар намуди Тасвир"
+
+#~ msgid "Iconview Extra Toolbar"
+#~ msgstr "Панели Асбобҳои Иловагии Азназаргузаронӣ дар намуди Тасвир"
+
+#, fuzzy
+#~ msgid "Rename icons inline"
+#~ msgstr "&Тағири номи Тахассус"
+
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Loading a profile will discard these changes."
+#~ msgstr ""
+#~ "Ин саҳифа дигаргуниҳоро нигоҳ медорад, ки ҳоло ҳам захира карда "
+#~ "нашудаанд.\n"
+#~ "Боркунии тахассус ба қабул накардани дигаргуниҳо меоварад"
+
+#, fuzzy
+#~ msgid "Statusbar"
+#~ msgstr "Ҳолат"
+
+#~ msgid "&Show Netscape Bookmarks in Konqueror"
+#~ msgstr "&Нишон додани Хатчӯбҳои Netscape дар Тирезаҳои Konqueror"
+
+#~ msgid "C&hange URL"
+#~ msgstr "&Ивази URL"
+
+#, fuzzy
+#~ msgid "&New Bookmark"
+#~ msgstr "&Хатчӯб"
+
+#~ msgid "&Insert Separator"
+#~ msgstr "&Ҷойгир кардани Ҷудосоз"
+
+#~ msgid "&Sort Alphabetically"
+#~ msgstr "&Тартибсозӣ аз рӯи Алифбо"
+
+#~ msgid "Set as T&oolbar Folder"
+#~ msgstr "Ҳамчун Феҳристи &Панели Асбобҳо барпо кунед"
+
+#~ msgid "Show in T&oolbar"
+#~ msgstr "Намоиш додан дар &Панели Асбобҳо"
+
+#, fuzzy
+#~ msgid "Hide in T&oolbar"
+#~ msgstr "Намоиш додан дар &Панели Асбобҳо"
+
+#~ msgid "&Expand All Folders"
+#~ msgstr "&Паҳн кардани Ҳамаи Феҳристҳо"
+
+#~ msgid "Collapse &All Folders"
+#~ msgstr "Фишурдани &Ҳамаи Феҳристҳо"
+
+#~ msgid "&Open in Konqueror"
+#~ msgstr "&Кушодан дар Konqueror"
+
+#~ msgid "Check &Status"
+#~ msgstr "Санҷидани &Ҳолат"
+
+#~ msgid "Check Status: &All"
+#~ msgstr "Санҷидани Ҳолат: &Ҳама"
+
+#~ msgid "Update All &Favicons"
+#~ msgstr "Нав кардани Ҳамаи &Favicon-ҳо"
+
+#~ msgid "Cancel &Checks"
+#~ msgstr "Бекор кардани &Санҷишҳо"
+
+#~ msgid "Cancel &Favicon Updates"
+#~ msgstr "Бекор кардани Навкунии &Favicon-ҳо"
+
+#~ msgid "Import &Netscape Bookmarks..."
+#~ msgstr "Вориди Хатчӯбҳои &Netscape..."
+
+#~ msgid "Import &Opera Bookmarks..."
+#~ msgstr "Вориди Хатчӯбҳои &Opera..."
+
+#~ msgid "Import All &Crash Sessions as Bookmarks..."
+#~ msgstr "Вориди Ҳамаи Снансҳои &Шикаста ҳамчун Хатчӯбҳо..."
+
+#~ msgid "Import &Galeon Bookmarks..."
+#~ msgstr "Вориди Хатчӯбҳои &Galeon..."
+
+#, fuzzy
+#~ msgid "Import &KDE2/KDE3 Bookmarks..."
+#~ msgstr "Вориди Хатчӯбҳои &KDE2..."
+
+#, fuzzy
+#~ msgid "Import &IE Bookmarks..."
+#~ msgstr "&Вориди Хатчӯбҳои IE..."
+
+#~ msgid "Import &Mozilla Bookmarks..."
+#~ msgstr "Вориди Хатчӯбҳои &Mozilla..."
+
+#, fuzzy
+#~ msgid "Export to &Netscape Bookmarks"
+#~ msgstr "&Содир кардан ба Хатчӯбҳои Netscape"
+
+#, fuzzy
+#~ msgid "Export to &Opera Bookmarks..."
+#~ msgstr "&Содир кардан ба Хатчӯбҳои Opera..."
+
+#, fuzzy
+#~ msgid "Export to &HTML Bookmarks..."
+#~ msgstr "&Содир кардан ба Хатчӯбҳои HTML..."
+
+#, fuzzy
+#~ msgid "Export to &IE Bookmarks..."
+#~ msgstr "&Содир кардан ба Хатчӯбҳои IE..."
+
+#~ msgid "Export to &Mozilla Bookmarks..."
+#~ msgstr "Содир кардан ба Хатчӯбҳои &Mozilla..."
+
+#~ msgid "*.html|HTML Bookmark Listing"
+#~ msgstr "*.html|HTML Сиёҳбардории Хатчӯбҳо"
+
+#~ msgid "Cut Items"
+#~ msgstr "Буридани Пунктҳо"
+
+#~ msgid "Create New Bookmark Folder"
+#~ msgstr "Офаридани Феҳристи Нави Хатчӯбҳо"
+
+#~ msgid "New folder:"
+#~ msgstr "Феҳристи нав:"
+
+#~ msgid "Sort Alphabetically"
+#~ msgstr "Тартибсозӣ аз рӯи Алифбо"
+
+#~ msgid "Delete Items"
+#~ msgstr "Нобуд кардани Пунктҳо"
+
+#~ msgid "Icon"
+#~ msgstr "Тасвир"
+
+#~ msgid "Comment:"
+#~ msgstr "Тавзеҳ:"
+
+#~ msgid "First viewed:"
+#~ msgstr "Аввал аз назар гузаронед:"
+
+#~ msgid "Viewed last:"
+#~ msgstr "Охирон аз назар гузаронед:"
+
+#~ msgid "Times visited:"
+#~ msgstr "Шумораи ташрифот:"
+
+#~ msgid "Insert Separator"
+#~ msgstr "Ҷойгиркунии Ҷудосоз"
+
+#~ msgid "Create Folder"
+#~ msgstr "Офаридани Феҳрист"
+
+#~ msgid "Copy %1"
+#~ msgstr "Нусхабардории %1"
+
+#~ msgid "Create Bookmark"
+#~ msgstr "Офаридани Хатчӯб"
+
+#~ msgid "%1 Change"
+#~ msgstr "%1 Тағирот"
+
+#~ msgid "Set as Bookmark Toolbar"
+#~ msgstr "Барпо кардан ҳамчун Хатчӯби Панели Асбобҳо"
+
+#~ msgid "%1 in Bookmark Toolbar"
+#~ msgstr "%1 дар Хатчӯби Панели Асбобҳо"
+
+#~ msgid "Show"
+#~ msgstr "Нишон додан"
+
+#~ msgid "Hide"
+#~ msgstr "Пинҳон кардан"
+
+#~ msgid "Move Items"
+#~ msgstr "Ҷойивазкунии Пунктҳо"
+
+#~ msgid "No favicon found"
+#~ msgstr "Favicon пайдо нагардид"
+
+#~ msgid "Updating favicon..."
+#~ msgstr "Навсозии favicon..."
+
+#~ msgid "Import %1 Bookmarks"
+#~ msgstr "Вориди Хатчӯбҳои %1"
+
+#~ msgid "%1 Bookmarks"
+#~ msgstr "Хатчӯбҳои %1"
+
+#~ msgid "Import as a new subfolder or replace all the current bookmarks?"
+#~ msgstr ""
+#~ "Ҳамчун зерфеҳристи нав ворид кунам ё ҳамаи хатчӯбҳои ҷориро иваз кунам?"
+
+#~ msgid "%1 Import"
+#~ msgstr "Вориди %1"
+
+#, fuzzy
+#~ msgid "*.xbel|Galeon Bookmark Files (*.xbel)"
+#~ msgstr "*.xbel|Galeon файлҳои хатчӯб (*.xbel)"
+
+#, fuzzy
+#~ msgid "*.xml|KDE Bookmark Files (*.xml)"
+#~ msgstr "*.xml|KDE файлҳои хатчӯб (*.xml)"
+
+#, fuzzy
+#~ msgid "KBookmarkMerger"
+#~ msgstr "Хатчӯб"
+
+#, fuzzy
+#~ msgid "Original author"
+#~ msgstr "Муаллифи ибтидоӣ"
+
+#~ msgid "Drop Items"
+#~ msgstr "Тоза кардани элементҳо"
+
+#~ msgid "Comment"
+#~ msgstr "Тавзеҳот"
+
+#~ msgid "Status"
+#~ msgstr "Ҳолат"
+
+#~ msgid "Folder"
+#~ msgstr "Феҳрист"
+
+#~ msgid "Empty Folder"
+#~ msgstr "Феҳристи Ҳолӣ"
+
+#~ msgid "Import bookmarks from a file in Mozilla format"
+#~ msgstr "Хатчӯбҳоро аз файли шаклбандии Mozilla ворид намоед."
+
+#~ msgid "Import bookmarks from a file in Netscape (4.x and earlier) format"
+#~ msgstr ""
+#~ "Хатчӯбҳоро аз файли шаклбандии Netscape (4.x ва пештар) ворид намоед."
+
+#~ msgid "Import bookmarks from a file in Internet Explorer's Favorites format"
+#~ msgstr ""
+#~ "Хатчӯбҳоро аз файли шаклбандии Дӯстдоштаи Таҳқиқгари Шабакавӣ ворид "
+#~ "намоед."
+
+#~ msgid "Import bookmarks from a file in Opera format"
+#~ msgstr "Хатчӯбҳоро аз файли шаклбандии Opera ворид намоед."
+
+#~ msgid "Export bookmarks to a file in Mozilla format"
+#~ msgstr "Хатчӯбҳоро ба файли шаклбандии Mozilla содир намоед."
+
+#~ msgid "Export bookmarks to a file in Netscape (4.x and earlier) format"
+#~ msgstr ""
+#~ "Хатчӯбҳоро ба файли шаклбандии Netscape (4.x ва пештар) содир намоед."
+
+#~ msgid "Export bookmarks to a file in a printable HTML format"
+#~ msgstr "Хатчӯбҳоро ба файли шаклбандии HTML-и чопшаванда содир намоед."
+
+#~ msgid "Export bookmarks to a file in Internet Explorer's Favorites format"
+#~ msgstr ""
+#~ "Хатчӯбҳоро ба файли шаклбандии Дӯстдоштаи Таҳқиқгари Шабакавӣ содир "
+#~ "намоед."
+
+#~ msgid "Export bookmarks to a file in Opera format"
+#~ msgstr "Хатчӯбҳоро ба файли шаклбандии Opera содир намоед."
+
+#~ msgid "Open at the given position in the bookmarks file"
+#~ msgstr "Дар файли хатчӯбҳо дар мавқеъи додашуда кушоед"
+
+#~ msgid "Set the user readable caption for example \"Konsole\""
+#~ msgstr ""
+#~ "Сарлавҳаи хондашавандаи корвандиро ба монанди \"Konsole\" барпо созед"
+
+#~ msgid "Hide all browser related functions"
+#~ msgstr "Пинҳон кардани ҳамаи функсияҳо, ки ба бозрасбарнома дахл дорад"
+
+#~ msgid "File to edit"
+#~ msgstr "Таҳрири файл"
+
+#~ msgid ""
+#~ "Another instance of %1 is already running, do you really want to open "
+#~ "another instance or continue work in the same instance?\n"
+#~ "Please note that, unfortunately, duplicate views are read-only."
+#~ msgstr ""
+#~ "Намунаи дигари %1 аллакай коргузорӣ шудааст, дар ҳақиқат мехоҳед, ки "
+#~ "дигар намунаро кушоед?\n"
+#~ "Дар хотир нигоҳ доред, ки .мутаасифона назарҳои дунусхагирифташуда танҳо "
+#~ "барои хонишанд."
+
+#~ msgid "Run Another"
+#~ msgstr "Коргузории Дигар"
+
+#~ msgid "Continue in Same"
+#~ msgstr "Дар Ҷорӣ Давом додан"
+
+#~ msgid "Bookmark Editor"
+#~ msgstr "Муҳаррири Хатчӯб"
+
+#~ msgid "Konqueror Bookmarks Editor"
+#~ msgstr "Муҳаррири Хатчӯбҳои Konqueror"
+
+#~ msgid "Initial author"
+#~ msgstr "Муаллифи ибтидоӣ"
+
+#, fuzzy
+#~ msgid "Author"
+#~ msgstr "Худоғозёбӣ"
+
+#~ msgid "You may only specify a single --export option."
+#~ msgstr "Шумо танҳо интихоби ягонаи --содиротро таъин карда метавонед."
+
+#~ msgid "You may only specify a single --import option."
+#~ msgstr "Шумо танҳо интихоби ягонаи --воридотро таъин карда метавонед"
+
+#~ msgid "Checking..."
+#~ msgstr "Санҷиш..."
+
+#~ msgid "Error "
+#~ msgstr "Хатогӣ"
+
+#~ msgid "Ok"
+#~ msgstr "Хуб"
+
+#~ msgid "Reset Quick Search"
+#~ msgstr "Партофтани ҷустуҷӯи тез"
+
+#~ msgid ""
+#~ "<b>Reset Quick Search</b><br>Resets the quick search so that all "
+#~ "bookmarks are shown again."
+#~ msgstr ""
+#~ "<b>Партофтани ҷустуҷӯи тез</b> <br>Партофтани ҷустуҷӯи тез, яъне "
+#~ "ҷадвалбандҳо бори дигар нишон дода мешаванд."
+
+#~ msgid "Se&arch:"
+#~ msgstr "Ҷус&туҷӯ"
+
+#, fuzzy
+#~ msgid "Clear Search"
+#~ msgstr "Ҷус&туҷӯ"

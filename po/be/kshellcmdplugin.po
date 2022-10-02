@@ -1,0 +1,3216 @@
+# translation of konqueror.po to Belarusian
+# Belarusian (classic spelling) translation of konqueror.pot
+# Copyright (C) 2002-2004 KDE Team.
+#
+# Eugene Zelenko <greendeath@mail.ru>, 2002-2004.
+# Yevgeny Gromov <yevgeny@tut.by>, 2003.
+# Ihar Hrachyshka <ihar.hrachyshka@gmail.com>, 2006.
+# Darafei Praliaskouski <symbol@akeeri.tk>, 2006.
+# Darafei Praliaskouski <komzpa@licei2.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2007-12-09 18:30+0200\n"
+"Last-Translator: Darafei Praliaskouski <komzpa@licei2.com>\n"
+"Language-Team: Belarusian <i18n@mova.org>\n"
+"Language: be\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || n%10>=5 && n%10<=9 || n"
+"%100>=11 && n%100<=14 ? 2 : 3);\n"
+
+#. i18n: ectx: Menu (tools)
+#: konq_shellcmdplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "Н&ачынне"
+
+#: kshellcmdexecutor.cpp:106
+#, kde-format
+msgid "Input Required:"
+msgstr "Патрабуецца ўвод:"
+
+#: kshellcmdplugin.cpp:32
+#, kde-format
+msgid "&Execute Shell Command..."
+msgstr "&Выканаць каманду абалонкі..."
+
+#: kshellcmdplugin.cpp:41
+#, kde-format
+msgid ""
+"KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a bug."
+msgstr ""
+
+#: kshellcmdplugin.cpp:51
+#, kde-format
+msgid "Executing shell commands works only on local directories."
+msgstr "Выкананне каманды абалонкі працуе толькі для мясцовых тэчак."
+
+#: kshellcmdplugin.cpp:73
+#, fuzzy, kde-format
+#| msgid "Execute Shell Command"
+msgctxt "@title:window"
+msgid "Execute Shell Command"
+msgstr "Выканаць каманду абалонкі"
+
+#: kshellcmdplugin.cpp:74
+#, kde-format
+msgid "Execute shell command in current directory:"
+msgstr "Выканаць каманду абалонкі ў актыўнай тэчцы:"
+
+#: kshellcmdplugin.cpp:85
+#, kde-format
+msgid "Output from command: \"%1\""
+msgstr "Вывад каманды: \"%1\""
+
+#, fuzzy
+#~| msgctxt "NAME OF TRANSLATORS"
+#~| msgid "Your names"
+#~ msgid "no name"
+#~ msgstr "Дарафей Праляскоўскі, Eugene Zelenko, Яўген Громаў, Ігар Грачышка"
+
+#~ msgid "Configure"
+#~ msgstr "Настаўленне"
+
+#~ msgid "Extensions"
+#~ msgstr "Пашырэнні"
+
+#~ msgid ""
+#~ "There was an error loading the module %1.\n"
+#~ "The diagnostics is:\n"
+#~ "%2"
+#~ msgstr ""
+#~ "Немагчыма загрузіць модуль %1.\n"
+#~ "Дыягностыка:\n"
+#~ "%2"
+
+#~ msgid "Konqueror"
+#~ msgstr "Konqueror"
+
+#~ msgid "Web browser, file manager and document viewer."
+#~ msgstr "Сеціўны вандроўнік, кіраўнік файлаў, і праглядчык дакументаў."
+
+#, fuzzy
+#~| msgid "(C) 1999-2007, The Konqueror developers"
+#~ msgid "(C) 1999-2008, The Konqueror developers"
+#~ msgstr "(c) 1999-2007, Распрацоўшчыкі Konqueror"
+
+#~ msgid "http://konqueror.kde.org"
+#~ msgstr "http://konqueror.kde.org"
+
+#~ msgid "David Faure"
+#~ msgstr "Дэвід Фор"
+
+#~ msgid "Developer (framework, parts, JavaScript, I/O library) and maintainer"
+#~ msgstr ""
+#~ "Распрацоўшчык (базавая бібліятэка, модулі, JavaScript, бібліятэка I/O) і "
+#~ "адказны за выпуск"
+
+#~ msgid "Simon Hausmann"
+#~ msgstr "Сайман Хаўсман"
+
+#~ msgid "Developer (framework, parts)"
+#~ msgstr "Распрацоўшчык (базавая бібліятэка, модулі)"
+
+#~ msgid "Michael Reiher"
+#~ msgstr "Майкл Райер"
+
+#~ msgid "Developer (framework)"
+#~ msgstr "Распрацоўшчык (базавая бібліятэка)"
+
+#~ msgid "Matthias Welk"
+#~ msgstr "Матыяс Вэльк"
+
+#~ msgid "Developer"
+#~ msgstr "Распрацоўшчык"
+
+#~ msgid "Alexander Neundorf"
+#~ msgstr "Александр Нойндорф"
+
+#~ msgid "Developer (List views)"
+#~ msgstr "Распрацоўшчык (рэжым выгляду \"спіс\")"
+
+#~ msgid "Michael Brade"
+#~ msgstr "Майкл Брадэ"
+
+#~ msgid "Developer (List views, I/O library)"
+#~ msgstr "Распрацоўшчык (рэжым выгляду значак, бібліятэка I/O)"
+
+#~ msgid "Lars Knoll"
+#~ msgstr "Ларс Кнолл"
+
+#~ msgid "Developer (HTML rendering engine)"
+#~ msgstr "Распрацоўшчык (рухавік HTML)"
+
+#~ msgid "Dirk Mueller"
+#~ msgstr "Дзірк Мюллер"
+
+#~ msgid "Peter Kelly"
+#~ msgstr "Пітэр Келлі"
+
+#~ msgid "Waldo Bastian"
+#~ msgstr "Вальдо Басціян"
+
+#~ msgid "Developer (HTML rendering engine, I/O library)"
+#~ msgstr "Распрацоўшчык (рухавік HTML, бібліятэка I/O)"
+
+#~ msgid "Germain Garand"
+#~ msgstr "Герман Гаран"
+
+#~ msgid "Leo Savernik"
+#~ msgstr "Лео Савернік"
+
+#~ msgid "Stephan Kulow"
+#~ msgstr "Стэфан Кулаў"
+
+#~ msgid ""
+#~ "Developer (HTML rendering engine, I/O library, regression test framework)"
+#~ msgstr "Распрацоўшчык (рухавік HTML, бібліятэка I/O, праверка хібаў)"
+
+#~ msgid "Antti Koivisto"
+#~ msgstr "Анцці Койвісто"
+
+#~ msgid "Zack Rusin"
+#~ msgstr "Зак Русін"
+
+#~ msgid "Tobias Anton"
+#~ msgstr "Тобіяс Антон"
+
+#~ msgid "Lubos Lunak"
+#~ msgstr "Любас Лунак"
+
+#~ msgid "Developer (HTML rendering engine, JavaScript)"
+#~ msgstr "Распрацоўшчык (рухавік HTML, JavaScript)"
+
+#~ msgid "Allan Sandfeld Jensen"
+#~ msgstr "Аллан Сандфкльд Джэнсен"
+
+#~ msgid "Apple Safari Developers"
+#~ msgstr "Распрацоўшчыкі Apple Safari"
+
+#~ msgid "Harri Porten"
+#~ msgstr "Гарры Портэн"
+
+#~ msgid "Developer (JavaScript)"
+#~ msgstr "Распрацоўшчык (JavaScript)"
+
+#~ msgid "Koos Vriezen"
+#~ msgstr "Коос Врізэн"
+
+#~ msgid "Developer (Java applets and other embedded objects)"
+#~ msgstr "Распрацоўшчык (Java-аплеты і іншыя ўбудаваныя аб'екты)"
+
+#~ msgid "Matt Koss"
+#~ msgstr "Мэтт Косс"
+
+#~ msgid "Developer (I/O library)"
+#~ msgstr "Распрацоўшчык (бібліятэка I/O)"
+
+#~ msgid "Alex Zepeda"
+#~ msgstr "Алекс Зепеда"
+
+#~ msgid "Richard Moore"
+#~ msgstr "Рычард Мур"
+
+#~ msgid "Developer (Java applet support)"
+#~ msgstr "Распрацоўшчык (падтрымка Java-аплетаў)"
+
+#~ msgid "Dima Rogozin"
+#~ msgstr "Дзіма Рагозін"
+
+#~ msgid "Wynn Wilkes"
+#~ msgstr "Вінн Вількс"
+
+#~ msgid ""
+#~ "Developer (Java 2 security manager support,\n"
+#~ " and other major improvements to applet support)"
+#~ msgstr ""
+#~ "Распрацоўшчык (падтрымка кіраўніка бяспекі Java 2,\n"
+#~ " і іншыя важныя паляпшэнні падтрымкі аплетаў)"
+
+#~ msgid "Stefan Schimanski"
+#~ msgstr "Стэфан Шыманскі"
+
+#~ msgid "Developer (Netscape plugin support)"
+#~ msgstr "Распрацоўшчык (падтрымка ўтулак Netscape)"
+
+#~ msgid "George Staikos"
+#~ msgstr "Джоржд Стайкас"
+
+#~ msgid "Developer (SSL, Netscape plugins)"
+#~ msgstr "Распрацоўшчык (SSL, утулкі Netscape)"
+
+#~ msgid "Dawit Alemayehu"
+#~ msgstr "Давіт Алемайеху"
+
+#~ msgid "Developer (I/O library, Authentication support)"
+#~ msgstr "Распрацоўшчык (бібліятэка I/O, падтрымка аўтарызацыі)"
+
+#~ msgid "Carsten Pfeiffer"
+#~ msgstr "Карстэн Пфіффер"
+
+#~ msgid "Torsten Rahn"
+#~ msgstr "Торстэн Ран"
+
+#~ msgid "Graphics/icons"
+#~ msgstr "Графіка/значкі"
+
+#~ msgid "Torben Weis"
+#~ msgstr "Торбен Вэйс"
+
+#~ msgid "KFM author"
+#~ msgstr "Аўтар KFM"
+
+#~ msgid "Joseph Wenninger"
+#~ msgstr "Джозэф Венінгер"
+
+#~ msgid "Developer (navigation panel framework)"
+#~ msgstr "Pаспрацоўшчык (панель навігацыі)"
+
+#~ msgid "Stephan Binner"
+#~ msgstr "Стэфан Біннэр"
+
+#~ msgid "Developer (misc stuff)"
+#~ msgstr "Распрацоўшчык (розныя паляпшэнні)"
+
+#~ msgid "Ivor Hewitt"
+#~ msgstr "Айвар Хьюітт"
+
+#~ msgid "Developer (AdBlock filter)"
+#~ msgstr "Распрацоўшчык (фільтр AdBlock)"
+
+#~ msgid "Close View"
+#~ msgstr "Закрыць рэжым выгляду"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/с"
+
+#~ msgid "Stalled"
+#~ msgstr "Прастойвае"
+
+#, fuzzy
+#~| msgid "Preview in %1"
+#~ msgid "Preview &in %1"
+#~ msgstr "Праглядзець у %1"
+
+#~ msgid "Show %1"
+#~ msgstr "Паказаць %1"
+
+#, fuzzy
+#~| msgid "History"
+#~ msgctxt "@title:window"
+#~ msgid "History"
+#~ msgstr "Часопіс"
+
+#, fuzzy
+#~| msgid "Sort"
+#~ msgctxt "@action:inmenu Parent of 'By Name' and 'By Date'"
+#~ msgid "Sort"
+#~ msgstr "Упарадкаваць"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt><center><b>%1</b></center><hr />Last visited: %2<br />First visited: "
+#~| "%3<br>Number of times visited: %4</qt>"
+#~ msgid ""
+#~ "<qt><center><b>%1</b></center><hr />Last visited: %2<br />First visited: "
+#~ "%3<br />Number of times visited: %4</qt>"
+#~ msgstr ""
+#~ "<qt><center><b>%1</b></center><hr>Апошняе наведванне: %2<br>Першае "
+#~ "наведванне: %3<br>Колькасць наведванняў: %4</qt>"
+
+#~ msgid "Miscellaneous"
+#~ msgstr "Рознае"
+
+#~ msgid "Open in New &Window"
+#~ msgstr "Адкрыць у новым &акне"
+
+#~ msgid "Open in New Tab"
+#~ msgstr "Адкрыць у новай картцы"
+
+#, fuzzy
+#~| msgid "Copy Link Address"
+#~ msgid "&Copy Link Address"
+#~ msgstr "Скапіраваць адрас спасылкі"
+
+#~ msgid "&Remove Entry"
+#~ msgstr "&Выдаліць элемент"
+
+#~ msgid "C&lear History"
+#~ msgstr "А&чысціць часопіс"
+
+#~ msgid "&Preferences..."
+#~ msgstr "&Настаўленні..."
+
+#~ msgid "By &Name"
+#~ msgstr "Па &назве"
+
+#~ msgid "By &Date"
+#~ msgstr "Па &даце"
+
+#, fuzzy
+#~| msgid "Clear History"
+#~ msgid "Search in history"
+#~ msgstr "Ачысціць часопіс"
+
+#~ msgid "Do you really want to clear the entire history?"
+#~ msgstr "Вы сапраўды хочаце ачысціць увесь часопіс?"
+
+#~ msgid "Clear History?"
+#~ msgstr "Ачысціць часопіс?"
+
+#, fuzzy
+#~| msgid "Start without a default window"
+#~ msgid "Start without a default window, when called without URLs"
+#~ msgstr "Запускаць без стандартнага акна"
+
+#~ msgid "Profile to open"
+#~ msgstr "Адкрыць профіль"
+
+#~ msgid "List available profiles"
+#~ msgstr "Паказаць спіс наяўных профіляў"
+
+#, fuzzy
+#~| msgid "List available profiles"
+#~ msgid "List available sessions"
+#~ msgstr "Паказаць спіс наяўных профіляў"
+
+#, fuzzy
+#~| msgid "Location to open"
+#~ msgid "Session to open"
+#~ msgstr "Адкрыць адрас"
+
+#~ msgid "Mimetype to use for this URL (e.g. text/html or inode/directory)"
+#~ msgstr "Тып MIME для гэтай спасылкі, (напр., text/html ці inode/directory)"
+
+#~ msgid "Location to open"
+#~ msgstr "Адкрыць адрас"
+
+#~ msgid "Canceled."
+#~ msgstr "Скасавана."
+
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Reloading the page will discard these changes."
+#~ msgstr ""
+#~ "Гэта старонка ўтрымлівае неперададзеныя змены.\n"
+#~ "Абнавіўшы старонку, вы згубіце гэтыя дадзеныя."
+
+#~ msgid "Discard Changes?"
+#~ msgstr "Скасаваць змены?"
+
+#~ msgid "&Discard Changes"
+#~ msgstr "С&касаваць змены"
+
+#~ msgid "File Management"
+#~ msgstr "Кіраванне файламі"
+
+#~ msgid "Web Browsing"
+#~ msgstr "Вандроўка па Сеціве"
+
+#~ msgid "Home Folder"
+#~ msgstr "Хатняя тэчка"
+
+#, fuzzy
+#~| msgid "Home"
+#~ msgid "Home"
+#~ msgstr "Дадому"
+
+#, fuzzy
+#~| msgid "Navigate to your 'Home Location'"
+#~ msgid "Navigate to your 'Home Folder'"
+#~ msgstr "Ісці дадому"
+
+#, fuzzy
+#~| msgid "Navigate to your 'Home Location'"
+#~ msgid "Navigate to your local 'Home Folder'"
+#~ msgstr "Ісці дадому"
+
+#, fuzzy
+#~| msgid "Home"
+#~ msgid "Home Page"
+#~ msgstr "Дадому"
+
+#, fuzzy
+#~| msgid "Navigate to your 'Home Location'"
+#~ msgid "Navigate to your 'Home Page'"
+#~ msgstr "Ісці дадому"
+
+#, fuzzy
+#~| msgid ""
+#~| "Navigate to your 'Home Location'<br /><br />You can configure the "
+#~| "location this button takes you to in the <b>KDE Control Center</b>, "
+#~| "under <b>File Manager</b>/<b>Behavior</b>."
+#~ msgid ""
+#~ "<html>Navigate to your 'Home Page'<br /><br />You can configure the "
+#~ "location where this button takes you under <b>Settings -> Configure "
+#~ "Konqueror -> General</b>.</html>"
+#~ msgstr ""
+#~ "Ісці дадому<br /><br />Вы можаце вызначыць хатні адрас праз <b>Цэнтр "
+#~ "кіравання KDE</b>, у меню <b>Кіраўнік файлаў</b>/<b>Паводзіны</b>."
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Detaching the tab will discard these changes."
+#~ msgstr ""
+#~ "Гэта картка ўтрымлівае неперададзеныя змены.\n"
+#~ "Адлучыўшы картку, вы згубіце гэтыя дадзеныя."
+
+#~ msgid ""
+#~ "This view contains changes that have not been submitted.\n"
+#~ "Closing the view will discard these changes."
+#~ msgstr ""
+#~ "Гэты рэжым выгляду ўтрымлівае неперададзеныя змены.\n"
+#~ "Закрыўшы гэты рэжым, вы згубіце гэтыя дадзеныя."
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the tab will discard these changes."
+#~ msgstr ""
+#~ "Гэтая картка ўтрымлівае неперададзеныя змены.\n"
+#~ "Закрыўшы гэтую картку, вы згубіце гэтыя дадзеныя."
+
+#~ msgid "Do you really want to close all other tabs?"
+#~ msgstr "Вы сапраўды хочаце закрыць іншыя карткі?"
+
+#~ msgid "Close Other Tabs Confirmation"
+#~ msgstr "Пацверджанне закрыцця іншых картак"
+
+#~ msgid "Close &Other Tabs"
+#~ msgstr "Закрыць &іншыя карткі"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing other tabs will discard these changes."
+#~ msgstr ""
+#~ "Гэтая картка ўтрымлівае неперададзеныя змены.\n"
+#~ "Закрыўшы іншыя карткі, вы згубіце гэтыя дадзеныя."
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Reloading all tabs will discard these changes."
+#~ msgstr ""
+#~ "Гэтая картка ўтрымлівае неперададзеныя змены.\n"
+#~ "Абнавіўшы ўсе карткі, вы згубіце гэтыя дадзеныя."
+
+#~ msgid "Enter Target"
+#~ msgstr "Вызначце мэту прызначэння"
+
+#~ msgid "<qt><b>%1</b> is not valid</qt>"
+#~ msgstr "<qt><b>%1</b> няправільны</qt>"
+
+#~ msgid "Copy selected files from %1 to:"
+#~ msgstr "Скапіраваць выбраныя файлы  з %1 у:"
+
+#~ msgid "Move selected files from %1 to:"
+#~ msgstr "Перанесці выбраныя файлы з %1 у:"
+
+#, fuzzy
+#~| msgid "Clear History"
+#~ msgctxt "This menu entry empties the closed items history"
+#~ msgid "Empty Closed Items History"
+#~ msgstr "Ачысціць часопіс"
+
+#, fuzzy
+#~| msgid "Set Name..."
+#~ msgid "Save As..."
+#~ msgstr "Вызначыць назву..."
+
+#, fuzzy
+#~| msgid "Chan&ge..."
+#~ msgid "Manage..."
+#~ msgstr "Змян&іць..."
+
+#~ msgid "New &Window"
+#~ msgstr "Новае &акно"
+
+#~ msgid "&Duplicate Window"
+#~ msgstr "&Дубляваць акно"
+
+#~ msgid "Send &Link Address..."
+#~ msgstr "Даслаць &адрас спасылкі..."
+
+#~ msgid "S&end File..."
+#~ msgstr "Д&аслаць файл..."
+
+#~ msgid "&Open Location"
+#~ msgstr "Адкрыць адрас"
+
+#~ msgid "&Open File..."
+#~ msgstr "Адкрыць файл..."
+
+#~ msgid "&Find File..."
+#~ msgstr "З&найсці файл..."
+
+#~ msgid "&Use index.html"
+#~ msgstr "&Выкарыстоўваць index.html"
+
+#~ msgid "Lock to Current Location"
+#~ msgstr "Заблакаваць у гэтым месцазнаходжанні"
+
+#, fuzzy
+#~| msgid "&View"
+#~ msgctxt "This option links konqueror views"
+#~ msgid "Lin&k View"
+#~ msgstr "&Выгляд"
+
+#~ msgid "&Up"
+#~ msgstr "&Угору"
+
+#, fuzzy
+#~| msgid "Closed Tabs"
+#~ msgid "Closed Items"
+#~ msgstr "Закрытыя карткі"
+
+#, fuzzy
+#~| msgid "Extensions"
+#~ msgid "Sessions"
+#~ msgstr "Пашырэнні"
+
+#, fuzzy
+#~| msgid "Most Often Visited"
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Most Often Visited"
+#~ msgstr "Частае наведванне"
+
+#, fuzzy
+#~| msgid "Show History Sidebar"
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History"
+#~ msgstr "Паказаць дзённік у бакавой панелі"
+
+#, fuzzy
+#~| msgid "&Save View Profile..."
+#~ msgid "&Save View Profile As..."
+#~ msgstr "&Запісаць профіль выгляду..."
+
+#~ msgid "Configure Extensions..."
+#~ msgstr "Настаўленне пашырэнняў..."
+
+#~ msgid "Configure Spell Checking..."
+#~ msgstr "Настаўленне спраўджвання правапісу..."
+
+#~ msgid "Split View &Left/Right"
+#~ msgstr "Падзяліць выгляд &вертыкальна"
+
+#~ msgid "Split View &Top/Bottom"
+#~ msgstr "Падзяліць выгляд &гарызантальна"
+
+#~ msgid "&New Tab"
+#~ msgstr "&Новая картка"
+
+#~ msgid "&Duplicate Current Tab"
+#~ msgstr "&Дубляваць гэтую картку"
+
+#~ msgid "Detach Current Tab"
+#~ msgstr "Адлучыць гэтую картку"
+
+#~ msgid "&Close Active View"
+#~ msgstr "&Закрыць актыўны выгляд"
+
+#~ msgid "Close Current Tab"
+#~ msgstr "Закрыць гэтую картку"
+
+#~ msgid "Activate Next Tab"
+#~ msgstr "Перайсці на новую картку"
+
+#~ msgid "Activate Previous Tab"
+#~ msgstr "Перайсці на папярэднюю картку"
+
+#~ msgid "Activate Tab %1"
+#~ msgstr "Перайсці на картку %1"
+
+#~ msgid "Move Tab Left"
+#~ msgstr "Пасунуць картку ўлева"
+
+#~ msgid "Move Tab Right"
+#~ msgstr "Пасунуць картку ўправа"
+
+#~ msgid "Dump Debug Info"
+#~ msgstr "Вывесці інфармацыю для адладкі"
+
+#~ msgid "C&onfigure View Profiles..."
+#~ msgstr "Н&астаўленне профіляў выгляду..."
+
+#~ msgid "Load &View Profile"
+#~ msgstr "Загрузіць &профіль выгляду"
+
+#~ msgid "&Reload"
+#~ msgstr "&Абнавіць"
+
+#~ msgid "&Reload All Tabs"
+#~ msgstr "&Абнавіць усе карткі"
+
+#, fuzzy
+#~| msgid "&Reload"
+#~ msgid "&Force Reload"
+#~ msgstr "&Абнавіць"
+
+#~ msgid "&Stop"
+#~ msgstr "&Спыніць"
+
+#~ msgid "L&ocation: "
+#~ msgstr "А&драс: "
+
+#~ msgid "Location Bar"
+#~ msgstr "Адрасны радок"
+
+#, fuzzy
+#~| msgid "Location Bar<br /><br />Enter a web address or search term."
+#~ msgid ""
+#~ "<html>Location Bar<br /><br />Enter a web address or search term.</html>"
+#~ msgstr "Адрасны радок<br /><br />Вызначце адрас ці ўмовы пошуку."
+
+#~ msgid "Clear Location Bar"
+#~ msgstr "Ачысціць адрасны радок"
+
+#, fuzzy
+#~| msgid ""
+#~| "Clear Location bar<br /><br />Clears the content of the location bar."
+#~ msgid ""
+#~ "<html>Clear Location bar<br /><br />Clears the contents of the location "
+#~ "bar.</html>"
+#~ msgstr "Ачысціць адрасны радок<br /><br />Ачышчае адрасны радок."
+
+#~ msgid "&Bookmarks"
+#~ msgstr "&Закладкі"
+
+#~ msgid "Kon&queror Introduction"
+#~ msgstr "Уводзіны ў &Konqueror"
+
+#~ msgid "Go"
+#~ msgstr "Ісці"
+
+#, fuzzy
+#~| msgid ""
+#~| "Go<br /><br />Goes to the page that has been entered into the location "
+#~| "bar."
+#~ msgid ""
+#~ "<html>Go<br /><br />Goes to the page that has been entered into the "
+#~ "location bar.</html>"
+#~ msgstr "Ісці<br /><br />Пераход на старонку, вызначаную ў адрасным радку."
+
+#, fuzzy
+#~| msgid ""
+#~| "Enter the parent folder<br /><br />For instance, if the current location "
+#~| "is file:/home/%1 clicking this button will take you to file:/home."
+#~ msgid ""
+#~ "<html>Enter the parent folder<br /><br />For instance, if the current "
+#~ "location is file:/home/%1 clicking this button will take you to file:/"
+#~ "home.</html>"
+#~ msgstr ""
+#~ "Вызначце бацькоўскую тэчку<br /><br />Напрыклад, калі адкрыты адрас file:/"
+#~ "home/%1, тады націск гэтай кнопкі выканае пераход у file:/home."
+
+#~ msgid "Enter the parent folder"
+#~ msgstr "Вызначце бацькоўскую тэчку"
+
+#~ msgid "Move backwards one step in the browsing history"
+#~ msgstr "Перайсці на крок назад па часопісе вандровак"
+
+#~ msgid "Move forward one step in the browsing history"
+#~ msgstr "Перайсці на крок наперад па часопісе вандровак"
+
+#, fuzzy
+#~| msgid "Move backwards one step in the browsing history"
+#~ msgid "Move backwards one step in the closed tabs history"
+#~ msgstr "Перайсці на крок назад па часопісе вандровак"
+
+#, fuzzy
+#~| msgid ""
+#~| "Reload the currently displayed document<br /><br />This may, for "
+#~| "example, be needed to refresh webpages that have been modified since "
+#~| "they were loaded, in order to make the changes visible."
+#~ msgid ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.</html>"
+#~ msgstr ""
+#~ "Абнавіць актыўны дакумент<br /><br />Гэтае дзеянне можа спатрэбіцца для "
+#~ "абнаўлення старонак, якія змяніліся пасля таго, як вы іх адкрылі, каб "
+#~ "убачыць гэтыя змены."
+
+#~ msgid "Reload the currently displayed document"
+#~ msgstr "Абнавіць актыўны дакумент"
+
+#, fuzzy
+#~| msgid ""
+#~| "Reload all currently displayed documents in tabs<br /><br />This may, "
+#~| "for example, be needed to refresh webpages that have been modified since "
+#~| "they were loaded, in order to make the changes visible."
+#~ msgid ""
+#~ "<html>Reload all currently displayed documents in tabs<br /><br />This "
+#~ "may, for example, be needed to refresh web pages that have been modified "
+#~ "since they were loaded, in order to make the changes visible.</html>"
+#~ msgstr ""
+#~ "Абнавіць усе адкрытыя дакументы<br /><br />Гэтае дзеянне можа спатрэбіцца "
+#~ "для абнаўлення старонак, якія змяніліся пасля таго, як вы іх адкрылі, каб "
+#~ "убачыць гэтыя змены."
+
+#~ msgid "Reload all currently displayed document in tabs"
+#~ msgstr "Абнавіць усе адкрытыя дакументы"
+
+#, fuzzy
+#~| msgid ""
+#~| "Stop loading the document<br /><br />All network transfers will be "
+#~| "stopped and Konqueror will display the content that has been received so "
+#~| "far."
+#~ msgid ""
+#~ "<html>Stop loading the document<br /><br />All network transfers will be "
+#~ "stopped and Konqueror will display the content that has been received so "
+#~ "far.</html>"
+#~ msgstr ""
+#~ "Спыніць загрузку дакумента<br /><br />Усе працэсы перадачы дадзеных па "
+#~ "сетцы будуць спыненыя, а Konqueror пакажа тыя дадзеныя, якія ён ужо "
+#~ "атрымаў."
+
+#, fuzzy
+#~| msgid ""
+#~| "Reload the currently displayed document<br /><br />This may, for "
+#~| "example, be needed to refresh webpages that have been modified since "
+#~| "they were loaded, in order to make the changes visible."
+#~ msgid ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.  Any images on "
+#~ "the page are downloaded again, even if cached copies exist.</html>"
+#~ msgstr ""
+#~ "Абнавіць актыўны дакумент<br /><br />Гэтае дзеянне можа спатрэбіцца для "
+#~ "абнаўлення старонак, якія змяніліся пасля таго, як вы іх адкрылі, каб "
+#~ "убачыць гэтыя змены."
+
+#, fuzzy
+#~| msgid "Reload all currently displayed document in tabs"
+#~ msgid ""
+#~ "Force a reload of the currently displayed document and any contained "
+#~ "images"
+#~ msgstr "Абнавіць усе адкрытыя дакументы"
+
+#~ msgid "Stop loading the document"
+#~ msgstr "Спыніць загрузку дакумента"
+
+#, fuzzy
+#~| msgid ""
+#~| "Cut the currently selected text or item(s) and move it to the system "
+#~| "clipboard<br /><br />This makes it available to the <b>Paste</b> command "
+#~| "in Konqueror and other KDE applications."
+#~ msgid ""
+#~ "<html>Cut the currently selected text or item(s) and move it to the "
+#~ "system clipboard<br /><br />This makes it available to the <b>Paste</b> "
+#~ "command in Konqueror and other KDE applications.</html>"
+#~ msgstr ""
+#~ "Выразаць вылучаны тэкст ці элемент(ы) і перанесці іх у сістэмны буфер "
+#~ "абмену<br /><br /> Гэтае дзеянне робіць даступнымі гэтыя элементы/тэкст "
+#~ "для Konqueror і іншых праграмаў KDE праз каманду <b>Уставіць</b>."
+
+#~ msgid "Move the selected text or item(s) to the clipboard"
+#~ msgstr "Перанесці вылучаны тэкст ці элемент(ы) у буфер абмену"
+
+#, fuzzy
+#~| msgid ""
+#~| "Copy the currently selected text or item(s) to the system clipboard<br /"
+#~| "><br />This makes it available to the <b>Paste</b> command in Konqueror "
+#~| "and other KDE applications."
+#~ msgid ""
+#~ "<html>Copy the currently selected text or item(s) to the system "
+#~ "clipboard<br /><br />This makes it available to the <b>Paste</b> command "
+#~ "in Konqueror and other KDE applications.</html>"
+#~ msgstr ""
+#~ "Скапіраваць вылучаны тэкст ці элемент(ы) у сістэмны буфер абмену<br /"
+#~ "><br /> Гэтае дзеянне робіць даступнымі гэтыя элементы/тэкст для "
+#~ "Konqueror і іншых праграмаў KDE праз каманду <b>Уставіць</b>."
+
+#~ msgid "Copy the selected text or item(s) to the clipboard"
+#~ msgstr "Скапіраваць вылучаны тэкст ці элемент(ы) у сістэмны буфер абмену"
+
+#, fuzzy
+#~| msgid ""
+#~| "Paste the previously cut or copied clipboard contents<br /><br />This "
+#~| "also works for text copied or cut from other KDE applications."
+#~ msgid ""
+#~ "<html>Paste the previously cut or copied clipboard contents<br /><br /"
+#~ ">This also works for text copied or cut from other KDE applications.</"
+#~ "html>"
+#~ msgstr ""
+#~ "Уставіць папярэдне выразаны ці скапіраваны змест буфера абмен<br /><br /"
+#~ ">Гэтае дзеянне таксама працуе з тэкстам, скапіраваным ці выразаным у "
+#~ "іншай праграме KDE."
+
+#~ msgid "Paste the clipboard contents"
+#~ msgstr "Уставіць змест буфера абмену"
+
+#, fuzzy
+#~| msgid ""
+#~| "Print the currently displayed document<br /><br />You will be presented "
+#~| "with a dialog where you can set various options, such as the number of "
+#~| "copies to print and which printer to use.<br /><br />This dialog also "
+#~| "provides access to special KDE printing services such as creating a PDF "
+#~| "file from the current document."
+#~ msgid ""
+#~ "<html>Print the currently displayed document<br /><br />You will be "
+#~ "presented with a dialog where you can set various options, such as the "
+#~ "number of copies to print and which printer to use.<br /><br />This "
+#~ "dialog also provides access to special KDE printing services such as "
+#~ "creating a PDF file from the current document.</html>"
+#~ msgstr ""
+#~ "Друкаваць адкрыты дакумент<br /><br />Адкрыецца дыялог з рознымі опцыямі, "
+#~ "напрыклад, колькасцю копіяў для друку, друкаркай і іншымі.<br /><br /"
+#~ ">Гэты дыялог таксама дазваляе працаваць са спецыяльнымі сервісамі друку "
+#~ "KDE, напрыклад, ствараць файл PDF са зместам адкрытага дакумента."
+
+#~ msgid "Print the current document"
+#~ msgstr "Друкаваць адкрыты дакумент"
+
+#~ msgid "If present, open index.html when entering a folder."
+#~ msgstr "Калі ёсць, адкрывае файл index.html (калі ён ёсць у тэчцы)."
+
+#~ msgid "Copy &Files..."
+#~ msgstr "Скапіраваць &файлы..."
+
+#~ msgid "M&ove Files..."
+#~ msgstr "П&еранесці файлы..."
+
+#, fuzzy
+#~| msgid "Open Folder in Tabs"
+#~ msgid "Open bookmarks folder in new tabs"
+#~ msgstr "Адкрыць тэчку ў картках"
+
+#~ msgid "Open in T&his Window"
+#~ msgstr "Адкрыць у &гэтым акне"
+
+#~ msgid "Open the document in current window"
+#~ msgstr "Адкрыць дакумент у гэтым акне"
+
+#~ msgid "Open the document in a new window"
+#~ msgstr "Адкрыць дакумент у новым акне"
+
+#~ msgid "Open in &New Tab"
+#~ msgstr "Адкрыць у &новай картцы"
+
+#~ msgid "Open the document in a new tab"
+#~ msgstr "Адкрыць дакумент у новай картцы"
+
+#, fuzzy
+#~| msgid "Open with %1"
+#~ msgid "&Open With"
+#~ msgstr "Адкрыць у %1"
+
+#~ msgid "Open with %1"
+#~ msgstr "Адкрыць у %1"
+
+#, fuzzy
+#~| msgid "&View Mode"
+#~ msgctxt "@action:inmenu View"
+#~ msgid "&View Mode"
+#~ msgstr "Рэжым &выгляду"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window, are you sure you want to quit?"
+#~ msgstr "У гэтым акне адкрытыя некалькі картак. Вы сапраўды хочаце выйсці?"
+
+#~ msgid "Confirmation"
+#~ msgstr "Пацверджанне"
+
+#~ msgid "C&lose Current Tab"
+#~ msgstr "&Закрыць гэтую картку"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the window will discard these changes."
+#~ msgstr ""
+#~ "Гэтая картка ўтрымлівае неперададзеныя звесткі.\n"
+#~ "Закрыўшы гэтае акно, вы згубіце гэтыя дадзеныя."
+
+#, fuzzy
+#~| msgid ""
+#~| "This tab contains changes that have not been submitted.\n"
+#~| "Closing the window will discard these changes."
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Closing the window will discard these changes."
+#~ msgstr ""
+#~ "Гэтая картка ўтрымлівае неперададзеныя звесткі.\n"
+#~ "Закрыўшы гэтае акно, вы згубіце гэтыя дадзеныя."
+
+#~ msgid ""
+#~ "Your sidebar is not functional or unavailable. A new entry cannot be "
+#~ "added."
+#~ msgstr ""
+#~ "Бакавая панель адсутнічае ці няправільна працуе. Немагчыма дадаць новы "
+#~ "элемент."
+
+#~ msgid "Web Sidebar"
+#~ msgstr "Бакавая панель Web"
+
+#~ msgid "Add new web extension \"%1\" to your sidebar?"
+#~ msgstr "Дадаць новае сеціўнае пашырэнне \"%1\" на бакавую панель?"
+
+#~ msgid "Add"
+#~ msgstr "Дадаць"
+
+#~ msgid "Do Not Add"
+#~ msgstr "Не дадаваць"
+
+#~ msgid ""
+#~ "There appears to be a configuration error. You have associated Konqueror "
+#~ "with %1, but it cannot handle this file type."
+#~ msgstr ""
+#~ "Адбылася памылка настаўлення. Вы прывязалі Konqueror да тыпу %1, аде ён "
+#~ "не можа быць адкрыты."
+
+#~ msgid "Profile Management"
+#~ msgstr "Кіраванне профілямі"
+
+#~ msgid "&Rename Profile"
+#~ msgstr "&Змяніць назву профілю"
+
+#~ msgid "&Delete Profile"
+#~ msgstr "&Выдаліць профіль"
+
+#, fuzzy
+#~| msgid "&Management"
+#~ msgid "Manage Sessions"
+#~ msgstr "&Кіраванне"
+
+#, fuzzy
+#~| msgid "&Open Link"
+#~ msgid "&Open"
+#~ msgstr "&Адкрыць спасылку"
+
+#, fuzzy
+#~| msgid "End of session"
+#~ msgid "Rename Session"
+#~ msgstr "Канец сеансу"
+
+#, fuzzy
+#~| msgid "End of session"
+#~ msgid "Restore Session?"
+#~ msgstr "Канец сеансу"
+
+#, fuzzy
+#~| msgid "End of session"
+#~ msgid "Restore Session"
+#~ msgstr "Канец сеансу"
+
+#~ msgid "Open a new tab"
+#~ msgstr "Адкрыць новую картку"
+
+#~ msgid "Close the current tab"
+#~ msgstr "Закрыць гэтую картку"
+
+#~ msgid "&Duplicate Tab"
+#~ msgstr "&Дубляваць картку"
+
+#~ msgid "&Reload Tab"
+#~ msgstr "&Абнавіць картку"
+
+#~ msgid "Other Tabs"
+#~ msgstr "Іншыя карткі"
+
+#~ msgid "D&etach Tab"
+#~ msgstr "А&длучыць картку"
+
+#~ msgid "&Close Tab"
+#~ msgstr "&Закрыць картку"
+
+#, fuzzy
+#~| msgid "&Close Tab"
+#~ msgid "Und&o: Closed Tab"
+#~ msgstr "&Закрыць картку"
+
+#, fuzzy
+#~| msgid "&Close Tab"
+#~ msgid "Und&o: Closed Window"
+#~ msgstr "&Закрыць картку"
+
+#~ msgid "Warning"
+#~ msgstr "Папярэджанне"
+
+#~ msgid "Resend"
+#~ msgstr "Даслаць зноў"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window.\n"
+#~ "Loading a view profile will close them."
+#~ msgstr ""
+#~ "У гэтым акне адкрытыя некалькі картак.\n"
+#~ "Загрузіўшы профіль выгляду, вы закрыеце іх."
+
+#~ msgid "Load View Profile"
+#~ msgstr "Загрузіць профіль выгляду"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Loading a profile will discard these changes."
+#~ msgstr ""
+#~ "Гэтая картка ўтрымлівае неперададзеныя звесткі.\n"
+#~ "Загрузіўшы профіль, вы згубіце гэтыя змены."
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "History Sidebar Module"
+#~ msgstr "Бакавая панель Web"
+
+#, fuzzy
+#~| msgid "History"
+#~ msgctxt "@title:tab"
+#~ msgid "History"
+#~ msgstr "Часопіс"
+
+#, fuzzy
+#~ msgid " day"
+#~ msgid_plural " days"
+#~ msgstr[0] " дзень"
+#~ msgstr[1] " дні"
+#~ msgstr[2] " дзён"
+
+#, fuzzy
+#~ msgid "Minute"
+#~ msgid_plural "Minutes"
+#~ msgstr[0] "Хвіліна"
+#~ msgstr[1] "Хвіліны"
+#~ msgstr[2] "Хвілін"
+
+#, fuzzy
+#~ msgid "Day"
+#~ msgid_plural "Days"
+#~ msgstr[0] "Дзень"
+#~ msgstr[1] "Дні"
+#~ msgstr[2] "Дзён"
+
+#~ msgid "<h1>History Sidebar</h1> You can configure the history sidebar here."
+#~ msgstr ""
+#~ "<h1>Бакавая панель дзённіка</h1> Тут вы можаце змяніць настаўленні "
+#~ "бакавой панелі дзённіка."
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Places Sidebar Module"
+#~ msgstr "Бакавая панель Web"
+
+#, fuzzy
+#~| msgid "Replace"
+#~ msgctxt "@title:tab"
+#~ msgid "Places"
+#~ msgstr "Замяніць"
+
+#~ msgid "Extended Sidebar"
+#~ msgstr "Пашыраная бакавая панель"
+
+#~ msgid "Rollback to System Default"
+#~ msgstr "Вярнуць стандартныя настаўленні"
+
+#~ msgid "Configure Sidebar"
+#~ msgstr "Настаўленне бакавой панелі"
+
+#~ msgid "Add New"
+#~ msgstr "Дадаць новы"
+
+#~ msgid "Multiple Views"
+#~ msgstr "Некалькі выглядаў"
+
+#~ msgid "Show Tabs Left"
+#~ msgstr "Паказваць карткі леваруч"
+
+#~ msgid "Show Configuration Button"
+#~ msgstr "Паказваць гузік настаўлення"
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgid "Close Sidebar"
+#~ msgstr "Бакавая панель Web"
+
+#~ msgid "This entry already exists."
+#~ msgstr "Гэты элемент ужо існуе."
+
+#~ msgid ""
+#~ "<qt>This removes all your entries from the sidebar and adds the system "
+#~ "default ones.<br /><b>This procedure is irreversible</b><br />Do you want "
+#~ "to proceed?</qt>"
+#~ msgstr ""
+#~ "<qt>Гэтае дзеянне выдаляе ўсе вашыя элементы бакавой панелі і дадае "
+#~ "стандартныя.<BR /><B>Старыя настаўленні пасля гэтага дзеяння немагчыма "
+#~ "вярнуць</B><BR />Вы хочаце працягнуць?</qt>"
+
+#, fuzzy
+#~| msgid "Move Tab Right"
+#~ msgid "Show Tabs Right"
+#~ msgstr "Пасунуць картку ўправа"
+
+#~ msgid "Set Name"
+#~ msgstr "Вызначыць назву"
+
+#~ msgid "Enter the name:"
+#~ msgstr "Вызначце назву:"
+
+#~ msgid "Enter a URL:"
+#~ msgstr "Вызначце URL:"
+
+#~ msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
+#~ msgstr "<qt>Вы сапраўды хочаце выдаліць картку <b>%1</b>?</qt>"
+
+#, fuzzy
+#~| msgid ""
+#~| "You have hidden the navigation panel configuration button. To make it "
+#~| "visible again, click the right mouse button on any of the navigation "
+#~| "panel buttons and select \"Show Configuration Button\"."
+#~ msgid ""
+#~ "You have hidden the sidebar configuration button. To make it visible "
+#~ "again, click the right mouse button on any of the sidebar buttons and "
+#~ "select \"Show Configuration Button\"."
+#~ msgstr ""
+#~ "Вы схавалі гузік настаўлення панелі навігацыі. Каб зноў паказаць яе, "
+#~ "неабходна выбраць з кантэкстнага меню па правай кнопцы мышы элемент "
+#~ "\"Паказваць гузік настаўлення\"."
+
+#~ msgid "Set Name..."
+#~ msgstr "Вызначыць назву..."
+
+#~ msgid "Set URL..."
+#~ msgstr "Вызначыць URL..."
+
+#~ msgid "Set Icon..."
+#~ msgstr "Вызначыць значку..."
+
+#~ msgid "Remove"
+#~ msgstr "Выдаліць"
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgid "Web module"
+#~ msgstr "Бакавая панель Web"
+
+#~ msgid "&Create New Folder"
+#~ msgstr "&Стварыць новую тэчку"
+
+#~ msgid "Delete Folder"
+#~ msgstr "Выдаліць тэчку"
+
+#~ msgid "Delete Bookmark"
+#~ msgstr "Выдаліць закладку"
+
+#~ msgid "Properties"
+#~ msgstr "Уласцівасці"
+
+#~ msgid "Open in New Window"
+#~ msgstr "Адкрыць у новым акне"
+
+#~ msgid "Open Folder in Tabs"
+#~ msgstr "Адкрыць тэчку ў картках"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "Скапіраваць адрас спасылкі"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark folder\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "Вы сапраўды хочаце выдаліць тэчку закладак\n"
+#~ "\"%1\"?"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "Вы сапраўды хочаце выдаліць гэтую закладку\n"
+#~ "\"%1\"?"
+
+#~ msgid "Bookmark Folder Deletion"
+#~ msgstr "Выдаленне тэчкі закладак"
+
+#~ msgid "Bookmark Deletion"
+#~ msgstr "Выдаленне закладкі"
+
+#~ msgid "Bookmark Properties"
+#~ msgstr "Уласцівасці закладкі"
+
+#~ msgid "&Update"
+#~ msgstr "&Абнавіць"
+
+#~ msgid "Name:"
+#~ msgstr "Назва:"
+
+#~ msgid "Location:"
+#~ msgstr "Адрас:"
+
+#~ msgid "Add Bookmark"
+#~ msgstr "Дадаць закладку"
+
+#~ msgid "Cannot find parent item %1 in the tree. Internal error."
+#~ msgstr "Немагчыма знайсці бацькоўскі элемент %1 у дрэве. Унутраная памылка."
+
+#~ msgid "&Create New Folder..."
+#~ msgstr "&Стварыць новую тэчку..."
+
+#, fuzzy
+#~| msgid "&Move to Trash"
+#~ msgid "Move to Trash"
+#~ msgstr "&Перанесці ў сметніцу"
+
+#~ msgid "Rename"
+#~ msgstr "Змяніць назву"
+
+#~ msgid "Delete Link"
+#~ msgstr "Выдаліць спасылку"
+
+#~ msgid "New Folder"
+#~ msgstr "Новая тэчка"
+
+#~ msgid "Create New Folder"
+#~ msgstr "Стварыць новую тэчку"
+
+#~ msgid "Enter folder name:"
+#~ msgstr "Вызначце назву тэчкі:"
+
+#, fuzzy
+#~| msgid "Name:"
+#~ msgctxt "@label"
+#~ msgid "Name:"
+#~ msgstr "Назва:"
+
+#~ msgid "&Open Link"
+#~ msgstr "&Адкрыць спасылку"
+
+#~ msgid "Set &Automatic Reload"
+#~ msgstr "Вызначыць рэжым &аўтаматычнага абнаўлення"
+
+#~ msgid "Set Refresh Timeout (0 disables)"
+#~ msgstr "Вызначыць тэрмін абнаўлення (0 выключае перыядычныя абнаўленні)"
+
+#~ msgid " min"
+#~ msgstr " хв"
+
+#~ msgid " sec"
+#~ msgstr " сек"
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Web Sidebar Module"
+#~ msgstr "Бакавая панель Web"
+
+#, fuzzy
+#~| msgid ""
+#~| "Konqueror is your file manager, web browser and universal document "
+#~| "viewer."
+#~ msgid ""
+#~ "Konqueror is a web browser, file manager and universal document viewer."
+#~ msgstr ""
+#~ "Konqueror - гэта кіраўнік файлаў, вандроўнік па Сеціве і універсальны "
+#~ "праглядальнік розных дакументаў."
+
+#, fuzzy
+#~| msgid "Starting Points"
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "Starting Points"
+#~ msgstr "Пачатковыя пункты"
+
+#~ msgid "Introduction"
+#~ msgstr "Уводзіны"
+
+#~ msgid "Tips"
+#~ msgstr "Карысныя парады"
+
+#~ msgid "Specifications"
+#~ msgstr "Спецыфікацыі"
+
+#~ msgid "Your personal files"
+#~ msgstr "Асабістыя файлы"
+
+#~ msgid "Trash"
+#~ msgstr "Сметніца"
+
+#~ msgid "Browse and restore the trash"
+#~ msgstr "Прагляд сметніцы і аднаўленне файлаў"
+
+#~ msgid "Network Folders"
+#~ msgstr "Сетка"
+
+#~ msgid "Shared files and folders"
+#~ msgstr "Апублікаваныя файлы і тэчкі"
+
+#, fuzzy
+#~| msgid "&Bookmarks"
+#~ msgid "Bookmarks"
+#~ msgstr "&Закладкі"
+
+#~ msgid "Next: An Introduction to Konqueror"
+#~ msgstr "Далей: Уводзіны ў Konqueror"
+
+#~ msgid "Search the Web"
+#~ msgstr "Пошук у Сеціве"
+
+#~ msgid ""
+#~ "Konqueror makes working with and managing your files easy. You can browse "
+#~ "both local and networked folders while enjoying advanced features such as "
+#~ "the powerful sidebar and file previews."
+#~ msgstr ""
+#~ "Konqueror робіць кіраванне файламі простым і прыемным. Вы можаце "
+#~ "вандраваць па сетцы, па мясцовай файлавай сістэме, выкарыстоўваючы "
+#~ "прасунутыя здольнасці праграмы, напрыклад, магутную бакавую панель, "
+#~ "перадпрагляд файлаў і іншыя."
+
+#~ msgid ""
+#~ "Konqueror is also a full featured and easy to use web browser which you "
+#~ "can use to explore the Internet. Enter the address (e.g. <a href=\"http://"
+#~ "www.kde.org\">http://www.kde.org</a>) of a web page you would like to "
+#~ "visit in the location bar and press Enter, or choose an entry from the "
+#~ "Bookmarks menu."
+#~ msgstr ""
+#~ "Konqueror з'яўляецца таксама прасунутым і простым у выкарыстанні "
+#~ "вандроўнікам па Сеціве, з дапамогай якога вы можаце вындраваць па "
+#~ "глабальнай сетцы Інтэрнэт. Вызначце адрас (напр., <a href=\"http://www."
+#~ "kde.org\">http://www.kde.org</a>) старонкі, якую вы хочаце наведаць, і "
+#~ "націсніце \"Enter\", ці выберыце элемент меню \"Закладкі\"."
+
+#~ msgid ""
+#~ "To return to the previous location, press the back button <img width='16' "
+#~ "height='16' src=\"%1\"></img> in the toolbar. "
+#~ msgstr ""
+#~ "Каб вярнуцца на папярэдняе месцазнаходжанне, націсніце кнопку \"Назад\"  "
+#~ "<img width='16' height='16' src=\"%1\"></img> на панелі начыння. "
+
+#~ msgid ""
+#~ "To quickly go to your Home folder press the  home button <img width='16' "
+#~ "height='16' src=\"%1\"></img>."
+#~ msgstr ""
+#~ "Каб хутка перайсці ў вашую хатнюю тэчку, націсніце кнопку \"Дадому\" <img "
+#~ "width='16' height='16' src=\"%1\"></img>."
+
+#~ msgid ""
+#~ "For more detailed documentation on Konqueror click <a href=\"%1\">here</"
+#~ "a>."
+#~ msgstr ""
+#~ "Каб праглядзець больш падрабязную дакументацыю па Konqueror, націсніце <A "
+#~ "HREF=\"%1\">тут</A>."
+
+#~ msgid "Next: Tips &amp; Tricks"
+#~ msgstr "Далей: Карысныя парады"
+
+#~ msgid "Supported standards"
+#~ msgstr "Падтрымліваемыя стандарты"
+
+#~ msgid "Additional requirements*"
+#~ msgstr "Дадатковыя патрабаванні*"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+#~ msgstr ""
+#~ "Заснаваны на <A HREF=\"%1\">DOM</A> (узровень 1, часткова ўзровень 2) <A "
+#~ "HREF=\"%2\">HTML 4.01</A>"
+
+#~ msgid "built-in"
+#~ msgstr "убудавана"
+
+#~ msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
+#~ msgstr "<A HREF=\"%1\">Каскадныя табліцы стыляў</A> (CSS 1, часткова CSS 2)"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
+#~ msgstr "<A HREF=\"%1\">ECMA-262</A>, выпуск 3 (адпавядае JavaScript 1.5)"
+
+#~ msgid ""
+#~ "JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
+#~ msgstr ""
+#~ "JavaScript забаронены (глабальна). Дазволіць JavaScript можна <A HREF="
+#~ "\"%1\">тут</A>."
+
+#~ msgid ""
+#~ "JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\"
+#~ "\">here</A>."
+#~ msgstr ""
+#~ "JavaScript дазволены (глабальна). Змяніць настаўленні JavaScript можна <A "
+#~ "HREF=\\\"%1\\\">тут</A>."
+
+#~ msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
+#~ msgstr "Падтрымка бяспекі <A HREF=\"%1\">Java</A><SUP>&reg;</SUP>"
+
+#, fuzzy
+#~| msgid ""
+#~| "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">Blackdown</A>, <A HREF="
+#~| "\"%2\">IBM</A> or <A HREF=\"%3\">Sun</A>)"
+#~ msgid ""
+#~ "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">IBM</A> or <A HREF="
+#~ "\"%2\">Sun/Oracle</A>)"
+#~ msgstr ""
+#~ "Сумяшчальная з JDK 1.2.0 (Java 2) VM (<A HREF=\"%1\">Blackdown</A>, <A "
+#~ "HREF=\"%2\">IBM</A> ці <A HREF=\"%3\">Sun</A>)"
+
+#~ msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
+#~ msgstr "Дазволіць Java (глабальна) можна <A HREF=\"%1\">тут</A>."
+
+#~ msgid ""
+#~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">plugins</A> (for "
+#~ "viewing <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
+#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Video, etc.)"
+#~ msgstr ""
+#~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">- Утулкі</A> (для "
+#~ "выкарыстання <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
+#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Video і інш.)"
+
+#~ msgid "Secure Sockets Layer"
+#~ msgstr "Падтрымка SSL"
+
+#~ msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
+#~ msgstr "(TLS/SSL v2/3) для бяспечнай сувязі з шыфраваннем да 168 бітаў"
+
+#~ msgid "OpenSSL"
+#~ msgstr "OpenSSL"
+
+#~ msgid "Bidirectional 16bit unicode support"
+#~ msgstr "Падтрымка двухбаковага 16-бітнага Юнікода"
+
+#~ msgid "AutoCompletion for forms"
+#~ msgstr "Аўтаматычнае запаўненне формаў"
+
+#, fuzzy
+#~| msgid "&General"
+#~ msgctxt "Title of an html 'group box' explaining konqueror features"
+#~ msgid "General"
+#~ msgstr "&Агульныя"
+
+#~ msgid "Feature"
+#~ msgstr "Здольнасць"
+
+#~ msgid "Details"
+#~ msgstr "Падрабязнасці"
+
+#~ msgid "Image formats"
+#~ msgstr "Фарматы малюнкаў"
+
+#~ msgid "Transfer protocols"
+#~ msgstr "Пратаколы перадачы"
+
+#~ msgid "HTTP 1.1 (including gzip/bzip2 compression)"
+#~ msgstr "HTTP 1.1 (уключна са сцісканнем gzip/bzip2)"
+
+#~ msgid "FTP"
+#~ msgstr "FTP"
+
+#, fuzzy
+#~| msgid "and <A HREF=\"%1\">many more...</A>"
+#~ msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpcenter)...</A>"
+#~ msgstr "і <A HREF=\"%1\">іншае...</A>"
+
+#, fuzzy
+#~| msgid "URL-Completion"
+#~ msgctxt "A feature of Konqueror"
+#~ msgid "URL-Completion"
+#~ msgstr "Дапаўненне URL"
+
+#~ msgid "Manual"
+#~ msgstr "Самастойнае"
+
+#~ msgid "Popup"
+#~ msgstr "Выплыўнае"
+
+#~ msgid "(Short-) Automatic"
+#~ msgstr "(Каротка-) Аўтаматычнае"
+
+#, fuzzy
+#~| msgid "<a href=\"%1\">Return to Starting Points</a>"
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "<a href=\"%1\">Return to Starting Points</a>"
+#~ msgstr "<a href=\"%1\">Вярнуцца да пачатковага пункту</a>"
+
+#~ msgid "Tips &amp; Tricks"
+#~ msgstr "Карысныя парады"
+
+#, fuzzy
+#~| msgid ""
+#~| "To return to the previous location, press the back button <img "
+#~| "width='16' height='16' src=\"%1\"></img> in the toolbar. "
+#~ msgid ""
+#~ "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
+#~ "the HTML toolbar to increase the font size on your web page."
+#~ msgstr ""
+#~ "Каб вярнуцца на папярэдняе месцазнаходжанне, націсніце кнопку \"Назад\"  "
+#~ "<img width='16' height='16' src=\"%1\"> на панелі начыння. "
+
+#~ msgid ""
+#~ "Use a caching <a href=\"%1\">proxy</a> to speed up your Internet "
+#~ "connection."
+#~ msgstr ""
+#~ "Выкарыстоўвайце кэшыруючы <a href=\"%1\">проксі</a> каб падняць хуткасць "
+#~ "вашага злучэння з інтэрнэтам."
+
+#~ msgid "Next: Specifications"
+#~ msgstr "Далей: Спецыфікацыі"
+
+#~ msgid "Installed Plugins"
+#~ msgstr "Устаноўленыя ўтулкі"
+
+#~ msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
+#~ msgstr "<td>Утулка</td><td>Апісанне</td><td>Файл</td><td>Тыпы</td>"
+
+#~ msgid "Installed"
+#~ msgstr "Устаноўленая"
+
+#~ msgid ""
+#~ "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
+#~ msgstr "<td>Тып MIME</td><td>Апісанне</td><td>Суфіксы</td><td>Утулка</td>"
+
+#~ msgid ""
+#~ "Do you want to disable showing the introduction in the webbrowsing "
+#~ "profile?"
+#~ msgstr ""
+#~ "Вы хочаце выключыць паказ уводзінаў для профілю вандравання па Сеціве?"
+
+#~ msgid "Faster Startup?"
+#~ msgstr "Хутчэйшы запуск?"
+
+#~ msgid "Disable"
+#~ msgstr "Выключыць"
+
+#~ msgid "Keep"
+#~ msgstr "Пакінуць"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Дарафей Праляскоўскі, Eugene Zelenko, Яўген Громаў, Ігар Грачышка"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr ""
+#~ "komzpa@licei2.com,greendeath@mail.ru,yevgeny@tut.by,ihar.hrachyshka@gmail."
+#~ "com"
+
+#, fuzzy
+#~| msgid "&Filters"
+#~ msgid "&File"
+#~ msgstr "&Фільтры"
+
+#~ msgid "&Edit"
+#~ msgstr "&Змяніць"
+
+#~ msgid "&View"
+#~ msgstr "&Выгляд"
+
+#~ msgid "&Go"
+#~ msgstr "&Ісці"
+
+#~ msgid "&Settings"
+#~ msgstr "&Настаўленні"
+
+#~ msgid "&Window"
+#~ msgstr "&Акно"
+
+#~ msgid "&Help"
+#~ msgstr "&Дапамога"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Галоўная панель начыння"
+
+#~ msgid "Extra Toolbar"
+#~ msgstr "Дадатковая панель"
+
+#~ msgid "Location Toolbar"
+#~ msgstr "Адрасная панель"
+
+#~ msgid "Bookmark Toolbar"
+#~ msgstr "Панель закладак"
+
+#~ msgid "&Profile name:"
+#~ msgstr "Назва &профілю:"
+
+#~ msgid "Save &URLs in profile"
+#~ msgstr "Захоўваць &спасылкі ў профілі"
+
+#, fuzzy
+#~| msgid "&New..."
+#~ msgctxt "@action:button New session"
+#~ msgid "New..."
+#~ msgstr "&Новы..."
+
+#, fuzzy
+#~| msgid "Close Current Tab"
+#~ msgctxt "@action:button Save current session"
+#~ msgid "Save Current"
+#~ msgstr "Закрыць гэтую картку"
+
+#, fuzzy
+#~| msgid "Rename"
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename..."
+#~ msgstr "Змяніць назву"
+
+#, fuzzy
+#~| msgid "D&elete"
+#~ msgctxt "@action:button Delete session"
+#~ msgid "Delete"
+#~ msgstr "&Выдаліць"
+
+#, fuzzy
+#~| msgid "Open the document in current window"
+#~ msgid "Open tabs inside current window"
+#~ msgstr "Адкрыць дакумент у гэтым акне"
+
+#~ msgid "Limits"
+#~ msgstr "Абмежаванні"
+
+#~ msgid "URLs e&xpire after"
+#~ msgstr "Тэрмін дзеяння спасылкі &заканчваецца пасля"
+
+#~ msgid "Maximum &number of URLs:"
+#~ msgstr "Найбольшая &колькасць спасылак:"
+
+#~ msgid "Custom Fonts For"
+#~ msgstr "Асаблівыя шрыфты для"
+
+#~ msgid "URLs newer than"
+#~ msgstr "Спасылкі, навейшыя за"
+
+#~ msgid "Choose Font..."
+#~ msgstr "Выбраць шрыфт..."
+
+#~ msgid "URLs older than"
+#~ msgstr "Спасылкі, старэйшыя за"
+
+#~ msgid ""
+#~ "Shows the number of times visited and the dates of the first and last "
+#~ "visits, in addition to the URL"
+#~ msgstr ""
+#~ "Дадаткова паказваецца колькасць наведванняў спасылкі і даты першага і "
+#~ "апошняга наведвання"
+
+#~ msgid "Detailed tooltips"
+#~ msgstr "Падрабязныя падказкі"
+
+#~ msgid "Clear History"
+#~ msgstr "Ачысціць часопіс"
+
+#, fuzzy
+#~| msgid ""
+#~| "This is the URL (e.g. a folder or a web page) where Konqueror will jump "
+#~| "to when the \"Home\" button is pressed. This is usually your home "
+#~| "folder, symbolized by a 'tilde' (~)."
+#~ msgid ""
+#~ "This is the URL of the web page where Konqueror (as web browser) will "
+#~ "jump to when the \\\"Home\\\" button is pressed. When Konqueror is "
+#~ "started as a file manager, that button makes it jump to your local home "
+#~ "folder instead."
+#~ msgstr ""
+#~ "Гэта URL (напр., тэчка ці web-спасылка), якую Konqueror будзе адкрываць "
+#~ "па націску на кнопку \"Дадому\". Звычайна гэта хатняя тэчка, якая "
+#~ "абазначаецца знакам 'тыльды' (~)."
+
+#, fuzzy
+#~| msgid "Maximum &number of URLs:"
+#~ msgid "Maximum number of Closed Items"
+#~ msgstr "Найбольшая &колькасць спасылак:"
+
+#, fuzzy
+#~| msgid "Open folders in separate &windows"
+#~ msgid "Open folders in separate windows"
+#~ msgstr "Адкрываць тэчкі ў асобных &вокнах"
+
+#~ msgid ""
+#~ "If this option is checked, Konqueror will open a new window when you open "
+#~ "a folder, rather than showing that folder's contents in the current "
+#~ "window."
+#~ msgstr ""
+#~ "Калі ўключана гэтая опцыя, Konqueror будзе адкрываць тэчкі ў новых "
+#~ "вокнах, а не ў наяўным акне."
+
+#, fuzzy
+#~| msgid "Show file &tips"
+#~ msgid "Show file tips"
+#~ msgstr "Паказваць пад&казкі для файлаў"
+
+#~ msgid ""
+#~ "Here you can control if, when moving the mouse over a file, you want to "
+#~ "see a small popup window with additional information about that file"
+#~ msgstr ""
+#~ "Тут вы можаце вызначыць, ці вы хочаце бачыць падказкі для файлаў пры "
+#~ "навядзенні на іх курсора мышы."
+
+#, fuzzy
+#~| msgid "Show &previews in file tips"
+#~ msgid "Show previews in file tips"
+#~ msgstr "Паказваць &перадагляд ў падказках для файлаў"
+
+#, fuzzy
+#~| msgid ""
+#~| "Here you can control if you want the popup window to contain a larger "
+#~| "preview for the file, when moving the mouse over it."
+#~ msgid ""
+#~ "Here you can control if you want the popup window to contain a larger "
+#~ "preview for the file, when moving the mouse over it"
+#~ msgstr ""
+#~ "Тут вы можаце вызначыць, ці вы хочаце бачыць выяву прагляду ў падказках "
+#~ "для файлаў."
+
+#, fuzzy
+#~| msgid "Show 'Delete' context me&nu entries which bypass the trashcan"
+#~ msgid "Show 'Delete' menu entries which bypass the trashcan"
+#~ msgstr ""
+#~ "Паказваць эле&мент кантэкстнага меню \"Выдаліць\", які выдаляе файлы, "
+#~ "абмінаючы сметніцу"
+
+#, fuzzy
+#~| msgid ""
+#~| "Check this if you want 'Delete' menu commands to be displayed on the "
+#~| "desktop and in the file manager's context menus. You can always delete "
+#~| "files by holding the Shift key while calling 'Move to Trash'."
+#~ msgid ""
+#~ "Check this if you want 'Delete' menu commands to be displayed on the "
+#~ "desktop and in the file manager's menus and context menus. You can always "
+#~ "delete files when hidden by holding the Shift key while calling 'Move to "
+#~ "Trash'."
+#~ msgstr ""
+#~ "Выключыце гэтую опцыю, калі вы не хочаце бачыць у меню дзеянне \"Выдаліць"
+#~ "\". Вы ўсё роўна можаце выдаляць файлы, абмінаючы сметніцу, заціснуўшы "
+#~ "клавішу Shift і выбраўшы ў меню \"Перанесці ў сметніцу\"."
+
+#, fuzzy
+#~| msgid "S&tandard font:"
+#~ msgid "Standard font"
+#~ msgstr "&Звычайны шрыфт:"
+
+#~ msgid "This is the font used to display text in Konqueror windows."
+#~ msgstr "Гэта шрыфт тэксту ў вокнах Konqueror."
+
+#, fuzzy
+#~| msgid "Ask Confirmation For"
+#~ msgid "Ask confirmation for deleting a file."
+#~ msgstr "Пытацца пацверджання для"
+
+#, fuzzy
+#~| msgid ""
+#~| "This option tells Konqueror whether to ask for a confirmation when you "
+#~| "\"delete\" a file. <ul><li><em>Move To Trash:</em> moves the file to "
+#~| "your trash folder, from where it can be recovered very easily.</li> "
+#~| "<li><em>Delete:</em> simply deletes the file.</li> </ul>"
+#~ msgid ""
+#~ "This option tells Konqueror whether to ask for a confirmation when you "
+#~ "delete a file without using the trash folder. Warning, deleted files can "
+#~ "not be recovered, so it is recommended to leave this confirmation enabled."
+#~ msgstr ""
+#~ "Гэтая опцыя вызначае, ці будзе Konqueror пытацца пацверджання выдалення "
+#~ "файлаў.<ul><li><em>Перанос ц сметніцу:</em> перамяшчае ваш файл у "
+#~ "сметніцу, адкуль вы можаце з лёгкасцю яго вярнуць.</li> <li><em>Выдаліць:"
+#~ "</em> проста выдаляе файл.</li> </ul>"
+
+#, fuzzy
+#~| msgid "Ask Confirmation For"
+#~ msgid "Ask confirmation for move to trash"
+#~ msgstr "Пытацца пацверджання для"
+
+#, fuzzy
+#~| msgid ""
+#~| "This option tells Konqueror whether to ask for a confirmation when you "
+#~| "\"delete\" a file. <ul><li><em>Move To Trash:</em> moves the file to "
+#~| "your trash folder, from where it can be recovered very easily.</li> "
+#~| "<li><em>Delete:</em> simply deletes the file.</li> </ul>"
+#~ msgid ""
+#~ "This option tells Konqueror whether to ask for a confirmation when you "
+#~ "move the file to your trash folder, from where it can be recovered very "
+#~ "easily."
+#~ msgstr ""
+#~ "Гэтая опцыя вызначае, ці будзе Konqueror пытацца пацверджання выдалення "
+#~ "файлаў.<ul><li><em>Перанос ц сметніцу:</em> перамяшчае ваш файл у "
+#~ "сметніцу, адкуль вы можаце з лёгкасцю яго вярнуць.</li> <li><em>Выдаліць:"
+#~ "</em> проста выдаляе файл.</li> </ul>"
+
+#~ msgid "Hide %1"
+#~ msgstr "Схаваць %1"
+
+#, fuzzy
+#~| msgid "Web SideBar Plugin"
+#~ msgid "SideBar Test Plugin"
+#~ msgstr "Модуль бакавой панелі Web"
+
+#~ msgid "Bookmark This Location"
+#~ msgstr "Стварыць закладку"
+
+#~ msgid ""
+#~ "Malformed URL\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Некарэктны URL\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Protocol not supported\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Пратакол не падтрымліваецца\n"
+#~ "%1"
+
+#~ msgid "Cannot create the find part, check your installation."
+#~ msgstr "Немагчыма стварыць модуль пошуку, праверце ўстаноўку."
+
+#, fuzzy
+#~| msgid "&Bookmarks"
+#~ msgid "My Bookmarks"
+#~ msgstr "&Закладкі"
+
+#~ msgid "Preload for later use"
+#~ msgstr "Папярэдне загружаць для пазнейшага выкарыстання"
+
+#~ msgid "&Save View Profile \"%1\"..."
+#~ msgstr "&Запісаць профіль выгляду \"%1\"..."
+
+#~ msgid "Configure Navigation Panel"
+#~ msgstr "Настаўленне панелі навігацыі"
+
+#~ msgid "Close Navigation Panel"
+#~ msgstr "Закрыць панель навігацыі"
+
+#~ msgid "Select Type"
+#~ msgstr "Выбраць тып"
+
+#~ msgid "Select type:"
+#~ msgstr "Выбраць тып:"
+
+#~ msgid "Web SideBar Plugin"
+#~ msgstr "Модуль бакавой панелі Web"
+
+#~ msgid "<qt><b>%1</b> does not exist</qt>"
+#~ msgstr "<qt><b>%1</b> не існуe</qt>"
+
+#~ msgid "Minutes"
+#~ msgstr "Хвілінаў"
+
+#~ msgid "Days"
+#~ msgstr "Дзён"
+
+#~ msgid "Your sidebar is not functional or unavailable."
+#~ msgstr "Бакавая панель адсутнічае ці не працуе."
+
+#~ msgid "Cannot find running history plugin in your sidebar."
+#~ msgstr "Немагчыма знайсці запушчаны модуль дзённіка ў бакавой панелі."
+
+#, fuzzy
+#~| msgid "Show History Sidebar"
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History in Sidebar"
+#~ msgstr "Паказаць дзённік у бакавой панелі"
+
+#~ msgid "Select Remote Charset"
+#~ msgstr "Выбар аддаленага знаказбору"
+
+#~ msgid "Reload"
+#~ msgstr "Абнавіць"
+
+#~ msgid "Default"
+#~ msgstr "Прадвызначаны"
+
+#, fuzzy
+#~| msgid "New..."
+#~ msgctxt "@action:button New session"
+#~ msgid "New"
+#~ msgstr "Новы..."
+
+#, fuzzy
+#~| msgid "Rename"
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename"
+#~ msgstr "Змяніць назву"
+
+#~ msgid ""
+#~ "Konqueror is your file manager, web browser and universal document viewer."
+#~ msgstr ""
+#~ "Konqueror - гэта кіраўнік файлаў, вандроўнік па Сеціве і універсальны "
+#~ "праглядальнік розных дакументаў."
+
+#~ msgid "Joseph WENNINGER"
+#~ msgstr "Джозэф Венінгер"
+
+#~ msgid "G E N E R A L"
+#~ msgstr "А Г У Л Ь Н А Е"
+
+#~ msgid "<img width='16' height='16' src=\"%1\"></img>"
+#~ msgstr "<img width='16' height='16' src=\"%1\"></img>"
+
+#~ msgid "Applications"
+#~ msgstr "Праграмы"
+
+#~ msgid "Installed programs"
+#~ msgstr "Устаноўленыя праграмы"
+
+#~ msgid "&Location"
+#~ msgstr "А&драc"
+
+#~ msgid "Open &Terminal"
+#~ msgstr "Адкрыць &тэрмінал"
+
+#~ msgid "Unknown"
+#~ msgstr "Невядомы"
+
+#~ msgid "Save &window size in profile"
+#~ msgstr "Захоўваць памер &акна ў профілі"
+
+#~ msgid "&Speak Text"
+#~ msgstr "&Прагаварыць тэкст"
+
+#, fuzzy
+#~| msgid ""
+#~| "You cannot read anything except web pages with\n"
+#~| "this plugin, sorry."
+#~ msgid "You cannot read anything except web pages with this plugin, sorry."
+#~ msgstr ""
+#~ "Вы не можаце чытаць нічога, акрамя вэб-старонак\n"
+#~ "пры дапамозе гэтай утулкі, прабачце."
+
+#~ msgid "Cannot Read source"
+#~ msgstr "Немагчыма прачытаць крыніцу"
+
+#~ msgid "Starting KTTSD Failed"
+#~ msgstr "Запуск KTTSD немагчымы"
+
+#, fuzzy
+#~| msgid "The D-Bus call startText failed."
+#~ msgid "The D-Bus call say() failed."
+#~ msgstr "Выклік D-Bus startText немагчымы."
+
+#~ msgid "D-Bus Call Failed"
+#~ msgstr "Выклік D-Bus немагчымы"
+
+#~ msgid "Speech Toolbar"
+#~ msgstr "Панель прагаворвання"
+
+#~ msgid "The D-Bus call supportsMarkup failed."
+#~ msgstr "Выклік D-Bus supportsMarkup немагчымы."
+
+#~ msgid "The D-Bus call setText failed."
+#~ msgstr "Выклік D-Bus setText немагчымы."
+
+#, fuzzy
+#~ msgid "Conquer your Desktop!"
+#~ msgstr "Перамажыце Кампутар!"
+
+#~ msgid "Storage Media"
+#~ msgstr "Носьбіты"
+
+#~ msgid "Disks and removable media"
+#~ msgstr "Дыскі і зменныя носьбіты"
+
+#~ msgid "Settings"
+#~ msgstr "Настаўленні"
+
+#~ msgid "Desktop configuration"
+#~ msgstr "Настаўленне стальніцы"
+
+#~ msgid "Home &URL:"
+#~ msgstr "Хатні &URL:"
+
+#~ msgid "&Edit File Type..."
+#~ msgstr "&Рэдагаваць тып файла..."
+
+#~ msgid "S&ystem"
+#~ msgstr "С&істэма"
+
+#~ msgid "App&lications"
+#~ msgstr "&Праграмы"
+
+#~ msgid "&Storage Media"
+#~ msgstr "&Носьбіты"
+
+#~ msgid "&Network Folders"
+#~ msgstr "&Сетка"
+
+#~ msgid "Sett&ings"
+#~ msgstr "Наст&аўленні"
+
+#~ msgid "Autostart"
+#~ msgstr "Аўтазапуск"
+
+#~ msgid "kfmclient"
+#~ msgstr "kfmclient"
+
+#~ msgid "KDE tool for opening URLs from the command line"
+#~ msgstr "Праграма KDE для адкрыцця URL з каманднага радку"
+
+#~ msgid "Non interactive use: no message boxes"
+#~ msgstr "Неінтырактыўнае выкарыстанне: без дыялогавых вокнаў"
+
+#~ msgid "Show available commands"
+#~ msgstr "Паказаць даступныя каманды"
+
+#~ msgid "Command (see --commands)"
+#~ msgstr "Каманда (гл. --commands)"
+
+#~ msgid "Arguments for command"
+#~ msgstr "Аргументы для каманды"
+
+#~ msgid ""
+#~ "\n"
+#~ "Syntax:\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Сінтаксіс:\n"
+
+#~ msgid ""
+#~ "  kfmclient openURL 'url' ['mimetype']\n"
+#~ "            # Opens a window showing 'url'.\n"
+#~ "            #  'url' may be a relative path\n"
+#~ "            #   or file name, such as . or subdir/\n"
+#~ "            #   If 'url' is omitted, $HOME is used instead.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmclient openURL 'url' ['mimetype']\n"
+#~ "            # Адкрывае акно, якое паказвае 'url'.\n"
+#~ "            #  'url' можа быць адносным шляхам\n"
+#~ "            #   ці назвай файлу, напрыклад s . ці subdir/\n"
+#~ "            #   Калі 'url' апушчаны, адкрываецца $HOME.\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "            # If 'mimetype' is specified, it will be used to determine "
+#~ "the\n"
+#~ "            #   component that Konqueror should use. For instance, set it "
+#~ "to\n"
+#~ "            #   text/html for a web page, to make it appear faster\n"
+#~ "\n"
+#~ msgstr ""
+#~ "            # Калі 'mimetype' зададзены, ён будзе выкарыстаны каб "
+#~ "вызначыць\n"
+#~ "            #   кампанент, якім Konqueror будзе карыстацца. На прыклад, "
+#~ "выстаўце яго як\n"
+#~ "            #   text/html для web-старонкі, каб яна з'яўлалася хутчэй\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "  kfmclient openProfile 'profile' ['url']\n"
+#~ "            # Opens a window using the given profile.\n"
+#~ "            #   'profile' is a file under ~/.kde/share/apps/konqueror/"
+#~ "profiles.\n"
+#~ "            #   'url' is an optional URL to open.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmclient openProfile 'профіль' ['адрас']\n"
+#~ "            # Адкрывае акно з запытаным профілем.\n"
+#~ "            #   'профіль' - файл у ~/.kde/share/apps/konqueror/profiles.\n"
+#~ "            #   'адрас' - неабавязковы URL для адкрыцця.\n"
+#~ "\n"
+
+#~ msgid "Profile %1 not found\n"
+#~ msgstr "Профіль %1 не знойдзены\n"
+
+#~ msgid "Syntax Error: Not enough arguments\n"
+#~ msgstr "Сінтаксічная памылка: недастаткова агрументаў\n"
+
+#~ msgid "Syntax Error: Too many arguments\n"
+#~ msgstr "Сінтаксічная памылка: надта шмат агрументаў\n"
+
+#~ msgid "Syntax Error: Unknown command '%1'\n"
+#~ msgstr "Сінтаксічная памылка: невядомая каманда '%1'\n"
+
+#~ msgid "Manual Proxy Configuration"
+#~ msgstr "Самастойнае настаўленне проксі"
+
+#~ msgid "Invalid Proxy Setting"
+#~ msgstr "Недапушчальныя настаўленні проксі"
+
+#~ msgid "<qt><center><b>%1</b></center> is already in the list.</qt>"
+#~ msgstr "<qt><center><b>%1</b></center> ужо ў спісе.</qt>"
+
+#~ msgid "Duplicate Entry"
+#~ msgstr "Стварыць копію запісу"
+
+#~ msgid "New Exception"
+#~ msgstr "Новае выключэнне"
+
+#~ msgid "Change Exception"
+#~ msgstr "Змяніць выключэнне"
+
+#~ msgid "Invalid Entry"
+#~ msgstr "Недапушчальны запіс"
+
+#~ msgid "The address you have entered is not valid."
+#~ msgstr "Вы ўвялі недапушчальны адрас."
+
+#~ msgid "Default user name:"
+#~ msgstr "Карыстальнік па змаўчанні:"
+
+#~ msgid "Default password:"
+#~ msgstr "Пароль па змаўчанні:"
+
+#~ msgid "Accept"
+#~ msgstr "Прыняць"
+
+#~ msgid "Reject"
+#~ msgstr "Адмовіць"
+
+#~ msgid "Ask"
+#~ msgstr "Пытаць"
+
+#~ msgid "Dunno"
+#~ msgstr "Не ведаю"
+
+#~ msgid "Timeout Values"
+#~ msgstr "Значэнні тэрмінаў чакання"
+
+#~ msgid "FTP Options"
+#~ msgstr "Настаўленні FTP"
+
+#~ msgid "D-Bus Communication Error"
+#~ msgstr "Памылка сувязі D-Bus"
+
+#~ msgid "Unable to delete all the cookies as requested."
+#~ msgstr "Немагчыма выдаліць усе cookie як запытана."
+
+#~ msgid "Unable to delete cookies as requested."
+#~ msgstr "Немагчыма выдаліць cookie як запытана."
+
+#~ msgid "Information Lookup Failure"
+#~ msgstr "Памылка пошуку інфармацыі"
+
+#~ msgid ""
+#~ "Unable to retrieve information about the cookies stored on your computer."
+#~ msgstr ""
+#~ "Немагчыма атрымаць інфармацыю пра cookies, якія захаваныя на вашым "
+#~ "камп'ютэры."
+
+#~ msgid "Yes"
+#~ msgstr "Так"
+
+#~ msgid "&Windows Shares"
+#~ msgstr "Агульныя рэсурсы &Windows"
+
+#~ msgid "Add Identification"
+#~ msgstr "Дадаць увасабленне"
+
+#~ msgid "Modify Identification"
+#~ msgstr "Змяніць увасабленне"
+
+#~ msgid "Duplicate Identification"
+#~ msgstr "Стварыць копію увасаблення"
+
+#~ msgid "Variable Proxy Configuration"
+#~ msgstr "Настаўленне зменнага проксі"
+
+#~ msgid "Invalid Proxy Setup"
+#~ msgstr "Недапушчальныя настаўленні проксі"
+
+#~ msgid "Successfully verified."
+#~ msgstr "Паспяхова праверана."
+
+#~ msgid "Proxy Setup"
+#~ msgstr "Настаўленні проксі."
+
+#~ msgid "&Policy"
+#~ msgstr "&Палітыка"
+
+#~ msgid "kcmsocks"
+#~ msgstr "kcmsocks"
+
+#~ msgid "KDE SOCKS Control Module"
+#~ msgstr "Модуль кіравання SOCKS KDE"
+
+#~ msgid "(c) 2001 George Staikos"
+#~ msgstr "(c) 2001 Джордж Стайкас"
+
+#~ msgid "These changes will only apply to newly started applications."
+#~ msgstr ""
+#~ "Гэтыя настаўленні будуць ужытыя толькі для нанова пачатых праграмаў."
+
+#~ msgid "SOCKS Support"
+#~ msgstr "Падтрымка SOCKS"
+
+#~ msgid "SOCKS could not be loaded."
+#~ msgstr "SOCKS не можа быць загружаны"
+
+#~ msgid "Update Failed"
+#~ msgstr "Абнаўленне намагчыма"
+
+#~ msgid "You have to restart KDE for these changes to take effect."
+#~ msgstr "Трэба перастартаваць KDE, каб змены пачалі дзейнічаць."
+
+#~ msgid "New Cookie Policy"
+#~ msgstr "Новая палітыка cookie"
+
+#~ msgid "Change Cookie Policy"
+#~ msgstr "Змяніць палітыку cookie"
+
+#~ msgid ""
+#~ "<qt>A policy already exists for<center><b>%1</b></center>Do you want to "
+#~ "replace it?</qt>"
+#~ msgstr ""
+#~ "<qt>Палітыка ўжо існуе для <center><b>%1</b></center>Ці вы хочаце "
+#~ "замяніць яе?</qt>"
+
+#~ msgid "Duplicate Policy"
+#~ msgstr "Стварыць копію палітыкі"
+
+#~ msgid "&Proxy"
+#~ msgstr "&Проксі"
+
+#~ msgid "&SOCKS"
+#~ msgstr "&SOCKS"
+
+#~ msgid "Menu Editor"
+#~ msgstr "Рэдактар меню"
+
+#~ msgid "Menu"
+#~ msgstr "Меню"
+
+#~ msgid "Move Up"
+#~ msgstr "Пасунуць угору"
+
+#~ msgid "Move Down"
+#~ msgstr "Пасунуць долу"
+
+#~ msgid ""
+#~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "
+#~ "file manager here."
+#~ msgstr ""
+#~ "<h1>Паводзіны Konqueror</h1> Тут вы можаце наставіць паводзіны Konqueror "
+#~ "у якасці файлавага кіраўніа."
+
+#~ msgid "Misc Options"
+#~ msgstr "Розныя опцыі"
+
+#~ msgid "&Move to trash"
+#~ msgstr "&Перанос у сметніцу"
+
+#~ msgid "Sound Files"
+#~ msgstr "Гукавыя файлы"
+
+#~ msgid "&Left button:"
+#~ msgstr "&Левая кнопка:"
+
+#~ msgid "Right b&utton:"
+#~ msgstr "&Правая кнопка:"
+
+#~ msgid "No Action"
+#~ msgstr "Няма дзеяння"
+
+#~ msgid "Window List Menu"
+#~ msgstr "Меню спісу вокнаў"
+
+#~ msgid "Desktop Menu"
+#~ msgstr "Меню працоўнага стала"
+
+#~ msgid "Application Menu"
+#~ msgstr "Меню праграмаў"
+
+#~ msgid "Bookmarks Menu"
+#~ msgstr "Меню закладак"
+
+#~ msgid "Custom Menu 1"
+#~ msgstr "Асаблівае меню 1"
+
+#~ msgid "Custom Menu 2"
+#~ msgstr "Асаблівае меню 2"
+
+#~ msgid ""
+#~ "<p>Allow previews, \"Folder Icons Reflect Contents\", and retrieval of "
+#~ "meta-data on protocols:</p>"
+#~ msgstr ""
+#~ "<p>Дазволіць перадагляды, паказ зместу тэчкі на значцы і атрыманне "
+#~ "метададзеных па пратаколах:</p>"
+
+#~ msgid "Select Protocols"
+#~ msgstr "Выберыце пратаколы"
+
+#~ msgid "Local Protocols"
+#~ msgstr "Мясцовыя пратаколы"
+
+#~ msgid "Internet Protocols"
+#~ msgstr "Пратаколы інтэрнета"
+
+#~ msgid "&Maximum file size:"
+#~ msgstr "&Максімальны памер файла:"
+
+#~ msgid " MB"
+#~ msgstr " Мб"
+
+#~ msgid "&Increase size of previews relative to icons"
+#~ msgstr "&Павялічыць памер мініяцюраў адносна значак"
+
+#~ msgid "&Use thumbnails embedded in files"
+#~ msgstr "&Выкарыстоўваць мініяцюры, убудаваныя ў файлы"
+
+#~ msgid "&Behavior"
+#~ msgstr "&Паводзіны"
+
+#~ msgid "&Previews && Meta-Data"
+#~ msgstr "&Мініяцюры і метададзеныя"
+
+#~ msgid "Des&ktop path:"
+#~ msgstr "Тэчка &працоўнага стала:"
+
+#~ msgid "A&utostart path:"
+#~ msgstr "Тэчка &аўтаматычнага запуску:"
+
+#~ msgid "D&ocuments path:"
+#~ msgstr "Тэчка &дакументаў:"
+
+#~ msgid ""
+#~ "This folder will be used by default to load or save documents from or to."
+#~ msgstr "Гэтая тэчка будзе выкарыстоўвацца для запісу і загрузкі дакументаў."
+
+#~ msgid "Desktop"
+#~ msgstr "Працоўны стол"
+
+#~ msgid ""
+#~ "The path for '%1' has been changed;\n"
+#~ "do you want the files to be moved from '%2' to '%3'?"
+#~ msgstr ""
+#~ "Шлях для \"%1\" змяніўся;\n"
+#~ "хочаце перанесці файлы з '%2' у '%3'?"
+
+#~ msgid "Confirmation Required"
+#~ msgstr "Патрабуецца пацверджанне"
+
+#~ msgid "Move"
+#~ msgstr "Перанесці"
+
+#~ msgid "KEditFileType"
+#~ msgstr "KEditFileType"
+
+#~ msgid ""
+#~ "KDE file type editor - simplified version for editing a single file type"
+#~ msgstr ""
+#~ "Рэдактар тыпаў файлаў для KDE - спрошчаная версія для змянення асобнага "
+#~ "тыпу файлаў"
+
+#~ msgid "(c) 2000, KDE developers"
+#~ msgstr "(c) 2000, Распрацоўшчыкі KDE"
+
+#~ msgid "Preston Brown"
+#~ msgstr "Прэстан Браўн"
+
+#~ msgid "Makes the dialog transient for the window specified by winid"
+#~ msgstr "Робіць дыялог мадальным для акна, вызначанага ў winid"
+
+#~ msgid "File type to edit (e.g. text/html)"
+#~ msgstr "Змяніць тып файлаў (напр: text/html)"
+
+#~ msgid "%1 File"
+#~ msgstr "%1 файл"
+
+#~ msgid "Edit File Type %1"
+#~ msgstr "Змяніць тып файлаў %1"
+
+#~ msgid "Create New File Type %1"
+#~ msgstr "Стварыць новы тып файлаў %1"
+
+#~ msgid "Create New File Type"
+#~ msgstr "Стварыць новы тып файлаў"
+
+#~ msgid "Group:"
+#~ msgstr "Група:"
+
+#~ msgid "Select the category under which the new file type should be added."
+#~ msgstr "Выберыце катэгорыю, у якой трэба стварыць новы тып файлаў."
+
+#~ msgid "Type name:"
+#~ msgstr "Назва тыпу:"
+
+#~ msgid "Left Click Action"
+#~ msgstr "Дзеянне левай кнопкі мышы"
+
+#~ msgid "Show file in embedded viewer"
+#~ msgstr "Паказаць файл ва ўбудаваным праглядальніку"
+
+#~ msgid "Show file in separate viewer"
+#~ msgstr "Паказаць файл у асобным праглядальніку"
+
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file belonging to this group. Konqueror can display the file "
+#~ "in an embedded viewer or start up a separate application. You can change "
+#~ "this setting for a specific file type in the 'Embedding' tab of the file "
+#~ "type configuration."
+#~ msgstr ""
+#~ "Тут вы можаце вызначыць, што будзе рабіць кіраўнік файлаў Konqueror, калі "
+#~ "вы націсніце на файл, які належыць гэтай групе. Konqueror можа паказаць "
+#~ "гэты файл ва ўбудаваным праглядальніку ці запусціць асобную праграму. Вы "
+#~ "можаце змяніць гэтае дзеянне для асобнага тыпу файлаў на ўкладцы "
+#~ "\"Убудоўванне\" у наладцы тыпу файлаў."
+
+#~ msgid "Add Service"
+#~ msgstr "Дадаць сервіс"
+
+#~ msgid "Select service:"
+#~ msgstr "Выберыце сервіс:"
+
+#~ msgid ""
+#~ "<p><h1>File Associations</h1> This module allows you to choose which "
+#~ "applications are associated with a given type of file. File types are "
+#~ "also referred to MIME types (MIME is an acronym which stands for "
+#~ "\"Multipurpose Internet Mail Extensions\".)</p><p> A file association "
+#~ "consists of the following: <ul><li>Rules for determining the MIME-type of "
+#~ "a file, for example the filename pattern *.kwd, which means 'all files "
+#~ "with names that end in .kwd', is associated with the MIME type \"x-kword"
+#~ "\";</li> <li>A short description of the MIME-type, for example the "
+#~ "description of the MIME type \"x-kword\" is simply 'KWord document';</li> "
+#~ "<li>An icon to be used for displaying files of the given MIME-type, so "
+#~ "that you can easily identify the type of file in, say, a Konqueror view "
+#~ "(at least for the types you use often);</li> <li>A list of the "
+#~ "applications which can be used to open files of the given MIME-type -- if "
+#~ "more than one application can be used then the list is ordered by "
+#~ "priority.</li></ul> You may be surprised to find that some MIME types "
+#~ "have no associated filename patterns; in these cases, Konqueror is able "
+#~ "to determine the MIME-type by directly examining the contents of the file."
+#~ "</p>"
+#~ msgstr ""
+#~ "<p><h1>Асацыяцыі файлаў</h1> Гэты модуль дазваляе выбіраць праграмы, "
+#~ "звязаныя з тыпамі файлаў. Тыпы файлаў таксама называюць \"тыпамі MIME"
+#~ "\" (MIME - абрэвіятура ад \"Multipurpose Internet Mail Extensions\".)</"
+#~ "p><p> Асацыяцыя файлаў складаецца з: <ul><li>правілаў вызначэння тыпу "
+#~ "MIME файла, напрыклад шаблон назвы файла *.kwd, што азначае 'усе файлы з "
+#~ "назвамі, якія сканчваюцца на .kwd', асацыююцца з тыпам MIME \"x-kword\";</"
+#~ "li> <li>кароткага апісання тыпу MIME, напрыклад, апісанне тыпу MIME \"x-"
+#~ "kword\" - проста 'Дакумент KWord';</li> <li>Значка для паказвання файлаў "
+#~ "гэтага тыпу MIME, па якой вы можаце хутка вызначыць тып файла ў Konqueror "
+#~ "(хаця б тыя тыпы, якія вы часта выкарыстоўваеце);</li> <li>спіса "
+#~ "праграмаў, якія здольны адкрываць файлы гэтага тыпу MIME -- калі некалькі "
+#~ "праграмаў могуць адкрываць гэтыя файлы, выкарыстоўваецца прыярытэтызацыя."
+#~ "</li></ul> Вы можаце быць здзіўленымі тым, што некаторыя тыпы MIME не "
+#~ "маюць вызначаных для іх шаблонаў назваў файлаў; у гэтым выпадку Konqueror "
+#~ "спрабуе вызначыць тып MIME па змесце файла.</p>"
+
+#~ msgid "F&ind filename pattern:"
+#~ msgstr "Ш&укаць шаблон назваў файлаў:"
+
+#~ msgid ""
+#~ "Enter a part of a filename pattern. Only file types with a matching file "
+#~ "pattern will appear in the list."
+#~ msgstr ""
+#~ "Увядзіце частку шаблону назвы файла. У гэтым спісе будуць паказвацца "
+#~ "толькі тыпы файлаў з такім жа шаблонам."
+
+#~ msgid "Known Types"
+#~ msgstr "Вядомыя тыпы"
+
+#~ msgid ""
+#~ "Here you can see a hierarchical list of the file types which are known on "
+#~ "your system. Click on the '+' sign to expand a category, or the '-' sign "
+#~ "to collapse it. Select a file type (e.g. text/html for HTML files) to "
+#~ "view/edit the information for that file type using the controls on the "
+#~ "right."
+#~ msgstr ""
+#~ "Тут вы можаце бачыць іерархічны спіс тыпаў файлаў, вядомых у вашай "
+#~ "сістэме. Націсніце на знак '+', каб разгарнуць катэгорыю, ці на знак '-', "
+#~ "каб згарнуць яе. Выберыце тып файлаў (напр. text/html для файлаў HTML), "
+#~ "каб праглядзець інфармацыю ці змяніць тып файлаў."
+
+#~ msgid "Add..."
+#~ msgstr "Дадаць..."
+
+#~ msgid "Click here to add a new file type."
+#~ msgstr "Націсніце тут, каб дадаць новы тып файлаў."
+
+#~ msgid "&Remove"
+#~ msgstr "&Выдаліць"
+
+#~ msgid "Click here to remove the selected file type."
+#~ msgstr "Націсніце тут, каб выдаліць выбраны тып файлаў."
+
+#~ msgid "Select a file type by name or by extension"
+#~ msgstr "Выберыце тып файлаў па назве ці па пашырэнні"
+
+#~ msgid ""
+#~ "This button displays the icon associated with the selected file type. "
+#~ "Click on it to choose a different icon."
+#~ msgstr ""
+#~ "Гэтая кнопка паказвае значку, звязаную з выбраным тыпам файлаў. націсніце "
+#~ "на яе, каб змяніць значку."
+
+#~ msgid "Filename Patterns"
+#~ msgstr "Шаблоны назваў файлаў"
+
+#~ msgid ""
+#~ "This box contains a list of patterns that can be used to identify files "
+#~ "of the selected type. For example, the pattern *.txt is associated with "
+#~ "the file type 'text/plain'; all files ending in '.txt' are recognized as "
+#~ "plain text files."
+#~ msgstr ""
+#~ "Гэтыя палі змяшчаюць шаблоны назваў асацыяваных файлаў гэтага тыпу. "
+#~ "Напрыклад, шаблон *.txt звязаны з тыпам файлаў'text/plain'; усе файлы, "
+#~ "назвы якіх заканчваюцца на '.txt', распазнаюцца як звычайныя тэкставыя "
+#~ "файлы."
+
+#~ msgid "Add a new pattern for the selected file type."
+#~ msgstr "Дадаць новы шаблон для выбранага тыпу файлаў."
+
+#~ msgid "Remove the selected filename pattern."
+#~ msgstr "гВыдаліць выбраны шаблон назваў файлаў."
+
+#~ msgid "Description"
+#~ msgstr "Апісанне"
+
+#~ msgid ""
+#~ "You can enter a short description for files of the selected file type (e."
+#~ "g. 'HTML Page'). This description will be used by applications like "
+#~ "Konqueror to display directory content."
+#~ msgstr ""
+#~ "Вы можаце вызначыць кароткае апісанне для файлаў гэтага тыпу (напр. "
+#~ "'Старонка HTML'). Гэтае апісанне будзе выкарыстоўвацца іншымі праграмамі "
+#~ "тыпу Konqueror, каб паказваць змест тэчак."
+
+#~ msgid "Ask whether to save to disk instead"
+#~ msgstr "Пытацца, ці захоўваць на дыск"
+
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file of this type. Konqueror can display the file in an "
+#~ "embedded viewer or start up a separate application. If set to 'Use "
+#~ "settings for G group', Konqueror will behave according to the settings of "
+#~ "the group G this type belongs to, for instance 'image' if the current "
+#~ "file type is image/png."
+#~ msgstr ""
+#~ "Тут вы можаце вызначыць, што кіраўнік файлаў Konqueror будзе рабіць, калі "
+#~ "вы націсніце на файл гэтага тыпу. Konqueror можа паказаць файл ва "
+#~ "ўбудаваным праглядальніку ці запусціць асобную праграму. Калі ўсталявана "
+#~ "'Выкарыстоўваць наладкі групы G', Konqueror будзе дзейнічаць адпаведна "
+#~ "наладкам групы G, да якой адносіцца гэты тып файлаў, напр., 'image', калі "
+#~ "гэты тып файлаў image/png."
+
+#~ msgid "&Embedding"
+#~ msgstr "&Убудоўванне"
+
+#~ msgid "Add New Extension"
+#~ msgstr "Дадаць новае пашырэнне"
+
+#~ msgid "Extension:"
+#~ msgstr "Пашырэнне:"
+
+#~ msgid "Use settings for '%1' group"
+#~ msgstr "Выкарыстоўваць наладкі для групы '%1'"
+
+#~ msgid "%1 (%2)"
+#~ msgstr "%1 (%2)"
+
+#~ msgid "Application Preference Order"
+#~ msgstr "Парадак выкарыстання праграмаў"
+
+#~ msgid "Services Preference Order"
+#~ msgstr "Парадак выкарыстання сервісаў"
+
+#~ msgid ""
+#~ "This is a list of applications associated with files of the selected file "
+#~ "type. This list is shown in Konqueror's context menus when you select "
+#~ "\"Open With...\". If more than one application is associated with this "
+#~ "file type, then the list is ordered by priority with the uppermost item "
+#~ "taking precedence over the others."
+#~ msgstr ""
+#~ "Гэта спіс праграмаў, асацыяваных з файламі выбранага тыпу. Гэты спіс "
+#~ "паказваецца ў кантэкстным меню Konqueror, калі вы выбіраеце пункт меню "
+#~ "\"Адкрыць у...\". Калі з тыпам файлаў асацыявана некалькі праграмаў, спіс "
+#~ "парадкуецца па прыярытэтах: вышэйшы элемент мае большы прыярытэт."
+
+#~ msgid ""
+#~ "This is a list of services associated with files of the selected file "
+#~ "type. This list is shown in Konqueror's context menus when you select a "
+#~ "\"Preview with...\" option. If more than one application is associated "
+#~ "with this file type, then the list is ordered by priority with the "
+#~ "uppermost item taking precedence over the others."
+#~ msgstr ""
+#~ "Гэта спіс сервісаў, асацыяваных з файламі выбранага тыпу. Гэты спіс "
+#~ "паказваецца ў кантэкстным меню Konqueror, калі вы выбіраеце пункт меню "
+#~ "\"Прагляд у...\". Калі з тыпам файлаў асацыявана некалькі праграмаў, спіс "
+#~ "парадкуецца па прыярытэтах: вышэйшы элемент мае большы прыярытэт."
+
+#~ msgid "Move &Up"
+#~ msgstr "Пасунуць &угору"
+
+#~ msgid ""
+#~ "Assigns a higher priority to the selected\n"
+#~ "application, moving it up in the list. Note:  This\n"
+#~ "only affects the selected application if the file type is\n"
+#~ "associated with more than one application."
+#~ msgstr ""
+#~ "Павялічвае прыярытэт выбранай праграмы,\n"
+#~ "пасоўваючы яе ўгору. Заўвага:  гэта ўплывае\n"
+#~ "толькі на выбраную праграму, калі тып файлаў\n"
+#~ "асацыяваны з некалькімі праграмамі."
+
+#~ msgid ""
+#~ "Assigns a higher priority to the selected\n"
+#~ "service, moving it up in the list."
+#~ msgstr ""
+#~ "Павялічвае прыярытэт выбранага сервісу,\n"
+#~ "пасоўваючы яго ў спісе ўгору."
+
+#~ msgid "Move &Down"
+#~ msgstr "Пасунуць &долу"
+
+#~ msgid ""
+#~ "Assigns a lower priority to the selected\n"
+#~ "application, moving it down in the list. Note: This \n"
+#~ "only affects the selected application if the file type is\n"
+#~ "associated with more than one application."
+#~ msgstr ""
+#~ "Паніжае прыярытэт выбранай праграмы,\n"
+#~ "пасоўваючы яе ў спісе долу. Заўвага: гэта \n"
+#~ "ўплывае толькі на выбраную праграму, калі\n"
+#~ "некалькі праграмаў асацыяваныя з гэтым тыпам."
+
+#~ msgid ""
+#~ "Assigns a lower priority to the selected\n"
+#~ "service, moving it down in the list."
+#~ msgstr ""
+#~ "Паніжае прыярытэт выбранага сервісу,\n"
+#~ "пасоўваючы яго долу."
+
+#~ msgid "Add a new application for this file type."
+#~ msgstr "Дадаць новую праграму для гэтага тыпу файлаў."
+
+#~ msgid "Edit..."
+#~ msgstr "Змяніць..."
+
+#~ msgid "Edit command line of the selected application."
+#~ msgstr "Змяніць каманду для выбранай праграмы."
+
+#~ msgid "Remove the selected application from the list."
+#~ msgstr "Выдаліць выбраную праграму са спіса."
+
+#~ msgid "None"
+#~ msgstr "Няма"
+
+#~ msgid "You are not authorized to remove this service."
+#~ msgstr "Вы не аўтарызаваліся для выдалення гэтага сервісу."
+
+#~ msgid "The service <b>%1</b> can not be removed."
+#~ msgstr "Немагчыма выдаліць сервіс <b>%1</b>."
+
+#~ msgid ""
+#~ "The service is listed here because it has been associated with the <b>%1</"
+#~ "b> (%2) file type and files of type <b>%3</b> (%4) are per definition "
+#~ "also of type <b>%5</b>."
+#~ msgstr ""
+#~ "Гэты сервіс паказаны тут, бо ён быў асацыяваны з тыпам файлаў <b>%1</b> "
+#~ "(%2), а файлы тыпу <b>%3</b> (%4) па азначэнні таксама з'яўляюцца файламі "
+#~ "тыпу <b>%5</b>."
+
+#~ msgid ""
+#~ "Either select the <b>%1</b> file type to remove the service from there or "
+#~ "move the service down to deprecate it."
+#~ msgstr ""
+#~ "Ці выберыце тып файлаў <b>%1</b>, каб ці выдаліць сервіс, ці панізьце яго "
+#~ "прыярытэт."
+
+#~ msgid "Global Settings"
+#~ msgstr "Агульныя настаўленні"
+
+#~ msgid "Domain-Specific Settin&gs"
+#~ msgstr "Настаўленні, спецыфічныя для дамену"
+
+#~ msgid "Netscape Plugins"
+#~ msgstr "Утулкі Netscape"
+
+#~ msgctxt "lowest priority"
+#~ msgid "lowest"
+#~ msgstr "найніжэйшы"
+
+#~ msgctxt "low priority"
+#~ msgid "low"
+#~ msgstr "нізкі"
+
+#~ msgctxt "medium priority"
+#~ msgid "medium"
+#~ msgstr "сярэдні"
+
+#~ msgctxt "high priority"
+#~ msgid "high"
+#~ msgstr "высокі"
+
+#~ msgctxt "highest priority"
+#~ msgid "highest"
+#~ msgstr "найвышэйшы"
+
+#~ msgid "Scanning for plugins"
+#~ msgstr "Пошук утулак"
+
+#~ msgid "Cancel"
+#~ msgstr "Скасаваць"
+
+#~ msgid "Select Plugin Scan Folder"
+#~ msgstr "Выберыце тэчку з утулкамі"
+
+#~ msgid "Plugin"
+#~ msgstr "Утулка"
+
+#~ msgid "MIME type"
+#~ msgstr "Тып MIME"
+
+#~ msgid "Suffixes"
+#~ msgstr "Суфіксы"
+
+#~ msgid "Doma&in-Specific"
+#~ msgstr "Спецыфічныя для дамену"
+
+#~ msgid "New Plugin Policy"
+#~ msgstr "Новая палітыка ўтулак"
+
+#~ msgid "Change Plugin Policy"
+#~ msgstr "Змяніць палітыку ўтулак"
+
+#~ msgid "&Plugin policy:"
+#~ msgstr "&Палітыка ўтулак:"
+
+#~ msgid "Host/Domain"
+#~ msgstr "Хост/дамен"
+
+#~ msgid "Policy"
+#~ msgstr "Палітыка"
+
+#~ msgid "De&lete"
+#~ msgstr "Вы&даліць"
+
+#~ msgid "&Import..."
+#~ msgstr "&Імпартаваць..."
+
+#~ msgid "&Export..."
+#~ msgstr "&Экспартаваць..."
+
+#~ msgid "You must first select a policy to be changed."
+#~ msgstr "Спачатку вам трэба вылучыць палітыку для змены."
+
+#~ msgid "You must first select a policy to delete."
+#~ msgstr "Спачатку вам трэба вылучыць палітыку для выдалення."
+
+#~ msgid "Use Global"
+#~ msgstr "Выкарыстоўваць глабальнае"
+
+#~ msgid "Accept languages:"
+#~ msgstr "Прыймаць мовы:"
+
+#~ msgid "Accept character sets:"
+#~ msgstr "Прыймаць знаказборы:"
+
+#~ msgid "Select Home Folder"
+#~ msgstr "Выберыце хатнюю тэчку"
+
+#~ msgid "Tabbed Browsing"
+#~ msgstr "Вандроўка з карткамі"
+
+#~ msgid "Open new windows:"
+#~ msgstr "Адкрыццё новых вокнаў:"
+
+#~ msgid "Use setting from global policy."
+#~ msgstr "Выкарыстоўваць настаўленні з глабальнай палітыкі."
+
+#~ msgid "Allow"
+#~ msgstr "Дазволіць"
+
+#~ msgid "Deny"
+#~ msgstr "Адхіліць"
+
+#~ msgid "Smart"
+#~ msgstr "Разумна"
+
+#~ msgid "Resize window:"
+#~ msgstr "Змяніць памер вакна:"
+
+#~ msgid "Ignore"
+#~ msgstr "Ігнараваць"
+
+#~ msgid "Move window:"
+#~ msgstr "Перамясціць акно:"
+
+#~ msgid "kcmkonqhtml"
+#~ msgstr "kcmkonqhtml"
+
+#~ msgid "(c) 1999 - 2001 The Konqueror Developers"
+#~ msgstr "(c) 1999 - 2001 Распрацоўшчыкі Konqueror"
+
+#~ msgid "Matthias Kalle Dalheimer"
+#~ msgstr "Маттыяс Калле Дальхеймер"
+
+#~ msgid "Daniel Molkentin"
+#~ msgstr "Даніель Молькенцін"
+
+#~ msgid "&Java"
+#~ msgstr "&Java"
+
+#~ msgid "Java&Script"
+#~ msgstr "Java&Script"
+
+#~ msgid "Enable filters"
+#~ msgstr "Уключыць фільтры"
+
+#~ msgid "Hide filtered images"
+#~ msgstr "Схаваць фільтраваныя відарысы"
+
+#~ msgid "Expression (e.g. http://www.site.com/ad/*):"
+#~ msgstr "Выраз (напр. http://www.site.com/ad/*):"
+
+#~ msgid "Insert"
+#~ msgstr "Уставіць"
+
+#~ msgid "Update"
+#~ msgstr "Абнавіць"
+
+#~ msgid "Import..."
+#~ msgstr "Імпартаваць..."
+
+#~ msgid "Export..."
+#~ msgstr "Экспартаваць..."
+
+#~ msgid ""
+#~ "<h1>Konqueror Fonts</h1>On this page, you can configure which fonts "
+#~ "Konqueror should use to display the web pages you view."
+#~ msgstr ""
+#~ "<h1>Шрыфты Konqueror</h1>На гэтай старонцы вы можаце вызначыць, якімі "
+#~ "шрыфтамі павінен карыстацца Konqueror пры прамалёўцы старонак."
+
+#~ msgid "Font Si&ze"
+#~ msgstr "Памер &шрыфта"
+
+#~ msgid "This is the relative font size Konqueror uses to display web sites."
+#~ msgstr ""
+#~ "Гэта адносны памер шрыфта, які выкарыстоўвае Konqueror для адлюстравання "
+#~ "web-старонак."
+
+#~ msgid "M&inimum font size:"
+#~ msgstr "Най&меншы памер шрыфту:"
+
+#~ msgid ""
+#~ "Konqueror will never display text smaller than this size,<br />overriding "
+#~ "any other settings"
+#~ msgstr ""
+#~ "Konqueror ніколі не зробіць іэкст менш за гэты,<br />змяняючы ўсе "
+#~ "астатнія настаўленні"
+
+#~ msgid "&Medium font size:"
+#~ msgstr "Сярэ&дні памер шрыфта:"
+
+#~ msgid "This is the font used to display normal text in a web page."
+#~ msgstr "Гэта звычайны шрыфт тэксту на вэб-старонках."
+
+#~ msgid "&Fixed font:"
+#~ msgstr "Монашырынны шрыфт:"
+
+#~ msgid ""
+#~ "This is the font used to display fixed-width (i.e. non-proportional) text."
+#~ msgstr "Гэта монашырынны (г.зн. не прапарцыйны) шрыфт тэксту."
+
+#~ msgid "S&erif font:"
+#~ msgstr "Шрыфт S&erif:"
+
+#~ msgid "This is the font used to display text that is marked up as serif."
+#~ msgstr "Гэта шрыфт тэксту, які адзначаны як serif."
+
+#~ msgid "Sa&ns serif font:"
+#~ msgstr "Шрыфт Sa&ns serif:"
+
+#~ msgid ""
+#~ "This is the font used to display text that is marked up as sans-serif."
+#~ msgstr "Гэта шрыфт тэксту, які адзначаны як sans-serif."
+
+#~ msgid "C&ursive font:"
+#~ msgstr "К&урсіўны шрыфт:"
+
+#~ msgid "This is the font used to display text that is marked up as italic."
+#~ msgstr "Гэта шрыфт курсіўнага тэксту."
+
+#~ msgid "Fantas&y font:"
+#~ msgstr "Шрыфт Fantas&y:"
+
+#~ msgid ""
+#~ "This is the font used to display text that is marked up as a fantasy font."
+#~ msgstr "Гэта шрыфт тэксту fantasy ў вокнах Konqueror."
+
+#~ msgid "Font &size adjustment for this encoding:"
+#~ msgstr "Змяніць памер тэксту для гэтага знаказбору:"
+
+#~ msgid "Default encoding:"
+#~ msgstr "Знаказбор па змаўчанні:"
+
+#~ msgid "Use Language Encoding"
+#~ msgstr "Выкарыстоўваць знаказбор мовы"
+
+#~ msgid "Boo&kmarks"
+#~ msgstr "Заклад&кі"
+
+#~ msgid "Show only marked bookmarks in bookmark toolbar"
+#~ msgstr "Паказваць у панелі закладак толькі абраныя закладкі"
+
+#~ msgid "Form Com&pletion"
+#~ msgstr "Запаўненне формаў"
+
+#~ msgid "Enable completion of &forms"
+#~ msgstr "Аўтаматычнае запаўненне формаў"
+
+#~ msgid "&Maximum completions:"
+#~ msgstr "Максімум дапаўненняў:"
+
+#~ msgid "Mouse Beha&vior"
+#~ msgstr "Паводзіны мы&шы"
+
+#~ msgid "Chan&ge cursor over links"
+#~ msgstr "Змяняц&ь курсор над спасылкамі"
+
+#~ msgid "A&utomatically load images"
+#~ msgstr "А&ўтаматычна загружаць відарысы"
+
+#~ msgid "Und&erline links:"
+#~ msgstr "Падкрэсліваць спасы&лкі:"
+
+#~ msgctxt "underline"
+#~ msgid "Enabled"
+#~ msgstr "Уключана"
+
+#~ msgctxt "underline"
+#~ msgid "Disabled"
+#~ msgstr "Выключана"
+
+#~ msgid "Only on Hover"
+#~ msgstr "Толькі пад мышшу"
+
+#~ msgid "A&nimations:"
+#~ msgstr "Аніма&цыі:"
+
+#~ msgctxt "animations"
+#~ msgid "Enabled"
+#~ msgstr "Уключаны"
+
+#~ msgctxt "animations"
+#~ msgid "Disabled"
+#~ msgstr "Выключаны"
+
+#~ msgid "Show Only Once"
+#~ msgstr "паказаць аднойчы"
+
+#~ msgid "Report &errors"
+#~ msgstr "Паведам&ляць пра памылкі"
+
+#~ msgid "Do&main-Specific"
+#~ msgstr "Настаўленні, спецыфічныя для дамену"
+
+#~ msgid "New JavaScript Policy"
+#~ msgstr "Новая палітыка JavaScript"
+
+#~ msgid "Change JavaScript Policy"
+#~ msgstr "Змяніць палітыку JavaScript"
+
+#~ msgid "Domain-Specific JavaScript Policies"
+#~ msgstr "Настаўленні, спецыфічныя для дамену"
+
+#~ msgid "Enable Ja&va globally"
+#~ msgstr "Дазволіць Java глабальна"
+
+#~ msgid "Additional Java a&rguments:"
+#~ msgstr "Дадатковыя аргументы Java:"
+
+#~ msgid "New Java Policy"
+#~ msgstr "Новая палітыка Java"
+
+#~ msgid "Change Java Policy"
+#~ msgstr "Змяніць палітыку Java"
+
+#~ msgid "&Java policy:"
+#~ msgstr "Палітыка Java:"
+
+#~ msgid ""
+#~ "<h1>Enhanced Browsing</h1> In this module you can configure some enhanced "
+#~ "browsing features of KDE. <h2>Internet Keywords</h2>Internet Keywords let "
+#~ "you type in the name of a brand, a project, a celebrity, etc... and go to "
+#~ "the relevant location. For example you can just type \"KDE\" or \"K "
+#~ "Desktop Environment\" in Konqueror to go to KDE's homepage.<h2>Web "
+#~ "Shortcuts</h2>Web Shortcuts are a quick way of using Web search engines. "
+#~ "For example, type \"altavista:frobozz\" or \"av:frobozz\" and Konqueror "
+#~ "will do a search on AltaVista for \"frobozz\". Even easier: just press Alt"
+#~ "+F2 (if you have not changed this shortcut) and enter the shortcut in the "
+#~ "KDE Run Command dialog."
+#~ msgstr ""
+#~ "<h1>Палепшанае вандраванне</h1> У гэтым модулі вы можаце наставіць "
+#~ "функцыі палепшанага вандравання KDE. <h2>Ключавыя словы інтэрнэта</"
+#~ "h2>Ключавыя словы інтэрнэта дазваляюць вам напісаць назву брэнда, "
+#~ "праекта, вядомага чалавека... і трапіць у патрэбнае месца. Напрыклад, вы "
+#~ "можаце набраць  \"KDE\" ці \"K Desktop Environment\" у Konqueror каб "
+#~ "наведаць хатнюю старонку KDE.<h2>Скароты Web</h2>Скароты Web - гэта "
+#~ "спосаб хуткага выкліку пошукавых сістэмаў інтэрнэта. Напрыклад, набярыце "
+#~ "\"altavista:frobozz\" ці \"av:frobozz\" і Konqueror будзе шукаць ў "
+#~ "AltaVista  \"frobozz\". Нават прасцей: націсніце Alt+F2 (калі вы нее "
+#~ "змянілі гэты скарот) і напішыце скарот ў дыялогу выконвання камандаў KDE."
+
+#~ msgid "&Filters"
+#~ msgstr "&Фільтры"
+
+#~ msgid "Under construction..."
+#~ msgstr "У распрацоўцы..."
+
+#~ msgid ""
+#~ "Disables the minimization of memory usage and allows you to make each "
+#~ "browsing activity independent from the others"
+#~ msgstr ""
+#~ "Адключае мінімізацыю выкарыстання памяці, і дазваляе вам рабіць кожны "
+#~ "агляд незалежна ад астатніх."
+
+#~ msgid ""
+#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
+#~ "performance here."
+#~ msgstr ""
+#~ "<h1>Хуткасць працы KDE</h1> Тут вы можаце змяніць настаўленні, якія "
+#~ "ўплываюць на хуткасць працы KDE."
+
+#~ msgid "System"
+#~ msgstr "Сістэма"
+
+#~ msgid ""
+#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
+#~ "improve Konqueror performance here. These include options for reusing "
+#~ "already running instances and for keeping instances preloaded."
+#~ msgstr ""
+#~ "<h1>Хуткасць працы Konqueror</h1> Вы можаце наставіць некаторыя "
+#~ "параметры, якія ўздзейнічаюць на хуткасць працы Konqueror. Сярод іх - "
+#~ "параметры для паўторнага выкарыстання ўжо загружаных копіяў і для "
+#~ "захоўвання папярэдне загружаных копіяў."
+
+#~ msgid "No permissions to write to %1"
+#~ msgstr "Бракуе правоў на запіс у %1"
+
+#~ msgid "Save View Changes per &Folder"
+#~ msgstr "Запісваць змены выгляду для кожнай &тэчкі"
+
+#~ msgid "Remove Folder Properties"
+#~ msgstr "Выдаліць уласцівасці тэчкі"
+
+#~ msgid "Create Folder..."
+#~ msgstr "Стварыць тэчку..."
+
+#~ msgid "&Delete"
+#~ msgstr "В&ыдаліць"
+
+#~ msgid "&Rename"
+#~ msgstr "&Змяніць назву"
+
+#~ msgid ""
+#~ "<h1>Multiple Desktops</h1>In this module, you can configure how many "
+#~ "virtual desktops you want and how these should be labeled."
+#~ msgstr ""
+#~ "<h1>Некалькі працоўных сталоў</h1>У гэтым модулі вы можаце наставіць "
+#~ "колькі віртуальных сталоў вы хочаце мець і як вы хочаце іх назваць."
+
+#~ msgid "N&umber of desktops: "
+#~ msgstr "&Колькасць працоўных сталоў: "
+
+#~ msgid "Desktop &Names"
+#~ msgstr "&Назвы працоўных сталоў"
+
+#~ msgid "Desktop %1:"
+#~ msgstr "Працоўны стол %1:"
+
+#~ msgid "Here you can enter the name for desktop %1"
+#~ msgstr "Тут вы можаце вызначыць назву працоўнага стала %1"
+
+#~ msgid "Mouse wheel over desktop background switches desktop"
+#~ msgstr "Пракручванне кола мышы над шпалерамі пераключае працоўны стол"
+
+#~ msgid "Desktop %1"
+#~ msgstr "Працоўны стол %1"
+
+#~ msgid "Move backwards one step in the browsing history<br /><br />"
+#~ msgstr "Перайсці на крок назад па часопісе вандровак<br /><br />"
+
+#~ msgid "Move forward one step in the browsing history<br /><br />"
+#~ msgstr "Перайсці на крок наперад па часопісе вандровак<br /><br />"
+
+#~ msgid "Rename icons in&line"
+#~ msgstr "Пачынаць змену назвы па націску мышы"
+
+#~ msgid ""
+#~ "Checking this option will allow files to be renamed by clicking directly "
+#~ "on the icon name. "
+#~ msgstr ""
+#~ "Уключэнне гэтага дазваляе змяняць назву файлу звычайнай пстрычкай па яго "
+#~ "назве. "
+
+#~ msgid "&Standard font:"
+#~ msgstr "&Звычайны шрыфт:"
+
+#~ msgid "Font si&ze:"
+#~ msgstr "Па&мер шрыфту:"
+
+#~ msgid "This is the font size used to display text in Konqueror windows."
+#~ msgstr "Гэта шрыфт тэксту ў вокнах Konqueror."
+
+#~ msgid "Normal te&xt color:"
+#~ msgstr "Звычайны колер &тэксту:"
+
+#~ msgid "This is the color used to display text in Konqueror windows."
+#~ msgstr "Гэта колер шрыфта тэксту ў вокнах Konqueror."
+
+#~ msgid "&Text background color:"
+#~ msgstr "Фонавы колер т&эксту:"
+
+#~ msgid "H&eight for icon text:"
+#~ msgstr "&Вышыня подпісаў значак:"
+
+#~ msgid "&Width for icon text:"
+#~ msgstr "&Шырыня подпісаў значак:"
+
+#~ msgid "&Underline filenames"
+#~ msgstr "&Падкрэсліваць назвы файлаў"
+
+#~ msgid "Display file sizes in b&ytes"
+#~ msgstr "Паказваць памер файлаў у &байтах"
+
+#, fuzzy
+#~ msgid " line"
+#~ msgid_plural " lines"
+#~ msgstr[0] " радок"
+#~ msgstr[1] " радкі"
+#~ msgstr[2] " радкоў"
+
+#, fuzzy
+#~ msgid " pixel"
+#~ msgid_plural " pixels"
+#~ msgstr[0] " піксель"
+#~ msgstr[1] " пікселі"
+#~ msgstr[2] " пікселяў"
+
+#~ msgid ""
+#~ "<h1>Appearance</h1> You can configure how Konqueror looks as a file "
+#~ "manager here."
+#~ msgstr ""
+#~ "<h1>Вонкавы выгляд</h1> Тут вы можаце змяніць настаўленні выгляду "
+#~ "Konqueror як файлавага кіраўніка."
+
+#~ msgid "&Appearance"
+#~ msgstr "&Вонкавы выгляд"
+
+#~ msgid "&Show network operations in a single window"
+#~ msgstr "&Паказваць сеткавыя аперацыі ў адным акне"
+
+#~ msgid ""
+#~ "Thanks to <a href=\"%1\">DCOP</a> you can have full control over "
+#~ "Konqueror using a script."
+#~ msgstr ""
+#~ "Дзякуючы <A HREF=\"%1\">DCOP</A> Вы можаце цалкам кіраваць Konqueror праз "
+#~ "сцэнар."
+
+#~ msgid "Preview In"
+#~ msgstr "Праглядзець у"
+
+#~ msgid "&Open Location..."
+#~ msgstr "&Адкрыць адрас..."
+
+#~ msgid "Animated Logo"
+#~ msgstr "Анімаваны лагатып"
+
+#~ msgid "KonqPart"
+#~ msgstr "KonqPart"
+
+#~ msgid "Selection"
+#~ msgstr "Вылучыць"
+
+#~ msgid "Icon Size"
+#~ msgstr "Памер значак"
+
+#~ msgid "Show Details"
+#~ msgstr "Паказваць падрабязнасці"
+
+#~ msgid "Detailed Listview Toolbar"
+#~ msgstr "Панель прагляду падрабязнага спіса"

@@ -1,0 +1,242 @@
+# translation of libkonq.po to Italian
+# Andrea Rizzi <rizzi@kde.org>, 2003, 2004, 2005.
+# Federico Cozzi <federicocozzi@federicocozzi.it>, 2005.
+# Nicola Ruggero <nicola@nxnt.org>, 2007, 2008, 2009, 2010, 2011, 2012.
+# Vincenzo Reale <smart2128vr@gmail.com>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2020-11-27 11:15+0100\n"
+"Last-Translator: Vincenzo Reale <smart2128@baslug.org>\n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 20.08.3\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "&Apri"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "Crea &cartella..."
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "&Ripristina"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr "Mostra cartella originale"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr "Mostra file originale"
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "&Svuota il cestino"
+
+#: src/konq_popupmenu.cpp:312
+#, kde-format
+msgid "&Configure Trash Bin"
+msgstr "&Configura il cestino"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "Salva questa pagina nei &segnalibri"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "Salva questo indirizzo nei &segnalibri"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "Salva questa cartella nei &segnalibri"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "Salva questo collegamento nei &segnalibri"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "Salva questo file nei &segnalibri"
+
+#: src/konq_popupmenu.cpp:379
+#, kde-format
+msgid "Preview In"
+msgstr "Anteprima in"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr "Apri il terminale qui"
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "&Proprietà"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy To"
+#~ msgstr "Copia in"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "Sposta in"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "Cartella Home"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "Cartella radice"
+
+#~ msgctxt "@title:menu in Copy To or Move To submenu"
+#~ msgid "Browse..."
+#~ msgstr "Sfoglia..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "Copia qui"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "Sposta qui"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "Non puoi trascinare una cartella su se stessa"
+
+#~ msgid "File name for dropped contents:"
+#~ msgstr "Nome file per i contenuti trascinati:"
+
+#~ msgid "&Move Here"
+#~ msgstr "&Sposta qui"
+
+#~ msgid "&Copy Here"
+#~ msgstr "&Copia qui"
+
+#~ msgid "&Link Here"
+#~ msgstr "Co&llega qui"
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "Imposta come &sfondo"
+
+#~ msgid "C&ancel"
+#~ msgstr "&Annulla"
+
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "Crea cartella"
+
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "Immetti un nome differente"
+
+#~ msgid ""
+#~ "The name \"%1\" starts with a dot, so the directory will be hidden by "
+#~ "default."
+#~ msgstr ""
+#~ "Il nome «%1» inizia con il punto, in questo modo la cartella è nascosta "
+#~ "in maniera predefinita."
+
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "Creo cartella nascosta?"
+
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "Nuova cartella"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "Nuova cartella"
+
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "Immetti il nome della cartella:"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "Incolla una cartella"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One File"
+#~ msgstr "Incolla un file"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Item"
+#~ msgid_plural "Paste %1 Items"
+#~ msgstr[0] "Incolla un elemento"
+#~ msgstr[1] "Incolla %1 elementi"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste Clipboard Contents..."
+#~ msgstr "Incolla contenuto degli appunti..."
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste"
+#~ msgstr "Incolla"
+
+#~ msgid ""
+#~ "Restores this file or directory, back to the location where it was "
+#~ "deleted from initially"
+#~ msgstr ""
+#~ "Ripristina questo file o cartella nella posizione dov'è stato eliminato "
+#~ "inizialmente"
+
+#~ msgid ""
+#~ "Opens a new file manager window showing the target of this link, in its "
+#~ "parent directory."
+#~ msgstr ""
+#~ "Apre una nuova finestra del gestore file mostrando il collegamento nella "
+#~ "sua cartella contenitrice."
+
+#~ msgid "Share"
+#~ msgstr "Condivisione"
+
+#~ msgctxt "@info"
+#~ msgid "Close"
+#~ msgstr "Chiudi"
+
+#~ msgid "Close"
+#~ msgstr "Chiudi"
+
+#~ msgid "Error: %1"
+#~ msgstr "Errore: %1"
+
+#~ msgid "Create New"
+#~ msgstr "Crea"
+
+#~ msgid "Link to Device"
+#~ msgstr "Collegamento a dispositivo"
+
+#~ msgid "<qt>The template file <b>%1</b> does not exist.</qt>"
+#~ msgstr "<qt>Il file di modello <b>%1</b> non esiste.</qt>"
+
+#~ msgid "File name:"
+#~ msgstr "Nome file:"
+
+#~ msgid ""
+#~ "Basic links can only point to local files or directories.\n"
+#~ "Please use \"Link to Location\" for remote URLs."
+#~ msgstr ""
+#~ "I collegamenti semplici possono puntare solo a file e cartelle locali.\n"
+#~ "Per favore usa «Collegamento ad indirizzo» per URL remoti."

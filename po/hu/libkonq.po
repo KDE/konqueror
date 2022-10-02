@@ -1,0 +1,247 @@
+#
+# Marcell Lengyel <miketkf@yahoo.com>, 1999.
+# Kristóf Kiszel <ulysses@kubuntu.org>, 2010, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: KDE 4.2\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2011-09-23 22:04+0200\n"
+"Last-Translator: Kristóf Kiszel <ulysses@kubuntu.org>\n"
+"Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.2\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "Megny&itás"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "Köny&vtár létrehozása..."
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "&Visszaállítás"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr "Eredeti mappa megjelenítése"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr "Eredeti fájl megjelenítése"
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "A Kuka ü&rítése"
+
+#: src/konq_popupmenu.cpp:312
+#, kde-format
+msgid "&Configure Trash Bin"
+msgstr "A &Kuka beállítása"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "Könyvjel&ző erre az oldalra"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "Könyvj&elző erre a címre"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "Könyvjelző erre a &könyvtárra"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "Könyvjelző erre a l&inkre"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "Könyvjelző erre a &fájlra"
+
+#: src/konq_popupmenu.cpp:379
+#, kde-format
+msgid "Preview In"
+msgstr "Előnézet ezzel"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "&Tulajdonságok"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy To"
+#~ msgstr "Másolás"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "Átmozgatás"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "Alapkönyvtár"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "Gyökérkönyvtár"
+
+#~ msgctxt "@title:menu in Copy To or Move To submenu"
+#~ msgid "Browse..."
+#~ msgstr "Tallózás..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "Másolás ide"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "Átmozgatás ide"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "Nem lehet saját magára ejteni egy könyvtárat."
+
+#~ msgid "File name for dropped contents:"
+#~ msgstr "A leejtett adatok fájlneve:"
+
+#~ msgid "&Move Here"
+#~ msgstr "Mo&zgatás ide"
+
+#~ msgid "&Copy Here"
+#~ msgstr "&Másolás ide"
+
+#~ msgid "&Link Here"
+#~ msgstr "&Link ide"
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "Beállítás &tapétának"
+
+#~ msgid "C&ancel"
+#~ msgstr "&Mégsem"
+
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "Könyvtár létrehozása"
+
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "Adjon más nevet"
+
+#~ msgid ""
+#~ "The name \"%1\" starts with a dot, so the directory will be hidden by "
+#~ "default."
+#~ msgstr ""
+#~ "A(z) „%1” név ponttal kezdődik, ezért a mappa rejtett lesz "
+#~ "alapértelmezésben."
+
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "Rejtett mappa létrehozása?"
+
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "Új mappa"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "Új mappa"
+
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "A könyvtár neve:"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "Egy mappa beillesztése"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One File"
+#~ msgstr "Egy fájl beillesztése"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Item"
+#~ msgid_plural "Paste %1 Items"
+#~ msgstr[0] "1 elem beillesztése"
+#~ msgstr[1] "%1 elem beillesztése"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste Clipboard Contents..."
+#~ msgstr "A vágólap tartalmának beillesztése…"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste"
+#~ msgstr "Beillesztés"
+
+#~ msgid ""
+#~ "Restores this file or directory, back to the location where it was "
+#~ "deleted from initially"
+#~ msgstr "Visszaállítja a fájlt vagy mappát a törlés előtti helyére"
+
+#~ msgid ""
+#~ "Opens a new file manager window showing the target of this link, in its "
+#~ "parent directory."
+#~ msgstr ""
+#~ "Új fájlkezelő ablak megnyitása a link céljának megjelenítésével, annak "
+#~ "szülőkönyvtárában."
+
+#~ msgid "Share"
+#~ msgstr "Megosztás"
+
+#~ msgctxt "@info"
+#~ msgid "Close"
+#~ msgstr "Bezárás"
+
+#~ msgid "Close"
+#~ msgstr "Bezárás"
+
+#~ msgid "Error: %1"
+#~ msgstr "Hiba: %1"
+
+#~ msgid "Create New"
+#~ msgstr "Új elem létrehozása"
+
+#~ msgid "Link to Device"
+#~ msgstr "Eszközre mutató link"
+
+#~ msgid "<qt>The template file <b>%1</b> does not exist.</qt>"
+#~ msgstr "<qt>Nem létezik <b>%1</b> nevű sablonfájl.</qt>"
+
+#~ msgid "File name:"
+#~ msgstr "Fájlnév:"
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Actions"
+#~ msgstr "Mű&veletek"
+
+#~ msgid "&Open With"
+#~ msgstr "Megnyitás máss&al"
+
+#~ msgid "Open &with %1"
+#~ msgstr "Megnyitás &ezzel: %1"
+
+#~ msgid "&Other..."
+#~ msgstr "E&gyéb..."
+
+#~ msgid "&Open With..."
+#~ msgstr "Megny&itás ezzel..."

@@ -1,0 +1,3422 @@
+# Luc de Louw <luc@delouw.ch>, 2002, 2003.
+# Thomas Diehl <thd@kde.org>, 2002, 2003, 2004.
+# Stephan Johach <lucardus@onlinehome.de>, 2003, 2006.
+# Frank Schütte <F.Schuette@t-online.de>, 2003.
+# Stephan Johach <hunsum@gmx.de>, 2003, 2004, 2005, 2006.
+# Thomas Reitelbach <tr@erdfunkstelle.de>, 2005, 2007, 2008, 2009, 2010.
+# Burkhard Lück <lueck@hube-lueck.de>, 2008, 2009, 2010, 2019.
+# Rolf Eike Beer <kde@opensource.sf-tec.de>, 2009.
+# Frederik Schwarzer <schwarzer@kde.org>, 2009, 2010, 2011.
+# Panagiotis Papadopoulos <pano_90@gmx.net>, 2009, 2010.
+# Markus Slopianka <markus.s@kdemail.net>, 2010.
+# Johannes Obermayr <johannesobermayr@gmx.de>, 2010.
+# Jonathan Kolberg <bulldog98@kubuntu-de.org>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: kgetplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2019-08-22 08:06+0200\n"
+"Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: kget_plugin.cpp:56
+#, kde-format
+msgid "Download Manager"
+msgstr "Download-Verwaltung"
+
+#: kget_plugin.cpp:62
+#, kde-format
+msgid "Show Drop Target"
+msgstr "Zielfeld anzeigen"
+
+#: kget_plugin.cpp:69
+#, kde-format
+msgid "List All Links"
+msgstr "Alle Verknüpfungen anzeigen"
+
+#: kget_plugin.cpp:74
+#, kde-format
+msgid "List Selected Links"
+msgstr "Ausgewählte Verknüpfungen anzeigen"
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No downloadable links were found."
+msgstr ""
+"Das Herunterladen ist fehlgeschlagen, da keine funktionierenden "
+"Verknüpfungen gefunden werden können."
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No Links"
+msgstr "Keine Verknüpfungen"
+
+#. i18n: ectx: Menu (tools)
+#: konqueror_kget_browser_integration.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "E&xtras"
+
+#~ msgid "Unable to communicate with the KGet download manager."
+#~ msgstr "Mit der KGet-Download-Verwaltung kann nicht kommuniziert werden."
+
+#~ msgid "Communication Error"
+#~ msgstr "Kommunikationsfehler"
+
+#~ msgid "Plugins"
+#~ msgstr "Module"
+
+#~ msgid "New Group"
+#~ msgstr "Neue Gruppe"
+
+# TODO: im original auch ändern, sobald string freeze vorbei ist
+#~ msgid "Xml"
+#~ msgstr "XML"
+
+# TODO: im original auch ändern, sobald string freeze vorbei ist
+#~ msgid "Sqlite"
+#~ msgstr "SQLite"
+
+#~ msgid "Nepomuk"
+#~ msgstr "Nepomuk"
+
+#~ msgid "Turn Off Computer"
+#~ msgstr "Rechner ausschalten"
+
+#~ msgid "Hibernate Computer"
+#~ msgstr "Rechner in Tiefschlaf versetzen"
+
+#~ msgid "Suspend Computer"
+#~ msgstr "Rechner in Ruhezustand versetzen"
+
+#~ msgid "Appearance"
+#~ msgstr "Erscheinungsbild"
+
+#~ msgid "Change appearance settings"
+#~ msgstr "Einstellungen zum Erscheinungsbild ändern"
+
+#~ msgid "Groups"
+#~ msgstr "Gruppen"
+
+#~ msgid "Manage the groups"
+#~ msgstr "Gruppen verwalten"
+
+#~ msgid "Network"
+#~ msgstr "Netzwerk"
+
+#~ msgid "Network and Downloads"
+#~ msgstr "Netzwerk und Downloads"
+
+#~ msgid "Web Interface"
+#~ msgstr "Web-Oberfläche"
+
+#~ msgid "Control KGet over a Network or the Internet"
+#~ msgstr "KGet-Bedienung über das Netzwerk oder das Internet"
+
+#~ msgid "Verification"
+#~ msgstr "Verifizierung"
+
+#~ msgctxt "integration of KGet with other applications"
+#~ msgid "Integration"
+#~ msgstr "Einbindung"
+
+#~ msgctxt "Advanced Options"
+#~ msgid "Advanced"
+#~ msgstr "Erweitert"
+
+#~ msgid "Advanced Options"
+#~ msgstr "Weitere Einstellungen"
+
+#~ msgid "Transfer Plugins"
+#~ msgstr "Transfermodule"
+
+#~ msgid "Include"
+#~ msgstr "Einbeziehen"
+
+#~ msgid "Exclude"
+#~ msgstr "Ausschließen"
+
+#~ msgid "Escape sequences"
+#~ msgstr "Escape-Sequenzen"
+
+#~ msgid "Regular expression"
+#~ msgstr "Regulärer Ausdruck"
+
+#~ msgid "Pattern"
+#~ msgstr "Muster"
+
+#~ msgid "Syntax"
+#~ msgstr "Syntax"
+
+#~ msgid "KGet"
+#~ msgstr "KGet"
+
+#~ msgid "1 Item"
+#~ msgid_plural "%1 Items"
+#~ msgstr[0] "1 Eintrag"
+#~ msgstr[1] "%1 Einträge"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#~ msgctxt "start transfergroup downloads"
+#~ msgid "Start"
+#~ msgstr "Starten"
+
+#~ msgctxt "stop transfergroup downloads"
+#~ msgid "Stop"
+#~ msgstr "Anhalten"
+
+#~ msgid "KGet is downloading %1 file"
+#~ msgid_plural "KGet is downloading %1 files"
+#~ msgstr[0] "KGet lädt %1 Datei herunter"
+#~ msgstr[1] "KGet lädt %1 Dateien herunter"
+
+#~ msgid "Error trying to get %1"
+#~ msgstr "Fehler beim Herunterladen von %1"
+
+#~ msgid "Are you sure that you want to remove the group named %1?"
+#~ msgstr ""
+#~ "Sind Sie sicher, dass Sie die Gruppe mit dem Namen „%1“ entfernen möchten?"
+
+#~ msgid "Remove Group"
+#~ msgstr "Gruppe entfernen"
+
+#~ msgid "Are you sure that you want to remove the following groups?"
+#~ msgstr "Sind Sie sicher, dass Sie die folgenden Gruppen entfernen möchten?"
+
+#~ msgid "Remove groups"
+#~ msgstr "Gruppen entfernen"
+
+#~ msgid ""
+#~ "<p>The following transfer has been added to the download list:</p><p "
+#~ "style=\"font-size: small;\">\\%1</p>"
+#~ msgstr ""
+#~ "<p>Die folgende Übertragung ist zur Downloadliste hinzugefügt worden:</"
+#~ "p><p style=\"font-size: small;\">\\%1</p>"
+
+#~ msgid "Download added"
+#~ msgstr "Download hinzugefügt"
+
+#~ msgid "<p>The following transfer has been added to the download list:</p>"
+#~ msgstr ""
+#~ "<p>Folgende Übertragung ist zur Downloadliste hinzugefügt worden:</p>"
+
+#~ msgid "<p>The following transfers have been added to the download list:</p>"
+#~ msgstr ""
+#~ "<p>Folgende Übertragungen sind zur Downloadliste hinzugefügt worden:</p>"
+
+#~ msgid ""
+#~ "The file %1 already exists.\n"
+#~ "Overwrite?"
+#~ msgstr ""
+#~ "Eine Datei namens „%1“ existiert bereits.\n"
+#~ "Soll sie überschrieben werden?"
+
+#~ msgid "Overwrite existing file?"
+#~ msgstr "Bestehende Datei überschreiben?"
+
+#~ msgid "Unable to save to: %1"
+#~ msgstr "Das Speichern unter „%1“ ist nicht möglich."
+
+#~ msgid "My Downloads"
+#~ msgstr "Meine Downloads"
+
+#~ msgid ""
+#~ "<p>The following URL cannot be downloaded, its protocol is not supported "
+#~ "by KGet:</p>"
+#~ msgid_plural ""
+#~ "<p>The following URLs cannot be downloaded, their protocols are not "
+#~ "supported by KGet:</p>"
+#~ msgstr[0] ""
+#~ "<p>Folgende Adresse (URL) kann nicht heruntergeladen werden. Das "
+#~ "Protokoll wird von KGet nicht unterstützt:</p>"
+#~ msgstr[1] ""
+#~ "<p>Folgende Adressen (URLs) können nicht heruntergeladen werden. Die "
+#~ "Protokolle werden von KGet nicht unterstützt:</p>"
+
+#~ msgid "Protocol unsupported"
+#~ msgstr "Nicht unterstütztes Protokoll"
+
+#~ msgid "New Download"
+#~ msgstr "Neuer Download"
+
+#~ msgid "Enter URL:"
+#~ msgstr "Adresse eingeben:"
+
+#~ msgid "Save As"
+#~ msgstr "Speichern unter"
+
+#~ msgid ""
+#~ "Malformed URL:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Ungültige Adresse:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Malformed URL, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Ungültige Adresse, das Protokoll fehlt:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "You have already completed a download from the location: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Download it again?"
+#~ msgstr ""
+#~ "Sie haben bereits einen Download von diesem Speicherort abgeschlossen:\n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Möchten Sie es erneut herunterladen?"
+
+#~ msgid "Download it again?"
+#~ msgstr "Erneut herunterladen?"
+
+#~ msgid ""
+#~ "You have a download in progress from the location: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Delete it and download again?"
+#~ msgstr ""
+#~ "Die Datei vom folgenden Speicherort wird bereits heruntergeladen:\n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Möchten Sie es löschen und erneut herunterladen?"
+
+#~ msgid "Delete it and download again?"
+#~ msgstr "Löschen und erneut herunterladen?"
+
+#~ msgid "Directory is not writable"
+#~ msgstr "Ordner ist schreibgeschützt"
+
+#~ msgid ""
+#~ "You have already downloaded that file from another location.\n"
+#~ "\n"
+#~ "Download and delete the previous one?"
+#~ msgstr ""
+#~ "Sie haben diese Datei bereits von einem anderen Speicherort "
+#~ "heruntergeladen.\n"
+#~ "\n"
+#~ "Soll die Datei jetzt neu heruntergeladen und die vorherige Datei gelöscht "
+#~ "werden?"
+
+#~ msgid "File already downloaded. Download anyway?"
+#~ msgstr "Diese Datei wurde bereits heruntergeladen. Trotzdem herunterladen?"
+
+#~ msgid "You are already downloading the same file"
+#~ msgstr "Sie laden die gleiche Datei bereits herunter."
+
+#~ msgid "File already exists"
+#~ msgstr "Die Datei existiert bereits."
+
+#~ msgid "Plugin loader could not load the plugin: %1."
+#~ msgstr "Der Modul-Lader kann folgendes Modul nicht laden: %1"
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is a directory."
+#~ msgstr ""
+#~ "%1\n"
+#~ "wird nicht gelöscht.\n"
+#~ "Es handelt sich um einen Ordner."
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is not a local file."
+#~ msgstr ""
+#~ "%1\n"
+#~ "wird nicht gelöscht.\n"
+#~ "Es handelt sich nicht um eine lokale Datei."
+
+#~ msgid ""
+#~ "<p>The following file has finished downloading:</p><p style=\"font-size: "
+#~ "small;\">\\%1</p>"
+#~ msgstr ""
+#~ "<p>Die folgende Datei ist erfolgreich herunterladen worden:</p><p style="
+#~ "\"font-size: small;\">\\%1</p>"
+
+#~ msgid "Download completed"
+#~ msgstr "Herunterladen beendet"
+
+#~ msgid ""
+#~ "<p>The following transfer has been started:</p><p style=\"font-size: "
+#~ "small;\">\\%1</p>"
+#~ msgstr ""
+#~ "<p>Die folgende Übertragung ist gestartet worden:</p><p style=\"font-"
+#~ "size: small;\">\\%1</p>"
+
+#~ msgid "Download started"
+#~ msgstr "Download gestartet"
+
+#~ msgid "Error"
+#~ msgstr "Fehler"
+
+#~ msgid ""
+#~ "<p>There has been an error in the following transfer:</p><p style=\"font-"
+#~ "size: small;\">\\%1</p><p>The error message is:</p><p style=\"font-size: "
+#~ "small;\">\\%2</p>"
+#~ msgstr ""
+#~ "<p>In der folgenden Übertragung ist ein Fehler aufgetreten:</p><p style="
+#~ "\"font-size: small;\">\\%1</p><p>Die Fehlermeldung lautet:</p><p style="
+#~ "\"font-size: small;\">\\%2</p>"
+
+#~ msgid "Resolve"
+#~ msgstr "Auflösen"
+
+#~ msgid "KGet is now closing, as all downloads have completed."
+#~ msgstr "KGet wird beendet, da alle Downloads abgeschlossen sind."
+
+#~ msgid "The computer will now turn off, as all downloads have completed."
+#~ msgstr ""
+#~ "Der Rechner wird nun heruntergefahren, da alle Downloads abgeschlossen "
+#~ "sind."
+
+#~ msgctxt "Shutting down computer"
+#~ msgid "Shutdown"
+#~ msgstr "Rechner wird ausgeschaltet"
+
+#~ msgid ""
+#~ "The computer will now suspend to disk, as all downloads have completed."
+#~ msgstr ""
+#~ "Der Rechner wird nun in den Tiefschlaf versetzt, da alle Downloads "
+#~ "abgeschlossen sind."
+
+#~ msgctxt "Hibernating computer"
+#~ msgid "Hibernating"
+#~ msgstr "Ruhestand einleiten"
+
+#~ msgid ""
+#~ "The computer will now suspend to RAM, as all downloads have completed."
+#~ msgstr ""
+#~ "Der Rechner wird nun in den Ruhezustand versetzt, da alle Downloads "
+#~ "abgeschlossen sind."
+
+#~ msgctxt "Suspending computer"
+#~ msgid "Suspending"
+#~ msgstr "Wird in den Ruhezustand/Tiefschlaf versetzt"
+
+#~ msgctxt "abort the proposed action"
+#~ msgid "Abort"
+#~ msgstr "Abbrechen"
+
+#~ msgid "<p>All transfers have been finished.</p>"
+#~ msgstr "<p>Alle Übertragungen sind abgeschlossen.</p>"
+
+#~ msgid "Downloads completed"
+#~ msgstr "Downloads abgeschlossen"
+
+#~ msgctxt "file in a filesystem"
+#~ msgid "File"
+#~ msgstr "Datei"
+
+#~ msgctxt "status of the download"
+#~ msgid "Status"
+#~ msgstr "Status"
+
+#~ msgctxt "size of the download"
+#~ msgid "Size"
+#~ msgstr "Größe"
+
+#~ msgctxt "checksum of a file"
+#~ msgid "Checksum"
+#~ msgstr "Prüfsumme"
+
+#~ msgctxt "signature of a file"
+#~ msgid "Signature"
+#~ msgstr "Signatur"
+
+#~ msgid "KGet Transfer"
+#~ msgstr "KGet-Transfer"
+
+#~ msgctxt "the type of the hash, e.g. MD5"
+#~ msgid "Type"
+#~ msgstr "Typ"
+
+#~ msgctxt "the used hash for verification"
+#~ msgid "Hash"
+#~ msgstr "Hash"
+
+#~ msgctxt "verification-result of a file, can be true/false"
+#~ msgid "Verified"
+#~ msgstr "Verifiziert"
+
+#~ msgid ""
+#~ "The key to verify the signature is missing, do you want to download it?"
+#~ msgstr ""
+#~ "Der Schlüssel zur Verifizierung der Signatur fehlt. Möchten Sie ihn "
+#~ "herunterladen?"
+
+#~ msgid ""
+#~ "The signature could not be verified for %1. See transfer settings for "
+#~ "more information."
+#~ msgstr ""
+#~ "Die Signatur für „%1“ kann nicht verifiziert werden. Sehen Sie in den "
+#~ "Transfereinstellungen nach für mehr Informationen."
+
+#~ msgid "Signature not verified"
+#~ msgstr "Signatur nicht verifiziert"
+
+#~ msgid ""
+#~ "No server for downloading keys is specified in settings. Downloading "
+#~ "aborted."
+#~ msgstr ""
+#~ "Es ist kein Server für das Herunterladen von Signaturschlüsseln in den "
+#~ "Einstellungen angegeben. Das Herunterladen ist abgebrochen worden."
+
+#~ msgid "No key server"
+#~ msgstr "Kein Schlüsselserver"
+
+#~ msgid ""
+#~ "No useful key server found, key not downloaded. Add more servers to the "
+#~ "settings or restart KGet and retry downloading."
+#~ msgstr ""
+#~ "Es kann kein nützlicher Schlüsselserver gefunden werden, daher ist der "
+#~ "Schlüssel nicht heruntergeladen worden. Fügen Sie weitere Server in den "
+#~ "Einstellungen hinzu, oder starten Sie KGet neu und versuchen Sie es "
+#~ "erneut herunterzuladen."
+
+#~ msgid "Filesize is larger than maximum file size supported by VFAT."
+#~ msgstr ""
+#~ "Die Dateigröße ist größer als die von VFAT unterstützte maximale "
+#~ "Dateigröße"
+
+#~ msgctxt "A mirror is removed when the file has the wrong download size"
+#~ msgid "%1 removed as it did report a wrong file size."
+#~ msgstr ""
+#~ "„%1“ ist entfernt worden, da es eine falsche Dateigröße gemeldet hat."
+
+#~ msgctxt "not available"
+#~ msgid "n/a"
+#~ msgstr "n/v"
+
+#~ msgid "Stalled"
+#~ msgstr "Stehengeblieben"
+
+#~ msgid "Downloading...."
+#~ msgstr "Herunterladen läuft ..."
+
+#~ msgctxt "transfer state: delayed"
+#~ msgid "Delayed"
+#~ msgstr "Verzögert"
+
+#~ msgctxt "transfer state: stopped"
+#~ msgid "Stopped"
+#~ msgstr "Angehalten"
+
+#~ msgctxt "transfer state: aborted"
+#~ msgid "Aborted"
+#~ msgstr "Abgebrochen"
+
+#~ msgctxt "transfer state: finished"
+#~ msgid "Finished"
+#~ msgstr "Abgeschlossen"
+
+#~ msgctxt "changing the destination of the file"
+#~ msgid "Changing destination"
+#~ msgstr "Zielordner ändern"
+
+#~ msgctxt "name of download"
+#~ msgid "Name"
+#~ msgstr "Name"
+
+#~ msgctxt "status of download"
+#~ msgid "Status"
+#~ msgstr "Status"
+
+#~ msgctxt "size of download"
+#~ msgid "Size"
+#~ msgstr "Größe"
+
+#~ msgctxt "progress of download"
+#~ msgid "Progress"
+#~ msgstr "Fortschritt"
+
+#~ msgctxt "speed of download"
+#~ msgid "Speed"
+#~ msgstr "Geschwindigkeit"
+
+#~ msgctxt "remaining time of download"
+#~ msgid "Remaining Time"
+#~ msgstr "Restzeit"
+
+#~ msgid "No download directory specified."
+#~ msgstr "Kein Download-Ordner angegeben."
+
+#~ msgid "Invalid download directory specified."
+#~ msgstr "Der angegebene Download-Ordner ist ungültig."
+
+#~ msgid "Download directory is not writeable."
+#~ msgstr "Der Download-Ordner ist schreibgeschützt."
+
+#~ msgid "No download destination specified."
+#~ msgstr "Kein Download-Ziel angegeben."
+
+#~ msgid "Invalid download destination specified."
+#~ msgstr "Das angegebene Download-Ziel ist ungültig."
+
+#~ msgid "Download destination is not writeable."
+#~ msgstr "Das Download-Ziel ist schreibgeschützt."
+
+#~ msgid "No URL specified."
+#~ msgstr "Keine Adresse angegeben."
+
+#~ msgid "Malformed URL."
+#~ msgstr "Ungültige Adresse"
+
+#~ msgid "Malformed URL, protocol missing."
+#~ msgstr "Ungültige Adresse, das Protokoll fehlt."
+
+#~ msgid "Malformed URL, host missing."
+#~ msgstr "Ungültige Adresse, der Rechner fehlt."
+
+#~ msgid ""
+#~ "Invalid download directory specified:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Ungültiger Download-Ordner ausgewählt:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Download directory is not writeable:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Der Download-Ordner ist schreibgeschützt:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Invalid download destination specified:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Das angegebene Download-Ziel ist ungültig:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Download destination is not writeable:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Das Download-Ziel ist schreibgeschützt:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Malformed URL, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Ungültige Adresse, der Rechner fehlt:\n"
+#~ "%1"
+
+#~ msgid "File already exists. Overwrite it?"
+#~ msgstr "Die Datei existiert bereits. Überschrieben?"
+
+#~ msgid ""
+#~ "You have already downloaded that file from another location.\n"
+#~ "Download and delete the previous one?"
+#~ msgstr ""
+#~ "Sie haben diese Datei bereits von einem anderen Speicherort "
+#~ "heruntergeladen.\n"
+#~ "Soll die Datei jetzt neu heruntergeladen und die vorherige Datei gelöscht "
+#~ "werden?"
+
+#~ msgid ""
+#~ "You are already downloading that file from another location.\n"
+#~ "Download and delete the previous one?"
+#~ msgstr ""
+#~ "Sie laden diese Datei bereits von einem anderen Speicherort "
+#~ "herunterladen.\n"
+#~ "\n"
+#~ "Soll die Datei jetzt neu heruntergeladen und die vorherige Datei gelöscht "
+#~ "werden?"
+
+#~ msgid ""
+#~ "You have already completed a download from that location. Download it "
+#~ "again?"
+#~ msgstr ""
+#~ "Sie haben bereits einen Download von diesem Speicherort abgeschlossen. "
+#~ "Möchten Sie diesen erneut herunterladen?"
+
+#~ msgid ""
+#~ "You have a download in progress from that location.\n"
+#~ "Delete it and download again?"
+#~ msgstr ""
+#~ "Die Datei wird bereits von dieser Adresse heruntergeladen. Möchten Sie es "
+#~ "löschen und erneut herunterladen?"
+
+#~ msgid ""
+#~ "File already exists:\n"
+#~ "%1\n"
+#~ "Overwrite it?"
+#~ msgstr ""
+#~ "Eine Datei namens „%1“ existiert bereits.\n"
+#~ "Möchten Sie sie überschreiben?"
+
+#~ msgid "Malformed URLs."
+#~ msgstr "Ungültige Adressen."
+
+#~ msgid "Malformed URLs, protocol missing."
+#~ msgstr "Ungültige Adressen, das Protokoll fehlt."
+
+#~ msgid "Malformed URLs, host missing."
+#~ msgstr "Ungültige Adressen, der Rechner fehlt."
+
+#~ msgid ""
+#~ "Malformed URLs:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Ungültige Adressen:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Malformed URLs, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Ungültige Adressen, das Protokoll fehlt:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Malformed URLs, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Ungültige Adressen, das Protokoll fehlt:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Destinations are not writable:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Zielordner sind schreibgeschützt:\n"
+#~ "%1"
+
+#~ msgid "Files exist already. Overwrite them?"
+#~ msgstr "Die Dateien existieren bereits. Überschreiben?"
+
+#~ msgid ""
+#~ "You have already completed downloads at those destinations. Download them "
+#~ "again?"
+#~ msgstr ""
+#~ "Sie haben bereits Downloads von diesem Speicherort abgeschlossen. Möchten "
+#~ "Sie diese erneut herunterladen?"
+
+#~ msgid ""
+#~ "You have downloads in progress to these destinations.\n"
+#~ "Delete them and download again?"
+#~ msgstr ""
+#~ "Die Dateien vom folgenden Speicherort werden bereits heruntergeladen.\n"
+#~ "Möchten Sie diese löschen und erneut herunterladen?"
+
+#~ msgid ""
+#~ "You have already completed downloads from these locations. Download them "
+#~ "again?"
+#~ msgstr ""
+#~ "Sie haben bereits Downloads von diesem Speicherort abgeschlossen. Möchten "
+#~ "Sie diese erneut herunterladen?"
+
+#~ msgid ""
+#~ "You have downloads in progress from these locations.\n"
+#~ "Delete them and download again?"
+#~ msgstr ""
+#~ "Die Dateien von diesen Speicherorten werden bereits heruntergeladen.\n"
+#~ "Möchten Sie diese löschen und erneut herunterladen?"
+
+#~ msgid ""
+#~ "Files exist already:\n"
+#~ "%1\n"
+#~ "Overwrite them?"
+#~ msgstr ""
+#~ "Die Dateien existieren bereits:\n"
+#~ "%1\n"
+#~ "Überschreiben?"
+
+#~ msgid ""
+#~ "You have already completed downloads at those destinations: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ " Download them again?"
+#~ msgstr ""
+#~ "Sie haben bereits Downloads von diesen Speicherorten abgeschlossen:\n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Möchten Sie diese erneut herunterladen?"
+
+#~ msgid ""
+#~ "You have downloads in progress to these destinations: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Delete them and download again?"
+#~ msgstr ""
+#~ "Dateien von folgenden Speicherorten werden bereits heruntergeladen:\n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Möchten Sie diese löschen und erneut herunterladen?"
+
+#~ msgid ""
+#~ "You have already completed downloads from these locations: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Download them again?"
+#~ msgstr ""
+#~ "Sie haben bereits Downloads von diesen Speicherorten abgeschlossen:\n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Möchten Sie diese erneut herunterladen?"
+
+#~ msgid ""
+#~ "You have downloads in progress from these locations: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Delete them and download again?"
+#~ msgstr ""
+#~ "Dateien von folgenden Speicherorten werden bereits heruntergeladen:\n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Möchten Sie diese löschen und erneut herunterladen?"
+
+#~ msgid "Question"
+#~ msgstr "Frage"
+
+#~ msgctxt "on a question"
+#~ msgid "Yes all"
+#~ msgstr "Ja zu allen"
+
+#~ msgctxt "on a question"
+#~ msgid "No all"
+#~ msgstr "Nein zu allen"
+
+#~ msgid "Insert Engine"
+#~ msgstr "Suchmaschine hinzufügen"
+
+#~ msgid "Engine name:"
+#~ msgstr "Name der Suchmaschine:"
+
+#~ msgid "URL:"
+#~ msgstr "Adresse:"
+
+#~ msgid "The download (%1) could not be verified. Do you want to repair it?"
+#~ msgstr ""
+#~ "Der Download „%1“ kann nicht verifiziert werden. Möchten Sie ihn "
+#~ "reparieren?"
+
+#~ msgid ""
+#~ "The download (%1) could not be verified. Do you want to redownload it?"
+#~ msgstr ""
+#~ "Der Download „%1“ kann nicht verifiziert werden. Möchten Sie es erneut "
+#~ "herunterladen?"
+
+#~ msgid "Verification failed."
+#~ msgstr "Die Verifizierung ist fehlgeschlagen"
+
+#~ msgctxt "transfer state: connecting"
+#~ msgid "Connecting...."
+#~ msgstr "Verbinden ..."
+
+#~ msgid "Add New Script"
+#~ msgstr "Neues Skript hinzufügen"
+
+#~ msgid "Edit Script"
+#~ msgstr "Skript bearbeiten"
+
+#~ msgid "Set Script File"
+#~ msgstr "Skriptdatei festlegen"
+
+#~ msgctxt "Configure script"
+#~ msgid "Configure script"
+#~ msgstr "Skript Einrichten"
+
+#~ msgctxt "Transfer state: processing script"
+#~ msgid "Processing script...."
+#~ msgstr "Skript wird ausgeführt ..."
+
+#~ msgctxt "Transfer State: Finished"
+#~ msgid "Finished"
+#~ msgstr "Abgeschlossen"
+
+#~ msgctxt "Transfer State: Aborted"
+#~ msgid "Aborted"
+#~ msgstr "Abgebrochen"
+
+#~ msgid "Downloading Metalink File...."
+#~ msgstr "Metalink-Datei wird heruntergeladen ..."
+
+#~ msgid ""
+#~ "A newer version of this Metalink might exist, do you want to download it?"
+#~ msgstr ""
+#~ "Möglicherweise ist eine neuere Version dieses Metalinks verfügbar. "
+#~ "Möchten Sie diese herunterladen?"
+
+#~ msgid "Redownload Metalink"
+#~ msgstr "Metalink erneut herunterladen"
+
+#~ msgid "Download failed, no working URLs were found."
+#~ msgstr ""
+#~ "Das Herunterladen ist fehlgeschlagen, da keine funktionierenden Adressen "
+#~ "gefunden werden konnten."
+
+#~ msgid ""
+#~ "The download could not be verified, do you want to repair (if repairing "
+#~ "does not work the download would be restarted) it?"
+#~ msgstr ""
+#~ "Der Download kann nicht verifiziert werden. Möchten Sie ihn reparieren? "
+#~ "Falls das Reparieren nicht gelingt, wird der Download neu gestartet."
+
+#~ msgid "File Selection"
+#~ msgstr "Dateiauswahl"
+
+#~ msgid "Add item"
+#~ msgstr "Eintrag hinzufügen"
+
+#~ msgid "%1 would become %2"
+#~ msgstr "„%1“ würde zu „%2“ werden"
+
+# Halb-„Fuzzy“
+#~ msgctxt "the string that is used to modify an url"
+#~ msgid "Change string"
+#~ msgstr "Änderungszeichenkette"
+
+#~ msgctxt "the mode defines how the url should be changed"
+#~ msgid "Change mode"
+#~ msgstr "Änderungsmodus"
+
+#~ msgctxt "the type of the checksum e.g. md5"
+#~ msgid "Checksum type"
+#~ msgstr "Prüfsummentyp"
+
+#~ msgid "Append"
+#~ msgstr "An Dateinamen anhängen"
+
+#~ msgid "Replace file"
+#~ msgstr "Datei ersetzen"
+
+#~ msgid "Replace file-ending"
+#~ msgstr "Dateierweiterung ersetzen"
+
+#~ msgctxt "transfer state: running"
+#~ msgid "Running...."
+#~ msgstr "Läuft ..."
+
+#~ msgctxt "Choked"
+#~ msgid "Yes"
+#~ msgstr "Ja"
+
+#~ msgctxt "Not choked"
+#~ msgid "No"
+#~ msgstr "Nein"
+
+#~ msgctxt "Snubbed"
+#~ msgid "Yes"
+#~ msgstr "Ja"
+
+#~ msgctxt "Not snubbed"
+#~ msgid "No"
+#~ msgstr "Nein"
+
+#~ msgctxt "Interested"
+#~ msgid "Yes"
+#~ msgstr "Ja"
+
+#~ msgctxt "Not Interested"
+#~ msgid "No"
+#~ msgstr "Nein"
+
+#~ msgctxt "Interesting"
+#~ msgid "Yes"
+#~ msgstr "Ja"
+
+#~ msgctxt "Not Interesting"
+#~ msgid "No"
+#~ msgstr "Nein"
+
+#~ msgid "IP Address"
+#~ msgstr "IP-Adresse"
+
+#~ msgid "Client"
+#~ msgstr "Client"
+
+#~ msgid "Down Speed"
+#~ msgstr "Downloadgeschwindigkeit"
+
+#~ msgid "Up Speed"
+#~ msgstr "Uploadgeschwindigkeit"
+
+#~ msgid "Choked"
+#~ msgstr "Gedrosselt"
+
+#~ msgid "Snubbed"
+#~ msgstr "Abgewiesen"
+
+#~ msgid "Availability"
+#~ msgstr "Verfügbarkeit"
+
+#~ msgid "DHT"
+#~ msgstr "VHT"
+
+#~ msgid "Score"
+#~ msgstr "Bewertung"
+
+#~ msgid "Upload Slot"
+#~ msgstr "Slot zum Hochladen"
+
+#~ msgid "Requests"
+#~ msgstr "Anfragen"
+
+#~ msgid "Downloaded"
+#~ msgstr "Heruntergeladen"
+
+#~ msgid "Uploaded"
+#~ msgstr "Hochgeladen"
+
+#~ msgid "Interested"
+#~ msgstr "Interessiert"
+
+#~ msgid "Interesting"
+#~ msgstr "Interessant"
+
+#~ msgid "IP address of the peer"
+#~ msgstr "IP-Adresse der Gegenstelle"
+
+#~ msgid "Which client the peer is using"
+#~ msgstr "Das von der Gegenstelle verwendete Programm"
+
+#~ msgid "Download speed"
+#~ msgstr "Downloadgeschwindigkeit"
+
+#~ msgid "Upload speed"
+#~ msgstr "Uploadgeschwindigkeit"
+
+#~ msgid ""
+#~ "Whether or not the peer has choked us.  If we are choked, the peer will "
+#~ "not send us any data."
+#~ msgstr ""
+#~ "Gibt an, ob Sie durch die Gegenstelle geblockt werden. Wenn Sie geblockt "
+#~ "werden, sendet die Gegenstelle Ihnen keine Daten."
+
+#~ msgid ""
+#~ "Snubbed means the peer has not sent us any data in the last 2 minutes"
+#~ msgstr ""
+#~ "Abgewiesen bedeutet, dass die Gegenstelle Ihnen in den letzten 2 Minuten "
+#~ "keine Daten mehr gesendet hat"
+
+#~ msgid "How much of the torrent's data the peer has"
+#~ msgstr "Die Datenmenge, die die Gegenstelle vom Torrent besitzt"
+
+#~ msgid "Whether or not the peer has DHT enabled"
+#~ msgstr "Gibt an, ob die Gegenstelle VHT aktiviert hat"
+
+#~ msgid ""
+#~ "The score of the peer. KTorrent uses this to determine who to upload to."
+#~ msgstr ""
+#~ "Die Punktzahl der Gegenstelle. KTorrent verwendet diese, um zu bestimmen, "
+#~ "an wen Daten hochgeladen werden."
+
+#~ msgid "Only peers which have an upload slot will get data from us"
+#~ msgstr "Nur Gegenstellen mit mindestens einem Upload-Slot erhalten Daten"
+
+#~ msgid "The number of download and upload requests"
+#~ msgstr "Die Anzahl an Download- und Uploadanfragen"
+
+#~ msgid "How much data we have downloaded from this peer"
+#~ msgstr "Die von dieser Gegenstelle bereits heruntergeladene Datenmenge"
+
+#~ msgid "How much data we have uploaded to this peer"
+#~ msgstr "Die zu dieser Gegenstelle bereits hochgeladene Datenmenge"
+
+#~ msgid "Whether the peer is interested in downloading data from us"
+#~ msgstr ""
+#~ "Gibt an, ob die Gegenstelle daran interessiert ist, Daten von Ihnen "
+#~ "herunterzuladen "
+
+#~ msgid "Whether we are interested in downloading from this peer"
+#~ msgstr ""
+#~ "Gibt an, ob Sie daran interessiert sind, Daten von der Gegenstelle "
+#~ "herunterzuladen "
+
+#~ msgid "Chunk"
+#~ msgstr "Block"
+
+#~ msgid "Progress"
+#~ msgstr "Fortschritt"
+
+#~ msgid "Peer"
+#~ msgstr "Gegenstelle"
+
+#~ msgid "Files"
+#~ msgstr "Dateien"
+
+#~ msgid "Number of the chunk"
+#~ msgstr "Nummer des Blocks"
+
+#~ msgid "Download progress of the chunk"
+#~ msgstr "Fortschritt beim Herunterladen des Blocks"
+
+#~ msgid "Which peer we are downloading it from"
+#~ msgstr "Die Gegenstelle, von der heruntergeladen wird"
+
+#~ msgid "Download speed of the chunk"
+#~ msgstr "Downloadgeschwindigkeit des Blocks"
+
+#~ msgid "Which files the chunk is located in"
+#~ msgstr "Die Dateien, in denen sich der Block befindet"
+
+#~ msgid "URL"
+#~ msgstr "Adresse"
+
+#~ msgid "Speed"
+#~ msgstr "Geschwindigkeit"
+
+#~ msgid "Status"
+#~ msgstr "Status"
+
+#~ msgid "Kick Peer"
+#~ msgstr "Gegenstelle zwangsweise trennen"
+
+#~ msgid "Ban Peer"
+#~ msgstr "Gegenstelle verbannen"
+
+#~ msgid ""
+#~ "Cannot add the webseed %1, it is already part of the list of webseeds."
+#~ msgstr ""
+#~ "Der Webseed %1 kann nicht hinzugefügt werden, da er bereits in der "
+#~ "Webseed-Liste enthalten ist."
+
+#~ msgid "Cannot remove webseed %1, it is part of the torrent."
+#~ msgstr ""
+#~ "Der Webseed „%1“ kann nicht entfernt werden, da er Teil des Torrents ist."
+
+#~ msgid "File"
+#~ msgstr "Datei"
+
+#~ msgid "Size"
+#~ msgstr "Größe"
+
+#~ msgid "Advanced Details for %1"
+#~ msgstr "Erweiterte Details für %1"
+
+#~ msgid "Trackers"
+#~ msgstr "Tracker"
+
+#~ msgid "Webseeds"
+#~ msgstr "Webseeds"
+
+#~ msgctxt "Open file"
+#~ msgid "Open"
+#~ msgstr "Öffnen"
+
+#~ msgid "Download first"
+#~ msgstr "Zuerst herunterladen"
+
+#~ msgid "Download normally"
+#~ msgstr "Normal herunterladen"
+
+#~ msgid "Download last"
+#~ msgstr "Zuletzt herunterladen"
+
+#~ msgid "Do Not Download"
+#~ msgstr "Nicht herunterladen"
+
+#~ msgid "Delete File(s)"
+#~ msgstr "Datei(en) löschen"
+
+#~ msgid "Move File"
+#~ msgstr "Datei verschieben"
+
+#~ msgid "Collapse Folder Tree"
+#~ msgstr "Baumansicht des Ordners einklappen"
+
+#~ msgid "Expand Folder Tree"
+#~ msgstr "Baumansicht des Ordners ausklappen"
+
+#~ msgid ""
+#~ "You will lose all data in this file, are you sure you want to do this?"
+#~ msgid_plural ""
+#~ "You will lose all data in these files, are you sure you want to do this?"
+#~ msgstr[0] ""
+#~ "Sie werden sämtliche heruntergeladenen Daten dieser Datei verlieren. Sind "
+#~ "Sie sicher, dass Sie dies tun möchten?"
+#~ msgstr[1] ""
+#~ "Sie werden sämtliche heruntergeladenen Daten dieser Dateien verlieren. "
+#~ "Sind Sie sicher, dass Sie dies tun möchten?"
+
+#~ msgid "Select a directory to move the data to."
+#~ msgstr "Wählen Sie einen Ordner, in den die Daten verschoben werden sollen."
+
+#~ msgid "Url"
+#~ msgstr "Adresse"
+
+#~ msgid "Seeders"
+#~ msgstr "Seeder"
+
+#~ msgid "Leechers"
+#~ msgstr "Leecher"
+
+#~ msgid "Times Downloaded"
+#~ msgstr "Downloadanzahl"
+
+#~ msgid "Next Update"
+#~ msgstr "Nächste Aktualisierung"
+
+#~ msgid "Priority"
+#~ msgstr "Priorität"
+
+#~ msgid "Preview"
+#~ msgstr "Vorschau"
+
+#~ msgctxt "Percent of File Downloaded"
+#~ msgid "% Complete"
+#~ msgstr "% vollständig"
+
+#~ msgctxt "Download first"
+#~ msgid "First"
+#~ msgstr "Zuerst"
+
+#~ msgctxt "Download last"
+#~ msgid "Last"
+#~ msgstr "Zuletzt"
+
+#~ msgctxt "Download normally(not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "Normal"
+
+#~ msgctxt "preview available"
+#~ msgid "Available"
+#~ msgstr "Verfügbar"
+
+#~ msgctxt "Preview pending"
+#~ msgid "Pending"
+#~ msgstr "Wartend"
+
+#~ msgctxt "No preview available"
+#~ msgid "No"
+#~ msgstr "Keine"
+
+#~ msgid "%1 %"
+#~ msgstr "%1 %"
+
+#~ msgctxt "Preview available"
+#~ msgid "Available"
+#~ msgstr "Verfügbar"
+
+#~ msgid "Add Tracker"
+#~ msgstr "Tracker hinzufügen"
+
+#~ msgid "Enter the URL of the tracker:"
+#~ msgstr "Geben Sie die Adresse des Trackers ein:"
+
+#~ msgid "There already is a tracker named <b>%1</b>."
+#~ msgstr "Es existiert bereits ein Tracker mit dem Namen <b>%1</b>."
+
+#~ msgctxt "Download Normal (not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "Normal"
+
+#~ msgid "Cannot initialize libktorrent. Torrent support might not work."
+#~ msgstr ""
+#~ "„libktorrent“ kann nicht initialisiert werden. Die Unterstützung für "
+#~ "Torrents könnte möglicherweise nicht funktionieren."
+
+#~ msgid "&Advanced Details"
+#~ msgstr "&Erweiterte Details"
+
+#~ msgid "&Scan Files"
+#~ msgstr "&Dateien untersuchen"
+
+#~ msgid "Downloading Torrent File...."
+#~ msgstr "Torrent-Datei wird heruntergeladen ..."
+
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading...."
+#~ msgstr "Herunterladen läuft ..."
+
+#~ msgid "Cannot add a tracker to a private torrent."
+#~ msgstr "Es können keine Tracker zu privaten Torrents hinzugefügt werden."
+
+#~ msgid "Torrent file does not exist"
+#~ msgstr "Die Torrent-Datei ist nicht vorhanden"
+
+#~ msgid "Analyzing torrent...."
+#~ msgstr "Torrent wird untersucht ..."
+
+#~ msgid "Cannot initialize port..."
+#~ msgstr "Der Port kann nicht initialisiert werden ..."
+
+#~ msgctxt "Transfer status: seeding"
+#~ msgid "Seeding...."
+#~ msgstr "Verteilen ..."
+
+#~ msgid "Error scanning data: %1"
+#~ msgstr "Fehler beim Einlesen der Daten: %1"
+
+#~ msgid "Scanning data of <b>%1</b> :"
+#~ msgstr "Die Daten von <b>%1</b> werden eingelesen:"
+
+#~ msgid "Select a default torrent folder"
+#~ msgstr "Torrent-Standardordner auswählen"
+
+#~ msgid "Select a default temporary folder"
+#~ msgstr "Temporären Ordner als Standard auswählen"
+
+#~ msgid "Import dropped files"
+#~ msgstr "Hinzugefügte Dateien importieren"
+
+#~ msgctxt "comma, to seperate members of a list"
+#~ msgid ","
+#~ msgstr ","
+
+#~ msgid "File Properties"
+#~ msgstr "Dateieigenschaften"
+
+#~ msgid "Enter a filename."
+#~ msgstr "Geben Sie einen Dateinamen ein"
+
+#~ msgid "The filename exists already, choose a different one."
+#~ msgstr ""
+#~ "Der Dateiname existiert bereits. Bitte wählen Sie einen anderen Namen."
+
+#~ msgid "Enter at least one URL."
+#~ msgstr "Fügen Sie mindestens eine Adresse hinzu"
+
+#~ msgid ""
+#~ "Required data entered; also consider entering additional information."
+#~ msgstr ""
+#~ "Erforderlichen Daten sind eingegeben worden. Sie können auch zusätzliche "
+#~ "Informationen eingeben."
+
+#~ msgid "Create a Metalink"
+#~ msgstr "Metalink erstellen"
+
+#~ msgid "General optional information for the metalink."
+#~ msgstr "Geben Sie allgemeine Informationen zum Metalink ein (optional)"
+
+#~ msgid "Unable to load: %1"
+#~ msgstr "Das Laden von „%1“ ist nicht möglich."
+
+#~ msgid "Metalink Version 4.0 file (*.meta4)"
+#~ msgstr "Metalink-Datei Version 4.0 (*.meta4)"
+
+#~ msgid "Metalink Version 3.0 file (*.metalink)"
+#~ msgstr "Metalink-Datei Version 3.0 (*.metalink)"
+
+#~ msgid "Define the saving location."
+#~ msgstr "Legen Sie den Speicherort fest"
+
+#~ msgctxt "file as in file on hard drive"
+#~ msgid "Enter at least one file."
+#~ msgstr "Fügen Sie mindestens eine Datei hinzu"
+
+#~ msgid "Import Links"
+#~ msgstr "Verknüpfungen importieren"
+
+#~ msgctxt "Download the items which have been selected"
+#~ msgid "&Download Checked"
+#~ msgstr "Markierte herunterla&den"
+
+#~ msgid "Auxiliary header"
+#~ msgstr "Zusätzliche Kopfdaten"
+
+#~ msgid "File Name"
+#~ msgstr "Dateiname"
+
+#~ msgid "Description"
+#~ msgstr "Beschreibung"
+
+#~ msgctxt "list header: type of file"
+#~ msgid "File Type"
+#~ msgstr "Dateityp"
+
+#~ msgid "Location (URL)"
+#~ msgstr "Adresse (URL)"
+
+#~ msgid "Links in: %1 - KGet"
+#~ msgstr "Verlinkt in: %1 – KGet"
+
+#~ msgid "&Select All Filtered"
+#~ msgstr "Alle gefilterten au&swählen"
+
+#~ msgid "&Select All"
+#~ msgstr "&Alle auswählen"
+
+#~ msgid "D&eselect All Filtered"
+#~ msgstr "Alle gefilterten abwählen"
+
+#~ msgid "D&eselect All"
+#~ msgstr "Auswahl aufheben"
+
+#~ msgid "not specified"
+#~ msgstr "Nicht angegeben"
+
+#~ msgctxt "Mirror as in server, in url"
+#~ msgid "Mirror"
+#~ msgstr "Spiegel"
+
+#~ msgctxt "The priority of the mirror"
+#~ msgid "Priority"
+#~ msgstr "Priorität"
+
+#~ msgctxt "Number of paralell connections to the mirror"
+#~ msgid "Connections"
+#~ msgstr "Verbindungen"
+
+#~ msgctxt "Location = country"
+#~ msgid "Location"
+#~ msgstr "Standort"
+
+#~ msgid "Add mirror"
+#~ msgstr "Spiegel hinzufügen"
+
+#~ msgctxt "Adds the item and reopens the dialog to add a further item"
+#~ msgid "Add more"
+#~ msgstr "Weitere hinzufügen"
+
+#~ msgid "%1 has been successfully added."
+#~ msgstr "%1 ist erfolgreich hinzugefügt worden."
+
+#~ msgid "Modify the used mirrors."
+#~ msgstr "Die zu verwendenden Spiegel bearbeiten"
+
+#~ msgid "Download again"
+#~ msgstr "Erneut herunterladen"
+
+#~ msgctxt "Delete selected history-item"
+#~ msgid "Delete selected"
+#~ msgstr "Ausgewählte löschen"
+
+#~ msgid "Open file"
+#~ msgstr "Datei öffnen"
+
+#~ msgid "Today"
+#~ msgstr "Heute"
+
+#~ msgid "Last week"
+#~ msgstr "Letzte Woche"
+
+#~ msgid "Last Month"
+#~ msgstr "Letzten Monat"
+
+#~ msgid "A long time ago"
+#~ msgstr "Vor langer Zeit"
+
+#~ msgid "Under 10MiB"
+#~ msgstr "Unter 10 MiB"
+
+#~ msgid "Between 10MiB and 50MiB"
+#~ msgstr "Zwischen 10 und 50 MiB"
+
+#~ msgid "Between 50MiB and 100MiB"
+#~ msgstr "Zwischen 50 und 100 MiB"
+
+#~ msgid "More than 100MiB"
+#~ msgstr "Mehr als 100 MiB"
+
+#~ msgid "Transfer History"
+#~ msgstr "Transfer-Verlauf"
+
+#~ msgid "&Open File"
+#~ msgstr "Datei öff&nen"
+
+#~ msgctxt "The transfer is running"
+#~ msgid "Running"
+#~ msgstr "Läuft"
+
+#~ msgctxt "The transfer is stopped"
+#~ msgid "Stopped"
+#~ msgstr "Angehalten"
+
+#~ msgctxt "The transfer is aborted"
+#~ msgid "Aborted"
+#~ msgstr "Abgebrochen"
+
+#~ msgctxt "The transfer is finished"
+#~ msgid "Finished"
+#~ msgstr "Abgeschlossen"
+
+#~ msgid "Source File"
+#~ msgstr "Quelldatei"
+
+#~ msgid "Destination"
+#~ msgstr "Ziel"
+
+#~ msgid "Time"
+#~ msgstr "Zeit"
+
+#~ msgid "File Size"
+#~ msgstr "Dateigröße"
+
+#~ msgid "Less than 1MiB"
+#~ msgstr "Weniger als 1 MiB"
+
+#~ msgid "Between 1MiB-10MiB"
+#~ msgstr "Zwischen 1 und 10 MiB"
+
+#~ msgid "Between 10MiB-100MiB"
+#~ msgstr "Zwischen 10 und 100 MiB"
+
+#~ msgid "Between 100MiB-1GiB"
+#~ msgstr "Zwischen 100 MiB und 1 GiB"
+
+#~ msgid "More than 1GiB"
+#~ msgstr "Mehr als 1 GiB"
+
+#~ msgid "Last month"
+#~ msgstr "Letzten Monat"
+
+#~ msgctxt "the transfer has been finished"
+#~ msgid "Finished"
+#~ msgstr "Abgeschlossen"
+
+#~ msgid "You have no source URLs selected."
+#~ msgstr "Sie haben keine Quelladressen ausgewählt."
+
+#~ msgid "Files that exist already in the current folder have been marked."
+#~ msgstr ""
+#~ "Es sind Dateien ausgewählt worden, die bereits im aktuellen Ordner "
+#~ "bestehen."
+
+#~ msgctxt "an error happened in connection with the user input"
+#~ msgid "Error:"
+#~ msgstr "Fehler:"
+
+#~ msgctxt "a warning happened in connection with the user input"
+#~ msgid "Warning:"
+#~ msgstr "Achtung:"
+
+#~ msgctxt "trust level"
+#~ msgid "Unknown"
+#~ msgstr "Unbekannt"
+
+#~ msgctxt "trust level"
+#~ msgid "Undefined"
+#~ msgstr "Unbekannt"
+
+#~ msgctxt "trust level"
+#~ msgid "Never"
+#~ msgstr "Keine"
+
+#~ msgctxt "trust level"
+#~ msgid "Marginal"
+#~ msgstr "Eingeschränkt"
+
+#~ msgctxt "trust level"
+#~ msgid "Full"
+#~ msgstr "Vollständig"
+
+#~ msgctxt "trust level"
+#~ msgid "Ultimate"
+#~ msgstr "Uneingeschränkt"
+
+# TODO: Punkt aus originalstring entfernen
+#~ msgctxt ""
+#~ "Signature here is meant in cryptographic terms, so the signature of a "
+#~ "file."
+#~ msgid "Signature of %1."
+#~ msgstr "Signatur von %1"
+
+#~ msgid "This option is not supported for the current transfer."
+#~ msgstr "Diese Einstellung ist für den aktuellen Transfer nicht verfügbar."
+
+#~ msgid "You need to define a signature."
+#~ msgstr "Sie müssen eine Signatur angeben."
+
+# s/überprüfen/verifizieren/g
+# ?
+#~ msgid ""
+#~ "No fingerprint could be found, check if the signature is correct or "
+#~ "verify the download."
+#~ msgstr ""
+#~ "Es kann kein Fingerabdruck gefunden werden. Überprüfen Sie, ob die "
+#~ "Signatur korrekt ist, oder überprüfen Sie den Download"
+
+#~ msgid "The key has been revoked."
+#~ msgstr "Der Schlüssel ist zurückgezogen worden."
+
+#~ msgid "The key is disabled."
+#~ msgstr "Der Schlüssel ist deaktiviert."
+
+#~ msgid "The key is invalid."
+#~ msgstr "Der Schlüssel ist ungültig."
+
+#~ msgid "The key is expired."
+#~ msgstr "Der Schlüssel ist abgelaufen."
+
+#~ msgid "The key is not to be trusted."
+#~ msgstr "Der Schlüssel ist nicht vertrauenswürdig."
+
+#~ msgid "The key is to be trusted marginally."
+#~ msgstr "Der Schlüssel ist eingeschränkt vertrauenswürdig."
+
+#~ msgid "The key is to be trusted fully."
+#~ msgstr "Der Schlüssel ist vollständig vertrauenswürdig."
+
+#~ msgid "The key is to be trusted ultimately."
+#~ msgstr "Der Schlüssel ist uneingeschränkt vertrauenswürdig."
+
+#~ msgid "Trust level of the key is unclear."
+#~ msgstr "Die Vertrauenswürdigkeit des Schlüssels ist unbekannt."
+
+#~ msgid "Unlimited"
+#~ msgstr "Unbegrenzt"
+
+#~ msgctxt "pgp signature is verified"
+#~ msgid "Verified"
+#~ msgstr "Verifiziert"
+
+#~ msgid "The signature has been verified successfully."
+#~ msgstr "Die Signatur ist erfolgreich verifiziert worden."
+
+#~ msgid "The signature has been verified successfully:"
+#~ msgstr "Die Signatur ist erfolgreich verifiziert worden:"
+
+#~ msgctxt "pgp signature is not verified"
+#~ msgid "Failed"
+#~ msgstr "Fehlgeschlagen"
+
+#~ msgid ""
+#~ "Caution: Verification failed. Either you entered the wrong signature, or "
+#~ "the data has been modified."
+#~ msgstr ""
+#~ "Achtung: Die Verifizierung ist fehlgeschlagen. Entweder haben Sie die "
+#~ "falsche Signatur eingegeben oder die Daten sind modifiziert worden."
+
+#~ msgid ""
+#~ "Verification not possible. Check the entered data, whether gpg-agent is "
+#~ "running, or whether you have an Internet connection (for retrieving keys.)"
+#~ msgstr ""
+#~ "Überprüfung nicht möglich. Prüfen Sie bitte die eingegebenen Daten, "
+#~ "stellen Sie sicher, dass gpg-agent läuft und überprüfen Sie bitte die "
+#~ "Funktion der Internet-Verbindung (zum Herunterladen der Schlüssel)."
+
+#~ msgid ""
+#~ "Feature is not supported, as KGet is not compiled with QPGME support."
+#~ msgstr ""
+#~ "Die Funktion ist nicht verfügbar, da KGet ohne Unterstützung für QPGME "
+#~ "kompiliert wurde."
+
+#~ msgid "Error:"
+#~ msgstr "Fehler:"
+
+#~ msgid "Problems:"
+#~ msgstr "Probleme:"
+
+#~ msgid "Information:"
+#~ msgstr "Information:"
+
+#~ msgid "Select columns"
+#~ msgstr "Spalten auswählen"
+
+#~ msgid "Transfer Details"
+#~ msgstr "Transfer-Details"
+
+#~ msgid "Add checksum"
+#~ msgstr "Prüfsumme hinzufügen"
+
+#~ msgid "%1 %2 has been successfully added."
+#~ msgstr "„%1“ „%2“ ist erfolgreich hinzugefügt worden."
+
+#~ msgid "Transfer Verification for %1"
+#~ msgstr "Transfer-Verifizierung für %1"
+
+#~ msgid "%1 was successfully verified."
+#~ msgstr "%1 ist erfolgreich verifiziert worden."
+
+#~ msgid "Verification successful"
+#~ msgstr "Verifizierung erfolgreich"
+
+#~ msgid "Rename File"
+#~ msgstr "Datei umbenennen"
+
+#~ msgid "Rename %1 to:"
+#~ msgstr "%1 umbenennen:"
+
+#~ msgid "&Rename"
+#~ msgstr "&Umbenennen"
+
+#~ msgid "Semantic Desktop"
+#~ msgstr "Nepomuk-Semantik-Dienste"
+
+#~ msgid "Delete Group"
+#~ msgid_plural "Delete Groups"
+#~ msgstr[0] "Gruppe entfernen"
+#~ msgstr[1] "Gruppen entfernen"
+
+#~ msgid "Rename Group..."
+#~ msgid_plural "Rename Groups..."
+#~ msgstr[0] "Gruppe umbenennen ..."
+#~ msgstr[1] "Gruppen umbenennen ..."
+
+#~ msgctxt "fix position for droptarget"
+#~ msgid "Sticky"
+#~ msgstr "Position beibehalten"
+
+#~ msgid "Quit KGet"
+#~ msgstr "KGet beenden"
+
+#~ msgid "The dropped file is a KGet Transfer List"
+#~ msgstr "Die übergebene Datei ist eine KGet-Transferliste"
+
+#~ msgid "&Download"
+#~ msgstr "&Herunterladen"
+
+#~ msgid "&Load transfer list"
+#~ msgstr "Transferliste &laden"
+
+#~ msgid "Show Main Window"
+#~ msgstr "Hauptfenster anzeigen"
+
+#~ msgid "Hide Main Window"
+#~ msgstr "Hauptfenster ausblenden"
+
+#~ msgid "Drop Target"
+#~ msgstr "Zielfeld"
+
+#~ msgid "You can drag download links into the drop target."
+#~ msgstr "Sie können Adressen auf das Zielfeld ziehen und fallen lassen."
+
+#~ msgctxt "%1 filename, %2 total size, %3 status"
+#~ msgid "%1(%2) %3"
+#~ msgstr "%1 (%2) %3"
+
+#~ msgctxt ""
+#~ "%1 filename, %2 percent complete, %3 downloaded out of %4 total size"
+#~ msgid "%1(%2% %3/%4) Speed:%5/s"
+#~ msgstr "%1 (%2% %3/%4) Geschwindigkeit: %5/s"
+
+#~ msgctxt ""
+#~ "%1 filename, %2 percent complete, %3 downloaded out of %4 total size, %5 "
+#~ "status"
+#~ msgid "%1(%2% %3/%4) %5"
+#~ msgstr "%1 (%2% %3/%4) %5"
+
+#~ msgid "Ready"
+#~ msgstr "Bereit"
+
+#~ msgid ""
+#~ "Drop target has been hidden. If you want to show it again, go to Settings-"
+#~ ">Configure KGet->Look & Feel."
+#~ msgstr ""
+#~ "Das Zielfeld ist nun ausgeblendet. Zur Wiederanzeige verwenden Sie bitte "
+#~ "das Menü Einstellungen -> KGet einrichten -> Aussehen und Bedienung."
+
+#~ msgid "Hiding drop target"
+#~ msgstr "Zielfeld ausblenden"
+
+#~ msgid "Transfer Settings for %1"
+#~ msgstr "Transfer-Einstellungen für %1"
+
+#~ msgid ""
+#~ "Changing the destination did not work, the destination stays unmodified."
+#~ msgstr ""
+#~ "Das Ändern des Zielordners ist nicht möglich gewesen. Der Zielordner "
+#~ "bleibt unverändert."
+
+#~ msgid "Destination unmodified"
+#~ msgstr "Zielordner nicht verändert"
+
+#~ msgid "Average speed: %1/s"
+#~ msgstr "Durchschnittliche Geschwindigkeit: %1/s"
+
+#~ msgid "%1 of %2"
+#~ msgstr "%1 von %2"
+
+#~ msgid "Group Settings for %1"
+#~ msgstr "Gruppen-Einstellungen für %1"
+
+#~ msgctxt "@info"
+#~ msgid "Unable to start the server: %1."
+#~ msgstr "Der Serverdienst lässt sich nicht starten: %1"
+
+#~ msgctxt "@item speed of transfer per seconds"
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#~ msgctxt "@label"
+#~ msgid "KGet Web Interface"
+#~ msgstr "KGet-Weboberfläche"
+
+#~ msgctxt "@label number"
+#~ msgid "Nr"
+#~ msgstr "Nr."
+
+#~ msgctxt "@label"
+#~ msgid "File name"
+#~ msgstr "Dateiname"
+
+#~ msgctxt "@label Progress of transfer"
+#~ msgid "Finished"
+#~ msgstr "Abgeschlossen"
+
+#~ msgctxt "@label Speed of transfer"
+#~ msgid "Speed"
+#~ msgstr "Geschwindigkeit"
+
+#~ msgctxt "@label Status of transfer"
+#~ msgid "Status"
+#~ msgstr "Status"
+
+#~ msgctxt "@action:button start a transfer"
+#~ msgid "Start"
+#~ msgstr "Starten"
+
+#~ msgctxt "@action:button"
+#~ msgid "Stop"
+#~ msgstr "Anhalten"
+
+#~ msgctxt "@action:button"
+#~ msgid "Remove"
+#~ msgstr "Entfernen"
+
+#~ msgctxt "@label Download from"
+#~ msgid "Source:"
+#~ msgstr "Quelle:"
+
+#~ msgctxt "@label Save download to"
+#~ msgid "Saving to:"
+#~ msgstr "Speichern unter:"
+
+#~ msgctxt "@label Title in header"
+#~ msgid "Web Interface"
+#~ msgstr "Web-Oberfläche"
+
+#~ msgctxt "@action"
+#~ msgid "Settings"
+#~ msgstr "Einstellungen"
+
+#~ msgctxt "@action"
+#~ msgid "Refresh"
+#~ msgstr "Aktualisieren"
+
+#~ msgctxt "@action"
+#~ msgid "Enter URL: "
+#~ msgstr "Adresse eingeben:"
+
+#~ msgctxt "@action:button"
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#~ msgctxt "@action Refresh download list every x (seconds)"
+#~ msgid "Refresh download list every"
+#~ msgstr "Transferliste aktualisieren alle"
+
+#~ msgctxt "@action (Refresh very x )seconds"
+#~ msgid "seconds"
+#~ msgstr "Sek."
+
+#~ msgctxt "@action:button"
+#~ msgid "Save Settings"
+#~ msgstr "Einstellungen speichern"
+
+#~ msgctxt "@title"
+#~ msgid "Downloads"
+#~ msgstr "Downloads"
+
+#~ msgctxt "@label text in footer"
+#~ msgid "KGet Web Interface | Valid XHTML 1.0 Strict &amp; CSS"
+#~ msgstr "KGet-Weboberfläche | Valid XHTML 1.0 Strict &amp; CSS"
+
+#~ msgid "An advanced download manager for KDE"
+#~ msgstr "Die moderne Download-Verwaltung für KDE"
+
+#~ msgid ""
+#~ "(C) 2005 - 2009, The KGet developers\n"
+#~ "(C) 2001 - 2002, Patrick Charbonnier\n"
+#~ "(C) 2002, Carsten Pfeiffer\n"
+#~ "(C) 1998 - 2000, Matej Koss"
+#~ msgstr ""
+#~ "© 2005–2009, die KGet-Entwickler\n"
+#~ "© 2001–2002, Patrick Charbonnier\n"
+#~ "© 2002, Carsten Pfeiffer\n"
+#~ "© 1998–2000, Matej Koss"
+
+#~ msgid "<a href=\"mailto:kget@kde.org\">kget@kde.org</a>"
+#~ msgstr "<a href=\"mailto:kget@kde.org\">kget@kde.org</a>"
+
+#~ msgid "Lukas Appelhans"
+#~ msgstr "Lukas Appelhans"
+
+#~ msgid "Maintainer, Core Developer, Torrent Plugin Author"
+#~ msgstr "Betreuer, Hauptentwickler, Autor der Torrent-Erweiterung"
+
+#~ msgid "Dario Massarin"
+#~ msgstr "Dario Massarin"
+
+#~ msgid "Core Developer"
+#~ msgstr "Hauptentwickler"
+
+#~ msgid "Urs Wolfer"
+#~ msgstr "Urs Wolfer"
+
+#~ msgid "Manolo Valdes"
+#~ msgstr "Manolo Valdes"
+
+#~ msgid "Core Developer, Multithreaded Plugin Author"
+#~ msgstr "Hauptentwickler, Autor der Multithread-Erweiterung"
+
+#~ msgid "Matthias Fuchs"
+#~ msgstr "Matthias Fuchs"
+
+#~ msgid "Javier Goday"
+#~ msgstr "Javier Goday"
+
+#~ msgid "Developer"
+#~ msgstr "Entwickler"
+
+#~ msgid "Patrick Charbonnier"
+#~ msgstr "Patrick Charbonnier"
+
+#~ msgid "Former Developer"
+#~ msgstr "Früherer Entwickler"
+
+#~ msgid "Carsten Pfeiffer"
+#~ msgstr "Carsten Pfeiffer"
+
+#~ msgid "Matej Koss"
+#~ msgstr "Matej Koss"
+
+#~ msgid "Joris Guisson"
+#~ msgstr "Joris Guisson"
+
+#~ msgid "BTCore (KTorrent) Developer"
+#~ msgstr "BTCore-Entwickler (KTorrent)"
+
+#~ msgid "Mensur Zahirovic (Nookie)"
+#~ msgstr "Mensur Zahirovic (Nookie)"
+
+#~ msgid "Design of Web Interface"
+#~ msgstr "Entwurf der Web-Oberfläche"
+
+#~ msgid "Start KGet with drop target"
+#~ msgstr "KGet mit Zielfeld starten"
+
+#~ msgid "Start KGet with hidden main window"
+#~ msgstr "KGet mit ausgeblendetem Hauptfenster starten"
+
+#~ msgid "Start KGet without drop target animation"
+#~ msgstr "KGet ohne Zielfeld-Animation starten"
+
+#~ msgid "Execute Unit Testing"
+#~ msgstr "Unit-Tests ausführen"
+
+#~ msgid "URL(s) to download"
+#~ msgstr "Adresse(n) zum Herunterladen"
+
+#~ msgid "KGet Transfer List"
+#~ msgstr "KGet-Transferliste"
+
+#~ msgid "Export Transfers"
+#~ msgstr "Transferliste exportieren"
+
+#~ msgid "&New Download..."
+#~ msgstr "&Neuer Download ..."
+
+#~ msgid "&Import Transfers..."
+#~ msgstr "Transferliste &importieren ..."
+
+#~ msgid "&Export Transfers List..."
+#~ msgstr "Transferliste e&xportieren ..."
+
+#~ msgid "&Export Transfers as Plain Text..."
+#~ msgstr "Transferliste als &Text exportieren ..."
+
+#~ msgid "&Create a Metalink"
+#~ msgstr "Einen &Metalink erstellen"
+
+#~ msgid "Top Priority"
+#~ msgstr "Höchste Priorität"
+
+#~ msgid "Least Priority"
+#~ msgstr "Niedrigste Priorität"
+
+#~ msgid "Increase Priority"
+#~ msgstr "Priorität erhöhen"
+
+#~ msgid "Decrease Priority"
+#~ msgstr "Priorität verringern"
+
+#~ msgid "Set Icon..."
+#~ msgstr "Symbol festlegen ..."
+
+#~ msgid "Auto-Paste Mode"
+#~ msgstr "Automatisches Einfügen"
+
+#~ msgid ""
+#~ "<b>Auto paste</b> button toggles the auto-paste mode on and off.\n"
+#~ "When set, KGet will periodically scan the clipboard for URLs and paste "
+#~ "them automatically."
+#~ msgstr ""
+#~ "<b>Automatisches einfügen</b> schaltet den Modus für\n"
+#~ "automatisches Einfügen ein/aus.\n"
+#~ "\n"
+#~ "Ist diese Einstellung aktiviert, durchsucht KGet die Zwischenablage in\n"
+#~ "regelmäßigen Abständen nach Adressen (URLs) und fügt diese automatisch "
+#~ "zum Herunterladen ein."
+
+#~ msgid "Use KGet as Konqueror Download Manager"
+#~ msgstr "KGet als Download-Verwaltung für Konqueror verwenden"
+
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Remove Selected"
+#~ msgstr "Ausgewählte entfernen"
+
+#~ msgctxt "delete all finished transfers"
+#~ msgid "Remove All Finished"
+#~ msgstr "Alle abgeschlossenen entfernen"
+
+#~ msgctxt "redownload selected transfer item"
+#~ msgid "Redownload Selected"
+#~ msgstr "Ausgewählte erneut herunterladen"
+
+#~ msgid "Start / Resume All"
+#~ msgstr "Alle starten / wiederaufnehmen"
+
+#~ msgid "Start / Resume Selected"
+#~ msgstr "Ausgewählte starten / wiederaufnehmen"
+
+#~ msgid "Stop All"
+#~ msgstr "Alle anhalten"
+
+#~ msgid "Stop Selected"
+#~ msgstr "Ausgewählte anhalten"
+
+#~ msgid "Start / Resume"
+#~ msgstr "Starten / Wiederaufnehmen"
+
+#~ msgid "Stop"
+#~ msgstr "Anhalten"
+
+#~ msgid "Remove"
+#~ msgstr "Entfernen"
+
+#~ msgid "Open Destination"
+#~ msgstr "Zielordner öffnen"
+
+#~ msgid "Open File"
+#~ msgstr "Datei öffnen"
+
+#~ msgid "Show Details"
+#~ msgstr "Details anzeigen"
+
+#~ msgid "Copy URL to Clipboard"
+#~ msgstr "Adresse in die Zwischenablage kopieren"
+
+#~ msgid "&Transfer History"
+#~ msgstr "&Transfer-Verlauf"
+
+#~ msgid "&Group Settings"
+#~ msgstr "&Gruppen-Einstellungen"
+
+#~ msgid "&Transfer Settings"
+#~ msgstr "&Transfer-Einstellungen"
+
+#~ msgid "Import &Links..."
+#~ msgstr "Verknüpfungen &importieren ..."
+
+#~ msgid ""
+#~ "This is the first time you have run KGet.\n"
+#~ "Would you like to enable KGet as the download manager for Konqueror?"
+#~ msgstr ""
+#~ "Sie benutzen KGet das erste Mal.\n"
+#~ "Soll KGet als Download-Verwaltung in Konqueror eingebunden werden?"
+
+#~ msgid "Konqueror Integration"
+#~ msgstr "Einbindung in Konqueror"
+
+#~ msgid "Enable"
+#~ msgstr "Einbinden"
+
+#~ msgid "Do Not Enable"
+#~ msgstr "Nicht einbinden"
+
+#~ msgid "All Openable Files"
+#~ msgstr "Alle unterstützten Dateien"
+
+#~ msgctxt "window title including overall download progress in percent"
+#~ msgid "KGet - %1%"
+#~ msgstr "KGet – %1 %"
+
+#~ msgid ""
+#~ "Some transfers are still running.\n"
+#~ "Are you sure you want to close KGet?"
+#~ msgstr ""
+#~ "Es sind noch Downloads aktiv.\n"
+#~ "Soll KGet wirklich beendet werden?"
+
+#~ msgid "Confirm Quit"
+#~ msgstr "Beenden bestätigen"
+
+#~ msgid "Enter Group Name"
+#~ msgstr "Gruppennamen eingeben"
+
+#~ msgid "Group name:"
+#~ msgstr "Gruppenname:"
+
+#~ msgid "Are you sure you want to delete the selected transfer?"
+#~ msgid_plural "Are you sure you want to delete the selected transfers?"
+#~ msgstr[0] ""
+#~ "Sind Sie sicher, dass Sie den ausgewählten Transfer entfernen möchten?"
+#~ msgstr[1] ""
+#~ "Sind Sie sicher, dass Sie die ausgewählten Transfers entfernen möchten?"
+
+#~ msgid "Confirm transfer delete"
+#~ msgstr "Entfernen des Transfers bestätigen"
+
+#~ msgid ""
+#~ "KGet has been temporarily disabled as download manager for Konqueror. If "
+#~ "you want to disable it forever, go to Settings->Advanced and disable "
+#~ "\"Use as download manager for Konqueror\"."
+#~ msgstr ""
+#~ "Die KGet-Download-Verwaltung für Konqueror wurde vorübergehend "
+#~ "deaktiviert. Wenn Sie KGet dauerhaft deaktivieren möchten, ist dies unter "
+#~ "„Einstellungen -> Erweitert“ möglich, indem Sie das Ankreuzfeld „KGet als "
+#~ "Download-Verwaltung für Konqueror verwenden“ deaktivieren."
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Panagiotis Papadopoulos,Thomas Reitelbach"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "pano_90@gmx.net,tr@erdfunkstelle.de"
+
+#~ msgid "Checksums"
+#~ msgstr "Prüfsummen"
+
+#~ msgid "Automatic verification:"
+#~ msgstr "Automatische Verifizierung:"
+
+#~ msgid "Weak (fastest)"
+#~ msgstr "Schwach (schnellste)"
+
+#~ msgid "Strong (recommended)"
+#~ msgstr "Stark (empfohlen)"
+
+#~ msgid "Strongest (slowest)"
+#~ msgstr "Stärkste (langsamste)"
+
+#~ msgid "Used checksum:"
+#~ msgstr "Zu verwendende Prüfsumme:"
+
+#~ msgid "Signature"
+#~ msgstr "Signatur"
+
+#~ msgid "Automatic verification"
+#~ msgstr "Automatische Verifizierung"
+
+#~ msgid "Automatic downloading of missing keys"
+#~ msgstr "Automatisches Herunterladen fehlender Signaturschlüssel"
+
+#~ msgid "Keyservers:"
+#~ msgstr "Schlüsselserver:"
+
+#~ msgid "Move &Up"
+#~ msgstr "Nach &oben"
+
+#~ msgid "Move &Down"
+#~ msgstr "Nach &unten"
+
+#~ msgid "Use default folders for groups as suggestion"
+#~ msgstr "Standardordner der Gruppen als Vorschlag verwenden"
+
+#~ msgid "Rename"
+#~ msgstr "Umbenennen"
+
+#~ msgid "Select Icon..."
+#~ msgstr "Symbol auswählen ..."
+
+#~ msgid "Limit Maximum Downloads Per Group"
+#~ msgstr "Maximale Anzahl an Downloads pro Gruppe festlegen"
+
+#~ msgid "Number of downloads:"
+#~ msgstr "Anzahl an gleichzeitigen Downloads:"
+
+#~ msgid "Downloads from the same server:"
+#~ msgstr "Downloads vom gleichen Server:"
+
+#~ msgid "Speed Limit"
+#~ msgstr "Geschwindigkeitsbeschränkung"
+
+#~ msgid "Global download limit:"
+#~ msgstr "Globale Downloadbegrenzung:"
+
+#~ msgid " KiB/s"
+#~ msgstr " KiB/s"
+
+#~ msgid "Global upload limit:"
+#~ msgstr "Globale Uploadbegrenzung:"
+
+#~ msgid "Per transfer:"
+#~ msgstr "Pro Transfer:"
+
+#~ msgid "Reconnect on Error or Broken Connection"
+#~ msgstr "Bei abgebrochenen Verbindungen erneut verbinden"
+
+#~ msgid "Number of retries:"
+#~ msgstr "Versuche:"
+
+#~ msgid "Retry after:"
+#~ msgstr "Erneut verbinden nach:"
+
+#~ msgid " sec"
+#~ msgstr " Sek."
+
+#~ msgid "After Completing Downloads"
+#~ msgstr "Nach Abschluss der Downloads"
+
+#~ msgid "Auto shutdown"
+#~ msgstr "Rechner ausschalten"
+
+#~ msgid "Auto disconnect"
+#~ msgstr "Verbindung automatisch trennen"
+
+#~ msgid "Enable Web Interface"
+#~ msgstr "Web-Oberfläche aktivieren"
+
+#~ msgid "Port:"
+#~ msgstr "Port:"
+
+#~ msgid "User:"
+#~ msgstr "Benutzer:"
+
+#~ msgid "Password:"
+#~ msgstr "Passwort:"
+
+#~ msgid "Startup"
+#~ msgstr "Start"
+
+#~ msgid "Show splashscreen"
+#~ msgstr "Startbildschirm anzeigen"
+
+#~ msgid "Enable animations"
+#~ msgstr "Animationen aktivieren"
+
+#~ msgid "Enable popup tooltip"
+#~ msgstr "Kurzinfos aktivieren"
+
+#~ msgid "Show drop target"
+#~ msgstr "Zielfeld anzeigen"
+
+#~ msgid "Disable confirmation dialogs (less verbosity)"
+#~ msgstr "Bestätigungsfenster abschalten (weniger gesprächig)"
+
+#~ msgid "Enable system tray icon"
+#~ msgstr "Symbol in der Kontrollleiste anzeigen"
+
+#~ msgid "Execute action after all downloads have been finished:"
+#~ msgstr "Nach Abschluss aller Transfers folgende Aktion ausführen:"
+
+#~ msgid "At startup:"
+#~ msgstr "Beim Start:"
+
+#~ msgid "Restore Download State"
+#~ msgstr "Downloadstatus wiederherstellen"
+
+#~ msgid "Start All Downloads"
+#~ msgstr "Alle Downloads starten"
+
+#~ msgid "Stop All Downloads"
+#~ msgstr "Alle Downloads anhalten"
+
+#~ msgid "History"
+#~ msgstr "Verlauf"
+
+#~ msgid "History backend:"
+#~ msgstr "Verlaufsmodul:"
+
+#~ msgid "Enable KDE global progress tracking"
+#~ msgstr "Globale Fortschrittsanzeige von KDE aktivieren"
+
+#~ msgid "Show every single download "
+#~ msgstr "Jeden einzelnen Download anzeigen"
+
+#~ msgid "Show overall progress"
+#~ msgstr "Gesamtfortschritt anzeigen"
+
+#~ msgid "Use as download manager for Konqueror:"
+#~ msgstr "Als Download-Verwaltung für Konqueror verwenden"
+
+#~ msgid "Monitor clipboard for files to download"
+#~ msgstr "Zwischenablage auf Dateien zum Herunterladen überwachen"
+
+#~ msgid "Case insensitive:"
+#~ msgstr "Groß-/Kleinschreibung ignorieren:"
+
+#~ msgid "Search Engines"
+#~ msgstr "Suchmaschinen"
+
+#~ msgid "Engine Name"
+#~ msgstr "Name der Suchmaschine"
+
+#~ msgid "New Engine..."
+#~ msgstr "Neue Suchmaschine ..."
+
+#~ msgid "Number of connections per URL:"
+#~ msgstr "Anzahl an Verbindungen pro Adresse:"
+
+#~ msgid "Use search engines"
+#~ msgstr "Suchmaschinen verwenden"
+
+#~ msgid "Search for verification information"
+#~ msgstr "Nach Verifizierungsinformationen suchen"
+
+#~ msgid "File Settings"
+#~ msgstr "Datei-Einstellungen"
+
+#~ msgid "Filename:"
+#~ msgstr "Dateiname:"
+
+#~ msgid "Use Normalized Name"
+#~ msgstr "Normalisierten Namen verwenden"
+
+#~ msgid "Use Literal Name"
+#~ msgstr "Namen wörtlich verwenden"
+
+#~ msgid "Quality:"
+#~ msgstr "Qualität:"
+
+#~ msgid "Best Quality (.mp4)"
+#~ msgstr "Beste Qualität (.mp4)"
+
+#~ msgid "Normal Quality (.flv)"
+#~ msgstr "Normale Qualität (.flv)"
+
+#~ msgid ""
+#~ "Provide login info of your YouTube account in order to access restricted "
+#~ "media."
+#~ msgstr ""
+#~ "Geben Sie die Zugangsdaten Ihres YouTube-Kontos an, um Zugang zu "
+#~ "eingeschränkten Medien zu erlangen."
+
+#~ msgid "Login Info"
+#~ msgstr "Zugangsdaten"
+
+#~ msgid "Username:"
+#~ msgstr "Benutzername:"
+
+#~ msgid ".netrc must have a hostname called 'youtube'."
+#~ msgstr "Die Datei .netrc muss den Rechnernamen „youtube“ enthalten."
+
+#~ msgid "User .netrc file"
+#~ msgstr "Steuerdatei .netrc verwenden"
+
+#~ msgid "User Scripts"
+#~ msgstr "Benutzerskripte"
+
+#~ msgid "Path"
+#~ msgstr "Pfad"
+
+#~ msgid "RegExp"
+#~ msgstr "Reg. Ausdr."
+
+#~ msgid "New Script...."
+#~ msgstr "Neues Skript ..."
+
+#~ msgid "Edit...."
+#~ msgstr "Bearbeiten ..."
+
+#~ msgid "Configure...."
+#~ msgstr "Einrichten ..."
+
+#~ msgid "Regexp:"
+#~ msgstr "Reg. Ausdr.:"
+
+#~ msgid "Path:"
+#~ msgstr "Pfad:"
+
+#~ msgid "Description:"
+#~ msgstr "Beschreibung:"
+
+#~ msgid "Select the files you want to be downloaded."
+#~ msgstr "Wählen Sie die Dateien aus, die heruntergeladen werden sollen"
+
+#~ msgid "Number of simultaneous file downloads:"
+#~ msgstr "Anzahl an gleichzeitigen Downloads:"
+
+#~ msgid "Number of mirrors per file:"
+#~ msgstr "Anzahl an Spiegeln pro Datei:"
+
+# Halb-„Fuzzy“
+#~ msgid "Change string:"
+#~ msgstr "Änderungszeichenkette"
+
+#~ msgid "Mode:"
+#~ msgstr "Änderungsmodus:"
+
+#~ msgid "Checksum type:"
+#~ msgstr "Prüfsummentyp:"
+
+#~ msgid "Result:"
+#~ msgstr "Ergebnis:"
+
+# braucht keine Übersetzung
+#~ msgid "label"
+#~ msgstr "label"
+
+#~ msgid "Remove Tracker"
+#~ msgstr "Tracker entfernen"
+
+#~ msgid "Change Tracker"
+#~ msgstr "Tracker ändern"
+
+#~ msgid "Update Trackers"
+#~ msgstr "Tracker aktualisieren"
+
+#~ msgid "Restore Defaults"
+#~ msgstr "Standardeinstellungen wiederherstellen"
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Webseed to add to the "
+#~ "torrent.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">Note: </span>Only http webseeds are supported.</p></body></"
+#~ "html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Webseed, der zum "
+#~ "Torrent hinzugefügt werden soll.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">Hinweis: </span>Nur HTTP-Webseeds werden unterstützt.</p></"
+#~ "body></html>"
+
+#~ msgid "Add Webseed"
+#~ msgstr "Webseed hinzufügen"
+
+#~ msgid "Remove Webseed"
+#~ msgstr "Webseed entfernen"
+
+#~ msgid "Chunks"
+#~ msgstr "Blöcke"
+
+#~ msgid "Total:"
+#~ msgstr "Gesamt:"
+
+#~ msgid "Currently downloading:"
+#~ msgstr "Laufende Downloads:"
+
+#~ msgid "Downloaded:"
+#~ msgstr "Heruntergeladen:"
+
+#~ msgid "Excluded:"
+#~ msgstr "Ausgenommen:"
+
+#~ msgid "Left:"
+#~ msgstr "Verbleibend:"
+
+#~ msgid "Size:"
+#~ msgstr "Größe:"
+
+#~ msgid "Scanning data of torrent:"
+#~ msgstr "Daten des Torrents werden eingelesen:"
+
+#~ msgid "Number of chunks found:"
+#~ msgstr "Anzahl an gefundenen Blöcken:"
+
+#~ msgid "Number of chunks failed:"
+#~ msgstr "Anzahl an fehlgeschlagenen Blöcken:"
+
+#~ msgid "Number of chunks not downloaded:"
+#~ msgstr "Anzahl an nicht heruntergeladenen Blöcken:"
+
+#~ msgid "Number of chunks downloaded:"
+#~ msgstr "Anzahl an heruntergeladenen Blöcken:"
+
+#~ msgid "0"
+#~ msgstr "0"
+
+#~ msgid "Cancel"
+#~ msgstr "Abbrechen"
+
+#~ msgid "Stats"
+#~ msgstr "Statistiken"
+
+#~ msgid "Seeders:"
+#~ msgstr "Seeder:"
+
+#~ msgid "<n>"
+#~ msgstr "<n>"
+
+#~ msgid "Download speed:"
+#~ msgstr "Downloadgeschwindigkeit:"
+
+#~ msgid "Leechers:"
+#~ msgstr "Leecher:"
+
+#~ msgid "Upload speed:"
+#~ msgstr "Uploadgeschwindigkeit:"
+
+#~ msgctxt "chunks left"
+#~ msgid "Left:"
+#~ msgstr "Verbleibend:"
+
+#~ msgctxt "all chunks"
+#~ msgid "All:"
+#~ msgstr "Alle"
+
+#~ msgctxt "source-file"
+#~ msgid "Source:"
+#~ msgstr "Quelle:"
+
+#~ msgid "Saving to:"
+#~ msgstr "Speichern unter:"
+
+#~ msgid "Upload limit per transfer:"
+#~ msgstr "Uploadbegrenzung je Transfer:"
+
+#~ msgid "No Limit"
+#~ msgstr "Keine Begrenzung"
+
+#~ msgid "KiB"
+#~ msgstr "KiB"
+
+#~ msgid "Download limit per transfer:"
+#~ msgstr "Downloadbegrenzung je Transfer:"
+
+#~ msgid "Enable UTP protocol"
+#~ msgstr "UTP-Protokoll aktivieren"
+
+#~ msgid "Folders"
+#~ msgstr "Ordner"
+
+#~ msgid "Default torrent folder:"
+#~ msgstr "Torrent-Standardordner:"
+
+#~ msgid "Default temporary folder"
+#~ msgstr "Standardordner für temporäre Dateien"
+
+#~ msgid "Pre-allocate disk space"
+#~ msgstr "Speicherplatz vorbelegen"
+
+#~ msgctxt "General options."
+#~ msgid "General"
+#~ msgstr "Allgemein"
+
+#~ msgid "Create partial checksums"
+#~ msgstr "Teilprüfsummen erstellen"
+
+#~ msgid "General URL:"
+#~ msgstr "Basis-Adresse:"
+
+#~ msgid ""
+#~ "Automatically create checksums for the selected types. Keep in mind that "
+#~ "this might take a while."
+#~ msgstr ""
+#~ "Automatisch Prüfsummen für die ausgewählten Typen erstellen. Beachten "
+#~ "Sie, dass dies einige Zeit dauern kann."
+
+#~ msgid ""
+#~ "Enter URLs here if all the dropped files are on that server and in the "
+#~ "same directory. For each dropped file the URL would consist of the "
+#~ "entered part and the filename."
+#~ msgstr ""
+#~ "Geben Sie hier eine Adresse ein, wenn alle abgelegten Dateien sich auf "
+#~ "diesem Server und im gleichen Ordner befinden. Für jede abgelegte Datei "
+#~ "wird die Adresse aus dem eingegebenen Adressteil und dem Dateinamen "
+#~ "zusammengesetzt."
+
+# Fehlender Doppelpunkt kein Typo
+#~ msgid "Types of the checksums:"
+#~ msgstr "Prüfsummentypen"
+
+# Fehlender Doppelpunkt kein Typo
+#~ msgid "Create checksums:"
+#~ msgstr "Prüfsummen erstellen"
+
+#~ msgctxt "These entries are optional."
+#~ msgid "Optional"
+#~ msgstr "Optional"
+
+# Fehlender Doppelpunkt kein Typo
+#~ msgid "Optional data:"
+#~ msgstr "Optionale Informationen"
+
+#~ msgid "Enter information that all chosen files share."
+#~ msgstr ""
+#~ "Geben Sie hier die Informationen ein, die alle ausgewählten Dateien "
+#~ "gemeinsam haben."
+
+#~ msgid "Required"
+#~ msgstr "Erforderlich"
+
+#~ msgid "Used Mirrors:"
+#~ msgstr "Zu verwendende Spiegel:"
+
+#~ msgid "Recommended"
+#~ msgstr "Empfohlen"
+
+#~ msgid "File size (in bytes):"
+#~ msgstr "Dateigröße (in Bytes):"
+
+#~ msgid "0123456789"
+#~ msgstr "0123456789"
+
+#~ msgid "Verification:"
+#~ msgstr "Verifizierung:"
+
+#~ msgid "Optional"
+#~ msgstr "Optional"
+
+# Metalinks ist eine Art „Eigenname“, daher nicht übersetzt
+#~ msgid ""
+#~ "This assistant allows you to create metalinks from scratch or base them "
+#~ "on existing metalinks. A lot of the fields are optional or recommended, "
+#~ "so enter them if desired. The minimum is a save location, at least one "
+#~ "file and one URL."
+#~ msgstr ""
+#~ "Dieser Assistent ermöglicht Ihnen das Anlegen von Metalinks. Sie können "
+#~ "ganz von vorn beginnen oder eine vorhandene Verknüpfung als Kopiervorlage "
+#~ "verwenden. Viele der Felder sind optional oder empfohlen, füllen Sie sie "
+#~ "ganz nach Bedarf aus. Als Minimum müssen Sie den Speicherort und eine "
+#~ "Datei oder Adresse angeben."
+
+#~ msgid "Save created Metalink at:"
+#~ msgstr "Erstellten Metalink speichern unter:"
+
+#~ msgid "Create new Metalink"
+#~ msgstr "Einen neuen Metalink erstellen"
+
+#~ msgid "Load existing Metalink:"
+#~ msgstr "Existierenden Metalink laden:"
+
+#~ msgid "*.metalink *.meta4|Metalink file (*.metalink *.meta4)"
+#~ msgstr "*.metalink *.meta4|Metalink-Datei (*.metalink *.meta4)"
+
+# Fehlender Doppelpunkt kein Typo
+#~ msgid "General information:"
+#~ msgstr "Allgemeine Informationen"
+
+#~ msgid "Here you can enter optional general information on the metalink."
+#~ msgstr "Hier können Sie allgemeine Informationen zum Metalink eingeben."
+
+#~ msgid "Origin:"
+#~ msgstr "Herkunft:"
+
+#~ msgid "Web URL to the metalink"
+#~ msgstr "Webadresse zum Metalink"
+
+#~ msgid "Dynamic means that updated metalinks can be found at \"Origin\"."
+#~ msgstr ""
+#~ "Dynamisch bedeutet, dass aktualisierte Metalinks in der im Feld "
+#~ "„Herkunft“ angegebenen Adresse gefunden werden können."
+
+#~ msgid "Dynamic:"
+#~ msgstr "Dynamisch:"
+
+#~ msgid "Metalink published"
+#~ msgstr "Metalink veröffentlicht"
+
+#~ msgid "Date and time:"
+#~ msgstr "Datum und Zeit:"
+
+# Zeitzonen-Offset?
+#~ msgid "Timezone offset:"
+#~ msgstr "Zeitzonen-Abweichung:"
+
+# Negativer Offset?
+#~ msgid "Negative offset:"
+#~ msgstr "Negative Abweichung:"
+
+#~ msgid "Metalink updated"
+#~ msgstr "Metalink aktualisiert"
+
+# TODO: Doppelpunkt im Original hinzufügen, sobald string freeze vorbei
+#~ msgid "Identity"
+#~ msgstr "Identität:"
+
+#~ msgid "Version:"
+#~ msgstr "Version:"
+
+#~ msgid "Logo:"
+#~ msgstr "Logo:"
+
+#~ msgid "URL to the logo"
+#~ msgstr "Adresse zum Logo"
+
+#~ msgid "The language of the file"
+#~ msgstr "Die verwendete Sprache in der Datei"
+
+#~ msgid "Language:"
+#~ msgstr "Sprache:"
+
+#~ msgid "Operating systems:"
+#~ msgstr "Betriebssysteme:"
+
+#~ msgid "Supported OSes, separated with commas"
+#~ msgstr "Unterstützte Betriebssysteme, durch Kommata getrennt"
+
+#~ msgid "Copyright:"
+#~ msgstr "Copyright:"
+
+#~ msgid "Publisher:"
+#~ msgstr "Herausgeber:"
+
+#~ msgid "Name:"
+#~ msgstr "Name:"
+
+#~ msgid "publisher"
+#~ msgstr "Herausgeber"
+
+# besseres Wort für Publisher?
+#~ msgid "Name of the publisher"
+#~ msgstr "Name des Herausgebers"
+
+# besseres Wort für Publisher?
+#~ msgid "URL to the publisher"
+#~ msgstr "Adresse zum Herausgeber"
+
+#~ msgctxt "Files as in files on a server"
+#~ msgid "Files:"
+#~ msgstr "Dateien:"
+
+#~ msgid "Add local files"
+#~ msgstr "Lokale Dateien hinzufügen"
+
+#~ msgid ""
+#~ "Add at least one file. Adding local files adds a lot of information "
+#~ "automatically."
+#~ msgstr ""
+#~ "Fügen Sie mindestens eine Datei hinzu. Das Hinzufügen von lokalen Dateien "
+#~ "fügt automatisch Informationen über die Datei hinzu."
+
+#~ msgid "Adding local files..."
+#~ msgstr "Lokale Dateien werden hinzugefügt ..."
+
+#~ msgid "You need to set mirrors for the entries with an icon."
+#~ msgstr ""
+#~ "Sie müssen den mit Symbolen versehenen Einträgen Spiegel hinzufügen."
+
+#~ msgid "&File with links to import:"
+#~ msgstr "Datei mit Verknüp&fungen zum Importieren:"
+
+#~ msgid "&Import Links"
+#~ msgstr "Verknüpfungen &importieren"
+
+#~ msgid "Show:"
+#~ msgstr "Anzeigen:"
+
+#~ msgctxt "filter: show all file types"
+#~ msgid "&All"
+#~ msgstr "&Alle"
+
+#~ msgid "&Videos"
+#~ msgstr "&Videos"
+
+#~ msgid "Ima&ges"
+#~ msgstr "&Bilder"
+
+#~ msgid "A&udio"
+#~ msgstr "A&udio"
+
+#~ msgid "A&rchives"
+#~ msgstr "A&rchive"
+
+#~ msgid "You can use wildcards for filtering."
+#~ msgstr "Sie können Platzhalter im Filter verwenden."
+
+#~ msgid "Filter files here...."
+#~ msgstr "Dateien filtern ..."
+
+#~ msgid "Contains"
+#~ msgstr "Enthält"
+
+#~ msgid "Does Not Contain"
+#~ msgstr "Enthält nicht"
+
+#~ msgid "Inver&t Selection"
+#~ msgstr "Auswahl um&kehren"
+
+#~ msgctxt "Check as in mark, not as in verify"
+#~ msgid "Chec&k Selected"
+#~ msgstr "Ausgewählte &markieren"
+
+#~ msgid "Show &web content"
+#~ msgstr "&Web-Inhalt anzeigen"
+
+#~ msgid "Mirror:"
+#~ msgstr "Spiegel:"
+
+#~ msgid "Number of connections:"
+#~ msgstr "Anzahl an Verbindungen:"
+
+#~ msgid "Enter a URL"
+#~ msgstr "Geben Sie die Adresse ein"
+
+#~ msgid "Priority:"
+#~ msgstr "Priorität:"
+
+#~ msgid "Optional: The priority of the mirror, 1 highest 999999 lowest."
+#~ msgstr ""
+#~ "Optional: Die Priorität des Spiegels von 1 (höchste) bis 999999 "
+#~ "(niedrigste)."
+
+#~ msgid "Location:"
+#~ msgstr "Standort:"
+
+#~ msgid "Clear History"
+#~ msgstr "Verlauf leeren"
+
+#~ msgctxt "View modes"
+#~ msgid "View Modes"
+#~ msgstr "Ansichts-Modi"
+
+#~ msgid "Select Ranges"
+#~ msgstr "Bereiche auswählen"
+
+#~ msgid "Date"
+#~ msgstr "Datum"
+
+#~ msgid "Host"
+#~ msgstr "Rechner"
+
+#~ msgid "Filter History"
+#~ msgstr "Verlauf filtern"
+
+#~ msgctxt "delete selected transfer"
+#~ msgid "Delete Selected"
+#~ msgstr "Ausgewählte löschen"
+
+#~ msgid "Download"
+#~ msgstr "Herunterladen"
+
+# braucht keine Übersetzung
+#~ msgid "TextLabel"
+#~ msgstr "TextLabel"
+
+# Prüfsummentyp?
+#~ msgctxt "hash type as in md5t, sha1 etc."
+#~ msgid "Hash type:"
+#~ msgstr "Hash-Typ:"
+
+#~ msgctxt "hash as a hash of type md5, sha1 etc."
+#~ msgid "Hash:"
+#~ msgstr "Hash:"
+
+# Hash-Wert/die Prüfsumme?
+#~ msgid "Enter a hash key"
+#~ msgstr "Geben Sie den Hash-Schlüssel ein"
+
+#~ msgid "Status:"
+#~ msgstr "Status:"
+
+#~ msgid "Remaining Time:"
+#~ msgstr "Restzeit:"
+
+#~ msgid "Transfer Settings"
+#~ msgstr "Download-Einstellungen"
+
+#~ msgid "Download Destination:"
+#~ msgstr "Speicherort:"
+
+#~ msgctxt "No value has been set"
+#~ msgid "Not set"
+#~ msgstr "Nicht eingestellt"
+
+#~ msgid " KiB"
+#~ msgstr " KiB"
+
+#~ msgid "Upload Limit:"
+#~ msgstr "Uploadbegrenzung:"
+
+#~ msgid "Download Limit:"
+#~ msgstr "Downloadbegrenzung:"
+
+#~ msgid "Maximum Share Ratio:"
+#~ msgstr "Maximales Verteilungsverhältnis:"
+
+#~ msgid "Modify the mirrors used for downloading."
+#~ msgstr "Die für das Herunterladen zu verwendenden Spiegel bearbeiten."
+
+#~ msgctxt "The available mirrors (servers) for downloading"
+#~ msgid "Mirrors"
+#~ msgstr "Spiegel"
+
+#~ msgctxt "verification of the download (e.g. by using MD5)"
+#~ msgid "Verification"
+#~ msgstr "Verifizierung"
+
+#~ msgid "PGP signature:"
+#~ msgstr "PGP-Signatur:"
+
+#~ msgid "Key"
+#~ msgstr "Schlüssel"
+
+#~ msgid "Issuer:"
+#~ msgstr "Ausgestellt durch:"
+
+#~ msgid "E-Mail:"
+#~ msgstr "E-Mail:"
+
+#~ msgid "Comment:"
+#~ msgstr "Kommentar:"
+
+#~ msgid "Creation:"
+#~ msgstr "Erstellung:"
+
+#~ msgid "Expiration:"
+#~ msgstr "Ablaufdatum:"
+
+#~ msgid "Trust:"
+#~ msgstr "Vertrauenswürdigkeit:"
+
+#~ msgid "Fingerprint:"
+#~ msgstr "Fingerabdruck:"
+
+#~ msgid "Verify"
+#~ msgstr "Verifizieren"
+
+#~ msgid "Group Settings"
+#~ msgstr "Gruppen-Einstellungen"
+
+#~ msgid "Default folder:"
+#~ msgstr "Standardordner:"
+
+#~ msgid "Moves all transfers with the regular expression to this group"
+#~ msgstr ""
+#~ "Verschiebt alle Transfers, die dem regulären Ausdruck entsprechen, in "
+#~ "diese Gruppe."
+
+#~ msgid "Regular expression:"
+#~ msgstr "Regulärer Ausdruck:"
+
+#~ msgid "*movies*"
+#~ msgstr "*filme*"
+
+#~ msgid "Maximum download speed:"
+#~ msgstr "Maximale Downloadgeschwindigkeit:"
+
+#~ msgid "Maximum upload speed:"
+#~ msgstr "Maximale Uploadgeschwindigkeit:"
+
+#~ msgid "Destination:"
+#~ msgstr "Ziel:"
+
+#~ msgid "Transfer group:"
+#~ msgstr "Transfer-Gruppe:"
+
+#~ msgid "Verify the finished download with the selected checksum."
+#~ msgstr ""
+#~ "Den abgeschlossenen Download mit der ausgewählten Prüfsumme verifizieren."
+
+#~ msgid "&Verify"
+#~ msgstr "&Verifizieren"
+
+#~ msgid "Verifying:"
+#~ msgstr "Verifizierung läuft:"
+
+#~ msgid "&File"
+#~ msgstr "&Datei"
+
+#~ msgid "&Downloads"
+#~ msgstr "&Downloads"
+
+#~ msgid "&Settings"
+#~ msgstr "&Einstellungen"
+
+#~ msgid "&Help"
+#~ msgstr "&Hilfe"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Haupt-Werkzeugleiste"
+
+#~ msgid "Sets to show the splashscreen while KGet is loading"
+#~ msgstr ""
+#~ "Stellt ein, ob der Startbildschirm angezeigt wird während KGet lädt."
+
+#~ msgid "The width of the columns in the history view"
+#~ msgstr "Spaltenbreite in der Verlaufsansicht"
+
+#~ msgid "List of the available search engines"
+#~ msgstr "Liste der verfügbaren Suchmaschinen"
+
+#~ msgid "List of the available search engine URLs"
+#~ msgstr "Liste der Adressen der verfügbaren Suchmaschinen"
+
+#~ msgid "List of the Regexp to match input URL"
+#~ msgstr ""
+#~ "Liste der regulären Ausdrücke, die auf die eingegebene Adresse passen"
+
+#~ msgid "List of descriptions for user scripts"
+#~ msgstr "Liste von Beschreibungen der Benutzerskripte"
+
+#~ msgid "List of whether the script is enabled"
+#~ msgstr "Liste der Angabe, ob das Skript aktiviert ist"
+
+#~ msgid "There are no links in the active frame of the current HTML page."
+#~ msgstr ""
+#~ "Im aktiven Rahmen der aktuellen HTML-Seite befinden sich keine "
+#~ "Verknüpfungen."
+
+# braucht keine Übersetzung
+#~ msgid "Form"
+#~ msgstr "Form"
+
+#~ msgid "An error occurred...."
+#~ msgstr "Ein Fehler ist aufgetreten ..."
+
+#~ msgid "Remove Tag"
+#~ msgstr "Stichwort entfernen"
+
+#~ msgid "Add Tag"
+#~ msgstr "Stichwort hinzufügen"
+
+#~ msgid "Tag Settings for the groups"
+#~ msgstr "Stichwort-Einstellungen für Gruppen"
+
+#~ msgid "Tag Settings"
+#~ msgstr "Stichwort-Einstellungen"
+
+#~ msgid "Available tags:"
+#~ msgstr "Verfügbare Stichworte:"
+
+#~ msgid "Used tags:"
+#~ msgstr "Benutzte Stichwörter:"
+
+#~ msgid "Enter a new Tag"
+#~ msgstr "Neues Stichwort eingeben"
+
+#~ msgid "Enter a new tag"
+#~ msgstr "Neues Stichwort eingeben"
+
+#~ msgid "Modify Tags..."
+#~ msgstr "Stichwörter bearbeiten ..."
+
+#~ msgid "Unable to continue: KGet cannot download using this protocol."
+#~ msgstr ""
+#~ "Fortfahren nicht möglich: KGet kann mit diesem Protokoll nicht "
+#~ "herunterladen."
+
+#~ msgid "The width of the columns in the main view"
+#~ msgstr "Spaltenbreite in der Hauptansicht"
+
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#~ msgid "Announcing"
+#~ msgstr "Anmelden"
+
+#~ msgid "Error: %1"
+#~ msgstr "Fehler: %1"
+
+#~ msgid "Unknown client"
+#~ msgstr "Unbekannter Client"
+
+#~ msgid "1 day "
+#~ msgid_plural "%1 days "
+#~ msgstr[0] "1 Tag"
+#~ msgstr[1] "%1 Tage"
+
+#~ msgid "Cannot open log file %1 : %2"
+#~ msgstr "Die Protokolldatei %1 lässt sich nicht öffnen: %2"
+
+#~ msgid "Cannot write to %1 : %2"
+#~ msgstr "Die Datei %1 kann nicht geschrieben werden: %2"
+
+#~ msgid "Cannot read from %1"
+#~ msgstr "Aus Datei %1 kann nicht gelesen werden"
+
+#~ msgid "Cannot create directory %1"
+#~ msgstr "Der Ordner %1 lässt sich nicht erstellen"
+
+#~ msgid "Cannot symlink %1 to %2: %3"
+#~ msgstr ""
+#~ "Die Symbolische Verknüpfung von %1 zu %2 lässt sich nicht erstellen: %3"
+
+#~ msgid "Cannot move %1 to %2: %3"
+#~ msgstr "Verschieben von %1 nach %2 ist nicht möglich: %3"
+
+#~ msgid "Cannot copy %1 to %2: %3"
+#~ msgstr "Kopieren von %1 nach %2 ist nicht möglich: %3"
+
+#~ msgid "Cannot delete %1: %2"
+#~ msgstr "Löschen von %1 ist nicht möglich: %2"
+
+#~ msgid "Cannot create %1: %2"
+#~ msgstr "Erstellen von %1 ist nicht möglich: %2"
+
+#~ msgid "Cannot calculate the filesize of %1: %2"
+#~ msgstr "Die Größe der Datei %1 kann nicht berechnet werden: %2"
+
+#~ msgid "Cannot calculate the filesize : %1"
+#~ msgstr "Die Dateigröße kann nicht berechnet werden: %1"
+
+#~ msgid "Cannot open %1 : %2"
+#~ msgstr "Die Datei %1 lässt sich nicht öffnen: %2"
+
+#~ msgid "Cannot expand file: %1"
+#~ msgstr "Die Datei kann nicht expandiert werden: %1"
+
+#~ msgid "Cannot seek in file : %1"
+#~ msgstr "In der Datei kann nicht gesucht werden: %1"
+
+#~ msgid "General"
+#~ msgstr "Allgemein"
+
+#~ msgid "Connections"
+#~ msgstr "Verbindungen"
+
+#~ msgid "Tracker"
+#~ msgstr "Tracker"
+
+#~ msgid "Disk Input/Output"
+#~ msgstr "Disk-Eingabe/Ausgabe"
+
+#~ msgid "Not connected"
+#~ msgstr "Nicht verbunden"
+
+#~ msgid "Not in use"
+#~ msgstr "Nicht in Benutzung"
+
+#~ msgid "Connection closed"
+#~ msgstr "Verbindung beendet"
+
+#~ msgid "Resolving proxy %1:%2"
+#~ msgstr "Proxy %1:%2 wird aufgelöst"
+
+#~ msgid "Resolving hostname %1"
+#~ msgstr "Rechnername %1 wird aufgelöst"
+
+#~ msgid "Error: request failed: %1"
+#~ msgstr "Fehler: Anfrage fehlgeschlagen: %1"
+
+#~ msgid "Connected"
+#~ msgstr "Verbunden"
+
+#~ msgid "Error: Failed to connect to webseed"
+#~ msgstr "Fehler: Verbindung zum Webseed fehlgeschlagen"
+
+#~ msgid "Connecting"
+#~ msgstr "Verbindungsaufbau"
+
+#~ msgid "Failed to connect to webseed"
+#~ msgstr "Verbindung zum Webseed fehlgeschlagen"
+
+#~ msgid "Failed to resolve hostname of webseed"
+#~ msgstr "Der Rechnername des Webseeds wurde nicht gefunden"
+
+#~ msgid "Error: failed to connect, server not responding"
+#~ msgstr "Fehler: Verbindung fehlgeschlagen, Server antwortet nicht"
+
+#~ msgid "Error: request timed out"
+#~ msgstr "Fehler: Zeitüberschreitung der Anfrage"
+
+#~ msgid "Redirected without a new location."
+#~ msgstr "Ohne neue Adresse umgeleitet."
+
+#~ msgid "1 peer"
+#~ msgid_plural "%1 peers"
+#~ msgstr[0] "1 Gegenstelle"
+#~ msgstr[1] "%1 Gegenstellen"
+
+#~ msgid "Illegal token: %1"
+#~ msgstr "Ungültiges Zeichen: %1"
+
+#~ msgid "Decode error"
+#~ msgstr "Dekodierungsfehler"
+
+#~ msgid "Unexpected end of input"
+#~ msgstr "Unerwartetes Ende der Eingabe"
+
+#~ msgid "Cannot convert %1 to an int"
+#~ msgstr "%1 kann nicht nach int umgewandelt werden"
+
+#~ msgid "Torrent is incomplete."
+#~ msgstr "Der Torrent ist unvollständig."
+
+#~ msgid "Failed to open %1 : %2"
+#~ msgstr "Datei %1 lässt sich nicht öffnen: %2"
+
+#~ msgid "Failed to create %1 : %2"
+#~ msgstr "%1 kann nicht erstellt werden: %2"
+
+#~ msgid "Cannot open index file %1 : %2"
+#~ msgstr "Indexdatei %1 kann nicht geöffnet werden: %2"
+
+#~ msgid "Cannot create file %1 : %2"
+#~ msgstr "Datei %1 kann nicht erstellt werden: %2"
+
+#~ msgid "Failed to write first chunk to DND file : %1"
+#~ msgstr "Schreiben des ersten Blocks in DND-Datei fehlgeschlagen: %1"
+
+#~ msgid "Failed to write last chunk to DND file : %1"
+#~ msgstr "Schreiben des letzten Blocks in DND-Datei fehlgeschlagen: %1"
+
+#~ msgid "Cannot open %1 for writing : readonly filesystem"
+#~ msgstr "%1 kann nicht zum Schreiben geöffnet werden: Nur-Lesen-Dateisystem"
+
+#~ msgid "Cannot expand file %1 : %2"
+#~ msgstr "Die Datei %1 kann nicht expandiert werden: %2"
+
+#~ msgid "Error : Reading past the end of the file %1"
+#~ msgstr "Fehler: Das Ende der Datei %1 kann nicht gelesen werden"
+
+#~ msgid "Failed to seek file %1 : %2"
+#~ msgstr "Suchen in Datei %1 nicht möglich: %2"
+
+#~ msgid "Error reading from %1"
+#~ msgstr "Fehler beim Lesen der Datei %1"
+
+#~ msgid "Failed to write to file %1 : %2"
+#~ msgstr "Fehler beim Schreiben in Datei %1: %2"
+
+#~ msgid "Cannot preallocate diskspace : %1"
+#~ msgstr ""
+#~ "Der benötigte Speicherplatz kann auf dem Medium nicht reserviert werden: "
+#~ "%1"
+
+#~ msgid "Cannot open file %1 : %2"
+#~ msgstr "Die Datei %1 lässt sich nicht öffnen: %2"
+
+#~ msgid "Corrupted torrent."
+#~ msgstr "Die Torrent-Datei ist beschädigt."
+
+#~ msgid " Unable to open torrent file %1 : %2"
+#~ msgstr "Torrent-Datei %1 kann nicht geöffnet werden: %2"
+
+#~ msgid "Parse Error"
+#~ msgstr "Lesefehler"
+
+#~ msgid ""
+#~ "An error occurred while loading the torrent <b>%1</b>:<br/><b>%2</b><br/"
+#~ ">The torrent is probably corrupt or is not a valid torrent file."
+#~ msgstr ""
+#~ "Beim Laden des Torrents <b>%1</b> ist ein Fehler aufgetreten:<br/><b>%2</"
+#~ "b><br/>Der Torrent ist möglicherweise beschädigt oder es handelt sich "
+#~ "nicht um eine gültige Torrent-Datei."
+
+#~ msgid ""
+#~ "An error occurred while loading the torrent:<br/><b>%1</b><br/>The "
+#~ "torrent is probably corrupt or is not a valid torrent file."
+#~ msgstr ""
+#~ "Beim Laden des Torrents<br /><b>%1</b><br />ist ein Fehler aufgetreten."
+#~ "Der Torrent ist möglicherweise beschädigt oder es handelt sich nicht um "
+#~ "eine gültige Torrent-Datei."
+
+#~ msgid "Unable to create %1 : %2"
+#~ msgstr "%1 kann nicht erstellt werden: %2"
+
+#~ msgid ""
+#~ "You are already downloading this torrent %1, the list of trackers of both "
+#~ "torrents has been merged."
+#~ msgstr ""
+#~ "Sie laden den Torrent %1 bereits herunter. Die Trackerliste beider "
+#~ "Torrents wurde zusammengeführt."
+
+#~ msgid "You are already downloading the torrent %1"
+#~ msgstr "Sie laden den Torrent %1 bereits herunter."
+
+#~ msgid "Not started"
+#~ msgstr "Nicht gestartet"
+
+#~ msgid "Seeding completed"
+#~ msgstr "Verteilen beendet"
+
+#~ msgctxt "Status of a torrent file"
+#~ msgid "Seeding"
+#~ msgstr "Verteilen"
+
+#~ msgid "Downloading"
+#~ msgstr "Herunterladen"
+
+#~ msgid "Stopped"
+#~ msgstr "Angehalten"
+
+#~ msgid "Allocating diskspace"
+#~ msgstr "Speicherplatz wird belegt"
+
+#~ msgid "Queued for seeding"
+#~ msgstr "In Upload-Warteschlange eingereiht"
+
+#~ msgid "Queued for downloading"
+#~ msgstr "In Download-Warteschlange eingereiht"
+
+#~ msgid "Checking data"
+#~ msgstr "Daten werden geprüft"
+
+#~ msgid "Stopped. No space left on device."
+#~ msgstr "Angehalten. Auf dem Medium ist kein Speicherplatz mehr verfügbar."
+
+#~ msgid "Cannot open file %1: %2"
+#~ msgstr "Die Datei %1 lässt sich nicht öffnen: %2"
+
+#~ msgid "Cannot create index file: %1"
+#~ msgstr "Die Indexdatei %1 lässt sich nicht erstellen."
+
+#~ msgid "Redirect without a redirect location"
+#~ msgstr "Umleitung ohne Zieladresse"
+
+#~ msgid "Timeout contacting tracker %1"
+#~ msgstr "Zeitüberschreitung beim Verbinden mit Tracker %1"
+
+#~ msgid "Unable to resolve hostname %1"
+#~ msgstr "Der Rechnername %1 wurde nicht gefunden"
+
+#~ msgid "Cannot bind to udp port %1 or the 10 following ports."
+#~ msgstr ""
+#~ "Der UDP-Port %1 und die 10 darauf folgenden Ports können nicht verwendet "
+#~ "werden."
+
+#~ msgid "Invalid response from tracker"
+#~ msgstr "Ungültige Antwort vom Tracker"
+
+#~ msgid "Invalid data from tracker"
+#~ msgstr "Ungültige Daten vom Tracker"
+
+#~ msgid "Invalid tracker URL"
+#~ msgstr "Ungültige Tracker-Adresse"
+
+#~ msgid "Cannot open file : %1 : %2"
+#~ msgstr "Die Datei %1 lässt sich nicht öffnen: %2"
+
+#~ msgid ""
+#~ "Another group with this name already exists. Please select a different "
+#~ "name."
+#~ msgstr ""
+#~ "Eine Gruppe dieses Namens existiert bereits. Bitte wählen Sie einen "
+#~ "anderen Namen."
+
+#~ msgid "Group Name Already in Use"
+#~ msgstr "Gruppenname bereits in Verwendung"
+
+#~ msgid "Add"
+#~ msgstr "Hinzufügen"
+
+#~ msgid "Delete"
+#~ msgstr "Löschen"
+
+#~ msgid "Configure..."
+#~ msgstr "Einrichten ..."
+
+#~ msgid "Details for: %1"
+#~ msgstr "Details für: %1"
+
+#~ msgid "All downloads"
+#~ msgstr "Alle Downloads"
+
+#~ msgid "Finished downloads"
+#~ msgstr "Abgeschlossene Downloads"
+
+#~ msgid "Transfers:"
+#~ msgstr "Transfers:"
+
+#~ msgid "Downloads"
+#~ msgstr "Downloads"
+
+#~ msgid "Transfer details:"
+#~ msgstr "Transfer-Details:"
+
+#~ msgid "Transfer List"
+#~ msgstr "Transferliste"
+
+#~ msgid "Expandable transfer details instead of separate tabs"
+#~ msgstr "Aufklappbare Transferdetails anstelle separater Unterfenster"
+
+#~ msgid "Threads"
+#~ msgstr "Threads"
+
+#~ msgid "Number of threads:"
+#~ msgstr "Anzahl an Threads:"
+
+#~ msgid "Preference:"
+#~ msgstr "Priorität:"
+
+#~ msgid "License:"
+#~ msgstr "Lizenz:"
+
+#~ msgid "Name of the license"
+#~ msgstr "Name der Lizenz"
+
+#~ msgid "URL to the license"
+#~ msgstr "Adresse zur Lizenz"
+
+#~ msgctxt "The transfer is delayed"
+#~ msgid "Delayed"
+#~ msgstr "Aufgeschoben"
+
+#~ msgid ""
+#~ "Destination file \n"
+#~ "%1\n"
+#~ "already exists.\n"
+#~ "Do you want to overwrite it?"
+#~ msgstr ""
+#~ "Die Zieldatei\n"
+#~ "%1\n"
+#~ "existiert bereits.\n"
+#~ "Soll die Datei überschrieben werden?"
+
+#~ msgid "Overwrite destination"
+#~ msgstr "Ziel überschreiben"
+
+#~ msgid "Cannot remove torrent default tracker."
+#~ msgstr "Der vorgegebene Tracker kann nicht entfernt werden."
+
+#~ msgid "You cannot add trackers to a private torrent"
+#~ msgstr "Sie können keine Tracker zu privaten Torrents hinzufügen"
+
+#~ msgid "Cannot migrate %1 : %2"
+#~ msgstr "%1 kann nicht migriert werden: %2"
+
+#~ msgid ""
+#~ "The torrent %1 was started with a previous version of KTorrent. To make "
+#~ "sure this torrent still works with this version of KTorrent, we will "
+#~ "migrate this torrent. You will be asked for a location to save the "
+#~ "torrent to. If you press cancel, we will select your home directory."
+#~ msgstr ""
+#~ "Der Torrent %1 wurde mit einer früheren Version von KTorrent gestartet. "
+#~ "Um sicherzustellen, dass dieser Torrent auch mit dieser Version von "
+#~ "KTorrent funktioniert, wird er migriert. Sie werden nach einem "
+#~ "Speicherort für den Torrent gefragt. Wenn Sie Abbrechen drücken, wird "
+#~ "automatisch Ihr persönlicher Ordner dazu verwendet."
+
+#~ msgid "Select Folder to Save To"
+#~ msgstr "Bitte den Zielordner zum Speichern wählen"
+
+#~ msgid "Queued"
+#~ msgstr "Eingereiht"
+
+#~ msgid "Current Tracker"
+#~ msgstr "Aktueller Tracker"
+
+#~ msgid "Manual Announce"
+#~ msgstr "Manuelle Bekanntmachung"
+
+#~ msgid "Scrape"
+#~ msgstr "Tracker aktualisieren"
+
+#~ msgid "Available Trackers"
+#~ msgstr "Verfügbare Tracker"
+
+#~ msgid "Url:"
+#~ msgstr "Adresse:"

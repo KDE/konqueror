@@ -1,0 +1,4117 @@
+# translation of konqueror.po to Irish
+# Copyright (C) 2002,2003 Free Software Foundation, Inc.
+# Seamus O Ciardhuain <seoc@cnds.ucd.ie>, 2003
+# Kevin Scannell <kscanne@gmail.com>, 2009
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-22 00:44+0000\n"
+"PO-Revision-Date: 2004-12-03 14:52-0500\n"
+"Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
+"Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
+"Language: ga\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.1\n"
+"Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n < 11 ? "
+"3 : 4\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Séamus Ó Ciardhuáin,Kevin Scannell"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "seoc@iolfree.ie,kscanne@gmail.com"
+
+#: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4881
+#: src/konqmainwindow.cpp:4927
+#, kde-format
+msgid "no name"
+msgstr "gan ainm"
+
+#: src/konqextensionmanager.cpp:50
+#, fuzzy, kde-format
+#| msgid "Configure Extensions..."
+msgctxt "@title:window"
+msgid "Configure Extensions"
+msgstr "Cumraigh Eisínteachtaí..."
+
+#: src/konqextensionmanager.cpp:70
+#, kde-format
+msgid "Extensions"
+msgstr "Eisínteachtaí"
+
+#: src/konqfactory.cpp:67
+#, kde-format
+msgid ""
+"There was an error loading the module %1.\n"
+"The diagnostics is:\n"
+"%2"
+msgstr ""
+"Tharla earráid agus modúl %1 á luchtú.\n"
+"Teachtaireacht:\n"
+"%2"
+
+#: src/konqframestatusbar.cpp:108
+#, kde-format
+msgid ""
+"Checking this box on at least two views sets those views as 'linked'. Then, "
+"when you change directories in one view, the other views linked with it will "
+"automatically update to show the current directory. This is especially "
+"useful with different types of views, such as a directory tree with an icon "
+"view or detailed view, and possibly a terminal emulator window."
+msgstr ""
+"Má chuireann tú tic sa bhosca seo do dhá amharc ar a laghad, beidh na "
+"hamhairc sin 'nasctha'. Tar éis sin, nuair a athraíonn tú an chomhadlann in "
+"amharc amháin, nuashonraítear gach amharc atá nasctha leis go huathoibríoch "
+"leis an gcomhadlann reatha. Rogha áisiúil é seo le cineálacha difriúla "
+"d'amhairc go háirithe, mar shampla crann comhadlainne le hamharc deilbhíní "
+"nó amharc mionsonraithe, agus b'fhéidir fuinneog ina bhfuil aithriseoir "
+"teirminéil."
+
+#: src/konqframestatusbar.cpp:154
+#, kde-format
+msgid "Close View"
+msgstr "Dún an tAmharc"
+
+#: src/konqframestatusbar.cpp:232
+#, kde-format
+msgid "%1/s"
+msgstr "%1/s"
+
+#: src/konqframestatusbar.cpp:234
+#, kde-format
+msgid "Stalled"
+msgstr "Ag fanacht"
+
+#: src/konqguiclients.cpp:51
+#, kde-format
+msgid "Preview &in %1"
+msgstr "Réamhamharc &i %1"
+
+#: src/konqguiclients.cpp:118
+#, kde-format
+msgid "Show %1"
+msgstr "Taispeáin %1"
+
+#: src/konqhistorydialog.cpp:39
+#, kde-format
+msgctxt "@title:window"
+msgid "History"
+msgstr "Stair"
+
+#: src/konqhistorydialog.cpp:55 src/konqhistoryview.cpp:140
+#, kde-format
+msgctxt "@action:inmenu Parent of 'By Name' and 'By Date'"
+msgid "Sort"
+msgstr "Sórtáil"
+
+#: src/konqhistorymodel.cpp:119
+#, kde-format
+msgid ""
+"<qt><center><b>%1</b></center><hr />Last visited: %2<br />First visited: "
+"%3<br />Number of times visited: %4</qt>"
+msgstr ""
+"<qt><center><b>%1</b></center><hr />An chuairt is deireanaí: %2<br />An "
+"chéad chuairt: %3<br />Líon na gcuairteanna: %4</qt>"
+
+#: src/konqhistorymodel.cpp:213
+#, kde-format
+msgid "Local"
+msgstr "Logánta"
+
+#: src/konqhistorymodel.cpp:216
+#, kde-format
+msgid "Miscellaneous"
+msgstr "Rudaí éagsúla"
+
+#: src/konqhistoryview.cpp:53 src/konqmainwindow.cpp:4412
+#, kde-format
+msgid "Open in New &Window"
+msgstr "Oscail i bhFuinneog &Nua"
+
+#: src/konqhistoryview.cpp:58
+#, kde-format
+msgid "Open in New Tab"
+msgstr "Oscail i gCluaisín Nua"
+
+#: src/konqhistoryview.cpp:63
+#, fuzzy, kde-format
+#| msgid "Open in New Tab"
+msgid "Open in Current Tab"
+msgstr "Oscail i gCluaisín Nua"
+
+#: src/konqhistoryview.cpp:67
+#, kde-format
+msgid "&Copy Link Address"
+msgstr "&Cóipeáil Seoladh an Naisc"
+
+#: src/konqhistoryview.cpp:72
+#, kde-format
+msgid "&Remove Entry"
+msgstr "&Bain Iontráil"
+
+#: src/konqhistoryview.cpp:79
+#, kde-format
+msgid "C&lear History"
+msgstr "G&lan an Stair"
+
+#: src/konqhistoryview.cpp:84
+#, kde-format
+msgid "&Preferences..."
+msgstr "&Sainroghanna..."
+
+#: src/konqhistoryview.cpp:91
+#, kde-format
+msgid "By &Name"
+msgstr "De réir ai&nm"
+
+#: src/konqhistoryview.cpp:97
+#, kde-format
+msgid "By &Date"
+msgstr "De réir &dáta"
+
+#: src/konqhistoryview.cpp:107
+#, kde-format
+msgid "Search in history"
+msgstr "Cuardaigh an stair"
+
+#: src/konqhistoryview.cpp:168
+#, kde-format
+msgid "Do you really want to clear the entire history?"
+msgstr "An bhfuil tú cinnte gur mhaith leat an stair iomlán a ghlanadh?"
+
+#: src/konqhistoryview.cpp:169
+#, kde-format
+msgctxt "@title:window"
+msgid "Clear History?"
+msgstr "Glan an Stair?"
+
+# trade name, do not translate
+#: src/konqmain.cpp:170
+#, kde-format
+msgid "Konqueror"
+msgstr "Konqueror"
+
+#: src/konqmain.cpp:171
+#, kde-format
+msgid "Web browser, file manager and document viewer."
+msgstr "Brabhsálaí, bainisteoir comhad agus amharcán cáipéisí."
+
+#: src/konqmain.cpp:173
+#, fuzzy, kde-format
+#| msgid "(C) 1999-2008, The Konqueror developers"
+msgid "(C) 1999-2016, The Konqueror developers"
+msgstr "© 1999-2008, Forbróirí Konqueror"
+
+#: src/konqmain.cpp:176
+#, kde-format
+msgid "Stefano Crocco"
+msgstr ""
+
+#: src/konqmain.cpp:176
+#, kde-format
+msgid "Current maintainer"
+msgstr ""
+
+#: src/konqmain.cpp:177
+#, kde-format
+msgid "David Faure"
+msgstr "David Faure"
+
+#: src/konqmain.cpp:177
+#, fuzzy, kde-format
+#| msgid "Developer (framework, parts, JavaScript, I/O library) and maintainer"
+msgid ""
+"Developer (framework, parts, JavaScript, I/O library) and former maintainer"
+msgstr ""
+"Forbróir (creatlach, comhpháirteanna, JavaScript, leabharlann I/A) agus "
+"cothaitheoir"
+
+#: src/konqmain.cpp:178
+#, kde-format
+msgid "Simon Hausmann"
+msgstr "Simon Hausmann"
+
+#: src/konqmain.cpp:178
+#, kde-format
+msgid "Developer (framework, parts)"
+msgstr "Forbróir (creatlach, comhpháirteanna)"
+
+#: src/konqmain.cpp:179
+#, kde-format
+msgid "Michael Reiher"
+msgstr "Michael Reiher"
+
+#: src/konqmain.cpp:179 src/konqmain.cpp:207 src/konqmain.cpp:213
+#, kde-format
+msgid "Developer (framework)"
+msgstr "Forbróir (creatlach)"
+
+#: src/konqmain.cpp:180
+#, kde-format
+msgid "Matthias Welk"
+msgstr "Matthias Welk"
+
+#: src/konqmain.cpp:180
+#, kde-format
+msgid "Developer"
+msgstr "Forbróir"
+
+#: src/konqmain.cpp:181
+#, kde-format
+msgid "Alexander Neundorf"
+msgstr "Alexander Neundorf"
+
+#: src/konqmain.cpp:181
+#, kde-format
+msgid "Developer (List views)"
+msgstr "Forbróir (amhairc na liostaí)"
+
+#: src/konqmain.cpp:182
+#, kde-format
+msgid "Michael Brade"
+msgstr "Michael Brade"
+
+#: src/konqmain.cpp:182
+#, kde-format
+msgid "Developer (List views, I/O library)"
+msgstr "Forbróir (amhairc na liostaí, leabharlann aschurtha/ionchurtha)"
+
+#: src/konqmain.cpp:183
+#, kde-format
+msgid "Lars Knoll"
+msgstr "Lars Knoll"
+
+#: src/konqmain.cpp:183 src/konqmain.cpp:184 src/konqmain.cpp:185
+#: src/konqmain.cpp:187 src/konqmain.cpp:188 src/konqmain.cpp:190
+#: src/konqmain.cpp:191 src/konqmain.cpp:192 src/konqmain.cpp:193
+#: src/konqmain.cpp:195
+#, kde-format
+msgid "Developer (HTML rendering engine)"
+msgstr "Forbróir (inneall HTML)"
+
+#: src/konqmain.cpp:184
+#, kde-format
+msgid "Dirk Mueller"
+msgstr "Dirk Mueller"
+
+#: src/konqmain.cpp:185
+#, kde-format
+msgid "Peter Kelly"
+msgstr "Peter Kelly"
+
+#: src/konqmain.cpp:186
+#, kde-format
+msgid "Waldo Bastian"
+msgstr "Waldo Bastian"
+
+#: src/konqmain.cpp:186
+#, kde-format
+msgid "Developer (HTML rendering engine, I/O library)"
+msgstr "Forbróir (inneall HTML, leabharlann aschurtha/ionchurtha)"
+
+#: src/konqmain.cpp:187
+#, kde-format
+msgid "Germain Garand"
+msgstr "Germain Garand"
+
+#: src/konqmain.cpp:188
+#, kde-format
+msgid "Leo Savernik"
+msgstr "Leo Savernik"
+
+#: src/konqmain.cpp:189
+#, kde-format
+msgid "Stephan Kulow"
+msgstr "Stephan Kulow"
+
+#: src/konqmain.cpp:189
+#, kde-format
+msgid ""
+"Developer (HTML rendering engine, I/O library, regression test framework)"
+msgstr ""
+"Forbróir (inneall HTML, leabharlann I/A, creatlach don tástáil "
+"aischéimnitheach)"
+
+#: src/konqmain.cpp:190
+#, kde-format
+msgid "Antti Koivisto"
+msgstr "Antti Koivisto"
+
+#: src/konqmain.cpp:191
+#, kde-format
+msgid "Zack Rusin"
+msgstr "Zack Rusin"
+
+#: src/konqmain.cpp:192
+#, kde-format
+msgid "Tobias Anton"
+msgstr "Tobias Anton"
+
+#: src/konqmain.cpp:193
+#, kde-format
+msgid "Lubos Lunak"
+msgstr "Lubos Lunak"
+
+#: src/konqmain.cpp:194
+#, kde-format
+msgid "Maks Orlovich"
+msgstr "Maks Orlovich"
+
+#: src/konqmain.cpp:194 src/konqmain.cpp:196
+#, kde-format
+msgid "Developer (HTML rendering engine, JavaScript)"
+msgstr "Forbróir (inneall HTML, JavaScript)"
+
+#: src/konqmain.cpp:195
+#, kde-format
+msgid "Allan Sandfeld Jensen"
+msgstr "Allan Sandfeld Jensen"
+
+#: src/konqmain.cpp:196
+#, kde-format
+msgid "Apple Safari Developers"
+msgstr "Forbróirí Safari Apple"
+
+#: src/konqmain.cpp:197
+#, kde-format
+msgid "Harri Porten"
+msgstr "Harri Porten"
+
+#: src/konqmain.cpp:197
+#, kde-format
+msgid "Developer (JavaScript)"
+msgstr "Forbróir (JavaScript)"
+
+#: src/konqmain.cpp:198
+#, kde-format
+msgid "Koos Vriezen"
+msgstr "Koos Vriezen"
+
+#: src/konqmain.cpp:198
+#, kde-format
+msgid "Developer (Java applets and other embedded objects)"
+msgstr "Forbróir (feidhmchláiríní Java agus réada leabaithe eile)"
+
+#: src/konqmain.cpp:199
+#, kde-format
+msgid "Matt Koss"
+msgstr "Matt Koss"
+
+#: src/konqmain.cpp:199 src/konqmain.cpp:200
+#, kde-format
+msgid "Developer (I/O library)"
+msgstr "Forbróir (leabharlann aschurtha/ionchurtha)"
+
+#: src/konqmain.cpp:200
+#, kde-format
+msgid "Alex Zepeda"
+msgstr "Alex Zepeda"
+
+#: src/konqmain.cpp:201
+#, kde-format
+msgid "Richard Moore"
+msgstr "Richard Moore"
+
+#: src/konqmain.cpp:201 src/konqmain.cpp:202
+#, kde-format
+msgid "Developer (Java applet support)"
+msgstr "Forbróir (tacaíocht do feidhmchláiríní Java)"
+
+#: src/konqmain.cpp:202
+#, kde-format
+msgid "Dima Rogozin"
+msgstr "Dima Rogozin"
+
+#: src/konqmain.cpp:203
+#, kde-format
+msgid "Wynn Wilkes"
+msgstr "Wynn Wilkes"
+
+#: src/konqmain.cpp:203
+#, kde-format
+msgid ""
+"Developer (Java 2 security manager support,\n"
+" and other major improvements to applet support)"
+msgstr ""
+"Forbróir (tacaíocht do bhainisteoir slándála Java 2,\n"
+"agus feabhsúcháin mhóra eile i leith tacaíocht d'fheidhmchláiríní)"
+
+#: src/konqmain.cpp:204
+#, kde-format
+msgid "Stefan Schimanski"
+msgstr "Stefan Schimanski"
+
+#: src/konqmain.cpp:204
+#, kde-format
+msgid "Developer (Netscape plugin support)"
+msgstr "Forbróir (tacaíocht do bhreiseáin Netscape)"
+
+#: src/konqmain.cpp:205
+#, kde-format
+msgid "George Staikos"
+msgstr "George Staikos"
+
+#: src/konqmain.cpp:205
+#, kde-format
+msgid "Developer (SSL, Netscape plugins)"
+msgstr "Forbróir (SSL, breiseáin Netscape)"
+
+#: src/konqmain.cpp:206
+#, kde-format
+msgid "Dawit Alemayehu"
+msgstr "Dawit Alemayehu"
+
+#: src/konqmain.cpp:206
+#, kde-format
+msgid "Developer (I/O library, Authentication support)"
+msgstr ""
+"Forbróir (leabharlann aschurtha/ionchurtha, tacaíocht do dheimhniúchán)"
+
+#: src/konqmain.cpp:207
+#, kde-format
+msgid "Carsten Pfeiffer"
+msgstr "Carsten Pfeiffer"
+
+#: src/konqmain.cpp:208
+#, kde-format
+msgid "Torsten Rahn"
+msgstr "Torsten Rahn"
+
+#: src/konqmain.cpp:208
+#, kde-format
+msgid "Graphics/icons"
+msgstr "Grafaic/deilbhíní"
+
+#: src/konqmain.cpp:209
+#, kde-format
+msgid "Torben Weis"
+msgstr "Torben Weis"
+
+#: src/konqmain.cpp:209
+#, kde-format
+msgid "KFM author"
+msgstr "Údar KFM"
+
+#: src/konqmain.cpp:210
+#, kde-format
+msgid "Joseph Wenninger"
+msgstr "Joseph Wenninger"
+
+#: src/konqmain.cpp:210
+#, kde-format
+msgid "Developer (navigation panel framework)"
+msgstr "Forbróir (creatlach an phainéil nascleanúna)"
+
+#: src/konqmain.cpp:211
+#, kde-format
+msgid "Stephan Binner"
+msgstr "Stephan Binner"
+
+#: src/konqmain.cpp:211
+#, kde-format
+msgid "Developer (misc stuff)"
+msgstr "Forbróir (stuif éagsúil)"
+
+#: src/konqmain.cpp:212
+#, kde-format
+msgid "Ivor Hewitt"
+msgstr "Ivor Hewitt"
+
+#: src/konqmain.cpp:212
+#, kde-format
+msgid "Developer (AdBlock filter)"
+msgstr "Forbróir (scagaire AdBlock)"
+
+#: src/konqmain.cpp:213
+#, kde-format
+msgid "Eduardo Robles Elvira"
+msgstr "Eduardo Robles Elvira"
+
+#: src/konqmain.cpp:223
+#, kde-format
+msgid "Start without a default window, when called without URLs"
+msgstr "Tosaigh gan fuinneog réamhshocraithe, nuair nach bhfuil URL ann"
+
+#: src/konqmain.cpp:224
+#, kde-format
+msgid ""
+"Preload for later use. This mode does not support URLs on the command line"
+msgstr ""
+"Réamhluchtaigh le húsáid ar ball. Ní thacaíonn an mód seo le URLanna ar líne "
+"na n-orduithe"
+
+#: src/konqmain.cpp:225
+#, kde-format
+msgid "Profile to open (DEPRECATED, IGNORED)"
+msgstr ""
+
+#: src/konqmain.cpp:225
+#, kde-format
+msgid "profile"
+msgstr ""
+
+#: src/konqmain.cpp:226
+#, kde-format
+msgid "List available sessions"
+msgstr "Taispeáin na seisiúin atá ar fáil"
+
+#: src/konqmain.cpp:227
+#, kde-format
+msgid "Session to open"
+msgstr "Seisiún le hoscailt"
+
+#: src/konqmain.cpp:227
+#, fuzzy, kde-format
+#| msgid "Sessions"
+msgid "session"
+msgstr "Seisiúin"
+
+#: src/konqmain.cpp:228
+#, kde-format
+msgid "Mimetype to use for this URL (e.g. text/html or inode/directory)"
+msgstr ""
+"Cineál MIME le húsáid don URL seo (m.sh. \"text/html\" nó \"inode/directory"
+"\")"
+
+#: src/konqmain.cpp:228
+#, kde-format
+msgid "mimetype"
+msgstr ""
+
+#: src/konqmain.cpp:229
+#, kde-format
+msgid "Part to use (e.g. khtml or kwebkitpart)"
+msgstr "Comhpháirt le húsáid (m.sh. khtml nó kwebkitpart)"
+
+#: src/konqmain.cpp:229
+#, fuzzy, kde-format
+#| msgid "Add Service"
+msgid "service"
+msgstr "Cuir Seirbhís Leis"
+
+#: src/konqmain.cpp:230
+#, kde-format
+msgid ""
+"For URLs that point to files, opens the directory and selects the file, "
+"instead of opening the actual file"
+msgstr ""
+"Nuair a thagraíonn URL do chomhad, oscail an chomhadlann agus roghnaigh an "
+"comhad, in ionad an comhad féin a oscailt"
+
+#: src/konqmain.cpp:231
+#, kde-format
+msgid "The files/URLs opened by the application will be deleted after use"
+msgstr ""
+
+#: src/konqmain.cpp:233
+#, kde-format
+msgid "Location to open"
+msgstr "Suíomh le hoscailt"
+
+#: src/konqmainwindow.cpp:658
+#, kde-format
+msgctxt "@title:tab"
+msgid "Loading..."
+msgstr "Á Luchtú..."
+
+#: src/konqmainwindow.cpp:690
+#, fuzzy, kde-format
+#| msgid "Accessed"
+msgid "Access denied"
+msgstr "Rochtain"
+
+#: src/konqmainwindow.cpp:1465
+#, fuzzy, kde-format
+#| msgid "&Open File..."
+msgid "Open File"
+msgstr "&Oscail Comhad..."
+
+#: src/konqmainwindow.cpp:1548
+#, kde-format
+msgid "Canceled."
+msgstr "Cealaithe."
+
+#: src/konqmainwindow.cpp:1584
+#, kde-format
+msgid ""
+"This page contains changes that have not been submitted.\n"
+"Reloading the page will discard these changes."
+msgstr ""
+"Tá athruithe gan seoladh ar an leathanach seo.\n"
+"Caillfidh tú na hathruithe seo má athluchtaíonn tú an leathanach."
+
+#: src/konqmainwindow.cpp:1585 src/konqmainwindow.cpp:2282
+#: src/konqmainwindow.cpp:2375 src/konqmainwindow.cpp:2407
+#: src/konqmainwindow.cpp:2450 src/konqmainwindow.cpp:2472
+#: src/konqmainwindow.cpp:4849
+#, kde-format
+msgctxt "@title:window"
+msgid "Discard Changes?"
+msgstr "Ná Sábháil na hAthruithe?"
+
+#: src/konqmainwindow.cpp:1585 src/konqmainwindow.cpp:2282
+#: src/konqmainwindow.cpp:2375 src/konqmainwindow.cpp:2407
+#: src/konqmainwindow.cpp:2450 src/konqmainwindow.cpp:2473
+#: src/konqmainwindow.cpp:4849
+#, kde-format
+msgid "&Discard Changes"
+msgstr "&Ná Sábháil na hAthruithe"
+
+#: src/konqmainwindow.cpp:1952 src/konqmainwindow.cpp:1958
+#, kde-format
+msgid "Home Folder"
+msgstr "Fillteán Baile"
+
+#: src/konqmainwindow.cpp:1953 src/konqmainwindow.cpp:3424
+#, kde-format
+msgid "Home"
+msgstr "Baile"
+
+#: src/konqmainwindow.cpp:1959
+#, kde-format
+msgid "Navigate to your 'Home Folder'"
+msgstr "Téigh go dtí do 'Fillteán Baile'"
+
+#: src/konqmainwindow.cpp:1960
+#, kde-format
+msgid "Navigate to your local 'Home Folder'"
+msgstr "Téigh go dtí do 'Fillteán Baile' logánta"
+
+#. i18n: ectx: label, entry, group (UserSettings)
+#: src/konqmainwindow.cpp:1963 src/konqueror.kcfg:16
+#, kde-format
+msgid "Home Page"
+msgstr "Leathanach Baile"
+
+#: src/konqmainwindow.cpp:1965
+#, kde-format
+msgid "Navigate to your 'Home Page'"
+msgstr "Téigh go dtí do 'Leathanach Baile'"
+
+#: src/konqmainwindow.cpp:1966
+#, kde-format
+msgid ""
+"<html>Navigate to your 'Home Page'<br /><br />You can configure the location "
+"where this button takes you under <b>Settings -> Configure Konqueror -> "
+"General</b>.</html>"
+msgstr ""
+"<html>Téigh go dtí do 'Leathanach Baile'<br /><br />Is féidir suíomh an "
+"leathanaigh seo a chumrú faoi <b>Socruithe -> Cumraigh Konqueror -> "
+"Ginearálta</b>.</html>"
+
+#: src/konqmainwindow.cpp:2281
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Detaching the tab will discard these changes."
+msgstr ""
+"Tá athruithe gan seoladh sa chluaisín seo.\n"
+"Caillfidh tú na hathruithe seo má dhíscoireann tú an cluaisín."
+
+#: src/konqmainwindow.cpp:2374
+#, kde-format
+msgid ""
+"This view contains changes that have not been submitted.\n"
+"Closing the view will discard these changes."
+msgstr ""
+"Tá athruithe gan seoladh san amharc seo.\n"
+"Caillfidh tú na hathruithe seo má dhúnann tú an t-amharc."
+
+#: src/konqmainwindow.cpp:2406
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Closing the tab will discard these changes."
+msgstr ""
+"Tá athruithe gan seoladh sa chluaisín seo.\n"
+"Caillfidh tú na hathruithe seo má dhúnann tú an cluaisín."
+
+#: src/konqmainwindow.cpp:2432
+#, kde-format
+msgid "Do you really want to close all other tabs?"
+msgstr "An bhfuil tú cinnte gur mian leat gach cluaisín eile a dhúnadh?"
+
+#: src/konqmainwindow.cpp:2433 src/konqmainwindow.cpp:3505 src/konqtabs.cpp:335
+#, kde-format
+msgid "Close &Other Tabs"
+msgstr "Dún na Cluaisíní &Eile"
+
+#: src/konqmainwindow.cpp:2433
+#, kde-format
+msgctxt "@title:window"
+msgid "Close Other Tabs Confirmation"
+msgstr "Deimhniú: Dún na Cluaisíní Eile"
+
+#: src/konqmainwindow.cpp:2449
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Closing other tabs will discard these changes."
+msgstr ""
+"Tá athruithe gan seoladh sa chluaisín seo.\n"
+"Caillfidh tú na hathruithe seo má dhúnann tú cluaisíní eile."
+
+#: src/konqmainwindow.cpp:2471
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Reloading all tabs will discard these changes."
+msgstr ""
+"Tá athruithe gan seoladh sa chluaisín seo.\n"
+"Caillfidh tú na hathruithe seo má athluchtaíonn tú gach cluaisín."
+
+#: src/konqmainwindow.cpp:2513
+#, kde-format
+msgctxt "@title:window"
+msgid "Enter Target"
+msgstr "Cuir Sprioc Isteach"
+
+#: src/konqmainwindow.cpp:2520
+#, kde-format
+msgid "<qt><b>%1</b> is not valid</qt>"
+msgstr "<qt>Tá <b>%1</b> neamhbhailí</qt>"
+
+#: src/konqmainwindow.cpp:2530
+#, kde-format
+msgid "Copy selected files from %1 to:"
+msgstr "Cóipeáil na comhaid roghnaithe ó %1 go:"
+
+#: src/konqmainwindow.cpp:2543
+#, kde-format
+msgid "Move selected files from %1 to:"
+msgstr "Bog na comhaid roghnaithe ó %1 go:"
+
+#: src/konqmainwindow.cpp:2717
+#, kde-format
+msgctxt "This menu entry empties the closed items history"
+msgid "Empty Closed Items History"
+msgstr "Glan Stair na Míreanna Dúnta"
+
+#: src/konqmainwindow.cpp:2740
+#, kde-format
+msgid "Save As..."
+msgstr "Sábháil Mar..."
+
+#: src/konqmainwindow.cpp:2742
+#, kde-format
+msgid "Manage..."
+msgstr "Bainistigh..."
+
+#: src/konqmainwindow.cpp:3333
+#, kde-format
+msgid "New &Window"
+msgstr "&Fuinneog Nua"
+
+#: src/konqmainwindow.cpp:3338
+#, kde-format
+msgid "&Duplicate Window"
+msgstr "&Dúbail an Fhuinneog"
+
+#: src/konqmainwindow.cpp:3343
+#, kde-format
+msgid "Send &Link Address..."
+msgstr "Seol Seoladh an &Naisc..."
+
+#: src/konqmainwindow.cpp:3347
+#, kde-format
+msgid "S&end File..."
+msgstr "S&eol Comhad..."
+
+#: src/konqmainwindow.cpp:3351
+#, kde-format
+msgid "&Open Location"
+msgstr "&Oscail Suíomh"
+
+#: src/konqmainwindow.cpp:3357
+#, kde-format
+msgid "&Open File..."
+msgstr "&Oscail Comhad..."
+
+#: src/konqmainwindow.cpp:3362
+#, kde-format
+msgid "&Find File..."
+msgstr "&Aimsigh Comhad..."
+
+#: src/konqmainwindow.cpp:3371
+#, kde-format
+msgid "Lock to Current Location"
+msgstr "Ceangail leis an Suíomh Reatha"
+
+# definitely a verb
+#: src/konqmainwindow.cpp:3374
+#, kde-format
+msgctxt "This option links konqueror views"
+msgid "Lin&k View"
+msgstr "&Nasc an tAmharc"
+
+#: src/konqmainwindow.cpp:3379
+#, kde-format
+msgid "&Up"
+msgstr "S&uas"
+
+#: src/konqmainwindow.cpp:3389
+#, kde-format
+msgid "Closed Items"
+msgstr "Míreanna Dúnta"
+
+#: src/konqmainwindow.cpp:3402
+#, kde-format
+msgid "Sessions"
+msgstr "Seisiúin"
+
+#: src/konqmainwindow.cpp:3429
+#, kde-format
+msgctxt "@action:inmenu Go"
+msgid "Most Often Visited"
+msgstr "Suímh is mó cuairt orthu"
+
+#: src/konqmainwindow.cpp:3433
+#, kde-format
+msgctxt "@action:inmenu Go"
+msgid "Recently Visited"
+msgstr "Rinneadh Cuairt Orthu le Déanaí"
+
+#: src/konqmainwindow.cpp:3442
+#, kde-format
+msgctxt "@action:inmenu Go"
+msgid "Show History"
+msgstr "Taispeáin an Stair"
+
+#: src/konqmainwindow.cpp:3455
+#, kde-format
+msgid "Configure Extensions..."
+msgstr "Cumraigh Eisínteachtaí..."
+
+#: src/konqmainwindow.cpp:3459
+#, kde-format
+msgid "Configure Spell Checking..."
+msgstr "Cumraigh an litreoir..."
+
+#: src/konqmainwindow.cpp:3465
+#, kde-format
+msgid "Split View &Left/Right"
+msgstr "Scoilt an tAmharc C&lé/Deas"
+
+#: src/konqmainwindow.cpp:3470
+#, kde-format
+msgid "Split View &Top/Bottom"
+msgstr "Scoilt an tAmharc &Barr/Bun"
+
+#: src/konqmainwindow.cpp:3475 src/konqtabs.cpp:456
+#, kde-format
+msgid "&New Tab"
+msgstr "Cluaisín &Nua"
+
+#: src/konqmainwindow.cpp:3484
+#, kde-format
+msgid "&Duplicate Current Tab"
+msgstr "&Déan Cóip den Chluaisín Reatha"
+
+#: src/konqmainwindow.cpp:3489
+#, kde-format
+msgid "Detach Current Tab"
+msgstr "Dícheangail an Cluaisín Reatha"
+
+#: src/konqmainwindow.cpp:3494
+#, kde-format
+msgid "&Close Active View"
+msgstr "&Dún an tAmharc Reatha"
+
+#: src/konqmainwindow.cpp:3499
+#, kde-format
+msgid "Close Current Tab"
+msgstr "Dún an Cluaisín Reatha"
+
+#: src/konqmainwindow.cpp:3509
+#, kde-format
+msgid "Activate Next Tab"
+msgstr "Gníomhachtaigh an Chéad Chluaisín Eile"
+
+#: src/konqmainwindow.cpp:3513
+#, kde-format
+msgid "Activate Previous Tab"
+msgstr "Gníomhachtaigh an Cluaisín Roimhe Seo"
+
+#: src/konqmainwindow.cpp:3520
+#, kde-format
+msgid "Activate Tab %1"
+msgstr "Gníomhachtaigh Cluaisín %1"
+
+#: src/konqmainwindow.cpp:3525
+#, kde-format
+msgid "Move Tab Left"
+msgstr "Bog Cluaisín Faoi Chlé"
+
+#: src/konqmainwindow.cpp:3530
+#, kde-format
+msgid "Move Tab Right"
+msgstr "Bog Cluaisín Faoi Dheis"
+
+#: src/konqmainwindow.cpp:3538
+#, kde-format
+msgid "Dump Debug Info"
+msgstr "Dumpáil Faisnéis Dhífhabhtaithe"
+
+#: src/konqmainwindow.cpp:3556
+#, kde-format
+msgid "&Reload"
+msgstr "&Athluchtaigh"
+
+#: src/konqmainwindow.cpp:3561 src/konqtabs.cpp:313
+#, kde-format
+msgid "&Reload All Tabs"
+msgstr "&Athluchtaigh Gach Cluaisín"
+
+#: src/konqmainwindow.cpp:3569
+#, kde-format
+msgid "&Force Reload"
+msgstr "&Fórsáil Athluchtú"
+
+#: src/konqmainwindow.cpp:3595
+#, kde-format
+msgid "&Stop"
+msgstr "&Stad"
+
+#: src/konqmainwindow.cpp:3604
+#, kde-format
+msgid "Throbber"
+msgstr "Preabóir"
+
+#: src/konqmainwindow.cpp:3608 src/konqmainwindow.cpp:3611
+#, kde-format
+msgid "L&ocation: "
+msgstr "Suí&omh: "
+
+#: src/konqmainwindow.cpp:3618
+#, kde-format
+msgid "Location Bar"
+msgstr "Barra Suímh"
+
+#: src/konqmainwindow.cpp:3624
+#, kde-format
+msgid ""
+"<html>Location Bar<br /><br />Enter a web address or search term.</html>"
+msgstr ""
+"<html>Barra Suímh<br /><br />Cuir isteach seoladh Gréasáin nó téarma "
+"cuardaigh.</html>"
+
+#: src/konqmainwindow.cpp:3628
+#, kde-format
+msgid "Clear Location Bar"
+msgstr "Glan an Barra Suímh"
+
+#: src/konqmainwindow.cpp:3632
+#, kde-format
+msgid ""
+"<html>Clear Location bar<br /><br />Clears the contents of the location bar."
+"</html>"
+msgstr ""
+"<html>Glan an Barra Suímh<br /><br />Glanann inneachar an bharra suímh.</"
+"html>"
+
+#: src/konqmainwindow.cpp:3637
+#, kde-format
+msgid "&Bookmarks"
+msgstr "Lea&bharmharcanna"
+
+#: src/konqmainwindow.cpp:3665
+#, kde-format
+msgid "Kon&queror Introduction"
+msgstr "Tús Eolais ar Kon&queror"
+
+#: src/konqmainwindow.cpp:3670
+#, kde-format
+msgid "Go"
+msgstr "Téigh"
+
+#: src/konqmainwindow.cpp:3672
+#, kde-format
+msgid ""
+"<html>Go<br /><br />Goes to the page that has been entered into the location "
+"bar.</html>"
+msgstr ""
+"<html>Téigh<br /><br />Téann go dtí an leathanach atá sa bharra suímh.</html>"
+
+#: src/konqmainwindow.cpp:3678
+#, kde-format
+msgid ""
+"<html>Enter the parent folder<br /><br />For instance, if the current "
+"location is file:/home/%1 clicking this button will take you to file:/home.</"
+"html>"
+msgstr ""
+"<html>Téigh go dtí an máthairfhillteán<br /><br />Mar shampla, más é file:/"
+"home/%1 an suíomh reatha, rachaidh tú go file:/home nuair a chliceálfaidh tú "
+"an cnaipe seo.</html>"
+
+#: src/konqmainwindow.cpp:3681
+#, kde-format
+msgid "Enter the parent folder"
+msgstr "Téigh isteach sa mháthairfhillteán"
+
+#: src/konqmainwindow.cpp:3683 src/konqmainwindow.cpp:3684
+#, kde-format
+msgid "Move backwards one step in the browsing history"
+msgstr "Téigh siar céim amháin sa stair brabhsálaithe"
+
+#: src/konqmainwindow.cpp:3686 src/konqmainwindow.cpp:3687
+#, kde-format
+msgid "Move forward one step in the browsing history"
+msgstr "Téigh ar aghaidh céim amháin sa stair brabhsálaithe"
+
+#: src/konqmainwindow.cpp:3689 src/konqmainwindow.cpp:3690
+#, kde-format
+msgid "Move backwards one step in the closed tabs history"
+msgstr "Téigh siar céim amháin i stair na gcluaisíní dúnta"
+
+#: src/konqmainwindow.cpp:3692
+#, kde-format
+msgid ""
+"<html>Reload the currently displayed document<br /><br />This may, for "
+"example, be needed to refresh web pages that have been modified since they "
+"were loaded, in order to make the changes visible.</html>"
+msgstr ""
+"<html>Athluchtaigh an cháipéis reatha<br /><br />Is féidir an rogha seo a "
+"úsáid, mar shampla, nuair a athraítear leathanach Gréasáin ó luchtaíodh é "
+"agus ba mhaith leat na hathruithe a fheiceáil.</html>"
+
+#: src/konqmainwindow.cpp:3695
+#, kde-format
+msgid "Reload the currently displayed document"
+msgstr "Athluchtaigh an cháipéis reatha"
+
+#: src/konqmainwindow.cpp:3697
+#, kde-format
+msgid ""
+"<html>Reload all currently displayed documents in tabs<br /><br />This may, "
+"for example, be needed to refresh web pages that have been modified since "
+"they were loaded, in order to make the changes visible.</html>"
+msgstr ""
+"<html>Athluchtaigh na cáipéisí taispeánta i gcluaisíní<br /><br />Is féidir "
+"an rogha seo a úsáid, mar shampla, nuair a athraítear leathanaigh Ghréasáin "
+"ó luchtaíodh iad, chun na hathruithe atá iontu a fheiceáil.</html>"
+
+#: src/konqmainwindow.cpp:3700
+#, kde-format
+msgid "Reload all currently displayed document in tabs"
+msgstr "Athluchtaigh na cáipéisí taispeánta i gcluaisíní"
+
+#: src/konqmainwindow.cpp:3702
+#, kde-format
+msgid ""
+"<html>Stop loading the document<br /><br />All network transfers will be "
+"stopped and Konqueror will display the content that has been received so far."
+"</html>"
+msgstr ""
+"<html>Stad luchtú na cáipéise<br /><br />Stadfar gach aistriú líonra agus "
+"taispeánfaidh Konqueror an t-ábhar atá luchtaithe go dtí an pointe sin.</"
+"html>"
+
+#: src/konqmainwindow.cpp:3706
+#, fuzzy, kde-format
+#| msgid ""
+#| "<html>Reload the currently displayed document<br /><br />This may, for "
+#| "example, be needed to refresh web pages that have been modified since "
+#| "they were loaded, in order to make the changes visible.  Any images on "
+#| "the page are downloaded again, even if cached copies exist.</html>"
+msgid ""
+"<html>Reload the currently displayed document<br /><br />This may, for "
+"example, be needed to refresh web pages that have been modified since they "
+"were loaded, in order to make the changes visible. Any images on the page "
+"are downloaded again, even if cached copies exist.</html>"
+msgstr ""
+"<html>Athluchtaigh an cháipéis reatha<br /><br />Is féidir an rogha seo a "
+"úsáid, mar shampla, nuair a athraítear leathanaigh Ghréasáin ó luchtaíodh "
+"iad, chun na hathruithe atá iontu a fheiceáil. Íosluchtófar aon íomhánna ar "
+"an leathanach arís, fiú má tá cóipeanna sa taisce.</html>"
+
+#: src/konqmainwindow.cpp:3710
+#, kde-format
+msgid ""
+"Force a reload of the currently displayed document and any contained images"
+msgstr "Fórsáil athluchtú na cáipéise reatha agus aon íomhánna atá inti"
+
+#: src/konqmainwindow.cpp:3712
+#, kde-format
+msgid "Stop loading the document"
+msgstr "Éirigh as an cháipéis a luchtú"
+
+#: src/konqmainwindow.cpp:3714
+#, kde-format
+msgid ""
+"<html>Cut the currently selected text or item(s) and move it to the system "
+"clipboard<br /><br />This makes it available to the <b>Paste</b> command in "
+"Konqueror and other KDE applications.</html>"
+msgstr ""
+"<html>Gearr an téacs nó mír(eanna) atá roghnaithe faoi láthair agus cuir é i "
+"ngearrthaisce an chórais<br /><br />Cuirfidh sé seo an roghnúchán ar fáil "
+"don ordú <b>Greamaigh</b> i Konqueror agus feidhmchláir KDE eile.</html>"
+
+#: src/konqmainwindow.cpp:3718
+#, kde-format
+msgid "Move the selected text or item(s) to the clipboard"
+msgstr "Bog an téacs nó mír(eanna) roghnaithe go dtí an ghearrthaisce"
+
+#: src/konqmainwindow.cpp:3720
+#, kde-format
+msgid ""
+"<html>Copy the currently selected text or item(s) to the system "
+"clipboard<br /><br />This makes it available to the <b>Paste</b> command in "
+"Konqueror and other KDE applications.</html>"
+msgstr ""
+"<html>Cóipeáil an téacs nó mír(eanna) atá roghnaithe faoi láthair agus cuir "
+"é i ngearrthaisce an chórais<br /><br />Cuirfidh sé seo an roghnúchán ar "
+"fáil don ordú <b>Greamaigh</b> i Konqueror agus feidhmchláir KDE eile.</html>"
+
+#: src/konqmainwindow.cpp:3724
+#, kde-format
+msgid "Copy the selected text or item(s) to the clipboard"
+msgstr "Déan cóip den téacs nó mír(eanna) roghnaithe sa ghearrthaisce"
+
+#: src/konqmainwindow.cpp:3726
+#, kde-format
+msgid ""
+"<html>Paste the previously cut or copied clipboard contents<br /><br />This "
+"also works for text copied or cut from other KDE applications.</html>"
+msgstr ""
+"<html>Greamaigh inneachar na gearrthaisce a bhí gearrtha nó cóipeáilte "
+"roimhe seo<br /><br />Oibríonn sé seo nuair a bhí téacs cóipeáilte nó "
+"gearrtha ó fheidhmchláir KDE eile freisin.</html>"
+
+#: src/konqmainwindow.cpp:3729
+#, kde-format
+msgid "Paste the clipboard contents"
+msgstr "Greamaigh inneachar an ghearrthaisce"
+
+#: src/konqmainwindow.cpp:3731
+#, kde-format
+msgid ""
+"<html>Print the currently displayed document<br /><br />You will be "
+"presented with a dialog where you can set various options, such as the "
+"number of copies to print and which printer to use.<br /><br />This dialog "
+"also provides access to special KDE printing services such as creating a PDF "
+"file from the current document.</html>"
+msgstr ""
+"<html>Priontáil an cháipéis reatha<br /><br />Taispeánfar dialóg duit inar "
+"féidir roghanna éagsúla a shocrú, mar shampla líon na gcóipeanna le "
+"priontáil agus an printéir le húsáid.<br /><br />Soláthraíonn an dialóg seo "
+"rochtain ar sheirbhísí speisialta priontála KDE, mar shampla seirbhís a "
+"chruthaíonn comhad PDF ón cháipéis reatha.</html>"
+
+#: src/konqmainwindow.cpp:3737
+#, kde-format
+msgid "Print the current document"
+msgstr "Priontáil an cháipéis reatha"
+
+#: src/konqmainwindow.cpp:3739
+#, kde-format
+msgid ""
+"A locked view cannot change folders. Use in combination with 'link view' to "
+"explore many files from one folder"
+msgstr ""
+"Má tá an t-amharc faoi ghlas, ní féidir an fillteán a athrú.  Úsáid é seo in "
+"éineacht le 'Nasc an tAmharc' chun go leor comhad a scrúdú ó fhillteán amháin"
+
+#: src/konqmainwindow.cpp:3740
+#, kde-format
+msgid ""
+"Sets the view as 'linked'. A linked view follows folder changes made in "
+"other linked views."
+msgstr ""
+"Socraíonn an t-amharc mar 'nasctha'. Leanann amharc nasctha athruithe "
+"fillteáin a dhéantar in amhairc nasctha eile."
+
+#: src/konqmainwindow.cpp:3744
+#, fuzzy, kde-format
+#| msgid "C&lose Current Tab"
+msgid "&Inspect Current Page"
+msgstr "Dún an C&luaisín Reatha"
+
+#: src/konqmainwindow.cpp:3745
+#, kde-format
+msgid ""
+"<html>Shows the developer tools for the current page<br/><br/>The current "
+"view is split in two and the developer tools are displayed in the second half"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3746
+#, kde-format
+msgid "Shows the developer tools for the current page"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3912
+#, kde-format
+msgid "Copy &Files..."
+msgstr "Cói&peáil Comhaid..."
+
+#: src/konqmainwindow.cpp:3916
+#, kde-format
+msgid "M&ove Files..."
+msgstr "Bog C&omhaid..."
+
+#: src/konqmainwindow.cpp:4245
+#, kde-format
+msgid ""
+"You have requested to open more than 20 bookmarks in tabs. This might take a "
+"while. Continue?"
+msgstr ""
+"Tá tú ar tí níos mó ná fiche leabharmharc a oscailt i gcluaisíní. "
+"D'fhéadfadh do Konqueror éirí mall agus na leathanaigh á luchtú. An bhfuil "
+"tú cinnte go dteastaíonn leanúint ar aghaidh?"
+
+#: src/konqmainwindow.cpp:4247
+#, kde-format
+msgctxt "@title:window"
+msgid "Open bookmarks folder in new tabs"
+msgstr "Oscail fillteán na leabharmharcanna i gcluaisíní nua"
+
+#: src/konqmainwindow.cpp:4405
+#, kde-format
+msgid "Open in T&his Window"
+msgstr "Oscail san F&huinneog Seo"
+
+#: src/konqmainwindow.cpp:4406
+#, kde-format
+msgid "Open the document in current window"
+msgstr "Oscail an cháipéis san fhuinneog reatha"
+
+#: src/konqmainwindow.cpp:4413
+#, kde-format
+msgid "Open the document in a new window"
+msgstr "Oscail an cháipéis i bhfuinneog nua"
+
+#: src/konqmainwindow.cpp:4419
+#, kde-format
+msgid "Open in &New Tab"
+msgstr "Oscail i gCluaisín &Nua"
+
+#: src/konqmainwindow.cpp:4421
+#, kde-format
+msgid "Open the document in a new tab"
+msgstr "Oscail an cháipéis i gcluaisín nua"
+
+#: src/konqmainwindow.cpp:4637
+#, kde-format
+msgid "&Open With"
+msgstr "&Oscail Le"
+
+#: src/konqmainwindow.cpp:4650
+#, kde-format
+msgid "Open with %1"
+msgstr "Oscail le %1"
+
+# OK
+#: src/konqmainwindow.cpp:4698
+#, kde-format
+msgctxt "@action:inmenu View"
+msgid "&View Mode"
+msgstr "Mód &Amhairc"
+
+#: src/konqmainwindow.cpp:4815
+#, kde-format
+msgid ""
+"You have multiple tabs open in this window, are you sure you want to quit?"
+msgstr ""
+"Tá cluaisíní iomadúla oscailte san fhuinneog seo; an bhfuil tú cinnte gur "
+"mian leat scor?"
+
+#: src/konqmainwindow.cpp:4817
+#, kde-format
+msgctxt "@title:window"
+msgid "Confirmation"
+msgstr "Deimhniú"
+
+#: src/konqmainwindow.cpp:4819
+#, kde-format
+msgid "C&lose Current Tab"
+msgstr "Dún an C&luaisín Reatha"
+
+#: src/konqmainwindow.cpp:4845
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Closing the window will discard these changes."
+msgstr ""
+"Tá athruithe gan seoladh sa chluaisín seo.\n"
+"Caillfidh tú na hathruithe seo má dhúnann tú an fhuinneog."
+
+#: src/konqmainwindow.cpp:4846
+#, kde-format
+msgid ""
+"This page contains changes that have not been submitted.\n"
+"Closing the window will discard these changes."
+msgstr ""
+"Tá athruithe gan seoladh ar an leathanach seo.\n"
+"Caillfidh tú na hathruithe seo má dhúnann tú an fhuinneog."
+
+#: src/konqmainwindow.cpp:5003
+#, kde-format
+msgid ""
+"Your sidebar is not functional or unavailable. A new entry cannot be added."
+msgstr ""
+"Níl do bharra taoibh ag obair, nó níl sé ar fáil. Ní féidir iontráil nua a "
+"chur leis."
+
+#: src/konqmainwindow.cpp:5003 src/konqmainwindow.cpp:5010
+#, kde-format
+msgctxt "@title:window"
+msgid "Web Sidebar"
+msgstr "Barra Taoibh Gréasáin"
+
+#: src/konqmainwindow.cpp:5008
+#, kde-format
+msgid "Add new web extension \"%1\" to your sidebar?"
+msgstr "Cuir eisínteacht nua ghréasáin \"%1\" le do bharra taoibh?"
+
+#: src/konqmainwindow.cpp:5010
+#, kde-format
+msgid "Add"
+msgstr "Cuir Leis"
+
+#: src/konqmainwindow.cpp:5010
+#, kde-format
+msgid "Do Not Add"
+msgstr "Ná Cuir Leis"
+
+#: src/konqmainwindow.cpp:5358
+#, kde-format
+msgid ""
+"There appears to be a configuration error. You have associated Konqueror "
+"with %1, but it cannot handle this file type."
+msgstr ""
+"Is cosúil go bhfuil earráid cumraíochta. Tá ceangal déanta agat idir "
+"Konqueror agus %1, ach ní féidir leis déileáil le comhad den chineál seo."
+
+#: src/konqmainwindow.cpp:5439
+#, kde-format
+msgid ""
+"Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
+"proxy will be used\n"
+"\n"
+" QtWebEngine only support a fixed proxy, so proxy auto-configuration (PAC) "
+"and Web Proxy Auto-Discovery protocol can't be used with QtWebEngine. If you "
+"need a proxy, please select the system proxy configuration or specify a "
+"proxy URL manually in the settings dialog. Do you want to change proxy "
+"settings now?"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5444
+#, fuzzy, kde-format
+#| msgid "Manual Proxy Configuration"
+msgid "Unsupported proxy configuration"
+msgstr "Lámhchumraíocht Seachfhreastalaí"
+
+#: src/konqmainwindow.cpp:5444
+#, kde-format
+msgid "Don't use a proxy"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5445 src/konqmainwindow.cpp:5463
+#, fuzzy, kde-format
+#| msgid "Show Configuration Button"
+msgid "Show proxy configuration dialog"
+msgstr "Taispeáin Cnaipe Cumraíochta"
+
+#: src/konqmainwindow.cpp:5459
+#, kde-format
+msgid ""
+"Your proxy configuration can't be used with the QtWebEngine HTML engine "
+"because it doesn't support having different proxies for the HTTP and HTTPS "
+"protocols. Your current settings are:<p><b>HTTP proxy:</b> <tt>%1</tt></"
+"p><p><b>HTTPS proxy: </b><tt>%2</tt></p>What do you want to do?"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5462
+#, fuzzy, kde-format
+#| msgid "Manual Proxy Configuration"
+msgid "Conflicting proxy configuration"
+msgstr "Lámhchumraíocht Seachfhreastalaí"
+
+#: src/konqmainwindow.cpp:5463
+#, kde-format
+msgid "Use HTTP proxy (only this time)"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5463
+#, kde-format
+msgid "Use HTTPS proxy (only this time)"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5540
+#, kde-format
+msgid ""
+"You have entered Complete Full Screen mode (the user interface is completely "
+"hidden). You can exit it by pressing the keyboard shortcut for Full Screen "
+"Mode (%1)"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: src/konqnewsessiondlg_base.ui:28
+#, fuzzy, kde-format
+#| msgid "Save open tabs and windows for easy retrieval"
+msgid "Save open &tabs and windows for easy retrieval"
+msgstr ""
+"Sábháil cluaisíní agus fuinneoga oscailte sa chaoi gur éasca iad a chur ar "
+"ais"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_pAllWindows)
+#: src/konqnewsessiondlg_base.ui:34
+#, fuzzy, kde-format
+#| msgid "Open new windows:"
+msgid "A&ll open windows"
+msgstr "Oscail fuinneoga nua:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_pCurrentWindow)
+#: src/konqnewsessiondlg_base.ui:44
+#, fuzzy, kde-format
+#| msgid "Open tabs inside current window"
+msgid "Onl&y current window"
+msgstr "Oscail cluaisíní san fhuinneog reatha"
+
+#. i18n: ectx: property (text), widget (QLabel, lblSessionName)
+#: src/konqnewsessiondlg_base.ui:56
+#, fuzzy, kde-format
+#| msgid "&Session name:"
+msgid "Session n&ame:"
+msgstr "Ainm an t&seisiúin:"
+
+#: src/konqsessiondlg.cpp:60
+#, kde-format
+msgctxt "@title:window"
+msgid "Manage Sessions"
+msgstr "Bainistigh Seisiúin"
+
+#: src/konqsessiondlg.cpp:168
+#, kde-format
+msgctxt "@title:window"
+msgid "Rename Session"
+msgstr "Athainmnigh Seisiún"
+
+#: src/konqsessiondlg.cpp:215
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Session"
+msgstr "Sábháil an Seisiún"
+
+#: src/konqsessiondlg.cpp:251
+#, kde-format
+msgid ""
+"A session with the name '%1' already exists, do you want to overwrite it?"
+msgstr ""
+"Tá seisiún darb ainm '%1' ann cheana. An bhfuil fonn ort é a fhorscríobh?"
+
+#: src/konqsessiondlg.cpp:252
+#, kde-format
+msgctxt "@title:window"
+msgid "Session exists. Overwrite?"
+msgstr "Tá an seisiún ann cheana. Forscríobh?"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pNewButton)
+#: src/konqsessiondlg_base.ui:26
+#, kde-format
+msgctxt "@action:button New session"
+msgid "New..."
+msgstr "Nua..."
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pSaveCurrentButton)
+#: src/konqsessiondlg_base.ui:33
+#, fuzzy, kde-format
+#| msgctxt "@action:button Save current session"
+#| msgid "Save Current"
+msgctxt "@action:button Save current session"
+msgid "Save Current..."
+msgstr "Sábháil an Seisiún Reatha"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pRenameButton)
+#: src/konqsessiondlg_base.ui:40
+#, kde-format
+msgctxt "@action:button Rename session"
+msgid "Rename..."
+msgstr "Athainmnigh..."
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pDeleteButton)
+#: src/konqsessiondlg_base.ui:47
+#, kde-format
+msgctxt "@action:button Delete session"
+msgid "Delete"
+msgstr "Scrios"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pOpenTabsInsideCurrentWindow)
+#. i18n: ectx: label, entry, group (Trash)
+#: src/konqsessiondlg_base.ui:73 src/konqueror.kcfg:517
+#, kde-format
+msgid "Open tabs inside current window"
+msgstr "Oscail cluaisíní san fhuinneog reatha"
+
+#: src/konqsessionmanager.cpp:86
+#, kde-format
+msgctxt "@title:window"
+msgid "Restore Session?"
+msgstr "Athchóirigh an Seisiún?"
+
+#: src/konqsessionmanager.cpp:107
+#, kde-format
+msgid ""
+"Konqueror did not close correctly. Would you like to restore these previous "
+"sessions?"
+msgstr ""
+"Níor dúnadh Konqueror mar is ceart. An bhfuil fonn ort na seisiúin roimhe "
+"seo a athchóiriú?"
+
+#: src/konqsessionmanager.cpp:119
+#, kde-format
+msgctxt "@tooltip:session list"
+msgid "Uncheck the sessions you do not want to be restored"
+msgstr ""
+
+#: src/konqsessionmanager.cpp:152
+#, kde-format
+msgctxt "@item:treewidget"
+msgid "Window %1"
+msgstr "Fuinneog %1"
+
+#: src/konqsessionmanager.cpp:190
+#, kde-format
+msgid "Do not ask again"
+msgstr "Ná fiafraigh díom arís"
+
+#: src/konqsessionmanager.cpp:204
+#, kde-format
+msgctxt "@action:button yes"
+msgid "Restore Session"
+msgstr "Athchóirigh an Seisiún"
+
+#: src/konqsessionmanager.cpp:205
+#, kde-format
+msgctxt "@action:button no"
+msgid "Do Not Restore"
+msgstr "Ná hAthchóirigh"
+
+#: src/konqsessionmanager.cpp:206
+#, kde-format
+msgctxt "@action:button ask later"
+msgid "Ask Me Later"
+msgstr "Fiafraigh Díom Ar Ball"
+
+#: src/konqstatusbarmessagelabel.cpp:67
+#, fuzzy, kde-format
+#| msgid "Close View"
+msgctxt "@info"
+msgid "Close"
+msgstr "Dún an tAmharc"
+
+#: src/konqstatusbarmessagelabel.cpp:68
+#, fuzzy, kde-format
+#| msgid "Close View"
+msgid "Close"
+msgstr "Dún an tAmharc"
+
+#: src/konqstatusbarmessagelabel.cpp:147
+#, fuzzy, kde-format
+#| msgid "Error "
+msgid "Error: %1"
+msgstr "Earráid "
+
+#: src/konqtabs.cpp:51
+#, kde-format
+msgid ""
+"This bar contains the list of currently open tabs. Click on a tab to make it "
+"active. You can also use keyboard shortcuts to navigate through tabs. The "
+"text on the tab shows the content currently open in it; place your mouse "
+"over the tab to see the full title, in case it has been shortened to fit the "
+"tab width."
+msgstr ""
+"Tá liosta de na cluaisíní oscailte sa bharra seo. Cliceáil cluaisín chun é a "
+"ghníomhachtú. Is féidir an cluaisín gníomhach a athrú trí aicearraí "
+"méarchláir freisin. Taispeánann an téacs ar an gcluaisín an t-ábhar atá "
+"oscailte ann faoi láthair; cuir do luch os cionn an chluaisín chun an "
+"teideal iomlán a fheiceáil má tá sé giorraithe do leithead an chluaisín."
+
+#: src/konqtabs.cpp:86
+#, kde-format
+msgid "Open a new tab"
+msgstr "Oscail cluaisín nua"
+
+#: src/konqtabs.cpp:95
+#, kde-format
+msgid "Close the current tab"
+msgstr "Dún an cluaisín reatha"
+
+#: src/konqtabs.cpp:461
+#, kde-format
+msgid "&Duplicate Tab"
+msgstr "&Cóipeáil Cluaisín"
+
+#: src/konqtabs.cpp:466
+#, kde-format
+msgid "&Reload Tab"
+msgstr "&Athluchtaigh an Cluaisín"
+
+#: src/konqtabs.cpp:473
+#, kde-format
+msgid "Other Tabs"
+msgstr "Cluaisíní Eile"
+
+#: src/konqtabs.cpp:478
+#, kde-format
+msgid "D&etach Tab"
+msgstr "Dích&eangail Cluaisín"
+
+#: src/konqtabs.cpp:484
+#, kde-format
+msgid "&Close Tab"
+msgstr "Dún an &Cluaisín"
+
+#. i18n: ectx: label, entry, group (UserSettings)
+#: src/konqueror.kcfg:11
+#, kde-format
+msgid "Start Page"
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry, group (UserSettings)
+#: src/konqueror.kcfg:12
+#, kde-format
+msgid "This is the URL of the web page where Konqueror will start from."
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry, group (UserSettings)
+#: src/konqueror.kcfg:17
+#, fuzzy, kde-format
+#| msgid ""
+#| "This is the URL of the web page where Konqueror (as web browser) will "
+#| "jump to when the \\\"Home\\\" button is pressed. When Konqueror is "
+#| "started as a file manager, that button makes it jump to your local home "
+#| "folder instead."
+msgid ""
+"This is the URL of the web page where Konqueror will jump to when the \\"
+"\"Home\\\" button is pressed."
+msgstr ""
+"Seo é URL an leathanaigh Ghréasáin a ndéanfaidh Konqueror (mar bhrabhsálaí "
+"Gréasáin) cuairt air nuair a bhrúfar an cnaipe \\\"Baile\\\". Nuair a "
+"thosaítear Konqueror mar bhainisteoir comhad, tugann an cnaipe sin do "
+"d'fhillteán baile ar an ríomhaire logánta thú."
+
+#. i18n: ectx: label, entry, group (UndoManagerSettings)
+#: src/konqueror.kcfg:26
+#, kde-format
+msgid "Maximum number of Closed Items"
+msgstr "Líon uasta Míreanna Dúnta"
+
+#. i18n: ectx: whatsthis, entry, group (UndoManagerSettings)
+#: src/konqueror.kcfg:27
+#, kde-format
+msgid ""
+"This sets the maximum number of closed items that will be stored in memory. "
+"This limit will not be surpassed."
+msgstr ""
+"Socraíonn sé seo an líon uasta míreanna dúnta a stórálfar i gcuimhne. Ní "
+"shárófar an teorainn seo riamh."
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:36
+#, kde-format
+msgid "Open folders in separate windows"
+msgstr "Oscail fillteáin i bhfuinneoga ar leith"
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:37
+#, kde-format
+msgid ""
+"If this option is checked, Konqueror will open a new window when you open a "
+"folder, rather than showing that folder's contents in the current window."
+msgstr ""
+"Má chuireann tú tic sa bhosca seo, osclóidh Konqueror fuinneog nua nuair a "
+"osclóidh tú fillteán, in ionad inneachar an fhillteáin sin a thaispeáint san "
+"fhuinneog reatha."
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:42
+#, kde-format
+msgid "Show file tips"
+msgstr "Taispeáin leideanna comhaid"
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:43
+#, kde-format
+msgid ""
+"Here you can control if, when moving the mouse over a file, you want to see "
+"a small popup window with additional information about that file"
+msgstr ""
+"Leis an rogha seo, taispeánfar preabfhuinneog bheag ina bhfuil faisnéis "
+"bhreise faoi chomhad nuair a bhogfar an luch os a chionn."
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:54
+#, kde-format
+msgid "Show previews in file tips"
+msgstr "Taispeáin réamhamhairc i leideanna comhaid"
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:55
+#, kde-format
+msgid ""
+"Here you can control if you want the popup window to contain a larger "
+"preview for the file, when moving the mouse over it"
+msgstr ""
+"Leis an rogha seo, beidh réamhamharc níos mó sa phreabfhuinneog nuair a "
+"bhogfar an luch os a chionn"
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:60
+#, kde-format
+msgid "Show 'Delete' menu entries which bypass the trashcan"
+msgstr "Taispeáin iontrálacha 'Scrios' sa roghchlár a sheachnaíonn an bruscar"
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:61
+#, kde-format
+msgid ""
+"Check this if you want 'Delete' menu commands to be displayed on the desktop "
+"and in the file manager's menus and context menus. You can always delete "
+"files when hidden by holding the Shift key while calling 'Move to Trash'."
+msgstr ""
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:153 src/konqueror.kcfg:154
+#, kde-format
+msgid "Number of Open With items in the File menu"
+msgstr "Líon na n-iontrálacha 'Oscail Le' sa roghchlár Comhad"
+
+#. i18n: ectx: label, entry, group (HTML Settings)
+#: src/konqueror.kcfg:163
+#, kde-format
+msgid "Standard font"
+msgstr "Cló caighdeánach:"
+
+#. i18n: ectx: whatsthis, entry, group (HTML Settings)
+#: src/konqueror.kcfg:164
+#, kde-format
+msgid "This is the font used to display text in Konqueror windows."
+msgstr ""
+"Seo é an cló a úsáidtear chun téacs a thaispeáint i bhfuinneoga Konqueror."
+
+#. i18n: ectx: label, entry, group (HistorySettings)
+#: src/konqueror.kcfg:314
+#, kde-format
+msgid "Maximum number of history items per view"
+msgstr ""
+
+#. i18n: ectx: label, entry, group (Trash)
+#: src/konqueror.kcfg:504
+#, kde-format
+msgid "Ask confirmation for deleting a file."
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry, group (Trash)
+#: src/konqueror.kcfg:505
+#, kde-format
+msgid ""
+"This option tells Konqueror whether to ask for a confirmation when you "
+"delete a file without using the trash folder. Warning, deleted files can not "
+"be recovered, so it is recommended to leave this confirmation enabled."
+msgstr ""
+
+#. i18n: ectx: label, entry, group (Trash)
+#: src/konqueror.kcfg:510
+#, kde-format
+msgid "Ask confirmation for move to trash"
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry, group (Trash)
+#: src/konqueror.kcfg:511
+#, kde-format
+msgid ""
+"This option tells Konqueror whether to ask for a confirmation when you move "
+"the file to your trash folder, from where it can be recovered very easily."
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry, group (Trash)
+#: src/konqueror.kcfg:518
+#, kde-format
+msgid ""
+"If true, when opening a session from within the sessions dialog the tabs "
+"will be opened inside current window."
+msgstr ""
+
+#. i18n: ectx: Menu (file)
+#: src/konqueror.rc:5
+#, kde-format
+msgid "&File"
+msgstr "&Comhad"
+
+#. i18n: ectx: Menu (edit)
+#: src/konqueror.rc:24
+#, kde-format
+msgid "&Edit"
+msgstr "&Eagar"
+
+#. i18n: ectx: Menu (view)
+#: src/konqueror.rc:33
+#, kde-format
+msgid "&View"
+msgstr "&Amharc"
+
+#. i18n: ectx: Menu (go)
+#: src/konqueror.rc:44
+#, kde-format
+msgid "&Go"
+msgstr "&Téigh"
+
+#. i18n: ectx: Menu (tools)
+#: src/konqueror.rc:54
+#, kde-format
+msgid "&Tools"
+msgstr "&Uirlisí"
+
+#. i18n: ectx: Menu (settings)
+#: src/konqueror.rc:59
+#, kde-format
+msgid "&Settings"
+msgstr "&Socruithe"
+
+#. i18n: ectx: Menu (window)
+#: src/konqueror.rc:77
+#, kde-format
+msgid "&Window"
+msgstr "&Fuinneog"
+
+#. i18n: ectx: Menu (help)
+#: src/konqueror.rc:93
+#, kde-format
+msgid "&Help"
+msgstr "&Cabhair"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: src/konqueror.rc:98
+#, kde-format
+msgid "Main Toolbar"
+msgstr "Príomhbharra Uirlisí"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: src/konqueror.rc:109
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "Barra Uirlisí Breise"
+
+#. i18n: ectx: ToolBar (locationToolBar)
+#: src/konqueror.rc:116
+#, kde-format
+msgid "Location Toolbar"
+msgstr "Barra Uirlisí Suíomh"
+
+#. i18n: ectx: ToolBar (bookmarkToolBar)
+#: src/konqueror.rc:122
+#, kde-format
+msgid "Bookmark Toolbar"
+msgstr "Barra Uirlisí Leabharmharcanna"
+
+#: src/konqundomanager.cpp:90 src/konqundomanager.cpp:252
+#, kde-format
+msgid "Und&o: Closed Tab"
+msgstr "C&ealaigh: Cluaisín Dúnta"
+
+#: src/konqundomanager.cpp:92 src/konqundomanager.cpp:103
+#: src/konqundomanager.cpp:147
+#, kde-format
+msgid "Und&o: Closed Window"
+msgstr "C&ealaigh: Fuinneog Dúnta"
+
+#: src/konqundomanager.cpp:105
+#, kde-format
+msgid "Und&o"
+msgstr "C&ealaigh"
+
+#: src/konqview.cpp:1162
+#, kde-format
+msgid ""
+"The page you are trying to view is the result of posted form data. If you "
+"resend the data, any action the form carried out (such as search or online "
+"purchase) will be repeated. "
+msgstr ""
+"Tá tú ag iarraidh leathanach a thaispeáint ina bhfuil sonraí POSTDATA. Má "
+"sheolann tú na sonraí arís, déanfar arís gach gníomh a chuir an fhoirm i "
+"bhfeidhm (cuardach nó ceannach ar líne, mar shampla). "
+
+#: src/konqview.cpp:1164
+#, kde-format
+msgctxt "@title:window"
+msgid "Warning"
+msgstr "Rabhadh"
+
+#: src/konqview.cpp:1164
+#, kde-format
+msgid "Resend"
+msgstr "Seol Arís"
+
+#: src/urlloader.cpp:253
+#, kde-format
+msgctxt "Execute an executable file"
+msgid "Execute it"
+msgstr ""
+
+#: src/urlloader.cpp:258
+#, kde-format
+msgctxt ""
+"The user has to decide whether to execute an executable file or display it"
+msgid ""
+"<tt>%1</tt> can be executed. Do you want to execute it or to display it?"
+msgstr ""
+
+#: src/urlloader.cpp:259
+#, kde-format
+msgctxt "Display an executable file"
+msgid "Display it"
+msgstr ""
+
+#: src/urlloader.cpp:263
+#, kde-format
+msgctxt "The user has to decide whether to execute an executable file or not"
+msgid "<tt>%1</tt> can be executed. Do you want to execute it?"
+msgstr ""
+
+#: src/urlloader.cpp:438
+#, fuzzy, kde-format
+#| msgid "Save As..."
+msgid "Save As"
+msgstr "Sábháil Mar..."
+
+#~ msgid ""
+#~ "Malformed URL\n"
+#~ "%1"
+#~ msgstr ""
+#~ "URL míchumtha\n"
+#~ "%1"
+
+#~ msgid "File Management"
+#~ msgstr "Bainisteoireacht Comhad"
+
+#~ msgid "Web Browsing"
+#~ msgstr "Brabhsáil an Ghréasáin"
+
+#~ msgctxt "@title:window"
+#~ msgid "Configure"
+#~ msgstr "Cumraigh"
+
+#~ msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
+#~ msgid "Be free."
+#~ msgstr "Bí saor."
+
+#~ msgid ""
+#~ "Konqueror is a web browser, file manager and universal document viewer."
+#~ msgstr ""
+#~ "Brabhsálaí, bainisteoir comhad agus amharcán uilíoch cáipéisí is ea é "
+#~ "Konqueror."
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "Starting Points"
+#~ msgstr "Pointí Tosaigh"
+
+#~ msgid "Introduction"
+#~ msgstr "Tús Eolais"
+
+#~ msgid "Tips"
+#~ msgstr "Leideanna"
+
+#~ msgid "Specifications"
+#~ msgstr "Sonraíochtaí"
+
+#~ msgid "Your personal files"
+#~ msgstr "Do chuid comhad"
+
+#~ msgid "Trash"
+#~ msgstr "Bruscar"
+
+#~ msgid "Browse and restore the trash"
+#~ msgstr "Brabhsáil tríd an mbruscar agus cuir comhaid ar ais"
+
+#~ msgid "Network Folders"
+#~ msgstr "Fillteáin Líonra"
+
+#~ msgid "Shared files and folders"
+#~ msgstr "Comhchomhaid agus comhfhillteáin"
+
+#~ msgid "Bookmarks"
+#~ msgstr "Leabharmharcanna"
+
+#~ msgid "Quick access to your bookmarks"
+#~ msgstr "Rochtain thapa ar do chuid leabharmharcanna"
+
+#~ msgid "Next: An Introduction to Konqueror"
+#~ msgstr "Ar Aghaidh: Tús Eolais ar Konqueror"
+
+#~ msgid "Search the Web"
+#~ msgstr "Cuardach Idirlín"
+
+#~ msgid ""
+#~ "Konqueror makes working with and managing your files easy. You can browse "
+#~ "both local and networked folders while enjoying advanced features such as "
+#~ "the powerful sidebar and file previews."
+#~ msgstr ""
+#~ "Is an-éasca do chuid comhad a bhainistiú le Konqueror. Is féidir "
+#~ "fillteáin a bhrabhsáil, idir logánta agus ar an líonra, agus tairbhe a "
+#~ "bhaint as ardghnéithe mar shampla an barra taoibh agus réamhamharc comhad."
+
+#~ msgid ""
+#~ "Konqueror is also a full featured and easy to use web browser which you "
+#~ "can use to explore the Internet. Enter the address (e.g. <a href=\"http://"
+#~ "www.kde.org\">http://www.kde.org</a>) of a web page you would like to "
+#~ "visit in the location bar and press Enter, or choose an entry from the "
+#~ "Bookmarks menu."
+#~ msgstr ""
+#~ "Is brabhsálaí an-chumhachtach so-úsáidte é Konqueror, lenar féidir leat "
+#~ "an tIdirlíon a thaiscéaladh. Níl le déanamh ach seoladh Idirlín (m.sh. <a "
+#~ "href=\"http://www.kde.org\">http://www.kde.org</a>) an leathanaigh atá "
+#~ "uait a chur isteach agus an eochair Enter a bhrú, nó ceann de na "
+#~ "hiontrálacha i do roghchlár \"Leabharmharcanna\" a roghnú."
+
+#~ msgid ""
+#~ "To return to the previous location, press the back button <img width='16' "
+#~ "height='16' src=\"%1\"></img> in the toolbar. "
+#~ msgstr ""
+#~ "Más mian leat dul ar ais go dtí an leathanach roimh seo, cliceáil ar an "
+#~ "chnaipe <img width='16' height='16' src=\"%1\"></img> (\"Ar Ais\") ar an "
+#~ "mbarra uirlisí. "
+
+#, fuzzy
+#~| msgid ""
+#~| "To quickly go to your Home folder press the  home button <img width='16' "
+#~| "height='16' src=\"%1\"></img>."
+#~ msgid ""
+#~ "To quickly go to your Home folder press the home button <img width='16' "
+#~ "height='16' src=\"%1\"></img>."
+#~ msgstr ""
+#~ "Chun dul go dtí d'Fhillteán Baile, brúigh an cnaipe baile <img width='16' "
+#~ "height='16' src=\"%1\"></img>."
+
+#~ msgid ""
+#~ "For more detailed documentation on Konqueror click <a href=\"%1\">here</"
+#~ "a>."
+#~ msgstr ""
+#~ "Chun breis eolais faoi Konqueror a fháil, cliceáil <a href=\"%1\">anseo</"
+#~ "a>."
+
+#, fuzzy
+#~| msgid "Next: Tips &amp; Tricks"
+#~ msgid "Next: Tips & Tricks"
+#~ msgstr "Ar Aghaidh: Leideanna &amp; Seifteanna"
+
+#~ msgid ""
+#~ "Konqueror is designed to embrace and support Internet standards. The aim "
+#~ "is to fully implement the officially sanctioned standards from "
+#~ "organizations such as the W3 and OASIS, while also adding extra support "
+#~ "for other common usability features that arise as de facto standards "
+#~ "across the Internet. Along with this support, for such functions as "
+#~ "favicons, Web Shortcuts, and <A HREF=\"%1\">XBEL bookmarks</A>, Konqueror "
+#~ "also implements:"
+#~ msgstr ""
+#~ "Tá Konqueror deartha chun úsáid a bhaint as, agus tacú le, caighdeáin an "
+#~ "Idirlín. Tá sé mar aidhm ag na forbróirí na caighdeáin oifigiúla ó "
+#~ "eagrais mar an W3 agus OASIS a chur i gcrích go hiomlán, agus ag an am "
+#~ "céanna tacaíocht bhreise a chur san áireamh le haghaidh gnéithe coitianta "
+#~ "úsáideacha atá mar chaighdeáin <i>de facto</i> ar an Idirlíon. Mar aon "
+#~ "leis an tacaíocht sin le haghaidh gnéithe cosúil le deilbhíní ceanán, "
+#~ "Aicearraí Gréasáin, agus <A HREF=\"%1\">leabharmharcanna XBEL</A>, tá na "
+#~ "gnéithe seo a leanas ar fáil i Konqueror freisin:"
+
+#~ msgid "Supported standards"
+#~ msgstr "Caighdeáin Tacaithe"
+
+#~ msgid "Additional requirements*"
+#~ msgstr "Riachtanais bhreise*"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+#~ msgstr ""
+#~ "<A HREF=\"%2\">HTML 4.01</A> bunaithe ar <A HREF=\"%1\">DOM</A> (Leibhéal "
+#~ "1, cuid de Leibhéal 2)"
+
+#~ msgid "built-in"
+#~ msgstr "insuite"
+
+#~ msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
+#~ msgstr "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, cuid de CSS 2)"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
+#~ msgstr "<A HREF=\"%1\">ECMA-262</A> Eagrán 3 (gar do JavaScript 1.5)"
+
+#~ msgid ""
+#~ "JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
+#~ msgstr ""
+#~ "Tá JavaScript díchumasaithe (i ngach áit). Cumasaigh JavaScript <A HREF="
+#~ "\"%1\">anseo</A>."
+
+#~ msgid ""
+#~ "JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\"
+#~ "\">here</A>."
+#~ msgstr ""
+#~ "Tá JavaScript cumasaithe (i ngach áit). Cumraigh JavaScript <A HREF=\\"
+#~ "\"%1\\\">anseo</A>."
+
+#~ msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
+#~ msgstr "Tacaíocht do Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP>"
+
+#, fuzzy
+#~| msgid ""
+#~| "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">IBM</A> or <A HREF="
+#~| "\"%2\">Sun/Oracle</A>)"
+#~ msgid ""
+#~ "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">OpenJDK</A> or <A HREF="
+#~ "\"%2\">Sun/Oracle</A>)"
+#~ msgstr ""
+#~ "Meaisín fíorúil atá comhoiriúnach do JDK 1.2.0 (Java 2) (<A HREF="
+#~ "\"%1\">IBM</A> nó <A HREF=\"%2\">Sun/Oracle</A>)"
+
+#~ msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
+#~ msgstr "Cumasaigh Java (i ngach áit) <A HREF=\"%1\">anseo</A>."
+
+#~ msgid "Secure Sockets Layer"
+#~ msgstr "Secure Sockets Layer"
+
+#~ msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
+#~ msgstr "(TLS/SSL v2/3) le haghaidh cumarsáid dhaingean go 168 giotán"
+
+#~ msgid "OpenSSL"
+#~ msgstr "OpenSSL"
+
+#~ msgid "Bidirectional 16bit unicode support"
+#~ msgstr "Tacaíocht do Unicode 16 ghiotán sa dá threo"
+
+#~ msgid "AutoCompletion for forms"
+#~ msgstr "Comhlánú uathoibríoch le haghaidh foirmeacha"
+
+#~ msgctxt "Title of an html 'group box' explaining konqueror features"
+#~ msgid "General"
+#~ msgstr "Ginearálta"
+
+#~ msgid "Feature"
+#~ msgstr "Gné"
+
+#~ msgid "Details"
+#~ msgstr "Mionsonraí"
+
+#~ msgid "Image formats"
+#~ msgstr "Formáidí íomhánna"
+
+#~ msgid "PNG<br />JPG<br />GIF"
+#~ msgstr "PNG<br />JPG<br />GIF"
+
+#~ msgid "Transfer protocols"
+#~ msgstr "Prótacail aistrithe"
+
+#~ msgid "HTTP 1.1 (including gzip/bzip2 compression)"
+#~ msgstr "HTTP 1.1 (comhbhrú gzip/bzip2 san áireamh)"
+
+#~ msgid "FTP"
+#~ msgstr "FTP"
+
+#, fuzzy
+#~| msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpcenter)...</A>"
+#~ msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpCenter)...</A>"
+#~ msgstr ""
+#~ "agus  <A HREF=\"%1\">neart eile (féach ar Kioslaves in KHelpcenter...</A>"
+
+#~ msgctxt "A feature of Konqueror"
+#~ msgid "URL-Completion"
+#~ msgstr "Comhlánú URLanna"
+
+#~ msgid "Manual"
+#~ msgstr "De Láimh"
+
+#~ msgid "Popup"
+#~ msgstr "Preabfhuinneog"
+
+#~ msgid "(Short-) Automatic"
+#~ msgstr "(Gearr-) Uathoibríoch"
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "<a href=\"%1\">Return to Starting Points</a>"
+#~ msgstr "<a href=\"%1\">Fill ar Phointí Tosaigh</a>"
+
+#, fuzzy
+#~| msgid "Tips &amp; Tricks"
+#~ msgid "Tips & Tricks"
+#~ msgstr "Leideanna &amp; Seifteanna"
+
+#~ msgid ""
+#~ "Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, "
+#~ "using Google, for the search phrase \"KDE\". There are a lot of Web-"
+#~ "Shortcuts predefined to make searching for software or looking up certain "
+#~ "words in an encyclopedia a breeze. You can even <a href=\"%1\">create "
+#~ "your own</a> Web-Shortcuts."
+#~ msgstr ""
+#~ "Úsáid Aicearraí Gréasáin: trí \"gg: KDE\" a chlóscríobh, is féidir an "
+#~ "Gréasán a chuardach ar an bhfrása \"KDE\" le Google. Tá go leor Aicearraí "
+#~ "Gréasáin réamhshainithe ann agus sa chaoi seo beidh sé i bhfad níos éasca "
+#~ "bogearraí a lorg nó ailt a aimsiú i gciclipéid. Is féidir freisin <a href="
+#~ "\"%1\">d'Aicearraí Gréasáin féin</a> a chruthú."
+
+#~ msgid ""
+#~ "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
+#~ "the HTML toolbar to increase the font size on your web page."
+#~ msgstr ""
+#~ "Úsáid an cnaipe formhéadúcháin <img width='16' height='16' src=\"%1\"></"
+#~ "img> sa bharra uirlisí HTML chun an cló a mhéadú ar do leathanach "
+#~ "Gréasáin."
+
+#~ msgid ""
+#~ "When you want to paste a new address into the Location toolbar you might "
+#~ "want to clear the current entry by pressing the black arrow with the "
+#~ "white cross <img width='16' height='16' src=\"%1\"></img> in the toolbar."
+#~ msgstr ""
+#~ "Nuair is mian leat seoladh nua a ghreamú sa Bharra Suímh, seans gur "
+#~ "mhaith leat an téacs atá ann a ghlanadh ar dtús.  Glan é tríd an "
+#~ "tsaighead dhubh le croisín bán <img width='16' height='16' src=\"%1\"></"
+#~ "img> sa bharra uirlisí a bhrú."
+
+#~ msgid ""
+#~ "To create a link on your desktop pointing to the current page, simply "
+#~ "drag the icon (favicon) that is to the left of the Location toolbar, drop "
+#~ "it on to the desktop, and choose \"Icon\"."
+#~ msgstr ""
+#~ "Chun nasc leis an leathanach reatha a chruthú agus a chur ar do dheasc, "
+#~ "níl uait ach an deilbhín (favicon) atá ar chlé den bharra Suímh a "
+#~ "tharraingt agus a scaoileadh ar an deasc, ansin roghnaigh \"Deilbhín\"."
+
+#~ msgid ""
+#~ "You can also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen "
+#~ "Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
+#~ "sessions."
+#~ msgstr ""
+#~ "Is féidir an <img width='16' height='16' src=\"%1\" />  \"Mód Lánscáileáin"
+#~ "\" a aimsiú sa roghchlár Socruithe. Rogha áisiúil é seo le haghaidh "
+#~ "seisiún \"Comhrá\"."
+
+#, fuzzy
+#~| msgid ""
+#~| "Divide et impera (lat. \"Divide and conquer\") - by splitting a window "
+#~| "into two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> "
+#~| "Split View Left/Right) you can make Konqueror appear the way you like. "
+#~| "You can even load some example view-profiles (e.g. Midnight Commander), "
+#~| "or create your own ones."
+#~ msgid ""
+#~ "Divide et impera (lat. \"Divide and conquer\") - by splitting a window "
+#~ "into two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> "
+#~ "Split View Left/Right) you can make Konqueror appear the way you like."
+#~ msgstr ""
+#~ "Divide et impera (Laidin: \"Scar agus Treascair\") - trí fhuinneog a "
+#~ "scaradh ina dhá leath (m.sh. Fuinneog -> <img width='16' height='16' src="
+#~ "\"%1\" /> Scoilt an tAmharc Clé/Deas) is féidir cuma Konqueror a "
+#~ "shaincheapadh. Is féidir freisin próifílí samplacha amhairc (m.sh. "
+#~ "Midnight Commander) a luchtú, nó do phróifílí féin a chruthú."
+
+#~ msgid ""
+#~ "Use the <a href=\"%1\">user-agent</a> feature if the website you are "
+#~ "visiting asks you to use a different browser (and do not forget to send a "
+#~ "complaint to the webmaster!)"
+#~ msgstr ""
+#~ "Úsáid an ghné <a href=\"%1\">user-agent</a> má fhiafraíonn an suíomh "
+#~ "Gréasáin a bhfuil tú ag déanamh cuairt air díot brabhsálaí eile a úsáid "
+#~ "(agus ná déan dearmad gearán a dhéanamh le stiúrthóir an tsuímh!)"
+
+#~ msgid ""
+#~ "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
+#~ "ensures that you can keep track of the pages you have visited recently."
+#~ msgstr ""
+#~ "Deimhníonn an <img width='16' height='16' src=\"%1\"></img> Stair i do "
+#~ "Bharra Taoibh go mbeidh tú in ann tuairisc a choinneáil ar na leathanaigh "
+#~ "a ndearna tú cuairt orthu le déanaí."
+
+#~ msgid ""
+#~ "Use a caching <a href=\"%1\">proxy</a> to speed up your Internet "
+#~ "connection."
+#~ msgstr ""
+#~ "Bain úsáid as <a href=\"%1\">seachfhreastalaí</a> le taisce chun do "
+#~ "cheangal Idirlín a luasghéarú."
+
+#~ msgid ""
+#~ "Advanced users will appreciate the Konsole which you can embed into "
+#~ "Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
+#~ "Terminal Emulator)."
+#~ msgstr ""
+#~ "Bainfidh ardúsáideoirí sult as an Konsole is féidir a leabú i Konqueror "
+#~ "(Socruithe -> <img width='16' height='16' SRC=\"%1\"></img> Taispeáin "
+#~ "Aithriseoir Teirminéil)."
+
+#~ msgid "Next: Specifications"
+#~ msgstr "Ar Aghaidh: Sonraíochtaí"
+
+#~ msgid "Installed Plugins"
+#~ msgstr "Breiseáin Suiteáilte"
+
+#~ msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
+#~ msgstr ""
+#~ "<td>Breiseán</td><td>Cur Síos</td><td>Comhad</td><td>Cineálacha</td>"
+
+#~ msgid "Installed"
+#~ msgstr "Suiteáilte"
+
+#~ msgid ""
+#~ "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
+#~ msgstr ""
+#~ "<td>Cineál MIME</td><td>Cur Síos</td><td>Iarmhíreanna</td><td>Breiseán</"
+#~ "td>"
+
+#~ msgid "&Open"
+#~ msgstr "&Oscail"
+
+#~ msgid ""
+#~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">plugins</A> (for "
+#~ "viewing <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
+#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Video, etc.)"
+#~ msgstr ""
+#~ "<A HREF=\"%4\">Breiseáin</A> Netscape Communicator<SUP>&reg;</SUP> (chun "
+#~ "<A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF=\"%2\">Real<SUP>&reg;</"
+#~ "SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</SUP></A>Video, srl. a "
+#~ "fheiceáil)"
+
+#~ msgid "http://konqueror.kde.org"
+#~ msgstr "http://konqueror.kde.org"
+
+#~ msgid "Limits"
+#~ msgstr "Teorainneacha"
+
+#~ msgid "URLs e&xpire after"
+#~ msgstr "Rachaidh URLanna as &feidhm tar éis"
+
+#~ msgid "Maximum &number of URLs:"
+#~ msgstr "Lío&n uasta URLanna:"
+
+#~ msgid "Custom Fonts For"
+#~ msgstr "Clónna speisialta do"
+
+#~ msgid "URLs newer than"
+#~ msgstr "URLanna níos nuaí ná"
+
+#~ msgid "Choose Font..."
+#~ msgstr "Roghnaigh Cló..."
+
+#~ msgid "URLs older than"
+#~ msgstr "URLanna níos sine ná"
+
+#~ msgid ""
+#~ "Shows the number of times visited and the dates of the first and last "
+#~ "visits, in addition to the URL"
+#~ msgstr ""
+#~ "Taispeánann méid na gcuairteanna agus dátaí na chéad chuairte agus na "
+#~ "cuairte is deireanaí, mar aon leis an URL"
+
+#~ msgid "Detailed tooltips"
+#~ msgstr "Leideanna mionsonraithe uirlisí"
+
+#~ msgid "Clear History"
+#~ msgstr "Glan an Stair"
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "History Sidebar Module"
+#~ msgstr "Modúl Barra Taoibh: Stair"
+
+#~ msgctxt "@title:tab"
+#~ msgid "History"
+#~ msgstr "Stair"
+
+#~ msgid "Minute"
+#~ msgid_plural "Minutes"
+#~ msgstr[0] "Nóiméad"
+#~ msgstr[1] "Nóiméad"
+#~ msgstr[2] "Nóiméad"
+#~ msgstr[3] "Nóiméad"
+#~ msgstr[4] "Nóiméad"
+
+#~ msgid "Day"
+#~ msgid_plural "Days"
+#~ msgstr[0] "Lá"
+#~ msgstr[1] "Lá"
+#~ msgstr[2] "Lá"
+#~ msgstr[3] "Lá"
+#~ msgstr[4] "Lá"
+
+#~ msgid "<h1>History Sidebar</h1> You can configure the history sidebar here."
+#~ msgstr ""
+#~ "<h1>Barra Taoibh Staire</h1> Is féidir leat an barra taoibh staire a "
+#~ "chumrú anseo."
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Places Sidebar Module"
+#~ msgstr "Modúl Barra Taoibh: Suímh"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Places"
+#~ msgstr "Suímh"
+
+#~ msgid "Extended Sidebar"
+#~ msgstr "Barra Taoibh Breisithe"
+
+#~ msgid "Rollback to System Default"
+#~ msgstr "Fill ar Réamhshocruithe an Chórais"
+
+#~ msgid "Configure Sidebar"
+#~ msgstr "Cumraigh an Barra Taoibh"
+
+#~ msgid "Add New"
+#~ msgstr "Cuir Ceann Nua Leis"
+
+#~ msgid "Multiple Views"
+#~ msgstr "Ilamharcach"
+
+#~ msgid "Show Tabs Left"
+#~ msgstr "Taispeáin Cluaisíní Ar Chlé"
+
+#~ msgid "Close Sidebar"
+#~ msgstr "Dún an Barra Taoibh"
+
+#~ msgid "This entry already exists."
+#~ msgstr "Tá an iontráil seo ann cheana."
+
+#~ msgid ""
+#~ "<qt>This removes all your entries from the sidebar and adds the system "
+#~ "default ones.<br /><b>This procedure is irreversible</b><br />Do you want "
+#~ "to proceed?</qt>"
+#~ msgstr ""
+#~ "<qt>Bainfidh sé seo gach iontráil ón bharra taoibh agus cuirfidh sé na "
+#~ "cinn réamhshocraithe ar ais.<br /><b>Ní féidir dul ar ais tar éis an "
+#~ "ghnímh seo!</b><br />An bhfuil fonn ort dul ar aghaidh?</qt>"
+
+#~ msgid "Show Tabs Right"
+#~ msgstr "Taispeáin Cluaisíní Ar Dheis"
+
+#~ msgctxt "@title:window"
+#~ msgid "Set Name"
+#~ msgstr "Cuir Ainm Air"
+
+#~ msgid "Enter the name:"
+#~ msgstr "Cuir an t-ainm isteach:"
+
+#~ msgid "Enter a URL:"
+#~ msgstr "Cuir isteach URL:"
+
+#~ msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
+#~ msgstr ""
+#~ "<qt>An bhfuil tú cinnte gur mian leat an cluaisín <b>%1</b> a bhaint?</qt>"
+
+#~ msgid ""
+#~ "You have hidden the sidebar configuration button. To make it visible "
+#~ "again, click the right mouse button on any of the sidebar buttons and "
+#~ "select \"Show Configuration Button\"."
+#~ msgstr ""
+#~ "Chuir tú cnaipe cumraíochta an bharra taoibh i bhfolach. Chun é a "
+#~ "thaispeáint arís, deaschliceáil aon chnaipe ar aon cheann de na cnaipí ar "
+#~ "an mbarra taoibh agus roghnaigh \"Taispeáin Cnaipe Cumraíochta\"."
+
+#~ msgid "Set Name..."
+#~ msgstr "Cuir ainm air..."
+
+#~ msgid "Set URL..."
+#~ msgstr "Socraigh URL..."
+
+#~ msgid "Set Icon..."
+#~ msgstr "Socraigh Deilbhín..."
+
+#~ msgid "Remove"
+#~ msgstr "Bain"
+
+#~ msgid "Web module"
+#~ msgstr "Modúl Gréasáin"
+
+#~ msgid "&Create New Folder"
+#~ msgstr "&Cruthaigh Fillteán Nua"
+
+#~ msgid "Delete Folder"
+#~ msgstr "Scrios Fillteán"
+
+#~ msgid "Delete Bookmark"
+#~ msgstr "Scrios Leabharmharc"
+
+#~ msgid "Properties"
+#~ msgstr "Airíonna"
+
+#~ msgid "Open in New Window"
+#~ msgstr "Oscail i bhFuinneog Nua"
+
+#~ msgid "Open Folder in Tabs"
+#~ msgstr "Oscail Fillteán i gCluaisíní"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "Cóipeáil Seoladh an Naisc"
+
+#~ msgctxt "@title:window"
+#~ msgid "Create New Bookmark Folder"
+#~ msgstr "Cruthaigh Fillteán Nua Leabharmharcanna"
+
+#~ msgid "New folder:"
+#~ msgstr "Fillteán nua:"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark folder\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "An bhfuil tú cinnte go dteastaíonn uait an fillteán leabharmharcanna\n"
+#~ "\"%1\" a bhaint?"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "An bhfuil tú cinnte go dteastaíonn uait an leabharmharc\n"
+#~ "\"%1\" a bhaint?"
+
+#~ msgctxt "@title:window"
+#~ msgid "Bookmark Folder Deletion"
+#~ msgstr "Scriosadh Fhillteán na Leabharmharcanna"
+
+#~ msgctxt "@title:window"
+#~ msgid "Bookmark Deletion"
+#~ msgstr "Scriosadh Leabharmharcanna"
+
+#~ msgctxt "@title:window"
+#~ msgid "Bookmark Properties"
+#~ msgstr "Airíonna an Leabharmhairc"
+
+#~ msgid "&Update"
+#~ msgstr "N&uashonrú"
+
+#~ msgid "Name:"
+#~ msgstr "Ainm:"
+
+#~ msgid "Location:"
+#~ msgstr "Suíomh:"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add Bookmark"
+#~ msgstr "Cuir Leabharmharc Leis"
+
+#~ msgid "Cannot find parent item %1 in the tree. Internal error."
+#~ msgstr "Ní féidir máthairmhír %1 a aimsiú sa chrann.  Earráid inmheánach."
+
+#~ msgid "&Create New Folder..."
+#~ msgstr "&Cruthaigh Fillteán Nua..."
+
+#~ msgid "Move to Trash"
+#~ msgstr "Cuir sa Bhruscar"
+
+#~ msgid "Rename"
+#~ msgstr "Athainmnigh"
+
+#~ msgid "Delete Link"
+#~ msgstr "Scrios Nasc"
+
+#~ msgid "New Folder"
+#~ msgstr "Fillteán Nua"
+
+#~ msgctxt "@title:window"
+#~ msgid "Create New Folder"
+#~ msgstr "Cruthaigh Fillteán Nua"
+
+#~ msgid "Enter folder name:"
+#~ msgstr "Cuir ainm ar an bhfillteán:"
+
+#~ msgctxt "@label"
+#~ msgid "Name:"
+#~ msgstr "Ainm:"
+
+#~ msgctxt "@label"
+#~ msgid "Path or URL:"
+#~ msgstr "Conair nó URL:"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add folder sidebar module"
+#~ msgstr "Cuir modúl barra taoibh fillteán leis"
+
+#~ msgid "&Open Link"
+#~ msgstr "&Oscail Nasc"
+
+#~ msgid "Set &Automatic Reload"
+#~ msgstr "Socraigh &Athluchtú Uathoibríoch"
+
+#~ msgctxt "@title:window"
+#~ msgid "Set Refresh Timeout (0 disables)"
+#~ msgstr "Socraigh Teorainn Ama Athnuachana (0=díchumasaithe)"
+
+#~ msgid " minute"
+#~ msgid_plural " minutes"
+#~ msgstr[0] " nóiméad"
+#~ msgstr[1] " nóiméad"
+#~ msgstr[2] " nóiméad"
+#~ msgstr[3] " nóiméad"
+#~ msgstr[4] " nóiméad"
+
+#~ msgid " second"
+#~ msgid_plural " seconds"
+#~ msgstr[0] " soicind"
+#~ msgstr[1] " shoicind"
+#~ msgstr[2] " shoicind"
+#~ msgstr[3] " soicind"
+#~ msgstr[4] " soicind"
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Web Sidebar Module"
+#~ msgstr "Modúl Barra Taoibh: Gréasán"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add web sidebar module"
+#~ msgstr "Cuir modúl barra taoibh Gréasáin leis"
+
+#~ msgid "&Use index.html"
+#~ msgstr "&Bain úsáid as index.html"
+
+#~ msgid "If present, open index.html when entering a folder."
+#~ msgstr "Má tá sé ann, oscail 'index.html' nuair a osclaítear fillteán."
+
+#~ msgid ""
+#~ "<em>Tuning Tip:</em> If you want the Konqueror web browser to start "
+#~ "faster, you can turn off this information screen by clicking <a href="
+#~ "\"%1\">here</a>. You can re-enable it by choosing the Help -> Konqueror "
+#~ "Introduction menu option, and then pressing Settings -> Save View Profile "
+#~ "As... -> \"Web Browsing\"."
+#~ msgstr ""
+#~ "<em>Leid:</em> Chun tús níos tapúla a chur le Konqueror, níl le déanamh "
+#~ "ach cliceáil <a href=\"%1\">anseo</a> agus ní thaispeánfar an leathanach "
+#~ "eolais seo. Chun é a athchumasú, roghnaigh Cabhair -> Tús Eolais faoi "
+#~ "Konqueror, agus ansin Socruithe -> Sábháil an Phróifíl Amhairc Mar... -> "
+#~ "\"Web Browsing\" ."
+
+#~ msgid ""
+#~ "Do you want to disable showing the introduction in the webbrowsing "
+#~ "profile?"
+#~ msgstr ""
+#~ "An bhfuil fonn ort taispeáint an Réamhrá a dhíchumasú sa phróifíl "
+#~ "brabhsálaithe?"
+
+#~ msgctxt "@title:window"
+#~ msgid "Faster Startup?"
+#~ msgstr "Tosú níos tapúla?"
+
+#~ msgid "Disable"
+#~ msgstr "Díchumasaigh"
+
+#~ msgid "Keep"
+#~ msgstr "Coinnigh"
+
+#~ msgid "Profile to open"
+#~ msgstr "Próifíl le hoscailt"
+
+#~ msgid "List available profiles"
+#~ msgstr "Taispeáin na próifílí atá ar fáil"
+
+#~ msgid "&Save View Profile As..."
+#~ msgstr "&Sábháil an Phróifíl Amhairc Mar..."
+
+#~ msgid "C&onfigure View Profiles..."
+#~ msgstr "&Cumraigh Próifílí Amhairc..."
+
+#~ msgid "Load &View Profile"
+#~ msgstr "Luchtaigh Próifíl &Amhairc"
+
+#~ msgctxt "@title:window"
+#~ msgid "Profile Management"
+#~ msgstr "Bainisteoireacht Próifíle"
+
+#~ msgid "&Rename Profile"
+#~ msgstr "&Athainmnigh Próifíl"
+
+#~ msgid "&Delete Profile"
+#~ msgstr "&Scrios Próifíl"
+
+#~ msgid "&Profile name:"
+#~ msgstr "&Ainm Próifíle:"
+
+#~ msgid "Save &URLs in profile"
+#~ msgstr "Sábháil &URLanna sa phróifíl"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window.\n"
+#~ "Loading a view profile will close them."
+#~ msgstr ""
+#~ "Tá cluaisíní iomadúla oscailte agat san fhuinneog seo.\n"
+#~ "Dúnfar iad má luchtaíonn tú próifíl amhairc."
+
+#~ msgid "Load View Profile"
+#~ msgstr "Luchtaigh Próifíl Amhairc"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Loading a profile will discard these changes."
+#~ msgstr ""
+#~ "Tá athruithe gan seoladh sa chluaisín seo.\n"
+#~ "Caillfidh tú na hathruithe seo má luchtaíonn tú próifíl."
+
+#~ msgid " day"
+#~ msgid_plural " days"
+#~ msgstr[0] " lá"
+#~ msgstr[1] " lá"
+#~ msgstr[2] " lá"
+#~ msgstr[3] " lá"
+#~ msgstr[4] " lá"
+
+#~ msgid " min"
+#~ msgstr " nóiméad"
+
+#~ msgid "Input Required:"
+#~ msgstr "Ionchur ag teastáil:"
+
+#~ msgid "&Execute Shell Command..."
+#~ msgstr "&Rith Ordú Blaoisce..."
+
+#~ msgid ""
+#~ "KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a "
+#~ "bug."
+#~ msgstr ""
+#~ "KShellCmdPlugin::slotExecuteShellCommand: Earráid ríomhchláir, déan "
+#~ "tuairisc ar an bhfabht seo."
+
+#~ msgid "Executing shell commands works only on local directories."
+#~ msgstr "Ní féidir ordaithe blaoisce a rith ach ar chomhadlanna logánta."
+
+#~ msgid "Execute Shell Command"
+#~ msgstr "Rith Ordú Blaoisce"
+
+#~ msgid "Execute shell command in current directory:"
+#~ msgstr "Rith ordú blaoisce sa chomhadlann reatha:"
+
+#~ msgid "Output from command: \"%1\""
+#~ msgstr "Aschur ón ordú: \"%1\""
+
+#~ msgid "Hide %1"
+#~ msgstr "Folaigh %1"
+
+#~ msgid "SideBar Test Plugin"
+#~ msgstr "Breiseán Tástála Barra Taoibh"
+
+#~ msgid "Bookmark This Location"
+#~ msgstr "Cruthaigh Leabharmharc don Suíomh Seo"
+
+#~ msgid ""
+#~ "Protocol not supported\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Ní ghlactar leis an bprótacal\n"
+#~ "%1"
+
+#~ msgid "Cannot create the find part, check your installation."
+#~ msgstr ""
+#~ "Ní féidir an chomhpháirt aimsithe a chruthú, déan seiceáil ar do chóras."
+
+#~ msgid "My Bookmarks"
+#~ msgstr "Mo Chuid Leabharmharcanna"
+
+#~ msgid "Preload for later use"
+#~ msgstr "Réamhluchtaigh le húsáid níos déanaí"
+
+#~ msgid "&Save View Profile \"%1\"..."
+#~ msgstr "&Sábháil an Phróifíl Amhairc \"%1\"..."
+
+#~ msgid "Configure Navigation Panel"
+#~ msgstr "Cumraigh Painéal Nascleanúna"
+
+#~ msgid "Close Navigation Panel"
+#~ msgstr "Dún an Painéal Nascleanúna"
+
+#~ msgid "Select Type"
+#~ msgstr "Roghnaigh Cineál"
+
+#~ msgid "Select type:"
+#~ msgstr "Roghnaigh cineál:"
+
+#~ msgid "Web SideBar Plugin"
+#~ msgstr "Breiseán Barra Taoibh Gréasáin"
+
+#~ msgid "<qt><b>%1</b> does not exist</qt>"
+#~ msgstr "<qt>Níl <b>%1</b> ann</qt>"
+
+#~ msgid "Minutes"
+#~ msgstr "Nóiméad"
+
+#~ msgid "Days"
+#~ msgstr "Lá"
+
+#~ msgid "Your sidebar is not functional or unavailable."
+#~ msgstr "Níl do bharra taoibh ag obair, nó níl sé ar fáil."
+
+#~ msgid "Cannot find running history plugin in your sidebar."
+#~ msgstr "Níor aimsíodh breiseán staire ag rith i do bharra taoibh."
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History in Sidebar"
+#~ msgstr "Taispeáin Stair sa Bharra Taoibh"
+
+#~ msgid "Select Remote Charset"
+#~ msgstr "Roghnaigh Tacar Carachtar i gCéin"
+
+#~ msgid "Reload"
+#~ msgstr "Athluchtaigh"
+
+#~ msgid "Default"
+#~ msgstr "Réamhshocrú"
+
+#~ msgctxt "@action:button New session"
+#~ msgid "New"
+#~ msgstr "Nua"
+
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename"
+#~ msgstr "Athainmnigh"
+
+#~ msgid ""
+#~ "Konqueror is your file manager, web browser and universal document viewer."
+#~ msgstr ""
+#~ "Brabhsálaí, bainisteoir comhad agus amharcán uilíoch cáipéisí is ea é "
+#~ "Konqueror."
+
+#~ msgid "Joseph WENNINGER"
+#~ msgstr "Joseph WENNINGER"
+
+#~ msgid "G E N E R A L"
+#~ msgstr "G I N E A R Á L T A"
+
+#~ msgid "<img width='16' height='16' src=\"%1\"></img>"
+#~ msgstr "<img width='16' height='16' src=\"%1\"></img>"
+
+#~ msgid "Applications"
+#~ msgstr "Feidhmchláir"
+
+#~ msgid "Installed programs"
+#~ msgstr "Breiseáin suiteáilte"
+
+#~ msgid "&Location"
+#~ msgstr "&Suíomh"
+
+#~ msgid "Open &Terminal"
+#~ msgstr "Oscail &Teirminéal"
+
+#~ msgid "Closed Tabs"
+#~ msgstr "Cluaisíní Dúnta"
+
+#~ msgid "Unknown"
+#~ msgstr "Anaithnid"
+
+#~ msgid "Save &window size in profile"
+#~ msgstr "Sábháil méid na &fuinneoga sa phróifíl"
+
+#~ msgid "&Speak Text"
+#~ msgstr "&Abair Téacs"
+
+#~ msgid "You cannot read anything except web pages with this plugin, sorry."
+#~ msgstr ""
+#~ "Ní féidir ach leathanaigh Ghréasáin a léamh leis an mbreiseán seo; tá "
+#~ "brón orm."
+
+#~ msgid "Cannot Read source"
+#~ msgstr "Ní féidir an fhoinse a léamh"
+
+#~ msgid "Starting KTTSD Failed"
+#~ msgstr "Theip ar thosú KTTSD"
+
+#~ msgid "The D-Bus call say() failed."
+#~ msgstr "Theip ar ghlao D-Bus say()."
+
+#~ msgid "D-Bus Call Failed"
+#~ msgstr "Theip ar ghlao D-Bus"
+
+#~ msgid "Speech Toolbar"
+#~ msgstr "Barra Uirlisí Cainte"
+
+#~ msgid "The D-Bus call supportsMarkup failed."
+#~ msgstr "Theip ar ghlao supportsMarkup D-Bus."
+
+#~ msgid "The D-Bus call setText failed."
+#~ msgstr "Theip ar ghlao setText D-Bus."
+
+#~ msgid "Conquer your Desktop!"
+#~ msgstr "Cuir do Dheasc faoi Smacht!"
+
+#~ msgid "Storage Media"
+#~ msgstr "Meáin Stórála"
+
+#~ msgid "Disks and removable media"
+#~ msgstr "Dioscaí agus meáin inbhainte"
+
+#~ msgid "Settings"
+#~ msgstr "Socruithe"
+
+#~ msgid "Desktop configuration"
+#~ msgstr "Cumraíocht na deisce"
+
+#~ msgid "Home &URL:"
+#~ msgstr "&URL Baile:"
+
+#~ msgid "&Edit File Type..."
+#~ msgstr "Cuir Cineál Comhaid in &Eagar..."
+
+#~ msgid "S&ystem"
+#~ msgstr "&Córas"
+
+#~ msgid "App&lications"
+#~ msgstr "Feidhmch&láir"
+
+#~ msgid "&Storage Media"
+#~ msgstr "&Meáin Stórála"
+
+#~ msgid "&Network Folders"
+#~ msgstr "Fillteái&n Líonra"
+
+#~ msgid "Sett&ings"
+#~ msgstr "Socr&uithe"
+
+#~ msgid "Autostart"
+#~ msgstr "Tosú uathoibríoch"
+
+#~ msgid "kfmclient"
+#~ msgstr "kfmclient"
+
+#~ msgid "Show available commands"
+#~ msgstr "Taispeáin na horduithe atá ar fáil"
+
+#~ msgid "Command (see --commands)"
+#~ msgstr "Ordú (féach ar --commands)"
+
+#~ msgid "Arguments for command"
+#~ msgstr "Argóintí don ordú"
+
+#~ msgid ""
+#~ "\n"
+#~ "Syntax:\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Comhréir:\n"
+
+#~ msgid "Profile %1 not found\n"
+#~ msgstr "Próifíl %1 gan aimsiú\n"
+
+#~ msgid "Syntax Error: Not enough arguments\n"
+#~ msgstr "Earráid Chomhréire: Níl go leor argóintí ann\n"
+
+#~ msgid "Syntax Error: Too many arguments\n"
+#~ msgstr "Earráid Chomhréire: An iomarca argóintí\n"
+
+#~ msgid "Syntax Error: Unknown command '%1'\n"
+#~ msgstr "Earráid Chomhréire: Ordú anaithnid '%1'\n"
+
+#~ msgid "Invalid Proxy Setting"
+#~ msgstr "Socrú Neamhbhailí Seachfhreastalaí"
+
+#~ msgid "You entered a duplicate address. Please try again."
+#~ msgstr "D'iontráil tú seoladh dúblach. Bain triail eile as."
+
+#~ msgid "<qt><center><b>%1</b></center> is already in the list.</qt>"
+#~ msgstr "<qt>Tá <center><b>%1</b></center> ar an liosta cheana.</qt>"
+
+#~ msgid "Duplicate Entry"
+#~ msgstr "Iontráil dúblach"
+
+#~ msgid "New Exception"
+#~ msgstr "Eisceacht Nua"
+
+#~ msgid "Change Exception"
+#~ msgstr "Athraigh Eisceacht"
+
+#~ msgid "Invalid Entry"
+#~ msgstr "Iontráil Neamhbhailí"
+
+#~ msgid "The address you have entered is not valid."
+#~ msgstr "Níl an seoladh a thug tú bailí."
+
+#~ msgid "Default user name:"
+#~ msgstr "Ainm úsáideora réamhshocraithe:"
+
+#~ msgid "Default password:"
+#~ msgstr "Focal faire réamhshocraithe:"
+
+#~ msgid "Accept"
+#~ msgstr "Glac Leis"
+
+#~ msgid "Reject"
+#~ msgstr "Diúltaigh"
+
+#~ msgid "Ask"
+#~ msgstr "Fiafraigh díom"
+
+#~ msgid "Dunno"
+#~ msgstr "Níl fhios agam"
+
+#~ msgid "Soc&ket read:"
+#~ msgstr "Léamh soi&céid:"
+
+#~ msgid "FTP Options"
+#~ msgstr "Roghanna FTP"
+
+#~ msgid "D-Bus Communication Error"
+#~ msgstr "Earráid Chumarsáide D-Bus"
+
+#~ msgid "Unable to delete all the cookies as requested."
+#~ msgstr "Ní féidir gach fianán a scriosadh mar a iarradh."
+
+#~ msgid "Unable to delete cookies as requested."
+#~ msgstr "Ní féidir fianáin a scriosadh mar a iarradh."
+
+#~ msgid "<h1>Cookies Management Quick Help</h1>"
+#~ msgstr "<h1>Bainisteoireacht na bhFianán: Cabhair Ghasta</h1>"
+
+#~ msgid "Information Lookup Failure"
+#~ msgstr "Theip ar Chuardach ar Eolas"
+
+#~ msgid ""
+#~ "Unable to retrieve information about the cookies stored on your computer."
+#~ msgstr ""
+#~ "Níorbh fhéidir eolas a fháil faoina fianáin atá sábháilte ar do ríomhaire."
+
+#~ msgid "&Windows Shares"
+#~ msgstr "Comhranna &Windows"
+
+#~ msgid "&LISa Daemon"
+#~ msgstr "Deamhan &LISa"
+
+#~ msgid "lan:/ Iosla&ve"
+#~ msgstr "lan:/ Iosla&ve"
+
+#~ msgid "Add Identification"
+#~ msgstr "Cuir Aitheantas Leis"
+
+#~ msgid "Modify Identification"
+#~ msgstr "Mionathraigh Aitheantas"
+
+#~ msgid "Duplicate Identification"
+#~ msgstr "Aitheantas Dúblach"
+
+#~ msgid "Variable Proxy Configuration"
+#~ msgstr "Cumraíocht an tSeachfhreastalaí"
+
+#~ msgid "Invalid Proxy Setup"
+#~ msgstr "Socrú Seachfhreastalaí Neamhbhailí"
+
+#~ msgid "Successfully verified."
+#~ msgstr "D'éirigh leis an bhfíorú."
+
+#~ msgid "Proxy Setup"
+#~ msgstr "Socrú Seachfhreastalaí"
+
+#~ msgid "&Policy"
+#~ msgstr "&Polasaí"
+
+#~ msgid "kcmsocks"
+#~ msgstr "kcmsocks"
+
+#~ msgid "KDE SOCKS Control Module"
+#~ msgstr "Modúl Rialaithe SOCKS KDE"
+
+#~ msgid "(c) 2001 George Staikos"
+#~ msgstr "© 2001 George Staikos"
+
+#~ msgid "SOCKS Support"
+#~ msgstr "Tacaíocht SOCKS"
+
+#~ msgid "SOCKS could not be loaded."
+#~ msgstr "Ní féidir SOCKS a luchtú."
+
+#~ msgid "Update Failed"
+#~ msgstr "Theip ar nuashonrú"
+
+#~ msgid ""
+#~ "You have to restart the running applications for these changes to take "
+#~ "effect."
+#~ msgstr ""
+#~ "Ní mór duit gach feidhmchlár beo a atosú chun na hathruithe seo a chur i "
+#~ "bhfeidhm."
+
+#~ msgid "You have to restart KDE for these changes to take effect."
+#~ msgstr "Ní mór duit KDE a atosú chun na hathruithe seo a chur i bhfeidhm."
+
+#~ msgid "New Cookie Policy"
+#~ msgstr "Polasaí Nua Fianán"
+
+#~ msgid "Change Cookie Policy"
+#~ msgstr "Athraigh Polasaí Fianán"
+
+#~ msgid "Duplicate Policy"
+#~ msgstr "Polasaí Dúblach"
+
+#~ msgid "&Proxy"
+#~ msgstr "&Seachfhreastalaí"
+
+#~ msgid "&SOCKS"
+#~ msgstr "&SOCKS"
+
+#~ msgid "kcustommenueditortest"
+#~ msgstr "kcustommenueditortest"
+
+#~ msgid "test app"
+#~ msgstr "feidhmchlár tástála"
+
+#~ msgid "Menu Editor"
+#~ msgstr "Eagarthóir Roghchláir"
+
+#~ msgid "Menu"
+#~ msgstr "Roghchlár"
+
+#~ msgid "Move Up"
+#~ msgstr "Bog Suas"
+
+#~ msgid "Move Down"
+#~ msgstr "Bog Síos"
+
+#~ msgid "Misc Options"
+#~ msgstr "Roghanna Éagsúla"
+
+#~ msgid "Show file &tips"
+#~ msgstr "&Taispeáin leideanna comhaid"
+
+#~ msgid "&Move to trash"
+#~ msgstr "&Bog go dtí an bruscar"
+
+#~ msgid "Sound Files"
+#~ msgstr "Comhaid Fhuaime"
+
+#~ msgid "&Left button:"
+#~ msgstr "&Cnaipe clé:"
+
+#~ msgid "Right b&utton:"
+#~ msgstr "Cnaipe &deas:"
+
+#~ msgid "No Action"
+#~ msgstr "Gan Ghníomh"
+
+#~ msgid "Window List Menu"
+#~ msgstr "Roghchlár Liosta Fuinneog"
+
+#~ msgid "Desktop Menu"
+#~ msgstr "Roghchlár na Deisce"
+
+#~ msgid "Application Menu"
+#~ msgstr "Roghchlár na bhFeidhmchlár"
+
+#~ msgid "Bookmarks Menu"
+#~ msgstr "Roghchlár na Leabharmharcanna"
+
+#~ msgid "Custom Menu 1"
+#~ msgstr "Roghchlár Saincheaptha 1"
+
+#~ msgid "Custom Menu 2"
+#~ msgstr "Roghchlár Saincheaptha 2"
+
+#~ msgid "Select Protocols"
+#~ msgstr "Roghnaigh Prótacail"
+
+#~ msgid "Local Protocols"
+#~ msgstr "Prótacail Logánta"
+
+#~ msgid "Internet Protocols"
+#~ msgstr "Prótacail Idirlín"
+
+#~ msgid "&Maximum file size:"
+#~ msgstr "&Uasmhéid comhaid:"
+
+#~ msgid " MB"
+#~ msgstr " MB"
+
+#~ msgid "&Use thumbnails embedded in files"
+#~ msgstr "Ú&sáid mionsamhlacha atá leabaithe i gcomhaid"
+
+#~ msgid "&Behavior"
+#~ msgstr "Oi&briú"
+
+#~ msgid "&Previews && Meta-Data"
+#~ msgstr "&Réamhamhairc agus Meiteashonraí"
+
+#~ msgid "Des&ktop path:"
+#~ msgstr "Conair na deis&ce:"
+
+#~ msgid "D&ocuments path:"
+#~ msgstr "C&onair na gcáipéisí:"
+
+#~ msgid "Desktop"
+#~ msgstr "Deasc"
+
+#~ msgid "Confirmation Required"
+#~ msgstr "Ní mór cinntiú"
+
+#~ msgid "Move"
+#~ msgstr "Bog"
+
+#~ msgid "KEditFileType"
+#~ msgstr "KEditFileType"
+
+#~ msgid "(c) 2000, KDE developers"
+#~ msgstr "© 2000, Forbróirí KDE"
+
+#~ msgid "Preston Brown"
+#~ msgstr "Preston Brown"
+
+#~ msgid "File type to edit (e.g. text/html)"
+#~ msgstr "Cineál comhaid le cur in eagar (m.sh. text/html)"
+
+#~ msgid "%1 File"
+#~ msgstr "Comhad %1"
+
+#~ msgid "Edit File Type %1"
+#~ msgstr "Cuir Cineál Comhaid %1 in Eagar"
+
+#~ msgid "Group:"
+#~ msgstr "Grúpa:"
+
+#~ msgid "Select the category under which the new file type should be added."
+#~ msgstr "Roghnaigh an chatagóir ina gcuirfear an cineál nua comhaid."
+
+#~ msgid "Type name:"
+#~ msgstr "Ainm an chineáil:"
+
+#~ msgid "Left Click Action"
+#~ msgstr "Gníomh ar Chléchliceáil"
+
+#~ msgid "Show file in embedded viewer"
+#~ msgstr "Taispeáin an comhad in amharcán leabaithe"
+
+#~ msgid "Show file in separate viewer"
+#~ msgstr "Taispeáin an comhad in amharcán faoi leith"
+
+#~ msgid "Select service:"
+#~ msgstr "Roghnaigh seirbhís:"
+
+#~ msgid "F&ind filename pattern:"
+#~ msgstr "A&imsigh patrún comhadainm:"
+
+#~ msgid "Known Types"
+#~ msgstr "Cineálacha Aitheanta"
+
+#~ msgid "Add..."
+#~ msgstr "Cuir Leis..."
+
+#~ msgid "Click here to add a new file type."
+#~ msgstr "Cliceáil anseo chun cineál nua comhaid a chur leis."
+
+#~ msgid "&Remove"
+#~ msgstr "&Bain"
+
+#~ msgid "Click here to remove the selected file type."
+#~ msgstr "Cliceáil anseo chun an cineál roghnaithe comhaid a bhaint."
+
+#~ msgid "Filename Patterns"
+#~ msgstr "Patrúin Chomhadainm"
+
+#~ msgid "Add a new pattern for the selected file type."
+#~ msgstr "Cuir patrún nua leis an chineál roghnaithe chomhaid."
+
+#~ msgid "Description"
+#~ msgstr "Cur Síos"
+
+#~ msgid "&Embedding"
+#~ msgstr "&Leabú"
+
+#~ msgid "%1 (%2)"
+#~ msgstr "%1 (%2)"
+
+#~ msgid "Application Preference Order"
+#~ msgstr "Feidhmchláir in Ord do Rogha"
+
+#~ msgid "Services Preference Order"
+#~ msgstr "Seirbhísí in Ord do Rogha"
+
+#~ msgid "Move &Up"
+#~ msgstr "Bog S&uas"
+
+#~ msgid "Move &Down"
+#~ msgstr "Bog Sí&os"
+
+#~ msgid "Add a new application for this file type."
+#~ msgstr "Cuir feidhmchlár nua leis an chineál comhaid seo."
+
+#~ msgid "Edit..."
+#~ msgstr "Eagar..."
+
+#~ msgid "Edit command line of the selected application."
+#~ msgstr "Cuir líne ordaithe an fheidhmchláir roghnaithe in eagar."
+
+#~ msgid "Remove the selected application from the list."
+#~ msgstr "Bain an feidhmchlár roghnaithe den liosta."
+
+#~ msgid "You are not authorized to remove this service."
+#~ msgstr "Níl cead agat an tseirbhís seo a bhaint."
+
+#~ msgid "The service <b>%1</b> can not be removed."
+#~ msgstr "Ní féidir an tseirbhís <b>%1</b> a bhaint."
+
+#~ msgid "&Enable plugins globally"
+#~ msgstr "&Cumasaigh breiseáin i ngach áit"
+
+#~ msgid "Only allow &HTTP and HTTPS URLs for plugins"
+#~ msgstr "Ná ceadaigh ach URLanna den chineál &HTTP nó HTTPS do bhreiseáin"
+
+#~ msgid "&Load plugins on demand only"
+#~ msgstr "&Luchtaigh breiseáin ar éileamh amháin"
+
+#~ msgid "CPU priority for plugins: %1"
+#~ msgstr "Tosaíocht LAP le haghaidh breiseán: %1"
+
+#~ msgid "Domain-Specific Settin&gs"
+#~ msgstr "Socruithe &Sainiúil don Fhearann"
+
+#~ msgid "Domain-Specific Policies"
+#~ msgstr "Polasaithe Sainiúil don Fhearann"
+
+#~ msgid "Netscape Plugins"
+#~ msgstr "Breiseáin Netscape"
+
+#~ msgctxt "lowest priority"
+#~ msgid "lowest"
+#~ msgstr "is ísle"
+
+#~ msgctxt "low priority"
+#~ msgid "low"
+#~ msgstr "íseal"
+
+#~ msgctxt "high priority"
+#~ msgid "high"
+#~ msgstr "ard"
+
+#~ msgctxt "highest priority"
+#~ msgid "highest"
+#~ msgstr "is airde"
+
+#~ msgid ""
+#~ "The nspluginscan executable cannot be found. Netscape plugins will not be "
+#~ "scanned."
+#~ msgstr ""
+#~ "Níor aimsíodh clár inrite nspluginscan. Ní scanfar breiseáin Netscape."
+
+#~ msgid "Scanning for plugins"
+#~ msgstr "Breiseáin á scanadh"
+
+#~ msgid "Cancel"
+#~ msgstr "Cealaigh"
+
+#~ msgid "Plugin"
+#~ msgstr "Breiseán"
+
+#~ msgid "MIME type"
+#~ msgstr "Cineál MIME"
+
+#~ msgid "Suffixes"
+#~ msgstr "Iarmhíreanna"
+
+#~ msgid "Doma&in-Specific"
+#~ msgstr "Sainiúi&l don Fhearann"
+
+#~ msgid "New Plugin Policy"
+#~ msgstr "Polasaí Nua Breiseáin"
+
+#~ msgid "Change Plugin Policy"
+#~ msgstr "Athraigh an Polasaí Breiseáin"
+
+#~ msgid "&Plugin policy:"
+#~ msgstr "&Polasaí Breiseáin:"
+
+#~ msgid "Select a plugin policy for the above host or domain."
+#~ msgstr ""
+#~ "Roghnaigh polasaí breiseáin le haghaidh an óstríomhaire nó fearainn thuas."
+
+#~ msgid "Host/Domain"
+#~ msgstr "Óstríomhaire/Fearann"
+
+#~ msgid "Policy"
+#~ msgstr "Polasaí"
+
+#~ msgid "De&lete"
+#~ msgstr "Sc&rios"
+
+#~ msgid "&Import..."
+#~ msgstr "&Iompórtáil..."
+
+#~ msgid "&Export..."
+#~ msgstr "&Easpórtáil..."
+
+#~ msgid "You must first select a policy to be changed."
+#~ msgstr "Caithfidh tú polasaí le hathrú ar dtús."
+
+#~ msgid "You must first select a policy to delete."
+#~ msgstr "Caithfidh tú polasaí le scriosadh ar dtús."
+
+#~ msgid "Use Global"
+#~ msgstr "Úsáid Polasaí Comhchoiteann"
+
+#~ msgid "Accept languages:"
+#~ msgstr "Teangacha glactha:"
+
+#~ msgid "Accept character sets:"
+#~ msgstr "Tacair carachtar glactha:"
+
+#~ msgid "Select Home Folder"
+#~ msgstr "Roghnaigh Fillteán Baile"
+
+#~ msgid "Tabbed Browsing"
+#~ msgstr "Brabhsáil le Cluaisíní"
+
+#~ msgid "Use setting from global policy."
+#~ msgstr "Bain úsáid as socrú ó pholasaí comhchoiteann."
+
+#~ msgid "Allow"
+#~ msgstr "Ceadaigh"
+
+#~ msgid "Accept all popup window requests."
+#~ msgstr "Glac le gach preabfhuinneog."
+
+#~ msgid "Deny"
+#~ msgstr "Diúltaigh"
+
+#~ msgid "Reject all popup window requests."
+#~ msgstr "Diúltaigh gach preabfhuinneog."
+
+#~ msgid "Smart"
+#~ msgstr "Cliste"
+
+#~ msgid "Allow scripts to change the window size."
+#~ msgstr "Ceadaigh do scripteanna méid na fuinneoige a athrú."
+
+#~ msgid "Move window:"
+#~ msgstr "Bog an fhuinneog:"
+
+#~ msgid "Allow scripts to change the window position."
+#~ msgstr "Ceadaigh do scripteanna ionad na fuinneoige a athrú."
+
+# or "fuinneog fhócasaithe"?
+#~ msgid "Focus window:"
+#~ msgstr "Fócasaigh fuinneog:"
+
+#~ msgid "Allow scripts to focus the window."
+#~ msgstr "Ceadaigh do scripteanna an fhuinneog a fhócasú."
+
+#~ msgid "Allow scripts to change the text of the status bar."
+#~ msgstr "Ceadaigh do scripteanna téacs an bharra stádais a athrú."
+
+#~ msgid "kcmkonqhtml"
+#~ msgstr "kcmkonqhtml"
+
+#~ msgid "Konqueror Browsing Control Module"
+#~ msgstr "Modúl Rialaithe Brabhsála do Konqueror"
+
+#~ msgid "(c) 1999 - 2001 The Konqueror Developers"
+#~ msgstr "© 1999 - 2001 Forbróirí Konqueror"
+
+#~ msgid "Matthias Kalle Dalheimer"
+#~ msgstr "Matthias Kalle Dalheimer"
+
+#~ msgid "Daniel Molkentin"
+#~ msgstr "Daniel Molkentin"
+
+#~ msgid "&Java"
+#~ msgstr "&Java"
+
+#~ msgid "Java&Script"
+#~ msgstr "Java&Script"
+
+#~ msgid "Enable filters"
+#~ msgstr "Cumasaigh scagairí"
+
+#~ msgid "Hide filtered images"
+#~ msgstr "Folaigh íomhánna scagtha"
+
+#~ msgid "Expression (e.g. http://www.site.com/ad/*):"
+#~ msgstr "Slonn (m.sh. http://www.site.com/ad/*):"
+
+#~ msgid "Insert"
+#~ msgstr "Ionsáigh"
+
+#~ msgid "Update"
+#~ msgstr "Nuashonraigh"
+
+#~ msgid "Import..."
+#~ msgstr "Iompórtáil..."
+
+#~ msgid "Export..."
+#~ msgstr "Easpórtáil..."
+
+#~ msgid "Font Si&ze"
+#~ msgstr "Cló&mhéid"
+
+#~ msgid "M&inimum font size:"
+#~ msgstr "C&lómhéid is lú:"
+
+#~ msgid "S&tandard font:"
+#~ msgstr "Cló &caighdeánach:"
+
+#~ msgid "&Fixed font:"
+#~ msgstr "Cló &aonleithid:"
+
+#~ msgid "S&erif font:"
+#~ msgstr "Cló S&erif:"
+
+#~ msgid "Sa&ns serif font:"
+#~ msgstr "Cló Sa&ns serif:"
+
+#~ msgid "Fantas&y font:"
+#~ msgstr "Cló &Ornáidíocht:"
+
+#~ msgid "Default encoding:"
+#~ msgstr "Ionchódú réamhshocraithe:"
+
+#~ msgid "Use Language Encoding"
+#~ msgstr "Úsáid Ionchódú Teanga"
+
+#~ msgid "Boo&kmarks"
+#~ msgstr "Leabharmhar&canna"
+
+#~ msgid "Show only marked bookmarks in bookmark toolbar"
+#~ msgstr ""
+#~ "Ná taispeáin ach leabharmharcanna marcáilte i mbarra uirlisí na "
+#~ "leabharmharcanna"
+
+#~ msgid "Mouse Beha&vior"
+#~ msgstr "Oibriú na &Luiche"
+
+#~ msgid "A&utomatically load images"
+#~ msgstr "L&uchtaigh íomhánna go huathoibríoch"
+
+#~ msgid "Dra&w frame around not completely loaded images"
+#~ msgstr "&Dear fráma timpeall íomhánna nach luchtaithe"
+
+#~ msgid "Allow automatic delayed &reloading/redirecting"
+#~ msgstr "Ceadaigh &athluchtú/atreorú moillithe uathoibríoch"
+
+#~ msgid "Und&erline links:"
+#~ msgstr "Cuir lín&e faoi naisc:"
+
+#~ msgctxt "underline"
+#~ msgid "Enabled"
+#~ msgstr "Cumasaithe"
+
+#~ msgctxt "underline"
+#~ msgid "Disabled"
+#~ msgstr "Díchumasaithe"
+
+#~ msgid "A&nimations:"
+#~ msgstr "Íomhá&nna Beo:"
+
+#~ msgctxt "animations"
+#~ msgid "Enabled"
+#~ msgstr "Cumasaithe"
+
+#~ msgctxt "animations"
+#~ msgid "Disabled"
+#~ msgstr "Díchumasaithe"
+
+#~ msgid "Show Only Once"
+#~ msgstr "Ná taispeáin ach uair amháin"
+
+#~ msgid "&Host or domain name:"
+#~ msgstr "Ó&stríomhaire nó ainm fearainn:"
+
+#~ msgid "You must first enter a domain name."
+#~ msgstr "Caithfidh tú ainm fearainn a iontráil ar dtús."
+
+#~ msgid "Ena&ble JavaScript globally"
+#~ msgstr "Cu&masaigh JavaScript i ngach áit"
+
+#~ msgid "Report &errors"
+#~ msgstr "Tabhair tuairisc ar &earráidí"
+
+#~ msgid "Enable debu&gger"
+#~ msgstr "Cumasaigh an dí&fhabhtóir"
+
+#~ msgid "Enables builtin JavaScript debugger."
+#~ msgstr "Cumasaigh an dífhabhtóir insuite JavaScript."
+
+#~ msgid "Global JavaScript Policies"
+#~ msgstr "Polasaithe Comhchoiteanna JavaScript"
+
+#~ msgid "Do&main-Specific"
+#~ msgstr "Sai&niúil don Fhearann"
+
+#~ msgid "New JavaScript Policy"
+#~ msgstr "Polasaí Nua JavaScript"
+
+#~ msgid "Change JavaScript Policy"
+#~ msgstr "Athraigh an Polasaí JavaScript"
+
+#~ msgid "JavaScript policy:"
+#~ msgstr "Polasaí JavaScript:"
+
+#~ msgid "Select a JavaScript policy for the above host or domain."
+#~ msgstr ""
+#~ "Roghnaigh polasaí JavaScript le haghaidh an óstríomhaire nó fearainn "
+#~ "thuas."
+
+#~ msgid "Domain-Specific JavaScript Policies"
+#~ msgstr "Polasaithe JavaScript Sainiúil don Fhearann"
+
+#~ msgid "Enable Ja&va globally"
+#~ msgstr "Cumasaigh Ja&va i ngach áit"
+
+#~ msgid "Java Runtime Settings"
+#~ msgstr "Socruithe Java ag Am Rite"
+
+#~ msgid "&Use security manager"
+#~ msgstr "Ú&sáid bainisteoir na slándála"
+
+#~ msgid "Use &KIO"
+#~ msgstr "Úsáid &KIO"
+
+#~ msgid "&Path to Java executable, or 'java':"
+#~ msgstr "&Conair go dtí an comhad inrite Java, nó 'java':"
+
+#~ msgid "Additional Java a&rguments:"
+#~ msgstr "A&rgóintí Java Breise:"
+
+#~ msgid "New Java Policy"
+#~ msgstr "Polasaí Nua Java"
+
+#~ msgid "Change Java Policy"
+#~ msgstr "Athraigh an Polasaí Java"
+
+#~ msgid "&Java policy:"
+#~ msgstr "Polasaí &Java:"
+
+#~ msgid "Select a Java policy for the above host or domain."
+#~ msgstr ""
+#~ "Roghnaigh polasaí Java le haghaidh an óstríomhaire nó fearainn thuas."
+
+#~ msgid "&Filters"
+#~ msgstr "&Scagairí"
+
+#~ msgid "Under construction..."
+#~ msgstr "Á thógáil..."
+
+#~ msgid "System"
+#~ msgstr "Córas"
+
+#~ msgid "No permissions to write to %1"
+#~ msgstr "Níl cead agat scríobh ar %1"
+
+#~ msgid "Remove Folder Properties"
+#~ msgstr "Bain Airíonna Fillteáin"
+
+#~ msgid "Create Folder..."
+#~ msgstr "Cruthaigh Fillteán..."
+
+#~ msgid "&Delete"
+#~ msgstr "&Scrios"
+
+#~ msgid "&Rename"
+#~ msgstr "&Athainmnigh"
+
+#~ msgid "Desktop %1:"
+#~ msgstr "Deasc %1:"
+
+#~ msgid "Desktop %1"
+#~ msgstr "Deasc %1"
+
+#~ msgid "Move backwards one step in the browsing history<br /><br />"
+#~ msgstr "Téigh siar céim amháin sa stair brabhsálaithe<br /><br />"
+
+#~ msgid "Move forward one step in the browsing history<br /><br />"
+#~ msgstr "Téigh ar aghaidh céim amháin sa stair brabhsálaithe<br /><br />"
+
+#~ msgid "Rename icons in&line"
+#~ msgstr "Athainmnigh dei&lbhíní inlíne"
+
+#~ msgid "&Standard font:"
+#~ msgstr "&Cló caighdeánach:"
+
+#~ msgid "Font si&ze:"
+#~ msgstr "Cló&mhéid:"
+
+#~ msgid "H&eight for icon text:"
+#~ msgstr "Aird&e an téacs deilbhín:"
+
+#~ msgid "&Width for icon text:"
+#~ msgstr "&Leithead an téacs deilbhín:"
+
+#~ msgid "&Underline filenames"
+#~ msgstr "&Cuir líne faoi ainmneacha comhaid"
+
+#~ msgid " line"
+#~ msgid_plural " lines"
+#~ msgstr[0] " líne"
+#~ msgstr[1] " líne"
+#~ msgstr[2] " líne"
+#~ msgstr[3] " líne"
+#~ msgstr[4] " líne"
+
+#~ msgid " pixel"
+#~ msgid_plural " pixels"
+#~ msgstr[0] " phicteilín"
+#~ msgstr[1] " phicteilín"
+#~ msgstr[2] " phicteilín"
+#~ msgstr[3] " bpicteilín"
+#~ msgstr[4] " picteilín"
+
+#~ msgid "&Appearance"
+#~ msgstr "&Cuma"
+
+#~ msgid "MS Windows encoding:"
+#~ msgstr "Ionchódú MS Windows:"
+
+#~ msgid "&Show network operations in a single window"
+#~ msgstr "&Taispeáin oibríochtaí líonra i bhfuinneog aonair"
+
+#~ msgid "&Open Location..."
+#~ msgstr "&Oscail Suíomh..."
+
+#~ msgid "Animated Logo"
+#~ msgstr "Lógó Beo"
+
+#~ msgid "Selection"
+#~ msgstr "Roghnú"
+
+#~ msgid "Icon Size"
+#~ msgstr "Méid na nDeilbhíní"
+
+#~ msgid "Show Details"
+#~ msgstr "Taispeáin Mionsonraí"
+
+#~ msgid "MimeType"
+#~ msgstr "Cineál MIME"
+
+#~ msgid "Size"
+#~ msgstr "Méid"
+
+#~ msgid "Modified"
+#~ msgstr "Athraithe"
+
+#~ msgid "Created"
+#~ msgstr "Cruthaithe"
+
+#~ msgid "Owner"
+#~ msgstr "Úinéir"
+
+#~ msgid "Group"
+#~ msgstr "Grúpa"
+
+#~ msgid "Link"
+#~ msgstr "Nasc"
+
+#~ msgid "URL"
+#~ msgstr "URL"
+
+#~ msgid "File Type"
+#~ msgstr "Cineál Comhaid"
+
+#~ msgid "Select files:"
+#~ msgstr "Roghnaigh comhaid:"
+
+#~ msgid "Unselect files:"
+#~ msgstr "Díroghnaigh comhaid:"
+
+#~ msgid "Show &Modification Time"
+#~ msgstr "Taispeáin A&m Athruithe"
+
+#~ msgid "Show &File Type"
+#~ msgstr "Taispeáin &Saghas an Chomhaid"
+
+#~ msgid "Show MimeType"
+#~ msgstr "Taispeáin MimeType"
+
+#~ msgid "Hide MimeType"
+#~ msgstr "Folaigh an Cineál MIME"
+
+#~ msgid "Show &Access Time"
+#~ msgstr "Taispeáin Am &Rochtana"
+
+#~ msgid "Show &Creation Time"
+#~ msgstr "Taispeáin Am &Cruthaithe"
+
+#~ msgid "Show &Link Destination"
+#~ msgstr "Taispeáin &Ceann Scríbe an Naisc"
+
+#~ msgid "Show Filesize"
+#~ msgstr "Taispeáin Méid an Chomhaid"
+
+#~ msgid "Show Owner"
+#~ msgstr "Taispeáin Úinéir"
+
+#~ msgid "Show Group"
+#~ msgstr "Taispeáin Grúpa"
+
+#~ msgid "Show Permissions"
+#~ msgstr "Taispeáin Ceadanna"
+
+#~ msgid "Se&lect..."
+#~ msgstr "&Roghnaigh..."
+
+#~ msgid "Unselect..."
+#~ msgstr "Díroghnaigh..."
+
+#~ msgid "&Invert Selection"
+#~ msgstr "&Inbhéartaigh an Rogha"
+
+#~ msgid "Show &Hidden Files"
+#~ msgstr "&Taispeáin comhaid fholaithe"
+
+#~ msgid "Case Insensitive Sort"
+#~ msgstr "Sórtáil gan aird ar chás na litreacha"
+
+#~ msgid "Name"
+#~ msgstr "Ainm"
+
+#~ msgid "View &As"
+#~ msgstr "Taispeáin M&ar"
+
+#~ msgid "Filename"
+#~ msgstr "Ainm comhaid"
+
+#~ msgid "Toggle displaying of hidden dot files"
+#~ msgstr "Tiontaigh taispeáint na gcomhad poinc "
+
+#~ msgid "&Preview"
+#~ msgstr "&Réamhamharc"
+
+#~ msgid "Enable Previews"
+#~ msgstr "Cumasaigh Réamhamhairc"
+
+#~ msgid "Disable Previews"
+#~ msgstr "Díchumasaigh Réamhamhairc"
+
+#~ msgid "By Name (Case Sensitive)"
+#~ msgstr "De réir ainm (cásíogair)"
+
+#~ msgid "By Name (Case Insensitive)"
+#~ msgstr "De réir ainm (gan aird ar chás na litreacha)"
+
+#~ msgid "By Size"
+#~ msgstr "De Réir Méide"
+
+#~ msgid "By Date"
+#~ msgstr "De Réir Dáta"
+
+#~ msgid "Folders First"
+#~ msgstr "Fillteáin ar dTús"
+
+#~ msgid "Descending"
+#~ msgstr "Ag dul síos"
+
+#~ msgid "Selects all items"
+#~ msgstr "Roghnaíonn gach rud"
+
+#~ msgid "Unselects all selected items"
+#~ msgstr "Díroghnaíonn gach rud atá roghnaithe"
+
+#~ msgid "Inverts the current selection of items"
+#~ msgstr "Inbhéartaíonn an rogha reatha míreanna"
+
+#~ msgid "&Icon Size"
+#~ msgstr "&Méid na nDeilbhíní"
+
+#~ msgid "S&ort"
+#~ msgstr "&Sórtáil"
+
+#~ msgid "Rename icons inline"
+#~ msgstr "Athainmnigh deilbhíní inlíne"
+
+#~ msgid "Tools"
+#~ msgstr "Uirlisí"
+
+#~ msgid "Statusbar"
+#~ msgstr "Barra Stádais"
+
+#~ msgid "&Show Netscape Bookmarks in Konqueror"
+#~ msgstr "Tai&speáin Leabharmharcanna Netscape i Konqueror"
+
+#~ msgid "C&hange URL"
+#~ msgstr "Athraigh &URL"
+
+#~ msgid "&New Bookmark"
+#~ msgstr "Leabharmharc &Nua"
+
+#~ msgid "&Insert Separator"
+#~ msgstr "&Ionsáigh deighilteoir"
+
+#~ msgid "&Sort Alphabetically"
+#~ msgstr "&Sórtáil go haibítreach"
+
+#~ msgid "Set as T&oolbar Folder"
+#~ msgstr "Socraigh mar Fhillteán na m&Barraí Uirlisí"
+
+#~ msgid "Hide in T&oolbar"
+#~ msgstr "F&olaigh sa Bharra Uirlisí"
+
+#~ msgid "&Expand All Folders"
+#~ msgstr "L&eathnaigh Gach Fillteán"
+
+#~ msgid "Collapse &All Folders"
+#~ msgstr "L&aghdaigh Gach Fillteán"
+
+#~ msgid "&Open in Konqueror"
+#~ msgstr "&Oscail i Konqueror"
+
+#~ msgid "Check &Status"
+#~ msgstr "&Seiceáil Stádas"
+
+#~ msgid "Check Status: &All"
+#~ msgstr "Seiceáil Stádas: G&ach Rud"
+
+#~ msgid "Cancel &Checks"
+#~ msgstr "&Cealaigh Seiceáil"
+
+#~ msgid "Import &Netscape Bookmarks..."
+#~ msgstr "Iompórtáil Leabharmharcanna &Netscape..."
+
+#~ msgid "Import &Opera Bookmarks..."
+#~ msgstr "Iompórtáil Leabharmharcanna &Opera..."
+
+#~ msgid "Import &Galeon Bookmarks..."
+#~ msgstr "Iompórtáil Leabharmharcanna &Galeon..."
+
+#~ msgid "Import &KDE2/KDE3 Bookmarks..."
+#~ msgstr "Iompórtáil Leabharmharcanna &KDE2/KDE3..."
+
+#~ msgid "Import &IE Bookmarks..."
+#~ msgstr "Iompórtáil Leabharmharcanna &IE..."
+
+#~ msgid "Import &Mozilla Bookmarks..."
+#~ msgstr "Iompórtáil Leabharmharcanna &Mozilla..."
+
+#~ msgid "Export to &Netscape Bookmarks"
+#~ msgstr "Easpórtáil go Leabharmharcanna &Netscape"
+
+#~ msgid "Export to &Opera Bookmarks..."
+#~ msgstr "Easpórtáil go Leabharmharcanna &Opera..."
+
+#~ msgid "Export to &HTML Bookmarks..."
+#~ msgstr "Easpórtáil go Leabharmharcanna &HTML..."
+
+#~ msgid "Export to &IE Bookmarks..."
+#~ msgstr "Easpórtáil go Leabharmharcanna &IE..."
+
+#~ msgid "Export to &Mozilla Bookmarks..."
+#~ msgstr "Easpórtáil go Leabharmharcanna &Mozilla..."
+
+#~ msgid "*.html|HTML Bookmark Listing"
+#~ msgstr "*.html|HTML Liosta Leabharmharcanna"
+
+#~ msgid "Cut Items"
+#~ msgstr "Gearr Míreanna"
+
+#~ msgid "Sort Alphabetically"
+#~ msgstr "Sórtáil go haibítreach"
+
+#~ msgid "Delete Items"
+#~ msgstr "Scrios Míreanna"
+
+#~ msgid "Icon"
+#~ msgstr "Deilbhín"
+
+#~ msgid "Comment:"
+#~ msgstr "Nóta:"
+
+#~ msgid "Insert Separator"
+#~ msgstr "Ionsáigh Deighilteoir"
+
+#~ msgid "Create Folder"
+#~ msgstr "Cruthaigh Fillteán"
+
+#~ msgid "Copy %1"
+#~ msgstr "Cóipeáil %1"
+
+#~ msgid "Create Bookmark"
+#~ msgstr "Cruthaigh Leabharmharc"
+
+#~ msgid "Renaming"
+#~ msgstr "Athainmniú"
+
+#~ msgid "Set as Bookmark Toolbar"
+#~ msgstr "Socraigh mar Bharra Uirlisí na Leabharmharcanna"
+
+#~ msgid "%1 in Bookmark Toolbar"
+#~ msgstr "%1 i mBarra Uirlisí na Leabharmharcanna"
+
+#~ msgid "Show"
+#~ msgstr "Taispeáin"
+
+#~ msgid "Hide"
+#~ msgstr "Folaigh"
+
+#~ msgid "Move Items"
+#~ msgstr "Bog Míreanna"
+
+#~ msgid "Import %1 Bookmarks"
+#~ msgstr "Iompórtáil Leabharmharcanna %1"
+
+#~ msgid "%1 Bookmarks"
+#~ msgstr "Leabharmharcanna %1"
+
+#~ msgid "*.xbel|Galeon Bookmark Files (*.xbel)"
+#~ msgstr "*.xbel|Comhaid leabharmhairc Galeon (*.xbel)"
+
+#~ msgid "*.xml|KDE Bookmark Files (*.xml)"
+#~ msgstr "*.xml|Comhaid leabharmhairc KDE (*.xml)"
+
+#~ msgid "KBookmarkMerger"
+#~ msgstr "KBookmarkMerger"
+
+#~ msgid "Copyright © 2005 Frerich Raabe"
+#~ msgstr "Copyright © 2005 Frerich Raabe"
+
+#~ msgid "Original author"
+#~ msgstr "An chéad údar"
+
+#~ msgid "Drop Items"
+#~ msgstr "Cuir Míreanna Síos"
+
+#~ msgid "Comment"
+#~ msgstr "Nóta"
+
+#~ msgid "Status"
+#~ msgstr "Stádas"
+
+#~ msgid "Folder"
+#~ msgstr "Fillteán"
+
+#~ msgid "Empty Folder"
+#~ msgstr "Fillteán Folamh"
+
+#~ msgid "File to edit"
+#~ msgstr "Comhad le cur in eagar"
+
+#~ msgid ""
+#~ "Another instance of %1 is already running, do you really want to open "
+#~ "another instance or continue work in the same instance?\n"
+#~ "Please note that, unfortunately, duplicate views are read-only."
+#~ msgstr ""
+#~ "Tá cóip de %1 ag rith cheana. An bhfuil fonn ort cóip nua a oscailt nó "
+#~ "leanadh ar aghaidh sa chóip chéanna?\n"
+#~ "Tabhair faoi deara nach féidir ach léamh a dhéanamh in amhairc dhúbailte."
+
+#~ msgid "Run Another"
+#~ msgstr "Rith Ceann Eile"
+
+#~ msgid "Continue in Same"
+#~ msgstr "Lean ar aghaidh sa cheann céanna"
+
+#~ msgid "Bookmark Editor"
+#~ msgstr "Eagarthóir Leabharmharcanna"
+
+#~ msgid "Konqueror Bookmarks Editor"
+#~ msgstr "Eagarthóir Leabharmharcanna Konqueror"
+
+#~ msgid "Author"
+#~ msgstr "Údar"
+
+#~ msgid "You may only specify a single --export option."
+#~ msgstr "Ní féidir ach rogha '--export' amháin a shonrú."
+
+#~ msgid "You may only specify a single --import option."
+#~ msgstr "Ní féidir ach rogha '--import' amháin a shonrú."
+
+#~ msgid "Checking..."
+#~ msgstr "Á Sheiceáil..."
+
+#~ msgid "Ok"
+#~ msgstr "OK"
+
+#~ msgid "Reset Quick Search"
+#~ msgstr "Athshocraigh Mearchuardach"
+
+#~ msgid "Se&arch:"
+#~ msgstr "Cu&ardaigh:"
+
+#~ msgid "Clear Search"
+#~ msgstr "Glan an Cuardach"

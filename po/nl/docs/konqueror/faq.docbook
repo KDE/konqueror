@@ -1,0 +1,297 @@
+<chapter id="faq">
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+&Bram.Schoenmakers;&Tom.Albers; 
+</authorgroup>
+
+<date
+>2010-10-24</date>
+<releaseinfo
+>&kde; 4.5</releaseinfo>
+</chapterinfo>
+
+<title
+>Vraag &amp; antwoord</title>
+
+<qandaset>
+
+<!-- Link is dead, unfortunately. I suppose this is a more general thing anyway
+<qandaentry>
+<question
+><para
+>How can I browse web sites using non latin
+ scripts?</para
+></question>
+<answer
+><para
+>Detailed instructions can be found at <ulink
+url="http://www.konqueror.org/i18n.html"
+>http://www.konqueror.org/i18n.html</ulink
+></para
+></answer>
+</qandaentry>
+-->
+
+<qandaentry>
+<question
+><para
+>Kan ik &konqueror; starten vanaf een andere windowmanager?</para
+></question>
+
+<answer
+><para
+>Installeer &Qt;, kdelibs, kdebase en uw favoriete windowmanager. U kunt dan &konqueror; starten. Mocht het niet goed werken (&kde;-ontwikkelaars testen dit namelijk niet vaak), kunt u dit opgeven op <ulink url="http://bugs.kde.org"
+>http://bugs.kde.org</ulink
+>. Probeer ook eens <application
+>kdeinit</application
+> te starten voordat u &konqueror; start.</para
+></answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Waar bewaart &konqueror; alle instellingen?</para
+></question>
+<answer
+><para
+>Normaal gesproken in de map <filename
+>~/.kde</filename
+> (dit kan ook <filename
+>~/.kde4</filename
+> zijn op uw systeem, dit hangt af van de manier waarop &kde; is geïnstalleerd). Verander deze bestanden niet tenzij u weet waar u mee bezig bent.</para>
+
+<itemizedlist>
+
+<listitem
+><para
+>De map <filename class="directory"
+>~/.kde/share/apps/konqueror/profiles</filename
+> bevat alle bestanden voor uw <link linkend="save-settings"
+>Profielen</link
+></para
+></listitem>
+
+<listitem
+><para
+>Uw bladwijzers worden bewaard in <filename class="directory"
+>~/.kde/share/apps/konqueror/bookmarks.xml</filename
+></para
+></listitem>
+<listitem
+><para
+>Cookies worden bewaard in <filename class="directory"
+>~/.kde/share/apps/kcookiejar/cookies</filename
+></para
+></listitem>
+<listitem
+><para
+>Uw geschiedenis, gebruikt voor het automatisch aanvullen van adressen, wordt bewaard in <filename
+>~/.kde/share/config/konq_history</filename
+></para
+></listitem>
+
+<listitem
+><para
+>In de map <filename class="directory"
+>~/.kde/share/config</filename
+> bevinden zich de bestanden <filename
+>konqiconviewrc</filename
+>, <filename
+>konqlistviewrc</filename
+> en <filename
+>konquerorrc</filename
+>. Deze bevatten een groot aantal algemene instellingen.</para
+></listitem>
+
+<listitem
+><para
+>De map <filename class="directory"
+>~/.kde/share/cache-<replaceable
+>hostnaam</replaceable
+>/http/</filename
+> bevat de cache (tijdelijke bestanden) van de browser.</para
+></listitem>
+
+<listitem
+><para
+>De zijbalk maakt gebruik van de bestanden en submappen in <filename class="directory"
+>~/.kde/share/apps/konqsidebartng</filename
+></para
+></listitem>
+</itemizedlist>
+
+<para
+>Specifieke weergave-instellingen voor iedere map worden opgeslagen in de map zelf; namelijk in het bestand <literal role="extension"
+>.directory</literal
+>.</para
+></answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Hoe wis ik mijn geschiedenisbestand?</para
+></question>
+<answer
+><para
+>Er zijn twee <quote
+>geschiedenissen</quote
+>:</para>
+<itemizedlist>
+<listitem
+><para
+>Eén wordt gebruikt voor het automatisch aanvullen van adressen in de locatiebalk. Om deze te legen klikt u met de <mousebutton
+>rechter</mousebutton
+>muisknop op deze balk en kies dan voor <guimenuitem
+>Geschiedenis wissen</guimenuitem
+>.</para>
+</listitem>
+<listitem
+><para
+>De andere geschiedenis bevat een lijst van alle bezochte locaties. Open de pagina Geschiedenis in de zijbalk, klik met de <mousebutton
+>rechter</mousebutton
+>muisknop op een item en kies voor <guimenuitem
+>Item verwijderen</guimenuitem
+> (<keycap
+>Del</keycap
+>). Dit verwijdert het geselecteerde item. Om de hele geschiedenis te wissen dient u op <guimenuitem
+>Geschiedenis wissen</guimenuitem
+> te klikken.</para
+></listitem>
+</itemizedlist>
+<note
+><para
+>U kunt ook de toepassing <application
+>Sweeper</application
+> uit de kdeutils-module gebruiken die u in staat stelt om cookies, favicons, webgeschiedenis en buffer, formulieraanvullingsitems en bufferbeleid van bezochte websites.</para
+></note>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Hoe zet ik mijn browsercache aan of uit en hoe wis ik hem?</para
+></question
+> <answer>
+<para
+>In het venster dat u krijgt via <menuchoice
+><guimenu
+>Instellingen</guimenu
+><guimenuitem
+>Konqueror instellen...</guimenuitem
+></menuchoice
+> kunt u in de dialoog <menuchoice
+><guimenu
+>Webbrowsen</guimenu
+><guimenuitem
+>Cache</guimenuitem
+> </menuchoice
+> de cache uitzetten, wissen, de grootte instellen en het cache-beleid wijzigen.</para>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Hoe kan ik de door &konqueror; gebruikte tijdslimietwaarden veranderen bij het surfen?</para
+></question
+> <answer>
+<para
+>In &systemsettings; gaat u naar de pagina <menuchoice
+><guimenu
+>Netwerk instellingen</guimenu
+><guimenuitem
+>Verbindingsvoorkeuren</guimenuitem
+></menuchoice
+> en dan de categorie <guilabel
+>Netwerk en connectiviteit</guilabel
+>.</para>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Hoe stel ik mijn <quote
+>homepage</quote
+> in, ofwel hoe verander ik de openingspagina?</para
+></question>
+<answer
+><para
+>&konqueror; heeft in bestandsbeheerdermodus een <guilabel
+>Persoonlijke map</guilabel
+> en een <guilabel
+>Home pagina</guilabel
+> in browsermodus.</para>
+
+<para
+>Om deze instellingen te wijzigen start u <menuchoice
+><guimenu
+>Instellingen</guimenu
+><guimenuitem
+>Konqueror instellen</guimenuitem
+><guilabel
+>Algemeen</guilabel
+></menuchoice
+>.</para>
+
+<para
+>Om de opstartpagina van &konqueror; in bestandsbeheerdermodus in te stellen selecteer dan <guilabel
+>Introductiepagina tonen</guilabel
+>, <guilabel
+>Mijn persoonlijke pagina tonen</guilabel
+>, <guilabel
+>Lege pagina tonen</guilabel
+> of <guilabel
+>Mijn bladwijzers tonen</guilabel
+> uit het afrolvak met het label <guilabel
+>Wanneer Konqueror start</guilabel
+>.</para>
+
+<para
+>In browsermodus start &konqueror; met de <guilabel
+>Home-pagina</guilabel
+>.</para>
+
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Ik kan hier geen antwoord op mijn vraag vinden.</para
+></question
+> 
+<answer>
+<para
+>Bekijk dan eens <ulink url="http://www.konqueror.org/faq.html"
+>http://www.konqueror.org/faq.html</ulink
+> of <ulink url="http://www.konqueror.org/konq-java.html"
+>http://www.konqueror.org/konq-java.html</ulink
+>.</para>
+<para
+>Er is verdere informatie te vinden in de <ulink url="http://forum.kde.org/"
+>KDE-gemeenschapsforums</ulink
+> of op <ulink url="http://userbase.kde.org/Konqueror"
+>KDE Userbase-pagina van Konqueror</ulink
+>.</para>
+</answer>
+</qandaentry>
+
+</qandaset>
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

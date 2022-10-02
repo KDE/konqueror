@@ -1,0 +1,87 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % French "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="filemanager" lang="&language;">
+<articleinfo>
+<title
+>Gestion de fichiers</title>
+<authorgroup>
+<author
+>&Mike.McBride; &Mike.McBride.mail;</author>
+&traducteurJoelleCornavin;&traducteurGerardDelafond;&traducteurYvesDessertine;&traducteurGillesThioliere;  
+</authorgroup>
+
+<date
+>08-11-2016</date>
+<releaseinfo
+>Applications 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Configuration du système</keyword>
+<keyword
+>gestionnaire de fichiers</keyword>
+</keywordset>
+</articleinfo>
+
+<para
+>Ces modules vous permet de configurer divers aspects de la fonctionnalité de gestionnaire de fichiers de &konqueror;. </para>
+
+<note
+><para
+>Les fonctionnalités de navigateur web de &konqueror; ont leur <ulink url="help:/kcontrol/khtml-behavior/index.html"
+>propre module de configuration</ulink
+>.</para
+></note>
+
+<variablelist>
+<title
+><guilabel
+>Options diverses</guilabel
+></title>
+<varlistentry>
+<term
+><guilabel
+>Ouvrir les dossiers dans des fenêtres séparées</guilabel
+></term>
+<listitem
+> <para
+>Si cette option est cochée, une nouvelle fenêtre &konqueror; sera créée lorsque vous ouvrirez un dossier au lieu d'en afficher simplement le contenu dans la fenêtre actuelle.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Afficher dans le menu l'action « Supprimer » ignorant la corbeille</guilabel
+></term>
+<listitem>
+<para
+>Cochez ceci si vous souhaitez que la commande de menu <quote
+>Supprimer</quote
+> apparaisse sur le bureau et dans les menu contextuels des gestionnaires de fichiers. Vous pouvez toujours supprimer des fichiers en maintenant la touche &Maj; enfoncée tout en appelant « Déplacer dans la corbeille ».</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Les réglages pour le mode gestionnaire de fichiers de &konqueror; pour les pages <guilabel
+>Modes d'affichage</guilabel
+>, <guilabel
+>Navigation</guilabel
+>, <guilabel
+>Services</guilabel
+>, <guilabel
+>Général</guilabel
+> et <guilabel
+>Corbeille</guilabel
+> sont également utilisés par &dolphin;. </para>
+
+</article>

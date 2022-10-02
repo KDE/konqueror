@@ -1,0 +1,64 @@
+# Translation of akregator_konqplugin to Korean.
+# Copyright (C) 2007 This_file_is_part_of_KDE
+# This file is distributed under the same license as the extragear-base package.
+# Shinjo Park <kde@peremen.name>, 2007, 2010, 2011, 2018, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: extragear-base\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2019-09-24 22:56+0200\n"
+"Last-Translator: Shinjo Park <kde@peremen.name>\n"
+"Language-Team: Korean <kde-kr@kde.org>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 18.12.3\n"
+
+#: akregatorplugin.cpp:63
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Add Feed to Akregator"
+msgstr "Akregator에 피드 추가하기"
+
+#: konqfeedicon.cpp:127
+#, kde-format
+msgid "Add Feed to Akregator"
+msgstr "Akregator에 피드 추가하기"
+
+#: konqfeedicon.cpp:129
+#, kde-format
+msgid "Add Feeds to Akregator"
+msgstr "Akregator에 피드 추가하기"
+
+#: konqfeedicon.cpp:138
+#, kde-format
+msgid "Add All Found Feeds to Akregator"
+msgstr "찾은 모든 피드를 Akregator에 추가하기"
+
+#: konqfeedicon.cpp:162
+#, kde-format
+msgid "Subscribe to site updates (using news feed)"
+msgstr "사이트 업데이트에 가입하기(뉴스 피드 사용)"
+
+#: pluginutil.cpp:36 pluginutil.cpp:46
+#, kde-format
+msgid "Imported Feeds"
+msgstr "불러온 피드"
+
+#: pluginutil.cpp:38
+#, kde-format
+msgid "Unable to contact Akregator via D-Bus"
+msgstr "D-Bus로 Akregator에 연결할 수 없음"
+
+#: pluginutil.cpp:39
+#, kde-format
+msgctxt "@title:window"
+msgid "D-Bus call failed"
+msgstr "D-Bus 호출 실패"
+
+#~ msgid "Akregator feed icon - DBus Call failed"
+#~ msgstr "Akregator 피드 아이콘 - DBus 호출 실패"

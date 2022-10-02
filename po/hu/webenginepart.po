@@ -1,0 +1,1741 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Kristóf Kiszel <ulysses@kubuntu.org>, 2010, 2011, 2012.
+# Balázs Úr <urbalazs@gmail.com>, 2012, 2013.
+# Kiszel Kristóf <kiszel.kristof@gmail.com>, 2017.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-24 00:46+0000\n"
+"PO-Revision-Date: 2017-02-17 15:37+0100\n"
+"Last-Translator: Kiszel Kristóf <kiszel.kristof@gmail.com>\n"
+"Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 2.0\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Kiszel Kristóf"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "ulysses@kubuntu.org"
+
+#: src/about/konq_aboutpage.cpp:72 src/about/konq_aboutpage.cpp:74
+#: src/about/konq_aboutpage.cpp:132 src/about/konq_aboutpage.cpp:134
+#: src/about/konq_aboutpage.cpp:184 src/about/konq_aboutpage.cpp:186
+#: src/about/konq_aboutpage.cpp:284 src/about/konq_aboutpage.cpp:286
+#, kde-format
+msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
+msgid "Be free."
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:73 src/about/konq_aboutpage.cpp:133
+#: src/about/konq_aboutpage.cpp:185 src/about/konq_aboutpage.cpp:285
+#, kde-format
+msgid "Konqueror"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:75 src/about/konq_aboutpage.cpp:135
+#: src/about/konq_aboutpage.cpp:187 src/about/konq_aboutpage.cpp:287
+#, kde-format
+msgid "Konqueror is a web browser, file manager and universal document viewer."
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:76 src/about/konq_aboutpage.cpp:136
+#: src/about/konq_aboutpage.cpp:188 src/about/konq_aboutpage.cpp:288
+#, fuzzy, kde-format
+#| msgid "Start Plugin"
+msgctxt ""
+"Link that points to the first page of the Konqueror 'about page', Starting "
+"Points contains links to Home, Network Folders, Trash, etc."
+msgid "Starting Points"
+msgstr "Bővítmény indítása"
+
+#: src/about/konq_aboutpage.cpp:77 src/about/konq_aboutpage.cpp:137
+#: src/about/konq_aboutpage.cpp:189 src/about/konq_aboutpage.cpp:289
+#, kde-format
+msgid "Introduction"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:78 src/about/konq_aboutpage.cpp:138
+#: src/about/konq_aboutpage.cpp:190 src/about/konq_aboutpage.cpp:290
+#, kde-format
+msgid "Tips"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:79 src/about/konq_aboutpage.cpp:139
+#: src/about/konq_aboutpage.cpp:191 src/about/konq_aboutpage.cpp:192
+#: src/about/konq_aboutpage.cpp:291
+#, kde-format
+msgid "Specifications"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:84
+#, kde-format
+msgid "Home Folder"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:85
+#, fuzzy, kde-format
+#| msgctxt "EMAIL OF TRANSLATORS"
+#| msgid "Your emails"
+msgid "Your personal files"
+msgstr "ulysses@kubuntu.org"
+
+#: src/about/konq_aboutpage.cpp:88
+#, kde-format
+msgid "Trash"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:89
+#, kde-format
+msgid "Browse and restore the trash"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:92
+#, kde-format
+msgid "Network Folders"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:93
+#, kde-format
+msgid "Shared files and folders"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:96
+#, kde-format
+msgid "Bookmarks"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:97
+#, kde-format
+msgid "Quick access to your bookmarks"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:100
+#, kde-format
+msgid "Next: An Introduction to Konqueror"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:102
+#, kde-format
+msgid "Search the Web"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:140
+#, kde-format
+msgid ""
+"Konqueror makes working with and managing your files easy. You can browse "
+"both local and networked folders while enjoying advanced features such as "
+"the powerful sidebar and file previews."
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:144
+#, kde-format
+msgid ""
+"Konqueror is also a full featured and easy to use web browser which you can "
+"use to explore the Internet. Enter the address (e.g. <a href=\"http://www."
+"kde.org\">http://www.kde.org</a>) of a web page you would like to visit in "
+"the location bar and press Enter, or choose an entry from the Bookmarks menu."
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:149
+#, kde-format
+msgid ""
+"To return to the previous location, press the back button <img width='16' "
+"height='16' src=\"%1\"></img> in the toolbar. "
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:152
+#, kde-format
+msgid ""
+"To quickly go to your Home folder press the home button <img width='16' "
+"height='16' src=\"%1\"></img>."
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:154
+#, kde-format
+msgid ""
+"For more detailed documentation on Konqueror click <a href=\"%1\">here</a>."
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:157
+#, kde-format
+msgid "Next: Tips & Tricks"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:193
+#, kde-format
+msgid ""
+"Konqueror is designed to embrace and support Internet standards. The aim is "
+"to fully implement the officially sanctioned standards from organizations "
+"such as the W3 and OASIS, while also adding extra support for other common "
+"usability features that arise as de facto standards across the Internet. "
+"Along with this support, for such functions as favicons, Web Shortcuts, and "
+"<A HREF=\"%1\">XBEL bookmarks</A>, Konqueror also implements:"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:200
+#, kde-format
+msgid "Web Browsing"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:201
+#, kde-format
+msgid "Supported standards"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:202
+#, kde-format
+msgid "Additional requirements*"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:203
+#, kde-format
+msgid ""
+"<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
+"\"%2\">HTML 4.01</A>"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:205 src/about/konq_aboutpage.cpp:207
+#: src/about/konq_aboutpage.cpp:219 src/about/konq_aboutpage.cpp:224
+#: src/about/konq_aboutpage.cpp:226
+#, kde-format
+msgid "built-in"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:206
+#, kde-format
+msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:208
+#, kde-format
+msgid "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:210
+#, kde-format
+msgid ""
+"JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:211
+#, kde-format
+msgid ""
+"JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\\">here</"
+"A>."
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:212
+#, kde-format
+msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:213
+#, kde-format
+msgid ""
+"JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">OpenJDK</A> or <A HREF="
+"\"%2\">Sun/Oracle</A>)"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:215
+#, kde-format
+msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:216
+#, kde-format
+msgid ""
+"NPAPI <A HREF=\"%2\">plugins</A> (for viewing <A HREF=\"%1\">Flash<SUP>&reg;"
+"</SUP></A>, etc.)"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:220
+#, kde-format
+msgid "Secure Sockets Layer"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:221
+#, kde-format
+msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:222
+#, kde-format
+msgid "OpenSSL"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:223
+#, kde-format
+msgid "Bidirectional 16bit unicode support"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:225
+#, kde-format
+msgid "AutoCompletion for forms"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:227
+#, kde-format
+msgctxt "Title of an html 'group box' explaining konqueror features"
+msgid "General"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:228
+#, kde-format
+msgid "Feature"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:229
+#, kde-format
+msgid "Details"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:230
+#, kde-format
+msgid "Image formats"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:231
+#, kde-format
+msgid "PNG<br />JPG<br />GIF"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:232
+#, kde-format
+msgid "Transfer protocols"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:233
+#, kde-format
+msgid "HTTP 1.1 (including gzip/bzip2 compression)"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:234
+#, kde-format
+msgid "FTP"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:235
+#, kde-format
+msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpCenter)...</A>"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:236
+#, kde-format
+msgctxt "A feature of Konqueror"
+msgid "URL-Completion"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:237
+#, kde-format
+msgid "Manual"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:238
+#, kde-format
+msgid "Popup"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:239
+#, kde-format
+msgid "(Short-) Automatic"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:241
+#, kde-format
+msgctxt ""
+"Link that points to the first page of the Konqueror 'about page', Starting "
+"Points contains links to Home, Network Folders, Trash, etc."
+msgid "<a href=\"%1\">Return to Starting Points</a>"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:292
+#, kde-format
+msgid "Tips & Tricks"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:293
+#, kde-format
+msgid ""
+"Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, using "
+"Google, for the search phrase \"KDE\". There are a lot of Web-Shortcuts "
+"predefined to make searching for software or looking up certain words in an "
+"encyclopedia a breeze. You can even <a href=\"%1\">create your own</a> Web-"
+"Shortcuts."
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:298
+#, kde-format
+msgid ""
+"Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
+"the HTML toolbar to increase the font size on your web page."
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:300
+#, kde-format
+msgid ""
+"When you want to paste a new address into the Location toolbar you might "
+"want to clear the current entry by pressing the black arrow with the white "
+"cross <img width='16' height='16' src=\"%1\"></img> in the toolbar."
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:304
+#, kde-format
+msgid ""
+"To create a link on your desktop pointing to the current page, simply drag "
+"the icon (favicon) that is to the left of the Location toolbar, drop it on "
+"to the desktop, and choose \"Icon\"."
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:307
+#, kde-format
+msgid ""
+"You can also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen "
+"Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
+"sessions."
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:310
+#, kde-format
+msgid ""
+"Divide et impera (lat. \"Divide and conquer\") - by splitting a window into "
+"two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> Split "
+"View Left/Right) you can make Konqueror appear the way you like."
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:313
+#, kde-format
+msgid ""
+"Use the <a href=\"%1\">user-agent</a> feature if the website you are "
+"visiting asks you to use a different browser (and do not forget to send a "
+"complaint to the webmaster!)"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:316
+#, kde-format
+msgid ""
+"The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
+"ensures that you can keep track of the pages you have visited recently."
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:318
+#, kde-format
+msgid ""
+"Use a caching <a href=\"%1\">proxy</a> to speed up your Internet connection."
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:320
+#, kde-format
+msgid ""
+"Advanced users will appreciate the Konsole which you can embed into "
+"Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
+"Terminal Emulator)."
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:324
+#, kde-format
+msgid "Next: Specifications"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:338
+#, fuzzy, kde-format
+#| msgid "Start Plugin"
+msgid "Installed Plugins"
+msgstr "Bővítmény indítása"
+
+#: src/about/konq_aboutpage.cpp:339
+#, kde-format
+msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:340
+#, kde-format
+msgid "Installed"
+msgstr ""
+
+#: src/about/konq_aboutpage.cpp:341
+#, kde-format
+msgid "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
+msgstr ""
+
+#: src/settings/webenginesettings.cpp:909
+#, kde-format
+msgid "Filter error"
+msgstr "Szűrőhiba"
+
+#: src/spellcheckermanager.cpp:79
+#, fuzzy, kde-format
+#| msgid "Check Spelling..."
+msgid "Spelling"
+msgstr "Helyesírás-ellenőrzés…"
+
+#: src/spellcheckermanager.cpp:83
+#, kde-format
+msgid "Spell Checking Enabled"
+msgstr ""
+
+#: src/spellcheckermanager.cpp:101
+#, kde-format
+msgid "&Languages"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, showPasswords)
+#: src/ui/credentialsdetailswidget.ui:34
+#: src/webenginecustomizecacheablefieldsdlg.ui:44
+#, kde-format
+msgid "&Show passwords"
+msgstr ""
+
+#: src/ui/featurepermissionbar.cpp:22
+#, fuzzy, kde-format
+#| msgctxt "@action:deny access"
+#| msgid "&Deny access"
+msgctxt "@action:deny permission"
+msgid "&Deny permission"
+msgstr "Hozzáférés &megtagadása"
+
+#: src/ui/featurepermissionbar.cpp:26
+#, fuzzy, kde-format
+#| msgctxt "@action:grant access"
+#| msgid "&Grant access"
+msgctxt "@action:grant permission"
+msgid "&Grant permission"
+msgstr "Hozzáférés &engedélyezése"
+
+#: src/ui/featurepermissionbar.cpp:57
+#, fuzzy, kde-format
+#| msgid ""
+#| "<html>Do you want to grant the site access to information about your "
+#| "current physical location?"
+msgid "<html><b>%1</b> would like to send you notifications"
+msgstr ""
+"<html>Szeretné megadni a jogot az oldalnak, hogy hozzáférjen a jelenlegi "
+"fizikai helyzetének információihoz?"
+
+#: src/ui/featurepermissionbar.cpp:59
+#, fuzzy, kde-format
+#| msgid ""
+#| "<html>Do you want to grant the site access to information about your "
+#| "current physical location?"
+msgid ""
+"<html><b>%1</b> would like to access information about your current physical "
+"location"
+msgstr ""
+"<html>Szeretné megadni a jogot az oldalnak, hogy hozzáférjen a jelenlegi "
+"fizikai helyzetének információihoz?"
+
+#: src/ui/featurepermissionbar.cpp:61
+#, fuzzy, kde-format
+#| msgid ""
+#| "<html>Do you want to grant the site access to information about your "
+#| "current physical location?"
+msgid ""
+"<html><b>%1</b> would like to access your microphone and other audio capture "
+"devices"
+msgstr ""
+"<html>Szeretné megadni a jogot az oldalnak, hogy hozzáférjen a jelenlegi "
+"fizikai helyzetének információihoz?"
+
+#: src/ui/featurepermissionbar.cpp:63
+#, fuzzy, kde-format
+#| msgid ""
+#| "<html>Do you want to grant the site access to information about your "
+#| "current physical location?"
+msgid ""
+"<html><b>%1</b> would like to access your camera and other video capture "
+"devices"
+msgstr ""
+"<html>Szeretné megadni a jogot az oldalnak, hogy hozzáférjen a jelenlegi "
+"fizikai helyzetének információihoz?"
+
+#: src/ui/featurepermissionbar.cpp:65
+#, fuzzy, kde-format
+#| msgid ""
+#| "<html>Do you want to grant the site access to information about your "
+#| "current physical location?"
+msgid ""
+"<html><b>%1</b> would like to access to your microphone, camera and other "
+"audio and video capture devices"
+msgstr ""
+"<html>Szeretné megadni a jogot az oldalnak, hogy hozzáférjen a jelenlegi "
+"fizikai helyzetének információihoz?"
+
+#: src/ui/featurepermissionbar.cpp:67
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt>Do you want to allow this site to attach the following files to the "
+#| "email message?</qt>"
+msgid "<html><b>%1</b> would like to lock your mouse inside the web page"
+msgstr ""
+"<qt>Engedélyezi az oldalnak a következő fájlok csatolását az e-mail "
+"üzenethez?</qt>"
+
+#: src/ui/featurepermissionbar.cpp:69
+#, fuzzy, kde-format
+#| msgid ""
+#| "<html>Do you want to grant the site access to information about your "
+#| "current physical location?"
+msgid "<html><b>%1</b> would like to record your screen"
+msgstr ""
+"<html>Szeretné megadni a jogot az oldalnak, hogy hozzáférjen a jelenlegi "
+"fizikai helyzetének információihoz?"
+
+#: src/ui/featurepermissionbar.cpp:71
+#, fuzzy, kde-format
+#| msgid ""
+#| "<html>Do you want to grant the site access to information about your "
+#| "current physical location?"
+msgid "<html><b>%1</b> would like to record your screen and your audio"
+msgstr ""
+"<html>Szeretné megadni a jogot az oldalnak, hogy hozzáférjen a jelenlegi "
+"fizikai helyzetének információihoz?"
+
+#: src/ui/passwordbar.cpp:29
+#, kde-format
+msgctxt "@action:remember password"
+msgid "&Remember"
+msgstr "&Megjegyzés"
+
+#: src/ui/passwordbar.cpp:33
+#, kde-format
+msgctxt "@action:never for this site"
+msgid "Ne&ver for this site"
+msgstr "&Ezen az oldalon soha"
+
+#: src/ui/passwordbar.cpp:37
+#, kde-format
+msgctxt "@action:not now"
+msgid "N&ot now"
+msgstr "M&ost nem"
+
+#: src/ui/passwordbar.cpp:41 src/ui/passwordbar.cpp:125
+#, kde-format
+msgctxt "@action:display details about credentials to store"
+msgid "&Show details"
+msgstr ""
+
+#: src/ui/passwordbar.cpp:123
+#, kde-format
+msgctxt "@action:hide details about credentials to store"
+msgid "&Hide details"
+msgstr ""
+
+#: src/ui/searchbar.cpp:38
+#, fuzzy, kde-format
+#| msgid "&Find:"
+msgid "Find..."
+msgstr "&Keresés:"
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, closeButton)
+#: src/ui/searchbar.ui:23
+#, kde-format
+msgid "Close the search bar"
+msgstr "Keresősáv bezárása"
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, nextButton)
+#: src/ui/searchbar.ui:49
+#, kde-format
+msgid "Find the next match for the current search phrase"
+msgstr "A kifejezés következő előfordulásának keresése"
+
+#. i18n: ectx: property (text), widget (QToolButton, nextButton)
+#: src/ui/searchbar.ui:52
+#, kde-format
+msgid "&Next"
+msgstr "&Következő"
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, previousButton)
+#. i18n: ectx: property (toolTip), widget (QPushButton, optionsButton)
+#: src/ui/searchbar.ui:68 src/ui/searchbar.ui:84
+#, kde-format
+msgid "Find the previous match for the current search phrase"
+msgstr "A kifejezés előző előfordulásának keresése"
+
+#. i18n: ectx: property (text), widget (QToolButton, previousButton)
+#: src/ui/searchbar.ui:71
+#, kde-format
+msgid "&Previous"
+msgstr "&Előző"
+
+#. i18n: ectx: property (text), widget (QPushButton, optionsButton)
+#: src/ui/searchbar.ui:87
+#, kde-format
+msgid "&Options"
+msgstr "&Beállítások"
+
+#. i18n: ectx: property (text), item, widget (QPushButton, optionsButton)
+#: src/ui/searchbar.ui:116
+#, kde-format
+msgid "&Match Case"
+msgstr "K&is– és nagybetűk egyeztetése"
+
+#. i18n: ectx: property (text), item, widget (QPushButton, optionsButton)
+#: src/ui/searchbar.ui:127
+#, kde-format
+msgid "&Search As You Type"
+msgstr "S&zó szerinti keresés"
+
+#. i18n: ectx: property (text), item, widget (QPushButton, optionsButton)
+#: src/ui/searchbar.ui:135
+#, kde-format
+msgid "&Highlight All Matches"
+msgstr "Ö&sszes találat kiemelése"
+
+#. i18n: ectx: property (toolTip), item, widget (QPushButton, optionsButton)
+#: src/ui/searchbar.ui:138
+#, kde-format
+msgid "Highlight Matches"
+msgstr "Találatok kiemelése"
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, WebEngineCustomizeCacheableFieldsDlg)
+#: src/webenginecustomizecacheablefieldsdlg.ui:14
+#, fuzzy, kde-format
+#| msgid "Choose files to upload"
+msgid "Choose fields to remember"
+msgstr "Feltöltendő fájlok kiválasztása"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, showPasswords)
+#: src/webenginecustomizecacheablefieldsdlg.ui:41
+#, kde-format
+msgid "Switch between displaying passwords or placeholders"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, showDetails)
+#: src/webenginecustomizecacheablefieldsdlg.ui:64
+#, kde-format
+msgid "Show advanced information about the fields"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, showDetails)
+#: src/webenginecustomizecacheablefieldsdlg.ui:67
+#: src/webenginepartcertificateerrordlg.ui:30
+#, kde-format
+msgid "&Show details"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: src/webenginecustomizecacheablefieldsdlg.ui:89
+#, kde-format
+msgid "Available &fields"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, immediatelyCacheData)
+#: src/webenginecustomizecacheablefieldsdlg.ui:101
+#, kde-format
+msgid "Store form data in KWallet when closing the dialog"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, immediatelyCacheData)
+#: src/webenginecustomizecacheablefieldsdlg.ui:104
+#, kde-format
+msgid "&Immediately memorize form data"
+msgstr ""
+
+#: src/webenginepage.cpp:125
+#, kde-format
+msgid "The download manager (%1) could not be found in your installation."
+msgstr "A letöltéskezelő (%1) nem található az Ön telepítésében."
+
+#: src/webenginepage.cpp:126
+#, kde-format
+msgid ""
+"Try to reinstall it and make sure that it is available in $PATH. \n"
+"\n"
+"The integration will be disabled."
+msgstr ""
+"Próbálja meg újratelepíteni, és bizonyosodjon meg róla, hogy elérhető a "
+"$PATH-ban.\n"
+"\n"
+"Az integráció letiltásra kerül."
+
+#: src/webenginepage.cpp:268
+#, kde-format
+msgid ""
+"<qt><p>To display the requested web page again, the browser needs to resend "
+"information you have previously submitted.</p><p>If you were shopping online "
+"and made a purchase, click the Cancel button to prevent a duplicate purchase."
+"Otherwise, click the Continue button to display the webpage again.</p>"
+msgstr ""
+"<qt><p>A kért weboldal újbóli megjelenítéséhez a böngészőnek újra kell "
+"küldenie a korábban elküldött adatokat.</p><p>Ha online vásárlás során "
+"fizetett, kattintson a Mégsem gombra a dupla fizetés megakadályozása "
+"érdekében. Egyébként kattintson a Folytatás gombra a weboldal újbóli "
+"megjelenítéséhez.</p>"
+
+#: src/webenginepage.cpp:275
+#, kde-format
+msgid "Resubmit Information"
+msgstr "Információk újraküldése"
+
+#: src/webenginepage.cpp:507
+#, kde-format
+msgid ""
+"This site is attempting to access information about your physical location.\n"
+"Do you want to allow it access?"
+msgstr ""
+"Ez az oldal megpróbál hozzáférni a fizikai helyzetének információihoz.\n"
+"Szeretné engedélyezni a hozzáférést?"
+
+#: src/webenginepage.cpp:511 src/webenginepage.cpp:628
+#: src/webenginepage.cpp:639
+#, kde-format
+msgid "Network Transmission"
+msgstr "Hálózati átvitel"
+
+#: src/webenginepage.cpp:512
+#, kde-format
+msgid "Allow access"
+msgstr "Hozzáférés engedélyezése"
+
+#: src/webenginepage.cpp:587
+#, kde-format
+msgid ""
+"<qt>This untrusted page links to<br/><b>%1</b>.<br/>Do you want to follow "
+"the link?</qt>"
+msgstr ""
+"<qt>Ez a nem megbízható oldal hivatkozik a következőre:<br/><b>%1</b><br/"
+">Szeretné követni a hivatkozást?</qt>"
+
+#: src/webenginepage.cpp:589
+#, kde-format
+msgid "Security Warning"
+msgstr "Biztonsági figyelmeztetés"
+
+#: src/webenginepage.cpp:590
+#, kde-format
+msgctxt "follow link despite of security warning"
+msgid "Follow"
+msgstr "Követés"
+
+#: src/webenginepage.cpp:592
+#, kde-format
+msgid "Security Alert"
+msgstr "Biztonsági riasztás"
+
+#: src/webenginepage.cpp:593
+#, kde-format
+msgid "<qt>Access by untrusted page to<br/><b>%1</b><br/> denied.</qt>"
+msgstr ""
+"<qt>A megbízhatatlan oldal hozzáférése a következőhöz megtagadva:<br/><b>%1</"
+"b>.</qt>"
+
+#: src/webenginepage.cpp:621
+#, kde-format
+msgid ""
+"Warning: This is a secure form but it is attempting to send your data back "
+"unencrypted.\n"
+"A third party may be able to intercept and view this information.\n"
+"Are you sure you want to send the data unencrypted?"
+msgstr ""
+"Figyelmeztetés: Ez egy biztonságos űrlap, de titkosítatlanul próbálja "
+"visszaküldeni az adatait.\n"
+"Egy harmadik fél elfoghatja és megtekintheti ezt az információt.\n"
+"Biztosan titkosítatlanul szeretné küldeni az adatokat?"
+
+#: src/webenginepage.cpp:629
+#, kde-format
+msgid "&Send Unencrypted"
+msgstr "Kü&ldés titkosítatlanul"
+
+#: src/webenginepage.cpp:636
+#, kde-format
+msgid ""
+"This site is attempting to submit form data via email.\n"
+"Do you want to continue?"
+msgstr ""
+"Az oldal e-mailen keresztül próbálja elküldeni az űrlapadatokat.\n"
+"Szeretné folytatni?"
+
+#: src/webenginepage.cpp:640
+#, kde-format
+msgid "&Send Email"
+msgstr "E-mail &küldése"
+
+#: src/webenginepage.cpp:689
+#, kde-format
+msgid ""
+"<qt>Do you want to allow this site to attach the following files to the "
+"email message?</qt>"
+msgstr ""
+"<qt>Engedélyezi az oldalnak a következő fájlok csatolását az e-mail "
+"üzenethez?</qt>"
+
+#: src/webenginepage.cpp:691
+#, kde-format
+msgid "Email Attachment Confirmation"
+msgstr "E-mailmelléklet megerősítése"
+
+#: src/webenginepage.cpp:692
+#, kde-format
+msgid "&Allow attachments"
+msgstr "Melléklet &engedélyezése"
+
+#: src/webenginepage.cpp:693
+#, kde-format
+msgid "&Ignore attachments"
+msgstr "Melléklet &mellőzése"
+
+#: src/webenginepage.cpp:707
+#, kde-format
+msgid ""
+"This site attempted to attach a file from your computer in the form "
+"submission. The attachment was removed for your protection."
+msgstr ""
+"Az oldal egy fájlt próbál csatolni a számítógépéről a beküldési űrlapon. A "
+"melléklet eltávolításra került a védelme érdekében."
+
+#: src/webenginepage.cpp:710
+#, kde-format
+msgid "Attachment Removed"
+msgstr "Melléklet eltávolítva"
+
+#: src/webenginepage.cpp:840
+#, kde-format
+msgid ""
+"This site is requesting to open a new popup window.\n"
+"Do you want to allow this?"
+msgstr ""
+"Ez az oldal új felugró ablak megnyitását kéri.\n"
+"Szeretné engedélyezni?"
+
+#: src/webenginepage.cpp:842
+#, kde-format
+msgid ""
+"<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
+"want to allow this?</qt>"
+msgstr ""
+"<qt>Ez az oldal felugró ablak megnyitását kéri ehhez:<p>%1</p><br/>Szeretné "
+"engedélyezni?</qt>"
+
+#: src/webenginepage.cpp:846
+#, kde-format
+msgid "Javascript Popup Confirmation"
+msgstr "Javascript felugró megerősítés"
+
+#: src/webenginepage.cpp:847
+#, kde-format
+msgid "Allow"
+msgstr "Engedélyezés"
+
+#: src/webenginepage.cpp:848
+#, kde-format
+msgid "Do Not Allow"
+msgstr "Tiltás"
+
+#: src/webenginepart.cpp:224
+#, kde-format
+msgid "Save &Frame As..."
+msgstr "Keret &mentése más néven…"
+
+#: src/webenginepart.cpp:228
+#, kde-format
+msgid "Print Preview"
+msgstr "Nyomtatási előnézet"
+
+#: src/webenginepart.cpp:232
+#, kde-format
+msgctxt "zoom in action"
+msgid "Zoom In"
+msgstr "Nagyítás"
+
+#: src/webenginepart.cpp:237
+#, kde-format
+msgctxt "zoom out action"
+msgid "Zoom Out"
+msgstr "Kicsinyítés"
+
+#: src/webenginepart.cpp:242
+#, kde-format
+msgctxt "reset zoom action"
+msgid "Actual Size"
+msgstr "Tényleges méret"
+
+#: src/webenginepart.cpp:247
+#, kde-format
+msgid "Zoom Text Only"
+msgstr "Csak a szöveg nagyítása"
+
+#: src/webenginepart.cpp:255
+#, kde-format
+msgid "Zoom To DPI"
+msgstr "Nagyítás DPI-re"
+
+#: src/webenginepart.cpp:268
+#, kde-format
+msgid "Set &Encoding"
+msgstr "&Kódolás beállítása"
+
+#: src/webenginepart.cpp:271
+#, kde-format
+msgid "View Do&cument Source"
+msgstr "A do&kumentum forrásának megjelenítése"
+
+#: src/webenginepart.cpp:276 src/webenginepart.cpp:574
+#, kde-format
+msgctxt "Secure Sockets Layer"
+msgid "SSL"
+msgstr "SSL"
+
+#: src/webenginepart.cpp:282
+#, kde-format
+msgctxt "find action \"whats this\" text"
+msgid ""
+"<h3>Find text</h3>Shows a dialog that allows you to find text on the "
+"displayed page."
+msgstr ""
+"<h3>Szöveg keresése</h3>Megjelenít egy párbeszédablakot, amely lehetővé "
+"teszi szöveg keresését a megjelenített oldalon."
+
+#: src/webenginepart.cpp:572
+#, kde-format
+msgid "The SSL information for this site appears to be corrupt."
+msgstr "Az oldal SSL–információja nem tűnik hitelesnek."
+
+#: src/webenginepart.cpp:653
+#, kde-format
+msgctxt ""
+"status bar text when hovering email links; looks like \"Email: xy@kde.org - "
+"CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
+msgid "Email: "
+msgstr "E-mail: "
+
+#: src/webenginepart.cpp:682
+#, kde-format
+msgctxt ""
+"status bar text when hovering email links; looks like \"Email: xy@kde.org - "
+"CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
+msgid " - CC: "
+msgstr " – Másolat: "
+
+#: src/webenginepart.cpp:684
+#, kde-format
+msgctxt ""
+"status bar text when hovering email links; looks like \"Email: xy@kde.org - "
+"CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
+msgid " - BCC: "
+msgstr " – Rejtett másolat: "
+
+#: src/webenginepart.cpp:686
+#, kde-format
+msgctxt ""
+"status bar text when hovering email links; looks like \"Email: xy@kde.org - "
+"CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
+msgid " - Subject: "
+msgstr " – Tárgy: "
+
+#: src/webenginepart.cpp:690 src/webenginepart.cpp:701
+#, kde-format
+msgid " (In new window)"
+msgstr " (új ablakban)"
+
+#: src/webenginepart.cpp:699
+#, kde-format
+msgid " (In parent frame)"
+msgstr " (szülőkeretben)"
+
+#: src/webenginepart.cpp:763
+#, kde-format
+msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
+msgstr "<qt>Rá szeretné keresni a következőre: <b>%1</b>?</qt>"
+
+#: src/webenginepart.cpp:764
+#, kde-format
+msgid "Internet Search"
+msgstr "Internetes keresés"
+
+#: src/webenginepart.cpp:764
+#, kde-format
+msgid "&Search"
+msgstr "&Keresés"
+
+#: src/webenginepart.cpp:875
+#, kde-format
+msgid "Close window?"
+msgstr "Bezárja az ablakot?"
+
+#: src/webenginepart.cpp:875
+#, kde-format
+msgid "Confirmation Required"
+msgstr "Megerősítés szükséges"
+
+#: src/webenginepart.cpp:949
+#, kde-format
+msgid ""
+"<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
+msgstr ""
+"<html>Szeretné, hogy a(z) %1 megjegyezze <b>%2</b> bejelentkezési adatait?</"
+"html>"
+
+#: src/webenginepart.cpp:1020
+#, kde-format
+msgctxt "Fill the Forms with Data from KWallet"
+msgid "&Fill forms now"
+msgstr ""
+
+#: src/webenginepart.cpp:1025
+#, fuzzy, kde-format
+#| msgid "Remove all cached passwords for this site"
+msgid "&Memorize Passwords in This Page Now"
+msgstr "Az összes gyorsítótárazott jelszó eltávolítása ezen az oldalon"
+
+#: src/webenginepart.cpp:1029
+#, kde-format
+msgid "&Customize Fields to Memorize for This Page..."
+msgstr ""
+
+#: src/webenginepart.cpp:1033
+#, kde-format
+msgid "Remove Customized Memorization Settings for This Page"
+msgstr ""
+
+#: src/webenginepart.cpp:1037
+#, fuzzy, kde-format
+#| msgid "&Allow password caching for this site"
+msgid "&Allow Password Caching for This Site"
+msgstr "Jelszó–gyorsítótárazás en&gedélyezése ezen az oldalon"
+
+#: src/webenginepart.cpp:1041
+#, fuzzy, kde-format
+#| msgid "Remove all cached passwords for this site"
+msgid "Remove All Memorized Passwords for This Site"
+msgstr "Az összes gyorsítótárazott jelszó eltávolítása ezen az oldalon"
+
+#: src/webenginepart.cpp:1045
+#, kde-format
+msgid "&Launch Wallet Manager"
+msgstr ""
+
+#: src/webenginepart.cpp:1049
+#, kde-format
+msgid "&Close Wallet"
+msgstr "Notesz &bezárása"
+
+#. i18n: ectx: Menu (file)
+#: src/webenginepart.rc:5
+#, kde-format
+msgid "&File"
+msgstr "&Fájl"
+
+#. i18n: ectx: Menu (edit)
+#: src/webenginepart.rc:12
+#, kde-format
+msgid "&Edit"
+msgstr "S&zerkesztés"
+
+#. i18n: ectx: Menu (view)
+#: src/webenginepart.rc:18
+#, kde-format
+msgid "&View"
+msgstr "&Nézet"
+
+#. i18n: ectx: Menu (tools)
+#: src/webenginepart.rc:30
+#, kde-format
+msgid "&Tools"
+msgstr "&Eszközök"
+
+#. i18n: ectx: Menu (wallet)
+#: src/webenginepart.rc:32
+#, kde-format
+msgid "&Credential management"
+msgstr ""
+
+#. i18n: ectx: ToolBar (htmlToolBar)
+#: src/webenginepart.rc:47
+#, kde-format
+msgid "HTML Toolbar"
+msgstr "HTML eszköztár"
+
+#: src/webenginepart_ext.cpp:246
+#, kde-format
+msgid "Print Document"
+msgstr "Dokumentum nyomtatása"
+
+#: src/webenginepart_ext.cpp:464
+#, kde-format
+msgid "Add URL to Filter"
+msgstr "URL hozzáadása a szűrőhöz"
+
+#: src/webenginepart_ext.cpp:465
+#, kde-format
+msgid "Enter the URL:"
+msgstr "Adja meg az URL-t:"
+
+#: src/webenginepartcertificateerrordlg.cpp:44
+#, kde-format
+msgctxt "Ignore the certificate error for this URL only for now"
+msgid "Yes, &once"
+msgstr ""
+
+#: src/webenginepartcertificateerrordlg.cpp:45
+#, kde-format
+msgctxt "Ignore the certificate error for this URL now and in the future"
+msgid "Yes, &forever"
+msgstr ""
+
+#: src/webenginepartcertificateerrordlg.cpp:49
+#, kde-format
+msgid ""
+"<p>The server <tt>%1</tt> failed the authenticity check. The error is:</"
+"p><p><tt>%2</tt></p>Do you want to ignore this error?"
+msgstr ""
+
+#: src/webenginepartcertificateerrordlg.cpp:55
+#, fuzzy, kde-format
+#| msgid "Filter error"
+msgctxt "title of a dialog asking what to do about a SSL certificate error"
+msgid "Certificate error"
+msgstr "Szűrőhiba"
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, WebEnginePartCertificateErrorDlg)
+#: src/webenginepartcertificateerrordlg.ui:14
+#, kde-format
+msgid "Dialog"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: src/webenginepartcertificateerrordlg.ui:23
+#, kde-format
+msgid "TextLabel"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, details)
+#: src/webenginepartcertificateerrordlg.ui:50
+#, kde-format
+msgid "Certificate details"
+msgstr ""
+
+#. i18n: ectx: attribute (title), widget (QWidget, subjectTab)
+#: src/webenginepartcertificateerrordlg.ui:63
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "status bar text when hovering email links; looks like \"Email: xy@kde.org "
+#| "- CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
+#| msgid " - Subject: "
+msgid "&Subject"
+msgstr " – Tárgy: "
+
+#. i18n: ectx: attribute (title), widget (QWidget, issuerTab)
+#: src/webenginepartcertificateerrordlg.ui:73
+#, kde-format
+msgid "&Issuer"
+msgstr ""
+
+#: src/webenginepartdownloadmanager.cpp:235
+#, kde-format
+msgid "An error occurred while saving the file: %1"
+msgstr ""
+
+#: src/webenginepartdownloadmanager.cpp:247
+#, kde-format
+msgctxt "Notification about downloading a file"
+msgid "Downloading"
+msgstr ""
+
+#: src/webenginepartdownloadmanager.cpp:248
+#, kde-format
+msgctxt "Source of a file being downloaded"
+msgid "Source"
+msgstr ""
+
+#: src/webenginepartdownloadmanager.cpp:249
+#, fuzzy, kde-format
+#| msgid "Description:"
+msgctxt "Destination of a file download"
+msgid "Destination"
+msgstr "Leírás:"
+
+#: src/webenginepartdownloadmanager.cpp:266
+#, kde-format
+msgctxt "Finished saving BLOB URL"
+msgid "Finished saving %1 as %2"
+msgstr ""
+
+#: src/webengineparterrorschemehandler.cpp:96
+#, kde-format
+msgid ""
+"<html><body><h3>Unable to display error message</h3><p>The error template "
+"file <em>error.html</em> could not be found.</p></body></html>"
+msgstr ""
+"<html><body><h3>Nem lehet megjeleníteni hibaüzenetet.</h3><p>Az <em>error."
+"html</em> sablonfájl nem található.</p></body></html>"
+
+#: src/webengineparterrorschemehandler.cpp:105
+#, kde-format
+msgid "The requested operation could not be completed"
+msgstr "A kért művelet nem teljesíthető"
+
+#: src/webengineparterrorschemehandler.cpp:112
+#, kde-format
+msgid "Technical Reason: %1"
+msgstr "Technikai ok: %1"
+
+#: src/webengineparterrorschemehandler.cpp:117
+#, kde-format
+msgid "Details of the Request:"
+msgstr "A kérés részletei: "
+
+#. i18n, and once for HTML.
+#: src/webengineparterrorschemehandler.cpp:120
+#, kde-format
+msgid "URL: %1"
+msgstr "URL: %1"
+
+#. i18n, and once for HTML.
+#: src/webengineparterrorschemehandler.cpp:126
+#, kde-format
+msgid "Protocol: %1"
+msgstr "Protokoll: %1"
+
+#: src/webengineparterrorschemehandler.cpp:130
+#, kde-format
+msgid "Date and Time: %1"
+msgstr "Dátum és idő: %1"
+
+#. i18n, and once for HTML.
+#: src/webengineparterrorschemehandler.cpp:134
+#, kde-format
+msgid "Additional Information: %1"
+msgstr "További információk: %1"
+
+#: src/webengineparterrorschemehandler.cpp:136
+#, kde-format
+msgid "Description:"
+msgstr "Leírás:"
+
+#: src/webengineparterrorschemehandler.cpp:143
+#, kde-format
+msgid "Possible Causes:"
+msgstr "Lehetséges okok:"
+
+#: src/webengineparterrorschemehandler.cpp:151
+#, kde-format
+msgid "Possible Solutions:"
+msgstr "Lehetséges megoldások:"
+
+#: src/webengineparterrorschemehandler.cpp:157
+#, kde-format
+msgid "Error: %1"
+msgstr "Hiba: %1"
+
+#: src/webengineview.cpp:349
+#, kde-format
+msgid "Save Image As..."
+msgstr "Kép mentése más néven…"
+
+#: src/webengineview.cpp:354
+#, kde-format
+msgid "Send Image..."
+msgstr "Kép küldése…"
+
+#: src/webengineview.cpp:359
+#, kde-format
+msgid "Copy Image URL"
+msgstr "Kép címének másolása"
+
+#: src/webengineview.cpp:365
+#, kde-format
+msgid "Copy Image"
+msgstr "Kép másolása"
+
+#: src/webengineview.cpp:372
+#, kde-format
+msgid "View Image (%1)"
+msgstr "Kép megjelenítése (%1)"
+
+#: src/webengineview.cpp:378
+#, kde-format
+msgid "Block Image..."
+msgstr "Kép blokkolása…"
+
+#: src/webengineview.cpp:386
+#, kde-format
+msgid "Block Images From %1"
+msgstr "Képek blokkolása innen: %1"
+
+#: src/webengineview.cpp:416 src/webengineview.cpp:453
+#, kde-format
+msgid "&Copy Text"
+msgstr "Szöveg &másolása"
+
+#: src/webengineview.cpp:426
+#, kde-format
+msgctxt "open selected url"
+msgid "Open '%1'"
+msgstr "„%1” megnyitása"
+
+#: src/webengineview.cpp:459
+#, kde-format
+msgid "&Copy Email Address"
+msgstr "&E-mail cím másolása"
+
+#: src/webengineview.cpp:465
+#, kde-format
+msgid "Copy Link &Text"
+msgstr "Hivatkozás &szövegének másolása"
+
+#: src/webengineview.cpp:471
+#, kde-format
+msgid "Copy Link &URL"
+msgstr "Hivatkozás &címének másolása"
+
+#: src/webengineview.cpp:476
+#, kde-format
+msgid "&Save Link As..."
+msgstr "Hivatkozás m&entése más néven…"
+
+#: src/webengineview.cpp:496
+#, kde-format
+msgid "&Play/Pause"
+msgstr "&Lejátszás/szünet"
+
+#: src/webengineview.cpp:501
+#, kde-format
+msgid "Un&mute/&Mute"
+msgstr "Visszaha&ngosítás/Né&mítás"
+
+#: src/webengineview.cpp:506
+#, kde-format
+msgid "Toggle &Loop"
+msgstr "Ismét&lés ki/be"
+
+#: src/webengineview.cpp:511
+#, kde-format
+msgid "Toggle &Controls"
+msgstr "Vezérlő&k ki/be"
+
+#: src/webengineview.cpp:522
+#, kde-format
+msgid "Sa&ve Video As..."
+msgstr "Videó &mentése más néven…"
+
+#: src/webengineview.cpp:523
+#, kde-format
+msgid "C&opy Video URL"
+msgstr "Videó címének más&olása"
+
+#: src/webengineview.cpp:525
+#, kde-format
+msgid "Sa&ve Audio As..."
+msgstr "Hang m&entése más néven…"
+
+#: src/webengineview.cpp:526
+#, kde-format
+msgid "C&opy Audio URL"
+msgstr "Hang címének más&olása"
+
+#: src/webengineview.cpp:528
+#, kde-format
+msgid "Sa&ve Media As..."
+msgstr "Média me&ntése más néven…"
+
+#: src/webengineview.cpp:529
+#, kde-format
+msgid "C&opy Media URL"
+msgstr "Média címének más&olása"
+
+#: src/webengineview.cpp:582
+#, kde-format
+msgctxt "Search \"search provider\" for \"text\""
+msgid "Search %1 for '%2'"
+msgstr "„%2” keresése ezzel: %1"
+
+#: src/webengineview.cpp:593
+#, kde-format
+msgctxt "Search for \"text\" with"
+msgid "Search for '%1' with"
+msgstr "„%1” keresése ezzel:"
+
+#: src/webengineview.cpp:606
+#, kde-format
+msgid "Configure Web Shortcuts..."
+msgstr "Keresőazonosítók beállítása…"
+
+#: src/webenginewallet.cpp:104
+#, kde-format
+msgctxt "Web field with type 'text'"
+msgid "text"
+msgstr ""
+
+#: src/webenginewallet.cpp:105
+#, kde-format
+msgctxt "Web field with type 'password'"
+msgid "password"
+msgstr ""
+
+#: src/webenginewallet.cpp:106
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "status bar text when hovering email links; looks like \"Email: xy@kde.org "
+#| "- CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
+#| msgid "Email: "
+msgctxt "Web field with type 'e-mail'"
+msgid "e-mail"
+msgstr "E-mail: "
+
+#: src/webenginewallet.cpp:107
+#, kde-format
+msgctxt "Web field with type different from 'text', 'password' or 'e-mail'"
+msgid "other"
+msgstr ""
+
+#: src/webfieldsdataview.cpp:61
+#, kde-format
+msgctxt "Label of a web field"
+msgid "Field name"
+msgstr ""
+
+#: src/webfieldsdataview.cpp:62
+#, kde-format
+msgctxt "Value of a web field"
+msgid "Field value"
+msgstr ""
+
+#: src/webfieldsdataview.cpp:63
+#, kde-format
+msgctxt "Name attribute of a web field"
+msgid "Internal field name"
+msgstr ""
+
+#: src/webfieldsdataview.cpp:64
+#, kde-format
+msgctxt "Type of a web field"
+msgid "Field type"
+msgstr ""
+
+#: src/webfieldsdataview.cpp:65
+#, kde-format
+msgctxt "The id of a web field"
+msgid "Field id"
+msgstr ""
+
+#: src/webfieldsdataview.cpp:66
+#, kde-format
+msgctxt "Other details about a web field"
+msgid "Details"
+msgstr ""
+
+#: src/webfieldsdataview.cpp:125
+#, kde-format
+msgctxt "web field has the readonly attribute"
+msgid "read only"
+msgstr ""
+
+#: src/webfieldsdataview.cpp:128
+#, kde-format
+msgctxt "web field has the autocomplete attribute set to off"
+msgid "auto-completion off"
+msgstr ""
+
+#: src/webfieldsdataview.cpp:131
+#, fuzzy, kde-format
+#| msgid "Set Editable"
+msgctxt "web field is disabled"
+msgid "disabled"
+msgstr "Szerkeszthetőség beállítása"
+
+#: src/webfieldsdataview.cpp:159
+#, kde-format
+msgctxt "A statement about a field is true"
+msgid "yes"
+msgstr ""
+
+#: src/webfieldsdataview.cpp:160
+#, kde-format
+msgctxt "A statement about a field is false"
+msgid "no"
+msgstr ""
+
+#: src/webfieldsdataview.cpp:163
+#, kde-format
+msgid ""
+"<ul><li><b>Field internal name: </b>%1</li><li><b>Field type: </b>%2</"
+"li><li><b>Field id: </b>%3</li><li><b>Field is read only: </b>%4</"
+"li><li><b>Field is enabled: </b>%5</li><li><b>Autocompletion is enabled: </b>"
+"%6</li></ul>"
+msgstr ""
+
+#~ msgctxt "Program Name"
+#~ msgid "WebEnginePart"
+#~ msgstr "WebEnginePart"
+
+#~ msgctxt "Short Description"
+#~ msgid "QtWebEngine Browser Engine Component"
+#~ msgstr "QtWebEngine böngészőmotor–komponens"
+
+#~ msgid ""
+#~ "(C) 2009-2010 Dawit Alemayehu\n"
+#~ "(C) 2008-2010 Urs Wolfer\n"
+#~ "(C) 2007 Trolltech ASA"
+#~ msgstr ""
+#~ "© Dawit Alemayehu, 2009-2010.\n"
+#~ "© Urs Wolfer, 2008-2010.\n"
+#~ "© Trolltech ASA, 2007."
+
+#~ msgid "Sune Vuorela"
+#~ msgstr "Sune Vuorela"
+
+#~ msgid "Maintainer, Developer"
+#~ msgstr "Karbantartó, fejlesztő"
+
+#~ msgid "Dawit Alemayehu"
+#~ msgstr "Dawit Alemayehu"
+
+#~ msgid "Developer"
+#~ msgstr "Fejlesztő"
+
+#~ msgid "Urs Wolfer"
+#~ msgstr "Urs Wolfer"
+
+#~ msgid "Michael Howell"
+#~ msgstr "Michael Howell"
+
+#~ msgid "Laurent Montel"
+#~ msgstr "Laurent Montel"
+
+#~ msgid "Dirk Mueller"
+#~ msgstr "Dirk Mueller"
+
+#, fuzzy
+#~| msgid "Save Image As..."
+#~ msgid "Save As"
+#~ msgstr "Kép mentése más néven…"
+
+#~ msgctxt "label for input line to find text"
+#~ msgid "&Find:"
+#~ msgstr "&Keresés:"
+
+#~ msgctxt "input dialog window title for selecting html elements"
+#~ msgid "Select elements"
+#~ msgstr "Elemek kijelölése"
+
+#~ msgctxt "input dialog text for selecting html elements"
+#~ msgid "Choose elements"
+#~ msgstr "Elemek kiválasztása"
+
+#~ msgid "New Window"
+#~ msgstr "Új ablak"
+
+#~ msgid "Print"
+#~ msgstr "Nyomtatás"
+
+#~ msgid "Close"
+#~ msgstr "Bezárás"
+
+#~ msgid "Zoom &In"
+#~ msgstr "N&agyítás"
+
+#~ msgid "Zoom &Out"
+#~ msgstr "K&icsinyítés"
+
+#~ msgid "Reset Zoom"
+#~ msgstr "Nagyítás visszaállítása"
+
+#~ msgid "Dump HTML"
+#~ msgstr "HTML kiírása"
+
+#~ msgid "F&ormat"
+#~ msgstr "F&ormátum"
+
+#~ msgid "Writing Direction"
+#~ msgstr "Szövegirány"
+
+#~ msgid "Select elements..."
+#~ msgstr "Elemek kijelölése…"
+
+#~ msgid "KDELauncher"
+#~ msgstr "KDELauncher"
+
+#~ msgid "%1 element selected"
+#~ msgid_plural "%1 elements selected"
+#~ msgstr[0] "%1 kiválasztott elem"
+#~ msgstr[1] "%1 kiválasztott elem"
+
+#~ msgid "Toggle Caret Mode"
+#~ msgstr "A szövegkurzor ki-be kapcsolása"
+
+#~ msgid "Blocked by ad filter"
+#~ msgstr "A reklámszűrő blokkolta"
+
+#~ msgid "Access keys activated"
+#~ msgstr "Hozzáférési kulcsok aktiválva"
+
+#~ msgctxt "Text direction"
+#~ msgid "Direction"
+#~ msgstr "Szövegirány"
+
+#~ msgid "Default"
+#~ msgstr "Alapértelmezett"
+
+#~ msgid "Left to right"
+#~ msgstr "Balról jobbra"
+
+#~ msgid "Right to left"
+#~ msgstr "Jobbról balra"
+
+#~ msgid "Spellcheck selection..."
+#~ msgstr "Helyesírás-ellenőrző kiválasztása…"
+
+#~ msgctxt "@title:menu HTML frame/iframe"
+#~ msgid "Frame"
+#~ msgstr "Keret"
+
+#~ msgid "Open in New &Window"
+#~ msgstr "Megnyitás új &ablakban"
+
+#~ msgid "Open in &This Window"
+#~ msgstr "Megnyitás &ebben az ablakban"
+
+#~ msgid "Open in &New Tab"
+#~ msgstr "Megnyitás új &lapon"
+
+#~ msgid "Reload Frame"
+#~ msgstr "Keret újratöltése"
+
+#~ msgid "Print Frame..."
+#~ msgstr "Keret nyomtatása…"
+
+#~ msgid "View Frame Source"
+#~ msgstr "Keret forrásának megjelenítése"
+
+#~ msgid "Block IFrame..."
+#~ msgstr "IFrame blokkolása…"
+
+#~ msgid "&Play"
+#~ msgstr "&Lejátszás"
+
+#~ msgid "&Mute"
+#~ msgstr "Né&mítás"
+
+#~ msgid "&Loop"
+#~ msgstr "Végte&lenítés"
+
+#~ msgid "Accept"
+#~ msgstr "Elfogadás"
+
+#~ msgid "Reject"
+#~ msgstr "Visszautasítás"
+
+#~ msgid "Esc"
+#~ msgstr "Esc"
+
+#~ msgid "Enter the text to search for here"
+#~ msgstr "Itt adja meg a keresendő szöveget"
+
+#~ msgid "Do you want to store this password?"
+#~ msgstr "Szeretné tárolni ezt a jelszót?"
+
+#~ msgctxt "Search for \"text\" with \"search provider\""
+#~ msgid "Search for '%1' with %2"
+#~ msgstr "„%1” keresése ezzel: %2"

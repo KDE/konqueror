@@ -1,0 +1,1703 @@
+# translation of kget.po to Belarusian
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Darafei Praliaskouski <komzpa@licei2.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kget\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2007-10-28 14:03+0200\n"
+"Last-Translator: Darafei Praliaskouski <komzpa@licei2.com>\n"
+"Language-Team: Belarusian <i18n@mova.org>\n"
+"Language: be\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || n%10>=5 && n%10<=9 || n"
+"%100>=11 && n%100<=14 ? 2 : 3);\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: kget_plugin.cpp:56
+#, fuzzy, kde-format
+#| msgid "Downloads"
+msgid "Download Manager"
+msgstr "Сцягванні"
+
+#: kget_plugin.cpp:62
+#, kde-format
+msgid "Show Drop Target"
+msgstr ""
+
+#: kget_plugin.cpp:69
+#, kde-format
+msgid "List All Links"
+msgstr ""
+
+#: kget_plugin.cpp:74
+#, fuzzy, kde-format
+#| msgid "&Settings"
+msgid "List Selected Links"
+msgstr "&Настаўленні"
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No downloadable links were found."
+msgstr ""
+
+#: kget_plugin.cpp:170
+#, fuzzy, kde-format
+#| msgid "Not in use"
+msgid "No Links"
+msgstr "Не ў чарзе"
+
+#. i18n: ectx: Menu (tools)
+#: konqueror_kget_browser_integration.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr ""
+
+#~ msgid "Plugins"
+#~ msgstr "Утулкі"
+
+#, fuzzy
+#~| msgid "Groups"
+#~ msgid "New Group"
+#~ msgstr "Групы"
+
+#, fuzzy
+#~| msgid "Size"
+#~ msgid "Sqlite"
+#~ msgstr "Памер"
+
+#~ msgid "Appearance"
+#~ msgstr "Вонкавы выгляд"
+
+#~ msgid "Groups"
+#~ msgstr "Групы"
+
+#~ msgid "Network"
+#~ msgstr "Сетка"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgid "Verification"
+#~ msgstr "Балы"
+
+#, fuzzy
+#~| msgid "Connecting"
+#~ msgctxt "integration of KGet with other applications"
+#~ msgid "Integration"
+#~ msgstr "Злучэнні"
+
+#, fuzzy
+#~| msgid "Advanced"
+#~ msgctxt "Advanced Options"
+#~ msgid "Advanced"
+#~ msgstr "Асаблівы"
+
+#~ msgid "Advanced Options"
+#~ msgstr "Адмысловыя опцыі"
+
+#, fuzzy
+#~| msgid "Rename Group"
+#~ msgid "Transfer Plugins"
+#~ msgstr "Перайменаваць групу"
+
+#~ msgid "KGet"
+#~ msgstr "KGet"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/с"
+
+#, fuzzy
+#~| msgid "Start"
+#~ msgctxt "start transfergroup downloads"
+#~ msgid "Start"
+#~ msgstr "Запусціць"
+
+#, fuzzy
+#~| msgid "Stop"
+#~ msgctxt "stop transfergroup downloads"
+#~ msgid "Stop"
+#~ msgstr "Спыніць"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgid "KGet is downloading %1 file"
+#~ msgid_plural "KGet is downloading %1 files"
+#~ msgstr[0] "Сцягванні"
+#~ msgstr[1] "Сцягванні"
+#~ msgstr[2] "Сцягванні"
+
+#, fuzzy
+#~| msgid "Rename Group"
+#~ msgid "Remove Group"
+#~ msgstr "Перайменаваць групу"
+
+#, fuzzy
+#~| msgid "Rename Group"
+#~ msgid "Remove groups"
+#~ msgstr "Перайменаваць групу"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgid "Download added"
+#~ msgstr "Сцягванні"
+
+#~ msgid "My Downloads"
+#~ msgstr "Мае сцягванні"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgid "Download it again?"
+#~ msgstr "Сцягванні"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgid "Delete it and download again?"
+#~ msgstr "Сцягванні"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>KLibLoader could not load the plugin:<br/><i>%1</i></p><p>Error "
+#~| "message:<br/><i>%2</i></p>"
+#~ msgid "Plugin loader could not load the plugin: %1."
+#~ msgstr ""
+#~ "<p>Немагчыма загрузіць утулку ў KLibLoader:<br/><i>%1</i></"
+#~ "p><p>Паведамленне аб памылцы:<br/><i>%2</i></p>"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgid "Download completed"
+#~ msgstr "Сцягванні"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgid "Download started"
+#~ msgstr "Сцягванні"
+
+#~ msgid "Error"
+#~ msgstr "Памылка"
+
+#, fuzzy
+#~| msgid "Remove"
+#~ msgid "Resolve"
+#~ msgstr "Выдаліць"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgctxt "Suspending computer"
+#~ msgid "Suspending"
+#~ msgstr "Хуткасць"
+
+#, fuzzy
+#~| msgid "Port:"
+#~ msgctxt "abort the proposed action"
+#~ msgid "Abort"
+#~ msgstr "Порт:"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgid "Downloads completed"
+#~ msgstr "Сцягванні"
+
+#, fuzzy
+#~| msgid "&File"
+#~ msgctxt "file in a filesystem"
+#~ msgid "File"
+#~ msgstr "&Файл"
+
+#, fuzzy
+#~| msgid "Status"
+#~ msgctxt "status of the download"
+#~ msgid "Status"
+#~ msgstr "Статус"
+
+#, fuzzy
+#~| msgid "Size"
+#~ msgctxt "size of the download"
+#~ msgid "Size"
+#~ msgstr "Памер"
+
+#, fuzzy
+#~| msgid "Rename Group"
+#~ msgid "KGet Transfer"
+#~ msgstr "Перайменаваць групу"
+
+#, fuzzy
+#~| msgid "File"
+#~ msgctxt "the type of the hash, e.g. MD5"
+#~ msgid "Type"
+#~ msgstr "Файл"
+
+#~ msgctxt "not available"
+#~ msgid "n/a"
+#~ msgstr "няма"
+
+#~ msgid "Stalled"
+#~ msgstr "Прастойвае"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgid "Downloading...."
+#~ msgstr "Сцягванні"
+
+#, fuzzy
+#~| msgid "Delete"
+#~ msgctxt "transfer state: delayed"
+#~ msgid "Delayed"
+#~ msgstr "Выдаліць"
+
+#, fuzzy
+#~| msgid "Stopped"
+#~ msgctxt "transfer state: stopped"
+#~ msgid "Stopped"
+#~ msgstr "Спынена"
+
+#, fuzzy
+#~| msgid "Port:"
+#~ msgctxt "transfer state: aborted"
+#~ msgid "Aborted"
+#~ msgstr "Порт:"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "transfer state: finished"
+#~ msgid "Finished"
+#~ msgstr "Гатова"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgctxt "changing the destination of the file"
+#~ msgid "Changing destination"
+#~ msgstr "Балы"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgctxt "name of download"
+#~ msgid "Name"
+#~ msgstr "Назва"
+
+#, fuzzy
+#~| msgid "Status"
+#~ msgctxt "status of download"
+#~ msgid "Status"
+#~ msgstr "Статус"
+
+#, fuzzy
+#~| msgid "Size"
+#~ msgctxt "size of download"
+#~ msgid "Size"
+#~ msgstr "Памер"
+
+#, fuzzy
+#~| msgid "Progress"
+#~ msgctxt "progress of download"
+#~ msgid "Progress"
+#~ msgstr "Працэс"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgctxt "speed of download"
+#~ msgid "Speed"
+#~ msgstr "Хуткасць"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgid "No download destination specified."
+#~ msgstr "Балы"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgid "Invalid download destination specified."
+#~ msgstr "Балы"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgid "Download destination is not writeable."
+#~ msgstr "Балы"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgid ""
+#~ "Invalid download destination specified:\n"
+#~ "%1"
+#~ msgstr "Балы"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgid ""
+#~ "Download destination is not writeable:\n"
+#~ "%1"
+#~ msgstr "Балы"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgid "Question"
+#~ msgstr "Балы"
+
+#, fuzzy
+#~| msgid "Form"
+#~ msgctxt "on a question"
+#~ msgid "No all"
+#~ msgstr "Форма"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "Engine name:"
+#~ msgstr "Назва"
+
+#~ msgid "URL:"
+#~ msgstr "URL:"
+
+#, fuzzy
+#~| msgid "Connecting"
+#~ msgctxt "transfer state: connecting"
+#~ msgid "Connecting...."
+#~ msgstr "Злучэнні"
+
+#~ msgid "Edit Script"
+#~ msgstr "Дадаць тэчку"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "Transfer State: Finished"
+#~ msgid "Finished"
+#~ msgstr "Гатова"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgid "Downloading Metalink File...."
+#~ msgstr "Сцягванні"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgid "Redownload Metalink"
+#~ msgstr "Сцягванні"
+
+#, fuzzy
+#~| msgid "Connecting"
+#~ msgctxt "the string that is used to modify an url"
+#~ msgid "Change string"
+#~ msgstr "Злучэнні"
+
+#, fuzzy
+#~| msgid "Appearance"
+#~ msgid "Append"
+#~ msgstr "Вонкавы выгляд"
+
+#, fuzzy
+#~| msgid "Open File"
+#~ msgid "Replace file"
+#~ msgstr "Адкрыць файл"
+
+#, fuzzy
+#~| msgid "Running"
+#~ msgctxt "transfer state: running"
+#~ msgid "Running...."
+#~ msgstr "Выконваецца"
+
+#~ msgctxt "Choked"
+#~ msgid "Yes"
+#~ msgstr "Так"
+
+#~ msgctxt "Not choked"
+#~ msgid "No"
+#~ msgstr "Не"
+
+#, fuzzy
+#~| msgctxt "Choked"
+#~| msgid "Yes"
+#~ msgctxt "Interested"
+#~ msgid "Yes"
+#~ msgstr "Так"
+
+#, fuzzy
+#~| msgctxt "Not choked"
+#~| msgid "No"
+#~ msgctxt "Not Interested"
+#~ msgid "No"
+#~ msgstr "Не"
+
+#, fuzzy
+#~| msgctxt "Choked"
+#~| msgid "Yes"
+#~ msgctxt "Interesting"
+#~ msgid "Yes"
+#~ msgstr "Так"
+
+#, fuzzy
+#~| msgctxt "Not choked"
+#~| msgid "No"
+#~ msgctxt "Not Interesting"
+#~ msgid "No"
+#~ msgstr "Не"
+
+#~ msgid "IP Address"
+#~ msgstr "IP адрас"
+
+#~ msgid "Client"
+#~ msgstr "Кліент"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Down Speed"
+#~ msgstr "Хуткасць"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Up Speed"
+#~ msgstr "Хуткасць"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgid "Score"
+#~ msgstr "Крыніца:"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgid "Downloaded"
+#~ msgstr "Сцягванні"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgid "Download speed"
+#~ msgstr "Сцягванні"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Upload speed"
+#~ msgstr "Хуткасць"
+
+#~ msgid "Progress"
+#~ msgstr "Працэс"
+
+#, fuzzy
+#~| msgid "&File"
+#~ msgid "Files"
+#~ msgstr "&Файл"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgid "Download speed of the chunk"
+#~ msgstr "Сцягванні"
+
+#~ msgid "URL"
+#~ msgstr "URL"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed"
+#~ msgstr "Хуткасць"
+
+#, fuzzy
+#~| msgid "Status"
+#~ msgid "Status"
+#~ msgstr "Статус"
+
+#~ msgid "Ban Peer"
+#~ msgstr "Порт:"
+
+#, fuzzy
+#~| msgid "&File"
+#~ msgid "File"
+#~ msgstr "&Файл"
+
+#~ msgid "Size"
+#~ msgstr "Памер"
+
+#, fuzzy
+#~| msgid "Advanced Options"
+#~ msgid "Advanced Details for %1"
+#~ msgstr "Адмысловыя опцыі"
+
+#, fuzzy
+#~| msgid "&Open..."
+#~ msgctxt "Open file"
+#~ msgid "Open"
+#~ msgstr "&Адкрыць..."
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgid "Download first"
+#~ msgstr "Сцягванні"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgid "Download normally"
+#~ msgstr "Сцягванні"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgid "Download last"
+#~ msgstr "Сцягванні"
+
+#, fuzzy
+#~| msgid "My Downloads"
+#~ msgid "Do Not Download"
+#~ msgstr "Мае сцягванні"
+
+#, fuzzy
+#~| msgid "Delete"
+#~ msgid "Delete File(s)"
+#~ msgstr "Выдаліць"
+
+#, fuzzy
+#~| msgid "Open File"
+#~ msgid "Move File"
+#~ msgstr "Адкрыць файл"
+
+#~ msgid "Expand Folder Tree"
+#~ msgstr "Дадаць каталог"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Seeders"
+#~ msgstr "Хуткасць"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Leechers"
+#~ msgstr "Хуткасць"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgid "Times Downloaded"
+#~ msgstr "Сцягванні"
+
+#~ msgid "Next Update"
+#~ msgstr "Абнавіць"
+
+#~ msgid "Priority"
+#~ msgstr "Прыярытэт"
+
+#~ msgid "Preview"
+#~ msgstr "Прагляд"
+
+#~ msgctxt "Download first"
+#~ msgid "First"
+#~ msgstr "Першы"
+
+#~ msgctxt "Download last"
+#~ msgid "Last"
+#~ msgstr "Апошнія"
+
+#, fuzzy
+#~| msgid "Form"
+#~ msgctxt "Download normally(not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "Форма"
+
+#~ msgid "%1 %"
+#~ msgstr "%1 %"
+
+#, fuzzy
+#~| msgid "Form"
+#~ msgctxt "Download Normal (not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "Форма"
+
+#, fuzzy
+#~| msgid "Advanced Options"
+#~ msgid "&Advanced Details"
+#~ msgstr "Адмысловыя опцыі"
+
+#, fuzzy
+#~| msgid "&File"
+#~ msgid "&Scan Files"
+#~ msgstr "&Файл"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgid "Downloading Torrent File...."
+#~ msgstr "Сцягванні"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading...."
+#~ msgstr "Сцягванні"
+
+#, fuzzy
+#~| msgid "Torrent is incomplete."
+#~ msgid "Torrent file does not exist"
+#~ msgstr "KTorrent"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgid "Analyzing torrent...."
+#~ msgstr "Сцягванні"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgctxt "Transfer status: seeding"
+#~ msgid "Seeding...."
+#~ msgstr "Хуткасць"
+
+#, fuzzy
+#~| msgid "&Settings"
+#~ msgid "File Properties"
+#~ msgstr "&Настаўленні"
+
+#, fuzzy
+#~| msgid "Open File"
+#~ msgid "Metalink Version 4.0 file (*.meta4)"
+#~ msgstr "Адкрыць файл"
+
+#, fuzzy
+#~| msgid "Open File"
+#~ msgid "Metalink Version 3.0 file (*.metalink)"
+#~ msgstr "Адкрыць файл"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgctxt "Download the items which have been selected"
+#~ msgid "&Download Checked"
+#~ msgstr "Сцягванні"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "File Name"
+#~ msgstr "Назва"
+
+#, fuzzy
+#~| msgid "File"
+#~ msgctxt "list header: type of file"
+#~ msgid "File Type"
+#~ msgstr "Файл"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgctxt "Mirror as in server, in url"
+#~ msgid "Mirror"
+#~ msgstr "Памылка"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgctxt "The priority of the mirror"
+#~ msgid "Priority"
+#~ msgstr "Прыярытэт"
+
+#, fuzzy
+#~| msgid "Connecting"
+#~ msgctxt "Number of paralell connections to the mirror"
+#~ msgid "Connections"
+#~ msgstr "Злучэнні"
+
+#, fuzzy
+#~| msgid "Connecting"
+#~ msgctxt "Location = country"
+#~ msgid "Location"
+#~ msgstr "Злучэнні"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgid "Download again"
+#~ msgstr "Сцягванні"
+
+#, fuzzy
+#~| msgid "Delete"
+#~ msgctxt "Delete selected history-item"
+#~ msgid "Delete selected"
+#~ msgstr "Выдаліць"
+
+#, fuzzy
+#~| msgid "Open File"
+#~ msgid "Open file"
+#~ msgstr "Адкрыць файл"
+
+#, fuzzy
+#~| msgid "Rename Group"
+#~ msgid "Transfer History"
+#~ msgstr "Перайменаваць групу"
+
+#, fuzzy
+#~| msgid "Open File"
+#~ msgid "&Open File"
+#~ msgstr "Адкрыць файл"
+
+#, fuzzy
+#~| msgid "Running"
+#~ msgctxt "The transfer is running"
+#~ msgid "Running"
+#~ msgstr "Выконваецца"
+
+#, fuzzy
+#~| msgid "Stopped"
+#~ msgctxt "The transfer is stopped"
+#~ msgid "Stopped"
+#~ msgstr "Спынена"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "The transfer is finished"
+#~ msgid "Finished"
+#~ msgstr "Гатова"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgid "Source File"
+#~ msgstr "Крыніца:"
+
+#~ msgid "Destination"
+#~ msgstr "Балы"
+
+#~ msgid "Time"
+#~ msgstr "Час"
+
+#, fuzzy
+#~| msgid "&File"
+#~ msgid "File Size"
+#~ msgstr "&Файл"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "the transfer has been finished"
+#~ msgid "Finished"
+#~ msgstr "Гатова"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgctxt "an error happened in connection with the user input"
+#~ msgid "Error:"
+#~ msgstr "Памылка"
+
+#~ msgctxt "trust level"
+#~ msgid "Never"
+#~ msgstr "Вузел:"
+
+#~ msgid "Unlimited"
+#~ msgstr "Неабмежавана"
+
+#, fuzzy
+#~| msgid "&File"
+#~ msgctxt "pgp signature is not verified"
+#~ msgid "Failed"
+#~ msgstr "&Файл"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgid "Error:"
+#~ msgstr "Памылка"
+
+#, fuzzy
+#~| msgid "Connecting"
+#~ msgid "Information:"
+#~ msgstr "Злучэнні"
+
+#, fuzzy
+#~| msgid "Rename Group"
+#~ msgid "Transfer Details"
+#~ msgstr "Перайменаваць групу"
+
+#, fuzzy
+#~| msgid "Rename Group"
+#~ msgid "Transfer Verification for %1"
+#~ msgstr "Перайменаваць групу"
+
+#, fuzzy
+#~| msgid "Remove"
+#~ msgid "Rename File"
+#~ msgstr "Выдаліць"
+
+#, fuzzy
+#~| msgid "Remove"
+#~ msgid "Rename %1 to:"
+#~ msgstr "Выдаліць"
+
+#, fuzzy
+#~| msgid "Remove"
+#~ msgid "&Rename"
+#~ msgstr "Выдаліць"
+
+#, fuzzy
+#~| msgid "Rename Group"
+#~ msgid "Rename Group..."
+#~ msgid_plural "Rename Groups..."
+#~ msgstr[0] "Перайменаваць групу"
+#~ msgstr[1] "Перайменаваць групу"
+#~ msgstr[2] "Перайменаваць групу"
+
+#, fuzzy
+#~| msgid "Sticky"
+#~ msgctxt "fix position for droptarget"
+#~ msgid "Sticky"
+#~ msgstr "Запомніць"
+
+#~ msgid "Quit KGet"
+#~ msgstr "Выйсці з KGet"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgid "&Download"
+#~ msgstr "Сцягванні"
+
+#, fuzzy
+#~| msgid "Rename Group"
+#~ msgid "&Load transfer list"
+#~ msgstr "Перайменаваць групу"
+
+#, fuzzy
+#~| msgid "%1 %"
+#~ msgctxt "%1 filename, %2 total size, %3 status"
+#~ msgid "%1(%2) %3"
+#~ msgstr "%1 %"
+
+#, fuzzy
+#~| msgid "%1 %"
+#~ msgctxt ""
+#~ "%1 filename, %2 percent complete, %3 downloaded out of %4 total size, %5 "
+#~ "status"
+#~ msgid "%1(%2% %3/%4) %5"
+#~ msgstr "%1 %"
+
+#, fuzzy
+#~| msgid "Rename Group"
+#~ msgid "Transfer Settings for %1"
+#~ msgstr "Перайменаваць групу"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgid "Destination unmodified"
+#~ msgstr "Балы"
+
+#, fuzzy
+#~| msgid "&Settings"
+#~ msgid "Group Settings for %1"
+#~ msgstr "&Настаўленні"
+
+#, fuzzy
+#~| msgid "%1/s"
+#~ msgctxt "@item speed of transfer per seconds"
+#~ msgid "%1/s"
+#~ msgstr "%1/с"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgctxt "@label"
+#~ msgid "File name"
+#~ msgstr "Назва"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "@label Progress of transfer"
+#~ msgid "Finished"
+#~ msgstr "Гатова"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgctxt "@label Speed of transfer"
+#~ msgid "Speed"
+#~ msgstr "Хуткасць"
+
+#, fuzzy
+#~| msgid "Status"
+#~ msgctxt "@label Status of transfer"
+#~ msgid "Status"
+#~ msgstr "Статус"
+
+#, fuzzy
+#~| msgid "Start"
+#~ msgctxt "@action:button start a transfer"
+#~ msgid "Start"
+#~ msgstr "Запусціць"
+
+#, fuzzy
+#~| msgid "Stop"
+#~ msgctxt "@action:button"
+#~ msgid "Stop"
+#~ msgstr "Спыніць"
+
+#, fuzzy
+#~| msgid "Remove"
+#~ msgctxt "@action:button"
+#~ msgid "Remove"
+#~ msgstr "Выдаліць"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgctxt "@label Download from"
+#~ msgid "Source:"
+#~ msgstr "Крыніца:"
+
+#, fuzzy
+#~| msgid "&Settings"
+#~ msgctxt "@action"
+#~ msgid "Settings"
+#~ msgstr "&Настаўленні"
+
+#, fuzzy
+#~| msgid "OK"
+#~ msgctxt "@action:button"
+#~ msgid "OK"
+#~ msgstr "Добра"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgctxt "@action Refresh download list every x (seconds)"
+#~ msgid "Refresh download list every"
+#~ msgstr "Сцягванні"
+
+#, fuzzy
+#~| msgid "&Settings"
+#~ msgctxt "@action:button"
+#~ msgid "Save Settings"
+#~ msgstr "&Настаўленні"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgctxt "@title"
+#~ msgid "Downloads"
+#~ msgstr "Сцягванні"
+
+#~ msgid "Core Developer"
+#~ msgstr "Асноўны распрацоўшчык"
+
+#, fuzzy
+#~| msgid "Core Developer"
+#~ msgid "Developer"
+#~ msgstr "Асноўны распрацоўшчык"
+
+#, fuzzy
+#~| msgid "Core Developer"
+#~ msgid "Former Developer"
+#~ msgstr "Асноўны распрацоўшчык"
+
+#~ msgid "Carsten Pfeiffer"
+#~ msgstr "Карстэн Пфіффер"
+
+#~ msgid "Matej Koss"
+#~ msgstr "Матэй Косс"
+
+#, fuzzy
+#~| msgid "Core Developer"
+#~ msgid "BTCore (KTorrent) Developer"
+#~ msgstr "Асноўны распрацоўшчык"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Top Priority"
+#~ msgstr "Прыярытэт"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Least Priority"
+#~ msgstr "Прыярытэт"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Increase Priority"
+#~ msgstr "Прыярытэт"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Decrease Priority"
+#~ msgstr "Прыярытэт"
+
+#, fuzzy
+#~| msgid "Remove"
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Remove Selected"
+#~ msgstr "Выдаліць"
+
+#, fuzzy
+#~| msgid "Delete"
+#~ msgctxt "delete all finished transfers"
+#~ msgid "Remove All Finished"
+#~ msgstr "Выдаліць"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgctxt "redownload selected transfer item"
+#~ msgid "Redownload Selected"
+#~ msgstr "Сцягванні"
+
+#~ msgid "Stop"
+#~ msgstr "Спыніць"
+
+#, fuzzy
+#~| msgid "Remove"
+#~ msgid "Remove"
+#~ msgstr "Выдаліць"
+
+#~ msgid "Open File"
+#~ msgstr "Адкрыць файл"
+
+#~ msgid "Show Details"
+#~ msgstr "Паказваць падрабязнасці"
+
+#~ msgid "Copy URL to Clipboard"
+#~ msgstr "Скапіраваць адрас спасылкі"
+
+#, fuzzy
+#~| msgid "Rename Group"
+#~ msgid "&Transfer History"
+#~ msgstr "Перайменаваць групу"
+
+#, fuzzy
+#~| msgid "&Settings"
+#~ msgid "&Group Settings"
+#~ msgstr "&Настаўленні"
+
+#, fuzzy
+#~| msgid "Rename Group"
+#~ msgid "&Transfer Settings"
+#~ msgstr "Перайменаваць групу"
+
+#~ msgid "Enable"
+#~ msgstr "Уключаны"
+
+#, fuzzy
+#~| msgid "Rename Group"
+#~ msgid "Confirm transfer delete"
+#~ msgstr "Перайменаваць групу"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Дарафей Праляскоўскі"
+
+#, fuzzy
+#~| msgid "Show Details"
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "Паказваць падрабязнасці"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgid "Automatic verification:"
+#~ msgstr "Балы"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgid "Automatic verification"
+#~ msgstr "Балы"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Keyservers:"
+#~ msgstr "Хуткасць"
+
+#, fuzzy
+#~| msgid "Remove"
+#~ msgid "Rename"
+#~ msgstr "Выдаліць"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgid "Limit Maximum Downloads Per Group"
+#~ msgstr "Сцягванні"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed Limit"
+#~ msgstr "Хуткасць"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgid "Global download limit:"
+#~ msgstr "Сцягванні"
+
+#, fuzzy
+#~| msgid "%1/s"
+#~ msgid " KiB/s"
+#~ msgstr "%1/с"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgid "Global upload limit:"
+#~ msgstr "Сцягванні"
+
+#~ msgid "Port:"
+#~ msgstr "Порт:"
+
+#~ msgid "Password:"
+#~ msgstr "Пароль:"
+
+#~ msgid "Startup"
+#~ msgstr "Запуск"
+
+#, fuzzy
+#~| msgid "Startup"
+#~ msgid "At startup:"
+#~ msgstr "Запуск"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgid "Restore Download State"
+#~ msgstr "Сцягванні"
+
+#, fuzzy
+#~| msgid "My Downloads"
+#~ msgid "Start All Downloads"
+#~ msgstr "Мае сцягванні"
+
+#, fuzzy
+#~| msgid "My Downloads"
+#~ msgid "Stop All Downloads"
+#~ msgstr "Мае сцягванні"
+
+#, fuzzy
+#~| msgid "Rename Group"
+#~ msgid "History"
+#~ msgstr "Перайменаваць групу"
+
+#, fuzzy
+#~| msgid "Rename Group"
+#~ msgid "History backend:"
+#~ msgstr "Перайменаваць групу"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "Engine Name"
+#~ msgstr "Назва"
+
+#, fuzzy
+#~| msgid "Connecting"
+#~ msgid "Number of connections per URL:"
+#~ msgstr "Злучэнні"
+
+#, fuzzy
+#~| msgid "&Settings"
+#~ msgid "File Settings"
+#~ msgstr "&Настаўленні"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "Filename:"
+#~ msgstr "Назва"
+
+#, fuzzy
+#~| msgid "Remove"
+#~ msgid "Username:"
+#~ msgstr "Выдаліць"
+
+#, fuzzy
+#~| msgid "Port:"
+#~ msgid "Path:"
+#~ msgstr "Порт:"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgid "Description:"
+#~ msgstr "Балы"
+
+#, fuzzy
+#~| msgid "Folder:"
+#~ msgid "Mode:"
+#~ msgstr "Тэчка:"
+
+#, fuzzy
+#~| msgid "Remove"
+#~ msgid "Remove Tracker"
+#~ msgstr "Выдаліць"
+
+#, fuzzy
+#~| msgid "Remove"
+#~ msgid "Update Trackers"
+#~ msgstr "Выдаліць"
+
+#, fuzzy
+#~| msgid "Remove"
+#~ msgid "Remove Webseed"
+#~ msgstr "Выдаліць"
+
+#~ msgid "Total:"
+#~ msgstr "Усяго:"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgid "Downloaded:"
+#~ msgstr "Сцягванні"
+
+#, fuzzy
+#~| msgid "Size"
+#~ msgid "Size:"
+#~ msgstr "Памер"
+
+#~ msgid "0"
+#~ msgstr "0"
+
+#, fuzzy
+#~| msgid "Change"
+#~ msgid "Cancel"
+#~ msgstr "Змяніць"
+
+#, fuzzy
+#~| msgid "Status"
+#~ msgid "Stats"
+#~ msgstr "Статус"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Seeders:"
+#~ msgstr "Хуткасць"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgid "Download speed:"
+#~ msgstr "Сцягванні"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Upload speed:"
+#~ msgstr "Хуткасць"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgctxt "source-file"
+#~ msgid "Source:"
+#~ msgstr "Крыніца:"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgid "Upload limit per transfer:"
+#~ msgstr "Сцягванні"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgid "No Limit"
+#~ msgstr "Сцягванні"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgid "Download limit per transfer:"
+#~ msgstr "Сцягванні"
+
+#~ msgid "Folders"
+#~ msgstr "Тэчкі"
+
+#, fuzzy
+#~| msgid "General"
+#~ msgctxt "General options."
+#~ msgid "General"
+#~ msgstr "Агульныя"
+
+#, fuzzy
+#~| msgid "General"
+#~ msgid "General URL:"
+#~ msgstr "Агульныя"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgid "Verification:"
+#~ msgstr "Балы"
+
+#, fuzzy
+#~| msgid "Open File"
+#~ msgid "*.metalink *.meta4|Metalink file (*.metalink *.meta4)"
+#~ msgstr "Адкрыць файл"
+
+#, fuzzy
+#~| msgid "Extension:"
+#~ msgid "Version:"
+#~ msgstr "Пашырэнне:"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "Name:"
+#~ msgstr "Назва"
+
+#, fuzzy
+#~| msgid "&File"
+#~ msgctxt "Files as in files on a server"
+#~ msgid "Files:"
+#~ msgstr "&Файл"
+
+#, fuzzy
+#~| msgctxt "filter: show all file types"
+#~| msgid "All"
+#~ msgctxt "filter: show all file types"
+#~ msgid "&All"
+#~ msgstr "Усе"
+
+#, fuzzy
+#~| msgid "Connecting"
+#~ msgid "Contains"
+#~ msgstr "Злучэнні"
+
+#, fuzzy
+#~| msgid "My Downloads"
+#~ msgid "Does Not Contain"
+#~ msgstr "Мае сцягванні"
+
+#, fuzzy
+#~| msgid "Delete"
+#~ msgctxt "Check as in mark, not as in verify"
+#~ msgid "Chec&k Selected"
+#~ msgstr "Выдаліць"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgid "Mirror:"
+#~ msgstr "Памылка"
+
+#, fuzzy
+#~| msgid "Connecting"
+#~ msgid "Number of connections:"
+#~ msgstr "Злучэнні"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Priority:"
+#~ msgstr "Прыярытэт"
+
+#, fuzzy
+#~| msgid "Connecting"
+#~ msgid "Location:"
+#~ msgstr "Злучэнні"
+
+#, fuzzy
+#~| msgid "Start"
+#~ msgid "Date"
+#~ msgstr "Запусціць"
+
+#, fuzzy
+#~| msgid "Rename Group"
+#~ msgid "Filter History"
+#~ msgstr "Перайменаваць групу"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgid "Download"
+#~ msgstr "Сцягванні"
+
+#, fuzzy
+#~| msgid "Port:"
+#~ msgctxt "hash as a hash of type md5, sha1 etc."
+#~ msgid "Hash:"
+#~ msgstr "Порт:"
+
+#~ msgid "Status:"
+#~ msgstr "Стан:"
+
+#, fuzzy
+#~| msgid "Rename Group"
+#~ msgid "Transfer Settings"
+#~ msgstr "Перайменаваць групу"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgid "Download Destination:"
+#~ msgstr "Балы"
+
+#, fuzzy
+#~| msgid "Not in use"
+#~ msgctxt "No value has been set"
+#~ msgid "Not set"
+#~ msgstr "Не ў чарзе"
+
+#, fuzzy
+#~| msgid "%1/s"
+#~ msgid " KiB"
+#~ msgstr "%1/с"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgid "Upload Limit:"
+#~ msgstr "Сцягванні"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgid "Download Limit:"
+#~ msgstr "Сцягванні"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgctxt "The available mirrors (servers) for downloading"
+#~ msgid "Mirrors"
+#~ msgstr "Памылка"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgctxt "verification of the download (e.g. by using MD5)"
+#~ msgid "Verification"
+#~ msgstr "Балы"
+
+#, fuzzy
+#~| msgid "Connecting"
+#~ msgid "Creation:"
+#~ msgstr "Злучэнні"
+
+#, fuzzy
+#~| msgid "Connecting"
+#~ msgid "Expiration:"
+#~ msgstr "Злучэнні"
+
+#, fuzzy
+#~| msgid "&Settings"
+#~ msgid "Group Settings"
+#~ msgstr "&Настаўленні"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgid "Maximum download speed:"
+#~ msgstr "Сцягванні"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgid "Maximum upload speed:"
+#~ msgstr "Сцягванні"
+
+#, fuzzy
+#~| msgid "Rename Group"
+#~ msgid "Transfer group:"
+#~ msgstr "Перайменаваць групу"
+
+#~ msgid "&File"
+#~ msgstr "&Файл"
+
+#~ msgid "&Settings"
+#~ msgstr "&Настаўленні"
+
+#~ msgid "&Help"
+#~ msgstr "&Дапамога"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Галоўная панель начыння"
+
+#, fuzzy
+#~| msgid "Remove"
+#~ msgid "Remove Tag"
+#~ msgstr "Выдаліць"
+
+#, fuzzy
+#~| msgid "Add"
+#~ msgid "Add Tag"
+#~ msgstr "Дадаць"
+
+#, fuzzy
+#~| msgid "Rename Group"
+#~ msgid "Tag Settings for the groups"
+#~ msgstr "Перайменаваць групу"
+
+#, fuzzy
+#~| msgid "&Settings"
+#~ msgid "Tag Settings"
+#~ msgstr "&Настаўленні"
+
+#, fuzzy
+#~| msgid "Remove"
+#~ msgid "Available tags:"
+#~ msgstr "Выдаліць"
+
+#~ msgid "OK"
+#~ msgstr "Добра"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgid "Error: %1"
+#~ msgstr "Памылка"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgctxt "Status of a torrent file"
+#~ msgid "Seeding"
+#~ msgstr "Хуткасць"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgid "Downloading"
+#~ msgstr "Сцягванні"
+
+#, fuzzy
+#~| msgid "Stopped"
+#~ msgid "Stopped"
+#~ msgstr "Спынена"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgid "Queued for downloading"
+#~ msgstr "Сцягванні"
+
+#~ msgid "Corrupted torrent."
+#~ msgstr "Сцягнуць"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgid "Parse Error"
+#~ msgstr "Памылка"
+
+#~ msgid "Not connected"
+#~ msgstr "Не ў чарзе"
+
+#~ msgid "Connection closed"
+#~ msgstr "Злучэнні"
+
+#~ msgid "Connected"
+#~ msgstr "Злучэнні"
+
+#~ msgid "Connecting"
+#~ msgstr "Злучэнні"
+
+#~ msgid "General"
+#~ msgstr "Агульныя"
+
+#, fuzzy
+#~| msgid "Connecting"
+#~ msgid "Connections"
+#~ msgstr "Злучэнні"
+
+#, fuzzy
+#~| msgid "Remove"
+#~ msgid "Tracker"
+#~ msgstr "Выдаліць"
+
+#~ msgid "Add"
+#~ msgstr "Дадаць"
+
+#~ msgid "Delete"
+#~ msgstr "Выдаліць"
+
+#~ msgid "Downloads"
+#~ msgstr "Сцягванні"
+
+#, fuzzy
+#~| msgid "Rename Group"
+#~ msgid "Transfer List"
+#~ msgstr "Перайменаваць групу"
+
+#, fuzzy
+#~| msgid "Delete"
+#~ msgctxt "The transfer is delayed"
+#~ msgid "Delayed"
+#~ msgstr "Выдаліць"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgid "Overwrite destination"
+#~ msgstr "Балы"
+
+#~ msgid "Queued"
+#~ msgstr "У чарзе"
+
+#, fuzzy
+#~| msgid "Remove"
+#~ msgid "Current Tracker"
+#~ msgstr "Выдаліць"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgid "Scrape"
+#~ msgstr "Крыніца:"
+
+#, fuzzy
+#~| msgid "&File"
+#~ msgctxt "file in a filsystem"
+#~ msgid "File"
+#~ msgstr "&Файл"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "Name"
+#~ msgstr "Назва"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgid "KGet - Download Manager"
+#~ msgstr "Сцягванні"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgctxt "@label transfer source"
+#~ msgid "Source:"
+#~ msgstr "Крыніца:"
+
+#, fuzzy
+#~| msgid "Rename Group"
+#~ msgid "&Transfer History..."
+#~ msgstr "Перайменаваць групу"
+
+#, fuzzy
+#~| msgid "&Settings"
+#~ msgid "&Group Settings..."
+#~ msgstr "&Настаўленні"
+
+#, fuzzy
+#~| msgid "Rename Group"
+#~ msgid "&Transfer Settings..."
+#~ msgstr "Перайменаваць групу"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed limit"
+#~ msgstr "Хуткасць"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgid "Download Speed:"
+#~ msgstr "Сцягванні"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Upload Speed:"
+#~ msgstr "Хуткасць"
+
+#, fuzzy
+#~| msgid "Delete"
+#~ msgid "&Delete"
+#~ msgstr "Выдаліць"
+
+#, fuzzy
+#~| msgid "Change"
+#~ msgid "&Cancel"
+#~ msgstr "Змяніць"
+
+#, fuzzy
+#~| msgid "Extension"
+#~ msgid "File Extension"
+#~ msgstr "Пашырэнне"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgid "Downloading.."
+#~ msgstr "Сцягванні"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading.."
+#~ msgstr "Сцягванні"
+
+#~ msgid "%1 GB"
+#~ msgstr "%1 Гб"
+
+#~ msgid "%1 MB"
+#~ msgstr "%1 Мб"
+
+#~ msgid "%1 KB"
+#~ msgstr "%1 Кб"
+
+#~ msgid "%1 B"
+#~ msgstr "%1 б"
+
+#, fuzzy
+#~| msgid "%1/s"
+#~ msgid "%1 KB/s"
+#~ msgstr "%1/с"
+
+#~ msgid "<status>"
+#~ msgstr "<статус>"
+
+#, fuzzy
+#~| msgid "Form"
+#~ msgctxt "Download normally(not as first or last"
+#~ msgid "Normal"
+#~ msgstr "Форма"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Bittorrent-Speedlimits"
+#~ msgstr "Хуткасць"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed-Limits"
+#~ msgstr "Хуткасць"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgid "Download Folder"
+#~ msgstr "Сцягванні"

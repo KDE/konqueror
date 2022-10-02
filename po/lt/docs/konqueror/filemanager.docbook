@@ -1,0 +1,1478 @@
+<chapter id="filemanager">
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>Tomas</firstname
+><surname
+>Straupis</surname
+><affiliation
+><address
+><email
+>tomasstraupis@gmail.com</email
+></address
+></affiliation
+><contrib
+>Vertė</contrib
+></othercredit
+> 
+</authorgroup
+> 
+
+<date
+>2010-10-26</date>
+<releaseinfo
+>&kde; 4.5</releaseinfo>
+</chapterinfo>
+
+<title
+>&konqueror; failų tvarkyklė</title>
+<!-- 4.5 -->
+<sect1 id="dirfolders">
+<title
+>Aplankai ir keliai</title>
+<para
+>&UNIX; ir &Linux; tipo sistemose visi aplankai sutvarkyti naudojant paprastą hierarchiją. Pradedama nuo aukščiausio lygio aplanko (taip vadinamo šakninio aplanko). Toliau struktūra leidžiasi gilyn šakomis - aplankais ir poaplankiais. Tai reiškia, kad iš bet kokio aplanko galite patekti į bet kokį kitą kildami <quote
+>aukštyn</quote
+>, kol pateksite į bendrą tašką, tada, eidami <quote
+>žemyn</quote
+> atitinkamais aplankais, pateksite į reikiamą poaplankį.</para>
+
+<para
+>Bet kokio failo ar aplanko pozicija šioje struktūroje (dar vadinamoje medžiu) gali būti nurodyta jo <quote
+>keliu</quote
+>, kuris yra paprastas sąrašas aplankų, leidžiantis kuriais nuo šakninio aplanko pasieksite reikiamą failą ar aplanką. Pavyzdžiui <filename class="directory"
+>/home/algirdas</filename
+> - tai poaplankis <filename class="directory"
+>algirdas</filename
+>, esantis aplanke <filename class="directory"
+>home</filename
+>, kuris savo ruožtu yra šakniniame aplanke, o štai <filename
+>/home/algirdas/zodziai.txt</filename
+> yra failas <filename
+>zodziai.txt</filename
+>, esantis tame aplanke. Šiuose keliuose esantis pirmasis <quote
+>/</quote
+> žymi šakninį aplanką.</para>
+
+<para
+>Visi sistemai prieinami aplankai. įskaitant ir esančius skirtinguose disko skirsniuose, &CD-ROM; įrenginiuose ar USB raktuose, bus matomi medyje žemiau / lygio. Konkretus kelias iki jų priklausys nuo jūsų operacinės sistemos nustatymų (taip pat žiūrėkite skyrių apie <link linkend="floppy-cd"
+>diskelius ir &CD-ROM; įrenginius</link
+>). </para>
+<para
+>Kiekvienas &UNIX; ir &Linux; sistemos naudotojas turi savo <quote
+>namų</quote
+> aplanką, kuriame saugomi jo asmeniniai failai ir nustatymai. Pavyzdžiui <filename class="directory"
+>/home/algirdas</filename
+> ir <filename class="directory"
+>/home/urtė</filename
+>. Simbolis <keycap
+>~</keycap
+> žymi naudotojo namų aplanką, taigi <filename
+>~/laiškas.txt</filename
+> yra kelias iki failo <filename
+>laiškas.txt</filename
+>, esančio namų aplanke.</para>
+<para
+>Pastebėtina, kad dažnai vietoje termino <quote
+>aplankas</quote
+> vartojamas terminas <quote
+>direktorija</quote
+>.</para>
+</sect1>
+<!-- 4.5 -->
+<sect1 id="viewmode">
+<title
+>Rodymo būdai</title>
+<para
+>Failų tvarkyklės režime &konqueror; rodo parinktame aplanke esančius failus ir poaplankius, bei gali apie juos pateikti šiokios tokios informacijos. <quote
+>Kelias</quote
+> iki einamojo aplanko rodomas vietos juostoje.&konqueror; failų ir aplankų vaizdavimo būdas pagrinde priklauso nuo to, koks būdas parinktas meniu <menuchoice
+><guimenu
+>Rodymas</guimenu
+><guisubmenu
+>Žiūrėjimo būdai</guisubmenu
+></menuchoice
+> </para>
+
+<note
+><para
+>Failų tvarkyklės režime, &konqueror; naudoja vidinį &dolphin; koponentą.</para
+></note>
+
+<itemizedlist>
+<!-- begin copy from dolphin docbook --> 
+<listitem
+><para
+>Įjungus <guibutton
+>ženkliukų</guibutton
+> rodymo būdą (kuris yra numatytasis), failai bus vaizduojami kaip ženkliukai, vaizduojantys failo tipą. Poaplankiams vaizduoti bus naudojamas specialus ženkliukas. </para
+></listitem>
+
+<listitem
+><para
+><guibutton
+>Detaliame</guibutton
+> rodinyje aplanko turinys rodomas detaliu sąrašu, kuriame yra kiekvieno rodomo elemento pavadinimas, dydis, paskutinio keitimo laikas. Ant viršūnės paspaudus dešinį pelės mygtuką, bus galima pridėti papildomų stulpelių. </para>
+
+<para
+>Detaliame rodinyje yra parinktis <guilabel
+>Išplečiami aplankai</guilabel
+>, kuri gali būti įjungta nustatymų <menuchoice
+><guimenu
+>failų tvarkymo</guimenu
+> <guimenuitem
+>rodymo būdų</guimenuitem
+></menuchoice
+> skiltyje. Ši parinktis leidžia peržiūrėti aplanką medžio būdu: kiekvienas aplankų medžio poaplankis gali būti <quote
+>išskleistas</quote
+> paspaudus šalia esantį mygtuką <guiicon
+>+</guiicon
+>. </para
+></listitem>
+
+<listitem
+><para
+><guilabel
+>Stulpelių</guilabel
+> rodinyje vienu metu galima matyti daugiau nei vieną aplankų struktūros lygį. Paspaudus ant poaplankio, dešiniau rodomas to poaplankio turinys. </para
+></listitem>
+
+</itemizedlist>
+<!-- end copy from dolphin docbook --> 
+<sect2 id="filetipinfo">
+<title
+>Failo patarimo informacija</title>
+<para
+>Jei &konqueror; konfigūracijos dialoge, <menuchoice
+><guimenu
+>failų tvarkymo</guimenu
+><guimenuitem
+>bendrų</guimenuitem
+></menuchoice
+> nustatymų kortelėje įjungsite parinktį <guilabel
+>rodyti paaiškinimus</guilabel
+>, užvedus pelę ant aplanko ar failo ženkliuko, bus rodomas mažas informacinis langas. </para>
+</sect2>
+
+<sect2 id="previews">
+<title
+>Failų peržiūra</title>
+<para
+>Nustatymų dialogo kortelėje <guilabel
+>peržiūros</guilabel
+>, esančioje <menuchoice
+><guimenu
+>Failų tvarkymo</guimenu
+><guisubmenu
+>Bendri</guisubmenu
+></menuchoice
+> skiltyje, galėsite pasirinkti, kokiems failų tipams turi būti rodoma peržiūra.</para>
+<para
+>Bendrai tai reiškia, kad vietoje failo tipo ženkliuko bus rodomas mažas piešinukas, rodantis failo turinį.</para>
+<para
+>Kadangi &konqueror; turi perskaityti kur kas daugiau informacijos, nei failo pavadinimo informaciją, failų peržiūros režimas gali būti netinkamas naršant po aplankus, esančius nutolusiose sistemose. Failų tvarkyklės konfigūravimo <guilabel
+>peržiūros</guilabel
+> puslapyje galite išjungti peržiūras failams, kurių dydis viršyja nurodytą.</para>
+</sect2>
+</sect1>
+
+<!-- begin copy from dolphin docbook --> 
+<sect1 id="view-properties">
+<title
+>Aplanko rodymo savybės</title>
+
+<para
+>Žemiau išvardintais nustatymais galite kontroliuoti, kaip rodomi aplankų turiniai. Pagal nutylėjimą nustatymai saugomi atskirai kiekvienam aplankui: <itemizedlist
+><listitem
+><para
+>Rodymo būdas (ženkliukai, detalės, stulpeliai)</para
+></listitem
+><listitem
+><para
+> Elementų rikiavimas, kurį nustato rikiavimo rūšis (didėjantis ar mažėjantis) ir atributas (pavadinimas, dydis ir pan.), pagal kurį rikiuojama</para
+></listitem
+> <listitem
+><para
+>Rikiuojant aplankus ir failus &ndash; ar aplankus rodyti pradžioje ar ne?</para
+></listitem
+> <listitem
+><para
+>Peržiūra &ndash; ar ji rodoma vietoje ženkliukų (priklausomai nuo nustatymų kortelėje <guilabel
+>Peržiūra</guilabel
+> skiltyje <menuchoice
+><guimenu
+>Failų tvarkymas</guimenu
+><guimenuitem
+>Bendri</guimenuitem
+></menuchoice
+>) ar ne?</para
+></listitem
+> <listitem
+><para
+>Ar ženkliukų rodinyje elementai rodomi grupėmis?</para
+></listitem
+> <listitem
+><para
+>Ar rodomi paslėpti failai?</para
+></listitem
+><listitem
+><para
+>Kokia papildoma informacija (neskaitant pavadinimo) rodoma ženkliukų ar detalų rodinyje?</para
+></listitem
+></itemizedlist
+>Rodymo savybes galima konfigūruoti meniu <menuchoice
+><guimenu
+>Rodymas</guimenu
+></menuchoice
+>, kai kuriuos (tokius kaip rodymo būdą) galima keisti ir įrankinės mygtukais. </para>
+
+<sect2 id="view-properties-dialog">
+<title
+>Rodymo savybių dialogas</title>
+
+<para>
+
+<screenshot>
+<screeninfo
+>Rodymo savybių dialogo nuotrauka</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="viewproperties-dialog.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Rodymo savybių dialogas.</phrase>
+</textobject>
+<caption
+><para
+>Rodymo savybių dialogas.</para
+></caption>
+</mediaobject>
+</screenshot>
+Naudojant <guilabel
+>Rodymo savybių</guilabel
+> dialogą galima greitai ir vienu metu pakeisti keletą rodymo savybių. Tai daroma einamąjam aplankui, einamąjam aplankui ir jo poaplankiams arba visiems aplankams (priklausomai nuo pasirinkimo skiltyje <guilabel
+>Pritaikyti rodymo savybes...</guilabel
+>). </para>
+
+<para
+>Jei parinktis <guilabel
+>Nustatyti visiems naujiems aplankams</guilabel
+> įjungta, tada parinkti rodymo nustatymai bus automatiškai pritaikyti visiems aplankams, kurie dar neturi savo konkrečių nustatymų. </para>
+
+</sect2>
+
+</sect1>
+<!-- end copy from dolphin docbook -->
+
+<!-- 4.5 -->
+<sect1 id="navigation">
+<title
+>Navigacija</title>
+<para
+>Norėdami pasiekti failą su &konqueror;, visų pirma naudodami aplankų medį turėsite nueiti į aplanką, kuriame tas failas yra.</para>
+
+<para
+>Vaikščiojimui tarp aplankų užtenka tiesiog vaikščioti medžiu aukštyn ir žemyn:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Norėdami nusileisti į poaplankį, spauskite <mousebutton
+>kairįjį</mousebutton
+> pelės mygtuką ant aplanko pavadinimo arba ženkliuko. Jei aplanką jau <quote
+>pažymėjote</quote
+> (žr. žemiau) - tiesiog spauskite &Enter;.</para
+></listitem
+> 
+<listitem
+><para
+>Norėdami aplankų medžiu pakilti aukštyn, spauskite įrankminės mygtuką <guiicon
+>Aukštyn</guiicon
+>, klavišų kombinaciją <keycombo action="simul"
+>&Alt;<keysym
+>Rodyklė aukštyn</keysym
+></keycombo
+>, arba naudokite meniu punktą <menuchoice
+><guimenu
+>Eiti</guimenu
+><guimenuitem
+>Aukštyn</guimenuitem
+></menuchoice
+>.</para
+></listitem>
+</itemizedlist>
+
+<para
+>Jei norite <quote
+>pažymėti</quote
+> failą ar aplanką rodomame aplanke, bet nenorite jo atidaryti, naudokite mygtukus <keysym
+>aukštyn</keysym
+> ir <keysym
+>žemyn</keysym
+> vaikščiojimui tarp elementų. Parinktas elementas bus paryškintas, o būsenos juostoje apie jį bus rodoma informacija.</para>
+
+<para
+>Įjungus <link linkend="viewmode"
+>peržiūros režimą</link
+> <guimenuitem
+>detalės</guimenuitem
+> su parinktimi <guilabel
+>išplečiami aplankai</guilabel
+> gali būti lengviau rasti aplankus, esančius žemiau dabartiniojo. Šiame rodinyje kiekvienas aplankas rodomas su mažyte dėžute kairėje. Jei dėžutėje yra ženkliukas <keycap
+>+</keycap
+>, <mousebutton
+>kairiojo</mousebutton
+> pelės mygtuko spustelėjimas ant dėžutės (ne ant aplanko pavadinimo ar ženkliuko) parodys medį su failais ir poaplankiais, esančiais tame aplanke. Mažoje dėžutėje nuo tada bus rodomas ženkliukas <keycap
+>-</keycap
+>. <mousebutton
+>Kairiuoju</mousebutton
+> pelės mygtuku galite sutraukti medį. Radę ieškomą aplanką, spauskite <mousebutton
+>kairįjį</mousebutton
+> pelės mygtuką ant aplanko, kad jį atvertumėte.</para>
+
+<para
+><link linkend="sidebar"
+>Šoninė juosta</link
+> taipogi gali padėti naršyti po failų sistemą.</para>
+
+<para
+>Galite patekti tiesiai į norimą aplanką, įrašę kelią iki jo vietos įrankinėje arba dialoge, iškviestame per meniu punktą <menuchoice
+><guimenu
+>Failas</guimenu
+><guimenuitem
+>Atverti vietą</guimenuitem
+> </menuchoice
+>, arba <keycombo action="simul"
+>&Alt;<keycap
+> O</keycap
+></keycombo
+>. &konqueror; <link linkend="path-complete"
+>Teksto baigimo</link
+> funkcionalumas gali padėti, kai naudojate šią savybę. Nepamirškite, kad &Linux; / &UNIX; sistemose failų ir aplankų pavadinimuose didžiosios ir mažosios raidės laikomos skirtingomis.</para>
+
+<para
+>Perėję į kitą aplanką galite grįžti į ankstesnį, paspaudę įrankinės mygtuką <guiicon
+>Atgal</guiicon
+>, meniu elementą <menuchoice
+><guimenu
+>Eiti</guimenu
+> <guimenuitem
+>Argal</guimenuitem
+></menuchoice
+> arba <keycombo action="simul"
+>&Alt;<keysym
+>Kairėn</keysym
+></keycombo
+>. Sugrįžę atgal galite vėl eiti į priekį. Tam naudokite įrankinės mygtuką <guiicon
+>Pirmyn</guiicon
+>, meniu elementą <menuchoice
+><guimenu
+>Eiti</guimenu
+> <guimenuitem
+>Pirmyn</guimenuitem
+></menuchoice
+> arba <keycombo action="simul"
+>&Alt;<keysym
+>Dešinėn</keysym
+></keycombo
+>.</para>
+
+<para
+>Taipogi galite patekti į tėvinį aplanką paspaudę įrankinės mygtuką <guiicon
+>Aukštyn</guiicon
+>, meniu elementą <menuchoice
+><guimenu
+>Eiti</guimenu
+> <guimenuitem
+>Aukštyn</guimenuitem
+></menuchoice
+> arba <keycombo action="simul"
+>&Alt;<keysym
+>Aukštyn</keysym
+></keycombo
+>.</para>
+
+<tip
+><para
+>Paspaudus varnelę, esančią dešiniau nuo mygtukų <guiicon
+>Aukštyn</guiicon
+>, <guiicon
+>Atgal</guiicon
+> arba <guiicon
+>Pirmyn</guiicon
+>, arba parinkus šiuos elementus iš meniu, bus parodytas papildomas meniu su anksčiau aplankytomis vietomis.</para>
+</tip>
+<!-- 4.5 -->
+<sect2 id="file-find">
+<title
+>Failų ir aplankų paieška</title>
+
+<para
+>Jei nežinote ar negalite prisiminti, kur jūsų sistemoje yra koks nors failas ar aplankas, galite naudoti įrankinės mygtuką <guiicon
+>Rasti failą</guiicon
+> arba meniu elementą <menuchoice
+><guimenu
+>Įrankiai</guimenu
+><guimenuitem
+>Rasti failą...</guimenuitem
+></menuchoice
+>. Taip į &konqueror; langą bus įtraukta failų ir aplankų paieškos programa &kfind;. Norėdami gauti daugiau informacijos apie &kfind;, peržiūrėkite &kfind; vadovą. </para>
+
+<note
+><para
+>Jei failo ar aplanko pavadinimas prasideda tašku, tai jis yra <quote
+>paslėptas</quote
+> failas ar aplankas, todėl paprastai nebus rodomas &konqueror; lange. Norėdami matyti paslėptus failus ir aplankus įjunkite meniu parinktį <menuchoice
+><guimenu
+>Rodymas</guimenu
+><guimenuitem
+>Rodyti paslėptus failus</guimenuitem
+></menuchoice
+>.</para>
+<para
+>Kita priežastis, kodėl &konqueror; gali nerodyti jūsų ieškomo failo ar aplanko, - priedas <link linkend="konq-plugin"
+><guisubmenu
+>Katalogų filtras</guisubmenu
+></link
+>, kuriam gali būti nurodyta rodyti tik konkrečių tipų failus.</para
+></note>
+
+</sect2>
+
+<sect2 id="floppy-cd">
+<title
+>Diskeliai ir &CD-ROM; įrenginiai</title>
+
+<para
+>Bet koks diskelis, &CD; įrenginys arba kitas disko skirsnis, esantis jūsų sistemoje, paprastai bus matomas aplanke <filename class="directory"
+>/</filename
+>, <filename class="directory"
+>/media</filename
+>, <filename class="directory"
+>/mnt</filename
+> arba <filename class="directory"
+>/auto</filename
+> aplanke ir kelias iki jos bus kas nors panašaus į <filename class="directory"
+>/mnt/floppy</filename
+> arba <filename class="directory"
+>/cdrom</filename
+>. Kaip konkrečiai bus pavadintas šis aplankas ir kur jis atsiras priklauso nuo jūsų sistemos.</para>
+
+<para
+>&UNIX; / &Linux; sistemose jūs turite <command
+>įrengti (prijungti)</command
+> diskelį ar &CD-ROM;. po to, kai įdėjote jį į kompiuterį, tik tada galėsite dirbti su jo aplankais ir failais. Taipogi prieš išimant diską reikia jį atjungti, kad sistema žinotų, jog jis daugiau nebenaudojamas. </para>
+
+<para
+>Kaip konkrečiai tai padaryti priklauso nuo jūsųs sistemos:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Gali būti, kad pas jus yra <application
+>Automount (automatinio prijungimo)</application
+> priemonės. Tokiu atveju jums nereikia rūpintis prijungimu ir atjungimu, nors kartais galite pastebėti, kad &CD-ROM; pradeda nei iš šio, nei iš to suktis.</para
+></listitem>
+
+<listitem
+><para
+>Taip pat gali būti, kad ant jūsų darbastalio yra <guiicon
+>Diskelio</guiicon
+>, &CD-ROM; ir disko ženkliukai. Tokiu atveju pastpaudę šiuos ženkliukus kairiu pelės mygtuku prijungsite atitinkamus diskus. Taip padarius turėtų automatiškai pasileisti &konqueror; langas su pasirinktos laikmenos turiniu. Norėdami atjungti pasirinktą laikmeną, spauskite <mousebutton
+>dešinį</mousebutton
+> pelės klavišą ant to paties ženkliuko ir pasirinkite punktą <guimenuitem
+>Atjungti</guimenuitem
+>. Daugiau informacijos apie tai, kaip sukurti tokius ženkliukus rasite šio vadovo skyriuje <link linkend="making"
+>Sukurti naują...</link
+>.</para
+></listitem>
+
+<listitem
+><para
+>Visa tai galite padaryti ir tradiciniu būdu, vykdydami sekančias konsolės komandas:</para>
+
+<para
+><userinput
+><command
+>mount /mnt/floppy</command
+></userinput
+></para>
+
+<!-- This markup doesn't work properly, it puts 'mount' and '/mnt/floppy' 
+on separate lines
+<screen
+>
+<userinput><command>mount</command>
+ <option><replaceable>/mnt/floppy</replaceable></option></userinput>
+</screen
+> -->
+
+<para
+>diskelio prijungimui</para>
+
+<!-- Same as above
+<screen
+>
+<userinput><command>umount</command>
+ <option><replaceable>/mnt/floppy</replaceable></option></userinput></screen>
+-->
+
+<para
+><userinput
+><command
+>umount /mnt/floppy</command
+></userinput
+></para>
+
+<para
+>jo atjungimui (<command
+>umount</command
+>, o ne <command
+>unmount</command
+>). </para>
+
+<note
+><para
+>Vietoje to, kad atidarinėtumėte konsolę komandų <command
+>mount </command
+> ar <command
+>umount</command
+> rašymui, galite naudoti &konqueror; galimybę <menuchoice
+><guimenu
+>Įrankiai</guimenu
+><guimenuitem
+>Vykdyti apvalkalo komandą</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+>&Ctrl;<keycap
+>E</keycap
+></keycombo
+>). </para
+></note>
+
+</listitem>
+
+</itemizedlist>
+</sect2>
+
+</sect1>
+<!-- 4.5-->
+<sect1 id="deleting">
+<title
+>Failų ir aplankų trynimas</title>
+
+<para
+>Naudodami &konqueror; turite du failų ar aplankų trynimo būdus:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Galite trinamą objektą pernešti į <filename
+>Šiukšliadėžės</filename
+> aplanką. Tai saugiausias būdas, kadangi supratę, kad padarėte klaidą, galite ištraukti iš šiukšliadėžės ištrintus failus ar aplankus.</para
+></listitem
+> 
+
+<listitem
+><para
+>Taipogi galite tiesiogiai ištrinti failą ar aplanką, ko pasekoje įrašas bus pašalintas iš aplanko ir anksčiau jo užimta disko vieta bus priskaičiuota prie laisvos vietos. Taigi tai veiks taip pat, kaip ir komanda <command
+>rm</command
+>.</para>
+<para
+>Jei norite naudoti šią savybę, įjunkite parinktį <guilabel
+>Rodyti meniu įrašą „Trinti“, kurį naudojant failai nepatektų į šiukšliadėžę</guilabel
+> nustatymų skyriuje <guilabel
+>Failų tvarkymas</guilabel
+>.</para
+></listitem>
+</itemizedlist>
+
+<para
+>Paprasčiausias failo ar aplanko trynimo būdas yra užvesti pelės žymėklį virš jo ženkliuko ar pavadinimo ir spausti dešinį pelės mygtuką. Bus atidarytas kontekstinis meniu, kuriame rasite parinktis <guimenuitem
+>Perkelti į šiukšliadėžę</guimenuitem
+> ir <guimenuitem
+>Trinti</guimenuitem
+>.</para>
+
+<para
+>Jei <quote
+>pažymėjote</quote
+> norimą failą ar aplanką, meniu <guimenu
+>Keisti</guimenu
+> atsiras parinktys <quote
+><guimenuitem
+>Perkelti į šiukšliadėžę</guimenuitem
+></quote
+> ir <quote
+><guimenuitem
+>Trinti</guimenuitem
+></quote
+>.</para>
+
+<para
+><keycap
+>Šal (Del)</keycap
+> perkels pažymėtą elementą į šiukšliadėžę.</para>
+
+<para
+><keycombo action="simul"
+>&Shift;<keycap
+>Šal (Del)</keycap
+></keycombo
+> galutinai ir negrąžinamai panaikins pažymėtą elementą ar elementus.</para>
+
+<note
+><para
+>Jūs negalėsite ištrinti failo ar aplanko, jei neturėsite tam reikiamų teisių.</para
+></note>
+
+</sect1>
+<!-- 4.5-->
+<sect1 id="moving">
+<title
+>Perkėlimas ir kopijavimas</title>
+
+<para
+>Nukopijuota failą ar poaplankį iš vieno aplanko į kitą galite keliais būdais:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Užveskite pelės žymeklį virš failo ar poaplankio pavadinimo ar ženkliuko ir spauskite dešinį pelės mygtuką. Bus parodytas meniu, kuriame parinkite <guimenuitem
+>Kopijuoti</guimenuitem
+>.</para>
+
+<para
+>Arba, jei elementas jau <quote
+>pažymėtas</quote
+>, jūs galite naudoti įrankinėje esantį mygtuką <guiicon
+>Kopijuoti</guiicon
+>, meniu punktą <menuchoice
+><guimenu
+>Keisti</guimenu
+> <guimenuitem
+>Kopijuoti</guimenuitem
+></menuchoice
+> arba sparčiųjų klavišų kombinaciją <keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+>. Taipogi galite pažymėti <link linkend="multiple"
+>kelis</link
+> failus ar aplankus kopijavimui ar perkėlimui.</para
+></listitem>
+
+<listitem
+><para
+>Nueikite į aplanką, į kurį norite nukopijuoti failą ar aplanką, ir padėkite ten nukopijuotus elementus spausdami įrankinės mygtuką <guiicon
+>Padėti</guiicon
+>, parinkę meniu punktą <menuchoice
+><guimenu
+>Keisti</guimenu
+> <guimenuitem
+>Padėti</guimenuitem
+></menuchoice
+>, spauskite <keycombo action="simul"
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+> arba nuvedę pelės žymeklį į tuščią lango vietą spauskite dešinį pelės mygtuką ir iš iššokusio meniu parinkite <guimenuitem
+>Padėti</guimenuitem
+>. </para
+></listitem>
+</itemizedlist>
+
+<para
+>Failo ar poaplankio perkėlimas į kitą aplanką daromas taip pat, kaip ir kopijavimas, tik pradžioje parenkama <guimenuitem
+>Iškirpti</guimenuitem
+> arba spaudžiama klavišų kombinacija <keycombo action="simul"
+>&Ctrl;<keycap
+>X</keycap
+></keycombo
+> vietoje <guimenuitem
+>Kopijuoti</guimenuitem
+>. Elementas, kurį jūs <guimenuitem
+>Iškirpote</guimenuitem
+>, bus pašalintas iš pradinio aplanko ir įkeltas į naują, paspaudus <guimenuitem
+>Įkelti</guimenuitem
+>.</para>
+
+<para
+>Taipogi galite nukopijuoti ar perkelti parinktus elementus į kitą aplanką naudodami kontekstinio meniu punktą <guimenuitem
+>Kopijuoti į</guimenuitem
+> arba <guimenu
+>Perkelti į</guimenu
+>, kuris parodomas paspaudus ant failo ar aplanko <mousebutton
+>dešinį</mousebutton
+> pelės mygtuką.</para>
+<para
+>Norėdami įjungti šią savybę, įjunkite parinktį <guilabel
+>Rodyti „Kopijuoti į“ ir „Pektelti į“ komandas</guilabel
+> <guilabel
+>Kontekstinio meniu</guilabel
+> kortelėje, esančioje nustatymų dialogo <menuchoice
+><guimenu
+>Failų tvarkymo</guimenu
+> <guimenuitem
+>Bendroje</guimenuitem
+></menuchoice
+> skiltyje.</para>
+<note
+><para
+>Jums nepavyks nukopijuoti ar perkelti failą ar aplanką, jei neturite reikiamų teisių. </para
+></note>
+<!-- 4.5-->
+<sect2 id="dnd">
+<title
+>Pertempimo naudojimas</title>
+
+<para
+>Naudojant &konqueror; jūs taipogi galite kopijuoti ir pernešti failus ir aplankus juos pertempiant.</para>
+
+<para
+>Tai padaryti galite turėdami pasileidę du &konqueror; langus. Viename parinkite aplanką, iš kurio norite kopijuoti ar perkelti, o kitame - į kur norite perkelti. Užveskite pelės žymeklį virš elemento, kurį norite perkelti ar kopijuoti ir, laikydami kairįjį pelės mygtuką, <quote
+>tempkite</quote
+> jį į tuščią vietą paskirties aplanke. Atleidus pelės mygtuką galėsite pasirinkti, ar norite <guimenuitem
+>Kopijuoti</guimenuitem
+>, ar <guimenuitem
+>Perkelti</guimenuitem
+>. Įdėmiai <quote
+>numeskite</quote
+> elementą į tuščią vietą paskirties aplanke, nes jei numesite jį ant kito aplanko - failai bus nukopijuoti ar perkelti į tą aplanką.</para>
+
+<para
+>Taipogi galite sukonfigūruoti &konqueror; taip, kad jis savo lange rodytų daugiau nei vieną aplanką. Tada irgi galėsite permepinėti failus ir poaplankius iš vieno aplanko į kitą.</para>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="dragdrop.png"/></imageobject>
+<textobject>
+<phrase
+>Rodinio skaidymas pertempimui</phrase>
+</textobject>
+</mediaobject>
+
+<para
+>Šioje nuotraukoje pavaizduotas meniu punkto <menuchoice
+><guimenu
+>Langas</guimenu
+> <guimenuitem
+>Skaidyti rodymą į kairę ir dešinę</guimenuitem
+></menuchoice
+> veikimas. Šį lango padalinimo funkcionalumą, vienu metu rodantį dviejų skirtingų aplankų turinį, taipogi galima įjungti klavišų kombinacija <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>L</keycap
+> </keycombo
+>.</para>
+
+<para
+>Norint kiekviename iš rodinių parinkti skirtingus aplankus reikia, kad jie nebūtų sujungti. T.y. mažos dėžutės apatinėje dešinėje pusėję turi būti tuščios. </para>
+
+<para
+><quote
+>Aktyvusis</quote
+> rodinys yra tas, kurio kelias rodomas vietos įrankinėje ir kuris reaguoja į navigaciją meniu komandomis. Jis išskiriamas maža žalia lempute apatinėje kairėje pusėje. Norėdami aktyvuoti rodinį, spauskite <mousebutton
+>kairį</mousebutton
+> pelės mygtuką ant tuščios vietos jo būsenos juostoje.</para>
+
+<para
+>Norėdami išimti aktyvų rodinį iš &konqueror; lango, naudokite klavišų kombinaciją <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>W</keycap
+></keycombo
+>, meniu punktą <menuchoice
+><guimenu
+>Langas</guimenu
+><guimenuitem
+>Pašalinti aktyvų rodymą</guimenuitem
+></menuchoice
+> arba spauskite dešnį pelės mygtuką ant būsenos juostos ir iššokančiame meniu parinkite <guimenuitem
+>Pašalinti aktyvų rodymą</guimenuitem
+>.</para>
+
+<para
+>Jei naudojate &konqueror; korteles, galite pertempinėti tarp kortelių užtempdami failą ant kortelės pavadinimo, bet neatleisdami pelės mygtuko. Kortelės turinys bus parodytas taip leidžiant jums tęsti pertempimo veiksmą.</para>
+
+</sect2>
+<!-- 4.5-->
+<sect2 id="dups">
+<title
+>Pasikartojantys failų pavadinimai</title>
+<para
+>Jei bandysite įkelti failą į aplanką, kuriame jau yra failas su tokiu pačiu pavadinimu, &konqueror; parodys dialogą, kuriame įspės jus, kad toks failas jau egzistuoja. Tada galėsite pasirinkti: </para>
+<itemizedlist>
+<listitem
+><para
+>Nutraukti įkėlimo veiksmą galite paspaudę mygtuką <guibutton
+>Nutraukti</guibutton
+>.</para
+></listitem>
+<listitem
+><para
+>Suteikite kopijuojamam failui kitą pavadinimą. Tai galite padaryti įrašydami naują pavadinimą į įvesties eilutę arba paprašyti, kad &konqueror; <guibutton
+>Pasiūlytų</guibutton
+> naują pavadinimą. Tai padarę galite spausti mygtuką <guibutton
+>Tęsti</guibutton
+>.</para
+></listitem>
+<listitem
+><para
+>Jei kopijuojate daugiau nei vieną elementą, <guibutton
+>Praleisti</guibutton
+> dabartinį elementą. </para
+></listitem>
+</itemizedlist>
+<para
+>Jei kopijavote daugiau nei vieną elementą, galite naudoti mygtuką <guibutton
+>Pritaikyti visiems</guibutton
+>.</para>
+</sect2>
+</sect1>
+<!-- begin copy from dolphin docbook-->
+<!-- 4.5 -->
+<sect1 id="selection">
+<title
+>Elementų žymėjimas rodinyje</title>
+
+<para
+>Elementus (failus, aplankus) pažymėti galima keliais būdais. Kai pažymėta elementų grupė, visi veiksmai, tokie kaip <menuchoice
+><guimenuitem
+>Iškirpti</guimenuitem
+></menuchoice
+>, <menuchoice
+><guimenuitem
+>Kopijuoti</guimenuitem
+></menuchoice
+>, <menuchoice
+><guimenuitem
+>Perkelti į šiukšliadėžę</guimenuitem
+></menuchoice
+>, bei tempimo operacijos, pritaikomos visiems pažymėtiems elementams. </para>
+
+<sect2 id="selection-mouse">
+<title
+>Elementų žymėjimas pele</title>
+
+<itemizedlist>
+
+<listitem
+><para
+>Galite paspausti <mousebutton
+>kairįjį</mousebutton
+> pelės mygtuką kur nors rodinyje ir piešti stačiakampį apie grupę elementų. Atleidus pelės mygtuką visi elementai, patenkantys į stačiakampį bus pažymėti (tai taip pat panaikins prieš tai atliktą žymėjimą). Jei žymėjimo metu laikomas &Shift; klavišas – prieš tai vykdytas pažymėjimas išlaikomas papildomai pažymint naujus elementus. </para
+></listitem>
+
+<listitem
+><para
+>Jei spaudžiant ant elemento <mousebutton
+>kairįjį</mousebutton
+> pelės mygtuką laikomas paspaustas &Ctrl; mygtukas, tai to elemento pažymėjimas keičiamas (pažymėtas elementas nužymimas, o nepažymėtas elementas – pažymimas). Jei &Ctrl; mygtukas yra nustpaustas pele žymint stačiakampę zoną (kaip aprašta aukščiau), keičiamas visų į stačiakampį patenkančių elementų pažymėjimas. </para
+></listitem>
+
+<listitem
+><para
+>Jei &Shift; klavišas yra nuspaustas tuo metu, kai elementas paspaudžiamas naudojant <mousebutton
+>kairįjį</mousebutton
+> pelės mygtuką – visi elementai tarp paskutinio pažymėto elemento ir dabartinio yra pažymimi. </para
+></listitem>
+
+<listitem
+><para
+>Jei nustatymų <menuchoice
+><guimenu
+>failų tvarkymo</guimenu
+><guimenuitem
+>bendros</guimenuitem
+></menuchoice
+> skilties kortelėje <guilabel
+>Elgsena</guilabel
+> pažymėta parinktis <guilabel
+>Rodyti pasirinkimo žymeklį</guilabel
+>, tai nedidelis <guiicon
+>+</guiicon
+> arba <guiicon
+>-</guiicon
+> mygtukas rodomas viršutiniame kairiame kampe elemento, virš kurio užvestas pelės žymeklis. Spaudžiant šitą mygtuką elementas atitinkamai pažymimas arba nužymimas. </para
+></listitem>
+
+</itemizedlist>
+
+</sect2>
+
+<sect2 id="selection-keyboard">
+<title
+>Elementų žymėjimas klaviatūra</title>
+
+<itemizedlist>
+
+<listitem
+><para
+>Jei paspaudžiamas rodyklės mygtukas, <keycap
+>Page Up</keycap
+>, <keycap
+>Page Down</keycap
+>, <keycap
+>Home</keycap
+>, arba <keycap
+>End</keycap
+>, pažymimas naujas dabartinis elementas, prieš tai buvęs pažymėtas elementas nužymimas. </para
+></listitem>
+
+<listitem
+><para
+>Jei &Ctrl; laikomas nuspaustas spaudžiant vieną iš aukščiau išvardintų klavišų, anksčiau pažymėtas elementas (ar elementai) lieka pažymėti. </para
+></listitem>
+
+<listitem
+><para
+>Jei spaudžiant vieną iš aukščiau išvardintų klavišų laikomas paspaustas &Shift; klavišas – visi elementai tarp prieš tai buvusio einamojo ir dabartinio elemento – pažymimi. </para
+></listitem>
+
+<listitem
+><para
+>Spaudžiant <keycombo action="simul"
+>&Ctrl;<keysym
+>Tarpas</keysym
+></keycombo
+> einamojo elemento pažymėjimas pakeičiamas (iš pažymėto į nepažymėtą arba iš nepažymėto į pažymėtą). </para
+></listitem>
+
+<listitem
+><para
+>Klavišų <keycombo action="simul"
+>&Ctrl;<keycap
+>A</keycap
+></keycombo
+> kombinacija pažymi visus elementus. </para
+></listitem>
+
+<listitem
+><para
+>Klavišų <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>A</keycap
+></keycombo
+> kombinacija pakeičia visų elementų žymėjimo būseną į priešingą. </para
+></listitem>
+
+</itemizedlist>
+
+</sect2>
+<!-- end copy from dolphin docbook-->
+
+<!-- selection-menu applies to dolphin as well copy over?-->
+<sect2 id="selection-menu">
+<title
+>Elementų žymėjimas meniu</title>
+
+<para
+>Kartais norite ištrinti, nukopijuoti ar perkelti keletą failų, kurie yra kažkuo panašūs. Pavyzdžiui gali reikėti perkelti visus .png tipo piešinukus iš vieno aplanko į kitą. Naudojant &konqueror; labai paprasta pažymėti keletą failų, turinčių pavadinimų panašumų.</para>
+
+<para
+>Parinkite meniu punktą <menuchoice
+><guimenu
+>Keisti</guimenu
+><guisubmenu
+>Pažymėjimas</guisubmenu
+> <guimenuitem
+>Pažymėti objektus, atitinkančius...</guimenuitem
+></menuchoice
+> arba naudokite klavišų kombinaciją <keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+>. Taip bus parodytas dialogas, kuriame galėsite įvesti failo pavadinimo šabloną, simboliu <keycap
+>*</keycap
+> žymint bet kokį skaičių bet kokių simbolių, o simboliu <keycap
+>?</keycap
+> žymint bet kokį vieną simbolį. Paspaudus mygtuką <guibutton
+>Gerai</guibutton
+> &konqueror; pažymės failus, atitinkančius nurodytą šabloną. Pavyzdžiui:</para>
+      
+<itemizedlist>
+<listitem
+><para
+><userinput
+><filename
+>veliava*.png</filename
+></userinput
+> pažymės visus failus, kurie prasideda tekstu <quote
+>veliava</quote
+> ir baigiasi <quote
+><literal role="extension"
+>.png</literal
+></quote
+>.</para
+></listitem>
+<listitem
+><para
+><userinput
+><filename
+>pastaba?.txt</filename
+></userinput
+> pažymės <filename
+>pastaba1.txt</filename
+> ir <filename
+>pastaba9.txt</filename
+>, bet ne <filename
+>pastaba99.txt</filename
+>.</para
+></listitem>
+</itemizedlist>
+
+<para
+>Pažymėję failų grupę, galite pažymėjimą sumažinti, naudodami meniu punktą <menuchoice
+><guimenu
+>Keisti</guimenu
+><guisubmenu
+>Pažymėjimas</guisubmenu
+><guimenuitem
+>Nuimti žymėjimą nuo elementų atitinkančių...</guimenuitem
+></menuchoice
+>, kad nurodytumėte, nuo kurių failų reikia nuimti pažymėjimą.</para>
+
+<para
+>Nuimti visus pažymėjimus galite meniu punktu <menuchoice
+><guimenu
+>Keisti</guimenu
+> <guisubmenu
+>Pažymėjimas...</guisubmenu
+><guimenuitem
+>Nuimti visus pažymėjimus</guimenuitem
+></menuchoice
+> arba tiesiog paspaudę kairįjį pelės mygtuką ant bet kurios tuščios vietos.</para>
+
+<para
+>Taipogi galite invertuoti pažymėjimą: nužymėti visus pažymėtus failus ir pažymėti visus nepažymėtus. Tam naudokite meniu punktą <menuchoice
+><guimenu
+>Keisti</guimenu
+><guisubmenu
+>Pažymėjimas...</guisubmenu
+><guimenuitem
+>Invertuoti pažymėjimą</guimenuitem
+></menuchoice
+> arba klavišų kombinaciją <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>A</keycap
+></keycombo
+>.</para>
+</sect2>
+
+</sect1>
+
+<!-- 4.5 -->
+<sect1 id="making">
+<title
+>Sukurti naują</title>
+
+<para
+>Kai &konqueror; yra failų tvarkyklės režime, parinkus punktą <guisubmenu
+>Sukurti naują</guisubmenu
+> iš meniu <guimenu
+>Keisti</guimenu
+> arba iš kontekstinio meniu, rodomo paspaudus dešinį pelės mygtuką tuščioje vietoje, parodomas submeniu, leidžiantis jums sukurti dabartiniame aplanke:</para>
+
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Aplankas...</guimenuitem
+></term>
+<listitem
+><para
+>Paprastas būdas sukurti naują aplanką.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Tekstinis failas...</guimenuitem
+></term>
+<listitem
+><para
+>Naudodami šią parinktį sukurkite naują paprastą, tuščią tekstinį failą. Bus atvertas dialogas, kuriame galėsite įvesti naujai kuriamo failo pavadinimą.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>HTML failas...</guimenuitem
+></term>
+<listitem
+><para
+>Sukuria šabloninį <acronym
+>HTML</acronym
+> išeities failą. Įrašant naujai kuriamo failo pavadinimą, protinga būtų duoti jam praplėtimą <literal role="extension"
+>.html </literal
+>, kad nekiltų neaiškumų.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Iliustracijos dokumentas...</guimenuitem
+></term>
+<listitem
+><para
+>Sukuria naują OpenDocument piešinį.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Pristatymo dokumentas...</guimenuitem
+></term>
+<listitem
+><para
+>Sukuria OpenDocument pristatymo dokumento šabloną. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Skaičiuoklės dokumentas...</guimenuitem
+></term>
+<listitem
+><para
+>Naudokite tai naujo OpenDocument skaičiuoklės failo sukūrimui. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Tekstinis dokumentas...</guimenuitem
+></term>
+<listitem
+><para
+>Sukuria tuščią OpenDocument tekstinį failą.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Adreso nuoroda (URL)...</guimenuitem
+></term>
+<listitem
+><para
+>Šita parinktis leidžia sukurti ženkliuką, kuris atidartų &konqueror; su nurodyto aplanko ar puslapio turiniu. Kaip ir su parinktimi <guimenuitem
+>Nuoroda į programą...</guimenuitem
+> jūs galite padaryti, kad ženkliukas atsirastų ant darbastalio, kurdami nuoodą aplanke <filename
+>~/Desktop</filename
+> arba paleisdami komandą <guisubmenu
+>Sukurti naują...</guisubmenu
+> spausdami dešinį pelės mygtuką ant tuščios vietos darbastalyje.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Paprasta nuoroda į failą ar aplanką...</guimenuitem
+></term>
+<listitem
+><para
+>Sukurti simbolinę nuorodą į vietinį failą ar aplanką.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Nuoroda į programą...</guimenuitem
+></term>
+<listitem
+><para
+>Ši parinktis naudinga, jei norite sukurti ženkliuką, kurį paspaudus būtų paleista kokia nors konkreti programa. Ji atveria dialogą su trimis kortelėmis. Pirmojoje - <guilabel
+>Bendros</guilabel
+> – pasirenkate ženkliuką ir šalia jo rodomą tekstą. Antroje kortelėje - <guilabel
+>Leidimai</guilabel
+> – nurodote, kas gali keisti šį ženkliuką. Paskutinėje kortelėje <guilabel
+>Programa</guilabel
+> nurodote <guilabel
+>Komandą</guilabel
+>, kurią naudojant bus paleidžiama programa. Pavyzdžiui <userinput
+>kwrite</userinput
+> paleis tekstų redaktorių &kwrite;. <userinput
+>kwrite /home/algirdas/darbai.txt</userinput
+> atidarys failą <filename
+>/home/algirdas/darbai.txt</filename
+> su &kwrite;. Šioje kortelėje taipogi rasite ir sudėtingesnes parinktis, tokias kaip tipai failų, kuriuos gali atidaryti ši programa.</para>
+
+<para
+>Jei norite, kad programos ženkliukas atsirastų ant jūsų darbastalio, sukurkite nuorodą savo darbastalio <filename class="directory"
+>~/Desktop</filename
+> aplanke (aplanko pavadinimas gali kiek skirtis, priklausomai nuo to, kaip buvo įdiegta &kde;) arba patekite į <guisubmenu
+>Sukurti naują...</guisubmenu
+> spausdami <mousebutton
+>dešinį</mousebutton
+>pelės mygtuką tuščioje darbastalio vietoje, o ne &konqueror; lange.</para>
+
+<para
+>Jei turite daug specializuotų nuorodų į programas bet nenorite apkrauti darbastalį, galite tas nuorodas sukurti programų aplanke. Į šį aplanką patekti galis parinkę meniu punktą <menuchoice
+><guimenu
+>Eiti</guimenu
+> <guimenuitem
+>Programos</guimenuitem
+></menuchoice
+>. Tada sukurkite vieną ženkliuką, atveriantį programų aplanką (kuris paprastai yra <filename class="directory"
+>~/.local/share/applications</filename
+>).</para>
+<para
+>Norėdami padėti programos nuorodos ženkluką į panelę, visų pirma jį sukurkite programų aplanke, o tada galėsite jį pertempti į panelę.</para>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guisubmenu
+>Įrenginys</guisubmenu
+></term>
+<listitem
+><para
+>Šios parinkties pagalba sukursite ženkliuką, kurį paspaudus bus prijungtas diskelis ir atvertas &konqueror; langas rodantis diskelio turinį. Kai, baigę darbą, norėsite atjungti diskelį, spauskite <mousebutton
+>dešinį</mousebutton
+> pelės mygtuką ant ženkliuko ir parinkite <guimenuitem
+>Išjungti</guimenuitem
+>. Visgi dažniausiai norėsite sukurti ženkliuką ant darbastalio. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+<!-- 4.5 -->
+<sect1 id="newname">
+<title
+>Pavadinimų ir teisių keitimas</title>
+
+<para
+>Paprasčiausi būdai pervardinti failą ar aplanką yra arba spausti <mousebutton
+>dešinį</mousebutton
+> pelės mygtuką ir parinkti <guimenuitem
+>Pervadinti</guimenuitem
+>, arba pažymėti failą ar aplanką ir spausti <keycap
+>F2</keycap
+>.</para>
+
+<para
+>Norėdami pakeisti failo ar aplanko pavadinimą ar naudojimo teises, spauskite <mousebutton
+>dešinį</mousebutton
+> pelės mygtuką ant jo pavadinimo ir parinkite elementą <guimenuitem
+>Savybės...</guimenuitem
+>. Jei jau <quote
+>pažymėjote</quote
+> failą ar aplanką, galite iš meniu parinkti <menuchoice
+><guimenu
+>Keisti</guimenu
+> <guimenuitem
+>Savybės</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+>&Alt;<keycap
+>Įvesti</keycap
+></keycombo
+>).</para>
+
+<para
+>Tada bus parodytas savybių dialogas su keliomis kortelėmis:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Kortelėje <guilabel
+>Bendros</guilabel
+> rodoma informacija apie parinktą elementą. Čia galite pakeisti pavadinimą, o aplankui - ir ženkliuką.</para
+></listitem>
+<listitem
+><para
+>Kortelėje <guilabel
+>Leidimai</guilabel
+> rodomas elemento savininkas ir naudojimosi teisės, kurias galite pakeisti. </para
+></listitem>
+</itemizedlist>
+<!-- 4.5 -->
+<sect2 id="copyrename">
+<title
+>Kopijavimas ir pervardinimas</title>
+<para
+>Jei norite padaryti jau egzistuojančio failo kopiją kitu pavadinimu (galbūt kaip atsarginę kopiją) tame pačiame aplanke, darykite įprastinę <guimenuitem
+>Kopijuoti</guimenuitem
+> operaciją. Kai parinksite <guimenuitem
+>Padėti</guimenuitem
+>, bus parodytas dialogas, kuriame bus skundžiamasi, kad toks failas jau egzistuoja. Tiesiog įrašykite jame naują failo pavadinimą ir spauskite mygtuką <guibutton
+>Tęsti</guibutton
+> (arba, jei jaučiatės tingus, spauskite mygtuką <guibutton
+>Pasiūlyti</guibutton
+> ir naujas pavadinimas bus sugalvotas už jus).</para>
+</sect2>
+
+<!--sect2 id="super-user"
+> this is obsolete!
+<title
+>Super User Mode</title>
+
+<para
+>If you are running as a normal user and try to access files outside of
+your own home folder you will often be prevented from doing so and get an
+error message such as <errorname
+>Access Denied</errorname
+>. </para>
+
+<para
+>To access these files you need to be logged in as the system
+administrator, often known as the Super User or <systemitem class="username"
+>root</systemitem
+>. </para>
+
+<para
+>Rather than logging out then in again, you can launch &konqueror; from
+the
+<guimenu
+>K</guimenu
+> Menu in Super User mode by selecting
+<menuchoice
+><guisubmenu
+>System</guisubmenu
+><guimenuitem
+>File Manager - Super
+ User Mode
+</guimenuitem
+></menuchoice
+>. You will be asked for the <systemitem class="username"
+>root</systemitem>
+login password but as long as you can provide that &konqueror; will be started
+up with full access privileges to all files on your system.</para>
+
+<warning
+><para
+>Take care.  As Super User (<systemitem class="username"
+>root</systemitem
+>), you have complete control of
+your system, and a wrong command can easily do irrevocable damage.</para>
+<para
+>Also, connecting to the internet as <systemitem class="username"
+>root</systemitem
+> is an extremely bad idea, as it
+seriously increases your vulnerability to malicious hacking.</para
+></warning>
+
+</sect2-->
+</sect1>
+<!-- 4.5 -->
+<sect1 id="file-associations">
+<title
+>Failų sąsajų konfigūravimas</title>
+
+<!-- TODO: The content should probably be here too, but this'll do for -->
+<!-- now. -->
+<para
+>&kde; sudėtyje yra daug programų, kurios gali atidaryti galybę įvairių tipų failų. Dažniausiai numatytosios sąsajos veiks be problemų, bet &konqueror; turi galingą sistemą, leidžiančią jums pakeisti, kokios programos naudojamos vieno ar kito tipo failo atidarymui. Daugiau informacijos gausite pasirinkę meniu punktą <menuchoice
+><guimenu
+>Nustatymai</guimenu
+><guimenuitem
+>Konfigūruoti Konqueror...</guimenuitem
+></menuchoice
+>, atsidariusiame dialogę parinkę <guilabel
+>Failų sąsajos</guilabel
+> ir tada paspaudę mygtuką <guibutton
+>Pagalba</guibutton
+>.</para>
+
+</sect1>
+
+<!-- 4.5 -->
+<sect1 id="commandline">
+<title
+>Komandinėje eilutėje</title>
+
+<para
+>Nors &konqueror; ir yra labai galinga ir lanksti <acronym
+>GUI</acronym
+> failų tvarkyklė, kartais patyrę &Linux; / &UNIX; naudotojai gali užsinorėti grįžti prie pagrindų ir dirbti tekstinės komandinės eilutės lygmenyje.</para>
+
+<para
+>Jūs, aišku, galite atidaryti konsolę, galbūt su &konqueror; meniu komanda <menuchoice
+><guimenu
+>Įrankiai</guimenu
+><guimenuitem
+>Atverti terminalą</guimenuitem
+></menuchoice
+> arba klavišu <keycap
+>F4</keycap
+>.</para>
+<para
+>Jei tiesiog norite paleisti programą ar &URL;, tai meniu komanda <menuchoice
+><guimenu
+>Įrankiai</guimenu
+><guimenuitem
+>Paleisti komandą</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+>&Ctrl;<keycap
+>E</keycap
+></keycombo
+>) gali būti paprastesnis pasirinkimas.</para>
+
+<para
+><menuchoice
+><guimenu
+>Įrankiai</guimenu
+><guimenuitem
+>Vykdyti apvalkalo komandą... </guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+>&Ctrl; <keycap
+>E</keycap
+></keycombo
+>) atidaro nedidelį komandinės eilutės dialogo langą, kuriame jūs galite įvesti apvalkalo komandą, tokią kaip <userinput
+>ps -ax | grep kdeinit </userinput
+>. Pastebėtina, kad šis variantas nepilnai palaiko terminalo valdymo simbolius, taigi komandos, tokios kaip <userinput
+>top</userinput
+> ir <userinput
+> less</userinput
+> neveiks tinkamai, bet šis variantas norimą komandą paleidžia iš karto, nepaleidinėjant atskiros konsolės. </para>
+
+<para
+>Sudėtingesnėms komandoms, &konqueror; turi kitą gražią savybę: meniu parinktis <menuchoice
+><guimenu
+>Nustatymai</guimenu
+><guimenuitem
+>Rodyti: Terminalo emuliatorius</guimenuitem
+></menuchoice
+>, kurios pagalba terminalas atidaromas kaip naujas rodinys &konqueror; lange. Tol, kol jungites ženkliukas matomas apatiniame dešiniame rodinio kampe, terminalas seks paskui aplankų pasikeitimus pagrindiniame rodinyje.</para>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="cmndline.png"/></imageobject>
+<textobject>
+<phrase
+>Įskaitant terminalo emuliatorių</phrase>
+</textobject>
+</mediaobject>
+
+</sect1>
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

@@ -1,0 +1,220 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2011-05-10 10:17+0100\n"
+"Last-Translator: Pedro Morais <morais@kde.org>\n"
+"Language-Team: pt <kde-i18n-pt@kde.org>\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Spell-Extra: netscape ---\n"
+"X-POFile-SpellExtra: \n"
+"X-POFile-IgnoreConsistency: &Restore\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "&Abrir"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "Criar uma &Pasta..."
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "&Repor"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr "Mostrar a Pasta Original"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr "Mostrar o Ficheiro Original"
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "&Esvaziar o Lixo"
+
+#: src/konq_popupmenu.cpp:312
+#, kde-format
+msgid "&Configure Trash Bin"
+msgstr "&Configurar o Lixo"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "Adicionar aos &Favoritos"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "Adicionar aos &Favoritos"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "Adicionar esta Pasta aos &Favoritos"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "Adicionar esta Ligação aos &Favoritos"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "Adicionar este Ficheiro aos &Favoritos"
+
+#: src/konq_popupmenu.cpp:379
+#, kde-format
+msgid "Preview In"
+msgstr "Antevisão Em"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr "Abrir o Terminal Aqui"
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "&Propriedades"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy To"
+#~ msgstr "Copiar Para"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "Mover Para"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "Pasta Pessoal"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "Pasta da Raiz"
+
+#~ msgctxt "@title:menu in Copy To or Move To submenu"
+#~ msgid "Browse..."
+#~ msgstr "Escolher..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "Copiar para Aqui"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "Mover para Aqui"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "O utilizador não pode largar uma pasta nela própria"
+
+#~ msgid "File name for dropped contents:"
+#~ msgstr "Nome do ficheiro do conteúdo largado:"
+
+#~ msgid "&Move Here"
+#~ msgstr "&Mover para Aqui"
+
+#~ msgid "&Copy Here"
+#~ msgstr "&Copiar para Aqui"
+
+#~ msgid "&Link Here"
+#~ msgstr "Criar uma &Ligação Aqui"
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "Definir como o &Papel de Parede"
+
+#~ msgid "C&ancel"
+#~ msgstr "C&ancelar"
+
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "Criar uma pasta"
+
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "Indique um nome diferente"
+
+#~ msgid ""
+#~ "The name \"%1\" starts with a dot, so the directory will be hidden by "
+#~ "default."
+#~ msgstr ""
+#~ "O nome \"%1\" começa por um ponto; como tal, a pasta ficará escondida por "
+#~ "omissão."
+
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "Criar uma pasta escondida?"
+
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "Nova Pasta"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "Nova Pasta"
+
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "Indique o nome da pasta:"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "Colar uma Pasta"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One File"
+#~ msgstr "Colar um Ficheiro"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Item"
+#~ msgid_plural "Paste %1 Items"
+#~ msgstr[0] "Colar um Item"
+#~ msgstr[1] "Colar %1 Itens"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste Clipboard Contents..."
+#~ msgstr "Colar a Área de Transferência..."
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste"
+#~ msgstr "Colar"
+
+#~ msgid ""
+#~ "Restores this file or directory, back to the location where it was "
+#~ "deleted from initially"
+#~ msgstr ""
+#~ "Repõe este ficheiro ou pasta de volta no local de onde foi apagado "
+#~ "inicialmente"
+
+#~ msgid ""
+#~ "Opens a new file manager window showing the target of this link, in its "
+#~ "parent directory."
+#~ msgstr ""
+#~ "Abre uma janela nova do gestor de ficheiros que mostra o destino desta "
+#~ "ligação, estando na sua pasta-mãe."
+
+#~ msgid "Share"
+#~ msgstr "Partilha"
+
+#~ msgctxt "@info"
+#~ msgid "Close"
+#~ msgstr "Fechar"
+
+#~ msgid "Close"
+#~ msgstr "Fechar"
+
+#~ msgid "Error: %1"
+#~ msgstr "Erro: %1"

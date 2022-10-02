@@ -1,0 +1,216 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Estonian  "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article lang="&language;" id="konq-general-behavior">
+<title
+>&konqueror;i üldine käitumine</title>
+<articleinfo>
+
+<authorgroup>
+<author
+>&Burkhard.Lueck;</author>
+<othercredit role="translator"
+><firstname
+>Marek</firstname
+><surname
+>Laane</surname
+><affiliation
+><address
+><email
+>bald@smail.ee</email
+></address
+></affiliation
+><contrib
+>Tõlge eesti keelde</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2011-11-22</date>
+<releaseinfo
+>&kde; 4.8</releaseinfo>
+
+</articleinfo>
+<para
+>Sellel kaardil leiab seadistused kodu- ja avalehekülje määramiseks ning kaartidega lehitsemise kohta nii &konqueror;i failihalduri- kui ka brauserirežiimi jaoks.</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Konquerori käivitamisel</guilabel
+></term>
+<listitem>
+<para
+>See määrab, millist lehekülge kuvatakse &konqueror;i käivitamisel: sisejuhatusega lehekülge, sinu kodulehekülge, tühja lehekülge või järjehoidjate lehekülge. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Kodulehekülg</guilabel
+></term>
+<listitem
+><para
+>See on &URL; (&eg; kataloog või veebilehekülg), millele &konqueror;  brauserirežiimis liigub, kui vajutada tööriistaribal nuppu <guibutton
+>Kodulehekülg</guibutton
+>. Oma <guilabel
+>kodulehekülje</guilabel
+> aadressi võib käsitsi väljale kirjutada või valida kataloogi nupule <guiicon
+>Sirvi</guiicon
+> klõpsates. Muudatuse rakendamiseks tuleb &konqueror; taaskäivitada.</para>
+<para
+>Kui kasutada &konqueror;i failihalduri režiimis, asendub tööriistaribal nupp <guilabel
+>Kodulehekülg</guilabel
+> nupuga <guilabel
+>Kodukataloog</guilabel
+>, millele klõpsates liigutakse kasutaja kohalikku kodukataloogi.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guilabel
+>Veebibrauseri vaikemootor</guilabel
+></term>
+<listitem
+><para
+>See valik võimaldab hõlpsasti valida &konqueror;is eelistatud veebimootori, milleks võib olla <guilabel
+>KHTML</guilabel
+> või <guilabel
+>WebKit</guilabel
+>, kui see on paigaldatud. Menüükäsk <menuchoice
+><guimenu
+>Vaade</guimenu
+><guimenuitem
+>Vaaterežiim</guimenuitem
+></menuchoice
+> lubab veebimootorit koheselt, aga ajutiselt vahetada. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Lingid avatakse uuel kaardil, mitte uues aknas</guilabel
+></term>
+<listitem
+><para
+>&konqueror; avab vaikimisi ühe akna lehekülje kohta, kuid suudab avada ka mitu <firstterm
+>kaarti</firstterm
+> ühesainsas aknas. Vaikimisi avab &konqueror;is klõps &HKNga; viida uues aknas. Kui lubatud on <guilabel
+>Lingid avatakse uuel kaardil, mitte uues aknas</guilabel
+>, saab &HKNga; avada viidad uuel kaardil.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Hüpikaknad avatakse uuel kaardil, mitte uues aknas</guilabel
+></term>
+<listitem
+><para
+>Määrab, kas JavaScripti hüpikaknad avatakse uuel kaardil või uues aknas.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>URL-i välisel väljakutsumisel avatakse see kaardina käimasolevas Konquerori aknas</guilabel
+></term>
+<listitem
+><para
+>Kui klõpsata &URL;-il mõnes muus &kde; rakenduses või kutsuda kfmclient välja mõne &URL;-i avamiseks, otsib töölaud ise minimeerimata &konqueror;i akent ja selle leidmisel avab &URL;-i aknas uue kaardina. Kui seda ei leita, avatakse soovitud &URL;-iga uus &konqueror;i aken;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Uued kaardid avatakse taustal</guilabel
+></term>
+<listitem
+><para
+>Kaartide kasutamise korral saab määrata, kas uus avatud kaart peaks muutuma ühtlasi aktiivseks (olema <quote
+>esiplaanil</quote
+>) või jääma taustale Aeglase internetiühenduse korral või olles leheküljel, kus on palju avamist ootavaid pealkirju või viitu, võib olla mõttekas lasta uutel kaartidel end taustal avada, ise samal ajal alguslehekülge edasi sirvides.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Uued kaardid avatakse käesoleva kaardi järel</guilabel
+></term>
+<listitem
+><para
+>Kui see on sisse lülitatud, avatakse uued kaardid käesoleva kaardi järel, mitte aga viimase kaardina.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Kaardiriba peidetakse, kui avatud on ainult üks kaart</guilabel
+></term>
+<listitem
+><para
+>Selle lubamisel näidatakse kaardiriba ainult siis, kui avatud on kaks või enam kaarti. Vastasel juhul näidatakse riba alati.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Sulgemisnupu näitamine sakkidel</guilabel
+></term>
+<listitem
+><para
+>Selle lubamisel näidatakse igal sakil sulgemisnuppu, mitte veebilehekülje ikooni.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Kaardi sulgemine hiire keskmise nupuga</guilabel
+></term>
+<listitem
+><para
+>Klõps sakile hiire keskmise nupu või hiireratta kasutamisel sulgeb kaardi. (Muudatuse rakendamiseks tuleb &konqueror; taaskäivitada.)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Kinnituse küsimine mitme kaardiga akna sulgemisel</guilabel
+></term>
+<listitem
+><para
+>Kui sulged &konqueror;i akna, milles on avatud mitu kaarti, pärib &konqueror;, kas sa ikka kindlasti soovid neid kõiki sulgeda. Küsimise saab sisse/välja lülitada selle märkekastiga.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Aktiivse kaardi sulgemisel aktiveeritakse viimati kasutatud kaart</guilabel
+></term>
+<listitem
+><para
+>Selle märkimisel aktiveeritakse eelmine kasutatud või avatud kaart, kui sulged parajasti avatud kaardi, mitte aga suletavast kaardist paremal asuv kaart.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</article>

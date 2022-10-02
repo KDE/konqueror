@@ -1,0 +1,321 @@
+# translation of kfmclient.po to Cymraeg
+# Copyright (C) 2003 Free Software Foundation, Inc.
+# KGyfieithu <kyfieithu@dotmon.com>, 2003.
+# KD at KGyfieithu <kyfieithu@dotmon.com>, 2003.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kfmclient\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"PO-Revision-Date: 2003-12-28 14:09+0000\n"
+"Last-Translator: KD at KGyfieithu <kyfieithu@dotmon.com>\n"
+"Language-Team: Cymraeg <cy@li.org>\n"
+"Language: cy\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: kfmclient.cpp:49
+#, kde-format
+msgid "kfmclient"
+msgstr "kfmclient"
+
+#: kfmclient.cpp:57
+#, kde-format
+msgid "KDE tool for opening URLs from the command line"
+msgstr "Erfyn KDE ar gyfer agor URLau o'r linell orchymyn"
+
+#: kfmclient.cpp:65
+#, kde-format
+msgid "Non interactive use: no message boxes"
+msgstr ""
+
+#: kfmclient.cpp:67
+#, fuzzy, kde-format
+msgid "Show available commands"
+msgstr "Dangos y gorchmynion sydd ar gael."
+
+#: kfmclient.cpp:69
+#, fuzzy, kde-format
+msgid "Command (see --commands)"
+msgstr "Gorchymyn (gweler --commands)."
+
+#: kfmclient.cpp:71
+#, fuzzy, kde-format
+msgid "Arguments for command"
+msgstr "Ymresymiadau i'r gorchymyn."
+
+#: kfmclient.cpp:73
+#, kde-format
+msgid "The files/URLs opened by the application will be deleted after use"
+msgstr ""
+
+#: kfmclient.cpp:81
+#, kde-format
+msgid ""
+"\n"
+"Syntax:\n"
+msgstr ""
+"\n"
+"Cystrawen:\n"
+
+#: kfmclient.cpp:82
+#, kde-format
+msgid ""
+"  kfmclient openURL 'url' ['mimetype']\n"
+"            # Opens a window showing 'url'.\n"
+"            #  'url' may be a relative path\n"
+"            #   or file name, such as . or subdir/\n"
+"            #   If 'url' is omitted, $HOME is used instead.\n"
+"\n"
+msgstr ""
+"  kfmclient openURL 'url' ['mathmime']\n"
+"            # Agora ffenestr yn dangos 'url'.\n"
+"            #  gall 'url' fod yn llwybr cymharol\n"
+"            #   neu enw ffeil, megis . neu isgyf/\n"
+"            #   Os hepgorir 'url', defnyddir $HOME yn ei le.\n"
+"\n"
+
+#: kfmclient.cpp:87
+#, kde-format
+msgid ""
+"            # If 'mimetype' is specified, it will be used to determine the\n"
+"            #   component that Konqueror should use. For instance, set it "
+"to\n"
+"            #   text/html for a web page, to make it appear faster\n"
+"\n"
+msgstr ""
+"            # Os penodir 'mathmime', fe'i ddefnyddir i bennu'r \n"
+"            #   gydran y dylai Konqueror ei ddefnyddio. Er enghraifft, "
+"gosodwch efyn\n"
+"            #   text/html ar gyfer tudalen wê, i'w achosi i'w ddangos yn "
+"gynt\n"
+"\n"
+
+#: kfmclient.cpp:91
+#, kde-format
+msgid ""
+"  kfmclient newTab 'url' ['mimetype']\n"
+"            # Same as above but opens a new tab with 'url' in an existing "
+"Konqueror\n"
+"            #   window on the current active desktop if possible.\n"
+"\n"
+msgstr ""
+
+#: kfmclient.cpp:271
+#, fuzzy, kde-format
+#| msgid "Syntax Error: Not enough arguments\n"
+msgid "Syntax error, not enough arguments\n"
+msgstr "Gwall Cystrawen: Dim digon o ymresymiadau\n"
+
+#: kfmclient.cpp:275
+#, fuzzy, kde-format
+#| msgid "Syntax Error: Too many arguments\n"
+msgid "Syntax error, too many arguments\n"
+msgstr "Gwall Cystrawen: Gormod o ymresymiadau\n"
+
+#: kfmclient.cpp:324
+#, fuzzy, kde-format
+#| msgid "Syntax Error: Unknown command '%1'\n"
+msgid "Syntax error, unknown command '%1'\n"
+msgstr "Gwall Cystrawen: Gorchymyn anhysbys '%1'\n"
+
+#~ msgid ""
+#~ "  kfmclient openProfile 'profile' ['url']\n"
+#~ "            # Opens a window using the given profile.\n"
+#~ "            #   'profile' is a file under ~/.kde/share/apps/konqueror/"
+#~ "profiles.\n"
+#~ "            #   'url' is an optional URL to open.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmclient openProfile 'proffil' ['url']\n"
+#~ "            # Agora ffenestr gan ddefnyddio'r proffil penodedig.\n"
+#~ "            #   ffeil o dan ~/.kde/share/apps/konqueror/profilesyw "
+#~ "proffil.\n"
+#~ "            #   URL dewisol i'w agor yw 'url'.\n"
+#~ "\n"
+
+#, fuzzy
+#~| msgid "Profile %1 not found\n"
+#~ msgid "Profile '%1' not found\n"
+#~ msgstr "Proffil %1 heb ei ganfod\n"
+
+#~ msgid ""
+#~ "  kfmclient openProperties 'url'\n"
+#~ "            # Opens a properties menu\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmclient openProperties 'url'\n"
+#~ "            # Agora ddewislen briodweddau\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "  kfmclient exec ['url' ['binding']]\n"
+#~ "            # Tries to execute 'url'. 'url' may be a usual\n"
+#~ "            #   URL, this URL will be opened. You may omit\n"
+#~ "            #   'binding'. In this case the default binding\n"
+#~ msgstr ""
+#~ "  kfmclient exec ['url' ['rhwymiad']]\n"
+#~ "            # Ceisia gweithredu 'url'. gall 'url' fod yn URL\n"
+#~ "            #   arferol, agorir yr URL yma. Gallwch hepgor\n"
+#~ "            #   'rhwymiad'. Os gwnewch hyn ceisir\n"
+
+#~ msgid ""
+#~ "            #   is tried. Of course URL may be the URL of a\n"
+#~ "            #   document, or it may be a *.desktop file.\n"
+#~ msgstr ""
+#~ "            #   y rhwymiad rhagosod. Wrth gwrs gall URL fod yn\n"
+#~ "            #   URL dogfen, neu yn ffeil *.desktop.\n"
+
+#~ msgid ""
+#~ "            #   This way you could for example mount a device\n"
+#~ "            #   by passing 'Mount default' as binding to \n"
+#~ "            #   'cdrom.desktop'\n"
+#~ "\n"
+#~ msgstr ""
+#~ "            #   Y ffordd yma gallech er enghraifft arosod dyfais\n"
+#~ "            #   drwy basio 'Mount default' yn rhwymiad i \n"
+#~ "            #   'cdrom.desktop'\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "  kfmclient move 'src' 'dest'\n"
+#~ "            # Moves the URL 'src' to 'dest'.\n"
+#~ "            #   'src' may be a list of URLs.\n"
+#~ msgstr ""
+#~ "  kfmclient move 'tardd' 'cyrchfan'\n"
+#~ "            # Symuda'r URL 'tardd' i'r 'cyrchfan'.\n"
+#~ "            #   gall 'tardd' fod yn restr o URLau.\n"
+
+#~ msgid ""
+#~ "  kfmclient download ['src']\n"
+#~ "            # Copies the URL 'src' to a user specified location'.\n"
+#~ "            #   'src' may be a list of URLs, if not present then\n"
+#~ "            #   a URL will be requested.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmclient download ['tardd']\n"
+#~ "            # Copïa'r URL 'tardd' i leoliad defnyddiwr-benodedig'.\n"
+#~ "            #   gall y 'tardd' fod yn restr o URLau, os nad yw'n "
+#~ "bresennol\n"
+#~ "            #   yna gofynnir am URL.\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "  kfmclient copy 'src' 'dest'\n"
+#~ "            # Copies the URL 'src' to 'dest'.\n"
+#~ "            #   'src' may be a list of URLs.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmclient copy 'tardd' 'cyrchfan'\n"
+#~ "            # Copïa'r URL 'tardd' i'r 'cyrchfan'.\n"
+#~ "            #   gall 'tardd' fod yn restr o URLau.\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "  kfmclient sortDesktop\n"
+#~ "            # Rearranges all icons on the desktop.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmclient sortDesktop\n"
+#~ "            # Aildrefna bob eicon ar y penbwrdd.\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "  kfmclient configure\n"
+#~ "            # Re-read Konqueror's configuration.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmclient configure\n"
+#~ "            # Ail-ddarllen ffurfwedd Konqueror.\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "  kfmclient configureDesktop\n"
+#~ "            # Re-read kdesktop's configuration.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmclient configureDesktop\n"
+#~ "            # Ail-ddarllen ffurfwedd kdesktop.\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "*** Examples:\n"
+#~ "  kfmclient exec file:/root/Desktop/cdrom.desktop \"Mount default\"\n"
+#~ "             // Mounts the CD-ROM\n"
+#~ "\n"
+#~ msgstr ""
+#~ "*** Enghreifftiau:\n"
+#~ "  kfmclient exec file:/root/Desktop/cdrom.desktop \"Mount default\"\n"
+#~ "             // Arosoda'r CDd-ROM\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "  kfmclient exec file:/home/weis/data/test.html\n"
+#~ "             // Opens the file with default binding\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmclient exec file:/home/weis/data/test.html\n"
+#~ "             // Agora'r ffeil â rhwymiadau rhagosod\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "  kfmclient exec file:/home/weis/data/test.html Netscape\n"
+#~ "             // Opens the file with netscape\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmclient exec file:/home/weis/data/test.html Netscape\n"
+#~ "             // Agora'r ffeil â Netscape\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "  kfmclient exec ftp://localhost/\n"
+#~ "             // Opens new window with URL\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmclient exec ftp://localhost/\n"
+#~ "            // Agora ffenestr newydd â'r URL\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "  kfmclient exec file:/root/Desktop/emacs.desktop\n"
+#~ "             // Starts emacs\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmclient exec file:/root/Desktop/emacs.desktop\n"
+#~ "             // Dechreua emacs\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "  kfmclient exec file:/root/Desktop/cdrom.desktop\n"
+#~ "             // Opens the CD-ROM's mount directory\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmclient exec file:/root/Desktop/cdrom.desktop\n"
+#~ "             // Agora gyfeiriadur arosod yr CDd-ROM\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "  kfmclient exec .\n"
+#~ "             // Opens the current directory. Very convenient.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmclient exec .\n"
+#~ "             // Agora'r cyfeiriadur cyfredol. Hwylus iawn.\n"
+#~ "\n"
+
+#~ msgid "Unable to download from an invalid URL."
+#~ msgstr "Methu lawrlwytho o URL annilys."

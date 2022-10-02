@@ -1,0 +1,95 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Italian "INCLUDE">
+]>
+<article id="history" lang="&language;">
+<title
+>Barra laterale della cronologia</title>
+<articleinfo>
+<authorgroup>
+<author
+>&Burkhard.Lueck;</author>
+<othercredit role="translator"
+><firstname
+>Federico</firstname
+><surname
+>Zenith</surname
+><affiliation
+><address
+><email
+>federico.zenith@member.fsf.org</email
+></address
+></affiliation
+><contrib
+>Traduzione in italiano</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2009-11-24</date>
+<releaseinfo
+>&kde; 4.4</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Impostazioni di sistema</keyword>
+<keyword
+>cronologia</keyword>
+</keywordset>
+</articleinfo>
+
+<para
+>Questa finestra permette di configurare la barra laterale della cronologia. </para>
+
+<variablelist>
+<varlistentry
+><term
+><guilabel
+>Limiti</guilabel
+></term>
+<listitem
+><para
+>Le opzioni di questa sezione possono essere usate per impostare le dimensioni massime della cronologia e impostare un tempo dopo il quale gli elementi saranno eliminati automaticamente. </para
+></listitem>
+</varlistentry>
+
+<varlistentry
+><term
+><guilabel
+>Carattere personalizzato</guilabel
+></term>
+<listitem
+><para
+>Qui puoi anche impostare diversi caratteri per gli &URL; vecchi e nuovi selezionando il pulsante <guibutton
+>Scegli carattere</guibutton
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry
+><term
+><guilabel
+>Dettagli</guilabel
+></term>
+<listitem
+><para
+>La casella dei <guilabel
+>Suggerimenti dettagliati</guilabel
+> controlla quante informazioni sono indicate quando passi su un elemento della cronologia col puntatore del mouse.</para>
+<para
+>Se segnato, sono visualizzati il numero di visite e le date della prima e dell'ultima visita, oltre all'&URL;.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Selezionare <guibutton
+>Ripulisci la cronologia</guibutton
+> svuoterà tutta la cronologia. </para>
+</article>

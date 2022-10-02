@@ -1,0 +1,2870 @@
+# translation of kget.po to icelandic
+# Copyright (C) 2003, 2004, 2005, 2006, 2009 Free Software Foundation, Inc.
+#
+# Pjetur G. Hjaltason <pjetur@pjetur.net>, 2003.
+# Arnar Leósson <leosson@frisurf.no>, 2003.
+# Stígur Snæsson <stigur@vortex.is>, 2004.
+# Arnar Leosson <leosson@frisurf.no>, 2004, 2005.
+# Þröstur Svanbergsson <throstur@bylur.net>, 2004.
+# Björgvin Ragnarsson <nifgraup@hotmail.com>, 2004.
+# Sveinn í Felli <sveinki@nett.is>, 2009, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: kget\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2014-11-22 18:41+0000\n"
+"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
+"Language-Team: Icelandic <kde-isl@molar.is>\n"
+"Language: is\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
+"\n"
+"\n"
+
+#: kget_plugin.cpp:56
+#, kde-format
+msgid "Download Manager"
+msgstr "Niðurhalsstjóri"
+
+#: kget_plugin.cpp:62
+#, kde-format
+msgid "Show Drop Target"
+msgstr "Sýna sleppiúttak"
+
+#: kget_plugin.cpp:69
+#, kde-format
+msgid "List All Links"
+msgstr "Lista alla tengla"
+
+#: kget_plugin.cpp:74
+#, kde-format
+msgid "List Selected Links"
+msgstr "Lista valda tengla"
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No downloadable links were found."
+msgstr "Engir niðurhalanlegir tenglar fundust."
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No Links"
+msgstr "Engir tenglar"
+
+#. i18n: ectx: Menu (tools)
+#: konqueror_kget_browser_integration.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "Verk&færi"
+
+#~ msgid "Unable to communicate with the KGet download manager."
+#~ msgstr "Tókst ekki að tengjast KGet niðurhalsstjóranum."
+
+#~ msgid "Communication Error"
+#~ msgstr "Samskiptavilla"
+
+#, fuzzy
+#~ msgid "Plugins"
+#~ msgstr "Íforrit"
+
+#, fuzzy
+#~ msgid "New Group"
+#~ msgstr "Sjálfgefin mappa"
+
+#, fuzzy
+#~ msgid "Xml"
+#~ msgstr "XML"
+
+#, fuzzy
+#~ msgid "Sqlite"
+#~ msgstr "SQLite"
+
+#, fuzzy
+#~ msgid "Turn Off Computer"
+#~ msgstr "Slökkva á tölvu"
+
+#, fuzzy
+#~ msgid "Hibernate Computer"
+#~ msgstr "Slökkva á tölvu"
+
+#, fuzzy
+#~ msgid "Suspend Computer"
+#~ msgstr "Slökkva á tölvu"
+
+#, fuzzy
+#~ msgid "Appearance"
+#~ msgstr "Útlit"
+
+#, fuzzy
+#~ msgid "Groups"
+#~ msgstr "Hópar"
+
+#, fuzzy
+#~ msgid "Network"
+#~ msgstr "Net"
+
+#, fuzzy
+#~ msgid "Network and Downloads"
+#~ msgstr "Merkja ókláraðar færslur"
+
+#~ msgid "Web Interface"
+#~ msgstr "Vefviðmót"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Verification"
+#~ msgstr "Áfangastaður:"
+
+#, fuzzy
+#~ msgctxt "integration of KGet with other applications"
+#~ msgid "Integration"
+#~ msgstr "Samtvinnun við Konqueror"
+
+#, fuzzy
+#~| msgid "Advanced"
+#~ msgctxt "Advanced Options"
+#~ msgid "Advanced"
+#~ msgstr "Ítarlegra"
+
+#~ msgid "Advanced Options"
+#~ msgstr "Ítarlegri valkostir"
+
+#, fuzzy
+#~ msgid "Transfer Plugins"
+#~ msgstr "Opna flutning:"
+
+#, fuzzy
+#~| msgid "Excluded:"
+#~ msgid "Include"
+#~ msgstr "Útilokaðir:"
+
+#, fuzzy
+#~| msgid "Excluded:"
+#~ msgid "Exclude"
+#~ msgstr "Útilokaðir:"
+
+#, fuzzy
+#~ msgid "Regular expression"
+#~ msgstr "Regluleg segð:"
+
+#~ msgid "KGet"
+#~ msgstr "KGet"
+
+#, fuzzy
+#~ msgid "1 Item"
+#~ msgid_plural "%1 Items"
+#~ msgstr[0] "1 hlutur"
+#~ msgstr[1] "1 hlutur"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#, fuzzy
+#~ msgctxt "start transfergroup downloads"
+#~ msgid "Start"
+#~ msgstr "Endurræ&sa"
+
+#, fuzzy
+#~ msgctxt "stop transfergroup downloads"
+#~ msgid "Stop"
+#~ msgstr "Stöðvað"
+
+#, fuzzy
+#~ msgid "KGet is downloading %1 file"
+#~ msgid_plural "KGet is downloading %1 files"
+#~ msgstr[0] "Niðurhalsstjóri"
+#~ msgstr[1] "Niðurhalsstjóri"
+
+#, fuzzy
+#~| msgid ""
+#~| "Error while writing file:\n"
+#~| "%1"
+#~ msgid "Error trying to get %1"
+#~ msgstr ""
+#~ "Villa við vistun skráar:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Are you sure that you want to remove the group named %1?"
+#~ msgstr "Ertu viss um að þú viljir eyða þessum færslum?"
+
+#, fuzzy
+#~ msgid "Remove Group"
+#~ msgstr "Sjálfgefin mappa"
+
+#, fuzzy
+#~ msgid "Are you sure that you want to remove the following groups?"
+#~ msgstr "Ertu viss um að þú viljir eyða þessum færslum?"
+
+#, fuzzy
+#~ msgid "Remove groups"
+#~ msgstr "Sjálfgefin mappa"
+
+#, fuzzy
+#~ msgid "Download added"
+#~ msgstr "Niðurhali haldið áfram"
+
+#, fuzzy
+#~ msgid ""
+#~ "The file %1 already exists.\n"
+#~ "Overwrite?"
+#~ msgstr ""
+#~ "Áfangaskráin\n"
+#~ "%1\n"
+#~ "er þegar til.\n"
+#~ "Viltu skrifa yfir hana?"
+
+#, fuzzy
+#~ msgid "My Downloads"
+#~ msgstr "Niðurhali haldið áfram"
+
+#, fuzzy
+#~ msgid "New Download"
+#~ msgstr "Hlaða niður aftur"
+
+#~ msgid ""
+#~ "Malformed URL:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Gölluð slóð:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URL, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Gölluð slóð:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Download it again?"
+#~ msgstr "Hlaða niður aftur"
+
+#, fuzzy
+#~ msgid "Delete it and download again?"
+#~ msgstr "Hlaða niður aftur"
+
+#, fuzzy
+#~ msgid "File already downloaded. Download anyway?"
+#~ msgstr ""
+#~ "Slóð þegar vistuð\n"
+#~ "%1\n"
+#~ "Sækja aftur?"
+
+#, fuzzy
+#~ msgid "File already exists"
+#~ msgstr ""
+#~ "Áfangaskráin\n"
+#~ "%1\n"
+#~ "er þegar til.\n"
+#~ "Viltu skrifa yfir hana?"
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is a directory."
+#~ msgstr ""
+#~ "Eyði ekki\n"
+#~ "%1\n"
+#~ "Þar sem það er mappa"
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is not a local file."
+#~ msgstr ""
+#~ "Eyði ekki\n"
+#~ "%1\n"
+#~ "þar sem hún er ekki staðbundin skrá."
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Download completed"
+#~ msgstr "Niðurhali lokið"
+
+#, fuzzy
+#~ msgid "Download started"
+#~ msgstr "Niðurhali haldið áfram"
+
+#, fuzzy
+#~ msgid "Error"
+#~ msgstr "Villa"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Resolve"
+#~ msgstr "Opna flutning"
+
+#, fuzzy
+#~| msgid "All the downloads are finished."
+#~ msgid "KGet is now closing, as all downloads have completed."
+#~ msgstr "Öllum niðurhölum lokið."
+
+#, fuzzy
+#~| msgid "All the downloads are finished."
+#~ msgid "The computer will now turn off, as all downloads have completed."
+#~ msgstr "Öllum niðurhölum lokið."
+
+#, fuzzy
+#~ msgctxt "Shutting down computer"
+#~ msgid "Shutdown"
+#~ msgstr "Slekkur sjálfvirkt."
+
+#, fuzzy
+#~| msgid "All the downloads are finished."
+#~ msgid ""
+#~ "The computer will now suspend to disk, as all downloads have completed."
+#~ msgstr "Öllum niðurhölum lokið."
+
+#, fuzzy
+#~| msgid "All the downloads are finished."
+#~ msgid ""
+#~ "The computer will now suspend to RAM, as all downloads have completed."
+#~ msgstr "Öllum niðurhölum lokið."
+
+#, fuzzy
+#~ msgctxt "Suspending computer"
+#~ msgid "Suspending"
+#~ msgstr "Í bið"
+
+#, fuzzy
+#~ msgctxt "abort the proposed action"
+#~ msgid "Abort"
+#~ msgstr "Hætt við"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Downloads completed"
+#~ msgstr "Niðurhali lokið"
+
+#, fuzzy
+#~ msgctxt "file in a filesystem"
+#~ msgid "File"
+#~ msgstr "Opna &skrá"
+
+#, fuzzy
+#~ msgctxt "status of the download"
+#~ msgid "Status"
+#~ msgstr "Endurræ&sa"
+
+#, fuzzy
+#~ msgctxt "size of the download"
+#~ msgid "Size"
+#~ msgstr "Stærð"
+
+#, fuzzy
+#~ msgid "KGet Transfer"
+#~ msgstr "Opna flutning:"
+
+#, fuzzy
+#~ msgctxt "the type of the hash, e.g. MD5"
+#~ msgid "Type"
+#~ msgstr "Gerð skráar"
+
+#, fuzzy
+#~ msgctxt "not available"
+#~ msgid "n/a"
+#~ msgstr "n/a"
+
+#~ msgid "Stalled"
+#~ msgstr "Töf"
+
+#, fuzzy
+#~ msgid "Downloading...."
+#~ msgstr "Niðurhali haldið áfram"
+
+#, fuzzy
+#~| msgid "Delayed"
+#~ msgctxt "transfer state: delayed"
+#~ msgid "Delayed"
+#~ msgstr "Tafðar"
+
+#, fuzzy
+#~| msgid "Stopped"
+#~ msgctxt "transfer state: stopped"
+#~ msgid "Stopped"
+#~ msgstr "Stöðvað"
+
+#, fuzzy
+#~ msgctxt "transfer state: aborted"
+#~ msgid "Aborted"
+#~ msgstr "Hætt við"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "transfer state: finished"
+#~ msgid "Finished"
+#~ msgstr "Lokið"
+
+#, fuzzy
+#~ msgctxt "changing the destination of the file"
+#~ msgid "Changing destination"
+#~ msgstr "&Opna áfangastað"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgctxt "name of download"
+#~ msgid "Name"
+#~ msgstr "Nafn"
+
+#, fuzzy
+#~ msgctxt "status of download"
+#~ msgid "Status"
+#~ msgstr "Endurræ&sa"
+
+#, fuzzy
+#~ msgctxt "size of download"
+#~ msgid "Size"
+#~ msgstr "Stærð"
+
+#, fuzzy
+#~ msgctxt "progress of download"
+#~ msgid "Progress"
+#~ msgstr "Framvindugluggi"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgctxt "speed of download"
+#~ msgid "Speed"
+#~ msgstr "Hraði"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgctxt "remaining time of download"
+#~ msgid "Remaining Time"
+#~ msgstr "Tími eftir"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "No download destination specified."
+#~ msgstr "Áfangastaður:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Invalid download destination specified."
+#~ msgstr "Áfangastaður:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Download destination is not writeable."
+#~ msgstr "Áfangastaður:"
+
+#, fuzzy
+#~| msgid "Malformed URL:\n"
+#~ msgid "Malformed URL."
+#~ msgstr "Gölluð slóð:\n"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid "Malformed URL, protocol missing."
+#~ msgstr ""
+#~ "Gölluð slóð:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid "Malformed URL, host missing."
+#~ msgstr ""
+#~ "Gölluð slóð:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid ""
+#~ "Invalid download destination specified:\n"
+#~ "%1"
+#~ msgstr "Áfangastaður:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid ""
+#~ "Download destination is not writeable:\n"
+#~ "%1"
+#~ msgstr "Áfangastaður:"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URL, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Gölluð slóð:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "File already exists. Overwrite it?"
+#~ msgstr ""
+#~ "Áfangaskráin\n"
+#~ "%1\n"
+#~ "er þegar til.\n"
+#~ "Viltu skrifa yfir hana?"
+
+#, fuzzy
+#~ msgid ""
+#~ "File already exists:\n"
+#~ "%1\n"
+#~ "Overwrite it?"
+#~ msgstr ""
+#~ "Áfangaskráin\n"
+#~ "%1\n"
+#~ "er þegar til.\n"
+#~ "Viltu skrifa yfir hana?"
+
+#, fuzzy
+#~| msgid "Malformed URL:\n"
+#~ msgid "Malformed URLs."
+#~ msgstr "Gölluð slóð:\n"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid "Malformed URLs, protocol missing."
+#~ msgstr ""
+#~ "Gölluð slóð:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid "Malformed URLs, host missing."
+#~ msgstr ""
+#~ "Gölluð slóð:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Gölluð slóð:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Gölluð slóð:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Gölluð slóð:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Files exist already. Overwrite them?"
+#~ msgstr ""
+#~ "Áfangaskráin\n"
+#~ "%1\n"
+#~ "er þegar til.\n"
+#~ "Viltu skrifa yfir hana?"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Question"
+#~ msgstr "Lýsing"
+
+#, fuzzy
+#~| msgid "Normal"
+#~ msgctxt "on a question"
+#~ msgid "No all"
+#~ msgstr "Venjulegt"
+
+#, fuzzy
+#~| msgid "Local File Name"
+#~ msgid "Engine name:"
+#~ msgstr "Staðbundið skráarheiti"
+
+#, fuzzy
+#~ msgid "URL:"
+#~ msgstr "Slóð:"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "transfer state: connecting"
+#~ msgid "Connecting...."
+#~ msgstr "Tenging"
+
+#, fuzzy
+#~ msgid "Edit Script"
+#~ msgstr "Breyta skriftu"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Set Script File"
+#~ msgstr "Lýsing"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "Transfer State: Finished"
+#~ msgid "Finished"
+#~ msgstr "Lokið"
+
+#, fuzzy
+#~ msgctxt "Transfer State: Aborted"
+#~ msgid "Aborted"
+#~ msgstr "Hætt við"
+
+#, fuzzy
+#~ msgid "Downloading Metalink File...."
+#~ msgstr "Niðurhali haldið áfram"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Redownload Metalink"
+#~ msgstr "Niðurhali lokið"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgid "File Selection"
+#~ msgstr "Áætlun"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "the string that is used to modify an url"
+#~ msgid "Change string"
+#~ msgstr "Tenging"
+
+#, fuzzy
+#~ msgid "Append"
+#~ msgstr "Útlit"
+
+#, fuzzy
+#~ msgid "Replace file"
+#~ msgstr "Opna &skrá"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "transfer state: running"
+#~ msgid "Running...."
+#~ msgstr "Tenging"
+
+#, fuzzy
+#~ msgctxt "Choked"
+#~ msgid "Yes"
+#~ msgstr "Já"
+
+#, fuzzy
+#~ msgctxt "Not choked"
+#~ msgid "No"
+#~ msgstr "Nei"
+
+#, fuzzy
+#~ msgctxt "Snubbed"
+#~ msgid "Yes"
+#~ msgstr "Já"
+
+#, fuzzy
+#~ msgctxt "Not snubbed"
+#~ msgid "No"
+#~ msgstr "Nei"
+
+#, fuzzy
+#~ msgctxt "Interested"
+#~ msgid "Yes"
+#~ msgstr "Já"
+
+#, fuzzy
+#~ msgctxt "Not Interested"
+#~ msgid "No"
+#~ msgstr "Nei"
+
+#, fuzzy
+#~ msgctxt "Interesting"
+#~ msgid "Yes"
+#~ msgstr "Já"
+
+#, fuzzy
+#~ msgctxt "Not Interesting"
+#~ msgid "No"
+#~ msgstr "Nei"
+
+#, fuzzy
+#~| msgid "Address (URL)"
+#~ msgid "IP Address"
+#~ msgstr "Slóð"
+
+#, fuzzy
+#~ msgid "Client"
+#~ msgstr "Biðlari"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Down Speed"
+#~ msgstr "Hraði"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Up Speed"
+#~ msgstr "Hraði"
+
+#, fuzzy
+#~| msgid "Docked"
+#~ msgid "Choked"
+#~ msgstr "Á spjaldið"
+
+#~ msgid "Snubbed"
+#~ msgstr "Sniðgengið"
+
+#~ msgid "Availability"
+#~ msgstr "Aðgengi"
+
+#~ msgid "DHT"
+#~ msgstr "DHT"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgid "Score"
+#~ msgstr "Uppruni:"
+
+#, fuzzy
+#~ msgid "Upload Slot"
+#~ msgstr "Senda hólf"
+
+#, fuzzy
+#~ msgid "Requests"
+#~ msgstr "Beiðnir"
+
+#, fuzzy
+#~ msgid "Downloaded"
+#~ msgstr "Niðurhali haldið áfram"
+
+#, fuzzy
+#~ msgid "Uploaded"
+#~ msgstr "Hlaðið inn"
+
+#, fuzzy
+#~ msgid "Interested"
+#~ msgstr "Áhugasamur"
+
+#, fuzzy
+#~ msgid "Interesting"
+#~ msgstr "Samtvinnun við Konqueror"
+
+#~ msgid "IP address of the peer"
+#~ msgstr "IP vistfang jafningja"
+
+#~ msgid "Which client the peer is using"
+#~ msgstr "Hvaða forrit jafningi notar"
+
+#, fuzzy
+#~ msgid "Download speed"
+#~ msgstr "Niðurhali haldið áfram"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Upload speed"
+#~ msgstr "Hraði"
+
+#~ msgid ""
+#~ "Snubbed means the peer has not sent us any data in the last 2 minutes"
+#~ msgstr ""
+#~ "Að vera sniðgenginn þýðir að jafninginn hefur ekki sent okkur nein gögn "
+#~ "síðustu 2 mínúturnar"
+
+#~ msgid "Whether or not the peer has DHT enabled"
+#~ msgstr "Hvort jafninginn sé með DHT virkjað"
+
+#~ msgid "Only peers which have an upload slot will get data from us"
+#~ msgstr "Einungis jafningjar sem eiga sendingarhólf fá gögn frá okkur"
+
+#~ msgid "The number of download and upload requests"
+#~ msgstr "Fjöldi fyrirspurna um niðurhal og sendingar"
+
+#~ msgid "How much data we have downloaded from this peer"
+#~ msgstr "Hversu mikið af gögnum við erum búin að ná í frá þessum jafningja"
+
+#~ msgid "How much data we have uploaded to this peer"
+#~ msgstr "Hversu mikið af gögnum við erum búin að senda til þessa jafningja"
+
+#~ msgid "Whether the peer is interested in downloading data from us"
+#~ msgstr "Hvort jafninginn hefur áhuga á gögnum frá okkur"
+
+#~ msgid "Whether we are interested in downloading from this peer"
+#~ msgstr "Hvort við höfum áhuga á gögnum frá þessum jafningja"
+
+#, fuzzy
+#~| msgid "Count"
+#~ msgid "Chunk"
+#~ msgstr "Fjöldi"
+
+#, fuzzy
+#~ msgid "Progress"
+#~ msgstr "Framvindugluggi"
+
+#, fuzzy
+#~ msgid "Peer"
+#~ msgstr "Jafningi"
+
+#, fuzzy
+#~ msgid "Files"
+#~ msgstr "Opna &skrá"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of the chunk"
+#~ msgstr "Hve oft á að reyna:"
+
+#~ msgid "Download progress of the chunk"
+#~ msgstr "Sóknarframvinda búts"
+
+#~ msgid "Which peer we are downloading it from"
+#~ msgstr "Frá hvaða jafningja er verið að sækja"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Download speed of the chunk"
+#~ msgstr "Niðurhali lokið"
+
+#~ msgid "Which files the chunk is located in"
+#~ msgstr "Í hvaða skrám búturinn er staðsettur"
+
+#, fuzzy
+#~ msgid "URL"
+#~ msgstr "Slóð"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed"
+#~ msgstr "Hraði"
+
+#, fuzzy
+#~ msgid "Status"
+#~ msgstr "Endurræ&sa"
+
+#, fuzzy
+#~ msgid "Kick Peer"
+#~ msgstr "Sparka jafningja"
+
+#, fuzzy
+#~ msgid "Ban Peer"
+#~ msgstr "Banna jafningja"
+
+#~ msgid ""
+#~ "Cannot add the webseed %1, it is already part of the list of webseeds."
+#~ msgstr ""
+#~ "Get ekki bætt við vefsáningunni %1, hún er nú þegar hluti listans yfir "
+#~ "vefsáningar."
+
+#~ msgid "Cannot remove webseed %1, it is part of the torrent."
+#~ msgstr "Get ekki fjarlægt vefsáninguna %1, hún er hluti af straumnum."
+
+#, fuzzy
+#~ msgid "File"
+#~ msgstr "Opna &skrá"
+
+#, fuzzy
+#~ msgid "Size"
+#~ msgstr "Stærð"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Advanced Details for %1"
+#~ msgstr "Sjálfgefin mappa:"
+
+#, fuzzy
+#~ msgid "Trackers"
+#~ msgstr "&Flutningur"
+
+#~ msgid "Webseeds"
+#~ msgstr "Vefsáningar"
+
+#, fuzzy
+#~ msgctxt "Open file"
+#~ msgid "Open"
+#~ msgstr "Opna &skrá"
+
+#, fuzzy
+#~ msgid "Download first"
+#~ msgstr "Niðurhali haldið áfram"
+
+#, fuzzy
+#~ msgid "Download normally"
+#~ msgstr "Sjálfgefin mappa"
+
+#, fuzzy
+#~ msgid "Download last"
+#~ msgstr "Niðurhali haldið áfram"
+
+#, fuzzy
+#~ msgid "Do Not Download"
+#~ msgstr "Hlaða niður aftur"
+
+#, fuzzy
+#~| msgid "Download Selected Files"
+#~ msgid "Delete File(s)"
+#~ msgstr "Sækja valdar skrár"
+
+#, fuzzy
+#~ msgid "Move File"
+#~ msgstr "Opna &skrá"
+
+#~ msgid "Collapse Folder Tree"
+#~ msgstr "Fella saman möppugrein"
+
+#~ msgid "Expand Folder Tree"
+#~ msgstr "Fella út möppugrein"
+
+#~ msgid "Select a directory to move the data to."
+#~ msgstr "Veldu möppu til að gæra gögnin yfir í."
+
+#, fuzzy
+#~ msgid "Url"
+#~ msgstr "Slóð:"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Seeders"
+#~ msgstr "Hraði"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Leechers"
+#~ msgstr "Hraði"
+
+#, fuzzy
+#~ msgid "Times Downloaded"
+#~ msgstr "Niðurhali haldið áfram"
+
+#~ msgid "Next Update"
+#~ msgstr "Næsta uppfærsla"
+
+#, fuzzy
+#~ msgid "Priority"
+#~ msgstr "Forgangur"
+
+#, fuzzy
+#~ msgid "Preview"
+#~ msgstr "Forsýn"
+
+#, fuzzy
+#~ msgctxt "Percent of File Downloaded"
+#~ msgid "% Complete"
+#~ msgstr "% lokið"
+
+#, fuzzy
+#~ msgctxt "Download first"
+#~ msgid "First"
+#~ msgstr "Fyrsti"
+
+#, fuzzy
+#~ msgctxt "Download last"
+#~ msgid "Last"
+#~ msgstr "Síðasta"
+
+#, fuzzy
+#~| msgid "Normal"
+#~ msgctxt "Download normally(not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "Venjulegt"
+
+#, fuzzy
+#~ msgctxt "preview available"
+#~ msgid "Available"
+#~ msgstr "Tiltækt"
+
+#, fuzzy
+#~ msgctxt "Preview pending"
+#~ msgid "Pending"
+#~ msgstr "Í bið"
+
+#, fuzzy
+#~ msgctxt "No preview available"
+#~ msgid "No"
+#~ msgstr "Nei"
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 %"
+#~ msgstr " %1/s "
+
+#, fuzzy
+#~ msgctxt "Preview available"
+#~ msgid "Available"
+#~ msgstr "Tiltækt"
+
+#~ msgid "There already is a tracker named <b>%1</b>."
+#~ msgstr "Þegar er til staðar skrásetjari (tracker) með heitinu <b>%1</b>."
+
+#, fuzzy
+#~| msgid "Normal"
+#~ msgctxt "Download Normal (not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "Venjulegt"
+
+#, fuzzy
+#~| msgid "Advanced Options"
+#~ msgid "&Advanced Details"
+#~ msgstr "Ítarlegri valkostir"
+
+#, fuzzy
+#~ msgid "&Scan Files"
+#~ msgstr "Opna &skrá"
+
+#, fuzzy
+#~ msgid "Downloading Torrent File...."
+#~ msgstr "Niðurhali haldið áfram"
+
+#, fuzzy
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading...."
+#~ msgstr "Niðurhali haldið áfram"
+
+#, fuzzy
+#~| msgid ""
+#~| "The specified file does not exist:\n"
+#~| "%1"
+#~ msgid "Torrent file does not exist"
+#~ msgstr ""
+#~ "Þessi skrá er ekki til:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Analyzing torrent...."
+#~ msgstr "Niðurhali haldið áfram"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgctxt "Transfer status: seeding"
+#~ msgid "Seeding...."
+#~ msgstr "Áætlun"
+
+#, fuzzy
+#~ msgid "Error scanning data: %1"
+#~ msgstr "Villa við skönnun gagna: %1"
+
+#, fuzzy
+#~ msgid "Scanning data of <b>%1</b> :"
+#~ msgstr "Yfirferð á gögnum frá <b>%1</b>:"
+
+#, fuzzy
+#~| msgid "Default Folder"
+#~ msgid "Select a default torrent folder"
+#~ msgstr "Sjálfgefin mappa"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Select a default temporary folder"
+#~ msgstr "Sjálfgefin mappa:"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgid "File Properties"
+#~ msgstr "Áætlun"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a filename."
+#~ msgstr "Ethernet"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter at least one URL."
+#~ msgstr "Ethernet"
+
+#, fuzzy
+#~ msgid "Metalink Version 4.0 file (*.meta4)"
+#~ msgstr "Opna &skrá"
+
+#, fuzzy
+#~ msgid "Metalink Version 3.0 file (*.metalink)"
+#~ msgstr "Opna &skrá"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "Import Links"
+#~ msgstr "Engir hlekkir"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgctxt "Download the items which have been selected"
+#~ msgid "&Download Checked"
+#~ msgstr "Niðurhali lokið"
+
+#, fuzzy
+#~| msgid "Local File Name"
+#~ msgid "File Name"
+#~ msgstr "Staðbundið skráarheiti"
+
+#~ msgid "Description"
+#~ msgstr "Lýsing"
+
+#, fuzzy
+#~ msgctxt "list header: type of file"
+#~ msgid "File Type"
+#~ msgstr "Gerð skráar"
+
+#~ msgid "Location (URL)"
+#~ msgstr "Staðsetning (slóð)"
+
+#~ msgid "Links in: %1 - KGet"
+#~ msgstr "Tenglar í: %1 - KGet"
+
+#, fuzzy
+#~ msgid "&Select All"
+#~ msgstr "Velja &allt"
+
+#, fuzzy
+#~ msgctxt "Mirror as in server, in url"
+#~ msgid "Mirror"
+#~ msgstr "Villa"
+
+#, fuzzy
+#~ msgctxt "The priority of the mirror"
+#~ msgid "Priority"
+#~ msgstr "Forgangur"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "Number of paralell connections to the mirror"
+#~ msgid "Connections"
+#~ msgstr "Tenging"
+
+#, fuzzy
+#~| msgid "Location (URL)"
+#~ msgctxt "Location = country"
+#~ msgid "Location"
+#~ msgstr "Staðsetning (slóð)"
+
+#, fuzzy
+#~ msgid "Download again"
+#~ msgstr "Hlaða niður aftur"
+
+#, fuzzy
+#~ msgctxt "Delete selected history-item"
+#~ msgid "Delete selected"
+#~ msgstr "Engar skrár valdar"
+
+#, fuzzy
+#~ msgid "Open file"
+#~ msgstr "Opna &skrá"
+
+#, fuzzy
+#~ msgid "Today"
+#~ msgstr "Í dag"
+
+#, fuzzy
+#~ msgid "Transfer History"
+#~ msgstr "Opna flutning:"
+
+#, fuzzy
+#~ msgid "&Open File"
+#~ msgstr "Opna &skrá"
+
+#, fuzzy
+#~ msgctxt "The transfer is running"
+#~ msgid "Running"
+#~ msgstr "Keyrandi"
+
+#, fuzzy
+#~| msgid "Stopped"
+#~ msgctxt "The transfer is stopped"
+#~ msgid "Stopped"
+#~ msgstr "Stöðvað"
+
+#, fuzzy
+#~ msgctxt "The transfer is aborted"
+#~ msgid "Aborted"
+#~ msgstr "Hætt við"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "The transfer is finished"
+#~ msgid "Finished"
+#~ msgstr "Lokið"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgid "Source File"
+#~ msgstr "Uppruni:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Destination"
+#~ msgstr "Áfangastaður:"
+
+#, fuzzy
+#~| msgid "Timer"
+#~ msgid "Time"
+#~ msgstr "Klukka"
+
+#, fuzzy
+#~ msgid "File Size"
+#~ msgstr "Opna &skrá"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "the transfer has been finished"
+#~ msgid "Finished"
+#~ msgstr "Lokið"
+
+#, fuzzy
+#~ msgctxt "an error happened in connection with the user input"
+#~ msgid "Error:"
+#~ msgstr "Villa"
+
+#~ msgctxt "trust level"
+#~ msgid "Unknown"
+#~ msgstr "Óþekkt"
+
+#, fuzzy
+#~ msgctxt "trust level"
+#~ msgid "Never"
+#~ msgstr "Jafningi"
+
+#~ msgid "Unlimited"
+#~ msgstr "Ótakmarkað"
+
+#, fuzzy
+#~ msgctxt "pgp signature is not verified"
+#~ msgid "Failed"
+#~ msgstr "Opna &skrá"
+
+#, fuzzy
+#~ msgid "Error:"
+#~ msgstr "Villa"
+
+#, fuzzy
+#~ msgid "Information:"
+#~ msgstr "Samtvinnun við Konqueror"
+
+#, fuzzy
+#~ msgid "Transfer Details"
+#~ msgstr " Flutningar: %1 "
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Transfer Verification for %1"
+#~ msgstr "Sjálfgefin mappa:"
+
+#, fuzzy
+#~ msgid "Rename File"
+#~ msgstr "Sjálfgefin mappa"
+
+#, fuzzy
+#~ msgid "Rename %1 to:"
+#~ msgstr "Sjálfgefin mappa"
+
+#, fuzzy
+#~ msgid "&Rename"
+#~ msgstr "Sjálfgefin mappa"
+
+#, fuzzy
+#~ msgid "Rename Group..."
+#~ msgid_plural "Rename Groups..."
+#~ msgstr[0] "Sjálfgefin mappa"
+#~ msgstr[1] "Sjálfgefin mappa"
+
+#, fuzzy
+#~| msgid "Sticky"
+#~ msgctxt "fix position for droptarget"
+#~ msgid "Sticky"
+#~ msgstr "Loðir við"
+
+#, fuzzy
+#~| msgid "KGet"
+#~ msgid "Quit KGet"
+#~ msgstr "KGet"
+
+#, fuzzy
+#~ msgid "The dropped file is a KGet Transfer List"
+#~ msgstr "Opna flutning:"
+
+#, fuzzy
+#~ msgid "&Download"
+#~ msgstr "Niðurhali haldið áfram"
+
+#, fuzzy
+#~ msgid "&Load transfer list"
+#~ msgstr "Opna flutning:"
+
+#, fuzzy
+#~ msgid "Show Main Window"
+#~ msgstr "Sýna aðalglugga við ræsingu"
+
+#, fuzzy
+#~ msgid "Hide Main Window"
+#~ msgstr "&Fela annálaglugga"
+
+#, fuzzy
+#~| msgid "Drop target"
+#~ msgid "Drop Target"
+#~ msgstr "Sleppispjald"
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgctxt "%1 filename, %2 total size, %3 status"
+#~ msgid "%1(%2) %3"
+#~ msgstr " %1/s "
+
+#, fuzzy
+#~ msgid "Ready"
+#~ msgstr "Tilbúinn"
+
+#, fuzzy
+#~ msgid "Hiding drop target"
+#~ msgstr "Fela &sleppispjald"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Transfer Settings for %1"
+#~ msgstr "Sjálfgefin mappa:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Destination unmodified"
+#~ msgstr "Áfangastaður:"
+
+#, fuzzy
+#~| msgid "%1% of %2 - %3"
+#~ msgid "%1 of %2"
+#~ msgstr "%1% af %2 - %3"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Group Settings for %1"
+#~ msgstr "Sjálfgefin mappa:"
+
+#, fuzzy
+#~| msgid "%1/s"
+#~ msgctxt "@item speed of transfer per seconds"
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#, fuzzy
+#~ msgctxt "@label number"
+#~ msgid "Nr"
+#~ msgstr "Nr"
+
+#, fuzzy
+#~| msgid "Local File Name"
+#~ msgctxt "@label"
+#~ msgid "File name"
+#~ msgstr "Staðbundið skráarheiti"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "@label Progress of transfer"
+#~ msgid "Finished"
+#~ msgstr "Lokið"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgctxt "@label Speed of transfer"
+#~ msgid "Speed"
+#~ msgstr "Hraði"
+
+#, fuzzy
+#~ msgctxt "@label Status of transfer"
+#~ msgid "Status"
+#~ msgstr "Endurræ&sa"
+
+#, fuzzy
+#~ msgctxt "@action:button start a transfer"
+#~ msgid "Start"
+#~ msgstr "Endurræ&sa"
+
+#, fuzzy
+#~ msgctxt "@action:button"
+#~ msgid "Stop"
+#~ msgstr "Stöðvað"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgctxt "@action:button"
+#~ msgid "Remove"
+#~ msgstr "Opna flutning"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgctxt "@label Download from"
+#~ msgid "Source:"
+#~ msgstr "Uppruni:"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgctxt "@action"
+#~ msgid "Settings"
+#~ msgstr "Áætlun"
+
+#, fuzzy
+#~ msgctxt "@action"
+#~ msgid "Refresh"
+#~ msgstr "Endurlesa"
+
+#, fuzzy
+#~| msgctxt "OK as in 'finished'"
+#~| msgid "OK"
+#~ msgctxt "@action:button"
+#~ msgid "OK"
+#~ msgstr "Í lagi"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgctxt "@action Refresh download list every x (seconds)"
+#~ msgid "Refresh download list every"
+#~ msgstr "Niðurhali lokið"
+
+#, fuzzy
+#~ msgctxt "@action (Refresh very x )seconds"
+#~ msgid "seconds"
+#~ msgstr "sekúndur"
+
+#, fuzzy
+#~ msgctxt "@action:button"
+#~ msgid "Save Settings"
+#~ msgstr " Flutningar: %1 "
+
+#, fuzzy
+#~ msgctxt "@title"
+#~ msgid "Downloads"
+#~ msgstr "Niðurhali haldið áfram"
+
+#~ msgid "An advanced download manager for KDE"
+#~ msgstr "Þróað KDE niðurhalstól"
+
+#, fuzzy
+#~ msgid "Lukas Appelhans"
+#~ msgstr "Lukas Appelhans"
+
+#, fuzzy
+#~ msgid "Core Developer"
+#~ msgstr "Aðalhönnuður"
+
+#, fuzzy
+#~ msgid "Urs Wolfer"
+#~ msgstr "Urs Wolfer"
+
+#, fuzzy
+#~ msgid "Developer"
+#~ msgstr "Forritari"
+
+#, fuzzy
+#~ msgid "Former Developer"
+#~ msgstr "Fyrrverandi forritari"
+
+#, fuzzy
+#~ msgid "Carsten Pfeiffer"
+#~ msgstr "Carsten Pfeiffer"
+
+#, fuzzy
+#~ msgid "Matej Koss"
+#~ msgstr "Matej Koss"
+
+#, fuzzy
+#~ msgid "Joris Guisson"
+#~ msgstr "Joris Guisson"
+
+#~ msgid "Start KGet with drop target"
+#~ msgstr "Ræsa KGet með sleppispjaldið virkt"
+
+#, fuzzy
+#~| msgid "Start KGet with drop target"
+#~ msgid "Start KGet with hidden main window"
+#~ msgstr "Ræsa KGet með sleppispjaldið virkt"
+
+#, fuzzy
+#~| msgid "Start KGet with drop target"
+#~ msgid "Start KGet without drop target animation"
+#~ msgstr "Ræsa KGet með sleppispjaldið virkt"
+
+#~ msgid "URL(s) to download"
+#~ msgstr "Slóðir sem á að sækja"
+
+#, fuzzy
+#~ msgid "KGet Transfer List"
+#~ msgstr "Opna flutning:"
+
+#, fuzzy
+#~ msgid "Export Transfers"
+#~ msgstr "&Flytja út flutningslista..."
+
+#, fuzzy
+#~| msgid "&Import Transfer List..."
+#~ msgid "&Import Transfers..."
+#~ msgstr "Flytja &inn flutningslista..."
+
+#, fuzzy
+#~ msgid "&Export Transfers List..."
+#~ msgstr "&Flytja út flutningslista..."
+
+#, fuzzy
+#~ msgid "&Export Transfers as Plain Text..."
+#~ msgstr "&Flytja út flutningslista..."
+
+#, fuzzy
+#~ msgid "Top Priority"
+#~ msgstr "Forgangur"
+
+#, fuzzy
+#~ msgid "Least Priority"
+#~ msgstr "Forgangur"
+
+#, fuzzy
+#~ msgid "Increase Priority"
+#~ msgstr "Forgangur"
+
+#, fuzzy
+#~ msgid "Decrease Priority"
+#~ msgstr "Forgangur"
+
+#, fuzzy
+#~ msgid "Set Icon..."
+#~ msgstr "Setja táknmynd..."
+
+#, fuzzy
+#~ msgid "Auto-Paste Mode"
+#~ msgstr "Sjálfvirk &líming"
+
+#, fuzzy
+#~ msgid ""
+#~ "<b>Auto paste</b> button toggles the auto-paste mode on and off.\n"
+#~ "When set, KGet will periodically scan the clipboard for URLs and paste "
+#~ "them automatically."
+#~ msgstr ""
+#~ "<b>Sjálfvirk líming</b> hnappurinn setur sjálfvirka límingu af/á.\n"
+#~ "\n"
+#~ "Þegar valið, skannar KGet klippispjaldið reglulega og bætir\n"
+#~ "sjálfkrafa við niðurhölum."
+
+#, fuzzy
+#~ msgid "Use KGet as Konqueror Download Manager"
+#~ msgstr "Aftengja &KGet sem Konqueror niðurhalsstjóra"
+
+#, fuzzy
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Remove Selected"
+#~ msgstr "Halda áf&ram"
+
+#, fuzzy
+#~| msgid "Download Selected Files"
+#~ msgctxt "delete all finished transfers"
+#~ msgid "Remove All Finished"
+#~ msgstr "Sækja valdar skrár"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgctxt "redownload selected transfer item"
+#~ msgid "Redownload Selected"
+#~ msgstr "Niðurhali lokið"
+
+#, fuzzy
+#~ msgid "Start / Resume Selected"
+#~ msgstr "Engar skrár valdar"
+
+#~ msgid "Stop All"
+#~ msgstr "Stöðva allt"
+
+#, fuzzy
+#~ msgid "Stop Selected"
+#~ msgstr "Engar skrár valdar"
+
+#, fuzzy
+#~ msgid "Stop"
+#~ msgstr "Stöðvað"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Remove"
+#~ msgstr "Opna flutning"
+
+#, fuzzy
+#~ msgid "Open Destination"
+#~ msgstr "&Opna áfangastað"
+
+#, fuzzy
+#~ msgid "Open File"
+#~ msgstr "Opna &skrá"
+
+#, fuzzy
+#~ msgid "Show Details"
+#~ msgstr "pjetur@pjetur.net, leosson@frisurf.no"
+
+#, fuzzy
+#~ msgid "Copy URL to Clipboard"
+#~ msgstr "&Afrita slóð á klippispjald"
+
+#, fuzzy
+#~ msgid "&Transfer History"
+#~ msgstr "Opna flutning:"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "&Group Settings"
+#~ msgstr "Sjálfgefin mappa:"
+
+#, fuzzy
+#~ msgid "&Transfer Settings"
+#~ msgstr " Flutningar: %1 "
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "Import &Links..."
+#~ msgstr "Engir hlekkir"
+
+#, fuzzy
+#~| msgid ""
+#~| "This is the first time that you have run KGet.\n"
+#~| "Do you want to use KGet as Download Manager for Konqueror?"
+#~ msgid ""
+#~ "This is the first time you have run KGet.\n"
+#~ "Would you like to enable KGet as the download manager for Konqueror?"
+#~ msgstr ""
+#~ "Þetta er í fyrsta skipti sem þú keyrir KGet.\n"
+#~ "Viltu nota KGet sem niðurhalsstjóra fyrir Konqueror?"
+
+#, fuzzy
+#~ msgid "Konqueror Integration"
+#~ msgstr "Samtvinnun við Konqueror"
+
+#~ msgid "Enable"
+#~ msgstr "Virkja"
+
+#~ msgid "Do Not Enable"
+#~ msgstr "Ekki virkja"
+
+#, fuzzy
+#~| msgid ""
+#~| "Some transfers are still running.\n"
+#~| "Are you sure you want to quit KGet?"
+#~ msgid ""
+#~ "Some transfers are still running.\n"
+#~ "Are you sure you want to close KGet?"
+#~ msgstr ""
+#~ "Það eru færslur í gangi.\n"
+#~ "Eru viss um að þú viljir loka KGet?"
+
+#, fuzzy
+#~ msgid "Enter Group Name"
+#~ msgstr "Pjetur G. Hjaltason, Arnar Leósson"
+
+#, fuzzy
+#~ msgid "Group name:"
+#~ msgstr "Pjetur G. Hjaltason, Arnar Leósson"
+
+#, fuzzy
+#~| msgid "Are you sure you want to delete this transfer?"
+#~ msgid "Are you sure you want to delete the selected transfer?"
+#~ msgid_plural "Are you sure you want to delete the selected transfers?"
+#~ msgstr[0] "Ertu viss um að þú viljir eyða þessari færslu?"
+#~ msgstr[1] "Ertu viss um að þú viljir eyða þessari færslu?"
+
+#, fuzzy
+#~ msgid "Confirm transfer delete"
+#~ msgstr "Opna flutning:"
+
+#, fuzzy
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Pjetur G. Hjaltason, Arnar Leósson"
+
+#, fuzzy
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "pjetur@pjetur.net, leosson@frisurf.no"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Automatic verification:"
+#~ msgstr "Lýsing"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Automatic verification"
+#~ msgstr "Áfangastaður:"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Keyservers:"
+#~ msgstr "Hraði"
+
+#, fuzzy
+#~ msgid "Rename"
+#~ msgstr "Sjálfgefin mappa"
+
+#~ msgid "Select Icon..."
+#~ msgstr "Veldu táknmynd..."
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Limit Maximum Downloads Per Group"
+#~ msgstr "Niðurhali lokið"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of downloads:"
+#~ msgstr "Hve oft á að reyna:"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed Limit"
+#~ msgstr "Hraði"
+
+#, fuzzy
+#~ msgid "Global download limit:"
+#~ msgstr "Niðurhali haldið áfram"
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid " KiB/s"
+#~ msgstr "%1 Kb/s"
+
+#, fuzzy
+#~ msgid "Global upload limit:"
+#~ msgstr "Niðurhali haldið áfram"
+
+#, fuzzy
+#~ msgid "Per transfer:"
+#~ msgstr "&Flutningur"
+
+#, fuzzy
+#~ msgid "Reconnect on Error or Broken Connection"
+#~ msgstr "Ef tenging slitnar"
+
+#~ msgid "Number of retries:"
+#~ msgstr "Hve oft á að reyna:"
+
+#, fuzzy
+#~ msgid "Retry after:"
+#~ msgstr "Endurtengjast eftir:"
+
+#, fuzzy
+#~ msgid " sec"
+#~ msgstr "sek"
+
+#, fuzzy
+#~ msgid "After Completing Downloads"
+#~ msgstr "Slökkva sjálfvirkt þegar niðurhali er lokið"
+
+#, fuzzy
+#~ msgid "Auto shutdown"
+#~ msgstr "Slekkur sjálfvirkt."
+
+#, fuzzy
+#~ msgid "Auto disconnect"
+#~ msgstr "Aftengist sjálfvirkt."
+
+#, fuzzy
+#~ msgid "Enable Web Interface"
+#~ msgstr "Nota hreyfimyndir"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Port:"
+#~ msgstr "Letur:"
+
+#, fuzzy
+#~ msgid "User:"
+#~ msgstr "Notandi:"
+
+#, fuzzy
+#~ msgid "Password:"
+#~ msgstr "Lykilorð:"
+
+#, fuzzy
+#~ msgid "Startup"
+#~ msgstr "Endurræ&sa"
+
+#, fuzzy
+#~ msgid "Enable animations"
+#~ msgstr "Nota hreyfimyndir"
+
+#, fuzzy
+#~ msgid "Show drop target"
+#~ msgstr "Sýna sleppispjald"
+
+#, fuzzy
+#~ msgid "Enable system tray icon"
+#~ msgstr "Nota hreyfimyndir"
+
+#, fuzzy
+#~| msgid "All the downloads are finished."
+#~ msgid "Execute action after all downloads have been finished:"
+#~ msgstr "Öllum niðurhölum lokið."
+
+#, fuzzy
+#~ msgid "At startup:"
+#~ msgstr "Endurræ&sa"
+
+#, fuzzy
+#~ msgid "Restore Download State"
+#~ msgstr "Niðurhali haldið áfram"
+
+#, fuzzy
+#~ msgid "Start All Downloads"
+#~ msgstr "Merkja ókláraðar færslur"
+
+#, fuzzy
+#~ msgid "Stop All Downloads"
+#~ msgstr "Merkja ókláraðar færslur"
+
+#, fuzzy
+#~ msgid "History"
+#~ msgstr "Opna flutning:"
+
+#, fuzzy
+#~ msgid "History backend:"
+#~ msgstr "Opna flutning:"
+
+#, fuzzy
+#~ msgid "Use as download manager for Konqueror:"
+#~ msgstr "Nota KGet sem niðurhalsstjóra fyrir Konqueror"
+
+#, fuzzy
+#~ msgid "Monitor clipboard for files to download"
+#~ msgstr "Þú valdir engar skrár til að hala niður."
+
+#~ msgid "Search Engines"
+#~ msgstr "Leitarvélar"
+
+#, fuzzy
+#~| msgid "Local File Name"
+#~ msgid "Engine Name"
+#~ msgstr "Staðbundið skráarheiti"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of connections per URL:"
+#~ msgstr "Hve oft á að reyna:"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgid "File Settings"
+#~ msgstr "Áætlun"
+
+#, fuzzy
+#~| msgid "Local File Name"
+#~ msgid "Filename:"
+#~ msgstr "Staðbundið skráarheiti"
+
+#, fuzzy
+#~ msgid "Quality:"
+#~ msgstr "Gæði:"
+
+#, fuzzy
+#~| msgid "Log Window"
+#~ msgid "Login Info"
+#~ msgstr "Annálagluggi"
+
+#, fuzzy
+#~ msgid "Username:"
+#~ msgstr "Sjálfgefin mappa"
+
+#, fuzzy
+#~ msgid "Path"
+#~ msgstr "Slóð"
+
+#, fuzzy
+#~ msgid "RegExp"
+#~ msgstr "Regl. segð"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Path:"
+#~ msgstr "Letur:"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Description:"
+#~ msgstr "Lýsing"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of simultaneous file downloads:"
+#~ msgstr "Hve oft á að reyna:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of mirrors per file:"
+#~ msgstr "Hve oft á að reyna:"
+
+#~ msgid "Mode:"
+#~ msgstr "Hamur:"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Remove Tracker"
+#~ msgstr "Opna flutning"
+
+#~ msgid "Change Tracker"
+#~ msgstr "Skipta um skrásetjara (tracker)"
+
+#, fuzzy
+#~ msgid "Update Trackers"
+#~ msgstr "&Flutningur"
+
+#, fuzzy
+#~ msgid "Restore Defaults"
+#~ msgstr "Endurheimta sjálfgefið"
+
+#~ msgid "Add Webseed"
+#~ msgstr "Bæta við vefsáningu"
+
+#, fuzzy
+#~ msgid "Remove Webseed"
+#~ msgstr "Halda áf&ram"
+
+#~ msgid "Chunks"
+#~ msgstr "Bútar"
+
+#, fuzzy
+#~| msgid "Total"
+#~ msgid "Total:"
+#~ msgstr "Alls"
+
+#~ msgid "Currently downloading:"
+#~ msgstr "Í niðurhali núna:"
+
+#, fuzzy
+#~ msgid "Downloaded:"
+#~ msgstr "Niðurhali haldið áfram"
+
+#~ msgid "Excluded:"
+#~ msgstr "Útilokaðir:"
+
+#, fuzzy
+#~ msgid "Left:"
+#~ msgstr "Vinstri:"
+
+#, fuzzy
+#~| msgid " Size: %1 "
+#~ msgid "Size:"
+#~ msgstr " Stærð: %1 "
+
+#~ msgid "Scanning data of torrent:"
+#~ msgstr "Yfirfer gögn straums:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of chunks found:"
+#~ msgstr "Hve oft á að reyna:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of chunks failed:"
+#~ msgstr "Hve oft á að reyna:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of chunks not downloaded:"
+#~ msgstr "Hve oft á að reyna:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of chunks downloaded:"
+#~ msgstr "Hve oft á að reyna:"
+
+#, fuzzy
+#~ msgid "0"
+#~ msgstr "0"
+
+#, fuzzy
+#~ msgid "Cancel"
+#~ msgstr "Hætta við"
+
+#, fuzzy
+#~ msgid "Stats"
+#~ msgstr "Endurræ&sa"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Seeders:"
+#~ msgstr "Hraði"
+
+#, fuzzy
+#~ msgid "Download speed:"
+#~ msgstr "Niðurhali haldið áfram"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Upload speed:"
+#~ msgstr "Hraði"
+
+#, fuzzy
+#~ msgctxt "chunks left"
+#~ msgid "Left:"
+#~ msgstr "Vinstri:"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgctxt "source-file"
+#~ msgid "Source:"
+#~ msgstr "Uppruni:"
+
+#, fuzzy
+#~ msgid "Upload limit per transfer:"
+#~ msgstr "Niðurhali haldið áfram"
+
+#, fuzzy
+#~| msgid "Limits"
+#~ msgid "No Limit"
+#~ msgstr "Takmörk"
+
+#, fuzzy
+#~ msgid "KiB"
+#~ msgstr "KiB"
+
+#, fuzzy
+#~ msgid "Download limit per transfer:"
+#~ msgstr "Niðurhali haldið áfram"
+
+#~ msgid "Folders"
+#~ msgstr "Möppur"
+
+#, fuzzy
+#~| msgid "Default Folder"
+#~ msgid "Default torrent folder:"
+#~ msgstr "Sjálfgefin mappa"
+
+#, fuzzy
+#~| msgid "Default Folder"
+#~ msgid "Default temporary folder"
+#~ msgstr "Sjálfgefin mappa"
+
+#, fuzzy
+#~ msgctxt "General options."
+#~ msgid "General"
+#~ msgstr "Almennt"
+
+#, fuzzy
+#~ msgid "General URL:"
+#~ msgstr "Almennt"
+
+#, fuzzy
+#~ msgid "Required"
+#~ msgstr "Beiðnir"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Verification:"
+#~ msgstr "Lýsing"
+
+#, fuzzy
+#~ msgid "*.metalink *.meta4|Metalink file (*.metalink *.meta4)"
+#~ msgstr "Opna &skrá"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgid "Date and time:"
+#~ msgstr "Tími eftir"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Version:"
+#~ msgstr "Lýsing"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "Name:"
+#~ msgstr "Nafn"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Name of the publisher"
+#~ msgstr "Hve oft á að reyna:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "URL to the publisher"
+#~ msgstr "Hve oft á að reyna:"
+
+#, fuzzy
+#~ msgctxt "Files as in files on a server"
+#~ msgid "Files:"
+#~ msgstr "Opna &skrá"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "&Import Links"
+#~ msgstr "Engir hlekkir"
+
+#, fuzzy
+#~ msgid "Show:"
+#~ msgstr "Sýna:"
+
+#, fuzzy
+#~ msgctxt "filter: show all file types"
+#~ msgid "&All"
+#~ msgstr "&Allar"
+
+#, fuzzy
+#~ msgid "A&udio"
+#~ msgstr "Hljó&ð"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgid "Contains"
+#~ msgstr "Tenging"
+
+#, fuzzy
+#~ msgid "Does Not Contain"
+#~ msgstr "Hlaða niður aftur"
+
+#, fuzzy
+#~ msgctxt "Check as in mark, not as in verify"
+#~ msgid "Chec&k Selected"
+#~ msgstr "Engar skrár valdar"
+
+#, fuzzy
+#~ msgid "Mirror:"
+#~ msgstr "Villa: "
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of connections:"
+#~ msgstr "Hve oft á að reyna:"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a URL"
+#~ msgstr "Ethernet"
+
+#, fuzzy
+#~ msgid "Priority:"
+#~ msgstr "Forgangur"
+
+#, fuzzy
+#~| msgid "Location (URL)"
+#~ msgid "Location:"
+#~ msgstr "Staðsetning (slóð)"
+
+#, fuzzy
+#~ msgid "Clear History"
+#~ msgstr "Hreinsa feril"
+
+#, fuzzy
+#~| msgid "Offline mode"
+#~ msgctxt "View modes"
+#~ msgid "View Modes"
+#~ msgstr "Ótengdur hamur"
+
+#, fuzzy
+#~ msgid "Date"
+#~ msgstr "Endurræ&sa"
+
+#, fuzzy
+#~ msgid "Host"
+#~ msgstr "Vél"
+
+#, fuzzy
+#~ msgid "Filter History"
+#~ msgstr "Opna flutning:"
+
+#, fuzzy
+#~ msgctxt "delete selected transfer"
+#~ msgid "Delete Selected"
+#~ msgstr "Engar skrár valdar"
+
+#, fuzzy
+#~ msgid "Download"
+#~ msgstr "Niðurhali haldið áfram"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgctxt "hash as a hash of type md5, sha1 etc."
+#~ msgid "Hash:"
+#~ msgstr "Letur:"
+
+#, fuzzy
+#~ msgid "Status:"
+#~ msgstr "Staða:"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgid "Remaining Time:"
+#~ msgstr "Tími eftir"
+
+#, fuzzy
+#~ msgid "Transfer Settings"
+#~ msgstr " Flutningar: %1 "
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Download Destination:"
+#~ msgstr "Áfangastaður:"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgctxt "No value has been set"
+#~ msgid "Not set"
+#~ msgstr "Engir hlekkir"
+
+#, fuzzy
+#~ msgid " KiB"
+#~ msgstr "KiB"
+
+#, fuzzy
+#~ msgid "Upload Limit:"
+#~ msgstr "Niðurhali haldið áfram"
+
+#, fuzzy
+#~ msgid "Download Limit:"
+#~ msgstr "Niðurhali haldið áfram"
+
+#, fuzzy
+#~| msgid "Maximum open connections:"
+#~ msgid "Maximum Share Ratio:"
+#~ msgstr "Hámarksfjöldi opina tenginga:"
+
+#, fuzzy
+#~ msgctxt "The available mirrors (servers) for downloading"
+#~ msgid "Mirrors"
+#~ msgstr "Villa"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgctxt "verification of the download (e.g. by using MD5)"
+#~ msgid "Verification"
+#~ msgstr "Áfangastaður:"
+
+#, fuzzy
+#~ msgid "Issuer:"
+#~ msgstr "Notandi:"
+
+#~ msgid "E-Mail:"
+#~ msgstr "Tölvupóstur:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Creation:"
+#~ msgstr "Áfangastaður:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Expiration:"
+#~ msgstr "Áfangastaður:"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Group Settings"
+#~ msgstr "Sjálfgefin mappa:"
+
+#, fuzzy
+#~| msgid "Default Folder"
+#~ msgid "Default folder:"
+#~ msgstr "Sjálfgefin mappa"
+
+#, fuzzy
+#~ msgid "Regular expression:"
+#~ msgstr "Regluleg segð:"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Maximum download speed:"
+#~ msgstr "Niðurhali lokið"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Maximum upload speed:"
+#~ msgstr "Niðurhali lokið"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Destination:"
+#~ msgstr "Áfangastaður:"
+
+#, fuzzy
+#~ msgid "Transfer group:"
+#~ msgstr "&Flutningur"
+
+#, fuzzy
+#~ msgid "&File"
+#~ msgstr "Opna &skrá"
+
+#, fuzzy
+#~ msgid "&Downloads"
+#~ msgstr "Niðurhali haldið áfram"
+
+#, fuzzy
+#~ msgid "&Settings"
+#~ msgstr "&Stillingar"
+
+#, fuzzy
+#~ msgid "&Help"
+#~ msgstr "&Hjálp"
+
+#, fuzzy
+#~ msgid "Main Toolbar"
+#~ msgstr "Aðaltækjaslá"
+
+#~ msgid "There are no links in the active frame of the current HTML page."
+#~ msgstr "Það eru engir hlekkir í virka hluta HTML-síðunnar"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Remove Tag"
+#~ msgstr "Opna flutning"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Tag Settings for the groups"
+#~ msgstr "Sjálfgefin mappa:"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgid "Tag Settings"
+#~ msgstr "Áætlun"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Available tags:"
+#~ msgstr "Opna flutning"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a new Tag"
+#~ msgstr "Ethernet"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a new tag"
+#~ msgstr "Ethernet"
+
+#~ msgid "Illegal token: %1"
+#~ msgstr "Ógilt skráningarmerki (token): %1"
+
+#~ msgid "Decode error"
+#~ msgstr "Afkóðunarvilla"
+
+#~ msgid "Unexpected end of input"
+#~ msgstr "Óvænt ending á inntaki"
+
+#~ msgid "Cannot convert %1 to an int"
+#~ msgstr "Gat ekki umbreytt %1 í heiltölu (int)"
+
+#~ msgid "Torrent is incomplete."
+#~ msgstr "er ókláraður."
+
+#~ msgid "Cannot open %1 : %2"
+#~ msgstr "Gat ekki opnað %1 : %2"
+
+#~ msgid "Cannot open %1 for writing : readonly filesystem"
+#~ msgstr "Gat ekki opnað %1 til skrifunar : skrifvarið skráakerfi (readonly)"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file %1 : %2"
+#~ msgstr ""
+#~ "Gat ekki lesið skrána:\n"
+#~ "%1"
+
+#~ msgid "Error : Reading past the end of the file %1"
+#~ msgstr "Villa : las framyfir enda skráarinnar %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Failed to seek file %1 : %2"
+#~ msgstr ""
+#~ "Gat ekki lesið skrána:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Error while reading file:\n"
+#~| "%1"
+#~ msgid "Error reading from %1"
+#~ msgstr ""
+#~ "Villa við lestur á skránni:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not write to file:\n"
+#~| "%1"
+#~ msgid "Failed to write to file %1 : %2"
+#~ msgstr ""
+#~ "Gat ekki skrifað í skrá:\n"
+#~ "%1"
+
+#~ msgid "Cannot preallocate diskspace : %1"
+#~ msgstr "Gat ekki tekið frá diskpláss : %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open index file %1 : %2"
+#~ msgstr ""
+#~ "Gat ekki opnað skrána:\n"
+#~ "%1"
+
+#~ msgid "Failed to open %1 : %2"
+#~ msgstr "Mistókst að opna %1 : %2"
+
+#~ msgid "Failed to create %1 : %2"
+#~ msgstr "Gat ekki búið til %1 : %2"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot create file %1 : %2"
+#~ msgstr ""
+#~ "Gat ekki lesið skrána:\n"
+#~ "%1"
+
+#~ msgid "Failed to write first chunk to DND file : %1"
+#~ msgstr "Gat ekki skrifað fyrsta bútinn í DND skrá: %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not write to file:\n"
+#~| "%1"
+#~ msgid "Failed to write last chunk to DND file : %1"
+#~ msgstr ""
+#~ "Gat ekki skrifað í skrá:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open file %1 : %2"
+#~ msgstr ""
+#~ "Gat ekki opnað skrána:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgctxt "OK as in 'finished'"
+#~| msgid "OK"
+#~ msgid "OK"
+#~ msgstr "Í lagi"
+
+#~ msgid "Announcing"
+#~ msgstr "Tilkynni"
+
+#, fuzzy
+#~ msgid "Error: %1"
+#~ msgstr "Villa: "
+
+#~ msgid "Redirect without a redirect location"
+#~ msgstr "a nýtt."
+
+#~ msgid "Unable to resolve hostname %1"
+#~ msgstr "Tókst ekki að greina vélarheiti %1"
+
+#~ msgid "Invalid response from tracker"
+#~ msgstr "Ógilt svar frá skrásetjara (tracker)"
+
+#~ msgid "Invalid data from tracker"
+#~ msgstr "Ógild gögn frá skrásetjara (tracker)"
+
+#~ msgid "Invalid tracker URL"
+#~ msgstr "Ógild slóð á skrásetjara (tracker)"
+
+#~ msgid "Cannot bind to udp port %1 or the 10 following ports."
+#~ msgstr "Get ekki bundist udp gátt %1 eða 10 gáttum þar á eftir."
+
+#~ msgid "Unknown client"
+#~ msgstr "Óþekktur biðlari"
+
+#~ msgid "Unable to create %1 : %2"
+#~ msgstr "Gat ekki búið til %1 : %2"
+
+#, fuzzy
+#~| msgid "Not Deleted"
+#~ msgid "Not started"
+#~ msgstr "Ekki eytt"
+
+#~ msgid "Seeding completed"
+#~ msgstr "Sáningu lokið"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgctxt "Status of a torrent file"
+#~ msgid "Seeding"
+#~ msgstr "Áætlun"
+
+#, fuzzy
+#~ msgid "Downloading"
+#~ msgstr "Niðurhali haldið áfram"
+
+#, fuzzy
+#~| msgid "Stopped"
+#~ msgid "Stopped"
+#~ msgstr "Stöðvað"
+
+#~ msgid "Allocating diskspace"
+#~ msgstr "Úthluta diskplássi"
+
+#~ msgid "Queued for seeding"
+#~ msgstr "Í biðröð fyrir"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Queued for downloading"
+#~ msgstr "Hve oft á að reyna:"
+
+#~ msgid "Checking data"
+#~ msgstr "Yfirfer gögn"
+
+#~ msgid "Stopped. No space left on device."
+#~ msgstr "Stöðvað. Ekkert pláss eftir á tækinu."
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open file %1: %2"
+#~ msgstr ""
+#~ "Gat ekki opnað skrána:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot create index file: %1"
+#~ msgstr ""
+#~ "Gat ekki lesið skrána:\n"
+#~ "%1"
+
+#~ msgid " Unable to open torrent file %1 : %2"
+#~ msgstr "Gat ekki opnað torrent skrá %1 : %2"
+
+#, fuzzy
+#~ msgid "Parse Error"
+#~ msgstr "Þáttunarvilla"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open file : %1 : %2"
+#~ msgstr ""
+#~ "Gat ekki opnað skrána:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Stay Connected"
+#~ msgid "Not connected"
+#~ msgstr "Halda tengingu"
+
+#~ msgid "Resolving proxy %1:%2"
+#~ msgstr "Greini milliþjón (proxy) %1:%2"
+
+#~ msgid "Resolving hostname %1"
+#~ msgstr "Greini vélarheiti %1"
+
+#, fuzzy
+#~| msgid "Connection Type"
+#~ msgid "Connection closed"
+#~ msgstr "Tegund tengingar"
+
+#~ msgid "Error: request failed: %1"
+#~ msgstr "Villa: fyrirspurn mistókst: %1"
+
+#, fuzzy
+#~| msgid "Stay Connected"
+#~ msgid "Connected"
+#~ msgstr "Halda tengingu"
+
+#~ msgid "Error: Failed to connect to webseed"
+#~ msgstr "Villa: tókst ekki að tengjast vefsáningu"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgid "Connecting"
+#~ msgstr "Tenging"
+
+#~ msgid "Failed to connect to webseed"
+#~ msgstr "Gat ekki tengst vefsáningu"
+
+#~ msgid "Failed to resolve hostname of webseed"
+#~ msgstr "Mistókst að greina vélarheiti vefsáningarinnar"
+
+#~ msgid "Error: failed to connect, server not responding"
+#~ msgstr "Villa: tókst ekki að tengjast, þjónn svarar ekki"
+
+#~ msgid "Error: request timed out"
+#~ msgstr "Villa: fyrirspurn rann út á tíma"
+
+#~ msgid "Redirected without a new location."
+#~ msgstr "a nýtt."
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "Not in use"
+#~ msgstr "Engir hlekkir"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not write to file:\n"
+#~| "%1"
+#~ msgid "Cannot write to %1 : %2"
+#~ msgstr ""
+#~ "Gat ekki skrifað í skrá:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Copy file from: %1"
+#~ msgid "Cannot read from %1"
+#~ msgstr "Afrita skrá frá: %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open log file %1 : %2"
+#~ msgstr ""
+#~ "Gat ekki opnað skrána:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot create directory %1"
+#~ msgstr ""
+#~ "Gat ekki lesið skrána:\n"
+#~ "%1"
+
+#~ msgid "Cannot symlink %1 to %2: %3"
+#~ msgstr "Get ekki gert tákntengi (symlink) fyrir %1 til %2: %3"
+
+#~ msgid "Cannot move %1 to %2: %3"
+#~ msgstr "Get ekki fært %1 í %2: %3"
+
+#~ msgid "Cannot copy %1 to %2: %3"
+#~ msgstr "Get ekki afritað %1 í %2: %3"
+
+#~ msgid "Cannot delete %1: %2"
+#~ msgstr "Get ekki eytt %1: %2"
+
+#, fuzzy
+#~ msgid "Cannot create %1: %2"
+#~ msgstr "Get ekki búið til %1: %2"
+
+#~ msgid "Cannot calculate the filesize of %1: %2"
+#~ msgstr "Gat ekki reiknað skráarstærð %1: %2"
+
+#~ msgid "Cannot calculate the filesize : %1"
+#~ msgstr "Gat ekki reiknað skráarstærð : %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file: %1"
+#~ msgstr ""
+#~ "Gat ekki lesið skrána:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot seek in file : %1"
+#~ msgstr ""
+#~ "Gat ekki opnað skrána:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "General"
+#~ msgstr "Almennt"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgid "Connections"
+#~ msgstr "Tenging"
+
+#, fuzzy
+#~ msgid "Tracker"
+#~ msgstr "&Flutningur"
+
+#, fuzzy
+#~ msgid "Disk Input/Output"
+#~ msgstr "Inntak/Úttak disks"
+
+#, fuzzy
+#~ msgid "Add"
+#~ msgstr "Bæta við"
+
+#, fuzzy
+#~| msgid "Not Deleted"
+#~ msgid "Delete"
+#~ msgstr "Ekki eytt"
+
+#, fuzzy
+#~ msgid "Configure..."
+#~ msgstr "Stilla..."
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Details for: %1"
+#~ msgstr "Sjálfgefin mappa:"
+
+#, fuzzy
+#~ msgid "All downloads"
+#~ msgstr "Merkja ókláraðar færslur"
+
+#, fuzzy
+#~ msgid "Finished downloads"
+#~ msgstr "Lokið"
+
+#, fuzzy
+#~ msgid "Transfers:"
+#~ msgstr "&Flutningur"
+
+#, fuzzy
+#~ msgid "Downloads"
+#~ msgstr "Niðurhali haldið áfram"
+
+#, fuzzy
+#~ msgid "Transfer details:"
+#~ msgstr " Flutningar: %1 "
+
+#, fuzzy
+#~ msgid "Transfer List"
+#~ msgstr "Opna flutning:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of threads:"
+#~ msgstr "Hve oft á að reyna:"
+
+#~ msgid "License:"
+#~ msgstr "Leyfi:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Name of the license"
+#~ msgstr "Hve oft á að reyna:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "URL to the license"
+#~ msgstr "Hve oft á að reyna:"
+
+#, fuzzy
+#~| msgid "Delayed"
+#~ msgctxt "The transfer is delayed"
+#~ msgid "Delayed"
+#~ msgstr "Tafðar"
+
+#~ msgid ""
+#~ "Destination file \n"
+#~ "%1\n"
+#~ "already exists.\n"
+#~ "Do you want to overwrite it?"
+#~ msgstr ""
+#~ "Áfangaskráin\n"
+#~ "%1\n"
+#~ "er þegar til.\n"
+#~ "Viltu skrifa yfir hana?"
+
+#, fuzzy
+#~ msgid "Overwrite destination"
+#~ msgstr "&Opna áfangastað"
+
+#~ msgid "Queued"
+#~ msgstr "Í biðröð"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Current Tracker"
+#~ msgstr "Opna flutning"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgid "Scrape"
+#~ msgstr "Uppruni:"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Available Trackers"
+#~ msgstr "Opna flutning"
+
+#, fuzzy
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Delete Selected"
+#~ msgstr "Engar skrár valdar"
+
+#, fuzzy
+#~ msgid "We are sorry"
+#~ msgstr "Hreinsa feril"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Rename transfer"
+#~ msgstr "Opna flutning"
+
+#, fuzzy
+#~ msgid "Download URL again?"
+#~ msgstr "Hlaða niður aftur"
+
+#, fuzzy
+#~ msgctxt "file in a filsystem"
+#~ msgid "File"
+#~ msgstr "Opna &skrá"
+
+#, fuzzy
+#~ msgid "Are you sure that you want to remove all selected groups?"
+#~ msgstr "Ertu viss um að þú viljir eyða þessum færslum?"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "Name"
+#~ msgstr "Nafn"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgid "Remaining Time"
+#~ msgstr "Tími eftir"
+
+#, fuzzy
+#~ msgid "KGet - Download Manager"
+#~ msgstr "Niðurhalsstjóri"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgctxt "@label transfer source"
+#~ msgid "Source:"
+#~ msgstr "Uppruni:"
+
+#, fuzzy
+#~| msgid "0 B/s"
+#~ msgid "kBi"
+#~ msgstr "0 b/s"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file : %1"
+#~ msgstr ""
+#~ "Gat ekki lesið skrána:\n"
+#~ "%1"

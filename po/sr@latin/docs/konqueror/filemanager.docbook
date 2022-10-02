@@ -1,0 +1,1541 @@
+<chapter id="filemanager">
+<chapterinfo>
+<authorgroup>
+<author
+><personname
+><firstname
+>Pamela</firstname
+> <surname
+>Roberts</surname
+></personname
+></author>
+<othercredit role="translator"
+><firstname
+>Dragan</firstname
+><surname
+>Pantelić</surname
+><affiliation
+><address
+><email
+>falcon-10@gmx.de</email
+></address
+></affiliation
+><contrib
+>prevod</contrib
+></othercredit
+> 
+</authorgroup
+> 
+
+<date
+>7. 2. 2012.</date>
+<releaseinfo
+>KDE 4.9</releaseinfo>
+</chapterinfo>
+
+<title
+><application
+>K‑osvajač</application
+> menadžer fajlova</title>
+
+<sect1 id="dirfolders">
+<title
+>Fascikle i putanje</title>
+<para
+>Pod Unixom i Linuxom, sve fascikle su uređene u prostu hijerarhiju. Počinjući od fascikle na vrhu (znane i kao <emphasis
+>korena fascikla</emphasis
+>), struktura se spušta i grana u potfascikle i fajlove. To znači da iz bilo koje fascikle možete dospeti u bilo koju drugu tako što idete „nagore“ dok ne dostignete zajedničku tačku, zatim „nadole“ kroz odgovarajuće potfascikle, dok ne stignete do ciljne.</para>
+
+<para
+>Položaj bilo kojeg fajla ili fascikle u strukturi (znanoj i kao <emphasis
+>stablo fascikli</emphasis
+>) može se opisati „putanjom“, uređenim spiskom fascikli kroz koje se treba spustiti do ciljne fascikle ili fajla. Na primer, <filename class="directory"
+>/home/pera</filename
+> je potfascikla <filename class="directory"
+>pera</filename
+> u potfascikli <filename class="directory"
+>home</filename
+> u fascikli najvišeg nivoa, a <filename
+>/home/pera/razno.txt</filename
+> je fajl <filename
+>razno.txt </filename
+> u toj potfascikli. Vodeće <filename class="directory"
+>/</filename
+> u ovim putanjama predstavlja fasciklu na vrhu.</para>
+
+<para
+>Svaka fascikla dostupna na sistemu — uključujući one na drugim particijama hard‑diska, USB uređaju ili CD‑ROM‑u — pojaviće se u stablu ispod /. Njihove tačne putanje zavisiće od podešenosti sistema (pogledajte i sekciju <link linkend="removable-devices"
+>uklonjivim uređajima</link
+>). </para>
+<para
+>Svaki korisnik na Unix sistemu ima svoju „domaću“ fasciklu, za držanje ličnih fajlova i postavki. Na primer, <filename class="directory"
+>/home/pera</filename
+> i <filename class="directory"
+>/home/vanja</filename
+>. Simbol <filename
+>~</filename
+> često se koristi da predstavi korisnikovu domaću fasciklu, tako da <filename
+>~/pismo.txt</filename
+> upućuje na fajl <filename
+>pismo.txt</filename
+> vašoj domaćoj fascikli.</para>
+<para
+>Umesto ‘fascikla’ često se koristi i izraz ‘direktorijum’.</para>
+</sect1>
+
+<sect1 id="viewmode">
+<title
+>Režimi prikaza</title>
+<para
+>U režimu menadžera fajlova, <application
+>K‑osvajač</application
+> nabraja fajlove i potfascikle koje su sadržane unutar date fascikle, i može da vas snabde nekim podacima o njima. Putanja tekuće fascikle prikazana je u traci lokacije. Način na koji <application
+>K‑osvajač</application
+> prikazuje fajlove i fascikle uglavnom zavisi od režima prikaza, koji možete odabrati iz podmenija <menuchoice
+><guimenu
+>Prikaz</guimenu
+><guisubmenu
+>Način prikaza</guisubmenu
+></menuchoice
+>. Dostupni režimi prikaza predstavljeni su u narednom. </para>
+
+<note
+><para
+>Za režim menadžera fajlova <application
+>K‑osvajač</application
+> koristi ugnežđenu komponentu <application
+>Dolphina</application
+>.</para
+></note>
+<!-- begin copy from dolphin docbook synced for 4.10--> 
+<itemizedlist>
+
+<listitem
+><para
+>U prikazu ikona, koji je podrazumevan, fajlovi su predstavljeni ikonom koja ukazuje na tip fajla, a potfascikle ikonom fascikle. Njihova imena data su podno ikone. </para
+></listitem>
+
+<listitem
+><para
+>Sažeti prikaz predstavlja sadržaj fascikle kao ikone sa imenom sa strane, grupisane u kolone nalik na sažeti prikaz u <acronym
+>KDE</acronym
+> fajl dijalogu. </para
+></listitem>
+
+<listitem
+><para
+>U prikazu detalja sadržaj fascikle daje se kao spisak stavki, gde je za svaku navedeno ime, veličina i datum poslednje izmene. Još neke kolone mogu se uključiti desnim klikom na zaglavlje kolona. </para>
+<para
+>U kontekstnom meniju reda zaglavlja možete izabrati između posebne i automatske širine kolona. Automatska širina znači da će svaka kolona biti široka koliko najduža stavka u njoj, osim kolona <guilabel
+>ime</guilabel
+> kod koje se nastavak zamenjuje sa „...“. </para>
+<para
+>Redosled kolona može se izmeniti prevlačenjem zaglavlja kolona. </para>
+<para
+>Prikaz sa detaljima stavlja tekuću fasciklu u stabloliki režim (ako je uključeno <guilabel
+>Proširive fascikle</guilabel
+>). Svaka potfascikla se može „raširiti“ ili „sažeti“ klikom na ikonu <guiicon
+>&gt;</guiicon
+> ili <guiicon
+>v</guiicon
+> kraj nje. </para>
+</listitem>
+</itemizedlist>
+
+<screenshot>
+<screeninfo
+>Grupisani prikaz</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="grouping-view.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Grupisani prikaz</phrase>
+</textobject>
+<caption
+><para
+>Svi režimi prikaza podržavaju grupisanje po tipu ređanja izabranom pod <menuchoice
+><guimenu
+>Prikaz</guimenu
+><guisubmenu
+>Poređaj po</guisubmenu
+></menuchoice
+>.</para
+></caption>
+</mediaobject>
+</screenshot>
+<!-- end copy from dolphin docbook --> 
+
+<sect2 id="filetipinfo">
+<title
+>Oblačić fajla</title>
+<para
+>Ako popunite kućicu <guilabel
+>Oblačići</guilabel
+> na stranici <menuchoice
+> <guimenu
+>Upravljanje fajlovima</guimenu
+><guimenuitem
+>Opšte</guimenuitem
+></menuchoice
+> <application
+>K‑osvajačevog</application
+> dijaloga za podešavanje, dobijaćete mali, iskačući informacioni prozor dok lebdite pokazivačem miša iznad imena ili ikone fajla ili fascikle. </para>
+</sect2>
+
+<sect2 id="previews">
+<title
+>Pregledi fajlova</title>
+<para
+>Pod jezičkom <guilabel
+>Pregledi</guilabel
+> na stranici postavki <menuchoice
+><guimenu
+>Upravljanje fajlovima</guimenu
+> <guimenuitem
+>Opšte</guimenuitem
+></menuchoice
+> možete uključiti preglede za određene tipove fajlova.</para>
+<para
+>Ovo generalno znači da će ikona fajla biti zamenjena malom slikom koja prikazuje njegov sadržaj.</para>
+<para
+>Pošto <application
+>K‑osvajač</application
+> za stvaranje pregleda mora da pročita mnogo drugih podataka pored samog imena fajla, pregledi možda nisu pogodni kad se prikazuju fajlovi sa udaljenog sistema. Ako čitanje dopunskih podataka sa udaljenih sistema oduzima previše vremena, pri dnu jezička <guilabel
+>Pregledi</guilabel
+> možete zadati veličinu fajla iznad koje će pregled biti isključen.</para>
+</sect2>
+</sect1>
+
+<!-- begin copy from dolphin docbook synced for 4.10--> 
+<sect1 id="view-properties">
+<title
+>Svojstva prikaza fascikle</title>
+
+<para
+>Sledeće postavke određuju kako se sadržaj fascikle prikazuje u <application
+>K‑osvajaču</application
+>, i podrazumevano se skladište za svaku fasciklu zasebno:<itemizedlist
+> <listitem
+><para
+>Režim prikaza (ikone, sažeto, detalji).</para
+></listitem
+><listitem
+><para
+>Ređanje stavki, koje čini atribut po kome se ređa (ime, veličina...) i smer ređanja (rastuće, opadajuće).</para
+></listitem
+><listitem
+><para
+>Međusobno ređanje fajlova i fascikli — da li sve fascikle smestiti pre svih fajlova?</para
+></listitem
+><listitem
+><para
+>Pregledi — da li ih koristiti mesto ikona (na osnovu postavki <link linkend="previews"
+>pod jezičkom <guilabel
+>Pregledi</guilabel
+> u opštim postavkama <application
+>K‑osvajača</application
+></link
+>)?</para
+></listitem
+><listitem
+><para
+>Da li su stavke grupisane u prikazima?</para
+></listitem
+><listitem
+><para
+>Da li prikazivati skrivene fajlove?</para
+></listitem
+><listitem
+><para
+>Koje još podatke (pored imena) treba prikazati u prikazima ikona i detalja?</para
+></listitem
+></itemizedlist
+>Svojstva prikaza se mogu podesiti kroz meni <menuchoice
+><guimenu
+>Prikaz</guimenu
+></menuchoice
+>, a neka (poput režima prikaza) i preko dugmadi na traci alatki. </para>
+
+<sect2 id="view-properties-dialog">
+<title
+>Dijalog svojstava prikaza</title>
+
+<para>
+
+<screenshot>
+<screeninfo
+>Snimak ekrana sa dijalogom svojstava prikaza.</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="viewproperties-dialog.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Dijalog svojstava prikaza.</phrase>
+</textobject>
+<caption
+><para
+>Dijalog svojstava prikaza.</para
+></caption>
+</mediaobject>
+</screenshot>
+Dijalog <guilabel
+>Svojstva prikaza</guilabel
+> može poslužiti za brzo menjanje nekoliko svojstava odjednom. Izmene mogu važiti za tekuću fasciklu, za tekuću fasciklu i sve potfascikle, ili čak za sve fascikle, u zavisnosti od izbora načinjenih u odeljku <guilabel
+>Primeni svojstva prikaza na</guilabel
+>. </para>
+
+<para
+>Ako je uključeno <guilabel
+>Ova svojstva prikaza su podrazumevana</guilabel
+>, izabrana svojstva prikaza biće korišćena za sve fascikle koje još uvek nemaju sopstvena prilagođena svojstva. </para>
+
+</sect2>
+
+</sect1>
+<!-- end copy from dolphin docbook -->
+
+<sect1 id="navigation">
+<title
+>Navigacija</title>
+<para
+>Da biste <application
+>K‑osvajačem</application
+> došli do nekog fajla, prvo treba da se prošetate kroz stablo fascikli do fascikle koja ga sadrži.</para>
+
+<para
+>Za kretanje između fascikli, prosto idite nagore i nadole, uz i niz stablo:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Da siđete u potfasciklu, kliknite <mousebutton
+>levim</mousebutton
+> na njeno ime ili ikonu. Ili, ako ste je već „izabrali“ (v. ispod), samo pritisnite <keycap
+>Enter</keycap
+>.</para
+></listitem
+> 
+<listitem
+><para
+>Za kretanje uz stablo fascikli, možete kliknuti na dugme <guiicon
+>Gore</guiicon
+> na traci alatki, pritisnuti <keycombo action="simul"
+><keycap
+>Alt</keycap
+><keysym
+>strelicu nagore</keysym
+></keycombo
+>, ili upotrebiti stavku menija <menuchoice
+><guimenu
+>Kretanje</guimenu
+><guimenuitem
+>Gore</guimenuitem
+></menuchoice
+>.</para
+></listitem>
+</itemizedlist>
+
+<para
+>Da „izaberete“ fajl ili fasciklu u prikazanoj fascikli, a da je pritom ne otvorite, koristite tastere strelica <keysym
+>gore</keysym
+> i <keysym
+>dole</keysym
+> za kretanje kroz stavke. Izabrana stavka biće istaknuta, a neki podaci o njoj prikazani u traci stanja.</para>
+
+<para
+>Postavljanje <link linkend="viewmode"
+>režima prikaza</link
+> na prikaz detalja može vam pomoći da uočite fascikle u stablu ispod trenutne; u ovom režimu svaka fascikla prikazana je kvadratićem sleva. Ako kvadratić sadrži znak &lt;, <mousebutton
+>levi</mousebutton
+> klik na kvadratić (ne na ime ili ikonu fascikle) prikazaće podstablo fajlova i potfascikli sadržanih u toj fascikli. Kvadratić će se zatim promeniti u znak v. Kliknite <mousebutton
+>levim</mousebutton
+> na njega da sažmete podstablo. Pošto ste našli traženu fasciklu, kliknite <mousebutton
+>levim</mousebutton
+> na njeno ime ili ikonu da je otvorite.</para>
+
+<para
+><link linkend="sidebar"
+>Bočna traka</link
+> takođe vam može pomoći u kretanju kroz fajl sistem.</para>
+
+<para
+>Na bilo koju fasciklu direktno možete otići upisom njene putanje u traku lokacije, ili u polje dijaloga pozvanog stavkom menija <menuchoice
+><guimenu
+>Fajl</guimenu
+><guimenuitem
+>Otvori lokaciju</guimenuitem
+></menuchoice
+> ili prečicom <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>O</keycap
+></keycombo
+>. Dok kucate, može vam pomoći <application
+>K‑osvajačeva</application
+> mogućnost <link linkend="path-complete"
+>dopune teksta</link
+>. Ne zaboravite da imena fajlova i fascikli pod Unixom razlikuju veličinu slova.</para>
+
+<para
+>Pošto ste otišli na novu fasciklu, na prethodnu se možete vratiti dugmetom <guiicon
+>Nazad</guiicon
+> na traci alatki, stavkom menija <menuchoice
+><guimenu
+>Kretanje</guimenu
+> <guimenuitem
+>Nazad</guimenuitem
+></menuchoice
+>, ili prečicom <keycombo action="simul"
+><keycap
+>Alt</keycap
+><keysym
+>strelica levo</keysym
+></keycombo
+>. Kad se jednom vratite unazad, možete opet napred dugmetom <guiicon
+>Napred</guiicon
+> na traci alatki, stavkom menija <menuchoice
+><guimenu
+>Kretanje</guimenu
+> <guimenuitem
+>Napred</guimenuitem
+></menuchoice
+>, ili prečicom <keycombo action="simul"
+><keycap
+>Alt</keycap
+><keysym
+>strelica desno</keysym
+></keycombo
+>.</para>
+
+<para
+>Alternativno, možete otići u roditeljsku fasciklu klikom na <guiicon
+>Gore</guiicon
+> na traci alatki, stavkom menija <menuchoice
+><guimenu
+>Kretanje</guimenu
+> <guimenuitem
+>Gore</guimenuitem
+></menuchoice
+>, ili prečicom <keycombo action="simul"
+><keycap
+>Alt</keycap
+><keysym
+>strelica gore</keysym
+></keycombo
+>.</para>
+
+<tip
+><para
+>Klikom na kvačku desno od dugmeta za nagore, nazad ili napred na traci alatki, ili izborom ovih stavki iz menija <guimenu
+>Kretanje</guimenu
+>, dobija se podmeni nedavno posećenih lokacija.</para>
+</tip>
+<!-- 4.5 -->
+<sect2 id="file-find">
+<title
+>Nalaženje fajlova i fascikli</title>
+
+<para
+>Ako ne znate ili ne možete da se setite gde se na sistemu nalazi neki fajl ili fascikla, kliknite na dugme <guiicon
+>Nađi fajl...</guiicon
+> na traci alatki, ili pozovite stavku menija <menuchoice
+><guimenu
+>Alatke</guimenu
+><guimenuitem
+>Nađi fajl...</guimenuitem
+></menuchoice
+>. Ovim pokrećete program za traženje fajlova <application
+>K‑nalazač</application
+>. Pomoć za upotrebu potražite u <ulink url="help:/kfind/index.html"
+>priručniku <application
+>K‑nalazača</application
+></ulink
+>. </para>
+
+<note
+><para
+>Ako ime fajla ili fascikle počinje tačkom, onda je to „skriveni“ fajl ili fascikla, i <application
+>K‑osvajač</application
+> ih normalno neće prikazivati. Da biste videli i skrivene fajlove ili fascikle, upotrebite stavku menija <menuchoice
+><guimenu
+>Prikaz</guimenu
+><guimenuitem
+>Skriveni fajlovi</guimenuitem
+></menuchoice
+>.</para>
+
+<para
+>Drugi razlog što <application
+>K‑osvajač</application
+> možda ne prikazuje fajl ili fasciklu koju tražite, jeste što vam je priključak <link linkend="konq-plugin"
+>filtera prikaza</link
+> podešen da prikazuje samo izvesne tipove fajlova.</para>
+</note>
+
+</sect2>
+
+<sect2 id="removable-devices">
+<title
+>Uklonjivi uređaji</title>
+
+<para
+>Svaki uklonjivi uređaj (USB štapić, flopi i CD‑ROM jedinica, druge particije hard‑diska na sistemu) obično će se pojaviti pod jednom od fascikla <filename class="directory"
+>/</filename
+>, <filename class="directory"
+>/media</filename
+>, <filename class="directory"
+>/mnt</filename
+>, <filename class="directory"
+>/auto</filename
+>, otprilike sa ovakvom putanjom: <filename class="directory"
+>/mnt/floppy</filename
+> ili <filename class="directory"
+>/cdrom</filename
+>. Detalji će zavisiti od podešenosti sistema.</para>
+
+<para
+>Pod Unixom, uklonjivi uređaj se mora „montirati“ (naredba <command
+>mount</command
+>) pošto ga ubacite u jedinicu, isto kao i druga particija hard‑diska kad želite da joj pristupite. Takođe, uklonjivi uređaj morate „demontirati“ pre nego što ga fizički uklonite, kako bi sistem registrovao da više nije dostupan.</para>
+
+<para
+>Kako ćete ovo uraditi zavisi od postave sistema:</para>
+
+<itemizedlist>
+
+<listitem
+><para
+>Preko izveštavača o uređajima.</para>
+<para
+>U <acronym
+>KDE</acronym
+> sesiji, kada ubacite uklonjivi uređaj iskočiće će prozor <ulink url="help:/plasma-desktop/index.html#device-notifier"
+>izveštavača o uređajima</ulink
+>. U njemu možete izabrati odgovarajući program za dati medijum, ili samo montirati uređaj.</para>
+</listitem>
+
+<listitem
+><para
+>Možda vam na površi stoje ikone nekih uklonjivih uređaja, u kom slučaju kliknete <mousebutton
+>levim</mousebutton
+> na ikonu da montirate medijum. Time ćete takođe dozvati prozor <application
+>K‑osvajača</application
+> sa prikazom sadržaja tog medijuma. Da medijum demontirate, kliknite <mousebutton
+>desnim</mousebutton
+> na ikonu i odaberite stavku <guimenuitem
+>Demontiraj</guimenuitem
+>. Ako želite sami da pripremite jednu ovakvu ikonu, posetite sekciju <link linkend="making"
+>„Napravi“</link
+> ovog priručnika.</para
+></listitem>
+
+<listitem
+><para
+>Montirati možete i na tradicionalan način, unošenjem u terminalskom prozoru:</para>
+<para
+><userinput
+><command
+>mount /mnt/floppy</command
+></userinput
+></para>
+<para
+>da montirate, na primer, flopi jedinicu, i</para>
+<para
+><userinput
+><command
+>umount /mnt/floppy</command
+></userinput
+></para>
+<para
+>da je demontirate (pazite: <command
+>umount</command
+>, ne <command
+>unmount</command
+>). </para>
+<note
+><para
+>Pre nego da otvarate terminal da biste izvršili <command
+>mount</command
+> ili <command
+>umount</command
+>, možda će vam zgodnije doći <application
+>K‑osvajačeva</application
+> mogućnost izvršavanja naredbi školjke, <menuchoice
+><guimenu
+>Alatke</guimenu
+><guimenuitem
+>Izvršavanje naredbe školjke</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>E</keycap
+></keycombo
+>). </para
+></note>
+
+</listitem>
+
+</itemizedlist>
+</sect2>
+
+</sect1>
+<!-- 4.5-->
+<sect1 id="deleting">
+<title
+>Brisanje fajlova i fascikli</title>
+
+<para
+><application
+>K‑osvajač</application
+> pruža dva načina da se otarasite neželjenog fajla ili fascikle:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Možete stavku premestiti u fasciklu <filename
+>Trash</filename
+> (smeće), što je sigurniji metod, pošto je možete povratiti ako shvatite da ste napravili grešku.</para
+></listitem
+> 
+
+<listitem
+><para
+>Možete stavku prosto obrisati, što uklanja unos iz fascikle i vraća sistemu prostor na disku njome zauzet kao slobodan, isto kao naredba <command
+>rm</command
+>.</para>
+<para
+>Ako želite da koristite ovu mogućnost popunite kućicu <guilabel
+>Brisanje u menijima zaobilazi smeće</guilabel
+> na stranici postavki <guilabel
+>Upravljanje fajlovima</guilabel
+>.</para
+></listitem>
+</itemizedlist>
+
+<para
+>Najjednostavniji način da uklonite fajl ili fasciklu jeste da stavite pokazivač miša iznad imena ili ikone i kliknete <mousebutton
+>desnim</mousebutton
+>, čime ćete dozvati meni sa stavkama <guimenuitem
+>Premesti u smeće</guimenuitem
+> i <guimenuitem
+>Obriši</guimenuitem
+>.</para>
+
+<para
+>Ili, ako ste „izabrali“ unos, meni <guimenu
+>Uređivanje</guimenu
+> pruža vam iste te stavke (<guimenuitem
+>Premesti u smeće</guimenuitem
+> i <guimenuitem
+>Obriši</guimenuitem
+>).</para>
+
+<para
+>Taster <keycap
+>Delete</keycap
+> premešta odabrane stavke u smeće.</para>
+
+<para
+><keycombo action="simul"
+><keycap
+>Shift</keycap
+><keycap
+>Delete</keycap
+></keycombo
+> neposredno i neopozivo briše izabrane stavke.</para>
+
+<note
+><para
+>Ako nemate potrebne dozvole, fajl ili fasciklu nećete moći da premestite ili obrišete.</para
+></note>
+
+</sect1>
+<!-- 4.5-->
+<sect1 id="moving">
+<title
+>Premeštanje i kopiranje</title>
+
+<para
+>Za kopiranje fajla ili potfascikle između fascikli, možete:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Postaviti pokazivač miša iznad imena ili ikone i kliknuti <mousebutton
+>desnim</mousebutton
+>, što će dozvati meni sa stavkom <guimenuitem
+>Kopiraj</guimenuitem
+>. Izaberite je.</para>
+
+<para
+>Ili, ako je fajl ili fascikla „izabrana“, možete kliknuti na dugme <guiicon
+>Kopiraj</guiicon
+> na traci alatki, izabrati stavku menija <menuchoice
+><guimenu
+>Uređivanje</guimenu
+> <guimenuitem
+>Kopiraj</guimenuitem
+></menuchoice
+>, ili pritisnuti prečicu <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>C</keycap
+></keycombo
+>. Možete izabrati i <link linkend="selection"
+>više</link
+> fajlova i fascikli, da biste ih istovremeno kopirali ili premestili.</para
+></listitem>
+
+<listitem
+><para
+>Otidite na fasciklu u koju hoćete da kopirate stavku, zatim je nalepite dugmetom <guiicon
+>Nalepi</guiicon
+> na traci alatki, stavkom menija <menuchoice
+><guimenu
+>Uređivanje</guimenu
+> <guimenuitem
+>Nalepi</guimenuitem
+></menuchoice
+>, prečicom <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>V</keycap
+></keycombo
+>, ili pomeranjem pokazivača miša na prazan prostor u prozoru i pritiskom <mousebutton
+>desnog</mousebutton
+> dugmeta miša, kada ćete dobiti meni sa stavkom <guimenuitem
+>Nalepi</guimenuitem
+>. </para
+></listitem>
+</itemizedlist>
+
+<para
+>Premeštanje fajla ili potfascikle između fascikli može se obaviti na isti način kao kopiranje, osim što birate <guimenuitem
+>Iseci</guimenuitem
+> ili <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>X</keycap
+></keycombo
+> umesto <guimenuitem
+>Kopiraj</guimenuitem
+>. Stavka koju ste isekli biće uklonjena iz prvobitne fascikle čim izvršite <guimenuitem
+>Nalepi</guimenuitem
+> u novoj.</para>
+
+<para
+>Da kopirate i premeštate izabrane stavke među fasciklama takođe možete biranjem <guimenuitem
+>Kopiraj u</guimenuitem
+> ili <guimenuitem
+>Premesti u</guimenuitem
+> iz kontekstnog menija na <mousebutton
+>desni</mousebutton
+> klik na ime fajla ili fascikle u prozoru menadžera fajlova.</para>
+<para
+>Ovu mogućnost aktivirate izborom <guilabel
+>Naredbe kopiranja i premeštanja</guilabel
+> na stranici postavki <menuchoice
+><guimenu
+>Upravljanje fajlovima</guimenu
+> <guimenuitem
+>Servisi</guimenuitem
+></menuchoice
+>.</para>
+<note
+><para
+>Možda nećete moći da kopirate ili premestite fajl ili fasciklu ako nemate potrebne dozvole. </para
+></note>
+<!-- 4.5-->
+<sect2 id="dnd">
+<title
+>Korišćenje prevlačenja</title>
+
+<para
+><application
+>K‑osvajač</application
+> takođe podržava kopiranje i premeštanje fajlova i fascikli prevlačenjem.</para>
+
+<para
+>Prevlačenjem se možete poslužiti ako su otvorena dva primerka <application
+>K‑osvajača</application
+>, jedan s fasciklom iz koje hoćete da kopirate ili premestite, a sa ciljnom fasciklom. Stavite pokazivač miša iznad željene stavke, a zatim, držeći pritisnuto <mousebutton
+>levo</mousebutton
+> dugme miše, <emphasis
+>prevucite</emphasis
+> je na prazan prostor u ciljnoj fascikli. Pustite dugme i dobićete meni sa izborom <guimenuitem
+>Kopiraj ovde</guimenuitem
+>, <guimenuitem
+>Premesti ovde</guimenuitem
+> ili <guimenuitem
+>Poveži ovde</guimenuitem
+>. Pazite da stavku ispustite nad praznim prostorom u ciljnoj fascikli — ako je ispustite nad potfasciklom, biće kopirana ili premeštena u tu fasciklu.</para>
+
+<para
+>Takođe možete podesiti <application
+>K‑osvajač</application
+> da prikazuje više od jedne fascikle unutar istog prozora, pa prevlačiti između njih.</para>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="dragdrop.png"/></imageobject>
+<textobject>
+<phrase
+>Prevlačenje s podeljenim prikazom</phrase>
+</textobject>
+</mediaobject>
+
+<para
+>Ovaj snimak ekrana ilustruje korišćenje stavke menija <menuchoice
+><guimenu
+>Prozor</guimenu
+> <guimenuitem
+>Podeli prikaz levo/desno</guimenuitem
+></menuchoice
+>, dostupne i prečicom <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>Shift</keycap
+><keycap
+>L</keycap
+></keycombo
+>, za podelu glavnog prozora <application
+>K‑osvajača</application
+> na dva prikaza, koji prikazuju sadržaj različitih fascikli.</para>
+
+<para
+>Da bi se mogle prikazati različite fascikle po prikazu, ne treba da budu povezane: kvadratići zdesna na dnu svakog prikaza treba da budu prazni. </para>
+
+<para
+>„Aktivni“ prikaz, onaj čija je putanja prikazana u traci lokacije i koji reaguje na naredbe za kretanje i iz menija, označen je malim zelenim svetlom u levom donjem uglu. Kliknite <mousebutton
+>levim</mousebutton
+> na prazan prostor prikaza ili njegovu traku stanja da ga aktivirate.</para>
+
+<para
+>Da uklonite aktivni prikaz iz prozora <application
+>K‑osvajača</application
+>, koristite prečicu <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>Shift</keycap
+><keycap
+>W</keycap
+></keycombo
+>, stavku menija <menuchoice
+><guimenu
+>Prozor</guimenu
+> <guimenuitem
+>Zatvori aktivni prikaz</guimenuitem
+></menuchoice
+>, ili <mousebutton
+>desni</mousebutton
+> klik na traku stanja pa iz menija koji se pojavi istoimenu stavku.</para>
+
+<para
+>Ako koristite <application
+>K‑osvajačeve</application
+> jezičke, možete prevlačiti između njih tako što fajl prevučete na etiketu jezička, ali ga ne ispuštajući odmah. Odredišni jezičak iskočiće u prvi plan, dopuštajući vam da nastavite prevlačenje i konačno da ispustite fajl.</para>
+
+</sect2>
+<!-- 4.5-->
+<sect2 id="dups">
+<title
+>Dupla imena fajlova i fascikli</title>
+<para
+>Ako pokušate da nalepite fajl ili fasciklu u fasciklu koja već sadrži istoimenu stavku, iskočiće dijalog koji vas opominje da stavka već postoji. Tada možete učiniti jedno od: </para>
+<itemizedlist>
+<listitem
+><para
+>Poništite nalepljivanje klikom na dugme <guibutton
+>Odustani</guibutton
+>.</para
+></listitem>
+<listitem
+><para
+>Dajte stavki koja se kopira drugo ime. Ovo možete upisivanjem novog imena u polje unosa u istom dijalogu, ili dugmetom <guibutton
+>Predloži novo ime</guibutton
+> reći <application
+>K‑osvajaču</application
+> da predloži ime, pa kliknuti na <guibutton
+>Nastavi</guibutton
+>.</para
+></listitem>
+<listitem
+><para
+>Ako kopirate više stavki, možete i kliknuti na <guibutton
+>Preskoči</guibutton
+> da preskočite tekuću. </para
+></listitem>
+</itemizedlist>
+<para
+>Dugme <guibutton
+>Primeni na sve</guibutton
+> možete upotrebiti kada kopirate više stavki.</para>
+</sect2>
+</sect1>
+<!-- begin copy from dolphin docbook synced for 4.10-->
+<sect1 id="selection">
+<title
+>Biranje stavki u prikazu</title>
+
+<para
+>Stavke u prikazu mogu se izabrati na nekoliko načina. Pošto se izbor načini, sve radnje, kao što su isecanje, kopiranje, bacanje u smeće ili prevlačenje, odnose se na sve izabrane stavke. </para>
+
+<sect2 id="selection-mouse">
+<title
+>Biranje stavki mišem</title>
+
+<itemizedlist>
+
+<listitem
+><para
+>Možete kliknuti levim negde u prikazu pa razvući pravougaonik oko grupe stavki pre otpuštanja dugmeta miša. Tako ćete izabrati sve stavke unutar pravougaonika, a prethodni izbor biće poništen. Ako tokom ovoga držite pritisnut taster <keycap
+>Shift</keycap
+>, prethodni izbor se zadržava. </para
+></listitem>
+
+<listitem
+><para
+>Ako držite pritisnut taster <keycap
+>Ctrl</keycap
+> kada na stavku kliknete levim, obrće se stanje izabranosti te stavke. Ako je <keycap
+>Ctrl</keycap
+> pritisnut pri razvlačenju pravougaonika oko grupe stavki (kako je prethodno objašnjeno), obrće se stanje izabranosti svih stavki u toj grupi. </para
+></listitem>
+
+<listitem
+><para
+>Držanjem tastera <keycap
+>Shift</keycap
+> kada kliknete levim na određenu stavku izabraćete sve stavke između prethodne i ove na koju ste sada kliknuli. </para
+></listitem>
+
+<listitem
+><para
+>Ako je uključeno <guilabel
+>Obeleživač izbora</guilabel
+> pod jezičkom <guilabel
+>Ponašanje</guilabel
+> u odeljku postavki <menuchoice
+><guimenu
+>Upravljanje fajlovima</guimenu
+> <guimenuitem
+>Opšte</guimenuitem
+></menuchoice
+>, pojavljuje se mali + ili – u gornjem levom uglu stavke nad kojom lebdi miš. Klikom na ovaj znak stavku birate ili izostavljate. </para
+></listitem>
+
+</itemizedlist>
+
+</sect2>
+
+<sect2 id="selection-keyboard">
+<title
+>Biranje stavki tastaturom</title>
+
+<itemizedlist>
+
+<listitem
+><para
+>Ako pritisnete taster strelice, <keycap
+>PageUp</keycap
+>, <keycap
+>PageDown</keycap
+>, <keycap
+>Home</keycap
+> ili <keycap
+>End</keycap
+>, biće izabrana nova tekuća stavka a prethodni izbor poništen. </para
+></listitem>
+
+<listitem
+><para
+>Ako držite taster <keycap
+>Ctrl</keycap
+> dok pritiskate jedan od prethodno pomenutih, izbor ostaje neizmenjen. </para
+></listitem>
+
+<listitem
+><para
+>Ako pak držite taster <keycap
+>Shift</keycap
+> dok pritiskate neki od prethodnih, biće izabrane sve stavke između prethodne i nove tekuće stavke. </para
+></listitem>
+
+<listitem
+><para
+>Pritiskom <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>Space</keycap
+></keycombo
+> obrće se stanje izabranosti tekuće stavke. </para
+></listitem>
+
+<listitem
+><para
+><keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>A</keycap
+></keycombo
+> izabira sve stavke u prikazu. </para
+></listitem>
+
+<listitem
+><para
+><keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>Shift</keycap
+><keycap
+>A</keycap
+></keycombo
+> obrće stanje izabranosti svih stavki u prikazu. </para
+></listitem>
+
+<listitem
+><para
+>Počnite da kucate prvih nekoliko slova imena fajla ili fascikle, i poklopljena stavka će biti izabrana. Izbor čistite pritiskom na <keycap
+>Esc</keycap
+> da otkažete pretragu tastaturom, ili sačekavši prekovreme od 1 sekunde. </para
+></listitem>
+</itemizedlist>
+
+</sect2>
+<!-- end copy from dolphin docbook-->
+
+<!-- selection-menu applies to dolphin as well copy over?-->
+<sect2 id="selection-menu">
+<title
+>Biranje stavki kroz meni</title>
+
+<para
+>Ponekad hoćete da obrišete, kopirate ili premestite nekoliko u izvesnom smislu sličnih fajlova. Na primer, možda želite da sve PNG slike premestite iz jedne fascikle u drugu. <application
+>K‑osvajač</application
+> ovo olakšava dopuštajući vam da izaberete više fajlova na osnovu sličnosti u njihovim imenima.</para>
+
+<para
+>Upotrebite stavku menija <menuchoice
+><guimenu
+>Uređivanje</guimenu
+><guisubmenu
+>Izbor</guisubmenu
+> <guimenuitem
+>Izaberi poklapanjem...</guimenuitem
+></menuchoice
+> ili prečicu <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>S</keycap
+></keycombo
+>. Dobićete mali dijalog u koji možete uneti obrazac imena fajla, sa džokerskim znakovima <keycap
+>*</keycap
+> (poklapa bilo koji broj znakova) i <keycap
+>?</keycap
+> (poklapa jedan znak). Kliknite na <guibutton
+>U redu</guibutton
+> i <application
+>K‑osvajač</application
+> će istaći sve fajlove čija se imena poklapaju. Na primer:</para>
+      
+<itemizedlist>
+<listitem
+><para
+><userinput
+><filename
+>zastava*.png</filename
+></userinput
+> izabraće sve fajlove čija imena počinju sa <literal
+>zastava</literal
+> i završavaju se sa <literal role="extension"
+>.png</literal
+>.</para
+></listitem>
+<listitem
+><para
+><userinput
+><filename
+>poruka?.txt</filename
+></userinput
+> izabraće <filename
+>poruka1.txt</filename
+> i <filename
+>poruka9.txt</filename
+>, ali neće <filename
+>poruka99.txt</filename
+>.</para
+></listitem>
+</itemizedlist>
+
+<para
+>Pošto ste izabrali fajlove, možete suziti izbor stavkom menija <menuchoice
+><guimenu
+>Uređivanje</guimenu
+><guisubmenu
+>Izbor</guisubmenu
+> <guimenuitem
+>Poništi izbor poklapanjem...</guimenuitem
+></menuchoice
+> tako što zadate koje od fajlova treba ukloniti iz izbora.</para>
+
+<para
+>Da poništite izbor, upotrebite stavku menija <menuchoice
+><guimenu
+>Uređivanje</guimenu
+><guisubmenu
+>Izbor</guisubmenu
+> <guimenuitem
+>Poništi sav izbor</guimenuitem
+></menuchoice
+> ili prosto kliknite <mousebutton
+>levim</mousebutton
+> na prazan prostor u prikazu.</para>
+
+<para
+>Možete i „obrnuti“ izbor — to jest, iz izbora ukloniti sve trenutno izabrane fajlove, a dodati sve koji nisu bili izabrani. Ovo činite stavkom menija <menuchoice
+><guimenu
+>Uređivanje</guimenu
+><guisubmenu
+>Izbor</guisubmenu
+><guimenuitem
+>Izvrni izbor</guimenuitem
+></menuchoice
+> ili prečicom <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>Shift</keycap
+><keycap
+>A</keycap
+></keycombo
+>.</para>
+</sect2>
+
+</sect1>
+
+<!-- 4.5 -->
+<sect1 id="making">
+<title
+>Napravi novo</title>
+
+<para
+>Kad je <application
+>K‑osvajač</application
+> u režimu menadžera fajlova, odabir <guisubmenu
+>Napravi</guisubmenu
+> iz menija <guimenu
+>Uređivanje</guimenu
+>, ili iz kontekstnog menija koji dobijate <mousebutton
+>desnim</mousebutton
+> klikom na prazan prostor u prikazu fascikle, daje vam podmeni kojim u tekućoj fascikli možete stvoriti jedno od sledećeg:</para>
+
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Fascikla...</guimenuitem
+></term>
+<listitem
+><para
+>Lak način stvaranja novih fascikli.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Tekstualni fajl...</guimenuitem
+></term>
+<listitem
+><para
+>Za stvaranje praznog običnog tekstualnog fajla. Dobićete dijalog za unos imena fajla.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>HTML fajl...</guimenuitem
+></term>
+<listitem
+><para
+>Stvara osnovu HTML izvornog fajla. Ime fajla koje zadate u dijalogu najbolje je da ima nastavak <literal role="extension"
+>.html </literal
+>, da kasnije ne bi došlo do zabune.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>||<replaceable
+>Dokument određenog tipa</replaceable
+>...</guimenuitem
+></term>
+<listitem
+><para
+>Prema tome koji su programi instalirani i pridruženjima fajlovima, prikazano je više stavki menija za stvaranje okvirnih dokumenata raznih tipova.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Veza do lokacije (URL)...</guimenuitem
+></term>
+<listitem
+><para
+>Napravite ikonu za otvaranje <application
+>K‑osvajača</application
+> nad zadatom fasciklom ili veb stranicom. Kao i kod <guimenuitem
+>Veza do programa...</guimenuitem
+>, da bi se ikona pojavila na površi napravite je u fascikli <filename
+>~/Desktop</filename
+>, ili kroz podmeni <guisubmenu
+>Napravi</guisubmenu
+> na desni klik na prazan prostor površi.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Osnovna veza do fajla ili fascikle...</guimenuitem
+></term>
+<listitem
+><para
+>Stvara simboličku vezu ka lokalnom fajlu ili fascikli.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Veza do programa...</guimenuitem
+></term>
+<listitem
+><para
+>Opcija vrlo korisna kada želite da napravite ikonu za pokretanje određenog programa. Otvara dijalog sa nekoliko stranica pod jezičcima. Na prvoj, <guilabel
+>Opšte</guilabel
+>, birate ikonu i tekst koji će ići sa njom. Druga stranica, <guilabel
+>Dozvole</guilabel
+>, omogućava da odredite ko sve može da koristi ili menja ikonu. Na stranici <guilabel
+>Program</guilabel
+> unosite naredbu koja će pokrenuti program, na primer, <userinput
+>kwrite</userinput
+> da pokrenete uređivač teksta <application
+>K‑pisanje</application
+>. <userinput
+>kwrite /home/pera/obaveze.txt</userinput
+> otvorilo bi fajl <filename
+>/home/pera/obaveze.txt</filename
+> u <application
+>K‑pisanju</application
+>. Napredne postavke, kao što su tipovi fajlova koje program može da otvara, takođe su raspoložive na ovoj stranici.</para>
+
+<para
+>Da bi se ikona pojavila na površi, napravite vezu u fascikli <filename class="directory"
+>~/Desktop</filename
+> (može se i drugačije zvati, u zavisnosti od toga kako je <acronym
+>KDE</acronym
+> instaliran i podešen), ili pozovite podmeni <guisubmenu
+>Napravi</guisubmenu
+> <mousebutton
+>desnim</mousebutton
+> klikom na prazan prostor površi, umesto unutar <application
+>K‑osvajačevog</application
+> prozora.</para>
+
+<para
+>Ako imate mnogo specijalizovanih veza ka programima, a ne želite da zakrčite površ, možete ih napraviti u <emphasis
+>fascikli programa</emphasis
+>. U <application
+>K‑osvajaču</application
+>, izaberite <menuchoice
+><guimenu
+>Kretanje</guimenu
+> <guimenuitem
+>Programi</guimenuitem
+></menuchoice
+>, zatim napravite jednu ikonu na površi koja će otvarati fasciklu programa, što je obično <filename class="directory"
+>~/.local/share/applications</filename
+>.</para>
+<para
+>Da postavite vezu ka programu na panel, prvo je napravite u fascikli programa, a zatim prevucite ikonu na prazan prostor panela.</para>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guisubmenu
+>vezu ka uređaju</guisubmenu
+></term>
+<listitem
+><para
+>Stavkama u ovom podmeniju možete praviti ikone za montiranje uređaja i otvaranje <application
+>K‑osvajača</application
+> sa prikazom njihovog sadržaja. Za demontiranje uređaja, pošto ste obavili šta ste želeli, kliknite <mousebutton
+>desnim</mousebutton
+> na ikonu i odaberite <guimenuitem
+>Demontiraj</guimenuitem
+>. Međutim, u većini slučajeva želećete da ovakva ikona stoji na površi. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+<!-- 4.5 -->
+<sect1 id="newname">
+<title
+>Menjanje imena i dozvola</title>
+
+<para
+>Dva najlakša načina za izmenu imena fajla ili fascikle jesu ili da kliknete <mousebutton
+>desnim</mousebutton
+> na nju i odaberete <guimenuitem
+>Preimenuj</guimenuitem
+>, ili da je izaberete i pritisnete taster <keycap
+>F2</keycap
+>.</para>
+
+<para
+>Da izmenite ime ili dozvole fajla ili fascikle, kliknite <mousebutton
+>desnim</mousebutton
+> na ime ili ikonu, pa izaberite stavku <guimenuitem
+>Svojstva</guimenuitem
+>; ili, ako ste izabrali fajl ili fasciklu, možete upotrebiti stavku menija <menuchoice
+><guimenu
+>Uređivanje</guimenu
+> <guimenuitem
+>Svojstva</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+><keycap
+>Alt</keycap
+><keycap
+>Return</keycap
+></keycombo
+>).</para>
+
+<para
+>Ovo će otvoriti dijalog svojstava sa nekoliko stranica pod jezičcima:</para>
+
+<itemizedlist>
+<listitem
+><para
+><guilabel
+>Opšte</guilabel
+> daje neke opšte podatke o stavci i dopušta vam izmenu njenog imena, i, ako se radi o fascikli, pridružene ikone.</para
+></listitem>
+<listitem
+><para
+><guilabel
+>Dozvole</guilabel
+> prikazuje vlasništvo stavke i dozvole pristupa, koje možete tu i izmeniti. </para
+></listitem>
+</itemizedlist>
+<!-- 4.5 -->
+<sect2 id="copyrename">
+<title
+>Kopiranje i preimenovanje</title>
+<para
+>Ako želite da napravite kopiju postojećeg fajla pod drugim imenom (možda kao rezervu) u istoj fascikli kao izvorni fajl, kopirajte ga i nalepite kao i obično, i iskočiće dijalog koji se žali da fajl već postoji. Samo upišite novo ime u dijaloga i pritisnite dugme <guibutton
+>Nastavi</guibutton
+> (ili, ako vas mrzi, dugme <guibutton
+>Predloži novo ime</guibutton
+> sastaviće novo ime mesto vas).</para>
+</sect2>
+
+<!--sect2 id="super-user"
+> this is obsolete!
+<title
+>Super User Mode</title>
+
+<para
+>If you are running as a normal user and try to access files outside of
+your own home folder you will often be prevented from doing so and get an
+error message such as <errorname
+>Access Denied</errorname
+>. </para>
+
+<para
+>To access these files you need to be logged in as the system
+administrator, often known as the Super User or <systemitem class="username"
+>root</systemitem
+>. </para>
+
+<para
+>Rather than logging out then in again, you can launch &konqueror; from
+the
+<guimenu
+>K</guimenu
+> Menu in Super User mode by selecting
+<menuchoice
+><guisubmenu
+>System</guisubmenu
+><guimenuitem
+>File Manager - Super
+ User Mode
+</guimenuitem
+></menuchoice
+>. You will be asked for the <systemitem class="username"
+>root</systemitem>
+login password but as long as you can provide that &konqueror; will be started
+up with full access privileges to all files on your system.</para>
+
+<warning
+><para
+>Take care.  As Super User (<systemitem class="username"
+>root</systemitem
+>), you have complete control of
+your system, and a wrong command can easily do irrevocable damage.</para>
+<para
+>Also, connecting to the internet as <systemitem class="username"
+>root</systemitem
+> is an extremely bad idea, as it
+seriously increases your vulnerability to malicious hacking.</para
+></warning>
+
+</sect2-->
+</sect1>
+<!-- 4.5 -->
+<sect1 id="file-associations">
+<title
+>Podešavanje pridruženja fajlovima </title>
+
+<!-- TODO: The content should probably be here too, but this'll do for -->
+<!-- now. -->
+<para
+>S <acronym
+>KDE‑om</acronym
+> stižu mnogi programi, koji otvaraju razne tipove fajlova. Najčešće će podrazumevane postavke raditi baš kako treba, ali <application
+>K‑osvajač</application
+> vam pruža i moćan sistem za određivanje koji će program otvarati koji tip fajlova. Za više detalja upotrebite stavku menija <menuchoice
+><guimenu
+>Podešavanje</guimenu
+><guimenuitem
+>Podesi K‑osvajač...</guimenuitem
+></menuchoice
+>, pa u dijalogu za podešavanje <guilabel
+>Pridruženja fajlovima</guilabel
+>, i kliknite na dugme <guibutton
+>Pomoć</guibutton
+>.</para>
+
+</sect1>
+
+<!-- 4.5 -->
+<sect1 id="commandline">
+<title
+>U komandnoj liniji</title>
+
+<para
+>Mada je <application
+>K‑osvajač</application
+> moćan i prilagodljiv grafički menadžer fajlova, iskusan korisnik Unixa povremeno poželi da siđe korenima, da radi na nivou tekstualne komandne linije.</para>
+
+<para
+>Možete, naravno, otvoriti primerak <application
+>Konsole</application
+>, npr. kroz <application
+>K‑osvajačev</application
+> stavku menija <menuchoice
+><guimenu
+>Alatke</guimenu
+><guimenuitem
+>Otvori terminal</guimenuitem
+></menuchoice
+>, ili pritiskom <keycap
+>F4</keycap
+>.</para>
+<para
+>Ako samo želite da pokrenete program ili prikažete URL, možda je lakše upotrebiti <menuchoice
+> <guimenu
+>Alatke</guimenu
+><guimenuitem
+>Izvrši naredbu školjke...</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>E</keycap
+></keycombo
+>).</para>
+
+<para
+><menuchoice
+><guimenu
+>Alatke</guimenu
+><guimenuitem
+>Izvrši naredbu školjke...</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+><keycap
+>Ctrl</keycap
+> <keycap
+>E</keycap
+></keycombo
+>) otvara mali dijalog komandne linije gde možete uneti naredbu školjke, poput <userinput
+>ps -ax | grep kdeinit</userinput
+>. Imajte u vidu da ovde nisu podržani svi terminalski kontrolni znakovi, pa naredbe poput <userinput
+>top</userinput
+> i <userinput
+>less</userinput
+> neće pravilno raditi. Ali je zato sasvim pri ruci, bez zastoja koji uzrokuje pokretanje <application
+>Konsole</application
+>. </para>
+
+<para
+>Za složenije postupke, <application
+>K‑osvajač</application
+> ima još jednu finu mogućnost: stavku menija <menuchoice
+><guimenu
+>Podešavanje</guimenu
+><guimenuitem
+>Prikaži emulator terminala</guimenuitem
+></menuchoice
+>, koja otvara terminalski prozor kao prikaz unutar <application
+>K‑osvajača</application
+>. Ako je ikona veze vidljiva u donjem desnom uglu prikaza, terminal će u terminalu ispratiti sva kretanja kroz fascikle koje načinite u normalnom prikazu menadžera fajlova </para>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="cmndline.png"/></imageobject>
+<textobject>
+<phrase
+>Sa emulatorom terminala</phrase>
+</textobject>
+</mediaobject>
+
+</sect1>
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

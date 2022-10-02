@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Dutch "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="performance" lang="&language;">
+<articleinfo>
+<title
+>Prestatie</title>
+<authorgroup>
+<author
+>&Mike.McBride; &Mike.McBride.mail;</author>
+&Natalie.Koning; 
+</authorgroup>
+
+<date
+>2016-11-08</date>
+<releaseinfo
+>Applications 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Systeeminstellingen</keyword>
+<keyword
+>prestatie</keyword>
+<keyword
+>voorladen</keyword>
+</keywordset>
+</articleinfo>
+
+<sect1 id="sys-performance">
+<title
+>Prestatie-instellingen</title>
+
+<para
+>&konqueror; wordt gebruikt op veel verschillende computers en door veel verschillende gebruikers. In dit dialoogvenster in de categorie prestatie kan iedere gebruiker de opties, die ervoor zorgen dat de computer waar &konqueror; op geïnstalleerd is soepeler werkt, wijzigen. </para>
+
+<sect2
+><title
+>Voorladen</title>
+<para
+>In het gedeelte <guilabel
+>Voorladen</guilabel
+> wordt een afweging gemaakt tussen geheugengebruik en prestatie.</para>
+
+<para
+><emphasis
+>Voorladen</emphasis
+> betekent dat er al een exemplaar van &konqueror; in het geheugen geladen wordt voordat een gebruiker vraagt &konqueror; op te starten. Het positieve effect hiervan is dat wanneer een gebruiker vraagt om &konqueror; te starten, het venster onmiddellijk verschijnt omdat de toepassing voorgeladen is. Het negatieve effect is dat dit exemplaar van &konqueror; geheugen gebruikt dat nu niet door andere programma's gebruikt kan worden. Standaard wordt, wanneer een gebruiker &konqueror; afsluit, het exemplaar niet wordt afgesloten. Dit betekent dat de volgende keer dat een gebruiker &konqueror; wil starten, het venster weer bijna onmiddellijk verschijnt. </para>
+
+<para
+>Het laatste keuzevakje <guilabel
+>Altijd proberen om tenminste één voorgeladen exemplaar te hebben</guilabel
+> laat weten dat u wilt dat er altijd een voorgeladen, maar niet geopend, exemplaar van &konqueror; beschikbaar heeft. Deze optie zal de prestatie van sommige computers verslechteren (vooral van die met weinig geheugen).</para>
+</sect2>
+</sect1>
+
+</article>

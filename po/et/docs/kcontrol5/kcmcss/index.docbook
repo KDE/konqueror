@@ -1,0 +1,454 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Estonian  "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="kcmcss" lang="&language;">
+<articleinfo>
+<title
+>Välimus</title>
+<authorgroup>
+<author
+>&Lauri.Watts; &Lauri.Watts.mail;</author>
+<othercredit role="translator"
+><firstname
+>Marek</firstname
+><surname
+>Laane</surname
+><affiliation
+><address
+><email
+>bald@online.ee</email
+></address
+></affiliation
+><contrib
+>Tõlge eesti keelde</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2009-12-01</date>
+<releaseinfo
+>&kde; 4.4</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>CSS</keyword>
+<keyword
+>Välimus</keyword>
+<keyword
+>Font</keyword>
+<keyword
+>CSS</keyword>
+<keyword
+>Laaditabelid</keyword>
+<keyword
+>hõlbustus</keyword>
+</keywordset>
+
+</articleinfo>
+
+<sect1 id="appearance">
+<title
+>Välimus</title>
+<para
+>Moodul koosneb kolmest kaardist, mis aitavad seadistada veebilehtede väljanägemist.</para>
+
+<sect2 id="general">
+<title
+>Üldine</title
+> <!-- modified copy from khtml/index.docbook <sect2 id="kbrowse-html"-->
+
+<para
+>Märkekast <guilabel
+>Piltide automaatne laadimine</guilabel
+> lubab määrata, kas veebilehekülgede pildid laaditakse vaikimisi või mitte. Kui sul ei ole just väga aeglane ühendus, oleks vahest mõttekas see lubada, sest mitmeid veebilehekülgi on ilma piltideta keeruline kasutada. Kui sa seda siiski ei vali, on sul ometi võimalik vaadata esmalt leheküljel olevat teksti ja seejärel anda vajadusel spetsiaalne korraldus laadida pildid.</para>
+
+<para
+>Kui valik <guilabel
+>Raami joonistamine veel täielikult laadimata piltide ümber</guilabel
+> on sisse lülitatud, joonistab &konqueror; veebilehekülgedel leiduvate, kuid veel lõplikult laadimata piltide asemele vastava raami. Kui sul peaks olema väga aeglane internetiühendus, siis tasub see sisse lülitada.</para>
+
+<para
+>Paljud veebileheküljed kasutavad animeeritud gif-vormingus pilte, mis võivad olla päris tüütud ja mõnel juhul isegi arvutiressursid tõsise koormuse alla panna. Valik <guilabel
+>Animatsioonid</guilabel
+> laseb valida, kas need lubada või mitte. Vaikimisi on animatsioonid lubatud, kuid need võib ka keelata või lasta näidata ainult korra isegi siis, kui failis endas on antud juhised käivitada animatsioon mitu korda või rakendada seda pidevalt.</para>
+
+<para
+>Järgmine valik on <guilabel
+>Viidad joonitakse alla:</guilabel
+> Siin saab valida viitade allajoonimise <guilabel
+>lubamise</guilabel
+>. Sellisel juhul näidatakse iga teksti veebileheküljel, mis toimib viidana, allajoonituna. Paljud veebileheküljed kasutavad küll ka viidana esitatud teksti eristamiseks värvi, kuid allajoonimine muudab viitade leidmise veelgi hõlpsamaks.</para>
+
+<para
+>Kui allajoonitud viidad sulle ei meeldi, võid valida võimaluse <guilabel
+>Keelatud</guilabel
+>. Kesktee pakub võimalus <guilabel
+>Ainult hiirekursori all</guilabel
+>: sellisel juhul on viidad alla joonitud, kui neil asub hiirekursor, muidu aga mitte.</para>
+
+<note
+><para
+>Lehekülje CSS definitsioonid võivad selle valiku tühistada.</para
+></note>
+
+<para
+><guilabel
+>Sujuv kerimine</guilabel
+> määrab, kas &konqueror; kasutab &HTML;-lehekülgede kerimisel sujuvaid või terviksamme: <itemizedlist>
+<listitem
+><para
+><guilabel
+>Alati</guilabel
+>: kerimisel kasutatakse alati sujuvaid samme.</para
+></listitem>
+<listitem
+><para
+><guilabel
+>Mitte kunagi</guilabel
+>: sujuvat kerimist ei kasutata, alati keritakse terviksammudega.</para
+></listitem>
+<listitem
+><para
+><guilabel
+>Kui see avaldab mõju</guilabel
+>: sujuvat kerimist kasutatakse ainult lehekülgedel, kus see ei kasuta liigselt süsteemi ressursse.</para
+></listitem>
+</itemizedlist>
+</para>
+
+</sect2>
+
+<sect2 id="fonts"
+> <!-- modified copy from khtml/index.docbook <sect2 id="kbrowse-appearance"-->
+<title
+>Fondid</title>
+<para
+>Sellel kaardil saab määrata mitmeid fontide kasutamist puudutavaid võimalusi. Fontide kuju ja suurus on sageli lahutamatu veebileheküljest endast, kuid siiski on võimalik määrata mõningad &konqueror;i vaikeväärtused.</para>
+
+<para
+>Esmalt saab määrata fondi suuruse. Siin on kaks valikut, mis koostöös võimaldavad muuta veebilehitsemise palju mugavamaks.</para>
+
+<para
+>Kõigepealt on võimalik määrata <guilabel
+>minimaalne fondi suurus</guilabel
+>. See tähendab, et isegi kui vaadatavale leheküljele on määratud spetsiaalne fondisuurus, jätab &konqueror; selle arvestamata ega näita kunagi fonte siinmääratust väiksemana.</para>
+
+<para
+>Teiseks on võimalik määrata <guilabel
+>keskmine fondi suurus</guilabel
+>. See on nii teksti vaikesuurus juhul, kui lehekülg ei ole fondisuurust spetsiaalselt määranud, kui ka baassuurus, mille suhtes arvutatakse fondi suhteline suurus. See tähendab, et kui &HTML; annab korralduse <quote
+>väiksem</quote
+>, siis tähendab see väiksemat siin määratud väärtusest.</para>
+
+<para
+>Mõlemal puhul saab määrata fondi täpse suuruse punktides kerimiskasti või liugurit kasutades.</para>
+
+<para
+>Need väärtused ei ole teineteisega seotud. Lehekülgi, mis ei ole määranud fondisuurust või lepivad vaikesuurusega, näidatakse vastavalt väljal <guilabel
+>Keskmine fondi suurus</guilabel
+> määratule, lehekülgi aga, mis näevad ette väiksemat fonti, kui on määratud väljal <guilabel
+>Minimaalne fondi suurus</guilabel
+>, vähemalt sellel väljal määrtatud suuruses.</para>
+
+<para
+>Ülejäänud valikud käivad &HTML;-lehekülgedel kasutatava märkekeele tüüpidega seotud fontide kohta. Pane tähele, et paljud veebileheküljed võivad siin määratud seadistused tühistada. Iga tüübi puhul (standardne, fikseeritud, Serif &etc;) võib valida erineva fondi.</para>
+
+<para
+>Allpool saab kasutada võimalust <guilabel
+>Fondi suuruse korrigeerimine selle kodeeringu puhul</guilabel
+>. Vahel on font, mida soovid antud kodeeringu või keele puhul tarvitada, keskmisest märgatavalt suurem või väiksem, millisel juhul on selle valikuga võimalik asja kohendada.</para>
+
+<para
+>Määrata saab ka vaikekodeeringu, mida &konqueror; kasutab lehekülgede teisendamisel. Vaikimisi on see <guilabel
+>Kasutatakse keele kodeeringut</guilabel
+>, kuid selle võib vahetada välja ükskõik millise nimekirjas oleva kodeeringu vastu.</para>
+
+</sect2>
+
+<sect2 id="stylesheets">
+
+<title
+>Laaditabelid</title>
+
+<sect3>
+<title
+>Sissejuhatus</title>
+
+<para
+><acronym
+>CSS</acronym
+> laaditabelid mõjutavad veebilehekülgede väljanägemist. <acronym
+>CSS</acronym
+>  tähendab kaskaadlaadistik (inglise keeles <emphasis
+>C</emphasis
+>ascading <emphasis
+>S</emphasis
+>tyle <emphasis
+>S</emphasis
+>heets).</para>
+
+<para
+>&kde; võib kasutada omaenda laaditabelit, tuginedes lihtsatele lähtetabelitele ning töölaual kasutatavale värviskeemile. &kde; võib aga kasutada ka kasutaja loodud laaditabelit. Ja lõpuks saab laaditabeli määrata ka käesolevas moodulis. Siin pakutavad võimalused on kõige rohkem mõeldud kasutamise hõlbustamiseks, seda eriti nägemispuudega inimesi silmas pidades.</para>
+
+<para
+>Siin tehtud muudatused mõjutavad iga &kde; rakendust, mis teisendab HTML-koodi &kde; renderdusmootoriga (see kannab nime khtml). Nende hulka kuuluvad &kmail;, &khelpcenter; ja mõistagi &konqueror;. Muudatused ei mõjuta teisi veebilehitsejaid (näiteks &Netscape;).</para>
+
+</sect3>
+
+<sect3 id="css-general">
+<title
+>Laaditabelid</title>
+
+<para
+>Selles sektsioonis on järgmised valikud:</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Vaikelaaditabeli kasutamine</guilabel
+></term>
+<listitem>
+<para
+>&kde; kasutab omaenda vaikelaaditabelit. Mõned värvid toetuvad valitud värviskeemile. Enamik väärtusi kehtivad vastavalt vaadataval leheküljel määratule.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Kasutaja poolt defineeritud laaditabeli kasutamine</guilabel
+></term>
+<listitem>
+<para
+>&kde; tarvitab sinu määratud laaditabelit. Selle leidmiseks saab kasutada paremal asuvat nuppu, mis avab failiavamisdialoogi. <acronym
+>CSS</acronym
+>-failidel on tavaliselt laiend <literal role="extension"
+>.css</literal
+>, kuid ei pruugi olla.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Kohandatud laaditabeli kasutamine</guilabel
+></term>
+<listitem>
+<para
+>Kasutatakse seadistusi, mis on määratud dialoogis <guilabel
+>Kohandamine</guilabel
+>. Selle lubamine võimaldab nupuga <guilabel
+>Kohanda</guilabel
+> käivitada dialoogi, kus saab määrata laaditabeli seadistusi.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect3>
+
+<sect3 id="css-customize">
+<title
+>Kohandamine</title>
+
+<para
+>Selles dialoogis saab määrata kasutaja loodud laaditabeli omadused. Siin pakutavad võimalused on vaid osa sellest, mida laaditabelile on võimalik määrata, ning on ennekõike mõeldud nägemispuudega inimestele, võimaldades kasutajatel luua laaditabeli, mis muudab veebilehekülgede ja &kde; abifailide lugemise hõlpsamaks.</para>
+
+<para
+>Selle dialoogi valikuid saab kasutada ainult siis, kui on valitud <guilabel
+>Kohandatud laaditabeli kasutamine</guilabel
+>.</para>
+
+<sect4>
+<title
+><guilabel
+>Fondi perekond</guilabel
+></title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Baasperekond</guilabel
+></term>
+<listitem>
+<para
+>Valib põhiteksti näitamiseks kasutatava fondi perekonna.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Sama perekonda kasutatakse kogu tekstis</guilabel
+></term>
+<listitem>
+<para
+>Selle lubamisel kasutatakse kogu teksti esitamisel üht ja sama fondiperekonda sõltumata vaadatava lehekülje seadistustest. See tuleb kasuks lehekülgede puhul, mis kasutavad palju dekoratsioone või mille pealkirjad on raskesti loetava fondiga.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect4>
+
+<sect4>
+<title
+>Fondi suurus</title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Baasfondi suurus</guilabel
+></term>
+<listitem>
+<para
+>See määrab lehekülje teksti vaikesuuruse. Paljud veebileheküljed määravad oma fondisuuruse suhtelisena selle vaikeväärtuse suhtes, kasutades märkeid <quote
+>suurem</quote
+> või <quote
+>+1</quote
+> teksti suurendamiseks ning <quote
+>väiksem</quote
+> või <quote
+>-1</quote
+> vähendamiseks.</para>
+<para
+>Paljud kujundavad oma veebileheküljed platvormil, kus tavaline teksti vaikesuurus on keskmisele lugejale liiga suur, mistõttu on väga tavaline sattuda veebileheküljele, mis sunnivad fonti väiksemana näitama.</para>
+<para
+>Siin on võimalik määrata vaikefondi suurus just meelepäraseks, nii et ka suhteliselt defineeritud suurus muutub mugavalt loetavaks.</para>
+<para
+>Pea meeles, et ka &konqueror;i abil on võimalik peale sundida minimaalsuurus, et tekst ei oleks <emphasis
+>mitte kunagi</emphasis
+> lugemiseks liiga väike. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Sama suurust kasutatakse kõigil elementidel</guilabel
+></term>
+<listitem>
+<para
+>Kui see on lubatud, teisendatakse kogu tekst määratud suurusele sõltumata leheküljele selle koostaja poolt antud korraldusest. Siinsed määrangud tühistavad suhtelise fondisuuruse ja isegi konkreetsed juhised teksti teisendamiseks teatud suurusele.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect4>
+
+<sect4>
+<title
+>Pildid</title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Piltide ignoreerimine</guilabel
+></term>
+<listitem>
+<para
+>Kui sa ei soovi pilte näha, saad need siit välja lülitada.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Taustapiltide ignoreerimine</guilabel
+></term>
+<listitem>
+<para
+>Nägemispuudega inimeste üks tõsiseid probleeme on see, et taustapildid ei paku neile piisavat kontrasti teksti lugemisel. Siin saab taustapildid välja lülitada, see ei sõltu ülal piltide osas langetatud valikust.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect4>
+
+<sect4>
+<title
+>Värvid</title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Must valgel</guilabel
+></term>
+<listitem>
+<para
+>Paljud nägemispuudega inimesed eelistavad kontrasti ja lugemismugavuse tõttu musta teksti valgel ekraanil. Kui see sobib ka sulle, siis siin saab selle määrata.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Valge mustal</guilabel
+></term>
+<listitem>
+<para
+>Paljude nägemispuudega inimeste arvates on aga asi hoopis vastupidi ning nende arvates on hõlpsam lugeda valget teksti mustal taustal.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Kohandatud</guilabel
+></term>
+<listitem>
+<para
+>Kolmandad aga arvavad, et puhta valge ja musta värvi kasutamise korral, kumb neist ka ei oleks taust ja kumb tekst, on lugemine nii või teisiti raske. Siin saab määrata just sulle meelepärase värvi <guilabel
+>taust</guilabel
+>ale ja <guilabel
+>esiplaan</guilabel
+>ile.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Sama värvi kasutatakse kogu tekstil</guilabel
+></term>
+<listitem>
+<para
+>Paljud veebileheküljed kasutavad erinevaid ning tihti kontrastseid värve pealkirjade või muu olulise eristamiseks. Kui see segab sisu lugeda, saab seda märkekasti kasutades anda &kde;le korralduse kasutada määratud värvi kogu tekstis.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect4>
+
+<sect4>
+<title
+>Eelvaatlus</title>
+
+<para
+>Sektsioon <guilabel
+>Eelvaatlus</guilabel
+> võimaldab näha tehtud muudatuste toimet. Seal näidatakse, millised näevad määratud laaditabeli korral välja pealkirjad, ning esitatakse näitena ka üks põhiteksti lause.</para>
+
+<para
+>See peaks võimaldama kohandatud laaditabelit täpsustada seni, kuni oled suutnud luua sellise, mis tagab sulle kerge ja muretu lugemise.</para>
+
+<para
+>Õnnelikku surfamist!</para>
+
+</sect4>
+
+</sect3>
+
+</sect2>
+
+</sect1>
+
+</article>

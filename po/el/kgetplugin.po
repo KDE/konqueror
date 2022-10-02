@@ -1,0 +1,3159 @@
+# translation of kget.po to Greek
+# Copyright (C) 2003, 2004, 2005, 2006, 2007, 2008 Free Software Foundation, Inc.
+#
+# Νίκος Νύκταρης (Nick Niktaris) <niktarin@yahoo.com>, 2003.
+# Stergios Dramis <sdramis@egnatia.ee.auth.gr>, 2003-2004.
+# Vasileios Giannakopoulos <kde@billg.gr>, 2005.
+# Spiros Georgaras <sng@hellug.gr>, 2005, 2006, 2007, 2008.
+# Toussis Manolis <manolis@koppermind.homelinux.org>, 2007, 2008, 2009.
+# Σπύρος Γεωργαράς <sngeorgaras@otenet.gr>, 2008.
+# Spiros Georgaras <sngeorgaras@otenet.gr>, 2008.
+# Dimitrios Glentadakis <dglent@gmail.com>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: kget\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2011-03-27 20:00+0200\n"
+"Last-Translator: Dimitrios Glentadakis <dglent@gmail.com>\n"
+"Language-Team: Greek <i18ngr@lists.hellug.gr>\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: kget_plugin.cpp:56
+#, kde-format
+msgid "Download Manager"
+msgstr "Διαχειριστής λήψεων"
+
+#: kget_plugin.cpp:62
+#, kde-format
+msgid "Show Drop Target"
+msgstr "Εμφάνιση του σημείου ρίψης"
+
+#: kget_plugin.cpp:69
+#, kde-format
+msgid "List All Links"
+msgstr "Λίστα όλων των δεσμών"
+
+#: kget_plugin.cpp:74
+#, kde-format
+msgid "List Selected Links"
+msgstr "Λίστα επιλεγμένων δεσμών"
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No downloadable links were found."
+msgstr "Δεν βρέθηκαν δεσμοί προς λήψη."
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No Links"
+msgstr "Δεν υπάρχουν δεσμοί"
+
+#. i18n: ectx: Menu (tools)
+#: konqueror_kget_browser_integration.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "Ερ&γαλεία"
+
+#~ msgid "Unable to communicate with the KGet download manager."
+#~ msgstr "Αδύνατη η επικοινωνία με το διαχειριστή λήψεων KGet."
+
+#~ msgid "Communication Error"
+#~ msgstr "Σφάλμα επικοινωνίας"
+
+#~ msgid "Plugins"
+#~ msgstr "Πρόσθετα"
+
+#~ msgid "New Group"
+#~ msgstr "Νέα ομάδα"
+
+#~ msgid "Xml"
+#~ msgstr "Xml"
+
+#~ msgid "Sqlite"
+#~ msgstr "Sqlite"
+
+#~ msgid "Turn Off Computer"
+#~ msgstr "Κλείσιμο του υπολογιστή"
+
+#, fuzzy
+#~| msgid "Turn Off Computer"
+#~ msgid "Hibernate Computer"
+#~ msgstr "Κλείσιμο του υπολογιστή"
+
+#, fuzzy
+#~| msgid "Turn Off Computer"
+#~ msgid "Suspend Computer"
+#~ msgstr "Κλείσιμο του υπολογιστή"
+
+#~ msgid "Appearance"
+#~ msgstr "Εμφάνιση"
+
+#~ msgid "Change appearance settings"
+#~ msgstr "Τροποποίηση ρυθμίσεων εμφάνισης"
+
+#~ msgid "Groups"
+#~ msgstr "Ομάδες"
+
+#~ msgid "Manage the groups"
+#~ msgstr "Διαχείριση των ομάδων"
+
+#~ msgid "Network"
+#~ msgstr "Δίκτυο"
+
+#~ msgid "Network and Downloads"
+#~ msgstr "Δίκτυο και λήψεις"
+
+#~ msgid "Web Interface"
+#~ msgstr "Διασύνδεση ιστού"
+
+#~ msgid "Control KGet over a Network or the Internet"
+#~ msgstr "Έλεγχος του KGet μέσω του δικτύου ή του διαδικτύου"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgid "Verification"
+#~ msgstr "Προορισμός"
+
+#, fuzzy
+#~| msgid "Integration"
+#~ msgctxt "integration of KGet with other applications"
+#~ msgid "Integration"
+#~ msgstr "Ενσωμάτωση"
+
+#~ msgctxt "Advanced Options"
+#~ msgid "Advanced"
+#~ msgstr "Προχωρημένα"
+
+#~ msgid "Advanced Options"
+#~ msgstr "Προχωρημένες επιλογές"
+
+#~ msgid "Transfer Plugins"
+#~ msgstr "Πρόσθετα μεταφοράς"
+
+#, fuzzy
+#~| msgid "Excluded:"
+#~ msgid "Include"
+#~ msgstr "Εξαιρέσεις:"
+
+#, fuzzy
+#~| msgid "Excluded:"
+#~ msgid "Exclude"
+#~ msgstr "Εξαιρέσεις:"
+
+#, fuzzy
+#~| msgid "Regular expression:"
+#~ msgid "Regular expression"
+#~ msgstr "Κανονική έκφραση:"
+
+#~ msgid "KGet"
+#~ msgstr "KGet"
+
+#~ msgid "1 Item"
+#~ msgid_plural "%1 Items"
+#~ msgstr[0] "1 αντικείμενο"
+#~ msgstr[1] "%1 αντικείμενα"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/δ"
+
+#~ msgctxt "start transfergroup downloads"
+#~ msgid "Start"
+#~ msgstr "Εκκίνηση"
+
+#~ msgctxt "stop transfergroup downloads"
+#~ msgid "Stop"
+#~ msgstr "Σταμάτημα"
+
+#, fuzzy
+#~| msgid "KGet - Download Manager"
+#~ msgid "KGet is downloading %1 file"
+#~ msgid_plural "KGet is downloading %1 files"
+#~ msgstr[0] "KGet - Διαχειριστής λήψεων"
+#~ msgstr[1] "KGet - Διαχειριστής λήψεων"
+
+#~ msgid "Error trying to get %1"
+#~ msgstr "Σφάλμα κατά την ανάκτηση %1"
+
+#~ msgid "Are you sure that you want to remove the group named %1?"
+#~ msgstr "Επιθυμείτε σίγουρα την αφαίρεση της ομάδας με το όνομα %1;"
+
+#, fuzzy
+#~| msgid "Remove Group"
+#~| msgid_plural "Remove groups"
+#~ msgid "Remove Group"
+#~ msgstr "Απομάκρυνση ομάδας"
+
+#, fuzzy
+#~| msgid "Are you sure that you want to remove the group named %1?"
+#~ msgid "Are you sure that you want to remove the following groups?"
+#~ msgstr "Επιθυμείτε σίγουρα την αφαίρεση της ομάδας με το όνομα %1;"
+
+#, fuzzy
+#~| msgid "Remove Group"
+#~| msgid_plural "Remove groups"
+#~ msgid "Remove groups"
+#~ msgstr "Απομάκρυνση ομάδας"
+
+#, fuzzy
+#~| msgid "Downloaded"
+#~ msgid "Download added"
+#~ msgstr "Λήφθηκαν"
+
+#~ msgid ""
+#~ "The file %1 already exists.\n"
+#~ "Overwrite?"
+#~ msgstr ""
+#~ "Το αρχείο %1 υπάρχει ήδη.\n"
+#~ "Αντικατάσταση;"
+
+#~ msgid "Overwrite existing file?"
+#~ msgstr "Αντικατάσταση υπάρχοντος αρχείου;"
+
+#~ msgid "Unable to save to: %1"
+#~ msgstr "Αδυναμία αποθήκευσης στο: %1"
+
+#~ msgid "My Downloads"
+#~ msgstr "Οι λήψεις μου"
+
+#~ msgid "New Download"
+#~ msgstr "Νέα λήψη"
+
+#~ msgid "Enter URL:"
+#~ msgstr "Εισάγετε URL:"
+
+#~ msgid "Save As"
+#~ msgstr "Αποθήκευση ως"
+
+#~ msgid ""
+#~ "Malformed URL:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Το URL είναι λάθος μορφής:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Malformed URL, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Μη έγκυρη μορφή URL, λείπει το πρωτόκολλο:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Download again"
+#~ msgid "Download it again?"
+#~ msgstr "Λήψη ξανά"
+
+#, fuzzy
+#~| msgid "Download again"
+#~ msgid "Delete it and download again?"
+#~ msgstr "Λήψη ξανά"
+
+#~ msgid "Directory is not writable"
+#~ msgstr "Ο κατάλογος δεν είναι εγγράψιμος"
+
+#, fuzzy
+#~| msgid ""
+#~| "URL already saved:\n"
+#~| "%1\n"
+#~| "Download again?"
+#~ msgid "File already downloaded. Download anyway?"
+#~ msgstr ""
+#~ "Ήδη αποθηκευμένο URL:\n"
+#~ "%1\n"
+#~ "Να γίνει ξανά λήψη;"
+
+#, fuzzy
+#~| msgid "You are already downloading the torrent %1"
+#~ msgid "You are already downloading the same file"
+#~ msgstr "Ήδη κάνετε λήψη αυτό το torrent %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "The file %1 already exists.\n"
+#~| "Overwrite?"
+#~ msgid "File already exists"
+#~ msgstr ""
+#~ "Το αρχείο %1 υπάρχει ήδη.\n"
+#~ "Αντικατάσταση;"
+
+#, fuzzy
+#~| msgid ""
+#~| "<html><p>Plugin loader could not load the plugin:<br/><i>%1</i></p></"
+#~| "html>"
+#~ msgid "Plugin loader could not load the plugin: %1."
+#~ msgstr ""
+#~ "<html><p>Η φόρτωση προσθέτων αδυνατεί να φορτώσει το πρόσθετο:<br/><i>%1</"
+#~ "i></p></html>"
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is a directory."
+#~ msgstr ""
+#~ "Δε διαγράφεται το\n"
+#~ "%1\n"
+#~ "καθώς είναι κατάλογος."
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is not a local file."
+#~ msgstr ""
+#~ "Δε διαγράφεται το\n"
+#~ "%1\n"
+#~ "καθώς δεν είναι ένα τοπικό αρχείο."
+
+#~ msgid "Download completed"
+#~ msgstr "Η λήψη ολοκληρώθηκε"
+
+#, fuzzy
+#~| msgid "Download speed"
+#~ msgid "Download started"
+#~ msgstr "Ταχύτητα λήψης"
+
+#~ msgid "Error"
+#~ msgstr "Σφάλμα"
+
+#, fuzzy
+#~| msgid "Remove"
+#~ msgid "Resolve"
+#~ msgstr "Αφαίρεση"
+
+#~ msgid "KGet is now closing, as all downloads have completed."
+#~ msgstr "Το KGet θα τερματίσει τώρα γιατί έχουν ολοκληρωθεί όλες οι λήψεις."
+
+#~ msgid "The computer will now turn off, as all downloads have completed."
+#~ msgstr ""
+#~ "Ο υπολογιστής θα κλείσει τώρα γιατί έχουν ολοκληρωθεί όλες οι λήψεις."
+
+#, fuzzy
+#~| msgid "Auto shutdown"
+#~ msgctxt "Shutting down computer"
+#~ msgid "Shutdown"
+#~ msgstr "Αυτόματος τερματισμός"
+
+#, fuzzy
+#~| msgid "The computer will now turn off, as all downloads have completed."
+#~ msgid ""
+#~ "The computer will now suspend to disk, as all downloads have completed."
+#~ msgstr ""
+#~ "Ο υπολογιστής θα κλείσει τώρα γιατί έχουν ολοκληρωθεί όλες οι λήψεις."
+
+#, fuzzy
+#~| msgid "The computer will now turn off, as all downloads have completed."
+#~ msgid ""
+#~ "The computer will now suspend to RAM, as all downloads have completed."
+#~ msgstr ""
+#~ "Ο υπολογιστής θα κλείσει τώρα γιατί έχουν ολοκληρωθεί όλες οι λήψεις."
+
+#, fuzzy
+#~| msgctxt "Preview pending"
+#~| msgid "Pending"
+#~ msgctxt "Suspending computer"
+#~ msgid "Suspending"
+#~ msgstr "Σε εκκρεμότητα"
+
+#, fuzzy
+#~| msgid "Aborted"
+#~ msgctxt "abort the proposed action"
+#~ msgid "Abort"
+#~ msgstr "Εγκαταλείφθηκε"
+
+#, fuzzy
+#~| msgid "Download completed"
+#~ msgid "Downloads completed"
+#~ msgstr "Η λήψη ολοκληρώθηκε"
+
+#, fuzzy
+#~| msgid "File"
+#~ msgctxt "file in a filesystem"
+#~ msgid "File"
+#~ msgstr "Αρχείο"
+
+#, fuzzy
+#~| msgid "Status"
+#~ msgctxt "status of the download"
+#~ msgid "Status"
+#~ msgstr "Κατάσταση"
+
+#, fuzzy
+#~| msgid "Size"
+#~ msgctxt "size of the download"
+#~ msgid "Size"
+#~ msgstr "Μέγεθος"
+
+#, fuzzy
+#~| msgid "KGet Transfer List"
+#~ msgid "KGet Transfer"
+#~ msgstr "Λίστα μεταφοράς KGet"
+
+#, fuzzy
+#~| msgctxt "list header: type of file"
+#~| msgid "File Type"
+#~ msgctxt "the type of the hash, e.g. MD5"
+#~ msgid "Type"
+#~ msgstr "Τύπος αρχείου"
+
+#~ msgctxt "not available"
+#~ msgid "n/a"
+#~ msgstr "μη διαθέσιμο"
+
+#~ msgid "Stalled"
+#~ msgstr "Σταματημένο"
+
+#~ msgid "Downloading...."
+#~ msgstr "Λήψη..."
+
+#~ msgctxt "transfer state: delayed"
+#~ msgid "Delayed"
+#~ msgstr "Σε αναστολή"
+
+#~ msgctxt "transfer state: stopped"
+#~ msgid "Stopped"
+#~ msgstr "Σταματημένο"
+
+#~ msgctxt "transfer state: aborted"
+#~ msgid "Aborted"
+#~ msgstr "Εγκαταλείφθηκε"
+
+#~ msgctxt "transfer state: finished"
+#~ msgid "Finished"
+#~ msgstr "Ολοκληρώθηκε"
+
+#, fuzzy
+#~| msgid "Open Destination"
+#~ msgctxt "changing the destination of the file"
+#~ msgid "Changing destination"
+#~ msgstr "Άνοιγμα προορισμού"
+
+#~ msgctxt "name of download"
+#~ msgid "Name"
+#~ msgstr "Όνομα"
+
+#~ msgctxt "status of download"
+#~ msgid "Status"
+#~ msgstr "Κατάσταση"
+
+#~ msgctxt "size of download"
+#~ msgid "Size"
+#~ msgstr "Μέγεθος"
+
+#~ msgctxt "progress of download"
+#~ msgid "Progress"
+#~ msgstr "Πρόοδος"
+
+#~ msgctxt "speed of download"
+#~ msgid "Speed"
+#~ msgstr "Ταχύτητα"
+
+#~ msgctxt "remaining time of download"
+#~ msgid "Remaining Time"
+#~ msgstr "Χρόνος που απομένει"
+
+#, fuzzy
+#~| msgid "Directory is not writable"
+#~ msgid "Download directory is not writeable."
+#~ msgstr "Ο κατάλογος δεν είναι εγγράψιμος"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "No download destination specified."
+#~ msgstr "Προορισμός:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Invalid download destination specified."
+#~ msgstr "Προορισμός:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Download destination is not writeable."
+#~ msgstr "Προορισμός:"
+
+#~ msgid "Malformed URL."
+#~ msgstr "Μη έγκυρη μορφή URL."
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL, protocol missing:\n"
+#~| "%1"
+#~ msgid "Malformed URL, protocol missing."
+#~ msgstr ""
+#~ "Μη έγκυρη μορφή URL, λείπει το πρωτόκολλο:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL, protocol missing:\n"
+#~| "%1"
+#~ msgid "Malformed URL, host missing."
+#~ msgstr ""
+#~ "Μη έγκυρη μορφή URL, λείπει το πρωτόκολλο:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Directory is not writable"
+#~ msgid ""
+#~ "Download directory is not writeable:\n"
+#~ "%1"
+#~ msgstr "Ο κατάλογος δεν είναι εγγράψιμος"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid ""
+#~ "Invalid download destination specified:\n"
+#~ "%1"
+#~ msgstr "Προορισμός:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid ""
+#~ "Download destination is not writeable:\n"
+#~ "%1"
+#~ msgstr "Προορισμός:"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL, protocol missing:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URL, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Μη έγκυρη μορφή URL, λείπει το πρωτόκολλο:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "The file %1 already exists.\n"
+#~| "Overwrite?"
+#~ msgid "File already exists. Overwrite it?"
+#~ msgstr ""
+#~ "Το αρχείο %1 υπάρχει ήδη.\n"
+#~ "Αντικατάσταση;"
+
+#, fuzzy
+#~| msgid ""
+#~| "The file %1 already exists.\n"
+#~| "Overwrite?"
+#~ msgid ""
+#~ "File already exists:\n"
+#~ "%1\n"
+#~ "Overwrite it?"
+#~ msgstr ""
+#~ "Το αρχείο %1 υπάρχει ήδη.\n"
+#~ "Αντικατάσταση;"
+
+#, fuzzy
+#~| msgid "Malformed URL."
+#~ msgid "Malformed URLs."
+#~ msgstr "Μη έγκυρη μορφή URL."
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL, protocol missing:\n"
+#~| "%1"
+#~ msgid "Malformed URLs, protocol missing."
+#~ msgstr ""
+#~ "Μη έγκυρη μορφή URL, λείπει το πρωτόκολλο:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL, protocol missing:\n"
+#~| "%1"
+#~ msgid "Malformed URLs, host missing."
+#~ msgstr ""
+#~ "Μη έγκυρη μορφή URL, λείπει το πρωτόκολλο:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Το URL είναι λάθος μορφής:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL, protocol missing:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Μη έγκυρη μορφή URL, λείπει το πρωτόκολλο:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL, protocol missing:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Μη έγκυρη μορφή URL, λείπει το πρωτόκολλο:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Directory is not writable"
+#~ msgid ""
+#~ "Destinations are not writable:\n"
+#~ "%1"
+#~ msgstr "Ο κατάλογος δεν είναι εγγράψιμος"
+
+#, fuzzy
+#~| msgid ""
+#~| "The file %1 already exists.\n"
+#~| "Overwrite?"
+#~ msgid "Files exist already. Overwrite them?"
+#~ msgstr ""
+#~ "Το αρχείο %1 υπάρχει ήδη.\n"
+#~ "Αντικατάσταση;"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Question"
+#~ msgstr "Περιγραφή"
+
+#, fuzzy
+#~| msgid "D&eselect all"
+#~ msgctxt "on a question"
+#~ msgid "Yes all"
+#~ msgstr "&Αποεπιλογή όλων"
+
+#, fuzzy
+#~| msgctxt "Download normally(not as first or last)"
+#~| msgid "Normal"
+#~ msgctxt "on a question"
+#~ msgid "No all"
+#~ msgstr "Κανονικά"
+
+#~ msgid "Insert Engine"
+#~ msgstr "Εισαγωγή μηχανής"
+
+#~ msgid "Engine name:"
+#~ msgstr "Όνομα μηχανής:"
+
+#~ msgid "URL:"
+#~ msgstr "URL:"
+
+#~ msgctxt "transfer state: connecting"
+#~ msgid "Connecting...."
+#~ msgstr "Γίνεται σύνδεση..."
+
+#~ msgid "Add New Script"
+#~ msgstr "Προσθήκη νέου σεναρίου"
+
+#~ msgid "Edit Script"
+#~ msgstr "Επεξεργασία σεναρίου"
+
+#~ msgid "Set Script File"
+#~ msgstr "Ορισμός αρχείου σεναρίου"
+
+#~ msgctxt "Configure script"
+#~ msgid "Configure script"
+#~ msgstr "Ρύθμιση σεναρίου"
+
+#~ msgctxt "Transfer state: processing script"
+#~ msgid "Processing script...."
+#~ msgstr "Επεξεργασία σεναρίου..."
+
+#~ msgctxt "Transfer State: Finished"
+#~ msgid "Finished"
+#~ msgstr "Ολοκληρώθηκε"
+
+#~ msgctxt "Transfer State: Aborted"
+#~ msgid "Aborted"
+#~ msgstr "Εγκαταλείφθηκε"
+
+#, fuzzy
+#~| msgid "Downloading Torrent File...."
+#~ msgid "Downloading Metalink File...."
+#~ msgstr "Λήψη αρχείου Torrent..."
+
+#, fuzzy
+#~| msgctxt "redownload selected transfer item"
+#~| msgid "Redownload Selected"
+#~ msgid "Redownload Metalink"
+#~ msgstr "λήψη των επιλεγμένων και πάλι"
+
+#, fuzzy
+#~| msgid "File Settings"
+#~ msgid "File Selection"
+#~ msgstr "Ρυθμίσεις αρχείων"
+
+#, fuzzy
+#~| msgid "Change appearance settings"
+#~ msgctxt "the string that is used to modify an url"
+#~ msgid "Change string"
+#~ msgstr "Τροποποίηση ρυθμίσεων εμφάνισης"
+
+#, fuzzy
+#~| msgid "Change Tracker"
+#~ msgctxt "the mode defines how the url should be changed"
+#~ msgid "Change mode"
+#~ msgstr "Τροποποίηση ανιχνευτή"
+
+#, fuzzy
+#~| msgid "Appearance"
+#~ msgid "Append"
+#~ msgstr "Εμφάνιση"
+
+#, fuzzy
+#~| msgid "Open file"
+#~ msgid "Replace file"
+#~ msgstr "Άνοιγμα αρχείου"
+
+#~ msgctxt "transfer state: running"
+#~ msgid "Running...."
+#~ msgstr "Εκτέλεση..."
+
+#~ msgctxt "Choked"
+#~ msgid "Yes"
+#~ msgstr "Ναι"
+
+#~ msgctxt "Not choked"
+#~ msgid "No"
+#~ msgstr "Όχι"
+
+#~ msgctxt "Snubbed"
+#~ msgid "Yes"
+#~ msgstr "Ναι"
+
+#~ msgctxt "Not snubbed"
+#~ msgid "No"
+#~ msgstr "Όχι"
+
+#~ msgctxt "Interested"
+#~ msgid "Yes"
+#~ msgstr "Ναι"
+
+#~ msgctxt "Not Interested"
+#~ msgid "No"
+#~ msgstr "Όχι"
+
+#~ msgctxt "Interesting"
+#~ msgid "Yes"
+#~ msgstr "Ναι"
+
+#~ msgctxt "Not Interesting"
+#~ msgid "No"
+#~ msgstr "Όχι"
+
+#~ msgid "IP Address"
+#~ msgstr "Διεύθυνση IP"
+
+#~ msgid "Client"
+#~ msgstr "Πελάτης"
+
+#~ msgid "Down Speed"
+#~ msgstr "Ταχύτητα λήψης"
+
+#~ msgid "Up Speed"
+#~ msgstr "Ταχύτητα αποστολής"
+
+#~ msgid "Choked"
+#~ msgstr "Συμφορισμένο"
+
+#~ msgid "Snubbed"
+#~ msgstr "Αγνοημένο"
+
+#~ msgid "Availability"
+#~ msgstr "Διαθεσιμότητα"
+
+#~ msgid "DHT"
+#~ msgstr "DHT"
+
+#~ msgid "Score"
+#~ msgstr "Βαθμολογία"
+
+#~ msgid "Upload Slot"
+#~ msgstr "Υποδοχή αποστολής"
+
+#~ msgid "Requests"
+#~ msgstr "Αιτήσεις"
+
+#~ msgid "Downloaded"
+#~ msgstr "Λήφθηκαν"
+
+#~ msgid "Uploaded"
+#~ msgstr "Αποστάλθηκαν"
+
+#~ msgid "Interested"
+#~ msgstr "Με ενδιαφέρον"
+
+#~ msgid "Interesting"
+#~ msgstr "Ενδιαφέρον"
+
+#~ msgid "IP address of the peer"
+#~ msgstr "Διεύθυνση IP του υπολογιστή"
+
+#~ msgid "Which client the peer is using"
+#~ msgstr "Ο πελάτης που χρησιμοποιείται από τον υπολογιστή"
+
+#~ msgid "Download speed"
+#~ msgstr "Ταχύτητα λήψης"
+
+#~ msgid "Upload speed"
+#~ msgstr "Ταχύτητα αποστολής"
+
+#~ msgid ""
+#~ "Whether or not the peer has choked us.  If we are choked, the peer will "
+#~ "not send us any data."
+#~ msgstr ""
+#~ "Αν ο υπολογιστής μας έχει συμφορίσει ή όχι. Αν έχετε συμφορηθεί ο "
+#~ "υπολογιστής δε στέλνει δεδομένα σε εσάς."
+
+#~ msgid ""
+#~ "Snubbed means the peer has not sent us any data in the last 2 minutes"
+#~ msgstr ""
+#~ "Η ανγόηση σημαίνει ότι ο υπολογιστής δεν έχει στείλει δεδομένα σε εσάς "
+#~ "για τα τελευταία 2 λεπτά"
+
+#~ msgid "How much of the torrent's data the peer has"
+#~ msgstr "Το πλήθος δεδομένων που διαθέτει ο υπολογιστής από το torrent"
+
+#~ msgid "Whether or not the peer has DHT enabled"
+#~ msgstr "Αν ο υπολογιστής έχει ενεργοποιημένο ή όχι το DHT"
+
+#~ msgid ""
+#~ "The score of the peer. KTorrent uses this to determine who to upload to."
+#~ msgstr ""
+#~ "Ο βαθμός του υπολογιστή. Το KTorrent χρησιμοποιεί αυτό για να καθορίσει "
+#~ "την αποστολή σε αυτόν."
+
+#~ msgid "Only peers which have an upload slot will get data from us"
+#~ msgstr ""
+#~ "Μόνο οι υπολογιστές που διαθέτουν υποδοχή λήψης θα λάβουν δεδομένα από "
+#~ "εσάς"
+
+#~ msgid "The number of download and upload requests"
+#~ msgstr "Ο αριθμός αιτήσεων λήψης και αποστολής"
+
+#~ msgid "How much data we have downloaded from this peer"
+#~ msgstr "Το πλήθος δεδομένων που έχουν ληφθεί από αυτόν τον υπολογιστή"
+
+#~ msgid "How much data we have uploaded to this peer"
+#~ msgstr "Το πλήθος δεδομένων που έχουν αποσταλεί σε αυτόν τον υπολογιστή"
+
+#~ msgid "Whether the peer is interested in downloading data from us"
+#~ msgstr "Αν ο υπολογιστής ενδιαφέρεται ή όχι για τη λήψη δεδομένων από εσάς"
+
+#~ msgid "Whether we are interested in downloading from this peer"
+#~ msgstr ""
+#~ "Αν εσείς ενδιαφέρεστε ή όχι για τη λήψη δεδομένων από αυτόν τον υπολογιστή"
+
+#~ msgid "Chunk"
+#~ msgstr "Κομμάτι"
+
+#~ msgid "Progress"
+#~ msgstr "Πρόοδος"
+
+#~ msgid "Peer"
+#~ msgstr "Υπολογιστής"
+
+#~ msgid "Files"
+#~ msgstr "Αρχεία"
+
+#~ msgid "Number of the chunk"
+#~ msgstr "Αριθμός του κομματιού"
+
+#~ msgid "Download progress of the chunk"
+#~ msgstr "Πρόοδος λήψης του κομματιού"
+
+#~ msgid "Which peer we are downloading it from"
+#~ msgstr "Ο υπολογιστής από τον οποίο γίνεται λήψη"
+
+#~ msgid "Download speed of the chunk"
+#~ msgstr "Ταχύτητα λήψης του κομματιού"
+
+#~ msgid "Which files the chunk is located in"
+#~ msgstr "Τα αρχεία στα οποία βρίσκεται το κομμάτι"
+
+#~ msgid "URL"
+#~ msgstr "URL"
+
+#~ msgid "Speed"
+#~ msgstr "Ταχύτητα"
+
+#~ msgid "Status"
+#~ msgstr "Κατάσταση"
+
+#~ msgid "Kick Peer"
+#~ msgstr "Απομάκρυνση υπολογιστή"
+
+#~ msgid "Ban Peer"
+#~ msgstr "Εξορία υπολογιστή"
+
+#~ msgid ""
+#~ "Cannot add the webseed %1, it is already part of the list of webseeds."
+#~ msgstr ""
+#~ "Αδυναμία προσθήκης γόνου ιστού %1, καθώς είναι ήδη στη λίστα των γόνων "
+#~ "ιστού."
+
+#~ msgid "Cannot remove webseed %1, it is part of the torrent."
+#~ msgstr "Αδυναμία αφαίρεσης γόνου ιστού %1, καθώς είναι τμήμα του torrent."
+
+#~ msgid "File"
+#~ msgstr "Αρχείο"
+
+#~ msgid "Size"
+#~ msgstr "Μέγεθος"
+
+#~ msgid "Advanced Details for %1"
+#~ msgstr "Προχωρημένες λεπτομέρειες του %1"
+
+#~ msgid "Trackers"
+#~ msgstr "Ανιχνευτές"
+
+#~ msgid "Webseeds"
+#~ msgstr "Γόνοι ιστού"
+
+#~ msgctxt "Open file"
+#~ msgid "Open"
+#~ msgstr "Άνοιγμα"
+
+#~ msgid "Download first"
+#~ msgstr "Λήψη πρώτο"
+
+#~ msgid "Download normally"
+#~ msgstr "Λήψη κανονικά"
+
+#~ msgid "Download last"
+#~ msgstr "Λήψη τελευταίο"
+
+#~ msgid "Do Not Download"
+#~ msgstr "Να μη γίνει λήψη"
+
+#~ msgid "Delete File(s)"
+#~ msgstr "Διαγραφή αρχείου(ων)"
+
+#~ msgid "Move File"
+#~ msgstr "Μετακίνηση αρχείου"
+
+#~ msgid "Collapse Folder Tree"
+#~ msgstr "Σύμπτυξη δέντρου φακέλου"
+
+#~ msgid "Expand Folder Tree"
+#~ msgstr "Ανάπτυξη δέντρου φακέλου"
+
+#, fuzzy
+#~| msgid ""
+#~| "You will lose all data in this file, are you sure you want to do this?"
+#~ msgid ""
+#~ "You will lose all data in this file, are you sure you want to do this?"
+#~ msgid_plural ""
+#~ "You will lose all data in these files, are you sure you want to do this?"
+#~ msgstr[0] ""
+#~ "Θα χαθούν όλα τα δεδομένα του αρχείου, επιθυμείτε σίγουρα κάτι τέτοιο;"
+#~ msgstr[1] ""
+#~ "Θα χαθούν όλα τα δεδομένα του αρχείου, επιθυμείτε σίγουρα κάτι τέτοιο;"
+
+#~ msgid "Select a directory to move the data to."
+#~ msgstr "Επιλέξτε κατάλογο για την μετακίνηση των δεδομένων."
+
+#~ msgid "Url"
+#~ msgstr "Url"
+
+#, fuzzy
+#~| msgid "Seeders:"
+#~ msgid "Seeders"
+#~ msgstr "Γόνοι:"
+
+#, fuzzy
+#~| msgid "Leechers:"
+#~ msgid "Leechers"
+#~ msgstr "Χρήστες παράσιτα:"
+
+#, fuzzy
+#~| msgid "Times downloaded:"
+#~ msgid "Times Downloaded"
+#~ msgstr "Αριθμός λήψεων:"
+
+#, fuzzy
+#~| msgid "Next update in:"
+#~ msgid "Next Update"
+#~ msgstr "Επόμενη ενημέρωση σε:"
+
+#~ msgid "Priority"
+#~ msgstr "Προτεραιότητα"
+
+#~ msgid "Preview"
+#~ msgstr "Προεπισκόπηση"
+
+#~ msgctxt "Percent of File Downloaded"
+#~ msgid "% Complete"
+#~ msgstr "% ολοκληρωμένο"
+
+#~ msgctxt "Download first"
+#~ msgid "First"
+#~ msgstr "Πρώτο"
+
+#~ msgctxt "Download last"
+#~ msgid "Last"
+#~ msgstr "Τελευταίο"
+
+#~ msgctxt "Download normally(not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "Κανονικά"
+
+#~ msgctxt "preview available"
+#~ msgid "Available"
+#~ msgstr "Διαθέσιμη"
+
+#~ msgctxt "Preview pending"
+#~ msgid "Pending"
+#~ msgstr "Σε εκκρεμότητα"
+
+#~ msgctxt "No preview available"
+#~ msgid "No"
+#~ msgstr "Όχι"
+
+#~ msgid "%1 %"
+#~ msgstr "%1 %"
+
+#~ msgctxt "Preview available"
+#~ msgid "Available"
+#~ msgstr "Διαθέσιμη"
+
+#~ msgid "Add Tracker"
+#~ msgstr "Προσθήκη ανιχνευτή"
+
+#~ msgid "There already is a tracker named <b>%1</b>."
+#~ msgstr "Υπάρχει ήδη ανιχνευτής με το όνομα <b>%1</b>."
+
+#~ msgctxt "Download Normal (not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "Κανονικά"
+
+#~ msgid "&Advanced Details"
+#~ msgstr "&Προχωρημένες λεπτομέρειες"
+
+#~ msgid "&Scan Files"
+#~ msgstr "&Σάρωση αρχείων"
+
+#~ msgid "Downloading Torrent File...."
+#~ msgstr "Λήψη αρχείου Torrent..."
+
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading...."
+#~ msgstr "Λήψη..."
+
+#~ msgid "Cannot add a tracker to a private torrent."
+#~ msgstr "Αδυναμία προσθήκης ενός ανιχνευτή σε ιδιωτικό torrent."
+
+#, fuzzy
+#~| msgid "The directory %1 does not exist"
+#~ msgid "Torrent file does not exist"
+#~ msgstr "Ο κατάλογος %1 δεν υπάρχει"
+
+#~ msgid "Analyzing torrent...."
+#~ msgstr "Ανάλυση torrent..."
+
+#~ msgctxt "Transfer status: seeding"
+#~ msgid "Seeding...."
+#~ msgstr "Μοίρασμα..."
+
+#~ msgid "Error scanning data: %1"
+#~ msgstr "Σφάλμα κατά τη σάρωση δεδομένων: %1"
+
+#~ msgid "Scanning data of <b>%1</b> :"
+#~ msgstr "Σάρωση δεδομένων του <b>%1</b>:"
+
+#~ msgid "Select a default torrent folder"
+#~ msgstr "Επιλογή προκαθορισμένου φακέλου torrent"
+
+#~ msgid "Select a default temporary folder"
+#~ msgstr "Επιλέξτε έναν προκαθορισμένο φάκελο προσωρινής αποθήκευσης"
+
+#, fuzzy
+#~| msgid "File Settings"
+#~ msgid "File Properties"
+#~ msgstr "Ρυθμίσεις αρχείων"
+
+#, fuzzy
+#~| msgid "Enter a new Tag"
+#~ msgid "Enter a filename."
+#~ msgstr "Εισάγετε μια νέα ετικέτα"
+
+#, fuzzy
+#~| msgid "Enter a new Tag"
+#~ msgid "Enter at least one URL."
+#~ msgstr "Εισάγετε μια νέα ετικέτα"
+
+#, fuzzy
+#~| msgid "Unable to save to: %1"
+#~ msgid "Unable to load: %1"
+#~ msgstr "Αδυναμία αποθήκευσης στο: %1"
+
+#, fuzzy
+#~| msgid "Open file"
+#~ msgid "Metalink Version 4.0 file (*.meta4)"
+#~ msgstr "Άνοιγμα αρχείου"
+
+#, fuzzy
+#~| msgid "Open file"
+#~ msgid "Metalink Version 3.0 file (*.metalink)"
+#~ msgstr "Άνοιγμα αρχείου"
+
+#~ msgid "Import Links"
+#~ msgstr "Εισαγωγή δεσμών"
+
+#~ msgctxt "Download the items which have been selected"
+#~ msgid "&Download Checked"
+#~ msgstr "&Λήψη επιλεγμένων"
+
+#~ msgid "Auxiliary header"
+#~ msgstr "Δευτερεύουσα κεφαλίδα"
+
+#~ msgid "File Name"
+#~ msgstr "Όνομα αρχείου"
+
+#~ msgid "Description"
+#~ msgstr "Περιγραφή"
+
+#~ msgctxt "list header: type of file"
+#~ msgid "File Type"
+#~ msgstr "Τύπος αρχείου"
+
+#~ msgid "Location (URL)"
+#~ msgstr "Τοποθεσία (URL)"
+
+#~ msgid "Links in: %1 - KGet"
+#~ msgstr "Δεσμοί για το: %1 - KGet"
+
+#~ msgid "&Select All Filtered"
+#~ msgstr "&Επιλογή όλων των φιλτραρισμένων"
+
+#~ msgid "&Select All"
+#~ msgstr "&Επιλογή όλων"
+
+#~ msgid "D&eselect All Filtered"
+#~ msgstr "&Αποεπιλογή όλων των φιλτραρισμένων"
+
+#~ msgid "D&eselect All"
+#~ msgstr "&Αποεπιλογή όλων"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgctxt "Mirror as in server, in url"
+#~ msgid "Mirror"
+#~ msgstr "Σφάλμα"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgctxt "The priority of the mirror"
+#~ msgid "Priority"
+#~ msgstr "Προτεραιότητα"
+
+#, fuzzy
+#~| msgid "Connections"
+#~ msgctxt "Number of paralell connections to the mirror"
+#~ msgid "Connections"
+#~ msgstr "Συνδέσεις"
+
+#, fuzzy
+#~| msgid "Location (URL)"
+#~ msgctxt "Location = country"
+#~ msgid "Location"
+#~ msgstr "Τοποθεσία (URL)"
+
+#, fuzzy
+#~| msgid "Add Tracker"
+#~ msgctxt "Adds the item and reopens the dialog to add a further item"
+#~ msgid "Add more"
+#~ msgstr "Προσθήκη ανιχνευτή"
+
+#~ msgid "Download again"
+#~ msgstr "Λήψη ξανά"
+
+#~ msgctxt "Delete selected history-item"
+#~ msgid "Delete selected"
+#~ msgstr "Διαγραφή επιλεγμένου"
+
+#~ msgid "Open file"
+#~ msgstr "Άνοιγμα αρχείου"
+
+#~ msgid "Today"
+#~ msgstr "Σήμερα"
+
+#~ msgid "Last week"
+#~ msgstr "Τελευταία εβδομάδα"
+
+#~ msgid "Last Month"
+#~ msgstr "Τελευταίος μήνας"
+
+#~ msgid "A long time ago"
+#~ msgstr "Πολύ παλιότερα"
+
+#~ msgid "Under 10MiB"
+#~ msgstr "Κάτω από 10MiB"
+
+#~ msgid "Between 10MiB and 50MiB"
+#~ msgstr "Ανάμεσα σε 10MiB και 50MiB"
+
+#~ msgid "Between 50MiB and 100MiB"
+#~ msgstr "Ανάμεσα σε 50MiB και 100MiB"
+
+#~ msgid "More than 100MiB"
+#~ msgstr "Περισσότερο από 100MiB"
+
+#~ msgid "Transfer History"
+#~ msgstr "Ιστορικό μεταφοράς"
+
+#~ msgid "&Open File"
+#~ msgstr "Ά&νοιγμα αρχείου"
+
+#~ msgctxt "The transfer is running"
+#~ msgid "Running"
+#~ msgstr "Εκτελείται"
+
+#~ msgctxt "The transfer is stopped"
+#~ msgid "Stopped"
+#~ msgstr "Σταματημένο"
+
+#~ msgctxt "The transfer is aborted"
+#~ msgid "Aborted"
+#~ msgstr "Εγκαταλείφθηκε"
+
+#~ msgctxt "The transfer is finished"
+#~ msgid "Finished"
+#~ msgstr "Ολοκληρώθηκε"
+
+#~ msgid "Source File"
+#~ msgstr "Πηγαίο αρχείο"
+
+#~ msgid "Destination"
+#~ msgstr "Προορισμός"
+
+#~ msgid "Time"
+#~ msgstr "Χρόνος"
+
+#~ msgid "File Size"
+#~ msgstr "Μέγεθος αρχείου"
+
+#~ msgid "Less than 1MiB"
+#~ msgstr "Λιγότερο από 1MiB"
+
+#~ msgid "Between 1MiB-10MiB"
+#~ msgstr "Ανάμεσα σε 1MiB-10MiB"
+
+#~ msgid "Between 10MiB-100MiB"
+#~ msgstr "Ανάμεσα σε 10MiB-100MiB"
+
+#~ msgid "Between 100MiB-1GiB"
+#~ msgstr "Ανάμεσα σε 100MiB-1GiB"
+
+#~ msgid "More than 1GiB"
+#~ msgstr "Περισσότερο από 1GiB"
+
+#~ msgid "Last month"
+#~ msgstr "Τελευταίος μήνας"
+
+#~ msgctxt "the transfer has been finished"
+#~ msgid "Finished"
+#~ msgstr "Ολοκληρώθηκε"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgctxt "an error happened in connection with the user input"
+#~ msgid "Error:"
+#~ msgstr "Σφάλμα"
+
+#, fuzzy
+#~| msgid "Unknown client"
+#~ msgctxt "trust level"
+#~ msgid "Unknown"
+#~ msgstr "Άγνωστος πελάτης"
+
+#, fuzzy
+#~| msgid "Peer"
+#~ msgctxt "trust level"
+#~ msgid "Never"
+#~ msgstr "Υπολογιστής"
+
+#~ msgid "Unlimited"
+#~ msgstr "Απεριόριστο"
+
+#, fuzzy
+#~| msgid "File"
+#~ msgctxt "pgp signature is not verified"
+#~ msgid "Failed"
+#~ msgstr "Αρχείο"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgid "Error:"
+#~ msgstr "Σφάλμα"
+
+#, fuzzy
+#~| msgid "Integration"
+#~ msgid "Information:"
+#~ msgstr "Ενσωμάτωση"
+
+#~ msgid "Select columns"
+#~ msgstr "Επιλογή στηλών"
+
+#~ msgid "Transfer Details"
+#~ msgstr "Λεπτομέρειες μεταφοράς"
+
+#, fuzzy
+#~| msgid "Transfer Settings for %1"
+#~ msgid "Transfer Verification for %1"
+#~ msgstr "Ρυθμίσεις μεταφοράς για το %1"
+
+#, fuzzy
+#~| msgid "Rename"
+#~ msgid "Rename File"
+#~ msgstr "Μετονομασία"
+
+#, fuzzy
+#~| msgid "Rename"
+#~ msgid "Rename %1 to:"
+#~ msgstr "Μετονομασία"
+
+#, fuzzy
+#~| msgid "Rename"
+#~ msgid "&Rename"
+#~ msgstr "Μετονομασία"
+
+#~ msgid "Semantic Desktop"
+#~ msgstr "Σημασιολογική επιφάνεια εργασίας"
+
+#~ msgid "Delete Group"
+#~ msgid_plural "Delete Groups"
+#~ msgstr[0] "Διαγραφή ομάδας"
+#~ msgstr[1] "Διαγραφή ομάδων"
+
+#~ msgid "Rename Group..."
+#~ msgid_plural "Rename Groups..."
+#~ msgstr[0] "Μετονομασία ομάδας..."
+#~ msgstr[1] "Μετονομασία ομάδων..."
+
+#~ msgctxt "fix position for droptarget"
+#~ msgid "Sticky"
+#~ msgstr "Κολλημένο"
+
+#~ msgid "Quit KGet"
+#~ msgstr "Έξοδος από το KGet"
+
+#~ msgid "The dropped file is a KGet Transfer List"
+#~ msgstr "Το αρχείο που έγινε ρίψη περιέχει μία λίστα μεταφορών του KGet"
+
+#~ msgid "&Download"
+#~ msgstr "&Λήψη"
+
+#~ msgid "&Load transfer list"
+#~ msgstr "&Φόρτωση λίστας μεταφοράς"
+
+#~ msgid "Show Main Window"
+#~ msgstr "Εμφάνιση κύριου παραθύρου"
+
+#~ msgid "Hide Main Window"
+#~ msgstr "Απόκρυψη κύριου παραθύρου"
+
+#~ msgid "Drop Target"
+#~ msgstr "Σημείο ρίψης"
+
+#~ msgid "You can drag download links into the drop target."
+#~ msgstr "Μπορείτε να σύρετε δεσμούς λήψης στο σημείο ρίψης."
+
+#~ msgctxt "%1 filename, %2 total size, %3 status"
+#~ msgid "%1(%2) %3"
+#~ msgstr "%1(%2) %3"
+
+#~ msgctxt ""
+#~ "%1 filename, %2 percent complete, %3 downloaded out of %4 total size"
+#~ msgid "%1(%2% %3/%4) Speed:%5/s"
+#~ msgstr "%1(%2% %3/%4) ταχύτητα:%5/δ"
+
+#~ msgctxt ""
+#~ "%1 filename, %2 percent complete, %3 downloaded out of %4 total size, %5 "
+#~ "status"
+#~ msgid "%1(%2% %3/%4) %5"
+#~ msgstr "%1(%2% %3/%4) %5"
+
+#~ msgid "Ready"
+#~ msgstr "Έτοιμο"
+
+#~ msgid ""
+#~ "Drop target has been hidden. If you want to show it again, go to Settings-"
+#~ ">Configure KGet->Look & Feel."
+#~ msgstr ""
+#~ "Έγινε απόκρυψη του σημείου ρίψης. Αν επιθυμείτε την εμφάνισή του, "
+#~ "μεταβείτε στις Ρυθμίσεις->Ρύθμιση KGet->Όψη και αίσθηση."
+
+#~ msgid "Hiding drop target"
+#~ msgstr "Απόκρυψη του σημείου ρίψης"
+
+#~ msgid "Transfer Settings for %1"
+#~ msgstr "Ρυθμίσεις μεταφοράς για το %1"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgid "Destination unmodified"
+#~ msgstr "Προορισμός"
+
+#~ msgid "%1 of %2"
+#~ msgstr "%1 από %2"
+
+#~ msgid "Group Settings for %1"
+#~ msgstr "Ρυθμίσεις ομάδας για το %1"
+
+#~ msgctxt "@info"
+#~ msgid "Unable to start the server: %1."
+#~ msgstr "Αδυναμία εκκίνησης του εξυπηρετητή: %1"
+
+#~ msgctxt "@item speed of transfer per seconds"
+#~ msgid "%1/s"
+#~ msgstr "%1/δ"
+
+#~ msgctxt "@label"
+#~ msgid "KGet Web Interface"
+#~ msgstr "Διασύνδεση ιστού του KGet"
+
+#~ msgctxt "@label number"
+#~ msgid "Nr"
+#~ msgstr "Αρ"
+
+#~ msgctxt "@label"
+#~ msgid "File name"
+#~ msgstr "Όνομα αρχείου"
+
+#~ msgctxt "@label Progress of transfer"
+#~ msgid "Finished"
+#~ msgstr "Ολοκληρώθηκε"
+
+#~ msgctxt "@label Speed of transfer"
+#~ msgid "Speed"
+#~ msgstr "Ταχύτητα"
+
+#~ msgctxt "@label Status of transfer"
+#~ msgid "Status"
+#~ msgstr "Κατάσταση"
+
+#~ msgctxt "@action:button start a transfer"
+#~ msgid "Start"
+#~ msgstr "Εκκίνηση"
+
+#~ msgctxt "@action:button"
+#~ msgid "Stop"
+#~ msgstr "Σταμάτημα"
+
+#~ msgctxt "@action:button"
+#~ msgid "Remove"
+#~ msgstr "Αφαίρεση"
+
+#~ msgctxt "@label Download from"
+#~ msgid "Source:"
+#~ msgstr "Πηγή:"
+
+#~ msgctxt "@label Save download to"
+#~ msgid "Saving to:"
+#~ msgstr "Αποθήκευση σε:"
+
+#~ msgctxt "@label Title in header"
+#~ msgid "Web Interface"
+#~ msgstr "Διασύνδεση ιστού"
+
+#~ msgctxt "@action"
+#~ msgid "Settings"
+#~ msgstr "Ρυθμίσεις"
+
+#~ msgctxt "@action"
+#~ msgid "Refresh"
+#~ msgstr "Ανανέωση"
+
+#~ msgctxt "@action"
+#~ msgid "Enter URL: "
+#~ msgstr "Εισάγετε URL: "
+
+#~ msgctxt "@action:button"
+#~ msgid "OK"
+#~ msgstr "Εντάξει"
+
+#~ msgctxt "@action Refresh download list every x (seconds)"
+#~ msgid "Refresh download list every"
+#~ msgstr "Ενημέρωση της λίστας λήψεων κάθε"
+
+#~ msgctxt "@action (Refresh very x )seconds"
+#~ msgid "seconds"
+#~ msgstr "δευτερόλεπτα"
+
+#~ msgctxt "@action:button"
+#~ msgid "Save Settings"
+#~ msgstr "Αποθήκευση ρυθμίσεων"
+
+#~ msgctxt "@title"
+#~ msgid "Downloads"
+#~ msgstr "Λήψεις"
+
+#~ msgctxt "@label text in footer"
+#~ msgid "KGet Web Interface | Valid XHTML 1.0 Strict &amp; CSS"
+#~ msgstr "Διασύνδεση ιστού του KGet | Έγκυρο XHTML 1.0 Strict &amp; CSS"
+
+#~ msgid "An advanced download manager for KDE"
+#~ msgstr "Ένας προχωρημένος διαχειριστής λήψεων αρχείων για το KDE"
+
+#~ msgid ""
+#~ "(C) 2005 - 2009, The KGet developers\n"
+#~ "(C) 2001 - 2002, Patrick Charbonnier\n"
+#~ "(C) 2002, Carsten Pfeiffer\n"
+#~ "(C) 1998 - 2000, Matej Koss"
+#~ msgstr ""
+#~ "(C) 2005 - 2009, The KGet developers\n"
+#~ "(C) 2001 - 2002, Patrick Charbonnier\n"
+#~ "(C) 2002, Carsten Pfeiffer\n"
+#~ "(C) 1998 - 2000, Matej Koss"
+
+#~ msgid "<a href=\"mailto:kget@kde.org\">kget@kde.org</a>"
+#~ msgstr "<a href=\"mailto:kget@kde.org\">kget@kde.org</a>"
+
+#~ msgid "Lukas Appelhans"
+#~ msgstr "Lukas Appelhans"
+
+#, fuzzy
+#~| msgid "Developer, Torrent Plugin Author"
+#~ msgid "Maintainer, Core Developer, Torrent Plugin Author"
+#~ msgstr "Προγραμματιστής, συγγραφέας πρόσθετου Torrent"
+
+#~ msgid "Dario Massarin"
+#~ msgstr "Dario Massarin"
+
+#~ msgid "Core Developer"
+#~ msgstr "Κύριος προγραμματιστής"
+
+#~ msgid "Urs Wolfer"
+#~ msgstr "Urs Wolfer"
+
+#~ msgid "Manolo Valdes"
+#~ msgstr "Manolo Valdes"
+
+#~ msgid "Core Developer, Multithreaded Plugin Author"
+#~ msgstr "Προγραμματιστής, συγγραφέας πολυνηματικού πρόσθετου"
+
+#~ msgid "Javier Goday"
+#~ msgstr "Javier Goday"
+
+#~ msgid "Developer"
+#~ msgstr "Προγραμματιστής"
+
+#~ msgid "Patrick Charbonnier"
+#~ msgstr "Patrick  Charbonnier"
+
+#~ msgid "Former Developer"
+#~ msgstr "Πρώην προγραμματιστής"
+
+#~ msgid "Carsten Pfeiffer"
+#~ msgstr "Carsten Pfeiffer"
+
+#~ msgid "Matej Koss"
+#~ msgstr "Matej Koss"
+
+#~ msgid "Joris Guisson"
+#~ msgstr "Joris Guisson"
+
+#~ msgid "BTCore (KTorrent) Developer"
+#~ msgstr "Προγραμματιστής του BTCore (KTorrent)"
+
+#~ msgid "Mensur Zahirovic (Nookie)"
+#~ msgstr "Mensur Zahirovic (Nookie)"
+
+#~ msgid "Design of Web Interface"
+#~ msgstr "Σχεδιαστής της διασύνδεσης ιστού"
+
+#~ msgid "Start KGet with drop target"
+#~ msgstr "Εκκίνηση του KGet με ορατό το σημείο ρίψης"
+
+#~ msgid "Start KGet with hidden main window"
+#~ msgstr "Εκκίνηση του KGet με κρυφό το κύριο παράθυρο"
+
+#~ msgid "Start KGet without drop target animation"
+#~ msgstr "Εκκίνηση του KGet χωρίς κίνηση του σημείου ρίψης"
+
+#~ msgid "URL(s) to download"
+#~ msgstr "URL για λήψη"
+
+#~ msgid "KGet Transfer List"
+#~ msgstr "Λίστα μεταφοράς KGet"
+
+#~ msgid "Export Transfers"
+#~ msgstr "Εξαγωγή μεταφορών"
+
+#~ msgid "&New Download..."
+#~ msgstr "&Νέα λήψη..."
+
+#~ msgid "&Import Transfers..."
+#~ msgstr "&Εισαγωγή μεταφορών..."
+
+#~ msgid "&Export Transfers List..."
+#~ msgstr "&Εξαγωγή λίστας μεταφορών..."
+
+#~ msgid "&Export Transfers as Plain Text..."
+#~ msgstr "&Εξαγωγή μεταφορών ως απλό κείμενο..."
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Top Priority"
+#~ msgstr "Προτεραιότητα"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Least Priority"
+#~ msgstr "Προτεραιότητα"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Increase Priority"
+#~ msgstr "Προτεραιότητα"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Decrease Priority"
+#~ msgstr "Προτεραιότητα"
+
+#~ msgid "Set Icon..."
+#~ msgstr "Ορισμός εικονιδίου..."
+
+#~ msgid "Auto-Paste Mode"
+#~ msgstr "Λειτουργία αυτόματης επικόλλησης"
+
+#~ msgid ""
+#~ "<b>Auto paste</b> button toggles the auto-paste mode on and off.\n"
+#~ "When set, KGet will periodically scan the clipboard for URLs and paste "
+#~ "them automatically."
+#~ msgstr ""
+#~ "Το κουμπί <b>Αυτόματη επικόλληση</b> εναλλάσσει τη λειτουργία της "
+#~ "αυτόματης επικόλλησης.\n"
+#~ "Όταν ενεργοποιηθεί, το KGet ελέγχει περιοδικά το πρόχειρο για URL και τα "
+#~ "επικολλάει αυτόματα."
+
+#~ msgid "Use KGet as Konqueror Download Manager"
+#~ msgstr "Χρήση του KGet ως διαχειριστή λήψεων του Konqueror"
+
+#, fuzzy
+#~| msgid "Remove Webseed"
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Remove Selected"
+#~ msgstr "Αφαίρεση γόνου ιστού"
+
+#, fuzzy
+#~| msgctxt "delete all finished transfers"
+#~| msgid "Delete All Finished"
+#~ msgctxt "delete all finished transfers"
+#~ msgid "Remove All Finished"
+#~ msgstr "Διαγραφή όλων των ολοκληρωμένων"
+
+#~ msgctxt "redownload selected transfer item"
+#~ msgid "Redownload Selected"
+#~ msgstr "λήψη των επιλεγμένων και πάλι"
+
+#~ msgid "Start / Resume All"
+#~ msgstr "Εκκίνηση / συνέχιση όλων"
+
+#~ msgid "Start / Resume Selected"
+#~ msgstr "Εκκίνηση / συνέχιση επιλεγμένων"
+
+#~ msgid "Stop All"
+#~ msgstr "Σταμάτημα όλων"
+
+#~ msgid "Stop Selected"
+#~ msgstr "Σταμάτημα επιλεγμένων"
+
+#~ msgid "Start / Resume"
+#~ msgstr "Εκκίνηση / συνέχιση"
+
+#~ msgid "Stop"
+#~ msgstr "Σταμάτημα"
+
+#~ msgid "Remove"
+#~ msgstr "Αφαίρεση"
+
+#~ msgid "Open Destination"
+#~ msgstr "Άνοιγμα προορισμού"
+
+#~ msgid "Open File"
+#~ msgstr "Άνοιγμα αρχείου"
+
+#~ msgid "Show Details"
+#~ msgstr "Εμφάνιση λεπτομερειών"
+
+#~ msgid "Copy URL to Clipboard"
+#~ msgstr "Αντιγραφή URL στο πρόχειρο"
+
+#~ msgid "&Transfer History"
+#~ msgstr "Ιστορικό μεταφοράς"
+
+#~ msgid "&Group Settings"
+#~ msgstr "&Ρυθμίσεις ομάδας"
+
+#~ msgid "&Transfer Settings"
+#~ msgstr "&Ρυθμίσεις μεταφοράς"
+
+#~ msgid "Import &Links..."
+#~ msgstr "Εισαγωγή &δεσμών..."
+
+#~ msgid ""
+#~ "This is the first time you have run KGet.\n"
+#~ "Would you like to enable KGet as the download manager for Konqueror?"
+#~ msgstr ""
+#~ "Αυτή είναι η πρώτη φορά που εκτελείτε το KGet.\n"
+#~ "Επιθυμείτε τη χρήση του KGet ως διαχειριστή λήψεων του Konqueror;"
+
+#~ msgid "Konqueror Integration"
+#~ msgstr "Ενσωμάτωση με τον Konqueror"
+
+#~ msgid "Enable"
+#~ msgstr "Ενεργοποίηση"
+
+#~ msgid "Do Not Enable"
+#~ msgstr "Να μην ενεργοποιηθεί"
+
+#~ msgid "All Openable Files"
+#~ msgstr "Όλα τα αρχεία που μπορούν να ανοιχτούν"
+
+#~ msgctxt "window title including overall download progress in percent"
+#~ msgid "KGet - %1%"
+#~ msgstr "KGet - %1%"
+
+#~ msgid ""
+#~ "Some transfers are still running.\n"
+#~ "Are you sure you want to close KGet?"
+#~ msgstr ""
+#~ "Ορισμένες μεταφορές εκτελούνται ακόμα.\n"
+#~ "Επιθυμείτε σίγουρα το κλείσιμο του KGet;"
+
+#~ msgid "Confirm Quit"
+#~ msgstr "Επιβεβαίωση εξόδου"
+
+#~ msgid "Enter Group Name"
+#~ msgstr "Εισάγετε όνομα ομάδας"
+
+#~ msgid "Group name:"
+#~ msgstr "Όνομα ομάδας:"
+
+#~ msgid "Are you sure you want to delete the selected transfer?"
+#~ msgid_plural "Are you sure you want to delete the selected transfers?"
+#~ msgstr[0] "Επιθυμείτε σίγουρα την αφαίρεση της επιλεγμένης μεταφοράς;"
+#~ msgstr[1] "Επιθυμείτε σίγουρα την αφαίρεση των επιλεγμένων μεταφορών;"
+
+#~ msgid "Confirm transfer delete"
+#~ msgstr "Επιβεβαίωση διαγραφής μεταφοράς"
+
+#~ msgid ""
+#~ "KGet has been temporarily disabled as download manager for Konqueror. If "
+#~ "you want to disable it forever, go to Settings->Advanced and disable "
+#~ "\"Use as download manager for Konqueror\"."
+#~ msgstr ""
+#~ "Το KGet προσωρινά απενεργοποιήθηκε ως διαχειριστής λήψεων του Konqueror. "
+#~ "Αν επιθυμείτε τη μόνιμη απενεργοποίησή του, μεταβείτε στις Ρυθμίσεις -> "
+#~ "Για προχωρημένους και απενεργοποιήστε τη \"Χρήση ως διαχειριστή λήψεων "
+#~ "του Konqueror\"."
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Τούσης Μανώλης,Πέτρος Βιδάλης"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "manolis@koppermind.homelinux.org,p_vidalis@hotmail.com"
+
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Automatic verification:"
+#~ msgstr "Περιγραφή:"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgid "Automatic verification"
+#~ msgstr "Προορισμός"
+
+#, fuzzy
+#~| msgid "Seeders:"
+#~ msgid "Keyservers:"
+#~ msgstr "Γόνοι:"
+
+#, fuzzy
+#~| msgid "Use default directories for groups as suggestion"
+#~ msgid "Use default folders for groups as suggestion"
+#~ msgstr "Χρήση προκαθορισμένων καταλόγων για ομάδες, ως πρόταση"
+
+#~ msgid "Rename"
+#~ msgstr "Μετονομασία"
+
+#~ msgid "Select Icon..."
+#~ msgstr "Επιλογή εικονιδίου..."
+
+#~ msgid "Limit Maximum Downloads Per Group"
+#~ msgstr "Περιορισμός μέγιστου αριθμού λήψεων ανά ομάδα"
+
+#~ msgid "Number of downloads:"
+#~ msgstr "Αριθμός λήψεων:"
+
+#~ msgid "Downloads from the same server:"
+#~ msgstr "Λήψεις από τον ίδιο εξυπηρετητή:"
+
+#~ msgid "Speed Limit"
+#~ msgstr "Όριο ταχύτητας"
+
+#~ msgid "Global download limit:"
+#~ msgstr "Καθολικό όριο λήψης:"
+
+#, fuzzy
+#~| msgid "KiB/s"
+#~ msgid " KiB/s"
+#~ msgstr "KiB/δ"
+
+#~ msgid "Global upload limit:"
+#~ msgstr "Καθολικό όριο αποστολής:"
+
+#~ msgid "Per transfer:"
+#~ msgstr "Ανά μεταφορά:"
+
+#~ msgid "Reconnect on Error or Broken Connection"
+#~ msgstr "Επανασύνδεση σε σφάλμα ή πρόβλημα σύνδεσης"
+
+#~ msgid "Number of retries:"
+#~ msgstr "Αριθμός προσπαθειών:"
+
+#~ msgid "Retry after:"
+#~ msgstr "Προσπάθεια μετά από:"
+
+#, fuzzy
+#~| msgid "sec"
+#~ msgid " sec"
+#~ msgstr "δευτ"
+
+#~ msgid "After Completing Downloads"
+#~ msgstr "Μετά το τέλος των λήψεων"
+
+#~ msgid "Auto shutdown"
+#~ msgstr "Αυτόματος τερματισμός"
+
+#~ msgid "Auto disconnect"
+#~ msgstr "Αυτόματη αποσύνδεση"
+
+#~ msgid "Enable Web Interface"
+#~ msgstr "Ενεργοποίηση διασύνδεσης ιστού"
+
+#~ msgid "Port:"
+#~ msgstr "Θύρα:"
+
+#~ msgid "User:"
+#~ msgstr "Χρήστης:"
+
+#~ msgid "Password:"
+#~ msgstr "Κωδικός πρόσβασης:"
+
+#~ msgid "Startup"
+#~ msgstr "Εκκίνηση"
+
+#~ msgid "Show splashscreen"
+#~ msgstr "Εμφάνιση εισαγωγικής οθόνης"
+
+#~ msgid "Enable animations"
+#~ msgstr "Ενεργοποίηση κινούμενης εικόνας"
+
+#~ msgid "Show drop target"
+#~ msgstr "Εμφάνιση του σημείου ρίψης"
+
+#~ msgid "Disable confirmation dialogs (less verbosity)"
+#~ msgstr "Απενεργοποίηση διαλόγων επιβεβαίωσης (λιγότερα μηνύματα)"
+
+#~ msgid "Enable system tray icon"
+#~ msgstr "Εικονίδιο στο πλαίσιο συστήματος"
+
+#~ msgid "Execute action after all downloads have been finished:"
+#~ msgstr "Εκτέλεση ενέργειας όταν όλες οι λήψεις έχουν ολοκληρωθεί"
+
+#~ msgid "At startup:"
+#~ msgstr "Στην εκκίνηση:"
+
+#~ msgid "Restore Download State"
+#~ msgstr "Επαναφορά κατάστασης λήψης"
+
+#~ msgid "Start All Downloads"
+#~ msgstr "Έναρξη όλων των λήψεων"
+
+#~ msgid "Stop All Downloads"
+#~ msgstr "Σταμάτημα όλων των λήψεων"
+
+#~ msgid "History"
+#~ msgstr "Ιστορικό"
+
+#~ msgid "History backend:"
+#~ msgstr "Σύστημα υποστήριξης ιστορικού:"
+
+#~ msgid "Enable KDE global progress tracking"
+#~ msgstr "Ρύθμιση καθολικής ανίχνευσης προόδου του KDE"
+
+#~ msgid "Show every single download "
+#~ msgstr "Εμφάνιση κάθε ανεξάρτητης λήψης "
+
+#~ msgid "Show overall progress"
+#~ msgstr "Εμφάνιση συνολικής προόδου"
+
+#, fuzzy
+#~| msgid "Use as download manager for Konqueror"
+#~ msgid "Use as download manager for Konqueror:"
+#~ msgstr "Χρήση του KGet ως διαχειριστή λήψεων του Konqueror"
+
+#~ msgid "Monitor clipboard for files to download"
+#~ msgstr "Παρακολούθηση προχείρου για αρχεία προς λήψη"
+
+#~ msgid "Search Engines"
+#~ msgstr "Μηχανές αναζήτησης"
+
+#~ msgid "Engine Name"
+#~ msgstr "Όνομα μηχανής"
+
+#~ msgid "New Engine..."
+#~ msgstr "Νέα μηχανή..."
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of connections per URL:"
+#~ msgstr "Αριθμός προσπαθειών:"
+
+#~ msgid "Use search engines"
+#~ msgstr "Χρήση μηχανών αναζήτησης"
+
+#~ msgid "File Settings"
+#~ msgstr "Ρυθμίσεις αρχείων"
+
+#~ msgid "Filename:"
+#~ msgstr "Όνομα αρχείου:"
+
+#~ msgid "Use Normalized Name"
+#~ msgstr "Χρήση κανονικοποιημένου ονόματος"
+
+#~ msgid "Use Literal Name"
+#~ msgstr "Χρήση ακριβούς ονόματος"
+
+#~ msgid "Quality:"
+#~ msgstr "Ποιότητα:"
+
+#~ msgid "Best Quality (.mp4)"
+#~ msgstr "Βέλτιστη ποιότητα (.mp4)"
+
+#~ msgid "Normal Quality (.flv)"
+#~ msgstr "Κανονική ποιότητα (.flv)"
+
+#~ msgid ""
+#~ "Provide login info of your YouTube account in order to access restricted "
+#~ "media."
+#~ msgstr ""
+#~ "Εισάγετε πληροφορίες σύνδεσης για τον λογαριασμό σας YouTube για να έχετε "
+#~ "πρόσβαση στα περιορισμένα πολυμέσα."
+
+#~ msgid "Login Info"
+#~ msgstr "Πληροφορίες σύνδεσης"
+
+#~ msgid "Username:"
+#~ msgstr "Όνομα χρήστη:"
+
+#~ msgid ".netrc must have a hostname called 'youtube'."
+#~ msgstr "το .netrc θα πρέπει να περιέχει ένα όνομα υπολογιστή 'youtube'."
+
+#~ msgid "User .netrc file"
+#~ msgstr "Αρχείο .netrc χρήστη"
+
+#~ msgid "User Scripts"
+#~ msgstr "Σενάρια χρήστη"
+
+#~ msgid "Path"
+#~ msgstr "Διαδρομή"
+
+#~ msgid "RegExp"
+#~ msgstr "Καν.έκφραση"
+
+#~ msgid "New Script...."
+#~ msgstr "Νέο σενάριο..."
+
+#~ msgid "Edit...."
+#~ msgstr "Επεξεργασία..."
+
+#~ msgid "Configure...."
+#~ msgstr "Ρύθμιση..."
+
+#~ msgid "Regexp:"
+#~ msgstr "Καν.έκφραση:"
+
+#~ msgid "Path:"
+#~ msgstr "Διαδρομή:"
+
+#~ msgid "Description:"
+#~ msgstr "Περιγραφή:"
+
+#, fuzzy
+#~| msgid "Number of chunks downloaded:"
+#~ msgid "Number of simultaneous file downloads:"
+#~ msgstr "Αριθμός ληφθέντων κομματιών:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of mirrors per file:"
+#~ msgstr "Αριθμός προσπαθειών:"
+
+#, fuzzy
+#~| msgid "Change appearance settings"
+#~ msgid "Change string:"
+#~ msgstr "Τροποποίηση ρυθμίσεων εμφάνισης"
+
+#~ msgid "Mode:"
+#~ msgstr "Λειτουργία:"
+
+#~ msgid "Remove Tracker"
+#~ msgstr "Αφαίρεση ανιχνευτή"
+
+#~ msgid "Change Tracker"
+#~ msgstr "Τροποποίηση ανιχνευτή"
+
+#, fuzzy
+#~| msgid "Update Tracker"
+#~ msgid "Update Trackers"
+#~ msgstr "Ενημέρωση ανιχνευτή"
+
+#~ msgid "Restore Defaults"
+#~ msgstr "Επαναφορά προκαθορισμένων"
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Webseed to add to the "
+#~ "torrent.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">Note: </span>Only http webseeds are supported.</p></body></"
+#~ "html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Γόνος ιστού για "
+#~ "προσθήκη στο torrent.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">Σημείωση: </span>Υποστηρίζονται μόνο γόνοι ιστού http.</p></"
+#~ "body></html>"
+
+#~ msgid "Add Webseed"
+#~ msgstr "Προσθήκη γόνου ιστού"
+
+#~ msgid "Remove Webseed"
+#~ msgstr "Αφαίρεση γόνου ιστού"
+
+#~ msgid "Chunks"
+#~ msgstr "Κομμάτια"
+
+#~ msgid "Total:"
+#~ msgstr "Σύνολο:"
+
+#~ msgid "Currently downloading:"
+#~ msgstr "Λήψεις σε εξέλιξη:"
+
+#~ msgid "Downloaded:"
+#~ msgstr "Ληφθέντα:"
+
+#~ msgid "Excluded:"
+#~ msgstr "Εξαιρέσεις:"
+
+#~ msgid "Left:"
+#~ msgstr "Απομένουν:"
+
+#~ msgid "Size:"
+#~ msgstr "Μέγεθος:"
+
+#~ msgid "Scanning data of torrent:"
+#~ msgstr "Σάρωση δεδομένων του torrent:"
+
+#~ msgid "Number of chunks found:"
+#~ msgstr "Αριθμός κομματιών που βρέθηκαν:"
+
+#~ msgid "Number of chunks failed:"
+#~ msgstr "Αριθμός αποτυχημένων κομματιών:"
+
+#~ msgid "Number of chunks not downloaded:"
+#~ msgstr "Αριθμός μη ληφθέντων κομματιών:"
+
+#~ msgid "Number of chunks downloaded:"
+#~ msgstr "Αριθμός ληφθέντων κομματιών:"
+
+#~ msgid "0"
+#~ msgstr "0"
+
+#~ msgid "Cancel"
+#~ msgstr "Ακύρωση"
+
+#~ msgid "Stats"
+#~ msgstr "Στατιστικά"
+
+#~ msgid "Seeders:"
+#~ msgstr "Γόνοι:"
+
+#~ msgid "<n>"
+#~ msgstr "<n>"
+
+#~ msgid "Download speed:"
+#~ msgstr "Ταχύτητα λήψης:"
+
+#~ msgid "Leechers:"
+#~ msgstr "Χρήστες παράσιτα:"
+
+#~ msgid "Upload speed:"
+#~ msgstr "Ταχύτητα αποστολής:"
+
+#~ msgctxt "chunks left"
+#~ msgid "Left:"
+#~ msgstr "Απομένουν:"
+
+#~ msgctxt "all chunks"
+#~ msgid "All:"
+#~ msgstr "Όλα:"
+
+#~ msgctxt "source-file"
+#~ msgid "Source:"
+#~ msgstr "Πηγή:"
+
+#~ msgid "Saving to:"
+#~ msgstr "Αποθήκευση σε:"
+
+#~ msgid "Upload limit per transfer:"
+#~ msgstr "Όριο αποστολής ανά μεταφορά:"
+
+#~ msgid "No Limit"
+#~ msgstr "Χωρίς όριο"
+
+#~ msgid "KiB"
+#~ msgstr "KiB"
+
+#~ msgid "Download limit per transfer:"
+#~ msgstr "Όριο λήψης ανά μεταφορά:"
+
+#~ msgid "Folders"
+#~ msgstr "Φάκελοι"
+
+#~ msgid "Default torrent folder:"
+#~ msgstr "Προκαθορισμένος φάκελος torrent:"
+
+#~ msgid "Default temporary folder"
+#~ msgstr "Προκαθορισμένος προσωρινός φάκελος"
+
+#~ msgid "Pre-allocate disk space"
+#~ msgstr "Προδέσμευση χώρου στο δίσκο"
+
+#, fuzzy
+#~| msgid "General"
+#~ msgctxt "General options."
+#~ msgid "General"
+#~ msgstr "Γενικά"
+
+#, fuzzy
+#~| msgid "General"
+#~ msgid "General URL:"
+#~ msgstr "Γενικά"
+
+#, fuzzy
+#~| msgid "Requests"
+#~ msgid "Required"
+#~ msgstr "Αιτήσεις"
+
+#, fuzzy
+#~| msgid "Used tags:"
+#~ msgid "Used Mirrors:"
+#~ msgstr "Χρησιμοποιημένες ετικέτες:"
+
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Verification:"
+#~ msgstr "Περιγραφή:"
+
+#, fuzzy
+#~| msgid "Open file"
+#~ msgid "*.metalink *.meta4|Metalink file (*.metalink *.meta4)"
+#~ msgstr "Άνοιγμα αρχείου"
+
+#, fuzzy
+#~| msgid "Next update in:"
+#~ msgid "Metalink published"
+#~ msgstr "Επόμενη ενημέρωση σε:"
+
+#, fuzzy
+#~| msgid "Remaining time:"
+#~ msgid "Date and time:"
+#~ msgstr "Χρόνος που απομένει:"
+
+#, fuzzy
+#~| msgid "Next update in:"
+#~ msgid "Metalink updated"
+#~ msgstr "Επόμενη ενημέρωση σε:"
+
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Version:"
+#~ msgstr "Περιγραφή:"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "Name:"
+#~ msgstr "Όνομα"
+
+#, fuzzy
+#~| msgid "IP address of the peer"
+#~ msgid "Name of the publisher"
+#~ msgstr "Διεύθυνση IP του υπολογιστή"
+
+#, fuzzy
+#~| msgid "IP address of the peer"
+#~ msgid "URL to the publisher"
+#~ msgstr "Διεύθυνση IP του υπολογιστή"
+
+#, fuzzy
+#~| msgid "Files"
+#~ msgctxt "Files as in files on a server"
+#~ msgid "Files:"
+#~ msgstr "Αρχεία"
+
+#~ msgid "&File with links to import:"
+#~ msgstr "&Αρχείο δεσμών για εισαγωγή:"
+
+#~ msgid "&Import Links"
+#~ msgstr "&Εισαγωγή δεσμών"
+
+#~ msgid "Show:"
+#~ msgstr "Εμφάνιση:"
+
+#~ msgctxt "filter: show all file types"
+#~ msgid "&All"
+#~ msgstr "Ό&λους"
+
+#~ msgid "&Videos"
+#~ msgstr "&Βίντεο"
+
+#~ msgid "Ima&ges"
+#~ msgstr "&Εικόνες"
+
+#~ msgid "A&udio"
+#~ msgstr "Ή&χος"
+
+#~ msgid "A&rchives"
+#~ msgstr "&Αρχειοθήκες"
+
+#~ msgid "You can use wildcards for filtering."
+#~ msgstr ""
+#~ "Μπορείτε να χρησιμοποιήσετε σύμβολα υποκατάστασης για το φιλτράρισμα."
+
+#~ msgid "Filter files here...."
+#~ msgstr "Εδώ φιλτράρισμα των αρχείων..."
+
+#~ msgid "Contains"
+#~ msgstr "Περιέχει"
+
+#~ msgid "Does Not Contain"
+#~ msgstr "Δεν περιέχει"
+
+#~ msgid "Inver&t Selection"
+#~ msgstr "Αντιστ&ροφή επιλογής"
+
+#~ msgctxt "Check as in mark, not as in verify"
+#~ msgid "Chec&k Selected"
+#~ msgstr "&Σημείωση επιλεγμένων"
+
+#~ msgid "Show &web content"
+#~ msgstr "Εμφάνιση περιεχομένου &ιστού"
+
+#, fuzzy
+#~| msgid "Error: "
+#~ msgid "Mirror:"
+#~ msgstr "Σφάλμα: "
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of connections:"
+#~ msgstr "Αριθμός προσπαθειών:"
+
+#, fuzzy
+#~| msgid "Enter URL:"
+#~ msgid "Enter a URL"
+#~ msgstr "Εισάγετε URL:"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Priority:"
+#~ msgstr "Προτεραιότητα"
+
+#, fuzzy
+#~| msgid "Location (URL)"
+#~ msgid "Location:"
+#~ msgstr "Τοποθεσία (URL)"
+
+#~ msgid "Clear History"
+#~ msgstr "Καθαρισμός ιστορικού"
+
+#~ msgctxt "View modes"
+#~ msgid "View Modes"
+#~ msgstr "Λειτουργίες προβολής"
+
+#~ msgid "Select Ranges"
+#~ msgstr "Επιλογή εύρους"
+
+#~ msgid "Date"
+#~ msgstr "Ημερομηνία"
+
+#~ msgid "Host"
+#~ msgstr "Υπολογιστής"
+
+#~ msgid "Filter History"
+#~ msgstr "Φιλτράρισμα ιστορικού"
+
+#~ msgctxt "delete selected transfer"
+#~ msgid "Delete Selected"
+#~ msgstr "Διαγραφή επιλεγμένων"
+
+#~ msgid "Download"
+#~ msgstr "Λήψη"
+
+#, fuzzy
+#~| msgid "KSqueezedTextLabel"
+#~ msgid "TextLabel"
+#~ msgstr "KSqueezedTextLabel"
+
+#, fuzzy
+#~| msgid "Path:"
+#~ msgctxt "hash as a hash of type md5, sha1 etc."
+#~ msgid "Hash:"
+#~ msgstr "Διαδρομή:"
+
+#~ msgid "Status:"
+#~ msgstr "Κατάσταση:"
+
+#, fuzzy
+#~| msgid "Remaining Time"
+#~ msgid "Remaining Time:"
+#~ msgstr "Χρόνος που απομένει"
+
+#~ msgid "Transfer Settings"
+#~ msgstr "Ρυθμίσεις μεταφοράς"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Download Destination:"
+#~ msgstr "Προορισμός:"
+
+#, fuzzy
+#~| msgid "Not in use"
+#~ msgctxt "No value has been set"
+#~ msgid "Not set"
+#~ msgstr "Δεν χρησιμοποιείται"
+
+#, fuzzy
+#~| msgid "KiB"
+#~ msgid " KiB"
+#~ msgstr "KiB"
+
+#, fuzzy
+#~| msgid "Upload limit:"
+#~ msgid "Upload Limit:"
+#~ msgstr "Όριο αποστολής:"
+
+#, fuzzy
+#~| msgid "Download limit:"
+#~ msgid "Download Limit:"
+#~ msgstr "Όριο λήψης:"
+
+#, fuzzy
+#~| msgid "Maximum share ratio:"
+#~ msgid "Maximum Share Ratio:"
+#~ msgstr "Μέγιστη αναλογία κοινοχρήστων:"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgctxt "The available mirrors (servers) for downloading"
+#~ msgid "Mirrors"
+#~ msgstr "Σφάλμα"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgctxt "verification of the download (e.g. by using MD5)"
+#~ msgid "Verification"
+#~ msgstr "Προορισμός"
+
+#, fuzzy
+#~| msgid "User:"
+#~ msgid "Issuer:"
+#~ msgstr "Χρήστης:"
+
+#~ msgid "E-Mail:"
+#~ msgstr "E-Mail:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Creation:"
+#~ msgstr "Προορισμός:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Expiration:"
+#~ msgstr "Προορισμός:"
+
+#~ msgid "Group Settings"
+#~ msgstr "Ρυθμίσεις ομάδας"
+
+#~ msgid "Default folder:"
+#~ msgstr "Προκαθορισμένος φάκελος:"
+
+#~ msgid "Moves all transfers with the regular expression to this group"
+#~ msgstr ""
+#~ "Μετακίνηση όλων των μεταφορών της κανονικής έκφρασης σε αυτήν την ομάδα"
+
+#~ msgid "Regular expression:"
+#~ msgstr "Κανονική έκφραση:"
+
+#~ msgid "*movies*"
+#~ msgstr "*ταινίες*"
+
+#~ msgid "Maximum download speed:"
+#~ msgstr "Μέγιστη ταχύτητα λήψης:"
+
+#~ msgid "Maximum upload speed:"
+#~ msgstr "Μέγιστη ταχύτητα αποστολής:"
+
+#~ msgid "Destination:"
+#~ msgstr "Προορισμός:"
+
+#~ msgid "Transfer group:"
+#~ msgstr "Ομάδα μεταφοράς:"
+
+#~ msgid "&File"
+#~ msgstr "&Αρχείο"
+
+#~ msgid "&Downloads"
+#~ msgstr "&Λήψεις"
+
+#~ msgid "&Settings"
+#~ msgstr "Ρ&υθμίσεις"
+
+#~ msgid "&Help"
+#~ msgstr "&Βοήθεια"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Κύρια γραμμή εργαλείων"
+
+#~ msgid "Sets to show the splashscreen while KGet is loading"
+#~ msgstr "Ορισμός εμφάνισης της εισαγωγικής οθόνης κατά τη φόρτωση του KGet"
+
+#~ msgid "The width of the columns in the history view"
+#~ msgstr "Το πλάτος των στηλών της προβολής ιστορικού"
+
+#~ msgid "List of the available search engines"
+#~ msgstr "Λίστα διαθέσιμων μηχανών αναζήτησης"
+
+#, fuzzy
+#~| msgid "List of the available search engines"
+#~ msgid "List of the available search engine URLs"
+#~ msgstr "Λίστα διαθέσιμων μηχανών αναζήτησης"
+
+#, fuzzy
+#~| msgid "List of the Regexp to match input Url"
+#~ msgid "List of the Regexp to match input URL"
+#~ msgstr "Εμφάνιση κανονικών εκφράσεων για την είσοδο Url"
+
+#~ msgid "List of descriptions for user scripts"
+#~ msgstr "Εμφάνιση περιγραφών για τα σενάρια του χρήστη"
+
+#~ msgid "List of whether the script is enabled"
+#~ msgstr "Εμφάνιση κατάστασης ενεργών σεναρίων"
+
+#~ msgid "There are no links in the active frame of the current HTML page."
+#~ msgstr "Δεν υπάρχουν δεσμοί στο ενεργό πλαίσιο της τρέχουσας σελίδας HTML."
+
+#~ msgid "An error occurred...."
+#~ msgstr "Συνέβη ένα σφάλμα..."
+
+#~ msgid "Remove Tag"
+#~ msgstr "Αφαίρεση ετικέτας"
+
+#~ msgid "Add Tag"
+#~ msgstr "Προσθήκη ετικέτας"
+
+#~ msgid "Tag Settings for the groups"
+#~ msgstr "Ρυθμίσεις ετικέτας για τις ομάδες"
+
+#~ msgid "Tag Settings"
+#~ msgstr "Ρυθμίσεις ετικετών"
+
+#~ msgid "Available tags:"
+#~ msgstr "Διαθέσιμες ετικέτες:"
+
+#~ msgid "Used tags:"
+#~ msgstr "Χρησιμοποιημένες ετικέτες:"
+
+#~ msgid "Enter a new Tag"
+#~ msgstr "Εισάγετε μια νέα ετικέτα"
+
+#~ msgid "Enter a new tag"
+#~ msgstr "Εισάγετε μια νέα ετικέτα"
+
+#~ msgid "Modify Tags..."
+#~ msgstr "Τροποποίηση Ετικετών..."
+
+#, fuzzy
+#~| msgid "Whether we are interested in downloading from this peer"
+#~ msgid "Unable to continue: KGet cannot download using this protocol."
+#~ msgstr ""
+#~ "Αν εσείς ενδιαφέρεστε ή όχι για τη λήψη δεδομένων από αυτόν τον υπολογιστή"
+
+#~ msgid "The width of the columns in the main view"
+#~ msgstr "Το πλάτος των στηλών της κύριας προβολής"
+
+#~ msgid "OK"
+#~ msgstr "Εντάξει"
+
+#~ msgid "Announcing"
+#~ msgstr "Ανακοίνωση"
+
+#, fuzzy
+#~| msgid "Error: "
+#~ msgid "Error: %1"
+#~ msgstr "Σφάλμα: "
+
+#~ msgid "Unknown client"
+#~ msgstr "Άγνωστος πελάτης"
+
+#~ msgid "1 day "
+#~ msgid_plural "%1 days "
+#~ msgstr[0] "1 ημέρα "
+#~ msgstr[1] "%1 μέρες "
+
+#~ msgid "Cannot open log file %1 : %2"
+#~ msgstr "Αδυναμία ανοίγματος αρχείου καταγραφής %1 : %2"
+
+#~ msgid "Cannot write to %1 : %2"
+#~ msgstr "Αδυναμία εγγραφής στο %1 : %2"
+
+#~ msgid "Cannot read from %1"
+#~ msgstr "Αδυναμία ανάγνωσης από %1"
+
+#~ msgid "Cannot create directory %1"
+#~ msgstr "Αδύνατη η δημιουργία του καταλόγου %1"
+
+#~ msgid "Cannot symlink %1 to %2: %3"
+#~ msgstr "Αδυναμία δημιουργίας συμβολικού δεσμού %1 στο %2: %3"
+
+#~ msgid "Cannot move %1 to %2: %3"
+#~ msgstr "Αδυναμία μετακίνησης %1 στο %2: %3"
+
+#~ msgid "Cannot copy %1 to %2: %3"
+#~ msgstr "Αδυναμία αντιγραφής %1 στο %2: %3"
+
+#~ msgid "Cannot delete %1: %2"
+#~ msgstr "Αδυναμία διαγραφής %1: %2"
+
+#~ msgid "Cannot create %1: %2"
+#~ msgstr "Αδυναμία δημιουργίας %1: %2"
+
+#~ msgid "Cannot calculate the filesize of %1: %2"
+#~ msgstr "Αδυναμία υπολογισμού του μεγέθους αρχείου από %1: %2"
+
+#~ msgid "Cannot calculate the filesize : %1"
+#~ msgstr "Αδυναμία υπολογισμού του μεγέθους αρχείου : %1"
+
+#~ msgid "Cannot open %1 : %2"
+#~ msgstr "Αδυναμία ανοίγματος %1 : %2"
+
+#~ msgid "Cannot expand file: %1"
+#~ msgstr "Αδυναμία αποσυμπίεσης αρχείου: %1"
+
+#~ msgid "Cannot seek in file : %1"
+#~ msgstr "Αδυναμία κίνησης μέσα στο αρχείο : %1"
+
+#~ msgid "General"
+#~ msgstr "Γενικά"
+
+#~ msgid "Connections"
+#~ msgstr "Συνδέσεις"
+
+#~ msgid "Tracker"
+#~ msgstr "Ανιχνευτής"
+
+#~ msgid "Disk Input/Output"
+#~ msgstr "Χρήση δίσκου Ι/Ο"
+
+#~ msgid "Not connected"
+#~ msgstr "Χωρίς σύνδεση"
+
+#~ msgid "Not in use"
+#~ msgstr "Δεν χρησιμοποιείται"
+
+#~ msgid "Connection closed"
+#~ msgstr "Η σύνδεση έκλεισε"
+
+#~ msgid "Resolving proxy %1:%2"
+#~ msgstr "Επίλυση διαμεσολαβητή %1:%2"
+
+#~ msgid "Resolving hostname %1"
+#~ msgstr "Επίλυση ονόματος υπολογιστή %1"
+
+#~ msgid "Error: request failed: %1"
+#~ msgstr "Σφάλμα: αποτυχία αίτησης: %1"
+
+#~ msgid "Connected"
+#~ msgstr "Σε σύνδεση"
+
+#~ msgid "Error: Failed to connect to webseed"
+#~ msgstr "Σφάλμα: Αποτυχία σύνδεσης στο γόνο ιστού"
+
+#~ msgid "Connecting"
+#~ msgstr "Γίνεται σύνδεση"
+
+#~ msgid "Failed to connect to webseed"
+#~ msgstr "Αποτυχία σύνδεσης στο γόνο ιστού"
+
+#~ msgid "Failed to resolve hostname of webseed"
+#~ msgstr "Αποτυχία επίλυσης ονόματος υπολογιστή του γόνου ιστού"
+
+#~ msgid "Error: failed to connect, server not responding"
+#~ msgstr "Σφάλμα: αποτυχία σύνδεσης, ο εξυπηρετητής δεν ανταποκρίνεται"
+
+#~ msgid "Error: request timed out"
+#~ msgstr "Σφάλμα: λήξη χρονικού ορίου αίτησης"
+
+#, fuzzy
+#~| msgid "Redirected without a new location !"
+#~ msgid "Redirected without a new location."
+#~ msgstr "Ανακατεύθυνση χωρίς μια νέα τοποθεσία !"
+
+#~ msgid "1 peer"
+#~ msgid_plural "%1 peers"
+#~ msgstr[0] "1 υπολογιστής"
+#~ msgstr[1] "%1 υπολογιστές"
+
+#~ msgid "Illegal token: %1"
+#~ msgstr "Μη έγκυρο ενδεικτικό: %1"
+
+#~ msgid "Decode error"
+#~ msgstr "Σφάλμα αποκωδικοποίησης"
+
+#~ msgid "Unexpected end of input"
+#~ msgstr "Μη αναμενόμενο τέλος της εισόδου"
+
+#~ msgid "Cannot convert %1 to an int"
+#~ msgstr "Αδυναμία μετατροπής του %1 σε ακέραιο"
+
+#, fuzzy
+#~| msgid "Torrent is incomplete!"
+#~ msgid "Torrent is incomplete."
+#~ msgstr "Το torrent δεν είναι ολοκληρωμένο!"
+
+#~ msgid "Failed to open %1 : %2"
+#~ msgstr "Αποτυχία ανοίγματος του %1 : %2"
+
+#~ msgid "Failed to create %1 : %2"
+#~ msgstr "Αποτυχία δημιουργίας του %1 : %2"
+
+#~ msgid "Cannot open index file %1 : %2"
+#~ msgstr "Αδυναμία ανοίγματος αρχείου ευρετηρίου %1 : %2"
+
+#~ msgid "Cannot create file %1 : %2"
+#~ msgstr "Αδυναμία δημιουργίας του αρχείου %1 : %2"
+
+#~ msgid "Failed to write first chunk to DND file : %1"
+#~ msgstr "Αποτυχία εγγραφής του πρώτου κομματιού στο αρχείο DND : %1"
+
+#~ msgid "Failed to write last chunk to DND file : %1"
+#~ msgstr "Αποτυχία εγγραφής του τελευταίου κομματιού στο αρχείο DND : %1"
+
+#~ msgid "Cannot open %1 for writing : readonly filesystem"
+#~ msgstr ""
+#~ "Αδυναμία ανοίγματος του %1 για εγγραφή: σύστημα αρχείων μόνο για ανάγνωση"
+
+#~ msgid "Cannot expand file %1 : %2"
+#~ msgstr "Αδυναμία αποσυμπίεσης του αρχείου %1 : %2"
+
+#~ msgid "Error : Reading past the end of the file %1"
+#~ msgstr "Σφάλμα: ανάγνωση μετά το τέλος του αρχείου %1"
+
+#~ msgid "Failed to seek file %1 : %2"
+#~ msgstr "Αποτυχία μετακίνησης στο αρχείο %1 : %2"
+
+#~ msgid "Error reading from %1"
+#~ msgstr "Σφάλμα ανάγνωσης από %1"
+
+#~ msgid "Failed to write to file %1 : %2"
+#~ msgstr "Αποτυχία εγγραφής στο αρχείο %1 : %2"
+
+#~ msgid "Cannot preallocate diskspace : %1"
+#~ msgstr "Αδυναμία προδέσμευσης χώρου στο δίσκο: %1"
+
+#~ msgid "Cannot open file %1 : %2"
+#~ msgstr "Αδυναμία ανοίγματος του αρχείου %1 : %2"
+
+#, fuzzy
+#~| msgid "Corrupted torrent!"
+#~ msgid "Corrupted torrent."
+#~ msgstr "Κατεστραμμένο torrent!"
+
+#~ msgid " Unable to open torrent file %1 : %2"
+#~ msgstr " Αδυναμία ανοίγματος αρχείου torrent %1 : %2"
+
+#~ msgid "Parse Error"
+#~ msgstr "Σφάλμα ανάλυσης"
+
+#~ msgid ""
+#~ "An error occurred while loading the torrent <b>%1</b>:<br/><b>%2</b><br/"
+#~ ">The torrent is probably corrupt or is not a valid torrent file."
+#~ msgstr ""
+#~ "Παρουσιάστηκε σφάλμα κατά τη φόρτωση του αρχείου torrent  <b>%1</b>:<br/"
+#~ "><b>%2</b><br/> Το torrent πιθανότατα είναι κατεστραμμένο, ή δεν είναι "
+#~ "αρχείο μορφής torrent."
+
+#~ msgid ""
+#~ "An error occurred while loading the torrent:<br/><b>%1</b><br/>The "
+#~ "torrent is probably corrupt or is not a valid torrent file."
+#~ msgstr ""
+#~ "Παρουσιάστηκε σφάλμα κατά τη φόρτωση του αρχείου torrent:<br/><b>%1</"
+#~ "b><br/>Το torrent πιθανότατα είναι κατεστραμμένο, ή δεν είναι αρχείο "
+#~ "μορφής torrent."
+
+#~ msgid "Unable to create %1 : %2"
+#~ msgstr "Αδυναμία δημιουργίας %1 : %2"
+
+#~ msgid ""
+#~ "You are already downloading this torrent %1, the list of trackers of both "
+#~ "torrents has been merged."
+#~ msgstr ""
+#~ "Ήδη κάνετε λήψη αυτό το torrent %1, η λίστα των ανιχνευτών των δύο "
+#~ "torrent έχει συγχωνευτεί."
+
+#~ msgid "You are already downloading the torrent %1"
+#~ msgstr "Ήδη κάνετε λήψη αυτό το torrent %1"
+
+#~ msgid "Not started"
+#~ msgstr "Δεν εκκίνησε"
+
+#~ msgid "Seeding completed"
+#~ msgstr "Η προσφορά ολοκληρώθηκε"
+
+#, fuzzy
+#~| msgid "Seeding"
+#~ msgctxt "Status of a torrent file"
+#~ msgid "Seeding"
+#~ msgstr "Προσφορά"
+
+#~ msgid "Downloading"
+#~ msgstr "Λήψη"
+
+#~ msgid "Stopped"
+#~ msgstr "Σταματημένο"
+
+#~ msgid "Allocating diskspace"
+#~ msgstr "Δέσμευση χώρου στο δίσκο"
+
+#, fuzzy
+#~| msgid "Currently downloading:"
+#~ msgid "Queued for downloading"
+#~ msgstr "Λήψεις σε εξέλιξη:"
+
+#~ msgid "Checking data"
+#~ msgstr "Έλεγχος δεδομένων"
+
+#~ msgid "Stopped. No space left on device."
+#~ msgstr "Σταματημένο. Δεν έμεινε χώρος στη συσκευή."
+
+#~ msgid "Cannot open file %1: %2"
+#~ msgstr "Αδυναμία ανοίγματος του αρχείου %1: %2"
+
+#~ msgid "Cannot create index file: %1"
+#~ msgstr "Αδυναμία δημιουργίας αρχείου ευρετηρίου: %1"
+
+#, fuzzy
+#~| msgid "Redirected without a new location !"
+#~ msgid "Redirect without a redirect location"
+#~ msgstr "Ανακατεύθυνση χωρίς μια νέα τοποθεσία !"
+
+#~ msgid "Unable to resolve hostname %1"
+#~ msgstr "Αδυναμία επίλυσης ονόματος υπολογιστή %1"
+
+#~ msgid "Cannot bind to udp port %1 or the 10 following ports."
+#~ msgstr ""
+#~ "Αδυναμία σύνδεσης με τη θύρα udp %1 ή μία από τις επόμενες 10 θύρες."
+
+#~ msgid "Invalid response from tracker"
+#~ msgstr "Μη έγκυρη απάντηση από ανιχνευτή"
+
+#~ msgid "Invalid data from tracker"
+#~ msgstr "Μη έγκυρα δεδομένα από ανιχνευτή"
+
+#~ msgid "Invalid tracker URL"
+#~ msgstr "Μη έγκυρο URL ανιχνευτή"
+
+#~ msgid "Cannot open file : %1 : %2"
+#~ msgstr "Αδυναμία ανοίγματος του αρχείου : %1 : %2"
+
+#~ msgid ""
+#~ "Another group with this name already exists. Please select a different "
+#~ "name."
+#~ msgstr ""
+#~ "Μία ομάδα με αυτό το όνομα υπάρχει ήδη. Παρακαλώ επιλέξτε διαφορετικό "
+#~ "όνομα."
+
+#~ msgid "Group Name Already in Use"
+#~ msgstr "Το όνομα της ομάδας χρησιμοποιείται ήδη"
+
+#~ msgid "Add"
+#~ msgstr "Προσθήκη"
+
+#~ msgid "Delete"
+#~ msgstr "Διαγραφή"
+
+#~ msgid "Configure..."
+#~ msgstr "Ρύθμιση..."
+
+#~ msgid "Details for: %1"
+#~ msgstr "Λεπτομέρειες του: %1"
+
+#~ msgid "All downloads"
+#~ msgstr "Όλες οι λήψεις"
+
+#~ msgid "Finished downloads"
+#~ msgstr "Ολοκληρωμένες λήψεις"
+
+#~ msgid "Transfers:"
+#~ msgstr "Μεταφορές:"
+
+#~ msgid "Downloads"
+#~ msgstr "Λήψεις"
+
+#~ msgid "Transfer details:"
+#~ msgstr "Λεπτομέρειες μεταφοράς:"
+
+#~ msgid "Transfer List"
+#~ msgstr "Λίστα μεταφοράς"
+
+#~ msgid "Expandable transfer details instead of separate tabs"
+#~ msgstr "Αναπτυσσόμενες λεπτομέρειες μεταφοράς στη θέση χωριστών καρτελών"
+
+#~ msgid "Threads"
+#~ msgstr "Νήματα"
+
+#~ msgid "Number of threads:"
+#~ msgstr "Αριθμός νημάτων:"
+
+#~ msgid "License:"
+#~ msgstr "Άδεια:"
+
+#, fuzzy
+#~| msgid "Number of the chunk"
+#~ msgid "Name of the license"
+#~ msgstr "Αριθμός του κομματιού"
+
+#, fuzzy
+#~| msgid "Number of the chunk"
+#~ msgid "URL to the license"
+#~ msgstr "Αριθμός του κομματιού"
+
+#~ msgctxt "The transfer is delayed"
+#~ msgid "Delayed"
+#~ msgstr "Σε αναστολή"
+
+#~ msgid ""
+#~ "Destination file \n"
+#~ "%1\n"
+#~ "already exists.\n"
+#~ "Do you want to overwrite it?"
+#~ msgstr ""
+#~ "Το αρχείο προορισμού \n"
+#~ "%1\n"
+#~ "υπάρχει ήδη.\n"
+#~ "Επιθυμείτε την αντικατάστασή του;"
+
+#~ msgid "Overwrite destination"
+#~ msgstr "Αντικατάσταση προορισμού;"
+
+#~ msgid "Cannot remove torrent default tracker."
+#~ msgstr "Αδυναμία αφαίρεσης προκαθορισμένου ανιχνευτή torrent."
+
+#~ msgid "You cannot add trackers to a private torrent"
+#~ msgstr "Δεν μπορείτε να προσθέσετε ανιχνευτές σε ένα ιδιωτικό torrent"
+
+#~ msgid "Cannot migrate %1 : %2"
+#~ msgstr "Αδυναμία μεταφοράς του %1 : %2"
+
+#~ msgid ""
+#~ "The torrent %1 was started with a previous version of KTorrent. To make "
+#~ "sure this torrent still works with this version of KTorrent, we will "
+#~ "migrate this torrent. You will be asked for a location to save the "
+#~ "torrent to. If you press cancel, we will select your home directory."
+#~ msgstr ""
+#~ "Το torrent %1 ξεκίνησε σε μια προηγούμενη έκδοση του KTorrent. Για να "
+#~ "σιγουρευτείτε ότι αυτό το torrent λειτουργεί με αυτήν την έκδοση του "
+#~ "KTorrent, θα γίνει μεταφορά του torrent. Θα σας ζητηθεί μια τοποθεσία για "
+#~ "την αποθήκευσή του. Αν πιέσετε την ακύρωση, θα επιλεγεί ο προσωπικός σας "
+#~ "κατάλογος για την αποθήκευση."
+
+#~ msgid "Select Folder to Save To"
+#~ msgstr "Επιλέξτε φάκελο για αποθήκευση"
+
+#~ msgid "Queued"
+#~ msgstr "Σε αναμονή"
+
+#~ msgid "Current Tracker"
+#~ msgstr "Τρέχων ανιχνευτής"
+
+#~ msgid "Manual Announce"
+#~ msgstr "Χειροκίνητη ανακοίνωση"
+
+#~ msgid "Scrape"
+#~ msgstr "Αναγκαστική συγκέντρωση"
+
+#~ msgid "Available Trackers"
+#~ msgstr "Διαθέσιμοι ανιχνευτές"
+
+#~ msgid "Url:"
+#~ msgstr "Url:"
+
+#, fuzzy
+#~| msgid "Enter a new Tag"
+#~ msgid "Enter an url"
+#~ msgstr "Εισάγετε μια νέα ετικέτα"
+
+#~ msgid "Urls list of the available search engines"
+#~ msgstr "Λίστα Url των διαθέσιμων μηχανών αναζήτησης"
+
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Delete Selected"
+#~ msgstr "Διαγραφή επιλεγμένου"
+
+#, fuzzy
+#~| msgid "Clear History"
+#~ msgid "We are sorry"
+#~ msgstr "Καθαρισμός ιστορικού"
+
+#~ msgid "Rename transfer"
+#~ msgstr "Μετονομασία μεταφοράς"
+
+#~ msgid "Download URL again?"
+#~ msgstr "Να γίνει ξανά λήψη του URL;"
+
+#, fuzzy
+#~| msgid "File"
+#~ msgctxt "file in a filsystem"
+#~ msgid "File"
+#~ msgstr "Αρχείο"
+
+#~ msgid "Are you sure that you want to remove all selected groups?"
+#~ msgstr "Επιθυμείτε σίγουρα την αφαίρεση όλων των επιλεγμένων ομάδων;"
+
+#~ msgid "Name"
+#~ msgstr "Όνομα"
+
+#~ msgid "Remaining Time"
+#~ msgstr "Χρόνος που απομένει"
+
+#~ msgid "KGet - Download Manager"
+#~ msgstr "KGet - Διαχειριστής λήψεων"
+
+#~ msgctxt "@label transfer source"
+#~ msgid "Source:"
+#~ msgstr "Πηγή:"
+
+#~ msgid "Minimal segment size:"
+#~ msgstr "Ελάχιστο μέγεθος τμήματος:"
+
+#~ msgid "kBi"
+#~ msgstr "kBi"
+
+#~ msgid "Save data every:"
+#~ msgstr "Αποθήκευση δεδομένων κάθε:"
+
+#~ msgid ""
+#~ "You will lose all data in these files, are you sure you want to do this?"
+#~ msgstr ""
+#~ "Θα χαθούν όλα τα δεδομένα των αρχείων, επιθυμείτε σίγουρα κάτι τέτοιο;"
+
+#~ msgid "Maintainer, Core Developer"
+#~ msgstr "Συντηρητής, κύριος προγραμματιστής"
+
+#~ msgid "Cannot expand file : %1"
+#~ msgstr "Αδυναμία αποσυμπίεσης αρχείου : %1"
+
+#~ msgid "filterButtonGroup"
+#~ msgstr "filterButtonGroup"
+
+#~ msgid "Peers"
+#~ msgstr "Υπολογιστές"
+
+#~ msgid "Torrent has no announce or nodes field"
+#~ msgstr "Το torrent δεν περιέχει πεδίο ανακοίνωσης ή κόμβων"
+
+#~ msgid ""
+#~ "An error occurred while loading the torrent.\n"
+#~ "The torrent is probably corrupt or is not a torrent file."
+#~ msgstr ""
+#~ "Παρουσιάστηκε σφάλμα κατά τη φόρτωση του αρχείου torrent.\n"
+#~ "Το torrent πιθανότατα είναι κατεστραμμένο, ή δεν είναι αρχείο μορφής "
+#~ "torrent."
+
+#~ msgid "&Select all"
+#~ msgstr "&Επιλογή όλων"
+
+#~ msgid "&Transfer History..."
+#~ msgstr "Ιστορικό &μεταφορών..."
+
+#~ msgid "&Group Settings..."
+#~ msgstr "Ρ&υθμίσεις ομάδας..."
+
+#~ msgid "&Transfer Settings..."
+#~ msgstr "Ρυ&θμίσεις μεταφοράς..."
+
+#~ msgid "Download Speed:"
+#~ msgstr "Ταχύτητα λήψης:"
+
+#~ msgid "Upload Speed:"
+#~ msgstr "Ταχύτητα αποστολής:"
+
+#~ msgid "&Import links"
+#~ msgstr "&Εισαγωγή δεσμών"
+
+#~ msgid "The group name is empty"
+#~ msgstr "Το όνομα της ομάδας είναι κενό"
+
+#~ msgid ""
+#~ "A group can not have an empty name.\n"
+#~ "Please select a new one."
+#~ msgstr ""
+#~ "Η ομάδα δεν μπορεί να έχει κενό όνομα.\n"
+#~ "Παρακαλώ επιλέξτε ένα καινούριο."
+
+#~ msgid "You can not delete this group."
+#~ msgstr "Δεν μπορείτε να διαγράψετε αυτήν την ομάδα."
+
+#, fuzzy
+#~| msgid "Delete"
+#~ msgid "&Delete"
+#~ msgstr "Διαγραφή"
+
+#~ msgid "&Cancel"
+#~ msgstr "&Ακύρωση"
+
+#~ msgid "Default Download Folders"
+#~ msgstr "Προκαθορισμένοι φάκελοι λήψεων"
+
+#~ msgid "Folder and extension can not be empty."
+#~ msgstr "Ο φάκελος και η επέκταση δεν μπορούν να είναι κενοί."
+
+#~ msgid "Ask save location for every new download"
+#~ msgstr "Ερώτηση τοποθεσίας αποθήκευσης για κάθε νέα λήψη"
+
+#~ msgid "Place new downloads inside default folder:"
+#~ msgstr "Τοποθέτηση νέων λήψεων σε προκαθορισμένο φάκελο:"
+
+#~ msgid "Except for specific file types"
+#~ msgstr "Εκτός συγκεκριμένων τύπων αρχείων"
+
+#~ msgid "Specify extension and target folder:"
+#~ msgstr "Καθορισμός επέκτασης και φακέλου προορισμού:"
+
+#, fuzzy
+#~| msgid "File-Extension"
+#~ msgid "File Extension"
+#~ msgstr "Επέκταση αρχείου"
+
+#~ msgid "Default Folder"
+#~ msgstr "Προκαθορισμένος φάκελος"
+
+#~ msgid "Edit"
+#~ msgstr "Επεξεργασία"
+
+#~ msgid ""
+#~ "Use a regular expression for the extension. \n"
+#~ "Examples: *.tar.gz or *movies*.zip"
+#~ msgstr ""
+#~ "Χρήση μιας κανονικής έκφρασης για την επέκταση. \n"
+#~ "Παράδειγμα: *.tar.gz ή *movies*.zip"
+
+#~ msgid "Set as default folder"
+#~ msgstr "Ορισμός ως προκαθορισμένος φάκελος"
+
+#, fuzzy
+#~| msgid "Set as default folder"
+#~ msgid "extRegExp, defaultFolder"
+#~ msgstr "Ορισμός ως προκαθορισμένος φάκελος"
+
+#~ msgid "Downloading.."
+#~ msgstr "Λήψη..."
+
+#~ msgid "Advanced-Details for %1"
+#~ msgstr "Προχωρημένα- λεπτομέρειες του %1"
+
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading.."
+#~ msgstr "Λήψη..."
+
+#~ msgctxt "@label Title in header"
+#~ msgid "Webinterface"
+#~ msgstr "Διεπαφή ιστού"
+
+#~ msgid "Downloads number:"
+#~ msgstr "Αριθμός λήψεων:"
+
+#~ msgid "Assigned Peers"
+#~ msgstr "Ορισμένοι υπολογιστές"
+
+#~ msgid "%1 GB"
+#~ msgstr "%1 GB"
+
+#~ msgid "%1 MB"
+#~ msgstr "%1 MB"
+
+#~ msgid "%1 KB"
+#~ msgstr "%1 KB"
+
+#~ msgid "%1 B"
+#~ msgstr "%1 B"
+
+#~ msgid "%1 KB/s"
+#~ msgstr "%1 KB/δ"
+
+#~ msgid "kBi/s"
+#~ msgstr "kBi/δ"
+
+#~ msgid "Maximum Shared Ration: (0 if no limit)"
+#~ msgstr "Μέγιστη αναλογία κοινοχρήστων: (0 χωρίς όριο)"
+
+#~ msgid "Start downloading files immediately after startup"
+#~ msgstr "Έναρξη λήψης αρχείων αμέσως μετά την εκκίνηση"
+
+#~ msgid "Not Deleted"
+#~ msgstr "Δε διαγράφηκε"
+
+#~ msgid "Konqueror Integration disabled"
+#~ msgstr "Ενσωμάτωση με τον Konqueror απενεργοποιημένη"
+
+#~ msgid "Show main window at startup"
+#~ msgstr "Εμφάνιση του κύριου παραθύρου στην εκκίνηση"

@@ -1,0 +1,2023 @@
+# translation of kget.po to Walon
+# Ratournaedje e walon des messaedjes di KDE.
+# Po ratourner e walon, on-z aroke so li definicion d' on walon comon
+# eyet sol definicion d' ene terminolodjeye walone. Waitîz al pådje
+# http://users.skynet.be/bs302306/linux po des informåcions
+# so ces deus sudjets la.
+#
+# Pa dvant totes les kesses, dj' a scrît xxx
+# Lorint Hendschel <LorintHendschel@skynet.be>, 1998-2002.
+# Pablo Saratxaga <pablo@mandrakesoft.com>, 2003.
+# Pablo Saratxaga <pablo@walon.org>, 2003.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kget\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2003-09-10 00:07+0200\n"
+"Last-Translator: Lorint Hendschel <LorintHendschel@skynet.be>\n"
+"Language-Team: walon <linux-wa@chanae.alphanet.ch>\n"
+"Language: wa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: kget_plugin.cpp:56
+#, fuzzy, kde-format
+msgid "Download Manager"
+msgstr "Manaedjeu des aberwetaedjes"
+
+#: kget_plugin.cpp:62
+#, kde-format
+msgid "Show Drop Target"
+msgstr ""
+
+#: kget_plugin.cpp:69
+#, fuzzy, kde-format
+msgid "List All Links"
+msgstr "Nou fitchî di tchoezi"
+
+#: kget_plugin.cpp:74
+#, fuzzy, kde-format
+msgid "List Selected Links"
+msgstr "Nou fitchî di tchoezi"
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No downloadable links were found."
+msgstr ""
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No Links"
+msgstr "Nole hårdêye"
+
+#. i18n: ectx: Menu (tools)
+#: konqueror_kget_browser_integration.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr ""
+
+#, fuzzy
+#~ msgid "New Group"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Verification"
+#~ msgstr "Destinåcion:"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "integration of KGet with other applications"
+#~ msgid "Integration"
+#~ msgstr "Raloyaedje"
+
+#, fuzzy
+#~| msgid "Advanced"
+#~ msgctxt "Advanced Options"
+#~ msgid "Advanced"
+#~ msgstr "Sipepieus"
+
+#~ msgid "Advanced Options"
+#~ msgstr "Sipepieusès tchuzes"
+
+#, fuzzy
+#~ msgid "Transfer Plugins"
+#~ msgstr " Transfers: %1"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#, fuzzy
+#~ msgctxt "start transfergroup downloads"
+#~ msgid "Start"
+#~ msgstr "Re&nonder"
+
+#, fuzzy
+#~ msgctxt "stop transfergroup downloads"
+#~ msgid "Stop"
+#~ msgstr "Roedeu"
+
+#, fuzzy
+#~ msgid "KGet is downloading %1 file"
+#~ msgid_plural "KGet is downloading %1 files"
+#~ msgstr[0] "Manaedjeu des aberwetaedjes"
+#~ msgstr[1] "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~| msgid ""
+#~| "Error while writing file:\n"
+#~| "%1"
+#~ msgid "Error trying to get %1"
+#~ msgstr ""
+#~ "Åk n' a nén stî come dji scrijheu e fitchî:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Remove Group"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~ msgid "Remove groups"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~ msgid "Download added"
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~ msgid "My Downloads"
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~ msgid "New Download"
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~ msgid "Download it again?"
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~ msgid "Delete it and download again?"
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~ msgid "Download completed"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~ msgid "Download started"
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~ msgid "Resolve"
+#~ msgstr " Transfers: %1"
+
+#, fuzzy
+#~ msgctxt "Suspending computer"
+#~ msgid "Suspending"
+#~ msgstr "Kesse"
+
+#, fuzzy
+#~ msgctxt "abort the proposed action"
+#~ msgid "Abort"
+#~ msgstr "Conter"
+
+#, fuzzy
+#~ msgid "Downloads completed"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~ msgctxt "file in a filesystem"
+#~ msgid "File"
+#~ msgstr "No do fitchî"
+
+#, fuzzy
+#~ msgctxt "status of the download"
+#~ msgid "Status"
+#~ msgstr "Re&nonder"
+
+#, fuzzy
+#~| msgid " Size: %1 "
+#~ msgctxt "size of the download"
+#~ msgid "Size"
+#~ msgstr " Grandeu: %1 "
+
+#, fuzzy
+#~ msgid "KGet Transfer"
+#~ msgstr " Transfers: %1"
+
+#, fuzzy
+#~| msgid "File Type"
+#~ msgctxt "the type of the hash, e.g. MD5"
+#~ msgid "Type"
+#~ msgstr "Sôre di Fitchî"
+
+#~ msgid "Stalled"
+#~ msgstr "Djoké"
+
+#, fuzzy
+#~ msgid "Downloading...."
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~ msgctxt "transfer state: delayed"
+#~ msgid "Delayed"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~ msgctxt "transfer state: stopped"
+#~ msgid "Stopped"
+#~ msgstr "Roedeu"
+
+#, fuzzy
+#~ msgctxt "transfer state: aborted"
+#~ msgid "Aborted"
+#~ msgstr "Conter"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "transfer state: finished"
+#~ msgid "Finished"
+#~ msgstr "Fini"
+
+#, fuzzy
+#~ msgctxt "changing the destination of the file"
+#~ msgid "Changing destination"
+#~ msgstr "Drovi ene &destinåcion"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgctxt "name of download"
+#~ msgid "Name"
+#~ msgstr "No"
+
+#, fuzzy
+#~ msgctxt "status of download"
+#~ msgid "Status"
+#~ msgstr "Re&nonder"
+
+#, fuzzy
+#~ msgctxt "progress of download"
+#~ msgid "Progress"
+#~ msgstr "Purnea d' avançmint"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgctxt "speed of download"
+#~ msgid "Speed"
+#~ msgstr "Roedeu"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "No download destination specified."
+#~ msgstr "Destinåcion:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Invalid download destination specified."
+#~ msgstr "Destinåcion:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Download destination is not writeable."
+#~ msgstr "Destinåcion:"
+
+#, fuzzy
+#~| msgid "Malformed URL:\n"
+#~ msgid "Malformed URL."
+#~ msgstr "Hårdêye (URL) må basteye:\n"
+
+#, fuzzy
+#~| msgid "Malformed URL:\n"
+#~ msgid "Malformed URL, protocol missing."
+#~ msgstr "Hårdêye (URL) må basteye:\n"
+
+#, fuzzy
+#~| msgid "Malformed URL:\n"
+#~ msgid "Malformed URL, host missing."
+#~ msgstr "Hårdêye (URL) må basteye:\n"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid ""
+#~ "Invalid download destination specified:\n"
+#~ "%1"
+#~ msgstr "Destinåcion:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid ""
+#~ "Download destination is not writeable:\n"
+#~ "%1"
+#~ msgstr "Destinåcion:"
+
+#, fuzzy
+#~| msgid "Malformed URL:\n"
+#~ msgid "Malformed URLs."
+#~ msgstr "Hårdêye (URL) må basteye:\n"
+
+#, fuzzy
+#~| msgid "Malformed URL:\n"
+#~ msgid "Malformed URLs, host missing."
+#~ msgstr "Hårdêye (URL) må basteye:\n"
+
+#, fuzzy
+#~| msgid "Malformed URL:\n"
+#~ msgid ""
+#~ "Malformed URLs:\n"
+#~ "%1"
+#~ msgstr "Hårdêye (URL) må basteye:\n"
+
+#~ msgid "Question"
+#~ msgstr "Kesse"
+
+#, fuzzy
+#~ msgctxt "on a question"
+#~ msgid "No all"
+#~ msgstr "Normå"
+
+#, fuzzy
+#~ msgid "Engine name:"
+#~ msgstr "No do fitchî locå"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "transfer state: connecting"
+#~ msgid "Connecting...."
+#~ msgstr "Raloyaedje"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Set Script File"
+#~ msgstr "Discrijhaedje"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "Transfer State: Finished"
+#~ msgid "Finished"
+#~ msgstr "Fini"
+
+#, fuzzy
+#~ msgid "Downloading Metalink File...."
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~ msgid "Redownload Metalink"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~ msgid "File Selection"
+#~ msgstr "Kesse"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "the string that is used to modify an url"
+#~ msgid "Change string"
+#~ msgstr "Raloyaedje"
+
+#, fuzzy
+#~ msgid "Append"
+#~ msgstr "Roedeu"
+
+#, fuzzy
+#~ msgid "Replace file"
+#~ msgstr "Drovi &fitchî"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "transfer state: running"
+#~ msgid "Running...."
+#~ msgstr "Raloyaedje"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Down Speed"
+#~ msgstr "Roedeu"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Up Speed"
+#~ msgstr "Roedeu"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgid "Score"
+#~ msgstr "Sourdant:"
+
+#, fuzzy
+#~ msgid "Downloaded"
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~ msgid "Download speed"
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Upload speed"
+#~ msgstr "Roedeu"
+
+#, fuzzy
+#~| msgid "Count"
+#~ msgid "Chunk"
+#~ msgstr "Conter"
+
+#, fuzzy
+#~ msgid "Progress"
+#~ msgstr "Purnea d' avançmint"
+
+#, fuzzy
+#~ msgid "Files"
+#~ msgstr "No do fitchî"
+
+#, fuzzy
+#~ msgid "Download speed of the chunk"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed"
+#~ msgstr "Roedeu"
+
+#, fuzzy
+#~ msgid "Status"
+#~ msgstr "Re&nonder"
+
+#, fuzzy
+#~ msgid "File"
+#~ msgstr "No do fitchî"
+
+#, fuzzy
+#~ msgid "Advanced Details for %1"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~ msgid "Trackers"
+#~ msgstr " Transfers: %1"
+
+#, fuzzy
+#~ msgctxt "Open file"
+#~ msgid "Open"
+#~ msgstr "Drovi &fitchî"
+
+#, fuzzy
+#~ msgid "Download first"
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~ msgid "Download normally"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~ msgid "Download last"
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~ msgid "Do Not Download"
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~ msgid "Delete File(s)"
+#~ msgstr "Nou fitchî di tchoezi"
+
+#, fuzzy
+#~ msgid "Move File"
+#~ msgstr "Drovi &fitchî"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Seeders"
+#~ msgstr "Roedeu"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Leechers"
+#~ msgstr "Roedeu"
+
+#, fuzzy
+#~ msgid "Times Downloaded"
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~ msgctxt "Download normally(not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "Normå"
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 %"
+#~ msgstr " %1/s "
+
+#, fuzzy
+#~ msgctxt "Download Normal (not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "Normå"
+
+#, fuzzy
+#~| msgid "Advanced Options"
+#~ msgid "&Advanced Details"
+#~ msgstr "Sipepieusès tchuzes"
+
+#, fuzzy
+#~ msgid "&Scan Files"
+#~ msgstr "No do fitchî"
+
+#, fuzzy
+#~ msgid "Downloading Torrent File...."
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading...."
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~ msgid "Torrent file does not exist"
+#~ msgstr ""
+#~ "Ci fitchî la n' egzistêye nén:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Analyzing torrent...."
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~ msgctxt "Transfer status: seeding"
+#~ msgid "Seeding...."
+#~ msgstr "Kesse"
+
+#, fuzzy
+#~ msgid "Select a default torrent folder"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~ msgid "Select a default temporary folder"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~ msgid "File Properties"
+#~ msgstr "Kesse"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a filename."
+#~ msgstr "Cåte rantoele"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter at least one URL."
+#~ msgstr "Cåte rantoele"
+
+#, fuzzy
+#~ msgid "Metalink Version 4.0 file (*.meta4)"
+#~ msgstr "Drovi &fitchî"
+
+#, fuzzy
+#~ msgid "Metalink Version 3.0 file (*.metalink)"
+#~ msgstr "Drovi &fitchî"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "Import Links"
+#~ msgstr "Nole hårdêye"
+
+#, fuzzy
+#~ msgctxt "Download the items which have been selected"
+#~ msgid "&Download Checked"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~ msgid "File Name"
+#~ msgstr "No do fitchî locå"
+
+#~ msgid "Description"
+#~ msgstr "Discrijhaedje"
+
+#, fuzzy
+#~| msgid "File Type"
+#~ msgctxt "list header: type of file"
+#~ msgid "File Type"
+#~ msgstr "Sôre di Fitchî"
+
+#, fuzzy
+#~ msgctxt "The priority of the mirror"
+#~ msgid "Priority"
+#~ msgstr "Conter"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "Number of paralell connections to the mirror"
+#~ msgid "Connections"
+#~ msgstr "Raloyaedje"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "Location = country"
+#~ msgid "Location"
+#~ msgstr "Raloyaedje"
+
+#, fuzzy
+#~ msgid "Download again"
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~ msgctxt "Delete selected history-item"
+#~ msgid "Delete selected"
+#~ msgstr "Nou fitchî di tchoezi"
+
+#, fuzzy
+#~ msgid "Open file"
+#~ msgstr "Drovi &fitchî"
+
+#, fuzzy
+#~ msgid "Transfer History"
+#~ msgstr " Transfers: %1"
+
+#, fuzzy
+#~ msgid "&Open File"
+#~ msgstr "Drovi &fitchî"
+
+#, fuzzy
+#~ msgctxt "The transfer is stopped"
+#~ msgid "Stopped"
+#~ msgstr "Roedeu"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "The transfer is finished"
+#~ msgid "Finished"
+#~ msgstr "Fini"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgid "Source File"
+#~ msgstr "Sourdant:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Destination"
+#~ msgstr "Destinåcion:"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgid "Time"
+#~ msgstr "Tins ki dmeure"
+
+#, fuzzy
+#~ msgid "File Size"
+#~ msgstr "No do fitchî"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "the transfer has been finished"
+#~ msgid "Finished"
+#~ msgstr "Fini"
+
+#, fuzzy
+#~| msgid "unknown"
+#~ msgctxt "trust level"
+#~ msgid "Unknown"
+#~ msgstr "nén cnoxhou"
+
+#, fuzzy
+#~ msgctxt "pgp signature is not verified"
+#~ msgid "Failed"
+#~ msgstr "No do fitchî"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgid "Information:"
+#~ msgstr "Raloyaedje"
+
+#, fuzzy
+#~ msgid "Transfer Details"
+#~ msgstr " Transfers: %1"
+
+#, fuzzy
+#~ msgid "Transfer Verification for %1"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~ msgid "Rename File"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~ msgid "Rename %1 to:"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~ msgid "&Rename"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~ msgid "Rename Group..."
+#~ msgid_plural "Rename Groups..."
+#~ msgstr[0] "Prémetou ridant"
+#~ msgstr[1] "Prémetou ridant"
+
+#, fuzzy
+#~| msgid "Sticky"
+#~ msgctxt "fix position for droptarget"
+#~ msgid "Sticky"
+#~ msgstr "Aclapé"
+
+#, fuzzy
+#~ msgid "The dropped file is a KGet Transfer List"
+#~ msgstr " Transfers: %1"
+
+#, fuzzy
+#~ msgid "&Download"
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~ msgid "&Load transfer list"
+#~ msgstr " Transfers: %1"
+
+#, fuzzy
+#~ msgid "Show Main Window"
+#~ msgstr "Mostrer l' purnea do &djournå"
+
+#, fuzzy
+#~ msgid "Hide Main Window"
+#~ msgstr "Purnea do djournå"
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgctxt "%1 filename, %2 total size, %3 status"
+#~ msgid "%1(%2) %3"
+#~ msgstr " %1/s "
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgctxt ""
+#~ "%1 filename, %2 percent complete, %3 downloaded out of %4 total size, %5 "
+#~ "status"
+#~ msgid "%1(%2% %3/%4) %5"
+#~ msgstr " %1/s "
+
+#, fuzzy
+#~ msgid "Transfer Settings for %1"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Destination unmodified"
+#~ msgstr "Destinåcion:"
+
+#, fuzzy
+#~| msgid "%1% of %2 - %3"
+#~ msgid "%1 of %2"
+#~ msgstr "%1% di %2 - %3"
+
+#, fuzzy
+#~ msgid "Group Settings for %1"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~| msgid "%1/s"
+#~ msgctxt "@item speed of transfer per seconds"
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#, fuzzy
+#~ msgctxt "@label"
+#~ msgid "File name"
+#~ msgstr "No do fitchî locå"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "@label Progress of transfer"
+#~ msgid "Finished"
+#~ msgstr "Fini"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgctxt "@label Speed of transfer"
+#~ msgid "Speed"
+#~ msgstr "Roedeu"
+
+#, fuzzy
+#~ msgctxt "@label Status of transfer"
+#~ msgid "Status"
+#~ msgstr "Re&nonder"
+
+#, fuzzy
+#~ msgctxt "@action:button start a transfer"
+#~ msgid "Start"
+#~ msgstr "Re&nonder"
+
+#, fuzzy
+#~ msgctxt "@action:button"
+#~ msgid "Stop"
+#~ msgstr "Roedeu"
+
+#, fuzzy
+#~ msgctxt "@action:button"
+#~ msgid "Remove"
+#~ msgstr " Transfers: %1"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgctxt "@label Download from"
+#~ msgid "Source:"
+#~ msgstr "Sourdant:"
+
+#, fuzzy
+#~ msgctxt "@action"
+#~ msgid "Settings"
+#~ msgstr "Kesse"
+
+#, fuzzy
+#~| msgctxt "OK as in 'finished'"
+#~| msgid "OK"
+#~ msgctxt "@action:button"
+#~ msgid "OK"
+#~ msgstr "'l est bon"
+
+#, fuzzy
+#~ msgctxt "@action Refresh download list every x (seconds)"
+#~ msgid "Refresh download list every"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~ msgctxt "@action:button"
+#~ msgid "Save Settings"
+#~ msgstr " Transfers: %1"
+
+#, fuzzy
+#~ msgctxt "@title"
+#~ msgid "Downloads"
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~ msgid "KGet Transfer List"
+#~ msgstr " Transfers: %1"
+
+#, fuzzy
+#~ msgid "Export Transfers"
+#~ msgstr " Transfers: %1"
+
+#, fuzzy
+#~ msgid "&Import Transfers..."
+#~ msgstr " Transfers: %1"
+
+#, fuzzy
+#~ msgid "&Export Transfers as Plain Text..."
+#~ msgstr " Transfers: %1"
+
+#, fuzzy
+#~ msgid "Top Priority"
+#~ msgstr "Conter"
+
+#, fuzzy
+#~ msgid "Least Priority"
+#~ msgstr "Conter"
+
+#, fuzzy
+#~ msgid "Increase Priority"
+#~ msgstr "Conter"
+
+#, fuzzy
+#~ msgid "Decrease Priority"
+#~ msgstr "Conter"
+
+#, fuzzy
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Remove Selected"
+#~ msgstr "Rataké"
+
+#, fuzzy
+#~ msgctxt "delete all finished transfers"
+#~ msgid "Remove All Finished"
+#~ msgstr "Nou fitchî di tchoezi"
+
+#, fuzzy
+#~ msgctxt "redownload selected transfer item"
+#~ msgid "Redownload Selected"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~ msgid "Start / Resume Selected"
+#~ msgstr "Nou fitchî di tchoezi"
+
+#, fuzzy
+#~ msgid "Stop Selected"
+#~ msgstr "Nou fitchî di tchoezi"
+
+#, fuzzy
+#~ msgid "Stop"
+#~ msgstr "Roedeu"
+
+#, fuzzy
+#~ msgid "Remove"
+#~ msgstr " Transfers: %1"
+
+#, fuzzy
+#~ msgid "Open Destination"
+#~ msgstr "Drovi ene &destinåcion"
+
+#, fuzzy
+#~ msgid "Open File"
+#~ msgstr "Drovi &fitchî"
+
+#, fuzzy
+#~ msgid "Show Details"
+#~ msgstr "<LorintHendschel@skynet.be>"
+
+#, fuzzy
+#~ msgid "&Transfer History"
+#~ msgstr " Transfers: %1"
+
+#, fuzzy
+#~ msgid "&Group Settings"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~ msgid "&Transfer Settings"
+#~ msgstr " Transfers: %1"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "Import &Links..."
+#~ msgstr "Nole hårdêye"
+
+#, fuzzy
+#~ msgid "All Openable Files"
+#~ msgstr "Drovi &fitchî"
+
+#, fuzzy
+#~ msgid "Group name:"
+#~ msgstr "Lorint Hendschel"
+
+#, fuzzy
+#~ msgid "Confirm transfer delete"
+#~ msgstr " Transfers: %1"
+
+#, fuzzy
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Lorint Hendschel"
+
+#, fuzzy
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "<LorintHendschel@skynet.be>"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Automatic verification:"
+#~ msgstr "Discrijhaedje"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Automatic verification"
+#~ msgstr "Destinåcion:"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Keyservers:"
+#~ msgstr "Roedeu"
+
+#, fuzzy
+#~ msgid "Rename"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~ msgid "Limit Maximum Downloads Per Group"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~ msgid "Number of downloads:"
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed Limit"
+#~ msgstr "Roedeu"
+
+#, fuzzy
+#~ msgid "Global download limit:"
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid " KiB/s"
+#~ msgstr " %1 Ko/s "
+
+#, fuzzy
+#~ msgid "Global upload limit:"
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~ msgid "Per transfer:"
+#~ msgstr " Transfers: %1"
+
+#, fuzzy
+#~ msgid "Auto disconnect"
+#~ msgstr "Disraloyant..."
+
+#, fuzzy
+#~ msgid "Enable Web Interface"
+#~ msgstr "Eployî animåcions"
+
+#, fuzzy
+#~ msgid "Port:"
+#~ msgstr "Conter"
+
+#, fuzzy
+#~ msgid "Startup"
+#~ msgstr "Re&nonder"
+
+#, fuzzy
+#~ msgid "Enable animations"
+#~ msgstr "Eployî animåcions"
+
+#, fuzzy
+#~ msgid "Enable system tray icon"
+#~ msgstr "Eployî animåcions"
+
+#, fuzzy
+#~ msgid "At startup:"
+#~ msgstr "Re&nonder"
+
+#, fuzzy
+#~ msgid "Restore Download State"
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~ msgid "Start All Downloads"
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~ msgid "Stop All Downloads"
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~ msgid "History"
+#~ msgstr " Transfers: %1"
+
+#, fuzzy
+#~ msgid "History backend:"
+#~ msgstr " Transfers: %1"
+
+#, fuzzy
+#~ msgid "Engine Name"
+#~ msgstr "No do fitchî locå"
+
+#, fuzzy
+#~ msgid "Number of connections per URL:"
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~ msgid "File Settings"
+#~ msgstr "Kesse"
+
+#, fuzzy
+#~ msgid "Filename:"
+#~ msgstr "No do fitchî locå"
+
+#, fuzzy
+#~| msgid "Log Window"
+#~ msgid "Login Info"
+#~ msgstr "Purnea do djournå"
+
+#, fuzzy
+#~ msgid "Username:"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~ msgid "Path:"
+#~ msgstr "Conter"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Description:"
+#~ msgstr "Discrijhaedje"
+
+#, fuzzy
+#~ msgid "Number of simultaneous file downloads:"
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~ msgid "Remove Tracker"
+#~ msgstr " Transfers: %1"
+
+#, fuzzy
+#~ msgid "Update Trackers"
+#~ msgstr " Transfers: %1"
+
+#, fuzzy
+#~ msgid "Remove Webseed"
+#~ msgstr "Rataké"
+
+#, fuzzy
+#~| msgid "Total"
+#~ msgid "Total:"
+#~ msgstr "Totå"
+
+#, fuzzy
+#~ msgid "Downloaded:"
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~| msgid " Size: %1 "
+#~ msgid "Size:"
+#~ msgstr " Grandeu: %1 "
+
+#, fuzzy
+#~ msgid "Stats"
+#~ msgstr "Re&nonder"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Seeders:"
+#~ msgstr "Roedeu"
+
+#, fuzzy
+#~ msgid "Download speed:"
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Upload speed:"
+#~ msgstr "Roedeu"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgctxt "source-file"
+#~ msgid "Source:"
+#~ msgstr "Sourdant:"
+
+#, fuzzy
+#~ msgid "Upload limit per transfer:"
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~| msgid "Limits"
+#~ msgid "No Limit"
+#~ msgstr "Limites"
+
+#, fuzzy
+#~ msgid "Download limit per transfer:"
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~ msgid "Default torrent folder:"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~ msgid "Default temporary folder"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~| msgid "Total size is %1 bytes"
+#~ msgid "File size (in bytes):"
+#~ msgstr "Li grandeu totåle est di %1 octets"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Verification:"
+#~ msgstr "Discrijhaedje"
+
+#, fuzzy
+#~ msgid "*.metalink *.meta4|Metalink file (*.metalink *.meta4)"
+#~ msgstr "Drovi &fitchî"
+
+#, fuzzy
+#~ msgid "Version:"
+#~ msgstr "Cawete"
+
+#, fuzzy
+#~| msgid "Log"
+#~ msgid "Logo:"
+#~ msgstr "Djournå"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "Name:"
+#~ msgstr "No"
+
+#, fuzzy
+#~ msgctxt "Files as in files on a server"
+#~ msgid "Files:"
+#~ msgstr "No do fitchî"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "&Import Links"
+#~ msgstr "Nole hårdêye"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgid "Contains"
+#~ msgstr "Raloyaedje"
+
+#, fuzzy
+#~ msgid "Does Not Contain"
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~ msgctxt "Check as in mark, not as in verify"
+#~ msgid "Chec&k Selected"
+#~ msgstr "Nou fitchî di tchoezi"
+
+#, fuzzy
+#~ msgid "Number of connections:"
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a URL"
+#~ msgstr "Cåte rantoele"
+
+#, fuzzy
+#~ msgid "Priority:"
+#~ msgstr "Conter"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgid "Location:"
+#~ msgstr "Raloyaedje"
+
+#, fuzzy
+#~| msgid "Offline mode"
+#~ msgctxt "View modes"
+#~ msgid "View Modes"
+#~ msgstr "Môde disraloyî"
+
+#, fuzzy
+#~ msgid "Date"
+#~ msgstr "Re&nonder"
+
+#, fuzzy
+#~ msgid "Filter History"
+#~ msgstr " Transfers: %1"
+
+#, fuzzy
+#~ msgctxt "delete selected transfer"
+#~ msgid "Delete Selected"
+#~ msgstr "Nou fitchî di tchoezi"
+
+#, fuzzy
+#~ msgid "Download"
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~ msgctxt "hash as a hash of type md5, sha1 etc."
+#~ msgid "Hash:"
+#~ msgstr "Conter"
+
+#, fuzzy
+#~ msgid "Transfer Settings"
+#~ msgstr " Transfers: %1"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Download Destination:"
+#~ msgstr "Destinåcion:"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgctxt "No value has been set"
+#~ msgid "Not set"
+#~ msgstr "Nole hårdêye"
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid " KiB"
+#~ msgstr " %1 Ko/s "
+
+#, fuzzy
+#~ msgid "Upload Limit:"
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~ msgid "Download Limit:"
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~ msgid "Maximum Share Ratio:"
+#~ msgstr "Nombe macsimom di raloyaedjes di drovous:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgctxt "verification of the download (e.g. by using MD5)"
+#~ msgid "Verification"
+#~ msgstr "Destinåcion:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Creation:"
+#~ msgstr "Destinåcion:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Expiration:"
+#~ msgstr "Destinåcion:"
+
+#, fuzzy
+#~ msgid "Group Settings"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~ msgid "Default folder:"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~ msgid "Maximum download speed:"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~ msgid "Maximum upload speed:"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Destination:"
+#~ msgstr "Destinåcion:"
+
+#, fuzzy
+#~ msgid "Transfer group:"
+#~ msgstr " Transfers: %1"
+
+#, fuzzy
+#~ msgid "&File"
+#~ msgstr "Drovi &fitchî"
+
+#, fuzzy
+#~ msgid "&Downloads"
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~ msgid "Remove Tag"
+#~ msgstr " Transfers: %1"
+
+#, fuzzy
+#~ msgid "Tag Settings for the groups"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~ msgid "Tag Settings"
+#~ msgstr "Kesse"
+
+#, fuzzy
+#~ msgid "Available tags:"
+#~ msgstr " Transfers: %1"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a new Tag"
+#~ msgstr "Cåte rantoele"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a new tag"
+#~ msgstr "Cåte rantoele"
+
+#, fuzzy
+#~| msgctxt "OK as in 'finished'"
+#~| msgid "OK"
+#~ msgid "OK"
+#~ msgstr "'l est bon"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open log file %1 : %2"
+#~ msgstr ""
+#~ "Dji n' a savou drovi l' fitchî:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not write to file:\n"
+#~| "%1"
+#~ msgid "Cannot write to %1 : %2"
+#~ msgstr ""
+#~ "Dji n' a savou scrire e l' fitchî:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot read from %1"
+#~ msgstr ""
+#~ "Dji n' a savou lére li fitchî:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot create directory %1"
+#~ msgstr ""
+#~ "Dji n' a savou lére li fitchî:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file: %1"
+#~ msgstr ""
+#~ "Dji n' a savou lére li fitchî:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot seek in file : %1"
+#~ msgstr ""
+#~ "Dji n' a savou drovi l' fitchî:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgid "Connections"
+#~ msgstr "Raloyaedje"
+
+#, fuzzy
+#~ msgid "Tracker"
+#~ msgstr " Transfers: %1"
+
+#, fuzzy
+#~ msgid "Not connected"
+#~ msgstr "Disraloyant..."
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "Not in use"
+#~ msgstr "Nole hårdêye"
+
+#, fuzzy
+#~ msgid "Connection closed"
+#~ msgstr "Raloyaedje"
+
+#, fuzzy
+#~ msgid "Connected"
+#~ msgstr "Raloyaedje"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgid "Connecting"
+#~ msgstr "Raloyaedje"
+
+#, fuzzy
+#~| msgid ""
+#~| "The specified file does not exist:\n"
+#~| "%1"
+#~ msgid "The directory %1 does not exist"
+#~ msgstr ""
+#~ "Ci fitchî la n' egzistêye nén:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open index file %1 : %2"
+#~ msgstr ""
+#~ "Dji n' a savou drovi l' fitchî:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot create file %1 : %2"
+#~ msgstr ""
+#~ "Dji n' a savou lére li fitchî:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not write to file:\n"
+#~| "%1"
+#~ msgid "Failed to write last chunk to DND file : %1"
+#~ msgstr ""
+#~ "Dji n' a savou scrire e l' fitchî:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file %1 : %2"
+#~ msgstr ""
+#~ "Dji n' a savou lére li fitchî:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Failed to seek file %1 : %2"
+#~ msgstr ""
+#~ "Dji n' a savou lére li fitchî:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Error while reading file:\n"
+#~| "%1"
+#~ msgid "Error reading from %1"
+#~ msgstr ""
+#~ "Åk n' a nén stî come dji léjheu li fitchî:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not write to file:\n"
+#~| "%1"
+#~ msgid "Failed to write to file %1 : %2"
+#~ msgstr ""
+#~ "Dji n' a savou scrire e l' fitchî:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open file %1 : %2"
+#~ msgstr ""
+#~ "Dji n' a savou drovi l' fitchî:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Not resumed"
+#~ msgid "Not started"
+#~ msgstr "Nén rataké"
+
+#, fuzzy
+#~ msgctxt "Status of a torrent file"
+#~ msgid "Seeding"
+#~ msgstr "Kesse"
+
+#, fuzzy
+#~ msgid "Downloading"
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~ msgid "Stopped"
+#~ msgstr "Roedeu"
+
+#, fuzzy
+#~ msgid "Queued for downloading"
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open file %1: %2"
+#~ msgstr ""
+#~ "Dji n' a savou drovi l' fitchî:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot create index file: %1"
+#~ msgstr ""
+#~ "Dji n' a savou lére li fitchî:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open file : %1 : %2"
+#~ msgstr ""
+#~ "Dji n' a savou drovi l' fitchî:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Delete"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~ msgid "Details for: %1"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~ msgid "Finished downloads"
+#~ msgstr "Fini"
+
+#, fuzzy
+#~ msgid "Transfers:"
+#~ msgstr " Transfers: %1"
+
+#, fuzzy
+#~ msgid "Downloads"
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~ msgid "Transfer details:"
+#~ msgstr " Transfers: %1"
+
+#, fuzzy
+#~ msgid "Transfer List"
+#~ msgstr " Transfers: %1"
+
+#, fuzzy
+#~ msgctxt "The transfer is delayed"
+#~ msgid "Delayed"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~ msgid "Overwrite destination"
+#~ msgstr "Drovi ene &destinåcion"
+
+#~ msgid "Queued"
+#~ msgstr "Metou el caweye"
+
+#, fuzzy
+#~ msgid "Current Tracker"
+#~ msgstr " Transfers: %1"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgid "Scrape"
+#~ msgstr "Sourdant:"
+
+#, fuzzy
+#~ msgid "Available Trackers"
+#~ msgstr " Transfers: %1"
+
+#, fuzzy
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Delete Selected"
+#~ msgstr "Nou fitchî di tchoezi"
+
+#, fuzzy
+#~ msgid "Rename transfer"
+#~ msgstr " Transfers: %1"
+
+#, fuzzy
+#~ msgid "Download URL again?"
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~ msgctxt "file in a filsystem"
+#~ msgid "File"
+#~ msgstr "No do fitchî"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "Name"
+#~ msgstr "No"
+
+#, fuzzy
+#~ msgid "KGet - Download Manager"
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgctxt "@label transfer source"
+#~ msgid "Source:"
+#~ msgstr "Sourdant:"
+
+#, fuzzy
+#~| msgid "0 B/s"
+#~ msgid "kBi"
+#~ msgstr "0 o/s"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file : %1"
+#~ msgstr ""
+#~ "Dji n' a savou lére li fitchî:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "&Transfer History..."
+#~ msgstr " Transfers: %1"
+
+#, fuzzy
+#~ msgid "&Group Settings..."
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~ msgid "&Transfer Settings..."
+#~ msgstr " Transfers: %1"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed limit"
+#~ msgstr "Roedeu"
+
+#, fuzzy
+#~ msgid "Download Speed:"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Upload Speed:"
+#~ msgstr "Roedeu"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "&Import links"
+#~ msgstr "Nole hårdêye"
+
+#, fuzzy
+#~ msgid "&Delete"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~ msgid "Default Download Folders"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~| msgid "Extension"
+#~ msgid "File Extension"
+#~ msgstr "Cawete"
+
+#, fuzzy
+#~ msgid "Default Folder"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~ msgid "Set as default folder"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~ msgid "extRegExp, defaultFolder"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~ msgid "Downloading.."
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~ msgid "Advanced-Details for %1"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading.."
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~ msgid "Downloads number:"
+#~ msgstr "Manaedjeu des aberwetaedjes"
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 GB"
+#~ msgstr " %1/s "
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 MB"
+#~ msgstr " %1/s "
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid "%1 KB"
+#~ msgstr " %1 Ko/s "
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 B"
+#~ msgstr " %1/s "
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid "%1 KB/s"
+#~ msgstr " %1 Ko/s "
+
+#, fuzzy
+#~| msgid "0 B/s"
+#~ msgid "kBi/s"
+#~ msgstr "0 o/s"
+
+#~ msgid "Show main window at startup"
+#~ msgstr "Håyner l' mwaisse purnea a l' enondaedje"
+
+#, fuzzy
+#~ msgid "<speed>"
+#~ msgstr "Roedeu"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file %1"
+#~ msgstr ""
+#~ "Dji n' a savou lére li fitchî:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Error while writing file:\n"
+#~| "%1"
+#~ msgid "Error writing to %1 : %2"
+#~ msgstr ""
+#~ "Åk n' a nén stî come dji scrijheu e fitchî:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Error while writing file:\n"
+#~| "%1"
+#~ msgid "Error writing to %1"
+#~ msgstr ""
+#~ "Åk n' a nén stî come dji scrijheu e fitchî:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file"
+#~ msgstr ""
+#~ "Dji n' a savou lére li fitchî:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgctxt "Download normally(not as first or last"
+#~ msgid "Normal"
+#~ msgstr "Normå"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Bittorrent-Speedlimits"
+#~ msgstr "Roedeu"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed-Limits"
+#~ msgstr "Roedeu"
+
+#, fuzzy
+#~ msgid " of "
+#~ msgstr "%1 di %2"
+
+#, fuzzy
+#~ msgid "Download Folder"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~ msgid "Default Group"
+#~ msgstr "Prémetou ridant"
+
+#, fuzzy
+#~ msgid "DlgAdvanced"
+#~ msgstr "Sipepieus"
+
+#~ msgid "Source Label"
+#~ msgstr "Etikete do sourdant"
+
+#~ msgid "System"
+#~ msgstr "Sistinme"
+
+#~ msgid "Maximize"
+#~ msgstr "Å pus grand"
+
+#~ msgid "Minimize"
+#~ msgstr "Å pus ptit"
+
+#, fuzzy
+#~ msgid ""
+#~ "This is a folder and not a file:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Çouci est on ridant et nén on fitchî:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "You do not have read permission for the file:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Vos n' avoz nén li permission di lére ci fitchî la:\n"
+#~ "%1"
+
+#~ msgid "Could only read %1 bytes of %2."
+#~ msgstr "Dj' a savou lére fok %1 octets foû di %2."
+
+#~ msgid ""
+#~ "File %1 exists.\n"
+#~ "Do you want to replace it?"
+#~ msgstr ""
+#~ "Li fitchî %1 egzistêye dedja.\n"
+#~ "El voloz-vs replaecî?"
+
+#~ msgid ""
+#~ "Could not open file for writing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Dji n' a savou drovi l' fitchî po-z î scrire:\n"
+#~ "%1"
+
+#~ msgid "Could only write %1 bytes of %2."
+#~ msgstr "Dj' a savou scrire fok %1 octets foû di %2."
+
+#~ msgid "Welcome to KGet"
+#~ msgstr "Wilicome a KGet"
+
+#, fuzzy
+#~ msgid "Could not create valid socket"
+#~ msgstr ""
+#~ "Dji n' a savou lére li fitchî:\n"
+#~ "%1"
+
+#~ msgid "&Resume"
+#~ msgstr "&Rataker"
+
+#~ msgid "&Pause"
+#~ msgstr "&Djoker"
+
+#~ msgid "&Queue"
+#~ msgstr "&Caweye"
+
+#~ msgid "Use &Animation"
+#~ msgstr "Eployî &animåcions"
+
+#~ msgid "&Expert Mode"
+#~ msgstr "Môde &sipepieus"
+
+#~ msgid " Files: %1 "
+#~ msgstr " Fitchîs : %1 "
+
+#~ msgid " Size: %1 KB "
+#~ msgstr " Grandeu: %1 Ko"
+
+#~ msgid " Time: %1 "
+#~ msgstr " Tins: %1 "
+
+#~ msgid ""
+#~ "<b>Resume</b> button starts selected transfers\n"
+#~ "and sets their mode to <i>queued</i>."
+#~ msgstr ""
+#~ "Li boton <b>Rataker</b> enonde les transfers\n"
+#~ "tchoezis, eyet mete leu môde a <i>el caweye</i>."
+
+#, fuzzy
+#~ msgid "Stopping all jobs"
+#~ msgstr "Djocant totes les bouyes"
+
+#, fuzzy
+#~ msgid "<b>Transfers:</b> %1 "
+#~ msgstr " Transfers: %1"
+
+#, fuzzy
+#~ msgid "<br /><b>Files:</b> %1 "
+#~ msgstr " Fitchîs : %1 "
+
+#, fuzzy
+#~ msgid "<br /><b>Size:</b> %1 "
+#~ msgstr " Grandeu: %1 "
+
+#, fuzzy
+#~ msgid "<br /><b>Time:</b> %1 "
+#~ msgstr " Tins: %1 "
+
+#~ msgid "Disconnecting..."
+#~ msgstr "Disraloyant..."
+
+#~ msgid "Add new transfers as:"
+#~ msgstr "Radjouter les noveas transfers come:"
+
+#~ msgid "Iconified"
+#~ msgstr "Metou en imådjete"
+
+#, fuzzy
+#~ msgid "Expert mode (do not prompt for Cancel or Delete)"
+#~ msgstr ""
+#~ "Môde sipepieus (èn dimande nén d' acertinaedje po les disfaçaedjes eyet "
+#~ "rnonçaedjes)"
+
+#~ msgid "Show individual windows"
+#~ msgstr "Mostrer tchaeke purnea"
+
+#, fuzzy
+#~ msgid " min"
+#~ msgstr " munutes"
+
+#, fuzzy
+#~ msgid "Reconnect Options"
+#~ msgstr "Raloyaedje"
+
+#~ msgid "PLIP"
+#~ msgstr "PLIP"
+
+#~ msgid "SLIP"
+#~ msgstr "SLIP"
+
+#~ msgid "PPP"
+#~ msgstr "PPP"
+
+#~ msgid "ISDN"
+#~ msgstr "RDIS"
+
+#~ msgid "Link number:"
+#~ msgstr "Limero del hårdêye:"
+
+#~ msgid "Limits Options"
+#~ msgstr "Tchuzes po les limites"
+
+#, fuzzy
+#~ msgid "Window style:"
+#~ msgstr "Stîle do purnea"
+
+#, fuzzy
+#~ msgid "The file size does not match."
+#~ msgstr ""
+#~ "Ci fitchî la n' egzistêye nén:\n"
+#~ "%1"
+
+#~ msgid "%"
+#~ msgstr "%"

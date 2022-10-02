@@ -1,0 +1,1450 @@
+<chapter id="filemanager">
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>José</firstname
+><surname
+>Pires</surname
+><affiliation
+><address
+><email
+>zepires@gmail.com</email
+></address
+></affiliation
+><contrib
+>Tradução</contrib
+></othercredit
+> 
+</authorgroup
+> 
+
+<date
+>2012-07-02</date>
+<releaseinfo
+>&kde; 4.9</releaseinfo>
+</chapterinfo>
+
+<title
+>&konqueror;, o Gestor de Ficheiros</title>
+
+<sect1 id="dirfolders">
+<title
+>Pastas e Localizações</title>
+<para
+>No &UNIX; e no &Linux; todas as pastas são organizadas de uma forma em árvore invertida simples que desce e se ramifica a partir de uma única pasta de topo (também chamada de 'raiz'), descendo essa estrutura através de ramos que contêm vários ficheiros e sub-pastas. Isto significa que você poderá ir de uma pasta qualquer para outra <quote
+>subindo</quote
+> até você atingir um ponto comum e então <quote
+>descendo</quote
+> através das subpastas apropriadas até você atingir o destino.</para>
+
+<para
+>A posição de qualquer ficheiro ou pasta na árvore pode ser descrita através da sua <quote
+>localização</quote
+>, a qual é uma lista simples das pastas que você teria de descer até atingir a pasta ou ficheiro de destino. Por exemplo, a pasta <filename class="directory"
+>/home/ze</filename
+> é a subpasta <filename class="directory"
+>ze</filename
+> da subpasta <filename class="directory"
+>home</filename
+> da pasta de topo, e o <filename
+> /home/ze/nuno.txt</filename
+> é o ficheiro <filename
+>nuno.txt</filename
+> dentro desta subpasta. A <quote
+>/</quote
+> inicial nestas localizações representa a pasta do nível de topo.</para>
+
+<para
+>Todas as pastas acessíveis pelo seu sistema &mdash; incluindo as pastas nas partições de outros discos rígidos, na sua disquete ou &CD-ROM; &mdash; irão aparecer na árvore sob a /; as suas localizações exactas irão depender de como o seu sistema foi configurado (veja também a secção <link linkend="removable-devices"
+>Dispositivos Removíveis</link
+>). </para>
+<para
+>Cada utilizador de um sistema &UNIX; / &Linux; tem a sua própria <quote
+>pasta pessoal</quote
+> para guardar os seus ficheiros e configurações pessoais, como por exemplo a pasta <filename class="directory"
+>/home/ze</filename
+> e a <filename class="directory"
+>/home/pedro</filename
+>. O símbolo <keycap
+>~</keycap
+> é frequentemente usado para representar a pasta pessoal do utilizador, como tal o <filename
+>~/carta.txt</filename
+> refere-se ao ficheiro <filename
+>carta.txt</filename
+> da pasta pessoal do utilizador.</para>
+<para
+>Repare que o termo <quote
+>directoria</quote
+> é frequentemente usado em vez de <quote
+>pasta</quote
+>.</para>
+</sect1>
+
+<sect1 id="viewmode">
+<title
+>Modos de Visualização</title>
+<para
+>No modo de Gestor de Ficheiros, o &konqueror; lista os ficheiros e sub-pastas que existem dentro de uma dada pasta, podendo dar-lhe alguma informação acerca deles. A <quote
+>localização</quote
+> da pasta actual aparece na Barra de Localização. A forma como o &konqueror; mostra os ficheiros e as pastas depende principalmente da sua escolha no Modo de Visualização. Este pode ser seleccionado no sub-menu <menuchoice
+> <guimenu
+>Ver</guimenu
+><guisubmenu
+>Modo de Visualização</guisubmenu
+></menuchoice
+>. Os modos de visualização que o &konqueror; oferece estão detalhados em baixo. </para>
+
+<note
+><para
+>No modo de Gestão de Ficheiros, o &konqueror; usa um componente incorporado do  &dolphin;.</para
+></note>
+<!-- begin copy from dolphin docbook --> 
+<itemizedlist>
+
+<listitem
+><para
+>Na vista de <guibutton
+>Ícones</guibutton
+>, que é a predefinida, os ficheiros serão representados por um ícone que visualiza o tipo do ficheiro, assim como será apresentado um ícone de pasta para as sub-pastas. Os nomes das pastas e ficheiros aparecem debaixo dos ícones. </para
+></listitem>
+
+<listitem
+><para
+>Na vista <guilabel
+>Compacta</guilabel
+>, mostra o conteúdo da pasta como ícones com o nome ao lado, agrupados por colunas, de forma semelhante à vista <guilabel
+>Curta</guilabel
+> da janela de ficheiros do &kde;. </para
+></listitem>
+
+<listitem
+><para
+>Na vista de <guibutton
+>Detalhes</guibutton
+>, o conteúdo da pasta é apresentado como uma lista detalhada, a qual contém o nome, o tamanho e a data de modificação de cada item. Poderá adicionar novas colunas, caso carregue num cabeçalho de coluna com o &RMB;. </para>
+<para
+>No menu de contexto da linha do cabeçalho, poderá optar entre uma largura automática ou personalizada para as colunas. A largura automática ajusta a largura de todas as colunas de uma vez, de modo a mostrar o item mais comprido na coluna por completo, excepto a coluna <guilabel
+>Nome</guilabel
+>, onde a extensão é substituída por "..." </para>
+<para
+>A ordem das colunas pode ser alterada por arrastamento dos cabeçalhos das colunas. </para>
+<para
+>A vista de detalhes permite ver a pasta actual numa organização em árvore, caso as <guilabel
+>Pastas Expansíveis</guilabel
+> estejam activas: cada sub-pasta da pasta actual poderá ser <quote
+>expandida</quote
+> ou <quote
+>recolhida</quote
+> se carregar no ícone <guiicon
+>&lt;</guiicon
+> ou <guiicon
+>v</guiicon
+> ao lado dela.</para>
+</listitem>
+</itemizedlist>
+
+<screenshot>
+<screeninfo
+>Vista Agrupada</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="grouping-view.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Vista Agrupada</phrase>
+</textobject>
+<caption
+><para
+>Todos os modos de visualização suportam o agrupamento pelo tipo de ordenação seleccionado em <menuchoice
+><guimenu
+>Ver</guimenu
+><guisubmenu
+>Ordenar por</guisubmenu
+></menuchoice
+></para
+></caption>
+</mediaobject>
+</screenshot>
+<!-- end copy from dolphin docbook --> 
+
+<sect2 id="filetipinfo">
+<title
+>Informação da Dica do Ficheiro</title>
+<para
+>Se assinalar a opção <guilabel
+>Mostrar as dicas</guilabel
+> na página <menuchoice
+><guimenu
+>Gestão de Ficheiros</guimenu
+><guimenuitem
+>Geral</guimenuitem
+></menuchoice
+> da janela de Configuração do &konqueror;, fará com que apareça uma pequena janela de informação quando o cursor do rato passa por cima do nome ou do ícone de um ficheiro ou pasta. </para>
+</sect2>
+
+<sect2 id="previews">
+<title
+>Antevisões dos Ficheiros</title>
+<para
+>A página <guilabel
+>Antevisões</guilabel
+> da página de configuração em <menuchoice
+><guimenu
+>Gestão de Ficheiros</guimenu
+> <guimenuitem
+>Geral</guimenuitem
+></menuchoice
+> permite-lhe activar as antevisões para certos tipos de ficheiros.</para>
+<para
+>Geralmente, isto significa que o ícone do ficheiro será substituído por uma pequena imagem que mostra o conteúdo do mesmo.</para>
+<para
+>Dado que o &konqueror; tem de ler muito mais dados dos que apenas o nome do ficheiro para gerar uma antevisão, as antevisões dos ficheiros poderão não ser apropriadas ao ver os ficheiros numa disquete ou num sistema remoto. A página de <guilabel
+>Antevisões </guilabel
+> da janela de Configuração do Gestor de Ficheiros permite-lhe desactivar as antevisões para os ficheiros remotos em que o limite do tamanho sejam ultrapassados.</para>
+</sect2>
+</sect1>
+
+<!-- begin copy from dolphin docbook --> 
+<sect1 id="view-properties">
+<title
+>Propriedades da Área de Pastas</title>
+
+<para
+>As seguintes opções controlam a forma como é apresentado o conteúdo de uma pasta na janela do &kappname; e são guardadas para cada pasta por omissão: <itemizedlist
+> <listitem
+><para
+> O modo de visualização (Ícones, Detalhes, Compacto) </para
+></listitem
+> <listitem
+><para
+> A ordenação dos itens, que é determinada pelo sentido de ordenação (ascendente, descendente) e o atributo (como o nome, tamanho, ....) pelo qual os itens são ordenados</para
+></listitem
+> <listitem
+><para
+> Ordenação dos ficheiros e pastas &ndash; se as pastas são apresentadas primeiro ou não? </para
+></listitem
+> <listitem
+><para
+> Antevisões &ndash; são apresentadas em vez dos ícones (com base na configuração feita na página <guilabel
+>Antevisões</guilabel
+> da secção do &kappname; <menuchoice
+><guimenu
+>Gestão de Ficheiros</guimenu
+> <guimenuitem
+>Geral</guimenuitem
+></menuchoice
+>) ou não? </para
+></listitem
+> <listitem
+><para
+> Se os itens são agrupados na vista em Ícones? </para
+></listitem
+> <listitem
+><para
+> Se os ficheiros escondidos são apresentados? </para
+></listitem
+> <listitem
+><para
+> Que informação adicional (para além do nome) é apresentada na área de Ícones ou Detalhes? </para
+></listitem
+> </itemizedlist
+> A janela de propriedades pode ser configurada no menu <menuchoice
+><guimenu
+>View</guimenu
+></menuchoice
+>, sendo que algumas (como o modo de visualização) também poderão ser alteradas com os botões da barra de ferramentas. </para>
+
+<sect2 id="view-properties-dialog">
+<title
+>A janela de Propriedades da Vista</title>
+
+<para>
+
+<screenshot>
+<screeninfo
+>Imagem da janela de Propriedades da Vista</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="viewproperties-dialog.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>A janela de Propriedades da Vista.</phrase>
+</textobject>
+<caption
+><para
+>A Janela de Propriedades da Vista.</para
+></caption>
+</mediaobject>
+</screenshot>
+A janela de <guilabel
+>Propriedades da Janela</guilabel
+> poderá ser usada para modificar rapidamente diversas propriedades da janela, logo de uma vez. Isto é feito para a pasta actual, para esta e para todas as sub-pastas ou mesmo para todas as pastas em conjunto, dependendo da escolha feita na secção <guilabel
+>Aplicar as Propriedades da Janela A</guilabel
+>. </para>
+
+<para
+>Se a opção <guilabel
+>Usar estas propriedades da vista por omissão</guilabel
+> estiver activa, as propriedades da janela também serão usadas para todas as pastas que não tenham ainda personalizado as suas propriedades. </para>
+
+</sect2>
+
+</sect1>
+<!-- end copy from dolphin docbook -->
+
+<sect1 id="navigation">
+<title
+>Navegação</title>
+<para
+>Para aceder a um ficheiro no &konqueror; você precisa em primeiro lugar de navegar pela árvore de pastas para encontrar a pasta que contém esse ficheiro.</para>
+
+<para
+>Para circular entre as pastas você poderá simplesmente subir e descer pela árvore:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Para descer para uma subpasta carregue com o botão <mousebutton
+>esquerdo </mousebutton
+> carregue no seu nome ou ícone -- ou se já o tiver <quote
+>seleccionado</quote
+> (veja em baixo) -- basta carregar em &Enter;.</para
+></listitem
+> 
+<listitem
+><para
+>Para subir na árvore de pastas, carregue no botão <guiicon
+>Subir </guiicon
+> da Barra de Ferramentas, ou use a sequência de teclas <keycombo action="simul"
+>&Alt;<keysym
+>Cima</keysym
+></keycombo
+> ou ainda poderá usar a opção do menu <menuchoice
+><guimenu
+>Ir</guimenu
+><guimenuitem
+>Subir</guimenuitem
+></menuchoice
+>.</para
+></listitem>
+</itemizedlist>
+
+<para
+>Para <quote
+>seleccionar</quote
+> um ficheiro ou pasta na pasta visível de momento sem o abrir de forma alguma use as teclas de cursores <keysym
+>cima</keysym
+> e <keysym
+>baixo </keysym
+> para circular pelos itens. O item seleccionado ficará realçado e será mostrada alguma informação sobre o mesmo na Barra de Estado.</para>
+
+<para
+>Se mudar o <link linkend="viewmode"
+>Modo de Visualização</link
+> para <guimenuitem
+>Detalhes</guimenuitem
+> com a opção <guilabel
+>Pastas Expansíveis</guilabel
+> activada, poderá ajudá-lo a localizar pastas na árvore abaixo da pasta actual; neste modo, cada pasta aparece com uma pequena marcação à esquerda. Se a opção tiver um sinal <keycap
+>&gt;</keycap
+>, ao carregar com o botão <mousebutton
+>esquerdo</mousebutton
+> nessa opção (não no nome ou no ícone da pasta) irá mostrar uma sub-árvore que mostra os ficheiros e sub-pastas dentro dessa pasta. A pequena opção irá então mudar para um símbolo <keycap
+>v</keycap
+>. Se carregar com o botão <mousebutton
+>esquerdo</mousebutton
+> sobre a mesma, irá recolher a sub-árvore. Assim que tiver encontrado a sub-árvore que está à procura, carregue com o botão <mousebutton
+>esquerdo</mousebutton
+> sobre o nome da pasta para a abrir.</para>
+
+<para
+>A <link linkend="sidebar"
+>Barra Lateral</link
+> também o poderá ajudar a encontrar o seu caminho no sistema de ficheiros.</para>
+
+<para
+>Você poderá ir directamente para qualquer pasta se escrever a sua localização na Barra de Localização ou na janela que aparece como resultado da opção do menu <menuchoice
+><guimenu
+>Localização</guimenu
+><guimenuitem
+>Abrir a Localização</guimenuitem
+> </menuchoice
+> ou ao carregar em <keycombo action="simul"
+>&Alt;<keycap
+> O</keycap
+></keycombo
+>. A funcionalidade do &konqueror; de <link linkend="path-complete"
+> Completação de Texto</link
+> poderá ser útil quando o fizer. Não se esqueça que, no &Linux; / &UNIX;, os nomes dos ficheiros e das pastas tem distinção de maiúsculas ou minúsculas.</para>
+
+<para
+>Logo que você tenha passado para uma nova pasta você poderá voltar à sua escolha anterior ao usar o botão de <guiicon
+>Recuar</guiicon
+>, a opção do menu <menuchoice
+><guimenu
+>Ir</guimenu
+> <guimenuitem
+>Recuar</guimenuitem
+></menuchoice
+> ou a combinação de teclas <keycombo action="simul"
+>&Alt;<keysym
+>Esquerda</keysym
+></keycombo
+>. Logo que tenha recuado alguma vez, poderá avançar a partir daí. Use o botão <guiicon
+>Avançar</guiicon
+>, a opção do menu <menuchoice
+><guimenu
+>Ir</guimenu
+> <guimenuitem
+>Avançar</guimenuitem
+></menuchoice
+> ou a combinação de teclas <keycombo action="simul"
+>&Alt;<keysym
+>Direita</keysym
+></keycombo
+>.</para>
+
+<para
+>Em alternativa, poderá também optar por subir para a pasta mãe se carregar, na barra de ferramentas, no botão <guiicon
+>Subir</guiicon
+>, na opção do menu <menuchoice
+><guimenu
+>Ir</guimenu
+> <guimenuitem
+>Subir</guimenuitem
+></menuchoice
+> ou a combinação de teclas <keycombo action="simul"
+>&Alt;<keysym
+>Cima</keysym
+></keycombo
+>.</para>
+
+<tip
+><para
+>Carregue na marcação à direita dos botões da barra de ferramentas para <guiicon
+>Subir</guiicon
+>, <guiicon
+>Recuar</guiicon
+> ou <guiicon
+>Avançar</guiicon
+>, para que apareça um menu com as localizações visitadas recentemente.</para>
+</tip>
+<!-- 4.5 -->
+<sect2 id="file-find">
+<title
+>Procurar os Ficheiros e Pastas</title>
+
+<para
+>Se você não souber ou não se lembrar onde é que se encontra um dado ficheiro ou pasta no seu sistema, então use o botão da barra de ferramentas <guiicon
+>Procurar um Ficheiro</guiicon
+> ou a opção do menu <menuchoice
+><guimenu
+>Ferramentas</guimenu
+><guimenuitem
+>Procurar um Ficheiro...</guimenuitem
+></menuchoice
+>. Isto irá incorporar a aplicação de procura de ficheiros &kfind; na janela do &konqueror;. Veja o <ulink url="help:/kfind/index.html"
+>manual do &kfind;</ulink
+> para obter mais ajuda sobre como usar o &kfind;. </para>
+
+<note
+><para
+>Se o nome de um ficheiro ou pasta começar por um ponto (.), então é porque é um ficheiro ou pasta <quote
+>escondido</quote
+>, e não será mostrado normalmente pelo &konqueror;. Para ver os ficheiros ou pastas escondidos use a opção do menu <menuchoice
+> <guimenu
+>Ver</guimenu
+><guimenuitem
+>Mostrar os Ficheiros Escondidos</guimenuitem
+> </menuchoice
+>.</para>
+
+<para
+>Outra razão pela qual o &konqueror; possa não mostrar o ficheiro ou pasta que está à procura poderá ser porque você poderá ter o 'plugin' de <link linkend="konq-plugin"
+><guisubmenu
+> Filtro da Vista</guisubmenu
+></link
+> activado para mostrar apenas certos tipos de ficheiros.</para>
+</note>
+
+</sect2>
+
+<sect2 id="removable-devices">
+<title
+>Dispositivos Removíveis</title>
+
+<para
+>Todos os dispositivos removíveis (unidades USB, disquetes, unidades de &CD;s ou outras partições de disco rígido que você possa ter no seu sistema) irão aparecer normalmente dentro das pastas <filename class="directory"
+>/ </filename
+>, <filename class="directory"
+>/mnt</filename
+> ou <filename class="directory"
+>/auto</filename
+>, tendo uma localização do género  <filename class="directory"
+>/mnt/floppy</filename
+> ou <filename class="directory"
+>/cdrom</filename
+>. Os detalhes irão depender de como o seu sistema foi configurado.</para>
+
+<para
+>O &UNIX; / &Linux; necessita que você <command
+>monte</command
+> um dispositivo removível quando o tiver introduzido na unidade e que <command
+>monte</command
+> as outras partições dos discos rígidos sempre que quiser aceder a elas. Você também necessita de desmontar um dispositivo removível antes de o remover para registar que já não está mais disponível.</para>
+
+<para
+>Como você faz isso, irá depender do seu sistema:</para>
+
+<itemizedlist>
+
+<listitem
+><para
+>Usar o <guilabel
+>Notificador de Dispositivos</guilabel
+></para>
+<para
+>Numa sessão do &kde;, o <ulink url="help:/plasma-desktop/index.html#device-notifier"
+>Notificador de Dispositivos</ulink
+> irá aparecer, onde poderá introduzir um dispositivo removível e onde poderá seleccionar uma aplicação apropriada para este dispositivo ou apenas montá-lo.</para>
+</listitem>
+
+<listitem
+><para
+>Você poderá ter ícones dos dispositivos removíveis no seu ecrã em que, nesse caso, poderá carregar com o &LMB; no ícone para o montar. Ao fazê-lo também deverá fazer aparecer uma janela do &konqueror; que mostra o conteúdo do dispositivo. Para desmontar, carregue com o botão <mousebutton
+>direito</mousebutton
+> no ícone e escolha a opção <guimenuitem
+>Desmontar</guimenuitem
+>. Visite a secção <link linkend="making"
+>Criar um Novo...</link
+> deste Manual para saber como criar um desses ícones.</para
+></listitem>
+
+<listitem
+><para
+>Ou então podê-lo-á fazer da forma tradicional, escrevendo na janela de uma consola de texto:</para>
+<para
+><userinput
+><command
+>mount /mnt/floppy</command
+></userinput
+></para>
+<para
+>para montar, por exemplo, a unidade de disquetes, e</para>
+<para
+><userinput
+><command
+>umount /mnt/floppy</command
+></userinput
+></para>
+<para
+>para a desmontar (<command
+>umount</command
+>, não <command
+>unmount</command
+>). </para>
+<note
+><para
+>Em vez de ter de abrir uma consola de texto para escrever os comandos <command
+>mount </command
+> ou <command
+>umount</command
+>, você poderá preferir usar a funcionalidade do &konqueror; de <menuchoice
+><guimenu
+> Ferramentas</guimenu
+><guimenuitem
+>Executar</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+>&Ctrl;<keycap
+>E</keycap
+></keycombo
+>). </para
+></note>
+
+</listitem>
+
+</itemizedlist>
+</sect2>
+
+</sect1>
+<!-- 4.5-->
+<sect1 id="deleting">
+<title
+>Remover Ficheiros e Pastas</title>
+
+<para
+>O &konqueror; oferece-lhe duas formas de se ver livre de um ficheiro ou pasta indesejado:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Você poderá movê-lo para a pasta de <filename
+>Lixo</filename
+>, a qual é a forma mais segura, dado que você poderá obtê-las de volta se chegar à conclusão que cometeu um erro.</para
+></listitem
+> 
+
+<listitem
+><para
+>Você poderá também fazer a remoção simples do mesmo, o qual remove o item da pasta e adiciona a área de disco ocupada pelo item ou itens à lista de áreas em disco livres no sistema, da mesma forma que o comando <command
+>rm</command
+>.</para>
+<para
+>Se quiser usar esta funcionalidade, assinale a opção <guilabel
+>Mostrar os itens do menu 'Apagar' que não usam o caixote do lixo</guilabel
+> na página de configuração da <guilabel
+>Gestão de Ficheiros</guilabel
+>.</para
+></listitem>
+</itemizedlist>
+
+<para
+>A forma mais simples de remover um ficheiro ou pasta é posicionando o cursor do rato em cima do seu nome ou ícone e carregando no &RMB;, o qual fará aparecer um menu que contém as opções <guimenuitem
+>Mover para o Lixo</guimenuitem
+> e <guimenuitem
+>Remover</guimenuitem
+>.</para>
+
+<para
+>Ou, se você <quote
+>seleccionou</quote
+> o item, o menu <guimenu
+>Editar</guimenu
+> dar-lhe-á as opções de <quote
+><guimenuitem
+>Mover para o Lixo</guimenuitem
+></quote
+> e <quote
+><guimenuitem
+>Remover</guimenuitem
+></quote
+>.</para>
+
+<para
+>O <keycap
+>Del</keycap
+> irá mover o item ou itens seleccionados para o Lixo.</para>
+
+<para
+>O <keycombo action="simul"
+>&Shift;<keycap
+>Del</keycap
+></keycombo
+> irá verdadeira e irrevogavelmente remover o item ou itens seleccionados.</para>
+
+<note
+><para
+>Você não será capaz de remover um ficheiro ou pasta se não tiver as permissões necessárias.</para
+></note>
+
+</sect1>
+<!-- 4.5-->
+<sect1 id="moving">
+<title
+>Mover e Copiar</title>
+
+<para
+>Para copiar um ficheiro ou subpasta entre pastas você poderá:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Posicionar o cursor do rato sobre o seu nome ou ícone e manter carregado o &RMB;, o qual fará aparecer um menu que contém a opção <guimenuitem
+>Copiar</guimenuitem
+>; escolha-a, nesse caso.</para>
+
+<para
+>Ou se o item estiver <quote
+>seleccionado</quote
+> você poderá usar o botão de <guiicon
+>Copiar</guiicon
+> na Barra de Ferramentas ou a opção de menu <menuchoice
+><guimenu
+>Editar</guimenu
+> <guimenuitem
+>Copiar</guimenuitem
+></menuchoice
+>, ou ainda o atalho de teclado <keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+>. Poderá também seleccionar <link linkend="selection"
+>vários</link
+> ficheiros ou pastas para copiar/mover.</para
+></listitem>
+
+<listitem
+><para
+>Navegue até à pasta para onde deseja copiar o item e execute o Colar desse item na nova pasta ao usar o botão de <guiicon
+>Colar</guiicon
+> ou a opção do menu <menuchoice
+><guimenu
+>Editar</guimenu
+> <guimenuitem
+>Colar</guimenuitem
+></menuchoice
+> ou ainda o atalho de teclado <keycombo action="simul"
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+>, ou ainda movendo o cursor do rato para uma área em branco da janela e mantendo o &RMB; pressionado para fazer aparecer um menu que contém a opção <guimenuitem
+>Colar</guimenuitem
+>. </para
+></listitem>
+</itemizedlist>
+
+<para
+>Para mover um ficheiro ou subpasta entre pastas poderá fazer o mesmo que para copiar, excepto que irá usar a opção <guimenuitem
+>Cortar</guimenuitem
+> ou a combinação de teclas <keycombo action="simul"
+>&Ctrl;<keycap
+>X</keycap
+></keycombo
+> em vez de <guimenuitem
+>Copiar</guimenuitem
+>. O item que você for <guimenuitem
+>Cortar</guimenuitem
+> será removido da pasta original quando você executar a acção de <guimenuitem
+>Colar</guimenuitem
+> na nova pasta.</para>
+
+<para
+>Você também poderá copiar ou mover o item ou itens seleccionados para outra pasta ao usar as opções <guimenuitem
+>Copiar Para</guimenuitem
+> ou <guimenuitem
+>Mover Para</guimenuitem
+> do menu de contexto que você obtém quando carrega com o botão <mousebutton
+>direito</mousebutton
+> no nome de uma pasta ou ficheiro da janela do Gestor de Ficheiros.</para>
+<para
+>Para activar esta funcionalidade, seleccione a opção <guilabel
+>Mostrar os comandos 'Copiar Para' e 'Mover Para'</guilabel
+> em <menuchoice
+><guimenu
+>Gestão de Ficheiros</guimenu
+> <guimenuitem
+>Serviços</guimenuitem
+></menuchoice
+> da configuração.</para>
+<note
+><para
+>Você não será capaz de copiar ou mover um ficheiro ou pasta se não tiver as permissões necessárias. </para
+></note>
+<!-- 4.5-->
+<sect2 id="dnd">
+<title
+>Usar o 'Drag 'n Drop'</title>
+
+<para
+>O &konqueror; também suporta a cópia e a mudança de sítio dos ficheiros e pasta por 'Drag and Drop'.</para>
+
+<para
+>Você poderá fazer isso, tendo para tal duas instâncias do &konqueror;, em que uma mostra a pasta de onde quer copiar e a outra mostra a pasta de destino. Posicione o cursor do rato sobre o item que deseja copiar ou mover e então, mantendo o &LMB; carregado, <quote
+>arraste-o</quote
+> para um espaço em branco da pasta de destino. Largue o botão e ser-lhe-á apresentado um menu onde poderá escolher <guimenuitem
+>Copiar para Aqui</guimenuitem
+>, <guimenuitem
+>Mover para Aqui</guimenuitem
+> ou <guimenuitem
+>Criar uma Ligação Aqui</guimenuitem
+>. Tenha em atenção em <quote
+>largar</quote
+> o item numa área em branco da janela da pasta de destino - se o largar em cima de outro ficheiro poderá causar problemas.</para>
+
+<para
+>Você poderá também configurar o &konqueror; para mostrar mais do que uma pasta dentro da sua janela e arrastar e largar os itens entre elas.</para>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="dragdrop.png"/></imageobject>
+<textobject>
+<phrase
+>Vistas Repartidas para o 'Drag and Drop'</phrase>
+</textobject>
+</mediaobject>
+
+<para
+>Esta imagem ilustra a utilização da opção do menu <menuchoice
+><guimenu
+>Janela</guimenu
+> <guimenuitem
+>Dividir a Janela em Esquerda/Direita</guimenuitem
+></menuchoice
+>, também disponível através do atalho de teclado <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>L</keycap
+> </keycombo
+>, para dividir a janela principal do &konqueror; em duas vistas, onde cada uma mostra o conteúdo de uma pasta diferente.</para>
+
+<para
+>Para ser capaz de mostrar pastas diferentes em cada vista, estas não poderão estar ligadas; as opções no canto inferior de cada vista devem estar desligadas. </para>
+
+<para
+>A vista <quote
+>activa</quote
+> é a vista cuja localização está visível na Barra de Localização e a que responde aos comandos de navegação e do menu; esta é marcada pela pequena luz verde no canto inferior esquerdo. Para tornar uma vista activa, carregue com o botão <mousebutton
+>esquerdo</mousebutton
+> na área em branco da vista ou na sua Barra de Estado.</para>
+
+<para
+>Para remover uma vista activa da janela do &konqueror; utilize o atalho de teclado <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>W</keycap
+> </keycombo
+> ou a opção do menu <menuchoice
+><guimenu
+>Janela</guimenu
+> <guimenuitem
+>Fechar a Janela Activa</guimenuitem
+></menuchoice
+>, ou poderá ainda carregar com o &RMB; na Barra de Estado e escolher a <guimenuitem
+>Fechar a Janela</guimenuitem
+> no menu resultante.</para>
+
+<para
+>Se você usar as páginas do &konqueror;, você poderá arrastar entre elas se arrastar o item para o nível da pasta (onde aparece o seu nome em cima), sem o largar ainda. A página de destino irá passar para a frente, o que lhe permitirá continuar a arrastar o item para finalmente o poder largar.</para>
+
+</sect2>
+<!-- 4.5-->
+<sect2 id="dups">
+<title
+>Nomes de Ficheiros ou Pastas Duplicados</title>
+<para
+>Se você tentar colar um ficheiro numa pasta que já contém um ficheiro com o mesmo nome, o &konqueror; fará aparecer uma janela a avisá-lo de que o item já existe. Poderá então optar por: </para>
+<itemizedlist>
+<listitem
+><para
+>Cancelar a operação de colagem ao carregar no botão <guibutton
+>Cancelar</guibutton
+>.</para
+></listitem>
+<listitem
+><para
+>Dar um nome diferente ao ficheiro que está a ser copiado. Você poderá fazer isto ao escrever um nome novo no campo de texto ou ao pedir ao &konqueror; para <guibutton
+>Sugerir um Novo Nome</guibutton
+> para um dos itens. Logo que você tenha feito isso, carregue no botão <guibutton
+>Continuar</guibutton
+>.</para
+></listitem>
+<listitem
+><para
+>Se tiver copiado vários itens, pode <guibutton
+>Ignorar</guibutton
+> o item actual. </para
+></listitem>
+</itemizedlist>
+<para
+>O botão <guibutton
+>Aplicar a Todos</guibutton
+> poderá ser usado se você tiver copiado vários itens.</para>
+</sect2>
+</sect1>
+<!-- begin copy from dolphin docbook-->
+<!-- 4.5 -->
+<sect1 id="selection">
+<title
+>Seleccionar os Itens na Janela</title>
+
+<para
+>Existem diversas formas de seleccionar os itens na janela. Assim que estiver seleccionado um grupo de itens, todas as acções, como o <menuchoice
+><guimenuitem
+>Cortar</guimenuitem
+></menuchoice
+>, <menuchoice
+><guimenuitem
+>Copiar</guimenuitem
+></menuchoice
+>, <menuchoice
+><guimenuitem
+>Enviar para o Lixo</guimenuitem
+></menuchoice
+> e as operações de arrastamento, irão afectar todos os itens seleccionados. </para>
+
+<sect2 id="selection-mouse">
+<title
+>Seleccionar os Itens com o Rato</title>
+
+<itemizedlist>
+
+<listitem
+><para
+>Poderá carregar com o &LMB; num local da janela e desenhar um rectângulo em torno de um grupo de itens, antes de largar o mesmo botão. Isto irá seleccionar todos os itens dentro do rectângulo e irá limpar a selecção anterior. Se a tecla &Shift; estiver carregada, durante o processo de selecção, será mantida a selecção anterior. </para
+></listitem>
+
+<listitem
+><para
+>Se mantiver carregada a tecla &Ctrl; enquanto carregar num item com o &LMB;, o estado de selecção deste item será comutado. Se a tecla &Ctrl; estiver pressionada enquanto desenha um rectângulo em torno de um grupo de itens, como foi descrito acima, o estado de selecção de todos os itens dentro do rectângulo será comutado. </para
+></listitem>
+
+<listitem
+><para
+>Se tiver pressionado a tecla &Shift;, enquanto carrega sobre um item com o &LMB;, todos os itens entre o item carregado anteriormente e o item carregado neste momento serão seleccionados. </para
+></listitem>
+
+<listitem
+><para
+>Se a opção <guilabel
+>Mostrar o marcador da selecção</guilabel
+> estiver activo na página de <guilabel
+>Comportamento</guilabel
+> da secção <menuchoice
+><guimenu
+>Gestão de Ficheiros</guimenu
+> <guimenuitem
+>Geral</guimenuitem
+></menuchoice
+> da configuração, irá aparecer um pequeno botão <guiicon
+>+</guiicon
+> ou <guiicon
+>-</guiicon
+> no canto superior esquerdo do item que tiver o cursor do rato sobre ele. Se carregar neste símbolo marca ou desmarca o item, respectivamente. </para
+></listitem>
+
+</itemizedlist>
+
+</sect2>
+
+<sect2 id="selection-keyboard">
+<title
+>Seleccionar os Itens com o Teclado</title>
+
+<itemizedlist>
+
+<listitem
+><para
+>Se carregar numa tecla de cursor, no <keycap
+>Page Up</keycap
+>, no <keycap
+>Page Down</keycap
+>, no <keycap
+>Home</keycap
+> ou no <keycap
+>End</keycap
+>, será seleccionado o novo item actual, cancelando a selecção anterior. </para
+></listitem>
+
+<listitem
+><para
+>Se tiver pressionado a tecla &Ctrl; enquanto tiver carregado numa das teclas acima, a selecção ficará inalterada. </para
+></listitem>
+
+<listitem
+><para
+>Se tiver pressionado a tecla  &Shift; enquanto tiver carregado numa das teclas acima, todos os itens entre o item seleccionado anteriormente e o actual ficarão seleccionados. </para
+></listitem>
+
+<listitem
+><para
+>Se tiver carregado na combinação <keycombo action="simul"
+>&Ctrl;<keysym
+>Espaço</keysym
+></keycombo
+>, o estado de selecção do item actual será comutado. </para
+></listitem>
+
+<listitem
+><para
+>O <keycombo action="simul"
+>&Ctrl;<keycap
+>A</keycap
+></keycombo
+> selecciona todos os itens na janela. </para
+></listitem>
+
+<listitem
+><para
+>O <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>A</keycap
+></keycombo
+> comuta o estado de selecção de todos os itens da janela. </para
+></listitem>
+
+</itemizedlist>
+
+</sect2>
+<!-- end copy from dolphin docbook-->
+
+<!-- selection-menu applies to dolphin as well copy over?-->
+<sect2 id="selection-menu">
+<title
+>Seleccionar os Itens com o Menu</title>
+
+<para
+>Você poderá querer algumas vezes remover, copiar ou mover um conjunto de ficheiros que sejam semelhantes de alguma forma. Por exemplo, você poderá querer mover todos os ficheiros de imagens .png de uma pasta para outra. O &konqueror; torna isso simples ao deixá-lo seleccionar vários ficheiros com base nas semelhanças nos seus nomes.</para>
+
+<para
+>Use a opção do menu <menuchoice
+><guimenu
+>Editar</guimenu
+><guisubmenu
+>Selecção</guisubmenu
+> <guimenuitem
+>Seleccionar os Itens Correspondentes...</guimenuitem
+></menuchoice
+> ou com o atalho <keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+>. Isto fará aparecer uma pequena janela onde você poderá indicar um nome de ficheiro, o qual poderá conter os caracteres especiais <keycap
+>*</keycap
+>, que corresponde a qualquer quantidade de caracteres, ou <keycap
+>?</keycap
+> que corresponderá a um único carácter. Carregue em <guibutton
+>OK</guibutton
+> para que o &konqueror; seleccione os ficheiros com os nomes correspondentes. Por exemplo:</para>
+      
+<itemizedlist>
+<listitem
+><para
+>O <userinput
+><filename
+>bandeira*.png</filename
+></userinput
+> irá seleccionar todos os nomes de ficheiros que comecem pela palavra <quote
+>bandeira</quote
+> e terminem com a sequência <quote
+><literal role="extension"
+>.png</literal
+></quote
+>.</para
+></listitem>
+<listitem
+><para
+>O <userinput
+><filename
+>memorando?.txt</filename
+></userinput
+> irá seleccionar o <filename
+>memorando1.txt</filename
+> e o <filename
+>memorando9.txt</filename
+> mas não o <filename
+>memorando99.txt</filename
+>.</para
+></listitem>
+</itemizedlist>
+
+<para
+>Quando tiver seleccionado um conjunto de ficheiros, você poderá refinar a selecção ao usar a opção do menu <menuchoice
+><guimenu
+>Editar</guimenu
+> <guimenuitem
+>Deseleccionar os Itens Correspondentes...</guimenuitem
+></menuchoice
+> para indicar quais dos ficheiros seleccionados deverão ser excluídos dessa selecção.</para>
+
+<para
+>Use a opção do menu <menuchoice
+><guimenu
+>Editar</guimenu
+><guisubmenu
+>Selecção</guisubmenu
+><guimenuitem
+>Deseleccionar Tudo</guimenuitem
+></menuchoice
+> ou simplesmente carregue com o &LMB; numa área em branco da janela para cancelar a selecção.</para>
+
+<para
+>Você poderá ainda inverter a selecção, isto é, deseleccionar todos os ficheiros seleccionados e seleccionar os que não estavam seleccionados. Use a opção do menu <menuchoice
+><guimenu
+>Editar</guimenu
+><guisubmenu
+>Selecção</guisubmenu
+><guimenuitem
+>Inverter a Selecção</guimenuitem
+></menuchoice
+> ou a combinação de teclas <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>A</keycap
+></keycombo
+> para o fazer.</para>
+</sect2>
+
+</sect1>
+
+<!-- 4.5 -->
+<sect1 id="making">
+<title
+>Criar um Novo</title>
+
+<para
+>Quando o &konqueror; está no modo de Gestão de Ficheiros, ao escolher o sub-menu <guisubmenu
+>Criar um Novo</guisubmenu
+> do menu <guimenu
+>Editar</guimenu
+> no menu de contexto que você obtém ao carregar com o &RMB; numa área em branco da janela com as pastas, aparecerá um outro sub-menu que lhe permitirá criar qualquer um dos seguintes itens na pasta actual:</para>
+
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Pasta...</guimenuitem
+></term>
+<listitem
+><para
+>Uma forma simples de criar uma nova (sub-)pasta.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Ficheiro de Texto...</guimenuitem
+></term>
+<listitem
+><para
+>Use isto para criar um ficheiro de texto normal e em branco. Será aberta uma janela para você poder indicar o nome do ficheiro novo.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Ficheiro de HTML...</guimenuitem
+></term>
+<listitem
+><para
+>Cria um ficheiro com o esqueleto de código em <acronym
+>HTML</acronym
+>. Quando indicar o nome do novo ficheiro na janela, será mais conveniente dar-lhe uma extensão <literal role="extension"
+>.html </literal
+> para evitar confusões.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Documento <replaceable
+>Tipo do Documento</replaceable
+>...</guimenuitem
+></term>
+<listitem
+><para
+>Dependendo das aplicações instaladas e das associações dos ficheiros, poderão aparecer diferentes itens do menu para os vários documentos, podendo criar esqueletos dos documentos para o tipo seleccionado.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Atalho para Localização (URL)...</guimenuitem
+></term>
+<listitem
+><para
+>Isto permite-lhe criar um ícone para abrir o &konqueror; numa dada pasta ou página Web. Assim como no <guimenuitem
+>Atalho para Aplicação...</guimenuitem
+> você poderá fazer o ícone da aplicação aparecer no seu ecrã se criar o atalho na sua pasta <filename
+>~/Desktop</filename
+> ou se aceder à opção <guisubmenu
+>Criar um Novo...</guisubmenu
+> ao carregar numa área vazia do ecrã.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Ligação básica a um ficheiro ou pasta...</guimenuitem
+></term>
+<listitem
+><para
+>Cria uma ligação simbólica para um ficheiro ou pasta local.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Atalho para Aplicação...</guimenuitem
+></term>
+<listitem
+><para
+>Esta opção é a mais útil se desejar criar um ícone que irá abrir uma determinada aplicação. Isto fará abrir uma janela com três páginas. A primeira, a <guilabel
+>Geral</guilabel
+>, é onde você escolhe um ícone e o texto que irá aparecer em conjunto com o mesmo. A segunda página, a <guilabel
+>Permissões</guilabel
+>, permite-lhe seleccionar quem poderá usar ou modificar o ícone. Na página da <guilabel
+>Aplicação</guilabel
+> você deverá indicar o <guilabel
+>Comando</guilabel
+> que irá executar a aplicação, como por exemplo, o <userinput
+>kwrite</userinput
+> para iniciar o editor de texto &kwrite;. O <userinput
+>kwrite /home/ze/por_fazer.txt</userinput
+> iria abrir o ficheiro <filename
+>/home/ze/por_fazer.txt</filename
+> no &kwrite;. As opções avançadas como os tipos de ficheiros que a aplicação consegue abrir também estão disponíveis nesta página.</para>
+
+<para
+>Para fazer com que o ícone da aplicação apareça no seu ecrã, crie o atalho na sua pasta <filename class="directory"
+>~/Desktop</filename
+> (esta poderá ter um nome ligeiramente diferente, dependendo de como é que o &kde; foi instalado no seu sistema), ou então aceda ao sub-menu <guisubmenu
+>Criar um Novo...</guisubmenu
+> carregando com o botão <mousebutton
+>direito</mousebutton
+> numa área vazia do ecrã em vez de o fazer na janela do &konqueror;.</para>
+
+<para
+>Se você tiver um conjunto de atalhos para aplicações especializados e não quiser encher o ecrã, então porque não criá-los na sua pasta de Aplicações. Você poderá aceder à mesma no &konqueror; ao escolher a opção <menuchoice
+><guimenu
+>Ir</guimenu
+> <guimenuitem
+>Aplicações</guimenuitem
+></menuchoice
+>. Aí poderá criar um único ícone no seu ecrã para abrir a sua pasta de Aplicações, a qual se encontra normalmente na pasta <filename class="directory"
+>~/.local/share/applications</filename
+>.</para>
+<para
+>Para colocar um atalho para uma aplicação no painel, crie-o em primeiro lugar na pasta de Aplicações e então arraste o ícone para uma área em branco do painel.</para>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guisubmenu
+>Atalho para Dispositivo</guisubmenu
+></term>
+<listitem
+><para
+>Use esta opção para criar um ícone que irá montar uma disquete e abrir uma instância do &konqueror; que mostre o conteúdo da disquete. Para desmontar a mesma disquete quando não precisar da mesma carregue com o botão <mousebutton
+>direito</mousebutton
+> e seleccione a opção <guimenuitem
+>Desmontar</guimenuitem
+>. Todavia, na maioria dos casos, você terá de criar o ícone no seu ecrã. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+<!-- 4.5 -->
+<sect1 id="newname">
+<title
+>Mudar os Nomes e as Permissões</title>
+
+<para
+>As duas formas mais simples de mudar o nome de um ficheiro ou pasta são carregar com o botão <mousebutton
+>direito</mousebutton
+> e seleccionar a opção <guimenuitem
+>Mudar o Nome</guimenuitem
+> ou seleccionar o ficheiro ou pasta e carregar então na tecla <keycap
+>F2</keycap
+>.</para>
+
+<para
+>Para mudar o nome ou as permissões de um ficheiro ou pasta, carregue com o botão <mousebutton
+>direito</mousebutton
+> no seu nome ou no seu ícone e seleccione o item <guimenuitem
+>Propriedades</guimenuitem
+>, ou se tiver <quote
+>seleccionado</quote
+> o ficheiro ou pasta, então poderá usar a opção do menu <menuchoice
+><guimenu
+>Editar</guimenu
+> <guimenuitem
+>Propriedades</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+>&Alt;<keycap
+>Return</keycap
+></keycombo
+>).</para>
+
+<para
+>Isto fará aparecer a janela de Propriedades com várias páginas:</para>
+
+<itemizedlist>
+<listitem
+><para
+>A <guilabel
+>Geral</guilabel
+>, que lhe dê alguma informação acerca do item e permite-lhe alterar o seu nome e, no caso de uma pasta, o ícone associado.</para
+></listitem>
+<listitem
+><para
+>As <guilabel
+>Permissões</guilabel
+>, que mostra o dono do item, as suas permissões de acesso e permite-lhe alterar essas mesmas permissões. </para
+></listitem>
+</itemizedlist>
+<!-- 4.5 -->
+<sect2 id="copyrename">
+<title
+>Copiar e Mudar o Nome</title>
+<para
+>Se você quiser fazer uma cópia de um ficheiro existente com um nome diferente -- talvez como salvaguarda --, na mesma pasta que o ficheiro original, execute a opção de <guimenuitem
+>Copiar</guimenuitem
+> normal, seguida então da opção <guimenuitem
+>Colar</guimenuitem
+>; aparecerá então uma janela a avisar que o ficheiro já existe. Basta então escrever o novo nome no campo de texto da janela e carregue no botão de <guibutton
+>Continuar</guibutton
+> (ou se você se sentir preguiçoso, poderá carregar no botão de <guibutton
+>Sugerir um Novo Nome</guibutton
+> para que esta janela escolha um novo nome para si).</para>
+</sect2>
+
+<!--sect2 id="super-user"
+> this is obsolete!
+<title
+>Super User Mode</title>
+
+<para
+>If you are running as a normal user and try to access files outside of
+your own home folder you will often be prevented from doing so and get an
+error message such as <errorname
+>Access Denied</errorname
+>. </para>
+
+<para
+>To access these files you need to be logged in as the system
+administrator, often known as the Super User or <systemitem class="username"
+>root</systemitem
+>. </para>
+
+<para
+>Rather than logging out then in again, you can launch &konqueror; from
+the
+<guimenu
+>K</guimenu
+> Menu in Super User mode by selecting
+<menuchoice
+><guisubmenu
+>System</guisubmenu
+><guimenuitem
+>File Manager - Super
+ User Mode
+</guimenuitem
+></menuchoice
+>. You will be asked for the <systemitem class="username"
+>root</systemitem>
+login password but as long as you can provide that &konqueror; will be started
+up with full access privileges to all files on your system.</para>
+
+<warning
+><para
+>Take care.  As Super User (<systemitem class="username"
+>root</systemitem
+>), you have complete control of
+your system, and a wrong command can easily do irrevocable damage.</para>
+<para
+>Also, connecting to the internet as <systemitem class="username"
+>root</systemitem
+> is an extremely bad idea, as it
+seriously increases your vulnerability to malicious hacking.</para
+></warning>
+
+</sect2-->
+</sect1>
+<!-- 4.5 -->
+<sect1 id="file-associations">
+<title
+>Configurar as Associações de Ficheiros</title>
+
+<!-- TODO: The content should probably be here too, but this'll do for -->
+<!-- now. -->
+<para
+>O &kde; oferece muitas aplicações que podem abrir vários tipos diferentes de ficheiros. Na maior parte do tempo, as escolhas predefinidas irão funcionar sem problemas, mas o &konqueror; oferece um sistema poderoso que lhe permite modificar as aplicações usadas para abrir cada tipo de ficheiro. Para mais detalhes, escolha a opção <menuchoice
+><guimenu
+>Configuração</guimenu
+><guimenuitem
+>Configurar o Konqueror...</guimenuitem
+></menuchoice
+> do menu, seleccione as <guilabel
+>Associações de Ficheiros</guilabel
+> na janela de configuração e carregue em <guibutton
+>Ajuda</guibutton
+>.</para>
+
+</sect1>
+
+<!-- 4.5 -->
+<sect1 id="commandline">
+<title
+>Na Linha de Comandos</title>
+
+<para
+>Ainda que o &konqueror; seja um gestor de ficheiros gráfico poderoso e flexível, existem ocasiões onde o utilizador mais experiente do &Linux; / &UNIX; queira descer às bases e trabalhar ao nível da linha de comandos.</para>
+
+<para
+>Poderá, obviamente, abrir uma instância do &konsole;, provavelmente com a opção do menu do &konqueror; <menuchoice
+><guimenu
+>Ferramentas</guimenu
+><guimenuitem
+>Abrir um Terminal</guimenuitem
+></menuchoice
+> ou com o atalho de teclado <keycap
+>F4</keycap
+>.</para>
+<para
+>Se só quiser lançar um programa ou ver um &URL;, a opção <menuchoice
+> <guimenu
+>Ferramentas</guimenu
+><guimenuitem
+>Executar um Comando da Consola...</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+>&Ctrl;<keycap
+>E</keycap
+></keycombo
+>) poderá ser mais simples.</para>
+
+<para
+>A opção <menuchoice
+><guimenu
+>Ferramentas</guimenu
+><guimenuitem
+>Executar um Comando da 'Shell'... </guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+>&Ctrl; <keycap
+>E</keycap
+></keycombo
+>) abre uma pequena janela de linhas de comandos onde você poderá invocar um comando na linha de comandos, como por exemplo <userinput
+>ps -ax | grep kdeinit </userinput
+>. Repare que isto não suporta todos os caracteres de controlo do terminal, como tal as aplicações como o <userinput
+>top</userinput
+> e o <userinput
+> less</userinput
+> não irão funcionar correctamente, mas ficarão disponíveis imediatamente sem o atraso envolvido ao iniciar o &konsole;. </para>
+
+<para
+>Para as operações mais complexas, o &konqueror; tem outra funcionalidade engraçada; a opção do menu <menuchoice
+><guimenu
+>Configuração</guimenu
+><guimenuitem
+>Mostrar o Emulador de Terminal</guimenuitem
+></menuchoice
+>, a qual abre uma nova janela de terminal como uma nova janela dentro do &konqueror;. Enquanto o ícone de ligação esteja visível no canto inferior direito de cada janela, o terminal irá seguir as mudanças de pastas que você faça na janela normal de gestão de ficheiros.</para>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="cmndline.png"/></imageobject>
+<textobject>
+<phrase
+>Incluindo o emulador do terminal</phrase>
+</textobject>
+</mediaobject>
+
+</sect1>
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

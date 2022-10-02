@@ -1,0 +1,2133 @@
+<chapter id="commands">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>Kernel</firstname
+><surname
+>Panic</surname
+><affiliation
+><address
+><email
+>rzhevskiy@mail.ru</email
+></address
+></affiliation
+><contrib
+> Перевод на русский</contrib
+></othercredit
+><othercredit role="reviewer"
+><firstname
+>Григорий</firstname
+><surname
+>Мохин</surname
+><affiliation
+><address
+><email
+>mok@kde.ru</email
+></address
+></affiliation
+><contrib
+> Редакция русского перевода</contrib
+></othercredit
+> 
+</authorgroup>
+<date
+>2003-11-06</date
+> <releaseinfo
+>3.2</releaseinfo
+> </chapterinfo>
+
+<title
+>Справочник по командам</title>
+
+<note
+><para
+>Приведённые ниже сочетания клавиш являются стандартными, принятыми по умолчанию. Их можно легко <link linkend="configshort"
+>изменить</link
+>. </para
+></note>
+
+<sect1 id="specshort">
+<title
+>Специальные клавиши</title>
+<para
+>Ниже приведены клавиши, которые не дублируются отдельным пунктом меню:</para>
+<variablelist>
+
+<varlistentry>
+<term
+><keycap
+>F6</keycap
+></term>
+<listitem>
+<para
+>Перейти к строке адреса.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><keycombo action="simul"
+>&Ctrl;<keycap
+>]</keycap
+></keycombo
+></term>
+<listitem>
+<para
+>Перейти к следующей вкладке.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><keycombo action="simul"
+>&Ctrl;<keycap
+>[</keycap
+></keycombo
+></term>
+<listitem>
+<para
+>Перейти к предыдущей вкладке.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+
+</sect1>
+
+<sect1 id="menubar">
+<title
+>Главное меню</title
+> <para
+>Некоторые из пунктов меню появляются только при открытии соответствующих типов файлов в &konqueror;. Например, <menuchoice
+><guimenu
+>Правка</guimenu
+><guimenuitem
+>Найти...</guimenuitem
+> </menuchoice
+> не показывается при просмотре каталога.</para>
+<sect2 id="menu-location">
+<title
+>Меню <guimenu
+>Адрес</guimenu
+></title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Адрес</guimenu
+> <guimenuitem
+>Новое окно</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Открыть новое окно.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Адрес</guimenu
+> <guimenuitem
+>Новая вкладка</guimenuitem
+> </menuchoice
+></term
+> 
+<listitem
+><para
+>Открыть новую вкладку.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>D</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Адрес</guimenu
+> <guimenuitem
+>Создать копию окна</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Открыть текущую страницу в новом окне.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Адрес</guimenu
+> <guimenuitem
+>Открыть страницу...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Открыть каталог или файл (следует указать путь к файлу или каталогу, например <filename class="directory"
+>/home/lena</filename
+> или <filename
+>/home/masha/vasiliy.txt</filename
+>).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Адрес</guimenu
+> <guimenuitem
+>Отправить ссылку</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Отправить ссылку на данную страницу по электронной почте.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Адрес</guimenu
+> <guimenuitem
+>Отправить файл</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Отправить данный файл по электронной почте в виде приложения к письму.</para
+></listitem>
+</varlistentry>
+
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Адрес</guimenu
+> <guimenuitem
+>Сохранить фон как...</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Если на текущей странице есть фоновый рисунок, этот пункт позволяет сохранить его на ваш компьютер.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Адрес</guimenu
+> <guimenuitem
+>Сохранить как...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Если вы просматриваете документ или веб-страницу, эта команда позволяет сохранить её на ваш компьютер.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Адрес</guimenu
+> <guimenuitem
+>Сохранить врезку как...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Данный пункт имеет ту же функцию, что и пункт <guimenuitem
+>Сохранить как...</guimenuitem
+>, но предназначен для работы со фреймами.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>P</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Адрес</guimenu
+> <guimenuitem
+>Печать...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Напечатать текущую страницу.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Адрес</guimenu
+> <guimenuitem
+>Печать врезки</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Напечатать текущую врезку страницы.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Адрес</guimenu
+> <guimenuitem
+>Открыть в Netscape или Mozilla</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Открыть текущую страницу в обозревателе &Netscape; или <application
+>Mozilla</application
+>.</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Адрес</guimenu
+> <guimenuitem
+>Выход</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Закрыть текущее окно &konqueror;.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-edit">
+<title
+>Меню <guimenu
+>Правка</guimenu
+></title>
+
+<note
+><para
+>Большинство команд меню <guimenu
+>Правка</guimenu
+> также доступны в меню, появляющемся при щелчке <mousebutton
+>правой</mousebutton
+> кнопкой мыши на свободном пространстве окна.</para
+></note>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Правка</guimenu
+> <guimenuitem
+>Отменить</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Отменить последнее выполненное действие.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>X</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Правка</guimenu
+> <guimenuitem
+>Вырезать</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Поместить выделенные объекты в буфер обмена. После этого вы можете выбрать команду <guimenuitem
+>Вставить</guimenuitem
+>, и объекты будут перемещены в новый каталог.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Правка</guimenu
+> <guimenuitem
+>Копировать</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Копировать выделенные объекты в буфер обмена.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Правка</guimenu
+> <guimenuitem
+>Вставка</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Вставить объекты из буфера в текущую открытую папку.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>F2</keycap
+> </shortcut
+><guimenu
+>Правка</guimenu
+> <guimenuitem
+>Переименовать</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Переименовать файл или каталог, не открывая окно <guimenuitem
+>Свойства...</guimenuitem
+>. </para
+></listitem>
+</varlistentry>
+
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>Del</keycap
+></shortcut
+> <guimenu
+>Правка</guimenu
+> <guimenuitem
+>Выбросить в корзину</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Переместить выделенные объекты в корзину.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Shift;<keycap
+>Del</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Правка</guimenu
+> <guimenuitem
+>Удалить</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Удалить выделенные объекты.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>F7</keycap
+></shortcut
+> <guimenu
+>Правка</guimenu
+> <guimenuitem
+>Копировать файлы</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Копировать выделенные файлы в другой каталог.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Правка</guimenu
+> <guimenuitem
+>Переместить файлы...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Переместить выделенные элементы в другой каталог.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Правка</guimenu
+> <guimenuitem
+>Создать</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Создать каталог, текстовый файл или файл &HTML;, ссылку на приложение, адрес <acronym
+>URL</acronym
+>, гибкий диск или компакт-диск. Подробнее об этом можно прочитать в разделе <link linkend="making"
+>Меню «Создать»</link
+>.</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Правка</guimenu
+> <guimenuitem
+>Изменить тип файла...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Открыть окно, позволяющее изменить тип файла.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Правка</guimenu
+> <guimenuitem
+>Свойства...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Открыть окно <guilabel
+>Свойства</guilabel
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Правка</guimenu
+> <guisubmenu
+>Выбранные</guisubmenu
+> </menuchoice
+></term>
+<listitem
+><para
+>Опции для работы с выбранными элементами в окне &konqueror;: <variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>+</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Правка</guimenu
+> <guisubmenu
+>Выбранные</guisubmenu
+> <guimenuitem
+>Выделить...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Данная команда позволяет работать с множеством файлов путём их выделения (см. также <guimenuitem
+>Отменить выделение...</guimenuitem
+>, <guimenuitem
+>Отменить всё выделение</guimenuitem
+> и <guimenuitem
+>Инвертировать выделение</guimenuitem
+>).</para>
+<para
+>При выборе данного пункта появится окно, в котором следует ввести шаблон (используя специальные символы * и ?). Например, если в качестве шаблона вы введёте <literal role="extension"
+>*.html</literal
+>, будут выделены все файлы, имеющие расширение <literal role="extension"
+>.html</literal
+>, а при шаблоне <filename
+>?a*</filename
+> будут выделены все файлы, у которых вторая буква имени - a.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>-</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Правка</guimenu
+> <guisubmenu
+>Выбранные</guisubmenu
+> <guimenuitem
+>Отменить выделение...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Снять выделение с выбранных элементов.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>U</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Правка</guimenu
+> <guisubmenu
+>Выбранные</guisubmenu
+> <guimenuitem
+>Отменить всё выделение</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Снять выделение со всех файлов и каталогов.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>*</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Правка</guimenu
+> <guisubmenu
+>Выбранные</guisubmenu
+> <guimenuitem
+>Инвертировать выделение</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Обратить выделение (все выделенные объекты становятся невыделенными, и наоборот).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>U</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Правка</guimenu
+> <guisubmenu
+>Выбранные</guisubmenu
+> <guimenuitem
+>Выделить все</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Выделить весь текст на &HTML;-странице (после этого вы можете воспользоваться командами <guimenuitem
+>Копировать</guimenuitem
+> и <guimenuitem
+>Вставить</guimenuitem
+>, чтобы скопировать текст в текстовый редактор).</para
+></listitem
+> </varlistentry>
+</variablelist>
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>F</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Правка</guimenu
+> <guimenuitem
+>Найти...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Найти заданную строку на текущей текстовой или &HTML;-странице.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>F3</keycap
+></shortcut
+> <guimenu
+>Правка</guimenu
+> <guimenuitem
+>Найти далее</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Продолжить поиск заданной строки.</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Правка</guimenu
+> <guimenuitem
+>Перейти к строке...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Перейти к определённой строке текущей страницы.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-view">
+
+<title
+>Меню <guimenu
+>Вид</guimenu
+></title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Вид</guimenu
+> <guisubmenu
+>Режим отображения...</guisubmenu
+> </menuchoice
+></term>
+<listitem
+><para
+>Данный пункт позволяет выбрать один из режимов отображения каталогов: <guimenuitem
+>Значки</guimenuitem
+>, <guimenuitem
+>Список</guimenuitem
+>, <guimenuitem
+>В виде дерева</guimenuitem
+>, <guimenuitem
+>Таблица</guimenuitem
+> или <guimenuitem
+>Только текст</guimenuitem
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Вид</guimenu
+> <guimenuitem
+>Использовать index.html</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Если в каталоге имеется файл <filename
+>index.html</filename
+>, то при просмотре такого каталога вместо списка файлов будет показано содержимое этого файла.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Вид</guimenu
+> <guimenuitem
+>Заблокировать в текущем месте</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Заблокировать в текущем месте. </para
+></listitem>
+</varlistentry>
+	  
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Вид</guimenu
+> <guimenuitem
+>Разблокировать все панели</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Разблокировать все панели. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Вид</guimenu
+> <guimenuitem
+>Связать панель</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Связать текущую панель с другими.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>F5</keycap
+></shortcut
+> <guimenu
+>Вид</guimenu
+> <guimenuitem
+>Обновить</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Обновить текущую страницу.</para
+></listitem>
+</varlistentry>
+	  
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>Esc</keycap
+></shortcut
+> <guimenu
+>Вид</guimenu
+> <guimenuitem
+>Остановить</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Остановить загрузку страницы.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Вид</guimenu
+> <guimenuitem
+>Размер пиктограмм</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Данный пункт позволяет выбрать размер значков, отображающихся в режиме Значки.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Вид</guimenu
+> <guisubmenu
+>Сортировать по</guisubmenu
+> </menuchoice
+></term>
+<listitem
+><para
+>Данный пункт позволяет выбрать порядок, в котором значки отображаются в режиме <guimenuitem
+>Значки</guimenuitem
+> и <guimenuitem
+>Таблица</guimenuitem
+>.</para
+></listitem>
+</varlistentry>
+	  
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Вид</guimenu
+> <guimenuitem
+>Сортировка без учёта регистра</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Данный пункт позволяет указать, будет ли учитываться регистр символов при сортировке в режиме <guimenuitem
+>В виде дерева</guimenuitem
+>, <guimenuitem
+>Список</guimenuitem
+> и <guimenuitem
+>Только текст</guimenuitem
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>U</keycap
+> </keycombo
+> </shortcut
+> <guimenu
+>Вид</guimenu
+> <guimenuitem
+>Просмотреть исходный текст документа</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Показать исходный текст страницы.</para>
+<para
+>Данная возможность доступна только в том случае, если вы просматриваете документ или страницу &HTML;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Вид</guimenu
+> <guimenuitem
+>Исходный текст врезки</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Показать исходный текст текущей врезки.</para>
+<para
+>Данная возможность доступна только в том случае, если вы просматриваете страницу, на которой используются врезки. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>X</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Правка</guimenu
+> <guimenuitem
+>Просмотреть сведения о документе</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Просмотреть информацию о документе, такую как заголовок, &URL;, заголовки &HTTP;.</para>
+<para
+>Данная возможность доступна только в том случае, если вы просматриваете документ или страницу &HTML;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Вид</guimenu
+> <guimenuitem
+>Безопасность...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Данный пункт позволяет узнать, используется ли в данный момент безопасное соединение (с помощью <acronym
+>SSL</acronym
+>), а также открыть окно <guilabel
+>Настройка шифрования...</guilabel
+>. Те же возможности доступны при щелчке <mousebutton
+>левой</mousebutton
+> кнопкой мыши по значку с изображением замка в меню.</para
+></listitem
+> </varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Вид</guimenu
+> <guimenuitem
+>Кодировка</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Кодировка</para>
+<para
+>Данное меню позволяет указать кодировку &HTML;-страницы. Чаще всего для правильного отображения страницы достаточно выбрать пункт <guimenuitem
+>Автоматически</guimenuitem
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Вид</guimenu
+> <guisubmenu
+>Предварительнй просмотр</guisubmenu
+> </menuchoice
+></term>
+<listitem
+><para
+>С помощью этого пункта вы можете указать, что в качестве значков к файлом &HTML;, рисункам и текстовым файлам будет использоваться содержимое самих файлов в уменьшенном виде.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Вид</guimenu
+> <guimenuitem
+>Показывать скрытые файлы</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>С помощью этого пункта вы можете указать, следует ли отображать скрытые файлы (имена которых начинаются с точки).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Вид</guimenu
+> <guimenuitem
+>Показывать подробно...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Данный пункт позволяет указать, какие именно сведения о файлах и каталогах будут показываться в режиме "Таблица", "Только текст", "В виде дерева".</para
+></listitem>
+</varlistentry>
+
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Вид</guimenu
+> <guimenuitem
+>Цвет фона...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Данный пункт позволяет выбрать цвет фона основного окна (для менеджера файлов). </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Вид</guimenu
+> <guimenuitem
+>Фоновый рисунок...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Данный пункт позволяет выбрать фоновый рисунок (для менеджера файлов). </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-go">
+<title
+>Меню <guimenu
+>Переход</guimenu
+></title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Alt;<keysym
+>Стрелка вверх</keysym
+></keycombo
+> </shortcut
+><guimenu
+>Переход</guimenu
+> <guimenuitem
+>Вверх</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Подняться на один уровень в структуре каталогов.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Alt;<keysym
+>Стрелка влево</keysym
+></keycombo
+> </shortcut
+><guimenu
+>Переход</guimenu
+> <guimenuitem
+>Назад</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Перейти к предыдущей странице.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Alt;<keysym
+>Стрелка вправо</keysym
+></keycombo
+> </shortcut
+><guimenu
+>Переход</guimenu
+> <guimenuitem
+>Вперёд</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Перейти к следующей странице.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Home</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Переход</guimenu
+> <guimenuitem
+>Домашняя страница</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Перейти в домашний каталог.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Переход</guimenu
+> <guimenuitem
+>Приложения</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Открыть папку, в которой находятся ссылки на установленные вами приложения.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Переход</guimenu
+> <guimenuitem
+>Корзина</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Открыть папку <filename class="directory"
+>Корзина</filename
+> в отдельном окне.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Переход</guimenu
+> <guimenuitem
+>Шаблоны</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Открыть папку <filename class="directory"
+>Шаблоны</filename
+> в отдельном окне.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Переход</guimenu
+> <guimenuitem
+>Автозагрузка</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Открыть папку <filename class="directory"
+>Автозагрузка</filename
+> в отдельном окне.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Вид</guimenu
+> <guisubmenu
+>Часто посещаемые...</guisubmenu
+> </menuchoice
+></term>
+<listitem>
+<para
+>Показывает наиболее часто посещаемые &URL;. При выборе одного из них он будет открыт в окне &konqueror;. </para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-bookmarks">
+<title
+>Меню <guimenu
+>Закладки</guimenu
+></title>
+
+<note
+><para
+>Сведения о закладках см. в разделе <link linkend="bookmarks"
+>Работа с закладками</link
+> данного руководства. </para
+></note>
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>B</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Закладки</guimenu
+> <guimenuitem
+>Добавить закладку</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Добавить к закладкам ссылку на выделенный объект.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Закладки</guimenu
+> <guimenuitem
+>Сохранить вкладке в папке закладок...</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Создаёт папку с закладками &URL; всех открытых вкладок в &konqueror;. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Закладки</guimenu
+> <guimenuitem
+>Управление закладками...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Открыть <link linkend="bookmarks"
+>Редактор закладок</link
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Закладки</guimenu
+> <guimenuitem
+>Создать папку...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Создать в папке с закладками новую папку.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-tools">
+<title
+>Меню <guimenu
+>Сервис</guimenu
+></title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Alt;<keycap
+>F2</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Сервис</guimenu
+> <guimenuitem
+>Выполнить команду...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Выбрав этот пункт, вы сможете ввести команду, которую следует выполнить.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>T</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Сервис</guimenu
+> <guimenuitem
+>Открыть терминал</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Открыть окно терминала (&konsole;).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Сервис</guimenu
+> <guimenuitem
+>Поиск файла...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Открыть &kfind; (программу поиска файлов).</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Если в системе установлены дополнительные модули &konqueror;, в меню <guimenu
+>Сервис</guimenu
+> появятся ещё несколько пунктов. Подробнее об этом можно прочитать  в разделе <link linkend="konq-plugin"
+>Дополнительные модули &konqueror;</link
+> данного руководства.</para>
+</sect2>
+
+<sect2 id="menu-settings">
+<title
+>Меню <guimenu
+>Настройка</guimenu
+></title>
+
+<note
+><para
+>См. также раздел <link linkend="save-settings"
+>Сохранение настроек и профилей</link
+>.</para
+></note>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>M</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Настройка</guimenu
+> <guimenuitem
+>Показывать панель меню</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Показать или скрыть панель меню.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Настройка</guimenu
+> <guimenuitem
+>Панели</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>При выборе данного пункта появится меню, в котором вы сможете указать, какие панели следует показывать, а какие нет.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>F</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Настройка</guimenu
+> <guimenuitem
+>Полноэкранный режим</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Переводит &konqueror; в полноэкранный режим без обычных элементов окна. Для того чтобы выйти из полноэкранного режима, нажмите кнопку <guiicon
+>Выход из полноэкранного режима</guiicon
+> в панели инструментов или нажмите <keycombo action="simul"
+>&Ctrl;&Shift; <keycap
+>F</keycap
+></keycombo
+>.</para>
+</listitem>
+</varlistentry>
+
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Настройка</guimenu
+> <guimenuitem
+>Сохранить параметры просмотра папки</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Сохраняет параметры представления текущей папки. При этом в папке будет создан файл <filename
+>.directory</filename
+>, в котором будут сохранены параметры просмотра папки. При повторном открытии папки &konqueror; эти параметры будут восстановлены.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Настройка</guimenu
+> <guimenuitem
+>Удалить свойства папки</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Удалить параметры просмотра папки, сохраненные при выборе <guimenuitem
+>Сохранять настройки просмотра для папки</guimenuitem
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Настройка</guimenu
+> <guimenuitem
+>Загрузить профиль просмотра</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Загрузить параметры профиля просмотра.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Настройка</guimenu
+> <guimenuitem
+>Сохранить профиль просмотра "<replaceable
+>ИмяПрофиля</replaceable
+>"...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Сохранить параметры текущего профиля просмотра.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Настройка</guimenu
+> <guimenuitem
+>Настроить профили просмотра...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Данный пункт позволяет изменить существующий профиль или создать новый.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Настройка</guimenu
+> <guimenuitem
+>Настройка клавиатуры...</guimenuitem
+> </menuchoice
+></term
+> <listitem
+><para
+>С помощью данного пункта вы можете настроить привязки клавиш, то есть какие действия будут выполняться при нажатии того или иного сочетания клавиш (например, нажатие <keycombo action="simul"
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+> соответствует действию <guimenuitem
+>Копировать</guimenuitem
+>).</para>
+</listitem
+></varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Настройка</guimenu
+> <guimenuitem
+>Настройка панелей...</guimenuitem
+> </menuchoice
+></term
+> <listitem
+><para
+>Данный пункт позволяет изменить внешний вид основной и дополнительной панелей, а также панели адреса. Подробнее об этом можно прочитать  в разделе <link linkend="configure-bars"
+>Изменение внешнего вида панелей</link
+>. </para
+></listitem
+> </varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Настройка</guimenu
+> <guimenuitem
+>Настроить &konqueror;...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Данный пункт позволяет изменить различные параметры менеджера файлов и обозревателя Интернета (в частности типы файлов, прокси-серверы, шифрование и панели инструментов).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Настройка</guimenu
+> <guimenuitem
+>Параметры проверки орфографии...</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Настроить параметры проверки орфографии в &konqueror;.</para>
+</listitem>
+</varlistentry>
+
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-window">
+<title
+>Меню <guimenu
+>Окно</guimenu
+></title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>L</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Окно</guimenu
+> <guimenuitem
+>Разделить панель по вертикали</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Разделить текущее окно по вертикали.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>T</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Окно</guimenu
+> <guimenuitem
+>Разделить панель по горизонтали</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Разделить текущее окно по горизонтали.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>R</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Окно</guimenu
+> <guimenuitem
+>Удалить активную панель</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Удалить активную панель.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Окно</guimenu
+> <guimenuitem
+>Новая вкладка</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Открыть новую вкладку.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>D</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Окно</guimenu
+> <guimenuitem
+>Создать копию вкладки</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Открыть текущую страницу в новой вкладке.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>B</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Окно</guimenu
+> <guimenuitem
+>Отделить вкладку</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Показать текущую вкладку в отдельном окне.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>W</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Окно</guimenu
+> <guimenuitem
+>Закрыть вкладку</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Закрыть текущую вкладку.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>Left</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Окно</guimenu
+> <guimenuitem
+>Переместить вкладку влево</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Переместить текущую вкладку влево.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>Left</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Окно</guimenu
+> <guimenuitem
+>Переместить вкладку вправо</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Переместить текущую вкладку вправо.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Окно</guimenu
+> <guimenuitem
+>Показать эмулятор терминала</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Открыть в нижней части окна небольшое окно терминала.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>F9</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Окно</guimenu
+> <guimenuitem
+>Показать панель навигации</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Скрыть или показать панель навигации &konqueror;. См. <xref linkend="sidebar"/>.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-help">
+<title
+>Меню <guimenu
+>Справка</guimenu
+></title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Справка</guimenu
+> <guimenuitem
+>Руководство по &konqueror;</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Открыть руководство по &konqueror;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Shift;<keycap
+>F1</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Справка</guimenu
+> <guimenuitem
+>Что это?</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>При выборе этого пункта меню указатель мыши примет форму стрелки с вопросительным знаком. Если щёлкнуть мышью по какому-нибудь элементу окна, например по кнопке <guiicon
+>Остановить</guiicon
+>, будет показана краткая справка по этому элементу. Подробнее об этом можно прочитать в разделе <link linkend="bubble"
+>Подсказки и команда "Что это?"</link
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Справка</guimenu
+> <guimenuitem
+>Введение в &konqueror;</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Открыть страницу, появляющуюся при первом запуске &konqueror; и описывающую его основные возможности.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Справка</guimenu
+> <guimenuitem
+>Сообщить об ошибке...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Данный пункт позволяет сообщить разработчикам об ошибке в &konqueror;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Справка</guimenu
+> <guimenuitem
+>О программе &konqueror;...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Показать окно с краткими сведениями о версии &konqueror;, его авторах и лицензии.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Справка</guimenu
+> <guimenuitem
+>О KDE...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Показать окно с краткими сведениями о версии &kde;.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+</sect1>
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

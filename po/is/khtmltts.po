@@ -1,0 +1,49 @@
+# translation of khtmlkttsd.po to icelandic
+#
+# Arnar Leosson <leosson@frisurf.no>, 2005.
+# Sveinn í Felli <sveinki@nett.is>, 2011.
+# Sveinn í Felli <sv1@fellsnet.is>, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: khtmlkttsd\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2015-03-16 09:43+0000\n"
+"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
+"Language-Team: icelandic <translation-team-is@lists.sourceforge.net>\n"
+"Language: is\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
+"\n"
+"\n"
+
+#: khtmltts.cpp:33
+#, kde-format
+msgid "&Speak Text"
+msgstr "&Tala texta"
+
+#. i18n: ectx: Menu (tools)
+#: khtmlttsplugin.rc:5
+#, kde-format
+msgid "&Tools"
+msgstr "&Tól"
+
+#. i18n: ectx: ToolBar (speechToolbar)
+#: khtmlttsplugin.rc:10
+#, kde-format
+msgid "Speech Toolbar"
+msgstr "Taltækjaslá"
+
+#~ msgctxt "@title:window"
+#~ msgid "Starting Jovie Text-to-Speech Service Failed"
+#~ msgstr "Ræsing Jovie Texti-í-tal þjónustunnar mistókst"
+
+#~ msgid "The D-Bus call say() failed."
+#~ msgstr "D-Bus kallið say() mistókst."
+
+#~ msgctxt "@title:window"
+#~ msgid "D-Bus Call Failed"
+#~ msgstr "D-Bus kallið mistókst"

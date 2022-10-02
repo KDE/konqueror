@@ -1,0 +1,170 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Serbian "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="bookmarks" lang="&language;">
+<articleinfo>
+
+<title
+>Обележивачи</title>
+<authorgroup>
+<author
+><personname
+><firstname
+>Ксавје</firstname
+> <surname
+>Вејо</surname
+></personname
+> <email
+>xavier.vello@gmail.com</email
+> </author>
+<othercredit role="translator"
+><firstname
+>Драган</firstname
+><surname
+>Пантелић</surname
+><affiliation
+><address
+><email
+>falcon-10@gmx.de</email
+></address
+></affiliation
+><contrib
+>превод</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>8. 11. 2016.</date>
+<releaseinfo
+>Програми КДЕ‑а 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>КДЕ</keyword>
+<keyword
+>Системске поставке</keyword>
+<keyword
+>обележивачи</keyword>
+<keyword
+>К‑У/И</keyword>
+</keywordset>
+</articleinfo>
+<sect1 id="conf">
+<title
+>Домаћа страница с обележивачима</title>
+<para
+>У овом модулу можете подесити домаћу страницу обележивача.</para>
+<para
+>Домаћу страницу обележивача можете приказати уношењем <userinput
+>bookmarks:/</userinput
+> у траку локације.</para>
+<para
+>Поставкама у овом модулу може се приступити и уношењем <userinput
+>bookmarks:/config</userinput
+> у траку локације.</para>
+<sect2 id="conf-general">
+<title
+>Опште поставке</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Број колона:</guilabel
+></term>
+<listitem>
+<para
+>Фасцикле се аутоматски распоређују у неколико колона. Оптималан број колона зависи од ширине <application
+>К‑освајачевог</application
+> прозора и броја обележивача.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Позадине фасцикли</guilabel
+></term>
+<listitem>
+<para
+>Испразните на спором систему како бисте искључили слике позадине.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="conf-bookmark">
+<title
+>Обележивачи</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Обележивачи без фасцикле</guilabel
+></term>
+<listitem>
+<para
+>Ако је празно, не приказују се обележивачи у корену хијерархије (ван фасцикли). Ако је попуњено, сабрани су у „кореној“ фасцикли.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Спљоштено стабло обележивача</guilabel
+></term>
+<listitem>
+<para
+>Потфасцикле се подразумевано приказују унутар родитељске фасцикле. Ако активирате ову опцију, потфасцикле ће се приказивати самостално. Не изгледа тако лепо, али може бити од помоћи ако имате веома велику фасциклу коју желите да раздвојите у две колоне.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Системска места</guilabel
+></term>
+<listitem>
+<para
+>Приказ оквира са уобичајеним местима (домаће, мрежа, ...) Корисно ако вам је <application
+>К‑освајач</application
+> менаџер фајлова.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="conf-cache">
+<title
+>Кеш битмапа</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Величина кеша на диску:</guilabel
+></term>
+<listitem>
+<para
+>Задајте колико се простора на диску користи за кеширање битмапа.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Очисти кеш</guilabel
+></term>
+<listitem>
+<para
+>Уклања све кеширане слике. Ово може бити потребно ако су неке фавиконице оштећене и не освежавају се аутоматски.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+</sect1>
+</article>

@@ -1,0 +1,2716 @@
+# translation of kget.po to Uzbek
+# Nurali Abdurahmonov <mavnur@gmail.com>, 2006.
+# Mashrab Kuvatov <kmashrab@uni-bremen.de>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kget\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2007-02-03 14:08+0100\n"
+"Last-Translator: Mashrab Kuvatov <kmashrab@uni-bremen.de>\n"
+"Language-Team: Uzbek <floss-uz-l10n@googlegroups.com>\n"
+"Language: uz\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: kget_plugin.cpp:56
+#, fuzzy, kde-format
+msgid "Download Manager"
+msgstr "Yozib olish boshqaruvchisi"
+
+#: kget_plugin.cpp:62
+#, kde-format
+msgid "Show Drop Target"
+msgstr ""
+
+#: kget_plugin.cpp:69
+#, kde-format
+msgid "List All Links"
+msgstr "Hamma bogʻlamalarni koʻrsatish"
+
+#: kget_plugin.cpp:74
+#, fuzzy, kde-format
+#| msgid "List All Links"
+msgid "List Selected Links"
+msgstr "Hamma bogʻlamalarni koʻrsatish"
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No downloadable links were found."
+msgstr ""
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No Links"
+msgstr "Bogʻlama yoʻq"
+
+#. i18n: ectx: Menu (tools)
+#: konqueror_kget_browser_integration.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr ""
+
+#, fuzzy
+#~ msgid "New Group"
+#~ msgstr "Andoza jild"
+
+#, fuzzy
+#~ msgid "Network and Downloads"
+#~ msgstr "Qisman yozib olinganni belgilash"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Verification"
+#~ msgstr "Manzil:"
+
+#, fuzzy
+#~ msgctxt "integration of KGet with other applications"
+#~ msgid "Integration"
+#~ msgstr "Konqueror'ga bogʻlash"
+
+#, fuzzy
+#~| msgid "Advanced"
+#~ msgctxt "Advanced Options"
+#~ msgid "Advanced"
+#~ msgstr "Qoʻshimcha"
+
+#~ msgid "Advanced Options"
+#~ msgstr "Qoʻshimcha moslamalar"
+
+#, fuzzy
+#~ msgid "Transfer Plugins"
+#~ msgstr "Vazifani ochish:"
+
+#~ msgid "KGet"
+#~ msgstr "KGet"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#, fuzzy
+#~ msgctxt "start transfergroup downloads"
+#~ msgid "Start"
+#~ msgstr "Qaytadan bosh&lash"
+
+#, fuzzy
+#~ msgctxt "stop transfergroup downloads"
+#~ msgid "Stop"
+#~ msgstr "Toʻxtatildi"
+
+#, fuzzy
+#~ msgid "KGet is downloading %1 file"
+#~ msgid_plural "KGet is downloading %1 files"
+#~ msgstr[0] "Yozib olish boshqaruvchisi"
+
+#, fuzzy
+#~| msgid ""
+#~| "Error while writing file:\n"
+#~| "%1"
+#~ msgid "Error trying to get %1"
+#~ msgstr ""
+#~ "Faylga yozishda xato roʻy berdi:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Are you sure that you want to remove the group named %1?"
+#~ msgstr "Rostdan ham ushbu vazifalarni olib tashlashni istaysizmi?"
+
+#, fuzzy
+#~ msgid "Remove Group"
+#~ msgstr "Andoza jild"
+
+#, fuzzy
+#~ msgid "Are you sure that you want to remove the following groups?"
+#~ msgstr "Rostdan ham ushbu vazifalarni olib tashlashni istaysizmi?"
+
+#, fuzzy
+#~ msgid "Remove groups"
+#~ msgstr "Andoza jild"
+
+#, fuzzy
+#~ msgid "Download added"
+#~ msgstr "Yozib olish davom ettrildi"
+
+#, fuzzy
+#~ msgid ""
+#~ "The file %1 already exists.\n"
+#~ "Overwrite?"
+#~ msgstr ""
+#~ "Quyidagi fayl allaqachon mavjud:\n"
+#~ "%1\n"
+#~ "Uni almashtirishni istaysizmi?"
+
+#, fuzzy
+#~ msgid "My Downloads"
+#~ msgstr "Yozib olish davom ettrildi"
+
+#, fuzzy
+#~ msgid "New Download"
+#~ msgstr "Qaytadan yozib olish"
+
+#~ msgid ""
+#~ "Malformed URL:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Notoʻgʻri URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URL, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Notoʻgʻri URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Download it again?"
+#~ msgstr "Qaytadan yozib olish"
+
+#, fuzzy
+#~ msgid "Delete it and download again?"
+#~ msgstr "Qaytadan yozib olish"
+
+#, fuzzy
+#~ msgid "File already downloaded. Download anyway?"
+#~ msgstr ""
+#~ "URL allaqachon yozib olingan\n"
+#~ "%1\n"
+#~ "Uni qaytadan yozib olishni istaysizmi?"
+
+#, fuzzy
+#~| msgid "File Already exists"
+#~ msgid "File already exists"
+#~ msgstr "Fayl allaqachon mavjud"
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is a directory."
+#~ msgstr ""
+#~ "Quyidagi oʻchirilmaydi\n"
+#~ "%1\n"
+#~ "chunki u jild."
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is not a local file."
+#~ msgstr ""
+#~ "Quyidagi oʻchirilmaydi\n"
+#~ "%1\n"
+#~ "chunki u lokal fayl."
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Download completed"
+#~ msgstr "Yozib olish bajarildi"
+
+#, fuzzy
+#~ msgid "Download started"
+#~ msgstr "Yozib olish davom ettrildi"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Resolve"
+#~ msgstr "Vazifani ochish"
+
+#, fuzzy
+#~| msgid "All the downloads are finished."
+#~ msgid "KGet is now closing, as all downloads have completed."
+#~ msgstr "Hamma yozib olish vazifalari bajarildi."
+
+#, fuzzy
+#~| msgid "All the downloads are finished."
+#~ msgid "The computer will now turn off, as all downloads have completed."
+#~ msgstr "Hamma yozib olish vazifalari bajarildi."
+
+#, fuzzy
+#~ msgctxt "Shutting down computer"
+#~ msgid "Shutdown"
+#~ msgstr "Avto-chiqish usuli yoqildi."
+
+#, fuzzy
+#~| msgid "All the downloads are finished."
+#~ msgid ""
+#~ "The computer will now suspend to disk, as all downloads have completed."
+#~ msgstr "Hamma yozib olish vazifalari bajarildi."
+
+#, fuzzy
+#~| msgid "All the downloads are finished."
+#~ msgid ""
+#~ "The computer will now suspend to RAM, as all downloads have completed."
+#~ msgstr "Hamma yozib olish vazifalari bajarildi."
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgctxt "Suspending computer"
+#~ msgid "Suspending"
+#~ msgstr "Rejalashtirilmoqda"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgctxt "abort the proposed action"
+#~ msgid "Abort"
+#~ msgstr "Shrift:"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Downloads completed"
+#~ msgstr "Yozib olish bajarildi"
+
+#, fuzzy
+#~ msgctxt "file in a filesystem"
+#~ msgid "File"
+#~ msgstr "&Faylni ochish"
+
+#, fuzzy
+#~ msgctxt "status of the download"
+#~ msgid "Status"
+#~ msgstr "Qaytadan bosh&lash"
+
+#, fuzzy
+#~| msgid " Size: %1 "
+#~ msgctxt "size of the download"
+#~ msgid "Size"
+#~ msgstr " Hajmi: %1 "
+
+#, fuzzy
+#~ msgid "KGet Transfer"
+#~ msgstr "Vazifani ochish:"
+
+#, fuzzy
+#~ msgctxt "the type of the hash, e.g. MD5"
+#~ msgid "Type"
+#~ msgstr "Fayl turi"
+
+#~ msgid "Stalled"
+#~ msgstr "Toʻxtab qoldi"
+
+#, fuzzy
+#~ msgid "Downloading...."
+#~ msgstr "Yozib olish davom ettrildi"
+
+#, fuzzy
+#~| msgid "De&lay"
+#~ msgctxt "transfer state: delayed"
+#~ msgid "Delayed"
+#~ msgstr "K&echikish"
+
+#, fuzzy
+#~| msgid "Stopped"
+#~ msgctxt "transfer state: stopped"
+#~ msgid "Stopped"
+#~ msgstr "Toʻxtatildi"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgctxt "transfer state: aborted"
+#~ msgid "Aborted"
+#~ msgstr "Shrift:"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "transfer state: finished"
+#~ msgid "Finished"
+#~ msgstr "Tugadi"
+
+#, fuzzy
+#~ msgctxt "changing the destination of the file"
+#~ msgid "Changing destination"
+#~ msgstr "M&anzilni ochish"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgctxt "name of download"
+#~ msgid "Name"
+#~ msgstr "Nomi"
+
+#, fuzzy
+#~ msgctxt "status of download"
+#~ msgid "Status"
+#~ msgstr "Qaytadan bosh&lash"
+
+#, fuzzy
+#~ msgctxt "progress of download"
+#~ msgid "Progress"
+#~ msgstr "Bajarish oynasi"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgctxt "speed of download"
+#~ msgid "Speed"
+#~ msgstr "Tezlik"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgctxt "remaining time of download"
+#~ msgid "Remaining Time"
+#~ msgstr "Qolgan vaqt"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "No download destination specified."
+#~ msgstr "Manzil:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Invalid download destination specified."
+#~ msgstr "Manzil:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Download destination is not writeable."
+#~ msgstr "Manzil:"
+
+#, fuzzy
+#~| msgid "Malformed URL:\n"
+#~ msgid "Malformed URL."
+#~ msgstr "Notoʻgʻri URL:\n"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid "Malformed URL, protocol missing."
+#~ msgstr ""
+#~ "Notoʻgʻri URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid "Malformed URL, host missing."
+#~ msgstr ""
+#~ "Notoʻgʻri URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid ""
+#~ "Invalid download destination specified:\n"
+#~ "%1"
+#~ msgstr "Manzil:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid ""
+#~ "Download destination is not writeable:\n"
+#~ "%1"
+#~ msgstr "Manzil:"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URL, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Notoʻgʻri URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "File already exists. Overwrite it?"
+#~ msgstr ""
+#~ "Quyidagi fayl allaqachon mavjud:\n"
+#~ "%1\n"
+#~ "Uni almashtirishni istaysizmi?"
+
+#, fuzzy
+#~ msgid ""
+#~ "File already exists:\n"
+#~ "%1\n"
+#~ "Overwrite it?"
+#~ msgstr ""
+#~ "Quyidagi fayl allaqachon mavjud:\n"
+#~ "%1\n"
+#~ "Uni almashtirishni istaysizmi?"
+
+#, fuzzy
+#~| msgid "Malformed URL:\n"
+#~ msgid "Malformed URLs."
+#~ msgstr "Notoʻgʻri URL:\n"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid "Malformed URLs, protocol missing."
+#~ msgstr ""
+#~ "Notoʻgʻri URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid "Malformed URLs, host missing."
+#~ msgstr ""
+#~ "Notoʻgʻri URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Notoʻgʻri URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Notoʻgʻri URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Notoʻgʻri URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Files exist already. Overwrite them?"
+#~ msgstr ""
+#~ "Quyidagi fayl allaqachon mavjud:\n"
+#~ "%1\n"
+#~ "Uni almashtirishni istaysizmi?"
+
+#~ msgid "Question"
+#~ msgstr "Savol"
+
+#, fuzzy
+#~| msgid "Normal"
+#~ msgctxt "on a question"
+#~ msgid "No all"
+#~ msgstr "Oddiy"
+
+#, fuzzy
+#~| msgid "Local File Name"
+#~ msgid "Engine name:"
+#~ msgstr "Lokal faylning nomi"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "transfer state: connecting"
+#~ msgid "Connecting...."
+#~ msgstr "Ulanish"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Set Script File"
+#~ msgstr "Taʼrifi"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "Transfer State: Finished"
+#~ msgid "Finished"
+#~ msgstr "Tugadi"
+
+#, fuzzy
+#~ msgid "Downloading Metalink File...."
+#~ msgstr "Yozib olish davom ettrildi"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Redownload Metalink"
+#~ msgstr "Yozib olish bajarildi"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgid "File Selection"
+#~ msgstr "Rejalashtirilmoqda"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "the string that is used to modify an url"
+#~ msgid "Change string"
+#~ msgstr "Ulanish"
+
+#, fuzzy
+#~| msgid "Stopped"
+#~ msgid "Append"
+#~ msgstr "Toʻxtatildi"
+
+#, fuzzy
+#~ msgid "Replace file"
+#~ msgstr "&Faylni ochish"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "transfer state: running"
+#~ msgid "Running...."
+#~ msgstr "Ulanish"
+
+#, fuzzy
+#~| msgid "Address (URL)"
+#~ msgid "IP Address"
+#~ msgstr "Manzili (URL)"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Down Speed"
+#~ msgstr "Tezlik"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Up Speed"
+#~ msgstr "Tezlik"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgid "Score"
+#~ msgstr "Manba:"
+
+#, fuzzy
+#~ msgid "Downloaded"
+#~ msgstr "Yozib olish davom ettrildi"
+
+#, fuzzy
+#~ msgid "Interesting"
+#~ msgstr "Konqueror'ga bogʻlash"
+
+#, fuzzy
+#~ msgid "Download speed"
+#~ msgstr "Yozib olish davom ettrildi"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Upload speed"
+#~ msgstr "Tezlik"
+
+#, fuzzy
+#~ msgid "Chunk"
+#~ msgstr "Sanash"
+
+#, fuzzy
+#~ msgid "Progress"
+#~ msgstr "Bajarish oynasi"
+
+#, fuzzy
+#~ msgid "Files"
+#~ msgstr "&Faylni ochish"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of the chunk"
+#~ msgstr "Urinishlar soni:"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Download speed of the chunk"
+#~ msgstr "Yozib olish bajarildi"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed"
+#~ msgstr "Tezlik"
+
+#, fuzzy
+#~ msgid "Status"
+#~ msgstr "Qaytadan bosh&lash"
+
+#, fuzzy
+#~ msgid "File"
+#~ msgstr "&Faylni ochish"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Advanced Details for %1"
+#~ msgstr "Andoza jild:"
+
+#, fuzzy
+#~ msgid "Trackers"
+#~ msgstr "&Vazifa"
+
+#, fuzzy
+#~ msgctxt "Open file"
+#~ msgid "Open"
+#~ msgstr "&Faylni ochish"
+
+#, fuzzy
+#~ msgid "Download first"
+#~ msgstr "Yozib olish davom ettrildi"
+
+#, fuzzy
+#~ msgid "Download normally"
+#~ msgstr "Andoza jild"
+
+#, fuzzy
+#~ msgid "Download last"
+#~ msgstr "Yozib olish davom ettrildi"
+
+#, fuzzy
+#~ msgid "Do Not Download"
+#~ msgstr "Qaytadan yozib olish"
+
+#, fuzzy
+#~| msgid "Download Selected Files"
+#~ msgid "Delete File(s)"
+#~ msgstr "Tanlangan fayllarni yozib olish"
+
+#, fuzzy
+#~ msgid "Move File"
+#~ msgstr "&Faylni ochish"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Seeders"
+#~ msgstr "Tezlik"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Leechers"
+#~ msgstr "Tezlik"
+
+#, fuzzy
+#~ msgid "Times Downloaded"
+#~ msgstr "Yozib olish davom ettrildi"
+
+#, fuzzy
+#~| msgid "Normal"
+#~ msgctxt "Download normally(not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "Oddiy"
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 %"
+#~ msgstr " %1/s "
+
+#, fuzzy
+#~| msgid "Normal"
+#~ msgctxt "Download Normal (not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "Oddiy"
+
+#, fuzzy
+#~| msgid "Advanced Options"
+#~ msgid "&Advanced Details"
+#~ msgstr "Qoʻshimcha moslamalar"
+
+#, fuzzy
+#~ msgid "&Scan Files"
+#~ msgstr "&Faylni ochish"
+
+#, fuzzy
+#~ msgid "Downloading Torrent File...."
+#~ msgstr "Yozib olish davom ettrildi"
+
+#, fuzzy
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading...."
+#~ msgstr "Yozib olish davom ettrildi"
+
+#, fuzzy
+#~| msgid ""
+#~| "Folder does not exist:\n"
+#~| "%1"
+#~ msgid "Torrent file does not exist"
+#~ msgstr ""
+#~ "Quyidagi jild mavjud emas\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Analyzing torrent...."
+#~ msgstr "Yozib olish davom ettrildi"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgctxt "Transfer status: seeding"
+#~ msgid "Seeding...."
+#~ msgstr "Rejalashtirilmoqda"
+
+#, fuzzy
+#~| msgid "Default Folder"
+#~ msgid "Select a default torrent folder"
+#~ msgstr "Andoza jild"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Select a default temporary folder"
+#~ msgstr "Andoza jild:"
+
+#, fuzzy
+#~| msgid "Import Text &File..."
+#~ msgid "Import dropped files"
+#~ msgstr "Matn &faylini import qilish..."
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgid "File Properties"
+#~ msgstr "Rejalashtirilmoqda"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a filename."
+#~ msgstr "Ethernet"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter at least one URL."
+#~ msgstr "Ethernet"
+
+#, fuzzy
+#~ msgid "Metalink Version 4.0 file (*.meta4)"
+#~ msgstr "&Faylni ochish"
+
+#, fuzzy
+#~ msgid "Metalink Version 3.0 file (*.metalink)"
+#~ msgstr "&Faylni ochish"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "Import Links"
+#~ msgstr "Bogʻlama yoʻq"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgctxt "Download the items which have been selected"
+#~ msgid "&Download Checked"
+#~ msgstr "Yozib olish bajarildi"
+
+#, fuzzy
+#~| msgid "Local File Name"
+#~ msgid "File Name"
+#~ msgstr "Lokal faylning nomi"
+
+#~ msgid "Description"
+#~ msgstr "Taʼrifi"
+
+#, fuzzy
+#~ msgctxt "list header: type of file"
+#~ msgid "File Type"
+#~ msgstr "Fayl turi"
+
+#~ msgid "Links in: %1 - KGet"
+#~ msgstr "Bogʻlamalar: %1 -KGet"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgctxt "The priority of the mirror"
+#~ msgid "Priority"
+#~ msgstr "Shrift:"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "Number of paralell connections to the mirror"
+#~ msgid "Connections"
+#~ msgstr "Ulanish"
+
+#, fuzzy
+#~| msgid "Automation"
+#~ msgctxt "Location = country"
+#~ msgid "Location"
+#~ msgstr "Avtomatlashtirish"
+
+#, fuzzy
+#~| msgid "<i>%1</i> successfully downloaded."
+#~ msgid "%1 has been successfully added."
+#~ msgstr "<i>%1</i> muvaffaqiyatli yozib olindi."
+
+#, fuzzy
+#~ msgid "Download again"
+#~ msgstr "Qaytadan yozib olish"
+
+#, fuzzy
+#~ msgctxt "Delete selected history-item"
+#~ msgid "Delete selected"
+#~ msgstr "Fayl tanlanmagan"
+
+#, fuzzy
+#~ msgid "Open file"
+#~ msgstr "&Faylni ochish"
+
+#, fuzzy
+#~ msgid "Transfer History"
+#~ msgstr "Vazifani ochish:"
+
+#, fuzzy
+#~ msgid "&Open File"
+#~ msgstr "&Faylni ochish"
+
+#, fuzzy
+#~| msgid "Stopped"
+#~ msgctxt "The transfer is stopped"
+#~ msgid "Stopped"
+#~ msgstr "Toʻxtatildi"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "The transfer is finished"
+#~ msgid "Finished"
+#~ msgstr "Tugadi"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgid "Source File"
+#~ msgstr "Manba:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Destination"
+#~ msgstr "Manzil:"
+
+#, fuzzy
+#~| msgid "Timer"
+#~ msgid "Time"
+#~ msgstr "Taymer"
+
+#, fuzzy
+#~ msgid "File Size"
+#~ msgstr "&Faylni ochish"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "the transfer has been finished"
+#~ msgid "Finished"
+#~ msgstr "Tugadi"
+
+#, fuzzy
+#~| msgid "To: %1"
+#~ msgctxt "an error happened in connection with the user input"
+#~ msgid "Error:"
+#~ msgstr "Bu yerga: %1"
+
+#, fuzzy
+#~| msgid "unknown"
+#~ msgctxt "trust level"
+#~ msgid "Unknown"
+#~ msgstr "nomaʼlum"
+
+#, fuzzy
+#~| msgid "<i>%1</i> successfully downloaded."
+#~ msgid "The signature has been verified successfully."
+#~ msgstr "<i>%1</i> muvaffaqiyatli yozib olindi."
+
+#, fuzzy
+#~ msgctxt "pgp signature is not verified"
+#~ msgid "Failed"
+#~ msgstr "&Faylni ochish"
+
+#, fuzzy
+#~| msgid "To: %1"
+#~ msgid "Error:"
+#~ msgstr "Bu yerga: %1"
+
+#, fuzzy
+#~ msgid "Information:"
+#~ msgstr "Konqueror'ga bogʻlash"
+
+#, fuzzy
+#~ msgid "Transfer Details"
+#~ msgstr " Vazifalar: %1 "
+
+#, fuzzy
+#~| msgid "<i>%1</i> successfully downloaded."
+#~ msgid "%1 %2 has been successfully added."
+#~ msgstr "<i>%1</i> muvaffaqiyatli yozib olindi."
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Transfer Verification for %1"
+#~ msgstr "Andoza jild:"
+
+#, fuzzy
+#~| msgid "<i>%1</i> successfully downloaded."
+#~ msgid "%1 was successfully verified."
+#~ msgstr "<i>%1</i> muvaffaqiyatli yozib olindi."
+
+#, fuzzy
+#~ msgid "Rename File"
+#~ msgstr "Andoza jild"
+
+#, fuzzy
+#~ msgid "Rename %1 to:"
+#~ msgstr "Andoza jild"
+
+#, fuzzy
+#~ msgid "&Rename"
+#~ msgstr "Andoza jild"
+
+#, fuzzy
+#~ msgid "Rename Group..."
+#~ msgid_plural "Rename Groups..."
+#~ msgstr[0] "Andoza jild"
+
+#, fuzzy
+#~| msgid "Sticky"
+#~ msgctxt "fix position for droptarget"
+#~ msgid "Sticky"
+#~ msgstr "Yopishqoq"
+
+#, fuzzy
+#~| msgid "KGet"
+#~ msgid "Quit KGet"
+#~ msgstr "KGet"
+
+#, fuzzy
+#~ msgid "The dropped file is a KGet Transfer List"
+#~ msgstr "Vazifani ochish:"
+
+#, fuzzy
+#~ msgid "&Download"
+#~ msgstr "Yozib olish davom ettrildi"
+
+#, fuzzy
+#~ msgid "&Load transfer list"
+#~ msgstr "Vazifani ochish:"
+
+#, fuzzy
+#~ msgid "Show Main Window"
+#~ msgstr "Ishga tushganda asosiy oynani koʻrsatish"
+
+#, fuzzy
+#~ msgid "Hide Main Window"
+#~ msgstr "&Log oynasini bekitish"
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgctxt "%1 filename, %2 total size, %3 status"
+#~ msgid "%1(%2) %3"
+#~ msgstr " %1/s "
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgctxt ""
+#~ "%1 filename, %2 percent complete, %3 downloaded out of %4 total size, %5 "
+#~ "status"
+#~ msgid "%1(%2% %3/%4) %5"
+#~ msgstr " %1/s "
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Transfer Settings for %1"
+#~ msgstr "Andoza jild:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Destination unmodified"
+#~ msgstr "Manzil:"
+
+#, fuzzy
+#~| msgid "%1% of %2 - %3"
+#~ msgid "%1 of %2"
+#~ msgstr "%3 - %2'dan %1%"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Group Settings for %1"
+#~ msgstr "Andoza jild:"
+
+#, fuzzy
+#~| msgid "%1/s"
+#~ msgctxt "@item speed of transfer per seconds"
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#, fuzzy
+#~| msgid "Local File Name"
+#~ msgctxt "@label"
+#~ msgid "File name"
+#~ msgstr "Lokal faylning nomi"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "@label Progress of transfer"
+#~ msgid "Finished"
+#~ msgstr "Tugadi"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgctxt "@label Speed of transfer"
+#~ msgid "Speed"
+#~ msgstr "Tezlik"
+
+#, fuzzy
+#~ msgctxt "@label Status of transfer"
+#~ msgid "Status"
+#~ msgstr "Qaytadan bosh&lash"
+
+#, fuzzy
+#~ msgctxt "@action:button start a transfer"
+#~ msgid "Start"
+#~ msgstr "Qaytadan bosh&lash"
+
+#, fuzzy
+#~ msgctxt "@action:button"
+#~ msgid "Stop"
+#~ msgstr "Toʻxtatildi"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgctxt "@action:button"
+#~ msgid "Remove"
+#~ msgstr "Vazifani ochish"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgctxt "@label Download from"
+#~ msgid "Source:"
+#~ msgstr "Manba:"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgctxt "@action"
+#~ msgid "Settings"
+#~ msgstr "Rejalashtirilmoqda"
+
+#, fuzzy
+#~| msgctxt "OK as in 'finished'"
+#~| msgid "OK"
+#~ msgctxt "@action:button"
+#~ msgid "OK"
+#~ msgstr "Ok"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgctxt "@action Refresh download list every x (seconds)"
+#~ msgid "Refresh download list every"
+#~ msgstr "Yozib olish bajarildi"
+
+#, fuzzy
+#~ msgctxt "@action:button"
+#~ msgid "Save Settings"
+#~ msgstr " Vazifalar: %1 "
+
+#, fuzzy
+#~ msgctxt "@title"
+#~ msgid "Downloads"
+#~ msgstr "Yozib olish davom ettrildi"
+
+#~ msgid "An advanced download manager for KDE"
+#~ msgstr "KDE uchun yozib olish boshqaruvchisi"
+
+#~ msgid "URL(s) to download"
+#~ msgstr "Yozib olish uchun URL(lar)"
+
+#, fuzzy
+#~ msgid "KGet Transfer List"
+#~ msgstr "Vazifani ochish:"
+
+#, fuzzy
+#~ msgid "Export Transfers"
+#~ msgstr "Vazifalar roʻyxatini &eksport qilish..."
+
+#, fuzzy
+#~| msgid "&Import Transfer List..."
+#~ msgid "&Import Transfers..."
+#~ msgstr "Vazifalar roʻyxatini &import qilish..."
+
+#, fuzzy
+#~ msgid "&Export Transfers List..."
+#~ msgstr "Vazifalar roʻyxatini &eksport qilish..."
+
+#, fuzzy
+#~ msgid "&Export Transfers as Plain Text..."
+#~ msgstr "Vazifalar roʻyxatini &eksport qilish..."
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Top Priority"
+#~ msgstr "Shrift:"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Least Priority"
+#~ msgstr "Shrift:"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Increase Priority"
+#~ msgstr "Shrift:"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Decrease Priority"
+#~ msgstr "Shrift:"
+
+#, fuzzy
+#~ msgid "Auto-Paste Mode"
+#~ msgstr "Avto-qoʻ&yish usuli"
+
+#, fuzzy
+#~ msgid "Use KGet as Konqueror Download Manager"
+#~ msgstr "Konqueror orqali yozi&b olish uchun KGet dasturidan foydalanilmasin"
+
+#, fuzzy
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Remove Selected"
+#~ msgstr "Da&vom etish"
+
+#, fuzzy
+#~| msgid "Download Selected Files"
+#~ msgctxt "delete all finished transfers"
+#~ msgid "Remove All Finished"
+#~ msgstr "Tanlangan fayllarni yozib olish"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgctxt "redownload selected transfer item"
+#~ msgid "Redownload Selected"
+#~ msgstr "Yozib olish bajarildi"
+
+#, fuzzy
+#~ msgid "Start / Resume Selected"
+#~ msgstr "Fayl tanlanmagan"
+
+#, fuzzy
+#~ msgid "Stop Selected"
+#~ msgstr "Fayl tanlanmagan"
+
+#, fuzzy
+#~ msgid "Stop"
+#~ msgstr "Toʻxtatildi"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Remove"
+#~ msgstr "Vazifani ochish"
+
+#, fuzzy
+#~ msgid "Open Destination"
+#~ msgstr "M&anzilni ochish"
+
+#, fuzzy
+#~ msgid "Open File"
+#~ msgstr "&Faylni ochish"
+
+#, fuzzy
+#~ msgid "Show Details"
+#~ msgstr "mavnur@gmail.com, kmashrab@uni-bremen.de"
+
+#, fuzzy
+#~ msgid "Copy URL to Clipboard"
+#~ msgstr "Manzilni (URL) xotiraga &olish"
+
+#, fuzzy
+#~ msgid "&Transfer History"
+#~ msgstr "Vazifani ochish:"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "&Group Settings"
+#~ msgstr "Andoza jild:"
+
+#, fuzzy
+#~ msgid "&Transfer Settings"
+#~ msgstr " Vazifalar: %1 "
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "Import &Links..."
+#~ msgstr "Bogʻlama yoʻq"
+
+#, fuzzy
+#~| msgid ""
+#~| "This is the first time that you have run KGet.\n"
+#~| "Do you want to use KGet as Download Manager for Konqueror?"
+#~ msgid ""
+#~ "This is the first time you have run KGet.\n"
+#~ "Would you like to enable KGet as the download manager for Konqueror?"
+#~ msgstr ""
+#~ "KGet birinchi marta ishga tushirilmoqda.\n"
+#~ "Konqueror orqali yozib olish uchun KGet dasturidan foydalanishni "
+#~ "istaysizmi?"
+
+#, fuzzy
+#~ msgid "Konqueror Integration"
+#~ msgstr "Konqueror'ga bogʻlash"
+
+#~ msgid "Enable"
+#~ msgstr "Yoqish"
+
+#~ msgid "Do Not Enable"
+#~ msgstr "Yoqilmasin"
+
+#, fuzzy
+#~| msgid ""
+#~| "Some transfers are still running.\n"
+#~| "Are you sure you want to quit KGet?"
+#~ msgid ""
+#~ "Some transfers are still running.\n"
+#~ "Are you sure you want to close KGet?"
+#~ msgstr ""
+#~ "Baʼzi vazifalar hali ham bajarilmoqda.\n"
+#~ "Shunga qaramasdan KGet'dan chiqishni istaysizmi?"
+
+#, fuzzy
+#~ msgid "Enter Group Name"
+#~ msgstr "Nurali Abdurahmonov, Mashrab Quvatov"
+
+#, fuzzy
+#~ msgid "Group name:"
+#~ msgstr "Nurali Abdurahmonov, Mashrab Quvatov"
+
+#, fuzzy
+#~| msgid "Are you sure you want to delete this transfer?"
+#~ msgid "Are you sure you want to delete the selected transfer?"
+#~ msgid_plural "Are you sure you want to delete the selected transfers?"
+#~ msgstr[0] "Rostdan ham ushbu vazifani olib tashlashni istaysizmi?"
+
+#, fuzzy
+#~ msgid "Confirm transfer delete"
+#~ msgstr "Vazifani ochish:"
+
+#, fuzzy
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Nurali Abdurahmonov, Mashrab Quvatov"
+
+#, fuzzy
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "mavnur@gmail.com, kmashrab@uni-bremen.de"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Automatic verification:"
+#~ msgstr "Taʼrifi"
+
+#, fuzzy
+#~| msgid "Automation Options"
+#~ msgid "Automatic verification"
+#~ msgstr "Avtomatlashtirish moslamalari"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Keyservers:"
+#~ msgstr "Tezlik"
+
+#, fuzzy
+#~| msgid "Move to &End"
+#~ msgid "Move &Up"
+#~ msgstr "&Oxiriga koʻchirish"
+
+#, fuzzy
+#~| msgid "Move to &End"
+#~ msgid "Move &Down"
+#~ msgstr "&Oxiriga koʻchirish"
+
+#, fuzzy
+#~ msgid "Rename"
+#~ msgstr "Andoza jild"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Limit Maximum Downloads Per Group"
+#~ msgstr "Yozib olish bajarildi"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of downloads:"
+#~ msgstr "Urinishlar soni:"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed Limit"
+#~ msgstr "Tezlik"
+
+#, fuzzy
+#~ msgid "Global download limit:"
+#~ msgstr "Yozib olish davom ettrildi"
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid " KiB/s"
+#~ msgstr " %1 Kb/s "
+
+#, fuzzy
+#~ msgid "Global upload limit:"
+#~ msgstr "Yozib olish davom ettrildi"
+
+#, fuzzy
+#~ msgid "Per transfer:"
+#~ msgstr "&Vazifa"
+
+#, fuzzy
+#~ msgid "Reconnect on Error or Broken Connection"
+#~ msgstr "Aloqa uzilganda"
+
+#~ msgid "Number of retries:"
+#~ msgstr "Urinishlar soni:"
+
+#, fuzzy
+#~ msgid "Retry after:"
+#~ msgstr "Qayta ulanish vaqti:"
+
+#, fuzzy
+#~ msgid "After Completing Downloads"
+#~ msgstr "Vazifalar tugagach dasturdan avto-chiqish"
+
+#, fuzzy
+#~ msgid "Auto shutdown"
+#~ msgstr "Avto-chiqish usuli yoqildi."
+
+#, fuzzy
+#~ msgid "Auto disconnect"
+#~ msgstr "Avto-uzish usuli yoqildi."
+
+#, fuzzy
+#~ msgid "Enable Web Interface"
+#~ msgstr "Animatsiyadan foydalanish"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Port:"
+#~ msgstr "Shrift:"
+
+#, fuzzy
+#~ msgid "Startup"
+#~ msgstr "Qaytadan bosh&lash"
+
+#, fuzzy
+#~ msgid "Enable animations"
+#~ msgstr "Animatsiyadan foydalanish"
+
+#, fuzzy
+#~ msgid "Enable system tray icon"
+#~ msgstr "Animatsiyadan foydalanish"
+
+#, fuzzy
+#~| msgid "All the downloads are finished."
+#~ msgid "Execute action after all downloads have been finished:"
+#~ msgstr "Hamma yozib olish vazifalari bajarildi."
+
+#, fuzzy
+#~ msgid "At startup:"
+#~ msgstr "Qaytadan bosh&lash"
+
+#, fuzzy
+#~ msgid "Restore Download State"
+#~ msgstr "Yozib olish davom ettrildi"
+
+#, fuzzy
+#~ msgid "Start All Downloads"
+#~ msgstr "Qisman yozib olinganni belgilash"
+
+#, fuzzy
+#~ msgid "Stop All Downloads"
+#~ msgstr "Qisman yozib olinganni belgilash"
+
+#, fuzzy
+#~ msgid "History"
+#~ msgstr "Vazifani ochish:"
+
+#, fuzzy
+#~ msgid "History backend:"
+#~ msgstr "Vazifani ochish:"
+
+#, fuzzy
+#~ msgid "Use as download manager for Konqueror:"
+#~ msgstr "Konqueror orqali yozib olish uchun KGet dasturidan foydalanish"
+
+#, fuzzy
+#~ msgid "Monitor clipboard for files to download"
+#~ msgstr "Yozib olish uchun fayl tanlanmagan."
+
+#, fuzzy
+#~| msgid "Local File Name"
+#~ msgid "Engine Name"
+#~ msgstr "Lokal faylning nomi"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of connections per URL:"
+#~ msgstr "Urinishlar soni:"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgid "File Settings"
+#~ msgstr "Rejalashtirilmoqda"
+
+#, fuzzy
+#~| msgid "Local File Name"
+#~ msgid "Filename:"
+#~ msgstr "Lokal faylning nomi"
+
+#, fuzzy
+#~| msgid "Log Window"
+#~ msgid "Login Info"
+#~ msgstr "Log oynasi"
+
+#, fuzzy
+#~ msgid "Username:"
+#~ msgstr "Andoza jild"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Path:"
+#~ msgstr "Shrift:"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Description:"
+#~ msgstr "Taʼrifi"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of simultaneous file downloads:"
+#~ msgstr "Urinishlar soni:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of mirrors per file:"
+#~ msgstr "Urinishlar soni:"
+
+#, fuzzy
+#~ msgid "Mode:"
+#~ msgstr "Jildlar"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Remove Tracker"
+#~ msgstr "Vazifani ochish"
+
+#, fuzzy
+#~ msgid "Update Trackers"
+#~ msgstr "&Vazifa"
+
+#, fuzzy
+#~ msgid "Remove Webseed"
+#~ msgstr "Da&vom etish"
+
+#, fuzzy
+#~| msgid "Total"
+#~ msgid "Total:"
+#~ msgstr "Jami"
+
+#, fuzzy
+#~ msgid "Downloaded:"
+#~ msgstr "Yozib olish davom ettrildi"
+
+#, fuzzy
+#~| msgid " Size: %1 "
+#~ msgid "Size:"
+#~ msgstr " Hajmi: %1 "
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of chunks found:"
+#~ msgstr "Urinishlar soni:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of chunks failed:"
+#~ msgstr "Urinishlar soni:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of chunks not downloaded:"
+#~ msgstr "Urinishlar soni:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of chunks downloaded:"
+#~ msgstr "Urinishlar soni:"
+
+#, fuzzy
+#~ msgid "Stats"
+#~ msgstr "Qaytadan bosh&lash"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Seeders:"
+#~ msgstr "Tezlik"
+
+#, fuzzy
+#~ msgid "Download speed:"
+#~ msgstr "Yozib olish davom ettrildi"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Upload speed:"
+#~ msgstr "Tezlik"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgctxt "source-file"
+#~ msgid "Source:"
+#~ msgstr "Manba:"
+
+#, fuzzy
+#~ msgid "Upload limit per transfer:"
+#~ msgstr "Yozib olish davom ettrildi"
+
+#, fuzzy
+#~| msgid "Limits"
+#~ msgid "No Limit"
+#~ msgstr "Cheklovlar"
+
+#, fuzzy
+#~ msgid "Download limit per transfer:"
+#~ msgstr "Yozib olish davom ettrildi"
+
+#~ msgid "Folders"
+#~ msgstr "Jildlar"
+
+#, fuzzy
+#~| msgid "Default Folder"
+#~ msgid "Default torrent folder:"
+#~ msgstr "Andoza jild"
+
+#, fuzzy
+#~| msgid "Default Folder"
+#~ msgid "Default temporary folder"
+#~ msgstr "Andoza jild"
+
+#, fuzzy
+#~| msgid "Resumed"
+#~ msgid "Required"
+#~ msgstr "Davom etilgan"
+
+#, fuzzy
+#~| msgid "Total size is %1 bytes"
+#~ msgid "File size (in bytes):"
+#~ msgstr "Umumiy hajmi %1 bayt"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Verification:"
+#~ msgstr "Taʼrifi"
+
+#, fuzzy
+#~ msgid "*.metalink *.meta4|Metalink file (*.metalink *.meta4)"
+#~ msgstr "&Faylni ochish"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgid "Date and time:"
+#~ msgstr "Qolgan vaqt"
+
+#, fuzzy
+#~ msgid "Version:"
+#~ msgstr "Kengaytma"
+
+#, fuzzy
+#~| msgid "Log"
+#~ msgid "Logo:"
+#~ msgstr "Log"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "Name:"
+#~ msgstr "Nomi"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Name of the publisher"
+#~ msgstr "Urinishlar soni:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "URL to the publisher"
+#~ msgstr "Urinishlar soni:"
+
+#, fuzzy
+#~ msgctxt "Files as in files on a server"
+#~ msgid "Files:"
+#~ msgstr "&Faylni ochish"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "&Import Links"
+#~ msgstr "Bogʻlama yoʻq"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgid "Contains"
+#~ msgstr "Ulanish"
+
+#, fuzzy
+#~ msgid "Does Not Contain"
+#~ msgstr "Qaytadan yozib olish"
+
+#, fuzzy
+#~ msgctxt "Check as in mark, not as in verify"
+#~ msgid "Chec&k Selected"
+#~ msgstr "Fayl tanlanmagan"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of connections:"
+#~ msgstr "Urinishlar soni:"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a URL"
+#~ msgstr "Ethernet"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Priority:"
+#~ msgstr "Shrift:"
+
+#, fuzzy
+#~| msgid "Automation"
+#~ msgid "Location:"
+#~ msgstr "Avtomatlashtirish"
+
+#, fuzzy
+#~| msgid "Offline mode"
+#~ msgctxt "View modes"
+#~ msgid "View Modes"
+#~ msgstr "Oflan usuli"
+
+#, fuzzy
+#~ msgid "Date"
+#~ msgstr "Qaytadan bosh&lash"
+
+#, fuzzy
+#~ msgid "Filter History"
+#~ msgstr "Vazifani ochish:"
+
+#, fuzzy
+#~ msgctxt "delete selected transfer"
+#~ msgid "Delete Selected"
+#~ msgstr "Fayl tanlanmagan"
+
+#, fuzzy
+#~ msgid "Download"
+#~ msgstr "Yozib olish davom ettrildi"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgctxt "hash as a hash of type md5, sha1 etc."
+#~ msgid "Hash:"
+#~ msgstr "Shrift:"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgid "Remaining Time:"
+#~ msgstr "Qolgan vaqt"
+
+#, fuzzy
+#~ msgid "Transfer Settings"
+#~ msgstr " Vazifalar: %1 "
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Download Destination:"
+#~ msgstr "Manzil:"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgctxt "No value has been set"
+#~ msgid "Not set"
+#~ msgstr "Bogʻlama yoʻq"
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid " KiB"
+#~ msgstr " %1 Kb/s "
+
+#, fuzzy
+#~ msgid "Upload Limit:"
+#~ msgstr "Yozib olish davom ettrildi"
+
+#, fuzzy
+#~ msgid "Download Limit:"
+#~ msgstr "Yozib olish davom ettrildi"
+
+#, fuzzy
+#~| msgid "Maximum open connections:"
+#~ msgid "Maximum Share Ratio:"
+#~ msgstr "Maksimal ulanish soni:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgctxt "verification of the download (e.g. by using MD5)"
+#~ msgid "Verification"
+#~ msgstr "Manzil:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Creation:"
+#~ msgstr "Manzil:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Expiration:"
+#~ msgstr "Manzil:"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Group Settings"
+#~ msgstr "Andoza jild:"
+
+#, fuzzy
+#~| msgid "Default Folder"
+#~ msgid "Default folder:"
+#~ msgstr "Andoza jild"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Maximum download speed:"
+#~ msgstr "Yozib olish bajarildi"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Maximum upload speed:"
+#~ msgstr "Yozib olish bajarildi"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Destination:"
+#~ msgstr "Manzil:"
+
+#, fuzzy
+#~ msgid "Transfer group:"
+#~ msgstr "&Vazifa"
+
+#, fuzzy
+#~ msgid "&File"
+#~ msgstr "&Faylni ochish"
+
+#, fuzzy
+#~ msgid "&Downloads"
+#~ msgstr "Yozib olish davom ettrildi"
+
+#, fuzzy
+#~ msgid "Form"
+#~ msgstr "yoki"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Remove Tag"
+#~ msgstr "Vazifani ochish"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Tag Settings for the groups"
+#~ msgstr "Andoza jild:"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgid "Tag Settings"
+#~ msgstr "Rejalashtirilmoqda"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Available tags:"
+#~ msgstr "Vazifani ochish"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a new Tag"
+#~ msgstr "Ethernet"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a new tag"
+#~ msgstr "Ethernet"
+
+#, fuzzy
+#~| msgctxt "OK as in 'finished'"
+#~| msgid "OK"
+#~ msgid "OK"
+#~ msgstr "Ok"
+
+#, fuzzy
+#~| msgid "To: %1"
+#~ msgid "Error: %1"
+#~ msgstr "Bu yerga: %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open log file %1 : %2"
+#~ msgstr ""
+#~ "Faylni ochib boʻlmadi:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not write to file:\n"
+#~| "%1"
+#~ msgid "Cannot write to %1 : %2"
+#~ msgstr ""
+#~ "Faylga yozib boʻlmadi:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Cannot read from %1"
+#~ msgstr "Bu yerdan fayl nusxasini olish: %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot create directory %1"
+#~ msgstr ""
+#~ "Faylni oʻqib boʻlmadi:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file: %1"
+#~ msgstr ""
+#~ "Faylni oʻqib boʻlmadi:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot seek in file : %1"
+#~ msgstr ""
+#~ "Faylni ochib boʻlmadi:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgid "Connections"
+#~ msgstr "Ulanish"
+
+#, fuzzy
+#~ msgid "Tracker"
+#~ msgstr "&Vazifa"
+
+#, fuzzy
+#~| msgid "Stay Connected"
+#~ msgid "Not connected"
+#~ msgstr "Ulangan holatda qolish"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "Not in use"
+#~ msgstr "Bogʻlama yoʻq"
+
+#, fuzzy
+#~| msgid "Connection Type"
+#~ msgid "Connection closed"
+#~ msgstr "Ulanish turi"
+
+#, fuzzy
+#~| msgid "Stay Connected"
+#~ msgid "Connected"
+#~ msgstr "Ulangan holatda qolish"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgid "Connecting"
+#~ msgstr "Ulanish"
+
+#, fuzzy
+#~| msgid ""
+#~| "The specified file does not exist:\n"
+#~| "%1"
+#~ msgid "The directory %1 does not exist"
+#~ msgstr ""
+#~ "Koʻrsatilgan fayl mavjud emas:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open index file %1 : %2"
+#~ msgstr ""
+#~ "Faylni ochib boʻlmadi:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot create file %1 : %2"
+#~ msgstr ""
+#~ "Faylni oʻqib boʻlmadi:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not write to file:\n"
+#~| "%1"
+#~ msgid "Failed to write last chunk to DND file : %1"
+#~ msgstr ""
+#~ "Faylga yozib boʻlmadi:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file %1 : %2"
+#~ msgstr ""
+#~ "Faylni oʻqib boʻlmadi:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Failed to seek file %1 : %2"
+#~ msgstr ""
+#~ "Faylni oʻqib boʻlmadi:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Error while reading file:\n"
+#~| "%1"
+#~ msgid "Error reading from %1"
+#~ msgstr ""
+#~ "Faylni oʻqishda xato roʻy berdi:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not write to file:\n"
+#~| "%1"
+#~ msgid "Failed to write to file %1 : %2"
+#~ msgstr ""
+#~ "Faylga yozib boʻlmadi:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open file %1 : %2"
+#~ msgstr ""
+#~ "Faylni ochib boʻlmadi:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Not started"
+#~ msgstr "Olib tashlanmadi"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgctxt "Status of a torrent file"
+#~ msgid "Seeding"
+#~ msgstr "Rejalashtirilmoqda"
+
+#, fuzzy
+#~ msgid "Downloading"
+#~ msgstr "Yozib olish davom ettrildi"
+
+#, fuzzy
+#~| msgid "Stopped"
+#~ msgid "Stopped"
+#~ msgstr "Toʻxtatildi"
+
+#, fuzzy
+#~| msgid "Queueing"
+#~ msgid "Queued for seeding"
+#~ msgstr "Navbatga qoʻyilmoqda"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Queued for downloading"
+#~ msgstr "Urinishlar soni:"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open file %1: %2"
+#~ msgstr ""
+#~ "Faylni ochib boʻlmadi:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot create index file: %1"
+#~ msgstr ""
+#~ "Faylni oʻqib boʻlmadi:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open file : %1 : %2"
+#~ msgstr ""
+#~ "Faylni ochib boʻlmadi:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Delete"
+#~ msgstr "Olib tashlanmadi"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Details for: %1"
+#~ msgstr "Andoza jild:"
+
+#, fuzzy
+#~ msgid "All downloads"
+#~ msgstr "Qisman yozib olinganni belgilash"
+
+#, fuzzy
+#~ msgid "Finished downloads"
+#~ msgstr "Tugadi"
+
+#, fuzzy
+#~ msgid "Transfers:"
+#~ msgstr "&Vazifa"
+
+#, fuzzy
+#~ msgid "Downloads"
+#~ msgstr "Yozib olish davom ettrildi"
+
+#, fuzzy
+#~ msgid "Transfer details:"
+#~ msgstr " Vazifalar: %1 "
+
+#, fuzzy
+#~ msgid "Transfer List"
+#~ msgstr "Vazifani ochish:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of threads:"
+#~ msgstr "Urinishlar soni:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Name of the license"
+#~ msgstr "Urinishlar soni:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "URL to the license"
+#~ msgstr "Urinishlar soni:"
+
+#, fuzzy
+#~| msgid "De&lay"
+#~ msgctxt "The transfer is delayed"
+#~ msgid "Delayed"
+#~ msgstr "K&echikish"
+
+#~ msgid ""
+#~ "Destination file \n"
+#~ "%1\n"
+#~ "already exists.\n"
+#~ "Do you want to overwrite it?"
+#~ msgstr ""
+#~ "Quyidagi fayl allaqachon mavjud:\n"
+#~ "%1\n"
+#~ "Uni almashtirishni istaysizmi?"
+
+#, fuzzy
+#~ msgid "Overwrite destination"
+#~ msgstr "M&anzilni ochish"
+
+#~ msgid "Queued"
+#~ msgstr "Navbatga qoʻyilgan"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Current Tracker"
+#~ msgstr "Vazifani ochish"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgid "Scrape"
+#~ msgstr "Manba:"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Available Trackers"
+#~ msgstr "Vazifani ochish"
+
+#, fuzzy
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Delete Selected"
+#~ msgstr "Fayl tanlanmagan"
+
+#, fuzzy
+#~| msgid "We are online."
+#~ msgid "We are sorry"
+#~ msgstr "Biz onlaynmiz."
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Rename transfer"
+#~ msgstr "Vazifani ochish"
+
+#, fuzzy
+#~ msgid "Download URL again?"
+#~ msgstr "Qaytadan yozib olish"
+
+#, fuzzy
+#~ msgctxt "file in a filsystem"
+#~ msgid "File"
+#~ msgstr "&Faylni ochish"
+
+#, fuzzy
+#~ msgid "Are you sure that you want to remove all selected groups?"
+#~ msgstr "Rostdan ham ushbu vazifalarni olib tashlashni istaysizmi?"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "Name"
+#~ msgstr "Nomi"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgid "Remaining Time"
+#~ msgstr "Qolgan vaqt"
+
+#, fuzzy
+#~ msgid "KGet - Download Manager"
+#~ msgstr "Yozib olish boshqaruvchisi"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgctxt "@label transfer source"
+#~ msgid "Source:"
+#~ msgstr "Manba:"
+
+#, fuzzy
+#~| msgid "0 B/s"
+#~ msgid "kBi"
+#~ msgstr "0 B/s"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file : %1"
+#~ msgstr ""
+#~ "Faylni oʻqib boʻlmadi:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "&Transfer History..."
+#~ msgstr "Vazifani ochish:"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "&Group Settings..."
+#~ msgstr "Andoza jild:"
+
+#, fuzzy
+#~ msgid "&Transfer Settings..."
+#~ msgstr " Vazifalar: %1 "
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed limit"
+#~ msgstr "Tezlik"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Download Speed:"
+#~ msgstr "Yozib olish bajarildi"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Upload Speed:"
+#~ msgstr "Tezlik"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "&Import links"
+#~ msgstr "Bogʻlama yoʻq"
+
+#, fuzzy
+#~ msgid "&Delete"
+#~ msgstr "Olib tashlanmadi"
+
+#, fuzzy
+#~ msgid "Default Download Folders"
+#~ msgstr "Andoza jild"
+
+#, fuzzy
+#~| msgid "Extension"
+#~ msgid "File Extension"
+#~ msgstr "Kengaytma"
+
+#~ msgid "Default Folder"
+#~ msgstr "Andoza jild"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Set as default folder"
+#~ msgstr "Andoza jild:"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "extRegExp, defaultFolder"
+#~ msgstr "Andoza jild:"
+
+#, fuzzy
+#~ msgid "Downloading.."
+#~ msgstr "Yozib olish davom ettrildi"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Advanced-Details for %1"
+#~ msgstr "Andoza jild:"
+
+#, fuzzy
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading.."
+#~ msgstr "Yozib olish davom ettrildi"
+
+#, fuzzy
+#~ msgid "Downloads number:"
+#~ msgstr "Yozib olish boshqaruvchisi"
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 GB"
+#~ msgstr " %1/s "
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 MB"
+#~ msgstr " %1/s "
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid "%1 KB"
+#~ msgstr " %1 Kb/s "
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 B"
+#~ msgstr " %1/s "
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid "%1 KB/s"
+#~ msgstr " %1 Kb/s "
+
+#, fuzzy
+#~| msgid "0 B/s"
+#~ msgid "kBi/s"
+#~ msgstr "0 B/s"
+
+#, fuzzy
+#~ msgid "Not Deleted"
+#~ msgstr "Olib tashlanmadi"
+
+#, fuzzy
+#~ msgid "Konqueror Integration disabled"
+#~ msgstr "Konqueror'ga bogʻlash"
+
+#~ msgid "Show main window at startup"
+#~ msgstr "Ishga tushganda asosiy oynani koʻrsatish"
+
+#, fuzzy
+#~ msgid "<speed>"
+#~ msgstr "Tezlik"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgid "<remaining time>"
+#~ msgstr "Qolgan vaqt"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file %1"
+#~ msgstr ""
+#~ "Faylni oʻqib boʻlmadi:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Error while writing file:\n"
+#~| "%1"
+#~ msgid "Error writing to %1 : %2"
+#~ msgstr ""
+#~ "Faylga yozishda xato roʻy berdi:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Error while writing file:\n"
+#~| "%1"
+#~ msgid "Error writing to %1"
+#~ msgstr ""
+#~ "Faylga yozishda xato roʻy berdi:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "List All Links"
+#~ msgid "&List Links"
+#~ msgstr "Hamma bogʻlamalarni koʻrsatish"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file"
+#~ msgstr ""
+#~ "Faylni oʻqib boʻlmadi:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Normal"
+#~ msgctxt "Download normally(not as first or last"
+#~ msgid "Normal"
+#~ msgstr "Oddiy"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Bittorrent-Speedlimits"
+#~ msgstr "Tezlik"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed-Limits"
+#~ msgstr "Tezlik"
+
+#, fuzzy
+#~ msgid " of "
+#~ msgstr "%2'dan %1"
+
+#, fuzzy
+#~ msgid "Download Folder"
+#~ msgstr "Andoza jild"
+
+#~ msgid ""
+#~ "Already saving URL\n"
+#~ "%1"
+#~ msgstr ""
+#~ "URL allaqachon yozib olinmoqda:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Default Group"
+#~ msgstr "Andoza jild"
+
+#, fuzzy
+#~ msgid "DlgAdvanced"
+#~ msgstr "Qoʻshimcha"
+
+#, fuzzy
+#~ msgid "Delete Group."
+#~ msgstr "Andoza jild"
+
+#, fuzzy
+#~ msgid "Hide Me"
+#~ msgstr "Fayl nomi"
+
+#~ msgid "&Keep this window open after the operation is complete."
+#~ msgstr "Bajarish tugagach oynani &ochiq qoldirish"
+
+#~ msgid "Not resumed"
+#~ msgstr "Davom etilmagan"
+
+#~ msgid "System"
+#~ msgstr "Tizim"
+
+#~ msgid "Maximize"
+#~ msgstr "Yoyish"
+
+#~ msgid "Minimize"
+#~ msgstr "Yigʻish"
+
+#~ msgid ""
+#~ "This is a folder and not a file:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Bu fayl emas, aksincha jild:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "You do not have read permission for the file:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Sizda ushbu faylni oʻqishga ruxsat yoʻq:\n"
+#~ "%1"
+
+#~ msgid "Could only read %1 bytes of %2."
+#~ msgstr "%2 baytdan faqat %1 baytni oʻqib boʻldi."
+
+#~ msgid ""
+#~ "File %1 exists.\n"
+#~ "Do you want to replace it?"
+#~ msgstr ""
+#~ "%1 fayli allaqachon mavjud.\n"
+#~ "Uni almashtirishni istaysizmi?"
+
+#~ msgid ""
+#~ "Failed to make a backup copy of %1.\n"
+#~ "Continue anyway?"
+#~ msgstr ""
+#~ "%1 uchun zahira nusxani yaratib boʻlmadi.\n"
+#~ "Shunga qaramasdan davom etishni istaysizmi?"
+
+#~ msgid ""
+#~ "Could not open file for writing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Yozish uchun faylni ochib boʻlmadi:\n"
+#~ "%1"
+
+#~ msgid "Could only write %1 bytes of %2."
+#~ msgstr "%2 baytdan faqat %1 baytni yozib boʻldi."
+
+#~ msgid "Welcome to KGet"
+#~ msgstr "KGet'ga marhamat"
+
+#~ msgid "Could not create valid socket"
+#~ msgstr "Yaroqli soket yaratib boʻlmadi"
+
+#~ msgid "Offline"
+#~ msgstr "Oflayn"
+
+#~ msgid "Starting offline"
+#~ msgstr "Oflayn holatiga oʻtilmoqda"
+
+#~ msgid "&Open Individual Window"
+#~ msgstr "Alohida oy&nada ochish"
+
+#~ msgid "Move to &Beginning"
+#~ msgstr "&Boshiga koʻchirish"
+
+#~ msgid "&Pause"
+#~ msgstr "Vaqtincha toʻ&xtatish"
+
+#~ msgid "&Queue"
+#~ msgstr "&Navbatga qoʻyish"
+
+#~ msgid "&Timer"
+#~ msgstr "&Taymer"
+
+#~ msgid "Use &Animation"
+#~ msgstr "&Animatsiyadan foydalanish"
+
+#~ msgid "&Expert Mode"
+#~ msgstr "&Ekspert usuli"
+
+#~ msgid "&Use-Last-Folder Mode"
+#~ msgstr "Oxirgi &jild usulidan foydalanish"
+
+#~ msgid "Auto-&Disconnect Mode"
+#~ msgstr "Avto-&uzilish usuli"
+
+#~ msgid "Auto-S&hutdown Mode"
+#~ msgstr "Avto-&chiqish usuli"
+
+#~ msgid "&Offline Mode"
+#~ msgstr "&Oflayn usuli"
+
+#~ msgid "Show &Log Window"
+#~ msgstr "&Log oynasini koʻrsatish"
+
+#~ msgid "Enable &KGet as Konqueror Download Manager"
+#~ msgstr "Konqueror orqali yozi&b olish uchun KGet dasturidan foydalanish"
+
+#~ msgid " Files: %1 "
+#~ msgstr " Fayllar: %1 "
+
+#~ msgid " Size: %1 KB "
+#~ msgstr " Hajmi: %1 Kb "
+
+#~ msgid " Time: %1 "
+#~ msgstr " Vaqti: %1 "
+
+#~ msgid ""
+#~ "*.kgt|*.kgt\n"
+#~ "*|All Files"
+#~ msgstr ""
+#~ "*.kgt|*.kgt\n"
+#~ "*|Hamma fayllar"
+
+#~ msgid "Quitting..."
+#~ msgstr "Chiqilmoqda..."
+
+#~ msgid "Stopping all jobs"
+#~ msgstr "Barcha vazifalar toʻxtatilmoqda"
+
+#~ msgid "Overwrite"
+#~ msgstr "Almashtirish"
+
+#~ msgid "Do Not Overwrite"
+#~ msgstr "Almashtirilmasin"
+
+#~ msgid "<i>%1</i> has been added."
+#~ msgstr "<i>%1</i> qoʻshildi."
+
+#~ msgid "1 download has been added."
+#~ msgid_plural "%n downloads have been added."
+#~ msgstr[0] "Bitta yozib olish vazifasi qoʻshildi."
+
+#~ msgid "Starting another queued job."
+#~ msgstr "Navbatdagi boshqa vazifa boshlanmoqda."
+
+#~ msgid "Offline mode on."
+#~ msgstr "Oflayn usuli yoqildi."
+
+#~ msgid "Offline mode off."
+#~ msgstr "Oflayn usuli oʻchirildi."
+
+#~ msgid "Expert mode on."
+#~ msgstr "Ekspert usuli yoqildi."
+
+#~ msgid "Expert mode off."
+#~ msgstr "Ekspert usuli oʻchirildi."
+
+#~ msgid "Auto disconnect off."
+#~ msgstr "Avto-uzish usuli oʻchirildi."
+
+#~ msgid "Auto shutdown off."
+#~ msgstr "Avto-chiqish usuli oʻchirildi."
+
+#~ msgid "Auto paste on."
+#~ msgstr "Avto-qoʻyish usuli yoqildi."
+
+#~ msgid "Auto paste off."
+#~ msgstr "Avto-qoʻyish usuli oʻchirildi."
+
+#~ msgid "<b>Transfers:</b> %1 "
+#~ msgstr "<b>Vazifalar:</b> %1 "
+
+#~ msgid "<br /><b>Files:</b> %1 "
+#~ msgstr "<br /><b>Fayllar:</b> %1 "
+
+#~ msgid "<br /><b>Size:</b> %1 "
+#~ msgstr "<br /><b>Hajmi:</b> %1 "
+
+#~ msgid "<br /><b>Time:</b> %1 "
+#~ msgstr "<br /><b>Vaqti:</b> %1 "
+
+#~ msgid "<br /><b>Speed:</b> %1/s"
+#~ msgstr "<br /><b>Tezligi:</b> %1/s"
+
+#~ msgid "Do you really want to disconnect?"
+#~ msgstr "Rostdan ham uzilishni istaysizmi?"
+
+#~ msgid "Disconnect"
+#~ msgstr "Uzilish"
+
+#~ msgid "Disconnecting..."
+#~ msgstr "Uzilmoqda..."
+
+#~ msgid "We are offline."
+#~ msgstr "Biz oflaynmiz."
+
+#, fuzzy
+#~ msgid "Id"
+#~ msgstr "Id"
+
+#~ msgid "Mixed"
+#~ msgstr "Aralash"
+
+#~ msgid "Separated"
+#~ msgstr "Ajratilgan"
+
+#~ msgid "Add new transfers as:"
+#~ msgstr "Yangi vazifalarni qoʻshish:"
+
+#, fuzzy
+#~ msgid "Advanced individual windows"
+#~ msgstr "Har bir vazifa uchun alohida oyna"
+
+#~ msgid "Remove files from a list after success"
+#~ msgstr ""
+#~ "Yozib olish muvaffaqiyatli tugagach vazifani roʻyxatdan olib tashlash"
+
+#~ msgid "Get file sizes"
+#~ msgstr "Fayl hajmini aniqlash"
+
+#~ msgid "Show individual windows"
+#~ msgstr "Alohida oynalarni koʻrsatish"
+
+#~ msgid " min"
+#~ msgstr " daqiqa"
+
+#~ msgid "Auto disconnect after completing downloads"
+#~ msgstr "Vazifalar tugagach tarmoqdan avto-uzilish"
+
+#~ msgid "Autosave file list every:"
+#~ msgstr "Fayllar roʻyxatini avto-saqlash vaqti:"
+
+#, fuzzy
+#~ msgid "Timed disconnect"
+#~ msgstr "Belgilangan uzilish vaqti"
+
+#~ msgid "Disconnect command:"
+#~ msgstr "Uzilishi buyrugʻi:"
+
+#~ msgid "Auto paste from clipboard"
+#~ msgstr "Xotiradan avto-qoʻyish"
+
+#~ msgid "Reconnect Options"
+#~ msgstr "Qayta ulanish moslamalari"
+
+#~ msgid "Timeout Options"
+#~ msgstr "Taymaut moslamalari"
+
+#~ msgid "If no data arrives in:"
+#~ msgstr "Maʼlumotlar olinmasa:"
+
+#~ msgid "If server cannot resume:"
+#~ msgstr "Agar server davom etmasa:"
+
+#~ msgid "Permanent"
+#~ msgstr "Doimiy"
+
+#~ msgid "PLIP"
+#~ msgstr "PLIP"
+
+#~ msgid "SLIP"
+#~ msgstr "SLIP"
+
+#~ msgid "PPP"
+#~ msgstr "PPP"
+
+#~ msgid "ISDN"
+#~ msgstr "ISDN"
+
+#~ msgid "Extension (* for all files):"
+#~ msgstr "Kengaytma (* hamma fayllar uchun):"
+
+#~ msgid "Limits Options"
+#~ msgstr "Cheklovlar moslamasi"
+
+#~ msgid " bytes/sec"
+#~ msgstr " bayt/soniya"
+
+#~ msgid "Window style:"
+#~ msgstr "Oyna uslubi:"
+
+#~ msgid "Attempt number %1"
+#~ msgstr "Urinish soni %1"
+
+#~ msgid "Stopping"
+#~ msgstr "Toʻxtalmoqda"
+
+#~ msgid "Pausing"
+#~ msgstr "Vaqtincha toʻxtatilmoqda"
+
+#~ msgid "The file size does not match."
+#~ msgstr "Fayl hajmi mos kelmaydi."
+
+#~ msgid "File Size checked"
+#~ msgstr "Fayl hajmi tekshirildi"
+
+#~ msgid "%"
+#~ msgstr "%"

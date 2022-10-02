@@ -1,0 +1,2410 @@
+# translation of kcmkonqhtml.po to galician
+# Galician translation of kcmkonqhtml.
+# Copyright (C) 2000 Jesús Bravo Álvarez.
+# Jesús Bravo Álvarez <jba@pobox.com>, 2000.
+# Xabi García <xabigf@gmx.net>, 2003.
+# Xabi G. Feal <xabigf@gmx.net>, 2006, 2007.
+# mvillarino <mvillarino@users.sourceforge.net>, 2007, 2008, 2009.
+# Marce Villarino <mvillarino@kde-espana.es>, 2009.
+# marce villarino <mvillarino@users.sourceforge.net>, 2009.
+# Marce Villarino <mvillarino@kde-espana.es>, 2009, 2011, 2012, 2013, 2014.
+# Adrián Chaves Fernández (Gallaecio) <adriyetichaves@gmail.com>, 2017.
+# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019, 2020.
+#
+# Proxecto Trasno - Adaptación do software libre á lingua galega:  Se desexas
+# colaborar connosco, podes atopar máis información en http://trasno.gpul.org
+#
+# First Version: 2000-11-25 20:26+0100
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkonqhtml\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-24 00:46+0000\n"
+"PO-Revision-Date: 2020-01-12 13:13+0100\n"
+"Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
+"Language-Team: Galician <proxecto@trasno.gal>\n"
+"Language: gl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 19.08.3\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Xabi García, Jesús Bravo, Marce Villarino"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "xabigf@gmx.net, jba@pobox.com, mvillarino@users.sourceforge.net"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pShowMMBInTabs)
+#: advancedTabOptions.ui:21
+#, kde-format
+msgid ""
+"This will open a new tab instead of a new window in various situations, such "
+"as choosing a link or a folder with the middle mouse button."
+msgstr ""
+"Isto abrirá un novo separador no canto dunha nova xanela en varios casos, "
+"tales como escoller unha ligazón ou un cartafol co botón central do rato."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pShowMMBInTabs)
+#: advancedTabOptions.ui:24
+#, kde-format
+msgid "Open &links in new tab instead of in new window"
+msgstr "Abrir as &ligazóns nun novo separador no canto de nunha nova xanela"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPopupsWithinTabs)
+#: advancedTabOptions.ui:31
+#, kde-format
+msgid ""
+"Whether or not JavaScript popups if allowed shall open in a new tab or in a "
+"new window."
+msgstr ""
+"Indica se as xanelas emerxentes de JavaScript deben abrirse nun novo "
+"separador ou nunha nova xanela."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pPopupsWithinTabs)
+#: advancedTabOptions.ui:34
+#, kde-format
+msgid "Open pop&ups in new tab instead of in new window"
+msgstr ""
+"Abrir as xanelas emerxentes nun novo separador no canto de n&unha nova xanela"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pKonquerorTabforExternalURL)
+#: advancedTabOptions.ui:41
+#, kde-format
+msgid ""
+"When you click a URL in another KDE program or call kfmclient to open a URL, "
+"the current desktop will be searched for a non-minimized Konqueror and, if "
+"found, the URL opened as a new tab within it. Otherwise a new Konqueror "
+"window will be opened with the required URL."
+msgstr ""
+"Cando prema un URL noutro programa de KDE ou chame a kfmclient para abrir un "
+"URL, buscarase no escritorio actual unha xanela non minimizada de Konqueror "
+"e, se a atopa, abrirase o URL nun novo separador dentro dela. En caso "
+"contrario, abrirase unha xanela de Konqueror co URL solicitado."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pKonquerorTabforExternalURL)
+#: advancedTabOptions.ui:44
+#, kde-format
+msgid "Open as tab in existing Konqueror when URL is called externally"
+msgstr ""
+"Abrir como separador nunha xanela existente de Konqueror cando o URL se "
+"chame externamente"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pNewTabsInBackground)
+#: advancedTabOptions.ui:51
+#, kde-format
+msgid ""
+"This will open a new tab in the background, instead of in the foreground."
+msgstr ""
+"Isto abrirá os novos separadores no fondo, no canto de no primeiro plano."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
+#: advancedTabOptions.ui:54
+#, kde-format
+msgid "O&pen new tabs in the background"
+msgstr "A&brir os novos separadores no fondo"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pOpenAfterCurrentPage)
+#: advancedTabOptions.ui:61
+#, kde-format
+msgid ""
+"This will open a new tab opened from a page after the current tab, instead "
+"of after the last tab."
+msgstr ""
+"Isto abrirá un novo separador desde unha páxina despois do separador actual, "
+"no canto de despois do último separador."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pOpenAfterCurrentPage)
+#: advancedTabOptions.ui:64
+#, kde-format
+msgid "Open &new tab after current tab"
+msgstr "Abrir os &novos separadores despois do actual"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pDynamicTabbarHide)
+#: advancedTabOptions.ui:71
+#, kde-format
+msgid ""
+"This will display the tab bar only if there are two or more tabs. Otherwise "
+"it will always be displayed."
+msgstr ""
+"Isto mostrará a barra de separadores só se hai dous ou máis separadores. En "
+"caso contrario, mostrarase sempre."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pDynamicTabbarHide)
+#: advancedTabOptions.ui:74
+#, kde-format
+msgid "Hide the tab bar when only one tab is open"
+msgstr "Agochar a barra de separadores cando só estea aberto un separador"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
+#: advancedTabOptions.ui:81
+#, kde-format
+msgid "This will display close buttons inside each tab."
+msgstr "Isto mostrará o botón de pechar dentro de cada separador."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pPermanentCloseButton)
+#: advancedTabOptions.ui:84
+#, kde-format
+msgid "&Show close button on tabs"
+msgstr "&Mostrar o botón de pechar nos separadores"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pMiddleClickClose)
+#: advancedTabOptions.ui:91
+#, kde-format
+msgid ""
+"When you click on a tab using the middle mouse button or mouse wheel, it "
+"will close that tab."
+msgstr "Se preme co botón central ou coa roda do rato nun separador, pecharao."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pMiddleClickClose)
+#: advancedTabOptions.ui:94
+#, kde-format
+msgid "Middle-click on a tab to close it"
+msgstr "Facer clic central do rato nun separador pecharao"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabConfirm)
+#: advancedTabOptions.ui:101
+#, kde-format
+msgid ""
+"This will ask you whether you are sure you want to close a window when it "
+"has multiple tabs opened in it."
+msgstr ""
+"Preguntaráselle se quere realmente pechar unha xanela cando teña múltiplos "
+"separadores abertos nela."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pTabConfirm)
+#: advancedTabOptions.ui:104
+#, kde-format
+msgid "Confirm &when closing windows with multiple tabs"
+msgstr ""
+"Pedir confirmación cando se peche unha xanela con &múltiplos separadores"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabCloseActivatePrevious)
+#: advancedTabOptions.ui:111
+#, kde-format
+msgid ""
+"When checking this the previous used or opened tab will be activated when "
+"you close the current active tab instead of the one right to the current tab."
+msgstr ""
+"Se marca esta opción o separador usado ou aberto antes ha activarse cando "
+"peche o separador activo no canto de activar o da dereita."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pTabCloseActivatePrevious)
+#: advancedTabOptions.ui:114
+#, kde-format
+msgid "Activate previously used tab when closing the current tab"
+msgstr "Activar o separador usado antes cando se peche o separador actual"
+
+#: appearance.cpp:39
+#, kde-format
+msgctxt "@title:tab"
+msgid "General"
+msgstr "Xeral"
+
+#: appearance.cpp:40
+#, kde-format
+msgctxt "@title:tab"
+msgid "Fonts"
+msgstr "Fontes"
+
+#: appearance.cpp:41
+#, kde-format
+msgctxt "@title:tab"
+msgid "Stylesheets"
+msgstr "Follas de estilo"
+
+#. i18n: ectx: property (title), widget (QGroupBox, GroupBox3_2)
+#: appearance.cpp:48 css/csscustom.ui:296
+#, kde-format
+msgid "Images"
+msgstr "Imaxes"
+
+#: appearance.cpp:52
+#, kde-format
+msgid "A&utomatically load images"
+msgstr "Cargar &automaticamente as imaxes"
+
+#: appearance.cpp:53
+#, kde-format
+msgid ""
+"<html>If this box is checked, Konqueror will automatically load any images "
+"that are embedded in a web page. Otherwise, it will display placeholders for "
+"the images, and you can then manually load the images by clicking on the "
+"image button.<br />Unless you have a very slow network connection, you will "
+"probably want to check this box to enhance your browsing experience.</html>"
+msgstr ""
+"<html>Se marca esta opción, Konqueror cargará automaticamente todas as "
+"imaxes dunha páxina web. En caso contrario, mostrará ocos para as imaxes, e "
+"poderá cargalas manualmente premendo o botón de Imaxes.<br />A non ser que "
+"teña unha conexión moi lenta á rede, probabelmente quererá marcar esta "
+"opción para mellorar a experiencia de navegación.</html>"
+
+#: appearance.cpp:63
+#, kde-format
+msgid "Dra&w frame around not completely loaded images"
+msgstr "Debu&xar un marco arredor das imaxes non completamente cargadas"
+
+#: appearance.cpp:64
+#, kde-format
+msgid ""
+"<html>If this box is checked, Konqueror will draw a frame as a placeholder "
+"around images embedded in a web page that are not yet fully loaded.<br />You "
+"will probably want to check this box to enhance your browsing experience, "
+"especially if have a slow network connection.</html>"
+msgstr ""
+"<html>Se marca esta opción, Konqueror debuxará un marco arredor das imaxes "
+"aínda non cargadas completamente na páxina web.<br />Probabelmente queira "
+"marcar esta opción para mellorar a experiencia da navegación, especialmente "
+"se ten unha conexión lenta á rede.</html>"
+
+#: appearance.cpp:74
+#, kde-format
+msgctxt "animations"
+msgid "Enabled"
+msgstr "Activadas"
+
+#: appearance.cpp:75
+#, kde-format
+msgctxt "animations"
+msgid "Disabled"
+msgstr "Desactivadas"
+
+#: appearance.cpp:76
+#, kde-format
+msgid "Show Only Once"
+msgstr "Mostrar só unha vez"
+
+#: appearance.cpp:77
+#, kde-format
+msgid ""
+"<html>Controls how Konqueror shows animated images:<br /><ul><li><b>Enabled</"
+"b>: Show all animations completely.</li><li><b>Disabled</b>: Never show "
+"animations, show the starting image only.</li><li><b>Show only once</b>: "
+"Show all animations completely but do not repeat them.</li></ul></html>"
+msgstr ""
+"<html>Controla como mostra Konqueror as imaxes animadas: <br /><ul> "
+"<li><b>Activadas</b>: Mostra todas as animacións completamente.</li> "
+"<li><b>Desactivada</b>: Non mostra nunca as animacións, mostra só a imaxe "
+"inicial</li><li><b>Mostrar só unha vez</b>: Mostra todas as animacións "
+"completamente pero non as repite</li></ul></html>"
+
+#: appearance.cpp:82
+#, kde-format
+msgid "A&nimations:"
+msgstr "A&nimacións:"
+
+#: appearance.cpp:85 htmlopts.cpp:110
+#, kde-format
+msgctxt "@title:group"
+msgid "Miscellaneous"
+msgstr "Diversos"
+
+#: appearance.cpp:90
+#, kde-format
+msgctxt "underline"
+msgid "Enabled"
+msgstr "Activado"
+
+#: appearance.cpp:91
+#, kde-format
+msgctxt "underline"
+msgid "Disabled"
+msgstr "Desactivado"
+
+#: appearance.cpp:92
+#, kde-format
+msgid "Only on Hover"
+msgstr "Só ao pasar o rato por riba"
+
+#: appearance.cpp:93
+#, kde-format
+msgid "Und&erline links:"
+msgstr "&Subliñar as ligazóns:"
+
+#: appearance.cpp:96
+#, kde-format
+msgid ""
+"<html>Controls how Konqueror handles underlining hyperlinks:<br /"
+"><ul><li><b>Enabled</b>: Always underline links</li><li><b>Disabled</b>: "
+"Never underline links</li><li><b>Only on Hover</b>: Underline when the mouse "
+"is moved over the link</li></ul><br /><i>Note: The site's CSS definitions "
+"can override this value.</i></html>"
+msgstr ""
+"<html>Controla como xestiona Konqueror o subliñado das ligazóns:<br /> "
+"<ul><li><b>Activado</b>: Subliña sempre as ligazóns</li> <li><b>Desactivado</"
+"b>: Non subliña nunca as ligazóns</li> <li><b>Só ao pasar o rato por riba</"
+"b>: Subliña cando o rato está sobre a ligazón</li></ul> <br/><i>Nota: As "
+"definicións CSS do sitio pode sobrepor este valor</i></html>"
+
+#: appearance.cpp:105
+#, kde-format
+msgid "When Efficient"
+msgstr "Cando sexa eficiente"
+
+#: appearance.cpp:106
+#, kde-format
+msgctxt "smooth scrolling"
+msgid "Always"
+msgstr "Sempre"
+
+#: appearance.cpp:107
+#, kde-format
+msgctxt "soft scrolling"
+msgid "Never"
+msgstr "Nunca"
+
+#: appearance.cpp:108
+#, kde-format
+msgid "S&mooth scrolling:"
+msgstr "Desprazamento &suave:"
+
+#: appearance.cpp:110
+#, kde-format
+msgid ""
+"<html>Determines whether Konqueror should use smooth steps to scroll HTML "
+"pages, or whole steps:<br /><ul><li><b>Always</b>: Always use smooth steps "
+"when scrolling.</li><li><b>Never</b>: Never use smooth scrolling, scroll "
+"with whole steps instead.</li><li><b>When Efficient</b>: Only use smooth "
+"scrolling on pages where it can be achieved with moderate usage of system "
+"resources.</li></ul></html>"
+msgstr ""
+"<html>Determina se Konqueror debe empregar pasos suaves no desprazamento "
+"polas páxinas HTML, ou pasos enteiros:<br /><ul> <li><b>Sempre</b>: Empregar "
+"sempre pasos suaves para desprazarse.</li> <li><b>Nunca</b>: Nunha emprega "
+"pasos suaves, no canto dá pasos enteiros.</li> <li><b>Cando sexa eficiente</"
+"b>: Só emprega o desprazamento suave en páxinas onde poida acadarse cun "
+"consumo moderado dos recursos do sistema.</li></ul></html>"
+
+#: appearance.cpp:119
+#, kde-format
+msgid ""
+"<h1>Konqueror Fonts</h1>On this page, you can configure which fonts "
+"Konqueror should use to display the web pages you view."
+msgstr ""
+"<h1>Tipos de letra en Konqueror</h1>Nesta páxina pode configurar os tipos de "
+"letra que debe empregar Konqueror para mostrar as páxinas web."
+
+#: appearance.cpp:131
+#, kde-format
+msgid "Font Si&ze"
+msgstr "&Tamaño do tipo de letra"
+
+#: appearance.cpp:134 appearance.cpp:152
+#, kde-format
+msgid "This is the relative font size Konqueror uses to display web sites."
+msgstr ""
+"Este é o tamaño de tipo de letra relativo que usa Konqueror para mostrar os "
+"sitios web."
+
+#: appearance.cpp:138
+#, kde-format
+msgid "M&inimum font size:"
+msgstr "Tamaño mí&nimo de letra:"
+
+#: appearance.cpp:142
+#, kde-format
+msgid ""
+"Konqueror will never display text smaller than this size,<br />overriding "
+"any other settings."
+msgstr ""
+"Konqueror nunca mostrará texto nun tamaño máis pequeno que este, <br /"
+">independentemente de calquera outra indicación."
+
+#: appearance.cpp:147
+#, kde-format
+msgid "&Medium font size:"
+msgstr "Tamaño &medio de letra:"
+
+#: appearance.cpp:160
+#, kde-format
+msgid "S&tandard font:"
+msgstr "Tipo de letra es&tándar:"
+
+#: appearance.cpp:161
+#, kde-format
+msgid "This is the font used to display normal text in a web page."
+msgstr ""
+"Este é o tipo de letra co que se mostra o texto normal nunha páxina web."
+
+#: appearance.cpp:165
+#, kde-format
+msgid "&Fixed font:"
+msgstr "&Fonte monoespazo:"
+
+#: appearance.cpp:166
+#, kde-format
+msgid ""
+"This is the font used to display fixed-width (i.e. non-proportional) text."
+msgstr ""
+"Este é o tipo de letra co que se mostra o texto de anchura fixa (non "
+"proporcional)."
+
+#: appearance.cpp:170
+#, kde-format
+msgid "S&erif font:"
+msgstr "Tipo de letra S&erif:"
+
+#: appearance.cpp:171
+#, kde-format
+msgid "This is the font used to display text that is marked up as serif."
+msgstr "Este é o tipo de letra co que se mostra o texto marcado como serif."
+
+#: appearance.cpp:175
+#, kde-format
+msgid "Sa&ns serif font:"
+msgstr "Tipo de letra sa&ns serif:"
+
+#: appearance.cpp:176
+#, kde-format
+msgid "This is the font used to display text that is marked up as sans-serif."
+msgstr ""
+"Este é o tipo de letra co que se mostra o texto marcado como sans-serif."
+
+#: appearance.cpp:180
+#, kde-format
+msgid "C&ursive font:"
+msgstr "Tipo de letra c&ursivo:"
+
+#: appearance.cpp:181
+#, kde-format
+msgid "This is the font used to display text that is marked up as italic."
+msgstr "Este é o tipo de letra co que se mostra o texto marcado como cursivo."
+
+#: appearance.cpp:185
+#, kde-format
+msgid "Fantas&y font:"
+msgstr "Tipo de letra de &fantasía:"
+
+#: appearance.cpp:186
+#, kde-format
+msgid ""
+"This is the font used to display text that is marked up as a fantasy font."
+msgstr "Este é o tipo de letra co que se mostra o texto marcado como fantasía."
+
+#: appearance.cpp:195
+#, kde-format
+msgid "Font &size adjustment for this encoding:"
+msgstr "A&xuste do tamaño de tipo de letra para esta codificación:"
+
+#: appearance.cpp:203 appearance.cpp:401
+#, kde-format
+msgid "Use Language Encoding"
+msgstr "Usar a codificación do idioma"
+
+#: appearance.cpp:205
+#, kde-format
+msgid "Default encoding:"
+msgstr "Codificación predeterminada:"
+
+#: appearance.cpp:207
+#, kde-format
+msgid ""
+"Select the default encoding to be used; normally, you will be fine with 'Use "
+"language encoding' and should not have to change this."
+msgstr ""
+"Escolla a codificación predeterminada; xeralmente, iralle ben con «Usar a "
+"codificación do idioma», e non debería precisar cambiala."
+
+#. i18n: ectx: property (whatsThis), widget (QWidget, CSSConfigWidget)
+#. i18n: ectx: property (whatsThis), widget (QWidget, CSSCustomDialog)
+#: css/cssconfig.ui:5 css/csscustom.ui:13
+#, kde-format
+msgid ""
+"<b>Stylesheets</b><p>See http://www.w3.org/Style/CSS for further information "
+"on cascading style sheets.</p>"
+msgstr ""
+"<b>Follas de estilo</b><p>Consulte http://www.w3.org/Style/CSS para máis "
+"información sobre as follas de estilo.</p>"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, ButtonGroup1)
+#: css/cssconfig.ui:17
+#, kde-format
+msgid ""
+"<b>Stylesheets</b><p>Use this groupbox to determine how Konqueror will "
+"render style sheets.</p>"
+msgstr ""
+"<b>Follas de estilo</b><p>Empregue estas alternativas para determinar como "
+"debuxará Konqueror as follas de estilo.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, ButtonGroup1)
+#: css/cssconfig.ui:20
+#, kde-format
+msgid "Stylesheets"
+msgstr "Follas de estilo"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, useDefault)
+#: css/cssconfig.ui:26
+#, kde-format
+msgid ""
+"<b>Use default stylesheet</b><p>Select this option to use the default "
+"stylesheet.</p>"
+msgstr ""
+"<b>Usar a folla de estilo predeterminada</b><p>Escolla esta opción para "
+"empregar a folla de estilo predeterminada.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useDefault)
+#: css/cssconfig.ui:29
+#, kde-format
+msgid "Us&e default stylesheet"
+msgstr "Usar a folla de estilo &predeterminada"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, useUser)
+#: css/cssconfig.ui:39
+#, kde-format
+msgid ""
+"<b>Use user-defined stylesheet</b><p>If this box is checked, Konqueror will "
+"try to load a user-defined style sheet as specified in the location below. "
+"The style sheet allows you to completely override the way web pages are "
+"rendered in your browser. The file specified should contain a valid style "
+"sheet (see http://www.w3.org/Style/CSS for further information on cascading "
+"style sheets).</p>"
+msgstr ""
+"<b>Usar unha folla de estilo definida polo usuario</b><p>Se marca esta "
+"alternativa, Konqueror intentará cargar a folla de estilo definida polo "
+"usuario indicada en baixo. A folla de estilo permite redefinir completamente "
+"como deben debuxarse as páxinas web no navegador. O ficheiro especificado "
+"debe conter unha folla de estilo correcta (consulte http://www.w3.org/style/"
+"css para máis información).</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useUser)
+#: css/cssconfig.ui:42
+#, kde-format
+msgid "Use &user-defined stylesheet"
+msgstr "Usar unha folla de estilo definida polo &usuario"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, useAccess)
+#: css/cssconfig.ui:94
+#, kde-format
+msgid ""
+"<b>Use accessibility stylesheet</b><p>Selecting this option will allow you "
+"to define a default font, font size, and font color with a few simple clicks "
+"of the mouse. Simply wander over to the Customize... dialog and pick out "
+"your desired options.</p>"
+msgstr ""
+"<b>Usar unha folla de estilo de accesibilidade </b><p>Se escolle esta "
+"alternativa poderá definir un tipo de letra predeterminado, o tamaño das "
+"letras e a cor cuns cantos clics do rato. Simplemente abra o diálogo "
+"Personalizar… e escolla as opcións desexadas.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useAccess)
+#: css/cssconfig.ui:97
+#, kde-format
+msgid "U&se accessibility stylesheet"
+msgstr "Usar unha folla de estilo de &accesibilidade"
+
+#. i18n: ectx: property (text), widget (QPushButton, customize)
+#: css/cssconfig.ui:137
+#, kde-format
+msgid "Custom&ize..."
+msgstr "&Personalizar…"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox7)
+#: css/csscustom.ui:21
+#, kde-format
+msgid ""
+"<b>Font family</b><p>A font family is a group of fonts that resemble one "
+"another, with family members that are e.g. bold, italic, or any number of "
+"the above.</p>"
+msgstr ""
+"<b>Familia tipográfica</b><p>Unha familia tipográfica é un grupo de tipos de "
+"letra que se asemellan, con membros como grosa, itálica, ou calquera número "
+"dos de riba.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, GroupBox7)
+#: css/csscustom.ui:24
+#, kde-format
+msgid "Font Family"
+msgstr "Familia do tipo de letra"
+
+#. i18n: ectx: property (text), widget (QLabel, txtBaseFontFamily)
+#: css/csscustom.ui:30
+#, kde-format
+msgid "Base family:"
+msgstr "Base da familia:"
+
+#. i18n: ectx: property (whatsThis), widget (QFontComboBox, fontFamily)
+#: css/csscustom.ui:37
+#, kde-format
+msgid "<p>This is the currently selected font family</p>"
+msgstr "<p>Esta é a familia do tipo de letra escollido</p>"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, sameFamily)
+#: css/csscustom.ui:44
+#, kde-format
+msgid ""
+"<b>Use same family for all text</b><p>Select this option to override custom "
+"fonts everywhere in favor of the base font.</p>"
+msgstr ""
+"<b>Usar a mesma familia para todos os textos</b><p>Marque esta opción para "
+"ignorar os tipos de letra personalizados en favor dos tipos de letra base.</"
+"p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, sameFamily)
+#: css/csscustom.ui:47
+#, kde-format
+msgid "Use same family for all text"
+msgstr "Empregar a mesma familia para todos os textos"
+
+#. i18n: ectx: property (title), widget (QGroupBox, GroupBox3)
+#: css/csscustom.ui:57
+#, kde-format
+msgid "Font Size"
+msgstr "Tamaño do tipo de letra"
+
+#. i18n: ectx: property (text), widget (QLabel, txtFontsize)
+#: css/csscustom.ui:63
+#, kde-format
+msgid "Base font si&ze:"
+msgstr "&Tamaño base da letra:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:80
+#, kde-format
+msgid "7"
+msgstr "7"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:85
+#, kde-format
+msgid "8"
+msgstr "8"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:90
+#, kde-format
+msgid "9"
+msgstr "9"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:95
+#, kde-format
+msgid "10"
+msgstr "10"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:100
+#, kde-format
+msgid "11"
+msgstr "11"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:105
+#, kde-format
+msgid "12"
+msgstr "12"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:110
+#, kde-format
+msgid "14"
+msgstr "14"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:115
+#, kde-format
+msgid "16"
+msgstr "16"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:120
+#, kde-format
+msgid "20"
+msgstr "20"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:125
+#, kde-format
+msgid "24"
+msgstr "24"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:130
+#, kde-format
+msgid "32"
+msgstr "32"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:135
+#, kde-format
+msgid "48"
+msgstr "48"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:140
+#, kde-format
+msgid "64"
+msgstr "64"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, dontScale)
+#: css/csscustom.ui:148
+#, kde-format
+msgid ""
+"<b>Use same size for all elements</b><p>Select this option to override "
+"custom font sizes in favor of the base font size. All fonts will be "
+"displayed in the same size.</p>"
+msgstr ""
+"<b>Usar o mesmo tamaño para todos os elementos</b><p>Marque esta opción para "
+"substituír os tamaños de tipo de letra personalizados polo tamaño de tipo de "
+"letra base. Todos os textos han mostrarse co mesmo tamaño.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, dontScale)
+#: css/csscustom.ui:151
+#, kde-format
+msgid "&Use same size for all elements"
+msgstr "Empregar o &mesmo tamaño para todos os elementos"
+
+#. i18n: ectx: property (title), widget (QGroupBox, ButtonGroup2)
+#: css/csscustom.ui:161
+#, kde-format
+msgid "Colors"
+msgstr "Cores"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, blackOnWhite)
+#: css/csscustom.ui:183
+#, kde-format
+msgid "<b>Black on White</b><p>This is what you normally see.</p>"
+msgstr "<b>Negro sobre branco</b><p>Isto é o que normalmente se ve.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, blackOnWhite)
+#: css/csscustom.ui:186
+#, kde-format
+msgid "&Black on white"
+msgstr "&Negro sobre branco"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, whiteOnBlack)
+#: css/csscustom.ui:196
+#, kde-format
+msgid "<b>White on Black</b><p>This is your classic inverse color scheme.</p>"
+msgstr ""
+"<b>Branco sobre negro</b><p>Isto é a configuración de cor clásica invertida."
+"</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, whiteOnBlack)
+#: css/csscustom.ui:199
+#, kde-format
+msgid "&White on black"
+msgstr "&Branco sobre negro"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, customColor)
+#: css/csscustom.ui:206
+#, kde-format
+msgid ""
+"<b>Custom</b><p>Select this option to define a custom color for the default "
+"font.</p>"
+msgstr ""
+"<b>Personalizado</b><p>Escolla esta opción para definir unha cor "
+"personalizada para o tipo de letra predeterminado.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, customColor)
+#: css/csscustom.ui:209
+#, kde-format
+msgid "Cus&tom"
+msgstr "&Personalizado"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, txtBackground)
+#: css/csscustom.ui:219
+#, kde-format
+msgid ""
+"<b>Background</b><p>This background color is the one displayed behind the "
+"text by default. A background image will override this.</p>"
+msgstr ""
+"<b>Fondo</b><p>Esta é a cor mostrada de maneira predeterminada detrás do "
+"texto. Unha imaxe de fondo sobrescribiría este valor.</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, txtBackground)
+#: css/csscustom.ui:222
+#, kde-format
+msgid "Bac&kground:"
+msgstr "Fo&ndo:"
+
+#. i18n: ectx: property (whatsThis), widget (KColorButton, backgroundColorButton)
+#: css/csscustom.ui:238
+#, kde-format
+msgid ""
+"<b>Background</b><p>Behind this door lays the ability to choose a custom "
+"default background.</p>"
+msgstr ""
+"<b>Fondo</b><p>A opción de escoller un fondo predeterminado personalizado.</"
+"p>"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, sameColor)
+#: css/csscustom.ui:248
+#, kde-format
+msgid ""
+"<b>Use same color for all text</b><p>Select this option to apply your chosen "
+"color to the default font as well as any custom fonts as specified in a "
+"stylesheet.</p>"
+msgstr ""
+"<b>Usar a mesma cor para todo o texto</b><p>Marque esta opción para aplicar "
+"a cor que escollese tanto ao tipo de letra predeterminada como aos tipos de "
+"letra personalizados como se indique nunha folla de estilo.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, sameColor)
+#: css/csscustom.ui:251
+#, kde-format
+msgid "Use same color for all text"
+msgstr "Usar a mesma cor para todo o texto"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, txtForeground)
+#. i18n: ectx: property (whatsThis), widget (KColorButton, foregroundColorButton)
+#: css/csscustom.ui:261 css/csscustom.ui:280
+#, kde-format
+msgid ""
+"<b>Foreground color</b><p>The foreground color is the color that the text is "
+"drawn in.</p>"
+msgstr "<b>Cor do texto</b><p>A cor do texto é a que terán as letras.</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, txtForeground)
+#: css/csscustom.ui:264
+#, kde-format
+msgid "&Foreground:"
+msgstr "&Primeiro plano:"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox3_2)
+#: css/csscustom.ui:293
+#, kde-format
+msgid "<b>Images</b>"
+msgstr "<b>Imaxes</b>"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, hideImages)
+#: css/csscustom.ui:302
+#, kde-format
+msgid ""
+"<b>Suppress images</b><p>Selecting this will prevent Konqueror from loading "
+"images.</p>"
+msgstr ""
+"<b>Suprimir as imaxes</b><p>Se sinala esta opción Konqueror non cargará as "
+"imaxes.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, hideImages)
+#: css/csscustom.ui:305
+#, kde-format
+msgid "&Suppress images"
+msgstr "&Suprimir as imaxes"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, hideBackground)
+#: css/csscustom.ui:312
+#, kde-format
+msgid ""
+"<b>Suppress background images</b><p>Selecting this option will prevent "
+"Konqueror from loading background images.</p>"
+msgstr ""
+"<b>Suprimir as imaxes de fondo</b><p>Se sinala esta opción Konqueror non "
+"cargará as imaxes de fondo.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, hideBackground)
+#: css/csscustom.ui:315
+#, kde-format
+msgid "Suppress background images"
+msgstr "Suprimir as imaxes de fondo"
+
+#. i18n: ectx: property (title), widget (QGroupBox, previewBox)
+#: css/csscustom.ui:347
+#, kde-format
+msgid "Preview"
+msgstr "Vista previa"
+
+#: css/kcmcss.cpp:51
+#, kde-format
+msgid ""
+"<h1>Konqueror Stylesheets</h1> This module allows you to apply your own "
+"color and font settings to Konqueror by using stylesheets (CSS). You can "
+"either specify options or apply your own self-written stylesheet by pointing "
+"to its location.<br /> Note that these settings will always have precedence "
+"before all other settings made by the site author. This can be useful to "
+"visually impaired people or for web pages that are unreadable due to bad "
+"design."
+msgstr ""
+"<h1>Follas de estilo de Konqueror</h1>Este módulo permítelle aplicar a súa "
+"configuración de cor e tipos de letra a Konqueror empregando follas de "
+"estilo (CSS). Pode especificar opcións ou aplicar as súas propias follas de "
+"estilo apuntando á súa localización.<br/>Lembre que estas preferencias terán "
+"sempre preferencia sobre as opcións fornecidas polo autor do sitio. Isto "
+"pode ser bo para páxinas mal feitas e para xente con problemas graves na "
+"vista."
+
+#: css/kcmcss.cpp:336
+#, kde-format
+msgid ""
+"<html>\n"
+"<head>\n"
+"<style>\n"
+"<!--\n"
+"%1\n"
+"-->\n"
+"</style>\n"
+"</head>\n"
+"<body>\n"
+"<h1>Heading 1</h1>\n"
+"<h2>Heading 2</h2>\n"
+"<h3>Heading 3</h3>\n"
+"\n"
+"<p>User-defined stylesheets allow increased\n"
+"accessibility for visually handicapped\n"
+"people.</p>\n"
+"\n"
+"</body>\n"
+"</html>\n"
+msgstr ""
+"<html>\n"
+"<head>\n"
+"<style>\n"
+"<!--\n"
+"%1\n"
+"-->\n"
+"</style>\n"
+"</head>\n"
+"<body>\n"
+"<h1>Cabeceira 1</h1>\n"
+"<h2>Cabeceira 2</h2>\n"
+"<h3>Cabeceira 3</h3>\n"
+"\n"
+"<p>As follas de estilo definidas polo usuario\n"
+"permiten mellorar a accesibilidade da xente\n"
+"con algún problema na vista.</p>\n"
+"\n"
+"</body>\n"
+"</html>\n"
+
+#: domainlistview.cpp:37
+#, kde-format
+msgid "Host/Domain"
+msgstr "Servidor/Dominio"
+
+#: domainlistview.cpp:37
+#, kde-format
+msgid "Policy"
+msgstr "Política"
+
+#: domainlistview.cpp:45
+#, kde-format
+msgid "&New..."
+msgstr "&Nova…"
+
+#: domainlistview.cpp:49
+#, kde-format
+msgid "Chan&ge..."
+msgstr "Cam&biar…"
+
+#: domainlistview.cpp:53
+#, kde-format
+msgid "De&lete"
+msgstr "E&liminar"
+
+#: domainlistview.cpp:57
+#, kde-format
+msgid "&Import..."
+msgstr "&Importar…"
+
+#: domainlistview.cpp:63
+#, kde-format
+msgid "&Export..."
+msgstr "&Exportar…"
+
+#: domainlistview.cpp:71
+#, kde-format
+msgid "Click on this button to manually add a host or domain specific policy."
+msgstr ""
+"Prema este botón para engadir manualmente unha política específica para un "
+"servidor ou dominio."
+
+#: domainlistview.cpp:73
+#, kde-format
+msgid ""
+"Click on this button to change the policy for the host or domain selected in "
+"the list box."
+msgstr ""
+"Prema este botón para cambiar a política para o servidor ou dominio "
+"escollido na lista."
+
+#: domainlistview.cpp:75
+#, kde-format
+msgid ""
+"Click on this button to delete the policy for the host or domain selected in "
+"the list box."
+msgstr ""
+"Prema este botón para eliminar a política para o servidor ou dominio "
+"escollido na lista."
+
+#: domainlistview.cpp:122
+#, kde-format
+msgid "You must first select a policy to be changed."
+msgstr "Primeiro ten que escoller unha política para cambiar."
+
+#: domainlistview.cpp:149
+#, kde-format
+msgid "You must first select a policy to delete."
+msgstr "Primeiro ten que escoller unha política para eliminala."
+
+#: domainlistview.cpp:187 policydlg.cpp:63
+#, kde-format
+msgid "Use Global"
+msgstr "Usar a global"
+
+#: domainlistview.cpp:189 policydlg.cpp:63
+#, kde-format
+msgid "Accept"
+msgstr "Aceptar"
+
+#: domainlistview.cpp:191 policydlg.cpp:63
+#, kde-format
+msgid "Reject"
+msgstr "Rexeitar"
+
+#: filteropts.cpp:48
+#, kde-format
+msgid "Enable filters"
+msgstr "Activar os filtros"
+
+#: filteropts.cpp:51
+#, kde-format
+msgid "Hide filtered images"
+msgstr "Agochar as imaxes filtradas"
+
+#: filteropts.cpp:58
+#, kde-format
+msgid "Manual Filter"
+msgstr "Filtro manual"
+
+#: filteropts.cpp:76
+#, kde-format
+msgid "Search:"
+msgstr "Buscar:"
+
+#: filteropts.cpp:84
+#, kde-format
+msgid ""
+"<qt>Filter expression (e.g. <tt>http://www.example.com/ad/*</tt>, <a href="
+"\"filterhelp\">more information</a>):"
+msgstr ""
+"<qt>Expresión de filtro (p.ex. <tt>ttp://www.trasno.gal/kde/*</tt>, <a href="
+"\"filterhelp\">máis información</a>):"
+
+#: filteropts.cpp:100
+#, kde-format
+msgid "Automatic Filter"
+msgstr "Filtro automático"
+
+#: filteropts.cpp:109
+#, kde-format
+msgid "Automatic update interval:"
+msgstr "Intervalo de actualización:"
+
+#: filteropts.cpp:114
+#, kde-format
+msgid " day"
+msgid_plural " days"
+msgstr[0] " día"
+msgstr[1] " días"
+
+#: filteropts.cpp:120
+#, kde-format
+msgid "Insert"
+msgstr "Inserir"
+
+#: filteropts.cpp:123
+#, kde-format
+msgid "Update"
+msgstr "Actualizar"
+
+#: filteropts.cpp:126
+#, kde-format
+msgid "Remove"
+msgstr "Retirar"
+
+#: filteropts.cpp:130
+#, kde-format
+msgid "Import..."
+msgstr "Importar…"
+
+#: filteropts.cpp:133
+#, kde-format
+msgid "Export..."
+msgstr "Exportar…"
+
+#: filteropts.cpp:140
+#, kde-format
+msgid ""
+"<qt>More information on <a href=\"importhelp\">import format</a>, <a href="
+"\"exporthelp\">export format</a>"
+msgstr ""
+"<qt>Hai máis información sobre os formatos de <a href=\"importhelp"
+"\">importación</a> e <a href=\"exporthelp\">exportación</a>"
+
+#: filteropts.cpp:154
+#, kde-format
+msgid ""
+"Enable or disable AdBlocK filters. When enabled, a set of URL expressions "
+"should be defined in the filter list for blocking to take effect."
+msgstr ""
+"Activar ou desactivar filtros AdBlock. Se escolle esta opción deberíanse "
+"definir un conxunto de URL na lista de filtros, de xeito que o bloqueo xurda "
+"efecto."
+
+#: filteropts.cpp:156
+#, kde-format
+msgid ""
+"When enabled blocked images will be removed from the page completely, "
+"otherwise a placeholder 'blocked' image will be used."
+msgstr ""
+"Se activa esta opción as imaxes bloqueadas retiraranse completamente da "
+"páxina, doutro xeito empregarase unha imaxe de substitución para o bloqueo."
+
+#: filteropts.cpp:163
+#, kde-format
+msgid ""
+"This is the list of URL filters that will be applied to all embedded images "
+"and media objects."
+msgstr ""
+"Esta é a lista de filtros URL que se aplicarán a todas as imaxes e obxectos "
+"multimedia."
+
+#: filteropts.cpp:167
+#, kde-format
+msgid ""
+"<qt><p>Enter an expression to filter. Filters can be defined as either:"
+"<ul><li>a shell-style wildcard, e.g. <tt>http://www.example.com/ads*</tt>, "
+"the wildcards <tt>*?[]</tt> may be used</li><li>a full regular expression by "
+"surrounding the string with '<tt>/</tt>', e.g. <tt>/\\/(ad|banner)\\./</tt></"
+"li></ul><p>Any filter string can be preceded by '<tt>@@</tt>' to whitelist "
+"(allow) any matching URL, which takes priority over any blacklist (blocking) "
+"filter."
+msgstr ""
+"<qt><p>Insira unha expresión a filtrar. Os filtros poden definirse como:"
+"<ul><li>Expresións estilo consola, como <tt>http://www.example.com/ads*</"
+"tt>. Poden empregarse os símbolos <tt>*?[]</tt>.</li><li>Expresións "
+"regulares, delimitadas por barras inclinadas («<tt>/</tt>»), como <tt>/\\/"
+"(ad|banner)\\./</tt></li></ul><p>Calquera expresión de filtrado pode "
+"precederse de «<tt>@@</tt>» para permitir os URL que se correspondan con "
+"ela. As expresións de filtrado de URL permitidos teñen prioridade sobre "
+"calquera lista negra."
+
+#: filteropts.cpp:183
+#, kde-format
+msgid ""
+"<qt><p>The filter import format is a plain text file. Blank lines, comment "
+"lines starting with '<tt>!</tt>' and the header line <tt>[AdBlock]</tt> are "
+"ignored. Any other line is added as a filter expression."
+msgstr ""
+"<qt><p>O formato de importación de filtro é un ficheiro de texto simple. As "
+"liñas en branco, as de comentario que comezan por «<tt>!</tt>» e a de "
+"cabeceira «<tt>[AdBlock]</tt>» ignóranse. Calquera outra liña engádese como "
+"unha expresión de filtro."
+
+#: filteropts.cpp:188
+#, kde-format
+msgid ""
+"<qt><p>The filter export format is a plain text file. The file begins with a "
+"header line <tt>[AdBlock]</tt>, then all of the filters follow each on a "
+"separate line."
+msgstr ""
+"<qt><p>O formato de exportación de filtro é un ficheiro de texto simple. O "
+"ficheiro comeza por unha liña de cabeceira «<tt>[AdBlock]</tt>», logo os "
+"filtros van cada un na súa liña."
+
+#: filteropts.cpp:256
+#, fuzzy, kde-format
+#| msgid "Automatic Filter"
+msgid "Import Filters"
+msgstr "Filtro automático"
+
+#: filteropts.cpp:301
+#, fuzzy, kde-format
+#| msgid "Automatic Filter"
+msgid "Export Filters"
+msgstr "Filtro automático"
+
+#: filteropts.cpp:436
+#, kde-format
+msgid ""
+"<h1>Konqueror AdBlocK</h1> Konqueror AdBlocK allows you to create a list of "
+"filters that are checked against linked images and frames. URL's that match "
+"are either discarded or replaced with a placeholder image. "
+msgstr ""
+"<h1>Bloqueo de publicidade</h1> O bloqueo de publicidade de Konqueror "
+"permítelle crear unha lista de filtros usados contra as imaxes e marcos "
+"ligados. Os URL que coincidan descártanse ou substitúense cunha imaxe "
+"substituta. "
+
+#: filteropts.cpp:558
+#, kde-format
+msgid "Name"
+msgstr "Nome"
+
+#: filteropts.cpp:559
+#, kde-format
+msgid "URL"
+msgstr "URL"
+
+#: generalopts.cpp:53
+#, kde-format
+msgid "Tabbed Browsing"
+msgstr "Navegación con páxinas"
+
+#: generalopts.cpp:79
+#, kde-format
+msgctxt ""
+"The user chose to use a custom start page but left the corresponding field "
+"empty"
+msgid "Please, insert the custom start page"
+msgstr ""
+
+#: generalopts.cpp:85
+#, kde-format
+msgctxt "@label:listbox"
+msgid "When &Konqueror starts:"
+msgstr "Cando se inicie &Konqueror:"
+
+#: generalopts.cpp:94
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Show Introduction Page"
+msgstr "Mostrar a páxina de introdución"
+
+#: generalopts.cpp:95
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Show My Start Page"
+msgstr "Mostrar a miña páxina de inicio"
+
+#: generalopts.cpp:96
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Show Blank Page"
+msgstr "Mostrar unha páxina en branco"
+
+#: generalopts.cpp:97
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Show My Bookmarks"
+msgstr "Mostrar os meus marcadores"
+
+#: generalopts.cpp:103
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Start Page"
+msgstr "Escolla a páxina de inicio"
+
+#: generalopts.cpp:107
+#, kde-format
+msgid "This is the URL of the web page Konqueror will show when starting."
+msgstr "Este é o URL da páxina web que Konqueror mostrará ao iniciar."
+
+#: generalopts.cpp:118
+#, kde-format
+msgid "Home page:"
+msgstr "Páxina de inicio:"
+
+#: generalopts.cpp:121
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Home Page"
+msgstr "Escolla a páxina de inicio"
+
+#: generalopts.cpp:126
+#, kde-format
+msgid ""
+"This is the URL of the web page where Konqueror will jump to when the \"Home"
+"\" button is pressed."
+msgstr ""
+"Este é o URL da páxina web que Konqueror abrirá cando prema o botón «Inicio»."
+
+#: generalopts.cpp:134
+#, kde-format
+msgid "Default web browser engine:"
+msgstr "Motor predeterminado do navegador web:"
+
+#: generalopts.cpp:143
+#, kde-format
+msgid "When splitting a view"
+msgstr ""
+
+#: generalopts.cpp:147
+#, kde-format
+msgid "Always duplicate current view"
+msgstr ""
+
+#: generalopts.cpp:148
+#, kde-format
+msgid "Duplicate current view only for local files"
+msgstr ""
+
+#: htmlopts.cpp:36
+#, kde-format
+msgid ""
+"<h1>Konqueror Browser</h1> Here you can configure Konqueror's browser "
+"functionality. Please note that the file manager functionality has to be "
+"configured using the \"File Manager\" configuration module. You can make "
+"some settings how Konqueror should handle the HTML code in the web pages it "
+"loads. It is usually not necessary to change anything here."
+msgstr ""
+"<h1>Navegador Konqueror</h1> Aquí pode configurar a funcionalidade de "
+"navegación de Konqueror. Lembre que a funcionalidade de xestión de ficheiros "
+"ten que configurarse usando o módulo «Xestor de ficheiros». Pode cambiar "
+"algunhas opcións de como Konqueror debe manexar o código HTML nas páxinas "
+"web que cargue. Usualmente non é preciso cambiar nada aquí."
+
+#: htmlopts.cpp:44
+#, kde-format
+msgid "Boo&kmarks"
+msgstr "Mar&cadores"
+
+#: htmlopts.cpp:47
+#, kde-format
+msgid "Ask for name and folder when adding bookmarks"
+msgstr "Preguntar por un nome e un cartafol cando se engadan marcadores"
+
+#: htmlopts.cpp:50
+#, kde-format
+msgid ""
+"If this box is checked, Konqueror will allow you to change the title of the "
+"bookmark and choose a folder in which to store it when you add a new "
+"bookmark."
+msgstr ""
+"Se marca esta opción, Konqueror permitiralle cambiar o título do marcador e "
+"escoller un cartafol no que gardalo cando engada un novo marcador."
+
+#: htmlopts.cpp:56
+#, kde-format
+msgid "Show only marked bookmarks in bookmark toolbar"
+msgstr ""
+"Mostrar só os marcadores sinalados na barra de ferramentas de marcadores"
+
+#: htmlopts.cpp:58
+#, kde-format
+msgid ""
+"If this box is checked, Konqueror will show only those bookmarks in the "
+"bookmark toolbar which you have marked to do so in the bookmark editor."
+msgstr ""
+"Se marca esta opción, Konqueror mostrará só os marcadores da barra de "
+"ferramentas de marcadores marcados para tal fin no editor de marcadores."
+
+#: htmlopts.cpp:65
+#, kde-format
+msgid "Form Com&pletion"
+msgstr "Com&pletaxe de formularios"
+
+#: htmlopts.cpp:69
+#, kde-format
+msgid ""
+"If this box is checked, Konqueror will remember the data you enter in web "
+"forms and suggest it in similar fields for all forms."
+msgstr ""
+"Se marca esta opción, Konqueror lembrará os datos que inseriu nos "
+"formularios web e proporá eses datos nos campos equivalentes de todos os "
+"formularios."
+
+#: htmlopts.cpp:75
+#, kde-format
+msgid "&Maximum completions:"
+msgstr "Completaxes &máximas:"
+
+#: htmlopts.cpp:77
+#, kde-format
+msgid ""
+"Here you can select how many values Konqueror will remember for a form field."
+msgstr ""
+"Aquí pode indicar cantos valores deberá lembrar Konqueror para un campo de "
+"formulario."
+
+#: htmlopts.cpp:84
+#, kde-format
+msgid "Mouse Beha&vior"
+msgstr "Comportamento do ra&to"
+
+#: htmlopts.cpp:87
+#, kde-format
+msgid "Chan&ge cursor over links"
+msgstr "&Cambiar o cursor sobre as ligazóns"
+
+#: htmlopts.cpp:89
+#, kde-format
+msgid ""
+"If this option is set, the shape of the cursor will change (usually to a "
+"hand) if it is moved over a hyperlink."
+msgstr ""
+"Se sinala esta opción, a forma do cursor cambiará (normalmente a unha man) "
+"se o pon sobre unha ligazón."
+
+#: htmlopts.cpp:93
+#, kde-format
+msgid "M&iddle click opens URL in selection"
+msgstr "Facer clic central do &rato abre o URL na selección"
+
+#: htmlopts.cpp:96
+#, kde-format
+msgid ""
+"If this box is checked, you can open the URL in the selection by middle "
+"clicking on a Konqueror view."
+msgstr ""
+"Se marca esta opción, pode abrir un URL na selección facendo clic central "
+"nunha vista de Konqueror."
+
+#: htmlopts.cpp:100
+#, kde-format
+msgid "Right click goes &back in history"
+msgstr "Facer clic dereito vai &cara atrás no historial"
+
+#: htmlopts.cpp:103
+#, kde-format
+msgid ""
+"If this box is checked, you can go back in history by right clicking on a "
+"Konqueror view. To access the context menu, press the right mouse button and "
+"move."
+msgstr ""
+"Se marca esta opción, pode ir cara atrás no historial premendo co botón "
+"secundario na vista de Konqueror. Para acceder ao menú contextual, prema o "
+"botón secundario do rato e móvao."
+
+#: htmlopts.cpp:113
+#, kde-format
+msgid "Allow automatic delayed &reloading/redirecting"
+msgstr "Permitir &recarga/redirección retardada automática"
+
+#: htmlopts.cpp:114
+#, kde-format
+msgid ""
+"Some web pages request an automatic reload or redirection after a certain "
+"period of time. By unchecking this box Konqueror will ignore these requests."
+msgstr ""
+"Algunhas páxinas web piden unha recarga automática ou unha redirección "
+"despois dun certo período de tempo. Se desmarca esta opción, Konqueror "
+"ignorará estes pedidos."
+
+#: htmlopts.cpp:120
+#, kde-format
+msgid "Enable Access Ke&y activation with Ctrl key"
+msgstr "Activar a activación da &tecla de acceso con Ctrl"
+
+#: htmlopts.cpp:121
+#, kde-format
+msgid ""
+"Pressing the Ctrl key when viewing webpages activates Access Keys. "
+"Unchecking this box will disable this accessibility feature. (Konqueror "
+"needs to be restarted for this change to take effect.)"
+msgstr ""
+"Se preme Ctrl mentres ve páxinas web activará as teclas de acceso. Se "
+"desmarca esta opción desactivará esta funcionalidade de accesibilidade (debe "
+"reiniciar Konqueror que os cambios xurdan efecto)."
+
+#: htmlopts.cpp:125
+#, kde-format
+msgid "Send the DNT header to tell web sites you do not want to be tracked"
+msgstr ""
+"Enviar a cabeceira DNT para indicarse aos sitios web que non quere "
+"rastrexarse"
+
+#: htmlopts.cpp:126
+#, kde-format
+msgid ""
+"Check this box if you want to inform a web site that you do not want your "
+"web browsing habits tracked."
+msgstr ""
+"Marque esta opción se quere informar ao sitio web de que non quere que se "
+"faga seguimento dos seus hábitos de navegación."
+
+#: htmlopts.cpp:130
+#, kde-format
+msgid "Offer to save website passwords"
+msgstr "Ofrecer gardar os contrasinais do sitio web"
+
+#: htmlopts.cpp:131
+#, kde-format
+msgid "Uncheck this box to prevent being prompted to save website passwords"
+msgstr ""
+"Desmarque esta opción para que non se lle pregunte se gardar os contrasinais "
+"dos sitios web"
+
+#: htmlopts.cpp:136
+#, kde-format
+msgid "Display online PDF files using WebEngine"
+msgstr "Mostrar os ficheiros PDF de Internet usando WebEngine"
+
+#: htmlopts.cpp:137
+#, kde-format
+msgid ""
+"Uncheck this box to display online PDF files as configured in System Settings"
+msgstr ""
+"Desmarque esta caixa para mostrar os ficheiros PDF de Internet segundo a "
+"configuración do sistema"
+
+#: javaopts.cpp:78
+#, kde-format
+msgid "Enable Ja&va globally"
+msgstr "Activar &Java globalmente"
+
+#: javaopts.cpp:93
+#, kde-format
+msgid "Java Runtime Settings"
+msgstr "Configuración do ambiente de execución de Java"
+
+#: javaopts.cpp:97
+#, kde-format
+msgid "&Use security manager"
+msgstr "&Usar o xestor de seguridade"
+
+#: javaopts.cpp:101
+#, kde-format
+msgid "Use &KIO"
+msgstr "Empregar &KIO"
+
+#: javaopts.cpp:105
+#, kde-format
+msgid "Shu&tdown applet server when inactive for more than"
+msgstr ""
+"&Apagar o servidor de miniaplicativos cando estea inactivo durante máis de"
+
+#: javaopts.cpp:117
+#, kde-format
+msgid " second"
+msgid_plural " seconds"
+msgstr[0] " segundo"
+msgstr[1] " segundos"
+
+#: javaopts.cpp:123
+#, kde-format
+msgid "&Path to Java executable, or 'java':"
+msgstr "&Ruta ao executábel de Java, ou «java»:"
+
+#: javaopts.cpp:127
+#, kde-format
+msgid "Additional Java a&rguments:"
+msgstr "A&rgumentos adicionais de Java:"
+
+#: javaopts.cpp:132
+#, kde-format
+msgid ""
+"Enables the execution of scripts written in Java that can be contained in "
+"HTML pages. Note that, as with any browser, enabling active contents can be "
+"a security problem."
+msgstr ""
+"Activa a execución de scripts escritos en Java que poden estar contidos en "
+"páxinas HTML. Lembre que, como con calquera navegador, activar contido "
+"activo pode supor un problema de seguridade."
+
+#: javaopts.cpp:135
+#, kde-format
+msgid ""
+"<p>This box contains the domains and hosts you have set a specific Java "
+"policy for. This policy will be used instead of the default policy for "
+"enabling or disabling Java applets on pages sent by these domains or hosts.</"
+"p><p>Select a policy and use the controls on the right to modify it.</p>"
+msgstr ""
+"<p>Esta opción contén os dominios e servidores para os que definiu unha "
+"política específica de Java. Usarase esta política en troques da "
+"predeterminada para activar ou desactivar miniaplicativos JavaScript nas "
+"páxinas enviadas por estes dominios ou servidores.</p><p>Escolla unha "
+"política e utilice os controis da dereita para modificala.</p>"
+
+#: javaopts.cpp:142
+#, kde-format
+msgid ""
+"Click this button to choose the file that contains the Java policies. These "
+"policies will be merged with the existing ones. Duplicate entries are "
+"ignored."
+msgstr ""
+"Prema este botón para escoller o ficheiro que contén as políticas de Java. "
+"Estas políticas uniranse ás existentes. As entradas duplicadas ignoraranse."
+
+#: javaopts.cpp:145
+#, kde-format
+msgid ""
+"Click this button to save the Java policy to a zipped file. The file, named "
+"<b>java_policy.tgz</b>, will be saved to a location of your choice."
+msgstr ""
+"Prema este botón para gardar a política de Java nun ficheiro zip. O "
+"ficheiro, chamado <b>java_policy.tgz</b>, gardarase onde vostede escolla."
+
+#: javaopts.cpp:149
+#, kde-format
+msgid ""
+"Here you can set specific Java policies for any particular host or domain. "
+"To add a new policy, simply click the <i>New...</i> button and supply the "
+"necessary information requested by the dialog box. To change an existing "
+"policy, click on the <i>Change...</i> button and choose the new policy from "
+"the policy dialog box. Clicking on the <i>Delete</i> button will remove the "
+"selected policy, causing the default policy setting to be used for that "
+"domain."
+msgstr ""
+"Aquí pode definir políticas Java específicas para un servidor ou dominio "
+"particular. Para engadir unha nova política, prema o botón <i>Engadir…</i> e "
+"indique a información necesaria solicitada polo diálogo. Para cambiar unha "
+"política existente, prema o botón <i>Cambiar…</i> e escolla a nova política "
+"no diálogo. Premendo o botón <i>Eliminar</i> retirará a política escollida, "
+"pasándose a usar a política predeterminada para ese dominio."
+
+#: javaopts.cpp:162
+#, kde-format
+msgid ""
+"Enabling the security manager will cause the jvm to run with a Security "
+"Manager in place. This will keep applets from being able to read and write "
+"to your file system, creating arbitrary sockets, and other actions which "
+"could be used to compromise your system. Disable this option at your own "
+"risk. You can modify your $HOME/.java.policy file with the Java policytool "
+"utility to give code downloaded from certain sites more permissions."
+msgstr ""
+"Se activa o xestor de seguridade, jvm executarase co Xestor de Seguridade. "
+"Isto evitará que os miniaplicativos poidan ler e escribir no sistema de "
+"ficheiros, crear sockets arbitrarios e outras accións que se poderían "
+"empregar para comprometer o seu sistema. Desactive esta opción baixo a súa "
+"responsabilidade. Pode modificar o seu ficheiro $HOME/.java.policy coa "
+"ferramenta de políticas de Java para permitir que código descargado de "
+"determinados sitios obteña máis permisos."
+
+#: javaopts.cpp:170
+#, kde-format
+msgid "Enabling this will cause the jvm to use KIO for network transport "
+msgstr ""
+"Se activa isto a máquina de java empregará KIO para o transporte en rede "
+
+#: javaopts.cpp:172
+#, kde-format
+msgid ""
+"Enter the path to the java executable. If you want to use the jre in your "
+"path, simply leave it as 'java'. If you need to use a different jre, enter "
+"the path to the java executable (e.g. /usr/lib/jdk/bin/java), or the path to "
+"the directory that contains 'bin/java' (e.g. /opt/IBMJava2-13)."
+msgstr ""
+"Insira a ruta ao executábel java. Se quere empregar o jre, simplemente "
+"déixeo como «java». Se precisa empregar un jre distinto, insira a ruta ao "
+"executábel (p.ex. /usr/lib/jdk/bin/java), ou a ruta ao directorio que contén "
+"«bin/java» (p.ex. /opt/IBMJava2-13)."
+
+#: javaopts.cpp:177
+#, kde-format
+msgid ""
+"If you want special arguments to be passed to the virtual machine, enter "
+"them here."
+msgstr ""
+"Se quere pasarlle argumentos especiais á maquina virtual, escríbeos aquí."
+
+#: javaopts.cpp:179
+#, kde-format
+msgid ""
+"When all the applets have been destroyed, the applet server should shut "
+"down. However, starting the jvm takes a lot of time. If you would like to "
+"keep the java process running while you are browsing, you can set the "
+"timeout value to whatever you like. To keep the java process running for the "
+"whole time that the konqueror process is, leave the Shutdown Applet Server "
+"checkbox unchecked."
+msgstr ""
+"Cando se destrúan todos os miniaplicativos, o servidor de miniaplicativos "
+"debería apagarse. Porén, o inicio de jvm tarda moito. Se quere manter os "
+"procesos de Java a executárense cando vostede estea navegando, pode "
+"estabelecer o valor do tempo de agarda segundo lle prouba. Para manter os "
+"procesos java a executarse durante todo tempo que estea aberto konqueror, "
+"deixe a opción de Apagar o servidor de miniaplicativos desmarcada."
+
+#: javaopts.cpp:288
+#, kde-format
+msgctxt "@title:group"
+msgid "Doma&in-Specific"
+msgstr "Específ&ica de dominios"
+
+#: javaopts.cpp:323
+#, kde-format
+msgctxt "@title:window"
+msgid "New Java Policy"
+msgstr "Nova política de Java"
+
+#: javaopts.cpp:326
+#, kde-format
+msgctxt "@title:window"
+msgid "Change Java Policy"
+msgstr "Cambiar a política de Java"
+
+#: javaopts.cpp:330
+#, kde-format
+msgid "&Java policy:"
+msgstr "Política de &Java:"
+
+#: javaopts.cpp:331
+#, kde-format
+msgid "Select a Java policy for the above host or domain."
+msgstr "Escolla unha política de Java para o servidor ou dominio de riba."
+
+#: jsopts.cpp:50
+#, kde-format
+msgid "Ena&ble JavaScript globally"
+msgstr "Activar Java&Script globalmente"
+
+#: jsopts.cpp:51
+#, kde-format
+msgid ""
+"Enables the execution of scripts written in ECMA-Script (also known as "
+"JavaScript) that can be contained in HTML pages. Note that, as with any "
+"browser, enabling scripting languages can be a security problem."
+msgstr ""
+"Activa a execución de scripts escritos en ECMA-Script (coñecido como "
+"JavaScript) que poden estar contidos en páxinas HTML. Lembre que, como con "
+"calquera navegador, activar linguaxes de script pode supor un problema de "
+"seguridade."
+
+#: jsopts.cpp:59
+#, kde-format
+msgid "Debugging"
+msgstr "Depuración"
+
+#: jsopts.cpp:63
+#, kde-format
+msgid "Enable debu&gger"
+msgstr "Activar o dep&urador"
+
+#: jsopts.cpp:64
+#, kde-format
+msgid "Enables builtin JavaScript debugger."
+msgstr "Activa o depurador de JavaScript incorporado."
+
+#: jsopts.cpp:68
+#, kde-format
+msgid "Report &errors"
+msgstr "Informar de &erros"
+
+#: jsopts.cpp:69
+#, kde-format
+msgid ""
+"Enables the reporting of errors that occur when JavaScript code is executed."
+msgstr ""
+"Activa o informe de erros cando ocorran mentres se executa código JavaScript."
+
+#: jsopts.cpp:79
+#, kde-format
+msgid ""
+"Here you can set specific JavaScript policies for any particular host or "
+"domain. To add a new policy, simply click the <i>New...</i> button and "
+"supply the necessary information requested by the dialog box. To change an "
+"existing policy, click on the <i>Change...</i> button and choose the new "
+"policy from the policy dialog box. Clicking on the <i>Delete</i> button will "
+"remove the selected policy causing the default policy setting to be used for "
+"that domain. The <i>Import</i> and <i>Export</i> button allows you to easily "
+"share your policies with other people by allowing you to save and retrieve "
+"them from a zipped file."
+msgstr ""
+"Aquí pode definir políticas JavaScript específicas para un servidor ou "
+"dominio particular. Para engadir unha nova política, prema o botón "
+"<i>Engadir…</i> e indique a información necesaria solicitada polo diálogo. "
+"Para cambiar unha política existente, prema o botón <i>Cambiar…</i> e "
+"escolla a nova política no diálogo. Premendo o botón <i>Eliminar</i> "
+"retirará a política escollida, pasándose a usar a política predeterminada "
+"para ese dominio. Os botóns <i>Importar</i> e <i>Exportar</i> permítenlle "
+"compartir as súas políticas con outra xente dun xeito sinxelo ao permitirlle "
+"gardar e recuperalas dun ficheiro zip."
+
+#: jsopts.cpp:89
+#, kde-format
+msgid ""
+"<p>This box contains the domains and hosts you have set a specific "
+"JavaScript policy for. This policy will be used instead of the default "
+"policy for enabling or disabling JavaScript on pages sent by these domains "
+"or hosts.</p><p>Select a policy and use the controls on the right to modify "
+"it.</p>"
+msgstr ""
+"<p>Esta lista contén os dominios e os servidores para os que definiu unha "
+"política específica de JavaScript. Usarase esta política en troques da "
+"predeterminada para activar ou desactivar JavaScript nas páxinas enviadas "
+"por estes dominios ou servidores.</p><p>Escolla unha política e utilice os "
+"controis da dereita para modificala.</p>"
+
+#: jsopts.cpp:96
+#, kde-format
+msgid ""
+"Click this button to choose the file that contains the JavaScript policies. "
+"These policies will be merged with the existing ones. Duplicate entries are "
+"ignored."
+msgstr ""
+"Prema este botón para escoller o ficheiro que contén as políticas de "
+"JavaScript. Estas políticas fusionaranse coas existentes. As entradas "
+"duplicadas ignoraranse."
+
+#: jsopts.cpp:99
+#, kde-format
+msgid ""
+"Click this button to save the JavaScript policy to a zipped file. The file, "
+"named <b>javascript_policy.tgz</b>, will be saved to a location of your "
+"choice."
+msgstr ""
+"Prema este botón para gardar a política de JavaScript nun ficheiro zip. O "
+"ficheiro, chamado <b>javascript_policy.tgz</b>, gardarase no lugar que "
+"vostede escolla."
+
+#: jsopts.cpp:105
+#, kde-format
+msgid "Global JavaScript Policies"
+msgstr "Políticas globais de JavaScript"
+
+#: jsopts.cpp:173
+#, kde-format
+msgctxt "@title:group"
+msgid "Do&main-Specific"
+msgstr "Específica de &dominio"
+
+#: jsopts.cpp:212
+#, kde-format
+msgctxt "@title:window"
+msgid "New JavaScript Policy"
+msgstr "Nova política de JavaScript"
+
+#: jsopts.cpp:215
+#, kde-format
+msgctxt "@title:window"
+msgid "Change JavaScript Policy"
+msgstr "Cambiar a política de JavaScript"
+
+#: jsopts.cpp:219
+#, kde-format
+msgid "JavaScript policy:"
+msgstr "Política de JavaScript:"
+
+#: jsopts.cpp:220
+#, kde-format
+msgid "Select a JavaScript policy for the above host or domain."
+msgstr ""
+"Escolla unha política de JavaScript para o servidor ou dominio de riba."
+
+#: jsopts.cpp:222
+#, kde-format
+msgid "Domain-Specific JavaScript Policies"
+msgstr "Políticas de JavaScript específicas do dominio"
+
+#: jspolicies.cpp:132
+#, kde-format
+msgid "Open new windows:"
+msgstr "Abrir novas xanelas:"
+
+#: jspolicies.cpp:140 jspolicies.cpp:194 jspolicies.cpp:231 jspolicies.cpp:268
+#: jspolicies.cpp:308
+#, kde-format
+msgid "Use global"
+msgstr "Empregar a global"
+
+#: jspolicies.cpp:141 jspolicies.cpp:195 jspolicies.cpp:232 jspolicies.cpp:269
+#: jspolicies.cpp:309
+#, kde-format
+msgid "Use setting from global policy."
+msgstr "Empregar a opción da política global."
+
+#: jspolicies.cpp:147 jspolicies.cpp:201 jspolicies.cpp:238 jspolicies.cpp:275
+#: jspolicies.cpp:315
+#, kde-format
+msgid "Allow"
+msgstr "Permitir"
+
+#: jspolicies.cpp:148
+#, kde-format
+msgid "Accept all popup window requests."
+msgstr "Aceptar todos os pedidos de xanelas emerxentes."
+
+#: jspolicies.cpp:153
+#, kde-format
+msgid "Ask"
+msgstr "Preguntar"
+
+#: jspolicies.cpp:154
+#, kde-format
+msgid "Prompt every time a popup window is requested."
+msgstr "Preguntar cada vez que se solicite unha xanela emerxente."
+
+#: jspolicies.cpp:159
+#, kde-format
+msgid "Deny"
+msgstr "Denegar"
+
+#: jspolicies.cpp:160
+#, kde-format
+msgid "Reject all popup window requests."
+msgstr "Rexeitar todos os pedidos de xanelas emerxentes."
+
+#: jspolicies.cpp:165
+#, kde-format
+msgid "Smart"
+msgstr "Intelixente"
+
+#: jspolicies.cpp:166
+#, kde-format
+msgid ""
+"Accept popup window requests only when links are activated through an "
+"explicit mouse click or keyboard operation."
+msgstr ""
+"Acepta pedidos de xanelas emerxentes só cando as ligazóns fosen activadas "
+"premendo co rato ou co teclado."
+
+#: jspolicies.cpp:173
+#, kde-format
+msgid ""
+"If you disable this, Konqueror will stop interpreting the <i>window.open()</"
+"i> JavaScript command. This is useful if you regularly visit sites that make "
+"extensive use of this command to pop up ad banners.<br /><br /><b>Note:</b> "
+"Disabling this option might also break certain sites that require <i>window."
+"open()</i> for proper operation. Use this feature carefully."
+msgstr ""
+"Se desactiva isto, Konqueror parará de interpretar a orde de JavaScript "
+"<i>window.open()</i>. Isto é útil se vostede visita regularmente sitios que "
+"fan uso extensivo desta orde para as xanelas emerxentes e a publicidade.<br/"
+"><br/><b>Nota:</b> Desactivar esta opción podería tamén causar o mal "
+"funcionamento de certos sitios que requiren de <i>window.open()</i> para un "
+"funcionamento correcto. Empregue esta funcionalidade con coidado."
+
+#: jspolicies.cpp:187
+#, kde-format
+msgid "Resize window:"
+msgstr "Cambiar o tamaño da xanela:"
+
+#: jspolicies.cpp:202
+#, kde-format
+msgid "Allow scripts to change the window size."
+msgstr "Permite que os scripts cambien o tamaño da xanela."
+
+#: jspolicies.cpp:207 jspolicies.cpp:244 jspolicies.cpp:281 jspolicies.cpp:321
+#, kde-format
+msgid "Ignore"
+msgstr "Ignorar"
+
+#: jspolicies.cpp:208
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to change the window size. The web page will "
+"<i>think</i> it changed the size but the actual window is not affected."
+msgstr ""
+"Ignorar os intentos dos script de cambiar o tamaño da xanela. A páxina web "
+"<i>pensará</i> que cambiou o tamaño pero en realidade quedará como estaba."
+
+#: jspolicies.cpp:215
+#, kde-format
+msgid ""
+"Some websites change the window size on their own by using <i>window."
+"resizeBy()</i> or <i>window.resizeTo()</i>. This option specifies the "
+"treatment of such attempts."
+msgstr ""
+"Algúns sitios web cambian o tamaño da xanela empregando <i>window."
+"resizeBy()</i> ou <i>window.resizeTo()</i>. Esta opción especifica o "
+"tratamento destes intentos."
+
+#: jspolicies.cpp:224
+#, kde-format
+msgid "Move window:"
+msgstr "Mover a xanela:"
+
+#: jspolicies.cpp:239
+#, kde-format
+msgid "Allow scripts to change the window position."
+msgstr "Permitir que os scripts cambien a posición da xanela."
+
+#: jspolicies.cpp:245
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to change the window position. The web page will "
+"<i>think</i> it moved the window but the actual position is not affected."
+msgstr ""
+"Ignorar os intentos dos scripts de cambiar a posición da xanela. A páxina "
+"web <i>pensará</i> que se moveu a xanela pero a posición actual non se verá "
+"afectada."
+
+#: jspolicies.cpp:252
+#, kde-format
+msgid ""
+"Some websites change the window position on their own by using <i>window."
+"moveBy()</i> or <i>window.moveTo()</i>. This option specifies the treatment "
+"of such attempts."
+msgstr ""
+"Algúns sitios web cambian a posición da xanela empregando <i>window."
+"moveBy()</i> ou <i>window.moveTo()</i>. Esta opción especifica o tratamento "
+"destes intentos."
+
+#: jspolicies.cpp:261
+#, kde-format
+msgid "Focus window:"
+msgstr "Focalizar a xanela:"
+
+#: jspolicies.cpp:276
+#, kde-format
+msgid "Allow scripts to focus the window."
+msgstr "Permitir que os scripts dean foco á xanela."
+
+#: jspolicies.cpp:282
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to focus the window. The web page will <i>think</"
+"i> it brought the focus to the window but the actual focus will remain "
+"unchanged."
+msgstr ""
+"Ignora os intentos dos scripts de focalizar a xanela. A páxina web "
+"<i>pensará</i> que efectivamente se lle concedeu o foco, pero o foco non "
+"cambiará."
+
+#: jspolicies.cpp:290
+#, kde-format
+msgid ""
+"Some websites set the focus to their browser window on their own by using "
+"<i>window.focus()</i>. This usually leads to the window being moved to the "
+"front interrupting whatever action the user was dedicated to at that time. "
+"This option specifies the treatment of such attempts."
+msgstr ""
+"Algúns sitios web focalizan a súa xanela de navegador empregando <i>window."
+"focus()</i>. Isto trae aparellado que a xanela sexa normalmente movida ao "
+"primeiro plano interrompendo calquera acción que o usuario estivera a "
+"realizar nese momento. Esta opción indica o xeito de xestionar eses intentos."
+
+#: jspolicies.cpp:301
+#, kde-format
+msgid "Modify status bar text:"
+msgstr "Modificar o texto da barra de estado:"
+
+#: jspolicies.cpp:316
+#, kde-format
+msgid "Allow scripts to change the text of the status bar."
+msgstr "Permitir que os scripts cambien o texto da barra de estado."
+
+#: jspolicies.cpp:322
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to change the status bar text. The web page will "
+"<i>think</i> it changed the text but the actual text will remain unchanged."
+msgstr ""
+"Ignora os intentos dos scripts de cambiar o texto da barra de estado. A "
+"páxina web <i>pensará</i> que o texto se cambiou pero quedará sen cambios."
+
+# skip-rule: trasno-window
+#: jspolicies.cpp:330
+#, kde-format
+msgid ""
+"Some websites change the status bar text by setting <i>window.status</i> or "
+"<i>window.defaultStatus</i>, thus sometimes preventing displaying the real "
+"URLs of hyperlinks. This option specifies the treatment of such attempts."
+msgstr ""
+"Algúns sitios web cambian o texto da súa barra de estado coa opción "
+"<i>window.status</i> ou <i>window.defaultStatus</i>, facendo a veces que non "
+"se mostre o URL real das ligazóns. Esta opción indica o xeito de xestionar "
+"eses intentos."
+
+#: main.cpp:43
+#, kde-format
+msgid "Konqueror Browsing Control Module"
+msgstr "Módulo de control da navegación en Konqueror"
+
+#: main.cpp:45
+#, kde-format
+msgid "(c) 1999 - 2001 The Konqueror Developers"
+msgstr "© 1999 - 2001 Os desenvolvedores de Konqueror"
+
+#: main.cpp:47
+#, kde-format
+msgid "Waldo Bastian"
+msgstr "Waldo Bastian"
+
+#: main.cpp:48
+#, kde-format
+msgid "David Faure"
+msgstr "David Faure"
+
+#: main.cpp:49
+#, kde-format
+msgid "Matthias Kalle Dalheimer"
+msgstr "Matthias Kalle Dalheimer"
+
+#: main.cpp:50
+#, kde-format
+msgid "Lars Knoll"
+msgstr "Lars Knoll"
+
+#: main.cpp:51
+#, kde-format
+msgid "Dirk Mueller"
+msgstr "Dirk Mueller"
+
+#: main.cpp:52
+#, kde-format
+msgid "Daniel Molkentin"
+msgstr "Daniel Molkentin"
+
+#: main.cpp:53
+#, kde-format
+msgid "Wynn Wilkes"
+msgstr "Wynn Wilkes"
+
+#: main.cpp:55
+#, kde-format
+msgid "Leo Savernik"
+msgstr "Leo Savernik"
+
+#: main.cpp:55
+#, kde-format
+msgid ""
+"JavaScript access controls\n"
+"Per-domain policies extensions"
+msgstr ""
+"Controis de acceso a JavaScript\n"
+"Extensións de políticas por dominio"
+
+#: main.cpp:67
+#, kde-format
+msgid "&Java"
+msgstr "&Java"
+
+#: main.cpp:71
+#, kde-format
+msgid "Java&Script"
+msgstr "Java&Script"
+
+#: main.cpp:111
+#, kde-format
+msgid ""
+"<h2>JavaScript</h2>On this page, you can configure whether JavaScript "
+"programs embedded in web pages should be allowed to be executed by Konqueror."
+"<h2>Java</h2>On this page, you can configure whether Java applets embedded "
+"in web pages should be allowed to be executed by Konqueror.<br /><br /"
+"><b>Note:</b> Active content is always a security risk, which is why "
+"Konqueror allows you to specify very fine-grained from which hosts you want "
+"to execute Java and/or JavaScript programs."
+msgstr ""
+"<h2>JavaScript</h2>Aquí pode configurar se os programas JavaScript que levan "
+"algunhas páxinas web deben executarse por Konqueror.<h2>Java</h2> Aquí pode "
+"configurar se os miniaplicativos de Java que levan algunhas páxinas web "
+"deben executarse por Konqueror.<br/><br/><b>Nota:</b> O contido activo é "
+"sempre un risco de seguridade, e é polo que Konqueror lle deixa especificar "
+"con precisión os servidores desde os que quere executar os programas Java e/"
+"ou JavaScript."
+
+#: policydlg.cpp:30
+#, kde-format
+msgctxt "@title:window"
+msgid "Domain-Specific Policies"
+msgstr "Políticas específicas de dominio"
+
+#: policydlg.cpp:47
+#, kde-format
+msgid "&Host or domain name:"
+msgstr "&Nome do servidor ou dominio:"
+
+#: policydlg.cpp:55
+#, kde-format
+msgid ""
+"Enter the name of a host (like www.kde.org) or a domain, starting with a dot "
+"(like .kde.org or .org)"
+msgstr ""
+"Insira o nome dun servidor (como www.kde.org) ou un dominio, empezando cun "
+"punto (como .kde.org ou .org)"
+
+#: policydlg.cpp:139
+#, kde-format
+msgid "You must first enter a domain name."
+msgstr "Primeiro ten que inserir un nome de dominio."
+
+#~ msgid "Accept languages:"
+#~ msgstr "Idiomas aceptados:"
+
+#~ msgid "Accept character sets:"
+#~ msgstr "Aceptar códigos de caracteres:"
+
+#~ msgid "Plugins"
+#~ msgstr "Complementos"
+
+#~ msgid "Folders"
+#~ msgstr "Cartafoles"
+
+#~ msgid "&Remove"
+#~ msgstr "&Retirar"
+
+#~ msgid "&New"
+#~ msgstr "&Novo"
+
+#~ msgid "Do&wn"
+#~ msgstr "&Baixar"
+
+#~ msgid "&Up"
+#~ msgstr "&Subir"
+
+#~ msgid "Click here to scan for newly installed Netscape plugins now."
+#~ msgstr "Prema aquí para buscar novos complementos de Netscape instalados."
+
+#~ msgid "&Scan for Plugins"
+#~ msgstr "&Buscar complementos"
+
+#~ msgid "Here you can see a list of the Netscape plugins KDE has found."
+#~ msgstr ""
+#~ "Aquí pode ver unha lista dos complementos de Netscape que atopou KDE."
+
+#~ msgid "Information"
+#~ msgstr "Información"
+
+#~ msgid "Value"
+#~ msgstr "Valor"
+
+#~ msgid "Global Settings"
+#~ msgstr "Configuración global"
+
+#~ msgid "&Enable plugins globally"
+#~ msgstr "Activar globalmente os &complementos"
+
+#~ msgid "Only allow &HTTP and HTTPS URLs for plugins"
+#~ msgstr "Permitir só URL de tipo &HTTP e HTTPS para os complementos"
+
+#~ msgid "&Load plugins on demand only"
+#~ msgstr "&Cargar os complementos só baixo demanda"
+
+#~ msgid "CPU priority for plugins: %1"
+#~ msgstr "Prioridade na CPU para os complementos: %1"
+
+#~ msgid "Domain-Specific Settin&gs"
+#~ msgstr "Configuración especí&fica do dominio"
+
+#~ msgid ""
+#~ "Enables the execution of plugins that can be contained in HTML pages, e."
+#~ "g. Macromedia Flash. Note that, as with any browser, enabling active "
+#~ "contents can be a security problem."
+#~ msgstr ""
+#~ "Activa a execución de complementos que poden estar contidos en páxinas "
+#~ "HTML, p.ex. Macromedia Flash. Lembre que, como con calquera navegador, "
+#~ "activar o contido activo pode supor un problema de seguridade."
+
+#~ msgid ""
+#~ "<p>This box contains the domains and hosts you have set a specific plugin "
+#~ "policy for. This policy will be used instead of the default policy for "
+#~ "enabling or disabling plugins on pages sent by these domains or hosts.</"
+#~ "p><p>Select a policy and use the controls on the right to modify it.</p>"
+#~ msgstr ""
+#~ "<p>Esta lista contén os dominios e os servidores para os que definiu unha "
+#~ "política específica. Usarase esta política en troques da predeterminada "
+#~ "para activar ou desactivar complementos nas páxinas enviadas por estes "
+#~ "dominios ou servidores.</p><p>Escolla unha política e utilice os controis "
+#~ "á dereita para modificala.</p>"
+
+#~ msgid ""
+#~ "Click this button to choose the file that contains the plugin policies. "
+#~ "These policies will be merged with the existing ones. Duplicate entries "
+#~ "are ignored."
+#~ msgstr ""
+#~ "Prema este botón para escoller o ficheiro que contén as políticas dos "
+#~ "complementos. Estas políticas han mesturarse coas existentes. As entradas "
+#~ "duplicadas ignoraranse."
+
+#~ msgid ""
+#~ "Click this button to save the plugin policy to a zipped file. The file, "
+#~ "named <b>plugin_policy.tgz</b>, will be saved to a location of your "
+#~ "choice."
+#~ msgstr ""
+#~ "Prema este botón para gardar a política dos complementos nun ficheiro "
+#~ "zip. O ficheiro, chamado <b>plugin_policy.tgz</b>, ha gardarse no lugar "
+#~ "que vostede escolla."
+
+#~ msgid ""
+#~ "Here you can set specific plugin policies for any particular host or "
+#~ "domain. To add a new policy, simply click the <i>New...</i> button and "
+#~ "supply the necessary information requested by the dialog box. To change "
+#~ "an existing policy, click on the <i>Change...</i> button and choose the "
+#~ "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
+#~ "button will remove the selected policy causing the default policy setting "
+#~ "to be used for that domain."
+#~ msgstr ""
+#~ "Aquí pode definir as políticas dos complementos específicas para un "
+#~ "servidor ou dominio particular. Para engadir unha nova política, prema o "
+#~ "botón <i>Engadir…</i> e indique a información necesaria solicitada polo "
+#~ "diálogo. Para cambiar unha política existente, prema o botón <i>Cambiar…</"
+#~ "i> e escolla a nova política no diálogo. Premendo o botón <i>Eliminar</i> "
+#~ "retirará a política escollida, pasándose a usar a política predeterminada "
+#~ "para ese dominio."
+
+#~ msgctxt "lowest priority"
+#~ msgid "lowest"
+#~ msgstr "a menor"
+
+#~ msgctxt "low priority"
+#~ msgid "low"
+#~ msgstr "baixa"
+
+#~ msgctxt "medium priority"
+#~ msgid "medium"
+#~ msgstr "media"
+
+#~ msgctxt "high priority"
+#~ msgid "high"
+#~ msgstr "alta"
+
+#~ msgctxt "highest priority"
+#~ msgid "highest"
+#~ msgstr "a maior"
+
+#~ msgid ""
+#~ "<h1>Konqueror Plugins</h1> The Konqueror web browser can use Netscape "
+#~ "plugins to show special content, just like the Navigator does. Please "
+#~ "note that the way you have to install Netscape plugins may depend on your "
+#~ "distribution. A typical place to install them is, for example, '/opt/"
+#~ "netscape/plugins'."
+#~ msgstr ""
+#~ "<h1>Complementos de Konqueror</h1> O navegador web Konqueror pode "
+#~ "empregar complementos de Netscape para mostrar contidos especiais, como "
+#~ "fai o Navigator. Por favor, lembre que o xeito en que ten que instalar os "
+#~ "complementos de Netscape podería depender da súa distribución. Un lugar "
+#~ "típico para instalalos é, por exemplo, «/opt/netscape/plugins»."
+
+#~ msgid ""
+#~ "Do you want to apply your changes before the scan? Otherwise the changes "
+#~ "will be lost."
+#~ msgstr ""
+#~ "Quere aplicar os cambios antes de examinar? En caso contrario, perderanse "
+#~ "os cambios."
+
+#~ msgid ""
+#~ "The nspluginscan executable cannot be found. Netscape plugins will not be "
+#~ "scanned."
+#~ msgstr ""
+#~ "Non se pode atopar o executábel nspluginscan. Non se examinarán os "
+#~ "complementos de Netscape."
+
+#~ msgid "Scanning for plugins"
+#~ msgstr "Examinando os complementos"
+
+#~ msgctxt "@title:window"
+#~ msgid "Select Plugin Scan Folder"
+#~ msgstr "Escolla o cartafol onde buscar os complementos"
+
+#~ msgid "Netscape Plugins"
+#~ msgstr "Complementos de Netscape"
+
+#~ msgid "Plugin"
+#~ msgstr "Complemento"
+
+#~ msgid "MIME type"
+#~ msgstr "Tipo MIME"
+
+#~ msgid "Description"
+#~ msgstr "Descrición"
+
+#~ msgid "Suffixes"
+#~ msgstr "Sufixos"
+
+#~ msgid "Doma&in-Specific"
+#~ msgstr "Específ&ica de dominios"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Plugin Policy"
+#~ msgstr "Nova política de complemento"
+
+#~ msgctxt "@title:window"
+#~ msgid "Change Plugin Policy"
+#~ msgstr "Cambiar a política do complemento"
+
+#~ msgid "&Plugin policy:"
+#~ msgstr "Política do &complemento:"
+
+#~ msgid "Select a plugin policy for the above host or domain."
+#~ msgstr ""
+#~ "Escolla unha política de complemento para o servidor ou dominio de riba."
+
+#, fuzzy
+#~| msgid "Sa&ns serif font:"
+#~ msgid "Sans Serif"
+#~ msgstr "Fonte Sans ser&if:"
+
+#, fuzzy
+#~| msgid "S&tandard font:"
+#~ msgid "Standard Symbols L"
+#~ msgstr "Fonte &estándar:"
+
+#~ msgid "kcmkonqhtml"
+#~ msgstr "kcmkonqhtml"

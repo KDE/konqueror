@@ -1,0 +1,105 @@
+# Translation of dirfilterplugin.po into Finnish
+#
+# Teemu Rytilahti <teemu.rytilahti@d5k.net>, 2003, 2008.
+# Teemu Rytilahti <teemu.rytilahti@kde-fi.org>, 2003.
+# Kim Enkovaara <kim.enkovaara@iki.fi>, 2005.
+# Lasse Liehu <lasse.liehu@gmail.com>, 2012.
+# Jiri Grönroos <jiri.gronroos+kde@iki.fi>, 2012.
+# Tommi Nieminen <translator@legisign.org>, 2012.
+# KDE Finnish translation sprint participants:
+msgid ""
+msgstr ""
+"Project-Id-Version: dirfilterplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2012-10-13 21:49+0300\n"
+"Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
+"Language-Team: Finnish <lokalisointi@lists.coss.fi>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-POT-Import-Date: 2012-12-01 22:21:53+0000\n"
+"X-Generator: MediaWiki 1.21alpha (963ddae); Translate 2012-11-08\n"
+
+#: dirfilterplugin.cpp:120
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Hide Filter Bar"
+msgstr "Piilota suodatinrivi"
+
+#: dirfilterplugin.cpp:124
+#, kde-format
+msgctxt "@label:textbox"
+msgid "F&ilter:"
+msgstr "&Suodatin:"
+
+#: dirfilterplugin.cpp:136
+#, kde-format
+msgctxt "@label:button"
+msgid "Filter by t&ype"
+msgstr "Suodata tyypin mukaan"
+
+#: dirfilterplugin.cpp:137
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Filter items by file type."
+msgstr "Suodata tietueet tiedostotyypin mukaan."
+
+#: dirfilterplugin.cpp:228
+#, kde-format
+msgctxt "@action:inmenu Tools"
+msgid "Show Filter Bar"
+msgstr "Näytä suodatinrivi"
+
+#: dirfilterplugin.cpp:322
+#, kde-format
+msgid "Use Multiple Filters"
+msgstr "Käytä useita suodattimia"
+
+#: dirfilterplugin.cpp:328
+#, kde-format
+msgid "Show Count"
+msgstr "Näytä lukumäärä"
+
+#: dirfilterplugin.cpp:333
+#, kde-format
+msgid "Reset"
+msgstr "Alusta"
+
+#. i18n: ectx: Menu (tools)
+#: dirfilterplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "&Työkalut"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: dirfilterplugin.rc:8
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "Lisätyökalurivi"
+
+#~ msgid "Allow to filter the currently displayed items by filetype."
+#~ msgstr "Suodata näytetyt tietueet tiedostotyypin mukaan"
+
+#~ msgid "Only Show Items of Type"
+#~ msgstr "Näytä vain tietueet tyyppiä"
+
+#~ msgid "Filter Field"
+#~ msgstr "Suodinkenttä"
+
+#~ msgid "Clear Filter Field"
+#~ msgstr "Tyhjennä suodinkenttä"
+
+#, fuzzy
+#~| msgid "Clear filter field<p>Clears the content of the filter field."
+#~ msgid "Clear filter field<p>Clears the content of the filter field.</p>"
+#~ msgstr "Tyhjennä suodinkenttä<p>Tyhjentää suodinkentän sisällön."
+
+#~ msgid ""
+#~ "Enter here a text which an item in the view must contain anywhere to be "
+#~ "shown."
+#~ msgstr ""
+#~ "Anna tähän teksti, joka pitää olla osana tietuetta, jotta se "
+#~ "näytettäisiin."

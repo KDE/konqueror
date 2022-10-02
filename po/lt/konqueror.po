@@ -1,0 +1,2726 @@
+# translation of konqueror.po to Lithuanian
+# Eugenijus Paulauskas <filija@klaipeda.omnitel.net>, 2000.
+# Ričardas Čepas <rch@richard.eu.org>, 2002-2003.
+# Donatas Glodenis <dgvirtual@akl.lt>, 2004-2009.
+# Tomas Straupis <tomasstraupis@gmail.com>, 2010, 2011.
+# Remigijus Jarmalavičius <remigijus@jarmalavicius.lt>, 2011.
+# Liudas Alisauskas <liudas@akmc.lt>, 2013.
+# Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>, 2017.
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-22 00:44+0000\n"
+"PO-Revision-Date: 2017-06-25 15:01+0200\n"
+"Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
+"Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
+"%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
+"X-Generator: Lokalize 2.0\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Ričardas Čepas, Donatas Glodenis"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "rch@richard.eu.org, dgvirtual@akl.lt"
+
+#: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4881
+#: src/konqmainwindow.cpp:4927
+#, kde-format
+msgid "no name"
+msgstr "be pavadinimo"
+
+#: src/konqextensionmanager.cpp:50
+#, fuzzy, kde-format
+#| msgid "Configure Extensions..."
+msgctxt "@title:window"
+msgid "Configure Extensions"
+msgstr "Konfigūruoti išplėtimus..."
+
+#: src/konqextensionmanager.cpp:70
+#, kde-format
+msgid "Extensions"
+msgstr "Išplėtimai"
+
+#: src/konqfactory.cpp:67
+#, kde-format
+msgid ""
+"There was an error loading the module %1.\n"
+"The diagnostics is:\n"
+"%2"
+msgstr ""
+"Įvyko klaida įkeliant %1 modulį.\n"
+"Diagnostika:\n"
+"%2"
+
+#: src/konqframestatusbar.cpp:108
+#, kde-format
+msgid ""
+"Checking this box on at least two views sets those views as 'linked'. Then, "
+"when you change directories in one view, the other views linked with it will "
+"automatically update to show the current directory. This is especially "
+"useful with different types of views, such as a directory tree with an icon "
+"view or detailed view, and possibly a terminal emulator window."
+msgstr ""
+"Pažymėjus šį langelį bent dviems rodymams jie bus „susieti“. Vėliau, kai "
+"pakeisite aplankus viename lange, rodymas kituose languose, susietuose su "
+"juo, automatiškai atsinaujins, parodydamas einamą aplanką. Tai ypač naudinga "
+"esant skirtingiems žiūrėjimo būdams, tokiems kaip: rodant aplankų medį su "
+"ženkliukais, rodant detaliai, o taip pat terminalo emuliatoriaus langą."
+
+#: src/konqframestatusbar.cpp:154
+#, kde-format
+msgid "Close View"
+msgstr "Užverti rodymą"
+
+#: src/konqframestatusbar.cpp:232
+#, kde-format
+msgid "%1/s"
+msgstr "%1/s"
+
+#: src/konqframestatusbar.cpp:234
+#, kde-format
+msgid "Stalled"
+msgstr "Užstrigo"
+
+#: src/konqguiclients.cpp:51
+#, kde-format
+msgid "Preview &in %1"
+msgstr "Peržiūr&a %1"
+
+#: src/konqguiclients.cpp:118
+#, kde-format
+msgid "Show %1"
+msgstr "Rodyti: %1"
+
+#: src/konqhistorydialog.cpp:39
+#, kde-format
+msgctxt "@title:window"
+msgid "History"
+msgstr "Istorija"
+
+#: src/konqhistorydialog.cpp:55 src/konqhistoryview.cpp:140
+#, kde-format
+msgctxt "@action:inmenu Parent of 'By Name' and 'By Date'"
+msgid "Sort"
+msgstr "Rikiuoti"
+
+#: src/konqhistorymodel.cpp:119
+#, kde-format
+msgid ""
+"<qt><center><b>%1</b></center><hr />Last visited: %2<br />First visited: "
+"%3<br />Number of times visited: %4</qt>"
+msgstr ""
+"<qt><center><b>%1</b></center><hr />Paskutinį kartą aplankyta: %2<br />Pirmą "
+"kartą aplankyta: %3<br />Apsilankymų skaičius: %4</qt>"
+
+#: src/konqhistorymodel.cpp:213
+#, kde-format
+msgid "Local"
+msgstr "Vietinis"
+
+#: src/konqhistorymodel.cpp:216
+#, kde-format
+msgid "Miscellaneous"
+msgstr "Įvairūs"
+
+#: src/konqhistoryview.cpp:53 src/konqmainwindow.cpp:4412
+#, kde-format
+msgid "Open in New &Window"
+msgstr "Atverti naujame &lange"
+
+#: src/konqhistoryview.cpp:58
+#, kde-format
+msgid "Open in New Tab"
+msgstr "Atverti naujoje kortelėje"
+
+#: src/konqhistoryview.cpp:63
+#, fuzzy, kde-format
+#| msgid "Open in New Tab"
+msgid "Open in Current Tab"
+msgstr "Atverti naujoje kortelėje"
+
+#: src/konqhistoryview.cpp:67
+#, kde-format
+msgid "&Copy Link Address"
+msgstr "&Kopijuoti nuorodos adresą"
+
+#: src/konqhistoryview.cpp:72
+#, kde-format
+msgid "&Remove Entry"
+msgstr "Pa&šalinti objektą"
+
+#: src/konqhistoryview.cpp:79
+#, kde-format
+msgid "C&lear History"
+msgstr "&Išvalyti istoriją"
+
+#: src/konqhistoryview.cpp:84
+#, kde-format
+msgid "&Preferences..."
+msgstr "&Pasirinkimai..."
+
+#: src/konqhistoryview.cpp:91
+#, kde-format
+msgid "By &Name"
+msgstr "Pagal &pavadinimą"
+
+#: src/konqhistoryview.cpp:97
+#, kde-format
+msgid "By &Date"
+msgstr "Pagal &datą"
+
+#: src/konqhistoryview.cpp:107
+#, kde-format
+msgid "Search in history"
+msgstr "Ieškoti istorijoje"
+
+#: src/konqhistoryview.cpp:168
+#, kde-format
+msgid "Do you really want to clear the entire history?"
+msgstr "Ar tikrai norite išvalyti visą istoriją?"
+
+#: src/konqhistoryview.cpp:169
+#, kde-format
+msgctxt "@title:window"
+msgid "Clear History?"
+msgstr "Išvalyti istoriją?"
+
+#: src/konqmain.cpp:170
+#, kde-format
+msgid "Konqueror"
+msgstr "Konqueror"
+
+#: src/konqmain.cpp:171
+#, kde-format
+msgid "Web browser, file manager and document viewer."
+msgstr "Žiniatinklio naršyklė, failų tvarkyklė ir dokumentų žiūryklė."
+
+#: src/konqmain.cpp:173
+#, fuzzy, kde-format
+#| msgid "(C) 1999-2008, The Konqueror developers"
+msgid "(C) 1999-2016, The Konqueror developers"
+msgstr "(C) 1999-2008, Konqueror programuotojai"
+
+#: src/konqmain.cpp:176
+#, kde-format
+msgid "Stefano Crocco"
+msgstr ""
+
+#: src/konqmain.cpp:176
+#, kde-format
+msgid "Current maintainer"
+msgstr ""
+
+#: src/konqmain.cpp:177
+#, kde-format
+msgid "David Faure"
+msgstr "David Faure"
+
+#: src/konqmain.cpp:177
+#, fuzzy, kde-format
+#| msgid "Developer (framework, parts, JavaScript, I/O library) and maintainer"
+msgid ""
+"Developer (framework, parts, JavaScript, I/O library) and former maintainer"
+msgstr ""
+"Programuotojas (kontekstas, kparts, JavaScript, I/O library) ir prižiūrėtojas"
+
+#: src/konqmain.cpp:178
+#, kde-format
+msgid "Simon Hausmann"
+msgstr "Simon Hausmann"
+
+#: src/konqmain.cpp:178
+#, kde-format
+msgid "Developer (framework, parts)"
+msgstr "Programuotojas (struktūra, parts)"
+
+#: src/konqmain.cpp:179
+#, kde-format
+msgid "Michael Reiher"
+msgstr "Michael Reiher"
+
+#: src/konqmain.cpp:179 src/konqmain.cpp:207 src/konqmain.cpp:213
+#, kde-format
+msgid "Developer (framework)"
+msgstr "Programuotojas (struktūra)"
+
+#: src/konqmain.cpp:180
+#, kde-format
+msgid "Matthias Welk"
+msgstr "Matthias Welk"
+
+#: src/konqmain.cpp:180
+#, kde-format
+msgid "Developer"
+msgstr "Programuotojas"
+
+#: src/konqmain.cpp:181
+#, kde-format
+msgid "Alexander Neundorf"
+msgstr "Alexander Neundorf"
+
+#: src/konqmain.cpp:181
+#, kde-format
+msgid "Developer (List views)"
+msgstr "Programuotojas (rodymo būdai)"
+
+#: src/konqmain.cpp:182
+#, kde-format
+msgid "Michael Brade"
+msgstr "Michael Brade"
+
+#: src/konqmain.cpp:182
+#, kde-format
+msgid "Developer (List views, I/O library)"
+msgstr "Programuotojas (rodymo būdai, I/O biblioteka)"
+
+#: src/konqmain.cpp:183
+#, kde-format
+msgid "Lars Knoll"
+msgstr "Lars Knoll"
+
+#: src/konqmain.cpp:183 src/konqmain.cpp:184 src/konqmain.cpp:185
+#: src/konqmain.cpp:187 src/konqmain.cpp:188 src/konqmain.cpp:190
+#: src/konqmain.cpp:191 src/konqmain.cpp:192 src/konqmain.cpp:193
+#: src/konqmain.cpp:195
+#, kde-format
+msgid "Developer (HTML rendering engine)"
+msgstr "Programuotojas (HTML pateikimo variklis)"
+
+#: src/konqmain.cpp:184
+#, kde-format
+msgid "Dirk Mueller"
+msgstr "Dirk Mueller"
+
+#: src/konqmain.cpp:185
+#, kde-format
+msgid "Peter Kelly"
+msgstr "Peter Kelly"
+
+#: src/konqmain.cpp:186
+#, kde-format
+msgid "Waldo Bastian"
+msgstr "Waldo Bastian"
+
+#: src/konqmain.cpp:186
+#, kde-format
+msgid "Developer (HTML rendering engine, I/O library)"
+msgstr "Programuotojas (HTML pateikimo variklis, I/O library)"
+
+#: src/konqmain.cpp:187
+#, kde-format
+msgid "Germain Garand"
+msgstr "Germain Garand"
+
+#: src/konqmain.cpp:188
+#, kde-format
+msgid "Leo Savernik"
+msgstr "Leo Savernik"
+
+#: src/konqmain.cpp:189
+#, kde-format
+msgid "Stephan Kulow"
+msgstr "Stephan Kulow"
+
+#: src/konqmain.cpp:189
+#, kde-format
+msgid ""
+"Developer (HTML rendering engine, I/O library, regression test framework)"
+msgstr ""
+"Programuotojas (HTML pateikimo variklis, I/O library, regresijos bandymų "
+"aplinka)"
+
+#: src/konqmain.cpp:190
+#, kde-format
+msgid "Antti Koivisto"
+msgstr "Antti Koivisto"
+
+#: src/konqmain.cpp:191
+#, kde-format
+msgid "Zack Rusin"
+msgstr "Zack Rusin"
+
+#: src/konqmain.cpp:192
+#, kde-format
+msgid "Tobias Anton"
+msgstr "Tobias Anton"
+
+#: src/konqmain.cpp:193
+#, kde-format
+msgid "Lubos Lunak"
+msgstr "Lubos Lunak"
+
+#: src/konqmain.cpp:194
+#, kde-format
+msgid "Maks Orlovich"
+msgstr "Maks Orlovich"
+
+#: src/konqmain.cpp:194 src/konqmain.cpp:196
+#, kde-format
+msgid "Developer (HTML rendering engine, JavaScript)"
+msgstr "Programuotojas (HTML pateikimo variklis, JavaScript)"
+
+#: src/konqmain.cpp:195
+#, kde-format
+msgid "Allan Sandfeld Jensen"
+msgstr "Allan Sandfeld Jensen"
+
+#: src/konqmain.cpp:196
+#, kde-format
+msgid "Apple Safari Developers"
+msgstr "Apple Safari programuotojai"
+
+#: src/konqmain.cpp:197
+#, kde-format
+msgid "Harri Porten"
+msgstr "Harri Porten"
+
+#: src/konqmain.cpp:197
+#, kde-format
+msgid "Developer (JavaScript)"
+msgstr "Programuotojas (JavaScript)"
+
+#: src/konqmain.cpp:198
+#, kde-format
+msgid "Koos Vriezen"
+msgstr "Koos Vriezen"
+
+#: src/konqmain.cpp:198
+#, kde-format
+msgid "Developer (Java applets and other embedded objects)"
+msgstr "Programuotojas (Java įskiepių ir kitų įterpiamų objektų palaikymas)"
+
+#: src/konqmain.cpp:199
+#, kde-format
+msgid "Matt Koss"
+msgstr "Matt Koss"
+
+#: src/konqmain.cpp:199 src/konqmain.cpp:200
+#, kde-format
+msgid "Developer (I/O library)"
+msgstr "Programuotojas (I/O library)"
+
+#: src/konqmain.cpp:200
+#, kde-format
+msgid "Alex Zepeda"
+msgstr "Alex Zepeda"
+
+#: src/konqmain.cpp:201
+#, kde-format
+msgid "Richard Moore"
+msgstr "Richard Moore"
+
+#: src/konqmain.cpp:201 src/konqmain.cpp:202
+#, kde-format
+msgid "Developer (Java applet support)"
+msgstr "Programuotojas (Java įskiepių palaikymas)"
+
+#: src/konqmain.cpp:202
+#, kde-format
+msgid "Dima Rogozin"
+msgstr "Dima Rogozin"
+
+#: src/konqmain.cpp:203
+#, kde-format
+msgid "Wynn Wilkes"
+msgstr "Wynn Wilkes"
+
+#: src/konqmain.cpp:203
+#, kde-format
+msgid ""
+"Developer (Java 2 security manager support,\n"
+" and other major improvements to applet support)"
+msgstr ""
+"Programuotojas (Java 2 saugumo tvarkyklės palaikymas\n"
+" ir kiti esminiai įskiepių palaikymo patobulinimai)"
+
+#: src/konqmain.cpp:204
+#, kde-format
+msgid "Stefan Schimanski"
+msgstr "Stefan Schimanski"
+
+#: src/konqmain.cpp:204
+#, kde-format
+msgid "Developer (Netscape plugin support)"
+msgstr "Programuotojas (Netscape priedų palaikymas)"
+
+#: src/konqmain.cpp:205
+#, kde-format
+msgid "George Staikos"
+msgstr "George Staikos"
+
+#: src/konqmain.cpp:205
+#, kde-format
+msgid "Developer (SSL, Netscape plugins)"
+msgstr "Programuotojas (SSL, Netscape priedai)"
+
+#: src/konqmain.cpp:206
+#, kde-format
+msgid "Dawit Alemayehu"
+msgstr "Dawit Alemayehu"
+
+#: src/konqmain.cpp:206
+#, kde-format
+msgid "Developer (I/O library, Authentication support)"
+msgstr "Programuotojas (I/O library, autentikacijos palaikymas)"
+
+#: src/konqmain.cpp:207
+#, kde-format
+msgid "Carsten Pfeiffer"
+msgstr "Carsten Pfeiffer"
+
+#: src/konqmain.cpp:208
+#, kde-format
+msgid "Torsten Rahn"
+msgstr "Torsten Rahn"
+
+#: src/konqmain.cpp:208
+#, kde-format
+msgid "Graphics/icons"
+msgstr "Grafika/ženkliukai"
+
+#: src/konqmain.cpp:209
+#, kde-format
+msgid "Torben Weis"
+msgstr "Torben Weis"
+
+#: src/konqmain.cpp:209
+#, kde-format
+msgid "KFM author"
+msgstr "KFM autorius"
+
+#: src/konqmain.cpp:210
+#, kde-format
+msgid "Joseph Wenninger"
+msgstr "Joseph Wenninger"
+
+#: src/konqmain.cpp:210
+#, kde-format
+msgid "Developer (navigation panel framework)"
+msgstr "Programuotojas (navigacijos pulto struktūra)"
+
+#: src/konqmain.cpp:211
+#, kde-format
+msgid "Stephan Binner"
+msgstr "Stephan Binner"
+
+#: src/konqmain.cpp:211
+#, kde-format
+msgid "Developer (misc stuff)"
+msgstr "Programuotojas (įvairūs darbai)"
+
+#: src/konqmain.cpp:212
+#, kde-format
+msgid "Ivor Hewitt"
+msgstr "Ivor Hewitt"
+
+#: src/konqmain.cpp:212
+#, kde-format
+msgid "Developer (AdBlock filter)"
+msgstr "Programuotojas (AdBlock filtras)"
+
+#: src/konqmain.cpp:213
+#, kde-format
+msgid "Eduardo Robles Elvira"
+msgstr "Eduardo Robles Elvira"
+
+#: src/konqmain.cpp:223
+#, kde-format
+msgid "Start without a default window, when called without URLs"
+msgstr "Pradėti be numatyto lango, jei paleista be nuorodų"
+
+#: src/konqmain.cpp:224
+#, kde-format
+msgid ""
+"Preload for later use. This mode does not support URLs on the command line"
+msgstr ""
+"Pakrauti vėlesniam naudojimui. Paleidžiant šiuo režimu komandinėje eilutėje "
+"negalima nurodyti nuorodų (URL)."
+
+#: src/konqmain.cpp:225
+#, kde-format
+msgid "Profile to open (DEPRECATED, IGNORED)"
+msgstr ""
+
+#: src/konqmain.cpp:225
+#, kde-format
+msgid "profile"
+msgstr ""
+
+#: src/konqmain.cpp:226
+#, kde-format
+msgid "List available sessions"
+msgstr "Pateikti galimų sesijų sąrašą"
+
+#: src/konqmain.cpp:227
+#, kde-format
+msgid "Session to open"
+msgstr "Sesijos"
+
+#: src/konqmain.cpp:227
+#, fuzzy, kde-format
+#| msgid "Sessions"
+msgid "session"
+msgstr "Sesijos"
+
+#: src/konqmain.cpp:228
+#, kde-format
+msgid "Mimetype to use for this URL (e.g. text/html or inode/directory)"
+msgstr "MIME tipas, naudojamas šiam URL (pvz., text/html arba inode/directory)"
+
+#: src/konqmain.cpp:228
+#, kde-format
+msgid "mimetype"
+msgstr ""
+
+#: src/konqmain.cpp:229
+#, kde-format
+msgid "Part to use (e.g. khtml or kwebkitpart)"
+msgstr "Naudojamas modulis (pavyzdžiui khtml arba kwebkitpart)"
+
+#: src/konqmain.cpp:229
+#, kde-format
+msgid "service"
+msgstr ""
+
+#: src/konqmain.cpp:230
+#, kde-format
+msgid ""
+"For URLs that point to files, opens the directory and selects the file, "
+"instead of opening the actual file"
+msgstr ""
+"URL nuorodoms, nurodančioms failus, atveria aplanką ir pažymi failą, užuot "
+"atvėręs patį failą"
+
+#: src/konqmain.cpp:231
+#, kde-format
+msgid "The files/URLs opened by the application will be deleted after use"
+msgstr ""
+
+#: src/konqmain.cpp:233
+#, kde-format
+msgid "Location to open"
+msgstr "Atverti adresą"
+
+#: src/konqmainwindow.cpp:658
+#, kde-format
+msgctxt "@title:tab"
+msgid "Loading..."
+msgstr "Įkeliama..."
+
+#: src/konqmainwindow.cpp:690
+#, kde-format
+msgid "Access denied"
+msgstr ""
+
+#: src/konqmainwindow.cpp:1465
+#, fuzzy, kde-format
+#| msgid "&Open File..."
+msgid "Open File"
+msgstr "&Atverti failą..."
+
+#: src/konqmainwindow.cpp:1548
+#, kde-format
+msgid "Canceled."
+msgstr "Nutraukta."
+
+#: src/konqmainwindow.cpp:1584
+#, kde-format
+msgid ""
+"This page contains changes that have not been submitted.\n"
+"Reloading the page will discard these changes."
+msgstr ""
+"Šiame puslapyje yra pakeitimų, kurie nebuvo išsiųsti.\n"
+"Puslapį iš naujo įkėlus šie pakeitimai bus prarasti."
+
+#: src/konqmainwindow.cpp:1585 src/konqmainwindow.cpp:2282
+#: src/konqmainwindow.cpp:2375 src/konqmainwindow.cpp:2407
+#: src/konqmainwindow.cpp:2450 src/konqmainwindow.cpp:2472
+#: src/konqmainwindow.cpp:4849
+#, kde-format
+msgctxt "@title:window"
+msgid "Discard Changes?"
+msgstr "Atmesti pakeitimus?"
+
+#: src/konqmainwindow.cpp:1585 src/konqmainwindow.cpp:2282
+#: src/konqmainwindow.cpp:2375 src/konqmainwindow.cpp:2407
+#: src/konqmainwindow.cpp:2450 src/konqmainwindow.cpp:2473
+#: src/konqmainwindow.cpp:4849
+#, kde-format
+msgid "&Discard Changes"
+msgstr "&Atmesti pakeitimus"
+
+#: src/konqmainwindow.cpp:1952 src/konqmainwindow.cpp:1958
+#, kde-format
+msgid "Home Folder"
+msgstr "Namų aplankas"
+
+#: src/konqmainwindow.cpp:1953 src/konqmainwindow.cpp:3424
+#, kde-format
+msgid "Home"
+msgstr "Namai"
+
+#: src/konqmainwindow.cpp:1959
+#, kde-format
+msgid "Navigate to your 'Home Folder'"
+msgstr "Pereiti į Jūsų „Namų aplanką“"
+
+#: src/konqmainwindow.cpp:1960
+#, kde-format
+msgid "Navigate to your local 'Home Folder'"
+msgstr "Pereiti į Jūsų vietinį „Namų aplanką“"
+
+#. i18n: ectx: label, entry, group (UserSettings)
+#: src/konqmainwindow.cpp:1963 src/konqueror.kcfg:16
+#, kde-format
+msgid "Home Page"
+msgstr "Namų puslapis"
+
+#: src/konqmainwindow.cpp:1965
+#, kde-format
+msgid "Navigate to your 'Home Page'"
+msgstr "Keliauti į „Namų puslapį“"
+
+#: src/konqmainwindow.cpp:1966
+#, kde-format
+msgid ""
+"<html>Navigate to your 'Home Page'<br /><br />You can configure the location "
+"where this button takes you under <b>Settings -> Configure Konqueror -> "
+"General</b>.</html>"
+msgstr ""
+"<html>Keliauti į „Namų puslapį“<br /><br />Vietą, kur šis mygtukas nuves, "
+"galite parinkti, <b>Nustatymai -> Konfigūruoti Konqueror -> Bendri</b>.</"
+"html>"
+
+#: src/konqmainwindow.cpp:2281
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Detaching the tab will discard these changes."
+msgstr ""
+"Šioje kortelėje yra pakeitimai, kurie nebuvo išsiųsti.\n"
+"Atskyrus kortelę šie pakeitimai bus atmesti."
+
+#: src/konqmainwindow.cpp:2374
+#, kde-format
+msgid ""
+"This view contains changes that have not been submitted.\n"
+"Closing the view will discard these changes."
+msgstr ""
+"Šiame rodyme matote pakeitimus, kurie nebuvo išsiųsti. \n"
+"Uždarius rodymą pakeitimai bus prarasti."
+
+#: src/konqmainwindow.cpp:2406
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Closing the tab will discard these changes."
+msgstr ""
+"Šioje kortelėje yra pakeitimai, kurie nebuvo išsiųsti.\n"
+"Uždarius kortelę šie pakeitimai bus atmesti."
+
+#: src/konqmainwindow.cpp:2432
+#, kde-format
+msgid "Do you really want to close all other tabs?"
+msgstr "Ar tikrai norite užverti visas kitas korteles?"
+
+#: src/konqmainwindow.cpp:2433 src/konqmainwindow.cpp:3505 src/konqtabs.cpp:335
+#, kde-format
+msgid "Close &Other Tabs"
+msgstr "Užverti &kitas korteles"
+
+#: src/konqmainwindow.cpp:2433
+#, kde-format
+msgctxt "@title:window"
+msgid "Close Other Tabs Confirmation"
+msgstr "Kitų kortelių uždarymo patvirtinimas"
+
+#: src/konqmainwindow.cpp:2449
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Closing other tabs will discard these changes."
+msgstr ""
+"Šioje kortelėje yra pakeitimai, kurie nebuvo išsiųsti.\n"
+"Uždarius kitas korteles šie pakeitimai bus atmesti."
+
+#: src/konqmainwindow.cpp:2471
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Reloading all tabs will discard these changes."
+msgstr ""
+"Šioje kortelėje yra pakeitimai, kurie nebuvo išsiųsti.\n"
+"Iš naujo įkėlus visas korteles šie pakeitimai bus atmesti."
+
+#: src/konqmainwindow.cpp:2513
+#, kde-format
+msgctxt "@title:window"
+msgid "Enter Target"
+msgstr "Įveskite paskirtį"
+
+#: src/konqmainwindow.cpp:2520
+#, kde-format
+msgid "<qt><b>%1</b> is not valid</qt>"
+msgstr "<qt><b>%1</b> yra neteisingas</qt>"
+
+#: src/konqmainwindow.cpp:2530
+#, kde-format
+msgid "Copy selected files from %1 to:"
+msgstr "Kopijuoti pasirinktus failus iš %1 į:"
+
+#: src/konqmainwindow.cpp:2543
+#, kde-format
+msgid "Move selected files from %1 to:"
+msgstr "Perkelti pažymėtus failus iš %1 į:"
+
+#: src/konqmainwindow.cpp:2717
+#, kde-format
+msgctxt "This menu entry empties the closed items history"
+msgid "Empty Closed Items History"
+msgstr "Ištuštinti užvertų atvejų istoriją"
+
+#: src/konqmainwindow.cpp:2740
+#, kde-format
+msgid "Save As..."
+msgstr "Išsaugoti kaip..."
+
+#: src/konqmainwindow.cpp:2742
+#, kde-format
+msgid "Manage..."
+msgstr "Tvarkyti..."
+
+#: src/konqmainwindow.cpp:3333
+#, kde-format
+msgid "New &Window"
+msgstr "Naujas &langas"
+
+#: src/konqmainwindow.cpp:3338
+#, kde-format
+msgid "&Duplicate Window"
+msgstr "&Dubliuoti langą"
+
+#: src/konqmainwindow.cpp:3343
+#, kde-format
+msgid "Send &Link Address..."
+msgstr "Siųsti nuo&rodą..."
+
+#: src/konqmainwindow.cpp:3347
+#, kde-format
+msgid "S&end File..."
+msgstr "&Siųsti failą..."
+
+#: src/konqmainwindow.cpp:3351
+#, kde-format
+msgid "&Open Location"
+msgstr "&Atverti vietą"
+
+#: src/konqmainwindow.cpp:3357
+#, kde-format
+msgid "&Open File..."
+msgstr "&Atverti failą..."
+
+#: src/konqmainwindow.cpp:3362
+#, kde-format
+msgid "&Find File..."
+msgstr "&Ieškoti failo..."
+
+#: src/konqmainwindow.cpp:3371
+#, kde-format
+msgid "Lock to Current Location"
+msgstr "Užsklęsti dabartinėje vietoje"
+
+#: src/konqmainwindow.cpp:3374
+#, kde-format
+msgctxt "This option links konqueror views"
+msgid "Lin&k View"
+msgstr "Susie&tas rodymas"
+
+#: src/konqmainwindow.cpp:3379
+#, kde-format
+msgid "&Up"
+msgstr "&Aukštyn"
+
+#: src/konqmainwindow.cpp:3389
+#, kde-format
+msgid "Closed Items"
+msgstr "Užverti vienetai"
+
+#: src/konqmainwindow.cpp:3402
+#, kde-format
+msgid "Sessions"
+msgstr "Sesijos"
+
+#: src/konqmainwindow.cpp:3429
+#, kde-format
+msgctxt "@action:inmenu Go"
+msgid "Most Often Visited"
+msgstr "Dažniausiai lankyta"
+
+#: src/konqmainwindow.cpp:3433
+#, kde-format
+msgctxt "@action:inmenu Go"
+msgid "Recently Visited"
+msgstr "Neseniai aplankyta"
+
+#: src/konqmainwindow.cpp:3442
+#, kde-format
+msgctxt "@action:inmenu Go"
+msgid "Show History"
+msgstr "Rodyti istoriją"
+
+#: src/konqmainwindow.cpp:3455
+#, kde-format
+msgid "Configure Extensions..."
+msgstr "Konfigūruoti išplėtimus..."
+
+#: src/konqmainwindow.cpp:3459
+#, kde-format
+msgid "Configure Spell Checking..."
+msgstr "Konfigūruoti rašybos tikrinimą..."
+
+#: src/konqmainwindow.cpp:3465
+#, kde-format
+msgid "Split View &Left/Right"
+msgstr "Skaidyti rodymą į &kairę ir dešinę"
+
+#: src/konqmainwindow.cpp:3470
+#, kde-format
+msgid "Split View &Top/Bottom"
+msgstr "Skaidyti rodymą į &viršų ir apačią"
+
+#: src/konqmainwindow.cpp:3475 src/konqtabs.cpp:456
+#, kde-format
+msgid "&New Tab"
+msgstr "&Nauja kortelė"
+
+#: src/konqmainwindow.cpp:3484
+#, kde-format
+msgid "&Duplicate Current Tab"
+msgstr "&Dubliuoti esamą kortelę"
+
+#: src/konqmainwindow.cpp:3489
+#, kde-format
+msgid "Detach Current Tab"
+msgstr "Atkabinti esamą kortelę"
+
+#: src/konqmainwindow.cpp:3494
+#, kde-format
+msgid "&Close Active View"
+msgstr "&Užverti aktyvų rodymą"
+
+#: src/konqmainwindow.cpp:3499
+#, kde-format
+msgid "Close Current Tab"
+msgstr "Užverti esamą kortelę"
+
+#: src/konqmainwindow.cpp:3509
+#, kde-format
+msgid "Activate Next Tab"
+msgstr "Suaktyvinti sekančią kortelę"
+
+#: src/konqmainwindow.cpp:3513
+#, kde-format
+msgid "Activate Previous Tab"
+msgstr "Suaktyvinti ankstesnę kortelę"
+
+#: src/konqmainwindow.cpp:3520
+#, kde-format
+msgid "Activate Tab %1"
+msgstr "Aktyvinti %1 kortelę"
+
+#: src/konqmainwindow.cpp:3525
+#, kde-format
+msgid "Move Tab Left"
+msgstr "Perkelti kortelę į kairę"
+
+#: src/konqmainwindow.cpp:3530
+#, kde-format
+msgid "Move Tab Right"
+msgstr "Perkelti kortelę į dešinę"
+
+#: src/konqmainwindow.cpp:3538
+#, kde-format
+msgid "Dump Debug Info"
+msgstr "Išvesti richtavimo informaciją"
+
+#: src/konqmainwindow.cpp:3556
+#, kde-format
+msgid "&Reload"
+msgstr "Į&kelti iš naujo"
+
+#: src/konqmainwindow.cpp:3561 src/konqtabs.cpp:313
+#, kde-format
+msgid "&Reload All Tabs"
+msgstr "Iš naujo įkelti &visas korteles"
+
+#: src/konqmainwindow.cpp:3569
+#, kde-format
+msgid "&Force Reload"
+msgstr "Į&kelti iš naujo priverstinai"
+
+#: src/konqmainwindow.cpp:3595
+#, kde-format
+msgid "&Stop"
+msgstr "&Sustabdyti"
+
+#: src/konqmainwindow.cpp:3604
+#, kde-format
+msgid "Throbber"
+msgstr "Throbber"
+
+#: src/konqmainwindow.cpp:3608 src/konqmainwindow.cpp:3611
+#, kde-format
+msgid "L&ocation: "
+msgstr "A&dresas: "
+
+#: src/konqmainwindow.cpp:3618
+#, kde-format
+msgid "Location Bar"
+msgstr "Adreso juosta"
+
+#: src/konqmainwindow.cpp:3624
+#, kde-format
+msgid ""
+"<html>Location Bar<br /><br />Enter a web address or search term.</html>"
+msgstr ""
+"<html>Adreso juosta<br /><br />Įrašykite žiniatinklio adresą arba ieškokite "
+"termino.</html>"
+
+#: src/konqmainwindow.cpp:3628
+#, kde-format
+msgid "Clear Location Bar"
+msgstr "Išvalyti adreso juostą"
+
+#: src/konqmainwindow.cpp:3632
+#, kde-format
+msgid ""
+"<html>Clear Location bar<br /><br />Clears the contents of the location bar."
+"</html>"
+msgstr ""
+"<html>Išvalyti adreso juostą<br /><br />Išvalo adreso juostos turinį. </html>"
+
+#: src/konqmainwindow.cpp:3637
+#, kde-format
+msgid "&Bookmarks"
+msgstr "Ž&ymelės"
+
+#: src/konqmainwindow.cpp:3665
+#, kde-format
+msgid "Kon&queror Introduction"
+msgstr "Kon&queror įžanga"
+
+#: src/konqmainwindow.cpp:3670
+#, kde-format
+msgid "Go"
+msgstr "Eiti"
+
+#: src/konqmainwindow.cpp:3672
+#, kde-format
+msgid ""
+"<html>Go<br /><br />Goes to the page that has been entered into the location "
+"bar.</html>"
+msgstr ""
+"<html>Eiti<br /><br />Perkelia į puslapį, kuris nurodytas adreso juostoje. </"
+"html>"
+
+#: src/konqmainwindow.cpp:3678
+#, kde-format
+msgid ""
+"<html>Enter the parent folder<br /><br />For instance, if the current "
+"location is file:/home/%1 clicking this button will take you to file:/home.</"
+"html>"
+msgstr ""
+"<html>Eiti į aukštesniojo lygio aplanką<br /><br />Jei, pvz., dabartinis "
+"adresas yra file:/home/%1, spragtelėję čia pateksite į file:/home.</html>"
+
+#: src/konqmainwindow.cpp:3681
+#, kde-format
+msgid "Enter the parent folder"
+msgstr "Eiti į aukštesniojo lygio aplanką"
+
+#: src/konqmainwindow.cpp:3683 src/konqmainwindow.cpp:3684
+#, kde-format
+msgid "Move backwards one step in the browsing history"
+msgstr "Eiti atgal vieną žingsnį naršymo istorijoje"
+
+#: src/konqmainwindow.cpp:3686 src/konqmainwindow.cpp:3687
+#, kde-format
+msgid "Move forward one step in the browsing history"
+msgstr "Eiti pirmyn vieną žingsnį naršymo istorijoje"
+
+#: src/konqmainwindow.cpp:3689 src/konqmainwindow.cpp:3690
+#, kde-format
+msgid "Move backwards one step in the closed tabs history"
+msgstr "Eiti atgal vieną žingsnį užvertų kortelių istorijoje"
+
+#: src/konqmainwindow.cpp:3692
+#, kde-format
+msgid ""
+"<html>Reload the currently displayed document<br /><br />This may, for "
+"example, be needed to refresh web pages that have been modified since they "
+"were loaded, in order to make the changes visible.</html>"
+msgstr ""
+"<html>Įkelti esamą dokumentą iš naujo<br /><br />To gali reikėti, "
+"pavyzdžiui, atnaujinti tinklalapių, kurie buvo pakeisti po to, kai buvo "
+"įkelti, rodymą, kad pakeitimai taptų matomi.</html>"
+
+#: src/konqmainwindow.cpp:3695
+#, kde-format
+msgid "Reload the currently displayed document"
+msgstr "Iš naujo įkelti šiuo metu rodomą dokumentą"
+
+#: src/konqmainwindow.cpp:3697
+#, kde-format
+msgid ""
+"<html>Reload all currently displayed documents in tabs<br /><br />This may, "
+"for example, be needed to refresh web pages that have been modified since "
+"they were loaded, in order to make the changes visible.</html>"
+msgstr ""
+"<html>Iš naujo įkelti visus šiuo metu kortelėse rodomus dokumentus<br /><br /"
+">To gali prireikti, pavyzdžiui, atnaujinant tinklalapių, kurie buvo pakeisti "
+"po to, kai buvo įkelti rodymą, kad pakeitimai taptų matomi.</html>"
+
+#: src/konqmainwindow.cpp:3700
+#, kde-format
+msgid "Reload all currently displayed document in tabs"
+msgstr "Iš naujo įkelti šiuo metu kortelėse rodomus dokumentus"
+
+#: src/konqmainwindow.cpp:3702
+#, kde-format
+msgid ""
+"<html>Stop loading the document<br /><br />All network transfers will be "
+"stopped and Konqueror will display the content that has been received so far."
+"</html>"
+msgstr ""
+"<html>Sustabdyti dokumento įkėlimą<br /><br />Visi informacijos persiuntimai "
+"tinkle bus sustabdyti ir Konqueror parodys iki šiol atsiųstą turinį.</html>"
+
+#: src/konqmainwindow.cpp:3706
+#, kde-format
+msgid ""
+"<html>Reload the currently displayed document<br /><br />This may, for "
+"example, be needed to refresh web pages that have been modified since they "
+"were loaded, in order to make the changes visible. Any images on the page "
+"are downloaded again, even if cached copies exist.</html>"
+msgstr ""
+"<html>Įkelti esamą dokumentą iš naujo <br /><br />To gali reikėti, "
+"pavyzdžiui, atnaujinti tinklalapių, kurie buvo pakeisti po to, kai buvo "
+"įkelti, rodymą, kad pakeitimai taptų matomi. Visi puslapyje esantys "
+"paveikslėliai bus iš naujo atsisiųsti, net jei jų kopijos ir yra atmintinėje."
+"</html>"
+
+#: src/konqmainwindow.cpp:3710
+#, kde-format
+msgid ""
+"Force a reload of the currently displayed document and any contained images"
+msgstr ""
+"Priverstinai iš naujo įkelti šiuo metu rodomą dokumentą ir jame esančius "
+"paveikslėlius"
+
+#: src/konqmainwindow.cpp:3712
+#, kde-format
+msgid "Stop loading the document"
+msgstr "Stabdyti dokumento įkėlimą"
+
+#: src/konqmainwindow.cpp:3714
+#, kde-format
+msgid ""
+"<html>Cut the currently selected text or item(s) and move it to the system "
+"clipboard<br /><br />This makes it available to the <b>Paste</b> command in "
+"Konqueror and other KDE applications.</html>"
+msgstr ""
+"<html>Iškerpa šiuo metu pažymėtą tekstą arba objektus ir perkelia juos į "
+"sistemos laikinąją talpyklę.<br /> <br />Tokiu būdu tekstas taps prieinamas "
+"naudojant <b>Padėti</b> komandą Konqueror ir kitose KDE programose.</html>"
+
+#: src/konqmainwindow.cpp:3718
+#, kde-format
+msgid "Move the selected text or item(s) to the clipboard"
+msgstr "Perkelti pažymėtą tekstą/objektą(us) į laikinąją talpyklę"
+
+#: src/konqmainwindow.cpp:3720
+#, kde-format
+msgid ""
+"<html>Copy the currently selected text or item(s) to the system "
+"clipboard<br /><br />This makes it available to the <b>Paste</b> command in "
+"Konqueror and other KDE applications.</html>"
+msgstr ""
+"<html>Nukopijuoti šiuo metu pažymėtą tekstą arba objektus į sistemos "
+"laikinąją talpyklę.<br /><br />Pažymėti objektai ar tekstas tampa prieinami "
+"naudojant <b>Įterpti</b> komandą Konqueror ir kitose KDE programose.</html>"
+
+#: src/konqmainwindow.cpp:3724
+#, kde-format
+msgid "Copy the selected text or item(s) to the clipboard"
+msgstr "Kopijuoti pažymėtą tekstą ar objektą(us) į laikinąją talpyklę"
+
+#: src/konqmainwindow.cpp:3726
+#, kde-format
+msgid ""
+"<html>Paste the previously cut or copied clipboard contents<br /><br />This "
+"also works for text copied or cut from other KDE applications.</html>"
+msgstr ""
+"<html>Įterpti anksčiau iškirptus arba nukopijuotus į talpyklę objektus<br /"
+"><br />Šis veiksmas taip pat veikia su tekstu, anksčiau nukopijuotu ar "
+"iškirptu kitose KDE programose.</html>"
+
+#: src/konqmainwindow.cpp:3729
+#, kde-format
+msgid "Paste the clipboard contents"
+msgstr "Padėti talpyklės turinį"
+
+#: src/konqmainwindow.cpp:3731
+#, kde-format
+msgid ""
+"<html>Print the currently displayed document<br /><br />You will be "
+"presented with a dialog where you can set various options, such as the "
+"number of copies to print and which printer to use.<br /><br />This dialog "
+"also provides access to special KDE printing services such as creating a PDF "
+"file from the current document.</html>"
+msgstr ""
+"<html>Spausdinti dabar rodomą dokumentą<br /><br />Bus pateiktas dialogas, "
+"kuriame galėsite nurodyti įvairias parinktis, tokias, kaip kopijų kiekis ir "
+"naudojamas spausdintuvas.<br /><br /> Šiame dialoge taip pat galėsite "
+"prieiti prie specialių KDE spausdinimo tarnybų, tokių kaip PDF failo kūrimas "
+"iš esamo dokumento.</html>"
+
+#: src/konqmainwindow.cpp:3737
+#, kde-format
+msgid "Print the current document"
+msgstr "Spausdinti esamą dokumentą"
+
+#: src/konqmainwindow.cpp:3739
+#, kde-format
+msgid ""
+"A locked view cannot change folders. Use in combination with 'link view' to "
+"explore many files from one folder"
+msgstr ""
+"Užrakinto rodymo veiksenoje negalima keisti aplankų. Norėdami peržiūrėti "
+"daug failų iš vieno aplanko, naudokite parinktį „Susietas rodymas“"
+
+#: src/konqmainwindow.cpp:3740
+#, kde-format
+msgid ""
+"Sets the view as 'linked'. A linked view follows folder changes made in "
+"other linked views."
+msgstr ""
+"Nustatys rodymą „susietu“. Susietas rodymas keičiasi, keičiantis aplankui "
+"kituose susietuose rodymuose."
+
+#: src/konqmainwindow.cpp:3744
+#, fuzzy, kde-format
+#| msgid "C&lose Current Tab"
+msgid "&Inspect Current Page"
+msgstr "Užv&erti esamą kortelę"
+
+#: src/konqmainwindow.cpp:3745
+#, kde-format
+msgid ""
+"<html>Shows the developer tools for the current page<br/><br/>The current "
+"view is split in two and the developer tools are displayed in the second half"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3746
+#, kde-format
+msgid "Shows the developer tools for the current page"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3912
+#, kde-format
+msgid "Copy &Files..."
+msgstr "&Kopijuoti failus..."
+
+#: src/konqmainwindow.cpp:3916
+#, kde-format
+msgid "M&ove Files..."
+msgstr "&Perkelti failus..."
+
+#: src/konqmainwindow.cpp:4245
+#, kde-format
+msgid ""
+"You have requested to open more than 20 bookmarks in tabs. This might take a "
+"while. Continue?"
+msgstr ""
+"Prašote atverti daugiau nei 20 žymelių kortelėse. Tai gali užtrukti. Ar "
+"norite tęsti?"
+
+#: src/konqmainwindow.cpp:4247
+#, kde-format
+msgctxt "@title:window"
+msgid "Open bookmarks folder in new tabs"
+msgstr "Atverti žymelių aplanką naujose kortelėse"
+
+#: src/konqmainwindow.cpp:4405
+#, kde-format
+msgid "Open in T&his Window"
+msgstr "Atverti šia&me lange"
+
+#: src/konqmainwindow.cpp:4406
+#, kde-format
+msgid "Open the document in current window"
+msgstr "Atverti dokumentą dabartiniame lange"
+
+#: src/konqmainwindow.cpp:4413
+#, kde-format
+msgid "Open the document in a new window"
+msgstr "Atverti dokumentą naujame lange"
+
+#: src/konqmainwindow.cpp:4419
+#, kde-format
+msgid "Open in &New Tab"
+msgstr "Atverti &naujoje kortelėje"
+
+#: src/konqmainwindow.cpp:4421
+#, kde-format
+msgid "Open the document in a new tab"
+msgstr "Atverti dokumentą naujoje kortelėje"
+
+#: src/konqmainwindow.cpp:4637
+#, kde-format
+msgid "&Open With"
+msgstr "&Atverti su"
+
+#: src/konqmainwindow.cpp:4650
+#, kde-format
+msgid "Open with %1"
+msgstr "Atverti su %1"
+
+#: src/konqmainwindow.cpp:4698
+#, kde-format
+msgctxt "@action:inmenu View"
+msgid "&View Mode"
+msgstr "Žiū&rėjimo būdas"
+
+#: src/konqmainwindow.cpp:4815
+#, kde-format
+msgid ""
+"You have multiple tabs open in this window, are you sure you want to quit?"
+msgstr ""
+"Jūs atvėrėte kelias korteles šiame lange, ar tikrai norite užverti langą?"
+
+#: src/konqmainwindow.cpp:4817
+#, kde-format
+msgctxt "@title:window"
+msgid "Confirmation"
+msgstr "Patvirtinimas"
+
+#: src/konqmainwindow.cpp:4819
+#, kde-format
+msgid "C&lose Current Tab"
+msgstr "Užv&erti esamą kortelę"
+
+#: src/konqmainwindow.cpp:4845
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Closing the window will discard these changes."
+msgstr ""
+"Šioje kortelėje yra pakeitimų, kurie nebuvo išsiųsti.\n"
+"Uždarius langą šie pakeitimai bus atmesti."
+
+#: src/konqmainwindow.cpp:4846
+#, kde-format
+msgid ""
+"This page contains changes that have not been submitted.\n"
+"Closing the window will discard these changes."
+msgstr ""
+"Šiame lape yra pakeitimų, kurie nebuvo išsiųsti.\n"
+"Uždarius langą šie pakeitimai bus atmesti."
+
+#: src/konqmainwindow.cpp:5003
+#, kde-format
+msgid ""
+"Your sidebar is not functional or unavailable. A new entry cannot be added."
+msgstr ""
+"Jūsų šoninė juosta yra nefunkcionuojanti arba neprieinama. Naujas įrašas "
+"negali būti pridėtas."
+
+#: src/konqmainwindow.cpp:5003 src/konqmainwindow.cpp:5010
+#, kde-format
+msgctxt "@title:window"
+msgid "Web Sidebar"
+msgstr "Žiniatinklio šoninė juosta"
+
+#: src/konqmainwindow.cpp:5008
+#, kde-format
+msgid "Add new web extension \"%1\" to your sidebar?"
+msgstr "Ar įdėti naują žiniatinklio plėtinį „%1“ į šoninę juostą?"
+
+#: src/konqmainwindow.cpp:5010
+#, kde-format
+msgid "Add"
+msgstr "Pridėti"
+
+#: src/konqmainwindow.cpp:5010
+#, kde-format
+msgid "Do Not Add"
+msgstr "Neįtraukti"
+
+#: src/konqmainwindow.cpp:5358
+#, kde-format
+msgid ""
+"There appears to be a configuration error. You have associated Konqueror "
+"with %1, but it cannot handle this file type."
+msgstr ""
+"Atrodo, kad susidūrėme su konfigūravimo klaida. Jūs susiejote konqueror su "
+"%1, bet jis negali operuoti šio tipo failais."
+
+#: src/konqmainwindow.cpp:5439
+#, kde-format
+msgid ""
+"Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
+"proxy will be used\n"
+"\n"
+" QtWebEngine only support a fixed proxy, so proxy auto-configuration (PAC) "
+"and Web Proxy Auto-Discovery protocol can't be used with QtWebEngine. If you "
+"need a proxy, please select the system proxy configuration or specify a "
+"proxy URL manually in the settings dialog. Do you want to change proxy "
+"settings now?"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5444
+#, kde-format
+msgid "Unsupported proxy configuration"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5444
+#, kde-format
+msgid "Don't use a proxy"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5445 src/konqmainwindow.cpp:5463
+#, fuzzy, kde-format
+#| msgid "Show Configuration Button"
+msgid "Show proxy configuration dialog"
+msgstr "Rodyti konfigūracijos mygtuką"
+
+#: src/konqmainwindow.cpp:5459
+#, kde-format
+msgid ""
+"Your proxy configuration can't be used with the QtWebEngine HTML engine "
+"because it doesn't support having different proxies for the HTTP and HTTPS "
+"protocols. Your current settings are:<p><b>HTTP proxy:</b> <tt>%1</tt></"
+"p><p><b>HTTPS proxy: </b><tt>%2</tt></p>What do you want to do?"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5462
+#, kde-format
+msgid "Conflicting proxy configuration"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5463
+#, kde-format
+msgid "Use HTTP proxy (only this time)"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5463
+#, kde-format
+msgid "Use HTTPS proxy (only this time)"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5540
+#, kde-format
+msgid ""
+"You have entered Complete Full Screen mode (the user interface is completely "
+"hidden). You can exit it by pressing the keyboard shortcut for Full Screen "
+"Mode (%1)"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: src/konqnewsessiondlg_base.ui:28
+#, fuzzy, kde-format
+#| msgid "Save open tabs and windows for easy retrieval"
+msgid "Save open &tabs and windows for easy retrieval"
+msgstr "Išsaugoti atvertas korteles ir langus paprastam atidarymui iš naujo"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_pAllWindows)
+#: src/konqnewsessiondlg_base.ui:34
+#, kde-format
+msgid "A&ll open windows"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_pCurrentWindow)
+#: src/konqnewsessiondlg_base.ui:44
+#, fuzzy, kde-format
+#| msgid "Open tabs inside current window"
+msgid "Onl&y current window"
+msgstr "Atverti kortelę dabartiniame lange"
+
+#. i18n: ectx: property (text), widget (QLabel, lblSessionName)
+#: src/konqnewsessiondlg_base.ui:56
+#, fuzzy, kde-format
+#| msgid "&Session name:"
+msgid "Session n&ame:"
+msgstr "&Sesijos pavadinimas:"
+
+#: src/konqsessiondlg.cpp:60
+#, kde-format
+msgctxt "@title:window"
+msgid "Manage Sessions"
+msgstr "Tvarkyti sesijas"
+
+#: src/konqsessiondlg.cpp:168
+#, kde-format
+msgctxt "@title:window"
+msgid "Rename Session"
+msgstr "Pervadinti sesiją"
+
+#: src/konqsessiondlg.cpp:215
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Session"
+msgstr "Išsaugoti sesiją"
+
+#: src/konqsessiondlg.cpp:251
+#, kde-format
+msgid ""
+"A session with the name '%1' already exists, do you want to overwrite it?"
+msgstr "Sesija pavadinimu „%1“ jau yra. Ar norite ją perrašyti?"
+
+#: src/konqsessiondlg.cpp:252
+#, kde-format
+msgctxt "@title:window"
+msgid "Session exists. Overwrite?"
+msgstr "Sesija egzistuoja. Perrašyti?"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pNewButton)
+#: src/konqsessiondlg_base.ui:26
+#, kde-format
+msgctxt "@action:button New session"
+msgid "New..."
+msgstr "Naujas..."
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pSaveCurrentButton)
+#: src/konqsessiondlg_base.ui:33
+#, fuzzy, kde-format
+#| msgctxt "@action:button Save current session"
+#| msgid "Save Current"
+msgctxt "@action:button Save current session"
+msgid "Save Current..."
+msgstr "Išsaugoti dabartinę"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pRenameButton)
+#: src/konqsessiondlg_base.ui:40
+#, kde-format
+msgctxt "@action:button Rename session"
+msgid "Rename..."
+msgstr "Pervadinti..."
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pDeleteButton)
+#: src/konqsessiondlg_base.ui:47
+#, kde-format
+msgctxt "@action:button Delete session"
+msgid "Delete"
+msgstr "Trinti"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pOpenTabsInsideCurrentWindow)
+#. i18n: ectx: label, entry, group (Trash)
+#: src/konqsessiondlg_base.ui:73 src/konqueror.kcfg:517
+#, kde-format
+msgid "Open tabs inside current window"
+msgstr "Atverti kortelę dabartiniame lange"
+
+#: src/konqsessionmanager.cpp:86
+#, kde-format
+msgctxt "@title:window"
+msgid "Restore Session?"
+msgstr "Atstatyti sesiją?"
+
+#: src/konqsessionmanager.cpp:107
+#, kde-format
+msgid ""
+"Konqueror did not close correctly. Would you like to restore these previous "
+"sessions?"
+msgstr "Konqueror nebuvo tinkamai užvertas. Ar norite atkuri buvusias sesijas?"
+
+#: src/konqsessionmanager.cpp:119
+#, kde-format
+msgctxt "@tooltip:session list"
+msgid "Uncheck the sessions you do not want to be restored"
+msgstr "Nuimkite varnelę, jei nenorite, kad būtų atkurta"
+
+#: src/konqsessionmanager.cpp:152
+#, kde-format
+msgctxt "@item:treewidget"
+msgid "Window %1"
+msgstr "Langas %1"
+
+#: src/konqsessionmanager.cpp:190
+#, kde-format
+msgid "Do not ask again"
+msgstr "Daugiau nebeklausti"
+
+#: src/konqsessionmanager.cpp:204
+#, kde-format
+msgctxt "@action:button yes"
+msgid "Restore Session"
+msgstr "Atstatyti sesiją"
+
+#: src/konqsessionmanager.cpp:205
+#, kde-format
+msgctxt "@action:button no"
+msgid "Do Not Restore"
+msgstr "Neatstatyti"
+
+#: src/konqsessionmanager.cpp:206
+#, kde-format
+msgctxt "@action:button ask later"
+msgid "Ask Me Later"
+msgstr "Paklausti vėliau"
+
+#: src/konqstatusbarmessagelabel.cpp:67
+#, fuzzy, kde-format
+#| msgid "Close View"
+msgctxt "@info"
+msgid "Close"
+msgstr "Užverti rodymą"
+
+#: src/konqstatusbarmessagelabel.cpp:68
+#, fuzzy, kde-format
+#| msgid "Close View"
+msgid "Close"
+msgstr "Užverti rodymą"
+
+#: src/konqstatusbarmessagelabel.cpp:147
+#, kde-format
+msgid "Error: %1"
+msgstr ""
+
+#: src/konqtabs.cpp:51
+#, kde-format
+msgid ""
+"This bar contains the list of currently open tabs. Click on a tab to make it "
+"active. You can also use keyboard shortcuts to navigate through tabs. The "
+"text on the tab shows the content currently open in it; place your mouse "
+"over the tab to see the full title, in case it has been shortened to fit the "
+"tab width."
+msgstr ""
+"Šioje juostoje  yra visų šiuo metu atvertų kortelių sąrašas. Norėdami "
+"aktyvuoti kortelę, spustelėkite ją. Korteles vartyti galima ir klaviatūros "
+"greitaisiais klavišais. Ant kortelės rašomas tekstas kortelėje atverto "
+"turinio pavadinimas. Jei jis sutrumpintas talpinant į kortelę, norėdami "
+"pamatyti jį visą užveskite pelę virš kortelės."
+
+#: src/konqtabs.cpp:86
+#, kde-format
+msgid "Open a new tab"
+msgstr "Atverti naują kortelę"
+
+#: src/konqtabs.cpp:95
+#, kde-format
+msgid "Close the current tab"
+msgstr "Užverti esamą kortelę"
+
+#: src/konqtabs.cpp:461
+#, kde-format
+msgid "&Duplicate Tab"
+msgstr "&Dubliuoti kortelę"
+
+#: src/konqtabs.cpp:466
+#, kde-format
+msgid "&Reload Tab"
+msgstr "Į&kelti kortelę iš naujo"
+
+#: src/konqtabs.cpp:473
+#, kde-format
+msgid "Other Tabs"
+msgstr "Kitos kortelės"
+
+#: src/konqtabs.cpp:478
+#, kde-format
+msgid "D&etach Tab"
+msgstr "&Atkabinti kortelę"
+
+#: src/konqtabs.cpp:484
+#, kde-format
+msgid "&Close Tab"
+msgstr "&Užverti kortelę"
+
+#. i18n: ectx: label, entry, group (UserSettings)
+#: src/konqueror.kcfg:11
+#, kde-format
+msgid "Start Page"
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry, group (UserSettings)
+#: src/konqueror.kcfg:12
+#, kde-format
+msgid "This is the URL of the web page where Konqueror will start from."
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry, group (UserSettings)
+#: src/konqueror.kcfg:17
+#, fuzzy, kde-format
+#| msgid ""
+#| "This is the URL of the web page where Konqueror (as web browser) will "
+#| "jump to when the \\\"Home\\\" button is pressed. When Konqueror is "
+#| "started as a file manager, that button makes it jump to your local home "
+#| "folder instead."
+msgid ""
+"This is the URL of the web page where Konqueror will jump to when the \\"
+"\"Home\\\" button is pressed."
+msgstr ""
+"Tai yra žiniatinklio puslapio, kurį Konqueror atvers paspaudus mygtuką "
+"„Namai“, URL. Jei Konqueror atvertas kaip failų tvarkyklė, šis mygtukas jus "
+"nuves į namų aplanką."
+
+#. i18n: ectx: label, entry, group (UndoManagerSettings)
+#: src/konqueror.kcfg:26
+#, kde-format
+msgid "Maximum number of Closed Items"
+msgstr "Maksimalus užvertų atvejų skaičius"
+
+#. i18n: ectx: whatsthis, entry, group (UndoManagerSettings)
+#: src/konqueror.kcfg:27
+#, kde-format
+msgid ""
+"This sets the maximum number of closed items that will be stored in memory. "
+"This limit will not be surpassed."
+msgstr ""
+"Čia nustatomas maksimalus užvertų atvejų skaičius. Tik tiek atvejų bus "
+"saugoma atmintyje."
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:36
+#, kde-format
+msgid "Open folders in separate windows"
+msgstr "Atverti aplankus atskiruose languose"
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:37
+#, kde-format
+msgid ""
+"If this option is checked, Konqueror will open a new window when you open a "
+"folder, rather than showing that folder's contents in the current window."
+msgstr ""
+"Jei ši parinktis pažymėta, atveriant aplanką Konqueror, užuot rodęs aplanko "
+"turinį tame pačiame lange, atvers naują langą."
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:42
+#, kde-format
+msgid "Show file tips"
+msgstr "Rodyti failų informacijos debesėlius"
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:43
+#, kde-format
+msgid ""
+"Here you can control if, when moving the mouse over a file, you want to see "
+"a small popup window with additional information about that file"
+msgstr ""
+"Čia galite nurodyti, kad stumiant pelę virš failo, pasirodytų mažas langas "
+"su papildoma informacija apie tą failą"
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:54
+#, kde-format
+msgid "Show previews in file tips"
+msgstr "Failų informacijos debesėliuose rodyti failų peržiūrą"
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:55
+#, kde-format
+msgid ""
+"Here you can control if you want the popup window to contain a larger "
+"preview for the file, when moving the mouse over it"
+msgstr ""
+"Čia galite nurodyti, kad užvedus pelę virš failo pasirodžiusiame lange būtų "
+"rodomas didesnis failo peržiūros paveikslėlis."
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:60
+#, kde-format
+msgid "Show 'Delete' menu entries which bypass the trashcan"
+msgstr ""
+"Rodyti meniu įrašą „Pašalinti“, kurį naudojant failai nepatektų į "
+"šiukšliadėžę"
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:61
+#, kde-format
+msgid ""
+"Check this if you want 'Delete' menu commands to be displayed on the desktop "
+"and in the file manager's menus and context menus. You can always delete "
+"files when hidden by holding the Shift key while calling 'Move to Trash'."
+msgstr ""
+"Įjunkite šią parinktį jei norite, kad meniu komanda „Pašalinti“ būtų rodoma "
+"darbastalyje ir failų tvarkyklės kontekstiniame meniu. Visuomet galite "
+"pašalinti failus laikydami nuspaustą Shift klavišą ir kartu pasirinkdami "
+"meniu įrašą „Perkelti į šiukšliadėžę“ iš kontekstinio meniu."
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:153 src/konqueror.kcfg:154
+#, kde-format
+msgid "Number of Open With items in the File menu"
+msgstr "„Atverti su“ įrašų, esančių meniu „Failas“, skaičius"
+
+#. i18n: ectx: label, entry, group (HTML Settings)
+#: src/konqueror.kcfg:163
+#, kde-format
+msgid "Standard font"
+msgstr "Standartinis šriftas"
+
+#. i18n: ectx: whatsthis, entry, group (HTML Settings)
+#: src/konqueror.kcfg:164
+#, kde-format
+msgid "This is the font used to display text in Konqueror windows."
+msgstr "Tai yra šriftas, naudojamas parodyti Konqueror lango tekstui."
+
+#. i18n: ectx: label, entry, group (HistorySettings)
+#: src/konqueror.kcfg:314
+#, kde-format
+msgid "Maximum number of history items per view"
+msgstr "Maksimalus istorijos įrašų skaičius peržiūroje"
+
+#. i18n: ectx: label, entry, group (Trash)
+#: src/konqueror.kcfg:504
+#, kde-format
+msgid "Ask confirmation for deleting a file."
+msgstr "Prieš trinant failą prašyti patvirtinimo"
+
+#. i18n: ectx: whatsthis, entry, group (Trash)
+#: src/konqueror.kcfg:505
+#, kde-format
+msgid ""
+"This option tells Konqueror whether to ask for a confirmation when you "
+"delete a file without using the trash folder. Warning, deleted files can not "
+"be recovered, so it is recommended to leave this confirmation enabled."
+msgstr ""
+"Ši parinktis pasako nurodo Konqueror, ar reikia klausti patvirtinimo trinant "
+"failus (jei juos iš tiesų ištrinate, o ne siunčiate į šiukšliadėžę). "
+"Ištrintų failų atstatyti neįmanoma, todėl rekomenduojama PALIKTI šią "
+"parinktį įjungtą."
+
+#. i18n: ectx: label, entry, group (Trash)
+#: src/konqueror.kcfg:510
+#, kde-format
+msgid "Ask confirmation for move to trash"
+msgstr "Klausti patvirtinimo prieš perkeliant į šiukšliadėžę"
+
+#. i18n: ectx: whatsthis, entry, group (Trash)
+#: src/konqueror.kcfg:511
+#, kde-format
+msgid ""
+"This option tells Konqueror whether to ask for a confirmation when you move "
+"the file to your trash folder, from where it can be recovered very easily."
+msgstr ""
+"Ši parinktis nurodo Konqueror ar prašyti patvirtinimo, kai failas "
+"perkeliamas į šiukšliadėžę, iš kurios nesunkiai galite failą išimti."
+
+#. i18n: ectx: whatsthis, entry, group (Trash)
+#: src/konqueror.kcfg:518
+#, kde-format
+msgid ""
+"If true, when opening a session from within the sessions dialog the tabs "
+"will be opened inside current window."
+msgstr ""
+"Jei ši parinktis įjungta, atveriant sesiją iš sesijų dialogo kortelės bus "
+"atvertos šiame lange."
+
+#. i18n: ectx: Menu (file)
+#: src/konqueror.rc:5
+#, kde-format
+msgid "&File"
+msgstr "&Failas"
+
+#. i18n: ectx: Menu (edit)
+#: src/konqueror.rc:24
+#, kde-format
+msgid "&Edit"
+msgstr "&Keisti"
+
+#. i18n: ectx: Menu (view)
+#: src/konqueror.rc:33
+#, kde-format
+msgid "&View"
+msgstr "&Rodymas"
+
+#. i18n: ectx: Menu (go)
+#: src/konqueror.rc:44
+#, kde-format
+msgid "&Go"
+msgstr "&Eiti"
+
+#. i18n: ectx: Menu (tools)
+#: src/konqueror.rc:54
+#, kde-format
+msgid "&Tools"
+msgstr ""
+
+#. i18n: ectx: Menu (settings)
+#: src/konqueror.rc:59
+#, kde-format
+msgid "&Settings"
+msgstr "&Nuostatos"
+
+#. i18n: ectx: Menu (window)
+#: src/konqueror.rc:77
+#, kde-format
+msgid "&Window"
+msgstr "&Langas"
+
+#. i18n: ectx: Menu (help)
+#: src/konqueror.rc:93
+#, kde-format
+msgid "&Help"
+msgstr "&Pagalba"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: src/konqueror.rc:98
+#, kde-format
+msgid "Main Toolbar"
+msgstr "Pagrindinė įrankinė"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: src/konqueror.rc:109
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "Papildoma įrankinė"
+
+#. i18n: ectx: ToolBar (locationToolBar)
+#: src/konqueror.rc:116
+#, kde-format
+msgid "Location Toolbar"
+msgstr "Adreso įrankinė"
+
+#. i18n: ectx: ToolBar (bookmarkToolBar)
+#: src/konqueror.rc:122
+#, kde-format
+msgid "Bookmark Toolbar"
+msgstr "Žymelių įrankinė"
+
+#: src/konqundomanager.cpp:90 src/konqundomanager.cpp:252
+#, kde-format
+msgid "Und&o: Closed Tab"
+msgstr "Atšaukti: Užv&ertą kortelę"
+
+#: src/konqundomanager.cpp:92 src/konqundomanager.cpp:103
+#: src/konqundomanager.cpp:147
+#, kde-format
+msgid "Und&o: Closed Window"
+msgstr "Atšaukti: &Užvertą langą"
+
+#: src/konqundomanager.cpp:105
+#, kde-format
+msgid "Und&o"
+msgstr "&Atšaukti"
+
+#: src/konqview.cpp:1162
+#, kde-format
+msgid ""
+"The page you are trying to view is the result of posted form data. If you "
+"resend the data, any action the form carried out (such as search or online "
+"purchase) will be repeated. "
+msgstr ""
+"Puslapis, kurį Jūs bandote žiūrėti yra nusiųstų formos duomenų rezultatas. "
+"Jei Jūs nusiųsite duomenis iš naujo, bet kokie veiksmai, kuriuos atliko "
+"forma (tokie kaip paieška ar internetinis pirkinys), bus pakartoti. "
+
+#: src/konqview.cpp:1164
+#, kde-format
+msgctxt "@title:window"
+msgid "Warning"
+msgstr "Dėmesio"
+
+#: src/konqview.cpp:1164
+#, kde-format
+msgid "Resend"
+msgstr "Siųsti vėl"
+
+#: src/urlloader.cpp:253
+#, kde-format
+msgctxt "Execute an executable file"
+msgid "Execute it"
+msgstr ""
+
+#: src/urlloader.cpp:258
+#, kde-format
+msgctxt ""
+"The user has to decide whether to execute an executable file or display it"
+msgid ""
+"<tt>%1</tt> can be executed. Do you want to execute it or to display it?"
+msgstr ""
+
+#: src/urlloader.cpp:259
+#, kde-format
+msgctxt "Display an executable file"
+msgid "Display it"
+msgstr ""
+
+#: src/urlloader.cpp:263
+#, kde-format
+msgctxt "The user has to decide whether to execute an executable file or not"
+msgid "<tt>%1</tt> can be executed. Do you want to execute it?"
+msgstr ""
+
+#: src/urlloader.cpp:438
+#, fuzzy, kde-format
+#| msgid "Save As..."
+msgid "Save As"
+msgstr "Išsaugoti kaip..."
+
+#~ msgid "File Management"
+#~ msgstr "Failų tvarkymas"
+
+#~ msgid "Web Browsing"
+#~ msgstr "Žiniatinklio naršymas"
+
+#~ msgctxt "@title:window"
+#~ msgid "Configure"
+#~ msgstr "Konfigūruoti"
+
+#~ msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
+#~ msgid "Be free."
+#~ msgstr "Būk laisvas."
+
+#~ msgid ""
+#~ "Konqueror is a web browser, file manager and universal document viewer."
+#~ msgstr ""
+#~ "Konqueror yra žiniatinklio naršyklė, failų tvarkyklė ir universali "
+#~ "dokumentų žiūryklė."
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "Starting Points"
+#~ msgstr "Pradinė pažintis"
+
+#~ msgid "Introduction"
+#~ msgstr "Įžanga"
+
+#~ msgid "Tips"
+#~ msgstr "Patarimai"
+
+#~ msgid "Specifications"
+#~ msgstr "Specifikacijos"
+
+#~ msgid "Your personal files"
+#~ msgstr "Jūsų asmeniniai failai"
+
+#~ msgid "Trash"
+#~ msgstr "Šiukšliadėžė"
+
+#~ msgid "Browse and restore the trash"
+#~ msgstr "Naršyti šiukšlėse ir atstatyti"
+
+#~ msgid "Network Folders"
+#~ msgstr "Tinklo aplankai"
+
+#~ msgid "Shared files and folders"
+#~ msgstr "Bendro naudojimo failai ir aplankai"
+
+#~ msgid "Bookmarks"
+#~ msgstr "Žymelės"
+
+#~ msgid "Quick access to your bookmarks"
+#~ msgstr "Greita prieiga prie žymelių"
+
+#~ msgid "Next: An Introduction to Konqueror"
+#~ msgstr "Toliau: Konqueror pristatymas"
+
+#~ msgid "Search the Web"
+#~ msgstr "Ieškoti žiniatinklyje"
+
+#~ msgid ""
+#~ "Konqueror makes working with and managing your files easy. You can browse "
+#~ "both local and networked folders while enjoying advanced features such as "
+#~ "the powerful sidebar and file previews."
+#~ msgstr ""
+#~ "Konqueror supaprastina darbą su failais. Galite naršyti tiek vietinius, "
+#~ "tiek ir tinklo aplankus, tuo pačiu metu mėgaudamiesi tokiais pažangiais "
+#~ "Konqueror bruožais, kaip galinga šoninė juosta ir failų peržiūra."
+
+#~ msgid ""
+#~ "Konqueror is also a full featured and easy to use web browser which you "
+#~ "can use to explore the Internet. Enter the address (e.g. <a href=\"http://"
+#~ "www.kde.org\">http://www.kde.org</a>) of a web page you would like to "
+#~ "visit in the location bar and press Enter, or choose an entry from the "
+#~ "Bookmarks menu."
+#~ msgstr ""
+#~ "Konqueror taip pat yra daug galimybių turinti ir lengvai naudojama "
+#~ "žiniatinklio naršyklė, kurią galite naudoti  naršydami Internete. Tiesiog "
+#~ "įveskite Interneto adresą (pvz. <a href=\"http://www.kde.org\">http://www."
+#~ "kde.org</a> ), atitinkantį norimą tinklalapį, ir paspauskite Enter. Taip "
+#~ "pat galite pasirinkti įrašą iš žymelių meniu."
+
+#~ msgid ""
+#~ "To return to the previous location, press the back button <img width='16' "
+#~ "height='16' src=\"%1\"></img> in the toolbar. "
+#~ msgstr ""
+#~ "Jei norite sugrįžti į prieš tai žiūrėtą tinklalapį, įrankinėje spauskite "
+#~ "mygtuką „Atgal“ <img width='16' height='16' src=\"%1\"></img>."
+
+#~ msgid ""
+#~ "To quickly go to your Home folder press the home button <img width='16' "
+#~ "height='16' src=\"%1\"></img>."
+#~ msgstr ""
+#~ "Norėdami skubiai grįžti į savo Namų aplanką, spauskite „Namų“ mygtuką "
+#~ "<img width='16' height='16' src=\"%1\"></img>."
+
+#~ msgid ""
+#~ "For more detailed documentation on Konqueror click <a href=\"%1\">here</"
+#~ "a>."
+#~ msgstr ""
+#~ "Norėdami susipažinti su detalesne Konqueror dokumentacija, paspauskite <a "
+#~ "href=\"%1\">čia</a>."
+
+#, fuzzy
+#~| msgid "Next: Tips &amp; Tricks"
+#~ msgid "Next: Tips & Tricks"
+#~ msgstr "Toliau: Patarimai ir gudrybės"
+
+#~ msgid ""
+#~ "Konqueror is designed to embrace and support Internet standards. The aim "
+#~ "is to fully implement the officially sanctioned standards from "
+#~ "organizations such as the W3 and OASIS, while also adding extra support "
+#~ "for other common usability features that arise as de facto standards "
+#~ "across the Internet. Along with this support, for such functions as "
+#~ "favicons, Web Shortcuts, and <A HREF=\"%1\">XBEL bookmarks</A>, Konqueror "
+#~ "also implements:"
+#~ msgstr ""
+#~ "Konqueror sukurtas laikantis ir pritaikant interneto standartus. Tikslas "
+#~ "yra pilnai įgyvendinti tokių organizacijų kaip W3 ir OASIS oficialiai "
+#~ "patvirtintus standartus, taip pat pridedant papildomai kitų bendrų "
+#~ "naudingų dalykų, atsirandančių Internete kaip de facto standartai, "
+#~ "palaikymą.  Kartu su tokiais dalykais, kaip žymelių ženkliukai, Interneto "
+#~ "raktiniai žodžiai ir <a href=\"%1\">XBEL žymelės</a>, Konqueror taip pat "
+#~ "palaiko:"
+
+#~ msgid "Supported standards"
+#~ msgstr "Palaikomi standartai"
+
+#~ msgid "Additional requirements*"
+#~ msgstr "Papildomi reikalavimai*"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">DOM</A> (Level 1, iš dalies Level 2) pagrindu <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+
+#~ msgid "built-in"
+#~ msgstr "įtaisyta"
+
+#~ msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">Pakopiniai stiliaus aprašymai</A> (CSS 1, iš dalies CSS 2)"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">ECMA-262</A> 3-ias leidimas (maždaug atitinka Javascript "
+#~ "1.5)"
+
+#~ msgid ""
+#~ "JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
+#~ msgstr ""
+#~ "Javascript yra išjungtas (bendrai). Įjunkite Javascript <A HREF="
+#~ "\"%1\">čia</A>."
+
+#~ msgid ""
+#~ "JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\"
+#~ "\">here</A>."
+#~ msgstr ""
+#~ "Javascript įgalintas (globaliai). Konfigūruokite Javascript <A HREF=\\"
+#~ "\"%1\\\">čia</A>"
+
+#~ msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
+#~ msgstr "Saugios <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> palaikymas"
+
+#, fuzzy
+#~| msgid ""
+#~| "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">IBM</A> or <A HREF="
+#~| "\"%2\">Sun/Oracle</A>)"
+#~ msgid ""
+#~ "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">OpenJDK</A> or <A HREF="
+#~ "\"%2\">Sun/Oracle</A>)"
+#~ msgstr ""
+#~ "JDK 1.2.0 (Java 2) suderinama VM (<A HREF=\"%1\">IBM</A> arba <A HREF="
+#~ "\"%2\">Sun/Oracle</A>)"
+
+#~ msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
+#~ msgstr "Įjunkite Java (bendrai) <A HREF=\"%1\">čia</A>."
+
+#~ msgid "Secure Sockets Layer"
+#~ msgstr "Secure Sockets Layer"
+
+#~ msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
+#~ msgstr "(TLS/SSL v2/3) saugiam ryšiui iki 168 bitų"
+
+#~ msgid "OpenSSL"
+#~ msgstr "OpenSSL"
+
+#~ msgid "Bidirectional 16bit unicode support"
+#~ msgstr "Dvipkrypčio 16 bitų Unikodo palaikymas"
+
+#~ msgid "AutoCompletion for forms"
+#~ msgstr "Automatinis formų užpildymas"
+
+#~ msgctxt "Title of an html 'group box' explaining konqueror features"
+#~ msgid "General"
+#~ msgstr "Bendri"
+
+#~ msgid "Feature"
+#~ msgstr "Savybė"
+
+#~ msgid "Details"
+#~ msgstr "Smulkiau"
+
+#~ msgid "Image formats"
+#~ msgstr "Paveikslėlių formatai"
+
+#~ msgid "PNG<br />JPG<br />GIF"
+#~ msgstr "PNG<br />JPG<br />GIF"
+
+#~ msgid "Transfer protocols"
+#~ msgstr "Duomenų perdavimo protokolai"
+
+#~ msgid "HTTP 1.1 (including gzip/bzip2 compression)"
+#~ msgstr "HTTP 1.1 (įskaitant gzip/bzip2 kompresiją)"
+
+#~ msgid "FTP"
+#~ msgstr "FTP"
+
+#, fuzzy
+#~| msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpcenter)...</A>"
+#~ msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpCenter)...</A>"
+#~ msgstr ""
+#~ "ir <A HREF=\"%1\">daug daugiau (žiūrėkite Kioslaves pagalbos centre)</A>"
+
+#~ msgctxt "A feature of Konqueror"
+#~ msgid "URL-Completion"
+#~ msgstr "URL užbaigimas"
+
+#~ msgid "Manual"
+#~ msgstr "Rankinis"
+
+#~ msgid "Popup"
+#~ msgstr "Pasirodančio lango pagalba"
+
+#~ msgid "(Short-) Automatic"
+#~ msgstr "(Trumpai) Automatinis"
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "<a href=\"%1\">Return to Starting Points</a>"
+#~ msgstr "<a href=\"%1\">Atgal į Pradinę pažintį</a>"
+
+#, fuzzy
+#~| msgid "Tips &amp; Tricks"
+#~ msgid "Tips & Tricks"
+#~ msgstr "Patarimai ir gudrybės"
+
+#~ msgid ""
+#~ "Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, "
+#~ "using Google, for the search phrase \"KDE\". There are a lot of Web-"
+#~ "Shortcuts predefined to make searching for software or looking up certain "
+#~ "words in an encyclopedia a breeze. You can even <a href=\"%1\">create "
+#~ "your own</a> Web-Shortcuts."
+#~ msgstr ""
+#~ "Naudokite žiniatinklio trumpes: surinkus „gg: KDE“ galima ieškoti "
+#~ "Internete naudojant Google paieškos frazę „KDE“. Yra apibrėžta daug "
+#~ "žiniatinklio trumpinių, labai supaprastinančių programų ar žodžių paiešką "
+#~ "enciklopedijoje. Taip pat galite <a href=\"%1\">kurti savas</a> "
+#~ "žiniatinklio trumpes."
+
+#~ msgid ""
+#~ "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
+#~ "the HTML toolbar to increase the font size on your web page."
+#~ msgstr ""
+#~ "Naudokite įrankinėje esantį padidinimo mygtuką <img width='16' "
+#~ "height='16' src=\"%1\"></img> norėdami pasididinti žiniatinklio puslapio "
+#~ "šrifto dydį."
+
+#~ msgid ""
+#~ "When you want to paste a new address into the Location toolbar you might "
+#~ "want to clear the current entry by pressing the black arrow with the "
+#~ "white cross <img width='16' height='16' src=\"%1\"></img> in the toolbar."
+#~ msgstr ""
+#~ "Norėdami įterpti naują adresą į adreso įrankinę, visų pirma išvalykite "
+#~ "esamą eilutę paspausdami įrankinėje esantį ženkliuką: juodą rodyklytę su "
+#~ "baltu kryžiuku <img width='16' height='16' src=\"%1\"></img>."
+
+#~ msgid ""
+#~ "To create a link on your desktop pointing to the current page, simply "
+#~ "drag the icon (favicon) that is to the left of the Location toolbar, drop "
+#~ "it on to the desktop, and choose \"Icon\"."
+#~ msgstr ""
+#~ "Norėdami sukurti nuorodą Jūsų darbastalyje, rodančią į esamą puslapį, "
+#~ "paprasčiausiai nutempkite žymą „Adresas“ adreso įrankinės kairėje, "
+#~ "numeskite ją ant darbastalio, ir pasirinkite „Padaryti nuorodą čia“."
+
+#~ msgid ""
+#~ "You can also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen "
+#~ "Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
+#~ "sessions."
+#~ msgstr ""
+#~ "Parinktį <img width='16' height='16' src=\"%1\" /> „Rodyti visame ekrane“ "
+#~ "galite rasti Nustatymų meniu. Ši savybė labai naudinga „talk“ sesijoms."
+
+#, fuzzy
+#~| msgid ""
+#~| "Divide et impera (lat. \"Divide and conquer\") - by splitting a window "
+#~| "into two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> "
+#~| "Split View Left/Right) you can make Konqueror appear the way you like. "
+#~| "You can even load some example view-profiles (e.g. Midnight Commander), "
+#~| "or create your own ones."
+#~ msgid ""
+#~ "Divide et impera (lat. \"Divide and conquer\") - by splitting a window "
+#~ "into two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> "
+#~ "Split View Left/Right) you can make Konqueror appear the way you like."
+#~ msgstr ""
+#~ "Divide et impera (lot. „Skaldyk ir užkariauk“ (angl.: „conquer“)) – "
+#~ "padalindami langą į dvi dalis (pvz. Langas -> Skaidyti rodymą į kairę ir "
+#~ "dešinę <img width='16' height='16' src=\"%1\" />) galite suteikti "
+#~ "Konqueror tokią išvaizdą, kokios norite. Jūs netgi galite įkelti kai "
+#~ "kuriuos pavyzdinius rodymo profilius (pvz. Midnight Commander), arba "
+#~ "susikurti savo."
+
+#~ msgid ""
+#~ "Use the <a href=\"%1\">user-agent</a> feature if the website you are "
+#~ "visiting asks you to use a different browser (and do not forget to send a "
+#~ "complaint to the webmaster!)"
+#~ msgstr ""
+#~ "Naudokite <a href=\"%1\">user-agent</a> savybę jei žiniatinklio svetainė, "
+#~ "kurioje lankotės, prašo naudoti kitą naršyklę (ir nepamirškite pasiųsti "
+#~ "skundo svetainės administratoriui!)"
+
+#~ msgid ""
+#~ "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
+#~ "ensures that you can keep track of the pages you have visited recently."
+#~ msgstr ""
+#~ "<img width='16' height='16' src=\"%1\"></img> Istorija šoniniame meniu "
+#~ "užtikrina, kad visuomet prisiminsite, kokius puslapius nesenai aplankėte."
+
+#~ msgid ""
+#~ "Use a caching <a href=\"%1\">proxy</a> to speed up your Internet "
+#~ "connection."
+#~ msgstr ""
+#~ "Naudokite kešuojantį <A HREF=\"%1\">proxy</A> norėdami pagreitinti "
+#~ "naršymą Internete."
+
+#~ msgid ""
+#~ "Advanced users will appreciate the Konsole which you can embed into "
+#~ "Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
+#~ "Terminal Emulator)."
+#~ msgstr ""
+#~ "Labiau patyrusiems naudotojams patiks Konsole, kurią galite įterpti į "
+#~ "Konqueror (Langas -> <img width='16' height='16' SRC=\"%1\"></img> Rodyti "
+#~ "Terminalo emuliatorius)."
+
+#~ msgid "Next: Specifications"
+#~ msgstr "Toliau: Specifikacijos"
+
+#~ msgid "Installed Plugins"
+#~ msgstr "Įdiegti priedai"
+
+#~ msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
+#~ msgstr "<td>Priedas</td><td>Aprašymas</td><td>Failas</td><td>Tipai</td>"
+
+#~ msgid "Installed"
+#~ msgstr "Įdiegta"
+
+#~ msgid ""
+#~ "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
+#~ msgstr ""
+#~ "<td>Mime tipas</td><td>Aprašymas</td><td>Priesagos</td><td>Priedas</td>"
+
+#~ msgid "&Open"
+#~ msgstr "&Atverti"
+
+#~ msgid ""
+#~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">plugins</A> (for "
+#~ "viewing <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
+#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Video, etc.)"
+#~ msgstr ""
+#~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">priedai</A> (for "
+#~ "viewing <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
+#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Video, ir t.t.) "
+
+#~ msgid "http://konqueror.kde.org"
+#~ msgstr "http://www.konqueror.kde.org"
+
+#~ msgid "Limits"
+#~ msgstr "Limitai"
+
+#~ msgid "URLs e&xpire after"
+#~ msgstr "URL'ai &pasensta po"
+
+#~ msgid "Maximum &number of URLs:"
+#~ msgstr "Maksimalus URL'ų &skaičius:"
+
+#~ msgid "Custom Fonts For"
+#~ msgstr "Derinti šriftai"
+
+#~ msgid "URLs newer than"
+#~ msgstr "URL'ai naujesni nei"
+
+#~ msgid "Choose Font..."
+#~ msgstr "Pasirinkite šriftą..."
+
+#~ msgid "URLs older than"
+#~ msgstr "URL'ai senesni nei"
+
+#~ msgid ""
+#~ "Shows the number of times visited and the dates of the first and last "
+#~ "visits, in addition to the URL"
+#~ msgstr ""
+#~ "Papildomai be URL dar rodo apsilankymų skaičių bei pirmo ir paskutinio "
+#~ "vizito datas"
+
+#~ msgid "Detailed tooltips"
+#~ msgstr "Detalios įrankių etiketės"
+
+#~ msgid "Clear History"
+#~ msgstr "Išvalyti istoriją"
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "History Sidebar Module"
+#~ msgstr "Istorijos šoninės juostos modulis"
+
+#~ msgctxt "@title:tab"
+#~ msgid "History"
+#~ msgstr "Istorija"
+
+#~ msgid "Minute"
+#~ msgid_plural "Minutes"
+#~ msgstr[0] "Minutė"
+#~ msgstr[1] "Minutės"
+#~ msgstr[2] "Minučių"
+#~ msgstr[3] "Minutė"
+
+#~ msgid "Day"
+#~ msgid_plural "Days"
+#~ msgstr[0] "Diena"
+#~ msgstr[1] "Dienos"
+#~ msgstr[2] "Dienų"
+#~ msgstr[3] "Diena"
+
+#~ msgid "<h1>History Sidebar</h1> You can configure the history sidebar here."
+#~ msgstr ""
+#~ "<h1>Istorijos šoninė juosta</h1>Čia Jūs galite konfigūruoti šoninę "
+#~ "istorijos juostą."
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Places Sidebar Module"
+#~ msgstr "Vietų šoninės juostos modulis"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Places"
+#~ msgstr "Vietos"
+
+#~ msgid "Extended Sidebar"
+#~ msgstr "Išplėstas šoninis meniu"
+
+#~ msgid "Rollback to System Default"
+#~ msgstr "Sugrįžti prie numatytų sistemos reikšmių"
+
+#~ msgid "Configure Sidebar"
+#~ msgstr "Konfigūruoti šoninį meniu"
+
+#~ msgid "Add New"
+#~ msgstr "Pridėti naują"
+
+#~ msgid "Multiple Views"
+#~ msgstr "Daug rodymų"
+
+#~ msgid "Show Tabs Left"
+#~ msgstr "Rodyti korteles kairėje"
+
+#~ msgid "Close Sidebar"
+#~ msgstr "Užverti šoninę juostą"
+
+#~ msgid "This entry already exists."
+#~ msgstr "Toks įrašas jau yra."
+
+#~ msgid ""
+#~ "<qt>This removes all your entries from the sidebar and adds the system "
+#~ "default ones.<br /><b>This procedure is irreversible</b><br />Do you want "
+#~ "to proceed?</qt>"
+#~ msgstr ""
+#~ "<qt>Tai pašalina visus objektus iš šoninės juostos ir prideda sistemos "
+#~ "numatytus.<br /><b>Ši procedūra yra negrįžtama</b><br />Ar norite tęsti?</"
+#~ "qt>"
+
+#~ msgid "Show Tabs Right"
+#~ msgstr "Rodyti korteles, esančias dešiniau"
+
+#~ msgctxt "@title:window"
+#~ msgid "Set Name"
+#~ msgstr "Nustatyti vardą"
+
+#~ msgid "Enter the name:"
+#~ msgstr "Įveskite vardą:"
+
+#~ msgid "Enter a URL:"
+#~ msgstr "Įvesti URL:"
+
+#~ msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
+#~ msgstr "<qt>Ar tikrai norite pašalinti <b>%1</b> kortelę?</qt>"
+
+#~ msgid ""
+#~ "You have hidden the sidebar configuration button. To make it visible "
+#~ "again, click the right mouse button on any of the sidebar buttons and "
+#~ "select \"Show Configuration Button\"."
+#~ msgstr ""
+#~ "Jūs paslėpėte šoninės juostos konfigūravimo mygtuką.  Norėdami jį vėl "
+#~ "padaryti matomu, spragtelėkite dešiniuoju pelės klavišu ant bet kokio iš "
+#~ "navigacijos pulto mygtukų ir pasirinkite „Rodyti konfigūravimo mygtuką“."
+
+#~ msgid "Set Name..."
+#~ msgstr "Nustatyti vardą..."
+
+#~ msgid "Set URL..."
+#~ msgstr "Nustatyti URL..."
+
+#~ msgid "Set Icon..."
+#~ msgstr "Nustatyti ženkliuką..."
+
+#~ msgid "Remove"
+#~ msgstr "Pašalinti"
+
+#~ msgid "Web module"
+#~ msgstr "Žiniatinklio modulis"
+
+#~ msgid "&Create New Folder"
+#~ msgstr "&Sukurti naują aplanką"
+
+#~ msgid "Delete Folder"
+#~ msgstr "Ištrinti aplanką"
+
+#~ msgid "Delete Bookmark"
+#~ msgstr "Ištrinti žymelę"
+
+#~ msgid "Properties"
+#~ msgstr "Savybės"
+
+#~ msgid "Open in New Window"
+#~ msgstr "Atverti naujame lange"
+
+#~ msgid "Open Folder in Tabs"
+#~ msgstr "Atverti aplanką kortelėse"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "Kopijuoti nuorodos adresą"
+
+#~ msgctxt "@title:window"
+#~ msgid "Create New Bookmark Folder"
+#~ msgstr "Sukurti naują žymelių aplanką"
+
+#~ msgid "New folder:"
+#~ msgstr "Naujas aplankas:"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark folder\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "Ar tikrai norite pašalinti žymelių aplanką\n"
+#~ "„%1“?"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "Ar tikrai norite pašalinti žymelę\n"
+#~ "„%1“?"
+
+#~ msgctxt "@title:window"
+#~ msgid "Bookmark Folder Deletion"
+#~ msgstr "Žymelių aplanko trynimas"
+
+#~ msgctxt "@title:window"
+#~ msgid "Bookmark Deletion"
+#~ msgstr "Žymelių trynimas"
+
+#~ msgctxt "@title:window"
+#~ msgid "Bookmark Properties"
+#~ msgstr "Žymelės savybės"
+
+#~ msgid "&Update"
+#~ msgstr "&Atnaujinti"
+
+#~ msgid "Name:"
+#~ msgstr "Vardas:"
+
+#~ msgid "Location:"
+#~ msgstr "Adresas:"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add Bookmark"
+#~ msgstr "Pridėti žymelę"
+
+#~ msgid "Cannot find parent item %1 in the tree. Internal error."
+#~ msgstr ""
+#~ "Nepavyko rasti aukštesniojo lygmens objekto %1 medyje. Vidinė klaida."
+
+#~ msgid "&Create New Folder..."
+#~ msgstr "&Sukurti naują aplanką..."
+
+#~ msgid "Move to Trash"
+#~ msgstr "Perkelti į šiukšliadėžę"
+
+#~ msgid "Rename"
+#~ msgstr "Pervadinti"
+
+#~ msgid "Delete Link"
+#~ msgstr "Trinti nuorodą"
+
+#~ msgid "New Folder"
+#~ msgstr "Naujas aplankas"
+
+#~ msgctxt "@title:window"
+#~ msgid "Create New Folder"
+#~ msgstr "Sukurti naują aplanką"
+
+#~ msgid "Enter folder name:"
+#~ msgstr "Įveskite aplanko vardą:"
+
+#~ msgctxt "@label"
+#~ msgid "Name:"
+#~ msgstr "Vardas:"
+
+#~ msgctxt "@label"
+#~ msgid "Path or URL:"
+#~ msgstr "Kelias arba nuoroda:"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add folder sidebar module"
+#~ msgstr "Pridėti aplanko šoninės juostos modulį"
+
+#~ msgid "&Open Link"
+#~ msgstr "&Atverti nuorodą"
+
+#~ msgid "Set &Automatic Reload"
+#~ msgstr "Nustatyti &automatinį įkėlimą iš naujo"
+
+#~ msgctxt "@title:window"
+#~ msgid "Set Refresh Timeout (0 disables)"
+#~ msgstr "Nustatyti atnaujinimo laiko limitą (0 – išjungti)"
+
+#~ msgid " minute"
+#~ msgid_plural " minutes"
+#~ msgstr[0] " minutė"
+#~ msgstr[1] " minutės"
+#~ msgstr[2] " minučių"
+#~ msgstr[3] " minutė"
+
+#~ msgid " second"
+#~ msgid_plural " seconds"
+#~ msgstr[0] " sekundė"
+#~ msgstr[1] " sekundės"
+#~ msgstr[2] " sekundžių"
+#~ msgstr[3] " sekundė"
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Web Sidebar Module"
+#~ msgstr "Žiniatinklio šoninės juostos modulis"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add web sidebar module"
+#~ msgstr "Pridėti žiniatinklio šoninės juostos modulį"
+
+#~ msgid "&Use index.html"
+#~ msgstr "Na&udoti index.html"
+
+#~ msgid "If present, open index.html when entering a folder."
+#~ msgstr "Įeinant į aplanką atverti index.html, jei toks yra."
+
+#~ msgid ""
+#~ "<em>Tuning Tip:</em> If you want the Konqueror web browser to start "
+#~ "faster, you can turn off this information screen by clicking <a href="
+#~ "\"%1\">here</a>. You can re-enable it by choosing the Help -> Konqueror "
+#~ "Introduction menu option, and then pressing Settings -> Save View Profile "
+#~ "As... -> \"Web Browsing\"."
+#~ msgstr ""
+#~ "<em>Derinimo patarimas:</em> Jei norite, kad Konqueror žiniatinklio "
+#~ "naršyklė pasileistų greičiau, galite išjungti šį informacijos ekraną "
+#~ "paspausdami <a href=\"%1\">čia</a>. Vėliau galėsite jį vėl įjungti "
+#~ "pasirinkdami meniu parinktį Pagalba -> Konqueror įžanga, ir paskui "
+#~ "paspausdami Langas -> Įrašyti peržiūros profilį „Žiniatinklio naršymas“."
+
+#~ msgid ""
+#~ "Do you want to disable showing the introduction in the webbrowsing "
+#~ "profile?"
+#~ msgstr ""
+#~ "Ar norite išjungti įžangos rodymą Jūsų „Žiniatinklio naršymo“ profilyje?"
+
+#~ msgctxt "@title:window"
+#~ msgid "Faster Startup?"
+#~ msgstr "Greitesnis paleidimas?"
+
+#~ msgid "Disable"
+#~ msgstr "Išjungti"
+
+#~ msgid "Keep"
+#~ msgstr "Palikti"
+
+#~ msgid "Profile to open"
+#~ msgstr "Atverti profilį"
+
+#~ msgid "List available profiles"
+#~ msgstr "Pateikti galimų profilių sąrašą"
+
+#~ msgid "&Save View Profile As..."
+#~ msgstr "Į&rašyti rodymo profilį..."
+
+#~ msgid "C&onfigure View Profiles..."
+#~ msgstr "&Konfigūruoti rodymo profilius..."
+
+#~ msgid "Load &View Profile"
+#~ msgstr "Įkelti &rodymo profilį"
+
+#~ msgctxt "@title:window"
+#~ msgid "Profile Management"
+#~ msgstr "Profilio tvarkymas"
+
+#~ msgid "&Rename Profile"
+#~ msgstr "&Pervadinti profilį"
+
+#~ msgid "&Delete Profile"
+#~ msgstr "&Pašalinti profilį"
+
+#~ msgid "&Profile name:"
+#~ msgstr "&Profilio vardas:"
+
+#~ msgid "Save &URLs in profile"
+#~ msgstr "Įrašyti &URL profilyje"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window.\n"
+#~ "Loading a view profile will close them."
+#~ msgstr ""
+#~ "Jūs atvėrėte kelias korteles šiame lange.\n"
+#~ "Peržiūros profilio įkėlimas jas užvers."
+
+#~ msgid "Load View Profile"
+#~ msgstr "įkelti peržiūros profilį"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Loading a profile will discard these changes."
+#~ msgstr ""
+#~ "Šioje kortelėje yra pakeitimų, kurie nebuvo išsiųsti.\n"
+#~ "Įkėlus profilį šie pakeitimai bus atmesti."
+
+#~ msgid " day"
+#~ msgid_plural " days"
+#~ msgstr[0] " diena"
+#~ msgstr[1] " dienos"
+#~ msgstr[2] " dienų"
+#~ msgstr[3] " diena"

@@ -1,0 +1,405 @@
+# translation of libkonq.po to Belarusian
+# Belarusian (classic spelling) translation of libkonq.pot
+# Copyright (C) 2002-2004 KDE Team.
+#
+# Eugene Zelenko <greendeath@mail.ru>, 2002-2004.
+# Ihar Hrachyshka <ihar.hrachyshka@gmail.com>, 2006.
+# Darafei Praliaskouski <komzpa@licei2.com>, 2007.
+# Darafei Praliaskouski <komzpa@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2008-02-02 18:28+0200\n"
+"Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
+"Language-Team: Belarusian <i18n@mova.org>\n"
+"Language: be\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KAider 0.1\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || n%10>=5 && n%10<=9 || n"
+"%100>=11 && n%100<=14 ? 2 : 3);\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "&Адкрыць"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "Стварыць &тэчку..."
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "&Аднавіць"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "&Пустая сметніца"
+
+#: src/konq_popupmenu.cpp:312
+#, fuzzy, kde-format
+#| msgid "&Empty Trash Bin"
+msgid "&Configure Trash Bin"
+msgstr "&Пустая сметніца"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "&Дадаць гэтую старонку ў закладкі"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "&Дадаць гэтае месцазнаходжанне ў закладкі"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "&Дадаць гэтую тэчку ў закладкі"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "&Дадаць гэтую спасылку ў закладкі"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "&Дадаць гэты файл у закладкі"
+
+#: src/konq_popupmenu.cpp:379
+#, kde-format
+msgid "Preview In"
+msgstr "Прагляд у"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "&Уласцівасці"
+
+#, fuzzy
+#~| msgid "Move to Trash"
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "Перамясціць у сметніцу"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "Новая тэчка"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "Новая тэчка"
+
+#, fuzzy
+#~| msgid "&Copy Here"
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "&Скапіраваць сюды"
+
+#, fuzzy
+#~| msgid "&Move Here"
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "&Перамясціць сюды"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "Вы не можаце перацягнуць тэчку саму ў сябе"
+
+#~ msgid "File name for dropped contents:"
+#~ msgstr "Назва файла для перацягнутага зместу:"
+
+#~ msgid "&Move Here"
+#~ msgstr "&Перамясціць сюды"
+
+#~ msgid "&Copy Here"
+#~ msgstr "&Скапіраваць сюды"
+
+#~ msgid "&Link Here"
+#~ msgstr "&Спаслацца тут"
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "Усталяваць &шпалеры"
+
+#~ msgid "C&ancel"
+#~ msgstr "&Скасаваць"
+
+#, fuzzy
+#~| msgid "Creating directory"
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "Стварэнне тэчкі"
+
+#, fuzzy
+#~| msgid "Enter folder name:"
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "Вызначце назву тэчкі:"
+
+#, fuzzy
+#~| msgid "Creating directory"
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "Стварэнне тэчкі"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "Новая тэчка"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "Новая тэчка"
+
+#, fuzzy
+#~| msgid "Enter folder name:"
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "Вызначце назву тэчкі:"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "Новая тэчка"
+
+#~ msgid "Share"
+#~ msgstr "Апублікаваць"
+
+#~ msgid "Create New"
+#~ msgstr "Стварыць новы"
+
+#~ msgid "Link to Device"
+#~ msgstr "Спасылка на прыладу"
+
+#~ msgid "<qt>The template file <b>%1</b> does not exist.</qt>"
+#~ msgstr "<qt>Не існуе файла шаблону <b>%1</b>.</qt>"
+
+#~ msgid "File name:"
+#~ msgstr "Назва файла:"
+
+#, fuzzy
+#~| msgctxt "@title:menu"
+#~| msgid "Actions"
+#~ msgctxt "@title:menu"
+#~ msgid "&Actions"
+#~ msgstr "Дзеянні"
+
+#, fuzzy
+#~| msgid "&Open With"
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With"
+#~ msgstr "&Адкрыць у"
+
+#, fuzzy
+#~| msgid "&Other..."
+#~ msgctxt "@action:inmenu Open With"
+#~ msgid "&Other..."
+#~ msgstr "&Іншыя..."
+
+#, fuzzy
+#~| msgid "&Open With..."
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With..."
+#~ msgstr "&Адкрыць у..."
+
+#, fuzzy
+#~| msgid "Open with %1"
+#~ msgid "Open &with %1"
+#~ msgstr "&Адкрыць у %1"
+
+#~ msgid "Open in New &Window"
+#~ msgstr "Адкрыць у новым &акне"
+
+#~ msgid "Open the trash in a new window"
+#~ msgstr "Адкрыць сметніцу ў новым акне"
+
+#~ msgid "Open the medium in a new window"
+#~ msgstr "Адкрыць носьбіт у новым акне"
+
+#~ msgid "Open the document in a new window"
+#~ msgstr "Адкрыць дакумент у новым акне"
+
+#~ msgid "Directory"
+#~ msgstr "Тэчка"
+
+#~ msgid "Moving"
+#~ msgstr "Перамяшчэнне"
+
+#~ msgid "Source"
+#~ msgstr "Крыніца"
+
+#~ msgid "Destination"
+#~ msgstr "Прызначэнне"
+
+#~ msgid "Deleting"
+#~ msgstr "Выдаленне"
+
+#~ msgid "File"
+#~ msgstr "Файл"
+
+#~ msgid "Und&o"
+#~ msgstr "&Вярнуць"
+
+#~ msgid "Und&o: Copy"
+#~ msgstr "&Вярнуць: капіраванне"
+
+#~ msgid "Und&o: Link"
+#~ msgstr "&Вярнуць: стварэнне спасылкі"
+
+#~ msgid "Und&o: Move"
+#~ msgstr "&Вярнуць: перамяшчэнне"
+
+#~ msgid "Und&o: Rename"
+#~ msgstr "&Вярнуць: перайменаванне"
+
+#~ msgid "Und&o: Trash"
+#~ msgstr "&Вярнуць: перамяшчэнне ў сметніцу"
+
+#~ msgid "Und&o: Create Folder"
+#~ msgstr "&Вярнуць: стварэнне тэчкі"
+
+#~ msgid ""
+#~ "The file %1 was copied from %2, but since then it has apparently been "
+#~ "modified at %3.\n"
+#~ "Undoing the copy will delete the file, and all modifications will be "
+#~ "lost.\n"
+#~ "Are you sure you want to delete %4?"
+#~ msgstr ""
+#~ "Файл %1 быў скапіраваны з %2, але з таго часу быў зменены ў %3.\n"
+#~ "Адмена аперацыі выдаліць файл, і змены будуць згублены.\n"
+#~ "Вы сапраўды хочаце выдаліць %4?"
+
+#~ msgid "Undo File Copy Confirmation"
+#~ msgstr "Вяртанне капіравання файла"
+
+#, fuzzy
+#~ msgid "Do you really want to delete this item?"
+#~ msgid_plural "Do you really want to delete these %1 items?"
+#~ msgstr[0] "Вы сапраўды хочаце выдаліць гэты %1 элемент?"
+#~ msgstr[1] "Вы сапраўды хочаце выдаліць гэтыя %1 элементы?"
+#~ msgstr[2] "Вы сапраўды хочаце выдаліць гэтыя %1 элементаў?"
+
+#~ msgid "Delete Files"
+#~ msgstr "Выдаліць файлы"
+
+#, fuzzy
+#~ msgid "Do you really want to move this item to the trash?"
+#~ msgid_plural "Do you really want to move these %1 items to the trash?"
+#~ msgstr[0] "Вы сапраўды хочаце перамясціць гэты %1 элемент у сметніцу?"
+#~ msgstr[1] "Вы сапраўды хочаце перамясціць гэтыя %1 элементы ў сметніцу?"
+#~ msgstr[2] "Вы сапраўды хочаце перамясціць гэтыя %1 элементаў у сметніцу?"
+
+#~ msgid "Move to Trash"
+#~ msgstr "Перамясціць у сметніцу"
+
+#~ msgctxt "Verb"
+#~ msgid "&Trash"
+#~ msgstr "&У сметніцу"
+
+#, fuzzy
+#~| msgid "Und&o"
+#~ msgid "Und&o: %1"
+#~ msgstr "&Вярнуць"
+
+#~ msgid "Background Settings"
+#~ msgstr "Настаўленні фону"
+
+#~ msgid "Background"
+#~ msgstr "Фон"
+
+#~ msgid "Co&lor:"
+#~ msgstr "Ко&лер:"
+
+#~ msgid "&Picture:"
+#~ msgstr "&Відарыс:"
+
+#~ msgid "Preview"
+#~ msgstr "Прагляд"
+
+#~ msgid "None"
+#~ msgstr "Няма"
+
+#~ msgid "Enlarge Icons"
+#~ msgstr "Павялічыць значкі"
+
+#~ msgid "Shrink Icons"
+#~ msgstr "Расцягнуць значкі"
+
+#~ msgid "&Default Size"
+#~ msgstr "&Стандартны памер"
+
+#~ msgid "&Huge"
+#~ msgstr "В&ялізны"
+
+#~ msgid "&Very Large"
+#~ msgstr "&Вельмі вялікі"
+
+#~ msgid "&Large"
+#~ msgstr "&Вялікі"
+
+#~ msgid "&Medium"
+#~ msgstr "&Сярэдні"
+
+#~ msgid "&Small"
+#~ msgstr "&Маленькі"
+
+#~ msgid "&Tiny"
+#~ msgstr "&Мізэрны"
+
+#~ msgid "Configure Background..."
+#~ msgstr "Настаўленні фону..."
+
+#~ msgid "Allows choosing of background settings for this view"
+#~ msgstr "Дазваляе выбраць настаўленні фону для гэтага выгляду"
+
+#~ msgid "<p>You do not have enough permissions to read <b>%1</b></p>"
+#~ msgstr "<p>Вы не маеце дастаткова правоў для чытання <b>%1</b></p>"
+
+#~ msgid "<p><b>%1</b> does not seem to exist anymore</p>"
+#~ msgstr "<p><b>%1</b> ужо не існуе</p>"
+
+#~ msgid "Search result: %1"
+#~ msgstr "Вынік пошуку: %1"
+
+#, fuzzy
+#~ msgid "Do you really want to shred this item?"
+#~ msgid_plural "Do you really want to shred these %1 items?"
+#~ msgstr[0] "Вы сапраўды хочаце знішчыць гэты %1 элемент?"
+#~ msgstr[1] "Вы сапраўды хочаце знішчыць гэтыя %1 элементы?"
+#~ msgstr[2] "Вы сапраўды хочаце знішчыць гэтыя %1 элементаў?"
+
+#~ msgid "Shred Files"
+#~ msgstr "Знішчыць файлы"
+
+#~ msgid "Shred"
+#~ msgstr "Знішчыць"

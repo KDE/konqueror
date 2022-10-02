@@ -1,0 +1,456 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the konqueror package.
+#
+# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2021-01-30 11:18+0100\n"
+"Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
+"Language-Team: Polish <kde-i18n-doc@kde.org>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 20.12.1\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Łukasz Wojniłowicz"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "lukasz.wojnilowicz@gmail.com"
+
+#: app/archivedialog.cpp:76
+#, kde-format
+msgid "Untitled"
+msgstr "Nienazwane"
+
+#: app/archivedialog.cpp:92
+#, kde-format
+msgid "Create Archive"
+msgstr "Utwórz archiwum"
+
+#: app/archivedialog.cpp:108
+#, kde-format
+msgid "The URL of the page that is to be archived"
+msgstr "Adres URL strony, którą zarchiwizować"
+
+#: app/archivedialog.cpp:111
+#, kde-format
+msgid "Source &URL:"
+msgstr "Źródłowy adres &URL:"
+
+#: app/archivedialog.cpp:120
+#, kde-format
+msgid "Web archive (*.war)"
+msgstr "Archiwum sieciowe (*.war)"
+
+#: app/archivedialog.cpp:121
+#, kde-format
+msgid "Tar archive (*.tar)"
+msgstr "Archiwum Tar (*.tar)"
+
+#: app/archivedialog.cpp:122
+#, kde-format
+msgid "Zip archive (*.zip)"
+msgstr "Archiwum Zip (*.zip)"
+
+#: app/archivedialog.cpp:123
+#, kde-format
+msgid "Directory"
+msgstr "Katalog"
+
+#: app/archivedialog.cpp:128
+#, kde-format
+msgid "The file or directory where the archived page will be saved"
+msgstr "Plik lub katalog, w którym zostanie zapisana zarchiwizowana strona"
+
+#: app/archivedialog.cpp:129
+#, kde-format
+msgid "&Save to:"
+msgstr "Zapi&sz do"
+
+#: app/archivedialog.cpp:131
+#, kde-format
+msgid "Options"
+msgstr "Ustawienia"
+
+#: app/archivedialog.cpp:141
+#, kde-format
+msgid " second"
+msgid_plural " seconds"
+msgstr[0] " sekunda"
+msgstr[1] " sekundy"
+msgstr[2] " sekund"
+
+#: app/archivedialog.cpp:142
+#, kde-format
+msgid "None"
+msgstr "Brak"
+
+#: app/archivedialog.cpp:212
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The web archive download cannot use the current proxy settings. No proxy "
+"will be used."
+msgstr ""
+"Pobieranie archiwum sieciowego nie może użyć bieżących ustawień pośrednika. "
+"Pośrednik nie zostanie użyty."
+
+#: app/archivedialog.cpp:351
+#, kde-format
+msgctxt "@info"
+msgid "The save location is not valid."
+msgstr "Miejsce zapisu jest nieprawidłowe."
+
+#: app/archivedialog.cpp:371
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Cannot find the wget(1) command,<nl/>see <link>%1</link>."
+msgstr "Nie można znaleźć polecenia wget(1),<nl/>zobacz <link>%1</link>."
+
+#: app/archivedialog.cpp:393
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Cannot verify destination<nl/><filename>%1</filename><nl/>%2"
+msgstr ""
+"Nie można potwierdzić miejsca docelowego<nl/><filename>%1</filename><nl/>%2"
+
+#: app/archivedialog.cpp:410
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The archive directory<nl/><filename>%1</filename><nl/>already exists as a "
+"file."
+msgstr ""
+"Katalog archiwum <nl/><filename>%1</filename><nl/> już istnieje jako plik."
+
+#: app/archivedialog.cpp:411
+#, kde-kuit-format
+msgctxt "@info"
+msgid "The archive directory<nl/><filename>%1</filename><nl/>already exists."
+msgstr "Katalog archiwum <nl/><filename>%1</filename><nl/> już istnieje."
+
+#: app/archivedialog.cpp:415
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The archive file<nl/><filename>%1</filename><nl/>already exists as a "
+"directory."
+msgstr ""
+"Plik archiwum <nl/><filename>%1</filename><nl/> już istnieje jako katalog."
+
+#: app/archivedialog.cpp:416
+#, kde-kuit-format
+msgctxt "@info"
+msgid "The archive file <nl/><filename>%1</filename><nl/>already exists."
+msgstr "Plik archiwum <nl/><filename>%1</filename><nl/> już istnieje."
+
+#: app/archivedialog.cpp:420
+#, kde-format
+msgid "Archive Already Exists"
+msgstr "Archiwum już istnieje"
+
+#: app/archivedialog.cpp:450
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Cannot delete original archive<nl/><filename>%1</filename><nl/>%2"
+msgstr ""
+"Nie można usunąć pierwotnego archiwum<nl/><filename>%1</filename><nl/>%2"
+
+#: app/archivedialog.cpp:467
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Cannot create a temporary directory<nl/><filename>%1</filename><nl/>"
+msgstr ""
+"Nie można utworzyć katalogu tymczasowego <nl/><filename>%1</filename><nl/>"
+
+#: app/archivedialog.cpp:539
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Cannot start the archiver process <filename>%1</filename>"
+msgstr "Nie może rozpocząć procesu archiwizatora <filename>%1</filename>"
+
+#: app/archivedialog.cpp:555
+#, kde-kuit-format
+msgctxt "@info"
+msgid "The download process was interrupted."
+msgstr "Proces pobierania został przerwany."
+
+#: app/archivedialog.cpp:556
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>The download process <filename>%1</filename> failed with signal %2.</"
+"para>"
+msgstr ""
+"<para>Proces pobierania <filename>%1</filename> zakończył się niepowodzeniem "
+"z sygnałem %2.</para>"
+
+#: app/archivedialog.cpp:561
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>The download process <filename>%1</filename> failed with status %2.</"
+"para>"
+msgstr ""
+"<para>Proces pobierania <filename>%1</filename> zakończył się niepowodzeniem "
+"ze stanem %2.</para>"
+
+#: app/archivedialog.cpp:565
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>This may simply indicate a 404 error for some of the page elements.</"
+"para>"
+msgstr ""
+"<para>To może wskazywać po prostu błąd 404 dla niektórych części strony.</"
+"para>"
+
+#: app/archivedialog.cpp:571
+#, kde-kuit-format
+msgctxt "@info"
+msgid "<para>Retain the partial web archive?</para>"
+msgstr "<para>Czy zachować częściowe archiwum sieciowe?</para>"
+
+#: app/archivedialog.cpp:572
+#, kde-format
+msgid "Retain Archive?"
+msgstr "Czy zachować archiwum?"
+
+#: app/archivedialog.cpp:573
+#, kde-format
+msgid "Retain"
+msgstr "Zachowaj"
+
+#: app/archivedialog.cpp:577
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Creating the web archive failed."
+msgstr "Nie udało się utworzyć archiwum sieciowego."
+
+#: app/archivedialog.cpp:721
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Cannot copy archive to<nl/><filename>%1</filename><nl/>%2"
+msgstr "Nie można skopiować archiwum do<nl/><filename>%1</filename><nl/>%2"
+
+#: app/archivedialog.cpp:751
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Cannot set permissions on<nl/><filename>%1</filename><nl/>%2"
+msgstr "Nie można nadać uprawnień na<nl/><filename>%1</filename><nl/>%2"
+
+#: app/archivedialog.cpp:759
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Web archive saved as<nl/><filename><link>%1</link></filename>"
+msgstr ""
+"Zapisano archiwum sieciowe jako<nl/><filename><link>%1</link></filename>"
+
+#: app/main.cpp:26
+#, kde-format
+msgid "Web Archiver"
+msgstr "Archiwizator sieciowy"
+
+#: app/main.cpp:27
+#, kde-format
+msgid "0.0.1"
+msgstr "0.0.1"
+
+#: app/main.cpp:28
+#, kde-format
+msgid "Archive a web page"
+msgstr "Zarchiwizuj stronę sieciową"
+
+#: app/main.cpp:30
+#, kde-format
+msgid "Copyright (c) 2020 Jonathan Marten"
+msgstr "Copyright (c) 2020 Jonathan Marten"
+
+#: app/main.cpp:34
+#, kde-format
+msgid "Jonathan Marten"
+msgstr "Jonathan Marten"
+
+#: app/main.cpp:46
+#, kde-format
+msgid "URL of the web page to archive"
+msgstr "Adres URL strony sieciowej do zarchiwizowania"
+
+#: app/main.cpp:46
+#, kde-format
+msgid "url"
+msgstr "adres url"
+
+#. i18n: ectx: label, entry (WaitTime), group (Options)
+#: app/settings.kcfg:10
+#, kde-format
+msgid "Wait time:"
+msgstr "Czas oczekiwania:"
+
+#. i18n: ectx: tooltip, entry (WaitTime), group (Options)
+#: app/settings.kcfg:11
+#, kde-format
+msgid "The wait time between item requests, to reduce web server load"
+msgstr ""
+"Czas oczekiwania pomiędzy żądaniami elementu, aby ograniczyć obciążenie "
+"serwera sieciowego"
+
+#. i18n: ectx: label, entry (NoProxy), group (Options)
+#: app/settings.kcfg:18
+#, kde-format
+msgid "Do not use proxy"
+msgstr "Nie używaj pośrednika"
+
+#. i18n: ectx: tooltip, entry (NoProxy), group (Options)
+#: app/settings.kcfg:19
+#, kde-format
+msgid "Do not use the system proxy settings to fetch the web page"
+msgstr "Nie używaj ustawień systemowych pośrednika do pobierania tej strony"
+
+#. i18n: ectx: label, entry (RandomWait), group (Options)
+#: app/settings.kcfg:24
+#, kde-format
+msgid "Randomise wait time"
+msgstr "Uczyń czas oczekiwania losowym"
+
+#. i18n: ectx: tooltip, entry (RandomWait), group (Options)
+#: app/settings.kcfg:25
+#, kde-format
+msgid "Vary the wait time between requests, to confuse server log analysis"
+msgstr ""
+"Zmieniaj czas oczekiwania pomiędzy żądaniami, aby zmylić analizę dzienników "
+"na serwerze"
+
+#. i18n: ectx: label, entry (FixExtensions), group (Options)
+#: app/settings.kcfg:30
+#, kde-format
+msgid "Save in standard web archive format"
+msgstr "Zapisz w formacie standardowego archiwum sieciowego"
+
+#. i18n: ectx: tooltip, entry (FixExtensions), group (Options)
+#: app/settings.kcfg:37
+#, kde-format
+msgid ""
+"<p>Save downloaded files all in a single directory, with file name "
+"extensions suitable for local browsing.\n"
+"                        For example, the main HTML page will always be "
+"called \"index.html\" and a remote .php page will be saved with the "
+"standard .html extension.</p>\n"
+"               <p>Leave this option turned on to produce a standard web "
+"archive (.war) file.</p>\n"
+"               <p>If this option is turned off, then the files will be saved "
+"exactly as downloaded.\n"
+"                        This means that they may be in subdirectories "
+"reflecting the structure of the original web site, and extensions will not "
+"be adjusted.\n"
+"                        Note that the download may not work correctly if the "
+"original URL refers to a directory but does not end with a slash.</p>\n"
+"      "
+msgstr ""
+"<p>Zapisz pobrane pliki w pojedynczym katalogu, z rozszerzeniami nazw plików "
+"odpowiednimi dla lokalnego przeglądania.\n"
+"                        Na przykład, główna strona HTML zawsze będzie się "
+"nazywała \"index.html\" a zdalna strona .php zostanie zapisana ze zwyczajnym "
+"rozszerzeniem .html.</p>\n"
+"               <p>Pozostaw to ustawienie włączone, aby stworzyć standardowe "
+"archiwum sieciowe (.war).</p>\n"
+"               <p>Jeśli to ustawienie jest wyłączone, to pliku zostaną "
+"zapisane dokładnie tak, jak zostały pobrane.\n"
+"                        Oznacza to, że mogą znajdować się w podkatalogach, "
+"odwzorowując strukturę na pierwotnej stronie sieciowej. Rozszerzenia nie "
+"zostaną dostosowane.\n"
+"                        Pamiętaj, że pobieranie może nie zadziałać "
+"właściwie, jeśli pierwotny adres URL odnosi się do katalogu, lecz nie kończy "
+"się znakiem ukośnika.</p>\n"
+"      "
+
+#. i18n: ectx: label, entry (RunInTerminal), group (Options)
+#: app/settings.kcfg:42
+#, kde-format
+msgid "Run in terminal"
+msgstr "Wykonaj w terminalu"
+
+#. i18n: ectx: tooltip, entry (RunInTerminal), group (Options)
+#: app/settings.kcfg:45
+#, kde-format
+msgid ""
+"<p>Run the download process in a terminal window. Close the terminal window "
+"when the download has finished.</p>\n"
+"               <p>If this option is turned off then the download will run in "
+"the background. Its progress output should appear in the session log file.</"
+"p>\n"
+"      "
+msgstr ""
+"<p>Uruchom proces pobierania w oknie terminala. Zamknij okno terminala po "
+"ukończeniu pobierania.</p>\n"
+"               <p>Po wyłączeniu tego ustawienia, pobieranie zostanie "
+"uruchomione w tle. Jego postęp powinien pojawić się w pliku dziennika sesji."
+"</p>\n"
+"      "
+
+#. i18n: ectx: label, entry (CloseWhenFinished), group (Options)
+#: app/settings.kcfg:50
+#, kde-format
+msgid "Close when finished"
+msgstr "Zamknij po ukończeniu"
+
+#. i18n: ectx: tooltip, entry (CloseWhenFinished), group (Options)
+#: app/settings.kcfg:51
+#, kde-format
+msgid "Close this window when the download has finished successfully"
+msgstr "Zamknij to okno, gdy pobieranie zakończy się pomyślnie"
+
+#. i18n: ectx: label, entry (ArchiveType), group (Options)
+#: app/settings.kcfg:56
+#, kde-format
+msgid "Archive &type:"
+msgstr "&Rodzaj archiwum:"
+
+#. i18n: ectx: tooltip, entry (ArchiveType), group (Options)
+#: app/settings.kcfg:57
+#, kde-format
+msgid "The type of web archive to save"
+msgstr "Rodzaj archiwum sieciowego do zapisania"
+
+#: plugin_webarchiver.cpp:31
+#, kde-format
+msgid "Archive Web Page..."
+msgstr "Zarchiwizuj stronę sieciową..."
+
+#: plugin_webarchiver.cpp:49
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Cannot find the <command>kcreatewebarchive</command> executable,<nl/>check "
+"the plugin and helper installation."
+msgstr ""
+"Nie można znaleźć pliku wykonywalnego <command>kcreatewebarchive</command>, "
+"<nl/>sprawdź czy wgrana jest wtyczka i pomocnik."
+
+#: plugin_webarchiver.cpp:50
+#, kde-format
+msgid "Cannot Create Web Archive"
+msgstr "Nie można utworzyć archiwum sieciowego"
+
+#. i18n: ectx: Menu (tools)
+#: webarchiverplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "&Narzędzia"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: webarchiverplugin.rc:8
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "Dodatkowy pasek narzędzi"

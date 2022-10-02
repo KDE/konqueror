@@ -1,0 +1,165 @@
+<chapter id="path-complete">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>Gunnhild</firstname
+><surname
+>Lurås</surname
+><affiliation
+><address
+><email
+>gluras@c2i.net</email
+></address
+></affiliation
+><contrib
+></contrib
+></othercredit
+> 
+</authorgroup
+> 
+
+<date
+>2010-10-26</date>
+<releaseinfo
+>&kde; 4.5</releaseinfo>
+</chapterinfo>
+
+
+<title
+>Automatisk tekstfullføring</title
+> 
+
+<para
+>Du kan få &konqueror; til å hjelpe deg med en sti eller &URL; i adressefeltet ved å skru på en av <guimenuitem
+>Fullførings</guimenuitem
+>funksjonene. <mousebutton
+>Høyre</mousebutton
+>-klikk på et ledig område av adressefeltet og velg <guisubmenu
+>Fullføring</guisubmenu
+> fra sprettoppmenyen for å gjøre dette. Det lar deg velge mellom følgende:</para>
+
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Ingen</guimenuitem
+></term>
+<listitem
+><para
+>Du får det du skriver.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Manuell</guimenuitem
+></term>
+<!-- in 4.5 I see no diff to None -->
+<listitem
+><para
+>Når du har skrevet en del av en sti eller &URL;, vil <keycombo action="simul"
+>&Ctrl; <keycap
+>E</keycap
+></keycombo
+> eller &Tab; fullføre oppføringa hvis det bare er én mulighet.</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Automatisk</guimenuitem
+></term>
+<listitem
+><para
+>Mens du skriver inn i adressefeltet, vil &konqueror; automatisk utvide det du skriver for å fullføre en mulig sti eller &URL;, mens de tegnene den har lagt til er uthevet. Fortsett å skrive hvis det ikke er det du skal ha, eller trykk &Enter; for å godta det.</para
+></listitem>
+ </varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Nedtrekksliste</guimenuitem
+></term>
+<listitem
+><para
+>Et nedtrekksvindu blir hentet fram mens du skriver og viser de mulige treffene til det du har skrevet hittil. Når stien eller &URL;-en du ønsker dukker opp i vinduet, trykker du &LMB;. Du kan også bruke tastene <keysym
+>pil ned</keysym
+> eller &Tab; eller <keysym
+>pil opp</keysym
+> eller <keycombo action="simul"
+>&Shift;&Tab;</keycombo
+> for å merke den og så trykke &Enter;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Kort automatisk</guimenuitem
+></term>
+<listitem
+><para
+>Dette er likt automatisk, bortsett fra at den bare utvider det du har skrevet fram til neste <keycap
+>/</keycap
+>-symbol i stien eller &URL;-en. Trykk <keycombo action="simul"
+>&Ctrl;<keycap
+>E</keycap
+></keycombo
+> eller &Tab; for å akseptere forslaget, &Enter; når hele stien eller &URL; vises.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Nedtrekksliste og Automatisk</guimenuitem
+></term>
+<listitem
+><para
+>Dette er en kombinasjon av begge valgene beskrevet over.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Standard</guimenuitem
+></term>
+<listitem
+><para
+>Dette vises nederst i undermenyen og gjør det mulig å bytte til standardoppførselen <guimenuitem
+>Nedtrekksliste</guimenuitem
+>.</para
+></listitem>
+</varlistentry>
+<!-- Del to end 
+substring completion F7 http://websvn.kde.org/?view=revision&revision=1096306-->
+</variablelist>
+<para
+>Du burde prøve disse forskjellige mulighetene og velge den du liker best.</para>
+<para
+>Historien over de sist besøkte &URL;ene, som &konqueror; bruker til fullføringsfunksjonen kan ses og endres i <guilabel
+> Historie</guilabel
+>siden i <link linkend="sidebar"
+>Sidestolpen</link
+>.</para>
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

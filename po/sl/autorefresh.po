@@ -1,0 +1,100 @@
+# Slovenian translation of autorefresh.
+# Copyright (C) 2003 - 2011 Free Software Foundation, Inc.
+#
+#
+# Gregor Rakar <gregor.rakar@kiss.si>, 2003.
+# Jure Repinc <jlp@holodeck1.com>, 2011.
+# Klemen Košir <klemen.kosir@gmx.com>, 2011.
+# Andrej Mernik <andrejm@ubuntu.si>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: autorefresh\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2020-08-21 10:06+0200\n"
+"Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
+"Language-Team: Slovenian <lugos-slo@lugos.si>\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
+"X-Generator: Poedit 2.4.1\n"
+
+#: autorefresh.cpp:28
+#, kde-format
+msgid "&Auto Refresh"
+msgstr "S&amodejno osveževanje"
+
+#: autorefresh.cpp:32
+#, kde-format
+msgid "None"
+msgstr "Brez"
+
+#: autorefresh.cpp:33
+#, kde-format
+msgid "Every 15 Seconds"
+msgstr "Vsakih 15 sekund"
+
+#: autorefresh.cpp:34
+#, kde-format
+msgid "Every 30 Seconds"
+msgstr "Vsakih 30 sekund"
+
+#: autorefresh.cpp:35
+#, kde-format
+msgid "Every Minute"
+msgstr "Vsako minuto"
+
+#: autorefresh.cpp:36
+#, kde-format
+msgid "Every 5 Minutes"
+msgstr "Vsakih 5 minut"
+
+#: autorefresh.cpp:37
+#, kde-format
+msgid "Every 10 Minutes"
+msgstr "Vsakih 10 minut"
+
+#: autorefresh.cpp:38
+#, kde-format
+msgid "Every 15 Minutes"
+msgstr "Vsakih 15 minut"
+
+#: autorefresh.cpp:39
+#, kde-format
+msgid "Every 30 Minutes"
+msgstr "Vsakih 30 minut"
+
+#: autorefresh.cpp:40
+#, kde-format
+msgid "Every 60 Minutes"
+msgstr "Vsakih 60 minut"
+
+#: autorefresh.cpp:41
+#, kde-format
+msgid "Every 2 Hours"
+msgstr "Vsaki 2 uri"
+
+#: autorefresh.cpp:42
+#, kde-format
+msgid "Every 6 Hours"
+msgstr "Vsakih 6 ur"
+
+#: autorefresh.cpp:100
+#, kde-format
+msgctxt "@title:window"
+msgid "Cannot Refresh Source"
+msgstr "Vira ni mogoče osvežiti"
+
+#: autorefresh.cpp:101
+#, kde-format
+msgid "<qt>This plugin cannot auto-refresh the current part.</qt>"
+msgstr "<qt>Ta vstavek ne more samodejno osvežiti trenutnega dela.</qt>"
+
+#. i18n: ectx: Menu (tools)
+#: autorefresh.rc:5
+#, kde-format
+msgid "&Tools"
+msgstr "Orodja"

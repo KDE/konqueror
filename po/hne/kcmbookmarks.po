@@ -1,0 +1,1301 @@
+# translation of kcmkio.po to Hindi
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Ravishankar Shrivastava <raviratlami@yahoo.com>, 2007.
+# Ravishankar Shrivastava <raviratlami@aol.in>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkio\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2009-02-14 14:10+0530\n"
+"Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
+"Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
+"Language: hne\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.2\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: bookmarks.cpp:92
+#, kde-format
+msgid ""
+"<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
+"page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
+"\">bookmarks:/</a>.</p>"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: bookmarks.ui:16
+#, kde-format
+msgid "Bookmarks"
+msgstr "चिनहा"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowRoot)
+#: bookmarks.ui:23
+#, kde-format
+msgid ""
+"If this option is unchecked, bookmarks at the root of the hierarchy (not in "
+"a folder) are not displayed.\n"
+"If checked, they are gathered in a \"root\" folder."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowRoot)
+#: bookmarks.ui:26
+#, kde-format
+msgid "&Show bookmarks without folder"
+msgstr "चिनहा ल फोल्डर के बिना देखाव (&S)"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbFlattenTree)
+#: bookmarks.ui:37
+#, kde-format
+msgid ""
+"Sub-folders are shown within their parent by default. If you activate this "
+"option, sub-folders are displayed on their own.\n"
+"It looks less nice but it may help if you have a very big folder you want to "
+"spread in two columns."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbFlattenTree)
+#: bookmarks.ui:40
+#, kde-format
+msgid "&Flatten bookmarks tree"
+msgstr "चिनहा झाड़ ल फैलाव (&F)"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowPlaces)
+#: bookmarks.ui:47
+#, kde-format
+msgid ""
+"Show a box with KDE places (Home, Network, ...). Useful if you use konqueror "
+"as a file manager."
+msgstr ""
+"केडीई जगह के साथ डब्बा देखाव (घर, नेटवर्क...). ए हर तब उपयोगी होथे जब आप मन कान्करर "
+"ल फाइल प्रबंधक जइसन उपयोग करथो."
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowPlaces)
+#: bookmarks.ui:50
+#, kde-format
+msgid "Show system &places"
+msgstr "तंत्र जगह देखाव (&p)"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: bookmarks.ui:63
+#, kde-format
+msgid "General Settings"
+msgstr "सामान्य सेटिंग"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, label)
+#: bookmarks.ui:71
+#, kde-format
+msgid ""
+"Folders are automatically distributed in several columns. The optimal number "
+"of columns depends on the width of the konqueror window and the number of "
+"bookmarks you have."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: bookmarks.ui:74
+#, fuzzy, kde-format
+#| msgid "Number of columns to show"
+msgid "Number of columns to show:"
+msgstr "देखाय बर खंभा के संख्या"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowBackgrounds)
+#: bookmarks.ui:109
+#, kde-format
+msgid "Disable it on slow system to disable background images."
+msgstr "पिछोत अंगना के फोटू ल हटाय बर धीमा तंत्र मं ए ला अक्छम करव"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowBackgrounds)
+#: bookmarks.ui:112
+#, kde-format
+msgid "Show folder &backgrounds"
+msgstr "फोल्डर पिछोत अंगना देखाव (&b)"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, groupBox_3)
+#: bookmarks.ui:138
+#, kde-format
+msgid "How much disk space is used to cache the pixmaps"
+msgstr "पिक्समेप ल केस करे बर कतका डिस्क जगह चाही"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: bookmarks.ui:141
+#, kde-format
+msgid "Pixmap Cache"
+msgstr "पिक्समेप केस"
+
+#. i18n: ectx: property (text), widget (QLabel, lbMaxCacheSize)
+#: bookmarks.ui:150
+#, kde-format
+msgid "Disk cache size:"
+msgstr "डिस्क कैस आकार:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, sbCacheSize)
+#: bookmarks.ui:163
+#, kde-format
+msgid " kB"
+msgstr "किबा"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, clearCacheButton)
+#: bookmarks.ui:173
+#, kde-format
+msgid "Clear the pixmap cache"
+msgstr "पिक्समेप केस ल साफ करव"
+
+#. i18n: ectx: property (text), widget (QPushButton, clearCacheButton)
+#: bookmarks.ui:176
+#, kde-format
+msgid "&Clear Cache"
+msgstr "कैस खाली करव (&C)"
+
+#~ msgid "&Use cache"
+#~ msgstr "कैस उपयोग करव (&U)"
+
+#~ msgid "Policy"
+#~ msgstr "पालिसी"
+
+#~ msgid ""
+#~ "Verify whether the cached web page is valid before attempting to fetch "
+#~ "the web page again."
+#~ msgstr "वेब पेज ल फिर से  लाय के कोसिस से पहिली तस्दीक कर लेव कि कैच्ड वेब पेज वैध हे. "
+
+#~ msgid "&Keep cache in sync"
+#~ msgstr "कैस ल सिंक मं रखव (&K)"
+
+#~ msgid ""
+#~ "Always use documents from the cache when available. You can still use the "
+#~ "reload button to synchronize the cache with the remote host."
+#~ msgstr ""
+#~ "जब मिलत होही, हमेसा कैस से ही कागद परयोग करव. आप मन तब घलोक रीलोड बटन के "
+#~ "उपयोग रिमोट होस्ट के साथ कैस सिंक्रोनाइज करे बर कर सकथो ."
+
+#~ msgid "Use cache whenever &possible"
+#~ msgstr "जहाँ तक संभव हो कैस उपयोग करव (&p)"
+
+#~ msgid "O&ffline browsing mode"
+#~ msgstr "आफलाइन ब्राउजिंग मोड (&f)"
+
+#~ msgid "Disk cache &size:"
+#~ msgstr "डिस्क कैस आकारः (&s)"
+
+#~ msgid "C&lear Cache"
+#~ msgstr "कैस खाली करव (&l)"
+
+#~ msgid ""
+#~ "Unable to start the cookie handler service.\n"
+#~ "You will not be able to manage the cookies that are stored on your "
+#~ "computer."
+#~ msgstr ""
+#~ "कुकी हेंडलर सेवा चालू करे मं अक्छम.\n"
+#~ "आप मन के कम्प्यूटर मं भंडारित कुकीज ल आप मन प्रबंधित करे मं आप मन सक्छम नइ होही."
+
+#~ msgid "&Policy"
+#~ msgstr "पालिसी (&P)"
+
+#~ msgid "&Management"
+#~ msgstr "प्रबंधन (&M)"
+
+#~ msgid "D-Bus Communication Error"
+#~ msgstr "डी_बस कम्यूनिकेसन गलती"
+
+#~ msgid "Unable to delete all the cookies as requested."
+#~ msgstr "जैसा निवेदित हे, सब्बो कुकीज ल मेटाय मं अक्छम."
+
+#~ msgid "Unable to delete cookies as requested."
+#~ msgstr "जैसा निवेदित हे, कुकीज ल मेटाय मं अक्छम."
+
+#, fuzzy
+#~| msgid "<h1>Cookies Management Quick Help</h1>"
+#~ msgid "<h1>Cookie Management Quick Help</h1>"
+#~ msgstr "<h1>कुकीज प्रबंधन तुरंत मदद</h1>"
+
+#~ msgid "Information Lookup Failure"
+#~ msgstr "जानकारी देखना फेल"
+
+#~ msgid ""
+#~ "Unable to retrieve information about the cookies stored on your computer."
+#~ msgstr "आप मन के कम्प्यूटर मं भंडारित कुकीज परिचय जानकारी निकाल पाय मं अक्छम."
+
+#~ msgid "End of session"
+#~ msgstr "सत्र के आखरी"
+
+#~ msgid "Yes"
+#~ msgstr "हाँ"
+
+#~ msgid "Search"
+#~ msgstr "खोजव"
+
+#~ msgid "Search interactively for domains and hosts"
+#~ msgstr "डोमेन अउ होस्ट बर आपसी पूछताछ कर खोजव"
+
+#, fuzzy
+#~| msgid "Site Name"
+#~ msgid "Site"
+#~ msgstr "साइट नाम"
+
+#, fuzzy
+#~| msgid "Site Name"
+#~ msgid "Cookie Name"
+#~ msgstr "साइट नाम"
+
+#~ msgid "D&elete"
+#~ msgstr "मेटाव (&e)"
+
+#~ msgid "Delete A&ll"
+#~ msgstr "सब्बो मेटाव (&l)"
+
+#, fuzzy
+#~| msgid "Change &Policy..."
+#~ msgid "Configure &Policy..."
+#~ msgstr "पालिसी बदलव.... (&P)"
+
+#~ msgid "&Reload List"
+#~ msgstr "सूची रीलोड करव (&R)"
+
+#~ msgid "Details"
+#~ msgstr "विवरन"
+
+#~ msgid "Name:"
+#~ msgstr "नाम:"
+
+#~ msgid "Value:"
+#~ msgstr "मूल्यः"
+
+#~ msgid "Domain:"
+#~ msgstr "डोमेनः"
+
+#~ msgid "Path:"
+#~ msgstr "पथः"
+
+#~ msgid "Expires:"
+#~ msgstr "खतम होहीः"
+
+#~ msgid "Secure:"
+#~ msgstr "सुरक्छितः"
+
+#, fuzzy
+#~| msgid "Change Cookie Policy"
+#~ msgctxt "@title:window"
+#~ msgid "Change Cookie Policy"
+#~ msgstr "कुकी पालिसी बदलव"
+
+#, fuzzy
+#~| msgid "New Cookie Policy"
+#~ msgctxt "@title:window"
+#~ msgid "New Cookie Policy"
+#~ msgstr "नवा कुकी पालिसी"
+
+#~ msgid ""
+#~ "<qt>A policy already exists for<center><b>%1</b></center>Do you want to "
+#~ "replace it?</qt>"
+#~ msgstr ""
+#~ "<qt>एक पालिसी पहिली से ही मिलत हे<center><b>%1</b></center>. का आप मन एला "
+#~ "बदलना चाहथो ?</qt>"
+
+#, fuzzy
+#~| msgid "Duplicate Policy"
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Policy"
+#~ msgstr "अनुकृति पालिसी"
+
+#~ msgid "Replace"
+#~ msgstr "बदलव"
+
+#~ msgid ""
+#~ "Unable to communicate with the cookie handler service.\n"
+#~ "Any changes you made will not take effect until the service is restarted."
+#~ msgstr ""
+#~ "कुकीज हेंडलर सेवा मन से गोठ करे मं अक्छम.\n"
+#~ "जब तक सेवा मन ल फिर से  चालू नइ करे जात करे कोनो बदलाव लागू नइ होही."
+
+#~ msgid "Enable coo&kies"
+#~ msgstr "कुकीज ल सक्छम करव (&k)"
+
+#~ msgid "Only acce&pt cookies from originating server"
+#~ msgstr "उद्गम सर्वर से ही कुकीज स्वीकारव (&p)"
+
+#~ msgid "Automaticall&y accept session cookies"
+#~ msgstr "सत्र कुकीज अपने-आप स्वीकारव (&y)"
+
+#~ msgid "Default Policy"
+#~ msgstr "डिफाल्ट पालिसी"
+
+#~ msgid "Accep&t all cookies"
+#~ msgstr "सब्बो कुकी स्वीकारव (&t)"
+
+#, fuzzy
+#~| msgid "End of session"
+#~ msgid "Accept &until end of session"
+#~ msgstr "सत्र के आखरी"
+
+#~ msgid "Ask &for confirmation"
+#~ msgstr "पुस्टि बर पूछव (&f)"
+
+#~ msgid "Re&ject all cookies"
+#~ msgstr "सब्बो कुकी स्वीकारव (&j)"
+
+#~ msgid "Site Policy"
+#~ msgstr "साइट पालिसी"
+
+#~ msgid "Search interactively for domains"
+#~ msgstr "डोमेन बर आपसी पूछ कर खोजव"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "List of sites for which you have set a specific cookie policy. Specific "
+#~ "policies override the default policy setting for these sites.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "साइट मन के सूची जऊनबर आप मन विसिस्ट कुकी पालिसी सेट करे हो. ए साइट मन बर विसिस्ट "
+#~ "पालिसियाँ डिफाल्ट.पालिसी ल ओवरराइड करवगीं\n"
+#~ "</qt>"
+
+#~ msgid "Domain"
+#~ msgstr "डोमेन"
+
+#~ msgid "&New..."
+#~ msgstr "नवा... (&N)"
+
+#~ msgid "Chan&ge..."
+#~ msgstr "बदलव...(&g)"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the host or domain to which this policy applies, e.g. <b>www.kde."
+#~ "org</b> or <b>.kde.org</b>.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "ये प्राक्सी जेमां लागू होथे  वो होस्ट या डोमेन भरव, जइसन कि - <b>www.kde.org</b> "
+#~ "या <b>.kde.org</b>.\n"
+#~ "</qt>"
+
+#, fuzzy
+#~| msgid "Site Name"
+#~ msgid "Site name:"
+#~ msgstr "साइट नाम"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Select the desired policy:\n"
+#~| "<ul>\n"
+#~| "<li><b>Accept</b> - Allows this site to set cookies</li>\n"
+#~| "<li><b>Reject</b> - Refuse all cookies sent from this site</li>\n"
+#~| "<li><b>Ask</b> - Prompt when cookies are received from this site</li>\n"
+#~| "</ul>\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Select the desired policy:\n"
+#~ "<ul>\n"
+#~ "<li><b>Accept</b> - Allows this site to set cookies</li>\n"
+#~ "<li><b>Accept until end of session</b> - Allows this site to set cookies "
+#~ "but they will expire at the end of the session.</li>\n"
+#~ "<li><b>Reject</b> - Refuse all cookies sent from this site</li>\n"
+#~ "<li><b>Ask</b> - Prompt when cookies are received from this site</li>\n"
+#~ "</ul>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "चाहे गे पालिसी चुनव:\n"
+#~ "<ul>\n"
+#~ "<li><b>स्वीकारव</b> - ए साइट ल कुकी सेट करे बर देथे</li>\n"
+#~ "<li><b>खारिज करव</b> - ए साइट से भेजे सब्बो कुकी ल अस्वीकारथे</li>\n"
+#~ "<li><b>पूछव</b> - ए साइट से मिले कुकी बर पूछथे</li>\n"
+#~ "</ul>\n"
+#~ "</qt>"
+
+#, fuzzy
+#~| msgid "&Policy:"
+#~ msgid "Policy:"
+#~ msgstr "पालिसी: (&P)"
+
+#~ msgid "Accept"
+#~ msgstr "स्वीकृत"
+
+#, fuzzy
+#~| msgid "End of session"
+#~ msgid "Accept until end of session"
+#~ msgstr "सत्र के आखरी"
+
+#~ msgid "Reject"
+#~ msgstr "अस्वीकृत"
+
+#~ msgid "Ask"
+#~ msgstr "पूछव"
+
+#~ msgid "Disable Passive FTP"
+#~ msgstr "पैसिव एफटीपी अक्छम करव"
+
+#~ msgid "Mark partially uploaded files"
+#~ msgstr "आधे-अधूरे अपलोडेड फाइल मन ल चिनहा लगाव"
+
+#~ msgid ""
+#~ "While a file is being uploaded its extension is \".part\". When fully "
+#~ "uploaded it is renamed to its real name."
+#~ msgstr ""
+#~ "जब कोनो फाइल अपलोड होवत होही तहां एखर एक्सटेंसन होही \".part\". जब ए पूरा जइसन "
+#~ "लोड हो जाही तहां फिर एखर सही नाम से बदल दे जाही."
+
+#~ msgid "Connect to the Internet directly."
+#~ msgstr "इंटरनेट से सीधे कनेक्ट हों."
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "No Proxy"
+#~ msgstr "प्राक्सी (&P)"
+
+#, fuzzy
+#~| msgid "U&se proxy configuration URL:"
+#~ msgid "Detect proxy configuration automatically"
+#~ msgstr "प्राक्सी कान्फिगरेसन यूआरएल उपयोग करव: (&s)"
+
+#, fuzzy
+#~| msgid "Use the specified proxy script URL to configure the proxy settings."
+#~ msgid "Use the specified proxy script to configure the proxy settings."
+#~ msgstr "प्राक्सी सेटिंग सेटअप करे बर निरधारित प्राक्सी स्क्रिप्ट यूआरएल उपयोग करव."
+
+#, fuzzy
+#~| msgid "U&se proxy configuration URL:"
+#~ msgid "Use proxy auto configuration URL:"
+#~ msgstr "प्राक्सी कान्फिगरेसन यूआरएल उपयोग करव: (&s)"
+
+#~ msgid "Enter the address for the proxy configuration script."
+#~ msgstr "प्राक्सी कान्फिगरेसन स्क्रिप्ट बर पता भरव."
+
+#, fuzzy
+#~| msgid "U&se proxy configuration URL:"
+#~ msgid "Use system proxy configuration:"
+#~ msgstr "प्राक्सी कान्फिगरेसन यूआरएल उपयोग करव: (&s)"
+
+#, fuzzy
+#~| msgid "Auto &Detect"
+#~ msgid "Auto D&etect"
+#~ msgstr "अपन आप पता लगिस (&D)"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Enter the name of the environment variable, e.g. <b>HTTP_PROXY</b>, used "
+#~| "to store the address of the HTTP proxy server.<p>\n"
+#~| "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~| "attempt automatic discovery of this variable.\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the name of the environment variable, e.g. <b>HTTP_PROXY</b>, used "
+#~ "to store the address of the HTTP proxy server.<p>\n"
+#~ "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~ "attempt automatic discovery of this variable.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "एनवायरनमेंट वेरिएबल्स के मान भरव. जइसन- <b>HTTP_PROXY</b>,  HTTP प्राक्सी सर्वर के "
+#~ "पता भंडारित करे के काम आथे .<p>\n"
+#~ "वैकल्पिक रूप से, आप मन किलिक कर सकथो <b>\"Auto Detect\"</b> बटन मं एखर वेरिएबल "
+#~ "ल अपने अपन खोजे बर.\n"
+#~ "</qt>"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "HTTP Proxy:"
+#~ msgstr "प्राक्सी (&P)"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Enter the name of the environment variable, e.g. <b>HTTPS_PROXY</b>, "
+#~| "used to store the address of the HTTPS proxy server.<p>\n"
+#~| "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~| "attempt an automatic discovery of this variable.\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the name of the environment variable, e.g. <b>HTTPS_PROXY</b>, used "
+#~ "to store the address of the HTTPS proxy server.<p>\n"
+#~ "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~ "attempt an automatic discovery of this variable.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "एनवायरनमेंट वेरिएबल्स के मान भरव. जइसन- <b>HTTP_PROXY</b>,  HTTP प्राक्सी सर्वर के "
+#~ "पता भंडारित करे के काम आथे .<p>\n"
+#~ "वैकल्पिक रूप से, आप मन किलिक कर सकथो <b>\"Auto Detect\"</b> बटन मं एखर वेरिएबल "
+#~ "ल अपने अपन खोजे बर.\n"
+#~ "</qt>"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "SSL Proxy:"
+#~ msgstr "प्राक्सी (&P)"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Enter the name of the environment variable, e.g. <b>FTP_PROXY</b>, used "
+#~| "to store the address of the FTP proxy server.<p>\n"
+#~| "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~| "attempt an automatic discovery of this variable.\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the name of the environment variable, e.g. <b>FTP_PROXY</b>, used "
+#~ "to store the address of the FTP proxy server.<p>\n"
+#~ "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~ "attempt an automatic discovery of this variable.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "एनवायरनमेंट वेरिएबल्स के मान भरव. जइसन- <b>FTP_PROXY</b>,  FTP प्राक्सी सर्वर के "
+#~ "पता भंडारित करे के काम आथे .<p>\n"
+#~ "वैकल्पिक रूप से, आप मन किलिक कर सकथो <b>\"Auto Detect\"</b> बटन मं एखर वेरिएबल "
+#~ "ल अपने अपन खोजे बर.\n"
+#~ "</qt>"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "FTP Proxy:"
+#~ msgstr "प्राक्सी (&P)"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Enter the name of the environment variable, e.g. <b>HTTPS_PROXY</b>, "
+#~| "used to store the address of the HTTPS proxy server.<p>\n"
+#~| "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~| "attempt an automatic discovery of this variable.\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the name of the environment variable, e.g. <b>SOCKS_PROXY</b>, used "
+#~ "to store the address of the SOCKS proxy server.<p>\n"
+#~ "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~ "attempt an automatic discovery of this variable.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "एनवायरनमेंट वेरिएबल्स के मान भरव. जइसन- <b>HTTP_PROXY</b>,  HTTP प्राक्सी सर्वर के "
+#~ "पता भंडारित करे के काम आथे .<p>\n"
+#~ "वैकल्पिक रूप से, आप मन किलिक कर सकथो <b>\"Auto Detect\"</b> बटन मं एखर वेरिएबल "
+#~ "ल अपने अपन खोजे बर.\n"
+#~ "</qt>"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "SOCKS Proxy:"
+#~ msgstr "प्राक्सी (&P)"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Enter the name of the environment variable, e.g. <b>HTTPS_PROXY</b>, "
+#~| "used to store the address of the HTTPS proxy server.<p>\n"
+#~| "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~| "attempt an automatic discovery of this variable.\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>Enter the name of the environment variable, e.g. <b>SOCKS_PROXY</b>, "
+#~ "used to store the address of the SOCKS proxy server.<p>Alternatively, you "
+#~ "can click on the <b>\"Auto Detect\"</b> button to attempt an automatic "
+#~ "discovery of this variable.</p></qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "एनवायरनमेंट वेरिएबल्स के मान भरव. जइसन- <b>HTTP_PROXY</b>,  HTTP प्राक्सी सर्वर के "
+#~ "पता भंडारित करे के काम आथे .<p>\n"
+#~ "वैकल्पिक रूप से, आप मन किलिक कर सकथो <b>\"Auto Detect\"</b> बटन मं एखर वेरिएबल "
+#~ "ल अपने अपन खोजे बर.\n"
+#~ "</qt>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Enter the name of the environment variable, e.g. <b>FTP_PROXY</b>, used "
+#~| "to store the address of the FTP proxy server.<p>\n"
+#~| "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~| "attempt an automatic discovery of this variable.\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the environment variable, e.g. <b>NO_PROXY</b>, used to store the "
+#~ "addresses of sites for which the proxy server should not be used.<p>\n"
+#~ "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~ "attempt an automatic discovery of this variable.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "एनवायरनमेंट वेरिएबल्स के मान भरव. जइसन- <b>FTP_PROXY</b>,  FTP प्राक्सी सर्वर के "
+#~ "पता भंडारित करे के काम आथे .<p>\n"
+#~ "वैकल्पिक रूप से, आप मन किलिक कर सकथो <b>\"Auto Detect\"</b> बटन मं एखर वेरिएबल "
+#~ "ल अपने अपन खोजे बर.\n"
+#~ "</qt>"
+
+#, fuzzy
+#~| msgid "E&xceptions"
+#~ msgid "Exceptions:"
+#~ msgstr "एक्सेप्सन्स (&x)"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Enter the name of the environment variable, e.g. <b>FTP_PROXY</b>, used "
+#~| "to store the address of the FTP proxy server.<p>\n"
+#~| "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~| "attempt an automatic discovery of this variable.\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>Enter the environment variable, e.g. <b>NO_PROXY</b>, used to store "
+#~ "the addresses of sites for which the above proxy settings should not be "
+#~ "used.<p>Alternatively, you can click on the <b>\"Auto Detect\"</b> button "
+#~ "to attempt an automatic discovery of this variable.</p></qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "एनवायरनमेंट वेरिएबल्स के मान भरव. जइसन- <b>FTP_PROXY</b>,  FTP प्राक्सी सर्वर के "
+#~ "पता भंडारित करे के काम आथे .<p>\n"
+#~ "वैकल्पिक रूप से, आप मन किलिक कर सकथो <b>\"Auto Detect\"</b> बटन मं एखर वेरिएबल "
+#~ "ल अपने अपन खोजे बर.\n"
+#~ "</qt>"
+
+#~ msgid "Show the &value of the environment variables"
+#~ msgstr "एनवायरनमेंट वेरिएबल्स के मान देखाव (&v)"
+
+#~ msgid "Manually enter proxy server configuration information."
+#~ msgstr "प्राक्सी सर्वर कान्फिगरेसन जानकारी हस्तचालित भरव."
+
+#, fuzzy
+#~| msgid "A&utomatically detect proxy configuration"
+#~ msgid "Use manually specified proxy configuration:"
+#~ msgstr "प्राक्सी कान्फिगरेसन अपने अपन पता लगिस (&u)"
+
+#~ msgid "Enter the address of the HTTP proxy server."
+#~ msgstr "एचटीटीपी प्राक्सी सर्वर के पता भरव."
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTP proxy server."
+#~ msgid "Enter the port number of the HTTP proxy server."
+#~ msgstr "एचटीटीपी प्राक्सी सर्वर के पता भरव."
+
+#, fuzzy
+#~| msgid "&Use the same proxy server for all protocols"
+#~ msgid "Use this proxy server for a&ll protocols"
+#~ msgstr "सब्बो प्रोटोकाल बर ओही प्राक्सी सर्वर के उपयोग करव (&U)"
+
+#~ msgid "Enter the address of the HTTPS proxy server."
+#~ msgstr "एचटीटीपीएस प्राक्सी सर्वर के पता भरव."
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTPS proxy server."
+#~ msgid "Enter the port number of the HTTPS proxy server."
+#~ msgstr "एचटीटीपीएस प्राक्सी सर्वर के पता भरव."
+
+#~ msgid "Enter the address of the FTP proxy server."
+#~ msgstr "एफटीपी प्राक्सी सर्वर के पता भरव."
+
+#, fuzzy
+#~| msgid "Enter the address of the FTP proxy server."
+#~ msgid "Enter the port number of the FTP proxy server."
+#~ msgstr "एफटीपी प्राक्सी सर्वर के पता भरव."
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTPS proxy server."
+#~ msgid "Enter the address of the SOCKS proxy server."
+#~ msgstr "एचटीटीपीएस प्राक्सी सर्वर के पता भरव."
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTPS proxy server."
+#~ msgid "Enter the port number of the SOCKS proxy server."
+#~ msgstr "एचटीटीपीएस प्राक्सी सर्वर के पता भरव."
+
+#, fuzzy
+#~| msgid "Use proxy only for entries in this list"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Check this box if you want the above proxy settings to apply only to the "
+#~ "addresses listed in the <i>Exceptions</i> list.</qt>"
+#~ msgstr "ये सूची मं प्रविस्टि बर सिरिफ प्राक्सी उपयोग करव"
+
+#, fuzzy
+#~| msgid "Use proxy only for entries in this list"
+#~ msgid "Use proxy settings only for addresses in the Exceptions list"
+#~ msgstr "ये सूची मं प्रविस्टि बर सिरिफ प्राक्सी उपयोग करव"
+
+#~ msgid ""
+#~ "You have to restart the running applications for these changes to take "
+#~ "effect."
+#~ msgstr ""
+#~ "बदलाव मन ल प्रभाव मं लाय बर आप मन ल चलते हुए अनुपरयोग मन ल फिर से  चालू करना "
+#~ "होही."
+
+#, fuzzy
+#~| msgid "Update Failed"
+#~ msgctxt "@title:window"
+#~ msgid "Update Failed"
+#~ msgstr "अपडेट फेल"
+
+#~ msgid "You have to restart KDE for these changes to take effect."
+#~ msgstr "बदलाव मन ल प्रभाव मं लाय बर आप मन ल केडीई ल फिर से  चालू करना होही."
+
+#~ msgid "Timeout Values"
+#~ msgstr "टाइम-आउट मूल्य"
+
+#, fuzzy
+#~| msgid ""
+#~| "Here you can set timeout values. You might want to tweak them if your "
+#~| "connection is very slow. The maximum allowed value is %1 seconds."
+#~ msgid ""
+#~ "Here you can set timeout values. You might want to tweak them if your "
+#~ "connection is very slow. The maximum allowed value is 1 second."
+#~ msgid_plural ""
+#~ "Here you can set timeout values. You might want to tweak them if your "
+#~ "connection is very slow. The maximum allowed value is %1 seconds."
+#~ msgstr[0] ""
+#~ "इहां आप मन टाइमआउट मान सेट कर सकथो . यदि आप मन के कनेक्सन बहुत धीमा होही तहां आप "
+#~ "मन ओ मन ल बदल सकथो . सबसे अधिक स्वीकृत सीमा हे %1 सेकन्ड."
+#~ msgstr[1] ""
+#~ "इहां आप मन टाइमआउट मान सेट कर सकथो . यदि आप मन के कनेक्सन बहुत धीमा होही तहां आप "
+#~ "मन ओ मन ल बदल सकथो . सबसे अधिक स्वीकृत सीमा हे %1 सेकन्ड."
+
+#, fuzzy
+#~| msgid " sec"
+#~ msgid " second"
+#~ msgid_plural " seconds"
+#~ msgstr[0] "सेक."
+#~ msgstr[1] "सेक."
+
+#~ msgid "Soc&ket read:"
+#~ msgstr "साकेट पढ़िस: (&k)"
+
+#~ msgid "Pro&xy connect:"
+#~ msgstr "प्राक्सी कनेक्टः (&x)"
+
+#~ msgid "Server co&nnect:"
+#~ msgstr "सर्वर कनेक्टः (&n)"
+
+#~ msgid "&Server response:"
+#~ msgstr "सर्वर जवाबः (&S)"
+
+#~ msgid "FTP Options"
+#~ msgstr "एफटीपी विकल्प"
+
+#~ msgid "Enable passive &mode (PASV)"
+#~ msgstr "पैसिव मोड सक्छम करव (PASV) (&m)"
+
+#~ msgid ""
+#~ "Enables FTP's \"passive\" mode. This is required to allow FTP to work "
+#~ "from behind firewalls."
+#~ msgstr ""
+#~ "एफटीपी के  \"पैसिव\" मोड सक्छम करे. ए एफटीपी ल फायरवाल के पीछू से काम करन देथे ."
+
+#~ msgid "Mark &partially uploaded files"
+#~ msgstr "आधे-अधूरे अपलोडेड फाइल मन ल चिनहा लगाव (&p)"
+
+#~ msgid ""
+#~ "<p>Marks partially uploaded FTP files.</p><p>When this option is enabled, "
+#~ "partially uploaded files will have a \".part\" extension. This extension "
+#~ "will be removed once the transfer is complete.</p>"
+#~ msgstr ""
+#~ "<p>आधे-अधूरे अपलोडेड एफटीपी फाइल मन ल चिनहा लगाव.</p><p>जब ए विकल्प सक्छम करे गे "
+#~ "होथे  तहां आधा-अधूरा अपलोडेड फाइल मन मं \".part\" एक्सटेंसन होथे . ए एक्सटेंसन जब "
+#~ "ट्रांसफर पूरा हो जाथे  तब हटा दे जाथे .</p>"
+
+#~ msgid "These settings apply to network browsing only."
+#~ msgstr "ए सेटिंग मन फकत नेटवर्क ब्राउजिंग म लागू होथे."
+
+#~ msgid "Default user name:"
+#~ msgstr "डिफाल्ट कमइया नामः"
+
+#~ msgid "Default password:"
+#~ msgstr "डिफाल्ट पासवर्डः"
+
+#, fuzzy
+#~| msgid "Add Identification"
+#~ msgctxt "@title:window"
+#~ msgid "Add Identification"
+#~ msgstr "पहिचान जोड़व"
+
+#, fuzzy
+#~| msgid "Modify Identification"
+#~ msgctxt "@title:window"
+#~ msgid "Modify Identification"
+#~ msgstr "पहिचान सुधारव"
+
+#~ msgid ""
+#~ "<qt><center>Found an existing identification for<br/><b>%1</b><br/>Do you "
+#~ "want to replace it?</center></qt>"
+#~ msgstr ""
+#~ "<qt><center>एक मिलत पहिचान मिल गिस<br/><b>%1</b><br/>का आप मन एला बदलना "
+#~ "चाहथो ?</center></qt>"
+
+#, fuzzy
+#~| msgid "Duplicate Identification"
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Identification"
+#~ msgstr "पहिचान अनुकृति"
+
+#~ msgid "&Send identification"
+#~ msgstr "पहिचान भेजव (&S)"
+
+#~ msgid ""
+#~ "The browser identification text sent to the sites you visit. Use the "
+#~ "provided options to customize it."
+#~ msgstr ""
+#~ "जऊन साइट मन मं आप मन भ्रमन करे हो वहाँ ब्राउजर चिनहइया पाठ भेजे गिस. एला मनमाफिक "
+#~ "करे बर दे गे विकल्प उपयोग करव."
+
+#~ msgid "Default Identification"
+#~ msgstr "डिफाल्ट पहिचान"
+
+#~ msgid ""
+#~ "The browser identification text sent to the sites you visit. You can "
+#~ "customize it using the options provided below."
+#~ msgstr ""
+#~ "जऊन साइट मन मं आप मन भ्रमन करथो ओ मन ल भेजिस जाय वाला ब्राउजर पहिचान पाठ. आप "
+#~ "मन एला नीचे वाले दे गए विकल्प मन के मदद से मनमाफिक बना सकथो ."
+
+#~ msgid ""
+#~ "Includes your operating system's name in the browser identification text."
+#~ msgstr "ब्राउजर पहिचान पाठ मं आप मन के आपरेटिंग सिसटम के नाम सामिल करे."
+
+#~ msgid "Add operating s&ystem name"
+#~ msgstr "आपरेटिंग सिसटम के नाम जोड़व (&y)"
+
+#~ msgid ""
+#~ "Includes your operating system's version number in the browser "
+#~ "identification text."
+#~ msgstr "ब्राउजर पहिचान पाठ मं आप मन के आपरेटिंग सिसटम के संस्करन नंबर सामिल करे."
+
+#~ msgid "Add operating system &version"
+#~ msgstr "आपरेटिंग सिसटम संस्करन जोड़व (&v)"
+
+#~ msgid "Includes your machine's CPU type in the browser identification text."
+#~ msgstr "ब्राउजर पहिचान पाठ मं आप मन के मसीन के सीपीयू किसिम सामिल करे."
+
+#~ msgid "Add &machine (processor) type"
+#~ msgstr "मसीन (प्रोसेसर) किसिम जोड़व (&m)"
+
+#~ msgid ""
+#~ "Includes your language settings in the browser identification text to "
+#~ "obtain localized versions of the page."
+#~ msgstr ""
+#~ "आप मन के ब्राउजर पहिचान पाठ मं आप मन के भाखा सेटिंग सामिल करथे  ताकि एखर पेज के "
+#~ "लोकल भाखा के संस्करन प्राप्त हो सके."
+
+#~ msgid "Add lang&uage information"
+#~ msgstr "भाखा जानकारी भरव (&u)"
+
+#~ msgid "Site Specific Identification"
+#~ msgstr "विसिस्ट साइट पहिचान"
+
+#~ msgid "Site Name"
+#~ msgstr "साइट नाम"
+
+#~ msgid "Identification"
+#~ msgstr "पहिचान"
+
+#~ msgid "User Agent"
+#~ msgstr "कमइया एजेंट"
+
+#~ msgid "Add new identification text for a site."
+#~ msgstr "साइट बर नवा चिनहइया पाठ जोड़व"
+
+#~ msgid "Change the selected identifier text."
+#~ msgstr "चुने गे चिनहइया पाठ बदलव."
+
+#~ msgid "Delete the selected identifier text."
+#~ msgstr "चुने गे चिनहइया पाठ मेटाव."
+
+#~ msgid "Delete all identifiers."
+#~ msgstr "सब्बो चिनहइया मेटाव"
+
+#~ msgid "&When browsing the following site:"
+#~ msgstr "ए साइट मन ल ब्राउज करत करत: (&W)"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Select the browser identification to use whenever contacting the site you "
+#~ "specified above.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "आप मन के साथ ऊपर निरधारित साइट मं जब कान्टेक्ट करे जाही, तब बर ब्राउजर चिनहइया "
+#~ "चुनव.\n"
+#~ "</qt>"
+
+#~ msgid "&Use the following identification:"
+#~ msgstr "निम्न पहिचान उपयोग मं लें: (&U)"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "The actual browser identification text that will be sent to the remote "
+#~ "machine.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "रिमोट मसीन मं भेजे जाय वाले सही ब्राउजर पहिचान.\n"
+#~ "</qt>"
+
+#~ msgid "Real identification:"
+#~ msgstr "सही पहिचानः"
+
+#~ msgid "Treat &all cookies as session cookies"
+#~ msgstr "सब्बो कुकीज ल सत्र कुकीज के जइसन समझव (&a)"
+
+#~ msgid ""
+#~ "Enter the port number of the HTTP proxy server. Default is 8080. Another "
+#~ "common value is 3128."
+#~ msgstr ""
+#~ "एचटीटीपी प्राक्सी सर्वर के पोर्ट नंबर भरव. डिफाल्ट 8080. एक अउ आम मूल्य हे 3128."
+
+#~ msgid ""
+#~ "Enter the port number of the FTP proxy server. Default 8080. Another "
+#~ "common value is 3128."
+#~ msgstr ""
+#~ "एफटीपी प्राक्सी सर्वर के पोर्ट नंबर भरव. डिफाल्ट 8080. एक अउ आम मूल्य हे 3128."
+
+#, fuzzy
+#~| msgid "Variable Proxy Configuration"
+#~ msgctxt "@title:window"
+#~ msgid "Variable Proxy Configuration"
+#~ msgstr "चर प्राक्सी कान्फिगरेसन"
+
+#~ msgid "You must specify at least one valid proxy environment variable."
+#~ msgstr "आप मन ल कम से कम एक वैध प्राक्सी एनवायरनमेंट वेरिएबल के उल्लेख करना होही."
+
+#, fuzzy
+#~| msgid "Invalid Proxy Setup"
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Proxy Setup"
+#~ msgstr "अवैध प्राक्सी सेटअप"
+
+#~ msgid "Successfully verified."
+#~ msgstr "सफलता से सत्यापित."
+
+#, fuzzy
+#~| msgid "Proxy Setup"
+#~ msgctxt "@title:window"
+#~ msgid "Proxy Setup"
+#~ msgstr "प्राक्सी सेटअप"
+
+#~ msgid ""
+#~ "Did not detect any environment variables commonly used to set system wide "
+#~ "proxy information."
+#~ msgstr ""
+#~ "सिसटम वाइड प्राक्सी जानकारी सेट करे बर सामान्यतया उपयोगी एनवायरनमेंट वेरिएबल नइ "
+#~ "खोजे जा सकिस."
+
+#, fuzzy
+#~| msgid "Automatic Proxy Variable Detection"
+#~ msgctxt "@title:window"
+#~ msgid "Automatic Proxy Variable Detection"
+#~ msgstr "अपने अपन प्राक्सी वेरिएबल डिटेक्सन"
+
+#, fuzzy
+#~| msgid "Manual Proxy Configuration"
+#~ msgctxt "@title:window"
+#~ msgid "Manual Proxy Configuration"
+#~ msgstr "मेनुअल प्राक्सी कान्फिगरेसन"
+
+#, fuzzy
+#~| msgid "Invalid Proxy Setting"
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Proxy Setting"
+#~ msgstr "अवैध प्राक्सी सेटिंग"
+
+#~ msgid ""
+#~ "One or more of the specified proxy settings are invalid. The incorrect "
+#~ "entries are highlighted."
+#~ msgstr "एक या अधिक निरधारित प्राक्सी सेटिंग अवैध हे. गलत प्रविस्टि मन ल उभारे गे हे."
+
+#~ msgid "You entered a duplicate address. Please try again."
+#~ msgstr "आप मन एक डुप्लीकेट (दोहराया गिस) पता भरे हो . फिर से कोसिस करव."
+
+#~ msgid "<qt><center><b>%1</b></center> is already in the list.</qt>"
+#~ msgstr "<qt><center><b>%1</b></center> पहिली से ही सूची मं हे.</qt>"
+
+#, fuzzy
+#~| msgid "Duplicate Entry"
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Entry"
+#~ msgstr "दोहरी प्रविस्टि"
+
+#, fuzzy
+#~| msgid "New Exception"
+#~ msgctxt "@title:window"
+#~ msgid "New Exception"
+#~ msgstr "नवा एक्सेप्सन"
+
+#, fuzzy
+#~| msgid "Change Exception"
+#~ msgctxt "@title:window"
+#~ msgid "Change Exception"
+#~ msgstr "बदला एक्सेप्सन"
+
+#, fuzzy
+#~| msgid "Invalid Entry"
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Entry"
+#~ msgstr "अवैध प्रविस्टि"
+
+#~ msgid "The address you have entered is not valid."
+#~ msgstr "जो पता आप मन भरे हो  वो वैध नइ हे."
+
+#~ msgid "Enter the URL or address that should use the above proxy settings:"
+#~ msgstr "उपर वाले प्राक्सी सेटिंग मं उपयोग होए वाले पते या यूआरएल भरव:"
+
+#~ msgid ""
+#~ "Enter the address or URL that should be excluded from using the above "
+#~ "proxy settings:"
+#~ msgstr "उपर वाले प्राक्सी सेटिंग मं उपयोग नइ होए वाला पता या यूआरएल भरव:"
+
+#~ msgid "H&TTP:"
+#~ msgstr "H&TTP:"
+
+#~ msgid "HTTP&S:"
+#~ msgstr "एचटीटीपीएस (&S):"
+
+#~ msgid "&FTP:"
+#~ msgstr "एफटीपीः (&F)"
+
+#~ msgid "NO &PROXY:"
+#~ msgstr "प्राक्सी नइ: (&P)"
+
+#~ msgid "&Verify"
+#~ msgstr "सत्यापित (&V)"
+
+#~ msgid "Connect to the &Internet directly"
+#~ msgstr "इंटरनेट से सीधे कनेक्ट होही (&I)"
+
+#~ msgid "Use preset proxy environment &variables"
+#~ msgstr "पहिली से तय प्राक्सी एनवायनमेंट वेरिएबल उपयोग करव (&v)"
+
+#~ msgid "Show the proxy environment variable configuration dialog."
+#~ msgstr "प्राक्सी एनवायरनमेंट वेरिएबल कान्फिगरेसन गोठ देखाव."
+
+#~ msgid "Setup..."
+#~ msgstr "सेटअप..."
+
+#~ msgid "&Manually specify the proxy settings"
+#~ msgstr "प्राक्सी सेटिंग ल हस्तचालित निरधारित करव (&M)"
+
+#~ msgid "Show the manual proxy configuration dialog."
+#~ msgstr "मेनुअल प्राक्सी कान्फिगरेसन गोठ देखाव."
+
+#~ msgid "Authori&zation"
+#~ msgstr "प्राधिकृत (&z)"
+
+#~ msgid "Prompt for login information whenever it is required."
+#~ msgstr "जब जरूरत हो, लागिन जानकारी पूछव"
+
+#~ msgid "Prompt as &needed"
+#~ msgstr "जब जरूरत हो, पूछव (&n)"
+
+#~ msgid "Use this login information."
+#~ msgstr "ए वाले लागिन जानकारी उपयोग मं लेव"
+
+#~ msgid ""
+#~ "Use information specified here to login into proxy servers as needed."
+#~ msgstr "प्राक्सी सर्वर मं लागिन बर जब जरूरी होथे इहां दे गे जानकारी उपयोग मं लेव."
+
+#~ msgid "Username:"
+#~ msgstr "कमइया नाम:"
+
+#~ msgid "Login name."
+#~ msgstr "लागिन नाम"
+
+#~ msgid "Login password."
+#~ msgstr "लागिन पासवर्ड."
+
+#~ msgid "Password:"
+#~ msgstr "पासवर्ड: "
+
+#~ msgid "O&ptions"
+#~ msgstr "विकल्प (&p)"
+
+#~ msgid "Use persistent connections to proxy"
+#~ msgstr "प्राक्सी बर परसिस्टेंट कनेक्सन उपयोग करव"
+
+#~ msgid "Ser&vers"
+#~ msgstr "सर्वर (&v)"
+
+#~ msgid "Remove all proxy exception addresses from the list."
+#~ msgstr "सूची मं से सब्बो प्राक्सी एक्सेप्सन पता मेटाव"
+
+#~ msgid "D&elete All"
+#~ msgstr "सब्बो मेटाव (&e)"
+
+#~ msgid "Remove the selected proxy exception address from the list."
+#~ msgstr "सूची मं से चुने गे प्राक्सी एक्सेप्सन पता मेटाव"
+
+#~ msgid "De&lete"
+#~ msgstr "मेटाव (&l)"
+
+#~ msgid "Add new proxy exception address to the list."
+#~ msgstr "सूची मं नवा प्राक्सी एक्सेप्सन पता जोड़व."
+
+#~ msgid "Change the selected proxy exception address."
+#~ msgstr "चुने गे प्राक्सी एक्सेप्सन पता बदलव"
+
+#~ msgid "C&hange..."
+#~ msgstr "बदलव... (&h)"
+
+#~ msgid "&Domain name:"
+#~ msgstr "डोमेन नामः (&D)"
+
+#~ msgid "Includes your platform type in the browser identification text"
+#~ msgstr "ब्राउजर पहिचान पाठ मं आप मन के प्लेटफारम किसिम सामिल करे."
+
+#~ msgid "Add &platform name"
+#~ msgstr "प्लेटफारम नाम जोड़व (&p)"
+
+#~ msgid "Domain [Group]"
+#~ msgstr "डोमेन (समूह)"
+
+#~ msgid "Host [Set By]"
+#~ msgstr "होस्ट (द्वारा सेट)"
+
+#~ msgid "&Windows Shares"
+#~ msgstr "विंडोज साझेदारी (&W)"
+
+#~ msgid "&LISa Daemon"
+#~ msgstr "&LISa डेमन"
+
+#~ msgid "lan:/ Iosla&ve"
+#~ msgstr "lan:/ Iosla&ve"
+
+#~ msgid "&Search:"
+#~ msgstr "खोजव: (&S)"
+
+#~ msgctxt "just a placeholder; do not translate"
+#~ msgid "KSqueezedTextLabel"
+#~ msgstr "के-स्क्वीज-टेक्स्ट-लेबल"
+
+#~ msgid "&SOCKS"
+#~ msgstr "साक्स (&S)"
+
+#~ msgid "SOCKS"
+#~ msgstr "साक्स"
+
+#~ msgid ""
+#~ "Check this to enable SOCKS4 and SOCKS5 support in KDE applications and I/"
+#~ "O subsystems."
+#~ msgstr ""
+#~ "केडीई अनुपरयोग मन मं अउ I/O सबसिसटम्स मं साक्स4 अउ साक्स5 समर्थन बर एला चुनव."
+
+#~ msgid "&Enable SOCKS support"
+#~ msgstr "साक्स समर्थन सक्छम करव (&E)"
+
+#~ msgid "Click here to test SOCKS support."
+#~ msgstr "साक्स समर्थन जांचे बर इहां किलिक करव."
+
+#~ msgid "&Test"
+#~ msgstr "जांच (&T)"
+
+#~ msgid "SOCKS Implementation"
+#~ msgstr "साक्स लागू करना"
+
+#~ msgid "Use &custom library"
+#~ msgstr "मनमाफिक लाइब्रेरी उपयोग करव (&c)"
+
+#~ msgid "Enter the path to an unsupported SOCKS library."
+#~ msgstr "असमर्थित साक्स लाइब्रेरी के रस्ता भरव."
+
+#~ msgid ""
+#~ "If you select Autodetect, then KDE will automatically search for an "
+#~ "implementation of SOCKS on your computer."
+#~ msgstr ""
+#~ "यदि आप मन ओटोडिटेक्ट चुनथव , केडीई आप मन के कम्प्यूटर मं साक्स इम्प्लीमेंटेसन बर अपने अपन "
+#~ "खोजही."
+
+#~ msgid "A&uto detect"
+#~ msgstr "अपन आप पता लगिस (&u)"
+
+#~ msgid "This will force KDE to use NEC SOCKS if it can be found."
+#~ msgstr "ये केडीई ल यदि प्राप्त होथे  तहां एनईसी साक्स के उपयोग करे ल बाध्य करही."
+
+#~ msgid "&NEC SOCKS"
+#~ msgstr "एनईसी साक्स (&N)"
+
+#~ msgid "This will force KDE to use Dante if it can be found."
+#~ msgstr "यदि प्राप्त होथे  तहां दांते के उपयोग करे ल ए केडीई ल बाध्य करही."
+
+#~ msgid "&Dante"
+#~ msgstr "दांते (&D)"
+
+#~ msgid ""
+#~ "Here you can specify additional directories to search for the SOCKS "
+#~ "libraries. /usr/lib, /usr/local/lib, /usr/local/socks5/lib and /opt/"
+#~ "socks5/lib are already searched by default."
+#~ msgstr ""
+#~ "साक्स लाइब्रेरीज ल खोजे बर इहां आप मन अतिरिक्त डिरेक्टरीज ल निरधारित कर सकथो . "
+#~ "डिफाल्ट से /usr/lib, /usr/local/lib, /usr/local/socks5/lib अउ  /opt/socks5/"
+#~ "lib मं पहिली ही खोजे जाही."
+
+#~ msgid "Additional Library Search Paths"
+#~ msgstr "अतिरिक्त लाइब्रेरी खोज पथ"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "रविसंकर सिरीवास्तव, जी. करूनाकर"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "raviratlami@aol.in"
+
+#~ msgid "kcmsocks"
+#~ msgstr "केसीएमसाक्स"
+
+#~ msgid "KDE SOCKS Control Module"
+#~ msgstr "केडीई साक्स नियंत्रन माड्यूल"
+
+#~ msgid "(c) 2001 George Staikos"
+#~ msgstr "(c) 2001 जार्ज स्टायकास"
+
+#~ msgid "George Staikos"
+#~ msgstr "जार्ज स्टायकास"
+
+#~ msgid "These changes will only apply to newly started applications."
+#~ msgstr "ये बदलाव नवा चालू करे अनुपरयोग मन मं ही लागू होगें."
+
+#~ msgid "SOCKS Support"
+#~ msgstr "साक्स समर्थन"
+
+#~ msgid "Success: SOCKS was found and initialized."
+#~ msgstr "सफलता: साक्स मिल गिस अउ चालू करे गे."
+
+#~ msgid "SOCKS could not be loaded."
+#~ msgstr "साक्स लोड नइ कर सकिस."
+
+#~ msgid "&Path:"
+#~ msgstr "पथः (&P)"
+
+#~ msgid "This is the list of additional paths that will be searched."
+#~ msgstr "ये अतिरिक्त पथों के सूची हे जऊन ढूंढी जावगी."
+
+#~ msgid "Path"
+#~ msgstr "पथ"
+
+#~ msgid "&Add"
+#~ msgstr "जोड़व (&A)"
+
+#~ msgid "&Remove"
+#~ msgstr "मेटाव (&R)"
+
+#~ msgid "This is the configuration for the samba client only, not the server."
+#~ msgstr "ये कान्फिगरेसन साम्बा क्लायंट बर हे, सर्वर बर नइ."
+
+#~ msgid "&OK"
+#~ msgstr "ठीक (&O)"
+
+#~ msgid "&Cancel"
+#~ msgstr "खारिज करव (&C)"
+
+#~ msgid ""
+#~ "List of sites for which the specified identification text will be used "
+#~ "instead of the default one."
+#~ msgstr "साइट मन के सूची जऊनबर निरधारित पहिचान पाठ डिफाल्ट के बदले उपयोग मं आही."
+
+#~ msgid "MS Windows encoding:"
+#~ msgstr "एमएस विंडोज एनकोडिंगः"

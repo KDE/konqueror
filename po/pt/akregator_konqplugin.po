@@ -1,0 +1,56 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: akregator_konqplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2019-07-28 14:47+0100\n"
+"Last-Translator: Pedro Morais <morais@kde.org>\n"
+"Language-Team: pt <kde-i18n-pt@kde.org>\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-POFile-SpellExtra: addFeedToGroup aKregator  Akregator DBus\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: akregatorplugin.cpp:63
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Add Feed to Akregator"
+msgstr "Adicionar a Fonte ao Akregator"
+
+#: konqfeedicon.cpp:127
+#, kde-format
+msgid "Add Feed to Akregator"
+msgstr "Adicionar a Fonte ao Akregator"
+
+#: konqfeedicon.cpp:129
+#, kde-format
+msgid "Add Feeds to Akregator"
+msgstr "Adicionar as Fontes ao Akregator"
+
+#: konqfeedicon.cpp:138
+#, kde-format
+msgid "Add All Found Feeds to Akregator"
+msgstr "Adicionar Todas as Fontes Encontradas ao Akregator"
+
+#: konqfeedicon.cpp:162
+#, kde-format
+msgid "Subscribe to site updates (using news feed)"
+msgstr "Subscrever as alterações da página (usando a fonte de notícias)"
+
+#: pluginutil.cpp:36 pluginutil.cpp:46
+#, kde-format
+msgid "Imported Feeds"
+msgstr "Fontes Importadas"
+
+#: pluginutil.cpp:38
+#, kde-format
+msgid "Unable to contact Akregator via D-Bus"
+msgstr "Não foi possível contactar o Akregator por D-Bus"
+
+#: pluginutil.cpp:39
+#, kde-format
+msgctxt "@title:window"
+msgid "D-Bus call failed"
+msgstr "A chamada de D-Bus foi mal-sucedida"

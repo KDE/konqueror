@@ -1,0 +1,48 @@
+# Copyright (C) 2006, 2007, 2008 Free Software Foundation, Inc.
+# translation of khtmlkttsd.po to Macedonian
+#
+# Bozidar Proevski <bobibobi@freemail.com.mk>, 2005, 2006, 2007, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: khtmlkttsd\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2008-07-08 11:45+0200\n"
+"Last-Translator: Bozidar Proevski <bobibobi@freemail.com.mk>\n"
+"Language-Team: Macedonian <mkde-l10n@lists.sourceforge.net>\n"
+"Language: mk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: Plural-Forms: nplurals=3; plural=n%10==1 ? 0 : n%10==2 ? 1 : "
+"2;\n"
+
+#: khtmltts.cpp:33
+#, kde-format
+msgid "&Speak Text"
+msgstr "Изговори тек&ст"
+
+#. i18n: ectx: Menu (tools)
+#: khtmlttsplugin.rc:5
+#, kde-format
+msgid "&Tools"
+msgstr "Ала&тки"
+
+#. i18n: ectx: ToolBar (speechToolbar)
+#: khtmlttsplugin.rc:10
+#, kde-format
+msgid "Speech Toolbar"
+msgstr "Алатник за говор"
+
+#~ msgid "The D-Bus call say() failed."
+#~ msgstr "D-Bus-повикот say() не успеа."
+
+#, fuzzy
+#~| msgid "D-Bus Call Failed"
+#~ msgctxt "@title:window"
+#~ msgid "D-Bus Call Failed"
+#~ msgstr "D-Bus-повикот не успеа"
+
+#~ msgid "Starting KTTSD Failed"
+#~ msgstr "Стартувањето на KTTSD не успеа"

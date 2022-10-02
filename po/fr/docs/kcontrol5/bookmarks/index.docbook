@@ -1,0 +1,152 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % French "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="bookmarks" lang="&language;">
+<articleinfo>
+
+<title
+>Signets</title>
+<authorgroup>
+<author
+><personname
+><firstname
+>Xavier</firstname
+><surname
+>Vello</surname
+></personname
+> <email
+>xavier.vello@gmail.com</email
+> </author>
+&traducteurLudovicGrossard; 
+</authorgroup>
+
+<date
+>08-11-2016</date>
+<releaseinfo
+>Applications 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Configuration du système</keyword>
+<keyword
+>signets</keyword>
+<keyword
+>KIO</keyword>
+</keywordset>
+</articleinfo>
+<sect1 id="conf">
+<title
+>Page d'accueil des signets</title>
+<para
+>Ce module vous permet de configurer la page des signets.</para>
+<para
+>Pour afficher la page des signets, saisissez <userinput
+>bookmarks:/</userinput
+> dans la barre d'emplacements.</para>
+<para
+>Les réglages de ce module sont également accessibles en saisissant <userinput
+>bookmarks:/config</userinput
+> dans la barre d'emplacements.</para>
+<sect2 id="conf-general">
+<title
+>Configuration générale</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Nombre de colonnes à afficher</guilabel
+></term>
+<listitem>
+<para
+>Les dossiers sont automatiquement répartis dans plusieurs colonnes. Le nombre optimal de colonnes dépend de la largeur de la fenêtre de &konqueror;  et du nombre de signets que vous avez.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Afficher l'arrière plan des dossiers</guilabel
+></term>
+<listitem>
+<para
+>Décochez-le sur les systèmes lents afin de désactiver les images de l'arrière plan.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="conf-bookmark">
+<title
+>Signets</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Afficher les signets sans dossiers</guilabel
+></term>
+<listitem>
+<para
+>Si cette option n'est pas cochée, les signets à la racine de l'arborescence (qui ne se trouvent pas dans un dossier) ne sont pas affichés. Si elle est cochée, ils sont rassemblés dans un dossier « racine ».</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Aplatir l'arbre des signets</guilabel
+></term>
+<listitem>
+<para
+>Les sous-dossiers sont affichés dans leur dossier parent par défaut. Si vous activez cette option, les sous-dossiers sont affichés séparément. C'est moins sympathique, mais cela peut rendre service si vous avez un très gros dossier que vous souhaitez répartir sur deux colonnes.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Afficher les emplacements système</guilabel
+></term>
+<listitem>
+<para
+>Affiche une boîte de dialogue avec les emplacements standards (Dossier personnel, réseau...). Ceci est utile si vous utilisez &konqueror; comme gestionnaire de fichiers.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="conf-cache">
+<title
+>Cache Pixmap</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Taille du cache disque</guilabel
+></term>
+<listitem>
+<para
+>Spécifie l'espace disque utilisé pour le cache des images.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Nettoyer le cache</guilabel
+></term>
+<listitem>
+<para
+>Enlève toutes les images en cache. Ceci peut être nécessaire si certaines « favicons » sont corrompues ou ne se rafraîchissent pas automatiquement.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+</sect1>
+</article>

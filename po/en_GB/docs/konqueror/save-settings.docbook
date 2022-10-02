@@ -1,0 +1,164 @@
+<chapter id="save-settings">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>John</firstname
+><surname
+>Knight</surname
+><affiliation
+><address
+><email
+>anarchist_tomato@herzeleid.net</email
+></address
+></affiliation
+><contrib
+>Conversion to British English</contrib
+></othercredit
+> 
+</authorgroup>
+<date
+>2003-11-06</date
+> <releaseinfo
+>3.2</releaseinfo
+> </chapterinfo>
+
+<title
+>Saving Settings &amp; Profiles</title>
+<sect1 id="save-settings-general">
+<title
+>General Settings</title>
+<para
+>When you close down &konqueror; your current <guimenu
+>View</guimenu
+> menu settings (such as the <guimenuitem
+>View Mode</guimenuitem
+>, <guimenuitem
+>Use index.html</guimenuitem
+> and <guimenuitem
+>Show Hidden Files </guimenuitem
+> items) are automatically saved as the default options to be used next time &konqueror; is started.</para>
+
+<para
+>But you can also specify different <guimenu
+>View</guimenu
+> menu settings for an individual folder. To do this check the <guimenuitem
+>View Properties Saved in Folder</guimenuitem
+> box in the <guimenu
+>Settings</guimenu
+> menu, change the <guimenu
+>View</guimenu
+> settings to whatever you want then uncheck the <guimenuitem
+>View Properties saved in Folder</guimenuitem
+> box. Doing this creates a <filename
+>.directory</filename
+> file in that folder to hold the folder <guimenu
+>View</guimenu
+> settings. Use the <menuchoice
+><guimenu
+> Settings</guimenu
+><guimenuitem
+>Remove Folder Properties</guimenuitem
+> </menuchoice
+> option to remove the folder specific settings (or just delete the <filename
+>.directory</filename
+> file).</para>
+<note
+><para
+>One nice use of this feature is if you have a folder full of pictures. You can set that particular folder to display thumbnails of the pictures (by choosing <guimenuitem
+>Icon View</guimenuitem
+> and <menuchoice
+> <guisubmenu
+>Preview</guisubmenu
+><guimenuitem
+>Show Previews</guimenuitem
+> </menuchoice
+> from the <guimenu
+>View</guimenu
+> menu) when you open it, while not displaying images as thumbnails in other folders.</para
+></note>
+</sect1>
+
+<sect1 id="save-settings-view-profiles">
+<title
+>View Profiles</title>
+<para
+>&konqueror; can save a whole set of options as a <quote
+>View Profile</quote
+>. Some view profiles are part of the standard &konqueror; installation, such as <property
+>Web Browsing</property
+> and <property
+>File Management</property
+>, but you can add your own, too.</para>
+
+<para
+>To modify a view profile (say, the <property
+>Web Browsing</property
+> profile), load the profile with <menuchoice
+><guimenu
+>Settings</guimenu
+><guisubmenu
+>Load View Profile</guisubmenu
+><guimenuitem
+>Web Browsing</guimenuitem
+> </menuchoice
+>, and change the &konqueror; settings to whatever you want. Now select <menuchoice
+><guimenu
+>Settings</guimenu
+><guimenuitem
+>Save View Profile "Web Browsing"...</guimenuitem
+></menuchoice
+>. In the dialogue which appears, you can change the name of the profile, which will create a new profile with that name, or you can leave the name as it is to modify the current profile. If you select <guilabel
+>Save URLs in profile</guilabel
+>, the current &URL; will be loaded when you load that view profile. This functions in a similar way to the <quote
+>Home Page</quote
+> in many web browsers. If you want &konqueror; to start up with an empty window enter <userinput
+>about:blank</userinput
+> into the location bar before saving the profile.</para>
+
+<note
+><para
+>You can create a desktop icon to start &konqueror; with your new profile. First create a desktop icon by dragging the &konqueror; icon from the <guimenu
+>K</guimenu
+> menu onto the desktop and selecting <guimenuitem
+>Copy Here</guimenuitem
+>. Then <mousebutton
+>right</mousebutton
+> click on the new icon, select <guimenuitem
+>Properties...</guimenuitem
+> and change <guilabel
+>Program Name</guilabel
+> in the <guilabel
+>Execute</guilabel
+> tab page to <userinput
+><command
+>kfmclient</command
+> <option
+>openProfile <replaceable
+>MyNewProfile</replaceable
+></option
+></userinput
+>, <replaceable
+>MyNewProfile</replaceable
+> being what you called the new profile. Then in the <guilabel
+>General</guilabel
+> tab page change the name to something like <filename
+>MyNewProfile</filename
+> and pick a more suitable icon.</para
+></note>
+
+</sect1>
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

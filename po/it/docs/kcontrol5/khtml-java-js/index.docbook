@@ -1,0 +1,191 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Italian "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="khtml-java-js" lang="&language;">
+<articleinfo>
+<title
+>Java e JavaScript</title>
+<authorgroup>
+<author
+>&Krishna.Tateneni; &Krishna.Tateneni.mail;</author>
+<othercredit role="translator"
+><firstname
+>Paolo</firstname
+><surname
+>Zamponi</surname
+><affiliation
+><address
+><email
+>zapaolo@email.it</email
+></address
+></affiliation
+><contrib
+>Traduzione e manutenzione</contrib
+></othercredit
+><othercredit role="translator"
+><firstname
+>Luciano</firstname
+><surname
+>Montanaro</surname
+><contrib
+>Traduzione della documentazione</contrib
+></othercredit
+><othercredit role="translator"
+><firstname
+>Federico</firstname
+><surname
+>Zenith</surname
+><affiliation
+><address
+><email
+>federico.zenith@member.fsf.org</email
+></address
+></affiliation
+><contrib
+>Manutenzione della traduzione</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>08/11/2016</date>
+<releaseinfo
+>Applications 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Impostazioni di sistema</keyword>
+<keyword
+>konqueror</keyword>
+<keyword
+>navigare</keyword>
+<keyword
+>Java</keyword>
+<keyword
+>JavaScript</keyword>
+</keywordset>
+
+</articleinfo>
+<sect1 id="konq-browsing">
+<title
+>&Java; e JavaScript</title>
+
+<sect2 id="kbrowse-java">
+<title
+>&Java;</title>
+
+<para
+>&Java; permette di scaricare ed eseguire le applicazioni dentro a un browser, a patto di avere installato i programmi necessari. Molti siti usano &Java; (ad esempio i servizi bancari in rete, o siti di giochi interattivi). Come dovresti sapere, avviare programmi provenienti da fonti sconosciute può essere un rischio per la sicurezza del computer, anche se l'estensione del danno potenziale non è tanto ampia.</para>
+
+<para
+>La casella <guilabel
+>Abilita Java globalmente</guilabel
+> permette di attivare il supporto per &Java; per tutti i siti non esplicitamente esclusi; puoi anche decidere di abilitare o disabilitare &Java; per alcuni siti specifici. Per aggiungere una politica di gestione per un sito specifico premi il pulsante <guilabel
+>Nuovo</guilabel
+>: comparirà una finestra in cui scriverai il nome dell'host e sceglierai se accettarne o rifiutarne il codice &Java;. Ciò aggiungerà il dominio all'elenco sulla sinistra della pagina.</para>
+
+<para
+>Per scegliere un'altra politica per quell'host puoi selezionarne uno dall'elenco, e premere poi <guilabel
+>Cambia</guilabel
+>. Premendo invece il pulsante <guilabel
+>Elimina</guilabel
+> rimuoverai la politica dell'host selezionato; dopo l'eliminazione, per l'host si useranno le impostazioni globali.</para>
+
+<para
+>Infine, il gruppo di strumenti indicato con <guilabel
+>Impostazione del runtime Java</guilabel
+> ti permette di configurare alcune opzioni riguardo a come &Java; deve essere eseguito.</para>
+
+<para
+><guilabel
+>Utilizza il gestore della sicurezza</guilabel
+> è normalmente abilitato. Questa impostazione costringerà la <acronym
+>JVM</acronym
+> (la macchina virtuale di Java) a girare con un gestore di sicurezza. Ciò impedirà ai programmi di leggere o di scrivere sul filesystem locale, di creare socket a piacimento, e di eseguire operazioni che potrebbero compromettere il sistema. Disabilita questa opzione a tuo rischio e pericolo. È possibile dare più permessi al codice scaricato da certi siti, modificando il file <filename
+>$<envar
+>HOME</envar
+>/.java.policy</filename
+> con lo strumento delle politiche di &Java;.</para>
+
+<para
+><guilabel
+>Utilizza KIO</guilabel
+> forzerà la <acronym
+>JVM</acronym
+> ad usare il trasporto <acronym
+>KIO</acronym
+> di &kde; per le connessioni di rete.</para>
+
+<para
+>La casella <guilabel
+>Spegni il server delle applet quando inattivo per più di</guilabel
+> permette di risparmiare le risorse, chiudendo il server dei programmi &Java; quando non è in uso invece di mantenerlo in attesa. Disattivare questa casella può accelerare l'avvio delle applicazioni &Java;, ma sprecherà risorse di sistema anche quando non se ne usano. Se abiliti questa casella, è possibile impostare una scadenza.</para>
+
+<para
+>Puoi scegliere se &konqueror; debba automaticamente riconoscere l'installazione di &Java; del sistema, o se specificare il percorso dell'installazione da te usando <guilabel
+>Percorso dell'eseguibile Java, o «java»</guilabel
+>. Potresti preferire il secondo metodo, ad esempio, se hai installazioni multiple di &Java; sul sistema e vuoi specificare quale usare. Se alla macchina virtuale di &Java; usata servono opzioni di avvio particolari, puoi inserirle nella casella di testo indicata con <guilabel
+>Argomenti Java aggiuntivi</guilabel
+>.</para>
+
+</sect2>
+
+<sect2 id="kbrowse-javascript">
+<title
+>JavaScript</title>
+
+<para
+>Nonostante il nome, JavaScript non ha niente a che fare con &Java;.</para>
+
+<para
+>La prima parte di questa scheda funziona come le impostazioni di &Java;.</para>
+
+<para
+>La casella <guilabel
+>Abilita JavaScript globalmente</guilabel
+> permette di attivare o disattivare il supporto per JavaScript per tutti i siti come impostazione predefinita. Puoi anche scegliere di attivare o disattivare JavaScript per host specifici. Per aggiungere una politica per un host specifico premi il pulsante <guilabel
+>Nuovo</guilabel
+>: apparirà una finestra in cui potrai inserire il nome dell'host, e poi scegliere se accettarne o rifiutarne il codice JavaScript. Ciò aggiungerà il dominio dell'host all'elenco sulla sinistra della pagina.</para>
+
+<para
+>Per scegliere un'altra politica per quell'host puoi selezionarne uno dall'elenco, e premere poi <guilabel
+>Cambia</guilabel
+>. Premendo invece il pulsante <guilabel
+>Elimina</guilabel
+> rimuoverai la politica dell'host selezionato; dopo l'eliminazione, per l'host si useranno le impostazioni globali.</para>
+<!-- missing section Debugging
+Enable debugger Enables builtin JavaScript debugger.
+Report errors Enables the reporting of errors that occur when JavaScript code is executed.
+How are errors reported? popup window? icon in status bar?
+-->
+<para
+>L'ultimo insieme di opzioni nella sezione <guilabel
+>Politiche JavaScript globali</guilabel
+> determina cosa accade quando una pagina usa JavaScript per alcune azioni particolari.</para>
+
+<para
+>Puoi permettere o vietare a JavaScript la possibilità di modificare le tue finestre, spostandole, ridimensionandole, o cambiandone lo stato di attivazione. Puoi anche impedire a JavaScript di cambiare il testo della barra di stato, per esempio per poter sempre sapere dove porterà un collegamento quando ci si fa clic. Le possibilità per queste opzioni sono <guilabel
+>Permetti</guilabel
+> e <guilabel
+>Ignora</guilabel
+>.</para>
+
+<para
+>Per aprire una nuova finestra ci sono ancora maggiori possibilità di controllo. Puoi configurare &konqueror; per permettere tutte le richieste in tal senso, chiedere ogni volta che ne viene fatta una, o negarle in tutti i casi.</para>
+
+<para
+>L'impostazione <guilabel
+>Intelligente</guilabel
+> permette a JavaScript di aprire nuove finestre solo se è stato esplicitamente selezionato un collegamento che ne crea una.</para>
+</sect2>
+
+</sect1>
+
+</article>

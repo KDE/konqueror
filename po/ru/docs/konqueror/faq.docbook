@@ -1,0 +1,301 @@
+<chapter id="faq">
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>Kernel</firstname
+><surname
+>Panic</surname
+><affiliation
+><address
+><email
+>rzhevskiy@mail.ru</email
+></address
+></affiliation
+><contrib
+> Перевод на русский</contrib
+></othercredit
+><othercredit role="reviewer"
+><firstname
+>Григорий</firstname
+><surname
+>Мохин</surname
+><affiliation
+><address
+><email
+>mok@kde.ru</email
+></address
+></affiliation
+><contrib
+> Редакция русского перевода</contrib
+></othercredit
+> 
+</authorgroup>
+<date
+>2003-11-06</date
+> <releaseinfo
+>3.2</releaseinfo
+> </chapterinfo>
+
+<title
+>Вопросы и ответы</title>
+
+<qandaset>
+
+<!-- Link is dead, unfortunately. I suppose this is a more general thing anyway
+<qandaentry>
+<question
+><para
+>How can I browse web sites using non latin
+ scripts?</para
+></question>
+<answer
+><para
+>Detailed instructions can be found at <ulink
+url="http://www.konqueror.org/i18n.html"
+>http://www.konqueror.org/i18n.html</ulink
+></para
+></answer>
+</qandaentry>
+-->
+
+<qandaentry>
+<question
+><para
+>Как запустить &konqueror; из другой графической среды (не &kde;)?</para
+></question>
+
+<answer
+><para
+>Установите &Qt;, kdelibs и kdebase и запустите &konqueror; из другого оконного менеджера. В большинстве случаев никаких проблем не возникает; если проблемы всё же появятся (разработчикам не всегда удаётся проверить все возможные конфигурации), сообщите о них по этому адресу: <ulink url="http://bugs.kde.org"
+>http://bugs.kde.org</ulink
+> &mdash; и попробуйте перед тем, как запускать &konqueror;, запустить <application
+>kdeinit</application
+>; обычно это устраняет все неполадки.</para
+></answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Где &konqueror; хранит свои параметры настройки?</para
+></question>
+<answer
+><para
+>В каталоге <filename
+>~/.kde</filename
+> (в вашей системе он может называться <filename
+>~/.kde3</filename
+>; название зависит от того, как система была настроена). Внесение изменений в эти файлы не рекомендуется.</para>
+
+<itemizedlist>
+
+<listitem
+><para
+>В каталоге <filename class="directory"
+>~/.kde/share/apps/konqueror/profiles</filename
+> содержатся файлы с <link linkend="save-settings"
+>профилями</link
+>.</para
+></listitem>
+
+<listitem
+><para
+>В файле <filename class="directory"
+>~/.kde/share/apps/konqueror/bookmarks.xml</filename
+> находятся ваши закладки.</para
+></listitem>
+<listitem
+><para
+>Все файлы cookies содержатся в каталоге <filename class="directory"
+>~/.kde/share/apps/kcookiejar/cookies</filename
+>.</para
+></listitem>
+<listitem
+><para
+>Журнал (используемый в частности для автозавершения адресов) хранится в файле <filename
+>~/.kde/share/config/konq_history</filename
+>.</para
+></listitem>
+
+<listitem
+><para
+>Файлы <filename
+>konqiconviewrc</filename
+>, <filename
+>konqlistviewrc</filename
+> и <filename
+>konquerorrc</filename
+> в каталоге <filename class="directory"
+>~/.kde/share/config/</filename
+> содержат многие ключевые параметры &konqueror;.</para
+></listitem>
+
+<listitem
+><para
+>В каталоге <filename class="directory"
+>~/.kde/share/cache/http/</filename
+> находится кэш обозревателя.</para
+></listitem>
+
+<listitem
+><para
+>Для параметров панели навигации используется каталог <filename class="directory"
+>~/.kde/share/apps/konqsidebartng</filename
+>.</para
+></listitem>
+</itemizedlist>
+
+<para
+>Настройки для отдельных каталогов хранятся в самих каталогах, в файлах <literal role="extension"
+>.directory</literal
+>.</para
+></answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Как очистить журнал?</para
+></question>
+<answer
+><para
+>Существует два журнала:</para>
+<itemizedlist>
+<listitem
+><para
+>Один используется для автозавершения адресов. Чтобы очистить его, щёлкните по панели адреса <mousebutton
+>правой</mousebutton
+> кнопкой мыши и в появившемся меню выберите пункт <guimenuitem
+>Очистить содержимое</guimenuitem
+>.</para>
+</listitem>
+<listitem
+><para
+>Другой журнал содержит записи о всех посещённых адресах. Чтобы удалить какой-то один адрес, щёлкните по панели навигации <mousebutton
+>правой</mousebutton
+> кнопкой мыши и в появившемся меню выберите пункт <guimenuitem
+>Удалить элемент</guimenuitem
+>; чтобы очистить весь журнал, выберите пункт <guimenuitem
+>Очистить журнал</guimenuitem
+>.</para
+></listitem>
+
+</itemizedlist>
+
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Как включить, отключить или очистить кэш обозревателя?</para
+></question
+> <answer>
+<para
+>Выберите пункт меню <menuchoice
+><guimenu
+>Настройка</guimenu
+><guimenuitem
+>Настроить Konqueror</guimenuitem
+></menuchoice
+>. В появившемся окне, во вкладке <guimenuitem
+>Кэш</guimenuitem
+>, вы сможете отключить кэш, очистить его, изменить его размер и указать параметры кэширования.</para>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Как изменить максимальное время ожидания ответа от сервера?</para
+></question
+> <answer>
+<para
+>В Центре управления воспользуйтесь разделом <menuchoice
+><guimenu
+>Сеть</guimenu
+> <guimenuitem
+>Настройки</guimenuitem
+></menuchoice
+>.</para>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Как мне установить <quote
+>домашнюю страницу</quote
+> - страницу, которая будет загружаться автоматически при запуске?</para
+></question>
+<answer
+><para
+>Запустите &konqueror; как <guiicon
+>Web-обозреватель</guiicon
+>, откройте нужную страницу и выберите <guimenuitem
+>Сохранить профиль просмотра "Web-обозреватель"</guimenuitem
+> из меню <guimenu
+>Настройки</guimenu
+>.</para>
+
+<para
+>Все новые окна &konqueror;, запускаемые через значок <guiicon
+>Web-обозреватель</guiicon
+>, а также новые пустые вкладки, теперь будут загружать эту страницу при открытии.</para>
+
+<note
+><para
+>Это не меняет поведения кнопки <guiicon
+>Домой</guiicon
+> на панели инструментов &konqueror;, которая будет осуществлять переход по адресу, указанному в настройках &konqueror; <menuchoice
+><guimenu
+>Настройка</guimenu
+><guimenuitem
+>Настроить Konqueror</guimenuitem
+><guilabel
+>Поведение</guilabel
+></menuchoice
+>. По умолчанию это <userinput
+>~</userinput
+>.</para
+></note>
+
+<para
+>Чтобы &konqueror; запускался с пустой страницей, введите <userinput
+>about:blank</userinput
+>.</para>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Я не могу найти ответа на интересующий меня вопрос.</para
+></question
+> 
+<answer>
+<para
+>Зайдите на следующие страницы: <ulink url="http://www.konqueror.org/faq.html"
+> http://www.konqueror.org/faq.html</ulink
+> и <ulink url="http://www.konqueror.org/konq-java.html"
+>http://www.konqueror.org/konq-java.html</ulink
+>.</para>
+</answer>
+</qandaentry>
+
+</qandaset>
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

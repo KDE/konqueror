@@ -1,0 +1,223 @@
+# translation of kcmperformance.po to Nepali
+# Nabin Gautam <nabin@mpp.org.np>, 2006, 2007.
+# Mahesh Subedi <submanesh@gmail.com>, 2007.
+# shyam krishna bal <shyamkrishna_bal@yahoo.com>, 2007.
+# Shyam Krishna Bal <shyamkrishna_bal@yahoo.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmperformance\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-21 00:16+0000\n"
+"PO-Revision-Date: 2007-11-01 20:13+0545\n"
+"Last-Translator: Shyam Krishna Bal <shyamkrishna_bal@yahoo.com>\n"
+"Language-Team: Nepali <info@mpp.org.np>\n"
+"Language: ne\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n !=1\n"
+"\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: kcmperformance.cpp:28
+#, kde-format
+msgid ""
+"<h1>KDE Performance</h1> You can configure settings that improve KDE "
+"performance here."
+msgstr ""
+"<h1>केडीई सम्पादन</h1> तपाईँले यहाँ केडीईको सम्पादन सुधार गर्ने सेटिङ कन्फिगर गर्न सक्नुहुन्छ "
+"।"
+
+#: kcmperformance.cpp:35
+#, kde-format
+msgid "Konqueror"
+msgstr "कन्क्वेरर"
+
+#: kcmperformance.cpp:38
+#, kde-format
+msgid "System"
+msgstr "प्रणाली"
+
+#: kcmperformance.cpp:63
+#, kde-format
+msgid ""
+"<h1>Konqueror Performance</h1> You can configure several settings that "
+"improve Konqueror performance here. These include options for reusing "
+"already running instances and for keeping instances preloaded."
+msgstr ""
+"<h1>कन्क्वेरर सम्पादन</h1> यहाँ तपाईँले कन्क्वेरर सम्पादन सुधार गर्ने धेरै सेटिङ कन्फिगर गर्न "
+"सक्नुहुन्छ । यिनले पहिले चलेको दृष्टान्त पुन: प्रयोग गर्नका लागि र पहिले लोड गरिएका दृष्टान्त "
+"राख्नका लागि विकल्प समावेश गर्छ ।"
+
+#: konqueror.cpp:24
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>If enabled, an instance of Konqueror will be preloaded after the "
+#| "ordinary KDE startup sequence.</p><p>This will make the first Konqueror "
+#| "window open faster, but at the expense of longer KDE startup times (but "
+#| "you will be able to work while it is loading, so you may not even notice "
+#| "that it is taking longer).</p>"
+msgid ""
+"<p>If enabled, an instance of Konqueror will be preloaded after the ordinary "
+"Plasma startup sequence.</p><p>This will make the first Konqueror window "
+"open faster, but at the expense of longer Plasma startup times (but you will "
+"be able to work while it is loading, so you may not even notice that it is "
+"taking longer).</p>"
+msgstr ""
+"<p>सक्षम भएमा, सामान्य केडीई सुरुआत अनुक्रम पछि कन्क्वेररको दृष्टान्त पूर्वलोड हुनेछ ।</"
+"p><p>यसले पहिलो कन्क्वेरर सञ्झ्याल खोल्न छिटो गर्नेछ, तर केडीई सुरुआतको लामो समय लनेछ (तर "
+"तपाईँ यो लोडिङ हुदाँ कार्य गर्न सक्नुहुन्छ, त्यसैले तपाईँले लामो समय लिएको थाहा पनि पाउनुहुने "
+"छैन) ।</p>"
+
+#: konqueror.cpp:30
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>If enabled, KDE will always try to have one preloaded Konqueror "
+#| "instance ready; preloading a new instance in the background whenever "
+#| "there is not one available, so that windows will always open quickly.</"
+#| "p><p><b>Warning:</b> In some cases, it is actually possible that this "
+#| "will reduce perceived performance.</p>"
+msgid ""
+"<p>If enabled, Konqueror will always try to have one preloaded instance "
+"ready; preloading a new instance in the background whenever there is not one "
+"available, so that windows will always open quickly.</p><p><b>Warning:</b> "
+"In some cases, it is actually possible that this will reduce perceived "
+"performance.</p>"
+msgstr ""
+"<p>सक्षम पारिएमा, केडीई ले पूर्वलोड गरिएको कन्क्वेरर दृष्टान्त सधैँ तयार पार्ने प्रयास गर्छ; "
+"त्यहाँ उपलब्ध नभए पनि पृष्ठभूमिमा नयाँ दृष्टान्त पूर्वलोड गर्दा, सञ्झ्याल सधैँ छिटो खुल्नेछ ।</"
+"p><p><b>चेतावनी:</b> यस्तो अवस्थामा, यसले वास्तवमै देखेका सम्पादन घटाउने छ ।</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
+#: konqueror_ui.ui:17
+#, kde-format
+msgid "Preloading"
+msgstr "पूर्व-लोडिङ"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_preload_on_startup)
+#: konqueror_ui.ui:23
+#, fuzzy, kde-format
+#| msgid "Preload an instance after KDE startup"
+msgid "Preload an instance after desktop startup"
+msgstr "केडीई सुरुआत पछि दृष्टान्त पूर्व-लोड गर्नुहोस्"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_always_have_preloaded)
+#: konqueror_ui.ui:30
+#, fuzzy, kde-format
+#| msgid "Always try to have at least one preloaded instance"
+msgid "Always try to have one preloaded instance"
+msgstr "कम्तिमा पहिले लोड गरिएको एउटा दृष्टान्त सधैँ राख्ने प्रयास गर्नुहोस्"
+
+#: system.cpp:22
+#, kde-format
+msgid ""
+"<p>During startup KDE needs to perform a check of its system configuration "
+"(mimetypes, installed applications, etc.), and in case the configuration has "
+"changed since the last time, the system configuration cache (KSyCoCa) needs "
+"to be updated.</p><p>This option delays the check, which avoid scanning all "
+"directories containing files describing the system during KDE startup, thus "
+"making KDE startup faster. However, in the rare case the system "
+"configuration has changed since the last time, and the change is needed "
+"before this delayed check takes place, this option may lead to various "
+"problems (missing applications in the K Menu, reports from applications "
+"about missing required mimetypes, etc.).</p><p>Changes of system "
+"configuration mostly happen by (un)installing applications. It is therefore "
+"recommended to turn this option temporarily off while (un)installing "
+"applications.</p>"
+msgstr ""
+"<p>केडीई सुरुआत गर्दा यसको प्रणाली कन्फिगरेसन जाँच गर्नु पर्छ (माइमप्रकार, स्थापन गरिएका "
+"अनुप्रयोग, आदि), र अन्तिम समय देखि कन्फिगरेसन परिवर्तन भएको केसमा, क्यास (KSyCoCa) "
+"कन्फिगरेसन प्रणाली अद्यावधिक गर्नु आवश्यक हुन्छ ।</p><p>यो विकल्पले जाँच विलम्व गर्छ, जसले "
+"केडीई सुरुआतमा प्रणाली वर्णन गर्दा फाइल समावेश गर्ने सबै डाइरेक्टरीको स्क्यान त्याग गर्छ, "
+"त्यसैले केडीई सुरुआत छिटो बनाउछ । तापनि, दुर्लभ केसमा अन्तिम समय देखि प्रणाली कन्फिगरेसन "
+"परिवर्तन गरिएको छ, र परिवर्तन विलम्व गरिएको जाँचले स्थान लिनु भन्दा पहिले आवश्यक हुन्छ, "
+"यो विकल्पले धेरै समस्यामा अगुआई गर्न सक्छ (केडीई मेनुमा अनुप्रयोग हराउदा, हराएका आवश्यक "
+"माइम प्रकारका बारेमा अनुप्रयोगबाट प्रतिवेदन गर्छ, आदि) ।</p><p>अनुप्रयोग हटाउदा धेरै "
+"जसो प्रणाली कन्फिगरेसन परिवर्तन हुन्छ । त्यसैले अनुप्रयोग हटाउदा यो विकल्प अस्थायी रुपमा "
+"बन्द गर्न सिफारिस गरिन्छ ।</p><p>यहि कारणले, यो विकल्पको प्रयोग सिफारिस गरिदैन । "
+"केडीई क्र्यास ह्यान्डलरले यो विकल्पको सुरुमा बग प्रतिवेदनका लागि पादचिन्ह उपलब्ध गर्न "
+"अस्वीकार गर्छ । (तपाईँले यो विकल्प बन्दसँग यसलाई पुन: उत्पादन गर्न, वा क्र्यास ह्यान्डलरका "
+"लागि विकासकर्ता मोड सुरु गर्न आवश्यक हुन्छ) ।</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gb_)
+#: system_ui.ui:8
+#, kde-format
+msgid "System Configuration"
+msgstr "प्रणाली कन्फिगरेसन"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_disable_kbuildsycoca)
+#: system_ui.ui:14
+#, kde-format
+msgid "Disable &system configuration startup check"
+msgstr "प्रणाली कन्फिगरेसन प्रणाली जाँच अक्षम पार्नुहोस्"
+
+#. i18n: ectx: property (text), widget (QLabel, label_kbuildsycoca)
+#: system_ui.ui:21
+#, kde-format
+msgid ""
+"This option may in rare cases lead to various problems. Consult the What's "
+"This (Shift+F1) help for details."
+msgstr ""
+"यो विकल्पले एकदम न्यून परिस्थितिमा थुप्रै समस्या पार्न सक्छ । विस्तृत विवरणका लागि ' यो के "
+"हो? ' (Shift+F1) मद्दत  हेर्नुहोस् ।"
+
+#~ msgid ""
+#~ "<p>If non-zero, this option allows keeping Konqueror instances in memory "
+#~ "after all their windows have been closed, up to the number specified in "
+#~ "this option.</p><p>When a new Konqueror instance is needed, one of these "
+#~ "preloaded instances will be reused instead, improving responsiveness at "
+#~ "the expense of the memory required by the preloaded instances.</p>"
+#~ msgstr ""
+#~ "<p>यदि शून्य विहिन भएमा, यो विकल्पले सबै सञ्झ्याल बन्द भए पछि स्मृतिमा यसमा निर्दिष्ट "
+#~ "भएका सङ्ख्या सम्म कन्क्वेररका दृष्टान्त राख्न अनुमति दिन्छ ।</p><p>एउटा नयाँ कन्क्वेरर "
+#~ "दृष्टान्त आवश्यक हुदाँ, पहिले लोड गरिएका दृष्टान्तमा आवश्यक स्मृतिको खर्चमा उत्तरदायी "
+#~ "योग्यता सुधार गर्ने, साटोमा पहिले लोड गरिएको दृष्टान्त प्रयोग गरिनेछ ।</p>"
+
+#, fuzzy
+#~| msgid "Maximum number of instances kept &preloaded:"
+#~ msgid "&Maximum number of instances kept preloaded:"
+#~ msgstr "पूर्व-लोड गरिएका दृष्टान्तको अधिकतम सङ्ख्या:"
+
+#~ msgid ""
+#~ "Disables the minimization of memory usage and allows you to make each "
+#~ "browsing activity independent from the others"
+#~ msgstr ""
+#~ "सानो पारिएका स्मृतिका उपयोग अक्षम पार्छ र तपाईँलाई अन्यबाट स्वतन्त्र प्रत्येक ब्राउजिङ "
+#~ "गतिविधी बनाउन अनुमति दिन्छ ।"
+
+#~ msgid ""
+#~ "<p>With this option activated, only one instance of Konqueror used for "
+#~ "file browsing will exist in the memory of your computer at any moment, no "
+#~ "matter how many file browsing windows you open, thus reducing resource "
+#~ "requirements.</p><p>Be aware that this also means that, if something goes "
+#~ "wrong, all your file browsing windows will be closed simultaneously</p>"
+#~ msgstr ""
+#~ "<p>यो विकल्प सक्रिय पार्दा, तपाईँले जति सुकै फाइल ब्राउजिङ सञ्झ्याल खोले पनि, कुनै "
+#~ "अवस्थामा तपाईँको कम्प्युटरको स्मृतिमा फाइल ब्राउजिङका लागि प्रयोग गरिएका कन्क्वेररको "
+#~ "एउटा मात्र दृष्टान्त अवस्थित हुनेछ, त्यसैले संसाधन आवश्यकता घटाउनुहोस् ।</p><p>यसको "
+#~ "अर्थ, यदि केही गलत भएमा, तपाईँका सबै फाइल ब्राउजिङ सञ्झ्याल एकैसाथ बन्द हुने भएकाले "
+#~ "सावधान रहनुहोस्</p>"
+
+#~ msgid ""
+#~ "<p>With this option activated, only one instance of Konqueror will exist "
+#~ "in the memory of your computer at any moment, no matter how many browsing "
+#~ "windows you open, thus reducing resource requirements.</p><p>Be aware "
+#~ "that this also means that, if something goes wrong, all your browsing "
+#~ "windows will be closed simultaneously.</p>"
+#~ msgstr ""
+#~ "<p>यो विकल्प सक्षम पार्दा, तपाईँले जति सुकै ब्राउजर सञ्झ्याल खोले पनि, कुनै अवस्थामा "
+#~ "तपाईँको कम्प्युटरको स्मृतिमा कन्क्वेररको एक मात्र दृष्टान्त अवस्थित हुनेछ, त्यसैले संसाधन "
+#~ "आवश्यकता घटाउनुहोस् ।</p><p> यसको अर्थ, यदि केही गल्ति भएमा, तपाईँका सबै ब्राउजिङ "
+#~ "सञ्झ्याल एकैसाथ बन्द हुने भएकाले सावधान रहनुहोस् ।</p>"
+
+#~ msgid "Minimize Memory Usage"
+#~ msgstr "स्मृति उपयोग न्यून बनाउनुहोस्"
+
+#~ msgid "&Never"
+#~ msgstr "कहिले पनि"
+
+#~ msgid "For &file browsing only (recommended)"
+#~ msgstr "फाइल ब्राउजिङका लागि मात्र (सिफारिस गरिएका)"
+
+#~ msgid "Alwa&ys (use with care)"
+#~ msgstr "सधैँ (होसियारीपूर्वक प्रयोग गर्नुहोस्)"

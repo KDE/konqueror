@@ -1,0 +1,81 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Translators:
+# Cemil MUTLU <mawilos@gmail.com>, 2005.
+# obsoleteman <tulliana@gmail.com>, 2008.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
+# Volkan Gezer <volkangezer@gmail.com>, 2013.
+# Emir SARI <emir_sari@icloud.com>, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: applications-kde4\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2022-04-28 11:49+0300\n"
+"Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
+"Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 21.12.3\n"
+
+#: dirfilterplugin.cpp:120
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Hide Filter Bar"
+msgstr "Süzgeç Çubuğunu Gizle"
+
+#: dirfilterplugin.cpp:124
+#, kde-format
+msgctxt "@label:textbox"
+msgid "F&ilter:"
+msgstr "S&üzgeç:"
+
+#: dirfilterplugin.cpp:136
+#, kde-format
+msgctxt "@label:button"
+msgid "Filter by t&ype"
+msgstr "&Türe göre süz"
+
+#: dirfilterplugin.cpp:137
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Filter items by file type."
+msgstr "Ögeleri dosya türüne göre süz."
+
+#: dirfilterplugin.cpp:228
+#, kde-format
+msgctxt "@action:inmenu Tools"
+msgid "Show Filter Bar"
+msgstr "Süzgeç Çubuğunu Göster"
+
+#: dirfilterplugin.cpp:322
+#, kde-format
+msgid "Use Multiple Filters"
+msgstr "Çoklu Süzgeç Kullan"
+
+#: dirfilterplugin.cpp:328
+#, kde-format
+msgid "Show Count"
+msgstr "Sayıyı Göster"
+
+#: dirfilterplugin.cpp:333
+#, kde-format
+msgid "Reset"
+msgstr "Sıfırla"
+
+#. i18n: ectx: Menu (tools)
+#: dirfilterplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "&Araçlar"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: dirfilterplugin.rc:8
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "Ek Araç Çubuğu"

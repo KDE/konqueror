@@ -1,0 +1,668 @@
+<chapter id="basics">
+
+<chapterinfo>
+<authorgroup>
+<author
+><personname
+><firstname
+>Памела</firstname
+> <surname
+>Робертс</surname
+></personname
+></author>
+<othercredit role="translator"
+><firstname
+>Драган</firstname
+><surname
+>Пантелић</surname
+><affiliation
+><address
+><email
+>falcon-10@gmx.de</email
+></address
+></affiliation
+><contrib
+>превод</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>8. 2. 2010.</date>
+<releaseinfo
+>4.4.0</releaseinfo>
+</chapterinfo>
+
+<title
+>Основе <application
+>К‑освајача</application
+></title>
+
+<important
+><para
+>Као и сви <acronym
+>КДЕ</acronym
+> програми, <application
+>К‑освајач</application
+> је изузетно прилагодљив. Овај документ описује како се <application
+>К‑освајач</application
+> понаша под нормалним, подразумеваним поставкама.</para>
+<para
+>Миш са три дугмета може бити користан како у <application
+>К‑освајачу</application
+>, тако у било ком другом <acronym
+>КДЕ</acronym
+> програму. Ако имате миш са само два дугмета, требало би да можете да подесите систем тако да истовремени притисак оба дугмета симулира треће дугме.</para>
+<para
+>О коришћењу миша можете прочитати више у одељку <link linkend="lmb-mmb"
+>о функцији дугмади миша</link
+>.</para>
+<para
+>Ако сте навикли да двоклик изводи радње, онда имајте на уму да <application
+>К‑освајач</application
+> подразумевано реагује на један клик, као што је и обичај у <acronym
+>КДЕ‑у</acronym
+>.</para
+></important>
+
+<sect1 id="konq-start">
+<title
+>Покретање <application
+>К‑освајача</application
+></title>
+
+<para
+>Будући комбиновани менаџер фајлова и прегледач, <application
+>К‑освајач</application
+> ће у раду аутоматски пребацивати између ова два режима, али је згодно и моћи одабрати режим при покретању <application
+>К‑освајача</application
+>.</para>
+
+<itemizedlist>
+<!--
+<listitem
+><para
+>If you have a <guiicon
+>house</guiicon
+> shaped icon on the panel 
+or desktop, then <mousebutton
+>left</mousebutton
+> click on it to open 
+&konqueror; as a file manager.</para
+></listitem>
+
+<listitem
+><para
+>Or <mousebutton
+>left</mousebutton
+> click on <guiicon
+>world
+</guiicon
+> shaped icon on the panel or desktop to open &konqueror; in browser 
+mode.</para
+></listitem>
+-->
+<listitem
+><para
+>Из менија покретача програма изаберите <menuchoice
+><guisubmenu
+>Интернет</guisubmenu
+><guimenuitem
+>К‑освајач, (веб прегледач)</guimenuitem
+></menuchoice
+> да га покренете као прегледач. </para
+></listitem>
+
+<listitem
+><para
+><keycombo action="simul"
+><keycap
+>Alt</keycap
+><keycap
+>F2</keycap
+></keycombo
+> отвориће <application
+>К‑извођач</application
+>; ту унесите путању фасцикле и притисните <keycap
+>Enter</keycap
+> да покренете <application
+>К‑освајач</application
+> у режиму менаџера фајлова, или просто унесите неки УРЛ (нпр. <userinput
+>http://www.konqueror.org</userinput
+>) да га покренете као прегледач.</para
+></listitem>
+
+</itemizedlist>
+
+<note
+><para
+>Кликните на црну стрелицу десно од иконе домаће странице да се пребаците на своју домаћу фасциклу у режиму менаџера фајлова, и обратно. </para
+></note>
+
+<para
+>Ако је <application
+>К‑освајач</application
+> подразумевани менаџер фајлова, такође се аутоматски покреће кад кликнете <mousebutton
+>левим</mousebutton
+> на икону површи која представља фасциклу, као што је хард‑диск или икона <guiicon
+>Смеће</guiicon
+>. </para>
+
+
+</sect1>
+
+<sect1 id="parts">
+<title
+>Делови <application
+>К‑освајача</application
+></title>
+
+<para
+>Кратак поглед на главне делове <application
+>К‑освајачевог</application
+> прозора:</para>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="parts.png"/></imageobject>
+<textobject>
+<phrase
+>Снимак екрана <application
+>К‑освајача</application
+></phrase>
+</textobject>
+</mediaobject>
+
+<para
+><emphasis
+>Насловна трака</emphasis
+> је трака преко врха <application
+>К‑освајачевог</application
+> прозора и функционише исто као и у другим <acronym
+>КДЕ</acronym
+> програмима. Кликните <mousebutton
+>десним</mousebutton
+> на средишњи део да дозовете мени насловне траке.</para>
+
+<para
+><emphasis
+>Трака менија</emphasis
+> је трака која садржи имена падајућих менија. Кликните <mousebutton
+>левим</mousebutton
+> на име менија да га, алтернативно, прикажете или сакријете, или употребите <keycombo action="simul"
+><keycap
+>Alt</keycap
+><keycap
+>подвучено слово</keycap
+></keycombo
+> као пречицу, на пример <keycombo action="simul"
+><keycap
+>Alt</keycap
+><keycap
+>У</keycap
+></keycombo
+> за мени <guimenu
+>Уређивање</guimenu
+>. Разни менији описани су у секцији овог документа <link linkend="menubar"
+>о траци менија</link
+>.</para>
+
+<para
+><emphasis
+>Трака алатки</emphasis
+> садржи иконе за често коришћене радње. <mousebutton
+>Леви</mousebutton
+> клик на икону ће је активирати. Кад лебдите показивачем изнад иконе појавиће се кратак опис онога што та икона ради.</para>
+
+<para
+>Неке иконе, на пример „горе“ и „назад“ на претходном снимку екрана, имају малу црну стрелицу на десној страни. Ако кликнете левим дугметом на ову стрелицу, појавиће се мали падајући мени.</para
+> <para
+><mousebutton
+>Десни</mousebutton
+> клик на траку алатки дозваће <link linkend="rmb-menus"
+>мени <guilabel
+>Поставке траке алатки</guilabel
+></link
+>, који можете користити за промену њеног изгледа и положаја.</para>
+
+<para
+><emphasis
+>Трака локације</emphasis
+> приказује путању ка фасцикли, УРЛ‑у или фајлу. Овде можете уписати путању или УРЛ, па притиснути <keycap
+>Enter</keycap
+> или кликнути левим на икону <guiicon
+>Кретање</guiicon
+> скроз десно на траци локације, да одете на уписани УРЛ. Црна икона на десном крају траке брише поље уноса.</para>
+
+<para
+><emphasis
+>Трака обележивача</emphasis
+> је област испод траке локације на претходном снимку екрана. Овде можете додавати често коришћене обележиваче. Погледајте секцију <link linkend="orgbmark"
+>о организовању обележивача</link
+>.</para>
+
+<para
+><emphasis
+>Прозор</emphasis
+> је главна област <application
+>К‑освајача</application
+>, која приказује садржаје фасцикли, веб страница, докумената или слика. Коришћењем менија <link linkend="menu-window"
+><guimenu
+>Прозор</guimenu
+></link
+> можете поделити главни <application
+>К‑освајачев</application
+> прозор на један или више одвојених приказа (корисно за радње превлачења), или успоставити два или више приказа са језичцима. </para>
+
+<para
+><emphasis
+>Трака стања</emphasis
+> протеже се преко дна <application
+>К‑освајачевог</application
+> прозора и приказује опште информације о ономе изнад чега лебди показивач миша. Ако сте поделили главни прозор на више приказа, сваки од њих ће имати траку стања, са малим зеленим светлом на левом крају да покаже који је приказ активан. <mousebutton
+>Десни</mousebutton
+> клик на траку стања дозива њен <link linkend="rmb-menus"
+>контекстни мени</link
+>.</para>
+
+<note
+><para
+>Не брините ако <application
+>К‑освајач</application
+> не изгледа тачно као на овом снимку екрана, јер је изузетно подесив. Особито:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Можете користити мени <link linkend="menu-settings"
+><guimenu
+>Подешавање</guimenu
+></link
+> да прикажете или сакријете траку менија, главну траку, траку локације и траку обележивача, или чак да додате допунску траку.</para
+></listitem>
+<listitem
+><para
+>Ако су траке алатки откључане, такође их можете превући на друго место тако што кликнете <mousebutton
+>левим</mousebutton
+> на ручку на левом крају траке и померате миш док је лево дугме и даље притиснуто. </para
+></listitem>
+<listitem
+><para
+>Снимак екрана не приказује опциону <link linkend="sidebar"
+>бочну траку</link
+>.</para
+></listitem>
+</itemizedlist>
+
+<para
+>За више информација о начину измене <application
+>К‑освајачевог</application
+> изгледа, погледајте секцију <link linkend="config"
+>о подешавању <application
+>К‑освајача</application
+></link
+>.</para
+></note>
+
+</sect1>
+
+<sect1 id="bubble">
+<title
+>Облачићи и „Шта је ово“ </title>
+
+<para
+>Много о начину рада <application
+>К‑освајача</application
+> можете сазнати и без читања целог овог документа, ако се ослоните на <emphasis
+>облачиће</emphasis
+> и <emphasis
+>шта‑је‑ово</emphasis
+>.</para>
+
+<para
+>Лебдењем показивачем миша изнад дугмета траке алатки или бочне траке добићете краћи опис онога што то дугме ради.</para>
+
+<para
+><emphasis
+>Шта‑је‑ово</emphasis
+> се позива преко траке менија, ставком <menuchoice
+><guimenu
+>Помоћ</guimenu
+><guimenuitem
+>Шта је ово?</guimenuitem
+></menuchoice
+> или пречицом <keycombo action="simul"
+><keycap
+>Shift</keycap
+><keycap
+>F1</keycap
+></keycombo
+>. Показивач ће променити облик у знак питања уздуж стрелице.</para>
+
+<para
+>Ако је тај знак питања видљив, леви клик заправо неће урадити ништа док не кликнете на виџет (или његов текст) за који је дефинисано шта‑је‑ово. Ако га има, добићете релативно опширно објашњење чему је виџет намењен. Већина дијалога које издаје <application
+>К‑освајач</application
+> подржава подржава шта‑је‑ово.</para>
+
+</sect1>
+
+<sect1 id="lmb-mmb">
+<title
+>Радње <mousebutton
+>левим</mousebutton
+> и <mousebutton
+>средњим</mousebutton
+> дугметом миша</title>
+
+<para
+>Ако кликнете левим на неку ставку у <application
+>К‑освајачевом</application
+> прозору, она ће бити „активирана“. То значи:</para>
+
+<itemizedlist>
+
+<listitem
+><para
+>Кликните <mousebutton
+>левим</mousebutton
+> на икону у траци алатки да извршите радњу представљену том иконом. </para
+></listitem>
+<listitem
+><para
+>Кликните <mousebutton
+>левим</mousebutton
+> на ставку у траци менија да развијете тај мени.</para
+></listitem>
+<listitem
+><para
+>Кликните <mousebutton
+>левим</mousebutton
+> на ставку менија да то урадите.</para
+></listitem
+> 
+<listitem
+><para
+>Кликните <mousebutton
+>левим</mousebutton
+> на икону у траци обележивача да отворите дотични УРЛ.</para
+></listitem>
+<listitem
+><para
+>Кликните <mousebutton
+>левим</mousebutton
+> на везу на веб страници да би је испратили <application
+>К‑освајачем</application
+>.</para
+></listitem>
+<listitem
+><para
+>Кликните <mousebutton
+>левим</mousebutton
+> на икону или име фасцикле, и <application
+>К‑освајач</application
+> ће ући у ту фасциклу (тј. приказати њен садржај). </para
+></listitem>
+<listitem
+><para
+>По <mousebutton
+>левом</mousebutton
+> клику на име фајла или икону, <application
+>К‑освајач</application
+> ће урадити оно што мисли да је пригодно, на основу типа фајла. Обично то значи отварање ХТМЛ страница, прегледање текста, слика, <application
+>Окуларових</application
+> докумената, који ће сви бити приказани унутар <application
+>К‑освајачевог</application
+> прозора („прегледање“ значи да можете да видите фајл, али не и да га мењате).</para
+> 
+
+<para
+><application
+>К‑освајач</application
+> разлучује тип фајла поклапајући наставак имена фајла са списком познатих типова. Ако ово омаши, покушава да погоди тип према садржају фајла. Списак познатих типова и придружених радњи можете мењати на страници <guilabel
+>Придружења фајловима</guilabel
+> у дијалогу <menuchoice
+><guimenu
+>Подешавање</guimenu
+><guimenuitem
+>Подеси К‑освајач...</guimenuitem
+></menuchoice
+>.</para
+></listitem>
+
+</itemizedlist>
+
+<para
+>Клик средњим дугметом миша на име фајла или фасцикле, или икону, у суштини чини исто што и <mousebutton
+>леви</mousebutton
+> клик, само што обично отвара нови прозор <application
+>К‑освајача</application
+>, осим ако није попуњена кућица <guilabel
+>Отвори везу у новом језичку уместо у новом прозору</guilabel
+> на страници <guimenuitem
+>Опште</guimenuitem
+>, у дијалогу <menuchoice
+><guimenu
+>Подешавање</guimenu
+><guimenuitem
+>Подеси К‑освајач...</guimenuitem
+></menuchoice
+>. <application
+>К‑освајач</application
+> уме да отвара везе на страницама и обележиваче, као и ставке <guibutton
+>Домаћа</guibutton
+>, <guibutton
+>Горе</guibutton
+>, <guibutton
+>Назад</guibutton
+> и <guibutton
+>Напред</guibutton
+> у новом језичку или прозору.</para>
+
+<para
+>Држањем притиснутог тастера <keycap
+>Shift</keycap
+> при клику средњим дугметом миша, отворићете везу у позадини.</para>
+<!-- not in 4.4.0
+<important
+><para
+>If you click the &MMB; when the mouse cursor is over a blank 
+part of the main view (not over a link or file name or icon) &konqueror; will 
+copy the contents of the clipboard into the Location Toolbar and try to use 
+that as a &URL;.</para
+></important>
+-->
+</sect1>
+
+<sect1 id="rmb-menus">
+<title
+>Менији на <mousebutton
+>десно</mousebutton
+> дугме миша</title>
+
+<para
+>Клик десним дугметом на скоро било који део <application
+>К‑освајачевог</application
+> прозора дозваће одговарајући <emphasis
+>контекстни мени</emphasis
+>.</para>
+
+<note
+><para
+>Ако је у <application
+>К‑освајачевим</application
+> <link linkend="othersettings"
+>поставкама</link
+> укључена опција <guilabel
+>Десним кликом уназад кроз историјат</guilabel
+>, прост <mousebutton
+>десни</mousebutton
+> клик ради исто што и дугме <guibutton
+>Назад</guibutton
+>. У овом случају контекстном менију можете приступити померањем миша док држите притиснуто <mousebutton
+>десно</mousebutton
+> дугме.</para
+></note>
+
+<variablelist>
+
+<varlistentry>
+<term
+>На насловној траци</term>
+<listitem
+><para
+><mousebutton
+>Десни</mousebutton
+> клик било где на слободну област на насловној траци дозива мени насловне траке, допуштајући вам како да управљате положајем <application
+>К‑освајачевог</application
+> прозора, тако и декорацијама примењеним на све прозоре <acronym
+>КДЕ</acronym
+> програмâ. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>На главној траци алатки</term>
+<listitem
+><para
+><mousebutton
+>Десни</mousebutton
+> клик било где на слободну област на главној траци издаће њен мени. Можете га користити да поставите траку на врх, дно, лево или десно у прозору <application
+>К‑освајача</application
+>. Такође можете одредити величину дугмади на траци, и да ли да буду приказана као иконе, текст, или обоје.</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+>На траци локације</term>
+<listitem
+><para
+>Кликните <mousebutton
+>десним</mousebutton
+> у поље за унос УРЛ‑ова да изведете радње исецања, копирања, налепљивања или чишћења, или да измените могућности аутоматске <link linkend="path-complete"
+>допуне текста</link
+>.</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+>Унутар приказа</term>
+<listitem
+><para
+>Ако кликнете <mousebutton
+>десним</mousebutton
+> било где на слободну област унутар приказа, добићете мени који, између осталих опција, садржи навигационе наредбе <guiicon
+>Горе</guiicon
+>, <guiicon
+>Назад</guiicon
+>, <guiicon
+>Напред</guiicon
+> и <guiicon
+>Учитај поново</guiicon
+>.  </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>На фајлу или фасцикли</term>
+<listitem
+><para
+>Ово је сасвим згодна могућност. <mousebutton
+>Десни</mousebutton
+> клик на име или икону било којег фајла или фасцикле не само да „изабира“ ту ставку, него дозива и мени који пружа радње исецања, премештања, копирања или уклањања (на разне начине), отварање или прегледање у програму по избору, преименовање ставке, те уређивање типа фајла или својстава.</para
+></listitem
+> </varlistentry>
+
+<varlistentry>
+<term
+>На траци стања</term>
+<listitem
+><para
+>Кликните <mousebutton
+>десним</mousebutton
+> на траку стања на дну прозора или приказа да додате или уклоните тај приказ из <application
+>К‑освајачевог</application
+> прозора.</para
+></listitem
+> 
+</varlistentry>
+</variablelist>
+
+</sect1>
+
+<sect1 id="man-info">
+<title
+>Прегледање помоћи, упутних и инфо страница</title>
+
+<para
+><acronym
+>КДЕ</acronym
+> странице помоћи и уникс упутне и инфо странице можете погледати директно у <application
+>К‑освајачу</application
+>, без потребе за покретањем <application
+>К‑центра-помоћи</application
+>. </para>
+
+<para
+>Да погледате неку <acronym
+>КДЕ</acronym
+> страницу помоћи, унесите <userinput
+>help:/<replaceable
+>naredba_programa</replaceable
+></userinput
+> (на пример, <userinput
+>help:/kmail</userinput
+> позива документацију <application
+>К‑поште</application
+>) у траку локације <application
+>К‑освајача</application
+>. </para>
+
+<para
+><application
+>К‑освајач</application
+> олакшава и читање уникс упутних странице. На пример, упишете <userinput
+>man:/touch</userinput
+> или <userinput
+>#touch</userinput
+> у траку локације да бисте погледали страницу за наредбу <command
+>touch</command
+>.</para
+> 
+
+<para
+>За прегледање уникс инфо страница, уношење <userinput
+>info:/dir</userinput
+> одводи вас на фасциклу на врху инфо садржаја. До жељене странице одатле долазите просто кликтањем на везе. За директан одлазак на жељену страницу, можете уписати <userinput
+>info:/<replaceable
+>naredba</replaceable
+></userinput
+>.</para>
+
+<note
+><para
+>Нажалост, <acronym
+>КДЕ</acronym
+> странице помоћи складиштене су тако да се не могу гледати у другим прегледачима. Ако то заиста желите, једино што можете је да пређете на везу и посетите <ulink url="http://docs.kde.org"
+>http://docs.kde.org</ulink
+>.</para
+></note>
+</sect1>
+
+</chapter>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

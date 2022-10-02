@@ -1,0 +1,235 @@
+# Translation of libkonq to Spanish
+# traducción de libkonq.po a Español
+# translation of libkonq.po to Spanish
+# Translation to spanish
+# Copyright (C) 2001-2002
+#
+# Pablo de Vicente <vicente@oan.es>, 2001-2002.
+# Jaime Robles <jaime@kde.org>, 2003, 2004, 2005, 2007, 2008, 2009.
+# Miguel Revilla Rodríguez <yo@miguelrevilla.com>, 2003, 2004.
+# Pablo de Vicente <p.devicente@wanadoo.es>, 2004.
+# Jaime Robles <jaime@robles.nu>, 2005.
+# Santiago Fernandez Sancho <santi@kde-es.org>, 2005.
+# Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>, 2007.
+# Cristina Yenyxe González García <the.blue.valkyrie@gmail.com>, 2010, 2011.
+# Eloy Cuadra <ecuadra@eloihr.net>, 2010, 2011, 2019, 2020.
+# arklad, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2020-11-26 22:19+0100\n"
+"Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
+"Language-Team: Spanish <kde-l10n-es@kde.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"First-Translator: Boris Wesslowski <Boris@Wesslowski.com>\n"
+"X-Generator: Lokalize 20.11.80\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "&Abrir"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "Crear &carpeta..."
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "&Restaurar"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr "Mostrar carpeta original"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr "Mostrar archivo original"
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "Vaciar la pap&elera"
+
+#: src/konq_popupmenu.cpp:312
+#, kde-format
+msgid "&Configure Trash Bin"
+msgstr "&Configurar la papelera"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "Añadir esta página a los &marcadores"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "Añadir esta ubicación a los &marcadores"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "Añadir esta carpeta a los &marcadores"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "Añadir este enlace a los &marcadores"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "Añadir este archivo a los &marcadores"
+
+#: src/konq_popupmenu.cpp:379
+#, kde-format
+msgid "Preview In"
+msgstr "Mostrar vista previa en"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr "Abrir terminal aquí"
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "&Propiedades"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy To"
+#~ msgstr "Copiar a"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "Mover a"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "Carpeta personal"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "Carpeta raíz"
+
+#~ msgctxt "@title:menu in Copy To or Move To submenu"
+#~ msgid "Browse..."
+#~ msgstr "Explorar..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "Copiar aquí"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "Mover aquí"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "No puede soltar una carpeta sobre sí misma"
+
+#~ msgid "File name for dropped contents:"
+#~ msgstr "Nombre de archivo para el contenido soltado:"
+
+#~ msgid "&Move Here"
+#~ msgstr "&Mover aquí"
+
+#~ msgid "&Copy Here"
+#~ msgstr "&Copiar aquí"
+
+#~ msgid "&Link Here"
+#~ msgstr "En&lazar aquí"
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "Establecer como papel &tapiz"
+
+#~ msgid "C&ancel"
+#~ msgstr "C&ancelar"
+
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "Crear carpeta"
+
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "Introduzca un nombre diferente"
+
+#~ msgid ""
+#~ "The name \"%1\" starts with a dot, so the directory will be hidden by "
+#~ "default."
+#~ msgstr ""
+#~ "El nombre «%1» empieza con un punto, por lo que carpeta estará oculta por "
+#~ "defecto."
+
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "¿Crear carpeta oculta?"
+
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "Nueva carpeta"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "Nueva carpeta"
+
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "Introduzca el nombre de la carpeta:"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "Pegar una carpeta"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One File"
+#~ msgstr "Pegar un archivo"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Item"
+#~ msgid_plural "Paste %1 Items"
+#~ msgstr[0] "Pegar un elemento"
+#~ msgstr[1] "Pegar %1 elementos"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste Clipboard Contents..."
+#~ msgstr "Pegar contenido del portapapeles..."
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste"
+#~ msgstr "Pegar"
+
+#~ msgid ""
+#~ "Restores this file or directory, back to the location where it was "
+#~ "deleted from initially"
+#~ msgstr ""
+#~ "Restaura este archivo o carpeta a la ubicación donde se encontraba antes "
+#~ "de ser eliminado"
+
+#~ msgid ""
+#~ "Opens a new file manager window showing the target of this link, in its "
+#~ "parent directory."
+#~ msgstr ""
+#~ "Abre una nueva ventana del explorador de archivos para mostrar el destino "
+#~ "de este enlace, en su carpeta padre."
+
+#~ msgid "Share"
+#~ msgstr "Compartir"
+
+#~ msgctxt "@info"
+#~ msgid "Close"
+#~ msgstr "Cerrar"
+
+#~ msgid "Close"
+#~ msgstr "Cerrar"
+
+#~ msgid "Error: %1"
+#~ msgstr "Error: %1"

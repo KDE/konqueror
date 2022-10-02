@@ -1,0 +1,77 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Ukrainian "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="performance" lang="&language;">
+<articleinfo>
+<title
+>Швидкодія</title>
+<authorgroup>
+<author
+>&Mike.McBride; &Mike.McBride.mail;</author>
+<othercredit role="translator"
+><firstname
+>Юрій</firstname
+><surname
+>Чорноіван</surname
+><affiliation
+><address
+><email
+>yurchor@ukr.net</email
+></address
+></affiliation
+><contrib
+>Переклад українською</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>8 листопада 2016 року</date>
+<releaseinfo
+>Програми 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Системні параметри</keyword>
+<keyword
+>швидкодія</keyword>
+<keyword
+>попереднє завантаження</keyword>
+</keywordset>
+</articleinfo>
+
+<sect1 id="sys-performance">
+<title
+>Параметри швидкодії</title>
+
+<para
+>&konqueror; використовують на різних комп’ютерах зовсім різні користувачі. У категорії швидкодії це діалогове вікно надає змогу кожному з користувачів налаштувати параметри, які можуть зробити так, щоб підвищити швидкодію комп’ютера, на якому встановлено &konqueror;. </para>
+
+<sect2
+><title
+>Попереднє завантаження</title>
+<para
+>Цей підрозділ з назвою <guilabel
+>Попереднє завантаження</guilabel
+> призначено для встановлення рівноваги між споживанням пам’яті і швидкодією.</para>
+
+<para
+>Термін <emphasis
+>Попереднє завантаження</emphasis
+> стосується завантаження екземпляра &konqueror; до пам’яті ще до того, як користувач запустить &konqueror;. Позитивним ефектом використання такого завантаження є те, що коли користувач накаже &kde; завантажити &konqueror;, вікно програми з’явиться негайно, оскільки більшу частину програми вже завантажено. Негативним наслідком є те, що цей екземпляр &konqueror; споживатиме пам’ять, яку можна використати для роботи з іншими програмами. Типово, коли користувач завершує роботу &konqueror;, роботу екземпляра програми не буде завершено. Це означає, що наступного разу, коли користувач захоче завантажити &konqueror;, програму негайно буде завантажено.</para>
+
+<para
+>Останнє поле для позначки має мітку <guilabel
+>Завжди попередньо завантажувати принаймні один екземпляр</guilabel
+>, за його допомогою можна вказати, що ви бажаєте, щоб система завжди тримала у пам’яті один попередньо завантажений, але не використаний, зразок &konqueror;. Позначення цього пункту може значно сповільнити роботу на деяких комп’ютерах (особливо там, де обсяг оперативної пам’яті є незначним).</para>
+</sect2>
+</sect1>
+
+</article>

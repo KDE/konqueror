@@ -1,0 +1,159 @@
+# Vietnamese translation for kcmperformance.
+# Copyright © 2007 KDE i18n Project for Vietnamese.
+# Phan Vĩnh Thịnh <teppi82@gmail.com>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmperformance\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-21 00:16+0000\n"
+"PO-Revision-Date: 2007-06-24 14:08+0930\n"
+"Last-Translator: Phan Vĩnh Thịnh <teppi82@gmail.com>\n"
+"Language-Team: Vietnamese <kde-l10n-vi@kde.org>\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: KBabel 1.10\n"
+
+#: kcmperformance.cpp:28
+#, kde-format
+msgid ""
+"<h1>KDE Performance</h1> You can configure settings that improve KDE "
+"performance here."
+msgstr ""
+"<h1>Hiệu suất của KDE</h1> Bạn có thể cấu hình những thiết lập làm tăng hiệu "
+"suất làm việc của KDE ở đây."
+
+#: kcmperformance.cpp:35
+#, kde-format
+msgid "Konqueror"
+msgstr "Konqueror"
+
+#: kcmperformance.cpp:38
+#, kde-format
+msgid "System"
+msgstr "Hệ thống"
+
+#: kcmperformance.cpp:63
+#, kde-format
+msgid ""
+"<h1>Konqueror Performance</h1> You can configure several settings that "
+"improve Konqueror performance here. These include options for reusing "
+"already running instances and for keeping instances preloaded."
+msgstr ""
+"<h1>Hiệu suất Konqueror</h1> Bạn có thể cấu hình những thiết lập làm tăng "
+"hiệu suất làm việc của KDE ở đây. Chúng bao gồm những tuỳ chọn để dùng lại "
+"những tiến trình Konqueror đang chạy và giữ chúng nạp trước."
+
+#: konqueror.cpp:24
+#, fuzzy, kde-format
+#| msgid ""
+#| "If enabled, an instance of Konqueror will be preloaded after the ordinary "
+#| "KDE startup sequence.<p>This will make the first Konqueror window open "
+#| "faster, but at the expense of longer KDE startup times (but you will be "
+#| "able to work while it is loading, so you may not even notice that it is "
+#| "taking longer)."
+msgid ""
+"<p>If enabled, an instance of Konqueror will be preloaded after the ordinary "
+"Plasma startup sequence.</p><p>This will make the first Konqueror window "
+"open faster, but at the expense of longer Plasma startup times (but you will "
+"be able to work while it is loading, so you may not even notice that it is "
+"taking longer).</p>"
+msgstr ""
+"Nếu chọn, một tiến trình Konqueror sẽ được nạp trước sau vòng khởi động của "
+"KDE.<p>Tính năng này làm tăng tốc độ mở của cửa sổ Konqueror đầu tiên, nhưng "
+"sẽ làm cho KDE khởi động lâu hơn (nhưng bạn vẫn có thể làm việc khi "
+"Konqueror đang nạp, vì thế có thể bạn sẽ không nhận ra sự chậm chạp này)."
+
+#: konqueror.cpp:30
+#, fuzzy, kde-format
+#| msgid ""
+#| "If enabled, KDE will always try to have one preloaded Konqueror instance "
+#| "ready; preloading a new instance in the background whenever there is not "
+#| "one available, so that windows will always open quickly.<p><b>Warning:</"
+#| "b> In some cases, it is actually possible that this will reduce perceived "
+#| "performance."
+msgid ""
+"<p>If enabled, Konqueror will always try to have one preloaded instance "
+"ready; preloading a new instance in the background whenever there is not one "
+"available, so that windows will always open quickly.</p><p><b>Warning:</b> "
+"In some cases, it is actually possible that this will reduce perceived "
+"performance.</p>"
+msgstr ""
+"Nếu chọn, KDE sẽ luôn luôn có một tiến trình KDE nạp trước; nạp một tiến "
+"trình mới một cách im lặng khi chưa có, vì thế các cửa sổ sẽ mở ra nhanh "
+"chóng. <p><b>Cảnh báo:</b> Trong một số trường hợp, có thể tính năng sẽ làm "
+"giảm hiệu suất một cách trông thấy."
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
+#: konqueror_ui.ui:17
+#, kde-format
+msgid "Preloading"
+msgstr "Nạp trước"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_preload_on_startup)
+#: konqueror_ui.ui:23
+#, fuzzy, kde-format
+#| msgid "Preload an instance after KDE startup"
+msgid "Preload an instance after desktop startup"
+msgstr "Nạp trước một tiến trình sau khi khởi động KDE"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_always_have_preloaded)
+#: konqueror_ui.ui:30
+#, fuzzy, kde-format
+#| msgid "Always try to have at least one preloaded instance"
+msgid "Always try to have one preloaded instance"
+msgstr "Luôn luôn có ít nhất một tiến trình nạp trước"
+
+#: system.cpp:22
+#, kde-format
+msgid ""
+"<p>During startup KDE needs to perform a check of its system configuration "
+"(mimetypes, installed applications, etc.), and in case the configuration has "
+"changed since the last time, the system configuration cache (KSyCoCa) needs "
+"to be updated.</p><p>This option delays the check, which avoid scanning all "
+"directories containing files describing the system during KDE startup, thus "
+"making KDE startup faster. However, in the rare case the system "
+"configuration has changed since the last time, and the change is needed "
+"before this delayed check takes place, this option may lead to various "
+"problems (missing applications in the K Menu, reports from applications "
+"about missing required mimetypes, etc.).</p><p>Changes of system "
+"configuration mostly happen by (un)installing applications. It is therefore "
+"recommended to turn this option temporarily off while (un)installing "
+"applications.</p>"
+msgstr ""
+"<p>Khi khởi chạy KDE cần thực hiện một số kiểm tra cấu hình hệ thống (kiểu "
+"MIME, ứng dụng đã cài, v.v...), và nếu cấu hình đã thay đổi kể từ lần chạy "
+"cuối, thì cần cập nhật bộ đệm cấu hình hệ thống (KSyCoCa).</p> <p>Tuỳ chọn "
+"này cản trở sự kiểm tra, không cho quét mọi thư mục chứa tệp cấu hình hệ "
+"thống khi KDE khởi chạy, vì thế làm cho KDE khởi chạy nhanh hơn. Tuy nhiên, "
+"trong trường hợp hiếm cấu hình hệ thống đã thay đổi kể từ lần chạy cuối, và "
+"thay đổi là cần thiết trước khi kiểm tra bị hoãn này, thì tuỳ chọn này có "
+"thể tạo ra một số vấn đề (thiếu ứng dụng trong Trình đơn K, thông báo của "
+"các ứng dụng về các kiểu MIME thiếu, v.v.)</p><p>Thay đổi cấu hình hệ thống "
+"thường do cài đặt hay gỡ bỏ ứng dụng. Vì thế nên tạm tắt tuỳ chọn này khi "
+"đang cài đặt hay gỡ bỏ ứng dụng.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gb_)
+#: system_ui.ui:8
+#, kde-format
+msgid "System Configuration"
+msgstr "Cấu hình hệ thống"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_disable_kbuildsycoca)
+#: system_ui.ui:14
+#, kde-format
+msgid "Disable &system configuration startup check"
+msgstr "&Bỏ kiểm tra cấu hình hệ thống khi chạy"
+
+#. i18n: ectx: property (text), widget (QLabel, label_kbuildsycoca)
+#: system_ui.ui:21
+#, kde-format
+msgid ""
+"This option may in rare cases lead to various problems. Consult the What's "
+"This (Shift+F1) help for details."
+msgstr ""
+"Tuỳ chọn này trong một số hiếm trường hợp có thể gây ra vấn đề. Xem trợ giúp "
+"« Cái này là gì? » (Shift+F1) để biết chi tiết."

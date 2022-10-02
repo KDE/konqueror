@@ -1,0 +1,62 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Aleksandar Yordanov <punkin.drublik@gmail.com>, 2007.
+# Yasen Pramatarov <yasen@lindeas.com>, 2009, 2011, 2019, 2021.
+# Svetoslav Stefanov <svetlisashkov@yahoo.com>, 2019.
+msgid ""
+msgstr ""
+"Project-Id-Version: akregator_konqplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2021-01-07 11:28+0200\n"
+"Last-Translator: Yasen Pramatarov <yasen@lindeas.com>\n"
+"Language-Team: Bulgarian <dict@ludost.net>\n"
+"Language: bg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 20.08.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: akregatorplugin.cpp:63
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Add Feed to Akregator"
+msgstr "Добавяне на емисия към Akregator"
+
+#: konqfeedicon.cpp:127
+#, kde-format
+msgid "Add Feed to Akregator"
+msgstr "Добавяне на емисия към Akregator"
+
+#: konqfeedicon.cpp:129
+#, kde-format
+msgid "Add Feeds to Akregator"
+msgstr "Добавяне на емисии към Akregator"
+
+#: konqfeedicon.cpp:138
+#, kde-format
+msgid "Add All Found Feeds to Akregator"
+msgstr "Добавяне на всички открити емисии към Akregator"
+
+#: konqfeedicon.cpp:162
+#, kde-format
+msgid "Subscribe to site updates (using news feed)"
+msgstr "Получаване на новини при обновяване на сайта"
+
+#: pluginutil.cpp:36 pluginutil.cpp:46
+#, kde-format
+msgid "Imported Feeds"
+msgstr "Внесени емисии"
+
+#: pluginutil.cpp:38
+#, kde-format
+msgid "Unable to contact Akregator via D-Bus"
+msgstr "Грешка при свързването с Akregator чрез D-Bus"
+
+#: pluginutil.cpp:39
+#, kde-format
+msgctxt "@title:window"
+msgid "D-Bus call failed"
+msgstr "Грешка при извикване на D-Bus"

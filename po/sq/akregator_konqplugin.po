@@ -1,0 +1,67 @@
+# Albanian translation for kdeaddons
+# Copyright (c) 2007 Rosetta Contributors and Canonical Ltd 2007
+# This file is distributed under the same license as the kdeaddons package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdeaddons\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2010-03-08 01:09+0000\n"
+"Last-Translator: Vilson Gjeci <vilsongjeci@gmail.com>\n"
+"Language-Team: Albanian <sq@li.org>\n"
+"Language: sq\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2011-04-21 23:13+0000\n"
+"X-Generator: Launchpad (build 12883)\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: akregatorplugin.cpp:63
+#, fuzzy, kde-format
+#| msgid "Add Feed to Akregator"
+msgctxt "@action:inmenu"
+msgid "Add Feed to Akregator"
+msgstr "Bëj një shtesë për Akgragator"
+
+#: konqfeedicon.cpp:127
+#, kde-format
+msgid "Add Feed to Akregator"
+msgstr "Bëj një shtesë për Akgragator"
+
+#: konqfeedicon.cpp:129
+#, kde-format
+msgid "Add Feeds to Akregator"
+msgstr "Bëj disa shtesa për Akgragator"
+
+#: konqfeedicon.cpp:138
+#, kde-format
+msgid "Add All Found Feeds to Akregator"
+msgstr "Shtoji të gjitha shtesat e gjendura tek Akgragator"
+
+#: konqfeedicon.cpp:162
+#, kde-format
+msgid "Subscribe to site updates (using news feed)"
+msgstr "Nënshkruani përditësimet e faqes (duke përdorur burimin e lajmeve)"
+
+#: pluginutil.cpp:36 pluginutil.cpp:46
+#, kde-format
+msgid "Imported Feeds"
+msgstr "Imporot të rejat"
+
+#: pluginutil.cpp:38
+#, kde-format
+msgid "Unable to contact Akregator via D-Bus"
+msgstr ""
+
+#: pluginutil.cpp:39
+#, fuzzy, kde-format
+#| msgid "The DBus call addFeedToGroup failed"
+msgctxt "@title:window"
+msgid "D-Bus call failed"
+msgstr "Thirrja e DBus addFeedToGroup dështoi"
+
+#~ msgid "Akregator feed icon - DBus Call failed"
+#~ msgstr "Ikonë e lidhjes së Akgregator - Thirjja e DBus dështoi"

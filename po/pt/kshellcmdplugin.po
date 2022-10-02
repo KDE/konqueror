@@ -1,0 +1,99 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2011-05-10 10:17+0100\n"
+"Last-Translator: Pedro Morais <morais@kde.org>\n"
+"Language-Team: pt <kde-i18n-pt@kde.org>\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-POFile-IgnoreConsistency: Empty Folder\n"
+"X-POFile-IgnoreConsistency: S&end File...\n"
+"X-POFile-Allow: 2\n"
+"X-POFile-SpellExtra: Style JDK Sun Flash gg et Konsole OASIS Sheets\n"
+"X-POFile-SpellExtra: Communicator LessTif OSF bzip Cascading XBEL Layer\n"
+"X-POFile-SpellExtra: favicons Motif Secure Blackdown Midnight Commander\n"
+"X-POFile-SpellExtra: gzip Open ECMA Talk Audio Video caching  min Lars\n"
+"X-POFile-IgnoreConsistency: Installed\n"
+"X-POFile-IgnoreConsistency: Home\n"
+"X-POFile-IgnoreConsistency: Comment\n"
+"X-POFile-IgnoreConsistency: Filename\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-POFile-SpellExtra: defaultStatus Porten corriga text Matt startText\n"
+"X-POFile-SpellExtra: Germain openProfile Alemayehu Zack Stefan Weis\n"
+"X-POFile-SpellExtra: netscape window Kicker jvm Dirk opt rlan Sandfeld\n"
+"X-POFile-SpellExtra: Ivor focus PASV Extensions Staikos banner WENNINGER\n"
+"X-POFile-SpellExtra: Wilkes Savernik Wynn Matthias manager SOCKS resizeTo\n"
+"X-POFile-SpellExtra: AltaVista kfmclient security Rusin Vriezen newTab\n"
+"X-POFile-SpellExtra: winid kcmsocks home Rogozin Slave Jensen open Leo\n"
+"X-POFile-SpellExtra: Stylesheets moveBy Molkentin Safari HTTPPROXY\n"
+"X-POFile-SpellExtra: localhost Sans AdBlock javascriptpolicy org POST\n"
+"X-POFile-SpellExtra: nspluginscan Wenninger commands Pfeiffer Multipurpose\n"
+"X-POFile-SpellExtra: WINS Torben Rahn AdBlocK altavista IBMJava Faure kwd\n"
+"X-POFile-SpellExtra: policytool tgz image ioslave Stephan KonqPart Knoll\n"
+"X-POFile-SpellExtra: HOME txt inode kword Explorer spam Koivisto Serif\n"
+"X-POFile-SpellExtra: Kulow stylesheet usr kcustommenueditortest Alexander\n"
+"X-POFile-SpellExtra: Torsten Waldo Harri Welk kcmkonqhtml Koos part Kalle\n"
+"X-POFile-SpellExtra: LISa Dawit Carsten JRE jdk plain Preston des ResLISa\n"
+"X-POFile-SpellExtra: Allan Garand resizeBy Reiher Zepeda firewalls Peter\n"
+"X-POFile-SpellExtra: Alex bin KSyCoCa pluginpolicy ad Anton av Lunak\n"
+"X-POFile-SpellExtra: Dalheimer KEditFileType KTTSD path KWord Hewitt\n"
+"X-POFile-SpellExtra: Mueller Lubos Binner lib JPEGs frobozz deseleccione\n"
+"X-POFile-SpellExtra: Neundorf Hausmann Bastian moveTo KFM status lan\n"
+"X-POFile-SpellExtra: openURL Schimanski stylesheets IO Enter Kelly proxies\n"
+"X-POFile-SpellExtra: banners url setText Antti HRML Macromedia directory\n"
+"X-POFile-SpellExtra: javapolicy Navigator Koss supportsMarkup Dima serif\n"
+"X-POFile-SpellExtra: Proxies sans JPG MNG say Robles\n"
+"X-POFile-IgnoreConsistency: Duplicate Entry\n"
+"X-POFile-IgnoreConsistency: Duplicate Identification\n"
+"X-POFile-SpellExtra: slotExecuteShellCommand KShellCmdPlugin Orlovich Maks\n"
+"X-POFile-SpellExtra: Throbber Oracle Kioslaves KHelpCenter favicon khtml\n"
+"X-POFile-SpellExtra: kwebkitpart\n"
+
+#. i18n: ectx: Menu (tools)
+#: konq_shellcmdplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "Ferramen&tas"
+
+#: kshellcmdexecutor.cpp:106
+#, kde-format
+msgid "Input Required:"
+msgstr "Entrada Necessária:"
+
+#: kshellcmdplugin.cpp:32
+#, kde-format
+msgid "&Execute Shell Command..."
+msgstr "&Executar um Comando de 'Shell'..."
+
+#: kshellcmdplugin.cpp:41
+#, kde-format
+msgid ""
+"KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a bug."
+msgstr ""
+"KShellCmdPlugin::slotExecuteShellCommand: Erro do programa; comunique um "
+"erro, por favor."
+
+#: kshellcmdplugin.cpp:51
+#, kde-format
+msgid "Executing shell commands works only on local directories."
+msgstr "A execução de comandos de 'shell' só funciona nas directorias locais."
+
+#: kshellcmdplugin.cpp:73
+#, kde-format
+msgctxt "@title:window"
+msgid "Execute Shell Command"
+msgstr "Executar um Comando de 'Shell'"
+
+#: kshellcmdplugin.cpp:74
+#, kde-format
+msgid "Execute shell command in current directory:"
+msgstr "Executar o comando de 'shell' na directoria actual:"
+
+#: kshellcmdplugin.cpp:85
+#, kde-format
+msgid "Output from command: \"%1\""
+msgstr "Resultado do comando: \"%1\""

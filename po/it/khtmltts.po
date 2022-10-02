@@ -1,0 +1,68 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the konqueror package.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2011-07-18 01:11+0200\n"
+"Last-Translator: Nicola Ruggero <nicola@nxnt.org>\n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 2.0\n"
+
+#: khtmltts.cpp:33
+#, kde-format
+msgid "&Speak Text"
+msgstr "Pronuncia te&sto"
+
+#. i18n: ectx: Menu (tools)
+#: khtmlttsplugin.rc:5
+#, kde-format
+msgid "&Tools"
+msgstr "S&trumenti"
+
+#. i18n: ectx: ToolBar (speechToolbar)
+#: khtmlttsplugin.rc:10
+#, kde-format
+msgid "Speech Toolbar"
+msgstr "Barra degli strumenti per la pronuncia"
+
+#~ msgctxt "@title:window"
+#~ msgid "Starting Jovie Text-to-Speech Service Failed"
+#~ msgstr "Avvio del servizio di pronuncia testo Jovie non riuscito"
+
+#~ msgid "The D-Bus call say() failed."
+#~ msgstr "La chiamata D-Bus say() non è riuscita."
+
+#~ msgctxt "@title:window"
+#~ msgid "D-Bus Call Failed"
+#~ msgstr "Chiamata D-Bus non riuscita"
+
+#~ msgid "Starting KTTSD Failed"
+#~ msgstr "Avvio di KTTSD non riuscito"
+
+#, fuzzy
+#~| msgid ""
+#~| "You cannot read anything except web pages with\n"
+#~| "this plugin, sorry."
+#~ msgid "You cannot read anything except web pages with this plugin."
+#~ msgstr ""
+#~ "Spiacente ma non puoi leggere altro che pagine web con questo plugin."
+
+#, fuzzy
+#~| msgid "Cannot Read source"
+#~ msgid "Cannot Read Source"
+#~ msgstr "Impossibile leggere la sorgente"
+
+#~ msgid "The D-Bus call supportsMarkup failed."
+#~ msgstr "La chiamata D-Bus supportsMarkup non è riuscita."
+
+#~ msgid "The D-Bus call setText failed."
+#~ msgstr "La chiamata D-Bus setText non è riuscita."

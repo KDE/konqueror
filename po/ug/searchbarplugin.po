@@ -1,0 +1,91 @@
+# Uyghur translation for searchbarplugin.
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Sahran <sahran.ug@gmail.com>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: searchbarplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-25 00:45+0000\n"
+"PO-Revision-Date: 2013-09-08 07:04+0900\n"
+"Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
+"Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
+"Language: ug\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: searchbar.cpp:65
+#, kde-format
+msgid ""
+"Search Bar<p>Enter a search term. Click on the icon to change search mode or "
+"provider.</p>"
+msgstr ""
+"ئىزدەش بالدىقى<p>ئىزدەيدىغان سۆزنى كىرگۈزۈڭ. سىنبەلگىنى چېكىپ ئىزدەش ئۇسۇلى "
+"ياكى تەمىنلىگۈچى(ئىزدەش ماتورى) نى ئۆزگەرتىڭ.</p>"
+
+#: searchbar.cpp:70
+#, kde-format
+msgid "Search Bar"
+msgstr "ئىزدەش بالدىقى"
+
+#: searchbar.cpp:75
+#, kde-format
+msgid "Focus Searchbar"
+msgstr "ئىزدەش بالدىقىغا ئۆتۈش"
+
+#: searchbar.cpp:267
+#, fuzzy, kde-format
+#| msgid "Find in This Page"
+msgid "Find in Page..."
+msgstr "مەزكۇر بەتتىن ئىزدەش"
+
+#: searchbar.cpp:287
+#, kde-format
+msgid "Find in This Page"
+msgstr "مەزكۇر بەتتىن ئىزدەش"
+
+#: searchbar.cpp:299
+#, kde-format
+msgid "Select Search Engines..."
+msgstr "ئىزدەش ماتورىنى تاللاش…"
+
+#: searchbar.cpp:318
+#, kde-format
+msgid "Add %1..."
+msgstr "%1 نى قوش…"
+
+#. i18n: ectx: ToolBar (locationToolBar)
+#: searchbarplugin.rc:3
+#, kde-format
+msgid "Search Toolbar"
+msgstr "ئىزدەش قورال بالدىقى"
+
+#: WebShortcutWidget.cpp:33
+#, kde-format
+msgid "Set Uri Shortcuts"
+msgstr "URI تېزلەتمىسىنى بەلگىلە"
+
+#: WebShortcutWidget.cpp:47
+#, kde-format
+msgid "Name:"
+msgstr "ئاتى:"
+
+#: WebShortcutWidget.cpp:51
+#, kde-format
+msgid "Shortcuts:"
+msgstr "تېزلەتمىلەر:"
+
+#~ msgid "Enable Suggestion"
+#~ msgstr "تەۋسىيە ئىقتىدارىنى قوزغات"
+
+#~ msgid "Cancel"
+#~ msgstr "ئەمەلدىن قالدۇر"
+
+#~ msgid "OK"
+#~ msgstr "تامام"
+
+#~ msgid "Ok"
+#~ msgstr "Ok"

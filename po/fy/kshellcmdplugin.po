@@ -1,0 +1,5173 @@
+# translation of konqueror.po to Frysk
+# translation of konqueror.po to
+#
+# Rinse de Vries <rinsedevries@kde.nl>, 2004, 2005, 2006, 2007.
+# berend ytsma <berendy@bigfoot.com>, 2005.
+# Rinse de Vries <RinseDeVries@home.nl>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2010-07-16 13:20+0100\n"
+"Last-Translator: Berend Ytsma <berendy@gmail.com>\n"
+"Language-Team: Frysk <kde-i18n-fry@kde.org>\n"
+"Language: fy\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+# msgid "Tools"
+#. i18n: ectx: Menu (tools)
+#: konq_shellcmdplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "H&elpmiddels"
+
+#: kshellcmdexecutor.cpp:106
+#, kde-format
+msgid "Input Required:"
+msgstr "Ynfier fereaske:"
+
+#: kshellcmdplugin.cpp:32
+#, kde-format
+msgid "&Execute Shell Command..."
+msgstr "Shellkommando útfi&ere..."
+
+#: kshellcmdplugin.cpp:41
+#, kde-format
+msgid ""
+"KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a bug."
+msgstr ""
+"KShellCmdPlugin::slotExecuteShellCommand: Programmaflater, rapportearje "
+"dizze brek."
+
+#: kshellcmdplugin.cpp:51
+#, kde-format
+msgid "Executing shell commands works only on local directories."
+msgstr "It útfiere fan shellkommando's wurket allinnich yn lokale mappen."
+
+#: kshellcmdplugin.cpp:73
+#, fuzzy, kde-format
+#| msgid "Execute Shell Command"
+msgctxt "@title:window"
+msgid "Execute Shell Command"
+msgstr "Shellkommando útfiere"
+
+#: kshellcmdplugin.cpp:74
+#, kde-format
+msgid "Execute shell command in current directory:"
+msgstr "Shellkommando útfiere yn de aktive triemtafel:"
+
+#: kshellcmdplugin.cpp:85
+#, kde-format
+msgid "Output from command: \"%1\""
+msgstr "Útfier fan kommando: \"%1\""
+
+#~ msgid "no name"
+#~ msgstr "gjin namme"
+
+# msgid "Configure Sidebar"
+#~ msgid "Configure"
+#~ msgstr "Ynstelle"
+
+#~ msgid "Extensions"
+#~ msgstr "Taheaksels"
+
+#~ msgid ""
+#~ "There was an error loading the module %1.\n"
+#~ "The diagnostics is:\n"
+#~ "%2"
+#~ msgstr ""
+#~ "Der wie in flater ûnder it laden fan module %1.\n"
+#~ "De diagnoaze is:\n"
+#~ "%2"
+
+#~ msgid "Konqueror"
+#~ msgstr "Konqueror"
+
+#~ msgid "Web browser, file manager and document viewer."
+#~ msgstr "Webblêder, triembehearen dokumint werjouwer."
+
+#~ msgid "(C) 1999-2008, The Konqueror developers"
+#~ msgstr "(c) 1999-2008.7, de Konqueror ûntwikkelders"
+
+#~ msgid "http://konqueror.kde.org"
+#~ msgstr "http://konqueror.kde.org/"
+
+#~ msgid "David Faure"
+#~ msgstr "David Faure"
+
+#~ msgid "Developer (framework, parts, JavaScript, I/O library) and maintainer"
+#~ msgstr ""
+#~ "Untwikkelder (framework, parts, JavaSkript, I/O-bibleteek) en ûnderhâlder"
+
+#~ msgid "Simon Hausmann"
+#~ msgstr "Simon Hausmann"
+
+#~ msgid "Developer (framework, parts)"
+#~ msgstr "Untwikkelder (frameset, ûnderdielen)"
+
+#~ msgid "Michael Reiher"
+#~ msgstr "Michael Reiher"
+
+#~ msgid "Developer (framework)"
+#~ msgstr "Untwikkelder (frameset)"
+
+#~ msgid "Matthias Welk"
+#~ msgstr "Matthias Welk"
+
+#~ msgid "Developer"
+#~ msgstr "Untwikkelder"
+
+#~ msgid "Alexander Neundorf"
+#~ msgstr "Alexander Neundorf"
+
+#~ msgid "Developer (List views)"
+#~ msgstr "Untwikkelder (Listwerjeften)"
+
+#~ msgid "Michael Brade"
+#~ msgstr "Michael Brade"
+
+#~ msgid "Developer (List views, I/O library)"
+#~ msgstr "Untwikkelder (listwerjeften i/o-bibleteek)"
+
+#~ msgid "Lars Knoll"
+#~ msgstr "Lars Knoll"
+
+#~ msgid "Developer (HTML rendering engine)"
+#~ msgstr "Untwikkelder (HTML rendering masine)"
+
+#~ msgid "Dirk Mueller"
+#~ msgstr "Dirk Mueller"
+
+#~ msgid "Peter Kelly"
+#~ msgstr "Peter Kelly"
+
+#~ msgid "Waldo Bastian"
+#~ msgstr "Waldo Bastian"
+
+#~ msgid "Developer (HTML rendering engine, I/O library)"
+#~ msgstr "Untwikkelder (HTML rendering masine, I/O-bibl.)"
+
+#~ msgid "Germain Garand"
+#~ msgstr "Germain Garand"
+
+#~ msgid "Leo Savernik"
+#~ msgstr "Leo Savernik"
+
+#~ msgid "Stephan Kulow"
+#~ msgstr "Stephan Kulow"
+
+#~ msgid ""
+#~ "Developer (HTML rendering engine, I/O library, regression test framework)"
+#~ msgstr ""
+#~ "Untwikkelder (HTML rendering masine, I/O-bibleteek, regression test "
+#~ "framework)"
+
+#~ msgid "Antti Koivisto"
+#~ msgstr "Antti Koivisto"
+
+#~ msgid "Zack Rusin"
+#~ msgstr "Zack Rusin"
+
+#~ msgid "Tobias Anton"
+#~ msgstr "Tobias Anton"
+
+#~ msgid "Lubos Lunak"
+#~ msgstr "Lubos Lunak"
+
+#~ msgid "Maks Orlovich"
+#~ msgstr "Maks Orlovich"
+
+#~ msgid "Developer (HTML rendering engine, JavaScript)"
+#~ msgstr "Untwikkelder (HTML rendering masine, JavaSkript)"
+
+#~ msgid "Allan Sandfeld Jensen"
+#~ msgstr "Allan Sandfeld Jensen"
+
+#~ msgid "Apple Safari Developers"
+#~ msgstr "Untwikkelders fan  Apple Safari"
+
+#~ msgid "Harri Porten"
+#~ msgstr "Harri Porten"
+
+#~ msgid "Developer (JavaScript)"
+#~ msgstr "Untwikkelder (JavaSkript)"
+
+#~ msgid "Koos Vriezen"
+#~ msgstr "Koos Vriezen"
+
+#~ msgid "Developer (Java applets and other embedded objects)"
+#~ msgstr "Untwikkelder (Java-applets en oare ynsletten objekten)"
+
+#~ msgid "Matt Koss"
+#~ msgstr "Matt Koss"
+
+#~ msgid "Developer (I/O library)"
+#~ msgstr "Untwikkelder (I/O-bibl.)"
+
+#~ msgid "Alex Zepeda"
+#~ msgstr "Alex Zepeda"
+
+#~ msgid "Richard Moore"
+#~ msgstr "Richard Moore"
+
+#~ msgid "Developer (Java applet support)"
+#~ msgstr "Untwikkelder (ûndersteuning fan Java applets)"
+
+#~ msgid "Dima Rogozin"
+#~ msgstr "Dima Rogozin"
+
+#~ msgid "Wynn Wilkes"
+#~ msgstr "Wynn Wilkes"
+
+#~ msgid ""
+#~ "Developer (Java 2 security manager support,\n"
+#~ " and other major improvements to applet support)"
+#~ msgstr ""
+#~ "Untwikkelder (Java2 feiligens behearder-stipe,\n"
+#~ "en oare belangrike ferbetterings oan de applet-stipe)"
+
+#~ msgid "Stefan Schimanski"
+#~ msgstr "Stefan Schimanski"
+
+#~ msgid "Developer (Netscape plugin support)"
+#~ msgstr "Untwikkelder (stipe fan Netscape-plugins)"
+
+#~ msgid "George Staikos"
+#~ msgstr "George Staikos"
+
+#~ msgid "Developer (SSL, Netscape plugins)"
+#~ msgstr "Untwikkelder (SSL, Netscape-plugins)"
+
+#~ msgid "Dawit Alemayehu"
+#~ msgstr "Dawit Alemayehu"
+
+#~ msgid "Developer (I/O library, Authentication support)"
+#~ msgstr "Untwikkelder (I/O-bibl., ferifikaasje-stipe)"
+
+#~ msgid "Carsten Pfeiffer"
+#~ msgstr "Carsten Pfeiffer"
+
+#~ msgid "Torsten Rahn"
+#~ msgstr "Torsten Rahn"
+
+#~ msgid "Graphics/icons"
+#~ msgstr "Ofbyldings/byldkaikes"
+
+#~ msgid "Torben Weis"
+#~ msgstr "Torben Weis"
+
+#~ msgid "KFM author"
+#~ msgstr "KFM-skriuwer"
+
+#~ msgid "Joseph Wenninger"
+#~ msgstr "Joseph Wenninger"
+
+#~ msgid "Developer (navigation panel framework)"
+#~ msgstr "Untwikkelder (navigaasjepaniel-framewerk)"
+
+#~ msgid "Stephan Binner"
+#~ msgstr "Stephan Binner"
+
+#~ msgid "Developer (misc stuff)"
+#~ msgstr "Untwikkelder (ferskate)"
+
+#~ msgid "Ivor Hewitt"
+#~ msgstr "Ivor Hewitt"
+
+#~ msgid "Developer (AdBlock filter)"
+#~ msgstr "Untwikkelder (AdBlock-filter)"
+
+#~ msgid "Eduardo Robles Elvira"
+#~ msgstr "Eduardo Robles Elvira"
+
+#~ msgid ""
+#~ "Checking this box on at least two views sets those views as 'linked'. "
+#~ "Then, when you change directories in one view, the other views linked "
+#~ "with it will automatically update to show the current directory. This is "
+#~ "especially useful with different types of views, such as a directory tree "
+#~ "with an icon view or detailed view, and possibly a terminal emulator "
+#~ "window."
+#~ msgstr ""
+#~ "As jo dizze opsje selektearje by yn elts gefal twa werjeften, dan wurde "
+#~ "dizze werjeften 'oan elkoar keppele'. As jo dan fan map wikselje yn ien "
+#~ "fan dizze werjeften, dan sille ek de keppele werjeften de ynhâld fan dy "
+#~ "map sjen litte. Dit is foaral brûkber by it gebrûk fan ferskate werjefte "
+#~ "typen, lykas in beamstruktuer mei in byldkaikewerjefte of in detaillearre "
+#~ "werjefte."
+
+#~ msgid "Close View"
+#~ msgstr "Werjefte slute"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#~ msgid "Stalled"
+#~ msgstr "Ofbrutsen"
+
+#~ msgid "Preview &in %1"
+#~ msgstr "Foarbyld &yn %1"
+
+#~ msgid "Show %1"
+#~ msgstr "%1 sjen litte"
+
+#~ msgctxt "@title:window"
+#~ msgid "History"
+#~ msgstr "Skiednis"
+
+#~ msgctxt "@action:inmenu Parent of 'By Name' and 'By Date'"
+#~ msgid "Sort"
+#~ msgstr "Sortearje"
+
+#~ msgid ""
+#~ "<qt><center><b>%1</b></center><hr />Last visited: %2<br />First visited: "
+#~ "%3<br />Number of times visited: %4</qt>"
+#~ msgstr ""
+#~ "<qt><center><b>%1</b></center><hr>As lêste besocht: %2<br/>As earste "
+#~ "besocht: %3<br/>oantal kearen besocht: %4</qt>"
+
+#~ msgid "Local"
+#~ msgstr "Lokaal"
+
+#~ msgid "Miscellaneous"
+#~ msgstr "Ferskate"
+
+#~ msgid "Open in New &Window"
+#~ msgstr "Yn nij &finster iepenje"
+
+#~ msgid "Open in New Tab"
+#~ msgstr "Iepenje in nije ljepper"
+
+#~ msgid "&Copy Link Address"
+#~ msgstr "&Keppelingsadres kopiearje"
+
+#~ msgid "&Remove Entry"
+#~ msgstr "Yngong &fuortsmite"
+
+#~ msgid "C&lear History"
+#~ msgstr "&Skiednis wiskje"
+
+#~ msgid "&Preferences..."
+#~ msgstr "&Foarkaren..."
+
+#~ msgid "By &Name"
+#~ msgstr "Neffens &namme"
+
+#~ msgid "By &Date"
+#~ msgstr "Neffens &datum"
+
+#~ msgid "Search in history"
+#~ msgstr "Yn skiednis sykje"
+
+#~ msgid "Do you really want to clear the entire history?"
+#~ msgstr "Binne jo wis dat jo de Skiednis wiskje wolle?"
+
+#~ msgid "Clear History?"
+#~ msgstr "Skiednis wiskje?"
+
+#~ msgid "Start without a default window, when called without URLs"
+#~ msgstr "Starte sûnder standert finster, as oanropt sûnder URL-adres"
+
+#~ msgid ""
+#~ "Preload for later use. This mode does not support URLs on the command line"
+#~ msgstr ""
+#~ "Foarlade foar letter brûkme, Dizze modus stipet net it brûkme fan URL-"
+#~ "adressen op de kommandorigel"
+
+#~ msgid "Profile to open"
+#~ msgstr "Te iepenjen profyl"
+
+#~ msgid "List available profiles"
+#~ msgstr "List beskikbere profilen"
+
+#~ msgid "List available sessions"
+#~ msgstr "Beskikbere sesjes sjen litte"
+
+#~ msgid "Session to open"
+#~ msgstr "Te iepenjen sesjes"
+
+#~ msgid "Mimetype to use for this URL (e.g. text/html or inode/directory)"
+#~ msgstr ""
+#~ "Mime-triemtype om te brûken foar dit URL-dres, (dus tekst/html of inode/"
+#~ "mapl)"
+
+#~ msgid ""
+#~ "For URLs that point to files, opens the directory and selects the file, "
+#~ "instead of opening the actual file"
+#~ msgstr ""
+#~ "Foar URL-adressen dy ferwize nei triemmen ,iepent de map en selektearret "
+#~ "de triem, ynstee fan de triem echt te iepenjen"
+
+#~ msgid "Location to open"
+#~ msgstr "Te iepenjen lokaasje"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Loading..."
+#~ msgstr "Oan it laden..."
+
+#~ msgid "Canceled."
+#~ msgstr "Ofbrutsen."
+
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Reloading the page will discard these changes."
+#~ msgstr ""
+#~ "Dizze side befettet feroarings dy't noch net ynstjoerd binne.\n"
+#~ "Troch it op'e nij lade fan dizze side wurde dizze feroarings fuortsmiten."
+
+#~ msgid "Discard Changes?"
+#~ msgstr "Feroarings fuortsmite?"
+
+#~ msgid "&Discard Changes"
+#~ msgstr "Feroarings &fuortsmite"
+
+#~ msgid "File Management"
+#~ msgstr "Triembehear"
+
+#~ msgid "Web Browsing"
+#~ msgstr "Webblêdzje"
+
+#~ msgid "Home Folder"
+#~ msgstr "Thúsmap"
+
+#~ msgid "Home"
+#~ msgstr "Thúsblêd"
+
+#~ msgid "Navigate to your 'Home Folder'"
+#~ msgstr "Gean nei jo 'Thús map'"
+
+#~ msgid "Navigate to your local 'Home Folder'"
+#~ msgstr "Gean nei jo lokale 'Thúsmap'"
+
+#~ msgid "Home Page"
+#~ msgstr "Thússide"
+
+#~ msgid "Navigate to your 'Home Page'"
+#~ msgstr "Gean nei jo 'Thús side'"
+
+#~ msgid ""
+#~ "<html>Navigate to your 'Home Page'<br /><br />You can configure the "
+#~ "location where this button takes you under <b>Settings -> Configure "
+#~ "Konqueror -> General</b>.</html>"
+#~ msgstr ""
+#~ "<html>Gean nei jo 'Thús side'<br /><br />Jo kinne de lokaasje ynstelle "
+#~ "wer dizze knop jo hinne bringt, dit kin by <b>Ynstellings -> Konqueror "
+#~ "ynstelle -> Algemien</b>.</html>"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Detaching the tab will discard these changes."
+#~ msgstr ""
+#~ "Dizze ljepper befettet feroarings dy noch net ynstjoerd binne.\n"
+#~ "Troch de ljepper los te meitsjen wurde dizze feroarings fuortsmite."
+
+#~ msgid ""
+#~ "This view contains changes that have not been submitted.\n"
+#~ "Closing the view will discard these changes."
+#~ msgstr ""
+#~ "Dizze werjefte befettet feroarings dy't noch net ynstjoerd binne.\n"
+#~ "Troch de werjefte te sluten wurde dizze feroarings fuortsmiten."
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the tab will discard these changes."
+#~ msgstr ""
+#~ "Dizze ljepper befettet feroarings dy noch net ynstjoerd binne.\n"
+#~ "Troch it sluten fan dizze ljepper wurde de feroarings fuortsmiten."
+
+#~ msgid "Do you really want to close all other tabs?"
+#~ msgstr "Binne jo wis dat jo alle ljeppers slute wolle?"
+
+#~ msgid "Close Other Tabs Confirmation"
+#~ msgstr "Alle oare ljeppers slute"
+
+#~ msgid "Close &Other Tabs"
+#~ msgstr "Alle oare ljeppers s&lute"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing other tabs will discard these changes."
+#~ msgstr ""
+#~ "Dizze ljepper befettet feroarings dy noch net ynstjoerd binne.\n"
+#~ "Troch it sluten fan de oare ljeppers wurde dizze feroarings fuortsmiten."
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Reloading all tabs will discard these changes."
+#~ msgstr ""
+#~ "Dizze ljepper befettet feroarings dy noch net ynstjoerd binne.\n"
+#~ "Troch it ferfarskjen fan alle ljeppers wurde dizze feroarings fuortsmiten."
+
+#~ msgid "Enter Target"
+#~ msgstr "Bestimming ynfoegje"
+
+#~ msgid "<qt><b>%1</b> is not valid</qt>"
+#~ msgstr "<qt><b>%1</b> is ûnjildich<qt>"
+
+#~ msgid "Copy selected files from %1 to:"
+#~ msgstr "De selektearre triemmen kopiearje fan %1 nei:"
+
+#~ msgid "Move selected files from %1 to:"
+#~ msgstr "De selektearre triemmen ferpleatse fan %1 nei:"
+
+#~ msgctxt "This menu entry empties the closed items history"
+#~ msgid "Empty Closed Items History"
+#~ msgstr "Skiednis fan sluten items wiskje"
+
+#~ msgid "Save As..."
+#~ msgstr "Bewarje as..."
+
+#~ msgid "Manage..."
+#~ msgstr "Beheare..."
+
+#~ msgid "New &Window"
+#~ msgstr "Nij &finster"
+
+#~ msgid "&Duplicate Window"
+#~ msgstr "Finster d&uplisearje"
+
+#~ msgid "Send &Link Address..."
+#~ msgstr "Skeake&lingadres ferstjoere"
+
+#~ msgid "S&end File..."
+#~ msgstr "Triem f&erstjoere..."
+
+# msgid "Open Location"
+#~ msgid "&Open Location"
+#~ msgstr "L&okaasje iepenje"
+
+# msgid "S&end File..."
+#~ msgid "&Open File..."
+#~ msgstr "Triem ie&penje..."
+
+#~ msgid "&Find File..."
+#~ msgstr "Triem &sykje..."
+
+#~ msgid "&Use index.html"
+#~ msgstr "Index.html br&ûke"
+
+#~ msgid "Lock to Current Location"
+#~ msgstr "De aktive lokaasje ferskoattelje"
+
+#~ msgctxt "This option links konqueror views"
+#~ msgid "Lin&k View"
+#~ msgstr "Werjefteskerm keppe&lje"
+
+#~ msgid "&Up"
+#~ msgstr "&Omheech"
+
+#~ msgid "Closed Items"
+#~ msgstr "Sluten items"
+
+#~ msgid "Sessions"
+#~ msgstr "Sesjes"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Most Often Visited"
+#~ msgstr "Meast besocht"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Recently Visited"
+#~ msgstr "Koartlyn besocht"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History"
+#~ msgstr "Skiednis sjen litte"
+
+#~ msgid "&Save View Profile As..."
+#~ msgstr "Werjefteprofyl be&warje as..."
+
+#~ msgid "Configure Extensions..."
+#~ msgstr "Taheaksels ynstelle..."
+
+#~ msgid "Configure Spell Checking..."
+#~ msgstr "De staveringshifker ynstelle..."
+
+#~ msgid "Split View &Left/Right"
+#~ msgstr "Finster fertikaal &opsplitsen"
+
+#~ msgid "Split View &Top/Bottom"
+#~ msgstr "Finster &horizontaal opsplitsen"
+
+#~ msgid "&New Tab"
+#~ msgstr "&Nije ljepper"
+
+#~ msgid "&Duplicate Current Tab"
+#~ msgstr "Aktive ljepper &duplisearje"
+
+#~ msgid "Detach Current Tab"
+#~ msgstr "Aktive ljepper losmeitsje"
+
+#~ msgid "&Close Active View"
+#~ msgstr "A&ktive werjefte slute"
+
+#~ msgid "Close Current Tab"
+#~ msgstr "Aktive ljepper slute"
+
+#~ msgid "Activate Next Tab"
+#~ msgstr "Neikommend ljepper aktivearje"
+
+#~ msgid "Activate Previous Tab"
+#~ msgstr "Foarige ljepper aktivearje"
+
+#~ msgid "Activate Tab %1"
+#~ msgstr "Ljepper %1 aktivearje"
+
+#~ msgid "Move Tab Left"
+#~ msgstr "Ljepper nei lofts ferpleatse"
+
+#~ msgid "Move Tab Right"
+#~ msgstr "Ljepper nei rjochts ferpleatse"
+
+#~ msgid "Dump Debug Info"
+#~ msgstr "Debugynformaasje dumpe"
+
+#~ msgid "C&onfigure View Profiles..."
+#~ msgstr "Werjeftepr&ofielen ynstellen..."
+
+#~ msgid "Load &View Profile"
+#~ msgstr "Werje&fteprofyl lade"
+
+# msgid "&Reload Tab"
+#~ msgid "&Reload"
+#~ msgstr "Op 'e nij &lade"
+
+#~ msgid "&Reload All Tabs"
+#~ msgstr "Alle ljeppers fe&rfarskje"
+
+# .
+#~ msgid "&Force Reload"
+#~ msgstr "Op 'e nij &lade foarsearje"
+
+#~ msgid "&Stop"
+#~ msgstr "&Stopje"
+
+#~ msgid "L&ocation: "
+#~ msgstr "Lok&aasje: "
+
+#~ msgid "Location Bar"
+#~ msgstr "Lokaasjebalke"
+
+# msgid "Location Bar<p>Enter a web address or search term."
+#~ msgid ""
+#~ "<html>Location Bar<br /><br />Enter a web address or search term.</html>"
+#~ msgstr ""
+#~ "<html>Lokaasjebalke<br /><br />Fier in ynternetadres of sykterm yn.</html>"
+
+#~ msgid "Clear Location Bar"
+#~ msgstr "Lokaasjebalke opskinje"
+
+#~ msgid ""
+#~ "<html>Clear Location bar<br /><br />Clears the contents of the location "
+#~ "bar.</html>"
+#~ msgstr ""
+#~ "<html>Lokaasjebalke opskinje<br /><br />Wisket de ynhâld fan de "
+#~ "lokaasjebalke.</html>"
+
+#~ msgid "&Bookmarks"
+#~ msgstr "&Blêdwizers"
+
+#~ msgid "Kon&queror Introduction"
+#~ msgstr "Ynlieding ta Kon&queror"
+
+#~ msgid "Go"
+#~ msgstr "Gean nei"
+
+#~ msgid ""
+#~ "<html>Go<br /><br />Goes to the page that has been entered into the "
+#~ "location bar.</html>"
+#~ msgstr ""
+#~ "<html>Gean nei<br /><br />Giet nei de side dy ynfierd is yn de "
+#~ "lokaasjebalke.</html>"
+
+#~ msgid ""
+#~ "<html>Enter the parent folder<br /><br />For instance, if the current "
+#~ "location is file:/home/%1 clicking this button will take you to file:/"
+#~ "home.</html>"
+#~ msgstr ""
+#~ "<html>Gean ien map omheech.<br /><br />Bygelyks, as de aktive lokaasje "
+#~ "file:/home/%1 is, dan komme jo, troch op dizze knop te klikken yn de map "
+#~ "file:/home.<html>"
+
+#~ msgid "Enter the parent folder"
+#~ msgstr "Gean ien map omheech"
+
+#~ msgid "Move backwards one step in the browsing history"
+#~ msgstr "Gean ien stap tebek yn de blêderskiednis"
+
+#~ msgid "Move forward one step in the browsing history"
+#~ msgstr "Gean ien stap foarút yn de blêderskiednis"
+
+#~ msgid "Move backwards one step in the closed tabs history"
+#~ msgstr "Gean ien stap tebek yn de blêderskiednis"
+
+#~ msgid ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.</html>"
+#~ msgstr ""
+#~ "<html>Ferfarskje it aktive dokumint. <br /><br />Dit kin bygelyks nedich "
+#~ "wêze om de feroarings yn websiden dy nei it laden makke binne sjen te "
+#~ "litten.</html>"
+
+#~ msgid "Reload the currently displayed document"
+#~ msgstr "Ferfarskje it aktive dokumint"
+
+#~ msgid ""
+#~ "<html>Reload all currently displayed documents in tabs<br /><br />This "
+#~ "may, for example, be needed to refresh web pages that have been modified "
+#~ "since they were loaded, in order to make the changes visible.</html>"
+#~ msgstr ""
+#~ "<html>Ferfarskje alle dokuminten yn de ljeppers.<br /><br /> Dit kin "
+#~ "bygelyks nedich wêze om de feroarings yn websiden dy nei it laden makke "
+#~ "binne sjen te litten.<html>"
+
+#~ msgid "Reload all currently displayed document in tabs"
+#~ msgstr "Ferfarskje alle dokuminten yn de ljeppers. "
+
+#~ msgid ""
+#~ "<html>Stop loading the document<br /><br />All network transfers will be "
+#~ "stopped and Konqueror will display the content that has been received so "
+#~ "far.</html>"
+#~ msgstr ""
+#~ "<html>Stopje mei it laden fan it dokumint.<br /><br />Alle "
+#~ "netwurkoerdrachten sille stoppe wurde, en Konqueror sil de ynhâld sjen "
+#~ "litten dy oant safier ûntfongen is.</html>"
+
+#~ msgid ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.  Any images on "
+#~ "the page are downloaded again, even if cached copies exist.</html>"
+#~ msgstr ""
+#~ "<html>Ferfarskje it aktive dokumint. <br /><br />Dit kin bygelyks nedich "
+#~ "wêze om de feroarings yn websiden dy't nei it laden makke binne sjen te "
+#~ "litten. Alle ôfbyldings op de side wurde op 'e nij ynladen, sels as der "
+#~ "al in kopy yn it lystûnthâld sit.</html>"
+
+#~ msgid ""
+#~ "Force a reload of the currently displayed document and any contained "
+#~ "images"
+#~ msgstr ""
+#~ "Forsearje it ferfarskjen fan it aktive dokumint en alle ôfbyldings dy't "
+#~ "it befettet"
+
+#~ msgid "Stop loading the document"
+#~ msgstr "Stopje mei it laden fan it dokumint"
+
+#~ msgid ""
+#~ "<html>Cut the currently selected text or item(s) and move it to the "
+#~ "system clipboard<br /><br />This makes it available to the <b>Paste</b> "
+#~ "command in Konqueror and other KDE applications.</html>"
+#~ msgstr ""
+#~ "<html>Knip de no selektearre tekst of items en ferpleats dizze nei de "
+#~ "systeemklamboerd. <br /><br />Hjirmei stelle jo it beskikber foar it "
+#~ "kommando <b>Plakke</b> yn Konqueror en oare KDE-tapassingen.</html>"
+
+#~ msgid "Move the selected text or item(s) to the clipboard"
+#~ msgstr "Ferplaats de selektearre tekst of item(s) nei it klamboerd."
+
+#~ msgid ""
+#~ "<html>Copy the currently selected text or item(s) to the system "
+#~ "clipboard<br /><br />This makes it available to the <b>Paste</b> command "
+#~ "in Konqueror and other KDE applications.</html>"
+#~ msgstr ""
+#~ "<html>Kopiearje de no selektearre tekst of item(s) nei de "
+#~ "systeemklamboerd. <br /><br />Dit slelt it beskikber foar it kommando "
+#~ "<b>Plakke</b> yn Konqueror en oare KDE-tapassingen.</html>"
+
+#~ msgid "Copy the selected text or item(s) to the clipboard"
+#~ msgstr "Kopiearje de selektearre tekst of item(s) nei it klamboerd."
+
+#~ msgid ""
+#~ "<html>Paste the previously cut or copied clipboard contents<br /><br /"
+#~ ">This also works for text copied or cut from other KDE applications.</"
+#~ "html>"
+#~ msgstr ""
+#~ "<html>Plak de earder knipte of kopiearre klamboerdynhâld. <br /><br />Dit "
+#~ "wurket ek foar tekst die út oare KDE-tapassingen kopiearre of knipt is.</"
+#~ "html>"
+
+#~ msgid "Paste the clipboard contents"
+#~ msgstr "Plak de ynhâld fan it klamboerd"
+
+#~ msgid ""
+#~ "<html>Print the currently displayed document<br /><br />You will be "
+#~ "presented with a dialog where you can set various options, such as the "
+#~ "number of copies to print and which printer to use.<br /><br />This "
+#~ "dialog also provides access to special KDE printing services such as "
+#~ "creating a PDF file from the current document.</html>"
+#~ msgstr ""
+#~ "<html>It aktive dokumint printsje. <br /><br />Hjirmei iepenje jo in "
+#~ "dialoochfinster wêryn ferskate opsjes ynstelber binne, lykas it oantal "
+#~ "kopyen dat jo printsje wolle, en hokker printer jo brûke wolle. <br /"
+#~ "><br /> Dit dialoochfinster jout ek tagong ta spesjale KDE-"
+#~ "printtsjinners, lykas it oanmeitsjen fan in pdf-triem fan it aktive "
+#~ "dokumint.</html>"
+
+#~ msgid "Print the current document"
+#~ msgstr "It aktive dokumint printsje"
+
+#~ msgid "If present, open index.html when entering a folder."
+#~ msgstr ""
+#~ "As it oanwêzich is, iepenje de triem index.html wanneart in map iepene "
+#~ "wurdt."
+
+#~ msgid ""
+#~ "A locked view cannot change folders. Use in combination with 'link view' "
+#~ "to explore many files from one folder"
+#~ msgstr ""
+#~ "In beskoattele werjefte kin net fan map feroarje. Brûk dizze yn "
+#~ "kombinaasje mei \"Werjefte keppelje\" om in protte triemmen yn ien map te "
+#~ "ferkennen."
+
+#~ msgid ""
+#~ "Sets the view as 'linked'. A linked view follows folder changes made in "
+#~ "other linked views."
+#~ msgstr ""
+#~ "Dit stelt de werjefte yn as \"keppelt\". As jo yn in keppele werjefte in "
+#~ "map iepenje, dan geane alle oare keppele werjeften nei dyselde map ta."
+
+#~ msgid "Copy &Files..."
+#~ msgstr "&Triemmen kopiearje..."
+
+#~ msgid "M&ove Files..."
+#~ msgstr "Triemmen ferpleatse..."
+
+#~ msgid ""
+#~ "You have requested to open more than 20 bookmarks in tabs. This might "
+#~ "take a while. Continue?"
+#~ msgstr ""
+#~ "Jo ha frege om mear dan 20 blêdwizers te iepenjen yn 'e ljeppers. Dit kin "
+#~ "efkes duorje. Troch gean?"
+
+#~ msgid "Open bookmarks folder in new tabs"
+#~ msgstr "Blêdwizermap yn nije ljeppers iepenje"
+
+#~ msgid "Open in T&his Window"
+#~ msgstr "Iepenje yn &dit finster"
+
+#~ msgid "Open the document in current window"
+#~ msgstr "Iepenje it dokumint yn it aktive finster"
+
+#~ msgid "Open the document in a new window"
+#~ msgstr "Iepenje it dokumint yn in nij finster"
+
+#~ msgid "Open in &New Tab"
+#~ msgstr "Iepenje in &nije ljepper"
+
+#~ msgid "Open the document in a new tab"
+#~ msgstr "Iepenje it dokumint yn in nije ljepper"
+
+#~ msgid "&Open With"
+#~ msgstr "&Iepenje mei"
+
+#~ msgid "Open with %1"
+#~ msgstr "Iepenje mei %1"
+
+#~ msgctxt "@action:inmenu View"
+#~ msgid "&View Mode"
+#~ msgstr "&Werjeftemodus"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window, are you sure you want to quit?"
+#~ msgstr ""
+#~ "Jo ha meardere ljeppers iepene yn dit finster. wolle jo it finster grif "
+#~ "slute?"
+
+#~ msgid "Confirmation"
+#~ msgstr "Befêstiging"
+
+#~ msgid "C&lose Current Tab"
+#~ msgstr "Aktive ljepper s&lute"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the window will discard these changes."
+#~ msgstr ""
+#~ "Dizze ljepper befettet feroarings dy noch net ynstjoerd binne:\n"
+#~ "Troch it sluten fan it finster wurde dizze feroarings fuortsmiten."
+
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Closing the window will discard these changes."
+#~ msgstr ""
+#~ "Dizze side befettet feroarings dy't noch net ynstjoerd binne.\n"
+#~ "Troch it sluten fan it finster wurde dizze feroarings fuortsmiten."
+
+#~ msgid ""
+#~ "Your sidebar is not functional or unavailable. A new entry cannot be "
+#~ "added."
+#~ msgstr "De sydbalke is net beskikber. Der kin gjin nij item taheakke wurde."
+
+#~ msgid "Web Sidebar"
+#~ msgstr "Ynternet sydbalke"
+
+#~ msgid "Add new web extension \"%1\" to your sidebar?"
+#~ msgstr "Nije webtaheaksel \"%1\" taheakje oan jo sydbalke?"
+
+#~ msgid "Add"
+#~ msgstr "Taheakje"
+
+#~ msgid "Do Not Add"
+#~ msgstr "Net taheakje "
+
+#~ msgid ""
+#~ "There appears to be a configuration error. You have associated Konqueror "
+#~ "with %1, but it cannot handle this file type."
+#~ msgstr ""
+#~ "Der blykt in konfiguraasje flater te wêzen. jo ha taheake mei %1, mar "
+#~ "Konqueror kin dit triemtype net ferwurkje."
+
+#~ msgid "Profile Management"
+#~ msgstr "Profylbehear"
+
+#~ msgid "&Rename Profile"
+#~ msgstr "P&rofiel omneame"
+
+#~ msgid "&Delete Profile"
+#~ msgstr "Profyl wis&kje"
+
+#~ msgid "Manage Sessions"
+#~ msgstr "Sesjes beheare"
+
+#~ msgid "&Open"
+#~ msgstr "&Iepenje"
+
+#~ msgid "Rename Session"
+#~ msgstr "Sesje omneame"
+
+#~ msgid "Save Session"
+#~ msgstr "Sesje bewarje"
+
+#~ msgid ""
+#~ "A session with the name '%1' already exists, do you want to overwrite it?"
+#~ msgstr "In sesje mei de namme '%1' bestiet al, wolle jo it oerskriuwe?"
+
+#~ msgid "Session exists. Overwrite?"
+#~ msgstr "Sesje bestiet. Oerskriuwe?"
+
+#~ msgid ""
+#~ "Konqueror did not close correctly. Would you like to restore the previous "
+#~ "session?"
+#~ msgstr "Konqueror is der net goed útgong. Wolle jo de sesje wer opbouwe?"
+
+#~ msgid "Restore Session?"
+#~ msgstr "Sesje weromsette?"
+
+#~ msgid "Restore Session"
+#~ msgstr "Sesje weromsette"
+
+#~ msgid "Do Not Restore"
+#~ msgstr "Net weromsette"
+
+#~ msgid "Ask Me Later"
+#~ msgstr "Freegje my letter"
+
+#~ msgid ""
+#~ "This bar contains the list of currently open tabs. Click on a tab to make "
+#~ "it active. You can also use keyboard shortcuts to navigate through tabs. "
+#~ "The text on the tab shows the content currently open in it; place your "
+#~ "mouse over the tab to see the full title, in case it has been shortened "
+#~ "to fit the tab width."
+#~ msgstr ""
+#~ "Dizze balke befettet in list mei iepensteande ljeppers. Klik op in "
+#~ "ljepper om it te aktivearjen. Jo kinne ek fluchtoetsen brûke om troch de "
+#~ "ljeppers te fytsen. De tekst op de ljepper is de titel fan de webside "
+#~ "dy't deryn iepene is; set jo mûsoanwizer op de ljepper om de folsleine "
+#~ "titel te sjen yn it gefal dat dizze ôfkoarte is om op de ljepper te "
+#~ "passen."
+
+#~ msgid "Open a new tab"
+#~ msgstr "Iepenje in nije ljepper"
+
+#~ msgid "Close the current tab"
+#~ msgstr "Slut de aktive ljepper"
+
+#~ msgid "&Duplicate Tab"
+#~ msgstr "Ljepper &duplisearje"
+
+#~ msgid "&Reload Tab"
+#~ msgstr "Ljepper fe&rfarskje"
+
+#~ msgid "Other Tabs"
+#~ msgstr "Oare ljeppers"
+
+#~ msgid "D&etach Tab"
+#~ msgstr "Ljepper losmeitsj&e"
+
+#~ msgid "&Close Tab"
+#~ msgstr "Ljepper s&lute"
+
+#~ msgid "Und&o: Closed Tab"
+#~ msgstr "U&ngedien meitsje: sluten ljepper"
+
+#~ msgid "Und&o: Closed Window"
+#~ msgstr "U&ngedien meitsje: sluten finster"
+
+#~ msgid "Und&o"
+#~ msgstr "Un&gedien meitsje"
+
+#~ msgid ""
+#~ "The page you are trying to view is the result of posted form data. If you "
+#~ "resend the data, any action the form carried out (such as search or "
+#~ "online purchase) will be repeated. "
+#~ msgstr ""
+#~ "De side dy jo besjen wolle is it resultaat fan stjoerde data. As jo de "
+#~ "data opnij ferstjoere, dan sille alle hannelingen dy yn it formulier "
+#~ "ynfierd binnen (lykas in sykaksje, of in online-oankeap) werhelle wurde."
+
+#~ msgid "Warning"
+#~ msgstr "Warskôging"
+
+#~ msgid "Resend"
+#~ msgstr "Opnij ferstjoere"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window.\n"
+#~ "Loading a view profile will close them."
+#~ msgstr ""
+#~ "Jo ha meardere ljeppers iepen yn dit finster.\n"
+#~ "Troch it laden fan in werjefteprofyl wurde dizzen sluten."
+
+#~ msgid "Load View Profile"
+#~ msgstr "Werjefteprofyl laden"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Loading a profile will discard these changes."
+#~ msgstr ""
+#~ "Dizze ljepper befettet feroarings dy noch net ferstjoerd binne.\n"
+#~ "Troch it laden fan in werjefteprofyl wurde dizze feroarings fuortsmiten."
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "History Sidebar Module"
+#~ msgstr "Skiednis sydbalke module"
+
+#~ msgctxt "@title:tab"
+#~ msgid "History"
+#~ msgstr "Skiednis"
+
+#~ msgid " day"
+#~ msgid_plural " days"
+#~ msgstr[0] " dei"
+#~ msgstr[1] "dagen"
+
+#~ msgid "Minute"
+#~ msgid_plural "Minutes"
+#~ msgstr[0] "Minuut"
+#~ msgstr[1] "Minuten"
+
+#~ msgid "Day"
+#~ msgid_plural "Days"
+#~ msgstr[0] " Dei"
+#~ msgstr[1] "Dagen"
+
+#~ msgid "<h1>History Sidebar</h1> You can configure the history sidebar here."
+#~ msgstr ""
+#~ "<h1>Skiednis sydbalke</h1> Hjir kinne jo de skiednis sydbalke ynstelle."
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Places Sidebar Module"
+#~ msgstr "Places sydbalke module"
+
+# msgid "Rename"
+#~ msgctxt "@title:tab"
+#~ msgid "Places"
+#~ msgstr "Places"
+
+#~ msgid "Extended Sidebar"
+#~ msgstr "Utwreide sydbalke"
+
+#~ msgid "Rollback to System Default"
+#~ msgstr "Tebekfalle op de systeemstandert"
+
+#~ msgid "Configure Sidebar"
+#~ msgstr "Sydbalke ynstelle"
+
+#~ msgid "Add New"
+#~ msgstr "Nije taheakje"
+
+#~ msgid "Multiple Views"
+#~ msgstr "Meardere werjeften"
+
+#~ msgid "Show Tabs Left"
+#~ msgstr "Ljeppers lofts sjen litte"
+
+#~ msgid "Show Configuration Button"
+#~ msgstr "Konfiguraasjeknop sjn litte"
+
+#~ msgid "Close Sidebar"
+#~ msgstr "Sydbalke slute"
+
+#~ msgid "This entry already exists."
+#~ msgstr "Dizze ynfier bestiet al."
+
+#~ msgid ""
+#~ "<qt>This removes all your entries from the sidebar and adds the system "
+#~ "default ones.<br /><b>This procedure is irreversible</b><br />Do you want "
+#~ "to proceed?</qt>"
+#~ msgstr ""
+#~ "<qt>Dit smyt al jo items fuort út de sydbalke en set de standert "
+#~ "systeemitems werom.<br /><B>Dizze proseduere kinne jo net ûngedien "
+#~ "meitsje.</B><br />Wolle jo trochgean?</qt>"
+
+#~ msgid "Show Tabs Right"
+#~ msgstr "Ljepper nei rjochts ferpleatse"
+
+#~ msgid "Set Name"
+#~ msgstr "Namme ynstelle"
+
+#~ msgid "Enter the name:"
+#~ msgstr "Namme ynfiere:"
+
+#~ msgid "Enter a URL:"
+#~ msgstr "Fier in URL-adres yn:"
+
+#~ msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
+#~ msgstr "<qt>Wolle jo dizze ljepper <b>%1</b> fuortsmite?</qt>"
+
+#~ msgid ""
+#~ "You have hidden the sidebar configuration button. To make it visible "
+#~ "again, click the right mouse button on any of the sidebar buttons and "
+#~ "select \"Show Configuration Button\"."
+#~ msgstr ""
+#~ "Jo ha de konfiguraasjeknop fan it navigaasjepaniel ferburgen. Om dizze "
+#~ "wer sichtber te meitsjen, kin mei de rjochter mûsknop klikke op ien fan "
+#~ "de knoppen yn it navigaasjepaniel en de opsje \"Konfiguraasjeknop sjen "
+#~ "litte\" selektearre."
+
+#~ msgid "Set Name..."
+#~ msgstr "Namme ynstelle..."
+
+#~ msgid "Set URL..."
+#~ msgstr "URL-adres ynstelle..."
+
+#~ msgid "Set Icon..."
+#~ msgstr "Byldkaike ynstelle..."
+
+# msgid "Rename"
+#~ msgid "Remove"
+#~ msgstr "Fuortsmite"
+
+#~ msgid "Web module"
+#~ msgstr "Web module"
+
+#~ msgid "&Create New Folder"
+#~ msgstr "Nij&e map oanmeitsje"
+
+#~ msgid "Delete Folder"
+#~ msgstr "Map wiskje"
+
+#~ msgid "Delete Bookmark"
+#~ msgstr "Blêdwizer wiskje"
+
+# msgid "Bookmark Properties"
+#~ msgid "Properties"
+#~ msgstr "Eigenskippen"
+
+#~ msgid "Open in New Window"
+#~ msgstr "iepenje in nij finster"
+
+#~ msgid "Open Folder in Tabs"
+#~ msgstr "Map yn ljeppers iepenje"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "Keppelingsadres kopiearje"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark folder\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "Wolle jo de blêdwizermap\n"
+#~ "\"%1\" fuortsmite?"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "Wolle jo de blêdwizer\n"
+#~ "\"%1\" fuortsmite?"
+
+#~ msgid "Bookmark Folder Deletion"
+#~ msgstr "Blêdwizermap fuortsmite"
+
+#~ msgid "Bookmark Deletion"
+#~ msgstr "Blêdwizer wiskjen"
+
+#~ msgid "Bookmark Properties"
+#~ msgstr "Blêdwizereigenskippen"
+
+#~ msgid "&Update"
+#~ msgstr "&Fernije"
+
+#~ msgid "Name:"
+#~ msgstr "Namme:"
+
+#~ msgid "Location:"
+#~ msgstr "Lokaasje:"
+
+#~ msgid "Add Bookmark"
+#~ msgstr "Blêdwizer taheakje "
+
+#~ msgid "Cannot find parent item %1 in the tree. Internal error."
+#~ msgstr "Ynterne flater: De haaditem %1 wurdt net yn de beamstruktuer fûn."
+
+#~ msgid "&Create New Folder..."
+#~ msgstr "&Nije map oanmeitsje..."
+
+#~ msgid "Move to Trash"
+#~ msgstr "Nei't jiskefet ferpleatse"
+
+#~ msgid "Rename"
+#~ msgstr "Omneame"
+
+#~ msgid "Delete Link"
+#~ msgstr "Keppeling wiskje"
+
+#~ msgid "New Folder"
+#~ msgstr "Nije map"
+
+#~ msgid "Create New Folder"
+#~ msgstr "Nije map oanmeitsje"
+
+#~ msgid "Enter folder name:"
+#~ msgstr "Mapnamme ynfiere:"
+
+#~ msgctxt "@label"
+#~ msgid "Name:"
+#~ msgstr "Namme:"
+
+#~ msgctxt "@label"
+#~ msgid "Path or URL:"
+#~ msgstr "Paad of URL:"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add folder sidebar module"
+#~ msgstr "Map sydbalke module taheakje"
+
+#~ msgid "&Open Link"
+#~ msgstr "Keppeling &iepenje"
+
+#~ msgid "Set &Automatic Reload"
+#~ msgstr "&Automatysk ferfarskje ynstelle"
+
+#~ msgid "Set Refresh Timeout (0 disables)"
+#~ msgstr "Ferfarkingstiidslimyt ynstelle (0 deactiveert)"
+
+#~ msgid " min"
+#~ msgstr " min"
+
+#~ msgid " sec"
+#~ msgstr " sek"
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Web Sidebar Module"
+#~ msgstr "Web sydbalke module"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add web sidebar module"
+#~ msgstr "Web sydbake module taheakje"
+
+#~ msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
+#~ msgid "Be free."
+#~ msgstr "Wês frij."
+
+# msgid ""
+# "Konqueror is your file manager, web browser and universal document viewer."
+#~ msgid ""
+#~ "Konqueror is a web browser, file manager and universal document viewer."
+#~ msgstr ""
+#~ "Konqueror is jo webblêder, triembehearder en universele dokumint "
+#~ "werjouwer."
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "Starting Points"
+#~ msgstr "Begjinpunten"
+
+#~ msgid "Introduction"
+#~ msgstr "Ynlieding"
+
+#~ msgid "Tips"
+#~ msgstr "Tips"
+
+#~ msgid "Specifications"
+#~ msgstr "Spesifikaasjes"
+
+#~ msgid "Your personal files"
+#~ msgstr "Jo persoanlike triemmen"
+
+#~ msgid "Trash"
+#~ msgstr "Jiskefet"
+
+#~ msgid "Browse and restore the trash"
+#~ msgstr "Blêdzje en herstel it jiskefet"
+
+#~ msgid "Network Folders"
+#~ msgstr "Netwurkmappen"
+
+#~ msgid "Shared files and folders"
+#~ msgstr "Dielde triemmen en mappen"
+
+#, fuzzy
+#~| msgid "&Bookmarks"
+#~ msgid "Bookmarks"
+#~ msgstr "&Blêdwizers"
+
+#~ msgid "Quick access to your bookmarks"
+#~ msgstr "Rappe tagong ta jo blêdwizers"
+
+#~ msgid "Next: An Introduction to Konqueror"
+#~ msgstr "Hjirnei: ynlieding yn Konqueror"
+
+#~ msgid "Search the Web"
+#~ msgstr "Op it Web sykje"
+
+#~ msgid ""
+#~ "Konqueror makes working with and managing your files easy. You can browse "
+#~ "both local and networked folders while enjoying advanced features such as "
+#~ "the powerful sidebar and file previews."
+#~ msgstr ""
+#~ "Konqueror makket it wurkjen en beheare fan jo triemmen in eike. Jo kinne "
+#~ "lokaal en op it netwurk blêdzje troch de mappen en ûndertusken genietsje "
+#~ "fan de altyd brûkbere ûnderdielen lykas de krêftige sydbalke en "
+#~ "foarbylden fan triemmen."
+
+# msgid ""
+# "Konqueror is also a full featured and easy to use web browser which you "
+# "can  use to explore the Internet. Enter the address (e.g. <a href="
+# "\"http://www.kde.org\">http://www.kde.org</A>) of a web page you would "
+# "like to visit in the location bar and press Enter, or choose an entry "
+# "from the Bookmarks menu."
+#~ msgid ""
+#~ "Konqueror is also a full featured and easy to use web browser which you "
+#~ "can use to explore the Internet. Enter the address (e.g. <a href=\"http://"
+#~ "www.kde.org\">http://www.kde.org</a>) of a web page you would like to "
+#~ "visit in the location bar and press Enter, or choose an entry from the "
+#~ "Bookmarks menu."
+#~ msgstr ""
+#~ "Mei Konqueror is in blêder mei in protte kapasiteiten welke makkelik "
+#~ "gebrûk yn de hân wurket. Fier ienfâldichwei it Ynternetadres (bygelyks. "
+#~ "<A HREF=\"http://www.kde.nl\">www.kde.nl</A>) yn fan de webside dy jo "
+#~ "besikje wolle en druk op Enter. Of kies ien fan items yn jo blêdwizersmenu"
+
+# msgid ""
+# "To return to the previous location, press the back button  <img "
+# "width='16' height='16' src=\"%1\"> in the toolbar. "
+#~ msgid ""
+#~ "To return to the previous location, press the back button <img width='16' "
+#~ "height='16' src=\"%1\"></img> in the toolbar. "
+#~ msgstr ""
+#~ "As jo werom wolle nei de foarige side, druk dan op knop <IMG WIDTH='16' "
+#~ "HEIGHT='16' SRC=\"%1\"></img>&nbsp;(\"Foarige\") op de arkbalke."
+
+# msgid ""
+# "To quickly go to your Home folder press the  home button <img width='16' "
+# "height='16' src=\"%1\">."
+#~ msgid ""
+#~ "To quickly go to your Home folder press the  home button <img width='16' "
+#~ "height='16' src=\"%1\"></img>."
+#~ msgstr ""
+#~ "As jo fluch nei jo thússide wolle, klik dan op de knop <img width='16' "
+#~ "height='16' src=\"%1\"></img>."
+
+#~ msgid ""
+#~ "For more detailed documentation on Konqueror click <a href=\"%1\">here</"
+#~ "a>."
+#~ msgstr ""
+#~ "Klik <A HREF=\"%1\">hjir</A> foar útwreide dokumintaasje oer Konqueror."
+
+#~ msgid ""
+#~ "<em>Tuning Tip:</em> If you want the Konqueror web browser to start "
+#~ "faster, you can turn off this information screen by clicking <a href="
+#~ "\"%1\">here</a>. You can re-enable it by choosing the Help -> Konqueror "
+#~ "Introduction menu option, and then pressing Settings -> Save View Profile "
+#~ "As... -> \"Web Browsing\"."
+#~ msgstr ""
+#~ "<em>Ynstel tip:</em> As jo wolle dat de Konqueror Webblêder flugger "
+#~ "opstart, dan kinne jo dit ynformaasjeskerm útsette troch <A HREF="
+#~ "\"%1\">hjir</A> te klikken. Jo kinne it skerm werom helje mei de "
+#~ "menuopsje \"Help -> ynlieding ta Konqueror\", en dan te kiezen foar "
+#~ "menuopsje \"ynstellings -> Werjefteprofyl bewarje as -> \"Web Browsing"
+#~ "\". ."
+
+#~ msgid "Next: Tips &amp; Tricks"
+#~ msgstr "Tips &amp; trúks"
+
+#~ msgid ""
+#~ "Konqueror is designed to embrace and support Internet standards. The aim "
+#~ "is to fully implement the officially sanctioned standards from "
+#~ "organizations such as the W3 and OASIS, while also adding extra support "
+#~ "for other common usability features that arise as de facto standards "
+#~ "across the Internet. Along with this support, for such functions as "
+#~ "favicons, Web Shortcuts, and <A HREF=\"%1\">XBEL bookmarks</A>, Konqueror "
+#~ "also implements:"
+#~ msgstr ""
+#~ "Konqueror is ûntwrpen om alle ynternetstanderts te omearmen en te "
+#~ "stipjen. It diel is om de offisjeel fêstleine standerts fan bygelyks W3 "
+#~ "en OASIS folslein te ymplemintearre. Mei derneist ekstra ûndersteuning "
+#~ "foar alle oare algemiene funksjes dy as de facto standert op ynternet "
+#~ "ûnstean. Neist dizze stipe, foar funksjes as favicons, ynternetsyktermen, "
+#~ "en <A HREF=\"%1\">XBEL-blêdwizers</A>, ymplemintearret Konqueror ek:"
+
+#~ msgid "Supported standards"
+#~ msgstr "Stipe standerts"
+
+#~ msgid "Additional requirements*"
+#~ msgstr "Addisjonele fereasken*"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">DOM</A> (nivo 1, diels nivo 2) -basearre <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+
+#~ msgid "built-in"
+#~ msgstr "ynbouwd"
+
+#~ msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
+#~ msgstr "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, diels CSS 2)"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">ECMA-262</A> edisje 3 (komt grifwei oerien mei Javaskript "
+#~ "1.5)"
+
+#~ msgid ""
+#~ "JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
+#~ msgstr ""
+#~ "Javaskript is (globaal) útsetten. <A HREF=\"%1\">Hjir</A> kinst "
+#~ "Javaskript oansette."
+
+#~ msgid ""
+#~ "JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\"
+#~ "\">here</A>."
+#~ msgstr ""
+#~ "Javaskript is (globaal) oansetten. <A HREF=\\\"%1\\\">Hjir </A> kinst "
+#~ "Javaskript ynstelle."
+
+#~ msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
+#~ msgstr "Feilige <A HREF=\"%1\">Java</A><SUP>&reg;</SUP>-stipe"
+
+#, fuzzy
+#~| msgid ""
+#~| "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">Blackdown</A>, <A HREF="
+#~| "\"%2\">IBM</A> or <A HREF=\"%3\">Sun</A>)"
+#~ msgid ""
+#~ "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">IBM</A> or <A HREF="
+#~ "\"%2\">Sun/Oracle</A>)"
+#~ msgstr ""
+#~ "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">Blackdown</A>, <A HREF="
+#~ "\"%2\">IBM</A> of <A HREF=\"%3\">Sun</A>)"
+
+#~ msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
+#~ msgstr "<A HREF=\"%1\">Hjir</A> kinst Java (globaal) aktivearje."
+
+#~ msgid ""
+#~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">plugins</A> (for "
+#~ "viewing <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
+#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Video, etc.)"
+#~ msgstr ""
+#~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">-plugins</A> (Foar "
+#~ "it sjen litten fan <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
+#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Fideo, etc.)"
+
+#~ msgid "Secure Sockets Layer"
+#~ msgstr "Secure Sockets Layer"
+
+#~ msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
+#~ msgstr "(TLS/SSL v2/3)Foar befeilige kommunikaasje oant 168bit"
+
+#~ msgid "OpenSSL"
+#~ msgstr "OpenSSL"
+
+#~ msgid "Bidirectional 16bit unicode support"
+#~ msgstr "Bidireksjoneel 16bit unykoade ûndersteuning"
+
+#~ msgid "AutoCompletion for forms"
+#~ msgstr "Auto-oanfolje foar formulieren"
+
+#~ msgctxt "Title of an html 'group box' explaining konqueror features"
+#~ msgid "General"
+#~ msgstr "Algemien"
+
+#~ msgid "Feature"
+#~ msgstr "Funksje"
+
+#~ msgid "Details"
+#~ msgstr "Details"
+
+#~ msgid "Image formats"
+#~ msgstr "Ofbyldingformaten"
+
+#, fuzzy
+#~| msgid "PNG<br />MNG<br />JPG<br />GIF"
+#~ msgid "PNG<br />JPG<br />GIF"
+#~ msgstr "PNG<br />MNG<br />JPG<br />GIF"
+
+#~ msgid "Transfer protocols"
+#~ msgstr "Oerdrachtprotokollen"
+
+#~ msgid "HTTP 1.1 (including gzip/bzip2 compression)"
+#~ msgstr "HTTP 1.1 (ynklusief gzip/bzip2-kompresje)"
+
+#~ msgid "FTP"
+#~ msgstr "FTP"
+
+#, fuzzy
+#~| msgid "and <A HREF=\"%1\">many more...</A>"
+#~ msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpcenter)...</A>"
+#~ msgstr "en <A HREF=\"%1\">noch folle mear...</A>"
+
+#~ msgctxt "A feature of Konqueror"
+#~ msgid "URL-Completion"
+#~ msgstr "URL-adresoanfolling"
+
+#~ msgid "Manual"
+#~ msgstr "Mei de hân"
+
+#~ msgid "Popup"
+#~ msgstr "Popup"
+
+#~ msgid "(Short-) Automatic"
+#~ msgstr "(Koart-) automatysk"
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "<a href=\"%1\">Return to Starting Points</a>"
+#~ msgstr "<a href=\"%1\">Weromgean nei begjinpunt</a>"
+
+#~ msgid "Tips &amp; Tricks"
+#~ msgstr "Tips &amp; trúks"
+
+#~ msgid ""
+#~ "Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, "
+#~ "using Google, for the search phrase \"KDE\". There are a lot of Web-"
+#~ "Shortcuts predefined to make searching for software or looking up certain "
+#~ "words in an encyclopedia a breeze. You can even <a href=\"%1\">create "
+#~ "your own</a> Web-Shortcuts."
+#~ msgstr ""
+#~ "Brûk ynternetsyktermen en Webkeppelingen! troch \"gg: KDE\" yn te typen "
+#~ "kinne jo it ynternet trochsykje mei de sykmasine Google op de sykterm "
+#~ "\"KDE\". Der binne in protte foarynstelde webkeppelings dy't it sykjen "
+#~ "nei sêftguod of it sykjen nei beskate wurden yn in ensyklopedy erch "
+#~ "ienfâldich meitsje. En jo kinne ek <A HREF=\"%1\">jo eigen</A> "
+#~ "Webkeppelings meitsje!"
+
+#, fuzzy
+#~| msgid ""
+#~| "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> "
+#~| "in the toolbar to increase the font size on your web page."
+#~ msgid ""
+#~ "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
+#~ "the HTML toolbar to increase the font size on your web page."
+#~ msgstr ""
+#~ "Brûk it fergrutglês <img width='16' height='16' src=\"%1\"></img> op de "
+#~ "arkbalke om de tekst yn de webside te fergrutsje."
+
+#~ msgid ""
+#~ "When you want to paste a new address into the Location toolbar you might "
+#~ "want to clear the current entry by pressing the black arrow with the "
+#~ "white cross <img width='16' height='16' src=\"%1\"></img> in the toolbar."
+#~ msgstr ""
+#~ "As jo in nij adres yn de lokaasjebalke plakke wolle, dan kinne jo it "
+#~ "aktive adres wiskje troch op de swarte pylk mei it wite krús<img "
+#~ "width='16' height='16' src=\"%1\"></img> op de lokaasjebalke te drukken."
+
+#, fuzzy
+#~| msgid ""
+#~| "To create a link on your desktop pointing to the current page, simply "
+#~| "drag the \"Location\" label that is to the left of the Location toolbar, "
+#~| "drop it on to the desktop, and choose \"Link\"."
+#~ msgid ""
+#~ "To create a link on your desktop pointing to the current page, simply "
+#~ "drag the icon (favicon) that is to the left of the Location toolbar, drop "
+#~ "it on to the desktop, and choose \"Icon\"."
+#~ msgstr ""
+#~ "Om in keppeling op jo buroblêd oan te meitsjen dy't ferwiisd nei de "
+#~ "aktive side: fersleep it label \"Lokaasje\" dat jo lofts op de "
+#~ "lokaasjebalke fine nei it buroblêd, en kies dan yn it fluchmenu foar "
+#~ "\"Hjirhinne ferbine\"."
+
+# msgid ""
+# "You can also find <img width='16' height='16' src=\"%1\"> \"Full-Screen "
+# "Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
+# "sessions."
+#~ msgid ""
+#~ "You can also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen "
+#~ "Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
+#~ "sessions."
+#~ msgstr ""
+#~ "Jo kinne ek de <img width='16' height='16' src=\"%1\" />  \"Folslein "
+#~ "skerm-modus \" fine yn it menu \"Finster\". Dizze funksje is erch brûkber "
+#~ "by \"Talk\"-sesjes."
+
+#~ msgid ""
+#~ "Divide et impera (lat. \"Divide and conquer\") - by splitting a window "
+#~ "into two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> "
+#~ "Split View Left/Right) you can make Konqueror appear the way you like. "
+#~ "You can even load some example view-profiles (e.g. Midnight Commander), "
+#~ "or create your own ones."
+#~ msgstr ""
+#~ "Divide et impera (lat. \"Ferdiel en hearskje\") - troch in finster yn twa "
+#~ "dielen te splitsen (bygelyks. Finster -> <img width='16' height='16' src="
+#~ "\"%1\" /> Finster fertikaal spjalte) kinne jo Konqueror nei eigen smaak "
+#~ "yndiele. Jo kinne ek inkele profilen foar foarbyldwerjeften (bygelyks. "
+#~ "Midnight Commander) lade, of jo eigen profilen oanmeitsje."
+
+#~ msgid ""
+#~ "Use the <a href=\"%1\">user-agent</a> feature if the website you are "
+#~ "visiting asks you to use a different browser (and do not forget to send a "
+#~ "complaint to the webmaster!)"
+#~ msgstr ""
+#~ "Brûk de <A HREF=\"%1\">brûkersagint</A> wannear jo troch in webside dy jo "
+#~ "besykje, fersocht wurde om in oare webblêder te brûken (en ferjit net in "
+#~ "klacht oan de webmaster te stjoeren!)"
+
+#, fuzzy
+#~| msgid ""
+#~| "The <img width='16' height='16' src=\"%1\"></img> History in your "
+#~| "SideBar ensures that you can keep track of the pages you have visited "
+#~| "recently."
+#~ msgid ""
+#~ "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
+#~ "ensures that you can keep track of the pages you have visited recently."
+#~ msgstr ""
+#~ "De <img width='16' height='16' src=\"%1\"></img> Skiednis yn de sydbalke "
+#~ "soarget derfoar dat jo koartlyn besochte siden makkelik wer benaderje "
+#~ "kinne."
+
+#~ msgid ""
+#~ "Use a caching <a href=\"%1\">proxy</a> to speed up your Internet "
+#~ "connection."
+#~ msgstr ""
+#~ "Brûk lytsûnthâld <A HREF=\"%1\">proxy</A> om jo ynternetferbining rapper "
+#~ "te meitsjen."
+
+#~ msgid ""
+#~ "Advanced users will appreciate the Konsole which you can embed into "
+#~ "Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
+#~ "Terminal Emulator)."
+#~ msgstr ""
+#~ "Foardere brûkers sille wierskynlik de Konsole wurdearje dy jo ynslette "
+#~ "kinne yn Konqueror. (Ynstellings-> <img width='16' height='16' SRC="
+#~ "\"%1\"></img>Terminal sjen litte)."
+
+#~ msgid "Next: Specifications"
+#~ msgstr "Hjirnei: spesifikaasjes"
+
+#~ msgid "Installed Plugins"
+#~ msgstr "Ynstallearre plugins"
+
+#~ msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
+#~ msgstr "<td>Plugin</td><td>Beskriuwing</td><td>Triem</td><td>Type</td>"
+
+#~ msgid "Installed"
+#~ msgstr "Ynstallearre"
+
+#~ msgid ""
+#~ "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
+#~ msgstr ""
+#~ "<td>Mime-type</td><td>Beskriuwing</td><td>Takeaksels</td><td>Plugin</td>"
+
+#~ msgid ""
+#~ "Do you want to disable showing the introduction in the webbrowsing "
+#~ "profile?"
+#~ msgstr "Wolle jo de Ynliedingsside útsette yn it profyl \"webblêdzje\"?"
+
+#~ msgid "Faster Startup?"
+#~ msgstr "Fluggere start?"
+
+#~ msgid "Disable"
+#~ msgstr "Utsette"
+
+#~ msgid "Keep"
+#~ msgstr "Hâlde"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Berend Ytsma,Rinse de Vries"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "berendy@bigfoot.com,rinsedevries@kde.nl"
+
+# msgid "&Folder"
+#~ msgid "&File"
+#~ msgstr "&Triem"
+
+#~ msgid "&Edit"
+#~ msgstr "Be&wurkje"
+
+# msgid "Lin&k View"
+#~ msgid "&View"
+#~ msgstr "Byl&d"
+
+#~ msgid "&Go"
+#~ msgstr "&Gean nei"
+
+# msgid "Settings"
+#~ msgid "&Settings"
+#~ msgstr "&Ynstellings"
+
+#~ msgid "&Window"
+#~ msgstr "&Finster"
+
+#~ msgid "&Help"
+#~ msgstr "&Help"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Haadbalke"
+
+#~ msgid "Extra Toolbar"
+#~ msgstr "Ekstra Arkbalke"
+
+#~ msgid "Location Toolbar"
+#~ msgstr "Lokaasjebalke"
+
+#~ msgid "Bookmark Toolbar"
+#~ msgstr "Blêdwizerbalke"
+
+#~ msgid "Save open tabs and windows for easy retrieval"
+#~ msgstr "Iepensteande ljeppers en finsters bewarje foar it ienfâldich laden"
+
+#~ msgid "&Session name:"
+#~ msgstr "&Sesjenamme:"
+
+#~ msgid "&Profile name:"
+#~ msgstr "&Profylnamme:"
+
+#~ msgid "Save &URLs in profile"
+#~ msgstr "&URL-adressen yn profyl bewarje"
+
+# msgid "&New Folder..."
+#~ msgctxt "@action:button New session"
+#~ msgid "New..."
+#~ msgstr "Nij..."
+
+#~ msgctxt "@action:button Save current session"
+#~ msgid "Save Current"
+#~ msgstr "Aktive bewarje"
+
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename..."
+#~ msgstr "Omneame..."
+
+# msgid "Delete Link"
+#~ msgctxt "@action:button Delete session"
+#~ msgid "Delete"
+#~ msgstr "Wiskje"
+
+#~ msgid "Open tabs inside current window"
+#~ msgstr "Iepenje ljeppers yn it aktive finster"
+
+#~ msgid "Limits"
+#~ msgstr "Limiten"
+
+#~ msgid "URLs e&xpire after"
+#~ msgstr "URL-adressen &ferrûn nei"
+
+#~ msgid "Maximum &number of URLs:"
+#~ msgstr "Maksimum oa&ntal URL-adressen:"
+
+#~ msgid "Custom Fonts For"
+#~ msgstr "Oanpaste lettertypes foar"
+
+#~ msgid "URLs newer than"
+#~ msgstr "URL-adressen nijer dan"
+
+#~ msgid "Choose Font..."
+#~ msgstr "Lettertype kieze..."
+
+#~ msgid "URLs older than"
+#~ msgstr "URL-adressen âlder dan"
+
+#~ msgid ""
+#~ "Shows the number of times visited and the dates of the first and last "
+#~ "visits, in addition to the URL"
+#~ msgstr ""
+#~ "Lit it oantal besikers sjen en de datums fan de earste en lêste besyk by "
+#~ "it URL-adres"
+
+#~ msgid "Detailed tooltips"
+#~ msgstr "Detaillearre tekstballonnen"
+
+#~ msgid "Clear History"
+#~ msgstr "Skiednis leegje"
+
+#~ msgid ""
+#~ "This is the URL of the web page where Konqueror (as web browser) will "
+#~ "jump to when the \\\"Home\\\" button is pressed. When Konqueror is "
+#~ "started as a file manager, that button makes it jump to your local home "
+#~ "folder instead."
+#~ msgstr ""
+#~ "Dit is it URL-adres wêr Konqueror (as webblêder) nei ta ljept as de \\"
+#~ "\"thús\\\"-knop oanklikt wurdt. As Konquerror úteinsetten is as "
+#~ "triembehearder, sil dy knop in sprong meitsje nei jo lokale thúsmap"
+
+#~ msgid "Maximum number of Closed Items"
+#~ msgstr "Maksimum oantal sluten items"
+
+#~ msgid ""
+#~ "This sets the maximum number of closed items that will be stored in "
+#~ "memory. This limit will not be surpassed."
+#~ msgstr ""
+#~ "Hjirmei kinne jo it maksimale oantal fan sluten items ynstelle dy't "
+#~ "bewarre wurde yn it ûnthâld. Dizze limyt sil oanhâlden wurde."
+
+#~ msgid "Open folders in separate windows"
+#~ msgstr "Mappen iepenje yn ôfskiede finsters"
+
+#~ msgid ""
+#~ "If this option is checked, Konqueror will open a new window when you open "
+#~ "a folder, rather than showing that folder's contents in the current "
+#~ "window."
+#~ msgstr ""
+#~ "As dizze opsje ynskeakele is sil Konqueror in nij finster iepenje as jo "
+#~ "in map iepenje, ynstee fan de ynhâld fan de map yn it aktive finster sjen "
+#~ "te litten."
+
+#~ msgid "Show file tips"
+#~ msgstr "Triemtips sjen litte"
+
+#~ msgid ""
+#~ "Here you can control if, when moving the mouse over a file, you want to "
+#~ "see a small popup window with additional information about that file"
+#~ msgstr ""
+#~ "Hjir kinne jo beskiede, dat as jo mei de mûsoanwizer oer in triem geane, "
+#~ "jo in lytst popup finster sjen wolle mei oanfoljende ynformaasje oer dy "
+#~ "triem."
+
+#~ msgid "Show previews in file tips"
+#~ msgstr "Foarbylden yn triemtips sjen litte"
+
+#~ msgid ""
+#~ "Here you can control if you want the popup window to contain a larger "
+#~ "preview for the file, when moving the mouse over it"
+#~ msgstr ""
+#~ "Hjir kinne jo beskiede, dat as jo dêr mei de mûsoanwizer oerhinne geane "
+#~ "der yn it popup finster fan de triem in grutter foarbyld te sjen is"
+
+#~ msgid "Show 'Delete' menu entries which bypass the trashcan"
+#~ msgstr ""
+#~ "De menuopsje 'Wiskje', dy't it jiskefet omsyld, sjen litte yn ferbânmenu's"
+
+#, fuzzy
+#~| msgid ""
+#~| "Uncheck this if you do not want 'Delete' menu commands to be displayed "
+#~| "on the desktop and in the file manager's menus and context menus. You "
+#~| "can still delete files when hidden by holding the Shift key while "
+#~| "calling 'Move to Trash'."
+#~ msgid ""
+#~ "Check this if you want 'Delete' menu commands to be displayed on the "
+#~ "desktop and in the file manager's menus and context menus. You can always "
+#~ "delete files when hidden by holding the Shift key while calling 'Move to "
+#~ "Trash'."
+#~ msgstr ""
+#~ "Selektearje dizze opsje as jo wolle dat de menuopsje 'Wiskje' te sjen is "
+#~ "yn de kontesktmenu's fan de triembehearder en it buroblêd. Jo kinne "
+#~ "triemmen altyd permanint wiskje troch de fluchtoets Shift yndrukt te "
+#~ "hâlden wylst se nei it jiskefet te ferpleatse."
+
+#~ msgid "Number of Open With items in the File menu"
+#~ msgstr "Oantal fan Iepen mei items yn it triemmenu"
+
+#~ msgid "Standard font"
+#~ msgstr "Standert lettertype"
+
+#~ msgid "This is the font used to display text in Konqueror windows."
+#~ msgstr ""
+#~ "Dit is it lettertype dat brûkt wurdt by it werjaan fan gewoane tekst yn "
+#~ "in webside."
+
+#~ msgid "Maximum number of history items per view"
+#~ msgstr "maksimum oantal fan skiednis items de werjefte"
+
+#~ msgid "Ask confirmation for deleting a file."
+#~ msgstr "Freegje om befêstiging foar it wiskjen fan in triem."
+
+#~ msgid ""
+#~ "This option tells Konqueror whether to ask for a confirmation when you "
+#~ "delete a file without using the trash folder. Warning, deleted files can "
+#~ "not be recovered, so it is recommended to leave this confirmation enabled."
+#~ msgstr ""
+#~ "Dizze opsje seit Konqueror of hy om in befêstiging freegje moat as jo in "
+#~ "triem wiskje. Warskôging, wiske triemmen kinne net weromhele wurde, dus "
+#~ "it is rekommandearre om dizze befêstiging ynskeakele te littten."
+
+#~ msgid "Ask confirmation for move to trash"
+#~ msgstr "Freegje om befêstiging foar it ferpleatsen nei it jiskefet"
+
+#~ msgid ""
+#~ "This option tells Konqueror whether to ask for a confirmation when you "
+#~ "move the file to your trash folder, from where it can be recovered very "
+#~ "easily."
+#~ msgstr ""
+#~ "Dizze opsje seit Konqueror of hy om in befêstiging freegje moat as jo in "
+#~ "triem nei it jiskefet ferpleatse, fan wêrút it maklik werom te heljen is."
+
+#~ msgid ""
+#~ "If true, when opening a session from within the sessions dialog the tabs "
+#~ "will be opened inside current window."
+#~ msgstr ""
+#~ "As wier, as in sesje iepene wurdt fanút it sesjeskerm dan sille de "
+#~ "ljeppers yn it aktive finster iepenje."
+
+#~ msgid "Hide %1"
+#~ msgstr "%1 ferstopje"
+
+#~ msgid "SideBar Test Plugin"
+#~ msgstr "Sydbalke test plugin"
+
+#~ msgid "Bookmark This Location"
+#~ msgstr "Meitsje blêdwizer fan dizze lokaasje"
+
+#~ msgid ""
+#~ "Malformed URL\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Ferkeard foarme URL-adres:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Protocol not supported\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Dit protokol wurdt net stipe:\n"
+#~ "%1"
+
+#~ msgid "Cannot create the find part, check your installation."
+#~ msgstr "Kin de KPart 'find' net oanmeitsje. kontrolearje jo ynstallaasje."
+
+#~ msgid "My Bookmarks"
+#~ msgstr "Myn blêdwizers"
+
+#~ msgid "Preload for later use"
+#~ msgstr "Foarlade foar letter gebrûk"
+
+#~ msgid "&Save View Profile \"%1\"..."
+#~ msgstr "Werjefteprofyl \"%1\" bewa&rje..."
+
+#~ msgid "Configure Navigation Panel"
+#~ msgstr "Navigaasjepaniel ynstelle"
+
+#~ msgid "Close Navigation Panel"
+#~ msgstr "Navigaasjepaniel slute"
+
+#~ msgid "Select Type"
+#~ msgstr "Type selektearje"
+
+#~ msgid "Select type:"
+#~ msgstr "Type selektearje:"
+
+#~ msgid "Web SideBar Plugin"
+#~ msgstr "Websydbalkeplugin"
+
+#~ msgid "<qt><b>%1</b> does not exist</qt>"
+#~ msgstr "<qt><b>%1</b> bestiet net</qt>"
+
+#~ msgid "Minutes"
+#~ msgstr "Minuten"
+
+#~ msgid "Days"
+#~ msgstr "Dagen"
+
+#~ msgid "Your sidebar is not functional or unavailable."
+#~ msgstr "De sydbalke is net beskikber of wurket net."
+
+#~ msgid "Cannot find running history plugin in your sidebar."
+#~ msgstr "Der is gjin rinnende skiednisplugin yn jo sydbalke fûn."
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History in Sidebar"
+#~ msgstr "Skiednis yn de sydbalke sjen litte"
+
+#~ msgid "Select Remote Charset"
+#~ msgstr "Eksterne tekenset selektearje"
+
+#~ msgid "Reload"
+#~ msgstr "Op 'e nij lade"
+
+#~ msgid "Default"
+#~ msgstr "Standert"
+
+#~ msgctxt "@action:button New session"
+#~ msgid "New"
+#~ msgstr "Nij"
+
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename"
+#~ msgstr "Omneame"
+
+#~ msgid ""
+#~ "Konqueror is your file manager, web browser and universal document viewer."
+#~ msgstr ""
+#~ "Konqueror is jo triembehearder, webblêder en universele dokumint "
+#~ "werjouwer."
+
+#~ msgid "Joseph WENNINGER"
+#~ msgstr "Joseph WENNINGER"
+
+#~ msgid "G E N E R A L"
+#~ msgstr "A L G E M I E N"
+
+#~ msgid "<img width='16' height='16' src=\"%1\"></img>"
+#~ msgstr "<img width='16' height='16' src=\"%1\"></img>"
+
+#~ msgid "Applications"
+#~ msgstr "Applikaasjes"
+
+#~ msgid "Installed programs"
+#~ msgstr "Ynstallearre plugins"
+
+#~ msgid "&Location"
+#~ msgstr "&Lokaasje"
+
+#~ msgid "Open &Terminal"
+#~ msgstr "&Terminal iepenje"
+
+#~ msgid "Unknown"
+#~ msgstr "Unbekend"
+
+#~ msgid "Save &window size in profile"
+#~ msgstr "&Finstergrutte yn profyl bewarje"
+
+#~ msgid "&Speak Text"
+#~ msgstr "Tek&st sizze"
+
+#~| msgid ""
+#~| "You cannot read anything except web pages with\n"
+#~| "this plugin, sorry."
+#~ msgid "You cannot read anything except web pages with this plugin, sorry."
+#~ msgstr "Jo kinne mei dizze plugin allinne websiden lêze."
+
+#~ msgid "Cannot Read source"
+#~ msgstr "Kin de boarne net lêze"
+
+#~ msgid "Starting KTTSD Failed"
+#~ msgstr "It begjinnen fan KTTSD is mislearre"
+
+#~| msgid "The D-Bus call startText failed."
+#~ msgid "The D-Bus call say() failed."
+#~ msgstr "De DBUS-oanrop startText is mislearre."
+
+#~ msgid "D-Bus Call Failed"
+#~ msgstr "DBUS-oanrop is mislearre"
+
+# msgid "Treeview Toolbar"
+#, fuzzy
+#~ msgid "Speech Toolbar"
+#~ msgstr "Spraakwurkbalke"
+
+#~ msgid "The D-Bus call supportsMarkup failed."
+#~ msgstr "De DBUS-oanrop supportsMarkup is mislearre."
+
+#~ msgid "The D-Bus call setText failed."
+#~ msgstr "De DBUS-oanrop setText is mislearre."
+
+#~ msgid "Conquer your Desktop!"
+#~ msgstr "Feroverje jo buroblêd!"
+
+#~ msgid "Storage Media"
+#~ msgstr "Opslagmedia"
+
+#~ msgid "Disks and removable media"
+#~ msgstr "Skiven en ferwiderber medium"
+
+#~ msgid "Settings"
+#~ msgstr "Ynstellings"
+
+#~ msgid "Desktop configuration"
+#~ msgstr "Konfiguraasjeknop sjen litte"
+
+#, fuzzy
+#~ msgid "Home &URL:"
+#~ msgstr "&URL-adres thûs:"
+
+#~ msgid "&Edit File Type..."
+#~ msgstr "Triemt&ype bewurkje..."
+
+#~ msgid "S&ystem"
+#~ msgstr "S&ysteem"
+
+#~ msgid "App&lications"
+#~ msgstr "App&likaasje"
+
+#~ msgid "&Storage Media"
+#~ msgstr "Op&slachmedia"
+
+#~ msgid "&Network Folders"
+#~ msgstr "&Netwurkmappen"
+
+#~ msgid "Sett&ings"
+#~ msgstr "&Ynstellings"
+
+#~ msgid "Autostart"
+#~ msgstr "Autostart"
+
+#, fuzzy
+#~ msgid "kfmclient"
+#~ msgstr "kfmclient"
+
+#, fuzzy
+#~ msgid "KDE tool for opening URLs from the command line"
+#~ msgstr ""
+#~ "KDE-helpprogramma foar it iepenjen fan URL-adressen fanôf de "
+#~ "kommandopronpt"
+
+#, fuzzy
+#~ msgid "Non interactive use: no message boxes"
+#~ msgstr "Net-ynteraktief gebrûk: gjin berjochtfjilden"
+
+#, fuzzy
+#~ msgid "Show available commands"
+#~ msgstr "Beskikbere kommando's werjaan"
+
+#, fuzzy
+#~ msgid "Command (see --commands)"
+#~ msgstr "Kommando (sjoch --kommands)"
+
+#, fuzzy
+#~ msgid "Arguments for command"
+#~ msgstr "Arguminten foar kommando"
+
+#, fuzzy
+#~ msgid ""
+#~ "\n"
+#~ "Syntax:\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Gebrûk:\n"
+
+#, fuzzy
+#~ msgid ""
+#~ "  kfmclient openURL 'url' ['mimetype']\n"
+#~ "            # Opens a window showing 'url'.\n"
+#~ "            #  'url' may be a relative path\n"
+#~ "            #   or file name, such as . or subdir/\n"
+#~ "            #   If 'url' is omitted, $HOME is used instead.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "   kfmclient openURL 'url' ['mime-triemtype']\n"
+#~ "            # Iepent in finster mei it 'url-adres'.\n"
+#~ "            #  'url' kin in relatief paad wêze\n"
+#~ "            #   of in triemnamme, sa as . of submap/\n"
+#~ "            #   As 'url' fuortlitten wurdt, dan wurdt $HOME brûkt.\n"
+#~ "\n"
+
+#, fuzzy
+#~ msgid ""
+#~ "            # If 'mimetype' is specified, it will be used to determine "
+#~ "the\n"
+#~ "            #   component that Konqueror should use. For instance, set it "
+#~ "to\n"
+#~ "            #   text/html for a web page, to make it appear faster\n"
+#~ "\n"
+#~ msgstr ""
+#~ "            # As 'mime-triemtype' is oantsutte, dan sil it brûkt\n"
+#~ "             #   wurde om te bepalen hokker komponint Konqueror brûke "
+#~ "sil.\n"
+#~ "            #   Bygelyks, set it op text/html foar in webside, om\n"
+#~ "            #   dizze flugger te iepenjen.\n"
+#~ "\n"
+
+#, fuzzy
+#~ msgid ""
+#~ "  kfmclient newTab 'url' ['mimetype']\n"
+#~ "            # Same as above but opens a new tab with 'url' in an existing "
+#~ "Konqueror\n"
+#~ "            #   window on the current active desktop if possible.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmclient newTab 'url' ['mimetype']\n"
+#~ "            # Selde as hjirboppe, mar iepent in nije ljepper mei 'url' yn "
+#~ "in al iepene\n"
+#~ "            #    Konqueror-finster op it hjoeddeiske buroblêd (as it "
+#~ "mooglik is).\n"
+#~ "\n"
+
+#, fuzzy
+#~ msgid ""
+#~ "  kfmclient openProfile 'profile' ['url']\n"
+#~ "            # Opens a window using the given profile.\n"
+#~ "            #   'profile' is a file under ~/.kde/share/apps/konqueror/"
+#~ "profiles.\n"
+#~ "            #   'url' is an optional URL to open.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmclient openProfile 'profyl' ['URL-adres]\n"
+#~ "            # Iepent in finster mei it oantsjutte profyl.\n"
+#~ "            #   'profyl' is in triem út ~/.kde/share/apps/konqueror/"
+#~ "profiles.\n"
+#~ "           #   'URL-adres' is in opsjoneel te iepenen URL-adres.\n"
+#~ "\n"
+
+# msgid "Profile to open"
+#, fuzzy
+#~ msgid "Profile %1 not found\n"
+#~ msgstr "Profyl %1 is net fûn\n"
+
+#, fuzzy
+#~ msgid "Syntax Error: Not enough arguments\n"
+#~ msgstr "Syntaksisflater: Net genôch arguminten\n"
+
+#, fuzzy
+#~ msgid "Syntax Error: Too many arguments\n"
+#~ msgstr "Syntaksisflater:Tefolle arguminten\n"
+
+#, fuzzy
+#~ msgid "Syntax Error: Unknown command '%1'\n"
+#~ msgstr "Syntaksisflater: '%1' is in ûnbekend kommando\n"
+
+#, fuzzy
+#~ msgid ""
+#~ "<h1>Konqueror Stylesheets</h1> This module allows you to apply your own "
+#~ "color and font settings to Konqueror by using stylesheets (CSS). You can "
+#~ "either specify options or apply your own self-written stylesheet by "
+#~ "pointing to its location.<br /> Note that these settings will always have "
+#~ "precedence before all other settings made by the site author. This can be "
+#~ "useful to visually impaired people or for web pages that are unreadable "
+#~ "due to bad design."
+#~ msgstr ""
+#~ "<h1>Konqueror Stylblêden</h1> Mei dizze module kinne jo eigen ynstellings "
+#~ "foar lettertypen en kleuren yn Konqueror brûke troch de help fan "
+#~ "stylblêden (CSS). Jo kinne hjir de opsjes oantsjutte, of jo sels skreaune "
+#~ "tapasse troch nei har lokaasje te ferwizen<br />Dizzen ynstellings wurde "
+#~ "tapst ynstee fan alle oare ynstellings dy troch de skriuwer fan de side "
+#~ "opjûn binne. Dit kin brûkber wêze foar bygelyks minsken mei min sicht, of "
+#~ "foar websiden dy net lêsber binne troch in minne ynrjochting."
+
+#, fuzzy
+#~ msgid "Manual Proxy Configuration"
+#~ msgstr "Proxy konfiguraasje mei de hân ynstelle"
+
+#, fuzzy
+#~ msgid "Invalid Proxy Setting"
+#~ msgstr "Unjildige proxy ynstelling"
+
+#, fuzzy
+#~ msgid ""
+#~ "One or more of the specified proxy settings are invalid. The incorrect "
+#~ "entries are highlighted."
+#~ msgstr ""
+#~ "Ien of inkele fan de oantsjutte proxy-ynstellings binne ûnjildich. De net "
+#~ "juste ynstellings binne markearre."
+
+#, fuzzy
+#~ msgid "You entered a duplicate address. Please try again."
+#~ msgstr "Do hast in dûbel adres ynfierd. Probearje opnij."
+
+# msgid "<qt><b>%1</b> is not valid</qt>"
+#, fuzzy
+#~ msgid "<qt><center><b>%1</b></center> is already in the list.</qt>"
+#~ msgstr "<qt><center><b>%1</b><br/>stiet al yn de list.</qt>"
+
+# msgid "&Duplicate Tab"
+#, fuzzy
+#~ msgid "Duplicate Entry"
+#~ msgstr "Dûbel item"
+
+#, fuzzy
+#~ msgid "New Exception"
+#~ msgstr "Nije útsûndering"
+
+# msgid "Chan&ge Icon..."
+#, fuzzy
+#~ msgid "Change Exception"
+#~ msgstr "Utsûndering wizigje"
+
+#, fuzzy
+#~ msgid "Invalid Entry"
+#~ msgstr "Unjildich item"
+
+#, fuzzy
+#~ msgid "The address you have entered is not valid."
+#~ msgstr "It adres datst ynfierd hast in ûnjildich"
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt>Make sure none of the addresses or URLs you specified contain invalid "
+#~ "or wildcard characters such as spaces, asterisks (*), or question "
+#~ "marks(?).<br /><br /><u>Examples of VALID entries:</u><br /><code>http://"
+#~ "mycompany.com, 192.168.10.1, mycompany.com, localhost, http://localhost</"
+#~ "code><br /><br /><u>Examples of INVALID entries:</u><br /><code>http://my "
+#~ "company.com, http:/mycompany,com file:/localhost</code></qt>"
+#~ msgstr ""
+#~ "<qt>Soarget derfoar dat de (URL-)adressen dyst oantsjutte hast gjin "
+#~ "ûnjildige- of jokertekens befette, sa as wytromten, asterisk(*) of "
+#~ "fraachtekens (?). <br /><br /><u>Foarbylden fan JILDIGE adressen:</u> <br/"
+#~ "><code>http://mynbedriuw.nl, 192.168.10.1, mynbedriuw.nl, localhost, "
+#~ "http://localhost</code> </code><br /><u>Foarbylden fan UNJILDIGE adressen:"
+#~ "</u> <br/><code>http://myn bedriuw.nl, http://mynbedriuw,nl, file:/"
+#~ "localhost</code></qt>"
+
+#, fuzzy
+#~ msgid "Enter the URL or address that should use the above proxy settings:"
+#~ msgstr ""
+#~ "Fier it (URL-)adres yn dat brûk soe meitsje moatte fan de boppesteande "
+#~ "proxy-ynstellings:"
+
+#, fuzzy
+#~ msgid ""
+#~ "Enter the address or URL that should be excluded from using the above "
+#~ "proxy settings:"
+#~ msgstr ""
+#~ "Fier it (URL-)adres yn dat útsletten sil wurde fan brûk fan de "
+#~ "boppesteande proxy-ynstellings:"
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt>Enter a valid address or url.<br /><br /><b><u>NOTE:</u></b> Wildcard "
+#~ "matching such as <code>*.kde.org</code> is not supported. If you want to "
+#~ "match any host in the <code>.kde.org</code> domain, e.g. <code>printing."
+#~ "kde.org</code>, then simply enter <code>.kde.org</code></qt>"
+#~ msgstr ""
+#~ "<qt>Fier in jildich (URL-)adres yn. <br /><br /><b><u>Taljochting:</u></"
+#~ "b> jokertekens sa as <code>*.kde.nl</code> wurde net stipe. Ast wolst dat "
+#~ "de ynstelling oerienkomt mei eltse host yn it domein <code>.kde.nl</"
+#~ "code>, sa as <code>www.kde.nl</code>, fier dan deagewoan <code>.kde.nl</"
+#~ "code> yn.</qt>"
+
+#, fuzzy
+#~ msgid "This is the configuration for the samba client only, not the server."
+#~ msgstr ""
+#~ "Dit is útslutend de konfiguraasje fan de sambaclient. Net fan de tsjinner."
+
+# msgid "Enter folder name:"
+#, fuzzy
+#~ msgid "Default user name:"
+#~ msgstr "Standert brûkersnamme:"
+
+#, fuzzy
+#~ msgid "Default password:"
+#~ msgstr "Standert wachtwurd:"
+
+#, fuzzy
+#~ msgid ""
+#~ "<p><h1>Windows Shares</h1>Konqueror is able to access shared windows "
+#~ "filesystems if properly configured. If there is a specific computer from "
+#~ "which you want to browse, fill in the <em>Browse server</em> field. This "
+#~ "is mandatory if you do not run Samba locally. The <em>Broadcast address</"
+#~ "em> and <em>WINS address</em> fields will also be available, if you use "
+#~ "the native code, or the location of the 'smb.conf' file from which the "
+#~ "options are read, when using Samba. In any case, the broadcast address "
+#~ "(interfaces in smb.conf) must be set up if it is guessed incorrectly or "
+#~ "you have multiple cards. A WINS server usually improves performance, and "
+#~ "reduces the network load a lot.</p><p>The bindings are used to assign a "
+#~ "default user for a given server, possibly with the corresponding "
+#~ "password, or for accessing specific shares. If you choose to, new "
+#~ "bindings will be created for logins and shares accessed during browsing. "
+#~ "You can edit all of them from here. Passwords will be stored locally, and "
+#~ "scrambled so as to render them unreadable to the human eye. For security "
+#~ "reasons, you may not want to do that, as entries with passwords are "
+#~ "clearly indicated as such.</p>"
+#~ msgstr ""
+#~ "<p><h1>Windows Netwurken</h1>Konqueror is in steat him tagong te "
+#~ "ferskaffen ta dielde Windows-triemsystemen, at dizzen teminste goed "
+#~ "ynsteld binne. As der in spesifike kompjûter is wêrop blêdzje wolst, "
+#~ "folje dizze dan yn, yn it fjild <em>Blêdzje-tsjinner</em>. Dit is "
+#~ "ferplicht ast Samba net lokaal brûkst. De fjilden <em>Broadcast-adres</"
+#~ "em> en <em>WINS-adres</em> sille ek beskikber wêze ast de lokale koade "
+#~ "brûkst, of de lokaasje fan wêrút de 'smb.conf'-opsjes kinne lêzen wurde. "
+#~ "Yn elts gefal moat it broadcast-adres (ynterfaces yn smb.conf) ynstelt "
+#~ "wurde as dizze net just rieden wurdt, of wannearst meardere kaarten "
+#~ "brûkst. In WINS-tsjinner ferbetteret gewoanlik de prestaasjes en "
+#~ "fermindert de netwurklading.</p><p>De biningen wurde brûkt om in "
+#~ "standertbrûker foar in beskate tsjinner ta te wizen. Ek kin dit mei it "
+#~ "korrespondearjende wachtwurd, of foar tagong ta spesifike dielen fan "
+#~ "netwurkboarnen. Ast dêrfoar kiest wurde nije biningen oanmakke foar "
+#~ "oanmeldings en dielde netwurkboarnen dy ûnder it blêdzjen brûkt wurde. Do "
+#~ "kinst se allegear fanút hjir bewurkje. Wachtwurden wurde lokaal opslein "
+#~ "en kodearre sadat se net foar minsken lêsber binne. yn ferbân mei de "
+#~ "feiligens kinst dêr fan ôf sjen. Yngongen mei wachtwurden binne dúdlik as "
+#~ "sadanich markearre.</p>"
+
+#, fuzzy
+#~ msgid "Accept"
+#~ msgstr "Akseptearje"
+
+# msgid "&Reset"
+#, fuzzy
+#~ msgid "Reject"
+#~ msgstr "Ofkarre"
+
+#, fuzzy
+#~ msgid "Ask"
+#~ msgstr "Freegje"
+
+#, fuzzy
+#~ msgid "Dunno"
+#~ msgstr "Geen idee"
+
+#, fuzzy
+#~ msgid "Timeout Values"
+#~ msgstr "Wearden fan tiidsferrin"
+
+#, fuzzy
+#~ msgid ""
+#~ "Here you can set timeout values. You might want to tweak them if your "
+#~ "connection is very slow. The maximum allowed value is %1 seconds."
+#~ msgstr ""
+#~ "Hjir kinst de tiidsferrin wearden ynstelle. By trage ferbinings is it "
+#~ "oan  te rieden dizze ynstelling oan te passen. De maksimum tasteane "
+#~ "wearde is %1 sekonden."
+
+#, fuzzy
+#~ msgid "Soc&ket read:"
+#~ msgstr "Soc&ket lêze:"
+
+#, fuzzy
+#~ msgid "Pro&xy connect:"
+#~ msgstr "Pro&ksy ferbine:"
+
+#, fuzzy
+#~ msgid "Server co&nnect:"
+#~ msgstr "Tsjinner ferbi&ne:"
+
+#, fuzzy
+#~ msgid "&Server response:"
+#~ msgstr "T&sjinner reaksje:"
+
+#, fuzzy
+#~ msgid "FTP Options"
+#~ msgstr "FTP-opsjes"
+
+#, fuzzy
+#~ msgid "Enable passive &mode (PASV)"
+#~ msgstr "Passive &modus (PASV) ynskeakelje"
+
+#, fuzzy
+#~ msgid ""
+#~ "Enables FTP's \"passive\" mode. This is required to allow FTP to work "
+#~ "from behind firewalls."
+#~ msgstr ""
+#~ "Skeakelt de passive modus fan FTP yn. Dit is nedich om FTP wurkje te "
+#~ "litten fan efter de brânmuorre."
+
+#, fuzzy
+#~ msgid "Mark &partially uploaded files"
+#~ msgstr "Foar in diel fer&stjoerde triemmen markearje"
+
+#, fuzzy
+#~ msgid ""
+#~ "<p>Marks partially uploaded FTP files.</p><p>When this option is enabled, "
+#~ "partially uploaded files will have a \".part\" extension. This extension "
+#~ "will be removed once the transfer is complete.</p>"
+#~ msgstr ""
+#~ "<p>Markearret FTP-triemmen dy foar in diel ferstjoerd binne nei de "
+#~ "tsjinner.</p><p>As dizze opsje selektearre is ha triemmen dy foar in diel "
+#~ "ferstjoerd binne nei de tsjinner de taheaksel \".part\". Dizze taheaksel "
+#~ "sil fuortsmiten wurde as de oerdracht klear is.</p>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<h1>Network Preferences</h1>Here you can define the behavior of KDE "
+#~ "programs when using Internet and network connections. If you experience "
+#~ "timeouts or use a modem to connect to the Internet, you might want to "
+#~ "adjust these settings."
+#~ msgstr ""
+#~ "<h1>Netwurk eigenskippen</h1> Hjir kinst it gedrach fan KDE-programma's "
+#~ "ûnder it gebrûk fan ynternet en netwurkferbiningen ynstelle. Ast lêst "
+#~ "hast fan tiidsferrin, oare swierrichheid, of in modem brûkst, dan kinst "
+#~ "it bêste dizze wearden oanpasse."
+
+# msgid "Confirmation"
+#, fuzzy
+#~ msgid "D-Bus Communication Error"
+#~ msgstr "DBUS-kommunikaasjeflater"
+
+#, fuzzy
+#~ msgid "Unable to delete all the cookies as requested."
+#~ msgstr "Net alle koekjes dyst ferwiderje woest koenen ferwidere wurde."
+
+#, fuzzy
+#~ msgid "Unable to delete cookies as requested."
+#~ msgstr "De koekjes dyst ferwiderje wolst kinne net ferwidere wurde."
+
+#, fuzzy
+#~ msgid "<h1>Cookies Management Quick Help</h1>"
+#~ msgstr "<h1>Koekjes Management::Fluch Help()</h1>"
+
+#, fuzzy
+#~ msgid "Information Lookup Failure"
+#~ msgstr "It opsykjen fan ynformaasje is mislearre"
+
+#, fuzzy
+#~ msgid ""
+#~ "Unable to retrieve information about the cookies stored on your computer."
+#~ msgstr ""
+#~ "Der koe gjin ynformaasje ynwûn wurde oer de koekjes dy opslein binne op "
+#~ "dyn kompjûter."
+
+#, fuzzy
+#~ msgid "Yes"
+#~ msgstr "Ja"
+
+#, fuzzy
+#~ msgid ""
+#~ "<h1>Cache</h1><p>This module lets you configure your cache settings.</"
+#~ "p><p>The cache is an internal memory in Konqueror where recently read web "
+#~ "pages are stored. If you want to retrieve a web page again that you have "
+#~ "recently read, it will not be downloaded from the Internet, but rather "
+#~ "retrieved from the cache, which is a lot faster.</p>"
+#~ msgstr ""
+#~ "<h1>Lyts ûnthâld</h1> <p>Yn dizze module kinst dyn lyts ûnhâld ynstelle.</"
+#~ "p> <p>It lyts ûnthâld is in yntern ûnthâld yn Konqueror wêr koartlyn "
+#~ "iepene siden yn opslein wurde. Ast in webside dyst koartlyn lêzen hast "
+#~ "opnij iepenst, dan sil Konqueror dizze net opnij fan't ynternet helje, "
+#~ "mar út it lyts ûnthâld. Dizze wurkwize is in stik flugger.</p>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<h1>Local Network Browsing</h1>Here you setup your <b>\"Network "
+#~ "Neighborhood\"</b>. You can use either the LISa daemon and the lan:/ "
+#~ "ioslave, or the ResLISa daemon and the rlan:/ ioslave.<br /><br />About "
+#~ "the <b>LAN ioslave</b> configuration:<br /> If you select it, the "
+#~ "ioslave, <i>if available</i>, will check whether the host supports this "
+#~ "service when you open this host. Please note that paranoid people might "
+#~ "consider even this to be an attack.<br /><i>Always</i> means that you "
+#~ "will always see the links for the services, regardless of whether they "
+#~ "are actually offered by the host. <i>Never</i> means that you will never "
+#~ "have the links to the services. In both cases you will not contact the "
+#~ "host, so nobody will ever regard you as an attacker.<br /><br />More "
+#~ "information about <b>LISa</b> can be found at <a href=\"http://lisa-home."
+#~ "sourceforge.net\">the LISa Homepage</a> or contact Alexander Neundorf &lt;"
+#~ "<a href=\"mailto:neundorf@kde.org\">neundorf@kde.org</a>&gt;."
+#~ msgstr ""
+#~ "<h1>Lokaal-netwurk-blêdzje</h1>Hjir kinst dyn <b>\"Netwurkomjouwing\"</b> "
+#~ "ynstelle. Do kinst de LISa-daemon en de io-slave \"lan:/\" of de ResLISa-"
+#~ "daemon en de io-slave \"rlan:/\" brûke.<br /><br />Oer de <b>LAN-io-"
+#~ "slave</b>-konfiguraasje: <br />Ast dizze selektearrest, dan kontrolearret "
+#~ "de io-slave, <i>as it beskikber is</i>, of de host dizze tsjinsten wol "
+#~ "stipet ast dizze iepenst. Hâld der rekken mei dat persoanen dy wat "
+#~ "paranoia binne sels dizze  aksje as in oanfol sjogge.<br /><i>Altyd</i> "
+#~ "jout oan datst altyd de keppelings nei de tsjinst sjochst, of se no wol "
+#~ "of net oanbean wurde troch de host. <i>Nea</i> jout oan datst nea "
+#~ "keppelings nei de tsjinsten ha sist. Yn beide gefallen nimsto gjin "
+#~ "kontakt op mei de host, sa dat gjinien dy mear oansjochst as in oanfoller."
+#~ "<br /><br />Mear ynformaasje oer <b>LISa</b> kinst fine op <a href="
+#~ "\"http://lisa-home.sourceforge.net\">LISa's webside</a>. Of nim kontakt "
+#~ "op mei Alexander Neundorf &lt;<a href=\"mailto:neundorf@kde.org"
+#~ "\">neundorf@kde.org</a>&gt;."
+
+# msgid "&Window"
+#, fuzzy
+#~ msgid "&Windows Shares"
+#~ msgstr "&Windows-netwurk"
+
+#, fuzzy
+#~ msgid "&LISa Daemon"
+#~ msgstr "&LISa Daemon"
+
+#, fuzzy
+#~ msgid "lan:/ Iosla&ve"
+#~ msgstr "lan:/ Iosla&ve"
+
+# msgid "Specifications"
+#, fuzzy
+#~ msgid "Add Identification"
+#~ msgstr "Identifikaasje tafoegje"
+
+#, fuzzy
+#~ msgid "Modify Identification"
+#~ msgstr "Identifikaasje wizigje"
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt><center>Found an existing identification for<br/><b>%1</b><br/>Do you "
+#~ "want to replace it?</center></qt>"
+#~ msgstr ""
+#~ "<qt><center>Der bestiet al in identifikaasje foar <br/><b>%1</b><br/"
+#~ ">Wolst dizze ferfange?</center></qt>"
+
+# msgid "&Duplicate Current Tab"
+#, fuzzy
+#~ msgid "Duplicate Identification"
+#~ msgstr "Identifikaasje duplisearje"
+
+#, fuzzy
+#~ msgid ""
+#~ "<p><h1>Browser Identification</h1> The browser-identification module "
+#~ "allows you to have full control over how Konqueror will identify itself "
+#~ "to web sites you browse.</p><p>This ability to fake identification is "
+#~ "necessary because some web sites do not display properly when they detect "
+#~ "that they are not talking to current versions of either Netscape "
+#~ "Navigator or Internet Explorer, even if the browser actually supports all "
+#~ "the necessary features to render those pages properly. For such sites, "
+#~ "you can use this feature to try to browse them. Please understand that "
+#~ "this might not always work, since such sites might be using non-standard "
+#~ "web protocols and or specifications.</p><p><u>NOTE:</u> To obtain "
+#~ "specific help on a particular section of the dialog box, simply click on "
+#~ "the quick help button on the window title bar, then click on the section "
+#~ "for which you are seeking help.</p>"
+#~ msgstr ""
+#~ "<p><h1>Blêderidentifikaasje</h1>Yn de konfiguraasjemodule "
+#~ "Blêderidentifikaasje hast folsleine kontrôle oer hoe Konqueror himsels "
+#~ "identifisearret by websiden. </p><P>De mooglikheid om de identifikaasje "
+#~ "te mislieden is nedich omdat bepaalde websiden net op de juste wize, of "
+#~ "sels hielendal net te sjen binne at se merke dat se net kommunisearje mei "
+#~ "de nijste ferzjes fan Netscape Navigator of Ynternet Explorer, sels as de "
+#~ "\"net-stipe blêder\" oanjout dat se alle nedige funksjes yn hûs hat om "
+#~ "dizze siden op- de just wize sjen te litten. Foar soksoarte websiden "
+#~ "wolst tink ik de standertidentifikaasje oerskriuwe troch in side-/"
+#~ "domeinspesifike yngong ta te foegjen. </p><P><u>Taljochting:</u> ast in "
+#~ "bepaalde seksje yn it dialoochfinster net snapst, klik dan op de "
+#~ "fraagknop yn de titelbalke fan dit finster, en klik dan op de seksje "
+#~ "wêrst in fraach oer hast.</p>"
+
+# msgid "Desktop configuration"
+#, fuzzy
+#~ msgid "Variable Proxy Configuration"
+#~ msgstr "Fariabele proxy-konfiguraasje"
+
+#, fuzzy
+#~ msgid "You must specify at least one valid proxy environment variable."
+#~ msgstr "Do moatst earst in jildich proxy-omjouwingsfariabele oantsjutte."
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt>Make sure you entered the actual environment variable name rather "
+#~ "than its value. For example, if the environment variable is <br /"
+#~ "><b>HTTP_PROXY=http://localhost:3128</b><br /> you need to enter "
+#~ "<b>HTTP_PROXY</b> here instead of the actual value http://localhost:3128."
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>Meitsje dy der wis fan datst de omjouwingsfariabele sels ynfierd "
+#~ "hast, yn plak fan de namme fan de proxytsjinner. Foarbyld: as de "
+#~ "omjouwingsfariabele dy brûkt wurdt om in http-proxytsjinner oan te "
+#~ "tsjutten <br /> <b>HTTP_PROXY=http://localhost:3128</b><br /> is, folje "
+#~ "dan <b>HTTP_PROXY</b> yn, en net de wearde http://localhost:3128.</qt>"
+
+#, fuzzy
+#~ msgid "Invalid Proxy Setup"
+#~ msgstr "Unjildige proxy ynstelling"
+
+#, fuzzy
+#~ msgid "Successfully verified."
+#~ msgstr "Mei sukses ferifiearre."
+
+#, fuzzy
+#~ msgid "Proxy Setup"
+#~ msgstr "Proxy ynstellings"
+
+#, fuzzy
+#~ msgid ""
+#~ "Did not detect any environment variables commonly used to set system wide "
+#~ "proxy information."
+#~ msgstr ""
+#~ "Der waard gjin inkele faak brûkte omjouwingsfariabele fûn foar "
+#~ "systeemwide proxy-ynformaasje."
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt>To learn about the variable names the automatic detection process "
+#~ "searches for, press OK, click on the quick help button on the window "
+#~ "title bar of the previous dialog and then click on the \"<b>Auto Detect</"
+#~ "b>\" button.</qt>"
+#~ msgstr ""
+#~ "<qt> Om tesjen hokker fariabelen der binne hokker de automatyske-ûntdekke "
+#~ "nei siket: klik op \"Okee\", en dan op de helpknop (<b>?</b>) yn de "
+#~ "finsterbalke en klik dan op de knop \"Autoûndekke\".</qt>"
+
+#, fuzzy
+#~ msgid "Automatic Proxy Variable Detection"
+#~ msgstr "Automatyske proxy fariabele ûntdekking"
+
+#, fuzzy
+#~ msgid ""
+#~ "Unable to start the cookie handler service.\n"
+#~ "You will not be able to manage the cookies that are stored on your "
+#~ "computer."
+#~ msgstr ""
+#~ "It koekje-handlertsjinst koe net begjinne.\n"
+#~ "Do sist de koekjes dy opslein binne op dyn kompjûter net beheare kinne."
+
+#, fuzzy
+#~ msgid "&Policy"
+#~ msgstr "&Belied"
+
+#, fuzzy
+#~ msgid ""
+#~ "<p><h1>Cookies</h1> Cookies contain information that Konqueror (or other "
+#~ "KDE applications using the HTTP protocol) stores on your computer, "
+#~ "initiated by a remote Internet server. This means that a web server can "
+#~ "store information about you and your browsing activities on your machine "
+#~ "for later use. You might consider this an invasion of privacy.</p><p> "
+#~ "However, cookies are useful in certain situations. For example, they are "
+#~ "often used by Internet shops, so you can 'put things into a shopping "
+#~ "basket'. Some sites require you have a browser that supports cookies.</"
+#~ "p><p> Because most people want a compromise between privacy and the "
+#~ "benefits cookies offer, KDE offers you the ability to customize the way "
+#~ "it handles cookies. So you might want to set KDE's default policy to ask "
+#~ "you whenever a server wants to set a cookie, allowing you to decide. For "
+#~ "your favorite shopping web sites that you trust, you might want to set "
+#~ "the policy to accept, then you can access the web sites without being "
+#~ "prompted every time KDE receives a cookie.</p>"
+#~ msgstr ""
+#~ "<p><h1>Koekjes</h1> Koekjes befette ynformaasje dy Konqueror (of oare KDE-"
+#~ "applikaassjes dy it http-protokol brûke yn opdracht fan in "
+#~ "ynternettsjinner op ôfstân opslat op dyn kompjûter. Dit betekent dat in "
+#~ "webtsjinner ynformaasje oer dy en dyn ynternetgedrach foar letter gebrûk "
+#~ "opslat op dyn kompjûter. Dit kinst sjen as ynbreuk op dyn privacy. </"
+#~ "p><p> Mar yn sommige situaasjes kinne koekjes hiel brûkber wêze. Se wurde "
+#~ "bygelyks brûkt troch ynternetwinkels, sadatst 'boadskippen yn dyn "
+#~ "boadskipsweintsje lizze kinst'. Der binne ek siden dy fereaskje dan ek "
+#~ "dat dyn blêder koekjes akseptearret. </p><p>Omdat de measte brûkers in "
+#~ "tuskenoplossing ôfslute wolle tusken har privacybehoeften en de "
+#~ "foardielen fan koekjes biedt KDE dy de mooglikheid om sels te bepalen hoe "
+#~ "KDE omgiet mei koekjes. Sa kinst oanjaan dat KDE dy standert om in "
+#~ "befêstiging freget, as de tsjinner in koekje pleatse wol.. Mar foar dyn "
+#~ "favorite ynternetwinkels en websiden dyst fertroudst wolst tinke wy de "
+#~ "koekjes deagewoan akseptearje, sadatst gewoan lekker op dizze siden surfe "
+#~ "kinst sûnder dat KDE dy stees wer om in befêstiging freget.</p>"
+
+#, fuzzy
+#~ msgid "kcmsocks"
+#~ msgstr "kcmsocks"
+
+#, fuzzy
+#~ msgid "KDE SOCKS Control Module"
+#~ msgstr "KDE SOCKS Konfiguraasjemodule"
+
+#, fuzzy
+#~ msgid "(c) 2001 George Staikos"
+#~ msgstr "(c) 2001 George Staikos"
+
+#, fuzzy
+#~ msgid "These changes will only apply to newly started applications."
+#~ msgstr ""
+#~ "Dizze wizigingen binne allinnich fan tapassing op applikaasjes die nij "
+#~ "start binne."
+
+#, fuzzy
+#~ msgid "SOCKS Support"
+#~ msgstr "SOCKS stipe"
+
+#, fuzzy
+#~ msgid "Success: SOCKS was found and initialized."
+#~ msgstr "SOCKS is fûn en mei sukses inisjonalisearre"
+
+#, fuzzy
+#~ msgid "SOCKS could not be loaded."
+#~ msgstr "SOCKS koe net laden wurde."
+
+#, fuzzy
+#~ msgid ""
+#~ "<h1>SOCKS</h1><p>This module allows you to configure KDE support for a "
+#~ "SOCKS server or proxy.</p><p>SOCKS is a protocol to traverse firewalls as "
+#~ "described in <a href=\"http://rfc.net/rfc1928.html\">RFC 1928</a>.</p> "
+#~ "<p>If you have no idea what this is and if your system administrator does "
+#~ "not tell you to use it, leave it disabled.</p>"
+#~ msgstr ""
+#~ "<h1>SOCKS</h1><p>Yn dizze module kinst de KDE-stipe foar in SOCKS-"
+#~ "tsjinner of -proxy ynstelle.</p><p>SOCKS is in protokol om troch "
+#~ "brânmuorren te rinne, sa beskreaun is yn <a href=\"http://rfc.net/rfc1928."
+#~ "html\">RFC 1928</a>. </p><p>Ast gjin idee hast wat dit ynhâld, en as dyn "
+#~ "systeembehearder dy net fertelt om dit te brûken, lit it dan útskeakele.</"
+#~ "p>"
+
+# msgid "Update Favicon"
+#, fuzzy
+#~ msgid "Update Failed"
+#~ msgstr "Bywurkjen mislearre"
+
+#, fuzzy
+#~ msgid ""
+#~ "You have to restart the running applications for these changes to take "
+#~ "effect."
+#~ msgstr ""
+#~ "Om dizze ynstellings te aktivearjen moat de rinnende applikaasjes "
+#~ "herstart wurde."
+
+#, fuzzy
+#~ msgid "You have to restart KDE for these changes to take effect."
+#~ msgstr "Begjin KDE opnij om de wizigings te aktivearjen."
+
+#, fuzzy
+#~ msgid "New Cookie Policy"
+#~ msgstr "Nij koekje belied"
+
+#, fuzzy
+#~ msgid "Change Cookie Policy"
+#~ msgstr "Koekje belied wizigje"
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt>A policy already exists for<center><b>%1</b></center>Do you want to "
+#~ "replace it?</qt>"
+#~ msgstr ""
+#~ "<qt>Der is al in belied foar <center><b>%1</b></center>. Wolst dizze "
+#~ "ferfange?</qt>"
+
+# msgid "&Duplicate Window"
+#, fuzzy
+#~ msgid "Duplicate Policy"
+#~ msgstr "Duplikaat van belied meitsje"
+
+#, fuzzy
+#~ msgid ""
+#~ "Unable to communicate with the cookie handler service.\n"
+#~ "Any changes you made will not take effect until the service is restarted."
+#~ msgstr ""
+#~ "Der wie gjin kommunikaasje mooglik mei de koekje-handlertsjinst.\n"
+#~ "Eltse wiziging dyst makkest sil gjin effekt ha oan't de tsjinst opnij "
+#~ "begon wurdt."
+
+#, fuzzy
+#~ msgid ""
+#~ "<p><h1>Cookies</h1> Cookies contain information that Konqueror (or any "
+#~ "other KDE application using the HTTP protocol) stores on your computer "
+#~ "from a remote Internet server. This means that a web server can store "
+#~ "information about you and your browsing activities on your machine for "
+#~ "later use. You might consider this an invasion of privacy.</p><p>However, "
+#~ "cookies are useful in certain situations. For example, they are often "
+#~ "used by Internet shops, so you can 'put things into a shopping basket'. "
+#~ "Some sites require you have a browser that supports cookies.</"
+#~ "p><p>Because most people want a compromise between privacy and the "
+#~ "benefits cookies offer, KDE offers you the ability to customize the way "
+#~ "it handles cookies. You might, for example want to set KDE's default "
+#~ "policy to ask you whenever a server wants to set a cookie or simply "
+#~ "reject or accept everything. For example, you might choose to accept all "
+#~ "cookies from your favorite shopping web site. For this all you have to do "
+#~ "is either browse to that particular site and when you are presented with "
+#~ "the cookie dialog box, click on <i> This domain </i> under the 'apply to' "
+#~ "tab and choose accept or simply specify the name of the site in the <i> "
+#~ "Domain Specific Policy </i> tab and set it to accept. This enables you to "
+#~ "receive cookies from trusted web sites without being asked every time KDE "
+#~ "receives a cookie.</p>"
+#~ msgstr ""
+#~ "<p><h1>Koekjes</h1> Koekjes befetsje ynformaasje dy Konqueror (of oare "
+#~ "KDE-applikaassjes dy it http-protokol brûke) opslat op dyn kompjûter yn "
+#~ "opdracht fan in ynternettsjinner op ôfstân. Dit betekent dat in "
+#~ "webtsjinner ynformaasje oer dy en dyn ynternetgedrach foar letter gebrûk "
+#~ "opslat op dyn kompjûter. Dit kinst sjen as ynbreuk op dyn privacy. </"
+#~ "p><p>  Mar yn sommige situaasjes kinne koekjes hiel brûkber wêze. Se "
+#~ "wurde bygelyks brûkt troch ynternetwinkels, sadatst 'boadskippen yn dyn "
+#~ "boadskipsweintsje lizze kinst'. Der binne ek siden dy fereaskje dan ek "
+#~ "dat dyn blêder koekjes akseptearret. </p><p> Omdat de measte brûkers in "
+#~ "tuskenoplossing ôfslute wolle tusken har privacybehoeften en de "
+#~ "foardielen fan koekjes biedt KDE dy de mooglikheid om sels te bepalen hoe "
+#~ "KDE omgiet mei koekjes. Sa kinst oanjaan dat KDE dy standert om in "
+#~ "befêstiging freget, as de tsjinner in koekje pleatse wol.. Mar foar dyn "
+#~ "favorite ynternetwinkels en websiden dyst fertroudst wolst tinke wy de "
+#~ "koekjes deagewoan akseptearje. Do hoechst hjirfoar allinnich mar efkes "
+#~ "nei de jildende side te geanen ast in koekje-skerm tsjinkomst, dan kinst "
+#~ "klikke op <i>Dit domein</i> ûnder de ljepper “Tapasse” en dan op "
+#~ "\"Akseptearje\". Of do beskriuwst gewoan de namme fan de side yn de "
+#~ "ljepper <i>Domeinspesifyk belied</i> en set dizze op 'Akseptearje'. Dit "
+#~ "jout dy de mooglikheid om koekjes te akseptearjen fan fertroude websiden "
+#~ "sûnder dat KDE dy stees wer om in befêstiging freget.</p>"
+
+#, fuzzy
+#~ msgid "&Proxy"
+#~ msgstr "&Proxy"
+
+#, fuzzy
+#~ msgid "&SOCKS"
+#~ msgstr "&SOCKS"
+
+#, fuzzy
+#~ msgid ""
+#~ "The address of the automatic proxy configuration script is invalid. "
+#~ "Please correct this problem before proceeding. Otherwise, your changes "
+#~ "will be ignored."
+#~ msgstr ""
+#~ "It adres fan it skript mei de automatyske proxykonfiguraasje is "
+#~ "ûnjildich. Herstel dit foardatst fierder giest. Oars geane de wizigings "
+#~ "dyst makke hast ferlern."
+
+#, fuzzy
+#~ msgid ""
+#~ "<h1>Proxy</h1><p>A proxy server is an intermediate program that sits "
+#~ "between your machine and the Internet and provides services such as web "
+#~ "page caching and/or filtering.</p><p>Caching proxy servers give you "
+#~ "faster access to sites you have already visited by locally storing or "
+#~ "caching the content of those pages; filtering proxy servers, on the other "
+#~ "hand, provide the ability to block out requests for ads, spam, or "
+#~ "anything else you want to block.</p><p><u>Note:</u> Some proxy servers "
+#~ "provide both services.</p>"
+#~ msgstr ""
+#~ "<h1>Proxy</h1><p>In proxytsjinner si in tsjinner dy tusken dyn ynterne "
+#~ "netwurk en it ynternet sit en de websiden filtert en/of opslat.</"
+#~ "p><p>Cashing-proxytsjinner jouwe fluggere tagong ta siden dyst al besocht "
+#~ "hast troch de ynhâld fan dizze siden lokaal op te slaan. Dêrtsjin oer "
+#~ "biede filterjende proxytsjinner de mooglikheid om bepaalde websiden, sa "
+#~ "as reklamesiden, spam en oare siden te warden.</p><p><u>Taljochting:</u> "
+#~ "dêr binne proxytsjinners dy beide mooglikheden oanbiede.</p>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt>The proxy settings you specified are invalid.<br /><br />Please click "
+#~ "on the <b>Setup...</b> button and correct the problem before proceeding; "
+#~ "otherwise your changes will be ignored.</qt>"
+#~ msgstr ""
+#~ "<qt>De proxy-ynstellings dyst oantsjutte hast binne ûnjildich. <br /><br /"
+#~ ">Druk op de knop <b>ynstelle...</b> om dit te ferbetterjen foardatst "
+#~ "fierder giest. Oars sille de makke wizigings ferlern gean.</qt>"
+
+#, fuzzy
+#~ msgid "kcustommenueditortest"
+#~ msgstr "kcustommenueditortest"
+
+#, fuzzy
+#~ msgid "test app"
+#~ msgstr "testprogramma"
+
+#, fuzzy
+#~ msgid "Menu Editor"
+#~ msgstr "Menubewurker"
+
+# msgid "Manual"
+#, fuzzy
+#~ msgid "Menu"
+#~ msgstr "Menu"
+
+# msgid "Move %1"
+#, fuzzy
+#~ msgid "Move Up"
+#~ msgstr "Omheech ferpleatse"
+
+# msgid "Move %1"
+#, fuzzy
+#~ msgid "Move Down"
+#~ msgstr "Omleech ferpleatse"
+
+# msgid "<h1>History Sidebar</h1> You can configure the history sidebar here."
+#, fuzzy
+#~ msgid ""
+#~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "
+#~ "file manager here."
+#~ msgstr ""
+#~ "<h1>Konqueror-hâlden</h1> Hjir kinne jo ynstelle hoe't Konqueror him as "
+#~ "triembehearder hâld."
+
+#, fuzzy
+#~ msgid "Misc Options"
+#~ msgstr "Ferskate opsjes"
+
+#~ msgid "Sound Files"
+#~ msgstr "Lûdtriemmen"
+
+#, fuzzy
+#~ msgid "&Left button:"
+#~ msgstr "&Loftse knop:"
+
+#, fuzzy
+#~ msgid ""
+#~ "You can choose what happens when you click the left button of your "
+#~ "pointing device on the desktop:"
+#~ msgstr ""
+#~ "Jo kinne bepale wat de bard as jo mei de lofterknop fan it "
+#~ "oanwiisapparaat klikke  op it buroblêd:"
+
+#, fuzzy
+#~ msgid "Right b&utton:"
+#~ msgstr "Rjochtse k&nop:"
+
+#, fuzzy
+#~ msgid ""
+#~ "You can choose what happens when you click the right button of your "
+#~ "pointing device on the desktop:"
+#~ msgstr ""
+#~ "Jo kinne bepale wat de bard as jo mei de rjochterknop fan it "
+#~ "oanwiisapparaat klikke op it buroblêd:"
+
+#, fuzzy
+#~ msgid ""
+#~ " <ul><li><em>No action</em></li> <li><em>Window list menu:</em> a menu "
+#~ "showing all windows on all virtual desktops pops up. You can click on the "
+#~ "desktop name to switch to that desktop, or on a window name to shift "
+#~ "focus to that window, switching desktops if necessary, and restoring the "
+#~ "window if it is hidden. Hidden or minimized windows are represented with "
+#~ "their names in parentheses.</li> <li><em>Desktop menu:</em> a context "
+#~ "menu for the desktop pops up. Among other things, this menu has options "
+#~ "for configuring the display, locking the screen, and logging out of KDE.</"
+#~ "li> <li><em>Application menu:</em> the \"K\" menu pops up. This might be "
+#~ "useful for quickly accessing applications if you like to keep the panel "
+#~ "(also known as \"Kicker\") hidden from view.</li></ul>"
+#~ msgstr ""
+#~ "<ul><li><em>Gjin aksje:</em> sa as jo al riede, der bard neat.</li> "
+#~ "<li><em>Finsterlistmenu:</em> der ferskynt in menu mei dêryn de nammen "
+#~ "fan alle iepene finsters op elts firtual buroblêd. Jo kinne op de namme "
+#~ "fan in buroblêd klikke om dêrnei ta te gean. Of jo klikke op in "
+#~ "finsternamme om de fokus te rjochtsjen op dat finster. Jo ljeppe dan nei "
+#~ "it buroblêd mei dit finster en it finster wurdt (as nedich) herstelt. De "
+#~ "nammen fan ferstoppe of minimalisearre finster binne tusken heakjes "
+#~ "pleatst.</li> <li><em>Buroblêdmenu:</em> der ferskynt in ferbânmenu op it "
+#~ "buroblêd. Yn dit menu kinst û.a. de werjefte ynstelle, it skerm "
+#~ "ferskoattelje of dy ôfmelde. </li> <li><em>K-menu:</em> itt \"K-menu\" "
+#~ "ferskynt. Dit kin hannich wêze as jo applikaasjes begjinne wolle wylst it "
+#~ "paniel (ek wol bekend as \"Kicker\") ferstoppe is. </li></ul>"
+
+#, fuzzy
+#~ msgid ""
+#~ "You can choose what happens when you click the middle button of your "
+#~ "pointing device on the desktop: <ul><li><em>No action</em></li> "
+#~ "<li><em>Window list menu:</em> a menu showing all windows on all virtual "
+#~ "desktops pops up. You can click on the desktop name to switch to that "
+#~ "desktop, or on a window name to shift focus to that window, switching "
+#~ "desktops if necessary, and restoring the window if it is hidden. Hidden "
+#~ "or minimized windows are represented with their names in parentheses.</"
+#~ "li> <li><em>Desktop menu:</em> a context menu for the desktop pops up. "
+#~ "Among other things, this menu has options for configuring the display, "
+#~ "locking the screen, and logging out of KDE.</li> <li><em>Application menu:"
+#~ "</em> the \"K\" menu pops up. This might be useful for quickly accessing "
+#~ "applications if you like to keep the panel (also known as \"Kicker\") "
+#~ "hidden from view.</li></ul>"
+#~ msgstr ""
+#~ "Jo kinne bepale wat der bard as jo mei de middelste knop fan it "
+#~ "oanwiisapparaat klikke op jo buroblêd: <ul><li><em>Gjin aksje:</em> Sa as "
+#~ "jo al riede, der bard neat.</li> <li><em>Finsterlistmenu:</em> der "
+#~ "ferskynt in menu mei dêryn de nammen fan alle iepene finsters op elts "
+#~ "firtual buroblêd. Jo kinne op de namme fan in buroblêd klikke om dêrnei "
+#~ "ta te gean. Of jo klikke op in finsternamme om de fokus te rjochtsjen op "
+#~ "dat finster. Jo ljeppe dan nei it buroblêd mei dit finster en it finster "
+#~ "wurdt (as nedich) herstelt. De nammen fan ferstoppe of minimalisearre "
+#~ "finster binne tusken heakjes pleatst.</li> <li><em>Buroblêdmenu:</em> der "
+#~ "ferskynt in ferbânmenu op it buroblêd. Yn dit menu kinst û.a. de werjefte "
+#~ "ynstelle, it skerm ferskoattelje of dy ôfmelde. </li> <li><em>K-menu:</"
+#~ "em> itt \"K-menu\" ferskynt. Dit kin hannich wêze as jo applikaasjes "
+#~ "begjinne wolle wylst it paniel (ek wol bekend as \"Kicker\") ferstoppe "
+#~ "is. </li></ul>"
+
+#, fuzzy
+#~ msgid ""
+#~ " <ul><li><em>No action:</em> as you might guess, nothing happens!</li> "
+#~ "<li><em>Window list menu:</em> a menu showing all windows on all virtual "
+#~ "desktops pops up. You can click on the desktop name to switch to that "
+#~ "desktop, or on a window name to shift focus to that window, switching "
+#~ "desktops if necessary, and restoring the window if it is hidden. Hidden "
+#~ "or minimized windows are represented with their names in parentheses.</"
+#~ "li> <li><em>Desktop menu:</em> a context menu for the desktop pops up. "
+#~ "Among other things, this menu has options for configuring the display, "
+#~ "locking the screen, and logging out of KDE.</li> <li><em>Application menu:"
+#~ "</em> the \"K\" menu pops up. This might be useful for quickly accessing "
+#~ "applications if you like to keep the panel (also known as \"Kicker\") "
+#~ "hidden from view.</li></ul>"
+#~ msgstr ""
+#~ "<ul><li><em>Gjin aksje:</em> sa as jo al riede, der bard neat.</li> "
+#~ "<li><em>Finsterlistmenu:</em> der ferskynt in menu mei dêryn de nammen "
+#~ "fan alle iepene finsters op elts firtual buroblêd. Jo kinne op de namme "
+#~ "fan in buroblêd klikke om dêrnei ta te gean. Of jo klikke op in "
+#~ "finsternamme om de fokus te rjochtsjen op dat finster. Jo ljeppe dan nei "
+#~ "it buroblêd mei dit finster en it finster wurdt (as nedich) herstelt. De "
+#~ "nammen fan ferstoppe of minimalisearre finster binne tusken heakjes "
+#~ "pleatst.</li> <li><em>Buroblêdmenu:</em> der ferskynt in ferbânmenu op it "
+#~ "buroblêd. Yn dit menu kinst û.a. de werjefte ynstelle, it skerm "
+#~ "ferskoattelje of dy ôfmelde. </li> <li><em>K-menu:</em> itt \"K-menu\" "
+#~ "ferskynt. Dit kin hannich wêze as jo applikaasjes begjinne wolle wylst it "
+#~ "paniel (ek wol bekend as \"Kicker\") ferstoppe is. </li></ul>"
+
+# msgid "&Location"
+#, fuzzy
+#~ msgid "No Action"
+#~ msgstr "Gjin Aksje"
+
+#, fuzzy
+#~ msgid "Window List Menu"
+#~ msgstr "Finsterlistmenu"
+
+# msgid "Desktop configuration"
+#, fuzzy
+#~ msgid "Desktop Menu"
+#~ msgstr "Buroblêdmenu"
+
+# msgid "Applications"
+#, fuzzy
+#~ msgid "Application Menu"
+#~ msgstr "Applikaasjemenu"
+
+# msgid "Bookmark"
+#, fuzzy
+#~ msgid "Bookmarks Menu"
+#~ msgstr "Blêdwizersmenu"
+
+# msgid "Custom Fonts For"
+#, fuzzy
+#~ msgid "Custom Menu 1"
+#~ msgstr "Oanpast menu 1"
+
+# msgid "Custom Fonts For"
+#, fuzzy
+#~ msgid "Custom Menu 2"
+#~ msgstr "Oanpast menu 2"
+
+#, fuzzy
+#~ msgid ""
+#~ "<h1>Behavior</h1>\n"
+#~ "This module allows you to choose various options\n"
+#~ "for your desktop, including the way in which icons are arranged and\n"
+#~ "the pop-up menus associated with clicks of the middle and right mouse\n"
+#~ "buttons on the desktop.\n"
+#~ "Use the \"Whats This?\" (Shift+F1) to get help on specific options."
+#~ msgstr ""
+#~ "<h1>Gedrach</h1>\n"
+#~ "Yn dizze module kinne jo de ferskate opsjes foar jo buroblêd\n"
+#~ "ynstelle, wêrûnder de wize wêrop byldkaikes wurde \n"
+#~ "rjochte, en de ferbânmenu's dy ferkine wannear jo mei de\n"
+#~ "middelste of rjochtermûsknop klikke op jo buroblêd.\n"
+#~ "Brûk de \"Wat is dit?\" (Shift+F1) om mear ynfo oer in\n"
+#~ "bepaalde opsje te krijen."
+
+#, fuzzy
+#~ msgid ""
+#~ "<p>Allow previews, \"Folder Icons Reflect Contents\", and retrieval of "
+#~ "meta-data on protocols:</p>"
+#~ msgstr ""
+#~ "<p>Foarbylden en \"mapbyldkaikes lit ynhâld sjen\" en opheljen fan "
+#~ "metadata op de neikommende protokollen tastean:"
+
+#, fuzzy
+#~ msgid ""
+#~ "<h1>Preview Options</h1> Here you can modify the behavior of Konqueror "
+#~ "when it shows the files in a folder.<h2>The list of protocols:</h2> check "
+#~ "the protocols over which previews should be shown; uncheck those over "
+#~ "which they should not. For instance, you might want to show previews over "
+#~ "SMB if the local network is fast enough, but you might disable it for FTP "
+#~ "if you often visit very slow FTP sites with large images.<h2>Maximum File "
+#~ "Size:</h2> select the maximum file size for which previews should be "
+#~ "generated. For instance, if set to 1 MB (the default), no preview will be "
+#~ "generated for files bigger than 1 MB, for speed reasons."
+#~ msgstr ""
+#~ "<h1>Foarbyldopsjes</h1>Hjir kinne jo it gedrach wizigje fan Konqueror "
+#~ "wannear it de triemmen yn in map sjen lit. <h2>De list mei protokollen:</"
+#~ "h2> selektearje de protokollen wêrby foarbylden werjûn wurde meie, "
+#~ "ûntselektearje dyjinge wêrby jo it net tastiest. Bygelyks: Jo kinne it "
+#~ "werjaan fan foarbylden oer SMB tastean as it lokale netwurk fluch genôch "
+#~ "is. Mar foar FTP wolle jo dit wierskynlik útskeakelje as jo faak erch "
+#~ "trage FTP-siden mei grutte triemmen besykje. <h2>Maksimale triemgrutte:</"
+#~ "h2> selektearje de maksimale grutte fan de triemmen wêrfan foarbylden "
+#~ "makke wurde. Bygelyks, as jo dit ynstelle op 1 MB (de standert), dan "
+#~ "wurde der gjin foarbylden makke fan triemmen dy grutter binne dan 1 MB. "
+#~ "Op trage kompjûters skilt dit wis yn fluggens."
+
+# msgid "Select files:"
+#, fuzzy
+#~ msgid "Select Protocols"
+#~ msgstr "Protokols selektearje"
+
+# msgid "Transfer protocols"
+#, fuzzy
+#~ msgid "Local Protocols"
+#~ msgstr "Lokale protokols"
+
+# msgid "Transfer protocols"
+#, fuzzy
+#~ msgid "Internet Protocols"
+#~ msgstr "Ynternet-protokols"
+
+#, fuzzy
+#~ msgid ""
+#~ "This option makes it possible to choose when the file previews, smart "
+#~ "folder icons, and meta-data in the File Manager should be activated.\n"
+#~ "In the list of protocols that appear, select which ones are fast enough "
+#~ "for you to allow previews to be generated."
+#~ msgstr ""
+#~ "Dizze opsje makket it mooglik om te bepalen wannear't de triemfoarbylden, "
+#~ "yntelliginte mapbyldkaikes en metadata yn de triembehearder aktivearre "
+#~ "wurde.\n"
+#~ "Yn de list mei protokollen dy ferkine, selektearje hokker fluch genôch "
+#~ "foar dy binne om foarbylden te meitsjen."
+
+#, fuzzy
+#~ msgid "&Maximum file size:"
+#~ msgstr "Maksimum trie&mgrutte:"
+
+#, fuzzy
+#~ msgid " MB"
+#~ msgstr " MB"
+
+#, fuzzy
+#~ msgid "&Increase size of previews relative to icons"
+#~ msgstr "Grutte fan foarbylden relatyf oan byldka&ikegrutte"
+
+#, fuzzy
+#~ msgid "&Use thumbnails embedded in files"
+#~ msgstr "Miniatueren &ynsletten yn triemmen brûke"
+
+#, fuzzy
+#~ msgid ""
+#~ "Select this to use thumbnails that are found inside some file types (e.g. "
+#~ "JPEG). This will increase speed and reduce disk usage. Deselect it if you "
+#~ "have files that have been processed by programs which create inaccurate "
+#~ "thumbnails, such as ImageMagick."
+#~ msgstr ""
+#~ "Selektearje dit om de miniatuer dy't yn bepaalde type triemmen (lykas "
+#~ "JPEG) fûn wurde te brûken. Dit sil de fluggens ferbetterje en it "
+#~ "skiifgebrûk ferminderje. Untselektearje dizze opsje ast triemmen hast dy "
+#~ "ferwurke binne troch programma's dy ûnjuste miny-ôfbyldings meitsje, sa "
+#~ "as ImageMagick."
+
+#, fuzzy
+#~ msgid "&Behavior"
+#~ msgstr "&Gedrach"
+
+#, fuzzy
+#~ msgid "&Previews && Meta-Data"
+#~ msgstr "&Foarbylden %% Metadata"
+
+#, fuzzy
+#~ msgid ""
+#~ "<h1>Paths</h1>\n"
+#~ "This module allows you to choose where in the filesystem the files on "
+#~ "your desktop should be stored.\n"
+#~ "Use the \"Whats This?\" (Shift+F1) to get help on specific options."
+#~ msgstr ""
+#~ "<h1>Paden</h1>\n"
+#~ "Yn dizze module kinne jo bepale wêr de triemmen op jo buroblêd bewarre "
+#~ "wurde.\n"
+#~ "Brûk de \"Wat is dit?\" (Shift+F1) om mear ynfo oer in\n"
+#~ "bepaalde opsje te krijen."
+
+#, fuzzy
+#~ msgid "Des&ktop path:"
+#~ msgstr "Burob&lêdpaad:"
+
+#, fuzzy
+#~ msgid ""
+#~ "This folder contains all the files which you see on your desktop. You can "
+#~ "change the location of this folder if you want to, and the contents will "
+#~ "move automatically to the new location as well."
+#~ msgstr ""
+#~ "Dizze map befettet alle triemmen dy har op jo buroblêd befine. As jo "
+#~ "wolle dan is de lokaasje te wizigjen. De ynhâld fan it buroblêd ferhûzet "
+#~ "automatysk mei nei de nije lokaasje."
+
+# msgid "Autostart"
+#, fuzzy
+#~ msgid "A&utostart path:"
+#~ msgstr "A&utostartpaad:"
+
+#, fuzzy
+#~ msgid ""
+#~ "This folder contains applications or links to applications (shortcuts) "
+#~ "that you want to have started automatically whenever KDE starts. You can "
+#~ "change the location of this folder if you want to, and the contents will "
+#~ "move automatically to the new location as well."
+#~ msgstr ""
+#~ "Dizze map befettet applikaasjes of keppelings nei applikaasjes "
+#~ "(fluchtoets) dy jo automatysk begjinne mei KDE. As jo wolle dan si de "
+#~ "lokaasje hjirfan te wizigjen. De ynhâld fan it buroblêd ferhûzet "
+#~ "automatysk mei nei de nije lokaasje."
+
+#, fuzzy
+#~ msgid "D&ocuments path:"
+#~ msgstr "D&okumintenpaad:"
+
+#, fuzzy
+#~ msgid ""
+#~ "This folder will be used by default to load or save documents from or to."
+#~ msgstr ""
+#~ "Dizze map wurdt standert brûkt om dokuminten yn te bewarjen of te laden."
+
+#, fuzzy
+#~ msgid "Desktop"
+#~ msgstr "Buroblêd"
+
+#, fuzzy
+#~ msgid ""
+#~ "The path for '%1' has been changed;\n"
+#~ "do you want the files to be moved from '%2' to '%3'?"
+#~ msgstr ""
+#~ "It paad foar '%1' is wizige.\n"
+#~ "Wolle jo dat de triemmen fan '%2' nei '%3 ferpleatst wurde?"
+
+# msgid "Confirmation"
+#, fuzzy
+#~ msgid "Confirmation Required"
+#~ msgstr "Befêstiging fereaske"
+
+# msgid "Move %1"
+#, fuzzy
+#~ msgid "Move"
+#~ msgstr "Ferpleatse"
+
+# msgid "&Edit File Type..."
+#, fuzzy
+#~ msgid "KEditFileType"
+#~ msgstr "KEditFileType"
+
+#, fuzzy
+#~ msgid ""
+#~ "KDE file type editor - simplified version for editing a single file type"
+#~ msgstr ""
+#~ "KDE Triemtype Oanpasser - ferienfâldige ferzje foar it oanpassen fan "
+#~ "losse triemtypen"
+
+# msgid "(c) 2000 - 2003, KDE developers"
+#, fuzzy
+#~ msgid "(c) 2000, KDE developers"
+#~ msgstr "(c) 2000, KDE-ûntjouwers"
+
+#, fuzzy
+#~ msgid "Preston Brown"
+#~ msgstr "Preston Brown"
+
+#, fuzzy
+#~ msgid "Makes the dialog transient for the window specified by winid"
+#~ msgstr "Makket de dialooch tydlik foar it finster dat opjûn is troch winid"
+
+#, fuzzy
+#~ msgid "File type to edit (e.g. text/html)"
+#~ msgstr "Triemtype om oan te passen (bgl. text/html)"
+
+#, fuzzy
+#~ msgid "%1 File"
+#~ msgstr "%1 triem"
+
+# msgid "&Edit File Type..."
+#, fuzzy
+#~ msgid "Edit File Type %1"
+#~ msgstr "Triemtype %1 bewurkje"
+
+# msgid "Create New Folder"
+#, fuzzy
+#~ msgid "Create New File Type %1"
+#~ msgstr "Nij triemtype %1 oanmeitsje"
+
+# msgid "Create New Folder"
+#, fuzzy
+#~ msgid "Create New File Type"
+#~ msgstr "Nij triemtype oanmeitsje"
+
+# msgid "Group"
+#, fuzzy
+#~ msgid "Group:"
+#~ msgstr "Groep:"
+
+#, fuzzy
+#~ msgid "Select the category under which the new file type should be added."
+#~ msgstr ""
+#~ "Selektearje de kategory wêrûnder it nije triemtype pleatst wurde moat."
+
+# msgid "Rename"
+#, fuzzy
+#~ msgid "Type name:"
+#~ msgstr "Typenamme:"
+
+#, fuzzy
+#~ msgid "Left Click Action"
+#~ msgstr "Lofter mûsklik"
+
+#, fuzzy
+#~ msgid "Show file in embedded viewer"
+#~ msgstr "Triem sjen litte yn ynbêde werjeftefinster"
+
+# msgid "Open folders in separate windows"
+#, fuzzy
+#~ msgid "Show file in separate viewer"
+#~ msgstr "Lit triem sjen yn apart skerm"
+
+#, fuzzy
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file belonging to this group. Konqueror can display the file "
+#~ "in an embedded viewer or start up a separate application. You can change "
+#~ "this setting for a specific file type in the 'Embedding' tab of the file "
+#~ "type configuration."
+#~ msgstr ""
+#~ "Hjir kinne jo ynstelle wat de triembehearder dwaan sil at jo op in triem "
+#~ "klikke dy't ta dizze groep heart. Konqueror kin dizze triem sjen litte yn "
+#~ "in ynbêde werjouwer of in aparte tapassing starte. Jo kinne dizze "
+#~ "ynstelling oanpasse foar in beskaat triemtype ûnder de flap \"Ynbêding\" "
+#~ "yn de triemtype ynstelling."
+
+#, fuzzy
+#~ msgid "Add Service"
+#~ msgstr "Tsjinst tafoegje"
+
+# msgid "Select files:"
+#, fuzzy
+#~ msgid "Select service:"
+#~ msgstr "Tsjinst selektearje:"
+
+#, fuzzy
+#~ msgid ""
+#~ "<p><h1>File Associations</h1> This module allows you to choose which "
+#~ "applications are associated with a given type of file. File types are "
+#~ "also referred to MIME types (MIME is an acronym which stands for "
+#~ "\"Multipurpose Internet Mail Extensions\".)</p><p> A file association "
+#~ "consists of the following: <ul><li>Rules for determining the MIME-type of "
+#~ "a file, for example the filename pattern *.kwd, which means 'all files "
+#~ "with names that end in .kwd', is associated with the MIME type \"x-kword"
+#~ "\";</li> <li>A short description of the MIME-type, for example the "
+#~ "description of the MIME type \"x-kword\" is simply 'KWord document';</li> "
+#~ "<li>An icon to be used for displaying files of the given MIME-type, so "
+#~ "that you can easily identify the type of file in, say, a Konqueror view "
+#~ "(at least for the types you use often);</li> <li>A list of the "
+#~ "applications which can be used to open files of the given MIME-type -- if "
+#~ "more than one application can be used then the list is ordered by "
+#~ "priority.</li></ul> You may be surprised to find that some MIME types "
+#~ "have no associated filename patterns; in these cases, Konqueror is able "
+#~ "to determine the MIME-type by directly examining the contents of the file."
+#~ "</p>"
+#~ msgstr ""
+#~ "<p><h1>Triemkeppelingen</h1> Yn dizze module kinne jo fêstlizze hokker "
+#~ "tapassings keppele wurde oan in beskaat triemtype. Triemtypen wurde ek "
+#~ "wol MIME-typen neamt (MIME is in letterwurd dat stiet foar \"Multipurpose "
+#~ "Internet Mail Extensions\".)</p><p> In triemkeppeling bestiet út it "
+#~ "neikommende: <ul> <li>Foarskriften foar it fêststellen fan it type triem, "
+#~ "bygelyks it triemnammepatroan *.kwd, wat betsjut 'alle triemmen mei "
+#~ "nammen dy't einigje op .kwd', wurdt keppele oan it MIME-type \"x-kword\";"
+#~ "</li> <li>In koarte beskriuwing fan it triemtype. Bygelyks, de "
+#~ "beskriuwing fan it triemtype \"x-kword\" is 'KWord-dokumint'.</li> <li>In "
+#~ "byldkaike dat brûkt wurdt foar it werjaan fan triemmen fan in beskaat "
+#~ "triemtype. Sa kinne jo yn bygelyks in Konqueror-finster, makliker "
+#~ "werkenne hokfoar type in beskaat triem is.</li> <li>In list mei "
+#~ "tapassings dy't brûkt wurde kinne om triemmen fan dit type te iepenjen. "
+#~ "At jo mear dan ien tapassing brûke wolle kinne, dan kin de list iepen "
+#~ "wurde nei prioriteit. </li> </ul>Guon triemtypen binne gjin "
+#~ "triemnammepatroanen nedich. Yn dizze gefallen kin KDE it triemtype bepale "
+#~ "troch nei de ynhâld fan it triem te sjen.</p>"
+
+#, fuzzy
+#~ msgid "F&ind filename pattern:"
+#~ msgstr "Tr&iemnammepatroan sykje:"
+
+#, fuzzy
+#~ msgid ""
+#~ "Enter a part of a filename pattern. Only file types with a matching file "
+#~ "pattern will appear in the list."
+#~ msgstr ""
+#~ "Fier in diel fan in triemnammepatroan yn. Allinnich triemtypen dy't "
+#~ "oerienkomme mei dit patroan ferskine dan yn de list."
+
+#, fuzzy
+#~ msgid "Known Types"
+#~ msgstr "Bekende typen"
+
+#, fuzzy
+#~ msgid ""
+#~ "Here you can see a hierarchical list of the file types which are known on "
+#~ "your system. Click on the '+' sign to expand a category, or the '-' sign "
+#~ "to collapse it. Select a file type (e.g. text/html for HTML files) to "
+#~ "view/edit the information for that file type using the controls on the "
+#~ "right."
+#~ msgstr ""
+#~ "Hjir sjogge jo in list fan de triemtypen dy't op jo systeem bekend binne. "
+#~ "Klik op it '+' teken om in kategory út te wreidzjen, of op it '-' teken "
+#~ "om dizze wer op te tearen. Klik op de namme fan it triemtype (bgl. 'html' "
+#~ "foar HTML-triemmen) om jo foarkar oangeande dat triemtype yn te stellen."
+
+#, fuzzy
+#~ msgid "Add..."
+#~ msgstr "Taheakje..."
+
+#, fuzzy
+#~ msgid "Click here to add a new file type."
+#~ msgstr "Klik hjirre om in nij triemtype ta te foegjen."
+
+# msgid "&Rename"
+#, fuzzy
+#~ msgid "&Remove"
+#~ msgstr "&Fuortsmite"
+
+#, fuzzy
+#~ msgid "Click here to remove the selected file type."
+#~ msgstr "Klik hjirre om it selektearre triemtype fuort te smiten."
+
+#, fuzzy
+#~ msgid "Select a file type by name or by extension"
+#~ msgstr "Selektearje in triemtype by namme of taheaksel"
+
+#, fuzzy
+#~ msgid ""
+#~ "This button displays the icon associated with the selected file type. "
+#~ "Click on it to choose a different icon."
+#~ msgstr ""
+#~ "Dizze knop lit it byldkaike sjen dat oerien komt mei it selektearre "
+#~ "triemtype. Klik derop om in oar byldkaike te kiezen."
+
+# msgid "Filename"
+#, fuzzy
+#~ msgid "Filename Patterns"
+#~ msgstr "Triemnammepatroanen."
+
+#, fuzzy
+#~ msgid ""
+#~ "This box contains a list of patterns that can be used to identify files "
+#~ "of the selected type. For example, the pattern *.txt is associated with "
+#~ "the file type 'text/plain'; all files ending in '.txt' are recognized as "
+#~ "plain text files."
+#~ msgstr ""
+#~ "Dit fak befettet in list mei patroanen dy't brûkt wurde kinne om triemmen "
+#~ "fan it selektearre type te identifisearjen. Bygelyks, it patroan *.txt is "
+#~ "ferbûn mei it triemtype 'tekst/plain'; alle triemmen dy't einigje op '."
+#~ "txt' wurde lykas teksttriemmen werkend."
+
+#, fuzzy
+#~ msgid "Add a new pattern for the selected file type."
+#~ msgstr "Foegje in nij patroan ta foar it selektearre triemtype."
+
+#, fuzzy
+#~ msgid "Remove the selected filename pattern."
+#~ msgstr "Smyt it selektearre triemnammepatroan fuort."
+
+# msgid "Selection"
+#, fuzzy
+#~ msgid "Description"
+#~ msgstr "Beskriuwing"
+
+#, fuzzy
+#~ msgid ""
+#~ "You can enter a short description for files of the selected file type (e."
+#~ "g. 'HTML Page'). This description will be used by applications like "
+#~ "Konqueror to display directory content."
+#~ msgstr ""
+#~ "Jo kinne hjir in koarte omskriuwing ynfolje foar triemmen fan it "
+#~ "selektearre type (bgl. 'Teksttriem'). Dizze omskriuwing wurdt brûkt troch "
+#~ "programma's lykas Konqueror by it werjaan fan de ynhâld fan mappen."
+
+#, fuzzy
+#~ msgid "Ask whether to save to disk instead"
+#~ msgstr "Freegje at it ek wat is om op skiif op te slaan"
+
+#, fuzzy
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file of this type. Konqueror can display the file in an "
+#~ "embedded viewer or start up a separate application. If set to 'Use "
+#~ "settings for G group', Konqueror will behave according to the settings of "
+#~ "the group G this type belongs to, for instance 'image' if the current "
+#~ "file type is image/png."
+#~ msgstr ""
+#~ "Hjir kinne jo ynstelle wat de triembehearder dwaan sil at jo op in triem "
+#~ "fan dit type klikke. Konqueror kin dizze triem sjen litte yn in ynbêde "
+#~ "werjouwer of in aparte tapassing starte. At jo de opsje \"Ynstelling fan "
+#~ "groep brûke\" aktivearje, dan sil Konqueror de ynstellings fan de groep "
+#~ "wêr ta dit triemtype heart brûke. Bygelyks de groep 'byld' at it aktuele "
+#~ "triemtype 'byld/png' is."
+
+#, fuzzy
+#~ msgid "&Embedding"
+#~ msgstr "&Ynbêding"
+
+# msgid "Extensions"
+#, fuzzy
+#~ msgid "Add New Extension"
+#~ msgstr "Nij taheaksel tafoegje"
+
+# msgid "Extensions"
+#, fuzzy
+#~ msgid "Extension:"
+#~ msgstr "Taheaksel:"
+
+#, fuzzy
+#~ msgid "Use settings for '%1' group"
+#~ msgstr "Brûk ynstellings foar groep '%1'"
+
+#, fuzzy
+#~ msgid "%1 (%2)"
+#~ msgstr "%1 (%2)"
+
+#, fuzzy
+#~ msgid "Application Preference Order"
+#~ msgstr "Tapassings foar dit triemtype"
+
+#, fuzzy
+#~ msgid "Services Preference Order"
+#~ msgstr "Tsjinsten foar dit triemtype"
+
+#, fuzzy
+#~ msgid ""
+#~ "This is a list of applications associated with files of the selected file "
+#~ "type. This list is shown in Konqueror's context menus when you select "
+#~ "\"Open With...\". If more than one application is associated with this "
+#~ "file type, then the list is ordered by priority with the uppermost item "
+#~ "taking precedence over the others."
+#~ msgstr ""
+#~ "Dit is in list mei tapassings dy't ferbûn binne mei it selekteare "
+#~ "triemtype. Dizze list wurdt sjen litten yn Konqueror's ferbânmenu's "
+#~ "wannear't jo kieze foar \"Iepenje mei...\". At der mear dan ien tapassing "
+#~ "ferbûn is mei dit triemtype, dan is de list oardere op prioriteit, wêrby "
+#~ "de boppenste tapassing yn de list as earste keazen wurdt om de triem mei "
+#~ "te iepenjen."
+
+#, fuzzy
+#~ msgid ""
+#~ "This is a list of services associated with files of the selected file "
+#~ "type. This list is shown in Konqueror's context menus when you select a "
+#~ "\"Preview with...\" option. If more than one application is associated "
+#~ "with this file type, then the list is ordered by priority with the "
+#~ "uppermost item taking precedence over the others."
+#~ msgstr ""
+#~ "Dit is in list mei tsjinsten dy't ferbûn binne mei it selekteare "
+#~ "triemtype. Dizze list wurdt sjen litten yn Konqueror's ferbânmenu's "
+#~ "wannear't jo kieze foar \"Printallyk sjen litte mei...\". At der mear dan "
+#~ "ien tapassing ferbûn is mei dit triemtype, dan is de list oardere op "
+#~ "prioriteit, wêrby de boppenste tapassing yn de list as earste keazen "
+#~ "wurdt om de triem mei te iepenjen."
+
+# msgid "Move %1"
+#, fuzzy
+#~ msgid "Move &Up"
+#~ msgstr "Omheech &ferpleatse"
+
+#, fuzzy
+#~ msgid ""
+#~ "Assigns a higher priority to the selected\n"
+#~ "application, moving it up in the list. Note:  This\n"
+#~ "only affects the selected application if the file type is\n"
+#~ "associated with more than one application."
+#~ msgstr ""
+#~ "Jout in hegere prioriteit oan it selektearre\n"
+#~ "programma troch dizze heger yn de list te setten.\n"
+#~ "Opmerking: dit docht allinnich wat mei it selektearre\n"
+#~ "programma oft it triemtype besibbe\n"
+#~ "is mei mear as ien programma."
+
+#, fuzzy
+#~ msgid ""
+#~ "Assigns a higher priority to the selected\n"
+#~ "service, moving it up in the list."
+#~ msgstr ""
+#~ "Jout in hegere prioriteit oan de selektearre tsjinst\n"
+#~ "troch dizze heger in de list te setten."
+
+#, fuzzy
+#~ msgid "Move &Down"
+#~ msgstr "Omleech fe&rpleatse"
+
+#, fuzzy
+#~ msgid ""
+#~ "Assigns a lower priority to the selected\n"
+#~ "application, moving it down in the list. Note: This \n"
+#~ "only affects the selected application if the file type is\n"
+#~ "associated with more than one application."
+#~ msgstr ""
+#~ "Jout in legere prioriteit oan it selektearre\n"
+#~ "programma troch dizze leger yn de list te setten.\n"
+#~ "Opmerking: dit docht allinnich wat mei it selektearre\n"
+#~ "programma oft it triemtype besibbe\n"
+#~ "is mei mear as ien programma."
+
+#, fuzzy
+#~ msgid ""
+#~ "Assigns a lower priority to the selected\n"
+#~ "service, moving it down in the list."
+#~ msgstr ""
+#~ "Jout in legere prioriteit oan de selektearre tsjinst\n"
+#~ "troch dizze leger in de list te setten."
+
+#, fuzzy
+#~ msgid "Add a new application for this file type."
+#~ msgstr "Foegje in nij programma ta foar dit triemtype."
+
+#, fuzzy
+#~ msgid "Edit..."
+#~ msgstr "Bewurkje..."
+
+#, fuzzy
+#~ msgid "Edit command line of the selected application."
+#~ msgstr "Pas de kommandorigel oan fan it selektearre programma."
+
+#, fuzzy
+#~ msgid "Remove the selected application from the list."
+#~ msgstr "Smyt it selektearre programma út de list."
+
+#, fuzzy
+#~ msgid "None"
+#~ msgstr "Gjin"
+
+#, fuzzy
+#~ msgid "You are not authorized to remove this service."
+#~ msgstr "Jo hawwe net de rjochten om dizze tsjinst fuort te smiten."
+
+#, fuzzy
+#~ msgid "The service <b>%1</b> can not be removed."
+#~ msgstr "De tsjinst <b>%1</b> kin net fuortsmiten wurde."
+
+#, fuzzy
+#~ msgid ""
+#~ "The service is listed here because it has been associated with the <b>%1</"
+#~ "b> (%2) file type and files of type <b>%3</b> (%4) are per definition "
+#~ "also of type <b>%5</b>."
+#~ msgstr ""
+#~ "De tsjinst wurdt hjir werjûn om't dizze ferbûn is mei it <b>%1</b> (%2) "
+#~ "triemtype. Triemmen fan type <b>%3</b> (%4) binne per definysje ek fan "
+#~ "type <b>%5</b>."
+
+#, fuzzy
+#~ msgid ""
+#~ "Either select the <b>%1</b> file type to remove the service from there or "
+#~ "move the service down to deprecate it."
+#~ msgstr ""
+#~ "Selektearje it <b>%1</b> triemtype of smyt de tsjinst út de list fuort of "
+#~ "ferpleats de tsjinst nei ûnderen om har net as standert te brûken."
+
+# msgid "Settings"
+#, fuzzy
+#~ msgid "Global Settings"
+#~ msgstr "Globale ynstellings"
+
+#, fuzzy
+#~ msgid "&Enable plugins globally"
+#~ msgstr "Plugins globaal oans&ette"
+
+#, fuzzy
+#~ msgid "Only allow &HTTP and HTTPS URLs for plugins"
+#~ msgstr "Alinne &HTTP- en HTTPS adresse akseptjeare foar plugins"
+
+#, fuzzy
+#~ msgid "&Load plugins on demand only"
+#~ msgstr "Plugins allinne op fersyk &lade"
+
+#, fuzzy
+#~ msgid "CPU priority for plugins: %1"
+#~ msgstr "CPU-prioriteit foar plugins: %1"
+
+# msgid "Specifications"
+#, fuzzy
+#~ msgid "Domain-Specific Settin&gs"
+#~ msgstr "Domeinspesifike ynstellin&gs"
+
+#, fuzzy
+#~ msgid "Domain-Specific Policies"
+#~ msgstr "Domein-spesifyk belied"
+
+#, fuzzy
+#~ msgid ""
+#~ "Enables the execution of plugins that can be contained in HTML pages, e."
+#~ "g. Macromedia Flash. Note that, as with any browser, enabling active "
+#~ "contents can be a security problem."
+#~ msgstr ""
+#~ "Dit aktivearret de mooglikheid om plugins dy har yn HTML-siden befine út "
+#~ "te fieren (bgl. Macromedia Flash). Hâld der rekken mei dat (sa as by "
+#~ "eltse blêder) it aktivearjen fan aktive ynhâld liede kin ta "
+#~ "befeiligingsswierrichheid."
+
+#, fuzzy
+#~ msgid ""
+#~ "<p>This box contains the domains and hosts you have set a specific plugin "
+#~ "policy for. This policy will be used instead of the default policy for "
+#~ "enabling or disabling plugins on pages sent by these domains or hosts.</"
+#~ "p><p>Select a policy and use the controls on the right to modify it.</p>"
+#~ msgstr ""
+#~ "<p>Dit fak befettet de domeinen en hosts wêr jo in bepaald plugin-belied "
+#~ "foar ynsteld hawwe. Dit belied wurdt tapast ynstee fan it standertbelied "
+#~ "foar it yn/útskeakeljen fan plugins op de dokuminten dy troch dizze "
+#~ "domeinen of hosts ferstjoerd wurde. </p><p> Selektearje in belied en brûk "
+#~ "de knoppen rjochts om dizzen te bewurkjen.</p>"
+
+#, fuzzy
+#~ msgid ""
+#~ "Click this button to choose the file that contains the plugin policies. "
+#~ "These policies will be merged with the existing ones. Duplicate entries "
+#~ "are ignored."
+#~ msgstr ""
+#~ "Druk op dizze knop om de triem te kiezen dat de plugin-beliedsynstellings "
+#~ "befettet. Dizze wurde gearfette mei de al oanwêzige beliedsynstellings. "
+#~ "Dûbele yngongen wurde negearre."
+
+#, fuzzy
+#~ msgid ""
+#~ "Click this button to save the plugin policy to a zipped file. The file, "
+#~ "named <b>plugin_policy.tgz</b>, will be saved to a location of your "
+#~ "choice."
+#~ msgstr ""
+#~ "Druk op dizze knop om dyn plugin-belied op te slaan yn in komprimearre "
+#~ "triem. De triem, <b>plugin_policy.tgz</b> neamd, wurdt dan opslein om in "
+#~ "lokaasje fan jo kar."
+
+#, fuzzy
+#~ msgid ""
+#~ "Here you can set specific plugin policies for any particular host or "
+#~ "domain. To add a new policy, simply click the <i>New...</i> button and "
+#~ "supply the necessary information requested by the dialog box. To change "
+#~ "an existing policy, click on the <i>Change...</i> button and choose the "
+#~ "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
+#~ "button will remove the selected policy causing the default policy setting "
+#~ "to be used for that domain."
+#~ msgstr ""
+#~ "Hjir kinne jo foar eltse mooglike host of domein jo eigen plugin-belied "
+#~ "ynstelle. Om in nij belied ta te foegjen kinne jo ienfâldich drukke op de "
+#~ "knop <i>Tafoegje...</i> en de nedige ynformaasje ynfolje. Om in besteand "
+#~ "belied te wizigjen drukke jo op de knop <i>Bewurkje...</i> en kieze jo in "
+#~ "oar belied yn it dialoochfinster. Jo kinne in belied fuortsmite troch op "
+#~ "de  knop <i>Fuortsmite</i> te drukken. It standertbelied wurdt dan op dit "
+#~ "domein tapast."
+
+# msgid "Installed Plugins"
+#, fuzzy
+#~ msgid "Netscape Plugins"
+#~ msgstr "Netscape-plugins"
+
+#, fuzzy
+#~ msgctxt "lowest priority"
+#~ msgid "lowest"
+#~ msgstr "laagste"
+
+#, fuzzy
+#~ msgctxt "low priority"
+#~ msgid "low"
+#~ msgstr "laag"
+
+#, fuzzy
+#~ msgctxt "medium priority"
+#~ msgid "medium"
+#~ msgstr "middel"
+
+#, fuzzy
+#~ msgctxt "high priority"
+#~ msgid "high"
+#~ msgstr "hoog"
+
+#, fuzzy
+#~ msgctxt "highest priority"
+#~ msgid "highest"
+#~ msgstr "hoogste"
+
+#, fuzzy
+#~ msgid ""
+#~ "<h1>Konqueror Plugins</h1> The Konqueror web browser can use Netscape "
+#~ "plugins to show special content, just like the Navigator does. Please "
+#~ "note that the way you have to install Netscape plugins may depend on your "
+#~ "distribution. A typical place to install them is, for example, '/opt/"
+#~ "netscape/plugins'."
+#~ msgstr ""
+#~ "<h1>Konqueror-plugins</h1> De Konqueror Webblêder kin brûk meitsje fan "
+#~ "Netscape-plugins foar it werjaan fan spesjale ynhâld, krekt sa as "
+#~ "Navigator dat docht. Taljochting: De wize wêrop dat jo Netscape-plugins "
+#~ "ynstallearje kinne kin ôfhinklik wêze fan jo distribúsje. Normaal wurde "
+#~ "dizzen ynstallearre yn de map '/opt/netscape/plugins'."
+
+#, fuzzy
+#~ msgid ""
+#~ "Do you want to apply your changes before the scan? Otherwise the changes "
+#~ "will be lost."
+#~ msgstr ""
+#~ "Wolle jo wizigings foar de sykaksje tapasse? Oars geanne se ferlern."
+
+#, fuzzy
+#~ msgid ""
+#~ "The nspluginscan executable cannot be found. Netscape plugins will not be "
+#~ "scanned."
+#~ msgstr ""
+#~ "It programma nspluginscan is net fûn. Der wurdt dêrom net nei Netscape-"
+#~ "plugins socht."
+
+#, fuzzy
+#~ msgid "Scanning for plugins"
+#~ msgstr "Plugins sykje"
+
+# msgid "Canceled."
+#, fuzzy
+#~ msgid "Cancel"
+#~ msgstr "Ofbrekke"
+
+#, fuzzy
+#~ msgid "Select Plugin Scan Folder"
+#~ msgstr "Map foar skenplugin selektearje"
+
+#, fuzzy
+#~ msgid "Plugin"
+#~ msgstr "Plugin"
+
+#, fuzzy
+#~ msgid "MIME type"
+#~ msgstr "MIME-type"
+
+#, fuzzy
+#~ msgid "Suffixes"
+#~ msgstr "Taheaksels"
+
+#, fuzzy
+#~ msgid "Doma&in-Specific"
+#~ msgstr "Dome&in-spesifyk"
+
+#, fuzzy
+#~ msgid "New Plugin Policy"
+#~ msgstr "Nij pluginbelied"
+
+#, fuzzy
+#~ msgid "Change Plugin Policy"
+#~ msgstr "Pluginbelied wizigje"
+
+#, fuzzy
+#~ msgid "&Plugin policy:"
+#~ msgstr "&Pluginbelied:"
+
+#, fuzzy
+#~ msgid "Select a plugin policy for the above host or domain."
+#~ msgstr ""
+#~ "Selektearje in plugin-belied foar de boppesteande host- of domeinnamme."
+
+#, fuzzy
+#~ msgid "Host/Domain"
+#~ msgstr "Host/domein"
+
+#, fuzzy
+#~ msgid "Policy"
+#~ msgstr "Belied"
+
+# msgid "Delete Link"
+#, fuzzy
+#~ msgid "De&lete"
+#~ msgstr "Fourt&smite"
+
+# msgid "&Import"
+#, fuzzy
+#~ msgid "&Import..."
+#~ msgstr "&Ymportearje..."
+
+# msgid "&Export"
+#, fuzzy
+#~ msgid "&Export..."
+#~ msgstr "&Eksportearje..."
+
+#, fuzzy
+#~ msgid ""
+#~ "Click on this button to manually add a host or domain specific policy."
+#~ msgstr ""
+#~ "Druk op dizze knop om sels in host- of domeinspesifyk belied ta te "
+#~ "foegjen."
+
+#, fuzzy
+#~ msgid ""
+#~ "Click on this button to change the policy for the host or domain selected "
+#~ "in the list box."
+#~ msgstr ""
+#~ "Druk op dizze knop om it belied foar de host of domein dy jo yn it fak "
+#~ "selektearre hawwe te bewurkjen."
+
+#, fuzzy
+#~ msgid ""
+#~ "Click on this button to delete the policy for the host or domain selected "
+#~ "in the list box."
+#~ msgstr ""
+#~ "Druk op dizze knop om it belied te ferwiderjen foar de host of domein "
+#~ "dyst yn it fak selektearre hast."
+
+#, fuzzy
+#~ msgid "You must first select a policy to be changed."
+#~ msgstr "Selektearje earst it te wizigjen belied."
+
+#, fuzzy
+#~ msgid "You must first select a policy to delete."
+#~ msgstr "Selektearje earst in belied om te ferwiderjen."
+
+#, fuzzy
+#~ msgid "Use Global"
+#~ msgstr "Globaal brûke"
+
+#, fuzzy
+#~ msgid "Accept languages:"
+#~ msgstr "Talen akseptearje:"
+
+#, fuzzy
+#~ msgid "Accept character sets:"
+#~ msgstr "De neikommende tekensets akseptearje:"
+
+# msgid "Delete Folder"
+#, fuzzy
+#~ msgid "Select Home Folder"
+#~ msgstr "Thúsmap selektearje"
+
+# msgid "Web Browsing"
+#, fuzzy
+#~ msgid "Tabbed Browsing"
+#~ msgstr "Blêdzje mei Ljeppers"
+
+# msgid "Open in New Window"
+#, fuzzy
+#~ msgid "Open new windows:"
+#~ msgstr "Nije finsters iepenje:"
+
+#, fuzzy
+#~ msgid "Use global"
+#~ msgstr "Globaal brûke"
+
+#, fuzzy
+#~ msgid "Use setting from global policy."
+#~ msgstr "Ynstellings fan belied brûke."
+
+#, fuzzy
+#~ msgid "Allow"
+#~ msgstr "Tastean"
+
+#, fuzzy
+#~ msgid "Accept all popup window requests."
+#~ msgstr "Alle pop-up-finsters akseptearje."
+
+#, fuzzy
+#~ msgid "Prompt every time a popup window is requested."
+#~ msgstr "Altyd freegje of in pop-up-finster iepene mei wurde."
+
+#, fuzzy
+#~ msgid "Deny"
+#~ msgstr "Wegerje"
+
+#, fuzzy
+#~ msgid "Reject all popup window requests."
+#~ msgstr "Alle pop-up-finsters warde."
+
+# msgid "Sort"
+#, fuzzy
+#~ msgid "Smart"
+#~ msgstr "Tûk"
+
+#, fuzzy
+#~ msgid ""
+#~ "Accept popup window requests only when links are activated through an "
+#~ "explicit mouse click or keyboard operation."
+#~ msgstr ""
+#~ "Popup-finster allinne akseptearje as dizze aktivearre binne fia in "
+#~ "eksplisite mûsklik of toetseboerdhanneling."
+
+#, fuzzy
+#~ msgid ""
+#~ "If you disable this, Konqueror will stop interpreting the <i>window."
+#~ "open()</i> JavaScript command. This is useful if you regularly visit "
+#~ "sites that make extensive use of this command to pop up ad banners.<br /"
+#~ "><br /><b>Note:</b> Disabling this option might also break certain sites "
+#~ "that require <i>window.open()</i> for proper operation. Use this feature "
+#~ "carefully."
+#~ msgstr ""
+#~ "As jo dizze opsje ynskeakelje, dan stoppet Konqueror mei it útfieren fan "
+#~ "it JavaSkript-kommando <i>window.open()</i>. Dit is handich foar as jo "
+#~ "mei regelmaat op websiden komme dy mannichfâld brûk meitsje fan dit "
+#~ "kommando om nije finster mei reklame te iepenjen. <br /><br /"
+#~ "><b>Taljochting:</b> as jo dizze opsje útskeakelst, dan binne der siden "
+#~ "dy dit kommando nedich ha om normaal te wurkjen net mear te brûken mei "
+#~ "Konqueror. Meitsje dus mei soarch gebrûk fan dizze ynstelling."
+
+# msgid "Resend"
+#, fuzzy
+#~ msgid "Resize window:"
+#~ msgstr "Finstergrutte wizigje:"
+
+#, fuzzy
+#~ msgid "Allow scripts to change the window size."
+#~ msgstr "Tastean dat skripts de finstergrutte wizigje."
+
+#, fuzzy
+#~ msgid "Ignore"
+#~ msgstr "Negearje"
+
+#, fuzzy
+#~ msgid ""
+#~ "Ignore attempts of scripts to change the window size. The web page will "
+#~ "<i>think</i> it changed the size but the actual window is not affected."
+#~ msgstr ""
+#~ "Negearje it besykjen fan skripts om de finstergrutte te wizigjen. De "
+#~ "webside hat sels <i>net</i> troch dat dizze it finstergrutte <i>net</i> "
+#~ "wizige hat."
+
+#, fuzzy
+#~ msgid ""
+#~ "Some websites change the window size on their own by using <i>window."
+#~ "resizeBy()</i> or <i>window.resizeTo()</i>. This option specifies the "
+#~ "treatment of such attempts."
+#~ msgstr ""
+#~ "Der binne websiden dy de finstergrutte fia it kommando <i>window."
+#~ "resizeBy()</i> of <i>window.resizeTo()</i> wizigje. Dizze opsje bepaald "
+#~ "hoe Konqueror hjir mei om giet."
+
+# msgid "New &Window"
+#, fuzzy
+#~ msgid "Move window:"
+#~ msgstr "Finster ferpleatse:"
+
+#, fuzzy
+#~ msgid "Allow scripts to change the window position."
+#~ msgstr "Tastean dat skripts de finsterposysje wizigje."
+
+#, fuzzy
+#~ msgid ""
+#~ "Ignore attempts of scripts to change the window position. The web page "
+#~ "will <i>think</i> it moved the window but the actual position is not "
+#~ "affected."
+#~ msgstr ""
+#~ "Negearje it besykjen fan skripts om de finsterposysje te wizigjen. De "
+#~ "Webside hat sels <i>net</i> troch dat it finster <i>net</i> fan posysje "
+#~ "is feroare."
+
+#, fuzzy
+#~ msgid ""
+#~ "Some websites change the window position on their own by using <i>window."
+#~ "moveBy()</i> or <i>window.moveTo()</i>. This option specifies the "
+#~ "treatment of such attempts."
+#~ msgstr ""
+#~ "Der binne websiden dy de finsterposysje feroarje mei it kommando "
+#~ "<i>window.moveBy()</i> of <i>window.moveTo()</i>. Dizze opsje bepaald hoe "
+#~ "Konqueror hjir mei om giet."
+
+#, fuzzy
+#~ msgid "Focus window:"
+#~ msgstr "Finsterfokus:"
+
+#, fuzzy
+#~ msgid "Allow scripts to focus the window."
+#~ msgstr "Tastean dat skripts it finster de fokus jaan."
+
+#, fuzzy
+#~ msgid ""
+#~ "Ignore attempts of scripts to focus the window. The web page will "
+#~ "<i>think</i> it brought the focus to the window but the actual focus will "
+#~ "remain unchanged."
+#~ msgstr ""
+#~ "Negearje it besykjen fan skripts om it finster de fokus te jaan. De "
+#~ "webside hat <i>net</i> troch dat de fokus net wizigje is."
+
+#, fuzzy
+#~ msgid ""
+#~ "Some websites set the focus to their browser window on their own by using "
+#~ "<i>window.focus()</i>. This usually leads to the window being moved to "
+#~ "the front interrupting whatever action the user was dedicated to at that "
+#~ "time. This option specifies the treatment of such attempts."
+#~ msgstr ""
+#~ "Der binne websiden dy in bepaald blêderfinster de fokus jaan mei it "
+#~ "kommando <i>window.focus()</i>. Dit hâld normaal yn dat it finster "
+#~ "aktivearre wurdt en nei de foargrûn pleatst wurdt, wêrby de brûker "
+#~ "ûnderbrutsen wurdt by syn wurkjen. Dizze opsje bepaald hoe Konqueror hjir "
+#~ "mei om giet."
+
+#, fuzzy
+#~ msgid "Modify status bar text:"
+#~ msgstr "Tastânbalketekst wizigje:"
+
+#, fuzzy
+#~ msgid "Allow scripts to change the text of the status bar."
+#~ msgstr "Tastean dat skripts de tekst fan de tastânbalke wizigje."
+
+#, fuzzy
+#~ msgid ""
+#~ "Ignore attempts of scripts to change the status bar text. The web page "
+#~ "will <i>think</i> it changed the text but the actual text will remain "
+#~ "unchanged."
+#~ msgstr ""
+#~ "Negearje it besykjen fan skripts om de tastânbalketekst te wizigjen. De "
+#~ "webside hat sels <i>net</i> troch dat de tekst yn de tastânbalke bliuwt."
+
+#, fuzzy
+#~ msgid ""
+#~ "Some websites change the status bar text by setting <i>window.status</i> "
+#~ "or <i>window.defaultStatus</i>, thus sometimes preventing displaying the "
+#~ "real URLs of hyperlinks. This option specifies the treatment of such "
+#~ "attempts."
+#~ msgstr ""
+#~ "Der binne websiden dy de tekst yn de tastânbalke wizigje fia it kommando "
+#~ "<i>window.status</i> of <i>window.defaultStatus</i>. Dit wurdt faak brûkt "
+#~ "om de werjefte fan URL-adressen of hypekeppelings te ûnderdrukken. Dizze "
+#~ "opsje bepaald hoe Konqueror hjir mei om giet."
+
+#, fuzzy
+#~ msgid "kcmkonqhtml"
+#~ msgstr "kcmkonqhtml"
+
+#, fuzzy
+#~ msgid "Konqueror Browsing Control Module"
+#~ msgstr "Konqueror Blêdzje Konfiguraasjemodule"
+
+# msgid "(c) 1999-2005, The Konqueror developers"
+#, fuzzy
+#~ msgid "(c) 1999 - 2001 The Konqueror Developers"
+#~ msgstr "(c) 1999 - 2001 de Konqueror-ûntwiklers"
+
+#, fuzzy
+#~ msgid "Matthias Kalle Dalheimer"
+#~ msgstr "Matthias Kalle Dalheimer"
+
+#, fuzzy
+#~ msgid "Daniel Molkentin"
+#~ msgstr "Daniel Molkentin"
+
+#, fuzzy
+#~ msgid ""
+#~ "JavaScript access controls\n"
+#~ "Per-domain policies extensions"
+#~ msgstr ""
+#~ "JavaSkcript tagongskontrôle\n"
+#~ "Belied de-domein"
+
+#, fuzzy
+#~ msgid "&Java"
+#~ msgstr "&Java"
+
+# msgid "developer (JavaScript)"
+#, fuzzy
+#~ msgid "Java&Script"
+#~ msgstr "Java&Skript"
+
+#, fuzzy
+#~ msgid ""
+#~ "<h2>JavaScript</h2>On this page, you can configure whether JavaScript "
+#~ "programs embedded in web pages should be allowed to be executed by "
+#~ "Konqueror.<h2>Java</h2>On this page, you can configure whether Java "
+#~ "applets embedded in web pages should be allowed to be executed by "
+#~ "Konqueror.<br /><br /><b>Note:</b> Active content is always a security "
+#~ "risk, which is why Konqueror allows you to specify very fine-grained from "
+#~ "which hosts you want to execute Java and/or JavaScript programs."
+#~ msgstr ""
+#~ "<h2>JavaSkript</h2>Op dizze side kinne jo fêststelle of Konqueror de yn "
+#~ "websiden ynsletten JavaSkript-programma's útfiere mei.<h2>Java</h2>Op "
+#~ "dizze side kinne jo fêststelle of Konqueror de yn websiden ynsletten Java-"
+#~ "applets útfiere mei.<br /><br /><b>taljochting:</b>Aktive ynhâld bringt "
+#~ "altyd befeiligingsrisiko mei him mei. Dêrom kinne jo yn Konqueror hiel "
+#~ "sekuer oanjaan fan hokker host jo wol of net Java- en/of JavaSkript-"
+#~ "programma's akseptearje."
+
+# msgid "Enable Previews"
+#, fuzzy
+#~ msgid "Enable filters"
+#~ msgstr "Filters ynskeakelje"
+
+# msgid "Hide Filesize"
+#, fuzzy
+#~ msgid "Hide filtered images"
+#~ msgstr "Filtere ôfbyldings ferstopje"
+
+#, fuzzy
+#~ msgid "URL Expressions to Filter"
+#~ msgstr "URL-ekspresje om te filteren"
+
+#, fuzzy
+#~ msgid "Expression (e.g. http://www.site.com/ad/*):"
+#~ msgstr "Ekspresje (bgl. http://www.site.com/ad/*):"
+
+#, fuzzy
+#~ msgid "Insert"
+#~ msgstr "Ynfoegje"
+
+# msgid "Update Favicon"
+#, fuzzy
+#~ msgid "Update"
+#~ msgstr "Bywurkje"
+
+# msgid "&Import"
+#, fuzzy
+#~ msgid "Import..."
+#~ msgstr "Ymportearjen..."
+
+# msgid "&Export"
+#, fuzzy
+#~ msgid "Export..."
+#~ msgstr "Eksportearjen..."
+
+#, fuzzy
+#~ msgid ""
+#~ "Enable or disable AdBlocK filters. When enabled a set of expressions to "
+#~ "be blocked should be defined in the filter list for blocking to take "
+#~ "effect."
+#~ msgstr ""
+#~ "Reklamefilters aktivearje of ûntaktivearje. Wannear't aktivearre is "
+#~ "moatte jo in set ekspresjes oantsjutte yn de filterlist sadat it warden "
+#~ "fan reklame tapast kin wurde."
+
+#, fuzzy
+#~ msgid ""
+#~ "When enabled blocked images will be removed from the page completely "
+#~ "otherwise a placeholder 'blocked' image will be used."
+#~ msgstr ""
+#~ "Wannear't ynskeakele is sille warde ôfbyldings folslein út de side wiske "
+#~ "wurde. Oars wurdt der in pleatshâlder brûkt."
+
+#, fuzzy
+#~ msgid ""
+#~ "This is the list of URL filters that will be applied to all linked images "
+#~ "and frames. The filters are processed in order so place more generic "
+#~ "filters towards the top of the list."
+#~ msgstr ""
+#~ "Dit is de list mei URL-adresfilters dy tapast kinne wurde op alle keppele "
+#~ "ôfbyldings en kaders. De filters wurde op oarder ferwurke, pleats dêrfoar "
+#~ "de meast algemiene filter boppe-oan de list."
+
+#, fuzzy
+#~ msgid ""
+#~ "Enter an expression to filter. Expressions can be defined as either a "
+#~ "filename style wildcard e.g. http://www.site.com/ads* or as a full "
+#~ "regular expression by surrounding the string with '/' e.g.  //(ad|"
+#~ "banner)\\./"
+#~ msgstr ""
+#~ "In ekspresje om mei te filterjen ynfiere. Ekspresjes kinne oantsjutte "
+#~ "wurde as ynternetadressen mei jokertekens, sa as http://www.site.com/"
+#~ "ads*, of as reguliere ekspresje troch de tekst de omkringen mei '/', sa "
+#~ "as //(ad|banner)\\./"
+
+#, fuzzy
+#~ msgid ""
+#~ "<h1>Konqueror AdBlocK</h1> Konqueror AdBlocK allows you to create a list "
+#~ "of filters that are checked against linked images and frames. URL's that "
+#~ "match are either discarded or replaced with a placeholder image. "
+#~ msgstr ""
+#~ "<h1>Konqueror adBlock</h1> Mei Konqueror adBlocK kinne jo in list mei "
+#~ "filters oanmeitsje dy brûkt wurdt om keppele ôfbyldings en kaders te "
+#~ "kontrolearjen. URL-adressen dy oerienkomme sille negearre wurde of "
+#~ "ferfongen wurde troch in pleatshâlderôfbylding."
+
+#, fuzzy
+#~ msgid ""
+#~ "<h1>Konqueror Fonts</h1>On this page, you can configure which fonts "
+#~ "Konqueror should use to display the web pages you view."
+#~ msgstr ""
+#~ "<h1>Konqueror-lettertypen</h1> Op dizze side kinne jo ynstelle hokker "
+#~ "lettertypen Konqueror brûke sil by it werjaan fan websiden."
+
+# msgid "Icon Size"
+#, fuzzy
+#~ msgid "Font Si&ze"
+#~ msgstr "Tekengr&utte"
+
+# msgid "This is the font used to display text in Konqueror windows."
+#, fuzzy
+#~ msgid "This is the relative font size Konqueror uses to display web sites."
+#~ msgstr ""
+#~ "Dit is de relative tekengrutte dy Konqueror brûkt om websiden wer te jaan."
+
+#, fuzzy
+#~ msgid "M&inimum font size:"
+#~ msgstr "M&inimum tekengrutte:"
+
+#, fuzzy
+#~ msgid ""
+#~ "Konqueror will never display text smaller than this size,<br />overriding "
+#~ "any other settings"
+#~ msgstr ""
+#~ "Konqueror sil nea tekst sjen litte dat lytser dan dizze grutte is,<br /> "
+#~ "ûnachte wat de oare ynstellings binne"
+
+#, fuzzy
+#~ msgid "&Medium font size:"
+#~ msgstr "&Middelste tekengrutte:"
+
+#, fuzzy
+#~ msgid "&Fixed font:"
+#~ msgstr "&Fêst lettertype:"
+
+# msgid "This is the font used to display text in Konqueror windows."
+#, fuzzy
+#~ msgid ""
+#~ "This is the font used to display fixed-width (i.e. non-proportional) text."
+#~ msgstr ""
+#~ "Dit is it lettertype dat brûkt wurd by it werjaan fan tekst mei fêste "
+#~ "breedte yn in webside."
+
+#, fuzzy
+#~ msgid "S&erif font:"
+#~ msgstr "Serif l&ettertype:"
+
+# msgid "This is the font used to display text in Konqueror windows."
+#, fuzzy
+#~ msgid "This is the font used to display text that is marked up as serif."
+#~ msgstr ""
+#~ "Dit is it lettertype dat brûkt wurdt by it werjaan fan tekst dy "
+#~ "oantsjutte is as serif."
+
+# msgid "Standard font"
+#, fuzzy
+#~ msgid "Sa&ns serif font:"
+#~ msgstr "Sa&ns serif lettertype:"
+
+# msgid "This is the font used to display text in Konqueror windows."
+#, fuzzy
+#~ msgid ""
+#~ "This is the font used to display text that is marked up as sans-serif."
+#~ msgstr ""
+#~ "Dit is it lettertype dat brûkt wurdt by it werjaan fan tekst dy markearre "
+#~ "is sans-serif."
+
+# msgid "Recursive Sort"
+#, fuzzy
+#~ msgid "C&ursive font:"
+#~ msgstr "Skeanpr&inte lettertype:"
+
+# msgid "This is the font used to display text in Konqueror windows."
+#, fuzzy
+#~ msgid "This is the font used to display text that is marked up as italic."
+#~ msgstr ""
+#~ "Dit is it lettertype dat brûkt wurdt by it werjaan fan tekst dy "
+#~ "oantsjutte is as skeanprinte."
+
+#, fuzzy
+#~ msgid "Fantas&y font:"
+#~ msgstr "Fantas&y lettert&ype:"
+
+# msgid "This is the font used to display text in Konqueror windows."
+#, fuzzy
+#~ msgid ""
+#~ "This is the font used to display text that is marked up as a fantasy font."
+#~ msgstr ""
+#~ "Dit is it lettertype dat brûkt wurdt by it werjaan fan tekst dy "
+#~ "oantsjutte is as in fantasy lettertype"
+
+#, fuzzy
+#~ msgid "Font &size adjustment for this encoding:"
+#~ msgstr "Oanpa&ssing fan tekengrutte foar dizze kodearring:"
+
+#, fuzzy
+#~ msgid "Default encoding:"
+#~ msgstr "Standert kodearring"
+
+#, fuzzy
+#~ msgid "Use Language Encoding"
+#~ msgstr "Taalkodearring brûke"
+
+#, fuzzy
+#~ msgid ""
+#~ "Select the default encoding to be used; normally, you will be fine with "
+#~ "'Use language encoding' and should not have to change this."
+#~ msgstr ""
+#~ "Bepaal hokker kodearring standert brûkt sil wurde. Normaal is "
+#~ "\"Taalkodearring brûke\" genôch en hoechst neat te wizigjen."
+
+#, fuzzy
+#~ msgid ""
+#~ "<h1>Konqueror Browser</h1> Here you can configure Konqueror's browser "
+#~ "functionality. Please note that the file manager functionality has to be "
+#~ "configured using the \"File Manager\" configuration module. You can make "
+#~ "some settings how Konqueror should handle the HTML code in the web pages "
+#~ "it loads. It is usually not necessary to change anything here."
+#~ msgstr ""
+#~ "<h1>Konqueror-blêder</h1> Hjir kinne jo de funksjonaliteit fan "
+#~ "Konqueror's blêder ynstelle. Taljochting: de triembehearfunksonaliteit "
+#~ "fan Konqueror kinne jo ynstelle yn de Konfiguraasjemodule \"Triembehearder"
+#~ "\". Jo kinne hjir bepale hoe Konqueror omgiet mei de HTML-koade yn de "
+#~ "websiden dy laden wurde. Yn de measte gefallen hoege jo neat te wizigjen."
+
+# msgid "Bookmark"
+#, fuzzy
+#~ msgid "Boo&kmarks"
+#~ msgstr "B&lêdwizers"
+
+#, fuzzy
+#~ msgid "Ask for name and folder when adding bookmarks"
+#~ msgstr "By it tafoegjen fan blêdwizers om in namme en map freegje"
+
+#, fuzzy
+#~ msgid ""
+#~ "If this box is checked, Konqueror will allow you to change the title of "
+#~ "the bookmark and choose a folder in which to store it when you add a new "
+#~ "bookmark."
+#~ msgstr ""
+#~ "As dit karfakje selektearre is, sil Konqueror ûnder it tafoegjen fan "
+#~ "blêdwizers freegje om in titel en de map wêr jo it bewarje wolle."
+
+#, fuzzy
+#~ msgid "Show only marked bookmarks in bookmark toolbar"
+#~ msgstr "Allinne markearre blêdwizers sjen litte yn de blêdwizersbalke"
+
+#, fuzzy
+#~ msgid ""
+#~ "If this box is checked, Konqueror will show only those bookmarks in the "
+#~ "bookmark toolbar which you have marked to do so in the bookmark editor."
+#~ msgstr ""
+#~ "As dit karfakje selektearre is, sil Konqueror allinne de blêdwizers yn de "
+#~ "blêdwizersbalke sjen litte dy jo markearre hawwe yn de blêdwizersbewurker."
+
+# msgid "URL-Completion"
+#, fuzzy
+#~ msgid "Form Com&pletion"
+#~ msgstr "Formulieraan&folling"
+
+# msgid "AutoCompletion for forms"
+#, fuzzy
+#~ msgid "Enable completion of &forms"
+#~ msgstr "It oanfoljen fan &formulieren ynskeakelje"
+
+#, fuzzy
+#~ msgid ""
+#~ "If this box is checked, Konqueror will remember the data you enter in web "
+#~ "forms and suggest it in similar fields for all forms."
+#~ msgstr ""
+#~ "As dizze opsje ynskeakele is, dan ûnthâld Konqueror de data dy jo yn "
+#~ "webformulieren ynfolje. Dizze data wurde brûkt om by alle oare "
+#~ "formulieren oanfolsuggestjes te jaan."
+
+#, fuzzy
+#~ msgid "&Maximum completions:"
+#~ msgstr "&Maksimum oantal oanfollings:"
+
+#, fuzzy
+#~ msgid ""
+#~ "Here you can select how many values Konqueror will remember for a form "
+#~ "field."
+#~ msgstr ""
+#~ "Hjir kinne jo oantsjutte hoefolle wearden Konqueror sil ûnthâlde foar in "
+#~ "formulierfjild."
+
+#, fuzzy
+#~ msgid "Mouse Beha&vior"
+#~ msgstr "M&ûsgedrach"
+
+#, fuzzy
+#~ msgid "Chan&ge cursor over links"
+#~ msgstr "Rinnerke &feroarje oer keppelings"
+
+#, fuzzy
+#~ msgid ""
+#~ "If this option is set, the shape of the cursor will change (usually to a "
+#~ "hand) if it is moved over a hyperlink."
+#~ msgstr ""
+#~ "As dizze opsje ynskeakele is, dan feroaret jo rinnerke (meastal yn in "
+#~ "hân) as mei har oer in keppeling gien wurdt."
+
+#, fuzzy
+#~ msgid "M&iddle click opens URL in selection"
+#~ msgstr "M&iddelste mûsklik iepent URL yn seleksje"
+
+#, fuzzy
+#~ msgid ""
+#~ "If this box is checked, you can open the URL in the selection by middle "
+#~ "clicking on a Konqueror view."
+#~ msgstr ""
+#~ "As dit ynskeakele is kinne jo it URL-ynternetadres yn de seleksje iepenje "
+#~ "troch op de middelste mûsknop te klikken yn in Konqueror-werjefte."
+
+#, fuzzy
+#~ msgid "Right click goes &back in history"
+#~ msgstr "Rjochtermûsklik &giet werom yn de skiednis"
+
+#, fuzzy
+#~ msgid ""
+#~ "If this box is checked, you can go back in history by right clicking on a "
+#~ "Konqueror view. To access the context menu, press the right mouse button "
+#~ "and move."
+#~ msgstr ""
+#~ "As dit karfakje selektearre is, dan kinne jo weromblêdzje yn de skiednis "
+#~ "troch mei de rjochter mûsknop te klikken yn in Konqueror-werjefte. Om "
+#~ "tagong te krijen ta it ferbânmenu, klik op de rjochter mûsknop en beweech "
+#~ "jo mûs."
+
+#, fuzzy
+#~ msgid "A&utomatically load images"
+#~ msgstr "Ofbyldings a&utomatysk lade"
+
+#, fuzzy
+#~ msgid ""
+#~ "If this box is checked, Konqueror will automatically load any images that "
+#~ "are embedded in a web page. Otherwise, it will display placeholders for "
+#~ "the images, and you can then manually load the images by clicking on the "
+#~ "image button.<br />Unless you have a very slow network connection, you "
+#~ "will probably want to check this box to enhance your browsing experience."
+#~ msgstr ""
+#~ "As dizze opsje ynskeakele is laadt Konqueror automatysk de ôfbyldings dy "
+#~ "yn in webside stean. Yn it oare gefal binne der op de plakken fan de "
+#~ "ôfbyldings byldkaikes tesjen. Jo kinne dan de ôfbyldings sels lade troch "
+#~ "op de ôfbyldingsknop te drukken. <br /> bywannear’t jo in erch trage "
+#~ "netwurkferbining hawwe kinne jo it bêste dizze opsje ynskeakelje."
+
+#, fuzzy
+#~ msgid "Dra&w frame around not completely loaded images"
+#~ msgstr "In râne tekenje rûn net kompleet laden ôfbyldings"
+
+#, fuzzy
+#~ msgid ""
+#~ "If this box is checked, Konqueror will draw a frame as placeholder around "
+#~ "not yet fully loaded images that are embedded in a web page.<br /"
+#~ ">Especially if you have a slow network connection, you will probably want "
+#~ "to check this box to enhance your browsing experience."
+#~ msgstr ""
+#~ "As dit karfakje ynskeakele is, sil Konqueror in râne om net kompleet "
+#~ "laden ôfbyldings yn websiden tekenje. <br /> Dit sil wis by in trage "
+#~ "netwurkferbining it ynternetgebrûk ferbetterje."
+
+#, fuzzy
+#~ msgid "Allow automatic delayed &reloading/redirecting"
+#~ msgstr "Automatysk fertrage we&rlading/omlieding tastean"
+
+#, fuzzy
+#~ msgid ""
+#~ "Some web pages request an automatic reload or redirection after a certain "
+#~ "period of time. By unchecking this box Konqueror will ignore these "
+#~ "requests."
+#~ msgstr ""
+#~ "Der binne websiden hokker om in automatyske werlading of omlieding "
+#~ "freegje nei in beskaat tiidsbestek. Troch dit fakje út te skeakeljen sil "
+#~ "Konqueror dizze fersiken negearre."
+
+#, fuzzy
+#~ msgid "Enable/disable Access Ke&y activation with Ctrl key"
+#~ msgstr ""
+#~ "Activatie van toegankelijkheidstoetsen via de Ctrl-to&ets inschakelen/"
+#~ "uitschakelen"
+
+#, fuzzy
+#~ msgid ""
+#~ "Pressing the Ctrl key when viewing webpages activates KDE's Access Keys. "
+#~ "Unchecking this box will disable this accessibility feature. (Konqueror "
+#~ "needs to be restarted for changes to take effect)"
+#~ msgstr ""
+#~ "Als u tijdens het bekijken van webpagina's op de Ctrl-toets drukt "
+#~ "activeert u KDE's toegankelijkheidstoetsen. Door dit vakje uit te "
+#~ "schakelen zet u deze functie uit. (Herstart Konqueror om uw wijziging "
+#~ "door te voeren.)"
+
+#, fuzzy
+#~ msgid "Und&erline links:"
+#~ msgstr "Keppelings ûnderstreekje:"
+
+# msgid "Installed"
+#, fuzzy
+#~ msgctxt "underline"
+#~ msgid "Enabled"
+#~ msgstr "Ynskeakele"
+
+# msgid "Disable"
+#, fuzzy
+#~ msgctxt "underline"
+#~ msgid "Disabled"
+#~ msgstr "Utskeakele"
+
+#, fuzzy
+#~ msgid "Only on Hover"
+#~ msgstr "Allinne ûnder mûs"
+
+#, fuzzy
+#~ msgid ""
+#~ "Controls how Konqueror handles underlining hyperlinks:<br /"
+#~ "><ul><li><b>Enabled</b>: Always underline links</li><li><b>Disabled</b>: "
+#~ "Never underline links</li><li><b>Only on Hover</b>: Underline when the "
+#~ "mouse is moved over the link</li></ul><br /><i>Note: The site's CSS "
+#~ "definitions can override this value</i>"
+#~ msgstr ""
+#~ "Bepaalt hoe Konqueror omgiet mei in ûnderstreakjen fan keppelings:<br /"
+#~ "><ul><li><b>Ynskeakele</b>:keppelings altyd ûnderstreakje</"
+#~ "li><li><b>Utskeakele</b>: keppelings nea ûnderstreakje</"
+#~ "li><li><b>Allinnich ûnder rinnerke</b>: Keppelings ûnderstreakje as dizze "
+#~ "har ûnder it rinnerke befine</li></ul><br /><i>Taljochting: mooglike "
+#~ "stylblêden (CSS) fan de besochte siden kinne dizze wearde oerskriuwe.</i>"
+
+# msgid "App&lications"
+#, fuzzy
+#~ msgid "A&nimations:"
+#~ msgstr "A&nimaasjes:"
+
+# msgid "Installed"
+#, fuzzy
+#~ msgctxt "animations"
+#~ msgid "Enabled"
+#~ msgstr "Ynskeakele"
+
+# msgid "Disable"
+#, fuzzy
+#~ msgctxt "animations"
+#~ msgid "Disabled"
+#~ msgstr "Utskeakele"
+
+# msgid "Show Owner"
+#, fuzzy
+#~ msgid "Show Only Once"
+#~ msgstr "Allinne ien kear sjen litte"
+
+#, fuzzy
+#~ msgid ""
+#~ "Controls how Konqueror shows animated images:<br /><ul><li><b>Enabled</"
+#~ "b>: Show all animations completely.</li><li><b>Disabled</b>: Never show "
+#~ "animations, show the start image only.</li><li><b>Show only once</b>: "
+#~ "Show all animations completely but do not repeat them.</li></ul>"
+#~ msgstr ""
+#~ "Bepaalt hoe Konqueror libjende ôfbyldings sjen lit.<br /"
+#~ "><ul><li><b>Ynskeakele</b>Alle libben wurdt yn it gehiel sjen litten.</"
+#~ "li><li><b>Utskeakele</b>: Nea libben yn ôfbyldings sjen litte, allinnich "
+#~ "de ôfbyldings sels.</li><li><b>Ien kear sjen litte</b>: Lit al it libben "
+#~ "ien kear sjen, gjin werhelling.</li></ul>"
+
+#, fuzzy
+#~ msgid "&Host or domain name:"
+#~ msgstr "&Host- of domeinnamme:"
+
+#, fuzzy
+#~ msgid ""
+#~ "Enter the name of a host (like www.kde.org) or a domain, starting with a "
+#~ "dot (like .kde.org or .org)"
+#~ msgstr ""
+#~ "Fier hjir de namme yn fan in host (sa as www.kde.nl) of in domein, "
+#~ "begjinnend mei in stip (sa as .kde.nl of .nl)."
+
+#, fuzzy
+#~ msgid "You must first enter a domain name."
+#~ msgstr "Fier earst in domeinnammme yn."
+
+#, fuzzy
+#~ msgid "Ena&ble JavaScript globally"
+#~ msgstr "JavaSkript glo&baal ynskeakelje"
+
+#, fuzzy
+#~ msgid ""
+#~ "Enables the execution of scripts written in ECMA-Script (also known as "
+#~ "JavaScript) that can be contained in HTML pages. Note that, as with any "
+#~ "browser, enabling scripting languages can be a security problem."
+#~ msgstr ""
+#~ "Hjirmei stelle jo fêst of de skripts, skreaun yn ECMA_Script "
+#~ "(JavaSkript), dy yn html-siden foarkomme, útfierd meie wurde. Hâld der "
+#~ "rekken mei dat it útfieren fan skripttalen, sa as yn eltse blêder, "
+#~ "befeiligingsrisiko mei har mei bringt"
+
+#, fuzzy
+#~ msgid "Report &errors"
+#~ msgstr "Flat&er melde"
+
+#, fuzzy
+#~ msgid ""
+#~ "Enables the reporting of errors that occur when JavaScript code is "
+#~ "executed."
+#~ msgstr ""
+#~ "Aktivearret it melden fan flater dy foarkomme as de JavaSkript-koade "
+#~ "útfierd wurdt."
+
+#, fuzzy
+#~ msgid "Enable debu&gger"
+#~ msgstr "Debu&gger oansette"
+
+#, fuzzy
+#~ msgid "Enables builtin JavaScript debugger."
+#~ msgstr "Set de ynboude JavaSkript-debugger oan."
+
+#, fuzzy
+#~ msgid ""
+#~ "Here you can set specific JavaScript policies for any particular host or "
+#~ "domain. To add a new policy, simply click the <i>New...</i> button and "
+#~ "supply the necessary information requested by the dialog box. To change "
+#~ "an existing policy, click on the <i>Change...</i> button and choose the "
+#~ "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
+#~ "button will remove the selected policy causing the default policy setting "
+#~ "to be used for that domain. The <i>Import</i> and <i>Export</i> button "
+#~ "allows you to easily share your policies with other people by allowing "
+#~ "you to save and retrieve them from a zipped file."
+#~ msgstr ""
+#~ "Hjir kinne jo foar eltse host of domein de eigen JavaSkript-belied "
+#~ "ynstelle. Om in nij belied ta te foegjen, kinne jo gewoan drukke op de "
+#~ "knop <i>Tafoegje...</i> en de nedige ynformaasje ynfolje. Om in besteand "
+#~ "belied te wizigje kinne jo drukke op de knop <i>Bewurkje...</i> en jo kar "
+#~ "meitsje foar oar belied yn it dialoochfinster. Jo kinne in belied "
+#~ "fuortsmite troch op de knop <i>Fuortsmite</i> te drukke. It "
+#~ "standertbelied wurdt dan op dit domein tapast. Mei de knoppen "
+#~ "<i>Ymportearje</i> en <i>Eksportearje</i> kinne jo op ienfâldige wize jo "
+#~ "beliedynstellings útwikselje mei oare persoanen troch se yn in "
+#~ "komprimearre triem op te slaan."
+
+#, fuzzy
+#~ msgid ""
+#~ "<p>This box contains the domains and hosts you have set a specific "
+#~ "JavaScript policy for. This policy will be used instead of the default "
+#~ "policy for enabling or disabling JavaScript on pages sent by these "
+#~ "domains or hosts.</p><p>Select a policy and use the controls on the right "
+#~ "to modify it.</p>"
+#~ msgstr ""
+#~ "<p>Dit fak befettet de domeinen en hosts wêr jo in spesifyk JavaSkript-"
+#~ "belied foar ynsteld hawwe. Dit belied wurdt tapast ynstee fan it "
+#~ "standertbelied foar it yn/útskeakeljen fan JavaSkript op de dokuminten dy "
+#~ "troch dizze domeinen of hosts ferstjoerd wurde. </p><p> Selektearje in "
+#~ "belied en brûk de knoppen rjochts om dizzen te bewurkjen.</p>"
+
+#, fuzzy
+#~ msgid ""
+#~ "Click this button to choose the file that contains the JavaScript "
+#~ "policies. These policies will be merged with the existing ones. Duplicate "
+#~ "entries are ignored."
+#~ msgstr ""
+#~ "Druk op dizze knop om de triem te kiezen dy JavaSkript-beliedynstellings "
+#~ "befettet. Dizze wurde gearfette me de al oanwêzige beliedsynstellings. "
+#~ "Dûbele yngongen wurde negearre."
+
+#, fuzzy
+#~ msgid ""
+#~ "Click this button to save the JavaScript policy to a zipped file. The "
+#~ "file, named <b>javascript_policy.tgz</b>, will be saved to a location of "
+#~ "your choice."
+#~ msgstr ""
+#~ "Druk op dizze knop om dyn JavaSkript-belied op te slaan yn in "
+#~ "komprimearre triem. De triem, neamd <b>javascript_policy.tgz</b>, wurdt "
+#~ "dan opslein op in lokaasje fan jo kar."
+
+#, fuzzy
+#~ msgid "Global JavaScript Policies"
+#~ msgstr "Globaal JavaSkript-belied"
+
+#, fuzzy
+#~ msgid "Do&main-Specific"
+#~ msgstr "Do&mein-spesifyk"
+
+#, fuzzy
+#~ msgid "New JavaScript Policy"
+#~ msgstr "Nij JavaSkript-belied"
+
+#, fuzzy
+#~ msgid "Change JavaScript Policy"
+#~ msgstr "JavaSkript-belied wizigje"
+
+#, fuzzy
+#~ msgid "JavaScript policy:"
+#~ msgstr "JavaSkript-belied:"
+
+#, fuzzy
+#~ msgid "Select a JavaScript policy for the above host or domain."
+#~ msgstr ""
+#~ "Selektearje in JavaSkript-belied foar de boppesteande host- of "
+#~ "domeinnamme."
+
+#, fuzzy
+#~ msgid "Domain-Specific JavaScript Policies"
+#~ msgstr "Domein-spesifyk JavaSkript-belied"
+
+# msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
+#, fuzzy
+#~ msgid "Enable Ja&va globally"
+#~ msgstr "Ja&va globaal oansette"
+
+#, fuzzy
+#~ msgid "Java Runtime Settings"
+#~ msgstr "Ynstellings foar Java Runtime"
+
+#, fuzzy
+#~ msgid "&Use security manager"
+#~ msgstr "Befeiling&sbehearder brûke"
+
+#, fuzzy
+#~ msgid "Use &KIO"
+#~ msgstr "&KIO brûke"
+
+#, fuzzy
+#~ msgid "Shu&tdown applet server when inactive"
+#~ msgstr "Applet&tsjinner ôfslute by gjin aktiviteit"
+
+#, fuzzy
+#~ msgid "App&let server timeout:"
+#~ msgstr "Tiidferrin foar app&lettsjinner:"
+
+#, fuzzy
+#~ msgid "&Path to Java executable, or 'java':"
+#~ msgstr "&Paad nei Java-programma, os 'java':"
+
+# msgid "Additional requirements*"
+#, fuzzy
+#~ msgid "Additional Java a&rguments:"
+#~ msgstr "Oanfoljende Java-a&rguminten:"
+
+#, fuzzy
+#~ msgid ""
+#~ "Enables the execution of scripts written in Java that can be contained in "
+#~ "HTML pages. Note that, as with any browser, enabling active contents can "
+#~ "be a security problem."
+#~ msgstr ""
+#~ "Dit aktivearret de mooglikheid om de yn Java skreaune skript yn in html-"
+#~ "side út te fieren. Hâld der rekken mei dat, sa as mei elts type blêder, "
+#~ "it ynskeakeljen fan aktive ynhâld befeiliging risiko meibringt."
+
+#, fuzzy
+#~ msgid ""
+#~ "<p>This box contains the domains and hosts you have set a specific Java "
+#~ "policy for. This policy will be used instead of the default policy for "
+#~ "enabling or disabling Java applets on pages sent by these domains or "
+#~ "hosts.</p><p>Select a policy and use the controls on the right to modify "
+#~ "it.</p>"
+#~ msgstr ""
+#~ "<p>Dit fak befettet de domeinen en hosts wêrfoar jo in spesifyk Java-"
+#~ "belied foar ynsteld hawwe. Dit belied wurdt tapast ynstee fan it "
+#~ "standertbelied foar it yn/útskeakeljen fan Java-applets op de dokuminten "
+#~ "dy troch dizze domeinen of hosts ferstjoerd wurde. </p><p> Selektearje in "
+#~ "belied en brûk de knoppen rjochts om dizze te bewurkjen.</p>"
+
+#, fuzzy
+#~ msgid ""
+#~ "Click this button to choose the file that contains the Java policies. "
+#~ "These policies will be merged with the existing ones. Duplicate entries "
+#~ "are ignored."
+#~ msgstr ""
+#~ "Druk op dizze knop om de triem te kiezen dat de Java-beliedynstellings "
+#~ "befettet. Dizze wurde gearfette mei de al oanwêzige beliedynstellings. "
+#~ "Dûbele yngongen wurde negearre."
+
+#, fuzzy
+#~ msgid ""
+#~ "Click this button to save the Java policy to a zipped file. The file, "
+#~ "named <b>java_policy.tgz</b>, will be saved to a location of your choice."
+#~ msgstr ""
+#~ "Druk op dizze knop om jo Java-belied te bewarjen yn in komprimearre "
+#~ "triem. De triem, <b>java_policy.tgz</b> neamd, wurdt dan bewarre op in "
+#~ "lokaasje fan jo kar."
+
+#, fuzzy
+#~ msgid ""
+#~ "Here you can set specific Java policies for any particular host or "
+#~ "domain. To add a new policy, simply click the <i>New...</i> button and "
+#~ "supply the necessary information requested by the dialog box. To change "
+#~ "an existing policy, click on the <i>Change...</i> button and choose the "
+#~ "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
+#~ "button will remove the selected policy, causing the default policy "
+#~ "setting to be used for that domain."
+#~ msgstr ""
+#~ "Jo kinne hjir foar eltse host of domein de eigen Java-belied ynstelle. Om "
+#~ "in nij belied ta te foegjen kinne jo ienfâldich drukke op de knop "
+#~ "<i>Tafoegje...</i> en de nedige ynformaasje ynfolje. Om in besteand "
+#~ "belied te wizigjen kinne jo drukke op de knop <i>Bewurkje...</i> en kinne "
+#~ "jo de kar foar in oar belied meitsje yn it dialoochfinster. Jo kinne in "
+#~ "belied fuortsmite troch op de knop <i>Fuortsmite</i> te drukke. It "
+#~ "standertbelied wurdt dan ferfolgens op dit domein tapast."
+
+#, fuzzy
+#~ msgid ""
+#~ "Enabling the security manager will cause the jvm to run with a Security "
+#~ "Manager in place. This will keep applets from being able to read and "
+#~ "write to your file system, creating arbitrary sockets, and other actions "
+#~ "which could be used to compromise your system. Disable this option at "
+#~ "your own risk. You can modify your $HOME/.java.policy file with the Java "
+#~ "policytool utility to give code downloaded from certain sites more "
+#~ "permissions."
+#~ msgstr ""
+#~ "As jo de befeiligingsbehearder ynskeakelje, dan soargje jo derfoar dat de "
+#~ "Java Firtual Masine útfierd wurdt ûnder befeiligingsbehear. Hjirtroch "
+#~ "wurdt foarkaam dat applets yn steat binne om jo triemsysteem te lêzen of "
+#~ "te wizigjen, nije poarten oan te meitsjen, of brûk te meitsjen fan oare "
+#~ "mooglikheden om jo systeembefeiliging te ûnderwrotten. Skeakel dizze "
+#~ "opsje út op eigen risiko. Jo kinne de triem $HOME/.java.policy bewurkje "
+#~ "mei it helpprogramma Javapolicy om de koade dy jo fan bepaalde siden "
+#~ "ynladen hawwe bepaalde tagongsrjochten te jaan."
+
+#, fuzzy
+#~ msgid "Enabling this will cause the jvm to use KIO for network transport "
+#~ msgstr ""
+#~ "As jo dit ynskeakelje sil de java firtuele masine gebrûk meitsje fan KIO "
+#~ "foar netwurktransport."
+
+#, fuzzy
+#~ msgid ""
+#~ "Enter the path to the java executable. If you want to use the jre in your "
+#~ "path, simply leave it as 'java'. If you need to use a different jre, "
+#~ "enter the path to the java executable (e.g. /usr/lib/jdk/bin/java), or "
+#~ "the path to the directory that contains 'bin/java' (e.g. /opt/"
+#~ "IBMJava2-13)."
+#~ msgstr ""
+#~ "Fier hjir it paad yn nei it Java-programma. As jo de Java Runtime "
+#~ "Environment út jo sykpaad (PATH) brûke wolle, lit dan gewoan 'java' "
+#~ "stean. As jo in oare Java Runtime Environment brûke wolle, fier dan hjir "
+#~ "it paad yn fan de map dy it Java-programma befettet (bgl. /usr/lib/jdk/"
+#~ "bin/java) of it paad fan de map dy /bin/java befettet. (bgl. /opt/"
+#~ "IBMJava2-13)."
+
+#, fuzzy
+#~ msgid ""
+#~ "If you want special arguments to be passed to the virtual machine, enter "
+#~ "them here."
+#~ msgstr ""
+#~ "As jo spesjale arguminten trochjaan wolle oan jo firtuele masine, dan "
+#~ "kinne jo dizzen hjir ynfiere."
+
+#, fuzzy
+#~ msgid ""
+#~ "When all the applets have been destroyed, the applet server should shut "
+#~ "down. However, starting the jvm takes a lot of time. If you would like to "
+#~ "keep the java process running while you are browsing, you can set the "
+#~ "timeout value to whatever you like. To keep the java process running for "
+#~ "the whole time that the konqueror process is, leave the Shutdown Applet "
+#~ "Server checkbox unchecked."
+#~ msgstr ""
+#~ "As alle applets ferneatige binne, dan heart de applettsjinner te stopjen. "
+#~ "Mar it starten fan de Java Firtual Masine freget in aardich skofke tiid. "
+#~ "As jo java dêrom ûnder it surfen noch aktyf litte bliuwe wolle, jou dan "
+#~ "hjir op hoe lang dat jo wolle dat it Java-proses aktyf bliuwt as der gjin "
+#~ "applets binne. As jo Java te rinnen ha wolle salang’t Konqueror rint, "
+#~ "skeakel dan de opsje \"Applettsjinner ôfslute\" út."
+
+#, fuzzy
+#~ msgid "New Java Policy"
+#~ msgstr "Nij Java-belied"
+
+#, fuzzy
+#~ msgid "Change Java Policy"
+#~ msgstr "Java-belied wizigje"
+
+#, fuzzy
+#~ msgid "&Java policy:"
+#~ msgstr "&Java-belied:"
+
+#, fuzzy
+#~ msgid "Select a Java policy for the above host or domain."
+#~ msgstr ""
+#~ "Selektearje in javabelied foar de boppesteande host- of domeinnamme."
+
+#, fuzzy
+#~ msgid ""
+#~ "<h1>Enhanced Browsing</h1> In this module you can configure some enhanced "
+#~ "browsing features of KDE. <h2>Internet Keywords</h2>Internet Keywords let "
+#~ "you type in the name of a brand, a project, a celebrity, etc... and go to "
+#~ "the relevant location. For example you can just type \"KDE\" or \"K "
+#~ "Desktop Environment\" in Konqueror to go to KDE's homepage.<h2>Web "
+#~ "Shortcuts</h2>Web Shortcuts are a quick way of using Web search engines. "
+#~ "For example, type \"altavista:frobozz\" or \"av:frobozz\" and Konqueror "
+#~ "will do a search on AltaVista for \"frobozz\". Even easier: just press Alt"
+#~ "+F2 (if you have not changed this shortcut) and enter the shortcut in the "
+#~ "KDE Run Command dialog."
+#~ msgstr ""
+#~ "<h1>Ferbettert Blêdzje</h1> Yn dizze module kinne jo in oantal spesjale "
+#~ "mooglikheden fan KDE ynstelle. <h2>Ynternetsyktermen</"
+#~ "h2>Ynternetsyktermen meitsje it mooglik om de namme fan in merk, projekt, "
+#~ "ferneamdens, enzfh yn te typen wernei jo hiel fluch nei de lokaasje mei "
+#~ "relevante ynformaasje brocht wurde. Jo kinne bygelyks gewoan \"KDE\" of "
+#~ "\"K Desktop Environment\" yn Konqueror typen om nei KDE's websiden te "
+#~ "gean.<h2>Webkeppelingen</h2> Webkeppelingen biede in flugge manier oan om "
+#~ "it web troch te sykjen mei help fan sykmasines. Bygelyks, Jo fiere "
+#~ "\"altavista:kompjûter\" of \"av:kompjûter\" yn en Konqueror sil in "
+#~ "sykopdracht op Altavista foar dy útfiere, en dêrnei alle treffers dy "
+#~ "Altavista fûn op it wurd \"kompjûter\" sjen litte. Noch makliker: druk "
+#~ "gewoan op Alt-F2 (as jo dizze toetsebining net wizige hawwe) en typ de "
+#~ "sykopdracht yn it finster \"Kommando útfiere\"."
+
+# msgid "&Folder"
+#, fuzzy
+#~ msgid "&Filters"
+#~ msgstr "&Filters"
+
+#, fuzzy
+#~ msgid "Under construction..."
+#~ msgstr "Is noch yn ûntwikkeling..."
+
+#, fuzzy
+#~ msgid ""
+#~ "<p>During startup KDE needs to perform a check of its system "
+#~ "configuration (mimetypes, installed applications, etc.), and in case the "
+#~ "configuration has changed since the last time, the system configuration "
+#~ "cache (KSyCoCa) needs to be updated.</p><p>This option delays the check, "
+#~ "which avoid scanning all directories containing files describing the "
+#~ "system during KDE startup, thus making KDE startup faster. However, in "
+#~ "the rare case the system configuration has changed since the last time, "
+#~ "and the change is needed before this delayed check takes place, this "
+#~ "option may lead to various problems (missing applications in the K Menu, "
+#~ "reports from applications about missing required mimetypes, etc.).</"
+#~ "p><p>Changes of system configuration mostly happen by (un)installing "
+#~ "applications. It is therefore recommended to turn this option temporarily "
+#~ "off while (un)installing applications.</p>"
+#~ msgstr ""
+#~ "<p>Tijdens het opstarten dient KDE een controle van diens "
+#~ "systeemconfiguratie (mime-bestandstypen, geïnstalleerde programma's etc) "
+#~ "uit te voeren. In het geval de configuratie sinds de laatste keer is "
+#~ "gewijzigd dient de cache met systeemconfiguratie (KSyCoCa) te worden "
+#~ "bijgewerkt.</p> <p>Deze optie stelt deze controle uit. Hierdoor wordt "
+#~ "voorkomen dat tijdens het starten van KDE alle mappen met bestanden die "
+#~ "het systeem beschrijven worden doorzocht, waardoor KDE dus sneller start. "
+#~ "Echter, in het zeldzame geval dat de systeemconfiguratie gewijzigd is "
+#~ "sinds de laatste keer, en de wijziging is nodig voordat deze uitgestelde "
+#~ "controle plaatsvindt, kan het gebeuren dat dit tot problemen leidt. Denk "
+#~ "hierbij aan ontbrekende programma's in het K-menu, foutmeldingen over "
+#~ "ontbrekende mime-bestandstypen, etc.).</p><p>Wijzigingen in de "
+#~ "systeemconfiguratie komen meestal voor tijdens het installeren/"
+#~ "deïnstalleren van programma's. Het is daarom aan te raden om deze optie "
+#~ "tijdelijk aan te zetten als u programma's wilt installeren of verwijderen."
+#~ "</p>"
+
+#, fuzzy
+#~ msgid ""
+#~ "Disables the minimization of memory usage and allows you to make each "
+#~ "browsing activity independent from the others"
+#~ msgstr ""
+#~ "Skeakelt it beheinen fan it ûnthâldgebrûk út en makket it mooglik om "
+#~ "eltse blêdzjeraktiviteit ûnôfhinklik fan de oaren te meitsjen."
+
+#, fuzzy
+#~ msgid ""
+#~ "<p>With this option activated, only one instance of Konqueror used for "
+#~ "file browsing will exist in the memory of your computer at any moment, no "
+#~ "matter how many file browsing windows you open, thus reducing resource "
+#~ "requirements.</p><p>Be aware that this also means that, if something goes "
+#~ "wrong, all your file browsing windows will be closed simultaneously</p>"
+#~ msgstr ""
+#~ "<p>Mei dizze opsje ynskeakele sil der mar ien eksimplaar fan Konqueror as "
+#~ "triembehearder yn it ûnthâld pleatst wurde, nettsjinsteande it oantal "
+#~ "finsters dyst iepene hast. Hjirmei makkest de behoefte oan systeemboarnen "
+#~ "minder.</p><p>Taljochting: dit jout ek oan dat wannear’t der iets mis "
+#~ "giet yn in finster dat dan alle Konqueror-finsters ôfsluten wurde.</p>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<p>With this option activated, only one instance of Konqueror will exist "
+#~ "in the memory of your computer at any moment, no matter how many browsing "
+#~ "windows you open, thus reducing resource requirements.</p><p>Be aware "
+#~ "that this also means that, if something goes wrong, all your browsing "
+#~ "windows will be closed simultaneously.</p>"
+#~ msgstr ""
+#~ "<p>Mei dizze opsje ynskeakele, sil der net mear as ien eksimplar fan "
+#~ "Konqueror yn dyn kompjûterûnthâld laden wurde, nettsjinsteand it oantal "
+#~ "iepene Konqueror-finsters. Hjirmei makkest de behoefte oan systeemboarnen "
+#~ "minder. </p><p>Taljochting: dit jout ek oan dat wannear’t der iets mis "
+#~ "giet yn in finster dat dan alle Konqueror-finsters ôfsluten wurde.</p>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<p>If non-zero, this option allows keeping Konqueror instances in memory "
+#~ "after all their windows have been closed, up to the number specified in "
+#~ "this option.</p><p>When a new Konqueror instance is needed, one of these "
+#~ "preloaded instances will be reused instead, improving responsiveness at "
+#~ "the expense of the memory required by the preloaded instances.</p>"
+#~ msgstr ""
+#~ "<p>Dizze opsje soarget derfoar dat eksimplaren fan Konqueror yn it "
+#~ "ûnthâld bewarre bliuwe ast de byhearrende finsters ôfsluten hast, mei as "
+#~ "maksimum it hjir ynfierde oantal.</p><p>At der in nij eksimplaar nedich "
+#~ "is fan Konqueror dan sil ien fan de foarladen eksimplaren opnij brûkt "
+#~ "wurde. Dit soarget foar in bettere reaksjefluggens fan Konqueror, mar "
+#~ "soarget wol foar mear ûnthâld gebrûk foar de foarladen eksimplaren.</p>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<p>If enabled, an instance of Konqueror will be preloaded after the "
+#~ "ordinary KDE startup sequence.</p><p>This will make the first Konqueror "
+#~ "window open faster, but at the expense of longer KDE startup times (but "
+#~ "you will be able to work while it is loading, so you may not even notice "
+#~ "that it is taking longer).</p>"
+#~ msgstr ""
+#~ "<p>Dizze opsje soarget derfoar dat Konqueror foarladen wurd ûnder it "
+#~ "starten fan KDE.</p><p>Hjirtroch sil it earste Konqueror-finster dyst "
+#~ "iepenst flugger opkomme, mar soarget der wol foar dat it starten fan KDE "
+#~ "langer duorret. En fierder kinst ûnder it foarladen fan Konqueror gewoan "
+#~ "dyn kompjûter brûke, sa merkst miskien net iens dat KDE langer wurk hat.</"
+#~ "p>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<p>If enabled, KDE will always try to have one preloaded Konqueror "
+#~ "instance ready; preloading a new instance in the background whenever "
+#~ "there is not one available, so that windows will always open quickly.</"
+#~ "p><p><b>Warning:</b> In some cases, it is actually possible that this "
+#~ "will reduce perceived performance.</p>"
+#~ msgstr ""
+#~ "<p>Dizze opsje soarget derfoar dat KDE probearret om altyd in foarladen "
+#~ "eksimplaar fan Konqueror startklear te hâlden, wêrby in nij eksimplaar op "
+#~ "de eftergrûn laden wurd at der gjin finsters fan Konqueror (mear) "
+#~ "iepenstean. Hjirtroch sille nije finster flugger opkomme.</"
+#~ "p><p><b>Warskôging:</b> der binne gefallen wêryn dat dizze opsje nojust "
+#~ "soarget dat it systeem trager wurd.</p>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
+#~ "performance here."
+#~ msgstr ""
+#~ "<h1>KDE-prestaasje</h1>Hjir kinst de fluggens en de prestaasje  fan KDE "
+#~ "ferbetterje."
+
+# msgid "S&ystem"
+#, fuzzy
+#~ msgid "System"
+#~ msgstr "Systeem"
+
+#, fuzzy
+#~ msgid ""
+#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
+#~ "improve Konqueror performance here. These include options for reusing "
+#~ "already running instances and for keeping instances preloaded."
+#~ msgstr ""
+#~ "<h1>Konqueror-prestaasje</h1> Hjir kinst de prestaasjes fan Konqueror "
+#~ "ferbetterje. Do fynst hjir bygelyks.opsjes foar it wer brûken fan al "
+#~ "starte eksemplaren en om Konqueror foarladen te hâlden."
+
+#~ msgid "No permissions to write to %1"
+#~ msgstr "Gjin tagongsrjochten om te skriuwen nei %1"
+
+#~ msgid "Save View Changes per &Folder"
+#~ msgstr "Werjeftewizigings de &map bewarje"
+
+#~ msgid "Remove Folder Properties"
+#~ msgstr "Eigenskippen fan map fuortsmite"
+
+#~ msgid "Create Folder..."
+#~ msgstr "Map oanmeitsje..."

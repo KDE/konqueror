@@ -1,0 +1,66 @@
+# translation of akregator_konqplugin.po to Kazakh
+#
+# Sairan Kikkarin <sairan@computer.org>, 2006, 2007, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: akregator_konqplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2011-06-14 05:19+0600\n"
+"Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
+"Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
+"Language: kk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"\n"
+
+#: akregatorplugin.cpp:63
+#, fuzzy, kde-format
+#| msgid "Add Feed to Akregator"
+msgctxt "@action:inmenu"
+msgid "Add Feed to Akregator"
+msgstr "Akregator-ға ақпарды қосу"
+
+#: konqfeedicon.cpp:127
+#, kde-format
+msgid "Add Feed to Akregator"
+msgstr "Akregator-ға ақпарды қосу"
+
+#: konqfeedicon.cpp:129
+#, kde-format
+msgid "Add Feeds to Akregator"
+msgstr "Akregator-ға ақпарларды қосу"
+
+#: konqfeedicon.cpp:138
+#, kde-format
+msgid "Add All Found Feeds to Akregator"
+msgstr "Akregator-ға барлық табылған ақпарларды қосу"
+
+#: konqfeedicon.cpp:162
+#, kde-format
+msgid "Subscribe to site updates (using news feed)"
+msgstr "Бұл сайттағы жаңалықтарды бақылау (RSS ақпары арқылы)"
+
+#: pluginutil.cpp:36 pluginutil.cpp:46
+#, kde-format
+msgid "Imported Feeds"
+msgstr "Импортталған ақпарлар"
+
+#: pluginutil.cpp:38
+#, kde-format
+msgid "Unable to contact Akregator via D-Bus"
+msgstr ""
+
+#: pluginutil.cpp:39
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "The DBus call addFeedToGroup failed"
+msgctxt "@title:window"
+msgid "D-Bus call failed"
+msgstr "DBus-тың addFeedToGroup шақыру жаңылысы"
+
+#~ msgid "Akregator feed icon - DBus Call failed"
+#~ msgstr "Akregator ақпарының таңбашасы - DBus шақыру жаңылысы"

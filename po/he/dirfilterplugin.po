@@ -1,0 +1,85 @@
+# translation of dirfilterplugin.po to hebrew
+# KDE Hebrew Localization Project
+# Translation of dirfilterplugin.po into Hebrew
+#
+# In addition to the copyright owners of the program
+# which this translation accompanies, this translation is
+# Copyright (C) 2001-2002 Meni Livne <livne@kde.org>
+#
+# This translation is subject to the same Open Source
+# license as the program which it accompanies.
+#
+# Diego Iastrubni <elcuco@kdemail.net>, 2004.
+# Diego Iastrubni <elcuco@kde.org>, 2005, 2014.
+# Elkana Bardugo <ttv200@gmail.com>, 2017. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: dirfilterplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2017-05-16 06:36-0400\n"
+"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
+"Language-Team: Hebrew <kde-i18n-doc@kde.org>\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Zanata 3.9.6\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: dirfilterplugin.cpp:120
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Hide Filter Bar"
+msgstr "הסתר מסנן תצוגה"
+
+#: dirfilterplugin.cpp:124
+#, kde-format
+msgctxt "@label:textbox"
+msgid "F&ilter:"
+msgstr "מ&סנן:"
+
+#: dirfilterplugin.cpp:136
+#, kde-format
+msgctxt "@label:button"
+msgid "Filter by t&ype"
+msgstr "סנן לפי &סוג"
+
+#: dirfilterplugin.cpp:137
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Filter items by file type."
+msgstr "סנן פרטים לפי סוג הקובץ."
+
+#: dirfilterplugin.cpp:228
+#, kde-format
+msgctxt "@action:inmenu Tools"
+msgid "Show Filter Bar"
+msgstr "הצג את סרגל כלים של מסננים"
+
+#: dirfilterplugin.cpp:322
+#, kde-format
+msgid "Use Multiple Filters"
+msgstr "השתמש במסננים מרובים"
+
+#: dirfilterplugin.cpp:328
+#, kde-format
+msgid "Show Count"
+msgstr "הסתר מספר"
+
+#: dirfilterplugin.cpp:333
+#, kde-format
+msgid "Reset"
+msgstr "אפס"
+
+#. i18n: ectx: Menu (tools)
+#: dirfilterplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "&כלים"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: dirfilterplugin.rc:8
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "סרגל כלים נוסף"

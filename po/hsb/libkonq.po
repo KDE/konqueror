@@ -1,0 +1,200 @@
+# translation of libkonq.po to Upper Sorbian
+# Copyright (C) 2003,2004 Free Software Foundation, Inc.
+# Prof. Dr. Eduard Werner <e.werner@rz.uni-leipzig.de>, 2003,2004
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2021-10-18 15:51+0200\n"
+"Last-Translator: Prof. Dr. Eduard Werner <e.werner@rz.uni-leipzig.de>\n"
+"Language-Team: Upper Sorbian\n"
+"Language: hsb\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3;\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "W&očinić"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "Za&pisk stworić ..."
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "Sta&ry staw"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr "Originalny zapisk pokazać"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr "Originalnu dataaju pokazać"
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "Papj&ernik wuprózdnić"
+
+#: src/konq_popupmenu.cpp:312
+#, kde-format
+msgid "&Configure Trash Bin"
+msgstr "Papjernik při&prawić"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "&Dodaj tutu stronu k zapołožkam"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "&Dodaj tute městno k zapołožkam"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "&Dodaj tutón zapisk k zapołožkam"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "&Dodaj tutón wotkaz k zapołožkam"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "&Dodaj tutu dataju k zapołožkam"
+
+#: src/konq_popupmenu.cpp:379
+#, kde-format
+msgid "Preview In"
+msgstr "Přehladku pokazać w"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr "Terminal tu wočinić"
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "&Swójstwa"
+
+#, fuzzy
+#~| msgid "Move to Trash"
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "Do papjernika ćisnyć"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "Nowy zapisk"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "Nowy zapisk"
+
+#, fuzzy
+#~| msgid "&Copy Here"
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "Sem &kopěrować"
+
+#, fuzzy
+#~| msgid "&Move Here"
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "&Sem přesunyć"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "Njemóžeće zapisk na so pušćić"
+
+#~ msgid "&Move Here"
+#~ msgstr "&Sem přesunyć"
+
+#~ msgid "&Copy Here"
+#~ msgstr "Sem &kopěrować"
+
+#~ msgid "&Link Here"
+#~ msgstr "Sem &wotkazać"
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "Za &tapetu postajić"
+
+#~ msgid "C&ancel"
+#~ msgstr "&Přetorhnyć"
+
+#, fuzzy
+#~| msgid "Create New"
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "Nowy stworić"
+
+#, fuzzy
+#~| msgid "Enter folder name:"
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "Mjeno zapiska zapodać:"
+
+#, fuzzy
+#~| msgid "Create New"
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "Nowy stworić"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "Nowy zapisk"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "Nowy zapisk"
+
+#, fuzzy
+#~| msgid "Enter folder name:"
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "Mjeno zapiska zapodać:"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "Nowy zapisk"
+
+#~ msgid "Share"
+#~ msgstr "Dźělić"
+
+#~ msgid "Create New"
+#~ msgstr "Nowy stworić"
+
+#, fuzzy
+#~ msgid "Link to Device"
+#~ msgstr "Grat"
+
+#, fuzzy
+#~ msgid "<qt>The template file <b>%1</b> does not exist.</qt>"
+#~ msgstr "<qt>Mustrowa dataja <b>%1</b> njeeksistuje.</qt>"
+
+#~ msgid "File name:"
+#~ msgstr "Mjeno dataje:"

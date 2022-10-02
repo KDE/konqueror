@@ -1,0 +1,337 @@
+<chapter id="faq">
+<chapterinfo>
+<authorgroup>
+<author
+><personname
+><firstname
+>Памела</firstname
+> <surname
+>Робертс</surname
+></personname
+></author>
+<othercredit role="translator"
+><firstname
+>Драган</firstname
+><surname
+>Пантелић</surname
+><affiliation
+><address
+><email
+>falcon-10@gmx.de</email
+></address
+></affiliation
+><contrib
+>превод</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>24. 10. 2010.</date>
+<releaseinfo
+>КДЕ 4.5</releaseinfo>
+</chapterinfo>
+
+<title
+>Питања и одговори</title>
+
+<qandaset>
+
+<!-- Link is dead, unfortunately. I suppose this is a more general thing anyway
+<qandaentry>
+<question
+><para
+>How can I browse web sites using non latin
+ scripts?</para
+></question>
+<answer
+><para
+>Detailed instructions can be found at <ulink
+url="http://www.konqueror.org/i18n.html"
+>http://www.konqueror.org/i18n.html</ulink
+></para
+></answer>
+</qandaentry>
+-->
+
+<qandaentry>
+<question
+><para
+>Могу ли да покренем <application
+>К‑освајач</application
+> под другим менаџером прозора?</para
+></question>
+
+<answer
+><para
+>Само инсталирајте КуТ, модуле <literal
+>kdelibs</literal
+> и <literal
+>kdebase</literal
+>, и покрените <application
+>К‑освајач</application
+> из свог омиљеног менаџера прозора. Требало би нормално да ради, а ако не (програмери <acronym
+>КДЕ‑а</acronym
+> не испитују често овај случај), пријавите проблем на <ulink url="http://bugs.kde.org"
+>http://bugs.kde.org</ulink
+>; често помаже и да извршите <command
+>kdeinit</command
+> пре покретања <application
+>К‑освајача</application
+>.</para
+></answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Где <application
+>К‑освајач</application
+> држи своје поставне податке?</para
+></question>
+<answer
+><para
+>Углавном у фасцикли <filename
+>~/.kde</filename
+> (на неким системима може бити и <filename
+>~/.kde4</filename
+>, већ према начину инсталирања <acronym
+>КДЕ‑а</acronym
+>). Не мењајте ручно фајлове у тој фасцикли осим ако заиста знате шта радите.</para>
+
+<itemizedlist>
+
+<listitem
+><para
+>Фасцикла <filename class="directory"
+>~/.kde/share/apps/konqueror/profiles</filename
+> садржи појединачне фајлове са поставкама за сваки од <link linkend="save-settings"
+>профила</link
+>.</para
+></listitem>
+
+<listitem
+><para
+>Обележивачи се држе у <filename class="directory"
+>~/.kde/share/apps/konqueror/bookmarks.xml</filename
+></para
+></listitem>
+<listitem
+><para
+>Колачићи се држе у <filename class="directory"
+>~/.kde/share/apps/kcookiejar/cookies</filename
+></para
+></listitem>
+<listitem
+><para
+>Историјат, који се користи за могућност самодопуне, налази се у <filename
+>~/.kde/share/config/konq_history</filename
+></para
+></listitem>
+
+<listitem
+><para
+>У фасцикли <filename class="directory"
+>~/.kde/share/config/</filename
+>, фајлови <filename
+>konqiconviewrc</filename
+>, <filename
+>konqlistviewrc</filename
+> и <filename
+>konquerorrc</filename
+> садрже мношто општих поставки.</para
+></listitem>
+
+<listitem
+><para
+>Фасцикла <filename class="directory"
+>~/.kde/share/cache-<replaceable
+>име‑домаћина</replaceable
+>/http/</filename
+> садржи кеш прегледача.</para
+></listitem>
+
+<listitem
+><para
+>Бочна трака користи фајлове и потфасцикле у <filename class="directory"
+>~/.kde/share/apps/konqsidebartng</filename
+></para
+></listitem>
+</itemizedlist>
+
+<para
+>Све поставке посебне по фасцикли стављају се у <literal role="extension"
+>.directory</literal
+> фајлове у датим фасциклама.</para
+></answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Како могу да очистим фајл историјата?</para
+></question>
+<answer
+><para
+>Постоје два „историјата“:</para>
+<itemizedlist>
+<listitem
+><para
+>Један се користи за допуну текста у пољу уноса траке локације. Да очистите овај, кликните <mousebutton
+>десним</mousebutton
+> на поље уноса и одаберите <guimenuitem
+>Очисти историјат</guimenuitem
+>.</para>
+</listitem>
+<listitem
+><para
+>Други је дневник посећених локација. Изаберите страницу историјата у бочној траци, кликните <mousebutton
+>десним</mousebutton
+> на неки унос и одаберите <guimenuitem
+>Уклони ставку</guimenuitem
+> (<keycap
+>Del</keycap
+>) да уклоните само тај унос, или <guimenuitem
+>Очисти историјат</guimenuitem
+> да уклоните све уносе.</para
+></listitem>
+</itemizedlist>
+<note
+><para
+>Такође можете употребити програм Чистач (из модула <literal
+>kdeutils</literal
+>), који омогућава чишћење колачића, фавикона, веб историјата и кеша, допуна формулара и смерница кеширања за посећене веб сајтове.</para
+></note>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Како да укључим, искључим или очистим кеш прегледача?</para
+></question
+> <answer>
+<para
+>Ако одаберете <menuchoice
+><guimenu
+>Прегледање Веба</guimenu
+><guimenuitem
+>Кеш</guimenuitem
+> </menuchoice
+> у дијалогу покренутом путем <menuchoice
+><guimenu
+>Подешавање</guimenu
+><guimenuitem
+>Подеси К‑освајач...</guimenuitem
+></menuchoice
+>, добићете дијалог који вам допушта да искључите кеш, очистите га или му подесите величину, и измените смернице кеширања.</para>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Како могу да изменим вредности прековремена која <application
+>К‑освајач</application
+> користи при прегледању Веба?</para
+></question
+> <answer>
+<para
+>У Системским поставкама, категорија <guilabel
+>Мрежа и повезивост</guilabel
+> на страници <menuchoice
+><guimenu
+>Мрежне поставке</guimenu
+> <guimenuitem
+>Поставке повезивања</guimenuitem
+></menuchoice
+>.</para>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Како постављам своју „домаћу“ страницу — ону која се учитава по покретању?</para
+></question>
+<answer
+><para
+><application
+>К‑освајач</application
+> има „домаћу фасциклу“ у режиму менаџера фајлова, а „домаћу страницу“ у режиму прегледача.</para>
+
+<para
+>Ове поставке можете изменити покретањем <menuchoice
+><guimenu
+>Подешавање</guimenu
+><guimenuitem
+>Подеси К‑освајач...</guimenuitem
+><guilabel
+>Опште</guilabel
+></menuchoice
+>.</para>
+
+<para
+><application
+>К‑освајачеву</application
+> почетну страницу у режиму менаџера фајлова задајете преко падајућег списка <guilabel
+>К‑освајач креће од:</guilabel
+>, избором једног од <guilabel
+>уводне странице</guilabel
+>, <guilabel
+>моје домаће странице</guilabel
+>, <guilabel
+>празне странице</guilabel
+> или <guilabel
+>мојих обележивача</guilabel
+>.</para>
+
+<para
+>У режиму прегледача, <application
+>К‑освајач</application
+> се покреће са уносом под <guilabel
+>Домаћа страница:</guilabel
+>.</para>
+
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Овде не могу да нађем одговор на моје питање.</para
+></question
+> 
+<answer>
+<para
+>Погледајте <ulink url="http://www.konqueror.org/faq.html"
+> http://www.konqueror.org/faq.html</ulink
+> или <ulink url="http://www.konqueror.org/konq-java.html"
+> http://www.konqueror.org/konq-java.html</ulink
+>.</para>
+<para
+>Више информација можете наћи на <ulink url="http://forum.kde.org/"
+>Форуму заједнице <acronym
+>КДЕ‑а</acronym
+></ulink
+> и на <ulink url="http://userbase.kde.org/Konqueror"
+><application
+>К‑освајачевој</application
+> страници на Корисничкој бази КДЕ‑а.</ulink
+>.</para>
+</answer>
+</qandaentry>
+
+</qandaset>
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

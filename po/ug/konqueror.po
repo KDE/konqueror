@@ -1,0 +1,2438 @@
+# Uyghur translation for konqueror.
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Sahran <sahran.ug@gmail.com>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-22 00:44+0000\n"
+"PO-Revision-Date: 2013-09-08 07:04+0900\n"
+"Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
+"Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
+"Language: ug\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "ئابدۇقادىر ئابلىز, غەيرەت كەنجى"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "sahran.ug@gmail.com,  gheyret@gmail.com"
+
+#: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4881
+#: src/konqmainwindow.cpp:4927
+#, kde-format
+msgid "no name"
+msgstr "ئاتسىز"
+
+#: src/konqextensionmanager.cpp:50
+#, fuzzy, kde-format
+#| msgid "Configure Extensions..."
+msgctxt "@title:window"
+msgid "Configure Extensions"
+msgstr "كېڭەيتمىلەرنى سەپلە…"
+
+#: src/konqextensionmanager.cpp:70
+#, kde-format
+msgid "Extensions"
+msgstr "كېڭەيتمىلەر"
+
+#: src/konqfactory.cpp:67
+#, kde-format
+msgid ""
+"There was an error loading the module %1.\n"
+"The diagnostics is:\n"
+"%2"
+msgstr ""
+"بۆلەك %1 نى ئوقۇۋاتقاندا خاتالىق كۆرۈلدى.\n"
+"دىئاگنوز نەتىجىسى:\n"
+"%2"
+
+#: src/konqframestatusbar.cpp:108
+#, kde-format
+msgid ""
+"Checking this box on at least two views sets those views as 'linked'. Then, "
+"when you change directories in one view, the other views linked with it will "
+"automatically update to show the current directory. This is especially "
+"useful with different types of views, such as a directory tree with an icon "
+"view or detailed view, and possibly a terminal emulator window."
+msgstr ""
+"ئەڭ كامىدا ئىككى كۆرۈنمە رەسىمدىن مۇشۇ ئەزانى تاللاپ بۇ كۆرۈنمە رەسىملەرنى "
+"«ئۇلانغان» قىلىپ بەلگىلەڭ ئاندىن، سىز بىر كۆرۈنمە رەسىمدە مۇندەرىجىنى "
+"ئۆزگەرتكەندە، باشقا ئۇنىڭ بىلەن ئۇلانغان رەسىم ئاپتوماتىك يېڭىلىنىدۇ ھەمدە "
+"نۆۋەتتىكى مۇندەرىجىنى كۆرسىتىدۇ . بۇ كۆپ دانە ئوخشاش بولمىغان تىپلىق كۆرۈنمە "
+"رەسىملەردە كېرەككە كېلىدۇ، مەسىلەن سىنبەلگە كۆرۈنمە رەسىمى ياكى تەپسىلىي "
+"كۆرۈنمە رەسىم، مۇندەرىجە دەرىخى ياكى تېرمىنالىنىڭ تەقلىدى كۆزنىكىدىن "
+"پايدىلىنىش."
+
+#: src/konqframestatusbar.cpp:154
+#, kde-format
+msgid "Close View"
+msgstr "كۆرۈنۈشنى ياپ"
+
+#: src/konqframestatusbar.cpp:232
+#, kde-format
+msgid "%1/s"
+msgstr "%1/s"
+
+#: src/konqframestatusbar.cpp:234
+#, kde-format
+msgid "Stalled"
+msgstr "توختىتىلدى"
+
+#: src/konqguiclients.cpp:51
+#, kde-format
+msgid "Preview &in %1"
+msgstr "%1 نىڭدا ئالدىن كۆزەت"
+
+#: src/konqguiclients.cpp:118
+#, kde-format
+msgid "Show %1"
+msgstr "%1 كۆرسەت"
+
+#: src/konqhistorydialog.cpp:39
+#, kde-format
+msgctxt "@title:window"
+msgid "History"
+msgstr "ئىز"
+
+#: src/konqhistorydialog.cpp:55 src/konqhistoryview.cpp:140
+#, kde-format
+msgctxt "@action:inmenu Parent of 'By Name' and 'By Date'"
+msgid "Sort"
+msgstr "تەرتىپلە"
+
+#: src/konqhistorymodel.cpp:119
+#, kde-format
+msgid ""
+"<qt><center><b>%1</b></center><hr />Last visited: %2<br />First visited: "
+"%3<br />Number of times visited: %4</qt>"
+msgstr ""
+"<qt><center><b>%1</b></center><hr />ئەڭ ئاخىرقى زىيارەت: %2<br />تۇنجى "
+"زىيارەت: %3<br />زىيارەت قېتىم سانى: %4</qt>"
+
+#: src/konqhistorymodel.cpp:213
+#, kde-format
+msgid "Local"
+msgstr "يەرلىك"
+
+#: src/konqhistorymodel.cpp:216
+#, kde-format
+msgid "Miscellaneous"
+msgstr "باشقىلار"
+
+#: src/konqhistoryview.cpp:53 src/konqmainwindow.cpp:4412
+#, kde-format
+msgid "Open in New &Window"
+msgstr "يېڭى كۆزنەكتە ئاچ(&W)"
+
+#: src/konqhistoryview.cpp:58
+#, kde-format
+msgid "Open in New Tab"
+msgstr "يېڭى بەتكۈچتە ئاچ"
+
+#: src/konqhistoryview.cpp:63
+#, fuzzy, kde-format
+#| msgid "Open in New Tab"
+msgid "Open in Current Tab"
+msgstr "يېڭى بەتكۈچتە ئاچ"
+
+#: src/konqhistoryview.cpp:67
+#, kde-format
+msgid "&Copy Link Address"
+msgstr "ئۇلانما ئادرېسىنى كۆچۈر(&C)"
+
+#: src/konqhistoryview.cpp:72
+#, kde-format
+msgid "&Remove Entry"
+msgstr "كىرگۈنى چىقىرىۋەت(&R)"
+
+#: src/konqhistoryview.cpp:79
+#, kde-format
+msgid "C&lear History"
+msgstr "ئىزنى تازىلا(&L)"
+
+#: src/konqhistoryview.cpp:84
+#, kde-format
+msgid "&Preferences..."
+msgstr "مايىللىق(&P)…"
+
+#: src/konqhistoryview.cpp:91
+#, kde-format
+msgid "By &Name"
+msgstr "ئاتى بويىچە(&N)"
+
+#: src/konqhistoryview.cpp:97
+#, kde-format
+msgid "By &Date"
+msgstr "چېسلا بويىچە"
+
+#: src/konqhistoryview.cpp:107
+#, kde-format
+msgid "Search in history"
+msgstr "ئىزدىن ئىزدە"
+
+#: src/konqhistoryview.cpp:168
+#, kde-format
+msgid "Do you really want to clear the entire history?"
+msgstr "پۈتۈن ئىزنى تازىلىۋېتەمسىز؟"
+
+#: src/konqhistoryview.cpp:169
+#, kde-format
+msgctxt "@title:window"
+msgid "Clear History?"
+msgstr "ئىزنى تازىلىسۇنمۇ؟"
+
+#: src/konqmain.cpp:170
+#, kde-format
+msgid "Konqueror"
+msgstr "Konqueror"
+
+#: src/konqmain.cpp:171
+#, kde-format
+msgid "Web browser, file manager and document viewer."
+msgstr "توركۆرگۈ، ھۆججەت باشقۇرغۇ ۋە پۈتۈك كۆرگۈ."
+
+#: src/konqmain.cpp:173
+#, fuzzy, kde-format
+#| msgid "(C) 1999-2008, The Konqueror developers"
+msgid "(C) 1999-2016, The Konqueror developers"
+msgstr "C) 1999-2008، Konqueror ئىجادىيەتچىلىرى"
+
+#: src/konqmain.cpp:176
+#, kde-format
+msgid "Stefano Crocco"
+msgstr ""
+
+#: src/konqmain.cpp:176
+#, kde-format
+msgid "Current maintainer"
+msgstr ""
+
+#: src/konqmain.cpp:177
+#, kde-format
+msgid "David Faure"
+msgstr "David Faure"
+
+#: src/konqmain.cpp:177
+#, fuzzy, kde-format
+#| msgid "Developer (framework, parts, JavaScript, I/O library) and maintainer"
+msgid ""
+"Developer (framework, parts, JavaScript, I/O library) and former maintainer"
+msgstr ""
+"ئىجادىيەتچى(framework، بۆلەكلەر، JavaScript، I/O فۇنكسىيە ئامبىرى) ۋە مەسئۇلى"
+
+#: src/konqmain.cpp:178
+#, kde-format
+msgid "Simon Hausmann"
+msgstr "Simon Hausmann"
+
+#: src/konqmain.cpp:178
+#, kde-format
+msgid "Developer (framework, parts)"
+msgstr "ئىجادىيەتچى(framework، بۆلەكلەر)"
+
+#: src/konqmain.cpp:179
+#, kde-format
+msgid "Michael Reiher"
+msgstr "Michael Reiher"
+
+#: src/konqmain.cpp:179 src/konqmain.cpp:207 src/konqmain.cpp:213
+#, kde-format
+msgid "Developer (framework)"
+msgstr "ئىجادىيەتچى(framework)"
+
+#: src/konqmain.cpp:180
+#, kde-format
+msgid "Matthias Welk"
+msgstr "Matthias Welk"
+
+#: src/konqmain.cpp:180
+#, kde-format
+msgid "Developer"
+msgstr "ئىجادىيەتچى"
+
+#: src/konqmain.cpp:181
+#, kde-format
+msgid "Alexander Neundorf"
+msgstr "Alexander Neundorf"
+
+#: src/konqmain.cpp:181
+#, kde-format
+msgid "Developer (List views)"
+msgstr "ئىجادىيەتچى(تىزىم كۆرۈنۈشى)"
+
+#: src/konqmain.cpp:182
+#, kde-format
+msgid "Michael Brade"
+msgstr "Michael Brade"
+
+#: src/konqmain.cpp:182
+#, kde-format
+msgid "Developer (List views, I/O library)"
+msgstr "ئىجادىيەتچى(تىزىم كۆرۈنۈشى، I/O فۇنكسىيە ئامبىرى)"
+
+#: src/konqmain.cpp:183
+#, kde-format
+msgid "Lars Knoll"
+msgstr "Lars Knoll"
+
+#: src/konqmain.cpp:183 src/konqmain.cpp:184 src/konqmain.cpp:185
+#: src/konqmain.cpp:187 src/konqmain.cpp:188 src/konqmain.cpp:190
+#: src/konqmain.cpp:191 src/konqmain.cpp:192 src/konqmain.cpp:193
+#: src/konqmain.cpp:195
+#, kde-format
+msgid "Developer (HTML rendering engine)"
+msgstr "ئىجادىيەتچى(HTML سىزىش ماتورى)"
+
+#: src/konqmain.cpp:184
+#, kde-format
+msgid "Dirk Mueller"
+msgstr "Dirk Mueller"
+
+#: src/konqmain.cpp:185
+#, kde-format
+msgid "Peter Kelly"
+msgstr "Peter Kelly"
+
+#: src/konqmain.cpp:186
+#, kde-format
+msgid "Waldo Bastian"
+msgstr "Waldo Bastian"
+
+#: src/konqmain.cpp:186
+#, kde-format
+msgid "Developer (HTML rendering engine, I/O library)"
+msgstr "ئىجادىيەتچى(HTML سىزىش ماتورى، I/O فۇنكسىيە ئامبىرى)"
+
+#: src/konqmain.cpp:187
+#, kde-format
+msgid "Germain Garand"
+msgstr "Germain Garand"
+
+#: src/konqmain.cpp:188
+#, kde-format
+msgid "Leo Savernik"
+msgstr "Leo Savernik"
+
+#: src/konqmain.cpp:189
+#, kde-format
+msgid "Stephan Kulow"
+msgstr "Stephan Kulow"
+
+#: src/konqmain.cpp:189
+#, kde-format
+msgid ""
+"Developer (HTML rendering engine, I/O library, regression test framework)"
+msgstr ""
+"ئىجادىيەتچى(HTML سىزىش ماتورى، I/O فۇنكسىيە ئامبىرى، regression سىناق "
+"framework)"
+
+#: src/konqmain.cpp:190
+#, kde-format
+msgid "Antti Koivisto"
+msgstr "Antti Koivisto"
+
+#: src/konqmain.cpp:191
+#, kde-format
+msgid "Zack Rusin"
+msgstr "Zack Rusin"
+
+#: src/konqmain.cpp:192
+#, kde-format
+msgid "Tobias Anton"
+msgstr "Tobias Anton"
+
+#: src/konqmain.cpp:193
+#, kde-format
+msgid "Lubos Lunak"
+msgstr "Lubos Lunak"
+
+#: src/konqmain.cpp:194
+#, kde-format
+msgid "Maks Orlovich"
+msgstr "Maks Orlovich"
+
+#: src/konqmain.cpp:194 src/konqmain.cpp:196
+#, kde-format
+msgid "Developer (HTML rendering engine, JavaScript)"
+msgstr "ئىجادىيەتچى(HTML سىزىش ماتورى، JavaScript)"
+
+#: src/konqmain.cpp:195
+#, kde-format
+msgid "Allan Sandfeld Jensen"
+msgstr "Allan Sandfeld Jensen"
+
+#: src/konqmain.cpp:196
+#, kde-format
+msgid "Apple Safari Developers"
+msgstr "ئالما(Apple) Safari ئىجادىيەتچىلىرى"
+
+#: src/konqmain.cpp:197
+#, kde-format
+msgid "Harri Porten"
+msgstr "Harri Porten"
+
+#: src/konqmain.cpp:197
+#, kde-format
+msgid "Developer (JavaScript)"
+msgstr "ئىجادىيەتچى(JavaScript)"
+
+#: src/konqmain.cpp:198
+#, kde-format
+msgid "Koos Vriezen"
+msgstr "Koos Vriezen"
+
+#: src/konqmain.cpp:198
+#, kde-format
+msgid "Developer (Java applets and other embedded objects)"
+msgstr "ئىجادىيەتچى(Java قوللانچاقلىرى ۋە باشقا سىڭدۈرمە نەڭلەر)"
+
+#: src/konqmain.cpp:199
+#, kde-format
+msgid "Matt Koss"
+msgstr "Matt Koss"
+
+#: src/konqmain.cpp:199 src/konqmain.cpp:200
+#, kde-format
+msgid "Developer (I/O library)"
+msgstr "ئىجادىيەتچى( I/O فۇنكسىيە ئامبىرى)"
+
+#: src/konqmain.cpp:200
+#, kde-format
+msgid "Alex Zepeda"
+msgstr "Alex Zepeda"
+
+#: src/konqmain.cpp:201
+#, kde-format
+msgid "Richard Moore"
+msgstr "Richard Moore"
+
+#: src/konqmain.cpp:201 src/konqmain.cpp:202
+#, kde-format
+msgid "Developer (Java applet support)"
+msgstr "ئىجادىيەتچى(Java قوللانچاقلىرىنى قوللاش)"
+
+#: src/konqmain.cpp:202
+#, kde-format
+msgid "Dima Rogozin"
+msgstr "Dima Rogozin"
+
+#: src/konqmain.cpp:203
+#, kde-format
+msgid "Wynn Wilkes"
+msgstr "Wynn Wilkes"
+
+#: src/konqmain.cpp:203
+#, kde-format
+msgid ""
+"Developer (Java 2 security manager support,\n"
+" and other major improvements to applet support)"
+msgstr ""
+"ئىجادىيەتچى(Java 2 بىخەتەرلىك باشقۇرغۇچىنى قوللاش)،\n"
+"ۋە باشقا قوللانچاق(applet) قوللاشنى ياخشىلاش)"
+
+#: src/konqmain.cpp:204
+#, kde-format
+msgid "Stefan Schimanski"
+msgstr "Stefan Schimanski"
+
+#: src/konqmain.cpp:204
+#, kde-format
+msgid "Developer (Netscape plugin support)"
+msgstr "ئىجادىيەتچى(Netscape قىستۇرمىلىرىنى قوللاش)"
+
+#: src/konqmain.cpp:205
+#, kde-format
+msgid "George Staikos"
+msgstr "George Staikos"
+
+#: src/konqmain.cpp:205
+#, kde-format
+msgid "Developer (SSL, Netscape plugins)"
+msgstr "ئىجادىيەتچى(SSL، Netscape قىستۇرمىلىرى)"
+
+#: src/konqmain.cpp:206
+#, kde-format
+msgid "Dawit Alemayehu"
+msgstr "Dawit Alemayehu"
+
+#: src/konqmain.cpp:206
+#, kde-format
+msgid "Developer (I/O library, Authentication support)"
+msgstr "ئىجادىيەتچى(I/O فۇنكسىيە ئامبىرى، كىملىك دەلىللەشنى قوللاش)"
+
+#: src/konqmain.cpp:207
+#, kde-format
+msgid "Carsten Pfeiffer"
+msgstr "Carsten Pfeiffer"
+
+#: src/konqmain.cpp:208
+#, kde-format
+msgid "Torsten Rahn"
+msgstr "Torsten Rahn"
+
+#: src/konqmain.cpp:208
+#, kde-format
+msgid "Graphics/icons"
+msgstr "گرافىكلار/سىنبەلگىلەر"
+
+#: src/konqmain.cpp:209
+#, kde-format
+msgid "Torben Weis"
+msgstr "Torben Weis"
+
+#: src/konqmain.cpp:209
+#, kde-format
+msgid "KFM author"
+msgstr "KFM ئاپتورى"
+
+#: src/konqmain.cpp:210
+#, kde-format
+msgid "Joseph Wenninger"
+msgstr "Joseph Wenninger"
+
+#: src/konqmain.cpp:210
+#, kde-format
+msgid "Developer (navigation panel framework)"
+msgstr "ئىجادىيەتچى(يولباشچى تاختا framework)"
+
+#: src/konqmain.cpp:211
+#, kde-format
+msgid "Stephan Binner"
+msgstr "Stephan Binner"
+
+#: src/konqmain.cpp:211
+#, kde-format
+msgid "Developer (misc stuff)"
+msgstr "ئىجادىيەتچى(باش ئىشلار)"
+
+#: src/konqmain.cpp:212
+#, kde-format
+msgid "Ivor Hewitt"
+msgstr "Ivor Hewitt"
+
+#: src/konqmain.cpp:212
+#, kde-format
+msgid "Developer (AdBlock filter)"
+msgstr "ئىجادىيەتچى(AdBlock سۈزگۈچى)"
+
+#: src/konqmain.cpp:213
+#, kde-format
+msgid "Eduardo Robles Elvira"
+msgstr "Eduardo Robles Elvira"
+
+#: src/konqmain.cpp:223
+#, kde-format
+msgid "Start without a default window, when called without URLs"
+msgstr "URLs يوق ھالەتتە چاقىرغاندا، كۆڭۈلدىكى كۆزنەكسىز ھالەتتە باشلايدۇ"
+
+#: src/konqmain.cpp:224
+#, kde-format
+msgid ""
+"Preload for later use. This mode does not support URLs on the command line"
+msgstr ""
+"كېيىنلىكنى ئويلاپ ئالدىن ئوقۇش. بۇ ھالەت بۇيرۇق قۇرىدا URLs نى قوللىمايدۇ"
+
+#: src/konqmain.cpp:225
+#, kde-format
+msgid "Profile to open (DEPRECATED, IGNORED)"
+msgstr ""
+
+#: src/konqmain.cpp:225
+#, kde-format
+msgid "profile"
+msgstr ""
+
+#: src/konqmain.cpp:226
+#, kde-format
+msgid "List available sessions"
+msgstr "بار ئەڭگىمەلەرنى تىزىپ كۆرسەت"
+
+#: src/konqmain.cpp:227
+#, kde-format
+msgid "Session to open"
+msgstr "ئاچىدىغان ئەڭگىمە"
+
+#: src/konqmain.cpp:227
+#, fuzzy, kde-format
+#| msgid "Sessions"
+msgid "session"
+msgstr "ئەڭگىمە"
+
+#: src/konqmain.cpp:228
+#, kde-format
+msgid "Mimetype to use for this URL (e.g. text/html or inode/directory)"
+msgstr ""
+"مەزكۇر URL دا ئىشلىتىلىدىغان Mime تىپى(مەسىلەن: text/html ياكى inode/"
+"directory دېگەندەك)"
+
+#: src/konqmain.cpp:228
+#, kde-format
+msgid "mimetype"
+msgstr ""
+
+#: src/konqmain.cpp:229
+#, kde-format
+msgid "Part to use (e.g. khtml or kwebkitpart)"
+msgstr "ئىشلىتىلىدىغان بۆلەك(مەسىلەن: khtml ياكى kwebkitpart)"
+
+#: src/konqmain.cpp:229
+#, kde-format
+msgid "service"
+msgstr ""
+
+#: src/konqmain.cpp:230
+#, kde-format
+msgid ""
+"For URLs that point to files, opens the directory and selects the file, "
+"instead of opening the actual file"
+msgstr ""
+
+#: src/konqmain.cpp:231
+#, kde-format
+msgid "The files/URLs opened by the application will be deleted after use"
+msgstr ""
+
+#: src/konqmain.cpp:233
+#, kde-format
+msgid "Location to open"
+msgstr "ئاچىدىغان ئورۇن"
+
+#: src/konqmainwindow.cpp:658
+#, kde-format
+msgctxt "@title:tab"
+msgid "Loading..."
+msgstr "ئوقۇۋاتىدۇ…"
+
+#: src/konqmainwindow.cpp:690
+#, kde-format
+msgid "Access denied"
+msgstr ""
+
+#: src/konqmainwindow.cpp:1465
+#, fuzzy, kde-format
+#| msgid "&Open File..."
+msgid "Open File"
+msgstr "ھۆججەت ئاچ(&O)…"
+
+#: src/konqmainwindow.cpp:1548
+#, kde-format
+msgid "Canceled."
+msgstr "بىكار قىلىندى."
+
+#: src/konqmainwindow.cpp:1584
+#, kde-format
+msgid ""
+"This page contains changes that have not been submitted.\n"
+"Reloading the page will discard these changes."
+msgstr ""
+"بۇ بەتتە تاپشۇرۇلمىغان ئۆزگىرىشلەر بار ئىكەن.\n"
+"بىر profile نى قايتا ئوقۇسا ئۆزگىرىشلەر تاشلىۋېتىلىدۇ."
+
+#: src/konqmainwindow.cpp:1585 src/konqmainwindow.cpp:2282
+#: src/konqmainwindow.cpp:2375 src/konqmainwindow.cpp:2407
+#: src/konqmainwindow.cpp:2450 src/konqmainwindow.cpp:2472
+#: src/konqmainwindow.cpp:4849
+#, kde-format
+msgctxt "@title:window"
+msgid "Discard Changes?"
+msgstr "ئۆزگىرىشلەرنى تاشلىۋەتسۇنمۇ؟"
+
+#: src/konqmainwindow.cpp:1585 src/konqmainwindow.cpp:2282
+#: src/konqmainwindow.cpp:2375 src/konqmainwindow.cpp:2407
+#: src/konqmainwindow.cpp:2450 src/konqmainwindow.cpp:2473
+#: src/konqmainwindow.cpp:4849
+#, kde-format
+msgid "&Discard Changes"
+msgstr "ئۆزگىرىشلەرنى تاشلىۋەت(&D)"
+
+#: src/konqmainwindow.cpp:1952 src/konqmainwindow.cpp:1958
+#, kde-format
+msgid "Home Folder"
+msgstr "ماكان مۇندەرىجە"
+
+#: src/konqmainwindow.cpp:1953 src/konqmainwindow.cpp:3424
+#, kde-format
+msgid "Home"
+msgstr "ماكان"
+
+#: src/konqmainwindow.cpp:1959
+#, kde-format
+msgid "Navigate to your 'Home Folder'"
+msgstr "«ماكان مۇندەرىجە» گە باشلايدۇ"
+
+#: src/konqmainwindow.cpp:1960
+#, kde-format
+msgid "Navigate to your local 'Home Folder'"
+msgstr "يەرلىكتىكى «ماكان مۇندەرىجە» گە باشلايدۇ"
+
+#. i18n: ectx: label, entry, group (UserSettings)
+#: src/konqmainwindow.cpp:1963 src/konqueror.kcfg:16
+#, kde-format
+msgid "Home Page"
+msgstr "باش بەت"
+
+#: src/konqmainwindow.cpp:1965
+#, kde-format
+msgid "Navigate to your 'Home Page'"
+msgstr "«باش بەت»كە باشلايدۇ"
+
+#: src/konqmainwindow.cpp:1966
+#, kde-format
+msgid ""
+"<html>Navigate to your 'Home Page'<br /><br />You can configure the location "
+"where this button takes you under <b>Settings -> Configure Konqueror -> "
+"General</b>.</html>"
+msgstr ""
+
+#: src/konqmainwindow.cpp:2281
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Detaching the tab will discard these changes."
+msgstr ""
+"بۇ بەتكۈچتە تاپشۇرۇلمىغان ئۆزگىرىشلەر بار ئىكەن.\n"
+"بۇ بەتكۈچ ئاجرىتىلسا ئۆزگىرىشلەر تاشلىۋېتىلىدۇ."
+
+#: src/konqmainwindow.cpp:2374
+#, kde-format
+msgid ""
+"This view contains changes that have not been submitted.\n"
+"Closing the view will discard these changes."
+msgstr ""
+"بۇ كۆرۈنۈشتە تاپشۇرۇلمىغان ئۆزگىرىشلەر بار ئىكەن.\n"
+"بۇ كۆرۈنۈش يېپىلسا ئۆزگىرىشلەر تاشلىۋېتىلىدۇ."
+
+#: src/konqmainwindow.cpp:2406
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Closing the tab will discard these changes."
+msgstr ""
+"بۇ بەتكۈچتە تاپشۇرۇلمىغان ئۆزگىرىشلەر بار ئىكەن.\n"
+"بۇ بەتكۈچ يېپىلسا ئۆزگىرىشلەر تاشلىۋېتىلىدۇ."
+
+#: src/konqmainwindow.cpp:2432
+#, kde-format
+msgid "Do you really want to close all other tabs?"
+msgstr "راستلا ھەممە بەتكۈچلەرنى ياپامسىز؟"
+
+#: src/konqmainwindow.cpp:2433 src/konqmainwindow.cpp:3505 src/konqtabs.cpp:335
+#, kde-format
+msgid "Close &Other Tabs"
+msgstr "باشقا بەتكۈچلەرنى ياپ(&O)"
+
+#: src/konqmainwindow.cpp:2433
+#, kde-format
+msgctxt "@title:window"
+msgid "Close Other Tabs Confirmation"
+msgstr ""
+
+#: src/konqmainwindow.cpp:2449
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Closing other tabs will discard these changes."
+msgstr ""
+"بۇ بەتكۈچتە تاپشۇرۇلمىغان ئۆزگىرىشلەر بار ئىكەن.\n"
+"باشقا بەتكۈچلەر يېپىلسا ئۆزگىرىشلەر تاشلىۋېتىلىدۇ."
+
+#: src/konqmainwindow.cpp:2471
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Reloading all tabs will discard these changes."
+msgstr ""
+"بۇ بەتكۈچتە تاپشۇرۇلمىغان ئۆزگىرىشلەر بار ئىكەن.\n"
+"ھەممە بەتكۈچلەرنى قايتا ئوقۇسا ئۆزگىرىشلەر تاشلىۋېتىلىدۇ."
+
+#: src/konqmainwindow.cpp:2513
+#, kde-format
+msgctxt "@title:window"
+msgid "Enter Target"
+msgstr "نىشاننى كىرگۈزۈش"
+
+#: src/konqmainwindow.cpp:2520
+#, kde-format
+msgid "<qt><b>%1</b> is not valid</qt>"
+msgstr "<qt><b>%1</b> ئىناۋەتلىك ئەمەس</qt>"
+
+#: src/konqmainwindow.cpp:2530
+#, kde-format
+msgid "Copy selected files from %1 to:"
+msgstr "%1 دىن تاللانغان ھۆججەتلەرنى كۆچۈر:"
+
+#: src/konqmainwindow.cpp:2543
+#, kde-format
+msgid "Move selected files from %1 to:"
+msgstr "تاللانغان ھۆججەتنى %1 دىن يۆتكە:"
+
+#: src/konqmainwindow.cpp:2717
+#, kde-format
+msgctxt "This menu entry empties the closed items history"
+msgid "Empty Closed Items History"
+msgstr "يېپىلغان تۇر ئىزىنى قۇرۇقدا"
+
+#: src/konqmainwindow.cpp:2740
+#, kde-format
+msgid "Save As..."
+msgstr "باشقا ئاتتا ساقلا…"
+
+#: src/konqmainwindow.cpp:2742
+#, kde-format
+msgid "Manage..."
+msgstr "باشقۇر…"
+
+#: src/konqmainwindow.cpp:3333
+#, kde-format
+msgid "New &Window"
+msgstr "يېڭى كۆزنەك(&W)"
+
+#: src/konqmainwindow.cpp:3338
+#, kde-format
+msgid "&Duplicate Window"
+msgstr "كۆزنەكنى كۆپەيت(&D)"
+
+#: src/konqmainwindow.cpp:3343
+#, kde-format
+msgid "Send &Link Address..."
+msgstr "ئۇلانما ئادرېسىنى ئەۋەت(L)…"
+
+#: src/konqmainwindow.cpp:3347
+#, kde-format
+msgid "S&end File..."
+msgstr "ھۆججەت ئەۋەت(&E)…"
+
+#: src/konqmainwindow.cpp:3351
+#, kde-format
+msgid "&Open Location"
+msgstr "ئورۇن ئاچ(&O)"
+
+#: src/konqmainwindow.cpp:3357
+#, kde-format
+msgid "&Open File..."
+msgstr "ھۆججەت ئاچ(&O)…"
+
+#: src/konqmainwindow.cpp:3362
+#, kde-format
+msgid "&Find File..."
+msgstr "ھۆججەت ئىزدە(&F)…"
+
+#: src/konqmainwindow.cpp:3371
+#, kde-format
+msgid "Lock to Current Location"
+msgstr "نۆۋەتتىكى ئورۇننى قۇلۇپلا"
+
+#: src/konqmainwindow.cpp:3374
+#, kde-format
+msgctxt "This option links konqueror views"
+msgid "Lin&k View"
+msgstr "كۆرۈنۈشنى ئۇلا(&K)"
+
+#: src/konqmainwindow.cpp:3379
+#, kde-format
+msgid "&Up"
+msgstr "يۇقىرىغا (&U)"
+
+#: src/konqmainwindow.cpp:3389
+#, kde-format
+msgid "Closed Items"
+msgstr "يېپىلغان تۈرلەر"
+
+#: src/konqmainwindow.cpp:3402
+#, kde-format
+msgid "Sessions"
+msgstr "ئەڭگىمە"
+
+#: src/konqmainwindow.cpp:3429
+#, kde-format
+msgctxt "@action:inmenu Go"
+msgid "Most Often Visited"
+msgstr "كۆپ زىيارەت قىلىنغان"
+
+#: src/konqmainwindow.cpp:3433
+#, kde-format
+msgctxt "@action:inmenu Go"
+msgid "Recently Visited"
+msgstr "يېقىندا زىيارەت قىلىنغان"
+
+#: src/konqmainwindow.cpp:3442
+#, kde-format
+msgctxt "@action:inmenu Go"
+msgid "Show History"
+msgstr "تارىخنى كۆرسەت"
+
+#: src/konqmainwindow.cpp:3455
+#, kde-format
+msgid "Configure Extensions..."
+msgstr "كېڭەيتمىلەرنى سەپلە…"
+
+#: src/konqmainwindow.cpp:3459
+#, kde-format
+msgid "Configure Spell Checking..."
+msgstr "ئىملا تەكشۈرۈشنى سەپلە"
+
+#: src/konqmainwindow.cpp:3465
+#, kde-format
+msgid "Split View &Left/Right"
+msgstr "كۆرۈنۈشنى پارچىلا سول/ئوڭ(&L)"
+
+#: src/konqmainwindow.cpp:3470
+#, kde-format
+msgid "Split View &Top/Bottom"
+msgstr "كۆرۈنۈشنى پارچىلا ئۇستى/ئاستى(&T)"
+
+#: src/konqmainwindow.cpp:3475 src/konqtabs.cpp:456
+#, kde-format
+msgid "&New Tab"
+msgstr "يېڭى بەتكۈچ(&N)"
+
+#: src/konqmainwindow.cpp:3484
+#, kde-format
+msgid "&Duplicate Current Tab"
+msgstr "نۆۋەتتىكى بەتكۈچنى كۆپەيت(&D)"
+
+#: src/konqmainwindow.cpp:3489
+#, kde-format
+msgid "Detach Current Tab"
+msgstr "نۆۋەتتىكى بەتكۈچنى ئاجرات"
+
+#: src/konqmainwindow.cpp:3494
+#, kde-format
+msgid "&Close Active View"
+msgstr "ئاكتىپ كۆرۈنۈشنى ياپ(&C)"
+
+#: src/konqmainwindow.cpp:3499
+#, kde-format
+msgid "Close Current Tab"
+msgstr "نۆۋەتتىكى بەتكۈچنى ياپ"
+
+#: src/konqmainwindow.cpp:3509
+#, kde-format
+msgid "Activate Next Tab"
+msgstr "كېيىنكى بەتكۈچنى ئاكتىپلا"
+
+#: src/konqmainwindow.cpp:3513
+#, kde-format
+msgid "Activate Previous Tab"
+msgstr "ئالدىنقى بەتكۈچنى ئاكتىپلا"
+
+#: src/konqmainwindow.cpp:3520
+#, kde-format
+msgid "Activate Tab %1"
+msgstr "بەتكۈچ %1 نى ئاكتىپلا"
+
+#: src/konqmainwindow.cpp:3525
+#, kde-format
+msgid "Move Tab Left"
+msgstr "بەتكۈچنى سولغا يۆتكە"
+
+#: src/konqmainwindow.cpp:3530
+#, kde-format
+msgid "Move Tab Right"
+msgstr "بەتكۈچنى ئوڭغا يۆتكە"
+
+#: src/konqmainwindow.cpp:3538
+#, kde-format
+msgid "Dump Debug Info"
+msgstr "سازلاش ئۇچۇرىنى تولۇق كۆرسەت"
+
+#: src/konqmainwindow.cpp:3556
+#, kde-format
+msgid "&Reload"
+msgstr "قايتا يۈكلە(&R)"
+
+#: src/konqmainwindow.cpp:3561 src/konqtabs.cpp:313
+#, kde-format
+msgid "&Reload All Tabs"
+msgstr "ھەممە بەتكۈچلەرنى قايتا يۈكلە(&R)"
+
+#: src/konqmainwindow.cpp:3569
+#, kde-format
+msgid "&Force Reload"
+msgstr "مەجبۇرىي قايتا ئوقۇ(&F)"
+
+#: src/konqmainwindow.cpp:3595
+#, kde-format
+msgid "&Stop"
+msgstr "توختا(&S)"
+
+#: src/konqmainwindow.cpp:3604
+#, kde-format
+msgid "Throbber"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3608 src/konqmainwindow.cpp:3611
+#, kde-format
+msgid "L&ocation: "
+msgstr "ئورۇن(&O): "
+
+#: src/konqmainwindow.cpp:3618
+#, kde-format
+msgid "Location Bar"
+msgstr "ئادرېس ئىستونى"
+
+#: src/konqmainwindow.cpp:3624
+#, kde-format
+msgid ""
+"<html>Location Bar<br /><br />Enter a web address or search term.</html>"
+msgstr ""
+"<html>ئورۇن بالدىقى<br /><br />تور ئادرېسى ياكى ئىزدەيدىغان ئىبارىنى "
+"كىرگۈزۈڭ.</html>"
+
+#: src/konqmainwindow.cpp:3628
+#, kde-format
+msgid "Clear Location Bar"
+msgstr "ئورۇن بالدىقىنى تازىلا"
+
+#: src/konqmainwindow.cpp:3632
+#, kde-format
+msgid ""
+"<html>Clear Location bar<br /><br />Clears the contents of the location bar."
+"</html>"
+msgstr ""
+"<html>ئورۇن بالدىقىنى تازىلا<br /><br />ئورۇن بالدىقىدىكى مەزمۇنلارنى "
+"تازىلايدۇ.</html>"
+
+#: src/konqmainwindow.cpp:3637
+#, kde-format
+msgid "&Bookmarks"
+msgstr "خەتكۈچلەر(&B)"
+
+#: src/konqmainwindow.cpp:3665
+#, kde-format
+msgid "Kon&queror Introduction"
+msgstr "Konqueror نى تونۇشتۇرۇش(&Q)"
+
+#: src/konqmainwindow.cpp:3670
+#, kde-format
+msgid "Go"
+msgstr "يۆتكەل"
+
+#: src/konqmainwindow.cpp:3672
+#, kde-format
+msgid ""
+"<html>Go<br /><br />Goes to the page that has been entered into the location "
+"bar.</html>"
+msgstr ""
+"<html>يۆتكەل<br /><br />ئورۇن بالدىقىغا كىرگۈزۈلگەن بەتكە يۆتكىلىدۇ.</html>"
+
+#: src/konqmainwindow.cpp:3678
+#, kde-format
+msgid ""
+"<html>Enter the parent folder<br /><br />For instance, if the current "
+"location is file:/home/%1 clicking this button will take you to file:/home.</"
+"html>"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3681
+#, kde-format
+msgid "Enter the parent folder"
+msgstr "ئاتا قىسقۇچنى كىرگۈزۈڭ"
+
+#: src/konqmainwindow.cpp:3683 src/konqmainwindow.cpp:3684
+#, kde-format
+msgid "Move backwards one step in the browsing history"
+msgstr "كۆرۈش ئىزىنىڭ كەينىگە بىر قەدەم يانىدۇ"
+
+#: src/konqmainwindow.cpp:3686 src/konqmainwindow.cpp:3687
+#, kde-format
+msgid "Move forward one step in the browsing history"
+msgstr "كۆرۈش ئىزىنىڭ ئالدىغا بىر قەدەم ماڭىدۇ"
+
+#: src/konqmainwindow.cpp:3689 src/konqmainwindow.cpp:3690
+#, kde-format
+msgid "Move backwards one step in the closed tabs history"
+msgstr "يېپىلغان بەتكۈچلەر ئىزىنىڭ كەينىگە بىر قەدەم يانىدۇ"
+
+#: src/konqmainwindow.cpp:3692
+#, kde-format
+msgid ""
+"<html>Reload the currently displayed document<br /><br />This may, for "
+"example, be needed to refresh web pages that have been modified since they "
+"were loaded, in order to make the changes visible.</html>"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3695
+#, kde-format
+msgid "Reload the currently displayed document"
+msgstr "نۆۋەتتە كۆرسىتىلگەن مەزمۇننى قايتا ئوقۇيدۇ"
+
+#: src/konqmainwindow.cpp:3697
+#, kde-format
+msgid ""
+"<html>Reload all currently displayed documents in tabs<br /><br />This may, "
+"for example, be needed to refresh web pages that have been modified since "
+"they were loaded, in order to make the changes visible.</html>"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3700
+#, kde-format
+msgid "Reload all currently displayed document in tabs"
+msgstr "بەتكۈچلەردىكى نۆۋەتتە كۆرسىتىلگەن مەزمۇننى قايتا ئوقۇيدۇ"
+
+#: src/konqmainwindow.cpp:3702
+#, kde-format
+msgid ""
+"<html>Stop loading the document<br /><br />All network transfers will be "
+"stopped and Konqueror will display the content that has been received so far."
+"</html>"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3706
+#, kde-format
+msgid ""
+"<html>Reload the currently displayed document<br /><br />This may, for "
+"example, be needed to refresh web pages that have been modified since they "
+"were loaded, in order to make the changes visible. Any images on the page "
+"are downloaded again, even if cached copies exist.</html>"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3710
+#, kde-format
+msgid ""
+"Force a reload of the currently displayed document and any contained images"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3712
+#, kde-format
+msgid "Stop loading the document"
+msgstr "پۈتۈكنى ئوقۇشنى توختىتىدۇ"
+
+#: src/konqmainwindow.cpp:3714
+#, kde-format
+msgid ""
+"<html>Cut the currently selected text or item(s) and move it to the system "
+"clipboard<br /><br />This makes it available to the <b>Paste</b> command in "
+"Konqueror and other KDE applications.</html>"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3718
+#, kde-format
+msgid "Move the selected text or item(s) to the clipboard"
+msgstr "تاللانغان تېكىست ياكى تۇرنى چاپلاش تاختىسىغا يۆتكە"
+
+#: src/konqmainwindow.cpp:3720
+#, kde-format
+msgid ""
+"<html>Copy the currently selected text or item(s) to the system "
+"clipboard<br /><br />This makes it available to the <b>Paste</b> command in "
+"Konqueror and other KDE applications.</html>"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3724
+#, kde-format
+msgid "Copy the selected text or item(s) to the clipboard"
+msgstr "تاللانغان تېكىست ياكى تۈرلەرنى چاپلاش تاختىسىغا كۆچۈر"
+
+#: src/konqmainwindow.cpp:3726
+#, kde-format
+msgid ""
+"<html>Paste the previously cut or copied clipboard contents<br /><br />This "
+"also works for text copied or cut from other KDE applications.</html>"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3729
+#, kde-format
+msgid "Paste the clipboard contents"
+msgstr "چاپلاش تاختىسىنىڭ مەزمۇنلىرىنى چاپلا"
+
+#: src/konqmainwindow.cpp:3731
+#, kde-format
+msgid ""
+"<html>Print the currently displayed document<br /><br />You will be "
+"presented with a dialog where you can set various options, such as the "
+"number of copies to print and which printer to use.<br /><br />This dialog "
+"also provides access to special KDE printing services such as creating a PDF "
+"file from the current document.</html>"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3737
+#, kde-format
+msgid "Print the current document"
+msgstr "نۆۋەتتىكى پۈتۈكنى باس"
+
+#: src/konqmainwindow.cpp:3739
+#, kde-format
+msgid ""
+"A locked view cannot change folders. Use in combination with 'link view' to "
+"explore many files from one folder"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3740
+#, kde-format
+msgid ""
+"Sets the view as 'linked'. A linked view follows folder changes made in "
+"other linked views."
+msgstr ""
+
+#: src/konqmainwindow.cpp:3744
+#, fuzzy, kde-format
+#| msgid "C&lose Current Tab"
+msgid "&Inspect Current Page"
+msgstr "ھازىرقى بەتكۈچنى ياپ(&L)"
+
+#: src/konqmainwindow.cpp:3745
+#, kde-format
+msgid ""
+"<html>Shows the developer tools for the current page<br/><br/>The current "
+"view is split in two and the developer tools are displayed in the second half"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3746
+#, kde-format
+msgid "Shows the developer tools for the current page"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3912
+#, kde-format
+msgid "Copy &Files..."
+msgstr "ھۆججەتلەرنى كۆچۈر(&F)…"
+
+#: src/konqmainwindow.cpp:3916
+#, kde-format
+msgid "M&ove Files..."
+msgstr "ھۆججەتلەرنى يۆتكە(&O)…"
+
+#: src/konqmainwindow.cpp:4245
+#, kde-format
+msgid ""
+"You have requested to open more than 20 bookmarks in tabs. This might take a "
+"while. Continue?"
+msgstr ""
+"بەتكۈچلەردە 20 دىن ئارتۇق خەتكۈشنى ئېچىشنى تەلەپ قىلدىڭىز. بۇنىڭ ئازراق "
+"ۋاقىت كېتىدۇ. داۋاملاشتۇرسۇنمۇ؟"
+
+#: src/konqmainwindow.cpp:4247
+#, kde-format
+msgctxt "@title:window"
+msgid "Open bookmarks folder in new tabs"
+msgstr "خەتكۈش قىسقۇچىنى يېڭى بەتكۈچتە ئاچ"
+
+#: src/konqmainwindow.cpp:4405
+#, kde-format
+msgid "Open in T&his Window"
+msgstr "مەزكۇر كۆزنەكتە ئاچ(&H)"
+
+#: src/konqmainwindow.cpp:4406
+#, kde-format
+msgid "Open the document in current window"
+msgstr "پۈتۈكنى مەزكۇر كۆزنەكتە ئاچىدۇ"
+
+#: src/konqmainwindow.cpp:4413
+#, kde-format
+msgid "Open the document in a new window"
+msgstr "پۈتۈكنى يېڭى كۆزنەكتە ئاچىدۇ"
+
+#: src/konqmainwindow.cpp:4419
+#, kde-format
+msgid "Open in &New Tab"
+msgstr "يېڭى بەتكۈچتە ئاچ(&N)"
+
+#: src/konqmainwindow.cpp:4421
+#, kde-format
+msgid "Open the document in a new tab"
+msgstr "پۈتۈكنى يېڭى كۆزنەكتە ئاچىدۇ"
+
+#: src/konqmainwindow.cpp:4637
+#, kde-format
+msgid "&Open With"
+msgstr "بۇنىڭدا ئاچ(&O)"
+
+#: src/konqmainwindow.cpp:4650
+#, kde-format
+msgid "Open with %1"
+msgstr "%1 نىڭ بىلەن ئاچ"
+
+#: src/konqmainwindow.cpp:4698
+#, kde-format
+msgctxt "@action:inmenu View"
+msgid "&View Mode"
+msgstr "كۆرۈش ھالىتى(&V)"
+
+#: src/konqmainwindow.cpp:4815
+#, kde-format
+msgid ""
+"You have multiple tabs open in this window, are you sure you want to quit?"
+msgstr "بۇ كۆزنەكتە ئېچىقلىق بەتكۈچىڭىزدىن بىر نەچچىسى بار، راستلا چېكىنەمسىز؟"
+
+#: src/konqmainwindow.cpp:4817
+#, kde-format
+msgctxt "@title:window"
+msgid "Confirmation"
+msgstr "جەزملەش"
+
+#: src/konqmainwindow.cpp:4819
+#, kde-format
+msgid "C&lose Current Tab"
+msgstr "ھازىرقى بەتكۈچنى ياپ(&L)"
+
+#: src/konqmainwindow.cpp:4845
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Closing the window will discard these changes."
+msgstr ""
+"بۇ بەتكۈچتە تاپشۇرۇلمىغان ئۆزگىرىشلەر بار ئىكەن.\n"
+"بىر كۆزنەك يېپىلسا ئۆزگىرىشلەر تاشلىۋېتىلىدۇ."
+
+#: src/konqmainwindow.cpp:4846
+#, kde-format
+msgid ""
+"This page contains changes that have not been submitted.\n"
+"Closing the window will discard these changes."
+msgstr ""
+"بۇ بەتتە تاپشۇرۇلمىغان ئۆزگىرىشلەر بار ئىكەن.\n"
+"بىر كۆزنەك يېپىلسا ئۆزگىرىشلەر تاشلىۋېتىلىدۇ."
+
+#: src/konqmainwindow.cpp:5003
+#, kde-format
+msgid ""
+"Your sidebar is not functional or unavailable. A new entry cannot be added."
+msgstr "يان بالدىقىڭىز ئىشلىمىدى ياكى يوق. يېڭى كىرگۈنى قوشقىلى بولمايدۇ."
+
+#: src/konqmainwindow.cpp:5003 src/konqmainwindow.cpp:5010
+#, kde-format
+msgctxt "@title:window"
+msgid "Web Sidebar"
+msgstr "تور يان بالداق"
+
+#: src/konqmainwindow.cpp:5008
+#, kde-format
+msgid "Add new web extension \"%1\" to your sidebar?"
+msgstr "يېڭى تور كېڭەيتىلمىسى «%1» نى يان بالداققا قوشسۇنمۇ؟"
+
+#: src/konqmainwindow.cpp:5010
+#, kde-format
+msgid "Add"
+msgstr "قوش"
+
+#: src/konqmainwindow.cpp:5010
+#, kde-format
+msgid "Do Not Add"
+msgstr "قوشما"
+
+#: src/konqmainwindow.cpp:5358
+#, kde-format
+msgid ""
+"There appears to be a configuration error. You have associated Konqueror "
+"with %1, but it cannot handle this file type."
+msgstr ""
+"سەپلىمە خاتالىق كۆرۈلگەندەك قىلىدۇ. سىز Konqueror بىلەن %1 نى باغلاپسىز، "
+"بىراق Konqueror بۇ تىپتىكى ھۆججەتنى بىر تەرەپ قىلالمايدۇ."
+
+#: src/konqmainwindow.cpp:5439
+#, kde-format
+msgid ""
+"Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
+"proxy will be used\n"
+"\n"
+" QtWebEngine only support a fixed proxy, so proxy auto-configuration (PAC) "
+"and Web Proxy Auto-Discovery protocol can't be used with QtWebEngine. If you "
+"need a proxy, please select the system proxy configuration or specify a "
+"proxy URL manually in the settings dialog. Do you want to change proxy "
+"settings now?"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5444
+#, kde-format
+msgid "Unsupported proxy configuration"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5444
+#, kde-format
+msgid "Don't use a proxy"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5445 src/konqmainwindow.cpp:5463
+#, fuzzy, kde-format
+#| msgid "Show Configuration Button"
+msgid "Show proxy configuration dialog"
+msgstr "سەپلىمە توپچىسىنى كۆرسەت"
+
+#: src/konqmainwindow.cpp:5459
+#, kde-format
+msgid ""
+"Your proxy configuration can't be used with the QtWebEngine HTML engine "
+"because it doesn't support having different proxies for the HTTP and HTTPS "
+"protocols. Your current settings are:<p><b>HTTP proxy:</b> <tt>%1</tt></"
+"p><p><b>HTTPS proxy: </b><tt>%2</tt></p>What do you want to do?"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5462
+#, kde-format
+msgid "Conflicting proxy configuration"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5463
+#, kde-format
+msgid "Use HTTP proxy (only this time)"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5463
+#, kde-format
+msgid "Use HTTPS proxy (only this time)"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5540
+#, kde-format
+msgid ""
+"You have entered Complete Full Screen mode (the user interface is completely "
+"hidden). You can exit it by pressing the keyboard shortcut for Full Screen "
+"Mode (%1)"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: src/konqnewsessiondlg_base.ui:28
+#, fuzzy, kde-format
+#| msgid "Save open tabs and windows for easy retrieval"
+msgid "Save open &tabs and windows for easy retrieval"
+msgstr "ئوڭاي ئەسلىگە كەلتۈرۈش ئۈچۈن ئېچىلغان بەتكۈچلەرنى ۋە كۆزنەكلەرنى ساقلا"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_pAllWindows)
+#: src/konqnewsessiondlg_base.ui:34
+#, kde-format
+msgid "A&ll open windows"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_pCurrentWindow)
+#: src/konqnewsessiondlg_base.ui:44
+#, fuzzy, kde-format
+#| msgid "Open tabs inside current window"
+msgid "Onl&y current window"
+msgstr "نۆۋەتتىكى كۆزنەك ئىچىدە بەتكۈچلەرنى ئاچ"
+
+#. i18n: ectx: property (text), widget (QLabel, lblSessionName)
+#: src/konqnewsessiondlg_base.ui:56
+#, fuzzy, kde-format
+#| msgid "&Session name:"
+msgid "Session n&ame:"
+msgstr "ئەڭگىمە ئاتى(&S):"
+
+#: src/konqsessiondlg.cpp:60
+#, kde-format
+msgctxt "@title:window"
+msgid "Manage Sessions"
+msgstr "ئەڭگىمەلەرنى باشقۇرۇش"
+
+#: src/konqsessiondlg.cpp:168
+#, kde-format
+msgctxt "@title:window"
+msgid "Rename Session"
+msgstr "ئەڭگىمە ئاتىنى ئۆزگەرت"
+
+#: src/konqsessiondlg.cpp:215
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Session"
+msgstr "ئەڭگىمە ساقلا"
+
+#: src/konqsessiondlg.cpp:251
+#, kde-format
+msgid ""
+"A session with the name '%1' already exists, do you want to overwrite it?"
+msgstr "ئاتى «%1» بولغان ئەڭگىمە مەۋجۇت، قاپلامسىز؟"
+
+#: src/konqsessiondlg.cpp:252
+#, kde-format
+msgctxt "@title:window"
+msgid "Session exists. Overwrite?"
+msgstr "ئەڭگىمە مەۋجۇت. قاپلامسىز؟"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pNewButton)
+#: src/konqsessiondlg_base.ui:26
+#, kde-format
+msgctxt "@action:button New session"
+msgid "New..."
+msgstr "يېڭى…"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pSaveCurrentButton)
+#: src/konqsessiondlg_base.ui:33
+#, fuzzy, kde-format
+#| msgctxt "@action:button Save current session"
+#| msgid "Save Current"
+msgctxt "@action:button Save current session"
+msgid "Save Current..."
+msgstr "نۆۋەتتىكىنى ساقلا"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pRenameButton)
+#: src/konqsessiondlg_base.ui:40
+#, kde-format
+msgctxt "@action:button Rename session"
+msgid "Rename..."
+msgstr "ئات ئۆزگەرت…"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pDeleteButton)
+#: src/konqsessiondlg_base.ui:47
+#, kde-format
+msgctxt "@action:button Delete session"
+msgid "Delete"
+msgstr "ئۆچۈر"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pOpenTabsInsideCurrentWindow)
+#. i18n: ectx: label, entry, group (Trash)
+#: src/konqsessiondlg_base.ui:73 src/konqueror.kcfg:517
+#, kde-format
+msgid "Open tabs inside current window"
+msgstr "نۆۋەتتىكى كۆزنەك ئىچىدە بەتكۈچلەرنى ئاچ"
+
+#: src/konqsessionmanager.cpp:86
+#, kde-format
+msgctxt "@title:window"
+msgid "Restore Session?"
+msgstr "ئەڭگىمەنى ئەسلىگە كەلتۈرسۇنمۇ؟"
+
+#: src/konqsessionmanager.cpp:107
+#, kde-format
+msgid ""
+"Konqueror did not close correctly. Would you like to restore these previous "
+"sessions?"
+msgstr ""
+
+#: src/konqsessionmanager.cpp:119
+#, kde-format
+msgctxt "@tooltip:session list"
+msgid "Uncheck the sessions you do not want to be restored"
+msgstr ""
+
+#: src/konqsessionmanager.cpp:152
+#, kde-format
+msgctxt "@item:treewidget"
+msgid "Window %1"
+msgstr "كۆزنەك %1"
+
+#: src/konqsessionmanager.cpp:190
+#, kde-format
+msgid "Do not ask again"
+msgstr "قايتا سورىما"
+
+#: src/konqsessionmanager.cpp:204
+#, kde-format
+msgctxt "@action:button yes"
+msgid "Restore Session"
+msgstr "ئەڭگىمەنى ئەسلىگە كەلتۈر"
+
+#: src/konqsessionmanager.cpp:205
+#, kde-format
+msgctxt "@action:button no"
+msgid "Do Not Restore"
+msgstr "ئەسلىگە كەلتۈرمە"
+
+#: src/konqsessionmanager.cpp:206
+#, kde-format
+msgctxt "@action:button ask later"
+msgid "Ask Me Later"
+msgstr "كېيىن سورىغىن"
+
+#: src/konqstatusbarmessagelabel.cpp:67
+#, fuzzy, kde-format
+#| msgid "Close View"
+msgctxt "@info"
+msgid "Close"
+msgstr "كۆرۈنۈشنى ياپ"
+
+#: src/konqstatusbarmessagelabel.cpp:68
+#, fuzzy, kde-format
+#| msgid "Close View"
+msgid "Close"
+msgstr "كۆرۈنۈشنى ياپ"
+
+#: src/konqstatusbarmessagelabel.cpp:147
+#, kde-format
+msgid "Error: %1"
+msgstr ""
+
+#: src/konqtabs.cpp:51
+#, kde-format
+msgid ""
+"This bar contains the list of currently open tabs. Click on a tab to make it "
+"active. You can also use keyboard shortcuts to navigate through tabs. The "
+"text on the tab shows the content currently open in it; place your mouse "
+"over the tab to see the full title, in case it has been shortened to fit the "
+"tab width."
+msgstr ""
+
+#: src/konqtabs.cpp:86
+#, kde-format
+msgid "Open a new tab"
+msgstr "يېڭى بەتكۈچتىن بىرنى ئاچىدۇ"
+
+#: src/konqtabs.cpp:95
+#, kde-format
+msgid "Close the current tab"
+msgstr "ھازىرقى بەتكۈچنى تاقايدۇ"
+
+#: src/konqtabs.cpp:461
+#, kde-format
+msgid "&Duplicate Tab"
+msgstr "بەتكۈچنى كۆپەيت(&D)"
+
+#: src/konqtabs.cpp:466
+#, kde-format
+msgid "&Reload Tab"
+msgstr "بەتكۈچنى قايتا يۈكلە(&R)"
+
+#: src/konqtabs.cpp:473
+#, kde-format
+msgid "Other Tabs"
+msgstr "باشقا بەتكۈچلەر"
+
+#: src/konqtabs.cpp:478
+#, kde-format
+msgid "D&etach Tab"
+msgstr "بەتكۈچنى ئاجرات(&E)"
+
+#: src/konqtabs.cpp:484
+#, kde-format
+msgid "&Close Tab"
+msgstr "بەتكۈچنى ياپ(&C)"
+
+#. i18n: ectx: label, entry, group (UserSettings)
+#: src/konqueror.kcfg:11
+#, kde-format
+msgid "Start Page"
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry, group (UserSettings)
+#: src/konqueror.kcfg:12
+#, kde-format
+msgid "This is the URL of the web page where Konqueror will start from."
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry, group (UserSettings)
+#: src/konqueror.kcfg:17
+#, kde-format
+msgid ""
+"This is the URL of the web page where Konqueror will jump to when the \\"
+"\"Home\\\" button is pressed."
+msgstr ""
+
+#. i18n: ectx: label, entry, group (UndoManagerSettings)
+#: src/konqueror.kcfg:26
+#, kde-format
+msgid "Maximum number of Closed Items"
+msgstr "يېپىلغان تۈرلەرنىڭ ئەڭ چوڭ سانى"
+
+#. i18n: ectx: whatsthis, entry, group (UndoManagerSettings)
+#: src/konqueror.kcfg:27
+#, kde-format
+msgid ""
+"This sets the maximum number of closed items that will be stored in memory. "
+"This limit will not be surpassed."
+msgstr ""
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:36
+#, kde-format
+msgid "Open folders in separate windows"
+msgstr "قىسقۇچلارنى ئايرىم كۆزنەكلەرنى ئاچسۇن"
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:37
+#, kde-format
+msgid ""
+"If this option is checked, Konqueror will open a new window when you open a "
+"folder, rather than showing that folder's contents in the current window."
+msgstr ""
+"بۇ تاللانما تاللانسا، Konqueror قىسقۇچ مەزمۇنىنى نۆۋەتتىكى كۆزنەك ئاستىدا "
+"كۆرسەتمەستىن قىسقۇچنى يېڭى كۆزنەكتە ئاچىدۇ."
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:42
+#, kde-format
+msgid "Show file tips"
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:43
+#, kde-format
+msgid ""
+"Here you can control if, when moving the mouse over a file, you want to see "
+"a small popup window with additional information about that file"
+msgstr ""
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:54
+#, kde-format
+msgid "Show previews in file tips"
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:55
+#, kde-format
+msgid ""
+"Here you can control if you want the popup window to contain a larger "
+"preview for the file, when moving the mouse over it"
+msgstr ""
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:60
+#, kde-format
+msgid "Show 'Delete' menu entries which bypass the trashcan"
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:61
+#, kde-format
+msgid ""
+"Check this if you want 'Delete' menu commands to be displayed on the desktop "
+"and in the file manager's menus and context menus. You can always delete "
+"files when hidden by holding the Shift key while calling 'Move to Trash'."
+msgstr ""
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:153 src/konqueror.kcfg:154
+#, kde-format
+msgid "Number of Open With items in the File menu"
+msgstr ""
+
+#. i18n: ectx: label, entry, group (HTML Settings)
+#: src/konqueror.kcfg:163
+#, kde-format
+msgid "Standard font"
+msgstr "ئۆلچەملىك خەت نۇسخىسى"
+
+#. i18n: ectx: whatsthis, entry, group (HTML Settings)
+#: src/konqueror.kcfg:164
+#, kde-format
+msgid "This is the font used to display text in Konqueror windows."
+msgstr ""
+"بۇ خەت نۇسخىسى Konqueror كۆزنەكلىرىدىكى تېكىستلەرنى كۆرسىتىشتە ئىشلىتىلىدۇ."
+
+#. i18n: ectx: label, entry, group (HistorySettings)
+#: src/konqueror.kcfg:314
+#, kde-format
+msgid "Maximum number of history items per view"
+msgstr "ھەر بىر كۆرۈنۈشتىكى تارىخنىڭ ئەڭ چوڭ سانى"
+
+#. i18n: ectx: label, entry, group (Trash)
+#: src/konqueror.kcfg:504
+#, kde-format
+msgid "Ask confirmation for deleting a file."
+msgstr "ھۆججەت ئۆچۈرگەندە ئەسكەرتىش سورىسۇن."
+
+#. i18n: ectx: whatsthis, entry, group (Trash)
+#: src/konqueror.kcfg:505
+#, kde-format
+msgid ""
+"This option tells Konqueror whether to ask for a confirmation when you "
+"delete a file without using the trash folder. Warning, deleted files can not "
+"be recovered, so it is recommended to leave this confirmation enabled."
+msgstr ""
+
+#. i18n: ectx: label, entry, group (Trash)
+#: src/konqueror.kcfg:510
+#, kde-format
+msgid "Ask confirmation for move to trash"
+msgstr "ئەخلەت ساندۇقىغا ھۆججەت يۆتكىگەندە ئەسكەرتىش سورىسۇن."
+
+#. i18n: ectx: whatsthis, entry, group (Trash)
+#: src/konqueror.kcfg:511
+#, kde-format
+msgid ""
+"This option tells Konqueror whether to ask for a confirmation when you move "
+"the file to your trash folder, from where it can be recovered very easily."
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry, group (Trash)
+#: src/konqueror.kcfg:518
+#, kde-format
+msgid ""
+"If true, when opening a session from within the sessions dialog the tabs "
+"will be opened inside current window."
+msgstr ""
+
+#. i18n: ectx: Menu (file)
+#: src/konqueror.rc:5
+#, kde-format
+msgid "&File"
+msgstr "ھۆججەت(&F)"
+
+#. i18n: ectx: Menu (edit)
+#: src/konqueror.rc:24
+#, kde-format
+msgid "&Edit"
+msgstr "تەھرىر(&E)"
+
+#. i18n: ectx: Menu (view)
+#: src/konqueror.rc:33
+#, kde-format
+msgid "&View"
+msgstr "كۆرۈنۈش(&V)"
+
+#. i18n: ectx: Menu (go)
+#: src/konqueror.rc:44
+#, kde-format
+msgid "&Go"
+msgstr "يۆتكەل(&G)"
+
+#. i18n: ectx: Menu (tools)
+#: src/konqueror.rc:54
+#, kde-format
+msgid "&Tools"
+msgstr ""
+
+#. i18n: ectx: Menu (settings)
+#: src/konqueror.rc:59
+#, kde-format
+msgid "&Settings"
+msgstr "تەڭشەك(&S)"
+
+#. i18n: ectx: Menu (window)
+#: src/konqueror.rc:77
+#, kde-format
+msgid "&Window"
+msgstr "كۆزنەك(&W)"
+
+#. i18n: ectx: Menu (help)
+#: src/konqueror.rc:93
+#, kde-format
+msgid "&Help"
+msgstr "ياردەم(&H)"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: src/konqueror.rc:98
+#, kde-format
+msgid "Main Toolbar"
+msgstr "ئاساسىي قورال بالداق"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: src/konqueror.rc:109
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "قوشۇمچە قورال بالداق"
+
+#. i18n: ectx: ToolBar (locationToolBar)
+#: src/konqueror.rc:116
+#, kde-format
+msgid "Location Toolbar"
+msgstr "ئورۇن قورال بالدىقى"
+
+#. i18n: ectx: ToolBar (bookmarkToolBar)
+#: src/konqueror.rc:122
+#, kde-format
+msgid "Bookmark Toolbar"
+msgstr "خەتكۈش قورال بالداق"
+
+#: src/konqundomanager.cpp:90 src/konqundomanager.cpp:252
+#, kde-format
+msgid "Und&o: Closed Tab"
+msgstr "يېنىۋال(&O): يېپىلغان بەتكۈچ"
+
+#: src/konqundomanager.cpp:92 src/konqundomanager.cpp:103
+#: src/konqundomanager.cpp:147
+#, kde-format
+msgid "Und&o: Closed Window"
+msgstr "يېنىۋال(&O): يېپىلغان كۆزنەك"
+
+#: src/konqundomanager.cpp:105
+#, kde-format
+msgid "Und&o"
+msgstr "يېنىۋال(&O)"
+
+#: src/konqview.cpp:1162
+#, kde-format
+msgid ""
+"The page you are trying to view is the result of posted form data. If you "
+"resend the data, any action the form carried out (such as search or online "
+"purchase) will be repeated. "
+msgstr ""
+"سىز تەكشۈرمەكچى بولغان بەت يۈزى جەدۋەل سانلىق-مەلۇماتلىرى تاپشۇرغان "
+"نەتىجىدىن ئىبارەت. ئەگەر قايتىدىن سانلىق-مەلۇمات يوللىسىڭىز، بۇ جەدۋەل ئىجرا "
+"قىلغان ھەر قانداق مەشغۇلات (مەسىلەن ئاختۇرۇش ياكى لىنىيىدە "
+"سېتىۋېلىشلارنىڭ )ھەممىسى تەكرارلىنىدۇ. "
+
+#: src/konqview.cpp:1164
+#, kde-format
+msgctxt "@title:window"
+msgid "Warning"
+msgstr "ئاگاھلاندۇرۇش"
+
+#: src/konqview.cpp:1164
+#, kde-format
+msgid "Resend"
+msgstr "قايتا يوللا"
+
+#: src/urlloader.cpp:253
+#, kde-format
+msgctxt "Execute an executable file"
+msgid "Execute it"
+msgstr ""
+
+#: src/urlloader.cpp:258
+#, kde-format
+msgctxt ""
+"The user has to decide whether to execute an executable file or display it"
+msgid ""
+"<tt>%1</tt> can be executed. Do you want to execute it or to display it?"
+msgstr ""
+
+#: src/urlloader.cpp:259
+#, kde-format
+msgctxt "Display an executable file"
+msgid "Display it"
+msgstr ""
+
+#: src/urlloader.cpp:263
+#, kde-format
+msgctxt "The user has to decide whether to execute an executable file or not"
+msgid "<tt>%1</tt> can be executed. Do you want to execute it?"
+msgstr ""
+
+#: src/urlloader.cpp:438
+#, fuzzy, kde-format
+#| msgid "Save As..."
+msgid "Save As"
+msgstr "باشقا ئاتتا ساقلا…"
+
+#~ msgid "File Management"
+#~ msgstr "ھۆججەت باشقۇرۇش"
+
+#~ msgid "Web Browsing"
+#~ msgstr "تور كۆرۈش"
+
+#~ msgctxt "@title:window"
+#~ msgid "Configure"
+#~ msgstr "سەپلە"
+
+#~ msgid ""
+#~ "Konqueror is a web browser, file manager and universal document viewer."
+#~ msgstr "Konqueror — توركۆرگۈ، ھۆججەت باشقۇرغۇ ۋە ئۇنىۋېرسال پۈتۈك كۆرگۈدۇر."
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "Starting Points"
+#~ msgstr "باشلىنىش نۇقتىسى"
+
+#~ msgid "Introduction"
+#~ msgstr "تونۇشتۇرۇش"
+
+#~ msgid "Tips"
+#~ msgstr "ھۈنەرلەر"
+
+#~ msgid "Specifications"
+#~ msgstr "بەلگىلىمىلەر"
+
+#~ msgid "Your personal files"
+#~ msgstr "خۇسۇسىي ھۆججىتىڭىز"
+
+#~ msgid "Trash"
+#~ msgstr "ئەخلەتخانا"
+
+#~ msgid "Browse and restore the trash"
+#~ msgstr "ئەخلەتخانىغا قاراش ۋە ئەسلىگە كەلتۈرۈش"
+
+#~ msgid "Network Folders"
+#~ msgstr "تور قىسقۇچلىرى"
+
+#~ msgid "Shared files and folders"
+#~ msgstr "ھەمبەھىرلەنگەن ھۆججەت ۋە قىسقۇچلار"
+
+#~ msgid "Bookmarks"
+#~ msgstr "خەتكۈشلەر"
+
+#~ msgid "Quick access to your bookmarks"
+#~ msgstr "خەتكۈچىڭىزنى تېز زىيارەت قىلىڭ"
+
+#~ msgid "Next: An Introduction to Konqueror"
+#~ msgstr "كېيىنكى: Konqueror ھەققىدە چۈشەنچە"
+
+#~ msgid "Search the Web"
+#~ msgstr "تورنى ئىزدەش"
+
+#~ msgid ""
+#~ "For more detailed documentation on Konqueror click <a href=\"%1\">here</"
+#~ "a>."
+#~ msgstr ""
+#~ "Konqueror ھەققىدە تېخىمۇ كۆپ تەپسىلىي ئۇچۇرلار ئۈچۈن <a href=\"%1\">here</"
+#~ "a> نى چېكىڭ."
+
+#, fuzzy
+#~| msgid "Next: Tips &amp; Tricks"
+#~ msgid "Next: Tips & Tricks"
+#~ msgstr "كېيىنكى: ھۈنەرلەر &amp; Tricks"
+
+#~ msgid "Supported standards"
+#~ msgstr "قوللايدىغان ئۆلچەملەر"
+
+#~ msgid "Additional requirements*"
+#~ msgstr "قوشۇمچە زۆرۈرىيەتلەر*"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">DOM</A> (1-دەرىجە، قىسمى 2-دەرىجە) <A HREF=\"%2\">HTML "
+#~ "4.01</A> نى ئاساس قىلغان"
+
+#~ msgid "built-in"
+#~ msgstr "سىڭدۈرۈلگەن"
+
+#~ msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
+#~ msgstr "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">ECMA-262</A> نەشرى 3 (JavaScript 1.5 بىلەن ئاساسەن ئوخشاش)"
+
+#~ msgid ""
+#~ "JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
+#~ msgstr ""
+#~ "JavaScript ئىناۋەتسىز (ئومۇمىي يۈزلۈك). <A HREF=\"%1\">بۇ يەرنى</A> چېكىپ "
+#~ "JavaScript نى ئىناۋەتلىك قىلىڭ."
+
+#~ msgid ""
+#~ "JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\"
+#~ "\">here</A>."
+#~ msgstr ""
+#~ "JavaScript ئىناۋەتلىك (ئومۇمىي يۈزلۈك). <A HREF=\\\"%1\\\">بۇ يەرنى</A> "
+#~ "چېكىپ JavaScript نى سەپلەڭ."
+
+#~ msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
+#~ msgstr "بىخەتەر <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> قوللاش"
+
+#, fuzzy
+#~| msgid ""
+#~| "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">IBM</A> or <A HREF="
+#~| "\"%2\">Sun/Oracle</A>)"
+#~ msgid ""
+#~ "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">OpenJDK</A> or <A HREF="
+#~ "\"%2\">Sun/Oracle</A>)"
+#~ msgstr ""
+#~ "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">IBM</A> or <A HREF="
+#~ "\"%2\">Sun/Oracle</A>)"
+
+#~ msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
+#~ msgstr ""
+#~ "<A HREF=\"%1\">بۇ يەردە</A> JavaScript نى ئىناۋەتلىك (ئومۇمىي يۈزلۈك) قىل"
+
+#~ msgid "Secure Sockets Layer"
+#~ msgstr "بىخەتەر كىرىشتۈرۈلگەن خەت قاتلىمى"
+
+#~ msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
+#~ msgstr "(TLS/SSL v2/3) پوتېنسىئال كۈچلۈكلۈككە يەتكەن بىخەتەر ئالاقە  168"
+
+#~ msgid "OpenSSL"
+#~ msgstr "OpenSSL"
+
+#~ msgid "Bidirectional 16bit unicode support"
+#~ msgstr "قوش يۆنىلىشلىك 16 بىتلىق يۇنىكودنى قوللاش"
+
+#~ msgid "AutoCompletion for forms"
+#~ msgstr "جەدۋەل ئاپتوماتىك تولۇقلىنىدۇ"
+
+#~ msgctxt "Title of an html 'group box' explaining konqueror features"
+#~ msgid "General"
+#~ msgstr "ئادەتتىكى"
+
+#~ msgid "Feature"
+#~ msgstr "ئالاھىدىلىكى"
+
+#~ msgid "Details"
+#~ msgstr "تەپسىلاتلار"
+
+#~ msgid "Image formats"
+#~ msgstr "سۈرەت پىچىملىرى"
+
+#~ msgid "PNG<br />JPG<br />GIF"
+#~ msgstr "PNG<br />JPG<br />GIF"
+
+#~ msgid "Transfer protocols"
+#~ msgstr "ئالاقە كېلىشىملىرى"
+
+#~ msgid "HTTP 1.1 (including gzip/bzip2 compression)"
+#~ msgstr "HTTP 1.1 (gzip/bzip2 پرېسلاشنىمۇ ئوز ئىچىگە ئالىدۇ)"
+
+#~ msgid "FTP"
+#~ msgstr "FTP"
+
+#, fuzzy
+#~| msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpcenter)...</A>"
+#~ msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpCenter)...</A>"
+#~ msgstr ""
+#~ "ۋە <A HREF=\"%1\"> تېخىمۇ كۆپ (KHelpcenter نىڭ ئىچىدىكى Kioslaves غا "
+#~ "قاراڭ)...</A>"
+
+#~ msgid "Manual"
+#~ msgstr "قولدا"
+
+#~ msgid "Popup"
+#~ msgstr "سەكرىمە"
+
+#~ msgid "(Short-) Automatic"
+#~ msgstr "(قىسقا-) ئاپتوماتىك"
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "<a href=\"%1\">Return to Starting Points</a>"
+#~ msgstr "<a href=\"%1\">باشلىنىش نۇقتىسىغا قايتىدۇ</a>"
+
+#, fuzzy
+#~| msgid "Next: Tips &amp; Tricks"
+#~ msgid "Tips & Tricks"
+#~ msgstr "كېيىنكى: ھۈنەرلەر &amp; Tricks"
+
+#~ msgid ""
+#~ "Use a caching <a href=\"%1\">proxy</a> to speed up your Internet "
+#~ "connection."
+#~ msgstr ""
+#~ "ئىنتېرنېت باغلىنىشىنى تېزلىتىش ئۈچۈن غەملەك <a href=\"%1\">ۋاكالەتچىسى</"
+#~ "a> نى ئىشلىتىڭ."
+
+#~ msgid "Next: Specifications"
+#~ msgstr "كېيىنكى: تېخنىكىلىق ئۇچۇرلار"
+
+#~ msgid "Installed Plugins"
+#~ msgstr "قاچىلانغان قىستۇرما دېتاللار"
+
+#~ msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
+#~ msgstr ""
+#~ "<td>قىستۇرما</td><td>چۈشەندۈرۈلۈشى</td><td>ھۆججەت</td><td>تىپلىرى</td>"
+
+#~ msgid "Installed"
+#~ msgstr "ئورنىتىلغان"
+
+#~ msgid ""
+#~ "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
+#~ msgstr ""
+#~ "<td>Mime تىپى</td><td>چۈشەندۈرۈلۈشى</td><td>ئالدى قوشۇلغۇچىلار</"
+#~ "td><td>قىستۇرما</td>"
+
+#~ msgid "&Open"
+#~ msgstr "ئاچ(&O)"
+
+#~ msgid "http://konqueror.kde.org"
+#~ msgstr "http://konqueror.kde.org"
+
+#~ msgid "Limits"
+#~ msgstr "چەك"
+
+#~ msgid "URLs e&xpire after"
+#~ msgstr "URLs نىڭ ئۆمرى(&X)"
+
+#~ msgid "Maximum &number of URLs:"
+#~ msgstr "ئەڭ چوڭ URLs نىڭ سانى(&N):"
+
+#~ msgid "Custom Fonts For"
+#~ msgstr "ئىختىيارى فونتلار"
+
+#~ msgid "URLs newer than"
+#~ msgstr "يېڭىراق URLs"
+
+#~ msgid "Choose Font..."
+#~ msgstr "خەت نۇسخىسى تاللا…"
+
+#~ msgid "URLs older than"
+#~ msgstr "كونىراق URLs"
+
+#~ msgid ""
+#~ "Shows the number of times visited and the dates of the first and last "
+#~ "visits, in addition to the URL"
+#~ msgstr ""
+#~ "دىن باشقا  URL،يەنە زىيارەت قېتىم سانى بىلەن تۇنجى قېتىم ۋە ئاخىرقى قېتىم "
+#~ "زىيارەت قىلغان ۋاقىتنى كۆرسىتىش"
+
+#~ msgid "Detailed tooltips"
+#~ msgstr "تەپسىلىي كۆرسەتمىلەر"
+
+#~ msgid "Clear History"
+#~ msgstr "تارىخنى تازىلاش"
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "History Sidebar Module"
+#~ msgstr "تارىخ يان بالداق بۆلىكى"
+
+#~ msgctxt "@title:tab"
+#~ msgid "History"
+#~ msgstr "ئىز"
+
+#~ msgid "Minute"
+#~ msgid_plural "Minutes"
+#~ msgstr[0] "مىنۇت"
+
+#~ msgid "Day"
+#~ msgid_plural "Days"
+#~ msgstr[0] "كۈن"
+
+#~ msgid "<h1>History Sidebar</h1> You can configure the history sidebar here."
+#~ msgstr "<h1>تارىخ يان بالداق</h1>بۇ يەردە تارىخ يان بالداقنى سەپلىيەلەيسىز."
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Places Sidebar Module"
+#~ msgstr "ئورۇنلار يان بالداق بۆلىكى"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Places"
+#~ msgstr "ئورۇنلار"
+
+#~ msgid "Extended Sidebar"
+#~ msgstr "كېڭەيتىلمە يان بالداق"
+
+#~ msgid "Rollback to System Default"
+#~ msgstr "سىستېما كۆڭۈلدىكى قىممەتلىرىگە قايتۇر"
+
+#~ msgid "Configure Sidebar"
+#~ msgstr "يان بالداقنى سەپلە"
+
+#~ msgid "Add New"
+#~ msgstr "يېڭىدىن قوش"
+
+#~ msgid "Multiple Views"
+#~ msgstr "كۆپ كۆرۈنۈشلەر"
+
+#~ msgid "Show Tabs Left"
+#~ msgstr "بەتكۈچلەرنى سولدا كۆرسەت"
+
+#~ msgid "Close Sidebar"
+#~ msgstr "يان بالداقنى ياپ"
+
+#~ msgid "This entry already exists."
+#~ msgstr "بۇ كىرگۈ مەۋجۇت."
+
+#~ msgid "Show Tabs Right"
+#~ msgstr "بەتكۈچلەرنى ئوڭدا كۆرسەت"
+
+#~ msgctxt "@title:window"
+#~ msgid "Set Name"
+#~ msgstr "ئاتىنى بەلگىلەش"
+
+#~ msgid "Enter the name:"
+#~ msgstr "ئاتىنى كىرگۈزۈڭ:"
+
+#~ msgid "Enter a URL:"
+#~ msgstr "URL كىرگۈزۈڭ:"
+
+#~ msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
+#~ msgstr "<qt>راستلا <b>%1</b> دېگەن بەتكۈچنى ئۆچۈرەمسىز?</qt>"
+
+#~ msgid "Set Name..."
+#~ msgstr "ئاتىنى بەلگىلەش…"
+
+#~ msgid "Set URL..."
+#~ msgstr "URL بەلگىلەش…"
+
+#~ msgid "Set Icon..."
+#~ msgstr "سىنبەلگە بەلگىلەش…"
+
+#~ msgid "Remove"
+#~ msgstr "چىقىرىۋەت"
+
+#~ msgid "Web module"
+#~ msgstr "تور بۆلىكى"
+
+#~ msgid "&Create New Folder"
+#~ msgstr "يېڭى قىسقۇچ ياسا(&C)"
+
+#~ msgid "Delete Folder"
+#~ msgstr "قىسقۇچ ئۆچۈر"
+
+#~ msgid "Delete Bookmark"
+#~ msgstr "خەتكۈش ئۆچۈر"
+
+#~ msgid "Properties"
+#~ msgstr "خاسلىق"
+
+#~ msgid "Open in New Window"
+#~ msgstr "يېڭى كۆزنەكتە ئاچ"
+
+#~ msgid "Open Folder in Tabs"
+#~ msgstr "قىسقۇچلارنى بەتكۈچلەردە ئاچ"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "ئۇلانما ئادرېسىنى كۆچۈر"
+
+#~ msgctxt "@title:window"
+#~ msgid "Create New Bookmark Folder"
+#~ msgstr "يېڭى خەتكۈش قىسقۇچى قۇرۇش"
+
+#~ msgid "New folder:"
+#~ msgstr "يېڭى قىسقۇچ:"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark folder\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "تۆۋەندىكى خەتكۈش قىسقۇچىنى ئۆچۈرگۈڭىز بارمۇ\n"
+#~ "«%1»؟"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "تۆۋەندىكى خەتكۈشنى ئۆچۈرگۈڭىز بارمۇ\n"
+#~ "«%1»؟"
+
+#~ msgctxt "@title:window"
+#~ msgid "Bookmark Folder Deletion"
+#~ msgstr "خەتكۈش بالدىقىنى ئۆچۈرۈش"
+
+#~ msgctxt "@title:window"
+#~ msgid "Bookmark Deletion"
+#~ msgstr "خەتكۈش ئۆچۈرۈش"
+
+#~ msgctxt "@title:window"
+#~ msgid "Bookmark Properties"
+#~ msgstr "خەتكۈش خاسلىقى"
+
+#~ msgid "&Update"
+#~ msgstr "يېڭىلا(&U)"
+
+#~ msgid "Name:"
+#~ msgstr "ئاتى:"
+
+#~ msgid "Location:"
+#~ msgstr "ئورنى:"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add Bookmark"
+#~ msgstr "خەتكۈش قوش"
+
+#~ msgid "Cannot find parent item %1 in the tree. Internal error."
+#~ msgstr "شاخسىمان تىزىمدىن ئاتا تۈر %1 تېپىلمىدى. ئىچكى خاتالىق."
+
+#~ msgid "&Create New Folder..."
+#~ msgstr "يېڭى قىسقۇچ ياسا(&C)…"
+
+#~ msgid "Move to Trash"
+#~ msgstr "ئەخلەتخانىغا يۆتكە"
+
+#~ msgid "Rename"
+#~ msgstr "ئات ئۆزگەرت"
+
+#~ msgid "Delete Link"
+#~ msgstr "ئۇلانما ئۆچۈر"
+
+#~ msgid "New Folder"
+#~ msgstr "يېڭى قىسقۇچ"
+
+#~ msgctxt "@title:window"
+#~ msgid "Create New Folder"
+#~ msgstr "يېڭى قىسقۇچ قۇر"
+
+#~ msgid "Enter folder name:"
+#~ msgstr "قىسقۇچ ئاتىنى كىرگۈزۈڭ:"
+
+#~ msgctxt "@label"
+#~ msgid "Name:"
+#~ msgstr "ئاتى:"
+
+#~ msgctxt "@label"
+#~ msgid "Path or URL:"
+#~ msgstr "يول ياكى URL:"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add folder sidebar module"
+#~ msgstr "قىسقۇچ يان بالداق بۆلىكى قوش"
+
+#~ msgid "&Open Link"
+#~ msgstr "ئۇلانما ئاچ(&O)"
+
+#~ msgid "Set &Automatic Reload"
+#~ msgstr "ئاپتوماتىك قايتا ئوقۇشنى بەلگىلە(&A)"
+
+#~ msgctxt "@title:window"
+#~ msgid "Set Refresh Timeout (0 disables)"
+#~ msgstr "يېڭىلاش مۆھلىتىنى بەلگىلە(0 بولسا بۇ ئىقتىدار ئىناۋەتسىز)"
+
+#~ msgid " minute"
+#~ msgid_plural " minutes"
+#~ msgstr[0] " مىنۇت"
+
+#~ msgid " second"
+#~ msgid_plural " seconds"
+#~ msgstr[0] " سېكۇنت"
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Web Sidebar Module"
+#~ msgstr "تور يان بالداق بۆلەك"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add web sidebar module"
+#~ msgstr "تور يان بالداق بۆلەك قوش"
+
+#~ msgid "&Use index.html"
+#~ msgstr "index.html ئىشلەت(&U)"
+
+#~ msgid "If present, open index.html when entering a folder."
+#~ msgstr "ئەگەر index.html بار بولسا، بىر قىسقۇچقا كىرگەن ھامان ئاچىدۇ."
+
+#~ msgid ""
+#~ "Do you want to disable showing the introduction in the webbrowsing "
+#~ "profile?"
+#~ msgstr ""
+#~ "تور بېتىگە كۆز يۈگۈرتۈشنى سەپلىگەندە تونۇشتۇرۇشنى كۆرسىتىشنى چەكلەمسىز ？"
+
+#~ msgctxt "@title:window"
+#~ msgid "Faster Startup?"
+#~ msgstr "تېزرەك قوزغالسۇنمۇ؟"
+
+#~ msgid "Disable"
+#~ msgstr "چەكلە"
+
+#~ msgid "Keep"
+#~ msgstr "تەگمە"
+
+#~ msgid "Profile to open"
+#~ msgstr "ئاچىدىغان Profile"
+
+#~ msgid "List available profiles"
+#~ msgstr "بار Profile لارنى تىزىپ كۆرسەت"
+
+#~ msgid "&Save View Profile As..."
+#~ msgstr "كۆرۈنۈش Profile نى باشقا ئاتتا ساقلا(&S)…"
+
+#~ msgid "C&onfigure View Profiles..."
+#~ msgstr "كۆرۈنۈش Profile لىرىنى سەپلە(&O)…"
+
+#~ msgid "Load &View Profile"
+#~ msgstr "كۆرۈنۈش Profile لىرىنى ئوقۇ(&V)"
+
+#~ msgctxt "@title:window"
+#~ msgid "Profile Management"
+#~ msgstr "Profile باشقۇرۇش"
+
+#~ msgid "&Rename Profile"
+#~ msgstr "Profile ئاتىنى ئۆزگەرت(&R)"
+
+#~ msgid "&Delete Profile"
+#~ msgstr "Profile ئۆچۈر(&D)"
+
+#~ msgid "&Profile name:"
+#~ msgstr "Profile ئاتى(&P)"
+
+#~ msgid "Save &URLs in profile"
+#~ msgstr "سەپلەۋاتقان ساقلاش  &URLs"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window.\n"
+#~ "Loading a view profile will close them."
+#~ msgstr ""
+#~ "ھازىرقى كۆزنەكتە بىر قانچە بەتكۈچ ئېچىقلىق ئىكەن.\n"
+#~ "كۆرۈنۈش profile نى ئوقۇسا ئۇلار يېپىلىپ كېتىدۇ."
+
+#~ msgid "Load View Profile"
+#~ msgstr "كۆرۈنۈش profile نى ئوقۇش"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Loading a profile will discard these changes."
+#~ msgstr ""
+#~ "بۇ بەتكۈچتە تاپشۇرۇلمىغان ئۆزگىرىشلەر بار ئىكەن.\n"
+#~ "بىر profile نى ئوقۇسا ئۆزگىرىشلەر تاشلىۋېتىلىدۇ."
+
+#~ msgid " day"
+#~ msgid_plural " days"
+#~ msgstr[0] " كۈن"

@@ -1,0 +1,416 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the konqueror package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"PO-Revision-Date: 2022-09-12 20:00+0200\n"
+"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
+"Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
+"Language: ka\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.1.1\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Temuri Doghonadze"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "Temuri.doghonadze@gmail.com"
+
+#: fsview.cpp:35 fsview.cpp:413
+#, kde-format
+msgid "Name"
+msgstr "სახელი"
+
+#: fsview.cpp:36
+#, kde-format
+msgid "Size"
+msgstr "ზომა"
+
+#: fsview.cpp:37
+#, kde-format
+msgid "File Count"
+msgstr "ფაილების რაოდენობა"
+
+#: fsview.cpp:38
+#, kde-format
+msgid "Directory Count"
+msgstr "საქაღალდეების რაოდენობა"
+
+#: fsview.cpp:39
+#, kde-format
+msgid "Last Modified"
+msgstr "ბოლოს შეცვლის თარიღი"
+
+#: fsview.cpp:40 fsview.cpp:414
+#, kde-format
+msgid "Owner"
+msgstr "მფლობელი"
+
+#: fsview.cpp:41 fsview.cpp:415
+#, kde-format
+msgid "Group"
+msgstr "ჯგუფი"
+
+#: fsview.cpp:42 fsview.cpp:416
+#, kde-format
+msgid "Mime Type"
+msgstr "MIME ტიპი"
+
+#: fsview.cpp:283
+#, kde-format
+msgid "Go To"
+msgstr "გადასვლა"
+
+#: fsview.cpp:284 fsview_part.cpp:106
+#, kde-format
+msgid "Stop at Depth"
+msgstr "სიღრმეზე გაჩერება"
+
+#: fsview.cpp:285 fsview_part.cpp:103
+#, kde-format
+msgid "Stop at Area"
+msgstr "ფართობზე გაჩერება"
+
+#: fsview.cpp:286
+#, kde-format
+msgid "Stop at Name"
+msgstr "სახელთან გაჩერება"
+
+#: fsview.cpp:292
+#, kde-format
+msgid "Go Up"
+msgstr "მაღლა ასვლა"
+
+#: fsview.cpp:294
+#, kde-format
+msgid "Stop Refresh"
+msgstr "განახლების შეჩერება"
+
+#: fsview.cpp:296
+#, kde-format
+msgid "Refresh"
+msgstr "განახლება"
+
+#: fsview.cpp:301
+#, kde-format
+msgid "Refresh '%1'"
+msgstr "%1-ის განახლება"
+
+#: fsview.cpp:313 fsview_part.cpp:113
+#, kde-format
+msgid "Color Mode"
+msgstr "ფერის რეჟიმი"
+
+#: fsview.cpp:316 fsview_part.cpp:109
+#, kde-format
+msgid "Visualization"
+msgstr "ვიზუალიზაცია"
+
+#: fsview.cpp:411
+#, kde-format
+msgid "None"
+msgstr "არაფერი"
+
+#: fsview.cpp:412
+#, kde-format
+msgid "Depth"
+msgstr "სიღრმე"
+
+#: fsview_part.cpp:69
+#, kde-format
+msgid "Read 1 folder, in %2"
+msgid_plural "Read %1 folders, in %2"
+msgstr[0] "წაკითხულია %1 საქაღალდე, %2-ში"
+msgstr[1] "წაკითხულია %1 საქაღალდე, %2-ში"
+
+#: fsview_part.cpp:73
+#, kde-format
+msgid "1 folder"
+msgid_plural "%1 folders"
+msgstr[0] "%1 საქაღალდე"
+msgstr[1] "%1 საქაღალდე"
+
+#: fsview_part.cpp:87
+#, kde-format
+msgid ""
+"<p>This is the FSView plugin, a graphical browsing mode showing filesystem "
+"utilization by using a tree map visualization.</p><p>Note that in this mode, "
+"automatic updating when filesystem changes are made is intentionally <b>not</"
+"b> done.</p><p>For details on usage and options available, see the online "
+"help under menu 'Help/FSView Manual'.</p>"
+msgstr ""
+
+#: fsview_part.cpp:119
+#, kde-format
+msgid "&FSView Manual"
+msgstr "&FSView -ის სახელმძღვანელო"
+
+#: fsview_part.cpp:121
+#, kde-format
+msgid "Show FSView manual"
+msgstr "FSView -ის სახელმძღვანელოს ჩვენება"
+
+#: fsview_part.cpp:122
+#, kde-format
+msgid "Opens the help browser with the FSView documentation"
+msgstr ""
+
+#: fsview_part.cpp:154
+#, kde-format
+msgctxt "@action:inmenu File"
+msgid "Move to Trash"
+msgstr "ფაილის ნაგავში გადატანა"
+
+#: fsview_part.cpp:161
+#, kde-format
+msgctxt "@action:inmenu File"
+msgid "Delete"
+msgstr "წაშლა"
+
+#: fsview_part.cpp:166
+#, kde-format
+msgctxt "@action:inmenu Edit"
+msgid "&Edit File Type..."
+msgstr "&ფაილის ტიპის ჩასწორება..."
+
+#: fsview_part.cpp:170
+#, kde-format
+msgctxt "@action:inmenu File"
+msgid "Properties"
+msgstr "პარამეტრები"
+
+#: fsview_part.cpp:203
+#, kde-format
+msgid ""
+"FSView intentionally does not support automatic updates when changes are "
+"made to files or directories, currently visible in FSView, from the "
+"outside.\n"
+"For details, see the 'Help/FSView Manual'."
+msgstr ""
+
+#. i18n: ectx: Menu (edit)
+#: fsview_part.rc:4
+#, kde-format
+msgid "&Edit"
+msgstr "&ჩასწორება"
+
+#. i18n: ectx: Menu (view)
+#: fsview_part.rc:13
+#, kde-format
+msgid "&View"
+msgstr "&ჩვენება"
+
+#. i18n: ectx: Menu (help)
+#: fsview_part.rc:20
+#, kde-format
+msgid "&Help"
+msgstr "&დახმარება"
+
+#: main.cpp:23
+#, kde-format
+msgid "FSView"
+msgstr "FSView"
+
+#: main.cpp:24
+#, kde-format
+msgid "Filesystem Viewer"
+msgstr "ფაილური სისტემის დამთვალიერებელი"
+
+#: main.cpp:26
+#, kde-format
+msgid "(c) 2002, Josef Weidendorfer"
+msgstr "(c) 2002, Josef Weidendorfer"
+
+#: main.cpp:33
+#, kde-format
+msgid "View filesystem starting from this folder"
+msgstr ""
+
+#: treemap.cpp:1436
+#, kde-format
+msgid "Text %1"
+msgstr "ტექსტი %1"
+
+#: treemap.cpp:3163
+#, kde-format
+msgid "Recursive Bisection"
+msgstr ""
+
+#: treemap.cpp:3165
+#, kde-format
+msgid "Columns"
+msgstr "სვეტები"
+
+#: treemap.cpp:3167
+#, kde-format
+msgid "Rows"
+msgstr "სტრიქონები"
+
+#: treemap.cpp:3169
+#, kde-format
+msgid "Always Best"
+msgstr ""
+
+#: treemap.cpp:3171
+#, kde-format
+msgid "Best"
+msgstr "საუკეთესო"
+
+#: treemap.cpp:3173
+#, kde-format
+msgid "Alternate (V)"
+msgstr ""
+
+#: treemap.cpp:3175
+#, kde-format
+msgid "Alternate (H)"
+msgstr ""
+
+#: treemap.cpp:3177
+#, kde-format
+msgid "Horizontal"
+msgstr "ჰორიზონტალური"
+
+#: treemap.cpp:3179
+#, kde-format
+msgid "Vertical"
+msgstr "ვერტიკალური"
+
+#: treemap.cpp:3231
+#, kde-format
+msgid "Nesting"
+msgstr "ჩადგმული"
+
+#: treemap.cpp:3235
+#, kde-format
+msgid "Border"
+msgstr "საზღვარი"
+
+#: treemap.cpp:3238
+#, kde-format
+msgid "Correct Borders Only"
+msgstr ""
+
+#: treemap.cpp:3241
+#, kde-format
+msgid "Width %1"
+msgstr "სიგანე %1"
+
+#: treemap.cpp:3244
+#, kde-format
+msgid "Allow Rotation"
+msgstr "შემობრუნების ჩართვა"
+
+#: treemap.cpp:3245
+#, kde-format
+msgid "Shading"
+msgstr "ჩრდილები"
+
+#: treemap.cpp:3256
+#, kde-format
+msgid "Visible"
+msgstr "ხილული"
+
+#: treemap.cpp:3257
+#, kde-format
+msgid "Take Space From Children"
+msgstr ""
+
+#: treemap.cpp:3261
+#, kde-format
+msgid "Top Left"
+msgstr "ზედა მარცხენა"
+
+#: treemap.cpp:3264
+#, kde-format
+msgid "Top Center"
+msgstr "ზედა ცენტრი"
+
+#: treemap.cpp:3267
+#, kde-format
+msgid "Top Right"
+msgstr "ზედა მარჯვენა"
+
+#: treemap.cpp:3270
+#, kde-format
+msgid "Bottom Left"
+msgstr "ქვედა მარცხენა"
+
+#: treemap.cpp:3273
+#, kde-format
+msgid "Bottom Center"
+msgstr ""
+
+#: treemap.cpp:3276
+#, kde-format
+msgid "Bottom Right"
+msgstr "ქვედა მარჯვენა"
+
+#: treemap.cpp:3343
+#, kde-format
+msgid "No %1 Limit"
+msgstr "%1-ის ლიმიტის გარეშე"
+
+#: treemap.cpp:3402
+#, kde-format
+msgid "No Area Limit"
+msgstr "ადგილის ლიმიტის გარეშე"
+
+#: treemap.cpp:3408
+#, kde-format
+msgid "Area of '%1' (%2)"
+msgstr ""
+
+#: treemap.cpp:3420 treemap.cpp:3433
+#, kde-format
+msgid "1 Pixel"
+msgid_plural "%1 Pixels"
+msgstr[0] "1 პიქსელი"
+msgstr[1] "%1 პიქსელი"
+
+#: treemap.cpp:3437
+#, kde-format
+msgid "Double Area Limit (to %1)"
+msgstr ""
+
+#: treemap.cpp:3439
+#, kde-format
+msgid "Halve Area Limit (to %1)"
+msgstr ""
+
+#: treemap.cpp:3475
+#, kde-format
+msgid "No Depth Limit"
+msgstr "სიღრმის ლიმტის გარეშე"
+
+#: treemap.cpp:3481
+#, kde-format
+msgid "Depth of '%1' (%2)"
+msgstr ""
+
+#: treemap.cpp:3493 treemap.cpp:3506
+#, kde-format
+msgid "Depth %1"
+msgstr "სიღრმე %1"
+
+#: treemap.cpp:3510
+#, kde-format
+msgid "Decrement (to %1)"
+msgstr ""
+
+#: treemap.cpp:3512
+#, kde-format
+msgid "Increment (to %1)"
+msgstr ""

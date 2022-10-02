@@ -1,0 +1,189 @@
+<chapter id="config">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+&erik.kjaer.pedersen.role; 
+</authorgroup>
+<date
+>2003-11-06</date
+> <releaseinfo
+>3.2</releaseinfo
+> </chapterinfo>
+
+
+<title
+>Indstilling af &konqueror;</title>
+
+<para
+>Ligesom resten af &kde;, er &konqueror; i høj grad indstillelig, så du kan få det udseende der bedst passer til dine behov og ønsker.</para>
+
+<sect1 id="configure-bars">
+<title
+>Værktøjslinjer</title>
+
+<para
+>Når &kde; lige er installeret, indeholder &konqueror;'s vindue en menulinje, en hoved- og sted-værktøjslinjer og muligvis en bogmærkeværktøjslinje.</para>
+
+<para
+>Måske har du ikke brug for alle disse værktøjslinjer. For at skjule en af dem, går du ind i <menuchoice
+><guimenu
+>Opsætning</guimenu
+><guisubmenu
+>Værktøjslinjer</guisubmenu
+> </menuchoice
+>-menuen og fjern krydset fra dets felt. For at vise en skjult værktøjslinje skal der blot afkrydses.</para
+> 
+
+<para
+>Menulinjen selv kan slås til og fra med genvejstastekombinationen <keycombo action="simul"
+>&Ctrl;<keycap
+>M</keycap
+></keycombo
+>. </para>
+
+<!-- FIXME -->
+<para
+>Ved venstre ende af hver linje ser du nogle lodrette kontroller. Ved at klikke med &LMB; på dem <quote
+>flader</quote
+> du linjen ud, hvilket betyder at den er skjult men hurtigt kan genoprettes ved at klikke på de nu vandrette kontroller. Du kan også trække en linje til en ny position med disse linjer.</para>
+
+<para
+>Hvis du klikker med <mousebutton
+>højre</mousebutton
+> museknap på værktøjslinjen, så vil du få en menu frem til at indstille denne linje. Du kan vælge orientering, tekstplacering og ikonstørrelse.</para>
+
+<para
+>Ikonerne vist i de forskellige linjer kan ændres ved brug af <menuchoice
+><guimenu
+>Opsætning</guimenu
+> <guimenuitem
+>Indstil værktøjslinjer...</guimenuitem
+></menuchoice
+>, hvilket får <guilabel
+>Indstil værktøjslinjer</guilabel
+> dialogen frem. Hoved- og ekstra-værktøjslinjer er opdelt i afsnit, såsom hovedværktøjslinjen &lt;&konqueror;&gt;, hovedværktøjslinjen &lt;khtmlpart&gt; og den ekstra værktøjslinje &lt;khtmlsettingsplugin&gt;. Antallet og typen af disse afsnit vil afhænge af om &konqueror; er i browser- eller filhåndteringstilstand og om du har &konqueror;-plugin installeret.</para>
+
+</sect1>
+
+<sect1 id="configshort">
+<title
+>Genveje</title>
+<para
+>For at ændre de genvejstastearrangementer der bruges af &konqueror;, vælges <menuchoice
+><guimenu
+>Opsætning</guimenu
+><guimenuitem
+>Indstil genveje... </guimenuitem
+></menuchoice
+>. Dette vil starte en dialog som vist nedenfor. </para>
+<mediaobject>
+<imageobject>
+<imagedata fileref="shortcut1.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Indstil genveje, skærmaftryk 1</phrase>
+</textobject>
+</mediaobject>
+<para
+>Gennemsøg kombinationsfeltet for at finde den handling du ønsker at tilføje eller ændre genvejstaster for og vælg den ved at <mousebutton
+>venstre</mousebutton
+>-klikke på dens navn. Du vil så kunne ændre genvejstasten ved at vælge en <guilabel
+>Ingen</guilabel
+>, <guilabel
+>Standard</guilabel
+> eller <guilabel
+>Brugervalgt</guilabel
+> radioknap eller ved at klikkde på den store knap i <guilabel
+>Genvej for den valgte handling</guilabel
+>.</para>
+
+<para
+>Hvis du vælger <guilabel
+>Definér genvej</guilabel
+>, og derefter vælger <guilabel
+>Avanceret</guilabel
+>, vises dialogen nedenfor: </para>
+<mediaobject>
+<imageobject>
+<imagedata fileref="shortcut2.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Genvej config skærmaftryk 2</phrase>
+</textobject>
+</mediaobject>
+<para
+>Vælg om du ønsker at ændre den <guilabel
+>Primære</guilabel
+> eller <guilabel
+>Alternative</guilabel
+> genvej, tryk så på den tastekombination du ønsker skal bruges som genvej, for eksempel <keycombo action="simul"
+> &Ctrl;&Shift;<keycap
+>S</keycap
+></keycombo
+>. Hvis <guilabel
+>Auto-luk</guilabel
+> feltet er afkrydset vil dialogen forsvinde så snart du har indtastet tastekombinationen, ellers vil den forblive indtil du trykker på <guibutton
+>O.k.</guibutton
+> eller <guibutton
+>Annullér</guibutton
+>. Klik på den lille sorte ikon med et hvidt kryds i, fjerner genvejen.</para>
+
+<sect2 id="userdefmenus">
+<title
+>Brugerdefinerede menuer</title>
+<para
+>Du kan tilføje din egen popop-menu til &konqueror; så tryk på en tastekombination vil få menuen til at komme frem, hvorpå tryk med en ny tast, eller brug af <keysym
+>Op-pil</keysym
+> og <keysym
+>Ned-pil</keysym
+> og tryk på <keycap
+>Enter</keycap
+>, vil vælge et punkt fra den.</para>
+<para
+>For at gøre dette tilføjes en <guilabel
+>Brugervalgt</guilabel
+> genvej for hver af de handlinger du ønsker skal være i menuen og i <guilabel
+>Definér genvej</guilabel
+>-dialogen afkrydses <guilabel
+>Multi-tast</guilabel
+>-feltet, der trykkes på tastekombinationen som du ønsker skal få den nye menu frem og så, separat trykkes der på tasten der vil vælge det punkt fra menuen.</para>
+</sect2>
+</sect1>
+
+<sect1 id="othersettings">
+<title
+>Anden opsætning</title>
+<para
+>Valg af <menuchoice
+><guimenu
+>Opsætning</guimenu
+><guimenuitem
+> Indstil Konqueror...</guimenuitem
+></menuchoice
+> får en dialog frem som du kan bruge til at kontrollere de fleste aspekter af &konqueror;'s opførsel. Den indeholder adskillige afsnit som vælges ved at <mousebutton
+>venstre</mousebutton
+>-klikke på en af ikonerne i venstre side af dialogen.</para>
+<para
+>Tryk på <guibutton
+>Hjælp</guibutton
+>-knappen vil give dig detaljerede instruktioner om hvordan du skal bruge hvert af disse afsnit, eller du kan bruge <link linkend="bubble"
+>Hvad er dette?</link
+>-egenskaben.</para>
+</sect1>
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

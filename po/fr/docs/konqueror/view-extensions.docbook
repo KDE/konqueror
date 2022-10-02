@@ -1,0 +1,177 @@
+<chapter id="view-extensions">
+
+<title
+>Extensions du type d'affichage</title>
+
+<!--filemanager mode:
+default Icons/Details/Columns (Dolphin), File Size View (konq-plugins)
+additional Terminal Emulator (Konsole), File Replace View (kdewebdev), Cervisia (kdesdk), Radial Map (Filelight-kdeutils) and more
+browser mode:
+default KHTML, WebKit, Embedded Advanced Text Editor
+additional KImageMapEditor+KLinkStatusPart (kdewebdev) and more
+  -->
+<para
+>&konqueror; fournit des types d'affichage supplémentaires dans <menuchoice
+><guimenu
+>Affichage</guimenu
+> <guisubmenu
+>Type d'affichage</guisubmenu
+></menuchoice
+> en mode gestionnaire de fichiers et navigateur, si les applications et modules externes correspondants sont installés.</para>
+<para
+>Le mode gestionnaire de fichiers dispose de deux types d'affichage supplémentaires : <guimenuitem
+>Carte radiale</guimenuitem
+> de l'application <application
+>Filelight</application
+> et le module externe de &konqueror; <guimenuitem
+>Afficher la taille du fichier</guimenuitem
+>.</para>
+
+<sect1 id="fsview">
+<sect1info>
+<authorgroup>
+<author
+><personname
+><firstname
+>Josef</firstname
+> <surname
+>Weidendorfer</surname
+></personname
+> <address
+><email
+>Josef.Weidendorfer@gmx.de</email
+></address
+> </author>
+
+</authorgroup>
+<date
+>16/05/2011</date>
+<releaseinfo
+>&kde; 4.7</releaseinfo>
+</sect1info>
+
+<title
+>&fsview; l'afficheur de système de fichiers</title>
+<sect2>
+<title
+>Introduction</title>
+
+<para
+>Le module &fsview; pour &konqueror; est un autre mode d'affichage pour les objets dont le type MIME est <literal
+>inode/directory</literal
+>, pour des fichiers stockés localement. Il peut être considéré comme une alternative aux différentes vues par icônes ou listes pour parcourir le contenu du système de fichiers local.</para>
+
+<para
+>La propriété unique de &fsview; est sa capacité à afficher toute une hierarchie de dossiers à l'aide de ce qu'on appelle une vue en arbres pour la représentation graphique. La vue en arbres permet d'afficher la métrique des objets dans une structure imbriquée : chaque objet est représenté par un rectangle dont l'aire est proportionnelle à sa métrique. La somme des métriques des enfants d'un objet est égale ou inférieure à la métrique de cet objet.</para>
+
+<para
+>Pour &fsview;, les tailles des fichiers et dossiers sont choisies comme métriques, sachant que la taille d'un d'un dossier est défini comme la somme de ses sous-éléments. De cette façon, les fichiers importants même situé profondément dans la hiérarchie des dossiers peuvent facilement être repérés en recherchant des grands rectangles. Donc &fsview; peut être vu comme une version graphique et interactive de la commande &UNIX; <command
+>du</command
+>.</para>
+
+<para
+>L'intégration de &fsview;, comme partie de &konqueror;, lui permet d'utiliser les caractéristiques standards comme les menus contextuels, et les actions spécifiques au type de fichier. Mais il a été décidé de ne pas permettre la mise à jour automatique lors d'une modification du système de fichiers : si vous supprimez un fichier visible dans &fsview; en dehors de &konqueror;, vous devez mettre à jour manuellement, &pex; en pressant <keycap
+>F5</keycap
+>. La raison derrière cette décision est l'énorme quantité potentielle de fichiers à surveiller, qui aurait pu mettre une pression irraisonnable sur les ressources du système pour une si petite caractéristique.</para>
+
+</sect2>
+
+<sect2>
+<title
+>Caractéristiques d'affichage</title>
+
+<para
+>Cette section explique en détail la représentation graphique dans &fsview;.</para>
+
+<sect3>
+<title
+>Options de dessin des éléments</title>
+
+<para
+>Dans &fsview;, un élément de la représentation en arbres est un rectangle représentant un fichier ou un dossier de votre système de fichiers. Pour faciliter la navigation, les rectangles ont des couleurs significatives et des options d'étiquetage.</para>
+
+<para
+>La couleur d'un rectangle, que vous pouvez changer à partir du menu <menuchoice
+><guimenu
+>Affichage</guimenu
+><guisubmenu
+>Mode de coloration</guisubmenu
+></menuchoice
+> peut être soit fonction de la <guimenuitem
+>Profondeur</guimenuitem
+> pour un repérage simple de l'imbrication, ou varier en fonction de différents attributs de fichiers comme le nom, le propriétaire, le groupe, ou le type MIME.</para>
+
+<para
+>Un rectangle peut être étiqueté avec les différents attributs du fichier correspondant. Pour chaque attribut, vous pouvez choisir s'il ne sera pas visible du tout, s'il ne sera visible que lorsque l'espace est suffisant, ou si l'espace devra être pris sur les enfants (introduisant de cette façon des erreurs par rapport aux contraintes strictes de l'affichage en arbre). En outre, vous pouvez choisir la position relative de l'étiquette dans le rectangle.</para>
+
+</sect3>
+
+<sect3>
+<title
+>Algorithmes de dessin de le représentation en arbres</title>
+
+<para
+>Pour ces algorithmes de dessin de la représentation en arbres, la règle qui dit que l'aire est proportionnelle à la métrique d'un élément devrait être vraie. Avec les arbres dans &fsview;, cet objectif n'est pas toujours atteint : des bordures sont dessinées pour mettre en valeur l'imbrication des éléments, et ces bordures prennent de la place qui est perdue pour les aires des éléments enfants. Notez que moins d'espace est perdu pour la bordure si le rectangle est un carré.</para>
+
+<para
+>De la même façon, il est bon pour une meilleure vue d'ensemble que tous les rectangles soient étiquetés avec leur nom, ce qui prend de la place aussi. Toujours forcer l'espace pour les étiquettes est une option, et ne les dessiner que si de l'espace vide est disponible en est une autre. Dans ce cas, les infobulles apparaissant lorsque la souris survole un élément pendant un certain temps, peuvent beaucoup aider. Ils montrent des informations sur l'élément que la souris survole, ainsi que ses relations avec les éléments parents jusqu'à l'élément supérieur de la représentation.</para>
+
+<para
+>La manière dont l'espace d'un élément est divisé en sous-zones pour ses enfants est laissé libre. Il est toujours meilleur d'essayer de diviser la zone de telle sorte que les rectangles soient le plus proches de carrés, pour l'étiquetage et pour une perte d'espace due aux bordures réduite. Les meilleures méthodes selon cet aspect sont <guilabel
+>Lignes</guilabel
+>, <guilabel
+>Colonnes</guilabel
+>, ou <guilabel
+>Bissections successives</guilabel
+>.</para>
+
+<para
+>Vous pouvez choisi l'aire minimum d'un élément dessiné grâce au menu <menuchoice
+><guimenu
+>Affichage</guimenu
+><guimenuitem
+>Arrêter à l'aire</guimenuitem
+></menuchoice
+>. A la place, des rayures seront dessinées sur la zone du parent pour signaler que cet espace est en fait occupé par un enfant.</para>
+
+</sect3>
+
+</sect2>
+
+<sect2>
+<title
+>Interface utilisateur</title>
+
+<para
+>&fsview; gère la sélection d'éléments multiples, de la même façon que les vues avec icônes ou listes. Cela permet d'effectuer des actions sur un groupe de fichiers. Un simple clic de souris sélectionne toujours l'unique élément sous le curseur de la souris. Faites un clic de souris en maintenant la touche &Maj; pour une sélection continue, ou la touche &Ctrl; pour une sélection discontinue. Notez qu'en sélectionnant un élément, ses sous-éléments ne peuvent plus être sélectionnés. Ainsi, la sélection d'un élément effacera la sélection de tous ses éléments parents.</para>
+
+<para
+>La navigation par clavier est disponible dans la vue en arbres : utilisez les touches <keycap
+>Gauche</keycap
+> et <keycap
+>Droite</keycap
+> pour vous déplacer entre des éléments adjacents, et les touches <keycap
+>Haut</keycap
+> et <keycap
+>Bas</keycap
+> pour vous déplacer dans la hiérarchie. La touche <keycap
+>Espace</keycap
+> sélectionne l'élément, effectue une sélection continue en maintenant &Maj; ou inverse la sélection de l'élément en maintenant &Ctrl; simultanément. Appuyez sur <keycap
+>Entrée</keycap
+> pour lancer l'action « Ouvrir » sur l'élément actuel.</para>
+
+</sect2>
+
+<sect2>
+<title
+>Remerciements et licences</title>
+<para
+>À l'origine, &fsview; a été conçu comme une application test et un tutoriel d'utilisation pour le composant graphique TreeMap développé dans <application
+>KCachegrind</application
+>.</para>
+<para
+>Copyright par Josef Weidendorfer, sous licence GPL V2.</para>
+</sect2>
+
+</sect1>
+</chapter>

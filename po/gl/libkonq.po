@@ -1,0 +1,232 @@
+# translation of libkonq.po to galician
+# translation of libkonq.po to
+# Galician translation of libkonq.
+# Copyright (C) 2000 Jesús Bravo Álvarez.
+#
+# Proxecto Trasno - Adaptación do software libre á lingua galega:  Se desexas
+# colaborar connosco, podes atopar máis información en http://trasno.gpul.org
+#
+# First Version: 2000-09-02 21:46+0200
+#
+# Jesús Bravo Álvarez <jba@pobox.com>, 2000.
+# Xabi García <xabigf@gmx.net>, 2003, 2004.
+# Xabi G. Feal <xabigf@gmx.net>, 2006, 2007.
+# Miguel Branco <bandua83@gmail.com>, 2007.
+# mvillarino <mvillarino@users.sourceforge.net>, 2008, 2009.
+# marce villarino <mvillarino@users.sourceforge.net>, 2009.
+# Marce Villarino <mvillarino@kde-espana.es>, 2009, 2011, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2012-12-02 23:41+0100\n"
+"Last-Translator: Marce Villarino <mvillarino@kde-espana.es>\n"
+"Language-Team: Galician <proxecto@trasno.net>\n"
+"Language: gl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "&Abrir"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "Crear un &cartafol…"
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "&Restaurar"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr "Mostrar o directorio orixinal"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr "Mostrar o ficheiro orixinal"
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "&Baleirar o lixo"
+
+#: src/konq_popupmenu.cpp:312
+#, kde-format
+msgid "&Configure Trash Bin"
+msgstr "&Configurar o lixo"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "&Marcar esta páxina"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "&Marcar este lugar"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "&Marcar este cartafol"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "&Marcar esta ligazón"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "&Marcar este ficheiro"
+
+#: src/konq_popupmenu.cpp:379
+#, kde-format
+msgid "Preview In"
+msgstr "Previsualizar en"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "&Propiedades"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy To"
+#~ msgstr "Copiar en"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "Mover a"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "Cartafol persoal"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "Cartafol raíz"
+
+#~ msgctxt "@title:menu in Copy To or Move To submenu"
+#~ msgid "Browse..."
+#~ msgstr "Escoller..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "Copiar aquí"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "Mover aquí"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "Non pode deixar un cartafol dentro de si mesmo"
+
+#~ msgid "File name for dropped contents:"
+#~ msgstr "Nome do ficheiro para o contido soltado:"
+
+#~ msgid "&Move Here"
+#~ msgstr "&Mover para aquí"
+
+#~ msgid "&Copy Here"
+#~ msgstr "&Copiar aquí"
+
+#~ msgid "&Link Here"
+#~ msgstr "&Ligar aquí"
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "Pór como &fondo de escritorio"
+
+#~ msgid "C&ancel"
+#~ msgstr "C&ancelar"
+
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "Crear un cartafol"
+
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "Introducir un nome diferente"
+
+#~ msgid ""
+#~ "The name \"%1\" starts with a dot, so the directory will be hidden by "
+#~ "default."
+#~ msgstr ""
+#~ "O nome «%1» comeza cun punto, polo que por omisión hase acochar este "
+#~ "directorio."
+
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "Desexa crear un cartafol agochado?"
+
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "Cartafol novo"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "Novo cartafol"
+
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "Escriba o nome do cartafol:"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "Apegar un cartafol"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One File"
+#~ msgstr "Apegar un ficheiro"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Item"
+#~ msgid_plural "Paste %1 Items"
+#~ msgstr[0] "Apegar un elemento"
+#~ msgstr[1] "Apegar %1 elementos"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste Clipboard Contents..."
+#~ msgstr "Apegar o contido do portarretallos..."
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste"
+#~ msgstr "Apegar"
+
+#~ msgid ""
+#~ "Restores this file or directory, back to the location where it was "
+#~ "deleted from initially"
+#~ msgstr "Restaura este ficheiro ou cartafol, no lugar de onde se borrase"
+
+#~ msgid ""
+#~ "Opens a new file manager window showing the target of this link, in its "
+#~ "parent directory."
+#~ msgstr ""
+#~ "Abre unha xanela nova do xestor de ficheiros onde se mostra o obxectivo "
+#~ "desta ligazón no cartafol que o contén."
+
+#~ msgid "Share"
+#~ msgstr "Compartir"
+
+#~ msgctxt "@info"
+#~ msgid "Close"
+#~ msgstr "Pechar"
+
+#~ msgid "Close"
+#~ msgstr "Pechar"
+
+#~ msgid "Error: %1"
+#~ msgstr "Erro: %1"

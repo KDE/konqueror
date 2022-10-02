@@ -1,0 +1,175 @@
+<chapter id="view-extensions">
+
+<title
+>Utvidede visningsmåter</title>
+
+<!--filemanager mode:
+default Icons/Details/Columns (Dolphin), File Size View (konq-plugins)
+additional Terminal Emulator (Konsole), File Replace View (kdewebdev), Cervisia (kdesdk), Radial Map (Filelight-kdeutils) and more
+browser mode:
+default KHTML, WebKit, Embedded Advanced Text Editor
+additional KImageMapEditor+KLinkStatusPart (kdewebdev) and more
+  -->
+<para
+>&konqueror; har flere visningsmåter i <menuchoice
+><guimenu
+>Vis</guimenu
+><guisubmenu
+>Visningsmåte</guisubmenu
+></menuchoice
+> i filbehandler- og nettlesermodus, hvis de tilsvarende programmene og programtilleggene er installert.</para>
+<para
+>Filbehandlermodus har de utvidede visningsmåtene <guimenuitem
+>Radielt kart</guimenuitem
+> fra programmet <application
+>Filelight</application
+> og &konqueror;-programtillegget <guimenuitem
+>Filstørrelsesvisning</guimenuitem
+>.</para>
+
+<sect1 id="fsview">
+<sect1info>
+<authorgroup>
+<author
+><personname
+><firstname
+>Josef</firstname
+> <surname
+>Weidendorfer</surname
+></personname
+> <address
+><email
+>Josef.Weidendorfer@gmx.de</email
+></address
+> </author>
+
+</authorgroup>
+<date
+>2011-05-16</date>
+<releaseinfo
+>&kde; 4.7</releaseinfo>
+</sect1info>
+
+<title
+>&fsview; – Filsystemvisning</title>
+<sect2>
+<title
+>Innledning</title>
+
+<para
+>Programtillegget &fsview; for &konqueror; er en annen visningsmåte for objekter med mimetype <literal
+>inode/directory</literal
+> for lokale filer. Det kan betraktes som et alternativ til de forskjellige ikon- og listevisningene for å bla i innholdet i ditt lokale filsystem.</para>
+
+<para
+>Det enestående ved &fsview; er evnen til å vise hele nestede mappehierarkier ved å bruke såkalt tre-kart til grafisk visualisering. Tre-kart kan vise mål på objekter i nestede strukturer, hvert objekt er representert ved et rektangel som har areal proporsjonalt med målet. Summen av barneobjektenes mål må være lik eller mindre enn målet for forelderobjektet. </para>
+
+<para
+>For &fsview; er det størrelsen for filer og mapper som er valgt som mål, der mappestørrelsen er definert som summen av størrelsen av alle underelementer. På denne måten kan en lett se store filer langt nede i mappestrukturen ved å se etter store rektangler. &fsview; kan da betraktes som en grafisk og interaktiv versjon av &UNIX;-kommandoen <command
+>du</command
+>.</para>
+
+<para
+>&fsview; er integrert i Konqueror slik at det kan bruke standardfunksjoner som kontekstmenyer og handlinger som avhenger av mimetype. Det ble valgt å ikke implementere automatisk oppdatering av filsystemendringer: hvis du f.eks. i et terminalvindu utenfor &konqueror; sletter en fil vist i &fsview; så må du oppdatere manuelt ved f.eks. å trykke <keycap
+>F5</keycap
+>. Grunnen til dette er at det ville være nødvendig å holde øye med et muligens enormt antall filer for å se etter endringer, og det ville kreve for mye systemressurser for en mindre funksjonalitet.</para>
+
+</sect2>
+
+<sect2>
+<title
+>Visualiseringsfunksjoner</title>
+
+<para
+>Dette avsnittet forklarer i detalj den grafiske visualiseringen i &fsview;.</para>
+
+<sect3>
+<title
+>Valg for elementtegning</title>
+
+<para
+>Et element av trekart-visualiseringen i &fsview; er et rektangel som representerer en fil eller mappe i filsystemet. Rektanglene har meningsbærende farge- og merkevalg.</para>
+
+<para
+>Fargen på rektanglene kan endres på menyen <menuchoice
+><guimenu
+>Vis</guimenu
+><guisubmenu
+>Fargemodus</guisubmenu
+></menuchoice
+>, for lett å se nestingen, eller et fargekart for forskjellige filattributter som navn, eier, gruppe eller mimetype.</para>
+
+<para
+>Et rektangel kan merkes med de forskjellige attributtene til den tilsvarende fila eller mappa. For hver attributt kan du velge om den skal vises i det hele tatt, bare hvis det er plass, eller om plass skal tas fra etterkommere (og innføre feil i trestruktur-tegningen). I tillegg kan du velge relativ plassering av etiketten i rektangelet. </para>
+
+</sect3>
+
+<sect3>
+<title
+>Algoritmer for trekart-tegning</title>
+
+<para
+>Regelen om at arealet er proporsjonalt med målet for et element bør gjelde for tegnealgoritmer i tre-kart. Dette er ikke alltid oppnådd i tre-kartet i &fsview;: vi tegner kanter for å vise hvordan elementer er nestet, og disse kantene tar plass som kanskje går tapt for arealene for barneelementene. Merk at mindre plass går tapt til kantene hvis rektangelet er et kvadrat.</para>
+
+<para
+>Likeledes gir det bedre oversikt om alle rektangler har minst sitt navn som etikett, og det opptar også plass. Det kan velges om det alltid skal gis plass til etiketter, eller bare tegne etiketter når det er ledig plass. I det siste tilfellet kan det hjelpe mye å se på hjelpeboblene som vises når musepekeren ligger en stund på et element. De viser informasjon om elementet som musepekeren ligger over, sammen med foreldrerelasjonene opp til rot-elementet i tre-kartet.</para>
+
+<para
+>Implementasjonen avgjør hvordan plassen for et element deles opp i underområder for barneelementene. Det er alltid best å forsøke å dele områdene slik at delene blir så nær kvadratisk som mulig, både for å sette etiketter og å tape mindre plass til kanter. De beste metodene er her <guilabel
+>Rader</guilabel
+>, <guilabel
+>Kolonner</guilabel
+> eller <guilabel
+>Rekursiv todeling</guilabel
+>.</para>
+
+<para
+>Du kan velge minste areal for elementer som skal tegnes med menyoppføringen <menuchoice
+><guimenu
+>Vis</guimenu
+><guimenuitem
+>Stopp ved område</guimenuitem
+></menuchoice
+>. Da blir det tegnet et kryssmønster over forelderområdet for å vise at denne delen faktisk er opptatt av et barneelement.</para>
+
+</sect3>
+
+</sect2>
+
+<sect2>
+<title
+>Brukerflate</title>
+
+<para
+>&fsview; har støtte for valg av flere elementer,i likhet med ikonvisning og listevisning. På denne måten kan en handling utføres samtidig på flere filer. Ett museklikk velger alltid ett enkelt element under musepekeren.  Bruk et museklikk sammen med  å holde &Shift;-tasten nede for å velge en serie elementer, eller &Ctrl; for å vende om utvalget. Merk at når et element er valgt kan ikke underelementer velges lenger. Når et element velges tømmes også først utvalget for alle forelderelementer.</para>
+
+<para
+>I tre-kart kan det navigeres med tastaturet: bruk <keycap
+>pil venstre</keycap
+> og <keycap
+>pil høyre</keycap
+> til å flytte peker på gjeldende element mellom «søsken», og <keycap
+>pil opp</keycap
+> og <keycap
+>pil ned</keycap
+> til å gå opp og ned mappehierarkiet. <keycap
+>Mellomrom</keycap
+> velger elementet, sammen med &Shift; gjør det områdeutvalg, og med &Ctrl; holdt nede samtidig vendes utvalget av gjeldende element. Trykk <keycap
+>Enter</keycap
+> for å utføre Åpne-handlingen på gjeldende element.</para>
+
+</sect2>
+
+<sect2>
+<title
+>Lisenser og deltakere</title>
+<para
+>Opprinnelig var &fsview; et lite testprogram og bruksveiledning for TreeMap-elementet som ble utviklet inne i <application
+>KCachegrind</application
+>.</para>
+<para
+>Opphavsrett Josef Weidendorfer, lisensiert under GPL V2.</para>
+</sect2>
+
+</sect1>
+</chapter>

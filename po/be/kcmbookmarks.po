@@ -1,0 +1,669 @@
+# translation of kcmkio.po to Belarusian
+#
+# Darafei Praliaskouski <symbol@akeeri.tk>, 2006.
+# Darafei Praliaskouski <komzpa@licei2.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkio\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2007-08-26 22:12+0300\n"
+"Last-Translator: Darafei Praliaskouski <komzpa@licei2.com>\n"
+"Language-Team: Belarusian <i18n@mova.org>\n"
+"Language: be\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || n%10>=5 && n%10<=9 || n"
+"%100>=11 && n%100<=14 ? 2 : 3);\n"
+
+#: bookmarks.cpp:92
+#, kde-format
+msgid ""
+"<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
+"page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
+"\">bookmarks:/</a>.</p>"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: bookmarks.ui:16
+#, kde-format
+msgid "Bookmarks"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowRoot)
+#: bookmarks.ui:23
+#, kde-format
+msgid ""
+"If this option is unchecked, bookmarks at the root of the hierarchy (not in "
+"a folder) are not displayed.\n"
+"If checked, they are gathered in a \"root\" folder."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowRoot)
+#: bookmarks.ui:26
+#, kde-format
+msgid "&Show bookmarks without folder"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbFlattenTree)
+#: bookmarks.ui:37
+#, kde-format
+msgid ""
+"Sub-folders are shown within their parent by default. If you activate this "
+"option, sub-folders are displayed on their own.\n"
+"It looks less nice but it may help if you have a very big folder you want to "
+"spread in two columns."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbFlattenTree)
+#: bookmarks.ui:40
+#, kde-format
+msgid "&Flatten bookmarks tree"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowPlaces)
+#: bookmarks.ui:47
+#, kde-format
+msgid ""
+"Show a box with KDE places (Home, Network, ...). Useful if you use konqueror "
+"as a file manager."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowPlaces)
+#: bookmarks.ui:50
+#, kde-format
+msgid "Show system &places"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: bookmarks.ui:63
+#, kde-format
+msgid "General Settings"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, label)
+#: bookmarks.ui:71
+#, kde-format
+msgid ""
+"Folders are automatically distributed in several columns. The optimal number "
+"of columns depends on the width of the konqueror window and the number of "
+"bookmarks you have."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: bookmarks.ui:74
+#, kde-format
+msgid "Number of columns to show:"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowBackgrounds)
+#: bookmarks.ui:109
+#, kde-format
+msgid "Disable it on slow system to disable background images."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowBackgrounds)
+#: bookmarks.ui:112
+#, kde-format
+msgid "Show folder &backgrounds"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, groupBox_3)
+#: bookmarks.ui:138
+#, kde-format
+msgid "How much disk space is used to cache the pixmaps"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: bookmarks.ui:141
+#, kde-format
+msgid "Pixmap Cache"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, lbMaxCacheSize)
+#: bookmarks.ui:150
+#, kde-format
+msgid "Disk cache size:"
+msgstr ""
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, sbCacheSize)
+#: bookmarks.ui:163
+#, fuzzy, kde-format
+#| msgid " KB"
+msgid " kB"
+msgstr " Kб"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, clearCacheButton)
+#: bookmarks.ui:173
+#, kde-format
+msgid "Clear the pixmap cache"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, clearCacheButton)
+#: bookmarks.ui:176
+#, fuzzy, kde-format
+#| msgid "C&lear Cache"
+msgid "&Clear Cache"
+msgstr "А&чысціць кэш"
+
+#~ msgid "&Use cache"
+#~ msgstr "&Выкарыстоўваць кэш"
+
+#~ msgid "Policy"
+#~ msgstr "Палітыка"
+
+#~ msgid "O&ffline browsing mode"
+#~ msgstr "Рэжым вандравання не &на лініі"
+
+#~ msgid "C&lear Cache"
+#~ msgstr "А&чысціць кэш"
+
+#~ msgid "&Policy"
+#~ msgstr "&Палітыка"
+
+#~ msgid "&Management"
+#~ msgstr "&Кіраванне"
+
+#~ msgid "D-Bus Communication Error"
+#~ msgstr "Памылка сувязі D-Bus"
+
+#~ msgid "Unable to delete all the cookies as requested."
+#~ msgstr "Немагчыма выдаліць усе cookie як запытана."
+
+#~ msgid "Unable to delete cookies as requested."
+#~ msgstr "Немагчыма выдаліць cookie як запытана."
+
+#~ msgid "Information Lookup Failure"
+#~ msgstr "Памылка пошуку інфармацыі"
+
+#~ msgid ""
+#~ "Unable to retrieve information about the cookies stored on your computer."
+#~ msgstr ""
+#~ "Немагчыма атрымаць інфармацыю пра cookies, якія захаваныя на вашым "
+#~ "камп'ютары."
+
+#~ msgid "End of session"
+#~ msgstr "Канец сеансу"
+
+#~ msgid "Yes"
+#~ msgstr "Так"
+
+#, fuzzy
+#~| msgid "&Search:"
+#~ msgid "Search"
+#~ msgstr "&Пошук:"
+
+#, fuzzy
+#~| msgid "Site Name"
+#~ msgid "Site"
+#~ msgstr "Назва сайта"
+
+#, fuzzy
+#~| msgid "Site Name"
+#~ msgid "Cookie Name"
+#~ msgstr "Назва сайта"
+
+#~ msgid "D&elete"
+#~ msgstr "&Выдаліць"
+
+#~ msgid "Delete A&ll"
+#~ msgstr "Выдаліць ус&е"
+
+#~ msgid "&Reload List"
+#~ msgstr "&Перазагрузіць спіс"
+
+#~ msgid "Details"
+#~ msgstr "Падрабязнасці"
+
+#~ msgid "Name:"
+#~ msgstr "Назва:"
+
+#~ msgid "Value:"
+#~ msgstr "Значэнне:"
+
+#~ msgid "Domain:"
+#~ msgstr "Дамен:"
+
+#~ msgid "Path:"
+#~ msgstr "Шлях:"
+
+#~ msgid "Expires:"
+#~ msgstr "Састарэлы пасля:"
+
+#~ msgid "Secure:"
+#~ msgstr "Бяспека:"
+
+#, fuzzy
+#~| msgid "Change Cookie Policy"
+#~ msgctxt "@title:window"
+#~ msgid "Change Cookie Policy"
+#~ msgstr "Змяніць палітыку cookie"
+
+#, fuzzy
+#~| msgid "New Cookie Policy"
+#~ msgctxt "@title:window"
+#~ msgid "New Cookie Policy"
+#~ msgstr "Новая палітыка cookie"
+
+#~ msgid ""
+#~ "<qt>A policy already exists for<center><b>%1</b></center>Do you want to "
+#~ "replace it?</qt>"
+#~ msgstr ""
+#~ "<qt>Палітыка ўжо існуе для <center><b>%1</b></center>Ці вы хочаце "
+#~ "замяніць яе?</qt>"
+
+#, fuzzy
+#~| msgid "Duplicate Policy"
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Policy"
+#~ msgstr "Стварыць копію палітыкі"
+
+#~ msgid "Replace"
+#~ msgstr "Замяніць"
+
+#~ msgid "Enable coo&kies"
+#~ msgstr "Уключыць coo&kies"
+
+#~ msgid "Default Policy"
+#~ msgstr "Палітыка па змаўчанні"
+
+#~ msgid "Accep&t all cookies"
+#~ msgstr "Прыйма&ць усе cookies"
+
+#, fuzzy
+#~| msgid "End of session"
+#~ msgid "Accept &until end of session"
+#~ msgstr "Канец сеансу"
+
+#~ msgid "Ask &for confirmation"
+#~ msgstr "&Запытваць пацверджанне"
+
+#, fuzzy
+#~| msgid "Accep&t all cookies"
+#~ msgid "Re&ject all cookies"
+#~ msgstr "Прыйма&ць усе cookies"
+
+#~ msgid "Site Policy"
+#~ msgstr "Палітыка сайта"
+
+#~ msgid "Domain"
+#~ msgstr "Дамен"
+
+#~ msgid "&New..."
+#~ msgstr "&Новы..."
+
+#~ msgid "Chan&ge..."
+#~ msgstr "Змян&іць..."
+
+#, fuzzy
+#~| msgid "Site Name"
+#~ msgid "Site name:"
+#~ msgstr "Назва сайта"
+
+#, fuzzy
+#~| msgid "&Policy:"
+#~ msgid "Policy:"
+#~ msgstr "&Палітыка:"
+
+#~ msgid "Accept"
+#~ msgstr "Прыняць"
+
+#, fuzzy
+#~| msgid "End of session"
+#~ msgid "Accept until end of session"
+#~ msgstr "Канец сеансу"
+
+#~ msgid "Reject"
+#~ msgstr "Адмовіць"
+
+#~ msgid "Ask"
+#~ msgstr "Пытаць"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "No Proxy"
+#~ msgstr "&Проксі"
+
+#, fuzzy
+#~| msgid "Variable Proxy Configuration"
+#~ msgid "Detect proxy configuration automatically"
+#~ msgstr "Настаўленне зменнага проксі"
+
+#, fuzzy
+#~| msgid "Variable Proxy Configuration"
+#~ msgid "Use the specified proxy script to configure the proxy settings."
+#~ msgstr "Настаўленне зменнага проксі"
+
+#, fuzzy
+#~| msgid "Variable Proxy Configuration"
+#~ msgid "Use proxy auto configuration URL:"
+#~ msgstr "Настаўленне зменнага проксі"
+
+#, fuzzy
+#~| msgid "Variable Proxy Configuration"
+#~ msgid "Enter the address for the proxy configuration script."
+#~ msgstr "Настаўленне зменнага проксі"
+
+#, fuzzy
+#~| msgid "Variable Proxy Configuration"
+#~ msgid "Use system proxy configuration:"
+#~ msgstr "Настаўленне зменнага проксі"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "HTTP Proxy:"
+#~ msgstr "&Проксі"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "SSL Proxy:"
+#~ msgstr "&Проксі"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "FTP Proxy:"
+#~ msgstr "&Проксі"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "SOCKS Proxy:"
+#~ msgstr "&Проксі"
+
+#, fuzzy
+#~| msgid "E&xceptions"
+#~ msgid "Exceptions:"
+#~ msgstr "В&ыключэнні"
+
+#, fuzzy
+#~| msgid "Variable Proxy Configuration"
+#~ msgid "Manually enter proxy server configuration information."
+#~ msgstr "Настаўленне зменнага проксі"
+
+#, fuzzy
+#~| msgid "Variable Proxy Configuration"
+#~ msgid "Use manually specified proxy configuration:"
+#~ msgstr "Настаўленне зменнага проксі"
+
+#, fuzzy
+#~| msgid "Use proxy only for entries in this list"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Check this box if you want the above proxy settings to apply only to the "
+#~ "addresses listed in the <i>Exceptions</i> list.</qt>"
+#~ msgstr "Карыстацца проксі толькі для запісаў са спісу"
+
+#, fuzzy
+#~| msgid "Use proxy only for entries in this list"
+#~ msgid "Use proxy settings only for addresses in the Exceptions list"
+#~ msgstr "Карыстацца проксі толькі для запісаў са спісу"
+
+#, fuzzy
+#~| msgid "Update Failed"
+#~ msgctxt "@title:window"
+#~ msgid "Update Failed"
+#~ msgstr "Абнаўленне намагчыма"
+
+#~ msgid "You have to restart KDE for these changes to take effect."
+#~ msgstr "Трэба перастартаваць KDE, каб змены пачалі дзейнічаць."
+
+#~ msgid "Timeout Values"
+#~ msgstr "Значэнні тэрмінаў чакання"
+
+#, fuzzy
+#~| msgid " sec"
+#~ msgid " second"
+#~ msgid_plural " seconds"
+#~ msgstr[0] " сек"
+#~ msgstr[1] " сек"
+#~ msgstr[2] " сек"
+
+#~ msgid "FTP Options"
+#~ msgstr "Настаўленні FTP"
+
+#~ msgid "Default user name:"
+#~ msgstr "Карыстальнік па змаўчанні:"
+
+#~ msgid "Default password:"
+#~ msgstr "Пароль па змаўчанні:"
+
+#, fuzzy
+#~| msgid "Add Identification"
+#~ msgctxt "@title:window"
+#~ msgid "Add Identification"
+#~ msgstr "Дадаць увасабленне"
+
+#, fuzzy
+#~| msgid "Modify Identification"
+#~ msgctxt "@title:window"
+#~ msgid "Modify Identification"
+#~ msgstr "Змяніць увасабленне"
+
+#, fuzzy
+#~| msgid "Duplicate Identification"
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Identification"
+#~ msgstr "Стварыць копію увасаблення"
+
+#, fuzzy
+#~| msgid "Add Identification"
+#~ msgid "&Send identification"
+#~ msgstr "Дадаць увасабленне"
+
+#~ msgid "Default Identification"
+#~ msgstr "Увасабленне па змаўчанні"
+
+#, fuzzy
+#~| msgid "Modify Identification"
+#~ msgid "Site Specific Identification"
+#~ msgstr "Змяніць увасабленне"
+
+#~ msgid "Site Name"
+#~ msgstr "Назва сайта"
+
+#~ msgid "Identification"
+#~ msgstr "Ідэнтыфікацыя"
+
+#, fuzzy
+#~| msgid "Default Identification"
+#~ msgid "&Use the following identification:"
+#~ msgstr "Увасабленне па змаўчанні"
+
+#, fuzzy
+#~| msgid "Default Identification"
+#~ msgid "Real identification:"
+#~ msgstr "Увасабленне па змаўчанні"
+
+#, fuzzy
+#~| msgid "Variable Proxy Configuration"
+#~ msgctxt "@title:window"
+#~ msgid "Variable Proxy Configuration"
+#~ msgstr "Настаўленне зменнага проксі"
+
+#, fuzzy
+#~| msgid "Invalid Proxy Setup"
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Proxy Setup"
+#~ msgstr "Недапушчальныя настаўленні проксі"
+
+#~ msgid "Successfully verified."
+#~ msgstr "Паспяхова праверана."
+
+#, fuzzy
+#~| msgid "Proxy Setup"
+#~ msgctxt "@title:window"
+#~ msgid "Proxy Setup"
+#~ msgstr "Настаўленні проксі."
+
+#, fuzzy
+#~| msgid "Manual Proxy Configuration"
+#~ msgctxt "@title:window"
+#~ msgid "Manual Proxy Configuration"
+#~ msgstr "Самастойнае настаўленне проксі"
+
+#, fuzzy
+#~| msgid "Invalid Proxy Setting"
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Proxy Setting"
+#~ msgstr "Недапушчальныя настаўленні проксі"
+
+#~ msgid "<qt><center><b>%1</b></center> is already in the list.</qt>"
+#~ msgstr "<qt><center><b>%1</b></center> ужо ў спісе.</qt>"
+
+#, fuzzy
+#~| msgid "Duplicate Entry"
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Entry"
+#~ msgstr "Стварыць копію запісу"
+
+#, fuzzy
+#~| msgid "New Exception"
+#~ msgctxt "@title:window"
+#~ msgid "New Exception"
+#~ msgstr "Новае выключэнне"
+
+#, fuzzy
+#~| msgid "Change Exception"
+#~ msgctxt "@title:window"
+#~ msgid "Change Exception"
+#~ msgstr "Змяніць выключэнне"
+
+#, fuzzy
+#~| msgid "Invalid Entry"
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Entry"
+#~ msgstr "Недапушчальны запіс"
+
+#~ msgid "The address you have entered is not valid."
+#~ msgstr "Вы ўвялі недапушчальны адрас."
+
+#~ msgid "H&TTP:"
+#~ msgstr "H&TTP:"
+
+#~ msgid "HTTP&S:"
+#~ msgstr "HTTP&S:"
+
+#~ msgid "&FTP:"
+#~ msgstr "&FTP:"
+
+#~ msgid "&Verify"
+#~ msgstr "&Праверыць"
+
+#~ msgid "Setup..."
+#~ msgstr "Наставіць..."
+
+#~ msgid "Authori&zation"
+#~ msgstr "Аўтарызацыя"
+
+#~ msgid "Username:"
+#~ msgstr "Карыстальнік:"
+
+#~ msgid "Login name."
+#~ msgstr "Імя для уваходу."
+
+#~ msgid "Login password."
+#~ msgstr "Пароль для уваходу."
+
+#~ msgid "Password:"
+#~ msgstr "Пароль:"
+
+#~ msgid "O&ptions"
+#~ msgstr "Настаўленні"
+
+#~ msgid "Use persistent connections to proxy"
+#~ msgstr "Выкарыстоўваць настойлівыя злучэнні да проксі"
+
+#~ msgid "Ser&vers"
+#~ msgstr "Сер&веры"
+
+#~ msgid "D&elete All"
+#~ msgstr "В&ыдаліць усе"
+
+#~ msgid "De&lete"
+#~ msgstr "Вы&даліць"
+
+#~ msgid "C&hange..."
+#~ msgstr "Змяніць..."
+
+#~ msgid "&Domain name:"
+#~ msgstr "&Назва дамена:"
+
+#~ msgid "Add &platform name"
+#~ msgstr "Дадаць назву платформы"
+
+#~ msgid "&Windows Shares"
+#~ msgstr "Агульныя рэсурсы &Windows"
+
+#~ msgid "&Search:"
+#~ msgstr "&Пошук:"
+
+#~ msgid "&SOCKS"
+#~ msgstr "&SOCKS"
+
+#~ msgid "SOCKS"
+#~ msgstr "SOCKS"
+
+#~ msgid "&Test"
+#~ msgstr "&Праверыць"
+
+#~ msgid "SOCKS Implementation"
+#~ msgstr "Рэалізацыя SOCKS"
+
+#~ msgid "&NEC SOCKS"
+#~ msgstr "&NEC SOCKS"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Дарафей Праляскоўскі"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "symbol@akeeri.tk"
+
+#~ msgid "kcmsocks"
+#~ msgstr "kcmsocks"
+
+#~ msgid "KDE SOCKS Control Module"
+#~ msgstr "Модуль кіравання SOCKS KDE"
+
+#~ msgid "(c) 2001 George Staikos"
+#~ msgstr "(c) 2001 George Staikos"
+
+#~ msgid "George Staikos"
+#~ msgstr "Джоржд Стайкас"
+
+#~ msgid "These changes will only apply to newly started applications."
+#~ msgstr ""
+#~ "Гэтыя настаўленні будуць ужытыя толькі для нанова пачатых праграмаў."
+
+#~ msgid "SOCKS Support"
+#~ msgstr "Падтрымка SOCKS"
+
+#~ msgid "SOCKS could not be loaded."
+#~ msgstr "SOCKS не можа быць загружаны"
+
+#~ msgid "&Path:"
+#~ msgstr "&Шлях:"
+
+#~ msgid "Path"
+#~ msgstr "Шлях"
+
+#~ msgid "&Add"
+#~ msgstr "&Дадаць"
+
+#~ msgid "&Remove"
+#~ msgstr "&Выдаліць"
+
+#~ msgid "&OK"
+#~ msgstr "&Добра"
+
+#~ msgid "&Cancel"
+#~ msgstr "&Скасаваць"
+
+#~ msgid "..."
+#~ msgstr "..."
+
+#~ msgid "Clear Search"
+#~ msgstr "Ачысціць вынікі пошуку"

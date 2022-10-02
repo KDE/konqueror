@@ -1,0 +1,324 @@
+<chapter id="sidebar">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>(c) 2005 Mandriva</firstname
+><surname
+>Poland</surname
+><affiliation
+><address
+><email
+>biuro@mandriva.pl</email
+></address
+></affiliation
+><contrib
+>Polskie tłumaczenie</contrib
+></othercredit
+> 
+</authorgroup>
+<date
+>2002-09-22</date
+> <releaseinfo
+>3.1</releaseinfo
+> </chapterinfo>
+
+<title
+>Panel nawigacyjny</title>
+
+<para
+>Panel nawigacyjny pojawia się jako oddzielny widok po lewej stronie okna &konqueror-dopelniacz;. Może on zostać wywołany za pomocą polecenia menu <menuchoice
+><guimenu
+>Okno </guimenu
+><guimenuitem
+>Pokaż panel nawigacyjny</guimenuitem
+></menuchoice
+> lub wciśnięciem klawisza <keycap
+>F9</keycap
+>.</para>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="dirtree.png"/></imageobject>
+<textobject>
+<phrase
+>Praca z panelem nawigacyjnym</phrase
+>  
+</textobject>
+</mediaobject>
+
+<para
+>Panel nawigacyjny zawiera wiele kart. Kliknij <mousebutton
+>lewym</mousebutton
+> przyciskiem myszy na ikonę karty, aby ją zobaczyć. Kliknięcie <mousebutton
+>lewym</mousebutton
+> przyciskiem myszy na ikonę widocznej karty spowoduje zwinięcie panelu nawigacyjnego do listy ikon.</para>
+<variablelist>
+
+<varlistentry>
+<term
+><guilabel
+>Zakładki</guilabel
+></term>
+<listitem
+><para
+>Ta karta pokazuje zakładki w widoku drzewa. Kliknij na obiekt z listy, aby go otworzyć w głównym oknie programu.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Historia</guilabel
+></term>
+<listitem
+><para
+>Ta strona pokazuje historię przeglądanych stron WWW w postaci drzewa. Po kliknięciu <mousebutton
+>lewym</mousebutton
+> przyciskiem myszy na obiekt, zostanie on otworzony w głównym widoku. Możesz także otworzyć obiekt w nowym oknie &konqueror-dopelniacz; klikając na obiekt <mousebutton
+>prawym</mousebutton
+> przyciskiem myszy i wybierając polecenie <guimenuitem
+>Nowe okno</guimenuitem
+> z podręcznego menu.</para>
+<para
+>Możesz usunąć obiekt z historii, klikając na niego <mousebutton
+>prawym</mousebutton
+> przyciskiem myszy i wybierając z menu podręcznego polecenie <guimenuitem
+>Usuń pozycję</guimenuitem
+>. Wybierając polecenie <guimenuitem
+>Wyczyść historię...</guimenuitem
+> spowodujesz usunięcie wszystkich pozycji z historii.</para>
+<para
+>Menu podręczne, które pojawia się po kliknięciu na pozycji <mousebutton
+>prawym</mousebutton
+> przyciskiem myszy daje także możliwość zdecydowania, czy historia ma być uszeregowana za pomocą nazwy, czy daty.</para>
+<para
+>Wybranie z menu podręcznego <guimenuitem
+>Właściwości...</guimenuitem
+> spowoduje wyświetlenie modułu konfiguracji <guilabel
+>Panelu historii</guilabel
+>. Może być on wykorzystany do ustawienia maksymalnego rozmiaru historii i czasu, po którym wpis ma zostać usunięty automatycznie. Możesz także ustawić różne czcionki dla nowych i starych adresów. Pole <guilabel
+>Szczegółowe podpowiedzi</guilabel
+> umożliwia określenie ile informacji ma być wyświetlane, kiedy wskaźnik myszy zostanie zatrzymany nad pozycją w historii.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Katalog domowy</guilabel
+></term>
+<listitem
+><para
+>Ta karta pokazuje widok drzewa katalogów Twojego katalogu domowego. Pamiętaj, że katalogi <quote
+>ukryte</quote
+> (te z nazwami zaczynającymi się od kropki) nie są pokazywane. Kliknięcie <mousebutton
+>lewym</mousebutton
+> przyciskiem myszy spowoduje otwarcie obiektu w głównym widoku. Klikając na obiekt <mousebutton
+>prawym</mousebutton
+> przyciskiem myszy spowodujesz wyświetlenie podręcznego menu, za pomocą którego możesz wybrać, czy katalog ma być otwarty w nowym oknie, czy w nowej karcie. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Sieć</guilabel
+></term>
+<listitem
+><para
+>Ta karta pokazuje w widoku drzewa Twoje ważne połączenia sieciowe, aczkolwiek katalogi lokalne też mogą być tutaj wyświetlone. Podobnie, kliknięcie <mousebutton
+>lewym</mousebutton
+> przyciskiem myszy na pozycji, spowoduje jej otwarcie w widoku głównym, a kliknięcie na nią <mousebutton
+>prawym</mousebutton
+> przyciskiem myszy spowoduje wyświetlenie podręcznego menu.</para>
+<para
+>Katalogi pokazane w karcie <guilabel
+>Sieci</guilabel
+> są przechowywane w katalogu <filename class="directory"
+> ~/.kde/share/apps/konqsidebartng/virtual_folders/remote/</filename
+>, i możesz tworzyć nowe w ten sam sposób, co każdy inny podkatalog. Obiekty znajdujące się w tych katalogach są przechowywane jako pliki <literal role="extension"
+>.desktop</literal
+> i mogą zostać utworzone za pomocą polecenia <menuchoice
+><guisubmenu
+>Utwórz nowy</guisubmenu
+> <guimenuitem
+>Odnośnik do adresu (URL)...</guimenuitem
+></menuchoice
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Katalog główny</guilabel
+></term>
+<listitem
+><para
+>Drzewo katalogu głównego posiada ścieżkę <filename class="directory"
+>/</filename
+>, i jest nadrzędnym katalogiem wszystkich lokalnych plików Twojego systemu. Jeżeli rozwiniesz katalog <quote
+>główny</quote
+>, to znajdziesz tam katalog o nazwie <filename class="directory"
+>root</filename
+>. Należy on do administratora systemu i jest jego katalogiem domowym. Znajdziesz tam również katalog o nazwie <filename class="directory"
+>home</filename
+>, w którym będzie Twój własny katalog <quote
+>domowy</quote
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Usługi</guilabel
+></term>
+<listitem
+><para
+>Ta karta umożliwia szybki dostęp do następujących usług: </para>
+<para
+><guilabel
+>Przeglądarka Audio CD</guilabel
+>.</para>
+<para
+><guilabel
+>Urządzenia</guilabel
+>. Są tutaj wyświetlone Twoje partycje twardego dysku, stacje dyskietek oraz napędy &CD-ROM;. Kliknięcie <mousebutton
+>lewym</mousebutton
+> przyciskiem myszy na nazwie urządzenia lub partycji spowoduje jej zamontowanie i wyświetli jej zawartość w głównym widoku. Zamontowane urządzenie, lub partycja, może zostać odmontowana po kliknięciu na nią <mousebutton
+>prawym</mousebutton
+> przyciskiem myszy i wybraniu polecenia <guimenuitem
+>Odmontuj</guimenuitem
+> z podręcznego menu. </para>
+<para
+><guilabel
+>Przeglądarka sieci lokalnej</guilabel
+> pozwala na przeglądanie innych komputerów podłączonych do Twojej sieci lokalnej.</para>
+<para
+>Drzewo <guilabel
+>Przeglądarki systemu drukowania</guilabel
+> daje możliwość szybkiego dostępu do menedżera wydruku &kde; - <application
+>Kprinter</application
+>.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Konfiguracja panelu nawigacyjnego może zostać zmieniona po kliknięciu prawym przyciskiem myszy na puste pole poniżej ikon kart lub po kliknięciu lewym przyciskiem na ikonę <guilabel
+>Przycisku konfiguracji</guilabel
+> (górna ikona na poprzednim zrzucie ekranu, może nie być widoczna w Twoim widoku). Po kliknięciu na ten przycisk zostanie wyświetlone menu z następującymi opcjami:</para>
+<variablelist>
+
+<varlistentry>
+<term
+><guisubmenu
+>Dodaj nowy</guisubmenu
+></term>
+<listitem
+><para
+>Ta opcja pozwala na dodanie nowej karty do panelu nawigacji. Nowa karta może zawierać <guimenuitem
+>Panel odtwarzacza multimedialnego </guimenuitem
+> (funkcja <link linkend="konq-plugin"
+>wtyczki &konqueror-dopelniacz;</link
+>) lub nowy widok drzewa <guimenuitem
+>katalogu</guimenuitem
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Wiele widoków</guimenuitem
+></term>
+<listitem
+><para
+>Zaznaczenie tej opcji powoduje podzielenie panelu nawigacyjnego tak, że widoczne są dwie karty naraz.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Pokaż karty po lewej stronie</guimenuitem
+></term>
+<listitem
+><para
+>Opcja ta pozwala Ci wybrać, czy ikony kart mają być pokazywane po lewej, czy po prawej stronie panelu nawigacyjnego.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Pokaż przycisk konfiguracji</guimenuitem
+></term>
+<listitem
+><para
+>Opcja ta pozwala włączyć/wyłączyć pokazywanie ikony <guilabel
+>przycisku konfiguracji</guilabel
+>.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Kliknięcie <mousebutton
+>prawym</mousebutton
+> przyciskiem myszy na ikonę karty spowoduje pojawienie się menu z następującymi opcjami:</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guimenuitem
+>Ustaw adres</guimenuitem
+></term>
+<listitem
+><para
+>Opcja jest dostępna tylko dla kart katalogów. Pozwala ona na zmianę adresu &URL; (ścieżki) katalogu przeglądanego w tej karcie.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Ustaw ikonę</guimenuitem
+></term>
+<listitem
+><para
+>Zmienia ikonę karty.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Usuń</guimenuitem
+></term>
+<listitem
+><para
+>Usuwa kartę z panelu nawigacyjnego.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

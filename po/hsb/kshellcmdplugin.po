@@ -1,0 +1,1579 @@
+# translation of konqueror.po to Hornjoserbsce
+# translation of konqueror.po to Upper Sorbian
+# Copyright (C) 2003, 2004, 2005 Free Software Foundation, Inc.
+#
+# Prof. Dr. Eduard Werner <e.werner@rz.uni-leipzig.de>, 2003, 2004.
+# Eduard Werner <edi.werner@gmx.de>, 2005, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2021-10-18 16:27+0200\n"
+"Last-Translator: Eduard Werner <edi.werner@gmx.de>\n"
+"Language-Team: en_US <kde-i18n-doc@lists.kde.org>\n"
+"Language: hsb\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3;\n"
+
+#. i18n: ectx: Menu (tools)
+#: konq_shellcmdplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "&Nastroje"
+
+#: kshellcmdexecutor.cpp:106
+#, kde-format
+msgid "Input Required:"
+msgstr "Zapodaće trěbne:"
+
+#: kshellcmdplugin.cpp:32
+#, kde-format
+msgid "&Execute Shell Command..."
+msgstr "Přikaz za komandowu linku wuwjesć..."
+
+#: kshellcmdplugin.cpp:41
+#, kde-format
+msgid ""
+"KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a bug."
+msgstr ""
+"KShellCmdPlugin::slotExecuteShellCommand: Programowy zmylk, prošu rozprawić "
+"(bug report)."
+
+#: kshellcmdplugin.cpp:51
+#, kde-format
+msgid "Executing shell commands works only on local directories."
+msgstr "Wuwjedźenje přikazow funguje jenož za lokalne zapiski."
+
+#: kshellcmdplugin.cpp:73
+#, kde-format
+msgctxt "@title:window"
+msgid "Execute Shell Command"
+msgstr "Přikaz za komandowu linku wuwjesć"
+
+#: kshellcmdplugin.cpp:74
+#, kde-format
+msgid "Execute shell command in current directory:"
+msgstr "Přikaz za komandowu linku wuwjesć w aktualnym zapisku:"
+
+#: kshellcmdplugin.cpp:85
+#, kde-format
+msgid "Output from command: \"%1\""
+msgstr "Output přikaza: \"%1\""
+
+#~ msgid "no name"
+#~ msgstr "bjez mjena"
+
+#~ msgid "Configure"
+#~ msgstr "Připrawić"
+
+#~ msgid "Extensions"
+#~ msgstr "Ekstensije"
+
+#~ msgid ""
+#~ "There was an error loading the module %1.\n"
+#~ "The diagnostics is:\n"
+#~ "%2"
+#~ msgstr ""
+#~ "Zmylk je so stał při začitanju modula %1.\n"
+#~ "Zmylkowa powěsć je:\n"
+#~ "%2"
+
+#~ msgid "Konqueror"
+#~ msgstr "Konqueror"
+
+#~ msgid "Web browser, file manager and document viewer."
+#~ msgstr "Web browser, datajowy rjadowar, a přehladowar za dokumenty."
+
+#~ msgid "(C) 1999-2008, The Konqueror developers"
+#~ msgstr "(c) 1999-2008, wuwiwarjo Konquerora"
+
+#~ msgid "http://konqueror.kde.org"
+#~ msgstr "http://www.konqueror.org"
+
+#~ msgid "David Faure"
+#~ msgstr "David Faure"
+
+#~ msgid "Developer (framework, parts, JavaScript, I/O library) and maintainer"
+#~ msgstr "wuwiwar (ramiki, dźěle, JavaScript, I/O-biblioteka) a zastaraćel"
+
+#~ msgid "Simon Hausmann"
+#~ msgstr "Simon Hausmann"
+
+#~ msgid "Developer (framework, parts)"
+#~ msgstr "wuwiwar (framework, dźěle)"
+
+#~ msgid "Michael Reiher"
+#~ msgstr "Michael Reiher"
+
+#~ msgid "Developer (framework)"
+#~ msgstr "wuwiwar (framework)"
+
+#~ msgid "Matthias Welk"
+#~ msgstr "Matthias Welk"
+
+#~ msgid "Developer"
+#~ msgstr "wuwiwar"
+
+#~ msgid "Alexander Neundorf"
+#~ msgstr "Alexander Neundorf"
+
+#~ msgid "Developer (List views)"
+#~ msgstr "wuwiwar (lisćinowe přehladki)"
+
+#~ msgid "Michael Brade"
+#~ msgstr "Michael Brade"
+
+#~ msgid "Developer (List views, I/O library)"
+#~ msgstr "wuwiwar (lisćinowe přehladki, I/O-biblioteka)"
+
+#~ msgid "Lars Knoll"
+#~ msgstr "Lars Knoll"
+
+#~ msgid "Developer (HTML rendering engine)"
+#~ msgstr "wuwiwar (HTML-rendering)"
+
+#~ msgid "Dirk Mueller"
+#~ msgstr "Dirk Mueller"
+
+#~ msgid "Peter Kelly"
+#~ msgstr "Peter Kelly"
+
+#~ msgid "Waldo Bastian"
+#~ msgstr "Waldo Bastian"
+
+#~ msgid "Developer (HTML rendering engine, I/O library)"
+#~ msgstr "wuwiwar (HTML-rendering, I/O-biblioteka)"
+
+#~ msgid "Germain Garand"
+#~ msgstr "Germain Garand"
+
+#~ msgid "Leo Savernik"
+#~ msgstr "Leo Savernik"
+
+#~ msgid "Stephan Kulow"
+#~ msgstr "Stephan Kulow"
+
+#~ msgid ""
+#~ "Developer (HTML rendering engine, I/O library, regression test framework)"
+#~ msgstr ""
+#~ "wuwiwar (HTML-rendering, I/O-biblioteka, testowy ramik za regresiju)"
+
+#~ msgid "Antti Koivisto"
+#~ msgstr "Antti Koivisto"
+
+#~ msgid "Zack Rusin"
+#~ msgstr "Zack Rusin"
+
+#~ msgid "Tobias Anton"
+#~ msgstr "Tobias Anton"
+
+#~ msgid "Lubos Lunak"
+#~ msgstr "Lubos Lunak"
+
+#~ msgid "Developer (HTML rendering engine, JavaScript)"
+#~ msgstr "wuwiwar (HTML-rendering, JavaScript)"
+
+#~ msgid "Allan Sandfeld Jensen"
+#~ msgstr "Allan Sandfeld Jensen"
+
+#~ msgid "Apple Safari Developers"
+#~ msgstr "Apple Safari-wuwiwarjo"
+
+#~ msgid "Harri Porten"
+#~ msgstr "Harri Porten"
+
+#~ msgid "Developer (JavaScript)"
+#~ msgstr "wuwiwar (JavaScript)"
+
+#~ msgid "Koos Vriezen"
+#~ msgstr "Koos Vriezen"
+
+#~ msgid "Developer (Java applets and other embedded objects)"
+#~ msgstr "wuwiwar (podpěra za Java-applets a druhe integrowane objekty)"
+
+#~ msgid "Matt Koss"
+#~ msgstr "Matt Koss"
+
+#~ msgid "Developer (I/O library)"
+#~ msgstr "wuwiwar (I/O-biblioteka)"
+
+#~ msgid "Alex Zepeda"
+#~ msgstr "Alex Zepeda"
+
+#~ msgid "Richard Moore"
+#~ msgstr "Richard Moore"
+
+#~ msgid "Developer (Java applet support)"
+#~ msgstr "wuwiwar (podpěra za Java-applets)"
+
+#~ msgid "Dima Rogozin"
+#~ msgstr "Dima Rogozin"
+
+#~ msgid "Wynn Wilkes"
+#~ msgstr "Wynn Wilkes"
+
+#~ msgid ""
+#~ "Developer (Java 2 security manager support,\n"
+#~ " and other major improvements to applet support)"
+#~ msgstr ""
+#~ "wuwiwar (Java-2-wěstosć a dalše\n"
+#~ "wažne polěpšenja za podpěru appletow)"
+
+#~ msgid "Stefan Schimanski"
+#~ msgstr "Stefan Schimanski"
+
+#~ msgid "Developer (Netscape plugin support)"
+#~ msgstr "wuwiwar (podpěra za Netscape-pluginy)"
+
+#~ msgid "George Staikos"
+#~ msgstr "George Staikos"
+
+#~ msgid "Developer (SSL, Netscape plugins)"
+#~ msgstr "wuwiwar (SSL, pluginy z Netscapea)"
+
+#~ msgid "Dawit Alemayehu"
+#~ msgstr "Dawit Alemayehu"
+
+#~ msgid "Developer (I/O library, Authentication support)"
+#~ msgstr "wuwiwar (I/O-biblioteka, podpěra za awtentifikaciju)"
+
+#~ msgid "Carsten Pfeiffer"
+#~ msgstr "Carsten Pfeiffer"
+
+#~ msgid "Torsten Rahn"
+#~ msgstr "Torsten Rahn"
+
+#~ msgid "Graphics/icons"
+#~ msgstr "grafika/piktogramy"
+
+#~ msgid "Torben Weis"
+#~ msgstr "Torben Weis"
+
+#~ msgid "KFM author"
+#~ msgstr "awtor kfm'a"
+
+#~ msgid "Joseph Wenninger"
+#~ msgstr "Joseph Wenninger"
+
+#~ msgid "Developer (navigation panel framework)"
+#~ msgstr "wuwiwar (framework za nawigaciju)"
+
+#~ msgid "Stephan Binner"
+#~ msgstr "Stephan Binner"
+
+#~ msgid "Developer (misc stuff)"
+#~ msgstr "wuwiwar (wšelake wěcy)"
+
+#~ msgid "Ivor Hewitt"
+#~ msgstr "Ivor Hewitt"
+
+#~ msgid "Developer (AdBlock filter)"
+#~ msgstr "wuwiwar (AdBlock filter)"
+
+#~ msgid "Eduardo Robles Elvira"
+#~ msgstr "Eduardo Robles Elvira"
+
+#~ msgid "Close View"
+#~ msgstr "Napohlad začinić"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#~ msgid "Stalled"
+#~ msgstr "Zastajene"
+
+#~ msgid "Preview &in %1"
+#~ msgstr "Pokazować &z %1"
+
+#~ msgid "Show %1"
+#~ msgstr "Pokaž %1"
+
+#, fuzzy
+#~| msgid "History"
+#~ msgctxt "@title:window"
+#~ msgid "History"
+#~ msgstr "Stawizny"
+
+#~ msgctxt "@action:inmenu Parent of 'By Name' and 'By Date'"
+#~ msgid "Sort"
+#~ msgstr "Sortěrować"
+
+#~ msgid ""
+#~ "<qt><center><b>%1</b></center><hr />Last visited: %2<br />First visited: "
+#~ "%3<br />Number of times visited: %4</qt>"
+#~ msgstr ""
+#~ "<qt><center><b>%1</b></center><hr />Posledni raz wopytane: %2<br />Prěni "
+#~ "raz wopytane: %3<br />Kak husto wopytane: %4</qt>"
+
+#~ msgid "Miscellaneous"
+#~ msgstr "Wšelčizny"
+
+#~ msgid "Open in New &Window"
+#~ msgstr "Wočinić w &nowym woknje"
+
+#~ msgid "Open in New Tab"
+#~ msgstr "Wočinić w nowym tabulatoru"
+
+#, fuzzy
+#~| msgid "Copy Link Address"
+#~ msgid "&Copy Link Address"
+#~ msgstr "Adresu wotkaza kopěrować"
+
+#~ msgid "&Remove Entry"
+#~ msgstr "Zapis &wumaznyć"
+
+#~ msgid "&Preferences..."
+#~ msgstr "&Nastajenja..."
+
+#~ msgid "By &Name"
+#~ msgstr "po &mjenje"
+
+#~ msgid "By &Date"
+#~ msgstr "po &datumje"
+
+#, fuzzy
+#~| msgid "Clear History"
+#~ msgid "Search in history"
+#~ msgstr "Nachwilny pomjatk wuprózdnić"
+
+#, fuzzy
+#~| msgid "Start without a default window"
+#~ msgid "Start without a default window, when called without URLs"
+#~ msgstr "Startuj bjez standardneho wokna"
+
+#~ msgid "Profile to open"
+#~ msgstr "Profil, kiž ma so wočinić"
+
+#~ msgid "List available profiles"
+#~ msgstr "Móžne profile naličić"
+
+#~ msgid "List available sessions"
+#~ msgstr "Móžne posedźenja naličić"
+
+#~ msgid "Session to open"
+#~ msgstr "Posedźenje, kiž ma so wočinić"
+
+#~ msgid "Mimetype to use for this URL (e.g. text/html or inode/directory)"
+#~ msgstr "MIME-družina za tutón URL. (na př. text/html abo inode/zapisk)."
+
+#~ msgid ""
+#~ "For URLs that point to files, opens the directory and selects the file, "
+#~ "instead of opening the actual file"
+#~ msgstr ""
+#~ "Hdyž URL k dataji pokazuje, wočini zapisk a wubjerje dataju, njewočini ju "
+#~ "pak"
+
+#~ msgid "Location to open"
+#~ msgstr "Městno, kiž ma so wočinić"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Loading..."
+#~ msgstr "Začitam..."
+
+#~ msgid "Canceled."
+#~ msgstr "Přetorhnjene."
+
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Reloading the page will discard these changes."
+#~ msgstr ""
+#~ "Tuta strona wobsahuje njepósłane změny.\n"
+#~ "Hdyž tutu stronu znowa začitaće, so tute změny zhubja."
+
+#~ msgid "Discard Changes?"
+#~ msgstr "Změny zaćisnyć?"
+
+#~ msgid "&Discard Changes"
+#~ msgstr "&Změny zaćisnyć"
+
+#~ msgid "File Management"
+#~ msgstr "Rjadowanje datajow"
+
+#~ msgid "Web Browsing"
+#~ msgstr "Web Browsing"
+
+#~ msgid "Home Folder"
+#~ msgstr "Domjacy zapisk"
+
+#, fuzzy
+#~| msgid "Home Page"
+#~ msgid "Home"
+#~ msgstr "Domjaca strona"
+
+#~ msgid "Navigate to your 'Home Folder'"
+#~ msgstr "Do wašeho domjaceho zapiska hić"
+
+#~ msgid "Navigate to your local 'Home Folder'"
+#~ msgstr "Do wašeho lokalneho domjaceho zapiska hić"
+
+#~ msgid "Home Page"
+#~ msgstr "Domjaca strona"
+
+#~ msgid "Navigate to your 'Home Page'"
+#~ msgstr "Na wašu domjacu stronu hić"
+
+#~ msgid ""
+#~ "<html>Navigate to your 'Home Page'<br /><br />You can configure the "
+#~ "location where this button takes you under <b>Settings -> Configure "
+#~ "Konqueror -> General</b>.</html>"
+#~ msgstr ""
+#~ "<html>Dźe na wašu domjacu stronu<br /><br />Tutu městnosć móžeće "
+#~ "konfigurować pod <b>Nastajenje -> Konqueror konfigurować-> Powšitkownje</"
+#~ "b>.</html>"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Detaching the tab will discard these changes."
+#~ msgstr ""
+#~ "Tutón tabulator wobsahuje njepósłane změny.\n"
+#~ "Hdyž jón wotlěpiće, zaćisnjeće tute změny."
+
+#~ msgid ""
+#~ "This view contains changes that have not been submitted.\n"
+#~ "Closing the view will discard these changes."
+#~ msgstr ""
+#~ "Tutón napohlad wobsahuje njepósłane změny.\n"
+#~ "Hdyž jón začiniće, zaćisnjeće tute změny."
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the tab will discard these changes."
+#~ msgstr ""
+#~ "Tutón tabulator wobsahuje njepósłane změny.\n"
+#~ "Hdyž jón začiniće, zaćisnjeće tute změny."
+
+#~ msgid "Do you really want to close all other tabs?"
+#~ msgstr "Chceće woprawdźe wšitke druhe tabulatory zezačinjeć?"
+
+#~ msgid "Close Other Tabs Confirmation"
+#~ msgstr "Wobkrućenje zezačinjenja wšitkich druhich tabulatorow"
+
+#~ msgid "Close &Other Tabs"
+#~ msgstr "&Druhe tabulatory zezačinjeć"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing other tabs will discard these changes."
+#~ msgstr ""
+#~ "Tutón tabulator wobsahuje njepósłane změny.\n"
+#~ "Hdyž tamne tabulatory začiniće, zaćisnjeće tute změny."
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Reloading all tabs will discard these changes."
+#~ msgstr ""
+#~ "Tutón tabulator wobsahuje njepósłane změny.\n"
+#~ "Hdyž wšitke tabulatory znowa začitaće, zaćisnjeće tute změny."
+
+#~ msgid "Enter Target"
+#~ msgstr "Zapodajće cil"
+
+#~ msgid "<qt><b>%1</b> is not valid</qt>"
+#~ msgstr "<qt><b>%1</b> njeje w porjadku.<qt>"
+
+#~ msgid "Copy selected files from %1 to:"
+#~ msgstr "Markěrowane dataje kopěrować z %1 do:"
+
+#~ msgid "Move selected files from %1 to:"
+#~ msgstr "Markěrowane dataje sunyć z %1 do:"
+
+#~ msgctxt "This menu entry empties the closed items history"
+#~ msgid "Empty Closed Items History"
+#~ msgstr "Lisćinu začinjenych objektow wuprózdnić"
+
+#~ msgid "Save As..."
+#~ msgstr "Zawěsćić jako ..."
+
+#~ msgid "Manage..."
+#~ msgstr "Rjadować..."
+
+#~ msgid "New &Window"
+#~ msgstr "Nowe &wokno"
+
+#~ msgid "&Duplicate Window"
+#~ msgstr "Wokno &klonować"
+
+#~ msgid "Send &Link Address..."
+#~ msgstr "Adresa wotkaza &pósłać ..."
+
+#~ msgid "S&end File..."
+#~ msgstr "&Dataju pósłać..."
+
+#~ msgid "&Open Location"
+#~ msgstr "Městno w&očinić"
+
+#~ msgid "&Open File..."
+#~ msgstr "&Dataju wočinić..."
+
+#~ msgid "&Find File..."
+#~ msgstr "Dataju &namakać..."
+
+#~ msgid "&Use index.html"
+#~ msgstr "&Wužiwaj index.html"
+
+#~ msgid "Lock to Current Location"
+#~ msgstr "Na aktualne městno přiwjazać"
+
+#~ msgctxt "This option links konqueror views"
+#~ msgid "Lin&k View"
+#~ msgstr "Na napohlad wot&kazać"
+
+#~ msgid "&Up"
+#~ msgstr "&Horje"
+
+#~ msgid "Closed Items"
+#~ msgstr "Začinjene objekty"
+
+#~ msgid "Sessions"
+#~ msgstr "Posedźenja"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Most Often Visited"
+#~ msgstr "Najhusćišo wopytane"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Recently Visited"
+#~ msgstr "Njedawno wopytane"
+
+#, fuzzy
+#~| msgid "Show History Sidebar"
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History"
+#~ msgstr "Bóčny pas z prjedawšimi městnami pokazać"
+
+#, fuzzy
+#~| msgid "&Save View Profile..."
+#~ msgid "&Save View Profile As..."
+#~ msgstr "Nastajenja napohlada zawě&sćić"
+
+#~ msgid "Configure Extensions..."
+#~ msgstr "Ekstensije nastajić..."
+
+#~ msgid "Configure Spell Checking..."
+#~ msgstr "Nastajenje prawopisneje kontrole..."
+
+#~ msgid "Split View &Left/Right"
+#~ msgstr "Napohlad dźělić &nalěwo/naprawo"
+
+#~ msgid "Split View &Top/Bottom"
+#~ msgstr "Napohlad dźělić &horjeka/deleka"
+
+#~ msgid "&New Tab"
+#~ msgstr "&Nowy tabulator"
+
+#~ msgid "&Duplicate Current Tab"
+#~ msgstr "&Aktualny tabulator klonować"
+
+#~ msgid "Detach Current Tab"
+#~ msgstr "Aktualny tabulator wotlěpić"
+
+#~ msgid "&Close Active View"
+#~ msgstr "Aktiwny napohlad &začinić"
+
+#~ msgid "Close Current Tab"
+#~ msgstr "Aktualny tabulator začinić"
+
+#~ msgid "Activate Next Tab"
+#~ msgstr "Přichodny tabulator aktiwizować"
+
+#~ msgid "Activate Previous Tab"
+#~ msgstr "Předchadny tabulator aktiwizować"
+
+#~ msgid "Activate Tab %1"
+#~ msgstr "Tabulator %1 aktiwizować"
+
+#~ msgid "Move Tab Left"
+#~ msgstr "Tabulator nalěwo přesunyć"
+
+#~ msgid "Move Tab Right"
+#~ msgstr "Tabulator naprawo přesunyć"
+
+#~ msgid "Dump Debug Info"
+#~ msgstr "Debugowu informaciju pokazać"
+
+#~ msgid "C&onfigure View Profiles..."
+#~ msgstr "Pr&ofile napohlada nastajić..."
+
+#~ msgid "Load &View Profile"
+#~ msgstr "Profile začitać a &pokazać"
+
+#~ msgid "&Reload"
+#~ msgstr "&Znowa začitać"
+
+#~ msgid "&Reload All Tabs"
+#~ msgstr "Wšě &tabulatory znowa začitać"
+
+#~ msgid "&Force Reload"
+#~ msgstr "Znowazačitanje &wunuzować"
+
+#~ msgid "&Stop"
+#~ msgstr "&Zastajić"
+
+#~ msgid "L&ocation: "
+#~ msgstr "Měst&no: "
+
+#~ msgid "Location Bar"
+#~ msgstr "Pas městnow"
+
+#~ msgid ""
+#~ "<html>Location Bar<br /><br />Enter a web address or search term.</html>"
+#~ msgstr ""
+#~ "<html>Pas městnow<br /><br />Zapodajće internetnu adresu abo pytany "
+#~ "terminus.</html>"
+
+#~ msgid "Clear Location Bar"
+#~ msgstr "Pas městnow wuprózdnić"
+
+#~ msgid ""
+#~ "<html>Clear Location bar<br /><br />Clears the contents of the location "
+#~ "bar.</html>"
+#~ msgstr ""
+#~ "<html>Pas městnow wuprózdnić<br /><br />Wuprózdni pas městnow.</html>"
+
+#~ msgid "&Bookmarks"
+#~ msgstr "&Lubuški"
+
+#~ msgid "Kon&queror Introduction"
+#~ msgstr "Zawod do kon&querora"
+
+#~ msgid "Go"
+#~ msgstr "Dźi"
+
+#~ msgid ""
+#~ "<html>Go<br /><br />Goes to the page that has been entered into the "
+#~ "location bar.</html>"
+#~ msgstr ""
+#~ "<html>Dźi<br /><br />Dźe na stronu, kiž je so do pasa městnow zapodała.</"
+#~ "html>"
+
+#~ msgid ""
+#~ "<html>Enter the parent folder<br /><br />For instance, if the current "
+#~ "location is file:/home/%1 clicking this button will take you to file:/"
+#~ "home.</html>"
+#~ msgstr ""
+#~ "<html>Zapodaj nadrjadowany zapisk<br /><br />Na př., hdyž je tuchwilne "
+#~ "mestno file:/home/%1, dóstanjeće so z klikom na tute tłóčatko do file:/"
+#~ "home.</html>"
+
+#~ msgid "Enter the parent folder"
+#~ msgstr "Do nadrjadowaneho zapiska hić"
+
+#~ msgid "Move backwards one step in the browsing history"
+#~ msgstr "Dźe jednu kročel wróćo w stawiznach browsowanja"
+
+#~ msgid "Move forward one step in the browsing history"
+#~ msgstr "Dźe jednu kročel dale w stawiznach browsowanja"
+
+#~ msgid "Move backwards one step in the closed tabs history"
+#~ msgstr "Dźe jednu kročel wróćo w stawiznach začinjenych tabulatorow"
+
+#~ msgid ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.</html>"
+#~ msgstr ""
+#~ "<html>Tuchwilu pokazany dokument znowa začitać<br /><br />To je na př. "
+#~ "trěbne za aktualizowanje internetowych stronow, kiž buchu modifikowane "
+#~ "wot toho časa, hdyž so začitachu.</html>"
+
+#~ msgid "Reload the currently displayed document"
+#~ msgstr "Tuchwilu pokazany dokument znowa začitać"
+
+#~ msgid ""
+#~ "<html>Reload all currently displayed documents in tabs<br /><br />This "
+#~ "may, for example, be needed to refresh web pages that have been modified "
+#~ "since they were loaded, in order to make the changes visible.</html>"
+#~ msgstr ""
+#~ "<html>Dokumenty we wšěch tabulatorach znowa začitać<br /><br />To je na "
+#~ "př. trěbne za aktualizowanje internetowych stronow, kiž buchu změnjene "
+#~ "wot toho časa, hdyž so začitachu.</html>"
+
+#~ msgid "Reload all currently displayed document in tabs"
+#~ msgstr "Wšě tuchwilu pokazowane dokumenty w tabulatorach so znowa začitaja"
+
+#~ msgid ""
+#~ "<html>Stop loading the document<br /><br />All network transfers will be "
+#~ "stopped and Konqueror will display the content that has been received so "
+#~ "far.</html>"
+#~ msgstr ""
+#~ "<html>Zastaji začitanje dokumenta<br /><br />Přenjesenje přez syć so "
+#~ "zastaji a konqueror pokaže, štož je so dotal přenjesło.</html>"
+
+#~ msgid ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.  Any images on "
+#~ "the page are downloaded again, even if cached copies exist.</html>"
+#~ msgstr ""
+#~ "<html>Tuchwilu pokazowany dokument znowa začitać<br /><br />To je na př. "
+#~ "trěbne za aktualizowanje internetowych stronow, kiž buchu změnjene wot "
+#~ "toho časa, hdyž so začitachu. Wšitke wobrazy na stronje so znowa "
+#~ "přenjesu, samo hdyž lokalne temporarne kopije eksistuja.</html>"
+
+#~ msgid ""
+#~ "Force a reload of the currently displayed document and any contained "
+#~ "images"
+#~ msgstr ""
+#~ "Wunuzuje znowazačitanje tuchwilu pokazowaneho dokumenta a wšitkich "
+#~ "wobrazow w nim."
+
+#~ msgid "Stop loading the document"
+#~ msgstr "Zastaji začitanje dokumenta"
+
+#~ msgid ""
+#~ "<html>Cut the currently selected text or item(s) and move it to the "
+#~ "system clipboard<br /><br />This makes it available to the <b>Paste</b> "
+#~ "command in Konqueror and other KDE applications.</html>"
+#~ msgstr ""
+#~ "<html>Wutřiha wubrany tekst abo objekty a přesunje je do systemoweho "
+#~ "clipboarda.<br /><br />Wone su potom přistupne za přikaz <b>Zasunyć</b> w "
+#~ "konqueroru a druhich KDE-aplikacijach.</html>"
+
+#~ msgid "Move the selected text or item(s) to the clipboard"
+#~ msgstr "Přesunje wubrany tekst abo objekt(y) do clipboarda"
+
+#~ msgid ""
+#~ "<html>Copy the currently selected text or item(s) to the system "
+#~ "clipboard<br /><br />This makes it available to the <b>Paste</b> command "
+#~ "in Konqueror and other KDE applications.</html>"
+#~ msgstr ""
+#~ "<html>Kopěruje wubrany tekst abo objekty do systemoweho clipboarda.<br /"
+#~ "><br />Wone su potom přistupne za přikaz <b>Zasunyć</b> w konqueroru a "
+#~ "druhich KDE-aplikacijach.</html>"
+
+#~ msgid "Copy the selected text or item(s) to the clipboard"
+#~ msgstr "Kopěruje wubrany tekst abo objekt(y) do clipboarda"
+
+#~ msgid ""
+#~ "<html>Paste the previously cut or copied clipboard contents<br /><br /"
+#~ ">This also works for text copied or cut from other KDE applications.</"
+#~ "html>"
+#~ msgstr ""
+#~ "<html>Zasunje wobsah clipboarda<br /><br />To funguje tež za tekst, kiž "
+#~ "bu z druhich KDE-aplikacijow kopěrowany abo wutřihany.</html>"
+
+#~ msgid "Paste the clipboard contents"
+#~ msgstr "Zasunje wobsah clipboarda"
+
+#~ msgid ""
+#~ "<html>Print the currently displayed document<br /><br />You will be "
+#~ "presented with a dialog where you can set various options, such as the "
+#~ "number of copies to print and which printer to use.<br /><br />This "
+#~ "dialog also provides access to special KDE printing services such as "
+#~ "creating a PDF file from the current document.</html>"
+#~ msgstr ""
+#~ "<html>Wućišći tuchwilu pokazowany dokument.<br /><br />Pokaže dialog z "
+#~ "opcijemi, hdźež móžeće na př. nastajić, kelko kopijow chceće ćišćeć abo "
+#~ "kotry ćišćak ma so wužiwać.<br /><br />Tutón dialog spřistupni tež "
+#~ "specielne ćišćenske słužby kaž konwertowanje tuchwilneho dokumenta do PDF-"
+#~ "dataje.</html>"
+
+#~ msgid "Print the current document"
+#~ msgstr "Aktualny dokument ćišćeć"
+
+#~ msgid "If present, open index.html when entering a folder."
+#~ msgstr "Wočini index.html, jeli eksistuje we wotpowědnym zapisku."
+
+#~ msgid ""
+#~ "A locked view cannot change folders. Use in combination with 'link view' "
+#~ "to explore many files from one folder"
+#~ msgstr ""
+#~ "Zapisk njehodźi so změnić, hdyź je napohlad zamknjeny. Wužiwajće to z 'na "
+#~ "napohlad wotkazać', zo byšće wjele datajow z jednoho zapiska přelistowali."
+
+#~ msgid ""
+#~ "Sets the view as 'linked'. A linked view follows folder changes made in "
+#~ "other linked views."
+#~ msgstr ""
+#~ "Na napohlad so 'wotkazuje'. Napohlady, kotrež na so wotkazuja, pokazuja "
+#~ "přeco samsne adresy a zapiski."
+
+#~ msgid "Copy &Files..."
+#~ msgstr "Dataje &kopěrować..."
+
+#~ msgid "M&ove Files..."
+#~ msgstr "Dataje přes&unyć..."
+
+#~ msgid ""
+#~ "You have requested to open more than 20 bookmarks in tabs. This might "
+#~ "take a while. Continue?"
+#~ msgstr ""
+#~ "Chceć naraz wjace hač 20 lubuškow wočinić. To móže chwilku trać. "
+#~ "Pokročować?"
+
+#~ msgid "Open bookmarks folder in new tabs"
+#~ msgstr "Zapisk lubuškow w nowych tabulatorach wočinić"
+
+#~ msgid "Open in T&his Window"
+#~ msgstr "Wočinić w &tutym woknje"
+
+#~ msgid "Open the document in current window"
+#~ msgstr "Wočini dokument w aktualnym woknje"
+
+#~ msgid "Open the document in a new window"
+#~ msgstr "Wočini dokument w nowym woknje"
+
+#~ msgid "Open in &New Tab"
+#~ msgstr "Wočinić w nowym t&abulatoru"
+
+#~ msgid "Open the document in a new tab"
+#~ msgstr "Wočini dokumenta w nowym tabulatoru"
+
+#~ msgid "&Open With"
+#~ msgstr "W&očinić z"
+
+#~ msgid "Open with %1"
+#~ msgstr "Wočinić z %1"
+
+#~ msgctxt "@action:inmenu View"
+#~ msgid "&View Mode"
+#~ msgstr "Modus &wobhladowanja"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window, are you sure you want to quit?"
+#~ msgstr ""
+#~ "W tutym woknje su někotre tabulatory wočinjene, chceće je woprawdźe "
+#~ "zezačinjeć?"
+
+#~ msgid "Confirmation"
+#~ msgstr "Wobkrućenje"
+
+#~ msgid "C&lose Current Tab"
+#~ msgstr "Aktualny tabulator &začinić"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the window will discard these changes."
+#~ msgstr ""
+#~ "Tutón tabulator wobsahuje změny, kiž njebuchu hišće wotpósłane.\n"
+#~ "Hdyž wokno začiniće, so tute změny zhubja."
+
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Closing the window will discard these changes."
+#~ msgstr ""
+#~ "Tuta strona wobsahuje njepósłane změny.\n"
+#~ "Hdyž ju začiniće, zaćisnjeće tute změny."
+
+#~ msgid ""
+#~ "Your sidebar is not functional or unavailable. A new entry cannot be "
+#~ "added."
+#~ msgstr ""
+#~ "Bóčny pas njefunguje abo njeje přistupny. Nowy zapis njehodźi so dodać."
+
+#~ msgid "Web Sidebar"
+#~ msgstr "Bóčny pas za web"
+
+#~ msgid "Add new web extension \"%1\" to your sidebar?"
+#~ msgstr "Ma so nowa internetowa ekstensija \"%1\" k bóčnemu pasej dodać?"
+
+#~ msgid "Add"
+#~ msgstr "Dodać"
+
+#~ msgid "Do Not Add"
+#~ msgstr "Nic dodać"
+
+#~ msgid ""
+#~ "There appears to be a configuration error. You have associated Konqueror "
+#~ "with %1, but it cannot handle this file type."
+#~ msgstr ""
+#~ "Pozdaću so jedna wo zmylk w konfiguraciji. Konqueror je asociěrowany z "
+#~ "%1, njemóže pak z tutej družinu ničo započeć."
+
+#~ msgid "Profile Management"
+#~ msgstr "Rjadowanje profilow"
+
+#~ msgid "&Rename Profile"
+#~ msgstr "&Profil přemjenować"
+
+#~ msgid "&Delete Profile"
+#~ msgstr "Profil wumaznyć"
+
+#~ msgid "Manage Sessions"
+#~ msgstr "Posedźenja rjadować"
+
+#~ msgid "&Open"
+#~ msgstr "W&očinić"
+
+#, fuzzy
+#~| msgid "Rename session"
+#~ msgid "Rename Session"
+#~ msgstr "Posedźenje přemjenować"
+
+#~ msgid "Save Session"
+#~ msgstr "Posedźenje zawěsćić"
+
+#~ msgid ""
+#~ "A session with the name '%1' already exists, do you want to overwrite it?"
+#~ msgstr "Posedźenje z mjenom '%1' hižo eksistuje, chceće je přepisać?"
+
+#~ msgid "Session exists. Overwrite?"
+#~ msgstr "Posedźenje eksistuje. Přepisać?"
+
+#, fuzzy
+#~| msgid ""
+#~| "Konqueror didn't close correctly. Would you like to restore session?"
+#~ msgid ""
+#~ "Konqueror did not close correctly. Would you like to restore the previous "
+#~ "session?"
+#~ msgstr ""
+#~ "Konqueror njej so korektnje zakónčił. Ma so poslednje posedźenje ponowić?"
+
+#~ msgid "Restore Session?"
+#~ msgstr "Posedźenje ponowić?"
+
+#~ msgid "Restore Session"
+#~ msgstr "Posedźenje ponowić"
+
+#~ msgid "Do Not Restore"
+#~ msgstr "Nic ponowić"
+
+#~ msgid "Ask Me Later"
+#~ msgstr "Woprašej so pozdźišo"
+
+#~ msgid ""
+#~ "This bar contains the list of currently open tabs. Click on a tab to make "
+#~ "it active. You can also use keyboard shortcuts to navigate through tabs. "
+#~ "The text on the tab shows the content currently open in it; place your "
+#~ "mouse over the tab to see the full title, in case it has been shortened "
+#~ "to fit the tab width."
+#~ msgstr ""
+#~ "Tutón pas wobsahuje wočinjene tabulatory. Klikńće na tabulator, zo byšće "
+#~ "jón aktiwizowali. Móžeće tež tastaturowe skrótšenki za nawigaciju po "
+#~ "tabulatorach wužiwać. Tekst na tabulatoru pokazuje titl wobsaha; połny "
+#~ "titl widźiće, hdyž z myšu na tabulator jědźeće."
+
+#~ msgid "Open a new tab"
+#~ msgstr "Nowy tabulator wočinić"
+
+#~ msgid "Close the current tab"
+#~ msgstr "Aktiwny tabulator začinić"
+
+#~ msgid "&Duplicate Tab"
+#~ msgstr "Tabulator &duplicěrować"
+
+#~ msgid "&Reload Tab"
+#~ msgstr "Tabulator &znowa začitać"
+
+#~ msgid "Other Tabs"
+#~ msgstr "Druhe tabulatory"
+
+#~ msgid "D&etach Tab"
+#~ msgstr "Tabulator &wotlěpić"
+
+#~ msgid "&Close Tab"
+#~ msgstr "Tabulator &začinić"
+
+#~ msgid "Und&o: Closed Tab"
+#~ msgstr "W&róćo: Tabulator začinić"
+
+#~ msgid "Und&o: Closed Window"
+#~ msgstr "W&róćo: Wokno začinić"
+
+#~ msgid ""
+#~ "The page you are trying to view is the result of posted form data. If you "
+#~ "resend the data, any action the form carried out (such as search or "
+#~ "online purchase) will be repeated. "
+#~ msgstr ""
+#~ "Strona, kotruž chceće sej wobhladać, je wuslědk pósłaneho formulara. Hdyž "
+#~ "tute daty znowa pósćeleće, so kóžda akcija formulara (na př. pytanje abo "
+#~ "online-kup) wospjetuje."
+
+#~ msgid "Warning"
+#~ msgstr "Kedźbu"
+
+#~ msgid "Resend"
+#~ msgstr "Znowa pósłać"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window.\n"
+#~ "Loading a view profile will close them."
+#~ msgstr ""
+#~ "W tutym woknje su někotre wočinjene tabulatory.\n"
+#~ "Začitanje profila napohlada je zezačinja."
+
+#~ msgid "Load View Profile"
+#~ msgstr "Profil napohlada začitać"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Loading a profile will discard these changes."
+#~ msgstr ""
+#~ "Tutón tabulator wobsahuje změny, kiž njejsu so hišće pósłali.\n"
+#~ "Začitanje profila tute změny zaćisnje."
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "History Sidebar Module"
+#~ msgstr "Bóčny pas za web"
+
+#, fuzzy
+#~| msgid "History"
+#~ msgctxt "@title:tab"
+#~ msgid "History"
+#~ msgstr "Stawizny"
+
+#~ msgid " day"
+#~ msgid_plural " days"
+#~ msgstr[0] "dźeń"
+#~ msgstr[1] "dnjej"
+#~ msgstr[2] "dny"
+#~ msgstr[3] "dnjow"
+
+#~ msgid "Minute"
+#~ msgid_plural "Minutes"
+#~ msgstr[0] "Mjeńšina"
+#~ msgstr[1] "Mjeńšinje"
+#~ msgstr[2] "Mjeńšiny"
+#~ msgstr[3] "Mjeńšin"
+
+#~ msgid "Day"
+#~ msgid_plural "Days"
+#~ msgstr[0] "Dźeń"
+#~ msgstr[1] "Dnjej"
+#~ msgstr[2] "Dny"
+#~ msgstr[3] "Dnjow"
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Places Sidebar Module"
+#~ msgstr "Bóčny pas za web"
+
+#~ msgid "Rollback to System Default"
+#~ msgstr "Wróćo k standardej"
+
+#~ msgid "Configure Sidebar"
+#~ msgstr "Bóčny pas připrawić"
+
+#~ msgid "Add New"
+#~ msgstr "Nowy dodać"
+
+#~ msgid "Multiple Views"
+#~ msgstr "Wjacore napohlady"
+
+#~ msgid "Show Tabs Left"
+#~ msgstr "Tabulatory na lěwym boku"
+
+#~ msgid "Show Configuration Button"
+#~ msgstr "Připrawjenske tłóčatko pokazać"
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgid "Close Sidebar"
+#~ msgstr "Bóčny pas za web"
+
+#~ msgid "This entry already exists."
+#~ msgstr "Tutón zapisk hižo eksistuje."
+
+#~ msgid ""
+#~ "<qt>This removes all your entries from the sidebar and adds the system "
+#~ "default ones.<br /><b>This procedure is irreversible</b><br />Do you want "
+#~ "to proceed?</qt>"
+#~ msgstr ""
+#~ "<qt>To wšě Waše zapisy z bóčneho pasa wumaznje a standardne doda.<br /"
+#~ "><b>To so njehodźi wróćo wjerćeć.</b><br />Chceće pokročować?</qt>"
+
+#~ msgid "Show Tabs Right"
+#~ msgstr "Tabulatory na prawym boku"
+
+#~ msgid "Set Name"
+#~ msgstr "Mjeno zapodać"
+
+#~ msgid "Enter the name:"
+#~ msgstr "Zapodajće mjeno:"
+
+#~ msgid "Enter a URL:"
+#~ msgstr "URL zapodać:"
+
+#~ msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
+#~ msgstr "<qt>Chceće woprawdźe tabulator <b>%1</b> wumaznyć?</qt>"
+
+#, fuzzy
+#~| msgid ""
+#~| "You have hidden the navigation panel configuration button. To make it "
+#~| "visible again, click the right mouse button on any of the navigation "
+#~| "panel buttons and select \"Show Configuration Button\"."
+#~ msgid ""
+#~ "You have hidden the sidebar configuration button. To make it visible "
+#~ "again, click the right mouse button on any of the sidebar buttons and "
+#~ "select \"Show Configuration Button\"."
+#~ msgstr ""
+#~ "Sće připrawjenske tłóčatko za nawigaciski pas schowali. Hdyž chceće je "
+#~ "zaso měć, klikńće z prawej myšacej tastu na někajke tłóčatko pasa a "
+#~ "wubjerće \"Připrawjenske tłóčatko pokazać\"."
+
+#~ msgid "Set Name..."
+#~ msgstr "Mjeno zapodać..."
+
+#~ msgid "Set URL..."
+#~ msgstr "URL zapodać..."
+
+#~ msgid "Set Icon..."
+#~ msgstr "Piktogram wubrać..."
+
+#~ msgid "Remove"
+#~ msgstr "W&umaznyć"
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgid "Web module"
+#~ msgstr "Bóčny pas za web"
+
+#~ msgid "&Create New Folder"
+#~ msgstr "&Nowy zapisk stworić"
+
+#~ msgid "Delete Folder"
+#~ msgstr "Zapisk zničić"
+
+#~ msgid "Delete Bookmark"
+#~ msgstr "Lubušk zničić"
+
+#~ msgid "Properties"
+#~ msgstr "Swójstwa"
+
+#~ msgid "Open in New Window"
+#~ msgstr "Wočinić w nowym woknje"
+
+#~ msgid "Open Folder in Tabs"
+#~ msgstr "Zapisk w tabulatorach wočinić"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "Adresu wotkaza kopěrować"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark folder\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "Chceće zapisk lubuškow\n"
+#~ " \"%1\" \n"
+#~ "woprawdźe zničić?"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "Chceće lubušk\n"
+#~ " \"%1\" \n"
+#~ "woprawdźe zničić?"
+
+#~ msgid "Bookmark Folder Deletion"
+#~ msgstr "Zapisk lubuškow zničić"
+
+#~ msgid "Bookmark Deletion"
+#~ msgstr "lubušk zničić"
+
+#~ msgid "Bookmark Properties"
+#~ msgstr "Swójstwa lubuška"
+
+#~ msgid "&Update"
+#~ msgstr "&Aktualizować"
+
+#~ msgid "Name:"
+#~ msgstr "Mjeno:"
+
+#~ msgid "Location:"
+#~ msgstr "Městno: "
+
+#~ msgid "Add Bookmark"
+#~ msgstr "Lubušk dodać"
+
+#~ msgid "Cannot find parent item %1 in the tree. Internal error."
+#~ msgstr "Njemóžu nadrjadowany objekt %1 w štomje namakać. Nutřkowny zmylk."
+
+#~ msgid "&Create New Folder..."
+#~ msgstr "&Nowy zapisk stworić..."
+
+#~ msgid "Rename"
+#~ msgstr "Přemjenować"
+
+#~ msgid "Delete Link"
+#~ msgstr "Wotkaz zničić"
+
+#~ msgid "New Folder"
+#~ msgstr "Nowy zapisk"
+
+#~ msgid "Create New Folder"
+#~ msgstr "Nowy zapisk stworić"
+
+#~ msgid "Enter folder name:"
+#~ msgstr "Zapodajće mjeno zapiska:"
+
+#, fuzzy
+#~| msgid "Name:"
+#~ msgctxt "@label"
+#~ msgid "Name:"
+#~ msgstr "Mjeno:"
+
+#~ msgid "&Open Link"
+#~ msgstr "Wotkaz w&očinić"
+
+#~ msgid " min"
+#~ msgstr "mjeń"
+
+#~ msgid " sec"
+#~ msgstr "sek"
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Web Sidebar Module"
+#~ msgstr "Bóčny pas za web"
+
+#, fuzzy
+#~| msgid "Web browser, file manager, ..."
+#~ msgid ""
+#~ "Konqueror is a web browser, file manager and universal document viewer."
+#~ msgstr "Web browser, datajowy rjadowar, ..."
+
+#, fuzzy
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "Starting Points"
+#~ msgstr "Nas&tajenja"
+
+#~ msgid "Trash"
+#~ msgstr "Papjernik"
+
+#, fuzzy
+#~ msgid "Network Folders"
+#~ msgstr "Zapisk"
+
+#, fuzzy
+#~| msgid "&Bookmarks"
+#~ msgid "Bookmarks"
+#~ msgstr "&Lubuški"
+
+#, fuzzy
+#~ msgid "Next: An Introduction to Konqueror"
+#~ msgstr "W&očinić in"
+
+#, fuzzy
+#~ msgid ""
+#~ "Konqueror is also a full featured and easy to use web browser which you "
+#~ "can use to explore the Internet. Enter the address (e.g. <a href=\"http://"
+#~ "www.kde.org\">http://www.kde.org</a>) of a web page you would like to "
+#~ "visit in the location bar and press Enter, or choose an entry from the "
+#~ "Bookmarks menu."
+#~ msgstr "<A HREF=\"http://www.kde.org\">http://www.kde.org</A> in."
+
+#, fuzzy
+#~ msgid ""
+#~ "To return to the previous location, press the back button <img width='16' "
+#~ "height='16' src=\"%1\"></img> in the toolbar. "
+#~ msgstr "<IMG WIDTH=16 HEIGHT=16 SRC=\"%1\">&nbsp; Wróćo in."
+
+#, fuzzy
+#~ msgid ""
+#~ "To quickly go to your Home folder press the  home button <img width='16' "
+#~ "height='16' src=\"%1\"></img>."
+#~ msgstr "<IMG WIDTH=16 HEIGHT=16 SRC=\"%1\">&nbsp; Wróćo in."
+
+#, fuzzy
+#~ msgid ""
+#~ "<em>Tuning Tip:</em> If you want the Konqueror web browser to start "
+#~ "faster, you can turn off this information screen by clicking <a href="
+#~ "\"%1\">here</a>. You can re-enable it by choosing the Help -> Konqueror "
+#~ "Introduction menu option, and then pressing Settings -> Save View Profile "
+#~ "As... -> \"Web Browsing\"."
+#~ msgstr "<I></I><A HREF=\"%1\"></A> Zawěsćić Napohlad."
+
+#, fuzzy
+#~ msgid ""
+#~ "Konqueror is designed to embrace and support Internet standards. The aim "
+#~ "is to fully implement the officially sanctioned standards from "
+#~ "organizations such as the W3 and OASIS, while also adding extra support "
+#~ "for other common usability features that arise as de facto standards "
+#~ "across the Internet. Along with this support, for such functions as "
+#~ "favicons, Web Shortcuts, and <A HREF=\"%1\">XBEL bookmarks</A>, Konqueror "
+#~ "also implements:"
+#~ msgstr "Hesła za pytanje<A HREF=\"%1\"></A>:"
+
+#, fuzzy
+#~ msgid ""
+#~ "JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\"
+#~ "\">here</A>."
+#~ msgstr "Konfiguracija<A HREF=\\\"%1\\\"></A>."
+
+#, fuzzy
+#~ msgid ""
+#~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">plugins</A> (for "
+#~ "viewing <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
+#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Video, etc.)"
+#~ msgstr ""
+#~ "<SUP>&reg;</SUP><A HREF=\"%1\"></A><A HREF=\"%2\"></A><A HREF=\"%3\"></A> "
+#~ "Wideo"
+
+#, fuzzy
+#~ msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
+#~ msgstr "SSL"
+
+#~ msgid "Details"
+#~ msgstr "Nadrobnosće"
+
+#, fuzzy
+#~ msgctxt "A feature of Konqueror"
+#~ msgid "URL-Completion"
+#~ msgstr "URL"
+
+#, fuzzy
+#~ msgid ""
+#~ "Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, "
+#~ "using Google, for the search phrase \"KDE\". There are a lot of Web-"
+#~ "Shortcuts predefined to make searching for software or looking up certain "
+#~ "words in an encyclopedia a breeze. You can even <a href=\"%1\">create "
+#~ "your own</a> Web-Shortcuts."
+#~ msgstr ""
+#~ "Hesła za pytanje Skrótšenki KDE KDE Skrótšenki in<A HREF=\"%1\"></A> "
+#~ "Skrótšenki!"
+
+#, fuzzy
+#~ msgid ""
+#~ "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
+#~ "the HTML toolbar to increase the font size on your web page."
+#~ msgstr "<IMG WIDTH=16 HEIGHT=16 SRC=\"%1\">&nbsp; in."
+
+#, fuzzy
+#~ msgid ""
+#~ "When you want to paste a new address into the Location toolbar you might "
+#~ "want to clear the current entry by pressing the black arrow with the "
+#~ "white cross <img width='16' height='16' src=\"%1\"></img> in the toolbar."
+#~ msgstr "&nbsp;<IMG WIDTH=16 HEIGHT=16 SRC=\"%1\">&nbsp; in."
+
+#, fuzzy
+#~ msgid ""
+#~ "To create a link on your desktop pointing to the current page, simply "
+#~ "drag the icon (favicon) that is to the left of the Location toolbar, drop "
+#~ "it on to the desktop, and choose \"Icon\"."
+#~ msgstr "Na Link."
+
+#, fuzzy
+#~ msgid ""
+#~ "You can also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen "
+#~ "Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
+#~ "sessions."
+#~ msgstr "<IMG WIDTH=16 HEIGHT=16 SRC=\"%1\">&nbsp; in."
+
+#, fuzzy
+#~ msgid ""
+#~ "Divide et impera (lat. \"Divide and conquer\") - by splitting a window "
+#~ "into two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> "
+#~ "Split View Left/Right) you can make Konqueror appear the way you like. "
+#~ "You can even load some example view-profiles (e.g. Midnight Commander), "
+#~ "or create your own ones."
+#~ msgstr "<IMG WIDTH=16 HEIGHT=16 SRC=\"%1\">&nbsp; Napohlad Lěwy Prawy."
+
+#, fuzzy
+#~ msgid ""
+#~ "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
+#~ "ensures that you can keep track of the pages you have visited recently."
+#~ msgstr "<IMG WIDTH=16 HEIGHT=16 SRC=\"%1\">&nbsp; in."
+
+#, fuzzy
+#~ msgid "Installed"
+#~ msgstr "Zastajene"
+
+#, fuzzy
+#~ msgid ""
+#~ "Do you want to disable showing the introduction in the webbrowsing "
+#~ "profile?"
+#~ msgstr "in?"
+
+#, fuzzy
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Edward Wornar"
+
+#, fuzzy
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "e.werner@rz.uni-leipzig.de"
+
+#, fuzzy
+#~ msgid "&File"
+#~ msgstr "&Zapisk"
+
+#, fuzzy
+#~ msgid "&View"
+#~ msgstr "Napohlad wot&kazow"
+
+#~ msgid "&Go"
+#~ msgstr "&Dźi"
+
+#, fuzzy
+#~ msgid "&Settings"
+#~ msgstr "Nas&tajenja"
+
+#~ msgid "&Window"
+#~ msgstr "&Wokno"
+
+#, fuzzy
+#~ msgid "Main Toolbar"
+#~ msgstr "Pask městnow"
+
+#~ msgid "Extra Toolbar"
+#~ msgstr "Dalši nastrojowy pask"
+
+#~ msgid "Location Toolbar"
+#~ msgstr "Pask městnow"
+
+#~ msgid "Bookmark Toolbar"
+#~ msgstr "Pask z lubuškami"
+
+#, fuzzy
+#~ msgid "Save &URLs in profile"
+#~ msgstr "Zawěsćić &URL in"
+
+#, fuzzy
+#~ msgctxt "@action:button New session"
+#~ msgid "New..."
+#~ msgstr "Zapisk"
+
+#, fuzzy
+#~| msgid "Close Current Tab"
+#~ msgctxt "@action:button Save current session"
+#~ msgid "Save Current"
+#~ msgstr "Aktualny tabulator začinić"
+
+#, fuzzy
+#~| msgid "&Rename"
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename..."
+#~ msgstr "&Hinak pomjenować"
+
+#, fuzzy
+#~ msgctxt "@action:button Delete session"
+#~ msgid "Delete"
+#~ msgstr "&Lubušk"
+
+#, fuzzy
+#~ msgid "Open tabs inside current window"
+#~ msgstr "Wočinić in"
+
+#~ msgid "Limits"
+#~ msgstr "Wobmjezowanja"
+
+#~ msgid "URLs e&xpire after"
+#~ msgstr "URL su &njeaktualne po"
+
+#~ msgid "Maximum &number of URLs:"
+#~ msgstr "Maksimalna &ličba URL:"
+
+#~ msgid "Custom Fonts For"
+#~ msgstr "Postajene pisma za"
+
+#~ msgid "URLs newer than"
+#~ msgstr "Nowše URL hač"
+
+#~ msgid "Choose Font..."
+#~ msgstr "Wuběraj pIsmo..."
+
+#~ msgid "URLs older than"
+#~ msgstr "starše URL hač"
+
+#~ msgid ""
+#~ "Shows the number of times visited and the dates of the first and last "
+#~ "visits, in addition to the URL"
+#~ msgstr ""
+#~ "Pokazuje, kak husto je so URL wopytało, a datumaj prěnjeho a poslednjeho "
+#~ "wopyta."
+
+#~ msgid "Detailed tooltips"
+#~ msgstr "Nadrobne tooltips"
+
+#~ msgid "Clear History"
+#~ msgstr "Nachwilny pomjatk wuprózdnić"
+
+#, fuzzy
+#~| msgid "Maximum &number of URLs:"
+#~ msgid "Maximum number of Closed Items"
+#~ msgstr "Maksimalna &ličba URL:"
+
+#, fuzzy
+#~ msgid "Open folders in separate windows"
+#~ msgstr "Wočinić Zapisk in"
+
+#, fuzzy
+#~ msgid "Show file tips"
+#~ msgstr "Pokaž nadrobne informacije"
+
+#, fuzzy
+#~ msgid "Show previews in file tips"
+#~ msgstr "Pokaž nadrobne informacije"
+
+#, fuzzy
+#~ msgid "Ask confirmation for deleting a file."
+#~ msgstr "Konfiguracija"
+
+#, fuzzy
+#~ msgid "Ask confirmation for move to trash"
+#~ msgstr "Konfiguracija"
+
+#~ msgid "Hide %1"
+#~ msgstr "%1 schować"
+
+#, fuzzy
+#~| msgid "Web SideBar Plugin"
+#~ msgid "SideBar Test Plugin"
+#~ msgstr "Web-zašćěpka za bóčny pas"
+
+#~ msgid "Bookmark This Location"
+#~ msgstr "Tute městno k lubuškam dodać"
+
+#~ msgid ""
+#~ "Malformed URL\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Hubjene mjeno za URL\n"
+#~ " %1"
+
+#~ msgid ""
+#~ "Protocol not supported\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Njepodpěrany protokol\n"
+#~ "%1"
+
+#~ msgid "Cannot create the find part, check your installation."
+#~ msgstr "Njemóžu 'find' namakać, přepruwujće swoju instalaciju."
+
+#, fuzzy
+#~ msgid "My Bookmarks"
+#~ msgstr "&Lubušk"
+
+#~ msgid "Preload for later use"
+#~ msgstr "Za pozdźiše wužiwanje startować"
+
+#~ msgid "&Save View Profile \"%1\"..."
+#~ msgstr "Napohlad profila \"%1\" zawěsćić'..."
+
+#~ msgid "Configure Navigation Panel"
+#~ msgstr "Nawigaciski pas připrawić"
+
+#~ msgid "Close Navigation Panel"
+#~ msgstr "Nawigaciski pas začinić"
+
+#~ msgid "Select Type"
+#~ msgstr "Družinu wubrać"
+
+#~ msgid "Select type:"
+#~ msgstr "Družinu wubrać:"
+
+#~ msgid "Web SideBar Plugin"
+#~ msgstr "Web-zašćěpka za bóčny pas"
+
+#~ msgid "<qt><b>%1</b> does not exist</qt>"
+#~ msgstr "<qt><b>%1</b> njeeksistuje.<qt>"
+
+#~ msgid "Minutes"
+#~ msgstr "Mjeńšiny"
+
+#~ msgid "Days"
+#~ msgstr "Dny"

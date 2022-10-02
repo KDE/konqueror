@@ -1,0 +1,330 @@
+<chapter id="sidebar">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>Gunnhild</firstname
+><surname
+>Lurås</surname
+><affiliation
+><address
+><email
+>gluras@c2i.net</email
+></address
+></affiliation
+><contrib
+></contrib
+></othercredit
+> 
+</authorgroup>
+<date
+>2002-09-22</date
+> <releaseinfo
+>3.1</releaseinfo
+> </chapterinfo>
+
+<title
+>Navigasjonspanelet</title>
+
+<para
+>Navigasjonspanelet opptrer som en egen visning til venstre for &konqueror;-vinduet. Det kan kalles med <menuchoice
+><guimenu
+>Vindu</guimenu
+><guimenuitem
+>Vis navigasjonspanel</guimenuitem
+></menuchoice
+> eller skrus av og på med <keycap
+>F9</keycap
+>-tasten.</para>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="dirtree.png"/></imageobject>
+<textobject>
+<phrase
+>Med navigasjonspanel</phrase
+>  
+</textobject>
+</mediaobject>
+
+<para
+>Den inneholder et antall fanesider; <mousebutton
+>venstre</mousebutton
+>-klikk på ikonet til en fane for å se på den siden. <mousebutton
+>Venstre</mousebutton
+>-klikk på ikonet for den siden du ser på for å slå sammen navigasjonspanelet, slik at bare faneikonene er synlige.</para>
+<variablelist>
+
+<varlistentry>
+<term
+><guilabel
+>Bokmerker</guilabel
+></term>
+<listitem
+><para
+>Denne siden viser bokmerkene dine i et tre. <mousebutton
+>Venstre</mousebutton
+>-klikk på en oppføring for å åpne den i hovedvinduet.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Historie</guilabel
+></term>
+<listitem
+><para
+>Denne siden viser stedene du har besøkt i et tre. Når du <mousebutton
+>venstre</mousebutton
+>-klikk på en oppføring, åpner den seg i hovdvinduet, eller du kan åpne den i et nytt &konqueror;-vindu ved å <mousebutton
+>høyre</mousebutton
+>-klikke og velge <guimenuitem
+>Nytt vindu</guimenuitem
+> fra sprettoppmenyen.</para>
+<para
+>Du kan fjerne en oppføring fra historien ved å <mousebutton
+>høyre</mousebutton
+>klikke på den og velge <guimenuitem
+>Fjern oppføring</guimenuitem
+>. Når du velger <guimenuitem
+>Tøm historien</guimenuitem
+> fjerner du hele historien.</para>
+<para
+>Sprettoppmenyen du får når du <mousebutton
+>høyre</mousebutton
+>-klikker på en oppføring på historiesiden gir deg også muligheten til å velge om hele historien skal sorteres på navn eller dato.</para>
+<para
+>Når du velger <guimenuitem
+>Innstillinger …</guimenuitem
+> fra denne sprettoppmenyen, får du opp kontrollmodulen for <guilabel
+>historien</guilabel
+>. Den kan brukes til å sette maks størrelse på historien og at elementer automatisk blir fjernet etter en viss tidsperiode. Du kan også sette forskjellige skrifttyper for nye og gamle &URL;-er. Avkrysningsboksen <guilabel
+>Detaljerte verktøytips</guilabel
+> styrer hvor mye informasjon som vises når du peker med musa på et element på historiesiden.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Hjemmemappe</guilabel
+></term>
+<listitem
+><para
+>Denne siden viser en trevisning over undermappene i hjemmemappa di.  Legg merke til at <quote
+>skjulte</quote
+> mapper (de med navn som starter  med .) ikke vises. <mousebutton
+>Venstre</mousebutton
+>-klikk på et element for å åpne det i hovedvinduet, eller <mousebutton
+>høyre</mousebutton
+>-klikk på skjermen for å vise en sprettoppmeny som lar deg åpne en undermappe i et nytt vindu eller som et fane i hovedvinduet. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Nettverk</guilabel
+></term>
+<listitem
+><para
+>Denne siden skal vise dine viktige nettverkstkoblinger i et tre, selv om lokale mapper også kan tas med. Igjen så kan du <mousebutton
+>venstre</mousebutton
+>-klikke på et element for å åpne det i hovedvinduet eller <mousebutton
+>høyreklikke</mousebutton
+>-klikke for å hente fram en meny med flere valg.</para>
+<para
+>Mappene som vises på <guilabel
+>Nettverksfanen</guilabel
+> ligger i mappa <filename class="directory"
+> ~/.kde/share/apps/konqsidebartng/virtual_folders/remote/</filename
+>, og du kan lage nye akkurat som du kan lage andre undermapper. Elementene i disse mappene lagres som <literal role="extension"
+>.desktop</literal
+> filer og kan lages med valget <menuchoice
+><guisubmenu
+>Lag ny</guisubmenu
+><guimenuitem
+>Lenke til plassering (URL)… </guimenuitem
+></menuchoice
+> i &konqueror;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Rotmappe</guilabel
+></term>
+<listitem
+><para
+>Rotmappetreet har stien <filename class="directory"
+>/</filename
+>, og er grunnmappa til de lokale filene i systemet ditt. Hvis du ekspanderer <quote
+>rotmappa</quote
+> finner du en annen mappe som heter <filename class="directory"
+>root</filename
+>. Denne hører til systemadministratoren eller superbrukeren og er hennes hjemmemappe. Du vil også finne en mappe som heter <filename class="directory"
+>home</filename
+>, der du kan finne din egen <quote
+>hjemmemappe</quote
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Tjenester</guilabel
+></term>
+<listitem
+><para
+>Denne siden gir rask tilgang til følgende tjenester: </para>
+<para
+><guilabel
+>Lyd-CD-leser</guilabel
+>.</para>
+<para
+><guilabel
+>Enheter</guilabel
+>. Dette er visninga over harddiskpartisjoner, diskettstasjoner og &CD-ROM;. <mousebutton
+>Venstre</mousebutton
+>-klikk på en enhet eller partisjonsnavn for å montere den og vise innholdet i hovedvinduet. En montert enhet eller partisjon kan avmonteres ved et <mousebutton
+>høyre</mousebutton
+>-klikk  på enhetsnavnet og velge <guimenuitem
+>Avmonter</guimenuitem
+> fra sprettoppmenyen. </para>
+<para
+>Med <guilabel
+>LAN-leser</guilabel
+> kan du surfe på andre maskiner som er koblet til lokalnettet.</para>
+<para
+><guilabel
+>Printsystem Leser</guilabel
+> gir  rask tilgang til utskriftsbehandleren i &kde; <application
+>Kprinter</application
+>.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Oppsettet av navigasjonspanelet kan endres ved å <mousebutton
+>høyre</mousebutton
+>-klikke på et ledig område under den nederste faneikonet eller ved å <mousebutton
+>venstre</mousebutton
+>-klikke på <guilabel
+>Oppsettsknappen</guilabel
+> (det øverste ikonet i det forrige skjermbildet, det er ikke sikkert det finnes i ditt oppsett). Dette henter fram en meny med følgende valg:</para>
+<variablelist>
+
+<varlistentry>
+<term
+><guisubmenu
+>Legg til ny</guisubmenu
+></term>
+<listitem
+><para
+>Dette valget lar deg legge til en ny faneside til navigasjonspanelet. Den nye siden kan inneholde <guimenuitem
+>Sidelinje</guimenuitem
+> (et <link linkend="konq-plugin"
+>&konqueror;-programtillegg</link
+>-funksjon) eller en ny trevisning for <guimenuitem
+>mapper</guimenuitem
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Flere visninger</guimenuitem
+></term>
+<listitem
+><para
+>Dette valget deler navigasjonspanelet slik at to fanesider kan ses samtidig.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Vis faner til venstre</guimenuitem
+></term>
+<listitem
+><para
+>Her kan du  velge om faneikonene skal vises til venstre eller høyre for navigasjonspanelet.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Vis innstillingsknapp</guimenuitem
+></term>
+<listitem
+><para
+>Bruk dette valget for å vise eller skjule <guilabel
+>Innstillingsknappen</guilabel
+>.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+><mousebutton
+>Høyre</mousebutton
+>-klikk på et faneikon henter fram en meny med følgende valg:</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guimenuitem
+>Angi nettadresse</guimenuitem
+></term>
+<listitem
+><para
+>Bare tilgjengelig for mappesider, her kan du endre &URL;-en (stien) til mappa som vises i den siden.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Angi ikon</guimenuitem
+></term>
+<listitem
+><para
+>For å endre faneikonet.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Fjern</guimenuitem
+></term>
+<listitem
+><para
+>For å fjerne fanesiden fra navigasjonspanelet.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

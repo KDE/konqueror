@@ -1,0 +1,170 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Serbian-Latin "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="bookmarks" lang="&language;">
+<articleinfo>
+
+<title
+>Obeleživači</title>
+<authorgroup>
+<author
+><personname
+><firstname
+>Ksavje</firstname
+> <surname
+>Vejo</surname
+></personname
+> <email
+>xavier.vello@gmail.com</email
+> </author>
+<othercredit role="translator"
+><firstname
+>Dragan</firstname
+><surname
+>Pantelić</surname
+><affiliation
+><address
+><email
+>falcon-10@gmx.de</email
+></address
+></affiliation
+><contrib
+>prevod</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>8. 11. 2016.</date>
+<releaseinfo
+>Programi KDE‑a 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Sistemske postavke</keyword>
+<keyword
+>obeleživači</keyword>
+<keyword
+>K‑U/I</keyword>
+</keywordset>
+</articleinfo>
+<sect1 id="conf">
+<title
+>Domaća stranica s obeleživačima</title>
+<para
+>U ovom modulu možete podesiti domaću stranicu obeleživača.</para>
+<para
+>Domaću stranicu obeleživača možete prikazati unošenjem <userinput
+>bookmarks:/</userinput
+> u traku lokacije.</para>
+<para
+>Postavkama u ovom modulu može se pristupiti i unošenjem <userinput
+>bookmarks:/config</userinput
+> u traku lokacije.</para>
+<sect2 id="conf-general">
+<title
+>Opšte postavke</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Broj kolona:</guilabel
+></term>
+<listitem>
+<para
+>Fascikle se automatski raspoređuju u nekoliko kolona. Optimalan broj kolona zavisi od širine <application
+>K‑osvajačevog</application
+> prozora i broja obeleživača.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Pozadine fascikli</guilabel
+></term>
+<listitem>
+<para
+>Ispraznite na sporom sistemu kako biste isključili slike pozadine.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="conf-bookmark">
+<title
+>Obeleživači</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Obeleživači bez fascikle</guilabel
+></term>
+<listitem>
+<para
+>Ako je prazno, ne prikazuju se obeleživači u korenu hijerarhije (van fascikli). Ako je popunjeno, sabrani su u „korenoj“ fascikli.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Spljošteno stablo obeleživača</guilabel
+></term>
+<listitem>
+<para
+>Potfascikle se podrazumevano prikazuju unutar roditeljske fascikle. Ako aktivirate ovu opciju, potfascikle će se prikazivati samostalno. Ne izgleda tako lepo, ali može biti od pomoći ako imate veoma veliku fasciklu koju želite da razdvojite u dve kolone.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Sistemska mesta</guilabel
+></term>
+<listitem>
+<para
+>Prikaz okvira sa uobičajenim mestima (domaće, mreža, ...) Korisno ako vam je <application
+>K‑osvajač</application
+> menadžer fajlova.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="conf-cache">
+<title
+>Keš bitmapa</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Veličina keša na disku:</guilabel
+></term>
+<listitem>
+<para
+>Zadajte koliko se prostora na disku koristi za keširanje bitmapa.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Očisti keš</guilabel
+></term>
+<listitem>
+<para
+>Uklanja sve keširane slike. Ovo može biti potrebno ako su neke favikonice oštećene i ne osvežavaju se automatski.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+</sect1>
+</article>

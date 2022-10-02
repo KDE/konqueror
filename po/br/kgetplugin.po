@@ -1,0 +1,2653 @@
+# KDE breton translation
+# Thierry Vignaud <tvignaud@mandriva.com>, 2004-2005
+msgid ""
+msgstr ""
+"Project-Id-Version: kdenetwork/kget.pot\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2004-09-20 15:44+0200\n"
+"Last-Translator: Thierry Vignaud <tvignaud@mandriva.com>\n"
+"Language-Team: br <LL@li.org>\n"
+"Language: br\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: kget_plugin.cpp:56
+#, fuzzy, kde-format
+msgid "Download Manager"
+msgstr "Merour enkargañ"
+
+#: kget_plugin.cpp:62
+#, kde-format
+msgid "Show Drop Target"
+msgstr ""
+
+#: kget_plugin.cpp:69
+#, fuzzy, kde-format
+msgid "List All Links"
+msgstr "Restr diuzet ebet"
+
+#: kget_plugin.cpp:74
+#, fuzzy, kde-format
+msgid "List Selected Links"
+msgstr "Restr diuzet ebet"
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No downloadable links were found."
+msgstr ""
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No Links"
+msgstr "Liamm ebet"
+
+#. i18n: ectx: Menu (tools)
+#: konqueror_kget_browser_integration.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr ""
+
+#~ msgid "Plugins"
+#~ msgstr "Lugantoù"
+
+#, fuzzy
+#~| msgid "Add Group"
+#~ msgid "New Group"
+#~ msgstr "Ouzhpennañ ur strollad"
+
+#, fuzzy
+#~| msgid "Size"
+#~ msgid "Sqlite"
+#~ msgstr "Ment"
+
+#~ msgid "Appearance"
+#~ msgstr "Neuziadur"
+
+#, fuzzy
+#~| msgid "Add Group"
+#~ msgid "Groups"
+#~ msgstr "Ouzhpennañ ur strollad"
+
+#~ msgid "Network"
+#~ msgstr "Rouedad"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Verification"
+#~ msgstr "Dehaezadur :"
+
+#, fuzzy
+#~| msgid "Location (URL)"
+#~ msgctxt "integration of KGet with other applications"
+#~ msgid "Integration"
+#~ msgstr "Lec'hiadur (URL)"
+
+#, fuzzy
+#~| msgid "Advanced"
+#~ msgctxt "Advanced Options"
+#~ msgid "Advanced"
+#~ msgstr "Barek"
+
+#~ msgid "Advanced Options"
+#~ msgstr "Dibaboù barek"
+
+#, fuzzy
+#~ msgid "Transfer Plugins"
+#~ msgstr "&Treuzkas"
+
+#~ msgid "KGet"
+#~ msgstr "KGet"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#, fuzzy
+#~| msgid "Start"
+#~ msgctxt "start transfergroup downloads"
+#~ msgid "Start"
+#~ msgstr "Loc'hañ"
+
+#, fuzzy
+#~| msgid "Stop"
+#~ msgctxt "stop transfergroup downloads"
+#~ msgid "Stop"
+#~ msgstr "Paouez"
+
+#, fuzzy
+#~ msgid "KGet is downloading %1 file"
+#~ msgid_plural "KGet is downloading %1 files"
+#~ msgstr[0] "Merour enkargañ"
+
+#, fuzzy
+#~| msgid ""
+#~| "Error while writing file:\n"
+#~| "%1"
+#~ msgid "Error trying to get %1"
+#~ msgstr ""
+#~ "Fazi en ur skrivañ ar restr :\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Delete Group"
+#~ msgid "Remove Group"
+#~ msgstr "Lemel ur strollad"
+
+#, fuzzy
+#~| msgid "Delete Group"
+#~ msgid "Remove groups"
+#~ msgstr "Lemel ur strollad"
+
+#, fuzzy
+#~ msgid "Download added"
+#~ msgstr "Kenderc'helet eo an ezkargañ"
+
+#, fuzzy
+#~ msgid ""
+#~ "The file %1 already exists.\n"
+#~ "Overwrite?"
+#~ msgstr ""
+#~ "Ar restr dehaezadur \n"
+#~ "%1\n"
+#~ "a zo endeo.\n"
+#~ "Rasklañ anezhañ ?"
+
+#, fuzzy
+#~ msgid "My Downloads"
+#~ msgstr "Kenderc'helet eo an ezkargañ"
+
+#, fuzzy
+#~ msgid "New Download"
+#~ msgstr "Enkargañ adarre"
+
+#~ msgid ""
+#~ "Malformed URL:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "URL siek :\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URL, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "URL siek :\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Download it again?"
+#~ msgstr "Enkargañ adarre"
+
+#, fuzzy
+#~ msgid "Delete it and download again?"
+#~ msgstr "Enkargañ adarre"
+
+#, fuzzy
+#~| msgid "File Already exists"
+#~ msgid "File already exists"
+#~ msgstr "Ar restr a zo endeo"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>KLibLoader could not load the plugin:<br/><i>%1</i></p><p>Error "
+#~| "message:<br/><i>%2</i></p>"
+#~ msgid "Plugin loader could not load the plugin: %1."
+#~ msgstr ""
+#~ "<p>KLibLoader n'hell ket kargañ al lugent :<br/><i>%1</i></p><p>Kemennad "
+#~ "fazi :<br/><i>%2</i></p>"
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is a directory."
+#~ msgstr ""
+#~ "N'eo ket dilamet\n"
+#~ "%1\n"
+#~ "peogwir a zo ur renkell."
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is not a local file."
+#~ msgstr ""
+#~ "N'eo ket dilamet\n"
+#~ "%1\n"
+#~ "peogwir a zo ur restr lec'hel."
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Download completed"
+#~ msgstr "Echu eo an ezkargañ"
+
+#, fuzzy
+#~ msgid "Download started"
+#~ msgstr "Kenderc'helet eo an ezkargañ"
+
+#~ msgid "Error"
+#~ msgstr "Fazi"
+
+#, fuzzy
+#~ msgid "Resolve"
+#~ msgstr "&Treuzkas"
+
+#, fuzzy
+#~| msgid "All the downloads are finished."
+#~ msgid "KGet is now closing, as all downloads have completed."
+#~ msgstr "Echu eo pep ezkargañ."
+
+#, fuzzy
+#~| msgid "All the downloads are finished."
+#~ msgid "The computer will now turn off, as all downloads have completed."
+#~ msgstr "Echu eo pep ezkargañ."
+
+#, fuzzy
+#~| msgid "All the downloads are finished."
+#~ msgid ""
+#~ "The computer will now suspend to disk, as all downloads have completed."
+#~ msgstr "Echu eo pep ezkargañ."
+
+#, fuzzy
+#~| msgid "All the downloads are finished."
+#~ msgid ""
+#~ "The computer will now suspend to RAM, as all downloads have completed."
+#~ msgstr "Echu eo pep ezkargañ."
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgctxt "Suspending computer"
+#~ msgid "Suspending"
+#~ msgstr "Steuñvadur"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgctxt "abort the proposed action"
+#~ msgid "Abort"
+#~ msgstr "Nodrezh :"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Downloads completed"
+#~ msgstr "Echu eo an ezkargañ"
+
+#, fuzzy
+#~| msgid "&File"
+#~ msgctxt "file in a filesystem"
+#~ msgid "File"
+#~ msgstr "&Restr"
+
+#, fuzzy
+#~| msgid "Status"
+#~ msgctxt "status of the download"
+#~ msgid "Status"
+#~ msgstr "Stad"
+
+#, fuzzy
+#~| msgid "Size"
+#~ msgctxt "size of the download"
+#~ msgid "Size"
+#~ msgstr "Ment"
+
+#, fuzzy
+#~ msgid "KGet Transfer"
+#~ msgstr "&Treuzkas"
+
+#, fuzzy
+#~| msgid "File"
+#~ msgctxt "the type of the hash, e.g. MD5"
+#~ msgid "Type"
+#~ msgstr "Restr"
+
+#, fuzzy
+#~ msgid "Downloading...."
+#~ msgstr "Kenderc'helet eo an ezkargañ"
+
+#, fuzzy
+#~| msgid "De&lay"
+#~ msgctxt "transfer state: delayed"
+#~ msgid "Delayed"
+#~ msgstr "Da&le"
+
+#, fuzzy
+#~| msgid "Stopped"
+#~ msgctxt "transfer state: stopped"
+#~ msgid "Stopped"
+#~ msgstr "Paouezet"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgctxt "transfer state: aborted"
+#~ msgid "Aborted"
+#~ msgstr "Nodrezh :"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "transfer state: finished"
+#~ msgid "Finished"
+#~ msgstr "Disoc'het"
+
+#, fuzzy
+#~| msgid "Open Destination"
+#~ msgctxt "changing the destination of the file"
+#~ msgid "Changing destination"
+#~ msgstr "D&igeriñ an dehaezadur"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgctxt "name of download"
+#~ msgid "Name"
+#~ msgstr "Anv"
+
+#, fuzzy
+#~| msgid "Status"
+#~ msgctxt "status of download"
+#~ msgid "Status"
+#~ msgstr "Stad"
+
+#, fuzzy
+#~| msgid "Size"
+#~ msgctxt "size of download"
+#~ msgid "Size"
+#~ msgstr "Ment"
+
+#, fuzzy
+#~| msgid "Progress"
+#~ msgctxt "progress of download"
+#~ msgid "Progress"
+#~ msgstr "Araogenn"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgctxt "speed of download"
+#~ msgid "Speed"
+#~ msgstr "Tizh"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "No download destination specified."
+#~ msgstr "Dehaezadur :"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Invalid download destination specified."
+#~ msgstr "Dehaezadur :"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Download destination is not writeable."
+#~ msgstr "Dehaezadur :"
+
+#, fuzzy
+#~| msgid "Malformed URL:\n"
+#~ msgid "Malformed URL."
+#~ msgstr "URL siek :\n"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid "Malformed URL, protocol missing."
+#~ msgstr ""
+#~ "URL siek :\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid "Malformed URL, host missing."
+#~ msgstr ""
+#~ "URL siek :\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid ""
+#~ "Invalid download destination specified:\n"
+#~ "%1"
+#~ msgstr "Dehaezadur :"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid ""
+#~ "Download destination is not writeable:\n"
+#~ "%1"
+#~ msgstr "Dehaezadur :"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URL, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "URL siek :\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "File already exists. Overwrite it?"
+#~ msgstr ""
+#~ "Ar restr dehaezadur \n"
+#~ "%1\n"
+#~ "a zo endeo.\n"
+#~ "Rasklañ anezhañ ?"
+
+#, fuzzy
+#~ msgid ""
+#~ "File already exists:\n"
+#~ "%1\n"
+#~ "Overwrite it?"
+#~ msgstr ""
+#~ "Ar restr dehaezadur \n"
+#~ "%1\n"
+#~ "a zo endeo.\n"
+#~ "Rasklañ anezhañ ?"
+
+#, fuzzy
+#~| msgid "Malformed URL:\n"
+#~ msgid "Malformed URLs."
+#~ msgstr "URL siek :\n"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid "Malformed URLs, protocol missing."
+#~ msgstr ""
+#~ "URL siek :\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid "Malformed URLs, host missing."
+#~ msgstr ""
+#~ "URL siek :\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "URL siek :\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "URL siek :\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "URL siek :\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Files exist already. Overwrite them?"
+#~ msgstr ""
+#~ "Ar restr dehaezadur \n"
+#~ "%1\n"
+#~ "a zo endeo.\n"
+#~ "Rasklañ anezhañ ?"
+
+#~ msgid "Question"
+#~ msgstr "Goulenn"
+
+#, fuzzy
+#~| msgid "Normal"
+#~ msgctxt "on a question"
+#~ msgid "No all"
+#~ msgstr "Boas"
+
+#, fuzzy
+#~| msgid "Local File Name"
+#~ msgid "Engine name:"
+#~ msgstr "Anv ar restr lec'hel"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "transfer state: connecting"
+#~ msgid "Connecting...."
+#~ msgstr "Kevreadenn"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Set Script File"
+#~ msgstr "Deskrivadur"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "Transfer State: Finished"
+#~ msgid "Finished"
+#~ msgstr "Disoc'het"
+
+#, fuzzy
+#~ msgid "Downloading Metalink File...."
+#~ msgstr "Kenderc'helet eo an ezkargañ"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Redownload Metalink"
+#~ msgstr "Echu eo an ezkargañ"
+
+#, fuzzy
+#~| msgid "&Settings"
+#~ msgid "File Selection"
+#~ msgstr "&Kefluniadur"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "the string that is used to modify an url"
+#~ msgid "Change string"
+#~ msgstr "Kevreadenn"
+
+#, fuzzy
+#~| msgid "Appearance"
+#~ msgid "Append"
+#~ msgstr "Neuziadur"
+
+#, fuzzy
+#~| msgid "Open file"
+#~ msgid "Replace file"
+#~ msgstr "Digeriñ ur restr"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "transfer state: running"
+#~ msgid "Running...."
+#~ msgstr "Kevreadenn"
+
+#, fuzzy
+#~| msgid "Address (URL)"
+#~ msgid "IP Address"
+#~ msgstr "Chomlec'h (URL)"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Down Speed"
+#~ msgstr "Tizh"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Up Speed"
+#~ msgstr "Tizh"
+
+#, fuzzy
+#~| msgid "Docked"
+#~ msgid "Choked"
+#~ msgstr "Ensoc'het"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgid "Score"
+#~ msgstr "Tarzh :"
+
+#, fuzzy
+#~ msgid "Downloaded"
+#~ msgstr "Kenderc'helet eo an ezkargañ"
+
+#, fuzzy
+#~ msgid "Download speed"
+#~ msgstr "Kenderc'helet eo an ezkargañ"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Upload speed"
+#~ msgstr "Tizh"
+
+#, fuzzy
+#~| msgid "Count"
+#~ msgid "Chunk"
+#~ msgstr "Niveriñ"
+
+#~ msgid "Progress"
+#~ msgstr "Araogenn"
+
+#, fuzzy
+#~| msgid "&File"
+#~ msgid "Files"
+#~ msgstr "&Restr"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of the chunk"
+#~ msgstr "Niver a daolioù :"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Download speed of the chunk"
+#~ msgstr "Echu eo an ezkargañ"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed"
+#~ msgstr "Tizh"
+
+#, fuzzy
+#~| msgid "Status"
+#~ msgid "Status"
+#~ msgstr "Stad"
+
+#, fuzzy
+#~| msgid "&File"
+#~ msgid "File"
+#~ msgstr "&Restr"
+
+#~ msgid "Size"
+#~ msgstr "Ment"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Advanced Details for %1"
+#~ msgstr "Renkell dre ziouer :"
+
+#, fuzzy
+#~ msgid "Trackers"
+#~ msgstr "&Treuzkas"
+
+#, fuzzy
+#~| msgid "&Open..."
+#~ msgctxt "Open file"
+#~ msgid "Open"
+#~ msgstr "&Digeriñ ..."
+
+#, fuzzy
+#~ msgid "Download first"
+#~ msgstr "Kenderc'helet eo an ezkargañ"
+
+#, fuzzy
+#~ msgid "Download normally"
+#~ msgstr "Renkell dre ziouer"
+
+#, fuzzy
+#~ msgid "Download last"
+#~ msgstr "Kenderc'helet eo an ezkargañ"
+
+#, fuzzy
+#~ msgid "Do Not Download"
+#~ msgstr "Enkargañ adarre"
+
+#, fuzzy
+#~| msgid "Download Selected Files"
+#~ msgid "Delete File(s)"
+#~ msgstr "Enkargañ ar restroù diuzet"
+
+#, fuzzy
+#~| msgid "Open file"
+#~ msgid "Move File"
+#~ msgstr "Digeriñ ur restr"
+
+#~ msgid "Url"
+#~ msgstr "Url"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Seeders"
+#~ msgstr "Tizh"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Leechers"
+#~ msgstr "Tizh"
+
+#, fuzzy
+#~ msgid "Times Downloaded"
+#~ msgstr "Kenderc'helet eo an ezkargañ"
+
+#, fuzzy
+#~| msgid "Normal"
+#~ msgctxt "Download normally(not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "Boas"
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 %"
+#~ msgstr " %1/e "
+
+#, fuzzy
+#~| msgid "Normal"
+#~ msgctxt "Download Normal (not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "Boas"
+
+#, fuzzy
+#~| msgid "Advanced Options"
+#~ msgid "&Advanced Details"
+#~ msgstr "Dibaboù barek"
+
+#, fuzzy
+#~| msgid "&File"
+#~ msgid "&Scan Files"
+#~ msgstr "&Restr"
+
+#, fuzzy
+#~ msgid "Downloading Torrent File...."
+#~ msgstr "Kenderc'helet eo an ezkargañ"
+
+#, fuzzy
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading...."
+#~ msgstr "Kenderc'helet eo an ezkargañ"
+
+#, fuzzy
+#~| msgid ""
+#~| "Folder does not exist:\n"
+#~| "%1"
+#~ msgid "Torrent file does not exist"
+#~ msgstr ""
+#~ "N'eus ket eus ra renkell :\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Analyzing torrent...."
+#~ msgstr "Kenderc'helet eo an ezkargañ"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgctxt "Transfer status: seeding"
+#~ msgid "Seeding...."
+#~ msgstr "Steuñvadur"
+
+#, fuzzy
+#~| msgid "Default Folder"
+#~ msgid "Select a default torrent folder"
+#~ msgstr "Renkell dre ziouer"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Select a default temporary folder"
+#~ msgstr "Renkell dre ziouer :"
+
+#, fuzzy
+#~| msgid "Import Text &File..."
+#~ msgid "Import dropped files"
+#~ msgstr "Enporzhañ ur &restr skrid ..."
+
+#, fuzzy
+#~| msgid "&Settings"
+#~ msgid "File Properties"
+#~ msgstr "&Kefluniadur"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a filename."
+#~ msgstr "Ethernet"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter at least one URL."
+#~ msgstr "Ethernet"
+
+#, fuzzy
+#~| msgid "Open file"
+#~ msgid "Metalink Version 4.0 file (*.meta4)"
+#~ msgstr "Digeriñ ur restr"
+
+#, fuzzy
+#~| msgid "Open file"
+#~ msgid "Metalink Version 3.0 file (*.metalink)"
+#~ msgstr "Digeriñ ur restr"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "Import Links"
+#~ msgstr "Liamm ebet"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgctxt "Download the items which have been selected"
+#~ msgid "&Download Checked"
+#~ msgstr "Echu eo an ezkargañ"
+
+#, fuzzy
+#~| msgid "Local File Name"
+#~ msgid "File Name"
+#~ msgstr "Anv ar restr lec'hel"
+
+#~ msgid "Description"
+#~ msgstr "Deskrivadur"
+
+#, fuzzy
+#~| msgid "File"
+#~ msgctxt "list header: type of file"
+#~ msgid "File Type"
+#~ msgstr "Restr"
+
+#~ msgid "Location (URL)"
+#~ msgstr "Lec'hiadur (URL)"
+
+#, fuzzy
+#~| msgid "Stop All"
+#~ msgid "&Select All Filtered"
+#~ msgstr "Herzel an holl re"
+
+#, fuzzy
+#~| msgid "Stop All"
+#~ msgid "&Select All"
+#~ msgstr "Herzel an holl re"
+
+#, fuzzy
+#~| msgid "Stop All"
+#~ msgid "D&eselect All Filtered"
+#~ msgstr "Herzel an holl re"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgctxt "Mirror as in server, in url"
+#~ msgid "Mirror"
+#~ msgstr "Fazi"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgctxt "The priority of the mirror"
+#~ msgid "Priority"
+#~ msgstr "Nodrezh :"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "Number of paralell connections to the mirror"
+#~ msgid "Connections"
+#~ msgstr "Kevreadenn"
+
+#, fuzzy
+#~| msgid "Location (URL)"
+#~ msgctxt "Location = country"
+#~ msgid "Location"
+#~ msgstr "Lec'hiadur (URL)"
+
+#, fuzzy
+#~| msgid "<i>%1</i> has been added."
+#~ msgid "%1 has been successfully added."
+#~ msgstr "ouzhpennet eo <i>%1</i>."
+
+#, fuzzy
+#~ msgid "Download again"
+#~ msgstr "Enkargañ adarre"
+
+#, fuzzy
+#~| msgid "Delete Selected"
+#~ msgctxt "Delete selected history-item"
+#~ msgid "Delete selected"
+#~ msgstr "Lemel an hini diuzet"
+
+#, fuzzy
+#~| msgid "Open file"
+#~ msgid "Open file"
+#~ msgstr "Digeriñ ur restr"
+
+#, fuzzy
+#~ msgid "Transfer History"
+#~ msgstr "&Treuzkas"
+
+#, fuzzy
+#~| msgid "Open file"
+#~ msgid "&Open File"
+#~ msgstr "Digeriñ ur restr"
+
+#, fuzzy
+#~| msgid "Stopped"
+#~ msgctxt "The transfer is stopped"
+#~ msgid "Stopped"
+#~ msgstr "Paouezet"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "The transfer is finished"
+#~ msgid "Finished"
+#~ msgstr "Disoc'het"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgid "Source File"
+#~ msgstr "Tarzh :"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Destination"
+#~ msgstr "Dehaezadur :"
+
+#, fuzzy
+#~| msgid "Timer"
+#~ msgid "Time"
+#~ msgstr "Dilerc'hier"
+
+#, fuzzy
+#~| msgid "&File"
+#~ msgid "File Size"
+#~ msgstr "&Restr"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "the transfer has been finished"
+#~ msgid "Finished"
+#~ msgstr "Disoc'het"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgctxt "an error happened in connection with the user input"
+#~ msgid "Error:"
+#~ msgstr "Fazi"
+
+#, fuzzy
+#~| msgid "unknown"
+#~ msgctxt "trust level"
+#~ msgid "Unknown"
+#~ msgstr "dianav"
+
+#, fuzzy
+#~| msgid "<i>%1</i> has been added."
+#~ msgid "The signature has been verified successfully."
+#~ msgstr "ouzhpennet eo <i>%1</i>."
+
+#, fuzzy
+#~| msgid "&File"
+#~ msgctxt "pgp signature is not verified"
+#~ msgid "Failed"
+#~ msgstr "&Restr"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgid "Error:"
+#~ msgstr "Fazi"
+
+#, fuzzy
+#~| msgid "Location (URL)"
+#~ msgid "Information:"
+#~ msgstr "Lec'hiadur (URL)"
+
+#, fuzzy
+#~ msgid "Transfer Details"
+#~ msgstr "&Treuzkas"
+
+#, fuzzy
+#~| msgid "<i>%1</i> has been added."
+#~ msgid "%1 %2 has been successfully added."
+#~ msgstr "ouzhpennet eo <i>%1</i>."
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Transfer Verification for %1"
+#~ msgstr "Renkell dre ziouer :"
+
+#, fuzzy
+#~| msgid "Delete Group"
+#~ msgid "Rename File"
+#~ msgstr "Lemel ur strollad"
+
+#, fuzzy
+#~| msgid "Delete Group"
+#~ msgid "Rename %1 to:"
+#~ msgstr "Lemel ur strollad"
+
+#, fuzzy
+#~| msgid "Delete Group"
+#~ msgid "&Rename"
+#~ msgstr "Lemel ur strollad"
+
+#, fuzzy
+#~| msgid "Delete Group"
+#~ msgid "Delete Group"
+#~ msgid_plural "Delete Groups"
+#~ msgstr[0] "Lemel ur strollad"
+
+#, fuzzy
+#~| msgid "Delete Group"
+#~ msgid "Rename Group..."
+#~ msgid_plural "Rename Groups..."
+#~ msgstr[0] "Lemel ur strollad"
+
+#, fuzzy
+#~| msgid "Sticky"
+#~ msgctxt "fix position for droptarget"
+#~ msgid "Sticky"
+#~ msgstr "Pegañ"
+
+#, fuzzy
+#~| msgid "KGet"
+#~ msgid "Quit KGet"
+#~ msgstr "KGet"
+
+#, fuzzy
+#~ msgid "The dropped file is a KGet Transfer List"
+#~ msgstr "&Treuzkas"
+
+#, fuzzy
+#~ msgid "&Download"
+#~ msgstr "Kenderc'helet eo an ezkargañ"
+
+#, fuzzy
+#~ msgid "&Load transfer list"
+#~ msgstr "&Treuzkas"
+
+#~ msgid "Show Main Window"
+#~ msgstr "Diskouez ar brenestr gentañ"
+
+#~ msgid "Hide Main Window"
+#~ msgstr "Kuzhat ar brenestr gentañ"
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgctxt "%1 filename, %2 total size, %3 status"
+#~ msgid "%1(%2) %3"
+#~ msgstr " %1/e "
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgctxt ""
+#~ "%1 filename, %2 percent complete, %3 downloaded out of %4 total size, %5 "
+#~ "status"
+#~ msgid "%1(%2% %3/%4) %5"
+#~ msgstr " %1/e "
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Transfer Settings for %1"
+#~ msgstr "Renkell dre ziouer :"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Destination unmodified"
+#~ msgstr "Dehaezadur :"
+
+#, fuzzy
+#~| msgid "%1% of %2 - %3"
+#~ msgid "%1 of %2"
+#~ msgstr "%1% diwar %2 - %3"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Group Settings for %1"
+#~ msgstr "Renkell dre ziouer :"
+
+#, fuzzy
+#~| msgid "%1/s"
+#~ msgctxt "@item speed of transfer per seconds"
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#, fuzzy
+#~| msgid "Local File Name"
+#~ msgctxt "@label"
+#~ msgid "File name"
+#~ msgstr "Anv ar restr lec'hel"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "@label Progress of transfer"
+#~ msgid "Finished"
+#~ msgstr "Disoc'het"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgctxt "@label Speed of transfer"
+#~ msgid "Speed"
+#~ msgstr "Tizh"
+
+#, fuzzy
+#~| msgid "Status"
+#~ msgctxt "@label Status of transfer"
+#~ msgid "Status"
+#~ msgstr "Stad"
+
+#, fuzzy
+#~| msgid "Start"
+#~ msgctxt "@action:button start a transfer"
+#~ msgid "Start"
+#~ msgstr "Loc'hañ"
+
+#, fuzzy
+#~| msgid "Stop"
+#~ msgctxt "@action:button"
+#~ msgid "Stop"
+#~ msgstr "Paouez"
+
+#, fuzzy
+#~ msgctxt "@action:button"
+#~ msgid "Remove"
+#~ msgstr "&Treuzkas"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgctxt "@label Download from"
+#~ msgid "Source:"
+#~ msgstr "Tarzh :"
+
+#, fuzzy
+#~| msgid "&Settings"
+#~ msgctxt "@action"
+#~ msgid "Settings"
+#~ msgstr "&Kefluniadur"
+
+#, fuzzy
+#~| msgctxt "OK as in 'finished'"
+#~| msgid "OK"
+#~ msgctxt "@action:button"
+#~ msgid "OK"
+#~ msgstr "Mat eo"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgctxt "@action Refresh download list every x (seconds)"
+#~ msgid "Refresh download list every"
+#~ msgstr "Echu eo an ezkargañ"
+
+#, fuzzy
+#~| msgid "&Settings"
+#~ msgctxt "@action:button"
+#~ msgid "Save Settings"
+#~ msgstr "&Kefluniadur"
+
+#, fuzzy
+#~ msgctxt "@title"
+#~ msgid "Downloads"
+#~ msgstr "Kenderc'helet eo an ezkargañ"
+
+#~ msgid "Core Developer"
+#~ msgstr "Diorrer kentañ"
+
+#, fuzzy
+#~| msgid "Core Developer"
+#~ msgid "Developer"
+#~ msgstr "Diorrer kentañ"
+
+#, fuzzy
+#~| msgid "Core Developer"
+#~ msgid "Former Developer"
+#~ msgstr "Diorrer kentañ"
+
+#, fuzzy
+#~| msgid "Core Developer"
+#~ msgid "BTCore (KTorrent) Developer"
+#~ msgstr "Diorrer kentañ"
+
+#~ msgid "URL(s) to download"
+#~ msgstr "URL(où) da enkargañ"
+
+#, fuzzy
+#~ msgid "KGet Transfer List"
+#~ msgstr "&Treuzkas"
+
+#, fuzzy
+#~ msgid "Export Transfers"
+#~ msgstr "&Treuzkas"
+
+#, fuzzy
+#~ msgid "&Import Transfers..."
+#~ msgstr "&Treuzkas"
+
+#, fuzzy
+#~ msgid "&Export Transfers as Plain Text..."
+#~ msgstr "&Treuzkas"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Top Priority"
+#~ msgstr "Nodrezh :"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Least Priority"
+#~ msgstr "Nodrezh :"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Increase Priority"
+#~ msgstr "Nodrezh :"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Decrease Priority"
+#~ msgstr "Nodrezh :"
+
+#, fuzzy
+#~| msgid "Remove"
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Remove Selected"
+#~ msgstr "Lemel"
+
+#, fuzzy
+#~| msgid "Download Selected Files"
+#~ msgctxt "delete all finished transfers"
+#~ msgid "Remove All Finished"
+#~ msgstr "Enkargañ ar restroù diuzet"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgctxt "redownload selected transfer item"
+#~ msgid "Redownload Selected"
+#~ msgstr "Echu eo an ezkargañ"
+
+#, fuzzy
+#~ msgid "Start / Resume Selected"
+#~ msgstr "Restr diuzet ebet"
+
+#~ msgid "Stop All"
+#~ msgstr "Herzel an holl re"
+
+#, fuzzy
+#~ msgid "Stop Selected"
+#~ msgstr "Restr diuzet ebet"
+
+#~ msgid "Stop"
+#~ msgstr "Paouez"
+
+#, fuzzy
+#~ msgid "Remove"
+#~ msgstr "&Treuzkas"
+
+#~ msgid "Open Destination"
+#~ msgstr "D&igeriñ an dehaezadur"
+
+#, fuzzy
+#~| msgid "Open file"
+#~ msgid "Open File"
+#~ msgstr "Digeriñ ur restr"
+
+#~ msgid "Show Details"
+#~ msgstr "Diskouez ar munudoù"
+
+#~ msgid "Copy URL to Clipboard"
+#~ msgstr "Eilañ an URL er golver"
+
+#, fuzzy
+#~ msgid "&Transfer History"
+#~ msgstr "&Treuzkas"
+
+#, fuzzy
+#~| msgid "&Settings"
+#~ msgid "&Group Settings"
+#~ msgstr "&Kefluniadur"
+
+#, fuzzy
+#~ msgid "&Transfer Settings"
+#~ msgstr "&Treuzkas"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "Import &Links..."
+#~ msgstr "Liamm ebet"
+
+#~ msgid "Enable"
+#~ msgstr "Bevaat"
+
+#~ msgid "Do Not Enable"
+#~ msgstr "Ne vevit ket"
+
+#, fuzzy
+#~| msgid "Enter the group name"
+#~ msgid "Enter Group Name"
+#~ msgstr "Roit anv ar strollad"
+
+#~ msgid "Group name:"
+#~ msgstr "Anv ar strollad :"
+
+#, fuzzy
+#~ msgid "Confirm transfer delete"
+#~ msgstr "&Treuzkas"
+
+#, fuzzy
+#~| msgid "Group name:"
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Anv ar strollad :"
+
+#, fuzzy
+#~| msgid "Show Details"
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "Diskouez ar munudoù"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Automatic verification:"
+#~ msgstr "Deskrivadur"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Automatic verification"
+#~ msgstr "Dehaezadur :"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Keyservers:"
+#~ msgstr "Tizh"
+
+#, fuzzy
+#~| msgid "Move to &End"
+#~ msgid "Move &Up"
+#~ msgstr "Fiñval d'ar &zibenn"
+
+#, fuzzy
+#~| msgid "Move to &End"
+#~ msgid "Move &Down"
+#~ msgstr "Fiñval d'ar &zibenn"
+
+#, fuzzy
+#~| msgid "Delete Group"
+#~ msgid "Rename"
+#~ msgstr "Lemel ur strollad"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Limit Maximum Downloads Per Group"
+#~ msgstr "Echu eo an ezkargañ"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of downloads:"
+#~ msgstr "Niver a daolioù :"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed Limit"
+#~ msgstr "Tizh"
+
+#, fuzzy
+#~ msgid "Global download limit:"
+#~ msgstr "Kenderc'helet eo an ezkargañ"
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid " KiB/s"
+#~ msgstr " %1 ko/e "
+
+#, fuzzy
+#~ msgid "Global upload limit:"
+#~ msgstr "Kenderc'helet eo an ezkargañ"
+
+#, fuzzy
+#~ msgid "Per transfer:"
+#~ msgstr "&Treuzkas"
+
+#~ msgid "Number of retries:"
+#~ msgstr "Niver a daolioù :"
+
+#, fuzzy
+#~ msgid "Retry after:"
+#~ msgstr "Adkevreañ goude :"
+
+#, fuzzy
+#~ msgid "Auto disconnect"
+#~ msgstr "Digevreañ"
+
+#, fuzzy
+#~| msgid "Enable animations"
+#~ msgid "Enable Web Interface"
+#~ msgstr "Bevaat ar buhezaduroù"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Port:"
+#~ msgstr "Nodrezh :"
+
+#, fuzzy
+#~| msgid "Url"
+#~ msgid "User:"
+#~ msgstr "Url"
+
+#, fuzzy
+#~| msgid "Start"
+#~ msgid "Startup"
+#~ msgstr "Loc'hañ"
+
+#~ msgid "Show splashscreen"
+#~ msgstr "Diskouez ar skramm-degemer"
+
+#~ msgid "Enable animations"
+#~ msgstr "Bevaat ar buhezaduroù"
+
+#, fuzzy
+#~| msgid "Enable animations"
+#~ msgid "Enable system tray icon"
+#~ msgstr "Bevaat ar buhezaduroù"
+
+#, fuzzy
+#~| msgid "All the downloads are finished."
+#~ msgid "Execute action after all downloads have been finished:"
+#~ msgstr "Echu eo pep ezkargañ."
+
+#, fuzzy
+#~| msgid "Start"
+#~ msgid "At startup:"
+#~ msgstr "Loc'hañ"
+
+#, fuzzy
+#~ msgid "Restore Download State"
+#~ msgstr "Kenderc'helet eo an ezkargañ"
+
+#, fuzzy
+#~ msgid "Start All Downloads"
+#~ msgstr "Kenderc'helet eo an ezkargañ"
+
+#, fuzzy
+#~ msgid "Stop All Downloads"
+#~ msgstr "Kenderc'helet eo an ezkargañ"
+
+#, fuzzy
+#~ msgid "History"
+#~ msgstr "&Treuzkas"
+
+#, fuzzy
+#~ msgid "History backend:"
+#~ msgstr "&Treuzkas"
+
+#, fuzzy
+#~| msgid "Local File Name"
+#~ msgid "Engine Name"
+#~ msgstr "Anv ar restr lec'hel"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of connections per URL:"
+#~ msgstr "Niver a daolioù :"
+
+#, fuzzy
+#~| msgid "&Settings"
+#~ msgid "File Settings"
+#~ msgstr "&Kefluniadur"
+
+#, fuzzy
+#~| msgid "Local File Name"
+#~ msgid "Filename:"
+#~ msgstr "Anv ar restr lec'hel"
+
+#, fuzzy
+#~| msgid "Url"
+#~ msgid "Username:"
+#~ msgstr "Url"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Path:"
+#~ msgstr "Nodrezh :"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Description:"
+#~ msgstr "Deskrivadur"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of simultaneous file downloads:"
+#~ msgstr "Niver a daolioù :"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of mirrors per file:"
+#~ msgstr "Niver a daolioù :"
+
+#, fuzzy
+#~| msgid "Folder:"
+#~ msgid "Mode:"
+#~ msgstr "Renkell :"
+
+#, fuzzy
+#~ msgid "Remove Tracker"
+#~ msgstr "&Treuzkas"
+
+#, fuzzy
+#~ msgid "Update Trackers"
+#~ msgstr "&Treuzkas"
+
+#, fuzzy
+#~| msgid "Remove"
+#~ msgid "Remove Webseed"
+#~ msgstr "Lemel"
+
+#, fuzzy
+#~| msgid "Total"
+#~ msgid "Total:"
+#~ msgstr "Hollek"
+
+#, fuzzy
+#~ msgid "Downloaded:"
+#~ msgstr "Kenderc'helet eo an ezkargañ"
+
+#, fuzzy
+#~| msgid "Size"
+#~ msgid "Size:"
+#~ msgstr "Ment"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of chunks found:"
+#~ msgstr "Niver a daolioù :"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of chunks failed:"
+#~ msgstr "Niver a daolioù :"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of chunks not downloaded:"
+#~ msgstr "Niver a daolioù :"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of chunks downloaded:"
+#~ msgstr "Niver a daolioù :"
+
+#, fuzzy
+#~| msgid "Change"
+#~ msgid "Cancel"
+#~ msgstr "Kemmañ"
+
+#, fuzzy
+#~| msgid "Status"
+#~ msgid "Stats"
+#~ msgstr "Stad"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Seeders:"
+#~ msgstr "Tizh"
+
+#, fuzzy
+#~ msgid "Download speed:"
+#~ msgstr "Kenderc'helet eo an ezkargañ"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Upload speed:"
+#~ msgstr "Tizh"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgctxt "source-file"
+#~ msgid "Source:"
+#~ msgstr "Tarzh :"
+
+#, fuzzy
+#~ msgid "Upload limit per transfer:"
+#~ msgstr "Kenderc'helet eo an ezkargañ"
+
+#, fuzzy
+#~ msgid "No Limit"
+#~ msgstr "Kenderc'helet eo an ezkargañ"
+
+#, fuzzy
+#~ msgid "Download limit per transfer:"
+#~ msgstr "Kenderc'helet eo an ezkargañ"
+
+#~ msgid "Folders"
+#~ msgstr "Renkelloù"
+
+#, fuzzy
+#~| msgid "Default Folder"
+#~ msgid "Default torrent folder:"
+#~ msgstr "Renkell dre ziouer"
+
+#, fuzzy
+#~| msgid "Default Folder"
+#~ msgid "Default temporary folder"
+#~ msgstr "Renkell dre ziouer"
+
+#, fuzzy
+#~| msgid "Resumed"
+#~ msgid "Required"
+#~ msgstr "Kenderc'hel eo"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Verification:"
+#~ msgstr "Deskrivadur"
+
+#, fuzzy
+#~| msgid "Open file"
+#~ msgid "*.metalink *.meta4|Metalink file (*.metalink *.meta4)"
+#~ msgstr "Digeriñ ur restr"
+
+#, fuzzy
+#~| msgid "Extension:"
+#~ msgid "Version:"
+#~ msgstr "Astenn :"
+
+#, fuzzy
+#~| msgid "Log"
+#~ msgid "Logo:"
+#~ msgstr "Kerzlevr"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "Name:"
+#~ msgstr "Anv"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Name of the publisher"
+#~ msgstr "Niver a daolioù :"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "URL to the publisher"
+#~ msgstr "Niver a daolioù :"
+
+#, fuzzy
+#~| msgid "&File"
+#~ msgctxt "Files as in files on a server"
+#~ msgid "Files:"
+#~ msgstr "&Restr"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "&Import Links"
+#~ msgstr "Liamm ebet"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgid "Contains"
+#~ msgstr "Kevreadenn"
+
+#, fuzzy
+#~ msgid "Does Not Contain"
+#~ msgstr "Enkargañ adarre"
+
+#, fuzzy
+#~| msgid "Delete Selected"
+#~ msgctxt "Check as in mark, not as in verify"
+#~ msgid "Chec&k Selected"
+#~ msgstr "Lemel an hini diuzet"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgid "Mirror:"
+#~ msgstr "Fazi"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of connections:"
+#~ msgstr "Niver a daolioù :"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a URL"
+#~ msgstr "Ethernet"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Priority:"
+#~ msgstr "Nodrezh :"
+
+#, fuzzy
+#~| msgid "Location (URL)"
+#~ msgid "Location:"
+#~ msgstr "Lec'hiadur (URL)"
+
+#, fuzzy
+#~| msgid "Start"
+#~ msgid "Date"
+#~ msgstr "Loc'hañ"
+
+#, fuzzy
+#~ msgid "Filter History"
+#~ msgstr "&Treuzkas"
+
+#, fuzzy
+#~| msgid "Delete Selected"
+#~ msgctxt "delete selected transfer"
+#~ msgid "Delete Selected"
+#~ msgstr "Lemel an hini diuzet"
+
+#, fuzzy
+#~ msgid "Download"
+#~ msgstr "Kenderc'helet eo an ezkargañ"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgctxt "hash as a hash of type md5, sha1 etc."
+#~ msgid "Hash:"
+#~ msgstr "Nodrezh :"
+
+#~ msgid "Status:"
+#~ msgstr "Stad :"
+
+#, fuzzy
+#~ msgid "Transfer Settings"
+#~ msgstr "&Treuzkas"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Download Destination:"
+#~ msgstr "Dehaezadur :"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgctxt "No value has been set"
+#~ msgid "Not set"
+#~ msgstr "Liamm ebet"
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid " KiB"
+#~ msgstr " %1 ko/e "
+
+#, fuzzy
+#~ msgid "Upload Limit:"
+#~ msgstr "Kenderc'helet eo an ezkargañ"
+
+#, fuzzy
+#~ msgid "Download Limit:"
+#~ msgstr "Kenderc'helet eo an ezkargañ"
+
+#, fuzzy
+#~| msgid "Maximum open connections:"
+#~ msgid "Maximum Share Ratio:"
+#~ msgstr "Niver uhelañ a kevreadurioù digeret :"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgctxt "The available mirrors (servers) for downloading"
+#~ msgid "Mirrors"
+#~ msgstr "Fazi"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgctxt "verification of the download (e.g. by using MD5)"
+#~ msgid "Verification"
+#~ msgstr "Dehaezadur :"
+
+#, fuzzy
+#~| msgid "Url"
+#~ msgid "Issuer:"
+#~ msgstr "Url"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Creation:"
+#~ msgstr "Dehaezadur :"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Expiration:"
+#~ msgstr "Dehaezadur :"
+
+#, fuzzy
+#~| msgid "&Settings"
+#~ msgid "Group Settings"
+#~ msgstr "&Kefluniadur"
+
+#, fuzzy
+#~| msgid "Default Folder"
+#~ msgid "Default folder:"
+#~ msgstr "Renkell dre ziouer"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Maximum download speed:"
+#~ msgstr "Echu eo an ezkargañ"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Maximum upload speed:"
+#~ msgstr "Echu eo an ezkargañ"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Destination:"
+#~ msgstr "Dehaezadur :"
+
+#, fuzzy
+#~ msgid "Transfer group:"
+#~ msgstr "&Treuzkas"
+
+#~ msgid "&File"
+#~ msgstr "&Restr"
+
+#, fuzzy
+#~ msgid "&Downloads"
+#~ msgstr "Kenderc'helet eo an ezkargañ"
+
+#~ msgid "&Settings"
+#~ msgstr "&Kefluniadur"
+
+#~ msgid "&Help"
+#~ msgstr "&Skoazell"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Barrenn kentañ an ostilhoù"
+
+#~ msgid "Form"
+#~ msgstr "Paperenn-reol"
+
+#, fuzzy
+#~ msgid "Remove Tag"
+#~ msgstr "&Treuzkas"
+
+#, fuzzy
+#~| msgid "Add"
+#~ msgid "Add Tag"
+#~ msgstr "Ouzhpennañ"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Tag Settings for the groups"
+#~ msgstr "Renkell dre ziouer :"
+
+#, fuzzy
+#~| msgid "&Settings"
+#~ msgid "Tag Settings"
+#~ msgstr "&Kefluniadur"
+
+#, fuzzy
+#~ msgid "Available tags:"
+#~ msgstr "&Treuzkas"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a new Tag"
+#~ msgstr "Ethernet"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a new tag"
+#~ msgstr "Ethernet"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file %1 : %2"
+#~ msgstr ""
+#~ "Ne m'eus ket gallet lenn ar restr:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Failed to seek file %1 : %2"
+#~ msgstr ""
+#~ "Ne m'eus ket gallet lenn ar restr:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Error while reading file:\n"
+#~| "%1"
+#~ msgid "Error reading from %1"
+#~ msgstr ""
+#~ "Fazi en ur lenn ar restr :\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not write to file:\n"
+#~| "%1"
+#~ msgid "Failed to write to file %1 : %2"
+#~ msgstr ""
+#~ "Ne m'eus ket gallet skrivañ ar restr :\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open index file %1 : %2"
+#~ msgstr ""
+#~ "Ne m'eus ket gallet digeriñ ar restr :\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot create file %1 : %2"
+#~ msgstr ""
+#~ "Ne m'eus ket gallet lenn ar restr:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not write to file:\n"
+#~| "%1"
+#~ msgid "Failed to write last chunk to DND file : %1"
+#~ msgstr ""
+#~ "Ne m'eus ket gallet skrivañ ar restr :\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open file %1 : %2"
+#~ msgstr ""
+#~ "Ne m'eus ket gallet digeriñ ar restr :\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgctxt "OK as in 'finished'"
+#~| msgid "OK"
+#~ msgid "OK"
+#~ msgstr "Mat eo"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgid "Error: %1"
+#~ msgstr "Fazi"
+
+#, fuzzy
+#~| msgid ""
+#~| "The specified file does not exist:\n"
+#~| "%1"
+#~ msgid "The directory %1 does not exist"
+#~ msgstr ""
+#~ "Ar restr lavaret n'eus ket anezhañ :\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Not Deleted"
+#~ msgid "Not started"
+#~ msgstr "N'eo ket dilamet"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgctxt "Status of a torrent file"
+#~ msgid "Seeding"
+#~ msgstr "Steuñvadur"
+
+#, fuzzy
+#~ msgid "Downloading"
+#~ msgstr "Kenderc'helet eo an ezkargañ"
+
+#, fuzzy
+#~| msgid "Stopped"
+#~ msgid "Stopped"
+#~ msgstr "Paouezet"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Queued for downloading"
+#~ msgstr "Niver a daolioù :"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open file %1: %2"
+#~ msgstr ""
+#~ "Ne m'eus ket gallet digeriñ ar restr :\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot create index file: %1"
+#~ msgstr ""
+#~ "Ne m'eus ket gallet lenn ar restr:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgid "Parse Error"
+#~ msgstr "Fazi"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open file : %1 : %2"
+#~ msgstr ""
+#~ "Ne m'eus ket gallet digeriñ ar restr :\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Not Deleted"
+#~ msgid "Not connected"
+#~ msgstr "N'eo ket dilamet"
+
+#, fuzzy
+#~| msgid "Connection Type"
+#~ msgid "Connection closed"
+#~ msgstr "Rizh ar gevreadenn"
+
+#, fuzzy
+#~| msgid "Connection Type"
+#~ msgid "Connected"
+#~ msgstr "Rizh ar gevreadenn"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgid "Connecting"
+#~ msgstr "Kevreadenn"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "Not in use"
+#~ msgstr "Liamm ebet"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not write to file:\n"
+#~| "%1"
+#~ msgid "Cannot write to %1 : %2"
+#~ msgstr ""
+#~ "Ne m'eus ket gallet skrivañ ar restr :\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Copy file from: %1"
+#~ msgid "Cannot read from %1"
+#~ msgstr "Eilañ ar restr eus : %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open log file %1 : %2"
+#~ msgstr ""
+#~ "Ne m'eus ket gallet digeriñ ar restr :\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot create directory %1"
+#~ msgstr ""
+#~ "Ne m'eus ket gallet lenn ar restr:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file: %1"
+#~ msgstr ""
+#~ "Ne m'eus ket gallet lenn ar restr:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot seek in file : %1"
+#~ msgstr ""
+#~ "Ne m'eus ket gallet digeriñ ar restr :\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgid "Connections"
+#~ msgstr "Kevreadenn"
+
+#, fuzzy
+#~ msgid "Tracker"
+#~ msgstr "&Treuzkas"
+
+#~ msgid "Add"
+#~ msgstr "Ouzhpennañ"
+
+#, fuzzy
+#~| msgid "Not Deleted"
+#~ msgid "Delete"
+#~ msgstr "N'eo ket dilamet"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Details for: %1"
+#~ msgstr "Renkell dre ziouer :"
+
+#, fuzzy
+#~ msgid "Finished downloads"
+#~ msgstr "Disoc'het"
+
+#, fuzzy
+#~ msgid "Transfers:"
+#~ msgstr "&Treuzkas"
+
+#, fuzzy
+#~ msgid "Downloads"
+#~ msgstr "Kenderc'helet eo an ezkargañ"
+
+#, fuzzy
+#~ msgid "Transfer details:"
+#~ msgstr "&Treuzkas"
+
+#, fuzzy
+#~ msgid "Transfer List"
+#~ msgstr "&Treuzkas"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of threads:"
+#~ msgstr "Niver a daolioù :"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Name of the license"
+#~ msgstr "Niver a daolioù :"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "URL to the license"
+#~ msgstr "Niver a daolioù :"
+
+#, fuzzy
+#~| msgid "De&lay"
+#~ msgctxt "The transfer is delayed"
+#~ msgid "Delayed"
+#~ msgstr "Da&le"
+
+#~ msgid ""
+#~ "Destination file \n"
+#~ "%1\n"
+#~ "already exists.\n"
+#~ "Do you want to overwrite it?"
+#~ msgstr ""
+#~ "Ar restr dehaezadur \n"
+#~ "%1\n"
+#~ "a zo endeo.\n"
+#~ "Rasklañ anezhañ ?"
+
+#, fuzzy
+#~| msgid "Open Destination"
+#~ msgid "Overwrite destination"
+#~ msgstr "D&igeriñ an dehaezadur"
+
+#~ msgid "Queued"
+#~ msgstr "El lost"
+
+#, fuzzy
+#~ msgid "Current Tracker"
+#~ msgstr "&Treuzkas"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgid "Scrape"
+#~ msgstr "Tarzh :"
+
+#, fuzzy
+#~ msgid "Available Trackers"
+#~ msgstr "&Treuzkas"
+
+#, fuzzy
+#~| msgid "Url"
+#~ msgid "Url:"
+#~ msgstr "Url"
+
+#, fuzzy
+#~| msgid "Delete Selected"
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Delete Selected"
+#~ msgstr "Lemel an hini diuzet"
+
+#, fuzzy
+#~| msgid "We are online."
+#~ msgid "We are sorry"
+#~ msgstr "Enlinenn omp."
+
+#, fuzzy
+#~ msgid "Rename transfer"
+#~ msgstr "&Treuzkas"
+
+#, fuzzy
+#~ msgid "Download URL again?"
+#~ msgstr "Enkargañ adarre"
+
+#, fuzzy
+#~| msgid "&File"
+#~ msgctxt "file in a filsystem"
+#~ msgid "File"
+#~ msgstr "&Restr"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "Name"
+#~ msgstr "Anv"
+
+#, fuzzy
+#~ msgid "KGet - Download Manager"
+#~ msgstr "Merour enkargañ"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgctxt "@label transfer source"
+#~ msgid "Source:"
+#~ msgstr "Tarzh :"
+
+#, fuzzy
+#~| msgid "0 B/s"
+#~ msgid "kBi"
+#~ msgstr "0 O/e"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file : %1"
+#~ msgstr ""
+#~ "Ne m'eus ket gallet lenn ar restr:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "&Transfer History..."
+#~ msgstr "&Treuzkas"
+
+#, fuzzy
+#~| msgid "&Settings"
+#~ msgid "&Group Settings..."
+#~ msgstr "&Kefluniadur"
+
+#, fuzzy
+#~ msgid "&Transfer Settings..."
+#~ msgstr "&Treuzkas"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed limit"
+#~ msgstr "Tizh"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Download Speed:"
+#~ msgstr "Echu eo an ezkargañ"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Upload Speed:"
+#~ msgstr "Tizh"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "&Import links"
+#~ msgstr "Liamm ebet"
+
+#, fuzzy
+#~| msgid "Not Deleted"
+#~ msgid "&Delete"
+#~ msgstr "N'eo ket dilamet"
+
+#, fuzzy
+#~| msgid "Change"
+#~ msgid "&Cancel"
+#~ msgstr "Kemmañ"
+
+#, fuzzy
+#~ msgid "Default Download Folders"
+#~ msgstr "Renkell dre ziouer"
+
+#, fuzzy
+#~| msgid "Extension"
+#~ msgid "File Extension"
+#~ msgstr "Astenn"
+
+#~ msgid "Default Folder"
+#~ msgstr "Renkell dre ziouer"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Set as default folder"
+#~ msgstr "Renkell dre ziouer :"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "extRegExp, defaultFolder"
+#~ msgstr "Renkell dre ziouer :"
+
+#, fuzzy
+#~ msgid "Downloading.."
+#~ msgstr "Kenderc'helet eo an ezkargañ"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Advanced-Details for %1"
+#~ msgstr "Renkell dre ziouer :"
+
+#, fuzzy
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading.."
+#~ msgstr "Kenderc'helet eo an ezkargañ"
+
+#, fuzzy
+#~ msgid "Downloads number:"
+#~ msgstr "Merour enkargañ"
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 GB"
+#~ msgstr " %1/e "
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 MB"
+#~ msgstr " %1/e "
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid "%1 KB"
+#~ msgstr " %1 ko/e "
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 B"
+#~ msgstr " %1/e "
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid "%1 KB/s"
+#~ msgstr " %1 ko/e "
+
+#, fuzzy
+#~| msgid "0 B/s"
+#~ msgid "kBi/s"
+#~ msgstr "0 O/e"
+
+#~ msgid "Not Deleted"
+#~ msgstr "N'eo ket dilamet"
+
+#~ msgid "Show main window at startup"
+#~ msgstr "Diskouez ar brenestr gentañ pa loc'hañ"
+
+#~ msgid "<status>"
+#~ msgstr "<stad>"
+
+#, fuzzy
+#~ msgid "<speed>"
+#~ msgstr "Tizh"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file %1"
+#~ msgstr ""
+#~ "Ne m'eus ket gallet lenn ar restr:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Error while writing file:\n"
+#~| "%1"
+#~ msgid "Error writing to %1 : %2"
+#~ msgstr ""
+#~ "Fazi en ur skrivañ ar restr :\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Error while writing file:\n"
+#~| "%1"
+#~ msgid "Error writing to %1"
+#~ msgstr ""
+#~ "Fazi en ur skrivañ ar restr :\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file"
+#~ msgstr ""
+#~ "Ne m'eus ket gallet lenn ar restr:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Normal"
+#~ msgctxt "Download normally(not as first or last"
+#~ msgid "Normal"
+#~ msgstr "Boas"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Bittorrent-Speedlimits"
+#~ msgstr "Tizh"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed-Limits"
+#~ msgstr "Tizh"
+
+#~ msgid " of "
+#~ msgstr " diwar "
+
+#, fuzzy
+#~ msgid "Download Folder"
+#~ msgstr "Renkell dre ziouer"
+
+#, fuzzy
+#~| msgid "Add Group"
+#~ msgid "Add Group..."
+#~ msgstr "Ouzhpennañ ur strollad"
+
+#, fuzzy
+#~ msgid "Default Group"
+#~ msgstr "Renkell dre ziouer"
+
+#~ msgid "Look and Feel"
+#~ msgstr "Neuz ha feson"
+
+#, fuzzy
+#~ msgid "DlgAdvanced"
+#~ msgstr "Barek"
+
+#, fuzzy
+#~| msgid "Delete Group"
+#~ msgid "Delete Group."
+#~ msgstr "Lemel ur strollad"
+
+#, fuzzy
+#~ msgid "Hide Me"
+#~ msgstr "Anv ar restr"
+
+#~ msgid "&Dock"
+#~ msgstr "&Ensoc'hañ"
+
+#~ msgid "Source Label"
+#~ msgstr "Skridennad tarzh"
+
+#~ msgid "Not resumed"
+#~ msgstr "N'eo ket kenderc'helet"
+
+#~ msgid "System"
+#~ msgstr "Reizhiad"
+
+#~ msgid "Maximize"
+#~ msgstr "Uhelaat"
+
+#~ msgid "Minimize"
+#~ msgstr "Izelaat"
+
+#~ msgid ""
+#~ "This is a folder and not a file:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Setu a renkell ha n'eo ket ur restr :\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "You do not have read permission for the file:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "N'oc'h ket aotreet da lenn ar restr :\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "File %1 exists.\n"
+#~ "Do you want to replace it?"
+#~ msgstr ""
+#~ "Bez' ez eus ar restr %1 endeo.\n"
+#~ "Ha fellout a ra deoc'h e erlec'hiañ ?"
+
+#~ msgid ""
+#~ "Could not open file for writing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "N'hellan ket digeriñ ar restr evit skrivañ :\n"
+#~ "%1"
+
+#~ msgid "Welcome to KGet"
+#~ msgstr "Degeler da JGet"
+
+#~ msgid "Could not create valid socket"
+#~ msgstr "Ne m'eus ket gallet krouiñ ul lugell mat"
+
+#~ msgid "Offline"
+#~ msgstr "N'eo ket enlinenn"
+
+#~ msgid "&Open Individual Window"
+#~ msgstr "&Digeriñ prenester unan hag unan"
+
+#~ msgid "Move to &Beginning"
+#~ msgstr "Fiñval d'an &deroù"
+
+#~ msgid "&Pause"
+#~ msgstr "&Ehan"
+
+#~ msgid "&Queue"
+#~ msgstr "&Lost"
+
+#~ msgid "&Timer"
+#~ msgstr "&Dilerc'hier"
+
+#~ msgid "Use &Animation"
+#~ msgstr "Implijit &buhezadur"
+
+#~ msgid "&Expert Mode"
+#~ msgstr "&Mod mailh"
+
+#~ msgid "Show &Log Window"
+#~ msgstr "Disko&uez prenestr ar c'herzlevr"
+
+#~ msgid " Files: %1 "
+#~ msgstr "Restroù : %1 "
+
+#~ msgid " Size: %1 KB "
+#~ msgstr " Ment : %1 Ko "
+
+#~ msgid " Time: %1 "
+#~ msgstr " Eur : %1 "
+
+#~ msgid ""
+#~ "*.kgt|*.kgt\n"
+#~ "*|All Files"
+#~ msgstr ""
+#~ "*.kgt|*.kgt\n"
+#~ "*|Pep restr"
+
+#~ msgid "Quitting..."
+#~ msgstr "Emaon o kuitaat ..."
+
+#~ msgid "Overwrite"
+#~ msgstr "Rasklañ"
+
+#~ msgid "Do Not Overwrite"
+#~ msgstr "Ne rasklit ket"
+
+#~ msgid " Size: %1 "
+#~ msgstr " Ment : %1 "
+
+#~ msgid "<br /><b>Files:</b> %1 "
+#~ msgstr "<br /><b>Restroù :</b> %1 "
+
+#~ msgid "<br /><b>Size:</b> %1 "
+#~ msgstr "<br /><b>Ment :</b> %1 "
+
+#~ msgid "<br /><b>Time:</b> %1 "
+#~ msgstr "<br /><b>Eur :</b> %1 "
+
+#~ msgid "<br /><b>Speed:</b> %1/s"
+#~ msgstr "<br /><b>Tizh :</b> %1 "
+
+#~ msgid "Do you really want to disconnect?"
+#~ msgstr "Ha fellout a ra deoc'h digevreañ ?"
+
+#~ msgid "Disconnecting..."
+#~ msgstr "Emaon o tigevreañ ..."
+
+#~ msgid "We are offline."
+#~ msgstr "N'omp enlinenn."
+
+#~ msgid "Id"
+#~ msgstr "Id"
+
+#~ msgid "Mixed"
+#~ msgstr "Mesklet"
+
+#~ msgid "Separated"
+#~ msgstr "Dispartiet"
+
+#~ msgid "Iconified"
+#~ msgstr "Arlunet"
+
+#~ msgid "Advanced individual windows"
+#~ msgstr "Prenester barek unan hag unan"
+
+#~ msgid "Get file sizes"
+#~ msgstr "Tapout mentoù ar restroù"
+
+#~ msgid "Show individual windows"
+#~ msgstr "Diskouez prenester barek unan hag unan"
+
+#~ msgid " min"
+#~ msgstr " mun"
+
+#~ msgid "Disconnect command:"
+#~ msgstr "Urzhiad digevreañ :"
+
+#~ msgid "Reconnect Options"
+#~ msgstr "Dibarzhoù adkevreañ"
+
+#~ msgid "Timeout Options"
+#~ msgstr "Dibarzhoù an amzer-hont"
+
+#~ msgid "PLIP"
+#~ msgstr "PLIP"
+
+#~ msgid "SLIP"
+#~ msgstr "SLIP"
+
+#~ msgid "PPP"
+#~ msgstr "PPP"
+
+#~ msgid "ISDN"
+#~ msgstr "RNIS"
+
+#~ msgid "Link number:"
+#~ msgstr "Niver al liamm :"
+
+#~ msgid "Extension (* for all files):"
+#~ msgstr "Astenn (* evit pep restr) :"
+
+#~ msgid " bytes/sec"
+#~ msgstr " okted/eil"
+
+#~ msgid "Window style:"
+#~ msgstr "Giz ar prenestr :"
+
+#~ msgid "To: %1"
+#~ msgstr "Da : %1"
+
+#~ msgid "Stopping"
+#~ msgstr "Emaon o herzel"
+
+#~ msgid "S"
+#~ msgstr "S"
+
+#~ msgid "%"
+#~ msgstr "%"

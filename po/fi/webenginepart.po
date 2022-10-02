@@ -1,0 +1,1668 @@
+# Finnish messages for kwebkitpart.
+# Copyright © 2011, 2012 This_file_is_part_of_KDE
+# This file is distributed under the same license as the extragear-base package.
+# Tommi Nieminen <translator@legisign.org>, 2010, 2011, 2016, 2017, 2018, 2020, 2021, 2022.
+# Jorma Karvonen <karvonen.jorma@gmail.com>, 2011.
+# Lasse Liehu <lasse.liehu@gmail.com>, 2012, 2013, 2014, 2016, 2017.
+#
+# KDE Finnish translation sprint participants:
+# Author: Artnay
+# Author: Karvjorm
+# Author: Lliehu
+msgid ""
+msgstr ""
+"Project-Id-Version: kwebkitpart\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-24 00:46+0000\n"
+"PO-Revision-Date: 2022-01-28 16:27+0200\n"
+"Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
+"Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-POT-Import-Date: 2012-12-01 22:20:04+0000\n"
+"X-Generator: Lokalize 20.04.2\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Tommi Nieminen,Jorma Karvonen"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "translator@legisign.org,karvonen.jorma@gmail.com"
+
+#: src/about/konq_aboutpage.cpp:72 src/about/konq_aboutpage.cpp:74
+#: src/about/konq_aboutpage.cpp:132 src/about/konq_aboutpage.cpp:134
+#: src/about/konq_aboutpage.cpp:184 src/about/konq_aboutpage.cpp:186
+#: src/about/konq_aboutpage.cpp:284 src/about/konq_aboutpage.cpp:286
+#, kde-format
+msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
+msgid "Be free."
+msgstr "Vapaudu."
+
+#: src/about/konq_aboutpage.cpp:73 src/about/konq_aboutpage.cpp:133
+#: src/about/konq_aboutpage.cpp:185 src/about/konq_aboutpage.cpp:285
+#, kde-format
+msgid "Konqueror"
+msgstr "Konqueror"
+
+#: src/about/konq_aboutpage.cpp:75 src/about/konq_aboutpage.cpp:135
+#: src/about/konq_aboutpage.cpp:187 src/about/konq_aboutpage.cpp:287
+#, kde-format
+msgid "Konqueror is a web browser, file manager and universal document viewer."
+msgstr ""
+"Konqueror on verkkoselain, tiedostonhallinta ja yleinen tiedostokatselin."
+
+#: src/about/konq_aboutpage.cpp:76 src/about/konq_aboutpage.cpp:136
+#: src/about/konq_aboutpage.cpp:188 src/about/konq_aboutpage.cpp:288
+#, kde-format
+msgctxt ""
+"Link that points to the first page of the Konqueror 'about page', Starting "
+"Points contains links to Home, Network Folders, Trash, etc."
+msgid "Starting Points"
+msgstr "Aloituskohdat"
+
+#: src/about/konq_aboutpage.cpp:77 src/about/konq_aboutpage.cpp:137
+#: src/about/konq_aboutpage.cpp:189 src/about/konq_aboutpage.cpp:289
+#, kde-format
+msgid "Introduction"
+msgstr "Johdanto"
+
+#: src/about/konq_aboutpage.cpp:78 src/about/konq_aboutpage.cpp:138
+#: src/about/konq_aboutpage.cpp:190 src/about/konq_aboutpage.cpp:290
+#, kde-format
+msgid "Tips"
+msgstr "Vinkit"
+
+#: src/about/konq_aboutpage.cpp:79 src/about/konq_aboutpage.cpp:139
+#: src/about/konq_aboutpage.cpp:191 src/about/konq_aboutpage.cpp:192
+#: src/about/konq_aboutpage.cpp:291
+#, kde-format
+msgid "Specifications"
+msgstr "Määritykset"
+
+#: src/about/konq_aboutpage.cpp:84
+#, kde-format
+msgid "Home Folder"
+msgstr "Kotikansio"
+
+#: src/about/konq_aboutpage.cpp:85
+#, kde-format
+msgid "Your personal files"
+msgstr "Omat tiedostosi"
+
+#: src/about/konq_aboutpage.cpp:88
+#, kde-format
+msgid "Trash"
+msgstr "Roskakori"
+
+#: src/about/konq_aboutpage.cpp:89
+#, kde-format
+msgid "Browse and restore the trash"
+msgstr "Selaa roskakorista ja palauta tietueita"
+
+#: src/about/konq_aboutpage.cpp:92
+#, kde-format
+msgid "Network Folders"
+msgstr "Verkkokansiot"
+
+#: src/about/konq_aboutpage.cpp:93
+#, kde-format
+msgid "Shared files and folders"
+msgstr "Jaetut tiedostot ja kansiot"
+
+#: src/about/konq_aboutpage.cpp:96
+#, kde-format
+msgid "Bookmarks"
+msgstr "Kirjanmerkit"
+
+#: src/about/konq_aboutpage.cpp:97
+#, kde-format
+msgid "Quick access to your bookmarks"
+msgstr "Nopea pääsy kirjanmerkkeihin"
+
+#: src/about/konq_aboutpage.cpp:100
+#, kde-format
+msgid "Next: An Introduction to Konqueror"
+msgstr "Seuraavaksi: Johdanto Konqueroriin"
+
+#: src/about/konq_aboutpage.cpp:102
+#, kde-format
+msgid "Search the Web"
+msgstr "Etsi verkosta"
+
+#: src/about/konq_aboutpage.cpp:140
+#, kde-format
+msgid ""
+"Konqueror makes working with and managing your files easy. You can browse "
+"both local and networked folders while enjoying advanced features such as "
+"the powerful sidebar and file previews."
+msgstr ""
+"Konquerorilla tiedostojen käyttö ja hallinta on helppoa. Selata voi niin "
+"paikallisia kuin verkkokansioitakin. Apuna ovat lisätyökalut kuten tehokas "
+"sivupalkki ja tiedostoesikatselut."
+
+#: src/about/konq_aboutpage.cpp:144
+#, kde-format
+msgid ""
+"Konqueror is also a full featured and easy to use web browser which you can "
+"use to explore the Internet. Enter the address (e.g. <a href=\"http://www."
+"kde.org\">http://www.kde.org</a>) of a web page you would like to visit in "
+"the location bar and press Enter, or choose an entry from the Bookmarks menu."
+msgstr ""
+"Konqueror on myös täyspiirteinen ja helppokäyttöinen verkkoselain "
+"internetkäyttöön. Kirjoita osoiteriville haluamasi verkkosivun osoite (esim. "
+"<a href=\"http://www.kde.org/\">http://www.kde.org/</a>) ja paina Enter tai "
+"valitse kohde kirjanmerkkivalikosta."
+
+#: src/about/konq_aboutpage.cpp:149
+#, kde-format
+msgid ""
+"To return to the previous location, press the back button <img width='16' "
+"height='16' src=\"%1\"></img> in the toolbar. "
+msgstr ""
+"Edelliseen sijaintiin voi palata työkalurivin Takaisin-painikkeella <img "
+"width='16' height='16' src=\"%1\"></img>. "
+
+#: src/about/konq_aboutpage.cpp:152
+#, kde-format
+msgid ""
+"To quickly go to your Home folder press the home button <img width='16' "
+"height='16' src=\"%1\"></img>."
+msgstr ""
+"Kotikansioon voi siirtyä nopeasti Koti-painikkeella <img width='16' "
+"height='16' src=\"%1\"></img>."
+
+#: src/about/konq_aboutpage.cpp:154
+#, kde-format
+msgid ""
+"For more detailed documentation on Konqueror click <a href=\"%1\">here</a>."
+msgstr ""
+"Yksityiskohtaisempaa tietoa Konquerorista saat napsauttamalla <a href="
+"\"%1\">tästä</a>."
+
+#: src/about/konq_aboutpage.cpp:157
+#, kde-format
+msgid "Next: Tips & Tricks"
+msgstr "Seuraavaksi: Vinkit ja vihjeet"
+
+#: src/about/konq_aboutpage.cpp:193
+#, kde-format
+msgid ""
+"Konqueror is designed to embrace and support Internet standards. The aim is "
+"to fully implement the officially sanctioned standards from organizations "
+"such as the W3 and OASIS, while also adding extra support for other common "
+"usability features that arise as de facto standards across the Internet. "
+"Along with this support, for such functions as favicons, Web Shortcuts, and "
+"<A HREF=\"%1\">XBEL bookmarks</A>, Konqueror also implements:"
+msgstr ""
+"Konqueror on suunniteltu hyödyntämään ja tukemaan internetstandardeja. "
+"Tavoitteena on ollut toteuttaa täysin W3- ja OASIS-järjestöjen virallisesti "
+"hyväksymät standardit mutta lisätä myös tuki yleisille internetin de facto -"
+"standardeiksi muodostuneille käytettävyyspiirteille. Paitsi "
+"suosikkikuvakkeet, verkko-oikotiet ja <a href=\"%1\">XBEL-kirjanmerkit</a> "
+"Konquerorissa on toteutettu myös:"
+
+#: src/about/konq_aboutpage.cpp:200
+#, kde-format
+msgid "Web Browsing"
+msgstr "Verkkoselaus"
+
+#: src/about/konq_aboutpage.cpp:201
+#, kde-format
+msgid "Supported standards"
+msgstr "Tuetut standardit"
+
+#: src/about/konq_aboutpage.cpp:202
+#, kde-format
+msgid "Additional requirements*"
+msgstr "Lisävaatimukset*"
+
+#: src/about/konq_aboutpage.cpp:203
+#, kde-format
+msgid ""
+"<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
+"\"%2\">HTML 4.01</A>"
+msgstr ""
+"<A HREF=\"%1\">DOM</A> (taso 1, osin taso 2) <A HREF=\"%2\">HTML 4.01</A>:"
+"een pohjautuen"
+
+#: src/about/konq_aboutpage.cpp:205 src/about/konq_aboutpage.cpp:207
+#: src/about/konq_aboutpage.cpp:219 src/about/konq_aboutpage.cpp:224
+#: src/about/konq_aboutpage.cpp:226
+#, kde-format
+msgid "built-in"
+msgstr "sisään rakennettu"
+
+#: src/about/konq_aboutpage.cpp:206
+#, kde-format
+msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
+msgstr "<A HREF=\"%1\">CSS-tyylisivut</A> (CSS 1, osin CSS 2)"
+
+#: src/about/konq_aboutpage.cpp:208
+#, kde-format
+msgid "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
+msgstr ""
+"<A HREF=\"%1\">ECMA-262</A> Edition 3 (vastaa karkeasti JavaScript-versiota "
+"1.5)"
+
+#: src/about/konq_aboutpage.cpp:210
+#, kde-format
+msgid ""
+"JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
+msgstr ""
+"JavaScript poistettu käytöstä (yleisesti). Ota JavaScript käyttöön <a href="
+"\"%1\">tästä</a>."
+
+#: src/about/konq_aboutpage.cpp:211
+#, kde-format
+msgid ""
+"JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\\">here</"
+"A>."
+msgstr ""
+"JavaScript käytössä (yleisesti). Mukauta JavaScriptiä <a href=\\\"%1\\"
+"\">tästä</a>."
+
+#: src/about/konq_aboutpage.cpp:212
+#, kde-format
+msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
+msgstr "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> -tuki"
+
+#: src/about/konq_aboutpage.cpp:213
+#, kde-format
+msgid ""
+"JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">OpenJDK</A> or <A HREF="
+"\"%2\">Sun/Oracle</A>)"
+msgstr ""
+"JDK 1.2.0 (Java 2) -yhteensopiva VM (<A HREF=\"%1\">OpenJDK</A> tai <A HREF="
+"\"%2\">Sun/Oracle</A>)"
+
+#: src/about/konq_aboutpage.cpp:215
+#, kde-format
+msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
+msgstr "Ota Java käyttöön (yleisesti) <a href=\"%1\">tästä</a>"
+
+#: src/about/konq_aboutpage.cpp:216
+#, kde-format
+msgid ""
+"NPAPI <A HREF=\"%2\">plugins</A> (for viewing <A HREF=\"%1\">Flash<SUP>&reg;"
+"</SUP></A>, etc.)"
+msgstr ""
+"NPAPI-<a href=\"%2\">liitännäiset</A> (esim. <a href=\"%1\">Flash<sup>&reg;</"
+"sup></a>-katseluun)"
+
+#: src/about/konq_aboutpage.cpp:220
+#, kde-format
+msgid "Secure Sockets Layer"
+msgstr "SSL (Secure Sockets Layer)"
+
+#: src/about/konq_aboutpage.cpp:221
+#, kde-format
+msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
+msgstr "(TLS/SSL v2/3) salattuihin yhteyksiin aina 168 bittiin asti"
+
+#: src/about/konq_aboutpage.cpp:222
+#, kde-format
+msgid "OpenSSL"
+msgstr "OpenSSL"
+
+#: src/about/konq_aboutpage.cpp:223
+#, kde-format
+msgid "Bidirectional 16bit unicode support"
+msgstr "Kaksisuuntainen 16-bittinen Unicode-tuki"
+
+#: src/about/konq_aboutpage.cpp:225
+#, kde-format
+msgid "AutoCompletion for forms"
+msgstr "Lomakkeiden automaattitäydennys"
+
+#: src/about/konq_aboutpage.cpp:227
+#, kde-format
+msgctxt "Title of an html 'group box' explaining konqueror features"
+msgid "General"
+msgstr "Yleistä"
+
+#: src/about/konq_aboutpage.cpp:228
+#, kde-format
+msgid "Feature"
+msgstr "Ominaisuus"
+
+#: src/about/konq_aboutpage.cpp:229
+#, kde-format
+msgid "Details"
+msgstr "Yksityiskohdat"
+
+#: src/about/konq_aboutpage.cpp:230
+#, kde-format
+msgid "Image formats"
+msgstr "Kuvatiedostomuodot"
+
+#: src/about/konq_aboutpage.cpp:231
+#, kde-format
+msgid "PNG<br />JPG<br />GIF"
+msgstr "PNG<br />JPG<br />GIF"
+
+#: src/about/konq_aboutpage.cpp:232
+#, kde-format
+msgid "Transfer protocols"
+msgstr "Siirtoyhteyskäytännöt"
+
+#: src/about/konq_aboutpage.cpp:233
+#, kde-format
+msgid "HTTP 1.1 (including gzip/bzip2 compression)"
+msgstr "HTTP 1.1 (mukaan lukien gzip/bzip2-pakkaus)"
+
+#: src/about/konq_aboutpage.cpp:234
+#, kde-format
+msgid "FTP"
+msgstr "FTP"
+
+#: src/about/konq_aboutpage.cpp:235
+#, kde-format
+msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpCenter)...</A>"
+msgstr ""
+"ja <a href=\"%1\">paljon muuta (ks. ohjekeskuksesta KIO-asiakkaat)…</a>"
+
+#: src/about/konq_aboutpage.cpp:236
+#, kde-format
+msgctxt "A feature of Konqueror"
+msgid "URL-Completion"
+msgstr "Verkko-osoitteen täydennys"
+
+#: src/about/konq_aboutpage.cpp:237
+#, kde-format
+msgid "Manual"
+msgstr "Käsikirja"
+
+#: src/about/konq_aboutpage.cpp:238
+#, kde-format
+msgid "Popup"
+msgstr "Ponnahdusikkuna"
+
+#: src/about/konq_aboutpage.cpp:239
+#, kde-format
+msgid "(Short-) Automatic"
+msgstr "(Lyhyt) automaattinen"
+
+#: src/about/konq_aboutpage.cpp:241
+#, kde-format
+msgctxt ""
+"Link that points to the first page of the Konqueror 'about page', Starting "
+"Points contains links to Home, Network Folders, Trash, etc."
+msgid "<a href=\"%1\">Return to Starting Points</a>"
+msgstr "<a href=\"%1\">Palaa aloituspisteisiin</a>"
+
+#: src/about/konq_aboutpage.cpp:292
+#, kde-format
+msgid "Tips & Tricks"
+msgstr "Vinkit ja vihjeet"
+
+#: src/about/konq_aboutpage.cpp:293
+#, kde-format
+msgid ""
+"Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, using "
+"Google, for the search phrase \"KDE\". There are a lot of Web-Shortcuts "
+"predefined to make searching for software or looking up certain words in an "
+"encyclopedia a breeze. You can even <a href=\"%1\">create your own</a> Web-"
+"Shortcuts."
+msgstr ""
+"Verkko-oikoteiden käyttö: kirjoittamalla ”gg: KDE” voit etsiä internetistä "
+"Googlella hakulauseketta ”KDE”. Useita verkko-oikoteitä on määritetty "
+"ennalta tiedonhaun helpottamiseksi. Voit jopa <a href=\"%1\">luoda omia</a> "
+"verkko-oikoteitäsi."
+
+#: src/about/konq_aboutpage.cpp:298
+#, kde-format
+msgid ""
+"Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
+"the HTML toolbar to increase the font size on your web page."
+msgstr ""
+"Sivun fonttikokoa voi kasvattaa HTML-työkalurivin suurennuslasikuvakkeella "
+"<img width='16' height='16' src=\"%1\"></img>."
+
+#: src/about/konq_aboutpage.cpp:300
+#, kde-format
+msgid ""
+"When you want to paste a new address into the Location toolbar you might "
+"want to clear the current entry by pressing the black arrow with the white "
+"cross <img width='16' height='16' src=\"%1\"></img> in the toolbar."
+msgstr ""
+"Kirjoitettaessa osoiteriville uutta osoitetta voi ensin poistaa nykyisen "
+"napsauttamalla työkalurivillä olevaan mustaa valkorastista nuolta <img "
+"width='16' height='16' src=\"%1\"></img>."
+
+#: src/about/konq_aboutpage.cpp:304
+#, kde-format
+msgid ""
+"To create a link on your desktop pointing to the current page, simply drag "
+"the icon (favicon) that is to the left of the Location toolbar, drop it on "
+"to the desktop, and choose \"Icon\"."
+msgstr ""
+"Nykyisestä sivusta voi luoda työpöydälle linkin yksinkertaisesti vetämällä "
+"ja pudottamalla kuvake osoiterivin vasemmasta laidasta työpöydälle ja "
+"valitsemalla ”Kuvake”."
+
+#: src/about/konq_aboutpage.cpp:307
+#, kde-format
+msgid ""
+"You can also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen "
+"Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
+"sessions."
+msgstr ""
+"Asetusvalikosta löytyy myös <img width='16' height='16' src=\"%1\" />koko "
+"ruudun tila, josta on hyötyä vaikka keskusteluistunnoissa."
+
+#: src/about/konq_aboutpage.cpp:310
+#, kde-format
+msgid ""
+"Divide et impera (lat. \"Divide and conquer\") - by splitting a window into "
+"two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> Split "
+"View Left/Right) you can make Konqueror appear the way you like."
+msgstr ""
+"Hajoita ja hallitse (lat. Divide et impera): jakamalla ikkkunan kahtia "
+"(esim. Ikkuna → <img width='16' height='16' src=\"%1\" />Jaa näkymä) "
+"Konquerorin voi saada näyttämään miltä haluaa."
+
+#: src/about/konq_aboutpage.cpp:313
+#, kde-format
+msgid ""
+"Use the <a href=\"%1\">user-agent</a> feature if the website you are "
+"visiting asks you to use a different browser (and do not forget to send a "
+"complaint to the webmaster!)"
+msgstr ""
+"Jos sivusto vaatii sinua käyttämään toista selainta, voit kokeilla <a href="
+"\"%1\">user-agent</a>-ominaisuutta (mutta älä unohda valittaa asiasta "
+"sivuston ylläpidolle!)"
+
+#: src/about/konq_aboutpage.cpp:316
+#, kde-format
+msgid ""
+"The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
+"ensures that you can keep track of the pages you have visited recently."
+msgstr ""
+"<img width='16' height='16' src=\"%1\"></img> Sivupalkin historia varmistaa, "
+"että pysyt selvillä sivuista, joilla olet äskettäin käynyt."
+
+#: src/about/konq_aboutpage.cpp:318
+#, kde-format
+msgid ""
+"Use a caching <a href=\"%1\">proxy</a> to speed up your Internet connection."
+msgstr "Nopeuta internetyhteyttä <a href=\"%1\">välityspalvelimella</a>."
+
+#: src/about/konq_aboutpage.cpp:320
+#, kde-format
+msgid ""
+"Advanced users will appreciate the Konsole which you can embed into "
+"Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
+"Terminal Emulator)."
+msgstr ""
+"Edistyneet käyttäjät arvostanevat, että Konqueroriin voi upottaa Konsolen "
+"(Asetukset → <img width='16' height='16' src=\"%1\"></img> Näytä pääte)."
+
+#: src/about/konq_aboutpage.cpp:324
+#, kde-format
+msgid "Next: Specifications"
+msgstr "Seuraavaksi: Määritykset"
+
+#: src/about/konq_aboutpage.cpp:338
+#, kde-format
+msgid "Installed Plugins"
+msgstr "Asennetut liitännäiset"
+
+#: src/about/konq_aboutpage.cpp:339
+#, kde-format
+msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
+msgstr ""
+"<td>Liitännäinen</td> <td>Kuvaus</td> <td>Tiedosto</td> <td>Tyypit</td>"
+
+#: src/about/konq_aboutpage.cpp:340
+#, kde-format
+msgid "Installed"
+msgstr "Asennettu"
+
+#: src/about/konq_aboutpage.cpp:341
+#, kde-format
+msgid "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
+msgstr ""
+"<td>MIME-tyypit</td> <td>Kuvaus</td> <td>Tiedostopäätteet</td> "
+"<td>Liitännäinen</td>"
+
+#: src/settings/webenginesettings.cpp:909
+#, kde-format
+msgid "Filter error"
+msgstr "Suodatusvirhe"
+
+#: src/spellcheckermanager.cpp:79
+#, kde-format
+msgid "Spelling"
+msgstr "Oikeinkirjoitus"
+
+#: src/spellcheckermanager.cpp:83
+#, kde-format
+msgid "Spell Checking Enabled"
+msgstr "Oikeinkirjoituksen tarkistus käytössä"
+
+#: src/spellcheckermanager.cpp:101
+#, kde-format
+msgid "&Languages"
+msgstr "&Kielet"
+
+#. i18n: ectx: property (text), widget (QCheckBox, showPasswords)
+#: src/ui/credentialsdetailswidget.ui:34
+#: src/webenginecustomizecacheablefieldsdlg.ui:44
+#, kde-format
+msgid "&Show passwords"
+msgstr "&Näytä salasanat"
+
+#: src/ui/featurepermissionbar.cpp:22
+#, kde-format
+msgctxt "@action:deny permission"
+msgid "&Deny permission"
+msgstr "&Kiellä pääsy"
+
+#: src/ui/featurepermissionbar.cpp:26
+#, kde-format
+msgctxt "@action:grant permission"
+msgid "&Grant permission"
+msgstr "&Salli pääsy"
+
+#: src/ui/featurepermissionbar.cpp:57
+#, kde-format
+msgid "<html><b>%1</b> would like to send you notifications"
+msgstr "<html><b>%1</b> haluaisi lähettää sinulle ilmoituksia"
+
+#: src/ui/featurepermissionbar.cpp:59
+#, kde-format
+msgid ""
+"<html><b>%1</b> would like to access information about your current physical "
+"location"
+msgstr "<html><b>%1</b> haluaisi käyttää sijaintitietoa"
+
+#: src/ui/featurepermissionbar.cpp:61
+#, kde-format
+msgid ""
+"<html><b>%1</b> would like to access your microphone and other audio capture "
+"devices"
+msgstr ""
+"<html><b>%1</b> haluaisi käyttää mikrofonia ja muita äänenkaappauslaitteita"
+
+#: src/ui/featurepermissionbar.cpp:63
+#, kde-format
+msgid ""
+"<html><b>%1</b> would like to access your camera and other video capture "
+"devices"
+msgstr ""
+"<html><b>%1</b> haluaisi käyttää kameraa ja muita videokaappauslaitteita"
+
+#: src/ui/featurepermissionbar.cpp:65
+#, kde-format
+msgid ""
+"<html><b>%1</b> would like to access to your microphone, camera and other "
+"audio and video capture devices"
+msgstr ""
+"<html><b>%1</b> haluaisi käyttää mikrofonia, kameraa ja muita äänen- ja "
+"videokaappauslaitteita"
+
+#: src/ui/featurepermissionbar.cpp:67
+#, kde-format
+msgid "<html><b>%1</b> would like to lock your mouse inside the web page"
+msgstr "<html><b>%1</b> haluaisi lukita hiiren verkkosivulle"
+
+#: src/ui/featurepermissionbar.cpp:69
+#, kde-format
+msgid "<html><b>%1</b> would like to record your screen"
+msgstr "<html><b>%1</b> haluaisi nauhoittaa näyttöä"
+
+#: src/ui/featurepermissionbar.cpp:71
+#, kde-format
+msgid "<html><b>%1</b> would like to record your screen and your audio"
+msgstr "<html><b>%1</b> haluaisi nauhoittaa näyttöä ja ääntä"
+
+#: src/ui/passwordbar.cpp:29
+#, kde-format
+msgctxt "@action:remember password"
+msgid "&Remember"
+msgstr "&Muista"
+
+#: src/ui/passwordbar.cpp:33
+#, kde-format
+msgctxt "@action:never for this site"
+msgid "Ne&ver for this site"
+msgstr "Ei &koskaan tällä sivustolla"
+
+#: src/ui/passwordbar.cpp:37
+#, kde-format
+msgctxt "@action:not now"
+msgid "N&ot now"
+msgstr "Ei &nyt"
+
+#: src/ui/passwordbar.cpp:41 src/ui/passwordbar.cpp:125
+#, kde-format
+msgctxt "@action:display details about credentials to store"
+msgid "&Show details"
+msgstr "Näytä &yksityiskohdat"
+
+#: src/ui/passwordbar.cpp:123
+#, kde-format
+msgctxt "@action:hide details about credentials to store"
+msgid "&Hide details"
+msgstr "P&iilota yksityiskohdat"
+
+#: src/ui/searchbar.cpp:38
+#, kde-format
+msgid "Find..."
+msgstr "Etsi…"
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, closeButton)
+#: src/ui/searchbar.ui:23
+#, kde-format
+msgid "Close the search bar"
+msgstr "Sulje hakurivi"
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, nextButton)
+#: src/ui/searchbar.ui:49
+#, kde-format
+msgid "Find the next match for the current search phrase"
+msgstr "Etsi nykyisen hakulausekkeen seuraava osuma"
+
+#. i18n: ectx: property (text), widget (QToolButton, nextButton)
+#: src/ui/searchbar.ui:52
+#, kde-format
+msgid "&Next"
+msgstr "&Seuraava"
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, previousButton)
+#. i18n: ectx: property (toolTip), widget (QPushButton, optionsButton)
+#: src/ui/searchbar.ui:68 src/ui/searchbar.ui:84
+#, kde-format
+msgid "Find the previous match for the current search phrase"
+msgstr "Etsi nykyisen hakulausekkeen edellinen osuma"
+
+#. i18n: ectx: property (text), widget (QToolButton, previousButton)
+#: src/ui/searchbar.ui:71
+#, kde-format
+msgid "&Previous"
+msgstr "&Edellinen"
+
+#. i18n: ectx: property (text), widget (QPushButton, optionsButton)
+#: src/ui/searchbar.ui:87
+#, kde-format
+msgid "&Options"
+msgstr "&Valinnat"
+
+#. i18n: ectx: property (text), item, widget (QPushButton, optionsButton)
+#: src/ui/searchbar.ui:116
+#, kde-format
+msgid "&Match Case"
+msgstr "&Erota pien- ja suuraakkoset"
+
+#. i18n: ectx: property (text), item, widget (QPushButton, optionsButton)
+#: src/ui/searchbar.ui:127
+#, kde-format
+msgid "&Search As You Type"
+msgstr "Etsi &kirjoittaessasi"
+
+#. i18n: ectx: property (text), item, widget (QPushButton, optionsButton)
+#: src/ui/searchbar.ui:135
+#, kde-format
+msgid "&Highlight All Matches"
+msgstr "K&orosta kaikki osumat"
+
+#. i18n: ectx: property (toolTip), item, widget (QPushButton, optionsButton)
+#: src/ui/searchbar.ui:138
+#, kde-format
+msgid "Highlight Matches"
+msgstr "Korosta osumat"
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, WebEngineCustomizeCacheableFieldsDlg)
+#: src/webenginecustomizecacheablefieldsdlg.ui:14
+#, kde-format
+msgid "Choose fields to remember"
+msgstr "Valitse muistettavat kentät"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, showPasswords)
+#: src/webenginecustomizecacheablefieldsdlg.ui:41
+#, kde-format
+msgid "Switch between displaying passwords or placeholders"
+msgstr "Vaihda salasanojen ja paikkamerkkien näytön välillä"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, showDetails)
+#: src/webenginecustomizecacheablefieldsdlg.ui:64
+#, kde-format
+msgid "Show advanced information about the fields"
+msgstr "Näytä lisätietoa kentistä"
+
+#. i18n: ectx: property (text), widget (QCheckBox, showDetails)
+#: src/webenginecustomizecacheablefieldsdlg.ui:67
+#: src/webenginepartcertificateerrordlg.ui:30
+#, kde-format
+msgid "&Show details"
+msgstr "Näytä &yksityiskohdat"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: src/webenginecustomizecacheablefieldsdlg.ui:89
+#, kde-format
+msgid "Available &fields"
+msgstr "S&aatavilla olevat kentät"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, immediatelyCacheData)
+#: src/webenginecustomizecacheablefieldsdlg.ui:101
+#, kde-format
+msgid "Store form data in KWallet when closing the dialog"
+msgstr "Tallenna lomaketiedot lompakkoon, kun ikkuna suljetaan"
+
+#. i18n: ectx: property (text), widget (QCheckBox, immediatelyCacheData)
+#: src/webenginecustomizecacheablefieldsdlg.ui:104
+#, kde-format
+msgid "&Immediately memorize form data"
+msgstr "Muista lomaketiedot &välittömästi"
+
+#: src/webenginepage.cpp:125
+#, kde-format
+msgid "The download manager (%1) could not be found in your installation."
+msgstr "Latauksenhallintaa (%1) ei löydetty asennuksestasi."
+
+#: src/webenginepage.cpp:126
+#, kde-format
+msgid ""
+"Try to reinstall it and make sure that it is available in $PATH. \n"
+"\n"
+"The integration will be disabled."
+msgstr ""
+"Yritä asentaa se uudelleen ja varmista, että se löytyy hakupolusta.\n"
+"\n"
+"Integrointi poistetaan käytöstä."
+
+#: src/webenginepage.cpp:268
+#, kde-format
+msgid ""
+"<qt><p>To display the requested web page again, the browser needs to resend "
+"information you have previously submitted.</p><p>If you were shopping online "
+"and made a purchase, click the Cancel button to prevent a duplicate purchase."
+"Otherwise, click the Continue button to display the webpage again.</p>"
+msgstr ""
+"<qt><p>Näyttääkseen pyytämäsi verkkosivun uudelleen selaimen täytyy lähettää "
+"aiemmin lähettämäsi tiedot uudelleen.</p><p>Jos olit verkko-ostoksilla ja "
+"ostit jotain, napsauta Peru välttääksesi kaksoisostoksen. Muutoin napsauta "
+"Jatka, jolloin verkkosivu näytetään uudelleen.</p>"
+
+#: src/webenginepage.cpp:275
+#, kde-format
+msgid "Resubmit Information"
+msgstr "Lähetä tiedot uudelleen"
+
+#: src/webenginepage.cpp:507
+#, kde-format
+msgid ""
+"This site is attempting to access information about your physical location.\n"
+"Do you want to allow it access?"
+msgstr ""
+"Sivusto yrittää päästä lukemaan tietoja fyysisestä sijainnistasi.\n"
+"Haluatko sallia pääsyn?"
+
+#: src/webenginepage.cpp:511 src/webenginepage.cpp:628
+#: src/webenginepage.cpp:639
+#, kde-format
+msgid "Network Transmission"
+msgstr "Verkkolähetys"
+
+#: src/webenginepage.cpp:512
+#, kde-format
+msgid "Allow access"
+msgstr "Salli pääsy"
+
+#: src/webenginepage.cpp:587
+#, kde-format
+msgid ""
+"<qt>This untrusted page links to<br/><b>%1</b>.<br/>Do you want to follow "
+"the link?</qt>"
+msgstr ""
+"<qt>Ei-luotetun sivu linkin osoittaa kohteeseen<br /><b>%1</b>.<br /> "
+"Haluatko seurata linkkiä?</qt>"
+
+#: src/webenginepage.cpp:589
+#, kde-format
+msgid "Security Warning"
+msgstr "Turvallisuusvaroitus"
+
+#: src/webenginepage.cpp:590
+#, kde-format
+msgctxt "follow link despite of security warning"
+msgid "Follow"
+msgstr "Seuraa"
+
+#: src/webenginepage.cpp:592
+#, kde-format
+msgid "Security Alert"
+msgstr "Turvallisuushälytys"
+
+#: src/webenginepage.cpp:593
+#, kde-format
+msgid "<qt>Access by untrusted page to<br/><b>%1</b><br/> denied.</qt>"
+msgstr "<qt>Ei-luotetun sivun pääsy kohteeseen<br/><b>%1</b> torjuttu.</qt>"
+
+#: src/webenginepage.cpp:621
+#, kde-format
+msgid ""
+"Warning: This is a secure form but it is attempting to send your data back "
+"unencrypted.\n"
+"A third party may be able to intercept and view this information.\n"
+"Are you sure you want to send the data unencrypted?"
+msgstr ""
+"Varoitus: Tämä on suojattu lomake, mutta se yrittää lähettää tietosi "
+"takaisin salaamattomana.\n"
+"Kolmas osapuoli voi päästä näkemään nämä tiedot.\n"
+"Haluatko varmasti lähettää tiedot salaamattomana?"
+
+#: src/webenginepage.cpp:629
+#, kde-format
+msgid "&Send Unencrypted"
+msgstr "&Lähetä salaamattomana"
+
+#: src/webenginepage.cpp:636
+#, kde-format
+msgid ""
+"This site is attempting to submit form data via email.\n"
+"Do you want to continue?"
+msgstr ""
+"Sivusto yrittää lähettää lomakkeen tiedot sähköpostitse.\n"
+"Haluatko jatkaa?"
+
+#: src/webenginepage.cpp:640
+#, kde-format
+msgid "&Send Email"
+msgstr "&Lähetä sähköpostitse"
+
+#: src/webenginepage.cpp:689
+#, kde-format
+msgid ""
+"<qt>Do you want to allow this site to attach the following files to the "
+"email message?</qt>"
+msgstr ""
+"<qt>Haluatko antaa sivuston liittää seuraavat tiedostot sähköpostiviestiin?</"
+"qt>"
+
+#: src/webenginepage.cpp:691
+#, kde-format
+msgid "Email Attachment Confirmation"
+msgstr "Vahvistus sähköpostiliitteestä"
+
+#: src/webenginepage.cpp:692
+#, kde-format
+msgid "&Allow attachments"
+msgstr "&Salli liitteet"
+
+#: src/webenginepage.cpp:693
+#, kde-format
+msgid "&Ignore attachments"
+msgstr "&Ohita liitteet"
+
+#: src/webenginepage.cpp:707
+#, kde-format
+msgid ""
+"This site attempted to attach a file from your computer in the form "
+"submission. The attachment was removed for your protection."
+msgstr ""
+"Sivusto yrittää liittää tiedoston tietokoneeltasi lähetettävään "
+"lomakkeeseen. Liite poistettiin turvallisuussyistä."
+
+#: src/webenginepage.cpp:710
+#, kde-format
+msgid "Attachment Removed"
+msgstr "Liite poistettu"
+
+#: src/webenginepage.cpp:840
+#, kde-format
+msgid ""
+"This site is requesting to open a new popup window.\n"
+"Do you want to allow this?"
+msgstr ""
+"Tämä sivu haluaa avata uuden ponnahdusikkunan.\n"
+"Sallitko ponnahdusikkunan avaamisen?"
+
+#: src/webenginepage.cpp:842
+#, kde-format
+msgid ""
+"<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
+"want to allow this?</qt>"
+msgstr ""
+"<qt>Tämä sivu haluaa avata ponnahdusikkunan osoitteen<p>%1</p><br/>Sallitko "
+"tämän?</qt>"
+
+#: src/webenginepage.cpp:846
+#, kde-format
+msgid "Javascript Popup Confirmation"
+msgstr "JavaScript-ponnahdusikkunan vahvistus"
+
+#: src/webenginepage.cpp:847
+#, kde-format
+msgid "Allow"
+msgstr "Salli"
+
+#: src/webenginepage.cpp:848
+#, kde-format
+msgid "Do Not Allow"
+msgstr "Älä salli"
+
+#: src/webenginepart.cpp:224
+#, kde-format
+msgid "Save &Frame As..."
+msgstr "Tallenna ke&hys nimellä…"
+
+#: src/webenginepart.cpp:228
+#, kde-format
+msgid "Print Preview"
+msgstr "Tulostuksen esikatselu"
+
+#: src/webenginepart.cpp:232
+#, kde-format
+msgctxt "zoom in action"
+msgid "Zoom In"
+msgstr "Lähennä"
+
+#: src/webenginepart.cpp:237
+#, kde-format
+msgctxt "zoom out action"
+msgid "Zoom Out"
+msgstr "Loitonna"
+
+#: src/webenginepart.cpp:242
+#, kde-format
+msgctxt "reset zoom action"
+msgid "Actual Size"
+msgstr "Todellinen koko"
+
+#: src/webenginepart.cpp:247
+#, kde-format
+msgid "Zoom Text Only"
+msgstr "Muuta vain tekstin kokoa"
+
+#: src/webenginepart.cpp:255
+#, kde-format
+msgid "Zoom To DPI"
+msgstr "Zoomaa DPI:hin"
+
+#: src/webenginepart.cpp:268
+#, kde-format
+msgid "Set &Encoding"
+msgstr "Aseta koo&daus"
+
+#: src/webenginepart.cpp:271
+#, kde-format
+msgid "View Do&cument Source"
+msgstr "Näytä asiakirjan &lähdekoodi"
+
+#: src/webenginepart.cpp:276 src/webenginepart.cpp:574
+#, kde-format
+msgctxt "Secure Sockets Layer"
+msgid "SSL"
+msgstr "SSL"
+
+#: src/webenginepart.cpp:282
+#, kde-format
+msgctxt "find action \"whats this\" text"
+msgid ""
+"<h3>Find text</h3>Shows a dialog that allows you to find text on the "
+"displayed page."
+msgstr ""
+"<h3>Etsi tekstiä</h3>Näyttää kyselyikkunan, jonka avulla voit etsiä tekstiä "
+"näytetyltä sivulta."
+
+#: src/webenginepart.cpp:572
+#, kde-format
+msgid "The SSL information for this site appears to be corrupt."
+msgstr "Sivuston SSL-tieto näyttää olevan vioittunut."
+
+#: src/webenginepart.cpp:653
+#, kde-format
+msgctxt ""
+"status bar text when hovering email links; looks like \"Email: xy@kde.org - "
+"CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
+msgid "Email: "
+msgstr "Sähköposti: "
+
+#: src/webenginepart.cpp:682
+#, kde-format
+msgctxt ""
+"status bar text when hovering email links; looks like \"Email: xy@kde.org - "
+"CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
+msgid " - CC: "
+msgstr " – Kopio: "
+
+#: src/webenginepart.cpp:684
+#, kde-format
+msgctxt ""
+"status bar text when hovering email links; looks like \"Email: xy@kde.org - "
+"CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
+msgid " - BCC: "
+msgstr " – Piilokopio: "
+
+#: src/webenginepart.cpp:686
+#, kde-format
+msgctxt ""
+"status bar text when hovering email links; looks like \"Email: xy@kde.org - "
+"CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
+msgid " - Subject: "
+msgstr " – Aihe: "
+
+#: src/webenginepart.cpp:690 src/webenginepart.cpp:701
+#, kde-format
+msgid " (In new window)"
+msgstr " (Uuteen ikkunaan)"
+
+#: src/webenginepart.cpp:699
+#, kde-format
+msgid " (In parent frame)"
+msgstr " (Ylempään kehykseen)"
+
+#: src/webenginepart.cpp:763
+#, kde-format
+msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
+msgstr "<qt>Haluatko etsiä kohdetta <b>%1</b>?</qt>"
+
+#: src/webenginepart.cpp:764
+#, kde-format
+msgid "Internet Search"
+msgstr "Internethaku"
+
+#: src/webenginepart.cpp:764
+#, kde-format
+msgid "&Search"
+msgstr "&Etsi"
+
+#: src/webenginepart.cpp:875
+#, kde-format
+msgid "Close window?"
+msgstr "Suljetaanko ikkuna?"
+
+#: src/webenginepart.cpp:875
+#, kde-format
+msgid "Confirmation Required"
+msgstr "Vahvistus tarvitaan"
+
+#: src/webenginepart.cpp:949
+#, kde-format
+msgid ""
+"<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
+msgstr ""
+"<html>Haluatko ohjelman %1 muistavan kirjautumistiedot sivulle <b>%2</b>?</"
+"html>"
+
+#: src/webenginepart.cpp:1020
+#, kde-format
+msgctxt "Fill the Forms with Data from KWallet"
+msgid "&Fill forms now"
+msgstr "&Täytä lomakkeet nyt"
+
+#: src/webenginepart.cpp:1025
+#, kde-format
+msgid "&Memorize Passwords in This Page Now"
+msgstr "&Muista tämän sivun salasanat nyt"
+
+#: src/webenginepart.cpp:1029
+#, kde-format
+msgid "&Customize Fields to Memorize for This Page..."
+msgstr "&Mukauta kenttiä tämän sivun muistamiseksi…"
+
+#: src/webenginepart.cpp:1033
+#, kde-format
+msgid "Remove Customized Memorization Settings for This Page"
+msgstr "Poista tämän sivun mukautetut muistiasetukset"
+
+#: src/webenginepart.cpp:1037
+#, kde-format
+msgid "&Allow Password Caching for This Site"
+msgstr "&Salli tälle sivustolle salasanavälimuisti"
+
+#: src/webenginepart.cpp:1041
+#, kde-format
+msgid "Remove All Memorized Passwords for This Site"
+msgstr "Poista kaikki tältä sivustolta muistetut salasanat"
+
+#: src/webenginepart.cpp:1045
+#, kde-format
+msgid "&Launch Wallet Manager"
+msgstr "&Käynnistä lompakonhallinta"
+
+#: src/webenginepart.cpp:1049
+#, kde-format
+msgid "&Close Wallet"
+msgstr "S&ulje lompakko"
+
+#. i18n: ectx: Menu (file)
+#: src/webenginepart.rc:5
+#, kde-format
+msgid "&File"
+msgstr "&Tiedosto"
+
+#. i18n: ectx: Menu (edit)
+#: src/webenginepart.rc:12
+#, kde-format
+msgid "&Edit"
+msgstr "&Muokkaa"
+
+#. i18n: ectx: Menu (view)
+#: src/webenginepart.rc:18
+#, kde-format
+msgid "&View"
+msgstr "&Näytä"
+
+#. i18n: ectx: Menu (tools)
+#: src/webenginepart.rc:30
+#, kde-format
+msgid "&Tools"
+msgstr "Työ&kalut"
+
+#. i18n: ectx: Menu (wallet)
+#: src/webenginepart.rc:32
+#, kde-format
+msgid "&Credential management"
+msgstr "&Luottamuksellisten tietojen hallinta"
+
+#. i18n: ectx: ToolBar (htmlToolBar)
+#: src/webenginepart.rc:47
+#, kde-format
+msgid "HTML Toolbar"
+msgstr "HTML-työkalurivi"
+
+#: src/webenginepart_ext.cpp:246
+#, kde-format
+msgid "Print Document"
+msgstr "Tulosta tiedosto"
+
+#: src/webenginepart_ext.cpp:464
+#, kde-format
+msgid "Add URL to Filter"
+msgstr "Lisää verkko-osoite suodattimeen"
+
+#: src/webenginepart_ext.cpp:465
+#, kde-format
+msgid "Enter the URL:"
+msgstr "Kirjoita verkko-osoite:"
+
+#: src/webenginepartcertificateerrordlg.cpp:44
+#, kde-format
+msgctxt "Ignore the certificate error for this URL only for now"
+msgid "Yes, &once"
+msgstr "Kyllä, k&erran"
+
+#: src/webenginepartcertificateerrordlg.cpp:45
+#, kde-format
+msgctxt "Ignore the certificate error for this URL now and in the future"
+msgid "Yes, &forever"
+msgstr "Kyllä, &aina"
+
+#: src/webenginepartcertificateerrordlg.cpp:49
+#, kde-format
+msgid ""
+"<p>The server <tt>%1</tt> failed the authenticity check. The error is:</"
+"p><p><tt>%2</tt></p>Do you want to ignore this error?"
+msgstr ""
+"<p>Palvelin <tt>%1</tt> epäonnistui tunnistautumistarkistuksessa. Virhe oli:"
+"</p><p><tt>%2</tt></p>Haluatko sivuuttaa tämän virheen?"
+
+#: src/webenginepartcertificateerrordlg.cpp:55
+#, kde-format
+msgctxt "title of a dialog asking what to do about a SSL certificate error"
+msgid "Certificate error"
+msgstr "Varmennevirhe"
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, WebEnginePartCertificateErrorDlg)
+#: src/webenginepartcertificateerrordlg.ui:14
+#, kde-format
+msgid "Dialog"
+msgstr "Valintaikkuna"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: src/webenginepartcertificateerrordlg.ui:23
+#, kde-format
+msgid "TextLabel"
+msgstr "Tekstiselite"
+
+#. i18n: ectx: property (title), widget (QGroupBox, details)
+#: src/webenginepartcertificateerrordlg.ui:50
+#, kde-format
+msgid "Certificate details"
+msgstr "Varmenteen tiedot"
+
+#. i18n: ectx: attribute (title), widget (QWidget, subjectTab)
+#: src/webenginepartcertificateerrordlg.ui:63
+#, kde-format
+msgid "&Subject"
+msgstr "Ai&he"
+
+#. i18n: ectx: attribute (title), widget (QWidget, issuerTab)
+#: src/webenginepartcertificateerrordlg.ui:73
+#, kde-format
+msgid "&Issuer"
+msgstr "M&yöntäjä"
+
+#: src/webenginepartdownloadmanager.cpp:235
+#, kde-format
+msgid "An error occurred while saving the file: %1"
+msgstr "Tiedostoa tallennettaessa tapahtui virhe: %1"
+
+#: src/webenginepartdownloadmanager.cpp:247
+#, kde-format
+msgctxt "Notification about downloading a file"
+msgid "Downloading"
+msgstr "Ladataan"
+
+#: src/webenginepartdownloadmanager.cpp:248
+#, kde-format
+msgctxt "Source of a file being downloaded"
+msgid "Source"
+msgstr "Lähde"
+
+#: src/webenginepartdownloadmanager.cpp:249
+#, kde-format
+msgctxt "Destination of a file download"
+msgid "Destination"
+msgstr "Kohde"
+
+#: src/webenginepartdownloadmanager.cpp:266
+#, kde-format
+msgctxt "Finished saving BLOB URL"
+msgid "Finished saving %1 as %2"
+msgstr "%1 tallennettu kohteeseen %2"
+
+#: src/webengineparterrorschemehandler.cpp:96
+#, kde-format
+msgid ""
+"<html><body><h3>Unable to display error message</h3><p>The error template "
+"file <em>error.html</em> could not be found.</p></body></html>"
+msgstr ""
+"<html><body><h3>Virheilmoitusta ei voi näyttää</"
+"h3><p>Virhemallipohjatiedostoa <em>error.html</em> ei löytynyt.</p></body></"
+"html>"
+
+#: src/webengineparterrorschemehandler.cpp:105
+#, kde-format
+msgid "The requested operation could not be completed"
+msgstr "Pyydettyä toimintoa ei voitu päättää"
+
+#: src/webengineparterrorschemehandler.cpp:112
+#, kde-format
+msgid "Technical Reason: %1"
+msgstr "Tekninen syy: %1"
+
+#: src/webengineparterrorschemehandler.cpp:117
+#, kde-format
+msgid "Details of the Request:"
+msgstr "Pyynnön yksityiskohdat:"
+
+#. i18n, and once for HTML.
+#: src/webengineparterrorschemehandler.cpp:120
+#, kde-format
+msgid "URL: %1"
+msgstr "Verkko-osoite: %1"
+
+#. i18n, and once for HTML.
+#: src/webengineparterrorschemehandler.cpp:126
+#, kde-format
+msgid "Protocol: %1"
+msgstr "Yhteyskäytäntö: %1"
+
+#: src/webengineparterrorschemehandler.cpp:130
+#, kde-format
+msgid "Date and Time: %1"
+msgstr "Aika ja päiväys: %1"
+
+#. i18n, and once for HTML.
+#: src/webengineparterrorschemehandler.cpp:134
+#, kde-format
+msgid "Additional Information: %1"
+msgstr "Lisätiedot: %1"
+
+#: src/webengineparterrorschemehandler.cpp:136
+#, kde-format
+msgid "Description:"
+msgstr "Kuvaus:"
+
+#: src/webengineparterrorschemehandler.cpp:143
+#, kde-format
+msgid "Possible Causes:"
+msgstr "Todennäköiset syyt:"
+
+#: src/webengineparterrorschemehandler.cpp:151
+#, kde-format
+msgid "Possible Solutions:"
+msgstr "Mahdolliset ratkaisut:"
+
+#: src/webengineparterrorschemehandler.cpp:157
+#, kde-format
+msgid "Error: %1"
+msgstr "Virhe: %1"
+
+#: src/webengineview.cpp:349
+#, kde-format
+msgid "Save Image As..."
+msgstr "Tallenna kuva nimellä…"
+
+#: src/webengineview.cpp:354
+#, kde-format
+msgid "Send Image..."
+msgstr "Lähetä kuva…"
+
+#: src/webengineview.cpp:359
+#, kde-format
+msgid "Copy Image URL"
+msgstr "Kopioi kuvan verkko-osoite"
+
+#: src/webengineview.cpp:365
+#, kde-format
+msgid "Copy Image"
+msgstr "Kopioi kuva"
+
+#: src/webengineview.cpp:372
+#, kde-format
+msgid "View Image (%1)"
+msgstr "Näytä kuva (%1)"
+
+#: src/webengineview.cpp:378
+#, kde-format
+msgid "Block Image..."
+msgstr "Estä kuva…"
+
+#: src/webengineview.cpp:386
+#, kde-format
+msgid "Block Images From %1"
+msgstr "Estä kuvat kohteesta %1"
+
+#: src/webengineview.cpp:416 src/webengineview.cpp:453
+#, kde-format
+msgid "&Copy Text"
+msgstr "&Kopioi teksti"
+
+#: src/webengineview.cpp:426
+#, kde-format
+msgctxt "open selected url"
+msgid "Open '%1'"
+msgstr "Avaa ”%1”"
+
+#: src/webengineview.cpp:459
+#, kde-format
+msgid "&Copy Email Address"
+msgstr "&Kopioi sähköpostiosoite"
+
+#: src/webengineview.cpp:465
+#, kde-format
+msgid "Copy Link &Text"
+msgstr "Kopioi linkin &teksti"
+
+#: src/webengineview.cpp:471
+#, kde-format
+msgid "Copy Link &URL"
+msgstr "K&opioi linkin verkko-osoite"
+
+#: src/webengineview.cpp:476
+#, kde-format
+msgid "&Save Link As..."
+msgstr "&Tallenna linkki nimellä…"
+
+#: src/webengineview.cpp:496
+#, kde-format
+msgid "&Play/Pause"
+msgstr "&Toisto/tauko"
+
+#: src/webengineview.cpp:501
+#, kde-format
+msgid "Un&mute/&Mute"
+msgstr "&Vaimenna/palauta äänet"
+
+#: src/webengineview.cpp:506
+#, kde-format
+msgid "Toggle &Loop"
+msgstr "&Aloita tai lopeta jatkuva toisto"
+
+#: src/webengineview.cpp:511
+#, kde-format
+msgid "Toggle &Controls"
+msgstr "Näytä/piilota o&hjaimet"
+
+#: src/webengineview.cpp:522
+#, kde-format
+msgid "Sa&ve Video As..."
+msgstr "Tallenna video nimellä…"
+
+#: src/webengineview.cpp:523
+#, kde-format
+msgid "C&opy Video URL"
+msgstr "Ko&pioi videon verkko-osoite"
+
+#: src/webengineview.cpp:525
+#, kde-format
+msgid "Sa&ve Audio As..."
+msgstr "Talle&nna äänitiedosto nimellä…"
+
+#: src/webengineview.cpp:526
+#, kde-format
+msgid "C&opy Audio URL"
+msgstr "Kopioi ääniti&edoston verkko-osoite"
+
+#: src/webengineview.cpp:528
+#, kde-format
+msgid "Sa&ve Media As..."
+msgstr "Tallenna me&diatiedosto nimellä…"
+
+#: src/webengineview.cpp:529
+#, kde-format
+msgid "C&opy Media URL"
+msgstr "Kopioi medi&atiedoston verkko-osoite"
+
+# $[hakumuoto %1] = tunnetulle hakukoneelle määritetty muoto, esimerkiksi. ”Googlella”, ”Wikipediasta” jne.
+#: src/webengineview.cpp:582
+#, kde-format
+msgctxt "Search \"search provider\" for \"text\""
+msgid "Search %1 for '%2'"
+msgstr "Etsi ”%2” hakukoneella %1|/|Etsi ”%2” $[hakumuoto %1]"
+
+#: src/webengineview.cpp:593
+#, kde-format
+msgctxt "Search for \"text\" with"
+msgid "Search for '%1' with"
+msgstr "Etsi ”%1” hakukoneella"
+
+#: src/webengineview.cpp:606
+#, kde-format
+msgid "Configure Web Shortcuts..."
+msgstr "WWW-pikavalintojen asetukset..."
+
+#: src/webenginewallet.cpp:104
+#, kde-format
+msgctxt "Web field with type 'text'"
+msgid "text"
+msgstr "teksti"
+
+#: src/webenginewallet.cpp:105
+#, kde-format
+msgctxt "Web field with type 'password'"
+msgid "password"
+msgstr "salasana"
+
+#: src/webenginewallet.cpp:106
+#, kde-format
+msgctxt "Web field with type 'e-mail'"
+msgid "e-mail"
+msgstr "sähköposti"
+
+#: src/webenginewallet.cpp:107
+#, kde-format
+msgctxt "Web field with type different from 'text', 'password' or 'e-mail'"
+msgid "other"
+msgstr "muu"
+
+#: src/webfieldsdataview.cpp:61
+#, kde-format
+msgctxt "Label of a web field"
+msgid "Field name"
+msgstr "Kentän nimi"
+
+#: src/webfieldsdataview.cpp:62
+#, kde-format
+msgctxt "Value of a web field"
+msgid "Field value"
+msgstr "Kentän arvo"
+
+#: src/webfieldsdataview.cpp:63
+#, kde-format
+msgctxt "Name attribute of a web field"
+msgid "Internal field name"
+msgstr "Sisäinen kenttänimi"
+
+#: src/webfieldsdataview.cpp:64
+#, kde-format
+msgctxt "Type of a web field"
+msgid "Field type"
+msgstr "Kentän tyyppi"
+
+#: src/webfieldsdataview.cpp:65
+#, kde-format
+msgctxt "The id of a web field"
+msgid "Field id"
+msgstr "Kentän tunniste"
+
+#: src/webfieldsdataview.cpp:66
+#, kde-format
+msgctxt "Other details about a web field"
+msgid "Details"
+msgstr "Yksityiskohdat"
+
+#: src/webfieldsdataview.cpp:125
+#, kde-format
+msgctxt "web field has the readonly attribute"
+msgid "read only"
+msgstr "vain luku"
+
+#: src/webfieldsdataview.cpp:128
+#, kde-format
+msgctxt "web field has the autocomplete attribute set to off"
+msgid "auto-completion off"
+msgstr "ei automaattitäydennystä"
+
+#: src/webfieldsdataview.cpp:131
+#, kde-format
+msgctxt "web field is disabled"
+msgid "disabled"
+msgstr "ei käytössä"
+
+#: src/webfieldsdataview.cpp:159
+#, kde-format
+msgctxt "A statement about a field is true"
+msgid "yes"
+msgstr "kyllä"
+
+#: src/webfieldsdataview.cpp:160
+#, kde-format
+msgctxt "A statement about a field is false"
+msgid "no"
+msgstr "ei"
+
+#: src/webfieldsdataview.cpp:163
+#, kde-format
+msgid ""
+"<ul><li><b>Field internal name: </b>%1</li><li><b>Field type: </b>%2</"
+"li><li><b>Field id: </b>%3</li><li><b>Field is read only: </b>%4</"
+"li><li><b>Field is enabled: </b>%5</li><li><b>Autocompletion is enabled: </b>"
+"%6</li></ul>"
+msgstr ""
+"<ul><li><b>Kentän sisäinen nimi:</b> %1</li><li><b>Kentän tyyppi:</b> %2</"
+"li><li><b>Kentän tunniste:</b> %3</li><li><b>Kenttä on vain luettavissa:</b> "
+"%4</li><li><b>Kenttä on käytössä:</b> %5</li><li><b>Automaattitäydennys on "
+"käytössä:</b> %6</li></ul>"
+
+#~ msgctxt "Program Name"
+#~ msgid "WebEnginePart"
+#~ msgstr "WebEngine-osa"
+
+#~ msgctxt "Short Description"
+#~ msgid "QtWebEngine Browser Engine Component"
+#~ msgstr "QtWebEngine-selainmoottoriosa"
+
+#~ msgid ""
+#~ "(C) 2009-2010 Dawit Alemayehu\n"
+#~ "(C) 2008-2010 Urs Wolfer\n"
+#~ "(C) 2007 Trolltech ASA"
+#~ msgstr ""
+#~ "© 2009–2010 Dawit Alemayehu\n"
+#~ "© 2008–2010 Urs Wolfer\n"
+#~ "© 2007 Trolltech ASA"
+
+#~ msgid "Sune Vuorela"
+#~ msgstr "Sune Vuorela"
+
+#~ msgid "Maintainer, Developer"
+#~ msgstr "Ylläpitäjä, kehittäjä"
+
+#~ msgid "Dawit Alemayehu"
+#~ msgstr "Dawit Alemayehu"
+
+#~ msgid "Developer"
+#~ msgstr "Kehittäjä"
+
+#~ msgid "Urs Wolfer"
+#~ msgstr "Urs Wolfer"
+
+#~ msgid "Michael Howell"
+#~ msgstr "Michael Howell"
+
+#~ msgid "Laurent Montel"
+#~ msgstr "Laurent Montel"
+
+#~ msgid "Dirk Mueller"
+#~ msgstr "Dirk Mueller"
+
+#~ msgid "Save As"
+#~ msgstr "Tallenna nimellä"
+
+#~ msgid "Authentication error"
+#~ msgstr "Tunnistautumisvirhe"
+
+#~ msgctxt "label for input line to find text"
+#~ msgid "&Find:"
+#~ msgstr "&Etsi:"
+
+#~ msgctxt "input dialog window title for selecting html elements"
+#~ msgid "Select elements"
+#~ msgstr "Valitse elementit"
+
+#~ msgctxt "input dialog text for selecting html elements"
+#~ msgid "Choose elements"
+#~ msgstr "Valitse elementit"
+
+#~ msgid "New Window"
+#~ msgstr "Uusi ikkuna"
+
+#~ msgid "Print"
+#~ msgstr "Tulosta"
+
+#~ msgid "Close"
+#~ msgstr "Sulje"
+
+#~ msgid "Zoom &In"
+#~ msgstr "L&ähennä"
+
+#~ msgid "Zoom &Out"
+#~ msgstr "L&oitonna"
+
+#~ msgid "Reset Zoom"
+#~ msgstr "Palauta tavallinen koko"
+
+#~ msgid "Dump HTML"
+#~ msgstr "Vedosta HTML"
+
+#~ msgid "F&ormat"
+#~ msgstr "M&uotoile"
+
+#~ msgid "Writing Direction"
+#~ msgstr "Kirjoitussuunta"
+
+#~ msgid "Select elements..."
+#~ msgstr "Valitse elementit…"
+
+#~ msgid "KDELauncher"
+#~ msgstr "KDELauncher"

@@ -1,0 +1,2896 @@
+# translation of konqueror.po to Thai
+# Copyright (C) 2003, 2005, 2006, 2007, 2008 Free Software Foundation, Inc.
+#
+# Thanomsub Noppaburana <donga_n@yahoo.com>, 2003, 2005.
+# Narachai Sakorn <narachai@opentle.org>, 2005.
+# Sahachart Anukulkitch <drrider@gmail.com>, 2005, 2006, 2007.
+# Thanomsub Noppaburana <donga.nb@gmail.com>, 2008, 2010.
+# Phuwanat Sakornsakolpat <narachai@gmail.com>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-22 00:44+0000\n"
+"PO-Revision-Date: 2010-12-17 20:03+0700\n"
+"Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
+"Language-Team: Thai <thai-l10n@googlegroups.com>\n"
+"Language: th\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "ถนอมทรัพย์ นพบูรณ์, สหชาติ อนุกูลกิจ"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "donga.nb@gmail.com, drrider@gmail.com"
+
+#: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4881
+#: src/konqmainwindow.cpp:4927
+#, kde-format
+msgid "no name"
+msgstr "ไม่มีชื่อ"
+
+#: src/konqextensionmanager.cpp:50
+#, fuzzy, kde-format
+#| msgid "Configure Extensions..."
+msgctxt "@title:window"
+msgid "Configure Extensions"
+msgstr "ปรับแต่งส่วนเสริม..."
+
+#: src/konqextensionmanager.cpp:70
+#, kde-format
+msgid "Extensions"
+msgstr "ส่วนขยาย"
+
+#: src/konqfactory.cpp:67
+#, kde-format
+msgid ""
+"There was an error loading the module %1.\n"
+"The diagnostics is:\n"
+"%2"
+msgstr ""
+"เกิดข้อผิดพลาดในการโหลดมอดูล %1 ขึ้นมาทำงาน\n"
+"ซึ่งตรวจสอบได้คือ:\n"
+"%2"
+
+#: src/konqframestatusbar.cpp:108
+#, kde-format
+msgid ""
+"Checking this box on at least two views sets those views as 'linked'. Then, "
+"when you change directories in one view, the other views linked with it will "
+"automatically update to show the current directory. This is especially "
+"useful with different types of views, such as a directory tree with an icon "
+"view or detailed view, and possibly a terminal emulator window."
+msgstr ""
+"เลือกตัวเลือกนี้ในมุมมอง อย่างน้อยสองมุมมอง และปรับมุมมองเหล่านั้น ให้เป็นแบบ 'เชื่อมต่อ' "
+"จากนั้นเมื่อคุณเปลี่ยนไดเรกทอรีในมุมมองหนึ่ง มุมมองที่เชื่อมต่ออยู่ จะทำการปรับปรุงการแสดงผล "
+"ให้เป็นไดเร็กทอรีปัจจุบันโดยอัตโนมัติ ซึ่งควรใช้ร่วมกับมุมมองที่ต่างประเภทกัน เช่น "
+"มุมมองแบบต้นไม้ของไดเรกทอรี กับ มุมมองแบบไอคอน หรือ มุมมองแบบรายละเอียด และอาจรวมถึง "
+"หน้าต่างจำลองการทำงานเทอร์มินัลด้วย"
+
+#: src/konqframestatusbar.cpp:154
+#, kde-format
+msgid "Close View"
+msgstr "ปิดมุมมอง"
+
+#: src/konqframestatusbar.cpp:232
+#, kde-format
+msgid "%1/s"
+msgstr "%1/วินาที"
+
+#: src/konqframestatusbar.cpp:234
+#, kde-format
+msgid "Stalled"
+msgstr "หยุดทำงานชั่วคราว"
+
+#: src/konqguiclients.cpp:51
+#, kde-format
+msgid "Preview &in %1"
+msgstr "แสดงตัวอย่างใ&น %1"
+
+#: src/konqguiclients.cpp:118
+#, kde-format
+msgid "Show %1"
+msgstr "แสดง %1"
+
+#: src/konqhistorydialog.cpp:39
+#, kde-format
+msgctxt "@title:window"
+msgid "History"
+msgstr "ประวัติการใช้"
+
+#: src/konqhistorydialog.cpp:55 src/konqhistoryview.cpp:140
+#, kde-format
+msgctxt "@action:inmenu Parent of 'By Name' and 'By Date'"
+msgid "Sort"
+msgstr "เรียงลำดับ"
+
+#: src/konqhistorymodel.cpp:119
+#, kde-format
+msgid ""
+"<qt><center><b>%1</b></center><hr />Last visited: %2<br />First visited: "
+"%3<br />Number of times visited: %4</qt>"
+msgstr ""
+"<qt><center><b>%1</b></center><hr />ไปมาล่าสุดเมื่อ: %2<br />ไปมาครั้งแรกเมื่อ: "
+"%3<br />จำนวนครั้งที่ไปมา: %4</qt>"
+
+#: src/konqhistorymodel.cpp:213
+#, kde-format
+msgid "Local"
+msgstr "ภายในระบบ"
+
+#: src/konqhistorymodel.cpp:216
+#, kde-format
+msgid "Miscellaneous"
+msgstr "เบ็ดเตล็ด"
+
+#: src/konqhistoryview.cpp:53 src/konqmainwindow.cpp:4412
+#, kde-format
+msgid "Open in New &Window"
+msgstr "เปิ฿ดในหน้าต่างใหม่"
+
+#: src/konqhistoryview.cpp:58
+#, kde-format
+msgid "Open in New Tab"
+msgstr "เปิดในแท็บใหม่"
+
+#: src/konqhistoryview.cpp:63
+#, fuzzy, kde-format
+#| msgid "Open in New Tab"
+msgid "Open in Current Tab"
+msgstr "เปิดในแท็บใหม่"
+
+#: src/konqhistoryview.cpp:67
+#, kde-format
+msgid "&Copy Link Address"
+msgstr "&คัดลอกที่อยู่ของส่วนเชื่อมโยง"
+
+#: src/konqhistoryview.cpp:72
+#, kde-format
+msgid "&Remove Entry"
+msgstr "&ลบรายการ"
+
+#: src/konqhistoryview.cpp:79
+#, kde-format
+msgid "C&lear History"
+msgstr "ล้า&งประวัติการใช้"
+
+#: src/konqhistoryview.cpp:84
+#, kde-format
+msgid "&Preferences..."
+msgstr "&ปรับแต่งค่า..."
+
+#: src/konqhistoryview.cpp:91
+#, kde-format
+msgid "By &Name"
+msgstr "ตาม&ชื่อ"
+
+#: src/konqhistoryview.cpp:97
+#, kde-format
+msgid "By &Date"
+msgstr "ตาม&วันที่"
+
+#: src/konqhistoryview.cpp:107
+#, kde-format
+msgid "Search in history"
+msgstr "ค้นหาในประวัติการใช้"
+
+#: src/konqhistoryview.cpp:168
+#, kde-format
+msgid "Do you really want to clear the entire history?"
+msgstr "คุณต้องการล้างประวัติการใช้ที่มี จริงหรือไม่ ?"
+
+#: src/konqhistoryview.cpp:169
+#, fuzzy, kde-format
+#| msgid "Clear History?"
+msgctxt "@title:window"
+msgid "Clear History?"
+msgstr "จะล้างประวัติการใช้หรือไม่ ?"
+
+#: src/konqmain.cpp:170
+#, kde-format
+msgid "Konqueror"
+msgstr " Konqueror "
+
+#: src/konqmain.cpp:171
+#, kde-format
+msgid "Web browser, file manager and document viewer."
+msgstr "เว็บเบราว์เซอร์, เครื่องมือจัดการแฟ้ม และตัวแสดงเอกสาร"
+
+#: src/konqmain.cpp:173
+#, fuzzy, kde-format
+#| msgid "(C) 1999-2008, The Konqueror developers"
+msgid "(C) 1999-2016, The Konqueror developers"
+msgstr "สงวนลิขสิทธิ์ (c) 1999-2008, กลุ่มผู้พัฒนา Konqueror "
+
+#: src/konqmain.cpp:176
+#, kde-format
+msgid "Stefano Crocco"
+msgstr ""
+
+#: src/konqmain.cpp:176
+#, kde-format
+msgid "Current maintainer"
+msgstr ""
+
+#: src/konqmain.cpp:177
+#, kde-format
+msgid "David Faure"
+msgstr "David Faure"
+
+#: src/konqmain.cpp:177
+#, fuzzy, kde-format
+#| msgid "Developer (framework, parts, JavaScript, I/O library) and maintainer"
+msgid ""
+"Developer (framework, parts, JavaScript, I/O library) and former maintainer"
+msgstr "ผู้พัฒนา (เฟรมเวิร์ก, parts, จาวาสคริปต์, ไลบรารี I/O) และผู้ดูแล"
+
+#: src/konqmain.cpp:178
+#, kde-format
+msgid "Simon Hausmann"
+msgstr "Simon Hausmann"
+
+#: src/konqmain.cpp:178
+#, kde-format
+msgid "Developer (framework, parts)"
+msgstr "ผู้พัฒนา (เฟรมเวิร์ก, parts)"
+
+#: src/konqmain.cpp:179
+#, kde-format
+msgid "Michael Reiher"
+msgstr "Michael Reiher"
+
+#: src/konqmain.cpp:179 src/konqmain.cpp:207 src/konqmain.cpp:213
+#, kde-format
+msgid "Developer (framework)"
+msgstr "ผู้พัฒนา (เฟรมเวิร์ก)"
+
+#: src/konqmain.cpp:180
+#, kde-format
+msgid "Matthias Welk"
+msgstr "Matthias Welk"
+
+#: src/konqmain.cpp:180
+#, kde-format
+msgid "Developer"
+msgstr "ผู้พัฒนา"
+
+#: src/konqmain.cpp:181
+#, kde-format
+msgid "Alexander Neundorf"
+msgstr "Alexander Neundorf"
+
+#: src/konqmain.cpp:181
+#, kde-format
+msgid "Developer (List views)"
+msgstr "ผู้พัฒนา (มุมมองรายการ)"
+
+#: src/konqmain.cpp:182
+#, kde-format
+msgid "Michael Brade"
+msgstr "Michael Brade"
+
+#: src/konqmain.cpp:182
+#, kde-format
+msgid "Developer (List views, I/O library)"
+msgstr "ผู้พัฒนา (มุมมองรายการ, ไลบรารี I/O)"
+
+#: src/konqmain.cpp:183
+#, kde-format
+msgid "Lars Knoll"
+msgstr "Lars Knoll"
+
+#: src/konqmain.cpp:183 src/konqmain.cpp:184 src/konqmain.cpp:185
+#: src/konqmain.cpp:187 src/konqmain.cpp:188 src/konqmain.cpp:190
+#: src/konqmain.cpp:191 src/konqmain.cpp:192 src/konqmain.cpp:193
+#: src/konqmain.cpp:195
+#, kde-format
+msgid "Developer (HTML rendering engine)"
+msgstr "ผู้พัฒนา (กลไกแสดงผล HTML)"
+
+#: src/konqmain.cpp:184
+#, kde-format
+msgid "Dirk Mueller"
+msgstr "Dirk Mueller"
+
+#: src/konqmain.cpp:185
+#, kde-format
+msgid "Peter Kelly"
+msgstr "Peter Kelly"
+
+#: src/konqmain.cpp:186
+#, kde-format
+msgid "Waldo Bastian"
+msgstr "Waldo Bastian"
+
+#: src/konqmain.cpp:186
+#, kde-format
+msgid "Developer (HTML rendering engine, I/O library)"
+msgstr "ผู้พัฒนา (กลไกแสดงผล HTML, ไลบรารี I/O)"
+
+#: src/konqmain.cpp:187
+#, kde-format
+msgid "Germain Garand"
+msgstr "Germain Garand"
+
+#: src/konqmain.cpp:188
+#, kde-format
+msgid "Leo Savernik"
+msgstr "Leo Savernik"
+
+#: src/konqmain.cpp:189
+#, kde-format
+msgid "Stephan Kulow"
+msgstr "Stephan Kulow"
+
+#: src/konqmain.cpp:189
+#, kde-format
+msgid ""
+"Developer (HTML rendering engine, I/O library, regression test framework)"
+msgstr "ผู้พัฒนา (กลไกแสดงผล HTML, ไลบรารี I/O, เฟรมเวิร์กทดสอบความถดถอย)"
+
+#: src/konqmain.cpp:190
+#, kde-format
+msgid "Antti Koivisto"
+msgstr "Antti Koivisto"
+
+#: src/konqmain.cpp:191
+#, kde-format
+msgid "Zack Rusin"
+msgstr "Zack Rusin"
+
+#: src/konqmain.cpp:192
+#, kde-format
+msgid "Tobias Anton"
+msgstr "Tobias Anton"
+
+#: src/konqmain.cpp:193
+#, kde-format
+msgid "Lubos Lunak"
+msgstr "Lubos Lunak"
+
+#: src/konqmain.cpp:194
+#, kde-format
+msgid "Maks Orlovich"
+msgstr "Maks Orlovich"
+
+#: src/konqmain.cpp:194 src/konqmain.cpp:196
+#, kde-format
+msgid "Developer (HTML rendering engine, JavaScript)"
+msgstr "ผู้พัฒนา (กลไกแสดงผล HTML, จาวาสคริปต์)"
+
+#: src/konqmain.cpp:195
+#, kde-format
+msgid "Allan Sandfeld Jensen"
+msgstr "Allan Sandfeld Jensen"
+
+#: src/konqmain.cpp:196
+#, kde-format
+msgid "Apple Safari Developers"
+msgstr "กลุ่มผู้พัฒนา Safari ของ Apple"
+
+#: src/konqmain.cpp:197
+#, kde-format
+msgid "Harri Porten"
+msgstr "Harri Porten"
+
+#: src/konqmain.cpp:197
+#, kde-format
+msgid "Developer (JavaScript)"
+msgstr "ผู้พัฒนา (จาวาสคริปต์)"
+
+#: src/konqmain.cpp:198
+#, kde-format
+msgid "Koos Vriezen"
+msgstr "Koos Vriezen"
+
+#: src/konqmain.cpp:198
+#, kde-format
+msgid "Developer (Java applets and other embedded objects)"
+msgstr "ผู้พัฒนา (รองรับจาวาแอพเพล็ตและวัตถุฝังตัวชนิดอื่นๆ)"
+
+#: src/konqmain.cpp:199
+#, kde-format
+msgid "Matt Koss"
+msgstr "Matt Koss"
+
+#: src/konqmain.cpp:199 src/konqmain.cpp:200
+#, kde-format
+msgid "Developer (I/O library)"
+msgstr "ผู้พัฒนา (ไลบรารี I/O)"
+
+#: src/konqmain.cpp:200
+#, kde-format
+msgid "Alex Zepeda"
+msgstr "Alex Zepeda"
+
+#: src/konqmain.cpp:201
+#, kde-format
+msgid "Richard Moore"
+msgstr "Richard Moore"
+
+#: src/konqmain.cpp:201 src/konqmain.cpp:202
+#, kde-format
+msgid "Developer (Java applet support)"
+msgstr "ผู้พัฒนา (รองรับจาวาแอพเพล็ต)"
+
+#: src/konqmain.cpp:202
+#, kde-format
+msgid "Dima Rogozin"
+msgstr "Dima Rogozin"
+
+#: src/konqmain.cpp:203
+#, kde-format
+msgid "Wynn Wilkes"
+msgstr "Wynn Wilkes"
+
+#: src/konqmain.cpp:203
+#, kde-format
+msgid ""
+"Developer (Java 2 security manager support,\n"
+" and other major improvements to applet support)"
+msgstr ""
+"ผู้พัฒนา (ตัวรักษาความปลอดภัยของจาวา 2\n"
+"และการปรับปรุงหลักของส่วนรองรับแอพเพล็ต)"
+
+#: src/konqmain.cpp:204
+#, kde-format
+msgid "Stefan Schimanski"
+msgstr "Stefan Schimanski"
+
+#: src/konqmain.cpp:204
+#, kde-format
+msgid "Developer (Netscape plugin support)"
+msgstr "ผู้พัฒนา (รองรับโปรแกรมเสริมของเน็ตสเคป)"
+
+#: src/konqmain.cpp:205
+#, kde-format
+msgid "George Staikos"
+msgstr "George Staikos"
+
+#: src/konqmain.cpp:205
+#, kde-format
+msgid "Developer (SSL, Netscape plugins)"
+msgstr "ผู้พัฒนา (SSL, โปรแกรมเสริมของเน็ตสเคป)"
+
+#: src/konqmain.cpp:206
+#, kde-format
+msgid "Dawit Alemayehu"
+msgstr "Dawit Alemayehu"
+
+#: src/konqmain.cpp:206
+#, kde-format
+msgid "Developer (I/O library, Authentication support)"
+msgstr "ผู้พัฒนา (ส่วนไลบรารี I/O, การตรวจสอบสิทธิ์)"
+
+#: src/konqmain.cpp:207
+#, kde-format
+msgid "Carsten Pfeiffer"
+msgstr "Carsten Pfeiffer"
+
+#: src/konqmain.cpp:208
+#, kde-format
+msgid "Torsten Rahn"
+msgstr "Torsten Rahn"
+
+#: src/konqmain.cpp:208
+#, kde-format
+msgid "Graphics/icons"
+msgstr "กราฟิก/ภาพไอคอน"
+
+#: src/konqmain.cpp:209
+#, kde-format
+msgid "Torben Weis"
+msgstr "Torben Weis"
+
+#: src/konqmain.cpp:209
+#, kde-format
+msgid "KFM author"
+msgstr "ผู้เขียน kfm"
+
+#: src/konqmain.cpp:210
+#, kde-format
+msgid "Joseph Wenninger"
+msgstr "Joseph Wenninger"
+
+#: src/konqmain.cpp:210
+#, kde-format
+msgid "Developer (navigation panel framework)"
+msgstr "ผู้พัฒนา (ส่วนเฟรมเวิร์กแถบนำทาง)"
+
+#: src/konqmain.cpp:211
+#, kde-format
+msgid "Stephan Binner"
+msgstr "Stephan Binner"
+
+#: src/konqmain.cpp:211
+#, kde-format
+msgid "Developer (misc stuff)"
+msgstr "ผู้พัฒนา (ส่วนปลีกย่อย)"
+
+#: src/konqmain.cpp:212
+#, kde-format
+msgid "Ivor Hewitt"
+msgstr "Ivor Hewitt"
+
+#: src/konqmain.cpp:212
+#, kde-format
+msgid "Developer (AdBlock filter)"
+msgstr "ผู้พัฒนา (ตัวกรองการบล็อคโฆษณา)"
+
+#: src/konqmain.cpp:213
+#, kde-format
+msgid "Eduardo Robles Elvira"
+msgstr "Eduardo Robles Elvira"
+
+#: src/konqmain.cpp:223
+#, kde-format
+msgid "Start without a default window, when called without URLs"
+msgstr "เริ่มทำงานโดยไม่ใช้หน้าต่างโดยปริยาย เมื่อมีการเรียกใช้โดยไม่มีที่อยู่ URL"
+
+#: src/konqmain.cpp:224
+#, kde-format
+msgid ""
+"Preload for later use. This mode does not support URLs on the command line"
+msgstr "ทำการพรีโหลดไว้ก่อนสำหรับใช้ในภายหลัง ซึ่งโหมดนี้จะไม่รองรับที่อยู่ URL บนบรรทัดคำสั่ง"
+
+#: src/konqmain.cpp:225
+#, kde-format
+msgid "Profile to open (DEPRECATED, IGNORED)"
+msgstr ""
+
+#: src/konqmain.cpp:225
+#, kde-format
+msgid "profile"
+msgstr ""
+
+#: src/konqmain.cpp:226
+#, kde-format
+msgid "List available sessions"
+msgstr "รายการวาระงานที่มีอยู่"
+
+#: src/konqmain.cpp:227
+#, kde-format
+msgid "Session to open"
+msgstr "วาระงานที่จะเปิด"
+
+#: src/konqmain.cpp:227
+#, fuzzy, kde-format
+#| msgid "Sessions"
+msgid "session"
+msgstr "วาระการใช้งาน"
+
+#: src/konqmain.cpp:228
+#, kde-format
+msgid "Mimetype to use for this URL (e.g. text/html or inode/directory)"
+msgstr ""
+"ประเภท Mime ของแฟ้ม ที่จะใช้กับที่อยู่ URL นี้ (เช่น text/html หรือ inode/directory)"
+
+#: src/konqmain.cpp:228
+#, kde-format
+msgid "mimetype"
+msgstr ""
+
+#: src/konqmain.cpp:229
+#, kde-format
+msgid "Part to use (e.g. khtml or kwebkitpart)"
+msgstr ""
+
+#: src/konqmain.cpp:229
+#, kde-format
+msgid "service"
+msgstr ""
+
+#: src/konqmain.cpp:230
+#, kde-format
+msgid ""
+"For URLs that point to files, opens the directory and selects the file, "
+"instead of opening the actual file"
+msgstr "สำหรับที่อยู่ URL ที่ชี้ไปที่แฟ้ม ให้เปิดไดเรกทอรีและเลือกที่แฟ้ม แทนที่จะเปิดแฟ้มจริง ๆ"
+
+#: src/konqmain.cpp:231
+#, kde-format
+msgid "The files/URLs opened by the application will be deleted after use"
+msgstr ""
+
+#: src/konqmain.cpp:233
+#, kde-format
+msgid "Location to open"
+msgstr "ตำแหน่งที่จะเปิด"
+
+#: src/konqmainwindow.cpp:658
+#, kde-format
+msgctxt "@title:tab"
+msgid "Loading..."
+msgstr "กำลังโหลด..."
+
+#: src/konqmainwindow.cpp:690
+#, kde-format
+msgid "Access denied"
+msgstr ""
+
+#: src/konqmainwindow.cpp:1465
+#, fuzzy, kde-format
+#| msgid "&Open File..."
+msgid "Open File"
+msgstr "เ&ปิดแฟ้ม..."
+
+#: src/konqmainwindow.cpp:1548
+#, kde-format
+msgid "Canceled."
+msgstr "ยกเลิกแล้ว"
+
+#: src/konqmainwindow.cpp:1584
+#, kde-format
+msgid ""
+"This page contains changes that have not been submitted.\n"
+"Reloading the page will discard these changes."
+msgstr ""
+"หน้านี้มีการเปลี่ยนแปลงที่ยังไม่ได้ทำการส่งข้อมูล\n"
+"การเรียกหน้านี้ใหม่จะเป็นการยกเลิกการเปลี่ยนแปลงที่มี"
+
+#: src/konqmainwindow.cpp:1585 src/konqmainwindow.cpp:2282
+#: src/konqmainwindow.cpp:2375 src/konqmainwindow.cpp:2407
+#: src/konqmainwindow.cpp:2450 src/konqmainwindow.cpp:2472
+#: src/konqmainwindow.cpp:4849
+#, fuzzy, kde-format
+#| msgid "Discard Changes?"
+msgctxt "@title:window"
+msgid "Discard Changes?"
+msgstr "จะละทิ้งการเปลี่ยนแปลงหรือไม่ ?"
+
+#: src/konqmainwindow.cpp:1585 src/konqmainwindow.cpp:2282
+#: src/konqmainwindow.cpp:2375 src/konqmainwindow.cpp:2407
+#: src/konqmainwindow.cpp:2450 src/konqmainwindow.cpp:2473
+#: src/konqmainwindow.cpp:4849
+#, kde-format
+msgid "&Discard Changes"
+msgstr "ละ&ทิ้งการเปลี่ยนแปลง"
+
+#: src/konqmainwindow.cpp:1952 src/konqmainwindow.cpp:1958
+#, kde-format
+msgid "Home Folder"
+msgstr "โฟลเดอร์ส่วนตัว"
+
+#: src/konqmainwindow.cpp:1953 src/konqmainwindow.cpp:3424
+#, kde-format
+msgid "Home"
+msgstr "พื้นที่ส่วนตัว"
+
+#: src/konqmainwindow.cpp:1959
+#, kde-format
+msgid "Navigate to your 'Home Folder'"
+msgstr "ไปยัง 'โฟลเดอร์ส่วนตัว' ของคุณ"
+
+#: src/konqmainwindow.cpp:1960
+#, kde-format
+msgid "Navigate to your local 'Home Folder'"
+msgstr "ไปยัง 'โฟลเดอร์ส่วนตัว' ของคุณภายในระบบ"
+
+#. i18n: ectx: label, entry, group (UserSettings)
+#: src/konqmainwindow.cpp:1963 src/konqueror.kcfg:16
+#, kde-format
+msgid "Home Page"
+msgstr "หน้าหลัก"
+
+#: src/konqmainwindow.cpp:1965
+#, kde-format
+msgid "Navigate to your 'Home Page'"
+msgstr "ไปยัง 'หน้าหลัก' ของคุณ"
+
+#: src/konqmainwindow.cpp:1966
+#, kde-format
+msgid ""
+"<html>Navigate to your 'Home Page'<br /><br />You can configure the location "
+"where this button takes you under <b>Settings -> Configure Konqueror -> "
+"General</b>.</html>"
+msgstr ""
+"<html>ไปยัง 'หน้าหลัก' ของคุณ <br /><br />คุณสามารถปรับแต่งตำแหน่งที่ปุ่มนี้ได้ที่ <b>ตั้งค่า -> "
+"ปรับแต่ง Konqueror -> ค่าทั่วไป</b></html>"
+
+#: src/konqmainwindow.cpp:2281
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Detaching the tab will discard these changes."
+msgstr ""
+"แท็บนี้มีการเปลี่ยนแปลงที่ยังไม่ได้ทำการส่งข้อมูล\n"
+"การเลิกแนบแท็บจะเป็นการยกเลิกการเปลี่ยนแปลงที่มี"
+
+#: src/konqmainwindow.cpp:2374
+#, kde-format
+msgid ""
+"This view contains changes that have not been submitted.\n"
+"Closing the view will discard these changes."
+msgstr ""
+"มุมมองนี้มีการเปลี่ยนแปลงที่ยังไม่ได้ทำการส่งข้อมูล\n"
+"การเปลี่ยนมุมมองจะเป็นการยกเลิกการเปลี่ยนแปลงที่มี"
+
+#: src/konqmainwindow.cpp:2406
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Closing the tab will discard these changes."
+msgstr ""
+"แท็บนี้มีการเปลี่ยนแปลงที่ยังไม่ได้ทำการส่งข้อมูล\n"
+"การปิดแท็บจะเป็นการยกเลิกการเปลี่ยนแปลงที่มี"
+
+#: src/konqmainwindow.cpp:2432
+#, kde-format
+msgid "Do you really want to close all other tabs?"
+msgstr "คุณต้องการปิดแท็บทั้งหมดจริงหรือไม่ ?"
+
+#: src/konqmainwindow.cpp:2433 src/konqmainwindow.cpp:3505 src/konqtabs.cpp:335
+#, kde-format
+msgid "Close &Other Tabs"
+msgstr "ปิ&ดแท็บอื่น"
+
+#: src/konqmainwindow.cpp:2433
+#, fuzzy, kde-format
+#| msgid "Close Other Tabs Confirmation"
+msgctxt "@title:window"
+msgid "Close Other Tabs Confirmation"
+msgstr "ยืนยันการปิดแท็บอื่น ๆ"
+
+#: src/konqmainwindow.cpp:2449
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Closing other tabs will discard these changes."
+msgstr ""
+"แท็บนี้มีการเปลี่ยนแปลงที่ยังไม่ได้ทำการส่งข้อมูล\n"
+"การปิดแท็บอื่น ๆ จะเป็นการยกเลิกการเปลี่ยนแปลงที่มี"
+
+#: src/konqmainwindow.cpp:2471
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Reloading all tabs will discard these changes."
+msgstr ""
+"แท็บนี้มีการเปลี่ยนแปลงที่ยังไม่ได้ทำการส่งข้อมูล\n"
+"การเรียกแท็บนี้ใหม่จะเป็นการยกเลิกการเปลี่ยนแปลงที่มี"
+
+#: src/konqmainwindow.cpp:2513
+#, fuzzy, kde-format
+#| msgid "Enter Target"
+msgctxt "@title:window"
+msgid "Enter Target"
+msgstr "เติมปลายทาง"
+
+#: src/konqmainwindow.cpp:2520
+#, kde-format
+msgid "<qt><b>%1</b> is not valid</qt>"
+msgstr "<qt><b>%1</b> ใช้ไม่ได้</qt>"
+
+#: src/konqmainwindow.cpp:2530
+#, kde-format
+msgid "Copy selected files from %1 to:"
+msgstr "สำเนาแฟ้มที่เลือกจาก %1 ไปยัง :"
+
+#: src/konqmainwindow.cpp:2543
+#, kde-format
+msgid "Move selected files from %1 to:"
+msgstr "ย้ายแฟ้มที่เลือกจาก %1 ไปยัง :"
+
+#: src/konqmainwindow.cpp:2717
+#, kde-format
+msgctxt "This menu entry empties the closed items history"
+msgid "Empty Closed Items History"
+msgstr "ล้างประวัติแท็บที่ปิดไปแล้ว"
+
+#: src/konqmainwindow.cpp:2740
+#, kde-format
+msgid "Save As..."
+msgstr "บันทึกเป็น..."
+
+#: src/konqmainwindow.cpp:2742
+#, kde-format
+msgid "Manage..."
+msgstr "จัดการ..."
+
+#: src/konqmainwindow.cpp:3333
+#, kde-format
+msgid "New &Window"
+msgstr "เปิ&ดหน้าต่างใหม่"
+
+#: src/konqmainwindow.cpp:3338
+#, kde-format
+msgid "&Duplicate Window"
+msgstr "เปิดแบบหน้าต่างนี้อี&กหน้าต่าง"
+
+#: src/konqmainwindow.cpp:3343
+#, kde-format
+msgid "Send &Link Address..."
+msgstr "ส่งที่อยู่ของส่วนเ&ชื่อมโยง..."
+
+#: src/konqmainwindow.cpp:3347
+#, kde-format
+msgid "S&end File..."
+msgstr "&ส่งแฟ้ม..."
+
+#: src/konqmainwindow.cpp:3351
+#, kde-format
+msgid "&Open Location"
+msgstr "เ&ปิดตำแหน่ง"
+
+#: src/konqmainwindow.cpp:3357
+#, kde-format
+msgid "&Open File..."
+msgstr "เ&ปิดแฟ้ม..."
+
+#: src/konqmainwindow.cpp:3362
+#, kde-format
+msgid "&Find File..."
+msgstr "ค้&นหาแฟ้ม..."
+
+#: src/konqmainwindow.cpp:3371
+#, kde-format
+msgid "Lock to Current Location"
+msgstr "ล็อคไปยังตำแหน่งปัจจุบัน"
+
+#: src/konqmainwindow.cpp:3374
+#, kde-format
+msgctxt "This option links konqueror views"
+msgid "Lin&k View"
+msgstr "เชื่&อมมุมมอง"
+
+#: src/konqmainwindow.cpp:3379
+#, kde-format
+msgid "&Up"
+msgstr "&ขึ้น"
+
+#: src/konqmainwindow.cpp:3389
+#, kde-format
+msgid "Closed Items"
+msgstr "รายการที่ปิดไปแล้ว"
+
+#: src/konqmainwindow.cpp:3402
+#, kde-format
+msgid "Sessions"
+msgstr "วาระการใช้งาน"
+
+#: src/konqmainwindow.cpp:3429
+#, kde-format
+msgctxt "@action:inmenu Go"
+msgid "Most Often Visited"
+msgstr "ที่อยู่ที่เรียกใช้บ่อย"
+
+#: src/konqmainwindow.cpp:3433
+#, kde-format
+msgctxt "@action:inmenu Go"
+msgid "Recently Visited"
+msgstr "ที่อยู่ที่เรียกใช้เมื่อเร็ว ๆ นี้"
+
+#: src/konqmainwindow.cpp:3442
+#, kde-format
+msgctxt "@action:inmenu Go"
+msgid "Show History"
+msgstr "แสดงประวัติ"
+
+#: src/konqmainwindow.cpp:3455
+#, kde-format
+msgid "Configure Extensions..."
+msgstr "ปรับแต่งส่วนเสริม..."
+
+#: src/konqmainwindow.cpp:3459
+#, kde-format
+msgid "Configure Spell Checking..."
+msgstr "ปรับแต่งส่วนตรวจคำสะกด..."
+
+#: src/konqmainwindow.cpp:3465
+#, kde-format
+msgid "Split View &Left/Right"
+msgstr "แบ่งมุมมองซ้า&ย/ขวา"
+
+#: src/konqmainwindow.cpp:3470
+#, kde-format
+msgid "Split View &Top/Bottom"
+msgstr "แบ่งมุมมองบน/&ล่าง"
+
+#: src/konqmainwindow.cpp:3475 src/konqtabs.cpp:456
+#, kde-format
+msgid "&New Tab"
+msgstr "เปิดแท็บใ&หม่"
+
+#: src/konqmainwindow.cpp:3484
+#, kde-format
+msgid "&Duplicate Current Tab"
+msgstr "เปิดแท็บปัจจุบั&นซ้ำ"
+
+#: src/konqmainwindow.cpp:3489
+#, kde-format
+msgid "Detach Current Tab"
+msgstr "เลิกแนบแท็บปัจจุบัน"
+
+#: src/konqmainwindow.cpp:3494
+#, kde-format
+msgid "&Close Active View"
+msgstr "&ปิดมุมมองที่ทำงานอยู่"
+
+#: src/konqmainwindow.cpp:3499
+#, kde-format
+msgid "Close Current Tab"
+msgstr "ปิดแท็บปัจจุบัน"
+
+#: src/konqmainwindow.cpp:3509
+#, kde-format
+msgid "Activate Next Tab"
+msgstr "เรียกใช้งานแท็บถัดไป"
+
+#: src/konqmainwindow.cpp:3513
+#, kde-format
+msgid "Activate Previous Tab"
+msgstr "เรียกใช้งานแท็บก่อนหน้านี้"
+
+#: src/konqmainwindow.cpp:3520
+#, kde-format
+msgid "Activate Tab %1"
+msgstr "เรียกใช้แท็บ %1"
+
+#: src/konqmainwindow.cpp:3525
+#, kde-format
+msgid "Move Tab Left"
+msgstr "ย้ายแท็บไปด้านซ้าย"
+
+#: src/konqmainwindow.cpp:3530
+#, kde-format
+msgid "Move Tab Right"
+msgstr "ย้ายแท็บไปด้านขวา"
+
+#: src/konqmainwindow.cpp:3538
+#, kde-format
+msgid "Dump Debug Info"
+msgstr "ดึงข้อมูลดีบั๊ก"
+
+#: src/konqmainwindow.cpp:3556
+#, kde-format
+msgid "&Reload"
+msgstr "โ&หลดใหม่"
+
+#: src/konqmainwindow.cpp:3561 src/konqtabs.cpp:313
+#, kde-format
+msgid "&Reload All Tabs"
+msgstr "เรียกใช้แท็บทั้งห&มดใหม่"
+
+#: src/konqmainwindow.cpp:3569
+#, kde-format
+msgid "&Force Reload"
+msgstr "&บังคับให้โหลดใหม่"
+
+#: src/konqmainwindow.cpp:3595
+#, kde-format
+msgid "&Stop"
+msgstr "&หยุด"
+
+#: src/konqmainwindow.cpp:3604
+#, kde-format
+msgid "Throbber"
+msgstr "ภาพเคลื่อนไหวแสดงการทำงาน"
+
+#: src/konqmainwindow.cpp:3608 src/konqmainwindow.cpp:3611
+#, kde-format
+msgid "L&ocation: "
+msgstr "ตำแ&หน่ง:"
+
+#: src/konqmainwindow.cpp:3618
+#, kde-format
+msgid "Location Bar"
+msgstr "แถบตำแหน่ง"
+
+#: src/konqmainwindow.cpp:3624
+#, kde-format
+msgid ""
+"<html>Location Bar<br /><br />Enter a web address or search term.</html>"
+msgstr "<html>แถบตำแหน่ง<br /><br />ใส่ตำแหน่งที่อยู่เว็บหรือข้อความที่ต้องการค้นหา</html>"
+
+#: src/konqmainwindow.cpp:3628
+#, kde-format
+msgid "Clear Location Bar"
+msgstr "ล้างแถบตำแหน่ง"
+
+#: src/konqmainwindow.cpp:3632
+#, kde-format
+msgid ""
+"<html>Clear Location bar<br /><br />Clears the contents of the location bar."
+"</html>"
+msgstr "<html>ล้างแถบตำแหน่ง<br /><br />ล้างเนื้อหาของแถบป้อนตำแหน่ง</html>"
+
+#: src/konqmainwindow.cpp:3637
+#, kde-format
+msgid "&Bookmarks"
+msgstr "&ที่คั่นหน้า"
+
+#: src/konqmainwindow.cpp:3665
+#, kde-format
+msgid "Kon&queror Introduction"
+msgstr "แ&นะนำ Konqueror"
+
+#: src/konqmainwindow.cpp:3670
+#, kde-format
+msgid "Go"
+msgstr "ไป"
+
+#: src/konqmainwindow.cpp:3672
+#, kde-format
+msgid ""
+"<html>Go<br /><br />Goes to the page that has been entered into the location "
+"bar.</html>"
+msgstr "<html>ไป<br /><br />ไปยังหน้าเว็บตามที่อยู่ที่ใส่ไว้ในแถบตำแหน่ง</html>"
+
+#: src/konqmainwindow.cpp:3678
+#, kde-format
+msgid ""
+"<html>Enter the parent folder<br /><br />For instance, if the current "
+"location is file:/home/%1 clicking this button will take you to file:/home.</"
+"html>"
+msgstr ""
+"<html>เข้าไปยังโฟลเดอร์แม่ <br /><br /> เช่น หากตำแหน่งปัจจุบันคือ file:home/%1 "
+"การคลิกที่ปุ่มนี้จะนำคุณไปยังตำแหน่ง file:/home</html>"
+
+#: src/konqmainwindow.cpp:3681
+#, kde-format
+msgid "Enter the parent folder"
+msgstr "เข้าไปยังโฟลเดอร์แม่"
+
+#: src/konqmainwindow.cpp:3683 src/konqmainwindow.cpp:3684
+#, kde-format
+msgid "Move backwards one step in the browsing history"
+msgstr "ไปยังตำแหน่งก่อนหน้าหนึ่งระดับในประวัติการเรียกดู"
+
+#: src/konqmainwindow.cpp:3686 src/konqmainwindow.cpp:3687
+#, kde-format
+msgid "Move forward one step in the browsing history"
+msgstr "ไปยังตำแหน่งถัดไปหนึ่งระดับในประวัติการเรียกดู"
+
+#: src/konqmainwindow.cpp:3689 src/konqmainwindow.cpp:3690
+#, kde-format
+msgid "Move backwards one step in the closed tabs history"
+msgstr "ไปยังตำแหน่งก่อนหน้าหนึ่งระดับในประวัติการเรียกดู"
+
+#: src/konqmainwindow.cpp:3692
+#, kde-format
+msgid ""
+"<html>Reload the currently displayed document<br /><br />This may, for "
+"example, be needed to refresh web pages that have been modified since they "
+"were loaded, in order to make the changes visible.</html>"
+msgstr ""
+"<html>ทำการโหลดเอกสารที่กำลังแสดงอยู่ในปัจจุบันอีกครั้ง<br /><br /"
+">ซึ่งอาจจำเป็นในการรีเฟรชหน้าเว็บที่อาจจะมีการแก้ไขภายหลังจากที่หน้านั้นได้โหลดขึ้นมา "
+"เพื่อให้เห็นสิ่งที่ได้ทำการแก้ไขเปลี่ยนแปลงไป</html>"
+
+#: src/konqmainwindow.cpp:3695
+#, kde-format
+msgid "Reload the currently displayed document"
+msgstr "เรียกเอกสารที่แสดงผลอยู่ในปัจจุบันใหม่อีกครั้ง"
+
+#: src/konqmainwindow.cpp:3697
+#, kde-format
+msgid ""
+"<html>Reload all currently displayed documents in tabs<br /><br />This may, "
+"for example, be needed to refresh web pages that have been modified since "
+"they were loaded, in order to make the changes visible.</html>"
+msgstr ""
+"<html>โหลดเอกสารทั้งหมดที่กำลังแสดงอยู่ในแท็บใหม่อีกครั้ง<br /><br /"
+">ซึ่งอาจจำเป็นในการรีเฟรชหน้าเว็บที่อาจจะมีการแก้ไขภายหลังจากที่หน้านั้นได้โหลดขึ้นมา "
+"เพื่อให้เห็นสิ่งที่ได้ทำการแก้ไขเปลี่ยนแปลงไป</html>"
+
+#: src/konqmainwindow.cpp:3700
+#, kde-format
+msgid "Reload all currently displayed document in tabs"
+msgstr "เรียกเอกสารทั้งหมดที่แสดงผลอยู่ในปัจจุบันในแท็บใหม่อีกครั้ง"
+
+#: src/konqmainwindow.cpp:3702
+#, kde-format
+msgid ""
+"<html>Stop loading the document<br /><br />All network transfers will be "
+"stopped and Konqueror will display the content that has been received so far."
+"</html>"
+msgstr ""
+"<html>หยุดเรียกเอกสาร<br /><br />การถ่ายโอนทั้งหมดทางเครือข่ายจะหยุดลง และ Konqueror "
+"จะแสดงเนื้อหาที่ได้รับมาขณะนี้</html>"
+
+#: src/konqmainwindow.cpp:3706
+#, fuzzy, kde-format
+#| msgid ""
+#| "<html>Reload the currently displayed document<br /><br />This may, for "
+#| "example, be needed to refresh web pages that have been modified since "
+#| "they were loaded, in order to make the changes visible.  Any images on "
+#| "the page are downloaded again, even if cached copies exist.</html>"
+msgid ""
+"<html>Reload the currently displayed document<br /><br />This may, for "
+"example, be needed to refresh web pages that have been modified since they "
+"were loaded, in order to make the changes visible. Any images on the page "
+"are downloaded again, even if cached copies exist.</html>"
+msgstr ""
+"<html>ทำการโหลดเอกสารที่กำลังแสดงอยู่ในปัจจุบันใหม่อีกครั้ง<br /><br /"
+">ซึ่งอาจจำเป็นในการปรับปรุงหน้าเว็บที่อาจจะมีการแก้ไขภายหลังจากที่หน้านั้นได้โหลดขึ้นมา "
+"เพื่อให้เห็นสิ่งที่ได้ทำการแก้ไขเปลี่ยนแปลงไป โดยอาจจะมีการดาวน์โหลดรูปภาพบนหน้าเว็บใหม่อีกครั้ง "
+"แม้ว่าจะมีสำเนาอยู่ในแคชแล้วก็ตาม</html>"
+
+#: src/konqmainwindow.cpp:3710
+#, kde-format
+msgid ""
+"Force a reload of the currently displayed document and any contained images"
+msgstr "บังคับให้ทำการเรียกเอกสารและรูปภาพทั้งหมดที่แสดงผลอยู่ในปัจจุบันใหม่อีกครั้ง"
+
+#: src/konqmainwindow.cpp:3712
+#, kde-format
+msgid "Stop loading the document"
+msgstr "หยุดการเรียกข้อมูลเอกสาร"
+
+#: src/konqmainwindow.cpp:3714
+#, kde-format
+msgid ""
+"<html>Cut the currently selected text or item(s) and move it to the system "
+"clipboard<br /><br />This makes it available to the <b>Paste</b> command in "
+"Konqueror and other KDE applications.</html>"
+msgstr ""
+"<html>ตัดข้อความหรือรายการที่เลือกไว้และย้ายไปที่คลิปบอร์ดของระบบ<br /><br /"
+">ซึ่งนี่จะทำให้สิ่งที่ถูกตัดไว้ใช้ได้กับคำสั่ง <b>วาง</b> ใน Konqueror และโปรแกรมอื่น ๆ ของ "
+"KDE</html>"
+
+#: src/konqmainwindow.cpp:3718
+#, kde-format
+msgid "Move the selected text or item(s) to the clipboard"
+msgstr "ย้ายข้อความหรือรายการที่คุณเลือกไว้ไปยังคลิปบอร์ด"
+
+#: src/konqmainwindow.cpp:3720
+#, kde-format
+msgid ""
+"<html>Copy the currently selected text or item(s) to the system "
+"clipboard<br /><br />This makes it available to the <b>Paste</b> command in "
+"Konqueror and other KDE applications.</html>"
+msgstr ""
+"<html>คัดลอกข้อความ หรือรายการที่เลือกไว้ในปัจจุบัน ไปยังคลิปบอร์ดของระบบ <br /><br /"
+">ซึ่งจะทำให้สิ่งที่ได้คัดลอกไว้ใช้กับคำสั่ง <b>วาง</b> ใน Konqueror และโปรแกรมของ KDE ได้</"
+"html>"
+
+#: src/konqmainwindow.cpp:3724
+#, kde-format
+msgid "Copy the selected text or item(s) to the clipboard"
+msgstr "คัดลอกข้อความหรือรายการที่คุณเลือกไว้ไปยังคลิปบอร์ดของระบบ"
+
+#: src/konqmainwindow.cpp:3726
+#, kde-format
+msgid ""
+"<html>Paste the previously cut or copied clipboard contents<br /><br />This "
+"also works for text copied or cut from other KDE applications.</html>"
+msgstr ""
+"<html>วางเนื้อหาของคลิปบอร์ดที่ได้ตัดหรือคัดลอกไว้ก่อนหน้านี้<br /><br /> "
+"นี่ยังใช้ได้กับข้อความที่ได้คัดลอก หรือตัดมาจากโปรแกรมของ KDE อื่นๆ ได้อีก</html>"
+
+#: src/konqmainwindow.cpp:3729
+#, kde-format
+msgid "Paste the clipboard contents"
+msgstr "วางเนื้อหาจากคลิปบอร์ด"
+
+#: src/konqmainwindow.cpp:3731
+#, kde-format
+msgid ""
+"<html>Print the currently displayed document<br /><br />You will be "
+"presented with a dialog where you can set various options, such as the "
+"number of copies to print and which printer to use.<br /><br />This dialog "
+"also provides access to special KDE printing services such as creating a PDF "
+"file from the current document.</html>"
+msgstr ""
+"<html>พิมพ์เอกสารที่แสดงอยู่ในปัจจุบัน<br /><br />คุณจะเห็นกล่องตอบโต้ "
+"ที่จะให้คุณตั้งค่าตัวเลือกต่างๆ ได้ เช่น จำนวนสำเนาที่จะพิมพ์ และเครื่องพิมพ์ที่คุณจะใช้ <br /><br /"
+">กล่องตอบโต้นี้ยังจะให้คุณสามารถเข้าถึงบริการการพิมพ์แบบพิเศษของ KDE เช่น การสร้างแฟ้ม PDF "
+"จากเอกสารปัจจุบัน</html>"
+
+#: src/konqmainwindow.cpp:3737
+#, kde-format
+msgid "Print the current document"
+msgstr "พิมพ์เอกสารปัจจุบัน"
+
+#: src/konqmainwindow.cpp:3739
+#, kde-format
+msgid ""
+"A locked view cannot change folders. Use in combination with 'link view' to "
+"explore many files from one folder"
+msgstr ""
+"มุมมองที่ถูกล็อคไว้ไม่สามารถเปลี่ยนโฟลเดอร์ได้ ใช้ร่วมกับ 'มุมมองเชื่อมโยง' เพื่อดูแฟ้มต่างๆ "
+"จากหนึ่งโฟลเดอร์"
+
+#: src/konqmainwindow.cpp:3740
+#, kde-format
+msgid ""
+"Sets the view as 'linked'. A linked view follows folder changes made in "
+"other linked views."
+msgstr ""
+"ตั้งค่ามุมมองให้เป็นแบบ 'เชื่อมโยง' "
+"มุมมองที่เชื่อมกันไว้จะคอยตามความเปลี่ยนแปลงของโฟลเดอร์ที่เกิดขึ้นในมุมมองอื่นที่โยงกันอยู่"
+
+#: src/konqmainwindow.cpp:3744
+#, fuzzy, kde-format
+#| msgid "C&lose Current Tab"
+msgid "&Inspect Current Page"
+msgstr "ปิ&ดแท็บปัจจุบัน"
+
+#: src/konqmainwindow.cpp:3745
+#, kde-format
+msgid ""
+"<html>Shows the developer tools for the current page<br/><br/>The current "
+"view is split in two and the developer tools are displayed in the second half"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3746
+#, kde-format
+msgid "Shows the developer tools for the current page"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3912
+#, kde-format
+msgid "Copy &Files..."
+msgstr "&สำเนาแฟ้ม..."
+
+#: src/konqmainwindow.cpp:3916
+#, kde-format
+msgid "M&ove Files..."
+msgstr "ย้า&ยแฟ้ม..."
+
+#: src/konqmainwindow.cpp:4245
+#, kde-format
+msgid ""
+"You have requested to open more than 20 bookmarks in tabs. This might take a "
+"while. Continue?"
+msgstr ""
+"คุณได้ร้องขอทำการเปิดคั่นหน้าเป็นแท็บมากกว่า 20 รายการ ซึ่งอาจกินเวลานานพอสมควร "
+"ต้องการทำต่อไปหรือไม่ ?"
+
+#: src/konqmainwindow.cpp:4247
+#, fuzzy, kde-format
+#| msgid "Open bookmarks folder in new tabs"
+msgctxt "@title:window"
+msgid "Open bookmarks folder in new tabs"
+msgstr "เปิดโฟลเดอร์ที่คั่นหน้าในแท็บใหม่"
+
+#: src/konqmainwindow.cpp:4405
+#, kde-format
+msgid "Open in T&his Window"
+msgstr "เปิดในหน้าต่าง&นี้"
+
+#: src/konqmainwindow.cpp:4406
+#, kde-format
+msgid "Open the document in current window"
+msgstr "เปิดเอกสารในหน้าต่างปัจจุบัน"
+
+#: src/konqmainwindow.cpp:4413
+#, kde-format
+msgid "Open the document in a new window"
+msgstr "เปิดเอกสารในหน้าต่างใหม่"
+
+#: src/konqmainwindow.cpp:4419
+#, kde-format
+msgid "Open in &New Tab"
+msgstr "เปิดในแ&ท็บใหม่"
+
+#: src/konqmainwindow.cpp:4421
+#, kde-format
+msgid "Open the document in a new tab"
+msgstr "เปิดเอกสารในแท็บใหม่"
+
+#: src/konqmainwindow.cpp:4637
+#, kde-format
+msgid "&Open With"
+msgstr "เปิดใช้&ด้วย"
+
+#: src/konqmainwindow.cpp:4650
+#, kde-format
+msgid "Open with %1"
+msgstr "เปิดใช้ด้วย %1"
+
+#: src/konqmainwindow.cpp:4698
+#, kde-format
+msgctxt "@action:inmenu View"
+msgid "&View Mode"
+msgstr "แบบ&มุมมอง"
+
+#: src/konqmainwindow.cpp:4815
+#, kde-format
+msgid ""
+"You have multiple tabs open in this window, are you sure you want to quit?"
+msgstr ""
+"คุณได้เปิดใช้งานแท็บในหน้าต่างนี้ไว้อยู่หลายแท็บ \n"
+"แน่ใจหรือว่าต้องการจะออกจากโปรแกรมจริง ๆ ?"
+
+#: src/konqmainwindow.cpp:4817
+#, fuzzy, kde-format
+#| msgid "Confirmation"
+msgctxt "@title:window"
+msgid "Confirmation"
+msgstr "การยืนยัน"
+
+#: src/konqmainwindow.cpp:4819
+#, kde-format
+msgid "C&lose Current Tab"
+msgstr "ปิ&ดแท็บปัจจุบัน"
+
+#: src/konqmainwindow.cpp:4845
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Closing the window will discard these changes."
+msgstr ""
+"แท็บนี้มีการเปลี่ยนแปลงที่ยังไม่ได้ทำการส่งข้อมูล\n"
+"การปิดหน้าต่างนี้จะเป็นการทิ้งการเปลี่ยนแปลงเหล่านี้ไป"
+
+#: src/konqmainwindow.cpp:4846
+#, kde-format
+msgid ""
+"This page contains changes that have not been submitted.\n"
+"Closing the window will discard these changes."
+msgstr ""
+"หน้าเว็บนี้มีการเปลี่ยนแปลงที่ยังไม่ได้ทำการส่งข้อมูล\n"
+"การปิดหน้าต่างนี้จะเป็นการทิ้งการเปลี่ยนแปลงเหล่านี้ไป"
+
+#: src/konqmainwindow.cpp:5003
+#, kde-format
+msgid ""
+"Your sidebar is not functional or unavailable. A new entry cannot be added."
+msgstr "แถบด้านข้างของคุณใช้งานไม่ได้หรือไม่มี ไม่สามารถเพิ่มรายการใหม่ได้"
+
+#: src/konqmainwindow.cpp:5003 src/konqmainwindow.cpp:5010
+#, fuzzy, kde-format
+#| msgid "Web Sidebar"
+msgctxt "@title:window"
+msgid "Web Sidebar"
+msgstr "แถบด้านข้างเว็บ"
+
+#: src/konqmainwindow.cpp:5008
+#, kde-format
+msgid "Add new web extension \"%1\" to your sidebar?"
+msgstr "เพิ่มส่วนเสริมเว็บ \"%1\" ไปยังแถบด้านข้างหรือไม่ ?"
+
+#: src/konqmainwindow.cpp:5010
+#, kde-format
+msgid "Add"
+msgstr "เพิ่ม"
+
+#: src/konqmainwindow.cpp:5010
+#, kde-format
+msgid "Do Not Add"
+msgstr "ไม่เพิ่ม"
+
+#: src/konqmainwindow.cpp:5358
+#, kde-format
+msgid ""
+"There appears to be a configuration error. You have associated Konqueror "
+"with %1, but it cannot handle this file type."
+msgstr ""
+"การปรับแต่งค่ามีความผิดพลาด คุณได้กำหนดให้ใช้ Konqueror กับ %1 "
+"แต่มันไม่สามารถจัดการแฟ้มประเภทนี้ได้"
+
+#: src/konqmainwindow.cpp:5439
+#, kde-format
+msgid ""
+"Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
+"proxy will be used\n"
+"\n"
+" QtWebEngine only support a fixed proxy, so proxy auto-configuration (PAC) "
+"and Web Proxy Auto-Discovery protocol can't be used with QtWebEngine. If you "
+"need a proxy, please select the system proxy configuration or specify a "
+"proxy URL manually in the settings dialog. Do you want to change proxy "
+"settings now?"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5444
+#, kde-format
+msgid "Unsupported proxy configuration"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5444
+#, kde-format
+msgid "Don't use a proxy"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5445 src/konqmainwindow.cpp:5463
+#, fuzzy, kde-format
+#| msgid "Show Configuration Button"
+msgid "Show proxy configuration dialog"
+msgstr "แสดงปุ่มปรับแต่ง"
+
+#: src/konqmainwindow.cpp:5459
+#, kde-format
+msgid ""
+"Your proxy configuration can't be used with the QtWebEngine HTML engine "
+"because it doesn't support having different proxies for the HTTP and HTTPS "
+"protocols. Your current settings are:<p><b>HTTP proxy:</b> <tt>%1</tt></"
+"p><p><b>HTTPS proxy: </b><tt>%2</tt></p>What do you want to do?"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5462
+#, kde-format
+msgid "Conflicting proxy configuration"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5463
+#, kde-format
+msgid "Use HTTP proxy (only this time)"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5463
+#, kde-format
+msgid "Use HTTPS proxy (only this time)"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5540
+#, kde-format
+msgid ""
+"You have entered Complete Full Screen mode (the user interface is completely "
+"hidden). You can exit it by pressing the keyboard shortcut for Full Screen "
+"Mode (%1)"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: src/konqnewsessiondlg_base.ui:28
+#, fuzzy, kde-format
+#| msgid "Save open tabs and windows for easy retrieval"
+msgid "Save open &tabs and windows for easy retrieval"
+msgstr "บันทึกแท็บและหน้าต่างที่เปิดอยู่ เพื่อให้เรียกคืนค่าได้ง่าย"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_pAllWindows)
+#: src/konqnewsessiondlg_base.ui:34
+#, kde-format
+msgid "A&ll open windows"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_pCurrentWindow)
+#: src/konqnewsessiondlg_base.ui:44
+#, fuzzy, kde-format
+#| msgid "Open tabs inside current window"
+msgid "Onl&y current window"
+msgstr "เปิดแท็บไว้ภายในหน้าต่างปัจจุบัน"
+
+#. i18n: ectx: property (text), widget (QLabel, lblSessionName)
+#: src/konqnewsessiondlg_base.ui:56
+#, fuzzy, kde-format
+#| msgid "&Session name:"
+msgid "Session n&ame:"
+msgstr "ชื่อ&วาระการใช้งาน:"
+
+#: src/konqsessiondlg.cpp:60
+#, fuzzy, kde-format
+#| msgid "Manage Sessions"
+msgctxt "@title:window"
+msgid "Manage Sessions"
+msgstr "จัดการวาระการใช้งาน"
+
+#: src/konqsessiondlg.cpp:168
+#, fuzzy, kde-format
+#| msgid "Rename Session"
+msgctxt "@title:window"
+msgid "Rename Session"
+msgstr "เปลี่ยนชื่อวาระการใช้งาน"
+
+#: src/konqsessiondlg.cpp:215
+#, fuzzy, kde-format
+#| msgid "Save Session"
+msgctxt "@title:window"
+msgid "Save Session"
+msgstr "บันทึกวาระการใช้งาน"
+
+#: src/konqsessiondlg.cpp:251
+#, kde-format
+msgid ""
+"A session with the name '%1' already exists, do you want to overwrite it?"
+msgstr "มีวาระการใช้งานที่ชื่อ '%1' อยู่แล้ว คุณต้องการจะเขียนทับมันหรือไม่ ?"
+
+#: src/konqsessiondlg.cpp:252
+#, fuzzy, kde-format
+#| msgid "Session exists. Overwrite?"
+msgctxt "@title:window"
+msgid "Session exists. Overwrite?"
+msgstr "มีวาระการใช้งานอยู่แล้ว เขียนทับหรือไม่ ?"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pNewButton)
+#: src/konqsessiondlg_base.ui:26
+#, kde-format
+msgctxt "@action:button New session"
+msgid "New..."
+msgstr "สร้างใหม่..."
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pSaveCurrentButton)
+#: src/konqsessiondlg_base.ui:33
+#, fuzzy, kde-format
+#| msgctxt "@action:button Save current session"
+#| msgid "Save Current"
+msgctxt "@action:button Save current session"
+msgid "Save Current..."
+msgstr "บันทึกการใช้ปัจจุบัน"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pRenameButton)
+#: src/konqsessiondlg_base.ui:40
+#, kde-format
+msgctxt "@action:button Rename session"
+msgid "Rename..."
+msgstr "เปลี่ยนชื่อ..."
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pDeleteButton)
+#: src/konqsessiondlg_base.ui:47
+#, kde-format
+msgctxt "@action:button Delete session"
+msgid "Delete"
+msgstr "ลบทิ้ง"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pOpenTabsInsideCurrentWindow)
+#. i18n: ectx: label, entry, group (Trash)
+#: src/konqsessiondlg_base.ui:73 src/konqueror.kcfg:517
+#, kde-format
+msgid "Open tabs inside current window"
+msgstr "เปิดแท็บไว้ภายในหน้าต่างปัจจุบัน"
+
+#: src/konqsessionmanager.cpp:86
+#, fuzzy, kde-format
+#| msgid "Restore Session?"
+msgctxt "@title:window"
+msgid "Restore Session?"
+msgstr "เรียกคืนวาระงานเดิมหรือไม่ ?"
+
+#: src/konqsessionmanager.cpp:107
+#, fuzzy, kde-format
+#| msgid ""
+#| "Konqueror did not close correctly. Would you like to restore the previous "
+#| "session?"
+msgid ""
+"Konqueror did not close correctly. Would you like to restore these previous "
+"sessions?"
+msgstr ""
+"โปรแกรม Konqueror ไม่ได้ถูกปิดโปรแกรมอย่างถูกต้อง "
+"คุณต้องการจะเรียกคืนวาระการใช้งานก่อนหน้านี้หรือไม่ ?"
+
+#: src/konqsessionmanager.cpp:119
+#, kde-format
+msgctxt "@tooltip:session list"
+msgid "Uncheck the sessions you do not want to be restored"
+msgstr ""
+
+#: src/konqsessionmanager.cpp:152
+#, fuzzy, kde-format
+#| msgid "&Window"
+msgctxt "@item:treewidget"
+msgid "Window %1"
+msgstr "&หน้าต่าง"
+
+#: src/konqsessionmanager.cpp:190
+#, kde-format
+msgid "Do not ask again"
+msgstr ""
+
+#: src/konqsessionmanager.cpp:204
+#, fuzzy, kde-format
+#| msgid "Restore Session"
+msgctxt "@action:button yes"
+msgid "Restore Session"
+msgstr "เรียกคืนวาระงาน"
+
+#: src/konqsessionmanager.cpp:205
+#, fuzzy, kde-format
+#| msgid "Do Not Restore"
+msgctxt "@action:button no"
+msgid "Do Not Restore"
+msgstr "ไม่ต้องเรียกคืน"
+
+#: src/konqsessionmanager.cpp:206
+#, fuzzy, kde-format
+#| msgid "Ask Me Later"
+msgctxt "@action:button ask later"
+msgid "Ask Me Later"
+msgstr "ถามอีกครั้งในภายหลัง"
+
+#: src/konqstatusbarmessagelabel.cpp:67
+#, fuzzy, kde-format
+#| msgid "Close View"
+msgctxt "@info"
+msgid "Close"
+msgstr "ปิดมุมมอง"
+
+#: src/konqstatusbarmessagelabel.cpp:68
+#, fuzzy, kde-format
+#| msgid "Close View"
+msgid "Close"
+msgstr "ปิดมุมมอง"
+
+#: src/konqstatusbarmessagelabel.cpp:147
+#, kde-format
+msgid "Error: %1"
+msgstr ""
+
+#: src/konqtabs.cpp:51
+#, kde-format
+msgid ""
+"This bar contains the list of currently open tabs. Click on a tab to make it "
+"active. You can also use keyboard shortcuts to navigate through tabs. The "
+"text on the tab shows the content currently open in it; place your mouse "
+"over the tab to see the full title, in case it has been shortened to fit the "
+"tab width."
+msgstr ""
+"แถบนี้จะบรรจุรายการของแท็บที่เปิดใช้งานอยู่ในปัจจุบัน คลิกบนแท็บเพื่อเรียกใช้งานมัน "
+"คุณสามารถใช้ปุ่มพิมพ์ลัดเพื่อสลับไปยังแท็บต่าง ๆ ได้ สำหรับข้อความที่อยู่บนแท็บนั้น "
+"เป็นหัวเรื่องของเว็บไซต์ที่เปิดอยู่ในปัจจุบัน หากมันสั้นไปให้ใช้ตัวชี้ของเมาส์ไปอยู่เหนือแท็บ "
+"เพื่อดูหัวเรื่องเต็ม ๆ ของเว็บไซต์"
+
+#: src/konqtabs.cpp:86
+#, kde-format
+msgid "Open a new tab"
+msgstr "เปิดแท็บใหม่"
+
+#: src/konqtabs.cpp:95
+#, kde-format
+msgid "Close the current tab"
+msgstr "ปิดแท็บปัจจุบัน"
+
+#: src/konqtabs.cpp:461
+#, kde-format
+msgid "&Duplicate Tab"
+msgstr "เปิดแท็&บใหม่เหมือนแท็บนี้"
+
+#: src/konqtabs.cpp:466
+#, kde-format
+msgid "&Reload Tab"
+msgstr "โห&ลดแท็บทั้งหมดใหม่"
+
+#: src/konqtabs.cpp:473
+#, kde-format
+msgid "Other Tabs"
+msgstr "แท็บอื่น"
+
+#: src/konqtabs.cpp:478
+#, kde-format
+msgid "D&etach Tab"
+msgstr "เลิกการแ&นบแท็บ"
+
+#: src/konqtabs.cpp:484
+#, kde-format
+msgid "&Close Tab"
+msgstr "&ปิดแท็บ"
+
+#. i18n: ectx: label, entry, group (UserSettings)
+#: src/konqueror.kcfg:11
+#, kde-format
+msgid "Start Page"
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry, group (UserSettings)
+#: src/konqueror.kcfg:12
+#, kde-format
+msgid "This is the URL of the web page where Konqueror will start from."
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry, group (UserSettings)
+#: src/konqueror.kcfg:17
+#, fuzzy, kde-format
+#| msgid ""
+#| "This is the URL of the web page where Konqueror (as web browser) will "
+#| "jump to when the \\\"Home\\\" button is pressed. When Konqueror is "
+#| "started as a file manager, that button makes it jump to your local home "
+#| "folder instead."
+msgid ""
+"This is the URL of the web page where Konqueror will jump to when the \\"
+"\"Home\\\" button is pressed."
+msgstr ""
+"นี่คือที่อยู่ URL (ตัวอย่างเช่น โฟลเดอร์ หรือหน้าเว็บ) ที่ Konqueror จะเรียกไปเมื่อมีการกดปุ่ม "
+"\"หน้าหลัก\" และเมื่อ Konqueror ถูกใช้เป็นตัวจัดการแฟ้ม "
+"การกดปุ่มนี้จะเรียกไปยังโฟลเดอร์ส่วนตัวของคุณแทน"
+
+#. i18n: ectx: label, entry, group (UndoManagerSettings)
+#: src/konqueror.kcfg:26
+#, kde-format
+msgid "Maximum number of Closed Items"
+msgstr "จำนวนสูงสุดของรายการที่ถูกปิดไปแล้ว"
+
+#. i18n: ectx: whatsthis, entry, group (UndoManagerSettings)
+#: src/konqueror.kcfg:27
+#, kde-format
+msgid ""
+"This sets the maximum number of closed items that will be stored in memory. "
+"This limit will not be surpassed."
+msgstr ""
+"ส่วนนี้เป็นการตั้งค่าจำนวนสูงสุดของรายการที่ถูกปิดไปแล้ว ที่จะถูกจัดเก็บไว้ในหน่วยความจำ "
+"ซึ่งค่านี้จะเป็นการจำกัดไม่ให้มีการจัดเก็บไว้เกินกว่าค่านี้"
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:36
+#, kde-format
+msgid "Open folders in separate windows"
+msgstr "เปิดโฟลเดอร์ต่า ๆ ในหน้าต่างแยกต่างหาก"
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:37
+#, kde-format
+msgid ""
+"If this option is checked, Konqueror will open a new window when you open a "
+"folder, rather than showing that folder's contents in the current window."
+msgstr ""
+"หากกาเลือกตัวเลือกนี้ จะทำให้ Konqueror ทำการเปิดหน้าต่างใหม่เมื่อคุณเปิดโฟลเดอร์ "
+"แทนการแสดงเนื้อหาของโฟลเดอร์ในหน้าต่างปัจจุบัน"
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:42
+#, kde-format
+msgid "Show file tips"
+msgstr "แสดงเคล็ดลับแฟ้ม"
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:43
+#, kde-format
+msgid ""
+"Here you can control if, when moving the mouse over a file, you want to see "
+"a small popup window with additional information about that file"
+msgstr ""
+"คุณสามารถกำหนดว่าจะให้มีการแสดงหน้าต่างผุดเล็ก ๆ ที่ใช้แสดงข้อมูลรายละเอียดเกี่ยวกับแฟ้มนั้น ๆ "
+"เมื่อมีการเคลื่อนเมาส์มาอยู่เหนือรายการหรือไม่ได้ที่นี่"
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:54
+#, kde-format
+msgid "Show previews in file tips"
+msgstr "แสดงภาพตัวอย่างในเคล็ดลับแฟ้มด้วย"
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:55
+#, kde-format
+msgid ""
+"Here you can control if you want the popup window to contain a larger "
+"preview for the file, when moving the mouse over it"
+msgstr ""
+"คุณสามารถกำหนดว่าจะให้มีการแสดงหน้าต่างผุดเล็ก ๆ ที่ใช้แสดงข้อมูลภาพตัวอย่างของแฟ้มนั้น ๆ "
+"ที่ใหญ่ขึ้น เมื่อมีการเคลื่อนเมาส์มาอยู่เหนือรายการหรือไม่ได้ที่นี่"
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:60
+#, kde-format
+msgid "Show 'Delete' menu entries which bypass the trashcan"
+msgstr "แสดงรายการเมนู 'ลบ' ซึ่งจะเป็นการลบจริงแทนการทิ้งลงถังขยะ"
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:61
+#, kde-format
+msgid ""
+"Check this if you want 'Delete' menu commands to be displayed on the desktop "
+"and in the file manager's menus and context menus. You can always delete "
+"files when hidden by holding the Shift key while calling 'Move to Trash'."
+msgstr ""
+"กาเลือกที่นี่ หากคุณต้องการให้คำสั่งเมนู 'ลบทิ้ง' "
+"ปรากฏบนพื้นที่ทำงานและในเมนูคลิกขวาของตัวจัดการแฟ้ม นอกจากนี้ คุณยังสามารถลบแฟ้มทิ้งได้เสมอ "
+"โดยการกดปุ่ม Shift ค้างไว้ ในขณะเรียกใช้คำสั่ง 'ทิ้งลงถังขยะ'"
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:153 src/konqueror.kcfg:154
+#, kde-format
+msgid "Number of Open With items in the File menu"
+msgstr "จำนวนของรายการ เปิดใช้ด้วย ในเมนู แฟ้ม"
+
+#. i18n: ectx: label, entry, group (HTML Settings)
+#: src/konqueror.kcfg:163
+#, kde-format
+msgid "Standard font"
+msgstr "แบบอักษรมาตรฐาน"
+
+#. i18n: ectx: whatsthis, entry, group (HTML Settings)
+#: src/konqueror.kcfg:164
+#, kde-format
+msgid "This is the font used to display text in Konqueror windows."
+msgstr "แบบอักษรมาตรฐานที่จะใช้แสดงข้อความในหน้าต่าง Konqueror"
+
+#. i18n: ectx: label, entry, group (HistorySettings)
+#: src/konqueror.kcfg:314
+#, kde-format
+msgid "Maximum number of history items per view"
+msgstr "จำนวนสูงสุดของรายการประวัติการใช้ต่อมุมมอง"
+
+#. i18n: ectx: label, entry, group (Trash)
+#: src/konqueror.kcfg:504
+#, kde-format
+msgid "Ask confirmation for deleting a file."
+msgstr "ถามยืนยันก่อนทำการลบแฟ้ม"
+
+#. i18n: ectx: whatsthis, entry, group (Trash)
+#: src/konqueror.kcfg:505
+#, kde-format
+msgid ""
+"This option tells Konqueror whether to ask for a confirmation when you "
+"delete a file without using the trash folder. Warning, deleted files can not "
+"be recovered, so it is recommended to leave this confirmation enabled."
+msgstr ""
+"ตัวเลือกจะทำให้ Konqueror ทราบว่า ควรจะทำการถามยืนยันก่อนหรือไม่ "
+"เมื่อคุณทำการลบแฟ้มโดยไม่ใช่เป็นการทิ้งแฟ้มลงในถังขยะ "
+"ซึ่งการลบแฟ้มแบบนี้นั้นจะเป็นการลบอย่างถาวร และจะไม่สามารถกู้คืนแฟ้มนั้น ๆ ได้ "
+"ดังนั้นจึงขอแนะนำให้คุณเปิดใช้งานตัวเลือกนี้ไว้เสมอ"
+
+#. i18n: ectx: label, entry, group (Trash)
+#: src/konqueror.kcfg:510
+#, kde-format
+msgid "Ask confirmation for move to trash"
+msgstr "ถามยืนยันก่อนทิ้งลงถังขยะ"
+
+#. i18n: ectx: whatsthis, entry, group (Trash)
+#: src/konqueror.kcfg:511
+#, kde-format
+msgid ""
+"This option tells Konqueror whether to ask for a confirmation when you move "
+"the file to your trash folder, from where it can be recovered very easily."
+msgstr ""
+"ตัวเลือกนี้จะบอกให้ Konqueror ทราบว่า ควรจะทำการถามยืนยันก่อนหรือไม่ "
+"เมื่อคุณทำการทิ้งแฟ้มลงในโฟลเดอร์ถังขยะ ซึ่งจะทำให้สามารถกู้คืนแฟ้มเหล่านั้นได้ในภายหลัง"
+
+#. i18n: ectx: whatsthis, entry, group (Trash)
+#: src/konqueror.kcfg:518
+#, kde-format
+msgid ""
+"If true, when opening a session from within the sessions dialog the tabs "
+"will be opened inside current window."
+msgstr ""
+"หากเลือกใช้ จะทำให้มีการเปิดแท็บภายในหน้าต่างปัจจุบัน "
+"เมื่อมีการเปิดวาระจากภายในกล่องวาระการใช้"
+
+#. i18n: ectx: Menu (file)
+#: src/konqueror.rc:5
+#, kde-format
+msgid "&File"
+msgstr "แ&ฟ้ม"
+
+#. i18n: ectx: Menu (edit)
+#: src/konqueror.rc:24
+#, kde-format
+msgid "&Edit"
+msgstr "แ&ก้ไข"
+
+#. i18n: ectx: Menu (view)
+#: src/konqueror.rc:33
+#, kde-format
+msgid "&View"
+msgstr "&มุมมอง"
+
+#. i18n: ectx: Menu (go)
+#: src/konqueror.rc:44
+#, kde-format
+msgid "&Go"
+msgstr "ไ&ป"
+
+#. i18n: ectx: Menu (tools)
+#: src/konqueror.rc:54
+#, kde-format
+msgid "&Tools"
+msgstr "เ&ครื่องมือ"
+
+#. i18n: ectx: Menu (settings)
+#: src/konqueror.rc:59
+#, kde-format
+msgid "&Settings"
+msgstr "&ตั้งค่า"
+
+#. i18n: ectx: Menu (window)
+#: src/konqueror.rc:77
+#, kde-format
+msgid "&Window"
+msgstr "&หน้าต่าง"
+
+#. i18n: ectx: Menu (help)
+#: src/konqueror.rc:93
+#, kde-format
+msgid "&Help"
+msgstr "&ช่วยเหลือ"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: src/konqueror.rc:98
+#, kde-format
+msgid "Main Toolbar"
+msgstr "แถบเครื่องมือหลัก"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: src/konqueror.rc:109
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "แถบเครื่องมือพิเศษ"
+
+#. i18n: ectx: ToolBar (locationToolBar)
+#: src/konqueror.rc:116
+#, kde-format
+msgid "Location Toolbar"
+msgstr "แถบตำแหน่ง"
+
+#. i18n: ectx: ToolBar (bookmarkToolBar)
+#: src/konqueror.rc:122
+#, kde-format
+msgid "Bookmark Toolbar"
+msgstr "แถบเครื่องมือที่คั่นหน้า"
+
+#: src/konqundomanager.cpp:90 src/konqundomanager.cpp:252
+#, kde-format
+msgid "Und&o: Closed Tab"
+msgstr "เลิ&กทำ: ปิดแท็บ"
+
+#: src/konqundomanager.cpp:92 src/konqundomanager.cpp:103
+#: src/konqundomanager.cpp:147
+#, kde-format
+msgid "Und&o: Closed Window"
+msgstr "เลิกทำ: ปิดแท็บ"
+
+#: src/konqundomanager.cpp:105
+#, kde-format
+msgid "Und&o"
+msgstr "เลิ&กทำ"
+
+#: src/konqview.cpp:1162
+#, kde-format
+msgid ""
+"The page you are trying to view is the result of posted form data. If you "
+"resend the data, any action the form carried out (such as search or online "
+"purchase) will be repeated. "
+msgstr ""
+"หน้าที่คุณพยายามแสดงผลเป็นผลลัพธ์ของการส่งข้อมูลในแบบฟอร์ม ถ้าคุณส่งข้อมูลอีกครั้ง การกระทำใด ๆ "
+"ที่แบบฟอร์มกำลังทำอยู่ (เช่น การค้นหา หรือการซื้อของออนไลน์) จะถูกกระทำซ้ำ"
+
+#: src/konqview.cpp:1164
+#, fuzzy, kde-format
+#| msgid "Warning"
+msgctxt "@title:window"
+msgid "Warning"
+msgstr "คำเตือน"
+
+#: src/konqview.cpp:1164
+#, kde-format
+msgid "Resend"
+msgstr "ส่งอีกครั้ง"
+
+#: src/urlloader.cpp:253
+#, kde-format
+msgctxt "Execute an executable file"
+msgid "Execute it"
+msgstr ""
+
+#: src/urlloader.cpp:258
+#, kde-format
+msgctxt ""
+"The user has to decide whether to execute an executable file or display it"
+msgid ""
+"<tt>%1</tt> can be executed. Do you want to execute it or to display it?"
+msgstr ""
+
+#: src/urlloader.cpp:259
+#, kde-format
+msgctxt "Display an executable file"
+msgid "Display it"
+msgstr ""
+
+#: src/urlloader.cpp:263
+#, kde-format
+msgctxt "The user has to decide whether to execute an executable file or not"
+msgid "<tt>%1</tt> can be executed. Do you want to execute it?"
+msgstr ""
+
+#: src/urlloader.cpp:438
+#, fuzzy, kde-format
+#| msgid "Save As..."
+msgid "Save As"
+msgstr "บันทึกเป็น..."
+
+#~ msgid ""
+#~ "Malformed URL\n"
+#~ "%1"
+#~ msgstr ""
+#~ "รูปแบบที่อยู่ URL ผิดพลาด\n"
+#~ "%1"
+
+#~ msgid "File Management"
+#~ msgstr "การจัดการแฟ้ม"
+
+#~ msgid "Web Browsing"
+#~ msgstr "การท่องเว็บ"
+
+#, fuzzy
+#~| msgid "Configure"
+#~ msgctxt "@title:window"
+#~ msgid "Configure"
+#~ msgstr "ปรับแต่ง"
+
+#~ msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
+#~ msgid "Be free."
+#~ msgstr "สู่เสรี"
+
+#~ msgid ""
+#~ "Konqueror is a web browser, file manager and universal document viewer."
+#~ msgstr ""
+#~ "Konqueror คือโปรแกรมเว็บเบราว์เซอร์, โปรแกรมจัดการแฟ้ม "
+#~ "และโปรแกรมดูเอกสารครอบจักรวาล"
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "Starting Points"
+#~ msgstr "หน้าเริ่มต้น"
+
+#~ msgid "Introduction"
+#~ msgstr "บทแนะนำ"
+
+#~ msgid "Tips"
+#~ msgstr "เคล็ดลับ"
+
+#~ msgid "Specifications"
+#~ msgstr "การรองรับข้อกำหนดต่าง ๆ"
+
+#~ msgid "Your personal files"
+#~ msgstr "ที่เก็บแฟ้มส่วนตัวของคุณ"
+
+#~ msgid "Trash"
+#~ msgstr "ถังขยะ"
+
+#~ msgid "Browse and restore the trash"
+#~ msgstr "เรียกดูและเรียกคืนสิ่งที่อยู่ในถังขยะ"
+
+#~ msgid "Network Folders"
+#~ msgstr "โฟลเดอร์บนเครือข่าย"
+
+#~ msgid "Shared files and folders"
+#~ msgstr "ที่เก็บแฟ้มและโฟลเดอร์ที่ใช้ร่วมกัน"
+
+#~ msgid "Bookmarks"
+#~ msgstr "ที่คั่นหน้า"
+
+#~ msgid "Quick access to your bookmarks"
+#~ msgstr "เข้าใช้คั่นหน้าของคุณแบบด่วน"
+
+#~ msgid "Next: An Introduction to Konqueror"
+#~ msgstr "ถัดไป: แนะนำ Konqueror "
+
+#~ msgid "Search the Web"
+#~ msgstr "ค้นหาจากเว็บ"
+
+#~ msgid ""
+#~ "Konqueror makes working with and managing your files easy. You can browse "
+#~ "both local and networked folders while enjoying advanced features such as "
+#~ "the powerful sidebar and file previews."
+#~ msgstr ""
+#~ "Konqueror สามารถใช้ทำงานและจัดการกับแฟ้มของคุณได้อย่างง่ายดาย "
+#~ "คุณสามารถใช้เรียกดูแฟ้มได้ ไม่ว่าจะเป็นแฟ้มภายในเครื่องของคุณเอง "
+#~ "หรือจะเป็นโฟลเดอร์บนเครือข่ายก็ได้เช่นกัน "
+#~ "นอกจากนี้แล้วยังมีคุณสมบัติพิเศษสำหรับช่วยในการใช้งานให้ง่ายขึ้นอีกมากมาย "
+#~ "เช่นถาดด้านข้างสำหรับการทำงานหลายอย่าง รวมไปถึงคุณสมบัติในการแสดงตัวอย่างของแฟ้มด้วย"
+
+#~ msgid ""
+#~ "Konqueror is also a full featured and easy to use web browser which you "
+#~ "can use to explore the Internet. Enter the address (e.g. <a href=\"http://"
+#~ "www.kde.org\">http://www.kde.org</a>) of a web page you would like to "
+#~ "visit in the location bar and press Enter, or choose an entry from the "
+#~ "Bookmarks menu."
+#~ msgstr ""
+#~ "Konqueror นั้นยังเป็นเว็บเบราว์เซอร์ที่มีความสามารถเต็มที่ และใช้งานได้ง่าย "
+#~ "ซึ่งคุณสามารถใช้ท่องอินเทอร์เน็ตได้ ใส่ที่อยู่ (เช่น <a href=\"http://www.kde.org\"> "
+#~ "http://www.kde.org</a>) ของหน้าเว็บที่คุณต้องการจะไปในแถบใส่ที่อยู่ตามด้วยการกดแป้นพิมพ์ "
+#~ "Enter หรืออาจจะเลือกที่อยู่ที่บันทึกไว้แล้วในรายการบนเมนู 'ที่คั่นหน้า' ก็ได้เช่นกัน"
+
+#~ msgid ""
+#~ "To return to the previous location, press the back button <img width='16' "
+#~ "height='16' src=\"%1\"></img> in the toolbar. "
+#~ msgstr ""
+#~ "หากคุณต้องการย้อนกลับไปที่ตำแหน่งที่เรียกใช้ก่อนหน้า ให้กดที่ปุ่ม <img width='16' "
+#~ "height='16' src=\"%1\"></img>ย้อนกลับ บนแถบเครื่องมือ"
+
+#, fuzzy
+#~| msgid ""
+#~| "To quickly go to your Home folder press the  home button <img width='16' "
+#~| "height='16' src=\"%1\"></img>."
+#~ msgid ""
+#~ "To quickly go to your Home folder press the home button <img width='16' "
+#~ "height='16' src=\"%1\"></img>."
+#~ msgstr ""
+#~ "หากคุณต้องการไปยังโฟลเดอร์ส่วนตัวอย่างรวดเร็ว ให้กดที่ปุ่มโฟลเดอร์ส่วนตัว <img width=16 "
+#~ "height=16 src=\"%1\"></img>"
+
+#~ msgid ""
+#~ "For more detailed documentation on Konqueror click <a href=\"%1\">here</"
+#~ "a>."
+#~ msgstr "<A HREF=\"%1\">คลิกที่นี่</A> เพื่อดูเอกสารของ Konqueror ที่ละเอียดมากกว่านี้"
+
+#, fuzzy
+#~| msgid "Next: Tips &amp; Tricks"
+#~ msgid "Next: Tips & Tricks"
+#~ msgstr "ถัดไป: ลูกเล่นและเคล็ดลับการใช้งาน"
+
+#~ msgid ""
+#~ "Konqueror is designed to embrace and support Internet standards. The aim "
+#~ "is to fully implement the officially sanctioned standards from "
+#~ "organizations such as the W3 and OASIS, while also adding extra support "
+#~ "for other common usability features that arise as de facto standards "
+#~ "across the Internet. Along with this support, for such functions as "
+#~ "favicons, Web Shortcuts, and <A HREF=\"%1\">XBEL bookmarks</A>, Konqueror "
+#~ "also implements:"
+#~ msgstr ""
+#~ "Konqueror  ถูกออกแบบมาให้ใช้ และรองรับมาตรฐานอินเทอร์เน็ตต่าง ๆ "
+#~ "โดยมีเป้าหมายให้รองรับมาตรฐานต่าง ๆ ที่ถูกกำหนดไว้จากองค์กรที่ดูแลมาตรฐานเหล่านี้ เช่น W3 "
+#~ "และ OASIS ขณะเดียวกันก็ได้เพิ่มการรองรับคุณลักษณะพื้นฐานในการใช้งานอื่น ๆ "
+#~ "ที่มีการใช้อย่างแพร่หลายด้วย เช่น ฟังก์ชันแบบ favicons, ทางลัดเว็บ และ <A HREF="
+#~ "\"%1\">ที่คั่นหน้า XBEL</A> เป็นต้น นอกจากนี้ Konqueror "
+#~ "ยังถูกปรับแต่งให้รองรับส่วนเพิ่มเติมต่อไปนี้อีกด้วย:"
+
+#~ msgid "Supported standards"
+#~ msgstr "มาตรฐานที่รองรับ"
+
+#~ msgid "Additional requirements*"
+#~ msgstr "สิ่งที่ต้องการเพิ่มเติม*"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">DOM</A> (ระดับ 1, บางส่วนของระดับ 2) บนพื้นฐาน <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+
+#~ msgid "built-in"
+#~ msgstr "รองรับอยู่ภายใน"
+
+#~ msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
+#~ msgstr "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, บางส่วนของ CSS 2)"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
+#~ msgstr "<A HREF=\"%1\">ECMA-262</A> ปรับปรุงครั้งที่ 3 (เทียบได้กับจาวาสคริปต์ 1.5)"
+
+#~ msgid ""
+#~ "JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
+#~ msgstr ""
+#~ "ยังไม่เปิดใช้งานจาวาสคริปต์ (ทั้งระบบ) <A HREF=\"%1\">คลิกที่นี่</A>เพื่อเปิดใช้จาวาสคริปต์"
+
+#~ msgid ""
+#~ "JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\"
+#~ "\">here</A>."
+#~ msgstr ""
+#~ "เปิดใช้งานจาวาสคริปต์อยู่ (ทั้งระบบ) <A HREF=\\\"%1\\\">คลิกที่นี่</A> "
+#~ "เพื่อปรับแต่งจาวาสคริปต์"
+
+#~ msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
+#~ msgstr "รองรับความปลอดภัยของ <A HREF=\"%1\">จาวา</A><SUP>&reg;</SUP>"
+
+#, fuzzy
+#~| msgid ""
+#~| "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">IBM</A> or <A HREF="
+#~| "\"%2\">Sun/Oracle</A>)"
+#~ msgid ""
+#~ "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">OpenJDK</A> or <A HREF="
+#~ "\"%2\">Sun/Oracle</A>)"
+#~ msgstr ""
+#~ "VM ที่เทียบเท่ากับ JDK 1.2.0 (จาวา 2) (<A HREF=\"%1\">IBM</A>, <A  HREF="
+#~ "\"%2\">Sun/Oracle</A>)"
+
+#~ msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
+#~ msgstr "เปิดใช้งานจาวา (กับทั้งระบบ) <A HREF=\"%1\">ที่นี่</A>"
+
+#~ msgid "Secure Sockets Layer"
+#~ msgstr "ชั้นของซ็อกเกตแบบปลอดภัย (SSL)"
+
+#~ msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
+#~ msgstr "(TLS/SSL v2/3) สำหรับการติดต่อแบบเข้ารหัสข้อมูลได้สูงถึง 168 บิต"
+
+#~ msgid "OpenSSL"
+#~ msgstr "OpenSSL"
+
+#~ msgid "Bidirectional 16bit unicode support"
+#~ msgstr "รองรับอักขระแบบยูนิโค้ด 2 ไบต์ 16 บิต"
+
+#~ msgid "AutoCompletion for forms"
+#~ msgstr "เติมช่องข้อมูลของฟอร์มให้สมบูรณ์"
+
+#~ msgctxt "Title of an html 'group box' explaining konqueror features"
+#~ msgid "General"
+#~ msgstr "ค่าทั่วไป"
+
+#~ msgid "Feature"
+#~ msgstr "คุณลักษณะ"
+
+#~ msgid "Details"
+#~ msgstr "รายละเอียด"
+
+#~ msgid "Image formats"
+#~ msgstr "ประเภทรูปภาพ"
+
+#~ msgid "PNG<br />JPG<br />GIF"
+#~ msgstr "PNG<br />JPG<br />GIF"
+
+#~ msgid "Transfer protocols"
+#~ msgstr "โพรโทคอลส่งถ่ายข้อมูล"
+
+#~ msgid "HTTP 1.1 (including gzip/bzip2 compression)"
+#~ msgstr "โพรโทคอล HTTP รุ่น 1.1 (และรองรับการบีบอัดข้อมูล gzip/bzip2 ด้วย)"
+
+#~ msgid "FTP"
+#~ msgstr "โพรโทคอล FTP"
+
+#, fuzzy
+#~| msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpcenter)...</A>"
+#~ msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpCenter)...</A>"
+#~ msgstr ""
+#~ "และ<A HREF=\"%1\">อื่น ๆ อีกมากมาย...(ดูเพิ่มเติมที่ Kioslaves ใน ศูนย์ช่วยเหลือ-K)</A>"
+
+#~ msgctxt "A feature of Konqueror"
+#~ msgid "URL-Completion"
+#~ msgstr "การทำที่อยู่ URL ให้สมบูรณ์"
+
+#~ msgid "Manual"
+#~ msgstr "แบบแก้ไขเอง"
+
+#~ msgid "Popup"
+#~ msgstr "แบบแสดงเป็นเมนูให้เลือก"
+
+#~ msgid "(Short-) Automatic"
+#~ msgstr "แบบ(ย่อ-) อัตโนมัติ"
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "<a href=\"%1\">Return to Starting Points</a>"
+#~ msgstr "<a href=\"%1\">กลับไปยังหน้าเริ่มต้น</a>"
+
+#, fuzzy
+#~| msgid "Tips &amp; Tricks"
+#~ msgid "Tips & Tricks"
+#~ msgstr "ลูกเล่นและเคล็ดลับการใช้งาน"
+
+#~ msgid ""
+#~ "Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, "
+#~ "using Google, for the search phrase \"KDE\". There are a lot of Web-"
+#~ "Shortcuts predefined to make searching for software or looking up certain "
+#~ "words in an encyclopedia a breeze. You can even <a href=\"%1\">create "
+#~ "your own</a> Web-Shortcuts."
+#~ msgstr ""
+#~ "ใช้ทางลัดเว็บ: เช่น พิมพ์ \"gg: KDE\" จะเป็นการค้นหาคำว่า \"KDE\" "
+#~ "ผ่านเครื่องมือค้นหาของ Google  ซึ่งมีทางลัดเว็บมากมาย ที่ได้กำหนดไว้แล้ว "
+#~ "เพื่อให้การค้นหาเป็นไปอย่างง่ายดาย และแน่นอน คุณสามารถที่จะ<a href="
+#~ "\"%1\">สร้างทางลัดเว็บของคุณเอง</a>ก็ได้เช่นกัน"
+
+#~ msgid ""
+#~ "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
+#~ "the HTML toolbar to increase the font size on your web page."
+#~ msgstr ""
+#~ "ใช้ปุ่มแว่นปรับขยาย <img width='16' height='16' src=\"%1\"></img> บนแถบเครื่องมือ "
+#~ "HTMLเพื่อปรับเพิ่มขนาดตัวอักษรบนหน้าเว็บของคุณ"
+
+#~ msgid ""
+#~ "When you want to paste a new address into the Location toolbar you might "
+#~ "want to clear the current entry by pressing the black arrow with the "
+#~ "white cross <img width='16' height='16' src=\"%1\"></img> in the toolbar."
+#~ msgstr ""
+#~ "หากคุณต้องการวางตำแหน่งที่อยู่ใหม่เข้าไปยังแถบตำแหน่ง คุณอาจต้องการล้างค่าที่อยู่ที่มีอยู่เสียก่อน "
+#~ "ซึ่งสามารถล้างค่าได้ด้วยการกดปุ่มลูกศรกากบาทสีขาว <img width='16' height='16' src="
+#~ "\"%1\"> </img>ในแถบเครื่องมือ"
+
+#~ msgid ""
+#~ "To create a link on your desktop pointing to the current page, simply "
+#~ "drag the icon (favicon) that is to the left of the Location toolbar, drop "
+#~ "it on to the desktop, and choose \"Icon\"."
+#~ msgstr ""
+#~ "เพื่อสร้างการเชื่อมโยงซึ่งชี้มายังหน้าปัจจุบันนี้ไว้บนพื้นที่ทำงานของคุณเอง สามารถทำได้ง่าย ๆ "
+#~ "ด้วยการลากไอคอน (favicon) ซึ่งอยู่ทางซ้ายของแถบตำแหน่งที่อยู่ แล้วปล่อยลงบนพื้นที่ทำงาน "
+#~ "จากนั้นเลือกรายการ \"ไอคอน\" จากเมนูที่ปรากฎ"
+
+#~ msgid ""
+#~ "You can also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen "
+#~ "Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
+#~ "sessions."
+#~ msgstr ""
+#~ "คุณจะยังพบ <img width='16' height='16' src=\"%1\" /> \"โหมดเต็มหน้าจอ\" "
+#~ "ในเมนูการตั้งค่า คุณสมบัตินี้มีประโยชน์ในการใช้งานเซสชั่น \"Talk\""
+
+#, fuzzy
+#~| msgid ""
+#~| "Divide et impera (lat. \"Divide and conquer\") - by splitting a window "
+#~| "into two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> "
+#~| "Split View Left/Right) you can make Konqueror appear the way you like. "
+#~| "You can even load some example view-profiles (e.g. Midnight Commander), "
+#~| "or create your own ones."
+#~ msgid ""
+#~ "Divide et impera (lat. \"Divide and conquer\") - by splitting a window "
+#~ "into two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> "
+#~ "Split View Left/Right) you can make Konqueror appear the way you like."
+#~ msgstr ""
+#~ "Divide et impera (ละติน \"แบ่งแยกและพิชิต) - โดยการแบ่งหน้าต่างออกเป็นสองส่วน (เช่น "
+#~ "อาจใช้ผ่านเมนู หน้าต่าง -> <img width='16' height='16' src=\"%1\" /> "
+#~ "แบ่งมุมมองซ้าย/ขวา) คุณจะสามารถทำให้ Konqueror มีรูปลักษณ์อย่างที่คุณต้องการ "
+#~ "คุณยังสามารถโหลด โพรไฟล์มุมมองตัวอย่างบางโพรไฟล์ได้ (เช่น Midnight Commander) "
+#~ "หรือสร้าง โพรไฟล์ของตัวคุณเอง"
+
+#~ msgid ""
+#~ "Use the <a href=\"%1\">user-agent</a> feature if the website you are "
+#~ "visiting asks you to use a different browser (and do not forget to send a "
+#~ "complaint to the webmaster!)"
+#~ msgstr ""
+#~ "ใช้คุณสมบัติ <a href=\"%1\">การแสดงตัวของเบราว์เซอร์</a> หากเว็บไซต์ที่คุณไป "
+#~ "เรียกร้องให้คุณใช้เว็บเบราว์เซอร์ตัวอื่น (และอย่าลืมส่งคำติติงไปยังเว็บมาสเตอร์ "
+#~ "ของเว็บไซต์นั้นด้วยล่ะ!)"
+
+#~ msgid ""
+#~ "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
+#~ "ensures that you can keep track of the pages you have visited recently."
+#~ msgstr ""
+#~ "<img width='16' height='16' src=\"%1\"></"
+#~ "img>ประวัติการใช้งานในแถบด้านข้างของคุณ "
+#~ "จะช่วยให้คุณทราบได้ว่าคุณได้เรียกดูหน้าเว็บใดมาบ้างแล้ว"
+
+#~ msgid ""
+#~ "Use a caching <a href=\"%1\">proxy</a> to speed up your Internet "
+#~ "connection."
+#~ msgstr ""
+#~ "ใช้ระบบการเก็บแคชผ่านทาง<A HREF=\"%1\">พร็อกซี</"
+#~ "A>เพื่อเพิ่มความเร็วในการท่องอินเทอร์เน็ตของคุณ"
+
+#~ msgid ""
+#~ "Advanced users will appreciate the Konsole which you can embed into "
+#~ "Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
+#~ "Terminal Emulator)."
+#~ msgstr ""
+#~ "ผู้ใช้ที่เชี่ยวชาญจะประทับใจกับ Konsole ซึ่งคุณสามารถที่จะฝังมันเข้าไปใน Konqueror ได้ "
+#~ "(ตั้งค่า -> <img width='16' height='16' SRC=\"%1\"></img> แสดงตัวจำลองเทอร์มินัล)"
+
+#~ msgid "Next: Specifications"
+#~ msgstr "ถัดไป: การรองรับข้อกำหนดต่าง ๆ"
+
+#~ msgid "Installed Plugins"
+#~ msgstr "ส่วนเสริมที่ติดตั้งแล้ว"
+
+#~ msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
+#~ msgstr "<td>ส่วนเสริม</td><td>รายละเอียด</td><td>แฟ้ม</td><td>ประเภท</td>"
+
+#~ msgid "Installed"
+#~ msgstr "ติดตั้งแล้ว"
+
+#~ msgid ""
+#~ "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
+#~ msgstr ""
+#~ "<td>ชนิดแฟ้ม Mime</td><td>รายละเอียด</td><td>ส่วนต่อท้าย</td><td>โปรแกรมเสริม</"
+#~ "td>"
+
+#~ msgid "&Open"
+#~ msgstr "เ&ปิด"
+
+#~ msgid ""
+#~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">plugins</A> (for "
+#~ "viewing <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
+#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Video, etc.)"
+#~ msgstr ""
+#~ "<A HREF=\"%4\">โปรแกรมเสริม</A>ของเน็ตสเคป<SUP>&reg;</SUP> (เพื่อใช้ดู <A HREF="
+#~ "\"%1\">Flash</A><SUP>&reg;</SUP>, <A HREF=\"%2\">Real<SUP> &reg;</SUP></"
+#~ "A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</SUP></A>Video เป็นต้น)"
+
+#~ msgid "http://konqueror.kde.org"
+#~ msgstr "http://konqueror.kde.org"
+
+#~ msgid "Limits"
+#~ msgstr "จำกัด"
+
+#~ msgid "URLs e&xpire after"
+#~ msgstr "ที่อยู่ URL ห&มดอายุหลังจาก"
+
+#~ msgid "Maximum &number of URLs:"
+#~ msgstr "&จำนวนที่อยู่ URL สูงสุด:"
+
+#~ msgid "Custom Fonts For"
+#~ msgstr "กำหนดแบบอักษรเองสำหรับ"
+
+#~ msgid "URLs newer than"
+#~ msgstr "ที่อยู่ URL ที่ใหม่กว่า"
+
+#~ msgid "Choose Font..."
+#~ msgstr "เลือกแบบอักษร..."
+
+#~ msgid "URLs older than"
+#~ msgstr "ที่อยู่ URL ที่เก่ากว่า"
+
+#~ msgid ""
+#~ "Shows the number of times visited and the dates of the first and last "
+#~ "visits, in addition to the URL"
+#~ msgstr ""
+#~ "แสดงจำนวนครั้งที่เรียกชม รวมถึงวันที่ของการเยี่ยมชมครั้งแรกและครั้งล่าสุด เพิ่มไว้ในที่อยู่ URL "
+#~ "ด้วย"
+
+#~ msgid "Detailed tooltips"
+#~ msgstr "ทูลทิปรายละเอียด"
+
+#~ msgid "Clear History"
+#~ msgstr "ล้างประวัติการใช้"
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "History Sidebar Module"
+#~ msgstr "มอดูลแถบข้าง"
+
+#~ msgctxt "@title:tab"
+#~ msgid "History"
+#~ msgstr "ประวัติการใช้"
+
+#~ msgid "Minute"
+#~ msgid_plural "Minutes"
+#~ msgstr[0] "นาที"
+
+#~ msgid "Day"
+#~ msgid_plural "Days"
+#~ msgstr[0] "วัน"
+
+#~ msgid "<h1>History Sidebar</h1> You can configure the history sidebar here."
+#~ msgstr "<h1>แถบประวัติการใช้</h1> คุณสามารถปรับแต่งแถบประวัติการใช้งานด้านข้าง ได้ที่นี่"
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Places Sidebar Module"
+#~ msgstr "มอดูลแถบข้างที่หลัก ๆ"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Places"
+#~ msgstr "ที่หลัก ๆ"
+
+#~ msgid "Extended Sidebar"
+#~ msgstr "ส่วนขยาย-แถบบาร์ด้านข้าง"
+
+#~ msgid "Rollback to System Default"
+#~ msgstr "ย้อนกลับไปใช้ค่าปริยายของระบบ"
+
+#~ msgid "Configure Sidebar"
+#~ msgstr "ปรับแต่งแถบบาร์ด้านข้าง"
+
+#~ msgid "Add New"
+#~ msgstr "เพิ่มใหม่"
+
+#~ msgid "Multiple Views"
+#~ msgstr "หลายมุมมอง"
+
+#~ msgid "Show Tabs Left"
+#~ msgstr "แสดงแท็บทางด้านซ้าย"
+
+#~ msgid "Close Sidebar"
+#~ msgstr "ปิดแถบข้าง"
+
+#~ msgid "This entry already exists."
+#~ msgstr "มีรายการนี้อยู่แล้ว"
+
+#~ msgid ""
+#~ "<qt>This removes all your entries from the sidebar and adds the system "
+#~ "default ones.<br /><b>This procedure is irreversible</b><br />Do you want "
+#~ "to proceed?</qt>"
+#~ msgstr ""
+#~ "<qt>นี่จะเป็นการลบรายการทั้งหมดของคุณจากแถบด้านข้าง "
+#~ "และเพิ่มรายการโดยปริยายของระบบเข้ามาแทน<br /><b>ขั้นตอนนี้ไม่สามารถย้อนกลับได้</"
+#~ "b><br />คุณต้องการจะทำต่อหรือไม่?</qt>"
+
+#~ msgid "Show Tabs Right"
+#~ msgstr "แสดงแท็บด้านขวา"
+
+#, fuzzy
+#~| msgid "Set Name"
+#~ msgctxt "@title:window"
+#~ msgid "Set Name"
+#~ msgstr "ตั้งชื่อ"
+
+#~ msgid "Enter the name:"
+#~ msgstr "ป้อนชื่อ:"
+
+#~ msgid "Enter a URL:"
+#~ msgstr "ป้อนที่อยู่ URL:"
+
+#~ msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
+#~ msgstr "<qt>คุณต้องการลบแท็บ <b>%1</b> จริงหรือไม่ ?</qt>"
+
+#~ msgid ""
+#~ "You have hidden the sidebar configuration button. To make it visible "
+#~ "again, click the right mouse button on any of the sidebar buttons and "
+#~ "select \"Show Configuration Button\"."
+#~ msgstr ""
+#~ "คุณได้ทำการซ่อนปุ่มปรับแต่งถาดข้างไว้ หากต้องการให้มันแสดงอีกครั้ง ให้คลิกเมาส์ปุ่มขวาบนที่ใด ๆ "
+#~ "ของปุ่มบนถาดนำร่อง แล้วเลือก \"แสดงปุ่มปรับแต่ง\""
+
+#~ msgid "Set Name..."
+#~ msgstr "ตั้งชื่อ..."
+
+#~ msgid "Set URL..."
+#~ msgstr "ตั้งที่อยู่ URL..."
+
+#~ msgid "Set Icon..."
+#~ msgstr "ตั้งค่าไอคอน..."
+
+#~ msgid "Remove"
+#~ msgstr "ลบออก"
+
+#~ msgid "Web module"
+#~ msgstr "มอดูลเว็บ"
+
+#~ msgid "&Create New Folder"
+#~ msgstr "ส&ร้างโฟลเดอร์ใหม่..."
+
+#~ msgid "Delete Folder"
+#~ msgstr "ลบโฟลเดอร์"
+
+#~ msgid "Delete Bookmark"
+#~ msgstr "ลบคั่นหน้า"
+
+#~ msgid "Properties"
+#~ msgstr "คุณสมบัติ"
+
+#~ msgid "Open in New Window"
+#~ msgstr "เปิดในหน้าต่างใหม่"
+
+#~ msgid "Open Folder in Tabs"
+#~ msgstr "เปิดโฟลเดอร์ในแท็บ"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "คัดลอกที่อยู่ของส่วนเชื่อมโยง"
+
+#, fuzzy
+#~| msgid "Create New Folder"
+#~ msgctxt "@title:window"
+#~ msgid "Create New Bookmark Folder"
+#~ msgstr "สร้างโฟลเดอร์ใหม่"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgid "New folder:"
+#~ msgstr "โฟลเดอร์ใหม่"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark folder\n"
+#~ "\"%1\"?"
+#~ msgstr "คุณแน่ใจหรือไม่ที่ต้องจะลบโฟลเดอร์ที่คั่นหน้า \"%1\" นี้ ?"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark\n"
+#~ "\"%1\"?"
+#~ msgstr "คุณแน่ใจหรือไม่ที่ต้องการจะลบคั่นหน้า \"%1\" นี้ ?"
+
+#, fuzzy
+#~| msgid "Bookmark Folder Deletion"
+#~ msgctxt "@title:window"
+#~ msgid "Bookmark Folder Deletion"
+#~ msgstr "เครื่องมือลบโฟลเดอร์ที่คั่นหน้า"
+
+#, fuzzy
+#~| msgid "Bookmark Deletion"
+#~ msgctxt "@title:window"
+#~ msgid "Bookmark Deletion"
+#~ msgstr "เครื่องมือลบที่คั่นหน้า"
+
+#, fuzzy
+#~| msgid "Bookmark Properties"
+#~ msgctxt "@title:window"
+#~ msgid "Bookmark Properties"
+#~ msgstr "คุณสมบัติที่คั่นหน้า"
+
+#~ msgid "&Update"
+#~ msgstr "&อัปเดต"
+
+#~ msgid "Name:"
+#~ msgstr "ชื่อ:"
+
+#~ msgid "Location:"
+#~ msgstr "ตำแหน่ง:"
+
+#, fuzzy
+#~| msgid "Add Bookmark"
+#~ msgctxt "@title:window"
+#~ msgid "Add Bookmark"
+#~ msgstr "เพิ่มคั่นหน้า"
+
+#~ msgid "Cannot find parent item %1 in the tree. Internal error."
+#~ msgstr "ไม่สามารถค้นพบรายการแม่ %1 ในมุมมองต้นไม้ เกิดความผิดพลาดภายใน"
+
+#~ msgid "&Create New Folder..."
+#~ msgstr "ส&ร้างโฟลเดอร์ใหม่..."
+
+#~ msgid "Move to Trash"
+#~ msgstr "ทิ้งลงถังขยะ"
+
+#~ msgid "Rename"
+#~ msgstr "เปลี่ยนชื่อ"
+
+#~ msgid "Delete Link"
+#~ msgstr "ลบจุดเชื่อมโยง"
+
+#~ msgid "New Folder"
+#~ msgstr "โฟลเดอร์ใหม่"
+
+#, fuzzy
+#~| msgid "Create New Folder"
+#~ msgctxt "@title:window"
+#~ msgid "Create New Folder"
+#~ msgstr "สร้างโฟลเดอร์ใหม่"
+
+#~ msgid "Enter folder name:"
+#~ msgstr "ป้อนชื่อโฟลเดอร์:"
+
+#~ msgctxt "@label"
+#~ msgid "Name:"
+#~ msgstr "ชื่อ:"
+
+#~ msgctxt "@label"
+#~ msgid "Path or URL:"
+#~ msgstr "พาธหรือที่อยู่ URL:"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add folder sidebar module"
+#~ msgstr "เพิ่มมอดูลแถบข้างโฟลเดอร์"
+
+#~ msgid "&Open Link"
+#~ msgstr "เ&ปิดจุดเชื่อมโยง"
+
+#~ msgid "Set &Automatic Reload"
+#~ msgstr "ตั้งค่าการอ่านใหม่&อัตโนมัติ"
+
+#, fuzzy
+#~| msgid "Set Refresh Timeout (0 disables)"
+#~ msgctxt "@title:window"
+#~ msgid "Set Refresh Timeout (0 disables)"
+#~ msgstr "ตั้งค่าการหมดเวลาอ่านใหม่ (ยกเว้น 0)"
+
+#, fuzzy
+#~| msgid "Minute"
+#~| msgid_plural "Minutes"
+#~ msgid " minute"
+#~ msgid_plural " minutes"
+#~ msgstr[0] "นาที"
+
+#, fuzzy
+#~| msgid " sec"
+#~ msgid " second"
+#~ msgid_plural " seconds"
+#~ msgstr[0] " วินาที"
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Web Sidebar Module"
+#~ msgstr "มอดูลแถบข้างเว็บ"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add web sidebar module"
+#~ msgstr "เพิ่มมอดูลแถบข้างเว็บ"
+
+#~ msgid "&Use index.html"
+#~ msgstr "ใ&ช้แฟ้ม index.html"
+
+#~ msgid "If present, open index.html when entering a folder."
+#~ msgstr "จะมีการเปิดแฟ้ม index.html (ถ้ามี) เมื่อเข้าไปในโฟลเดอร์"
+
+#~ msgid ""
+#~ "<em>Tuning Tip:</em> If you want the Konqueror web browser to start "
+#~ "faster, you can turn off this information screen by clicking <a href="
+#~ "\"%1\">here</a>. You can re-enable it by choosing the Help -> Konqueror "
+#~ "Introduction menu option, and then pressing Settings -> Save View Profile "
+#~ "As... -> \"Web Browsing\"."
+#~ msgstr ""
+#~ "<em>เคล็ดลับการปรับแต่ง:</em> คุณสามารถปิดหน้าจอแสดงข้อมูลนี้ได้ หากต้องการให้ "
+#~ "Konqueror เริ่มการทำงานได้อย่างรวดเร็วขึ้น โดยการ<a href=\"%1\">คลิกที่นี่</a> "
+#~ "และคุณสามารถจะกลับมาเปิดใช้มันได้อีกเช่นเดียวกัน โดยเลือกที่เมนู 'ช่วยเหลือ' -> ตัวเลือกเมนู "
+#~ "'แนะนำ Konqueror ' เมื่อแสดงหน้าแนะนำ Konqueror เรียบร้อยแล้ว ให้เลือกเมนู 'ตั้งค่า' -"
+#~ ">บันทึกโพรไฟล์มุมมอง \"การท่องเว็บ\""
+
+#~ msgid ""
+#~ "Do you want to disable showing the introduction in the webbrowsing "
+#~ "profile?"
+#~ msgstr ""
+#~ "คุณต้องการให้ปิดไม่ให้แสดงหน้าแนะนำ Konqueror  ในโพรไฟล์การท่องเว็บ จริงหรือไม่ ?"
+
+#, fuzzy
+#~| msgid "Faster Startup?"
+#~ msgctxt "@title:window"
+#~ msgid "Faster Startup?"
+#~ msgstr "ต้องการให้เริ่มทำงานแบบรวดเร็วหรือไม่ ?"
+
+#~ msgid "Disable"
+#~ msgstr "ปิดการใช้งาน"
+
+#~ msgid "Keep"
+#~ msgstr "คงไว้"
+
+#~ msgid "Profile to open"
+#~ msgstr "โพรไฟล์ที่จะเปิด"
+
+#~ msgid "List available profiles"
+#~ msgstr "รายการโพรไฟล์ที่มีอยู่"
+
+#~ msgid "&Save View Profile As..."
+#~ msgstr "&บันทึกโพรไฟล์มุมมองเป็น..."
+
+#~ msgid "C&onfigure View Profiles..."
+#~ msgstr "ป&รับแต่งโพรไฟล์มุมมอง..."
+
+#~ msgid "Load &View Profile"
+#~ msgstr "โหลดโพรไฟล์&มุมมอง"
+
+#, fuzzy
+#~| msgid "Profile Management"
+#~ msgctxt "@title:window"
+#~ msgid "Profile Management"
+#~ msgstr "การจัดการโพรไฟล์"
+
+#~ msgid "&Rename Profile"
+#~ msgstr "เปลี่&ยนชื่อโพรไฟล์"
+
+#~ msgid "&Delete Profile"
+#~ msgstr "&ลบโพรไฟล์"
+
+#~ msgid "&Profile name:"
+#~ msgstr "ชื่อโ&พรไฟล์:"
+
+#~ msgid "Save &URLs in profile"
+#~ msgstr "บันทึกที่อยู่ &URL ไว้ในโพรไฟล์"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window.\n"
+#~ "Loading a view profile will close them."
+#~ msgstr ""
+#~ "คุณได้เปิดแท็บไว้หลายแท็บบนหน้าต่างนี้\n"
+#~ "การเรียกใช้โพรไฟล์มุมมองจะเป็นการปิดแท็บ"
+
+#~ msgid "Load View Profile"
+#~ msgstr "เรียกใช้โพรไฟล์มุมมอง"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Loading a profile will discard these changes."
+#~ msgstr ""
+#~ "แท็บนี้มีส่วนเปลี่ยนแปลงที่ยังไม่ได้ส่งข้อมูล\n"
+#~ "การเรียกใช้โพรไฟล์จะเป็นการยกเลิกการเปลี่ยนแปลงที่มี"
+
+#~ msgid " day"
+#~ msgid_plural " days"
+#~ msgstr[0] " วัน"
+
+#~ msgid " min"
+#~ msgstr " นาที"
+
+#~ msgid "Input Required:"
+#~ msgstr "ต้องการการนำเข้า:"
+
+#~ msgid "&Execute Shell Command..."
+#~ msgstr "ประมวลผลคำสั่งเชลล์..."
+
+#~ msgid ""
+#~ "KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a "
+#~ "bug."
+#~ msgstr ""
+#~ "KShellCmdPlugin::slotExecuteShellCommand: โปรแกรมผิดพลาด โปรดรายงานบั๊ก"
+
+#~ msgid "Executing shell commands works only on local directories."
+#~ msgstr "ประมวลผลคำสั่งเชลล์ให้ทำงานเฉพาะกับไดเร็กทอรีภายในเท่านั้น"
+
+#~ msgid "Execute Shell Command"
+#~ msgstr "ประมวลผลคำสั่งเชลล์..."
+
+#~ msgid "Execute shell command in current directory:"
+#~ msgstr "ประมวลผลคำสั่งเชลล์ในไดเร็กทอรีปัจจุบัน:"
+
+#~ msgid "Output from command: \"%1\""
+#~ msgstr "ผลลัพธ์จากคำสั่ง: \"%1\""
+
+#~ msgid "Hide %1"
+#~ msgstr "ซ่อน %1"
+
+#~ msgid "SideBar Test Plugin"
+#~ msgstr "ส่วนเสริมทดสอบแถบข้าง"
+
+#~ msgid "Bookmark This Location"
+#~ msgstr "คั่นหน้าตำแหน่งนี้"
+
+#~ msgid ""
+#~ "Protocol not supported\n"
+#~ "%1"
+#~ msgstr ""
+#~ "ยังไม่รองรับโพรโทคอล\n"
+#~ " %1"
+
+#~ msgid "Cannot create the find part, check your installation."
+#~ msgstr "ไม่สามารถสร้างส่วนการค้นหา โปรดตรวจสอบการติดตั้งของคุณ"
+
+#~ msgid "My Bookmarks"
+#~ msgstr "คั่นหน้าของฉัน"
+
+#~ msgid "Preload for later use"
+#~ msgstr "โหลดไว้ล่วงหน้าเพื่อใช้ในภายหลัง"
+
+#~ msgid "&Save View Profile \"%1\"..."
+#~ msgstr "บั&นทึกโพรไฟล์มุมมอง \"%1\"..."
+
+#~ msgid "Configure Navigation Panel"
+#~ msgstr "ปรับแต่งแถบการนำทาง"
+
+#~ msgid "Close Navigation Panel"
+#~ msgstr "ปิดพาเนลการนำทาง"
+
+#~ msgid "Select Type"
+#~ msgstr "เลือกประเภท"
+
+#~ msgid "Select type:"
+#~ msgstr "เลือกประเภท:"
+
+#~ msgid "Web SideBar Plugin"
+#~ msgstr "โปรแกรมเสริมแถบบาร์ด้านข้างเว็บ"
+
+#~ msgid "<qt><b>%1</b> does not exist</qt>"
+#~ msgstr "<qt>ยังไม่มี <b>%1</b> อยู่</qt>"
+
+#~ msgid "Minutes"
+#~ msgstr "นาที"
+
+#~ msgid "Days"
+#~ msgstr "วัน"
+
+#~ msgid "Your sidebar is not functional or unavailable."
+#~ msgstr "แถบด้านข้างของคุณยังไม่มีอยู่หรือไม่สามารถทำงานได้"
+
+#~ msgid "Cannot find running history plugin in your sidebar."
+#~ msgstr "ไม่พบโปรแกรมเสริมประวัติการใช้งานในแถบด้านข้างของคุณ"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History in Sidebar"
+#~ msgstr "แสดงประวัติการใช้ในถาดข้าง"
+
+#~ msgid "Select Remote Charset"
+#~ msgstr "เลือกรหัสภาษาของเครื่องปลายทาง"
+
+#~ msgid "Reload"
+#~ msgstr "โหลดใหม่"
+
+#~ msgid "Default"
+#~ msgstr "ค่าปริยาย"
+
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename"
+#~ msgstr "เปลี่ยนชื่อ"
+
+#~ msgid ""
+#~ "Konqueror is your file manager, web browser and universal document viewer."
+#~ msgstr ""
+#~ "Konqueror คือโปรแกรมจัดการแฟ้ม, โปรแกรมท่องเว็บ และแสดงผลเอกสารรูปแบบต่าง ๆ "
+#~ "สำหรับคุณ"
+
+#~ msgid "Joseph WENNINGER"
+#~ msgstr "Joseph WENNINGER"
+
+#~ msgid "G E N E R A L"
+#~ msgstr "ทั่ ว ไ ป"
+
+#~ msgid "<img width='16' height='16' src=\"%1\"></img>"
+#~ msgstr "<img width='16' height='16' src=\"%1\"></img>"
+
+#~ msgid "Applications"
+#~ msgstr "โปรแกรม"
+
+#~ msgid "Installed programs"
+#~ msgstr "รายการโปรแกรมที่ได้ติดตั้งไว้แล้ว"
+
+#~ msgid "&Location"
+#~ msgstr "ตำแหน่ง"
+
+#~ msgid "Konqueror mode: FileManager or WebBrowser"
+#~ msgstr "โหมดของ Konqueror: ตัวจัดการแฟ้มหรือเว็บเบราว์เซอร์"
+
+#~ msgid "Open &Terminal"
+#~ msgstr "เปิดเทอร์มินัล"
+
+#~ msgid "Unknown"
+#~ msgstr "ไม่รู้จัก"
+
+#~ msgid "Save &window size in profile"
+#~ msgstr "บันทึกขนาดของหน้าต่างในโพรไฟล์"
+
+#~ msgid "&Speak Text"
+#~ msgstr "&ออกเสียงข้อความ"
+
+#~ msgid "You cannot read anything except web pages with this plugin, sorry."
+#~ msgstr "ขออภัย ด้วยปลั๊กอินนี้ คุณจะไม่สามารถอ่านอะไรอื่น ๆ ได้นอกจากหน้าเว็บ"
+
+#~ msgid "Cannot Read source"
+#~ msgstr "ไม่สามารถอ่านจากแหล่งได้"
+
+#~ msgid "Starting KTTSD Failed"
+#~ msgstr "การเริ่มงาน KTTSD ล้มเหลว"
+
+#~ msgid "The D-Bus call say() failed."
+#~ msgstr "การเรียก say() ของ D-Bus ล้มเหลว"
+
+#~ msgid "D-Bus Call Failed"
+#~ msgstr "การเรียก D-Bus ล้มเหลว"
+
+#~ msgid "Speech Toolbar"
+#~ msgstr "แถบเครื่องมือออกเสียง"

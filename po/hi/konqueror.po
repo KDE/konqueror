@@ -1,0 +1,4366 @@
+# translation of konqueror.po to Hindi
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Ravishankar Shrivastava <raviratlami@yahoo.com>, 2007.
+# Raghavendra Kamath <raghu@raghukamath.com>, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-22 00:44+0000\n"
+"PO-Revision-Date: 2021-08-21 16:25+0530\n"
+"Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
+"Language-Team: kde-hindi\n"
+"Language: hi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Lokalize 21.08.0\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "रविशंकर श्रीवास्तव, जी. करूणाकर"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "raviratlami@aol.in,"
+
+#: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4881
+#: src/konqmainwindow.cpp:4927
+#, fuzzy, kde-format
+#| msgctxt "NAME OF TRANSLATORS"
+#| msgid "Your names"
+msgid "no name"
+msgstr "रविशंकर श्रीवास्तव, जी. करूणाकर"
+
+#: src/konqextensionmanager.cpp:50
+#, fuzzy, kde-format
+#| msgid "Configure Extensions..."
+msgctxt "@title:window"
+msgid "Configure Extensions"
+msgstr "एक्सटेंशन्स कॉन्फ़िगर करें..."
+
+#: src/konqextensionmanager.cpp:70
+#, kde-format
+msgid "Extensions"
+msgstr "एक्सटेंशन्स"
+
+#: src/konqfactory.cpp:67
+#, kde-format
+msgid ""
+"There was an error loading the module %1.\n"
+"The diagnostics is:\n"
+"%2"
+msgstr ""
+"मॉड्यूल लोड करने में त्रुटि हुई %1.\n"
+"निदान है:\n"
+"%2"
+
+#: src/konqframestatusbar.cpp:108
+#, kde-format
+msgid ""
+"Checking this box on at least two views sets those views as 'linked'. Then, "
+"when you change directories in one view, the other views linked with it will "
+"automatically update to show the current directory. This is especially "
+"useful with different types of views, such as a directory tree with an icon "
+"view or detailed view, and possibly a terminal emulator window."
+msgstr ""
+
+#: src/konqframestatusbar.cpp:154
+#, kde-format
+msgid "Close View"
+msgstr "दृश्य बन्द करें"
+
+#: src/konqframestatusbar.cpp:232
+#, kde-format
+msgid "%1/s"
+msgstr "%1/s"
+
+#: src/konqframestatusbar.cpp:234
+#, kde-format
+msgid "Stalled"
+msgstr "रुका हुआ"
+
+#: src/konqguiclients.cpp:51
+#, fuzzy, kde-format
+#| msgid "Preview in %1"
+msgid "Preview &in %1"
+msgstr "%1 में पूर्वावलोकन "
+
+#: src/konqguiclients.cpp:118
+#, kde-format
+msgid "Show %1"
+msgstr "%1 दिखाएँ"
+
+#: src/konqhistorydialog.cpp:39
+#, fuzzy, kde-format
+#| msgid "History"
+msgctxt "@title:window"
+msgid "History"
+msgstr "इतिहास "
+
+#: src/konqhistorydialog.cpp:55 src/konqhistoryview.cpp:140
+#, fuzzy, kde-format
+#| msgid "Sort"
+msgctxt "@action:inmenu Parent of 'By Name' and 'By Date'"
+msgid "Sort"
+msgstr "छाँटें"
+
+#: src/konqhistorymodel.cpp:119
+#, kde-format
+msgid ""
+"<qt><center><b>%1</b></center><hr />Last visited: %2<br />First visited: "
+"%3<br />Number of times visited: %4</qt>"
+msgstr ""
+"<qt><center><b>%1</b></center><hr />अंतिम बार देखा गया: %2<br />पहली बार देखा "
+"गया: %3<br />इतनी बार देखा गया: %4</qt>"
+
+#: src/konqhistorymodel.cpp:213
+#, kde-format
+msgid "Local"
+msgstr ""
+
+#: src/konqhistorymodel.cpp:216
+#, kde-format
+msgid "Miscellaneous"
+msgstr "विविध"
+
+#: src/konqhistoryview.cpp:53 src/konqmainwindow.cpp:4412
+#, kde-format
+msgid "Open in New &Window"
+msgstr "नए विंडो में खोलें (&W)"
+
+#: src/konqhistoryview.cpp:58
+#, kde-format
+msgid "Open in New Tab"
+msgstr "नए टैब में खोलें"
+
+#: src/konqhistoryview.cpp:63
+#, fuzzy, kde-format
+#| msgid "Open in New Tab"
+msgid "Open in Current Tab"
+msgstr "नए टैब में खोलें"
+
+#: src/konqhistoryview.cpp:67
+#, fuzzy, kde-format
+#| msgid "Copy Link Address"
+msgid "&Copy Link Address"
+msgstr "लिंक पता नक़ल करें"
+
+#: src/konqhistoryview.cpp:72
+#, kde-format
+msgid "&Remove Entry"
+msgstr "प्रविष्टि हटाएँ (&R)"
+
+#: src/konqhistoryview.cpp:79
+#, kde-format
+msgid "C&lear History"
+msgstr "इतिहास मिटाएँ (&l)"
+
+#: src/konqhistoryview.cpp:84
+#, kde-format
+msgid "&Preferences..."
+msgstr "प्राथमिकताएं...(&P)"
+
+#: src/konqhistoryview.cpp:91
+#, kde-format
+msgid "By &Name"
+msgstr "नाम द्वारा (&N)"
+
+#: src/konqhistoryview.cpp:97
+#, kde-format
+msgid "By &Date"
+msgstr "तारीख़ द्वारा (&D)"
+
+#: src/konqhistoryview.cpp:107
+#, fuzzy, kde-format
+#| msgid "Clear History"
+msgid "Search in history"
+msgstr "इतिहास साफ करें"
+
+#: src/konqhistoryview.cpp:168
+#, kde-format
+msgid "Do you really want to clear the entire history?"
+msgstr "क्या आप समग्र इतिहास साफ करना चाहते हैं ?"
+
+#: src/konqhistoryview.cpp:169
+#, fuzzy, kde-format
+#| msgid "Clear History?"
+msgctxt "@title:window"
+msgid "Clear History?"
+msgstr "इतिहास मिटाएँ ?"
+
+#: src/konqmain.cpp:170
+#, kde-format
+msgid "Konqueror"
+msgstr "कॉन्करर"
+
+#: src/konqmain.cpp:171
+#, kde-format
+msgid "Web browser, file manager and document viewer."
+msgstr "वेब ब्राउज़र, फ़ाइल प्रबंधक तथा दस्तावेज़ प्रदर्शक"
+
+#: src/konqmain.cpp:173
+#, fuzzy, kde-format
+#| msgid "(C) 1999-2007, The Konqueror developers"
+msgid "(C) 1999-2016, The Konqueror developers"
+msgstr "(C) 1999-2007, कॉन्करर विकासकर्ता"
+
+#: src/konqmain.cpp:176
+#, kde-format
+msgid "Stefano Crocco"
+msgstr ""
+
+#: src/konqmain.cpp:176
+#, kde-format
+msgid "Current maintainer"
+msgstr ""
+
+#: src/konqmain.cpp:177
+#, kde-format
+msgid "David Faure"
+msgstr "डेविड फॉउरे"
+
+#: src/konqmain.cpp:177
+#, fuzzy, kde-format
+#| msgid "Developer (framework, parts, JavaScript, I/O library) and maintainer"
+msgid ""
+"Developer (framework, parts, JavaScript, I/O library) and former maintainer"
+msgstr "विकासकर्ता (फ्रेमवर्क, भाग, जावास्क्रिप्ट, आई/ओ लाइब्रेरी) तथा मेंटेनर"
+
+#: src/konqmain.cpp:178
+#, kde-format
+msgid "Simon Hausmann"
+msgstr "साइमन हाउसमेन"
+
+#: src/konqmain.cpp:178
+#, kde-format
+msgid "Developer (framework, parts)"
+msgstr "विकासकर्ता (फ्रेमवर्क, भाग)"
+
+#: src/konqmain.cpp:179
+#, kde-format
+msgid "Michael Reiher"
+msgstr "माइकल रेहर"
+
+#: src/konqmain.cpp:179 src/konqmain.cpp:207 src/konqmain.cpp:213
+#, kde-format
+msgid "Developer (framework)"
+msgstr "विकासकर्ता (फ्रेमवर्क)"
+
+#: src/konqmain.cpp:180
+#, kde-format
+msgid "Matthias Welk"
+msgstr "मैथियास वेल्क"
+
+#: src/konqmain.cpp:180
+#, kde-format
+msgid "Developer"
+msgstr "विकासकर्ता"
+
+#: src/konqmain.cpp:181
+#, kde-format
+msgid "Alexander Neundorf"
+msgstr "अलेक्ज़ेंडर न्यून्दॉर्फ"
+
+#: src/konqmain.cpp:181
+#, kde-format
+msgid "Developer (List views)"
+msgstr "विकासकर्ता (सूची दृश्य)"
+
+#: src/konqmain.cpp:182
+#, kde-format
+msgid "Michael Brade"
+msgstr "माइकल ब्रेद"
+
+#: src/konqmain.cpp:182
+#, kde-format
+msgid "Developer (List views, I/O library)"
+msgstr "विकासकर्ता (सूची दृश्य, आई/ओ लाइब्रेरी)"
+
+#: src/konqmain.cpp:183
+#, kde-format
+msgid "Lars Knoll"
+msgstr "लार्स क्नोल"
+
+#: src/konqmain.cpp:183 src/konqmain.cpp:184 src/konqmain.cpp:185
+#: src/konqmain.cpp:187 src/konqmain.cpp:188 src/konqmain.cpp:190
+#: src/konqmain.cpp:191 src/konqmain.cpp:192 src/konqmain.cpp:193
+#: src/konqmain.cpp:195
+#, kde-format
+msgid "Developer (HTML rendering engine)"
+msgstr "विकासकर्ता (एचटीएमएल रेंडरिंग इंजिन)"
+
+#: src/konqmain.cpp:184
+#, kde-format
+msgid "Dirk Mueller"
+msgstr "डिर्क मुलर"
+
+#: src/konqmain.cpp:185
+#, kde-format
+msgid "Peter Kelly"
+msgstr "पीटर केली"
+
+#: src/konqmain.cpp:186
+#, kde-format
+msgid "Waldo Bastian"
+msgstr "वाल्दो बास्तियान"
+
+#: src/konqmain.cpp:186
+#, kde-format
+msgid "Developer (HTML rendering engine, I/O library)"
+msgstr "विकासकर्ता (एचटीएमएल रेंडरिंग इंजिन, आई/ओ लाइब्रेरी)"
+
+#: src/konqmain.cpp:187
+#, kde-format
+msgid "Germain Garand"
+msgstr "जरमैन जेरांद"
+
+#: src/konqmain.cpp:188
+#, kde-format
+msgid "Leo Savernik"
+msgstr "लिओ सावरनिक"
+
+#: src/konqmain.cpp:189
+#, kde-format
+msgid "Stephan Kulow"
+msgstr "स्टीफन कुलोव"
+
+#: src/konqmain.cpp:189
+#, kde-format
+msgid ""
+"Developer (HTML rendering engine, I/O library, regression test framework)"
+msgstr "विकासकर्ता (एचटीएमएल रेंडरिंग इंजिन, आई/ओ लाइब्रेरी, रीग्रेसन जांच फ्रेमवर्क)"
+
+#: src/konqmain.cpp:190
+#, kde-format
+msgid "Antti Koivisto"
+msgstr "एन्टी कोईविस्तो"
+
+#: src/konqmain.cpp:191
+#, kde-format
+msgid "Zack Rusin"
+msgstr "जेक रुसिन"
+
+#: src/konqmain.cpp:192
+#, kde-format
+msgid "Tobias Anton"
+msgstr "टोबियास एन्टोन"
+
+#: src/konqmain.cpp:193
+#, kde-format
+msgid "Lubos Lunak"
+msgstr "लुबॉस लुनाक"
+
+#: src/konqmain.cpp:194
+#, kde-format
+msgid "Maks Orlovich"
+msgstr ""
+
+#: src/konqmain.cpp:194 src/konqmain.cpp:196
+#, kde-format
+msgid "Developer (HTML rendering engine, JavaScript)"
+msgstr "विकासकर्ता (एचटीएमएल रेंडरिंग इंजिन, जावास्क्रिप्ट)"
+
+#: src/konqmain.cpp:195
+#, kde-format
+msgid "Allan Sandfeld Jensen"
+msgstr "एलन सैंडफ़ील्ड जेनसन"
+
+#: src/konqmain.cpp:196
+#, kde-format
+msgid "Apple Safari Developers"
+msgstr "एपल सफारी विकासकर्ता"
+
+#: src/konqmain.cpp:197
+#, kde-format
+msgid "Harri Porten"
+msgstr "हैरी पोर्तेन"
+
+#: src/konqmain.cpp:197
+#, kde-format
+msgid "Developer (JavaScript)"
+msgstr "विकासकर्ता (जावास्क्रिप्ट)"
+
+#: src/konqmain.cpp:198
+#, kde-format
+msgid "Koos Vriezen"
+msgstr "कूस व्रिजेन"
+
+#: src/konqmain.cpp:198
+#, kde-format
+msgid "Developer (Java applets and other embedded objects)"
+msgstr "विकासकर्ता (जावा ऐप्लेट तथा अन्य अंतर्निर्मित वस्तुएँ)"
+
+#: src/konqmain.cpp:199
+#, kde-format
+msgid "Matt Koss"
+msgstr "मैट कॉस"
+
+#: src/konqmain.cpp:199 src/konqmain.cpp:200
+#, kde-format
+msgid "Developer (I/O library)"
+msgstr "विकासकर्ता (आई/ओ लाइब्रेरी)"
+
+#: src/konqmain.cpp:200
+#, kde-format
+msgid "Alex Zepeda"
+msgstr "एलेक्स जेपेदा"
+
+#: src/konqmain.cpp:201
+#, kde-format
+msgid "Richard Moore"
+msgstr "रिचर्ड मूर"
+
+#: src/konqmain.cpp:201 src/konqmain.cpp:202
+#, kde-format
+msgid "Developer (Java applet support)"
+msgstr "विकासकर्ता (जावा ऐप्लेट समर्थन)"
+
+#: src/konqmain.cpp:202
+#, kde-format
+msgid "Dima Rogozin"
+msgstr "दिमा रोगोजिन"
+
+#: src/konqmain.cpp:203
+#, kde-format
+msgid "Wynn Wilkes"
+msgstr "वाएन विल्किस"
+
+#: src/konqmain.cpp:203
+#, kde-format
+msgid ""
+"Developer (Java 2 security manager support,\n"
+" and other major improvements to applet support)"
+msgstr ""
+"विकासकर्ता (जावा२ सुरक्षा प्रबंधन समर्थन,\n"
+" तथा अन्य प्रमुख सुधार व ऐप्लेट समर्थन)"
+
+#: src/konqmain.cpp:204
+#, kde-format
+msgid "Stefan Schimanski"
+msgstr "स्टीफन शिमांस्की"
+
+#: src/konqmain.cpp:204
+#, kde-format
+msgid "Developer (Netscape plugin support)"
+msgstr "विकासकर्ता (नेटस्केप प्लगइन समर्थन)"
+
+#: src/konqmain.cpp:205
+#, kde-format
+msgid "George Staikos"
+msgstr "जॉर्ज स्टायकॉस"
+
+#: src/konqmain.cpp:205
+#, kde-format
+msgid "Developer (SSL, Netscape plugins)"
+msgstr "विकासकर्ता ( एसएसएल, नेटस्केप प्लगइन्स)"
+
+#: src/konqmain.cpp:206
+#, kde-format
+msgid "Dawit Alemayehu"
+msgstr "दावित अलेमायेहू"
+
+#: src/konqmain.cpp:206
+#, kde-format
+msgid "Developer (I/O library, Authentication support)"
+msgstr "डेवलपर ()"
+
+#: src/konqmain.cpp:207
+#, kde-format
+msgid "Carsten Pfeiffer"
+msgstr "कार्स्टेन फेइफर"
+
+#: src/konqmain.cpp:208
+#, kde-format
+msgid "Torsten Rahn"
+msgstr "तॉर्स्तेन रान"
+
+#: src/konqmain.cpp:208
+#, kde-format
+msgid "Graphics/icons"
+msgstr "ग्राफिक्स / प्रतीक"
+
+#: src/konqmain.cpp:209
+#, kde-format
+msgid "Torben Weis"
+msgstr "टॉरबेन वेइस"
+
+#: src/konqmain.cpp:209
+#, kde-format
+msgid "KFM author"
+msgstr "केएफएम लेखक"
+
+#: src/konqmain.cpp:210
+#, kde-format
+msgid "Joseph Wenninger"
+msgstr "जोसफ़ वेननिंगर"
+
+#: src/konqmain.cpp:210
+#, kde-format
+msgid "Developer (navigation panel framework)"
+msgstr "विकासकर्ता (नेविगेशन फलक फ्रेमवर्क)"
+
+#: src/konqmain.cpp:211
+#, kde-format
+msgid "Stephan Binner"
+msgstr "स्टीफन बिनर"
+
+#: src/konqmain.cpp:211
+#, kde-format
+msgid "Developer (misc stuff)"
+msgstr "विकासकर्ता (विविध सामग्री)"
+
+#: src/konqmain.cpp:212
+#, kde-format
+msgid "Ivor Hewitt"
+msgstr "आइवर हेविट"
+
+#: src/konqmain.cpp:212
+#, kde-format
+msgid "Developer (AdBlock filter)"
+msgstr "विकासकर्ता (एडब्लॉक फ़िल्टर)"
+
+#: src/konqmain.cpp:213
+#, kde-format
+msgid "Eduardo Robles Elvira"
+msgstr ""
+
+#: src/konqmain.cpp:223
+#, fuzzy, kde-format
+#| msgid "Start without a default window"
+msgid "Start without a default window, when called without URLs"
+msgstr "डिफ़ॉल्ट विंडो के बगैर प्रारंभ करें"
+
+#: src/konqmain.cpp:224
+#, kde-format
+msgid ""
+"Preload for later use. This mode does not support URLs on the command line"
+msgstr ""
+
+#: src/konqmain.cpp:225
+#, kde-format
+msgid "Profile to open (DEPRECATED, IGNORED)"
+msgstr ""
+
+#: src/konqmain.cpp:225
+#, kde-format
+msgid "profile"
+msgstr ""
+
+#: src/konqmain.cpp:226
+#, fuzzy, kde-format
+#| msgid "List available profiles"
+msgid "List available sessions"
+msgstr "उपलब्ध प्रोफ़ाइल सूचीबद्ध करें"
+
+#: src/konqmain.cpp:227
+#, fuzzy, kde-format
+#| msgid "Location to open"
+msgid "Session to open"
+msgstr "स्थान जिसे खोलना है"
+
+#: src/konqmain.cpp:227
+#, fuzzy, kde-format
+#| msgid "Extensions"
+msgid "session"
+msgstr "एक्सटेंशन्स"
+
+#: src/konqmain.cpp:228
+#, kde-format
+msgid "Mimetype to use for this URL (e.g. text/html or inode/directory)"
+msgstr "इस यूआरएल में उपयोग के लिए माइम क़िस्म, (जैसे text/html या inode/directory)"
+
+#: src/konqmain.cpp:228
+#, kde-format
+msgid "mimetype"
+msgstr ""
+
+#: src/konqmain.cpp:229
+#, kde-format
+msgid "Part to use (e.g. khtml or kwebkitpart)"
+msgstr ""
+
+#: src/konqmain.cpp:229
+#, fuzzy, kde-format
+#| msgid "Add Service"
+msgid "service"
+msgstr "जोड़ें सेवाएँ"
+
+#: src/konqmain.cpp:230
+#, kde-format
+msgid ""
+"For URLs that point to files, opens the directory and selects the file, "
+"instead of opening the actual file"
+msgstr ""
+"उन यूआरएल के लिए जो फ़ाइलों के लिए इंगित करते हैं, डिरेक्ट्री खोलते हैं तथा फ़ाइल चुनते हैं, "
+"बजाए वास्तविक फ़ाइल को खोलने के."
+
+#: src/konqmain.cpp:231
+#, kde-format
+msgid "The files/URLs opened by the application will be deleted after use"
+msgstr ""
+
+#: src/konqmain.cpp:233
+#, kde-format
+msgid "Location to open"
+msgstr "स्थान जिसे खोलना है"
+
+#: src/konqmainwindow.cpp:658
+#, kde-format
+msgctxt "@title:tab"
+msgid "Loading..."
+msgstr ""
+
+#: src/konqmainwindow.cpp:690
+#, kde-format
+msgid "Access denied"
+msgstr ""
+
+#: src/konqmainwindow.cpp:1465
+#, fuzzy, kde-format
+#| msgid "&Open File..."
+msgid "Open File"
+msgstr "फ़ाइल खोलें... (&O)"
+
+#: src/konqmainwindow.cpp:1548
+#, kde-format
+msgid "Canceled."
+msgstr "रद्द"
+
+#: src/konqmainwindow.cpp:1584
+#, kde-format
+msgid ""
+"This page contains changes that have not been submitted.\n"
+"Reloading the page will discard these changes."
+msgstr ""
+"इस पृष्ठ में वे परिवर्तन हैं जो जमा नहीं किए गए हैं.\n"
+"पृष्ठ को फिर से लोड करने से ये परिवर्तन मिट जाएँगे."
+
+#: src/konqmainwindow.cpp:1585 src/konqmainwindow.cpp:2282
+#: src/konqmainwindow.cpp:2375 src/konqmainwindow.cpp:2407
+#: src/konqmainwindow.cpp:2450 src/konqmainwindow.cpp:2472
+#: src/konqmainwindow.cpp:4849
+#, fuzzy, kde-format
+#| msgid "Discard Changes?"
+msgctxt "@title:window"
+msgid "Discard Changes?"
+msgstr "परिवर्तनों को फेंक दें?"
+
+#: src/konqmainwindow.cpp:1585 src/konqmainwindow.cpp:2282
+#: src/konqmainwindow.cpp:2375 src/konqmainwindow.cpp:2407
+#: src/konqmainwindow.cpp:2450 src/konqmainwindow.cpp:2473
+#: src/konqmainwindow.cpp:4849
+#, kde-format
+msgid "&Discard Changes"
+msgstr "परिवर्तनों को फेंक दें (&D)"
+
+#: src/konqmainwindow.cpp:1952 src/konqmainwindow.cpp:1958
+#, kde-format
+msgid "Home Folder"
+msgstr "होम फ़ोल्डर"
+
+#: src/konqmainwindow.cpp:1953 src/konqmainwindow.cpp:3424
+#, fuzzy, kde-format
+#| msgid "Home"
+msgid "Home"
+msgstr "घर"
+
+#: src/konqmainwindow.cpp:1959
+#, fuzzy, kde-format
+#| msgid "Navigate to your 'Home Location'"
+msgid "Navigate to your 'Home Folder'"
+msgstr "आपके 'घर स्थान' पर नेविगेट करें"
+
+#: src/konqmainwindow.cpp:1960
+#, fuzzy, kde-format
+#| msgid "Navigate to your 'Home Location'"
+msgid "Navigate to your local 'Home Folder'"
+msgstr "आपके 'घर स्थान' पर नेविगेट करें"
+
+#. i18n: ectx: label, entry, group (UserSettings)
+#: src/konqmainwindow.cpp:1963 src/konqueror.kcfg:16
+#, fuzzy, kde-format
+#| msgid "Home"
+msgid "Home Page"
+msgstr "घर"
+
+#: src/konqmainwindow.cpp:1965
+#, fuzzy, kde-format
+#| msgid "Navigate to your 'Home Location'"
+msgid "Navigate to your 'Home Page'"
+msgstr "आपके 'घर स्थान' पर नेविगेट करें"
+
+#: src/konqmainwindow.cpp:1966
+#, kde-format
+msgid ""
+"<html>Navigate to your 'Home Page'<br /><br />You can configure the location "
+"where this button takes you under <b>Settings -> Configure Konqueror -> "
+"General</b>.</html>"
+msgstr ""
+
+#: src/konqmainwindow.cpp:2281
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Detaching the tab will discard these changes."
+msgstr ""
+"इस टैब में वे परिवर्तन हैं जो जमा नहीं किए गए हैं.\n"
+"टैब को अलग करने से ये परिवर्तन मिट जाएँगे."
+
+#: src/konqmainwindow.cpp:2374
+#, kde-format
+msgid ""
+"This view contains changes that have not been submitted.\n"
+"Closing the view will discard these changes."
+msgstr ""
+"इस दृश्य में वे परिवर्तन हैं जो जमा नहीं किए गए हैं.\n"
+"दृश्य को बदलने से ये परिवर्तन मिट जाएँगे."
+
+#: src/konqmainwindow.cpp:2406
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Closing the tab will discard these changes."
+msgstr ""
+"इस टैब में वे परिवर्तन हैं जो जमा नहीं किए गए हैं.\n"
+"टैब को बन्द करने से ये परिवर्तन मिट जाएँगे."
+
+#: src/konqmainwindow.cpp:2432
+#, kde-format
+msgid "Do you really want to close all other tabs?"
+msgstr "क्या आप वाकई अन्य सभी टैब बन्द करना चाहते हैं ?"
+
+#: src/konqmainwindow.cpp:2433 src/konqmainwindow.cpp:3505 src/konqtabs.cpp:335
+#, kde-format
+msgid "Close &Other Tabs"
+msgstr "अन्य टैब बन्द करें (&O)"
+
+#: src/konqmainwindow.cpp:2433
+#, fuzzy, kde-format
+#| msgid "Close Other Tabs Confirmation"
+msgctxt "@title:window"
+msgid "Close Other Tabs Confirmation"
+msgstr "अन्य टैब बन्द करने हेतु पुष्टि"
+
+#: src/konqmainwindow.cpp:2449
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Closing other tabs will discard these changes."
+msgstr ""
+"इस टैब में वे परिवर्तन हैं जो जमा नहीं किए गए हैं.\n"
+"अन्य टैब को बन्द करने से ये परिवर्तन मिट जाएँगे."
+
+#: src/konqmainwindow.cpp:2471
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Reloading all tabs will discard these changes."
+msgstr ""
+"इस टैब में वे परिवर्तन हैं जो जमा नहीं किए गए हैं.\n"
+"टैब को फिर से लोड करने से ये परिवर्तन मिट जाएँगे."
+
+#: src/konqmainwindow.cpp:2513
+#, fuzzy, kde-format
+#| msgid "Enter Target"
+msgctxt "@title:window"
+msgid "Enter Target"
+msgstr "लक्ष्य भरें"
+
+#: src/konqmainwindow.cpp:2520
+#, kde-format
+msgid "<qt><b>%1</b> is not valid</qt>"
+msgstr "<qt><b>%1</b>वैध नहीं है</qt>"
+
+#: src/konqmainwindow.cpp:2530
+#, kde-format
+msgid "Copy selected files from %1 to:"
+msgstr "%1 से चुनी फ़ाइलों की नक़ल यहाँ करें:"
+
+#: src/konqmainwindow.cpp:2543
+#, kde-format
+msgid "Move selected files from %1 to:"
+msgstr "%1 से चुनी गई फ़ाइलें यहाँ खिसकाएँ:"
+
+#: src/konqmainwindow.cpp:2717
+#, fuzzy, kde-format
+#| msgid "Clear History"
+msgctxt "This menu entry empties the closed items history"
+msgid "Empty Closed Items History"
+msgstr "इतिहास साफ करें"
+
+#: src/konqmainwindow.cpp:2740
+#, fuzzy, kde-format
+#| msgid "Set Name..."
+msgid "Save As..."
+msgstr "नाम नियत करें..."
+
+#: src/konqmainwindow.cpp:2742
+#, fuzzy, kde-format
+#| msgid "Chan&ge..."
+msgid "Manage..."
+msgstr "बदलें...(&g)"
+
+#: src/konqmainwindow.cpp:3333
+#, kde-format
+msgid "New &Window"
+msgstr "नया विंडो (&W)"
+
+#: src/konqmainwindow.cpp:3338
+#, kde-format
+msgid "&Duplicate Window"
+msgstr "नक़ल विंडो (&D)"
+
+#: src/konqmainwindow.cpp:3343
+#, kde-format
+msgid "Send &Link Address..."
+msgstr "लिंक पता भेजें... (&L)"
+
+#: src/konqmainwindow.cpp:3347
+#, kde-format
+msgid "S&end File..."
+msgstr "फ़ाइल भेजें....(&e)"
+
+#: src/konqmainwindow.cpp:3351
+#, kde-format
+msgid "&Open Location"
+msgstr "स्थान खोलें (&O)"
+
+#: src/konqmainwindow.cpp:3357
+#, kde-format
+msgid "&Open File..."
+msgstr "फ़ाइल खोलें... (&O)"
+
+#: src/konqmainwindow.cpp:3362
+#, kde-format
+msgid "&Find File..."
+msgstr "फ़ाइल ढूंढें....(&F)"
+
+#: src/konqmainwindow.cpp:3371
+#, kde-format
+msgid "Lock to Current Location"
+msgstr "मौज़ूदा स्थान तालाबंद करें"
+
+#: src/konqmainwindow.cpp:3374
+#, fuzzy, kde-format
+#| msgid "Lin&k View"
+msgctxt "This option links konqueror views"
+msgid "Lin&k View"
+msgstr "कड़ी देखें  (&k)"
+
+#: src/konqmainwindow.cpp:3379
+#, kde-format
+msgid "&Up"
+msgstr "ऊपर (&U)"
+
+#: src/konqmainwindow.cpp:3389
+#, fuzzy, kde-format
+#| msgid "&Close Tab"
+msgid "Closed Items"
+msgstr "टैब बंद करें (&C)"
+
+#: src/konqmainwindow.cpp:3402
+#, fuzzy, kde-format
+#| msgid "Extensions"
+msgid "Sessions"
+msgstr "एक्सटेंशन्स"
+
+#: src/konqmainwindow.cpp:3429
+#, fuzzy, kde-format
+#| msgid "Most Often Visited"
+msgctxt "@action:inmenu Go"
+msgid "Most Often Visited"
+msgstr "बहुधा देखी गई साइटें"
+
+#: src/konqmainwindow.cpp:3433
+#, kde-format
+msgctxt "@action:inmenu Go"
+msgid "Recently Visited"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3442
+#, fuzzy, kde-format
+#| msgid "Show History Sidebar"
+msgctxt "@action:inmenu Go"
+msgid "Show History"
+msgstr "इतिहास बाजूपट्टी दिखाएँ"
+
+#: src/konqmainwindow.cpp:3455
+#, kde-format
+msgid "Configure Extensions..."
+msgstr "एक्सटेंशन्स कॉन्फ़िगर करें..."
+
+#: src/konqmainwindow.cpp:3459
+#, kde-format
+msgid "Configure Spell Checking..."
+msgstr "वर्तनी जांच कॉन्फ़िगर करें..."
+
+#: src/konqmainwindow.cpp:3465
+#, kde-format
+msgid "Split View &Left/Right"
+msgstr "विभाजित दृश्य बायाँ / दायाँ (&L)"
+
+#: src/konqmainwindow.cpp:3470
+#, kde-format
+msgid "Split View &Top/Bottom"
+msgstr "विभाजित दृश्य ऊपर / नीचे (&T)"
+
+#: src/konqmainwindow.cpp:3475 src/konqtabs.cpp:456
+#, kde-format
+msgid "&New Tab"
+msgstr "नया टैब (&N)"
+
+#: src/konqmainwindow.cpp:3484
+#, kde-format
+msgid "&Duplicate Current Tab"
+msgstr "मौज़ूदा टैब की नक़ल बनाएँ (&D)"
+
+#: src/konqmainwindow.cpp:3489
+#, kde-format
+msgid "Detach Current Tab"
+msgstr "मौज़ूदा टैब को अलग करें"
+
+#: src/konqmainwindow.cpp:3494
+#, kde-format
+msgid "&Close Active View"
+msgstr "सक्रिय दृश्य बन्द करें (&C)"
+
+#: src/konqmainwindow.cpp:3499
+#, kde-format
+msgid "Close Current Tab"
+msgstr "मौजूदा टैब बंद करें"
+
+#: src/konqmainwindow.cpp:3509
+#, kde-format
+msgid "Activate Next Tab"
+msgstr "अगला टैब सक्रिय करें"
+
+#: src/konqmainwindow.cpp:3513
+#, kde-format
+msgid "Activate Previous Tab"
+msgstr "पिछला टैब सक्रिय करें"
+
+#: src/konqmainwindow.cpp:3520
+#, kde-format
+msgid "Activate Tab %1"
+msgstr "टैब %1 सक्रिय करें"
+
+#: src/konqmainwindow.cpp:3525
+#, kde-format
+msgid "Move Tab Left"
+msgstr "टैब को बाएँ खिसकाएँ"
+
+#: src/konqmainwindow.cpp:3530
+#, kde-format
+msgid "Move Tab Right"
+msgstr "टैब को दाएँ खिसकाएँ"
+
+#: src/konqmainwindow.cpp:3538
+#, kde-format
+msgid "Dump Debug Info"
+msgstr "डिबग जानकारी डम्प करें"
+
+#: src/konqmainwindow.cpp:3556
+#, kde-format
+msgid "&Reload"
+msgstr "फिर से लोड करें (&R)"
+
+#: src/konqmainwindow.cpp:3561 src/konqtabs.cpp:313
+#, kde-format
+msgid "&Reload All Tabs"
+msgstr "सभी टैब फिर से लोड करें (&R)"
+
+#: src/konqmainwindow.cpp:3569
+#, fuzzy, kde-format
+#| msgid "&Reload"
+msgid "&Force Reload"
+msgstr "फिर से लोड करें (&R)"
+
+#: src/konqmainwindow.cpp:3595
+#, kde-format
+msgid "&Stop"
+msgstr "रूकें (&S)"
+
+#: src/konqmainwindow.cpp:3604
+#, kde-format
+msgid "Throbber"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3608 src/konqmainwindow.cpp:3611
+#, kde-format
+msgid "L&ocation: "
+msgstr "स्थानः (&o)"
+
+#: src/konqmainwindow.cpp:3618
+#, kde-format
+msgid "Location Bar"
+msgstr "स्थान पट्टी"
+
+#: src/konqmainwindow.cpp:3624
+#, fuzzy, kde-format
+#| msgid "Location Bar<br /><br />Enter a web address or search term."
+msgid ""
+"<html>Location Bar<br /><br />Enter a web address or search term.</html>"
+msgstr "स्थान पट्टी<br /><br />कोई जाल पता या ढूंढने हेतु वाक्यांश भरें."
+
+#: src/konqmainwindow.cpp:3628
+#, kde-format
+msgid "Clear Location Bar"
+msgstr "स्थान पट्टी साफ करें"
+
+#: src/konqmainwindow.cpp:3632
+#, fuzzy, kde-format
+#| msgid ""
+#| "Clear Location bar<br /><br />Clears the content of the location bar."
+msgid ""
+"<html>Clear Location bar<br /><br />Clears the contents of the location bar."
+"</html>"
+msgstr "स्थान पट्टी साफ करें<br /><br />स्थान पट्टी की सामग्री को साफ करता है"
+
+#: src/konqmainwindow.cpp:3637
+#, kde-format
+msgid "&Bookmarks"
+msgstr " पुस्तचिन्ह  (&B)"
+
+#: src/konqmainwindow.cpp:3665
+#, kde-format
+msgid "Kon&queror Introduction"
+msgstr "कॉन्करर परिचय (&q)"
+
+#: src/konqmainwindow.cpp:3670
+#, kde-format
+msgid "Go"
+msgstr "जाएँ"
+
+#: src/konqmainwindow.cpp:3672
+#, fuzzy, kde-format
+#| msgid ""
+#| "Go<br /><br />Goes to the page that has been entered into the location "
+#| "bar."
+msgid ""
+"<html>Go<br /><br />Goes to the page that has been entered into the location "
+"bar.</html>"
+msgstr "जाएँ<br /><br />स्थान पट्टी में भरे गए पते वाले पृष्ठ पर जाता है."
+
+#: src/konqmainwindow.cpp:3678
+#, kde-format
+msgid ""
+"<html>Enter the parent folder<br /><br />For instance, if the current "
+"location is file:/home/%1 clicking this button will take you to file:/home.</"
+"html>"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3681
+#, kde-format
+msgid "Enter the parent folder"
+msgstr "पेरेन्ट फ़ोल्डर में जाएँ"
+
+#: src/konqmainwindow.cpp:3683 src/konqmainwindow.cpp:3684
+#, kde-format
+msgid "Move backwards one step in the browsing history"
+msgstr "ब्राउजिंग इतिहास में एक स्तर पीछे खिसकता है"
+
+#: src/konqmainwindow.cpp:3686 src/konqmainwindow.cpp:3687
+#, kde-format
+msgid "Move forward one step in the browsing history"
+msgstr "ब्राउजिंग इतिहास में एक स्तर आगे खिसकें"
+
+#: src/konqmainwindow.cpp:3689 src/konqmainwindow.cpp:3690
+#, fuzzy, kde-format
+#| msgid "Move backwards one step in the browsing history"
+msgid "Move backwards one step in the closed tabs history"
+msgstr "ब्राउजिंग इतिहास में एक स्तर पीछे खिसकता है"
+
+#: src/konqmainwindow.cpp:3692
+#, kde-format
+msgid ""
+"<html>Reload the currently displayed document<br /><br />This may, for "
+"example, be needed to refresh web pages that have been modified since they "
+"were loaded, in order to make the changes visible.</html>"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3695
+#, kde-format
+msgid "Reload the currently displayed document"
+msgstr "मौज़ूदा प्रदर्शित दस्तावेज़ को फिर से लोड करे"
+
+#: src/konqmainwindow.cpp:3697
+#, kde-format
+msgid ""
+"<html>Reload all currently displayed documents in tabs<br /><br />This may, "
+"for example, be needed to refresh web pages that have been modified since "
+"they were loaded, in order to make the changes visible.</html>"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3700
+#, kde-format
+msgid "Reload all currently displayed document in tabs"
+msgstr "मौज़ूदा सभी प्रदर्शित दस्तावेज़ को फिर से लोड करें"
+
+#: src/konqmainwindow.cpp:3702
+#, kde-format
+msgid ""
+"<html>Stop loading the document<br /><br />All network transfers will be "
+"stopped and Konqueror will display the content that has been received so far."
+"</html>"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3706
+#, kde-format
+msgid ""
+"<html>Reload the currently displayed document<br /><br />This may, for "
+"example, be needed to refresh web pages that have been modified since they "
+"were loaded, in order to make the changes visible. Any images on the page "
+"are downloaded again, even if cached copies exist.</html>"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3710
+#, fuzzy, kde-format
+#| msgid "Reload all currently displayed document in tabs"
+msgid ""
+"Force a reload of the currently displayed document and any contained images"
+msgstr "मौज़ूदा सभी प्रदर्शित दस्तावेज़ को फिर से लोड करें"
+
+#: src/konqmainwindow.cpp:3712
+#, kde-format
+msgid "Stop loading the document"
+msgstr "दस्तावेज़ लोड करना रोकें"
+
+#: src/konqmainwindow.cpp:3714
+#, kde-format
+msgid ""
+"<html>Cut the currently selected text or item(s) and move it to the system "
+"clipboard<br /><br />This makes it available to the <b>Paste</b> command in "
+"Konqueror and other KDE applications.</html>"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3718
+#, kde-format
+msgid "Move the selected text or item(s) to the clipboard"
+msgstr "चुने गए पाठ या वस्तु को क्लिपबोर्ड पर ले जाए"
+
+#: src/konqmainwindow.cpp:3720
+#, kde-format
+msgid ""
+"<html>Copy the currently selected text or item(s) to the system "
+"clipboard<br /><br />This makes it available to the <b>Paste</b> command in "
+"Konqueror and other KDE applications.</html>"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3724
+#, kde-format
+msgid "Copy the selected text or item(s) to the clipboard"
+msgstr "चुने गए पाठ या वस्तु को क्लिपबोर्ड पर ले जाए"
+
+#: src/konqmainwindow.cpp:3726
+#, fuzzy, kde-format
+#| msgid ""
+#| "Paste the previously cut or copied clipboard contents<br /><br />This "
+#| "also works for text copied or cut from other KDE applications."
+msgid ""
+"<html>Paste the previously cut or copied clipboard contents<br /><br />This "
+"also works for text copied or cut from other KDE applications.</html>"
+msgstr ""
+"पहले के काटे गए या नक़ल किए गए क्लिपबोर्ड सामग्री को चिपकाता है<br /><br />यह अन्य "
+"केडीई अनुप्रयोगों से नक़ल किए गए या काटे गए पाठ में भी काम करता है."
+
+#: src/konqmainwindow.cpp:3729
+#, kde-format
+msgid "Paste the clipboard contents"
+msgstr "क्लिपबोर्ड के वस्तुओं को चिपकाएँ"
+
+#: src/konqmainwindow.cpp:3731
+#, kde-format
+msgid ""
+"<html>Print the currently displayed document<br /><br />You will be "
+"presented with a dialog where you can set various options, such as the "
+"number of copies to print and which printer to use.<br /><br />This dialog "
+"also provides access to special KDE printing services such as creating a PDF "
+"file from the current document.</html>"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3737
+#, kde-format
+msgid "Print the current document"
+msgstr "मौज़ूदा दस्तावेज़ छापें"
+
+#: src/konqmainwindow.cpp:3739
+#, kde-format
+msgid ""
+"A locked view cannot change folders. Use in combination with 'link view' to "
+"explore many files from one folder"
+msgstr ""
+"तालाबंद दृश्य फ़ोल्डर बदल नहीं सकता. एक फ़ोल्डर से कई फ़ाइलों में एक्सप्लोर करने के लिए 'लिंक "
+"व्यू' के साथ इस्तेमाल करें"
+
+#: src/konqmainwindow.cpp:3740
+#, kde-format
+msgid ""
+"Sets the view as 'linked'. A linked view follows folder changes made in "
+"other linked views."
+msgstr ""
+"दृश्य को 'लिंक्ड' की तरह नियत करता है. लिंक्ड दृश्य फ़ोल्डर में हुए परिवर्तनों को जो अन्य "
+"लिंक्ड दृश्य में होते हैं, का अनुसरण करता है."
+
+#: src/konqmainwindow.cpp:3744
+#, fuzzy, kde-format
+#| msgid "C&lose Current Tab"
+msgid "&Inspect Current Page"
+msgstr "मौज़ूदा टैब बंद करें (&l)"
+
+#: src/konqmainwindow.cpp:3745
+#, kde-format
+msgid ""
+"<html>Shows the developer tools for the current page<br/><br/>The current "
+"view is split in two and the developer tools are displayed in the second half"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3746
+#, kde-format
+msgid "Shows the developer tools for the current page"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3912
+#, kde-format
+msgid "Copy &Files..."
+msgstr "फ़ाइलें नक़ल करें.... (&F)"
+
+#: src/konqmainwindow.cpp:3916
+#, kde-format
+msgid "M&ove Files..."
+msgstr "फ़ाइलें खिसकाएँ...(&o)"
+
+#: src/konqmainwindow.cpp:4245
+#, kde-format
+msgid ""
+"You have requested to open more than 20 bookmarks in tabs. This might take a "
+"while. Continue?"
+msgstr ""
+
+#: src/konqmainwindow.cpp:4247
+#, fuzzy, kde-format
+#| msgid "Open Folder in Tabs"
+msgctxt "@title:window"
+msgid "Open bookmarks folder in new tabs"
+msgstr "फ़ोल्डर टैब में खोलें"
+
+#: src/konqmainwindow.cpp:4405
+#, kde-format
+msgid "Open in T&his Window"
+msgstr "इस विंडो में खोलें (&h)"
+
+#: src/konqmainwindow.cpp:4406
+#, kde-format
+msgid "Open the document in current window"
+msgstr "दस्तावेज़ को वर्तमान दृश्य में खोलें"
+
+#: src/konqmainwindow.cpp:4413
+#, kde-format
+msgid "Open the document in a new window"
+msgstr "दस्तावेज़ नए विंडो में खोलें"
+
+#: src/konqmainwindow.cpp:4419
+#, kde-format
+msgid "Open in &New Tab"
+msgstr "नए टैब में खोलें (&N)"
+
+#: src/konqmainwindow.cpp:4421
+#, kde-format
+msgid "Open the document in a new tab"
+msgstr "दस्तावेज़ नए टैब में खोलें"
+
+#: src/konqmainwindow.cpp:4637
+#, fuzzy, kde-format
+#| msgid "Open with %1"
+msgid "&Open With"
+msgstr "%1 के साथ खोलें"
+
+#: src/konqmainwindow.cpp:4650
+#, kde-format
+msgid "Open with %1"
+msgstr "%1 के साथ खोलें"
+
+#: src/konqmainwindow.cpp:4698
+#, fuzzy, kde-format
+#| msgid "&View Mode"
+msgctxt "@action:inmenu View"
+msgid "&View Mode"
+msgstr "दृश्य मोड (&V)"
+
+#: src/konqmainwindow.cpp:4815
+#, kde-format
+msgid ""
+"You have multiple tabs open in this window, are you sure you want to quit?"
+msgstr "इस विंडो में बहुत सारे टैब खुले हैं, क्या आप वाक़ई बाहर होना चाहते हैं?"
+
+#: src/konqmainwindow.cpp:4817
+#, fuzzy, kde-format
+#| msgid "Confirmation"
+msgctxt "@title:window"
+msgid "Confirmation"
+msgstr "पुष्टिकरण"
+
+#: src/konqmainwindow.cpp:4819
+#, kde-format
+msgid "C&lose Current Tab"
+msgstr "मौज़ूदा टैब बंद करें (&l)"
+
+#: src/konqmainwindow.cpp:4845
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Closing the window will discard these changes."
+msgstr ""
+"इस टैब में वे परिवर्तन हैं जो जमा नहीं किए गए हैं.\n"
+"विंडो को बन्द करने से ये परिवर्तन मिट जाएँगे."
+
+#: src/konqmainwindow.cpp:4846
+#, fuzzy, kde-format
+#| msgid ""
+#| "This tab contains changes that have not been submitted.\n"
+#| "Closing the window will discard these changes."
+msgid ""
+"This page contains changes that have not been submitted.\n"
+"Closing the window will discard these changes."
+msgstr ""
+"इस टैब में वे परिवर्तन हैं जो जमा नहीं किए गए हैं.\n"
+"विंडो को बन्द करने से ये परिवर्तन मिट जाएँगे."
+
+#: src/konqmainwindow.cpp:5003
+#, kde-format
+msgid ""
+"Your sidebar is not functional or unavailable. A new entry cannot be added."
+msgstr ""
+"आपका साइडबार फंक्शनल नहीं है या उपलब्ध नहीं है. एक नई प्रविष्टि जोड़ी नहीं जा सकती."
+
+#: src/konqmainwindow.cpp:5003 src/konqmainwindow.cpp:5010
+#, fuzzy, kde-format
+#| msgid "Web Sidebar"
+msgctxt "@title:window"
+msgid "Web Sidebar"
+msgstr "वेब पार्श्व पट्टी"
+
+#: src/konqmainwindow.cpp:5008
+#, kde-format
+msgid "Add new web extension \"%1\" to your sidebar?"
+msgstr "नया वेब एक्सटेंशन \"%1\" आपके पार्श्व पट्टी में जोड़ें?"
+
+#: src/konqmainwindow.cpp:5010
+#, kde-format
+msgid "Add"
+msgstr "जोड़ें"
+
+#: src/konqmainwindow.cpp:5010
+#, kde-format
+msgid "Do Not Add"
+msgstr "जोड़ें नहीं"
+
+#: src/konqmainwindow.cpp:5358
+#, kde-format
+msgid ""
+"There appears to be a configuration error. You have associated Konqueror "
+"with %1, but it cannot handle this file type."
+msgstr ""
+"प्रतीत होता है कि वहाँ कॉन्फ़िगरेशन त्रुटि है. आपने कॉन्करर को %1 के साथ सम्बद्ध किया है, "
+"पर यह इस क़िस्म की फ़ाइलों को संभाल नहीं सकता."
+
+#: src/konqmainwindow.cpp:5439
+#, kde-format
+msgid ""
+"Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
+"proxy will be used\n"
+"\n"
+" QtWebEngine only support a fixed proxy, so proxy auto-configuration (PAC) "
+"and Web Proxy Auto-Discovery protocol can't be used with QtWebEngine. If you "
+"need a proxy, please select the system proxy configuration or specify a "
+"proxy URL manually in the settings dialog. Do you want to change proxy "
+"settings now?"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5444
+#, fuzzy, kde-format
+#| msgid "Manual Proxy Configuration"
+msgid "Unsupported proxy configuration"
+msgstr "मेनुअल प्रॉक्सी कॉन्फ़िगरेशन"
+
+#: src/konqmainwindow.cpp:5444
+#, kde-format
+msgid "Don't use a proxy"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5445 src/konqmainwindow.cpp:5463
+#, fuzzy, kde-format
+#| msgid "Show Configuration Button"
+msgid "Show proxy configuration dialog"
+msgstr "कॉन्फ़िगरेशन बटन दिखाएँ"
+
+#: src/konqmainwindow.cpp:5459
+#, kde-format
+msgid ""
+"Your proxy configuration can't be used with the QtWebEngine HTML engine "
+"because it doesn't support having different proxies for the HTTP and HTTPS "
+"protocols. Your current settings are:<p><b>HTTP proxy:</b> <tt>%1</tt></"
+"p><p><b>HTTPS proxy: </b><tt>%2</tt></p>What do you want to do?"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5462
+#, fuzzy, kde-format
+#| msgid "Manual Proxy Configuration"
+msgid "Conflicting proxy configuration"
+msgstr "मेनुअल प्रॉक्सी कॉन्फ़िगरेशन"
+
+#: src/konqmainwindow.cpp:5463
+#, kde-format
+msgid "Use HTTP proxy (only this time)"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5463
+#, kde-format
+msgid "Use HTTPS proxy (only this time)"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5540
+#, kde-format
+msgid ""
+"You have entered Complete Full Screen mode (the user interface is completely "
+"hidden). You can exit it by pressing the keyboard shortcut for Full Screen "
+"Mode (%1)"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: src/konqnewsessiondlg_base.ui:28
+#, kde-format
+msgid "Save open &tabs and windows for easy retrieval"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_pAllWindows)
+#: src/konqnewsessiondlg_base.ui:34
+#, fuzzy, kde-format
+#| msgid "Open new windows:"
+msgid "A&ll open windows"
+msgstr "नया विंडो खोलें:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_pCurrentWindow)
+#: src/konqnewsessiondlg_base.ui:44
+#, fuzzy, kde-format
+#| msgid "Open the document in current window"
+msgid "Onl&y current window"
+msgstr "दस्तावेज़ को वर्तमान दृश्य में खोलें"
+
+#. i18n: ectx: property (text), widget (QLabel, lblSessionName)
+#: src/konqnewsessiondlg_base.ui:56
+#, fuzzy, kde-format
+#| msgid "Extensions"
+msgid "Session n&ame:"
+msgstr "एक्सटेंशन्स"
+
+#: src/konqsessiondlg.cpp:60
+#, fuzzy, kde-format
+#| msgid "&Management"
+msgctxt "@title:window"
+msgid "Manage Sessions"
+msgstr "प्रबंधन (&M)"
+
+#: src/konqsessiondlg.cpp:168
+#, fuzzy, kde-format
+#| msgid "End of session"
+msgctxt "@title:window"
+msgid "Rename Session"
+msgstr "सत्र का अंत"
+
+#: src/konqsessiondlg.cpp:215
+#, fuzzy, kde-format
+#| msgid "End of session"
+msgctxt "@title:window"
+msgid "Save Session"
+msgstr "सत्र का अंत"
+
+#: src/konqsessiondlg.cpp:251
+#, kde-format
+msgid ""
+"A session with the name '%1' already exists, do you want to overwrite it?"
+msgstr ""
+
+#: src/konqsessiondlg.cpp:252
+#, kde-format
+msgctxt "@title:window"
+msgid "Session exists. Overwrite?"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pNewButton)
+#: src/konqsessiondlg_base.ui:26
+#, fuzzy, kde-format
+#| msgid "&New..."
+msgctxt "@action:button New session"
+msgid "New..."
+msgstr "नया... (&N)"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pSaveCurrentButton)
+#: src/konqsessiondlg_base.ui:33
+#, fuzzy, kde-format
+#| msgid "Close Current Tab"
+msgctxt "@action:button Save current session"
+msgid "Save Current..."
+msgstr "मौजूदा टैब बंद करें"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pRenameButton)
+#: src/konqsessiondlg_base.ui:40
+#, fuzzy, kde-format
+#| msgid "Rename"
+msgctxt "@action:button Rename session"
+msgid "Rename..."
+msgstr "नाम बदलें"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pDeleteButton)
+#: src/konqsessiondlg_base.ui:47
+#, fuzzy, kde-format
+#| msgid "D&elete"
+msgctxt "@action:button Delete session"
+msgid "Delete"
+msgstr "मिटाएँ (&e)"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pOpenTabsInsideCurrentWindow)
+#. i18n: ectx: label, entry, group (Trash)
+#: src/konqsessiondlg_base.ui:73 src/konqueror.kcfg:517
+#, fuzzy, kde-format
+#| msgid "Open the document in current window"
+msgid "Open tabs inside current window"
+msgstr "दस्तावेज़ को वर्तमान दृश्य में खोलें"
+
+#: src/konqsessionmanager.cpp:86
+#, fuzzy, kde-format
+#| msgid "End of session"
+msgctxt "@title:window"
+msgid "Restore Session?"
+msgstr "सत्र का अंत"
+
+#: src/konqsessionmanager.cpp:107
+#, kde-format
+msgid ""
+"Konqueror did not close correctly. Would you like to restore these previous "
+"sessions?"
+msgstr ""
+
+#: src/konqsessionmanager.cpp:119
+#, kde-format
+msgctxt "@tooltip:session list"
+msgid "Uncheck the sessions you do not want to be restored"
+msgstr ""
+
+#: src/konqsessionmanager.cpp:152
+#, fuzzy, kde-format
+#| msgid "&Window"
+msgctxt "@item:treewidget"
+msgid "Window %1"
+msgstr "विंडो (&W)"
+
+#: src/konqsessionmanager.cpp:190
+#, kde-format
+msgid "Do not ask again"
+msgstr ""
+
+#: src/konqsessionmanager.cpp:204
+#, fuzzy, kde-format
+#| msgid "End of session"
+msgctxt "@action:button yes"
+msgid "Restore Session"
+msgstr "सत्र का अंत"
+
+#: src/konqsessionmanager.cpp:205
+#, kde-format
+msgctxt "@action:button no"
+msgid "Do Not Restore"
+msgstr ""
+
+#: src/konqsessionmanager.cpp:206
+#, kde-format
+msgctxt "@action:button ask later"
+msgid "Ask Me Later"
+msgstr ""
+
+#: src/konqstatusbarmessagelabel.cpp:67
+#, fuzzy, kde-format
+#| msgid "Close View"
+msgctxt "@info"
+msgid "Close"
+msgstr "दृश्य बन्द करें"
+
+#: src/konqstatusbarmessagelabel.cpp:68
+#, fuzzy, kde-format
+#| msgid "Close View"
+msgid "Close"
+msgstr "दृश्य बन्द करें"
+
+#: src/konqstatusbarmessagelabel.cpp:147
+#, kde-format
+msgid "Error: %1"
+msgstr ""
+
+#: src/konqtabs.cpp:51
+#, kde-format
+msgid ""
+"This bar contains the list of currently open tabs. Click on a tab to make it "
+"active. You can also use keyboard shortcuts to navigate through tabs. The "
+"text on the tab shows the content currently open in it; place your mouse "
+"over the tab to see the full title, in case it has been shortened to fit the "
+"tab width."
+msgstr ""
+
+#: src/konqtabs.cpp:86
+#, kde-format
+msgid "Open a new tab"
+msgstr "नया टैब खोलें"
+
+#: src/konqtabs.cpp:95
+#, kde-format
+msgid "Close the current tab"
+msgstr "मौजूदा टैब बंद करें"
+
+#: src/konqtabs.cpp:461
+#, kde-format
+msgid "&Duplicate Tab"
+msgstr "टैब की नक़ल (&D)"
+
+#: src/konqtabs.cpp:466
+#, kde-format
+msgid "&Reload Tab"
+msgstr "टैब फिर से लोड करें (&R)"
+
+#: src/konqtabs.cpp:473
+#, kde-format
+msgid "Other Tabs"
+msgstr "अन्य टैब"
+
+#: src/konqtabs.cpp:478
+#, kde-format
+msgid "D&etach Tab"
+msgstr "टैब को अलग करें (&e)"
+
+#: src/konqtabs.cpp:484
+#, kde-format
+msgid "&Close Tab"
+msgstr "टैब बंद करें (&C)"
+
+#. i18n: ectx: label, entry, group (UserSettings)
+#: src/konqueror.kcfg:11
+#, kde-format
+msgid "Start Page"
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry, group (UserSettings)
+#: src/konqueror.kcfg:12
+#, kde-format
+msgid "This is the URL of the web page where Konqueror will start from."
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry, group (UserSettings)
+#: src/konqueror.kcfg:17
+#, fuzzy, kde-format
+#| msgid ""
+#| "This is the URL (e.g. a folder or a web page) where Konqueror will jump "
+#| "to when the \"Home\" button is pressed. This is usually your home folder, "
+#| "symbolized by a 'tilde' (~)."
+msgid ""
+"This is the URL of the web page where Konqueror will jump to when the \\"
+"\"Home\\\" button is pressed."
+msgstr ""
+"यह वो यूआरएल है (जैसे कि फ़ोल्डर या वेब पृष्ठ) जहां कि कॉन्करर सीधे जाएगा जब \"घर\" बटन "
+"को दबाया जाएगा. सामान्य तौर पर यह आपका घर फ़ोल्डर होता है जो कि 'टिल्ड' (~) के "
+"प्रतीक में होता है."
+
+#. i18n: ectx: label, entry, group (UndoManagerSettings)
+#: src/konqueror.kcfg:26
+#, fuzzy, kde-format
+#| msgid "Maximum &number of URLs:"
+msgid "Maximum number of Closed Items"
+msgstr "यूआरएल की अधिकतम संख्या: (&n)"
+
+#. i18n: ectx: whatsthis, entry, group (UndoManagerSettings)
+#: src/konqueror.kcfg:27
+#, kde-format
+msgid ""
+"This sets the maximum number of closed items that will be stored in memory. "
+"This limit will not be surpassed."
+msgstr ""
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:36
+#, fuzzy, kde-format
+#| msgid "Open folders in separate &windows"
+msgid "Open folders in separate windows"
+msgstr "फ़ोल्डर अलग विंडो में खोलें (&w)"
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:37
+#, kde-format
+msgid ""
+"If this option is checked, Konqueror will open a new window when you open a "
+"folder, rather than showing that folder's contents in the current window."
+msgstr ""
+"यदि यह विकल्प चेक किया जाता है तो जब आप कोई फ़ोल्डर खोलेंगे तो बजाए उसी विंडो में फ़ोल्डर "
+"की सामग्री को दिखाने के, कॉन्करर एक नए विंडो में खुलेगा."
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:42
+#, fuzzy, kde-format
+#| msgid "Show file &tips"
+msgid "Show file tips"
+msgstr "फ़ाइल नुस्ख़ा दिखाएँ (&t)"
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:43
+#, kde-format
+msgid ""
+"Here you can control if, when moving the mouse over a file, you want to see "
+"a small popup window with additional information about that file"
+msgstr ""
+"यहाँ पर आप यह नियंत्रित कर सकते हैं कि जब आप किसी फ़ाइल के ऊपर माउस को लाते हैं तो उस "
+"फ़ाइल के बारे में अतिरिक्त जानकारी बताता एक छोटा पॉपअप विंडो देखना चाहते हैं."
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:54
+#, fuzzy, kde-format
+#| msgid "Show &previews in file tips"
+msgid "Show previews in file tips"
+msgstr "फ़ाइल नुस्खों में पूर्वावलोकन दिखाएँ (&p)"
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:55
+#, fuzzy, kde-format
+#| msgid ""
+#| "Here you can control if you want the popup window to contain a larger "
+#| "preview for the file, when moving the mouse over it."
+msgid ""
+"Here you can control if you want the popup window to contain a larger "
+"preview for the file, when moving the mouse over it"
+msgstr ""
+"यहाँ पर आप नियंत्रित कर सकते हैं कि जब आप फ़ाइल के ऊपर माउस लाएं तो उसका बड़े आकार में "
+"पूर्वावलोकन पॉप अप विंडो में दिखाई दे."
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:60
+#, fuzzy, kde-format
+#| msgid "Show 'Delete' context me&nu entries which bypass the trashcan"
+msgid "Show 'Delete' menu entries which bypass the trashcan"
+msgstr "'मिटाएँ' संदर्भित मेन्यू दिखाएँ जो रद्दी की टोकरी को बायपास करे (&n)"
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:61
+#, kde-format
+msgid ""
+"Check this if you want 'Delete' menu commands to be displayed on the desktop "
+"and in the file manager's menus and context menus. You can always delete "
+"files when hidden by holding the Shift key while calling 'Move to Trash'."
+msgstr ""
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:153 src/konqueror.kcfg:154
+#, kde-format
+msgid "Number of Open With items in the File menu"
+msgstr ""
+
+#. i18n: ectx: label, entry, group (HTML Settings)
+#: src/konqueror.kcfg:163
+#, fuzzy, kde-format
+#| msgid "S&tandard font:"
+msgid "Standard font"
+msgstr "मानक फ़ॉन्ट (&t)"
+
+#. i18n: ectx: whatsthis, entry, group (HTML Settings)
+#: src/konqueror.kcfg:164
+#, kde-format
+msgid "This is the font used to display text in Konqueror windows."
+msgstr "यह फ़ॉन्ट कॉन्करर विंडो में पाठ प्रदर्शन के लिए उपयोग में आएगा."
+
+#. i18n: ectx: label, entry, group (HistorySettings)
+#: src/konqueror.kcfg:314
+#, kde-format
+msgid "Maximum number of history items per view"
+msgstr ""
+
+#. i18n: ectx: label, entry, group (Trash)
+#: src/konqueror.kcfg:504
+#, fuzzy, kde-format
+#| msgid "Ask Confirmation For"
+msgid "Ask confirmation for deleting a file."
+msgstr "पुष्टि के लिए पूछें"
+
+#. i18n: ectx: whatsthis, entry, group (Trash)
+#: src/konqueror.kcfg:505
+#, kde-format
+msgid ""
+"This option tells Konqueror whether to ask for a confirmation when you "
+"delete a file without using the trash folder. Warning, deleted files can not "
+"be recovered, so it is recommended to leave this confirmation enabled."
+msgstr ""
+
+#. i18n: ectx: label, entry, group (Trash)
+#: src/konqueror.kcfg:510
+#, fuzzy, kde-format
+#| msgid "Ask Confirmation For"
+msgid "Ask confirmation for move to trash"
+msgstr "पुष्टि के लिए पूछें"
+
+#. i18n: ectx: whatsthis, entry, group (Trash)
+#: src/konqueror.kcfg:511
+#, kde-format
+msgid ""
+"This option tells Konqueror whether to ask for a confirmation when you move "
+"the file to your trash folder, from where it can be recovered very easily."
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry, group (Trash)
+#: src/konqueror.kcfg:518
+#, kde-format
+msgid ""
+"If true, when opening a session from within the sessions dialog the tabs "
+"will be opened inside current window."
+msgstr ""
+
+#. i18n: ectx: Menu (file)
+#: src/konqueror.rc:5
+#, kde-format
+msgid "&File"
+msgstr "फ़ाइल (&F)"
+
+#. i18n: ectx: Menu (edit)
+#: src/konqueror.rc:24
+#, kde-format
+msgid "&Edit"
+msgstr "संपादन (&E)"
+
+#. i18n: ectx: Menu (view)
+#: src/konqueror.rc:33
+#, kde-format
+msgid "&View"
+msgstr "देखें (&V)"
+
+#. i18n: ectx: Menu (go)
+#: src/konqueror.rc:44
+#, kde-format
+msgid "&Go"
+msgstr "जाएँ (&G)"
+
+#. i18n: ectx: Menu (tools)
+#: src/konqueror.rc:54
+#, kde-format
+msgid "&Tools"
+msgstr "औज़ार (&T)"
+
+#. i18n: ectx: Menu (settings)
+#: src/konqueror.rc:59
+#, kde-format
+msgid "&Settings"
+msgstr "विन्यास (&S)"
+
+#. i18n: ectx: Menu (window)
+#: src/konqueror.rc:77
+#, kde-format
+msgid "&Window"
+msgstr "विंडो (&W)"
+
+#. i18n: ectx: Menu (help)
+#: src/konqueror.rc:93
+#, kde-format
+msgid "&Help"
+msgstr "मदद (&H)"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: src/konqueror.rc:98
+#, kde-format
+msgid "Main Toolbar"
+msgstr "मुख्य औज़ार पट्टी"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: src/konqueror.rc:109
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "अतिरिक्त औज़ार पट्टी"
+
+#. i18n: ectx: ToolBar (locationToolBar)
+#: src/konqueror.rc:116
+#, kde-format
+msgid "Location Toolbar"
+msgstr "स्थान औज़ार पट्टी"
+
+#. i18n: ectx: ToolBar (bookmarkToolBar)
+#: src/konqueror.rc:122
+#, kde-format
+msgid "Bookmark Toolbar"
+msgstr "पुस्तचिन्ह औज़ार पट्टी"
+
+#: src/konqundomanager.cpp:90 src/konqundomanager.cpp:252
+#, fuzzy, kde-format
+#| msgid "&Close Tab"
+msgid "Und&o: Closed Tab"
+msgstr "टैब बंद करें (&C)"
+
+#: src/konqundomanager.cpp:92 src/konqundomanager.cpp:103
+#: src/konqundomanager.cpp:147
+#, fuzzy, kde-format
+#| msgid "&Close Tab"
+msgid "Und&o: Closed Window"
+msgstr "टैब बंद करें (&C)"
+
+#: src/konqundomanager.cpp:105
+#, kde-format
+msgid "Und&o"
+msgstr ""
+
+#: src/konqview.cpp:1162
+#, kde-format
+msgid ""
+"The page you are trying to view is the result of posted form data. If you "
+"resend the data, any action the form carried out (such as search or online "
+"purchase) will be repeated. "
+msgstr ""
+"जो पृष्ठ आप देखने की कोशिश कर रहे हैं वह पोस्ट किए फ़ॉर्म डाटा का परिणाम है. यदि आप "
+"डाटा फिर भेजेंगे, जो भी कार्य (जैसे खोज या आनलाइन खरीदारी) इसने किया है, वह दोहराएगा."
+
+#: src/konqview.cpp:1164
+#, fuzzy, kde-format
+#| msgid "Warning"
+msgctxt "@title:window"
+msgid "Warning"
+msgstr "चेतावनी"
+
+#: src/konqview.cpp:1164
+#, kde-format
+msgid "Resend"
+msgstr "फिर से भेजें"
+
+#: src/urlloader.cpp:253
+#, kde-format
+msgctxt "Execute an executable file"
+msgid "Execute it"
+msgstr ""
+
+#: src/urlloader.cpp:258
+#, kde-format
+msgctxt ""
+"The user has to decide whether to execute an executable file or display it"
+msgid ""
+"<tt>%1</tt> can be executed. Do you want to execute it or to display it?"
+msgstr ""
+
+#: src/urlloader.cpp:259
+#, kde-format
+msgctxt "Display an executable file"
+msgid "Display it"
+msgstr ""
+
+#: src/urlloader.cpp:263
+#, kde-format
+msgctxt "The user has to decide whether to execute an executable file or not"
+msgid "<tt>%1</tt> can be executed. Do you want to execute it?"
+msgstr ""
+
+#: src/urlloader.cpp:438
+#, fuzzy, kde-format
+#| msgid "Set Name..."
+msgid "Save As"
+msgstr "नाम नियत करें..."
+
+#~ msgid ""
+#~ "Malformed URL\n"
+#~ "%1"
+#~ msgstr ""
+#~ "गलत URL\n"
+#~ "%1"
+
+#~ msgid "File Management"
+#~ msgstr "फ़ाइल प्रबंधन"
+
+#~ msgid "Web Browsing"
+#~ msgstr "वेब ब्राउजिंग"
+
+#, fuzzy
+#~| msgid "Configure"
+#~ msgctxt "@title:window"
+#~ msgid "Configure"
+#~ msgstr "कॉन्फ़िगर"
+
+#, fuzzy
+#~| msgid ""
+#~| "Konqueror is your file manager, web browser and universal document "
+#~| "viewer."
+#~ msgid ""
+#~ "Konqueror is a web browser, file manager and universal document viewer."
+#~ msgstr "कॉन्करर आपका फ़ाइल प्रबंधक है, वेब ब्राउजर है तथा वैश्विक दस्तावेज़ प्रदर्शक है."
+
+#, fuzzy
+#~| msgid "Starting Points"
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "Starting Points"
+#~ msgstr "प्रारंभिक बिन्दु"
+
+#~ msgid "Introduction"
+#~ msgstr "परिचय"
+
+#~ msgid "Tips"
+#~ msgstr "नुस्ख़े"
+
+#~ msgid "Specifications"
+#~ msgstr "विशेषताएँ"
+
+#~ msgid "Your personal files"
+#~ msgstr "आपकी व्यक्तिगत फ़ाइलें"
+
+#~ msgid "Trash"
+#~ msgstr "रद्दी"
+
+#~ msgid "Browse and restore the trash"
+#~ msgstr "रद्दी की टोकरी को ब्राउज़ करें व पुनर्स्थापित करें"
+
+#~ msgid "Network Folders"
+#~ msgstr "नेटवर्क फोल्डर्स"
+
+#~ msgid "Shared files and folders"
+#~ msgstr "साझा फ़ाइलें व फ़ोल्डर्स"
+
+#, fuzzy
+#~| msgid "&Bookmarks"
+#~ msgid "Bookmarks"
+#~ msgstr " पसंदीदा  (&B)"
+
+#~ msgid "Next: An Introduction to Konqueror"
+#~ msgstr "अगला: कॉन्करर का एक परिचय"
+
+#~ msgid "Search the Web"
+#~ msgstr "जाल पर ढूंढें"
+
+#~ msgid ""
+#~ "To return to the previous location, press the back button <img width='16' "
+#~ "height='16' src=\"%1\"></img> in the toolbar. "
+#~ msgstr ""
+#~ "पिछले स्थान पर वापस आने के लिए औजार पट्टी में <img width='16' height='16' src="
+#~ "\"%1\"></img> पिछला बटन को दबाएँ. "
+
+#, fuzzy
+#~| msgid ""
+#~| "To quickly go to your Home folder press the  home button <img width='16' "
+#~| "height='16' src=\"%1\"></img>."
+#~ msgid ""
+#~ "To quickly go to your Home folder press the home button <img width='16' "
+#~ "height='16' src=\"%1\"></img>."
+#~ msgstr ""
+#~ "अपने घर फ़ोल्डर में त्वरित  जाने के लिएघर बटन  <img width='16' height='16' src="
+#~ "\"%1\"></img को दबाएँ>."
+
+#~ msgid ""
+#~ "For more detailed documentation on Konqueror click <a href=\"%1\">here</"
+#~ "a>."
+#~ msgstr "कॉन्करर के बारे में विस्तृत दस्तावेज़ों के लिए <a href=\"%1\">यहाँ </a> देखें."
+
+#, fuzzy
+#~| msgid "Next: Tips &amp; Tricks"
+#~ msgid "Next: Tips & Tricks"
+#~ msgstr "अगला: टिप्स &amp; ट्रिक्स"
+
+#~ msgid "Supported standards"
+#~ msgstr "समर्थित मानक"
+
+#~ msgid "Additional requirements*"
+#~ msgstr "अतिरिक्त आवश्यकताएँ*"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">डॉम</A> (स्तर 1, आंशिक स्तर 2) आधारित <A HREF=\"%2\">HTML "
+#~ "4.01</A>"
+
+#~ msgid "built-in"
+#~ msgstr "अंतःनिर्मित"
+
+#~ msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
+#~ msgstr "<A HREF=\"%1\">कासकेडिंग स्टाइल शीट्स</A> (CSS 1, partially CSS 2)"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">ECMA-262</A> संस्करण 3 (मोटे रूप में जावास्क्रिप्ट 1.5 के बराबर)"
+
+#~ msgid ""
+#~ "JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
+#~ msgstr ""
+#~ "जावास्क्रिप्ट अक्षम है (विश्वव्यापी). जावास्क्रिप्ट सक्षम करें <A HREF=\"%1\">यहाँ</A>."
+
+#~ msgid ""
+#~ "JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\"
+#~ "\">here</A>."
+#~ msgstr ""
+#~ "जावास्क्रिप्ट सक्षम है (विश्वव्यापी). जावास्क्रिप्ट कॉन्फ़िगर करें <A HREF=\\\"%1\\"
+#~ "\">यहाँ</A>."
+
+#~ msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
+#~ msgstr "सुरक्षित <A HREF=\"%1\">जावा</A><SUP>&reg;</SUP> समर्थन"
+
+#, fuzzy
+#~| msgid ""
+#~| "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">Blackdown</A>, <A HREF="
+#~| "\"%2\">IBM</A> or <A HREF=\"%3\">Sun</A>)"
+#~ msgid ""
+#~ "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">OpenJDK</A> or <A HREF="
+#~ "\"%2\">Sun/Oracle</A>)"
+#~ msgstr ""
+#~ "जेडीके 1.2.0 (जावा 2) कम्पेटिबल वीएम (<A HREF=\"%1\">ब्लेकडॉन</A>, <A HREF="
+#~ "\"%2\">आईबीएम</A> या <A HREF=\"%3\">सन</A>)"
+
+#~ msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
+#~ msgstr "जावा सक्षम करें (विश्वव्यापी)  <A HREF=\"%1\">यहाँ</A>."
+
+#~ msgid "Secure Sockets Layer"
+#~ msgstr "सिक्योर सॉकेट लेयर"
+
+#~ msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
+#~ msgstr "(टीएलएस/एसएसएल v2/3) 168 बिट तक सुरक्षित कम्यूनिकेशन के लिए"
+
+#~ msgid "OpenSSL"
+#~ msgstr "ओपन एसएसएल"
+
+#~ msgid "Bidirectional 16bit unicode support"
+#~ msgstr "द्वि-दिशा 16 बिट युनिकोड समर्थन"
+
+#~ msgid "AutoCompletion for forms"
+#~ msgstr "फ़ॉर्म के लिए स्वचलित भरें"
+
+#, fuzzy
+#~| msgid "&General"
+#~ msgctxt "Title of an html 'group box' explaining konqueror features"
+#~ msgid "General"
+#~ msgstr "सामान्य (&G)"
+
+#~ msgid "Feature"
+#~ msgstr "विशेषता"
+
+#~ msgid "Details"
+#~ msgstr "विवरण"
+
+#~ msgid "Image formats"
+#~ msgstr "छवि फॉर्मेट्स"
+
+#~ msgid "Transfer protocols"
+#~ msgstr "ट्रांसफर प्रोटोकॉल"
+
+#~ msgid "HTTP 1.1 (including gzip/bzip2 compression)"
+#~ msgstr "एचटीटीपी 1.1 (gzip/bzip2  संपीडन के साथ)"
+
+#~ msgid "FTP"
+#~ msgstr "एफटीपी"
+
+#, fuzzy
+#~| msgid "and <A HREF=\"%1\">many more...</A>"
+#~ msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpCenter)...</A>"
+#~ msgstr "तथा <A HREF=\"%1\">और भी...</A>"
+
+#, fuzzy
+#~| msgid "URL-Completion"
+#~ msgctxt "A feature of Konqueror"
+#~ msgid "URL-Completion"
+#~ msgstr "यूआरएल-कम्पलीशन"
+
+#~ msgid "Manual"
+#~ msgstr "हस्तचालित"
+
+#~ msgid "Popup"
+#~ msgstr "पॉप अप"
+
+#~ msgid "(Short-) Automatic"
+#~ msgstr "(क्रमबद्ध करें-) स्वचलित"
+
+#, fuzzy
+#~| msgid "<a href=\"%1\">Return to Starting Points</a>"
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "<a href=\"%1\">Return to Starting Points</a>"
+#~ msgstr "<a href=\"%1\">प्रारंभ बिन्दु पर वापस जाएँ</a>"
+
+#, fuzzy
+#~| msgid "Tips &amp; Tricks"
+#~ msgid "Tips & Tricks"
+#~ msgstr "टिप्स &amp; ट्रिक्स"
+
+#, fuzzy
+#~| msgid ""
+#~| "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> "
+#~| "in the toolbar to increase the font size on your web page."
+#~ msgid ""
+#~ "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
+#~ "the HTML toolbar to increase the font size on your web page."
+#~ msgstr ""
+#~ "अपने जाल पृष्ठ पर फ़ॉन्ट का आकार बढ़ाने के लिए औजार पट्टी के आवर्धक बटन <img "
+#~ "width='16' height='16' src=\"%1\"></img>  का प्रयोग करें."
+
+#, fuzzy
+#~| msgid ""
+#~| "To create a link on your desktop pointing to the current page, simply "
+#~| "drag the \"Location\" label that is to the left of the Location toolbar, "
+#~| "drop it on to the desktop, and choose \"Link\"."
+#~ msgid ""
+#~ "To create a link on your desktop pointing to the current page, simply "
+#~ "drag the icon (favicon) that is to the left of the Location toolbar, drop "
+#~ "it on to the desktop, and choose \"Icon\"."
+#~ msgstr ""
+#~ "आपके डेस्कटॉप  पर मौज़ूदा पृष्ठ का लिंक बनाने के लिए सिर्फ  \"स्थान\" लेबल जो कि स्थान "
+#~ "औज़ार पट्टी के बाएँ है, उसे खींच कर डेस्कटॉप पर छोड़ दें, तथा चुनें \"लिंक\"."
+
+#~ msgid ""
+#~ "You can also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen "
+#~ "Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
+#~ "sessions."
+#~ msgstr ""
+#~ "सेटिंग मेन्यू में <img width='16' height='16' src=\"%1\" /> \"पूरा स्क्रीन दृश्य\" भी "
+#~ "है. यह विशेषता \"वार्ता\" सत्रों में बहुत काम में आता है."
+
+#, fuzzy
+#~| msgid ""
+#~| "The <img width='16' height='16' src=\"%1\"></img> History in your "
+#~| "SideBar ensures that you can keep track of the pages you have visited "
+#~| "recently."
+#~ msgid ""
+#~ "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
+#~ "ensures that you can keep track of the pages you have visited recently."
+#~ msgstr ""
+#~ "आपके बाजू पट्टी में इतिहास <img width='16' height='16' src=\"%1\"></img> यह "
+#~ "सुनिश्चित करती है कि आपके द्वारा भ्रमण कर लिए गए जाल पृष्ठों की पूरी जानकारी रखी "
+#~ "जाए."
+
+#~ msgid ""
+#~ "Use a caching <a href=\"%1\">proxy</a> to speed up your Internet "
+#~ "connection."
+#~ msgstr ""
+#~ "आपके इंटरनेट कनेक्शन की गति को बढ़ाने के लिए कैचिंग <a href=\"%1\">प्रॉक्सी</a> का "
+#~ "प्रयोग करें."
+
+#, fuzzy
+#~| msgid ""
+#~| "Advanced users will appreciate the Konsole which you can embed into "
+#~| "Konqueror (Window -> <img width='16' height='16' SRC=\"%1\"></img> Show "
+#~| "Terminal Emulator)."
+#~ msgid ""
+#~ "Advanced users will appreciate the Konsole which you can embed into "
+#~ "Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
+#~ "Terminal Emulator)."
+#~ msgstr ""
+#~ "उन्नत प्रयोक्ताओं के लिए कॉन्करर में अंतर्निर्मित कंसोल बहुत काम का है (विंडो -> <img "
+#~ "width='16' height='16' SRC=\"%1\"></img> टर्मिनल एमुलेटर दिखाएँ)."
+
+#~ msgid "Next: Specifications"
+#~ msgstr "अगला: विशेषताएँ"
+
+#~ msgid "Installed Plugins"
+#~ msgstr "स्थापित प्लगइन्स"
+
+#~ msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
+#~ msgstr "<td>प्लगइन</td><td>विवरण</td><td>फ़ाइल</td><td>क़िस्म</td>"
+
+#~ msgid "Installed"
+#~ msgstr "स्थापित "
+
+#~ msgid ""
+#~ "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
+#~ msgstr "<td>माइम क़िस्म</td><td>विवरण</td><td>प्रत्यय</td><td>प्लगइन</td>"
+
+#, fuzzy
+#~| msgid "&Open Link"
+#~ msgid "&Open"
+#~ msgstr "लिंक खोलें (&O)"
+
+#~ msgid ""
+#~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">plugins</A> (for "
+#~ "viewing <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
+#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Video, etc.)"
+#~ msgstr ""
+#~ "नेटस्केप कम्यूनिकेटर<SUP>&reg;</SUP> <A HREF=\"%4\">प्लगइन्स</A> (इन्हें देखने के लिए "
+#~ "<A HREF=\"%1\">फ़्लैश<SUP>&reg;</SUP></A>, <A HREF=\"%2\">रीयल<SUP>&reg;</"
+#~ "SUP></A>ऑडियो, <A HREF=\"%3\">रीयल<SUP>&reg;</SUP></A>वीडियो, इत्यादि.)"
+
+#~ msgid "http://konqueror.kde.org"
+#~ msgstr "http://konqueror.kde.org"
+
+#~ msgid "Limits"
+#~ msgstr "सीमाएँ"
+
+#~ msgid "URLs e&xpire after"
+#~ msgstr "के बाद यूआरएल अयोग्य (&x)"
+
+#~ msgid "Maximum &number of URLs:"
+#~ msgstr "यूआरएल की अधिकतम संख्या: (&n)"
+
+#~ msgid "Custom Fonts For"
+#~ msgstr "के लिए मनपसंद फ़ॉन्ट्स"
+
+#~ msgid "URLs newer than"
+#~ msgstr "इनसे नये यूआरएल"
+
+#~ msgid "Choose Font..."
+#~ msgstr "फ़ॉन्ट चुनें..."
+
+#~ msgid "URLs older than"
+#~ msgstr "इनसे पुराने यूआरएल"
+
+#~ msgid ""
+#~ "Shows the number of times visited and the dates of the first and last "
+#~ "visits, in addition to the URL"
+#~ msgstr ""
+#~ "यूआरएल के अतिरिक्त, कितने बार सैर किया गया, तथा प्रथम और अंतिम सैर की तारीख़ "
+#~ "दर्शाता है."
+
+#~ msgid "Detailed tooltips"
+#~ msgstr "विस्तृत औज़ार नुस्ख़े"
+
+#~ msgid "Clear History"
+#~ msgstr "इतिहास साफ करें"
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "History Sidebar Module"
+#~ msgstr "वेब पार्श्व पट्टी"
+
+#, fuzzy
+#~| msgid "History"
+#~ msgctxt "@title:tab"
+#~ msgid "History"
+#~ msgstr "इतिहास "
+
+#~ msgid "Minute"
+#~ msgid_plural "Minutes"
+#~ msgstr[0] "मिनट"
+#~ msgstr[1] "मिनट"
+
+#~ msgid "Day"
+#~ msgid_plural "Days"
+#~ msgstr[0] "दिन"
+#~ msgstr[1] "दिन"
+
+#~ msgid "<h1>History Sidebar</h1> You can configure the history sidebar here."
+#~ msgstr ""
+#~ "<h1>इतिहास बाज़ू पट्टी</h1> आप यहाँ इतिहास बाज़ू पट्टी को कॉन्फ़िगर कर सकते हैं."
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Places Sidebar Module"
+#~ msgstr "वेब पार्श्व पट्टी"
+
+#, fuzzy
+#~| msgid "Replace"
+#~ msgctxt "@title:tab"
+#~ msgid "Places"
+#~ msgstr "बदलें"
+
+#~ msgid "Extended Sidebar"
+#~ msgstr "विस्तारित बाज़ू पट्टी"
+
+#~ msgid "Rollback to System Default"
+#~ msgstr "सिस्टम डिफ़ॉल्ट पर वापस"
+
+#~ msgid "Configure Sidebar"
+#~ msgstr "बाज़ू पट्टी कॉन्फ़िगर करें"
+
+#~ msgid "Add New"
+#~ msgstr "नया जोड़ें"
+
+#~ msgid "Multiple Views"
+#~ msgstr "अनेक दृश्य"
+
+#~ msgid "Show Tabs Left"
+#~ msgstr "टैब को बाएँ दिखाएँ"
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgid "Close Sidebar"
+#~ msgstr "वेब पार्श्व पट्टी"
+
+#~ msgid "This entry already exists."
+#~ msgstr "यह प्रविष्टि पहले से ही अस्तित्व में है."
+
+#~ msgid ""
+#~ "<qt>This removes all your entries from the sidebar and adds the system "
+#~ "default ones.<br /><b>This procedure is irreversible</b><br />Do you want "
+#~ "to proceed?</qt>"
+#~ msgstr ""
+#~ "<qt>यह आपकी सभी प्रविष्टियों को बाजू पट्टी से हटाता है तथा तंत्र डिफ़ॉल्ट जोड़ता है."
+#~ "<br /><b>प्रक्रिया अपरिवर्तनीय होगी</b><br />क्या आप आगे बढ़ना चाहेंगे?</qt>"
+
+#, fuzzy
+#~| msgid "Move Tab Right"
+#~ msgid "Show Tabs Right"
+#~ msgstr "टैब को दाएँ खिसकाएँ"
+
+#, fuzzy
+#~| msgid "Set Name"
+#~ msgctxt "@title:window"
+#~ msgid "Set Name"
+#~ msgstr "नाम नियत करें"
+
+#~ msgid "Enter the name:"
+#~ msgstr "नाम भरें:"
+
+#~ msgid "Enter a URL:"
+#~ msgstr "यूआरएल भरें:"
+
+#~ msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
+#~ msgstr "<qt>क्या आप <b>%1</b> टेब को हटाना चाहते हैं? </qt>"
+
+#, fuzzy
+#~| msgid ""
+#~| "You have hidden the navigation panel configuration button. To make it "
+#~| "visible again, click the right mouse button on any of the navigation "
+#~| "panel buttons and select \"Show Configuration Button\"."
+#~ msgid ""
+#~ "You have hidden the sidebar configuration button. To make it visible "
+#~ "again, click the right mouse button on any of the sidebar buttons and "
+#~ "select \"Show Configuration Button\"."
+#~ msgstr ""
+#~ "आपने नेविगेशन फलक कॉन्फ़िगरेशन बटन को छुपाया है. यह फिर से दिखाई दे इस के लिए किसी "
+#~ "भी नेविगेशन फलक पर राइट क्लिक करें तथा चुनें \"दिखाएँ कॉन्फ़िगरेशन बटन\"."
+
+#~ msgid "Set Name..."
+#~ msgstr "नाम नियत करें..."
+
+#~ msgid "Set URL..."
+#~ msgstr "यूआरएल नियत करें..."
+
+#~ msgid "Set Icon..."
+#~ msgstr "प्रतीक नियत करें..."
+
+#~ msgid "Remove"
+#~ msgstr "हटाएँ"
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgid "Web module"
+#~ msgstr "वेब पार्श्व पट्टी"
+
+#~ msgid "&Create New Folder"
+#~ msgstr "नया फ़ोल्डर बनाएँ...(&C)"
+
+#~ msgid "Delete Folder"
+#~ msgstr "फ़ोल्डर मिटाएँ"
+
+#~ msgid "Delete Bookmark"
+#~ msgstr " पसंदीदा  मिटाएँ"
+
+#~ msgid "Properties"
+#~ msgstr "गुण"
+
+#~ msgid "Open in New Window"
+#~ msgstr "नए विंडो में खोलें."
+
+#~ msgid "Open Folder in Tabs"
+#~ msgstr "फ़ोल्डर टैब में खोलें"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "लिंक पता नक़ल करें"
+
+#, fuzzy
+#~| msgid "Create New Folder"
+#~ msgctxt "@title:window"
+#~ msgid "Create New Bookmark Folder"
+#~ msgstr "नया फ़ोल्डर बनाएँ"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgid "New folder:"
+#~ msgstr "नया फ़ोल्डर"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark folder\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "क्या आप वाक़ई इस पसंद फ़ोल्डर को मिटाना चाहते हैं\n"
+#~ "\"%1\"?"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "क्या आप वाक़ई इस पसंदीदा को मिटाना चाहते हैं\n"
+#~ "\"%1\"?"
+
+#, fuzzy
+#~| msgid "Bookmark Folder Deletion"
+#~ msgctxt "@title:window"
+#~ msgid "Bookmark Folder Deletion"
+#~ msgstr "पसंदीदा फ़ोल्डर मिटाना"
+
+#, fuzzy
+#~| msgid "Bookmark Deletion"
+#~ msgctxt "@title:window"
+#~ msgid "Bookmark Deletion"
+#~ msgstr "पसंदीदा मिटाना"
+
+#, fuzzy
+#~| msgid "Bookmark Properties"
+#~ msgctxt "@title:window"
+#~ msgid "Bookmark Properties"
+#~ msgstr "पसंदीदा गुण"
+
+#~ msgid "&Update"
+#~ msgstr "अद्यतन (&U)"
+
+#~ msgid "Name:"
+#~ msgstr "नाम:"
+
+#~ msgid "Location:"
+#~ msgstr "स्थानः"
+
+#, fuzzy
+#~| msgid "Add Bookmark"
+#~ msgctxt "@title:window"
+#~ msgid "Add Bookmark"
+#~ msgstr "पसंद जोड़ें"
+
+#~ msgid "Cannot find parent item %1 in the tree. Internal error."
+#~ msgstr "मूल वस्तु %1 ट्री में नहीं मिला. आंतरिक त्रुटि."
+
+#~ msgid "&Create New Folder..."
+#~ msgstr "नया फ़ोल्डर बनाएँ...(&C)"
+
+#, fuzzy
+#~| msgid "&Move to Trash"
+#~ msgid "Move to Trash"
+#~ msgstr "रद्दी में डालें (&M)"
+
+#~ msgid "Rename"
+#~ msgstr "नाम बदलें"
+
+#~ msgid "Delete Link"
+#~ msgstr "लिंक मिटाएँ"
+
+#~ msgid "New Folder"
+#~ msgstr "नया फ़ोल्डर"
+
+#, fuzzy
+#~| msgid "Create New Folder"
+#~ msgctxt "@title:window"
+#~ msgid "Create New Folder"
+#~ msgstr "नया फ़ोल्डर बनाएँ"
+
+#~ msgid "Enter folder name:"
+#~ msgstr "फ़ोल्डर नाम भरें:"
+
+#, fuzzy
+#~| msgid "Name:"
+#~ msgctxt "@label"
+#~ msgid "Name:"
+#~ msgstr "नाम:"
+
+#~ msgid "&Open Link"
+#~ msgstr "लिंक खोलें (&O)"
+
+#~ msgid "Set &Automatic Reload"
+#~ msgstr "स्वचालित रीलोड करना नियत करें (&A)"
+
+#, fuzzy
+#~| msgid "Set Refresh Timeout (0 disables)"
+#~ msgctxt "@title:window"
+#~ msgid "Set Refresh Timeout (0 disables)"
+#~ msgstr "ताज़ा करने के टाइम-आउट को नियत करें (0 से अक्षम हो जाता है)"
+
+#, fuzzy
+#~| msgid "Minute"
+#~| msgid_plural "Minutes"
+#~ msgid " minute"
+#~ msgid_plural " minutes"
+#~ msgstr[0] "मिनट"
+#~ msgstr[1] "मिनट"
+
+#, fuzzy
+#~| msgid " sec"
+#~ msgid " second"
+#~ msgid_plural " seconds"
+#~ msgstr[0] "सेक."
+#~ msgstr[1] "सेक."
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Web Sidebar Module"
+#~ msgstr "वेब पार्श्व पट्टी"
+
+#~ msgid "&Use index.html"
+#~ msgstr "index.html इस्तेमाल करें (&U)"
+
+#~ msgid "If present, open index.html when entering a folder."
+#~ msgstr "जब किसी फ़ोल्डर में जाएं तो, यदि उपस्थित है, index.html खोलें."
+
+#~ msgid ""
+#~ "Do you want to disable showing the introduction in the webbrowsing "
+#~ "profile?"
+#~ msgstr "क्या आप वेब ब्राउज़िंग प्रोफ़ाइल में परिचय दिखाया जाना अक्षम करना चाहेंगे?"
+
+#, fuzzy
+#~| msgid "Faster Startup?"
+#~ msgctxt "@title:window"
+#~ msgid "Faster Startup?"
+#~ msgstr "तेज स्टार्टअप?"
+
+#~ msgid "Disable"
+#~ msgstr "अक्षम"
+
+#~ msgid "Keep"
+#~ msgstr "रखें"
+
+#~ msgid "Profile to open"
+#~ msgstr "खोलने के लिए प्रोफ़ाइल"
+
+#~ msgid "List available profiles"
+#~ msgstr "उपलब्ध प्रोफ़ाइल सूचीबद्ध करें"
+
+#, fuzzy
+#~| msgid "&Save View Profile..."
+#~ msgid "&Save View Profile As..."
+#~ msgstr "दृश्य प्रोफ़ाइल सहेजें...(&S)"
+
+#~ msgid "C&onfigure View Profiles..."
+#~ msgstr "दृश्य प्रोफ़ाइल कॉन्फ़िगर करें... (&o)"
+
+#~ msgid "Load &View Profile"
+#~ msgstr "दृश्य प्रोफ़ाइल लोड करें (&V)"
+
+#, fuzzy
+#~| msgid "Profile Management"
+#~ msgctxt "@title:window"
+#~ msgid "Profile Management"
+#~ msgstr "प्रोफ़ाइल प्रबंधन"
+
+#~ msgid "&Rename Profile"
+#~ msgstr "प्रोफ़ाइल नाम बदलें (&R)"
+
+#~ msgid "&Delete Profile"
+#~ msgstr "प्रोफ़ाइल मिटाएँ (&D)"
+
+#~ msgid "&Profile name:"
+#~ msgstr "प्रोफ़ाइल नामः (&P)"
+
+#~ msgid "Save &URLs in profile"
+#~ msgstr "यूआरएल प्रोफ़ाइल में सहेजें (&U)"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window.\n"
+#~ "Loading a view profile will close them."
+#~ msgstr ""
+#~ "इस विंडो में बहुत सारे टैब खुले हैं.\n"
+#~ " दृश्य प्रोफ़ाइल लोड करने से ये बन्द हो जाएँगे."
+
+#~ msgid "Load View Profile"
+#~ msgstr "दृश्य प्रोफ़ाइल लोड करें"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Loading a profile will discard these changes."
+#~ msgstr ""
+#~ "इस टैब में वे परिवर्तन हैं जो जमा नहीं किए गए हैं.\n"
+#~ "प्रोफ़ाइल को लोड करने से ये परिवर्तन मिट जाएँगे."
+
+#~ msgid " day"
+#~ msgid_plural " days"
+#~ msgstr[0] " दिन"
+#~ msgstr[1] " दिन"
+
+#~ msgid " min"
+#~ msgstr "मि."
+
+#~ msgid "Input Required:"
+#~ msgstr "इनपुट आवश्यक:"
+
+#~ msgid "&Execute Shell Command..."
+#~ msgstr "शेल कमांड चलाएँ...(&E)"
+
+#~ msgid "Executing shell commands works only on local directories."
+#~ msgstr "शेल कमांड्स चलाया जाना सिर्फ स्थानीय डिरेक्ट्री में कार्य करता है."
+
+#~ msgid "Execute Shell Command"
+#~ msgstr "शेल कमांड चलाएँ"
+
+#~ msgid "Execute shell command in current directory:"
+#~ msgstr "मौज़ूदा डिरेक्ट्री में शेल कमांड चलाएँ"
+
+#~ msgid "Output from command: \"%1\""
+#~ msgstr "आउटपुट फॉर्म कमांड: \"%1\""
+
+#~ msgid "Hide %1"
+#~ msgstr "छुपाएँ %1"
+
+#, fuzzy
+#~| msgid "Web SideBar Plugin"
+#~ msgid "SideBar Test Plugin"
+#~ msgstr "वेब पार्श्व पट्टी प्लगइन"
+
+#~ msgid "Bookmark This Location"
+#~ msgstr "इस स्थान को पसंदीदा में रखें"
+
+#~ msgid ""
+#~ "Protocol not supported\n"
+#~ "%1"
+#~ msgstr ""
+#~ "प्रोटोकॉल समर्थित नहीं है\n"
+#~ "%1"
+
+#~ msgid "Cannot create the find part, check your installation."
+#~ msgstr "ढूंढने वाला भाग बना नहीं पाया, अपनी संस्थापना जांचें."
+
+#, fuzzy
+#~| msgid "&Bookmarks"
+#~ msgid "My Bookmarks"
+#~ msgstr " पसंदीदा  (&B)"
+
+#~ msgid "Preload for later use"
+#~ msgstr "बाद के उपयोग के लिए पहले से लोड कर रखें"
+
+#~ msgid "&Save View Profile \"%1\"..."
+#~ msgstr "दृश्य प्रोफ़ाइल सहेजें \"%1\"...(&S)"
+
+#~ msgid "Configure Navigation Panel"
+#~ msgstr "नेविगेशन फलक कॉन्फ़िगर करें"
+
+#~ msgid "Close Navigation Panel"
+#~ msgstr "नेविगेशन फलक बन्द करें"
+
+#~ msgid "Select Type"
+#~ msgstr "क़िस्म चुनें"
+
+#~ msgid "Select type:"
+#~ msgstr "क़िस्म चुनें:"
+
+#~ msgid "Web SideBar Plugin"
+#~ msgstr "वेब पार्श्व पट्टी प्लगइन"
+
+#~ msgid "<qt><b>%1</b> does not exist</qt>"
+#~ msgstr "<qt><b>%1</b> मौज़ूद नहीं है</qt>"
+
+#~ msgid "Minutes"
+#~ msgstr "मिनट्स"
+
+#~ msgid "Days"
+#~ msgstr "दिन"
+
+#~ msgid "Your sidebar is not functional or unavailable."
+#~ msgstr "आपकी बाजू पट्टी या तो कार्यशील नहीं है या अनुपलब्ध है."
+
+#~ msgid "Cannot find running history plugin in your sidebar."
+#~ msgstr "आपकी बाजू पट्टी में चलता हुआ इतिहास प्लगइन नहीं मिला."
+
+#, fuzzy
+#~| msgid "Show History Sidebar"
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History in Sidebar"
+#~ msgstr "इतिहास बाजूपट्टी दिखाएँ"
+
+#~ msgid "Select Remote Charset"
+#~ msgstr "रिमोट अक्षरसेट चुनें"
+
+#~ msgid "Reload"
+#~ msgstr "री-लोड"
+
+#~ msgid "Default"
+#~ msgstr "डिफ़ॉल्ट"
+
+#, fuzzy
+#~| msgid "New..."
+#~ msgctxt "@action:button New session"
+#~ msgid "New"
+#~ msgstr "नया..."
+
+#, fuzzy
+#~| msgid "Rename"
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename"
+#~ msgstr "नाम बदलें"
+
+#~ msgid ""
+#~ "Konqueror is your file manager, web browser and universal document viewer."
+#~ msgstr "कॉन्करर आपका फ़ाइल प्रबंधक है, वेब ब्राउजर है तथा वैश्विक दस्तावेज़ प्रदर्शक है."
+
+#~ msgid "Joseph WENNINGER"
+#~ msgstr "जोसफ़ वेननिंगर"
+
+#~ msgid "G E N E R A L"
+#~ msgstr "(सा मा न्य)"
+
+#~ msgid "<img width='16' height='16' src=\"%1\"></img>"
+#~ msgstr "<img width='16' height='16' src=\"%1\"></img>"
+
+#~ msgid "Applications"
+#~ msgstr "अनुप्रयोग"
+
+#~ msgid "Installed programs"
+#~ msgstr "संस्थापित प्रोग्राम"
+
+#~ msgid "&Location"
+#~ msgstr "स्थान (&L)"
+
+#~ msgid "Open &Terminal"
+#~ msgstr "टर्मिनल खोलें (&T)"
+
+#~ msgid "Unknown"
+#~ msgstr "अज्ञात"
+
+#~ msgid "Save &window size in profile"
+#~ msgstr "विंडो आकार प्रोफ़ाइल में सहेजें (&w)"
+
+#~ msgid "&Speak Text"
+#~ msgstr "पाठ बोलें (&S)"
+
+#, fuzzy
+#~| msgid ""
+#~| "You cannot read anything except web pages with\n"
+#~| "this plugin, sorry."
+#~ msgid "You cannot read anything except web pages with this plugin, sorry."
+#~ msgstr ""
+#~ "आप इस प्लगइन के साथ कुछ और नहीं पढ़ सकते सिवाया\n"
+#~ "वेब पृष्ठों के, अतः खेद है."
+
+#~ msgid "Cannot Read source"
+#~ msgstr "स्रोत पढ़ नहीं सका"
+
+#~ msgid "Starting KTTSD Failed"
+#~ msgstr "केटीटीएसडी प्रारंभ करना असफल"
+
+#, fuzzy
+#~| msgid "The D-Bus call startText failed."
+#~ msgid "The D-Bus call say() failed."
+#~ msgstr "डी-बस काल स्टार्ट टैक्स्ट असफल."
+
+#~ msgid "D-Bus Call Failed"
+#~ msgstr "डी-बस काल असफल"
+
+#~ msgid "Speech Toolbar"
+#~ msgstr "बोलनेढने की औज़ार पट्टी"
+
+#~ msgid "The D-Bus call supportsMarkup failed."
+#~ msgstr "डी-बस काल सपोर्ट्समार्कअप असफल."
+
+#~ msgid "The D-Bus call setText failed."
+#~ msgstr "डी-बस काल सेटटैक्स्ट असफल."
+
+#~ msgid "Conquer your Desktop!"
+#~ msgstr "डेस्कटॉप कॉनकर करें!"
+
+#~ msgid "Storage Media"
+#~ msgstr "भंडार मीडिया"
+
+#~ msgid "Disks and removable media"
+#~ msgstr "डिस्क तथा हटाए जा सकने वाले मीडिया"
+
+#~ msgid "Settings"
+#~ msgstr "विन्यास"
+
+#~ msgid "Desktop configuration"
+#~ msgstr "डेस्कटॉप कॉन्फ़िगरेशन"
+
+#~ msgid "Home &URL:"
+#~ msgstr "मुख यूआरएल (&U): "
+
+#~ msgid "&Edit File Type..."
+#~ msgstr "फ़ाइल की किस्म बदलें...(&E)"
+
+#~ msgid "S&ystem"
+#~ msgstr "तंत्र (&y)"
+
+#~ msgid "App&lications"
+#~ msgstr "अनुप्रयोग (&l)"
+
+#~ msgid "&Storage Media"
+#~ msgstr "भंडारण मीडिया (&S)"
+
+#~ msgid "&Network Folders"
+#~ msgstr "नेटवर्क फ़ोल्डर्स (&N)"
+
+#~ msgid "Sett&ings"
+#~ msgstr "विन्यास (&i)"
+
+#~ msgid "Autostart"
+#~ msgstr "स्वतः चालू"
+
+#~ msgid "kfmclient"
+#~ msgstr "के-एफएम-क्लाएँट"
+
+#~ msgid "KDE tool for opening URLs from the command line"
+#~ msgstr "कमांड लाइन से यूआरएल को खोलने के लिए केडीई का औज़ार"
+
+#~ msgid "Non interactive use: no message boxes"
+#~ msgstr "कोई इंटरेक्टिव प्रयोग नहीं: कोई संदेश बक्सा नहीं"
+
+#~ msgid "Show available commands"
+#~ msgstr "उपलब्ध कमांड्स दिखाएँ"
+
+#~ msgid "Command (see --commands)"
+#~ msgstr "कमांड (देखें --कमांड्स)"
+
+#~ msgid "Arguments for command"
+#~ msgstr "कमांड के लिए आर्गुमेंट्स"
+
+#~ msgid ""
+#~ "\n"
+#~ "Syntax:\n"
+#~ msgstr ""
+#~ "\n"
+#~ "सिंटेक्स:\n"
+
+#~ msgid "Profile %1 not found\n"
+#~ msgstr "प्रोफ़ाइल %1 नहीं मिला\n"
+
+#~ msgid "Syntax Error: Not enough arguments\n"
+#~ msgstr "सिंटेक्स त्रुटिः पर्याप्त आर्गुमेंट नहीं हैं\n"
+
+#~ msgid "Syntax Error: Too many arguments\n"
+#~ msgstr "सिंटेक्स त्रुटिः बहुत ज्यादा आर्गुमेंट हैं\n"
+
+#~ msgid "Syntax Error: Unknown command '%1'\n"
+#~ msgstr "सिंटेक्स त्रुटिः अज्ञात कमांड '%1'\n"
+
+#~ msgid "Invalid Proxy Setting"
+#~ msgstr "अवैध प्रॉक्सी सेटिंग"
+
+#~ msgid ""
+#~ "One or more of the specified proxy settings are invalid. The incorrect "
+#~ "entries are highlighted."
+#~ msgstr "एक या अधिक निर्दिष्ट प्रॉक्सी सेटिंग अवैध हैं. गलत प्रविष्टियों को उभारा गया है."
+
+#~ msgid "You entered a duplicate address. Please try again."
+#~ msgstr "आपने एक डुप्लीकेट (दोहराया गया) पता भरा है. फिर से कोशिश करें."
+
+#~ msgid "<qt><center><b>%1</b></center> is already in the list.</qt>"
+#~ msgstr "<qt><center><b>%1</b></center> पहले से ही सूची में है.</qt>"
+
+#~ msgid "Duplicate Entry"
+#~ msgstr "दोहरी प्रविष्टि"
+
+#~ msgid "New Exception"
+#~ msgstr "नया एक्सेप्शन"
+
+#~ msgid "Change Exception"
+#~ msgstr "बदला एक्सेप्शन"
+
+#~ msgid "Invalid Entry"
+#~ msgstr "अवैध प्रविष्टि"
+
+#~ msgid "The address you have entered is not valid."
+#~ msgstr "जो पता आपने भरा है वह वैध नहीं है."
+
+#~ msgid "Enter the URL or address that should use the above proxy settings:"
+#~ msgstr "उपर्युक्त प्रॉक्सी विन्यास में इस्तेमाल होने वाले पते या यूआरएल भरें:"
+
+#~ msgid ""
+#~ "Enter the address or URL that should be excluded from using the above "
+#~ "proxy settings:"
+#~ msgstr "उपर्युक्त प्रॉक्सी विन्यास में इस्तेमाल नहीं होने वाला पता या यूआरएल भरें:"
+
+#~ msgid "This is the configuration for the samba client only, not the server."
+#~ msgstr "यह कॉन्फ़िगरेशन साम्बा क्लाएंट के लिए है, सर्वर के लिए नहीं."
+
+#~ msgid "Default user name:"
+#~ msgstr "डिफ़ॉल्ट उपयोक्ता नामः"
+
+#~ msgid "Default password:"
+#~ msgstr "डिफ़ॉल्ट पासवर्डः"
+
+#~ msgid "Accept"
+#~ msgstr "स्वीकृत"
+
+#~ msgid "Reject"
+#~ msgstr "अस्वीकृत"
+
+#~ msgid "Ask"
+#~ msgstr "पूछें"
+
+#~ msgid "Dunno"
+#~ msgstr "पता नहीं"
+
+#~ msgid "Timeout Values"
+#~ msgstr "टाइम-आउट मूल्य"
+
+#~ msgid ""
+#~ "Here you can set timeout values. You might want to tweak them if your "
+#~ "connection is very slow. The maximum allowed value is %1 seconds."
+#~ msgstr ""
+#~ "यहाँ आप टाइमआउट मान नियत कर सकते हैं. यदि आपका कनेक्शन बहुत धीमा होगा तो आप उन्हें "
+#~ "बदल सकते हैं. अधिकतम स्वीकृत सीमा है %1 सेकण्ड."
+
+#~ msgid "Soc&ket read:"
+#~ msgstr "सॉकेट पढ़ाः (&k)"
+
+#~ msgid "Pro&xy connect:"
+#~ msgstr "प्रॉक्सी कनेक्टः (&x)"
+
+#~ msgid "Server co&nnect:"
+#~ msgstr "सर्वर कनेक्टः (&n)"
+
+#~ msgid "&Server response:"
+#~ msgstr "सर्वर जवाबः (&S)"
+
+#~ msgid "FTP Options"
+#~ msgstr "एफटीपी विकल्प"
+
+#~ msgid "Enable passive &mode (PASV)"
+#~ msgstr "पैसिव मोड सक्षम करें (PASV) (&m)"
+
+#~ msgid ""
+#~ "Enables FTP's \"passive\" mode. This is required to allow FTP to work "
+#~ "from behind firewalls."
+#~ msgstr ""
+#~ "एफ़टीपी का  \"पैसिव\" मोड सक्षम करे. यह एफटीपी को फायरवाल के पीछे से कार्य करने "
+#~ "देता है."
+
+#~ msgid "Mark &partially uploaded files"
+#~ msgstr "आधे-अधूरे अपलोडेड फ़ाइलों को चिह्नित करें (&p)"
+
+#~ msgid ""
+#~ "<p>Marks partially uploaded FTP files.</p><p>When this option is enabled, "
+#~ "partially uploaded files will have a \".part\" extension. This extension "
+#~ "will be removed once the transfer is complete.</p>"
+#~ msgstr ""
+#~ "<p>आधे-अधूरे अपलोडेड एफटीपी फ़ाइलों को चिह्नित करें.</p><p>जब यह विकल्प सक्षम किया "
+#~ "गया होता है तो आधे-अधूरे अपलोडेड फ़ाइलों में \".part\" एक्सटेंशन होता है. यह एक्सटेंशन जब "
+#~ "ट्रांसफर पूरा हो जाता है तब हटा दिया जाता है.</p>"
+
+#~ msgid "D-Bus Communication Error"
+#~ msgstr "डी_बस कम्यूनिकेशन त्रुटि"
+
+#~ msgid "Unable to delete all the cookies as requested."
+#~ msgstr "जैसा निवेदित है, सभी कुकीज़ को मिटाने में अक्षम."
+
+#~ msgid "Unable to delete cookies as requested."
+#~ msgstr "जैसा निवेदित है, कुकीज़ को मिटाने में अक्षम."
+
+#~ msgid "<h1>Cookies Management Quick Help</h1>"
+#~ msgstr "<h1>कुकीज़ प्रबंधन तत्काल मदद</h1>"
+
+#~ msgid "Information Lookup Failure"
+#~ msgstr "जानकारी देखना असफल"
+
+#~ msgid ""
+#~ "Unable to retrieve information about the cookies stored on your computer."
+#~ msgstr "आपके कम्प्यूटर पर भंडारित कुकीज़ के बारे में जानकारी निकाल पाने में अक्षम."
+
+#~ msgid "Yes"
+#~ msgstr "हाँ"
+
+#~ msgid "&Windows Shares"
+#~ msgstr "विंडोज़ साझेदारी (&W)"
+
+#~ msgid "&LISa Daemon"
+#~ msgstr "&LISa डेमन"
+
+#~ msgid "lan:/ Iosla&ve"
+#~ msgstr "lan:/ Iosla&ve"
+
+#~ msgid "Add Identification"
+#~ msgstr "पहचान जोड़ें"
+
+#~ msgid "Modify Identification"
+#~ msgstr "पहचान परिवर्धित करें"
+
+#~ msgid ""
+#~ "<qt><center>Found an existing identification for<br/><b>%1</b><br/>Do you "
+#~ "want to replace it?</center></qt>"
+#~ msgstr ""
+#~ "<qt><center>एक उपलब्ध पहचान मिल गया<br/><b>%1</b><br/>क्या आप इसे बदलना चाहते "
+#~ "हैं?</center></qt>"
+
+#~ msgid "Duplicate Identification"
+#~ msgstr "पहचान अनुकृति"
+
+#~ msgid "Variable Proxy Configuration"
+#~ msgstr "चर प्रॉक्सी कॉन्फ़िगरेशन"
+
+#~ msgid "You must specify at least one valid proxy environment variable."
+#~ msgstr "आपको कम से कम एक वैध प्रॉक्सी एनवायरनमेंट वेरिएबल का उल्लेख करना होगा."
+
+#~ msgid "Invalid Proxy Setup"
+#~ msgstr "अवैध प्रॉक्सी सेटअप"
+
+#~ msgid "Successfully verified."
+#~ msgstr "सफलता पूर्वक सत्यापित."
+
+#~ msgid "Proxy Setup"
+#~ msgstr "प्रॉक्सी सेटअप"
+
+#~ msgid ""
+#~ "Did not detect any environment variables commonly used to set system wide "
+#~ "proxy information."
+#~ msgstr ""
+#~ "सिस्टम वाइड प्रॉक्सी जानकारी नियत करने के लिए सामान्यतया उपयोगी एनवायरनमेंट "
+#~ "वेरिएबल नहीं ढूंढा जा सका."
+
+#~ msgid "Automatic Proxy Variable Detection"
+#~ msgstr "स्वचलित प्रॉक्सी वेरिएबल डिटेक्शन"
+
+#~ msgid ""
+#~ "Unable to start the cookie handler service.\n"
+#~ "You will not be able to manage the cookies that are stored on your "
+#~ "computer."
+#~ msgstr ""
+#~ "कुकी हैंडलर सेवा प्रारंभ करने में अक्षम.\n"
+#~ "आपके कम्प्यूटर पर भंडारित कुकीज़ को आप प्रबंधित करने में आप सक्षम नहीं होंगे."
+
+#~ msgid "&Policy"
+#~ msgstr "पॉलिसी (&P)"
+
+#~ msgid "kcmsocks"
+#~ msgstr "केसीएमसॉक्स"
+
+#~ msgid "KDE SOCKS Control Module"
+#~ msgstr "केडीई सॉक्स नियंत्रण मॉड्यूल"
+
+#~ msgid "(c) 2001 George Staikos"
+#~ msgstr "(c) 2001 जॉर्ज स्टायकॉस"
+
+#~ msgid "These changes will only apply to newly started applications."
+#~ msgstr "ये परिवर्तन नए प्रारंभ किए अनुप्रयोगों में ही लागू होगें."
+
+#~ msgid "SOCKS Support"
+#~ msgstr "सॉक्स समर्थन"
+
+#~ msgid "Success: SOCKS was found and initialized."
+#~ msgstr "सफलता: सॉक्स मिल गया तथा प्रारंभ कर दिया गया."
+
+#~ msgid "SOCKS could not be loaded."
+#~ msgstr "सॉक्स लोड नहीं किया जा सका."
+
+#~ msgid "Update Failed"
+#~ msgstr "अद्यतन असफल"
+
+#~ msgid ""
+#~ "You have to restart the running applications for these changes to take "
+#~ "effect."
+#~ msgstr ""
+#~ "परिवर्तनों को प्रभाव में लाने के लिए आपको चलते हुए अनुप्रयोगों को फिर से  प्रारंभ करना "
+#~ "होगा."
+
+#~ msgid "You have to restart KDE for these changes to take effect."
+#~ msgstr "परिवर्तनों को प्रभाव में लाने के लिए आपको केडीई को फिर से  प्रारंभ करना होगा."
+
+#~ msgid "New Cookie Policy"
+#~ msgstr "नई कुकी पॉलिसी"
+
+#~ msgid "Change Cookie Policy"
+#~ msgstr "कुकी पॉलिसी बदलें"
+
+#~ msgid ""
+#~ "<qt>A policy already exists for<center><b>%1</b></center>Do you want to "
+#~ "replace it?</qt>"
+#~ msgstr ""
+#~ "<qt>एक पालिसी पहले से ही उपलब्ध है<center><b>%1</b></center>. क्या आप इसे बदलना "
+#~ "चाहते हैं?</qt>"
+
+#~ msgid "Duplicate Policy"
+#~ msgstr "अनुकृति पॉलिसी"
+
+#~ msgid ""
+#~ "Unable to communicate with the cookie handler service.\n"
+#~ "Any changes you made will not take effect until the service is restarted."
+#~ msgstr ""
+#~ "कुकीज हैंडलर सेवाओं से संवाद करने में अक्षम.\n"
+#~ "जब तक सेवाओं को फिर से  प्रारंभ नहीं किया जाता किए गए कोई भी परिवर्तन लागू नहीं "
+#~ "होंगे."
+
+#~ msgid "&Proxy"
+#~ msgstr "प्रॉक्सी (&P)"
+
+#~ msgid "&SOCKS"
+#~ msgstr "सॉक्स (&S)"
+
+#~ msgid "kcustommenueditortest"
+#~ msgstr "केकस्टममेन्यूएडीटरटेस्ट"
+
+#~ msgid "test app"
+#~ msgstr "जांच अनुप्रयोग"
+
+#~ msgid "Menu Editor"
+#~ msgstr "मेन्यू संपादक "
+
+#~ msgid "Menu"
+#~ msgstr "मेन्यू"
+
+#~ msgid "Move Up"
+#~ msgstr "ऊपर जाएँ"
+
+#~ msgid "Move Down"
+#~ msgstr "नीचे जाएँ"
+
+#~ msgid ""
+#~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "
+#~ "file manager here."
+#~ msgstr ""
+#~ "<h1>कॉन्करर बर्ताव</h1> आप कॉन्फ़िगर कर सकते हैं कि यहाँ पर कॉन्करर फ़ाइल प्रबंधक की "
+#~ "तरह कैसे बर्ताव करे."
+
+#~ msgid "Misc Options"
+#~ msgstr "विविध विकल्प"
+
+#~ msgid "&Move to trash"
+#~ msgstr "रद्दी पर ले जाएँ (&M)"
+
+#~ msgid "Sound Files"
+#~ msgstr "ध्वनि फ़ाइलें"
+
+#~ msgid "&Left button:"
+#~ msgstr "बायाँ बटनः (&L)"
+
+#~ msgid ""
+#~ "You can choose what happens when you click the left button of your "
+#~ "pointing device on the desktop:"
+#~ msgstr ""
+#~ "आप चुन सकते हैं कि क्या हो जब आप डेस्कटॉप पर अपने पाइंटिंग उपकरण के बाएँ बटन को क्लिक "
+#~ "करते हैं:"
+
+#~ msgid "Right b&utton:"
+#~ msgstr "दायाँ बटनः (&u)"
+
+#~ msgid ""
+#~ "You can choose what happens when you click the right button of your "
+#~ "pointing device on the desktop:"
+#~ msgstr ""
+#~ "आप चुन सकते हैं कि क्या हो जब आप डेस्कटॉप पर अपने पाइंटिंग उपकरण के दाएँ बटन को क्लिक "
+#~ "करते हैं:"
+
+#~ msgid "No Action"
+#~ msgstr "कोई क्रिया नहीं"
+
+#~ msgid "Window List Menu"
+#~ msgstr "विंडोज़ सूची मेन्यू"
+
+#~ msgid "Desktop Menu"
+#~ msgstr "डेस्कटॉप मेन्यू "
+
+#~ msgid "Application Menu"
+#~ msgstr "अनुप्रयोग मेन्यू "
+
+#~ msgid "Bookmarks Menu"
+#~ msgstr "पसंदीदा मेन्यू"
+
+#~ msgid "Custom Menu 1"
+#~ msgstr "मनपसंद मेन्यू 1"
+
+#~ msgid "Custom Menu 2"
+#~ msgstr "मनपसंद मेन्यू 1"
+
+#~ msgid ""
+#~ "<p>Allow previews, \"Folder Icons Reflect Contents\", and retrieval of "
+#~ "meta-data on protocols:</p>"
+#~ msgstr ""
+#~ "<p>पूर्वावलोकन स्वीकारें, \"फ़ोल्डर आइकन रीफ़्लेक्ट कंटेंट्स\", तथा प्रोटोकॉल पर मेटा डाटा "
+#~ "रीट्राइवल:</p>"
+
+#~ msgid "Select Protocols"
+#~ msgstr "प्रोटोकॉल्स चुनें"
+
+#~ msgid "Local Protocols"
+#~ msgstr "स्थानीय प्रोटोकॉल"
+
+#~ msgid "Internet Protocols"
+#~ msgstr "इंटरनेट प्रोटोकॉल"
+
+#~ msgid "&Maximum file size:"
+#~ msgstr "अधिकतम फ़ाइल आकारः (&M)"
+
+#~ msgid " MB"
+#~ msgstr "मे.बा."
+
+#~ msgid "&Increase size of previews relative to icons"
+#~ msgstr "प्रतीकों के सापेक्ष पूर्वावलोकन के आकार बढ़ाएँ (&I)"
+
+#~ msgid "&Use thumbnails embedded in files"
+#~ msgstr "फ़ाइलों में अंतर्निर्मित लघु छवि उपयोग में लें (&U)"
+
+#~ msgid "&Behavior"
+#~ msgstr "व्यवहार (&B)"
+
+#~ msgid "&Previews && Meta-Data"
+#~ msgstr "पूर्वावलोकन व मेटा-डाटा (&P)"
+
+#~ msgid "Des&ktop path:"
+#~ msgstr "डेस्कटॉप पथ: (&k)"
+
+#~ msgid ""
+#~ "This folder contains all the files which you see on your desktop. You can "
+#~ "change the location of this folder if you want to, and the contents will "
+#~ "move automatically to the new location as well."
+#~ msgstr ""
+#~ "This folder contains all the files which you see on your desktop. You can "
+#~ "change the location of this folder if you want to, and the contents will "
+#~ "move automatically to the new location as well."
+
+#~ msgid "A&utostart path:"
+#~ msgstr "स्वतः प्रारंभ पथः (&u)"
+
+#~ msgid "D&ocuments path:"
+#~ msgstr "दस्तावेज़ का पथः (&o)"
+
+#~ msgid ""
+#~ "This folder will be used by default to load or save documents from or to."
+#~ msgstr ""
+#~ "यह फ़ोल्डर डिफ़ॉल्ट द्वारा दस्तावेज़ को लोड करने या सहेजने में उपयोग में लिया जाएगा."
+
+#~ msgid "Desktop"
+#~ msgstr "डेस्कटॉप"
+
+#~ msgid ""
+#~ "The path for '%1' has been changed;\n"
+#~ "do you want the files to be moved from '%2' to '%3'?"
+#~ msgstr ""
+#~ " '%1' के लिए पथ बदल दिया गया है;\n"
+#~ "क्या आप चाहते हैं कि फ़ाइलों को '%2' से '%3' पर ले जाया जाए?"
+
+#~ msgid "Confirmation Required"
+#~ msgstr "पुष्टि आवश्यक"
+
+#~ msgid "Move"
+#~ msgstr "खिसकाएँ"
+
+#~ msgid "KEditFileType"
+#~ msgstr "के-एडिट-फ़ाइल-क़िस्म"
+
+#~ msgid ""
+#~ "KDE file type editor - simplified version for editing a single file type"
+#~ msgstr "के एडिट फ़ाइल क़िस्म संपादक - एक फ़ाइल क़िस्म को संपादित करने का सरलीकृत संस्करण"
+
+#~ msgid "(c) 2000, KDE developers"
+#~ msgstr "(c) 2000, केडीई विकासकर्ता"
+
+#~ msgid "Preston Brown"
+#~ msgstr "प्रेस्टन ब्राउन"
+
+#~ msgid "Makes the dialog transient for the window specified by winid"
+#~ msgstr "विनआईडी द्वारा निर्दिष्ट विंडो के लिए संवाद को ट्रांज़िएंट बनाता है"
+
+#~ msgid "File type to edit (e.g. text/html)"
+#~ msgstr "संपादन के लिए फ़ाइल क़िस्म (जैसे कि text/html)"
+
+#~ msgid "%1 File"
+#~ msgstr "%1 फ़ाइल"
+
+#~ msgid "Edit File Type %1"
+#~ msgstr "फ़ाइल की किस्म बदलें %1"
+
+#~ msgid "Create New File Type %1"
+#~ msgstr "नया फ़ाइल क़िस्म बनाएँ %1"
+
+#~ msgid "Create New File Type"
+#~ msgstr "नया फ़ाइल क़िस्म तैयार करें"
+
+#~ msgid "Group:"
+#~ msgstr "समूहः"
+
+#~ msgid "Select the category under which the new file type should be added."
+#~ msgstr "चुनिये संवर्ग जहां पर नया फ़ाइल क़िस्म जोड़ा जाए."
+
+#~ msgid "Type name:"
+#~ msgstr "नाम टाइप करें:"
+
+#~ msgid "Left Click Action"
+#~ msgstr "बायाँ क्लिक क्रिया"
+
+#~ msgid "Show file in embedded viewer"
+#~ msgstr "सन्निहित प्रदर्शक में फ़ाइल दिखाएँ"
+
+#~ msgid "Show file in separate viewer"
+#~ msgstr "अलग प्रदर्शक में फ़ाइल दिखाएँ"
+
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file belonging to this group. Konqueror can display the file "
+#~ "in an embedded viewer or start up a separate application. You can change "
+#~ "this setting for a specific file type in the 'Embedding' tab of the file "
+#~ "type configuration."
+#~ msgstr ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file belonging to this group. Konqueror can display the file "
+#~ "in an embedded viewer or start up a separate application. You can change "
+#~ "this setting for a specific file type in the 'Embedding' टेब of the file "
+#~ "type configuration."
+
+#~ msgid "Select service:"
+#~ msgstr "चुनें सेवाएँ:"
+
+#~ msgid "F&ind filename pattern:"
+#~ msgstr "फ़ाइलनाम पैटर्न ढूंढें (&i)"
+
+#~ msgid ""
+#~ "Enter a part of a filename pattern. Only file types with a matching file "
+#~ "pattern will appear in the list."
+#~ msgstr ""
+#~ "फ़ाइलनाम पैटर्न का कोई हिस्सा भरें. सिर्फ फ़ाइल क़िस्म जो फ़ाइल पैटर्न से मेल खाएंगे वही "
+#~ "सूची में प्रकट होंगे."
+
+#~ msgid "Known Types"
+#~ msgstr "ज्ञात क़िस्म"
+
+#~ msgid "Add..."
+#~ msgstr "जोड़ें..."
+
+#~ msgid "Click here to add a new file type."
+#~ msgstr "नया फ़ाइल क़िस्म जोड़ने के लिए यहाँ क्लिक करें."
+
+#~ msgid "&Remove"
+#~ msgstr "मिटाएँ (&R)"
+
+#~ msgid "Click here to remove the selected file type."
+#~ msgstr "चुने गए फ़ाइल क़िस्म मिटाने के लिए यहाँ क्लिक करें."
+
+#~ msgid "Select a file type by name or by extension"
+#~ msgstr "फ़ाइल क़िस्म नाम या एक्सटेंशन से चुनें"
+
+#~ msgid ""
+#~ "This button displays the icon associated with the selected file type. "
+#~ "Click on it to choose a different icon."
+#~ msgstr ""
+#~ "यह बटन दिखाता है चुना गया फ़ाइल क़िस्म से सम्बद्ध प्रतीक. भिन्न प्रतीक चुनने के लिए इस "
+#~ "पर क्लिक करें."
+
+#~ msgid "Filename Patterns"
+#~ msgstr "फ़ाइल-नाम पैटर्न"
+
+#~ msgid ""
+#~ "This box contains a list of patterns that can be used to identify files "
+#~ "of the selected type. For example, the pattern *.txt is associated with "
+#~ "the file type 'text/plain'; all files ending in '.txt' are recognized as "
+#~ "plain text files."
+#~ msgstr ""
+#~ "This box contains a list of patterns that can be used to identify files "
+#~ "of the selected type. For example, the pattern *.txt is associated with "
+#~ "the file type 'text/plain'; all files ending in '.txt' are recognized as "
+#~ "plain text files."
+
+#~ msgid "Add a new pattern for the selected file type."
+#~ msgstr "चुने गए फ़ाइल क़िस्म के लिए एक नया पैटर्न जोड़ें."
+
+#~ msgid "Remove the selected filename pattern."
+#~ msgstr "चुने गए फ़ाइलनाम पैटर्न को मिटाएँ"
+
+#~ msgid "Description"
+#~ msgstr "वर्णन"
+
+#~ msgid ""
+#~ "You can enter a short description for files of the selected file type (e."
+#~ "g. 'HTML Page'). This description will be used by applications like "
+#~ "Konqueror to display directory content."
+#~ msgstr ""
+#~ "You can enter a short description for files of the selected file type (e."
+#~ "g. 'HTML Page'). This description will be used by applications like "
+#~ "Konqueror to display directory content."
+
+#~ msgid "Ask whether to save to disk instead"
+#~ msgstr "पूछें कि इसके बजाए में डिस्क में सहेज लें"
+
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file of this type. Konqueror can display the file in an "
+#~ "embedded viewer or start up a separate application. If set to 'Use "
+#~ "settings for G group', Konqueror will behave according to the settings of "
+#~ "the group G this type belongs to, for instance 'image' if the current "
+#~ "file type is image/png."
+#~ msgstr ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file of this type. Konqueror can display the file in an "
+#~ "embedded viewer or start up a separate application. If set to 'Use "
+#~ "settings for G group', Konqueror will behave according to the settings of "
+#~ "the group G this type belongs to, for instance 'image' if the current "
+#~ "file type is image/png."
+
+#~ msgid "&Embedding"
+#~ msgstr "एम्बेडिंग (&E)"
+
+#~ msgid "Add New Extension"
+#~ msgstr "नया एक्सटेंशन जोड़ें"
+
+#~ msgid "Extension:"
+#~ msgstr "एक्सटेंशनः"
+
+#~ msgid "Use settings for '%1' group"
+#~ msgstr "समूह '%1' के लिए विन्यास इस्तेमाल करें"
+
+#~ msgid "%1 (%2)"
+#~ msgstr "%1 (%2)"
+
+#~ msgid "Application Preference Order"
+#~ msgstr "अनुप्रयोग प्राथमिकता अनुक्रम"
+
+#~ msgid "Services Preference Order"
+#~ msgstr "सेवा प्राथमिकता अनुक्रम"
+
+#~ msgid ""
+#~ "This is a list of services associated with files of the selected file "
+#~ "type. This list is shown in Konqueror's context menus when you select a "
+#~ "\"Preview with...\" option. If more than one application is associated "
+#~ "with this file type, then the list is ordered by priority with the "
+#~ "uppermost item taking precedence over the others."
+#~ msgstr ""
+#~ "This is a list of services associated with files of the selected file "
+#~ "type. This list is shown in Konqueror's context menus when you select a "
+#~ "\"Preview with...\" option. If more than one application is associated "
+#~ "with this file type, then the list is ordered by priority with the "
+#~ "uppermost item taking precedence over the others."
+
+#~ msgid "Move &Up"
+#~ msgstr "ऊपर जाएं (&U)"
+
+#~ msgid ""
+#~ "Assigns a higher priority to the selected\n"
+#~ "application, moving it up in the list. Note:  This\n"
+#~ "only affects the selected application if the file type is\n"
+#~ "associated with more than one application."
+#~ msgstr ""
+#~ "Assigns a higher priority to the selected\n"
+#~ "application, moving it up in the list. Note:  This\n"
+#~ "only affects the selected application if the file type is\n"
+#~ "associated with more than one application."
+
+#~ msgid ""
+#~ "Assigns a higher priority to the selected\n"
+#~ "service, moving it up in the list."
+#~ msgstr ""
+#~ "चुने गए सेवा को एक उच्च\n"
+#~ "प्राथमिकता प्रदान करता है, सूची में ऊपर ले जाकर."
+
+#~ msgid "Move &Down"
+#~ msgstr "नीचे जाएं (&D)"
+
+#~ msgid ""
+#~ "Assigns a lower priority to the selected\n"
+#~ "application, moving it down in the list. Note: This \n"
+#~ "only affects the selected application if the file type is\n"
+#~ "associated with more than one application."
+#~ msgstr ""
+#~ "Assigns a lower priority to the selected\n"
+#~ "application, moving it down in the list. Note: This \n"
+#~ "only affects the selected application if the file type is\n"
+#~ "associated with more than one application."
+
+#~ msgid ""
+#~ "Assigns a lower priority to the selected\n"
+#~ "service, moving it down in the list."
+#~ msgstr ""
+#~ "चुने गए सेवा को एक निम्न\n"
+#~ "प्राथमिकता प्रदान करता है, सूची में नीचे लाकर."
+
+#~ msgid "Add a new application for this file type."
+#~ msgstr "इस फ़ाइल क़िस्म के लिए एक नया अनुप्रयोग जोड़ें."
+
+#~ msgid "Edit..."
+#~ msgstr "संपादन..."
+
+#~ msgid "Edit command line of the selected application."
+#~ msgstr "चुने गए अनुप्रयोग का कमांडलाइन का संपादन करें"
+
+#~ msgid "Remove the selected application from the list."
+#~ msgstr "चुने गए अनुप्रयोग को सूची में से बाहर करें"
+
+#~ msgid "None"
+#~ msgstr "कुछ नहीं"
+
+#~ msgid "You are not authorized to remove this service."
+#~ msgstr "इस सेवा को हटाने के लिए आप अधिकृत नहीं है."
+
+#~ msgid "The service <b>%1</b> can not be removed."
+#~ msgstr "सेवा <b>%1</b> मिटाई नहीं जा सकती."
+
+#~ msgid ""
+#~ "The service is listed here because it has been associated with the <b>%1</"
+#~ "b> (%2) file type and files of type <b>%3</b> (%4) are per definition "
+#~ "also of type <b>%5</b>."
+#~ msgstr ""
+#~ "सेवा यहाँ सूचीबद्ध है चूंकि यह सम्बद्ध है <b>%1</b> (%2) फ़ाइल क़िस्म से तथा फ़ाइल क़िस्म "
+#~ "<b>%3</b> (%4) परिभाषा अनुसार क़िस्म <b>%5</b> से भी."
+
+#~ msgid ""
+#~ "Either select the <b>%1</b> file type to remove the service from there or "
+#~ "move the service down to deprecate it."
+#~ msgstr ""
+#~ "चुनिये <b>%1</b> फ़ाइल क़िस्म या तो यहाँ से सेवाएँ हटाने के लिए या सेवा को नीचे डेप्रिकेट "
+#~ "करने के लिए.."
+
+#~ msgid "Global Settings"
+#~ msgstr "वैश्विक विन्यास "
+
+#~ msgid "&Enable plugins globally"
+#~ msgstr "प्लगइन्स विश्वव्यापी सक्षम करें  (&E)"
+
+#~ msgid "Only allow &HTTP and HTTPS URLs for plugins"
+#~ msgstr "सिर्फ एचटीटीपी तथा एचटीटीपीएस यूआरएल को प्लगइन के लिए अनुमति दें (&H)"
+
+#~ msgid "&Load plugins on demand only"
+#~ msgstr "प्लगइनों को मांग पर ही लोड करें (&L)"
+
+#~ msgid "CPU priority for plugins: %1"
+#~ msgstr "सीपीयू प्राथमिकता प्लगइन: %1"
+
+#~ msgid "Domain-Specific Settin&gs"
+#~ msgstr "डोमेन विशेष विन्यास... (&g)"
+
+#~ msgid "Domain-Specific Policies"
+#~ msgstr "डोमेन विशेष नीतियाँ"
+
+#~ msgid ""
+#~ "Click this button to choose the file that contains the plugin policies. "
+#~ "These policies will be merged with the existing ones. Duplicate entries "
+#~ "are ignored."
+#~ msgstr ""
+#~ "प्लगइन नीतियों को रखी फ़ाइल को चुनने के लिए इस बटन को क्लिक करें. ये नीतियाँ मौज़ूदा "
+#~ "नीतियों के साथ सम्मिलित हो जाएँगी. दोहरी प्रविष्टियों को नज़र अंदाज़ कर दिया जाएगा."
+
+#~ msgid ""
+#~ "Click this button to save the plugin policy to a zipped file. The file, "
+#~ "named <b>plugin_policy.tgz</b>, will be saved to a location of your "
+#~ "choice."
+#~ msgstr ""
+#~ "प्लगइन पॉलिसी को जिप फ़ाइल में सहेजने के लिए इस बटन को क्लिक करें. फ़ाइल "
+#~ "<b>plugin_policy.tgz</b>, को आपके पसंदीदा स्थान पर सहेजा जाएगा."
+
+#~ msgid "Netscape Plugins"
+#~ msgstr "नेटस्केप प्लगइन्स"
+
+#~ msgctxt "lowest priority"
+#~ msgid "lowest"
+#~ msgstr "न्यूनतम"
+
+#~ msgctxt "low priority"
+#~ msgid "low"
+#~ msgstr "निम्न"
+
+#~ msgctxt "medium priority"
+#~ msgid "medium"
+#~ msgstr "मध्यम"
+
+#~ msgctxt "high priority"
+#~ msgid "high"
+#~ msgstr "उच्च"
+
+#~ msgctxt "highest priority"
+#~ msgid "highest"
+#~ msgstr "उच्चतम"
+
+#~ msgid ""
+#~ "Do you want to apply your changes before the scan? Otherwise the changes "
+#~ "will be lost."
+#~ msgstr ""
+#~ "स्केन के पहले क्या आप चाहते हैं कि परिवर्तनों को लागू करें? अन्यथा परिवर्तन गुम हो जाएँगे."
+
+#~ msgid ""
+#~ "The nspluginscan executable cannot be found. Netscape plugins will not be "
+#~ "scanned."
+#~ msgstr "एनएस-प्लगइन-एक्जीक्यूटेबल नहीं मिला. नेटस्केप प्लगइन को स्केन नहीं किया जाएगा."
+
+#~ msgid "Scanning for plugins"
+#~ msgstr "प्लगइन के लिए स्कैन किया जा रहा है"
+
+#~ msgid "Cancel"
+#~ msgstr "रद्द करें"
+
+#~ msgid "Select Plugin Scan Folder"
+#~ msgstr "प्लगइन स्कैन फ़ोल्डर चुनें"
+
+#~ msgid "Plugin"
+#~ msgstr "प्लगइन"
+
+#~ msgid "MIME type"
+#~ msgstr "माइम क़िस्म"
+
+#~ msgid "Suffixes"
+#~ msgstr "प्रत्यय"
+
+#~ msgid "Doma&in-Specific"
+#~ msgstr "डोमेन विशेष (&i)"
+
+#~ msgid "New Plugin Policy"
+#~ msgstr "नई प्लगइन नीति"
+
+#~ msgid "Change Plugin Policy"
+#~ msgstr "प्लगइन नीति बदलें"
+
+#~ msgid "&Plugin policy:"
+#~ msgstr "प्लगइन नीतिः (&P)"
+
+#~ msgid "Select a plugin policy for the above host or domain."
+#~ msgstr "ऊपर दिए होस्ट या डोमेन के लिए एक प्लगइन नीति चुनें."
+
+#~ msgid "Host/Domain"
+#~ msgstr "होस्ट/डोमेन"
+
+#~ msgid "Policy"
+#~ msgstr "पॉलिसी"
+
+#~ msgid "De&lete"
+#~ msgstr "मिटाएँ (&l)"
+
+#~ msgid "&Import..."
+#~ msgstr "आयात... (&I)"
+
+#~ msgid "&Export..."
+#~ msgstr "निर्यात... (&E)"
+
+#~ msgid ""
+#~ "Click on this button to manually add a host or domain specific policy."
+#~ msgstr "होस्ट या डोमेन विशेष पॉलिसी स्वयं भरने के लिए इस बटन पर क्लिक करें."
+
+#~ msgid ""
+#~ "Click on this button to change the policy for the host or domain selected "
+#~ "in the list box."
+#~ msgstr "सूची बक्से में से चुने गए होस्ट या डोमेन पॉलिसी बदलने के लिए इस बटन पर क्लिक करें."
+
+#~ msgid ""
+#~ "Click on this button to delete the policy for the host or domain selected "
+#~ "in the list box."
+#~ msgstr ""
+#~ "सूची बक्से में से चुने गए होस्ट या डोमेन पॉलिसी मिटाने के लिए इस बटन पर क्लिक करें."
+
+#~ msgid "You must first select a policy to be changed."
+#~ msgstr "बदलने के लिए आपको पहले कोई पॉलिसी चुनना होगा."
+
+#~ msgid "You must first select a policy to delete."
+#~ msgstr "मिटाने के लिए आपको पहले कोई पॉलिसी चुनना होगा."
+
+#~ msgid "Use Global"
+#~ msgstr "वैश्विक इस्तेमाल करें"
+
+#~ msgid "Accept languages:"
+#~ msgstr "भाषाएँ स्वीकारें:"
+
+#~ msgid "Accept character sets:"
+#~ msgstr "कैरेक्टर सेट स्वीकारें:"
+
+#~ msgid "Select Home Folder"
+#~ msgstr "होम फ़ोल्डर चुनें"
+
+#~ msgid "Tabbed Browsing"
+#~ msgstr "टैब्ड ब्राउज़िंग"
+
+#~ msgid "Use global"
+#~ msgstr "वैश्विक इस्तेमाल करें"
+
+#~ msgid "Use setting from global policy."
+#~ msgstr "वैश्विक नीतियों से विन्यास इस्तेमाल करें."
+
+#~ msgid "Allow"
+#~ msgstr "स्वीकारें"
+
+#~ msgid "Accept all popup window requests."
+#~ msgstr "सभी पॉपअप विंडो निवेदन स्वीकारें."
+
+#~ msgid "Prompt every time a popup window is requested."
+#~ msgstr "जब भी पॉपअप विंडो निवेदित हो, हर बार पूछें"
+
+#~ msgid "Deny"
+#~ msgstr "अस्वीकारें"
+
+#~ msgid "Reject all popup window requests."
+#~ msgstr "सभी पॉपअप विंडो निवेदन नकारें."
+
+#~ msgid "Smart"
+#~ msgstr "स्मार्ट"
+
+#~ msgid ""
+#~ "Accept popup window requests only when links are activated through an "
+#~ "explicit mouse click or keyboard operation."
+#~ msgstr ""
+#~ "पॉप अप विंडो तभी स्वीकारें जब कड़ियों को विशिष्ट माउस क्लिक या कुंजीपट ऑपरेशन द्वारा "
+#~ "सक्रिय किया जाता हो."
+
+#~ msgid "Resize window:"
+#~ msgstr "विंडो को नया-आकार दें"
+
+#~ msgid "Allow scripts to change the window size."
+#~ msgstr "विंडो आकार में बदलाव के लिए स्क्रिप्ट को अनुमति दें."
+
+#~ msgid "Ignore"
+#~ msgstr "नज़रअंदाज़ करें"
+
+#~ msgid ""
+#~ "Ignore attempts of scripts to change the window size. The web page will "
+#~ "<i>think</i> it changed the size but the actual window is not affected."
+#~ msgstr ""
+#~ "विंडो आकार बदलने वाले स्क्रिप्ट को अनदेखा करें. वेब पृष्ठ यह<i>सोचेगा</i> कि इसने आकार "
+#~ "को बदल दिया है परंतु वास्तविक विंडो आकार अप्रभावित रहेगा."
+
+#~ msgid "Move window:"
+#~ msgstr "विंडो खिसकाएँ:"
+
+#~ msgid "Allow scripts to change the window position."
+#~ msgstr "विंडो स्थिति में बदलाव के लिए स्क्रिप्ट को अनुमति दें."
+
+#~ msgid ""
+#~ "Ignore attempts of scripts to change the window position. The web page "
+#~ "will <i>think</i> it moved the window but the actual position is not "
+#~ "affected."
+#~ msgstr ""
+#~ "विंडो स्थान बदलने वाले स्क्रिप्ट को अनदेखा करें. वेब पृष्ठ यह<i>सोचेगा</i> कि इसने विंडो "
+#~ "को खिसका को  दिया है परंतु वास्तविक विस्थानआकार अप्रभावित रहेगा."
+
+#~ msgid "Focus window:"
+#~ msgstr "फ़ोकस विंडोः"
+
+#~ msgid "Allow scripts to focus the window."
+#~ msgstr "विंडो फ़ोकस करने के लिए स्क्रिप्ट को अनुमति दें."
+
+#~ msgid ""
+#~ "Ignore attempts of scripts to focus the window. The web page will "
+#~ "<i>think</i> it brought the focus to the window but the actual focus will "
+#~ "remain unchanged."
+#~ msgstr ""
+#~ "विंडो फ़ोकस करने वाले स्क्रिप्ट को अनदेखा करें. वेब पृष्ठ यह<i>सोचेगा</i> कि इसने विंडो में "
+#~ "फ़ोकस कर दिया है परंतु वास्तविक फ़ोकसआकार अप्रभावित रहेगा."
+
+#~ msgid "Modify status bar text:"
+#~ msgstr "स्थिति पट्टी पाठ बदलें:"
+
+#~ msgid "Allow scripts to change the text of the status bar."
+#~ msgstr "स्थिति पट्टी पाठ बदलने के लिए स्क्रिप्ट को अनुमति दें."
+
+#~ msgid ""
+#~ "Ignore attempts of scripts to change the status bar text. The web page "
+#~ "will <i>think</i> it changed the text but the actual text will remain "
+#~ "unchanged."
+#~ msgstr ""
+#~ "स्थिति पट्टी पाठ बदलने वाले स्क्रिप्ट को अनदेखा करें. वेब पृष्ठ यह<i>सोचेगा</i> कि इसने "
+#~ "पाठ को बदल दिया है परंतु वास्तविक पाठ अप्रभावित रहेगा."
+
+#~ msgid "kcmkonqhtml"
+#~ msgstr "केसीएमकॉन्कएचटीएमएल"
+
+#~ msgid "Konqueror Browsing Control Module"
+#~ msgstr "कॉन्करर ब्राउज़िंग नियंत्रण मॉड्यूल"
+
+#~ msgid "(c) 1999 - 2001 The Konqueror Developers"
+#~ msgstr "(c) 1999-2001, कॉन्करर विकासकर्ता"
+
+#~ msgid "Matthias Kalle Dalheimer"
+#~ msgstr "मेथियास काल दाल्हेमेर"
+
+#~ msgid "Daniel Molkentin"
+#~ msgstr "डेनियल मॉल्केनटिन"
+
+#~ msgid ""
+#~ "JavaScript access controls\n"
+#~ "Per-domain policies extensions"
+#~ msgstr ""
+#~ "जावास्क्रिप्ट पहुँच नियंत्रण\n"
+#~ "पर-डोमेन पॉलिसीज़ एक्सटेंशन्स"
+
+#~ msgid "&Java"
+#~ msgstr "जावा (&J)"
+
+#~ msgid "Java&Script"
+#~ msgstr "जावास्क्रिप्ट (&S)"
+
+#~ msgid "Enable filters"
+#~ msgstr "फ़िल्टर्स सक्षम करें"
+
+#~ msgid "Hide filtered images"
+#~ msgstr "फ़िल्टर की गई छवियों को छुपाएँ"
+
+#~ msgid "URL Expressions to Filter"
+#~ msgstr "फ़िल्टर करने के लिए यूआरएल एक्सप्रेशन्स"
+
+#~ msgid "Expression (e.g. http://www.site.com/ad/*):"
+#~ msgstr "एक्सप्रेशन (उदा. http://www.site.com/ad/*):"
+
+#~ msgid "Insert"
+#~ msgstr "प्रविष्ट"
+
+#~ msgid "Update"
+#~ msgstr "अद्यतन"
+
+#~ msgid "Import..."
+#~ msgstr "आयात..."
+
+#~ msgid "Export..."
+#~ msgstr "निर्यात..."
+
+#~ msgid ""
+#~ "Enable or disable AdBlocK filters. When enabled a set of expressions to "
+#~ "be blocked should be defined in the filter list for blocking to take "
+#~ "effect."
+#~ msgstr ""
+#~ "एडब्लॉक फ़िल्टर सक्षम या अक्षम करें. जब सक्षम किया जाता है तो एक्सप्रेशन का एक सेट जिसे "
+#~ "ब्लॉक किया जाना है उसे फ़िल्टर सूची में पारिभाषित किया जाना होता है ताकि ब्लॉक "
+#~ "प्रभावी हो सके."
+
+#~ msgid ""
+#~ "When enabled blocked images will be removed from the page completely "
+#~ "otherwise a placeholder 'blocked' image will be used."
+#~ msgstr ""
+#~ "जब सक्षम किया जाता है तो रोकी गई छवियाँ पृष्ठ में से पूरी तरह निकाल दी जाती हैं "
+#~ "अन्यथा एक 'रोका गया' प्लेस होल्डर छवि इस्तेमाल में लिया जाता है."
+
+#~ msgid ""
+#~ "<h1>Konqueror Fonts</h1>On this page, you can configure which fonts "
+#~ "Konqueror should use to display the web pages you view."
+#~ msgstr ""
+#~ "<h1>कॉन्करर फ़ॉन्ट्स</h1>इस पृष्ठ पर आप कॉन्फ़िगर कर सकते हैं कि वेब पृष्ठ प्रदर्शित करने "
+#~ "के लिए कॉन्करर कौन से फ़ॉन्ट उपयोग करे."
+
+#~ msgid "Font Si&ze"
+#~ msgstr "फ़ॉन्ट आकारः (&z)"
+
+#~ msgid "This is the relative font size Konqueror uses to display web sites."
+#~ msgstr ""
+#~ "यह सापेक्षिक फ़ॉन्ट आकार कॉन्करर द्वारा वेब साइट दिखाने में उपयोग में लिया जाएगा."
+
+#~ msgid "M&inimum font size:"
+#~ msgstr "न्यूनतम फ़ॉन्ट आकारः (&i)"
+
+#~ msgid ""
+#~ "Konqueror will never display text smaller than this size,<br />overriding "
+#~ "any other settings"
+#~ msgstr ""
+#~ "कॉन्करर इस आकार से कम पाठ कभी भी नहीं दिखाएगा,<br />किसी भी अन्य सेटिंग को "
+#~ "ओवरराइड करते हुए"
+
+#~ msgid "&Medium font size:"
+#~ msgstr "मध्यम फ़ॉन्ट आकारः (&M)"
+
+#~ msgid "This is the font used to display normal text in a web page."
+#~ msgstr "यह फ़ॉन्ट वेब पृष्ठ में सामान्य पाठ प्रदर्शन के लिए उपयोग में आएगा."
+
+#~ msgid "&Fixed font:"
+#~ msgstr "स्थिर फ़ॉन्टः (&F)"
+
+#~ msgid ""
+#~ "This is the font used to display fixed-width (i.e. non-proportional) text."
+#~ msgstr ""
+#~ "यह फ़ॉन्ट स्थिर चौड़ाई पाठ (यानी कि असमानुपाती) प्रदर्शन के लिए उपयोग में आएगा."
+
+#~ msgid "S&erif font:"
+#~ msgstr "सेरिफ़ फ़ॉन्टः (&e)"
+
+#~ msgid "This is the font used to display text that is marked up as serif."
+#~ msgstr "यह फ़ॉन्ट उस पाठ के प्रदर्शन के लिए उपयोग में आएगा जो सेरिफ़ के रूप में चिह्नित है."
+
+#~ msgid "Sa&ns serif font:"
+#~ msgstr "सॉ सेरिफ़ फ़ॉन्टः (&n)"
+
+#~ msgid ""
+#~ "This is the font used to display text that is marked up as sans-serif."
+#~ msgstr ""
+#~ "यह फ़ॉन्ट उस पाठ के प्रदर्शन के लिए उपयोग में आएगा जो संस-सेरिफ़ के रूप में चिह्नित है."
+
+#~ msgid "C&ursive font:"
+#~ msgstr "कर्सिव फ़ॉन्टः (&u)"
+
+#~ msgid "This is the font used to display text that is marked up as italic."
+#~ msgstr ""
+#~ "यह फ़ॉन्ट उस पाठ के प्रदर्शन के लिए उपयोग में आएगा जो तिरछा के रूप में चिह्नित है."
+
+#~ msgid "Fantas&y font:"
+#~ msgstr "फ़ैन्टेसी फ़ॉन्टः (&y)"
+
+#~ msgid ""
+#~ "This is the font used to display text that is marked up as a fantasy font."
+#~ msgstr ""
+#~ "यह फ़ॉन्ट उस पाठ के प्रदर्शन के लिए उपयोग में आएगा जो फ़ैन्टेसी के रूप में चिह्नित है."
+
+#~ msgid "Font &size adjustment for this encoding:"
+#~ msgstr "इस एनकोडिंग के लिए फ़ॉन्ट आकार बदलेंः (&s)"
+
+#~ msgid "Default encoding:"
+#~ msgstr "डिफ़ॉल्ट एनकोडिंगः"
+
+#~ msgid "Use Language Encoding"
+#~ msgstr "भाषा एनकोडिंग इस्तेमाल करें"
+
+#~ msgid ""
+#~ "Select the default encoding to be used; normally, you will be fine with "
+#~ "'Use language encoding' and should not have to change this."
+#~ msgstr ""
+#~ "उपयोग किए जाने वाले डिफ़ॉल्ट एनकोडिंग चुनें. सामान्यतः आप सही रहेंगे 'भाषा एनकोडिंग "
+#~ "इस्तेमाल करें ' के साथ तथा इसे बदलना आवश्यक नहीं होगा."
+
+#~ msgid "Boo&kmarks"
+#~ msgstr "पसंदीदा"
+
+#~ msgid "Ask for name and folder when adding bookmarks"
+#~ msgstr "जब पसंद जोड़ा जा रहा हो तो नाम तथा फ़ोल्डर के लिए पूछें"
+
+#~ msgid "Show only marked bookmarks in bookmark toolbar"
+#~ msgstr "सिर्फ चिह्नित पसंद को पसंद औजार पट्टी में दिखाएँ"
+
+#~ msgid "Form Com&pletion"
+#~ msgstr "फ़ॉर्म भरना (&p)"
+
+#~ msgid "Enable completion of &forms"
+#~ msgstr "फ़ॉर्म भरने दें(&f)"
+
+#~ msgid ""
+#~ "If this box is checked, Konqueror will remember the data you enter in web "
+#~ "forms and suggest it in similar fields for all forms."
+#~ msgstr ""
+#~ "यदि यह बक्सा चुना जाता है, जो डाटा आप वेब फ़ॉर्म में भरते हैं कॉन्करर उन्हें याद रखता है "
+#~ "तथा सभी फ़ॉर्म के ऐसे ही फील्ड में इन्हें सुझाव के रूप में प्रस्तुत करता है."
+
+#~ msgid "&Maximum completions:"
+#~ msgstr "अधिकतम कितना भरें : (&M)"
+
+#~ msgid ""
+#~ "Here you can select how many values Konqueror will remember for a form "
+#~ "field."
+#~ msgstr "यहाँ आप चयनित कर सकते हैं कि कितने मूल्य कॉन्करर याद रखे फ़ॉर्म फील्ड के लिए."
+
+#~ msgid "Mouse Beha&vior"
+#~ msgstr "माउस व्यवहार (&v)"
+
+#~ msgid "Chan&ge cursor over links"
+#~ msgstr "कड़ियों के ऊपर संकेतक बदले (&g)"
+
+#~ msgid ""
+#~ "If this option is set, the shape of the cursor will change (usually to a "
+#~ "hand) if it is moved over a hyperlink."
+#~ msgstr ""
+#~ "यदि यह विकल्प नियत किया जाता है, संकेतक का रूप (प्रायः हथेली के रूप में) बदल जाता है "
+#~ "जब वह किसी हायपर लिंक के ऊपर ले जाया जाता है."
+
+#~ msgid "M&iddle click opens URL in selection"
+#~ msgstr "चयनित पर मध्य क्लिक करने से यूआरएल को खोलता है (&i)"
+
+#~ msgid ""
+#~ "If this box is checked, you can open the URL in the selection by middle "
+#~ "clicking on a Konqueror view."
+#~ msgstr ""
+#~ "यदि यह बक्सा चेक किया जाता है, आप चयनित यूआरएल को मध्य क्लिक कर कॉन्करर दृश्य में "
+#~ "खोल सकते हैं."
+
+#~ msgid "Right click goes &back in history"
+#~ msgstr "दायाँ क्लिक से इतिहास में पीछे जाएँ. (&b)"
+
+#~ msgid "A&utomatically load images"
+#~ msgstr "छवि स्वचलित लोड करें (&u)"
+
+#~ msgid "Dra&w frame around not completely loaded images"
+#~ msgstr "पूरी तरह से लोड नहीं हुई छवियों के चारों ओर एक फ्रेम बनाएँ (&w)"
+
+#~ msgid "Allow automatic delayed &reloading/redirecting"
+#~ msgstr "विलम्बित रिलोडिंग/रिडायरेक्टिंग अपने आप करने दें (&r)"
+
+#~ msgid "Enable/disable Access Ke&y activation with Ctrl key"
+#~ msgstr "कंट्रोल कुंजी के द्वारा पहुँच कुंजी को सक्षम/अक्षम करें (&y)"
+
+#~ msgid "Und&erline links:"
+#~ msgstr "कड़ियाँ रेखांकित करें: (&e)"
+
+#~ msgctxt "underline"
+#~ msgid "Enabled"
+#~ msgstr "सक्षम"
+
+#~ msgctxt "underline"
+#~ msgid "Disabled"
+#~ msgstr "अक्षम"
+
+#~ msgid "Only on Hover"
+#~ msgstr "सिर्फ मंडराने पर"
+
+#~ msgid "A&nimations:"
+#~ msgstr "एनिमेशन्सः (&n)"
+
+#~ msgctxt "animations"
+#~ msgid "Enabled"
+#~ msgstr "सक्षम"
+
+#~ msgctxt "animations"
+#~ msgid "Disabled"
+#~ msgstr "अक्षम"
+
+#~ msgid "Show Only Once"
+#~ msgstr "सिर्फ एक बार दिखाएँ"
+
+#~ msgid "&Host or domain name:"
+#~ msgstr "होस्ट या डोमेन नामः (&H)"
+
+#~ msgid ""
+#~ "Enter the name of a host (like www.kde.org) or a domain, starting with a "
+#~ "dot (like .kde.org or .org)"
+#~ msgstr ""
+#~ "होस्ट का नाम भरें (जैसे कि- www.kde.org) या डोमेन, जो बिंदु से प्रारंभ होता है (जैसे- ."
+#~ "kde.org या .org)"
+
+#~ msgid "You must first enter a domain name."
+#~ msgstr "आपको पहले एक डोमेन नाम प्रविष्ट करना होगा."
+
+#~ msgid "Ena&ble JavaScript globally"
+#~ msgstr "जावास्क्रिप्ट सक्षम करें विश्वव्यापी (&b)"
+
+#~ msgid "Report &errors"
+#~ msgstr "त्रुटियाँ रिपोर्ट करें (&e)"
+
+#~ msgid ""
+#~ "Enables the reporting of errors that occur when JavaScript code is "
+#~ "executed."
+#~ msgstr ""
+#~ "जब जावा स्क्रिप्ट कोड चलाया जाए तब जो त्रुटियाँ हों, उन्हें रिपोर्ट करना सक्षम करे."
+
+#~ msgid "Enable debu&gger"
+#~ msgstr "डिबगर सक्षम करें (&g)"
+
+#~ msgid "Enables builtin JavaScript debugger."
+#~ msgstr "अंतर्निर्मित जावास्क्रिप्ट डिबगर सक्षम करें."
+
+#~ msgid ""
+#~ "Click this button to save the JavaScript policy to a zipped file. The "
+#~ "file, named <b>javascript_policy.tgz</b>, will be saved to a location of "
+#~ "your choice."
+#~ msgstr ""
+#~ "जावा स्क्रिप्ट पॉलिसी को जिप फ़ाइल मे सहेजने के लिए इस बटन को क्लिक करें. फ़ाइल "
+#~ "<b>javascript_policy.tgz</b> आपके पसंदीदा स्थान पर सहेजा जाएगा"
+
+#~ msgid "Global JavaScript Policies"
+#~ msgstr "वैश्विक जावास्क्रिप्ट नीतियाँ"
+
+#~ msgid "Do&main-Specific"
+#~ msgstr "डोमेन-विशिष्ट (&m)"
+
+#~ msgid "New JavaScript Policy"
+#~ msgstr "नई जावास्क्रिप्ट नीति"
+
+#~ msgid "Change JavaScript Policy"
+#~ msgstr "जावास्क्रिप्ट नीति बदलें"
+
+#~ msgid "JavaScript policy:"
+#~ msgstr "जावास्क्रिप्ट नीतिः"
+
+#~ msgid "Select a JavaScript policy for the above host or domain."
+#~ msgstr "ऊपर दिए होस्ट या डोमेन के लिए एक जावास्क्रिप्ट नीति चुनें"
+
+#~ msgid "Domain-Specific JavaScript Policies"
+#~ msgstr "डोमेन विशेष जावास्क्रिप्ट नीतियाँ"
+
+#~ msgid "Enable Ja&va globally"
+#~ msgstr "जावा सक्षम करें (विश्वव्यापी)  (&v)"
+
+#~ msgid "Java Runtime Settings"
+#~ msgstr "जावा रन-टाइम विन्यास"
+
+#~ msgid "&Use security manager"
+#~ msgstr "सुरक्षा प्रबंधक इस्तेमाल करें (&U)"
+
+#~ msgid "Use &KIO"
+#~ msgstr "के-आईओ इस्तेमाल करें (&K)"
+
+#~ msgid "Shu&tdown applet server when inactive"
+#~ msgstr "जब अक्रिय हो तो ऐपलेट सर्वर बंद करें (&t)"
+
+#~ msgid "App&let server timeout:"
+#~ msgstr "ऐपलेट सर्वर टाइमआउटः (&l)"
+
+#~ msgid "&Path to Java executable, or 'java':"
+#~ msgstr "जावा एक्जीक्यूटेबल या 'जावा' का पथः (&P)"
+
+#~ msgid "Additional Java a&rguments:"
+#~ msgstr "अतिरिक्त जावा आर्गुमेंट्सः (&r)"
+
+#~ msgid ""
+#~ "Click this button to save the Java policy to a zipped file. The file, "
+#~ "named <b>java_policy.tgz</b>, will be saved to a location of your choice."
+#~ msgstr ""
+#~ "जावा पॉलिसी को जिप फ़ाइल में सहेजने के लिए इस बटन को क्लिक करें. फ़ाइल "
+#~ "<b>java_policy.tgz</b>, आपके पसंदीदा स्थल पर सहेजी जाएगी ."
+
+#~ msgid "Enabling this will cause the jvm to use KIO for network transport "
+#~ msgstr ""
+#~ "इसे सक्षम करने पर नेटवर्क ट्रांसपोर्ट के लिए जेवीएम को केआईओ का उपयोग करने देता है."
+
+#~ msgid ""
+#~ "If you want special arguments to be passed to the virtual machine, enter "
+#~ "them here."
+#~ msgstr "यदि आप आभासी मशीनों में विशिष्ट आर्गुमेंट पास करना चाहते हैं तो उन्हें यहाँ भरें."
+
+#~ msgid "New Java Policy"
+#~ msgstr "नई जावा नीति"
+
+#~ msgid "Change Java Policy"
+#~ msgstr "जावा नीति बदलें"
+
+#~ msgid "&Java policy:"
+#~ msgstr "जावा नीतिः (&J)"
+
+#~ msgid "Select a Java policy for the above host or domain."
+#~ msgstr "ऊपर दिए होस्ट या डोमेन के लिए एक जावा नीति चुनें"
+
+#~ msgid "&Filters"
+#~ msgstr "फ़िल्टर्स (&F)"
+
+#~ msgid "Under construction..."
+#~ msgstr "निर्माणाधीन..."
+
+#~ msgid ""
+#~ "Disables the minimization of memory usage and allows you to make each "
+#~ "browsing activity independent from the others"
+#~ msgstr ""
+#~ "मेमोरी उपयोग के कम किए जाने को रोकता है तथा प्रत्येक ब्राउज़िंग क्रिया को एक दूसरे से "
+#~ "स्वतंत्र करता है."
+
+#~ msgid ""
+#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
+#~ "performance here."
+#~ msgstr ""
+#~ "<h1>केडीई परफार्मेंस</h1> यहाँ आप विन्यासों को कॉन्फ़िगर कर सकते हैं जो आपके केडीई "
+#~ "परफार्मेंस को बेहतर बनाते हैं."
+
+#~ msgid "System"
+#~ msgstr "तंत्र"
+
+#~ msgid ""
+#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
+#~ "improve Konqueror performance here. These include options for reusing "
+#~ "already running instances and for keeping instances preloaded."
+#~ msgstr ""
+#~ "<h1>कॉन्करर परफार्मेंस</h1> यहाँ आप ढेर सारे विन्यासों को कॉन्फ़िगर कर सकते हैं जो आपके "
+#~ "कॉन्करर परफार्मेंस को बेहतर बनाते हैं. इनमें शामिल हैं पहले से चल रहे इंस्टैंसेस का फिर से  "
+#~ "उपयोग तथा इंसटैंसेस को प्री-लोडेड बनाए रखना."
+
+#~ msgid "No permissions to write to %1"
+#~ msgstr " %1 पर लिखने के लिए कोई अनुमतियाँ नहीं"
+
+#~ msgid "Save View Changes per &Folder"
+#~ msgstr "दृश्य परिवर्तनों को प्रति फ़ोल्डर अनुसार सहेज कर रखें (&F)"
+
+#~ msgid "Remove Folder Properties"
+#~ msgstr "फ़ोल्डर गुण हटाएँ"
+
+#~ msgid "Create Folder..."
+#~ msgstr "फ़ोल्डर बनाएँ..."
+
+#~ msgid "&Delete"
+#~ msgstr "मिटाएँ (&D)"
+
+#~ msgid "&Rename"
+#~ msgstr "नाम बदलें (&R)"
+
+#~ msgid "Move backwards one step in the browsing history<br /><br />"
+#~ msgstr "ब्राउजिंग इतिहास में एक चरण पीछे जाता है<br /><br />"
+
+#~ msgid "Move forward one step in the browsing history<br /><br />"
+#~ msgstr "ब्राउजिंग इतिहास में एक चरण आगे जाता है<br /><br />"
+
+#~ msgid ""
+#~ "Thanks to <a href=\"%1\">DCOP</a> you can have full control over "
+#~ "Konqueror using a script."
+#~ msgstr ""
+#~ "स्क्रिप्ट के जरिए आप कॉन्करर को पूरा नियंत्रित कर सकते हैं. इसके लिए <a href="
+#~ "\"%1\">डीसीओपी</a> का धन्यवाद."
+
+#~ msgid "MS Windows encoding:"
+#~ msgstr "एमएस विंडोज़ एनकोडिंगः"
+
+#~ msgid "&Show network operations in a single window"
+#~ msgstr "एकल विंडो में नेटवर्क ऑपरेशन्स दिखाएँ (&S)"
+
+#~ msgid "Rename icons in&line"
+#~ msgstr "पंक्ति में प्रतीक को नया नाम दें (&l)"
+
+#~ msgid ""
+#~ "Checking this option will allow files to be renamed by clicking directly "
+#~ "on the icon name. "
+#~ msgstr ""
+#~ "इस विकल्प को चेक करने से प्रतीक नाम के ऊपर क्लिक करने पर फ़ाइलों के नाम सीधे ही बदले "
+#~ "जा सकेंगे."
+
+#~ msgid ""
+#~ "<h1>Multiple Desktops</h1>In this module, you can configure how many "
+#~ "virtual desktops you want and how these should be labeled."
+#~ msgstr ""
+#~ "<h1>बहु डेस्कटॉप</h1>इस मॉड्यूल में आप कॉन्फ़िगर कर सकते हैं कि आप कितने आभासी डेस्कटॉप "
+#~ "चाहते हैं तथा उनमें किस प्रकार लेबल लगाए जाएँ."
+
+#~ msgid "N&umber of desktops: "
+#~ msgstr "डेस्कटॉप की संख्याः (&u)"
+
+#~ msgid ""
+#~ "Here you can set how many virtual desktops you want on your KDE desktop. "
+#~ "Move the slider to change the value."
+#~ msgstr ""
+#~ "यहाँ आप नियत कर सकते हैं कि आप अपने केडीई डेस्कटॉप पर कितने आभासी डेस्कटॉप चाहते हैं. "
+#~ "मूल्य बदलने के लिए स्लाइडर खिसकाएँ."
+
+#~ msgid "Desktop &Names"
+#~ msgstr "डेस्कटॉप नाम (&N)"
+
+#~ msgid "Desktop %1:"
+#~ msgstr "डेस्कटॉप %1:"
+
+#~ msgid "Here you can enter the name for desktop %1"
+#~ msgstr "यहाँ आप डेस्कटॉप %1 के लिए नाम भर सकते हैं"
+
+#~ msgid "Mouse wheel over desktop background switches desktop"
+#~ msgstr "डेस्कटॉप के ऊपर माउस व्हील चलाने से डेस्कटॉप बदलता है"
+
+#~ msgid "Desktop %1"
+#~ msgstr "डेस्कटॉप %1"
+
+#~ msgid "&Standard font:"
+#~ msgstr "मानक फ़ॉन्ट (&S)"
+
+#~ msgid "Font si&ze:"
+#~ msgstr "फ़ॉन्ट आकारः (&z)"
+
+#~ msgid "This is the font size used to display text in Konqueror windows."
+#~ msgstr "यह फ़ॉन्ट आकार कॉन्करर विंडो में पाठ प्रदर्शन के लिए उपयोग में आएगा."
+
+#~ msgid "Normal te&xt color:"
+#~ msgstr "सामान्य पाठ रंगः (&x)"
+
+#~ msgid "This is the color used to display text in Konqueror windows."
+#~ msgstr "यह वह रंग है जो कॉन्करर विंडो में पाठ प्रदर्शन के लिए उपयोग में आएगा."
+
+#~ msgid "&Text background color:"
+#~ msgstr "पाठ पृष्ठभूमि रंगः (&T)"
+
+#~ msgid "This is the color used behind the text for the icons on the desktop."
+#~ msgstr "यह वह रंग है जो पाठ के पीछे डेस्कटॉप पर प्रतीकों के लिए उपयोग में आएगा."
+
+#~ msgid "H&eight for icon text:"
+#~ msgstr "प्रतीक पाठ की ऊंचाई: (&e)"
+
+#~ msgid ""
+#~ "This is the maximum number of lines that can be used to draw icon text. "
+#~ "Long file names are truncated at the end of the last line."
+#~ msgstr ""
+#~ "प्रतीक पाठ लिखने के लिए यह लकीरों की अधिकतम संख्या है. लंबे फ़ाइल नामों को अंतिम लकीर "
+#~ "के अंत में काट दिया जाएगा."
+
+#~ msgid "&Width for icon text:"
+#~ msgstr "प्रतीक पाठ की चौड़ाई (&W)"
+
+#~ msgid ""
+#~ "This is the maximum width for the icon text when konqueror is used in "
+#~ "multi column view mode."
+#~ msgstr "जब कॉन्करर बहु स्तम्भ दृश्य मोड में होगा तब यह प्रतीक पाठ की चौड़ाई होगी"
+
+#~ msgid "&Underline filenames"
+#~ msgstr "फ़ाइल नाम रेखांकित करें (&U)"
+
+#~ msgid "Display file sizes in b&ytes"
+#~ msgstr "फ़ाइल आकार बाइट्स में प्रदर्शित करें (&y)"
+
+#~ msgid " line"
+#~ msgid_plural " lines"
+#~ msgstr[0] " लाइन"
+#~ msgstr[1] " लाइन"
+
+#~ msgid " pixel"
+#~ msgid_plural " pixels"
+#~ msgstr[0] "पिक्सेल"
+#~ msgstr[1] "पिक्सेल"
+
+#~ msgid ""
+#~ "<h1>Appearance</h1> You can configure how Konqueror looks as a file "
+#~ "manager here."
+#~ msgstr ""
+#~ "<h1>शक्ल-सूरत</h1> आप यहाँ कॉन्फ़िगर कर सकते हैं कि कैसे यहाँ कॉन्करर फ़ाइल प्रबंधक की "
+#~ "तरह कैसे दिखे."
+
+#~ msgid "&Appearance"
+#~ msgstr "शक्ल-सूरत (&A)"

@@ -1,0 +1,85 @@
+<chapter id="introduction">
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>(c) 2005 Mandriva</firstname
+><surname
+>Poland</surname
+><affiliation
+><address
+><email
+>biuro@mandriva.pl</email
+></address
+></affiliation
+><contrib
+>Polskie tłumaczenie</contrib
+></othercredit
+> 
+</authorgroup>
+<date
+>2003-10-20</date
+> <releaseinfo
+>3.2</releaseinfo
+> </chapterinfo>
+
+<title
+>Wprowadzenie</title>
+
+<para
+><emphasis
+>&konqueror;</emphasis
+> jest zaawansowanym <link linkend="filemanager"
+>menedżerem plików</link
+> dla &kde;, dostarczającym funkcje zarządzania plikami zaczynając od podstawowych operacji kopiuj/wytnij i wklej, aż do zaawansowanego lokalnego i zdalnego przeglądania plików w sieci. Zawartość katalogów może być wyświetlana w przeróżnych tekstowych i graficznych <link linkend="viewmode"
+>trybach widoku</link
+>, włącznie z podglądem miniatur obrazów. Właściwości plików i katalogów mogą być łatwo sprawdzone i zmienione, a programy uruchamiane za pomocą jednego kliknięcia lewym przyciskiem myszy;.</para>
+
+<para
+><emphasis
+>&konqueror;</emphasis
+> jest <link linkend="browser"
+>przeglądarką internetową</link
+> zgodną z &HTML; w wersji 4.01, z wbudowaną obsługą JavaScript (ECMA-262), <acronym
+>CSS</acronym
+> (Cascading Style Sheets) oraz języków dwukierunkowych (takich jak arabski czy hebrajski). Zapewnia bezpieczną obsługę apletów &Java;, wtyczek &Netscape; do wyświetlania &Flash;, &RealAudio; i &RealVideo;, a także <acronym
+>SSL</acronym
+> dla bezpiecznej komunikacji. Zaawansowane funkcje obejmują automatyczne dopełnianie adresów &URL;, wypełnianie formularzy, możliwość importowania ulubionych adresów z innych przeglądarek czy przeglądanie w kartach. </para>
+
+<para
+><emphasis
+>&konqueror;</emphasis
+> jest także doskonałym w pełni funkcjonalnym klientem <link linkend="ftp"
+>FTP</link
+>.</para>
+
+<para
+><emphasis
+>&konqueror;</emphasis
+> jest uniwersalnym programem umożliwiającym przeglądanie obrazów i dokumentów bez potrzeby uruchamiania innych programów. Jest to możliwe dzięki osadzonym komponentom (dzięki technologii KParts &kde;) dostarczonym przez inne programy: &kview; do przeglądania obrazów, &kdvi; do przeglądania <acronym
+>DVI</acronym
+>, &kghostview; do dokumentów &PostScript; oraz przez różne programy &koffice; do przeglądania ich dokumentów. </para>
+
+<para
+><emphasis
+>&konqueror;</emphasis
+> jest programem umożliwiającym pełną personalizację, gdzie każdy może ją <link linkend="config"
+>skonfigurować</link
+> tak, aby spełniała jego własne potrzeby, od zmieniania całego stylu i rozmiaru tekstu i ikon do wybierania, które przyciski mają być wyświetlane w pasku narzędzi, zmianę ich liczby i ustawień, a także definiowanie skrótów klawiszowych. Różne <link linkend="save-settings"
+>profile</link
+> konfiguracji mogą być łatwo zapisywane w celu ich wykorzystania w przyszłości. </para>
+
+</chapter>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

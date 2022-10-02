@@ -1,0 +1,590 @@
+<chapter id="basics">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>Δημήτριος</firstname
+><surname
+>Γλενταδάκης</surname
+><affiliation
+><address
+><email
+>dglent@gmail.com</email
+></address
+></affiliation
+><contrib
+>Μεταφραστής</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2010-02-08</date>
+<releaseinfo
+>4.4.0</releaseinfo>
+</chapterinfo>
+
+<title
+>Τα βασικά του &konqueror;</title>
+
+<important
+><para
+>Όπως όλες οι εφαρμογές του &kde;, ο &konqueror; είναι σε υψηλό βαθμό παραμετροποιήσιμος. Αυτό το έγγραφο περιγράφει πως συμπεριφέρεται ο &konqueror; με τις τυπικές, προκαθορισμένες ρυθμίσεις.</para>
+<para
+>Ένα ποντίκι με τρία κουμπιά μπορεί να φανεί χρήσιμο όταν χρησιμοποιείτε τον &konqueror; ή οποιαδήποτε άλλη εφαρμογή &kde;. Αν το ποντίκι σας έχει μόνο δύο κουμπιά τότε θα πρέπει να είστε σε θέση να ρυθμίσετε το σύστημά σας έτσι ώστε να μπορείτε να προσομοιώσετε το &MMB; με το πάτημα των δύο κουμπιών ταυτόχρονα.</para>
+<para
+>Μπορείτε να διαβάσετε περισσότερα σχετικά με τη χρήση του ποντικιού στο <xref linkend="lmb-mmb"/></para>
+<para
+>Αν έχετε συνηθίσει να πατάτε διπλό κλικ για να πραγματοποιήσετε μια ενέργεια, έχετε υπόψη σας ότι όπως και στο υπόλοιπο &kde;, ο &konqueror; έχει ως προκαθορισμένη επιλογή το απλό κλικ.</para
+></important>
+
+<sect1 id="konq-start">
+<title
+>Εκκίνηση του &konqueror;</title>
+
+<para
+>Όντας ένας συνδυασμός διαχειριστή αρχείων και περιηγητή ιστού, ο &konqueror; θα κάνει αυτόματα την εναλλαγή ανάμεσα στις δύο λειτουργίες όταν εκτελείται, αλλά είναι βολικό να μπορείτε να επιλέγετε τη λειτουργία κατά την εκκίνηση. </para>
+
+<itemizedlist>
+<!--
+<listitem
+><para
+>If you have a <guiicon
+>house</guiicon
+> shaped icon on the panel 
+or desktop, then <mousebutton
+>left</mousebutton
+> click on it to open 
+&konqueror; as a file manager.</para
+></listitem>
+
+<listitem
+><para
+>Or <mousebutton
+>left</mousebutton
+> click on <guiicon
+>world
+</guiicon
+> shaped icon on the panel or desktop to open &konqueror; in browser 
+mode.</para
+></listitem>
+-->
+<listitem
+><para
+>Από το μενού εκτελεστή εφαρμογών, επιλέξτε <menuchoice
+><guisubmenu
+>Διαδίκτυο</guisubmenu
+><guimenuitem
+>Konqueror (Περιηγητής ιστού)</guimenuitem
+></menuchoice
+> για την εκκίνηση ως περιηγητή. </para
+></listitem>
+
+<listitem
+><para
+>Με <keycombo action="simul"
+>&Alt;<keycap
+>F2</keycap
+></keycombo
+> ανοίγει το &krunner;. Εισάγετε τη διαδρομή ενός φακέλου και πατήστε &Enter; για την εκκίνηση σε λειτουργία διαχειριστή αρχείων, ή απλά εισάγετε ένα &URL; όπως <userinput
+>http://www.konqueror.org</userinput
+> για την εκκίνηση του &konqueror; ως περιηγητή.</para
+></listitem>
+
+</itemizedlist>
+
+<note
+><para
+>Πατήστε στο μαύρο βέλος δεξιά από το εικονίδιο <guiicon
+>Αρχική σελίδα</guiicon
+> για εναλλαγή στον <guiicon
+>Προσωπικό φάκελο</guiicon
+> και αντίστροφα. </para
+></note>
+
+<para
+>Αν ο &konqueror; είναι ο προκαθορισμένος διαχειριστής αρχείων, θα ανοίγει επίσης αυτόματα όταν πατάτε <mousebutton
+>αριστερό</mousebutton
+> κλικ σε ένα εικονίδιο της επιφάνειας εργασίας που αντιπροσωπεύει ένα φάκελο, όπως ένα εικονίδιο μονάδας σκληρού δίσκου ή το εικονίδιο του <guiicon
+>Κάδου απορριμμάτων</guiicon
+>. </para>
+
+
+</sect1>
+
+<sect1 id="parts">
+<title
+>Τα τμήματα του &konqueror;</title>
+
+<para
+>Μια σύντομη ματιά στα βασικά τμήματα του παραθύρου του &konqueror;:</para>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="parts.png"/></imageobject>
+<textobject>
+<phrase
+>Ορίστε ένα στιγμιότυπο του &konqueror;</phrase>
+</textobject>
+</mediaobject>
+
+<para
+>Η <interface
+>γραμμή τίτλου</interface
+> είναι η μπάρα στο πάνω μέρος του παραθύρου του &konqueror; και λειτουργεί με τον ίδιο τρόπο όπως στις άλλες εφαρμογές του &kde;. Πατήστε <mousebutton
+>δεξί</mousebutton
+> κλικ στο κεντρικό τμήμα για εμφάνιση του μενού λειτουργιών της γραμμής τίτλου.</para>
+
+<para
+>Η <interface
+>γραμμή μενού</interface
+> είναι η γραμμή που περιέχει τα ονόματα των κυλιόμενων μενού. Πατήστε <mousebutton
+>αριστερό</mousebutton
+> κλικ σε ένα όνομα για να εμφανίσετε/αποκρύψετε το μενού, ή χρησιμοποιήστε <keycombo action="simul"
+>&Alt;<keycap
+>το υπογραμμισμένο γράμμα</keycap
+></keycombo
+> στο όνομα ως συντόμευση, πχ <keycombo action="simul"
+>&Alt;<keycap
+>Ε</keycap
+></keycombo
+> για να εμφανίσετε το μενού <guimenu
+>Επεξεργασία</guimenu
+>. Τα διάφορα μενού περιγράφονται στην ενότητα <link linkend="menubar"
+>γραμμή μενού</link
+> αυτού του εγγράφου.</para>
+
+<para
+>Η <interface
+>γραμμή εργαλείων</interface
+> περιέχει εικονίδια για τις συνηθισμένες λειτουργίες. Πατώντας <mousebutton
+>αριστερό</mousebutton
+> κλικ σε ένα εικονίδιο το ενεργοποιείτε. Μια σύντομη περιγραφή με το τι κάνει το συγκεκριμένο κουμπί θα εμφανιστεί περνώντας το ποντίκι από πάνω του.</para>
+
+<para
+>Μερικά εικονίδια, όπως πχ τα εικονίδια Πίσω και Μπροστά στο προηγούμενο στιγμιότυπο, έχουν ένα μικρό μαύρο βέλος στα δεξιά. Αν πατήσετε το &LMB; στο βέλος θα εμφανιστεί ένα μικρό κυλιόμενο μενού.</para
+> <para
+>Πατώντας <mousebutton
+>δεξί</mousebutton
+> κλικ στη <interface
+>γραμμή εργαλείων</interface
+> θα εμφανιστεί το <link linkend="rmb-menus"
+>μενού <guilabel
+>Ρυθμίσεις γραμμών εργαλείων</guilabel
+></link
+> το οποίο μπορείτε να χρησιμοποιήσετε για να αλλάξετε την εμφάνιση και τη θέση της <interface
+>γραμμής εργαλείων</interface
+>.</para>
+
+<para
+>Η <interface
+>γραμμή εργαλείων τοποθεσίας</interface
+> δείχνει την διαδρομή του καταλόγου, του &URL; ή του αρχείου που προβάλλεται εκείνη τη στιγμή. Μπορείτε εδώ να πληκτρολογήσετε τη διαδρομή ή το &URL; και να πατήσετε &Enter; ή <mousebutton
+>αριστερό</mousebutton
+> κλικ στο εικονίδιο <guiicon
+>Μετάβαση</guiicon
+> στη δεξιά άκρη της <interface
+>γραμμής εργαλείων τοποθεσίας</interface
+> για να μεταβείτε στην επιθυμητή τοποθεσία. Το μαύρο εικονίδιο στη δεξιά άκρη της <interface
+>γραμμής εργαλείων τοποθεσίας</interface
+> καθαρίζει το πλαίσιο εισαγωγής κείμενου.</para>
+
+<para
+>Η <interface
+>γραμμή εργαλείων σελιδοδεικτών</interface
+> είναι η περιοχή κάτω από την <interface
+>γραμμή εργαλείων τοποθεσίας</interface
+> στο προηγούμενο στιγμιότυπο. Εδώ μπορείτε να προσθέσετε τους σελιδοδείκτες που χρησιμοποιείτε συχνά. Δείτε την ενότητα <link linkend="orgbmark"
+>Οργάνωση των σελιδοδεικτών σας</link
+> σε αυτό το έγγραφο.</para>
+
+<para
+>Το <interface
+>Παράθυρο</interface
+> είναι το βασικό μέρος του &konqueror;. Μπορεί να εμφανίζει τα περιεχόμενα ενός καταλόγου, μίας ιστοσελίδας, ενός  εγγράφου ή μίας εικόνας. Χρησιμοποιώντας το μενού <link linkend="menu-window"
+><guimenu
+>Παράθυρο</guimenu
+></link
+> μπορείτε να διαχωρίσετε το βασικό παράθυρο του &konqueror; σε μια ή περισσότερες προβολές, χρήσιμο για λειτουργίες συρσίματος και απόθεσης, ή ρυθμίστε το ώστε να περιέχει δύο ή περισσότερες προβολές σε καρτέλες. </para>
+
+<para
+>Η <interface
+>Γραμμή κατάστασης</interface
+> βρίσκεται στο κάτω μέρος του παραθύρου του &konqueror; και συχνά εμφανίζει γενικές πληροφορίες σε οτιδήποτε περνάτε το ποντίκι από πάνω του. Αν έχετε διαχωρίσει το βασικό παράθυρο σε περισσότερες προβολές θα έχετε μια Γραμμή κατάστασης για κάθε προβολή, και θα συμπεριλαμβάνει ένα μικρό πράσινο λαμπάκι στο αριστερό άκρο για να σας δείχνει ποια είναι η <quote
+>ενεργή</quote
+> προβολή. Πατώντας <mousebutton
+>δεξί</mousebutton
+> κλικ στη Γραμμή κατάστασης, εμφανίζεται το <link linkend="rmb-menus"
+>μενού του <mousebutton
+>δεξιού</mousebutton
+> κλικ του ποντικιού</link
+> της γραμμής κατάστασης.</para>
+
+<note
+><para
+>Μην ανησυχείτε αν ο δικός σας &konqueror; δεν δείχνει ακριβώς όπως σ' αυτό το στιγμιότυπο. Είναι σε μεγάλο βαθμό παραμετροποιήσιμος και συγκεκριμένα:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Μπορείτε να χρησιμοποιήσετε το μενού <link linkend="menu-settings"
+><guimenu
+>Ρυθμίσεις</guimenu
+></link
+> για να επιλέξετε αν θα εμφανίζεται ή θα αποκρύπτεται η γραμμή μενού, η κύρια γραμμή εργαλείων, η γραμμή εργαλείων τοποθεσίας και η γραμμή εργαλείων σελιδοδεικτών, ή ακόμα για να προσθέσετε μια επιπλέον γραμμή εργαλείων.</para
+></listitem>
+<listitem
+><para
+>Αν οι γραμμές εργαλείων είναι ξεκλείδωτες, μπορείτε επίσης να τις σύρετε προς μια νέα τοποθεσία πατώντας <mousebutton
+>αριστερό</mousebutton
+> κλικ στη λαβή στο αριστερό άκρο της γραμμής και να την μετακινήσετε κρατώντας πατημένο το &LMB; κατά το σύρσιμο. </para
+></listitem>
+<listitem
+><para
+>Αυτό το στιγμιότυπο δεν δείχνει την προαιρετική <link linkend="sidebar"
+>πλευρική μπάρα</link
+>.</para
+></listitem>
+</itemizedlist>
+
+<para
+>Για περισσότερες πληροφορίες σχετικά με το πώς μπορείτε να αλλάξετε την εμφάνιση του &konqueror;, δείτε την ενότητα <link linkend="config"
+>Ρυθμίζοντας τον &konqueror;</link
+>.</para
+></note>
+
+</sect1>
+
+<sect1 id="bubble">
+<title
+>Υποδείξεις και «Τι είναι αυτό;»</title>
+
+<para
+>Μπορείτε να ανακαλύψετε πολλά σχετικά με το πώς λειτουργεί ο &konqueror; χωρίς να διαβάσετε απαραίτητα ολόκληρο αυτό το έγγραφο κάνοντας χρήση των <guilabel
+>υποδείξεων</guilabel
+> και του χαρακτηριστικού <guimenuitem
+>Τι είναι αυτό;</guimenuitem
+>. </para>
+
+<para
+>Όταν περνάτε το ποντίκι πάνω από ένα κουμπί γραμμής εργαλείων ή πλευρικής μπάρας θα πρέπει να εμφανίζεται μια σύντομη περιγραφή για το τι κάνει το κουμπί αυτό.</para>
+
+<para
+>Το χαρακτηριστικό <guimenuitem
+>Τι είναι αυτό;</guimenuitem
+> μπορείτε να το καλέσετε από τη γραμμή μενού <menuchoice
+><guimenu
+>Βοήθεια</guimenu
+> <guimenuitem
+>Τι είναι αυτό;</guimenuitem
+></menuchoice
+>, ή πατώντας <keycombo action="simul"
+>&Shift;<keycap
+>F1</keycap
+></keycombo
+>. Αλλάζει τον κέρσορα και εμφανίζει ένα ερωτηματικό δίπλα από το βελάκι.</para>
+
+<para
+>Όταν το ερωτηματικό είναι ορατό, ένα πάτημα &LMB; δεν θα κάνει τίποτα μέχρι να κάνετε κλικ σε ένα αντικείμενο ελέγχου (ή το κείμενο δίπλα από αυτό) που υποστηρίζει το χαρακτηριστικό <guimenuitem
+>Τι είναι αυτό;</guimenuitem
+>, όπου θα εμφανίσει μια όσο το δυνατό περιεκτική περιγραφή με το τι υποτίθεται πως κάνει το αντικείμενο αυτό. Τα περισσότερα από τα παράθυρα διαλόγων που εμφανίζει ο &konqueror; υποστηρίζουν το χαρακτηριστικό <guimenuitem
+>Τι είναι αυτό;</guimenuitem
+>. </para>
+
+</sect1>
+
+<sect1 id="lmb-mmb">
+<title
+>Ενέργειες του <mousebutton
+>αριστερού</mousebutton
+> και <mousebutton
+>μεσαίου</mousebutton
+> κουμπιού του ποντικιού</title>
+
+<para
+>Αν πατήσετε &LMB; σε ένα αντικείμενο στο παράθυρο του &konqueror;, θα <quote
+>ενεργοποιηθεί</quote
+>. Ως εκ τούτου:</para>
+
+<itemizedlist>
+
+<listitem
+><para
+>Πατήστε <mousebutton
+>αριστερό</mousebutton
+> κλικ σε ένα εικονίδιο στη Γραμμή εργαλείων για να κάνετε αυτό που υποτίθεται πως κάνει το εικονίδιο αυτό. </para
+></listitem>
+<listitem
+><para
+>Πατήστε <mousebutton
+>αριστερό</mousebutton
+> κλικ σε ένα αντικείμενο της γραμμής μενού για να εμφανίσετε το συγκεκριμένο κυλιόμενο μενού.</para
+></listitem>
+<listitem
+><para
+>Πατήστε <mousebutton
+>αριστερό</mousebutton
+> κλικ σε ένα αντικείμενο του μενού για να εκτελέσετε αυτή την ενέργεια.</para
+></listitem
+> 
+<listitem
+><para
+>Πατήστε <mousebutton
+>αριστερό</mousebutton
+> κλικ σε ένα εικονίδιο της γραμμής εργαλείων σελιδοδεικτών για να ανοίξετε αυτό το &URL;.</para
+></listitem>
+<listitem
+><para
+>Πατήστε <mousebutton
+>αριστερό</mousebutton
+> κλικ σε ένα δεσμό μιας ιστοσελίδας για να ακολουθήσει ο &konqueror; αυτόν το δεσμό.</para
+></listitem>
+<listitem
+><para
+>Πατήστε <mousebutton
+>αριστερό</mousebutton
+> κλικ σε ένα εικονίδιο ή όνομα ενός φακέλου ώστε ο &konqueror; να εισέλθει στο φάκελο και να εμφανίσει το περιεχόμενό του. </para
+></listitem>
+<listitem
+><para
+>Πατήστε <mousebutton
+>αριστερό</mousebutton
+> κλικ σε ένα όνομα ή εικονίδιο ενός αρχείου και ο &konqueror; θα πράξει αυτό που κρίνει κατάλληλο, βασιζόμενος στον τύπο του αρχείου. Σε γενικές γραμμές αυτό σημαίνει το άνοιγμα σελίδων <acronym
+>HTML</acronym
+>, ή την προεπισκόπηση κειμένου, εικόνων ή εγγράφων του &okular;, εμφανίζοντάς τα στο παράθυρο του &konqueror; (<quote
+>Προεπισκόπηση</quote
+> σημαίνει πως μπορείτε να δείτε τα περιεχόμενα του αρχείου αλλά όχι να τα τροποποιήσετε).</para
+> 
+
+<para
+>Ο &konqueror; αποφασίζει για τον τύπο του αρχείου ταιριάζοντας την επέκταση του ονόματος αρχείου με μια λίστα γνωστών τύπων. Αν αυτός ο τρόπος αποτύχει προσπαθεί να μαντέψει τον τύπο από το περιεχόμενο του αρχείου. Μπορείτε να αλλάξετε τη λίστα με τους γνωστούς τύπους και τις συσχετισμένες ενέργειες από τη σελίδα <guilabel
+>Συσχετίσεις αρχείων</guilabel
+> από το μενού <menuchoice
+><guimenu
+>Ρυθμίσεις</guimenu
+> <guimenuitem
+>Ρύθμιση του Konqueror...</guimenuitem
+></menuchoice
+>.</para
+></listitem>
+
+</itemizedlist>
+
+<para
+>Πατώντας το &MMB; σε ένα όνομα ή εικονίδιο φακέλου ή αρχείου πραγματοποιείται η ίδια ενέργεια με το <mousebutton
+>αριστερό</mousebutton
+> κλικ αλλά σε παράθυρο του &konqueror;, εκτός αν έχετε επιλέξει το <guilabel
+>Άνοιγμα δεσμών σε νέα καρτέλα αντί σε νέο παράθυρο</guilabel
+> στην σελίδα <guimenuitem
+>Γενικά</guimenuitem
+> από το μενού <menuchoice
+><guimenu
+>Ρυθμίσεις</guimenu
+> <guimenuitem
+>Ρύθμιση του Konqueror...</guimenuitem
+></menuchoice
+>. Ο &konqueror; μπορεί να ανοίγει δεσμούς στις σελίδες και <menuchoice
+><guimenu
+>Σελιδοδείκτες</guimenu
+></menuchoice
+>, όπως και τα κουμπιά <guibutton
+>Αρχική</guibutton
+>, <guibutton
+>Πάνω</guibutton
+>, <guibutton
+>Πίσω</guibutton
+> και <guibutton
+>Μπροστά</guibutton
+> σε νέα καρτέλα ή παράθυρο.</para>
+
+<para
+>Κρατώντας πατημένο το &Shift; ενώ πατάτε το &MMB; θα ανοίξει το δεσμό στο παρασκήνιο.</para>
+<!-- not in 4.4.0
+<important
+><para
+>If you click the &MMB; when the mouse cursor is over a blank 
+part of the main view (not over a link or file name or icon) &konqueror; will 
+copy the contents of the clipboard into the Location Toolbar and try to use 
+that as a &URL;.</para
+></important>
+-->
+</sect1>
+
+<sect1 id="rmb-menus">
+<title
+>Μενού <mousebutton
+>δεξιού</mousebutton
+> κουμπιού του ποντικιού</title>
+
+<para
+>Πατώντας στο &RMB; σχεδόν σε όλα τα τμήματα του παραθύρου του &konqueror; θα εμφανιστεί το κατάλληλο σχετικό μενού.</para>
+
+<note
+><para
+>Αν έχετε ενεργοποιήσει το <guilabel
+>δεξί κλικ πάει πίσω στο ιστορικό</guilabel
+> στις <link linkend="othersettings"
+>ρυθμίσεις</link
+> του &konqueror; ένα απλό <mousebutton
+>δεξί</mousebutton
+> κλικ μεταφράζεται σαν ένα κλικ στο κουμπί <guibutton
+>Πίσω</guibutton
+>. Σε αυτή την περίπτωση μπορείτε να έχετε πρόσβαση στο σχετικό μενού μετακινώντας το ποντίκι με το <mousebutton
+>δεξί</mousebutton
+> κλικ πατημένο.</para
+></note>
+
+<variablelist>
+
+<varlistentry>
+<term
+>Στη γραμμή τίτλου</term>
+<listitem
+><para
+>Με <mousebutton
+>δεξί</mousebutton
+> κλικ σε οποιαδήποτε ελεύθερη περιοχή της γραμμής τίτλου εμφανίζεται το μενού της γραμμής τίτλου, το οποίο σας επιτρέπει να ελέγξετε τη θέση του παραθύρου του &konqueror; όπως και τη διακόσμηση παραθύρων σε όλα τα προγράμματα του &kde;. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Στην κύρια γραμμή εργαλείων</term>
+<listitem
+><para
+>Με <mousebutton
+>δεξί</mousebutton
+> κλικ σε οποιαδήποτε ελεύθερη περιοχή της γραμμής εργαλείων εμφανίζεται το μενού της γραμμής εργαλείων. Μπορείτε να το χρησιμοποιήσετε για να καθορίσετε τον προσανατολισμό της γραμμής εργαλείων σε πάνω, κάτω, αριστερά ή δεξιά στο παράθυρο του &konqueror;. Μπορείτε επίσης να χρησιμοποιήσετε το μενού γραμμής εργαλείων για να ρυθμίσετε το μέγεθος των κουμπιών της γραμμής εργαλείων, και αν θα εμφανίζονται ως εικονίδια, ως κείμενο ή και τα δύο.</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+>Στη γραμμή εργαλείων τοποθεσίας</term>
+<listitem
+><para
+>Με <mousebutton
+>δεξί</mousebutton
+> κλικ στο πλαίσιο εισαγωγής &URL; μπορείτε να πραγματοποιήσετε τις ενέργειες Αποκοπή, Αντιγραφή, Επικόλληση ή Καθαρισμός, ή να αλλάξετε τα χαρακτηριστικά της αυτόματης <link linkend="path-complete"
+>συμπλήρωσης κειμένου</link
+>.</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+>Σε μια προβολή</term>
+<listitem
+><para
+>Αν πατήσετε <mousebutton
+>δεξί</mousebutton
+> κλικ σε μια ελεύθερη περιοχή μιας προβολής θα εμφανιστεί ένα μενού το οποίο θα περιέχει, μεταξύ άλλων επιλογών, τις εντολές <guiicon
+>Πάνω</guiicon
+>, <guiicon
+>Πίσω</guiicon
+>, <guiicon
+>Μπροστά</guiicon
+> και <guiicon
+>Επαναφόρτωση</guiicon
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Σε ένα αρχείο ή φάκελο</term>
+<listitem
+><para
+>Αυτό είναι ένα πολύ χρήσιμο χαρακτηριστικό. Το <mousebutton
+>δεξί</mousebutton
+>κλικ στο όνομα ή στο εικονίδιο οποιουδήποτε αρχείου ή φακέλου όχι μόνο <quote
+>επιλέγει</quote
+> το αντικείμενο αυτό αλλά εμφανίζει και ένα μενού που σας επιτρέπει την <guimenuitem
+>Αποκοπή</guimenuitem
+>, <guimenuitem
+>Μετακίνηση</guimenuitem
+>, <guimenuitem
+>Αντιγραφή</guimenuitem
+> ή <guimenuitem
+>Αφαίρεση</guimenuitem
+> του αντικειμένου με διάφορους τρόπους, άνοιγμα με το πρόγραμμα της αρεσκείας σας ή εμφάνιση προεπισκόπησης, μετονομασία, ή επεξεργασία του τύπου ή των ιδιοτήτων του αρχείου.</para
+></listitem
+> </varlistentry>
+
+<varlistentry>
+<term
+>Στη γραμμή κατάστασης</term>
+<listitem
+><para
+>Πατήστε <mousebutton
+>δεξί</mousebutton
+> κλικ στη γραμμή κατάστασης στο κάτω μέρος του παραθύρου ή προβολής για την προσθήκη ή την αφαίρεση μιας προβολής μέσα στο παράθυρο του &konqueror;.</para
+></listitem
+> 
+</varlistentry>
+</variablelist>
+
+</sect1>
+
+<sect1 id="man-info">
+<title
+>Προβολή σελίδων βοήθειας και τεκμηρίωσης (man και info)</title>
+
+<para
+>Μπορείτε να εμφανίσετε σελίδες βοήθειας και σελίδες τεκμηρίωσης man και info του &kde; και του &UNIX; απευθείας στον &konqueror;, χωρίς να χρειαστεί να εκκινήσετε το <application
+>KHelpCenter</application
+>. </para>
+
+<para
+>Για να εμφανίσετε μια σελίδα βοήθειας του &kde;, εισάγετε <userinput
+>help:/<replaceable
+>όνομα εφαρμογής</replaceable
+></userinput
+> (για παράδειγμα <userinput
+>help:/kmail</userinput
+> για την εμφάνιση της τεκμηρίωσης του &kmail;.) στη γραμμή εργαλείων τοποθεσίας του &konqueror;. </para>
+
+<para
+>Αν θέλετε να διαβάσετε σελίδες τεκμηρίωσης man του &UNIX; ο &konqueror; το κάνει εύκολο. Για παράδειγμα πληκτρολογήστε <userinput
+>man:/touch</userinput
+> ή <userinput
+>#touch</userinput
+> στη γραμμή εργαλείων τοποθεσίας για να δείτε τη σελίδα για την εντολή <command
+>touch</command
+>.</para
+> 
+
+<para
+>Για να περιηγηθείτε στις σελίδες τεκμηρίωσης info του &UNIX;, η διεύθυνση <userinput
+>info:/dir</userinput
+> σάς πηγαίνει στο κορυφαίο επίπεδο του καταλόγου info, όπου δεν μένει παρά να κάνετε κλικ στον επιθυμητό δεσμό για να βρείτε τη σελίδα που θέλετε. Εναλλακτικά, χρησιμοποιήστε <userinput
+>info:/<replaceable
+>όνομα εντολής</replaceable
+></userinput
+> για να μεταβείτε απευθείας στη σελίδα info που επιθυμείτε.</para>
+
+<note
+><para
+>Δυστυχώς, οι σελίδες βοήθειας του &kde; αποθηκεύονται με τέτοιο τρόπο που δεν μπορούν να προβληθούν από άλλους περιηγητές. Αν πραγματικά χρειάζεται να το κάνετε, μπορείτε να τις διαβάσετε στο διαδίκτυο, επισκεπτόμενοι το <ulink url="http://docs.kde.org"
+>https://docs.kde.org</ulink
+>.</para
+></note>
+</sect1>
+
+</chapter>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

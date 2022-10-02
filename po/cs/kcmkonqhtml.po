@@ -1,0 +1,2159 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Vít Pelčák <vit@pelcak.org>, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2019, 2020.
+# Lukáš Tinkl <ltinkl@redhat.com>, 2010, 2011.
+# Tomáš Chvátal <tomas.chvatal@gmail.com>, 2012, 2013.
+# Vit Pelcak <vpelcak@suse.cz>, 2021, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkonqhtml\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-24 00:46+0000\n"
+"PO-Revision-Date: 2022-06-28 10:41+0200\n"
+"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
+"Language-Team: Czech <kde-i18n-doc@kde.org>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 22.04.2\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Lukáš Tinkl,Miroslav Flídr"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "lukas@kde.org,flidr@kky.zcu.cz"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pShowMMBInTabs)
+#: advancedTabOptions.ui:21
+#, kde-format
+msgid ""
+"This will open a new tab instead of a new window in various situations, such "
+"as choosing a link or a folder with the middle mouse button."
+msgstr ""
+"Toto otevře novou kartu místo nového okna v různých situacích, jako je "
+"aktivace odkazu nebo otevření nového okna pomocí prostředního tlačítka myši."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pShowMMBInTabs)
+#: advancedTabOptions.ui:24
+#, kde-format
+msgid "Open &links in new tab instead of in new window"
+msgstr "Otevírat od&kazy v nové kartě namísto nového okna"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPopupsWithinTabs)
+#: advancedTabOptions.ui:31
+#, kde-format
+msgid ""
+"Whether or not JavaScript popups if allowed shall open in a new tab or in a "
+"new window."
+msgstr ""
+"Zda se mají otevírat vyskakovací okna JavaScriptu v nové kartě nebo novém "
+"okně, je-li jim to povoleno."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pPopupsWithinTabs)
+#: advancedTabOptions.ui:34
+#, kde-format
+msgid "Open pop&ups in new tab instead of in new window"
+msgstr "Otevírat vyskakovací okna v nové kartě na&místo nového okna"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pKonquerorTabforExternalURL)
+#: advancedTabOptions.ui:41
+#, kde-format
+msgid ""
+"When you click a URL in another KDE program or call kfmclient to open a URL, "
+"the current desktop will be searched for a non-minimized Konqueror and, if "
+"found, the URL opened as a new tab within it. Otherwise a new Konqueror "
+"window will be opened with the required URL."
+msgstr ""
+"Pokud kliknete na URL v jiném KDE programu nebo spustíte kfmclient k "
+"otevření URL, bude na vaší aktuální ploše vyhledáno neminimalizované okno "
+"Konqueroru a pokud je nalezeno, bude v něm vytvořena nová karta s daným URL. "
+"V opačném případě bude pro toto URL vytvořeno samostatné okno."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pKonquerorTabforExternalURL)
+#: advancedTabOptions.ui:44
+#, kde-format
+msgid "Open as tab in existing Konqueror when URL is called externally"
+msgstr ""
+"Otevřít jako kartu v existujícím okně Konqueroru, pokud je URL voláno zvenčí"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pNewTabsInBackground)
+#: advancedTabOptions.ui:51
+#, kde-format
+msgid ""
+"This will open a new tab in the background, instead of in the foreground."
+msgstr "Toto otevře novou kartu na pozadí místo na popředí."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
+#: advancedTabOptions.ui:54
+#, kde-format
+msgid "O&pen new tabs in the background"
+msgstr "Otevírat nové karty v &pozadí"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pOpenAfterCurrentPage)
+#: advancedTabOptions.ui:61
+#, kde-format
+msgid ""
+"This will open a new tab opened from a page after the current tab, instead "
+"of after the last tab."
+msgstr ""
+"Tímto otevřete novou kartu za současnou kartou, místo za poslední kartou."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pOpenAfterCurrentPage)
+#: advancedTabOptions.ui:64
+#, kde-format
+msgid "Open &new tab after current tab"
+msgstr "Otevřít &novou kartu za aktuální"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pDynamicTabbarHide)
+#: advancedTabOptions.ui:71
+#, kde-format
+msgid ""
+"This will display the tab bar only if there are two or more tabs. Otherwise "
+"it will always be displayed."
+msgstr ""
+"Tímto zobrazíte panel s kartami pouze v případě, že existují dvě a více "
+"karet. V opačném případě bude panel vždy zobrazen."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pDynamicTabbarHide)
+#: advancedTabOptions.ui:74
+#, kde-format
+msgid "Hide the tab bar when only one tab is open"
+msgstr "Skrýt panel s kartami, pokud je otevřena pouze jedna karta"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
+#: advancedTabOptions.ui:81
+#, kde-format
+msgid "This will display close buttons inside each tab."
+msgstr "Tímto zobrazíte tlačítko pro uzavření v každé kartě."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pPermanentCloseButton)
+#: advancedTabOptions.ui:84
+#, kde-format
+msgid "&Show close button on tabs"
+msgstr "Zo&brazovat na kartách uzavírací tlačítko"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pMiddleClickClose)
+#: advancedTabOptions.ui:91
+#, kde-format
+msgid ""
+"When you click on a tab using the middle mouse button or mouse wheel, it "
+"will close that tab."
+msgstr ""
+"Stisknutím prostředního tlačítka nebo kolečka myši nad kartou ji uzavřete."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pMiddleClickClose)
+#: advancedTabOptions.ui:94
+#, kde-format
+msgid "Middle-click on a tab to close it"
+msgstr "Kliknutí prostředním tlačítkem na kartu ji zavře"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabConfirm)
+#: advancedTabOptions.ui:101
+#, kde-format
+msgid ""
+"This will ask you whether you are sure you want to close a window when it "
+"has multiple tabs opened in it."
+msgstr ""
+"Tímto způsobíte, že budete dotázáni při zavření okna, které má více "
+"otevřených karet."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pTabConfirm)
+#: advancedTabOptions.ui:104
+#, kde-format
+msgid "Confirm &when closing windows with multiple tabs"
+msgstr "Potvrzovat uzavírání o&ken s více kartami"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabCloseActivatePrevious)
+#: advancedTabOptions.ui:111
+#, kde-format
+msgid ""
+"When checking this the previous used or opened tab will be activated when "
+"you close the current active tab instead of the one right to the current tab."
+msgstr ""
+"Pokud je zaškrtnuto, naposledy použitá nebo otevřená karta bude aktivována "
+"namísto té, která je napravo od právě uzavřené karty."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pTabCloseActivatePrevious)
+#: advancedTabOptions.ui:114
+#, kde-format
+msgid "Activate previously used tab when closing the current tab"
+msgstr "Aktivovat naposledy použitou kartu při uzavření aktuální"
+
+#: appearance.cpp:39
+#, kde-format
+msgctxt "@title:tab"
+msgid "General"
+msgstr "Obecné"
+
+#: appearance.cpp:40
+#, kde-format
+msgctxt "@title:tab"
+msgid "Fonts"
+msgstr "Písma"
+
+#: appearance.cpp:41
+#, kde-format
+msgctxt "@title:tab"
+msgid "Stylesheets"
+msgstr "Soubory se styly"
+
+#. i18n: ectx: property (title), widget (QGroupBox, GroupBox3_2)
+#: appearance.cpp:48 css/csscustom.ui:296
+#, kde-format
+msgid "Images"
+msgstr "Obrázky"
+
+#: appearance.cpp:52
+#, kde-format
+msgid "A&utomatically load images"
+msgstr "A&utomaticky načítat obrázky"
+
+#: appearance.cpp:53
+#, kde-format
+msgid ""
+"<html>If this box is checked, Konqueror will automatically load any images "
+"that are embedded in a web page. Otherwise, it will display placeholders for "
+"the images, and you can then manually load the images by clicking on the "
+"image button.<br />Unless you have a very slow network connection, you will "
+"probably want to check this box to enhance your browsing experience.</html>"
+msgstr ""
+"<html>Je-li zaškrtnuta tato volba, pak bude Konqueror automaticky načítat "
+"všechny obrázky, které jsou obsaženy na webové stránce. V jiném případě "
+"můžete ručně načíst obrázky kliknutím na tlačítko obrázků. <br />Pokud "
+"nemáte pomalé síťové spojení, pak budete pravděpodobně mít tuto volbu "
+"zaškrtnutou.</html>"
+
+#: appearance.cpp:63
+#, kde-format
+msgid "Dra&w frame around not completely loaded images"
+msgstr "Kres&lit rámeček okolo načítaných obrázků"
+
+#: appearance.cpp:64
+#, kde-format
+msgid ""
+"<html>If this box is checked, Konqueror will draw a frame as a placeholder "
+"around images embedded in a web page that are not yet fully loaded.<br />You "
+"will probably want to check this box to enhance your browsing experience, "
+"especially if have a slow network connection.</html>"
+msgstr ""
+"<html>Je-li zaškrtnuta tato volba, pak bude Konqueror vykreslovat rámeček "
+"okolo ne zcela načtených obrázků na webových stránkách.<br />Pokud máte "
+"pomalé síťové spojení, pak budete pravděpodobně mít tuto volbu zaškrtnutou.</"
+"html>"
+
+#: appearance.cpp:74
+#, kde-format
+msgctxt "animations"
+msgid "Enabled"
+msgstr "Povoleny"
+
+#: appearance.cpp:75
+#, kde-format
+msgctxt "animations"
+msgid "Disabled"
+msgstr "Zakázány"
+
+#: appearance.cpp:76
+#, kde-format
+msgid "Show Only Once"
+msgstr "Zobrazit pouze jednou"
+
+#: appearance.cpp:77
+#, kde-format
+msgid ""
+"<html>Controls how Konqueror shows animated images:<br /><ul><li><b>Enabled</"
+"b>: Show all animations completely.</li><li><b>Disabled</b>: Never show "
+"animations, show the starting image only.</li><li><b>Show only once</b>: "
+"Show all animations completely but do not repeat them.</li></ul></html>"
+msgstr ""
+"<html>Určuje, jak Konqueror zobrazuje animované obrázky:<br /"
+"><ul><li><b>Povoleno</b>: všechny a celé animace</li><li><b>Zakázáno</b>: "
+"žádné animace, pouze úvodní obrázek</li><li><b>Zobrazit pouze jednou</b>: "
+"celá animace, ale pouze jednou</li></ul></html>"
+
+#: appearance.cpp:82
+#, kde-format
+msgid "A&nimations:"
+msgstr "A&nimace:"
+
+#: appearance.cpp:85 htmlopts.cpp:110
+#, kde-format
+msgctxt "@title:group"
+msgid "Miscellaneous"
+msgstr "Různé"
+
+#: appearance.cpp:90
+#, kde-format
+msgctxt "underline"
+msgid "Enabled"
+msgstr "Povoleno"
+
+#: appearance.cpp:91
+#, kde-format
+msgctxt "underline"
+msgid "Disabled"
+msgstr "Zakázáno"
+
+#: appearance.cpp:92
+#, kde-format
+msgid "Only on Hover"
+msgstr "Pouze při přejezdu myší"
+
+#: appearance.cpp:93
+#, kde-format
+msgid "Und&erline links:"
+msgstr "Po&dtrhávat odkazy:"
+
+#: appearance.cpp:96
+#, kde-format
+msgid ""
+"<html>Controls how Konqueror handles underlining hyperlinks:<br /"
+"><ul><li><b>Enabled</b>: Always underline links</li><li><b>Disabled</b>: "
+"Never underline links</li><li><b>Only on Hover</b>: Underline when the mouse "
+"is moved over the link</li></ul><br /><i>Note: The site's CSS definitions "
+"can override this value.</i></html>"
+msgstr ""
+"<html>Určuje jakým způsobem bude Konqueror podtrhávat odkazy:<br /"
+"><ul><li><b> Povoleno</b>: Vždy podtrhávat odkazy.</li><li><b>Zakázáno</b>: "
+"Nikdy nepodtrhávat odkazy. </li><li><b>Pouze při přejezdu myší</b>: "
+"Podtrhávat odkazy, když je nad nimi ukazovátko myši. </li></ul><br /"
+"><i>Poznámka: Toto nastavení potlačí CSS definici.</i></html>"
+
+#: appearance.cpp:105
+#, kde-format
+msgid "When Efficient"
+msgstr "Pokud je výhodné"
+
+#: appearance.cpp:106
+#, kde-format
+msgctxt "smooth scrolling"
+msgid "Always"
+msgstr "Vždy"
+
+#: appearance.cpp:107
+#, kde-format
+msgctxt "soft scrolling"
+msgid "Never"
+msgstr "Nikdy"
+
+#: appearance.cpp:108
+#, kde-format
+msgid "S&mooth scrolling:"
+msgstr "Je&mné posouvání:"
+
+#: appearance.cpp:110
+#, kde-format
+msgid ""
+"<html>Determines whether Konqueror should use smooth steps to scroll HTML "
+"pages, or whole steps:<br /><ul><li><b>Always</b>: Always use smooth steps "
+"when scrolling.</li><li><b>Never</b>: Never use smooth scrolling, scroll "
+"with whole steps instead.</li><li><b>When Efficient</b>: Only use smooth "
+"scrolling on pages where it can be achieved with moderate usage of system "
+"resources.</li></ul></html>"
+msgstr ""
+"<html>Rozhoduje, zda má Konqueror při posunu HTML stránky použít plynulý "
+"posun celé kroky:<br /><ul><li><b>Vždy</b>: Při posunu vždy použít plynulé "
+"krokování. </li><li><b>Nikdy</b>: Nikdy nepoužívat plynulý posun. Namísto "
+"toho posunovat po celých krocích.</li><li><b>Pokud to jde</b>: Použít "
+"plynulý posun pouze na stránkách, kde toto povede jenom k střednímu zatížení "
+"prostředků systému.</li></ul></html>"
+
+#: appearance.cpp:119
+#, kde-format
+msgid ""
+"<h1>Konqueror Fonts</h1>On this page, you can configure which fonts "
+"Konqueror should use to display the web pages you view."
+msgstr ""
+"<h1>Písma Konqueroru</h1>Na této stránce si můžete nastavit, která písma "
+"bude Konqueror používat pro zobrazování webových stránek."
+
+#: appearance.cpp:131
+#, kde-format
+msgid "Font Si&ze"
+msgstr "Veliko&st písma"
+
+#: appearance.cpp:134 appearance.cpp:152
+#, kde-format
+msgid "This is the relative font size Konqueror uses to display web sites."
+msgstr ""
+"Toto je relativní velikost písma, které používá Konqueror k zobrazování "
+"webových stránek."
+
+#: appearance.cpp:138
+#, kde-format
+msgid "M&inimum font size:"
+msgstr "M&inimální velikost písma:"
+
+#: appearance.cpp:142
+#, kde-format
+msgid ""
+"Konqueror will never display text smaller than this size,<br />overriding "
+"any other settings."
+msgstr ""
+"Konqueror nikdy nezobrazí text, který má menší velikost než je tato,<br /> "
+"bez ohledu na nastavení webové stránky."
+
+#: appearance.cpp:147
+#, kde-format
+msgid "&Medium font size:"
+msgstr "Prů&měrná velikost písma:"
+
+#: appearance.cpp:160
+#, kde-format
+msgid "S&tandard font:"
+msgstr "S&tandardní písmo:"
+
+#: appearance.cpp:161
+#, kde-format
+msgid "This is the font used to display normal text in a web page."
+msgstr ""
+"Toto je písmo použité k zobrazení normálního textu na webových stránkách."
+
+#: appearance.cpp:165
+#, kde-format
+msgid "&Fixed font:"
+msgstr "Písmo s &pevnou šířkou:"
+
+#: appearance.cpp:166
+#, kde-format
+msgid ""
+"This is the font used to display fixed-width (i.e. non-proportional) text."
+msgstr ""
+"Toto je písmo použité pro zobrazení textu s pevnou šířkou písma (tj. "
+"neproporcionálního písma)."
+
+#: appearance.cpp:170
+#, kde-format
+msgid "S&erif font:"
+msgstr "Pa&tkové písmo:"
+
+#: appearance.cpp:171
+#, kde-format
+msgid "This is the font used to display text that is marked up as serif."
+msgstr ""
+"Toto je písmo použité k zobrazení textu, pro který je nastaveno patkové "
+"písmo."
+
+#: appearance.cpp:175
+#, kde-format
+msgid "Sa&ns serif font:"
+msgstr "Bezp&atkové písmo:"
+
+#: appearance.cpp:176
+#, kde-format
+msgid "This is the font used to display text that is marked up as sans-serif."
+msgstr ""
+"Toto je písmo použité k zobrazení textu, pro který je nastaveno bezpatkové "
+"písmo."
+
+#: appearance.cpp:180
+#, kde-format
+msgid "C&ursive font:"
+msgstr "Písmo k&urzíva:"
+
+#: appearance.cpp:181
+#, kde-format
+msgid "This is the font used to display text that is marked up as italic."
+msgstr ""
+"Toto je písmo použité k zobrazení textu, pro který je nastavena kurzíva."
+
+#: appearance.cpp:185
+#, kde-format
+msgid "Fantas&y font:"
+msgstr "Písmo fantas&y:"
+
+#: appearance.cpp:186
+#, kde-format
+msgid ""
+"This is the font used to display text that is marked up as a fantasy font."
+msgstr ""
+"Toto je písmo použité k zobrazení textu, pro který je nastaveno písmo "
+"fantasy."
+
+#: appearance.cpp:195
+#, kde-format
+msgid "Font &size adjustment for this encoding:"
+msgstr "Úprava veliko&sti písma pro toto kódování:"
+
+#: appearance.cpp:203 appearance.cpp:401
+#, kde-format
+msgid "Use Language Encoding"
+msgstr "Používat znakovou sadu jazyka"
+
+#: appearance.cpp:205
+#, kde-format
+msgid "Default encoding:"
+msgstr "Výchozí kódování:"
+
+#: appearance.cpp:207
+#, kde-format
+msgid ""
+"Select the default encoding to be used; normally, you will be fine with 'Use "
+"language encoding' and should not have to change this."
+msgstr ""
+"Vyberte výchozí znakovou sadu, která má být používána. Normálně postačí "
+"zvolit volbu 'Používat znakovou sadu jazyka' a neměli byste tuto volbu měnit."
+
+#. i18n: ectx: property (whatsThis), widget (QWidget, CSSConfigWidget)
+#. i18n: ectx: property (whatsThis), widget (QWidget, CSSCustomDialog)
+#: css/cssconfig.ui:5 css/csscustom.ui:13
+#, kde-format
+msgid ""
+"<b>Stylesheets</b><p>See http://www.w3.org/Style/CSS for further information "
+"on cascading style sheets.</p>"
+msgstr ""
+"<b>Soubory se styly</b><p>Nahlédněte na https://www.w3.org/Style/CSS k "
+"získání dalších informací o kaskádových stylů</p>"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, ButtonGroup1)
+#: css/cssconfig.ui:17
+#, kde-format
+msgid ""
+"<b>Stylesheets</b><p>Use this groupbox to determine how Konqueror will "
+"render style sheets.</p>"
+msgstr ""
+"<b>Styly</b><p>Použijte toto nastavení pro určení, jak bude Konqueror "
+"zobrazovat styly.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, ButtonGroup1)
+#: css/cssconfig.ui:20
+#, kde-format
+msgid "Stylesheets"
+msgstr "Soubory se styly"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, useDefault)
+#: css/cssconfig.ui:26
+#, kde-format
+msgid ""
+"<b>Use default stylesheet</b><p>Select this option to use the default "
+"stylesheet.</p>"
+msgstr ""
+"<b>Použít standardní soubor se styly</b><p>Přejete-li si použít standardní "
+"styl, tak tato volba je ta pravá.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useDefault)
+#: css/cssconfig.ui:29
+#, kde-format
+msgid "Us&e default stylesheet"
+msgstr "Použít standardní soubor s&es styly"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, useUser)
+#: css/cssconfig.ui:39
+#, kde-format
+msgid ""
+"<b>Use user-defined stylesheet</b><p>If this box is checked, Konqueror will "
+"try to load a user-defined style sheet as specified in the location below. "
+"The style sheet allows you to completely override the way web pages are "
+"rendered in your browser. The file specified should contain a valid style "
+"sheet (see http://www.w3.org/Style/CSS for further information on cascading "
+"style sheets).</p>"
+msgstr ""
+"<b>Použít vlastní styl</b><p>Je-li zapnuta tato volba, tak se Konqueror "
+"pokusí načíst styl definovaný uživatelem ze zadaného umístění. Toto umožňuje "
+"úplně předefinovat zobrazování stránek v prohlížeči. Soubor by měl obsahovat "
+"platný styl (podrobné informace je možné nalézt na https://www.w3.org/Style/"
+"CSS).</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useUser)
+#: css/cssconfig.ui:42
+#, kde-format
+msgid "Use &user-defined stylesheet"
+msgstr "Použít &vlastní styl"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, useAccess)
+#: css/cssconfig.ui:94
+#, kde-format
+msgid ""
+"<b>Use accessibility stylesheet</b><p>Selecting this option will allow you "
+"to define a default font, font size, and font color with a few simple clicks "
+"of the mouse. Simply wander over to the Customize... dialog and pick out "
+"your desired options.</p>"
+msgstr ""
+"<b>Použít styl pro zpřístupnění</b><p>Tato volba vám umožní definovat "
+"standardní písmo, jeho velikost a barvu pomocí pár kliknutí myší. Jednoduše "
+"přejděte do záložky Přizpůsobit a nastavte požadované možnosti.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useAccess)
+#: css/cssconfig.ui:97
+#, kde-format
+msgid "U&se accessibility stylesheet"
+msgstr "Použít soubor se &styly pro zpřístupnění"
+
+#. i18n: ectx: property (text), widget (QPushButton, customize)
+#: css/cssconfig.ui:137
+#, kde-format
+msgid "Custom&ize..."
+msgstr "Přizpůsob&it..."
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox7)
+#: css/csscustom.ui:21
+#, kde-format
+msgid ""
+"<b>Font family</b><p>A font family is a group of fonts that resemble one "
+"another, with family members that are e.g. bold, italic, or any number of "
+"the above.</p>"
+msgstr ""
+"<b>Rodina písma</b><p>Rodina písma je skupina písem, které se navzájem "
+"podobají. Typicky obsahuje např. tučné, skloněné.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, GroupBox7)
+#: css/csscustom.ui:24
+#, kde-format
+msgid "Font Family"
+msgstr "Rodina písma"
+
+#. i18n: ectx: property (text), widget (QLabel, txtBaseFontFamily)
+#: css/csscustom.ui:30
+#, kde-format
+msgid "Base family:"
+msgstr "Základní rodina:"
+
+#. i18n: ectx: property (whatsThis), widget (QFontComboBox, fontFamily)
+#: css/csscustom.ui:37
+#, kde-format
+msgid "<p>This is the currently selected font family</p>"
+msgstr "<p>Toto je momentálně používaná rodina písem</p>"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, sameFamily)
+#: css/csscustom.ui:44
+#, kde-format
+msgid ""
+"<b>Use same family for all text</b><p>Select this option to override custom "
+"fonts everywhere in favor of the base font.</p>"
+msgstr ""
+"<b>Použít stejnou rodinu pro všechny texty</b><p>Pomocí této volby "
+"předefinujete vlastní písma tak, že se použije základní písmo.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, sameFamily)
+#: css/csscustom.ui:47
+#, kde-format
+msgid "Use same family for all text"
+msgstr "Použít stejnou rodinu pro všechny texty"
+
+#. i18n: ectx: property (title), widget (QGroupBox, GroupBox3)
+#: css/csscustom.ui:57
+#, kde-format
+msgid "Font Size"
+msgstr "Velikost písma"
+
+#. i18n: ectx: property (text), widget (QLabel, txtFontsize)
+#: css/csscustom.ui:63
+#, kde-format
+msgid "Base font si&ze:"
+msgstr "&Základní velikost písma:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:80
+#, kde-format
+msgid "7"
+msgstr "7"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:85
+#, kde-format
+msgid "8"
+msgstr "8"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:90
+#, kde-format
+msgid "9"
+msgstr "9"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:95
+#, kde-format
+msgid "10"
+msgstr "10"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:100
+#, kde-format
+msgid "11"
+msgstr "11"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:105
+#, kde-format
+msgid "12"
+msgstr "12"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:110
+#, kde-format
+msgid "14"
+msgstr "14"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:115
+#, kde-format
+msgid "16"
+msgstr "16"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:120
+#, kde-format
+msgid "20"
+msgstr "20"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:125
+#, kde-format
+msgid "24"
+msgstr "24"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:130
+#, kde-format
+msgid "32"
+msgstr "32"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:135
+#, kde-format
+msgid "48"
+msgstr "48"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:140
+#, kde-format
+msgid "64"
+msgstr "64"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, dontScale)
+#: css/csscustom.ui:148
+#, kde-format
+msgid ""
+"<b>Use same size for all elements</b><p>Select this option to override "
+"custom font sizes in favor of the base font size. All fonts will be "
+"displayed in the same size.</p>"
+msgstr ""
+"<b>Použít stejnou velikost pro všechny prvky</b><p>Použijte tuto volbu "
+"přejete-li si, aby byli předefinovány velikosti písmen ve všech textech na "
+"základní velikost.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, dontScale)
+#: css/csscustom.ui:151
+#, kde-format
+msgid "&Use same size for all elements"
+msgstr "Použít s&tejnou velikost pro všechny prvky"
+
+#. i18n: ectx: property (title), widget (QGroupBox, ButtonGroup2)
+#: css/csscustom.ui:161
+#, kde-format
+msgid "Colors"
+msgstr "Barvy"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, blackOnWhite)
+#: css/csscustom.ui:183
+#, kde-format
+msgid "<b>Black on White</b><p>This is what you normally see.</p>"
+msgstr "<b>Černá na bílé</b><p>Obvykle to, co normálně vidíte.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, blackOnWhite)
+#: css/csscustom.ui:186
+#, kde-format
+msgid "&Black on white"
+msgstr "Č&erná na bílé"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, whiteOnBlack)
+#: css/csscustom.ui:196
+#, kde-format
+msgid "<b>White on Black</b><p>This is your classic inverse color scheme.</p>"
+msgstr "<b>Bílá na černé</b><p>Toto je klasické obrácené barevné schéma.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, whiteOnBlack)
+#: css/csscustom.ui:199
+#, kde-format
+msgid "&White on black"
+msgstr "&Bílá na černé"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, customColor)
+#: css/csscustom.ui:206
+#, kde-format
+msgid ""
+"<b>Custom</b><p>Select this option to define a custom color for the default "
+"font.</p>"
+msgstr ""
+"<b>Vlastní</b><p>Zde je možné definovat vlastní barvu pro standardní písmo.</"
+"p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, customColor)
+#: css/csscustom.ui:209
+#, kde-format
+msgid "Cus&tom"
+msgstr "&Vlastní"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, txtBackground)
+#: css/csscustom.ui:219
+#, kde-format
+msgid ""
+"<b>Background</b><p>This background color is the one displayed behind the "
+"text by default. A background image will override this.</p>"
+msgstr ""
+"<b>Pozadí</b><p>Toto je barva, která je použitá na pozadí za textem. Obrázek "
+"na pozadí jí může předefinovat.</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, txtBackground)
+#: css/csscustom.ui:222
+#, kde-format
+msgid "Bac&kground:"
+msgstr "Poza&dí:"
+
+#. i18n: ectx: property (whatsThis), widget (KColorButton, backgroundColorButton)
+#: css/csscustom.ui:238
+#, kde-format
+msgid ""
+"<b>Background</b><p>Behind this door lays the ability to choose a custom "
+"default background.</p>"
+msgstr "<b>Pozadí</b><p>Zde je možné definovat vlastní výchozí pozadí.</p>"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, sameColor)
+#: css/csscustom.ui:248
+#, kde-format
+msgid ""
+"<b>Use same color for all text</b><p>Select this option to apply your chosen "
+"color to the default font as well as any custom fonts as specified in a "
+"stylesheet.</p>"
+msgstr ""
+"<b>Použít stejnou barvu pro všechen text</b><p> Vyberte tuto volbu, pokud si "
+"přejete aplikovat vámi vybranou barvu jak na standardní písmo tak i na vámi "
+"vybraná písma určená ve stylu</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, sameColor)
+#: css/csscustom.ui:251
+#, kde-format
+msgid "Use same color for all text"
+msgstr "Použít stejnou barvu pro všechny texty"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, txtForeground)
+#. i18n: ectx: property (whatsThis), widget (KColorButton, foregroundColorButton)
+#: css/csscustom.ui:261 css/csscustom.ui:280
+#, kde-format
+msgid ""
+"<b>Foreground color</b><p>The foreground color is the color that the text is "
+"drawn in.</p>"
+msgstr "<b>Barva popředí</b><p> Toto je barva, kterou je vykreslován text</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, txtForeground)
+#: css/csscustom.ui:264
+#, kde-format
+msgid "&Foreground:"
+msgstr "&Popředí:"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox3_2)
+#: css/csscustom.ui:293
+#, kde-format
+msgid "<b>Images</b>"
+msgstr "<b>Obrázky</b>"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, hideImages)
+#: css/csscustom.ui:302
+#, kde-format
+msgid ""
+"<b>Suppress images</b><p>Selecting this will prevent Konqueror from loading "
+"images.</p>"
+msgstr ""
+"<b>Zakázat obrázky</b><p>Tato volba způsobí, že Konqueror nebude načítat "
+"obrázky.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, hideImages)
+#: css/csscustom.ui:305
+#, kde-format
+msgid "&Suppress images"
+msgstr "&Zakázat obrázky"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, hideBackground)
+#: css/csscustom.ui:312
+#, kde-format
+msgid ""
+"<b>Suppress background images</b><p>Selecting this option will prevent "
+"Konqueror from loading background images.</p>"
+msgstr ""
+"<b>Zakázat obrázky na pozadí</b><p>Tato volba způsobí, že Konqueror nebude "
+"načítat obrázky na pozadí.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, hideBackground)
+#: css/csscustom.ui:315
+#, kde-format
+msgid "Suppress background images"
+msgstr "Zakázat obrázky na pozadí"
+
+#. i18n: ectx: property (title), widget (QGroupBox, previewBox)
+#: css/csscustom.ui:347
+#, kde-format
+msgid "Preview"
+msgstr "Náhled"
+
+#: css/kcmcss.cpp:51
+#, kde-format
+msgid ""
+"<h1>Konqueror Stylesheets</h1> This module allows you to apply your own "
+"color and font settings to Konqueror by using stylesheets (CSS). You can "
+"either specify options or apply your own self-written stylesheet by pointing "
+"to its location.<br /> Note that these settings will always have precedence "
+"before all other settings made by the site author. This can be useful to "
+"visually impaired people or for web pages that are unreadable due to bad "
+"design."
+msgstr ""
+"<h1>Styly Konqueroru</h1> Tento modul umožňuje aplikovat vaše vlastní "
+"nastavení barev a písem pro Konqueror s využitím kaskádových stylů (CSS). "
+"Můžete buď zadat volby nebo aplikovat vámi připravený stylový soubor pouhým "
+"zadáním jeho umístění.<br /> Je třeba poznamenat, že tyto volby budou mít "
+"vždy větší prioritu než nastavení vytvořená autorem webové stránky. Tato "
+"možnost je užitečná pro uživatele s vadou zraku nebo při zobrazování "
+"stránek, které jsou špatně čitelné z důvodu jejich špatného návrhu."
+
+#: css/kcmcss.cpp:336
+#, kde-format
+msgid ""
+"<html>\n"
+"<head>\n"
+"<style>\n"
+"<!--\n"
+"%1\n"
+"-->\n"
+"</style>\n"
+"</head>\n"
+"<body>\n"
+"<h1>Heading 1</h1>\n"
+"<h2>Heading 2</h2>\n"
+"<h3>Heading 3</h3>\n"
+"\n"
+"<p>User-defined stylesheets allow increased\n"
+"accessibility for visually handicapped\n"
+"people.</p>\n"
+"\n"
+"</body>\n"
+"</html>\n"
+msgstr ""
+"<html>\n"
+"<head>\n"
+"<style>\n"
+"<!--\n"
+"%1\n"
+"-->\n"
+"</style>\n"
+"</head>\n"
+"<body>\n"
+"<h1>Nadpis 1</h1>\n"
+"<h2>Nadpis 2</h2>\n"
+"<h3>Nadpis 3</h3>\n"
+"\n"
+"<p>Uživatelské styly umožňují zlepšení\n"
+"přístupnosti slabozrakým uživatelům.</p>\n"
+"\n"
+"</body>\n"
+"</html>\n"
+
+#: domainlistview.cpp:37
+#, kde-format
+msgid "Host/Domain"
+msgstr "Hostitel/Doména"
+
+#: domainlistview.cpp:37
+#, kde-format
+msgid "Policy"
+msgstr "Chování"
+
+#: domainlistview.cpp:45
+#, kde-format
+msgid "&New..."
+msgstr "&Nový..."
+
+#: domainlistview.cpp:49
+#, kde-format
+msgid "Chan&ge..."
+msgstr "Z&měnit..."
+
+#: domainlistview.cpp:53
+#, kde-format
+msgid "De&lete"
+msgstr "&Smazat"
+
+#: domainlistview.cpp:57
+#, kde-format
+msgid "&Import..."
+msgstr "&Importovat..."
+
+#: domainlistview.cpp:63
+#, kde-format
+msgid "&Export..."
+msgstr "&Exportovat..."
+
+#: domainlistview.cpp:71
+#, kde-format
+msgid "Click on this button to manually add a host or domain specific policy."
+msgstr ""
+"Klikněte na toto tlačítko k ručnímu přidání chování specifického pro doménu "
+"nebo hostitele."
+
+#: domainlistview.cpp:73
+#, kde-format
+msgid ""
+"Click on this button to change the policy for the host or domain selected in "
+"the list box."
+msgstr ""
+"Klikněte na toto tlačítko ke změně chování pro doménu nebo hostitele "
+"vybraného ze seznamu."
+
+#: domainlistview.cpp:75
+#, kde-format
+msgid ""
+"Click on this button to delete the policy for the host or domain selected in "
+"the list box."
+msgstr ""
+"Klikněte na toto tlačítko k odstranění chování pro doménu nebo hostitele "
+"vybraného ze seznamu."
+
+#: domainlistview.cpp:122
+#, kde-format
+msgid "You must first select a policy to be changed."
+msgstr "Nejprve je nutné vybrat zásadu chování, která má být změněna."
+
+#: domainlistview.cpp:149
+#, kde-format
+msgid "You must first select a policy to delete."
+msgstr "Nejprve je nutné vybrat zásadu chování, která má být smazána."
+
+#: domainlistview.cpp:187 policydlg.cpp:63
+#, kde-format
+msgid "Use Global"
+msgstr "Použít globální"
+
+#: domainlistview.cpp:189 policydlg.cpp:63
+#, kde-format
+msgid "Accept"
+msgstr "Přijmout"
+
+#: domainlistview.cpp:191 policydlg.cpp:63
+#, kde-format
+msgid "Reject"
+msgstr "Odmítnout"
+
+#: filteropts.cpp:48
+#, kde-format
+msgid "Enable filters"
+msgstr "Povolit filtry"
+
+#: filteropts.cpp:51
+#, kde-format
+msgid "Hide filtered images"
+msgstr "Skrýt filtrované obrázky"
+
+#: filteropts.cpp:58
+#, kde-format
+msgid "Manual Filter"
+msgstr "Ruční filtr"
+
+#: filteropts.cpp:76
+#, kde-format
+msgid "Search:"
+msgstr "Hledat:"
+
+#: filteropts.cpp:84
+#, kde-format
+msgid ""
+"<qt>Filter expression (e.g. <tt>http://www.example.com/ad/*</tt>, <a href="
+"\"filterhelp\">more information</a>):"
+msgstr ""
+"<qt>Filtrovat výraz (např. <tt>https://www.example.com/ad/*</tt>, <a href="
+"\"filterhelp\">více informací</a>):"
+
+#: filteropts.cpp:100
+#, kde-format
+msgid "Automatic Filter"
+msgstr "Automatický filtr"
+
+#: filteropts.cpp:109
+#, kde-format
+msgid "Automatic update interval:"
+msgstr "Interval automatické aktualizace:"
+
+#: filteropts.cpp:114
+#, kde-format
+msgid " day"
+msgid_plural " days"
+msgstr[0] " den"
+msgstr[1] " dny"
+msgstr[2] " dnů"
+
+#: filteropts.cpp:120
+#, kde-format
+msgid "Insert"
+msgstr "Vložit"
+
+#: filteropts.cpp:123
+#, kde-format
+msgid "Update"
+msgstr "Aktualizovat"
+
+#: filteropts.cpp:126
+#, kde-format
+msgid "Remove"
+msgstr "Odstranit"
+
+#: filteropts.cpp:130
+#, kde-format
+msgid "Import..."
+msgstr "Importovat..."
+
+#: filteropts.cpp:133
+#, kde-format
+msgid "Export..."
+msgstr "Exportovat..."
+
+#: filteropts.cpp:140
+#, kde-format
+msgid ""
+"<qt>More information on <a href=\"importhelp\">import format</a>, <a href="
+"\"exporthelp\">export format</a>"
+msgstr ""
+"<qt>Více informací ohledně <a href=\"importhelp\">formátu pro import</a> a "
+"<a href=\"exporthelp\">formátu pro export</a>"
+
+#: filteropts.cpp:154
+#, kde-format
+msgid ""
+"Enable or disable AdBlocK filters. When enabled, a set of URL expressions "
+"should be defined in the filter list for blocking to take effect."
+msgstr ""
+"Povolit nebo zakázat filtry AdBlocK. Pokud je povoleno, je třeba definovat "
+"sadu URL výrazů, použitých k blokování, v seznamu níže."
+
+#: filteropts.cpp:156
+#, kde-format
+msgid ""
+"When enabled blocked images will be removed from the page completely, "
+"otherwise a placeholder 'blocked' image will be used."
+msgstr ""
+"Pokud je povoleno, zablokované obrázky budou ze stránky zcela odstraněny, v "
+"opačném případě bude zobrazen 'zástupný' obrázek."
+
+#: filteropts.cpp:163
+#, kde-format
+msgid ""
+"This is the list of URL filters that will be applied to all embedded images "
+"and media objects."
+msgstr ""
+"Toto je seznam URL filtrů, které budou aplikovány na všechny zapouzdřené "
+"obrázky a grafické objekty."
+
+#: filteropts.cpp:167
+#, kde-format
+msgid ""
+"<qt><p>Enter an expression to filter. Filters can be defined as either:"
+"<ul><li>a shell-style wildcard, e.g. <tt>http://www.example.com/ads*</tt>, "
+"the wildcards <tt>*?[]</tt> may be used</li><li>a full regular expression by "
+"surrounding the string with '<tt>/</tt>', e.g. <tt>/\\/(ad|banner)\\./</tt></"
+"li></ul><p>Any filter string can be preceded by '<tt>@@</tt>' to whitelist "
+"(allow) any matching URL, which takes priority over any blacklist (blocking) "
+"filter."
+msgstr ""
+"<qt><p>Zadejte výraz, který se má filtrovat. Filtry mohou být zadány jako:"
+"<ul><li>zástupný znak jako v shellu, např. <tt>http://www.example.com/ads*</"
+"tt>, mohou být použity zástupné znaky <tt>*?[]</tt></li><li>plnohodnotný "
+"regulární výraz obklopující řetězec znaky '<tt>/</tt>', např. <tt>/\\/(ad|"
+"banner)\\./</tt></li></ul><p>Před každým filtrovacím řetězcem může být "
+"'<tt>@@</tt>' pro povolení odpovídajícího URL, což má přednost před všemi "
+"blokovacími filtry."
+
+#: filteropts.cpp:183
+#, kde-format
+msgid ""
+"<qt><p>The filter import format is a plain text file. Blank lines, comment "
+"lines starting with '<tt>!</tt>' and the header line <tt>[AdBlock]</tt> are "
+"ignored. Any other line is added as a filter expression."
+msgstr ""
+
+#: filteropts.cpp:188
+#, kde-format
+msgid ""
+"<qt><p>The filter export format is a plain text file. The file begins with a "
+"header line <tt>[AdBlock]</tt>, then all of the filters follow each on a "
+"separate line."
+msgstr ""
+
+#: filteropts.cpp:256
+#, kde-format
+msgid "Import Filters"
+msgstr "Importní filtry"
+
+#: filteropts.cpp:301
+#, kde-format
+msgid "Export Filters"
+msgstr "Exportovat filtry"
+
+#: filteropts.cpp:436
+#, kde-format
+msgid ""
+"<h1>Konqueror AdBlocK</h1> Konqueror AdBlocK allows you to create a list of "
+"filters that are checked against linked images and frames. URL's that match "
+"are either discarded or replaced with a placeholder image. "
+msgstr ""
+"<h1>Blokování reklam</h1> Konqueror AdBlocK vám umožňuje vytvořit seznam "
+"filtrů, který je porovnáván s obrázky a rámci. URL, která odpovídají, jsou "
+"buďto odstraněna nebo nahrazena zástupným obrázkem."
+
+#: filteropts.cpp:558
+#, kde-format
+msgid "Name"
+msgstr "Název"
+
+#: filteropts.cpp:559
+#, kde-format
+msgid "URL"
+msgstr "URL"
+
+#: generalopts.cpp:53
+#, kde-format
+msgid "Tabbed Browsing"
+msgstr "Karty v okně"
+
+#: generalopts.cpp:79
+#, kde-format
+msgctxt ""
+"The user chose to use a custom start page but left the corresponding field "
+"empty"
+msgid "Please, insert the custom start page"
+msgstr "Prosím, zadejte vlastní začínající stránku"
+
+#: generalopts.cpp:85
+#, kde-format
+msgctxt "@label:listbox"
+msgid "When &Konqueror starts:"
+msgstr "Při spuštění &Konqueroru:"
+
+#: generalopts.cpp:94
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Show Introduction Page"
+msgstr "Zobrazit úvodní stránku"
+
+#: generalopts.cpp:95
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Show My Start Page"
+msgstr "Zobrazit mou počáteční stránku"
+
+#: generalopts.cpp:96
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Show Blank Page"
+msgstr "Zobrazit prázdnou stránku"
+
+#: generalopts.cpp:97
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Show My Bookmarks"
+msgstr "Zobrazit mé záložky"
+
+#: generalopts.cpp:103
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Start Page"
+msgstr "Vyberte počáteční stránku"
+
+#: generalopts.cpp:107
+#, kde-format
+msgid "This is the URL of the web page Konqueror will show when starting."
+msgstr "Toto je URL webové stránky, kterou Konqueror načte při spuštění."
+
+#: generalopts.cpp:118
+#, kde-format
+msgid "Home page:"
+msgstr "Domovská stránka:"
+
+#: generalopts.cpp:121
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Home Page"
+msgstr "Vybrat domovskou stránku"
+
+#: generalopts.cpp:126
+#, kde-format
+msgid ""
+"This is the URL of the web page where Konqueror will jump to when the \"Home"
+"\" button is pressed."
+msgstr ""
+"Toto je URL webové stránky, kam se Konqueror jako webový prohlížeč přesune, "
+"stisknete-li tlačítko \\\"Domů\\\". Pokud je spuštěn jako správce souborů, "
+"tímto tlačítkem se dostanete do své domovské složky."
+
+#: generalopts.cpp:134
+#, kde-format
+msgid "Default web browser engine:"
+msgstr "Výchozí webový prohlížeč:"
+
+#: generalopts.cpp:143
+#, kde-format
+msgid "When splitting a view"
+msgstr ""
+
+#: generalopts.cpp:147
+#, kde-format
+msgid "Always duplicate current view"
+msgstr ""
+
+#: generalopts.cpp:148
+#, kde-format
+msgid "Duplicate current view only for local files"
+msgstr ""
+
+#: htmlopts.cpp:36
+#, kde-format
+msgid ""
+"<h1>Konqueror Browser</h1> Here you can configure Konqueror's browser "
+"functionality. Please note that the file manager functionality has to be "
+"configured using the \"File Manager\" configuration module. You can make "
+"some settings how Konqueror should handle the HTML code in the web pages it "
+"loads. It is usually not necessary to change anything here."
+msgstr ""
+"<h1>Prohlížeč Konqueror</h1> Zde si můžete nastavit funkce webového "
+"prohlížeče Konqueror. Prosím všimněte si, že funkce správce souborů se "
+"nastavují v modulu \"Správce souborů\". Zde obvykle nemusíte nic měnit."
+
+#: htmlopts.cpp:44
+#, kde-format
+msgid "Boo&kmarks"
+msgstr "Zálož&ky"
+
+#: htmlopts.cpp:47
+#, kde-format
+msgid "Ask for name and folder when adding bookmarks"
+msgstr "Při přidání záložky se dotázat na název a složku"
+
+#: htmlopts.cpp:50
+#, kde-format
+msgid ""
+"If this box is checked, Konqueror will allow you to change the title of the "
+"bookmark and choose a folder in which to store it when you add a new "
+"bookmark."
+msgstr ""
+"Pokud je zaškrtnuto, Konqueror vám dovolí změnit název záložky a vybrat "
+"složku, do které si přejete přidat novou záložku."
+
+#: htmlopts.cpp:56
+#, kde-format
+msgid "Show only marked bookmarks in bookmark toolbar"
+msgstr "Zobrazovat pouze označené záložky v panelu nástrojů záložek"
+
+#: htmlopts.cpp:58
+#, kde-format
+msgid ""
+"If this box is checked, Konqueror will show only those bookmarks in the "
+"bookmark toolbar which you have marked to do so in the bookmark editor."
+msgstr ""
+"Pokud je zaškrtnuto, Konqueror bude zobrazovat v panelu záložek pouze ty "
+"záložky, které jste označili v editoru záložek."
+
+#: htmlopts.cpp:65
+#, kde-format
+msgid "Form Com&pletion"
+msgstr "Do&plňování ve formulářích"
+
+#: htmlopts.cpp:69
+#, kde-format
+msgid ""
+"If this box is checked, Konqueror will remember the data you enter in web "
+"forms and suggest it in similar fields for all forms."
+msgstr ""
+"Je-li tato volba zaškrtnuta, pak si bude Konqueror pamatovat data, která "
+"vložíte do webových formulářů a bude je nabízet pro obdobné položky ve všech "
+"formulářích."
+
+#: htmlopts.cpp:75
+#, kde-format
+msgid "&Maximum completions:"
+msgstr "&Maximální počet doplnění:"
+
+#: htmlopts.cpp:77
+#, kde-format
+msgid ""
+"Here you can select how many values Konqueror will remember for a form field."
+msgstr ""
+"Zde je možné vybrat kolik hodnot si bude Konqueror pamatovat pro jednotlivé "
+"položky formuláře."
+
+#: htmlopts.cpp:84
+#, kde-format
+msgid "Mouse Beha&vior"
+msgstr "Chování myš&i"
+
+#: htmlopts.cpp:87
+#, kde-format
+msgid "Chan&ge cursor over links"
+msgstr "&Změnit kurzor nad odkazy"
+
+#: htmlopts.cpp:89
+#, kde-format
+msgid ""
+"If this option is set, the shape of the cursor will change (usually to a "
+"hand) if it is moved over a hyperlink."
+msgstr ""
+"Je-li nastavena tato volba, bude se měnit tvar kurzoru (obvykle na tvar "
+"ruky) vždy, když je přesouván nad odkazem."
+
+#: htmlopts.cpp:93
+#, kde-format
+msgid "M&iddle click opens URL in selection"
+msgstr "Prostřední tlačítko myš&i otevírá označené URL"
+
+#: htmlopts.cpp:96
+#, kde-format
+msgid ""
+"If this box is checked, you can open the URL in the selection by middle "
+"clicking on a Konqueror view."
+msgstr ""
+"Pokud je zaškrtnuto, můžete pomocí prostředního tlačítka myši otevírat "
+"označené URL."
+
+#: htmlopts.cpp:100
+#, kde-format
+msgid "Right click goes &back in history"
+msgstr "Pravé kliknutí jde zpě&t v historii"
+
+#: htmlopts.cpp:103
+#, kde-format
+msgid ""
+"If this box is checked, you can go back in history by right clicking on a "
+"Konqueror view. To access the context menu, press the right mouse button and "
+"move."
+msgstr ""
+"Je-li toto políčko zaškrtnuto, můžete přejít zpět v historii pouhým "
+"kliknutím pravého tlačítka myši. K vyvolání kontextové nabídky použijte "
+"pravé tlačítko a pohněte myší."
+
+#: htmlopts.cpp:113
+#, kde-format
+msgid "Allow automatic delayed &reloading/redirecting"
+msgstr "Povolit automatické zpožděné obnovení / přesmě&rování"
+
+#: htmlopts.cpp:114
+#, kde-format
+msgid ""
+"Some web pages request an automatic reload or redirection after a certain "
+"period of time. By unchecking this box Konqueror will ignore these requests."
+msgstr ""
+"Některé stránky si vyžádají automatické obnovení nebo přesměrování po "
+"uplynutí určité doby. Pokud ponecháte tlačítko nezaškrtnuté, Konqueror bude "
+"takové požadavky ignorovat."
+
+#: htmlopts.cpp:120
+#, kde-format
+msgid "Enable Access Ke&y activation with Ctrl key"
+msgstr "Povolit akt&ivaci přístupových kláves pomoc Ctrl"
+
+#: htmlopts.cpp:121
+#, kde-format
+msgid ""
+"Pressing the Ctrl key when viewing webpages activates Access Keys. "
+"Unchecking this box will disable this accessibility feature. (Konqueror "
+"needs to be restarted for this change to take effect.)"
+msgstr ""
+"Stisknutím klávesy Ctrl při prohlížení webové stránky aktivujete Přístupové "
+"klávesy KDE. Zrušením zaškrtnutí tohoto políčka vypnete tuto funkci "
+"zpřístupnění (aby se provedly změny, je třeba restartovat Konqueror)."
+
+#: htmlopts.cpp:125
+#, kde-format
+msgid "Send the DNT header to tell web sites you do not want to be tracked"
+msgstr ""
+"Odeslat hlavičku DNT pro sdělení stránkám, že si nepřejete být sledováni"
+
+#: htmlopts.cpp:126
+#, kde-format
+msgid ""
+"Check this box if you want to inform a web site that you do not want your "
+"web browsing habits tracked."
+msgstr ""
+"Zaškrtněte toto políčko pokud chcete informovat webové stránky, že nechcete "
+"aby sledovaly vaše chování na webu."
+
+#: htmlopts.cpp:130
+#, kde-format
+msgid "Offer to save website passwords"
+msgstr "Nabídnout uložení hesel webových stránek"
+
+#: htmlopts.cpp:131
+#, kde-format
+msgid "Uncheck this box to prevent being prompted to save website passwords"
+msgstr ""
+"Odškrtněte toto políčko, pokud chcete zabránit dotazům na uložení hesel "
+"stránek"
+
+#: htmlopts.cpp:136
+#, kde-format
+msgid "Display online PDF files using WebEngine"
+msgstr "Zobrazit soubory online pomocí WebEngine"
+
+#: htmlopts.cpp:137
+#, kde-format
+msgid ""
+"Uncheck this box to display online PDF files as configured in System Settings"
+msgstr ""
+"Zrušte zaškrtnutí po zobrazení souborů PDF online jak zvoleno v Nastavení "
+"Systému"
+
+#: javaopts.cpp:78
+#, kde-format
+msgid "Enable Ja&va globally"
+msgstr "Povolit Ja&vu globálně"
+
+#: javaopts.cpp:93
+#, kde-format
+msgid "Java Runtime Settings"
+msgstr "Nastavení pro vykonávání Javy"
+
+#: javaopts.cpp:97
+#, kde-format
+msgid "&Use security manager"
+msgstr "Po&užívat správce bezpečnosti"
+
+#: javaopts.cpp:101
+#, kde-format
+msgid "Use &KIO"
+msgstr "Používat &KIO"
+
+#: javaopts.cpp:105
+#, kde-format
+msgid "Shu&tdown applet server when inactive for more than"
+msgstr "Ukonči&t Applet server, je-li neaktivní"
+
+#: javaopts.cpp:117
+#, kde-format
+msgid " second"
+msgid_plural " seconds"
+msgstr[0] " sek"
+msgstr[1] " sek"
+msgstr[2] " sek"
+
+#: javaopts.cpp:123
+#, kde-format
+msgid "&Path to Java executable, or 'java':"
+msgstr "Cesta k &programu 'java', anebo pouze 'java':"
+
+#: javaopts.cpp:127
+#, kde-format
+msgid "Additional Java a&rguments:"
+msgstr "Přídavné pa&rametry Javy:"
+
+#: javaopts.cpp:132
+#, kde-format
+msgid ""
+"Enables the execution of scripts written in Java that can be contained in "
+"HTML pages. Note that, as with any browser, enabling active contents can be "
+"a security problem."
+msgstr ""
+"Povoluje vykonávání skriptů napsaných v jazyku Java, které se mohou "
+"vyskytovat v HTML stránkách. Všimněte si, že jako i v jiných prohlížečích "
+"může povolení aktivního obsahu způsobit bezpečnostní problémy."
+
+#: javaopts.cpp:135
+#, kde-format
+msgid ""
+"<p>This box contains the domains and hosts you have set a specific Java "
+"policy for. This policy will be used instead of the default policy for "
+"enabling or disabling Java applets on pages sent by these domains or hosts.</"
+"p><p>Select a policy and use the controls on the right to modify it.</p>"
+msgstr ""
+"<p>Tato část obsahuje domény a hostitele, pro které jste nastavili "
+"specifické chování pro Javu. Toto chování bude použito místo standardního "
+"chování pro zapnutí a vypnutí Javy na stránkách získaných z těchto domén a "
+"hostitelů.</p><p>Vyberte chování a k jeho změně použijte ovládání napravo.</"
+"p>"
+
+#: javaopts.cpp:142
+#, kde-format
+msgid ""
+"Click this button to choose the file that contains the Java policies. These "
+"policies will be merged with the existing ones. Duplicate entries are "
+"ignored."
+msgstr ""
+"Klikněte na toto tlačítko k výběru souboru, který obsahuje chování pro Javu. "
+"Tato chování budou sloučena se stávajícími zásadami. Duplicitní záznamy "
+"budou ignorovány."
+
+#: javaopts.cpp:145
+#, kde-format
+msgid ""
+"Click this button to save the Java policy to a zipped file. The file, named "
+"<b>java_policy.tgz</b>, will be saved to a location of your choice."
+msgstr ""
+"Kliknutím na toto tlačítko uložíte zásadu chování pro Javu do komprimovaného "
+"souboru pojmenovaného <b>java_policy.tgz</b>, který bude uložen do umístění "
+"dle vašeho výběru."
+
+#: javaopts.cpp:149
+#, kde-format
+msgid ""
+"Here you can set specific Java policies for any particular host or domain. "
+"To add a new policy, simply click the <i>New...</i> button and supply the "
+"necessary information requested by the dialog box. To change an existing "
+"policy, click on the <i>Change...</i> button and choose the new policy from "
+"the policy dialog box. Clicking on the <i>Delete</i> button will remove the "
+"selected policy, causing the default policy setting to be used for that "
+"domain."
+msgstr ""
+"Zde je možné nastavit zásadu chování pro Javu pro určité domény nebo "
+"hostitele. Novou zásadu lze přidat jednoduše kliknutím na tlačítko <i>Nový..."
+"</i> a poskytnutím požadovaných informací. Změnu již existující zásady lze "
+"kliknutím na tlačítko <i>Změnit...</i> a výběrem nového chování. Kliknutí na "
+"tlačítko <i>Smazat</i> odstraní zásadu chování a způsobí použití "
+"standardního chování pro tuto doménu nebo hostitele."
+
+#: javaopts.cpp:162
+#, kde-format
+msgid ""
+"Enabling the security manager will cause the jvm to run with a Security "
+"Manager in place. This will keep applets from being able to read and write "
+"to your file system, creating arbitrary sockets, and other actions which "
+"could be used to compromise your system. Disable this option at your own "
+"risk. You can modify your $HOME/.java.policy file with the Java policytool "
+"utility to give code downloaded from certain sites more permissions."
+msgstr ""
+"Povolením správce zabezpečení donutíte běžet jvm spolu se správcem "
+"zabezpečení. To zabrání appletem číst a zapisovat na váš systém soubory, "
+"vytvářet sokety a jiné činnosti, které by mohli ohrozit bezpečnost vašeho "
+"systému. Tuto volbu vypínejte jen na svoje vlastní riziko. Pomocí nástroje "
+"Java policytool můžete změnit váš soubor $HOME/.java.policy pro přiřazení "
+"zvláštních práv podle zdrojového serveru appletu."
+
+#: javaopts.cpp:170
+#, kde-format
+msgid "Enabling this will cause the jvm to use KIO for network transport "
+msgstr "Pokud toto povolíte, bude JVM používat pro síťové přenosy systém KIO."
+
+#: javaopts.cpp:172
+#, kde-format
+msgid ""
+"Enter the path to the java executable. If you want to use the jre in your "
+"path, simply leave it as 'java'. If you need to use a different jre, enter "
+"the path to the java executable (e.g. /usr/lib/jdk/bin/java), or the path to "
+"the directory that contains 'bin/java' (e.g. /opt/IBMJava2-13)."
+msgstr ""
+"Vložte cestu k programu java. Přejete-li si používat JRE ve své cestě, pak "
+"zde ponechte pouze údaj 'java'. Potřebujete-li jiné JRE, pak vložte celou "
+"cestu k programu java (např. /usr/lib/jdk/bin/java), nebo cestu, která "
+"obsahuje 'bin/java'(např., /opt/IBMJava2-13)."
+
+#: javaopts.cpp:177
+#, kde-format
+msgid ""
+"If you want special arguments to be passed to the virtual machine, enter "
+"them here."
+msgstr ""
+"Přejete-li si předávat virtuálnímu stroji speciální argumenty, tak je vložte "
+"zde."
+
+#: javaopts.cpp:179
+#, kde-format
+msgid ""
+"When all the applets have been destroyed, the applet server should shut "
+"down. However, starting the jvm takes a lot of time. If you would like to "
+"keep the java process running while you are browsing, you can set the "
+"timeout value to whatever you like. To keep the java process running for the "
+"whole time that the konqueror process is, leave the Shutdown Applet Server "
+"checkbox unchecked."
+msgstr ""
+"Jsou-li zrušeny všechny applety, pak by měl být ukončen server appletů. "
+"Avšak start JVM trvá určitou dobu. Přejete-li si ponechat java proces běžící "
+"během prohlížení, tak můžete nastavit časový limit. Přejete-li si, aby java "
+"proces běžel po celou dobu používání Konqueroru, pak nezaškrtávejte volbu "
+"\"Ukončit Applet server, je-li neaktivní\"."
+
+#: javaopts.cpp:288
+#, kde-format
+msgctxt "@title:group"
+msgid "Doma&in-Specific"
+msgstr "Spec&ifické pro doménu"
+
+#: javaopts.cpp:323
+#, kde-format
+msgctxt "@title:window"
+msgid "New Java Policy"
+msgstr "Nové chování pro Javu"
+
+#: javaopts.cpp:326
+#, kde-format
+msgctxt "@title:window"
+msgid "Change Java Policy"
+msgstr "Změnit chování Javy"
+
+#: javaopts.cpp:330
+#, kde-format
+msgid "&Java policy:"
+msgstr "Zásady pro &Javu:"
+
+#: javaopts.cpp:331
+#, kde-format
+msgid "Select a Java policy for the above host or domain."
+msgstr ""
+"Vyberte chování pro jazyk Java pro výše uvedenou doménu nebo hostitele."
+
+#: jsopts.cpp:50
+#, kde-format
+msgid "Ena&ble JavaScript globally"
+msgstr "Povolit JavaScript glo&bálně"
+
+#: jsopts.cpp:51
+#, kde-format
+msgid ""
+"Enables the execution of scripts written in ECMA-Script (also known as "
+"JavaScript) that can be contained in HTML pages. Note that, as with any "
+"browser, enabling scripting languages can be a security problem."
+msgstr ""
+"Povoluje vykonávání skriptů napsaných v ECMA-Scriptu (známého jako "
+"JavaScript), které se mohou vyskytovat v HTML stránkách. Všimněte si, že "
+"jako i v jiných prohlížečích může povolení skriptovacích jazyků způsobit "
+"bezpečnostní problémy."
+
+#: jsopts.cpp:59
+#, kde-format
+msgid "Debugging"
+msgstr "Ladění"
+
+#: jsopts.cpp:63
+#, kde-format
+msgid "Enable debu&gger"
+msgstr "Povolit ladicí nástro&j"
+
+#: jsopts.cpp:64
+#, kde-format
+msgid "Enables builtin JavaScript debugger."
+msgstr "Povolí vestavěný ladicí nástroj pro JavaScript."
+
+#: jsopts.cpp:68
+#, kde-format
+msgid "Report &errors"
+msgstr "Nahlašovat ch&yby"
+
+#: jsopts.cpp:69
+#, kde-format
+msgid ""
+"Enables the reporting of errors that occur when JavaScript code is executed."
+msgstr ""
+"Povoluje nahlašování chyb, které se vyskytnou při spouštění kódu v "
+"JavaScriptu."
+
+#: jsopts.cpp:79
+#, kde-format
+msgid ""
+"Here you can set specific JavaScript policies for any particular host or "
+"domain. To add a new policy, simply click the <i>New...</i> button and "
+"supply the necessary information requested by the dialog box. To change an "
+"existing policy, click on the <i>Change...</i> button and choose the new "
+"policy from the policy dialog box. Clicking on the <i>Delete</i> button will "
+"remove the selected policy causing the default policy setting to be used for "
+"that domain. The <i>Import</i> and <i>Export</i> button allows you to easily "
+"share your policies with other people by allowing you to save and retrieve "
+"them from a zipped file."
+msgstr ""
+"Zde je možné nastavit zásady chování pro JavaScript pro určité domény nebo "
+"hostitele. Novou zásadu lze přidat jednoduše kliknutím na tlačítko <i>Nový..."
+"</i> a poskytnutím požadovaných informací. Změnu již existující zásady lze "
+"kliknutím na tlačítko <i>Změnit...</i> a výběrem nové zásady. Kliknutí na "
+"tlačítko <i>Smazat</i> odstraní zásada chování a způsobí použití "
+"standardního zásady pro tuto doménu nebo hostitele. Tlačítka <i>Importovat</"
+"i> a <i>Exportovat</i> umožňují snadno sdílet zásady s ostatními lidmi "
+"pomocí ukládání a získávání zásad."
+
+#: jsopts.cpp:89
+#, kde-format
+msgid ""
+"<p>This box contains the domains and hosts you have set a specific "
+"JavaScript policy for. This policy will be used instead of the default "
+"policy for enabling or disabling JavaScript on pages sent by these domains "
+"or hosts.</p><p>Select a policy and use the controls on the right to modify "
+"it.</p>"
+msgstr ""
+"<p>Tato část obsahuje domény a hostitele, pro které jste nastavili "
+"specifické chování pro JavaScript. Toto chování bude použito místo "
+"standardního chování pro zapnutí a vypnutí JavaScriptu na stránkách "
+"získaných z těchto domén a hostitelů.</p> <p>Vyberte chování a k jeho změně "
+"použijte ovládání napravo.</p>"
+
+#: jsopts.cpp:96
+#, kde-format
+msgid ""
+"Click this button to choose the file that contains the JavaScript policies. "
+"These policies will be merged with the existing ones. Duplicate entries are "
+"ignored."
+msgstr ""
+"Klikněte na toto tlačítko k výběru souboru, který obsahuje zásady pro "
+"JavaScript. Tyto zásady budou sloučeny se stávajícími zásadami. Duplicitní "
+"záznamy budou ignorovány."
+
+#: jsopts.cpp:99
+#, kde-format
+msgid ""
+"Click this button to save the JavaScript policy to a zipped file. The file, "
+"named <b>javascript_policy.tgz</b>, will be saved to a location of your "
+"choice."
+msgstr ""
+"Kliknutím na toto tlačítko uložíte zásady chování pro JavaScript do "
+"komprimovaného souboru pojmenovaného <b>javascript_policy.tgz</b>, který "
+"bude uložen na umístění dle vašeho výběru."
+
+#: jsopts.cpp:105
+#, kde-format
+msgid "Global JavaScript Policies"
+msgstr "Globální chování pro JavaScript"
+
+#: jsopts.cpp:173
+#, kde-format
+msgctxt "@title:group"
+msgid "Do&main-Specific"
+msgstr "Specifické pro do&ménu"
+
+#: jsopts.cpp:212
+#, kde-format
+msgctxt "@title:window"
+msgid "New JavaScript Policy"
+msgstr "Nové chování pro JavaScript"
+
+#: jsopts.cpp:215
+#, kde-format
+msgctxt "@title:window"
+msgid "Change JavaScript Policy"
+msgstr "Změnit chování JavaScriptu"
+
+#: jsopts.cpp:219
+#, kde-format
+msgid "JavaScript policy:"
+msgstr "Chování pro JavaScript:"
+
+#: jsopts.cpp:220
+#, kde-format
+msgid "Select a JavaScript policy for the above host or domain."
+msgstr ""
+"Vyberte chování pro JavaScript pro výše uvedenou doménu nebo hostitele."
+
+#: jsopts.cpp:222
+#, kde-format
+msgid "Domain-Specific JavaScript Policies"
+msgstr "Chování JavaScriptu pro doménu"
+
+#: jspolicies.cpp:132
+#, kde-format
+msgid "Open new windows:"
+msgstr "Otevírat nová okna:"
+
+#: jspolicies.cpp:140 jspolicies.cpp:194 jspolicies.cpp:231 jspolicies.cpp:268
+#: jspolicies.cpp:308
+#, kde-format
+msgid "Use global"
+msgstr "Použít globální"
+
+#: jspolicies.cpp:141 jspolicies.cpp:195 jspolicies.cpp:232 jspolicies.cpp:269
+#: jspolicies.cpp:309
+#, kde-format
+msgid "Use setting from global policy."
+msgstr "Použít nastavení globálního chování."
+
+#: jspolicies.cpp:147 jspolicies.cpp:201 jspolicies.cpp:238 jspolicies.cpp:275
+#: jspolicies.cpp:315
+#, kde-format
+msgid "Allow"
+msgstr "Povolit"
+
+#: jspolicies.cpp:148
+#, kde-format
+msgid "Accept all popup window requests."
+msgstr "Přijmout všechny požadavky na vyskakovací okna."
+
+#: jspolicies.cpp:153
+#, kde-format
+msgid "Ask"
+msgstr "Dotázat se"
+
+#: jspolicies.cpp:154
+#, kde-format
+msgid "Prompt every time a popup window is requested."
+msgstr "Vždy se dotázat před otevřením vyskakovacího okna."
+
+#: jspolicies.cpp:159
+#, kde-format
+msgid "Deny"
+msgstr "Zakázat"
+
+#: jspolicies.cpp:160
+#, kde-format
+msgid "Reject all popup window requests."
+msgstr "Odmítnout všechna vyskakovací okna."
+
+#: jspolicies.cpp:165
+#, kde-format
+msgid "Smart"
+msgstr "Chytré"
+
+#: jspolicies.cpp:166
+#, kde-format
+msgid ""
+"Accept popup window requests only when links are activated through an "
+"explicit mouse click or keyboard operation."
+msgstr ""
+"Přijmout požadavky na vyskakovací okna, pouze pokud je vyvoláte pomocí "
+"klávesnice nebo kliknutím myši."
+
+#: jspolicies.cpp:173
+#, kde-format
+msgid ""
+"If you disable this, Konqueror will stop interpreting the <i>window.open()</"
+"i> JavaScript command. This is useful if you regularly visit sites that make "
+"extensive use of this command to pop up ad banners.<br /><br /><b>Note:</b> "
+"Disabling this option might also break certain sites that require <i>window."
+"open()</i> for proper operation. Use this feature carefully."
+msgstr ""
+"Je-li tato volba vypnuta, Konqueror přestane interpretovat příkaz "
+"JavaScriptu <i>window.open()</i>. To je užitečné, jestliže obvykle "
+"navštěvujete servery, které tohoto příkazu užívají k zobrazení reklamních "
+"proužků.<br /><br /> <b>Poznámka:</b> Vypnutí této volby může též ovlivnit "
+"správné zobrazení stránek, které ke správnému zobrazení tuto funkci "
+"vyžadují. Užívejte tuto možnost opatrně."
+
+#: jspolicies.cpp:187
+#, kde-format
+msgid "Resize window:"
+msgstr "Měnit velikost okna:"
+
+#: jspolicies.cpp:202
+#, kde-format
+msgid "Allow scripts to change the window size."
+msgstr "Povolit skriptům měnit velikost okna."
+
+#: jspolicies.cpp:207 jspolicies.cpp:244 jspolicies.cpp:281 jspolicies.cpp:321
+#, kde-format
+msgid "Ignore"
+msgstr "Ignorovat"
+
+#: jspolicies.cpp:208
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to change the window size. The web page will "
+"<i>think</i> it changed the size but the actual window is not affected."
+msgstr ""
+"Ignorovat pokusy skriptů o změnu velikosti okna. Webová stránka si bude "
+"<i>myslet</i>, že změnila velikost, ale vlastní okno bude nedotčeno."
+
+#: jspolicies.cpp:215
+#, kde-format
+msgid ""
+"Some websites change the window size on their own by using <i>window."
+"resizeBy()</i> or <i>window.resizeTo()</i>. This option specifies the "
+"treatment of such attempts."
+msgstr ""
+"Některé webové stránky mění samy velikost okna pomocí <i>window.resizeBy()</"
+"i> nebo <i>window.resizeTo()</i>. Tato volba určuje chování v takových "
+"případech."
+
+#: jspolicies.cpp:224
+#, kde-format
+msgid "Move window:"
+msgstr "Přesunout okno:"
+
+#: jspolicies.cpp:239
+#, kde-format
+msgid "Allow scripts to change the window position."
+msgstr "Povolit skriptům přesouvat měnit pozici okna."
+
+#: jspolicies.cpp:245
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to change the window position. The web page will "
+"<i>think</i> it moved the window but the actual position is not affected."
+msgstr ""
+"Ignorovat pokusy skriptů o změnu umístění okna. Webová stránka si bude "
+"<i>myslet</i>, že přesunula okno, ale vlastní pozice okna bude nedotčena."
+
+#: jspolicies.cpp:252
+#, kde-format
+msgid ""
+"Some websites change the window position on their own by using <i>window."
+"moveBy()</i> or <i>window.moveTo()</i>. This option specifies the treatment "
+"of such attempts."
+msgstr ""
+"Některé webové stránky mění samy pozici okna pomocí <i>window.moveBy()</i> "
+"nebo <i>window.moveTo()</i>. Tato volba určuje chování v takových případech."
+
+#: jspolicies.cpp:261
+#, kde-format
+msgid "Focus window:"
+msgstr "Zaměření okna:"
+
+#: jspolicies.cpp:276
+#, kde-format
+msgid "Allow scripts to focus the window."
+msgstr "Povolit skriptům zaměřit okna."
+
+#: jspolicies.cpp:282
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to focus the window. The web page will <i>think</"
+"i> it brought the focus to the window but the actual focus will remain "
+"unchanged."
+msgstr ""
+"Ignorovat pokusy skriptů o zaměření okna. Webová stránka si bude <i>myslet</"
+"i>, že zaměřila okno, ale vlastní zaměření bude nedotčeno."
+
+#: jspolicies.cpp:290
+#, kde-format
+msgid ""
+"Some websites set the focus to their browser window on their own by using "
+"<i>window.focus()</i>. This usually leads to the window being moved to the "
+"front interrupting whatever action the user was dedicated to at that time. "
+"This option specifies the treatment of such attempts."
+msgstr ""
+"Některé webové stránky mění samy zaměření okna pomocí <i>window.focus()</i>. "
+"To většinou vede k tomu, že je okno předáno do popředí, a tím je přerušena "
+"činnost uživatele. Tato volba určuje chování v takových případech."
+
+#: jspolicies.cpp:301
+#, kde-format
+msgid "Modify status bar text:"
+msgstr "Změnit text ve stavovém panelu:"
+
+#: jspolicies.cpp:316
+#, kde-format
+msgid "Allow scripts to change the text of the status bar."
+msgstr "Povolit skriptům měnit text ve stavovém panelu."
+
+#: jspolicies.cpp:322
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to change the status bar text. The web page will "
+"<i>think</i> it changed the text but the actual text will remain unchanged."
+msgstr ""
+"Ignorovat pokusy skriptů o změnu textu ve stavovém panelu. Webová stránka si "
+"bude  <i>myslet</i>, že změnila text, ale vlastní text bude nedotčen."
+
+#: jspolicies.cpp:330
+#, kde-format
+msgid ""
+"Some websites change the status bar text by setting <i>window.status</i> or "
+"<i>window.defaultStatus</i>, thus sometimes preventing displaying the real "
+"URLs of hyperlinks. This option specifies the treatment of such attempts."
+msgstr ""
+"Některé webové stránky mění samy text ve stavovém panel pomocí <i>window."
+"status</i> nebo <i>window.defaultStatus</i>. To většinou vede k tomu, že "
+"není zobrazeno pravé URL hypertextových odkazů. Tato volba určuje chování v "
+"takových případech."
+
+#: main.cpp:43
+#, kde-format
+msgid "Konqueror Browsing Control Module"
+msgstr "Ovládací modul Konqueroru - prohlížeče Internetu"
+
+#: main.cpp:45
+#, kde-format
+msgid "(c) 1999 - 2001 The Konqueror Developers"
+msgstr "(c) 1999 - 2001 vývojáři aplikace Konqueror"
+
+#: main.cpp:47
+#, kde-format
+msgid "Waldo Bastian"
+msgstr "Waldo Bastian"
+
+#: main.cpp:48
+#, kde-format
+msgid "David Faure"
+msgstr "David Faure"
+
+#: main.cpp:49
+#, kde-format
+msgid "Matthias Kalle Dalheimer"
+msgstr "Matthias Kalle Dalheimer"
+
+#: main.cpp:50
+#, kde-format
+msgid "Lars Knoll"
+msgstr "Lars Knoll"
+
+#: main.cpp:51
+#, kde-format
+msgid "Dirk Mueller"
+msgstr "Dirk Mueller"
+
+#: main.cpp:52
+#, kde-format
+msgid "Daniel Molkentin"
+msgstr "Daniel Molkentin"
+
+#: main.cpp:53
+#, kde-format
+msgid "Wynn Wilkes"
+msgstr "Wynn Wilkes"
+
+#: main.cpp:55
+#, kde-format
+msgid "Leo Savernik"
+msgstr "Leo Savernik"
+
+#: main.cpp:55
+#, kde-format
+msgid ""
+"JavaScript access controls\n"
+"Per-domain policies extensions"
+msgstr ""
+"Nastavení přístupu JavaScriptu\n"
+"Rozšíření chování podle domén"
+
+#: main.cpp:67
+#, kde-format
+msgid "&Java"
+msgstr "&Java"
+
+#: main.cpp:71
+#, kde-format
+msgid "Java&Script"
+msgstr "Java&Script"
+
+#: main.cpp:111
+#, kde-format
+msgid ""
+"<h2>JavaScript</h2>On this page, you can configure whether JavaScript "
+"programs embedded in web pages should be allowed to be executed by Konqueror."
+"<h2>Java</h2>On this page, you can configure whether Java applets embedded "
+"in web pages should be allowed to be executed by Konqueror.<br /><br /"
+"><b>Note:</b> Active content is always a security risk, which is why "
+"Konqueror allows you to specify very fine-grained from which hosts you want "
+"to execute Java and/or JavaScript programs."
+msgstr ""
+"<h2>JavaScript</h2> Na této stránce je možné nastavit, zda má být v "
+"Konqueroru povoleno provádění programů v JavaScriptu.<h2>Java</h2>Na této "
+"stránce je možné nastavit, zda se mají v Konqueroru spouštět vložené applety "
+"Java.<br /><br /> <b>Poznámka:</b> Aktivní obsah je vždy bezpečnostním "
+"rizikem. Z tohoto důvodu umožňuje Konqueror určit, na kterých stránkách si "
+"přejete povolit vykonávání programů v jazyce Java a JavaScript."
+
+#: policydlg.cpp:30
+#, kde-format
+msgctxt "@title:window"
+msgid "Domain-Specific Policies"
+msgstr "Nastavení specifické pro doménu"
+
+#: policydlg.cpp:47
+#, kde-format
+msgid "&Host or domain name:"
+msgstr "Název &hostitele nebo domény:"
+
+#: policydlg.cpp:55
+#, kde-format
+msgid ""
+"Enter the name of a host (like www.kde.org) or a domain, starting with a dot "
+"(like .kde.org or .org)"
+msgstr ""
+"Zadejte jméno hostitele (např. www.kde.org) anebo domény, s tečkou na "
+"začátku (jako .kde.org nebo .org)"
+
+#: policydlg.cpp:139
+#, kde-format
+msgid "You must first enter a domain name."
+msgstr "Je nejprve nutné zadat jméno domény."

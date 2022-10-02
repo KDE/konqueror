@@ -1,0 +1,320 @@
+<chapter id="config">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>Tomas</firstname
+><surname
+>Straupis</surname
+><affiliation
+><address
+><email
+>tomasstraupis@gmail.com</email
+></address
+></affiliation
+><contrib
+>Vertė</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2010-02-07</date>
+<releaseinfo
+>4.4.0</releaseinfo>
+</chapterinfo>
+
+
+<title
+>&konqueror; konfigūravimas</title>
+
+<para
+>Kaip ir visa &kde; aplinka, &konqueror; galima labai lanksčiai konfigūruoti, taigi tikrai galite pasiekti, kad &konqueror; ir atrodytų, ir veiktų būtent taip, kaip jums labiausiai patinka.</para>
+
+<sect1 id="configure-bars">
+<title
+>Įrankinės</title>
+
+<para
+>Naujai įdiegtoje &kde; aplinkoje, &konqueror; lange bus meniu juosta bei pagrindinė, vietos ir galbūt žymelių įrankinė.</para>
+
+<para
+>Galbūt jums visai nereikia visų šitų įrankinių. Norėdami paslėpti kurią nors iš jų, nužymėkite atitinkamą parinktį meniu <menuchoice
+><guimenu
+>Nustatymai</guimenu
+><guisubmenu
+>Rodomos įrankių juostos</guisubmenu
+></menuchoice
+>. Analogiškai galite įjungti nerodomą įrankinę pažymėję atitinkamą parinktį.</para
+> 
+
+<para
+>Meniu juostą galima įjungti ir išjungti klavišų kombinacija <keycombo action="simul"
+>&Ctrl;<keycap
+>M</keycap
+></keycombo
+>. </para>
+
+<para
+>Paspaudę ant įrankinės <mousebutton
+>dešinįjį</mousebutton
+> pelės mygtuką gausite meniu, kurio pagalba galėsite konfigūruoti parinktą įrankinę. Jūs galite užrakinti ir atrakinti įrankinės poziciją, ženkliukų dydį bei neužrakintų įrankinių orientaciją (kairė, dešinė, viršus ar apačia).</para>
+
+<para
+>Jei įrankinės atrakinta, kairėje kiekvienos jų pusėje matysite rankenėles. Paspaudę rankenėlę kairįjį palės mygtuką galite tempti įrankinę į kitą vietą arba apskritai atskirti ją nuo lango ir padėti bet kurioje ekrano vietoje.</para>
+
+<para
+>Skirtingose įrankinėse rodomus ženkliukus galima keisti naudojant dialogą <guilabel
+>Konfigūruoti įrankines</guilabel
+>. Šis dialogas iškviečiamas naudojant meniu parinktį <menuchoice
+><guimenu
+>Nustatymai</guimenu
+><guimenuitem
+>Konfigūruoti įrankines...</guimenuitem
+></menuchoice
+>. Įrankinių skaičius ir tipai priklausys nuo to, ar &konqueror; yra naršyklės, ar failų redaktoriaus režime bei nuo to, ar esate įdiegę kokius nors priedus.</para>
+
+</sect1>
+
+<sect1 id="configshort">
+<title
+>Spartieji klavišai</title>
+<para
+>Norėdami pakeisti standartinius &konqueror; sparčiuosius klavišus parinkite meniu punktą <menuchoice
+><guimenu
+>Nustatymai</guimenu
+><guimenuitem
+>Konfigūruoti sparčiuosius klavišus... </guimenuitem
+></menuchoice
+>. Bus paleistas žemiau pavaizduotas dialogas. </para>
+<mediaobject>
+<imageobject>
+<imagedata fileref="shortcut1.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Sparčiųjų klavišų nuotrauka 1</phrase>
+</textobject>
+</mediaobject>
+<para
+>Naudokite paieškos lauką tam, kad rastumėte spartųjį veiksmą, kuriam norite pridėti ar pakeisti spartųjį klavišą. Suradę pažymėkite veiksmą <mousebutton
+>kairiuoju</mousebutton
+> pelės mygtuku. </para>
+
+<para
+>Pažymėję norimą veiksmą pastebėsite, kad prie paryškinto veiksmo atsirado dvi papildomos parinktys. Čia galite nurodyti klavišų kombinaciją arba nenurodyti šiam veiksmui jokio klavišo. </para>
+
+<mediaobject>
+<imageobject>
+<imagedata fileref="shortcut2.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Sparčiųjų klavišų konfigūravimo 2 nuotrauka</phrase>
+</textobject>
+</mediaobject>
+
+<itemizedlist>
+<listitem
+><para
+><guilabel
+>Numatytasis</guilabel
+>: parinktas veikmas bus iškviečiamas &kde; numatytaja klavišų kombinacija. Daugumai veiksmų tai tinkamiausias pasirinkimas, kadangi &kde; diegiama su gerai apgalvotomis sparčiųjų klavišų kombinacijomis. </para
+></listitem>
+<listitem
+><para
+><guilabel
+>Pasirinkta</guilabel
+>: įjungus šią parinktį galite veiksmui priskirti norimą klavišų kombinaciją. Spauskite mygtuką, pažymėtą arba <guibutton
+>Jokio</guibutton
+>, arba prieš tai priskirta klavišų kombinacija. Mygtuko antraštė pasikeičia į <guibutton
+>Įvestis</guibutton
+>. Spauskite bet kokį klavišų modifikatorių (&ie; &Shift;, &Ctrl; arba &Alt;) ir tada paprastą arba funkcinį klavišą (&eg; <keycap
+>F11</keycap
+>), kurį norite priskirti šiai klavišų kombinacijai.</para
+></listitem>
+<listitem
+><para
+>Klavišų kombinaciją atstatyti į <guilabel
+>Jokio</guilabel
+> galite naudodami šį mygtuką: <inlinemediaobject
+><imageobject
+> <imagedata fileref="reset.png" format="PNG"/></imageobject
+></inlinemediaobject
+>. </para>
+<para
+>Paspaudę ant stulpelio <guilabel
+>Alternatyvus derinys</guilabel
+> galėsite parinkti antrą parinkto veiksmo sparčiųjų klavišų kombinaciją.</para
+></listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="othersettings">
+<title
+>Kiti nustatymai</title>
+<para
+>Parinkę meniu punktą <menuchoice
+><guimenu
+>Nustatymai</guimenu
+><guimenuitem
+>Konfigūruoti Konqueror...</guimenuitem
+></menuchoice
+> gausite dialogą, kuriame galėsite konfigūruoti daugelį &konqueror; elgsenos aspektų.</para
+> 
+<para
+>Jame rasite sekančias skiltis, kurias galite parinkti <mousebutton
+>kairiuoju</mousebutton
+> pelės mygtuku paspaude ant vieno iš dialogo ženkliukų:</para>
+<itemizedlist>
+<listitem
+><para
+><ulink url="help:/kcontrol/khtml-general/index.html"
+>Bendrieji</ulink
+>: Bendrų &konqueror; veiksenos elementų konfigūravimas</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/performance/index.html"
+>Veikimo sparta</ulink
+>: Konfigūruokite nustatymus, kurie gali įtakoti &konqueror; veikimo spartą</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/bookmarks/index.html"
+>Žymelės</ulink
+>: Konfigūruoti žymelių namų puslapį</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/filemanager/index.html"
+>Failų tvarkymas</ulink
+>: Čia galite nustatyti, kaip elgiasi Konqueror – failų tvarkyklė</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/dolphin/index.html#preferences-dialog-viewmodes"
+>Rodymo būdai</ulink
+>: Failų tvarkyklės rodymo būdų konfigūravimas</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/dolphin/index.html#preferences-dialog-navigation"
+>Navigacija</ulink
+>: Konfigūruokite failų tvarkyklės navigaciją</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/dolphin/index.html#preferences-dialog-services"
+>Tarnybos</ulink
+>: Konfigūruokite failų tvarkyklės tarnybas</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/dolphin/index.html#preferences-dialog-general"
+>Bendri</ulink
+>: Bendrųjų failų tvarkyklės nustatymų konfigūravimas</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/filetypes/index.html"
+>Failų sąsajos</ulink
+>: Konfigūruoti failų sąsajas</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/trash/index.html"
+>Šiukšliadėžė</ulink
+>: Konfigūruoti šiukšliadėžės nustatymus</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/khtml-behavior/index.html"
+>Žiniatinklio naršymas</ulink
+>: Konfigūruoti naršyklės elgesį</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/proxy/index.html"
+>Įgaliotasis serveris</ulink
+>: Konfigūruoti naudojamus įgaliotuosius serverius</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/kcmcss/index.html"
+>Išvaizda</ulink
+>: Konfigūruoti žiniatinklio puslapių rodymą</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/khtml-adblock/index.html"
+>AdBlocK filtrai</ulink
+>: Konfigūruoti &konqueror; AdBlocK (reklamų blokavimo) filtrus</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/ebrowsing/index.html"
+>Žiniatinklio trumpės</ulink
+>: Konfigūruoti išplėstinį naršymą</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/cache/index.html"
+>Krepšys</ulink
+>: Konfigūruokite žiniatinklio krepšio nustatymus</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/history/index.html"
+>Istorija</ulink
+>: Konfigūruoti istorijos šoninę juostą</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/cookies/index.html"
+>Slapukai</ulink
+>: Konfigūruoti slapukų veikimą</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/useragent/index.html"
+>Naršyklės identifikacija</ulink
+>: Čia galite nustatyti, kaip Konqueror save identifikuoja</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/khtml-java-js/index.html"
+>Java &amp; JavaScript</ulink
+>: Konfigūruoti Java bei JavaScript elgseną</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/khtml-plugins/index.html"
+>Priedai</ulink
+>: Konfigūruoti naršyklės priedus</para
+></listitem>
+</itemizedlist>
+<para
+>Paspaudus mygtuką <guibutton
+>Pagalba</guibutton
+> gausite detalią informaciją apie tai, kaip naudotis kiekviena iš aukščiau išvardintų skilčių. Taipogi galite naudoti funkciją <link linkend="bubble"
+>Kas tai yra?</link
+>.</para>
+</sect1>
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

@@ -1,0 +1,1719 @@
+# translation of kget.po to Occitan (lengadocian)
+# Copyright (C) 2008 This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>, 2007, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: kget\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2008-08-05 22:27+0200\n"
+"Last-Translator: Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>\n"
+"Language-Team: Occitan (lengadocian) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
+"Language: oc\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: kget_plugin.cpp:56
+#, kde-format
+msgid "Download Manager"
+msgstr ""
+
+#: kget_plugin.cpp:62
+#, kde-format
+msgid "Show Drop Target"
+msgstr ""
+
+#: kget_plugin.cpp:69
+#, kde-format
+msgid "List All Links"
+msgstr ""
+
+#: kget_plugin.cpp:74
+#, fuzzy, kde-format
+#| msgid "Groups"
+msgid "List Selected Links"
+msgstr "Paramètres"
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No downloadable links were found."
+msgstr ""
+
+#: kget_plugin.cpp:170
+#, fuzzy, kde-format
+#| msgid "Download"
+msgid "No Links"
+msgstr "Descargar"
+
+#. i18n: ectx: Menu (tools)
+#: konqueror_kget_browser_integration.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "&Espleches"
+
+#~ msgid "Plugins"
+#~ msgstr "Ajustons"
+
+#, fuzzy
+#~| msgid "Groups"
+#~ msgid "New Group"
+#~ msgstr "Grop novèl"
+
+#, fuzzy
+#~| msgid "Size"
+#~ msgid "Sqlite"
+#~ msgstr "Talha"
+
+#, fuzzy
+#~| msgid "Turn off the computer"
+#~ msgid "Turn Off Computer"
+#~ msgstr "Atudar l'ordenador"
+
+#, fuzzy
+#~| msgid "Turn off the computer"
+#~ msgid "Hibernate Computer"
+#~ msgstr "Atudar l'ordenador"
+
+#, fuzzy
+#~| msgid "Turn off the computer"
+#~ msgid "Suspend Computer"
+#~ msgstr "Atudar l'ordenador"
+
+#~ msgid "Appearance"
+#~ msgstr "Aparéncia"
+
+#~ msgid "Groups"
+#~ msgstr "Grops"
+
+#~ msgid "Network"
+#~ msgstr "Ret"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgid "Verification"
+#~ msgstr "Destinacion"
+
+#, fuzzy
+#~| msgid "Interesting"
+#~ msgctxt "integration of KGet with other applications"
+#~ msgid "Integration"
+#~ msgstr "Interessant"
+
+#~ msgctxt "Advanced Options"
+#~ msgid "Advanced"
+#~ msgstr "A_vançat"
+
+#, fuzzy
+#~| msgid "Groups"
+#~ msgid "Transfer Plugins"
+#~ msgstr "Grops"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#~ msgctxt "start transfergroup downloads"
+#~ msgid "Start"
+#~ msgstr "Aviar"
+
+#~ msgctxt "stop transfergroup downloads"
+#~ msgid "Stop"
+#~ msgstr "Arrestar"
+
+#, fuzzy
+#~| msgid "Rename Group"
+#~ msgid "Remove Group"
+#~ msgstr "Renommar lo grop"
+
+#, fuzzy
+#~| msgid "Rename Group"
+#~ msgid "Remove groups"
+#~ msgstr "Renommar lo grop"
+
+#, fuzzy
+#~| msgid "Downloaded"
+#~ msgid "Download added"
+#~ msgstr "Descargat"
+
+#~ msgid "Overwrite existing file?"
+#~ msgstr "Remplaçar lo fichièr existent ?"
+
+#, fuzzy
+#~| msgid "Downloading.."
+#~ msgid "Download it again?"
+#~ msgstr "Descarga..."
+
+#, fuzzy
+#~| msgid "Downloading.."
+#~ msgid "Delete it and download again?"
+#~ msgstr "Descarga..."
+
+#, fuzzy
+#~| msgid "Downloaded"
+#~ msgid "Download completed"
+#~ msgstr "Descargat"
+
+#, fuzzy
+#~| msgid "Downloaded"
+#~ msgid "Download started"
+#~ msgstr "Descargat"
+
+#~ msgid "Error"
+#~ msgstr "Error"
+
+#, fuzzy
+#~| msgid "Rename"
+#~ msgid "Resolve"
+#~ msgstr "Suprimir"
+
+#, fuzzy
+#~| msgid "Show:"
+#~ msgctxt "Shutting down computer"
+#~ msgid "Shutdown"
+#~ msgstr "Visualizar :"
+
+#, fuzzy
+#~| msgctxt "speed of download"
+#~| msgid "Speed"
+#~ msgctxt "Suspending computer"
+#~ msgid "Suspending"
+#~ msgstr "Velocitat"
+
+#, fuzzy
+#~| msgid "Aborted"
+#~ msgctxt "abort the proposed action"
+#~ msgid "Abort"
+#~ msgstr "Abandonat"
+
+#, fuzzy
+#~| msgid "Downloaded"
+#~ msgid "Downloads completed"
+#~ msgstr "Descargat"
+
+#, fuzzy
+#~| msgid "File"
+#~ msgctxt "file in a filesystem"
+#~ msgid "File"
+#~ msgstr "Fichièr"
+
+#, fuzzy
+#~| msgid "Status"
+#~ msgctxt "status of the download"
+#~ msgid "Status"
+#~ msgstr "Estatut"
+
+#, fuzzy
+#~| msgid "Size"
+#~ msgctxt "size of the download"
+#~ msgid "Size"
+#~ msgstr "Talha"
+
+#, fuzzy
+#~| msgctxt "list header: type of file"
+#~| msgid "File Type"
+#~ msgctxt "the type of the hash, e.g. MD5"
+#~ msgid "Type"
+#~ msgstr "Tipe de fichièr"
+
+#, fuzzy
+#~| msgid "Downloading..."
+#~ msgid "Downloading...."
+#~ msgstr "Descarga..."
+
+#, fuzzy
+#~| msgid "Delete"
+#~ msgctxt "transfer state: delayed"
+#~ msgid "Delayed"
+#~ msgstr "Suprimir"
+
+#~ msgctxt "transfer state: stopped"
+#~ msgid "Stopped"
+#~ msgstr "Arrestat"
+
+#~ msgctxt "transfer state: aborted"
+#~ msgid "Aborted"
+#~ msgstr "Abandonat"
+
+#~ msgctxt "transfer state: finished"
+#~ msgid "Finished"
+#~ msgstr "Terminat"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgctxt "changing the destination of the file"
+#~ msgid "Changing destination"
+#~ msgstr "Destinacion"
+
+#~ msgctxt "name of download"
+#~ msgid "Name"
+#~ msgstr "Nom"
+
+#~ msgctxt "status of download"
+#~ msgid "Status"
+#~ msgstr "Estatut"
+
+#~ msgctxt "size of download"
+#~ msgid "Size"
+#~ msgstr "Talha"
+
+#~ msgctxt "progress of download"
+#~ msgid "Progress"
+#~ msgstr "Avançament"
+
+#~ msgctxt "speed of download"
+#~ msgid "Speed"
+#~ msgstr "Velocitat"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgid "No download destination specified."
+#~ msgstr "Destinacion :"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgid "Invalid download destination specified."
+#~ msgstr "Destinacion :"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgid "Download destination is not writeable."
+#~ msgstr "Destinacion :"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgid ""
+#~ "Invalid download destination specified:\n"
+#~ "%1"
+#~ msgstr "Destinacion :"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgid ""
+#~ "Download destination is not writeable:\n"
+#~ "%1"
+#~ msgstr "Destinacion :"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Question"
+#~ msgstr "Descripcion"
+
+#, fuzzy
+#~| msgid "Select all"
+#~ msgctxt "on a question"
+#~ msgid "Yes all"
+#~ msgstr "Seleccionar un fichièr"
+
+#, fuzzy
+#~| msgctxt "Download Normal (not as first or last)"
+#~| msgid "Normal"
+#~ msgctxt "on a question"
+#~ msgid "No all"
+#~ msgstr "Normal"
+
+#, fuzzy
+#~| msgid "File Name"
+#~ msgid "Engine name:"
+#~ msgstr "Nom de fichièr"
+
+#~ msgid "URL:"
+#~ msgstr "URL :"
+
+#, fuzzy
+#~| msgid "Connecting"
+#~ msgctxt "transfer state: connecting"
+#~ msgid "Connecting...."
+#~ msgstr "Connexion"
+
+#~ msgid "Edit Script"
+#~ msgstr "Apondre un repertòri"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Set Script File"
+#~ msgstr "Descripcion"
+
+#, fuzzy
+#~| msgid "Configure..."
+#~ msgctxt "Configure script"
+#~ msgid "Configure script"
+#~ msgstr "Configurar..."
+
+#, fuzzy
+#~| msgctxt "transfer state: finished"
+#~| msgid "Finished"
+#~ msgctxt "Transfer State: Finished"
+#~ msgid "Finished"
+#~ msgstr "Terminat"
+
+#, fuzzy
+#~| msgid "Aborted"
+#~ msgctxt "Transfer State: Aborted"
+#~ msgid "Aborted"
+#~ msgstr "Abandonat"
+
+#, fuzzy
+#~| msgid "Downloading..."
+#~ msgid "Downloading Metalink File...."
+#~ msgstr "Descarga..."
+
+#, fuzzy
+#~| msgid "Downloaded"
+#~ msgid "Redownload Metalink"
+#~ msgstr "Descargat"
+
+#, fuzzy
+#~| msgid "Connecting"
+#~ msgctxt "the string that is used to modify an url"
+#~ msgid "Change string"
+#~ msgstr "Connexion"
+
+#, fuzzy
+#~| msgid "Appearance"
+#~ msgid "Append"
+#~ msgstr "Aparéncia"
+
+#, fuzzy
+#~| msgid "Open File"
+#~ msgid "Replace file"
+#~ msgstr "Dobrir un fichièr"
+
+#, fuzzy
+#~| msgid "Running"
+#~ msgctxt "transfer state: running"
+#~ msgid "Running...."
+#~ msgstr "En foncionament"
+
+#, fuzzy
+#~| msgctxt "Chocked"
+#~| msgid "Yes"
+#~ msgctxt "Choked"
+#~ msgid "Yes"
+#~ msgstr "Òc"
+
+#, fuzzy
+#~| msgctxt "Not chocked"
+#~| msgid "No"
+#~ msgctxt "Not choked"
+#~ msgid "No"
+#~ msgstr "Non"
+
+#~ msgctxt "Snubbed"
+#~ msgid "Yes"
+#~ msgstr "Òc"
+
+#~ msgctxt "Not snubbed"
+#~ msgid "No"
+#~ msgstr "Non"
+
+#, fuzzy
+#~| msgctxt "Chocked"
+#~| msgid "Yes"
+#~ msgctxt "Interested"
+#~ msgid "Yes"
+#~ msgstr "Òc"
+
+#, fuzzy
+#~| msgctxt "Not chocked"
+#~| msgid "No"
+#~ msgctxt "Not Interested"
+#~ msgid "No"
+#~ msgstr "Non"
+
+#, fuzzy
+#~| msgctxt "Chocked"
+#~| msgid "Yes"
+#~ msgctxt "Interesting"
+#~ msgid "Yes"
+#~ msgstr "Òc"
+
+#, fuzzy
+#~| msgctxt "Not chocked"
+#~| msgid "No"
+#~ msgctxt "Not Interesting"
+#~ msgid "No"
+#~ msgstr "Non"
+
+#~ msgid "IP Address"
+#~ msgstr "Adreça IP"
+
+#~ msgid "Client"
+#~ msgstr "Client"
+
+#~ msgid "Availability"
+#~ msgstr "Disponibilitat"
+
+#~ msgid "Score"
+#~ msgstr "Marca"
+
+#~ msgid "Downloaded"
+#~ msgstr "Descargat"
+
+#~ msgid "Interesting"
+#~ msgstr "Interessant"
+
+#, fuzzy
+#~| msgid "Downloaded"
+#~ msgid "Download speed"
+#~ msgstr "Descargat"
+
+#, fuzzy
+#~| msgid "Downloaded"
+#~ msgid "Upload speed"
+#~ msgstr "Descargat"
+
+#~ msgid "Progress"
+#~ msgstr "Avançament"
+
+#~ msgid "Files"
+#~ msgstr "Fichièrs"
+
+#, fuzzy
+#~| msgid "Turn off the computer"
+#~ msgid "Number of the chunk"
+#~ msgstr "Atudar l'ordenador"
+
+#, fuzzy
+#~| msgid "Downloaded"
+#~ msgid "Download speed of the chunk"
+#~ msgstr "Descargat"
+
+#, fuzzy
+#~| msgid "URL:"
+#~ msgid "URL"
+#~ msgstr "URL"
+
+#, fuzzy
+#~| msgctxt "speed of download"
+#~| msgid "Speed"
+#~ msgid "Speed"
+#~ msgstr "Velocitat"
+
+#~ msgid "Status"
+#~ msgstr "Estatut"
+
+#~ msgid "File"
+#~ msgstr "Fichièr"
+
+#~ msgid "Size"
+#~ msgstr "Talha"
+
+#~ msgctxt "Open file"
+#~ msgid "Open"
+#~ msgstr "Dobrir"
+
+#~ msgid "Do Not Download"
+#~ msgstr "Telecargar pas"
+
+#~ msgid "Move File"
+#~ msgstr "Desplaçar fichièr"
+
+#, fuzzy
+#~| msgid "Url:"
+#~ msgid "Url"
+#~ msgstr "Utilizaire :"
+
+#, fuzzy
+#~| msgctxt "speed of download"
+#~| msgid "Speed"
+#~ msgid "Seeders"
+#~ msgstr "Velocitat"
+
+#, fuzzy
+#~| msgid "Downloaded"
+#~ msgid "Times Downloaded"
+#~ msgstr "Descargat"
+
+#~ msgid "Next Update"
+#~ msgstr "Actualizar"
+
+#~ msgid "Priority"
+#~ msgstr "Prioritat"
+
+#~ msgid "Preview"
+#~ msgstr "Ulhada"
+
+#~ msgctxt "Percent of File Downloaded"
+#~ msgid "% Complete"
+#~ msgstr "% acabat"
+
+#~ msgctxt "Download first"
+#~ msgid "First"
+#~ msgstr "Primièr"
+
+#~ msgctxt "Download last"
+#~ msgid "Last"
+#~ msgstr "Darrièr"
+
+#, fuzzy
+#~| msgctxt "Download Normal (not as first or last)"
+#~| msgid "Normal"
+#~ msgctxt "Download normally(not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "Normal"
+
+#~ msgctxt "preview available"
+#~ msgid "Available"
+#~ msgstr "Disponible"
+
+#~ msgctxt "No preview available"
+#~ msgid "No"
+#~ msgstr "Non"
+
+#~ msgid "%1 %"
+#~ msgstr "%1 %"
+
+#~ msgctxt "Preview available"
+#~ msgid "Available"
+#~ msgstr "Disponible"
+
+#~ msgctxt "Download Normal (not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "Normal"
+
+#, fuzzy
+#~| msgid "Files"
+#~ msgid "&Scan Files"
+#~ msgstr "Fichièrs"
+
+#, fuzzy
+#~| msgid "Downloading..."
+#~ msgid "Downloading Torrent File...."
+#~ msgstr "Descarga..."
+
+#, fuzzy
+#~| msgid "Downloading..."
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading...."
+#~ msgstr "Descarga..."
+
+#, fuzzy
+#~| msgctxt "speed of download"
+#~| msgid "Speed"
+#~ msgctxt "Transfer status: seeding"
+#~ msgid "Seeding...."
+#~ msgstr "Velocitat"
+
+#, fuzzy
+#~| msgid "Groups"
+#~ msgid "File Properties"
+#~ msgstr "Paramètres"
+
+#, fuzzy
+#~| msgid "Open File"
+#~ msgid "Metalink Version 4.0 file (*.meta4)"
+#~ msgstr "Dobrir un fichièr"
+
+#, fuzzy
+#~| msgid "Open File"
+#~ msgid "Metalink Version 3.0 file (*.metalink)"
+#~ msgstr "Dobrir un fichièr"
+
+#, fuzzy
+#~| msgid "Downloaded"
+#~ msgctxt "Download the items which have been selected"
+#~ msgid "&Download Checked"
+#~ msgstr "Descargat"
+
+#~ msgid "File Name"
+#~ msgstr "Nom de fichièr"
+
+#~ msgid "Description"
+#~ msgstr "Descripcion"
+
+#~ msgctxt "list header: type of file"
+#~ msgid "File Type"
+#~ msgstr "Tipe de fichièr"
+
+#, fuzzy
+#~| msgid "Select all"
+#~ msgid "&Select All Filtered"
+#~ msgstr "Seleccionar un fichièr"
+
+#, fuzzy
+#~| msgid "Select all"
+#~ msgid "&Select All"
+#~ msgstr "Seleccionar un fichièr"
+
+#, fuzzy
+#~| msgid "Select all"
+#~ msgid "D&eselect All Filtered"
+#~ msgstr "Seleccionar un fichièr"
+
+#, fuzzy
+#~| msgid "Select all"
+#~ msgid "D&eselect All"
+#~ msgstr "Seleccionar un fichièr"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgctxt "Mirror as in server, in url"
+#~ msgid "Mirror"
+#~ msgstr "Error"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgctxt "The priority of the mirror"
+#~ msgid "Priority"
+#~ msgstr "Prioritat"
+
+#, fuzzy
+#~| msgid "Connecting"
+#~ msgctxt "Number of paralell connections to the mirror"
+#~ msgid "Connections"
+#~ msgstr "Connexion"
+
+#, fuzzy
+#~| msgid "Connecting"
+#~ msgctxt "Location = country"
+#~ msgid "Location"
+#~ msgstr "Connexion"
+
+#, fuzzy
+#~| msgid "Downloading.."
+#~ msgid "Download again"
+#~ msgstr "Descarga..."
+
+#, fuzzy
+#~| msgid "Open File"
+#~ msgid "Open file"
+#~ msgstr "Dobrir un fichièr"
+
+#~ msgid "Today"
+#~ msgstr "Uèi"
+
+#, fuzzy
+#~| msgctxt "Download last"
+#~| msgid "Last"
+#~ msgid "Last week"
+#~ msgstr "Darrièr"
+
+#, fuzzy
+#~| msgid "Open File"
+#~ msgid "&Open File"
+#~ msgstr "Dobrir un fichièr"
+
+#, fuzzy
+#~| msgid "Running"
+#~ msgctxt "The transfer is running"
+#~ msgid "Running"
+#~ msgstr "En foncionament"
+
+#, fuzzy
+#~| msgctxt "transfer state: stopped"
+#~| msgid "Stopped"
+#~ msgctxt "The transfer is stopped"
+#~ msgid "Stopped"
+#~ msgstr "Arrestat"
+
+#, fuzzy
+#~| msgid "Aborted"
+#~ msgctxt "The transfer is aborted"
+#~ msgid "Aborted"
+#~ msgstr "Abandonat"
+
+#, fuzzy
+#~| msgctxt "transfer state: finished"
+#~| msgid "Finished"
+#~ msgctxt "The transfer is finished"
+#~ msgid "Finished"
+#~ msgstr "Terminat"
+
+#, fuzzy
+#~| msgctxt "@label transfer source"
+#~| msgid "Source:"
+#~ msgid "Source File"
+#~ msgstr "Sorga :"
+
+#~ msgid "Destination"
+#~ msgstr "Destinacion"
+
+#~ msgid "Time"
+#~ msgstr "Ora"
+
+#, fuzzy
+#~| msgid "File Name"
+#~ msgid "File Size"
+#~ msgstr "Nom de fichièr"
+
+#~ msgctxt "the transfer has been finished"
+#~ msgid "Finished"
+#~ msgstr "Terminat"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgctxt "an error happened in connection with the user input"
+#~ msgid "Error:"
+#~ msgstr "Error"
+
+#~ msgctxt "trust level"
+#~ msgid "Never"
+#~ msgstr "Jamai"
+
+#, fuzzy
+#~| msgid "File"
+#~ msgctxt "pgp signature is not verified"
+#~ msgid "Failed"
+#~ msgstr "Fichièr"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgid "Error:"
+#~ msgstr "Error"
+
+#, fuzzy
+#~| msgid "Connecting"
+#~ msgid "Information:"
+#~ msgstr "Connexion"
+
+#, fuzzy
+#~| msgid "Select all"
+#~ msgid "Select columns"
+#~ msgstr "Seleccionar un fichièr"
+
+#, fuzzy
+#~| msgid "Groups"
+#~ msgid "Transfer Details"
+#~ msgstr "Grops"
+
+#, fuzzy
+#~| msgid "Groups"
+#~ msgid "Transfer Verification for %1"
+#~ msgstr "Grops"
+
+#, fuzzy
+#~| msgid "Rename"
+#~ msgid "Rename File"
+#~ msgstr "Renommar"
+
+#, fuzzy
+#~| msgid "Rename"
+#~ msgid "Rename %1 to:"
+#~ msgstr "Renommar"
+
+#, fuzzy
+#~| msgid "Rename"
+#~ msgid "&Rename"
+#~ msgstr "Renommar"
+
+#, fuzzy
+#~| msgid "Rename Group"
+#~ msgid "Rename Group..."
+#~ msgid_plural "Rename Groups..."
+#~ msgstr[0] "Renommar lo grop"
+#~ msgstr[1] "Renommar lo grop"
+
+#, fuzzy
+#~| msgid "Download"
+#~ msgid "&Download"
+#~ msgstr "Descargar"
+
+#, fuzzy
+#~| msgid "Groups"
+#~ msgid "&Load transfer list"
+#~ msgstr "Grops"
+
+#, fuzzy
+#~| msgid "%1 %"
+#~ msgctxt "%1 filename, %2 total size, %3 status"
+#~ msgid "%1(%2) %3"
+#~ msgstr "%1 %"
+
+#, fuzzy
+#~| msgid "%1 %"
+#~ msgctxt ""
+#~ "%1 filename, %2 percent complete, %3 downloaded out of %4 total size, %5 "
+#~ "status"
+#~ msgid "%1(%2% %3/%4) %5"
+#~ msgstr "%1 %"
+
+#, fuzzy
+#~| msgid "Groups"
+#~ msgid "Transfer Settings for %1"
+#~ msgstr "Grops"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgid "Destination unmodified"
+#~ msgstr "Destinacion"
+
+#, fuzzy
+#~| msgid "%1 %"
+#~ msgid "%1 of %2"
+#~ msgstr "%1 %"
+
+#, fuzzy
+#~| msgid "Groups"
+#~ msgid "Group Settings for %1"
+#~ msgstr "Grops"
+
+#, fuzzy
+#~| msgid "%1/s"
+#~ msgctxt "@item speed of transfer per seconds"
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#, fuzzy
+#~| msgid "File Name"
+#~ msgctxt "@label"
+#~ msgid "File name"
+#~ msgstr "Nom de fichièr"
+
+#, fuzzy
+#~| msgctxt "transfer state: finished"
+#~| msgid "Finished"
+#~ msgctxt "@label Progress of transfer"
+#~ msgid "Finished"
+#~ msgstr "Terminat"
+
+#, fuzzy
+#~| msgctxt "speed of download"
+#~| msgid "Speed"
+#~ msgctxt "@label Speed of transfer"
+#~ msgid "Speed"
+#~ msgstr "Velocitat"
+
+#, fuzzy
+#~| msgid "Status"
+#~ msgctxt "@label Status of transfer"
+#~ msgid "Status"
+#~ msgstr "Estatut"
+
+#, fuzzy
+#~| msgctxt "start transfergroup downloads"
+#~| msgid "Start"
+#~ msgctxt "@action:button start a transfer"
+#~ msgid "Start"
+#~ msgstr "Aviar"
+
+#, fuzzy
+#~| msgid "Stop"
+#~ msgctxt "@action:button"
+#~ msgid "Stop"
+#~ msgstr "Arrestar"
+
+#, fuzzy
+#~| msgid "Rename"
+#~ msgctxt "@action:button"
+#~ msgid "Remove"
+#~ msgstr "Suprimir"
+
+#, fuzzy
+#~| msgctxt "@label transfer source"
+#~| msgid "Source:"
+#~ msgctxt "@label Download from"
+#~ msgid "Source:"
+#~ msgstr "Sorga :"
+
+#, fuzzy
+#~| msgid "Groups"
+#~ msgctxt "@action"
+#~ msgid "Settings"
+#~ msgstr "Paramètres"
+
+#~ msgctxt "@action"
+#~ msgid "Refresh"
+#~ msgstr "Actualizar"
+
+#, fuzzy
+#~| msgid "OK"
+#~ msgctxt "@action:button"
+#~ msgid "OK"
+#~ msgstr "Validar"
+
+#, fuzzy
+#~| msgid "Downloaded"
+#~ msgctxt "@action Refresh download list every x (seconds)"
+#~ msgid "Refresh download list every"
+#~ msgstr "Descargat"
+
+#~ msgctxt "@action (Refresh very x )seconds"
+#~ msgid "seconds"
+#~ msgstr "segondas"
+
+#, fuzzy
+#~| msgid "Groups"
+#~ msgctxt "@action:button"
+#~ msgid "Save Settings"
+#~ msgstr "Grops"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgctxt "@title"
+#~ msgid "Downloads"
+#~ msgstr "Descargas"
+
+#~ msgid "Developer"
+#~ msgstr "Desvolopaire"
+
+#~ msgid "Carsten Pfeiffer"
+#~ msgstr "Carsten Pfeiffer"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Top Priority"
+#~ msgstr "Prioritat"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Least Priority"
+#~ msgstr "Prioritat"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Increase Priority"
+#~ msgstr "Prioritat"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Decrease Priority"
+#~ msgstr "Prioritat"
+
+#, fuzzy
+#~| msgid "Select all"
+#~ msgid "Set Icon..."
+#~ msgstr "Seleccionatz una icòna"
+
+#, fuzzy
+#~| msgid "Remove"
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Remove Selected"
+#~ msgstr "Suprimir"
+
+#, fuzzy
+#~| msgid "Remove"
+#~ msgctxt "delete all finished transfers"
+#~ msgid "Remove All Finished"
+#~ msgstr "Suprimir"
+
+#, fuzzy
+#~| msgid "Downloaded"
+#~ msgctxt "redownload selected transfer item"
+#~ msgid "Redownload Selected"
+#~ msgstr "Descargat"
+
+#~ msgid "Stop"
+#~ msgstr "Arrestar"
+
+#, fuzzy
+#~| msgid "Rename"
+#~ msgid "Remove"
+#~ msgstr "Suprimir"
+
+#~ msgid "Open File"
+#~ msgstr "Dobrir un fichièr"
+
+#~ msgid "Show Details"
+#~ msgstr "Visualizar los detalhs"
+
+#, fuzzy
+#~| msgid "Clear History"
+#~ msgid "&Transfer History"
+#~ msgstr "Voidar l'istoric"
+
+#, fuzzy
+#~| msgid "Groups"
+#~ msgid "&Group Settings"
+#~ msgstr "Grops"
+
+#, fuzzy
+#~| msgid "Groups"
+#~ msgid "&Transfer Settings"
+#~ msgstr "Grops"
+
+#~ msgid "Enable"
+#~ msgstr "Activar"
+
+#, fuzzy
+#~| msgid "Groups"
+#~ msgid "Confirm transfer delete"
+#~ msgstr "Grops"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Yannig Marchegay (Kokoyaya)"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Automatic verification:"
+#~ msgstr "Descripcion"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgid "Automatic verification"
+#~ msgstr "Destinacion"
+
+#~ msgid "Rename"
+#~ msgstr "Renommar"
+
+#, fuzzy
+#~| msgid "Select all"
+#~ msgid "Select Icon..."
+#~ msgstr "Seleccionatz una icòna"
+
+#, fuzzy
+#~| msgid "Downloaded"
+#~ msgid "Limit Maximum Downloads Per Group"
+#~ msgstr "Descargat"
+
+#, fuzzy
+#~| msgid "Download"
+#~ msgid "Speed Limit"
+#~ msgstr "Descargar"
+
+#, fuzzy
+#~| msgid "Download"
+#~ msgid "Global download limit:"
+#~ msgstr "Descargar"
+
+#, fuzzy
+#~| msgid "KiB"
+#~ msgid " KiB/s"
+#~ msgstr "ko/s"
+
+#, fuzzy
+#~| msgid "Download"
+#~ msgid "Global upload limit:"
+#~ msgstr "Descargar"
+
+#, fuzzy
+#~| msgid "sec"
+#~ msgid " sec"
+#~ msgstr "seg."
+
+#~ msgid "Port:"
+#~ msgstr "Pòrt :"
+
+#, fuzzy
+#~| msgid "Url:"
+#~ msgid "User:"
+#~ msgstr "Utilizaire :"
+
+#~ msgid "Password:"
+#~ msgstr "Mot de pas :"
+
+#~ msgid "Startup"
+#~ msgstr "Aviada"
+
+#~ msgid "Enable animations"
+#~ msgstr "Activar las animacions"
+
+#, fuzzy
+#~| msgid "Startup"
+#~ msgid "At startup:"
+#~ msgstr "Aviada"
+
+#, fuzzy
+#~| msgid "Downloaded"
+#~ msgid "Restore Download State"
+#~ msgstr "Descargat"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgid "Start All Downloads"
+#~ msgstr "Descargas"
+
+#, fuzzy
+#~| msgid "Do Not Download"
+#~ msgid "Stop All Downloads"
+#~ msgstr "Telecargar pas"
+
+#, fuzzy
+#~| msgid "Clear History"
+#~ msgid "History"
+#~ msgstr "Istoric"
+
+#, fuzzy
+#~| msgid "Clear History"
+#~ msgid "History backend:"
+#~ msgstr "Voidar l'istoric"
+
+#, fuzzy
+#~| msgid "File Name"
+#~ msgid "Engine Name"
+#~ msgstr "Nom de fichièr"
+
+#, fuzzy
+#~| msgid "Turn off the computer"
+#~ msgid "Number of connections per URL:"
+#~ msgstr "Atudar l'ordenador"
+
+#, fuzzy
+#~| msgid "Groups"
+#~ msgid "File Settings"
+#~ msgstr "Paramètres"
+
+#, fuzzy
+#~| msgid "File Name"
+#~ msgid "Filename:"
+#~ msgstr "Nom de fichièr"
+
+#, fuzzy
+#~| msgid "Url:"
+#~ msgid "Username:"
+#~ msgstr "Utilizaire :"
+
+#, fuzzy
+#~| msgid "Edit"
+#~ msgid "Edit...."
+#~ msgstr "Edicion"
+
+#, fuzzy
+#~| msgid "Configure..."
+#~ msgid "Configure...."
+#~ msgstr "Configurar..."
+
+#, fuzzy
+#~| msgid "Port:"
+#~ msgid "Path:"
+#~ msgstr "Pòrt :"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Description:"
+#~ msgstr "Descripcion"
+
+#, fuzzy
+#~| msgid "Turn off the computer"
+#~ msgid "Number of simultaneous file downloads:"
+#~ msgstr "Atudar l'ordenador"
+
+#, fuzzy
+#~| msgid "Turn off the computer"
+#~ msgid "Number of mirrors per file:"
+#~ msgstr "Atudar l'ordenador"
+
+#~ msgid "Mode:"
+#~ msgstr "Mòde :"
+
+#, fuzzy
+#~| msgctxt "Preview available"
+#~| msgid "Available"
+#~ msgid "Update Trackers"
+#~ msgstr "Disponible"
+
+#~ msgid "Restore Defaults"
+#~ msgstr "Restaurar las valors per defaut"
+
+#, fuzzy
+#~| msgid "Remove"
+#~ msgid "Remove Webseed"
+#~ msgstr "Suprimir"
+
+#, fuzzy
+#~| msgctxt "total chunks"
+#~| msgid "Total:"
+#~ msgid "Total:"
+#~ msgstr "Total :"
+
+#, fuzzy
+#~| msgctxt "chunks left"
+#~| msgid "Left:"
+#~ msgid "Left:"
+#~ msgstr "Esquèrra:"
+
+#~ msgid "Size:"
+#~ msgstr "Talha :"
+
+#, fuzzy
+#~| msgid "Turn off the computer"
+#~ msgid "Number of chunks found:"
+#~ msgstr "Atudar l'ordenador"
+
+#, fuzzy
+#~| msgid "Turn off the computer"
+#~ msgid "Number of chunks failed:"
+#~ msgstr "Atudar l'ordenador"
+
+#~ msgid "0"
+#~ msgstr "0"
+
+#~ msgid "Cancel"
+#~ msgstr "Anullar"
+
+#~ msgid "Stats"
+#~ msgstr "Stats"
+
+#, fuzzy
+#~| msgid "Downloaded"
+#~ msgid "Download speed:"
+#~ msgstr "Descargat"
+
+#, fuzzy
+#~| msgid "Downloaded"
+#~ msgid "Upload speed:"
+#~ msgstr "Descargat"
+
+#~ msgctxt "chunks left"
+#~ msgid "Left:"
+#~ msgstr "Esquèrra:"
+
+#~ msgctxt "all chunks"
+#~ msgid "All:"
+#~ msgstr "Totes :"
+
+#~ msgctxt "source-file"
+#~ msgid "Source:"
+#~ msgstr "Sorga :"
+
+#, fuzzy
+#~| msgid "Download"
+#~ msgid "Upload limit per transfer:"
+#~ msgstr "Descargar"
+
+#~ msgid "KiB"
+#~ msgstr "ko"
+
+#, fuzzy
+#~| msgid "Download"
+#~ msgid "Download limit per transfer:"
+#~ msgstr "Descargar"
+
+#~ msgid "Folders"
+#~ msgstr "Repertòris"
+
+#, fuzzy
+#~| msgid "General"
+#~ msgctxt "General options."
+#~ msgid "General"
+#~ msgstr "General :"
+
+#, fuzzy
+#~| msgid "General"
+#~ msgid "General URL:"
+#~ msgstr "General :"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Verification:"
+#~ msgstr "Descripcion"
+
+#, fuzzy
+#~| msgid "Open File"
+#~ msgid "*.metalink *.meta4|Metalink file (*.metalink *.meta4)"
+#~ msgstr "Dobrir un fichièr"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Version:"
+#~ msgstr "Descripcion"
+
+#, fuzzy
+#~| msgctxt "name of download"
+#~| msgid "Name"
+#~ msgid "Name:"
+#~ msgstr "Nom"
+
+#, fuzzy
+#~| msgid "Turn off the computer"
+#~ msgid "Name of the publisher"
+#~ msgstr "Atudar l'ordenador"
+
+#, fuzzy
+#~| msgid "Turn off the computer"
+#~ msgid "URL to the publisher"
+#~ msgstr "Atudar l'ordenador"
+
+#, fuzzy
+#~| msgid "Files"
+#~ msgctxt "Files as in files on a server"
+#~ msgid "Files:"
+#~ msgstr "Fichièrs"
+
+#~ msgid "Show:"
+#~ msgstr "Visualizar :"
+
+#, fuzzy
+#~| msgctxt "filter: show all file types"
+#~| msgid "All"
+#~ msgctxt "filter: show all file types"
+#~ msgid "&All"
+#~ msgstr "Totes"
+
+#, fuzzy
+#~| msgid "Videos"
+#~ msgid "&Videos"
+#~ msgstr "Vidèos"
+
+#, fuzzy
+#~| msgid "Audio"
+#~ msgid "A&udio"
+#~ msgstr "Audio"
+
+#, fuzzy
+#~| msgid "Archives"
+#~ msgid "A&rchives"
+#~ msgstr "Archius"
+
+#, fuzzy
+#~| msgid "Connecting"
+#~ msgid "Contains"
+#~ msgstr "Connexion"
+
+#, fuzzy
+#~| msgid "Do Not Download"
+#~ msgid "Does Not Contain"
+#~ msgstr "Telecargar pas"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgid "Mirror:"
+#~ msgstr "Error : "
+
+#, fuzzy
+#~| msgid "Turn off the computer"
+#~ msgid "Number of connections:"
+#~ msgstr "Atudar l'ordenador"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Priority:"
+#~ msgstr "Prioritat"
+
+#, fuzzy
+#~| msgid "Connecting"
+#~ msgid "Location:"
+#~ msgstr "Connexion"
+
+#~ msgid "Clear History"
+#~ msgstr "Voidar l'istoric"
+
+#, fuzzy
+#~| msgid "Select all"
+#~ msgid "Select Ranges"
+#~ msgstr "Seleccionar un fichièr"
+
+#, fuzzy
+#~| msgid "Delete"
+#~ msgid "Date"
+#~ msgstr "Data"
+
+#~ msgid "Host"
+#~ msgstr "Òste"
+
+#, fuzzy
+#~| msgid "Clear History"
+#~ msgid "Filter History"
+#~ msgstr "Voidar l'istoric"
+
+#~ msgid "Download"
+#~ msgstr "Telecargar"
+
+#, fuzzy
+#~| msgid "Port:"
+#~ msgctxt "hash as a hash of type md5, sha1 etc."
+#~ msgid "Hash:"
+#~ msgstr "Pòrt :"
+
+#~ msgid "Status:"
+#~ msgstr "Estat :"
+
+#, fuzzy
+#~| msgid "Groups"
+#~ msgid "Transfer Settings"
+#~ msgstr "Grops"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgid "Download Destination:"
+#~ msgstr "Destinacion :"
+
+#, fuzzy
+#~| msgid "Not connected"
+#~ msgctxt "No value has been set"
+#~ msgid "Not set"
+#~ msgstr "Pas connectat"
+
+#, fuzzy
+#~| msgid "KiB"
+#~ msgid " KiB"
+#~ msgstr "ko"
+
+#, fuzzy
+#~| msgid "Download"
+#~ msgid "Upload Limit:"
+#~ msgstr "Descargar"
+
+#, fuzzy
+#~| msgid "Download"
+#~ msgid "Download Limit:"
+#~ msgstr "Descargar"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgctxt "The available mirrors (servers) for downloading"
+#~ msgid "Mirrors"
+#~ msgstr "Error"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgctxt "verification of the download (e.g. by using MD5)"
+#~ msgid "Verification"
+#~ msgstr "Destinacion"
+
+#, fuzzy
+#~| msgid "Url:"
+#~ msgid "Issuer:"
+#~ msgstr "Utilizaire :"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgid "Creation:"
+#~ msgstr "Destinacion :"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgid "Expiration:"
+#~ msgstr "Destinacion :"
+
+#, fuzzy
+#~| msgid "Groups"
+#~ msgid "Group Settings"
+#~ msgstr "Grops"
+
+#, fuzzy
+#~| msgid "Downloaded"
+#~ msgid "Maximum download speed:"
+#~ msgstr "Descargat"
+
+#, fuzzy
+#~| msgid "Downloaded"
+#~ msgid "Maximum upload speed:"
+#~ msgstr "Descargat"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgid "Destination:"
+#~ msgstr "Destinacion :"
+
+#, fuzzy
+#~| msgid "Groups"
+#~ msgid "Transfer group:"
+#~ msgstr "Grops"
+
+#~ msgid "&File"
+#~ msgstr "&Fichièr"
+
+#~ msgid "&Settings"
+#~ msgstr "&Paramètres"
+
+#~ msgid "&Help"
+#~ msgstr "&Ajuda"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Barra d'espleches principala"
+
+#, fuzzy
+#~| msgid "Add"
+#~ msgid "Add Tag"
+#~ msgstr "Apondre"
+
+#, fuzzy
+#~| msgid "Groups"
+#~ msgid "Tag Settings for the groups"
+#~ msgstr "Grops"
+
+#, fuzzy
+#~| msgid "Groups"
+#~ msgid "Tag Settings"
+#~ msgstr "Paramètres"
+
+#, fuzzy
+#~| msgctxt "Preview available"
+#~| msgid "Available"
+#~ msgid "Available tags:"
+#~ msgstr "Disponible"
+
+#~ msgid "OK"
+#~ msgstr "Validar"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgid "Error: %1"
+#~ msgstr "Error : "
+
+#~ msgid "General"
+#~ msgstr "General :"
+
+#, fuzzy
+#~| msgid "Connecting"
+#~ msgid "Connections"
+#~ msgstr "Connexion"
+
+#~ msgid "Tracker"
+#~ msgstr "Tracker"
+
+#~ msgid "Not connected"
+#~ msgstr "Pas connectat"
+
+#~ msgid "Connection closed"
+#~ msgstr "Connexions"
+
+#~ msgid "Connected"
+#~ msgstr "Connectat"
+
+#~ msgid "Connecting"
+#~ msgstr "Connexion"
+
+#~ msgid "Corrupted torrent."
+#~ msgstr "Important"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgid "Parse Error"
+#~ msgstr "Error"
+
+#, fuzzy
+#~| msgctxt "speed of download"
+#~| msgid "Speed"
+#~ msgctxt "Status of a torrent file"
+#~ msgid "Seeding"
+#~ msgstr "Velocitat"
+
+#, fuzzy
+#~| msgid "Downloading.."
+#~ msgid "Downloading"
+#~ msgstr "Descarga"
+
+#, fuzzy
+#~| msgctxt "transfer state: stopped"
+#~| msgid "Stopped"
+#~ msgid "Stopped"
+#~ msgstr "Arrestat"
+
+#, fuzzy
+#~| msgid "Downloading.."
+#~ msgid "Queued for downloading"
+#~ msgstr "Descarga"
+
+#~ msgid "Add"
+#~ msgstr "Apondre"
+
+#~ msgid "Delete"
+#~ msgstr "Suprimir"
+
+#~ msgid "Configure..."
+#~ msgstr "Configurar..."
+
+#~ msgid "Downloads"
+#~ msgstr "Descargas"
+
+#, fuzzy
+#~| msgid "Turn off the computer"
+#~ msgid "Name of the license"
+#~ msgstr "Atudar l'ordenador"
+
+#, fuzzy
+#~| msgid "Turn off the computer"
+#~ msgid "URL to the license"
+#~ msgstr "Atudar l'ordenador"
+
+#, fuzzy
+#~| msgid "Overwrite existing file?"
+#~ msgid "Overwrite destination"
+#~ msgstr "Remplaçar lo fichièr existent ?"
+
+#, fuzzy
+#~| msgid "Score"
+#~ msgid "Scrape"
+#~ msgstr "Marca"
+
+#, fuzzy
+#~| msgid "Clear History"
+#~ msgid "We are sorry"
+#~ msgstr "Voidar l'istoric"
+
+#, fuzzy
+#~| msgid "File"
+#~ msgctxt "file in a filsystem"
+#~ msgid "File"
+#~ msgstr "Fichièr"
+
+#, fuzzy
+#~| msgctxt "name of download"
+#~| msgid "Name"
+#~ msgid "Name"
+#~ msgstr "Nom"
+
+#~ msgctxt "@label transfer source"
+#~ msgid "Source:"
+#~ msgstr "Sorga :"
+
+#, fuzzy
+#~| msgid "Select all"
+#~ msgid "&Select all"
+#~ msgstr "Seleccionar un fichièr"
+
+#, fuzzy
+#~| msgid "Groups"
+#~ msgid "&Group Settings..."
+#~ msgstr "Grops"
+
+#, fuzzy
+#~| msgid "Groups"
+#~ msgid "&Transfer Settings..."
+#~ msgstr "Grops"
+
+#, fuzzy
+#~| msgid "Downloaded"
+#~ msgid "Download Speed:"
+#~ msgstr "Descargat"
+
+#, fuzzy
+#~| msgid "Downloaded"
+#~ msgid "Upload Speed:"
+#~ msgstr "Descargat"
+
+#, fuzzy
+#~| msgid "Delete"
+#~ msgid "&Delete"
+#~ msgstr "Suprimir"
+
+#, fuzzy
+#~| msgid "Cancel"
+#~ msgid "&Cancel"
+#~ msgstr "Anullar"
+
+#, fuzzy
+#~| msgid "Extension"
+#~ msgid "File Extension"
+#~ msgstr "Destiblança"
+
+#~ msgid "Edit"
+#~ msgstr "Edicion"
+
+#~ msgid "Downloading.."
+#~ msgstr "Descarga..."
+
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading.."
+#~ msgstr "Descarga..."
+
+#, fuzzy
+#~| msgid "%1 %"
+#~ msgid "%1 GB"
+#~ msgstr "%1 Go"
+
+#, fuzzy
+#~| msgid "%1 %"
+#~ msgid "%1 MB"
+#~ msgstr "%1 Mo"
+
+#, fuzzy
+#~| msgid "%1 %"
+#~ msgid "%1 KB"
+#~ msgstr "%1 %"
+
+#, fuzzy
+#~| msgid "%1 %"
+#~ msgid "%1 B"
+#~ msgstr "%1 o"
+
+#, fuzzy
+#~| msgid "%1/s"
+#~ msgid "%1 KB/s"
+#~ msgstr "%1/s"

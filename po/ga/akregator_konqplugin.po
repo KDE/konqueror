@@ -1,0 +1,66 @@
+# Irish translation of akregator_konqplugin
+# Copyright (C) 2009 This_file_is_part_of_KDE
+# This file is distributed under the same license as the akregator_konqplugin package.
+# Kevin Scannell <kscanne@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdeaddons/akregator_konqplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2004-12-12 20:56-0500\n"
+"Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
+"Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
+"Language: ga\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n < 11 ? "
+"3 : 4\n"
+
+#: akregatorplugin.cpp:63
+#, fuzzy, kde-format
+#| msgid "Add Feed to Akregator"
+msgctxt "@action:inmenu"
+msgid "Add Feed to Akregator"
+msgstr "Cuir Fotha le hAkregator"
+
+#: konqfeedicon.cpp:127
+#, kde-format
+msgid "Add Feed to Akregator"
+msgstr "Cuir Fotha le hAkregator"
+
+#: konqfeedicon.cpp:129
+#, kde-format
+msgid "Add Feeds to Akregator"
+msgstr "Cuir Fothaí le hAkregator"
+
+#: konqfeedicon.cpp:138
+#, kde-format
+msgid "Add All Found Feeds to Akregator"
+msgstr "Cuir Gach Fotha a Aimsíodh le hAkregator"
+
+#: konqfeedicon.cpp:162
+#, kde-format
+msgid "Subscribe to site updates (using news feed)"
+msgstr "Liostáil le nuashonruithe don suíomh (mar fhotha nuachta)"
+
+#: pluginutil.cpp:36 pluginutil.cpp:46
+#, kde-format
+msgid "Imported Feeds"
+msgstr "Fothaí Iompórtáilte"
+
+#: pluginutil.cpp:38
+#, kde-format
+msgid "Unable to contact Akregator via D-Bus"
+msgstr ""
+
+#: pluginutil.cpp:39
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "The DBus call addFeedToGroup failed"
+msgctxt "@title:window"
+msgid "D-Bus call failed"
+msgstr "Theip ar ghlao DBus addFeedToGroup"
+
+#~ msgid "Akregator feed icon - DBus Call failed"
+#~ msgstr "Deilbhín fotha Akregator - theip ar ghlao DBus"

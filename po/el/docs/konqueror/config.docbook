@@ -1,0 +1,320 @@
+<chapter id="config">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>Δημήτριος</firstname
+><surname
+>Γλενταδάκης</surname
+><affiliation
+><address
+><email
+>dglent@gmail.com</email
+></address
+></affiliation
+><contrib
+>Μεταφραστής</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2010-02-07</date>
+<releaseinfo
+>4.4.0</releaseinfo>
+</chapterinfo>
+
+
+<title
+>Ρυθμίζοντας τον &konqueror;</title>
+
+<para
+>Όπως και το υπόλοιπο &kde;, ο &konqueror; είναι σε υψηλό βαθμό παραμετροποιήσιμος, ώστε να έχει πραγματικά την εμφάνιση και την αίσθηση που ταιριάζει με τις ανάγκες και απαιτήσεις σας.</para>
+
+<sect1 id="configure-bars">
+<title
+>Γραμμές εργαλείων</title>
+
+<para
+>Μετά από μια νέα εγκατάσταση του &kde;, το παράθυρο του &konqueror; περιέχει μια γραμμή μενού, την κύρια γραμμή εργαλείων και τοποθεσίας και πιθανώς την γραμμή εργαλείων σελιδοδεικτών.</para>
+
+<para
+>Ίσως να μην χρειάζεστε όλες αυτές τις γραμμές εργαλείων. Για να αποκρύψετε μια από αυτές, πηγαίνετε στο μενού <menuchoice
+><guimenu
+>Ρυθμίσεις</guimenu
+><guisubmenu
+>Εμφάνιση γραμμών εργαλείων</guisubmenu
+></menuchoice
+> και αποεπιλέξτε το πλαίσιο επιλογή της. Για να εμφανίσετε μια κρυμμένη γραμμή εργαλείων, απλά επιλέξτε το πλαίσιο επιλογής.</para
+> 
+
+<para
+>Μπορείτε να κάνετε εμφάνιση/απόκρυψη της γραμμής μενού με τη συντόμευση πλήκτρων <keycombo action="simul"
+>&Ctrl;<keycap
+>M</keycap
+></keycombo
+>. </para>
+
+<para
+>Με <mousebutton
+>δεξί</mousebutton
+>κλικ σε μια γραμμή εργαλείων, εμφανίζεται ένα μενού για να ρυθμίσετε τη γραμμή εργαλείων. Μπορείτε να κλειδώσετε ή να ξεκλειδώσετε τη θέση της γραμμής εργαλείων και να επιλέξετε τη θέση του κειμένου, το μέγεθος ων εικονιδίων και τον προσανατολισμό των ξεκλείδωτων γραμμών εργαλείων.</para>
+
+<para
+>Αν οι γραμμές εργαλείων είναι ξεκλείδωτες, στην αριστερή πλευρά της κάθε γραμμής θα δείτε κάποια χειρολαβή. Με &LMB; σε αυτή, μπορείτε να σύρετε τη γραμμή εργαλείων σε μια νέα θέση και ακόμα να την αποσυνδέσετε από το παράθυρο και να την τοποθετήσετε οπουδήποτε στην οθόνη.</para>
+
+<para
+>Μπορείτε να αλλάξετε τα εικονίδια που εμφανίζονται στις διάφορες γραμμές εργαλείων χρησιμοποιώντας την επιλογή <menuchoice
+><guimenu
+>Ρυθμίσεις</guimenu
+> <guimenuitem
+>Ρύθμιση γραμμών εργαλείων...</guimenuitem
+></menuchoice
+>, η οποία εμφανίζει το παράθυρο <guilabel
+>Ρύθμιση γραμμών εργαλείων</guilabel
+>. Ο αριθμός και ο τύπος αυτών των γραμμών εργαλείων εξαρτάται από το αν ο &konqueror; είναι σε λειτουργία περιηγητή ή διαχειριστή αρχείων και αν έχετε τα πρόσθετα του &konqueror; εγκατεστημένα.</para>
+
+</sect1>
+
+<sect1 id="configshort">
+<title
+>Συντομεύσεις</title>
+<para
+>Για να αλλάξετε τους συνδυασμούς των πλήκτρων συντομεύσεων που χρησιμοποιεί ο &konqueror; επιλέξτε <menuchoice
+><guimenu
+>Ρυθμίσεις</guimenu
+><guimenuitem
+>Ρύθμιση συντομεύσεων...</guimenuitem
+></menuchoice
+>. Θα εμφανιστεί ένα παράθυρο διαλόγου όπως φαίνεται παρακάτω. </para>
+<mediaobject>
+<imageobject>
+<imagedata fileref="shortcut1.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Ρύθμιση συντομεύσεων στιγμιότυπο 1</phrase>
+</textobject>
+</mediaobject>
+<para
+>Χρησιμοποιήστε το πλαίσιο αναζήτησης για να βρείτε την ενέργεια για την οποία επιθυμείτε να προσθέσετε ή να αλλάξετε τα πλήκτρα συντόμευσης, και επιλέξτε την με <mousebutton
+>αριστερό</mousebutton
+> κλικ στο όνομα. </para>
+
+<para
+>Όταν έχετε επιλέξει μια ενέργεια από τη λίστα θα παρατηρήσετε ότι αυτό το αντικείμενο είναι τονισμένο και θα δείτε δύο επιπλέον πλαίσια επιλογής κάτω από αυτό το αντικείμενο στη λίστα. Εκεί μπορείτε να ρυθμίσετε ένα συνδυασμό πλήκτρων ή κανένα συνδυασμό για την επιλεγμένη ενέργεια. </para>
+
+<mediaobject>
+<imageobject>
+<imagedata fileref="shortcut2.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Ρύθμιση συντόμευσης στιγμιότυπο 2</phrase>
+</textobject>
+</mediaobject>
+
+<itemizedlist>
+<listitem
+><para
+><guilabel
+>Προκαθορισμένο</guilabel
+>: η επιλεγμένη ενέργεια θα συσχετιστεί με την προκαθορισμένη τιμή του &kde;. Αυτή είναι μια καλή επιλογή για την πλειοψηφία των ενεργειών, αφού το &kde; έρχεται με λογικούς συνδυασμούς πλήκτρων που έχουμε μελετήσει από πριν. </para
+></listitem>
+<listitem
+><para
+><guilabel
+>Προσαρμοσμένο</guilabel
+>: αν αυτή η ενέργεια είναι ενεργοποιημένη, μπορείτε να δημιουργήσετε ένα συνδυασμό πλήκτρων για την επιλεγμένη ενέργεια. Πατήστε στο κουμπί με την ετικέτα <guibutton
+>Καμία</guibutton
+> ή με την ετικέτα της προηγούμενα επιλεγμένης προσαρμοσμένης συντόμευσης. Τώρα η ετικέτα του κουμπιού αλλάζει σε <guibutton
+>Είσοδος</guibutton
+>. Τότε πατήστε οποιοδήποτε πλήκτρο τροποποίησης (&ie; &Shift;, &Ctrl;, ή &Alt;) και έπειτα ένα τυπικό πλήκτρο ή ένα πλήκτρο λειτουργίας (&eg; <keycap
+>F11</keycap
+>) που επιθυμείτε να αναθέσετε στη συντόμευση πλήκτρων.</para
+></listitem>
+<listitem
+><para
+>Μπορείτε να επαναφέρετε τη συντόμευση σε <guilabel
+>Καμία</guilabel
+> χρησιμοποιώντας αυτό το κουμπί: <inlinemediaobject
+><imageobject
+> <imagedata fileref="reset.png" format="PNG"/></imageobject
+></inlinemediaobject
+>. </para>
+<para
+>Κάνοντας κλικ στη στήλη <guilabel
+>Εναλλακτική</guilabel
+> μιας γραμμής στη λίστα σας επιτρέπει να επεξεργαστείτε τη δεύτερη συντόμευση για την ενέργεια.</para
+></listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="othersettings">
+<title
+>Άλλες ρυθμίσεις</title>
+<para
+>Επιλέγοντας <menuchoice
+><guimenu
+>Ρυθμίσεις</guimenu
+><guimenuitem
+>Ρύθμιση του Konqueror...</guimenuitem
+></menuchoice
+> εμφανίζεται ένα παράθυρο διαλόγου από το οποίο μπορείτε να ελέγξετε τις περισσότερες από τις πτυχές συμπεριφοράς του &konqueror;.</para
+> 
+<para
+>Περιέχει τις ενότητες που θα βρείτε κάνοντας <mousebutton
+>αριστερό</mousebutton
+> κλικ σε ένα εικονίδιο στην αριστερή πλευρά του παραθύρου:</para>
+<itemizedlist>
+<listitem
+><para
+><ulink url="help:/kcontrol/khtml-general/index.html"
+>Γενικά</ulink
+>: Ρύθμιση της γενικής συμπεριφοράς του &konqueror;</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/performance/index.html"
+>Απόδοση</ulink
+>: Αλλάξτε ρυθμίσεις που μπορούν να βελτιώσουν την απόδοση του &konqueror;</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/bookmarks/index.html"
+>Σελιδοδείκτες</ulink
+>: Ρύθμιση της αρχικής σελίδας των σελιδοδεικτών</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/filemanager/index.html"
+>Διαχείριση αρχείων</ulink
+>: Μπορείτε να ρυθμίσετε το πως θα συμπεριφέρεται ο Konqueror ως διαχειριστής αρχείων</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/dolphin/configuring-dolphin.html#preferences-dialog-viewmodes"
+>Λειτουργίες προβολής</ulink
+>: Ρύθμιση λειτουργιών προβολής της διαχείρισης αρχείων</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/dolphin/configuring-dolphin.html#preferences-dialog-navigation"
+>Πλοήγηση</ulink
+>: Ρύθμιση πλοήγησης διαχείρισης αρχείων</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/dolphin/configuring-dolphin.html#preferences-dialog-services"
+>Υπηρεσίες</ulink
+>: Ρύθμιση υπηρεσιών διαχείρισης αρχείων</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/dolphin/configuring-dolphin.html#preferences-dialog-general"
+>Γενικά</ulink
+>: Ρύθμιση γενικών επιλογών διαχείρισης αρχείων</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/filetypes/index.html"
+>Συσχετίσεις αρχείων</ulink
+>: Ρύθμιση των συσχετίσεων αρχείων</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/trash/index.html"
+>Κάδος απορριμμάτων</ulink
+>: Ρυθμίσεις κάδου απορριμμάτων</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/khtml-behavior/index.html"
+>Περιήγηση</ulink
+>: Ρύθμιση της συμπεριφοράς του περιηγητή</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/proxy/index.html"
+>Διαμεσολαβητής</ulink
+>: Ρύθμιση των διαμεσολαβητών που χρησιμοποιούνται</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/kcmcss/index.html"
+>Εμφάνιση</ulink
+>: Ρύθμιση της εμφάνισης των ιστοσελίδων</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/khtml-adblock/index.html"
+>Φίλτρα AdBlock</ulink
+>: Ρύθμιση των φίλτρων AdBlock του &konqueror;</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/ebrowsing/index.html"
+>Συντομεύσεις ιστού</ulink
+>: Ρύθμιση της εμπλουτισμένης περιήγησης</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/cache/index.html"
+>Λανθάνουσα μνήμη</ulink
+>: Ρύθμιση της λανθάνουσας μνήμης ιστοσελίδων</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/history/index.html"
+>Ιστορικό</ulink
+>: Ρύθμιση της πλευρικής μπάρας ιστορικού</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/cookies/index.html"
+>Cookies</ulink
+>: Ρύθμιση του τρόπου με τον οποίο λειτουργούν τα cookies</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/useragent/index.html"
+>Ταυτοποίηση περιηγητή</ulink
+>: Ρύθμιση του τρόπου με τον οποίο αναφέρεται ο Konqueror</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/khtml-java-js/index.html"
+>Java &amp; JavaScript</ulink
+>: Ρύθμιση της συμπεριφοράς της Java και της JavaScript</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/khtml-plugins/index.html"
+>Πρόσθετα</ulink
+>: Ρύθμιση των προσθέτων του περιηγητή</para
+></listitem>
+</itemizedlist>
+<para
+>Πατώντας το κουμπί <guibutton
+>Βοήθεια</guibutton
+>θα έχετε λεπτομερείς οδηγίες σχετικά με τη χρήση για καθεμία από τις ενότητες, ή μπορείτε να χρησιμοποιήστε το χαρακτηριστικό <link linkend="bubble"
+>Τι είναι αυτό;</link
+>.</para>
+</sect1>
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

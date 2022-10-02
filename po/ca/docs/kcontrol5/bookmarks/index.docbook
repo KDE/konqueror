@@ -1,0 +1,152 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Catalan  "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="bookmarks" lang="&language;">
+<articleinfo>
+
+<title
+>Adreces d'interès</title>
+<authorgroup>
+<author
+><personname
+><firstname
+>Xavier</firstname
+><surname
+>Vello</surname
+></personname
+> <email
+>xavier.vello@gmail.com</email
+> </author>
+&traductor.Antoni.Bella; 
+</authorgroup>
+
+<date
+>8 de novembre de 2016</date>
+<releaseinfo
+>Aplicacions 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Arranjament del sistema</keyword>
+<keyword
+>adreces d'interès</keyword>
+<keyword
+>KIO</keyword>
+</keywordset>
+</articleinfo>
+<sect1 id="conf">
+<title
+>Pàgina d'inici de les adreces d'interès</title>
+<para
+>Aquest mòdul us permetrà configurar la pàgina d'inici de les adreces d'interès.</para>
+<para
+>Per a veure la pàgina d'inici de les adreces d'interès introduïu <userinput
+>bookmarks:/</userinput
+> a la barra de localització.</para>
+<para
+>La configuració en aquest mòdul també és accessible introduint <userinput
+>bookmarks:/config</userinput
+> a la barra de localització.</para>
+<sect2 id="conf-general">
+<title
+>Arranjament general</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Nombre de columnes a mostrar</guilabel
+></term>
+<listitem>
+<para
+>Les carpetes es distribueixen automàticament en diverses columnes. El nombre òptim de columnes depèn de l'amplada de la finestra del &konqueror; i del nombre d'adreces d'interès que tingueu.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Mostra els fons de les carpetes</guilabel
+></term>
+<listitem>
+<para
+>Desactivar-ho en sistemes lents per a desactivar les imatges de fons.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="conf-bookmark">
+<title
+>Adreces d'interès</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Mostra les adreces d'interès sense carpeta</guilabel
+></term>
+<listitem>
+<para
+>Si aquesta opció no està seleccionada, les adreces d'interès a l'arrel de la jerarquia (no en una carpeta) no seran mostrades. Si se selecciona, llavors es reuniran en una carpeta arrel.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Arbre pla de les adreces d'interès</guilabel
+></term>
+<listitem>
+<para
+>Les subcarpetes es mostren per omissió dins dels seus pares. Si activeu aquesta opció, les subcarpetes es mostraran per si mateixes. Sembla menys agradable, però pot ajudar-vos si teniu una carpeta molt gran que voleu mostrar en dues columnes.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Mostra els llocs del sistema</guilabel
+></term>
+<listitem>
+<para
+>Mostra un quadre amb llocs comuns (Inici, Xarxa...). És útil si utilitzeu el &konqueror; com a gestor de fitxers.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="conf-cache">
+<title
+>Memòria cau dels mapes de píxels</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Mida de la memòria cau del disc</guilabel
+></term>
+<listitem>
+<para
+>Especifica la quantitat d'espai en disc a utilitzar per a emmagatzemar en memòria cau els mapes de píxels.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Neteja la memòria cau</guilabel
+></term>
+<listitem>
+<para
+>Elimina totes les imatges a la memòria cau. Això pot ser necessari si hi ha algunes icones de web corrompudes i que no s'actualitzen automàticament.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+</sect1>
+</article>

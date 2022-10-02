@@ -1,0 +1,362 @@
+<chapter id="config">
+
+<chapterinfo>
+<authorgroup>
+<author
+><personname
+><firstname
+>Pamela</firstname
+> <surname
+>Roberts</surname
+></personname
+></author>
+<othercredit role="translator"
+><firstname
+>Dragan</firstname
+><surname
+>Pantelić</surname
+><affiliation
+><address
+><email
+>falcon-10@gmx.de</email
+></address
+></affiliation
+><contrib
+>prevod</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>7. 2. 2010.</date>
+<releaseinfo
+>4.4.0</releaseinfo>
+</chapterinfo>
+
+
+<title
+>Podešavanje <application
+>K‑osvajača</application
+></title>
+
+<para
+>Kao što važi za <acronym
+>KDE</acronym
+> u celini, i <application
+>K‑osvajač</application
+> je izuzetno podesiv, te zaista možete ostvariti izgled i osećaj koji najbolje odgovara vašim potrebama i željama.</para>
+
+<sect1 id="configure-bars">
+<title
+>Trake alatki</title>
+
+<para
+>U svežoj instalaciji <acronym
+>KDE‑a</acronym
+>, prozor <application
+>K‑osvajača</application
+> sadrži traku menija, glavnu traku i traku lokacije, a možda i traku obeleživača.</para>
+
+<para
+>Možda vam ne trebaju sve ove trake. Da biste neku sakrili, u meniju <menuchoice
+><guimenu
+>Postavke</guimenu
+><guisubmenu
+>Prikazane trake alatki</guisubmenu
+> </menuchoice
+> ispraznite njenu kućicu. Za prikaz sakrivene trake, ponovo popunite kućicu.</para
+> 
+
+<para
+>Sama traka menija može se isključiti ili uključiti prečicom <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>M</keycap
+></keycombo
+>. </para>
+
+<para
+>Ako kliknete <mousebutton
+>desnim</mousebutton
+> na traku alatki, dobićete meni za njeno podešavanje. Možete zaključati ili otključati položaj trake, i izabrati položaj teksta, veličinu ikona i usmerenje otključanih traka.</para>
+
+<para
+>Na levom kraju otključanih traka alatki stoje ručke. Levim klikom na ručku, možete prevući traku na novi položaj ili je čak otkačiti od prozora i postaviti bilo gde na ekranu.</para>
+
+<para
+>Ikone prikazane na raznim trakama alatki mogu se menjati u dijalogu koji poziva stavka <menuchoice
+><guimenu
+>Postavke</guimenu
+> <guimenuitem
+>Podesi trake alatki...</guimenuitem
+></menuchoice
+>. Broj i vrste traka zavisiće od toga da li je <application
+>K‑osvajač</application
+> u režimu veb pregledača ili menadžera fajlova, i od instaliranih priključaka.</para>
+
+</sect1>
+
+<sect1 id="configshort">
+<title
+>Prečice</title>
+<para
+>Za promenu prečica dostupnih u <application
+>K‑osvajaču</application
+>, izaberite <menuchoice
+><guimenu
+>Postavke</guimenu
+><guimenuitem
+>Podesi prečice...</guimenuitem
+></menuchoice
+>. To će pokrenuti dole prikazani dijalog. </para>
+<mediaobject>
+<imageobject>
+<imagedata fileref="shortcut1.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Podešavanje prečica (snimak 1)</phrase>
+</textobject>
+</mediaobject>
+<para
+>Upotrebite polje za pretragu da nađete radnju kojoj želite da dodate ili izmenite prečicu, pa je izaberite <mousebutton
+>levim</mousebutton
+> klikom na ime. </para>
+
+<para
+>Pošto ste izabrali radnju sa spiska, primetićete da je stavka istaknuta i dve dodatne kućice ispod nje u prikazu spiska. Tu možete podesiti kombinaciju tastera za izabranu radnju, ili možda ukinuti postojeću svezu. </para>
+
+<mediaobject>
+<imageobject>
+<imagedata fileref="shortcut2.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Podešavanje prečica (snimak 2)</phrase>
+</textobject>
+</mediaobject>
+
+<itemizedlist>
+<listitem
+><para
+><guilabel
+>Podrazumevano</guilabel
+> — izabranoj radnji dodeljuje se podrazumevana vrednost <acronym
+>KDE‑a</acronym
+>. Ovo je dobar izbor za većinu radnji, pošto <acronym
+>KDE</acronym
+> stiže sa svezama tastera o kojima su programeri promislili. </para
+></listitem>
+<listitem
+><para
+><guilabel
+>(posebna)</guilabel
+> — ovim zadajete sopstvenu kombinaciju tastera za izabranu radnju. Kliknite na dugme <guibutton
+>nijedna</guibutton
+> ili ono sa prethodno zadatom posebnom prečicom. Etiketa dugmeta je sada postala <guibutton
+>unesite...</guibutton
+>. Pritisnite neki modifikatorski taster (tj. <keycap
+>Shift</keycap
+>, <keycap
+>Ctrl</keycap
+> ili <keycap
+>Alt</keycap
+>) pa običan ili funkcijski taster (npr. <keycap
+>F11</keycap
+>) sa kojim želite da zaokružite kombinaciju.</para
+></listitem>
+<listitem
+><para
+>Prečicu možete resetovati na <guilabel
+>nijedna</guilabel
+> pomoću ovog dugmeta: <inlinemediaobject
+><imageobject
+> <imagedata fileref="reset.png" format="PNG"/></imageobject
+></inlinemediaobject
+>. </para>
+<para
+>Klik na kolonu <guilabel
+>alternativna</guilabel
+> u datoj vrsti omogućava vam da uredite drugu prečicu za istu radnju.</para
+></listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="othersettings">
+<title
+>Ostale postavke</title>
+<para
+>Stavka <menuchoice
+><guimenu
+>Postavke</guimenu
+><guimenuitem
+>Podesi K‑osvajač...</guimenuitem
+></menuchoice
+> poziva dijalog u kojem možete upravljati većinom aspekata ponašanja <application
+>K‑osvajača</application
+>.</para
+> 
+<para
+>Sadrži nekoliko sekcija koje se biraju <mousebutton
+>levim</mousebutton
+> klikom na jednu od ikona na levoj strani dijaloga:</para>
+<itemizedlist>
+<listitem
+><para
+><ulink url="help:/kcontrol/khtml-general/index.html"
+>Opšte</ulink
+> — podesite opšte ponašanje <application
+>K‑osvajača</application
+></para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/performance/index.html"
+>Performanse</ulink
+> — podesite postavke za poboljšanje performansi <application
+>K‑osvajača</application
+></para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/bookmarks/index.html"
+>Obeleživači</ulink
+> — podesite domaću stranicu sa obeleživačima</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/filemanager/index.html"
+>Upravljanje fajlovima</ulink
+> — podesite kako se <application
+>K‑osvajač</application
+> ponaša u režim menadžer fajlova</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/dolphin/configuring-dolphin.html#preferences-dialog-viewmodes"
+>Režimi prikaza</ulink
+> — podesite režime prikaza u menadžeru fajlova</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/dolphin/configuring-dolphin.html#preferences-dialog-navigation"
+>Navigacija</ulink
+> — podesite kretanje u menadžeru fajlova</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/dolphin/configuring-dolphin.html#preferences-dialog-services"
+>Servisi</ulink
+> — podesite servise u menadžeru fajlova</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/dolphin/configuring-dolphin.html#preferences-dialog-general"
+>Opšte</ulink
+> — podesite opšte postavke menadžera fajlova</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/filetypes/index.html"
+>Pridruženja fajlovima</ulink
+> — podesite pridruženja fajlovima</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/trash/index.html"
+>Smeće</ulink
+> — podesite postavke smeća</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/khtml-behavior/index.html"
+>Pregledanje Weba</ulink
+> — podesite ponašanje pregledača</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/proxy/index.html"
+>Proksi</ulink
+> — podesite željene proksi servere</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/kcmcss/index.html"
+>Izgled</ulink
+> — podesite kako se prikazuju veb stranice</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/khtml-adblock/index.html"
+>AdBlockovi filteri</ulink
+> — podesite AdBlockove filtere u <application
+>K‑osvajaču</application
+></para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/ebrowsing/index.html"
+>Veb prečice</ulink
+> — podesite poboljšano pregledanje</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/cache/index.html"
+>Keš</ulink
+> — podesite postavke veb keša</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/history/index.html"
+>Istorijat</ulink
+> — podesite istorijat u bočnoj traci</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/cookies/index.html"
+>Kolačići</ulink
+> — podesite kako rade kolačići</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/useragent/index.html"
+>Identifikacija pregledača</ulink
+> — podesite kako se <application
+>K‑osvajač</application
+> predstavlja</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/khtml-java-js/index.html"
+>Java i JavaScript</ulink
+> — podesite ponašanje Jave i JavaScripta</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/khtml-plugins/index.html"
+>Priključci</ulink
+> — podesite ponašanje priključaka pregledača</para
+></listitem>
+</itemizedlist>
+<para
+>Pritisak na dugme <guibutton
+>Pomoć</guibutton
+> daće vam detaljna uputstva o načinu korišćenja svake od ovih sekcija, a možete se osloniti i na <link linkend="bubble"
+>šta‑je‑ovo tekstove</link
+>.</para>
+</sect1>
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

@@ -1,0 +1,166 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % German "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="bookmarks" lang="&language;">
+<articleinfo>
+
+<title
+>Lesezeichen</title>
+<authorgroup>
+<author
+><personname
+><firstname
+>Xavier</firstname
+><surname
+>Vello</surname
+></personname
+> <email
+>xavier.vello@gmail.com</email
+> </author>
+<othercredit role="translator"
+><firstname
+>Thomas</firstname
+><surname
+>Reitelbach</surname
+><affiliation
+><address
+><email
+>tr@erdfunkstelle.de</email
+></address
+></affiliation
+><contrib
+>Deutsche Übersetzung</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2016-11-08</date>
+<releaseinfo
+>Anwendungen 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Systemeinstellungen</keyword>
+<keyword
+>Lesezeichen</keyword>
+<keyword
+>KIO</keyword>
+</keywordset>
+</articleinfo>
+<sect1 id="conf">
+<title
+>Lesezeichen-Startseite</title>
+<para
+>In diesem Modul können Sie die Lesezeichen-Startseite einrichten.</para>
+<para
+>Um die Lesezeichen-Startseite anzuzeigen, geben Sie <userinput
+>bookmarks:/</userinput
+> in der Adressleiste von &konqueror; ein.</para>
+<para
+>Die Einstellungen in diesem Modul können Sie auch über die Eingabe von <userinput
+>bookmarks:/config</userinput
+> in der Adressleiste von &konqueror;.</para>
+<sect2 id="conf-general">
+<title
+>Allgemeine Einstellungen</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Anzahl anzuzeigender Spalten</guilabel
+></term>
+<listitem>
+<para
+>Ordner werden normalerweise über mehrere Spalten verteilt dargestellt. Die optimale Anzahl der Spalten ist abhängig von der Größe des &konqueror;-Fensters und der Anzahl vorhandener Lesezeichen.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Ordner-Hintergrundbilder anzeigen</guilabel
+></term>
+<listitem>
+<para
+>Deaktivieren Sie diese Einstellung auf langsamen Rechnern.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="conf-bookmark">
+<title
+>Lesezeichen</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Lesezeichen ohne Ordner anzeigen</guilabel
+></term>
+<listitem>
+<para
+>Wenn diese Einstellung deaktiviert ist, werden Haupt-Lesezeichen (das sind die, die nicht in einem Unterordner einsortiert sind) nicht angezeigt. Ist diese Einstellung aktiviert, so werden die Haupt-Lesezeichen in einem „Haupt“-Ordner gesammelt.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Lesezeichen-Ordner „flach“ anzeigen</guilabel
+></term>
+<listitem>
+<para
+>Unterordner werden normalerweise innerhalb der Eltern-Ordner angezeigt. Wenn Sie diese Einstellung aktivieren, werden Unterordner separat angezeigt. Dies sieht nicht so gut aus, aber kann hilfreich sein, wenn Sie einen sehr großen Ordner in zwei Spalten aufteilen möchten.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Systemorte anzeigen</guilabel
+></term>
+<listitem>
+<para
+>Zeigt einen Bereich mit Systemorten an (Persönlicher Ordner, Netzwerk, usw.). Dies ist nützlich, wenn Sie &konqueror; als Dateiverwaltung verwenden.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="conf-cache">
+<title
+>Pixmap-Zwischenspeicher</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Zwischenspeicher auf Festplatte</guilabel
+></term>
+<listitem>
+<para
+>Legt fest, wieviel Speicher zum Zwischenspeichern von Pixmaps verwendet werden darf.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Zwischenspeicher leeren</guilabel
+></term>
+<listitem>
+<para
+>Löscht alle zwischengespeicherten Bilder. Dies könnte nötig sein, falls Webseitensymbole korrupieren sollten und nicht automatisch aktualisiert werden.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+</sect1>
+</article>

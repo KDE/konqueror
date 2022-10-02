@@ -1,0 +1,226 @@
+# translation of libkonq.po to bosanski
+# Amila Akagic <bono@linux.org.ba>, 2002.
+# Vedran Ljubovic <vljubovic@smartnet.ba>, 2002, 2004, 2005, 2006.
+# KDE 4 <megaribi@epn.ba>, 2011.
+# translation of libkonq to Bosnian
+# Copyright (C) 2001, 2004, 2005, 2006, 2011 Free Software Foundation, Inc.
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2013-01-23 22:28+0000\n"
+"Last-Translator: Vedran Ljubovic <vljubovic@smartnet.ba>\n"
+"Language-Team: bosanski <bs@li.org>\n"
+"Language: bs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Launchpad-Export-Date: 2014-10-21 06:50+0000\n"
+"X-Generator: Launchpad (build 17203)\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "&Otvori"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "Napravi &direktorij..."
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "&Vrati"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr "Prikaži originalni direktorij"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr "Prikaži originalnu datoteku"
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "&Isprazni kantu za smeće"
+
+#: src/konq_popupmenu.cpp:312
+#, kde-format
+msgid "&Configure Trash Bin"
+msgstr "&Podesi kantu za smeće"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "&Zabilježi ovu stranicu"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "&Zabilježi ovu lokaciju"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "&Zabilježi ovaj direktorij"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "&Zabilježi ovaj link"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "&Zabilježi ovu datoteku"
+
+#: src/konq_popupmenu.cpp:379
+#, kde-format
+msgid "Preview In"
+msgstr "Pregledaj s"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "&Postavke..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy To"
+#~ msgstr "Kopiraj u"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "Premjesti u"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "Početni direktorij"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "Korijenski direktorij"
+
+#~ msgctxt "@title:menu in Copy To or Move To submenu"
+#~ msgid "Browse..."
+#~ msgstr "Potraži..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "Kopiraj ovdje"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "Premjesti ovdje"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "Ne možete ispustiti direktorij na samog sebe"
+
+#~ msgid "File name for dropped contents:"
+#~ msgstr "Ime za bačeni sadržaj:"
+
+#~ msgid "&Move Here"
+#~ msgstr "&Premjesti ovdje"
+
+#~ msgid "&Copy Here"
+#~ msgstr "&Kopiraj ovdje"
+
+#~ msgid "&Link Here"
+#~ msgstr "&Poveži ovdje"
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "Postavi kao &sliku u pozadini"
+
+#~ msgid "C&ancel"
+#~ msgstr "O&dustani"
+
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "Napravi direktorij"
+
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "Unesite drugo ime"
+
+#~ msgid ""
+#~ "The name \"%1\" starts with a dot, so the directory will be hidden by "
+#~ "default."
+#~ msgstr ""
+#~ "Ime %1 počinje s tačkom, tako da će direktorij podrazumijevano biti "
+#~ "skriven."
+
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "Napraviti skriveni direktorij?"
+
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "Novi direktorij"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "Novi direktorij"
+
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "Unesite naziv direktorija:"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "Umetni jedan direktorij"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One File"
+#~ msgstr "Umetni jednu datoteku"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Item"
+#~ msgid_plural "Paste %1 Items"
+#~ msgstr[0] "Umetni %1 stavku"
+#~ msgstr[1] "Umetni %1 stavke"
+#~ msgstr[2] "Umetni %1 stavki"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste Clipboard Contents..."
+#~ msgstr "Umetni sadržaj međuspremnika..."
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste"
+#~ msgstr "Umetni"
+
+#~ msgid ""
+#~ "Restores this file or directory, back to the location where it was "
+#~ "deleted from initially"
+#~ msgstr ""
+#~ "Vraća ovu datoteku ili direktorij nazad na lokaciju sa koje je obrisana."
+
+#~ msgid ""
+#~ "Opens a new file manager window showing the target of this link, in its "
+#~ "parent directory."
+#~ msgstr ""
+#~ "Otvara novi prozor menadžera datoteka u direktoriju koji sadrži odredište "
+#~ "ove veze."
+
+#~ msgid "Share"
+#~ msgstr "Share"
+
+#~ msgctxt "@info"
+#~ msgid "Close"
+#~ msgstr "Zatvori"
+
+#~ msgid "Close"
+#~ msgstr "Zatvori"
+
+#~ msgid "Error: %1"
+#~ msgstr "Greška: %1"

@@ -1,0 +1,170 @@
+<chapter id="save-settings">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>(c) 2005 Mandriva</firstname
+><surname
+>Poland</surname
+><affiliation
+><address
+><email
+>biuro@mandriva.pl</email
+></address
+></affiliation
+><contrib
+>Polskie tłumaczenie</contrib
+></othercredit
+> 
+</authorgroup>
+<date
+>2003-11-06</date
+> <releaseinfo
+>3.2</releaseinfo
+> </chapterinfo>
+
+<title
+>Zapis profili i ustawień</title>
+<sect1 id="save-settings-general">
+<title
+>Ustawienia ogólne</title>
+<para
+>Po zamknięciu &konqueror-dopelniacz;, Twoje bieżące ustawienia <guimenu
+>Widoku</guimenu
+> (takie jak <guimenuitem
+>Tryb widoku</guimenuitem
+>, <guimenuitem
+>Użyj index.html</guimenuitem
+>, czy <guimenuitem
+>Pokaż ukryte pliki </guimenuitem
+>) nie są zapisywane automatycznie jako ustawienia domyślne i wykorzystywane przy kolejnym uruchomieniu &konqueror-dopelniacz;. Niemniej możesz sprawić, by &konqueror; zapamiętał te ustawienia wybierając z menu <menuchoice
+><guimenu
+>Ustawienia</guimenu
+><guimenuitem
+>Zapisz profil widoku "Przeglądanie sieci"...</guimenuitem
+></menuchoice
+>. Bieżące ustawienia staną się wtedy ustawieniem domyślnym i zostaną użyte następnym razem, gdy &konqueror; zostanie uruchomiony.</para>
+
+<para
+>Możesz także określić inne ustawienia menu <guimenu
+>Widok</guimenu
+> dla konkretnego katalogu. Aby to zrobić, zaznacz pole<guimenuitem
+>Właściwości widoku zapisywane w katalogu</guimenuitem
+> w menu <guimenu
+>Ustawienia</guimenu
+>, zmień ustawienia <guimenu
+>Widoku</guimenu
+> na takie, które Ci odpowiadają i odznacz pole <guimenuitem
+>Właściwości widoku zapisywane w katalogu</guimenuitem
+>. W bieżącym katalogu zostaniee utworzony plik <filename
+>.directory</filename
+>, który zawiera ustawienia <guimenu
+>Widoku</guimenu
+>. Skorzystaj z polecenia menu <menuchoice
+><guimenu
+>Ustawienia</guimenu
+><guimenuitem
+>Usuń właściwości katalogu</guimenuitem
+> </menuchoice
+>, aby usunąć ustawienia bieżącego katalogu (albo po prostu usuń plik <filename
+>.directory</filename
+>).</para>
+<note
+><para
+>Rozwiązanie to ma doskonałe zastosowanie dla katalogu, który zawiera wiele obrazów. Możesz ustawić, aby ten konkretny katalog wyświetlał miniatury obrazów (wybierając opcję <guimenuitem
+>Widok ikon</guimenuitem
+> i <menuchoice
+> <guisubmenu
+>Podgląd</guisubmenu
+><guimenuitem
+>Włącz podglądy</guimenuitem
+> </menuchoice
+> z menu <guimenu
+>Widok</guimenu
+>), podczas gdy miniatury nie będą wyświetlane w innych katalogach.</para
+></note>
+</sect1>
+
+<sect1 id="save-settings-view-profiles">
+<title
+>Profile widoku</title>
+<para
+>&konqueror; może zapisać zestaw ustawień jako <quote
+>Profil widoku</quote
+>. Niektóre takie profile są standardową częścią &konqueror-dopelniacz;, takie jak <property
+>Przeglądanie sieci</property
+> czy <property
+>Zarządzanie plikami</property
+>, ale można także dodać własne profile.</para>
+
+<para
+>Aby zmienić profil widoku (na przykład profilu <property
+>Przeglądanie sieci</property
+>), wczytaj profil za pomocą menu <menuchoice
+><guimenu
+>Ustawienia</guimenu
+><guisubmenu
+>Wczytaj profil widoku</guisubmenu
+><guimenuitem
+>Przeglądanie sieci</guimenuitem
+> </menuchoice
+>, następnie zmień ustawienia &konqueror-dopelniacz; na takie, jakie chcesz. Na koniec wybierz z menu <menuchoice
+><guimenu
+>Ustawienia</guimenu
+><guimenuitem
+>Zapisz profil widoku "Przeglądanie sieci"...</guimenuitem
+></menuchoice
+>. Pojawi się okno dialogowe w którym możesz zmienić nazwę profilu, co spowoduje utworzenie profilu z tą nazwą lub możesz pozostawić istniejącą nazwę, aby zmienić bieżący profil. Jeśli wybierzesz <guilabel
+>Zapisz adresy w profilu</guilabel
+>, bieżący adres &URL; zostanie wczytany, gdy wybierzesz ten profil widoku. Funkcjonuje to w podobny sposób, co <quote
+>Strona domowa</quote
+> w wielu innych przeglądarkach. Jeżeli chcesz, aby &konqueror; był uruchamiany z pustym oknem wprowadź do paska adresu <userinput
+>about: blank</userinput
+> zanim zapiszesz profil.</para>
+
+<note
+><para
+>Możesz utworzyć ikonę pulpitu służącą do uruchamiania programu &konqueror; z Twoim nowym profilem. Najpierw utwórz ikonę na pulpicoe przeciągając ikonę programu &konqueror; z menu <guimenu
+>K</guimenu
+> na pulpit i wybierając <guimenuitem
+>Kopiuj tutaj</guimenuitem
+>. Następnie kliknij <mousebutton
+>prawym</mousebutton
+> przyciskiem na ikonę, wybierz <guimenuitem
+>Właściwości...</guimenuitem
+> i zmień <guilabel
+>Polecenie</guilabel
+> na karcie <guilabel
+>Program</guilabel
+> na <userinput
+><command
+>kfmclient</command
+> <option
+>openProfile <replaceable
+>MójNowyProfil</replaceable
+></option
+></userinput
+>, gdzie <replaceable
+>MójNowyProfil</replaceable
+> jest wybranym przez Ciebie profilem. Następnie na karcie <guilabel
+>Ogólne</guilabel
+> zmień nazwę na coś w stylu <filename
+>MójNowyProfil</filename
+> oraz wybierz odpowiadającą Ci ikonę.</para
+></note>
+
+</sect1>
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

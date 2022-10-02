@@ -1,0 +1,72 @@
+# Translation of kshellcmdplugin to Norwegian Bokmål
+#
+# Hans Petter Bieker <bieker@kde.org>, 2000.
+# Knut Yrvin <knut.yrvin@gmail.com>, 2002, 2003, 2004, 2005.
+# Bjørn Steensrud <bjornst@skogkatt.homelinux.org>, 2002, 2007, 2008, 2009, 2010, 2011.
+# Gunnhild Lurås <gluras@c2i.net>, 2003.
+# Gaute Hvoslef Kvalnes <gaute@verdsveven.com>, 2003.
+# Axel Bojer <fri_programvare@bojer.no>, 2003, 2005, 2006.
+# Sven Harald Klein Bakke <sirius@nonline.org>, 2004.
+# Eskild Hustvedt <zerodogg@skolelinux.no>, 2005.
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2011-05-20 21:47+0200\n"
+"Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
+"Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
+"Language: nb\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.1\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#. i18n: ectx: Menu (tools)
+#: konq_shellcmdplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "Verk&tøy"
+
+#: kshellcmdexecutor.cpp:106
+#, kde-format
+msgid "Input Required:"
+msgstr "Trenger informasjon:"
+
+#: kshellcmdplugin.cpp:32
+#, kde-format
+msgid "&Execute Shell Command..."
+msgstr "&Kjør skallkommando …"
+
+#: kshellcmdplugin.cpp:41
+#, kde-format
+msgid ""
+"KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a bug."
+msgstr ""
+"KShellCmdPlugin::slotExecuteShellCommand: Programfeil, vennligst send inn "
+"feilrapport."
+
+#: kshellcmdplugin.cpp:51
+#, kde-format
+msgid "Executing shell commands works only on local directories."
+msgstr "Du kan bare kjøre skallkommandoer på lokale mapper."
+
+#: kshellcmdplugin.cpp:73
+#, kde-format
+msgctxt "@title:window"
+msgid "Execute Shell Command"
+msgstr "Kjør skallkommando"
+
+#: kshellcmdplugin.cpp:74
+#, kde-format
+msgid "Execute shell command in current directory:"
+msgstr "Kjør skallkommando i denne mappa:"
+
+#: kshellcmdplugin.cpp:85
+#, kde-format
+msgid "Output from command: \"%1\""
+msgstr "Resultat fra kommando: «%1»"

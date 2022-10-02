@@ -1,0 +1,216 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Brazilian-Portuguese "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article lang="&language;" id="konq-general-behavior">
+<title
+>Comportamento geral do &konqueror;</title>
+<articleinfo>
+
+<authorgroup>
+<author
+>&Burkhard.Lueck;</author>
+<othercredit role="translator"
+><firstname
+>Marcus</firstname
+><surname
+>Gama</surname
+><affiliation
+><address
+><email
+>marcus.gama@gmail.com</email
+></address
+></affiliation
+><contrib
+>Tradução</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>22/11/2011</date>
+<releaseinfo
+>&kde; 4.8</releaseinfo>
+
+</articleinfo>
+<para
+>Nesta página você encontra configurações para a página do usuário e inicial, para o comportamento da navegação em abas e para os modos de gerenciador de arquivos e navegador do &konqueror;.</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Quando o Konqueror iniciar</guilabel
+></term>
+<listitem>
+<para
+>Esta opção determina que página é exibida quando o &konqueror; inicia, a página introdutória, sua página pessoal, uma página em branco ou sua página de favoritos. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Página inicial</guilabel
+></term>
+<listitem
+><para
+>Esta é a &URL; (&eg;, uma pasta ou uma página Web) que o &konqueror;, no modo navegador, acessará quando o botão <guibutton
+>Página inicial</guibutton
+> na barra de ferramentas for pressionado. Você pode configurar um caminho que seja sua <guilabel
+>Página inicial</guilabel
+> digitando-o no campo de texto, ou usando o ícone <guiicon
+>navegar</guiicon
+> para selecionar uma pasta local. O &konqueror; precisa ser reiniciado para que esta mudança tenha efeito.</para>
+<para
+>Quando o &konqueror; é usado no modo gerenciador de arquivos, o botão <guilabel
+>Página inicial</guilabel
+> na barra de ferramentas é substituído por um botão <guilabel
+>Pasta Pessoal</guilabel
+> que faz com que o gerenciador salte para sua pasta pessoal do sistema.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guilabel
+>Mecanismo padrão do navegador Web</guilabel
+></term>
+<listitem
+><para
+>Este opção fornece uma maneira fácil de selecionar o mecanismo Web preferido no &konqueror;, seja o <guilabel
+>KHTML</guilabel
+> ou o <guilabel
+>Webkit</guilabel
+>, se instalado. Usar o menu <menuchoice
+><guimenu
+>Exibir</guimenu
+><guimenuitem
+>Modo de exibição</guimenuitem
+></menuchoice
+> permite que você altere o mecanismo Web temporariamente em tempo real. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Abrir os links em nova aba em vez de nova janela</guilabel
+></term>
+<listitem
+><para
+>O &konqueror; abre uma única janela por página, mas tem a capacidade de abrir várias <firstterm
+>abas</firstterm
+> dentro de uma única janela. O &konqueror; também tem, por padrão, um atalho do &MMB; para abrir qualquer link em uma nova janela. Se ativar a opção <guilabel
+>Abrir os links em nova aba em vez de nova janela</guilabel
+>, você poderá clicar com o &MMB; em um link para que ele se abra em uma nova aba.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Abrir popups em nova aba em vez de nova janela</guilabel
+></term>
+<listitem
+><para
+>Se os popups JavaScript deverão abrir, se forem permitidas, numa janela nova ou numa aba da mesma janela.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Abrir como aba do Konqueror quando uma URL for chamada externamente</guilabel
+></term>
+<listitem
+><para
+>Quando você clica numa &URL; em outro programa do &kde;, ou chama o 'kfmclient' para abrir uma &URL;, é procurado no ambiente atual um &konqueror; não-minimizado e, se existir, a &URL; será aberta como uma nova aba dentro deste. Caso contrário, será aberta uma nova janela do &konqueror; com a &URL; desejada.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Abrir novas abas em segundo plano</guilabel
+></term>
+<listitem
+><para
+>Se você estiver usando a navegação por abas, você poderá escolher se uma página recém aberta se tornará a aba ativa (<quote
+>a mais à frente</quote
+>), ou se quer que ela fique em segundo plano. Numa conexão lenta à Internet, ou enquanto navega numa página que tem um conjunto de cabeçalhos ou outros links numa lista, você poderá querer abrir as novas páginas em segundo plano enquanto continua a ler. Neste caso, deixe esta opção desligada. Se preferir ir diretamente para a nova página, deixando a anterior em segundo plano, ative esta opção.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Abrir nova aba após a aba atual</guilabel
+></term>
+<listitem
+><para
+>Isto irá abrir uma nova aba após a atual, em vez de ser depois da última.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Ocultar a barra de abas quando somente uma aba estiver aberta</guilabel
+></term>
+<listitem
+><para
+>Isto irá mostrar a barra das abas só se existirem duas ou mais páginas. Caso contrário, ficará sempre visível.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Exibir o botão fechar nas abas</guilabel
+></term>
+<listitem
+><para
+>Isto irá exibir os botões de fechar dentro de cada aba ao invés dos ícones do site.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Clicar no botão do meio do mouse em uma aba para fechá-la</guilabel
+></term>
+<listitem
+><para
+>Quando clicar numa página com o botão do meio do mouse ou com a roda do mesmo, isto irá fechar essa página. O &konqueror; precisa ser reiniciado para que esta alteração tenha efeito.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Solicitar confirmação ao fechar janelas com várias abas</guilabel
+></term>
+<listitem
+><para
+>Se você fechar uma janela no &konqueror; com várias abas abertas, o &konqueror; perguntará se tem certeza que deseja fechá-la. Você poderá ligar ou desligar este comportamento com esta opção.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Ativar a aba usada anteriormente ao fechar a aba atual</guilabel
+></term>
+<listitem
+><para
+>Ao marcar isto, a aba usada ou aberta anteriormente será ativada quando você fechar a aba atual, ao invés da aba à direita da aba atual.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</article>

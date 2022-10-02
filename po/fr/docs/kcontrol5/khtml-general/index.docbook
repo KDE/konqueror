@@ -1,0 +1,180 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % French "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article lang="&language;" id="konq-general-behavior">
+<title
+>Comportement général de &konqueror;</title>
+<articleinfo>
+
+<authorgroup>
+<author
+>&Burkhard.Lueck;</author>
+&traducteurPeterPotrowl; 
+</authorgroup>
+
+<date
+>08-11-2016</date>
+<releaseinfo
+>Applications 16.12</releaseinfo>
+
+</articleinfo>
+<para
+>Sur cette page, vous pouvez configurer vos pages d'accueil et de lancement et le comportement de la navigation par onglets, à la fois pour les modes de gestion de fichier et de navigation de &konqueror;.</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Lorsque Konqueror démarre</guilabel
+></term>
+<listitem>
+<para
+>Cette option détermine quelle page est affichée lorsque &konqueror; démarre. Ce peut être la page d'introduction, votre page d'accueil, une page vide ou encore votre page de signets. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Page d'accueil</guilabel
+></term>
+<listitem
+><para
+>Il s'agit de l'&URL; (&pex; un dossier ou une page web) que &konqueror;, en mode navigateur, ouvrira lorsque vous cliquerez sur le bouton <guibutton
+>Page d'accueil</guibutton
+> de la barre d'outils. Vous pouvez saisir un emplacement dans la zone de saisie ou utiliser l'icône <guiicon
+>parcourir</guiicon
+> pour sélectionner un dossier local. &konqueror; doit être redémarré pour que ce changement prenne effet.</para>
+<para
+>Quand &konqueror; est utilisé comme gestionnaire de fichiers, le bouton <guilabel
+>Page d'accueil</guilabel
+> de la barre d'outils est remplacé par un bouton <guilabel
+>Dossier personnel</guilabel
+> qui vous permet de vous rendre dans celui-ci.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Ouvrir les liens dans un nouvel onglet, plutôt que dans une nouvelle fenêtre</guilabel
+></term>
+<listitem
+><para
+>Par défaut, &konqueror; ouvrira une seule page par fenêtre, mais il est capable d'ouvrir plusieurs <firstterm
+>onglets</firstterm
+> dans la même fenêtre. Toujours par défaut, &konqueror; utilise le &BCS; comme raccourci pour ouvrir les liens dans une nouvelle fenêtre. Si vous activez l'option <guilabel
+>Ouvrir les liens dans un nouvel onglet plutôt que dans une nouvelle fenêtre</guilabel
+>, vous pourrez utiliser le &BCS; pour ouvrir les liens dans de nouveaux onglets.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Ouvrir les fenêtres automatiques dans un nouvel onglet plutôt que dans une nouvelle fenêtre</guilabel
+></term>
+<listitem
+><para
+>Si les fenêtres automatiques JavaScript sont autorisées, ceci permet de choisir de les ouvrir dans un nouvel onglet ou dans une nouvelle fenêtre.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Lors d'une requête externe d'ouverture d'URL, ouvrir un nouvel onglet dans la fenêtre existante de Konqueror</guilabel
+></term>
+<listitem
+><para
+>Lorsque vous cliquez sur un lien dans un autre logiciel &kde; ou demandez à kfmclient d'ouvrir une &URL;, le bureau actuel va chercher une fenêtre &konqueror; non-minimisée. S'il en trouve une, il ouvrira l'&URL; dans un nouvel onglet de cette fenêtre. Si cette option est désactivée, une nouvelle fenêtre &konqueror; sera ouverte à l'&URL; demandée.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Ouvrir les nouveaux onglets en arrière-plan.</guilabel
+></term>
+<listitem
+><para
+>Si vous utilisez la navigation par onglets, vous pouvez choisir si un onglet nouvellement ouvert doit devenir l'onglet actif (au <quote
+>premier plan</quote
+>), ou bien être relégué à l'arrière-plan. Si vous utilisez une connexion Internet lente, ou que vous visitez des pages ayant une liste de titres ou de liens, vous pourriez vouloir laisser les nouveaux onglets se charger en arrière-plan, et continuer à lire pendant ce temps. Dans ce cas, activez cette option. Si en revanche, vous voulez accéder directement à la nouvelle page, en plaçant l'ancienne à l'arrière-plan, désactivez-la.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Ouvrir le nouvel onglet après l'onglet courant</guilabel
+></term>
+<listitem
+><para
+>Cette option place un onglet nouvellement ouvert juste après l'onglet actif, plutôt qu'après le dernier onglet.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Masquer la barre d'onglets quand un seul onglet est ouvert</guilabel
+></term>
+<listitem
+><para
+>Cette option permet de n'afficher la barre en question que lorsque deux onglets ou plus sont ouverts. Si elle est désactivée, la barre sera affichée en permanence.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Afficher le bouton fermer sur les onglets</guilabel
+></term>
+<listitem
+><para
+>Activer cette option affichera un bouton de fermeture sur chaque onglet, plutôt que d'afficher l'icône du site web.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Un clic du bouton central ferme l'onglet</guilabel
+></term>
+<listitem
+><para
+>Lorsque vous cliquerez sur un onglet avec le &BCS; ou la molette, cela fermera cet onglet. &konqueror; doit être redémarré pour que ce changement prenne effet.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Demander confirmation lors de la fermeture d'une fenêtre contenant plusieurs onglets</guilabel
+></term>
+<listitem
+><para
+>Si vous fermez une fenêtre &konqueror; contenant plusieurs onglets, &konqueror; vous demandera si c'est vraiment ce que vous voulez faire. Vous pouvez activer ou désactiver ce comportement avec cette case à cocher.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Afficher l'onglet précédemment utilisé lors de la fermeture de l'onglet courant</guilabel
+></term>
+<listitem
+><para
+>Si cette option est activée, lorsque vous fermerez l'onglet courant, le dernier onglet utilisé ou ouvert sera activé plutôt que l'onglet situé à droite de l'onglet courant.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</article>

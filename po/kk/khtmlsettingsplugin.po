@@ -1,0 +1,123 @@
+# translation of khtmlsettingsplugin.po to Kazakh
+#
+# Sairan Kikkarin <sairan@computer.org>, 2006, 2007, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: khtmlsettingsplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"PO-Revision-Date: 2011-06-25 05:58+0600\n"
+"Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
+"Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
+"Language: kk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"\n"
+
+#. i18n: ectx: Menu (tools)
+#: khtmlsettingsplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "&Құралдар"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: khtmlsettingsplugin.rc:8
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "Қосымша құралдар панелі"
+
+#: settingsplugin.cpp:41
+#, kde-format
+msgid "HTML Settings"
+msgstr "HTML параметрлері"
+
+#: settingsplugin.cpp:46
+#, kde-format
+msgid "Java&Script"
+msgstr "Java&Script"
+
+#: settingsplugin.cpp:51
+#, kde-format
+msgid "&Java"
+msgstr "&Java"
+
+#: settingsplugin.cpp:56
+#, kde-format
+msgid "&Cookies"
+msgstr "&Cookies"
+
+#: settingsplugin.cpp:61
+#, kde-format
+msgid "&Plugins"
+msgstr "&Плагин модульдер"
+
+#: settingsplugin.cpp:66
+#, kde-format
+msgid "Autoload &Images"
+msgstr "&Кескіндерді автожүктеу"
+
+#: settingsplugin.cpp:73
+#, kde-format
+msgid "Enable Pro&xy"
+msgstr "Про&кси арқылы"
+
+#: settingsplugin.cpp:78
+#, kde-format
+msgid "Enable Cac&he"
+msgstr "&Кэш істесін"
+
+#: settingsplugin.cpp:83
+#, kde-format
+msgid "Cache Po&licy"
+msgstr "Кэш &тәртібі"
+
+#: settingsplugin.cpp:85
+#, kde-format
+msgid "&Keep Cache in Sync"
+msgstr "Жаңартып &отыру"
+
+#: settingsplugin.cpp:86
+#, kde-format
+msgid "&Use Cache if Possible"
+msgstr "Мейілінше кэшті &пайдалану"
+
+#: settingsplugin.cpp:87
+#, kde-format
+msgid "&Offline Browsing Mode"
+msgstr "&Желіден тыс шарлау күйі"
+
+#: settingsplugin.cpp:180
+#, fuzzy, kde-format
+#| msgid ""
+#| "Cookies could not be enabled, because the cookie daemon could not be "
+#| "started."
+msgid ""
+"The cookie setting could not be changed, because the cookie daemon could not "
+"be contacted."
+msgstr ""
+"Cookie-файлдары рұқсат етілмеген, өйткені cookie кезекші қызметі жегілмеген."
+
+#: settingsplugin.cpp:182
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Cookies Disabled"
+msgctxt "@title:window"
+msgid "Cookie Settings Unavailable"
+msgstr "Cookie бұғатталған"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Сайран Киккарин"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "sairan@computer.org"
+
+#~ msgid "Disable Pro&xy"
+#~ msgstr "Прокси&сіз"
+
+#~ msgid "Disable Cac&he"
+#~ msgstr "&Кэш болмасын"

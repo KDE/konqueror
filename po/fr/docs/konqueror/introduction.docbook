@@ -1,0 +1,85 @@
+<chapter id="introduction">
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+&traducteurJoelleCornavin; &traducteurGerardDelafond;&traducteurLudovicGrossard; 
+</authorgroup>
+
+<date
+>08/02/2010</date>
+<releaseinfo
+>4.4</releaseinfo>
+</chapterinfo>
+
+<title
+>Aperçu</title>
+
+<para
+><emphasis
+>&konqueror;</emphasis
+> est un <link linkend="filemanager"
+> gestionnaire de fichiers</link
+> évolué pour la compilation de logiciels &kde; (<foreignphrase
+>&kde; Software compilation)</foreignphrase
+>), qui offre des fonctions de gestion de fichiers allant des opérations simples de couper/copier et coller à l'exploration approfondie de fichiers de réseaux locaux et distants. Le contenu du dossier peut s'afficher sous divers <link linkend="viewmode"
+>modes d'affichage</link
+> fondés sur du texte ou des icônes, pouvant incorporer des images d'aperçu du contenu des fichiers sous forme de vignettes. Les propriétés des fichiers et des dossiers peuvent être aisément examinées et changées, les applications lancées par un simple clic du &BGS;.</para>
+
+<para
+>Dans &kde; SC 4, &dolphin; est le gestionnaire de fichiers par défaut. Pour modifier le composant par défaut pour naviguer dans les dossiers, ouvrez <guimenu
+>Applications par défaut</guimenu
+> dans la &configurationDuSysteme; et choisissez &konqueror; comme gestionnaire de fichiers.</para>
+
+<para
+><emphasis
+>&konqueror;</emphasis
+> est un <link linkend="browser"
+>navigateur web</link
+> conforme au <acronym
+>HTML</acronym
+> 4.01 avec gestion intégrée du JavaScript (ECMA-262), des &CSS; (Cascading Style Sheets, <quote
+>feuilles de style en cascade</quote
+>) et scripts bidirectionnels (comme en arabe et en hébreu). Il prévoit la prise en charge de l'exécution sécurisée des applets &Java;, des modules externes de &Netscape; pour l'affichage de &Flash;, &RealAudio;, &RealVideo;, ainsi que <acronym
+>SSL</acronym
+> pour les communications sécurisées. Parmi ses fonctionnalités évoluées, citons le complètement automatique des &URL; et des formulaires, la capacité d'importer des signets d'autres navigateurs et la navigation par onglets. </para>
+
+<para
+><emphasis
+>&konqueror;</emphasis
+> est également un excellent client <link linkend="ftp"
+>FTP</link
+> très complet.</para>
+
+<para
+><emphasis
+>&konqueror;</emphasis
+> est une application d'affichage universelle, capable d'afficher des images et des documents sans avoir à lancer une autre application. Il a recours pour ce faire à l'intégration de composants (les <quote
+>Parts</quote
+> de &kde;) fournis par d'autres applications : de <application
+>Gwenview</application
+> pour l'affichage d'images, &okular; pour les documents <acronym
+>PDF</acronym
+>, &PostScript;, et d'autres documents. </para>
+
+<para
+><emphasis
+>&konqueror;</emphasis
+> est une application extrêmement personnalisable que tout un chacun peut <link linkend="config"
+>configurer</link
+> pour l'adapter à ses propres besoins, de la transformation de l'ensemble du style, des tailles du texte et des icônes au choix des éléments apparaissant dans la barre de menus, en changeant le nombre et les positions des barres d'outils, et même la définition de nouvelles combinaisons de touches. Il est également possible d'enregistrer différents <link linkend="save-settings"
+>profils</link
+> de configuration pour les rappeler aisément selon les besoins. </para>
+
+</chapter>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

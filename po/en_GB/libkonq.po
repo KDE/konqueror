@@ -1,0 +1,426 @@
+# translation of libkonq.po to British English
+# Copyright (C) 2003, 2004, 2005, 2008 Free Software Foundation, Inc.
+#
+# Malcolm Hunter <malcolm.hunter@gmx.co.uk>, 2003, 2004, 2008.
+# Jonathan Riddell <kde-en-gb@jriddell.org>, 2003.
+# Andrew Coles <andrew_coles@yahoo.co.uk>, 2004, 2005, 2009, 2010.
+# Steve Allewell <steve.allewell@gmail.com>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2020-12-12 14:15+0000\n"
+"Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
+"Language-Team: British English <kde-l10n-en_gb@kde.org>\n"
+"Language: en_GB\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 20.08.3\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "&Open"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "Create &Folder..."
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "&Restore"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr "Show Original Directory"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr "Show Original File"
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "&Empty Wastebin"
+
+#: src/konq_popupmenu.cpp:312
+#, kde-format
+msgid "&Configure Trash Bin"
+msgstr "&Configure Wastebin"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "&Bookmark This Page"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "&Bookmark This Location"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "&Bookmark This Folder"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "&Bookmark This Link"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "&Bookmark This File"
+
+#: src/konq_popupmenu.cpp:379
+#, kde-format
+msgid "Preview In"
+msgstr "Preview In"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr "Open Terminal Here"
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "&Properties"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy To"
+#~ msgstr "Copy To"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "Move To"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "Home Folder"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "Root Folder"
+
+#~ msgctxt "@title:menu in Copy To or Move To submenu"
+#~ msgid "Browse..."
+#~ msgstr "Browse..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "Copy Here"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "Move Here"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "You cannot drop a folder on to itself"
+
+#~ msgid "File name for dropped contents:"
+#~ msgstr "File name for dropped contents:"
+
+#~ msgid "&Move Here"
+#~ msgstr "&Move Here"
+
+#~ msgid "&Copy Here"
+#~ msgstr "&Copy Here"
+
+#~ msgid "&Link Here"
+#~ msgstr "&Link Here"
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "Set as &Wallpaper"
+
+#~ msgid "C&ancel"
+#~ msgstr "C&ancel"
+
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "Create directory"
+
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "Enter a different name"
+
+#~ msgid ""
+#~ "The name \"%1\" starts with a dot, so the directory will be hidden by "
+#~ "default."
+#~ msgstr ""
+#~ "The name \"%1\" starts with a dot, so the directory will be hidden by "
+#~ "default."
+
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "Create hidden directory?"
+
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "New Folder"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "New Folder"
+
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "Enter folder name:"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "Paste One Folder"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One File"
+#~ msgstr "Paste One File"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Item"
+#~ msgid_plural "Paste %1 Items"
+#~ msgstr[0] "Paste One Item"
+#~ msgstr[1] "Paste %1 Items"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste Clipboard Contents..."
+#~ msgstr "Paste Clipboard Contents..."
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste"
+#~ msgstr "Paste"
+
+#~ msgid ""
+#~ "Restores this file or directory, back to the location where it was "
+#~ "deleted from initially"
+#~ msgstr ""
+#~ "Restores this file or directory, back to the location where it was "
+#~ "deleted from initially"
+
+#~ msgid ""
+#~ "Opens a new file manager window showing the target of this link, in its "
+#~ "parent directory."
+#~ msgstr ""
+#~ "Opens a new file manager window showing the target of this link, in its "
+#~ "parent directory."
+
+#~ msgid "Share"
+#~ msgstr "Share"
+
+#~ msgctxt "@info"
+#~ msgid "Close"
+#~ msgstr "Close"
+
+#~ msgid "Close"
+#~ msgstr "Close"
+
+#~ msgid "Error: %1"
+#~ msgstr "Error: %1"
+
+#~ msgid "Create New"
+#~ msgstr "Create New"
+
+#~ msgid "Link to Device"
+#~ msgstr "Link to Device"
+
+#~ msgid "<qt>The template file <b>%1</b> does not exist.</qt>"
+#~ msgstr "<qt>The template file <b>%1</b> does not exist.</qt>"
+
+#~ msgid "File name:"
+#~ msgstr "File name:"
+
+#~ msgid ""
+#~ "Basic links can only point to local files or directories.\n"
+#~ "Please use \"Link to Location\" for remote URLs."
+#~ msgstr ""
+#~ "Basic links can only point to local files or directories.\n"
+#~ "Please use \"Link to Location\" for remote URLs."
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Actions"
+#~ msgstr "&Actions"
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With"
+#~ msgstr "&Open With"
+
+#~ msgctxt "@action:inmenu Open With"
+#~ msgid "&Other..."
+#~ msgstr "&Other..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With..."
+#~ msgstr "&Open With..."
+
+#~ msgid "Open &with %1"
+#~ msgstr "Open &with %1"
+
+#~ msgid "Open in New &Window"
+#~ msgstr "Open in New &Window"
+
+#~ msgid "Open the trash in a new window"
+#~ msgstr "Open the wastebin in a new window"
+
+#~ msgid "Open the medium in a new window"
+#~ msgstr "Open the medium in a new window"
+
+#~ msgid "Open the document in a new window"
+#~ msgstr "Open the document in a new window"
+
+#~ msgid "Directory"
+#~ msgstr "Directory"
+
+#~ msgid "Moving"
+#~ msgstr "Moving"
+
+#~ msgid "Source"
+#~ msgstr "Source"
+
+#~ msgid "Destination"
+#~ msgstr "Destination"
+
+#~ msgid "Deleting"
+#~ msgstr "Deleting"
+
+#~ msgid "File"
+#~ msgstr "File"
+
+#~ msgid "Und&o"
+#~ msgstr "Und&o"
+
+#~ msgid "Und&o: Copy"
+#~ msgstr "Und&o: Copy"
+
+#~ msgid "Und&o: Link"
+#~ msgstr "Und&o: Link"
+
+#~ msgid "Und&o: Move"
+#~ msgstr "Und&o: Move"
+
+#~ msgid "Und&o: Rename"
+#~ msgstr "Und&o: Rename"
+
+#~ msgid "Und&o: Trash"
+#~ msgstr "Und&o: Move to Wastebin"
+
+#~ msgid "Und&o: Create Folder"
+#~ msgstr "Und&o: Create Folder"
+
+#~ msgid ""
+#~ "The file %1 was copied from %2, but since then it has apparently been "
+#~ "modified at %3.\n"
+#~ "Undoing the copy will delete the file, and all modifications will be "
+#~ "lost.\n"
+#~ "Are you sure you want to delete %4?"
+#~ msgstr ""
+#~ "The file %1 was copied from %2, but since then it has apparently been "
+#~ "modified at %3.\n"
+#~ "Undoing the copy will delete the file, and all modifications will be "
+#~ "lost.\n"
+#~ "Are you sure you want to delete %4?"
+
+#~ msgid "Undo File Copy Confirmation"
+#~ msgstr "Undo File Copy Confirmation"
+
+#~ msgid "Do you really want to delete this item?"
+#~ msgid_plural "Do you really want to delete these %1 items?"
+#~ msgstr[0] "Do you really want to delete this item?"
+#~ msgstr[1] "Do you really want to delete these %1 items?"
+
+#~ msgid "Delete Files"
+#~ msgstr "Delete Files"
+
+#~ msgid "Do you really want to move this item to the trash?"
+#~ msgid_plural "Do you really want to move these %1 items to the trash?"
+#~ msgstr[0] "Do you really want to move this item to the wastebin?"
+#~ msgstr[1] "Do you really want to move these %1 items to the wastebin?"
+
+#~ msgid "Move to Trash"
+#~ msgstr "Move to Wastebin"
+
+#~ msgctxt "Verb"
+#~ msgid "&Trash"
+#~ msgstr "Move to Was&tebin"
+
+#, fuzzy
+#~| msgid "Und&o"
+#~ msgid "Und&o: %1"
+#~ msgstr "Und&o"
+
+#~ msgid "Background Settings"
+#~ msgstr "Background Settings"
+
+#~ msgid "Background"
+#~ msgstr "Background"
+
+#~ msgid "Co&lor:"
+#~ msgstr "Co&lour:"
+
+#~ msgid "&Picture:"
+#~ msgstr "&Picture:"
+
+#~ msgid "Preview"
+#~ msgstr "Preview"
+
+#~ msgid "None"
+#~ msgstr "None"
+
+#~ msgid "Enlarge Icons"
+#~ msgstr "Enlarge Icons"
+
+#~ msgid "Shrink Icons"
+#~ msgstr "Shrink Icons"
+
+#~ msgid "&Default Size"
+#~ msgstr "&Default Size"
+
+#~ msgid "&Huge"
+#~ msgstr "&Huge"
+
+#~ msgid "&Very Large"
+#~ msgstr "&Very Large"
+
+#~ msgid "&Large"
+#~ msgstr "&Large"
+
+#~ msgid "&Medium"
+#~ msgstr "&Medium"
+
+#~ msgid "&Small"
+#~ msgstr "&Small"
+
+#~ msgid "&Tiny"
+#~ msgstr "&Tiny"
+
+#~ msgid "Configure Background..."
+#~ msgstr "Configure Background..."
+
+#~ msgid "Allows choosing of background settings for this view"
+#~ msgstr "Allows choosing of background settings for this view"
+
+#~ msgid "<p>You do not have enough permissions to read <b>%1</b></p>"
+#~ msgstr "<p>You do not have enough permissions to read <b>%1</b></p>"
+
+#~ msgid "<p><b>%1</b> does not seem to exist anymore</p>"
+#~ msgstr "<p><b>%1</b> does not seem to exist anymore</p>"
+
+#~ msgid "Search result: %1"
+#~ msgstr "Search result: %1"
+
+#~ msgid "Do you really want to shred this item?"
+#~ msgid_plural "Do you really want to shred these %1 items?"
+#~ msgstr[0] "Do you really want to shred this item?"
+#~ msgstr[1] "Do you really want to shred these %1 items?"
+
+#~ msgid "Shred Files"
+#~ msgstr "Shred Files"
+
+#~ msgid "Shred"
+#~ msgstr "Shred"

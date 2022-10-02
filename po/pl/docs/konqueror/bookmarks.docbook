@@ -1,0 +1,241 @@
+<chapter id="bookmarks">
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>(c) 2005 Mandriva</firstname
+><surname
+>Poland</surname
+><affiliation
+><address
+><email
+>biuro@mandriva.pl</email
+></address
+></affiliation
+><contrib
+>Polskie tłumaczenie</contrib
+></othercredit
+> 
+</authorgroup>
+<date
+>2003-11-05</date
+> <releaseinfo
+>3.2</releaseinfo
+> </chapterinfo>
+
+<title
+>Korzystanie z zakładek</title>
+
+<para
+>Poza tym, że możesz korzystać z zakładek programu &konqueror; do zaznaczania lokalizacji swoich własnych plików i katalogów, to są one szczególnie użyteczne przy korzystaniu z Internetu, umożliwiając stworzenie listy najbardziej użytecznych dla Ciebie stron.</para>
+
+<para
+>Aby otworzyć menu <guimenu
+>Zakładki</guimenu
+>, możesz albo kliknąć <mousebutton
+>lewym</mousebutton
+> przyciekiem myszy na menu <guimenu
+>Zakładki</guimenu
+> albo użyć skrótu klawiatury <keycombo action="simul"
+>&Alt;<keycap
+>Z</keycap
+></keycombo
+>. Kiedy już lista będzie widoczna, możesz się po niej przemieszczać za pomocą klawiszy strzałek lub za pomocą myszy, a następnie kliknąć jej lewym przyciskiem lub wcisnąć klawisz &Enter;, aby odwiedzić wybrane miejsce.</para>
+
+<para
+>Aby dodać nowy obiekt do listy, użyj polecenia z menu <menuchoice
+><guimenu
+>Zakładki </guimenu
+><guimenuitem
+>Dodaj zakładkę</guimenuitem
+></menuchoice
+> lub klawisza skrótu <keycombo action="simul"
+>&Ctrl;<keycap
+>B</keycap
+></keycombo
+>, albo też kliknij <mousebutton
+>prawym</mousebutton
+> przyciskiem myszy na wolny obszar strony internetowej lub folderu i wybierz z podręcznego menu polecenie <guimenuitem
+>Dodaj tę stronę do zakładek</guimenuitem
+>.</para>
+
+<para
+>Lista <guimenu
+>Zakładek</guimenu
+> może zawierać podfoldery z innymi zakładkami, możesz je tworzyć za pomocą polecenia z menu <menuchoice
+><guimenu
+>Zakładki </guimenu
+><guimenuitem
+>Nowy folder zakładek...</guimenuitem
+></menuchoice
+>. Aby dodać zakładkę do podfolderu zamiast do listy zakładek, wybierz folder z listy <guimenu
+>Zakładek</guimenu
+> i użyj polecenia <guimenuitem
+>Dodaj zakładkę</guimenuitem
+>.</para>
+
+<para
+>Dostęp do zakładek masz także z <link linkend="sidebar"
+> <guilabel
+>Panelu nawigacyjnego</guilabel
+></link
+>.</para>
+
+<sect1 id="orgbmark">
+<title
+>Edytor zakładek</title>
+
+<para
+>Wybranie z menu <menuchoice
+><guimenu
+>Zakładki</guimenu
+> <guimenuitem
+>Modyfikuj zakładki</guimenuitem
+> </menuchoice
+> otwiera okno <guilabel
+>Edytora zakładek</guilabel
+>.</para>
+<para
+>Pokazuje ono Twoje zakładki i foldery zakładek w widoku drzewa. Jak zwykle przy widoku drzewa w środowisku &kde;, foldery są pokazane z niewielkimi kwadratami po lewej stronie ich nazwy. Jeśli kwadracik zawiera znak <keycap
+>+</keycap
+>, to klikając na niego <mousebutton
+>lewym</mousebutton
+> przyciskiem myszy spowodujemy rozwinięcie gałęzi drzewa i wyświetlenie zawartości katalogu, zaś znak <keycap
+>+</keycap
+> zostanie zamieniony na znak <keycap
+>-</keycap
+>. Kliknięcie <mousebutton
+>lewym</mousebutton
+> przyciskiem myszy na znak <keycap
+>-</keycap
+> spowoduje zwinięcie gałęzi drzewa.</para>
+
+<para
+>Aby wybrać obiekt z listy możesz albo kliknąć na niego <mousebutton
+>lewym</mousebutton
+> przyciskiem myszy, albo przemieszczać się po liście za pomocą strzałek, używając <keysym
+>strzałki w prawo</keysym
+>, aby rozwinąć folder, albo <keysym
+> strzałki w lewo</keysym
+>, aby go zwinąć.</para>
+
+<para
+>Możesz przenieść obiekt w inne miejsce na liście albo za pomocą techniki przeciągnij i upuść, albo korzystając z metody <guimenuitem
+>wytnij</guimenuitem
+> i <guimenuitem
+> wklej</guimenuitem
+>. Kolejność w jakiej obiekty są wyświetlane w <guilabel
+>Edytorze zakładek</guilabel
+> jest analogiczna z kolejnością w jakiej są wyświetlane w menu <guimenu
+>Zakładki</guimenu
+>. Polecenie <menuchoice
+><guimenu
+>Folder</guimenu
+><guimenuitem
+>Wstaw separator</guimenuitem
+></menuchoice
+> może być wykorzystane do wstawienia linii separatora w dowolnym miejscu listy.</para>
+
+<para
+>Nowy folder może zostać utworzony w wybranym miejscu listy za pomocą polecenia <guimenuitem
+>Nowy folder...</guimenuitem
+> z menu <guimenu
+>Folder</guimenu
+> lub z podręcznego menu które zostanie wyświetlone po kliknięciu <mousebutton
+>prawym</mousebutton
+> przyciskiem myszy w głównej części okna lub zastosowaniu kombinacji klawiszy <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </para>
+
+<para
+>Aby zmienić nazwę zakładki lub folderu, zaznacz go, a następnie wciśnij klawisz <keycap
+>F2</keycap
+> lub wybierz polecenie <guimenuitem
+>Zmień nazwę</guimenuitem
+> z menu <guimenu
+>Edycja</guimenu
+> lub z podręcznego menu, które zostanie wyświetlone po kliknięciu <mousebutton
+>prawym</mousebutton
+> przyciskiem myszy. Podobnie możesz zmieniać adres &URL; wciskając klawisz <keycap
+>F3</keycap
+> lub wybierając polecenie <guimenuitem
+>Zmień URL</guimenuitem
+> z menu <guimenu
+>Edycja</guimenu
+>.</para>
+
+<para
+><guilabel
+>Edytor zakładek</guilabel
+> pozwala na import zakładek z wielu innych przeglądarek do &konqueror-dopelniacz;, wstawiając je do nowego folderu lub zastępując wszystkie istniejące zakładki. Aby to zrobić należy wybrać polecenie <guisubmenu
+>Importuj</guisubmenu
+> z menu <guimenu
+>Plik</guimenu
+>. Polecenie z menu <menuchoice
+><guimenu
+>Plik</guimenu
+><guisubmenu
+>Eksportuj</guisubmenu
+> </menuchoice
+> może zostać wykorzystane do eksportowania zakładek z &konqueror-dopelniacz; do przeglądarek takich jak &Netscape;, czy Mozilla.</para>
+
+<para
+>Jeżeli równie często korzystasz z przeglądarki &Netscape;, co z &konqueror-dopelniacz;, to lepszym rozwiązaniem zamiast importu zakładek z programu &Netscape; do &konqueror-dopelniacz; jest zaznaczenie opcji <guimenuitem
+>Pokaż zakładki Netscape w Konquerorze</guimenuitem
+> w menu <guimenu
+>Ustawienia</guimenu
+>. Jeśli to zrobisz, to każda aktualizacja zakładek programu &Netscape; będzie natychmiast widoczna w &konqueror-miejscownik;.</para>
+
+<para
+>Aby wybrać, który folder zakładek ma być widoczny na pasku narzędzi wybierz, z menu <guimenu
+>Edycja</guimenu
+> polecenie <guimenuitem
+>Pokaż na pasku narzędzi</guimenuitem
+>.</para>
+
+<para
+>Jeżeli porządkujesz swoje zakładki i zapomniałeś, czego dotyczy określona strona, możesz ją łatwo otworzyć z <guilabel
+>Edytora zakładek</guilabel
+> klikając <mousebutton
+>prawym</mousebutton
+> przyciskiem myszy na dany obiekt i wybierając polecenie <guimenuitem
+>Otwórz w Konquerorze</guimenuitem
+> z podręcznego menu. Jeżeli chcesz tylko sprawdzić, czy dany adres jest aktualny, to wybierz polecenie <guimenuitem
+>Sprawdź stan</guimenuitem
+>.</para>
+
+<important
+><para
+>Nie zapomnij zapisać zmian wybierając polecenie menu <menuchoice
+> <guimenu
+>Plik</guimenu
+><guimenuitem
+>Zapisz</guimenuitem
+></menuchoice
+> lub stosując skrót <keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+> przed opuszczeniem <guilabel
+>Edytora zakładek</guilabel
+>. </para
+></important>
+</sect1
+> 
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

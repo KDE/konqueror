@@ -1,0 +1,88 @@
+# translation of searchbarplugin.po to Slovak
+# Stanislav Visnovsky <visnovsky@kde.org>, 2004.
+# Richard Fric <Richard.Fric@kdemail.net>, 2006, 2009.
+# Roman Paholík <wizzardsk@gmail.com>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: searchbarplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-25 00:45+0000\n"
+"PO-Revision-Date: 2012-09-19 13:00+0200\n"
+"Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
+"Language-Team: Slovak <kde-sk@linux.sk>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#: searchbar.cpp:65
+#, kde-format
+msgid ""
+"Search Bar<p>Enter a search term. Click on the icon to change search mode or "
+"provider.</p>"
+msgstr ""
+"Pruh hľadania<p>Zadajte termín na hľadanie. Kilknite na ikonu pre zmenu módu "
+"alebo poskytovateľa.</p>"
+
+#: searchbar.cpp:70
+#, kde-format
+msgid "Search Bar"
+msgstr "Pruh hľadania"
+
+#: searchbar.cpp:75
+#, kde-format
+msgid "Focus Searchbar"
+msgstr "Fokus pruh hľadania"
+
+#: searchbar.cpp:267
+#, fuzzy, kde-format
+#| msgid "Find in This Page"
+msgid "Find in Page..."
+msgstr "Nájsť v tejto stránke"
+
+#: searchbar.cpp:287
+#, kde-format
+msgid "Find in This Page"
+msgstr "Nájsť v tejto stránke"
+
+#: searchbar.cpp:299
+#, kde-format
+msgid "Select Search Engines..."
+msgstr "Vybrať vyhľadávací stroj..."
+
+#: searchbar.cpp:318
+#, kde-format
+msgid "Add %1..."
+msgstr "Pridať %1..."
+
+#. i18n: ectx: ToolBar (locationToolBar)
+#: searchbarplugin.rc:3
+#, kde-format
+msgid "Search Toolbar"
+msgstr "Panel nástrov hľadania"
+
+#: WebShortcutWidget.cpp:33
+#, kde-format
+msgid "Set Uri Shortcuts"
+msgstr "Nastaviť URI skratky"
+
+#: WebShortcutWidget.cpp:47
+#, kde-format
+msgid "Name:"
+msgstr "Meno:"
+
+#: WebShortcutWidget.cpp:51
+#, kde-format
+msgid "Shortcuts:"
+msgstr "Skratky:"
+
+#~ msgid "Enable Suggestion"
+#~ msgstr "Povoliť návrhy"
+
+#~ msgid "Cancel"
+#~ msgstr "Zrušiť"
+
+#~ msgid "OK"
+#~ msgstr "OK"

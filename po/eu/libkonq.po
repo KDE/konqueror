@@ -1,0 +1,241 @@
+# Translation for libkonq.po to Euskara/Basque (eu).
+# Copyright (C) 2002-2011, Free Software Foundation, Inc.
+# Copyright (C) 2012-2020, This file is copyright.
+# This file is distributed under the same license as the konqueror package.
+# KDE euskaratzeko proiektuko arduraduna <xalba@euskalnet.net>.
+#
+# Translators:
+# Marcos  <marcos@euskalgnu.org>, 2002,2003, 2005, 2006.
+# Juan Irigoien <juanirigoien@yahoo.es>, 2004.
+# marcos <marcos@euskalgnu.org>, 2006.
+# Iñigo Salvador Azurmendi <xalba@euskalnet.net>, 2008, 2010, 2011, 2020.
+# Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2020-11-29 21:38+0100\n"
+"Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
+"Language-Team: Basque <kde-i18n-eu@kde.org>\n"
+"Language: eu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 20.08.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "&Ireki"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "Sortu &karpeta..."
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "&Leheneratu"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr "Erakutsi jatorrizko karpeta"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr "Erakutsi jatorrizko fitxategia"
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "&Hustu zakarrontzia"
+
+#: src/konq_popupmenu.cpp:312
+#, kde-format
+msgid "&Configure Trash Bin"
+msgstr "&Konfiguratu zakarrontzia"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "&Sortu orri honen laster-marka"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "&Sortu helbide honen laster-marka"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "&Sortu karpeta honen laster-marka"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "&Sortu esteka honen laster-marka"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "&Sortu fitxategi honen laster-marka"
+
+#: src/konq_popupmenu.cpp:379
+#, kde-format
+msgid "Preview In"
+msgstr "Aurreikusi honekin"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr "Ireki terminala hemen"
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "&Propietateak"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy To"
+#~ msgstr "Kopiatu hemen"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "Eraman hona"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "Karpeta nagusia"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "Erroko karpeta"
+
+#~ msgctxt "@title:menu in Copy To or Move To submenu"
+#~ msgid "Browse..."
+#~ msgstr "Arakatu..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "Kopiatu hemen"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "Eraman hona"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "Ezin duzu karpeta bat bere buruaren baitan jaregin"
+
+#~ msgid "File name for dropped contents:"
+#~ msgstr "Jaregindako edukiaren fitxategi-izena: "
+
+#~ msgid "&Move Here"
+#~ msgstr "&Eraman hona"
+
+#~ msgid "&Copy Here"
+#~ msgstr "&Kopiatu hemen"
+
+#~ msgid "&Link Here"
+#~ msgstr "E&stekatu hemen"
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "Ezarri &horma-paper gisa"
+
+#~ msgid "C&ancel"
+#~ msgstr "&Utzi"
+
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "Sortu direktorioa"
+
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "Sartu beste izen bat"
+
+#~ msgid ""
+#~ "The name \"%1\" starts with a dot, so the directory will be hidden by "
+#~ "default."
+#~ msgstr ""
+#~ "\"%1\" izena puntu batekin hasten denez ezkutuko direktorioa izango da."
+
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "Sortu ezkutuko direktorioa?"
+
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "Karpeta berria"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "Karpeta berria"
+
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "Sartu karpetaren izena:"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "Itsatsi karpeta bat"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One File"
+#~ msgstr "Itsatsi fitxategi bat"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Item"
+#~ msgid_plural "Paste %1 Items"
+#~ msgstr[0] "Itsatsi elementu bat"
+#~ msgstr[1] "Itsatsi %1 elementu"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste Clipboard Contents..."
+#~ msgstr "Itsatsi arbelaren edukia..."
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste"
+#~ msgstr "Itsatsi"
+
+#~ msgid ""
+#~ "Restores this file or directory, back to the location where it was "
+#~ "deleted from initially"
+#~ msgstr ""
+#~ "Fitxategi edo karpeta hau leheneratzen du, hasieran ezabatua izan zeneko "
+#~ "lekura"
+
+#~ msgid ""
+#~ "Opens a new file manager window showing the target of this link, in its "
+#~ "parent directory."
+#~ msgstr ""
+#~ "Fitxategi-kudeatzailearen leiho berri bat irekitzen du esteka honen "
+#~ "helmuga erakutsiz, bere guraso karpetan."
+
+#~ msgid "Share"
+#~ msgstr "Partekatu"
+
+#~ msgctxt "@info"
+#~ msgid "Close"
+#~ msgstr "Itxi"
+
+#~ msgid "Close"
+#~ msgstr "Itxi"
+
+#~ msgid "Error: %1"
+#~ msgstr "Errorea: %1"
+
+#~ msgid "Create New"
+#~ msgstr "Berria sortu"
+
+#~ msgid "Link to Device"
+#~ msgstr "Gailuari esteka"
+
+#~ msgid "<qt>The template file <b>%1</b> does not exist.</qt>"
+#~ msgstr "<qt>Ez dago %1 txantiloia.</qt>"
+
+#~ msgid "File name:"
+#~ msgstr "Fitxategi-izena:"

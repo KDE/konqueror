@@ -1,0 +1,3044 @@
+# Chinese (Hong Kong) translation fot KGet
+# Copyright (C) 2002 Free Software Foundation, Inc.
+# tonniewalker <tonniewalker@hotmail.com>, 2002.
+# Tse-Chun Ho <saviro.tw@yahoo.com.tw>, 2002.
+# Walter Cheuk <wwycheuk@netvigator.com>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: KGet\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2006-01-03 22:09\n"
+"Last-Translator: Walter Cheuk <wwycheuk@netvigator.com>\n"
+"Language-Team: Chinese(traditinal) <zh-l10n@linux.org.tw>\n"
+"Language: zh_HK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.9.6\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: kget_plugin.cpp:56
+#, fuzzy, kde-format
+msgid "Download Manager"
+msgstr "下載管理員"
+
+#: kget_plugin.cpp:62
+#, fuzzy, kde-format
+#| msgid "Show Drop &Target"
+msgid "Show Drop Target"
+msgstr "顯示拖放目標(&T)"
+
+#: kget_plugin.cpp:69
+#, kde-format
+msgid "List All Links"
+msgstr "列出所有連結"
+
+#: kget_plugin.cpp:74
+#, fuzzy, kde-format
+#| msgid "List All Links"
+msgid "List Selected Links"
+msgstr "列出所有連結"
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No downloadable links were found."
+msgstr ""
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No Links"
+msgstr "沒有連結"
+
+#. i18n: ectx: Menu (tools)
+#: konqueror_kget_browser_integration.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr ""
+
+#, fuzzy
+#~ msgid "New Group"
+#~ msgstr "預設的資料夾"
+
+#, fuzzy
+#~ msgid "Network and Downloads"
+#~ msgstr "標示部份下載的檔案"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Verification"
+#~ msgstr "目的地："
+
+#, fuzzy
+#~ msgctxt "integration of KGet with other applications"
+#~ msgid "Integration"
+#~ msgstr "Konqueror 整合"
+
+#, fuzzy
+#~| msgid "Advanced"
+#~ msgctxt "Advanced Options"
+#~ msgid "Advanced"
+#~ msgstr "進階"
+
+#~ msgid "Advanced Options"
+#~ msgstr "進階選項"
+
+#, fuzzy
+#~ msgid "Transfer Plugins"
+#~ msgstr "開啟傳輸："
+
+#~ msgid "KGet"
+#~ msgstr "KGet"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/秒"
+
+#, fuzzy
+#~ msgctxt "start transfergroup downloads"
+#~ msgid "Start"
+#~ msgstr "重新開始(&S)"
+
+#, fuzzy
+#~ msgctxt "stop transfergroup downloads"
+#~ msgid "Stop"
+#~ msgstr "已停止"
+
+#, fuzzy
+#~ msgid "KGet is downloading %1 file"
+#~ msgid_plural "KGet is downloading %1 files"
+#~ msgstr[0] "下載管理員"
+
+#, fuzzy
+#~| msgid ""
+#~| "Error while writing file:\n"
+#~| "%1"
+#~ msgid "Error trying to get %1"
+#~ msgstr ""
+#~ "寫入檔案時發生錯誤：\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Are you sure that you want to remove the group named %1?"
+#~ msgstr "你確定要刪除這些傳輸嗎？"
+
+#, fuzzy
+#~ msgid "Remove Group"
+#~ msgstr "預設的資料夾"
+
+#, fuzzy
+#~ msgid "Are you sure that you want to remove the following groups?"
+#~ msgstr "你確定要刪除這些傳輸嗎？"
+
+#, fuzzy
+#~ msgid "Remove groups"
+#~ msgstr "預設的資料夾"
+
+#, fuzzy
+#~ msgid "Download added"
+#~ msgstr "下載已續傳"
+
+#, fuzzy
+#~ msgid ""
+#~ "The file %1 already exists.\n"
+#~ "Overwrite?"
+#~ msgstr ""
+#~ "目標檔案\n"
+#~ "%1\n"
+#~ "已存在。\n"
+#~ "是否要覆寫它？"
+
+#, fuzzy
+#~ msgid "My Downloads"
+#~ msgstr "下載已續傳"
+
+#, fuzzy
+#~ msgid "New Download"
+#~ msgstr "再次下載"
+
+#~ msgid ""
+#~ "Malformed URL:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "格式不正確的 URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URL, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "格式不正確的 URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Download it again?"
+#~ msgstr "再次下載"
+
+#, fuzzy
+#~ msgid "Delete it and download again?"
+#~ msgstr "再次下載"
+
+#, fuzzy
+#~ msgid "File already downloaded. Download anyway?"
+#~ msgstr ""
+#~ "已經儲存 URL\n"
+#~ "%1\n"
+#~ "要再下載嗎？"
+
+#, fuzzy
+#~ msgid "File already exists"
+#~ msgstr ""
+#~ "目標檔案\n"
+#~ "%1\n"
+#~ "已存在。\n"
+#~ "是否要覆寫它？"
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is a directory."
+#~ msgstr ""
+#~ "因為\n"
+#~ "%1\n"
+#~ "是個目錄，未能刪除。"
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is not a local file."
+#~ msgstr ""
+#~ "因為\n"
+#~ "%1\n"
+#~ "不是本機檔案，未能刪除。"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Download completed"
+#~ msgstr "完成下載"
+
+#, fuzzy
+#~ msgid "Download started"
+#~ msgstr "下載已續傳"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Resolve"
+#~ msgstr "開啟傳輸"
+
+#, fuzzy
+#~| msgid "All the downloads are finished."
+#~ msgid "KGet is now closing, as all downloads have completed."
+#~ msgstr "所有下載已完成。"
+
+#, fuzzy
+#~| msgid "All the downloads are finished."
+#~ msgid "The computer will now turn off, as all downloads have completed."
+#~ msgstr "所有下載已完成。"
+
+#, fuzzy
+#~ msgctxt "Shutting down computer"
+#~ msgid "Shutdown"
+#~ msgstr "自動關閉開啟。"
+
+#, fuzzy
+#~| msgid "All the downloads are finished."
+#~ msgid ""
+#~ "The computer will now suspend to disk, as all downloads have completed."
+#~ msgstr "所有下載已完成。"
+
+#, fuzzy
+#~| msgid "All the downloads are finished."
+#~ msgid ""
+#~ "The computer will now suspend to RAM, as all downloads have completed."
+#~ msgstr "所有下載已完成。"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgctxt "Suspending computer"
+#~ msgid "Suspending"
+#~ msgstr "正在排程"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgctxt "abort the proposed action"
+#~ msgid "Abort"
+#~ msgstr "字型:"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Downloads completed"
+#~ msgstr "完成下載"
+
+#, fuzzy
+#~ msgctxt "file in a filesystem"
+#~ msgid "File"
+#~ msgstr "開啟檔案(&F)"
+
+#, fuzzy
+#~ msgctxt "status of the download"
+#~ msgid "Status"
+#~ msgstr "重新開始(&S)"
+
+#, fuzzy
+#~| msgid " Size: %1 "
+#~ msgctxt "size of the download"
+#~ msgid "Size"
+#~ msgstr " 大小： %1 "
+
+#, fuzzy
+#~ msgid "KGet Transfer"
+#~ msgstr "開啟傳輸："
+
+#, fuzzy
+#~ msgctxt "the type of the hash, e.g. MD5"
+#~ msgid "Type"
+#~ msgstr "檔案類型"
+
+#~ msgid "Stalled"
+#~ msgstr "因擠塞停止了"
+
+#, fuzzy
+#~ msgid "Downloading...."
+#~ msgstr "下載已續傳"
+
+#, fuzzy
+#~| msgid "Delayed"
+#~ msgctxt "transfer state: delayed"
+#~ msgid "Delayed"
+#~ msgstr "已延遲"
+
+#, fuzzy
+#~| msgid "Stopped"
+#~ msgctxt "transfer state: stopped"
+#~ msgid "Stopped"
+#~ msgstr "已停止"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgctxt "transfer state: aborted"
+#~ msgid "Aborted"
+#~ msgstr "字型:"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "transfer state: finished"
+#~ msgid "Finished"
+#~ msgstr "已完成"
+
+#, fuzzy
+#~ msgctxt "changing the destination of the file"
+#~ msgid "Changing destination"
+#~ msgstr "開啟目的地(&D)"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgctxt "name of download"
+#~ msgid "Name"
+#~ msgstr "名稱"
+
+#, fuzzy
+#~ msgctxt "status of download"
+#~ msgid "Status"
+#~ msgstr "重新開始(&S)"
+
+#, fuzzy
+#~ msgctxt "progress of download"
+#~ msgid "Progress"
+#~ msgstr "進度對話方塊"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgctxt "speed of download"
+#~ msgid "Speed"
+#~ msgstr "速度"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgctxt "remaining time of download"
+#~ msgid "Remaining Time"
+#~ msgstr "剩下的時間"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "No download destination specified."
+#~ msgstr "目的地："
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Invalid download destination specified."
+#~ msgstr "目的地："
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Download destination is not writeable."
+#~ msgstr "目的地："
+
+#, fuzzy
+#~| msgid "Malformed URL:\n"
+#~ msgid "Malformed URL."
+#~ msgstr "格式不正確的 URL:\n"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid "Malformed URL, protocol missing."
+#~ msgstr ""
+#~ "格式不正確的 URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid "Malformed URL, host missing."
+#~ msgstr ""
+#~ "格式不正確的 URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid ""
+#~ "Invalid download destination specified:\n"
+#~ "%1"
+#~ msgstr "目的地："
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid ""
+#~ "Download destination is not writeable:\n"
+#~ "%1"
+#~ msgstr "目的地："
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URL, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "格式不正確的 URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "File already exists. Overwrite it?"
+#~ msgstr ""
+#~ "目標檔案\n"
+#~ "%1\n"
+#~ "已存在。\n"
+#~ "是否要覆寫它？"
+
+#, fuzzy
+#~ msgid ""
+#~ "File already exists:\n"
+#~ "%1\n"
+#~ "Overwrite it?"
+#~ msgstr ""
+#~ "目標檔案\n"
+#~ "%1\n"
+#~ "已存在。\n"
+#~ "是否要覆寫它？"
+
+#, fuzzy
+#~| msgid "Malformed URL:\n"
+#~ msgid "Malformed URLs."
+#~ msgstr "格式不正確的 URL:\n"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid "Malformed URLs, protocol missing."
+#~ msgstr ""
+#~ "格式不正確的 URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid "Malformed URLs, host missing."
+#~ msgstr ""
+#~ "格式不正確的 URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "格式不正確的 URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "格式不正確的 URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "格式不正確的 URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Files exist already. Overwrite them?"
+#~ msgstr ""
+#~ "目標檔案\n"
+#~ "%1\n"
+#~ "已存在。\n"
+#~ "是否要覆寫它？"
+
+#~ msgid "Question"
+#~ msgstr "問題"
+
+#, fuzzy
+#~| msgid "Normal"
+#~ msgctxt "on a question"
+#~ msgid "No all"
+#~ msgstr "標準"
+
+#, fuzzy
+#~| msgid "Local File Name"
+#~ msgid "Engine name:"
+#~ msgstr "本機檔案名稱"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "transfer state: connecting"
+#~ msgid "Connecting...."
+#~ msgstr "連線數"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Set Script File"
+#~ msgstr "說明"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "Transfer State: Finished"
+#~ msgid "Finished"
+#~ msgstr "已完成"
+
+#, fuzzy
+#~ msgid "Downloading Metalink File...."
+#~ msgstr "下載已續傳"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Redownload Metalink"
+#~ msgstr "完成下載"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgid "File Selection"
+#~ msgstr "正在排程"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "the string that is used to modify an url"
+#~ msgid "Change string"
+#~ msgstr "連線數"
+
+#, fuzzy
+#~| msgid "Stopped"
+#~ msgid "Append"
+#~ msgstr "已停止"
+
+#, fuzzy
+#~ msgid "Replace file"
+#~ msgstr "開啟檔案(&F)"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "transfer state: running"
+#~ msgid "Running...."
+#~ msgstr "連線數"
+
+#, fuzzy
+#~| msgid "Address (URL)"
+#~ msgid "IP Address"
+#~ msgstr "位址（URL）"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Down Speed"
+#~ msgstr "速度"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Up Speed"
+#~ msgstr "速度"
+
+#, fuzzy
+#~ msgid "Choked"
+#~ msgstr "停泊"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgid "Score"
+#~ msgstr "來源："
+
+#, fuzzy
+#~ msgid "Downloaded"
+#~ msgstr "下載已續傳"
+
+#, fuzzy
+#~ msgid "Interesting"
+#~ msgstr "Konqueror 整合"
+
+#, fuzzy
+#~ msgid "Download speed"
+#~ msgstr "下載已續傳"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Upload speed"
+#~ msgstr "速度"
+
+#, fuzzy
+#~| msgid "Count"
+#~ msgid "Chunk"
+#~ msgstr "記數"
+
+#, fuzzy
+#~ msgid "Progress"
+#~ msgstr "進度對話方塊"
+
+#, fuzzy
+#~ msgid "Files"
+#~ msgstr "開啟檔案(&F)"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of the chunk"
+#~ msgstr "重試的次數："
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Download speed of the chunk"
+#~ msgstr "完成下載"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed"
+#~ msgstr "速度"
+
+#, fuzzy
+#~ msgid "Status"
+#~ msgstr "重新開始(&S)"
+
+#, fuzzy
+#~ msgid "File"
+#~ msgstr "開啟檔案(&F)"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Advanced Details for %1"
+#~ msgstr "預設的資料夾:"
+
+#, fuzzy
+#~ msgid "Trackers"
+#~ msgstr "開啟傳輸(&T)"
+
+#, fuzzy
+#~ msgctxt "Open file"
+#~ msgid "Open"
+#~ msgstr "開啟檔案(&F)"
+
+#, fuzzy
+#~ msgid "Download first"
+#~ msgstr "下載已續傳"
+
+#, fuzzy
+#~ msgid "Download normally"
+#~ msgstr "預設的資料夾"
+
+#, fuzzy
+#~ msgid "Download last"
+#~ msgstr "下載已續傳"
+
+#, fuzzy
+#~ msgid "Do Not Download"
+#~ msgstr "再次下載"
+
+#, fuzzy
+#~| msgid "Download Selected Files"
+#~ msgid "Delete File(s)"
+#~ msgstr "下載選擇的檔案"
+
+#, fuzzy
+#~ msgid "Move File"
+#~ msgstr "開啟檔案(&F)"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Seeders"
+#~ msgstr "速度"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Leechers"
+#~ msgstr "速度"
+
+#, fuzzy
+#~ msgid "Times Downloaded"
+#~ msgstr "下載已續傳"
+
+#, fuzzy
+#~| msgid "Normal"
+#~ msgctxt "Download normally(not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "標準"
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 %"
+#~ msgstr " %1/秒 "
+
+#, fuzzy
+#~| msgid "Normal"
+#~ msgctxt "Download Normal (not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "標準"
+
+#, fuzzy
+#~| msgid "Advanced Options"
+#~ msgid "&Advanced Details"
+#~ msgstr "進階選項"
+
+#, fuzzy
+#~ msgid "&Scan Files"
+#~ msgstr "開啟檔案(&F)"
+
+#, fuzzy
+#~ msgid "Downloading Torrent File...."
+#~ msgstr "下載已續傳"
+
+#, fuzzy
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading...."
+#~ msgstr "下載已續傳"
+
+#, fuzzy
+#~| msgid ""
+#~| "Folder does not exist:\n"
+#~| "%1"
+#~ msgid "Torrent file does not exist"
+#~ msgstr ""
+#~ "沒有這個資料夾：\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Analyzing torrent...."
+#~ msgstr "下載已續傳"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgctxt "Transfer status: seeding"
+#~ msgid "Seeding...."
+#~ msgstr "正在排程"
+
+#, fuzzy
+#~| msgid "Default Folder"
+#~ msgid "Select a default torrent folder"
+#~ msgstr "預設的資料夾"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Select a default temporary folder"
+#~ msgstr "預設的資料夾:"
+
+#, fuzzy
+#~| msgid "Import Text &File..."
+#~ msgid "Import dropped files"
+#~ msgstr "匯入文字檔案(&F)..."
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgid "File Properties"
+#~ msgstr "正在排程"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a filename."
+#~ msgstr "乙太網絡"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter at least one URL."
+#~ msgstr "乙太網絡"
+
+#, fuzzy
+#~ msgid "Metalink Version 4.0 file (*.meta4)"
+#~ msgstr "開啟檔案(&F)"
+
+#, fuzzy
+#~ msgid "Metalink Version 3.0 file (*.metalink)"
+#~ msgstr "開啟檔案(&F)"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "Import Links"
+#~ msgstr "沒有連結"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgctxt "Download the items which have been selected"
+#~ msgid "&Download Checked"
+#~ msgstr "完成下載"
+
+#, fuzzy
+#~| msgid "Local File Name"
+#~ msgid "File Name"
+#~ msgstr "本機檔案名稱"
+
+#~ msgid "Description"
+#~ msgstr "說明"
+
+#, fuzzy
+#~ msgctxt "list header: type of file"
+#~ msgid "File Type"
+#~ msgstr "檔案類型"
+
+#~ msgid "Location (URL)"
+#~ msgstr "地點 (URL)"
+
+#~ msgid "Links in: %1 - KGet"
+#~ msgstr "%1 中的連結 - KGet"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgctxt "The priority of the mirror"
+#~ msgid "Priority"
+#~ msgstr "字型:"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "Number of paralell connections to the mirror"
+#~ msgid "Connections"
+#~ msgstr "連線數"
+
+#, fuzzy
+#~| msgid "Location (URL)"
+#~ msgctxt "Location = country"
+#~ msgid "Location"
+#~ msgstr "地點 (URL)"
+
+#, fuzzy
+#~| msgid "<i>%1</i> successfully downloaded."
+#~ msgid "%1 has been successfully added."
+#~ msgstr "已成功下載 <i>%1</i> 。"
+
+#, fuzzy
+#~ msgid "Download again"
+#~ msgstr "再次下載"
+
+#, fuzzy
+#~ msgctxt "Delete selected history-item"
+#~ msgid "Delete selected"
+#~ msgstr "沒有選擇檔案"
+
+#, fuzzy
+#~ msgid "Open file"
+#~ msgstr "開啟檔案(&F)"
+
+#, fuzzy
+#~ msgid "Transfer History"
+#~ msgstr "開啟傳輸："
+
+#, fuzzy
+#~ msgid "&Open File"
+#~ msgstr "開啟檔案(&F)"
+
+#, fuzzy
+#~| msgid "Stopped"
+#~ msgctxt "The transfer is stopped"
+#~ msgid "Stopped"
+#~ msgstr "已停止"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "The transfer is finished"
+#~ msgid "Finished"
+#~ msgstr "已完成"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgid "Source File"
+#~ msgstr "來源："
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Destination"
+#~ msgstr "目的地："
+
+#, fuzzy
+#~| msgid "Timer"
+#~ msgid "Time"
+#~ msgstr "計時器"
+
+#, fuzzy
+#~ msgid "File Size"
+#~ msgstr "開啟檔案(&F)"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "the transfer has been finished"
+#~ msgid "Finished"
+#~ msgstr "已完成"
+
+#, fuzzy
+#~| msgid "To: %1"
+#~ msgctxt "an error happened in connection with the user input"
+#~ msgid "Error:"
+#~ msgstr "到： %1"
+
+#, fuzzy
+#~| msgid "unknown"
+#~ msgctxt "trust level"
+#~ msgid "Unknown"
+#~ msgstr "未知"
+
+#, fuzzy
+#~| msgid "<i>%1</i> successfully downloaded."
+#~ msgid "The signature has been verified successfully."
+#~ msgstr "已成功下載 <i>%1</i> 。"
+
+#, fuzzy
+#~ msgctxt "pgp signature is not verified"
+#~ msgid "Failed"
+#~ msgstr "開啟檔案(&F)"
+
+#, fuzzy
+#~| msgid "To: %1"
+#~ msgid "Error:"
+#~ msgstr "到： %1"
+
+#, fuzzy
+#~ msgid "Information:"
+#~ msgstr "Konqueror 整合"
+
+#, fuzzy
+#~ msgid "Transfer Details"
+#~ msgstr " 傳輸： %1"
+
+#, fuzzy
+#~| msgid "<i>%1</i> successfully downloaded."
+#~ msgid "%1 %2 has been successfully added."
+#~ msgstr "已成功下載 <i>%1</i> 。"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Transfer Verification for %1"
+#~ msgstr "預設的資料夾:"
+
+#, fuzzy
+#~| msgid "<i>%1</i> successfully downloaded."
+#~ msgid "%1 was successfully verified."
+#~ msgstr "已成功下載 <i>%1</i> 。"
+
+#, fuzzy
+#~ msgid "Rename File"
+#~ msgstr "預設的資料夾"
+
+#, fuzzy
+#~ msgid "Rename %1 to:"
+#~ msgstr "預設的資料夾"
+
+#, fuzzy
+#~ msgid "&Rename"
+#~ msgstr "預設的資料夾"
+
+#, fuzzy
+#~ msgid "Rename Group..."
+#~ msgid_plural "Rename Groups..."
+#~ msgstr[0] "預設的資料夾"
+
+#, fuzzy
+#~| msgid "Sticky"
+#~ msgctxt "fix position for droptarget"
+#~ msgid "Sticky"
+#~ msgstr "固定"
+
+#, fuzzy
+#~| msgid "KGet"
+#~ msgid "Quit KGet"
+#~ msgstr "KGet"
+
+#, fuzzy
+#~ msgid "The dropped file is a KGet Transfer List"
+#~ msgstr "開啟傳輸："
+
+#, fuzzy
+#~ msgid "&Download"
+#~ msgstr "下載已續傳"
+
+#, fuzzy
+#~ msgid "&Load transfer list"
+#~ msgstr "開啟傳輸："
+
+#, fuzzy
+#~ msgid "Show Main Window"
+#~ msgstr "啟動時顯示主視窗"
+
+#, fuzzy
+#~ msgid "Hide Main Window"
+#~ msgstr "隱藏記錄視窗(&L)"
+
+#, fuzzy
+#~| msgid "Drop target"
+#~ msgid "Drop Target"
+#~ msgstr "拖放目標"
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgctxt "%1 filename, %2 total size, %3 status"
+#~ msgid "%1(%2) %3"
+#~ msgstr " %1/秒 "
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgctxt ""
+#~ "%1 filename, %2 percent complete, %3 downloaded out of %4 total size, %5 "
+#~ "status"
+#~ msgid "%1(%2% %3/%4) %5"
+#~ msgstr " %1/秒 "
+
+#, fuzzy
+#~ msgid "Hiding drop target"
+#~ msgstr "隱藏拖放目標(&T)"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Transfer Settings for %1"
+#~ msgstr "預設的資料夾:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Destination unmodified"
+#~ msgstr "目的地："
+
+#, fuzzy
+#~| msgid "%1% of %2 - %3"
+#~ msgid "%1 of %2"
+#~ msgstr "%1% / %2 - %3"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Group Settings for %1"
+#~ msgstr "預設的資料夾:"
+
+#, fuzzy
+#~| msgid "%1/s"
+#~ msgctxt "@item speed of transfer per seconds"
+#~ msgid "%1/s"
+#~ msgstr "%1/秒"
+
+#, fuzzy
+#~| msgid "Local File Name"
+#~ msgctxt "@label"
+#~ msgid "File name"
+#~ msgstr "本機檔案名稱"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "@label Progress of transfer"
+#~ msgid "Finished"
+#~ msgstr "已完成"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgctxt "@label Speed of transfer"
+#~ msgid "Speed"
+#~ msgstr "速度"
+
+#, fuzzy
+#~ msgctxt "@label Status of transfer"
+#~ msgid "Status"
+#~ msgstr "重新開始(&S)"
+
+#, fuzzy
+#~ msgctxt "@action:button start a transfer"
+#~ msgid "Start"
+#~ msgstr "重新開始(&S)"
+
+#, fuzzy
+#~ msgctxt "@action:button"
+#~ msgid "Stop"
+#~ msgstr "已停止"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgctxt "@action:button"
+#~ msgid "Remove"
+#~ msgstr "開啟傳輸"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgctxt "@label Download from"
+#~ msgid "Source:"
+#~ msgstr "來源："
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgctxt "@action"
+#~ msgid "Settings"
+#~ msgstr "正在排程"
+
+#, fuzzy
+#~| msgctxt "OK as in 'finished'"
+#~| msgid "OK"
+#~ msgctxt "@action:button"
+#~ msgid "OK"
+#~ msgstr "完成"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgctxt "@action Refresh download list every x (seconds)"
+#~ msgid "Refresh download list every"
+#~ msgstr "完成下載"
+
+#, fuzzy
+#~ msgctxt "@action:button"
+#~ msgid "Save Settings"
+#~ msgstr " 傳輸： %1"
+
+#, fuzzy
+#~ msgctxt "@title"
+#~ msgid "Downloads"
+#~ msgstr "下載已續傳"
+
+#~ msgid "An advanced download manager for KDE"
+#~ msgstr "KDE 先進的下載管理員"
+
+#~ msgid "Start KGet with drop target"
+#~ msgstr "使用拖放目標模式啟動 KGet"
+
+#, fuzzy
+#~| msgid "Start KGet with drop target"
+#~ msgid "Start KGet with hidden main window"
+#~ msgstr "使用拖放目標模式啟動 KGet"
+
+#, fuzzy
+#~| msgid "Start KGet with drop target"
+#~ msgid "Start KGet without drop target animation"
+#~ msgstr "使用拖放目標模式啟動 KGet"
+
+#, fuzzy
+#~ msgid "URL(s) to download"
+#~ msgstr "用以下載的 URL"
+
+#, fuzzy
+#~ msgid "KGet Transfer List"
+#~ msgstr "開啟傳輸："
+
+#, fuzzy
+#~ msgid "Export Transfers"
+#~ msgstr "匯出傳輸列表(&E)..."
+
+#, fuzzy
+#~| msgid "&Import Transfer List..."
+#~ msgid "&Import Transfers..."
+#~ msgstr "匯入傳輸列表(&I)..."
+
+#, fuzzy
+#~ msgid "&Export Transfers List..."
+#~ msgstr "匯出傳輸列表(&E)..."
+
+#, fuzzy
+#~ msgid "&Export Transfers as Plain Text..."
+#~ msgstr "匯出傳輸列表(&E)..."
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Top Priority"
+#~ msgstr "字型:"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Least Priority"
+#~ msgstr "字型:"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Increase Priority"
+#~ msgstr "字型:"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Decrease Priority"
+#~ msgstr "字型:"
+
+#, fuzzy
+#~ msgid "Auto-Paste Mode"
+#~ msgstr "自動貼上模式(&T)"
+
+#, fuzzy
+#~ msgid ""
+#~ "<b>Auto paste</b> button toggles the auto-paste mode on and off.\n"
+#~ "When set, KGet will periodically scan the clipboard for URLs and paste "
+#~ "them automatically."
+#~ msgstr ""
+#~ "<b>自動貼上</b>按鈕會啟動或關閉自動貼上離線\n"
+#~ "模式；按一下啟動，再按則停止。\n"
+#~ "\n"
+#~ "當啟動了這項功能， KGet 將會週期性地掃描剪貼簿上的\n"
+#~ "URL 並且自動地貼上這些 URL 。"
+
+#, fuzzy
+#~ msgid "Use KGet as Konqueror Download Manager"
+#~ msgstr "取消 &KGet 作為 Konqueror 的下載管理員"
+
+#, fuzzy
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Remove Selected"
+#~ msgstr "續傳(&R)"
+
+#, fuzzy
+#~| msgid "Download Selected Files"
+#~ msgctxt "delete all finished transfers"
+#~ msgid "Remove All Finished"
+#~ msgstr "下載選擇的檔案"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgctxt "redownload selected transfer item"
+#~ msgid "Redownload Selected"
+#~ msgstr "完成下載"
+
+#, fuzzy
+#~ msgid "Start / Resume Selected"
+#~ msgstr "沒有選擇檔案"
+
+#, fuzzy
+#~ msgid "Stop Selected"
+#~ msgstr "沒有選擇檔案"
+
+#, fuzzy
+#~ msgid "Stop"
+#~ msgstr "已停止"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Remove"
+#~ msgstr "開啟傳輸"
+
+#, fuzzy
+#~ msgid "Open Destination"
+#~ msgstr "開啟目的地(&D)"
+
+#, fuzzy
+#~ msgid "Open File"
+#~ msgstr "開啟檔案(&F)"
+
+#, fuzzy
+#~ msgid "Show Details"
+#~ msgstr "saviro.tw@yahoo.com.tw,wwycheuk@netvigator.com"
+
+#, fuzzy
+#~ msgid "Copy URL to Clipboard"
+#~ msgstr "複製 URL 到剪貼簿(&C)"
+
+#, fuzzy
+#~ msgid "&Transfer History"
+#~ msgstr "開啟傳輸："
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "&Group Settings"
+#~ msgstr "預設的資料夾:"
+
+#, fuzzy
+#~ msgid "&Transfer Settings"
+#~ msgstr " 傳輸： %1"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "Import &Links..."
+#~ msgstr "沒有連結"
+
+#, fuzzy
+#~| msgid ""
+#~| "This is the first time that you have run KGet.\n"
+#~| "Do you want to use KGet as Download Manager for Konqueror?"
+#~ msgid ""
+#~ "This is the first time you have run KGet.\n"
+#~ "Would you like to enable KGet as the download manager for Konqueror?"
+#~ msgstr ""
+#~ "這是你第一次執行 KGet 。\n"
+#~ "要 KGet 成為 Konqueror 的下載管理員嗎？"
+
+#, fuzzy
+#~ msgid "Konqueror Integration"
+#~ msgstr "Konqueror 整合"
+
+#~ msgid "Enable"
+#~ msgstr "啟用"
+
+#~ msgid "Do Not Enable"
+#~ msgstr "不啟用"
+
+#, fuzzy
+#~| msgid ""
+#~| "Some transfers are still running.\n"
+#~| "Are you sure you want to quit KGet?"
+#~ msgid ""
+#~ "Some transfers are still running.\n"
+#~ "Are you sure you want to close KGet?"
+#~ msgstr ""
+#~ "有傳輸仍在運作。\n"
+#~ "您確定您要關閉 KGet 嗎？"
+
+#, fuzzy
+#~ msgid "Enter Group Name"
+#~ msgstr "Tse-Chun Ho,Walter Cheuk"
+
+#, fuzzy
+#~ msgid "Group name:"
+#~ msgstr "Tse-Chun Ho,Walter Cheuk"
+
+#, fuzzy
+#~| msgid "Are you sure you want to delete this transfer?"
+#~ msgid "Are you sure you want to delete the selected transfer?"
+#~ msgid_plural "Are you sure you want to delete the selected transfers?"
+#~ msgstr[0] "你確定要刪除這筆傳輸嗎？"
+
+#, fuzzy
+#~ msgid "Confirm transfer delete"
+#~ msgstr "開啟傳輸："
+
+#, fuzzy
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Tse-Chun Ho,Walter Cheuk"
+
+#, fuzzy
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "saviro.tw@yahoo.com.tw,wwycheuk@netvigator.com"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Automatic verification:"
+#~ msgstr "說明"
+
+#, fuzzy
+#~| msgid "Automation Options"
+#~ msgid "Automatic verification"
+#~ msgstr "自動化選項"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Keyservers:"
+#~ msgstr "速度"
+
+#, fuzzy
+#~| msgid "Move to &End"
+#~ msgid "Move &Up"
+#~ msgstr "移至結尾(&E)"
+
+#, fuzzy
+#~| msgid "Move to &End"
+#~ msgid "Move &Down"
+#~ msgstr "移至結尾(&E)"
+
+#, fuzzy
+#~ msgid "Rename"
+#~ msgstr "預設的資料夾"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Limit Maximum Downloads Per Group"
+#~ msgstr "完成下載"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of downloads:"
+#~ msgstr "重試的次數："
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed Limit"
+#~ msgstr "速度"
+
+#, fuzzy
+#~ msgid "Global download limit:"
+#~ msgstr "下載已續傳"
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid " KiB/s"
+#~ msgstr " %1 KB/秒"
+
+#, fuzzy
+#~ msgid "Global upload limit:"
+#~ msgstr "下載已續傳"
+
+#, fuzzy
+#~ msgid "Per transfer:"
+#~ msgstr "開啟傳輸(&T)"
+
+#, fuzzy
+#~ msgid "Reconnect on Error or Broken Connection"
+#~ msgstr "斷線時"
+
+#~ msgid "Number of retries:"
+#~ msgstr "重試的次數："
+
+#, fuzzy
+#~ msgid "Retry after:"
+#~ msgstr "在這之後重新連線："
+
+#, fuzzy
+#~ msgid "After Completing Downloads"
+#~ msgstr "完成下載後自動關閉"
+
+#, fuzzy
+#~ msgid "Auto shutdown"
+#~ msgstr "自動關閉開啟。"
+
+#, fuzzy
+#~ msgid "Auto disconnect"
+#~ msgstr "自動斷線開啟。"
+
+#, fuzzy
+#~ msgid "Enable Web Interface"
+#~ msgstr "使用動畫"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Port:"
+#~ msgstr "字型:"
+
+#, fuzzy
+#~ msgid "Startup"
+#~ msgstr "重新開始(&S)"
+
+#, fuzzy
+#~ msgid "Enable animations"
+#~ msgstr "使用動畫"
+
+#, fuzzy
+#~ msgid "Show drop target"
+#~ msgstr "顯示拖放目標"
+
+#, fuzzy
+#~ msgid "Enable system tray icon"
+#~ msgstr "使用動畫"
+
+#, fuzzy
+#~| msgid "All the downloads are finished."
+#~ msgid "Execute action after all downloads have been finished:"
+#~ msgstr "所有下載已完成。"
+
+#, fuzzy
+#~ msgid "At startup:"
+#~ msgstr "重新開始(&S)"
+
+#, fuzzy
+#~ msgid "Restore Download State"
+#~ msgstr "下載已續傳"
+
+#, fuzzy
+#~ msgid "Start All Downloads"
+#~ msgstr "標示部份下載的檔案"
+
+#, fuzzy
+#~ msgid "Stop All Downloads"
+#~ msgstr "標示部份下載的檔案"
+
+#, fuzzy
+#~ msgid "History"
+#~ msgstr "開啟傳輸："
+
+#, fuzzy
+#~ msgid "History backend:"
+#~ msgstr "開啟傳輸："
+
+#, fuzzy
+#~ msgid "Use as download manager for Konqueror:"
+#~ msgstr "使用 KGet 為 Konqueror 的下載管理員"
+
+#, fuzzy
+#~ msgid "Monitor clipboard for files to download"
+#~ msgstr "您未有選擇要下載的檔案。"
+
+#, fuzzy
+#~| msgid "Local File Name"
+#~ msgid "Engine Name"
+#~ msgstr "本機檔案名稱"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of connections per URL:"
+#~ msgstr "重試的次數："
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgid "File Settings"
+#~ msgstr "正在排程"
+
+#, fuzzy
+#~| msgid "Local File Name"
+#~ msgid "Filename:"
+#~ msgstr "本機檔案名稱"
+
+#, fuzzy
+#~| msgid "Log Window"
+#~ msgid "Login Info"
+#~ msgstr "記錄視窗"
+
+#, fuzzy
+#~ msgid "Username:"
+#~ msgstr "預設的資料夾"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Path:"
+#~ msgstr "字型:"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Description:"
+#~ msgstr "說明"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of simultaneous file downloads:"
+#~ msgstr "重試的次數："
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of mirrors per file:"
+#~ msgstr "重試的次數："
+
+#, fuzzy
+#~ msgid "Mode:"
+#~ msgstr "資料夾"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Remove Tracker"
+#~ msgstr "開啟傳輸"
+
+#, fuzzy
+#~ msgid "Update Trackers"
+#~ msgstr "開啟傳輸(&T)"
+
+#, fuzzy
+#~ msgid "Remove Webseed"
+#~ msgstr "續傳(&R)"
+
+#, fuzzy
+#~| msgid "Total"
+#~ msgid "Total:"
+#~ msgstr "總計"
+
+#, fuzzy
+#~ msgid "Downloaded:"
+#~ msgstr "下載已續傳"
+
+#, fuzzy
+#~| msgid " Size: %1 "
+#~ msgid "Size:"
+#~ msgstr " 大小： %1 "
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of chunks found:"
+#~ msgstr "重試的次數："
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of chunks failed:"
+#~ msgstr "重試的次數："
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of chunks not downloaded:"
+#~ msgstr "重試的次數："
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of chunks downloaded:"
+#~ msgstr "重試的次數："
+
+#, fuzzy
+#~ msgid "Stats"
+#~ msgstr "重新開始(&S)"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Seeders:"
+#~ msgstr "速度"
+
+#, fuzzy
+#~ msgid "Download speed:"
+#~ msgstr "下載已續傳"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Upload speed:"
+#~ msgstr "速度"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgctxt "source-file"
+#~ msgid "Source:"
+#~ msgstr "來源："
+
+#, fuzzy
+#~ msgid "Upload limit per transfer:"
+#~ msgstr "下載已續傳"
+
+#, fuzzy
+#~| msgid "Limits"
+#~ msgid "No Limit"
+#~ msgstr "限制"
+
+#, fuzzy
+#~ msgid "Download limit per transfer:"
+#~ msgstr "下載已續傳"
+
+#~ msgid "Folders"
+#~ msgstr "資料夾"
+
+#, fuzzy
+#~| msgid "Default Folder"
+#~ msgid "Default torrent folder:"
+#~ msgstr "預設的資料夾"
+
+#, fuzzy
+#~| msgid "Default Folder"
+#~ msgid "Default temporary folder"
+#~ msgstr "預設的資料夾"
+
+#, fuzzy
+#~| msgid "Resumed"
+#~ msgid "Required"
+#~ msgstr "已續傳"
+
+#, fuzzy
+#~| msgid "Total size is %1 bytes"
+#~ msgid "File size (in bytes):"
+#~ msgstr "總大小為 %1 位元組"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Verification:"
+#~ msgstr "說明"
+
+#, fuzzy
+#~ msgid "*.metalink *.meta4|Metalink file (*.metalink *.meta4)"
+#~ msgstr "開啟檔案(&F)"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgid "Date and time:"
+#~ msgstr "剩下的時間"
+
+#, fuzzy
+#~ msgid "Version:"
+#~ msgstr "延伸檔名"
+
+#, fuzzy
+#~| msgid "Log"
+#~ msgid "Logo:"
+#~ msgstr "記錄檔"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "Name:"
+#~ msgstr "名稱"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Name of the publisher"
+#~ msgstr "重試的次數："
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "URL to the publisher"
+#~ msgstr "重試的次數："
+
+#, fuzzy
+#~ msgctxt "Files as in files on a server"
+#~ msgid "Files:"
+#~ msgstr "開啟檔案(&F)"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "&Import Links"
+#~ msgstr "沒有連結"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgid "Contains"
+#~ msgstr "連線數"
+
+#, fuzzy
+#~ msgid "Does Not Contain"
+#~ msgstr "再次下載"
+
+#, fuzzy
+#~ msgctxt "Check as in mark, not as in verify"
+#~ msgid "Chec&k Selected"
+#~ msgstr "沒有選擇檔案"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of connections:"
+#~ msgstr "重試的次數："
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a URL"
+#~ msgstr "乙太網絡"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Priority:"
+#~ msgstr "字型:"
+
+#, fuzzy
+#~| msgid "Location (URL)"
+#~ msgid "Location:"
+#~ msgstr "地點 (URL)"
+
+#, fuzzy
+#~| msgid "Offline mode"
+#~ msgctxt "View modes"
+#~ msgid "View Modes"
+#~ msgstr "離線模式"
+
+#, fuzzy
+#~ msgid "Date"
+#~ msgstr "重新開始(&S)"
+
+#, fuzzy
+#~ msgid "Filter History"
+#~ msgstr "開啟傳輸："
+
+#, fuzzy
+#~ msgctxt "delete selected transfer"
+#~ msgid "Delete Selected"
+#~ msgstr "沒有選擇檔案"
+
+#, fuzzy
+#~ msgid "Download"
+#~ msgstr "下載已續傳"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgctxt "hash as a hash of type md5, sha1 etc."
+#~ msgid "Hash:"
+#~ msgstr "字型:"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgid "Remaining Time:"
+#~ msgstr "剩下的時間"
+
+#, fuzzy
+#~ msgid "Transfer Settings"
+#~ msgstr " 傳輸： %1"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Download Destination:"
+#~ msgstr "目的地："
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgctxt "No value has been set"
+#~ msgid "Not set"
+#~ msgstr "沒有連結"
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid " KiB"
+#~ msgstr " %1 KB/秒"
+
+#, fuzzy
+#~ msgid "Upload Limit:"
+#~ msgstr "下載已續傳"
+
+#, fuzzy
+#~ msgid "Download Limit:"
+#~ msgstr "下載已續傳"
+
+#, fuzzy
+#~| msgid "Maximum open connections:"
+#~ msgid "Maximum Share Ratio:"
+#~ msgstr "開啟連線的最大數目:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgctxt "verification of the download (e.g. by using MD5)"
+#~ msgid "Verification"
+#~ msgstr "目的地："
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Creation:"
+#~ msgstr "目的地："
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Expiration:"
+#~ msgstr "目的地："
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Group Settings"
+#~ msgstr "預設的資料夾:"
+
+#, fuzzy
+#~| msgid "Default Folder"
+#~ msgid "Default folder:"
+#~ msgstr "預設的資料夾"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Maximum download speed:"
+#~ msgstr "完成下載"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Maximum upload speed:"
+#~ msgstr "完成下載"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Destination:"
+#~ msgstr "目的地："
+
+#, fuzzy
+#~ msgid "Transfer group:"
+#~ msgstr "開啟傳輸(&T)"
+
+#, fuzzy
+#~ msgid "&File"
+#~ msgstr "開啟檔案(&F)"
+
+#, fuzzy
+#~ msgid "&Downloads"
+#~ msgstr "下載已續傳"
+
+#~ msgid "There are no links in the active frame of the current HTML page."
+#~ msgstr "在目前網頁的頁框中沒有連結。"
+
+#, fuzzy
+#~ msgid "Form"
+#~ msgstr "或"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Remove Tag"
+#~ msgstr "開啟傳輸"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Tag Settings for the groups"
+#~ msgstr "預設的資料夾:"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgid "Tag Settings"
+#~ msgstr "正在排程"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Available tags:"
+#~ msgstr "開啟傳輸"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a new Tag"
+#~ msgstr "乙太網絡"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a new tag"
+#~ msgstr "乙太網絡"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file %1 : %2"
+#~ msgstr ""
+#~ "無法讀取檔案：\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Failed to seek file %1 : %2"
+#~ msgstr ""
+#~ "無法讀取檔案：\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Error while reading file:\n"
+#~| "%1"
+#~ msgid "Error reading from %1"
+#~ msgstr ""
+#~ "讀取檔案時發生錯誤：\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not write to file:\n"
+#~| "%1"
+#~ msgid "Failed to write to file %1 : %2"
+#~ msgstr ""
+#~ "無法寫入檔案：\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open index file %1 : %2"
+#~ msgstr ""
+#~ "無法開啟檔案：\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot create file %1 : %2"
+#~ msgstr ""
+#~ "無法讀取檔案：\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not write to file:\n"
+#~| "%1"
+#~ msgid "Failed to write last chunk to DND file : %1"
+#~ msgstr ""
+#~ "無法寫入檔案：\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open file %1 : %2"
+#~ msgstr ""
+#~ "無法開啟檔案：\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgctxt "OK as in 'finished'"
+#~| msgid "OK"
+#~ msgid "OK"
+#~ msgstr "完成"
+
+#, fuzzy
+#~| msgid "To: %1"
+#~ msgid "Error: %1"
+#~ msgstr "到： %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "The specified file does not exist:\n"
+#~| "%1"
+#~ msgid "The directory %1 does not exist"
+#~ msgstr ""
+#~ "指定的檔案不存在：\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Not Deleted"
+#~ msgid "Not started"
+#~ msgstr "沒有刪除"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgctxt "Status of a torrent file"
+#~ msgid "Seeding"
+#~ msgstr "正在排程"
+
+#, fuzzy
+#~ msgid "Downloading"
+#~ msgstr "下載已續傳"
+
+#, fuzzy
+#~| msgid "Stopped"
+#~ msgid "Stopped"
+#~ msgstr "已停止"
+
+#, fuzzy
+#~| msgid "Queueing"
+#~ msgid "Queued for seeding"
+#~ msgstr "正在佇列"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Queued for downloading"
+#~ msgstr "重試的次數："
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open file %1: %2"
+#~ msgstr ""
+#~ "無法開啟檔案：\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot create index file: %1"
+#~ msgstr ""
+#~ "無法讀取檔案：\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open file : %1 : %2"
+#~ msgstr ""
+#~ "無法開啟檔案：\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Stay Connected"
+#~ msgid "Not connected"
+#~ msgstr "保持連線"
+
+#, fuzzy
+#~| msgid "Connection Type"
+#~ msgid "Connection closed"
+#~ msgstr "連線類型"
+
+#, fuzzy
+#~| msgid "Stay Connected"
+#~ msgid "Connected"
+#~ msgstr "保持連線"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgid "Connecting"
+#~ msgstr "連線數"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "Not in use"
+#~ msgstr "沒有連結"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not write to file:\n"
+#~| "%1"
+#~ msgid "Cannot write to %1 : %2"
+#~ msgstr ""
+#~ "無法寫入檔案：\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Copy file from: %1"
+#~ msgid "Cannot read from %1"
+#~ msgstr "從 %1 複製檔案"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open log file %1 : %2"
+#~ msgstr ""
+#~ "無法開啟檔案：\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot create directory %1"
+#~ msgstr ""
+#~ "無法讀取檔案：\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file: %1"
+#~ msgstr ""
+#~ "無法讀取檔案：\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot seek in file : %1"
+#~ msgstr ""
+#~ "無法開啟檔案：\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgid "Connections"
+#~ msgstr "連線數"
+
+#, fuzzy
+#~ msgid "Tracker"
+#~ msgstr "開啟傳輸(&T)"
+
+#, fuzzy
+#~| msgid "Not Deleted"
+#~ msgid "Delete"
+#~ msgstr "沒有刪除"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Details for: %1"
+#~ msgstr "預設的資料夾:"
+
+#, fuzzy
+#~ msgid "All downloads"
+#~ msgstr "標示部份下載的檔案"
+
+#, fuzzy
+#~ msgid "Finished downloads"
+#~ msgstr "已完成"
+
+#, fuzzy
+#~ msgid "Transfers:"
+#~ msgstr "開啟傳輸(&T)"
+
+#, fuzzy
+#~ msgid "Downloads"
+#~ msgstr "下載已續傳"
+
+#, fuzzy
+#~ msgid "Transfer details:"
+#~ msgstr " 傳輸： %1"
+
+#, fuzzy
+#~ msgid "Transfer List"
+#~ msgstr "開啟傳輸："
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of threads:"
+#~ msgstr "重試的次數："
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Name of the license"
+#~ msgstr "重試的次數："
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "URL to the license"
+#~ msgstr "重試的次數："
+
+#, fuzzy
+#~| msgid "Delayed"
+#~ msgctxt "The transfer is delayed"
+#~ msgid "Delayed"
+#~ msgstr "已延遲"
+
+#~ msgid ""
+#~ "Destination file \n"
+#~ "%1\n"
+#~ "already exists.\n"
+#~ "Do you want to overwrite it?"
+#~ msgstr ""
+#~ "目標檔案\n"
+#~ "%1\n"
+#~ "已存在。\n"
+#~ "是否要覆寫它？"
+
+#, fuzzy
+#~ msgid "Overwrite destination"
+#~ msgstr "開啟目的地(&D)"
+
+#~ msgid "Queued"
+#~ msgstr "已佇列"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Current Tracker"
+#~ msgstr "開啟傳輸"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgid "Scrape"
+#~ msgstr "來源："
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Available Trackers"
+#~ msgstr "開啟傳輸"
+
+#, fuzzy
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Delete Selected"
+#~ msgstr "沒有選擇檔案"
+
+#, fuzzy
+#~ msgid "We are sorry"
+#~ msgstr "上線了！"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Rename transfer"
+#~ msgstr "開啟傳輸"
+
+#, fuzzy
+#~ msgid "Download URL again?"
+#~ msgstr "再次下載"
+
+#, fuzzy
+#~ msgctxt "file in a filsystem"
+#~ msgid "File"
+#~ msgstr "開啟檔案(&F)"
+
+#, fuzzy
+#~ msgid "Are you sure that you want to remove all selected groups?"
+#~ msgstr "你確定要刪除這些傳輸嗎？"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "Name"
+#~ msgstr "名稱"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgid "Remaining Time"
+#~ msgstr "剩下的時間"
+
+#, fuzzy
+#~ msgid "KGet - Download Manager"
+#~ msgstr "下載管理員"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgctxt "@label transfer source"
+#~ msgid "Source:"
+#~ msgstr "來源："
+
+#, fuzzy
+#~| msgid "0 B/s"
+#~ msgid "kBi"
+#~ msgstr "0 B/秒"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file : %1"
+#~ msgstr ""
+#~ "無法讀取檔案：\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "&Transfer History..."
+#~ msgstr "開啟傳輸："
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "&Group Settings..."
+#~ msgstr "預設的資料夾:"
+
+#, fuzzy
+#~ msgid "&Transfer Settings..."
+#~ msgstr " 傳輸： %1"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed limit"
+#~ msgstr "速度"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Download Speed:"
+#~ msgstr "完成下載"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Upload Speed:"
+#~ msgstr "速度"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "&Import links"
+#~ msgstr "沒有連結"
+
+#, fuzzy
+#~| msgid "Not Deleted"
+#~ msgid "&Delete"
+#~ msgstr "沒有刪除"
+
+#, fuzzy
+#~ msgid "Default Download Folders"
+#~ msgstr "預設的資料夾"
+
+#, fuzzy
+#~| msgid "Extension"
+#~ msgid "File Extension"
+#~ msgstr "延伸檔名"
+
+#~ msgid "Default Folder"
+#~ msgstr "預設的資料夾"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Set as default folder"
+#~ msgstr "預設的資料夾:"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "extRegExp, defaultFolder"
+#~ msgstr "預設的資料夾:"
+
+#, fuzzy
+#~ msgid "Downloading.."
+#~ msgstr "下載已續傳"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Advanced-Details for %1"
+#~ msgstr "預設的資料夾:"
+
+#, fuzzy
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading.."
+#~ msgstr "下載已續傳"
+
+#, fuzzy
+#~ msgid "Downloads number:"
+#~ msgstr "下載管理員"
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 GB"
+#~ msgstr " %1/秒 "
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 MB"
+#~ msgstr " %1/秒 "
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid "%1 KB"
+#~ msgstr " %1 KB/秒"
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 B"
+#~ msgstr " %1/秒 "
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid "%1 KB/s"
+#~ msgstr " %1 KB/秒"
+
+#, fuzzy
+#~| msgid "0 B/s"
+#~ msgid "kBi/s"
+#~ msgstr "0 B/秒"
+
+#~ msgid "Not Deleted"
+#~ msgstr "沒有刪除"
+
+#, fuzzy
+#~ msgid "Konqueror Integration disabled"
+#~ msgstr "Konqueror 整合"
+
+#~ msgid "Show main window at startup"
+#~ msgstr "啟動時顯示主視窗"
+
+#, fuzzy
+#~ msgid "<speed>"
+#~ msgstr "速度"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgid "<remaining time>"
+#~ msgstr "剩下的時間"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file %1"
+#~ msgstr ""
+#~ "無法讀取檔案：\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Error while writing file:\n"
+#~| "%1"
+#~ msgid "Error writing to %1 : %2"
+#~ msgstr ""
+#~ "寫入檔案時發生錯誤：\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Error while writing file:\n"
+#~| "%1"
+#~ msgid "Error writing to %1"
+#~ msgstr ""
+#~ "寫入檔案時發生錯誤：\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "List All Links"
+#~ msgid "&List Links"
+#~ msgstr "列出所有連結"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file"
+#~ msgstr ""
+#~ "無法讀取檔案：\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Normal"
+#~ msgctxt "Download normally(not as first or last"
+#~ msgid "Normal"
+#~ msgstr "標準"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Bittorrent-Speedlimits"
+#~ msgstr "速度"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed-Limits"
+#~ msgstr "速度"
+
+#, fuzzy
+#~ msgid " of "
+#~ msgstr "%1 / %2"
+
+#, fuzzy
+#~ msgid "Download Folder"
+#~ msgstr "預設的資料夾"
+
+#, fuzzy
+#~ msgid "Hide Drop Target"
+#~ msgstr "隱藏拖放目標(&T)"
+
+#, fuzzy
+#~ msgid "Hide drop target"
+#~ msgstr "隱藏拖放目標(&T)"
+
+#~ msgid ""
+#~ "Already saving URL\n"
+#~ "%1"
+#~ msgstr ""
+#~ "已經在儲存 URL\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Default Group"
+#~ msgstr "預設的資料夾"
+
+#, fuzzy
+#~ msgid "DlgAdvanced"
+#~ msgstr "進階"
+
+#, fuzzy
+#~ msgid "Delete Group."
+#~ msgstr "預設的資料夾"
+
+#, fuzzy
+#~ msgid "Hide Me"
+#~ msgstr "檔案名稱"
+
+#~ msgid ""
+#~ "Each row consists of exactly one\n"
+#~ "extension type and one folder."
+#~ msgstr "每一行由一個延伸類型和一個資料夾組成。"
+
+#~ msgid "&Dock"
+#~ msgstr "停泊(&D)"
+
+#~ msgid "Source Label"
+#~ msgstr "來源標籤："
+
+#~ msgid "&Keep this window open after the operation is complete."
+#~ msgstr "操作結束後保持這個視窗開啟(&K)。"
+
+#~ msgid "Not resumed"
+#~ msgstr "未續傳"
+
+#~ msgid "Automation"
+#~ msgstr "自動化"
+
+#~ msgid "System"
+#~ msgstr "系統"
+
+#~ msgid "Maximize"
+#~ msgstr "放到最大"
+
+#~ msgid "Minimize"
+#~ msgstr "縮到最小"
+
+#~ msgid ""
+#~ "This is a folder and not a file:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "這是個目錄而不是檔案：\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "You do not have read permission for the file:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "您沒有權限讀取這個檔案：\n"
+#~ "%1"
+
+#~ msgid "Could only read %1 bytes of %2."
+#~ msgstr "只能讀取 %2 中的 %1 個位元組。"
+
+#~ msgid ""
+#~ "File %1 exists.\n"
+#~ "Do you want to replace it?"
+#~ msgstr ""
+#~ "檔案 %1 已存在。\n"
+#~ "是否要取代它？"
+
+#~ msgid ""
+#~ "Failed to make a backup copy of %1.\n"
+#~ "Continue anyway?"
+#~ msgstr ""
+#~ "無法建立 %1 的備份。\n"
+#~ "仍要繼續？"
+
+#~ msgid ""
+#~ "Could not open file for writing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "無法開啟檔案進行寫入：\n"
+#~ "%1"
+
+#~ msgid "Could only write %1 bytes of %2."
+#~ msgstr "只能寫入 %2 中的 %1 個位元組。"
+
+#~ msgid "Welcome to KGet"
+#~ msgstr "歡迎使用 KGet"
+
+#~ msgid "Could not create valid socket"
+#~ msgstr "無法建立有效的 socket"
+
+#~ msgid "Offline"
+#~ msgstr "離線"
+
+#~ msgid "Starting offline"
+#~ msgstr "開始離線"
+
+#~ msgid "&Open Individual Window"
+#~ msgstr "開啟個別視窗(&O)"
+
+#~ msgid "Move to &Beginning"
+#~ msgstr "移至開頭(&B)"
+
+#~ msgid "&Pause"
+#~ msgstr "暫停(&P)"
+
+#~ msgid "&Queue"
+#~ msgstr "排入佇列(&Q)"
+
+#~ msgid "&Timer"
+#~ msgstr "計時器(&T)"
+
+#~ msgid "De&lay"
+#~ msgstr "延遲(&L)"
+
+#~ msgid "Use &Animation"
+#~ msgstr "使用動畫(&A)"
+
+#~ msgid "&Expert Mode"
+#~ msgstr "專家模式(&E)"
+
+#~ msgid "&Use-Last-Folder Mode"
+#~ msgstr "「使用最近資料夾」模式(&U)"
+
+#~ msgid "Auto-&Disconnect Mode"
+#~ msgstr "自動斷線模式(&D)"
+
+#~ msgid "Auto-S&hutdown Mode"
+#~ msgstr "自動關閉模式(&H)"
+
+#~ msgid "&Offline Mode"
+#~ msgstr "離線模式(&O)"
+
+#~ msgid "Show &Log Window"
+#~ msgstr "顯示記錄視窗(&L)"
+
+#~ msgid "Enable &KGet as Konqueror Download Manager"
+#~ msgstr "將 &KGet 設定為 Konqueror 的下載管理員"
+
+#~ msgid " Files: %1 "
+#~ msgstr " 檔案： %1"
+
+#~ msgid " Size: %1 KB "
+#~ msgstr " 大小: %1 KB "
+
+#~ msgid " Time: %1 "
+#~ msgstr " 時間： %1 "
+
+#~ msgid ""
+#~ "<b>Resume</b> button starts selected transfers\n"
+#~ "and sets their mode to <i>queued</i>."
+#~ msgstr ""
+#~ "<b>續傳</b>按鈕開始所選擇的檔案傳輸\n"
+#~ "並設定它們的模式至<i>已佇列</i>。"
+
+#~ msgid ""
+#~ "<b>Pause</b> button stops selected transfers\n"
+#~ "and sets their mode to <i>delayed</i>."
+#~ msgstr ""
+#~ "<b>暫停</b>按鈕停止所選擇的檔案傳輸\n"
+#~ "並設定它們的模式至 <i>已延遲</i>。"
+
+#~ msgid ""
+#~ "<b>Delete</b> button removes selected transfers\n"
+#~ "from the list."
+#~ msgstr "<b>刪除</b>按鈕從列表移除所選擇的檔案傳輸。"
+
+#~ msgid ""
+#~ "<b>Restart</b> button is a convenience button\n"
+#~ "that simply does Pause and Resume."
+#~ msgstr "<b>重新開始</b>按鈕讓您方便的暫停或恢復傳輸。"
+
+#~ msgid ""
+#~ "<b>Queued</b> button sets the mode of selected\n"
+#~ "transfers to <i>queued</i>.\n"
+#~ "\n"
+#~ "It is a radio button -- you can choose between\n"
+#~ "three modes."
+#~ msgstr ""
+#~ "<b>已佇列</b>按鈕將所選擇的檔案傳輸模式設定為<i>已佇列</i>。\n"
+#~ "\n"
+#~ "它是個單選按鈕——你可以在三種模式中選擇一種。"
+
+#~ msgid ""
+#~ "<b>Scheduled</b> button sets the mode of selected\n"
+#~ "transfers to <i>scheduled</i>.\n"
+#~ "\n"
+#~ "It is a radio button -- you can choose between\n"
+#~ "three modes."
+#~ msgstr ""
+#~ "<b>已排程</b>按鈕將所選擇的檔案傳輸模式設定為<i>已排程</i>。\n"
+#~ "\n"
+#~ "它是一個單選按鈕——你可以在三種模式中選擇一種。"
+
+#~ msgid ""
+#~ "<b>Delayed</b> button sets the mode of selected\n"
+#~ "transfers to <i>delayed</i>.This also causes the selected transfers to "
+#~ "stop.\n"
+#~ "\n"
+#~ "It is a radio button -- you can choose between\n"
+#~ "three modes."
+#~ msgstr ""
+#~ "<b>已延遲</b>按鈕將所選擇的檔案傳輸\n"
+#~ "模式設定為<i>已延遲</i>。它也會令所選擇的檔案\n"
+#~ "停止傳輸。\n"
+#~ "\n"
+#~ "它是一個單選按鈕——你可以在三種模式中選擇一種。"
+
+#~ msgid ""
+#~ "<b>Preferences</b> button opens a preferences dialog\n"
+#~ "where you can set various options.\n"
+#~ "\n"
+#~ "Some of these options can be more easily set using the toolbar."
+#~ msgstr ""
+#~ "<b>偏好設定</b>按鈕開啟偏好設定對話框，讓您設定多種選項。\n"
+#~ "\n"
+#~ "使用這工具列令您某容易些設定某些選項。"
+
+#~ msgid ""
+#~ "<b>Log window</b> button opens a log window.\n"
+#~ "The log window records all program events that occur\n"
+#~ "while KGet is running."
+#~ msgstr ""
+#~ "<b>記錄視窗</b>按鈕開啟記錄視窗。\n"
+#~ "記錄視窗記錄所有 KGet 執行時發生的程式事件。"
+
+#~ msgid ""
+#~ "<b>Paste transfer</b> button adds a URL from\n"
+#~ "the clipboard as a new transfer.\n"
+#~ "\n"
+#~ "This way you can easily copy&paste URLs between\n"
+#~ "applications."
+#~ msgstr ""
+#~ "<b>貼上傳輸</b>按鈕會自剪貼簿增加一個 URL 為新的傳輸。\n"
+#~ "\n"
+#~ "這個方法讓您在應用程式之間容易地複製和貼上 URL 。"
+
+#~ msgid ""
+#~ "<b>Expert mode</b> button toggles the expert mode\n"
+#~ "on and off.\n"
+#~ "\n"
+#~ "Expert mode is recommended for experienced users.\n"
+#~ "When set, you will not be \"bothered\" by confirmation\n"
+#~ "messages.\n"
+#~ "<b>Important!</b>\n"
+#~ "Turn it on if you are using auto-disconnect or\n"
+#~ "auto-shutdown features and you want KGet to disconnect \n"
+#~ "or shut down without asking."
+#~ msgstr ""
+#~ "<b>專家模式</b>按鈕會啟動或關閉專家模式；\n"
+#~ "按一下啟動，再按則停止。\n"
+#~ "\n"
+#~ "專家模式供熟練使用者使用。\n"
+#~ "當啟動了專家模式，您將不會被確定訊息「打擾」。\n"
+#~ "<b>重要事項！</b>\n"
+#~ "如果您使用自動斷線或自動關閉功能，\n"
+#~ "並且您想要 KGet 斷線或關閉而不而事先詢問，請啟動它。"
+
+#~ msgid ""
+#~ "<b>Use last folder</b> button toggles the\n"
+#~ "use-last-folder feature on and off.\n"
+#~ "\n"
+#~ "When set, KGet will ignore the folder settings\n"
+#~ "and put all new added transfers into the folder\n"
+#~ "where the last transfer was put."
+#~ msgstr ""
+#~ "<b>使用最近資料夾</b>按鈕會啟動或關閉「使用最近資料夾」\n"
+#~ "模式；按一下啟動，再按則停止。\n"
+#~ "\n"
+#~ "當啟動了這項功能， KGet 將會忽略目錄設定值\n"
+#~ "並且將所有新增的傳輸檔案放置到最近一次傳輸所放置的目錄。"
+
+#~ msgid ""
+#~ "<b>Auto disconnect</b> button toggles the auto-disconnect\n"
+#~ "mode on and off.\n"
+#~ "\n"
+#~ "When set, KGet will disconnect automatically\n"
+#~ "after all queued transfers are finished.\n"
+#~ "\n"
+#~ "<b>Important!</b>\n"
+#~ "Also turn on the expert mode when you want KGet\n"
+#~ "to disconnect without asking."
+#~ msgstr ""
+#~ "<b>自動斷線</b>按鈕會啟動或關閉自動斷線\n"
+#~ "模式；按一下啟動，再按則停止。\n"
+#~ "\n"
+#~ "當啟動了這項功能， KGet 將會在所有已佇列傳輸完成後\n"
+#~ "自動斷線。\n"
+#~ "\n"
+#~ "<b>重要事項！</b>\n"
+#~ "如您希望 KGet 斷線而不要事先詢問您，請同時啟動\n"
+#~ "專家模式。"
+
+#~ msgid ""
+#~ "<b>Auto shutdown</b> button toggles the auto-shutdown\n"
+#~ "mode on and off.\n"
+#~ "\n"
+#~ "When set, KGet will quit automatically\n"
+#~ "after all queued transfers are finished.\n"
+#~ "<b>Important!</b>\n"
+#~ "Also turn on the expert mode when you want KGet\n"
+#~ "to quit without asking."
+#~ msgstr ""
+#~ "<b>自動關閉</b>按鈕會啟動或關閉自動關閉\n"
+#~ "模式；按一下啟動，再按則停止。\n"
+#~ "\n"
+#~ "當啟動了這項功能， KGet 將會在所有已佇列\n"
+#~ "傳輸完成後自動關閉。\n"
+#~ "\n"
+#~ "<b>重要事項！</b>\n"
+#~ "如您希望 KGet 關閉而不要事先詢問您，請同時開啟\n"
+#~ "專家模式。"
+
+#~ msgid ""
+#~ "<b>Offline mode</b> button toggles the offline mode\n"
+#~ "on and off.\n"
+#~ "\n"
+#~ "When set, KGet will act as if it was not connected\n"
+#~ "to the Internet.\n"
+#~ "\n"
+#~ "You can browse offline, while still being able to add\n"
+#~ "new transfers as queued."
+#~ msgstr ""
+#~ "<b>離線模式</b>按鈕會啟動或關閉離線模式\n"
+#~ "模式；按一下啟動，再按則停止。\n"
+#~ "\n"
+#~ "當啟動了這項功能， KGet 將會扮作沒有連結到\n"
+#~ "互聯網。\n"
+#~ "\n"
+#~ "您可以離線瀏覽，並且仍然可以新增傳輸到佇列中。"
+
+#~ msgid ""
+#~ "<b>Drop target</b> button toggles the window style\n"
+#~ "between a normal window and a drop target.\n"
+#~ "\n"
+#~ "When set, the main window will be hidden and\n"
+#~ "instead a small shaped window will appear.\n"
+#~ "\n"
+#~ "You can show/hide a normal window with a simple click\n"
+#~ "on a shaped window."
+#~ msgstr ""
+#~ "<b>拖放目標</b>按鈕會於一般視窗及拖放目標兩個\n"
+#~ "視窗風格間切換。\n"
+#~ "\n"
+#~ "開啟後，主視窗將會隱藏而一個小的成形視窗將會出現。\n"
+#~ "\n"
+#~ "你可以簡單地敲擊成形視窗以顯示或隱藏一般視窗。"
+
+#~ msgid ""
+#~ "*.kgt|*.kgt\n"
+#~ "*|All Files"
+#~ msgstr ""
+#~ "*.kgt|*.kgt\n"
+#~ "*|所有檔案"
+
+#~ msgid "Quitting..."
+#~ msgstr "正在關閉..."
+
+#~ msgid ""
+#~ "The transfer you wanted to delete completed before it could be deleted."
+#~ msgid_plural ""
+#~ "%n transfers you wanted to delete completed before they could be deleted."
+#~ msgstr[0] "%1 個您要刪除的傳輸在它們能被刪除之前已完成了。"
+
+#~ msgid "Stopping all jobs"
+#~ msgstr "正在停止所有工作"
+
+#~ msgid "Overwrite"
+#~ msgstr "覆寫"
+
+#~ msgid "Do Not Overwrite"
+#~ msgstr "不要覆寫"
+
+#~ msgid "<i>%1</i> has been added."
+#~ msgstr "已新增<i>%1</i>。"
+
+#~ msgid "1 download has been added."
+#~ msgid_plural "%n downloads have been added."
+#~ msgstr[0] "已新增 %1 個下載。"
+
+#~ msgid "Starting another queued job."
+#~ msgstr "正在開始另一個已佇列工作。"
+
+#~ msgid "Offline mode on."
+#~ msgstr "離線模式開啟。"
+
+#~ msgid "Offline mode off."
+#~ msgstr "離線模式關閉。"
+
+#~ msgid "Expert mode on."
+#~ msgstr "專家模式開啟。"
+
+#~ msgid "Expert mode off."
+#~ msgstr "專家模式關閉。"
+
+#~ msgid "Use last folder on."
+#~ msgstr "「使用最近資料夾」開啟。"
+
+#~ msgid "Use last folder off."
+#~ msgstr "「使用最近資料夾」關閉。"
+
+#~ msgid "Auto disconnect off."
+#~ msgstr "自動斷線關閉。"
+
+#~ msgid "Auto shutdown off."
+#~ msgstr "自動關閉關閉。"
+
+#~ msgid "Auto paste on."
+#~ msgstr "自動貼上開啟。"
+
+#~ msgid "Auto paste off."
+#~ msgstr "自動貼上關閉。"
+
+#~ msgid "<b>Transfers:</b> %1 "
+#~ msgstr "<b>傳輸：</b> %1"
+
+#~ msgid "<br /><b>Files:</b> %1 "
+#~ msgstr "<br /><b>檔案：</b> %1"
+
+#~ msgid "<br /><b>Size:</b> %1 "
+#~ msgstr "<br /><b>大小：</b> %1 "
+
+#~ msgid "<br /><b>Time:</b> %1 "
+#~ msgstr "<br /><b>時間：</b> %1 "
+
+#~ msgid "<br /><b>Speed:</b> %1/s"
+#~ msgstr "<br /><b>速度：</b> %1 "
+
+#~ msgid "Do you really want to disconnect?"
+#~ msgstr "你真的要斷線嗎？"
+
+#~ msgid "Disconnect"
+#~ msgstr "斷線"
+
+#~ msgid "Disconnecting..."
+#~ msgstr "正在斷線..."
+
+#, fuzzy
+#~ msgid "We are offline."
+#~ msgstr "離線了！"
+
+#~ msgid "Id"
+#~ msgstr "ID"
+
+#~ msgid "Mixed"
+#~ msgstr "已混合"
+
+#~ msgid "Separated"
+#~ msgstr "已分離"
+
+#~ msgid "Add new transfers as:"
+#~ msgstr "新增傳輸為："
+
+#~ msgid "Iconified"
+#~ msgstr "已圖示化"
+
+#~ msgid "Advanced individual windows"
+#~ msgstr "進階個別視窗"
+
+#~ msgid "Remove files from a list after success"
+#~ msgstr "成功後從列表中移除檔案"
+
+#~ msgid "Get file sizes"
+#~ msgstr "取得檔案大小"
+
+#~ msgid "Expert mode (do not prompt for Cancel or Delete)"
+#~ msgstr "專家模式（取消或刪除皆不詢問）"
+
+#~ msgid "Show individual windows"
+#~ msgstr "顯示個別視窗"
+
+#~ msgid " min"
+#~ msgstr " 分鐘"
+
+#~ msgid "Auto disconnect after completing downloads"
+#~ msgstr "完成下載後自動斷線"
+
+#, fuzzy
+#~ msgid "Autosave file list every:"
+#~ msgstr "每隔多久自動儲存檔案列表："
+
+#~ msgid "Timed disconnect"
+#~ msgstr "已設定時間的斷線"
+
+#~ msgid "Disconnect command:"
+#~ msgstr "斷線指令："
+
+#~ msgid "Auto paste from clipboard"
+#~ msgstr "從剪貼簿自動貼上"
+
+#, fuzzy
+#~ msgid "Reconnect Options"
+#~ msgstr "重新連接選項"
+
+#~ msgid "On login or timeout error"
+#~ msgstr "在登入或逾時的錯誤"
+
+#~ msgid "Timeout Options"
+#~ msgstr "逾時選項"
+
+#, fuzzy
+#~ msgid "If no data arrives in:"
+#~ msgstr "如果沒有資料在以下時間內抵達:"
+
+#, fuzzy
+#~ msgid "If server cannot resume:"
+#~ msgstr "如果伺服器不支援續傳:"
+
+#~ msgid "Permanent"
+#~ msgstr "永久"
+
+#~ msgid "PLIP"
+#~ msgstr "PLIP"
+
+#~ msgid "SLIP"
+#~ msgstr "SLIP"
+
+#~ msgid "PPP"
+#~ msgstr "PPP"
+
+#~ msgid "ISDN"
+#~ msgstr "ISDN"
+
+#~ msgid "Link number:"
+#~ msgstr "連結數："
+
+#~ msgid "Extension (* for all files):"
+#~ msgstr "延伸檔名（所有檔案用 * ）"
+
+#~ msgid "Limits Options"
+#~ msgstr "限制選項"
+
+#~ msgid "Minimum network bandwidth:"
+#~ msgstr "最小網絡頻寬:"
+
+#~ msgid "Maximum network bandwidth:"
+#~ msgstr "最大網絡頻寬:"
+
+#~ msgid " bytes/sec"
+#~ msgstr " 位元組/秒"
+
+#~ msgid "Window style:"
+#~ msgstr "視窗風格:"
+
+#~ msgid "Attempt number %1"
+#~ msgstr "嘗試次數 %1"
+
+#~ msgid "Stopping"
+#~ msgstr "正在停止"
+
+#~ msgid "Pausing"
+#~ msgstr "正在暫停"
+
+#~ msgid "Delaying"
+#~ msgstr "延遲中"
+
+#~ msgid "The file size does not match."
+#~ msgstr "檔案大小不符。"
+
+#~ msgid "File Size checked"
+#~ msgstr "已檢查檔案大小"
+
+#~ msgid "checking if file is in cache...no"
+#~ msgstr "正在檢查檔案是否已在快取中……沒有"
+
+#~ msgid "S"
+#~ msgstr "S"
+
+#~ msgid "%"
+#~ msgstr "%"

@@ -1,0 +1,81 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % French "INCLUDE">
+]>
+<article id="history" lang="&language;">
+<title
+>Barre latérale d'historique</title>
+<articleinfo>
+<authorgroup>
+<author
+>&Burkhard.Lueck;</author>
+&traducteurPierreBuard; 
+</authorgroup>
+
+<date
+>24/11/2009</date>
+<releaseinfo
+>&kde; 4.4</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Configuration du système</keyword>
+<keyword
+>historique</keyword>
+</keywordset>
+</articleinfo>
+
+<para
+>Cette boîte de dialogue vous permet de configurer la barre latérale d'historique. </para>
+
+<variablelist>
+<varlistentry
+><term
+><guilabel
+>Limites</guilabel
+></term>
+<listitem
+><para
+>Les options de cette section servent à établir la taille maximale de votre historique et définir une durée après laquelle les entrées seront automatiquement effacées. </para
+></listitem>
+</varlistentry>
+
+<varlistentry
+><term
+><guilabel
+>Polices personnalisées</guilabel
+></term>
+<listitem
+><para
+>Vous avez la possibilité de sélectionner un jeu de police différent suivant l'âge de l'&URL; et ce, à l'aide du bouton <guibutton
+>Sélectionner la police...</guibutton
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry
+><term
+><guilabel
+>Détails</guilabel
+></term>
+<listitem
+><para
+>La case à cocher <guilabel
+>Bulles d'aides détaillées</guilabel
+> contrôle la quantité d'informations affichées lors du passage de la souris sur une entrée de la page d'historique.</para>
+<para
+>Si cochée, le nombre de visites et les dates des premières et dernières consultations seront affichés, en plus de l'URL.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Cliquer sur le bouton <guibutton
+>Effacer l'historique</guibutton
+> supprimera la totalité de l'historique. </para>
+</article>

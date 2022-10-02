@@ -1,0 +1,95 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % German "INCLUDE">
+]>
+<article id="history" lang="&language;">
+<title
+>Verlaufsbereich</title>
+<articleinfo>
+<authorgroup>
+<author
+>&Burkhard.Lueck;</author>
+<othercredit role="translator"
+><firstname
+>Burkhard</firstname
+><surname
+>Lück</surname
+><affiliation
+><address
+><email
+>lueck@hube-lueck.de</email
+></address
+></affiliation
+><contrib
+>Übersetzung</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2009-11-24</date>
+<releaseinfo
+>&kde; 4.4</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Systemeinstellungen</keyword>
+<keyword
+>Verlauf</keyword>
+</keywordset>
+</articleinfo>
+
+<para
+>In diesem Modul kann die Verlaufsanzeige im Navigationsbereich eingerichtet werden. </para>
+
+<variablelist>
+<varlistentry
+><term
+><guilabel
+>Beschränkungen</guilabel
+></term>
+<listitem
+><para
+>Hier können Sie die maximale Größe Ihres Verlaufsspeichers einstellen und die Zeit bestimmen, nach der Einträge automatisch entfernt werden. </para
+></listitem>
+</varlistentry>
+
+<varlistentry
+><term
+><guilabel
+>Benutzerdefinierte Schriften</guilabel
+></term>
+<listitem
+><para
+>Sie können mit dem Knopf <guibutton
+>Schriftart auswählen ...</guibutton
+> auch unterschiedliche Schriften für neue und alte &URL;s festlegen. </para
+></listitem>
+</varlistentry>
+
+<varlistentry
+><term
+><guilabel
+>Details</guilabel
+></term>
+<listitem
+><para
+>Mit dem Ankreuzfeld <guilabel
+>Detaillierte Kurzinfos</guilabel
+> können Sie festlegen, wieviel Informationen Sie angezeigt bekommen, wenn Sie sich mit der Maus über einen Eintrag auf der Verlaufsseite bewegen.</para>
+<para
+>Ist diese Einstellung aktiv, wird außer der Adresse (URL) auch die Häufigkeit der Aufrufe und das Datum des ersten und letzten Aufrufs angezeigt.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Die Auswahl von <guibutton
+>Verlaufsspeicher leeren</guibutton
+> löscht alle Einträge. </para>
+</article>

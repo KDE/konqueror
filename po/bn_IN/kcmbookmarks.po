@@ -1,0 +1,729 @@
+# translation of kcmkio.po to Bengali INDIA
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Runa Bhattacharjee <runab@redhat.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkio\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2008-12-31 16:02+0530\n"
+"Last-Translator: Runa Bhattacharjee <runab@redhat.com>\n"
+"Language-Team: Bengali INDIA <fedora-trans-bn_IN@redhat.com>\n"
+"Language: bn_IN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: bookmarks.cpp:92
+#, kde-format
+msgid ""
+"<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
+"page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
+"\">bookmarks:/</a>.</p>"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: bookmarks.ui:16
+#, kde-format
+msgid "Bookmarks"
+msgstr "বুকমার্ক"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowRoot)
+#: bookmarks.ui:23
+#, kde-format
+msgid ""
+"If this option is unchecked, bookmarks at the root of the hierarchy (not in "
+"a folder) are not displayed.\n"
+"If checked, they are gathered in a \"root\" folder."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowRoot)
+#: bookmarks.ui:26
+#, kde-format
+msgid "&Show bookmarks without folder"
+msgstr "ফোল্ডারবিহীন বুকমার্ক প্রদর্শন করা হবে (&S)"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbFlattenTree)
+#: bookmarks.ui:37
+#, kde-format
+msgid ""
+"Sub-folders are shown within their parent by default. If you activate this "
+"option, sub-folders are displayed on their own.\n"
+"It looks less nice but it may help if you have a very big folder you want to "
+"spread in two columns."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbFlattenTree)
+#: bookmarks.ui:40
+#, kde-format
+msgid "&Flatten bookmarks tree"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowPlaces)
+#: bookmarks.ui:47
+#, kde-format
+msgid ""
+"Show a box with KDE places (Home, Network, ...). Useful if you use konqueror "
+"as a file manager."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowPlaces)
+#: bookmarks.ui:50
+#, kde-format
+msgid "Show system &places"
+msgstr "সিস্টেমের বিভিন্ন স্থান প্রদর্শন করা হবে (&p)"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: bookmarks.ui:63
+#, kde-format
+msgid "General Settings"
+msgstr "সাধারণ বৈশিষ্ট্য"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, label)
+#: bookmarks.ui:71
+#, kde-format
+msgid ""
+"Folders are automatically distributed in several columns. The optimal number "
+"of columns depends on the width of the konqueror window and the number of "
+"bookmarks you have."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: bookmarks.ui:74
+#, fuzzy, kde-format
+#| msgid "Number of columns to show"
+msgid "Number of columns to show:"
+msgstr "প্রদর্শযোগ্য কলামের সংখ্যা"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowBackgrounds)
+#: bookmarks.ui:109
+#, kde-format
+msgid "Disable it on slow system to disable background images."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowBackgrounds)
+#: bookmarks.ui:112
+#, kde-format
+msgid "Show folder &backgrounds"
+msgstr "ফোল্ডারের পটভূমি প্রদর্শন করা হবে (&b)"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, groupBox_3)
+#: bookmarks.ui:138
+#, kde-format
+msgid "How much disk space is used to cache the pixmaps"
+msgstr "pixmap ক্যাশে করার জন্য প্রয়োজন ডিস্কের স্থান"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: bookmarks.ui:141
+#, kde-format
+msgid "Pixmap Cache"
+msgstr "Pixmap ক্যাশে"
+
+#. i18n: ectx: property (text), widget (QLabel, lbMaxCacheSize)
+#: bookmarks.ui:150
+#, kde-format
+msgid "Disk cache size:"
+msgstr "ডিস্ক ক্যাশের মাপ:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, sbCacheSize)
+#: bookmarks.ui:163
+#, kde-format
+msgid " kB"
+msgstr " কিলোবাইট"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, clearCacheButton)
+#: bookmarks.ui:173
+#, kde-format
+msgid "Clear the pixmap cache"
+msgstr "pixmap ক্যাশে পরিস্কার করুন"
+
+#. i18n: ectx: property (text), widget (QPushButton, clearCacheButton)
+#: bookmarks.ui:176
+#, kde-format
+msgid "&Clear Cache"
+msgstr "ক্যাশে পরিশ্রুত করুন (&C)"
+
+#~ msgid "&Use cache"
+#~ msgstr "ক্যাশে ব্যবহার করা হবে (&U)"
+
+#~ msgid "Policy"
+#~ msgstr "নিয়ম"
+
+#~ msgid "&Keep cache in sync"
+#~ msgstr "ক্যাশে সুসংগত করা হবে (&K)"
+
+#~ msgid "Use cache whenever &possible"
+#~ msgstr "যথাসম্ভব ক্ষেত্রে ক্যাশে ব্যবহার করা হবে (&p)"
+
+#~ msgid "O&ffline browsing mode"
+#~ msgstr "অফ-লাইন অবস্থায় ব্রাউজের মোড (&f)"
+
+#~ msgid "Disk cache &size:"
+#~ msgstr "ডিস্কের ক্যাশে: (&s)"
+
+#~ msgid "C&lear Cache"
+#~ msgstr "ক্যাশে পরিশ্রুত করুন (&l)"
+
+#~ msgid "&Policy"
+#~ msgstr "নিয়ম নীতি (&P)"
+
+#~ msgid "&Management"
+#~ msgstr "পরিচালনা (&M)"
+
+#~ msgid "D-Bus Communication Error"
+#~ msgstr "D-Bus যোগাযোগ সংক্রান্ত ত্রুটি"
+
+#~ msgid "Unable to delete all the cookies as requested."
+#~ msgstr "অনুরোধ অনুযায়ী সকল কুকি মুছে ফেলা যায়নি।"
+
+#~ msgid "Unable to delete cookies as requested."
+#~ msgstr "অনুরোধ অনুযায়ী কুকি মুছে ফেলা যায়নি।"
+
+#, fuzzy
+#~| msgid "<h1>Cookies Management Quick Help</h1>"
+#~ msgid "<h1>Cookie Management Quick Help</h1>"
+#~ msgstr "<h1>কুকি পরিচালনা সংক্রান্ত দ্রুত সহায়তা</h1>"
+
+#~ msgid "Information Lookup Failure"
+#~ msgstr "তথ্য অনুসন্ধান করতে ব্যর্থ"
+
+#~ msgid ""
+#~ "Unable to retrieve information about the cookies stored on your computer."
+#~ msgstr "কম্পিউটারের মধ্যে সংরক্ষিত কুকি সম্বন্ধে তথ্য প্রাপ্ত করতে ব্যর্থ।"
+
+#~ msgid "End of session"
+#~ msgstr "সেশানের সমাপ্তি"
+
+#~ msgid "Yes"
+#~ msgstr "হ্যাঁ"
+
+#~ msgid "Search"
+#~ msgstr "অনুসন্ধান"
+
+#, fuzzy
+#~| msgid "Site Name"
+#~ msgid "Site"
+#~ msgstr "সাইটের নাম"
+
+#, fuzzy
+#~| msgid "Site Name"
+#~ msgid "Cookie Name"
+#~ msgstr "সাইটের নাম"
+
+#~ msgid "D&elete"
+#~ msgstr "মুছে ফেলুন (&e)"
+
+#~ msgid "Delete A&ll"
+#~ msgstr "সমগ্র মুছে ফেলুন (&l)"
+
+#, fuzzy
+#~| msgid "Change &Policy..."
+#~ msgid "Configure &Policy..."
+#~ msgstr "নীতি পরিবর্তন করুন (&P)"
+
+#~ msgid "&Reload List"
+#~ msgstr "তালিকা পুনরায় লোড করুন (&R)"
+
+#~ msgid "Details"
+#~ msgstr "বিবরণ"
+
+#~ msgid "Name:"
+#~ msgstr "নাম:"
+
+#~ msgid "Value:"
+#~ msgstr "মান:"
+
+#~ msgid "Domain:"
+#~ msgstr "ডোমেইন:"
+
+#~ msgid "Path:"
+#~ msgstr "পাথ:"
+
+#~ msgid "Expires:"
+#~ msgstr "মেয়াদপূর্তী:"
+
+#~ msgid "Secure:"
+#~ msgstr "নিরাপত্তা:"
+
+#, fuzzy
+#~| msgid "Change Cookie Policy"
+#~ msgctxt "@title:window"
+#~ msgid "Change Cookie Policy"
+#~ msgstr "কুকি সংক্রান্ত নিয়ম পরিবর্তন করুন"
+
+#, fuzzy
+#~| msgid "New Cookie Policy"
+#~ msgctxt "@title:window"
+#~ msgid "New Cookie Policy"
+#~ msgstr "কুকি সংক্রান্ত নতুন নিয়ম"
+
+#~ msgid ""
+#~ "<qt>A policy already exists for<center><b>%1</b></center>Do you want to "
+#~ "replace it?</qt>"
+#~ msgstr ""
+#~ "<qt><center><b>%1</b></center>-র জন্য বর্তমানে একটি নিয়ম উপস্থিত রয়েছে। আপনি "
+#~ "কি এটি পরিবর্তন করতে ইচ্ছুক?</qt>"
+
+#, fuzzy
+#~| msgid "Site Policy"
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Policy"
+#~ msgstr "সাইটের নীতি"
+
+#~ msgid "Replace"
+#~ msgstr "প্রতিস্থাপন করুন"
+
+#~ msgid "Enable coo&kies"
+#~ msgstr "কুকি সক্রিয় করা হবে (&k)"
+
+#~ msgid "Only acce&pt cookies from originating server"
+#~ msgstr "শুধুমাত্র মূল সার্ভার থেকে কুকি গ্রহণ করা হবে (&p)"
+
+#~ msgid "Automaticall&y accept session cookies"
+#~ msgstr "স্বয়ংক্রিয়ভাবে সেশানের কুকি গ্রহণ করা হবে (&y)"
+
+#~ msgid "Default Policy"
+#~ msgstr "ডিফল্ট নীতি"
+
+#~ msgid "Accep&t all cookies"
+#~ msgstr "সর্বধরনের কুকি গ্রহণ করা হবে (&t)"
+
+#, fuzzy
+#~| msgid "End of session"
+#~ msgid "Accept &until end of session"
+#~ msgstr "সেশানের সমাপ্তি"
+
+#~ msgid "Ask &for confirmation"
+#~ msgstr "নিশ্চিত করা হবে (&f)"
+
+#~ msgid "Re&ject all cookies"
+#~ msgstr "সর্বধরনের কুকি প্রত্যাখ্যান করা হবে (&j)"
+
+#~ msgid "Site Policy"
+#~ msgstr "সাইটের নীতি"
+
+#~ msgid "Domain"
+#~ msgstr "ডোমেইন"
+
+#~ msgid "&New..."
+#~ msgstr "নতুন...(&N)"
+
+#~ msgid "Chan&ge..."
+#~ msgstr "পরিবর্তন করুন... (&g)"
+
+#, fuzzy
+#~| msgid "Site Name"
+#~ msgid "Site name:"
+#~ msgstr "সাইটের নাম"
+
+#, fuzzy
+#~| msgid "&Policy:"
+#~ msgid "Policy:"
+#~ msgstr "নীতি: (&P)"
+
+#~ msgid "Accept"
+#~ msgstr "গ্রহণ করুন"
+
+#, fuzzy
+#~| msgid "End of session"
+#~ msgid "Accept until end of session"
+#~ msgstr "সেশানের সমাপ্তি"
+
+#~ msgid "Reject"
+#~ msgstr "প্রত্যাখ্যান করুন"
+
+#~ msgid "Ask"
+#~ msgstr "জিজ্ঞাসা করা হবে"
+
+#~ msgid "Disable Passive FTP"
+#~ msgstr "Passive FTP নিষ্ক্রিয় করুন"
+
+#~ msgid "Mark partially uploaded files"
+#~ msgstr "আংশিক আপলোড করা ফাইল চিহ্নিত করুন"
+
+#~ msgid "Connect to the Internet directly."
+#~ msgstr "সরাসরি ইন্টারনেটের সাথে সংযোগ করুন।"
+
+#, fuzzy
+#~| msgid "U&se proxy configuration URL:"
+#~ msgid "Detect proxy configuration automatically"
+#~ msgstr "প্রক্সি কনফিগারেশনের URL ব্যবহার করা হবে: (&s)"
+
+#, fuzzy
+#~| msgid "A&utomatically detect proxy configuration"
+#~ msgid "Use the specified proxy script to configure the proxy settings."
+#~ msgstr "স্বয়ংক্রিয়ভাবে প্রক্সি কনফিগারেশন সনাক্ত করা হবে (&u)"
+
+#, fuzzy
+#~| msgid "U&se proxy configuration URL:"
+#~ msgid "Use proxy auto configuration URL:"
+#~ msgstr "প্রক্সি কনফিগারেশনের URL ব্যবহার করা হবে: (&s)"
+
+#~ msgid "Enter the address for the proxy configuration script."
+#~ msgstr "প্রক্সি কনফিগারেশন স্ক্রিপ্টের ঠিকানা লিখুন।"
+
+#, fuzzy
+#~| msgid "U&se proxy configuration URL:"
+#~ msgid "Use system proxy configuration:"
+#~ msgstr "প্রক্সি কনফিগারেশনের URL ব্যবহার করা হবে: (&s)"
+
+#, fuzzy
+#~| msgid "Auto &Detect"
+#~ msgid "Auto D&etect"
+#~ msgstr "স্বয়ংক্রিয় সনাক্তকরণ (&D)"
+
+#, fuzzy
+#~| msgid "O&ptions"
+#~ msgid "Exceptions:"
+#~ msgstr "বিকল্প: (&p)"
+
+#~ msgid "Show the &value of the environment variables"
+#~ msgstr "এনভায়রনমেন্ট ভেরিয়েবলের মান প্রদর্শন করা হবে (&v)"
+
+#~ msgid "Manually enter proxy server configuration information."
+#~ msgstr "প্রক্সি কনফিগারেশনের তথ্য স্বয়ং লিখুন।"
+
+#, fuzzy
+#~| msgid "A&utomatically detect proxy configuration"
+#~ msgid "Use manually specified proxy configuration:"
+#~ msgstr "স্বয়ংক্রিয়ভাবে প্রক্সি কনফিগারেশন সনাক্ত করা হবে (&u)"
+
+#~ msgid "Enter the address of the HTTP proxy server."
+#~ msgstr "HTTP প্রক্সি সার্ভারের ঠিকানা লিখুন।"
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTP proxy server."
+#~ msgid "Enter the port number of the HTTP proxy server."
+#~ msgstr "HTTP প্রক্সি সার্ভারের ঠিকানা লিখুন।"
+
+#, fuzzy
+#~| msgid "&Use the same proxy server for all protocols"
+#~ msgid "Use this proxy server for a&ll protocols"
+#~ msgstr "সকল প্রোটোকলের জন্য একটি প্রক্সি সার্ভার ব্যবহার করা হবে (&U)"
+
+#~ msgid "Enter the address of the HTTPS proxy server."
+#~ msgstr "HTTPS প্রক্সি সার্ভারের ঠিকানা লিখুন।"
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTPS proxy server."
+#~ msgid "Enter the port number of the HTTPS proxy server."
+#~ msgstr "HTTPS প্রক্সি সার্ভারের ঠিকানা লিখুন।"
+
+#~ msgid "Enter the address of the FTP proxy server."
+#~ msgstr "FTP প্রক্সি সার্ভারের ঠিকানা লিখুন।"
+
+#, fuzzy
+#~| msgid "Enter the address of the FTP proxy server."
+#~ msgid "Enter the port number of the FTP proxy server."
+#~ msgstr "FTP প্রক্সি সার্ভারের ঠিকানা লিখুন।"
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTPS proxy server."
+#~ msgid "Enter the address of the SOCKS proxy server."
+#~ msgstr "HTTPS প্রক্সি সার্ভারের ঠিকানা লিখুন।"
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTPS proxy server."
+#~ msgid "Enter the port number of the SOCKS proxy server."
+#~ msgstr "HTTPS প্রক্সি সার্ভারের ঠিকানা লিখুন।"
+
+#, fuzzy
+#~| msgid "Use proxy only for entries in this list"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Check this box if you want the above proxy settings to apply only to the "
+#~ "addresses listed in the <i>Exceptions</i> list.</qt>"
+#~ msgstr "শুধুমাত্র এই তালিকায় উপস্থিত এনট্রির জন্য প্রক্সি ব্যবহার করা হবে"
+
+#, fuzzy
+#~| msgid "Use proxy only for entries in this list"
+#~ msgid "Use proxy settings only for addresses in the Exceptions list"
+#~ msgstr "শুধুমাত্র এই তালিকায় উপস্থিত এনট্রির জন্য প্রক্সি ব্যবহার করা হবে"
+
+#~ msgid ""
+#~ "You have to restart the running applications for these changes to take "
+#~ "effect."
+#~ msgstr ""
+#~ "এই সমস্ত পরিবর্তন প্রয়োগ করার জন্য, চলমান অ্যাপ্লিকেশনগুলি পুনরারম্ভ করা আবশ্যক।"
+
+#, fuzzy
+#~| msgid "Update Failed"
+#~ msgctxt "@title:window"
+#~ msgid "Update Failed"
+#~ msgstr "আপডেট করতে ব্যর্থ"
+
+#~ msgid "You have to restart KDE for these changes to take effect."
+#~ msgstr "এই সমস্ত পরিবর্তন প্রয়োগ করার জন্য KDE পুনরারম্ভ করা আবশ্যক।"
+
+#~ msgid "Timeout Values"
+#~ msgstr "সময়ের মেয়াদপূর্তীর মান"
+
+#, fuzzy
+#~| msgid " sec"
+#~ msgid " second"
+#~ msgid_plural " seconds"
+#~ msgstr[0] " সেকেন্ড"
+#~ msgstr[1] " সেকেন্ড"
+
+#~ msgid "Soc&ket read:"
+#~ msgstr "পাঠ হওয়া সকেট: (&k)"
+
+#~ msgid "Pro&xy connect:"
+#~ msgstr "প্রক্সি সংযোগ: (&x)"
+
+#~ msgid "Server co&nnect:"
+#~ msgstr "সার্ভার সংযোগ: (&n)"
+
+#~ msgid "&Server response:"
+#~ msgstr "সার্ভারের প্রতিক্রিয়া: (&S)"
+
+#~ msgid "FTP Options"
+#~ msgstr "FTP সংক্রান্ত বিকল্প"
+
+#~ msgid "Enable passive &mode (PASV)"
+#~ msgstr "passive মোড (PASV) সক্রিয় করুন (&m)"
+
+#~ msgid "Mark &partially uploaded files"
+#~ msgstr "আংশিক আপলোড করা ফাইলগুলি চিহ্নিত করুন (&p)"
+
+#~ msgid "Default user name:"
+#~ msgstr "ডিফল্ট ব্যবহারকারীর নাম:"
+
+#~ msgid "Default password:"
+#~ msgstr "ডিফল্ট পাসওয়ার্ড:"
+
+#, fuzzy
+#~| msgid "Identification"
+#~ msgctxt "@title:window"
+#~ msgid "Add Identification"
+#~ msgstr "পরিচয়"
+
+#, fuzzy
+#~| msgid "Identification"
+#~ msgctxt "@title:window"
+#~ msgid "Modify Identification"
+#~ msgstr "পরিচয়"
+
+#, fuzzy
+#~| msgid "Default Identification"
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Identification"
+#~ msgstr "ডিফল্ট পরিচয়"
+
+#~ msgid "&Send identification"
+#~ msgstr "পরিচিতির তথ্য পাঠিয়ে দিন (&S)"
+
+#~ msgid "Default Identification"
+#~ msgstr "ডিফল্ট পরিচয়"
+
+#~ msgid "Add operating s&ystem name"
+#~ msgstr "অপারেটিং সিস্টেমের নাম যোগ করুন (&y)"
+
+#~ msgid "Add operating system &version"
+#~ msgstr "অপারেটিং সিস্টেমের সংস্করণ যোগ করুন (&v)"
+
+#~ msgid "Add &machine (processor) type"
+#~ msgstr "মেশিন প্রসেসরের ধরন যোগ করুন (&m)"
+
+#~ msgid "Add lang&uage information"
+#~ msgstr "ভাষা সংক্রান্ত তথ্য যোগ করুন (&u)"
+
+#~ msgid "Site Specific Identification"
+#~ msgstr "সাইট সংক্রান্ত তথ্য"
+
+#~ msgid "Site Name"
+#~ msgstr "সাইটের নাম"
+
+#~ msgid "Identification"
+#~ msgstr "পরিচয়"
+
+#~ msgid "User Agent"
+#~ msgstr "ইউজার এজেন্ট"
+
+#, fuzzy
+#~| msgid "Real identification:"
+#~ msgid "&Use the following identification:"
+#~ msgstr "সঠিক পরিচয়:"
+
+#~ msgid "Real identification:"
+#~ msgstr "সঠিক পরিচয়:"
+
+#~ msgid "Treat &all cookies as session cookies"
+#~ msgstr "সর্বধরনের কুকি, সেশান কুকি রূপে চিহ্নিত করা হবে (&a)"
+
+#~ msgid ""
+#~ "Enter the port number of the HTTP proxy server. Default is 8080. Another "
+#~ "common value is 3128."
+#~ msgstr ""
+#~ "HTTP প্রক্সি সার্ভারের পোর্ট সংখ্যা লিখুন। ডিফল্ট মান 8080 ও অন্য একটি জনপ্রিয় মান "
+#~ "হল 3128।"
+
+#~ msgid ""
+#~ "Enter the port number of the FTP proxy server. Default 8080. Another "
+#~ "common value is 3128."
+#~ msgstr ""
+#~ "FTP প্রক্সি সার্ভারের পোর্ট সংখ্যা লিখুন। ডিফল্ট মান 8080 ও অন্য একটি জনপ্রিয় মান "
+#~ "হল 3128।"
+
+#, fuzzy
+#~| msgid "Manual Proxy Configuration"
+#~ msgctxt "@title:window"
+#~ msgid "Variable Proxy Configuration"
+#~ msgstr "ব্যবহারকারী দ্বারা প্রক্সি কনফিগারেশন ব্যবস্থা"
+
+#~ msgid "You must specify at least one valid proxy environment variable."
+#~ msgstr "প্রক্সি সংক্রান্ত অন্তত একটি বৈধ এনভায়রনমেন্ট ভেরিয়েবল উল্লেখ করা আবশ্যক।"
+
+#~ msgid ""
+#~ "<qt>Make sure you entered the actual environment variable name rather "
+#~ "than its value. For example, if the environment variable is <br /"
+#~ "><b>HTTP_PROXY=http://localhost:3128</b><br /> you need to enter "
+#~ "<b>HTTP_PROXY</b> here instead of the actual value http://localhost:3128."
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>উল্লেখ্য, এনভায়রনমেন্ট ভেরিয়েবলের মানের পরিবর্তে নাম উল্লেখ করা আবশ্যক। "
+#~ "উদাহরণস্বরূপ, <br /><b>HTTP_PROXY=http://localhost:3128</b><br /> "
+#~ "এনভায়রমেন্ট ভেরিয়েবলের ক্ষেত্রে http://localhost:3128-র পরিবর্তে "
+#~ "<b>HTTP_PROXY</b> লেখা আবশ্যক।</qt>"
+
+#, fuzzy
+#~| msgid "Invalid Proxy Setup"
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Proxy Setup"
+#~ msgstr "প্রক্সির জন্য নির্ধারিত বৈশিষ্ট্য বৈধ নয়"
+
+#~ msgid "Successfully verified."
+#~ msgstr "সাফল্যের সাথে যাচাই করা হয়েছে।"
+
+#, fuzzy
+#~| msgid "Proxy Setup"
+#~ msgctxt "@title:window"
+#~ msgid "Proxy Setup"
+#~ msgstr "প্রক্সি প্রস্তুতি"
+
+#, fuzzy
+#~| msgid "Manual Proxy Configuration"
+#~ msgctxt "@title:window"
+#~ msgid "Manual Proxy Configuration"
+#~ msgstr "ব্যবহারকারী দ্বারা প্রক্সি কনফিগারেশন ব্যবস্থা"
+
+#, fuzzy
+#~| msgid "Invalid Proxy Setting"
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Proxy Setting"
+#~ msgstr "প্রক্সির বৈশিষ্ট্য বৈধ নয়"
+
+#~ msgid "You entered a duplicate address. Please try again."
+#~ msgstr "এক ঠিকানা দুইবার লেখা হয়েছে। অনুগ্রহ করে পুনরায় প্রচেষ্টা করুন।"
+
+#~ msgid "<qt><center><b>%1</b></center> is already in the list.</qt>"
+#~ msgstr ""
+#~ "<qt>তালিকার মধ্যে <center><b>%1</b></center> বর্তমানে উপস্থিত রয়েছে।</qt>"
+
+#, fuzzy
+#~| msgid "Invalid Entry"
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Entry"
+#~ msgstr "অবৈধ এনট্রি"
+
+#~ msgid "The address you have entered is not valid."
+#~ msgstr "উল্লিখিত ঠিকানা বৈধ নয়।"
+
+#~ msgid "Enter the URL or address that should use the above proxy settings:"
+#~ msgstr "উপরোক্ত প্রক্সির বৈশিষ্ট্য প্রয়োগকারী URL অথবা ঠিকানা লিখুন:"
+
+#~ msgid ""
+#~ "Enter the address or URL that should be excluded from using the above "
+#~ "proxy settings:"
+#~ msgstr "উপরোক্ত প্রক্সি বৈশিষ্ট্য না ব্যবহারকারী ঠিকানা অথবা URL লিখুন:"
+
+#~ msgid "H&TTP:"
+#~ msgstr "HTTP: (&T)"
+
+#~ msgid "HTTP&S:"
+#~ msgstr "HTTPS: (&S)"
+
+#~ msgid "&FTP:"
+#~ msgstr "FTP: (&F)"
+
+#~ msgid "NO &PROXY:"
+#~ msgstr "প্রক্সি বিনা: (&P)"
+
+#~ msgid "&Verify"
+#~ msgstr "যাচাই করুন (&V)"
+
+#~ msgid "Connect to the &Internet directly"
+#~ msgstr "সরাসরি ইন্টারনেটের সাথে সংযোগ করুন (&I)"
+
+#~ msgid "Show the proxy environment variable configuration dialog."
+#~ msgstr "প্রক্সির এনভায়রনমেন্ট ভেরিয়েবল কনফিগারেশনের ডায়লগ প্রদর্শন করা হবে।"
+
+#~ msgid "Setup..."
+#~ msgstr "প্রস্তুতি..."
+
+#~ msgid "&Manually specify the proxy settings"
+#~ msgstr "প্রক্সির বৈশিষ্ট্যের মান স্বয়ং লিখুন (&M)"
+
+#~ msgid "Authori&zation"
+#~ msgstr "অনুমোদন (&z)"
+
+#~ msgid "Prompt for login information whenever it is required."
+#~ msgstr "প্রয়োজন দেখা দিলে লগ-ইন সংক্রান্ত তথ্য উল্লেখ করার অনুরোধ জানানো হবে।"
+
+#~ msgid "Prompt as &needed"
+#~ msgstr "প্রয়োজন অনুসারে অনুরোধ জানানো হবে (&n)"
+
+#~ msgid "Use this login information."
+#~ msgstr "লগ-ইন সংক্রান্ত এই তথ্য প্রয়োগ করা হবে।"
+
+#~ msgid "Username:"
+#~ msgstr "ব্যবহারকারীর নাম:"
+
+#~ msgid "Login name."
+#~ msgstr "লগ-ইন নাম।"
+
+#~ msgid "Login password."
+#~ msgstr "লগ-ইন পাসওয়ার্ড।"
+
+#~ msgid "Password:"
+#~ msgstr "পাসওয়ার্ড:"
+
+#~ msgid "Use persistent connections to proxy"
+#~ msgstr "প্রক্সির জন্য স্থায়ী সংযোগ প্রয়োগ করা হবে"
+
+#~ msgid "Ser&vers"
+#~ msgstr "সার্ভার (&v)"
+
+#~ msgid "D&elete All"
+#~ msgstr "সমগ্র মুছে ফেলুন (&e)"
+
+#~ msgid "De&lete"
+#~ msgstr "মুছে ফেলুন (&l)"
+
+#~ msgid "C&hange..."
+#~ msgstr "পরিবর্তন করুন...(&h)"
+
+#~ msgid "&Domain name:"
+#~ msgstr "ডোমেইনের নাম: (&D)"
+
+#~ msgid "Add &platform name"
+#~ msgstr "প্ল্যাটফর্মের নাম যোগ করুন (&p)"
+
+#~ msgid "Domain [Group]"
+#~ msgstr "Domain [Group]"
+
+#~ msgid "Host [Set By]"
+#~ msgstr "Host [Set By]"
+
+#~ msgid "&Windows Shares"
+#~ msgstr "Windows শেয়ার (&W)"
+
+#~ msgid "&LISa Daemon"
+#~ msgstr "LISa ডেমন (&L)"
+
+#~ msgid "lan:/ Iosla&ve"
+#~ msgstr "lan:/ Iosla&ve"

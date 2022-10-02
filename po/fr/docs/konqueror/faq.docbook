@@ -1,0 +1,295 @@
+<chapter id="faq">
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+&traducteurJoelleCornavin; &traducteurGerardDelafond;&traducteurLudovicGrossard; 
+</authorgroup>
+
+<date
+>24/10/2010</date>
+<releaseinfo
+>&kde; 4.5</releaseinfo>
+</chapterinfo>
+
+<title
+>Questions et réponses</title>
+
+<qandaset>
+
+<!-- Link is dead, unfortunately. I suppose this is a more general thing anyway
+<qandaentry>
+<question
+><para
+>How can I browse web sites using non latin
+ scripts?</para
+></question>
+<answer
+><para
+>Detailed instructions can be found at <ulink
+url="http://www.konqueror.org/i18n.html"
+>http://www.konqueror.org/i18n.html</ulink
+></para
+></answer>
+</qandaentry>
+-->
+
+<qandaentry>
+<question
+><para
+>Puis-je exécuter &konqueror; depuis n'importe quel gestionnaire de fenêtres ?</para
+></question>
+
+<answer
+><para
+>Installez simplement &Qt;, kdelibs et kdebase, et à partir de votre gestionnaire de fenêtres favori, lancez &konqueror;. Cela devrait fonctionner parfaitement, mais si tel n'est pas le cas (les développeurs de &kde; n'expérimentant pas ce cas fréquemment), signalez-le à <ulink url="http://bugs.kde.org"
+>http://bugs.kde.org</ulink
+> et essayez d'exécuter <application
+>kdeinit</application
+> avant de lancer &konqueror;. C'est une aide d'ordinaire efficace.</para
+></answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Où &konqueror; conserve-t-il toutes ses données de configuration ?</para
+></question>
+<answer
+><para
+>Généralement dans le dossier <filename
+>~/.kde</filename
+> (sur votre système, il peut s'agir de <filename
+>~/.kde4</filename
+>, selon la façon dont &kde; a été installé). Ne modifiez pas ces fichiers sauf si vous savez ce que vous faites.</para>
+
+<itemizedlist>
+
+<listitem
+><para
+>Le dossier <filename class="directory"
+>~/.kde/share/apps/konqueror/profiles</filename
+> contient les paramètres individuels des fichiers de chacun de vos <link linkend="save-settings"
+>profils</link
+> ;</para
+></listitem>
+
+<listitem
+><para
+>vos signets sont conservés dans <filename class="directory"
+>~/.kde/share/apps/konqueror/bookmarks.xml</filename
+> ;</para
+></listitem>
+<listitem
+><para
+>les cookies se trouvent dans <filename class="directory"
+>~/.kde/share/apps/kcookiejar/cookies</filename
+> ;</para
+></listitem>
+<listitem
+><para
+>votre historique, tel qu'il est utilisé pour l'autocomplètement, se trouve dans <filename
+>~/.kde/share/config/konq_history</filename
+> ;</para
+></listitem>
+
+<listitem
+><para
+>dans le dossier <filename class="directory"
+>~/.kde/share/config/</filename
+>, les fichiers <filename
+>konqiconviewrc</filename
+>, <filename
+>konqlistviewrc</filename
+> et <filename
+>konquerorrc</filename
+> contiennent un ensemble complet des paramètres généraux de la configuration ;</para
+></listitem>
+
+<listitem
+><para
+>le dossier <filename class="directory"
+>~/.kde/share/cache-<replaceable
+>hôte</replaceable
+>/http/</filename
+> contient le cache du navigateur ;</para
+></listitem>
+
+<listitem
+><para
+>La barre latérale utilise les fichiers et les sous-dossiers situés dans <filename class="directory"
+>~/.kde/share/apps/konqsidebartng</filename
+>.</para
+></listitem>
+</itemizedlist>
+
+<para
+>Tout paramètre d'affichage spécifique à un dossier est placé dans les fichiers <literal role="extension"
+>.directory</literal
+> dans les dossiers individuels correspondants.</para
+></answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Comment effacer le fichier d'historique ?</para
+></question>
+<answer
+><para
+>Il existe deux <quote
+>historiques</quote
+> :</para>
+<itemizedlist>
+<listitem
+><para
+>L'un sert à l'autocomplètement de texte dans la zone de saisie de la barre d'emplacement. La réinitialisation s'effectue par un clic <mousebutton
+>droit</mousebutton
+> sur la zone de saisie du texte et en choisissant <guimenuitem
+>Effacer l'historique</guimenuitem
+>.</para>
+</listitem>
+<listitem
+><para
+>L'autre correspond au journal des emplacements visités. Choisissez la page d'historique dans la barre latérale, cliquez avec le &BDS; sur une entrée et choisissez <guimenuitem
+>Supprimer l'entrée</guimenuitem
+> (<keycap
+>Suppr.</keycap
+>) pour supprimer uniquement cette entrée, ou <guimenuitem
+>Effacer l'historique</guimenuitem
+> pour supprimer toutes les entrées.</para
+></listitem>
+</itemizedlist>
+<note
+><para
+>Vous pouvez également utiliser l'application <application
+>Sweeper</application
+> du module kdeutils, qui vous permet de nettoyer les cookies, les favicons, l'historique web et le cache, les éléments d'autocomplètement des formulaires et les politiques de cache des sites visités.</para
+></note>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Comment activer, désactiver ou réinitialiser le cache du navigateur ?</para
+></question
+> <answer>
+<para
+>Si vous choisissez <menuchoice
+><guimenu
+>Navigation Internet</guimenu
+><guimenuitem
+>Cache</guimenuitem
+></menuchoice
+> dans la boîte de dialogue lancée par <menuchoice
+><guimenu
+>Configuration</guimenu
+><guimenuitem
+>Configurer Konqueror...</guimenuitem
+></menuchoice
+>, vous obtenez une boîte de dialogue permettant de désactiver le cache, de le réinitialiser ou de définir sa taille et changer la politique de mise en cache.</para>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Comment puis-je changer les valeurs de temporisation que &konqueror; utilise au cours de la navigation web  ?</para
+></question
+> <answer>
+<para
+>Dans la catégorie <guilabel
+>Réseau et connectivité</guilabel
+> de la &configurationDuSysteme;, dans la page <menuchoice
+><guimenu
+>Configuration réseau</guimenu
+><guimenuitem
+>Préférence de connexion</guimenuitem
+></menuchoice
+>.</para>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Comment régler ma page de <quote
+>démarrage</quote
+> ? </para
+></question>
+<answer
+><para
+>&konqueror; a un <guilabel
+>dossier personnel</guilabel
+> utilisé en mode gestionnaire de fichiers, et une <guilabel
+>page d'accueil</guilabel
+> utilisée en mode navigateur.</para>
+
+<para
+>Pour modifier ces réglages, lancez <menuchoice
+><guimenu
+>Configuration</guimenu
+><guimenuitem
+>Configurer Konqueror</guimenuitem
+><guilabel
+>Général</guilabel
+></menuchoice
+>.</para>
+
+<para
+>Pour modifier la page de démarrage de &konqueror; en mode gestionnaire de fichiers, choisissez <guilabel
+>Afficher la page d'introduction</guilabel
+>, <guilabel
+>Afficher ma page d'accueil</guilabel
+>, <guilabel
+>Afficher une page vide</guilabel
+> ou <guilabel
+>Afficher mes signets</guilabel
+> dans la liste déroulante étiquetée <guilabel
+>Lorsque Konqueror démarre</guilabel
+>.</para>
+
+<para
+>En mode navigateur, &konqueror; démarre avec l'élément <guilabel
+>Page d'accueil</guilabel
+>.</para>
+
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Je n'ai pas trouvé ici de réponse à ma question.</para
+></question
+> 
+<answer>
+<para
+>Jetez un coup d'œil aux adresses <ulink url="http://www.konqueror.org/faq.html"
+> http://www.konqueror.org/faq.html</ulink
+> ou <ulink url="http://www.konqueror.org/konq-java.html"
+> http://www.konqueror.org/konq-java.html</ulink
+>.</para>
+<para
+>Vous pouvez trouver d'autres informations dans le <ulink url="http://forum.kde.org/"
+>forum de la communauté KDE</ulink
+> ou sur la <ulink url="http://userbase.kde.org/Konqueror"
+>page KDE Userbase de Konqueror</ulink
+>.</para>
+</answer>
+</qandaentry>
+
+</qandaset>
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

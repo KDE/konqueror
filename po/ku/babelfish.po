@@ -1,0 +1,247 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: babelfish\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"PO-Revision-Date: 2009-01-17 21:19+0200\n"
+"Last-Translator: Omer Ensari <oensari@gmail.com>\n"
+"Language-Team: Kurdish <kde-i18n-doc@kde.org>\n"
+"Language: ku\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: Kurdish\n"
+"X-Poedit-SourceCharset: utf8\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Omer Ensari"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "oensari@gmail.com"
+
+#. i18n: ectx: Menu (tools)
+#: babelfishplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "&Amûr"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: babelfishplugin.rc:8
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "Zêdetir Darikê Amûran"
+
+#: plugin_babelfish.cpp:35
+#, kde-format
+msgid "Translate Web Page"
+msgstr "Malperê Wergerîne"
+
+#: plugin_babelfish.cpp:43
+#, kde-format
+msgid "Translate Web &Page"
+msgstr "&Malperê Wergerîne"
+
+#: plugin_babelfish.cpp:80
+#, kde-format
+msgid "&English To"
+msgstr "Ji &Îngilîzî"
+
+#: plugin_babelfish.cpp:83
+#, kde-format
+msgid "&French To"
+msgstr "Ji &Frensî"
+
+#: plugin_babelfish.cpp:86
+#, kde-format
+msgid "&German To"
+msgstr "Ji &Almanî"
+
+#: plugin_babelfish.cpp:89
+#, fuzzy, kde-format
+#| msgid "&French To"
+msgid "&Greek To"
+msgstr "Ji &Frensî"
+
+#: plugin_babelfish.cpp:92
+#, kde-format
+msgid "&Spanish To"
+msgstr "Ji &Spanî"
+
+#: plugin_babelfish.cpp:95
+#, kde-format
+msgid "&Portuguese To"
+msgstr "Ji &Portekîzî"
+
+#: plugin_babelfish.cpp:98
+#, kde-format
+msgid "&Italian To"
+msgstr "Ji &Îtalî"
+
+#: plugin_babelfish.cpp:101
+#, kde-format
+msgid "&Dutch To"
+msgstr "Ji &Felemenkî"
+
+#: plugin_babelfish.cpp:104
+#, fuzzy, kde-format
+#| msgid "&Russian"
+msgid "&Russian To"
+msgstr "&Rûsî"
+
+#: plugin_babelfish.cpp:120
+#, kde-format
+msgid "&Chinese (Simplified)"
+msgstr "&Çînî (Hêsanî)"
+
+#: plugin_babelfish.cpp:121
+#, kde-format
+msgid "Chinese (&Traditional)"
+msgstr "Çînî (&Kevneşopî)"
+
+#: plugin_babelfish.cpp:122 plugin_babelfish.cpp:135
+#, kde-format
+msgid "&Dutch"
+msgstr "&Felemenkî"
+
+#: plugin_babelfish.cpp:123 plugin_babelfish.cpp:144 plugin_babelfish.cpp:146
+#: plugin_babelfish.cpp:148 plugin_babelfish.cpp:150 plugin_babelfish.cpp:152
+#: plugin_babelfish.cpp:154 plugin_babelfish.cpp:156
+#, kde-format
+msgid "&French"
+msgstr "&Frensî"
+
+#: plugin_babelfish.cpp:124 plugin_babelfish.cpp:137
+#, kde-format
+msgid "&German"
+msgstr "&Almanî"
+
+#: plugin_babelfish.cpp:125 plugin_babelfish.cpp:138
+#, kde-format
+msgid "&Greek"
+msgstr ""
+
+#: plugin_babelfish.cpp:126 plugin_babelfish.cpp:139
+#, kde-format
+msgid "&Italian"
+msgstr "&Îtalî"
+
+#: plugin_babelfish.cpp:127
+#, kde-format
+msgid "&Japanese"
+msgstr "&Japonî"
+
+#: plugin_babelfish.cpp:128
+#, kde-format
+msgid "&Korean"
+msgstr "&Koreyî"
+
+#: plugin_babelfish.cpp:129
+#, kde-format
+msgid "&Norwegian"
+msgstr "&Norveçkî"
+
+#: plugin_babelfish.cpp:130 plugin_babelfish.cpp:140
+#, kde-format
+msgid "&Portuguese"
+msgstr "&Portekîzî"
+
+#: plugin_babelfish.cpp:131 plugin_babelfish.cpp:142
+#, kde-format
+msgid "&Russian"
+msgstr "&Rûsî"
+
+#: plugin_babelfish.cpp:132 plugin_babelfish.cpp:141
+#, kde-format
+msgid "&Spanish"
+msgstr "&Spanî"
+
+#: plugin_babelfish.cpp:133
+#, kde-format
+msgid "T&hai"
+msgstr "T&ayî"
+
+#: plugin_babelfish.cpp:134
+#, kde-format
+msgid "&Arabic"
+msgstr ""
+
+#: plugin_babelfish.cpp:136 plugin_babelfish.cpp:143 plugin_babelfish.cpp:145
+#: plugin_babelfish.cpp:147 plugin_babelfish.cpp:149 plugin_babelfish.cpp:151
+#: plugin_babelfish.cpp:153 plugin_babelfish.cpp:155
+#, kde-format
+msgid "&English"
+msgstr "&Îngilîzî"
+
+#: plugin_babelfish.cpp:178
+#, kde-format
+msgid "&Chinese (Simplified) to English"
+msgstr "Ji &Çînî (Hêsanî) Îngilîzî re"
+
+#: plugin_babelfish.cpp:179
+#, kde-format
+msgid "Chinese (&Traditional) to English"
+msgstr "Ji Çînî (&Kevneşopî) Îngilîzî re"
+
+#: plugin_babelfish.cpp:188
+#, kde-format
+msgid "&Japanese to English"
+msgstr "Ji &Japonî Îngilîzî re"
+
+#: plugin_babelfish.cpp:189
+#, kde-format
+msgid "&Korean to English"
+msgstr "Ji &Koreyî Îngilîzî re"
+
+#: plugin_babelfish.cpp:257
+#, fuzzy, kde-format
+#| msgid "Malformed URL"
+msgctxt "@title:window"
+msgid "Malformed URL"
+msgstr "URLya Xerabûyî"
+
+#: plugin_babelfish.cpp:258
+#, kde-format
+msgid "The URL you entered is not valid, please correct it and try again."
+msgstr ""
+"URLya te nivîsî ye nederbasdar e, jê kerema xwe vê serrast bike û cardin "
+"biceribîne."
+
+#: plugin_babelfish.cpp:268
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"You are viewing this page over a secure connection.<nl/><nl/>The URL of the "
+"page will sent to the online translation service,<nl/>which may fetch the "
+"insecure version of the page."
+msgstr ""
+
+#: plugin_babelfish.cpp:272
+#, kde-format
+msgctxt "@title:window"
+msgid "Security Warning"
+msgstr ""
+
+#~ msgid "&Russian to English"
+#~ msgstr "Ji &Rûsî Îngilîzî re"
+
+#~ msgid "Cannot Translate Source"
+#~ msgstr "Nikare Çavkaniyê Wergerîne"
+
+#~ msgid "Only web pages can be translated using this plugin."
+#~ msgstr "Bi vê pêvekê re tenê malperên torê dikarin bên wergerandin."
+
+#~ msgid "Only full webpages can be translated for this language pair."
+#~ msgstr "Ji bo vê cota zimanê tenê malperên tijî dikarin bên wergerandin."
+
+#~ msgid "Translation Error"
+#~ msgstr "Çewtiya Wergerandinê"

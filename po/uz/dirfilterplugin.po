@@ -1,0 +1,101 @@
+# translation of dirfilterplugin.po to Uzbek
+#
+# Abdurahmonov Nurali <mavnur@gmail.com>, 2006.
+# Mashrab Kuvatov <kmashrab@uni-bremen.de>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: dirfilterplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2006-04-02 11:34+0200\n"
+"Last-Translator: Mashrab Kuvatov <kmashrab@uni-bremen.de>\n"
+"Language-Team: Uzbek <floss-uz-l10n@googlegroups.com>\n"
+"Language: uz\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: dirfilterplugin.cpp:120
+#, fuzzy, kde-format
+#| msgid "View F&ilter"
+msgctxt "@info:tooltip"
+msgid "Hide Filter Bar"
+msgstr "&Koʻrinishni filterlash"
+
+#: dirfilterplugin.cpp:124
+#, fuzzy, kde-format
+#| msgid "View F&ilter"
+msgctxt "@label:textbox"
+msgid "F&ilter:"
+msgstr "&Koʻrinishni filterlash"
+
+#: dirfilterplugin.cpp:136
+#, kde-format
+msgctxt "@label:button"
+msgid "Filter by t&ype"
+msgstr ""
+
+#: dirfilterplugin.cpp:137
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Filter items by file type."
+msgstr ""
+
+#: dirfilterplugin.cpp:228
+#, fuzzy, kde-format
+#| msgid "Filter Toolbar"
+msgctxt "@action:inmenu Tools"
+msgid "Show Filter Bar"
+msgstr "Filter asboblar paneli"
+
+#: dirfilterplugin.cpp:322
+#, kde-format
+msgid "Use Multiple Filters"
+msgstr "Bir nechta filterni ishlatish"
+
+#: dirfilterplugin.cpp:328
+#, kde-format
+msgid "Show Count"
+msgstr "Sonini koʻrsatish"
+
+#: dirfilterplugin.cpp:333
+#, kde-format
+msgid "Reset"
+msgstr "Tiklash"
+
+#. i18n: ectx: Menu (tools)
+#: dirfilterplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr ""
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: dirfilterplugin.rc:8
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "Qoʻshimcha asboblar paneli"
+
+#~ msgid "Allow to filter the currently displayed items by filetype."
+#~ msgstr "Joriy koʻrsatilgan bandlarni fayl turi boʻyicha filterlash."
+
+#~ msgid "Only Show Items of Type"
+#~ msgstr "Faqat quyidagi turdagi bandlarni koʻrsatish"
+
+#~ msgid "Filter Field"
+#~ msgstr "Filter maydoni"
+
+#~ msgid "Clear Filter Field"
+#~ msgstr "Filter maydonini tozalash"
+
+#, fuzzy
+#~| msgid "Clear filter field<p>Clears the content of the filter field."
+#~ msgid "Clear filter field<p>Clears the content of the filter field.</p>"
+#~ msgstr "Filter maydonini tozalash<p>Filter maydonidagi yozuvni tozalash."
+
+#, fuzzy
+#~ msgid ""
+#~ "Enter here a text which an item in the view must contain anywhere to be "
+#~ "shown."
+#~ msgstr "Fayl va jildlar nomida koʻrsatilishi kerak boʻlgan matnni kiriting."

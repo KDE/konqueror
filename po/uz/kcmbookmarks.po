@@ -1,0 +1,979 @@
+# translation of kcmkio.po to Uzbek
+# Copyright (C) 2003, 2004, 2005 Free Software Foundation, Inc.
+# Mashrab Kuvatov <kmashrab@uni-bremen.de>, 2003, 2004, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkio\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2005-10-13 21:27+0200\n"
+"Last-Translator: Mashrab Kuvatov <kmashrab@uni-bremen.de>\n"
+"Language-Team: Uzbek <floss-uz-l10n@googlegroups.com>\n"
+"Language: uz\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: bookmarks.cpp:92
+#, kde-format
+msgid ""
+"<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
+"page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
+"\">bookmarks:/</a>.</p>"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: bookmarks.ui:16
+#, kde-format
+msgid "Bookmarks"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowRoot)
+#: bookmarks.ui:23
+#, kde-format
+msgid ""
+"If this option is unchecked, bookmarks at the root of the hierarchy (not in "
+"a folder) are not displayed.\n"
+"If checked, they are gathered in a \"root\" folder."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowRoot)
+#: bookmarks.ui:26
+#, kde-format
+msgid "&Show bookmarks without folder"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbFlattenTree)
+#: bookmarks.ui:37
+#, kde-format
+msgid ""
+"Sub-folders are shown within their parent by default. If you activate this "
+"option, sub-folders are displayed on their own.\n"
+"It looks less nice but it may help if you have a very big folder you want to "
+"spread in two columns."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbFlattenTree)
+#: bookmarks.ui:40
+#, kde-format
+msgid "&Flatten bookmarks tree"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowPlaces)
+#: bookmarks.ui:47
+#, kde-format
+msgid ""
+"Show a box with KDE places (Home, Network, ...). Useful if you use konqueror "
+"as a file manager."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowPlaces)
+#: bookmarks.ui:50
+#, kde-format
+msgid "Show system &places"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: bookmarks.ui:63
+#, kde-format
+msgid "General Settings"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, label)
+#: bookmarks.ui:71
+#, kde-format
+msgid ""
+"Folders are automatically distributed in several columns. The optimal number "
+"of columns depends on the width of the konqueror window and the number of "
+"bookmarks you have."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: bookmarks.ui:74
+#, kde-format
+msgid "Number of columns to show:"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowBackgrounds)
+#: bookmarks.ui:109
+#, kde-format
+msgid "Disable it on slow system to disable background images."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowBackgrounds)
+#: bookmarks.ui:112
+#, kde-format
+msgid "Show folder &backgrounds"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, groupBox_3)
+#: bookmarks.ui:138
+#, kde-format
+msgid "How much disk space is used to cache the pixmaps"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: bookmarks.ui:141
+#, kde-format
+msgid "Pixmap Cache"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, lbMaxCacheSize)
+#: bookmarks.ui:150
+#, fuzzy, kde-format
+#| msgid "Disk cache &size:"
+msgid "Disk cache size:"
+msgstr "Keshning ha&jmi:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, sbCacheSize)
+#: bookmarks.ui:163
+#, fuzzy, kde-format
+#| msgid " KB"
+msgid " kB"
+msgstr " Kb"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, clearCacheButton)
+#: bookmarks.ui:173
+#, kde-format
+msgid "Clear the pixmap cache"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, clearCacheButton)
+#: bookmarks.ui:176
+#, fuzzy, kde-format
+#| msgid "C&lear Cache"
+msgid "&Clear Cache"
+msgstr "Keshni &tozalash"
+
+#~ msgid "&Use cache"
+#~ msgstr "Keshdan &foydalanish"
+
+#~ msgid "Policy"
+#~ msgstr "Qoida"
+
+#~ msgid "Use cache whenever &possible"
+#~ msgstr "Iloji boʻ&lsa keshdan foydalanish"
+
+#~ msgid "Disk cache &size:"
+#~ msgstr "Keshning ha&jmi:"
+
+#~ msgid "C&lear Cache"
+#~ msgstr "Keshni &tozalash"
+
+#~ msgid "&Policy"
+#~ msgstr "Q&oida"
+
+#~ msgid "&Management"
+#~ msgstr "&Boshqaruv"
+
+#, fuzzy
+#~ msgid "D-Bus Communication Error"
+#~ msgstr "DCOP aloqa xatosi"
+
+#~ msgid "Unable to delete all the cookies as requested."
+#~ msgstr "Hamma kukilarni oʻchirib boʻlmadi."
+
+#~ msgid "Unable to delete cookies as requested."
+#~ msgstr "Kukilarni oʻchirib boʻlmadi."
+
+#, fuzzy
+#~| msgid "<h1>Cookies Management Quick Help</h1>"
+#~ msgid "<h1>Cookie Management Quick Help</h1>"
+#~ msgstr "<h1>Kukilarni boshqarish boʻyicha tez yordam</h1>"
+
+#~ msgid ""
+#~ "Unable to retrieve information about the cookies stored on your computer."
+#~ msgstr "Kompyuterda saqlangan kukilar haqida maʼlumotni aniqlab boʻlmadi."
+
+#~ msgid "End of session"
+#~ msgstr "Seans yakuni"
+
+#, fuzzy
+#~| msgid "&Search:"
+#~ msgid "Search"
+#~ msgstr "Q&idirish:"
+
+#, fuzzy
+#~| msgid "Site Name"
+#~ msgid "Site"
+#~ msgstr "Saytning nomi"
+
+#, fuzzy
+#~| msgid "Site Name"
+#~ msgid "Cookie Name"
+#~ msgstr "Saytning nomi"
+
+#~ msgid "D&elete"
+#~ msgstr "Oʻ&chirish"
+
+#~ msgid "Delete A&ll"
+#~ msgstr "Ham&masini oʻchirish"
+
+#, fuzzy
+#~| msgid "Change &Policy..."
+#~ msgid "Configure &Policy..."
+#~ msgstr "Qoidani oʻ&zgartirish"
+
+#~ msgid "&Reload List"
+#~ msgstr "&Roʻyxatni qaytadan yuklash"
+
+#~ msgid "Details"
+#~ msgstr "Tafsilotlar"
+
+#~ msgid "Name:"
+#~ msgstr "Nomi:"
+
+#~ msgid "Value:"
+#~ msgstr "Qiymati:"
+
+#~ msgid "Domain:"
+#~ msgstr "Domen:"
+
+#~ msgid "Path:"
+#~ msgstr "Yoʻl:"
+
+#~ msgid "Expires:"
+#~ msgstr "Tugaydi:"
+
+#~ msgid "Secure:"
+#~ msgstr "Xavfsiz:"
+
+#, fuzzy
+#~| msgid "Change Cookie Policy"
+#~ msgctxt "@title:window"
+#~ msgid "Change Cookie Policy"
+#~ msgstr "Qoidani oʻzgartirish"
+
+#, fuzzy
+#~| msgid "New Cookie Policy"
+#~ msgctxt "@title:window"
+#~ msgid "New Cookie Policy"
+#~ msgstr "Yangi qoida"
+
+#~ msgid ""
+#~ "<qt>A policy already exists for<center><b>%1</b></center>Do you want to "
+#~ "replace it?</qt>"
+#~ msgstr ""
+#~ "<qt>Qoida<center><b>%1</b></center> uchun allaqachon mavjud. Uni "
+#~ "almashtirishni istaysizmi?</qt>"
+
+#, fuzzy
+#~| msgid "Duplicate Policy"
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Policy"
+#~ msgstr "Qoida nusxasini yaratish"
+
+#~ msgid "Enable coo&kies"
+#~ msgstr "K&ukilarni yoqish"
+
+#~ msgid "Automaticall&y accept session cookies"
+#~ msgstr "Seans kukilarini &avto-qabul qilish"
+
+#~ msgid "Default Policy"
+#~ msgstr "Andoza qoida"
+
+#~ msgid "Accep&t all cookies"
+#~ msgstr "Hamma kukilarni qa&bul qilish"
+
+#, fuzzy
+#~| msgid "End of session"
+#~ msgid "Accept &until end of session"
+#~ msgstr "Seans yakuni"
+
+#~ msgid "Ask &for confirmation"
+#~ msgstr "Tasd&iqlash uchun soʻrash"
+
+#~ msgid "Re&ject all cookies"
+#~ msgstr "Hamma kukilarni &rad etish"
+
+#~ msgid "Site Policy"
+#~ msgstr "Sayt qoidasi"
+
+#~ msgid "Domain"
+#~ msgstr "Domen"
+
+#~ msgid "&New..."
+#~ msgstr "Ya&ngi"
+
+#~ msgid "Chan&ge..."
+#~ msgstr "Oʻz&gartirish"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the host or domain to which this policy applies, e.g. <b>www.kde."
+#~ "org</b> or <b>.kde.org</b>.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "Ushbu qoida qoʻllanadigan xost yoki domenning nomini kiriting. Masalan, "
+#~ "<b>www.kde.org</b> yoki <b>.kde.org</b>.\n"
+#~ "</qt>"
+
+#, fuzzy
+#~| msgid "Site Name"
+#~ msgid "Site name:"
+#~ msgstr "Saytning nomi"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Select the desired policy:\n"
+#~| "<ul>\n"
+#~| "<li><b>Accept</b> - Allows this site to set cookies</li>\n"
+#~| "<li><b>Reject</b> - Refuse all cookies sent from this site</li>\n"
+#~| "<li><b>Ask</b> - Prompt when cookies are received from this site</li>\n"
+#~| "</ul>\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Select the desired policy:\n"
+#~ "<ul>\n"
+#~ "<li><b>Accept</b> - Allows this site to set cookies</li>\n"
+#~ "<li><b>Accept until end of session</b> - Allows this site to set cookies "
+#~ "but they will expire at the end of the session.</li>\n"
+#~ "<li><b>Reject</b> - Refuse all cookies sent from this site</li>\n"
+#~ "<li><b>Ask</b> - Prompt when cookies are received from this site</li>\n"
+#~ "</ul>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "Istagan qoidani tanlang:\n"
+#~ "<ul>\n"
+#~ "<li><b>Qabul qilish</b> - Saytdan hamma kukilarni qabul qilish</li>\n"
+#~ "<li><b>Rad etish</b> - Saytdan hamma kukilarni rad etish</li>\n"
+#~ "<li><b>Soʻrash</b> - Saytdan kuki kelganida soʻrash</li>\n"
+#~ "</ul>\n"
+#~ "</qt>"
+
+#, fuzzy
+#~| msgid "&Policy:"
+#~ msgid "Policy:"
+#~ msgstr "Q&oida:"
+
+#~ msgid "Accept"
+#~ msgstr "Qabul qilish"
+
+#, fuzzy
+#~| msgid "End of session"
+#~ msgid "Accept until end of session"
+#~ msgstr "Seans yakuni"
+
+#~ msgid "Reject"
+#~ msgstr "Rad etish"
+
+#~ msgid "Ask"
+#~ msgstr "Soʻrash"
+
+#~ msgid "Mark partially uploaded files"
+#~ msgstr "Qisman yozib olingan fayllarni belgilash"
+
+#~ msgid "Connect to the Internet directly."
+#~ msgstr "Internetga toʻgʻridan-toʻgʻri ulanish."
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "No Proxy"
+#~ msgstr "&Proksi"
+
+#, fuzzy
+#~| msgid "U&se the following proxy configuration URL"
+#~ msgid "Detect proxy configuration automatically"
+#~ msgstr "Quyida&gi proksi moslama URL'dan foydalanish"
+
+#, fuzzy
+#~| msgid "Use the specified proxy script URL to configure the proxy settings."
+#~ msgid "Use the specified proxy script to configure the proxy settings."
+#~ msgstr ""
+#~ "Proksi serverining moslamalarini moslash uchun koʻrsatilgan skript "
+#~ "URL'dan foydalanish."
+
+#, fuzzy
+#~| msgid "U&se the following proxy configuration URL"
+#~ msgid "Use proxy auto configuration URL:"
+#~ msgstr "Quyida&gi proksi moslama URL'dan foydalanish"
+
+#~ msgid "Enter the address for the proxy configuration script."
+#~ msgstr "Proksi moslama skripti joylashgan manzilni kiriting."
+
+#, fuzzy
+#~| msgid "U&se the following proxy configuration URL"
+#~ msgid "Use system proxy configuration:"
+#~ msgstr "Quyida&gi proksi moslama URL'dan foydalanish"
+
+#, fuzzy
+#~| msgid "Auto &Detect"
+#~ msgid "Auto D&etect"
+#~ msgstr "&Avto-aniqlash"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "HTTP Proxy:"
+#~ msgstr "&Proksi"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "SSL Proxy:"
+#~ msgstr "&Proksi"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "FTP Proxy:"
+#~ msgstr "&Proksi"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "SOCKS Proxy:"
+#~ msgstr "&Proksi"
+
+#, fuzzy
+#~| msgid "E&xceptions"
+#~ msgid "Exceptions:"
+#~ msgstr "Qoidadan t&ashqari holatlar"
+
+#~ msgid "Show the &value of the environment variables"
+#~ msgstr "Muhit oʻzgaruvchilarning qiymatini &koʻrsatish"
+
+#~ msgid "Manually enter proxy server configuration information."
+#~ msgstr "Proksi serverni moslash uchun maʼlumotni qoʻlbola kiritish."
+
+#, fuzzy
+#~| msgid "A&utomatically detect proxy configuration"
+#~ msgid "Use manually specified proxy configuration:"
+#~ msgstr "Proksi &moslamasini avto-aniqlash"
+
+#~ msgid "Enter the address of the HTTP proxy server."
+#~ msgstr "HTTP proksi serverining manzilini kiriting."
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTP proxy server."
+#~ msgid "Enter the port number of the HTTP proxy server."
+#~ msgstr "HTTP proksi serverining manzilini kiriting."
+
+#, fuzzy
+#~| msgid "&Use the same proxy server for all protocols"
+#~ msgid "Use this proxy server for a&ll protocols"
+#~ msgstr "Hamma pro&tokollar uchun bitta proksi serverini ishlatish"
+
+#~ msgid "Enter the address of the HTTPS proxy server."
+#~ msgstr "HTTPS proksi serverining manzilini kiriting."
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTPS proxy server."
+#~ msgid "Enter the port number of the HTTPS proxy server."
+#~ msgstr "HTTPS proksi serverining manzilini kiriting."
+
+#~ msgid "Enter the address of the FTP proxy server."
+#~ msgstr "FTP proksi serverining manzilini kiriting."
+
+#, fuzzy
+#~| msgid "Enter the address of the FTP proxy server."
+#~ msgid "Enter the port number of the FTP proxy server."
+#~ msgstr "FTP proksi serverining manzilini kiriting."
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTPS proxy server."
+#~ msgid "Enter the address of the SOCKS proxy server."
+#~ msgstr "HTTPS proksi serverining manzilini kiriting."
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTPS proxy server."
+#~ msgid "Enter the port number of the SOCKS proxy server."
+#~ msgstr "HTTPS proksi serverining manzilini kiriting."
+
+#, fuzzy
+#~| msgid "Use proxy only for entries in this list"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Check this box if you want the above proxy settings to apply only to the "
+#~ "addresses listed in the <i>Exceptions</i> list.</qt>"
+#~ msgstr "Roʻyxatdagilar uchun proksini ishlatish"
+
+#, fuzzy
+#~| msgid "Use proxy only for entries in this list"
+#~ msgid "Use proxy settings only for addresses in the Exceptions list"
+#~ msgstr "Roʻyxatdagilar uchun proksini ishlatish"
+
+#~ msgid ""
+#~ "You have to restart the running applications for these changes to take "
+#~ "effect."
+#~ msgstr ""
+#~ "Oʻzgarishlar kuchga kirishi uchun ishlayotgan dasturlarni qaytadan ishga "
+#~ "tushirishingiz kerak."
+
+#, fuzzy
+#~| msgid "Update Failed"
+#~ msgctxt "@title:window"
+#~ msgid "Update Failed"
+#~ msgstr "Yangilash muvaffaqiyatsiz tugadi"
+
+#~ msgid "You have to restart KDE for these changes to take effect."
+#~ msgstr ""
+#~ "Oʻzgarishlar kuchga kirishi uchun KDE'ni qaytadan ishga tushirishingiz "
+#~ "kerak."
+
+#~ msgid "Timeout Values"
+#~ msgstr "Taymaut qiymatlari"
+
+#, fuzzy
+#~| msgid " sec"
+#~ msgid " second"
+#~ msgid_plural " seconds"
+#~ msgstr[0] " soniya"
+
+#~ msgid "Soc&ket read:"
+#~ msgstr "Oʻq&ish soketi:"
+
+#~ msgid "Pro&xy connect:"
+#~ msgstr "Ulanish &proksisi:"
+
+#~ msgid "Server co&nnect:"
+#~ msgstr "Ulanish &serveri:"
+
+#~ msgid "FTP Options"
+#~ msgstr "FTP parametrlari"
+
+#~ msgid "Enable passive &mode (PASV)"
+#~ msgstr "Passiv &usulini (PASV) yoqish"
+
+#~ msgid "Mark &partially uploaded files"
+#~ msgstr "Qisman yozib olingan fayllarni &belgilash"
+
+#~ msgid ""
+#~ "<p>Marks partially uploaded FTP files.</p><p>When this option is enabled, "
+#~ "partially uploaded files will have a \".part\" extension. This extension "
+#~ "will be removed once the transfer is complete.</p>"
+#~ msgstr ""
+#~ "<p>Qisman yozib olingan FTP fayllarni belgilaydi.</p><p>Agar bu parametr "
+#~ "yoqilgan boʻlsa, qisman yozib olingan fayllarga \".part\" kengaytmasi "
+#~ "qoʻshiladi. Fayl toʻliq yozib olingach bu kengaytma olib tashlanadi.</p>"
+
+#~ msgid "Default user name:"
+#~ msgstr "Andoza foydalanuvchi:"
+
+#~ msgid "Default password:"
+#~ msgstr "Andoza maxfiy soʻz:"
+
+#, fuzzy
+#~| msgid "Duplicate Entry"
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Identification"
+#~ msgstr "Bir xil maʼlumot"
+
+#, fuzzy
+#~| msgid "Duplicate Entry"
+#~ msgid "&Send identification"
+#~ msgstr "Bir xil maʼlumot"
+
+#, fuzzy
+#~| msgid "Duplicate Entry"
+#~ msgid "Default Identification"
+#~ msgstr "Bir xil maʼlumot"
+
+#~ msgid "Add operating s&ystem name"
+#~ msgstr "Operatsion &tizimning nomini qoʻshish"
+
+#~ msgid "Add operating system &version"
+#~ msgstr "Operatsion tizimning &versiyasini qoʻshish"
+
+#~ msgid "Add &machine (processor) type"
+#~ msgstr "P&rotsessorning turini qoʻshish"
+
+#~ msgid "Add lang&uage information"
+#~ msgstr "&Til haqida maʼlumotni qoʻshish"
+
+#, fuzzy
+#~| msgid "Duplicate Entry"
+#~ msgid "Site Specific Identification"
+#~ msgstr "Bir xil maʼlumot"
+
+#~ msgid "Site Name"
+#~ msgstr "Saytning nomi"
+
+#, fuzzy
+#~| msgid "Duplicate Entry"
+#~ msgid "Identification"
+#~ msgstr "Bir xil maʼlumot"
+
+#, fuzzy
+#~| msgid "Change the selected proxy exception address."
+#~ msgid "Change the selected identifier text."
+#~ msgstr "Qoidadan tashqari tanlangan proksi manzilini oʻzgartirish."
+
+#~ msgid "&When browsing the following site:"
+#~ msgstr "Quyidagi &saytlar uchun:"
+
+#, fuzzy
+#~| msgid "Use the following lo&gin information."
+#~ msgid "&Use the following identification:"
+#~ msgstr "Ulanish uchun quyidagi maʼ&lumotdan foydalanish"
+
+#, fuzzy
+#~| msgid "Duplicate Entry"
+#~ msgid "Real identification:"
+#~ msgstr "Bir xil maʼlumot"
+
+#~ msgid ""
+#~ "Enter the port number of the HTTP proxy server. Default is 8080. Another "
+#~ "common value is 3128."
+#~ msgstr ""
+#~ "HTTP proksi serverining portini kiriting. Andoza - 8080. Boshqa keng "
+#~ "ishlatiladigan port - 3128."
+
+#~ msgid ""
+#~ "Enter the port number of the FTP proxy server. Default 8080. Another "
+#~ "common value is 3128."
+#~ msgstr ""
+#~ "FTP proksi serverining portini kiriting. Andoza - 8080. Boshqa keng "
+#~ "ishlatiladigan port - 3128."
+
+#, fuzzy
+#~| msgid "Variable Proxy Configuration"
+#~ msgctxt "@title:window"
+#~ msgid "Variable Proxy Configuration"
+#~ msgstr "Proksining xar hil moslamalari"
+
+#~ msgid "You must specify at least one valid proxy environment variable."
+#~ msgstr "Kamida bitta proksi muhit oʻzgaruvchisini aniqlashingiz kerak."
+
+#, fuzzy
+#~| msgid "Invalid Proxy Setup"
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Proxy Setup"
+#~ msgstr "Proksi moslamasi notoʻgʻri"
+
+#~ msgid "Successfully verified."
+#~ msgstr "Tekshirish muvaffaqiyatli tugadi."
+
+#, fuzzy
+#~| msgid "Proxy Setup"
+#~ msgctxt "@title:window"
+#~ msgid "Proxy Setup"
+#~ msgstr "Proksini moslash"
+
+#, fuzzy
+#~| msgid "Automatic Proxy Variable Detection"
+#~ msgctxt "@title:window"
+#~ msgid "Automatic Proxy Variable Detection"
+#~ msgstr "Proksi oʻzgaruvchilarni avto-aniqlash"
+
+#, fuzzy
+#~| msgid "Manual Proxy Configuration"
+#~ msgctxt "@title:window"
+#~ msgid "Manual Proxy Configuration"
+#~ msgstr "Proksini qoʻlbola moslash"
+
+#, fuzzy
+#~| msgid "Invalid Proxy Setting"
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Proxy Setting"
+#~ msgstr "Proksining moslamasi notoʻgʻri"
+
+#~ msgid ""
+#~ "One or more of the specified proxy settings are invalid. The incorrect "
+#~ "entries are highlighted."
+#~ msgstr ""
+#~ "Proksining bitta yoki bir nechta moslamalari xato. Xatolar moslamalar "
+#~ "belgilangan."
+
+#~ msgid "You entered a duplicate address. Please try again."
+#~ msgstr "Ikkita bir xil manzil kiritildi. Iltimos qaytadan urinib koʻring."
+
+#~ msgid "<qt><center><b>%1</b></center> is already in the list.</qt>"
+#~ msgstr "<qt><center><b>%1</b></center> roʻyxatda allaqachon mavjud.</qt>"
+
+#, fuzzy
+#~| msgid "Duplicate Entry"
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Entry"
+#~ msgstr "Bir xil maʼlumot"
+
+#, fuzzy
+#~| msgid "E&xceptions"
+#~ msgctxt "@title:window"
+#~ msgid "New Exception"
+#~ msgstr "Qoidadan t&ashqari holatlar"
+
+#, fuzzy
+#~| msgid "E&xceptions"
+#~ msgctxt "@title:window"
+#~ msgid "Change Exception"
+#~ msgstr "Qoidadan t&ashqari holatlar"
+
+#, fuzzy
+#~| msgid "Invalid Entry"
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Entry"
+#~ msgstr "Xato maʼlumot"
+
+#~ msgid "The address you have entered is not valid."
+#~ msgstr "Kiritilgan manzil haqiqiy emas."
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>Make sure none of the addresses or URLs you specified contain "
+#~| "invalid or wildcard characters such as spaces, asterisks (*), or "
+#~| "question marks(?).<p><u>Examples of VALID entries:</u><br/><code>http://"
+#~| "mycompany.com, 192.168.10.1, mycompany.com, localhost, http://localhost</"
+#~| "code><p><u>Examples of INVALID entries:</u><br/><code>http://my company."
+#~| "com, http:/mycompany,com file:/localhost</code></qt>"
+#~ msgid ""
+#~ "<qt>Make sure none of the addresses or URLs you specified contain invalid "
+#~ "or wildcard characters such as spaces, asterisks (*), or question "
+#~ "marks(?).<br /><br /><u>Examples of VALID entries:</u><br /><code>http://"
+#~ "mycompany.com, 192.168.10.1, mycompany.com, localhost, http://localhost</"
+#~ "code><br /><br /><u>Examples of INVALID entries:</u><br /><code>http://my "
+#~ "company.com, http:/mycompany,com file:/localhost</code></qt>"
+#~ msgstr ""
+#~ "<qt>Koʻrsatilgan manzil yoki URL'da bosh joy, yulduzcha (*), yoki savol "
+#~ "(?) belgisiga oʻxshagan belgilar boʻlmasligiga ishonch hosil qiling."
+#~ "<p><u>Toʻgʻri maʼlumot misollari:</u><br/><code>http://mycompany.com, "
+#~ "192.168.10.1, mycompany,com, localhost, http://localhost</"
+#~ "code><p><u>Notoʻgʻri maʼlumot misollari:</u><br/><code>http://my company."
+#~ "com, http:/mycompany,com file:/localhost</code>"
+
+#, fuzzy
+#~ msgid ""
+#~ "The address of the automatic proxy configuration script is invalid. "
+#~ "Please correct this problem before proceeding. Otherwise, your changes "
+#~ "will be ignored."
+#~ msgstr ""
+#~ "<qt>Proksini avtomatik ravishda moslash skriptining manzili haqiqiy emas."
+#~ "<p>Iltimos davom etishdan oldin muammoni hal qiling. Aks holda, siz "
+#~ "kiritgan oʻzgarishlar eʼtiborga olinmaydi.</qt>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>The proxy settings you specified are invalid.<p>Please click on the "
+#~| "<b>Setup...</b> button and correct the problem before proceeding; "
+#~| "otherwise your changes will be ignored.</qt>"
+#~ msgid ""
+#~ "<qt>The proxy settings you specified are invalid.<br /><br />Please click "
+#~ "on the <b>Setup...</b> button and correct the problem before proceeding; "
+#~ "otherwise your changes will be ignored.</qt>"
+#~ msgstr ""
+#~ "<qt>Proksining koʻrsatilgan moslamalari xato.<p>Iltimos davom etishdan "
+#~ "oldin <b>Moslash</b> tugmasini bosib bu muammoni hal qiling. Aks holda, "
+#~ "siz kiritgan oʻzgarishlar eʼtiborga olinmaydi.</qt>"
+
+#~ msgid "H&TTP:"
+#~ msgstr "H&TTP:"
+
+#~ msgid "HTTP&S:"
+#~ msgstr "HTTP&S:"
+
+#~ msgid "&FTP:"
+#~ msgstr "&FTP:"
+
+#~ msgid "&Verify"
+#~ msgstr "&Tekshirish"
+
+#~ msgid "Connect to the &Internet directly"
+#~ msgstr "Internetga toʻgʻridan-toʻgʻri &ulanish"
+
+#~ msgid "Use preset proxy environment &variables"
+#~ msgstr "&Oldindan aniqlangan proksi muhit oʻzgaruvchilarini ishlatish"
+
+#~ msgid "Setup..."
+#~ msgstr "Moslash"
+
+#~ msgid "&Manually specify the proxy settings"
+#~ msgstr "Proksi moslamalarini qoʻl&bola koʻrsatish"
+
+#~ msgid "Authori&zation"
+#~ msgstr "&Tasdiqlash"
+
+#~ msgid "Prompt for login information whenever it is required."
+#~ msgstr "Talab qilinganda tasdiqlash maʼlumotini soʻrash."
+
+#~ msgid "Prompt as &needed"
+#~ msgstr "Keragida soʻ&rash"
+
+#, fuzzy
+#~| msgid "Use the information below to login into proxy servers as needed."
+#~ msgid ""
+#~ "Use information specified here to login into proxy servers as needed."
+#~ msgstr ""
+#~ "Proksi serveriga ulanishda talab qilinganda quyidagi maʼlumotni ishlatish."
+
+#~ msgid "Username:"
+#~ msgstr "Foydalanuvchi:"
+
+#~ msgid "Login name."
+#~ msgstr "Foydalanuvchi."
+
+#~ msgid "Login password."
+#~ msgstr "Maxfiy soʻz."
+
+#~ msgid "Password:"
+#~ msgstr "Maxfiy soʻz:"
+
+#~ msgid "O&ptions"
+#~ msgstr "&Parametrlar"
+
+#~ msgid "Ser&vers"
+#~ msgstr "&Serverlar"
+
+#~ msgid "Remove all proxy exception addresses from the list."
+#~ msgstr ""
+#~ "Qoidadan tashqari hamma proksi manzillarini roʻyxatdan olib tashlash."
+
+#~ msgid "D&elete All"
+#~ msgstr "Ham&masini oʻchirish"
+
+#~ msgid "Remove the selected proxy exception address from the list."
+#~ msgstr ""
+#~ "Qoidadan tashqari tanlangan proksi manzilini roʻyxatdan olib tashlash."
+
+#~ msgid "De&lete"
+#~ msgstr "Oʻch&irish"
+
+#~ msgid "Add new proxy exception address to the list."
+#~ msgstr "Qoidadan tashqari yangi proksi manzilini roʻyxatga qoʻshish."
+
+#~ msgid "C&hange..."
+#~ msgstr "Oʻz&gartirish"
+
+#~ msgid "&Domain name:"
+#~ msgstr "&Domenning nomi:"
+
+#~ msgid "Add &platform name"
+#~ msgstr "&Platformaning nomini qoʻshish"
+
+#~ msgid "Domain [Group]"
+#~ msgstr "Domen [Guruh]"
+
+#~ msgid "&LISa Daemon"
+#~ msgstr "LISa d&emoni"
+
+#~ msgid "lan:/ Iosla&ve"
+#~ msgstr "lan:/ &KCH-sleyvi"
+
+#~ msgid "&Search:"
+#~ msgstr "Q&idirish:"
+
+#~ msgid "&SOCKS"
+#~ msgstr "&SOCKS"
+
+#~ msgid "SOCKS"
+#~ msgstr "SOCKS"
+
+#~ msgid "&Enable SOCKS support"
+#~ msgstr "SOCKS &qoʻllashni yoqish"
+
+#~ msgid "Click here to test SOCKS support."
+#~ msgstr "SOCKS qoʻllanganini tekshirish uchun shu yerni bosing."
+
+#~ msgid "&Test"
+#~ msgstr "&Sinash"
+
+#~ msgid "SOCKS Implementation"
+#~ msgstr "SOCKS amalga oshirilishi"
+
+#~ msgid "Use &custom library"
+#~ msgstr "&Boshqa kutubxonani ishlatish"
+
+#~ msgid "Enter the path to an unsupported SOCKS library."
+#~ msgstr "Qoʻllanmagan SOCKS kutubxonasiga yoʻllni kiriting."
+
+#~ msgid ""
+#~ "If you select Autodetect, then KDE will automatically search for an "
+#~ "implementation of SOCKS on your computer."
+#~ msgstr ""
+#~ "\"Avto-aniqlash\" tanlansa, KDE kompyuteda SOCKS qanday amalga "
+#~ "oshirilganini avtomatik ravishda aniqlaydi."
+
+#~ msgid "A&uto detect"
+#~ msgstr "&Avto-aniqlash"
+
+#~ msgid "This will force KDE to use NEC SOCKS if it can be found."
+#~ msgstr "Agar topilsa, KDE NEC SOCKS kutubxonasidan foydalanadi."
+
+#~ msgid "&NEC SOCKS"
+#~ msgstr "&NEC SOCKS"
+
+#~ msgid "This will force KDE to use Dante if it can be found."
+#~ msgstr "Agar topilsa, KDE Dante kutubxonasidan foydalanadi."
+
+#~ msgid "&Dante"
+#~ msgstr "&Dante"
+
+#~ msgid ""
+#~ "Here you can specify additional directories to search for the SOCKS "
+#~ "libraries. /usr/lib, /usr/local/lib, /usr/local/socks5/lib and /opt/"
+#~ "socks5/lib are already searched by default."
+#~ msgstr ""
+#~ "Bu yerda, qoʻshimcha kutubxonalarini qidirish uchun direktoriyalarni "
+#~ "koʻrsatishingiz mumkin. Quyidagi yoʻllardan andoza boʻyicha "
+#~ "foydalaniladi.\n"
+#~ "/usr/lib, /usr/local/lib, /usr/local/socks5/lib, /opt/socks5/lib"
+
+#~ msgid "Additional Library Search Paths"
+#~ msgstr "Qoʻshimcha kutubxonalarni qidirish uchun yoʻllar"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Mashrab Quvatov"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "kmashrab@uni-bremen.de"
+
+#~ msgid "kcmsocks"
+#~ msgstr "kcmsocks"
+
+#~ msgid "KDE SOCKS Control Module"
+#~ msgstr "KDE SOCKS boshqaruv moduli"
+
+#~ msgid "(c) 2001 George Staikos"
+#~ msgstr "(c) 2001 George Staikos"
+
+#, fuzzy
+#~| msgid "(c) 2001 George Staikos"
+#~ msgid "George Staikos"
+#~ msgstr "(c) 2001 George Staikos"
+
+#~ msgid "These changes will only apply to newly started applications."
+#~ msgstr ""
+#~ "Kiritilgan oʻzgarishlar faqat yangidan ishga tushirilgan dasturlarga "
+#~ "qoʻllanadi."
+
+#~ msgid "SOCKS Support"
+#~ msgstr "SOCKS'ni qoʻllash"
+
+#~ msgid "Success: SOCKS was found and initialized."
+#~ msgstr "SOCKS'ni ishga tayyorlash muvaffaqiyatli tugadi."
+
+#~ msgid "SOCKS could not be loaded."
+#~ msgstr "SOCKS'ni yuklab boʻlmadi."
+
+#~ msgid "&Path:"
+#~ msgstr "Yoʻ&l:"
+
+#~ msgid "This is the list of additional paths that will be searched."
+#~ msgstr "Qoʻshimcha kutubxonalarni qidirish uchun yoʻllar roʻyxati."
+
+#~ msgid "Path"
+#~ msgstr "Yoʻl"
+
+#~ msgid "&Add"
+#~ msgstr "&Qoʻshish"
+
+#~ msgid "This is the configuration for the samba client only, not the server."
+#~ msgstr "Bu moslama faqat SAMBA klienti uchun, server uchun emas."
+
+#, fuzzy
+#~ msgid "&OK"
+#~ msgstr "&SOCKS"
+
+#, fuzzy
+#~ msgid "&Cancel"
+#~ msgstr "&Dante"
+
+#~ msgid "..."
+#~ msgstr "Tanlash"
+
+#~ msgid "Clear Search"
+#~ msgstr "Qidiruvni tozalash"

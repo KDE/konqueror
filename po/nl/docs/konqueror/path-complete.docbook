@@ -1,0 +1,151 @@
+<chapter id="path-complete">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+&Bram.Schoenmakers;&Freek.de.Kruijf; 
+</authorgroup
+> 
+
+<date
+>2010-10-26</date>
+<releaseinfo
+>&kde; 4.5</releaseinfo>
+</chapterinfo>
+
+
+<title
+>Automatische tekstaanvulling</title
+> 
+
+<para
+>&konqueror; kan u helpen bij het typen van een pad of URL-adres in de locatiebalk door de optie <guimenuitem
+>Tekst aanvullen</guimenuitem
+> aan te zetten. Dit kunt u doen door met de <mousebutton
+>rechter</mousebutton
+>muisknop op de locatiebalk te klikken en vervolgens het menu <guisubmenu
+>Tekst aanvullen</guisubmenu
+> te kiezen. U kunt dan kiezen uit de volgende opties:</para>
+
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Geen</guimenuitem
+></term>
+<listitem
+><para
+>Wat u typt is wat u krijgt.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Handmatig</guimenuitem
+></term>
+<!-- in 4.5 I see no diff to None -->
+<listitem
+><para
+>Wanneer u een URL-adres deels hebt ingetypt, drukt u op <keycombo action="simul"
+>&Ctrl;<keycap
+>E</keycap
+></keycombo
+> of &Tab; om het veld, indien mogelijk, zonder dubbelzinnigheid aan te laten vullen.</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Automatisch</guimenuitem
+></term>
+<listitem
+><para
+>Dit zal de tekst automatisch aanvullen wanneer u een URL-adres in de locatiebalk typt, de toegevoegde tekst zal lichter zijn dan de getypte tekst. Ga gewoon door met typen wanneer het aangevulde adres nog niet goed is, druk op &Enter; om het zichtbare URL-adres te openen.</para
+></listitem>
+ </varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Uitklaplijst</guimenuitem
+></term>
+<listitem
+><para
+>Een menu komt in beeld tijdens het typen dat u laat zien welke adressen tot dan mogelijk zijn. Wanneer het pad of het URL-adres in de lijst voorkomt kunt u er met &LMB; op klikken. U kunt ook de toetsen <keysym
+>Beneden</keysym
+>, &Tab;, <keysym
+>Boven</keysym
+> of <keycombo action="simul"
+>&Shift;&Tab;</keycombo
+> gebruiken gevolgd door &Enter;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Kort automatisch</guimenuitem
+></term>
+<listitem
+><para
+>Dit is hetzelfde als de modus Automatisch, maar beperkt zich alleen tot de tekst tot aan de volgende <keycap
+>/</keycap
+> in het pad of &URL;. Druk op <keycombo action="simul"
+>&Ctrl;<keycap
+>E</keycap
+></keycombo
+> of &Tab; om de suggestie te accepteren of &Enter; wanneer het complete pad of URL-adres getoond wordt.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Uitvouwlijst &amp; automatisch</guimenuitem
+></term>
+<listitem
+><para
+>Dit is een combinatie van de beide boven beschreven opties.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Standaard</guimenuitem
+></term>
+<listitem
+><para
+>Dit item verschijnt onderaan het submenu en biedt de mogelijkheid om te schakelen naar het standaard gedrag <guimenuitem
+>Uitvouwlijst</guimenuitem
+>.</para
+></listitem>
+</varlistentry>
+<!-- Del to end 
+substring completion F7 http://websvn.kde.org/?view=revision&revision=1096306-->
+</variablelist>
+<para
+>Het beste is om alle modi uit te proberen en er vervolgens één uit te kiezen die u het meest bevalt.</para>
+<para
+>&konqueror; gebruikt voor het aanvullen van de tekst de geschiedenis van alle recent bezochte URL-adressen. U kunt deze lijst bekijken op de pagina <guilabel
+>Geschiedenis</guilabel
+> van de <link linkend="sidebar"
+>zijbalk</link
+>.</para>
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

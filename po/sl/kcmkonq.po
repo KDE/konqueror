@@ -1,0 +1,90 @@
+# translation of kcmkonq.po to Slovenian
+# Translation of kcmkonq.po to Slovenian
+# SLOVENIAN TRANSLATION OF KCMKONQ.
+# $Id: kcmkonq.po 1609756 2021-10-01 01:11:09Z scripty $
+# $Source$
+#
+# Copyright (C) 2001, 2003, 2004, 2005, 2006 Free Software Foundation, Inc.
+# Roman Maurer <roman.maurer@amis.net>, 2001.
+# Gregor Rakar <gregor.rakar@kiss.si>, 2003, 2004, 2005.
+# Jure Repinc <jlp@holodeck1.com>, 2006, 2007, 2008, 2009, 2010, 2011.
+# Andrej Mernik <andrejm@ubuntu.si>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkonq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2020-09-01 16:30+0200\n"
+"Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
+"Language-Team: Slovenian <lugos-slo@lugos.si>\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.1\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
+
+#: behaviour.cpp:36
+#, kde-format
+msgid ""
+"<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "
+"file manager here."
+msgstr ""
+"<h1>Obnašanje Konquerorja</h1> Tukaj lahko nastavite, kako se Konqueror "
+"obnaša kot upravljalnik datotek."
+
+#: behaviour.cpp:40
+#, kde-format
+msgid "Misc Options"
+msgstr "Razne možnosti"
+
+#: behaviour.cpp:49
+#, kde-format
+msgid "Open folders in separate &windows"
+msgstr "Odpri mape v ločenih oknih"
+
+#: behaviour.cpp:50
+#, kde-format
+msgid ""
+"If this option is checked, Konqueror will open a new window when you open a "
+"folder, rather than showing that folder's contents in the current window."
+msgstr ""
+"Če je ta možnost izbrana, bo Konqueror mapo odprl v novem oknu namesto da bi "
+"prikazal vsebino te mape v trenutnem oknu."
+
+#: behaviour.cpp:73
+#, kde-format
+msgid "Show 'Delete' me&nu entries which bypass the trashcan"
+msgstr "Pokaži me&nijske vnose 'Izbriši', ki obidejo Smeti"
+
+#: behaviour.cpp:77
+#, kde-format
+msgid ""
+"Check this if you want 'Delete' menu commands to be displayed on the desktop "
+"and in the file manager's menus and context menus. You can always delete "
+"files by holding the Shift key while calling 'Move to Trash'."
+msgstr ""
+"Izberite to možnost, če želite prikazati menijski ukaz »Izbriši« na namizju "
+"in v menijih ter vsebinskih menijih upravljalnika datotek. Datoteke lahko "
+"vedno izbrišete tako, da med izbiro ukaza »Premakni v Smeti« držite dvigalko "
+"(Shift)."
+
+#~ msgctxt "@title:window"
+#~ msgid "Menu Editor"
+#~ msgstr "Urejevalnik menija"
+
+#~ msgid "Menu"
+#~ msgstr "Meni"
+
+#~ msgid "New..."
+#~ msgstr "Novo ..."
+
+#~ msgid "Remove"
+#~ msgstr "Odstrani"
+
+#~ msgid "Move Up"
+#~ msgstr "Premakni gor"
+
+#~ msgid "Move Down"
+#~ msgstr "Premakni dol"

@@ -1,0 +1,376 @@
+# Albanian translation for kdebase
+# Copyright (c) 2009 Rosetta Contributors and Canonical Ltd 2009
+# This file is distributed under the same license as the kdebase package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdebase\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2009-08-18 12:07+0000\n"
+"Last-Translator: Vilson Gjeci <vilsongjeci@gmail.com>\n"
+"Language-Team: Albanian <sq@li.org>\n"
+"Language: sq\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Launchpad-Export-Date: 2011-04-22 14:32+0000\n"
+"X-Generator: Launchpad (build 12883)\n"
+
+#: bookmarks.cpp:92
+#, kde-format
+msgid ""
+"<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
+"page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
+"\">bookmarks:/</a>.</p>"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: bookmarks.ui:16
+#, kde-format
+msgid "Bookmarks"
+msgstr "Libërshënues"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowRoot)
+#: bookmarks.ui:23
+#, kde-format
+msgid ""
+"If this option is unchecked, bookmarks at the root of the hierarchy (not in "
+"a folder) are not displayed.\n"
+"If checked, they are gathered in a \"root\" folder."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowRoot)
+#: bookmarks.ui:26
+#, kde-format
+msgid "&Show bookmarks without folder"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbFlattenTree)
+#: bookmarks.ui:37
+#, kde-format
+msgid ""
+"Sub-folders are shown within their parent by default. If you activate this "
+"option, sub-folders are displayed on their own.\n"
+"It looks less nice but it may help if you have a very big folder you want to "
+"spread in two columns."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbFlattenTree)
+#: bookmarks.ui:40
+#, kde-format
+msgid "&Flatten bookmarks tree"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowPlaces)
+#: bookmarks.ui:47
+#, kde-format
+msgid ""
+"Show a box with KDE places (Home, Network, ...). Useful if you use konqueror "
+"as a file manager."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowPlaces)
+#: bookmarks.ui:50
+#, kde-format
+msgid "Show system &places"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: bookmarks.ui:63
+#, kde-format
+msgid "General Settings"
+msgstr "Parametrat e Përgjithshëm"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, label)
+#: bookmarks.ui:71
+#, kde-format
+msgid ""
+"Folders are automatically distributed in several columns. The optimal number "
+"of columns depends on the width of the konqueror window and the number of "
+"bookmarks you have."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: bookmarks.ui:74
+#, kde-format
+msgid "Number of columns to show:"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowBackgrounds)
+#: bookmarks.ui:109
+#, kde-format
+msgid "Disable it on slow system to disable background images."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowBackgrounds)
+#: bookmarks.ui:112
+#, kde-format
+msgid "Show folder &backgrounds"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, groupBox_3)
+#: bookmarks.ui:138
+#, kde-format
+msgid "How much disk space is used to cache the pixmaps"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: bookmarks.ui:141
+#, kde-format
+msgid "Pixmap Cache"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, lbMaxCacheSize)
+#: bookmarks.ui:150
+#, kde-format
+msgid "Disk cache size:"
+msgstr ""
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, sbCacheSize)
+#: bookmarks.ui:163
+#, kde-format
+msgid " kB"
+msgstr " kB"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, clearCacheButton)
+#: bookmarks.ui:173
+#, kde-format
+msgid "Clear the pixmap cache"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, clearCacheButton)
+#: bookmarks.ui:176
+#, kde-format
+msgid "&Clear Cache"
+msgstr ""
+
+#~ msgid "Policy"
+#~ msgstr "Politika"
+
+#~ msgid "&Policy"
+#~ msgstr "&Politika"
+
+#~ msgid "&Management"
+#~ msgstr "&Menaxhimi"
+
+#~ msgid "End of session"
+#~ msgstr "Fund i seksionit"
+
+#~ msgid "Yes"
+#~ msgstr "Po"
+
+#~ msgid "Search"
+#~ msgstr "Kërko"
+
+#, fuzzy
+#~| msgid "Site Name"
+#~ msgid "Site"
+#~ msgstr "Emri i Faqes"
+
+#, fuzzy
+#~| msgid "Site Name"
+#~ msgid "Cookie Name"
+#~ msgstr "Emri i Faqes"
+
+#~ msgid "D&elete"
+#~ msgstr "F&shije"
+
+#~ msgid "Delete A&ll"
+#~ msgstr "Fshiji të Gj&itha"
+
+#~ msgid "Details"
+#~ msgstr "Detajet"
+
+#~ msgid "Name:"
+#~ msgstr "Emri:"
+
+#~ msgid "Value:"
+#~ msgstr "Vlera:"
+
+#~ msgid "Domain:"
+#~ msgstr "Domain:"
+
+#~ msgid "Path:"
+#~ msgstr "Shtegu:"
+
+#~ msgid "Expires:"
+#~ msgstr "Skadimi:"
+
+#~ msgid "Secure:"
+#~ msgstr "Siguro:"
+
+#, fuzzy
+#~| msgid "Site Policy"
+#~ msgctxt "@title:window"
+#~ msgid "New Cookie Policy"
+#~ msgstr "Politika e Faqes"
+
+#, fuzzy
+#~| msgid "Site Policy"
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Policy"
+#~ msgstr "Politika e Faqes"
+
+#~ msgid "Replace"
+#~ msgstr "Zëvendëso"
+
+#, fuzzy
+#~| msgid "Site Policy"
+#~ msgid "Default Policy"
+#~ msgstr "Politika e Faqes"
+
+#, fuzzy
+#~| msgid "End of session"
+#~ msgid "Accept &until end of session"
+#~ msgstr "Fund i seksionit"
+
+#~ msgid "Site Policy"
+#~ msgstr "Politika e Faqes"
+
+#~ msgid "Domain"
+#~ msgstr "Domeini"
+
+#~ msgid "&New..."
+#~ msgstr "&I Ri..."
+
+#, fuzzy
+#~| msgid "C&hange..."
+#~ msgid "Chan&ge..."
+#~ msgstr "N&drysho..."
+
+#, fuzzy
+#~| msgid "Site Name"
+#~ msgid "Site name:"
+#~ msgstr "Emri i Faqes"
+
+#, fuzzy
+#~| msgid "&Policy:"
+#~ msgid "Policy:"
+#~ msgstr "&Politika:"
+
+#~ msgid "Accept"
+#~ msgstr "Prano"
+
+#, fuzzy
+#~| msgid "End of session"
+#~ msgid "Accept until end of session"
+#~ msgstr "Fund i seksionit"
+
+#~ msgid "Reject"
+#~ msgstr "Refuzo"
+
+#~ msgid "Ask"
+#~ msgstr "Pyet"
+
+#, fuzzy
+#~| msgid "E&xceptions"
+#~ msgid "Exceptions:"
+#~ msgstr "P&ërjashtimet"
+
+#, fuzzy
+#~| msgid "Identification"
+#~ msgctxt "@title:window"
+#~ msgid "Add Identification"
+#~ msgstr "Identifikimi"
+
+#, fuzzy
+#~| msgid "Identification"
+#~ msgctxt "@title:window"
+#~ msgid "Modify Identification"
+#~ msgstr "Identifikimi"
+
+#, fuzzy
+#~| msgid "Default Identification"
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Identification"
+#~ msgstr "Identifikimi i Parazgjedhur"
+
+#~ msgid "&Send identification"
+#~ msgstr "&Dërgo identifikim"
+
+#~ msgid "Default Identification"
+#~ msgstr "Identifikimi i Parazgjedhur"
+
+#~ msgid "Add operating s&ystem name"
+#~ msgstr "Shto emrin e s&istemit operativ"
+
+#~ msgid "Add operating system &version"
+#~ msgstr "Shto &versionin e sistemit operativ"
+
+#, fuzzy
+#~| msgid "&Send identification"
+#~ msgid "Site Specific Identification"
+#~ msgstr "&Dërgo identifikim"
+
+#~ msgid "Site Name"
+#~ msgstr "Emri i Faqes"
+
+#~ msgid "Identification"
+#~ msgstr "Identifikimi"
+
+#~ msgid "User Agent"
+#~ msgstr "Agjenti Përdorues"
+
+#, fuzzy
+#~| msgid "&Send identification"
+#~ msgid "&Use the following identification:"
+#~ msgstr "&Dërgo identifikim"
+
+#, fuzzy
+#~| msgid "Default Identification"
+#~ msgid "Real identification:"
+#~ msgstr "Identifikimi i Parazgjedhur"
+
+#, fuzzy
+#~| msgid "E&xceptions"
+#~ msgctxt "@title:window"
+#~ msgid "New Exception"
+#~ msgstr "P&ërjashtimet"
+
+#, fuzzy
+#~| msgid "E&xceptions"
+#~ msgctxt "@title:window"
+#~ msgid "Change Exception"
+#~ msgstr "P&ërjashtimet"
+
+#~ msgid "H&TTP:"
+#~ msgstr "H&TTP:"
+
+#~ msgid "HTTP&S:"
+#~ msgstr "HTTP&S:"
+
+#~ msgid "&FTP:"
+#~ msgstr "&FTP:"
+
+#~ msgid "&Verify"
+#~ msgstr "&Verifiko"
+
+#~ msgid "Setup..."
+#~ msgstr "Instalimi..."
+
+#~ msgid "Username:"
+#~ msgstr "Emri i Përdoruesit:"
+
+#~ msgid "Login name."
+#~ msgstr "Emri i hyrjes."
+
+#~ msgid "Login password."
+#~ msgstr "Fjalëkalimi i hyrjes."
+
+#~ msgid "Password:"
+#~ msgstr "Fjalëkalimi:"
+
+#~ msgid "O&ptions"
+#~ msgstr "O&psionet"
+
+#~ msgid "Ser&vers"
+#~ msgstr "Ser&verat"
+
+#~ msgid "De&lete"
+#~ msgstr "Fsh&ije"
+
+#~ msgid "&Domain name:"
+#~ msgstr "&Emri i domeinit:"

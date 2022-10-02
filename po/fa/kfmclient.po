@@ -1,0 +1,328 @@
+# translation of kfmclient.po to Persian
+# Nazanin Kazemi <kazemi@itland.ir>, 2006, 2007.
+# MaryamSadat Razavi <razavi@itland.ir>, 2006.
+# Tahereh Dadkhahfar <dadkhahfar@itland.ir>, 2006.
+# Nasim Daniarzadeh <daniarzadeh@itland.ir>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: kfmclient\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"PO-Revision-Date: 2007-02-03 15:55+0330\n"
+"Last-Translator: Nazanin Kazemi <kazemi@itland.ir>\n"
+"Language-Team: Persian <kde-i18n-fa@kde.org>\n"
+"Language: fa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: kfmclient.cpp:49
+#, kde-format
+msgid "kfmclient"
+msgstr "kfmclient"
+
+#: kfmclient.cpp:57
+#, kde-format
+msgid "KDE tool for opening URLs from the command line"
+msgstr "ابزار KDE برای باز کردن نشانیهای وب از خط فرمان"
+
+#: kfmclient.cpp:65
+#, kde-format
+msgid "Non interactive use: no message boxes"
+msgstr "استفاده غیرتعاملی: بدون جعبه‌های پیام"
+
+#: kfmclient.cpp:67
+#, kde-format
+msgid "Show available commands"
+msgstr "نمایش فرمانهای موجود"
+
+#: kfmclient.cpp:69
+#, kde-format
+msgid "Command (see --commands)"
+msgstr "فرمان )commands-- را ببینید("
+
+#: kfmclient.cpp:71
+#, kde-format
+msgid "Arguments for command"
+msgstr "نشانوندها برای فرمان"
+
+#: kfmclient.cpp:73
+#, kde-format
+msgid "The files/URLs opened by the application will be deleted after use"
+msgstr ""
+
+#: kfmclient.cpp:81
+#, kde-format
+msgid ""
+"\n"
+"Syntax:\n"
+msgstr ""
+"\n"
+"نحو:\n"
+
+#: kfmclient.cpp:82
+#, kde-format
+msgid ""
+"  kfmclient openURL 'url' ['mimetype']\n"
+"            # Opens a window showing 'url'.\n"
+"            #  'url' may be a relative path\n"
+"            #   or file name, such as . or subdir/\n"
+"            #   If 'url' is omitted, $HOME is used instead.\n"
+"\n"
+msgstr ""
+"  kfmclient openURL 'url' ['mimetype']\n"
+"            # پنجره‌ای را باز می‌کند که »url« را نمایش می‌دهد.\n"
+"            #  ممکن است »url« یک مسیر نسبی باشد \n"
+"            #   یا نام پرونده، مانند . یا زیرفهرست/\n"
+"            #   اگر »url« از قلم افتاده باشد، $HOME به جای آن استفاده "
+"می‌شود.\n"
+"\n"
+
+#: kfmclient.cpp:87
+#, kde-format
+msgid ""
+"            # If 'mimetype' is specified, it will be used to determine the\n"
+"            #   component that Konqueror should use. For instance, set it "
+"to\n"
+"            #   text/html for a web page, to make it appear faster\n"
+"\n"
+msgstr ""
+"            # اگر »نوع مایم « مشخص شده باشد، برای تعیین\n"
+"            # مولفه‌ای که Konqueror باید استفاده کند به کار برده خواهد شد. "
+"برای نمونه، آن را با\n"
+"            #متن/زنگام برای صفحه وب تنظیم می‌کند، تا سریع‌تر ظاهر شود\n"
+"\n"
+
+#: kfmclient.cpp:91
+#, kde-format
+msgid ""
+"  kfmclient newTab 'url' ['mimetype']\n"
+"            # Same as above but opens a new tab with 'url' in an existing "
+"Konqueror\n"
+"            #   window on the current active desktop if possible.\n"
+"\n"
+msgstr ""
+"kfmclient newTab 'url' ['mimetype']\n"
+"            # مانند بالا ولی تب جدیدی را توسط »url«  در پنجره Konqueror "
+"موجود\n"
+"            #   در رومیزی جاری، در صورت امکان باز می‌کند.\n"
+"\n"
+
+#: kfmclient.cpp:271
+#, fuzzy, kde-format
+#| msgid "Syntax Error: Not enough arguments\n"
+msgid "Syntax error, not enough arguments\n"
+msgstr "خطای نحوی: نشانوندها کافی نیستند\n"
+
+#: kfmclient.cpp:275
+#, fuzzy, kde-format
+#| msgid "Syntax Error: Too many arguments\n"
+msgid "Syntax error, too many arguments\n"
+msgstr "خطای نحوی: نشانوندها خیلی زیاد است\n"
+
+#: kfmclient.cpp:324
+#, fuzzy, kde-format
+#| msgid "Syntax Error: Unknown command '%1'\n"
+msgid "Syntax error, unknown command '%1'\n"
+msgstr "خطای نحوی: فرمان ناشناخته »%1«\n"
+
+#~ msgid ""
+#~ "  kfmclient openProfile 'profile' ['url']\n"
+#~ "            # Opens a window using the given profile.\n"
+#~ "            #   'profile' is a file under ~/.kde/share/apps/konqueror/"
+#~ "profiles.\n"
+#~ "            #   'url' is an optional URL to open.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmclient openProfile 'profile' ['url']\n"
+#~ "            # پنجره‌ای را با استفاده از profile داده شده باز می‌کند.\n"
+#~ "            #   «profile» پرونده‌ای است تحت~/.kde/share/apps/konqueror/"
+#~ "profiles.\n"
+#~ "            #   «url» یک نشانی وب اختیاری برای باز کردن می‌باشد.\n"
+#~ "\n"
+
+#, fuzzy
+#~| msgid "Profile %1 not found\n"
+#~ msgid "Profile '%1' not found\n"
+#~ msgstr "Profile %1 یافت نشد\n"
+
+#~ msgid ""
+#~ "  kfmclient openProperties 'url'\n"
+#~ "            # Opens a properties menu\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmclient openProperties 'url'\n"
+#~ "            # گزینگان ویژگیها را باز می‌کند\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "  kfmclient exec ['url' ['binding']]\n"
+#~ "            # Tries to execute 'url'. 'url' may be a usual\n"
+#~ "            #   URL, this URL will be opened. You may omit\n"
+#~ "            #   'binding'. In this case the default binding\n"
+#~ msgstr ""
+#~ "  kfmclient exec ['url' ['binding']]\n"
+#~ "            # سعی می‌کند »url«  را اجرا کند. »url« ممکن است یک\n"
+#~ "              #  نشانی وب مرسوم باشد، این نشانی وب باز خواهد شد. ممکن "
+#~ "است\n"
+#~ "            #   »مقیدسازی« را از قلم بیندازید. در این مورد مقیدسازی "
+#~ "پیش‌فرض است.\n"
+
+#~ msgid ""
+#~ "            #   is tried. Of course URL may be the URL of a\n"
+#~ "            #   document, or it may be a *.desktop file.\n"
+#~ msgstr ""
+#~ "            #   سعی می‌شود. البته ممکن است نشانی وب، نشانی وب یک\n"
+#~ "            #   سند باشد، یا ممکن است یک پرونده  desktop.* باشد.\n"
+
+#~ msgid ""
+#~ "            #   This way you could for example mount a device\n"
+#~ "            #   by passing 'Mount default' as binding to \n"
+#~ "            #   'cdrom.desktop'\n"
+#~ "\n"
+#~ msgstr ""
+#~ "            #  برای مثال با این روش می‌توانید یک دستگاه را\n"
+#~ "            #   با گذر »سوار کردن پیش‌فرض« به عنوان مقیدسازی به\n"
+#~ "            #   «cdrom.desktop» سوار کنید\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "  kfmclient move 'src' 'dest'\n"
+#~ "            # Moves the URL 'src' to 'dest'.\n"
+#~ "            #   'src' may be a list of URLs.\n"
+#~ msgstr ""
+#~ "  kfmclient move 'src' 'dest'\n"
+#~ "            # نشانی »src« را به »dest« حرکت می‌دهد.\n"
+#~ "            #ممکن است »src« فهرستی از نشانیهای وب باشد.\n"
+
+#~ msgid ""
+#~ "  kfmclient download ['src']\n"
+#~ "            # Copies the URL 'src' to a user specified location'.\n"
+#~ "            #   'src' may be a list of URLs, if not present then\n"
+#~ "            #   a URL will be requested.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmclient download ['src']\n"
+#~ "            # نشانی وب »مبدأ« را به محل مشخص‌شده کاربر رونوشت می‌کند.\n"
+#~ "            #  ممکن است »src«  فهرستی از نشانیهای وب باشد، اگر موجود "
+#~ "نباشد\n"
+#~ "            #   یک نشانی وب درخواست می‌شود.\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "  kfmclient copy 'src' 'dest'\n"
+#~ "            # Copies the URL 'src' to 'dest'.\n"
+#~ "            #   'src' may be a list of URLs.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmclient copy 'src' 'dest'\n"
+#~ "            # نشانی وب »src«  به »dest« رونوشت می‌کند.\n"
+#~ "            #   شاید »src«  فهرستی از نشانیهای وب باشد.\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "  kfmclient sortDesktop\n"
+#~ "            # Rearranges all icons on the desktop.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmclient sortDesktop\n"
+#~ "            # بازآرایی همه شمایلهای رومیزی\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "  kfmclient configure\n"
+#~ "            # Re-read Konqueror's configuration.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmclient configure\n"
+#~ "            # بازخوانی پیکربندی Konqueror \n"
+#~ "\n"
+
+#~ msgid ""
+#~ "  kfmclient configureDesktop\n"
+#~ "            # Re-read kdesktop's configuration.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmclient configureDesktop\n"
+#~ "            # بازخوانی پیکربندی رومیزی.\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "*** Examples:\n"
+#~ "  kfmclient exec file:/root/Desktop/cdrom.desktop \"Mount default\"\n"
+#~ "             // Mounts the CD-ROM\n"
+#~ "\n"
+#~ msgstr ""
+#~ "*** مثالها:\n"
+#~ "  kfmclient exec file:/root/Desktop/cdrom.desktop «سوار کردن پیش‌فرض»\n"
+#~ "             // دیسک فشرده را سوار می‌کند\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "  kfmclient exec file:/home/weis/data/test.html\n"
+#~ "             // Opens the file with default binding\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmclient exec file:/home/weis/data/test.html\n"
+#~ "             // پرونده را با مقیدسازی پیش‌فرض باز می‌کند\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "  kfmclient exec file:/home/weis/data/test.html Netscape\n"
+#~ "             // Opens the file with netscape\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmclient exec file:/home/weis/data/test.html Netscape\n"
+#~ "             // پرونده را با نت‌اسکیپ باز می‌کند\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "  kfmclient exec ftp://localhost/\n"
+#~ "             // Opens new window with URL\n"
+#~ "\n"
+#~ msgstr ""
+#~ " kfmclient exec ftp://localhost/\n"
+#~ "             // پنجره جدید را با نشانی وب باز می‌کند\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "  kfmclient exec file:/root/Desktop/emacs.desktop\n"
+#~ "             // Starts emacs\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmclient exec file:/root/Desktop/emacs.desktop\n"
+#~ "             //emacs آغاز می‌شود \n"
+#~ "\n"
+
+#~ msgid ""
+#~ "  kfmclient exec file:/root/Desktop/cdrom.desktop\n"
+#~ "             // Opens the CD-ROM's mount directory\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmclient exec file:/root/Desktop/cdrom.desktop\n"
+#~ "             // فهرست راهنمای سوار کردن دیسک فشرده را باز می‌کند\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "  kfmclient exec .\n"
+#~ "             // Opens the current directory. Very convenient.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmclient exec .\n"
+#~ "             // فهرست راهنمای جاری را باز می‌کند. بسیار راحت.\n"
+#~ "\n"
+
+#~ msgid "Unable to download from an invalid URL."
+#~ msgstr "قادر به بارگیری از نشانی وب معتبر نیست."

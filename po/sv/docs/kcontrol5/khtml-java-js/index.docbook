@@ -1,0 +1,175 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Swedish "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="khtml-java-js" lang="&language;">
+<articleinfo>
+<title
+>Java och Javascript</title>
+<authorgroup>
+<author
+>&Krishna.Tateneni; &Krishna.Tateneni.mail;</author>
+<othercredit role="translator"
+> <firstname
+>Stefan</firstname
+> <surname
+>Asserhäll</surname
+> <affiliation
+><address
+><email
+>stefan.asserhall@bredband.net</email
+></address
+></affiliation
+> <contrib
+>Översättare</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2016-11-08</date>
+<releaseinfo
+>Program 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Systeminställningar</keyword>
+<keyword
+>konqueror</keyword>
+<keyword
+>bläddra</keyword>
+<keyword
+>Java</keyword>
+<keyword
+>Javascript</keyword>
+</keywordset>
+
+</articleinfo>
+<sect1 id="konq-browsing">
+<title
+>&Java; och Javascript</title>
+
+<sect2 id="kbrowse-java">
+<title
+>&Java;</title>
+
+<para
+>&Java; låter program laddas ner och köras av en webbläsare, under förutsättning att du har den nödvändiga programvaran installerad på din maskin. Många webbsidor använder &Java; (till exempel, bankservice på nätet och interaktiva spelplatser). Du bör vara medveten om att köra program från okända källor kan vara ett säkerhetshot mot din dator, även om den möjliga omfattningen av skadan inte är stor.</para>
+
+<para
+>Kryssrutan <guilabel
+>Aktivera Java globalt</guilabel
+> låter dig normalt aktivera &Java;stöd för alla webbsidor. Du kan också välja att inktivera &Java; för individuella värddatorer. För att lägga till en policy för en speciell värddator, klicka på knappen <guilabel
+>Ny...</guilabel
+> för att visa en dialog där du kan ange värddatornamnet och därefter välja att acceptera &Java;kod eller inte från den speciella värddatorn, vilket lägger till domänen i listan till vänster på sidan.</para>
+
+<para
+>Du kan välja en värddator i listan och klicka på knappen <guilabel
+>Ändra...</guilabel
+> för att välja en annan policy för den värddatorn. Genom att klicka på  <guilabel
+>Ta bort</guilabel
+> tas policyn för den valda värddatorn bort. Efter den har tagits bort, gäller den globala inställningen för den värddatorn.</para>
+
+<para
+>Till sist, gruppen med alternativ som heter <guilabel
+>Inställningar för Java Runtime</guilabel
+> låter dig välja sättet som &Java; ska köras på.</para>
+
+<para
+><guilabel
+>Använd säkerhetshanterare</guilabel
+> är normalt aktiverat. Inställningen gör att Javas virtuella maskin <acronym
+>JVM</acronym
+> kör med en säkerhetshanterare på plats. Det förhindrar att miniprogram läser och skriver i filsystemet, skapar godtyckliga uttag och andra åtgärder som kan användas för att skada systemet. Stäng av alternativet på egen risk. Du kan ändra filen <filename
+>$<envar
+>HOME</envar
+>/.java.policy</filename
+> med &Java;:s verktyg policytool, för att ge kod nerladdad från vissa platser mer rättigheter.</para>
+
+<para
+><guilabel
+>Använd KIO</guilabel
+> gör att Javas virtuella maskin (<acronym
+>JVM</acronym
+>) använder &kde;:s egna <acronym
+>KIO</acronym
+> överföringsprogram för nätverksanslutningar.</para>
+
+<para
+>Rutan <guilabel
+>Stäng av miniprogramservern vid inaktivitet längre än</guilabel
+> låter dig spara resurser genom att stänga av &Java;s miniprogramserver när den inte används, istället för att låta den fortsätta köra i bakgrunden. Om den inte markeras kan &Java; miniprogram starta fortare, men använder systemresurser när du inte använder något &Java; miniprogram. Om du markerar den, kan du välja en tidsgräns.</para>
+
+<para
+>Du kan antingen låta &konqueror; automatiskt hitta &Java;-installationen på ditt system, eller ange sökvägen till installationen själv genom att välja <guilabel
+>Sökväg till körbar Java, eller "java":</guilabel
+>. Du kan välja den senare metoden om du till exempel har flera &Java;-installationer på ditt system, och vill ange vilken av dem som ska användas. Om den &Java; virtuella maskin som du använder kräver några särskilda startalternativ, kan du skriva in dem i textrutan som heter <guilabel
+>Ytterligare Java-argument</guilabel
+>.</para>
+
+</sect2>
+
+<sect2 id="kbrowse-javascript">
+<title
+>Javascript</title>
+
+<para
+>Trots namnet, så har inte Javascript något alls gemensamt med &Java;.</para>
+
+<para
+>Den första delen av den här fliken fungerar på samma sätt som för &Java;-inställningarna.</para>
+
+<para
+>Kryssrutan <guilabel
+>Aktivera Javascript globalt</guilabel
+> låter dig normalt aktivera Javascriptstöd för alla webbsidor. Du kan också välja att aktivera Javascript för individuella värddatorer. För att lägga till en policy för en speciell värddator, klicka på knappen <guilabel
+>Ny...</guilabel
+> för att visa en dialogruta där du kan ange värddatornamnet och därefter välja att acceptera Javascriptkod eller inte från den speciella värddatorn, vilket lägger till domänen i listan till vänster på sidan.</para>
+
+<para
+>Du kan välja en värddator i listan och klicka på knappen <guilabel
+>Ändra...</guilabel
+> för att välja en annan policy för den värddatorn. Genom att klicka på  <guilabel
+>Ta bort</guilabel
+> tas policyn för den valda värddatorn bort. Efter den har tagits bort, gäller den globala inställningen för den värddatorn.</para>
+<!-- missing section Debugging
+Enable debugger Enables builtin JavaScript debugger.
+Report errors Enables the reporting of errors that occur when JavaScript code is executed.
+How are errors reported? popup window? icon in status bar?
+-->
+<para
+>Den sista uppsättningen alternativ i delen <guilabel
+>Allmän Javascriptprincip</guilabel
+> avgör vad som händer när en sida använder Javascript för särskilda åtgärder.</para>
+
+<para
+>Du kan aktivera eller inaktivera möjligheten för Javascript att manipulera fönster genom att flytta, ändra storlek eller ändra fokus. Du kan också förhindra Javascript från att ändra statusradens text, så att du till exempel alltid ser vart länkar tar dig när de klickas. Valen för alternativen är <guilabel
+>Tillåt</guilabel
+> och <guilabel
+>Ignorera</guilabel
+>.</para>
+
+<para
+>Det finns ytterligare möjlighet att styra när ett nytt fönster ska få öppnas. Du kan ställa in &konqueror; så att den <guilabel
+>Tillåter</guilabel
+> varje begäran, <guilabel
+>Frågar</guilabel
+> varje gång en begäran görs eller <guilabel
+>Nekar</guilabel
+> varje begäran.</para>
+
+<para
+>Inställningen <guilabel
+>Smart</guilabel
+> tillåter bara Javascript-popupfönster när du uttryckligen väljer en länk som skapar ett.</para>
+</sect2>
+
+</sect1>
+
+</article>

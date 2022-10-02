@@ -1,0 +1,450 @@
+# Translation of webarchiver to Norwegian Nynorsk
+#
+# Karl Ove Hufthammer <karl@huftis.org>, 2020, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2021-02-09 19:05+0100\n"
+"Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
+"Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
+"Language: nn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 20.12.1\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Karl Ove Hufthammer"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "karl@huftis.org"
+
+#: app/archivedialog.cpp:76
+#, kde-format
+msgid "Untitled"
+msgstr "Namnlaus"
+
+#: app/archivedialog.cpp:92
+#, kde-format
+msgid "Create Archive"
+msgstr "Lag nytt arkiv"
+
+#: app/archivedialog.cpp:108
+#, kde-format
+msgid "The URL of the page that is to be archived"
+msgstr "Adressa til sida du vil arkivera"
+
+#: app/archivedialog.cpp:111
+#, kde-format
+msgid "Source &URL:"
+msgstr "&Kjeldeadresse:"
+
+#: app/archivedialog.cpp:120
+#, kde-format
+msgid "Web archive (*.war)"
+msgstr "Vevarkiv (*.war)"
+
+#: app/archivedialog.cpp:121
+#, kde-format
+msgid "Tar archive (*.tar)"
+msgstr "Tar-arkiv (*.tar)"
+
+#: app/archivedialog.cpp:122
+#, kde-format
+msgid "Zip archive (*.zip)"
+msgstr "Zip-arkiv (*.zip)"
+
+#: app/archivedialog.cpp:123
+#, kde-format
+msgid "Directory"
+msgstr "Mappe"
+
+#: app/archivedialog.cpp:128
+#, kde-format
+msgid "The file or directory where the archived page will be saved"
+msgstr "Fila eller mappa som arkivfila skal lagrast til"
+
+#: app/archivedialog.cpp:129
+#, kde-format
+msgid "&Save to:"
+msgstr "&Lagra til:"
+
+#: app/archivedialog.cpp:131
+#, kde-format
+msgid "Options"
+msgstr "Val"
+
+#: app/archivedialog.cpp:141
+#, kde-format
+msgid " second"
+msgid_plural " seconds"
+msgstr[0] " sekund"
+msgstr[1] " sekund"
+
+#: app/archivedialog.cpp:142
+#, kde-format
+msgid "None"
+msgstr "Ingen"
+
+#: app/archivedialog.cpp:212
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The web archive download cannot use the current proxy settings. No proxy "
+"will be used."
+msgstr ""
+"Vevarkiv-nedlastinga kan ikkje bruka dei gjeldande innstillingane for "
+"mellomtenar. Ingen mellomtenar vert brukt."
+
+#: app/archivedialog.cpp:351
+#, kde-format
+msgctxt "@info"
+msgid "The save location is not valid."
+msgstr "Lagringsadressa er ikkje gyldig."
+
+#: app/archivedialog.cpp:371
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Cannot find the wget(1) command,<nl/>see <link>%1</link>."
+msgstr "Fann ikkje wget(1)-kommandoen.<nl/>Sjå <link>%1</link>."
+
+#: app/archivedialog.cpp:393
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Cannot verify destination<nl/><filename>%1</filename><nl/>%2"
+msgstr "Kan ikkje stadfesta målfila<nl/><filename>%1</filename><nl/>%2"
+
+#: app/archivedialog.cpp:410
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The archive directory<nl/><filename>%1</filename><nl/>already exists as a "
+"file."
+msgstr "Arkivmappa<nl/><filename>%1</filename><nl/>finst frå før som ei fil."
+
+#: app/archivedialog.cpp:411
+#, kde-kuit-format
+msgctxt "@info"
+msgid "The archive directory<nl/><filename>%1</filename><nl/>already exists."
+msgstr "Arkivmappa<nl/><filename>%1</filename><nl/>finst frå før."
+
+#: app/archivedialog.cpp:415
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The archive file<nl/><filename>%1</filename><nl/>already exists as a "
+"directory."
+msgstr "Arkivfila<nl/><filename>%1</filename><nl/>finst frå før som ei mappe."
+
+#: app/archivedialog.cpp:416
+#, kde-kuit-format
+msgctxt "@info"
+msgid "The archive file <nl/><filename>%1</filename><nl/>already exists."
+msgstr "Arkivfila<nl/><filename>%1</filename><nl/>finst frå før."
+
+#: app/archivedialog.cpp:420
+#, kde-format
+msgid "Archive Already Exists"
+msgstr "Arkivet finst frå før"
+
+#: app/archivedialog.cpp:450
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Cannot delete original archive<nl/><filename>%1</filename><nl/>%2"
+msgstr ""
+"Kan ikkje sletta det opphavlege arkivet<nl/><filename>%1</filename><nl/>%2"
+
+#: app/archivedialog.cpp:467
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Cannot create a temporary directory<nl/><filename>%1</filename><nl/>"
+msgstr "Kan ikkje oppretta mellombels mappe<nl/><filename>%1</filename><nl/>"
+
+#: app/archivedialog.cpp:539
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Cannot start the archiver process <filename>%1</filename>"
+msgstr "Kan ikkje starta arkivprosessen <filename>%1</filename>"
+
+#: app/archivedialog.cpp:555
+#, kde-kuit-format
+msgctxt "@info"
+msgid "The download process was interrupted."
+msgstr "Nedlastinga vart avbroten."
+
+#: app/archivedialog.cpp:556
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>The download process <filename>%1</filename> failed with signal %2.</"
+"para>"
+msgstr ""
+"<para>Nedlastingsprosessen <filename>%1</filename> gav feilsignalet %2.</"
+"para>"
+
+#: app/archivedialog.cpp:561
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>The download process <filename>%1</filename> failed with status %2.</"
+"para>"
+msgstr ""
+"<para>Nedlastingsprosessen <filename>%1</filename> gav feilstatusen %2.</"
+"para>"
+
+#: app/archivedialog.cpp:565
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>This may simply indicate a 404 error for some of the page elements.</"
+"para>"
+msgstr ""
+"<para>Dette kan skuldast ei 404-feilmelding for nokre av elementa på sida.</"
+"para>"
+
+#: app/archivedialog.cpp:571
+#, kde-kuit-format
+msgctxt "@info"
+msgid "<para>Retain the partial web archive?</para>"
+msgstr "<para>Ta vare på delvis vevarkiv?</para>"
+
+#: app/archivedialog.cpp:572
+#, kde-format
+msgid "Retain Archive?"
+msgstr "Ta vare på arkivet?"
+
+#: app/archivedialog.cpp:573
+#, kde-format
+msgid "Retain"
+msgstr "Ta vere på det"
+
+#: app/archivedialog.cpp:577
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Creating the web archive failed."
+msgstr "Klarte ikkje oppretta nytt vevarkiv."
+
+#: app/archivedialog.cpp:721
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Cannot copy archive to<nl/><filename>%1</filename><nl/>%2"
+msgstr "Kan ikkje kopiera arkivet til<nl/><filename>%1</filename><nl/>%2"
+
+#: app/archivedialog.cpp:751
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Cannot set permissions on<nl/><filename>%1</filename><nl/>%2"
+msgstr "Kan ikkje endra løyve på<nl/><filename>%1</filename><nl/>%2"
+
+#: app/archivedialog.cpp:759
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Web archive saved as<nl/><filename><link>%1</link></filename>"
+msgstr "Vevarkivet vart lagra som<nl/><filename><link>%1</link></filename>"
+
+#: app/main.cpp:26
+#, kde-format
+msgid "Web Archiver"
+msgstr "Vevarkivering"
+
+#: app/main.cpp:27
+#, kde-format
+msgid "0.0.1"
+msgstr "0.0.1"
+
+#: app/main.cpp:28
+#, kde-format
+msgid "Archive a web page"
+msgstr "Arkiver nettside"
+
+#: app/main.cpp:30
+#, kde-format
+msgid "Copyright (c) 2020 Jonathan Marten"
+msgstr "© 2020 Jonathan Marten"
+
+#: app/main.cpp:34
+#, kde-format
+msgid "Jonathan Marten"
+msgstr "Jonathan Marten"
+
+#: app/main.cpp:46
+#, kde-format
+msgid "URL of the web page to archive"
+msgstr "Adressa til nettsida du vil arkivera"
+
+#: app/main.cpp:46
+#, kde-format
+msgid "url"
+msgstr "adresse"
+
+#. i18n: ectx: label, entry (WaitTime), group (Options)
+#: app/settings.kcfg:10
+#, kde-format
+msgid "Wait time:"
+msgstr "Ventetid:"
+
+#. i18n: ectx: tooltip, entry (WaitTime), group (Options)
+#: app/settings.kcfg:11
+#, kde-format
+msgid "The wait time between item requests, to reduce web server load"
+msgstr ""
+"Ventetida mellom etterfølgjande førespurnadar, får å redusera ressursbruken "
+"på vevtenaren"
+
+#. i18n: ectx: label, entry (NoProxy), group (Options)
+#: app/settings.kcfg:18
+#, kde-format
+msgid "Do not use proxy"
+msgstr "Ikkje bruk mellomtenar"
+
+#. i18n: ectx: tooltip, entry (NoProxy), group (Options)
+#: app/settings.kcfg:19
+#, kde-format
+msgid "Do not use the system proxy settings to fetch the web page"
+msgstr "Ikkje bruk system­innstillingane for mellomtenar ved henting av vevsida"
+
+#. i18n: ectx: label, entry (RandomWait), group (Options)
+#: app/settings.kcfg:24
+#, kde-format
+msgid "Randomise wait time"
+msgstr "Randomiser ventetid"
+
+#. i18n: ectx: tooltip, entry (RandomWait), group (Options)
+#: app/settings.kcfg:25
+#, kde-format
+msgid "Vary the wait time between requests, to confuse server log analysis"
+msgstr ""
+"Varier ventetida mellom førespurnadar, for å forvirra analyse av "
+"vevtenarloggar"
+
+#. i18n: ectx: label, entry (FixExtensions), group (Options)
+#: app/settings.kcfg:30
+#, kde-format
+msgid "Save in standard web archive format"
+msgstr "Lagra i standardformat for vevarkiv"
+
+#. i18n: ectx: tooltip, entry (FixExtensions), group (Options)
+#: app/settings.kcfg:37
+#, kde-format
+msgid ""
+"<p>Save downloaded files all in a single directory, with file name "
+"extensions suitable for local browsing.\n"
+"                        For example, the main HTML page will always be "
+"called \"index.html\" and a remote .php page will be saved with the "
+"standard .html extension.</p>\n"
+"               <p>Leave this option turned on to produce a standard web "
+"archive (.war) file.</p>\n"
+"               <p>If this option is turned off, then the files will be saved "
+"exactly as downloaded.\n"
+"                        This means that they may be in subdirectories "
+"reflecting the structure of the original web site, and extensions will not "
+"be adjusted.\n"
+"                        Note that the download may not work correctly if the "
+"original URL refers to a directory but does not end with a slash.</p>\n"
+"      "
+msgstr ""
+"<p>Lagra nedlasta filer i éi mappe, med fil­etternamn eigna for lokal "
+"nettlesing.\n"
+"                        For eksempel får hovud-HTML-sida alltid namnet "
+"«index.html», og eventuelle .php-filer vert lagra med standard .html-"
+"etternamn.</p>\n"
+"               <p>Viss det er kryssa av her, vert det laga ei standard "
+"vevarkivfil (.war).</p>\n"
+"               <p>Viss det ikkje er kryssa av her, vert nedlasta filer lagra "
+"akkurat som dei er.\n"
+"                        Dette medfører at dei vert liggjande i under­mapper "
+"som reflekterer strukturen på den opphavlege nettstaden, og ingen fil­"
+"etternamn vert justerte.\n"
+"                        Merk at nedlastinga ikkje nødvendigvis fungerer "
+"dersom den opphavlege nettadressa viser til ei mappe men ikkje sluttar med "
+"ein skråstrek.</p>\n"
+"      "
+
+#. i18n: ectx: label, entry (RunInTerminal), group (Options)
+#: app/settings.kcfg:42
+#, kde-format
+msgid "Run in terminal"
+msgstr "Køyr i terminal"
+
+#. i18n: ectx: tooltip, entry (RunInTerminal), group (Options)
+#: app/settings.kcfg:45
+#, kde-format
+msgid ""
+"<p>Run the download process in a terminal window. Close the terminal window "
+"when the download has finished.</p>\n"
+"               <p>If this option is turned off then the download will run in "
+"the background. Its progress output should appear in the session log file.</"
+"p>\n"
+"      "
+msgstr ""
+"<p>Køyr nedlastingsprosessen i eit terminalvindauge. Lukk terminalvindauget "
+"når nedlastinga er fullført.</p>\n"
+"               <p>Viss det ikkje er kryssa av her, vert nedlastinga gjort i "
+"bakgrunnen. Du kan sjå framgangen og resultatet i loggfila til økta.</p>\n"
+"      "
+
+#. i18n: ectx: label, entry (CloseWhenFinished), group (Options)
+#: app/settings.kcfg:50
+#, kde-format
+msgid "Close when finished"
+msgstr "Lukk når ferdig"
+
+#. i18n: ectx: tooltip, entry (CloseWhenFinished), group (Options)
+#: app/settings.kcfg:51
+#, kde-format
+msgid "Close this window when the download has finished successfully"
+msgstr "Lukk dette vindauget når nedlastinga er fullført"
+
+#. i18n: ectx: label, entry (ArchiveType), group (Options)
+#: app/settings.kcfg:56
+#, kde-format
+msgid "Archive &type:"
+msgstr "Arkiv&type:"
+
+#. i18n: ectx: tooltip, entry (ArchiveType), group (Options)
+#: app/settings.kcfg:57
+#, kde-format
+msgid "The type of web archive to save"
+msgstr "Type vevarkiv som skal lagrast"
+
+#: plugin_webarchiver.cpp:31
+#, kde-format
+msgid "Archive Web Page..."
+msgstr "Arkiver nettside …"
+
+#: plugin_webarchiver.cpp:49
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Cannot find the <command>kcreatewebarchive</command> executable,<nl/>check "
+"the plugin and helper installation."
+msgstr ""
+"Fann ikkje programfila <command>kcreatewebarchive</command>.<nl/>Kontroller "
+"installasjonen av programtillegget og hjelparen."
+
+#: plugin_webarchiver.cpp:50
+#, kde-format
+msgid "Cannot Create Web Archive"
+msgstr "Kan ikkje oppretta vevarkiv"
+
+#. i18n: ectx: Menu (tools)
+#: webarchiverplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "V&erktøy"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: webarchiverplugin.rc:8
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "Ekstra-verktøylinje"

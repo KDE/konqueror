@@ -1,0 +1,200 @@
+# translation of libkonq.po to Malay
+# libkonq Bahasa Melayu (Malay) (ms)
+# Copyright (C) K Desktop Environment
+#
+# Muhammad Najmi bin Ahmad Zabidi <md_najmi@yahoo.com>, 2003.
+# Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>, 2004, 2010.
+# Sharuzzaman Ahmat Raslan <sharuzzaman@gmail.com>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2010-08-17 23:47+0800\n"
+"Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@gmail.com>\n"
+"Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
+"Language: ms\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=1;\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "B&uka"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "Cipta &Folder..."
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "&Pulih"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "Koson&gkan Tong Sampah"
+
+#: src/konq_popupmenu.cpp:312
+#, kde-format
+msgid "&Configure Trash Bin"
+msgstr "&Tetapkan Tong Sampah"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "Tanda&buku Laman Ini"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "Tanda&buku Lokasi Ini"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "Tanda&buku Folder Ini"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "Tanda&buku Pautan Ini"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "Tanda&buku Fail Ini"
+
+#: src/konq_popupmenu.cpp:379
+#, kde-format
+msgid "Preview In"
+msgstr "Pralihat Dalam"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "Ciri-cir&i..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy To"
+#~ msgstr "Salin Ke"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "Pindah Ke"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "Folder Rumah"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "Folder Root"
+
+#~ msgctxt "@title:menu in Copy To or Move To submenu"
+#~ msgid "Browse..."
+#~ msgstr "Lungsur..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "Salin Sini"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "Pindah Sini"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "Anda tidak boleh menjatuhkan folder pada diri sendiri"
+
+#~ msgid "File name for dropped contents:"
+#~ msgstr "Nama fail untuk kandungan yang dijatuhkan:"
+
+#~ msgid "&Move Here"
+#~ msgstr "&Pindah Sini"
+
+#~ msgid "&Copy Here"
+#~ msgstr "Sali&n Sini"
+
+#~ msgid "&Link Here"
+#~ msgstr "Pau&t Sini"
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "Tetapkan sebagai Kertas &Dinding"
+
+#~ msgid "C&ancel"
+#~ msgstr "&Batal"
+
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "Cipta direktori"
+
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "Masukkan nama lain"
+
+#~ msgid ""
+#~ "The name \"%1\" starts with a dot, so the directory will be hidden by "
+#~ "default."
+#~ msgstr ""
+#~ "Nama \"%1\" bermula dengan satu titik, maka direktori tersebut akan "
+#~ "disembunyikan secara default."
+
+#, fuzzy
+#~| msgctxt "@action:button"
+#~| msgid "Create directory"
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "Cipta direktori"
+
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "Folder Baru"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "Folder Baru"
+
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "Masukkan nama folder:"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "Tampal Satu Folder"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One File"
+#~ msgstr "Tampal Satu Fail"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Item"
+#~ msgid_plural "Paste %1 Items"
+#~ msgstr[0] "Tampal Satu Item"
+#~ msgstr[1] "Tampal %1 Item"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste"
+#~ msgstr "Tampal"
+
+#~ msgid "Share"
+#~ msgstr "Kongsi"

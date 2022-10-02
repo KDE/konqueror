@@ -1,0 +1,94 @@
+# Thomas Fischer <thomas.fischer@t-fischer.net>, 2004, 2005.
+# Thomas Reitelbach <tr@erdfunkstelle.de>, 2005, 2006.
+# Frederik Schwarzer <schwarzer@kde.org>, 2007, 2012.
+# Burkhard Lück <lueck@hube-lueck.de>, 2009, 2012.
+# Johannes Obermayr <johannesobermayr@gmx.de>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: searchbarplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-25 00:45+0000\n"
+"PO-Revision-Date: 2012-10-02 21:27+0200\n"
+"Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: searchbar.cpp:65
+#, kde-format
+msgid ""
+"Search Bar<p>Enter a search term. Click on the icon to change search mode or "
+"provider.</p>"
+msgstr ""
+"Suchleiste<p>Geben Sie einen Suchbegriff ein. Um den Suchmodus oder -"
+"provider zu wechseln, klicken Sie auf das Symbol.</p>"
+
+#: searchbar.cpp:70
+#, kde-format
+msgid "Search Bar"
+msgstr "Suchleiste"
+
+#: searchbar.cpp:75
+#, kde-format
+msgid "Focus Searchbar"
+msgstr "Suchleiste aktivieren"
+
+#: searchbar.cpp:267
+#, fuzzy, kde-format
+#| msgid "Find in This Page"
+msgid "Find in Page..."
+msgstr "Diese Seite durchsuchen"
+
+#: searchbar.cpp:287
+#, kde-format
+msgid "Find in This Page"
+msgstr "Diese Seite durchsuchen"
+
+#: searchbar.cpp:299
+#, kde-format
+msgid "Select Search Engines..."
+msgstr "Suchmaschinen auswählen ..."
+
+#: searchbar.cpp:318
+#, kde-format
+msgid "Add %1..."
+msgstr "%1 hinzufügen ..."
+
+#. i18n: ectx: ToolBar (locationToolBar)
+#: searchbarplugin.rc:3
+#, kde-format
+msgid "Search Toolbar"
+msgstr "Such-Werkzeugleiste"
+
+#: WebShortcutWidget.cpp:33
+#, kde-format
+msgid "Set Uri Shortcuts"
+msgstr "Web-Kürzel einstellen"
+
+#: WebShortcutWidget.cpp:47
+#, kde-format
+msgid "Name:"
+msgstr "Name:"
+
+#: WebShortcutWidget.cpp:51
+#, kde-format
+msgid "Shortcuts:"
+msgstr "Kurzbefehle:"
+
+#~ msgid "Enable Suggestion"
+#~ msgstr "Vorschlagsliste aktivieren"
+
+#~ msgid "Cancel"
+#~ msgstr "Abbrechen"
+
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#~ msgid "Ok"
+#~ msgstr "OK"
+
+#~ msgid "%1 Search"
+#~ msgstr "%1-Suche"

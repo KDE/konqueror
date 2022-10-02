@@ -1,0 +1,235 @@
+# translation of babelfish.po to Lithuanian
+#
+# Ričardas Čepas <rch@richard.eu.org>, 2003.
+# Donatas Glodenis <dgvirtual@akl.lt>, 2005.
+# Tomas Straupis <tomasstraupis@gmail.com>, 200-2010, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: babelfish\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"PO-Revision-Date: 2020-02-02 01:07+0200\n"
+"Last-Translator: Tomas Straupis <tomasstraupis@gmail.com>\n"
+"Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
+"%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
+"X-Generator: Poedit 2.2.4\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Andrius Štikonas, Moo"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "andrius@stikonas.eu, <>"
+
+#. i18n: ectx: Menu (tools)
+#: babelfishplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "Įrank&iai"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: babelfishplugin.rc:8
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "Papildoma įrankinė"
+
+#: plugin_babelfish.cpp:35
+#, kde-format
+msgid "Translate Web Page"
+msgstr "Versti tinklalapį"
+
+#: plugin_babelfish.cpp:43
+#, kde-format
+msgid "Translate Web &Page"
+msgstr "&Versti tinklalapį"
+
+#: plugin_babelfish.cpp:80
+#, kde-format
+msgid "&English To"
+msgstr "Iš &anglų į "
+
+#: plugin_babelfish.cpp:83
+#, kde-format
+msgid "&French To"
+msgstr "Iš &prancūzų į"
+
+#: plugin_babelfish.cpp:86
+#, kde-format
+msgid "&German To"
+msgstr "Iš &vokiečių į"
+
+#: plugin_babelfish.cpp:89
+#, kde-format
+msgid "&Greek To"
+msgstr "Iš &graikų į"
+
+#: plugin_babelfish.cpp:92
+#, kde-format
+msgid "&Spanish To"
+msgstr "Iš ispanų"
+
+#: plugin_babelfish.cpp:95
+#, kde-format
+msgid "&Portuguese To"
+msgstr "Iš portugalų"
+
+#: plugin_babelfish.cpp:98
+#, kde-format
+msgid "&Italian To"
+msgstr "Iš italų"
+
+#: plugin_babelfish.cpp:101
+#, kde-format
+msgid "&Dutch To"
+msgstr "Iš &olandų"
+
+#: plugin_babelfish.cpp:104
+#, kde-format
+msgid "&Russian To"
+msgstr "Iš &rusų į"
+
+#: plugin_babelfish.cpp:120
+#, kde-format
+msgid "&Chinese (Simplified)"
+msgstr "&Kinų (supaprastinta)"
+
+#: plugin_babelfish.cpp:121
+#, kde-format
+msgid "Chinese (&Traditional)"
+msgstr "Kinų (&Tradicinė)"
+
+#: plugin_babelfish.cpp:122 plugin_babelfish.cpp:135
+#, kde-format
+msgid "&Dutch"
+msgstr "&Olandų"
+
+#: plugin_babelfish.cpp:123 plugin_babelfish.cpp:144 plugin_babelfish.cpp:146
+#: plugin_babelfish.cpp:148 plugin_babelfish.cpp:150 plugin_babelfish.cpp:152
+#: plugin_babelfish.cpp:154 plugin_babelfish.cpp:156
+#, kde-format
+msgid "&French"
+msgstr "&Prancūzų"
+
+#: plugin_babelfish.cpp:124 plugin_babelfish.cpp:137
+#, kde-format
+msgid "&German"
+msgstr "&Vokiečių"
+
+#: plugin_babelfish.cpp:125 plugin_babelfish.cpp:138
+#, kde-format
+msgid "&Greek"
+msgstr "&Graikų"
+
+#: plugin_babelfish.cpp:126 plugin_babelfish.cpp:139
+#, kde-format
+msgid "&Italian"
+msgstr "&Italų"
+
+#: plugin_babelfish.cpp:127
+#, kde-format
+msgid "&Japanese"
+msgstr "&Japonų"
+
+#: plugin_babelfish.cpp:128
+#, kde-format
+msgid "&Korean"
+msgstr "&Koriejėčių"
+
+#: plugin_babelfish.cpp:129
+#, kde-format
+msgid "&Norwegian"
+msgstr "&Norvegų"
+
+#: plugin_babelfish.cpp:130 plugin_babelfish.cpp:140
+#, kde-format
+msgid "&Portuguese"
+msgstr "&Portugalų"
+
+#: plugin_babelfish.cpp:131 plugin_babelfish.cpp:142
+#, kde-format
+msgid "&Russian"
+msgstr "&Rusų"
+
+#: plugin_babelfish.cpp:132 plugin_babelfish.cpp:141
+#, kde-format
+msgid "&Spanish"
+msgstr "I&spanų"
+
+#: plugin_babelfish.cpp:133
+#, kde-format
+msgid "T&hai"
+msgstr "&Tajų"
+
+#: plugin_babelfish.cpp:134
+#, kde-format
+msgid "&Arabic"
+msgstr "&Arabų"
+
+#: plugin_babelfish.cpp:136 plugin_babelfish.cpp:143 plugin_babelfish.cpp:145
+#: plugin_babelfish.cpp:147 plugin_babelfish.cpp:149 plugin_babelfish.cpp:151
+#: plugin_babelfish.cpp:153 plugin_babelfish.cpp:155
+#, kde-format
+msgid "&English"
+msgstr "&Anglų"
+
+#: plugin_babelfish.cpp:178
+#, kde-format
+msgid "&Chinese (Simplified) to English"
+msgstr "Iš &kinų (supaprastintos) į anglų"
+
+#: plugin_babelfish.cpp:179
+#, kde-format
+msgid "Chinese (&Traditional) to English"
+msgstr "Iš kinų (&tradicinės) į anglų"
+
+#: plugin_babelfish.cpp:188
+#, kde-format
+msgid "&Japanese to English"
+msgstr "Iš &japonų į anglų"
+
+#: plugin_babelfish.cpp:189
+#, kde-format
+msgid "&Korean to English"
+msgstr "Iš &korėjiečių į anglų"
+
+#: plugin_babelfish.cpp:257
+#, kde-format
+msgctxt "@title:window"
+msgid "Malformed URL"
+msgstr "Blogas URL"
+
+#: plugin_babelfish.cpp:258
+#, kde-format
+msgid "The URL you entered is not valid, please correct it and try again."
+msgstr "Jūs įrašėte neteisingą nuorodą, pataisykite ir pakartokite."
+
+#: plugin_babelfish.cpp:268
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info"
+#| msgid ""
+#| "You are viewing this page over a secure connection.<nl/><nl/>The URL of "
+#| "the page will sent to the online translation service, which may fetch the "
+#| "insecure version of the page."
+msgctxt "@info"
+msgid ""
+"You are viewing this page over a secure connection.<nl/><nl/>The URL of the "
+"page will sent to the online translation service,<nl/>which may fetch the "
+"insecure version of the page."
+msgstr ""
+"Jūs peržiūrite šį puslapį per saugų ryšį.<nl/><nl/>Puslapio URL adresas bus "
+"išsiųstas į internetinę vertimo paslaugą, kuri gali gauti nesaugią puslapio "
+"versiją."
+
+#: plugin_babelfish.cpp:272
+#, kde-format
+msgctxt "@title:window"
+msgid "Security Warning"
+msgstr "Saugumo įspėjimas"

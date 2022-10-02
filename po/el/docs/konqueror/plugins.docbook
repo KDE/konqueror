@@ -1,0 +1,865 @@
+<chapter id="plugins">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>Δημήτριος</firstname
+><surname
+>Γλενταδάκης</surname
+><affiliation
+><address
+><email
+>dglent@gmail.com</email
+></address
+></affiliation
+><contrib
+>Μεταφραστής</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2011-11-22</date>
+<releaseinfo
+>&kde; 4.8</releaseinfo>
+</chapterinfo>
+
+
+<title
+>Πρόσθετα</title>
+
+<sect1 id="netscape-plugin">
+<title
+>Πρόσθετα &Netscape;</title>
+
+<para
+>Αυτή τη στιγμή ο &konqueror; υποστηρίζει τα πρόσθετα &Netscape;.</para>
+
+<para
+>Επιλέγοντας <menuchoice
+><guimenu
+>Ρυθμίσεις</guimenu
+><guimenuitem
+> Ρύθμιση του Konqueror...</guimenuitem
+> </menuchoice
+> ανοίγει ο διάλογος ρυθμίσεων. Επιλέξτε τη σελίδα <guilabel
+>Πρόσθετα</guilabel
+>, όπου θα βρείτε δύο καρτέλες: <guilabel
+>Καθολικές ρυθμίσεις</guilabel
+> απ΄όπου μπορείτε να ενεργοποιήσετε τα πρόσθετα  και να ρυθμίστε τη χρήση τους στον &konqueror; και <guilabel
+>Πρόσθετα</guilabel
+> στην οποία εμφανίζονται τα πρόσθετα &Netscape; που έχει ανιχνεύσει το &kde;, και σας επιτρέπει τον εντοπισμό πρόσθετων.</para>
+
+<para
+>Για περισσότερες πληροφορίες δείτε τη σελίδα βοήθειας <ulink url="help:/kcontrol/khtml-plugins/index.html"
+>Πρόσθετα περιηγητή</ulink
+>.</para>
+
+</sect1>
+
+<!-- 
+missing from extragear base:
+minitools (Bookmarklets - Enables the use of bookmarklets)
+This plugin adds implementation for so-called bookmarklets. Bookmarklets are little
+Javascript programs which can be saved and used like normal web page bookmarks. Therefore,
+they are simple "one-click" tools that can add substantial functionality to the browser.
+http://blog.ssokolow.com/archives/2007/01/30/konqueror-with-bookmarklets/
+
+autorefresh
+This works on any readonly part (though currently it only plugs into
+khtmlpart). It lets you tell konqueror to refresh a page automatically
+after a specific period. This is useful for things like news pages,
+and should be very nice for people using kiosk mode
+
+rellinks
+Name=Document Relations
+Comment=Displays the document relations of a document
+
+adblock from baseapps+extragear
+Show all blockable html elements
+
+akregator
+This works on KHTMLPart and allows you to add feeds to Akregator directly from Konqueror.
+
+not ported to kde4 yet
+sidebar
+microformat
+mediarealfolder
+<listitem>
+<para
+><ulink url="help:/konq-plugins/mediaplayer/index.html"
+>The Embedded Media
+Player</ulink
+></para>
+
+konq plugins in other modules
+kdeutils 
+  filelight
+  ark?
+
+kdebase apps
+  kttsdplugin (browser mode ?)
+  shellcmdplugin (file manager mode)
+  
+kdenetwork
+  kget (browser mode)
+-->
+
+<sect1 id="konq-plugin">
+<title
+>Πρόσθετα του &konqueror;</title>
+
+<para
+>Το &kde; παρέχει μερικά χρήσιμα πρόσθετα που αλληλεπιδρούν με τον &konqueror; με διάφορους τρόπους. Οι τρόποι αυτοί περιγράφονται συνοπτικά παρακάτω.</para>
+
+<para
+>Χρησιμοποιήστε το μενού <menuchoice
+><guimenu
+>Ρυθμίσεις</guimenu
+><guimenuitem
+>Ρύθμιση επεκτάσεων...</guimenuitem
+></menuchoice
+> για να ανοίξετε ένα διάλογο με όλα τα εγκατεστημένα πρόσθετα και επιλέξτε αυτά που χρειάζεστε. Όλα τα πρόσθετα είναι προσβάσιμα από το μενού <guimenu
+>Εργαλεία</guimenu
+>.</para>
+
+<para
+>Μόνο τα πρόσθετα που αντιστοιχούν στην τρέχουσα προβολή (διαχειριστή αρχείων ή περιηγητή) εμφανίζονται στο διάλογο.</para>
+
+<variablelist>
+<title
+>Λειτουργία περιηγητή</title>
+
+ <!--FIXME does not work any more, see also https://github.com/nltk/nltk/issues/265-->
+<varlistentry>
+<term
+>Μετάφραση ιστοσελίδων</term>
+<listitem
+><para
+>Χρησιμοποιεί την μηχανή υπηρεσίας μεταφράσεων που παρέχει η ιστοσελίδα του <ulink url="http://babelfish.yahoo.com/"
+>Yahoo  Babelfish</ulink
+> για τη μετάφραση της τρέχουσας σελίδας <acronym
+>HTML</acronym
+> σε όποια γλώσσα επιθυμείτε (στα πλαίσια του δυνατού). Μπορείτε να το εκκινήστε από το μενού <menuchoice
+><guimenu
+>Εργαλεία</guimenu
+><guisubmenu
+>Μετάφραση ιστοσελίδας</guisubmenu
+></menuchoice
+>.</para>
+<para
+>Αν έχετε επιλεγμένο ένα μέρος του κειμένου της σελίδας, τότε θα γίνει η μετάφραση του κειμένου αντί ολόκληρου του &URL;.</para>
+
+<para
+>Δεν είναι όλες οι γλώσσες διαθέσιμες από την υπηρεσία Babelfish.</para>
+
+<important>
+<para
+>Η μηχανή μετάφρασης δεν είναι μια τέλεια επιστήμη! Το Babelfish θα σας προσφέρει στην καλύτερη περίπτωση μια ακατέργαστη μετάφραση, και στην χειρότερη περίπτωση ένα πολύ αστείο κείμενο. Μην βασίζετε σημαντικές αποφάσεις σε πράγματα που έχετε διαβάσει από μια μεταφρασμένη σελίδα με το Babelfish, χωρίς να επιβεβαιώσετε ότι η μετάφραση είναι ακριβής.</para>
+</important>
+
+<note
+> 
+<para
+>Μπορεί να μεταφράζετε σελίδες που βρίσκονται μόνο στον παγκόσμιο ιστό. Για να μεταφράσετε οποιοδήποτε άλλο κείμενο, θα πρέπει να πάτε στην ίδια την ιστοσελίδα του Babelfish, όπου μπορείτε να κάνετε επικόλληση του κειμένου προς μετάφραση.</para>
+</note>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Προβολέας δέντρου DOM</term>
+<listitem>
+<para
+>Ο προβολέας δέντρου <acronym
+>DOM</acronym
+> επιτρέπει στον προγραμματιστή την προβολή των στυλ, αδειών και αντικείμενων ενός εγγράφου ιστού.</para>
+<para
+>Επιλέγοντας <menuchoice
+><guimenu
+>Εργαλεία</guimenu
+><guisubmenu
+> Εμφάνιση δέντρου DOM</guisubmenu
+></menuchoice
+> ανοίγει ένα νέο παράθυρο που προβάλει το μοντέλο αντικειμένων εγγράφου (Document Object Model) της τρέχουσας σελίδας <acronym
+>HTML</acronym
+>.</para>
+<para
+>Από προεπιλογή η προβολή ξεκινά από τον ριζικό κόμβο του εγγράφου, για παράδειγμα: <quote
+>documentElement</quote
+>, όλοι οι άλλοι κόμβοι που θα δείτε είναι απόγονοι του ριζικού κόμβου.</para>
+<para
+>Αν επιθυμείτε να επεξεργαστείτε το δέντρο <acronym
+>DOM</acronym
+> με οποιονδήποτε τρόπο θα πρέπει να κάνετε χρήση ενός εξωτερικού σεναρίου.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Ελεγκτής ιστοσελίδας</term>
+<listitem>
+<para
+>Αυτό το πρόσθετο χρησιμοποιεί τον έλεγχο εγκυρότητας W3C HTML για την επικύρωση της τρέχουσας σελίδας, πολύ χρήσιμο όταν δημιουργείτε ιστοσελίδες.</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guimenuitem
+>Έλεγχος εγκυρότητας &HTML; (με URI)</guimenuitem
+> / <guimenuitem
+>Έλεγχος εγκυρότητας &HTML; (με αποστολή)</guimenuitem
+></term>
+<listitem
+><para
+>Η επιλογή ελέγχου εγκυρότητας &HTML; σας επιτρέπει να συγκρίνετε το &HTML; έγγραφό σας με την εξ' ορισμού σύνταξη της &HTML; και αναφέρει τυχόν σφάλματα που βρέθηκαν. Επικυρώνοντας την &HTML; σας εξασφαλίζετε ότι οι ιστοσελίδες σας θα εμφανίζονται σωστά σε όλους τους περιηγητές.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Έλεγχος εγκυρότητας CSS (με URI)</guimenuitem
+></term>
+<listitem
+><para
+>Σας επιτρέπει την επικύρωση του φύλλου σας στυλ &CSS; που ενσωματώνεται σε ένα έγγραφο &HTML; ή &XHTML;. Είναι πολύ σημαντικό να έχετε επικυρωμένο &CSS; γιατί με αυτόν τον εξασφαλίζετε ότι η ιστοσελίδα σας έχει μια συνεπή εμφάνιση ανεξάρτητα από τον περιηγητή που χρησιμοποιείται.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Έλεγχος εγκυρότητας δεσμών</guimenuitem
+></term>
+<listitem
+><para
+>Σας επιτρέπει να επιβεβαιώσετε ότι οι δεσμοί στην ιστοσελίδα σας δεν περιέχουν ανακατευθύνσεις ή σπασμένους δεσμούς. Αυτό το εργαλείο ελέγχει αναδρομικά όλους τους δεσμούς σε μια ιστοσελίδα.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Έλεγχος εγκυρότητας σελίδας</guimenuitem
+></term>
+<listitem
+><para
+>Πραγματοποιεί έναν έλεγχο εγκυρότητας στην τρέχουσα σελίδα αλλά δεν εμφανίζει το αποτέλεσμα σε ένα άλλο παράθυρο ή καρτέλα όπως οι προηγούμενες ενέργειες. Με τη χρήση αυτού του αντικειμένου ενεργοποιείται η ενέργεια <guimenuitem
+>Προβολή αναφοράς ελέγχου εγκυρότητας</guimenuitem
+> για εμφάνιση μιας σύνοψης του ελέγχου.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Ρύθμιση ελεγκτή εγκυρότητας</guimenuitem
+></term>
+<listitem
+><para
+>Το αντικείμενο ρύθμισης του ελεγκτή σας επιτρέπει την προβολή των προκαθορισμένων ελεγκτών που μπορείτε να χρησιμοποιήσετε για την επικύρωση των εγγράφων σας &HTML; και &CSS;.</para
+></listitem>
+</varlistentry>
+</variablelist>
+</listitem>
+<!-- icon W3 right in statusbar
+&LBM; click context menu with items above but no Configure Validator
+ -->
+</varlistentry>
+
+<varlistentry>
+<term
+>Ρυθμίσεις HTML</term>
+<listitem
+><para
+>Επιλέξτε <menuchoice
+><guimenu
+>Εργαλεία</guimenu
+><guisubmenu
+>Ρυθμίσεις HTML</guisubmenu
+></menuchoice
+> για να ενεργοποιήσετε ή να απενεργοποιήσετε έναν αριθμό ρυθμίσεων HTML χωρίς να χρειάζεται να ανοίξετε το παράθυρο με τις <guimenu
+>Ρυθμίσεις</guimenu
+>. </para>
+<variablelist>
+<varlistentry>
+<term
+><guimenuitem
+>JavaScript</guimenuitem
+></term>
+<listitem
+><para
+>Σας επιτρέπει την ενεργοποίηση ή απενεργοποίηση της χρήσης JavaScript στον &konqueror;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Java</guimenuitem
+></term>
+<listitem
+><para
+>Σας επιτρέπει την ενεργοποίηση ή απενεργοποίηση της χρήσης &Java; στον &konqueror;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Cookies</guimenuitem
+></term>
+<listitem
+><para
+>Σας επιτρέπει την ενεργοποίηση ή απενεργοποίηση της χρήσης Cookies στον &konqueror;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Πρόσθετα</guimenuitem
+></term>
+<listitem
+><para
+>Σας επιτρέπει την ενεργοποίηση ή απενεργοποίηση της χρήσης των εγκατεστημένων πρόσθετων στον &konqueror;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Αυτόματη φόρτωση των εικόνων</guimenuitem
+></term>
+<listitem
+><para
+>Σας επιτρέπει την ενεργοποίηση ή απενεργοποίηση της αυτόματης φόρτωσης των εικόνων στις ιστοσελίδες.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Ενεργοποίηση διαμεσολαβητή</guimenuitem
+></term>
+<listitem
+><para
+>Σας επιτρέπει την ενεργοποίηση ή απενεργοποίηση της χρήσης ενός διαμεσολαβητή στον περιηγητή &konqueror;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Ενεργοποίηση της λανθάνουσας μνήμης</guimenuitem
+></term>
+<listitem
+><para
+>Σας επιτρέπει την ενεργοποίηση ή απενεργοποίηση της χρήσης λανθάνουσας μνήμης στον περιηγητή &konqueror;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Πολιτική λανθάνουσας μνήμης</guimenuitem
+></term>
+<listitem>
+<para
+>Το υπομενού πολιτικής λανθάνουσας μνήμης σας παρέχει τη δυνατότητα να ρυθμίσετε το πως ο &konqueror; χρησιμοποιεί τη λανθάνουσα μνήμη. Στις δυνατές επιλογές συμπεριλαμβάνονται:</para>
+<itemizedlist>
+<listitem
+><para
+>Διατήρηση της λανθάνουσας μνήμης σε συγχρονισμό</para
+></listitem>
+<listitem
+><para
+>Χρήση της λανθάνουσας μνήμης αν είναι δυνατό</para
+></listitem>
+<listitem
+><para
+>Λειτουργία περιήγησης χωρίς σύνδεση</para
+></listitem>
+</itemizedlist>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Αλλαγή πράκτορα χρήστη</term>
+<listitem
+><para
+>Επιλέξτε <menuchoice
+><guimenu
+>Εργαλεία</guimenu
+><guisubmenu
+>Αλλαγή ταυτότητας περιηγητή</guisubmenu
+></menuchoice
+> για να ανοίξετε ένα μενού το οποίο σας επιτρέπει να αλλάξετε τον πράκτορα χρήστη χωρίς να χρειάζεται να ανοίξετε το παράθυρο με τις <guimenu
+>Ρυθμίσεις</guimenu
+>. </para>
+<para
+>Το πρόσθετο σας επιτρέπει την αλλαγή ταυτοποίησης του περιηγητή και του λειτουργικού συστήματος ανά τομέα. Αυτό είναι χρήσιμο κατά την περιήγηση σε ιστοσελίδες που περιορίζουν την πρόσβαση σε αυτούς που χρησιμοποιούν ένα συγκεκριμένο περιηγητή ιστοσελίδων.</para>
+<variablelist>
+<varlistentry>
+<term
+><guimenuitem
+>Προκαθορισμένη ταυτότητα</guimenuitem
+></term>
+<listitem
+><para
+>Η προκαθορισμένη επικεφαλίδα πράκτορα χρήστη για τον &konqueror; είναι Mozilla/5.0(compatible;Konqueror/4.7)(KHTML/4.7, like Gecko). Αν μια από τις ιστοσελίδες που επισκέπτεστε δεν επιτρέπει την πρόσβαση σε αυτόν τον περιηγητή, αλλάξτε τον πράκτορα χρήστη σε μια από τις παρακάτω επιλογές.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Υπομενού περιηγητή</term>
+<listitem
+><para
+>Στα παρακάτω μενού εμφανίζονται αρκετοί δημοφιλείς περιηγητές όπως <guimenuitem
+>Firefox</guimenuitem
+>, <guimenuitem
+>Internet Explorer</guimenuitem
+>, <guimenuitem
+>Netscape Navigator</guimenuitem
+>, <guimenuitem
+>Opera</guimenuitem
+>, <guimenuitem
+>Άλλοι</guimenuitem
+>, και <guimenuitem
+>Safari</guimenuitem
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Εφαρμογή σε ολόκληρο το δικτυακό τόπο</guimenuitem
+></term>
+<listitem
+><para
+>Αυτή η επιλογή σας επιτρέπει να καθορίσετε ότι ο πράκτορας χρήστη που έχετε ορίσει εφαρμόζεται σε κάθε σελίδα του ιστοτόπου που επισκέπτεστε.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Ρύθμιση</guimenuitem
+></term>
+<listitem
+><para
+>Επιλέγοντας <guimenuitem
+>Ρυθμίσεις</guimenuitem
+> ανοίγει ο διάλογος ρυθμίσεων ο οποίος σας επιτρέπει να ρυθμίσετε με ακρίβεια τον όγκο των πληροφοριών που επιθυμείτε να εμφανίζονται για τον περιηγητή και το λειτουργικό σύστημα που θα χρησιμοποιείται.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Αρχειοθέτηση ιστοσελίδας</term>
+<listitem
+><para
+>Μπορείτε να το εκκινήσετε από το μενού <menuchoice
+><guimenu
+>Εργαλεία</guimenu
+><guisubmenu
+>Αρχειοθέτηση ιστοσελίδας</guisubmenu
+></menuchoice
+>, αυτό το εργαλείο δημιουργεί μια αρχειοθήκη (<literal role="extension"
+>.war</literal
+>) η οποία περιέχει την ιστοσελίδα που προβάλλεται μαζί με τις εικόνες. Με <mousebutton
+>αριστερό</mousebutton
+> κλικ στο όνομα μιας αρχειοθήκης μπορείτε να δείτε την αποθηκευμένη σελίδα. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<variablelist>
+<title
+>Λειτουργία διαχειριστή αρχείων</title>
+
+<varlistentry>
+<term
+>Φίλτρο προβολής φακέλων</term>
+<listitem
+><para
+>Αυτό το πρόσθετο ελέγχεται από το μενού <menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>I</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Εργαλεία</guimenu
+><guisubmenu
+>Προβολή φίλτρου</guisubmenu
+></menuchoice
+> και σας επιτρέπει την επιλογή του τύπου των αντικείμενων που εμφανίζονται σε ένα φάκελο.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Πινακοθήκη εικόνων</term>
+<listitem
+><para
+>Στη λειτουργία διαχειριστή αρχείων, μπορείτε να επιλέξετε <menuchoice
+><guimenu
+>Εργαλεία</guimenu
+><guisubmenu
+>Δημιουργία πινακοθήκης εικόνων</guisubmenu
+></menuchoice
+> ή να χρησιμοποιήσετε <keycombo
+>&Ctrl;<keycap
+>I</keycap
+></keycombo
+> για να δημιουργήσετε μια σελίδα HTML με επισκόπηση όλων των εικόνων στον τρέχοντα φάκελο. Από προεπιλογή η σελίδα HTML ονομάζεται <filename
+>images.html</filename
+> και οι εικόνες επισκόπησης τοποθετούνται σε ένα νέο φάκελο με το όνομα <filename
+>images</filename
+>.</para>
+<para
+>Κατά την έναρξη του πρόσθετου πινακοθήκης εικόνων ανοίγει ένας διάλογος που σας επιτρέπει να προσαρμόσετε τον τρόπο δημιουργίας της πινακοθήκης.</para>
+
+<variablelist id="page_look_dialog">
+<title
+>Εμφάνιση Σελίδας</title>
+<varlistentry>
+<term
+>Ο διάλογος Εμφάνισης χρησιμεύει για την προσαρμογή της εμφάνισης της σελίδας της πινακοθήκης.</term>
+<listitem>
+  
+<screenshot>
+<screeninfo
+>Στιγμιότυπο του διαλόγου Εμφάνισης</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="look.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Στιγμιότυπο</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Τίτλος σελίδας</guimenuitem
+></term>
+<listitem
+><para
+>Η επιλογή του τίτλου σελίδας έχει ένα πλαίσιο εισαγωγής κειμένου για την δυνατότητα αλλαγής του τίτλου της σελίδας της πινακοθήκης εικόνων.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Εικόνες ανά γραμμή</guimenuitem
+></term>
+<listitem
+><para
+>Η επιλογή «εικόνες ανά γραμμή» διαθέτει μια κλίμακα και μια λαβή για να ρυθμίσετε τον αριθμό των εικόνων επισκόπησης που βρίσκονται σε μια γραμμή στην πινακοθήκη.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Εμφάνιση ονόματος αρχείου εικόνας</guimenuitem
+></term>
+<listitem
+><para
+>Το πλαίσιο επιλογής «Εμφάνιση ονόματος αρχείου εικόνας» σας επιτρέπει να επιλέξετε αν θα εμφανίζονται τα ονόματα αρχείων κάτω από τις εικόνες επισκόπησης της πινακοθήκης.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Εμφάνιση μεγέθους αρχείου εικόνας</guimenuitem
+></term>
+<listitem
+><para
+>Το πλαίσιο επιλογής «Εμφάνιση μεγέθους αρχείου εικόνας» σας επιτρέπει να επιλέξετε αν θα εμφανίζεται ο μέγεθος των αρχείων κάτω από τις εικόνες επισκόπησης της πινακοθήκης.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Εμφάνιση διαστάσεων εικόνας</guimenuitem
+></term>
+<listitem
+><para
+>Το πλαίσιο επιλογής «Εμφάνιση διαστάσεων εικόνας» σας επιτρέπει να επιλέξετε αν θα εμφανίζονται οι διαστάσεις της εικόνας σε εικονοστοιχεία κάτω από τις εικόνες επισκόπησης της πινακοθήκης.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Όνομα γραμματοσειράς</guimenuitem
+></term>
+<listitem
+><para
+>Το πλαίσιο επιλογής «Όνομα γραμματοσειράς» σας παρέχει τη δυνατότητα να επιλέξετε τη γραμματοσειρά που θα χρησιμοποιηθεί κατά τη δημιουργία της πινακοθήκης.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Μέγεθος γραμματοσειράς</guimenuitem
+></term>
+<listitem
+><para
+>Το πλαίσιο επιλογής μεγέθους γραμματοσειράς σας επιτρέπει την αλλαγή του μεγέθους της επιλεγμένης γραμματοσειράς.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Χρώμα προσκηνίου</guimenuitem
+></term>
+<listitem
+><para
+>Το επιλογή «Χρώμα προσκηνίου» εμφανίζει έναν επιλογέα χρώματος για το χρώμα προσκηνίου της πινακοθήκης, συμπεριλαμβανομένου των περιοχών κειμένου.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Χρώμα φόντου</guimenuitem
+></term>
+<listitem
+><para
+>Η επιλογή «Χρώμα φόντου» εμφανίσει έναν επιλογέα χρώματος για το χρώμα του φόντου της πινακοθήκης.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<variablelist id="folders_dialog">
+<title
+>Φάκελοι</title>
+<varlistentry>
+<term
+>Ο διάλογος «Φάκελοι» σας χρησιμοποιείται για να επιλέξετε που θα αποθηκεύεται η πινακοθήκη σας. Αυτός ο διάλογος χρησιμεύει επίσης για να ρυθμίσετε ποιοι φάκελοι θα χρησιμοποιούνται.</term>
+<listitem>
+  
+<screenshot>
+<screeninfo
+>Στιγμιότυπο του διαλόγου Φάκελοι</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="folders.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Στιγμιότυπο</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Αποθήκευση σε HTML αρχείο</guimenuitem
+></term>
+<listitem
+><para
+>Ο διάλογος αποθήκευσης αρχείου χρησιμεύει για να επιλέξετε την τοποθεσία που επιθυμείτε να αποθηκεύσετε τη σελίδα html της πινακοθήκης σας.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Αναδρομή υποφακέλων</guimenuitem
+></term>
+<listitem
+><para
+>Το πλαίσιο επιλογής «Αναδρομή υποφακέλων» ενεργοποιεί την αναδρομή υποφακέλων. Αν το πλαίσιο ελέγχου είναι ενεργοποιημένο, με τη δυνατότητα της λαβής μπορείτε να επιλέξετε το βάθος αναδρομής στους φακέλους.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Αντιγραφή αρχικών αρχείων</guimenuitem
+></term>
+<listitem
+><para
+>Το πλαίσιο επιλογής «Αντιγραφή αρχικών αρχείων» δημιουργεί ένα φάκελο εικόνων που αποθηκεύονται αντίγραφα των αρχικών εικόνων που χρησιμοποιούνται στην πινακοθήκη.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Χρήση αρχείου σχολίων</guimenuitem
+></term>
+<listitem
+><para
+>Το πλαίσιο επιλογής «Χρήση αρχείου σχολίων» ενεργοποιεί έναν επιλογέα αρχείων για να επιλέξετε ένα αρχείο σχολίων που θα χρησιμοποιηθεί με την πινακοθήκη σας. Το αρχείο σχολείων περιέχει τις λεζάντες των εικόνων.</para>
+<para
+>Η μορφή αυτού του αρχείου είναι:</para>
+<programlisting
+># αυτό είναι ένα σχόλιο, οι γραμμές που αρχίζουν με «#» αγνοούνται
+ΟΝΟΜΑΑΡΧΕΙΟΥ1:
+Περιγραφή
+
+ΟΝΟΜΑΑΡΧΕΙΟΥ2:
+Περιγραφή
+</programlisting>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+<variablelist id="thumbnails_dialog">
+<title
+>Εικόνες επισκόπησης</title>
+<varlistentry>
+<term
+>Από τον διάλογο εικόνων επισκόπησης μπορείτε να προσαρμόσετε τις ιδιότητες των εικόνων επισκόπησης στην πινακοθήκη.</term>
+<listitem>
+  
+<screenshot>
+<screeninfo
+>Στιγμιότυπο διαλόγου εικόνων επισκόπησης</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="thumbnails.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Στιγμιότυπο</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Μορφή εικόνων επισκόπησης</guimenuitem
+></term>
+<listitem
+><para
+>Το πλαίσιο επιλογής «Μορφή εικόνων επισκόπησης σας επιτρέπει να επιλέξετε τη μορφή που θα χρησιμοποιείται στις εικόνες επισκόπησης.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Μέγεθος εικόνας επισκόπησης</guimenuitem
+></term>
+<listitem
+><para
+>Η επιλογή «Μέγεθος εικόνας επισκόπησης» παρέχει με τη δυνατότητα μιας λαβής να προσαρμόσετε το μέγεθος των εικόνων επισκόπησης που χρησιμοποιούνται στην πινακοθήκη.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Ορισμός διαφορετικού βάθους χρώματος</guimenuitem
+></term>
+<listitem
+><para
+>Το πλαίσιο επιλογής «Ορισμός διαφορετικού βάθους χρώματος ενεργοποιεί ένα πλαίσιο ελέγχου με το οποίο μπορείτε να επιλέξετε ένα διαφορετικό βάθος χρώματος για τις εικόνες επισκόπησης αν επιθυμείτε να χρησιμοποιήστε ένα βάθος χρώματος διαφορετικό από αυτό που χρησιμοποιείται στην αρχική εικόνα.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Γραμμή αναζήτησης</term>
+<listitem
+><para
+>Παρέχει ένα πλαίσιο κειμένου για εύκολη πρόσβαση σε μηχανές αναζήτησης όπως του Google. Κάνοντας κλικ στο εικονίδιο στα αριστερά του πλαισίου αναζήτησης ανοίγει ένα μενού όπου μπορείτε να επιλέξετε και να ενεργοποιήσετε διάφορες μηχανές αναζήτησης και να ρυθμίσετε τις <ulink url="help:/kcontrol/ebrowsing/index.html"
+>Συντομεύσεις ιστού</ulink
+> τους. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Πρόσθετο εντολών κελύφους</term>
+<listitem
+><para
+>Αυτό το πρόσθετο σας επιτρέπει την εκτέλεση μιας εντολής τερματικού στον τρέχοντα φάκελο και την προβολή της εξόδου της σε ένα ξεχωριστό παράθυρο. </para
+></listitem>
+</varlistentry>
+
+<!--FIXME
+imagerotation context menu Actions -> Convert to -> JPEG,PNG,GIF,TIFF 
+(rotation disabled) always installed
+
+Additional Download Manager from KGet
+-->
+</variablelist>
+
+</sect1>
+
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

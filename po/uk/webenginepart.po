@@ -1,0 +1,1672 @@
+# Translation of webenginepart.po to Ukrainian
+# Copyright (C) 2016-2020 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# Yuri Chornoivan <yurchor@ukr.net>, 2016, 2017, 2018, 2020, 2021, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: webenginepart\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-24 00:46+0000\n"
+"PO-Revision-Date: 2022-01-03 10:42+0200\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Lokalize 20.12.0\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Юрій Чорноіван"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "yurchor@ukr.net"
+
+#: src/about/konq_aboutpage.cpp:72 src/about/konq_aboutpage.cpp:74
+#: src/about/konq_aboutpage.cpp:132 src/about/konq_aboutpage.cpp:134
+#: src/about/konq_aboutpage.cpp:184 src/about/konq_aboutpage.cpp:186
+#: src/about/konq_aboutpage.cpp:284 src/about/konq_aboutpage.cpp:286
+#, kde-format
+msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
+msgid "Be free."
+msgstr "Будьте вільними."
+
+#: src/about/konq_aboutpage.cpp:73 src/about/konq_aboutpage.cpp:133
+#: src/about/konq_aboutpage.cpp:185 src/about/konq_aboutpage.cpp:285
+#, kde-format
+msgid "Konqueror"
+msgstr "Konqueror"
+
+#: src/about/konq_aboutpage.cpp:75 src/about/konq_aboutpage.cpp:135
+#: src/about/konq_aboutpage.cpp:187 src/about/konq_aboutpage.cpp:287
+#, kde-format
+msgid "Konqueror is a web browser, file manager and universal document viewer."
+msgstr ""
+"Konqueror — це навігатор інтернетом, менеджер файлів і універсальний "
+"переглядач документів."
+
+#: src/about/konq_aboutpage.cpp:76 src/about/konq_aboutpage.cpp:136
+#: src/about/konq_aboutpage.cpp:188 src/about/konq_aboutpage.cpp:288
+#, kde-format
+msgctxt ""
+"Link that points to the first page of the Konqueror 'about page', Starting "
+"Points contains links to Home, Network Folders, Trash, etc."
+msgid "Starting Points"
+msgstr "Початкові кроки"
+
+#: src/about/konq_aboutpage.cpp:77 src/about/konq_aboutpage.cpp:137
+#: src/about/konq_aboutpage.cpp:189 src/about/konq_aboutpage.cpp:289
+#, kde-format
+msgid "Introduction"
+msgstr "Вступ"
+
+#: src/about/konq_aboutpage.cpp:78 src/about/konq_aboutpage.cpp:138
+#: src/about/konq_aboutpage.cpp:190 src/about/konq_aboutpage.cpp:290
+#, kde-format
+msgid "Tips"
+msgstr "Підказки"
+
+#: src/about/konq_aboutpage.cpp:79 src/about/konq_aboutpage.cpp:139
+#: src/about/konq_aboutpage.cpp:191 src/about/konq_aboutpage.cpp:192
+#: src/about/konq_aboutpage.cpp:291
+#, kde-format
+msgid "Specifications"
+msgstr "Специфікації"
+
+#: src/about/konq_aboutpage.cpp:84
+#, kde-format
+msgid "Home Folder"
+msgstr "Домашня тека"
+
+#: src/about/konq_aboutpage.cpp:85
+#, kde-format
+msgid "Your personal files"
+msgstr "Ваші особисті файли"
+
+#: src/about/konq_aboutpage.cpp:88
+#, kde-format
+msgid "Trash"
+msgstr "Смітник"
+
+#: src/about/konq_aboutpage.cpp:89
+#, kde-format
+msgid "Browse and restore the trash"
+msgstr "Перегляд і відновлення вмісту смітника"
+
+#: src/about/konq_aboutpage.cpp:92
+#, kde-format
+msgid "Network Folders"
+msgstr "Мережні теки"
+
+#: src/about/konq_aboutpage.cpp:93
+#, kde-format
+msgid "Shared files and folders"
+msgstr "Спільні файли і теки"
+
+#: src/about/konq_aboutpage.cpp:96
+#, kde-format
+msgid "Bookmarks"
+msgstr "Закладки"
+
+#: src/about/konq_aboutpage.cpp:97
+#, kde-format
+msgid "Quick access to your bookmarks"
+msgstr "Швидкий доступ до ваших закладок"
+
+#: src/about/konq_aboutpage.cpp:100
+#, kde-format
+msgid "Next: An Introduction to Konqueror"
+msgstr "Далі: Вступ до Konqueror"
+
+#: src/about/konq_aboutpage.cpp:102
+#, kde-format
+msgid "Search the Web"
+msgstr "Пошук у інтернеті"
+
+#: src/about/konq_aboutpage.cpp:140
+#, kde-format
+msgid ""
+"Konqueror makes working with and managing your files easy. You can browse "
+"both local and networked folders while enjoying advanced features such as "
+"the powerful sidebar and file previews."
+msgstr ""
+"Konqueror спрощує керування і роботу з файлами. Можлива навігація до тек "
+"локальних та в мережі. Водночас можна використовувати дуже зручні додаткові "
+"можливості, такі як потужна бокова панель та перегляд файлів."
+
+#: src/about/konq_aboutpage.cpp:144
+#, kde-format
+msgid ""
+"Konqueror is also a full featured and easy to use web browser which you can "
+"use to explore the Internet. Enter the address (e.g. <a href=\"http://www."
+"kde.org\">http://www.kde.org</a>) of a web page you would like to visit in "
+"the location bar and press Enter, or choose an entry from the Bookmarks menu."
+msgstr ""
+"Konqueror — це також і повнофункціональний навігатор інтернету. Введіть "
+"адресу вебсайта (наприклад, <a HREF=\"http://www.kde.org\">http://www.kde."
+"org</a>), яка вам потрібна, і натисніть Enter. Ви також можете вибрати один "
+"з пунктів меню закладок."
+
+#: src/about/konq_aboutpage.cpp:149
+#, kde-format
+msgid ""
+"To return to the previous location, press the back button <img width='16' "
+"height='16' src=\"%1\"></img> in the toolbar. "
+msgstr ""
+"Щоб повернутись до попередньої сторінки, натисніть в пеналі кнопку назад "
+"<img width='16' height='16' src=\"%1\"></img>. "
+
+#: src/about/konq_aboutpage.cpp:152
+#, kde-format
+msgid ""
+"To quickly go to your Home folder press the home button <img width='16' "
+"height='16' src=\"%1\"></img>."
+msgstr ""
+"Щоб швидко перейти до домашньої теки, натисніть кнопку домівки <img "
+"width='16' height='16' src=\"%1\"></img>."
+
+#: src/about/konq_aboutpage.cpp:154
+#, kde-format
+msgid ""
+"For more detailed documentation on Konqueror click <a href=\"%1\">here</a>."
+msgstr "Для більш детальної інформації про Konqueror <a href=\"%1\">тут</a>."
+
+#: src/about/konq_aboutpage.cpp:157
+#, kde-format
+msgid "Next: Tips & Tricks"
+msgstr "Далі: Підказки та поради"
+
+#: src/about/konq_aboutpage.cpp:193
+#, kde-format
+msgid ""
+"Konqueror is designed to embrace and support Internet standards. The aim is "
+"to fully implement the officially sanctioned standards from organizations "
+"such as the W3 and OASIS, while also adding extra support for other common "
+"usability features that arise as de facto standards across the Internet. "
+"Along with this support, for such functions as favicons, Web Shortcuts, and "
+"<A HREF=\"%1\">XBEL bookmarks</A>, Konqueror also implements:"
+msgstr ""
+"Konqueror розроблено для впровадження і підтримки стандартів інтернету. "
+"Метою є повне впровадження стандартів, офіційно затверджених такими "
+"організаціями, як W3 та OASIS, та включення додаткової підтримки інших "
+"корисних функцій, які вважаються в інтернеті стандартами де-факто. Крім "
+"підтримки таких функцій, як, наприклад, улюблені піктограми, вебскорочення "
+"та <A HREF=\"%1\">закладки XBEL</A>, у Konqueror також реалізовано:"
+
+#: src/about/konq_aboutpage.cpp:200
+#, kde-format
+msgid "Web Browsing"
+msgstr "Навігація інтернетом"
+
+#: src/about/konq_aboutpage.cpp:201
+#, kde-format
+msgid "Supported standards"
+msgstr "Підтримка стандартів"
+
+#: src/about/konq_aboutpage.cpp:202
+#, kde-format
+msgid "Additional requirements*"
+msgstr "Додаткові вимоги*"
+
+#: src/about/konq_aboutpage.cpp:203
+#, kde-format
+msgid ""
+"<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
+"\"%2\">HTML 4.01</A>"
+msgstr ""
+"<A HREF=\"%2\">HTML 4.01</A> базований на <A HREF=\"%1\">DOM</A> (Level 1, "
+"частково Level 2) "
+
+#: src/about/konq_aboutpage.cpp:205 src/about/konq_aboutpage.cpp:207
+#: src/about/konq_aboutpage.cpp:219 src/about/konq_aboutpage.cpp:224
+#: src/about/konq_aboutpage.cpp:226
+#, kde-format
+msgid "built-in"
+msgstr "вбудований"
+
+#: src/about/konq_aboutpage.cpp:206
+#, kde-format
+msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
+msgstr "<A HREF=\"%1\">Таблиці каскадних стилів</A> (CSS 1, частково CSS 2)"
+
+#: src/about/konq_aboutpage.cpp:208
+#, kde-format
+msgid "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
+msgstr ""
+"<A HREF=\"%1\">ECMA-262</A> Edition 3 (приблизно відповідає Javascript 1.5)"
+
+#: src/about/konq_aboutpage.cpp:210
+#, kde-format
+msgid ""
+"JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
+msgstr ""
+"Javascript вимкнено (глобально). Ввімкнути Javascript можна <A HREF="
+"\"%1\">тут</A>."
+
+#: src/about/konq_aboutpage.cpp:211
+#, kde-format
+msgid ""
+"JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\\">here</"
+"A>."
+msgstr ""
+"Javascript ввімкнено (глобально). Налаштування Javascript знаходиться <a "
+"href=\\\"%1\\\">тут</a>."
+
+#: src/about/konq_aboutpage.cpp:212
+#, kde-format
+msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
+msgstr "Підтримка безпеки <A HREF=\"%1\">Java</A><SUP>&reg;</SUP>"
+
+#: src/about/konq_aboutpage.cpp:213
+#, kde-format
+msgid ""
+"JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">OpenJDK</A> or <A HREF="
+"\"%2\">Sun/Oracle</A>)"
+msgstr ""
+"Віртуальна машина, сумісна з JDK 1.2.0 (Java 2) (<A HREF=\"%1\">OpenJDK</A> "
+"або <A HREF=\"%2\">Sun/Oracle</A>)"
+
+#: src/about/konq_aboutpage.cpp:215
+#, kde-format
+msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
+msgstr "Ввімкнути Java (глобально) <A HREF=\"%1\">тут</A>."
+
+#: src/about/konq_aboutpage.cpp:216
+#, kde-format
+msgid ""
+"NPAPI <A HREF=\"%2\">plugins</A> (for viewing <A HREF=\"%1\">Flash<SUP>&reg;"
+"</SUP></A>, etc.)"
+msgstr ""
+"<A HREF=\"%2\">Додатки</A> NPAPI (для перегляду <A HREF="
+"\"%1\">Flash<SUP>&reg;</SUP></A> тощо)"
+
+#: src/about/konq_aboutpage.cpp:220
+#, kde-format
+msgid "Secure Sockets Layer"
+msgstr "Шар безпечних сокетів (SSL)"
+
+#: src/about/konq_aboutpage.cpp:221
+#, kde-format
+msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
+msgstr "(TLS/SSL v2/3) для безпеки комунікацій довжиною до 168 біт"
+
+#: src/about/konq_aboutpage.cpp:222
+#, kde-format
+msgid "OpenSSL"
+msgstr "OpenSSL"
+
+#: src/about/konq_aboutpage.cpp:223
+#, kde-format
+msgid "Bidirectional 16bit unicode support"
+msgstr "Підтримка двостороннього unicode 16-біт"
+
+#: src/about/konq_aboutpage.cpp:225
+#, kde-format
+msgid "AutoCompletion for forms"
+msgstr "Автозаповнення бланків"
+
+#: src/about/konq_aboutpage.cpp:227
+#, kde-format
+msgctxt "Title of an html 'group box' explaining konqueror features"
+msgid "General"
+msgstr "Загальне"
+
+#: src/about/konq_aboutpage.cpp:228
+#, kde-format
+msgid "Feature"
+msgstr "Можливість"
+
+#: src/about/konq_aboutpage.cpp:229
+#, kde-format
+msgid "Details"
+msgstr "Подробиці"
+
+#: src/about/konq_aboutpage.cpp:230
+#, kde-format
+msgid "Image formats"
+msgstr "Формати зображень"
+
+#: src/about/konq_aboutpage.cpp:231
+#, kde-format
+msgid "PNG<br />JPG<br />GIF"
+msgstr "PNG<br />JPG<br />GIF"
+
+#: src/about/konq_aboutpage.cpp:232
+#, kde-format
+msgid "Transfer protocols"
+msgstr "Протоколи перенесення"
+
+#: src/about/konq_aboutpage.cpp:233
+#, kde-format
+msgid "HTTP 1.1 (including gzip/bzip2 compression)"
+msgstr "HTTP 1.1 (включаючи стискання gzip/bzip2)"
+
+#: src/about/konq_aboutpage.cpp:234
+#, kde-format
+msgid "FTP"
+msgstr "FTP"
+
+#: src/about/konq_aboutpage.cpp:235
+#, kde-format
+msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpCenter)...</A>"
+msgstr ""
+"та <A HREF=\"%1\">багато інших (див допоміжні засоби вводу-виводу у Центрі "
+"довідки)...</A>"
+
+#: src/about/konq_aboutpage.cpp:236
+#, kde-format
+msgctxt "A feature of Konqueror"
+msgid "URL-Completion"
+msgstr "Завершення URL"
+
+#: src/about/konq_aboutpage.cpp:237
+#, kde-format
+msgid "Manual"
+msgstr "Підручник"
+
+#: src/about/konq_aboutpage.cpp:238
+#, kde-format
+msgid "Popup"
+msgstr "Контекстна панель"
+
+#: src/about/konq_aboutpage.cpp:239
+#, kde-format
+msgid "(Short-) Automatic"
+msgstr "(Коротке-) автоматичне"
+
+#: src/about/konq_aboutpage.cpp:241
+#, kde-format
+msgctxt ""
+"Link that points to the first page of the Konqueror 'about page', Starting "
+"Points contains links to Home, Network Folders, Trash, etc."
+msgid "<a href=\"%1\">Return to Starting Points</a>"
+msgstr "<a href=\"%1\">Повернутись до початкових кроків</a>"
+
+#: src/about/konq_aboutpage.cpp:292
+#, kde-format
+msgid "Tips & Tricks"
+msgstr "Підказки та поради"
+
+#: src/about/konq_aboutpage.cpp:293
+#, kde-format
+msgid ""
+"Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, using "
+"Google, for the search phrase \"KDE\". There are a lot of Web-Shortcuts "
+"predefined to make searching for software or looking up certain words in an "
+"encyclopedia a breeze. You can even <a href=\"%1\">create your own</a> Web-"
+"Shortcuts."
+msgstr ""
+"Використовуйте вебскорочення. Набираючи «gg: KDE», можна задати пошук фрази "
+"«KDE» на сайті Google. Існує багато визначених вебскорочень, які значно "
+"спрощують пошук програмного забезпечення або окремих слів в енциклопедії. Ви "
+"можете навіть <a href=\"%1\">створювати власні</a> вебскорочення."
+
+#: src/about/konq_aboutpage.cpp:298
+#, kde-format
+msgid ""
+"Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
+"the HTML toolbar to increase the font size on your web page."
+msgstr ""
+"Кнопку <img width='16' height='16' src=\"%1\"></img> на панелі інструментів "
+"HTML призначено для збільшення розміру шрифту на вебсторінці."
+
+#: src/about/konq_aboutpage.cpp:300
+#, kde-format
+msgid ""
+"When you want to paste a new address into the Location toolbar you might "
+"want to clear the current entry by pressing the black arrow with the white "
+"cross <img width='16' height='16' src=\"%1\"></img> in the toolbar."
+msgstr ""
+"Коли ви хочете вставити нову адресу в смужку адреси, ви можливо хочете "
+"очистити поточний текст; для цього натисніть на панелі стрілку з білим "
+"хрестиком <img width='16' height='16' src=\"%1\"></img>."
+
+#: src/about/konq_aboutpage.cpp:304
+#, kde-format
+msgid ""
+"To create a link on your desktop pointing to the current page, simply drag "
+"the icon (favicon) that is to the left of the Location toolbar, drop it on "
+"to the desktop, and choose \"Icon\"."
+msgstr ""
+"Щоб створити посилання на стільниці, яке буде вказувати на поточну сторінку, "
+"просто перетягніть піктограму, показану ліворуч від панелі адреси, скиньте "
+"її на стільницю і виберіть пункт «Піктограма»."
+
+#: src/about/konq_aboutpage.cpp:307
+#, kde-format
+msgid ""
+"You can also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen "
+"Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
+"sessions."
+msgstr ""
+"В меню «Параметри» ви також можете знайти <img width='16' height='16' src="
+"\"%1\" /> «На весь екран». Ця можливість дуже корисна для сеансів «розмов»."
+
+#: src/about/konq_aboutpage.cpp:310
+#, kde-format
+msgid ""
+"Divide et impera (lat. \"Divide and conquer\") - by splitting a window into "
+"two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> Split "
+"View Left/Right) you can make Konqueror appear the way you like."
+msgstr ""
+"Divide et impera (лат. «Розділяй і владарюй») — розділяючи вікно на дві "
+"частини (наприклад, Вікно -> <img width='16' height='16' src=\"%1\" /> "
+"Розділений перегляд правий/лівий), ви можете примусити виглядати Konqueror "
+"так, як вам потрібно."
+
+#: src/about/konq_aboutpage.cpp:313
+#, kde-format
+msgid ""
+"Use the <a href=\"%1\">user-agent</a> feature if the website you are "
+"visiting asks you to use a different browser (and do not forget to send a "
+"complaint to the webmaster!)"
+msgstr ""
+"Функція <a href=\"%1\">агент користувача</a> вам потрібна при перегляді "
+"сайтів, які вимагають використовувати інший навігатор (не забудьте відіслати "
+"скаргу до майстра сторінки!)"
+
+#: src/about/konq_aboutpage.cpp:316
+#, kde-format
+msgid ""
+"The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
+"ensures that you can keep track of the pages you have visited recently."
+msgstr ""
+"<img width='16' height='16' src=\"%1\"></img> За допомогою журналу на вашій "
+"бічній панелі ви зможете пришвидшити доступ до сторінок, які ви недавно "
+"відвідали."
+
+#: src/about/konq_aboutpage.cpp:318
+#, kde-format
+msgid ""
+"Use a caching <a href=\"%1\">proxy</a> to speed up your Internet connection."
+msgstr ""
+"Для підвищення швидкості вашого з'єднання до Інтернет, використовуйте <a "
+"href=\"%1\">проксі</a> з кешуванням."
+
+#: src/about/konq_aboutpage.cpp:320
+#, kde-format
+msgid ""
+"Advanced users will appreciate the Konsole which you can embed into "
+"Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
+"Terminal Emulator)."
+msgstr ""
+"Досвідчені користувачі знайдуть корисною можливість, яка дозволяє "
+"вбудовувати вікно Konsole в Konqueror (Параметри -> <img width='16' "
+"height='16' SRC=\"%1\"></img> Показати емулятор термінала."
+
+#: src/about/konq_aboutpage.cpp:324
+#, kde-format
+msgid "Next: Specifications"
+msgstr "Далі: Специфікації"
+
+#: src/about/konq_aboutpage.cpp:338
+#, kde-format
+msgid "Installed Plugins"
+msgstr "Встановлені додатки"
+
+#: src/about/konq_aboutpage.cpp:339
+#, kde-format
+msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
+msgstr "<td>Додаток</td><td>Опис</td><td>Файл</td><td>Типи</td>"
+
+#: src/about/konq_aboutpage.cpp:340
+#, kde-format
+msgid "Installed"
+msgstr "Встановлено"
+
+#: src/about/konq_aboutpage.cpp:341
+#, kde-format
+msgid "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
+msgstr "<td>Тип MIME</td><td>Опис</td><td>Суфікси</td><td>Додаток</td>"
+
+#: src/settings/webenginesettings.cpp:909
+#, kde-format
+msgid "Filter error"
+msgstr "Помилка фільтра"
+
+#: src/spellcheckermanager.cpp:79
+#, kde-format
+msgid "Spelling"
+msgstr "Правопис"
+
+#: src/spellcheckermanager.cpp:83
+#, kde-format
+msgid "Spell Checking Enabled"
+msgstr "Перевірку правопису увімкнено"
+
+#: src/spellcheckermanager.cpp:101
+#, kde-format
+msgid "&Languages"
+msgstr "&Мови"
+
+#. i18n: ectx: property (text), widget (QCheckBox, showPasswords)
+#: src/ui/credentialsdetailswidget.ui:34
+#: src/webenginecustomizecacheablefieldsdlg.ui:44
+#, kde-format
+msgid "&Show passwords"
+msgstr "По&казати паролі"
+
+#: src/ui/featurepermissionbar.cpp:22
+#, kde-format
+msgctxt "@action:deny permission"
+msgid "&Deny permission"
+msgstr "За&боронити доступ"
+
+#: src/ui/featurepermissionbar.cpp:26
+#, kde-format
+msgctxt "@action:grant permission"
+msgid "&Grant permission"
+msgstr "&Надати доступ"
+
+#: src/ui/featurepermissionbar.cpp:57
+#, kde-format
+msgid "<html><b>%1</b> would like to send you notifications"
+msgstr "<html><b>%1</b> хоче надсилати вам сповіщення"
+
+#: src/ui/featurepermissionbar.cpp:59
+#, kde-format
+msgid ""
+"<html><b>%1</b> would like to access information about your current physical "
+"location"
+msgstr ""
+"<html><b>%1</b> хоче мати доступ до даних щодо вашого місця перебування"
+
+#: src/ui/featurepermissionbar.cpp:61
+#, kde-format
+msgid ""
+"<html><b>%1</b> would like to access your microphone and other audio capture "
+"devices"
+msgstr ""
+"<html><b>%1</b> хоче отримати доступ до вашого мікрофона та інших пристроїв "
+"для захоплення звуку"
+
+#: src/ui/featurepermissionbar.cpp:63
+#, kde-format
+msgid ""
+"<html><b>%1</b> would like to access your camera and other video capture "
+"devices"
+msgstr ""
+"<html><b>%1</b> хоче отримати доступ до відеокамери та інших пристрої для "
+"захоплення відео"
+
+#: src/ui/featurepermissionbar.cpp:65
+#, kde-format
+msgid ""
+"<html><b>%1</b> would like to access to your microphone, camera and other "
+"audio and video capture devices"
+msgstr ""
+"<html><b>%1</b> хоче отримати доступ до вашого мікрофона, відеокамери та "
+"інших пристроїв для захоплення звуку і відео"
+
+#: src/ui/featurepermissionbar.cpp:67
+#, kde-format
+msgid "<html><b>%1</b> would like to lock your mouse inside the web page"
+msgstr "<html><b>%1</b> хоче заблокувати вказівник миші усередині вебсторінки"
+
+#: src/ui/featurepermissionbar.cpp:69
+#, kde-format
+msgid "<html><b>%1</b> would like to record your screen"
+msgstr "<html><b>%1</b> хоче записувати зображення з вашого екрана"
+
+#: src/ui/featurepermissionbar.cpp:71
+#, kde-format
+msgid "<html><b>%1</b> would like to record your screen and your audio"
+msgstr ""
+"<html><b>%1</b> хоче записувати зображення з вашого екрана і звук з мікрофона"
+
+#: src/ui/passwordbar.cpp:29
+#, kde-format
+msgctxt "@action:remember password"
+msgid "&Remember"
+msgstr "З&апам'ятати"
+
+#: src/ui/passwordbar.cpp:33
+#, kde-format
+msgctxt "@action:never for this site"
+msgid "Ne&ver for this site"
+msgstr "Н&іколи на цьому сайті"
+
+#: src/ui/passwordbar.cpp:37
+#, kde-format
+msgctxt "@action:not now"
+msgid "N&ot now"
+msgstr "&Не зараз"
+
+#: src/ui/passwordbar.cpp:41 src/ui/passwordbar.cpp:125
+#, kde-format
+msgctxt "@action:display details about credentials to store"
+msgid "&Show details"
+msgstr "Пок&азати подробиці"
+
+#: src/ui/passwordbar.cpp:123
+#, kde-format
+msgctxt "@action:hide details about credentials to store"
+msgid "&Hide details"
+msgstr "При&ховати подробиці"
+
+#: src/ui/searchbar.cpp:38
+#, kde-format
+msgid "Find..."
+msgstr "Знайти…"
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, closeButton)
+#: src/ui/searchbar.ui:23
+#, kde-format
+msgid "Close the search bar"
+msgstr "Закрити панель пошуку"
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, nextButton)
+#: src/ui/searchbar.ui:49
+#, kde-format
+msgid "Find the next match for the current search phrase"
+msgstr "Знайти наступний збіг для фрази пошуку"
+
+#. i18n: ectx: property (text), widget (QToolButton, nextButton)
+#: src/ui/searchbar.ui:52
+#, kde-format
+msgid "&Next"
+msgstr "&Наступне"
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, previousButton)
+#. i18n: ectx: property (toolTip), widget (QPushButton, optionsButton)
+#: src/ui/searchbar.ui:68 src/ui/searchbar.ui:84
+#, kde-format
+msgid "Find the previous match for the current search phrase"
+msgstr "Знайти попередній збіг для фрази пошуку"
+
+#. i18n: ectx: property (text), widget (QToolButton, previousButton)
+#: src/ui/searchbar.ui:71
+#, kde-format
+msgid "&Previous"
+msgstr "&Назад"
+
+#. i18n: ectx: property (text), widget (QPushButton, optionsButton)
+#: src/ui/searchbar.ui:87
+#, kde-format
+msgid "&Options"
+msgstr "&Параметри"
+
+#. i18n: ectx: property (text), item, widget (QPushButton, optionsButton)
+#: src/ui/searchbar.ui:116
+#, kde-format
+msgid "&Match Case"
+msgstr "З в&рахуванням регістру"
+
+#. i18n: ectx: property (text), item, widget (QPushButton, optionsButton)
+#: src/ui/searchbar.ui:127
+#, kde-format
+msgid "&Search As You Type"
+msgstr "Шукати одночасно з &введенням"
+
+#. i18n: ectx: property (text), item, widget (QPushButton, optionsButton)
+#: src/ui/searchbar.ui:135
+#, kde-format
+msgid "&Highlight All Matches"
+msgstr "По&значити всі відповідники"
+
+#. i18n: ectx: property (toolTip), item, widget (QPushButton, optionsButton)
+#: src/ui/searchbar.ui:138
+#, kde-format
+msgid "Highlight Matches"
+msgstr "Позначити відповідники"
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, WebEngineCustomizeCacheableFieldsDlg)
+#: src/webenginecustomizecacheablefieldsdlg.ui:14
+#, kde-format
+msgid "Choose fields to remember"
+msgstr "Виберіть поля для запам'ятовування"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, showPasswords)
+#: src/webenginecustomizecacheablefieldsdlg.ui:41
+#, kde-format
+msgid "Switch between displaying passwords or placeholders"
+msgstr "Перемкнутися між показом паролів і замінників"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, showDetails)
+#: src/webenginecustomizecacheablefieldsdlg.ui:64
+#, kde-format
+msgid "Show advanced information about the fields"
+msgstr "Показувати додаткові відомості щодо полів"
+
+#. i18n: ectx: property (text), widget (QCheckBox, showDetails)
+#: src/webenginecustomizecacheablefieldsdlg.ui:67
+#: src/webenginepartcertificateerrordlg.ui:30
+#, kde-format
+msgid "&Show details"
+msgstr "Пок&азати подробиці"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: src/webenginecustomizecacheablefieldsdlg.ui:89
+#, kde-format
+msgid "Available &fields"
+msgstr "Доступні &поля"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, immediatelyCacheData)
+#: src/webenginecustomizecacheablefieldsdlg.ui:101
+#, kde-format
+msgid "Store form data in KWallet when closing the dialog"
+msgstr "Зберегти дані форми у KWallet під час закриття вікна"
+
+#. i18n: ectx: property (text), widget (QCheckBox, immediatelyCacheData)
+#: src/webenginecustomizecacheablefieldsdlg.ui:104
+#, kde-format
+msgid "&Immediately memorize form data"
+msgstr "&Негайно запам'ятати дані форми"
+
+#: src/webenginepage.cpp:125
+#, kde-format
+msgid "The download manager (%1) could not be found in your installation."
+msgstr ""
+"Інструмент керування отриманнями (%1) не було знайдено серед встановлених "
+"компонентів."
+
+#: src/webenginepage.cpp:126
+#, kde-format
+msgid ""
+"Try to reinstall it and make sure that it is available in $PATH. \n"
+"\n"
+"The integration will be disabled."
+msgstr ""
+"Спробуйте повторити процедуру встановлення і переконайтеся, що компонент "
+"зберігається у теці, описаній у змінній $PATH. \n"
+"\n"
+"Інтеграцію поки що буде вимкнено."
+
+#: src/webenginepage.cpp:268
+#, kde-format
+msgid ""
+"<qt><p>To display the requested web page again, the browser needs to resend "
+"information you have previously submitted.</p><p>If you were shopping online "
+"and made a purchase, click the Cancel button to prevent a duplicate purchase."
+"Otherwise, click the Continue button to display the webpage again.</p>"
+msgstr ""
+"<qt><p>Щоб показати сторінку знову, програмі для перегляду доведеться "
+"повторно надіслати раніше надані вами дані.</p><p>Якщо ви працюєте з "
+"інтернет-крамницею, натисніть кнопку «Скасувати», щоб уникнути повторної "
+"сплати. Якщо ж це не так, натисніть кнопку «Продовжити», щоб надати програмі "
+"змогу знову показати сторінку.</p>"
+
+#: src/webenginepage.cpp:275
+#, kde-format
+msgid "Resubmit Information"
+msgstr "Інформація щодо повторного надсилання даних"
+
+#: src/webenginepage.cpp:507
+#, kde-format
+msgid ""
+"This site is attempting to access information about your physical location.\n"
+"Do you want to allow it access?"
+msgstr ""
+"Цей сайт намагається отримати доступ до даних щодо вашого місця "
+"перебування.\n"
+"Надати доступ до цих даних?"
+
+#: src/webenginepage.cpp:511 src/webenginepage.cpp:628
+#: src/webenginepage.cpp:639
+#, kde-format
+msgid "Network Transmission"
+msgstr "Перенесення мережею"
+
+#: src/webenginepage.cpp:512
+#, kde-format
+msgid "Allow access"
+msgstr "Дозволити доступ"
+
+#: src/webenginepage.cpp:587
+#, kde-format
+msgid ""
+"<qt>This untrusted page links to<br/><b>%1</b>.<br/>Do you want to follow "
+"the link?</qt>"
+msgstr ""
+"<qt>Ця ненадійна сторінка посилається на <br /><b>%1</b>.<br />Хочете "
+"перейти за цим посиланням?</qt>"
+
+#: src/webenginepage.cpp:589
+#, kde-format
+msgid "Security Warning"
+msgstr "Попередження безпеки"
+
+#: src/webenginepage.cpp:590
+#, kde-format
+msgctxt "follow link despite of security warning"
+msgid "Follow"
+msgstr "Перейти за посиланням"
+
+#: src/webenginepage.cpp:592
+#, kde-format
+msgid "Security Alert"
+msgstr "Попередження безпеки"
+
+#: src/webenginepage.cpp:593
+#, kde-format
+msgid "<qt>Access by untrusted page to<br/><b>%1</b><br/> denied.</qt>"
+msgstr ""
+"<qt>Доступ для ненадійної сторінки до <br /><b>%1</b><br /> заборонено.</qt>"
+
+#: src/webenginepage.cpp:621
+#, kde-format
+msgid ""
+"Warning: This is a secure form but it is attempting to send your data back "
+"unencrypted.\n"
+"A third party may be able to intercept and view this information.\n"
+"Are you sure you want to send the data unencrypted?"
+msgstr ""
+"Попередження: цю форму було отримано через безпечне з'єднання, але вона "
+"намагається відіслати дані через незашифроване з'єднання.\n"
+"Третя сторона може перехопити та переглянути цю інформацію.\n"
+"Ви впевнені, що бажаєте надіслати незашифровані дані?"
+
+#: src/webenginepage.cpp:629
+#, kde-format
+msgid "&Send Unencrypted"
+msgstr "&Надіслати незашифрованим"
+
+#: src/webenginepage.cpp:636
+#, kde-format
+msgid ""
+"This site is attempting to submit form data via email.\n"
+"Do you want to continue?"
+msgstr ""
+"Цей сайт намагається надіслати дані форми електронною поштою.\n"
+"Продовжити?"
+
+#: src/webenginepage.cpp:640
+#, kde-format
+msgid "&Send Email"
+msgstr "Надіслати &лист"
+
+#: src/webenginepage.cpp:689
+#, kde-format
+msgid ""
+"<qt>Do you want to allow this site to attach the following files to the "
+"email message?</qt>"
+msgstr ""
+"<qt>Бажаєте дозволити долучення наведених нижче файлів до повідомлення "
+"електронної пошти на цьому сайті?</qt>"
+
+#: src/webenginepage.cpp:691
+#, kde-format
+msgid "Email Attachment Confirmation"
+msgstr "Підтвердження долучення"
+
+#: src/webenginepage.cpp:692
+#, kde-format
+msgid "&Allow attachments"
+msgstr "&Дозволити долучення"
+
+#: src/webenginepage.cpp:693
+#, kde-format
+msgid "&Ignore attachments"
+msgstr "&Ігнорувати долучення"
+
+#: src/webenginepage.cpp:707
+#, kde-format
+msgid ""
+"This site attempted to attach a file from your computer in the form "
+"submission. The attachment was removed for your protection."
+msgstr ""
+"Цей сайт спробував долучити файл з вашого комп'ютера при надсиланні даних "
+"форми. Долучення було вилучено з метою забезпечення вашої безпеки."
+
+#: src/webenginepage.cpp:710
+#, kde-format
+msgid "Attachment Removed"
+msgstr "Вилучено долучення"
+
+#: src/webenginepage.cpp:840
+#, kde-format
+msgid ""
+"This site is requesting to open a new popup window.\n"
+"Do you want to allow this?"
+msgstr ""
+"Ця сторінка надіслала запит щодо відкриття нового контекстного вікна.\n"
+"Дозволити такий перехід?"
+
+#: src/webenginepage.cpp:842
+#, kde-format
+msgid ""
+"<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
+"want to allow this?</qt>"
+msgstr ""
+"<qt>Ця сторінка надіслала запит щодо відкриття контекстного вікна зі "
+"сторінкою<p>%1</p><br/>Дозволити такий перехід?</qt>"
+
+#: src/webenginepage.cpp:846
+#, kde-format
+msgid "Javascript Popup Confirmation"
+msgstr "Контекстне підтвердження Javascript"
+
+#: src/webenginepage.cpp:847
+#, kde-format
+msgid "Allow"
+msgstr "Дозволити"
+
+#: src/webenginepage.cpp:848
+#, kde-format
+msgid "Do Not Allow"
+msgstr "Не дозволяти"
+
+#: src/webenginepart.cpp:224
+#, kde-format
+msgid "Save &Frame As..."
+msgstr "Зберегти &фрейм як..."
+
+#: src/webenginepart.cpp:228
+#, kde-format
+msgid "Print Preview"
+msgstr "Перегляд друку"
+
+#: src/webenginepart.cpp:232
+#, kde-format
+msgctxt "zoom in action"
+msgid "Zoom In"
+msgstr "Збільшити"
+
+#: src/webenginepart.cpp:237
+#, kde-format
+msgctxt "zoom out action"
+msgid "Zoom Out"
+msgstr "Зменшити"
+
+#: src/webenginepart.cpp:242
+#, kde-format
+msgctxt "reset zoom action"
+msgid "Actual Size"
+msgstr "Фактичний розмір"
+
+#: src/webenginepart.cpp:247
+#, kde-format
+msgid "Zoom Text Only"
+msgstr "Змінювати лише масштаб тексту"
+
+#: src/webenginepart.cpp:255
+#, kde-format
+msgid "Zoom To DPI"
+msgstr "Масштабувати за точками на дюйм"
+
+#: src/webenginepart.cpp:268
+#, kde-format
+msgid "Set &Encoding"
+msgstr "Встановити &кодування"
+
+#: src/webenginepart.cpp:271
+#, kde-format
+msgid "View Do&cument Source"
+msgstr "Переглянути джерело до&кумента"
+
+#: src/webenginepart.cpp:276 src/webenginepart.cpp:574
+#, kde-format
+msgctxt "Secure Sockets Layer"
+msgid "SSL"
+msgstr "SSL"
+
+#: src/webenginepart.cpp:282
+#, kde-format
+msgctxt "find action \"whats this\" text"
+msgid ""
+"<h3>Find text</h3>Shows a dialog that allows you to find text on the "
+"displayed page."
+msgstr ""
+"<h3>Пошук тексту</h3>Відкриває діалогове вікно, за допомогою якого можна "
+"знайти текст на показаній сторінці."
+
+#: src/webenginepart.cpp:572
+#, kde-format
+msgid "The SSL information for this site appears to be corrupt."
+msgstr "Схоже, що відомості SSL цього сайта пошкоджено."
+
+#: src/webenginepart.cpp:653
+#, kde-format
+msgctxt ""
+"status bar text when hovering email links; looks like \"Email: xy@kde.org - "
+"CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
+msgid "Email: "
+msgstr "Ел. пошта: "
+
+#: src/webenginepart.cpp:682
+#, kde-format
+msgctxt ""
+"status bar text when hovering email links; looks like \"Email: xy@kde.org - "
+"CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
+msgid " - CC: "
+msgstr " — Копія: "
+
+#: src/webenginepart.cpp:684
+#, kde-format
+msgctxt ""
+"status bar text when hovering email links; looks like \"Email: xy@kde.org - "
+"CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
+msgid " - BCC: "
+msgstr " — Потайна копія: "
+
+#: src/webenginepart.cpp:686
+#, kde-format
+msgctxt ""
+"status bar text when hovering email links; looks like \"Email: xy@kde.org - "
+"CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
+msgid " - Subject: "
+msgstr " — Тема: "
+
+#: src/webenginepart.cpp:690 src/webenginepart.cpp:701
+#, kde-format
+msgid " (In new window)"
+msgstr " (у новому вікні)"
+
+#: src/webenginepart.cpp:699
+#, kde-format
+msgid " (In parent frame)"
+msgstr " (у батьківському фреймі)"
+
+#: src/webenginepart.cpp:763
+#, kde-format
+msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
+msgstr "<qt>Бажаєте виконати пошук <b>%1</b>?</qt>"
+
+#: src/webenginepart.cpp:764
+#, kde-format
+msgid "Internet Search"
+msgstr "Пошук у Інтернеті"
+
+#: src/webenginepart.cpp:764
+#, kde-format
+msgid "&Search"
+msgstr "&Шукати"
+
+#: src/webenginepart.cpp:875
+#, kde-format
+msgid "Close window?"
+msgstr "Закрити вікно?"
+
+#: src/webenginepart.cpp:875
+#, kde-format
+msgid "Confirmation Required"
+msgstr "Потрібне підтвердження"
+
+#: src/webenginepart.cpp:949
+#, kde-format
+msgid ""
+"<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
+msgstr ""
+"<html>Бажаєте, щоб програма %1 запам’ятала реєстраційні дані для <b>%2</b>?</"
+"html>"
+
+#: src/webenginepart.cpp:1020
+#, kde-format
+msgctxt "Fill the Forms with Data from KWallet"
+msgid "&Fill forms now"
+msgstr "За&повнити форми зараз"
+
+#: src/webenginepart.cpp:1025
+#, kde-format
+msgid "&Memorize Passwords in This Page Now"
+msgstr "Запа&м'ятати паролі на цій сторінці зараз"
+
+#: src/webenginepart.cpp:1029
+#, kde-format
+msgid "&Customize Fields to Memorize for This Page..."
+msgstr "&Налаштувати поля для запам'ятовування для цієї сторінки…"
+
+#: src/webenginepart.cpp:1033
+#, kde-format
+msgid "Remove Customized Memorization Settings for This Page"
+msgstr "Вилучити налаштовані параметр запам'ятовування для цієї сторінки"
+
+#: src/webenginepart.cpp:1037
+#, kde-format
+msgid "&Allow Password Caching for This Site"
+msgstr "&Дозволити зберігання пароля для цього сайта"
+
+#: src/webenginepart.cpp:1041
+#, kde-format
+msgid "Remove All Memorized Passwords for This Site"
+msgstr "Вилучити всі збережені паролі для цього сайта"
+
+#: src/webenginepart.cpp:1045
+#, kde-format
+msgid "&Launch Wallet Manager"
+msgstr "З&апустити керування торбинками"
+
+#: src/webenginepart.cpp:1049
+#, kde-format
+msgid "&Close Wallet"
+msgstr "&Закрити торбинку"
+
+#. i18n: ectx: Menu (file)
+#: src/webenginepart.rc:5
+#, kde-format
+msgid "&File"
+msgstr "&Файл"
+
+#. i18n: ectx: Menu (edit)
+#: src/webenginepart.rc:12
+#, kde-format
+msgid "&Edit"
+msgstr "З&міни"
+
+#. i18n: ectx: Menu (view)
+#: src/webenginepart.rc:18
+#, kde-format
+msgid "&View"
+msgstr "П&ерегляд"
+
+#. i18n: ectx: Menu (tools)
+#: src/webenginepart.rc:30
+#, kde-format
+msgid "&Tools"
+msgstr "&Інструменти"
+
+#. i18n: ectx: Menu (wallet)
+#: src/webenginepart.rc:32
+#, kde-format
+msgid "&Credential management"
+msgstr "Керування &реєстраційними даними"
+
+#. i18n: ectx: ToolBar (htmlToolBar)
+#: src/webenginepart.rc:47
+#, kde-format
+msgid "HTML Toolbar"
+msgstr "Панель HTML"
+
+#: src/webenginepart_ext.cpp:246
+#, kde-format
+msgid "Print Document"
+msgstr "Надрукувати документ"
+
+#: src/webenginepart_ext.cpp:464
+#, kde-format
+msgid "Add URL to Filter"
+msgstr "Додати адресу (URL) до фільтра"
+
+#: src/webenginepart_ext.cpp:465
+#, kde-format
+msgid "Enter the URL:"
+msgstr "Введіть адресу URL:"
+
+#: src/webenginepartcertificateerrordlg.cpp:44
+#, kde-format
+msgctxt "Ignore the certificate error for this URL only for now"
+msgid "Yes, &once"
+msgstr "Так, &лише зараз"
+
+#: src/webenginepartcertificateerrordlg.cpp:45
+#, kde-format
+msgctxt "Ignore the certificate error for this URL now and in the future"
+msgid "Yes, &forever"
+msgstr "Так, з&авжди"
+
+#: src/webenginepartcertificateerrordlg.cpp:49
+#, kde-format
+msgid ""
+"<p>The server <tt>%1</tt> failed the authenticity check. The error is:</"
+"p><p><tt>%2</tt></p>Do you want to ignore this error?"
+msgstr ""
+"<p>Сервер <tt>%1</tt> не пройшов перевірки щодо автентичності. Повідомлення "
+"щодо помилки:</p><p><tt>%2</tt></p>Хочете проігнорувати цю помилку?"
+
+#: src/webenginepartcertificateerrordlg.cpp:55
+#, kde-format
+msgctxt "title of a dialog asking what to do about a SSL certificate error"
+msgid "Certificate error"
+msgstr "Помилка, пов'язана із сертифікатом"
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, WebEnginePartCertificateErrorDlg)
+#: src/webenginepartcertificateerrordlg.ui:14
+#, kde-format
+msgid "Dialog"
+msgstr "Діалогове вікно"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: src/webenginepartcertificateerrordlg.ui:23
+#, kde-format
+msgid "TextLabel"
+msgstr "Текстова мітка"
+
+#. i18n: ectx: property (title), widget (QGroupBox, details)
+#: src/webenginepartcertificateerrordlg.ui:50
+#, kde-format
+msgid "Certificate details"
+msgstr "Подробиці щодо сертифіката"
+
+#. i18n: ectx: attribute (title), widget (QWidget, subjectTab)
+#: src/webenginepartcertificateerrordlg.ui:63
+#, kde-format
+msgid "&Subject"
+msgstr "&Призначення"
+
+#. i18n: ectx: attribute (title), widget (QWidget, issuerTab)
+#: src/webenginepartcertificateerrordlg.ui:73
+#, kde-format
+msgid "&Issuer"
+msgstr "&Видавець"
+
+#: src/webenginepartdownloadmanager.cpp:235
+#, kde-format
+msgid "An error occurred while saving the file: %1"
+msgstr "Під час спроби зберегти файл сталася помилка: %1"
+
+#: src/webenginepartdownloadmanager.cpp:247
+#, kde-format
+msgctxt "Notification about downloading a file"
+msgid "Downloading"
+msgstr "Отримання"
+
+#: src/webenginepartdownloadmanager.cpp:248
+#, kde-format
+msgctxt "Source of a file being downloaded"
+msgid "Source"
+msgstr "Джерело"
+
+#: src/webenginepartdownloadmanager.cpp:249
+#, kde-format
+msgctxt "Destination of a file download"
+msgid "Destination"
+msgstr "Призначення"
+
+#: src/webenginepartdownloadmanager.cpp:266
+#, kde-format
+msgctxt "Finished saving BLOB URL"
+msgid "Finished saving %1 as %2"
+msgstr "Завершено збереження %1 як %2"
+
+#: src/webengineparterrorschemehandler.cpp:96
+#, kde-format
+msgid ""
+"<html><body><h3>Unable to display error message</h3><p>The error template "
+"file <em>error.html</em> could not be found.</p></body></html>"
+msgstr ""
+"<html><body><h3>Не вдалося показати повідомлення щодо помилки</h3><p>Не "
+"вдалося знайти файл шаблона помилки <em>error.html</em>.</p></body></html>"
+
+#: src/webengineparterrorschemehandler.cpp:105
+#, kde-format
+msgid "The requested operation could not be completed"
+msgstr "Потрібну вам дію виконати не вдалося"
+
+#: src/webengineparterrorschemehandler.cpp:112
+#, kde-format
+msgid "Technical Reason: %1"
+msgstr "Технічна причина: %1"
+
+#: src/webengineparterrorschemehandler.cpp:117
+#, kde-format
+msgid "Details of the Request:"
+msgstr "Подробиці запиту:"
+
+#. i18n, and once for HTML.
+#: src/webengineparterrorschemehandler.cpp:120
+#, kde-format
+msgid "URL: %1"
+msgstr "Адреса: %1"
+
+#. i18n, and once for HTML.
+#: src/webengineparterrorschemehandler.cpp:126
+#, kde-format
+msgid "Protocol: %1"
+msgstr "Протокол: %1"
+
+#: src/webengineparterrorschemehandler.cpp:130
+#, kde-format
+msgid "Date and Time: %1"
+msgstr "Дата і час: %1"
+
+#. i18n, and once for HTML.
+#: src/webengineparterrorschemehandler.cpp:134
+#, kde-format
+msgid "Additional Information: %1"
+msgstr "Додаткові відомості: %1"
+
+#: src/webengineparterrorschemehandler.cpp:136
+#, kde-format
+msgid "Description:"
+msgstr "Опис:"
+
+#: src/webengineparterrorschemehandler.cpp:143
+#, kde-format
+msgid "Possible Causes:"
+msgstr "Можливі причини:"
+
+#: src/webengineparterrorschemehandler.cpp:151
+#, kde-format
+msgid "Possible Solutions:"
+msgstr "Можливі розв'язання:"
+
+#: src/webengineparterrorschemehandler.cpp:157
+#, kde-format
+msgid "Error: %1"
+msgstr "Помилка: %1"
+
+#: src/webengineview.cpp:349
+#, kde-format
+msgid "Save Image As..."
+msgstr "Зберегти зображення як..."
+
+#: src/webengineview.cpp:354
+#, kde-format
+msgid "Send Image..."
+msgstr "Відіслати зображення..."
+
+#: src/webengineview.cpp:359
+#, kde-format
+msgid "Copy Image URL"
+msgstr "Скопіювати адресу зображення"
+
+#: src/webengineview.cpp:365
+#, kde-format
+msgid "Copy Image"
+msgstr "Скопіювати зображення"
+
+#: src/webengineview.cpp:372
+#, kde-format
+msgid "View Image (%1)"
+msgstr "Переглянути зображення (%1)"
+
+#: src/webengineview.cpp:378
+#, kde-format
+msgid "Block Image..."
+msgstr "Блокувати зображення…"
+
+#: src/webengineview.cpp:386
+#, kde-format
+msgid "Block Images From %1"
+msgstr "Блокувати зображення з %1"
+
+#: src/webengineview.cpp:416 src/webengineview.cpp:453
+#, kde-format
+msgid "&Copy Text"
+msgstr "С&копіювати текст"
+
+#: src/webengineview.cpp:426
+#, kde-format
+msgctxt "open selected url"
+msgid "Open '%1'"
+msgstr "Відкрити «%1»"
+
+#: src/webengineview.cpp:459
+#, kde-format
+msgid "&Copy Email Address"
+msgstr "С&копіювати адресу ел. пошти"
+
+#: src/webengineview.cpp:465
+#, kde-format
+msgid "Copy Link &Text"
+msgstr "С&копіювати текст посилання"
+
+#: src/webengineview.cpp:471
+#, kde-format
+msgid "Copy Link &URL"
+msgstr "Скопіювати &адресу посилання"
+
+#: src/webengineview.cpp:476
+#, kde-format
+msgid "&Save Link As..."
+msgstr "&Зберегти посилання як..."
+
+#: src/webengineview.cpp:496
+#, kde-format
+msgid "&Play/Pause"
+msgstr "С&тарт/Пауза"
+
+#: src/webengineview.cpp:501
+#, kde-format
+msgid "Un&mute/&Mute"
+msgstr "&Увімкнути/&Вимкнути звук"
+
+#: src/webengineview.cpp:506
+#, kde-format
+msgid "Toggle &Loop"
+msgstr "&Циклічне відтворення"
+
+#: src/webengineview.cpp:511
+#, kde-format
+msgid "Toggle &Controls"
+msgstr "Показати або сховати &керування"
+
+#: src/webengineview.cpp:522
+#, kde-format
+msgid "Sa&ve Video As..."
+msgstr "З&берегти відео як…"
+
+#: src/webengineview.cpp:523
+#, kde-format
+msgid "C&opy Video URL"
+msgstr "К&опіювати адресу відео"
+
+#: src/webengineview.cpp:525
+#, kde-format
+msgid "Sa&ve Audio As..."
+msgstr "З&берегти звукові дані як…"
+
+#: src/webengineview.cpp:526
+#, kde-format
+msgid "C&opy Audio URL"
+msgstr "К&опіювати адресу звукових даних"
+
+#: src/webengineview.cpp:528
+#, kde-format
+msgid "Sa&ve Media As..."
+msgstr "З&берегти дані як…"
+
+#: src/webengineview.cpp:529
+#, kde-format
+msgid "C&opy Media URL"
+msgstr "К&опіювати адресу даних"
+
+#: src/webengineview.cpp:582
+#, kde-format
+msgctxt "Search \"search provider\" for \"text\""
+msgid "Search %1 for '%2'"
+msgstr "Пошук «%2» за допомогою %1"
+
+#: src/webengineview.cpp:593
+#, kde-format
+msgctxt "Search for \"text\" with"
+msgid "Search for '%1' with"
+msgstr "Пошук «%1» у"
+
+#: src/webengineview.cpp:606
+#, kde-format
+msgid "Configure Web Shortcuts..."
+msgstr "Налаштувати вебскорочення…"
+
+#: src/webenginewallet.cpp:104
+#, kde-format
+msgctxt "Web field with type 'text'"
+msgid "text"
+msgstr "текст"
+
+#: src/webenginewallet.cpp:105
+#, kde-format
+msgctxt "Web field with type 'password'"
+msgid "password"
+msgstr "пароль"
+
+#: src/webenginewallet.cpp:106
+#, kde-format
+msgctxt "Web field with type 'e-mail'"
+msgid "e-mail"
+msgstr "ел. пошта"
+
+#: src/webenginewallet.cpp:107
+#, kde-format
+msgctxt "Web field with type different from 'text', 'password' or 'e-mail'"
+msgid "other"
+msgstr "інше"
+
+#: src/webfieldsdataview.cpp:61
+#, kde-format
+msgctxt "Label of a web field"
+msgid "Field name"
+msgstr "Назва поля"
+
+#: src/webfieldsdataview.cpp:62
+#, kde-format
+msgctxt "Value of a web field"
+msgid "Field value"
+msgstr "Значення поля"
+
+#: src/webfieldsdataview.cpp:63
+#, kde-format
+msgctxt "Name attribute of a web field"
+msgid "Internal field name"
+msgstr "Внутрішня назва поля"
+
+#: src/webfieldsdataview.cpp:64
+#, kde-format
+msgctxt "Type of a web field"
+msgid "Field type"
+msgstr "Тип поля"
+
+#: src/webfieldsdataview.cpp:65
+#, kde-format
+msgctxt "The id of a web field"
+msgid "Field id"
+msgstr "Ід. поля"
+
+#: src/webfieldsdataview.cpp:66
+#, kde-format
+msgctxt "Other details about a web field"
+msgid "Details"
+msgstr "Подробиці"
+
+#: src/webfieldsdataview.cpp:125
+#, kde-format
+msgctxt "web field has the readonly attribute"
+msgid "read only"
+msgstr "лише для читання"
+
+#: src/webfieldsdataview.cpp:128
+#, kde-format
+msgctxt "web field has the autocomplete attribute set to off"
+msgid "auto-completion off"
+msgstr "автозаповнення вимкнено"
+
+#: src/webfieldsdataview.cpp:131
+#, kde-format
+msgctxt "web field is disabled"
+msgid "disabled"
+msgstr "вимкнено"
+
+#: src/webfieldsdataview.cpp:159
+#, kde-format
+msgctxt "A statement about a field is true"
+msgid "yes"
+msgstr "так"
+
+#: src/webfieldsdataview.cpp:160
+#, kde-format
+msgctxt "A statement about a field is false"
+msgid "no"
+msgstr "ні"
+
+#: src/webfieldsdataview.cpp:163
+#, kde-format
+msgid ""
+"<ul><li><b>Field internal name: </b>%1</li><li><b>Field type: </b>%2</"
+"li><li><b>Field id: </b>%3</li><li><b>Field is read only: </b>%4</"
+"li><li><b>Field is enabled: </b>%5</li><li><b>Autocompletion is enabled: </b>"
+"%6</li></ul>"
+msgstr ""
+"<ul><li><b>Внутрішня назва поля: </b>%1</li><li><b>Тип поля: </b>%2</"
+"li><li><b>Ідентифікатор поля: </b>%3</li><li><b>Поле лише для читання: </b>"
+"%4</li><li><b>Поле увімкнено: </b>%5</li><li><b>Автодоповнення увімкнено: </"
+"b>%6</li></ul>"
+
+#~ msgctxt "Program Name"
+#~ msgid "WebEnginePart"
+#~ msgstr "WebEnginePart"
+
+#~ msgctxt "Short Description"
+#~ msgid "QtWebEngine Browser Engine Component"
+#~ msgstr "Компонент рушія перегляду QtWebEngine"
+
+#~ msgid ""
+#~ "(C) 2009-2010 Dawit Alemayehu\n"
+#~ "(C) 2008-2010 Urs Wolfer\n"
+#~ "(C) 2007 Trolltech ASA"
+#~ msgstr ""
+#~ "© Dawit Alemayehu, 2009–2010\n"
+#~ "© Urs Wolfer, 2008–2010\n"
+#~ "© Trolltech ASA, 2007"
+
+#~ msgid "Sune Vuorela"
+#~ msgstr "Sune Vuorela"
+
+#~ msgid "Maintainer, Developer"
+#~ msgstr "Супровідник і розробник"
+
+#~ msgid "Dawit Alemayehu"
+#~ msgstr "Dawit Alemayehu"
+
+#~ msgid "Developer"
+#~ msgstr "Розробник"
+
+#~ msgid "Urs Wolfer"
+#~ msgstr "Urs Wolfer"
+
+#~ msgid "Michael Howell"
+#~ msgstr "Michael Howell"
+
+#~ msgid "Laurent Montel"
+#~ msgstr "Laurent Montel"
+
+#~ msgid "Dirk Mueller"
+#~ msgstr "Dirk Mueller"
+
+#~ msgid "Save As"
+#~ msgstr "Зберегти як"
+
+#~ msgid "Authentication error"
+#~ msgstr "Не встановлено автентичність"
+
+#~ msgctxt "label for input line to find text"
+#~ msgid "&Find:"
+#~ msgstr "&Знайти:"
+
+#~ msgctxt "input dialog window title for selecting html elements"
+#~ msgid "Select elements"
+#~ msgstr "Вибір елементів"
+
+#~ msgctxt "input dialog text for selecting html elements"
+#~ msgid "Choose elements"
+#~ msgstr "Позначте елементи"
+
+#~ msgid "New Window"
+#~ msgstr "Нове вікно"
+
+#~ msgid "Print"
+#~ msgstr "Надрукувати"
+
+#~ msgid "Close"
+#~ msgstr "Закрити"
+
+#~ msgid "Zoom &In"
+#~ msgstr "З&більшити"
+
+#~ msgid "Zoom &Out"
+#~ msgstr "З&меншити"
+
+#~ msgid "Reset Zoom"
+#~ msgstr "Відновити масштаб"
+
+#~ msgid "Dump HTML"
+#~ msgstr "Створити дамп HTML"
+
+#~ msgid "F&ormat"
+#~ msgstr "Ф&ормат"
+
+#~ msgid "Writing Direction"
+#~ msgstr "Напрям письма"
+
+#~ msgid "Select elements..."
+#~ msgstr "Вибрати елементи..."
+
+#~ msgid "KDELauncher"
+#~ msgstr "KDELauncher"

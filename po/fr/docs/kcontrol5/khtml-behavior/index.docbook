@@ -1,0 +1,114 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % French "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="khtml-behavior" lang="&language;">
+<articleinfo>
+<title
+>Navigation Internet</title>
+<authorgroup>
+<author
+>&Krishna.Tateneni; &Krishna.Tateneni.mail;</author>
+&traducteurDamienRaudeMorvan; &traducteurEricBischoff; &traducteurJoelleCornavin; &traducteurYvesDessertine; &traducteurPierreBuard; 
+</authorgroup>
+
+<date
+>04-11-2019</date>
+<releaseinfo
+>Applications 19.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Configuration du système</keyword>
+<keyword
+>konqueror</keyword>
+<keyword
+>navigation</keyword>
+</keywordset>
+
+</articleinfo>
+<sect1 id="konq-browsing">
+<title
+>Navigation Internet</title>
+
+<para
+>Le module Navigation de &konqueror; permet de choisir différentes options affectant le comportement de &konqueror;, le navigateur web intégré de &kde;.</para>
+
+<para
+>Si <guilabel
+>Demander un nom et un dossier pour ajouter un signet</guilabel
+> est cochée, &konqueror; vous permettra de changer le titre du nouveau signet ainsi que l'emplacement où il sera enregistré.</para>
+
+<para
+>Activez <guilabel
+>Afficher uniquement les signets présents dans la barre de signets</guilabel
+> et &konqueror; affichera seulement les signets marqués comme tel par l'éditeur de signets.</para>
+
+<para
+>L'option suivante sur cette page est <guilabel
+>Auto-complètement des formulaires</guilabel
+>. Si vous cochez cette case, &konqueror; tentera de mémoriser les informations saisies et essaiera de remplir les formulaires avec les renseignement données auparavant.</para>
+
+<para
+>Vous pouvez configurer le nombre de saisies de formulaires dont &konqueror; se souviendra en ajustant la valeur de <guilabel
+>Nombre maximum d'auto-complètements</guilabel
+>.</para>
+
+<note
+><para
+>Naturellement, toutes informations que &konqueror; auraient ajoutées dans un formulaire peuvent être modifiées avant de les transmettre !</para
+></note>
+
+<para
+>En cochant <guilabel
+>Modifier le curseur au-dessus des liens</guilabel
+>, la forme du pointeur changera (habituellement sous la forme d'une main) chaque fois que vous survolerez un lien hypertexte. Cela permet d'identifier aisément les liens, en particulier lorsqu'ils sont sous forme d'images.</para>
+
+<para
+>Si <guilabel
+>Un clic central ouvre l'URL contenue dans le presse-papier</guilabel
+> est cochée, vous pourrez l'ouvrir en cliquant avec le bouton central de la souris dans une fenêtre de &konqueror;.</para>
+
+<para
+>Comme fonctionnalité pratique, si vous activez <guilabel
+>Un clic droit remonte dans l'historique</guilabel
+>, un clic dans une zone vide (&cad; pas un lien) dans &konqueror; agira alors comme si vous aviez cliqué sur le bouton <guiicon
+>Précédent</guiicon
+> dans la barre d'outils.</para>
+
+<para
+>Activer <guilabel
+>Autoriser le rechargement et la redirection automatiques après un délai donné</guilabel
+> autorise les sites web à vous renvoyer vers une autre page sans votre intervention. Dans de nombreux cas, c'est un avantage. Supposons qu'un site web ait changé d'&URL; : beaucoup de webmestres dans cette situation placeront une page sur l'ancien site pour vous informer de ce changement et vous permettre d'actualiser vos signets, puis vous re-dirigeront automatiquement sur le nouveau site web. Toutefois, une telle fonction peut s'avérer déconcertante ou ennuyeuse, lorsqu'elle est employé abusivement, et vous préférerez peut-être la désactiver.</para>
+
+<para
+><guilabel
+>Activer / Désactiver les touches d'accès avec « &Ctrl; »</guilabel
+> : un appui sur la touche &Ctrl;, lors de la consultation d'une page web, active les touches d'accès. Décocher la case désactivera cette option d'accessibilité. &konqueror; doit être relancé afin de prendre en compte ce changement.</para>
+
+<para
+><guilabel
+>Envoyer l'en-tête DNT pour indiquer aux sites web que vous ne voulez pas être suivi</guilabel
+>. Cocher cette case communiquera aux sites web votre volonté de ne pas exposer vos habitudes de navigation. </para>
+
+<para
+><guilabel
+>Proposer l'enregistrement des mots de passe de sites</guilabel
+>. Décocher cette case pour éviter que l'on vous demande d'enregistrer les mots de passe de sites Internet. </para>
+
+<para
+><guilabel
+>Afficher en ligne des fichiers &PDF; en utilisant « WebEngine »</guilabel
+>. Décochez cette option pour afficher des fichiers &PDF; comme configuré dans le module <guilabel
+>Associations de fichiers</guilabel
+> de &systemsettings;. </para>
+
+</sect1>
+
+</article>

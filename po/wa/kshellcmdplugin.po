@@ -1,0 +1,2027 @@
+# translation of konqueror.po to Walloon
+# Ratournaedje e walon des messaedjes di KDE.
+#
+# Lorint Hendschel <Laurent.Hendschel@skynet.be>, 2001-2002.
+# Pablo Saratxaga <pablo@walon.org>, 2003, 2004, 2007.
+# Jean Cayron <jean.cayron@gmail.com>, 2007, 2008, 2009.
+# Jean Cayron <jean.cayron@tele2allin.be>, 2007.
+# Jean Cayron et Odile Lambert <jean.cayron@gmail.com>, 2010, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2011-01-17 21:53+0100\n"
+"Last-Translator: Jean Cayron <jean.cayron@gmail.com>\n"
+"Language-Team: Walloon <linux@walon.org>\n"
+"Language: wa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. i18n: ectx: Menu (tools)
+#: konq_shellcmdplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "&Usteyes"
+
+#: kshellcmdexecutor.cpp:106
+#, kde-format
+msgid "Input Required:"
+msgstr "Intrêye dimandêye:"
+
+#: kshellcmdplugin.cpp:32
+#, kde-format
+msgid "&Execute Shell Command..."
+msgstr "&Enonder ene kimande do shell..."
+
+#: kshellcmdplugin.cpp:41
+#, kde-format
+msgid ""
+"KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a bug."
+msgstr ""
+"KShellCmdPlugin::slotExecuteShellCommand: Aroke do programe, fijhoz on "
+"rapoirt di bug s' i vs plait."
+
+#: kshellcmdplugin.cpp:51
+#, kde-format
+msgid "Executing shell commands works only on local directories."
+msgstr "Vos n' savoz enonder des cmandes do shell ki dvins les ridants locås."
+
+#: kshellcmdplugin.cpp:73
+#, fuzzy, kde-format
+#| msgid "Execute Shell Command"
+msgctxt "@title:window"
+msgid "Execute Shell Command"
+msgstr "Enonder ene kimande do shell"
+
+#: kshellcmdplugin.cpp:74
+#, kde-format
+msgid "Execute shell command in current directory:"
+msgstr "Enonder ene kimande do shell divins li ridant do moumint:"
+
+#: kshellcmdplugin.cpp:85
+#, kde-format
+msgid "Output from command: \"%1\""
+msgstr "Rexhowe del kimande: «%1»"
+
+#~ msgid "no name"
+#~ msgstr "sins no"
+
+#~ msgid "Configure"
+#~ msgstr "Apontyî"
+
+#~ msgid "Extensions"
+#~ msgstr "Rawetes"
+
+#~ msgid ""
+#~ "There was an error loading the module %1.\n"
+#~ "The diagnostics is:\n"
+#~ "%2"
+#~ msgstr ""
+#~ "Åk n' a nén stî come dji tcherdjive li module %1.\n"
+#~ "Vochal li diagnostike:\n"
+#~ "%2"
+
+#~ msgid "Konqueror"
+#~ msgstr "Konqueror"
+
+#~ msgid "Web browser, file manager and document viewer."
+#~ msgstr "Betchteu waibe, manaedjeu d' fitchîs et håyneu d' documints."
+
+#~ msgid "(C) 1999-2008, The Konqueror developers"
+#~ msgstr "© 1999-2008, les programeus di Konqueror"
+
+#~ msgid "http://konqueror.kde.org"
+#~ msgstr "http://konqueror.kde.org"
+
+#~ msgid "David Faure"
+#~ msgstr "David Faure"
+
+#~ msgid "Developer (framework, parts, JavaScript, I/O library) and maintainer"
+#~ msgstr "Programeu (evironmint, parts, Javascript, livreye I/O) eyet mintneu"
+
+#~ msgid "Simon Hausmann"
+#~ msgstr "Simon Hausmann"
+
+#~ msgid "Developer (framework, parts)"
+#~ msgstr "Programeu (cådes, parts)"
+
+#~ msgid "Michael Reiher"
+#~ msgstr "Michael Reiher"
+
+#~ msgid "Developer (framework)"
+#~ msgstr "Programeu (cåde)"
+
+#~ msgid "Matthias Welk"
+#~ msgstr "Matthias Welk"
+
+#~ msgid "Developer"
+#~ msgstr "Programeu"
+
+#~ msgid "Alexander Neundorf"
+#~ msgstr "Alexander Neundorf"
+
+#~ msgid "Developer (List views)"
+#~ msgstr "Programeu (håynaedje e djivêyes)"
+
+#~ msgid "Michael Brade"
+#~ msgstr "Michael Brade"
+
+#~ msgid "Developer (List views, I/O library)"
+#~ msgstr "Programeu (håynaedje e djivêyes, livreye d' I/R)"
+
+#~ msgid "Lars Knoll"
+#~ msgstr "Lars Knoll"
+
+#~ msgid "Developer (HTML rendering engine)"
+#~ msgstr "Programeu (moteur di håynaedje HTML)"
+
+#~ msgid "Dirk Mueller"
+#~ msgstr "Dirk Mueller"
+
+#~ msgid "Peter Kelly"
+#~ msgstr "Peter Kelly"
+
+#~ msgid "Waldo Bastian"
+#~ msgstr "Waldo Bastian"
+
+#~ msgid "Developer (HTML rendering engine, I/O library)"
+#~ msgstr "Programeu (moteur di håynaedje HTML, livreye d' I/R)"
+
+#~ msgid "Germain Garand"
+#~ msgstr "Germain Garand"
+
+#~ msgid "Leo Savernik"
+#~ msgstr "Leo Savernik"
+
+#~ msgid "Stephan Kulow"
+#~ msgstr "Stephan Kulow"
+
+#~ msgid ""
+#~ "Developer (HTML rendering engine, I/O library, regression test framework)"
+#~ msgstr ""
+#~ "Programeu (moteur di håynaedje HTML, livreye d' I/R, evironmint d' "
+#~ "sayaedje)"
+
+#~ msgid "Antti Koivisto"
+#~ msgstr "Antti Koivisto"
+
+#~ msgid "Zack Rusin"
+#~ msgstr "Zack Rusin"
+
+#~ msgid "Tobias Anton"
+#~ msgstr "Tobias Anton"
+
+#~ msgid "Lubos Lunak"
+#~ msgstr "Lubos Lunak"
+
+#~ msgid "Maks Orlovich"
+#~ msgstr "Maks Orlovich"
+
+#~ msgid "Developer (HTML rendering engine, JavaScript)"
+#~ msgstr "Programeu (moteur di håynaedje HTML, JavaScript)"
+
+#~ msgid "Allan Sandfeld Jensen"
+#~ msgstr "Allan Sandfeld Jensen"
+
+#~ msgid "Apple Safari Developers"
+#~ msgstr "Programeus do Safari d' Apple"
+
+#~ msgid "Harri Porten"
+#~ msgstr "Harri Porten"
+
+#~ msgid "Developer (JavaScript)"
+#~ msgstr "Programeu (JavaScript)"
+
+#~ msgid "Koos Vriezen"
+#~ msgstr "Koos Vriezen"
+
+#~ msgid "Developer (Java applets and other embedded objects)"
+#~ msgstr "Programeu (sopoirt des apliketes Java et ds ôtes ravalés obdjets)"
+
+#~ msgid "Matt Koss"
+#~ msgstr "Matt Koss"
+
+#~ msgid "Developer (I/O library)"
+#~ msgstr "Programeu (livreye I/O)"
+
+#~ msgid "Alex Zepeda"
+#~ msgstr "Alex Zepeda"
+
+#~ msgid "Richard Moore"
+#~ msgstr "Richard Moore"
+
+#~ msgid "Developer (Java applet support)"
+#~ msgstr "Programeu (sopoirt des apliketes Java)"
+
+#~ msgid "Dima Rogozin"
+#~ msgstr "Dima Rogozin"
+
+#~ msgid "Wynn Wilkes"
+#~ msgstr "Wynn Wilkes"
+
+#~ msgid ""
+#~ "Developer (Java 2 security manager support,\n"
+#~ " and other major improvements to applet support)"
+#~ msgstr ""
+#~ "Programeu (sopoirt do manaedjeu del såvrité Java,\n"
+#~ " eyet des ôtes fels ramidraedjes po sopoirt des apliketes)"
+
+#~ msgid "Stefan Schimanski"
+#~ msgstr "Stefan Schimanski"
+
+#~ msgid "Developer (Netscape plugin support)"
+#~ msgstr "Programeu (sopoirt des tchôke-divins di Netscape)"
+
+#~ msgid "George Staikos"
+#~ msgstr "George Staikos"
+
+#~ msgid "Developer (SSL, Netscape plugins)"
+#~ msgstr "Programeu (SSL, tchôke-divins di Netscape)"
+
+#~ msgid "Dawit Alemayehu"
+#~ msgstr "Dawit Alemayehu"
+
+#~ msgid "Developer (I/O library, Authentication support)"
+#~ msgstr "Programeu (livreye d' I/R, sopoirt d' otintifiaedje)"
+
+#~ msgid "Carsten Pfeiffer"
+#~ msgstr "Carsten Pfeiffer"
+
+#~ msgid "Torsten Rahn"
+#~ msgstr "Torsten Rahn"
+
+#~ msgid "Graphics/icons"
+#~ msgstr "Grafikes/imådjetes"
+
+#~ msgid "Torben Weis"
+#~ msgstr "Torben Weis"
+
+#~ msgid "KFM author"
+#~ msgstr "Oteur di KFM"
+
+#~ msgid "Joseph Wenninger"
+#~ msgstr "Joseph Wenninger"
+
+#~ msgid "Developer (navigation panel framework)"
+#~ msgstr "Programeu (evironmint d' panea d' naiviaedje)"
+
+#~ msgid "Stephan Binner"
+#~ msgstr "Stephan Binner"
+
+#~ msgid "Developer (misc stuff)"
+#~ msgstr "Programeu (totes sôres di sacwès)"
+
+#~ msgid "Ivor Hewitt"
+#~ msgstr "Ivor Hewitt"
+
+#~ msgid "Developer (AdBlock filter)"
+#~ msgstr "Programeu (passete AdBlock)"
+
+#~ msgid "Eduardo Robles Elvira"
+#~ msgstr "Eduardo Robles Elvira"
+
+#~ msgid ""
+#~ "Checking this box on at least two views sets those views as 'linked'. "
+#~ "Then, when you change directories in one view, the other views linked "
+#~ "with it will automatically update to show the current directory. This is "
+#~ "especially useful with different types of views, such as a directory tree "
+#~ "with an icon view or detailed view, and possibly a terminal emulator "
+#~ "window."
+#~ msgstr ""
+#~ "Si vs clitchîz cisse boesse ci po deus vuwes pol moens, ces vuwes la "
+#~ "seront «aloyeyes».  Do côp, cwand vos candjroz d' ridant dins ene des "
+#~ "deus vuwes, l' ôte vuwe si metrè a djoû tote seule po håyner li ridant do "
+#~ "moumint.  C' est foirt ahessåve aprume avou deus diferinnès sôres di "
+#~ "vuwes, metans: li coxhlaedje des ridants d' on costé, eyet des imådjetes "
+#~ "di l' ôte, ou on spepieus håynaedje, ou minme on terminå."
+
+#~ msgid "Close View"
+#~ msgstr "Clôre vuwe"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#~ msgid "Stalled"
+#~ msgstr "Djoké"
+
+#~ msgid "Preview &in %1"
+#~ msgstr "Prévey d&ins %1"
+
+#~ msgid "Show %1"
+#~ msgstr "Håyner %1"
+
+#~ msgctxt "@title:window"
+#~ msgid "History"
+#~ msgstr "Istwere"
+
+#~ msgctxt "@action:inmenu Parent of 'By Name' and 'By Date'"
+#~ msgid "Sort"
+#~ msgstr "Relére"
+
+#~ msgid ""
+#~ "<qt><center><b>%1</b></center><hr />Last visited: %2<br />First visited: "
+#~ "%3<br />Number of times visited: %4</qt>"
+#~ msgstr ""
+#~ "<qt><center><b>%1</b></center><hr />Vizité pol dierin côp: %2<br />Vizité "
+#~ "pol prumî côp: %3<br />Nombe di vizites: %4</qt>"
+
+#~ msgid "Local"
+#~ msgstr "Coinrece"
+
+#~ msgid "Miscellaneous"
+#~ msgstr "Totès sôres"
+
+#~ msgid "Open in New &Window"
+#~ msgstr "Drovi en ene novele &finiesse"
+
+#~ msgid "Open in New Tab"
+#~ msgstr "Drovi dins ene nouve linwete"
+
+#~ msgid "&Copy Link Address"
+#~ msgstr "&Copyî l' adresse do loyén"
+
+#~ msgid "&Remove Entry"
+#~ msgstr "&Oister foû ciste intrêye"
+
+#~ msgid "C&lear History"
+#~ msgstr "&Netyî l' istwere"
+
+#~ msgid "&Preferences..."
+#~ msgstr "&Preferinces..."
+
+#~ msgid "By &Name"
+#~ msgstr "Sol &No"
+
+#~ msgid "By &Date"
+#~ msgstr "Sol &Date"
+
+#~ msgid "Search in history"
+#~ msgstr "Trover e l' istwere"
+
+#~ msgid "Do you really want to clear the entire history?"
+#~ msgstr "Voloz vs po do bon soprimer tote l' istwere?"
+
+#~ msgid "Clear History?"
+#~ msgstr "Soprimer l' istwere?"
+
+#, fuzzy
+#~| msgid "Start without a default window"
+#~ msgid "Start without a default window, when called without URLs"
+#~ msgstr "Enonder sins on prémetou purnea"
+
+#~ msgid "Profile to open"
+#~ msgstr "Profil a drovi"
+
+#~ msgid "List available profiles"
+#~ msgstr "Djivêye des profils k' i gn a"
+
+#~ msgid "List available sessions"
+#~ msgstr "Fé l' djivêye des sessions k' i gn a"
+
+#~ msgid "Session to open"
+#~ msgstr "Session a drovi"
+
+#~ msgid "Mimetype to use for this URL (e.g. text/html or inode/directory)"
+#~ msgstr ""
+#~ "Sôre MIME a eployî po cist URL ci (metans: text/html ou inode/directory)"
+
+#~ msgid ""
+#~ "For URLs that point to files, opens the directory and selects the file, "
+#~ "instead of opening the actual file"
+#~ msgstr ""
+#~ "Po ls URL ki loyèt après des fitchîs, drouve li ridant et tchoezixhe li "
+#~ "fitchî purade ki drovi l' vraiy fitchî"
+
+#~ msgid "Location to open"
+#~ msgstr "Eplaeçmint a drovi"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Loading..."
+#~ msgstr "Dji tchedje..."
+
+#~ msgid "Canceled."
+#~ msgstr "Rinoncî."
+
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Reloading the page will discard these changes."
+#~ msgstr ""
+#~ "Cisse pådje a des candjmints ki n' ont nén stî sormetous.\n"
+#~ "Ritcherdjî l' pådje disfaçrè ces candjmints."
+
+#~ msgid "Discard Changes?"
+#~ msgstr "Disfacer les candjmints?"
+
+#~ msgid "&Discard Changes"
+#~ msgstr "&Disfacer les candjmints"
+
+#~ msgid "File Management"
+#~ msgstr "Manaedjmint des fitchîs"
+
+#~ msgid "Web Browsing"
+#~ msgstr "Naiviaedje waibe"
+
+#~ msgid "Home Folder"
+#~ msgstr "Ridant måjhon"
+
+#~ msgid "Home"
+#~ msgstr "Måjhon"
+
+#~ msgid "Navigate to your 'Home Folder'"
+#~ msgstr "Naivyî viè vosse «Ridant Måjhon»"
+
+#~ msgid "Navigate to your local 'Home Folder'"
+#~ msgstr "Naivyî viè vosse «Ridant Måjhon» locå"
+
+#~ msgid "Home Page"
+#~ msgstr "Pådje måjhon"
+
+#~ msgid "Navigate to your 'Home Page'"
+#~ msgstr "Naivyî viè vosse «Pådje Måjhon»"
+
+#~ msgid ""
+#~ "<html>Navigate to your 'Home Page'<br /><br />You can configure the "
+#~ "location where this button takes you under <b>Settings -> Configure "
+#~ "Konqueror -> General</b>.</html>"
+#~ msgstr ""
+#~ "<html>Naivyî viè vosse «Pådje Måjhon»<br /><br />Po defini ewou çki ci "
+#~ "boton vos amoenne, alez dvins l' <b>Tchuzes -> Apontyî Konqueror -> "
+#~ "Djenerå</b>.</html>"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Detaching the tab will discard these changes."
+#~ msgstr ""
+#~ "Cisse linwete a des candjmints ki n' ont nén stî sormetous.\n"
+#~ "Distaetchî l' linwete disfaçrè ces candjmints."
+
+#~ msgid ""
+#~ "This view contains changes that have not been submitted.\n"
+#~ "Closing the view will discard these changes."
+#~ msgstr ""
+#~ "Cisse vuwe a des candjmints ki n' ont nén stî sormetous.\n"
+#~ "Clôre li vuwe disfaçrè ces candjmints."
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the tab will discard these changes."
+#~ msgstr ""
+#~ "Cisse linwete a des candjmints ki n' ont nén stî sormetous.\n"
+#~ "Clôre li linwete disfaçrè ces candjmints."
+
+#~ msgid "Do you really want to close all other tabs?"
+#~ msgstr "Voloz vs po do bon clôre totes les ôtès linwetes?"
+
+#~ msgid "Close Other Tabs Confirmation"
+#~ msgstr "Acertinaedje po clôre les ôtes linwetes"
+
+#~ msgid "Close &Other Tabs"
+#~ msgstr "Clôre les ô&tes linwetes"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing other tabs will discard these changes."
+#~ msgstr ""
+#~ "Cisse linwete a des candjmints ki n' ont nén stî sormetous.\n"
+#~ "Clôre les ôtès linwetes disfaçrè ces candjmints."
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Reloading all tabs will discard these changes."
+#~ msgstr ""
+#~ "Cisse linwete a des candjmints ki n' ont nén stî sormetous.\n"
+#~ "Ritcherdjî totes les linwetes disfaçrè ces candjmints."
+
+#~ msgid "Enter Target"
+#~ msgstr "Tapez li såme"
+
+#~ msgid "<qt><b>%1</b> is not valid</qt>"
+#~ msgstr "<qt><b>%1</b> n' est nén valide</qt>"
+
+#~ msgid "Copy selected files from %1 to:"
+#~ msgstr "Copyî les fitchîs tchoezis di %1 viè:"
+
+#~ msgid "Move selected files from %1 to:"
+#~ msgstr "Bodjî les fitchîs tchoezis di %1 viè:"
+
+#~ msgctxt "This menu entry empties the closed items history"
+#~ msgid "Empty Closed Items History"
+#~ msgstr "Vudî l' istwere des cayets cloyous"
+
+#~ msgid "Save As..."
+#~ msgstr "Schaper eyet rlomer..."
+
+#~ msgid "Manage..."
+#~ msgstr "Manaedjî..."
+
+#~ msgid "New &Window"
+#~ msgstr "Novele &finiesse"
+
+#~ msgid "&Duplicate Window"
+#~ msgstr "&Dobler l' finiesse"
+
+#~ msgid "Send &Link Address..."
+#~ msgstr "Evoyî adresse do &loyén..."
+
+#~ msgid "S&end File..."
+#~ msgstr "&Evoyî fitchî..."
+
+#~ msgid "&Open Location"
+#~ msgstr "&Drovi eplaeçmint"
+
+#~ msgid "&Open File..."
+#~ msgstr "&Drovi fitchî..."
+
+#~ msgid "&Find File..."
+#~ msgstr "&Trover fitchî..."
+
+#~ msgid "&Use index.html"
+#~ msgstr "E&ployî index.html"
+
+#~ msgid "Lock to Current Location"
+#~ msgstr "Serer viè l' eplaeçmint do moumint"
+
+#~ msgctxt "This option links konqueror views"
+#~ msgid "Lin&k View"
+#~ msgstr "Vuwe des lo&yéns"
+
+#~ msgid "&Up"
+#~ msgstr "Diz&eu"
+
+#~ msgid "Closed Items"
+#~ msgstr "Cayets cloyous"
+
+#~ msgid "Sessions"
+#~ msgstr "Sessions"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Most Often Visited"
+#~ msgstr "Li pus sovint vizitêye"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Recently Visited"
+#~ msgstr "Vizité dierinnmint"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History"
+#~ msgstr "Mostrer l' istwere"
+
+#~ msgid "&Save View Profile As..."
+#~ msgstr "&Schaper li profil di håynaedje eyet l' rilomer..."
+
+#~ msgid "Configure Extensions..."
+#~ msgstr "Apontyî les rawetes..."
+
+#~ msgid "Configure Spell Checking..."
+#~ msgstr "Apontyî l' coridjrece ortografike..."
+
+#~ msgid "Split View &Left/Right"
+#~ msgstr "Dispårti l' vuwe &hintche/droete"
+
+#~ msgid "Split View &Top/Bottom"
+#~ msgstr "Dispårti l' vuwe &dizeu/dizo"
+
+#~ msgid "&New Tab"
+#~ msgstr "&Novele linwete"
+
+#~ msgid "&Duplicate Current Tab"
+#~ msgstr "&Dobler l' linwete do moumint"
+
+#~ msgid "Detach Current Tab"
+#~ msgstr "Distaetchî l' linwete do moumint"
+
+#~ msgid "&Close Active View"
+#~ msgstr "&Clôre li vuwe do moumint"
+
+#~ msgid "Close Current Tab"
+#~ msgstr "Clôre li linwete do moumint"
+
+#~ msgid "Activate Next Tab"
+#~ msgstr "Mete en alaedje li linwete shuvante"
+
+#~ msgid "Activate Previous Tab"
+#~ msgstr "Mete en alaedje li linwete di dvant"
+
+#~ msgid "Activate Tab %1"
+#~ msgstr "Mete en alaedje li linwete %1"
+
+#~ msgid "Move Tab Left"
+#~ msgstr "Bodjî linwete viè l' hintche"
+
+#~ msgid "Move Tab Right"
+#~ msgstr "Bodjî linwete viè l' droete"
+
+#~ msgid "Dump Debug Info"
+#~ msgstr "Copyî infôrmåcion d' disbogaedje"
+
+#~ msgid "C&onfigure View Profiles..."
+#~ msgstr "A&pontyî les profils des vuwes..."
+
+#~ msgid "Load &View Profile"
+#~ msgstr "&Tcherdjî on profil di vuwes.."
+
+#~ msgid "&Reload"
+#~ msgstr "&Ritcherdjî"
+
+#~ msgid "&Reload All Tabs"
+#~ msgstr "&Ritcherdjî totes les linwetes"
+
+#~ msgid "&Force Reload"
+#~ msgstr "&Foirci ritcherdjaedje"
+
+#~ msgid "&Stop"
+#~ msgstr "Hô&w"
+
+#~ msgid "L&ocation: "
+#~ msgstr "&Eplaeçmint: "
+
+#~ msgid "Location Bar"
+#~ msgstr "Båre d' eplaeçmints"
+
+#~ msgid ""
+#~ "<html>Location Bar<br /><br />Enter a web address or search term.</html>"
+#~ msgstr ""
+#~ "<html>Båre d' eplaeçmints<br /><br />Tapez l' adresse d' ene hårdêye ou "
+#~ "on mot a cweri.</html>"
+
+#~ msgid "Clear Location Bar"
+#~ msgstr "Netyî l' båre d' eplaeçmints"
+
+#~ msgid ""
+#~ "<html>Clear Location bar<br /><br />Clears the contents of the location "
+#~ "bar.</html>"
+#~ msgstr ""
+#~ "<html>Netyî l' båre d' eplaeçmints<br /><br />Neteye li contnou del bår "
+#~ "d' eplaeçmint.</html>"
+
+#~ msgid "&Bookmarks"
+#~ msgstr "&Rimåkes"
+
+#~ msgid "Kon&queror Introduction"
+#~ msgstr "Adrovaedje di Kon&queror"
+
+#~ msgid "Go"
+#~ msgstr "Potchî"
+
+#~ msgid ""
+#~ "<html>Go<br /><br />Goes to the page that has been entered into the "
+#~ "location bar.</html>"
+#~ msgstr ""
+#~ "<html>Potchî<br /><br />Va al pådje k' a stî dnêye dins l' båre "
+#~ "d' eplaeçmints.</html>"
+
+#~ msgid ""
+#~ "<html>Enter the parent folder<br /><br />For instance, if the current "
+#~ "location is file:/home/%1 clicking this button will take you to file:/"
+#~ "home.</html>"
+#~ msgstr ""
+#~ "<html>Moussî e ridant do dzeu<br /><br />Metans, si l' eplaeçmint do "
+#~ "moumint est file:/home/%1, adon si vos clitchrîz sol boton, ça vos "
+#~ "moennrè e file:/home.</html>"
+
+#~ msgid "Enter the parent folder"
+#~ msgstr "Moussî e ridant do dzeu"
+
+#~ msgid "Move backwards one step in the browsing history"
+#~ msgstr "Bodjî en erî d' onk digré dins l' istwere di foytaedje"
+
+#~ msgid "Move forward one step in the browsing history"
+#~ msgstr "Bodjî en avant d' onk digré dins l' istwere di foytaedje"
+
+#~ msgid "Move backwards one step in the closed tabs history"
+#~ msgstr "Bodjî en erî d' onk digré dins l' istwere des linwetes cloyowes"
+
+#~ msgid ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.</html>"
+#~ msgstr ""
+#~ "<html>Ritcherdjî li documint k' est håyné pol moumint<br /><br />Vos ndè "
+#~ "pôrîz aveur dandjî, metans, po rafrister des pådjes waibe k' ont stî "
+#~ "candjeyes dispu k' elle ont stî tcherdjeyes, po vey les candjmints.</html>"
+
+#~ msgid "Reload the currently displayed document"
+#~ msgstr "Ritcherdjî li documint k' est håyné pol moumint"
+
+#~ msgid ""
+#~ "<html>Reload all currently displayed documents in tabs<br /><br />This "
+#~ "may, for example, be needed to refresh web pages that have been modified "
+#~ "since they were loaded, in order to make the changes visible.</html>"
+#~ msgstr ""
+#~ "<html>Ritcherdjî tos les documints håynés pol moumint dins des "
+#~ "linwetes<br /><br />Vos ndè pôrîz aveur dandjî, metans, po rafrister des "
+#~ "pådjes waibe k' ont stî candjeyes dispu k' elle ont stî tcherdjeyes, po "
+#~ "vey les candjmints.</html>"
+
+#~ msgid "Reload all currently displayed document in tabs"
+#~ msgstr "Ritcherdjî tos les documints håynés pol moumint dins des linwetes"
+
+#~ msgid ""
+#~ "<html>Stop loading the document<br /><br />All network transfers will be "
+#~ "stopped and Konqueror will display the content that has been received so "
+#~ "far.</html>"
+#~ msgstr ""
+#~ "<html>Djoker li tcherdjaedje do documint<br /><br />Tos les aberwetaedjes "
+#~ "del rantoele seront arestés et Konqueror ni håynêyrè ki çou k' a stî "
+#~ "riçût a ç' moumint.</html>"
+
+#~ msgid ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.  Any images on "
+#~ "the page are downloaded again, even if cached copies exist.</html>"
+#~ msgstr ""
+#~ "<html>Ritcherdjî li documint k' est håyné pol moumint<br /><br />Vos ndè "
+#~ "pôrîz aveur dandjî, metans, po rafrister des pådjes waibe k' ont stî "
+#~ "candjeyes dispu k' elle ont stî tcherdjeyes, po vey les candjmints. Totes "
+#~ "les imådjes sol pådje sont rtcherdjeyes eco on côp, minme si des copeyes "
+#~ "e muchete egzistèt.</html>"
+
+#~ msgid ""
+#~ "Force a reload of the currently displayed document and any contained "
+#~ "images"
+#~ msgstr ""
+#~ "Foirci on ritcherdjaedje di tos les documints håynés pol moumint eyet "
+#~ "totes les imådjes ki sont ddins"
+
+#~ msgid "Stop loading the document"
+#~ msgstr "Djoker li tcherdjaedje do documint"
+
+#~ msgid ""
+#~ "<html>Cut the currently selected text or item(s) and move it to the "
+#~ "system clipboard<br /><br />This makes it available to the <b>Paste</b> "
+#~ "command in Konqueror and other KDE applications.</html>"
+#~ msgstr ""
+#~ "<html>Clitchîz so ç' boton ci po côper li tecse ou les cayets tchoezis "
+#~ "pol moumint eyet les herer e presse-papî do sistinme<br /><br />Çoula "
+#~ "l' rind disponibe pol comande <b>Aclaper</b> dins Konqueror eyet des ôtes "
+#~ "programes di KDE.</html>"
+
+#~ msgid "Move the selected text or item(s) to the clipboard"
+#~ msgstr "Bodjî li tecse ou les cayets tchoezis dvins l' presse-papî"
+
+#~ msgid ""
+#~ "<html>Copy the currently selected text or item(s) to the system "
+#~ "clipboard<br /><br />This makes it available to the <b>Paste</b> command "
+#~ "in Konqueror and other KDE applications.</html>"
+#~ msgstr ""
+#~ "<html>Clitchîz so ç' boton ci po copyî li tecse ou les cayets tchoezis "
+#~ "pol moumint eyet les herer e presse-papî do sistinme<br /><br />Çoula "
+#~ "l' rind disponibe pol comande <b>Aclaper</b> dins Konqueror eyet des ôtes "
+#~ "programes di KDE.</html>"
+
+#~ msgid "Copy the selected text or item(s) to the clipboard"
+#~ msgstr "Copyî li tecse ou les cayets tchoezis dvins l' presse-papî"
+
+#~ msgid ""
+#~ "<html>Paste the previously cut or copied clipboard contents<br /><br /"
+#~ ">This also works for text copied or cut from other KDE applications.</"
+#~ "html>"
+#~ msgstr ""
+#~ "<html>Clitchîz so ç' boton ci po-z aclaper li tecse ou les cayets ki vs "
+#~ "avîz bodjî ou copyî e presse-papî do sistinme<br /><br />Çoula rote eto "
+#~ "po do tecse copyî ou côpé foû d' ôtes programes di KDE.</html>"
+
+#~ msgid "Paste the clipboard contents"
+#~ msgstr "Aclape çou k' i gn a dins l' presse-papî"
+
+#~ msgid ""
+#~ "<html>Print the currently displayed document<br /><br />You will be "
+#~ "presented with a dialog where you can set various options, such as the "
+#~ "number of copies to print and which printer to use.<br /><br />This "
+#~ "dialog also provides access to special KDE printing services such as "
+#~ "creating a PDF file from the current document.</html>"
+#~ msgstr ""
+#~ "<html>Imprimer l' documint håyné pol moumint<br /><br />Vos åroz on "
+#~ "purnea wice ki vs pôroz tchoezi sacwantès tchuzes come li nombe di "
+#~ "copeyes a rexhe et kéne sicrirece eployî.<br /><br />Ci purnea dene ossu "
+#~ "accès ås siervices sipeciås d' sicrirece KDE come ahiver on fitchî PDF a "
+#~ "pårti do documint do moumint.</html>"
+
+#~ msgid "Print the current document"
+#~ msgstr "Imprimer l' documint do moumint"
+
+#~ msgid "If present, open index.html when entering a folder."
+#~ msgstr "Drovi index.html (s' i gn a onk) dins l' ridant k' vos drovoz."
+
+#~ msgid ""
+#~ "A locked view cannot change folders. Use in combination with 'link view' "
+#~ "to explore many files from one folder"
+#~ msgstr ""
+#~ "Avou ene vuwe sitatêye, gn a pus moyén di candjî d' ridant. Eployîz avou "
+#~ "ene vuwe aloyeye po loukî bråmint des fitchîs dins on seu ridant"
+
+#~ msgid ""
+#~ "Sets the view as 'linked'. A linked view follows folder changes made in "
+#~ "other linked views."
+#~ msgstr ""
+#~ "Definit cisse vuwe come «aloyeye». Ene vuwe aloyeye shût les candjmints "
+#~ "di ridants dins des ôtès aloyeyès vuwes."
+
+#~ msgid "Copy &Files..."
+#~ msgstr "Copyî &fitchîs..."
+
+#~ msgid "M&ove Files..."
+#~ msgstr "&Bodjî fitchîs..."
+
+#~ msgid ""
+#~ "You have requested to open more than 20 bookmarks in tabs. This might "
+#~ "take a while. Continue?"
+#~ msgstr ""
+#~ "Vos avoz dmandé d' drovi pus ki 20 rmåkes dins des linwetes. Ça pôreut "
+#~ "prinde bråmint do tins. Tcheryî pus lon?"
+
+#~ msgid "Open bookmarks folder in new tabs"
+#~ msgstr "Drovi l' ridant des rmåkes dins des novelès linwetes"
+
+#~ msgid "Open in T&his Window"
+#~ msgstr "Drovi e &cisse finiesse ci"
+
+#~ msgid "Open the document in current window"
+#~ msgstr "Drovi l' documint el finiesse do moumint"
+
+#~ msgid "Open the document in a new window"
+#~ msgstr "Drovi l' documint èn ene novele finiesse"
+
+#~ msgid "Open in &New Tab"
+#~ msgstr "Drovi en ene &novele linwete"
+
+#~ msgid "Open the document in a new tab"
+#~ msgstr "Drovi l' documint en ene novele linwete"
+
+#~ msgid "&Open With"
+#~ msgstr "&Drovi avou"
+
+#~ msgid "Open with %1"
+#~ msgstr "Drovi avou %1"
+
+#~ msgctxt "@action:inmenu View"
+#~ msgid "&View Mode"
+#~ msgstr "&Môde di Vuwe"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window, are you sure you want to quit?"
+#~ msgstr ""
+#~ "Vos avoz sacwantès linwetes di drovowes dins cisse finiesse chal; estoz "
+#~ "seur di voleur cwiter?"
+
+#~ msgid "Confirmation"
+#~ msgstr "Acertinaedje"
+
+#~ msgid "C&lose Current Tab"
+#~ msgstr "C&lôre li linwete do moumint"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the window will discard these changes."
+#~ msgstr ""
+#~ "Cisse linwete a des candjmints ki n' ont nén stî evoyîs.\n"
+#~ "Clôre li fniesse disfaçrè ces candjmints."
+
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Closing the window will discard these changes."
+#~ msgstr ""
+#~ "Cisse pådje a des candjmints ki n' ont nén stî evoyîs.\n"
+#~ "Clôre li finiesse disfaçrè ces candjmints."
+
+#~ msgid ""
+#~ "Your sidebar is not functional or unavailable. A new entry cannot be "
+#~ "added."
+#~ msgstr ""
+#~ "Vosse båre di costé ni rote nén ou n' est nén disponibe. Ene novele "
+#~ "intrêye ni pout nén esse radjoutêye."
+
+#~ msgid "Web Sidebar"
+#~ msgstr "Båre di costé pol naiviaedje waibe"
+
+#~ msgid "Add new web extension \"%1\" to your sidebar?"
+#~ msgstr "Radjouter ene novele rawete waibe «%1» a vosse båre di costé?"
+
+#~ msgid "Add"
+#~ msgstr "Radjouter"
+
+#~ msgid "Do Not Add"
+#~ msgstr "Èn nén radjouter"
+
+#~ msgid ""
+#~ "There appears to be a configuration error. You have associated Konqueror "
+#~ "with %1, but it cannot handle this file type."
+#~ msgstr ""
+#~ "Dj' a l' idêye k' ene sacwè n' va nén dins voste apontiaedje. Vos avoz "
+#~ "aloyî Konqueror avou %1, mins i n' sait cwè fé avou cisse sôre di fitchî "
+#~ "la."
+
+#~ msgid "Profile Management"
+#~ msgstr "Manaedjmint des profils"
+
+#~ msgid "&Rename Profile"
+#~ msgstr "&Rilomer l' profil"
+
+#~ msgid "&Delete Profile"
+#~ msgstr "&Disfacer l' profil"
+
+#~ msgid "Manage Sessions"
+#~ msgstr "Manaedjî les sessions"
+
+#~ msgid "&Open"
+#~ msgstr "&Drovi"
+
+#~ msgid "Rename Session"
+#~ msgstr "Rilomer session"
+
+#~ msgid "Save Session"
+#~ msgstr "Schaper session"
+
+#~ msgid ""
+#~ "A session with the name '%1' already exists, do you want to overwrite it?"
+#~ msgstr ""
+#~ "Ene session avou l' no « %1 » egzistêye dedja, el voloz vs sipotchî "
+#~ "podbon?"
+
+#~ msgid "Session exists. Overwrite?"
+#~ msgstr "Li session egzitêye. El sipotchî?"
+
+#~ msgid ""
+#~ "Konqueror did not close correctly. Would you like to restore the previous "
+#~ "session?"
+#~ msgstr ""
+#~ "Konqueror n' a nén cloyou comifåt. Vôrîz rapexhî l' session di dvant?"
+
+#~ msgid "Restore Session?"
+#~ msgstr "Rapexhî session?"
+
+#~ msgid "Restore Session"
+#~ msgstr "Rapexhî session"
+
+#~ msgid "Do Not Restore"
+#~ msgstr "Èn nén rapexhî"
+
+#~ msgid "Ask Me Later"
+#~ msgstr "Èm dimander pus tård"
+
+#~ msgid ""
+#~ "This bar contains the list of currently open tabs. Click on a tab to make "
+#~ "it active. You can also use keyboard shortcuts to navigate through tabs. "
+#~ "The text on the tab shows the content currently open in it; place your "
+#~ "mouse over the tab to see the full title, in case it has been shortened "
+#~ "to fit the tab width."
+#~ msgstr ""
+#~ "Cisse båre contént l' lisse des linwetes drovowes pol moumint. Clitchîz "
+#~ "so-z ene linwete pol mete en alaedje. Vos ploz ossu eployî des rascourtis "
+#~ "taprece po naivyî avå les linwetes. Li tecse sol linwete mostere l' "
+#~ "ådvins k' est drovou dvins pol moumint. Metoz vosse sori pa dzeu l' "
+#~ "linwete po vey li tite en etir s' il est racourti pask' il est trop grand "
+#~ "po s' mete dins l' linwete."
+
+#~ msgid "Open a new tab"
+#~ msgstr "Drovi ene nouve linwete"
+
+#~ msgid "Close the current tab"
+#~ msgstr "Clôre li linwete do moumint"
+
+#~ msgid "&Duplicate Tab"
+#~ msgstr "&Dobler l' linwete"
+
+#~ msgid "&Reload Tab"
+#~ msgstr "&Ritcherdjî l' linwete"
+
+#~ msgid "Other Tabs"
+#~ msgstr "Ôtès linwetes"
+
+#~ msgid "D&etach Tab"
+#~ msgstr "Dis&taetchî linwete"
+
+#~ msgid "&Close Tab"
+#~ msgstr "&Clôre linwete"
+
+#~ msgid "Und&o: Closed Tab"
+#~ msgstr "Dis&fé: linwete cloyowe"
+
+#~ msgid "Und&o: Closed Window"
+#~ msgstr "Dis&fé : finiesse cloyowe"
+
+#~ msgid "Und&o"
+#~ msgstr "Dis&fé"
+
+#~ msgid ""
+#~ "The page you are trying to view is the result of posted form data. If you "
+#~ "resend the data, any action the form carried out (such as search or "
+#~ "online purchase) will be repeated. "
+#~ msgstr ""
+#~ "Li pådje ki vs sayîz d' vey est l' rizultat di dnêyes d' on formulaire "
+#~ "evoyî. Si vs revoyîz les dnêyes, tote accion kel formulaire poirtéve "
+#~ "(come trover ou atchter so fyis) serè rfwaite. "
+
+#~ msgid "Warning"
+#~ msgstr "Adviertixhmint"
+
+#~ msgid "Resend"
+#~ msgstr "Revoyî"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window.\n"
+#~ "Loading a view profile will close them."
+#~ msgstr ""
+#~ "Vos avoz sacwantès linwetes di drovowes dins cisse finiesse chal.\n"
+#~ "Tcherdjî on profil di vuwes les clôrè."
+
+#~ msgid "Load View Profile"
+#~ msgstr "Tcherdjî on profil di vuwes"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Loading a profile will discard these changes."
+#~ msgstr ""
+#~ "Cisse linwete a des candjmint ki n' ont nén stî sormetous.\n"
+#~ "Tcherdjî on profil disfaçrè ces candjmints."
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "History Sidebar Module"
+#~ msgstr "Module bår di costé di l' istwere"
+
+#~ msgctxt "@title:tab"
+#~ msgid "History"
+#~ msgstr "Istwere"
+
+#~ msgid " day"
+#~ msgid_plural " days"
+#~ msgstr[0] " djoû"
+#~ msgstr[1] " djoûs"
+
+#~ msgid "Minute"
+#~ msgid_plural "Minutes"
+#~ msgstr[0] "Munute"
+#~ msgstr[1] "Munutes"
+
+#~ msgid "Day"
+#~ msgid_plural "Days"
+#~ msgstr[0] "Djoû"
+#~ msgstr[1] "Djoûs"
+
+#~ msgid "<h1>History Sidebar</h1> You can configure the history sidebar here."
+#~ msgstr ""
+#~ "<h1>Istwere el bår di costé</h1> Vos ploz apontyî l' istwere el bår di "
+#~ "costé chal."
+
+#, fuzzy
+#~| msgctxt "@action:inmenu Add"
+#~| msgid "Web Sidebar Module"
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Places Sidebar Module"
+#~ msgstr "Module bår di costé del waibe"
+
+#~ msgid "Extended Sidebar"
+#~ msgstr "Sitindowe bår di costé"
+
+#~ msgid "Rollback to System Default"
+#~ msgstr "Rivni ås prémetous sistinme"
+
+#~ msgid "Configure Sidebar"
+#~ msgstr "Apontyî li Båre di Costé"
+
+#~ msgid "Add New"
+#~ msgstr "Radjouter novea"
+
+#~ msgid "Multiple Views"
+#~ msgstr "Sacwantès vuwes"
+
+#~ msgid "Show Tabs Left"
+#~ msgstr "Mostrer les linwetes sol hintche"
+
+#~ msgid "Show Configuration Button"
+#~ msgstr "Mostrer l' boton d' apontiaedje"
+
+#~ msgid "Close Sidebar"
+#~ msgstr "Clôre bår di costé"
+
+#~ msgid "This entry already exists."
+#~ msgstr "Ciste intrêye egzistêye dedja."
+
+#~ msgid ""
+#~ "<qt>This removes all your entries from the sidebar and adds the system "
+#~ "default ones.<br /><b>This procedure is irreversible</b><br />Do you want "
+#~ "to proceed?</qt>"
+#~ msgstr ""
+#~ "<qt>Çoula oistêye totes vos intrêyes del bår di costé et radjoute les "
+#~ "cenes tchoezeyes por vos pal sistinme.<br /><b>Vos n' pôroz nén rivni en "
+#~ "erî</b><br />El voloz vs fé?</qt>"
+
+#~ msgid "Show Tabs Right"
+#~ msgstr "Mostrer les linwetes a droete"
+
+#~ msgid "Set Name"
+#~ msgstr "Defini l'no"
+
+#~ msgid "Enter the name:"
+#~ msgstr "Tapez l' no:"
+
+#~ msgid "Enter a URL:"
+#~ msgstr "Tapez èn URL:"
+
+#~ msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
+#~ msgstr "<qt>Voloz vs po do bon oister li linwete <b>%1</b> ?</qt>"
+
+#, fuzzy
+#~| msgid ""
+#~| "You have hidden the navigation panel configuration button. To make it "
+#~| "visible again, click the right mouse button on any of the navigation "
+#~| "panel buttons and select \"Show Configuration Button\"."
+#~ msgid ""
+#~ "You have hidden the sidebar configuration button. To make it visible "
+#~ "again, click the right mouse button on any of the sidebar buttons and "
+#~ "select \"Show Configuration Button\"."
+#~ msgstr ""
+#~ "Vos avoz catchî l' boton d' apontiaedje do panea d' naiviaedje. Pol fé "
+#~ "veyåve cor on côp, clitchîz sol droet boton del sori so tolminme ké boton "
+#~ "do panea d' naiviaedje et tchoezixhoz «Mostrer l' boton d' apontiaedje»."
+
+#~ msgid "Set Name..."
+#~ msgstr "Defini li no..."
+
+#~ msgid "Set URL..."
+#~ msgstr "Defini li hårdêye..."
+
+#~ msgid "Set Icon..."
+#~ msgstr "Defini l' imådjete..."
+
+#~ msgid "Remove"
+#~ msgstr "Oister"
+
+#~ msgid "Web module"
+#~ msgstr "Module waibe"
+
+#~ msgid "&Create New Folder"
+#~ msgstr "&Fé on novea ridant"
+
+#~ msgid "Delete Folder"
+#~ msgstr "Disfacer l' ridant"
+
+#~ msgid "Delete Bookmark"
+#~ msgstr "Disfacer rmåke"
+
+#~ msgid "Properties"
+#~ msgstr "Prôpietés"
+
+#~ msgid "Open in New Window"
+#~ msgstr "Drovi dins ene novele finiesse"
+
+#~ msgid "Open Folder in Tabs"
+#~ msgstr "Drovi les ridants dins des linwetes"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "Copyî l' adresse do loyén"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark folder\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "Estoz seur di voleur oister l' ridant d' rimåkes\n"
+#~ "«%1»?"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "Estoz seur di voleur oister l' rimåke\n"
+#~ "«%1»?"
+
+#~ msgid "Bookmark Folder Deletion"
+#~ msgstr "Oistaedje ridant di rmåkes"
+
+#~ msgid "Bookmark Deletion"
+#~ msgstr "Disfaçaedje di rmåke"
+
+#~ msgid "Bookmark Properties"
+#~ msgstr "Prôpietés del rimåke"
+
+#~ msgid "&Update"
+#~ msgstr "&Mete a djoû"
+
+#~ msgid "Name:"
+#~ msgstr "No:"
+
+#~ msgid "Location:"
+#~ msgstr "Eplaeçmint:"
+
+#~ msgid "Add Bookmark"
+#~ msgstr "Radjouter ene rimåke"
+
+#~ msgid "Cannot find parent item %1 in the tree. Internal error."
+#~ msgstr ""
+#~ "Dji n' sai trover li parint %1 dins li coxhlaedje. Divintrinne aroke."
+
+#~ msgid "&Create New Folder..."
+#~ msgstr "&Fé on novea ridant..."
+
+#~ msgid "Move to Trash"
+#~ msgstr "Taper å batch"
+
+#~ msgid "Rename"
+#~ msgstr "Rilomer"
+
+#~ msgid "Delete Link"
+#~ msgstr "Disfacer loyén"
+
+#~ msgid "New Folder"
+#~ msgstr "Novea ridant"
+
+#~ msgid "Create New Folder"
+#~ msgstr "Fé on novea ridant..."
+
+#~ msgid "Enter folder name:"
+#~ msgstr "Tapez li no do ridant:"
+
+#~ msgctxt "@label"
+#~ msgid "Name:"
+#~ msgstr "No :"
+
+#~ msgctxt "@label"
+#~ msgid "Path or URL:"
+#~ msgstr "Tchimin ou URL :"
+
+#~ msgid "&Open Link"
+#~ msgstr "&Drovi loyén"
+
+#~ msgid "Set &Automatic Reload"
+#~ msgstr "Defini l' ritcherdjaedje &tot seu"
+
+#~ msgid "Set Refresh Timeout (0 disables)"
+#~ msgstr "Defini l' tins d' rafristaedje (0=dismetou)"
+
+#~ msgid " min"
+#~ msgstr " min"
+
+#~ msgid " sec"
+#~ msgstr " seg"
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Web Sidebar Module"
+#~ msgstr "Module bår di costé del waibe"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add web sidebar module"
+#~ msgstr "Radjouter module bår di costé del waibe"
+
+#~ msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
+#~ msgid "Be free."
+#~ msgstr "Soeyoz libe."
+
+#~ msgid ""
+#~ "Konqueror is a web browser, file manager and universal document viewer."
+#~ msgstr ""
+#~ "Konqueror est vosse betchteu waibe, vosse manaedjeu d' fitchîs et sai "
+#~ "håyner tos vos documints."
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "Starting Points"
+#~ msgstr "Ponts d' atake"
+
+#~ msgid "Introduction"
+#~ msgstr "Adrovaedje"
+
+#~ msgid "Tips"
+#~ msgstr "Bon a saveur"
+
+#~ msgid "Specifications"
+#~ msgstr "Sipecifiaedjes"
+
+#~ msgid "Your personal files"
+#~ msgstr "Les fitchîs da vosse"
+
+#~ msgid "Trash"
+#~ msgstr "Batch"
+
+#~ msgid "Browse and restore the trash"
+#~ msgstr "Foyter eyet rapexhî çou k' i gn a å batch"
+
+#~ msgid "Network Folders"
+#~ msgstr "Ridants rantoele"
+
+#~ msgid "Shared files and folders"
+#~ msgstr "Les fitchîs eyet ridants pårtaedjîs"
+
+#, fuzzy
+#~| msgid "&Bookmarks"
+#~ msgid "Bookmarks"
+#~ msgstr "&Rimåkes"
+
+#~ msgid "Quick access to your bookmarks"
+#~ msgstr "Potchî rade dins vos rmåkes"
+
+#~ msgid "Next: An Introduction to Konqueror"
+#~ msgstr "Shuvant: èn adrovaedje a Konqueror"
+
+#~ msgid "Search the Web"
+#~ msgstr "Cweraedje sol daegntoele"
+
+#~ msgid ""
+#~ "Konqueror makes working with and managing your files easy. You can browse "
+#~ "both local and networked folders while enjoying advanced features such as "
+#~ "the powerful sidebar and file previews."
+#~ msgstr ""
+#~ "Konqueror vos permete di manaedjî åjheymint vos fitchîs. Vos ploz foyter "
+#~ "ostant les ridants locås ki les cis pårtaedjîs sol rantoele tot eployant "
+#~ "des usteyes po spepieus come li roede båre di costé et les prévuwes di "
+#~ "fitchîs."
+
+#~ msgid ""
+#~ "Konqueror is also a full featured and easy to use web browser which you "
+#~ "can use to explore the Internet. Enter the address (e.g. <a href=\"http://"
+#~ "www.kde.org\">http://www.kde.org</a>) of a web page you would like to "
+#~ "visit in the location bar and press Enter, or choose an entry from the "
+#~ "Bookmarks menu."
+#~ msgstr ""
+#~ "Konqueror est ossu on complet betchteu waibe åjhey a eployî ki vs poloz "
+#~ "eployî po naivyî l' Daegntoele. Vos n' avoz k' a taper l' adresse "
+#~ "(metans: <a href=\"http://www.kde.org\">http://www.kde.org</a>) del waibe "
+#~ "ki vos vloz vey et tchôkî so Enter, ou bén tchoezi ene des intrêyes dins "
+#~ "vosse menu «Rimåkes»."
+
+#~ msgid ""
+#~ "To return to the previous location, press the back button <img width='16' "
+#~ "height='16' src=\"%1\"></img> in the toolbar. "
+#~ msgstr ""
+#~ "Si vos voloz rivni en erî sol pådje di dvant, clitchîz sol boton <img "
+#~ "width='16' height='16' src=\"%1\"></img>&nbsp;(«En erî») dins li båre ås "
+#~ "usteyes. "
+
+#~ msgid ""
+#~ "To quickly go to your Home folder press the  home button <img width='16' "
+#~ "height='16' src=\"%1\"></img>."
+#~ msgstr ""
+#~ "Si vos voloz aler raddimint a vosse ridant Måjhon, clitchî sol boton <img "
+#~ "width='16' height='16' src=\"%1\"></img>&nbsp;(«Ridant Måjhon»)."
+
+#~ msgid ""
+#~ "For more detailed documentation on Konqueror click <a href=\"%1\">here</"
+#~ "a>."
+#~ msgstr "Po-z e savu d' pus so Konqueror clitchîz <a href=\"%1\">vaici</a>."
+
+#, fuzzy
+#~| msgid ""
+#~| "<em>Tuning Tip:</em> If you want the Konqueror web browser to start "
+#~| "faster, you can turn off this information screen by clicking <a href="
+#~| "\"%1\">here</a>. You can re-enable it by choosing the Help -> Konqueror "
+#~| "Introduction menu option, and then pressing Settings -> Save View "
+#~| "Profile \"Web Browsing\"."
+#~ msgid ""
+#~ "<em>Tuning Tip:</em> If you want the Konqueror web browser to start "
+#~ "faster, you can turn off this information screen by clicking <a href="
+#~ "\"%1\">here</a>. You can re-enable it by choosing the Help -> Konqueror "
+#~ "Introduction menu option, and then pressing Settings -> Save View Profile "
+#~ "As... -> \"Web Browsing\"."
+#~ msgstr ""
+#~ "<em>Bon a saveur:</em> Si vos voloz ki li betchteu Konqueror s' enonde "
+#~ "pus rade, vos lyi poloz dire di n' nén håyner cisse waitroûlêye "
+#~ "d' infôrmåcions tot clitchant <a href=\"%1\">vaici</a>.  Si vos candjîz "
+#~ "d' idêye, alez dins Aidance -> Adrovaedje Konqueror; adon, clitchîz so "
+#~ "Apontiaedjes -> Schaper profil di vuwe «Naiviaedje waibe»."
+
+#~ msgid "Next: Tips &amp; Tricks"
+#~ msgstr "Shuvant: Bon a savu"
+
+#, fuzzy
+#~| msgid ""
+#~| "Konqueror is designed to embrace and support Internet standards. The aim "
+#~| "is to fully implement the officially sanctioned standards from "
+#~| "organizations such as the W3 and OASIS, while also adding extra support "
+#~| "for other common usability features that arise as de facto standards "
+#~| "across the Internet. Along with this support, for such functions as "
+#~| "favicons, Internet Keywords, and <A HREF=\"%1\">XBEL bookmarks</A>, "
+#~| "Konqueror also implements:"
+#~ msgid ""
+#~ "Konqueror is designed to embrace and support Internet standards. The aim "
+#~ "is to fully implement the officially sanctioned standards from "
+#~ "organizations such as the W3 and OASIS, while also adding extra support "
+#~ "for other common usability features that arise as de facto standards "
+#~ "across the Internet. Along with this support, for such functions as "
+#~ "favicons, Web Shortcuts, and <A HREF=\"%1\">XBEL bookmarks</A>, Konqueror "
+#~ "also implements:"
+#~ msgstr ""
+#~ "Konqueror est basti po rprinde a s' conte eyet sopoirter les standårds "
+#~ "del Daegntoele.  Li såme est di mete en ouve tos les standårds oficirmint "
+#~ "aprovés pa des soces come li W3 eyet OASIS, sins rovyî li sopoirt d' ôtes "
+#~ "cayets corants ki divnèt des standårds di facto sol Daegntoele.  Al "
+#~ "copete di ci sopoirt la, po des fonccions come les favicons, les mots "
+#~ "clés Internet eyet les <a href=\"%1\">rmåkes XBEL</a>, Konqueror mete "
+#~ "ossu en ouve:"
+
+#~ msgid "Supported standards"
+#~ msgstr "Sitandårds sopoirtés"
+
+#~ msgid "Additional requirements*"
+#~ msgstr "Vos åroz dandjî eto di*"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+#~ msgstr ""
+#~ "<a href=\"%2\">DOM</a> (livea 1, bokets do livea 2) båzé so <a href="
+#~ "\"%1\">HTML 4.01</a>"
+
+#~ msgid "built-in"
+#~ msgstr "constrût dvins"
+
+#~ msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">Foyes di stîle e cascåde</A> (CSS 1, bokets di CSS 2)"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">ECMA-262</A> 3e eplaidaedje (a pô près l' minme kel "
+#~ "JavaScript 1.5)"
+
+#~ msgid ""
+#~ "JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
+#~ msgstr ""
+#~ "JavaScript dismetou (tot costé). Po mete en ouve li JavaScript <A HREF="
+#~ "\"%1\">clitchîz vaici</A>."
+
+#~ msgid ""
+#~ "JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\"
+#~ "\">here</A>."
+#~ msgstr ""
+#~ "JavaScript en ouve (tot costé). Po-z apontyî li JavaScript <A HREF="
+#~ "\"%1\">clitchîz vaici</A>."
+
+#~ msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
+#~ msgstr "Sopoirt di såvrité di <A HREF=\"%1\">Java</A><sup>&reg;</sup>"
+
+#, fuzzy
+#~| msgid ""
+#~| "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">Blackdown</A>, <A HREF="
+#~| "\"%2\">IBM</A> or <A HREF=\"%3\">Sun</A>)"
+#~ msgid ""
+#~ "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">IBM</A> or <A HREF="
+#~ "\"%2\">Sun/Oracle</A>)"
+#~ msgstr ""
+#~ "Forveyowe éndjole ki rote avou JDK 1.2.0 (Java 2) (<A HREF="
+#~ "\"%1\">Blackdown</A>, <A HREF=\"%2\">IBM</A> ou <A HREF=\"%3\">Sun</A>)"
+
+#~ msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
+#~ msgstr "Mete Java en ouve (tot costé) <A HREF=\"%1\">droci</A>."
+
+#~ msgid ""
+#~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">plugins</A> (for "
+#~ "viewing <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
+#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Video, etc.)"
+#~ msgstr ""
+#~ "<A HREF=\"%4\">Tchôke-divins</A> di Netscape Communicator<SUP>®</SUP> (po "
+#~ "vey des pådjes e <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
+#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Video, evnd.)"
+
+#~ msgid "Secure Sockets Layer"
+#~ msgstr "Raloyaedje pa couches e såvrité (SSL)"
+
+#~ msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
+#~ msgstr "(TLS/SSL v2/3) po des comunicåcions e såvrité disk' a 168 bits"
+
+#~ msgid "OpenSSL"
+#~ msgstr "OpenSSL"
+
+#~ msgid "Bidirectional 16bit unicode support"
+#~ msgstr "Sopoirt di l' unicode 16 bits a deus direccions"
+
+#~ msgid "AutoCompletion for forms"
+#~ msgstr "Otorimplixhaedje des formulaires"
+
+#~ msgctxt "Title of an html 'group box' explaining konqueror features"
+#~ msgid "General"
+#~ msgstr "Djenerå"
+
+#~ msgid "Feature"
+#~ msgstr "Fonccionålité"
+
+#~ msgid "Details"
+#~ msgstr "Detays"
+
+#~ msgid "Image formats"
+#~ msgstr "Cognes d' imådjes"
+
+#, fuzzy
+#~| msgid "PNG<br />MNG<br />JPG<br />GIF"
+#~ msgid "PNG<br />JPG<br />GIF"
+#~ msgstr "PNG<br />MNG<br />JPG<br />GIF"
+
+#~ msgid "Transfer protocols"
+#~ msgstr "Protocoles di berwetaedje"
+
+#~ msgid "HTTP 1.1 (including gzip/bzip2 compression)"
+#~ msgstr "HTTP 1.1 (ossu li rastrindaedje gzip/bzip2)"
+
+#~ msgid "FTP"
+#~ msgstr "FTP"
+
+#, fuzzy
+#~| msgid "and <A HREF=\"%1\">many more...</A>"
+#~ msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpcenter)...</A>"
+#~ msgstr "et <A HREF=\"%1\">co bråmint ds ôtes...</A>"
+
+#~ msgctxt "A feature of Konqueror"
+#~ msgid "URL-Completion"
+#~ msgstr "Rimplixhaedje d' URL"
+
+#~ msgid "Manual"
+#~ msgstr "Al mwin"
+
+#~ msgid "Popup"
+#~ msgstr "Aspitant purnea"
+
+#~ msgid "(Short-) Automatic"
+#~ msgstr "Rote tot seu (otomatike)"
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "<a href=\"%1\">Return to Starting Points</a>"
+#~ msgstr "<a href=\"%1\">Eraler ås ponts d' atake</a>"
+
+#~ msgid "Tips &amp; Tricks"
+#~ msgstr "Bon a savu"
+
+#, fuzzy
+#~| msgid ""
+#~| "Use Internet-Keywords and Web-Shortcuts: by typing \"gg: KDE\" one can "
+#~| "search the Internet, using Google, for the search phrase \"KDE\". There "
+#~| "are a lot of Web-Shortcuts predefined to make searching for software or "
+#~| "looking up certain words in an encyclopedia a breeze. You can even <a "
+#~| "href=\"%1\">create your own</a> Web-Shortcuts."
+#~ msgid ""
+#~ "Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, "
+#~ "using Google, for the search phrase \"KDE\". There are a lot of Web-"
+#~ "Shortcuts predefined to make searching for software or looking up certain "
+#~ "words in an encyclopedia a breeze. You can even <a href=\"%1\">create "
+#~ "your own</a> Web-Shortcuts."
+#~ msgstr ""
+#~ "Eployîz des mots clés Internet eyet des rascourtis po betchter avå "
+#~ "l' daegntoele! Tot tapant «gg: KDE», vos poloz cachî après li mot «KDE» "
+#~ "avou l' usteye di rcweraedje Google. I gn a tot plin des rascourtis di "
+#~ "prédefinis por vos aveur åjhey di cachî après des programes, des mots "
+#~ "dins des diccionaires, evnd. Vos poloz minme <a href=\"%1\">ahiver les "
+#~ "rascourtis da vosse</a>!"
+
+#, fuzzy
+#~| msgid ""
+#~| "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> "
+#~| "in the toolbar to increase the font size on your web page."
+#~ msgid ""
+#~ "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
+#~ "the HTML toolbar to increase the font size on your web page."
+#~ msgstr ""
+#~ "Eployîz li boton loupe <img width='16' height='16' src=\"%1\"></img> el "
+#~ "båre ås usteyes po fé crexhe li grandeu des fontes dins vosse waibe."
+
+#~ msgid ""
+#~ "When you want to paste a new address into the Location toolbar you might "
+#~ "want to clear the current entry by pressing the black arrow with the "
+#~ "white cross <img width='16' height='16' src=\"%1\"></img> in the toolbar."
+#~ msgstr ""
+#~ "Cwand vos voloz aclaper ene novele adresse el båre ås eplaeçmints, "
+#~ "télfeye ki vs åroz pus åjhey si vos disfacez l' intrêye do moumint.  Po "
+#~ "ça, clitchîz sol noere fletche avou ene blanke croes <img width='16' "
+#~ "height='16' src=\"%1\"></img> k' est dins l' båre ås usteyes."
+
+#, fuzzy
+#~| msgid ""
+#~| "To create a link on your desktop pointing to the current page, simply "
+#~| "drag the \"Location\" label that is to the left of the Location toolbar, "
+#~| "drop it on to the desktop, and choose \"Link\"."
+#~ msgid ""
+#~ "To create a link on your desktop pointing to the current page, simply "
+#~ "drag the icon (favicon) that is to the left of the Location toolbar, drop "
+#~ "it on to the desktop, and choose \"Icon\"."
+#~ msgstr ""
+#~ "Po mete so vosse sicribanne on loyén après li pådje do moumint, vos "
+#~ "n' avoz k' a saetchî l' etikete «Eplaeçmint» al hintche del båre ås "
+#~ "eplaeçmints, el bodjî so vosse sicribanne et adon tchoezi «Loyî»."
+
+#~ msgid ""
+#~ "You can also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen "
+#~ "Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
+#~ "sessions."
+#~ msgstr ""
+#~ "Dins l' menu d' apontiaedjes, vos trovroz eto li <img width='16' "
+#~ "height='16' src=\"%1\"></img> «Môde forrimpli l' waitroûle», foirt "
+#~ "ahessåve po les sessions «Talk»."
+
+#~ msgid ""
+#~ "Divide et impera (lat. \"Divide and conquer\") - by splitting a window "
+#~ "into two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> "
+#~ "Split View Left/Right) you can make Konqueror appear the way you like. "
+#~ "You can even load some example view-profiles (e.g. Midnight Commander), "
+#~ "or create your own ones."
+#~ msgstr ""
+#~ "Divide et impera (lat. «Pårti et concweri») - si vos pårtixhoz ene "
+#~ "finiesse e deus bokets (metans: Finiesse -> <img width='16' height='16' "
+#~ "src=\"%1\" />&nbsp;Pårti vuwe hintche/droete), vos poloz aveur tot "
+#~ "l' minme li kéne rivnance ki vos voloz po Konqueror. Vos poloz minme "
+#~ "tcherdjî des egzimpes di vuwes (metans: Midnight Commander) ou bén ahiver "
+#~ "des noveles."
+
+#~ msgid ""
+#~ "Use the <a href=\"%1\">user-agent</a> feature if the website you are "
+#~ "visiting asks you to use a different browser (and do not forget to send a "
+#~ "complaint to the webmaster!)"
+#~ msgstr ""
+#~ "Eployî l' fonccion <a href=\"%1\">idintité do betchteu</a> si l' waibe ki "
+#~ "vs vizitez vos dmande d' eployî èn ôte betchteu (et n' rovyîz nén di vos "
+#~ "plinde å waiburlin!)"
+
+#, fuzzy
+#~| msgid ""
+#~| "The <img width='16' height='16' src=\"%1\"></img> History in your "
+#~| "SideBar ensures that you can keep track of the pages you have visited "
+#~| "recently."
+#~ msgid ""
+#~ "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
+#~ "ensures that you can keep track of the pages you have visited recently."
+#~ msgstr ""
+#~ "Avou l' <img width='16' height='16' src=\"%1\" /> Istwere dins vosse bår "
+#~ "di costé vos estoz seur di n' nén piede les adresses des pådjes ki vos "
+#~ "avoz vizité ces dierins djoûs."
+
+#~ msgid ""
+#~ "Use a caching <a href=\"%1\">proxy</a> to speed up your Internet "
+#~ "connection."
+#~ msgstr ""
+#~ "Eployîz on <a href=\"%1\">procsi</a> di muchete po rinde pus rade vos "
+#~ "raloyaedjes al daegntoele."
+
+#, fuzzy
+#~| msgid ""
+#~| "Advanced users will appreciate the Konsole which you can embed into "
+#~| "Konqueror (Window -> <img width='16' height='16' SRC=\"%1\"></img> Show "
+#~| "Terminal Emulator)."
+#~ msgid ""
+#~ "Advanced users will appreciate the Konsole which you can embed into "
+#~ "Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
+#~ "Terminal Emulator)."
+#~ msgstr ""
+#~ "Les spepieus uzeus vont vey voltî l' Konsole ki vs poloz mete divins "
+#~ "Konqueror (Purnea-> <IMG WIDTH='16' HEIGHT='16' src=\"%1\" /> Håyner on "
+#~ "terminå)."
+
+#~ msgid "Next: Specifications"
+#~ msgstr "Shuvant: Sipecifiaedjes"
+
+#~ msgid "Installed Plugins"
+#~ msgstr "Tchôke-divins d' astalés"
+
+#~ msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
+#~ msgstr ""
+#~ "<td>Tchôke-divins</td><td>Discrijhaedje</td><td>Fitchî</td><td>Sôres</td>"
+
+#~ msgid "Installed"
+#~ msgstr "Astalé(s)"
+
+#~ msgid ""
+#~ "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
+#~ msgstr ""
+#~ "<td>Sôre MIME</td><td>Discrijhaedje</td><td>Cawetes</td><td>Tchôke-"
+#~ "divins</td>"
+
+#~ msgid ""
+#~ "Do you want to disable showing the introduction in the webbrowsing "
+#~ "profile?"
+#~ msgstr ""
+#~ "Voloz vs dismete li håynaedje di l' adrovaedje e profil di naiviaedje "
+#~ "waibe?"
+
+#~ msgid "Faster Startup?"
+#~ msgstr "Enondaedje pus abeye?"
+
+#~ msgid "Disable"
+#~ msgstr "Dismete"
+
+#~ msgid "Keep"
+#~ msgstr "Wårder"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Djan Cayron"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "jean.cayron@gmail.com"
+
+#~ msgid "&File"
+#~ msgstr "&Fitchî"
+
+#~ msgid "&Edit"
+#~ msgstr "&Candjî"
+
+#~ msgid "&View"
+#~ msgstr "&Vuwe"
+
+#~ msgid "&Go"
+#~ msgstr "P&otchî"
+
+#~ msgid "&Settings"
+#~ msgstr "&Apontiaedjes"
+
+#~ msgid "&Window"
+#~ msgstr "&Finiesse"
+
+#~ msgid "&Help"
+#~ msgstr "&Aidance"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Mwaisse båre ås usteyes"
+
+#~ msgid "Extra Toolbar"
+#~ msgstr "Båre ås usteyes di pus"
+
+#~ msgid "Location Toolbar"
+#~ msgstr "Båre ås usteyes des eplaeçmints"
+
+#~ msgid "Bookmark Toolbar"
+#~ msgstr "Båre ås usteyes des rmåkes"
+
+#~ msgid "Save open tabs and windows for easy retrieval"
+#~ msgstr "Schaper les linwetes eyet fniesses drovowes pos åjhey rapexhaedje"
+
+#~ msgid "&Session name:"
+#~ msgstr "No del &session:"
+
+#~ msgid "&Profile name:"
+#~ msgstr "No do &profil:"
+
+#~ msgid "Save &URLs in profile"
+#~ msgstr "Schaper l' &hårdêye dins l' profil"
+
+#~ msgctxt "@action:button New session"
+#~ msgid "New..."
+#~ msgstr "Novea..."
+
+#~ msgctxt "@action:button Save current session"
+#~ msgid "Save Current"
+#~ msgstr "Schaper l' ci do moumint"
+
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename..."
+#~ msgstr "Rilomer..."
+
+#~ msgctxt "@action:button Delete session"
+#~ msgid "Delete"
+#~ msgstr "Disfacer"
+
+#~ msgid "Open tabs inside current window"
+#~ msgstr "Drovi des linwetes el finiesse do moumint"
+
+#~ msgid "Limits"
+#~ msgstr "Limites"
+
+#~ msgid "URLs e&xpire after"
+#~ msgstr "L' URL est &fini après"
+
+#~ msgid "Maximum &number of URLs:"
+#~ msgstr "&Nombe macsimom d' URL:"
+
+#~ msgid "Custom Fonts For"
+#~ msgstr "Fontes tchoezeyes par vos"
+
+#~ msgid "URLs newer than"
+#~ msgstr "URL pus djonnes ki"
+
+#~ msgid "Choose Font..."
+#~ msgstr "Tchoezi fonte..."
+
+#~ msgid "URLs older than"
+#~ msgstr "URL pus vîs ki"
+
+#~ msgid ""
+#~ "Shows the number of times visited and the dates of the first and last "
+#~ "visits, in addition to the URL"
+#~ msgstr ""
+#~ "Mostere li nombe di côps k' l' URL a stî vizitêye eyet les date del "
+#~ "prumire et del dierinne vizite, e pus di l' URL"
+
+#~ msgid "Detailed tooltips"
+#~ msgstr "Racsegnes detayîs"
+
+#~ msgid "Clear History"
+#~ msgstr "Netyî l' istwere"
+
+#~ msgid ""
+#~ "This is the URL of the web page where Konqueror (as web browser) will "
+#~ "jump to when the \\\"Home\\\" button is pressed. When Konqueror is "
+#~ "started as a file manager, that button makes it jump to your local home "
+#~ "folder instead."
+#~ msgstr ""
+#~ "Çouci est l' URL del pådje waibe ki Konqueror (come betchteu waibe) "
+#~ "potchré cwand l' boton «Måjhon» srè tchôkî. Cwand Konqueror est enondé "
+#~ "come manaedjeu des fitchîs, ci boton l' fwait potchî al plaece dins vosse "
+#~ "ridant måjhon locå."
+
+#~ msgid "Maximum number of Closed Items"
+#~ msgstr "Nombe macsimom di cayets cloyous"
+
+#~ msgid ""
+#~ "This sets the maximum number of closed items that will be stored in "
+#~ "memory. This limit will not be surpassed."
+#~ msgstr ""
+#~ "Çouci defini l' nombe macsimom di cayets cloyous ki sront wårdés e "
+#~ "memwere. Cisse limite ni srè nén passêye houte."
+
+#~ msgid "Open folders in separate windows"
+#~ msgstr "Drovi ridants dins d' ôtès fniesses"
+
+#~ msgid "Show file tips"
+#~ msgstr "Mostrer racsegnes des fitchîs"
+
+#~ msgid "Show previews in file tips"
+#~ msgstr "Mostrer prévoeyaedjes ezès racsegnes"
+
+#~ msgid "Standard font"
+#~ msgstr "Sitandård fonte"
+
+#~ msgid "Hide %1"
+#~ msgstr "Catchî %1"
+
+#~ msgid "SideBar Test Plugin"
+#~ msgstr "Tchôke-divins d' asprouvaedje del bår di costé"
+
+#~ msgid "Bookmark This Location"
+#~ msgstr "Fé ene rimåke po cist eplaeçmint ci"
+
+#~ msgid ""
+#~ "Malformed URL\n"
+#~ "%1"
+#~ msgstr ""
+#~ "URL må basti\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Protocol not supported\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Protocole nén sopoirté\n"
+#~ "%1"
+
+#~ msgid "Cannot create the find part, check your installation."
+#~ msgstr "Dji n' sai ahiver li pårteye trovêye, verifyî voste astalaedje."
+
+#~ msgid "My Bookmarks"
+#~ msgstr "Mes rimåkes"
+
+#~ msgid "Preload for later use"
+#~ msgstr "Prétcherdjî po l' eployî pus tård"
+
+#~ msgid "&Save View Profile \"%1\"..."
+#~ msgstr "&Schaper li Profil di Vuwe «%1»..."
+
+#~ msgid "Configure Navigation Panel"
+#~ msgstr "Apontyî li panea di naiviaedje"
+
+#~ msgid "Close Navigation Panel"
+#~ msgstr "Clôre li panea di naiviaedje"
+
+#~ msgid "Select Type"
+#~ msgstr "Tchoezi l' sôre"
+
+#~ msgid "Select type:"
+#~ msgstr "Tchoezi l' sôre:"
+
+#~ msgid "Web SideBar Plugin"
+#~ msgstr "Tchôke-divins båre di costé"
+
+#~ msgid "<qt><b>%1</b> does not exist</qt>"
+#~ msgstr "<qt><b>%1</b> n' egzistêye nén</qt>"
+
+#~ msgid "Minutes"
+#~ msgstr "Munutes"
+
+#~ msgid "Days"
+#~ msgstr "Djoûs"
+
+#~ msgid "Your sidebar is not functional or unavailable."
+#~ msgstr "Vosse båre di costé ni rote nén ou n' est nén disponibe."
+
+#~ msgid "Cannot find running history plugin in your sidebar."
+#~ msgstr ""
+#~ "Dji n' sai nén trover on tchôke-divins d' istwere k' est enondé dins "
+#~ "vosse båre di costé."
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History in Sidebar"
+#~ msgstr "Mostrer l' istwere el båre di costé"
+
+#~ msgid "Select Remote Charset"
+#~ msgstr "Tchoezi ecôdaedje di caracteres då lon"
+
+#~ msgid "Reload"
+#~ msgstr "Ritcherdjî"
+
+#~ msgid "Default"
+#~ msgstr "Prémetou"
+
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename"
+#~ msgstr "Rilomer"
+
+#~ msgid ""
+#~ "Konqueror is your file manager, web browser and universal document viewer."
+#~ msgstr ""
+#~ "Konqueror est vosse manaedjeu d' fitchîs, vosse betchteu waibe et sai "
+#~ "håyner tos vos documints."
+
+#~ msgid "Joseph WENNINGER"
+#~ msgstr "Joseph Wenninger"
+
+#~ msgid "G E N E R A L"
+#~ msgstr "D J E N E R Å"
+
+#~ msgid "<img width='16' height='16' src=\"%1\"></img>"
+#~ msgstr "<img width='16' height='16' src=\"%1\"></img>"
+
+#~ msgid "Applications"
+#~ msgstr "Programes"
+
+#~ msgid "Installed programs"
+#~ msgstr "Programes d' astalés"
+
+#~ msgid "&Location"
+#~ msgstr "&Eplaeçmint"
+
+#~ msgid "Open &Terminal"
+#~ msgstr "Drovi on &terminå..."
+
+#~ msgid "Unknown"
+#~ msgstr "Nén cnoxhou"
+
+#~ msgid "Save &window size in profile"
+#~ msgstr "Schaper l' grandeu do &purnea dins l' profil"
+
+#~ msgid "&Speak Text"
+#~ msgstr "Cå&zer l' tecse"
+
+#, fuzzy
+#~ msgid "You cannot read anything except web pages with this plugin, sorry."
+#~ msgstr ""
+#~ "Mande escuzes, mins vos n' poloz rén lére d' ôte\n"
+#~ "ki des pådjes waibe avou ç' tchôke-divins ci."
+
+#~ msgid "Cannot Read source"
+#~ msgstr "Dji n' sai lére li sourdant"
+
+#~ msgid "Starting KTTSD Failed"
+#~ msgstr "L' enondaedje di KTTSD a fwait berwete"
+
+#, fuzzy
+#~ msgid "The D-Bus call say() failed."
+#~ msgstr "Li houcaedje D-Bus di startText a fwait berwete."
+
+#~ msgid "D-Bus Call Failed"
+#~ msgstr "Li houcaedje di D-Bus a fwait berwete"
+
+#~ msgid "The D-Bus call supportsMarkup failed."
+#~ msgstr "Li houcaedje D-Bus di supportsMarkup a fwait berwete."
+
+#~ msgid "The D-Bus call setText failed."
+#~ msgstr "Li houcaedje D-Bus di setText a fwait berwete."
+
+#~ msgid "Conquer your Desktop!"
+#~ msgstr "Al conkete di vosse sicribanne!"
+
+#~ msgid "Storage Media"
+#~ msgstr "Medias d' wårdaedje"
+
+#~ msgid "Disks and removable media"
+#~ msgstr "Les plakes et medias k' ont sait bodjî"
+
+#~ msgid "Settings"
+#~ msgstr "Apontiaedjes"
+
+#~ msgid "Desktop configuration"
+#~ msgstr "Apontiaedje del sicribanne"
+
+#~ msgid "&Edit File Type..."
+#~ msgstr "&Candjî li sôre do fitchî..."
+
+#~ msgid "S&ystem"
+#~ msgstr "S&istinme"
+
+#~ msgid "App&lications"
+#~ msgstr "Pro&grames"
+
+#~ msgid "&Storage Media"
+#~ msgstr "Media d' &wårdaedje"
+
+#~ msgid "&Network Folders"
+#~ msgstr "Ridants ran&toele"
+
+#~ msgid "Sett&ings"
+#~ msgstr "A&pontiaedjes"
+
+#~ msgid "Autostart"
+#~ msgstr "Enonde tot seu"

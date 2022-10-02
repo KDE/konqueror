@@ -1,0 +1,853 @@
+<chapter id="plugins">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+&Bram.Schoenmakers;&Freek.de.Kruijf; 
+</authorgroup>
+
+<date
+>2011-11-22</date>
+<releaseinfo
+>&kde; 4.8</releaseinfo>
+</chapterinfo>
+
+
+<title
+>Plug-ins</title>
+
+<sect1 id="netscape-plugin">
+<title
+>&Netscape;-plug-ins</title>
+
+<para
+>&konqueror; ondersteunt nu &Netscape;-plug-ins.</para>
+
+<para
+>Selecteren van <menuchoice
+><guimenu
+>Instellingen</guimenu
+><guimenuitem
+> Konqueror instellen...</guimenuitem
+> </menuchoice
+> opent de configuratiedialoog. Selecteer de pagina <guilabel
+>Plug-ins</guilabel
+>, waar u twee tabbladen vindt; <guilabel
+>Globale Instellingen</guilabel
+> om plug-ins in te schakelen en te configureren hoe ze worden gebruikt in &konqueror; en de <guilabel
+>Plug-ins</guilabel
+> die u de &Netscape;-plug-ins laat zien die &kde; heeft gevonden en u laat zoeken naar plug-ins.</para>
+
+<para
+>Voor meer informatie zie de <ulink url="help:/kcontrol/khtml-plugins/index.html"
+> Browser-plug-ins</ulink
+> helppagina.</para>
+
+</sect1>
+
+<!-- 
+missing from extragear base:
+minitools (Bookmarklets - Enables the use of bookmarklets)
+This plugin adds implementation for so-called bookmarklets. Bookmarklets are little
+Javascript programs which can be saved and used like normal web page bookmarks. Therefore,
+they are simple "one-click" tools that can add substantial functionality to the browser.
+http://blog.ssokolow.com/archives/2007/01/30/konqueror-with-bookmarklets/
+
+autorefresh
+This works on any readonly part (though currently it only plugs into
+khtmlpart). It lets you tell konqueror to refresh a page automatically
+after a specific period. This is useful for things like news pages,
+and should be very nice for people using kiosk mode
+
+rellinks
+Name=Document Relations
+Comment=Displays the document relations of a document
+
+adblock from baseapps+extragear
+Show all blockable html elements
+
+akregator
+This works on KHTMLPart and allows you to add feeds to Akregator directly from Konqueror.
+
+not ported to kde4 yet
+sidebar
+microformat
+mediarealfolder
+<listitem>
+<para
+><ulink url="help:/konq-plugins/mediaplayer/index.html"
+>The Embedded Media
+Player</ulink
+></para>
+
+konq plugins in other modules
+kdeutils 
+  filelight
+  ark?
+
+kdebase apps
+  kttsdplugin (browser mode ?)
+  shellcmdplugin (file manager mode)
+  
+kdenetwork
+  kget (browser mode)
+-->
+
+<sect1 id="konq-plugin">
+<title
+>&konqueror;-plug-ins</title>
+
+<para
+>&kde; geeft verschillende bruikbare plug-ins uit die met &konqueror; op verschillende manieren samenwerken. Deze worden hieronder beknopt besproken.</para>
+
+<para
+>Gebruik <menuchoice
+><guimenu
+>Instellingen</guimenu
+><guimenuitem
+>Extensies instellen...</guimenuitem
+></menuchoice
+> om en dialoog te openen met alle geïnstalleerde plug-ins en selecteer diegene die u nodig hebt. Alle plug-ins zijn toegankelijk in het menu <guimenu
+>Hulpmiddelen</guimenu
+>.</para>
+
+<para
+>Alleen plug-ins van toepassing op de huidige modus (bestandsbeheerder of browser) worden in de dialoog getoond.</para>
+
+<variablelist>
+<title
+>Browsermodus</title>
+
+ <!--FIXME does not work any more, see also https://github.com/nltk/nltk/issues/265-->
+<varlistentry>
+<term
+>Webpagina vertalen</term>
+<listitem
+><para
+>Deze plug-in gebruikt de machinale vertaalservice geleverd door <ulink url="http://babelfish.yahoo.com/"
+>Yahoo's Babelfish-site</ulink
+> om de huidige <acronym
+>HTML</acronym
+>-pagina te vertalen naar de gewenste taal. U kunt deze vinden in het menu onder <menuchoice
+><guimenu
+>Hulpmiddelen</guimenu
+><guisubmenu
+>Webpagina vertalen</guisubmenu
+></menuchoice
+>.</para>
+<para
+>Wanneer u een tekstgedeelte geselecteerd hebt, zal alleen dat gedeelte vertaald worden in plaats van de hele pagina.</para>
+
+<para
+>Niet alle talen zijn beschikbaar via de dienst Babelfish.</para>
+
+<important>
+<para
+>Vertaling door een machine is nooit foutloos! Babelfish zal hoogstens een ruwe vertaling geven. Wanneer u minder geluk hebt zal er een lachwekkende vertaling uitkomen. Baseer belangrijke informatie niet op een pagina die door Babelfish is vertaald zonder dat u werkelijk nagaat of de vertaling correct was.</para>
+</important>
+
+<note
+> 
+<para
+>Het is alleen mogelijk om webpagina's te vertalen die op het World Wide Web staan. Om andere teksten te vertalen dient u naar de site van Babelfish zelf te gaan, daar kunt u de tekst plakken die u wilt vertalen.</para>
+</note>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>DOM-boomstructuur tonen</term>
+<listitem>
+<para
+>De <acronym
+>DOM</acronym
+>-boomstructuurweergave maakt het mogelijk voor een ontwikkelaar om de stijlen , attributen en elementen van een webpagina te bekijken.</para>
+<para
+>Door <menuchoice
+><guimenu
+>Hulpmiddelen</guimenu
+><guisubmenu
+>DOM-boomstructuur tonen</guisubmenu
+></menuchoice
+> te kiezen uit het menu krijgt u een nieuw venster te zien waarin het zogenaamde <acronym
+>Document Object Model</acronym
+> (DOM) getoond wordt van de huidige <acronym
+>HTML</acronym
+>-pagina.</para>
+<para
+>Standaard start de weergave in het hoofditem van het document, bijvoorbeeld <quote
+>documentElement</quote
+>; alle andere items zullen daaronder 'hangen'.</para>
+<para
+>Om de <acronym
+>DOM</acronym
+>-structuur te wijzigen hebt u andere applicaties nodig.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Webpagina valideren</term>
+<listitem>
+<para
+>Deze plug-in maakt gebruik van de W3C HTML Validator om de huidige pagina te controleren, dat is vooral handig bij het maken van een webpagina.</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guimenuitem
+>&HTML; valideren (door URI)</guimenuitem
+> / <guimenuitem
+>&HTML; valideren (door uploaden)</guimenuitem
+></term>
+<listitem
+><para
+>Met de optie &HTML; valideren kunt u uw &HTML;-document vergelijken met de gedefinieerde syntaxis van &HTML; en zo eventuele fouten opsporen. Door uw &HTML; te valideren verzekert u uzelf ervan dat uw webpagina's in alle browsers goed worden weergegeven.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>CSS valideren (aan de hand van URI)</guimenuitem
+></term>
+<listitem
+><para
+>Hiermee kunt u uw &CSS;-stijlblad dat is ingebed in een &HTML;- of &XHTML;-document valideren. Valide &CSS; is essentieel om een consistent uiterlijk van de webpagina te garanderen, ongeacht welke browser wordt gebruikt.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Koppelingen valideren</guimenuitem
+></term>
+<listitem
+><para
+>Hiermee kunt u nagaan of uw site geen redirects of gebroken koppelingen bevat. Dit hulpprogramma controleert recursief alle koppelingen op een site.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Pagina valideren</guimenuitem
+></term>
+<listitem
+><para
+>Valideert de huidige pagina maar laat het resultaat niet zien in een ander venster of tabblad zoals de vorige acties. Dit item gebruiken schakelt de actie <guimenuitem
+>Validatierapport bekijken</guimenuitem
+> in om een samenvatting van de validatie weer te geven.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Validator instellen</guimenuitem
+></term>
+<listitem
+><para
+>Hiermee kunt u de URL-adressen van de vooringestelde validators bekijken en eventueel veranderen.</para
+></listitem>
+</varlistentry>
+</variablelist>
+</listitem>
+<!-- icon W3 right in statusbar
+&LBM; click context menu with items above but no Configure Validator
+ -->
+</varlistentry>
+
+<varlistentry>
+<term
+>HTML-instellingen</term>
+<listitem
+><para
+>Selecteer <menuchoice
+><guimenu
+>Hulpmiddelen</guimenu
+><guisubmenu
+>HTML-instellingen</guisubmenu
+></menuchoice
+> om enkele HTML-instellingen aan of uit te zetten zonder dat u naar het venster <guimenu
+>Instellingen</guimenu
+> hoeft te gaan. </para>
+<variablelist>
+<varlistentry>
+<term
+><guimenuitem
+>JavaScript</guimenuitem
+></term>
+<listitem
+><para
+>Hiermee kunt u JavaScript in &konqueror; in- en uitschakelen.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Java</guimenuitem
+></term>
+<listitem
+><para
+>Hiermee kunt u Java in &konqueror; in- en uitschakelen.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Cookies</guimenuitem
+></term>
+<listitem
+><para
+>Hiermee kunt u cookies in &konqueror; in- en uitschakelen.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Plug-ins</guimenuitem
+></term>
+<listitem
+><para
+>Hiermee kunt u de geïnstalleerde plug-ins in &konqueror; in- en uitschakelen.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Afbeeldingen automatisch laden</guimenuitem
+></term>
+<listitem
+><para
+>Met deze optie bepaalt u of u afbeeldingen automatisch wilt laden of niet.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Proxy activeren</guimenuitem
+></term>
+<listitem
+><para
+>Met deze optie kunt het gebruik van een proxy in &konqueror; aan- of uitzetten.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Cache activeren</guimenuitem
+></term>
+<listitem
+><para
+>Met deze optie kunt het gebruik van een cache in &konqueror; aan- of uitzetten.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Cachebeleid</guimenuitem
+></term>
+<listitem>
+<para
+>Het submenu "Cachebeleid" biedt een snelle manier om het gebruik van een cache in &konqueror; in te stellen. U kunt kiezen uit de volgende mogelijkheden:</para>
+<itemizedlist>
+<listitem
+><para
+>Cache synchroon houden</para
+></listitem>
+<listitem
+><para
+>Cache gebruiken, indien mogelijk</para
+></listitem>
+<listitem
+><para
+>Offline browsingmodus</para
+></listitem>
+</itemizedlist>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Browseridentificatie wijzigen</term>
+<listitem
+><para
+>Selecteer <menuchoice
+><guimenu
+>Hulpmiddelen</guimenu
+><guisubmenu
+>Browseridentificatie wijzigen</guisubmenu
+></menuchoice
+> om een submenu te openen waarin u de browseridentificatie kunt wijzigen zonder dat u naar het dialoogvenster <guimenu
+>Instellingen</guimenu
+> hoeft te gaan. </para>
+<para
+>De plug-in biedt u de mogelijkheid om de identificatie van de browser en van het  besturingssysteem per website aanpassen. Dit is handig voor websites die alleen toegang verlenen als een bepaalde browser gebruikt wordt.</para>
+<variablelist>
+<varlistentry>
+<term
+><guimenuitem
+>Standaardidentificatie</guimenuitem
+></term>
+<listitem
+><para
+>De standaard browseridentificatie van &konqueror; is Mozilla/5.0(compatible;Konqueror/4.7)(KHTML/4.7, zoals Gecko). Indien u een website tegenkomt die deze browser weigert, kunt u de browseridentificatie wijzigen in één van de volgende opties:</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Browsersubmenu</term>
+<listitem
+><para
+>De volgende menu-items tonen een lijst met populaire browsers zoals <guimenuitem
+>Firefox</guimenuitem
+>, <guimenuitem
+>Internet Explorer</guimenuitem
+>, <guimenuitem
+>Netscape Navigator</guimenuitem
+>, <guimenuitem
+>Opera</guimenuitem
+>, <guimenuitem
+>Other</guimenuitem
+> en <guimenuitem
+>Safari</guimenuitem
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Toepassen op volledige site</guimenuitem
+></term>
+<listitem
+><para
+>Deze instelling maakt het mogelijk om de identificatie toe te laten passen op elke pagina van de site die u bezoekt.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Instellen</guimenuitem
+></term>
+<listitem
+><para
+>De menu-optie <guimenuitem
+>Instellen</guimenuitem
+> opent een instellingendialoog waarmee u de identificatiegegevens nog verder kunt aanpassen. Zo kunt u zelf aangeven of het besturingssysteem vermeld mag worden.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Webpagina archiveren</term>
+<listitem
+><para
+>Met <menuchoice
+><guimenu
+>Hulpmiddelen</guimenu
+><guisubmenu
+>Webpagina archiveren</guisubmenu
+></menuchoice
+> wordt er een archiefbestand aangemaakt (<literal role="extension"
+>.war</literal
+>) van de huidige HTML-pagina met de bijbehorende afbeeldingen. Klik met de <mousebutton
+>Linker</mousebutton
+>muisknop op een archiefbestand om de pagina te openen. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<variablelist>
+<title
+>Bestandsbeheermodus</title>
+
+<varlistentry>
+<term
+>Filter tonen</term>
+<listitem
+><para
+>Dit wordt bestuurd door <menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>I</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Hulpmiddelen</guimenu
+><guisubmenu
+>Filterbalk tonen</guisubmenu
+></menuchoice
+> en stelt u in staat te bepalen welke bestandstypes getoond moeten worden in een map.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Galerij van afbeeldingen aanmaken</term>
+<listitem
+><para
+>In de bestandsbeheerdermodus kunt u <menuchoice
+><guimenu
+>Hulpmiddelen</guimenu
+><guisubmenu
+>Galerij van afbeeldingen aanmaken</guisubmenu
+></menuchoice
+> kiezen of <keycombo
+>&Ctrl;<keycap
+>I</keycap
+></keycombo
+> gebruiken om een HTML-pagina te maken met de afbeeldingen die zich in de huidige map bevinden. Deze pagina wordt standaard <filename
+>images.html</filename
+> genoemd en de miniaturen worden in de map <filename
+>images</filename
+> geplaatst.</para>
+<para
+>Wanneer u de plug-in start zal er een dialoogvenster geopend worden waarin u enkele instellingen kunt aanbrengen met betrekking tot de aanmaak van de afbeeldingengalerij.</para>
+
+<variablelist id="page_look_dialog">
+<title
+>Pagina-uiterlijk</title>
+<varlistentry>
+<term
+>In het dialoogvenster "Uiterlijk" kunt u het uiterlijk van de galerijpagina instellen.</term>
+<listitem>
+  
+<screenshot>
+<screeninfo
+>Schermafdruk dialoogvenster "Uiterlijk"</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="look.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Schermafdruk</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Paginatitel</guimenuitem
+></term>
+<listitem
+><para
+>De optie "Paginatitel" bevat een invoerveld waarin u de titel van de galerijpagina kunt aanbrengen.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Afbeeldingen per rij</guimenuitem
+></term>
+<listitem
+><para
+>U kunt de schuifregelaar of de schuifpijlen gebruiken om het aantal miniaturen per rij in te stellen.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Bestandsnaam van afbeelding tonen</guimenuitem
+></term>
+<listitem
+><para
+>Met de optie "Bestandsnaam van afbeelding tonen" kunt u kiezen of u bestandsnamen onder de miniaturen wilt of niet.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Bestandsgrootte van afbeelding tonen</guimenuitem
+></term>
+<listitem
+><para
+>De optie "Bestandsgrootte van afbeelding tonen" kunt u kiezen of de bestandsgrootte onder de miniaturen vermeld wordt of niet.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Afmetingen van afbeelding tonen</guimenuitem
+></term>
+<listitem
+><para
+>De optie "Afmetingen van afbeelding tonen" kunt u kiezen of de grootte in pixels onder de miniaturen vermeld wordt of niet.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Naam van lettertype</guimenuitem
+></term>
+<listitem
+><para
+>In deze keuzelijst kunt u kiezen welk lettertype u wilt gebruiken bij het aanmaken van de galerij.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Tekengrootte</guimenuitem
+></term>
+<listitem
+><para
+>Hier kunt u de tekengrootte kiezen voor het lettertype dat u hebt gekozen.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Voorgrondkleur</guimenuitem
+></term>
+<listitem
+><para
+>Met de optie "Voorgrondkleur" kunt u een kleur uitzoeken die de voorgrond van galerij bepaalt, zoals de tekstkleur.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Achtergrondkleur</guimenuitem
+></term>
+<listitem
+><para
+>Met de optie "Achtergrondkleur" kunt u een kleur uitzoeken die de achtergrond van galerij bepaalt.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<variablelist id="folders_dialog">
+<title
+>Mappen</title>
+<varlistentry>
+<term
+>In dit dialoogvenster kunt u kiezen waar u de galerij wilt opslaan. U kunt hier ook instellen welke mappen gebruikt moeten worden.</term>
+<listitem>
+  
+<screenshot>
+<screeninfo
+>Schermafdruk dialoogvenster "Mappen"</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="folders.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Schermafdruk</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Opslaan als HTML-bestand</guimenuitem
+></term>
+<listitem
+><para
+>Hiermee kunt kiezen waar u uw HTML-bestand met de afbeeldingengalerij wilt opslaan.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Afdalen in submappen</guimenuitem
+></term>
+<listitem
+><para
+>Wanneer deze optie aanstaat zullen er ook submappen meegenomen worden bij het samenstellen van de galerij. Met de schuifregelaar of de schuifpijlen kunt u de diepte instellen.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Originele bestanden kopiëren</guimenuitem
+></term>
+<listitem
+><para
+>Wanneer deze optie ingeschakeld is, zal er een afbeeldingenmap aangemaakt worden die kopieën van de oorspronkelijke afbeeldingen van de galerij bevat.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Toelichtingenbestand gebruiken</guimenuitem
+></term>
+<listitem
+><para
+>Indien dit keuzevakje geactiveerd is, kunt u een toelichtingenbestand selecteren dat gebruikt zal worden bij uw galerij. Het toelichtingsbestand bevat de ondertitels voor de afbeeldingen.</para>
+<para
+>Het formaat van dit bestand is:</para>
+<programlisting
+># dit is een toelichting, regels beginnend met '#' worden genegeerd
+BESTANDSNAAM1:
+Beschrijving
+
+BESTANDSNAAM2:
+Beschrijving
+</programlisting>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+<variablelist id="thumbnails_dialog">
+<title
+>Miniaturen</title>
+<varlistentry>
+<term
+>U kunt dit dialoogvenster gebruiken om de eigenschappen van de miniatuurafbeeldingen in de galerij aan te passen.</term>
+<listitem>
+  
+<screenshot>
+<screeninfo
+>Schermafdruk dialoogvenster "Miniaturen"</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="thumbnails.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Schermafdruk</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Afbeeldingformaat voor de miniaturen</guimenuitem
+></term>
+<listitem
+><para
+>Hiermee kunt u kiezen welk bestandsformaat gebruikt moet worden voor de miniatuurafbeeldingen.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Miniatuurgrootte</guimenuitem
+></term>
+<listitem
+><para
+>Bij de optie "Miniatuurgrootte" kunt u de de schuifregelaar of de schuifpijlen gebruiken om de grootte van de miniatuurafbeeldingen in te stellen.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Verschillende kleurdieptes instellen</guimenuitem
+></term>
+<listitem
+><para
+>Als u dit vakje activeert, kunt u een kleurdiepte wijzigen voor de miniatuurafbeeldingen, wanneer u bijvoorbeeld een andere kleurdiepte wilt gebruiken dan die van de oorspronkelijke afbeelding.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Zoekbalk</term>
+<listitem
+><para
+>Levert u een tekstvak om gemakkelijk toegang te geven tot zoekmachines zoals Google. Klikken op het pictogram links van het zoekvak opent een menu om verschillende zoekmachines te selecteren en te in te schakelen en hun <ulink url="help:/kcontrol/ebrowsing/index.html"
+>Websneltoetsen</ulink
+> te configureren. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Shellcommando-plug-in</term>
+<listitem
+><para
+>Deze plug-in maakt het u mogelijk om een shellcommando uit te voeren in de huidige map en de uitvoer in een separate venster te bekijken. </para
+></listitem>
+</varlistentry>
+
+<!--FIXME
+imagerotation context menu Actions -> Convert to -> JPEG,PNG,GIF,TIFF 
+(rotation disabled) always installed
+
+Additional Download Manager from KGet
+-->
+</variablelist>
+
+</sect1>
+
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

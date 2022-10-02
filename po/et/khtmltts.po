@@ -1,0 +1,54 @@
+# translation of khtmlkttsd.po to Estonian
+# Marek Laane <bald@starman.ee>, 2004-2008.
+# Marek Laane <bald@smail.ee>, 2010, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: khtmlkttsd\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2011-06-23 00:51+0300\n"
+"Last-Translator: Marek Laane <bald@smail.ee>\n"
+"Language-Team: Estonian <kde-et@linux.ee>\n"
+"Language: et\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: khtmltts.cpp:33
+#, kde-format
+msgid "&Speak Text"
+msgstr "Loe tek&st ette"
+
+#. i18n: ectx: Menu (tools)
+#: khtmlttsplugin.rc:5
+#, kde-format
+msgid "&Tools"
+msgstr "&Tööriistad"
+
+#. i18n: ectx: ToolBar (speechToolbar)
+#: khtmlttsplugin.rc:10
+#, kde-format
+msgid "Speech Toolbar"
+msgstr "Ettelugemisriba"
+
+#~ msgctxt "@title:window"
+#~ msgid "Starting Jovie Text-to-Speech Service Failed"
+#~ msgstr "Jovie teksti ettelugemise teenuse käivitamine nurjus"
+
+#~ msgid "The D-Bus call say() failed."
+#~ msgstr "D-Busi väljakutse say() nurjus."
+
+#~ msgctxt "@title:window"
+#~ msgid "D-Bus Call Failed"
+#~ msgstr "D-Busi väljakutse nurjus"
+
+#~ msgid "Starting KTTSD Failed"
+#~ msgstr "KTTSD käivitamine nurjus"
+
+#~ msgid "You cannot read anything except web pages with this plugin."
+#~ msgstr "Vabandust, selle pluginaga saab lugeda ainult veebilehekülgi."
+
+#~ msgid "Cannot Read Source"
+#~ msgstr "Allika lugemine nurjus"

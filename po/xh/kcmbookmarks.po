@@ -1,0 +1,1789 @@
+# translation of kcmkio.po to
+# translation of kcmkio.po to
+# translation of kcmkio.po to
+# translation of kcmkio.po to
+# translation of kcmkio.po to
+# translation of kcmkio.po to
+# translation of kcmkio.po to Xhosa
+# K Desktop Environment - kdebase
+# Copyright (C) 2001 translate.org.za
+# Antoinette Dekeni <antoinette@transalate.org.za>, 2001.
+# Lwandle Mgidlana <lwandle@translate.org.za>, 2002
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkio\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2002-11-04 09:22SAST\n"
+"Last-Translator: Lwandle Mgidlana <lwandle@translate.org.za>\n"
+"Language-Team: Xhosa <xhosa@translate.org.za>\n"
+"Language: xh\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0beta2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: bookmarks.cpp:92
+#, kde-format
+msgid ""
+"<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
+"page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
+"\">bookmarks:/</a>.</p>"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: bookmarks.ui:16
+#, kde-format
+msgid "Bookmarks"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowRoot)
+#: bookmarks.ui:23
+#, kde-format
+msgid ""
+"If this option is unchecked, bookmarks at the root of the hierarchy (not in "
+"a folder) are not displayed.\n"
+"If checked, they are gathered in a \"root\" folder."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowRoot)
+#: bookmarks.ui:26
+#, kde-format
+msgid "&Show bookmarks without folder"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbFlattenTree)
+#: bookmarks.ui:37
+#, kde-format
+msgid ""
+"Sub-folders are shown within their parent by default. If you activate this "
+"option, sub-folders are displayed on their own.\n"
+"It looks less nice but it may help if you have a very big folder you want to "
+"spread in two columns."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbFlattenTree)
+#: bookmarks.ui:40
+#, kde-format
+msgid "&Flatten bookmarks tree"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowPlaces)
+#: bookmarks.ui:47
+#, kde-format
+msgid ""
+"Show a box with KDE places (Home, Network, ...). Useful if you use konqueror "
+"as a file manager."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowPlaces)
+#: bookmarks.ui:50
+#, kde-format
+msgid "Show system &places"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: bookmarks.ui:63
+#, kde-format
+msgid "General Settings"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, label)
+#: bookmarks.ui:71
+#, kde-format
+msgid ""
+"Folders are automatically distributed in several columns. The optimal number "
+"of columns depends on the width of the konqueror window and the number of "
+"bookmarks you have."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: bookmarks.ui:74
+#, kde-format
+msgid "Number of columns to show:"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowBackgrounds)
+#: bookmarks.ui:109
+#, kde-format
+msgid "Disable it on slow system to disable background images."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowBackgrounds)
+#: bookmarks.ui:112
+#, kde-format
+msgid "Show folder &backgrounds"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, groupBox_3)
+#: bookmarks.ui:138
+#, kde-format
+msgid "How much disk space is used to cache the pixmaps"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: bookmarks.ui:141
+#, kde-format
+msgid "Pixmap Cache"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, lbMaxCacheSize)
+#: bookmarks.ui:150
+#, fuzzy, kde-format
+#| msgid "Disk cache &size:"
+msgid "Disk cache size:"
+msgstr "&Ubungakanani bendawo yokugcina ye diski:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, sbCacheSize)
+#: bookmarks.ui:163
+#, fuzzy, kde-format
+#| msgid " KB"
+msgid " kB"
+msgstr " KB"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, clearCacheButton)
+#: bookmarks.ui:173
+#, kde-format
+msgid "Clear the pixmap cache"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, clearCacheButton)
+#: bookmarks.ui:176
+#, fuzzy, kde-format
+#| msgid "C&lear Cache"
+msgid "&Clear Cache"
+msgstr "&Cima Indawo yokugcina ngokufihlakeleyo"
+
+#~ msgid ""
+#~ "<h1>Cache</h1><p>This module lets you configure your cache settings.</"
+#~ "p><p>The cache is an internal memory in Konqueror where recently read web "
+#~ "pages are stored. If you want to retrieve a web page again that you have "
+#~ "recently read, it will not be downloaded from the Internet, but rather "
+#~ "retrieved from the cache, which is a lot faster.</p>"
+#~ msgstr ""
+#~ "<h1>Indawo yokugcina</h1><p>Lo mnqongo ukuvumela ukuba uqwalasele "
+#~ "izicwangciso zendawo yokugcina.</p><p>Indawo yokugcina ilukhumbulo "
+#~ "lwangaphakathi lwe Konqueror apho amaphepha e we asandukufundwa agcinwe "
+#~ "khona.Ukuba ufuna ukufumana kwakhona iphepha le web osandukulifunda, "
+#~ "alizukukwazi ukulayisheka ezantsi ukusuka kwi Internet, endaweni yoko "
+#~ "fumana kwakhona kwindawo yokugcina, ekhawuleza kakhulu.</p>."
+
+#, fuzzy
+#~ msgid ""
+#~ "Check this box if you want the web pages you visit to be stored on your "
+#~ "hard disk for quicker access. The stored pages will only be updated as "
+#~ "needed instead of on every visit to that site. This is especially useful "
+#~ "if you have a slow connection to the Internet."
+#~ msgstr ""
+#~ "Nqakraza apha ukuba ufuna amaphepha e web owaboniselayo agcinwe kwi diski "
+#~ "yakho enzima yonikezelo olukhawulezileyo. Ukwenza lo msebenzi kuzakwenza "
+#~ "ukhangelo lukhawuleze ukusukela ukuba amaphepha angazukulayishwa ezantsi "
+#~ "ngokufunekayo. Oku kuyinyaniso ukuba unodibaniso olucothayo kwi Internet."
+
+#~ msgid "&Use cache"
+#~ msgstr "&Sebenzisa indawo yokufihIa"
+
+#~ msgid "Policy"
+#~ msgstr "Inkqubo"
+
+#~ msgid "&Keep cache in sync"
+#~ msgstr "&Gcina indawo yokugcina efihlakeleyo kwi sync"
+
+#, fuzzy
+#~ msgid ""
+#~ "Always use documents from the cache when available. You can still use the "
+#~ "reload button to synchronize the cache with the remote host."
+#~ msgstr ""
+#~ "Yenza oku ukujonga oku kwindawo efihlakeleyo ngalolonke ixesha phambi "
+#~ "kokuxhumana ne Internet. Usakwazi ukusebenzisa iqosha lokulayisha "
+#~ "kwakhona ukwenza indawo yokubeka isebenze nenginginya esendaweni ekude."
+
+#~ msgid "Use cache whenever &possible"
+#~ msgstr "&Sebenzisa indawo yokugcina nokuba kunini xa kwenzeka"
+
+#~ msgid "O&ffline browsing mode"
+#~ msgstr "&Indlela engaphandle komgca wokhangelo"
+
+#~ msgid "Disk cache &size:"
+#~ msgstr "&Ubungakanani bendawo yokugcina ye diski:"
+
+#~ msgid "C&lear Cache"
+#~ msgstr "&Cima Indawo yokugcina ngokufihlakeleyo"
+
+#~ msgid "&Policy"
+#~ msgstr "&Inkqubo"
+
+#~ msgid "&Management"
+#~ msgstr "&Abaphathi"
+
+#, fuzzy
+#~ msgid ""
+#~ "<p><h1>Cookies</h1> Cookies contain information that Konqueror (or other "
+#~ "KDE applications using the HTTP protocol) stores on your computer, "
+#~ "initiated by a remote Internet server. This means that a web server can "
+#~ "store information about you and your browsing activities on your machine "
+#~ "for later use. You might consider this an invasion of privacy.</p><p> "
+#~ "However, cookies are useful in certain situations. For example, they are "
+#~ "often used by Internet shops, so you can 'put things into a shopping "
+#~ "basket'. Some sites require you have a browser that supports cookies.</"
+#~ "p><p> Because most people want a compromise between privacy and the "
+#~ "benefits cookies offer, KDE offers you the ability to customize the way "
+#~ "it handles cookies. So you might want to set KDE's default policy to ask "
+#~ "you whenever a server wants to set a cookie, allowing you to decide. For "
+#~ "your favorite shopping web sites that you trust, you might want to set "
+#~ "the policy to accept, then you can access the web sites without being "
+#~ "prompted every time KDE receives a cookie.</p>"
+#~ msgstr ""
+#~ "<h1>ii Cookies</h1> ii Cookies ziqulathe ulwazi lokuba i Konqueror "
+#~ "(okanye enye i KDE izicelo ezisebenzisa i http protocol) igcina kweyakho "
+#~ "i computer, isenziwa ngumncedsi wobekelo kude lwe Internet. Oku kuthetha "
+#~ "ukuba umncedisi we web angalugcina ulwazi malunga nawe kunye nezenzo "
+#~ "zakho zokhangelo kwimatshini yakho kusebenziso oluzayo. Ungaqwalasela oku "
+#~ "njengotshaba longeniso lwasekhusini. <p> Ngoko ke, ii cookies ziluncedo "
+#~ "kwimeko ezithile. Umzekelo, zisetyenziswa oko ziivenkile ze Internet, "
+#~ "ngoko unga 'beka izinto kwibhaskiti yokuthenga'. Amanye amanxuwa afuna "
+#~ "ukuba ube nomkhangeli oxhasa ii cookies. <p> Kuba abantu abaninzi bafuna "
+#~ "ugqibelo phakathi kwekhusi kunye nezamkelo ezinikezwa zi cookies, KDE "
+#~ "ikunika umsebenzi wokwenza indlela eziphatha ngayo ii cookies. ngoko "
+#~ "ungafuna ukucwangcisa inkqubo engagqibekanga ye KDE ukucela wena xa "
+#~ "umncedisio efuna ukucwangcisa i cookie, ikuvumela ukugqiba. Ngamanxuwa "
+#~ "owathandayo okuthenga eweb owathembileyo, unga funa ukucwangcisa inkqubo "
+#~ "onokuyamkela, ngoku unganikeza amanxuwa eweb ngaphandle kokwenziwa lonke "
+#~ "ixesha i KDE isamkela i cookie."
+
+#, fuzzy
+#~ msgid "<h1>Cookie Management Quick Help</h1>"
+#~ msgstr "<h1>KCookiesManagement::quickHelp()</h1>"
+
+#~ msgid "End of session"
+#~ msgstr "Isiphelo sentlanganiso"
+
+#, fuzzy
+#~ msgid "Search"
+#~ msgstr "&Umncedisi:"
+
+#, fuzzy
+#~ msgid "Site"
+#~ msgstr "Igama lenxuwa/Igama lethambeka"
+
+#, fuzzy
+#~ msgid "Cookie Name"
+#~ msgstr "Igama lenxuwa/Igama lethambeka"
+
+#, fuzzy
+#~ msgid "D&elete"
+#~ msgstr "Ci&ma"
+
+#, fuzzy
+#~ msgid "Delete A&ll"
+#~ msgstr "C&ima Zonke"
+
+#, fuzzy
+#~ msgid "Configure &Policy..."
+#~ msgstr "Tshintsha Inkqubo ye Cookie"
+
+#~ msgid "&Reload List"
+#~ msgstr "&Layisha kwakhona uluhlu"
+
+#, fuzzy
+#~ msgid "Details"
+#~ msgstr "Iinkcukacha ze Cookie"
+
+#, fuzzy
+#~ msgid "Name:"
+#~ msgstr "Igama:"
+
+#, fuzzy
+#~ msgid "Value:"
+#~ msgstr "Ixabiso:"
+
+#~ msgid "Domain:"
+#~ msgstr "Ithambeka:"
+
+#~ msgid "Path:"
+#~ msgstr "Umendo:"
+
+#, fuzzy
+#~ msgid "Expires:"
+#~ msgstr "Iphelelwa lixesha:"
+
+#, fuzzy
+#~ msgid "Secure:"
+#~ msgstr "Khusela:"
+
+#, fuzzy
+#~| msgid "Change Cookie Policy"
+#~ msgctxt "@title:window"
+#~ msgid "Change Cookie Policy"
+#~ msgstr "Tshintsha Inkqubo ye Cookie"
+
+#, fuzzy
+#~| msgid "New Cookie Policy"
+#~ msgctxt "@title:window"
+#~ msgid "New Cookie Policy"
+#~ msgstr "Inkqubo Entsha ye Cookie"
+
+#~ msgid ""
+#~ "<qt>A policy already exists for<center><b>%1</b></center>Do you want to "
+#~ "replace it?</qt>"
+#~ msgstr ""
+#~ "<qt>Inkqubo sele ikhona ye<center><b>%1</b></center>Ufuna ukuyibuyisela?</"
+#~ "qt>"
+
+#, fuzzy
+#~| msgid "Duplicate Policy"
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Policy"
+#~ msgstr "Inkqubo Ephindwe kabini"
+
+#, fuzzy
+#~ msgid ""
+#~ "<p><h1>Cookies</h1> Cookies contain information that Konqueror (or any "
+#~ "other KDE application using the HTTP protocol) stores on your computer "
+#~ "from a remote Internet server. This means that a web server can store "
+#~ "information about you and your browsing activities on your machine for "
+#~ "later use. You might consider this an invasion of privacy.</p><p>However, "
+#~ "cookies are useful in certain situations. For example, they are often "
+#~ "used by Internet shops, so you can 'put things into a shopping basket'. "
+#~ "Some sites require you have a browser that supports cookies.</"
+#~ "p><p>Because most people want a compromise between privacy and the "
+#~ "benefits cookies offer, KDE offers you the ability to customize the way "
+#~ "it handles cookies. You might, for example want to set KDE's default "
+#~ "policy to ask you whenever a server wants to set a cookie or simply "
+#~ "reject or accept everything. For example, you might choose to accept all "
+#~ "cookies from your favorite shopping web site. For this all you have to do "
+#~ "is either browse to that particular site and when you are presented with "
+#~ "the cookie dialog box, click on <i> This domain </i> under the 'apply to' "
+#~ "tab and choose accept or simply specify the name of the site in the <i> "
+#~ "Domain Specific Policy </i> tab and set it to accept. This enables you to "
+#~ "receive cookies from trusted web sites without being asked every time KDE "
+#~ "receives a cookie.</p>"
+#~ msgstr ""
+#~ "<h1>ii Cookies</h1> ii Cookies ziqulathe ulwazi lwe Konqueror (okanye "
+#~ "enye i KDE izicelo usebenzisa i http protocol) igcina kweyakho i computer "
+#~ "ukusuka kumncedisi wobekelo kude lwe Internet. Oku kuthetha ukuba, "
+#~ "umncedisi we web angagcina ulwazi malunga nawe kunye nemisebenzi "
+#~ "yokhangelo yakho kwimatshini yakho kusebenziso lwamva. Ungaqwalasela olu "
+#~ "ngeniso lotshaba lwekhusi. <p> Ngoko ke, ii cookies ziluncedo kwimeko "
+#~ "ezithile. U mzekelo, zi setyenziswa oko zivenkile ze Internet, ngoko unga "
+#~ "'beka izinto kwibhaskithi yokuthenga'. Amanye amanxuwa afuna ukuba "
+#~ "ubenomkhangeli zincwadi oxhasa ii cookies. <p> Kuba abantu abaninzi "
+#~ "bafuna ungqinelwano phakathi kwekhusi nezamkelo ezinikezelwayo zii "
+#~ "cookies, KDE ikunikeza umsebenzi wokwenza indlela yokuphatha ii cookies. "
+#~ "U nga, U mzekelo funa ukucwangcisa inkqubo engagqibekanga ye KDE "
+#~ "ukukubuza xa umncedisi efuna ukucwangcisa i cookie okanye ilahle "
+#~ "ngokulula okanye yamkele yonke into.  Umzekelo, unga khetha uku kwamkela "
+#~ "zonke ii cookies ezivela kwinxuwa lakho olithandayo lokuthenga le web.  "
+#~ "Ngokwale omele ukuba ukwenze kukukhangela kwinxuwa elo lithile kwaye xa "
+#~ "uphiwe i cookie ibhokisi yencoko yababini, nqakraza ku <i> Eli thambeka </"
+#~ "i> phantsi koku 'cela ku' sithuba no kukhetha u yamkela okanye khankanya "
+#~ "ngokulula igama lenxuwa kwi <i> Nkqubo Ethile Yethambeka </i> isithuba "
+#~ "kwaye uyicwangcise ukwamkela. Oku kwenza ukuba wamkele ii cookies ezisuka "
+#~ "kumanxuwa athembekileyo ngaphandle kokubuzwa lonke ixesha i KDE isamkela "
+#~ "i cookie."
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt>\n"
+#~ "<p>Enable cookie support. Normally you will want to have cookie support "
+#~ "enabled and customize it to suit your privacy needs.</p><p>\n"
+#~ "Please note that disabling cookie support might make many web sites "
+#~ "unbrowsable.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "Olu khetho luqala inkxaso ye cookie. Ngokwesiqhelo uzakufuna ukuba "
+#~ "nenkxaso yecookie eyenziweyo kwaye yalungiselelwa imfuno zakho "
+#~ "zasekhusini."
+
+#~ msgid "Enable coo&kies"
+#~ msgstr "Yenza i coo&kies"
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Reject the so called third-party cookies. These are cookies that "
+#~ "originate from a site other than the one you are currently browsing. For "
+#~ "example, if you visit <b>www.foobar.com</b> while this option is on, only "
+#~ "cookies that originate from www.foobar.com will be processed per your "
+#~ "settings. Cookies from any other site will be rejected. This reduces the "
+#~ "chances of site operators compiling a profile about your daily browsing "
+#~ "habits.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "Khangela olukhethoi ukwala zonke i cookies ezivela kwi sites ezingeyiyo "
+#~ "lena oyikhetileyo. Ukuba,ngomzekelo, undwendwela i www.foobar.com "
+#~ "ngexesha olukhetho lukhangelwe, kuzakuqhubekekiswa kuphela i cookies "
+#~ "ezisuka kwi www.foobar.com kwisicwangciso ngasinye sakho. Zonke ezinye i "
+#~ "cookies zizakurhoxiswa ngokuzenzekelayo. Oku kunciphisa okunokwenzeka "
+#~ "kubasebenzisi ekwenzeni imboniselo yabucala malunga nokhangelo lwakho "
+#~ "lwemihla ngemihla."
+
+#, fuzzy
+#~ msgid "Only acce&pt cookies from originating server"
+#~ msgstr "Yamkela i cookies kumncedisi woqobo"
+
+#, fuzzy
+#~ msgid ""
+#~ "<p>\n"
+#~ "Automatically accept temporary cookies meant to expire at the end of the "
+#~ "current session. Such cookies will not be stored in your computer's hard "
+#~ "drive or storage device. Instead, they are deleted when you close all "
+#~ "applications (e.g. your browser) that use them.</p><p><u>NOTE</u> "
+#~ "Checking this option overrides your default as well as site specific "
+#~ "cookie policies for session cookies.</p>"
+#~ msgstr ""
+#~ "Khangela olukhetho ukwamkela ngokuzenzekelayo i cookies ezimele "
+#~ "ukuphelelwa lixesha ekupheleni kwentlanganiso. Cookies ezizakugcinwa "
+#~ "kwaindawo eqhinileyo ye khomputha yakho okanye icebo lokugcina. Endaweni "
+#~ "yoku, zizakucimwa xa uvala izicelo (umzekelo umkhangeli zincwadi) "
+#~ "ezisebenzisayo. <P>QAPHELA: Ukukhangela olukhetho nelilandelayo "
+#~ "kuzakwenza ukuba kubhalwe ngaphezulu kokungagqibeki kwakho nazo iinkqubo "
+#~ "ze ccokie ekhankanyayo. Kodwa, ukwenza oku kwandisa ukhuseleko lwakho "
+#~ "ngenxa yokuba zonke i cookies zakho zizakususwa xa intlanganiso yangoku "
+#~ "iphela."
+
+#, fuzzy
+#~ msgid "Automaticall&y accept session cookies"
+#~ msgstr "Yamkela i cookies ngokuzenzekelayo"
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Determines how cookies received from a remote machine will be handled: \n"
+#~ "<ul>\n"
+#~ "<li><b>Ask</b> will cause KDE to ask for your confirmation whenever a "
+#~ "server wants to set a cookie.</li>\n"
+#~ "<li><b>Accept</b> will cause cookies to be accepted without prompting you."
+#~ "</li>\n"
+#~ "<li><b>Accept until end of session</b> will cause cookies to be accepted "
+#~ "but they will expire at the end of the session.</li>\n"
+#~ "<li><b>Reject</b> will cause the cookiejar to refuse all cookies it "
+#~ "receives.</li>\n"
+#~ "</ul><p>\n"
+#~ "<u>NOTE:</u> Domain specific policies, which can be set below, always "
+#~ "take precedence over the default policy.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "Inkqubo yokungagqibekanga igqiba indlela ii cookies ezamkeleke ngayo "
+#~ "kwimatshini yobekelo kude, engasondezwanga kwinkqubo ethile (bona "
+#~ "ngasezantsi), izakuphathwa: <li><b>Buza</b> izakubangeka ii cookies "
+#~ "zamkelwe ngaphandle kokusebenza wena</li><li><b>Lahla</b> izakubangela i "
+#~ "cookiejar yale zonke ii cookies eza mkelayo</li><li><b>Yamkela</b> "
+#~ "izakubangela i KDE ikubuze ngoqinisekiso lwakho lonke ixesha umncedisi "
+#~ "efuna ukubeka i cookie</li></ul>Khuphela ngaphandle</b>izakubangela i "
+#~ "cookiejar ikhuphele ngaphandle zonke i cookies ezifumanayo.</li></ul>"
+
+#~ msgid "Default Policy"
+#~ msgstr "Inkqubo Yokwendalo"
+
+#, fuzzy
+#~ msgid "Accep&t all cookies"
+#~ msgstr "Yamke&la zonke ii cookies ngokwendalo"
+
+#, fuzzy
+#~| msgid "End of session"
+#~ msgid "Accept &until end of session"
+#~ msgstr "Isiphelo sentlanganiso"
+
+#, fuzzy
+#~ msgid "Ask &for confirmation"
+#~ msgstr "Bu&za uqinisekiso phambi kokwamkela ii cookies."
+
+#, fuzzy
+#~ msgid "Re&ject all cookies"
+#~ msgstr "La&hla zonke ii cookies ngokwendalo"
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt>\n"
+#~ "To add a new policy, simply click on the <b>Add...</b> button and supply "
+#~ "the necessary information. To change an existing policy, use the "
+#~ "<b>Change...</b> button and choose the new policy from the policy dialog "
+#~ "box. Clicking on the <b>Delete</b> button will remove the currently "
+#~ "selected policy causing the default policy setting to be used for that "
+#~ "domain, whereas <b>Delete All</b> will remove all the site specific "
+#~ "policies.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "Apha ungacwangcisa iinkqubo ze cookie zalo naliphi ithambeka. Ukudibanisa "
+#~ "inkqubo entsha, nqakraza ngokulula ku <i>Yongeza...</i> iqhosha kwaye "
+#~ "unikezele ulwazi oluyimfuneko olucelwe yibhokisi yencoko yababini. "
+#~ "Ukutshintsha esele ikhona inkqubo, Nqakraza ku <i>Tshintsha...</i> "
+#~ "iqhosha kwaye khetha inkqubo entsha esuka kwibhokisi yenkqubo yencoko "
+#~ "yababini.  Ukunqakraza ku <i>Cima</i> iqhosha lizakususa inkqubo "
+#~ "ekhethiweyo eyenza ucwangciso olungagqibekanga lwenkqubo "
+#~ "ezakusetyenziselwa elo thambeka."
+
+#, fuzzy
+#~ msgid "Site Policy"
+#~ msgstr "Inkqubo Ephindwe kabini"
+
+#~ msgid "Domain"
+#~ msgstr "Ithambeka"
+
+#~ msgid "&New..."
+#~ msgstr "&Entsha..."
+
+#, fuzzy
+#~ msgid "Chan&ge..."
+#~ msgstr "&Tshintsha..."
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the host or domain to which this policy applies, e.g. <b>www.kde."
+#~ "org</b> or <b>.kde.org</b>.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "Ngenisa igama lenxuwa okanye ithambeka apho inkqubo izakufakwa khona. "
+#~ "Umzekelo. <i>www.kde.org okanye <i>.kde.org</i>"
+
+#, fuzzy
+#~ msgid "Site name:"
+#~ msgstr "Igama lenxuwa/Igama lethambeka"
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Select the desired policy:\n"
+#~ "<ul>\n"
+#~ "<li><b>Accept</b> - Allows this site to set cookies</li>\n"
+#~ "<li><b>Accept until end of session</b> - Allows this site to set cookies "
+#~ "but they will expire at the end of the session.</li>\n"
+#~ "<li><b>Reject</b> - Refuse all cookies sent from this site</li>\n"
+#~ "<li><b>Ask</b> - Prompt when cookies are received from this site</li>\n"
+#~ "</ul>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "Khetha inkqubo efunwayo:<ul><li><b>Yamkela</b> - Ivumela eli nxuwa "
+#~ "licwangcise icookie</li><li><b>Lahla</b> - Yala zonke ii cookies "
+#~ "ezithunyelwe kweli nxuwa</li><li><b>Cela</b> - Usebenzo xa ii cookies "
+#~ "zamkelwe kweli nxuwa</li></ul>"
+
+#, fuzzy
+#~ msgid "Policy:"
+#~ msgstr "&Inkqubo"
+
+#~ msgid "Accept"
+#~ msgstr "Yamkela"
+
+#, fuzzy
+#~| msgid "End of session"
+#~ msgid "Accept until end of session"
+#~ msgstr "Isiphelo sentlanganiso"
+
+#~ msgid "Reject"
+#~ msgstr "Khuphela ngaphandle"
+
+#~ msgid "Ask"
+#~ msgstr "Buza"
+
+#, fuzzy
+#~ msgid "Mark partially uploaded files"
+#~ msgstr "Phawula &iifayile ezilayishwe ngaphezulu ngomkhethe"
+
+#, fuzzy
+#~ msgid ""
+#~ "<h1>Proxy</h1><p>A proxy server is an intermediate program that sits "
+#~ "between your machine and the Internet and provides services such as web "
+#~ "page caching and/or filtering.</p><p>Caching proxy servers give you "
+#~ "faster access to sites you have already visited by locally storing or "
+#~ "caching the content of those pages; filtering proxy servers, on the other "
+#~ "hand, provide the ability to block out requests for ads, spam, or "
+#~ "anything else you want to block.</p><p><u>Note:</u> Some proxy servers "
+#~ "provide both services.</p>"
+#~ msgstr ""
+#~ "<qt>Khangela lebhokisi ukwenza usebenziso lwabancedisi abanegunya beyakho "
+#~ "i internet udibaniso.<p>Nceda qaphela ukuba ukusebenzisa abanegunya "
+#~ "abancedisi kukodwa, kodwa inenzuzo okanye uncedo lokukunika unikezelo "
+#~ "olukhawulezayo kwidata kwi internet.<p>Ukuba awufuni noba okanye awufuni "
+#~ "ukusebenzisa umncedisi ukudibanisa kwi internet, nceda qhagamshela "
+#~ "isalathiso socwangciso somnikezi wenkonzo ye internet yakho okanye "
+#~ "umphathi wendlela yakho.</qt>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Setup proxy configuration.\n"
+#~ "<p>\n"
+#~ "A proxy server is an intermediate machine that sits between your computer "
+#~ "and the Internet and provides services such as web page caching and "
+#~ "filtering. Caching proxy servers give you faster access to web sites you "
+#~ "have already visited by locally storing or caching those pages; filtering "
+#~ "proxy servers usually provide the ability to block out requests for ads, "
+#~ "spam, or anything else you want to block.\n"
+#~ "<p>\n"
+#~ "If you are uncertain whether or not you need to use a proxy server to "
+#~ "connect to the Internet, consult your Internet service provider's setup "
+#~ "guide or your system administrator.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>Khangela lebhokisi ukwenza usebenziso lwabancedisi abanegunya beyakho "
+#~ "i internet udibaniso.<p>Nceda qaphela ukuba ukusebenzisa abanegunya "
+#~ "abancedisi kukodwa, kodwa inenzuzo okanye uncedo lokukunika unikezelo "
+#~ "olukhawulezayo kwidata kwi internet.<p>Ukuba awufuni noba okanye awufuni "
+#~ "ukusebenzisa umncedisi ukudibanisa kwi internet, nceda qhagamshela "
+#~ "isalathiso socwangciso somnikezi wenkonzo ye internet yakho okanye "
+#~ "umphathi wendlela yakho.</qt>"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "No Proxy"
+#~ msgstr "&Into enegunya lokusebenzela omnye"
+
+#, fuzzy
+#~ msgid "Detect proxy configuration automatically"
+#~ msgstr "Sebenzisa &isazisi esilandelayo:"
+
+#, fuzzy
+#~ msgid "Use the specified proxy script to configure the proxy settings."
+#~ msgstr "Ifayile yoshicilelo olubhaqiweyo oluze&nzekelayo"
+
+#, fuzzy
+#~ msgid "Use proxy auto configuration URL:"
+#~ msgstr "Sebenzisa &isazisi esilandelayo:"
+
+#, fuzzy
+#~ msgid "Enter the address for the proxy configuration script."
+#~ msgstr "Ngenisa idilesi yomncedisi womntu onegunya le HTTP."
+
+#, fuzzy
+#~ msgid "Use system proxy configuration:"
+#~ msgstr "Sebenzisa &isazisi esilandelayo:"
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt>Attempt automatic discovery of the environment variables used for "
+#~ "setting system wide proxy information.<p> This feature works by searching "
+#~ "for commonly used variable names such as HTTP_PROXY, FTP_PROXY and "
+#~ "NO_PROXY.</qt>"
+#~ msgstr ""
+#~ "<qt>Nqakraza kweliqhosha ukuzama oluzenzekelayo ubhaqo lwezahluko zemeko-"
+#~ "bume ezisetyenziswe ukucwangcisa indlela yolwazi lomntu onegunya "
+#~ "ngokubanzi.<p> Olu jongo luzenzekelayo lusebenza ngokuphendla "
+#~ "aqhelekileyo alandelayo amagama:</p><p><u>Ye HTTP: </u>%1</p><p><u>Ye "
+#~ "HTTPS: </u>%2</p><p><u>Ye FTP: </u>%3</p></qt>"
+
+#, fuzzy
+#~| msgid "Auto &Detect"
+#~ msgid "Auto D&etect"
+#~ msgstr "&Bhaqa Ngokuzenzekelayo"
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the name of the environment variable, e.g. <b>HTTP_PROXY</b>, used "
+#~ "to store the address of the HTTP proxy server.<p>\n"
+#~ "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~ "attempt automatic discovery of this variable.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>Ngenisa igama lomahluko wemeko-bume, umzekelo. <tt>HTTP_PROXY</tt>, "
+#~ "yayigcina idilesi yomncedisi womntu onegunya we HTTP.<p>Ngokuhambelana, "
+#~ "unganqakraza kwi <tt>\"Ubhaqo Oluzenzekelayo\"</tt> iqhosha ukuzama "
+#~ "ukubhaqa okuzenzekelayo kwalo mahluko.</qt>"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "HTTP Proxy:"
+#~ msgstr "&Into enegunya lokusebenzela omnye"
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the name of the environment variable, e.g. <b>HTTPS_PROXY</b>, used "
+#~ "to store the address of the HTTPS proxy server.<p>\n"
+#~ "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~ "attempt an automatic discovery of this variable.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>Ngenisa igama lomahluko wemeko-bume, umzekelo. <tt>HTTP_PROXY</tt>, "
+#~ "yayigcina idilesi yomncedisi womntu onegunya we HTTP.<p>Ngokuhambelana, "
+#~ "unganqakraza kwi <tt>\"Ubhaqo Oluzenzekelayo\"</tt> iqhosha ukuzama "
+#~ "ukubhaqa okuzenzekelayo kwalo mahluko.</qt>"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "SSL Proxy:"
+#~ msgstr "&Into enegunya lokusebenzela omnye"
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the name of the environment variable, e.g. <b>FTP_PROXY</b>, used "
+#~ "to store the address of the FTP proxy server.<p>\n"
+#~ "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~ "attempt an automatic discovery of this variable.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>Ngenisa igama lomahluko wemeko-bume, umzekelo. <tt>FTP_PROXY</tt>, "
+#~ "usetyenziswe ukugcina idilesi yomncedisi womntu onegunya we FTP."
+#~ "<p>Ngokuhambelana, unga nqakraza kwi <tt>\"Ubhaqo Oluzenzekelayo\"</tt> "
+#~ "iqhosha ukuzama oluzenzekelayo ubhaqo lwalo mahluko.</qt>"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "FTP Proxy:"
+#~ msgstr "&Into enegunya lokusebenzela omnye"
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the name of the environment variable, e.g. <b>SOCKS_PROXY</b>, used "
+#~ "to store the address of the SOCKS proxy server.<p>\n"
+#~ "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~ "attempt an automatic discovery of this variable.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>Ngenisa igama lomahluko wemeko-bume, umzekelo. <tt>HTTP_PROXY</tt>, "
+#~ "yayigcina idilesi yomncedisi womntu onegunya we HTTP.<p>Ngokuhambelana, "
+#~ "unganqakraza kwi <tt>\"Ubhaqo Oluzenzekelayo\"</tt> iqhosha ukuzama "
+#~ "ukubhaqa okuzenzekelayo kwalo mahluko.</qt>"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "SOCKS Proxy:"
+#~ msgstr "&Into enegunya lokusebenzela omnye"
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt>Enter the name of the environment variable, e.g. <b>SOCKS_PROXY</b>, "
+#~ "used to store the address of the SOCKS proxy server.<p>Alternatively, you "
+#~ "can click on the <b>\"Auto Detect\"</b> button to attempt an automatic "
+#~ "discovery of this variable.</p></qt>"
+#~ msgstr ""
+#~ "<qt>Ngenisa igama lomahluko wemeko-bume, umzekelo. <tt>HTTP_PROXY</tt>, "
+#~ "yayigcina idilesi yomncedisi womntu onegunya we HTTP.<p>Ngokuhambelana, "
+#~ "unganqakraza kwi <tt>\"Ubhaqo Oluzenzekelayo\"</tt> iqhosha ukuzama "
+#~ "ukubhaqa okuzenzekelayo kwalo mahluko.</qt>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the environment variable, e.g. <b>NO_PROXY</b>, used to store the "
+#~ "addresses of sites for which the proxy server should not be used.<p>\n"
+#~ "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~ "attempt an automatic discovery of this variable.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>Ngenisa igama lomahluko wemeko-bume, umzekelo. <tt>FTP_PROXY</tt>, "
+#~ "usetyenziswe ukugcina idilesi yomncedisi womntu onegunya we FTP."
+#~ "<p>Ngokuhambelana, unga nqakraza kwi <tt>\"Ubhaqo Oluzenzekelayo\"</tt> "
+#~ "iqhosha ukuzama oluzenzekelayo ubhaqo lwalo mahluko.</qt>"
+
+#, fuzzy
+#~ msgid "Exceptions:"
+#~ msgstr "Ezizodwa"
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt>Enter the environment variable, e.g. <b>NO_PROXY</b>, used to store "
+#~ "the addresses of sites for which the above proxy settings should not be "
+#~ "used.<p>Alternatively, you can click on the <b>\"Auto Detect\"</b> button "
+#~ "to attempt an automatic discovery of this variable.</p></qt>"
+#~ msgstr ""
+#~ "<qt>Ngenisa igama lomahluko wemeko-bume, umzekelo. <tt>FTP_PROXY</tt>, "
+#~ "usetyenziswe ukugcina idilesi yomncedisi womntu onegunya we FTP."
+#~ "<p>Ngokuhambelana, unga nqakraza kwi <tt>\"Ubhaqo Oluzenzekelayo\"</tt> "
+#~ "iqhosha ukuzama oluzenzekelayo ubhaqo lwalo mahluko.</qt>"
+
+#, fuzzy
+#~ msgid "Show the &value of the environment variables"
+#~ msgstr "Cwangcisa kuqala &izahluko zemeko-bume"
+
+#, fuzzy
+#~ msgid "Manually enter proxy server configuration information."
+#~ msgstr "Uqwalaselo Lwencwadi Yomntu onegunya lokusebenzela omnye"
+
+#, fuzzy
+#~ msgid "Use manually specified proxy configuration:"
+#~ msgstr "Ifayile yoshicilelo olubhaqiweyo oluze&nzekelayo"
+
+#~ msgid "Enter the address of the HTTP proxy server."
+#~ msgstr "Ngenisa idilesi yomncedisi womntu onegunya le HTTP."
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTP proxy server."
+#~ msgid "Enter the port number of the HTTP proxy server."
+#~ msgstr "Ngenisa idilesi yomncedisi womntu onegunya le HTTP."
+
+#, fuzzy
+#~ msgid "Use this proxy server for a&ll protocols"
+#~ msgstr ""
+#~ "Sebenzisa umncedisi onegunya lokusebenzela omnye yayo yonke imithetho "
+#~ "elandelwayo"
+
+#~ msgid "Enter the address of the HTTPS proxy server."
+#~ msgstr "Ngenisa idilesi yomncedisi womntu onegunya le HTTP."
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTPS proxy server."
+#~ msgid "Enter the port number of the HTTPS proxy server."
+#~ msgstr "Ngenisa idilesi yomncedisi womntu onegunya le HTTP."
+
+#, fuzzy
+#~ msgid "Enter the address of the FTP proxy server."
+#~ msgstr "Ngenisa idilesi yomncedisi womntu onegunya we FTP"
+
+#, fuzzy
+#~ msgid "Enter the port number of the FTP proxy server."
+#~ msgstr "Ngenisa idilesi yomncedisi womntu onegunya we FTP"
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTPS proxy server."
+#~ msgid "Enter the address of the SOCKS proxy server."
+#~ msgstr "Ngenisa idilesi yomncedisi womntu onegunya le HTTP."
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTPS proxy server."
+#~ msgid "Enter the port number of the SOCKS proxy server."
+#~ msgstr "Ngenisa idilesi yomncedisi womntu onegunya le HTTP."
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Check this box if you want the above proxy settings to apply only to the "
+#~ "addresses listed in the <i>Exceptions</i> list.</qt>"
+#~ msgstr "Sebenzisa kuphela umntu onegunya kolu luhlu"
+
+#, fuzzy
+#~ msgid "Use proxy settings only for addresses in the Exceptions list"
+#~ msgstr "Sebenzisa kuphela umntu onegunya kolu luhlu"
+
+#~ msgid ""
+#~ "You have to restart the running applications for these changes to take "
+#~ "effect."
+#~ msgstr ""
+#~ "Kufuneka uqale kwakhona isicelo esisebenzayo xa ufuna olutshintsho "
+#~ "lusebenze."
+
+#, fuzzy
+#~| msgid "Update Failed"
+#~ msgctxt "@title:window"
+#~ msgid "Update Failed"
+#~ msgstr "Ugqibo Aliphemelelanga"
+
+#, fuzzy
+#~ msgid "You have to restart KDE for these changes to take effect."
+#~ msgstr ""
+#~ "Kufuneka uqale kwakhona isicelo esisebenzayo xa ufuna olutshintsho "
+#~ "lusebenze."
+
+#~ msgid "Timeout Values"
+#~ msgstr "Amaxabiso Exesha lokuphuma"
+
+#, fuzzy
+#~| msgid ""
+#~| "Here you can set timeout values. You might want to tweak them if your "
+#~| "connection is very slow. The maximum allowed value is %1 seconds."
+#~ msgid ""
+#~ "Here you can set timeout values. You might want to tweak them if your "
+#~ "connection is very slow. The maximum allowed value is 1 second."
+#~ msgid_plural ""
+#~ "Here you can set timeout values. You might want to tweak them if your "
+#~ "connection is very slow. The maximum allowed value is %1 seconds."
+#~ msgstr[0] ""
+#~ "Apha ungacwangcisa amaxabiso exesha lokuphuma. Ungafuna ukuwatsala "
+#~ "kabukhali ukuba olwakho udibaniso lucotha kakhulu. Elona nani elikhulu "
+#~ "eluvumelekayo libekwe %1 kwimizuzu."
+#~ msgstr[1] ""
+#~ "Apha ungacwangcisa amaxabiso exesha lokuphuma. Ungafuna ukuwatsala "
+#~ "kabukhali ukuba olwakho udibaniso lucotha kakhulu. Elona nani elikhulu "
+#~ "eluvumelekayo libekwe %1 kwimizuzu."
+
+#, fuzzy
+#~| msgid " sec"
+#~ msgid " second"
+#~ msgid_plural " seconds"
+#~ msgstr[0] " sec"
+#~ msgstr[1] " sec"
+
+#~ msgid "Soc&ket read:"
+#~ msgstr "Ufun&do lomngxuma wokufaka iiplagi zombane:"
+
+#~ msgid "Pro&xy connect:"
+#~ msgstr "Udibani&so lomntu onegunya lokusebenzela omnye:"
+
+#~ msgid "Server co&nnect:"
+#~ msgstr "Udibaniso lo&mncedisi:"
+
+#, fuzzy
+#~ msgid "&Server response:"
+#~ msgstr "Impendulo &yomncedisi:"
+
+#~ msgid "FTP Options"
+#~ msgstr "FTP Iinketho"
+
+#~ msgid "Enable passive &mode (PASV)"
+#~ msgstr "Khubaza &indlela egqithileyo (PASV)"
+
+#~ msgid ""
+#~ "Enables FTP's \"passive\" mode. This is required to allow FTP to work "
+#~ "from behind firewalls."
+#~ msgstr ""
+#~ "Yenza FTP's \"egqithileyo\"indlela. Oku kufuneka ukuvumela i FTP "
+#~ "isebenzeukusuka ngasemva kwe firewall."
+
+#~ msgid "Mark &partially uploaded files"
+#~ msgstr "Phawula &iifayile ezilayishwe ngaphezulu ngomkhethe"
+
+#~ msgid ""
+#~ "<p>Marks partially uploaded FTP files.</p><p>When this option is enabled, "
+#~ "partially uploaded files will have a \".part\" extension. This extension "
+#~ "will be removed once the transfer is complete.</p>"
+#~ msgstr ""
+#~ "<p>Iimphawu ngomkhethe iifayile ezilayishwe ngaphezulu.</p><p>Xa "
+#~ "olukhetho lwenziwe, ifayile ezilayishwe ngaphezulu ngomkhethe zizakuba ne "
+#~ "\".iqhekeza\" ulongezo. Olulongezo lizakususwa xa unikezelo lugqibekile.</"
+#~ "p>"
+
+#~ msgid ""
+#~ "<h1>Network Preferences</h1>Here you can define the behavior of KDE "
+#~ "programs when using Internet and network connections. If you experience "
+#~ "timeouts or use a modem to connect to the Internet, you might want to "
+#~ "adjust these settings."
+#~ msgstr ""
+#~ "<h1>Izikhetho Zomsebenzi womnatha</h1>Apha ungachaza ukuziphatha "
+#~ "kodweliso lweenkqubo ze KDE xa usebenzisa i Internet neendibaniso "
+#~ "zomsebenzi womnatha. Ukuba unolwazi lwamaxesha okuphuma kunye neengxaki "
+#~ "okanye hlala emva kwe modem, ungafuna ukunyenyisa lamaxabiso."
+
+#~ msgid "Default user name:"
+#~ msgstr "Igama lomsebenzisi lokungagqibekanga:"
+
+#~ msgid "Default password:"
+#~ msgstr "Igama lokugqitha lokwendalo:"
+
+#, fuzzy
+#~| msgid ""
+#~| "<h1>Windows Shares</h1>Konqueror is able to access shared windows "
+#~| "filesystems if properly configured. If there is a specific computer from "
+#~| "which you want to browse, fill in the <em>Browse server</em> field. This "
+#~| "is mandatory if you do not run Samba locally. The <em>Broadcast address</"
+#~| "em> and <em>WINS address</em> fields will also be available, if you use "
+#~| "the native code, or the location of the 'smb.conf' file from which the "
+#~| "options are read, when using Samba. In any case, the broadcast address "
+#~| "(interfaces in smb.conf) must be set up if it is guessed incorrectly or "
+#~| "you have multiple cards. A WINS server usually improves performance, and "
+#~| "reduces the network load a lot.<p>The bindings are used to assign a "
+#~| "default user for a given server, possibly with the corresponding "
+#~| "password, or for accessing specific shares. If you choose to, new "
+#~| "bindings will be created for logins and shares accessed during browsing. "
+#~| "You can edit all of them from here. Passwords will be stored locally, "
+#~| "and scrambled so as to render them unreadable to the human eye. For "
+#~| "security reasons, you may not want to do that, as entries with passwords "
+#~| "are clearly indicated as such.<p>"
+#~ msgid ""
+#~ "<p><h1>Windows Shares</h1>Konqueror is able to access shared Microsoft "
+#~ "Windows file systems, if properly configured. If there is a specific "
+#~ "computer from which you want to browse, fill in the <em>Browse server</"
+#~ "em> field. This is mandatory if you are not running Samba locally. The "
+#~ "<em>Broadcast address</em> and <em>WINS address</em> fields will also be "
+#~ "available, if you use the native code, or the location of the 'smb.conf' "
+#~ "file from which the options are read, when using Samba. In any case, the "
+#~ "broadcast address (interfaces in smb.conf) must be set up if it is "
+#~ "guessed incorrectly or you have multiple cards. A WINS server usually "
+#~ "improves performance, and reduces the network load a lot.</p><p>The "
+#~ "bindings are used to assign a default user for a given server, possibly "
+#~ "with the corresponding password, or for accessing specific shares. If you "
+#~ "choose to, new bindings will be created for logins and shares accessed "
+#~ "during browsing. You can edit all of them from here. Passwords will be "
+#~ "stored locally, and scrambled so as to render them unreadable to the "
+#~ "human eye. For security reasons, you may not want to do that, as entries "
+#~ "with passwords are clearly indicated as such.</p>"
+#~ msgstr ""
+#~ "<h1>Izahlulo zee Window</h1>Konqueror iyakwazi ukunikezela ii windows "
+#~ "ezahluliweyo zeendlela zefayile ukuba ziqwalaselwe kakuhle. Ukuba kukho i "
+#~ "computer ethile apho ufuna ukukhangela khona, zalisa i <em>Umncedisi "
+#~ "womkhangeli</em> umhlaba. Lo ngumyalelo onegunya ukuba awenzi i Samba "
+#~ "ngokobulali. I <em>idilesi yosasazo</em> ne <em>Idilesi ye WINS</em> "
+#~ "imihlaba izakubakhona, ukuba usebenzisa ikhowudi yenzala, okanye indwao "
+#~ "ye 'smb.conf' fayile apho iinketho zifundwa khona, xausebenzisa i Samba. "
+#~ "Nakowuphi umzekelo, idilesi yosasazo (ijongana kwi smb.conf) kufuneka "
+#~ "icwangciswe ukuba ithelekelelwe ngokungalunganga okanye unokuba namakhadi "
+#~ "amaninzi. umncedisi we WINSngokwesiqhelo unyusa intsebenzo, kwaye "
+#~ "unciphisa ulayisho lomsebenzi womnatha kakhulu.<p>izibophelelo "
+#~ "zisetyenziswa ukunikezela njengomsebenzisi ongagqibekanga womncedisi "
+#~ "onikiweyo, kunokwenzeka ngegama elihambelanayo, okanye kunikezelo "
+#~ "lwezahlulo ezithile. Ukuba ukhetha njalo, izibophelelo ezintsha "
+#~ "zizakwenziwa zamagama athile kwaye zahlule okunikezelweyo ngexesha "
+#~ "lokukhangela. Ungazihlela zonke ukusuka apha. Amagama agqithisiweyo "
+#~ "azakugcinwa ngokobulali, kwaye zizanyiswe ukuze zinikezelwe "
+#~ "ngokungafundekiyo kwiliso lomntu. Kwizizathu zokhuseleko, awunakufuna "
+#~ "ukwenza loo nto, njengoko amangeno anamagama agqithisiweyo eboniswe "
+#~ "ngokucacileyo anjengo.<p>"
+
+#, fuzzy
+#~| msgid "Add Identification"
+#~ msgctxt "@title:window"
+#~ msgid "Add Identification"
+#~ msgstr "Yongeza Uchazo"
+
+#, fuzzy
+#~| msgid "Modify Identification"
+#~ msgctxt "@title:window"
+#~ msgid "Modify Identification"
+#~ msgstr "Uchazo oluguqulwe kancinane"
+
+#~ msgid ""
+#~ "<qt><center>Found an existing identification for<br/><b>%1</b><br/>Do you "
+#~ "want to replace it?</center></qt>"
+#~ msgstr ""
+#~ "<qt><center>Kufunyenwe uqwalaselo olukhoyo lwe<br/><b>%1</b><br/>Ufuna "
+#~ "ukuyibuyisela ?</center></qt>"
+
+#, fuzzy
+#~| msgid "Duplicate Identification"
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Identification"
+#~ msgstr "Uqwalaselo oluphindwe kabini"
+
+#, fuzzy
+#~ msgid ""
+#~ "<p><h1>Browser Identification</h1> The browser-identification module "
+#~ "allows you to have full control over how Konqueror will identify itself "
+#~ "to web sites you browse.</p><p>This ability to fake identification is "
+#~ "necessary because some web sites do not display properly when they detect "
+#~ "that they are not talking to current versions of either Netscape "
+#~ "Navigator or Internet Explorer, even if the browser actually supports all "
+#~ "the necessary features to render those pages properly. For such sites, "
+#~ "you can use this feature to try to browse them. Please understand that "
+#~ "this might not always work, since such sites might be using non-standard "
+#~ "web protocols and or specifications.</p><p><u>NOTE:</u> To obtain "
+#~ "specific help on a particular section of the dialog box, simply click on "
+#~ "the quick help button on the window title bar, then click on the section "
+#~ "for which you are seeking help.</p>"
+#~ msgstr ""
+#~ "<h1>Uqwalaselo lomkhangeli zincwadi</h1> Umkhangeli zincwadi-woqwalaselo "
+#~ "lolawulo lwekhusi ukuvumela ukuba ubenolawulo kwingxelo ye Konqueror "
+#~ "ngokwayo njengaku manxuwa eweb. <P>Lo msebenzi wokuqhatha okanye "
+#~ "uqwalaselo lokuhahahanisa luyimfuneko kuba amanye amanxuwa eweb akabonisi "
+#~ "kakuhle xa ebhaqa ukuba akathethi neenguqulelo zangoku zoMlawuli we "
+#~ "Netscape okanye Umphendli we Internet, noba i\"umkhangeli zincwadi "
+#~ "ongaxhaswayo\" uxhasa yonke imisebenzi esemqoka ukunikezela loo maphepha "
+#~ "kakuhle. Njengoko, kulo manxuwa anjalo, ungafuna ukuqhuba ngaphezulu "
+#~ "uqwalaselo olungagqibekanga ngokudibanisa inxuwa okanye ungeno "
+#~ "lwethambeka elithile.<P><u>QAPHELA:</u> Ukufumana uncedo oluthile "
+#~ "kwicandelo elithile lebhokisi yencoko yababini, nqakraza ngokulula "
+#~ "kwelincinane <b>?</b> iqhosha kwikona engasentla ekunene kwale window, "
+#~ "ngoku nqakraza kwicandelo apho ufuna uncedo."
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Here you can modify the default browser-identification text or set a site "
+#~ "<code>(eg. www.kde.org)</code> or a domain <code>(eg. kde.org)</code> "
+#~ "specific identification text.<p>\n"
+#~ "To add a new site-specific identification text, click the <code>New</"
+#~ "code> button and supply the necessary information. To change an existing "
+#~ "site-specific entry, click on the <code>Change</code> button. The "
+#~ "<code>Delete</code> button will remove the selected site-specific "
+#~ "identification text, causing the default setting to be used for that site "
+#~ "or domain.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt> Apha ungaguqula kancinane umtya wokhangelo olungagqibekanga-"
+#~ "loqwalaselo kwaye/okanye ucwangcise inxuwa <code>(ex:www.kde.org)</code> "
+#~ "okanye ithambeka <code>(ex:kde.org)</code> uqwalaselo oluthile."
+#~ "<P>Ukudibanisa umtya wommeli omtsha, nqakraza ngokulula kwi <code>Entsha "
+#~ "</code>iqhosha kwaye nikezela ngolwazi oluyimfuneko olucelwe yi bhokisi "
+#~ "yencoko yababini. Ukutshintsha ungeno lwenxuwa elithile esele likhona, "
+#~ "nqakraza kwi <code>Tshintsha</code> iqhosha. I <code>Cima </code> iqhosha "
+#~ "lizakususa inkqubo ekhethiweyo, ebangela ucwangciso olungagqibekanga "
+#~ "lusetyenziselwe elo nxuwa okanye ithambeka."
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Send the browser identification to web sites.<p>\n"
+#~ "<u>NOTE:</u> Many sites rely on this information to display pages "
+#~ "properly, hence, it is highly recommended that you do not totally disable "
+#~ "this feature but rather customize it.<p>\n"
+#~ "By default, only minimal identification information is sent to remote "
+#~ "sites. The identification text that will be sent is shown below.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>Ukuba ayikhangelwanga, akukho lwazi loqwalaselo malunga nomkhangeli "
+#~ "zincwadi luza kuthunyelwa kumanxuwa owandwendwelayo ngexesha ukhangela "
+#~ "iincwadi.<P><u>QAPHELA:</u> Amanxuwa amaninzi axhomekeke kolu lwazi "
+#~ "ukubonisa amaphepha kakuhle, njengoko, ithethelewa kakhulu ukuba "
+#~ "awuwukhubazi ngokupheleleyo umsebenzi osemqoka kodwa kungcono uwenze."
+#~ "<P>Kuphela lulwazi oluncinane loqwalaselo oluthunyelwa kumanxuwa obekelo "
+#~ "kude njengoko kuboniswe ngezantsi ku <b>magama amakhulu</b>.</qt>"
+
+#, fuzzy
+#~ msgid "&Send identification"
+#~ msgstr "Thumela ulwazi &lomkhangeli zincwadi"
+
+#, fuzzy
+#~ msgid ""
+#~ "The browser identification text sent to the sites you visit. Use the "
+#~ "provided options to customize it."
+#~ msgstr ""
+#~ "Olu chazo lokwendalo ethunyelwe kumanxuwa obekelo kude ngexesha "
+#~ "lokukhangela iincwadi. Ungayiguqula kancinane usebenzisa iibhokisi "
+#~ "zokukhangela ezingezantsi."
+
+#, fuzzy
+#~ msgid "Default Identification"
+#~ msgstr "Uqwalaselo oluphindwe kabini"
+
+#, fuzzy
+#~ msgid ""
+#~ "The browser identification text sent to the sites you visit. You can "
+#~ "customize it using the options provided below."
+#~ msgstr ""
+#~ "Olu chazo lokwendalo ethunyelwe kumanxuwa obekelo kude ngexesha "
+#~ "lokukhangela iincwadi. Ungayiguqula kancinane usebenzisa iibhokisi "
+#~ "zokukhangela ezingezantsi."
+
+#, fuzzy
+#~ msgid ""
+#~ "Includes your operating system's name in the browser identification text."
+#~ msgstr ""
+#~ "Khangela le bhokisi ukoudibanisa eyakho <code>igama lendela yokusenenza</"
+#~ "code> kumtya wochazo wokwendalo."
+
+#~ msgid "Add operating s&ystem name"
+#~ msgstr "Yongeza igama le&ndlela yokusebenza"
+
+#, fuzzy
+#~ msgid ""
+#~ "Includes your operating system's version number in the browser "
+#~ "identification text."
+#~ msgstr ""
+#~ "Khangela le bhokisi ukudibanisa eyakho <code>yenani loguqulelo lwendlela "
+#~ "yokusebenza</code> kumtya wochazo olungagqibekanga."
+
+#~ msgid "Add operating system &version"
+#~ msgstr "Yongeza uguqulel&o lwendlela yokusebenza"
+
+#, fuzzy
+#~ msgid "Includes your machine's CPU type in the browser identification text."
+#~ msgstr ""
+#~ "Khangela le bhokisi ukudibanisa izicwangciso zolwimi lwakho kumtya "
+#~ "wochazo olungagqibekanga."
+
+#~ msgid "Add &machine (processor) type"
+#~ msgstr "Dibanisa udidi lwe &matshini (umqhubekekisi)"
+
+#, fuzzy
+#~ msgid ""
+#~ "Includes your language settings in the browser identification text to "
+#~ "obtain localized versions of the page."
+#~ msgstr ""
+#~ "Khangela le bhokisi ukudibanisa izicwangciso zolwimi lwakho kumtya "
+#~ "wochazo olungagqibekanga."
+
+#, fuzzy
+#~ msgid "Add lang&uage information"
+#~ msgstr "Yongeza isicwangciso so&lwimi lwakho"
+
+#, fuzzy
+#~ msgid "Site Specific Identification"
+#~ msgstr "Uchazo Olukhankanyiweyo lwe Nxuwa/Ithambeka"
+
+#, fuzzy
+#~ msgid "Site Name"
+#~ msgstr "Igama lenxuwa/Igama lethambeka"
+
+#, fuzzy
+#~ msgid "Identification"
+#~ msgstr "Yongeza Uchazo"
+
+#~ msgid "User Agent"
+#~ msgstr "Ummeli Womsebenzisi"
+
+#, fuzzy
+#~ msgid "Add new identification text for a site."
+#~ msgstr "Yongeza umkhangeli zincwadi wenxuwa elithile."
+
+#, fuzzy
+#~ msgid "Change the selected identifier text."
+#~ msgstr "Tshintsha imqwalaseli okhethiweyo."
+
+#, fuzzy
+#~ msgid "Delete the selected identifier text."
+#~ msgstr "Cima ungeno olukhethiweyo."
+
+#, fuzzy
+#~ msgid "Delete all identifiers."
+#~ msgstr "Cima onke amangeno"
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the site or domain name where a fake browser identification should "
+#~ "be used.<p>\n"
+#~ "<u>NOTE:</u> Wildcard syntax such as \\\"*,?\\\" is NOT allowed: instead, "
+#~ "use the top level address of a site to make generic matches; for example, "
+#~ "if you want all KDE sites to receive a fake browser identification, you "
+#~ "would enter <code>kde.org</code> - the fake identity would then be sent "
+#~ "to any KDE site that ends with <code>kde.org</code>.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "Ngenisa inxuwa okanye ithambeka apho uqwalaselo lohanahaniso "
+#~ "luzakusetyenziswa. <p><u>QAPHELA:</u> isivakalisi sekhadi laseNdle "
+#~ "elinjenge \"*,?\" ALI vunyelwanga.  Endaweni yoko ngenisa idilesi "
+#~ "yomphakamo ophezulu wenxuwa ukwenza iintelekiso ngokubanzi lwazo zonke "
+#~ "iindawo ezifunyanwa phantsi kwayo.  Umzekelo, ukuba ufuna onke amanxuwa e "
+#~ "<code>http://www.acme.com</code> amkele umkhangeli wohanahaniso-"
+#~ "woqwalaselo, ngenisa ngokulula <code>acme.com</code> apha."
+
+#, fuzzy
+#~ msgid "&When browsing the following site:"
+#~ msgstr "Xa udibanisa &kwi nxuwa elilandelayo:"
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Select the browser identification to use whenever contacting the site you "
+#~ "specified above.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>Khetha umkhangeli zincwadi-uqwalaselo lokusetyenziswa xa "
+#~ "uqhagamshelana nenxuwa okanye ithambeka elinikwe ngasentla.<P>Ngaphezu "
+#~ "kokhetho, inkcazelo ecacileyo, ukuba ikhona, izakuboniswa kwibhokisi "
+#~ "engezantsi."
+
+#, fuzzy
+#~ msgid "&Use the following identification:"
+#~ msgstr "Sebenzisa &isazisi esilandelayo:"
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt>\n"
+#~ "The actual browser identification text that will be sent to the remote "
+#~ "machine.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>Khetha umkhangeli zincwadi-uqwalaselo lokusetyenziswa xa "
+#~ "uqhagamshelana nenxuwa okanye ithambeka elinikwe ngasentla.<P>Ngaphezu "
+#~ "kokhetho, inkcazelo ecacileyo, ukuba ikhona, izakuboniswa kwibhokisi "
+#~ "engezantsi."
+
+#, fuzzy
+#~ msgid "Real identification:"
+#~ msgstr "Uqwalaselo oluphindwe kabini"
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt>\n"
+#~ "<p>Treat all cookies as session cookies. Session cookies are small pieces "
+#~ "of data that are temporarily stored in your computer's memory until you "
+#~ "quit or close all applications (e.g. your browser) that use them. Unlike "
+#~ "regular cookies, session cookies are never stored on your hard drive or "
+#~ "other storage medium.</p><p>\n"
+#~ "<u>NOTE:</u> Checking this option along with the previous one will "
+#~ "override your default as well as site specific cookie policies. However, "
+#~ "doing so also increases your privacy since all cookies will be removed "
+#~ "when the current session ends.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "Khangela olukhetho ukuphatha i cookies njenge cookies zentlanganiso. "
+#~ "Cookies zentlanganiso ngamaceba e data amancinci agcinwe ngokwetutyana "
+#~ "kwinkumbulo yekhomputha ude uvale okanye uphume kwizicelo (umzekelo "
+#~ "umkhangeli zincwadi) iziyisebenzisayo. Ngokungafaniyo ne cookies "
+#~ "eziqhelekileyo, intlanganiso soze kwindawo eqhinileyo okanye kwicebo "
+#~ "lakho lokugcina.<P>QAPHELA: ukukhangela olkhetho nezinye ezidlulileyo "
+#~ "kuzakubhala ngaphezulu kokungagqibeki kwakho ne site ekhankanye inkqubo "
+#~ "ze cookie. Kodwa ukwenza oku kwandisa ukhuseleko kwakho ngenxa yokuba i "
+#~ "cookies zakho zizakususwa xa intlanganiso yangoku iphela."
+
+#, fuzzy
+#~ msgid "Treat &all cookies as session cookies"
+#~ msgstr "Phatha zonke i cookies njenge ntlanganiso ye cookie"
+
+#~ msgid ""
+#~ "Enter the port number of the HTTP proxy server. Default is 8080. Another "
+#~ "common value is 3128."
+#~ msgstr ""
+#~ "Ngenisa inani lezibuko lomncedisi womntu onegunya le HTTP.  Okwendalo. yi "
+#~ "8080. Enye yi 3128."
+
+#~ msgid ""
+#~ "Enter the port number of the FTP proxy server. Default 8080. Another "
+#~ "common value is 3128."
+#~ msgstr ""
+#~ "Ngenisa inani lezibuko lomncedisi womntu onegunya le HTTP. Okwendalo yi "
+#~ "8080.Elinye inani eliqhelekileyo ngu 3128."
+
+#, fuzzy
+#~| msgid "Variable Proxy Configuration"
+#~ msgctxt "@title:window"
+#~ msgid "Variable Proxy Configuration"
+#~ msgstr "Uqwalaselo Lomahluko Onegunya lokusebenzela omnye umntu"
+
+#~ msgid "You must specify at least one valid proxy environment variable."
+#~ msgstr ""
+#~ "Kufuneka ukhankanye noko umntu osebenzela omnye umntu womahluko wemeko- "
+#~ "bume yomahluko."
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>Make sure you entered the actual environment variable name rather "
+#~| "than its value. For example, if the environment variable is "
+#~| "<br><b>HTTP_PROXY=http://localhost:3128</b><br> you need to enter "
+#~| "<b>HTTP_PROXY</b> here instead of the actual value http://localhost:3128."
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>Make sure you entered the actual environment variable name rather "
+#~ "than its value. For example, if the environment variable is <br /"
+#~ "><b>HTTP_PROXY=http://localhost:3128</b><br /> you need to enter "
+#~ "<b>HTTP_PROXY</b> here instead of the actual value http://localhost:3128."
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>Qiniseka ukuba ungenise igama lenene lemeko-bume kune dilesi "
+#~ "yomncrdisi womntu onegunya. Umzekelo, ukuba umahluko wemeko-bume yi "
+#~ "<br><b> HTTP_PROXY=http://localhost:3128</b><br> ngoko ufuna ukungenise "
+#~ "<b>HTTP_PROXY</b> apha endaweni yuexabiso http://localhost:3128.</ qt>"
+
+#, fuzzy
+#~| msgid "Invalid Proxy Setup"
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Proxy Setup"
+#~ msgstr "Ucwangciso lomntu onegunya olungasebenziyo"
+
+#~ msgid "Successfully verified."
+#~ msgstr "Iqinisekiswe ngempumelelo."
+
+#, fuzzy
+#~| msgid "Proxy Setup"
+#~ msgctxt "@title:window"
+#~ msgid "Proxy Setup"
+#~ msgstr "Ucwangciso lomntu onegunya lokusebenzela omnye"
+
+#~ msgid ""
+#~ "Did not detect any environment variables commonly used to set system wide "
+#~ "proxy information."
+#~ msgstr ""
+#~ "Ayinakufumana nayiphi na imeko-bume yomahluko oqhele ukusebenziswa "
+#~ "ukucwangcisa indlela yomsebenzi yomntu onegunya ngokubanzi."
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt>To learn about the variable names the automatic detection process "
+#~ "searches for, press OK, click on the quick help button on the window "
+#~ "title bar of the previous dialog and then click on the \"<b>Auto Detect</"
+#~ "b>\" button.</qt>"
+#~ msgstr ""
+#~ "<qt>Ukufunda malunga namagama omahluko inkqubo yobhaqho ezenzekelayo ye, "
+#~ "cofa KULUNGILE omahluko kwinkqubela ezenzekelayo yobhaqo, vala le bhokisi "
+#~ "yencoko yababini, nqakraza kwiqhosha loncedo olukhawulezayo (<b>?</b>) "
+#~ "kwikona ephezulu ekunene kwe Uqwalaselo Lomntu onegunya incoko yababini "
+#~ "kwaye ngoko nqakraza kwiqhosha \"Lobhaqo Oluzenzekelayo\".</qt> "
+
+#, fuzzy
+#~| msgid "Automatic Proxy Variable Detection"
+#~ msgctxt "@title:window"
+#~ msgid "Automatic Proxy Variable Detection"
+#~ msgstr "Ubhaqo Lomahluko we Proxy Oluzenzekelayo"
+
+#, fuzzy
+#~| msgid "Manual Proxy Configuration"
+#~ msgctxt "@title:window"
+#~ msgid "Manual Proxy Configuration"
+#~ msgstr "Uqwalaselo Lwencwadi Yomntu onegunya lokusebenzela omnye"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Proxy Setting"
+#~ msgstr "Ucwangciso lomntu onegunya olungasebenziyo"
+
+#, fuzzy
+#~ msgid "<qt><center><b>%1</b></center> is already in the list.</qt>"
+#~ msgstr "<qt><center><b>%1</b><br/>sele ikhona!"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Entry"
+#~ msgstr "Inkqubo Ephindwe kabini"
+
+#, fuzzy
+#~| msgid "New Exception"
+#~ msgctxt "@title:window"
+#~ msgid "New Exception"
+#~ msgstr "Okukodwa Okutsha"
+
+#, fuzzy
+#~| msgid "Change Exception"
+#~ msgctxt "@title:window"
+#~ msgid "Change Exception"
+#~ msgstr "Tshintsha Okukodwa"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Entry"
+#~ msgstr "Ucwangciso lomntu onegunya olungasebenziyo"
+
+#, fuzzy
+#~ msgid "Enter the URL or address that should use the above proxy settings:"
+#~ msgstr ""
+#~ "Ngenisa idilesi okanye i URL enokukhutshwa ngaphandle ekusebenziseni "
+#~ "umncedisi womntu onegunya:"
+
+#, fuzzy
+#~ msgid ""
+#~ "Enter the address or URL that should be excluded from using the above "
+#~ "proxy settings:"
+#~ msgstr ""
+#~ "Ngenisa idilesi okanye i URL enokukhutshwa ngaphandle ekusebenziseni "
+#~ "umncedisi womntu onegunya:"
+
+#, fuzzy
+#~ msgid ""
+#~ "The address of the automatic proxy configuration script is invalid. "
+#~ "Please correct this problem before proceeding. Otherwise, your changes "
+#~ "will be ignored."
+#~ msgstr ""
+#~ "<qt>Idilesi yoshicilelo loqwalaselo lomntu onegunya oluzenzekelayo "
+#~ "alisebenzi! Nceda lungisa le ngxaki phambi kokuqhubekeka. Kungenjalo "
+#~ "utshintsho olwenzileyo aluzukunanzwa!</qt>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt>The proxy settings you specified are invalid.<br /><br />Please click "
+#~ "on the <b>Setup...</b> button and correct the problem before proceeding; "
+#~ "otherwise your changes will be ignored.</qt>"
+#~ msgstr ""
+#~ "<qt>Ulwazi lomntu onegunya aluzange lucwangciswe kakuhle! Nceda nqakraza "
+#~ "kwi <em>Cwangcisa...</em> iqhosha ukulungisa lengxaki phambi "
+#~ "kokuqhubekeka.Kungenjalo utshintsho olwenzileyo aluzukunanzwa!</qt>"
+
+#~ msgid "H&TTP:"
+#~ msgstr "H&TTP:"
+
+#~ msgid "HTTP&S:"
+#~ msgstr "HTTP&S:"
+
+#~ msgid "&FTP:"
+#~ msgstr "&FTP:"
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt>Verify whether or not the environment variable names you supplied are "
+#~ "valid. If an environment variable is not found, the associated labels "
+#~ "will be <b>highlighted</b> to indicate that they are invalid.</qt>"
+#~ msgstr ""
+#~ "<qt>Nqakraza eli qhosha ukugqiba ngokukhawuleza noba okanye hayi imeko-"
+#~ "bume amagama anomahluko owanikezileyo akasebenzi.  Ukuba umahluko wemeko-"
+#~ "bume awu fumaneki imibhalo enxulumanisiweyo izaku <b>phawulwa</b> "
+#~ "ukubonisa izicwangciso ezingasebenziyo.</qt>"
+
+#~ msgid "&Verify"
+#~ msgstr "&Qinisekisa"
+
+#, fuzzy
+#~ msgid "Use preset proxy environment &variables"
+#~ msgstr "Cwangcisa kuqala &izahluko zemeko-bume"
+
+#, fuzzy
+#~ msgid "Show the proxy environment variable configuration dialog."
+#~ msgstr "Uqwalaselo Lwencwadi Yomntu onegunya lokusebenzela omnye"
+
+#~ msgid "Setup..."
+#~ msgstr "Cwangcisa..."
+
+#, fuzzy
+#~ msgid "&Manually specify the proxy settings"
+#~ msgstr "&Izicwangciso ezikhankanyiweyo zencwadi"
+
+#, fuzzy
+#~ msgid "Show the manual proxy configuration dialog."
+#~ msgstr "Uqwalaselo Lwencwadi Yomntu onegunya lokusebenzela omnye"
+
+#, fuzzy
+#~ msgid "Authori&zation"
+#~ msgstr "Igunya"
+
+#~ msgid "Prompt as &needed"
+#~ msgstr "Ncedisa njengoko &ufuna"
+
+#, fuzzy
+#~ msgid "Use this login information."
+#~ msgstr "Sebenzisa &isazisi esilandelayo:"
+
+#, fuzzy
+#~ msgid "Username:"
+#~ msgstr "Igama lomsebenzisi lokungagqibekanga:"
+
+#, fuzzy
+#~ msgid "Login name."
+#~ msgstr "Igama lenxuwa ithambeka:"
+
+#, fuzzy
+#~ msgid "Login password."
+#~ msgstr "ngegama lokugqitha"
+
+#, fuzzy
+#~ msgid "Password:"
+#~ msgstr "&Igama lokugqitha:"
+
+#, fuzzy
+#~ msgid "O&ptions"
+#~ msgstr "FTP Iinketho"
+
+#, fuzzy
+#~ msgid "Ser&vers"
+#~ msgstr "Abancedisi"
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Reverse the use of the exception list. Checking this box will result in "
+#~ "the proxy servers being used only when the requested URL matches one of "
+#~ "the addresses listed here.<p>This feature is useful if all you want or "
+#~ "need is to use a proxy server  for a few specific sites.<p>If you have "
+#~ "more complex requirements you might want to use a configuration script.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>Khangela le bhokisi ukubuyisela umsebenzi woluhlu olulodwa.  Oko "
+#~ "kukukhangela le bhokisi kuzakuphuma kubancedisi abasetyenziswa kuphela xa "
+#~ "efuniweyo i URL ithelekisa enye yedilesi ezidweliswe apha.<p>Lo msebenzi "
+#~ "uluncedo ukuba konke okufunayo okanye imfuneko ngumncedisi wegunya "
+#~ "wathile ambalwa amanxuwa.<p>Ukuba uneemfuno ezinzima ongazifunayo "
+#~ "ukusebenzisa ushicilelo loqwalaselo</qt>"
+
+#, fuzzy
+#~ msgid "Remove all proxy exception addresses from the list."
+#~ msgstr "Nqakraza eli qhosha ukutshintsha idilesi yokukodwa."
+
+#~ msgid "D&elete All"
+#~ msgstr "C&ima Zonke"
+
+#, fuzzy
+#~ msgid "Remove the selected proxy exception address from the list."
+#~ msgstr "Nqakraza eli qhosha ukutshintsha idilesi yokukodwa."
+
+#~ msgid "De&lete"
+#~ msgstr "Ci&ma"
+
+#, fuzzy
+#~ msgid "Add new proxy exception address to the list."
+#~ msgstr "Nqakraza eli qhosha ukutshintsha idilesi yokukodwa."
+
+#, fuzzy
+#~ msgid "Change the selected proxy exception address."
+#~ msgstr "Nqakraza eli qhosha ukutshintsha idilesi yokukodwa."
+
+#~ msgid "C&hange..."
+#~ msgstr "&Tshintsha..."
+
+#, fuzzy
+#~ msgid "&Domain name:"
+#~ msgstr "Igama lenxuwa ithambeka:"
+
+#, fuzzy
+#~ msgid "Includes your platform type in the browser identification text"
+#~ msgstr ""
+#~ "Khangela le bhokisi ukudibanisa izicwangciso zolwimi lwakho kumtya "
+#~ "wochazo olungagqibekanga."
+
+#~ msgid "Add &platform name"
+#~ msgstr "Yongeza igama lo&mgangatho"
+
+#~ msgid "Domain [Group]"
+#~ msgstr "Ithambeka [Iqela]"
+
+#~ msgid "Host [Set By]"
+#~ msgstr "Umamkeli [Icwangciswe Ngu]"
+
+#, fuzzy
+#~ msgid ""
+#~ "<h1>Local Network Browsing</h1>Here you setup your <b>\"Network "
+#~ "Neighborhood\"</b>. You can use either the LISa daemon and the lan:/ "
+#~ "ioslave, or the ResLISa daemon and the rlan:/ ioslave.<br /><br />About "
+#~ "the <b>LAN ioslave</b> configuration:<br /> If you select it, the "
+#~ "ioslave, <i>if available</i>, will check whether the host supports this "
+#~ "service when you open this host. Please note that paranoid people might "
+#~ "consider even this to be an attack.<br /><i>Always</i> means that you "
+#~ "will always see the links for the services, regardless of whether they "
+#~ "are actually offered by the host. <i>Never</i> means that you will never "
+#~ "have the links to the services. In both cases you will not contact the "
+#~ "host, so nobody will ever regard you as an attacker.<br /><br />More "
+#~ "information about <b>LISa</b> can be found at <a href=\"http://lisa-home."
+#~ "sourceforge.net\">the LISa Homepage</a> or contact Alexander Neundorf &lt;"
+#~ "<a href=\"mailto:neundorf@kde.org\">neundorf@kde.org</a>&gt;."
+#~ msgstr ""
+#~ "<h1>LAN Ukhangelo</h1Apha ungacwangcisa eyakho <b>\"Umsebenzi womnatha "
+#~ "woBumelwane\"</b>, ungasebenzisa noba yi LISa daemon kunye ne lan:/ "
+#~ "ioslave okanye i ResLISa daemon kunye ne rlan:/ ioslave.<br><br>Malunga "
+#~ "ne <b>LAN ioslave</b> uqwalaselo:<br> ukuba uyakhetha <i>ukuba ikhona</i> "
+#~ "i ioslave izakukhangela ukuba inginginya ixhasa le nkonzo xa uvula le "
+#~ "nginginya. Nceda qaphela ukuba abantu be paranoia banokuphonononga olu "
+#~ "hlaselo.<br><i>Oko</i> ithetha ukuba uzakusoloko ubona amakhonkco "
+#~ "eenkonzo noba anikezelwe yinginginya. <i>Sobe</i> ithetha ukuba awusobe "
+#~ "ubenamakhonkco kwiinkonzo. Kwimizekelo yomibini awunakuqhagamshela "
+#~ "nginginya, ukuze kungabikho mntu onokuphonononga njengomhlaseli."
+#~ "<br><br>Olungaphezulu ulwazi malunga <b>LISa</b> ingafumaneka e  <a href="
+#~ "\"http://lisa-home.sourceforge.net\">the LISa Homepage</a> okanye "
+#~ "qhagamshela u Alexander Neundorf &lt;<a href=\"mailto:neundorf@kde.org"
+#~ "\">neundorf@kde.org</a>&gt;."
+
+#~ msgid "&Windows Shares"
+#~ msgstr "&Ulwahlulo lwe Windows"
+
+#~ msgid "&LISa Daemon"
+#~ msgstr "&LISa Daemon"
+
+#, fuzzy
+#~ msgid "&Search:"
+#~ msgstr "&Umncedisi:"
+
+#~ msgid "&SOCKS"
+#~ msgstr "&SOCKS"
+
+#~ msgid "SOCKS"
+#~ msgstr "SOCKS"
+
+#~ msgid ""
+#~ "Check this to enable SOCKS4 and SOCKS5 support in KDE applications and I/"
+#~ "O subsystems."
+#~ msgstr ""
+#~ "Khangela oku ukwenza i SOCKS4 ne SOCKS5 uxhaso kwi KDE izicelo ne I/O "
+#~ "zeendlela ezisezantsi."
+
+#~ msgid "&Enable SOCKS support"
+#~ msgstr "&Yenza inkxaso ye SOCKS"
+
+#~ msgid "Click here to test SOCKS support."
+#~ msgstr "Nqakraza apha ukuvavanya inkxaso ye SOCKS."
+
+#~ msgid "&Test"
+#~ msgstr "&Uvavanyo"
+
+#~ msgid "SOCKS Implementation"
+#~ msgstr "Uzalisekiso lwe SOCKS"
+
+#~ msgid ""
+#~ "Select custom if you wish to use an unlisted SOCKS library. Please note "
+#~ "that this may not always work as it depends on the API of the library "
+#~ "which you specify (below)."
+#~ msgstr ""
+#~ "Khetha isiko ukuba unqwenela ukusebenzisa ilayibrari ye SOCKS engekho "
+#~ "kuluhlu. Nceda qaphela ukuba oku akunakusebenza oko njengoko kuxhomekeke "
+#~ "kwi API yelayibrari oyi khankanyayo (ngezantsi)."
+
+#~ msgid "Use &custom library"
+#~ msgstr "Sebenzisa &ilayibrari yesiko"
+
+#~ msgid "Enter the path to an unsupported SOCKS library."
+#~ msgstr "Ngenisa umendo kwi layibrari engaxhaswanga ye SOCKS."
+
+#~ msgid ""
+#~ "If you select Autodetect, then KDE will automatically search for an "
+#~ "implementation of SOCKS on your computer."
+#~ msgstr ""
+#~ "Ukuba ukhetha Ubhaqo oluzenzekelayo, ngoku i-KDE izakuphendla uphenyezo "
+#~ "lwe SOCKS kwi khompyutha yakho."
+
+#~ msgid "A&uto detect"
+#~ msgstr "&Ubhaqo oluzenzekelayo"
+
+#~ msgid "This will force KDE to use NEC SOCKS if it can be found."
+#~ msgstr ""
+#~ "Oku kuzakunyanzela i KDE isebenzise i NEC SOCKS ukuba inokufumaneka."
+
+#~ msgid "&NEC SOCKS"
+#~ msgstr "&NEC SOCKS"
+
+#~ msgid "This will force KDE to use Dante if it can be found."
+#~ msgstr "Oku kuzakunyanzela i KDE isebenzise i Dante ukuba iyafumaneka."
+
+#~ msgid "&Dante"
+#~ msgstr "&Dante"
+
+#~ msgid ""
+#~ "Here you can specify additional directories to search for the SOCKS "
+#~ "libraries. /usr/lib, /usr/local/lib, /usr/local/socks5/lib and /opt/"
+#~ "socks5/lib are already searched by default."
+#~ msgstr ""
+#~ "Apha uyakwazi ukukhankanya abalawuli abongezelelweyo ukuphendla "
+#~ "iilayibrari ze SOCKS. /usr/lib, /usr/local/lib, /usr/local/socks5/lib ne /"
+#~ "opt/socks5/lib sele ziphendlwe ngokungagqibekanga."
+
+#~ msgid "Additional Library Search Paths"
+#~ msgstr "Umendo Wokuphendla Owongezelelweyo Welaybri"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Lwandle Mgidlana"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "lwandle@translate.org.za"
+
+#~ msgid "kcmsocks"
+#~ msgstr "kcmsocks"
+
+#~ msgid "KDE SOCKS Control Module"
+#~ msgstr "KDE SOCKS Umnqogo Wolawulo"
+
+#~ msgid "(c) 2001 George Staikos"
+#~ msgstr "(c) 2001 George Staikos"
+
+#, fuzzy
+#~| msgid "(c) 2001 George Staikos"
+#~ msgid "George Staikos"
+#~ msgstr "(c) 2001 George Staikos"
+
+#~ msgid "These changes will only apply to newly started applications."
+#~ msgstr "Olu tshintsho luzakufakwa kwizicelo ezintsha eziqaliweyo."
+
+#~ msgid "SOCKS Support"
+#~ msgstr "Inkxaso ye SOCKS"
+
+#, fuzzy
+#~ msgid "Success: SOCKS was found and initialized."
+#~ msgstr "Impumelelo! SOCKS yafunyanwa kwaye yeenziwa."
+
+#~ msgid "SOCKS could not be loaded."
+#~ msgstr "SOCKS ayinakulayishwa."
+
+#, fuzzy
+#~ msgid ""
+#~ "<h1>SOCKS</h1><p>This module allows you to configure KDE support for a "
+#~ "SOCKS server or proxy.</p><p>SOCKS is a protocol to traverse firewalls as "
+#~ "described in <a href=\"http://rfc.net/rfc1928.html\">RFC 1928</a>.</p> "
+#~ "<p>If you have no idea what this is and if your system administrator does "
+#~ "not tell you to use it, leave it disabled.</p>"
+#~ msgstr ""
+#~ "<h>SOCKS</h1> <p> Lomqongqo womlinganiselo ukuvumela ukuba uqwalasele "
+#~ "inkxaso ye KDE yomncedisi we SOCKS okanye umntu onegunya lokusebenzela "
+#~ "omnye umntu.</p><p>SOCKS ngumthetho olandwelayo kwi firewalls eguqulekayo "
+#~ "njengokuchaziwe kwi <a href=\"http:rfc.net/rfc1928.html\">RFC 1928</a>. "
+#~ "<p> Xa ungayazi ukuba yintoni lena na xa umlawuli enga vumeli ukukuxelela "
+#~ "ukuba yi sebenzise, yishiye ikhubaziwe.</p>"
+
+#~ msgid "&Path:"
+#~ msgstr "&Umendo:"
+
+#~ msgid "This is the list of additional paths that will be searched."
+#~ msgstr "Olu luluhlu lomendo owongezelelweyo ozakuphendlwa."
+
+#~ msgid "Path"
+#~ msgstr "Umendo"
+
+#~ msgid "&Add"
+#~ msgstr "&Yongeza"
+
+#~ msgid "This is the configuration for the samba client only, not the server."
+#~ msgstr "Olu luqwalaselo lomxhasi we samba kuphela, hayi umncedisi."
+
+#, fuzzy
+#~ msgid "&OK"
+#~ msgstr "&SOCKS"
+
+#, fuzzy
+#~ msgid "&Cancel"
+#~ msgstr "&Dante"
+
+#, fuzzy
+#~ msgid "..."
+#~ msgstr "&Entsha..."
+
+#, fuzzy
+#~ msgid "Clear Search"
+#~ msgstr "&Cima Indawo yokugcina ngokufihlakeleyo"

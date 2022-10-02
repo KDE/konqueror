@@ -1,0 +1,233 @@
+<chapter id="bookmarks">
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>José</firstname
+><surname
+>Pires</surname
+><affiliation
+><address
+><email
+>zepires@gmail.com</email
+></address
+></affiliation
+><contrib
+>Tradução</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2010-09-24</date>
+<releaseinfo
+>&kde; 4.5</releaseinfo>
+</chapterinfo>
+
+<title
+>Usar os Favoritos</title>
+
+<para
+>Ainda que você possa usar os favoritos do &konqueror; para guardar as localizações dos seus próprios ficheiros e pastas, estes são mais úteis quando você navega na Web, onde lhe permitem criar uma lista de 'sites' úteis.</para>
+
+<para
+>Para abrir o menu de <guimenu
+>Favoritos</guimenu
+> você poderá tanto carregar com o botão <mousebutton
+>esquerdo</mousebutton
+> no menu de <guimenu
+>Favoritos</guimenu
+>. Logo que a lista esteja visível, você poderá navegar nela com as teclas de cursores ou com o seu rato, carregando depois em &Enter; ou com o botão <mousebutton
+>esquerdo</mousebutton
+> para visitar a localização seleccionada.</para>
+
+<para
+>Para adicionar um novo item à lista use a opção <menuchoice
+><guimenu
+>Favoritos </guimenu
+><guimenuitem
+>Adicionar um Favorito</guimenuitem
+></menuchoice
+> ou <keycombo action="simul"
+>&Ctrl;<keycap
+>B</keycap
+></keycombo
+> ou ainda carregue com o botão <mousebutton
+>direito</mousebutton
+> num espaço em branco na página Web ou na janela dos ficheiros e seleccione <guimenuitem
+>Adicionar Esta Página aos Favoritos</guimenuitem
+> ou <guimenuitem
+>Adicionar Este Local aos Favoritos</guimenuitem
+> no topo do menu.</para>
+
+<para
+>A lista de <guimenu
+>Favoritos</guimenu
+> poderá conter subpastas que contêm outros favoritos; você poderá criar estas pastas com a opção <menuchoice
+><guimenu
+>Favoritos </guimenu
+><guimenuitem
+>Nova Pasta de Favoritos...</guimenuitem
+></menuchoice
+> . Para adicionar um favorito a uma subpasta em vez de o fazer na lista principal de Favoritos, seleccione a pasta na lista de <guimenu
+>Favoritos</guimenu
+> e use o item do menu <guimenuitem
+>Adicionar aos Favoritos</guimenuitem
+> dessa pasta.</para>
+
+<para
+>Você poderá também aceder aos seus favoritos na <link linkend="sidebar"
+> <guilabel
+>Barra Lateral</guilabel
+></link
+> ou na <guilabel
+>Barra de Favoritos</guilabel
+>.</para>
+
+<para
+>Se escrever <userinput
+>bookmarks:/</userinput
+> na barra de localização, aparece a página inicial de favoritos, com uma visão geral sobre todas as pastas e respectivos favoritos.</para
+> 
+
+<sect1 id="orgbmark">
+<title
+>O Editor de Favoritos</title>
+
+<para
+>A opção <menuchoice
+><guimenu
+>Favoritos</guimenu
+><guimenuitem
+>Editar os Favoritos</guimenuitem
+> </menuchoice
+> abre o <guilabel
+>Editor de Favoritos</guilabel
+>.</para>
+<para
+>Isto abre uma árvore com todos os seus favoritos e subpastas de favoritos. Como é normal para as vistas em árvore do &kde;, as subpastas são mostradas com um pequeno quadrado à esquerda com o nome da pasta; se o quadrado tiver um sinal de <keycap
+>+</keycap
+>, ao carregar com o botão <mousebutton
+>esquerdo</mousebutton
+> nele irá expandir o ramo respectivo da árvore para mostrar o conteúdo dessa subpasta e o sinal irá mudar para <keycap
+>-</keycap
+>; se carregar com o botão <mousebutton
+>esquerdo</mousebutton
+> no sinal de <keycap
+>-</keycap
+> irá fechar essa subpasta.</para>
+
+<para
+>Para seleccionar um item na lista você poderá carregar com o botão <mousebutton
+>esquerdo</mousebutton
+> nele, ou poderá percorrer a lista com as teclas de cursores <keysym
+>Cima</keysym
+> e <keysym
+>Baixo</keysym
+> para circular, ou com a tecla  <keysym
+>Direita</keysym
+> para expandir uma subpasta e <keysym
+>Esquerda</keysym
+> para a fechar.</para>
+
+<para
+>Você poderá mudar um item para um local diferente da lista usando o 'Drag and Drop' normal ou com os métodos <guimenuitem
+>Cortar</guimenuitem
+> e <guimenuitem
+> Colar</guimenuitem
+>. A ordem pela qual os itens aparecem no <guilabel
+>Editor de Favoritos</guilabel
+> é a ordem pela qual aparecem na lista de <guimenu
+>Favoritos</guimenu
+>. A opção <menuchoice
+><guimenu
+>Pasta</guimenu
+><guimenuitem
+>Inserir um Separador</guimenuitem
+></menuchoice
+> pode ser usada para introduzir linhas de separação na lista sempre que o desejar.</para>
+
+<para
+>Pode ser criada uma subpasta no ponto seleccionado da lista se usar a opção <guimenuitem
+>Nova Pasta...</guimenuitem
+> no menu <guimenu
+>Pasta</guimenu
+> ou no menu que você obtém se carregar com o botão <mousebutton
+>direito</mousebutton
+> num item da área principal da janela, ou ainda com a combinação de teclas <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </para>
+
+<para
+>Para mudar o nome de um favorito ou de uma pasta seleccione-o e carregue em <keycap
+>F2</keycap
+> ou escolha o item <guimenuitem
+>Mudar o Nome</guimenuitem
+> no menu <guimenu
+>Editar</guimenu
+> ou no menu de contexto que aparece quando você carrega com o botão <mousebutton
+>direito</mousebutton
+> no item. De forma semelhante, poderá editar o &URL; se carregar em <keycap
+>F3</keycap
+> ou seleccionar o item de menu <guimenuitem
+>Mudar a Localização</guimenuitem
+>.</para>
+
+<para
+>O <guilabel
+>Editor de Favoritos</guilabel
+> permite-lhe importar os favoritos de uma gama de outros navegadores para a lista de favoritos do &konqueror;, colocando-os numa nova pasta ou substituindo todos os favoritos actuais. Para o fazer seleccione <guisubmenu
+>Importar</guisubmenu
+> no menu <guimenu
+>Ficheiro</guimenu
+>. A opção <menuchoice
+><guimenu
+>Ficheiro</guimenu
+><guisubmenu
+>Exportar</guisubmenu
+> </menuchoice
+> pode ser usada para exportar os favoritos do &konqueror; para um navegador &Netscape; ou Mozilla.</para>
+
+<para
+>Para seleccionar qual a subpasta de favoritos que é usada para guardar os itens da Barra de Favoritos, seleccione a subpasta e escolha <guimenuitem
+>Seleccionar como Pasta de Ferramentas</guimenuitem
+> no menu <guimenu
+>Pasta</guimenu
+>.</para>
+
+<para
+>Se você está a arrumar os seus favoritos e se esqueceu o que é uma dada página Web, você poderá abri-la facilmente no <guilabel
+> Editor de Favoritos</guilabel
+> ao carregar com o botão <mousebutton
+>direito</mousebutton
+> no item e seleccionar <guimenuitem
+>Abrir no Konqueror</guimenuitem
+> no menu de contexto. Se quiser apenas confirmar se o &URL; é ainda válido, seleccione em alternativa o <guimenuitem
+>Verificar o Estado</guimenuitem
+>.</para>
+
+<note
+><para
+>Todas as suas alterações são gravadas automaticamente quando fechar o <guilabel
+>Editor de Favoritos</guilabel
+>. </para
+></note>
+</sect1
+> 
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

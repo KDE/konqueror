@@ -1,0 +1,93 @@
+# translation of autorefresh.po to Slovak
+# Stanislav Visnovsky <visnovsky@kde.org>, 2003.
+msgid ""
+msgstr ""
+"Project-Id-Version: autorefresh\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2012-01-10 18:42+0100\n"
+"Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
+"Language-Team: Slovak <kde-sk@linux.sk>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.3\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#: autorefresh.cpp:28
+#, kde-format
+msgid "&Auto Refresh"
+msgstr "&Automatická aktualizácia"
+
+#: autorefresh.cpp:32
+#, kde-format
+msgid "None"
+msgstr "Žiadna"
+
+#: autorefresh.cpp:33
+#, kde-format
+msgid "Every 15 Seconds"
+msgstr "Každých 15 sekúnd"
+
+#: autorefresh.cpp:34
+#, kde-format
+msgid "Every 30 Seconds"
+msgstr "Každých 30 sekúnd"
+
+#: autorefresh.cpp:35
+#, kde-format
+msgid "Every Minute"
+msgstr "Každú minútu"
+
+#: autorefresh.cpp:36
+#, kde-format
+msgid "Every 5 Minutes"
+msgstr "Každých 5 minút"
+
+#: autorefresh.cpp:37
+#, kde-format
+msgid "Every 10 Minutes"
+msgstr "Každých 10 minút"
+
+#: autorefresh.cpp:38
+#, kde-format
+msgid "Every 15 Minutes"
+msgstr "Každých 15 minút"
+
+#: autorefresh.cpp:39
+#, kde-format
+msgid "Every 30 Minutes"
+msgstr "Každých 30 minút"
+
+#: autorefresh.cpp:40
+#, kde-format
+msgid "Every 60 Minutes"
+msgstr "Každých 60 minút"
+
+#: autorefresh.cpp:41
+#, kde-format
+msgid "Every 2 Hours"
+msgstr "Každé 2 hodiny"
+
+#: autorefresh.cpp:42
+#, kde-format
+msgid "Every 6 Hours"
+msgstr "Každých 6 hodín"
+
+#: autorefresh.cpp:100
+#, kde-format
+msgctxt "@title:window"
+msgid "Cannot Refresh Source"
+msgstr "Nie je možné obnoviť zdroj"
+
+#: autorefresh.cpp:101
+#, kde-format
+msgid "<qt>This plugin cannot auto-refresh the current part.</qt>"
+msgstr "<qt>Tento modul nedokáže automaticky aktualizovať aktuálnu časť.</qt>"
+
+#. i18n: ectx: Menu (tools)
+#: autorefresh.rc:5
+#, kde-format
+msgid "&Tools"
+msgstr "&Nástroje"

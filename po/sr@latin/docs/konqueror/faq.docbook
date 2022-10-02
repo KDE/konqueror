@@ -1,0 +1,337 @@
+<chapter id="faq">
+<chapterinfo>
+<authorgroup>
+<author
+><personname
+><firstname
+>Pamela</firstname
+> <surname
+>Roberts</surname
+></personname
+></author>
+<othercredit role="translator"
+><firstname
+>Dragan</firstname
+><surname
+>Pantelić</surname
+><affiliation
+><address
+><email
+>falcon-10@gmx.de</email
+></address
+></affiliation
+><contrib
+>prevod</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>24. 10. 2010.</date>
+<releaseinfo
+>KDE 4.5</releaseinfo>
+</chapterinfo>
+
+<title
+>Pitanja i odgovori</title>
+
+<qandaset>
+
+<!-- Link is dead, unfortunately. I suppose this is a more general thing anyway
+<qandaentry>
+<question
+><para
+>How can I browse web sites using non latin
+ scripts?</para
+></question>
+<answer
+><para
+>Detailed instructions can be found at <ulink
+url="http://www.konqueror.org/i18n.html"
+>http://www.konqueror.org/i18n.html</ulink
+></para
+></answer>
+</qandaentry>
+-->
+
+<qandaentry>
+<question
+><para
+>Mogu li da pokrenem <application
+>K‑osvajač</application
+> pod drugim menadžerom prozora?</para
+></question>
+
+<answer
+><para
+>Samo instalirajte Qt, module <literal
+>kdelibs</literal
+> i <literal
+>kdebase</literal
+>, i pokrenite <application
+>K‑osvajač</application
+> iz svog omiljenog menadžera prozora. Trebalo bi normalno da radi, a ako ne (programeri <acronym
+>KDE‑a</acronym
+> ne ispituju često ovaj slučaj), prijavite problem na <ulink url="http://bugs.kde.org"
+>http://bugs.kde.org</ulink
+>; često pomaže i da izvršite <command
+>kdeinit</command
+> pre pokretanja <application
+>K‑osvajača</application
+>.</para
+></answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Gde <application
+>K‑osvajač</application
+> drži svoje postavne podatke?</para
+></question>
+<answer
+><para
+>Uglavnom u fascikli <filename
+>~/.kde</filename
+> (na nekim sistemima može biti i <filename
+>~/.kde4</filename
+>, već prema načinu instaliranja <acronym
+>KDE‑a</acronym
+>). Ne menjajte ručno fajlove u toj fascikli osim ako zaista znate šta radite.</para>
+
+<itemizedlist>
+
+<listitem
+><para
+>Fascikla <filename class="directory"
+>~/.kde/share/apps/konqueror/profiles</filename
+> sadrži pojedinačne fajlove sa postavkama za svaki od <link linkend="save-settings"
+>profila</link
+>.</para
+></listitem>
+
+<listitem
+><para
+>Obeleživači se drže u <filename class="directory"
+>~/.kde/share/apps/konqueror/bookmarks.xml</filename
+></para
+></listitem>
+<listitem
+><para
+>Kolačići se drže u <filename class="directory"
+>~/.kde/share/apps/kcookiejar/cookies</filename
+></para
+></listitem>
+<listitem
+><para
+>Istorijat, koji se koristi za mogućnost samodopune, nalazi se u <filename
+>~/.kde/share/config/konq_history</filename
+></para
+></listitem>
+
+<listitem
+><para
+>U fascikli <filename class="directory"
+>~/.kde/share/config/</filename
+>, fajlovi <filename
+>konqiconviewrc</filename
+>, <filename
+>konqlistviewrc</filename
+> i <filename
+>konquerorrc</filename
+> sadrže mnošto opštih postavki.</para
+></listitem>
+
+<listitem
+><para
+>Fascikla <filename class="directory"
+>~/.kde/share/cache-<replaceable
+>ime‑domaćina</replaceable
+>/http/</filename
+> sadrži keš pregledača.</para
+></listitem>
+
+<listitem
+><para
+>Bočna traka koristi fajlove i potfascikle u <filename class="directory"
+>~/.kde/share/apps/konqsidebartng</filename
+></para
+></listitem>
+</itemizedlist>
+
+<para
+>Sve postavke posebne po fascikli stavljaju se u <literal role="extension"
+>.directory</literal
+> fajlove u datim fasciklama.</para
+></answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Kako mogu da očistim fajl istorijata?</para
+></question>
+<answer
+><para
+>Postoje dva „istorijata“:</para>
+<itemizedlist>
+<listitem
+><para
+>Jedan se koristi za dopunu teksta u polju unosa trake lokacije. Da očistite ovaj, kliknite <mousebutton
+>desnim</mousebutton
+> na polje unosa i odaberite <guimenuitem
+>Očisti istorijat</guimenuitem
+>.</para>
+</listitem>
+<listitem
+><para
+>Drugi je dnevnik posećenih lokacija. Izaberite stranicu istorijata u bočnoj traci, kliknite <mousebutton
+>desnim</mousebutton
+> na neki unos i odaberite <guimenuitem
+>Ukloni stavku</guimenuitem
+> (<keycap
+>Del</keycap
+>) da uklonite samo taj unos, ili <guimenuitem
+>Očisti istorijat</guimenuitem
+> da uklonite sve unose.</para
+></listitem>
+</itemizedlist>
+<note
+><para
+>Takođe možete upotrebiti program Čistač (iz modula <literal
+>kdeutils</literal
+>), koji omogućava čišćenje kolačića, favikona, veb istorijata i keša, dopuna formulara i smernica keširanja za posećene veb sajtove.</para
+></note>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Kako da uključim, isključim ili očistim keš pregledača?</para
+></question
+> <answer>
+<para
+>Ako odaberete <menuchoice
+><guimenu
+>Pregledanje Weba</guimenu
+><guimenuitem
+>Keš</guimenuitem
+> </menuchoice
+> u dijalogu pokrenutom putem <menuchoice
+><guimenu
+>Podešavanje</guimenu
+><guimenuitem
+>Podesi K‑osvajač...</guimenuitem
+></menuchoice
+>, dobićete dijalog koji vam dopušta da isključite keš, očistite ga ili mu podesite veličinu, i izmenite smernice keširanja.</para>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Kako mogu da izmenim vrednosti prekovremena koja <application
+>K‑osvajač</application
+> koristi pri pregledanju Weba?</para
+></question
+> <answer>
+<para
+>U Sistemskim postavkama, kategorija <guilabel
+>Mreža i povezivost</guilabel
+> na stranici <menuchoice
+><guimenu
+>Mrežne postavke</guimenu
+> <guimenuitem
+>Postavke povezivanja</guimenuitem
+></menuchoice
+>.</para>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Kako postavljam svoju „domaću“ stranicu — onu koja se učitava po pokretanju?</para
+></question>
+<answer
+><para
+><application
+>K‑osvajač</application
+> ima „domaću fasciklu“ u režimu menadžera fajlova, a „domaću stranicu“ u režimu pregledača.</para>
+
+<para
+>Ove postavke možete izmeniti pokretanjem <menuchoice
+><guimenu
+>Podešavanje</guimenu
+><guimenuitem
+>Podesi K‑osvajač...</guimenuitem
+><guilabel
+>Opšte</guilabel
+></menuchoice
+>.</para>
+
+<para
+><application
+>K‑osvajačevu</application
+> početnu stranicu u režimu menadžera fajlova zadajete preko padajućeg spiska <guilabel
+>K‑osvajač kreće od:</guilabel
+>, izborom jednog od <guilabel
+>uvodne stranice</guilabel
+>, <guilabel
+>moje domaće stranice</guilabel
+>, <guilabel
+>prazne stranice</guilabel
+> ili <guilabel
+>mojih obeleživača</guilabel
+>.</para>
+
+<para
+>U režimu pregledača, <application
+>K‑osvajač</application
+> se pokreće sa unosom pod <guilabel
+>Domaća stranica:</guilabel
+>.</para>
+
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Ovde ne mogu da nađem odgovor na moje pitanje.</para
+></question
+> 
+<answer>
+<para
+>Pogledajte <ulink url="http://www.konqueror.org/faq.html"
+> http://www.konqueror.org/faq.html</ulink
+> ili <ulink url="http://www.konqueror.org/konq-java.html"
+> http://www.konqueror.org/konq-java.html</ulink
+>.</para>
+<para
+>Više informacija možete naći na <ulink url="http://forum.kde.org/"
+>Forumu zajednice <acronym
+>KDE‑a</acronym
+></ulink
+> i na <ulink url="http://userbase.kde.org/Konqueror"
+><application
+>K‑osvajačevoj</application
+> stranici na Korisničkoj bazi KDE‑a.</ulink
+>.</para>
+</answer>
+</qandaentry>
+
+</qandaset>
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

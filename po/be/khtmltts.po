@@ -1,0 +1,71 @@
+# translation of khtmlkttsd.po to Belarusian
+#
+# Darafei Praliaskouski <symbol@akeeri.tk>, 2006.
+# Darafei Praliaskouski <komzpa@licei2.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: khtmlkttsd\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2007-08-13 07:14+0000\n"
+"Last-Translator: Darafei Praliaskouski <komzpa@licei2.com>\n"
+"Language-Team: Belarusian <i18n@mova.org>\n"
+"Language: be\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || n%10>=5 && n%10<=9 || n"
+"%100>=11 && n%100<=14 ? 2 : 3);\n"
+
+#: khtmltts.cpp:33
+#, kde-format
+msgid "&Speak Text"
+msgstr "&Прагаварыць тэкст"
+
+#. i18n: ectx: Menu (tools)
+#: khtmlttsplugin.rc:5
+#, kde-format
+msgid "&Tools"
+msgstr "Н&ачынне"
+
+#. i18n: ectx: ToolBar (speechToolbar)
+#: khtmlttsplugin.rc:10
+#, kde-format
+msgid "Speech Toolbar"
+msgstr "Панель прагаворвання"
+
+#, fuzzy
+#~| msgid "The D-Bus call startText failed."
+#~ msgid "The D-Bus call say() failed."
+#~ msgstr "Выклік D-Bus startText немагчымы."
+
+#, fuzzy
+#~| msgid "D-Bus Call Failed"
+#~ msgctxt "@title:window"
+#~ msgid "D-Bus Call Failed"
+#~ msgstr "Выклік D-Bus немагчымы"
+
+#~ msgid "Starting KTTSD Failed"
+#~ msgstr "Запуск KTTSD немагчымы"
+
+#, fuzzy
+#~| msgid ""
+#~| "You cannot read anything except web pages with\n"
+#~| "this plugin, sorry."
+#~ msgid "You cannot read anything except web pages with this plugin."
+#~ msgstr ""
+#~ "Вы не можаце чытаць нічога, акрамя вэб-старонак\n"
+#~ "пры дапамозе гэтай утулкі, прабачце."
+
+#, fuzzy
+#~| msgid "Cannot Read source"
+#~ msgid "Cannot Read Source"
+#~ msgstr "Немагчыма прачытаць"
+
+#~ msgid "The D-Bus call supportsMarkup failed."
+#~ msgstr "Выклік D-Bus supportsMarkup немагчымы."
+
+#~ msgid "The D-Bus call setText failed."
+#~ msgstr "Выклік D-Bus setText немагчымы."

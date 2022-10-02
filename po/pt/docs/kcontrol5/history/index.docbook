@@ -1,0 +1,95 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Portuguese "INCLUDE">
+]>
+<article id="history" lang="&language;">
+<title
+>Barra Lateral do Histórico</title>
+<articleinfo>
+<authorgroup>
+<author
+>&Burkhard.Lueck;</author>
+<othercredit role="translator"
+><firstname
+>José</firstname
+><surname
+>Pires</surname
+><affiliation
+><address
+><email
+>zepires@gmail.com</email
+></address
+></affiliation
+><contrib
+>Tradução</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2009-11-24</date>
+<releaseinfo
+>&kde; 4.4</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Systemsettings</keyword>
+<keyword
+>histórico</keyword>
+</keywordset>
+</articleinfo>
+
+<para
+>Esta janela permite-lhe configurar a barra lateral do histórico. </para>
+
+<variablelist>
+<varlistentry
+><term
+><guilabel
+>Limites</guilabel
+></term>
+<listitem
+><para
+>As opções nesta secção poderão ser usadas para definir o tamanho máximo do seu histórico e definir um período, após o qual os itens serão automaticamente removidos. </para
+></listitem>
+</varlistentry>
+
+<varlistentry
+><term
+><guilabel
+>Tipo de Letra Personalizado</guilabel
+></term>
+<listitem
+><para
+>Aqui poderá definir também alguns tipos de letra diferentes para os &URL;'s antigos e novos, seleccionando o botão <guibutton
+>Escolher o Tipo de Letra</guibutton
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry
+><term
+><guilabel
+>Detalhes</guilabel
+></term>
+<listitem
+><para
+>A opção <guilabel
+>Dicas detalhadas</guilabel
+> controla a quantidade de informação que é apresentada ao passar o cursor do rato sobre um item da página de histórico.</para>
+<para
+>Se estiver assinalada, é apresentado o número de visitas, bem como as datas da primeira e última visita, para além do URL.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Se seleccionar a opção <guibutton
+>Limpar o Histórico</guibutton
+>, irá apagar toda a informação histórica. </para>
+</article>

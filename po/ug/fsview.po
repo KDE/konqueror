@@ -1,0 +1,426 @@
+# Uyghur translation for fsview.
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Sahran <sahran.ug@gmail.com>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: fsview\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"PO-Revision-Date: 2013-09-08 07:04+0900\n"
+"Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
+"Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
+"Language: ug\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "ئابدۇقادىر ئابلىز, غەيرەت كەنجى"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "sahran.ug@gmail.com,  gheyret@gmail.com"
+
+#: fsview.cpp:35 fsview.cpp:413
+#, kde-format
+msgid "Name"
+msgstr "ئاتى"
+
+#: fsview.cpp:36
+#, kde-format
+msgid "Size"
+msgstr "چوڭلۇقى"
+
+#: fsview.cpp:37
+#, kde-format
+msgid "File Count"
+msgstr "ھۆججەت سانى"
+
+#: fsview.cpp:38
+#, kde-format
+msgid "Directory Count"
+msgstr "مۇندەرىجە سانى"
+
+#: fsview.cpp:39
+#, kde-format
+msgid "Last Modified"
+msgstr "ئاخىرقى ئۆزگەرتىش"
+
+#: fsview.cpp:40 fsview.cpp:414
+#, kde-format
+msgid "Owner"
+msgstr "ئىگىسى"
+
+#: fsview.cpp:41 fsview.cpp:415
+#, kde-format
+msgid "Group"
+msgstr "گۇرۇپپا"
+
+#: fsview.cpp:42 fsview.cpp:416
+#, kde-format
+msgid "Mime Type"
+msgstr "MIME تىپى"
+
+#: fsview.cpp:283
+#, kde-format
+msgid "Go To"
+msgstr "يۆتكەل"
+
+#: fsview.cpp:284 fsview_part.cpp:106
+#, kde-format
+msgid "Stop at Depth"
+msgstr "توختاش چوڭقۇرلۇقى"
+
+#: fsview.cpp:285 fsview_part.cpp:103
+#, kde-format
+msgid "Stop at Area"
+msgstr "توختاش رايونى"
+
+#: fsview.cpp:286
+#, kde-format
+msgid "Stop at Name"
+msgstr "توختاش ئاتى"
+
+#: fsview.cpp:292
+#, kde-format
+msgid "Go Up"
+msgstr "يۇقىرىغا يۆتكەل"
+
+#: fsview.cpp:294
+#, kde-format
+msgid "Stop Refresh"
+msgstr "يېڭىلاشنى توختات"
+
+#: fsview.cpp:296
+#, kde-format
+msgid "Refresh"
+msgstr "يېڭىلا"
+
+#: fsview.cpp:301
+#, kde-format
+msgid "Refresh '%1'"
+msgstr "'%1' نى يېڭىلا"
+
+#: fsview.cpp:313 fsview_part.cpp:113
+#, kde-format
+msgid "Color Mode"
+msgstr "رەڭلىك"
+
+#: fsview.cpp:316 fsview_part.cpp:109
+#, kde-format
+msgid "Visualization"
+msgstr "كۆرۈنۈشچان ئۈنۈم"
+
+#: fsview.cpp:411
+#, kde-format
+msgid "None"
+msgstr "يوق"
+
+#: fsview.cpp:412
+#, kde-format
+msgid "Depth"
+msgstr "چوڭقۇرلۇقى"
+
+#: fsview_part.cpp:69
+#, kde-format
+msgid "Read 1 folder, in %2"
+msgid_plural "Read %1 folders, in %2"
+msgstr[0] "%2 دىكى %1 قىسقۇچنى ئوقۇدى"
+
+#: fsview_part.cpp:73
+#, kde-format
+msgid "1 folder"
+msgid_plural "%1 folders"
+msgstr[0] "%1 قىسقۇچ"
+
+#: fsview_part.cpp:87
+#, kde-format
+msgid ""
+"<p>This is the FSView plugin, a graphical browsing mode showing filesystem "
+"utilization by using a tree map visualization.</p><p>Note that in this mode, "
+"automatic updating when filesystem changes are made is intentionally <b>not</"
+"b> done.</p><p>For details on usage and options available, see the online "
+"help under menu 'Help/FSView Manual'.</p>"
+msgstr ""
+"<p>بۇ FSView قىستۇرما، ئۇ شاخسىمان كۆرۈنۈشتە ھۆججەت  سىستېمىسىنىڭ ئىشلىتىلىش "
+"ھالىتىنى كۆرسىتىدۇ.</p><p>بۇ ئۇسۇلدا ھۆججەت سىستېمىسى ئۆزگەرگەن ۋاقىتتا "
+"ئالاھىدە ئۆزلۈكىدىن يېڭىلىنىپ كۆرسىتىلمەيدۇ</p><p> ئىشلىتىش ئۇسۇلى ۋە "
+"ئىشلىتىشكە بولىدىغان تاللانمىغا ئائىت تەپسىلاتلارنى توردىكى ياردەم«ياردەم/"
+"FSView قوللانما»دىن كۆرۈڭ.</p>"
+
+#: fsview_part.cpp:119
+#, kde-format
+msgid "&FSView Manual"
+msgstr "FSView قوللانما(&F)"
+
+#: fsview_part.cpp:121
+#, kde-format
+msgid "Show FSView manual"
+msgstr "FSView قوللانما كۆرسەت"
+
+#: fsview_part.cpp:122
+#, kde-format
+msgid "Opens the help browser with the FSView documentation"
+msgstr "FSView ياردەم توركۆرگۈدە پۈتۈك ئاچىدۇ"
+
+#: fsview_part.cpp:154
+#, kde-format
+msgctxt "@action:inmenu File"
+msgid "Move to Trash"
+msgstr "ئەخلەتخانىغا يۆتكە"
+
+#: fsview_part.cpp:161
+#, kde-format
+msgctxt "@action:inmenu File"
+msgid "Delete"
+msgstr "ئۆچۈر"
+
+#: fsview_part.cpp:166
+#, kde-format
+msgctxt "@action:inmenu Edit"
+msgid "&Edit File Type..."
+msgstr "ھۆججەت تىپىنى تەھرىرلە(&E)…"
+
+#: fsview_part.cpp:170
+#, kde-format
+msgctxt "@action:inmenu File"
+msgid "Properties"
+msgstr "خاسلىق"
+
+#: fsview_part.cpp:203
+#, kde-format
+msgid ""
+"FSView intentionally does not support automatic updates when changes are "
+"made to files or directories, currently visible in FSView, from the "
+"outside.\n"
+"For details, see the 'Help/FSView Manual'."
+msgstr ""
+"FSView مەقسەتلىك ھالدا ھۆججەت ياكى قىسقۇچ سىرتقى پروگرامما تەرىپىدىن "
+"يېڭىلانغاندا ئۆزلۈكىدىن يېڭىلاپ كۆرسىتىشنى قوللىمايدۇ، تەپسىلاتىنى «ياردەم/"
+"FSView قوللانما»دىن كۆرۈڭ."
+
+#. i18n: ectx: Menu (edit)
+#: fsview_part.rc:4
+#, kde-format
+msgid "&Edit"
+msgstr "تەھرىر(&E)"
+
+#. i18n: ectx: Menu (view)
+#: fsview_part.rc:13
+#, kde-format
+msgid "&View"
+msgstr "كۆرۈنۈش(&V)"
+
+#. i18n: ectx: Menu (help)
+#: fsview_part.rc:20
+#, kde-format
+msgid "&Help"
+msgstr "ياردەم(&H)"
+
+#: main.cpp:23
+#, kde-format
+msgid "FSView"
+msgstr "FSView"
+
+#: main.cpp:24
+#, kde-format
+msgid "Filesystem Viewer"
+msgstr "ھۆججەت سىستېمىسىنى كۆرگۈچ"
+
+#: main.cpp:26
+#, kde-format
+msgid "(c) 2002, Josef Weidendorfer"
+msgstr "(c) 2002, Josef Weidendorfer"
+
+#: main.cpp:33
+#, kde-format
+msgid "View filesystem starting from this folder"
+msgstr "بۇ قىسقۇچتىن باشلاپ ھۆججەت  سىستېمىسىنى كۆرسەت"
+
+#: treemap.cpp:1436
+#, kde-format
+msgid "Text %1"
+msgstr "تېكىست %1"
+
+#: treemap.cpp:3163
+#, kde-format
+msgid "Recursive Bisection"
+msgstr "قايتىلانما تەڭ بۆلۈش"
+
+#: treemap.cpp:3165
+#, kde-format
+msgid "Columns"
+msgstr "ئىستونلار"
+
+#: treemap.cpp:3167
+#, kde-format
+msgid "Rows"
+msgstr "قۇرلار"
+
+#: treemap.cpp:3169
+#, kde-format
+msgid "Always Best"
+msgstr "ھەمىشە ئەڭ ياخشى"
+
+#: treemap.cpp:3171
+#, kde-format
+msgid "Best"
+msgstr "ئەڭ ياخشى"
+
+#: treemap.cpp:3173
+#, kde-format
+msgid "Alternate (V)"
+msgstr "زاپاس (بويىغا)"
+
+#: treemap.cpp:3175
+#, kde-format
+msgid "Alternate (H)"
+msgstr "زاپاس (توغرىسىغا)"
+
+#: treemap.cpp:3177
+#, kde-format
+msgid "Horizontal"
+msgstr "توغرا"
+
+#: treemap.cpp:3179
+#, kde-format
+msgid "Vertical"
+msgstr "تىك"
+
+#: treemap.cpp:3231
+#, kde-format
+msgid "Nesting"
+msgstr "گىرەلەشمە"
+
+#: treemap.cpp:3235
+#, kde-format
+msgid "Border"
+msgstr "گىرۋەك"
+
+#: treemap.cpp:3238
+#, kde-format
+msgid "Correct Borders Only"
+msgstr "گىرۋەككە توغرىلىنىدۇ"
+
+#: treemap.cpp:3241
+#, kde-format
+msgid "Width %1"
+msgstr "كەڭلىك %1"
+
+#: treemap.cpp:3244
+#, kde-format
+msgid "Allow Rotation"
+msgstr "چۆرگىلەشكە ئىجازەت"
+
+#: treemap.cpp:3245
+#, kde-format
+msgid "Shading"
+msgstr "سايىلەش"
+
+#: treemap.cpp:3256
+#, kde-format
+msgid "Visible"
+msgstr "كۆرۈنۈشچان"
+
+#: treemap.cpp:3257
+#, kde-format
+msgid "Take Space From Children"
+msgstr "تارماق كۆزنەكتىن بوشلۇققا ئېرىش"
+
+#: treemap.cpp:3261
+#, kde-format
+msgid "Top Left"
+msgstr "سول ئۈستى"
+
+#: treemap.cpp:3264
+#, kde-format
+msgid "Top Center"
+msgstr "ئوتتۇرا ئۈستى"
+
+#: treemap.cpp:3267
+#, kde-format
+msgid "Top Right"
+msgstr "ئوڭ ئۈستى"
+
+#: treemap.cpp:3270
+#, kde-format
+msgid "Bottom Left"
+msgstr "سول ئاستى"
+
+#: treemap.cpp:3273
+#, kde-format
+msgid "Bottom Center"
+msgstr "ئاستى ئوتتۇرا"
+
+#: treemap.cpp:3276
+#, kde-format
+msgid "Bottom Right"
+msgstr "ئوڭ ئاستى"
+
+#: treemap.cpp:3343
+#, kde-format
+msgid "No %1 Limit"
+msgstr "%1 چەكلىمە يوق"
+
+#: treemap.cpp:3402
+#, kde-format
+msgid "No Area Limit"
+msgstr "يۈز چەكلىمىسى يوق"
+
+#: treemap.cpp:3408
+#, kde-format
+msgid "Area of '%1' (%2)"
+msgstr "'%1' (%2) نىڭ يۈزى"
+
+#: treemap.cpp:3420 treemap.cpp:3433
+#, kde-format
+msgid "1 Pixel"
+msgid_plural "%1 Pixels"
+msgstr[0] "%1 پىكسېل"
+
+#: treemap.cpp:3437
+#, kde-format
+msgid "Double Area Limit (to %1)"
+msgstr "يۈز چەكلىمىسى ھەسسىلەپ ئارتىش(%1 غىچە)"
+
+#: treemap.cpp:3439
+#, kde-format
+msgid "Halve Area Limit (to %1)"
+msgstr "يۈز چەكلىمىسى ھەسسىلەپ كېمىيىش(%1 غىچە)"
+
+#: treemap.cpp:3475
+#, kde-format
+msgid "No Depth Limit"
+msgstr "چوڭقۇرلۇق چەكلىمىسى يوق"
+
+#: treemap.cpp:3481
+#, kde-format
+msgid "Depth of '%1' (%2)"
+msgstr "'%1' (%2) نىڭ چوڭقۇرلۇقى"
+
+#: treemap.cpp:3493 treemap.cpp:3506
+#, kde-format
+msgid "Depth %1"
+msgstr "چوڭقۇرلۇقى %1"
+
+#: treemap.cpp:3510
+#, kde-format
+msgid "Decrement (to %1)"
+msgstr "كېمەيت (%1)"
+
+#: treemap.cpp:3512
+#, kde-format
+msgid "Increment (to %1)"
+msgstr "ئاشۇر (%1)"
+
+#~ msgid "Filesystem Utilization Viewer"
+#~ msgstr "ھۆججەت سىستېمىسى ئىشلىتىش ئۈنۈمدارلىقىنى كۆرگۈچ"
+
+#~ msgid "(c) 2003-2005, Josef Weidendorfer"
+#~ msgstr "(c) 2003-2005, Josef Weidendorfer"

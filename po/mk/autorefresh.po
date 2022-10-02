@@ -1,0 +1,99 @@
+# Copyright (C) 2006, 2007, 2009 Free Software Foundation, Inc.
+# translation of autorefresh.po to Macedonian
+#
+# Bozidar Proevski <bobibobi@freemail.com.mk>, 2006, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: autorefresh\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2009-01-01 22:44+0100\n"
+"Last-Translator: Bozidar Proevski <bobibobi@freemail.com.mk>\n"
+"Language-Team: Macedonian <mkde-l10n@lists.sourceforge.net>\n"
+"Language: mk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: Plural-Forms: nplurals=3; plural=n%10==1 ? 0 : n%10==2 ? 1 : "
+"2;\n"
+
+#: autorefresh.cpp:28
+#, kde-format
+msgid "&Auto Refresh"
+msgstr "Освежи &автоматски"
+
+#: autorefresh.cpp:32
+#, kde-format
+msgid "None"
+msgstr "Нема"
+
+#: autorefresh.cpp:33
+#, kde-format
+msgid "Every 15 Seconds"
+msgstr "На секои 15 секунди"
+
+#: autorefresh.cpp:34
+#, kde-format
+msgid "Every 30 Seconds"
+msgstr "На секои 30 секунди"
+
+#: autorefresh.cpp:35
+#, kde-format
+msgid "Every Minute"
+msgstr "На секоја минута"
+
+#: autorefresh.cpp:36
+#, kde-format
+msgid "Every 5 Minutes"
+msgstr "На секои 5 минути"
+
+#: autorefresh.cpp:37
+#, kde-format
+msgid "Every 10 Minutes"
+msgstr "На секои 10 минути"
+
+#: autorefresh.cpp:38
+#, kde-format
+msgid "Every 15 Minutes"
+msgstr "На секои 15 минути"
+
+#: autorefresh.cpp:39
+#, kde-format
+msgid "Every 30 Minutes"
+msgstr "На секои 30 минути"
+
+#: autorefresh.cpp:40
+#, kde-format
+msgid "Every 60 Minutes"
+msgstr "На секои 60 минути"
+
+#: autorefresh.cpp:41
+#, fuzzy, kde-format
+#| msgid "Every 5 Minutes"
+msgid "Every 2 Hours"
+msgstr "На секои 5 минути"
+
+#: autorefresh.cpp:42
+#, fuzzy, kde-format
+#| msgid "Every 60 Minutes"
+msgid "Every 6 Hours"
+msgstr "На секои 60 минути"
+
+#: autorefresh.cpp:100
+#, fuzzy, kde-format
+#| msgid "Cannot Refresh Source"
+msgctxt "@title:window"
+msgid "Cannot Refresh Source"
+msgstr "Не може да се освежи изворот"
+
+#: autorefresh.cpp:101
+#, kde-format
+msgid "<qt>This plugin cannot auto-refresh the current part.</qt>"
+msgstr "<qt>Овој приклучок не може автоматски да го освежи тековниот дел.</qt>"
+
+#. i18n: ectx: Menu (tools)
+#: autorefresh.rc:5
+#, kde-format
+msgid "&Tools"
+msgstr "Ала&тки"

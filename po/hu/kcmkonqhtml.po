@@ -1,0 +1,2406 @@
+#
+# Marcell Lengyel <miketkf@yahoo.com>, 1999.
+# Kristóf Kiszel <ulysses@kubuntu.org>, 2010, 2011, 2012.
+# Kiszel Kristóf <kiszel.kristof@gmail.com>, 2017.
+msgid ""
+msgstr ""
+"Project-Id-Version: KDE 4.3\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-24 00:46+0000\n"
+"PO-Revision-Date: 2017-03-01 17:41+0100\n"
+"Last-Translator: Kiszel Kristóf <kiszel.kristof@gmail.com>\n"
+"Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 2.0\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Kiszel Kristóf,Szántó Tamás"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "ulysses@kubuntu.org,tszanto@interware.hu"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pShowMMBInTabs)
+#: advancedTabOptions.ui:21
+#, kde-format
+msgid ""
+"This will open a new tab instead of a new window in various situations, such "
+"as choosing a link or a folder with the middle mouse button."
+msgstr ""
+"Ha ez be van jelölve, akkor új ablak helyett új lapon jelennek meg az "
+"adatok, ha rákattint egy linkre vagy a középső egérgombbal kiválaszt egy "
+"mappát."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pShowMMBInTabs)
+#: advancedTabOptions.ui:24
+#, kde-format
+msgid "Open &links in new tab instead of in new window"
+msgstr "A linkek megnyitása új l&apon történjen, ne új ablakban"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPopupsWithinTabs)
+#: advancedTabOptions.ui:31
+#, kde-format
+msgid ""
+"Whether or not JavaScript popups if allowed shall open in a new tab or in a "
+"new window."
+msgstr ""
+"A JavaScript-es ablakok új ablak helyett új lapon fognak megnyílni (ha "
+"engedélyezve vannak egyáltalán)."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pPopupsWithinTabs)
+#: advancedTabOptions.ui:34
+#, kde-format
+msgid "Open pop&ups in new tab instead of in new window"
+msgstr "A felbukkanó ablakok új l&apon nyíljanak meg, ne új ablakban"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pKonquerorTabforExternalURL)
+#: advancedTabOptions.ui:41
+#, kde-format
+msgid ""
+"When you click a URL in another KDE program or call kfmclient to open a URL, "
+"the current desktop will be searched for a non-minimized Konqueror and, if "
+"found, the URL opened as a new tab within it. Otherwise a new Konqueror "
+"window will be opened with the required URL."
+msgstr ""
+"Ha egy másik KDE programban rákattint egy URL-re vagy a kfmclient "
+"segítségével megnyit egy URL-t, és az aktuális munkaasztalon meg van nyitva "
+"egy nem minimalizált Konqueror példány, akkor a cím abban a böngészőben fog "
+"megjelenni, új lapon. Máskülönben új Konqueror példány indul el."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pKonquerorTabforExternalURL)
+#: advancedTabOptions.ui:44
+#, kde-format
+msgid "Open as tab in existing Konqueror when URL is called externally"
+msgstr ""
+"Külső meghívásnál az új oldal lapként jelenjen meg, ha a Konqueror már meg "
+"van nyitva"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pNewTabsInBackground)
+#: advancedTabOptions.ui:51
+#, kde-format
+msgid ""
+"This will open a new tab in the background, instead of in the foreground."
+msgstr ""
+"Ennek hatására a megnyitott lap a háttérben marad, nem kerül az előtérbe."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
+#: advancedTabOptions.ui:54
+#, kde-format
+msgid "O&pen new tabs in the background"
+msgstr "Az új lapok a &háttérben legyenek megnyitva"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pOpenAfterCurrentPage)
+#: advancedTabOptions.ui:61
+#, kde-format
+msgid ""
+"This will open a new tab opened from a page after the current tab, instead "
+"of after the last tab."
+msgstr ""
+"Ennek hatására az új lapok mindig az aktuális lap után kerülnek (ha nincs "
+"bejelölve, akkor az utolsó lap után)."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pOpenAfterCurrentPage)
+#: advancedTabOptions.ui:64
+#, kde-format
+msgid "Open &new tab after current tab"
+msgstr "Az új lap mindig az aktuális &után nyíljon meg"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pDynamicTabbarHide)
+#: advancedTabOptions.ui:71
+#, kde-format
+msgid ""
+"This will display the tab bar only if there are two or more tabs. Otherwise "
+"it will always be displayed."
+msgstr ""
+"Ha ez az opció be van jelölve, akkor csak abban az esetben fog látszódni a "
+"lapok sávja, ha legalább két lap meg van nyitva. Ha nincs bejelölve, akkor a "
+"sáv mindig látszani fog."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pDynamicTabbarHide)
+#: advancedTabOptions.ui:74
+#, kde-format
+msgid "Hide the tab bar when only one tab is open"
+msgstr "A lapok sávja ne látszódjon, ha csak egy lap van megnyitva"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
+#: advancedTabOptions.ui:81
+#, kde-format
+msgid "This will display close buttons inside each tab."
+msgstr "Minden lapon megjeleníti a bezárógombot."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pPermanentCloseButton)
+#: advancedTabOptions.ui:84
+#, kde-format
+msgid "&Show close button on tabs"
+msgstr "Be&záró gomb a lapok fülén"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pMiddleClickClose)
+#: advancedTabOptions.ui:91
+#, kde-format
+msgid ""
+"When you click on a tab using the middle mouse button or mouse wheel, it "
+"will close that tab."
+msgstr ""
+"Ha a középső egérgombbal vagy a görgővel kattint egy lapra, a lap bezáródik."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pMiddleClickClose)
+#: advancedTabOptions.ui:94
+#, kde-format
+msgid "Middle-click on a tab to close it"
+msgstr "A középső gombbal bezárhatók a lapok"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabConfirm)
+#: advancedTabOptions.ui:101
+#, kde-format
+msgid ""
+"This will ask you whether you are sure you want to close a window when it "
+"has multiple tabs opened in it."
+msgstr ""
+"Ennek hatására a program több lapot tartalmazó ablak bezárása előtt "
+"megkérdezi, hogy biztosan be akarja-e zárni az ablakot."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pTabConfirm)
+#: advancedTabOptions.ui:104
+#, kde-format
+msgid "Confirm &when closing windows with multiple tabs"
+msgstr ""
+"Mege&rősítést kell kérni több lapot tartalmazó böngészőablak bezárása előtt"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabCloseActivatePrevious)
+#: advancedTabOptions.ui:111
+#, kde-format
+msgid ""
+"When checking this the previous used or opened tab will be activated when "
+"you close the current active tab instead of the one right to the current tab."
+msgstr ""
+"Ha bejelöli ezt az opciót, az előző lap válik aktívvá az aktuális lap "
+"bezárásakor, nem pedig a következő (jobbra eső) lap."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pTabCloseActivatePrevious)
+#: advancedTabOptions.ui:114
+#, kde-format
+msgid "Activate previously used tab when closing the current tab"
+msgstr "Az aktuális lap bezárásakor az utoljára megnézett lap váljon aktívvá"
+
+#: appearance.cpp:39
+#, kde-format
+msgctxt "@title:tab"
+msgid "General"
+msgstr "Általános"
+
+#: appearance.cpp:40
+#, kde-format
+msgctxt "@title:tab"
+msgid "Fonts"
+msgstr "Betűtípusok"
+
+#: appearance.cpp:41
+#, kde-format
+msgctxt "@title:tab"
+msgid "Stylesheets"
+msgstr "Stíluslapok"
+
+#. i18n: ectx: property (title), widget (QGroupBox, GroupBox3_2)
+#: appearance.cpp:48 css/csscustom.ui:296
+#, kde-format
+msgid "Images"
+msgstr "Képek"
+
+#: appearance.cpp:52
+#, kde-format
+msgid "A&utomatically load images"
+msgstr "A képek a&utomatikus betöltése"
+
+#: appearance.cpp:53
+#, kde-format
+msgid ""
+"<html>If this box is checked, Konqueror will automatically load any images "
+"that are embedded in a web page. Otherwise, it will display placeholders for "
+"the images, and you can then manually load the images by clicking on the "
+"image button.<br />Unless you have a very slow network connection, you will "
+"probably want to check this box to enhance your browsing experience.</html>"
+msgstr ""
+"<html>Ha ez be van jelölve, a Konqueror automatikusan letölti a HTML lapokba "
+"ágyazott képeket. Ha nem, akkor csak a képek helyét mutatja meg (ha a kép "
+"gombjára kattint, a kép letöltődik). <br />Ha elfogadható sebességű hálózati "
+"kapcsolattal rendelkezik, akkor célszerű bejelölve hagyni a kényelmes "
+"böngészés érdekében.</html>"
+
+#: appearance.cpp:63
+#, kde-format
+msgid "Dra&w frame around not completely loaded images"
+msgstr "Keret &rajzolása a még nem teljesen letöltött képek helyén"
+
+#: appearance.cpp:64
+#, kde-format
+msgid ""
+"<html>If this box is checked, Konqueror will draw a frame as a placeholder "
+"around images embedded in a web page that are not yet fully loaded.<br />You "
+"will probably want to check this box to enhance your browsing experience, "
+"especially if have a slow network connection.</html>"
+msgstr ""
+"<html>Ha be van jelölve, a Konqueror keretet rajzol a weblapokba ágyazott "
+"képek helyén, amíg a kép le nem töltődik teljesen.<br />Ha lassú "
+"internetkapcsolattal rendelkezik, akkor célszerű bejelölve hagyni a "
+"kényelmes böngészés érdekében.</html>"
+
+#: appearance.cpp:74
+#, kde-format
+msgctxt "animations"
+msgid "Enabled"
+msgstr "igen"
+
+#: appearance.cpp:75
+#, kde-format
+msgctxt "animations"
+msgid "Disabled"
+msgstr "nem"
+
+#: appearance.cpp:76
+#, kde-format
+msgid "Show Only Once"
+msgstr "csak egyszer"
+
+#: appearance.cpp:77
+#, kde-format
+msgid ""
+"<html>Controls how Konqueror shows animated images:<br /><ul><li><b>Enabled</"
+"b>: Show all animations completely.</li><li><b>Disabled</b>: Never show "
+"animations, show the starting image only.</li><li><b>Show only once</b>: "
+"Show all animations completely but do not repeat them.</li></ul></html>"
+msgstr ""
+"<html>Az animált képek megjelenítési módját határozza meg:<br /"
+"><ul><li><b>Engedélyezve</b>: az animációk megjelennek.</li><li><b>Letiltva</"
+"b>: animációk nem jelenhetnek meg, csak statikus képek.</li><li><b>Csak "
+"egyszer</b>: az animációk megjelennek, de ismétlődés nélkül.</li></ul></html>"
+
+#: appearance.cpp:82
+#, kde-format
+msgid "A&nimations:"
+msgstr "&Animációk:"
+
+#: appearance.cpp:85 htmlopts.cpp:110
+#, kde-format
+msgctxt "@title:group"
+msgid "Miscellaneous"
+msgstr "Egyéb"
+
+#: appearance.cpp:90
+#, kde-format
+msgctxt "underline"
+msgid "Enabled"
+msgstr "igen"
+
+#: appearance.cpp:91
+#, kde-format
+msgctxt "underline"
+msgid "Disabled"
+msgstr "nem"
+
+#: appearance.cpp:92
+#, kde-format
+msgid "Only on Hover"
+msgstr "csak az egérmutató alatt"
+
+#: appearance.cpp:93
+#, kde-format
+msgid "Und&erline links:"
+msgstr "A linkek alá&húzása:"
+
+#: appearance.cpp:96
+#, kde-format
+msgid ""
+"<html>Controls how Konqueror handles underlining hyperlinks:<br /"
+"><ul><li><b>Enabled</b>: Always underline links</li><li><b>Disabled</b>: "
+"Never underline links</li><li><b>Only on Hover</b>: Underline when the mouse "
+"is moved over the link</li></ul><br /><i>Note: The site's CSS definitions "
+"can override this value.</i></html>"
+msgstr ""
+"<html>A Konqueror a megadott módon húzza alá a linkeket:<br /"
+"><ul><li><b>Engedélyezve</b>: a linkek mindig alá lesznek húzva</"
+"li><li><b>Letiltva</b>: a linkek nem lesznek aláhúzva</li><li><b>Csak az "
+"egérmutató alatt</b>: a linkek csak akkor lesznek aláhúzva, ha az egérmutató "
+"föléjük kerül</li></ul><br /><i>Megjegyzés: a weboldalak CSS-beli "
+"beállításai felülbírálhatják az itt megadott értéket</i></html>"
+
+#: appearance.cpp:105
+#, kde-format
+msgid "When Efficient"
+msgstr "Ha nem okoz nagy leterhelést"
+
+#: appearance.cpp:106
+#, kde-format
+msgctxt "smooth scrolling"
+msgid "Always"
+msgstr "Mindig"
+
+#: appearance.cpp:107
+#, kde-format
+msgctxt "soft scrolling"
+msgid "Never"
+msgstr "Soha"
+
+#: appearance.cpp:108
+#, kde-format
+msgid "S&mooth scrolling:"
+msgstr "Sima &görgetés:"
+
+#: appearance.cpp:110
+#, kde-format
+msgid ""
+"<html>Determines whether Konqueror should use smooth steps to scroll HTML "
+"pages, or whole steps:<br /><ul><li><b>Always</b>: Always use smooth steps "
+"when scrolling.</li><li><b>Never</b>: Never use smooth scrolling, scroll "
+"with whole steps instead.</li><li><b>When Efficient</b>: Only use smooth "
+"scrolling on pages where it can be achieved with moderate usage of system "
+"resources.</li></ul></html>"
+msgstr ""
+"<html>Itt lehet megadni, hogy a Konqueror simán görgesse-e az oldalakat.<br /"
+"><ul><li><b>Mindig</b>: a görgetés mindig sima lesz.</li><li><b>Never</b>: a "
+"görgetés soha nem lesz sima, mindig nagyobb lépésekben történik.</"
+"li><li><b>Ha nem okoz nagy leterhelést</b>: csak olyan oldalaknál történik "
+"sima görgetés, ahol ez nem okoz túlzott mértékű terhelést.</li></ul></html>"
+
+#: appearance.cpp:119
+#, kde-format
+msgid ""
+"<h1>Konqueror Fonts</h1>On this page, you can configure which fonts "
+"Konqueror should use to display the web pages you view."
+msgstr ""
+"<h1>A Konqueror betűtípusai</h1>Ezen a lapon lehet beállítani, hogy mely "
+"betűtípusokkal jelenítse meg a Konqueror a weboldalakat."
+
+#: appearance.cpp:131
+#, kde-format
+msgid "Font Si&ze"
+msgstr "&Betűméret"
+
+#: appearance.cpp:134 appearance.cpp:152
+#, kde-format
+msgid "This is the relative font size Konqueror uses to display web sites."
+msgstr ""
+"Ez az a relatív betűméret, amit a Konqueror a lapok megjelenítéséhez használ."
+
+#: appearance.cpp:138
+#, kde-format
+msgid "M&inimum font size:"
+msgstr "&Minimális betűméret:"
+
+#: appearance.cpp:142
+#, kde-format
+msgid ""
+"Konqueror will never display text smaller than this size,<br />overriding "
+"any other settings."
+msgstr ""
+"A Konqueror nem fog ennél kisebb betűméretet használni,<br />még akkor sem, "
+"ha egy weboldal kisebbet ír elő."
+
+#: appearance.cpp:147
+#, kde-format
+msgid "&Medium font size:"
+msgstr "Kö&zepes betűméret:"
+
+#: appearance.cpp:160
+#, kde-format
+msgid "S&tandard font:"
+msgstr "&Alap betűtípus:"
+
+#: appearance.cpp:161
+#, kde-format
+msgid "This is the font used to display normal text in a web page."
+msgstr "Ezzel a betűtípussal jelenik meg a normál szöveg a böngészőben."
+
+#: appearance.cpp:165
+#, kde-format
+msgid "&Fixed font:"
+msgstr "Fi&x betűtípus:"
+
+#: appearance.cpp:166
+#, kde-format
+msgid ""
+"This is the font used to display fixed-width (i.e. non-proportional) text."
+msgstr ""
+"Ezzel a betűtípussal jelennek meg a rögzített szélességű betűkből álló "
+"szövegek."
+
+#: appearance.cpp:170
+#, kde-format
+msgid "S&erif font:"
+msgstr "Serif betűtíp&us:"
+
+#: appearance.cpp:171
+#, kde-format
+msgid "This is the font used to display text that is marked up as serif."
+msgstr ""
+"Ezzel a betűtípussal jelennek meg a serif típusúnak jelölt szövegek a "
+"böngészőben."
+
+#: appearance.cpp:175
+#, kde-format
+msgid "Sa&ns serif font:"
+msgstr "Sans ser&if betűtípus:"
+
+#: appearance.cpp:176
+#, kde-format
+msgid "This is the font used to display text that is marked up as sans-serif."
+msgstr ""
+"Ezzel a betűtípussal jelennek meg a sans serif típusúnak jelölt szövegek a "
+"böngészőben."
+
+#: appearance.cpp:180
+#, kde-format
+msgid "C&ursive font:"
+msgstr "&Dőlt betűtípus:"
+
+#: appearance.cpp:181
+#, kde-format
+msgid "This is the font used to display text that is marked up as italic."
+msgstr ""
+"Ezzel a betűtípussal jelenik meg a dőltnek jelölt szöveg a böngészőben."
+
+#: appearance.cpp:185
+#, kde-format
+msgid "Fantas&y font:"
+msgstr "Fantas&y betűtípus:"
+
+#: appearance.cpp:186
+#, kde-format
+msgid ""
+"This is the font used to display text that is marked up as a fantasy font."
+msgstr ""
+"Ezzel a betűtípussal jelennek meg a fantasy típusúnak jelölt szövegek a "
+"böngészőben."
+
+#: appearance.cpp:195
+#, kde-format
+msgid "Font &size adjustment for this encoding:"
+msgstr "A betűméret i&gazítása ennél a kódolásnál:"
+
+#: appearance.cpp:203 appearance.cpp:401
+#, kde-format
+msgid "Use Language Encoding"
+msgstr "a weboldalon megadott kódolás"
+
+#: appearance.cpp:205
+#, kde-format
+msgid "Default encoding:"
+msgstr "Az alapértelmezett kódolás:"
+
+#: appearance.cpp:207
+#, kde-format
+msgid ""
+"Select the default encoding to be used; normally, you will be fine with 'Use "
+"language encoding' and should not have to change this."
+msgstr ""
+"Válassza ki az alapértelmezett karakterkódolási módot. Általában érdemes a "
+"'A weboldalon megadott kódolás' beállítást meghagyni."
+
+#. i18n: ectx: property (whatsThis), widget (QWidget, CSSConfigWidget)
+#. i18n: ectx: property (whatsThis), widget (QWidget, CSSCustomDialog)
+#: css/cssconfig.ui:5 css/csscustom.ui:13
+#, kde-format
+msgid ""
+"<b>Stylesheets</b><p>See http://www.w3.org/Style/CSS for further information "
+"on cascading style sheets.</p>"
+msgstr ""
+"<b>Stíluslapok</b><p>További információ a stíluslapokról: http://www.w3.org/"
+"Style/CSS</p>"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, ButtonGroup1)
+#: css/cssconfig.ui:17
+#, kde-format
+msgid ""
+"<b>Stylesheets</b><p>Use this groupbox to determine how Konqueror will "
+"render style sheets.</p>"
+msgstr ""
+"<b>Stíluslapok</b><p>Itt lehet kiválasztani, hogyan kezelje a Konqueror "
+"böngésző a stíluslapokat.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, ButtonGroup1)
+#: css/cssconfig.ui:20
+#, kde-format
+msgid "Stylesheets"
+msgstr "Stíluslapok"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, useDefault)
+#: css/cssconfig.ui:26
+#, kde-format
+msgid ""
+"<b>Use default stylesheet</b><p>Select this option to use the default "
+"stylesheet.</p>"
+msgstr ""
+"<b>Az alapértelmezett stíluslap használata</b><p>Válassza ezt, ha az "
+"alapértelmezett stíluslapot szeretné használni.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useDefault)
+#: css/cssconfig.ui:29
+#, kde-format
+msgid "Us&e default stylesheet"
+msgstr "Az &alapértelmezett stíluslap használata"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, useUser)
+#: css/cssconfig.ui:39
+#, kde-format
+msgid ""
+"<b>Use user-defined stylesheet</b><p>If this box is checked, Konqueror will "
+"try to load a user-defined style sheet as specified in the location below. "
+"The style sheet allows you to completely override the way web pages are "
+"rendered in your browser. The file specified should contain a valid style "
+"sheet (see http://www.w3.org/Style/CSS for further information on cascading "
+"style sheets).</p>"
+msgstr ""
+"<b>Egyedi stíluslap használata</b><p>Ha ez be van jelölve, a Konqueror az "
+"alább megadott egyedi stíluslapot fogja használni. Stíluslapok segítségével "
+"teljesen az egyedi igényeknek megfelelően átalakítható a weboldalak "
+"kinézete. A megadott fájlnak érvényes stíluslapot kell tartalmaznia. További "
+"információ a stíluslapokról: http://www.w3.org/Style/CSS</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useUser)
+#: css/cssconfig.ui:42
+#, kde-format
+msgid "Use &user-defined stylesheet"
+msgstr "Egye&di stíluslap használata"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, useAccess)
+#: css/cssconfig.ui:94
+#, kde-format
+msgid ""
+"<b>Use accessibility stylesheet</b><p>Selecting this option will allow you "
+"to define a default font, font size, and font color with a few simple clicks "
+"of the mouse. Simply wander over to the Customize... dialog and pick out "
+"your desired options.</p>"
+msgstr ""
+"<b>Kezelést segítő stíluslap használata</b><p>Ha ez be van jelölve, néhány "
+"kattintással megadható az alapértelmezett betűtípus, betűméret és betűszín.A "
+"Testreszabás... ablakban csak ki kell választani a kívánt értékeket.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useAccess)
+#: css/cssconfig.ui:97
+#, kde-format
+msgid "U&se accessibility stylesheet"
+msgstr "Kezelést se&gítő stíluslap használata"
+
+#. i18n: ectx: property (text), widget (QPushButton, customize)
+#: css/cssconfig.ui:137
+#, kde-format
+msgid "Custom&ize..."
+msgstr "&Egyedi beállítás..."
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox7)
+#: css/csscustom.ui:21
+#, kde-format
+msgid ""
+"<b>Font family</b><p>A font family is a group of fonts that resemble one "
+"another, with family members that are e.g. bold, italic, or any number of "
+"the above.</p>"
+msgstr ""
+"<b>Betűcsalád</b><p>A betűcsalád hasonló megjelenésű betűtípusok csoportja. "
+"Például egy betűtípus normál, dőlt és félkövér változata egy betűcsaládot "
+"alkothat.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, GroupBox7)
+#: css/csscustom.ui:24
+#, kde-format
+msgid "Font Family"
+msgstr "Betűcsalád"
+
+#. i18n: ectx: property (text), widget (QLabel, txtBaseFontFamily)
+#: css/csscustom.ui:30
+#, kde-format
+msgid "Base family:"
+msgstr "Alapcsalád:"
+
+#. i18n: ectx: property (whatsThis), widget (QFontComboBox, fontFamily)
+#: css/csscustom.ui:37
+#, kde-format
+msgid "<p>This is the currently selected font family</p>"
+msgstr "<p>Ez a kijelölt betűcsalád</p>"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, sameFamily)
+#: css/csscustom.ui:44
+#, kde-format
+msgid ""
+"<b>Use same family for all text</b><p>Select this option to override custom "
+"fonts everywhere in favor of the base font.</p>"
+msgstr ""
+"<b>Egy betűcsalád használata az összes szövegnél</b><p>Ha ez be van jelölve, "
+"az alap betűtípus lesz érvényes mindenhol.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, sameFamily)
+#: css/csscustom.ui:47
+#, kde-format
+msgid "Use same family for all text"
+msgstr "Egy betűcsalád használata az összes szövegnél"
+
+#. i18n: ectx: property (title), widget (QGroupBox, GroupBox3)
+#: css/csscustom.ui:57
+#, kde-format
+msgid "Font Size"
+msgstr "Betűméret"
+
+#. i18n: ectx: property (text), widget (QLabel, txtFontsize)
+#: css/csscustom.ui:63
+#, kde-format
+msgid "Base font si&ze:"
+msgstr "Ala&p betűméret:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:80
+#, kde-format
+msgid "7"
+msgstr "7"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:85
+#, kde-format
+msgid "8"
+msgstr "8"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:90
+#, kde-format
+msgid "9"
+msgstr "9"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:95
+#, kde-format
+msgid "10"
+msgstr "10"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:100
+#, kde-format
+msgid "11"
+msgstr "11"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:105
+#, kde-format
+msgid "12"
+msgstr "12"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:110
+#, kde-format
+msgid "14"
+msgstr "14"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:115
+#, kde-format
+msgid "16"
+msgstr "16"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:120
+#, kde-format
+msgid "20"
+msgstr "20"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:125
+#, kde-format
+msgid "24"
+msgstr "24"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:130
+#, kde-format
+msgid "32"
+msgstr "32"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:135
+#, kde-format
+msgid "48"
+msgstr "48"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:140
+#, kde-format
+msgid "64"
+msgstr "64"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, dontScale)
+#: css/csscustom.ui:148
+#, kde-format
+msgid ""
+"<b>Use same size for all elements</b><p>Select this option to override "
+"custom font sizes in favor of the base font size. All fonts will be "
+"displayed in the same size.</p>"
+msgstr ""
+"<b>Minden szöveg azonos betűméretű legyen</b><p>Ha ez be van jelölve, az "
+"alap betűméret felülbírálja a beállított egyedi betűméreteket. Minden szöveg "
+"egyforma betűmérettel jelenik meg.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, dontScale)
+#: css/csscustom.ui:151
+#, kde-format
+msgid "&Use same size for all elements"
+msgstr "Minden szöveg a&zonos betűméretű legyen"
+
+#. i18n: ectx: property (title), widget (QGroupBox, ButtonGroup2)
+#: css/csscustom.ui:161
+#, kde-format
+msgid "Colors"
+msgstr "Színek"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, blackOnWhite)
+#: css/csscustom.ui:183
+#, kde-format
+msgid "<b>Black on White</b><p>This is what you normally see.</p>"
+msgstr ""
+"<b>Fekete szövegszín, fehér háttérszín</b><p>Ez a klasszikus színpáros.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, blackOnWhite)
+#: css/csscustom.ui:186
+#, kde-format
+msgid "&Black on white"
+msgstr "&Fekete szövegszín, fehér háttérszín"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, whiteOnBlack)
+#: css/csscustom.ui:196
+#, kde-format
+msgid "<b>White on Black</b><p>This is your classic inverse color scheme.</p>"
+msgstr ""
+"<b>Fehér szövegszín, fekete háttérszín</b><p>Ez a klasszikus színpáros "
+"inverze.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, whiteOnBlack)
+#: css/csscustom.ui:199
+#, kde-format
+msgid "&White on black"
+msgstr "Fe&hér szövegszín, fekete háttérszín"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, customColor)
+#: css/csscustom.ui:206
+#, kde-format
+msgid ""
+"<b>Custom</b><p>Select this option to define a custom color for the default "
+"font.</p>"
+msgstr ""
+"<b>Egyedi</b><p>Jelölje be ezt, ha egyedi betűszínt szeretne használni.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, customColor)
+#: css/csscustom.ui:209
+#, kde-format
+msgid "Cus&tom"
+msgstr "&Egyedi"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, txtBackground)
+#: css/csscustom.ui:219
+#, kde-format
+msgid ""
+"<b>Background</b><p>This background color is the one displayed behind the "
+"text by default. A background image will override this.</p>"
+msgstr ""
+"<b>Háttér</b><p>Ez lesz az alapértelmezett háttérszín szövegeknél. Háttérkép "
+"használata esetén nem látszik.</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, txtBackground)
+#: css/csscustom.ui:222
+#, kde-format
+msgid "Bac&kground:"
+msgstr "&Háttér:"
+
+#. i18n: ectx: property (whatsThis), widget (KColorButton, backgroundColorButton)
+#: css/csscustom.ui:238
+#, kde-format
+msgid ""
+"<b>Background</b><p>Behind this door lays the ability to choose a custom "
+"default background.</p>"
+msgstr ""
+"<b>Háttér</b><p>Itt lehet egy egyedi, alapértelmezett hátteret beállítani.</"
+"p>"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, sameColor)
+#: css/csscustom.ui:248
+#, kde-format
+msgid ""
+"<b>Use same color for all text</b><p>Select this option to apply your chosen "
+"color to the default font as well as any custom fonts as specified in a "
+"stylesheet.</p>"
+msgstr ""
+"<b>Minden szöveg egyforma színű legyen</b><p>Ha ez be van jelölve, a "
+"kiválasztott szín az alapértelmezett betűtípuson kívül a stíluslapokon "
+"definiált összes egyedi betűtípusnál is érvényes lesz.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, sameColor)
+#: css/csscustom.ui:251
+#, kde-format
+msgid "Use same color for all text"
+msgstr "Minden szöveg egyforma színű legyen"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, txtForeground)
+#. i18n: ectx: property (whatsThis), widget (KColorButton, foregroundColorButton)
+#: css/csscustom.ui:261 css/csscustom.ui:280
+#, kde-format
+msgid ""
+"<b>Foreground color</b><p>The foreground color is the color that the text is "
+"drawn in.</p>"
+msgstr "<b>Előtérszín</b><p>Az előtérszín a szövegek betűinek színe.</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, txtForeground)
+#: css/csscustom.ui:264
+#, kde-format
+msgid "&Foreground:"
+msgstr "&Előtér:"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox3_2)
+#: css/csscustom.ui:293
+#, kde-format
+msgid "<b>Images</b>"
+msgstr "<b>Képek</b>"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, hideImages)
+#: css/csscustom.ui:302
+#, kde-format
+msgid ""
+"<b>Suppress images</b><p>Selecting this will prevent Konqueror from loading "
+"images.</p>"
+msgstr ""
+"<b>A képek kihagyása</b><p>Ha ez be van jelölve, a Konqueror nem fogja "
+"betölteni a képeket.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, hideImages)
+#: css/csscustom.ui:305
+#, kde-format
+msgid "&Suppress images"
+msgstr "A képek &kihagyása"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, hideBackground)
+#: css/csscustom.ui:312
+#, kde-format
+msgid ""
+"<b>Suppress background images</b><p>Selecting this option will prevent "
+"Konqueror from loading background images.</p>"
+msgstr ""
+"<b>A háttérképek kihagyása</b><p>Ha ez be van jelölve, a Konqueror nem fogja "
+"betölteni a háttérképeket.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, hideBackground)
+#: css/csscustom.ui:315
+#, kde-format
+msgid "Suppress background images"
+msgstr "A háttérképek kihagyása"
+
+#. i18n: ectx: property (title), widget (QGroupBox, previewBox)
+#: css/csscustom.ui:347
+#, kde-format
+msgid "Preview"
+msgstr "Előnézet"
+
+#: css/kcmcss.cpp:51
+#, kde-format
+msgid ""
+"<h1>Konqueror Stylesheets</h1> This module allows you to apply your own "
+"color and font settings to Konqueror by using stylesheets (CSS). You can "
+"either specify options or apply your own self-written stylesheet by pointing "
+"to its location.<br /> Note that these settings will always have precedence "
+"before all other settings made by the site author. This can be useful to "
+"visually impaired people or for web pages that are unreadable due to bad "
+"design."
+msgstr ""
+"<h1>Konqueror-stíluslapok</h1> Itt egyedi színek és betűtípusok állíthatók "
+"be a Konqueror böngészőhöz CSS stíluslapok segítségével. Válassza ki a "
+"kívánt beállításokat vagy adjon meg egy saját stíluslapot.<br /> Ezek a "
+"beállítások mindig felül fogják bírálni a weblapkészítők által megadott "
+"értékeket. Ez elsősorban akkor hasznos, ha a felhasználó csökkent "
+"látóképességű és nehezen olvasható weblapokat szeretne megtekinteni."
+
+#: css/kcmcss.cpp:336
+#, kde-format
+msgid ""
+"<html>\n"
+"<head>\n"
+"<style>\n"
+"<!--\n"
+"%1\n"
+"-->\n"
+"</style>\n"
+"</head>\n"
+"<body>\n"
+"<h1>Heading 1</h1>\n"
+"<h2>Heading 2</h2>\n"
+"<h3>Heading 3</h3>\n"
+"\n"
+"<p>User-defined stylesheets allow increased\n"
+"accessibility for visually handicapped\n"
+"people.</p>\n"
+"\n"
+"</body>\n"
+"</html>\n"
+msgstr ""
+"<html>\n"
+"<head>\n"
+"<style>\n"
+"<!--\n"
+"%1\n"
+"-->\n"
+"</style>\n"
+"</head>\n"
+"<body>\n"
+"<h1>1. fejléc</h1>\n"
+"<h2>2. fejléc</h2>\n"
+"<h3>3. fejléc</h3>\n"
+"\n"
+"<p>Egyedi stíluslapok segítségével a csökkent látóképességű\n"
+"felhasználók webhasználata jelentősen\n"
+"megkönnyíthető.</p>\n"
+"\n"
+"</body>\n"
+"</html>\n"
+
+#: domainlistview.cpp:37
+#, kde-format
+msgid "Host/Domain"
+msgstr "Gép/tartomány"
+
+#: domainlistview.cpp:37
+#, kde-format
+msgid "Policy"
+msgstr "Házirend"
+
+#: domainlistview.cpp:45
+#, kde-format
+msgid "&New..."
+msgstr "Ú&j..."
+
+#: domainlistview.cpp:49
+#, kde-format
+msgid "Chan&ge..."
+msgstr "Mó&dosítás..."
+
+#: domainlistview.cpp:53
+#, kde-format
+msgid "De&lete"
+msgstr "&Törlés"
+
+#: domainlistview.cpp:57
+#, kde-format
+msgid "&Import..."
+msgstr "&Importálás..."
+
+#: domainlistview.cpp:63
+#, kde-format
+msgid "&Export..."
+msgstr "&Exportálás..."
+
+#: domainlistview.cpp:71
+#, kde-format
+msgid "Click on this button to manually add a host or domain specific policy."
+msgstr ""
+"Kattintson erre a gombra egy gép- vagy tartományspecifikus házirend "
+"hozzáadásához."
+
+#: domainlistview.cpp:73
+#, kde-format
+msgid ""
+"Click on this button to change the policy for the host or domain selected in "
+"the list box."
+msgstr ""
+"Kattintson erre a gombra a listában kijelölt gép vagy tartomány "
+"házirendjének megváltoztatásához."
+
+#: domainlistview.cpp:75
+#, kde-format
+msgid ""
+"Click on this button to delete the policy for the host or domain selected in "
+"the list box."
+msgstr ""
+"Kattintson erre a gombra a listában kijelölt gép vagy tartomány "
+"házirendjének törléséhez."
+
+#: domainlistview.cpp:122
+#, kde-format
+msgid "You must first select a policy to be changed."
+msgstr "Először válassza ki, melyik házirendet szeretné módosítani."
+
+#: domainlistview.cpp:149
+#, kde-format
+msgid "You must first select a policy to delete."
+msgstr "Először válassza ki, melyik házirendet szeretné törölni."
+
+#: domainlistview.cpp:187 policydlg.cpp:63
+#, kde-format
+msgid "Use Global"
+msgstr "a globális beállítás"
+
+#: domainlistview.cpp:189 policydlg.cpp:63
+#, kde-format
+msgid "Accept"
+msgstr "elfogadás"
+
+#: domainlistview.cpp:191 policydlg.cpp:63
+#, kde-format
+msgid "Reject"
+msgstr "elutasítás"
+
+#: filteropts.cpp:48
+#, kde-format
+msgid "Enable filters"
+msgstr "A szűrők engedélyezése"
+
+#: filteropts.cpp:51
+#, kde-format
+msgid "Hide filtered images"
+msgstr "A szűrt képek elrejtése"
+
+#: filteropts.cpp:58
+#, kde-format
+msgid "Manual Filter"
+msgstr "Kézi szűrő"
+
+#: filteropts.cpp:76
+#, kde-format
+msgid "Search:"
+msgstr "Keresés:"
+
+#: filteropts.cpp:84
+#, kde-format
+msgid ""
+"<qt>Filter expression (e.g. <tt>http://www.example.com/ad/*</tt>, <a href="
+"\"filterhelp\">more information</a>):"
+msgstr ""
+"<qt>Szűrőkifejezés (pl. <tt>http://www.pelda.hu/reklam/*</tt>, <a href="
+"\"filterhelp\">további információ</a>):"
+
+#: filteropts.cpp:100
+#, kde-format
+msgid "Automatic Filter"
+msgstr "Automatikus szűrő"
+
+#: filteropts.cpp:109
+#, kde-format
+msgid "Automatic update interval:"
+msgstr "Automatikus frissítési időköz:"
+
+#: filteropts.cpp:114
+#, kde-format
+msgid " day"
+msgid_plural " days"
+msgstr[0] " nap"
+msgstr[1] " nap"
+
+#: filteropts.cpp:120
+#, kde-format
+msgid "Insert"
+msgstr "Beszúrás"
+
+#: filteropts.cpp:123
+#, kde-format
+msgid "Update"
+msgstr "Frissítés"
+
+#: filteropts.cpp:126
+#, kde-format
+msgid "Remove"
+msgstr "Eltávolítás"
+
+#: filteropts.cpp:130
+#, kde-format
+msgid "Import..."
+msgstr "Importálás..."
+
+#: filteropts.cpp:133
+#, kde-format
+msgid "Export..."
+msgstr "Exportálás..."
+
+#: filteropts.cpp:140
+#, kde-format
+msgid ""
+"<qt>More information on <a href=\"importhelp\">import format</a>, <a href="
+"\"exporthelp\">export format</a>"
+msgstr ""
+"<qt>További információk az <a href=\"importhelp\">importálási formátumokról</"
+"a> és az <a href=\"exporthelp\">exportálási formátumokról</a>"
+
+#: filteropts.cpp:154
+#, kde-format
+msgid ""
+"Enable or disable AdBlocK filters. When enabled, a set of URL expressions "
+"should be defined in the filter list for blocking to take effect."
+msgstr ""
+"Engedélyezi vagy letiltja az AdBlocK szűrőket. Bekapcsolása esetén a "
+"szűrőlistán meg kell adni URL-kifejezések egy halmazát a blokkolás életbe "
+"lépéséhez."
+
+#: filteropts.cpp:156
+#, kde-format
+msgid ""
+"When enabled blocked images will be removed from the page completely, "
+"otherwise a placeholder 'blocked' image will be used."
+msgstr ""
+"Ha be van kapcsolva, a blokkolt képek teljesen el lesznek távolítva az "
+"oldalból, különben egy helykitöltő „blokkolt” kép jelenik meg."
+
+#: filteropts.cpp:163
+#, kde-format
+msgid ""
+"This is the list of URL filters that will be applied to all embedded images "
+"and media objects."
+msgstr ""
+"Ezek az URL-szűrők lesznek alkalmazva a beágyazott képekre és "
+"médiaobjektumokra."
+
+#: filteropts.cpp:167
+#, kde-format
+msgid ""
+"<qt><p>Enter an expression to filter. Filters can be defined as either:"
+"<ul><li>a shell-style wildcard, e.g. <tt>http://www.example.com/ads*</tt>, "
+"the wildcards <tt>*?[]</tt> may be used</li><li>a full regular expression by "
+"surrounding the string with '<tt>/</tt>', e.g. <tt>/\\/(ad|banner)\\./</tt></"
+"li></ul><p>Any filter string can be preceded by '<tt>@@</tt>' to whitelist "
+"(allow) any matching URL, which takes priority over any blacklist (blocking) "
+"filter."
+msgstr ""
+"<qt><p>Adja meg a szűrni kívánt kifejezést! A szűrők többféleképpen adhatók "
+"meg:<ul><li>a szokásos helyettesítő-karakterekkel, pl. <tt>http://www.pelda."
+"hu/reklam*</tt>, a következő karakterek használhatók: <tt>*?[]</tt></"
+"li><li>„<tt>/</tt>”-jelekkel bezárt teljes reguláris kifejezéssel, pl. <tt>/"
+"\\/(reklam|banner)\\./</tt></li></ul><p>Minden szűrő karaktersor kezdődhet "
+"„<tt>@@</tt>” karakterekkel a kitételnek megfelelő hivatkozások minden "
+"tiltást felülbíráló prioritásos engedélyezéséhez."
+
+#: filteropts.cpp:183
+#, kde-format
+msgid ""
+"<qt><p>The filter import format is a plain text file. Blank lines, comment "
+"lines starting with '<tt>!</tt>' and the header line <tt>[AdBlock]</tt> are "
+"ignored. Any other line is added as a filter expression."
+msgstr ""
+"<qt><p>A szűrő importálási formátuma egy sima szöveges fájl. Az üres sorok, "
+"a „<tt>!</tt>”-vel kezdőd megjegyzéssorok és a <tt>[AdBlock]</tt> fejléc "
+"figyelmen kívül lesz hagyva, minden más sor hozzáadásra kerül mint "
+"szűrőkifejezés."
+
+#: filteropts.cpp:188
+#, kde-format
+msgid ""
+"<qt><p>The filter export format is a plain text file. The file begins with a "
+"header line <tt>[AdBlock]</tt>, then all of the filters follow each on a "
+"separate line."
+msgstr ""
+"<qt><p>A szűrő exportálási formátuma egy egyszerű szöveges fájl. A fájl egy "
+"<tt>[AdBlock]</tt> fejlécsorral kezdődik, majd soronként egy szűrőkifejezés "
+"követi."
+
+#: filteropts.cpp:256
+#, fuzzy, kde-format
+#| msgid "Automatic Filter"
+msgid "Import Filters"
+msgstr "Automatikus szűrő"
+
+#: filteropts.cpp:301
+#, fuzzy, kde-format
+#| msgid "URL Expressions to Filter"
+msgid "Export Filters"
+msgstr "Szűrési URL"
+
+#: filteropts.cpp:436
+#, kde-format
+msgid ""
+"<h1>Konqueror AdBlocK</h1> Konqueror AdBlocK allows you to create a list of "
+"filters that are checked against linked images and frames. URL's that match "
+"are either discarded or replaced with a placeholder image. "
+msgstr ""
+"<h1>Konqueror AdBlocK</h1> A Konqueror AdBlocK segítségével linkelt képek és "
+"keretek blokkolását lehet elvégezni. Ha egy kép vagy keret illeszkedik "
+"valamelyik kifejezéshez, a program teljesen elrejti vagy egy üres "
+"téglalappal helyettesíti azt. "
+
+#: filteropts.cpp:558
+#, kde-format
+msgid "Name"
+msgstr "Név"
+
+#: filteropts.cpp:559
+#, kde-format
+msgid "URL"
+msgstr "URL"
+
+#: generalopts.cpp:53
+#, kde-format
+msgid "Tabbed Browsing"
+msgstr "Lapozós böngészés"
+
+#: generalopts.cpp:79
+#, kde-format
+msgctxt ""
+"The user chose to use a custom start page but left the corresponding field "
+"empty"
+msgid "Please, insert the custom start page"
+msgstr ""
+
+#: generalopts.cpp:85
+#, kde-format
+msgctxt "@label:listbox"
+msgid "When &Konqueror starts:"
+msgstr "&Induláskor:"
+
+#: generalopts.cpp:94
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Show Introduction Page"
+msgstr "Bemutatkozó oldal"
+
+#: generalopts.cpp:95
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Show My Start Page"
+msgstr "Saját kezdőlap megjelenítése"
+
+#: generalopts.cpp:96
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Show Blank Page"
+msgstr "Üres oldal"
+
+#: generalopts.cpp:97
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Show My Bookmarks"
+msgstr "Könyvjelzők"
+
+#: generalopts.cpp:103
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Start Page"
+msgstr "Kezdőlap megadása"
+
+#: generalopts.cpp:107
+#, kde-format
+msgid "This is the URL of the web page Konqueror will show when starting."
+msgstr "Ezt a honlapot jeleníti meg a Konqueror induláskor."
+
+#: generalopts.cpp:118
+#, kde-format
+msgid "Home page:"
+msgstr "Honlap:"
+
+#: generalopts.cpp:121
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Home Page"
+msgstr "Kezdőlap megadása"
+
+#: generalopts.cpp:126
+#, kde-format
+msgid ""
+"This is the URL of the web page where Konqueror will jump to when the \"Home"
+"\" button is pressed."
+msgstr "Erre az URL-re lép a Konqueror a „Kezdőlap” gomb megnyomásakor."
+
+#: generalopts.cpp:134
+#, kde-format
+msgid "Default web browser engine:"
+msgstr "Alapértelmezett böngészőmotor:png"
+
+#: generalopts.cpp:143
+#, kde-format
+msgid "When splitting a view"
+msgstr ""
+
+#: generalopts.cpp:147
+#, kde-format
+msgid "Always duplicate current view"
+msgstr ""
+
+#: generalopts.cpp:148
+#, kde-format
+msgid "Duplicate current view only for local files"
+msgstr ""
+
+#: htmlopts.cpp:36
+#, kde-format
+msgid ""
+"<h1>Konqueror Browser</h1> Here you can configure Konqueror's browser "
+"functionality. Please note that the file manager functionality has to be "
+"configured using the \"File Manager\" configuration module. You can make "
+"some settings how Konqueror should handle the HTML code in the web pages it "
+"loads. It is usually not necessary to change anything here."
+msgstr ""
+"<h1>A Konqueror böngésző</h1> Itt lehet módosítani a Konqueror webböngésző "
+"beállításait. A fájlkezelési tulajdonságok nem itt, hanem a \"Fájlkezelő\" "
+"modulban találhatók. A legtöbb paraméter azt szabályozza, hogy a Konqueror "
+"hogyan jelenítse meg a betöltött HTML kódot. Általában el lehet fogadni az "
+"alapértelmezéseket."
+
+#: htmlopts.cpp:44
+#, kde-format
+msgid "Boo&kmarks"
+msgstr "Könyv&jelzők"
+
+#: htmlopts.cpp:47
+#, kde-format
+msgid "Ask for name and folder when adding bookmarks"
+msgstr "Könyvjelző létrehozásakor a program kérje be a nevet és a mappát"
+
+#: htmlopts.cpp:50
+#, kde-format
+msgid ""
+"If this box is checked, Konqueror will allow you to change the title of the "
+"bookmark and choose a folder in which to store it when you add a new "
+"bookmark."
+msgstr ""
+"Ha ez az opció be van jelölve, a program lehetővé teszi a könyvjelző nevének "
+"és mappájának megadását új könyvjelző létrehozásakor."
+
+#: htmlopts.cpp:56
+#, kde-format
+msgid "Show only marked bookmarks in bookmark toolbar"
+msgstr "Csak a kijelölt könyvjelzők jelenjenek meg a könyvjelző-eszköztárban"
+
+#: htmlopts.cpp:58
+#, kde-format
+msgid ""
+"If this box is checked, Konqueror will show only those bookmarks in the "
+"bookmark toolbar which you have marked to do so in the bookmark editor."
+msgstr ""
+"Ha ez az opció be van jelölve, a Konqueror csak azokat a könyvjelzőket fogja "
+"megjeleníteni a könyvjelző-eszköztárban, amelyek ki lettek erre a célra "
+"jelölve a könyvjelző-szerkesztőben."
+
+#: htmlopts.cpp:65
+#, kde-format
+msgid "Form Com&pletion"
+msgstr "Automatikus űrla&pkitöltés"
+
+#: htmlopts.cpp:69
+#, kde-format
+msgid ""
+"If this box is checked, Konqueror will remember the data you enter in web "
+"forms and suggest it in similar fields for all forms."
+msgstr ""
+"Ha bejelöli ezt az opciót, akkor a Konqueror az űrlapokban korábban bevitt "
+"adatok alapján javaslatot tud tenni egyes mezők értékére."
+
+#: htmlopts.cpp:75
+#, kde-format
+msgid "&Maximum completions:"
+msgstr "Az űrlapadatok ma&ximális száma:"
+
+#: htmlopts.cpp:77
+#, kde-format
+msgid ""
+"Here you can select how many values Konqueror will remember for a form field."
+msgstr ""
+"Itt lehet megadni, hogy a Konqueror hány értéket tárolhat el egy "
+"űrlapmezőhöz."
+
+#: htmlopts.cpp:84
+#, kde-format
+msgid "Mouse Beha&vior"
+msgstr "Az egér műkö&dése"
+
+#: htmlopts.cpp:87
+#, kde-format
+msgid "Chan&ge cursor over links"
+msgstr "&Linkek fölött változzon meg a kurzor"
+
+#: htmlopts.cpp:89
+#, kde-format
+msgid ""
+"If this option is set, the shape of the cursor will change (usually to a "
+"hand) if it is moved over a hyperlink."
+msgstr ""
+"Ha ez az opció be van állítva, a kurzor alakja megváltozik (általában kéz "
+"alakúra), ha link fölé ér."
+
+#: htmlopts.cpp:93
+#, kde-format
+msgid "M&iddle click opens URL in selection"
+msgstr "A kö&zépső gombbal kattintva meg lehet nyitni a kijelölt URL-t"
+
+#: htmlopts.cpp:96
+#, kde-format
+msgid ""
+"If this box is checked, you can open the URL in the selection by middle "
+"clicking on a Konqueror view."
+msgstr ""
+"Ha ez az opció be van jelölve, akkor a kijelölt URL megnyitásához elég "
+"egyszer kattintani valamelyik Konqueror-nézetben."
+
+#: htmlopts.cpp:100
+#, kde-format
+msgid "Right click goes &back in history"
+msgstr "Jobb kattintással lehessen &visszafelé haladni a naplóban"
+
+#: htmlopts.cpp:103
+#, kde-format
+msgid ""
+"If this box is checked, you can go back in history by right clicking on a "
+"Konqueror view. To access the context menu, press the right mouse button and "
+"move."
+msgstr ""
+"Ha bejelöli ezt az opciót, akkor egy Konqueror nézetre kattintva a jobb "
+"gombbal a napló előző bejegyzésére lehet lépni. A felbukkanó menü "
+"előhívásához kattintson a jobb gombbal és mozdítsa meg az egérmutatót."
+
+#: htmlopts.cpp:113
+#, kde-format
+msgid "Allow automatic delayed &reloading/redirecting"
+msgstr "Késleltetett automatikus új&ratöltések és átirányítások engedélyezése"
+
+#: htmlopts.cpp:114
+#, kde-format
+msgid ""
+"Some web pages request an automatic reload or redirection after a certain "
+"period of time. By unchecking this box Konqueror will ignore these requests."
+msgstr ""
+"A weboldalakban beállítható, hogy a böngésző egy bizonyos idő letelte után "
+"automatikusan újratöltse a tartalmukat vagy átirányítsa a címet. Ha nem "
+"jelöli be ezt az opciót, akkor ezek a lehetőségek le lesznek tiltva."
+
+#: htmlopts.cpp:120
+#, kde-format
+msgid "Enable Access Ke&y activation with Ctrl key"
+msgstr "&Kezelést segítő gombok előhívhatók a Ctrl billentyűvel"
+
+#: htmlopts.cpp:121
+#, kde-format
+msgid ""
+"Pressing the Ctrl key when viewing webpages activates Access Keys. "
+"Unchecking this box will disable this accessibility feature. (Konqueror "
+"needs to be restarted for this change to take effect.)"
+msgstr ""
+"Weboldal megtekintése közben ha megnyomja a Ctrl billentyűt, aktiválódnak a "
+"KDE kezelést segítő billentyűi. Ne jelölje be, ha nem kíván kezelési "
+"segítséget használni. (Változtatás esetén a Konquerort újra kell indítani, "
+"hogy az új beállítás legyen érvényes.)"
+
+#: htmlopts.cpp:125
+#, kde-format
+msgid "Send the DNT header to tell web sites you do not want to be tracked"
+msgstr ""
+"DNT fejléc küldése a weboldalaknak arról, hogy nem kívánja hogy kövessék"
+
+#: htmlopts.cpp:126
+#, kde-format
+msgid ""
+"Check this box if you want to inform a web site that you do not want your "
+"web browsing habits tracked."
+msgstr ""
+"Jelölje be ezt az opciót, ha nem szeretné hogy egy weboldal ne kövesse a "
+"böngészési szokásait."
+
+#: htmlopts.cpp:130
+#, kde-format
+msgid "Offer to save website passwords"
+msgstr "Rákérdezés a jelszavak megjegyzésére"
+
+#: htmlopts.cpp:131
+#, kde-format
+msgid "Uncheck this box to prevent being prompted to save website passwords"
+msgstr ""
+"Szüntesse meg a jelölődoboz kijelölését, ha nem szeretné hogy a program "
+"rákérdezzen a jelszavak megjegyzésére"
+
+#: htmlopts.cpp:136
+#, kde-format
+msgid "Display online PDF files using WebEngine"
+msgstr ""
+
+#: htmlopts.cpp:137
+#, kde-format
+msgid ""
+"Uncheck this box to display online PDF files as configured in System Settings"
+msgstr ""
+
+#: javaopts.cpp:78
+#, kde-format
+msgid "Enable Ja&va globally"
+msgstr "A &Java engedélyezése"
+
+#: javaopts.cpp:93
+#, kde-format
+msgid "Java Runtime Settings"
+msgstr "A Java-értelmező beállításai"
+
+#: javaopts.cpp:97
+#, kde-format
+msgid "&Use security manager"
+msgstr "Az a&datbiztonság-kezelő használata"
+
+#: javaopts.cpp:101
+#, kde-format
+msgid "Use &KIO"
+msgstr "A KIO &használata"
+
+#: javaopts.cpp:105
+#, kde-format
+msgid "Shu&tdown applet server when inactive for more than"
+msgstr "A kisalkalmazás-kiszolgáló bezárása, ha ennyi ideig in&aktív"
+
+#: javaopts.cpp:117
+#, kde-format
+msgid " second"
+msgid_plural " seconds"
+msgstr[0] " s"
+msgstr[1] " s"
+
+#: javaopts.cpp:123
+#, kde-format
+msgid "&Path to Java executable, or 'java':"
+msgstr "A &Java program (\"java\") elérési útja:"
+
+#: javaopts.cpp:127
+#, kde-format
+msgid "Additional Java a&rguments:"
+msgstr "A programnak átadandó &paraméterek:"
+
+#: javaopts.cpp:132
+#, kde-format
+msgid ""
+"Enables the execution of scripts written in Java that can be contained in "
+"HTML pages. Note that, as with any browser, enabling active contents can be "
+"a security problem."
+msgstr ""
+"Engedélyezi a HTML oldalakba beillesztett Javában írt szkriptek "
+"végrehajtását. Ne felejtse el, hogy az aktív webtartalom engedélyezése "
+"minden böngészőnél biztonsági kockázatot jelent ."
+
+#: javaopts.cpp:135
+#, kde-format
+msgid ""
+"<p>This box contains the domains and hosts you have set a specific Java "
+"policy for. This policy will be used instead of the default policy for "
+"enabling or disabling Java applets on pages sent by these domains or hosts.</"
+"p><p>Select a policy and use the controls on the right to modify it.</p>"
+msgstr ""
+"<p>Ez a lista tartalmazza azokat a tartomány- és gépneveket, amelyek számára "
+"Java-házirendet állított be. Ez a házirend felülbírálja az alapértelmezett "
+"házirendet a megadott helyekről érkező lapok Java kisalkalmazásainak "
+"engedélyezésénél. </p><p>Jelöljön ki egy házirendet, majd használja a jobb "
+"oldalon látható vezérlőelemeket a házirend módosításához.</p>"
+
+#: javaopts.cpp:142
+#, kde-format
+msgid ""
+"Click this button to choose the file that contains the Java policies. These "
+"policies will be merged with the existing ones. Duplicate entries are "
+"ignored."
+msgstr ""
+"Kattintson erre a gombra a Java-házirendeket tartalmazó fájl kijelöléséhez. "
+"Ezek a házirendek hozzáadódnak a már létezőkhöz. A duplikált bejegyzések ki "
+"lesznek hagyva."
+
+#: javaopts.cpp:145
+#, kde-format
+msgid ""
+"Click this button to save the Java policy to a zipped file. The file, named "
+"<b>java_policy.tgz</b>, will be saved to a location of your choice."
+msgstr ""
+"Kattintson erre a gombra a Java-házirend zip fájlba mentéséhez. A fájl, "
+"melynek neve <b>java_policy.tgz</b> lesz, az Ön által megadott könyvtárba "
+"fog kerülni."
+
+#: javaopts.cpp:149
+#, kde-format
+msgid ""
+"Here you can set specific Java policies for any particular host or domain. "
+"To add a new policy, simply click the <i>New...</i> button and supply the "
+"necessary information requested by the dialog box. To change an existing "
+"policy, click on the <i>Change...</i> button and choose the new policy from "
+"the policy dialog box. Clicking on the <i>Delete</i> button will remove the "
+"selected policy, causing the default policy setting to be used for that "
+"domain."
+msgstr ""
+"Itt lehet beállítani gépre vagy tartományra vonatkozó Java-házirendet. Új "
+"bejegyzés létrehozásához kattintson az <i>Új...</i> gombra és adja meg a "
+"párbeszédablakban a kért információkat. Egy már létező bejegyzés "
+"módosításához kattintson a <i>Módosítás...</i> gombra és válassza ki az új "
+"házirendet a párbeszédablakban. Ha a <i>Törlés</i> gombra kattint, a "
+"kijelölt bejegyzés törlődik, és újból az alapértelmezett szabály lesz "
+"érvényes az érintett tartományban."
+
+#: javaopts.cpp:162
+#, kde-format
+msgid ""
+"Enabling the security manager will cause the jvm to run with a Security "
+"Manager in place. This will keep applets from being able to read and write "
+"to your file system, creating arbitrary sockets, and other actions which "
+"could be used to compromise your system. Disable this option at your own "
+"risk. You can modify your $HOME/.java.policy file with the Java policytool "
+"utility to give code downloaded from certain sites more permissions."
+msgstr ""
+"Az adatbiztonság-kezelő engedélyezése esetén a jvm annak felügyelete alatt "
+"fog működni. Így megakadályozható, hogy a kisalkalmazások hozzáférjenek a "
+"helyi fájlrendszerhez, tetszőleges aljazatokat hozzanak létre vagy más, a "
+"rendszer biztonságát veszélyeztető műveleteket hajtsanak végre. Az opció "
+"kikapcsolása adatbiztonsági kockázatot jelent! Módosíthatja a $HOME/.java."
+"policy fájlt a Java biztonsági segédeszközeivel, ha bizonyos helyekről "
+"letöltött kisalkalmazásokhoz több jogosultságot szeretne rendelni."
+
+#: javaopts.cpp:170
+#, kde-format
+msgid "Enabling this will cause the jvm to use KIO for network transport "
+msgstr ""
+"Ha ez be van jelölve, akkor a Java-értelmező a KIO-t fogja használni "
+"hálózati adatátvitelhez"
+
+#: javaopts.cpp:172
+#, kde-format
+msgid ""
+"Enter the path to the java executable. If you want to use the jre in your "
+"path, simply leave it as 'java'. If you need to use a different jre, enter "
+"the path to the java executable (e.g. /usr/lib/jdk/bin/java), or the path to "
+"the directory that contains 'bin/java' (e.g. /opt/IBMJava2-13)."
+msgstr ""
+"Adja meg a Java program elérési útját. Ha a program szerepel az elérési "
+"útban, akkor hagyja meg a 'java' értéket. Ha nem, akkor adja meg a Java "
+"program teljes elérési útját (például /usr/lib/jdk/bin/java), vagy azt a "
+"könyvtárt, amely a 'bin/java'-t tartalmazza (például /opt/IBMJava2-13)."
+
+#: javaopts.cpp:177
+#, kde-format
+msgid ""
+"If you want special arguments to be passed to the virtual machine, enter "
+"them here."
+msgstr "A Java virtuális gépnek átadandó paramétereket sorolhatja fel itt."
+
+#: javaopts.cpp:179
+#, kde-format
+msgid ""
+"When all the applets have been destroyed, the applet server should shut "
+"down. However, starting the jvm takes a lot of time. If you would like to "
+"keep the java process running while you are browsing, you can set the "
+"timeout value to whatever you like. To keep the java process running for the "
+"whole time that the konqueror process is, leave the Shutdown Applet Server "
+"checkbox unchecked."
+msgstr ""
+"Ha az összes kisalkalmazás futása befejeződött, akkor a kisalkalmazás-"
+"kiszolgáló általában bezáródik. Azonban a jvm újraindítása sok időt vehet "
+"igénybe. Ha a böngészés közben végig életben akarja tartani a Java "
+"folyamatot, akkor állítsa a várakozási idő értékét nagyra. Ha egészen addig "
+"nem akarja bezárni a Javát, amíg a Konqueror fut, akkor ne jelölje be A "
+"kisalkalmazás-kiszolgáló bezárása opciót."
+
+#: javaopts.cpp:288
+#, kde-format
+msgctxt "@title:group"
+msgid "Doma&in-Specific"
+msgstr "Tart&ományspecifikus"
+
+#: javaopts.cpp:323
+#, kde-format
+msgctxt "@title:window"
+msgid "New Java Policy"
+msgstr "Új Java-házirend"
+
+#: javaopts.cpp:326
+#, kde-format
+msgctxt "@title:window"
+msgid "Change Java Policy"
+msgstr "A Java-házirend módosítása"
+
+#: javaopts.cpp:330
+#, kde-format
+msgid "&Java policy:"
+msgstr "Java-&házirend:"
+
+#: javaopts.cpp:331
+#, kde-format
+msgid "Select a Java policy for the above host or domain."
+msgstr "Válasszon egy Java-házirendet a fenti géphez vagy tartományhoz."
+
+#: jsopts.cpp:50
+#, kde-format
+msgid "Ena&ble JavaScript globally"
+msgstr "A Java&Script engedélyezése"
+
+#: jsopts.cpp:51
+#, kde-format
+msgid ""
+"Enables the execution of scripts written in ECMA-Script (also known as "
+"JavaScript) that can be contained in HTML pages. Note that, as with any "
+"browser, enabling scripting languages can be a security problem."
+msgstr ""
+"Engedélyezi a HTML oldalakba illesztett ECMA-szkriptek (más néven "
+"JavaScriptek) végrehajtását. Ne felejtse el, hogy a szkript-nyelvek "
+"engedélyezése minden böngészőben biztonsági kockázatot jelent."
+
+#: jsopts.cpp:59
+#, kde-format
+msgid "Debugging"
+msgstr "Nyomkövetés"
+
+#: jsopts.cpp:63
+#, kde-format
+msgid "Enable debu&gger"
+msgstr "A nyomkövető enge&délyezése"
+
+#: jsopts.cpp:64
+#, kde-format
+msgid "Enables builtin JavaScript debugger."
+msgstr "A beépített Java&Script-nyomkövető engedélyezése."
+
+#: jsopts.cpp:68
+#, kde-format
+msgid "Report &errors"
+msgstr "A szkripthibák &jelzése"
+
+#: jsopts.cpp:69
+#, kde-format
+msgid ""
+"Enables the reporting of errors that occur when JavaScript code is executed."
+msgstr "Bekapcsolja a JavaScript-kód futása közben előforduló hibák jelzését."
+
+#: jsopts.cpp:79
+#, kde-format
+msgid ""
+"Here you can set specific JavaScript policies for any particular host or "
+"domain. To add a new policy, simply click the <i>New...</i> button and "
+"supply the necessary information requested by the dialog box. To change an "
+"existing policy, click on the <i>Change...</i> button and choose the new "
+"policy from the policy dialog box. Clicking on the <i>Delete</i> button will "
+"remove the selected policy causing the default policy setting to be used for "
+"that domain. The <i>Import</i> and <i>Export</i> button allows you to easily "
+"share your policies with other people by allowing you to save and retrieve "
+"them from a zipped file."
+msgstr ""
+"Itt lehet beállítani gép- vagy tartományfüggő JavaScript-házirendet. Új "
+"házirend létrehozásához kattintson az <i>Új...</i> gombra és adja meg a "
+"párbeszédablakban a kért információkat. Egy már létező házirend "
+"módosításához kattintson a <i>Módosítás...</i> gombra és válassza ki az új "
+"házirendet a párbeszédablakban. Ha a <i>Törlés</i> gombra kattint, a "
+"házirend törlődik és az alapértelmezett házirend lesz érvényes az érintett "
+"tartományban. Az <i>Importálás</i> és <i>Exportálás</i> gombok segítségével "
+"másoktól kapott házirendek betölthetők ill. a helyi házirendek kimenthetők "
+"(zip formátumban)."
+
+#: jsopts.cpp:89
+#, kde-format
+msgid ""
+"<p>This box contains the domains and hosts you have set a specific "
+"JavaScript policy for. This policy will be used instead of the default "
+"policy for enabling or disabling JavaScript on pages sent by these domains "
+"or hosts.</p><p>Select a policy and use the controls on the right to modify "
+"it.</p>"
+msgstr ""
+"<p>Ez a lista tartalmazza azokat a tartomány- és gépneveket, amelyek számára "
+"JavaScript-házirendet állított be. Ez a házirend felülbírálja az "
+"alapértelmezett házirendet a megadott helyekről érkező adatok JavaScript "
+"tartalmának engedélyezésénél. </p><p>Jelöljön ki egy házirendet, majd "
+"használja a jobb oldalon látható vezérlőelemeket a házirend módosításához.</"
+"p>"
+
+#: jsopts.cpp:96
+#, kde-format
+msgid ""
+"Click this button to choose the file that contains the JavaScript policies. "
+"These policies will be merged with the existing ones. Duplicate entries are "
+"ignored."
+msgstr ""
+"Kattintson erre a gombra a JavaScript-házirendeket tartalmazó fájl "
+"kijelöléséhez. Ezek a házirendek hozzáadódnak a már létezőkhöz. A duplikált "
+"bejegyzések figyelmen kívül lesznek hagyva."
+
+#: jsopts.cpp:99
+#, kde-format
+msgid ""
+"Click this button to save the JavaScript policy to a zipped file. The file, "
+"named <b>javascript_policy.tgz</b>, will be saved to a location of your "
+"choice."
+msgstr ""
+"Kattintson erre a gombra a JavaScript-házirend zip fájlba mentéséhez. A "
+"fájl, melynek neve <b>javascript_policy.tgz</b> lesz, az Ön által megadott "
+"könyvtárba lesz elmentve."
+
+#: jsopts.cpp:105
+#, kde-format
+msgid "Global JavaScript Policies"
+msgstr "JavaScript-házirendek"
+
+#: jsopts.cpp:173
+#, kde-format
+msgctxt "@title:group"
+msgid "Do&main-Specific"
+msgstr "Tartományra &vonatkozó"
+
+#: jsopts.cpp:212
+#, kde-format
+msgctxt "@title:window"
+msgid "New JavaScript Policy"
+msgstr "Új JavaScript-házirend"
+
+#: jsopts.cpp:215
+#, kde-format
+msgctxt "@title:window"
+msgid "Change JavaScript Policy"
+msgstr "A JavaScript-házirend módosítása"
+
+#: jsopts.cpp:219
+#, kde-format
+msgid "JavaScript policy:"
+msgstr "JavaScript-házirend:"
+
+#: jsopts.cpp:220
+#, kde-format
+msgid "Select a JavaScript policy for the above host or domain."
+msgstr "Válasszon egy JavaScript-házirendet a fenti géphez vagy tartományhoz."
+
+#: jsopts.cpp:222
+#, kde-format
+msgid "Domain-Specific JavaScript Policies"
+msgstr "Tartományra vonatkozó JavaScript-házirendek"
+
+#: jspolicies.cpp:132
+#, kde-format
+msgid "Open new windows:"
+msgstr "Új ablakok megnyitási módja:"
+
+#: jspolicies.cpp:140 jspolicies.cpp:194 jspolicies.cpp:231 jspolicies.cpp:268
+#: jspolicies.cpp:308
+#, kde-format
+msgid "Use global"
+msgstr "A globális használata"
+
+#: jspolicies.cpp:141 jspolicies.cpp:195 jspolicies.cpp:232 jspolicies.cpp:269
+#: jspolicies.cpp:309
+#, kde-format
+msgid "Use setting from global policy."
+msgstr "A globális beállítás legyen érvényes."
+
+#: jspolicies.cpp:147 jspolicies.cpp:201 jspolicies.cpp:238 jspolicies.cpp:275
+#: jspolicies.cpp:315
+#, kde-format
+msgid "Allow"
+msgstr "engedélyezés"
+
+#: jspolicies.cpp:148
+#, kde-format
+msgid "Accept all popup window requests."
+msgstr "A felbukkanó JavaScript-ablakok mindig megjelenhetnek."
+
+#: jspolicies.cpp:153
+#, kde-format
+msgid "Ask"
+msgstr "rákérdezés"
+
+#: jspolicies.cpp:154
+#, kde-format
+msgid "Prompt every time a popup window is requested."
+msgstr "Minden felbukkanó JavaScript-ablak létrehozását meg kell erősíteni."
+
+#: jspolicies.cpp:159
+#, kde-format
+msgid "Deny"
+msgstr "tiltás"
+
+#: jspolicies.cpp:160
+#, kde-format
+msgid "Reject all popup window requests."
+msgstr "Minden JavaScript-ablak le lesz tiltva."
+
+#: jspolicies.cpp:165
+#, kde-format
+msgid "Smart"
+msgstr "intelligens"
+
+#: jspolicies.cpp:166
+#, kde-format
+msgid ""
+"Accept popup window requests only when links are activated through an "
+"explicit mouse click or keyboard operation."
+msgstr ""
+"A felbukkanó JavaScript-ablakok csak akkor lesznek engedélyezve, ha "
+"egérkattintás vagy billentyűlenyomás hatására jöttek létre."
+
+#: jspolicies.cpp:173
+#, kde-format
+msgid ""
+"If you disable this, Konqueror will stop interpreting the <i>window.open()</"
+"i> JavaScript command. This is useful if you regularly visit sites that make "
+"extensive use of this command to pop up ad banners.<br /><br /><b>Note:</b> "
+"Disabling this option might also break certain sites that require <i>window."
+"open()</i> for proper operation. Use this feature carefully."
+msgstr ""
+"Ha ez nincs bejelölve, akkor a Konqueror nem fogja végrehajtani a <i>window."
+"open()</i> JavaScript-függvényt. Erre akkor lehet szükség, ha gyakran "
+"látogat meg olyan honlapokat, amelyek ezzel a függvényhívással zavaró "
+"reklámokat jelenítenek meg.<br /><br /><b>Megjegyzés:</b> Előfordulhat, hogy "
+"ez az opció nem megfelelő működést okoz olyan oldalaknál, amelyek a "
+"<i>window.open()</i> hívást más célból használják."
+
+#: jspolicies.cpp:187
+#, kde-format
+msgid "Resize window:"
+msgstr "Ablak átméretezése:"
+
+#: jspolicies.cpp:202
+#, kde-format
+msgid "Allow scripts to change the window size."
+msgstr "A szkriptek megváltoztathatják az ablak méretét."
+
+#: jspolicies.cpp:207 jspolicies.cpp:244 jspolicies.cpp:281 jspolicies.cpp:321
+#, kde-format
+msgid "Ignore"
+msgstr "figyelmen kívül hagyás"
+
+#: jspolicies.cpp:208
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to change the window size. The web page will "
+"<i>think</i> it changed the size but the actual window is not affected."
+msgstr ""
+"Az ablakméretezési utasításoknak nem lesz hatása. Hibajelzés nem történik, "
+"de a méret valójában nem fog megváltozni."
+
+#: jspolicies.cpp:215
+#, kde-format
+msgid ""
+"Some websites change the window size on their own by using <i>window."
+"resizeBy()</i> or <i>window.resizeTo()</i>. This option specifies the "
+"treatment of such attempts."
+msgstr ""
+"Egyes weboldalak a <i>window.resizeBy()</i> vagy <i>window.resizeTo()</i> "
+"függvények meghívásával megpróbálják átállítani az ablak méretét. Ezzel az "
+"opcióval az ilyen hívások lekezelési módját lehet megadni."
+
+#: jspolicies.cpp:224
+#, kde-format
+msgid "Move window:"
+msgstr "Ablak mozgatása:"
+
+#: jspolicies.cpp:239
+#, kde-format
+msgid "Allow scripts to change the window position."
+msgstr "Szkriptből meg lehet változtatni az ablak pozícióját."
+
+#: jspolicies.cpp:245
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to change the window position. The web page will "
+"<i>think</i> it moved the window but the actual position is not affected."
+msgstr ""
+"Az ablakpozíciók megváltoztatása nem lesz lehetséges szkriptből. Hibajelzés "
+"nem történik, de a pozíció valójában nem fog megváltozni."
+
+#: jspolicies.cpp:252
+#, kde-format
+msgid ""
+"Some websites change the window position on their own by using <i>window."
+"moveBy()</i> or <i>window.moveTo()</i>. This option specifies the treatment "
+"of such attempts."
+msgstr ""
+"Egyes weboldalak a <i>window.moveBy()</i> vagy <i>window.moveTo()</i> "
+"függvények meghívásával megpróbálják átállítani az ablak pozícióját. Ezzel "
+"az opcióval az ilyen hívások lekezelési módját lehet megadni."
+
+#: jspolicies.cpp:261
+#, kde-format
+msgid "Focus window:"
+msgstr "A fókusz áthelyezése:"
+
+#: jspolicies.cpp:276
+#, kde-format
+msgid "Allow scripts to focus the window."
+msgstr "A szkriptek megváltoztathatják a fókuszt."
+
+#: jspolicies.cpp:282
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to focus the window. The web page will <i>think</"
+"i> it brought the focus to the window but the actual focus will remain "
+"unchanged."
+msgstr ""
+"A fókusz megváltoztatása nem lesz lehetséges szkriptből. Hibajelzés nem "
+"történik, de a fókusz valójában nem fog megváltozni."
+
+#: jspolicies.cpp:290
+#, kde-format
+msgid ""
+"Some websites set the focus to their browser window on their own by using "
+"<i>window.focus()</i>. This usually leads to the window being moved to the "
+"front interrupting whatever action the user was dedicated to at that time. "
+"This option specifies the treatment of such attempts."
+msgstr ""
+"Egyes weboldalak a <i>window.focus()</i> függvény meghívásával megpróbálják "
+"átállítani a fókuszt egyik ablakról a másikra. Ilyenkor a fókuszált ablak "
+"felülre kerül, megszakítva vagy megzavarva azt a műveletet, amit a "
+"felhasználó éppen végez. Ezzel az opcióval az ilyen hívások lekezelési "
+"módját lehet megadni."
+
+#: jspolicies.cpp:301
+#, kde-format
+msgid "Modify status bar text:"
+msgstr "Az állapotsor szövegének megváltoztatása:"
+
+#: jspolicies.cpp:316
+#, kde-format
+msgid "Allow scripts to change the text of the status bar."
+msgstr "A szkriptek megváltoztathatják az állapotsorban megjelenő szöveget."
+
+#: jspolicies.cpp:322
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to change the status bar text. The web page will "
+"<i>think</i> it changed the text but the actual text will remain unchanged."
+msgstr ""
+"Egyes weboldalak megpróbálják megváltoztatni az állapotsor szövegét. "
+"Hibajelzés nem történik, de az állapotsor szövege valójában nem fog "
+"megváltozni."
+
+#: jspolicies.cpp:330
+#, kde-format
+msgid ""
+"Some websites change the status bar text by setting <i>window.status</i> or "
+"<i>window.defaultStatus</i>, thus sometimes preventing displaying the real "
+"URLs of hyperlinks. This option specifies the treatment of such attempts."
+msgstr ""
+"Egyes weboldalak a <i>window.status</i> vagy <i>window.defaultStatus</"
+"i>függvény meghívásával megpróbálják megváltoztatni az állapotsor szövegét, "
+"meggátolva az aktuális URL kijelzését. Ezzel az opcióval az ilyen hívások "
+"lekezelési módját lehet megadni."
+
+#: main.cpp:43
+#, kde-format
+msgid "Konqueror Browsing Control Module"
+msgstr "A Konqueror webböngészési beállítómodulja"
+
+#: main.cpp:45
+#, kde-format
+msgid "(c) 1999 - 2001 The Konqueror Developers"
+msgstr "(c) A Konqueror fejlesztői, 1999-2001."
+
+#: main.cpp:47
+#, kde-format
+msgid "Waldo Bastian"
+msgstr "Waldo Bastian"
+
+#: main.cpp:48
+#, kde-format
+msgid "David Faure"
+msgstr "David Faure"
+
+#: main.cpp:49
+#, kde-format
+msgid "Matthias Kalle Dalheimer"
+msgstr "Matthias Kalle Dalheimer"
+
+#: main.cpp:50
+#, kde-format
+msgid "Lars Knoll"
+msgstr "Lars Knoll"
+
+#: main.cpp:51
+#, kde-format
+msgid "Dirk Mueller"
+msgstr "Dirk Mueller"
+
+#: main.cpp:52
+#, kde-format
+msgid "Daniel Molkentin"
+msgstr "Daniel Molkentin"
+
+#: main.cpp:53
+#, kde-format
+msgid "Wynn Wilkes"
+msgstr "Wynn Wilkes"
+
+#: main.cpp:55
+#, kde-format
+msgid "Leo Savernik"
+msgstr "Leo Savernik"
+
+#: main.cpp:55
+#, kde-format
+msgid ""
+"JavaScript access controls\n"
+"Per-domain policies extensions"
+msgstr ""
+"JavaScript-használási korlátozások\n"
+"Tartományra vonatkozó szabályok"
+
+#: main.cpp:67
+#, kde-format
+msgid "&Java"
+msgstr "&Java"
+
+#: main.cpp:71
+#, kde-format
+msgid "Java&Script"
+msgstr "JavaS&cript"
+
+#: main.cpp:111
+#, kde-format
+msgid ""
+"<h2>JavaScript</h2>On this page, you can configure whether JavaScript "
+"programs embedded in web pages should be allowed to be executed by Konqueror."
+"<h2>Java</h2>On this page, you can configure whether Java applets embedded "
+"in web pages should be allowed to be executed by Konqueror.<br /><br /"
+"><b>Note:</b> Active content is always a security risk, which is why "
+"Konqueror allows you to specify very fine-grained from which hosts you want "
+"to execute Java and/or JavaScript programs."
+msgstr ""
+"<h2>JavaScript</h2>Itt lehet beállítani, hogy a Konqueror feldolgozza-e a "
+"HTML oldalakba ágyazott JavaScript programkódot.<h2>Java</h2>Itt lehet "
+"beállítani, hogy a Konqueror végrehajtsa-e a HTML oldalakba ágyazott Java "
+"kisalkalmazásokat.<br /><br /><b>Megjegyzés:</b> az aktív webtartalom "
+"engedélyezése megnöveli annak valószínűségét, hogy biztonsági rések jöjjenek "
+"létre a rendszerben, ezért a Konqueror lehetővé teszi, hogy meg lehessen "
+"adni azokat a címeket, amelyekről származó oldalaknál engedélyezhető a Java "
+"és a JavaScript."
+
+#: policydlg.cpp:30
+#, kde-format
+msgctxt "@title:window"
+msgid "Domain-Specific Policies"
+msgstr "Tartományra vonatkozó házirendek"
+
+#: policydlg.cpp:47
+#, kde-format
+msgid "&Host or domain name:"
+msgstr "A &gép vagy a tartomány neve:"
+
+#: policydlg.cpp:55
+#, kde-format
+msgid ""
+"Enter the name of a host (like www.kde.org) or a domain, starting with a dot "
+"(like .kde.org or .org)"
+msgstr ""
+"Adja meg egy gép (például: www.kde.org) vagy egy tartomány nevét (ez utóbbit "
+"ponttal kezdve, például: .kde.org vagy .org)"
+
+#: policydlg.cpp:139
+#, kde-format
+msgid "You must first enter a domain name."
+msgstr "Először meg kell adni egy tartománynevet."
+
+#~ msgid "Accept languages:"
+#~ msgstr "Elfogadható nyelvek:"
+
+#~ msgid "Accept character sets:"
+#~ msgstr "Elfogadható karakterkészletek:"
+
+#~ msgid "Plugins"
+#~ msgstr "Bővítőmodulok"
+
+#~ msgid "Folders"
+#~ msgstr "Mappák"
+
+#~ msgid "&Remove"
+#~ msgstr "&Eltávolítás"
+
+#~ msgid "&New"
+#~ msgstr "Ú&j"
+
+#~ msgid "Do&wn"
+#~ msgstr "&Le"
+
+#~ msgid "&Up"
+#~ msgstr "&Fel"
+
+#~ msgid "Click here to scan for newly installed Netscape plugins now."
+#~ msgstr "Kattintson ide, ha új Netscape-bővítményeket szeretne keresni."
+
+#~ msgid "&Scan for Plugins"
+#~ msgstr "Bő&vítmények keresése"
+
+#~ msgid "Here you can see a list of the Netscape plugins KDE has found."
+#~ msgstr "Itt láthatók a KDE által felismert Netscape bővítőmodulok."
+
+#~ msgid "Information"
+#~ msgstr "Információ"
+
+#~ msgid "Value"
+#~ msgstr "Érték"
+
+#~ msgid "Global Settings"
+#~ msgstr "Globális beállítások"
+
+#~ msgid "&Enable plugins globally"
+#~ msgstr "Bő&vítőmodulok használatának engedélyezése"
+
+#~ msgid "Only allow &HTTP and HTTPS URLs for plugins"
+#~ msgstr ""
+#~ "A bővítőmodulok &csak HTTP és HTTPS protokollú URL-eket használhatnak"
+
+#~ msgid "&Load plugins on demand only"
+#~ msgstr "A bővítőmodulok betöltése csak &igény esetén történjen meg"
+
+#~ msgid "CPU priority for plugins: %1"
+#~ msgstr "A bővítőmodulok CPU-prioritása: %1"
+
+#~ msgid "Domain-Specific Settin&gs"
+#~ msgstr "Tartományra v&onatkozó beállítások"
+
+#~ msgid ""
+#~ "Enables the execution of plugins that can be contained in HTML pages, e."
+#~ "g. Macromedia Flash. Note that, as with any browser, enabling active "
+#~ "contents can be a security problem."
+#~ msgstr ""
+#~ "Engedélyezi a HTML-oldalakba ágyazható egyéb aktív elemek használatát "
+#~ "(mint például a Macromedia Flash). Ne felejtse el, hogy az aktív elemek "
+#~ "engedélyezése bizonyos biztonsági kockázatnövekedéssel jár."
+
+#~ msgid ""
+#~ "<p>This box contains the domains and hosts you have set a specific plugin "
+#~ "policy for. This policy will be used instead of the default policy for "
+#~ "enabling or disabling plugins on pages sent by these domains or hosts.</"
+#~ "p><p>Select a policy and use the controls on the right to modify it.</p>"
+#~ msgstr ""
+#~ "<p>Ez a lista tartalmazza azokat a tartomány- és gépneveket, amelyeknél "
+#~ "Java-házirend van beállítva. Ez a házirend felülbírálja az "
+#~ "alapértelmezett házirendet a megadott helyről érkező lapok Java "
+#~ "kisalkalmazásainak engedélyezésénél. </p><p>Jelöljön ki egy házirendet, "
+#~ "majd használja a jobb oldalon látható vezérlőelemeket a házirend "
+#~ "módosításához.</p>"
+
+#~ msgid ""
+#~ "Click this button to choose the file that contains the plugin policies. "
+#~ "These policies will be merged with the existing ones. Duplicate entries "
+#~ "are ignored."
+#~ msgstr ""
+#~ "Kattintson erre a gombra a bővítőmodul-házirendeket tartalmazó fájl "
+#~ "kiválasztásához. Ezek a házirendek hozzáadódnak a már létezőkhöz. A "
+#~ "duplikált bejegyzések figyelmen kívül lesznek hagyva."
+
+#~ msgid ""
+#~ "Click this button to save the plugin policy to a zipped file. The file, "
+#~ "named <b>plugin_policy.tgz</b>, will be saved to a location of your "
+#~ "choice."
+#~ msgstr ""
+#~ "Kattintson erre a gombra a bővítőmodul-házirend zip fájlba mentéséhez. A "
+#~ "fájl, melynek neve <b>plugin_policy.tgz</b> lesz, az Ön által megadott "
+#~ "könyvtárba fog kerülni."
+
+#~ msgid ""
+#~ "Here you can set specific plugin policies for any particular host or "
+#~ "domain. To add a new policy, simply click the <i>New...</i> button and "
+#~ "supply the necessary information requested by the dialog box. To change "
+#~ "an existing policy, click on the <i>Change...</i> button and choose the "
+#~ "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
+#~ "button will remove the selected policy causing the default policy setting "
+#~ "to be used for that domain."
+#~ msgstr ""
+#~ "Itt lehet beállítani gép- vagy tartományfüggő bővítőmodul-házirendet. Új "
+#~ "házirend létrehozásához kattintson az <i>Új...</i> gombra és adja meg a "
+#~ "párbeszédablakban a kért információkat. Egy már létező házirend "
+#~ "módosításához kattintson a <i>Módosítás...</i> gombra és válassza ki az "
+#~ "új házirendet a párbeszédablakban. Ha a <i>Törlés</i> gombra kattint, a "
+#~ "kijelölt házirend megszűnik  és újra az alapértelmezett házirend lesz "
+#~ "érvényes az érintett tartományban."
+
+#~ msgctxt "lowest priority"
+#~ msgid "lowest"
+#~ msgstr "legalacsonyabb"
+
+#~ msgctxt "low priority"
+#~ msgid "low"
+#~ msgstr "alacsony"
+
+#~ msgctxt "medium priority"
+#~ msgid "medium"
+#~ msgstr "közepes"
+
+#~ msgctxt "high priority"
+#~ msgid "high"
+#~ msgstr "magas"
+
+#~ msgctxt "highest priority"
+#~ msgid "highest"
+#~ msgstr "legmagasabb"
+
+#~ msgid ""
+#~ "<h1>Konqueror Plugins</h1> The Konqueror web browser can use Netscape "
+#~ "plugins to show special content, just like the Navigator does. Please "
+#~ "note that the way you have to install Netscape plugins may depend on your "
+#~ "distribution. A typical place to install them is, for example, '/opt/"
+#~ "netscape/plugins'."
+#~ msgstr ""
+#~ "<h1>Konqueror bővítőmodulok</h1> A Konqueror webböngésző képes Netscape "
+#~ "bővítőmodulok kezelésére, melyek segítségével speciális adattartalmak "
+#~ "jeleníthetők meg. A bővítőmodulok telepítési módja eltérő lehet különféle "
+#~ "disztribúcióknál. Gyakori telepítési könyvtár például az '/opt/netscape/"
+#~ "plugins'."
+
+#~ msgid ""
+#~ "Do you want to apply your changes before the scan? Otherwise the changes "
+#~ "will be lost."
+#~ msgstr ""
+#~ "El szeretné menteni a módosításokat a keresés megkezdése előtt? Ha nem "
+#~ "menti el, a változtatások elvesznek."
+
+#~ msgid ""
+#~ "The nspluginscan executable cannot be found. Netscape plugins will not be "
+#~ "scanned."
+#~ msgstr ""
+#~ "Az nspluginscan program nem található. A Netscape bővítőmodulok keresése "
+#~ "enélkül nem hajtható végre."
+
+#~ msgid "Scanning for plugins"
+#~ msgstr "Bővítőmodulok keresése"
+
+#~ msgctxt "@title:window"
+#~ msgid "Select Plugin Scan Folder"
+#~ msgstr "Bővítőmodul-könyvtár kiválasztása"
+
+#~ msgid "Netscape Plugins"
+#~ msgstr "Netscape bővítőmodulok"
+
+#~ msgid "Plugin"
+#~ msgstr "Bővítőmodul"
+
+#~ msgid "MIME type"
+#~ msgstr "MIME-típus"
+
+#~ msgid "Description"
+#~ msgstr "Leírás"
+
+#~ msgid "Suffixes"
+#~ msgstr "Kiterjesztések"
+
+#~ msgid "Doma&in-Specific"
+#~ msgstr "Tart&ományspecifikus"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Plugin Policy"
+#~ msgstr "Új bővítőmodul-házirend"
+
+#~ msgctxt "@title:window"
+#~ msgid "Change Plugin Policy"
+#~ msgstr "A bővítőmodul-házirend módosítása"
+
+#~ msgid "&Plugin policy:"
+#~ msgstr "Bővítőmodul-&házirend:"
+
+#~ msgid "Select a plugin policy for the above host or domain."
+#~ msgstr ""
+#~ "Válasszon ki egy bővítőmodul-házirendet a fenti géphez vagy tartományhoz."
+
+#, fuzzy
+#~| msgid "Sa&ns serif font:"
+#~ msgid "Sans Serif"
+#~ msgstr "Sans ser&if betűtípus:"
+
+#, fuzzy
+#~| msgid "S&tandard font:"
+#~ msgid "Standard Symbols L"
+#~ msgstr "&Alap betűtípus:"
+
+#~ msgid "kcmkonqhtml"
+#~ msgstr "kcmkonqhtml"
+
+#~ msgid "Expression (e.g. http://www.example.com/ad/*):"
+#~ msgstr "Kifejezés (pl.: http://www.valami.com/reklam/*):"
+
+#~ msgid ""
+#~ "Enter an expression to filter. Expressions can be defined as either a "
+#~ "filename style wildcard e.g. http://www.example.com/ads* or as a full "
+#~ "regular expression by surrounding the string with '/' e.g.  //(ad|"
+#~ "banner)\\./"
+#~ msgstr ""
+#~ "Adja meg a szűrési kifejezést. Ez lehet egy helyettesítő karaktereket "
+#~ "tartalmazó fájlnév, például http://www.valami.com/reklam* vagy egy "
+#~ "reguláris kifejezés \"/\" jelek között:  //(reklam|banner)\\./"

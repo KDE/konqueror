@@ -1,0 +1,142 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Spanish "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="khtml-behavior" lang="&language;">
+<articleinfo>
+<title
+>Navegación web</title>
+<authorgroup>
+<author
+>&Krishna.Tateneni; &Krishna.Tateneni.mail;</author>
+<othercredit role="translator"
+> <firstname
+>Pablo</firstname
+> <surname
+>de Vicente</surname
+> <affiliation
+><address
+><email
+>pablo.devicente@gmail.com</email
+></address
+></affiliation
+> <contrib
+>Traductor</contrib
+> </othercredit
+> <othercredit role="translator"
+> <firstname
+>Marcos</firstname
+> <surname
+>Fouces Lago</surname
+> <affiliation
+><address
+><email
+>mfouces@yahoo.es</email
+></address
+></affiliation
+> <contrib
+>Traductor</contrib
+> </othercredit
+> 
+</authorgroup>
+
+<date
+>2019-11-04</date>
+<releaseinfo
+>Aplicaciones 19.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Preferencias del sistema</keyword>
+<keyword
+>konqueror</keyword>
+<keyword
+>navegando</keyword>
+</keywordset>
+
+</articleinfo>
+<sect1 id="konq-browsing">
+<title
+>Navegación web</title>
+
+<para
+>El módulo de navegación &konqueror; de las &systemsettings; le permite seleccionar varias opciones para el comportamiento de &konqueror;, el navegador web integrado de &kde;.</para>
+
+<para
+>Si <guilabel
+>Preguntar nombre y carpeta al añadir marcadores</guilabel
+> está marcada, &konqueror; le permitirá cambiar el título del marcador y seleccionar el directorio en el que almacenarlo cuando añada un nuevo marcador.</para>
+
+<para
+>Active <guilabel
+>Mostrar únicamente los marcadores seleccionados en la barra de herramientas de marcadores</guilabel
+> y &konqueror; le mostrará solo aquellos marcadores de la barra de herramientas de marcadores que haya marcado a tal efecto en el editor de marcadores.</para>
+
+<para
+>La siguiente opción que puede activar en esta página es <guilabel
+>Relleno de la solicitud</guilabel
+>. Si selecciona esta casilla, &konqueror; tratará de recordar que respondió a las preguntas de los formularios y tratará de rellenar los formularios por usted con las respuestas que ya dio previamente.</para>
+
+<para
+>Puede configurar el número de elementos de solicitudes que &konqueror; puede recordar con el área de selección numérica llamada <guilabel
+>Máximo número de rellenos</guilabel
+></para>
+
+<note
+><para
+>Por supuesto, si &konqueror; rellena una solicitud siempre puede editar el contenido antes de enviar la solicitud.</para
+></note>
+
+<para
+>La siguiente opción es <guilabel
+>Cambiar cursor sobre enlaces</guilabel
+>. Si esta opción está seleccionada, la forma del cursor cambiará (normalmente a una mano) siempre que se mueva sobre un hiperenlace. Esto facilita la identificación de los enlaces, especialmente si se trata de imágenes.</para>
+
+<para
+>Si <guilabel
+>La pulsación del botón central del ratón abre la URL seleccionada</guilabel
+> está marcada, podrá copiar la &URL; seleccionada pulsando el botón central del ratón en una vista de &konqueror;.</para>
+
+<para
+>Como propiedad cómoda, si activa <guilabel
+>La pulsación derecha retrocede en el historial</guilabel
+>, al pulsar sobre un área vacía (&ie; no sobre un enlace) en la ventana de &konqueror; actuará como si hubiera pulsado sobre el botón <guiicon
+>Atrás</guiicon
+> en la barra de herramientas.</para>
+
+<para
+>Activar la opción <guilabel
+>Permitir recarga / redireccionamiento automático retardado</guilabel
+> permite que los sitios web le envíen a otra página sin su interacción. En muchos casos esta propiedad es muy conveniente. Por ejemplo, si el sitio web se ha mudado a una nueva &URL;. Muchos administradores de web en esta situación pondrán una página en el sitio antiguo, indicándole que dicha página se ha mudado a otro lugar y puede querer cambiar su marcador y después automáticamente le llevará a la nueva dirección. Sin embargo, estas propiedades pueden resultarle confusas o molestas, cuando se utilizan erróneamente y puede que desee desactivarlas.</para>
+
+<para
+><guilabel
+>Habilitar la activación de las teclas de acceso con la tecla &Ctrl;</guilabel
+>: Presionando la tecla &Ctrl; cuando visualiza páginas web activa las teclas de accesos rápido. Desmarcando esta casilla desactivará la característica de accesibilidad. &konqueror; necesita ser reiniciado para que este cambio tenga efecto.</para>
+
+<para
+><guilabel
+>Enviar la cabecera DNT para indicar a los sitios web que no desea ser rastreado</guilabel
+>. Marque esta casilla si desea informar a los sitios web que no quiere que se rastreen sus hábitos de navegación web. </para>
+
+<para
+><guilabel
+>Ofrecer guardar las contraseñas del sitio web</guilabel
+>. Quita la marca de esta casilla para no preguntar si se deben guardar las contraseñas de los sitios web. </para>
+
+<para
+><guilabel
+>Mostrar archivos &PDF; en línea usando WebEngine</guilabel
+>. No marque esta casilla para mostrar los archivos &PDF; en línea según la configuración del módulo <guilabel
+>Asociación de archivos</guilabel
+> de las &systemsettings;. </para>
+
+</sect1>
+
+</article>

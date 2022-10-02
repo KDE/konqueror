@@ -1,0 +1,695 @@
+<chapter id="browser">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>Gunnhild</firstname
+><surname
+>Lurås</surname
+><affiliation
+><address
+><email
+>gluras@c2i.net</email
+></address
+></affiliation
+><contrib
+></contrib
+></othercredit
+> 
+</authorgroup>
+<date
+>2003-11-05</date
+> <releaseinfo
+>3.2</releaseinfo
+> </chapterinfo>
+
+
+<title
+>Nettleseren &konqueror;</title>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="konqorg.png"/></imageobject>
+<textobject>
+<phrase
+>Surfe på www.konqueror.org</phrase>
+</textobject>
+</mediaobject>
+
+<sect1 id="conn-inet">
+<title
+>Koble seg til Internett</title>
+
+<para
+>Når du er koblet til Internett kan du bruke &konqueror; til å surfe på nettet like lett som du kan bruke den til å håndtere dine lokale filer. Bare skriv inn en nettadresse (&URL;) i adressefeltet, trykk <keycap
+>Enter</keycap
+>, og du er igang!</para>
+
+<itemizedlist>
+<listitem
+><para
+>Hvis du bruker en oppringt modem-oppkobling, så bruker du &kppp; eller et lignende ringeprogram for å koble opp.</para
+></listitem>
+
+<listitem
+><para
+>Hvis maskinen din er koblet til et lokalt nettverk (<acronym
+>LAN</acronym
+>) som gir deg en proxy-kobling til Internett, så må du sette opp &konqueror; for proxy-kobling. Dette kan gjøres med <guilabel
+>Proxy</guilabel
+>-siden av <menuchoice
+><guimenu
+>Innstillinger</guimenu
+><guimenuitem
+>Tilpass Konqueror </guimenuitem
+></menuchoice
+>-dialogen.</para
+></listitem>
+
+<listitem
+><para
+>Hvis du er så heldig å ha en høyhastighets oppkobling, så vil tjenesteyteren sannsynligvis gi deg et eksternt kabelmodem som trenger en ethernet-kobling til maskinen din. Desverre er detaljene på hvordan koblingen skal gjøres avhengig av tjenesteyteren og til en viss grad hvilken &Linux;/&Unix;-distribusjon du bruker. Noen <acronym
+>ISP</acronym
+>-er kobler sine kunder til Internett via en mellomtjener (proxy), da må du sette opp &konqueror; til å bruke den. Det kan være nyttig å søke gjennom postarkivene til brukergruppene fra din distribusjon for hjelp.</para>
+</listitem>
+</itemizedlist>
+
+<note
+><para
+>En feilmelding som <errorname
+> Ukjent vert</errorname
+> betyr vanligvis at &konqueror; ikke kan finne en kobling til Internett eller at du har tastet inn en feil &URL;.</para
+></note>
+
+</sect1>
+
+<sect1 id="surf">
+<title
+>Surfe og søke</title>
+
+<para
+>Når du har koblet deg opp til Internett, kan du surfe med &konqueror; akkurat som du kan med alle andre nettlesere.</para>
+
+<para
+>Skriv inn en &URL; i adressefeltet, trykk &Enter; eller <mousebutton
+>venstre</mousebutton
+>-klikk på <guibutton
+> Gå</guibutton
+>-knappen på høyre side av adressefeltet, og &konqueror; laster ned og viser den siden. Hvis du har besøkt siden tidligere, så har &konqueror; en <link linkend="path-complete"
+>Automatisk tekstfullføringsfunksjon</link
+> som kan hjelpe deg å skrive inn &URL;-en for andre gang, eller så kan du se gjennom <guilabel
+> Historie</guilabel
+>-siden i <link linkend="sidebar "
+>navigasjonspanelet</link
+>. Hvis du vil bruke en av søkesidene på nettet, har &konqueror; en funksjon for <link linkend="enhanced-browsing"
+>Nettsnarveier</link
+> som kan gjøre dette enklere.</para>
+
+<para
+><mousebutton
+>Venstre</mousebutton
+>-klikk på en link på siden for å gå dit.</para>
+
+<para
+>For å åpne en link i en ny &konqueror;-instans mens den gamle siden fortsatt synes, kan du trykke &MMB; på linken eller <mousebutton
+>høyre</mousebutton
+>-klikke på den og velge <guimenuitem
+>Åpne i nytt vindu</guimenuitem
+>. Du kan også bruke <guimenuitem
+>Åpne i ny fane</guimenuitem
+>. Med <link linkend="tabbrowse"
+> Surfing med faner</link
+> kan du beholde flere sider i ett &konqueror;-vindu og bytte mellom sidene med ett museklikk.</para>
+
+<para
+>Du kan også velge flerkolonnevisning med <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>L</keycap
+> </keycombo
+> eller menylinja <menuchoice
+><guimenu
+>Vindu</guimenu
+><guimenuitem
+>Delt visning høyre/venstre</guimenuitem
+></menuchoice
+> som lar deg se forskjellige sider samtidig. Dette kan være nyttig hvis du ser gjennom et komplisert sett med <acronym
+>HTML</acronym
+>-sider, men vær sikker på at den lille linkboksen nederst i høyre hjørne er tom mens du gjør dette.</para>
+<para
+>For å gå tilbake til forrige side, bruk <keycombo action="simul"
+>&Alt;<keysym
+>venstrepil</keysym
+></keycombo
+>, <guibutton
+>Tilbake</guibutton
+>-knappen på menylinja eller menylinja <menuchoice
+><guimenu
+>Gå</guimenu
+><guimenuitem
+>Tilbake</guimenuitem
+></menuchoice
+>.</para>
+<para
+>På samme måte kan du gå framover igjen etter at du har gått bakover ved å bruke <keycombo action="simul"
+>&Alt;<keysym
+>høyrepil</keysym
+></keycombo
+>, <guibutton
+>Fram</guibutton
+>-knappen eller menylinja <menuchoice
+> <guimenu
+>Gå</guimenu
+><guimenuitem
+>Fram</guimenuitem
+></menuchoice
+>.</para>
+
+<para
+>Hvis du av en eller annen grunn ønsker å stanse nedlastinga, kan du bruke <keycap
+>Esc</keycap
+>-tasten, verktøylinja <guibutton
+>Stopp </guibutton
+>-knappen eller menylinja <menuchoice
+><guimenu
+>Vis </guimenu
+><guimenuitem
+>Stopp</guimenuitem
+></menuchoice
+>.</para>
+
+<para
+>Når du har en nettside åpen, ser du to nye ikoner på verktøylinja som ser ut som et forstørrelsesglass med små <keycap
+>+</keycap
+>- og <keycap
+>- </keycap
+>-tegn. Bruk disse til å justere størrelsen på teksten på sida hvis du synes det er vanskelig å lese. Hvor bra dette virker er avhengig av hvordan nettsida ble opprettet.</para>
+</sect1>
+
+<sect1 id="tabbrowse">
+<title
+>Surfing med faner</title>
+<para
+>Ved å bruke dette kan du få &konqueror; til å laste inn flere nettsider i samme vindu, og bytte mellom dem ved å bruke faner. På denne måten kan du laste inn en side <quote
+>i bakgrunnen</quote
+> mens du fortsetter å lese en annen.</para>
+
+<para
+>For å kunne surfe med faner, <mousebutton
+>høyre</mousebutton
+>-klikker du på en link og velger <guimenuitem
+>Åpne i ny fane</guimenuitem
+> fra nedtrekksmenyen. Siden vil lastes ned og vises som normalt, men med faner øverst over visningen, en fane for hvert blad. <mousebutton
+>Venstre</mousebutton
+>-klikk på en fane for å vise den sida, eller du kan bruke snarveien <keycombo action="simul"
+>&Ctrl;<keycap
+>[ </keycap
+></keycombo
+> og <keycombo action="simul"
+>&Ctrl;<keycap
+> ]</keycap
+></keycombo
+> for å sirkulere gjennom fanene. Du kan også rulle gjennom fanene med muse<mousebutton
+>hjul</mousebutton
+>et mens musepekeren er på fanelinja. Dobbeltklikk på tomrommet på fanelinja åpner også en ny fane.</para>
+
+<para
+><guimenuitem
+>Åpne i bakgrunnen</guimenuitem
+> i &RMB;-menyen laster også ned siden og viser en ny fane for det, men den nye siden vil ikke vises før du <mousebutton
+>venstre</mousebutton
+>-klikker på fanen.</para>
+
+<para
+>Hvis du huker av <guilabel
+>Åpne lenker i ny fane istedenfor i nytt vindu </guilabel
+> i <guimenuitem
+>Oppførsel</guimenuitem
+>-siden i dialogen <menuchoice
+><guimenu
+>Innstillinger </guimenu
+><guimenuitem
+>Tilpass Konqueror …</guimenuitem
+></menuchoice
+>, vil et trykk med &MMB; åpne dem i en ny faneside og hvis du holder &Shift;-tasten nede mens du trykker &MMB;, vil linken bli åpnet i en bakgrunnsfane.</para>
+
+<para
+>Et <mousebutton
+>høyre</mousebutton
+>-klikk på en fane henter fram en meny med følgende valg:</para>
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Ny fane</guimenuitem
+></term>
+<listitem
+><para
+>Dette åpner en ny, tom fanevisning. Deretter kan du laste ned en nettside i den ved å taste inn en &URL; i adressefeltet eller ved å velge en link fra Bokmerkelinja eller historiesida <link linkend="sidebar"
+>Navigasjonspanel</link
+>.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guimenuitem
+>Lag kopi av fane</guimenuitem
+></term>
+<listitem
+><para
+>For å lage et helt likt faneblad.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guimenuitem
+>Frakoble fane</guimenuitem
+></term>
+<listitem
+><para
+>Dette valget fjerner den valgte fanen fra det gjeldende &konqueror;-vinduet og åpner den i en ny &konqueror;-instans.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guimenuitem
+>Lukk fane</guimenuitem
+></term>
+<listitem
+><para
+>For å lukke det valgte fanebladet.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guimenuitem
+>Last på nytt</guimenuitem
+></term>
+<listitem
+><para
+>Laster inn på nytt innholdet av gjeldende fane.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guimenuitem
+>Last alle faner på nytt</guimenuitem
+></term>
+<listitem
+><para
+>Laster inn på nytt inholdet i alle faner.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guimenuitem
+>Bytt til fane</guimenuitem
+></term>
+<listitem
+><para
+>Viser en undermeny som viser alle andre faner. Om en fane velges fra denne lista, blir den den aktive fanen.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guimenuitem
+>Lukk andre faner</guimenuitem
+></term>
+<listitem
+><para
+>Lukk alle faner bortsett fra den valgte.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect1>
+
+<sect1 id="enhanced-browsing">
+<title
+>Nettsnarveier</title
+> 
+
+<para
+>Hvis dette er skrudd på vil nettsnarveiene til &konqueror; la deg skrive inn en spørring direkte til en søkemotor eller lignende nettside uten å måtte besøke siden først.</para
+> <para
+>For eksempel kan man skrive <userinput
+>gg:konqueror</userinput
+> i adressefeltet og trykke &Enter; for å søke etter sider relatert til &konqueror; i Google.</para
+> <para
+>For å se hvilke nettsnarveier som er tilgjengelige, og kanskje legge til dine egne, gå inn på <menuchoice
+><guimenu
+>Innstillinger</guimenu
+><guimenuitem
+>Tilpass Konqueror …</guimenuitem
+></menuchoice
+> for å åpne dialogboksen <guilabel
+>Innstillinger</guilabel
+> og klikk på <guiicon
+>Nettsnarveier</guiicon
+>.</para>
+
+<para
+>Når du er kommet dit, så velg <guibutton
+>Ny …</guibutton
+>, så får du opp en ny dialog som spør etter innstillinger for den nye nettsnarveien. Det første feltet er for det lesbare navnet på søkemotoren, dvs. rett og slett navnet på søkeleverandøren. For eksempel, <trademark
+>Google</trademark
+>.</para>
+
+<para
+>I det neste feltet oppgir du &URI;-en som brukes til å gjøre et søk med søkemotoren. Hele teksten det skal søkes etter kan oppgis som <userinput
+>\{@}</userinput
+> eller <userinput
+>\{0}</userinput
+>. Det anbefales å bruke <userinput
+>\{@}</userinput
+> siden det fjerner alle spørrevariabler (<replaceable
+>navn</replaceable
+>=<replaceable
+>verdi</replaceable
+>) fra resultatstrengen mens <userinput
+>\{0}</userinput
+> blir erstattet med den uendrede spørrestrengen. </para>
+
+<para
+>Du kan bruke <userinput
+>\{1}</userinput
+> … <userinput
+>\{n}</userinput
+> til å oppgi bestemte ord fra spørringen og <userinput
+>\{<varname
+><replaceable
+>navn</replaceable
+></varname
+>}</userinput
+> for å oppgi en verdi gitt ved <userinput
+><varname
+><replaceable
+>navn</replaceable
+></varname
+>=<replaceable
+>verdi</replaceable
+></userinput
+> i brukerspørringen. Dessuten kan det oppgis flere referanser på én gang, slik som <userinput
+>(\{<varname
+><replaceable
+>navn1</replaceable
+></varname
+>, <varname
+><replaceable
+>navn2</replaceable
+></varname
+>, …"<replaceable
+>streng</replaceable
+>"})</userinput
+>. Den første verdien som passer (fra venstre) blir brukt som erstatningsverdi for den resulterende &URI;-en. En streng i "" ka brukes som standardverdi hvis ingenting passer fra venstre i referanselista.</para>
+
+<para
+>Men for å lage en enkel nettsnarvei her, er det eneste du trenger &URI;-en som brukes til å gjøre et søk mot søkemotoren. Hvis vi bruker vårt forrige eksempel med <trademark
+>Google</trademark
+>, så kan vi taste inn <userinput
+>http://www.google.com/search?q=\{@}&amp;ie=UTF-8&amp;oe=UTF-8</userinput
+>. Du kan ofte finne ut på en enkel måte hvor <userinput
+>\{@}</userinput
+> skal plasseres ved å gjøre et søk på den aktuelle søkemotoren, og så analysere &URL;-addressen. Hvis du for eksempel søker i <trademark
+>Google</trademark
+> etter &konqueror; får du &URL;-en <ulink url="http://www.google.com/search?q=konqueror&amp;ie=UTF-8&amp;oe=UTF-8"
+> http://www.google.com/search?q=konqueror&amp;ie=UTF-8&amp;oe=UTF-8</ulink
+>. Nå trenger du bare bytte ut &konqueror; med <userinput
+>\{@}</userinput
+> i dette eksempelet for å finne den &URI;-en som skal oppgis.</para>
+
+<para
+>I det tredje feltet må du oppgi snarveien til &URI;-en. For eksempel, <userinput
+>gg</userinput
+> i <userinput
+>gg:konqueror</userinput
+>. I neste velg &mdash; nedtrekksmenyen &mdash; får du mulighet til å velge tegnsett som skal brukes til å kode spørringen. Når du har gitt inn alt slik du vil ha det, så trykk &Enter; og din nye nettsnarvei blir nå tilgjengelig i &konqueror;.</para>
+
+</sect1>
+
+<sect1 id="accesskeys">
+
+<title
+>Tilgangstaster</title>
+
+<para
+>&konqueror; har full støtte for &HTML;-attributtet <sgmltag class="attribute"
+>accesskey</sgmltag
+> i skjemaer og lenker. Tilgangstaster gjør at tastaturet kan brukes til funksjoner som kanskje vanligvis ville bli gjort med mus, slik som å følge lenker. Fordelen med dette er ganske enkelt at brukere kan arbeide mot en nettside med andre enheter enn en pekeenhet.</para>
+
+<para
+>Tilgangstaster i &konqueror; aktiveres ved å trykke og slippe &Ctrl;. Når dette er gjort vil lenker på nettsida vise tilgangstasten over lenka dersom den har attributtet <sgmltag class="attribute"
+>accesskey</sgmltag
+>, og tegnet viser hva som skal trykkes for å følge lenka. Så kan du trykke tasten(e) tilordnet lenka i stedet for å følge lenka med musepeker og knapp. Tilgangstaster kan slås av igjen ved å trykke &Ctrl; en gang til.</para>
+
+<note
+><para
+>Denne egenskapen kan bare brukes dersom den som har laget nettsida uttrykkelig har tilordnet tilgangstaster til lenkene ved å bruke attributtet <sgmltag class="attribute"
+>accesskey</sgmltag
+>. Mange nettdesignere tar kanskje ikke med <sgmltag class="attribute"
+>accesskey</sgmltag
+> i sine lenker og skjemaer, og da blir denne egenskapen ubrukelig på den nettsida.</para
+></note>
+
+</sect1>
+
+<sect1 id="useragent">
+<title
+>Nettleser-identifikasjon</title>
+<para
+>Når &konqueror; kobler seg til en nettside sender den en tekststreng med litt informasjon om nettleseren, kjent som <quote
+>Brukeragent</quote
+>. Mange nettsider bruker denne informasjonen for å tilpasse sidene de sender tilbake, basert på styrkene og svakhetene til forskjellige nettlesere.</para>
+<para
+>Desverre vil noen dårlig designede sider nekte å virke hvis du ikke bruker en nettleser som siden gjenkjenner som <quote
+>gyldig</quote
+>, selv om  &konqueror; virker tilfredsstillende med de aller fleste nettsider hvis den får en sjanse.</para>
+<para
+>For å unngå dette problemet kan du endre informasjonen som &konqueror; sender til bestemte steder og domener ved å velge <menuchoice
+><guimenu
+> Innstillinger</guimenu
+><guimenuitem
+>Tilpass Konqueror …</guimenuitem
+></menuchoice
+> for å hente fram dialogboksen <guilabel
+>Innstillinger</guilabel
+>, og klikke på <guiicon
+>Brukeragent</guiicon
+>-ikonet.</para>
+<note
+><para
+>Problemer med å få en nettside til å fungere ordentlig kan også skyldes at den bruker &Java; eller JavaScript. Hvis du mistenker at dette kan være grunnen, sjekk om de er skrudd på i <guiicon
+>Java &amp; Javascript</guiicon
+>-delen av dialogboksen <guilabel
+>Innstillinger</guilabel
+>.</para
+></note>
+
+</sect1>
+
+<sect1 id="save-print-web">
+<title
+>Lagre og skrive ut nettelementer</title>
+
+<para
+>Når du ser på en nettside kan du lagre den (eller i hvert fall den grunnleggende&HTML; eller tilsvarende kildetekst) til den lokale disken med <menuchoice
+><guimenu
+>Adresse</guimenu
+> <guimenuitem
+>Lagre som …</guimenuitem
+></menuchoice
+>. Hvis siden du ser på inneholder rammer, vil du også få valget <menuchoice
+><guimenu
+>Adresse </guimenu
+><guimenuitem
+>Lagre ramme som …</guimenuitem
+></menuchoice
+>, <mousebutton
+>venstre</mousebutton
+>-klikk i den ramma du vil lagre først.</para>
+
+<para
+>Hvis siden bruker et bakgrunnsbilde, kan du hente og lagre det med valget <menuchoice
+><guimenu
+>Adresse</guimenu
+><guimenuitem
+> Lagre bakgrunnsbilde som …</guimenuitem
+></menuchoice
+>.</para>
+
+<para
+>Men hvis det du virkelig vil ha er det lekre bildet av den siste Ferrarien, så vil et <mousebutton
+>høyre</mousebutton
+>-klikk på bildet gi deg en nedtrekksmeny med valget <guimenuitem
+>Lagre bilde som …</guimenuitem
+>. Pass på å respektere eierens rettigheter, og spør om tillatelse før du bruker noen bilder som er lagret på denne måten til noe annet enn eget bruk.</para>
+
+<para
+>Hvis du <mousebutton
+>høyre</mousebutton
+>-klikker på en lenke (som kan være et bilde) og velger <guimenuitem
+>Lagre lenke som …</guimenuitem
+> fra sprettoppmenyen, vil &HTML;-teksten eller lignende kildetekst bli lastet ned og lagres på din lokale disk.</para>
+
+<para
+><mousebutton
+>Høyre</mousebutton
+>-klikk på en lenke (som kan være et bilde) og velg <guimenuitem
+>Kopier lenkeadressen</guimenuitem
+> for å kopiere &URL;-en til utklippsmenyen slik at du f.eks. kan lime den inn i en e-post.</para>
+
+<para
+>Et <mousebutton
+>høyre</mousebutton
+>-klikk på et bilde og valget <guimenuitem
+> Kopier bildeadressen</guimenuitem
+> kopierer &URL;-en til bildet til utklippstavlen.</para>
+
+<para
+>For å lagre en hel nettside, inkludert bilder, velg <guimenuitem
+>Arkiver nettside …</guimenuitem
+> fra <guimenu
+>Verktøy</guimenu
+>-menyen. Legg merke til at denne funksjonen er tilgjengelig via et <link linkend="konq-plugin"
+>tilleggsprogram </link
+> som kanskje ikke er installert på systemet ditt. Nettsiden lagres som en enkelt fil med etternavnet <literal role="extension"
+>.war</literal
+> og kan åpnes ved å <mousebutton
+>venstre</mousebutton
+>-klikke på filnavnet i &konqueror; når du kjører i filbehandlermodus.</para>
+
+<para
+>Du kan enkelt skrive ut siden du ser på ved hjelp av menylinjen <menuchoice
+><guimenu
+>Adresse</guimenu
+><guimenuitem
+>Skriv ut … </guimenuitem
+></menuchoice
+> eller <guimenuitem
+>Skriv ut ramme …</guimenuitem
+> eller <guiicon
+>Skriv ut</guiicon
+>-knappen fra verktøylinja.</para>
+
+</sect1>
+
+<sect1 id="ftp">
+<title
+>&FTP;</title>
+
+<para
+>&FTP;, eller File Transfer Protocol, er en av de tidligste og fortsatt kanskje beste måtene å sende filer mellom datamaskiner over Internett.</para>
+
+<para
+>Med &FTP; kan du se filer og mapper på den andre datamaskinen akkurat som om de var på ditt eget system, laste dem ned til din egen datamaskin ved hjelp av &konqueror;s vanlige <guimenuitem
+>Kopier</guimenuitem
+> og <guimenuitem
+>Lim inn</guimenuitem
+> eller dra-og-slipp-metoder og hvis du får lov, laste opp filer fra din maskin til den andre maskinens filsystem. For å prøve den, tast &URL;-en</para>
+
+<screen
+><userinput
+>ftp://ftp.kde.org/pub/kde</userinput
+>
+</screen>
+
+<para
+>inn i adressefeltet og trykk &Enter;. Så lenge du er koblet opp til Internett, og så lenge &kde;s &FTP;-side ikke er for opptatt, bør du kunnese mappa <filename class="directory"
+>/pub/kde</filename
+> hos ftp.kde.org</para>
+
+<note
+><para
+>Selv om addresser til en &FTP; egentlig skal starte med <userinput
+> ftp://</userinput
+> og adresser til <acronym
+>WWW</acronym
+> skal starte med <userinput
+>http://</userinput
+>, er &konqueror; som oftest smart nok til å skjønne hva du mener og sette inn disse tegnene for deg, selv om du lar være å skrive dem inn.</para
+></note>
+
+<para
+>Når du kobler deg til en &FTP; maskin vil den vanligvis trenge et brukernavn og passord fra deg. For å forenkle ting aksepterer de fleste &FTP;-steder som tilbyr filer gratis, ordet <systemitem class="username"
+> anonymous</systemitem
+> som brukernavn og din epost som passord, og for å gjøre livet ditt enda enklere vil &konqueror; automatisk oppgi disse uten å plage deg. </para>
+
+<note
+><para
+>Hvis du prøver å koble deg til en &FTP; maskin som ikke trenger et ordentlig brukernavn eller passord, men som er for travel til å akseptere flere oppkoblinger, vil &konqueror; ofte tolke <quote
+>opptatt</quote
+>- beskjeden som et spørsmål om navn og passord og vil derfor hente fram en dialogboks som ber deg om å oppgi dem.</para
+></note>
+
+<para
+>Steder som er mer opptatt av sikkerhet vil trenge et ordentlig brukernavn og passord, da vil &konqueror; spørre deg om dem eller så kan du inkludere brukernavnet i &URL;-en du skriver inn i adressefeltet, som f.eks</para>
+
+<screen
+><userinput
+>ftp://<replaceable
+>brukernavn</replaceable
+>@ftp.cia.org</userinput
+>
+</screen>
+
+<para
+>så vil &konqueror; spørre etter et passord.</para>
+
+<para
+>&konqueror; kan også støtte automatisk innlogging hvis den er spesifisert i en <filename
+>.netrc</filename
+>-fil. Detaljer om hvordan denne funksjonen virker finner du på <ulink url="http://www.konqueror.org/faq.html#netrc"
+>http://www.konqueror.org/faq.html#netrc</ulink
+></para>
+
+</sect1>
+
+
+<sect1 id="portnumbers">
+<title
+>Portnumre i &URL;-er</title>
+<para
+>Hvis du oppgit et portnummer i &URL;-en, som f.eks. <userinput
+>http://intranet.corp.com:1080</userinput
+>, kan du få feilmeldinga <quote
+>Access to restricted port in POST denied</quote
+>(Ingen tilgang til skjermet port i adressen). Dette er gjort av sikkerhetsgrunner. Hvis du allikevel trenger tilgang til en tjener på denne porten, legg til en linje <screen
+><userinput>
+OverrridePorts=KommaseparertListeOverTillattePorter
+</userinput
+></screen
+> i fila <filename
+>$KDEDIR/share/config/kio_httprc </filename
+> eller <filename
+>~/.kde/share/config/kio_httprc</filename
+>.</para>
+<para
+>For eksempel <screen
+><userinput
+>OverridePorts=23,15
+</userinput
+></screen
+> (det skal ikke være med noen mellomrom).</para>
+<para
+>&konqueror; vil avvise de følgende portene (denne lista er hardkodet i <filename
+>kdelibs/kio/kio/job.cpp</filename
+>):</para>
+<para
+>1, 7, 9, 11, 13, 15, 17, 19, 20, 21, 22, 23, 25, 37, 42, 43, 53, 77, 79, 87, 95, 101, 102, 103, 104, 109, 110, 111, 113, 115, 117, 119, 123, 135, 139, 143, 179, 389, 512, 513, 514, 515, 526, 530, 531, 532, 540, 556, 587, 601, 989, 990, 992, 993, 995, 1080, 2049, 4045, 6000, 6667 </para>
+</sect1>
+
+
+</chapter>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

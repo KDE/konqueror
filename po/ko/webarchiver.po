@@ -1,0 +1,440 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the konqueror package.
+# Shinjo Park <kde@peremen.name>, 2020, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2021-05-16 22:38+0200\n"
+"Last-Translator: Shinjo Park <kde@peremen.name>\n"
+"Language-Team: Korean <kde-kr@kde.org>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 20.12.3\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "박신조"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kde@peremen.name"
+
+#: app/archivedialog.cpp:76
+#, kde-format
+msgid "Untitled"
+msgstr "제목 없음"
+
+#: app/archivedialog.cpp:92
+#, kde-format
+msgid "Create Archive"
+msgstr "압축 파일 만들기"
+
+#: app/archivedialog.cpp:108
+#, kde-format
+msgid "The URL of the page that is to be archived"
+msgstr "압축할 페이지의 URL"
+
+#: app/archivedialog.cpp:111
+#, kde-format
+msgid "Source &URL:"
+msgstr "원본 URL(&U):"
+
+#: app/archivedialog.cpp:120
+#, kde-format
+msgid "Web archive (*.war)"
+msgstr "웹 압축 파일 (*.war)"
+
+#: app/archivedialog.cpp:121
+#, kde-format
+msgid "Tar archive (*.tar)"
+msgstr "TAR 보관 파일 (*.tar)"
+
+#: app/archivedialog.cpp:122
+#, kde-format
+msgid "Zip archive (*.zip)"
+msgstr "ZIP 압축 파일 (*.zip)"
+
+#: app/archivedialog.cpp:123
+#, kde-format
+msgid "Directory"
+msgstr "디렉터리"
+
+#: app/archivedialog.cpp:128
+#, kde-format
+msgid "The file or directory where the archived page will be saved"
+msgstr "압축한 페이지를 저장할 파일이나 디렉터리"
+
+#: app/archivedialog.cpp:129
+#, kde-format
+msgid "&Save to:"
+msgstr "다음으로 저장(&S):"
+
+#: app/archivedialog.cpp:131
+#, kde-format
+msgid "Options"
+msgstr "옵션"
+
+#: app/archivedialog.cpp:141
+#, kde-format
+msgid " second"
+msgid_plural " seconds"
+msgstr[0] " 초"
+
+#: app/archivedialog.cpp:142
+#, kde-format
+msgid "None"
+msgstr "없음"
+
+#: app/archivedialog.cpp:212
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The web archive download cannot use the current proxy settings. No proxy "
+"will be used."
+msgstr ""
+"웹 압축 파일 다운로드에서 현재 프록시 설정을 사용할 수 없습니다. 프록시를 사"
+"용하지 않습니다."
+
+#: app/archivedialog.cpp:351
+#, kde-format
+msgctxt "@info"
+msgid "The save location is not valid."
+msgstr "저장 위치가 잘못되었습니다."
+
+#: app/archivedialog.cpp:371
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Cannot find the wget(1) command,<nl/>see <link>%1</link>."
+msgstr "wget(1) 명령을 찾을 수 없습니다.<nl/>참조: <link>%1</link>."
+
+#: app/archivedialog.cpp:393
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Cannot verify destination<nl/><filename>%1</filename><nl/>%2"
+msgstr "대상을 확인할 수 없습니다:<nl/><filename>%1</filename><nl/>%2"
+
+#: app/archivedialog.cpp:410
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The archive directory<nl/><filename>%1</filename><nl/>already exists as a "
+"file."
+msgstr ""
+"압축 디렉터리<nl/><filename>%1</filename>이(가)<nl/>이미 파일로 존재합니다."
+
+#: app/archivedialog.cpp:411
+#, kde-kuit-format
+msgctxt "@info"
+msgid "The archive directory<nl/><filename>%1</filename><nl/>already exists."
+msgstr "압축 디렉터리<nl/><filename>%1</filename>이(가)<nl/>이미 존재합니다."
+
+#: app/archivedialog.cpp:415
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The archive file<nl/><filename>%1</filename><nl/>already exists as a "
+"directory."
+msgstr ""
+"압축 파일<nl/><filename>%1</filename>이(가)<nl/>이미 디렉터리로 존재합니다."
+
+#: app/archivedialog.cpp:416
+#, kde-kuit-format
+msgctxt "@info"
+msgid "The archive file <nl/><filename>%1</filename><nl/>already exists."
+msgstr "압축 파일<nl/><filename>%1</filename>이(가)<nl/>이미 존재합니다."
+
+#: app/archivedialog.cpp:420
+#, kde-format
+msgid "Archive Already Exists"
+msgstr "압축 파일이 이미 존재함"
+
+#: app/archivedialog.cpp:450
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Cannot delete original archive<nl/><filename>%1</filename><nl/>%2"
+msgstr "원본 압축 파일을 삭제할 수 없음<nl/><filename>%1</filename><nl/>%2"
+
+#: app/archivedialog.cpp:467
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Cannot create a temporary directory<nl/><filename>%1</filename><nl/>"
+msgstr "임시 디렉터리를 생성할 수 없음<nl/><filename>%1</filename><nl/>"
+
+#: app/archivedialog.cpp:539
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Cannot start the archiver process <filename>%1</filename>"
+msgstr "압축기 프로세스 <filename>%1</filename>을(를) 시작할 수 없음"
+
+#: app/archivedialog.cpp:555
+#, kde-kuit-format
+msgctxt "@info"
+msgid "The download process was interrupted."
+msgstr "다운로드 프로세스가 중단되었습니다."
+
+#: app/archivedialog.cpp:556
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>The download process <filename>%1</filename> failed with signal %2.</"
+"para>"
+msgstr ""
+"<para>다운로드 프로세스 <filename>%1</filename>이(가) 실패하면서 시그널 %2을"
+"(를) 반환했습니다.</para>"
+
+#: app/archivedialog.cpp:561
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>The download process <filename>%1</filename> failed with status %2.</"
+"para>"
+msgstr ""
+"<para>다운로드 프로세스 <filename>%1</filename>이(가) 실패하면서 상태 코드 %2"
+"을(를) 반환했습니다.</para>"
+
+#: app/archivedialog.cpp:565
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>This may simply indicate a 404 error for some of the page elements.</"
+"para>"
+msgstr ""
+"<para>일부 페이지 구성 요소에서 404 오류가 발생했을 수도 있습니다.</para>"
+
+#: app/archivedialog.cpp:571
+#, kde-kuit-format
+msgctxt "@info"
+msgid "<para>Retain the partial web archive?</para>"
+msgstr "<para>부분적 웹 압축 파일을 유지하시겠습니까?</para>"
+
+#: app/archivedialog.cpp:572
+#, kde-format
+msgid "Retain Archive?"
+msgstr "압축 파일을 유지하시겠습니까?"
+
+#: app/archivedialog.cpp:573
+#, kde-format
+msgid "Retain"
+msgstr "유지"
+
+#: app/archivedialog.cpp:577
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Creating the web archive failed."
+msgstr "웹 압축 파일을 만들 수 없습니다."
+
+#: app/archivedialog.cpp:721
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Cannot copy archive to<nl/><filename>%1</filename><nl/>%2"
+msgstr "압축 파일을<nl/><filename>%1</filename>으로 복사할 수 없음<nl/>%2"
+
+#: app/archivedialog.cpp:751
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Cannot set permissions on<nl/><filename>%1</filename><nl/>%2"
+msgstr "다음 파일의 권한을 설정할 수 없음<nl/><filename>%1</filename><nl/>%2"
+
+#: app/archivedialog.cpp:759
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Web archive saved as<nl/><filename><link>%1</link></filename>"
+msgstr "웹 압축 파일을<nl/><filename><link>%1</link></filename>(으)로 저장함"
+
+#: app/main.cpp:26
+#, kde-format
+msgid "Web Archiver"
+msgstr "웹 압축기"
+
+#: app/main.cpp:27
+#, kde-format
+msgid "0.0.1"
+msgstr "0.0.1"
+
+#: app/main.cpp:28
+#, kde-format
+msgid "Archive a web page"
+msgstr "웹 페이지 압축"
+
+#: app/main.cpp:30
+#, kde-format
+msgid "Copyright (c) 2020 Jonathan Marten"
+msgstr "Copyright (c) 2020 Jonathan Marten"
+
+#: app/main.cpp:34
+#, kde-format
+msgid "Jonathan Marten"
+msgstr "Jonathan Marten"
+
+#: app/main.cpp:46
+#, kde-format
+msgid "URL of the web page to archive"
+msgstr "압축할 웹 페이지 URL"
+
+#: app/main.cpp:46
+#, kde-format
+msgid "url"
+msgstr "url"
+
+#. i18n: ectx: label, entry (WaitTime), group (Options)
+#: app/settings.kcfg:10
+#, kde-format
+msgid "Wait time:"
+msgstr "대기 시간:"
+
+#. i18n: ectx: tooltip, entry (WaitTime), group (Options)
+#: app/settings.kcfg:11
+#, kde-format
+msgid "The wait time between item requests, to reduce web server load"
+msgstr "웹 서버 부하를 줄이기 위해서 사용할 항목 요청간 대기 시간"
+
+#. i18n: ectx: label, entry (NoProxy), group (Options)
+#: app/settings.kcfg:18
+#, kde-format
+msgid "Do not use proxy"
+msgstr "프록시 사용 안 함"
+
+#. i18n: ectx: tooltip, entry (NoProxy), group (Options)
+#: app/settings.kcfg:19
+#, kde-format
+msgid "Do not use the system proxy settings to fetch the web page"
+msgstr "웹 페이지를 가져올 때 시스템 프록시 설정 사용 안 함"
+
+#. i18n: ectx: label, entry (RandomWait), group (Options)
+#: app/settings.kcfg:24
+#, kde-format
+msgid "Randomise wait time"
+msgstr "무작위 대기 시간 사용"
+
+#. i18n: ectx: tooltip, entry (RandomWait), group (Options)
+#: app/settings.kcfg:25
+#, kde-format
+msgid "Vary the wait time between requests, to confuse server log analysis"
+msgstr "요청간 대기 시간을 무작위로 추가하여 서버 로그 분석을 어렵게 합니다"
+
+#. i18n: ectx: label, entry (FixExtensions), group (Options)
+#: app/settings.kcfg:30
+#, kde-format
+msgid "Save in standard web archive format"
+msgstr "표준 웹 압축 파일 형식으로 저장"
+
+#. i18n: ectx: tooltip, entry (FixExtensions), group (Options)
+#: app/settings.kcfg:37
+#, kde-format
+msgid ""
+"<p>Save downloaded files all in a single directory, with file name "
+"extensions suitable for local browsing.\n"
+"                        For example, the main HTML page will always be "
+"called \"index.html\" and a remote .php page will be saved with the "
+"standard .html extension.</p>\n"
+"               <p>Leave this option turned on to produce a standard web "
+"archive (.war) file.</p>\n"
+"               <p>If this option is turned off, then the files will be saved "
+"exactly as downloaded.\n"
+"                        This means that they may be in subdirectories "
+"reflecting the structure of the original web site, and extensions will not "
+"be adjusted.\n"
+"                        Note that the download may not work correctly if the "
+"original URL refers to a directory but does not end with a slash.</p>\n"
+"      "
+msgstr ""
+"<p>다운로드한 파일을 단일 디렉터리에 저장하고 로컬 탐색에 적합하도록 파일 확"
+"장자를 바꿉니다.\n"
+"                        예를 들어서 주 HTML 페이지는 항상 \"index.html\" 파일"
+"을 사용하며 원격 .php 페이지는 표준 .html 확장자로 바꿔서 저장합니다.</p>\n"
+"               <p>이 옵션을 사용하면 표준 웹 압축 파일(.war) 파일을 생성합니"
+"다.</p>\n"
+"               <p>이 옵션을 사용하지 않으면 파일을 다운로드한 그대로 저장합니"
+"다.\n"
+"                        원본 웹사이트의 디렉터리 구조에 따라서 하위 디렉터리"
+"를 유지하며, 확장자를 보정하지 않을 수도 있습니다.\n"
+"                        원본 URL이 디렉터리를 가리키지만 슬래시로 끝나지 않"
+"을 때 올바르게 작동하지 않을 수도 있습니다.</p>\n"
+"      "
+
+#. i18n: ectx: label, entry (RunInTerminal), group (Options)
+#: app/settings.kcfg:42
+#, kde-format
+msgid "Run in terminal"
+msgstr "터미널에서 실행"
+
+#. i18n: ectx: tooltip, entry (RunInTerminal), group (Options)
+#: app/settings.kcfg:45
+#, kde-format
+msgid ""
+"<p>Run the download process in a terminal window. Close the terminal window "
+"when the download has finished.</p>\n"
+"               <p>If this option is turned off then the download will run in "
+"the background. Its progress output should appear in the session log file.</"
+"p>\n"
+"      "
+msgstr ""
+"<p>터미널 창에 다운로드 프로세스를 실행합니다. 다운로드가 끝났을 때 터미널 창"
+"을 닫습니다.</p>\n"
+"               <p>이 옵션을 사용하지 않으면 백그라운드에서 다운로드를 진행합"
+"니다. 세션 로그 파일에 다운로드 진행 기록을 저장합니다.</p>\n"
+"      "
+
+#. i18n: ectx: label, entry (CloseWhenFinished), group (Options)
+#: app/settings.kcfg:50
+#, kde-format
+msgid "Close when finished"
+msgstr "끝났을 때 닫기"
+
+#. i18n: ectx: tooltip, entry (CloseWhenFinished), group (Options)
+#: app/settings.kcfg:51
+#, kde-format
+msgid "Close this window when the download has finished successfully"
+msgstr "다운로드가 성공적으로 끝냈을 때 이 창 닫기"
+
+#. i18n: ectx: label, entry (ArchiveType), group (Options)
+#: app/settings.kcfg:56
+#, kde-format
+msgid "Archive &type:"
+msgstr "압축 파일 형식(&T):"
+
+#. i18n: ectx: tooltip, entry (ArchiveType), group (Options)
+#: app/settings.kcfg:57
+#, kde-format
+msgid "The type of web archive to save"
+msgstr "저장할 웹 압축 파일 형식"
+
+#: plugin_webarchiver.cpp:31
+#, kde-format
+msgid "Archive Web Page..."
+msgstr "웹 페이지 압축..."
+
+#: plugin_webarchiver.cpp:49
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Cannot find the <command>kcreatewebarchive</command> executable,<nl/>check "
+"the plugin and helper installation."
+msgstr ""
+"<command>kcreatewebarchive</command> 실행 파일을 찾을 수 없습니다.<nl/>플러그"
+"인과 도우미 설치 상태를 확인하십시오."
+
+#: plugin_webarchiver.cpp:50
+#, kde-format
+msgid "Cannot Create Web Archive"
+msgstr "웹 압축 파일을 만들 수 없음"
+
+#. i18n: ectx: Menu (tools)
+#: webarchiverplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "도구(&T)"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: webarchiverplugin.rc:8
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "추가 도구 모음"

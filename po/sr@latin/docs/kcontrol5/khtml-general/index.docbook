@@ -1,0 +1,218 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Serbian-Latin "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article lang="&language;" id="konq-general-behavior">
+<title
+>Opšte ponašanje <application
+>K‑osvajača</application
+></title>
+<articleinfo>
+
+<authorgroup>
+<author
+><personname
+><firstname
+>Burkhard</firstname
+> <surname
+>Lik</surname
+></personname
+></author>
+<othercredit role="translator"
+><firstname
+>Časlav</firstname
+><surname
+>Ilić</surname
+><affiliation
+><address
+><email
+>caslav.ilic@gmx.net</email
+></address
+></affiliation
+><contrib
+>prevod</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>8. 11. 2016.</date>
+<releaseinfo
+>Programi KDE‑a 16.12</releaseinfo>
+
+</articleinfo>
+<para
+>Ova stranica sadrži postavki za domaću i početnu stranicu, i za ponašanje pregledanja sa jezičcima u oba režima <application
+>K‑osvajača</application
+>, kao menadžera fajlova i pregledača.</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>K‑osvajač kreće od:</guilabel
+></term>
+<listitem>
+<para
+>Ova opcija određuje koja će stranica biti prikazana po pokretanju <application
+>K‑osvajača</application
+>: uvodna, vaša domaća, prazna, ili ona sa vašim obeleživačima. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Domaća stranica:</guilabel
+></term>
+<listitem
+><para
+>Ovo je URL (npr. fascikla ili veb stranica) na koji će <application
+>K‑osvajač</application
+> u režim pregledača skočiti kada se klikne na dugme domaće stranice u traci alatki. Putanju domaće stranice možete uneti direktno u tekstualno polje, ili kliknuti na ikonicu za pregledanje pa izabrati neku lokalnu fasciklu.</para>
+<para
+>Kada se <application
+>K‑osvajač</application
+> koristi u režimu menadžera fajlova, dugme domaće stranice na traci alatki biva zamenjeno dugmetom domaće fascikle, kojim se skače na vašu lokalnu domaću fasciklu.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Otvori vezu u novom jezičku umesto u novom prozoru</guilabel
+></term>
+<listitem
+><para
+>Podrazumevano se za svaku stranicu otvara novi prozor <application
+>K‑osvajača</application
+>, ali se može otvoriti i više <firstterm
+>jezičaka</firstterm
+> unutar jednog prozora. Takođe podrazumevano, <mousebutton
+>srednje</mousebutton
+> dugme miša je prečica za otvaranje veze u novom prozoru. Ako popunite <guilabel
+>Otvori vezu u novom jezičku umesto u novom prozoru</guilabel
+>, možete kliknuti <mousebutton
+>srednjim</mousebutton
+> na vezu da je otvorite pod novim jezičkom.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Iskačući prozori u novom jezičku umesto prozoru</guilabel
+></term>
+<listitem
+><para
+>Da li će se <application
+>JavaScript</application
+> iskačući prozori otvarati u novom jezičku ili novom prozoru.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Otvori spoljašnji URL kao jezičak u postojećem K‑osvajaču</guilabel
+></term>
+<listitem
+><para
+>Kada kliknete na URL u drugom KDE programu (ili upotrebite <command
+>kfmclient</command
+> za otvaranje URL‑a), biće potražen neminimizovan primerak <application
+>K‑osvajača</application
+> na tekućoj površi i URL otvoren kao novi jezičak u njemu. Ako nema takvog, biće otvoren novi prozor <application
+>K‑osvajača</application
+> sa datim URL‑om.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Otvori novi jezičak u pozadini</guilabel
+></term>
+<listitem
+><para
+>Pri pregledanju sa jezičcima, možete odrediti da li novootvoreni jezičak postaje aktivan („prednji“) ili odlazi u pozadinu. Ako je veza sa Internetom spora, ili kad pregledate stranu sa nizom naslova ili drugih veza u obliku spiska, možete želeti da se novi jezičci učitavaju u pozadini dok vi nastavljate sa čitanjem. U tom slučaju uključite ovu postavku. Ako biste radije da odmah skačete na novu stranicu, tako da stara ostane u pozadini gde joj se možete kasnije vratiti, isključite ovo.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Otvori novi jezičak posle tekućeg</guilabel
+></term>
+<listitem
+><para
+>Ovo će otvoriti novi jezičak odmah iza tekućeg, umesto iza poslednjeg.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Sakrij traku sa jezičcima kada ima samo jedan</guilabel
+></term>
+<listitem
+><para
+>Ovo će prikazivati traku sa jezičcima samo ukoliko postoje dva ili više jezička. Inače, traka će se uvek prikazivati.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Dugme za zatvaranje na jezičcima</guilabel
+></term>
+<listitem
+><para
+>Ovo će unutar jezičaka prikazivati dugme za zatvaranje, umesto ikonice veb sajta.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Srednji klik na jezičak zatvara ga</guilabel
+></term>
+<listitem
+><para
+>Kliknete li na jezičak srednjim dugmetom miša (ili točkićem), on će se zatvoriti. <application
+>K‑osvajač</application
+> se mora ponovo pokrenuti da bi ovo stupilo na snagu.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Potvrdi zatvaranje prozora sa više jezičaka</guilabel
+></term>
+<listitem
+><para
+>Ako pokušate da zatvorite prozor <application
+>K‑osvajača</application
+> sa više otvorenih jezičaka, bićete upitani želite li zaista to da učinite. Ovo ponašanje možete uključiti ili isključiti ovom kućicom.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Na prethodno korišćeni jezičak pri zatvaranju tekućeg</guilabel
+></term>
+<listitem
+><para
+>Ako uključite ovo, kada zatvorite tekući jezičak, umesto prvog desnog biće aktiviran poslednji prethodno korišćeni ili otvoreni jezičak.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</article>

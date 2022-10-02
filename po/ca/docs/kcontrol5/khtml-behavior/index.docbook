@@ -1,0 +1,114 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Catalan  "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="khtml-behavior" lang="&language;">
+<articleinfo>
+<title
+>Navegació Web</title>
+<authorgroup>
+<author
+>&Krishna.Tateneni; &Krishna.Tateneni.mail;</author>
+&traductor.Antoni.Bella; 
+</authorgroup>
+
+<date
+>4 de novembre de 2019</date>
+<releaseinfo
+>Aplicacions 19.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Arranjament del sistema</keyword>
+<keyword
+>konqueror</keyword>
+<keyword
+>navegant</keyword>
+</keywordset>
+
+</articleinfo>
+<sect1 id="konq-browsing">
+<title
+>Navegació Web</title>
+
+<para
+>El mòdul de navegació de &systemsettings; del &konqueror;, us permet seleccionar diverses opcions per a l'aspecte i comportament del &konqueror;, el navegador web integrat del &kde;.</para>
+
+<para
+>Si <guilabel
+>Pregunta pel nom i la carpeta en afegir adreces d'interès</guilabel
+> està marcada, el &konqueror; us permetrà canviar el títol de l'adreça d'interès i triar una carpeta on desar-la quan afegiu una adreça d'interès nova.</para>
+
+<para
+>Activeu <guilabel
+>Mostra només les adreces marcades a la barra d'eines d'adreces d'interès</guilabel
+> i el &konqueror; només mostrarà aquelles adreces d'interès marcades per a fer-ho a l'editor d'adreces d'interès.</para>
+
+<para
+>L'opció següent que podeu activar en aquesta pàgina és <guilabel
+>Compleció de formularis</guilabel
+>. Si marqueu aquesta casella, el &konqueror; intentarà recordar les vostres respostes a formularis de preguntes i mirarà d'omplir els camps dels formularis amb les respostes que anteriorment ja heu emprat.</para>
+
+<para
+>Podeu configurar el nombre d'elements de formularis que el &konqueror; recordarà amb el botó de selecció de valors anomenat <guilabel
+>Complecions màximes</guilabel
+>.</para>
+
+<note
+><para
+>Per descomptat, si el &konqueror; omple un formulari, sempre podreu editar-lo manualment abans d'enviar-lo!</para
+></note>
+
+<para
+>La següent opció és <guilabel
+>Canvia el cursor sobre els enllaços</guilabel
+>. Si aquesta opció està seleccionada, la forma del cursor canviarà (normalment a una mà) sempre que us moveu per sobre d'un enllaç. Això facilita la identificació dels enllaços, especialment si es tracta d'imatges.</para>
+
+<para
+>Si està marcat <guilabel
+>El clic del mig obre l'URL de la selecció</guilabel
+>, podreu obrir l'&URL; de la selecció fent un clic del botó del mig en una vista del &konqueror;.</para>
+
+<para
+>Com a una funcionalitat de comoditat, si activeu <guilabel
+>El clic dret va enrere a l'historial</guilabel
+>, en fer clic a sobre d'una àrea buida (&ead;, no sobre un enllaç) en la finestra del &konqueror;, aquesta actuarà com si haguéssiu premut el botó <guiicon
+>Enrere</guiicon
+> a la barra d'eines.</para>
+
+<para
+>Activant <guilabel
+>Permet la recàrrega/redirecció retardada automàtica</guilabel
+> fareu que els servidors us enviïn a una altra pàgina sense el vostre consentiment. En molts casos aquesta propietat és una comoditat; per exemple si el servidor web s'ha mudat a un &URL; nou. Molts administradors web en aquesta situació posaran una pàgina en el lloc antic, indicant-vos que aquella pàgina s'ha mudat a un altre lloc i que potser desitjareu canviar el vostre enllaç i després anar al nou lloc web. Encara que aquestes característiques poden resultar-vos confuses o molestes quan s'utilitzen equivocadament, i potser desitjareu desactivar-les.</para>
+
+<para
+><guilabel
+>Habilita l'activació de les tecles d'accessibilitat amb la tecla &Ctrl;</guilabel
+>: prement la tecla &Ctrl; quan es visualitzen les pàgines web s'activen les tecles d'accessibilitat. Desmarcant aquesta casella es desactivarà aquesta funcionalitat d'accessibilitat. Cal reiniciar el &konqueror; perquè aquest canvi tingui efecte.</para>
+
+<para
+><guilabel
+>Envia la capçalera DNT per a indicar a les pàgines web que no desitgeu ser seguits</guilabel
+>: Marqueu aquesta casella si voleu informar a un lloc web que no voleu que se segueixin els vostres hàbits de navegació. </para>
+
+<para
+><guilabel
+>Permet desar les contrasenyes dels llocs web</guilabel
+>: Desmarqueu aquesta casella perquè no se us sol·liciti desar les contrasenyes web. </para>
+
+<para
+><guilabel
+>Mostra els fitxers &PDF; en línia usant el WebEngine</guilabel
+>. Desmarqueu aquesta casella per a mostrar en línia els fitxers &PDF; configurats al mòdul <guilabel
+>Associacions de fitxer</guilabel
+> de l'&systemsettings;. </para>
+
+</sect1>
+
+</article>

@@ -1,0 +1,171 @@
+<chapter id="save-settings">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>Tomas</firstname
+><surname
+>Straupis</surname
+><affiliation
+><address
+><email
+>tomasstraupis@gmail.com</email
+></address
+></affiliation
+><contrib
+>Vertė</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2010-02-26</date>
+<releaseinfo
+>&kde; 4.4</releaseinfo>
+</chapterinfo>
+
+<title
+>Nustatymų ir jų rinkinių išsaugojimas</title>
+<sect1 id="save-settings-general">
+<title
+>Bendri nustatymai</title>
+<para
+>Uždarius &konqueror; jūsų einamieji <guimenu
+>Rodymo</guimenu
+> meniu nustatymai (tokie kaip <guimenuitem
+>Žiūrėjimo būdas</guimenuitem
+>, <guimenuitem
+>Naudoti index.html</guimenuitem
+> bei <guimenuitem
+>Rodyti paslėptus failus</guimenuitem
+>) nėra automatiškai išsaugomi kaip numatytieji nustatymai. Jei norite, kad &konqueror; juos atsmintų, iš meniu parinkite <menuchoice
+><guimenu
+>Nustatymai</guimenu
+><guimenuitem
+>Įrašyti rodymo profilį kaip...</guimenuitem
+></menuchoice
+> ir einamieji nustatymai taps numatytaisiais, kurie bus naudojami kitą kartą paleidus &konqueror;.</para>
+
+<para
+>Jūs galite nurodyti naudoti skirtingus <guimenu
+>Rodymo</guimenu
+> meniu nustatymus skirtingiems aplankams. Norėdami tą padaryti, parinkite <menuchoice
+><guimenu
+>Rodymas</guimenu
+><guimenuitem
+>Derinti rodymo savybes...</guimenuitem
+></menuchoice
+>, pakeiskite <guimenu
+>Rodymo</guimenu
+> nustatymus taip, kaip pageidaujate. Tada pritaikykite rodymo savybes <guilabel
+>Dabartiniam aplankui</guilabel
+>. Taip padarius einamajame aplanke bus sukurtas failas <filename
+>.directory</filename
+>, kuriame bus saugomi šio aplanko <guimenu
+>rodymo</guimenu
+> nustatymai. Naudodami tą patį dialogą galite ištrinti specifinius aplanko nustatymus (tą patį galite pasiekti tiesiog ištrindami failą <filename
+>.directory</filename
+>).</para>
+<note
+><para
+>Viena iš situacijų, kai šis funkcionalumas yra labai naudingas, tai jei turite aplanką, kuriame yra daug nuotraukų. Galite nurodyti, kad atidarius būtent tą ir tik tą konkretų aplanką, jame būtų rodomos nuotraukų miniatiūros (pasirinkus iš <guimenu
+>Rodymo</guimenu
+> meniu <menuchoice
+><guisubmenu
+>Žiūrėjimo būdas</guisubmenu
+><guimenuitem
+>Ženkliukai</guimenuitem
+></menuchoice
+> bei <guimenuitem
+>Peržiūra</guimenuitem
+>).</para
+></note>
+</sect1>
+
+<sect1 id="save-settings-view-profiles">
+<title
+>Rodymo profiliai</title>
+<para
+>&konqueror; kaip <quote
+>Rodymo profilį</quote
+> gali išsaugoti visą rinkinį nustatymų. Kai kurie rodymo profiliai, tokie kaip antai <property
+>Žiniatinklio naršymas</property
+>, <property
+>Failų tvarkymas</property
+>, <property
+>KDE Programavimas</property
+>, <property
+>Midnight Commander</property
+> ir <property
+>Naršymas su kortelėmis</property
+>, yra standartinė &konqueror; dalis. Jūs galite pridėti naujų, savo sukurtų, rodymo profilių.</para>
+
+<para
+>Norėdami pakeisti rodymo profilį (sakykime <property
+>Žiniatinklio naršymo</property
+> profilį), įkraukite profilį parinkę <menuchoice
+><guimenu
+>Nustatymai</guimenu
+><guisubmenu
+>Įkelti rodymo profilį</guisubmenu
+><guimenuitem
+>Žiniatinklio naršymas</guimenuitem
+></menuchoice
+>, ir pakeiskite &konqueror; nustatymus taip, kaip norite. Tada parinkite <menuchoice
+><guimenu
+>Nustatymai</guimenu
+><guimenuitem
+>Išsaugoti rodymo profilį kaip... </guimenuitem
+></menuchoice
+>. Pasirodžiusiame dialoge galite pakeisti profilio vardą, tokiu atveju būtų sukurtas naujas profilis. Jei paliksite tą patį profilio pavadinimą, bus pakeistas jau egzistuojantis profilis. Jei parinksite <guilabel
+>Įrašyti URL profilyje</guilabel
+>, dabartinis &URL; bus pakrautas, kai jūs įkrausite šitą profilį. Tai veikia panašiai kaip daugelio naršyklių <quote
+>Namų puslapis</quote
+>. Jei norite, kad If you want &konqueror; būtų paleidžiamas su tuščiu langu, prieš išsaugant profilį į vietos lauką įveskite <userinput
+>about:blank</userinput
+>.</para>
+
+<note
+><para
+>Galite sukurti darbastalio ženkliuką, kuris paleistų &konqueror; su jūsų naujuoju profiliu. Visų pirma sukurkite darbastalio ženkliuką spausdami <mousebutton
+>dešinį</mousebutton
+> pelės mygtuką ant &konqueror; paleidimo meniu. Tada iššokančiame meniu parinkite <guimenuitem
+>Pridėti į darbastalį</guimenuitem
+>. Tada ant naujojo ženkliuko spauskite <mousebutton
+>dešinį</mousebutton
+> pelės mygtuką, parinkite <guimenuitem
+>Savybes</guimenuitem
+> ir kortelėje <guilabel
+>Programa</guilabel
+> pakeiskite <guilabel
+>Komandą</guilabel
+> į <userinput
+><command
+>kfmclient</command
+> <option
+>openProfile <replaceable
+>ManoNaujasProfilis</replaceable
+></option
+></userinput
+>, kur <replaceable
+>ManoNaujasProfilis</replaceable
+> – jūsų naujai sukurto profilio pavadinimas. Tada pakeiskite ženkliuko pavadinimą į ką nors panašaus į <filename
+>ManoNaujasProfilis</filename
+>.</para
+></note>
+
+</sect1>
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

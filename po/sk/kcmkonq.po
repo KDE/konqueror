@@ -1,0 +1,85 @@
+# translation of kcmkonq.po to Slovak
+# Stanislav Visnovsky, <visnovsky@nenya.ms.mff.cuni.cz>,2001-2002.
+# Stanislav Visnovsky <stano@ms.mff.cuni.cz>, 2002.
+# Stanislav Visnovsky <visnovsky@kde.org>, 2003, 2004.
+# Richard Fric <Richard.Fric@kdemail.net>, 2006, 2009.
+# Miroslav David <mirodav@gmail.com>, 2009.
+# Michal Sulek <misurel@gmail.com>, 2009, 2010, 2011.
+# Matej Mrenica <matejm98mthw@gmail.com>, 2019.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkonq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2019-11-18 10:58+0100\n"
+"Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
+"Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 19.11.80\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#: behaviour.cpp:36
+#, kde-format
+msgid ""
+"<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "
+"file manager here."
+msgstr ""
+"<h1>Správanie Konquerora</h1>Tu môžete nastaviť správanie Konquerora ako "
+"správcu súborov."
+
+#: behaviour.cpp:40
+#, kde-format
+msgid "Misc Options"
+msgstr "Rôzne možnosti"
+
+#: behaviour.cpp:49
+#, kde-format
+msgid "Open folders in separate &windows"
+msgstr "Otvárať priečinky v &samostatných oknách"
+
+#: behaviour.cpp:50
+#, kde-format
+msgid ""
+"If this option is checked, Konqueror will open a new window when you open a "
+"folder, rather than showing that folder's contents in the current window."
+msgstr ""
+"Ak je táto voľba zapnutá, Konqueror bude otvárať nové okno pri otvorení "
+"priečinka, namiesto zobrazenia obsahu otvoreného priečinka v aktuálnom okne."
+
+#: behaviour.cpp:73
+#, kde-format
+msgid "Show 'Delete' me&nu entries which bypass the trashcan"
+msgstr "Zobraziť v ponuke položku 'Odstrániť', ktorá obchádza kôš"
+
+#: behaviour.cpp:77
+#, kde-format
+msgid ""
+"Check this if you want 'Delete' menu commands to be displayed on the desktop "
+"and in the file manager's menus and context menus. You can always delete "
+"files by holding the Shift key while calling 'Move to Trash'."
+msgstr ""
+"Začiarknite toto políčko, ak chcete zobraziť príkazy 'Odstrániť' v "
+"kontextových ponukách plochy a správcovi súborov. Súbory môžete vždy "
+"odstrániť podržaním klávesy Shift počas príkazu 'Presunúť do koša'."
+
+#~ msgctxt "@title:window"
+#~ msgid "Menu Editor"
+#~ msgstr "Editor ponuky"
+
+#~ msgid "Menu"
+#~ msgstr "Ponuka"
+
+#~ msgid "New..."
+#~ msgstr "Nový..."
+
+#~ msgid "Remove"
+#~ msgstr "Odstrániť"
+
+#~ msgid "Move Up"
+#~ msgstr "Posunúť vyššie"
+
+#~ msgid "Move Down"
+#~ msgstr "Posunúť nižšie"

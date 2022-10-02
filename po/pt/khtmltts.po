@@ -1,0 +1,42 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: khtmlkttsd\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2011-05-10 10:12+0100\n"
+"Last-Translator: Pedro Morais <morais@kde.org>\n"
+"Language-Team: pt <kde-i18n-pt@kde.org>\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-POFile-SpellExtra: startText setText KTTSD supportsMarkup say Jovie\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: khtmltts.cpp:33
+#, kde-format
+msgid "&Speak Text"
+msgstr "&Falar o Texto"
+
+#. i18n: ectx: Menu (tools)
+#: khtmlttsplugin.rc:5
+#, kde-format
+msgid "&Tools"
+msgstr "Ferramen&tas"
+
+#. i18n: ectx: ToolBar (speechToolbar)
+#: khtmlttsplugin.rc:10
+#, kde-format
+msgid "Speech Toolbar"
+msgstr "Barra de Fala"
+
+#~ msgctxt "@title:window"
+#~ msgid "Starting Jovie Text-to-Speech Service Failed"
+#~ msgstr "O Início do Serviço de Texto-para-Voz Jovie Foi Mal-Sucedido"
+
+#~ msgid "The D-Bus call say() failed."
+#~ msgstr "A chamada de D-BUS 'say()' falhou."
+
+#~ msgctxt "@title:window"
+#~ msgid "D-Bus Call Failed"
+#~ msgstr "A Chamada de D-Bus Falhou"

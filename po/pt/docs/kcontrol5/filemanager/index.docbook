@@ -1,0 +1,103 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Portuguese "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="filemanager" lang="&language;">
+<articleinfo>
+<title
+>Gestão de Ficheiros</title>
+<authorgroup>
+<author
+>&Mike.McBride; &Mike.McBride.mail;</author>
+<othercredit role="translator"
+><firstname
+>José</firstname
+><surname
+>Pires</surname
+><affiliation
+><address
+><email
+>zepires@gmail.com</email
+></address
+></affiliation
+><contrib
+>Tradução</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2016-11-08</date>
+<releaseinfo
+>Aplicações 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Systemsettings</keyword>
+<keyword
+>gestor de ficheiros</keyword>
+</keywordset>
+</articleinfo>
+
+<para
+>Nestes módulos, o utilizador poderá configurar vários aspectos da funcionalidade de gestão de ficheiros do &konqueror;. </para>
+
+<note
+><para
+>A funcionalidade de navegação Web do &konqueror; tem os seus <ulink url="help:/kcontrol/khtml-behavior/index.html"
+>próprios módulos de configuração</ulink
+>.</para
+></note>
+
+<variablelist>
+<title
+><guilabel
+>Opções Diversas</guilabel
+></title>
+<varlistentry>
+<term
+><guilabel
+>Abrir as pastas em janelas separadas</guilabel
+></term>
+<listitem
+> <para
+>Se esta opção estiver seleccionada, será criada uma nova janela do &konqueror; sempre que você abrir uma pasta em vez de mostrar o seu conteúdo na janela actual.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Mostrar os itens 'Apagar' que não usam o caixote do lixo</guilabel
+></term>
+<listitem>
+<para
+>Assinale isto se quiser que os comandos do menu <quote
+>Apagar</quote
+> sejam apresentados no ecrã e nos menus de contexto do gestor de ficheiros. Poderá sempre apagar os ficheiros, mantendo carregada para tal a tecla &Shift; enquanto invoca o <guimenuitem
+>Enviar para o Lixo</guimenuitem
+>.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>A configuração do modo de gestão de ficheiros do &konqueror;, nas páginas <guilabel
+>Modos de Visualização</guilabel
+>, <guilabel
+>Navegação</guilabel
+>, <guilabel
+>Serviços</guilabel
+>, <guilabel
+>Geral</guilabel
+> e <guilabel
+>Lixo</guilabel
+>, também são usadas pelo &dolphin;. </para>
+
+</article>

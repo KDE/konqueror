@@ -1,0 +1,95 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Norwegian-Bokmal "INCLUDE">
+]>
+<article id="history" lang="&language;">
+<title
+>Historie-sidestolpe</title>
+<articleinfo>
+<authorgroup>
+<author
+>&Burkhard.Lueck;</author>
+<othercredit role="translator"
+><firstname
+>Bjørn</firstname
+><surname
+>Steensrud</surname
+><affiliation
+><address
+><email
+>bjornst@skogkatt.homelinux.org</email
+></address
+></affiliation
+><contrib
+>Oversettelse</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2009-11-24</date>
+<releaseinfo
+>&kde; 4.4</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Systeminnstillinger</keyword>
+<keyword
+>historie</keyword>
+</keywordset>
+</articleinfo>
+
+<para
+>Dette dialogvinduet kan brukes til å sette opp historie-sidestolpen. </para>
+
+<variablelist>
+<varlistentry
+><term
+><guilabel
+>Grenser</guilabel
+></term>
+<listitem
+><para
+>Valgene her kan brukes til å stille inn maksimal størrelse på historien, og oppgi en levetid på innslag i historien slik at de blir automatisk slettet etter en tid. </para
+></listitem>
+</varlistentry>
+
+<varlistentry
+><term
+><guilabel
+>Selvvalgt skriftype</guilabel
+></term>
+<listitem
+><para
+>Her kan du også oppgi forskjellig skrift for nye og gamle &URL;-er ved å trykke <guibutton
+>Velg skrift</guibutton
+>-knappen. </para
+></listitem>
+</varlistentry>
+
+<varlistentry
+><term
+><guilabel
+>Detaljer</guilabel
+></term>
+<listitem
+><para
+>Avkryssingsboksen <guilabel
+>Detaljerte verktøytips</guilabel
+> styrer hvor mye informasjon som vises når du legger musepekeren over et element på historiesida.</para>
+<para
+>Hvis det er valgt vises i tillegg til URL-en, hvor mange ganger man har besøkt URL-en og datoene for første og siste gang du gjorde det.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Når du velger <guimenuitem
+>Tøm historien</guimenuitem
+> fjerner du hele historien. </para>
+</article>

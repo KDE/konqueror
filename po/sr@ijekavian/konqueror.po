@@ -1,0 +1,1890 @@
+# Translation of konqueror.po into Serbian.
+# Toplica Tanaskovic <toptan@kde.org.yu>, 2003, 2004.
+# Marko Rosic <roske@kde.org.yu>, 2003.
+# Chusslove Illich <caslav.ilic@gmx.net>, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2016, 2017.
+# Dalibor Djuric <daliborddjuric@gmail.com>, 2009, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2020-06-15 02:13+0200\n"
+"PO-Revision-Date: 2017-09-29 16:43+0200\n"
+"Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
+"Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
+"Language: sr@ijekavian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+"X-Associated-UI-Catalogs: libkonq kconfigwidgets5\n"
+"X-Environment: kde\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Топлица Танасковић,Часлав Илић"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "toptan@kde.org.yu,caslav.ilic@gmx.net"
+
+#: src/konqclosedwindowsmanager.cpp:423 src/konqmainwindow.cpp:4986
+#: src/konqmainwindow.cpp:5032
+#, kde-format
+msgid "no name"
+msgstr "безимено"
+
+#: src/konqextensionmanager.cpp:58
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure"
+msgstr "Подешавање"
+
+#: src/konqextensionmanager.cpp:75 src/konqextensionmanager.cpp:78
+#: src/konqextensionmanager.cpp:79
+#, kde-format
+msgid "Extensions"
+msgstr "Проширења"
+
+#: src/konqfactory.cpp:82
+#, kde-format
+msgid ""
+"There was an error loading the module %1.\n"
+"The diagnostics is:\n"
+"%2"
+msgstr ""
+"Грешка при учитавању модула %1.\n"
+"Дијагноза:\n"
+"%2"
+
+#: src/konqframestatusbar.cpp:120
+#, kde-format
+msgid ""
+"Checking this box on at least two views sets those views as 'linked'. Then, "
+"when you change directories in one view, the other views linked with it will "
+"automatically update to show the current directory. This is especially "
+"useful with different types of views, such as a directory tree with an icon "
+"view or detailed view, and possibly a terminal emulator window."
+msgstr ""
+"Прикази се могу повезати попуњавањем ове кућице уз најмање два приказа. Тада "
+"ће, када промијените активну фасциклу у једном приказу, аутоматски бити "
+"ажуриран садржај свих осталих повезаних приказа. Ово је нарочито корисно ако "
+"користите различите типове приказа, као на примјер стабло фасцикли са "
+"иконицама или детаљима, и можда прозор емулатора терминала."
+
+#: src/konqframestatusbar.cpp:166
+#, kde-format
+msgid "Close View"
+msgstr "Затвори приказ"
+
+#: src/konqframestatusbar.cpp:244
+#, kde-format
+msgid "%1/s"
+msgstr "%1/s"
+
+#: src/konqframestatusbar.cpp:246
+#, kde-format
+msgid "Stalled"
+msgstr "Застој"
+
+#: src/konqguiclients.cpp:65
+#, kde-format
+msgid "Preview &in %1"
+msgstr "Преглед &у %1|/|Преглед &у $[лок %1]"
+
+#: src/konqguiclients.cpp:132
+#, kde-format
+msgid "Show %1"
+msgstr "Прикажи %1|/|Прикажи $[аку %1]"
+
+#: src/konqhistorydialog.cpp:51
+#, kde-format
+msgctxt "@title:window"
+msgid "History"
+msgstr "Историјат"
+
+#: src/konqhistorydialog.cpp:65 src/konqhistoryview.cpp:147
+#, kde-format
+msgctxt "@action:inmenu Parent of 'By Name' and 'By Date'"
+msgid "Sort"
+msgstr "Поређај"
+
+#: src/konqhistorymodel.cpp:132
+#, kde-format
+msgid ""
+"<qt><center><b>%1</b></center><hr />Last visited: %2<br />First visited: "
+"%3<br />Number of times visited: %4</qt>"
+msgstr ""
+"<qt><center><b>%1</b></center><hr/>Посљедња посјета: %2<br/>Прва посјета: "
+"%3<br/>Број посијета: %4</qt>"
+
+#: src/konqhistorymodel.cpp:226
+#, kde-format
+msgid "Local"
+msgstr "Локално"
+
+#: src/konqhistorymodel.cpp:229
+#, kde-format
+msgid "Miscellaneous"
+msgstr "Разно"
+
+#: src/konqhistoryview.cpp:66 src/konqmainwindow.cpp:4535
+#, kde-format
+msgid "Open in New &Window"
+msgstr "Отвори у новом &прозору"
+
+#: src/konqhistoryview.cpp:71
+#, kde-format
+msgid "Open in New Tab"
+msgstr "Отвори у новом језичку"
+
+#: src/konqhistoryview.cpp:75
+#, kde-format
+msgid "&Copy Link Address"
+msgstr "&Копирај адресу везе"
+
+#: src/konqhistoryview.cpp:80
+#, kde-format
+msgid "&Remove Entry"
+msgstr "&Уклони ставку"
+
+#: src/konqhistoryview.cpp:87
+#, kde-format
+msgid "C&lear History"
+msgstr "&Очисти историјат"
+
+#: src/konqhistoryview.cpp:92
+#, kde-format
+msgid "&Preferences..."
+msgstr "&Поставке..."
+
+#: src/konqhistoryview.cpp:99
+#, kde-format
+msgid "By &Name"
+msgstr "по &имену"
+
+#: src/konqhistoryview.cpp:105
+#, kde-format
+msgid "By &Date"
+msgstr "по &датуму"
+
+#: src/konqhistoryview.cpp:115
+#, kde-format
+msgid "Search in history"
+msgstr "Тражи у историјату"
+
+#: src/konqhistoryview.cpp:175
+#, kde-format
+msgid "Do you really want to clear the entire history?"
+msgstr "Желите ли заиста да испразните цио историјат?"
+
+#: src/konqhistoryview.cpp:176
+#, kde-format
+msgctxt "@title:window"
+msgid "Clear History?"
+msgstr "Очистити историјат?"
+
+#: src/konqmain.cpp:182
+#, kde-format
+msgid "Konqueror"
+msgstr "К‑освајач"
+
+#: src/konqmain.cpp:183
+#, kde-format
+msgid "Web browser, file manager and document viewer."
+msgstr "Веб прегледач, менаџер фајлова и приказивач докумената."
+
+#: src/konqmain.cpp:185
+#, kde-format
+msgid "(C) 1999-2016, The Konqueror developers"
+msgstr "© 1999-2016, програмери К‑освајача"
+
+#: src/konqmain.cpp:188
+#, kde-format
+msgid "Stefano Crocco"
+msgstr "Стефано Кроко"
+
+#: src/konqmain.cpp:188
+#, kde-format
+msgid "Current maintainer"
+msgstr "тренутни одржавалац"
+
+#: src/konqmain.cpp:189
+#, kde-format
+msgid "David Faure"
+msgstr "Давид Фор"
+
+#: src/konqmain.cpp:189
+#, kde-format
+msgid ""
+"Developer (framework, parts, JavaScript, I/O library) and former maintainer"
+msgstr ""
+"програмер (радни оквир, дијелови, јаваскрипт, У/И библиотека) и бивши "
+"одржавалац"
+
+#: src/konqmain.cpp:190
+#, kde-format
+msgid "Simon Hausmann"
+msgstr "Симон Хаусман"
+
+#: src/konqmain.cpp:190
+#, kde-format
+msgid "Developer (framework, parts)"
+msgstr "програмер (радни оквир, дијелови)"
+
+#: src/konqmain.cpp:191
+#, kde-format
+msgid "Michael Reiher"
+msgstr "Михаел Рајхер"
+
+#: src/konqmain.cpp:191 src/konqmain.cpp:219 src/konqmain.cpp:225
+#, kde-format
+msgid "Developer (framework)"
+msgstr "програмер (радни оквир)"
+
+#: src/konqmain.cpp:192
+#, kde-format
+msgid "Matthias Welk"
+msgstr "Матијас Велк"
+
+#: src/konqmain.cpp:192
+#, kde-format
+msgid "Developer"
+msgstr "програмер"
+
+#: src/konqmain.cpp:193
+#, kde-format
+msgid "Alexander Neundorf"
+msgstr "Александер Нојндорф"
+
+#: src/konqmain.cpp:193
+#, kde-format
+msgid "Developer (List views)"
+msgstr "програмер (прикази спискова)"
+
+#: src/konqmain.cpp:194
+#, kde-format
+msgid "Michael Brade"
+msgstr "Михаел Браде"
+
+#: src/konqmain.cpp:194
+#, kde-format
+msgid "Developer (List views, I/O library)"
+msgstr "програмер (прикази спискова, У/И библиотека)"
+
+#: src/konqmain.cpp:195
+#, kde-format
+msgid "Lars Knoll"
+msgstr "Ларс Кнол"
+
+#: src/konqmain.cpp:195 src/konqmain.cpp:196 src/konqmain.cpp:197
+#: src/konqmain.cpp:199 src/konqmain.cpp:200 src/konqmain.cpp:202
+#: src/konqmain.cpp:203 src/konqmain.cpp:204 src/konqmain.cpp:205
+#: src/konqmain.cpp:207
+#, kde-format
+msgid "Developer (HTML rendering engine)"
+msgstr "програмер (мотор за рендеровање ХТМЛ‑а)"
+
+#: src/konqmain.cpp:196
+#, kde-format
+msgid "Dirk Mueller"
+msgstr "Дирк Милер"
+
+#: src/konqmain.cpp:197
+#, kde-format
+msgid "Peter Kelly"
+msgstr "Питер Кели"
+
+#: src/konqmain.cpp:198
+#, kde-format
+msgid "Waldo Bastian"
+msgstr "Валдо Бастијан"
+
+#: src/konqmain.cpp:198
+#, kde-format
+msgid "Developer (HTML rendering engine, I/O library)"
+msgstr "програмер (мотор за рендеровање ХТМЛ‑а, У/И библиотека)"
+
+#: src/konqmain.cpp:199
+#, kde-format
+msgid "Germain Garand"
+msgstr "Жермен Гаран"
+
+#: src/konqmain.cpp:200
+#, kde-format
+msgid "Leo Savernik"
+msgstr "Лео Саверник"
+
+#: src/konqmain.cpp:201
+#, kde-format
+msgid "Stephan Kulow"
+msgstr "Штефан Кулов"
+
+#: src/konqmain.cpp:201
+#, kde-format
+msgid ""
+"Developer (HTML rendering engine, I/O library, regression test framework)"
+msgstr ""
+"програмер (мотор за рендеровање ХТМЛ‑а, У/И библиотека, радни оквир "
+"регресионих проба)"
+
+#: src/konqmain.cpp:202
+#, kde-format
+msgid "Antti Koivisto"
+msgstr "Анти Коивисто"
+
+#: src/konqmain.cpp:203
+#, kde-format
+msgid "Zack Rusin"
+msgstr "Зaк Расин"
+
+#: src/konqmain.cpp:204
+#, kde-format
+msgid "Tobias Anton"
+msgstr "Тобијас Антон"
+
+#: src/konqmain.cpp:205
+#, kde-format
+msgid "Lubos Lunak"
+msgstr "Лубош Луњак"
+
+#: src/konqmain.cpp:206
+#, kde-format
+msgid "Maks Orlovich"
+msgstr "Максим Орлович"
+
+# Уз ове Епловце одозго, не вреди понављати „Програмери...“
+#: src/konqmain.cpp:206 src/konqmain.cpp:208
+#, kde-format
+msgid "Developer (HTML rendering engine, JavaScript)"
+msgstr "програмер (мотор за рендеровање ХТМЛ‑а, јаваскрипт)"
+
+#: src/konqmain.cpp:207
+#, kde-format
+msgid "Allan Sandfeld Jensen"
+msgstr "Алан Сандфелд Јенсен"
+
+#: src/konqmain.cpp:208
+#, kde-format
+msgid "Apple Safari Developers"
+msgstr "Програмери Епловог Сафарија"
+
+#: src/konqmain.cpp:209
+#, kde-format
+msgid "Harri Porten"
+msgstr "Хари Портен"
+
+#: src/konqmain.cpp:209
+#, kde-format
+msgid "Developer (JavaScript)"
+msgstr "програмер (јаваскрипт)"
+
+#: src/konqmain.cpp:210
+#, kde-format
+msgid "Koos Vriezen"
+msgstr "Кос Вризен"
+
+#: src/konqmain.cpp:210
+#, kde-format
+msgid "Developer (Java applets and other embedded objects)"
+msgstr "програмер (јавански аплети и други угнијежђени објекти)"
+
+#: src/konqmain.cpp:211
+#, kde-format
+msgid "Matt Koss"
+msgstr "Матеј Кос"
+
+#: src/konqmain.cpp:211 src/konqmain.cpp:212
+#, kde-format
+msgid "Developer (I/O library)"
+msgstr "програмер (У/И библиотека)"
+
+#: src/konqmain.cpp:212
+#, kde-format
+msgid "Alex Zepeda"
+msgstr "Алекс Зепеда"
+
+#: src/konqmain.cpp:213
+#, kde-format
+msgid "Richard Moore"
+msgstr "Ричард Мур"
+
+#: src/konqmain.cpp:213 src/konqmain.cpp:214
+#, kde-format
+msgid "Developer (Java applet support)"
+msgstr "програмер (подршка за јаванске аплете)"
+
+#: src/konqmain.cpp:214
+#, kde-format
+msgid "Dima Rogozin"
+msgstr "Дима Рогозин"
+
+#: src/konqmain.cpp:215
+#, kde-format
+msgid "Wynn Wilkes"
+msgstr "Вин Вилкс"
+
+#: src/konqmain.cpp:215
+#, kde-format
+msgid ""
+"Developer (Java 2 security manager support,\n"
+" and other major improvements to applet support)"
+msgstr ""
+"програмер (подршка за менаџер безбједности јаве 2, \n"
+"и друга битна побољшања подршке за аплете)"
+
+#: src/konqmain.cpp:216
+#, kde-format
+msgid "Stefan Schimanski"
+msgstr "Штефан Шимански"
+
+#: src/konqmain.cpp:216
+#, kde-format
+msgid "Developer (Netscape plugin support)"
+msgstr "програмер (подршка за Нетскејпове прикључке)"
+
+#: src/konqmain.cpp:217
+#, kde-format
+msgid "George Staikos"
+msgstr "Џорџ Стајкос"
+
+#: src/konqmain.cpp:217
+#, kde-format
+msgid "Developer (SSL, Netscape plugins)"
+msgstr "програмер (ССЛ, Нетскејпови прикључци)"
+
+#: src/konqmain.cpp:218
+#, kde-format
+msgid "Dawit Alemayehu"
+msgstr "Давит Алемајеху"
+
+#: src/konqmain.cpp:218
+#, kde-format
+msgid "Developer (I/O library, Authentication support)"
+msgstr "програмер (У/И библиотека, подршка за аутентификацију)"
+
+#: src/konqmain.cpp:219
+#, kde-format
+msgid "Carsten Pfeiffer"
+msgstr "Карстен Пфајфер"
+
+#: src/konqmain.cpp:220
+#, kde-format
+msgid "Torsten Rahn"
+msgstr "Торстен Ран"
+
+#: src/konqmain.cpp:220
+#, kde-format
+msgid "Graphics/icons"
+msgstr "графика (иконице)"
+
+#: src/konqmain.cpp:221
+#, kde-format
+msgid "Torben Weis"
+msgstr "Торбен Вајс"
+
+#: src/konqmain.cpp:221
+#, kde-format
+msgid "KFM author"
+msgstr "аутор КФМ‑а"
+
+#: src/konqmain.cpp:222
+#, kde-format
+msgid "Joseph Wenninger"
+msgstr "Јозеф Венингер"
+
+#: src/konqmain.cpp:222
+#, kde-format
+msgid "Developer (navigation panel framework)"
+msgstr "програмер (радни оквир панела за навигацију)"
+
+#: src/konqmain.cpp:223
+#, kde-format
+msgid "Stephan Binner"
+msgstr "Штефан Бинер"
+
+#: src/konqmain.cpp:223
+#, kde-format
+msgid "Developer (misc stuff)"
+msgstr "програмер (разно)"
+
+#: src/konqmain.cpp:224
+#, kde-format
+msgid "Ivor Hewitt"
+msgstr "Ајвор Хјуит"
+
+#: src/konqmain.cpp:224
+#, kde-format
+msgid "Developer (AdBlock filter)"
+msgstr "програмер (Адблокови филтери)"
+
+#: src/konqmain.cpp:225
+#, kde-format
+msgid "Eduardo Robles Elvira"
+msgstr "Едуардо Роблес Елвира"
+
+#: src/konqmain.cpp:235
+#, kde-format
+msgid "Start without a default window, when called without URLs"
+msgstr "Покрени без подразумијеваног прозора при позиву без УРЛ‑ова"
+
+#: src/konqmain.cpp:236
+#, kde-format
+msgid ""
+"Preload for later use. This mode does not support URLs on the command line"
+msgstr ""
+"Предучитај за касније. Овај режим не подржава УРЛ‑ове у командној линији."
+
+#: src/konqmain.cpp:237
+#, kde-format
+msgid "Profile to open (DEPRECATED, IGNORED)"
+msgstr "Профил за отварање (ПРЕВАЗИЂЕНО, ИГНОРИСАНО)"
+
+#: src/konqmain.cpp:237
+#, kde-format
+msgid "profile"
+msgstr "профил"
+
+#: src/konqmain.cpp:238
+#, kde-format
+msgid "List available sessions"
+msgstr "Наброји доступне сесије"
+
+#: src/konqmain.cpp:239
+#, kde-format
+msgid "Session to open"
+msgstr "Сесија за отварање"
+
+#: src/konqmain.cpp:239
+#, kde-format
+msgid "session"
+msgstr "сесија"
+
+#: src/konqmain.cpp:240
+#, kde-format
+msgid "Mimetype to use for this URL (e.g. text/html or inode/directory)"
+msgstr "МИМЕ тип за овај УРЛ (нпр. „text/html“ или „inode/directory“)"
+
+#: src/konqmain.cpp:240
+#, kde-format
+msgid "mimetype"
+msgstr "МИМЕ‑тип"
+
+#: src/konqmain.cpp:241
+#, kde-format
+msgid "Part to use (e.g. khtml or kwebkitpart)"
+msgstr "Део који се користи (нпр. khtml или kwebkitpart)"
+
+#: src/konqmain.cpp:241
+#, kde-format
+msgid "service"
+msgstr "сервис"
+
+#: src/konqmain.cpp:242
+#, kde-format
+msgid ""
+"For URLs that point to files, opens the directory and selects the file, "
+"instead of opening the actual file"
+msgstr ""
+"За УРЛ‑ове који указују на фајлове, отвара фасциклу и бира фајл, умјесто да "
+"отвори сâм фајл"
+
+#: src/konqmain.cpp:243
+#, kde-format
+msgid "The files/URLs opened by the application will be deleted after use"
+msgstr "Фајлови/УРЛ‑ови које програм отвори биће обрисани по употреби"
+
+#: src/konqmain.cpp:245
+#, kde-format
+msgid "Location to open"
+msgstr "Локација за отварање"
+
+#: src/konqmainwindow.cpp:569
+#, kde-format
+msgctxt "@title:tab"
+msgid "Loading..."
+msgstr "Учитавање"
+
+#: src/konqmainwindow.cpp:757
+#, kde-format
+msgid "Access denied"
+msgstr "Приступ одбијен"
+
+#: src/konqmainwindow.cpp:1531
+#, fuzzy, kde-format
+#| msgid "&Open File..."
+msgid "Open File"
+msgstr "&Отвори фајл..."
+
+#: src/konqmainwindow.cpp:1613
+#, kde-format
+msgid "Canceled."
+msgstr "Отказано."
+
+#: src/konqmainwindow.cpp:1649
+#, kde-format
+msgid ""
+"This page contains changes that have not been submitted.\n"
+"Reloading the page will discard these changes."
+msgstr ""
+"Страница садржи измјене које нису предате.\n"
+"Поновним учитавањем странице измјене ће бити одбачене."
+
+#: src/konqmainwindow.cpp:1650 src/konqmainwindow.cpp:2403
+#: src/konqmainwindow.cpp:2496 src/konqmainwindow.cpp:2528
+#: src/konqmainwindow.cpp:2571 src/konqmainwindow.cpp:2593
+#: src/konqmainwindow.cpp:4954
+#, kde-format
+msgctxt "@title:window"
+msgid "Discard Changes?"
+msgstr "Одбацити измјене?"
+
+#: src/konqmainwindow.cpp:1650 src/konqmainwindow.cpp:2403
+#: src/konqmainwindow.cpp:2496 src/konqmainwindow.cpp:2528
+#: src/konqmainwindow.cpp:2571 src/konqmainwindow.cpp:2594
+#: src/konqmainwindow.cpp:4954
+#, kde-format
+msgid "&Discard Changes"
+msgstr "&Одбаци измјене"
+
+#: src/konqmainwindow.cpp:1759
+#, kde-format
+msgid "File Management"
+msgstr "Управљање фајловима"
+
+#: src/konqmainwindow.cpp:1783
+#, kde-format
+msgid "Web Browsing"
+msgstr "Прегледање Веба"
+
+#: src/konqmainwindow.cpp:2054 src/konqmainwindow.cpp:2060
+#, kde-format
+msgid "Home Folder"
+msgstr "Домаћа фасцикла"
+
+#: src/konqmainwindow.cpp:2055 src/konqmainwindow.cpp:3536
+#, kde-format
+msgid "Home"
+msgstr "Домаћа"
+
+#: src/konqmainwindow.cpp:2061
+#, kde-format
+msgid "Navigate to your 'Home Folder'"
+msgstr "Иди на моју „домаћу фасциклу“"
+
+#: src/konqmainwindow.cpp:2062
+#, kde-format
+msgid "Navigate to your local 'Home Folder'"
+msgstr "Иди на моју локалну „домаћу фасциклу“"
+
+#. i18n: ectx: label, entry, group (UserSettings)
+#: src/konqmainwindow.cpp:2065 src/konqueror.kcfg:16
+#, kde-format
+msgid "Home Page"
+msgstr "Домаћа страница"
+
+#: src/konqmainwindow.cpp:2067
+#, kde-format
+msgid "Navigate to your 'Home Page'"
+msgstr "Иди на моју „домаћу страницу“"
+
+#: src/konqmainwindow.cpp:2068
+#, kde-format
+msgid ""
+"<html>Navigate to your 'Home Page'<br /><br />You can configure the location "
+"where this button takes you under <b>Settings -> Configure Konqueror -> "
+"General</b>.</html>"
+msgstr ""
+"<html>Иди на моју „домаћу страницу“<br /><br />Локацију на коју вас ово "
+"дугме води можете подесити у <i>Подешавање→Подеси К‑освајач...→Опште</i>.</"
+"html>"
+
+#: src/konqmainwindow.cpp:2402
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Detaching the tab will discard these changes."
+msgstr ""
+"Језичак садржи измјене које нису предате.\n"
+"Откачивањем језичка измјене ће бити одбачене."
+
+#: src/konqmainwindow.cpp:2495
+#, kde-format
+msgid ""
+"This view contains changes that have not been submitted.\n"
+"Closing the view will discard these changes."
+msgstr ""
+"Приказ садржи измјене које нису предате.\n"
+"Затварањем приказа измјене ће бити одбачене."
+
+#: src/konqmainwindow.cpp:2527
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Closing the tab will discard these changes."
+msgstr ""
+"Језичак садржи измјене које нису предате.\n"
+"Затварањем језичка измјене ће бити одбачене."
+
+#: src/konqmainwindow.cpp:2553
+#, kde-format
+msgid "Do you really want to close all other tabs?"
+msgstr "Желите ли стварно да затворите све друге језичке?"
+
+#: src/konqmainwindow.cpp:2554 src/konqmainwindow.cpp:3628 src/konqtabs.cpp:349
+#, kde-format
+msgid "Close &Other Tabs"
+msgstr "Затвори &друге језичке"
+
+#: src/konqmainwindow.cpp:2554
+#, kde-format
+msgctxt "@title:window"
+msgid "Close Other Tabs Confirmation"
+msgstr "Потврда за затварање других језичака"
+
+#: src/konqmainwindow.cpp:2570
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Closing other tabs will discard these changes."
+msgstr ""
+"Језичак садржи измјене које нису предате.\n"
+"Затварањем осталих језичака измјене ће бити одбачене."
+
+#: src/konqmainwindow.cpp:2592
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Reloading all tabs will discard these changes."
+msgstr ""
+"Језичак садржи измјене које нису предате.\n"
+"Поновним учитавањем свих језичака измјене ће бити одбачене."
+
+#: src/konqmainwindow.cpp:2634
+#, kde-format
+msgctxt "@title:window"
+msgid "Enter Target"
+msgstr "Унос циља"
+
+#: src/konqmainwindow.cpp:2641
+#, kde-format
+msgid "<qt><b>%1</b> is not valid</qt>"
+msgstr "<qt><b>%1</b> није исправан</qt>"
+
+#: src/konqmainwindow.cpp:2651
+#, kde-format
+msgid "Copy selected files from %1 to:"
+msgstr "Копирај изабране фајлове из %1 у:"
+
+#: src/konqmainwindow.cpp:2664
+#, kde-format
+msgid "Move selected files from %1 to:"
+msgstr "Премјести изабране фајлове из %1 у:"
+
+#: src/konqmainwindow.cpp:2838
+#, kde-format
+msgctxt "This menu entry empties the closed items history"
+msgid "Empty Closed Items History"
+msgstr "Испразни историјат затвореног"
+
+#: src/konqmainwindow.cpp:2861
+#, kde-format
+msgid "Save As..."
+msgstr "Сачувај као..."
+
+#: src/konqmainwindow.cpp:2863
+#, kde-format
+msgid "Manage..."
+msgstr "Управљај..."
+
+#: src/konqmainwindow.cpp:3445
+#, kde-format
+msgid "New &Window"
+msgstr "Нови &прозор"
+
+#: src/konqmainwindow.cpp:3450
+#, kde-format
+msgid "&Duplicate Window"
+msgstr "У&двостручи прозор"
+
+#: src/konqmainwindow.cpp:3455
+#, kde-format
+msgid "Send &Link Address..."
+msgstr "Пошаљи адресу &везе..."
+
+#: src/konqmainwindow.cpp:3459
+#, kde-format
+msgid "S&end File..."
+msgstr "Пошаљи &фајл..."
+
+#: src/konqmainwindow.cpp:3463
+#, kde-format
+msgid "&Open Location"
+msgstr "&Отвори локацију"
+
+#: src/konqmainwindow.cpp:3469
+#, kde-format
+msgid "&Open File..."
+msgstr "&Отвори фајл..."
+
+#: src/konqmainwindow.cpp:3474
+#, kde-format
+msgid "&Find File..."
+msgstr "&Нађи фајл..."
+
+#: src/konqmainwindow.cpp:3483
+#, kde-format
+msgid "Lock to Current Location"
+msgstr "Закључај на тренутној локацији"
+
+#: src/konqmainwindow.cpp:3486
+#, kde-format
+msgctxt "This option links konqueror views"
+msgid "Lin&k View"
+msgstr "По&вежи приказ"
+
+#: src/konqmainwindow.cpp:3491
+#, kde-format
+msgid "&Up"
+msgstr "&Горе"
+
+#: src/konqmainwindow.cpp:3501
+#, kde-format
+msgid "Closed Items"
+msgstr "Затворено"
+
+#: src/konqmainwindow.cpp:3514
+#, kde-format
+msgid "Sessions"
+msgstr "Сесије"
+
+#: src/konqmainwindow.cpp:3541
+#, kde-format
+msgctxt "@action:inmenu Go"
+msgid "Most Often Visited"
+msgstr "Најчешће посјећивано"
+
+#: src/konqmainwindow.cpp:3545
+#, kde-format
+msgctxt "@action:inmenu Go"
+msgid "Recently Visited"
+msgstr "Недавно посјећено"
+
+#: src/konqmainwindow.cpp:3554
+#, kde-format
+msgctxt "@action:inmenu Go"
+msgid "Show History"
+msgstr "Прикажи историјат"
+
+#: src/konqmainwindow.cpp:3578
+#, kde-format
+msgid "Configure Extensions..."
+msgstr "Подеси проширења..."
+
+#: src/konqmainwindow.cpp:3582
+#, kde-format
+msgid "Configure Spell Checking..."
+msgstr "Подеси провјеру правописа..."
+
+#: src/konqmainwindow.cpp:3588
+#, kde-format
+msgid "Split View &Left/Right"
+msgstr "Подели приказ &лијево/десно"
+
+#: src/konqmainwindow.cpp:3593
+#, kde-format
+msgid "Split View &Top/Bottom"
+msgstr "Подијели приказ &горе/доље"
+
+#: src/konqmainwindow.cpp:3598 src/konqtabs.cpp:459
+#, kde-format
+msgid "&New Tab"
+msgstr "&Нови језичак"
+
+#: src/konqmainwindow.cpp:3607
+#, kde-format
+msgid "&Duplicate Current Tab"
+msgstr "У&двостручи текући језичак"
+
+#: src/konqmainwindow.cpp:3612
+#, kde-format
+msgid "Detach Current Tab"
+msgstr "Откачи текући језичак"
+
+#: src/konqmainwindow.cpp:3617
+#, kde-format
+msgid "&Close Active View"
+msgstr "&Затвори активни приказ"
+
+#: src/konqmainwindow.cpp:3622
+#, kde-format
+msgid "Close Current Tab"
+msgstr "Затвори текући језичак"
+
+#: src/konqmainwindow.cpp:3632
+#, kde-format
+msgid "Activate Next Tab"
+msgstr "Активирај сљедећи језичак"
+
+#: src/konqmainwindow.cpp:3636
+#, kde-format
+msgid "Activate Previous Tab"
+msgstr "Активирај претходни језичак"
+
+#: src/konqmainwindow.cpp:3643
+#, kde-format
+msgid "Activate Tab %1"
+msgstr "Активирај језичак %1"
+
+#: src/konqmainwindow.cpp:3648
+#, kde-format
+msgid "Move Tab Left"
+msgstr "Помјери језичак улијево"
+
+#: src/konqmainwindow.cpp:3653
+#, kde-format
+msgid "Move Tab Right"
+msgstr "Помјери језичак удесно"
+
+#: src/konqmainwindow.cpp:3661
+#, kde-format
+msgid "Dump Debug Info"
+msgstr "Попиши исправљачке податке"
+
+#: src/konqmainwindow.cpp:3679
+#, kde-format
+msgid "&Reload"
+msgstr "&Учитај поново"
+
+#: src/konqmainwindow.cpp:3684 src/konqtabs.cpp:327
+#, kde-format
+msgid "&Reload All Tabs"
+msgstr "&Учитај поново све језичке"
+
+#: src/konqmainwindow.cpp:3692
+#, kde-format
+msgid "&Force Reload"
+msgstr "&Приморај учитавање"
+
+#: src/konqmainwindow.cpp:3718
+#, kde-format
+msgid "&Stop"
+msgstr "&Заустави"
+
+#: src/konqmainwindow.cpp:3727
+#, kde-format
+msgid "Throbber"
+msgstr "Куцало"
+
+#: src/konqmainwindow.cpp:3731 src/konqmainwindow.cpp:3734
+#, kde-format
+msgid "L&ocation: "
+msgstr "&Локација: "
+
+#: src/konqmainwindow.cpp:3741
+#, kde-format
+msgid "Location Bar"
+msgstr "Трака локације"
+
+#: src/konqmainwindow.cpp:3747
+#, kde-format
+msgid ""
+"<html>Location Bar<br /><br />Enter a web address or search term.</html>"
+msgstr ""
+"<html>Трака локације<br/><br/>Унесите веб адресу или израз за тражење.</html>"
+
+#: src/konqmainwindow.cpp:3751
+#, kde-format
+msgid "Clear Location Bar"
+msgstr "Очисти траку локације"
+
+#: src/konqmainwindow.cpp:3755
+#, kde-format
+msgid ""
+"<html>Clear Location bar<br /><br />Clears the contents of the location bar."
+"</html>"
+msgstr ""
+"<html>Очисти траку локације<br/><br/>Празни садржај у траци локације.</html>"
+
+#: src/konqmainwindow.cpp:3760
+#, kde-format
+msgid "&Bookmarks"
+msgstr "&Обиљеживачи"
+
+#: src/konqmainwindow.cpp:3788
+#, kde-format
+msgid "Kon&queror Introduction"
+msgstr "Увод у &К‑освајач"
+
+#: src/konqmainwindow.cpp:3793
+#, kde-format
+msgid "Go"
+msgstr "Иди"
+
+#: src/konqmainwindow.cpp:3795
+#, kde-format
+msgid ""
+"<html>Go<br /><br />Goes to the page that has been entered into the location "
+"bar.</html>"
+msgstr "<html>Иди<br/><br/>Иде на страницу унијету у траку локације.</html>"
+
+#: src/konqmainwindow.cpp:3801
+#, kde-format
+msgid ""
+"<html>Enter the parent folder<br /><br />For instance, if the current "
+"location is file:/home/%1 clicking this button will take you to file:/home.</"
+"html>"
+msgstr ""
+"<html>Уђи у родитељску фасциклу<br/><br/>На примјер, ако је тренутна "
+"локација <tt>file:/home/%1</tt>, кликом овдје отићи ћете у <tt>file:/home</"
+"tt>.</html>"
+
+#: src/konqmainwindow.cpp:3804
+#, kde-format
+msgid "Enter the parent folder"
+msgstr "Уђи у родитељску фасциклу"
+
+#: src/konqmainwindow.cpp:3806 src/konqmainwindow.cpp:3807
+#, kde-format
+msgid "Move backwards one step in the browsing history"
+msgstr "Корак уназад у историјату прегледања"
+
+#: src/konqmainwindow.cpp:3809 src/konqmainwindow.cpp:3810
+#, kde-format
+msgid "Move forward one step in the browsing history"
+msgstr "Корак унапријед у историјату прегледања"
+
+#: src/konqmainwindow.cpp:3812 src/konqmainwindow.cpp:3813
+#, kde-format
+msgid "Move backwards one step in the closed tabs history"
+msgstr "Корак уназад у историјату затворених језичака"
+
+#: src/konqmainwindow.cpp:3815
+#, kde-format
+msgid ""
+"<html>Reload the currently displayed document<br /><br />This may, for "
+"example, be needed to refresh web pages that have been modified since they "
+"were loaded, in order to make the changes visible.</html>"
+msgstr ""
+"<html>Учитај поново приказани документ<br/><br/>На примјер, може бити "
+"корисно за освјежавање веб страница измијењених од тренутка учитавања, да би "
+"се те промјене исказале.</html>"
+
+#: src/konqmainwindow.cpp:3818
+#, kde-format
+msgid "Reload the currently displayed document"
+msgstr "Учитај поново приказани документ"
+
+#: src/konqmainwindow.cpp:3820
+#, kde-format
+msgid ""
+"<html>Reload all currently displayed documents in tabs<br /><br />This may, "
+"for example, be needed to refresh web pages that have been modified since "
+"they were loaded, in order to make the changes visible.</html>"
+msgstr ""
+"<html>Учитај поново све приказане документе у језичцима<br/><br/>На примјер, "
+"може бити корисно за освјежавање веб страница измјењених од тренутка "
+"учитавања, да би се те промјене исказале.</html>"
+
+#: src/konqmainwindow.cpp:3823
+#, kde-format
+msgid "Reload all currently displayed document in tabs"
+msgstr "Учитај поново све приказане документе у језичцима"
+
+#: src/konqmainwindow.cpp:3825
+#, kde-format
+msgid ""
+"<html>Stop loading the document<br /><br />All network transfers will be "
+"stopped and Konqueror will display the content that has been received so far."
+"</html>"
+msgstr ""
+"<html>Заустави учитавање документа<br/><br/>Сви мрежни преноси биће "
+"заустављени и К‑освајач ће приказати садржај који је дотле примљен.</html>"
+
+#: src/konqmainwindow.cpp:3829
+#, kde-format
+msgid ""
+"<html>Reload the currently displayed document<br /><br />This may, for "
+"example, be needed to refresh web pages that have been modified since they "
+"were loaded, in order to make the changes visible. Any images on the page "
+"are downloaded again, even if cached copies exist.</html>"
+msgstr ""
+"<html>Учитај поново приказани документ<br/><br/>На примјер, може бити "
+"корисно за освјежавање веб страница измијењених од тренутка учитавања, да би "
+"се те промјене исказале. Све слике на страници се поново преузимају, чак и "
+"ако су већ у кешу.</html>"
+
+#: src/konqmainwindow.cpp:3833
+#, kde-format
+msgid ""
+"Force a reload of the currently displayed document and any contained images"
+msgstr ""
+"Приморај поновно учитавање тренутно приказаног документа и свих слика у њему"
+
+#: src/konqmainwindow.cpp:3835
+#, kde-format
+msgid "Stop loading the document"
+msgstr "Заустави учитавање документа"
+
+#: src/konqmainwindow.cpp:3837
+#, kde-format
+msgid ""
+"<html>Cut the currently selected text or item(s) and move it to the system "
+"clipboard<br /><br />This makes it available to the <b>Paste</b> command in "
+"Konqueror and other KDE applications.</html>"
+msgstr ""
+"<html>Исијеци изабрани текст или ставку и стави у системски клипборд.<br/"
+"><br/>Овим се текст или каква друга ставка стављају на располагање за "
+"<i>наљепљивање</i> у К‑освајачу или неком другом КДЕ програму.</html>"
+
+#: src/konqmainwindow.cpp:3841
+#, kde-format
+msgid "Move the selected text or item(s) to the clipboard"
+msgstr "Премјести изабрани текст или ставку у клипборд"
+
+#: src/konqmainwindow.cpp:3843
+#, kde-format
+msgid ""
+"<html>Copy the currently selected text or item(s) to the system "
+"clipboard<br /><br />This makes it available to the <b>Paste</b> command in "
+"Konqueror and other KDE applications.</html>"
+msgstr ""
+"<html>Копирај изабрани текст или ставку у системски клипборд.<br/><br/>Овим "
+"се текст или каква друга ставка стављају на располагање за <i>наљепљивање</"
+"i> у К‑освајачу или неком другом КДЕ програму.</html>"
+
+#: src/konqmainwindow.cpp:3847
+#, kde-format
+msgid "Copy the selected text or item(s) to the clipboard"
+msgstr "Копирај изабрани текст или ставку у клипборд"
+
+#: src/konqmainwindow.cpp:3849
+#, kde-format
+msgid ""
+"<html>Paste the previously cut or copied clipboard contents<br /><br />This "
+"also works for text copied or cut from other KDE applications.</html>"
+msgstr ""
+"<html>Налијепи претходно исјечени или копирани садржај клипборда<br/><br/"
+">Такође ради и са текстом копираним или исјеченим из других КДЕ програма.</"
+"html>"
+
+#: src/konqmainwindow.cpp:3852
+#, kde-format
+msgid "Paste the clipboard contents"
+msgstr "Налијепи садржај клипборда"
+
+#: src/konqmainwindow.cpp:3854
+#, kde-format
+msgid ""
+"<html>Print the currently displayed document<br /><br />You will be "
+"presented with a dialog where you can set various options, such as the "
+"number of copies to print and which printer to use.<br /><br />This dialog "
+"also provides access to special KDE printing services such as creating a PDF "
+"file from the current document.</html>"
+msgstr ""
+"<html>Штампај текући документ<br/><br/>Добићете дијалог у којем можете "
+"подесити разне опције, као што су број копија за штампу и који штампач "
+"желите да користите.<br/><br/>Дијалог такође пружа приступ посебним КДЕ "
+"сервисима за штампање, попут стварања ПДФ фајла од текућег документа.</html>"
+
+#: src/konqmainwindow.cpp:3860
+#, kde-format
+msgid "Print the current document"
+msgstr "Штампај текући документ"
+
+#: src/konqmainwindow.cpp:3862
+#, kde-format
+msgid ""
+"A locked view cannot change folders. Use in combination with 'link view' to "
+"explore many files from one folder"
+msgstr ""
+"Закључан приказ не може мијењати фасцикле. Користите заједно са „повезаним "
+"приказом“, за истраживање многих фајлова из исте фасцикле."
+
+#: src/konqmainwindow.cpp:3863
+#, kde-format
+msgid ""
+"Sets the view as 'linked'. A linked view follows folder changes made in "
+"other linked views."
+msgstr ""
+"Задаје да је приказ „повезан“. Повезани приказ прати све промјене фасцикле "
+"учињене у другим повезаним приказима."
+
+#: src/konqmainwindow.cpp:4029
+#, kde-format
+msgid "Copy &Files..."
+msgstr "&Копирај фајлове..."
+
+#: src/konqmainwindow.cpp:4033
+#, kde-format
+msgid "M&ove Files..."
+msgstr "&Премјести фајлове..."
+
+#: src/konqmainwindow.cpp:4362
+#, kde-format
+msgid ""
+"You have requested to open more than 20 bookmarks in tabs. This might take a "
+"while. Continue?"
+msgstr ""
+"Затражили сте отварање више од 20 обиљеживача у језичцима. То може "
+"потрајати. Наставити?"
+
+#: src/konqmainwindow.cpp:4364
+#, kde-format
+msgctxt "@title:window"
+msgid "Open bookmarks folder in new tabs"
+msgstr "Отварање фасцикле обиљеживача у новим језичцима"
+
+#: src/konqmainwindow.cpp:4528
+#, kde-format
+msgid "Open in T&his Window"
+msgstr "Отвори у &овом прозору"
+
+#: src/konqmainwindow.cpp:4529
+#, kde-format
+msgid "Open the document in current window"
+msgstr "Отвори документ у текућем прозору"
+
+#: src/konqmainwindow.cpp:4536
+#, kde-format
+msgid "Open the document in a new window"
+msgstr "Отвори документ у новом прозору"
+
+#: src/konqmainwindow.cpp:4542
+#, kde-format
+msgid "Open in &New Tab"
+msgstr "Отвори у новом &језичку"
+
+#: src/konqmainwindow.cpp:4544
+#, kde-format
+msgid "Open the document in a new tab"
+msgstr "Отвори документ у новом језичку"
+
+#: src/konqmainwindow.cpp:4740
+#, kde-format
+msgid "&Open With"
+msgstr "&Отвори помоћу"
+
+#: src/konqmainwindow.cpp:4753
+#, kde-format
+msgid "Open with %1"
+msgstr "Отвори помоћу %1|/|Отвори $[инс-п %1]"
+
+#: src/konqmainwindow.cpp:4801
+#, kde-format
+msgctxt "@action:inmenu View"
+msgid "&View Mode"
+msgstr "&Начин приказа"
+
+#: src/konqmainwindow.cpp:4920
+#, kde-format
+msgid ""
+"You have multiple tabs open in this window, are you sure you want to quit?"
+msgstr ""
+"Прозор има неколико отворених језичака, желите ли заиста напустите програм?"
+
+#: src/konqmainwindow.cpp:4922
+#, kde-format
+msgctxt "@title:window"
+msgid "Confirmation"
+msgstr "Потврда"
+
+#: src/konqmainwindow.cpp:4924
+#, kde-format
+msgid "C&lose Current Tab"
+msgstr "&Затвори текући језичак"
+
+#: src/konqmainwindow.cpp:4950
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Closing the window will discard these changes."
+msgstr ""
+"Језичак садржи измене које нису предате.\n"
+"Затварањем прозора измјене ће бити одбачене."
+
+#: src/konqmainwindow.cpp:4951
+#, kde-format
+msgid ""
+"This page contains changes that have not been submitted.\n"
+"Closing the window will discard these changes."
+msgstr ""
+"Страница садржи измене које нису предате.\n"
+"Затварањем прозора измјене ће бити одбачене."
+
+#: src/konqmainwindow.cpp:5108
+#, kde-format
+msgid ""
+"Your sidebar is not functional or unavailable. A new entry cannot be added."
+msgstr ""
+"Бочна трака није функционална или није доступна. Нова ставка не може бити "
+"додата."
+
+#: src/konqmainwindow.cpp:5108 src/konqmainwindow.cpp:5115
+#, kde-format
+msgctxt "@title:window"
+msgid "Web Sidebar"
+msgstr "Бочна трака Веба"
+
+#: src/konqmainwindow.cpp:5113
+#, kde-format
+msgid "Add new web extension \"%1\" to your sidebar?"
+msgstr "Да ли да додам ново веб проширење „%1“ у бочну траку?"
+
+#: src/konqmainwindow.cpp:5115
+#, kde-format
+msgid "Add"
+msgstr "Додај"
+
+#: src/konqmainwindow.cpp:5115
+#, kde-format
+msgid "Do Not Add"
+msgstr "Немој да додаш"
+
+#: src/konqmainwindow.cpp:5463
+#, kde-format
+msgid ""
+"There appears to be a configuration error. You have associated Konqueror "
+"with %1, but it cannot handle this file type."
+msgstr ""
+"Изгледа да је нешто лоше подешено. Придружили сте К‑освајач типу фајла %1, "
+"којим не може руковати."
+
+#: src/konqmainwindow.cpp:5542
+#, kde-format
+msgid ""
+"Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
+"proxy will be used\n"
+"\n"
+" QtWebEngine only support a fixed proxy, so proxy auto-configuration (PAC) "
+"and Web Proxy Auto-Discovery protocol can't be used with QtWebEngine. If you "
+"need a proxy, please select the system proxy configuration or specify a "
+"proxy URL manually in the settings dialog. Do you want to change proxy "
+"settings now?"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5547
+#, kde-format
+msgid "Unsupported proxy configuration"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5547
+#, kde-format
+msgid "Don't use a proxy"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5548 src/konqmainwindow.cpp:5569
+#, kde-format
+msgid "Show proxy configuration dialog"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5565
+#, kde-format
+msgid ""
+"Your proxy configuration can't be used with the QtWebEngine HTML engine "
+"because it doesn't support having different proxies for the HTTP and HTTPS "
+"protocols. Your current settings are:<p><b>HTTP proxy:</b> <tt>%1</tt></"
+"p><p><b>HTTPS proxy: </b><tt>%2</tt></p>What do you want to do?"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5568
+#, kde-format
+msgid "Conflicting proxy configuration"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5569
+#, kde-format
+msgid "Use HTTP proxy (only this time)"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5569
+#, kde-format
+msgid "Use HTTPS proxy (only this time)"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: src/konqnewsessiondlg_base.ui:28
+#, kde-format
+msgid "Save open &tabs and windows for easy retrieval"
+msgstr "Сачувај &отворене језичке и прозоре ради лакшег обнављања"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_pAllWindows)
+#: src/konqnewsessiondlg_base.ui:34
+#, kde-format
+msgid "A&ll open windows"
+msgstr "У &свим отвореним прозорима"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_pCurrentWindow)
+#: src/konqnewsessiondlg_base.ui:44
+#, kde-format
+msgid "Onl&y current window"
+msgstr "Само у &текућем прозору"
+
+#. i18n: ectx: property (text), widget (QLabel, lblSessionName)
+#: src/konqnewsessiondlg_base.ui:56
+#, kde-format
+msgid "Session n&ame:"
+msgstr "&Име сесије:"
+
+#: src/konqsessiondlg.cpp:74
+#, kde-format
+msgctxt "@title:window"
+msgid "Manage Sessions"
+msgstr "Управљање сесијама"
+
+#: src/konqsessiondlg.cpp:182
+#, kde-format
+msgctxt "@title:window"
+msgid "Rename Session"
+msgstr "Преименовање сесије"
+
+#: src/konqsessiondlg.cpp:229
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Session"
+msgstr "Уписивање сесије"
+
+#: src/konqsessiondlg.cpp:265
+#, kde-format
+msgid ""
+"A session with the name '%1' already exists, do you want to overwrite it?"
+msgstr ""
+"<html>Сесија по имену „%1“ већ постоји. Желите ли да је пребришете?</html>"
+
+#: src/konqsessiondlg.cpp:266
+#, kde-format
+msgctxt "@title:window"
+msgid "Session exists. Overwrite?"
+msgstr "Сесија постоји, пребрисати?"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pNewButton)
+#: src/konqsessiondlg_base.ui:26
+#, kde-format
+msgctxt "@action:button New session"
+msgid "New..."
+msgstr "Нова..."
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pSaveCurrentButton)
+#: src/konqsessiondlg_base.ui:33
+#, kde-format
+msgctxt "@action:button Save current session"
+msgid "Save Current..."
+msgstr "Сачувај текућу..."
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pRenameButton)
+#: src/konqsessiondlg_base.ui:40
+#, kde-format
+msgctxt "@action:button Rename session"
+msgid "Rename..."
+msgstr "Преименуј..."
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pDeleteButton)
+#: src/konqsessiondlg_base.ui:47
+#, kde-format
+msgctxt "@action:button Delete session"
+msgid "Delete"
+msgstr "Обриши"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pOpenTabsInsideCurrentWindow)
+#. i18n: ectx: label, entry, group (Trash)
+#: src/konqsessiondlg_base.ui:73 src/konqueror.kcfg:517
+#, kde-format
+msgid "Open tabs inside current window"
+msgstr "Отварај језичке у текућем прозору"
+
+#: src/konqsessionmanager.cpp:100
+#, kde-format
+msgctxt "@title:window"
+msgid "Restore Session?"
+msgstr "Повратити сесију?"
+
+#: src/konqsessionmanager.cpp:121
+#, kde-format
+msgid ""
+"Konqueror did not close correctly. Would you like to restore these previous "
+"sessions?"
+msgstr ""
+"К‑освајач није правилно затворен. Желите ли да повратите ове претходне "
+"сесије?"
+
+#: src/konqsessionmanager.cpp:133
+#, kde-format
+msgctxt "@tooltip:session list"
+msgid "Uncheck the sessions you do not want to be restored"
+msgstr "Испразните кућице до сесија које не желите да повратите."
+
+#: src/konqsessionmanager.cpp:166
+#, kde-format
+msgctxt "@item:treewidget"
+msgid "Window %1"
+msgstr "прозор %1"
+
+#: src/konqsessionmanager.cpp:208
+#, kde-format
+msgid "Do not ask again"
+msgstr "Не питај више"
+
+#: src/konqsessionmanager.cpp:222
+#, kde-format
+msgctxt "@action:button yes"
+msgid "Restore Session"
+msgstr "Поврати сесију"
+
+#: src/konqsessionmanager.cpp:223
+#, kde-format
+msgctxt "@action:button no"
+msgid "Do Not Restore"
+msgstr "Не враћај"
+
+#: src/konqsessionmanager.cpp:224
+#, kde-format
+msgctxt "@action:button ask later"
+msgid "Ask Me Later"
+msgstr "Питај касније"
+
+#: src/konqstatusbarmessagelabel.cpp:81
+#, kde-format
+msgctxt "@info"
+msgid "Close"
+msgstr "Затвори"
+
+#: src/konqstatusbarmessagelabel.cpp:82
+#, kde-format
+msgid "Close"
+msgstr "Затвори"
+
+#: src/konqstatusbarmessagelabel.cpp:161
+#, kde-format
+msgid "Error: %1"
+msgstr "Грешка: %1"
+
+#: src/konqtabs.cpp:65
+#, kde-format
+msgid ""
+"This bar contains the list of currently open tabs. Click on a tab to make it "
+"active. You can also use keyboard shortcuts to navigate through tabs. The "
+"text on the tab shows the content currently open in it; place your mouse "
+"over the tab to see the full title, in case it has been shortened to fit the "
+"tab width."
+msgstr ""
+"Ова трака садржи списак тренутно отворених језичака. Кликните на неки од њих "
+"да га активирате. Такође можете користити пречице са тастатуре за кретање "
+"кроз језичке. Текст на језичку одсликава садржај под њим; у случају да је "
+"скраћен због дужине, ставите показивач миша преко језичка да бисте видјели "
+"пун наслов."
+
+#: src/konqtabs.cpp:100
+#, kde-format
+msgid "Open a new tab"
+msgstr "Отвори нови језичак"
+
+#: src/konqtabs.cpp:109
+#, kde-format
+msgid "Close the current tab"
+msgstr "Затвори текући језичак"
+
+#: src/konqtabs.cpp:464
+#, kde-format
+msgid "&Duplicate Tab"
+msgstr "У&двостручи језичак"
+
+#: src/konqtabs.cpp:469
+#, kde-format
+msgid "&Reload Tab"
+msgstr "&Учитај поново језичак"
+
+#: src/konqtabs.cpp:476
+#, kde-format
+msgid "Other Tabs"
+msgstr "Други језичци"
+
+#: src/konqtabs.cpp:481
+#, kde-format
+msgid "D&etach Tab"
+msgstr "&Откачи језичак"
+
+#: src/konqtabs.cpp:487
+#, kde-format
+msgid "&Close Tab"
+msgstr "&Затвори језичак"
+
+#. i18n: ectx: label, entry, group (UserSettings)
+#: src/konqueror.kcfg:11
+#, kde-format
+msgid "Start Page"
+msgstr "Почетна страница"
+
+#. i18n: ectx: whatsthis, entry, group (UserSettings)
+#: src/konqueror.kcfg:12
+#, kde-format
+msgid "This is the URL of the web page where Konqueror will start from."
+msgstr "УРЛ веб странице коју ће К‑освајач приказати по покретању."
+
+#. i18n: ectx: whatsthis, entry, group (UserSettings)
+#: src/konqueror.kcfg:17
+#, kde-format
+msgid ""
+"This is the URL of the web page where Konqueror will jump to when the \\"
+"\"Home\\\" button is pressed."
+msgstr ""
+"Ово је УРЛ веб странице на коју ће К‑освајач скочити када се притисне дугме "
+"домаће странице."
+
+#. i18n: ectx: label, entry, group (UndoManagerSettings)
+#: src/konqueror.kcfg:26
+#, kde-format
+msgid "Maximum number of Closed Items"
+msgstr "Највећи број затворених ставки"
+
+#. i18n: ectx: whatsthis, entry, group (UndoManagerSettings)
+#: src/konqueror.kcfg:27
+#, kde-format
+msgid ""
+"This sets the maximum number of closed items that will be stored in memory. "
+"This limit will not be surpassed."
+msgstr ""
+"Задаје највећи број затворених ставки које се смијештају у меморију. Ово "
+"ограничење неће бити премашено."
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:36
+#, kde-format
+msgid "Open folders in separate windows"
+msgstr "Отварај фасцикле у засебним прозорима"
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:37
+#, kde-format
+msgid ""
+"If this option is checked, Konqueror will open a new window when you open a "
+"folder, rather than showing that folder's contents in the current window."
+msgstr ""
+"Ако је укључено, К‑освајач отвара нови прозор кад отворите фасциклу, умјесто "
+"да прикаже њен садржај у текућем прозору."
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:42
+#, kde-format
+msgid "Show file tips"
+msgstr "Облачићи фајлова"
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:43
+#, kde-format
+msgid ""
+"Here you can control if, when moving the mouse over a file, you want to see "
+"a small popup window with additional information about that file"
+msgstr ""
+"Овдје можете задати да ли ће при помијерању миша над фајл искочити мали "
+"прозор са допунским подацима о фајлу."
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:54
+#, kde-format
+msgid "Show previews in file tips"
+msgstr "Прегледи у облачићима фајлова"
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:55
+#, kde-format
+msgid ""
+"Here you can control if you want the popup window to contain a larger "
+"preview for the file, when moving the mouse over it"
+msgstr ""
+"Овдје можете задати да ли желите да искачући прозор садржи већи преглед "
+"фајла, кад помјерите миш над њега."
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:60
+#, kde-format
+msgid "Show 'Delete' menu entries which bypass the trashcan"
+msgstr "Брисање у менијима заобилази смеће"
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:61
+#, kde-format
+msgid ""
+"Check this if you want 'Delete' menu commands to be displayed on the desktop "
+"and in the file manager's menus and context menus. You can always delete "
+"files when hidden by holding the Shift key while calling 'Move to Trash'."
+msgstr ""
+"Попуните ово ако желите да се наредба за брисање даје на површи и у менијима "
+"менаџера фајлова и контекстним менијима. Фајлове можете брисати и када је "
+"нема, држећи тастер Shift при издавању „Премести у смеће“."
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:153 src/konqueror.kcfg:154
+#, kde-format
+msgid "Number of Open With items in the File menu"
+msgstr "Број ставки за отварање помоћу у менију Фајл"
+
+#. i18n: ectx: label, entry, group (HTML Settings)
+#: src/konqueror.kcfg:163
+#, kde-format
+msgid "Standard font"
+msgstr "Стандардни фонт"
+
+#. i18n: ectx: whatsthis, entry, group (HTML Settings)
+#: src/konqueror.kcfg:164
+#, kde-format
+msgid "This is the font used to display text in Konqueror windows."
+msgstr "Фонт којим се приказује текст у прозорима К‑освајача."
+
+#. i18n: ectx: label, entry, group (HistorySettings)
+#: src/konqueror.kcfg:314
+#, kde-format
+msgid "Maximum number of history items per view"
+msgstr "Највећи број ставки историјата по приказу"
+
+#. i18n: ectx: label, entry, group (Trash)
+#: src/konqueror.kcfg:504
+#, kde-format
+msgid "Ask confirmation for deleting a file."
+msgstr "Тражи потврду при брисању фајла"
+
+#. i18n: ectx: whatsthis, entry, group (Trash)
+#: src/konqueror.kcfg:505
+#, kde-format
+msgid ""
+"This option tells Konqueror whether to ask for a confirmation when you "
+"delete a file without using the trash folder. Warning, deleted files can not "
+"be recovered, so it is recommended to leave this confirmation enabled."
+msgstr ""
+"Ова опција налаже К‑освајачу да затражи потврду када бришете фајл "
+"заобилазећи фасциклу за смеће. Имајте у виду да се обрисани фајлови не могу "
+"повратити, па је препоручљиво да оставите тражење потврде активно."
+
+#. i18n: ectx: label, entry, group (Trash)
+#: src/konqueror.kcfg:510
+#, kde-format
+msgid "Ask confirmation for move to trash"
+msgstr "Тражи потврду при премијештању у смеће"
+
+#. i18n: ectx: whatsthis, entry, group (Trash)
+#: src/konqueror.kcfg:511
+#, kde-format
+msgid ""
+"This option tells Konqueror whether to ask for a confirmation when you move "
+"the file to your trash folder, from where it can be recovered very easily."
+msgstr ""
+"Ова опција говори К‑освајачу да ли да тражи потврду када премијештате фајл у "
+"фасциклу смећа, одакле се може лако повратити."
+
+#. i18n: ectx: whatsthis, entry, group (Trash)
+#: src/konqueror.kcfg:518
+#, kde-format
+msgid ""
+"If true, when opening a session from within the sessions dialog the tabs "
+"will be opened inside current window."
+msgstr ""
+"Ако је укључено, при отварању сесије из дијалога сесија језичци ће бити "
+"отворени у текућем прозору."
+
+#. i18n: ectx: Menu (file)
+#: src/konqueror.rc:5
+#, kde-format
+msgid "&File"
+msgstr "&Фајл"
+
+#. i18n: ectx: Menu (edit)
+#: src/konqueror.rc:24
+#, kde-format
+msgid "&Edit"
+msgstr "&Уређивање"
+
+#. i18n: ectx: Menu (view)
+#: src/konqueror.rc:33
+#, kde-format
+msgid "&View"
+msgstr "&Приказ"
+
+#. i18n: ectx: Menu (go)
+#: src/konqueror.rc:44
+#, kde-format
+msgid "&Go"
+msgstr "&Кретање"
+
+#. i18n: ectx: Menu (settings)
+#: src/konqueror.rc:54
+#, kde-format
+msgid "&Settings"
+msgstr "П&одешавање"
+
+#. i18n: ectx: Menu (window)
+#: src/konqueror.rc:72
+#, kde-format
+msgid "&Window"
+msgstr "Про&зор"
+
+#. i18n: ectx: Menu (help)
+#: src/konqueror.rc:88
+#, kde-format
+msgid "&Help"
+msgstr "По&моћ"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: src/konqueror.rc:93
+#, kde-format
+msgid "Main Toolbar"
+msgstr "Главна трака"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: src/konqueror.rc:103
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "Додатна трака"
+
+#. i18n: ectx: ToolBar (locationToolBar)
+#: src/konqueror.rc:110
+#, kde-format
+msgid "Location Toolbar"
+msgstr "Трака локације"
+
+#. i18n: ectx: ToolBar (bookmarkToolBar)
+#: src/konqueror.rc:116
+#, kde-format
+msgid "Bookmark Toolbar"
+msgstr "Трака обиљеживача"
+
+#: src/konqundomanager.cpp:103 src/konqundomanager.cpp:265
+#, kde-format
+msgid "Und&o: Closed Tab"
+msgstr "&Опозови: затворени језичак"
+
+#: src/konqundomanager.cpp:105 src/konqundomanager.cpp:116
+#: src/konqundomanager.cpp:160
+#, kde-format
+msgid "Und&o: Closed Window"
+msgstr "&Опозови: затворени прозор"
+
+#: src/konqundomanager.cpp:118
+#, kde-format
+msgid "Und&o"
+msgstr "Опо&зови"
+
+#: src/konqview.cpp:1220
+#, kde-format
+msgid ""
+"The page you are trying to view is the result of posted form data. If you "
+"resend the data, any action the form carried out (such as search or online "
+"purchase) will be repeated. "
+msgstr ""
+"Страница коју покушавате да погледате резултат је послатих података. Ако их "
+"поново пошаљете, биће поновљене све радње које је формулар извршио (као што "
+"је претрага или куповина на вези). "
+
+#: src/konqview.cpp:1222
+#, kde-format
+msgctxt "@title:window"
+msgid "Warning"
+msgstr "Упозорење"
+
+#: src/konqview.cpp:1222
+#, kde-format
+msgid "Resend"
+msgstr "Пошаљи поново"

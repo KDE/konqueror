@@ -1,0 +1,2455 @@
+# Translation of kcmkonqhtml.po into Serbian.
+# Toplica Tanaskovic <toptan@kde.org.yu>, 2003, 2004.
+# Marko Rosic <roske@kde.org.yu>, 2003, 2004.
+# Chusslove Illich <caslav.ilic@gmx.net>, 2005, 2007, 2008, 2009, 2010, 2011, 2012, 2016, 2017.
+# Dalibor Djuric <daliborddjuric@gmail.com>, 2009, 2010, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkonqhtml\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2019-11-04 02:30+0100\n"
+"PO-Revision-Date: 2017-09-28 17:56+0200\n"
+"Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
+"Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
+"Language: sr@ijekavianlatin\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+"X-Associated-UI-Catalogs: kconfigwidgets5\n"
+"X-Environment: kde\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Toplica Tanasković,Časlav Ilić"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "toptan@kde.org.yu,caslav.ilic@gmx.net"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pShowMMBInTabs)
+#: advancedTabOptions.ui:21
+#, kde-format
+msgid ""
+"This will open a new tab instead of a new window in various situations, such "
+"as choosing a link or a folder with the middle mouse button."
+msgstr ""
+"U nekim situacijama, kao što je klik na vezu ili fasciklu srednjim dugmetom "
+"miša, ovim će se otvoriti novi jezičak umjesto novog prozora."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pShowMMBInTabs)
+#: advancedTabOptions.ui:24
+#, kde-format
+msgid "Open &links in new tab instead of in new window"
+msgstr "Otvori &vezu u novom jezičku umjesto u novom prozoru"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPopupsWithinTabs)
+#: advancedTabOptions.ui:31
+#, kde-format
+msgid ""
+"Whether or not JavaScript popups if allowed shall open in a new tab or in a "
+"new window."
+msgstr ""
+"Da li će se JavaScript iskačući prozori otvarati u novom jezičku ili novom "
+"prozoru."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pPopupsWithinTabs)
+#: advancedTabOptions.ui:34
+#, kde-format
+msgid "Open pop&ups in new tab instead of in new window"
+msgstr "&Iskačući prozori u novom jezičku umjesto prozoru"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pKonquerorTabforExternalURL)
+#: advancedTabOptions.ui:41
+#, kde-format
+msgid ""
+"When you click a URL in another KDE program or call kfmclient to open a URL, "
+"the current desktop will be searched for a non-minimized Konqueror and, if "
+"found, the URL opened as a new tab within it. Otherwise a new Konqueror "
+"window will be opened with the required URL."
+msgstr ""
+"<qt>Kada kliknete na URL u nekom drugom KDE programu, ili pozovete "
+"<tt>kfmclient</tt> da biste otvorili URL, i ukoliko je na površi pokrenut "
+"K‑osvajač, URL će biti otvoren kao novi jezičak unutar njega. U suprotnom, "
+"biće otvoren novi prozor K‑osvajača sa traženim URL‑om.</qt>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pKonquerorTabforExternalURL)
+#: advancedTabOptions.ui:44
+#, kde-format
+msgid "Open as tab in existing Konqueror when URL is called externally"
+msgstr "Otvori spoljašnji URL kao jezičak u postojećem K‑osvajaču"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pNewTabsInBackground)
+#: advancedTabOptions.ui:51
+#, kde-format
+msgid ""
+"This will open a new tab in the background, instead of in the foreground."
+msgstr "Ovo će otvarati nove jezičke u pozadini umjesto na licu mjesta."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
+#: advancedTabOptions.ui:54
+#, kde-format
+msgid "O&pen new tabs in the background"
+msgstr "Otvori novi jezičak u &pozadini"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pOpenAfterCurrentPage)
+#: advancedTabOptions.ui:61
+#, kde-format
+msgid ""
+"This will open a new tab opened from a page after the current tab, instead "
+"of after the last tab."
+msgstr ""
+"Ovo će otvoriti novi jezičak odmah iza tekućeg, umjesto iza posljednjeg."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pOpenAfterCurrentPage)
+#: advancedTabOptions.ui:64
+#, kde-format
+msgid "Open &new tab after current tab"
+msgstr "Otvori &novi jezičak poslije tekućeg"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pDynamicTabbarHide)
+#: advancedTabOptions.ui:71
+#, kde-format
+msgid ""
+"This will display the tab bar only if there are two or more tabs. Otherwise "
+"it will always be displayed."
+msgstr ""
+"Ovo će prikazivati traku sa jezičcima samo ukoliko postoje dva ili više "
+"jezička. Inače, traka će se uvijek prikazivati."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pDynamicTabbarHide)
+#: advancedTabOptions.ui:74
+#, kde-format
+msgid "Hide the tab bar when only one tab is open"
+msgstr "Sakrij traku sa jezičcima kada ima samo jedan"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
+#: advancedTabOptions.ui:81
+#, kde-format
+msgid "This will display close buttons inside each tab."
+msgstr "Ovim će se unutar jezičaka nalaziti dugme za zatvaranje."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pPermanentCloseButton)
+#: advancedTabOptions.ui:84
+#, kde-format
+msgid "&Show close button on tabs"
+msgstr "&Dugme za zatvaranje na jezičcima"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pMiddleClickClose)
+#: advancedTabOptions.ui:91
+#, kde-format
+msgid ""
+"When you click on a tab using the middle mouse button or mouse wheel, it "
+"will close that tab."
+msgstr ""
+"Kliknete li na jezičak srednjim dugmetom miša (ili točkićem), on će se "
+"zatvoriti."
+
+# >> @option:check
+#. i18n: ectx: property (text), widget (QCheckBox, m_pMiddleClickClose)
+#: advancedTabOptions.ui:94
+#, kde-format
+msgid "Middle-click on a tab to close it"
+msgstr "Srednji klik na jezičak zatvara ga"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabConfirm)
+#: advancedTabOptions.ui:101
+#, kde-format
+msgid ""
+"This will ask you whether you are sure you want to close a window when it "
+"has multiple tabs opened in it."
+msgstr ""
+"Ovo će vas upitati da li zaista želite da zatvorite prozor kada je u njemu "
+"otvoreno više jezičaka."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pTabConfirm)
+#: advancedTabOptions.ui:104
+#, kde-format
+msgid "Confirm &when closing windows with multiple tabs"
+msgstr "&Potvrdi zatvaranje prozora sa više jezičaka"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabCloseActivatePrevious)
+#: advancedTabOptions.ui:111
+#, kde-format
+msgid ""
+"When checking this the previous used or opened tab will be activated when "
+"you close the current active tab instead of the one right to the current tab."
+msgstr ""
+"Ako uključite ovo, kada zatvorite tekući jezičak, umjesto prvog desnog biće "
+"aktiviran posljednji prethodno korišćeni ili otvoreni jezičak."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pTabCloseActivatePrevious)
+#: advancedTabOptions.ui:114
+#, kde-format
+msgid "Activate previously used tab when closing the current tab"
+msgstr "&Na prethodno korišćeni jezičak pri zatvaranju tekućeg"
+
+#: appearance.cpp:44
+#, kde-format
+msgctxt "@title:tab"
+msgid "General"
+msgstr "Opšte"
+
+#: appearance.cpp:45
+#, kde-format
+msgctxt "@title:tab"
+msgid "Fonts"
+msgstr "Fontovi"
+
+#: appearance.cpp:46
+#, kde-format
+msgctxt "@title:tab"
+msgid "Stylesheets"
+msgstr "Opisi stilova"
+
+#. i18n: ectx: property (title), widget (QGroupBox, GroupBox3_2)
+#: appearance.cpp:54 css/csscustom.ui:296
+#, kde-format
+msgid "Images"
+msgstr "Slike"
+
+#: appearance.cpp:58
+#, kde-format
+msgid "A&utomatically load images"
+msgstr "&Automatski učitaj slike"
+
+#: appearance.cpp:59
+#, kde-format
+msgid ""
+"<html>If this box is checked, Konqueror will automatically load any images "
+"that are embedded in a web page. Otherwise, it will display placeholders for "
+"the images, and you can then manually load the images by clicking on the "
+"image button.<br />Unless you have a very slow network connection, you will "
+"probably want to check this box to enhance your browsing experience.</html>"
+msgstr ""
+"<html><p>Ako je ova opcija uključena, K‑osvajač će automatski učitavati sve "
+"slike ugniježđene u veb stranicu. U suprotnom, biće samo obilježeno mjesto "
+"gdje je slika trebalo da stoji, i možete je ručno učitati klikom na dugme na "
+"tom mestu.</p><p>Vjerovatno ćete željeti da uključite ovo, osim ako vam je "
+"veza sa mrežom vrlo spora.</p></html>"
+
+#: appearance.cpp:69
+#, kde-format
+msgid "Dra&w frame around not completely loaded images"
+msgstr "&Okvir oko nepotpuno učitanih slika"
+
+#: appearance.cpp:70
+#, kde-format
+msgid ""
+"<html>If this box is checked, Konqueror will draw a frame as a placeholder "
+"around images embedded in a web page that are not yet fully loaded.<br />You "
+"will probably want to check this box to enhance your browsing experience, "
+"especially if have a slow network connection.</html>"
+msgstr ""
+"<html><p>Ako je ovo uključeno, K‑osvajač će crtati okvir kao mjestodržač oko "
+"još uvijek nepotpuno učitanih slika ugniježđenih na veb stranici.</"
+"p><p>Vjerovatno ćete željeti da uključite ovo, a posebno ako vam je veza sa "
+"mrežom spora.</p></html>"
+
+#: appearance.cpp:80
+#, kde-format
+msgctxt "animations"
+msgid "Enabled"
+msgstr "uključene"
+
+#: appearance.cpp:81
+#, kde-format
+msgctxt "animations"
+msgid "Disabled"
+msgstr "isključene"
+
+#: appearance.cpp:82
+#, kde-format
+msgid "Show Only Once"
+msgstr "pusti samo jednom"
+
+#: appearance.cpp:83
+#, kde-format
+msgid ""
+"<html>Controls how Konqueror shows animated images:<br /><ul><li><b>Enabled</"
+"b>: Show all animations completely.</li><li><b>Disabled</b>: Never show "
+"animations, show the starting image only.</li><li><b>Show only once</b>: "
+"Show all animations completely but do not repeat them.</li></ul></html>"
+msgstr ""
+"<html><p>Određuje kako K‑osvajač prikazuje animirane slike:</"
+"p><ul><li><b>uključene</b>: sve animacije se puštaju</li><li><b>isključene</"
+"b>: animacije se ne puštaju, već samo slika početnog kadra</li><li><b>pusti "
+"samo jednom</b>: animacije se puštaju, ali se ne ponavljaju poslije prvog "
+"puta</li></ul></html>"
+
+#: appearance.cpp:88
+#, kde-format
+msgid "A&nimations:"
+msgstr "&Animacije:"
+
+#: appearance.cpp:91 htmlopts.cpp:116
+#, kde-format
+msgctxt "@title:group"
+msgid "Miscellaneous"
+msgstr "Razno"
+
+#: appearance.cpp:96
+#, kde-format
+msgctxt "underline"
+msgid "Enabled"
+msgstr "uključeno"
+
+#: appearance.cpp:97
+#, kde-format
+msgctxt "underline"
+msgid "Disabled"
+msgstr "isključeno"
+
+#: appearance.cpp:98
+#, kde-format
+msgid "Only on Hover"
+msgstr "samo pri lebdjenju"
+
+#: appearance.cpp:99
+#, kde-format
+msgid "Und&erline links:"
+msgstr "&Podvučene veze:"
+
+#: appearance.cpp:102
+#, kde-format
+msgid ""
+"<html>Controls how Konqueror handles underlining hyperlinks:<br /"
+"><ul><li><b>Enabled</b>: Always underline links</li><li><b>Disabled</b>: "
+"Never underline links</li><li><b>Only on Hover</b>: Underline when the mouse "
+"is moved over the link</li></ul><br /><i>Note: The site's CSS definitions "
+"can override this value.</i></html>"
+msgstr ""
+"<html><p>Određuje kako K‑osvajač podvlači hiperveze:</"
+"p><ul><li><b>uključeno</b>: veze su uvek podvučene</li><li><b>isključeno</"
+"b>: veze se nikad ne podvlače</li><li><b>samo pri lebdenju</b>: veza je "
+"podvučena samo kada je pokazivač miša nad njom</li></ul><p><i>Napomena</i>: "
+"CSS definicije na datom sajtu mogu potisnuti ovu postavku.</p></html>"
+
+# >> @item:inlistbox Smooth scrolling
+#: appearance.cpp:111
+#, kde-format
+msgid "When Efficient"
+msgstr "kada je efikasno"
+
+# >> @item:inlistbox Smooth scrolling
+#: appearance.cpp:112
+#, kde-format
+msgctxt "smooth scrolling"
+msgid "Always"
+msgstr "Uvijek"
+
+# >> @item:inlistbox Smooth scrolling
+#: appearance.cpp:113
+#, kde-format
+msgctxt "soft scrolling"
+msgid "Never"
+msgstr "nikad"
+
+#: appearance.cpp:114
+#, kde-format
+msgid "S&mooth scrolling:"
+msgstr "&Glatko klizanje:"
+
+#: appearance.cpp:116
+#, kde-format
+msgid ""
+"<html>Determines whether Konqueror should use smooth steps to scroll HTML "
+"pages, or whole steps:<br /><ul><li><b>Always</b>: Always use smooth steps "
+"when scrolling.</li><li><b>Never</b>: Never use smooth scrolling, scroll "
+"with whole steps instead.</li><li><b>When Efficient</b>: Only use smooth "
+"scrolling on pages where it can be achieved with moderate usage of system "
+"resources.</li></ul></html>"
+msgstr ""
+"<html><p>Određuje da li K‑osvajač kliza HTML stranice glatko ili u "
+"diskretnim koracima:</p><ul><li><b>uvijek</b>: uvijek koristi glatko "
+"klizanje,</li><li><b>nikad</b>: nikad ne klizaj glatko, uvijek diskretno,</"
+"li><li><b>kada je efikasno</b>: glatko klizanje samo onih stranica sa kojima "
+"se to može postići uz skromnu upotrebu sistemskih resursa.</li></ul></html>"
+
+#: appearance.cpp:125
+#, kde-format
+msgid ""
+"<h1>Konqueror Fonts</h1>On this page, you can configure which fonts "
+"Konqueror should use to display the web pages you view."
+msgstr ""
+"<qt><h1>K‑osvajačevi fontovi</h1><p>Na ovoj stranici možete podesiti koje će "
+"fontove K‑osvajač koristiti za prikazivanje veb stranica koje gledate.</p></"
+"qt>"
+
+#: appearance.cpp:137
+#, kde-format
+msgid "Font Si&ze"
+msgstr "&Veličina fonta"
+
+#: appearance.cpp:140 appearance.cpp:158
+#, kde-format
+msgid "This is the relative font size Konqueror uses to display web sites."
+msgstr ""
+"Ovo je relativna veličina fonta koju K‑osvajač koristi za prikaz veb sajtova."
+
+#: appearance.cpp:144
+#, kde-format
+msgid "M&inimum font size:"
+msgstr "Naj&manja veličina fonta:"
+
+#: appearance.cpp:148
+#, kde-format
+msgid ""
+"Konqueror will never display text smaller than this size,<br />overriding "
+"any other settings."
+msgstr ""
+"K‑osvajač nikada neće prikazivati tekst u veličini manjoj od ove, bez obzira "
+"na bilo koju drugu postavku."
+
+#: appearance.cpp:153
+#, kde-format
+msgid "&Medium font size:"
+msgstr "Sre&dnja veličina fonta:"
+
+#: appearance.cpp:166
+#, kde-format
+msgid "S&tandard font:"
+msgstr "&Standardni font:"
+
+#: appearance.cpp:167
+#, kde-format
+msgid "This is the font used to display normal text in a web page."
+msgstr "Ovo je font koji se koristi za prikaz običnog teksta na veb stranici."
+
+#: appearance.cpp:172
+#, kde-format
+msgid "&Fixed font:"
+msgstr "&Fiksni font:"
+
+#: appearance.cpp:173
+#, kde-format
+msgid ""
+"This is the font used to display fixed-width (i.e. non-proportional) text."
+msgstr ""
+"Ovo je font koji se koristi za prikaz fiksnog (tj. neproporcionalnog) teksta."
+
+#: appearance.cpp:178
+#, kde-format
+msgid "S&erif font:"
+msgstr "S&erifni font:"
+
+#: appearance.cpp:179
+#, kde-format
+msgid "This is the font used to display text that is marked up as serif."
+msgstr "Ovo je font koji se koristi za prikaz teksta obilježenog kao serifni."
+
+#: appearance.cpp:185
+#, kde-format
+msgid "Sa&ns serif font:"
+msgstr "Beserifni font:"
+
+#: appearance.cpp:186
+#, kde-format
+msgid "This is the font used to display text that is marked up as sans-serif."
+msgstr ""
+"Ovo je font koji se koristi za prikaz teksta obilježenog kao beserifni."
+
+#: appearance.cpp:191
+#, kde-format
+msgid "C&ursive font:"
+msgstr "&Kurzivni font:"
+
+#: appearance.cpp:192
+#, kde-format
+msgid "This is the font used to display text that is marked up as italic."
+msgstr "Ovo je font koji se koristi za prikaz teksta obilježenog kao kurzivni."
+
+#: appearance.cpp:197
+#, kde-format
+msgid "Fantas&y font:"
+msgstr "Fanta&zijski font:"
+
+#: appearance.cpp:198
+#, kde-format
+msgid ""
+"This is the font used to display text that is marked up as a fantasy font."
+msgstr ""
+"Ovo je font koji se koristi za prikaz teksta obilježenog kao fantazijski."
+
+#: appearance.cpp:209
+#, kde-format
+msgid "Font &size adjustment for this encoding:"
+msgstr "&Korekcija veličine fonta za ovo kodiranje:"
+
+#: appearance.cpp:219 appearance.cpp:416
+#, kde-format
+msgid "Use Language Encoding"
+msgstr "kodiranje jezika"
+
+#: appearance.cpp:221
+#, kde-format
+msgid "Default encoding:"
+msgstr "Podrazumijevano kodiranje:"
+
+#: appearance.cpp:223
+#, kde-format
+msgid ""
+"Select the default encoding to be used; normally, you will be fine with 'Use "
+"language encoding' and should not have to change this."
+msgstr ""
+"<qt>Izaberite podrazumijevano kodiranje. U većini slučajeva pristajaće "
+"<i>kodiranje jezika</i>, te ga nemojte mijenjati bez posebne potrebe.</qt>"
+
+#. i18n: ectx: property (whatsThis), widget (QWidget, CSSCustomDialog)
+#. i18n: ectx: property (whatsThis), widget (QWidget, CSSConfigWidget)
+#: css/cssconfig.ui:5 css/csscustom.ui:13
+#, kde-format
+msgid ""
+"<b>Stylesheets</b><p>See http://www.w3.org/Style/CSS for further information "
+"on cascading style sheets.</p>"
+msgstr ""
+"<qt><b>Opisi stilova</b><p>Pogledajte <a href=\"http://www.w3.org/Style/CSS"
+"\">http://www.w3.org/Style/CSS</a> za više detalja o kaskadnim opisima "
+"stilova.</p></qt>"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, ButtonGroup1)
+#: css/cssconfig.ui:17
+#, kde-format
+msgid ""
+"<b>Stylesheets</b><p>Use this groupbox to determine how Konqueror will "
+"render style sheets.</p>"
+msgstr ""
+"<qt><b>Opisi stilova</b> <p>Koristite ovu grupu za određivanje kako će "
+"K‑osvajač renderovati opise stilova.</p></qt>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, ButtonGroup1)
+#: css/cssconfig.ui:20
+#, kde-format
+msgid "Stylesheets"
+msgstr "Opisi stilova"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, useDefault)
+#: css/cssconfig.ui:26
+#, kde-format
+msgid ""
+"<b>Use default stylesheet</b><p>Select this option to use the default "
+"stylesheet.</p>"
+msgstr ""
+"<b>&Podrazumijevani opis stila</b> <p>Izaberite ovu opciju ako želite da se "
+"koristi podrazumijevani opis stila.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useDefault)
+#: css/cssconfig.ui:29
+#, kde-format
+msgid "Us&e default stylesheet"
+msgstr "&Podrazumijevani opis stila"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, useUser)
+#: css/cssconfig.ui:39
+#, kde-format
+msgid ""
+"<b>Use user-defined stylesheet</b><p>If this box is checked, Konqueror will "
+"try to load a user-defined style sheet as specified in the location below. "
+"The style sheet allows you to completely override the way web pages are "
+"rendered in your browser. The file specified should contain a valid style "
+"sheet (see http://www.w3.org/Style/CSS for further information on cascading "
+"style sheets).</p>"
+msgstr ""
+"<b>Korisnički definisan opis stila</b><p>K‑osvajač će pokušati da učita opis "
+"stila koji je definisao korisnik, sa lokacije navedene ispod. Opis stila vam "
+"omogućava da potpuno preuredite način na koji pregledač renderuje veb "
+"stranice. Navedeni fajl treba da sadrži ispravan opis stila (pogledajte "
+"http://www.w3.org/Style/CSS za više detalja o kaskadnim opisima stilova).</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useUser)
+#: css/cssconfig.ui:42
+#, kde-format
+msgid "Use &user-defined stylesheet"
+msgstr "&Korisnički definisan opis stila"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, useAccess)
+#: css/cssconfig.ui:94
+#, kde-format
+msgid ""
+"<b>Use accessibility stylesheet</b><p>Selecting this option will allow you "
+"to define a default font, font size, and font color with a few simple clicks "
+"of the mouse. Simply wander over to the Customize... dialog and pick out "
+"your desired options.</p>"
+msgstr ""
+"<b>Opis stila poboljšane pristupačnosti</b> <p>Ovaj izbor će vam omogućiti "
+"da definišete podrazumijevani font i njegovu veličinu i boju uz nekoliko "
+"jednostavnih klikova mišem. Svratite do dijaloga <i>Prilagodi...</i> i "
+"izaberite željene opcije.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useAccess)
+#: css/cssconfig.ui:97
+#, kde-format
+msgid "U&se accessibility stylesheet"
+msgstr "Opis stila po&boljšane pristupačnosti"
+
+#. i18n: ectx: property (text), widget (QPushButton, customize)
+#: css/cssconfig.ui:137
+#, kde-format
+msgid "Custom&ize..."
+msgstr "&Prilagodi..."
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox7)
+#: css/csscustom.ui:21
+#, kde-format
+msgid ""
+"<b>Font family</b><p>A font family is a group of fonts that resemble one "
+"another, with family members that are e.g. bold, italic, or any number of "
+"the above.</p>"
+msgstr ""
+"<b>Porodica fontova</b><p>Porodica fontova je grupa fontova koji međusobno "
+"sliče, sa članovima porodice koji su npr. podebljani, kurzivni, ili neka "
+"kombinacija toga.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, GroupBox7)
+#: css/csscustom.ui:24
+#, kde-format
+msgid "Font Family"
+msgstr "Porodica fontova"
+
+#. i18n: ectx: property (text), widget (QLabel, txtBaseFontFamily)
+#: css/csscustom.ui:30
+#, kde-format
+msgid "Base family:"
+msgstr "Osnovna porodica:"
+
+#. i18n: ectx: property (whatsThis), widget (QFontComboBox, fontFamily)
+#: css/csscustom.ui:37
+#, kde-format
+msgid "<p>This is the currently selected font family</p>"
+msgstr "<p>Ovo je trenutno izabrana porodica fontova</p>"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, sameFamily)
+#: css/csscustom.ui:44
+#, kde-format
+msgid ""
+"<b>Use same family for all text</b><p>Select this option to override custom "
+"fonts everywhere in favor of the base font.</p>"
+msgstr ""
+"<b>Ista porodica za sav tekst</b> <p>Ovom opcijom možete svuda potisnuti "
+"posebne fontove zadatim osnovnim.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, sameFamily)
+#: css/csscustom.ui:47
+#, kde-format
+msgid "Use same family for all text"
+msgstr "Ista porodica za sav tekst"
+
+#. i18n: ectx: property (title), widget (QGroupBox, GroupBox3)
+#: css/csscustom.ui:57
+#, kde-format
+msgid "Font Size"
+msgstr "Veličina fonta"
+
+#. i18n: ectx: property (text), widget (QLabel, txtFontsize)
+#: css/csscustom.ui:63
+#, kde-format
+msgid "Base font si&ze:"
+msgstr "&Osnovna veličina fonta:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:80
+#, kde-format
+msgid "7"
+msgstr "7"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:85
+#, kde-format
+msgid "8"
+msgstr "8"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:90
+#, kde-format
+msgid "9"
+msgstr "9"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:95
+#, kde-format
+msgid "10"
+msgstr "10"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:100
+#, kde-format
+msgid "11"
+msgstr "11"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:105
+#, kde-format
+msgid "12"
+msgstr "12"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:110
+#, kde-format
+msgid "14"
+msgstr "14"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:115
+#, kde-format
+msgid "16"
+msgstr "16"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:120
+#, kde-format
+msgid "20"
+msgstr "20"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:125
+#, kde-format
+msgid "24"
+msgstr "24"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:130
+#, kde-format
+msgid "32"
+msgstr "32"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:135
+#, kde-format
+msgid "48"
+msgstr "48"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:140
+#, kde-format
+msgid "64"
+msgstr "64"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, dontScale)
+#: css/csscustom.ui:148
+#, kde-format
+msgid ""
+"<b>Use same size for all elements</b><p>Select this option to override "
+"custom font sizes in favor of the base font size. All fonts will be "
+"displayed in the same size.</p>"
+msgstr ""
+"<b>Ista veličina za sve elemente</b><p>Ovom opcijom sve posebne veličine "
+"fontova biće potisnute osnovnom. Svi će fontovi biti prikazani u istoj "
+"veličini.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, dontScale)
+#: css/csscustom.ui:151
+#, kde-format
+msgid "&Use same size for all elements"
+msgstr "&Ista veličina za sve elemente"
+
+#. i18n: ectx: property (title), widget (QGroupBox, ButtonGroup2)
+#: css/csscustom.ui:161
+#, kde-format
+msgid "Colors"
+msgstr "Boje"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, blackOnWhite)
+#: css/csscustom.ui:183
+#, kde-format
+msgid "<b>Black on White</b><p>This is what you normally see.</p>"
+msgstr "<b>Crna na bijeloj</b><p>Ovo je ono što obično vidite.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, blackOnWhite)
+#: css/csscustom.ui:186
+#, kde-format
+msgid "&Black on white"
+msgstr "&Crna na bijeloj"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, whiteOnBlack)
+#: css/csscustom.ui:196
+#, kde-format
+msgid "<b>White on Black</b><p>This is your classic inverse color scheme.</p>"
+msgstr "<b>Bijela na crnoj</b><p>Ovo je klasična izvrnuta šema boja.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, whiteOnBlack)
+#: css/csscustom.ui:199
+#, kde-format
+msgid "&White on black"
+msgstr "&Bijela na crnoj"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, customColor)
+#: css/csscustom.ui:206
+#, kde-format
+msgid ""
+"<b>Custom</b><p>Select this option to define a custom color for the default "
+"font.</p>"
+msgstr ""
+"<b>Posebno</b><p>Izborom ovog možete definisati posebnu boju za "
+"podrazumijevani font.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, customColor)
+#: css/csscustom.ui:209
+#, kde-format
+msgid "Cus&tom"
+msgstr "&Posebna"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, txtBackground)
+#: css/csscustom.ui:219
+#, kde-format
+msgid ""
+"<b>Background</b><p>This background color is the one displayed behind the "
+"text by default. A background image will override this.</p>"
+msgstr ""
+"<b>Pozadina</b><p>Ova boja pozadine će podrazumijevano biti prikazana iza "
+"teksta. Pozadinska slika potiskuje ovu postavku.</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, txtBackground)
+#: css/csscustom.ui:222
+#, kde-format
+msgid "Bac&kground:"
+msgstr "Po&zadina:"
+
+#. i18n: ectx: property (whatsThis), widget (KColorButton, backgroundColorButton)
+#: css/csscustom.ui:238
+#, kde-format
+msgid ""
+"<b>Background</b><p>Behind this door lays the ability to choose a custom "
+"default background.</p>"
+msgstr ""
+"<b>Pozadina</b> <p>Iza ovih vrata leži mogućnost izbora posebne "
+"podrazumijevane pozadine.</p>"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, sameColor)
+#: css/csscustom.ui:248
+#, kde-format
+msgid ""
+"<b>Use same color for all text</b><p>Select this option to apply your chosen "
+"color to the default font as well as any custom fonts as specified in a "
+"stylesheet.</p>"
+msgstr ""
+"<b>Ista boja za sav tekst</b><p>Ovom opcijom primjenjujete izabranu boju na "
+"podrazumijevani font, kao i na sve ostale posebne fontove navedene u opisu "
+"stila.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, sameColor)
+#: css/csscustom.ui:251
+#, kde-format
+msgid "Use same color for all text"
+msgstr "Ista boja za sav tekst"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, txtForeground)
+#. i18n: ectx: property (whatsThis), widget (KColorButton, foregroundColorButton)
+#: css/csscustom.ui:261 css/csscustom.ui:280
+#, kde-format
+msgid ""
+"<b>Foreground color</b><p>The foreground color is the color that the text is "
+"drawn in.</p>"
+msgstr "<b>Boja ispisa</b><p>Boja ispisa je boja kojom se ispisuje tekst.</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, txtForeground)
+#: css/csscustom.ui:264
+#, kde-format
+msgid "&Foreground:"
+msgstr "Boja &ispisa:"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox3_2)
+#: css/csscustom.ui:293
+#, kde-format
+msgid "<b>Images</b>"
+msgstr "<b>Slike</b>"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, hideImages)
+#: css/csscustom.ui:302
+#, kde-format
+msgid ""
+"<b>Suppress images</b><p>Selecting this will prevent Konqueror from loading "
+"images.</p>"
+msgstr ""
+"<b>Suzbij slike</b> <p>Ova opcija sprečava K‑osvajač da učitava slike.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, hideImages)
+#: css/csscustom.ui:305
+#, kde-format
+msgid "&Suppress images"
+msgstr "&Suzbij slike"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, hideBackground)
+#: css/csscustom.ui:312
+#, kde-format
+msgid ""
+"<b>Suppress background images</b><p>Selecting this option will prevent "
+"Konqueror from loading background images.</p>"
+msgstr ""
+"<b>Suzbij pozadinske slike</b> <p>Ova opcija sprečava K‑osvajač da učitava "
+"pozadinske slike.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, hideBackground)
+#: css/csscustom.ui:315
+#, kde-format
+msgid "Suppress background images"
+msgstr "Suzbij pozadinske slike"
+
+#. i18n: ectx: property (title), widget (QGroupBox, previewBox)
+#: css/csscustom.ui:347
+#, kde-format
+msgid "Preview"
+msgstr "Pregled"
+
+#. i18n("<h1>Konqueror Stylesheets</h1> This module allows you to apply your own color"
+#: css/kcmcss.cpp:52
+#, kde-format
+msgid ""
+"<h1>Konqueror Stylesheets</h1> This module allows you to apply your own "
+"color and font settings to Konqueror by using stylesheets (CSS). You can "
+"either specify options or apply your own self-written stylesheet by pointing "
+"to its location.<br /> Note that these settings will always have precedence "
+"before all other settings made by the site author. This can be useful to "
+"visually impaired people or for web pages that are unreadable due to bad "
+"design."
+msgstr ""
+"<h1>Opisi stilova za K‑osvajač</h1><p>U ovom modulu možete zadati svoje "
+"vrijednosti za boje i fontove u K‑osvajaču, koristeći opise stilova (CSS). "
+"Možete ili birati opcije, ili primijeniti opis stila koji ste sami napisali, "
+"zadavši putanju do njegove lokacije.</p><p>Ove postavke će uvijek imati "
+"prednost nad onima koje odredi autor sajta. Tako mogu biti korisne osobama "
+"oslabljenog vida ili kada su veb stranice nečitljive zbog lošeg dizajna.</p>"
+
+#: css/kcmcss.cpp:338
+#, kde-format
+msgid ""
+"<html>\n"
+"<head>\n"
+"<style>\n"
+"<!--\n"
+"%1\n"
+"-->\n"
+"</style>\n"
+"</head>\n"
+"<body>\n"
+"<h1>Heading 1</h1>\n"
+"<h2>Heading 2</h2>\n"
+"<h3>Heading 3</h3>\n"
+"\n"
+"<p>User-defined stylesheets allow increased\n"
+"accessibility for visually handicapped\n"
+"people.</p>\n"
+"\n"
+"</body>\n"
+"</html>\n"
+msgstr ""
+"<html>\n"
+"<head>\n"
+"<style>\n"
+"<!--\n"
+"%1\n"
+"-->\n"
+"</style>\n"
+"</head>\n"
+"<body>\n"
+"<h1>Naslov 1</h1>\n"
+"<h2>Naslov 2</h2>\n"
+"<h3>Naslov 3</h3>\n"
+"\n"
+"<p>Korisnički definisani opisi stilova omogućavaju bolju\n"
+"pristupačnost za osobe oslabljenog vida.</p>\n"
+"\n"
+"</body>\n"
+"</html>\n"
+
+# @title:column
+#: domainlistview.cpp:50
+#, kde-format
+msgid "Host/Domain"
+msgstr "domaćin/domen"
+
+# @title:column
+#: domainlistview.cpp:50
+#, kde-format
+msgid "Policy"
+msgstr "Smjernica"
+
+#: domainlistview.cpp:58
+#, kde-format
+msgid "&New..."
+msgstr "&Nova..."
+
+#: domainlistview.cpp:62
+#, kde-format
+msgid "Chan&ge..."
+msgstr "I&zmijeni..."
+
+#: domainlistview.cpp:66
+#, kde-format
+msgid "De&lete"
+msgstr "&Obriši"
+
+#: domainlistview.cpp:70
+#, kde-format
+msgid "&Import..."
+msgstr "&Uvezi..."
+
+#: domainlistview.cpp:76
+#, kde-format
+msgid "&Export..."
+msgstr "&Izvezi..."
+
+#: domainlistview.cpp:84
+#, kde-format
+msgid "Click on this button to manually add a host or domain specific policy."
+msgstr "Ovim dugmetom ručno dodajete posebnu smjernicu za domaćin ili domen."
+
+#: domainlistview.cpp:86
+#, kde-format
+msgid ""
+"Click on this button to change the policy for the host or domain selected in "
+"the list box."
+msgstr ""
+"Ovim dugmetom uređujete smjernicu za domaćin ili domen izabranu u spisku."
+
+#: domainlistview.cpp:88
+#, kde-format
+msgid ""
+"Click on this button to delete the policy for the host or domain selected in "
+"the list box."
+msgstr ""
+"Ovim dugmetom brišete smjernicu za domaćin ili domen izabranu u spisku."
+
+#: domainlistview.cpp:135
+#, kde-format
+msgid "You must first select a policy to be changed."
+msgstr "Prvo morate odabrati koju polisu želite da promijenite."
+
+#: domainlistview.cpp:162
+#, kde-format
+msgid "You must first select a policy to delete."
+msgstr "Prvo morate izabrati smjernicu koju želite da obrišete."
+
+#: domainlistview.cpp:200 policydlg.cpp:59
+#, kde-format
+msgid "Use Global"
+msgstr "Koristi globalno"
+
+#: domainlistview.cpp:202 policydlg.cpp:59
+#, kde-format
+msgid "Accept"
+msgstr "Prihvati"
+
+#: domainlistview.cpp:204 policydlg.cpp:59
+#, kde-format
+msgid "Reject"
+msgstr "Odbaci"
+
+#: filteropts.cpp:63
+#, kde-format
+msgid "Enable filters"
+msgstr "Uključi filtere"
+
+#: filteropts.cpp:66
+#, kde-format
+msgid "Hide filtered images"
+msgstr "Sakrij filtrirane slike"
+
+# >> @title:tab
+#: filteropts.cpp:73
+#, kde-format
+msgid "Manual Filter"
+msgstr "Ručno filtriranje"
+
+#: filteropts.cpp:91
+#, kde-format
+msgid "Search:"
+msgstr "Traži:"
+
+#: filteropts.cpp:99
+#, kde-format
+msgid ""
+"<qt>Filter expression (e.g. <tt>http://www.example.com/ad/*</tt>, <a href="
+"\"filterhelp\">more information</a>):"
+msgstr ""
+"<qt>Filterski izraz (npr. <tt>http://www.example.com/ad/*</tt>, <a href="
+"\"filterhelp\">više detalja</a>):</qt>"
+
+# >> @title:tab
+#: filteropts.cpp:115
+#, kde-format
+msgid "Automatic Filter"
+msgstr "Automatsko filtriranje"
+
+#: filteropts.cpp:124
+#, kde-format
+msgid "Automatic update interval:"
+msgstr "Period automatskog ažuriranja:"
+
+#: filteropts.cpp:129
+#, kde-format
+msgid " day"
+msgid_plural " days"
+msgstr[0] " dan"
+msgstr[1] " dana"
+msgstr[2] " dana"
+msgstr[3] " dan"
+
+#: filteropts.cpp:135
+#, kde-format
+msgid "Insert"
+msgstr "Umetni"
+
+#: filteropts.cpp:138
+#, kde-format
+msgid "Update"
+msgstr "Ažuriraj"
+
+#: filteropts.cpp:141
+#, kde-format
+msgid "Remove"
+msgstr "Ukloni"
+
+#: filteropts.cpp:145
+#, kde-format
+msgid "Import..."
+msgstr "Uvezi..."
+
+#: filteropts.cpp:148
+#, kde-format
+msgid "Export..."
+msgstr "Izvezi..."
+
+#: filteropts.cpp:155
+#, kde-format
+msgid ""
+"<qt>More information on <a href=\"importhelp\">import format</a>, <a href="
+"\"exporthelp\">export format</a>"
+msgstr ""
+"<qt>Više detalja o <a href=\"importhelp\">uvoznom</a> i <a href=\"exporthelp"
+"\">izvoznom</a> formatu.</qt>"
+
+#: filteropts.cpp:169
+#, kde-format
+msgid ""
+"Enable or disable AdBlocK filters. When enabled, a set of URL expressions "
+"should be defined in the filter list for blocking to take effect."
+msgstr ""
+"Uključite ili isključite AdBlockove filtere. Kada je uključeno, da bi "
+"blokiranje radilo u spisku filtera treba da bude definisan skup izraza nad "
+"URL‑ovima."
+
+#: filteropts.cpp:171
+#, kde-format
+msgid ""
+"When enabled blocked images will be removed from the page completely, "
+"otherwise a placeholder 'blocked' image will be used."
+msgstr ""
+"Kada je uključeno, blokirane slike će biti potpuno uklonjene sa stranice, u "
+"suprotnom će na mjestu blokirane slike stajati natpis „blokirano“."
+
+#: filteropts.cpp:178
+#, kde-format
+msgid ""
+"This is the list of URL filters that will be applied to all embedded images "
+"and media objects."
+msgstr ""
+"Ovo je spisak filtera nad URL‑ovima koji će biti primijenjeni na sve "
+"ugniježđene slike i druge medijume."
+
+#: filteropts.cpp:182
+#, kde-format
+msgid ""
+"<qt><p>Enter an expression to filter. Filters can be defined as either:"
+"<ul><li>a shell-style wildcard, e.g. <tt>http://www.example.com/ads*</tt>, "
+"the wildcards <tt>*?[]</tt> may be used</li><li>a full regular expression by "
+"surrounding the string with '<tt>/</tt>', e.g. <tt>/\\/(ad|banner)\\./</tt></"
+"li></ul><p>Any filter string can be preceded by '<tt>@@</tt>' to whitelist "
+"(allow) any matching URL, which takes priority over any blacklist (blocking) "
+"filter."
+msgstr ""
+"<qt><p>Unesite filterski izraz. Filteri se mogu definisati</p><ul><li>sa "
+"džokerima u stilu školjke, npr. <tt>http://www.example.com/ads*</tt>, gdje "
+"su poznati džokeri <tt>*?[]</tt>, ili</li><li>kao puni regularni izrazi, "
+"tako što se niska zagradi sa ‘<tt>/</tt>’, npr. <tt>/\\/(ad|banner)\\./</tt>."
+"</li></ul><p>Na početku svakog filtera može se dodati <tt>@@</tt> za "
+"stavljanje poklopljenog URL‑a na bijelu listu (dozvoljeno). Ovo ima "
+"prioritet nad svim filterima za crnu listu (blokiranje).</p></qt>"
+
+#: filteropts.cpp:198
+#, kde-format
+msgid ""
+"<qt><p>The filter import format is a plain text file. Blank lines, comment "
+"lines starting with '<tt>!</tt>' and the header line <tt>[AdBlock]</tt> are "
+"ignored. Any other line is added as a filter expression."
+msgstr ""
+"<qt><p>Format za uvoz filtera je obični tekstualni fajl. Ignorišu se prazni "
+"redovi, redovi komentari koji počinju sa ‘<tt>!</tt>’ i zaglavni red "
+"<tt>[AdBlock]</tt>. Svi ostali redovi se dodaju kao filterski izrazi.</p></"
+"qt>"
+
+#: filteropts.cpp:203
+#, kde-format
+msgid ""
+"<qt><p>The filter export format is a plain text file. The file begins with a "
+"header line <tt>[AdBlock]</tt>, then all of the filters follow each on a "
+"separate line."
+msgstr ""
+"<qt><p>Format za izvoz filtera je obični tekstualni fajl. Počinje zaglavnim "
+"redom <tt>[AdBlock]</tt>, a zatim slijede svi filteri, svaki u jednom redu.</"
+"p></qt>"
+
+#: filteropts.cpp:451
+#, kde-format
+msgid ""
+"<h1>Konqueror AdBlocK</h1> Konqueror AdBlocK allows you to create a list of "
+"filters that are checked against linked images and frames. URL's that match "
+"are either discarded or replaced with a placeholder image. "
+msgstr ""
+"<h1>K‑osvajačev AdBlock</h1><p>AdBlock vam omogućava da sastavite spisak "
+"filtera koji se porede sa povezanim slikama i okvirima. URL‑ovi koji se "
+"poklope ili se odbacuju ili mijenjaju sličicom blokiranog.</p>"
+
+# >> @title:column
+#: filteropts.cpp:573
+#, kde-format
+msgid "Name"
+msgstr "ime"
+
+# >> @title:column
+#: filteropts.cpp:574
+#, kde-format
+msgid "URL"
+msgstr "URL"
+
+#: generalopts.cpp:53
+#, kde-format
+msgid "Tabbed Browsing"
+msgstr "Pregledanje sa jezičcima"
+
+#: generalopts.cpp:79
+#, kde-format
+msgctxt "@label:listbox"
+msgid "When &Konqueror starts:"
+msgstr "&K‑osvajač kreće od:"
+
+# генитив: &Konqueror-n; креће од...
+#: generalopts.cpp:88
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Show Introduction Page"
+msgstr "uvodne stranice"
+
+# генитив: &Konqueror-n; креће од...
+#: generalopts.cpp:89
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Show My Start Page"
+msgstr "moje početne stranice"
+
+# генитив: &Konqueror-n; креће од...
+#: generalopts.cpp:90
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Show Blank Page"
+msgstr "prazne stranice"
+
+# генитив: &Konqueror-n; креће од...
+#: generalopts.cpp:91
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Show My Bookmarks"
+msgstr "mojih obilježivača"
+
+#: generalopts.cpp:97
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Start Page"
+msgstr "Izbor početne stranice"
+
+#: generalopts.cpp:101
+#, kde-format
+msgid "This is the URL of the web page Konqueror will show when starting."
+msgstr "URL veb stranice koju će K‑osvajač prikazati po pokretanju."
+
+#: generalopts.cpp:111
+#, kde-format
+msgid "Home page:"
+msgstr "Domaća stranica:"
+
+#: generalopts.cpp:114
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Home Page"
+msgstr "Izbor domaće stranice"
+
+#: generalopts.cpp:119
+#, kde-format
+msgid ""
+"This is the URL of the web page where Konqueror will jump to when the \"Home"
+"\" button is pressed."
+msgstr ""
+"URL veb stranice na koju će K‑osvajač otići kada se pritisne dugme „Domaća“."
+
+#: generalopts.cpp:127
+#, kde-format
+msgid "Default web browser engine:"
+msgstr "Podrazumijevani motor veb pregledača:"
+
+#: htmlopts.cpp:42
+#, kde-format
+msgid ""
+"<h1>Konqueror Browser</h1> Here you can configure Konqueror's browser "
+"functionality. Please note that the file manager functionality has to be "
+"configured using the \"File Manager\" configuration module. You can make "
+"some settings how Konqueror should handle the HTML code in the web pages it "
+"loads. It is usually not necessary to change anything here."
+msgstr ""
+"<h1>K‑osvajač kao pregledač</h1><p>Ovdje podešavate K‑osvajačevu pregledačku "
+"funkcionalnost (dok njegovu upotrebu kao menadžera fajlova podešavate "
+"istoimenim modulom). Možete odrediti nekoliko postavki u vezi sa "
+"obrađivanjem HTML kôda veb stranica koje K‑osvajač učitava. Obično ne morate "
+"ništa mijenjati.</p>"
+
+#: htmlopts.cpp:50
+#, kde-format
+msgid "Boo&kmarks"
+msgstr "&Obilježivači"
+
+#: htmlopts.cpp:53
+#, kde-format
+msgid "Ask for name and folder when adding bookmarks"
+msgstr "Pitaj za ime i fasciklu kada se obilježivač dodaje"
+
+#: htmlopts.cpp:56
+#, kde-format
+msgid ""
+"If this box is checked, Konqueror will allow you to change the title of the "
+"bookmark and choose a folder in which to store it when you add a new "
+"bookmark."
+msgstr ""
+"Ako je ovo uključeno, K‑osvajač će vam omogućiti da promijenite naslov "
+"obilježivača i odaberete fasciklu u koju želite da ga dodate."
+
+#: htmlopts.cpp:62
+#, kde-format
+msgid "Show only marked bookmarks in bookmark toolbar"
+msgstr "Prikaži samo obilježene obilježivače u traci obilježivača"
+
+#: htmlopts.cpp:64
+#, kde-format
+msgid ""
+"If this box is checked, Konqueror will show only those bookmarks in the "
+"bookmark toolbar which you have marked to do so in the bookmark editor."
+msgstr ""
+"Ako je ovo uključeno, K‑osvajač će u traci obilježivača davati samo one "
+"obilježivače koje ste označili za prikaz u uređivaču obilježivača."
+
+#: htmlopts.cpp:71
+#, kde-format
+msgid "Form Com&pletion"
+msgstr "Dopuna &formulara"
+
+#: htmlopts.cpp:75
+#, kde-format
+msgid ""
+"If this box is checked, Konqueror will remember the data you enter in web "
+"forms and suggest it in similar fields for all forms."
+msgstr ""
+"Ako je ova kućica popunjena, K‑osvajač će pamtiti podatke koje unosite u veb "
+"formulare, pa ih predlagati u sličnim poljima drugih formulara."
+
+#: htmlopts.cpp:81
+#, kde-format
+msgid "&Maximum completions:"
+msgstr "Naj&veći broj dopuna:"
+
+#: htmlopts.cpp:83
+#, kde-format
+msgid ""
+"Here you can select how many values Konqueror will remember for a form field."
+msgstr ""
+"Ovdje možete odabrati koliko će vrijednosti za polje formulara K‑osvajač "
+"pamtiti."
+
+#: htmlopts.cpp:90
+#, kde-format
+msgid "Mouse Beha&vior"
+msgstr "Ponašanje &miša"
+
+# skip-rule: t-cursor
+#: htmlopts.cpp:93
+#, kde-format
+msgid "Chan&ge cursor over links"
+msgstr "&Promijeni pokazivač nad vezom"
+
+# skip-rule: t-cursor
+#: htmlopts.cpp:95
+#, kde-format
+msgid ""
+"If this option is set, the shape of the cursor will change (usually to a "
+"hand) if it is moved over a hyperlink."
+msgstr ""
+"Ako je ova opcija uključena, izgled pokazivača će se promijeniti (najčešće u "
+"šaku) kada se nalazi iznad hiperveze."
+
+#: htmlopts.cpp:99
+#, kde-format
+msgid "M&iddle click opens URL in selection"
+msgstr "&Srednji klik otvara URL u izboru"
+
+#: htmlopts.cpp:102
+#, kde-format
+msgid ""
+"If this box is checked, you can open the URL in the selection by middle "
+"clicking on a Konqueror view."
+msgstr ""
+"Ako je ovo uključeno, možete otvarati URL‑ove u izboru srednjim klikom u "
+"prozoru K‑osvajača."
+
+#: htmlopts.cpp:106
+#, kde-format
+msgid "Right click goes &back in history"
+msgstr "Desnim klikom &unazad kroz istorijat"
+
+#: htmlopts.cpp:109
+#, kde-format
+msgid ""
+"If this box is checked, you can go back in history by right clicking on a "
+"Konqueror view. To access the context menu, press the right mouse button and "
+"move."
+msgstr ""
+"Ako je ova kućica popunjena, možete ići unazad kroz istorijat desnim klikom "
+"u prozoru K‑osvajača. Za pristup kontekstnom meniju, pritisnite desno dugme "
+"miša i pomjerite."
+
+#: htmlopts.cpp:119
+#, kde-format
+msgid "Allow automatic delayed &reloading/redirecting"
+msgstr "Automatsko odgođeno &osvježavanje/preusmjeravanje"
+
+#: htmlopts.cpp:120
+#, kde-format
+msgid ""
+"Some web pages request an automatic reload or redirection after a certain "
+"period of time. By unchecking this box Konqueror will ignore these requests."
+msgstr ""
+"Neke veb stranice zahtijevaju automatsko ponovno učitavanje ili "
+"preusmjeravanje poslije izvjesnog vremena. Isključivanjem ove opcije, "
+"K‑osvajač će ignorisati ovakve zahtjeve."
+
+#: htmlopts.cpp:126
+#, kde-format
+msgid "Enable Access Ke&y activation with Ctrl key"
+msgstr "Aktivacija &pristupnih tastera tasterom Ctrl"
+
+#: htmlopts.cpp:127
+#, kde-format
+msgid ""
+"Pressing the Ctrl key when viewing webpages activates Access Keys. "
+"Unchecking this box will disable this accessibility feature. (Konqueror "
+"needs to be restarted for this change to take effect.)"
+msgstr ""
+"Pritisak na taster Ctrl pri pregledanju veb stranice uključuje pristupne "
+"tastere. Ovu mogućnost možete ovdje isključiti (K‑osvajač se mora ponovo "
+"pokrenuti da bi izmjena stupila na snagu)."
+
+#: htmlopts.cpp:131
+#, kde-format
+msgid "Send the DNT header to tell web sites you do not want to be tracked"
+msgstr "Šalji DNT zaglavlje veb sajtovima (koje kaže da ne želim da me prate)"
+
+#: htmlopts.cpp:132
+#, kde-format
+msgid ""
+"Check this box if you want to inform a web site that you do not want your "
+"web browsing habits tracked."
+msgstr ""
+"Popunite ovu kućicu ako želite da saopštite veb sajtu da ne želite da prati "
+"vaše navike u pregledanju Weba."
+
+#: htmlopts.cpp:136
+#, kde-format
+msgid "Offer to save website passwords"
+msgstr "Nudi upisivanje lozinke veb sajta"
+
+#: htmlopts.cpp:137
+#, kde-format
+msgid "Uncheck this box to prevent being prompted to save website passwords"
+msgstr ""
+"Ispraznite ovu kućicu ako ne želite da budete pitani da li sačuvati lozinku "
+"veb sajta."
+
+#: htmlopts.cpp:142
+#, kde-format
+msgid "Display online PDF files using WebEngine"
+msgstr ""
+
+#: htmlopts.cpp:143
+#, kde-format
+msgid ""
+"Uncheck this box to display online PDF files as configured in System Settings"
+msgstr ""
+
+#: javaopts.cpp:78
+#, kde-format
+msgid "Enable Ja&va globally"
+msgstr "Aktiviraj &Javu globalno"
+
+#: javaopts.cpp:93
+#, kde-format
+msgid "Java Runtime Settings"
+msgstr "Postavke Java-mašine"
+
+#: javaopts.cpp:97
+#, kde-format
+msgid "&Use security manager"
+msgstr "Koristi menadžer &bezbjednosti"
+
+#: javaopts.cpp:101
+#, kde-format
+msgid "Use &KIO"
+msgstr "Koristi &K‑U/I"
+
+#: javaopts.cpp:105
+#, kde-format
+msgid "Shu&tdown applet server when inactive for more than"
+msgstr "&Isključi server apleta kada nije aktivan duže od"
+
+#: javaopts.cpp:115
+#, kde-format
+msgid " second"
+msgid_plural " seconds"
+msgstr[0] " sekunda"
+msgstr[1] " sekunde"
+msgstr[2] " sekundi"
+msgstr[3] " sekunda"
+
+#: javaopts.cpp:121
+#, kde-format
+msgid "&Path to Java executable, or 'java':"
+msgstr "Putanja do &izvršnog fajla Jave, ili „java“:"
+
+#: javaopts.cpp:125
+#, kde-format
+msgid "Additional Java a&rguments:"
+msgstr "Dodatni &argumenti za Javu:"
+
+#: javaopts.cpp:130
+#, kde-format
+msgid ""
+"Enables the execution of scripts written in Java that can be contained in "
+"HTML pages. Note that, as with any browser, enabling active contents can be "
+"a security problem."
+msgstr ""
+"Omogućava izvršavanje skripti napisanih u Javi, koje HTML stranice mogu "
+"sadržati. Imajte u vidu da, kao i kod bilo kog drugog pregledača, "
+"dozvoljavanje aktivnog sadržaja može biti bezbjednosni problem."
+
+#: javaopts.cpp:133
+#, kde-format
+msgid ""
+"<p>This box contains the domains and hosts you have set a specific Java "
+"policy for. This policy will be used instead of the default policy for "
+"enabling or disabling Java applets on pages sent by these domains or hosts.</"
+"p><p>Select a policy and use the controls on the right to modify it.</p>"
+msgstr ""
+"<p>Ovaj prozor sadrži domene i domaćine kojima ste postavili posebnu "
+"smjernicu za Javu. Ova smjernica će biti korišćena umjesto podrazumijevane "
+"za aktiviranje i deaktiviranje javanskih apleta na stranicama koje ovi "
+"domeni ili domaćini šalju.</p><p>Izaberite smjernicu i upotrijebite kontrole "
+"desno da je izmijenite.</p>"
+
+#: javaopts.cpp:140
+#, kde-format
+msgid ""
+"Click this button to choose the file that contains the Java policies. These "
+"policies will be merged with the existing ones. Duplicate entries are "
+"ignored."
+msgstr ""
+"Kliknite ovdje da izaberete fajl koji sadrži smjernice za Javu. Učitane "
+"smjernice će biti stopljene sa postojećima. U slučaju da ista smjernica već "
+"postoji, nova će biti ignorisana."
+
+#: javaopts.cpp:143
+#, kde-format
+msgid ""
+"Click this button to save the Java policy to a zipped file. The file, named "
+"<b>java_policy.tgz</b>, will be saved to a location of your choice."
+msgstr ""
+"Kliknite ovde da sačuvate smjernicu za Javu kao kompresovan fajl, po imenu "
+"<b>java_policy.tgz</b>, i smješten na lokaciji po vašem izboru."
+
+# rewrite-msgid: /default policy setting/default policy/
+#: javaopts.cpp:147
+#, kde-format
+msgid ""
+"Here you can set specific Java policies for any particular host or domain. "
+"To add a new policy, simply click the <i>New...</i> button and supply the "
+"necessary information requested by the dialog box. To change an existing "
+"policy, click on the <i>Change...</i> button and choose the new policy from "
+"the policy dialog box. Clicking on the <i>Delete</i> button will remove the "
+"selected policy, causing the default policy setting to be used for that "
+"domain."
+msgstr ""
+"Ovdje možete podesiti posebne smjernice za Javu za određene domaćine i "
+"domene. Da biste dodali novu smjernicu, kliknite na dugme <i>Nova...</i> i "
+"unesite podatke koje dijalog zatraži. Da biste izmijenili postojeću "
+"smjernicu, kliknite na <i>Izmijeni...</i> i izaberite smernicu sa spiska. "
+"Klikom na dugme <i>Obriši</i> uklanjate izabranu smjernicu, čime domen pod "
+"njom spada na podrazumijevanu smjernicu."
+
+#: javaopts.cpp:160
+#, kde-format
+msgid ""
+"Enabling the security manager will cause the jvm to run with a Security "
+"Manager in place. This will keep applets from being able to read and write "
+"to your file system, creating arbitrary sockets, and other actions which "
+"could be used to compromise your system. Disable this option at your own "
+"risk. You can modify your $HOME/.java.policy file with the Java policytool "
+"utility to give code downloaded from certain sites more permissions."
+msgstr ""
+"Uključeni menadžer sigurnosti znači da se Java-mašina pokreće sa njim u "
+"pogonu. Ovo će spriječiti aplete da čitaju i pišu po fajl sistemu, prave "
+"proizvoljne sokete, i druge radnje koje se mogu zloupotrijebiti za "
+"kompromitovanje sistema. Ovu opciju isključujete na sopstveni rizik. Možete "
+"izmijeniti fajl <b>$HOME/.java.policy</b> Javinom alatkom <tt>policytool</"
+"tt> da biste dali veće dozvole apletima preuzetim sa određenih sajtova."
+
+#: javaopts.cpp:168
+#, kde-format
+msgid "Enabling this will cause the jvm to use KIO for network transport "
+msgstr ""
+"Uključivanjem ovoga Java-mašini se zadaje da koristi K‑U/I za mrežni prenos."
+
+#: javaopts.cpp:170
+#, kde-format
+msgid ""
+"Enter the path to the java executable. If you want to use the jre in your "
+"path, simply leave it as 'java'. If you need to use a different jre, enter "
+"the path to the java executable (e.g. /usr/lib/jdk/bin/java), or the path to "
+"the directory that contains 'bin/java' (e.g. /opt/IBMJava2-13)."
+msgstr ""
+"Unesite putanju do izvršnog fajla Jave. Ako želite da koristite javansko "
+"okruženje već u putanji, ostavite u ovom polju samo „java“. Ako želite neko "
+"drugo, unesite ili putanju do njega (na primer <tt>/usr/lib/jdk/bin/java</"
+"tt>), ili do fascikle koja sadrži <tt>bin/java</tt> (npr. <tt>/opt/"
+"IBMJava2-13</tt>)."
+
+#: javaopts.cpp:175
+#, kde-format
+msgid ""
+"If you want special arguments to be passed to the virtual machine, enter "
+"them here."
+msgstr ""
+"Unesite ovdje posebne argumente koje želite da proslijedite virtuelnoj "
+"mašini."
+
+#: javaopts.cpp:177
+#, kde-format
+msgid ""
+"When all the applets have been destroyed, the applet server should shut "
+"down. However, starting the jvm takes a lot of time. If you would like to "
+"keep the java process running while you are browsing, you can set the "
+"timeout value to whatever you like. To keep the java process running for the "
+"whole time that the konqueror process is, leave the Shutdown Applet Server "
+"checkbox unchecked."
+msgstr ""
+"Kada su svi apleti uništeni, server apleta bi trebalo da bude ugašen. Ipak, "
+"samo pokretanje Java-mašine oduzima puno vremena, pa ako želite da je "
+"ostavite da radi i poslije toga, ovdje možete da zadate željeno "
+"prekovrijeme. Da bi Java-mašina bila u pogonu dok je god i proces "
+"K‑osvajača, ispraznite kućicu <i>Isključi server apleta kada nije aktivan "
+"duže od</i>."
+
+#: javaopts.cpp:286
+#, kde-format
+msgctxt "@title:group"
+msgid "Doma&in-Specific"
+msgstr "Poseb&no za domen"
+
+#: javaopts.cpp:321
+#, kde-format
+msgctxt "@title:window"
+msgid "New Java Policy"
+msgstr "Nova smjernica Jave"
+
+#: javaopts.cpp:324
+#, kde-format
+msgctxt "@title:window"
+msgid "Change Java Policy"
+msgstr "Izmjena smjernice Jave"
+
+#: javaopts.cpp:328
+#, kde-format
+msgid "&Java policy:"
+msgstr "&Smjernica Jave:"
+
+#: javaopts.cpp:329
+#, kde-format
+msgid "Select a Java policy for the above host or domain."
+msgstr "Izaberite smjernicu Jave za gornji domaćin ili domen."
+
+#: jsopts.cpp:50
+#, kde-format
+msgid "Ena&ble JavaScript globally"
+msgstr "A&ktiviraj JavaScript globalno"
+
+#: jsopts.cpp:51
+#, kde-format
+msgid ""
+"Enables the execution of scripts written in ECMA-Script (also known as "
+"JavaScript) that can be contained in HTML pages. Note that, as with any "
+"browser, enabling scripting languages can be a security problem."
+msgstr ""
+"Omogućava izvršavanje skripti napisanih u JavaScriptu, koje HTML stranice "
+"mogu sadržati. Imajte u vidu da, kao i kod bilo kog drugog pregledača, "
+"dozvoljavanje aktivnog sadržaja može biti bezbednosni problem."
+
+#: jsopts.cpp:59
+#, kde-format
+msgid "Debugging"
+msgstr "Ispravljanje"
+
+#: jsopts.cpp:63
+#, kde-format
+msgid "Enable debu&gger"
+msgstr "Uključi &ispravljač"
+
+#: jsopts.cpp:64
+#, kde-format
+msgid "Enables builtin JavaScript debugger."
+msgstr "Uključuje ugrađeni ispravljač JavaScripta."
+
+#: jsopts.cpp:68
+#, kde-format
+msgid "Report &errors"
+msgstr "Prijavi &greške"
+
+#: jsopts.cpp:69
+#, kde-format
+msgid ""
+"Enables the reporting of errors that occur when JavaScript code is executed."
+msgstr ""
+"Uključuje izvještavanje o greškama do kojih dolazi pri izvršavanju "
+"JavaScript kôda."
+
+# rewrite-msgid: /default policy setting/default policy/
+#: jsopts.cpp:79
+#, kde-format
+msgid ""
+"Here you can set specific JavaScript policies for any particular host or "
+"domain. To add a new policy, simply click the <i>New...</i> button and "
+"supply the necessary information requested by the dialog box. To change an "
+"existing policy, click on the <i>Change...</i> button and choose the new "
+"policy from the policy dialog box. Clicking on the <i>Delete</i> button will "
+"remove the selected policy causing the default policy setting to be used for "
+"that domain. The <i>Import</i> and <i>Export</i> button allows you to easily "
+"share your policies with other people by allowing you to save and retrieve "
+"them from a zipped file."
+msgstr ""
+"Ovdje možete podesiti posebne smjernice za JavaScript za određene domaćine i "
+"domene. Da biste dodali novu smjernicu, kliknite na dugme <i>Nova...</i> i "
+"unesite podatke koje dijalog zatraži. Da biste izmijenili postojeću "
+"smjernicu, kliknite na <i>Izmijeni...</i> i izaberite smjernicu sa spiska. "
+"Klikom na dugme <i>Obriši</i> uklanjate izabranu smjernicu, čime domen pod "
+"njom spada na podrazumijevanu smjernicu. Dugmadima <i>Uvezi...</i> i "
+"<i>Izvezi...</i> možete lako dijeliti svoje smjernice sa drugima, tako što "
+"ćete ih upisivati i dobavljati iz fajla arhive."
+
+#: jsopts.cpp:89
+#, kde-format
+msgid ""
+"<p>This box contains the domains and hosts you have set a specific "
+"JavaScript policy for. This policy will be used instead of the default "
+"policy for enabling or disabling JavaScript on pages sent by these domains "
+"or hosts.</p><p>Select a policy and use the controls on the right to modify "
+"it.</p>"
+msgstr ""
+"<p>Ovaj prozor sadrži domene i domaćine kojima ste postavili posebnu "
+"smjernicu za JavaScript. Ova smjernica će biti korišćena umjesto "
+"podrazumijevane za aktiviranje i deaktiviranje JavaScript apleta na "
+"stranicama koje ovi domeni ili domaćini šalju.</p><p>Izaberite smjernicu i "
+"upotrijebite kontrole desno da je izmijenite.</p>"
+
+#: jsopts.cpp:96
+#, kde-format
+msgid ""
+"Click this button to choose the file that contains the JavaScript policies. "
+"These policies will be merged with the existing ones. Duplicate entries are "
+"ignored."
+msgstr ""
+"Kliknite ovdje da izaberete fajl koji sadrži smjernice za JavaScript. "
+"Učitane smjernice će biti stopljene sa postojećima. U slučaju da ista "
+"smjernica već postoji, nova će biti ignorisana."
+
+#: jsopts.cpp:99
+#, kde-format
+msgid ""
+"Click this button to save the JavaScript policy to a zipped file. The file, "
+"named <b>javascript_policy.tgz</b>, will be saved to a location of your "
+"choice."
+msgstr ""
+"Kliknite ovdje da sačuvate smjernicu za JavaScript kao kompresovan fajl, po "
+"imenu <b>javascript_policy.tgz</b>, i smješten na lokaciji po vašem izboru."
+
+#: jsopts.cpp:105
+#, kde-format
+msgid "Global JavaScript Policies"
+msgstr "Globalne smjernice JavaScripta"
+
+#: jsopts.cpp:173
+#, kde-format
+msgctxt "@title:group"
+msgid "Do&main-Specific"
+msgstr "Pose&bno za domen"
+
+#: jsopts.cpp:212
+#, kde-format
+msgctxt "@title:window"
+msgid "New JavaScript Policy"
+msgstr "Nova smjernica JavaScripta"
+
+#: jsopts.cpp:215
+#, kde-format
+msgctxt "@title:window"
+msgid "Change JavaScript Policy"
+msgstr "Izmjena smjernice JavaScripta"
+
+#: jsopts.cpp:219
+#, kde-format
+msgid "JavaScript policy:"
+msgstr "Smjernica JavaScripta:"
+
+#: jsopts.cpp:220
+#, kde-format
+msgid "Select a JavaScript policy for the above host or domain."
+msgstr "Izaberite smjernicu za gornji domaćin ili domen."
+
+#: jsopts.cpp:222
+#, kde-format
+msgid "Domain-Specific JavaScript Policies"
+msgstr "smjernice JavaScripta posebne za domen"
+
+#: jspolicies.cpp:156
+#, kde-format
+msgid "Open new windows:"
+msgstr "Otvaranje novih prozora:"
+
+#: jspolicies.cpp:164 jspolicies.cpp:218 jspolicies.cpp:255 jspolicies.cpp:292
+#: jspolicies.cpp:332
+#, kde-format
+msgid "Use global"
+msgstr "Koristi globalno"
+
+#: jspolicies.cpp:165 jspolicies.cpp:219 jspolicies.cpp:256 jspolicies.cpp:293
+#: jspolicies.cpp:333
+#, kde-format
+msgid "Use setting from global policy."
+msgstr "Koristi postavke iz globalne smjernice."
+
+# @option:radio Global JavaScript Policies
+#: jspolicies.cpp:171 jspolicies.cpp:225 jspolicies.cpp:262 jspolicies.cpp:299
+#: jspolicies.cpp:339
+#, kde-format
+msgid "Allow"
+msgstr "dozvoli"
+
+#: jspolicies.cpp:172
+#, kde-format
+msgid "Accept all popup window requests."
+msgstr "Prihvati sve zahtjeve za iskačućim prozorima."
+
+# @option:radio Global JavaScript Policies
+#: jspolicies.cpp:177
+#, kde-format
+msgid "Ask"
+msgstr "pitaj"
+
+#: jspolicies.cpp:178
+#, kde-format
+msgid "Prompt every time a popup window is requested."
+msgstr "Pitaj svaki put kada je zahtijevan iskačući prozor."
+
+# @option:radio Global JavaScript Policies
+#: jspolicies.cpp:183
+#, kde-format
+msgid "Deny"
+msgstr "odbij"
+
+#: jspolicies.cpp:184
+#, kde-format
+msgid "Reject all popup window requests."
+msgstr "Odbaci sve zahtjeve za iskačućim prozorima."
+
+# @option:radio Global JavaScript Policies
+#: jspolicies.cpp:189
+#, kde-format
+msgid "Smart"
+msgstr "pametno"
+
+#: jspolicies.cpp:190
+#, kde-format
+msgid ""
+"Accept popup window requests only when links are activated through an "
+"explicit mouse click or keyboard operation."
+msgstr ""
+"Prihvati zahtjeve za iskačućim prozorima samo kada su veze aktivirane "
+"izričitim klikom miša ili preko tastature."
+
+#: jspolicies.cpp:197
+#, kde-format
+msgid ""
+"If you disable this, Konqueror will stop interpreting the <i>window.open()</"
+"i> JavaScript command. This is useful if you regularly visit sites that make "
+"extensive use of this command to pop up ad banners.<br /><br /><b>Note:</b> "
+"Disabling this option might also break certain sites that require <i>window."
+"open()</i> for proper operation. Use this feature carefully."
+msgstr ""
+"<p>Ako isključite ovo, K‑osvajač neće izvršavati JavaScript naredbu "
+"<tt>window.open()</tt>. Veoma korisno ako često posjećujete sajtove koji "
+"puno koriste iskačuće prozore za prikaz reklama.</p><p><b>Napomena:</b> "
+"Zabrana ove naredbe može onemogućiti rad pojedinih sajtova kojima je "
+"neophodna za pravilno funkcionisanje. Stoga koristite pažljivo ovu mogućnost."
+"</p>"
+
+#: jspolicies.cpp:211
+#, kde-format
+msgid "Resize window:"
+msgstr "Promjena veličine prozora:"
+
+#: jspolicies.cpp:226
+#, kde-format
+msgid "Allow scripts to change the window size."
+msgstr "Dozvoli skriptama da promijene veličinu prozora."
+
+# @option:radio Global JavaScript Policies
+#: jspolicies.cpp:231 jspolicies.cpp:268 jspolicies.cpp:305 jspolicies.cpp:345
+#, kde-format
+msgid "Ignore"
+msgstr "ignoriši"
+
+#: jspolicies.cpp:232
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to change the window size. The web page will "
+"<i>think</i> it changed the size but the actual window is not affected."
+msgstr ""
+"Ignoriši pokušaje skripti da promijene veličinu prozora. Veb stranice će "
+"<i>misliti</i> da je veličina promijenjena, dok u stvari nije."
+
+#: jspolicies.cpp:239
+#, kde-format
+msgid ""
+"Some websites change the window size on their own by using <i>window."
+"resizeBy()</i> or <i>window.resizeTo()</i>. This option specifies the "
+"treatment of such attempts."
+msgstr ""
+"Neki veb sajtovi samostalno mijenjaju veličinu prozora naredbama <tt>window."
+"resizeBy()</tt> ili <tt>window.resizeTo()</tt>. Ovom opcijom određujete kako "
+"će se obrađivati takvi pokušaji."
+
+#: jspolicies.cpp:248
+#, kde-format
+msgid "Move window:"
+msgstr "Pomijeranje prozora:"
+
+#: jspolicies.cpp:263
+#, kde-format
+msgid "Allow scripts to change the window position."
+msgstr "Dozvoli skriptama da promijene položaj prozora."
+
+#: jspolicies.cpp:269
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to change the window position. The web page will "
+"<i>think</i> it moved the window but the actual position is not affected."
+msgstr ""
+"Ignoriši pokušaje skripti da promijene položaj prozora. Veb stranice će "
+"<i>misliti</i> da je prozor pomjeren, dok u stvari nije."
+
+#: jspolicies.cpp:276
+#, kde-format
+msgid ""
+"Some websites change the window position on their own by using <i>window."
+"moveBy()</i> or <i>window.moveTo()</i>. This option specifies the treatment "
+"of such attempts."
+msgstr ""
+"Neki veb sajtovi samostalno mijenjaju položaj prozora naredbama <tt>window."
+"moveBy()</tt> ili <tt>window.moveTo()</tt>. Ovom opcijom određujete kako će "
+"se obrađivati takvi pokušaji."
+
+#: jspolicies.cpp:285
+#, kde-format
+msgid "Focus window:"
+msgstr "Fokusiranje prozora:"
+
+#: jspolicies.cpp:300
+#, kde-format
+msgid "Allow scripts to focus the window."
+msgstr "Dozvoli skriptama da fokusiraju prozor."
+
+#: jspolicies.cpp:306
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to focus the window. The web page will <i>think</"
+"i> it brought the focus to the window but the actual focus will remain "
+"unchanged."
+msgstr ""
+"Ignoriši pokušaje skripti da fokusiraju prozor. Veb stranice će <i>misliti</"
+"i> da je prozor fokusiran, dok u stvari nije."
+
+# skip-rule: t-action
+#: jspolicies.cpp:314
+#, kde-format
+msgid ""
+"Some websites set the focus to their browser window on their own by using "
+"<i>window.focus()</i>. This usually leads to the window being moved to the "
+"front interrupting whatever action the user was dedicated to at that time. "
+"This option specifies the treatment of such attempts."
+msgstr ""
+"Neki veb sajtovi samostalno fokusiraju svoj prozor pregledača naredbom "
+"<tt>window.focus()</tt>. Ovo obično znači da će prozor biti pomjeren ispred, "
+"prekidajući posao kojim se trenutno bavite. Ovom opcijom određujete kako će "
+"se obrađivati takvi pokušaji."
+
+#: jspolicies.cpp:325
+#, kde-format
+msgid "Modify status bar text:"
+msgstr "Mijenjanje teksta trake stanja:"
+
+#: jspolicies.cpp:340
+#, kde-format
+msgid "Allow scripts to change the text of the status bar."
+msgstr "Dozvoli skriptama da izmijene tekst u traci stanja."
+
+#: jspolicies.cpp:346
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to change the status bar text. The web page will "
+"<i>think</i> it changed the text but the actual text will remain unchanged."
+msgstr ""
+"Ignoriši pokušaje skripti da promijene tekst u traci stanja. Veb stranice će "
+"<i>misliti</i> da je tekst promijenjen, dok u stvari nije."
+
+#: jspolicies.cpp:354
+#, kde-format
+msgid ""
+"Some websites change the status bar text by setting <i>window.status</i> or "
+"<i>window.defaultStatus</i>, thus sometimes preventing displaying the real "
+"URLs of hyperlinks. This option specifies the treatment of such attempts."
+msgstr ""
+"Neki veb sajtovi mijenjaju tekst u traci stanja postavljajući promjenljive "
+"<tt>window.status</tt> ili <tt>window.defaultStatus</tt>, čime mogu "
+"spriječiti očitavanje stvarnih URL‑ova hiperveza. Ovom opcijom određujete "
+"šta se čini sa takvim pokušajima."
+
+#: khttpoptdlg.cpp:27
+#, kde-format
+msgid "Accept languages:"
+msgstr "Prihvatljivi jezici:"
+
+#: khttpoptdlg.cpp:35
+#, kde-format
+msgid "Accept character sets:"
+msgstr "Prihvatljiva kodiranja:"
+
+#: main.cpp:63
+#, kde-format
+msgid "Konqueror Browsing Control Module"
+msgstr ""
+"Kontrolni modul K‑osvajača kao pregledača|/|$[svojstva dat 'Kontrolnom "
+"modulu K‑osvajača kao pregledača']"
+
+#: main.cpp:65
+#, kde-format
+msgid "(c) 1999 - 2001 The Konqueror Developers"
+msgstr "© 1999-2001, programeri K‑osvajača"
+
+#: main.cpp:67
+#, kde-format
+msgid "Waldo Bastian"
+msgstr "Valdo Bastijan"
+
+#: main.cpp:68
+#, kde-format
+msgid "David Faure"
+msgstr "David For"
+
+#: main.cpp:69
+#, kde-format
+msgid "Matthias Kalle Dalheimer"
+msgstr "Matijas Kale Dalhajmer"
+
+#: main.cpp:70
+#, kde-format
+msgid "Lars Knoll"
+msgstr "Lars Knol"
+
+#: main.cpp:71
+#, kde-format
+msgid "Dirk Mueller"
+msgstr "Dirk Miler"
+
+#: main.cpp:72
+#, kde-format
+msgid "Daniel Molkentin"
+msgstr "Danijel Molkentin"
+
+#: main.cpp:73
+#, kde-format
+msgid "Wynn Wilkes"
+msgstr "Vin Vilks"
+
+#: main.cpp:75
+#, kde-format
+msgid "Leo Savernik"
+msgstr "Leo Savernik"
+
+#: main.cpp:75
+#, kde-format
+msgid ""
+"JavaScript access controls\n"
+"Per-domain policies extensions"
+msgstr ""
+"Kontrole pristupa JavaScripta\n"
+"Proširenja smjernica po domenu"
+
+#: main.cpp:87
+#, kde-format
+msgid "&Java"
+msgstr "&Java"
+
+#: main.cpp:91
+#, kde-format
+msgid "Java&Script"
+msgstr "&JavaScript"
+
+#: main.cpp:131
+#, kde-format
+msgid ""
+"<h2>JavaScript</h2>On this page, you can configure whether JavaScript "
+"programs embedded in web pages should be allowed to be executed by Konqueror."
+"<h2>Java</h2>On this page, you can configure whether Java applets embedded "
+"in web pages should be allowed to be executed by Konqueror.<br /><br /"
+"><b>Note:</b> Active content is always a security risk, which is why "
+"Konqueror allows you to specify very fine-grained from which hosts you want "
+"to execute Java and/or JavaScript programs."
+msgstr ""
+"<h2>JavaScript</h2><p>Na ovoj stranici možete podesiti da li će K‑osvajaču "
+"biti dozvoljeno da izvršava JavaScript programe ugniježđene u veb stranice.</"
+"p><h2>Java</h2><p>Ovdje možete podesiti da li će K‑osvajaču biti dozvoljeno "
+"da izvršava javanske aplete ugniježđene u veb stranice.</p><p><b>Napomena:</"
+"b> Aktivni sadržaj je uvek rizik za bezbjednost, zato vam je omogućeno da "
+"fino podesite sa kojih domaćina se javanski i JavaScript programi smiju "
+"izvršavati.</p>"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, NSConfigWidget)
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: nsconfigwidget.ui:14 nsconfigwidget.ui:122 pluginopts.cpp:173
+#, kde-format
+msgid "Plugins"
+msgstr "Priključci"
+
+# >> @title:group
+#. i18n: ectx: property (title), widget (QGroupBox, GroupBox1)
+#: nsconfigwidget.ui:26
+#, kde-format
+msgid "Folders"
+msgstr "Fascikle"
+
+#. i18n: ectx: property (text), widget (QPushButton, dirRemove)
+#: nsconfigwidget.ui:51
+#, kde-format
+msgid "&Remove"
+msgstr "&Ukloni"
+
+# >> @action:button Add new folder
+#. i18n: ectx: property (text), widget (QPushButton, dirNew)
+#: nsconfigwidget.ui:58
+#, kde-format
+msgid "&New"
+msgstr "&Nova"
+
+#. i18n: ectx: property (text), widget (QPushButton, dirDown)
+#: nsconfigwidget.ui:75
+#, kde-format
+msgid "Do&wn"
+msgstr "&Dolje"
+
+#. i18n: ectx: property (text), widget (QPushButton, dirUp)
+#: nsconfigwidget.ui:85
+#, kde-format
+msgid "&Up"
+msgstr "&Gore"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, scanButton)
+#: nsconfigwidget.ui:102
+#, kde-format
+msgid "Click here to scan for newly installed Netscape plugins now."
+msgstr ""
+"Kliknite ovdje da biste potražili novoinstalirane Netscapeove priključke."
+
+#. i18n: ectx: property (text), widget (QPushButton, scanButton)
+#: nsconfigwidget.ui:105
+#, kde-format
+msgid "&Scan for Plugins"
+msgstr "&Potraži priključke"
+
+#. i18n: ectx: property (whatsThis), widget (QTreeWidget, pluginList)
+#: nsconfigwidget.ui:128
+#, kde-format
+msgid "Here you can see a list of the Netscape plugins KDE has found."
+msgstr "Ovdje možete videti spisak Netscapeovih priključaka koji su pronađeni."
+
+#. i18n: ectx: property (text), widget (QTreeWidget, pluginList)
+#: nsconfigwidget.ui:135
+#, kde-format
+msgid "Information"
+msgstr "Podaci"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, pluginList)
+#: nsconfigwidget.ui:140
+#, kde-format
+msgid "Value"
+msgstr "Vrijednost"
+
+#: pluginopts.cpp:77
+#, kde-format
+msgid "Global Settings"
+msgstr "Globalne postavke"
+
+#: pluginopts.cpp:82
+#, kde-format
+msgid "&Enable plugins globally"
+msgstr "&Globalno aktiviraj priključke"
+
+#: pluginopts.cpp:83
+#, kde-format
+msgid "Only allow &HTTP and HTTPS URLs for plugins"
+msgstr "Dozvoli samo &HTTP i HTTPS URL‑ove za priključke"
+
+#: pluginopts.cpp:84
+#, kde-format
+msgid "&Load plugins on demand only"
+msgstr "&Učitaj priključke samo na zahtjev"
+
+#: pluginopts.cpp:85 pluginopts.cpp:206
+#, kde-format
+msgid "CPU priority for plugins: %1"
+msgstr "CPU prioritet za priključke: %1"
+
+#: pluginopts.cpp:113
+#, kde-format
+msgid "Domain-Specific Settin&gs"
+msgstr "&Posebne postavke po domenu"
+
+#: pluginopts.cpp:126 pluginopts.cpp:629
+#, kde-format
+msgctxt "@title:window"
+msgid "Domain-Specific Policies"
+msgstr "Posebne smjernice po domenu"
+
+#: pluginopts.cpp:141
+#, kde-format
+msgid ""
+"Enables the execution of plugins that can be contained in HTML pages, e.g. "
+"Macromedia Flash. Note that, as with any browser, enabling active contents "
+"can be a security problem."
+msgstr ""
+"Aktivira izvršavanje priključaka koji mogu biti potrebni HTML stranicama, "
+"kao što je npr. Macromedijin Flash. Imajte u vidu da, kao i kod bilo kog "
+"drugog pregledača, dozvoljavanje aktivnog sadržaja može biti bezbjednosni "
+"problem."
+
+#: pluginopts.cpp:145
+#, kde-format
+msgid ""
+"<p>This box contains the domains and hosts you have set a specific plugin "
+"policy for. This policy will be used instead of the default policy for "
+"enabling or disabling plugins on pages sent by these domains or hosts.</"
+"p><p>Select a policy and use the controls on the right to modify it.</p>"
+msgstr ""
+"<p>Ovdje možete vidjeti domene i domaćine kojima je zadata posebna smjernica "
+"za priključke. Ova smjernica će biti korišćena umjesto podrazumijevane, za "
+"uključivanje i isključivanje priključaka na stranicama koje šalju ovi domeni "
+"ili domaćini.</p><p>Izaberite smjernicu i upotrebite kontrole desno da biste "
+"je izmijenili.</p>"
+
+#: pluginopts.cpp:151
+#, kde-format
+msgid ""
+"Click this button to choose the file that contains the plugin policies. "
+"These policies will be merged with the existing ones. Duplicate entries are "
+"ignored."
+msgstr ""
+"Ovim dugmetom uvozite fajl koji sadrži smjernice za priključke. Učitane "
+"smjernice će biti stopljene sa postojećim; kada ista smjernica već postoji, "
+"nova će biti ignorisana."
+
+#: pluginopts.cpp:154
+#, kde-format
+msgid ""
+"Click this button to save the plugin policy to a zipped file. The file, "
+"named <b>plugin_policy.tgz</b>, will be saved to a location of your choice."
+msgstr ""
+"Kliknite ovdje da sačuvate smjernicu priključaka kao kompresovan fajl, po "
+"imenu <b>plugin_policy.tgz</b>, i smješten na lokaciji po vašem izboru."
+
+# rewrite-msgid: /default policy setting/default policy/
+#: pluginopts.cpp:157
+#, kde-format
+msgid ""
+"Here you can set specific plugin policies for any particular host or domain. "
+"To add a new policy, simply click the <i>New...</i> button and supply the "
+"necessary information requested by the dialog box. To change an existing "
+"policy, click on the <i>Change...</i> button and choose the new policy from "
+"the policy dialog box. Clicking on the <i>Delete</i> button will remove the "
+"selected policy causing the default policy setting to be used for that "
+"domain."
+msgstr ""
+"Ovdje možete podesiti posebne smjernice priključaka za određene domaćine i "
+"domene. Da biste dodali novu smjernicu, kliknite na dugme <i>Nova...</i> i "
+"unesite podatke koje dijalog zatraži. Da biste izmijenili postojeću "
+"smjernicu, kliknite na <i>Izmijeni...</i> i izaberite smjernicu sa spiska. "
+"Klikom na dugme <i>Obriši</i> uklanjate izabranu smjernicu, čime domen pod "
+"njom spada na podrazumijevanu smjernicu."
+
+#: pluginopts.cpp:195
+#, kde-format
+msgctxt "lowest priority"
+msgid "lowest"
+msgstr "najniži"
+
+#: pluginopts.cpp:197
+#, kde-format
+msgctxt "low priority"
+msgid "low"
+msgstr "nizak"
+
+#: pluginopts.cpp:199
+#, kde-format
+msgctxt "medium priority"
+msgid "medium"
+msgstr "srednji"
+
+#: pluginopts.cpp:201
+#, kde-format
+msgctxt "high priority"
+msgid "high"
+msgstr "visok"
+
+#: pluginopts.cpp:203
+#, kde-format
+msgctxt "highest priority"
+msgid "highest"
+msgstr "najviši"
+
+#: pluginopts.cpp:294
+#, kde-format
+msgid ""
+"<h1>Konqueror Plugins</h1> The Konqueror web browser can use Netscape "
+"plugins to show special content, just like the Navigator does. Please note "
+"that the way you have to install Netscape plugins may depend on your "
+"distribution. A typical place to install them is, for example, '/opt/"
+"netscape/plugins'."
+msgstr ""
+"<h1>K‑osvajačevi priključci</h1><p>Veb pregledač K‑osvajač može da koristi "
+"Netscapeove priključke za prikaz posebnih sadržaja, baš kao Navigator. "
+"Imajte na umu da način na koji se instaliraju Netscapeovi priključci zavisi "
+"od vaše distribucije. Jedna uobičajena lokacija je <b>/opt/netscape/plugins</"
+"b>.</p>"
+
+#: pluginopts.cpp:322
+#, kde-format
+msgid ""
+"Do you want to apply your changes before the scan? Otherwise the changes "
+"will be lost."
+msgstr ""
+"Želite li da primijenite izmjene prije pretrage? Ako ih ne primijenite, biće "
+"izgubljene."
+
+#: pluginopts.cpp:341
+#, kde-format
+msgid ""
+"The nspluginscan executable cannot be found. Netscape plugins will not be "
+"scanned."
+msgstr ""
+"Naredba nspluginscan ne može da se pronađe. Netscapeovi priključci neće biti "
+"potraženi."
+
+#: pluginopts.cpp:348
+#, kde-format
+msgid "Scanning for plugins"
+msgstr "Tražim priključke"
+
+#: pluginopts.cpp:392
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Plugin Scan Folder"
+msgstr "Izbor fascikle za traženje priključaka"
+
+#: pluginopts.cpp:555
+#, kde-format
+msgid "Netscape Plugins"
+msgstr "Netscapeovi priključci"
+
+#: pluginopts.cpp:578
+#, kde-format
+msgid "Plugin"
+msgstr "Priključci"
+
+#: pluginopts.cpp:604
+#, kde-format
+msgid "MIME type"
+msgstr "MIME tip"
+
+#: pluginopts.cpp:607
+#, kde-format
+msgid "Description"
+msgstr "Opis"
+
+#: pluginopts.cpp:610
+#, kde-format
+msgid "Suffixes"
+msgstr "Sufiksi"
+
+#: pluginopts.cpp:661
+#, kde-format
+msgid "Doma&in-Specific"
+msgstr "Posebno za &domen"
+
+#: pluginopts.cpp:676
+#, kde-format
+msgctxt "@title:window"
+msgid "New Plugin Policy"
+msgstr "Nova smjernica priključaka"
+
+#: pluginopts.cpp:679
+#, kde-format
+msgctxt "@title:window"
+msgid "Change Plugin Policy"
+msgstr "Izmjena smjernice priključaka"
+
+#: pluginopts.cpp:683
+#, kde-format
+msgid "&Plugin policy:"
+msgstr "Smjernica &priključaka:"
+
+#: pluginopts.cpp:684
+#, kde-format
+msgid "Select a plugin policy for the above host or domain."
+msgstr "Izaberite smjernicu priključaka za domaćin ili domen iznad."
+
+#: policydlg.cpp:42
+#, kde-format
+msgid "&Host or domain name:"
+msgstr "&Ime domaćina ili domena:"
+
+#: policydlg.cpp:51
+#, kde-format
+msgid ""
+"Enter the name of a host (like www.kde.org) or a domain, starting with a dot "
+"(like .kde.org or .org)"
+msgstr ""
+"Unesite ime domaćina (npr. www.kde.org) ili ime domena, koje počinje tačkom "
+"(npr. .kde.org ili .org)"
+
+#: policydlg.cpp:131
+#, kde-format
+msgid "You must first enter a domain name."
+msgstr "Prvo morate unijeti ime domena."

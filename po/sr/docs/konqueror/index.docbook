@@ -1,0 +1,8361 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY fsview "<application
+>FSView</application
+>">
+  <!ENTITY % Serbian "INCLUDE"
+> <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE">
+]>
+
+<book id="konqueror" lang="&language;"
+> 
+
+<bookinfo>
+<title
+>Приручник за <application
+>К‑освајач</application
+></title>
+
+<authorgroup>
+<author
+><personname
+><firstname
+>Памела</firstname
+> <surname
+>Робертс</surname
+></personname
+> &Pamela.Roberts.mail;</author>
+
+<othercredit role="developer">
+<othername
+>Тим КДЕ‑а</othername>
+<contrib
+>Програмери</contrib>
+</othercredit
+> 
+
+<othercredit role="translator"
+><firstname
+>Драган</firstname
+><surname
+>Пантелић</surname
+><affiliation
+><address
+><email
+>falcon-10@gmx.de</email
+></address
+></affiliation
+><contrib
+>превод</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2000</year
+> <year
+>2002</year>
+<holder
+>Ерван Лоасан</holder>
+<holder
+>Памела Робертс</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>5. 11. 2016.</date>
+<releaseinfo
+>Програми КДЕ‑а</releaseinfo>
+
+<abstract
+><para
+><application
+>К‑освајач</application
+> је КДЕ‑ов напредни менаџер фајлова, веб прегледач и универзални приказивач.</para>
+</abstract>
+
+<keywordset>
+<keyword
+>КДЕ</keyword>
+<keyword
+>К‑освајач</keyword>
+<keyword
+>kdebase</keyword>
+<keyword
+>менаџер фајлова</keyword>
+<keyword
+>прегледач</keyword>
+<keyword
+>приказивач</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<chapterinfo>
+<authorgroup>
+<author
+><personname
+><firstname
+>Памела</firstname
+> <surname
+>Робертс</surname
+></personname
+></author>
+<othercredit role="translator"
+><firstname
+>Драган</firstname
+><surname
+>Пантелић</surname
+><affiliation
+><address
+><email
+>falcon-10@gmx.de</email
+></address
+></affiliation
+><contrib
+>превод</contrib
+></othercredit
+> 
+</authorgroup>
+
+</chapterinfo>
+
+<title
+>Преглед</title>
+
+<para
+><emphasis
+><application
+>К‑освајач</application
+></emphasis
+> је напредан <link linkend="filemanager"
+>менаџер фајлова</link
+>, с функцијама управљања фајловима почев од простог исецања/копирања и налепљивања, до прегледања локалних и удаљених мрежних фајлова. Садржај фасцикле може бити представљен разноврсним текстуалним и иконичким <link linkend="viewmode"
+>режимима приказа</link
+>, укључујући и сличице-прегледе садржаја фајла. Својства фајлова и фасцикли лако се могу испитивати и мењати, а програми покретати <mousebutton
+>левим</mousebutton
+> кликом миша.</para>
+
+<para
+>У Програмима КДЕ‑а подразумевани менаџер фајлова је <application
+>Делфин</application
+>. Подразумевану компоненту за прегледање фасцикли можете изменити кроз <guimenu
+>Подразумевани програми</guimenu
+> у Системским поставкама (нпр. изабрати <application
+>К‑освајач</application
+>).</para>
+
+<para
+><application
+>К‑освајач</application
+> је <link linkend="browser"
+>веб прегледач</link
+> сагласан са ХТМЛ‑ом 4.01, са уграђеном подршком за <application
+>јаваскрипт</application
+> (Екма‑262), ЦСС (каскадне описе стилова) и двосмерна писма (попут арапског и хебрејског). Подржава безбедно извршавање јаванских аплета, Нетскејпове прикључке за гледање флеша, реалаудија и реалвидеа, и ССЛ за безбедну комуникацију. У напредне могућности спадају и аутоматско допуњавање УРЛ‑ова и формулара, увоз обележивача из других прегледача и прегледање са језичцима. </para>
+
+<para
+><application
+>К‑освајач</application
+> је такође изврстан свеобухватан <link linkend="ftp"
+>ФТП</link
+> клијент.</para>
+
+<para
+><application
+>К‑освајач</application
+> је универзални програм за приказивање, способан да приказује слике и документе без потребе за покретањем других програма. Ово омогућава угнежђивање компонената (К‑делова) из других програма — <application
+>Гвенвјуа</application
+> за приказ слика, <application
+>Окулара</application
+> за приказ ПДФ, постскрипт и других докумената. </para>
+
+<para
+><application
+>К‑освајач</application
+> је потпуно прилагодљив програм који свако може <link linkend="config"
+>подесити</link
+> према својим потребама, од мењања општег стила и величина текста и иконица, до избора ставки које се појављују у траци менија, мењања броја и положаја трака алатки, па чак и дефинисања нових комбинација тастера за пречице. </para>
+
+</chapter>
+
+<chapter id="basics">
+
+<chapterinfo>
+<authorgroup>
+<author
+><personname
+><firstname
+>Памела</firstname
+> <surname
+>Робертс</surname
+></personname
+></author>
+<othercredit role="translator"
+><firstname
+>Драган</firstname
+><surname
+>Пантелић</surname
+><affiliation
+><address
+><email
+>falcon-10@gmx.de</email
+></address
+></affiliation
+><contrib
+>превод</contrib
+></othercredit
+> 
+</authorgroup>
+
+</chapterinfo>
+
+<title
+>Основе <application
+>К‑освајача</application
+></title>
+
+<important
+><para
+>Као и сви КДЕ програми, <application
+>К‑освајач</application
+> је изузетно прилагодљив. Овај документ описује како се <application
+>К‑освајач</application
+> понаша под нормалним, подразумеваним поставкама.</para>
+<para
+>Миш са три дугмета може бити користан како у <application
+>К‑освајачу</application
+>, тако у било ком другом КДЕ програму. Ако имате миш са само два дугмета, требало би да можете да подесите систем тако да истовремени притисак оба дугмета симулира треће дугме.</para>
+<para
+>О коришћењу миша можете прочитати више у одељку <link linkend="lmb-mmb"
+>о функцији дугмади миша</link
+>.</para>
+<para
+>Ако сте навикли да двоклик изводи радње, онда имајте на уму да <application
+>К‑освајач</application
+> подразумевано реагује на један клик, као што је и обичај у КДЕ‑у.</para
+></important>
+
+<sect1 id="konq-start">
+<title
+>Покретање <application
+>К‑освајача</application
+></title>
+
+<para
+>Будући комбиновани менаџер фајлова и прегледач, <application
+>К‑освајач</application
+> ће у раду аутоматски пребацивати између ова два режима, али је згодно и моћи одабрати режим при покретању <application
+>К‑освајача</application
+>.</para>
+
+<itemizedlist>
+
+<listitem
+><para
+>Из менија покретача програма изаберите <menuchoice
+><guisubmenu
+>Интернет</guisubmenu
+><guimenuitem
+>К‑освајач, (веб прегледач)</guimenuitem
+></menuchoice
+> да га покренете као прегледач. </para
+></listitem>
+
+<listitem
+><para
+><keycombo action="simul"
+><keycap
+>Alt</keycap
+><keycap
+>F2</keycap
+></keycombo
+> отвориће <application
+>К‑извођач</application
+>; ту унесите путању фасцикле и притисните <keycap
+>Enter</keycap
+> да покренете <application
+>К‑освајач</application
+> у режиму менаџера фајлова, или просто унесите неки УРЛ (нпр. <userinput
+>http://www.konqueror.org</userinput
+>) да га покренете као прегледач.</para
+></listitem>
+
+</itemizedlist>
+
+<note
+><para
+>Кликните на црну стрелицу десно од иконице домаће странице да се пребаците на своју домаћу фасциклу у режиму менаџера фајлова, и обратно. </para
+></note>
+
+<para
+>Ако је <application
+>К‑освајач</application
+> подразумевани менаџер фајлова, такође се аутоматски покреће кад кликнете <mousebutton
+>левим</mousebutton
+> на иконицу површи која представља фасциклу, као што је хард‑диск или иконица <guiicon
+>Смеће</guiicon
+>. </para>
+
+
+</sect1>
+
+<sect1 id="parts">
+<title
+>Делови <application
+>К‑освајача</application
+></title>
+
+<para
+>Кратак поглед на главне делове <application
+>К‑освајачевог</application
+> прозора:</para>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="parts.png"/></imageobject>
+<textobject>
+<phrase
+>Снимак екрана <application
+>К‑освајача</application
+></phrase>
+</textobject>
+</mediaobject>
+
+<para
+><emphasis
+>Насловна трака</emphasis
+> је трака преко врха <application
+>К‑освајачевог</application
+> прозора и функционише исто као и у другим КДЕ програмима. Кликните <mousebutton
+>десним</mousebutton
+> на средишњи део да дозовете мени насловне траке.</para>
+
+<para
+><emphasis
+>Трака менија</emphasis
+> је трака која садржи имена падајућих менија. Кликните <mousebutton
+>левим</mousebutton
+> на име менија да га, алтернативно, прикажете или сакријете, или употребите <keycombo action="simul"
+><keycap
+>Alt</keycap
+><keycap
+>подвучено слово</keycap
+></keycombo
+> као пречицу, на пример <keycombo action="simul"
+><keycap
+>Alt</keycap
+><keycap
+>У</keycap
+></keycombo
+> за мени <guimenu
+>Уређивање</guimenu
+>. Разни менији описани су у секцији овог документа <link linkend="menubar"
+>о траци менија</link
+>.</para>
+
+<para
+><emphasis
+>Трака алатки</emphasis
+> садржи иконице за често коришћене радње. <mousebutton
+>Леви</mousebutton
+> клик на иконицу ће је активирати. Кад лебдите показивачем изнад иконице појавиће се кратак опис онога што та иконица ради.</para>
+
+<para
+>Неке иконице, на пример „горе“ и „назад“ на претходном снимку екрана, имају малу црну стрелицу на десној страни. Ако кликнете левим дугметом на ову стрелицу, појавиће се мали падајући мени.</para
+> <para
+><mousebutton
+>Десни</mousebutton
+> клик на траку алатки дозваће <link linkend="rmb-menus"
+>мени <guilabel
+>Поставке траке алатки</guilabel
+></link
+>, који можете користити за промену њеног изгледа и положаја.</para>
+
+<para
+><emphasis
+>Трака локације</emphasis
+> приказује путању ка фасцикли, УРЛ‑у или фајлу. Овде можете уписати путању или УРЛ, па притиснути <keycap
+>Enter</keycap
+> или кликнути левим на иконицу <guiicon
+>Кретање</guiicon
+> скроз десно на траци локације, да одете на уписани УРЛ. Црна иконица на десном крају траке брише поље уноса.</para>
+
+<para
+><emphasis
+>Трака обележивача</emphasis
+> је област испод траке локације на претходном снимку екрана. Овде можете додавати често коришћене обележиваче. Погледајте секцију <link linkend="bookmarks"
+>о организовању обележивача</link
+>.</para>
+
+<para
+><emphasis
+>Прозор</emphasis
+> је главна област <application
+>К‑освајача</application
+>, која приказује садржаје фасцикли, веб страница, докумената или слика. Коришћењем менија <link linkend="menu-window"
+><guimenu
+>Прозор</guimenu
+></link
+> можете поделити главни <application
+>К‑освајачев</application
+> прозор на један или више одвојених приказа (корисно за радње превлачења), или успоставити два или више приказа са језичцима. </para>
+
+<para
+><emphasis
+>Трака стања</emphasis
+> протеже се преко дна <application
+>К‑освајачевог</application
+> прозора и приказује опште информације о ономе изнад чега лебди показивач миша. Ако сте поделили главни прозор на више приказа, сваки од њих ће имати траку стања, са малим зеленим светлом на левом крају да покаже који је приказ активан. <mousebutton
+>Десни</mousebutton
+> клик на траку стања дозива њен <link linkend="rmb-menus"
+>контекстни мени</link
+>.</para>
+
+<note
+><para
+>Не брините ако <application
+>К‑освајач</application
+> не изгледа тачно као на овом снимку екрана, јер је изузетно подесив. Особито:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Можете користити мени <link linkend="menu-settings"
+><guimenu
+>Подешавање</guimenu
+></link
+> да прикажете или сакријете траку менија, главну траку, траку локације и траку обележивача, или чак да додате допунску траку.</para
+></listitem>
+<listitem
+><para
+>Ако су траке алатки откључане, такође их можете превући на друго место тако што кликнете <mousebutton
+>левим</mousebutton
+> на ручку на левом крају траке и померате миш док је лево дугме и даље притиснуто. </para
+></listitem>
+<!--
+<listitem
+><para
+>This screenshot does not show the optional <link linkend="sidebar">
+Sidebar</link
+>.</para
+></listitem>
+-->
+</itemizedlist>
+
+<para
+>За више информација о начину измене <application
+>К‑освајачевог</application
+> изгледа, погледајте секцију <link linkend="config"
+>о подешавању <application
+>К‑освајача</application
+></link
+>.</para
+></note>
+
+</sect1>
+
+<sect1 id="bubble">
+<title
+>Облачићи и „Шта је ово“ </title>
+
+<para
+>Много о начину рада <application
+>К‑освајача</application
+> можете сазнати и без читања целог овог документа, ако се ослоните на <emphasis
+>облачиће</emphasis
+> и <emphasis
+>шта‑је‑ово</emphasis
+>.</para>
+
+<para
+>Лебдењем показивачем миша изнад дугмета траке алатки добићете краћи опис онога што то дугме ради.</para>
+
+<para
+><emphasis
+>Шта‑је‑ово</emphasis
+> се позива преко траке менија, ставком <menuchoice
+><guimenu
+>Помоћ</guimenu
+><guimenuitem
+>Шта је ово?</guimenuitem
+></menuchoice
+> или пречицом <keycombo action="simul"
+><keycap
+>Shift</keycap
+><keycap
+>F1</keycap
+></keycombo
+>. Показивач ће променити облик у знак питања уздуж стрелице.</para>
+
+<para
+>Ако је тај знак питања видљив, леви клик заправо неће урадити ништа док не кликнете на виџет (или његов текст) за који је дефинисано шта‑је‑ово. Ако га има, добићете релативно опширно објашњење чему је виџет намењен. Већина дијалога које издаје <application
+>К‑освајач</application
+> подржава подржава шта‑је‑ово.</para>
+
+</sect1>
+
+<sect1 id="lmb-mmb">
+<title
+>Радње <mousebutton
+>левим</mousebutton
+> и <mousebutton
+>средњим</mousebutton
+> дугметом миша</title>
+
+<para
+>Ако кликнете левим на неку ставку у <application
+>К‑освајачевом</application
+> прозору, она ће бити „активирана“. То значи:</para>
+
+<itemizedlist>
+
+<listitem
+><para
+>Кликните <mousebutton
+>левим</mousebutton
+> на иконицу у траци алатки да извршите радњу представљену том иконицом. </para
+></listitem>
+<listitem
+><para
+>Кликните <mousebutton
+>левим</mousebutton
+> на ставку у траци менија да развијете тај мени.</para
+></listitem>
+<listitem
+><para
+>Кликните <mousebutton
+>левим</mousebutton
+> на ставку менија да то урадите.</para
+></listitem
+> 
+<listitem
+><para
+>Кликните <mousebutton
+>левим</mousebutton
+> на иконицу у траци обележивача да отворите дотични УРЛ.</para
+></listitem>
+<listitem
+><para
+>Кликните <mousebutton
+>левим</mousebutton
+> на везу на веб страници да би је испратили <application
+>К‑освајачем</application
+>.</para
+></listitem>
+<listitem
+><para
+>Кликните <mousebutton
+>левим</mousebutton
+> на иконицу или име фасцикле, и <application
+>К‑освајач</application
+> ће ући у ту фасциклу (тј. приказати њен садржај). </para
+></listitem>
+<listitem
+><para
+>По <mousebutton
+>левом</mousebutton
+> клику на име фајла или иконицу, <application
+>К‑освајач</application
+> ће урадити оно што мисли да је пригодно, на основу типа фајла. Обично то значи отварање ХТМЛ страница, прегледање текста, слика, <application
+>Окуларових</application
+> докумената, који ће сви бити приказани унутар <application
+>К‑освајачевог</application
+> прозора („прегледање“ значи да можете да видите фајл, али не и да га мењате).</para
+> 
+
+<para
+><application
+>К‑освајач</application
+> разлучује тип фајла поклапајући наставак имена фајла са списком познатих типова. Ако ово омаши, покушава да погоди тип према садржају фајла. Списак познатих типова и придружених радњи можете мењати на страници <guilabel
+>Придружења фајловима</guilabel
+> у дијалогу <menuchoice
+><guimenu
+>Подешавање</guimenu
+><guimenuitem
+>Подеси К‑освајач...</guimenuitem
+></menuchoice
+>.</para
+></listitem>
+
+</itemizedlist>
+
+<para
+>Клик средњим дугметом миша на име фајла или фасцикле, или иконицу, у суштини чини исто што и <mousebutton
+>леви</mousebutton
+> клик, само што обично отвара нови прозор <application
+>К‑освајача</application
+>, осим ако није попуњена кућица <guilabel
+>Отвори везу у новом језичку уместо у новом прозору</guilabel
+> на страници <guimenuitem
+>Опште</guimenuitem
+>, у дијалогу <menuchoice
+><guimenu
+>Подешавање</guimenu
+><guimenuitem
+>Подеси К‑освајач...</guimenuitem
+></menuchoice
+>. <application
+>К‑освајач</application
+> уме да отвара везе на страницама и обележиваче, као и ставке <guibutton
+>Домаће</guibutton
+>, <guibutton
+>Горе</guibutton
+>, <guibutton
+>Назад</guibutton
+> и <guibutton
+>Напред</guibutton
+> у новом језичку или прозору.</para>
+
+<para
+>Држањем притиснутог тастера <keycap
+>Shift</keycap
+> при клику средњим дугметом миша, отворићете везу у позадини.</para>
+</sect1>
+
+<sect1 id="rmb-menus">
+<title
+>Менији на <mousebutton
+>десно</mousebutton
+> дугме миша</title>
+
+<para
+>Клик десним дугметом на скоро било који део <application
+>К‑освајачевог</application
+> прозора дозваће одговарајући <emphasis
+>контекстни мени</emphasis
+>.</para>
+
+<note
+><para
+>Ако је у <application
+>К‑освајачевим</application
+> <link linkend="othersettings"
+>поставкама</link
+> укључена опција <guilabel
+>Десним кликом уназад кроз историјат</guilabel
+>, прост <mousebutton
+>десни</mousebutton
+> клик ради исто што и дугме <guibutton
+>Назад</guibutton
+>. У овом случају контекстном менију можете приступити померањем миша док држите притиснуто <mousebutton
+>десно</mousebutton
+> дугме.</para
+></note>
+
+<variablelist>
+
+<varlistentry>
+<term
+>На насловној траци</term>
+<listitem
+><para
+><mousebutton
+>Десни</mousebutton
+> клик било где на слободну област на насловној траци дозива мени насловне траке, допуштајући вам како да управљате положајем <application
+>К‑освајачевог</application
+> прозора, тако и декорацијама примењеним на све прозоре КДЕ програмâ. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>На главној траци алатки</term>
+<listitem
+><para
+><mousebutton
+>Десни</mousebutton
+> клик било где на слободну област на главној траци издаће њен мени. У њему можете одредити и величину дугмади на траци, и да ли да буду приказана као иконице, текст, или обоје.</para>
+<para
+>Ако откључате траку алатку, можете је преместити на врх, дно, лево или десно у прозору <application
+>К‑освајача</application
+>.  </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>На траци локације</term>
+<listitem
+><para
+>Кликните <mousebutton
+>десним</mousebutton
+> у поље за унос УРЛ‑ова да изведете радње исецања, копирања, налепљивања или чишћења, или да измените могућности аутоматске <link linkend="path-complete"
+>допуне текста</link
+>.</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+>Унутар приказа</term>
+<listitem
+><para
+>Ако кликнете <mousebutton
+>десним</mousebutton
+> било где на слободну област унутар приказа, добићете мени који, између осталих опција, садржи навигационе наредбе <guiicon
+>Горе</guiicon
+>, <guiicon
+>Назад</guiicon
+>, <guiicon
+>Напред</guiicon
+> и <guiicon
+>Учитај поново</guiicon
+>.  </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>На фајлу или фасцикли</term>
+<listitem
+><para
+>Ово је сасвим згодна могућност. <mousebutton
+>Десни</mousebutton
+> клик на име или иконицу било којег фајла или фасцикле не само да „изабира“ ту ставку, него дозива и мени који пружа радње исецања, премештања, копирања или уклањања (на разне начине), отварање или прегледање у програму по избору, преименовање ставке, те уређивање типа фајла или својстава.</para
+></listitem
+> </varlistentry>
+
+<varlistentry>
+<term
+>На траци стања</term>
+<listitem
+><para
+>Кликните <mousebutton
+>десним</mousebutton
+> на траку стања на дну прозора или приказа да додате или уклоните приказ, и закључате или повежете приказе, унутар <application
+>К‑освајачевог</application
+> прозора.</para
+></listitem
+> 
+</varlistentry>
+</variablelist>
+
+</sect1>
+
+<sect1 id="man-info">
+<title
+>Прегледање помоћи, упутних и инфо страница</title>
+
+<para
+>КДЕ странице помоћи и уникс упутне и инфо странице можете погледати директно у <application
+>К‑освајачу</application
+>, без потребе за покретањем <application
+>К‑центра-помоћи</application
+>. </para>
+
+<para
+>Да погледате неку КДЕ страницу помоћи, унесите <userinput
+>help:/<replaceable
+>naredba_programa</replaceable
+></userinput
+> (на пример, <userinput
+>help:/<replaceable
+>kmail</replaceable
+></userinput
+> позива документацију <application
+>К‑поште</application
+>) у траку локације <application
+>К‑освајача</application
+>. </para>
+
+<para
+><application
+>К‑освајач</application
+> олакшава и читање уникс упутних странице. На пример, упишете <userinput
+>man:/touch</userinput
+> или <userinput
+>#touch</userinput
+> у траку локације да бисте погледали страницу за наредбу <command
+>touch</command
+>.</para
+> 
+
+<para
+>За прегледање уникс инфо страница, уношење <userinput
+>info:/dir</userinput
+> одводи вас на фасциклу на врху инфо садржаја. До жељене странице одатле долазите просто кликтањем на везе. За директан одлазак на жељену страницу, можете уписати <userinput
+>info:/<replaceable
+>naredba</replaceable
+></userinput
+>.</para>
+
+<note
+><para
+>Нажалост, КДЕ странице помоћи складиштене су тако да се не могу гледати у другим прегледачима. Ако то заиста желите, једино што можете је да пређете на везу и посетите <ulink url="http://docs.kde.org"
+>http://docs.kde.org</ulink
+>.</para
+></note>
+</sect1>
+
+</chapter>
+
+<chapter id="filemanager">
+<chapterinfo>
+<authorgroup>
+<author
+><personname
+><firstname
+>Памела</firstname
+> <surname
+>Робертс</surname
+></personname
+></author>
+<othercredit role="translator"
+><firstname
+>Драган</firstname
+><surname
+>Пантелић</surname
+><affiliation
+><address
+><email
+>falcon-10@gmx.de</email
+></address
+></affiliation
+><contrib
+>превод</contrib
+></othercredit
+> 
+</authorgroup
+> 
+
+</chapterinfo>
+
+<title
+><application
+>К‑освајач</application
+> као менаџер фајлова</title>
+
+<sect1 id="dirfolders">
+<title
+>Фасцикле и путање</title>
+<para
+>Под Униксом и Линуксом, све фасцикле су уређене у просту хијерархију. Почињући од фасцикле на врху (знане и као <emphasis
+>корена фасцикла</emphasis
+>), структура се спушта и грана у потфасцикле и фајлове. То значи да из било које фасцикле можете доспети у било коју другу тако што идете „нагоре“ док не достигнете заједничку тачку, затим „надоле“ кроз одговарајуће потфасцикле, док не стигнете до циљне.</para>
+
+<para
+>Положај било којег фајла или фасцикле у структури (знаној и као <emphasis
+>стабло фасцикли</emphasis
+>) може се описати „путањом“, уређеним списком фасцикли кроз које се треба спустити до циљне фасцикле или фајла. На пример, <filename class="directory"
+>/home/pera</filename
+> је потфасцикла <filename class="directory"
+>pera</filename
+> у потфасцикли <filename class="directory"
+>home</filename
+> у фасцикли највишег нивоа, а <filename
+>/home/pera/razno.txt</filename
+> је фајл <filename
+>razno.txt </filename
+> у тој потфасцикли. Водеће <filename class="directory"
+>/</filename
+> у овим путањама представља фасциклу на врху.</para>
+
+<para
+>Свака фасцикла доступна на систему — укључујући оне на другим партицијама хард‑диска, УСБ уређају или ЦД‑РОМ‑у — појавиће се у стаблу испод /. Њихове тачне путање зависиће од подешености система (погледајте и секцију <link linkend="removable-devices"
+>уклоњивим уређајима</link
+>). </para>
+<para
+>Сваки корисник на уникс систему има своју „домаћу“ фасциклу, за држање личних фајлова и поставки. На пример, <filename class="directory"
+>/home/pera</filename
+> и <filename class="directory"
+>/home/vanja</filename
+>. Симбол <filename
+>~</filename
+> често се користи да представи корисникову домаћу фасциклу, тако да <filename
+>~/pismo.txt</filename
+> упућује на фајл <filename
+>pismo.txt</filename
+> вашој домаћој фасцикли.</para>
+<para
+>Уместо ‘фасцикла’ често се користи и израз ‘директоријум’.</para>
+</sect1>
+
+<sect1 id="viewmode">
+<title
+>Режими приказа</title>
+<para
+>У режиму менаџера фајлова, <application
+>К‑освајач</application
+> набраја фајлове и потфасцикле садржане унутар дате фасцикле, и пружа вам неке податке о њима. Путања текуће фасцикле приказана је у траци локације. Начин на који <application
+>К‑освајач</application
+> приказује фајлове и фасцикле углавном зависи од режима приказа, који можете одабрати из подменија <menuchoice
+><guimenu
+>Приказ</guimenu
+><guisubmenu
+>Начин приказа</guisubmenu
+></menuchoice
+>. Доступни режими приказа представљени су у наредном. </para>
+
+<note
+><para
+>За режим менаџера фајлова <application
+>К‑освајач</application
+> користи угнежђену компоненту <application
+>Делфина</application
+>.</para
+></note>
+<!--FIXME begin copy from dolphin docbook synced for 16.04-->
+<itemizedlist>
+
+<listitem
+><para
+>У приказу иконица, који је подразумеван, фајлови су представљени иконицом која указује на тип фајла, а потфасцикле иконицом фасцикле. Њихова имена, као и ставке укључене под <menuchoice
+><guimenu
+>Приказ</guimenu
+><guisubmenu
+>Допунски подаци</guisubmenu
+></menuchoice
+>, дате су испод иконице. </para
+></listitem>
+
+<listitem
+><para
+>Сажети приказ представља садржај фасцикле као иконице са именом са стране, и ставкама укљученим под <menuchoice
+><guimenu
+>Приказ</guimenu
+><guisubmenu
+>Допунски подаци</guisubmenu
+></menuchoice
+> испод имена. Ставке су груписане у колоне налик на сажети приказ у КДЕ фајл дијалогу. </para
+></listitem>
+
+<listitem
+><para
+>У приказу детаља садржај фасцикле даје се као списак ставки, где је за сваку наведено име, величина и датум последње измене. Још неке колоне могу се укључити десним кликом на заглавље колона. </para>
+<para
+>У контекстном менију реда заглавља можете изабрати између посебне и аутоматске ширине колона. Аутоматска ширина значи да ће свака колона бити широка колико најдужа ставка у њој, осим колона <guilabel
+>име</guilabel
+> код које се наставак замењује са „...“. </para>
+<para
+>Редослед колона може да се измени превлачењем заглавља колона. Изузетак је заглавље <guilabel
+>име</guilabel
+>, које је увек прва колона у приказу. </para>
+<para
+>Приказ са детаљима ставља текућу фасциклу у стаблолики режим (ако је укључено <guilabel
+>Прошириве фасцикле</guilabel
+>). Свака потфасцикла се може „раширити“ или „сажети“ кликом на иконицу <guiicon
+>&gt;</guiicon
+> или <guiicon
+>v</guiicon
+> крај ње.</para
+></listitem>
+</itemizedlist>
+
+<screenshot>
+<screeninfo
+>Груписани приказ</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="grouping-view.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Груписани приказ</phrase>
+</textobject>
+<caption
+><para
+>Сви режими приказа подржавају груписање по типу ређања изабраном под <menuchoice
+><guimenu
+>Приказ</guimenu
+><guisubmenu
+>Поређај по</guisubmenu
+></menuchoice
+>.</para
+></caption>
+</mediaobject>
+</screenshot>
+<!--FIXME end copy from dolphin docbook synced for 16.04 -->
+
+<sect2 id="filetipinfo">
+<title
+>Облачић фајла</title>
+<para
+>Ако попуните кућицу <guilabel
+>Облачићи</guilabel
+> на страници <menuchoice
+> <guimenu
+>Управљање фајловима</guimenu
+><guimenuitem
+>Опште</guimenuitem
+></menuchoice
+> <application
+>К‑освајачевог</application
+> дијалога за подешавање, добијаћете мали, искачући информациони прозор док лебдите показивачем миша изнад имена или иконице фајла или фасцикле. </para>
+</sect2>
+
+<sect2 id="previews">
+<title
+>Прегледи фајлова</title>
+<para
+>Под језичком <guilabel
+>Прегледи</guilabel
+> на страници поставки <menuchoice
+><guimenu
+>Управљање фајловима</guimenu
+> <guimenuitem
+>Опште</guimenuitem
+></menuchoice
+> можете укључити прегледе за одређене типове фајлова.</para>
+<para
+>Ово генерално значи да ће иконица фајла бити замењена малом сликом која приказује његов садржај.</para>
+<para
+>Пошто <application
+>К‑освајач</application
+> за стварање прегледа мора да прочита много других података поред самог имена фајла, прегледи можда нису погодни кад се приказују фајлови са удаљеног система. Ако читање допунских података са удаљених система одузима превише времена, при дну језичка <guilabel
+>Прегледи</guilabel
+> можете задати величину фајла изнад које ће преглед бити искључен.</para>
+</sect2>
+
+<!--FIXME begin copy from dolphin docbook synced for 16.04-->
+<sect2 id="dolphin-view-information">
+<title
+>Подаци у приказу</title>
+<para
+>У свим режимима приказа, <application
+>К‑освајач</application
+> приказује бар иконицу и име за сваку ставку. Преко <guisubmenu
+>Допунски подаци</guisubmenu
+> из менија <guimenu
+>Приказ</guimenu
+>, или преко контекстног менија заглавља у детаљном режиму, можете изабрати још података које желите да видите уз ставке: </para>
+
+<para
+><guimenuitem
+>величина</guimenuitem
+>, <guimenuitem
+>датум</guimenuitem
+>, <guimenuitem
+>тип</guimenuitem
+>, <guimenuitem
+>оцена</guimenuitem
+>, <guimenuitem
+>ознаке</guimenuitem
+> и <guimenuitem
+>коментар</guimenuitem
+>. </para>
+
+<para
+>По типу фајла, могу се додатно задати следећи критеријуми: <simplelist>
+  <member
+><guimenuitem
+>документ</guimenuitem
+>: број речи и редова.</member>
+  <member
+><guimenuitem
+>слика</guimenuitem
+>: величина и оријентација.</member>
+  <member
+><guimenuitem
+>аудио</guimenuitem
+>: извођач, албум, трајање и нумера.</member>
+</simplelist>
+</para>
+
+<para
+>Подмени <guisubmenu
+>Друго</guisubmenu
+> омогућава избор једног од: <guimenuitem
+>путања</guimenuitem
+>, <guimenuitem
+>одредиште везе</guimenuitem
+>, <guimenuitem
+>копирано из</guimenuitem
+>, <guimenuitem
+>дозволе</guimenuitem
+>, <guimenuitem
+>власник</guimenuitem
+> и <guimenuitem
+>корисничка група</guimenuitem
+>. </para>
+
+</sect2>
+<!--FIXME end copy from dolphin docbook synced for 16.04 -->
+</sect1>
+
+<!--FIXME begin copy from dolphin docbook synced for 16.04-->
+<sect1 id="view-properties">
+<title
+>Својства приказа фасцикле</title>
+
+<para
+>Наредне поставке одређују како се садржај фасцикле приказује у <application
+>К‑освајачу</application
+>, и подразумевано се складиште засебно за сваку фасциклу: </para>
+<itemizedlist>
+
+<listitem
+><para
+>Режим приказа (иконице, сажето, детаљи). </para
+></listitem>
+
+<listitem
+><para
+>Ређање ставки, одређено редоследом (растуће, опадајуће) и атрибутом (име, величина...) по којем се ређа. </para
+></listitem>
+
+<listitem
+><para
+>Међусобно ређање фајлова и фасцикли — да ли се фасцикле ређају испред фајлова? </para
+></listitem>
+
+<listitem
+><para
+>Прегледи — да ли се приказују уместо иконица (на основу поставки под језичком <guilabel
+>Прегледи</guilabel
+> у <application
+>К‑освајачевом</application
+> општим поставкама)? </para
+></listitem>
+
+<listitem
+><para
+>Да ли су ставке груписане у приказима? </para
+></listitem>
+
+<listitem
+><para
+>Да ли се виде скривени фајлови? </para
+></listitem>
+
+<listitem
+><para
+>Који се додатни подаци (поред имена) наводе у приказу са иконицама и са детаљима? </para
+></listitem>
+
+</itemizedlist>
+<para
+>Својства приказа се могу подесити кроз мени <menuchoice
+><guimenu
+>Приказ</guimenu
+></menuchoice
+>, а нека (попут режима приказа) и преко дугмади на траци алатки. </para>
+
+<sect2 id="view-properties-dialog">
+<title
+>Дијалог својстава приказа</title>
+
+<para>
+
+<screenshot>
+<screeninfo
+>Снимак екрана са дијалогом својстава приказа.</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="viewproperties-dialog.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Дијалог својстава приказа.</phrase>
+</textobject>
+<caption
+><para
+>Дијалог својстава приказа.</para
+></caption>
+</mediaobject>
+</screenshot>
+Дијалог <guilabel
+>Својства приказа</guilabel
+> може послужити за брзо мењање неколико својстава одједном. Измене могу важити за текућу фасциклу, за текућу фасциклу и све потфасцикле, или чак за све фасцикле, у зависности од избора начињених у одељку <guilabel
+>Примени својства приказа на</guilabel
+>. </para>
+
+<para
+>Ако је укључено <guilabel
+>Ова својства приказа су подразумевана</guilabel
+>, изабрана својства приказа биће коришћена за све фасцикле које још увек немају сопствена прилагођена својства. </para>
+
+</sect2>
+
+</sect1>
+<!--FIXME end copy from dolphin docbook  synced for 16.04-->
+<sect1 id="navigation">
+<title
+>Навигација</title>
+<para
+>Да бисте <application
+>К‑освајачем</application
+> дошли до неког фајла, прво треба да се прошетате кроз стабло фасцикли до фасцикле која га садржи.</para>
+
+<para
+>За кретање између фасцикли, просто идите нагоре и надоле, уз и низ стабло:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Да сиђете у потфасциклу, кликните <mousebutton
+>левим</mousebutton
+> на њено име или иконицу. Или, ако сте је већ „изабрали“ (в. испод), само притисните <keycap
+>Enter</keycap
+>.</para
+></listitem
+> 
+<listitem
+><para
+>За кретање уз стабло фасцикли, можете кликнути на дугме <guiicon
+>Горе</guiicon
+> на траци алатки, притиснути <keycombo action="simul"
+><keycap
+>Alt</keycap
+><keysym
+>стрелицу нагоре</keysym
+></keycombo
+>, или употребити ставку менија <menuchoice
+><guimenu
+>Кретање</guimenu
+><guimenuitem
+>Горе</guimenuitem
+></menuchoice
+>.</para
+></listitem>
+</itemizedlist>
+
+<para
+>Да „изаберете“ фајл или фасциклу у приказаној фасцикли, а да је притом не отворите, користите тастере стрелица <keysym
+>горе</keysym
+> и <keysym
+>доле</keysym
+> за кретање кроз ставке. Изабрана ставка биће истакнута, а неки подаци о њој приказани у траци стања.</para>
+
+<para
+>Постављање <link linkend="viewmode"
+>режима приказа</link
+> на приказ детаља може вам помоћи да уочите фасцикле у стаблу испод тренутне; у овом режиму свака фасцикла приказана је квадратићем слева. Ако квадратић садржи знак &lt;, <mousebutton
+>леви</mousebutton
+> клик на квадратић (не на име или иконицу фасцикле) приказаће подстабло фајлова и потфасцикли садржаних у тој фасцикли. Квадратић ће се затим променити у знак v. Кликните <mousebutton
+>левим</mousebutton
+> на њега да сажмете подстабло. Пошто сте нашли тражену фасциклу, кликните <mousebutton
+>левим</mousebutton
+> на њено име или иконицу да је отворите.</para>
+<!--
+<para
+>The <link linkend="sidebar"
+>Sidebar</link
+> can also help you 
+find your way around the file system.</para>
+-->
+<para
+>Можете непосредно отићи на било коју фасциклу тако што унесете њену путању у траку локације, преко <menuchoice
+><guimenu
+>Фајл</guimenu
+><guimenuitem
+>Отвори локацију</guimenuitem
+> </menuchoice
+> или <keycombo action="simul"
+><keycap
+>Alt</keycap
+><keycap
+>O</keycap
+></keycombo
+>. При уносу може бити корисна <application
+>К‑освајачева</application
+> могућност <link linkend="path-complete"
+>допуне текста</link
+>. Не заборавите да је под Линуксом/Униксом од значаја величина слова у именима фајлова и фасцикли.</para>
+
+<para
+>Пошто сте отишли на нову фасциклу, на претходну се можете вратити дугметом <guiicon
+>Назад</guiicon
+> на траци алатки, ставком менија <menuchoice
+><guimenu
+>Кретање</guimenu
+> <guimenuitem
+>Назад</guimenuitem
+></menuchoice
+>, или пречицом <keycombo action="simul"
+><keycap
+>Alt</keycap
+><keysym
+>стрелица лево</keysym
+></keycombo
+>. Кад се једном вратите уназад, можете опет напред дугметом <guiicon
+>Напред</guiicon
+> на траци алатки, ставком менија <menuchoice
+><guimenu
+>Кретање</guimenu
+> <guimenuitem
+>Напред</guimenuitem
+></menuchoice
+>, или пречицом <keycombo action="simul"
+><keycap
+>Alt</keycap
+><keysym
+>стрелица десно</keysym
+></keycombo
+>.</para>
+
+<para
+>Алтернативно, можете отићи у родитељску фасциклу кликом на <guiicon
+>Горе</guiicon
+> на траци алатки, ставком менија <menuchoice
+><guimenu
+>Кретање</guimenu
+> <guimenuitem
+>Горе</guimenuitem
+></menuchoice
+>, или пречицом <keycombo action="simul"
+><keycap
+>Alt</keycap
+><keysym
+>стрелица горе</keysym
+></keycombo
+>.</para>
+
+<tip
+><para
+>Кликом на квачку десно од дугмета за нагоре, назад или напред на траци алатки, или избором ових ставки из менија <guimenu
+>Кретање</guimenu
+>, добија се подмени недавно посећених локација.</para>
+</tip>
+
+<sect2 id="file-find">
+<title
+>Налажење фајлова и фасцикли</title>
+
+<para
+>Ако се не сећате где се на систему налази неки фајл или фасцикла, употребите пречицу <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>F</keycap
+></keycombo
+> или опцију <menuchoice
+><guimenu
+>Алатке</guimenu
+><guimenuitem
+>Нађи фајл...</guimenuitem
+></menuchoice
+> из траке менија. Ово ће покренути програм за тражење фајлова <application
+>К‑налазач</application
+>. Погледајте <ulink url="help:/kfind/index.html"
+>приручник <application
+>К‑налазача</application
+></ulink
+> за помоћ у коришћењу. </para>
+
+<note
+><para
+>Ако име фајла или фасцикле почиње тачком, онда је то „скривени“ фајл или фасцикла, и <application
+>К‑освајач</application
+> их нормално неће приказивати. Да бисте видели и скривене фајлове или фасцикле, употребите ставку менија <menuchoice
+><guimenu
+>Приказ</guimenu
+><guimenuitem
+>Скривени фајлови</guimenuitem
+></menuchoice
+>.</para>
+
+<para
+>Други разлог што <application
+>К‑освајач</application
+> можда не приказује фајл или фасциклу коју тражите, јесте што вам је прикључак <link linkend="konq-plugin"
+>филтера фасцикле</link
+> подешен да приказује само извесне типове фајлова.</para>
+</note>
+
+</sect2>
+
+<sect2 id="removable-devices">
+<title
+>Уклоњиви уређаји</title>
+
+<para
+>Сваки уклоњиви уређај (УСБ штапић, флопи и ЦД‑РОМ јединица, друге партиције хард‑диска на систему) обично ће се појавити под једном од фасцикла <filename class="directory"
+>/</filename
+>, <filename class="directory"
+>/media</filename
+>, <filename class="directory"
+>/mnt</filename
+>, <filename class="directory"
+>/auto</filename
+>, отприлике са оваквом путањом: <filename class="directory"
+>/mnt/floppy</filename
+> или <filename class="directory"
+>/cdrom</filename
+>. Детаљи ће зависити од подешености система.</para>
+
+<para
+>Под Униксом, уклоњиви уређај се мора „монтирати“ (наредба <command
+>mount</command
+>) пошто га убаците у јединицу, исто као и друга партиција хард‑диска кад желите да јој приступите. Такође, уклоњиви уређај морате „демонтирати“ пре него што га физички уклоните, како би систем регистровао да више није доступан.</para>
+
+<para
+>Како ћете ово урадити зависи од поставе система:</para>
+
+<itemizedlist>
+
+<listitem
+><para
+>Преко извештавача о уређајима.</para>
+<para
+>У КДЕ сесији, када убаците уклоњиви уређај искочиће ће прозор <ulink url="help:/plasma-desktop/index.html#device-notifier"
+>извештавача о уређајима</ulink
+>. У њему можете изабрати одговарајући програм за дати медијум, или само монтирати уређај.</para>
+</listitem>
+<listitem
+><para
+>Ако за распоред површи користите <guilabel
+>приказ фасцикле</guilabel
+>, на површи могу стајати иконице уклоњивих уређаја. Кликните <mousebutton
+>левим</mousebutton
+> на такву иконицу да монтирате медијум. Тиме ћете такође дозвати прозор <application
+>К‑освајача</application
+> са приказом садржаја тог медијума. Да медијум демонтирате, кликните <mousebutton
+>десним</mousebutton
+> на иконицу и одаберите ставку <guimenuitem
+>Демонтирај</guimenuitem
+>. Ако желите сами да припремите једну овакву иконицу, посетите секцију <link linkend="making"
+>„Направи“</link
+> овог приручника.</para
+></listitem>
+
+<listitem
+><para
+>Монтирати можете и на традиционалан начин, уношењем у терминалском прозору:</para>
+<para
+><userinput
+><command
+>mount /mnt/floppy</command
+></userinput
+></para>
+<para
+>да монтирате, на пример, флопи јединицу, и</para>
+<para
+><userinput
+><command
+>umount /mnt/floppy</command
+></userinput
+></para>
+<para
+>да је демонтирате (пазите: <command
+>umount</command
+>, не <command
+>unmount</command
+>). </para>
+<note
+><para
+>Пре него да отварате терминал да бисте извршили <command
+>mount</command
+> или <command
+>umount</command
+>, можда ће вам згодније доћи <application
+>К‑освајачева</application
+> могућност извршавања наредби шкољке, <menuchoice
+><guimenu
+>Алатке</guimenu
+><guimenuitem
+>Извршавање наредбе шкољке</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>E</keycap
+></keycombo
+>). </para
+></note>
+
+</listitem>
+
+</itemizedlist>
+</sect2>
+
+</sect1>
+
+<sect1 id="deleting">
+<title
+>Брисање фајлова и фасцикли</title>
+
+<para
+><application
+>К‑освајач</application
+> пружа два начина да се отарасите нежељеног фајла или фасцикле:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Можете ставку преместити у фасциклу <filename
+>Trash</filename
+> (смеће), што је сигурнији метод, пошто је можете повратити ако схватите да сте направили грешку.</para
+></listitem
+> 
+
+<listitem
+><para
+>Можете ставку просто обрисати, што уклања унос из фасцикле и враћа систему простор на диску њоме заузет као слободан, исто као наредба <command
+>rm</command
+>.</para>
+<para
+>Ако желите да користите ову могућност попуните кућицу <guilabel
+>Брисање у менијима заобилази смеће</guilabel
+> на страници поставки <guilabel
+>Управљање фајловима</guilabel
+>.</para
+></listitem>
+</itemizedlist>
+
+<para
+>Најједноставнији начин да уклоните фајл или фасциклу јесте да ставите показивач миша изнад имена или иконице и кликнете <mousebutton
+>десним</mousebutton
+>, чиме ћете дозвати мени са ставкама <guimenuitem
+>Премести у смеће</guimenuitem
+> и <guimenuitem
+>Обриши</guimenuitem
+>.</para>
+
+<para
+>Или, ако сте „изабрали“ унос, мени <guimenu
+>Уређивање</guimenu
+> пружа вам исте те ставке (<guimenuitem
+>Премести у смеће</guimenuitem
+> и <guimenuitem
+>Обриши</guimenuitem
+>).</para>
+
+<para
+>Тастер <keycap
+>Delete</keycap
+> премешта одабране ставке у смеће.</para>
+
+<para
+><keycombo action="simul"
+><keycap
+>Shift</keycap
+><keycap
+>Delete</keycap
+></keycombo
+> непосредно и неопозиво брише изабране ставке.</para>
+
+<note
+><para
+>Ако немате потребне дозволе, фајл или фасциклу нећете моћи да преместите или обришете.</para
+></note>
+
+</sect1>
+
+<sect1 id="moving">
+<title
+>Премештање и копирање</title>
+
+<para
+>За копирање фајла или потфасцикле између фасцикли, можете:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Поставити показивач миша изнад имена или иконице и кликнути <mousebutton
+>десним</mousebutton
+>, што ће дозвати мени са ставком <guimenuitem
+>Копирај</guimenuitem
+>. Изаберите је.</para>
+
+<para
+>Другачије, када је ставка „изабрана“, можете кликнути на дугме <guiicon
+>Копирај</guiicon
+> на траци алатки, изабрати <menuchoice
+><guimenu
+>Уређивање</guimenu
+> <guimenuitem
+>Копирај</guimenuitem
+></menuchoice
+> из траке менија, или притиснути комбинацију тастера <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>C</keycap
+></keycombo
+>. Такође можете изабрати <link linkend="selection"
+>више фајлова и фасцикли</link
+> и све их одједном копирати или преместити.</para
+></listitem>
+
+<listitem
+><para
+>Отидите на фасциклу у коју хоћете да копирате ставку, затим је налепите дугметом <guiicon
+>Налепи</guiicon
+> на траци алатки, ставком менија <menuchoice
+><guimenu
+>Уређивање</guimenu
+> <guimenuitem
+>Налепи</guimenuitem
+></menuchoice
+>, пречицом <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>V</keycap
+></keycombo
+>, или померањем показивача миша на празан простор у прозору и притиском <mousebutton
+>десног</mousebutton
+> дугмета миша, када ћете добити мени са ставком <guimenuitem
+>Налепи</guimenuitem
+>. </para
+></listitem>
+</itemizedlist>
+
+<para
+>Премештање фајла или потфасцикле између фасцикли може се обавити на исти начин као копирање, осим што бирате <guimenuitem
+>Исеци</guimenuitem
+> или <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>X</keycap
+></keycombo
+> уместо <guimenuitem
+>Копирај</guimenuitem
+>. Ставка коју сте исекли биће уклоњена из првобитне фасцикле чим извршите <guimenuitem
+>Налепи</guimenuitem
+> у новој.</para>
+
+<para
+>Да копирате и премештате изабране ставке међу фасциклама такође можете бирањем <guimenuitem
+>Копирај у</guimenuitem
+> или <guimenuitem
+>Премести у</guimenuitem
+> из контекстног менија на <mousebutton
+>десни</mousebutton
+> клик на име фајла или фасцикле у прозору менаџера фајлова.</para>
+<para
+>Ову могућност активирате избором <guilabel
+>Наредбе копирања и премештања</guilabel
+> на страници поставки <menuchoice
+><guimenu
+>Управљање фајловима</guimenu
+> <guimenuitem
+>Сервиси</guimenuitem
+></menuchoice
+>.</para>
+<note
+><para
+>Можда нећете моћи да копирате или преместите фајл или фасциклу ако немате потребне дозволе.</para
+></note>
+
+<sect2 id="dnd">
+<title
+>Коришћење превлачења</title>
+
+<para
+><application
+>К‑освајач</application
+> такође подржава копирање и премештање фајлова и фасцикли превлачењем.</para>
+
+<para
+>Превлачењем се можете послужити ако су отворена два примерка <application
+>К‑освајача</application
+>, један с фасциклом из које хоћете да копирате или преместите, а са циљном фасциклом. Ставите показивач миша изнад жељене ставке, а затим, држећи притиснуто <mousebutton
+>лево</mousebutton
+> дугме мише, <emphasis
+>превуците</emphasis
+> је на празан простор у циљној фасцикли. Пустите дугме и добићете мени са избором <guimenuitem
+>Копирај овде</guimenuitem
+>, <guimenuitem
+>Премести овде</guimenuitem
+> или <guimenuitem
+>Повежи овде</guimenuitem
+>. Пазите да ставку испустите над празним простором у циљној фасцикли — ако је испустите над потфасциклом, биће копирана или премештена у ту фасциклу.</para>
+
+<para
+>Такође можете подесити <application
+>К‑освајач</application
+> да приказује више од једне фасцикле унутар истог прозора, па превлачити између њих.</para>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="dragdrop.png"/></imageobject>
+<textobject>
+<phrase
+>Превлачење с подељеним приказом</phrase>
+</textobject>
+</mediaobject>
+
+<para
+>Овај снимак екрана представља дејство опције <menuchoice
+><guimenu
+>Прозор</guimenu
+> <guimenuitem
+>Подели приказ лево/десно</guimenuitem
+></menuchoice
+> из траке менија, такође доступне пречицом <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>Shift</keycap
+><keycap
+>L</keycap
+></keycombo
+>. Њоме се главни прозор <application
+>К‑освајача</application
+> дели у два приказа, сваки са садржајем друге фасцикле.</para>
+
+<para
+>Да би се могле приказати различите фасцикле по приказу, не треба да буду повезане: квадратићи здесна на дну сваког приказа треба да буду празни. </para>
+
+<para
+>„Активни“ приказ, онај чија је путања приказана у траци локације и који реагује на наредбе за кретање и из менија, означен је малим зеленим светлом у левом доњем углу. Кликните <mousebutton
+>левим</mousebutton
+> на празан простор приказа или његову траку стања да га активирате.</para>
+
+<para
+>Да уклоните активни приказ из прозора <application
+>К‑освајача</application
+>, користите пречицу <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>Shift</keycap
+><keycap
+>W</keycap
+></keycombo
+>, ставку менија <menuchoice
+><guimenu
+>Прозор</guimenu
+> <guimenuitem
+>Затвори активни приказ</guimenuitem
+></menuchoice
+>, или <mousebutton
+>десни</mousebutton
+> клик на траку стања па из менија који се појави истоимену ставку.</para>
+
+<para
+>Ако користите <application
+>К‑освајачеве</application
+> језичке, можете превлачити између њих тако што фајл превучете на етикету језичка, али га не испуштајући одмах. Одредишни језичак искочиће у први план, допуштајући вам да наставите превлачење и коначно да испустите фајл.</para>
+
+</sect2>
+
+<sect2 id="dups">
+<title
+>Дупликати имена фајлова или фасцикли</title>
+<para
+>Ако покушате да налепите фајл или фасциклу у фасциклу која већ садржи истоимену ставку, искочиће дијалог који вас опомиње да ставка већ постоји. Тада можете учинити једно од: </para>
+<itemizedlist>
+<listitem
+><para
+>Поништите налепљивање кликом на дугме <guibutton
+>Одустани</guibutton
+>.</para
+></listitem>
+<listitem
+><para
+>Дајте ставки која се копира друго име. Ово можете уписивањем новог имена у поље уноса у истом дијалогу, или дугметом <guibutton
+>Предложи ново име</guibutton
+> рећи <application
+>К‑освајачу</application
+> да предложи име, па кликнути на <guibutton
+>Настави</guibutton
+>.</para
+></listitem>
+<listitem
+><para
+>Ако копирате више ставки, можете и кликнути на <guibutton
+>Прескочи</guibutton
+> да прескочите текућу. </para
+></listitem>
+</itemizedlist>
+<para
+>Дугме <guibutton
+>Примени на све</guibutton
+> можете употребити када копирате више ставки.</para>
+</sect2>
+</sect1>
+<!--FIXME begin copy from dolphin docbook synced for 16.04-->
+<sect1 id="selection">
+<title
+>Бирање ставки у приказу</title>
+
+<para
+>Ставке у приказу могу се изабрати на неколико начина. Пошто се избор начини, све радње, као што су исецање, копирање, бацање у смеће или превлачење, односе се на све изабране ставке. </para>
+
+<sect2 id="selection-mouse">
+<title
+>Бирање ставки мишем</title>
+
+<itemizedlist>
+
+<listitem
+><para
+>Можете кликнути левим негде у приказу па развући правоугаоник око групе ставки пре отпуштања дугмета миша. Тако ћете изабрати све ставке унутар правоугаоника, а претходни избор биће поништен. Ако током овога држите притиснут тастер <keycap
+>Shift</keycap
+>, претходни избор се задржава. </para
+></listitem>
+
+<listitem
+><para
+>Ако држите притиснут тастер <keycap
+>Ctrl</keycap
+> када на ставку кликнете левим, обрће се стање изабраности те ставке. Ако је <keycap
+>Ctrl</keycap
+> притиснут при развлачењу правоугаоника око групе ставки (како је претходно објашњено), обрће се стање изабраности свих ставки у тој групи. </para
+></listitem>
+
+<listitem
+><para
+>Држањем тастера <keycap
+>Shift</keycap
+> када кликнете левим на одређену ставку изабраћете све ставке између претходне и ове на коју сте сада кликнули. </para
+></listitem>
+
+<listitem
+><para
+>Ако је укључено <guilabel
+>Обележивач избора</guilabel
+> под језичком <guilabel
+>Понашање</guilabel
+> у одељку поставки <menuchoice
+><guimenu
+>Управљање фајловима</guimenu
+> <guimenuitem
+>Опште</guimenuitem
+></menuchoice
+>, појављује се мали + или – у горњем левом углу ставке над којом лебди миш. Кликом на овај знак ставку бирате или изостављате. </para
+></listitem>
+
+</itemizedlist>
+
+</sect2>
+
+<sect2 id="selection-keyboard">
+<title
+>Бирање ставки тастатуром</title>
+
+<itemizedlist>
+
+<listitem
+><para
+>Ако притиснете тастер стрелице, <keycap
+>PageUp</keycap
+>, <keycap
+>PageDown</keycap
+>, <keycap
+>Home</keycap
+> или <keycap
+>End</keycap
+>, биће изабрана нова текућа ставка а претходни избор поништен. </para
+></listitem>
+
+<listitem
+><para
+>Ако држите тастер <keycap
+>Ctrl</keycap
+> док притискате један од претходно поменутих, избор остаје неизмењен. </para
+></listitem>
+
+<listitem
+><para
+>Ако пак држите тастер <keycap
+>Shift</keycap
+> док притискате неки од претходних, биће изабране све ставке између претходне и нове текуће ставке. </para
+></listitem>
+
+<listitem
+><para
+>Притиском <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>Space</keycap
+></keycombo
+> обрће се стање изабраности текуће ставке. </para
+></listitem>
+
+<listitem
+><para
+><keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>A</keycap
+></keycombo
+> изабира све ставке у приказу. </para
+></listitem>
+
+<listitem
+><para
+><keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>Shift</keycap
+><keycap
+>A</keycap
+></keycombo
+> обрће стање изабраности свих ставки у приказу. </para
+></listitem>
+
+<listitem
+><para
+>Почните да куцате првих неколико слова имена фајла или фасцикле, и поклопљена ставка ће бити изабрана. Избор чистите притиском на <keycap
+>Esc</keycap
+> да откажете претрагу тастатуром, или сачекавши прековреме од 1 секунде. </para
+></listitem>
+</itemizedlist>
+<!--FIXME end copy from dolphin docbook 16.04-->
+
+</sect2>
+
+<!--FIXME selection via menu different in dolphin-->
+<sect2 id="selection-menu">
+<title
+>Бирање ставки кроз мени</title>
+
+<para
+>Понекад хоћете да обришете, копирате или преместите неколико у извесном смислу сличних фајлова. На пример, можда желите да све ПНГ слике преместите из једне фасцикле у другу. <application
+>К‑освајач</application
+> ово олакшава допуштајући вам да изаберете више фајлова на основу сличности у њиховим именима.</para>
+
+<para
+>Употребите ставку менија <menuchoice
+><guimenu
+>Уређивање</guimenu
+><guisubmenu
+>Избор</guisubmenu
+> <guimenuitem
+>Изабери поклапањем...</guimenuitem
+></menuchoice
+> или пречицу <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>S</keycap
+></keycombo
+>. Добићете мали дијалог у који можете унети образац имена фајла, са џокерским знаковима <keycap
+>*</keycap
+> (поклапа било који број знакова) и <keycap
+>?</keycap
+> (поклапа један знак). Кликните на <guibutton
+>У реду</guibutton
+> и <application
+>К‑освајач</application
+> ће истаћи све фајлове чија се имена поклапају. На пример:</para>
+      
+<itemizedlist>
+<listitem
+><para
+><userinput
+><filename
+>zastava*.png</filename
+></userinput
+> изабраће све фајлове чија имена почињу са <literal
+>zastava</literal
+> и завршавају се са <literal role="extension"
+>.png</literal
+>.</para
+></listitem>
+<listitem
+><para
+><userinput
+><filename
+>poruka?.txt</filename
+></userinput
+> изабраће <filename
+>poruka1.txt</filename
+> и <filename
+>poruka9.txt</filename
+>, али неће <filename
+>poruka99.txt</filename
+>.</para
+></listitem>
+</itemizedlist>
+
+<para
+>Пошто сте изабрали фајлове, можете сузити избор ставком менија <menuchoice
+><guimenu
+>Уређивање</guimenu
+><guisubmenu
+>Избор</guisubmenu
+> <guimenuitem
+>Поништи избор поклапањем...</guimenuitem
+></menuchoice
+> тако што задате које од фајлова треба уклонити из избора.</para>
+
+<para
+>Да поништите избор, употребите ставку менија <menuchoice
+><guimenu
+>Уређивање</guimenu
+><guisubmenu
+>Избор</guisubmenu
+> <guimenuitem
+>Поништи сав избор</guimenuitem
+></menuchoice
+> или просто кликните <mousebutton
+>левим</mousebutton
+> на празан простор у приказу.</para>
+
+<para
+>Можете и „обрнути“ избор — то јест, из избора уклонити све тренутно изабране фајлове, а додати све који нису били изабрани. Ово чините ставком менија <menuchoice
+><guimenu
+>Уређивање</guimenu
+><guisubmenu
+>Избор</guisubmenu
+><guimenuitem
+>Изврни избор</guimenuitem
+></menuchoice
+> или пречицом <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>Shift</keycap
+><keycap
+>A</keycap
+></keycombo
+>.</para>
+</sect2>
+
+</sect1>
+
+<sect1 id="making">
+<title
+>Направи ново</title>
+
+<para
+>Кад је <application
+>К‑освајач</application
+> у режиму менаџера фајлова, одабир <guisubmenu
+>Направи</guisubmenu
+> из менија <guimenu
+>Уређивање</guimenu
+>, или из контекстног менија који добијате <mousebutton
+>десним</mousebutton
+> кликом на празан простор у приказу фасцикле, даје вам подмени којим у текућој фасцикли можете створити једно од следећег:</para>
+
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Фасцикла...</guimenuitem
+></term>
+<listitem
+><para
+>Лак начин стварања нових фасцикли.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Текстуални фајл...</guimenuitem
+></term>
+<listitem
+><para
+>За стварање празног обичног текстуалног фајла. Добићете дијалог за унос имена фајла.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>ХТМЛ фајл...</guimenuitem
+></term>
+<listitem
+><para
+>Ствара основу ХТМЛ изворног фајла. Име фајла које задате у дијалогу најбоље је да има наставак <literal role="extension"
+>.html </literal
+>, да касније не би дошло до забуне.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>||<replaceable
+>Документ одређеног типа</replaceable
+>...</guimenuitem
+></term>
+<listitem
+><para
+>Према томе који су програми инсталирани и придружењима фајловима, приказано је више ставки менија за стварање оквирних докумената разних типова.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Веза до локације (УРЛ)...</guimenuitem
+></term>
+<listitem
+><para
+>Направите иконицу за отварање <application
+>К‑освајача</application
+> над задатом фасциклом или веб страницом. Као и код <guimenuitem
+>Веза до програма...</guimenuitem
+>, да би се иконица појавила на површи направите је у фасцикли <filename
+>~/Desktop</filename
+>, или кроз подмени <guisubmenu
+>Направи</guisubmenu
+> на десни клик на празан простор површи.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Основна веза до фајла или фасцикле...</guimenuitem
+></term>
+<listitem
+><para
+>Ствара симболичку везу ка локалном фајлу или фасцикли.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Веза до програма...</guimenuitem
+></term>
+<listitem
+><para
+>Опција врло корисна када желите да направите иконицу за покретање одређеног програма. Отвара дијалог са неколико страница под језичцима. На првој, <guilabel
+>Опште</guilabel
+>, бирате иконицу и текст који ће ићи са њом. Друга страница, <guilabel
+>Дозволе</guilabel
+>, омогућава да одредите ко све може да користи или мења иконицу. На страници <guilabel
+>Програм</guilabel
+> уносите наредбу која ће покренути програм, на пример, <userinput
+>kwrite</userinput
+> да покренете уређивач текста <application
+>К‑писање</application
+>. <userinput
+>kwrite /home/pera/obaveze.txt</userinput
+> отворило би фајл <filename
+>/home/pera/obaveze.txt</filename
+> у <application
+>К‑писању</application
+>. Напредне поставке, као што су типови фајлова које програм може да отвара, такође су расположиве на овој страници.</para>
+
+<para
+>Да би се иконица појавила на површи, направите везу у фасцикли <filename class="directory"
+>~/Desktop</filename
+> (може се и другачије звати, у зависности од тога како је КДЕ инсталиран и подешен), или позовите подмени <guisubmenu
+>Направи</guisubmenu
+> <mousebutton
+>десним</mousebutton
+> кликом на празан простор површи, уместо унутар <application
+>К‑освајачевог</application
+> прозора.</para>
+
+<para
+>Ако имате много специјализованих веза ка програмима, а не желите да закрчите површ, можете их направити у <emphasis
+>фасцикли програма</emphasis
+>. У <application
+>К‑освајачу</application
+>, изаберите <menuchoice
+><guimenu
+>Кретање</guimenu
+> <guimenuitem
+>Програми</guimenuitem
+></menuchoice
+>, затим направите једну иконицу на површи која ће отварати фасциклу програма, што је обично <filename class="directory"
+>~/.local/share/applications</filename
+>.</para>
+<para
+>Да поставите везу ка програму на панел, прво је направите у фасцикли програма, а затим превуците иконицу на празан простор панела.</para>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guisubmenu
+>везу ка уређају</guisubmenu
+></term>
+<listitem
+><para
+>Ставкама у овом подменију можете правити иконице за монтирање уређаја и отварање <application
+>К‑освајача</application
+> са приказом њиховог садржаја. За демонтирање уређаја, пошто сте обавили шта сте желели, кликните <mousebutton
+>десним</mousebutton
+> на иконицу и одаберите <guimenuitem
+>Демонтирај</guimenuitem
+>. Међутим, у већини случајева желећете да оваква иконица стоји на површи. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+
+<sect1 id="newname">
+<title
+>Мењање имена и дозвола</title>
+
+<para
+>Два најлакша начина за измену имена фајла или фасцикле јесу или да кликнете <mousebutton
+>десним</mousebutton
+> на њу и одаберете <guimenuitem
+>Преименуј</guimenuitem
+>, или да је изаберете и притиснете тастер <keycap
+>F2</keycap
+>.</para>
+
+<para
+>Да измените име или дозволе фајла или фасцикле, кликните <mousebutton
+>десним</mousebutton
+> на име или иконицу, па изаберите ставку <guimenuitem
+>Својства</guimenuitem
+>; или, ако сте изабрали фајл или фасциклу, можете употребити ставку менија <menuchoice
+><guimenu
+>Уређивање</guimenu
+> <guimenuitem
+>Својства</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+><keycap
+>Alt</keycap
+><keycap
+>Return</keycap
+></keycombo
+>).</para>
+
+<para
+>Ово ће отворити дијалог својстава са неколико страница под језичцима:</para>
+
+<itemizedlist>
+<listitem
+><para
+><guilabel
+>Опште</guilabel
+> даје неке опште податке о ставци и допушта вам измену њеног имена, и, ако се ради о фасцикли, придружене иконице.</para
+></listitem>
+<listitem
+><para
+><guilabel
+>Дозволе</guilabel
+> приказује власништво ставке и дозволе приступа, које можете ту и изменити. </para
+></listitem>
+</itemizedlist>
+<!--FIXME Checksums tab missing-->
+<sect2 id="copyrename">
+<title
+>Копирање и преименовање</title>
+<para
+>Ако желите да направите копију постојећег фајла под другим именом (можда као резерву) у истој фасцикли као изворни фајл, копирајте га и налепите као и обично, и искочиће дијалог који се жали да фајл већ постоји. Само упишите ново име у дијалога и притисните дугме <guibutton
+>Настави</guibutton
+> (или, ако вас мрзи, дугме <guibutton
+>Предложи ново име</guibutton
+> саставиће ново име место вас).</para>
+</sect2>
+
+</sect1>
+
+<sect1 id="file-associations">
+<title
+>Подешавање придружења фајловима </title>
+
+<!-- TODO: The content should probably be here too, but this'll do for -->
+<!-- now. -->
+<para
+>С КДЕ‑ом стижу многи програми, који отварају разне типове фајлова. Најчешће ће подразумеване поставке радити баш како треба, али <application
+>К‑освајач</application
+> вам пружа и моћан систем за одређивање који ће програм отварати који тип фајлова. За више детаља употребите ставку менија <menuchoice
+><guimenu
+>Подешавање</guimenu
+><guimenuitem
+>Подеси К‑освајач...</guimenuitem
+></menuchoice
+>, па у дијалогу за подешавање <guilabel
+>Придружења фајловима</guilabel
+>, и кликните на дугме <guibutton
+>Помоћ</guibutton
+>.</para>
+
+</sect1>
+
+<sect1 id="commandline">
+<title
+>У командној линији</title>
+
+<para
+>Мада је <application
+>К‑освајач</application
+> моћан и прилагодљив графички менаџер фајлова, искусан корисник Уникса повремено пожели да сиђе коренима, да ради на нивоу текстуалне командне линије.</para>
+
+<para
+>Можете, наравно, отворити примерак <application
+>Конзоле</application
+>, нпр. кроз <application
+>К‑освајачев</application
+> ставку менија <menuchoice
+><guimenu
+>Алатке</guimenu
+><guimenuitem
+>Отвори терминал</guimenuitem
+></menuchoice
+>, или притиском <keycap
+>F4</keycap
+>.</para>
+<para
+>Ако желите само да покренете програм или прикажете УРЛ, то може бити лакше опцијом <menuchoice
+><guimenu
+>Алатке</guimenu
+><guimenuitem
+>Изврши наредбу шкољке...</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>E</keycap
+></keycombo
+>).</para>
+
+<para
+><menuchoice
+><guimenu
+>Алатке</guimenu
+><guimenuitem
+>Изврши наредбу шкољке...</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+><keycap
+>Ctrl</keycap
+> <keycap
+>E</keycap
+></keycombo
+>) отвара мали дијалог командне линије где можете унети наредбу шкољке, попут <userinput
+>ps -ax | grep kdeinit</userinput
+>. Имајте у виду да овде нису подржани сви терминалски контролни знакови, па наредбе попут <userinput
+>top</userinput
+> и <userinput
+>less</userinput
+> неће правилно радити. Али је зато сасвим при руци, без застоја који узрокује покретање <application
+>Конзоле</application
+>. </para>
+
+<para
+>За сложеније поступке, <application
+>К‑освајач</application
+> има још једну фину могућност: ставку менија <menuchoice
+><guimenu
+>Подешавање</guimenu
+><guimenuitem
+>Прикажи емулатор терминала</guimenuitem
+></menuchoice
+>, која отвара терминалски прозор као приказ унутар <application
+>К‑освајача</application
+>.</para>
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="cmndline.png"/></imageobject>
+<textobject>
+<phrase
+>Са емулатором терминала</phrase>
+</textobject>
+</mediaobject>
+
+</sect1>
+
+</chapter>
+
+<chapter id="browser">
+
+<chapterinfo>
+<authorgroup>
+<author
+><personname
+><firstname
+>Памела</firstname
+> <surname
+>Робертс</surname
+></personname
+></author>
+<othercredit role="translator"
+><firstname
+>Драган</firstname
+><surname
+>Пантелић</surname
+><affiliation
+><address
+><email
+>falcon-10@gmx.de</email
+></address
+></affiliation
+><contrib
+>превод</contrib
+></othercredit
+> 
+</authorgroup>
+
+</chapterinfo>
+
+
+<title
+><application
+>К‑освајач</application
+>, веб прегледач</title>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="konqorg.png"/></imageobject>
+<textobject>
+<phrase
+>Прегледање http://www.konqueror.org.</phrase>
+</textobject>
+</mediaobject>
+<!--FIXME rm this sect?-->
+<sect1 id="conn-inet">
+<title
+>Повезивање на Интернет</title>
+
+<para
+>Пошто се повежете на Интернет, <application
+>К‑освајачем</application
+> можете прегледати Веб једнако лако као што управљате локалним фајловима. Просто упишете УРЛ у траку локације, притиснете <keycap
+>Enter</keycap
+>, и кренули сте!</para>
+
+<itemizedlist>
+<listitem
+><para
+>Ако се повезујете модемом преко телефона, за остваривање везе користићете <application
+>КППП</application
+> или сличан позивачки програм.</para
+></listitem>
+
+<listitem
+><para
+>Ако вам је рачунар повезан на локалну мрежу (ЛАН) која на Интернет пропушта преко проксија, мораћете да подесите <application
+>К‑освајач</application
+> да користи прокси. То се може урадити на страници <menuchoice
+><guimenu
+>Прегледање Веба</guimenu
+> <guimenuitem
+>Прокси</guimenuitem
+></menuchoice
+> дијалога <menuchoice
+><guimenu
+>Подешавање</guimenu
+><guimenuitem
+>Подеси К‑освајач......</guimenuitem
+> </menuchoice
+>.</para
+></listitem>
+
+<listitem
+><para
+>Ако се башкарите у високопропусној кабловској вези, провајдер вам је вероватно дао спољашњи кабловски модем који са рачунаром остварује етернетску везу. Нажалост, детаљи начина успостављања везе зависе од провајдера и, донекле, од уникс/линукс дистрибуције коју користите. Неки провајдери повезују кориснике на Интернет преко прокси сервера, у ком случају ћете морати да подесите <application
+>К‑освајач</application
+> да га користи. За помоћ, може бити корисно да претражите архиву поштанске листе корисника̂ ваше дистрибуције.</para>
+</listitem>
+</itemizedlist>
+
+<note
+><para
+>Порука о грешци, попут „непознат домаћин“, обично значи да <application
+>К‑освајач</application
+> не може да нађе везу ка Интернету или да сте унели неисправан УРЛ.</para
+></note>
+
+</sect1>
+
+<sect1 id="surf">
+<title
+>Сурфовање и тражење</title>
+
+<para
+>Кад једном остварите везу са Интернетом, можете сурфовати <application
+>К‑освајачем</application
+> или било којим другим прегледачем.</para>
+
+<para
+>Унесите УРЛ у траку локације, притисните <keycap
+>Enter</keycap
+> или кликните <mousebutton
+>левим</mousebutton
+> на дугме <guiicon
+><inlinemediaobject
+><imageobject
+> <imagedata fileref="go-jump.png" format="PNG"/> </imageobject
+></inlinemediaobject
+></guiicon
+> <guibutton
+>Кретање</guibutton
+>, и <application
+>К‑освајач</application
+> ће преузети и приказати дату страницу. Ако сте је раније посећивали, <application
+>К‑освајачева</application
+> могућност <link linkend="path-complete"
+>самодопуне текста</link
+> може убрзати поновно уношење УРЛ‑а. Ту је и могућност <link linkend="enhanced-browsing"
+>веб пречица</link
+>, за лакшу употребу претраживача Веба.</para>
+
+<para
+>Кликните <mousebutton
+>левим</mousebutton
+> на везу на страници да је отворите.</para>
+
+<para
+>Да везу отворите у новом примерку <application
+>К‑освајача</application
+> тако да тренутна страница остане видљива, на везу кликните <mousebutton
+>десним</mousebutton
+> дугметом миша и изаберите ставку <guimenuitem
+>Отвори у новом прозору</guimenuitem
+>. Алтернативно, можда ће вам више одговарати <guimenuitem
+>Отвори у новом језичку</guimenuitem
+>: <link linkend="tabbrowse"
+>прегледање с језичцима</link
+> омогућава да држите известан број страница у истом <application
+>К‑освајачевом</application
+> прозору, и брзо се пребацујете између њих једним кликом миша.</para>
+
+<para
+>Ако желите да посматрате више страница истовремено, можете активирати режим вишеструког приказа избором <menuchoice
+><guimenu
+>Прозор</guimenu
+> <guimenuitem
+>Подели приказ лево/десно</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>Shift</keycap
+><keycap
+>L</keycap
+></keycombo
+>) или <menuchoice
+><guimenu
+>Прозор</guimenu
+> <guimenuitem
+>Подели приказ горе/доле</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>Shift</keycap
+><keycap
+>T</keycap
+></keycombo
+>). Ово може бити корисно при прегледању запетљаног скупа ХТМЛ страница, али пазите да мали оквир везе у доњем десном углу буде празан док ово чините.</para>
+<para
+>На претходну страницу можете се вратити пречицом <keycombo action="simul"
+><keycap
+>Alt</keycap
+><keysym
+>стрелица лево</keysym
+></keycombo
+>, дугметом траке алатки <guibutton
+>Назад</guibutton
+>, или кроз мени <menuchoice
+><guimenu
+>Кретање</guimenu
+><guimenuitem
+>Назад</guimenuitem
+></menuchoice
+>.</para>
+<para
+>Слично, кад сте се једном вратили назад, можете поново отићи напред пречицом <keycombo action="simul"
+><keycap
+>Alt</keycap
+><keysym
+>стрелица десно</keysym
+></keycombo
+>, дугметом <guibutton
+>Напред</guibutton
+>, или кроз мени <menuchoice
+><guimenu
+>Кретање</guimenu
+> <guimenuitem
+>Напред</guimenuitem
+></menuchoice
+>.</para>
+
+<!-- copy from okular Navigating -->
+<para
+>Зона приказа може се клизати на неколико начина: тастерима стрелица <keycap
+>горе</keycap
+> и <keycap
+>доле</keycap
+>, преко клизачке траке, точкићем миша или тастерима <keycap
+>PgUp</keycap
+> и <keycap
+>PgDn</keycap
+>.</para>
+<para
+>Када читате дугачку веб страницу, можете употребити <application
+>К‑освајачеву</application
+> могућност аутоматског клизања. Покрећете га притиском <keycombo action="simul"
+><keycap
+>Shift</keycap
+><keycap
+>доле</keycap
+></keycombo
+> или <keycombo action="simul"
+><keycap
+>Shift</keycap
+><keycap
+>горе</keycap
+></keycombo
+>; накнадним притиском ових тастера успоравате или убрзавате клизање. Притиском тастера <keycap
+>Shift</keycap
+> клизање привремено паузирате или настављате, а притиском било ког другог тастера укидате клизање. </para>
+<para
+>Аутоматско клизање ради само у режиму приказа <guimenuitem
+>КХТМЛ</guimenuitem
+>. </para>
+<para
+>Ако из било ког разлога желите да зауставите преузимање, притисните тастер <keycap
+>Esc</keycap
+>, дугме траке алатки <guibutton
+>Заустави</guibutton
+> или ставку менија <menuchoice
+><guimenu
+>Приказ</guimenu
+> <guimenuitem
+>Заустави</guimenuitem
+></menuchoice
+>.</para>
+
+<para
+>Ако посматрате веб страницу док је укључена трака ХТМЛ‑а, требало би да видите две нове иконице на њој: <guiicon
+><inlinemediaobject
+><imageobject
+> <imagedata fileref="format-font-size-less.png" format="PNG"/> </imageobject
+></inlinemediaobject
+></guiicon
+> и <guiicon
+><inlinemediaobject
+><imageobject
+> <imagedata fileref="format-font-size-more.png" format="PNG"/> </imageobject
+></inlinemediaobject
+></guiicon
+>. Користите их да прилагодите величину текста на сајту, ако вам је подразумевана тешка за читање. Колико ће добро ово радити, зависи од тога колико је добро састављена веб страница.</para>
+</sect1>
+<!-- Tab works in filemanager mode as well-->
+<sect1 id="tabbrowse">
+<title
+>Прегледање с језичцима</title>
+<para
+>Коришћењем ове могућности можете учинити да <application
+>К‑освајач</application
+> учитава веб странице у истом прозору, и пребацивати се између њих путем језичака. На овај начин можете предучитати страницу „у позадини“, док настављате да читате тренутну.</para>
+
+<para
+>Да бисте користили прегледање са језичцима, кликните <mousebutton
+>десним</mousebutton
+> на везу и из падајућег менија изаберите <guimenuitem
+>Отвори у новом језичку</guimenuitem
+>, или кликните <mousebutton
+>средњим</mousebutton
+> на њу. Страница ће, као и обично, бити преузета и приказана, али с језичцима дуж врха приказа, по језичак за сваку страницу. Кликните <mousebutton
+>левим</mousebutton
+> на језичак да прикажете страницу под њим, или користите пречице <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>,</keycap
+></keycombo
+> и <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>.</keycap
+></keycombo
+> за кружење кроз језичке. Такође можете клизати кроз језичке <mousebutton
+>точкићем</mousebutton
+> миша, док је показивач миша изнад траке језичака (под претпоставком миш има точкић). Двоклик на празан простор траке језичка отвара нови језичак.</para>
+
+<para
+>Ако је укључена опција <guilabel
+>Отвори нови језичак у позадини</guilabel
+> на страници <guilabel
+>Опште</guilabel
+> у дијалогу за подешавање, кликом на везу страница се преузима и ставља под нови језичак, али неће бити приказана док не кликнете <mousebutton
+>левим</mousebutton
+> на језичак.</para>
+
+<para
+>Ако попуните кућицу <guilabel
+>Отвори везу у новом језичку уместо у новом прозору</guilabel
+> на страници <guimenuitem
+>Опште</guimenuitem
+> у дијалогу <menuchoice
+><guimenu
+>Подешавање</guimenu
+><guimenuitem
+>Подеси К‑освајач......</guimenuitem
+></menuchoice
+>, <mousebutton
+>средњи</mousebutton
+> клик на везу отвориће страницу под новим језичком, а ако притом још држите притиснут тастер <keycap
+>Shift</keycap
+>, страница ће бити отворена у позадини.</para>
+
+<para
+><mousebutton
+>Десни</mousebutton
+> клик на језичак дозива мени са следећим опцијама:</para>
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Нови језичак</guimenuitem
+> (<keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>T</keycap
+></keycombo
+>)</term>
+<listitem
+><para
+>Отвара нов, празан приказ странице под језичком. Затим у њега можете преузети веб страницу уносом УРЛ‑а у траку локације или одабиром из траке обележивача.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guimenuitem
+>Удвостручи језичак</guimenuitem
+> (<keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>D</keycap
+></keycombo
+>)</term>
+<listitem
+><para
+>Удвостручите језичак, односно отворите исту страницу под другим језичком.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guimenuitem
+>Учитај поново језичак</guimenuitem
+> (<keycap
+>F5</keycap
+>)</term>
+<listitem
+><para
+>Поново учитава садржај тренутног језичка.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guisubmenu
+>Други језичци</guisubmenu
+></term>
+<listitem
+><para
+>Приказује подмени са свим другим језичцима. Са овог списка можете активирати неки језичак.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><guisubmenu
+>Други језичци</guisubmenu
+><guimenuitem
+>Учитај поново све језичке</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+><keycap
+>Shift</keycap
+><keycap
+>F5</keycap
+></keycombo
+>)</term>
+<listitem
+><para
+>Поново учитава садржај сваког језичка.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><guisubmenu
+>Други језичци</guisubmenu
+><guimenuitem
+>Затвори друге језичке</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Затворите све осим изабраног језичка.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guimenuitem
+>Откачи језичак</guimenuitem
+> (<keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>Shift</keycap
+><keycap
+>B</keycap
+></keycombo
+>)</term>
+<listitem
+><para
+>Уклања страницу под језичком из тренутног прозора <application
+>К‑освајача</application
+> и отвара је у новом примерку <application
+>К‑освајача</application
+>.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guimenuitem
+>Затвори језичак</guimenuitem
+> (<keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>W</keycap
+></keycombo
+>)</term>
+<listitem
+><para
+>Затворите изабрану страницу под језичком.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect1>
+
+<sect1 id="enhanced-browsing">
+<title
+>Веб пречице</title
+> 
+
+<para
+><application
+>К‑освајач</application
+> поседује могућност <emphasis
+>веб пречица</emphasis
+>, којима ако су укључене, можете прослеђивати упити директно претраживачу или сличном веб сајту, без потребе да претходно одете на сајт.</para
+> <para
+>На пример, уписом <userinput
+>gg:konqueror</userinput
+> у траку локације и притиском на <keycap
+>Enter</keycap
+> затражићете Гуглу да потражи странице у вези с <application
+>К‑освајачем</application
+>.</para>
+<para
+>Да погледате расположиве веб пречице, можда и додате неку своју, отворите модул <ulink url="help:/kcontrol/webshortcuts/"
+>„веб пречице“</ulink
+> под категоријом <guilabel
+>Радни простор</guilabel
+> у Системским поставкама.</para>
+
+</sect1>
+
+<sect1 id="accesskeys">
+
+<title
+>Приступни тастери</title>
+
+<para
+><application
+>К‑освајач</application
+> пружа пуну подршку за ХТМЛ атрибут <sgmltag class="attribute"
+>accesskey</sgmltag
+> у формуларима и везама. Приступни тастери допуштају вам да користите тастатуру за функције које би се нормално изводиле мишем, као што је праћење веза. Предност овога је, сасвим просто, што корисници могу саобраћати са страницом уређајима без показивача.</para>
+<para
+>Ова могућност мора да се укључи попуњавањем кућице <guilabel
+>Активација приступних тастера тастером Ctrl</guilabel
+> на страници поставки <guilabel
+>Прегледање Веба</guilabel
+>.</para>
+<para
+>Да активирате приступне тастере у <application
+>К‑освајачу</application
+>, притисните и пустите <keycap
+>Ctrl</keycap
+>. Кад се ово учини, ако дата веза на веб сајту садржи атрибут <sgmltag class="attribute"
+>accesskey</sgmltag
+>, изнад ње би требало да се појаве знакови који указују шта треба притиснути да се испрати. Тада можете откуцати наведене знакове уместо кликтања мишем на везу. Да искључите једном активиране приступне тастере, опет притисните <keycap
+>Ctrl</keycap
+>.</para>
+
+<note
+><para
+>Правилно коришћење ове могућности изискује да је дизајнер веб странице, користећи атрибут <sgmltag class="attribute"
+>accesskey</sgmltag
+>, доделио приступни тастер одређеној вези. Многи веб дизајнери не укључују <sgmltag class="attribute"
+>accesskey</sgmltag
+> у своје везе и формуларе, те ће, последично, за такву веб страницу ова могућност бити неупотребљива.</para
+></note>
+
+</sect1>
+
+<sect1 id="useragent">
+<title
+>Идентификација прегледача</title>
+<para
+>Кад се <application
+>К‑освајач</application
+> повезује на веб сајт, шаље нешто сажетих података за идентификацију прегледача, познатих као ниска „корисничког агента“. Многи веб сајтови користе ове податке за прилагођавање страница које шаљу назад, већ према врлинама и манама разних прегледача.</para>
+<para
+>Нажалост, неки лоше дизајнирани сајтови одбијају сарадњу ако користите прегледач који сајт не препознаје као „добар“, без обзира на то што <application
+>К‑освајач</application
+>, кад му се пружи прилика, ради задовољавајуће са великом већином веб страница.</para>
+<para
+>Овај проблем можете решити тако што измените податке за идентификацију прегледача које <application
+>К‑освајач</application
+> шаље одређеним сајтовима или доменима, у модулу <ulink url="help:/kcontrol/useragent/"
+>„Идентификација прегледача“</ulink
+> под категоријом <guilabel
+>Мрежа</guilabel
+> у Системским поставкама.</para>
+<note
+><para
+>До проблема с радом веб странице такође може доћи због употребе јаве или <application
+>јаваскрипта</application
+> на њима. Ако сумњате да би то могао бити случај, проверите да ли су укључени у одељку <guilabel
+>Јава и јаваскрипт</guilabel
+> дијалога за подешавање.</para
+></note>
+<!--FIXME not ported to kf5
+<note
+><para
+>Install the <guilabel
+>UserAgent Changer</guilabel
+> extension from the 
+&konqueror; Plugins and enable it in <menuchoice
+><guimenu
+>Settings</guimenu
+><guimenuitem>
+Configure Extensions</guimenuitem
+></menuchoice
+>. This extension adds a 
+<guimenuitem
+>Change Browser Identification</guimenuitem
+> item to the <guimenu
+>Tools</guimenu
+> 
+menu. Using this item lets you quickly switch between different <quote
+>User Agent</quote
+> 
+strings.</para
+></note>
+-->
+</sect1>
+
+<sect1 id="save-print-web">
+<title
+>Уписивање и штампање ставки са Веба</title>
+
+<para
+>Кад гледате веб страницу, можете је сачувати (или барем њен основни ХТМЛ или други изворни текст) на локални диск помоћу <menuchoice
+><guimenu
+>Фајл</guimenu
+><guimenuitem
+>Сачувај као...</guimenuitem
+></menuchoice
+>. Ако страница садржи оквире, биће доступна и ставка <menuchoice
+><guimenu
+>Фајл</guimenu
+><guimenuitem
+>Сачувај оквир као...</guimenuitem
+></menuchoice
+>. Кликните <mousebutton
+>левим</mousebutton
+> у оквир који прво желите да сачувате.</para>
+
+<para
+>Ако страница користи позадинску слику, можете је захватити и сачувати ставком <menuchoice
+><guimenu
+>Фајл</guimenu
+><guimenuitem
+>Сачувај позадинску слику као...</guimenuitem
+></menuchoice
+>.</para>
+
+<para
+>Али ако желите само ту углађену слику најновијег „ферарија“, онда ће вам <mousebutton
+>десни</mousebutton
+> клик на њу дати мени са ставком <guimenuitem
+>Сачувај слику као...</guimenuitem
+>. Припазите да овиме не кршите ауторска права аутора, и затражите дозволу пре него што овако сачуване слике употребите за било шта друго до да их са задовољством гледате.</para>
+
+<para
+>Ако кликнете <mousebutton
+>десним</mousebutton
+> на везу (која може бити и слика) и одаберете <guimenuitem
+>Сачувај везу као...</guimenuitem
+> из искачућег менија, основни ХТМЛ, или сличан изворни текст, биће преузет и сачуван на локални диск.</para>
+
+<para
+><mousebutton
+>Десни</mousebutton
+> клик на везу (која може бити и слика) и одабир <guimenuitem
+>Копирај адресу везе</guimenuitem
+> копираће УРЛ везе у клипборд, тако да га можете налепити, рецимо, у е‑пошту пријатељици, да је обавестите о том новом, дивном сајту.</para>
+
+<para
+><mousebutton
+>Десни</mousebutton
+> клик на слику и одабир <guimenuitem
+>Копирај локацију слике</guimenuitem
+> копира УРЛ слике у клипборд.</para>
+
+<para
+>Да сачувате веб страницу у целости, са свим сликама, изаберите <guimenuitem
+>Архивирај веб страницу...</guimenuitem
+> из менија <guimenu
+>Алатке</guimenu
+>. Имајте у виду да ову могућност обезбеђује <link linkend="konq-plugin"
+>прикључак</link
+>, који можда није инсталиран на вашем систему. Страница ће бити сачувана као један фајл, са наставком <literal role="extension"
+>.war</literal
+>, и може се отворити <mousebutton
+>левим</mousebutton
+> кликом на име фајла док <application
+>К‑освајач</application
+> ради у режиму менаџера фајлова.</para>
+
+<para
+>Копију странице коју гледате лако можете одштампати помоћу ставке менија <menuchoice
+><guimenu
+>Фајл</guimenu
+> <guimenuitem
+>Штампај...</guimenuitem
+></menuchoice
+> (или <guimenuitem
+>Штампај оквир...</guimenuitem
+>), или дугметом <guiicon
+>Штампај</guiicon
+> на траци алатки.</para>
+
+</sect1>
+
+<sect1 id="ftp">
+<title
+>ФТП</title>
+
+<para
+>ФТП (протокол за пренос фајлова) један је од најранијих, и можда још увек и најбољи начин преноса фајлова између рачунара на Интернету.</para>
+
+<para
+>Преко ФТП‑а можете гледати фајлове и фасцикле на удаљеним рачунарима баш као да су на вашем сопственом систему, преузимати их на свој рачунар уобичајеним превлачењем или копирањем и налепљивањем у <application
+>К‑освајачу</application
+>, и, ако је дозвољено, отпремати фајлове са свог рачунара на фајл системе других рачунара. Да ово испробате, унесите УРЛ</para>
+
+<screen
+><userinput
+>ftp://ftp.l10n.kde.org</userinput
+>
+</screen>
+
+<para
+>у траку локације и притисните <keycap
+>Enter</keycap
+>. Ако сте повезани на Интернет, требало би да добијете приказ фасцикле <filename class="directory"
+>ftp</filename
+> на КДЕ‑овом серверу локализације.</para>
+
+<note
+><para
+>Мада би, строго говорећи, ФТП УРЛ‑ови требало да се уносе са <userinput
+>ftp://</userinput
+> на почетку,  а веб УРЛ‑ова са <userinput
+>http://</userinput
+>, <application
+>К‑освајач</application
+> обично и без тога може да погоди на шта се мислило, те умеће ове префиксе уместо вас када их испустите.</para
+></note>
+
+<para
+>Кад приступате ФТП сајту, често ће тражити од вас неки вид корисничког имена и лозинка. Да би поједноставили ствари, многи ФТП сајтови који нуде фајлове за слободно преузимање, прихватиће као корисничко име ниску <systemitem class="username"
+>anonymous</systemitem
+> и вашу адресу е‑поште као лозинку; да би вам још више олакшао живот, <application
+>К‑освајач</application
+> ће их аутоматски попунити за вас. </para>
+
+<note
+><para
+>Ако покушате да приступите ФТП сајту који не тражи корисничко име и лозинку, али који је сувише заузет да би прихватио додатна повезивања, <application
+>К‑освајач</application
+> често протумачи поруку о заузећу као захтев за име и лозинку, па вам избаци дијалог тражећи да их попуните.</para
+></note>
+
+<para
+>Сајтови који више брину о безбедности захтеваће исправно корисничко име и лозинку, у ком случају ће вам их <application
+>К‑освајач</application
+> затражити. Корисничко име такође можете укључити у УРЛ, док га уписујете у траку локације, нпр.</para>
+
+<screen
+><userinput
+>ftp://<replaceable
+>korisnik</replaceable
+>@ftp.l10n.kde.org</userinput
+>
+</screen>
+
+<para
+><application
+>К‑освајач</application
+> ће вам потом затражити само лозинку.</para>
+
+<para
+><application
+>К‑освајач</application
+> такође подржава аутоматска пријављивања, задата у фајлу <filename
+>.netrc</filename
+>. Детаљи о томе како да укључите ову могућност дати су на <ulink url="https://konqueror.org/faq/#DoesKonquerorsupportautomaticftploginsvianetrcfiles"
+>https://konqueror.org/faq/#DoesKonquerorsupportautomaticftploginsvianetrcfiles</ulink
+></para>
+
+</sect1>
+
+<sect1 id="portnumbers">
+<title
+>УРЛ‑ови са бројевима порта</title>
+<para
+>Ако у УРЛ‑у задате број порта, на пример <userinput
+>http://intranet.firma.co.rs:1080</userinput
+>, можете добити поруку о грешци попут <foreignphrase
+>Access to restricted port in POST denied</foreignphrase
+>. До овога долази из безбедносних разлога. Ако ипак морате да приступите серверу на овом порту, просто додајте ред <screen
+><userinput>
+OverridenPorts=CommaSeparatedListOfAllowedPorts
+</userinput
+></screen
+> у <filename
+>kio_httprc</filename
+> у фасцикли <filename class="directory"
+>$(qtpaths --paths GenericConfigLocation)</filename
+>.</para>
+<para
+>На пример <screen
+><userinput
+>OverridenPorts=23,15
+</userinput
+></screen
+> (не треба да садржи ниједан размак).</para>
+<para
+><application
+>К‑освајач</application
+> ће одбијати следеће портове:</para>
+<para
+>1, 7, 9, 11, 13, 15, 17, 19, 20, 21, 22, 23, 25, 37, 42, 43, 53, 77, 79, 87, 95, 101, 102, 103, 104, 109, 110, 111, 113, 115, 117, 119, 123, 135, 139, 143, 179, 389, 512, 513, 514, 515, 526, 530, 531, 532, 540, 556, 587, 601, 989, 990, 992, 993, 995, 1080, 2049, 4045, 6000, 6667  </para>
+</sect1>
+
+</chapter>
+
+<chapter id="path-complete">
+
+<chapterinfo>
+<authorgroup>
+<author
+><personname
+><firstname
+>Памела</firstname
+> <surname
+>Робертс</surname
+></personname
+></author>
+<othercredit role="translator"
+><firstname
+>Драган</firstname
+><surname
+>Пантелић</surname
+><affiliation
+><address
+><email
+>falcon-10@gmx.de</email
+></address
+></affiliation
+><contrib
+>превод</contrib
+></othercredit
+> 
+</authorgroup
+> 
+
+</chapterinfo>
+
+
+<title
+>Самодопуна текста</title
+> 
+
+<para
+>Можете подесити <application
+>К‑освајач</application
+> да помаже док уносите УРЛ у траку локације, укључивањем могућности <emphasis
+>самодопуне</emphasis
+> текста. Кликните <mousebutton
+>десним</mousebutton
+> на празан део поља за унос траке локације, па одаберите из искачућег менија <guisubmenu
+>Допуна текста</guisubmenu
+>. Биће вам понуђен избор следеће две опције:</para>
+
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>никако</guimenuitem
+></term>
+<listitem
+><para
+>Добијате оно што уписујете.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>ручно</guimenuitem
+></term>
+<!-- in 4.5 I see no diff to None -->
+<listitem
+><para
+>Кад сте уписали део путање или УРЛ‑а, притисак на <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>E</keycap
+></keycombo
+> или <keycap
+>Tab</keycap
+> допуниће унос ако је то могуће учинити недвосмислено.</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>аутоматски</guimenuitem
+></term>
+<listitem
+><para
+>Док пишете у пољу траке локације, <application
+>К‑освајач</application
+> ће аутоматски проширити дотле написано на једну могућу целу путању или УРЛ, истичући додате знакове. Наставите с уносом ако то није оно што желите, или притисните <keycap
+>Enter</keycap
+> да прихватите понуђену допуну.</para
+></listitem>
+ </varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>падајући списак</guimenuitem
+></term>
+<listitem
+><para
+>Док куцате, појавиће се падајући списак с могућим погоцима за дотле уписано. Кад се жељена путања или УРЛ појаве на списку, кликните <mousebutton
+>левим</mousebutton
+> на ставку. Ставку можете одабрати и тастером <keysym
+>стрелице нагоре</keysym
+> или <keycap
+>Tab</keycap
+>, и <keysym
+>стрелице надоле</keysym
+> или <keycombo action="simul"
+><keycap
+>Shift</keycap
+><keycap
+>Tab</keycap
+></keycombo
+>, па онда притисните <keycap
+>Enter</keycap
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>кратко аутоматски</guimenuitem
+></term>
+<listitem
+><para
+>Попут аутоматског режима, осим што дотле уписано проширује до првог следећег знака <keycap
+>/</keycap
+> у путањи или УРЛ‑у. Притисните <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>E</keycap
+></keycombo
+> или <keycap
+>Tab</keycap
+> да прихватите предлог, а <keycap
+>Enter</keycap
+> кад је довршена цела путања или УРЛ.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>падајући списак и аутоматски</guimenuitem
+></term>
+<listitem
+><para
+>Ово је комбинација обе претходно описане опције.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>подразумевано</guimenuitem
+></term>
+<listitem
+><para
+>Ова ставка је дата на дну подменија, и омогућава вам да вратите подразумевано понашање падајућег списка.</para
+></listitem>
+</varlistentry>
+<!-- Del to end 
+substring completion F7 http://websvn.kde.org/?view=revision&revision=1096306-->
+</variablelist>
+<para
+>Најбоље је да испробате све ове режиме, да утврдите који вам најбоље лежи.</para>
+ <!--
+<para
+>The history of recently visited &URL;s that &konqueror; uses for the 
+Text Completion function can be viewed and edited in the <guilabel
+>History
+</guilabel
+> page of the <link linkend="sidebar"
+>Sidebar</link
+>.</para>
+-->
+</chapter>
+
+<chapter id="bookmarks">
+<chapterinfo>
+<authorgroup>
+<author
+><personname
+><firstname
+>Памела</firstname
+> <surname
+>Робертс</surname
+></personname
+></author>
+<othercredit role="translator"
+><firstname
+>Драган</firstname
+><surname
+>Пантелић</surname
+><affiliation
+><address
+><email
+>falcon-10@gmx.de</email
+></address
+></affiliation
+><contrib
+>превод</contrib
+></othercredit
+> 
+</authorgroup>
+
+</chapterinfo>
+
+<title
+>Коришћење обележивача</title>
+
+<para
+>Мада <application
+>К‑освајачеве</application
+> обележиваче можете користити за памћење локација личних фајлова и фасцикли, најкориснији су кад претражујете Веб, за састављање списка корисних сајтова.</para>
+
+<para
+>Мени <guimenu
+>Обележивачи</guimenu
+> отварате <mousebutton
+>левим</mousebutton
+> кликом на наслов менија. Пошто се списак развије, кроз њега се можете кретати стрелицама или мишем, па притиснути <keycap
+>Enter</keycap
+> или кликнути <mousebutton
+>левим</mousebutton
+> да посетите изабрану локацију.</para>
+
+<para
+>За додавање нове ставке списку, користите <menuchoice
+><guimenu
+>Обележивачи</guimenu
+><guimenuitem
+>Додај обележивач</guimenuitem
+></menuchoice
+>, или <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>B</keycap
+></keycombo
+>, или кликните <mousebutton
+>десним</mousebutton
+> на празан простор на веб страници (или у приказу фасцикле) и из искачућег менија одаберите <guimenuitem
+>Обележи ову страницу</guimenuitem
+>.</para>
+
+<para
+>Списак обележивача може садржати потфасцикле са другим обележивачима, а њих можете направити помоћу <menuchoice
+><guimenu
+>Обележивачи</guimenu
+><guimenuitem
+>Нова фасцикла обележивача...</guimenuitem
+></menuchoice
+>. За додавање обележивача у потфасциклу радије него у главни списак, изаберите фасциклу са списка, па употребите ставку <guimenuitem
+>Додај обележивач</guimenuitem
+> у тој фасцикли.</para>
+<!--
+<para
+>You can also access your bookmarks from the <link linkend="sidebar">
+<guilabel
+>Sidebar</guilabel
+></link
+> or from the <guilabel
+>Bookmark Toolbar</guilabel
+>.</para>
+-->
+<para
+>Ако унесете <userinput
+>bookmarks:</userinput
+> у траку локације, појавиће се домаћа страница обележивача са прегледом свих обележивача по фасциклама.</para
+> 
+
+<para
+>Обележиваче можете уређивати помоћу <ulink url="help:/keditbookmarks/index.html"
+>уређивача обележивача</ulink
+>. </para>
+
+</chapter>
+<!--FIXME sidebar is empty https://bugs.kde.org/show_bug.cgi?id=366762
+update chapter + take new screenshot dirtree.png when fixed
+comment for now
+
+https://cgit.kde.org/konqueror.git/commit/?id=886b1a9947f578e8cedd96b903ab39eba0a3990c
+disable sidebar subdir, the concept will have to be rethought
+
+<chapter id="sidebar">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<! - - TRANS:ROLES_OF_TRANSLATORS - ->
+</authorgroup>
+
+</chapterinfo>
+
+<title
+>The Sidebar</title>
+
+<para
+>The Sidebar appears as a separate view at the left of 
+&konqueror;'s window. It can be invoked with <menuchoice
+><guimenu
+>Settings
+</guimenu
+><guimenuitem
+>Show Sidebar</guimenuitem
+></menuchoice
+> or 
+toggled on and off with the <keycap
+>F9</keycap
+> key.</para>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="dirtree.png"/></imageobject>
+<textobject>
+<phrase
+>With the Sidebar</phrase
+>  
+</textobject>
+</mediaobject>
+
+<para
+>It contains a number of tabbed pages; <mousebutton
+>left</mousebutton
+> 
+click on a tab's icon to view that page. <mousebutton
+>Left</mousebutton
+> 
+clicking on the icon for the visible page will collapse the Sidebar 
+so that only the tab icons are visible.</para>
+<variablelist>
+
+<varlistentry>
+<term
+><guilabel
+>Bookmarks</guilabel
+></term>
+<listitem
+><para
+>This page shows a tree view of your Bookmarks. <mousebutton>
+Left</mousebutton
+> click on an item to open it in the main view.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>History</guilabel
+></term>
+<listitem
+><para
+>This page shows a tree view of your browsing History. 
+<mousebutton
+>Left</mousebutton
+> clicking on an item will open it in the main 
+view, or you can open it in a new &konqueror; window by <mousebutton
+>right
+</mousebutton
+> clicking and selecting <guimenuitem
+>Open in New Window</guimenuitem
+> 
+from the pop up menu.</para>
+<para
+>You can remove an item from the history by <mousebutton
+>right
+</mousebutton
+> clicking on it and selecting <guimenuitem
+>Remove Entry</guimenuitem
+>. 
+Selecting <guimenuitem
+>Clear History</guimenuitem
+> will 
+clear out the entire history.</para>
+<para
+>The pop up menu you get when you <mousebutton
+>right</mousebutton
+> click 
+on any entry in the History page also gives you the option of choosing 
+whether the entire history is sorted by name or by date.</para>
+<para
+>Selecting <guimenuitem
+>Preferences...</guimenuitem
+> from this pop up 
+menu brings up the <guilabel
+>History Sidebar</guilabel
+> control module. This 
+can be used to set the maximum size of your history and set a time after which 
+items are automatically removed. You can also set different fonts for new and 
+old &URL;s. 
+The <guilabel
+>Detailed tooltips</guilabel
+> checkbox controls how much 
+information is displayed when you hover the mouse pointer over an item in the 
+history page.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Home Folder</guilabel
+></term>
+<listitem
+><para
+>This page shows a tree view of the subfolders of your home 
+folder. Note that <quote
+>hidden</quote
+> folders (those with names 
+beginning with a dot) are not shown.
+<mousebutton
+>Left</mousebutton
+> click on an item to open it in the 
+main view, or <mousebutton
+>right</mousebutton
+> click to display a pop up 
+menu allowing you to open the subfolder in a new window or as a new tab 
+page of the main view.
+</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Network</guilabel
+></term>
+<listitem
+><para
+>This page is intended to show a tree view of your important 
+network connections, although local folders can also be included. Again, 
+you can <mousebutton
+>left</mousebutton
+> click on an item to open it in the 
+main view or <mousebutton
+>right</mousebutton
+> click to bring up a menu with 
+a wider range of possibilities.</para>
+<para
+>The folders shown in the <guilabel
+>Network</guilabel
+> page are held in 
+the folder <filename class="directory">
+~/.kde/share/apps/konqsidebartng/virtual_folders/remote/</filename
+>, and you can make 
+new ones just as you would make any other subfolder. The items within 
+these folders are held as <literal role="extension"
+>.desktop</literal
+> files 
+and can be created with &konqueror;'s <menuchoice
+><guisubmenu
+>Create New</guisubmenu>
+<guimenuitem
+>Link to Location (URL)...</guimenuitem
+></menuchoice
+> option in the 
+<guimenu
+>Edit</guimenu
+> menu.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Root Folder</guilabel
+></term>
+<listitem
+><para
+>The <guilabel
+>Root Folder</guilabel
+> tree has the path <filename
+class="directory"
+>/</filename
+>, and is the base folder of your system's
+local files. If you expand the <quote
+>Root</quote
+> folder you will find 
+another folder called <filename class="directory"
+>root</filename
+>. This 
+belongs to the system administrator or Super User and is her home folder. 
+You will also find a folder called 
+<filename class="directory"
+>home</filename
+>, in which you should be able to 
+find your own <quote
+>Home</quote
+> folder again.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Services</guilabel
+></term>
+<listitem
+><para
+>This page provides quick access to the following services:
+</para>
+<para
+><guilabel
+>Applications</guilabel
+>, <guilabel
+>Audio CD Browser</guilabel
+>, 
+<guilabel
+>Fonts</guilabel
+> and <guilabel
+>Video DVD Browser</guilabel
+>.</para>
+</listitem>
+</varlistentry>
+<!- - Different in dolphin + filedialog- ->
+<varlistentry>
+<term
+><guilabel
+>Places</guilabel
+></term>
+<listitem
+><para>
+The <guilabel
+>Places</guilabel
+> panel is located at the left of the window by
+default. The <guilabel
+>Places</guilabel
+> panel shows any locations you have
+bookmarked. It also shows any disk or media attached to the computer.
+</para>
+<para>
+The easiest way to add a folder to the <guilabel
+>Places</guilabel
+> panel is to
+drag it and drop it in the panel. Moreover, you can click inside the panel with
+the &RMB; and choose <menuchoice
+><guimenuitem
+>Add Entry...</guimenuitem
+></menuchoice>
+from the context menu.
+</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>The Sidebar configuration can be changed by <mousebutton
+>right
+</mousebutton
+> clicking on the empty area below the bottom tab icon or by 
+<mousebutton
+>left</mousebutton
+> clicking on the <guilabel
+>Configuration 
+Button</guilabel
+> icon, which is enabled in the context menu. Doing this
+brings up a menu with the following options:</para>
+<variablelist>
+
+<varlistentry>
+<term
+><guisubmenu
+>Add New</guisubmenu
+></term>
+<listitem
+><para
+>This option lets you add a new tab page to the Sidebar. 
+The new page can contain different Sidebar modules or a new
+<guimenuitem
+>Folder</guimenuitem
+> tree view. The last option in this
+submenu allows you to rollback to system default.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Multiple Views</guimenuitem
+></term>
+<listitem
+><para
+>Selecting this option splits the Sidebar so that 
+two tab pages can be seen at once.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Show Tabs Left</guimenuitem
+>, <guimenuitem
+>Show Tabs Right</guimenuitem
+></term>
+<listitem
+><para
+>This option lets you choose whether the tab icons are shown at 
+the left or right of the Sidebar.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Show Configuration Button</guimenuitem
+></term>
+<listitem
+><para
+>Use this option to show or hide the <guilabel
+>Configuration 
+Button</guilabel
+> icon.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+><mousebutton
+>Right</mousebutton
+> clicking on a tab icon brings up a 
+menu with the following options:</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guimenuitem
+>Set Name</guimenuitem
+></term>
+<listitem
+><para
+>This option lets you 
+change the Name of that page.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Set URL</guimenuitem
+></term>
+<listitem
+><para
+>This option lets you 
+change the &URL; (path) of the folder viewed in that page.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Set Icon</guimenuitem
+></term>
+<listitem
+><para
+>To change the tab icon.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Remove</guimenuitem
+></term>
+<listitem
+><para
+>To remove the tab page from the Sidebar.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Configure Sidebar</guimenuitem
+></term>
+<listitem
+><para
+>The last item shows the Sidebar configuration submenu
+as described above.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</chapter>
+-->
+<chapter id="save-settings">
+
+<chapterinfo>
+<authorgroup>
+<author
+><personname
+><firstname
+>Памела</firstname
+> <surname
+>Робертс</surname
+></personname
+></author>
+<othercredit role="translator"
+><firstname
+>Драган</firstname
+><surname
+>Пантелић</surname
+><affiliation
+><address
+><email
+>falcon-10@gmx.de</email
+></address
+></affiliation
+><contrib
+>превод</contrib
+></othercredit
+> 
+</authorgroup>
+
+</chapterinfo>
+
+<title
+>Уписивање поставки</title>
+<para
+>За поједине фасцикле можете задати засебне поставке менија <guimenu
+>Приказ</guimenu
+>. Да ово урадите, идите на <menuchoice
+><guimenu
+>Приказ</guimenu
+> <guimenuitem
+>Подеси својства приказа...</guimenuitem
+></menuchoice
+> и измените поставке приказа по жељи. Затим примените својства приказа на текућу фасциклу, што ће у њој створити фајл <filename
+>.directory</filename
+> који ће садржати поставке. Поставке посебне по фасцикли уклањате или исто у овом дијалогу, или простим брисањем фајла <filename
+>.directory</filename
+>.</para>
+<note
+><para
+>Згодна употреба ове могућности је када имате фасциклу пуну слика. За њу можете поставити да се приказују сличице кад је отворите (преко <menuchoice
+><guisubmenu
+>Начин приказа</guisubmenu
+> <guimenuitem
+>Иконице</guimenuitem
+></menuchoice
+> и <guimenuitem
+>Преглед</guimenuitem
+> у менију <guimenu
+>Приказ</guimenu
+>), а да то не важи за остале фасцикле.</para
+></note>
+
+</chapter>
+
+<chapter id="plugins">
+
+<chapterinfo>
+<authorgroup>
+<author
+><personname
+><firstname
+>Памела</firstname
+> <surname
+>Робертс</surname
+></personname
+></author>
+<othercredit role="translator"
+><firstname
+>Драган</firstname
+><surname
+>Пантелић</surname
+><affiliation
+><address
+><email
+>falcon-10@gmx.de</email
+></address
+></affiliation
+><contrib
+>превод</contrib
+></othercredit
+> 
+</authorgroup>
+
+</chapterinfo>
+
+
+<title
+>Прикључци</title>
+
+<!-- 
+adblock from baseapps+extragear
+Show all blockable html elements
+
+akregator
+This works on KHTMLPart and allows you to add feeds to Akregator directly from Konqueror.
+
+konq plugins in other modules
+kdeutils 
+  filelight
+  ark?
+
+kdebase apps
+  kttsdplugin (browser mode ?)
+  shellcmdplugin (file manager mode)
+  
+kdenetwork
+  Download Manager kget (browser mode)
+
+kdepim
+  Konqueror Feed Icon akregator
+  
+extragear/network
+  Konqueror Choqok Plugin
+
+extragear/base
+  Nepomuk-Webminer Plugin
+
+playground/utils  
+  Userscript (Grease Monkey) Support khtml_userscript
+-->
+
+<sect1 id="konq-plugin">
+<title
+><application
+>К‑освајачеви</application
+> прикључци</title>
+
+<para
+>Издања КДЕ‑а садрже неке корисне прикључке који се уклапају у <application
+>К‑освајач</application
+> на различите начине. Укратко су представљени у наредном.</para>
+
+<para
+>Употребите <menuchoice
+><guimenu
+>Подешавање</guimenu
+><guimenuitem
+>Подеси проширења...</guimenuitem
+></menuchoice
+> да отворите дијалог са свим инсталираним прикључцима и изаберете оне које желите. Свим прикључцима може се приступити кроз мени <guimenu
+>Алатке</guimenu
+>.</para>
+
+<para
+>У дијалогу ће бити набројани само прикључци који одговарају тренутном режиму (менаџер фајлова или прегледач преко КХТМЛ‑а/КуТ‑вебенџина).</para>
+
+<variablelist>
+<title
+>Режим прегледача</title>
+<!-- 
+FIXME 16.12
+KHTML:  Auto Refresh, HTML Settings, Minitools-Bookmarklets, Translate (disabled), DOM Tree Viewer, Document Relations, Web Archiver, Website Validators, Search Bar
+kwebkitpart for kf5 in extragear/base in branch frameworks
+WebKit only HTML Settings and Translate (disabled)
+WebEngine -> no extensions
+-->
+<varlistentry
+> <!-- disabled here, why?-->
+<term
+>превод веб странице</term>
+<listitem
+><para
+>Користи сервис машинског превођења <ulink url="http://translate.google.com/"
+>Гуглов преводилац</ulink
+> да преведе текућу ХТМЛ страницу на било који од понуђених језика. Може се покренути помоћу <menuchoice
+><guimenu
+>Алатке</guimenu
+><guisubmenu
+>Преведи веб страницу</guisubmenu
+></menuchoice
+>.</para>
+<para
+>Ако изаберете део текста на страници, биће преведен само тај део уместо целог УРЛ‑а.</para>
+
+<important>
+<para
+>Машинско превођење није савршено! Гугл ће у најбољем случају дати груб превод, а у најгорем нешто потпуно смешно. Немојте доносити важне одлуке према ономе што сте прочитали са странице преведене Гуглом, већ претходно обавезно потврдите тачност превода.</para>
+</important>
+
+<note
+> 
+<para
+>Целе веб странице се могу преводити само када су доступне преко Веба. За било шта друго, идите директно на сајт Гугла и тамо налепите текст који желите да преведете.</para>
+</note>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>приказивач ДОМ стабла (само преко КХТМЛ‑а)</term>
+<listitem>
+<para
+>Приказивач ДОМ стабла омогућава програмеру да прикаже стилове, атрибуте и елементе веб документа.</para>
+<para
+>Избор <menuchoice
+><guimenu
+>Алатке</guimenu
+><guisubmenu
+>Прикажи ДОМ стабло</guisubmenu
+></menuchoice
+> отвара нови прозор са објектним моделом документа (ДОМ‑ом) текуће ХТМЛ странице.</para>
+<para
+>Подразумевано приказ почиње од кореног чвора документа, на пример <literal
+>documentElement</literal
+>. Сви остали видљиви чворови или су деца или потомци кореног.</para>
+<para
+>Ако желите да измените ДОМ стабло, мораћете за то да употребите неку спољашњу скрипту.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>валидатор веб странице (само преко КХТМЛ‑а)</term>
+<listitem>
+<para
+>Овај прикључак користи В3Ц‑ов оверивач ХТМЛ‑а да овери текућу страницу, што је врло корисно при изради веб страница.</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guimenuitem
+>Овери ХТМЛ (преко УРИ‑ја)</guimenuitem
+> и <guimenuitem
+>Овери ХТМЛ (отпремањем)</guimenuitem
+></term>
+<listitem
+><para
+>Опција овере ХТМЛ‑а омогућава вам да упоредите свој ХТМЛ документ са прописаном синтаксом ХТМЛ‑а и добијете извештај о евентуалним грешкама. Овером обезбеђујете да се ваше веб странице правилно виде у свим прегледачима.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Овери ЦСС (преко УРИ‑ја)</guimenuitem
+></term>
+<listitem
+><para
+>Омогућава вам да оверите ЦСС опис стила угнежђен у ХТМЛ или ИксХТМЛ документу. Правилан ЦСС је кључан за одржавање усаглашеног изгледа вашег веб сајта без обзира на прегледач којим му се приступа.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Овери везе</guimenuitem
+></term>
+<listitem
+><para
+>Потврдите да међу везама на вашем сајту нема преусмеравања нити прекинутих веза. Ова алатка рекурзивно проверава све везе на сајту.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Овери страницу</guimenuitem
+></term>
+<listitem
+><para
+>Оверава текућу страницу али без приказа резултата у другом прозору или језичку, као што то чине претходне радње. Употребом ове ставке активирате радњу <guimenuitem
+>Прикажи извештај оверивача</guimenuitem
+> која даје сажетак оверавања.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Подеси оверивач...</guimenuitem
+></term>
+<listitem
+><para
+>Овом ставком можете погледати и подесити претподешене овериваче којим оверавате свој ХТМЛ и ЦСС</para
+></listitem>
+</varlistentry>
+</variablelist>
+</listitem>
+<!--FIXME icon W3 right in statusbar
+&LBM; click context menu with items above but no Configure Validator
+ -->
+</varlistentry>
+
+<varlistentry>
+<term
+>ХТМЛ поставке (преко КХТМЛ‑а)</term>
+<listitem
+><para
+>Изаберите <menuchoice
+><guimenu
+>Алатке</guimenu
+><guisubmenu
+>ХТМЛ поставке</guisubmenu
+></menuchoice
+> да укључите и искључите разне поставке ХТМЛ‑а без посезања у дијалог за подешавање. </para>
+<variablelist>
+<varlistentry>
+<term
+><guimenuitem
+>Јаваскрипт</guimenuitem
+></term>
+<listitem
+><para
+>Укључите или искључите употребу <application
+>јаваскрипта</application
+> у <application
+>К‑освајачу</application
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Јава</guimenuitem
+></term>
+<listitem
+><para
+>Укључите или искључите употребу <application
+>јаваскрипта</application
+> у <application
+>К‑освајачу</application
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Колачићи</guimenuitem
+></term>
+<listitem
+><para
+>Укључите или искључите употребу колачића у <application
+>К‑освајачу</application
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Прикључци</guimenuitem
+></term>
+<listitem
+><para
+>Укључите или искључите употребу инсталираних прикључака у <application
+>К‑освајачу</application
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Самоучитавање слика</guimenuitem
+></term>
+<listitem
+><para
+>Укључите или искључите учитавање слика на веб страницама.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Укључи прокси</guimenuitem
+></term>
+<listitem
+><para
+>Активирајте или деактивирајте употребу проксија у <application
+>К‑освајачу</application
+> као прегледачу.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Укључи кеш</guimenuitem
+></term>
+<listitem
+><para
+>Активирајте или деактивирајте употребу кеша у <application
+>К‑освајачу</application
+> као прегледачу.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Понашање кеша</guimenuitem
+></term>
+<listitem>
+<para
+>Подмени <guimenu
+>Понашање кеша</guimenu
+> омогућава вам да подесите како <application
+>К‑освајач</application
+> користи кеш. Могућности су:</para>
+<itemizedlist>
+<listitem
+><para
+><guimenuitem
+>Одржавај кеш синхронизованим</guimenuitem
+></para
+></listitem>
+<listitem
+><para
+><guimenuitem
+>Користи кеш ако је могуће</guimenuitem
+></para
+></listitem>
+<listitem
+><para
+><guimenuitem
+>Режим претраживања ван везе</guimenuitem
+></para
+></listitem>
+</itemizedlist>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</listitem>
+</varlistentry>
+<!--FIXME not in kf5
+<varlistentry>
+<term
+>User Agent Changer</term>
+<listitem
+><para
+>Select <menuchoice
+><guimenu
+>Tools</guimenu
+><guisubmenu
+>Change
+Browser Identification</guisubmenu
+></menuchoice
+> to get a menu that allows
+you to change the User Agent string without going through the 
+<guimenu
+>Settings</guimenu
+> dialog procedure.
+</para>
+<para
+>The plugin allows you to
+change the Browser and Operating System identification on a
+domain-by-domain basis. This is useful when browsing websites that
+limit access to those using a particular web browser.</para>
+<variablelist>
+<varlistentry>
+<term
+><guimenuitem
+>Default Identification</guimenuitem
+></term>
+<listitem
+><para
+>The default User Agent header for &konqueror; is Mozilla/5.0(compatible;Konqueror/4.7)(KHTML/4.7, like Gecko).  If you come across a site that refuses this browser access, change your User Agent to one of the options below.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Browser submenu</term>
+<listitem
+><para>
+The following menu items show a list of popular browsers such as <guimenuitem
+>Firefox</guimenuitem
+>,
+<guimenuitem
+>Internet Explorer</guimenuitem
+>, <guimenuitem
+>Netscape Navigator</guimenuitem
+>,
+<guimenuitem
+>Opera</guimenuitem
+>, <guimenuitem
+>Other</guimenuitem
+>, and <guimenuitem
+>Safari</guimenuitem
+>.
+</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Apply To Entire Site</guimenuitem
+></term>
+<listitem
+><para
+>This option allows you to specify that the defined User Agent applies across every page on the site you are visiting.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Configure</guimenuitem
+></term>
+<listitem
+><para
+>Selecting <guimenuitem
+>Configure</guimenuitem
+> opens the settings dialog and allows you to fine tune the amount of information you wish to reveal about the browser and operating system being used.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</listitem>
+</varlistentry>
+-->
+<varlistentry>
+<term
+>архивирање веб странице (само преко КХТМЛ‑а)</term>
+<listitem
+><para
+>Позвана помоћу <menuchoice
+><guimenu
+>Алатке</guimenu
+><guisubmenu
+>Архивирај веб страницу...</guisubmenu
+></menuchoice
+>, ова алатка ствара архивски фајл (<literal role="extension"
+>.war</literal
+>) за тренутно приказану веб страницу, укључујући и све слике. Кликните <mousebutton
+>левим</mousebutton
+> на име архивског фајла да прикажете сачувану страну. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>аутоматског освежавање (само преко КХТМЛ‑а)</term>
+<listitem
+><para
+>Ово ради на било којем делу само за читање (иако се тренутно прикључује само у КХТМЛ део). Омогућава вам да задате <application
+>К‑освајачу</application
+> период на који ће аутоматски освежавати страницу. Ово је корисно за странице попут вести, а посебно за оне који користе режим киоска. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>мини‑алатке (само преко КХТМЛ‑а)</term>
+<listitem
+><para
+>Овај прикључак додаје изведбу за тзв. активне обележиваче. То су мали <application
+>јаваскриптни</application
+> програми који се могу сачувати и користити као обични обележивачи веб страница. Тиме се добијају једноставне алатке „на један клик“ које могу додати значајну функционалност прегледачу. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>релације документа (само преко КХТМЛ‑а)</term>
+<listitem
+><para
+>Приказује релације документа. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<variablelist>
+<title
+>Режим менаџера фајлова</title>
+
+<varlistentry>
+<term
+>филтер фасцикли</term>
+<listitem
+><para
+>Овим управљате преко <menuchoice
+><shortcut
+><keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>Shift</keycap
+><keycap
+>I</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Алатке</guimenu
+><guisubmenu
+>Филтерска трака</guisubmenu
+></menuchoice
+>, где можете изабрати по типу ставке које се приказују у фасцикли.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>галерија слика</term>
+<listitem
+><para
+>У режиму менаџера фајлова, можете одабрати <menuchoice
+><guimenu
+>Алатке</guimenu
+><guisubmenu
+>Направи галерију слика...</guisubmenu
+></menuchoice
+> (или притиснути <keycombo
+><keycap
+>Ctrl</keycap
+><keycap
+>I</keycap
+></keycombo
+>) да створите ХТМЛ страницу са сличицама за све слике у текућој фасцикли. Подразумевано име ХТМЛ странице је <filename
+>images.html</filename
+>, а сличице се стављају у нову фасциклу <filename
+>images</filename
+>.</para>
+<para
+>Када покренете прикључак за галерију слика, појавиће се дијалог у коме подешавате начин стварања галерије.</para>
+
+<variablelist id="page_look_dialog">
+<title
+>Изглед странице</title>
+<varlistentry>
+<term
+>Овај дијалог служи за подешавање изгледа странице галерије.</term>
+<listitem>
+  
+<screenshot>
+<screeninfo
+>Снимак екрана дијалога за изглед.</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="look.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Снимак екрана.</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Наслов странице:</guimenuitem
+></term>
+<listitem
+><para
+>Ова опција даје поље у које уносите жељени наслов странице са галеријом слика.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Сликâ по врсти:</guimenuitem
+></term>
+<listitem
+><para
+>Ову опцију чини клизач и бројчаник којим подешавате број сличица по једној врсти у галерији.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Прикажи име фајла слике</guimenuitem
+></term>
+<listitem
+><para
+>Овом кућицом одређујете да ли се виде имена фајлова испод сличица у галерији.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Прикажи величину фајла слике</guimenuitem
+></term>
+<listitem
+><para
+>Овом кућицом одређујете да ли се виде величине фајлова испод сличица у галерији.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Прикажи димензије слике</guimenuitem
+></term>
+<listitem
+><para
+>Овом кућицом одређујете да ли се виде димензије слика испод сличица у галерији.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Име фонта:</guimenuitem
+></term>
+<listitem
+><para
+>Овај падајући списак омогућава бирање фонта који се користи за испис текст у галерији.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Величина фонта:</guimenuitem
+></term>
+<listitem
+><para
+>Овим бројчаником мењате величину изабраног фонта.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Боја исписа:</guimenuitem
+></term>
+<listitem
+><para
+>Ова опција даје бирач боје исписа у галерији, под коју спадају све зоне са текстом.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Боја позадине:</guimenuitem
+></term>
+<listitem
+><para
+>Ова опција даје бирач боје позадине у галерији.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<variablelist id="folders_dialog">
+<title
+>Фасцикле</title>
+<varlistentry>
+<term
+>Кроз дијалог фасцикли бирате где ће галерија бити сачувана. Овде такође можете подесити које се фасцикле користе.</term>
+<listitem>
+  
+<screenshot>
+<screeninfo
+>Снима дијалога фасцикли.</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="folders.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Снимак екрана.</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Сачувај у ХТМЛ фајл:</guimenuitem
+></term>
+<listitem
+><para
+>Бирач фајлова у коме одређујете где ћете сачувати ХТМЛ страницу начињене галерије.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Рекурзивно кроз потфасцикле</guimenuitem
+></term>
+<listitem
+><para
+>Овом кућицом активирате рекурзију кроз потфасцикле. Ако је кућица попуњена, активирају се клизач и бројчаник за избор дубине рекурзије.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Копирај изворне фајлове</guimenuitem
+></term>
+<listitem
+><para
+>Овом кућицом задаје се стварање фасцикле у коју треба копирати изворне слике садржане у галерији.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Употреби фајл са коментарима</guimenuitem
+></term>
+<listitem
+><para
+>Ова кућица позива бирач фајлова ради задавања фајл са коментарима за галерију. Фајл са коментарима садржи поднаслове слике.</para>
+<para
+>Формат овог фајла је:</para>
+<programlisting
+># ово је коментар, редови који почињу са '#' игноришу се
+ИМЕФАЈЛА1:
+Опис
+
+ИМЕФАЈЛА2:
+Опис
+</programlisting>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+<variablelist id="thumbnails_dialog">
+<title
+>Сличице</title>
+<varlistentry>
+<term
+>У дијалогу сличица подешавају се својства сличица у галерији.</term>
+<listitem>
+  
+<screenshot>
+<screeninfo
+>Сниме екрана са дијалогом сличица.</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="thumbnails.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Снимак екрана.</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Формат сличица:</guimenuitem
+></term>
+<listitem
+><para
+>Из овог падајућег списка бирате формат у коме ће сличице бити записане.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Величина сличица:</guimenuitem
+></term>
+<listitem
+><para
+>Ова опција даје клизач и бројчаник за подешавање величине сличица у галерији.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Различита дубина боја:</guimenuitem
+></term>
+<listitem
+><para
+>Ова кућица активира падајући списак за промену дубине боја за сличице, ако желите да буде различита од оне за изворну слику.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>трака претраге</term>
+<listitem
+><para
+>Даје текстуално поље за лак приступ претраживачима попут Гугла. Кликните на иконицу лево од поља да отворите мени из којег можете бирати различите претраживаче и подешавати њихове <ulink url="help:/kcontrol/webshortcuts/index.html"
+>веб пречице</ulink
+>. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>прикључак за наредбе шкољке</term>
+<listitem
+><para
+>Овај прикључак омогућава извршавање наредби шкољке у текућој фасцикли, уз приказ излаза у засебном прозору. </para
+></listitem>
+</varlistentry>
+
+<!--FIXME
+imagerotation context menu Actions -> Convert to -> JPEG,PNG,GIF,TIFF 
+(rotation disabled) always installed
+
+Additional Download Manager from KGet
+-->
+</variablelist>
+
+</sect1>
+
+</chapter>
+
+<chapter id="view-extensions">
+
+<title
+>Проширења режима приказа</title>
+
+<!--filemanager mode:
+default Icons/Details/Compact (Dolphin), File Size View (konq-plugins)
+additional Terminal Emulator (Konsole), (File Replace View (kdewebdev), )Cervisia (kdesdk), SVN Client, Radial Map (Filelight-kdeutils) and more
+browser mode:
+default KHTML, Embedded Advanced Text Editor
+additional KImageMapEditor+KLinkStatusPart (kdewebdev), Okular and more
+  -->
+<para
+><application
+>К‑освајач</application
+> пружа још неке приказе под <menuchoice
+><guimenu
+>Приказ</guimenu
+> <guisubmenu
+>Начин приказа</guisubmenu
+></menuchoice
+> у режиму менаџера фајлова и прегледача, када су инсталирани одговарајући програми и прикључци.</para>
+<para
+>У режиму менаџера фајлова, додатни прикази су <guimenuitem
+>Кружна мапа</guimenuitem
+> из програма <application
+>Фајлајт</application
+> и <guimenuitem
+>Приказ величине фајла</guimenuitem
+> преко <application
+>К‑освајачевог</application
+> прикључка.</para>
+
+<sect1 id="fsview">
+<sect1info>
+<authorgroup>
+<author
+><personname
+><firstname
+>Јозеф</firstname
+> <surname
+>Вајдендорфер</surname
+></personname
+> <email
+>Josef.Weidendorfer@gmx.de</email
+> </author>
+
+</authorgroup>
+
+</sect1info>
+
+<title
+>ФС‑вју — приказ фајл система</title>
+<sect2>
+<title
+>Увод</title>
+
+<para
+>Прикључак ФС‑вју за <application
+>К‑освајач</application
+> пружа још један режим приказа за објекте МИМЕ типа <literal
+>inode/directory</literal
+>, за локалне фајлове. Може се узети као алтернатива разним приказима иконица и спискова при прегледању садржаја локалног фајл система.</para>
+
+<para
+>Јединствено својство ФС‑вјуа је у томе што може да прикаже целе угнежђене хијерархије фасцикли, користећи тзв. мапу стабла за графичку представу. Мапе стабла омогућавају сагледавање метрике објеката у угнежђеним структурама: сваки објекат се представља правоугаоником површине сразмерне метрици. Збир метрика дечијих објеката мора бити једнак или мањи од метрике родитељског.</para>
+
+<para
+>У ФС‑вјуу за метрику се узимају величине фајлова и фасцикли, при чему се величина фасцикле дефинише као збир величина свих њених подставки. Овако се велики фајлови, чак и они дубоко у хијерархији фасцикли, лако могу уочити преко великих  правоугаоника. ФС‑вју се може схватити као графичка и интерактивна варијанта уникс наредбе <command
+>du</command
+>.</para>
+
+<para
+>Уклапање ФС‑вјуа у <application
+>К‑освајач</application
+> омогућава коришћење стандардних могућности, попут контекстних менија над фајловима и радњама осетљивим на МИМЕ типове. Али је одлучено да се промене у фајл систему не надзиру аутоматски: ако изван <application
+>К‑освајача</application
+> обришете фајл приказан у ФС‑вјуу, морате ручно ажурирати приказ, нпр. притиском на <keycap
+>F5</keycap
+>, да бисте видели измену. Ово је због тога што би иначе потенцијално огроман број фајлова морао да буде надзиран, што би могло довести до превеликог трошења ресурса система ради једне споредне могућности.</para>
+
+</sect2>
+
+<sect2>
+<title
+>Могућности визуелизације</title>
+
+<para
+>Овај одељак детаљно описује графичку представу ФС‑вјуа.</para>
+
+<sect3>
+<title
+>Опције исцртавања ставки</title>
+
+<para
+>Ставку у мапи стабла чини један правоугаоник који представља фајл или фасциклу у фајл систему. Ради лакшег кретања, дате су разне опције за бојење и етикетирање правоугаоника.</para>
+
+<para
+>Боја правоугаоника може да се измени помоћу <menuchoice
+><guimenu
+>Приказ</guimenu
+><guisubmenu
+>Режим боја</guisubmenu
+></menuchoice
+>. Боја може или представљати дубину, чиме се лакше сагледава угнежђивање, или неки од атрибута фајла, попут имена, власника, групе или МИМЕ типа.</para>
+
+<para
+>Етикету правоугаоника могу чинити различити атрибути фајла или фасцикле. За сваки атрибут можете изабрати да ли ће се уопште видети, па онда да ли само ако има довољно места или ће се потребан простор одузимати од деце (чиме се нарушава концепција чисте мапе стабла). Поред овога, можете задати и релативну локацију етикете у правоугаонику.</para>
+
+</sect3>
+
+<sect3>
+<title
+>Алгоритми за исцртавање мапе стабла</title>
+
+<para
+>За алгоритме исцртавања мапе стабла треба да важи правило да је површина правоугаоника сразмерна метрици ставке. Код мапа стабла у ФС‑вјуу, ово правило није увек задовољено. На пример, исцртавају се ивице које одузимају нешто простора, што се преноси на губитак простора у дечјим ставкама. (Што је правоугаоник ближи квадрату, то се мање простора губи на ивице.)</para>
+
+<para
+>Слично, за добар преглед боље је да сваки правоугаоник има бар име за етикету. Можете изабрати да се увек резервише довољно простора за етикету, или да се етикете исцртавају само ако има довољно слободног простора. У потоњем случају, помажу вам облачићи који искачу када се миш задржи над ставком. Облачићи приказују податке о ставци, заједно са родитељским фасциклама све до корене ставке мапе стабла.</para>
+
+<para
+>Начин на који се простор ставке дели у подзоне за децу препушта се изведбама. Најбоље је остварити такву поделу у којој има што више правоугаоника блиских квадрату, што због етикета што због мањег губитка простора на ивице. Најбоље методе у овом смислу су по врстама, по колонама и рекурзивна бисекција.</para>
+
+<para
+>Преко ставке менија <menuchoice
+><guimenu
+>Приказ</guimenu
+><guimenuitem
+>Стани на површини</guimenuitem
+></menuchoice
+> можете одредити најмању површину коју ставка мора имати да би била исцртана. Ако ставка садржи неприказане дечије ставке, њен простор биће прошаран да би се указало на то.</para>
+
+</sect3>
+
+</sect2>
+
+<sect2>
+<title
+>Корисничко сучеље</title>
+
+<para
+>ФС‑вју подржава бирање више ставки, слично приказу иконица и списка, тако да неке радње можете извршити истовремено над више фајлова. Један клик мишем увек бира једну ставку под показивачем. Клик мишем уз држање тастера <keycap
+>Shift</keycap
+> бира опсег, док клик уз држање тастера <keycap
+>Ctrl</keycap
+> обрће избор. Када изаберете једну ставку, више не можете изабрати њене подставке. Избор ставке такође ће поништити евентуални претходни избор њених родитељских ставки.</para>
+
+<para
+>Кроз мапу стабла можете се кретати и тастатуром: тастери стрелица <keycap
+>лево</keycap
+> и <keycap
+>десно</keycap
+> премештају текућу ставку између сродника, а стрелице <keycap
+>доле</keycap
+> и <keycap
+>горе</keycap
+> померају кроз хијерархију угнежђивања. <keycap
+>Space</keycap
+> бира ставку, у комбинацији са <keycap
+>Shift‑ом</keycap
+> бира опсег ставки, а са <keycap
+>Ctrl‑ом</keycap
+> обрће изабраност текуће ставке. Притисните <keycap
+>Enter</keycap
+> да извршите радњу отварања над текућом ставком.</para>
+
+</sect2>
+
+<sect2>
+<title
+>Заслуге и лиценца</title>
+<para
+>ФС‑вју је првобитно замишљен као мали пробни програм и подука за употребу виџета <classname
+>TreeMap</classname
+>, развијеног у оквиру <application
+>К‑кешгринда</application
+>.</para>
+<para
+>© <personname
+><firstname
+>Јозеф</firstname
+> <surname
+>Вајдендорфер</surname
+></personname
+>, лиценца ОЈЛ 2.</para>
+</sect2>
+
+</sect1>
+</chapter>
+
+<chapter id="config">
+
+<chapterinfo>
+<authorgroup>
+<author
+><personname
+><firstname
+>Памела</firstname
+> <surname
+>Робертс</surname
+></personname
+></author>
+<othercredit role="translator"
+><firstname
+>Драган</firstname
+><surname
+>Пантелић</surname
+><affiliation
+><address
+><email
+>falcon-10@gmx.de</email
+></address
+></affiliation
+><contrib
+>превод</contrib
+></othercredit
+> 
+</authorgroup>
+
+</chapterinfo>
+
+
+<title
+>Подешавање <application
+>К‑освајача</application
+></title>
+
+<para
+>Као што важи за КДЕ у целини, и <application
+>К‑освајач</application
+> је изузетно подесив, те заиста можете остварити изглед и осећај који најбоље одговара вашим потребама и жељама.</para>
+
+<para
+>У свежој инсталацији КДЕ‑а, прозор <application
+>К‑освајача</application
+> садржи траку менија, главну траку и траку локације, а можда и траку обележивача.</para>
+
+<para
+>За детаље о подешавању трака алатки и пречица погледајте одељке о <ulink url="help:/fundamentals/config.html#toolbars"
+>тракама алатки</ulink
+> и <ulink url="help:/fundamentals/config.html#shortcuts"
+>пречицама</ulink
+> у Основама КДЕ‑а. </para>
+
+<sect1 id="othersettings">
+<title
+>Остале поставке</title>
+<para
+>Ставка <menuchoice
+><guimenu
+>Подешавање</guimenu
+><guimenuitem
+>Подеси К‑освајач...</guimenuitem
+></menuchoice
+> позива дијалог у којем можете управљати већином аспеката понашања <application
+>К‑освајача</application
+>.</para
+> 
+<para
+>Садржи неколико секција које се бирају <mousebutton
+>левим</mousebutton
+> кликом на једну од иконица на левој страни дијалога:</para>
+<itemizedlist>
+<listitem
+><para
+><ulink url="help:/kcontrol/khtml-general/index.html"
+>Опште</ulink
+> — подесите опште понашање <application
+>К‑освајача</application
+></para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/performance/index.html"
+>Перформансе</ulink
+> — подесите поставке за побољшање перформанси <application
+>К‑освајача</application
+></para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/bookmarks/index.html"
+>Обележивачи</ulink
+> — подесите домаћу страницу са обележивачима</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/filemanager/index.html"
+>Управљање фајловима</ulink
+> — подесите како се <application
+>К‑освајач</application
+> понаша у режим менаџер фајлова</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/dolphin/configuring-dolphin.html#preferences-dialog-viewmodes"
+>Начини приказа</ulink
+> — подесите режиме приказа у менаџеру фајлова</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/dolphin/configuring-dolphin.html#preferences-dialog-navigation"
+>Навигација</ulink
+> — подесите кретање у менаџеру фајлова</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/dolphin/configuring-dolphin.html#preferences-dialog-services"
+>Сервиси</ulink
+> — подесите сервисе у менаџеру фајлова</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/dolphin/configuring-dolphin.html#preferences-dialog-general"
+>Опште</ulink
+> — подесите опште поставке менаџера фајлова</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/filetypes/index.html"
+>Придружења фајловима</ulink
+> — подесите придружења фајловима</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/trash/index.html"
+>Смеће</ulink
+> — подесите поставке смећа</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/khtml-behavior/index.html"
+>Прегледање Веба</ulink
+> — подесите понашање прегледача</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/proxy/index.html"
+>Прокси</ulink
+> — подесите жељене прокси сервере</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/kcmcss/index.html"
+>Изглед</ulink
+> — подесите како се приказују веб странице</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/khtml-adblock/index.html"
+>Адблокови филтери</ulink
+> — подесите Адблокове филтере у <application
+>К‑освајачу</application
+></para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/cache/index.html"
+>Кеш</ulink
+> — подесите поставке веб кеша</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/history/index.html"
+>Историјат</ulink
+> — подесите историјат у бочној траци</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/cookies/index.html"
+>Колачићи</ulink
+> — подесите како раде колачићи</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/useragent/index.html"
+>Идентификација прегледача</ulink
+> — подесите како се <application
+>К‑освајач</application
+> представља</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/khtml-java-js/index.html"
+>Јава и јаваскрипт</ulink
+> — подесите понашање јаве и <application
+>јаваскрипта</application
+></para
+></listitem>
+</itemizedlist>
+<para
+>Притисак на дугме <guibutton
+>Помоћ</guibutton
+> даће вам детаљна упутства о начину коришћења сваке од ових секција, а можете се ослонити и на <link linkend="bubble"
+>шта‑је‑ово текстове</link
+>.</para>
+</sect1>
+
+</chapter>
+
+<chapter id="commands">
+
+<chapterinfo>
+<authorgroup>
+<author
+><personname
+><firstname
+>Памела</firstname
+> <surname
+>Робертс</surname
+></personname
+></author>
+<othercredit role="translator"
+><firstname
+>Драган</firstname
+><surname
+>Пантелић</surname
+><affiliation
+><address
+><email
+>falcon-10@gmx.de</email
+></address
+></affiliation
+><contrib
+>превод</contrib
+></othercredit
+> 
+</authorgroup>
+
+</chapterinfo>
+
+<title
+>Попис наредби</title>
+
+<note
+><para
+>Комбинације пречица са тастатуре дате у овом поглављу јесу оне подразумеване. Могу, наравно, бити измењене. </para
+></note>
+
+<sect1 id="specshort">
+<title
+>Посебне пречице</title>
+<para
+>Постоје неке корисне пречице које нису дате ни у једном од менија:</para>
+<variablelist>
+
+<varlistentry>
+<term
+><keycap
+>F6</keycap
+></term>
+<listitem>
+<para
+>Поставља фокус на поље за унос у траци локације.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>.</keycap
+></keycombo
+></term>
+<listitem>
+<para
+>Активира наредну страницу под језичком.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>,</keycap
+></keycombo
+></term>
+<listitem>
+<para
+>Активира претходну страницу под језичком.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+
+</sect1>
+
+<sect1 id="menubar">
+<title
+>Трака менија</title
+> <para
+>Неке ставке менија појављују се само ако су применљиве на фајл који је тренутно отворен у <application
+>К‑освајачу</application
+>. На пример, ставка <menuchoice
+><guimenu
+>Уређивање</guimenu
+><guimenuitem
+>Нађи...</guimenuitem
+> </menuchoice
+> неће бити дата док је приказан садржај неке фасцикле.</para>
+
+<para
+><application
+>К‑освајач</application
+> има различите ставке менија према томе у ком је режиму, менаџера фајлова или прегледача. Ово поглавље описује само ставке у та два режима. </para>
+
+<para
+>Када <application
+>К‑освајач</application
+> користи угнежђене компоненте (К‑делове), попут <application
+>Гвенвјуа</application
+> за приказивање слика или <application
+>Окулара</application
+> за ПДФ и постскрипт документе, ставке менија тих других програма стопљене су у <application
+>К‑освајачев</application
+> мени. Помоћ за ове додатне ставке можете наћи у приручнику датог угнежђеног програма.</para>
+
+<sect2 id="menu-location">
+<title
+>Мени <guimenu
+>Фајл</guimenu
+></title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Фајл</guimenu
+> <guimenuitem
+>Нови прозор</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Отвара још један прозор <application
+>К‑освајача</application
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>T</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Фајл</guimenu
+> <guimenuitem
+>Нови језичак</guimenuitem
+> </menuchoice
+></term
+> 
+<listitem
+><para
+>Отвара још један језичак <application
+>К‑освајача</application
+>, с празном страницом.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>Alt</keycap
+><keycap
+>O</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Фајл</guimenu
+> <guimenuitem
+>Отвори локацију</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Поставља фокус на поље за унос у траци локације.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>O</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Фајл</guimenu
+> <guimenuitem
+>Отвори фајл...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Отвара фајл преко КДЕ‑овог фајл дијалога.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Фајл</guimenu
+> <guimenuitem
+>Сесије</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Отвара подмени за уписивање текуће сесије (отворених језичака и прозора) ради лаког навраћања, управљање сесијама и пребацивање између раније сачуваних.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Фајл</guimenu
+> <guimenuitem
+>Пошаљи адресу везе...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Шаље е‑поштом везу ка тренутној локацији.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Фајл</guimenu
+> <guimenuitem
+>Пошаљи фајл...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Шаље е‑поштом изабрани фајл као прилог.</para
+></listitem>
+</varlistentry>
+
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Фајл</guimenu
+> <guimenuitem
+>Сачувај позадинску слику као...</guimenuitem
+></menuchoice
+> (режим прегледача преко КХТМЛ‑а)</term>
+<listitem>
+<para
+>Јавља се само док је приказана веб страница са позадинском сликом. Отвара дијалог <guilabel
+>Сачувај као...</guilabel
+>, како бисте позадинску слику сачували на свом рачунару.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Фајл</guimenu
+> <guimenuitem
+>Сачувај као...</guimenuitem
+></menuchoice
+> (режим прегледача)</term>
+<listitem
+><para
+>Јавља се само при приказу документа или веб странице. Дијалог <guilabel
+>Сачувај као...</guilabel
+> вам омогућава уписивање копије на ваш рачунар.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Фајл</guimenu
+> <guimenuitem
+>Сачувај оквир као...</guimenuitem
+></menuchoice
+> (режим прегледача)</term>
+<listitem
+><para
+>Слично као <guimenuitem
+>Сачувај као...</guimenuitem
+>, али за коришћење са веб сајтом који користи оквире.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>P</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Фајл</guimenu
+> <guimenuitem
+>Штампај...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Штампање.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Фајл</guimenu
+> <guimenuitem
+>Штампај оквир...</guimenuitem
+></menuchoice
+> (режим прегледача)</term>
+<listitem
+><para
+>Штампај изабрани оквир веб странице.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Фајл</guimenu
+> <guimenuitem
+>Отвори помоћу</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Приказује списак програма инсталираних на систему који су придружени МИМЕ типу тренутног УРЛ‑а.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Фајл</guimenu
+> <guimenuitem
+>Напусти</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Затвара овај примерак <application
+>К‑освајача</application
+>.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-edit">
+<title
+>Мени <guimenu
+>Уређивање</guimenu
+></title>
+
+<note
+><para
+>Неке ставке из менија <guimenu
+>Уређивање</guimenu
+> такође се могу наћи у менију на десни клик у слободној зони приказа.</para
+></note>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>Z</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Уређивање</guimenu
+> <guimenuitem
+>Опозови &lt;радњу&gt;</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Каткад вам допушта да опозовете погрешну радњу.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>X</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Уређивање</guimenu
+> <guimenuitem
+>Исеци</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Ставља изабране ставке у клипборд. Ако их потом налепите негде, биће премештене са првобитне на нову локацију.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Уређивање</guimenu
+> <guimenuitem
+>Копирај</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Копира изабране ставке у клипборд.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>V</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Уређивање</guimenu
+> <guimenuitem
+>Налепи</guimenuitem
+></menuchoice
+> (режим прегледача)</term>
+<listitem
+><para
+>Налепљује садржај клипборда у траку локације, ако је трака локације у фокусу.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>V</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Уређивање</guimenu
+> <guimenuitem
+>Налепи садржај клипборда...</guimenuitem
+></menuchoice
+> или <menuchoice
+><guimenu
+>Уређивање</guimenu
+><guimenuitem
+>Налепи један фајл</guimenuitem
+></menuchoice
+> или <menuchoice
+><guimenu
+>Уређивање</guimenu
+><guimenuitem
+>Налепи једну фасциклу</guimenuitem
+></menuchoice
+> или <menuchoice
+><guimenu
+>Уређивање</guimenu
+><guimenuitem
+>Налепи N ставки</guimenuitem
+></menuchoice
+> (режим менаџера фајлова)</term>
+<listitem
+><para
+>Налепљује тренутно копиране или исечене ставке у текућу фасциклу. Ако клипборд не садржи фајлове или фасцикле, садржај клипборда (нпр. текст или слика) налепљује се као нови фајл.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>A</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Уређивање</guimenu
+> <guimenuitem
+>Изабери све</guimenuitem
+></menuchoice
+> (режим прегледача)</term>
+<listitem
+><para
+>Одабира цео текст на текстуалној или ХТМЛ страници која се прегледа. Затим текст можете копирати и налепити у уређивач текста.</para
+></listitem
+> </varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Уређивање</guimenu
+> <guisubmenu
+>Направи</guisubmenu
+></menuchoice
+> (режим менаџера фајлова)</term>
+<listitem
+><para
+>Ствара нови објеката (као што је фасцикла или текстуални фајл) у текућој фасцикли. За више детаља погледајте секцију <link linkend="making"
+>о стварању ставки</link
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+><keycap
+>F2</keycap
+></shortcut
+><guimenu
+>Уређивање</guimenu
+> <guimenuitem
+>Преименуј</guimenuitem
+></menuchoice
+> (режим менаџера фајлова)</term>
+<listitem
+><para
+>Допушта вам да преименујете фајл или фасциклу без отварања дијалога <guimenuitem
+>Својства</guimenuitem
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+><keycap
+>Del</keycap
+></shortcut
+> <guimenu
+>Уређивање</guimenu
+> <guimenuitem
+>Премести у смеће</guimenuitem
+></menuchoice
+> (режим менаџера фајлова)</term>
+<listitem
+><para
+>Премешта изабране ставке у фасциклу смећа.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+><keycap
+>Shift</keycap
+><keycap
+>Del</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Уређивање</guimenu
+> <guimenuitem
+>Обриши</guimenuitem
+></menuchoice
+> (режим менаџера фајлова)</term>
+<listitem
+><para
+>Брише изабране ставке.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Уређивање</guimenu
+> <guimenuitem
+>Уреди тип фајла...</guimenuitem
+></menuchoice
+> (режим менаџера фајлова)</term>
+<listitem
+><para
+>Отвара дијалог за уређивање типа фајла.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+><keycap
+>Alt</keycap
+><keycap
+>Return</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Уређивање</guimenu
+> <guimenuitem
+>Својства</guimenuitem
+></menuchoice
+> (режим менаџера фајлова)</term>
+<listitem
+><para
+>Приказује дијалог својстава за тренутно изабране ставке.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Уређивање</guimenu
+> <guisubmenu
+>Избор</guisubmenu
+> <guimenuitem
+>Изабери поклапањем...</guimenuitem
+></menuchoice
+> (режим менаџера фајлова)</term>
+<listitem
+><para
+>Заједно са наредбама одабирања <guimenuitem
+>Поништи избор поклапањем...</guimenuitem
+>, <guimenuitem
+>Поништи сав избор</guimenuitem
+> и <guimenuitem
+>Изврни избор</guimenuitem
+>, ово обезбеђује лак и моћан начин вишеструког одабирања фајлова.</para>
+<para
+>Дозива једноставан дијалог у коме уписујете образац имена фајла, са џокерским знаковима * и ?. На пример, унос <literal role="extension"
+>*.html</literal
+> изабраће све фајлове који се завршавају са <literal role="extension"
+>.html</literal
+>, док ће <filename
+>?a*</filename
+> изабрати имена фајлова која имају слово „a“ на другом месту.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Уређивање</guimenu
+> <guisubmenu
+>Избор</guisubmenu
+> <guimenuitem
+>Поништи избор поклапањем...</guimenuitem
+></menuchoice
+> (режим менаџера фајлова)</term>
+<listitem
+><para
+>Поништава избор фајлова или фасцикли помоћу дијалога сличног оном на <guimenuitem
+>Изабери...</guimenuitem
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>A</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Уређивање</guimenu
+> <guisubmenu
+>Избор</guisubmenu
+> <guimenuitem
+>Изабери све</guimenuitem
+></menuchoice
+> (режим менаџера фајлова)</term>
+<listitem
+><para
+>Одабира све ставке у фасцикли. Затим их можете исећи или копирати, па налепити у неку другу фасциклу.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Уређивање</guimenu
+> <guisubmenu
+>Избор</guisubmenu
+> <guimenuitem
+>Поништи сав избор</guimenuitem
+></menuchoice
+> (режим менаџера фајлова)</term>
+<listitem
+><para
+>Поништава избор свих изабраних фајлова или фасцикли.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>Shift</keycap
+><keycap
+>A</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Уређивање</guimenu
+> <guisubmenu
+>Избор</guisubmenu
+> <guimenuitem
+>Изврни избор</guimenuitem
+></menuchoice
+> (режим менаџера фајлова)</term>
+<listitem
+><para
+>Изврће тренутни избор.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>F</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Уређивање</guimenu
+> <guimenuitem
+>Нађи...</guimenuitem
+></menuchoice
+> (режим прегледача)</term>
+<listitem
+><para
+>Приказује траку претраге на дну текућег прозора. Почните да куцате да бисте нашли неку ниску на текстуалној или ХТМЛ страници коју прегледате.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+><keycap
+>F3</keycap
+></shortcut
+> <guimenu
+>Уређивање</guimenu
+> <guimenuitem
+>Нађи следеће</guimenuitem
+></menuchoice
+> (режим прегледача преко КХТМЛ‑а)</term>
+<listitem
+><para
+>Налази следеће појављивање ниске на текстуалној или ХТМЛ страници.</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+><keycombo action="simul"
+><keycap
+>Shift</keycap
+><keycap
+>F3</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Уређивање</guimenu
+> <guimenuitem
+>Нађи претходно</guimenuitem
+></menuchoice
+> (режим прегледача преко КХТМЛ‑а)</term>
+<listitem
+><para
+>Налази претходно појављивање ниске на текстуалној или ХТМЛ страници.</para
+></listitem
+> 
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-view">
+
+<title
+>Мени <guimenu
+>Приказ</guimenu
+></title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Приказ</guimenu
+> <guisubmenu
+>Начин приказа</guisubmenu
+> </menuchoice
+></term>
+<listitem
+><para
+>У режиму прегледача овај подмени садржи ставке за бирање угнежђених приказа, попут КХТМЛ‑а, КуТ‑вебенџина или угнежђеног напредног уређивача текста.</para>
+<para
+>У режиму менаџера фајлова овај подмени садржи ставке за бирање начина приказа: са иконицама, сажето, детаљно, емулатор терминала, и други.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Приказ</guimenu
+> <guimenuitem
+>Закључај на тренутној локацији</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Закључани приказ не може да мења фасцикле. Згодно у комбинацији са <guimenuitem
+>Повежи приказ</guimenuitem
+> за истраживање многих фајлова из исте фасцикле.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Приказ</guimenu
+> <guimenuitem
+>Повежи приказ</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Повезује текући приказ са другима, у прозору са више приказа. Повезани приказ прати промене фасцикли у другим повезаним приказима. Ово је посебно корисно када се типови приказа разликују, нпр. стабло фасцикли и приказ у иконицама или детаљима, можда још и прозор емулатора терминала.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>F5</keycap
+></shortcut
+> <guimenu
+>Приказ</guimenu
+> <guimenuitem
+>Учитај поново</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Поново учитава.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>Esc</keycap
+></shortcut
+> <guimenu
+>Приказ</guimenu
+> <guimenuitem
+>Заустави</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Зауставља учитавање (нарочито корисно при прегледању Веба).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+><keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>+</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Приказ</guimenu
+> <guimenuitem
+>Повећај фонт</guimenuitem
+></menuchoice
+>, <menuchoice
+> <shortcut
+><keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>-</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Приказ</guimenu
+> <guimenuitem
+>Смањи фонт</guimenuitem
+></menuchoice
+> (режим прегледача преко КХТМЛ‑а)</term>
+<listitem
+><para
+>Овим подешавате величину текста на страници, ако вам је тешка за читање. Колико ће добро ово радити зависи од конструкције веб странице.</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+><keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>U</keycap
+> </keycombo
+> </shortcut
+> <guimenu
+>Приказ</guimenu
+> <guimenuitem
+>Прикажи извор документа</guimenuitem
+></menuchoice
+> (режим прегледача преко КХТМЛ‑а)</term>
+<listitem
+><para
+>Приказује изворни текст документа.</para>
+<para
+>Расположиво само ако прегледате документ или ХТМЛ страницу.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Приказ</guimenu
+> <guimenuitem
+>Прикажи извор оквира</guimenuitem
+></menuchoice
+> (режим прегледача)</term>
+<listitem
+><para
+>Приказује изворни текст оквира.</para>
+<para
+>Расположиво само ако прегледате веб сајт који користи оквире. Налик на <guimenuitem
+>Прикажи извор документа</guimenuitem
+>. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Приказ</guimenu
+> <guimenuitem
+>Увеличај</guimenuitem
+> <guimenuitem
+>Умањи</guimenuitem
+> <guimenuitem
+>Стварна величина</guimenuitem
+> <guimenuitem
+>Увеличај само текст</guimenuitem
+> <guimenuitem
+>Увеличај на тпи</guimenuitem
+></menuchoice
+> (режим прегледача преко КуТ‑вебенџина).</term>
+<listitem
+><para
+>Ове ставке менија нуде различите радње за мењање величина ставки на страници.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+><keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>I</keycap
+> </keycombo
+> </shortcut
+> <guimenu
+>Приказ</guimenu
+> <guimenuitem
+>Прикажи податке о документу</guimenuitem
+></menuchoice
+> (режим прегледача преко КХТМЛ‑ом)</term>
+<listitem
+><para
+>Приказује податке о документу, као што је УРЛ и ХТТП заглавља употребљена за добављање документа.</para>
+<para
+>Расположиво само при приказу ХТМЛ странице.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Приказ</guimenu
+> <guimenuitem
+>Постави кодирање</guimenuitem
+></menuchoice
+> (режим прегледача)</term>
+<listitem
+><para
+>Допушта вам да изаберете кодирање за приказ ХТМЛ страница. Обично је најбољи избор подразумевано.</para
+></listitem>
+</varlistentry>
+<!-- what is this?
+<varlistentry>
+<term
+><menuchoice>
+<guimenu
+>View</guimenu>
+<guimenuitem
+>Use Stylesheet</guimenuitem
+></menuchoice
+> (Browser mode)</term>
+<listitem
+><para
+>???Automatic Detection Basic Page Style KDE Stylesheet</para
+></listitem>
+</varlistentry>
+http://websvn.kde.org/?view=revision&revision=269436
+-->
+<!--FIXME synced with Dolphin 16.04-->
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Приказ</guimenu
+> <guisubmenu
+>Поређај по</guisubmenu
+></menuchoice
+> (режим менаџера фајлова)</term>
+<listitem
+><para
+><action
+>Одређује да ли се ставке ређају</action
+> по имену или по неком другом критеријуму, како је описано у <xref linkend="dolphin-view-information"/>.</para>
+<para
+><guimenuitem
+>опадајуће</guimenuitem
+> обрће редослед ређања. <guimenuitem
+>прво фасцикле</guimenuitem
+> ређа све фасцикле испред фајлова. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Приказ</guimenu
+> <guisubmenu
+>Допунски подаци</guisubmenu
+></menuchoice
+> (режим менаџера фајлова)</term>
+<listitem
+><para
+><action
+>Приказује додатне податке</action
+>, како је описано у <xref linkend="dolphin-view-information"/>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Приказ</guimenu
+> <guimenuitem
+>Преглед</guimenuitem
+></menuchoice
+> (режим менаџера фајлова)</term>
+<listitem
+><para
+>Приказује симболички преглед садржаја фајла, у различитим режимима приказа.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Приказ</guimenu
+> <guimenuitem
+>По групама</guimenuitem
+></menuchoice
+> (режим менаџера фајлова)</term>
+<listitem
+><para
+>Приказује садржај текуће фасцикле груписан по опцији изабраној у менију <guimenuitem
+>Поређај по</guimenuitem
+> (ради само у приказу са иконицама).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+><keycap
+>Alt</keycap
+><keycap
+>.</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Приказ</guimenu
+> <guimenuitem
+>Скривени фајлови</guimenuitem
+></menuchoice
+> (режим менаџера фајлова)</term>
+<listitem
+><para
+><action
+>Приказује све скривене фајлове и потфасцикле у текућој фасцикли.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Приказ</guimenu
+> <guimenuitem
+>Подеси својства приказа...</guimenuitem
+></menuchoice
+> (режим менаџера фајлова)</term>
+<listitem
+><para
+><action
+>Отвара <link linkend="view-properties-dialog"
+>дијалог својстава приказа</link
+>.</action
+></para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-go">
+<title
+>Мени <guimenu
+>Кретање</guimenu
+></title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>Alt</keycap
+><keysym
+>стрелица горе</keysym
+></keycombo
+> </shortcut
+><guimenu
+>Кретање</guimenu
+> <guimenuitem
+>Горе</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Пређите ниво изнад у хијерархији фасцикли, или изаберите фасциклу из подменија.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>Alt</keycap
+><keysym
+>стрелица лево</keysym
+></keycombo
+> </shortcut
+><guimenu
+>Кретање</guimenu
+> <guimenuitem
+>Назад</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Пређите на претходни приказ или изаберите претходно посећену ставку из подменија.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>Alt</keycap
+><keysym
+>стрелица десно</keysym
+></keycombo
+> </shortcut
+><guimenu
+>Кретање</guimenu
+> <guimenuitem
+>Напред</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Напред можете ићи само ако сте се претходно вратили назад.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+><keycap
+>Alt</keycap
+><keycap
+>Home</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Кретање</guimenu
+> <guimenuitem
+>Домаћа страница</guimenuitem
+></menuchoice
+> (режим прегледача)</term>
+<listitem
+><para
+>Иде на вашу домаћу страницу, како је задата на страници <guilabel
+>Опште</guilabel
+> дијалога за подешавање.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+><keycap
+>Alt</keycap
+><keycap
+>Home</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Кретање</guimenu
+> <guimenuitem
+>Домаћа фасцикла</guimenuitem
+></menuchoice
+> (режим менаџера фајлова)</term>
+<listitem
+><para
+>Пребацује на вашу домаћу фасциклу, нпр. <filename
+>/home/pera/</filename
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Кретање</guimenu
+> <guimenuitem
+>Програми</guimenuitem
+></menuchoice
+> (режим менаџера фајлова)</term>
+<listitem
+><para
+>Отвара фасциклу која садржи ваше програме.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Кретање</guimenu
+> <guimenuitem
+>Мрежне фасцикле</guimenuitem
+></menuchoice
+> (режим менаџера фајлова)</term>
+<listitem
+><para
+>Мрежне фасцикле се јављају на посебном месту у <application
+>К‑освајачу</application
+> и <application
+>Делфину</application
+>, по имену „виртуелна фасцикла“. Више детаља о коришћењу ове фасцикле можете наћи у <ulink url="help:/knetattach/index.html"
+>приручнику <application
+>К‑мрежохвата</application
+></ulink
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Кретање</guimenu
+> <guimenuitem
+>Подешавање</guimenuitem
+></menuchoice
+> (режим менаџера фајлова)</term>
+<listitem
+><para
+>Отвара виртуелну фасциклу са свим модулима Системских поставки, у приказу иконица, детаља или по колонама. Изаберите ставку да бисте добили тај модул за подешавање у засебном прозору.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Кретање</guimenu
+> <guimenuitem
+>Смеће</guimenuitem
+></menuchoice
+> (режим менаџера фајлова)</term>
+<listitem
+><para
+>Отвара вашу фасциклу са смећем.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Кретање</guimenu
+> <guimenuitem
+>Самопокретање</guimenuitem
+></menuchoice
+> (режим менаџера фајлова)</term>
+<listitem
+><para
+>Отвара вашу фасциклу за самопокретање.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>Shift</keycap
+><keycap
+>H</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Кретање</guimenu
+> <guimenuitem
+>Прикажи историјат</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Даје приказ стабла вашег историјата прегледања у засебном прозору. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Кретање</guimenu
+> <guisubmenu
+>Најчешће посећивано</guisubmenu
+> </menuchoice
+></term>
+<listitem>
+<para
+>Приказује подмени са УРЛ‑овима које сте најчешће посећивали. Ако изаберете неки, <application
+>К‑освајач</application
+> ће га отворити.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Кретање</guimenu
+> <guisubmenu
+>Недавно посећено</guisubmenu
+> </menuchoice
+></term>
+<listitem>
+<para
+>Приказује подмени са УРЛ‑овима које сте недавно посећивали. Ако изаберете неки, <application
+>К‑освајач</application
+> ће га отворити.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Кретање</guimenu
+> <guisubmenu
+>Затворено</guisubmenu
+> </menuchoice
+></term>
+<listitem>
+<para
+>Приказује подмени са затвореним УРЛ‑овима које сте били посетили. Ако изаберете неки, <application
+>К‑освајач</application
+> ће га отворити. Овај подмени можете очистити помоћу <guimenuitem
+>Испразни историјат затвореног</guimenuitem
+>.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-bookmarks">
+<title
+>Мени <guimenu
+>Обележивачи</guimenu
+></title>
+
+<note
+><para
+>За потпунији опис ставки овог менија погледајте секцију овог упутства <link linkend="bookmarks"
+>о употреби обележивача</link
+>.  </para
+></note>
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>B</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Обележивачи</guimenu
+> <guimenuitem
+>Додај обележивач</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Додаје тренутни избор међу обележиваче.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Обележивачи</guimenu
+> <guimenuitem
+>Обележи језичке као фасциклу...</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Ствара фасциклу обележивача с везама ка свим тренутно отвореним УРЛ‑овима у језичцима <application
+>К‑освајача</application
+>. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Обележивачи</guimenu
+> <guimenuitem
+>Нова фасцикла обележивача...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Ствара нову фасциклу у обележивачима.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Обележивачи</guimenu
+> <guimenuitem
+>Уреди обележиваче</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Отвара <link linkend="bookmarks"
+>уређивач обележивача</link
+>. </para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-tools">
+<title
+>Мени <guimenu
+>Алатке</guimenu
+></title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+><keycap
+>F4</keycap
+></shortcut
+> <guimenu
+>Алатке</guimenu
+> <guimenuitem
+>Отвори терминал</guimenuitem
+></menuchoice
+> (режим менаџера фајлова)</term>
+<listitem
+><para
+>Отвара терминалски прозор <application
+>Конзоле</application
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>F</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Алатке</guimenu
+> <guimenuitem
+>Нађи фајл...</guimenuitem
+></menuchoice
+> (режим менаџера фајлова)</term>
+<listitem
+><para
+>Отвара <application
+>К‑налазач</application
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Алатке</guimenu
+> <guisubmenu
+>Удаљено кодирање</guisubmenu
+></menuchoice
+> (режим менаџера фајлова)</term>
+<listitem
+><para
+><action
+>Одавде можете ручно изабрати кодирање које користи удаљена веза.</action
+></para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Ако су инсталирани неки <application
+>К‑освајачеви</application
+> прикључци, мени <guimenu
+>Алатке</guimenu
+> садржаће још ставки. За више детаља, погледајте поглавље <link linkend="konq-plugin"
+>о прикључцима</link
+>.</para>
+</sect2>
+
+<sect2 id="menu-settings">
+<title
+>Мени <guimenu
+>Подешавање</guimenu
+></title>
+
+<para
+>Поред уобичајених ставки КДЕ‑овог менија за подешавање, описаних у <ulink url="help:/fundamentals/ui.html#menus-settings"
+>истоименом одељку</ulink
+> Основа КДЕ‑а, <application
+>К‑освајач</application
+> има још и ове посебне ставке: </para>
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Подешавање</guimenu
+> <guimenuitem
+>Прикажи емулатор терминала</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Отвара мали текстуални приказ терминала, на дну главног прозора.</para
+></listitem>
+</varlistentry>
+<!--
+<varlistentry>
+<term
+><menuchoice>
+<shortcut>
+<keycombo action="simul"
+><keycap
+>F9</keycap
+></keycombo
+></shortcut>
+<guimenu
+>Settings</guimenu>
+<guimenuitem
+>Show Sidebar</guimenuitem>
+</menuchoice
+></term>
+<listitem
+><para
+>Toggles the display of the &konqueror; sidebar. See
+<xref linkend="sidebar"/>.</para
+></listitem>
+</varlistentry>
+-->
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>Shift</keycap
+> <keycap
+>F</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Подешавање</guimenu
+> <guimenuitem
+>Преко целог екрана</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Пребацује <application
+>К‑освајач</application
+> у режим преко целог екрана, када прозор <application
+>К‑освајача</application
+> заузима цео екран и нема уобичајене декорације прозора. Да напустите овај режим кликните на иконицу <guiicon
+>Напусти цео екран</guiicon
+> на траци алатки, или притисните <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>Shift</keycap
+><keycap
+>F</keycap
+></keycombo
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Подешавање</guimenu
+> <guimenuitem
+>Подеси проширења...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Отвара дијалог са свим инсталираним прикључцима (нпр. из КДЕ‑ових модула екстраопреме) и омогућава активирање жељених. Свим прикључцима може се приступити кроз мени <guimenu
+>Алатке</guimenu
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Подешавање</guimenu
+> <guimenuitem
+>Подеси проверу правописа...</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Дијалог за подешавање провере правописа, у ком можете изменити поставке посебне за <application
+>К‑освајач</application
+>.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-window">
+<title
+>Мени <guimenu
+>Прозор</guimenu
+></title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>Shift</keycap
+><keycap
+>L</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Прозор</guimenu
+> <guimenuitem
+>Подели приказ лево/десно</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Дели приказ на леви и десни.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>Shift</keycap
+><keycap
+>T</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Прозор</guimenu
+> <guimenuitem
+>Подели приказ горе/доле</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Дели приказ на горњи и доњи.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>Shift</keycap
+><keycap
+>W</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Прозор</guimenu
+> <guimenuitem
+>Затвори активни приказ</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Уклања активни приказ.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Прозор</guimenu
+> <guimenuitem
+>Нови прозор</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Отвара још један прозор <application
+>К‑освајача</application
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>Shift</keycap
+><keycap
+>D</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Прозор</guimenu
+> <guimenuitem
+>Удвостручи прозор</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Отвара још један прозор <application
+>К‑освајача</application
+>, садржаја као и текући.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>T</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Прозор</guimenu
+> <guimenuitem
+>Нови језичак</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Отвара нову, празну страницу под језичком.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>D</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Прозор</guimenu
+> <guimenuitem
+>Удвостручи текући језичак</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Удвостручава страницу под језичком.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>Shift</keycap
+><keycap
+>B</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Прозор</guimenu
+> <guimenuitem
+>Откачи текући језичак</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Издваја текућу страницу под језичком у нови примерак <application
+>К‑освајача</application
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>W</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Прозор</guimenu
+> <guimenuitem
+>Затвори текући језичак</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Затвара текућу страницу под језичком.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>Shift</keycap
+><keycap
+>лево</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Прозор</guimenu
+> <guimenuitem
+>Помери језичак улево</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Премешта тренутни језичак једно место улево на списку.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>Shift</keycap
+><keycap
+>десно</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Прозор</guimenu
+> <guimenuitem
+>Помери језичак удесно</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Премешта тренутни језичак једно место удесно на списку.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-help">
+<title
+>Мени <guimenu
+>Помоћ</guimenu
+></title>
+<para
+>Поред уобичајених ставки КДЕ‑овог менија <guimenu
+>Помоћ</guimenu
+>, описаних у <ulink url="help:/fundamentals/ui.html#menus-help"
+>одељку о помоћи</ulink
+> у Основама КДЕ‑а, имаћете и ставку <guimenuitem
+>Увод у К‑освајач</guimenuitem
+> којом се можете навратити на уводне странице (које сте добили при првом покретању <application
+>К‑освајача</application
+>).</para>
+
+</sect2>
+</sect1>
+
+</chapter>
+
+<chapter id="faq">
+<chapterinfo>
+<authorgroup>
+<author
+><personname
+><firstname
+>Памела</firstname
+> <surname
+>Робертс</surname
+></personname
+></author>
+<othercredit role="translator"
+><firstname
+>Драган</firstname
+><surname
+>Пантелић</surname
+><affiliation
+><address
+><email
+>falcon-10@gmx.de</email
+></address
+></affiliation
+><contrib
+>превод</contrib
+></othercredit
+> 
+</authorgroup>
+
+</chapterinfo>
+
+<title
+>Питања и одговори</title>
+
+<qandaset>
+
+<qandaentry>
+<question
+><para
+>Могу ли да покренем <application
+>К‑освајач</application
+> под другим менаџером прозора?</para
+></question>
+
+<answer
+><para
+>Само инсталирајте КуТ, КФ5 и <application
+>К‑освајач</application
+>, и покрените <application
+>К‑освајач</application
+> из свог омиљеног менаџера прозора. Требало би нормално да ради, а ако не (програмери КДЕ‑а не испитују често овај случај), пријавите проблем на <ulink url="http://bugs.kde.org"
+>http://bugs.kde.org</ulink
+>; често помаже и да извршите <command
+>kdeinit</command
+> пре покретања <application
+>К‑освајача</application
+>.</para
+></answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Где <application
+>К‑освајач</application
+> држи своје поставне податке?</para
+></question>
+<answer
+><para
+>Углавном у фасцикли <filename class="directory"
+>qtpaths --paths GenericDataLocation</filename
+> (на неким системима може бити и <filename
+>~/.local/share</filename
+>, већ према начину инсталирања <application
+>К‑освајача</application
+>). Не мењајте ручно фајлове у тој фасцикли осим ако заиста знате шта радите.</para>
+
+<itemizedlist>
+
+<listitem
+><para
+>Обележивачи се држе у <filename class="directory"
+>konqueror/bookmarks.xml</filename
+></para
+></listitem>
+<listitem
+><para
+>Колачићи се држе у <filename class="directory"
+>kcookiejar/cookies</filename
+></para
+></listitem>
+
+<listitem
+><para
+>Историјат, који се користи за могућност самодопуне, налази се у <filename
+>konq_history</filename
+> у фасцикли <filename class="directory"
+>qtpaths --paths GenericConfigLocation</filename
+>.</para
+></listitem>
+
+<listitem
+><para
+>У фасцикли <filename class="directory"
+>qtpaths --paths GenericConfigLocation</filename
+>, фајл <filename
+>konquerorrc</filename
+> садржи мноштво општих поставки.</para
+></listitem>
+
+<listitem
+><para
+>Фасцикла <filename class="directory"
+>kio_http/</filename
+> у <filename class="directory"
+>qtpaths --paths GenericCacheLocation</filename
+> садржи кеш прегледача.</para
+></listitem>
+<!--
+<listitem
+><para
+>The Sidebar uses the files and subfolders in <filename
+>konqsidebartng</filename>
+in the folder <filename class="directory"
+>qtpaths - -paths GenericConfigLocation</filename
+></para
+></listitem>
+-->
+</itemizedlist>
+<para
+>Све поставке посебне по фасцикли стављају се у <literal role="extension"
+>.directory</literal
+> фајлове у датим фасциклама.</para
+></answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Како могу да очистим фајл историјата?</para
+></question>
+<answer
+><para
+>Постоје два „историјата“:</para>
+<itemizedlist>
+<listitem
+><para
+>Један се користи за допуну текста у пољу уноса траке локације. Да очистите овај, кликните <mousebutton
+>десним</mousebutton
+> на поље уноса и одаберите <guimenuitem
+>Очисти историјат</guimenuitem
+>.</para>
+</listitem>
+<listitem
+><para
+>Други је дневник посећених локација. Изаберите <guimenuitem
+>Прикажи историјат</guimenuitem
+> из менија <guimenu
+>Кретање</guimenu
+>, кликните <mousebutton
+>десним</mousebutton
+> на неки унос и одаберите <guimenuitem
+>Уклони ставку</guimenuitem
+> (<keycap
+>Del</keycap
+>) да уклоните само тај унос, или <guimenuitem
+>Очисти историјат</guimenuitem
+> да уклоните све уносе.</para
+></listitem>
+</itemizedlist>
+<note
+><para
+>Такође можете употребити програм <application
+>Чистач</application
+> (из модула <literal
+>kdeutils</literal
+>), који омогућава чишћење колачића, фавиконица, веб историјата и кеша, допуна формулара и смерница кеширања за посећене веб сајтове.</para
+></note>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Како да укључим, искључим или очистим кеш прегледача?</para
+></question
+> <answer>
+<para
+>Ако одаберете <menuchoice
+><guimenu
+>Прегледање Веба</guimenu
+><guimenuitem
+>Кеш</guimenuitem
+> </menuchoice
+> у дијалогу покренутом путем <menuchoice
+><guimenu
+>Подешавање</guimenu
+><guimenuitem
+>Подеси К‑освајач...</guimenuitem
+></menuchoice
+>, добићете дијалог који вам допушта да искључите кеш, очистите га или му подесите величину, и измените смернице кеширања.</para>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Како могу да изменим вредности прековремена која <application
+>К‑освајач</application
+> користи при прегледању Веба?</para
+></question
+> <answer>
+<para
+>У Системским поставкама, категорија <guilabel
+>Мрежа</guilabel
+> на страници <menuchoice
+><guimenu
+>Подешавање</guimenu
+> <guimenuitem
+>Поставке повезивања</guimenuitem
+></menuchoice
+>.</para>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Како постављам своју „домаћу“ страницу — ону која се учитава по покретању?</para
+></question>
+<answer
+><para
+><application
+>К‑освајач</application
+> има „домаћу фасциклу“ у режиму менаџера фајлова, а „домаћу страницу“ у режиму прегледача.</para>
+
+<para
+>Ове поставке можете изменити покретањем <menuchoice
+><guimenu
+>Подешавање</guimenu
+><guimenuitem
+>Подеси К‑освајач...</guimenuitem
+><guilabel
+>Опште</guilabel
+></menuchoice
+>.</para>
+
+<para
+><application
+>К‑освајачеву</application
+> почетну страницу у режиму менаџера фајлова задајете преко падајућег списка <guilabel
+>К‑освајач креће од:</guilabel
+>, избором једног од <guilabel
+>уводне странице</guilabel
+>, <guilabel
+>моје почетне странице</guilabel
+>, <guilabel
+>празне странице</guilabel
+> или <guilabel
+>мојих обележивача</guilabel
+>.</para>
+
+<para
+>У режиму прегледача, <application
+>К‑освајач</application
+> се покреће са уносом под <guilabel
+>Домаћа страница:</guilabel
+>.</para>
+
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Овде не могу да нађем одговор на моје питање.</para
+></question
+> 
+<answer>
+<para
+>Погледајте <ulink url="https://konqueror.org/faq/"
+>https://konqueror.org/faq/</ulink
+> или <ulink url="https://konqueror.org/contact/"
+> https://konqueror.org/contact/</ulink
+>.</para>
+<para
+>Више информација можете наћи на <ulink url="http://forum.kde.org/"
+>Форуму заједнице КДЕ‑а</ulink
+> и на <ulink url="http://userbase.kde.org/Konqueror"
+><application
+>К‑освајачевој</application
+> страници на Корисничкој бази КДЕ‑а.</ulink
+>.</para>
+</answer>
+</qandaentry>
+
+</qandaset>
+
+</chapter>
+
+<chapter id="credits"
+> <!-- 4.11-->
+
+<chapterinfo>
+<authorgroup>
+<author
+><personname
+><firstname
+>Памела</firstname
+> <surname
+>Робертс</surname
+></personname
+></author>
+<othercredit role="translator"
+><firstname
+>Драган</firstname
+><surname
+>Пантелић</surname
+><affiliation
+><address
+><email
+>falcon-10@gmx.de</email
+></address
+></affiliation
+><contrib
+>превод</contrib
+></othercredit
+> 
+</authorgroup>
+
+</chapterinfo>
+
+
+<title
+>Заслуге и лиценца</title>
+
+<para
+><application
+>К‑освајач</application
+>. © 1999-2003, програмери <application
+>К‑освајача</application
+>:</para>
+
+<variablelist>
+
+<varlistentry>
+<term
+><personname
+><firstname
+>Давид</firstname
+> <surname
+>Фор</surname
+></personname
+> &David.Faure.mail;</term>
+<listitem
+><para
+>програмер (делови, <application
+>јаваскрипт</application
+>, У/И библиотека) и одржавалац</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><personname
+><firstname
+>Симон</firstname
+> <surname
+>Хаусман</surname
+></personname
+> &Simon.Hausmann.mail;</term>
+<listitem
+><para
+>програмер (радни оквир, делови)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><personname
+><firstname
+>Михаел</firstname
+> <surname
+>Рајхер</surname
+></personname
+> &Michael.Reiher.mail;</term>
+<listitem
+><para
+>програмер (радни оквир)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><personname
+><firstname
+>Матијас</firstname
+> <surname
+>Велк</surname
+></personname
+> &Mattias.Welk.mail;</term>
+<listitem
+><para
+>програмер</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><personname
+><firstname
+>Александер</firstname
+> <surname
+>Нојндорф</surname
+></personname
+> &Alexander.Neundorf.mail;</term>
+<listitem
+><para
+>програмер (списковни прикази)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><personname
+><firstname
+>Михаел</firstname
+> <surname
+>Браде</surname
+></personname
+> &Michael.Brade.mail;</term>
+<listitem
+><para
+>програмер (списковни прикази, У/И библиотека)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><personname
+><firstname
+>Ларс</firstname
+> <surname
+>Кнол</surname
+></personname
+> &Lars.Knoll.mail;</term>
+<listitem
+><para
+>програмер (мотор за рендеровање ХТМЛ‑а)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><personname
+><firstname
+>Анти</firstname
+> <surname
+>Коивисто</surname
+></personname
+> &Antti.Koivisto.mail;</term>
+<listitem
+><para
+>програмер (мотор за рендеровање ХТМЛ‑а)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><personname
+><firstname
+>Дирк</firstname
+> <surname
+>Милер</surname
+></personname
+> &Dirk.Mueller.mail;</term>
+<listitem
+><para
+>програмер (мотор за рендеровање ХТМЛ‑а)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><personname
+><firstname
+>Питер</firstname
+> <surname
+>Кели</surname
+></personname
+> &Peter.Kelly.mail;</term>
+<listitem
+><para
+>програмер (мотор за рендеровање ХТМЛ‑а, <application
+>јаваскрипт</application
+>)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><personname
+><firstname
+>Валдо</firstname
+> <surname
+>Бастијан</surname
+></personname
+> &Waldo.Bastian.mail;</term>
+<listitem
+><para
+>програмер (мотор за рендеровање ХТМЛ‑а, У/И библиотека)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><personname
+><firstname
+>Матеј</firstname
+> <surname
+>Кос</surname
+></personname
+> &Matt.Koss.mail;</term>
+<listitem
+><para
+>програмер (У/И библиотека)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><personname
+><firstname
+>Алекс</firstname
+> <surname
+>Зепеда</surname
+></personname
+> &Alex.Zepeda.mail;</term>
+<listitem
+><para
+>програмер (У/И библиотека)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><personname
+><firstname
+>Штефан</firstname
+> <surname
+>Кулов</surname
+></personname
+> &Stephan.Kulow.mail;</term>
+<listitem
+><para
+>програмер (мотор за рендеровање ХТМЛ‑а, У/И библиотека, радни оквир за пробу на регресије)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><personname
+><firstname
+>Ричард</firstname
+> <surname
+>Мур</surname
+></personname
+> &Richard.J.Moore.mail;</term>
+<listitem
+><para
+>програмер (подршка за јаванске аплете)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><personname
+><firstname
+>Дима</firstname
+> <surname
+>Рогозин</surname
+></personname
+> <email
+>dima@mercury.co.il</email
+></term>
+<listitem
+><para
+>програмер (подршка за јаванске аплете)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><personname
+><firstname
+>Вин</firstname
+> <surname
+>Вилкс</surname
+></personname
+> <email
+>wynnw@calderasystems.com</email
+></term>
+<listitem
+><para
+>програмер (подршка менаџера за јаву 2 и друга важна побољшања за подршку аплета)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><personname
+><firstname
+>Хари</firstname
+> <surname
+>Портен</surname
+></personname
+> &Harri.Porten.mail;</term>
+<listitem
+><para
+>програмер (<application
+>јаваскрипт</application
+>)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><personname
+><firstname
+>Штефан</firstname
+> <surname
+>Шимански</surname
+></personname
+> <email
+>schimmi@kde.org</email
+></term>
+<listitem
+><para
+>програмер (подршка Нетскејпових прикључака)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><personname
+><firstname
+>Карстен</firstname
+> <surname
+>Пфајфер</surname
+></personname
+> &Carsten.Pfeiffer.mail;</term>
+<listitem
+><para
+>програмер (радни оквир)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><personname
+><firstname
+>Џорџ</firstname
+> <surname
+>Стајкос</surname
+></personname
+> &George.Staikos.mail;</term>
+<listitem
+><para
+>програмер (подршка за ССЛ, Нетскејпови прикључци)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><personname
+><firstname
+>Давит</firstname
+> <surname
+>Алемајеху</surname
+></personname
+> <email
+>adawit@kde.org</email
+></term>
+<listitem
+><para
+>програмер (У/И библиотека, подршка за аутентификацију)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><personname
+><firstname
+>Торстен</firstname
+> <surname
+>Ран</surname
+></personname
+> &Torsten.Rahn.mail;</term>
+<listitem
+><para
+>графика и иконице</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><personname
+><firstname
+>Торбен</firstname
+> <surname
+>Вајс</surname
+></personname
+> <email
+>weis@kde.org</email
+></term>
+<listitem
+><para
+>аутор КФМ‑а</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><personname
+><firstname
+>Јозеф</firstname
+> <surname
+>Венингер</surname
+></personname
+> &Joseph.Wenninger.mail;</term>
+<listitem
+><para
+>програмер (радни оквир навигационог панела)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><personname
+><firstname
+>Штефан</firstname
+> <surname
+>Бинер</surname
+></personname
+> &Stephan.Binner.mail;</term>
+<listitem
+><para
+>програмер (разноразно)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><personname
+><firstname
+>Лео</firstname
+> <surname
+>Саверник</surname
+></personname
+> <email
+>l.savernik@aon.at</email
+></term>
+<listitem
+><para
+>контрола приступа <application
+>јаваскриптом</application
+>, проширења смерница по домену, мотор за рендеровање ХТМЛ‑а</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><personname
+><firstname
+>Жермен</firstname
+> <surname
+>Гаран</surname
+></personname
+> <email
+>germain@ebooksfrance.org</email
+></term>
+<listitem
+><para
+>програмер (мотор за рендеровање ХТМЛ‑а)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><personname
+><firstname
+>Зaк</firstname
+> <surname
+>Расин</surname
+></personname
+> <email
+>zack@kde.org</email
+></term>
+<listitem
+><para
+>програмер (мотор за рендеровање ХТМЛ‑а)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><personname
+><firstname
+>Тобијас</firstname
+> <surname
+>Антон</surname
+></personname
+> <email
+>anton@stud.fbi.fh-darmstadt.de</email
+></term>
+<listitem
+><para
+>програмер (мотор за рендеровање ХТМЛ‑а)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><personname
+><firstname
+>Лубош</firstname
+> <surname
+>Луњак</surname
+></personname
+> <email
+>l.lunak@kde.org</email
+></term>
+<listitem
+><para
+>програмер (мотор за рендеровање ХТМЛ‑а)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><personname
+><firstname
+>Максим</firstname
+> <surname
+>Орлович</surname
+></personname
+> <email
+>maksim@kde.org</email
+></term>
+<listitem
+><para
+>програмер (мотор за рендеровање ХТМЛ‑а, <application
+>јаваскрипт</application
+>)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><personname
+><firstname
+>Алан</firstname
+> <othername
+>Сандфелд</othername
+> <surname
+>Јенсен</surname
+></personname
+> <email
+>kde@carewolf.com</email
+></term>
+<listitem
+><para
+>програмер (мотор за рендеровање ХТМЛ‑а)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>програмери Епловог Сафарија </term>
+<listitem
+><para
+>програмер (мотор за рендеровање ХТМЛ‑а, <application
+>јаваскрипт</application
+>)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><personname
+><firstname
+>Кос</firstname
+> <surname
+>Вризен</surname
+></personname
+> <email
+>koos.vriezen@xs4all.nl</email
+></term>
+<listitem
+><para
+>програмер (подршка за јаванске аплете и друге угнежђене објекте)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><personname
+><firstname
+>Ајвор</firstname
+> <surname
+>Хјуит</surname
+></personname
+> <email
+>ivor@ivor.org</email
+></term>
+<listitem
+><para
+>програмер (Адблокови филтери)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><personname
+><firstname
+>Едуардо</firstname
+> <surname
+>Роблес Елвира</surname
+></personname
+> <email
+>edulix@gmail.com</email
+></term>
+<listitem
+><para
+>програмер (радни оквир)</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>© документације 2000-2003</para>
+
+<itemizedlist>
+<listitem
+><para
+><personname
+><firstname
+>Ерван</firstname
+> <surname
+>Лоасан</surname
+></personname
+> &Erwan.Loisant.mail;</para
+></listitem>
+<listitem
+><para
+><personname
+><firstname
+>Памела</firstname
+> <surname
+>Робертс</surname
+></personname
+> &Pamela.Roberts.mail;</para
+></listitem>
+</itemizedlist>
+
+<para
+>За КДЕ 3.2 документацију ажурирао <personname
+><firstname
+>Филип</firstname
+> <surname
+>Родригез</surname
+></personname
+> &Philip.Rodrigues.mail;</para>
+
+<para
+>Пробно читао документацију за КДЕ 4.11 <personname
+><firstname
+>Дејвид</firstname
+> <surname
+>Палсер</surname
+></personname
+> <email
+>davidpalser179@btinternet.com</email
+>.</para>
+
+<para
+>Превео Драган Пантелић <email
+>falcon-10@gmx.de</email
+>.</para
+> 
+&underFDL; &underGPL; </chapter>
+
+&documentation.index; 
+</book>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+End:
+-->

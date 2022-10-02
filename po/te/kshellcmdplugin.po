@@ -1,0 +1,287 @@
+# translation of konqueror.po to Telugu
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Krishna Babu K <kkrothap@redhat.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2009-01-16 22:16+0530\n"
+"Last-Translator: Krishna Babu K <kkrothap@redhat.com>\n"
+"Language-Team: Telugu <en@li.org>\n"
+"Language: te\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#. i18n: ectx: Menu (tools)
+#: konq_shellcmdplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr ""
+
+#: kshellcmdexecutor.cpp:106
+#, kde-format
+msgid "Input Required:"
+msgstr ""
+
+#: kshellcmdplugin.cpp:32
+#, kde-format
+msgid "&Execute Shell Command..."
+msgstr ""
+
+#: kshellcmdplugin.cpp:41
+#, kde-format
+msgid ""
+"KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a bug."
+msgstr ""
+
+#: kshellcmdplugin.cpp:51
+#, kde-format
+msgid "Executing shell commands works only on local directories."
+msgstr ""
+
+#: kshellcmdplugin.cpp:73
+#, kde-format
+msgctxt "@title:window"
+msgid "Execute Shell Command"
+msgstr ""
+
+#: kshellcmdplugin.cpp:74
+#, kde-format
+msgid "Execute shell command in current directory:"
+msgstr ""
+
+#: kshellcmdplugin.cpp:85
+#, kde-format
+msgid "Output from command: \"%1\""
+msgstr ""
+
+#~ msgid "Configure"
+#~ msgstr "ఆకృతీకరించుము"
+
+#~ msgid "Konqueror"
+#~ msgstr "కాంకెరర్"
+
+#~ msgid "David Faure"
+#~ msgstr "డెవిడ్ ఫారె"
+
+#~ msgid "Developer"
+#~ msgstr "డెవలపర్"
+
+#~ msgid "Alexander Neundorf"
+#~ msgstr "Alexander Neundorf"
+
+#~ msgid "Lars Knoll"
+#~ msgstr "లార్స్ క్నొల్"
+
+#~ msgid "Dirk Mueller"
+#~ msgstr "డిర్క్ ముల్లర్"
+
+#~ msgid "Waldo Bastian"
+#~ msgstr "వాల్డొ బాస్టియన్"
+
+#~ msgid "Leo Savernik"
+#~ msgstr "లియో సావెర్నిక్"
+
+#~ msgid "Stephan Kulow"
+#~ msgstr "స్టీఫెన్ కులొ"
+
+#~ msgid "Lubos Lunak"
+#~ msgstr "లుబోస్ ల్యూనక్"
+
+#~ msgid "Wynn Wilkes"
+#~ msgstr "విన్ వైక్స్"
+
+#~ msgid "George Staikos"
+#~ msgstr "జార్జ్ స్టైకోస్"
+
+#~ msgid "Carsten Pfeiffer"
+#~ msgstr "కార్స్టెన్ ఫైఫర్"
+
+#~ msgid "Torsten Rahn"
+#~ msgstr "టార్‌స్టెన్ రాన్"
+
+#~ msgid "Joseph Wenninger"
+#~ msgstr "జోసెఫ్ వెనిన్‌గర్"
+
+#~ msgid "Stephan Binner"
+#~ msgstr "స్టీఫెన్ బిన్నర్"
+
+#~ msgid "Miscellaneous"
+#~ msgstr "ఇతరత్రా"
+
+#~ msgid "Open in New Tab"
+#~ msgstr "కొత్త టాబ్‌నందు తెరువుము"
+
+#, fuzzy
+#~| msgid "Copy Link Address"
+#~ msgid "&Copy Link Address"
+#~ msgstr "లింకు చిరునామాను నకలుచెయి "
+
+#~ msgctxt "@title:tab"
+#~ msgid "Loading..."
+#~ msgstr "లోడవుతున్నది..."
+
+#~ msgid "File Management"
+#~ msgstr "దస్త్ర నిర్వహణ"
+
+#~ msgid "Web Browsing"
+#~ msgstr "వెబ్ బ్రౌజింగ్"
+
+#~ msgid "Home Folder"
+#~ msgstr "ఇంటి ఫొల్డర్"
+
+#~ msgid "New &Window"
+#~ msgstr "(&W) కొత్త విండొ"
+
+#~ msgid "&Up"
+#~ msgstr "(&U) పైకి"
+
+#~ msgid "Close Current Tab"
+#~ msgstr "ప్రస్తుత టాబ్ మూసివేయి"
+
+#~ msgid "Activate Next Tab"
+#~ msgstr "తరువాతి టాబ్‌ను క్రియాశీలంచేయుము"
+
+#~ msgid "Activate Previous Tab"
+#~ msgstr "గత టాబ్‌ను క్రియాశీలంచేయుము"
+
+#~ msgid "&Stop"
+#~ msgstr "(&S) ఆపు"
+
+#~ msgid "&Bookmarks"
+#~ msgstr "(&B) పేజీ గుర్తులు"
+
+#~ msgid "Confirmation"
+#~ msgstr "నిర్ధారణ"
+
+#~ msgid "Add"
+#~ msgstr "జతచేయి"
+
+#, fuzzy
+#~| msgid "Rename"
+#~ msgid "Rename Session"
+#~ msgstr "పునఃనామకరణము"
+
+#~ msgid "&Close Tab"
+#~ msgstr "(&C) టాబ్ ను మూసివెయి"
+
+#~ msgid "Warning"
+#~ msgstr "హెచ్చరిక"
+
+#, fuzzy
+#~| msgid "&Close Tab"
+#~ msgid "Close Sidebar"
+#~ msgstr "(&C) టాబ్ ను మూసివెయి"
+
+#~ msgid "Remove"
+#~ msgstr "తొలగించు"
+
+#~ msgid "Properties"
+#~ msgstr "గుణాలు"
+
+#~ msgid "Open in New Window"
+#~ msgstr "కొత్త విండోనందు తెరువుము"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "లింకు చిరునామాను నకలుచెయి "
+
+#~ msgid "&Update"
+#~ msgstr "(&U) నవీకరణ"
+
+#~ msgid "Name:"
+#~ msgstr "పేరు:"
+
+#~ msgid "Location:"
+#~ msgstr "స్థానము:"
+
+#~ msgid "Rename"
+#~ msgstr "పునఃనామకరణము"
+
+#~ msgid "Enter folder name:"
+#~ msgstr "ఫొల్డర్ పేరును వ్రాయండి:"
+
+#, fuzzy
+#~| msgid "Name:"
+#~ msgctxt "@label"
+#~ msgid "Name:"
+#~ msgstr "పేరు:"
+
+#~ msgid " min"
+#~ msgstr " ని"
+
+#~ msgid " sec"
+#~ msgstr " సెకను"
+
+#~ msgid "Trash"
+#~ msgstr "ట్రాష్"
+
+#, fuzzy
+#~| msgid "&Bookmarks"
+#~ msgid "Bookmarks"
+#~ msgstr "(&B) పేజీ గుర్తులు"
+
+#~ msgctxt "Title of an html 'group box' explaining konqueror features"
+#~ msgid "General"
+#~ msgstr "సాధారణ"
+
+#~ msgid "Details"
+#~ msgstr "వివరాలు"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr ""
+#~ "కృష్ణబాబు కె \n"
+#~ " విజయ్ కిరణ్ కముజు"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr ""
+#~ "k.meetme@gmail.com \n"
+#~ " infyquest@gmail.com"
+
+#~ msgid "&Edit"
+#~ msgstr "(&E) సరికూర్చు"
+
+#~ msgid "&View"
+#~ msgstr "(&V) వీక్షణం"
+
+#~ msgid "&Go"
+#~ msgstr "(&G) వెళ్ళు"
+
+#~ msgid "&Window"
+#~ msgstr "(&W) విండో"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "మెయిన్ పనిముట్లపట్టీ"
+
+#~ msgid "Bookmark Toolbar"
+#~ msgstr "సాధనపట్టీని ఇష్టాంశముచేయుము"
+
+#~ msgctxt "@action:button New session"
+#~ msgid "New..."
+#~ msgstr "కొత్త..."
+
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename..."
+#~ msgstr "పునఃనామకరణ..."
+
+#~ msgctxt "@action:button Delete session"
+#~ msgid "Delete"
+#~ msgstr "తొలగించుము"
+
+#, fuzzy
+#~| msgid "Open in New Window"
+#~ msgid "Open folders in separate windows"
+#~ msgstr "కొత్త విండోనందు తెరువుము"
+
+#~ msgid "Reload"
+#~ msgstr "తిరిగిలోడ్‌చేయి"
+
+#~ msgid "Default"
+#~ msgstr "అప్రమెయం"

@@ -1,0 +1,128 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Swedish "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="khtml-behavior" lang="&language;">
+<articleinfo>
+<title
+>Webbläsning</title>
+<authorgroup>
+<author
+>&Krishna.Tateneni; &Krishna.Tateneni.mail;</author>
+<othercredit role="translator"
+> <firstname
+>Stefan</firstname
+> <surname
+>Asserhäll</surname
+> <affiliation
+><address
+><email
+>stefan.asserhall@bredband.net</email
+></address
+></affiliation
+> <contrib
+>Översättare</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2019-11-04</date>
+<releaseinfo
+>Program 19.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Systeminställningar</keyword>
+<keyword
+>konqueror</keyword>
+<keyword
+>bläddra</keyword>
+</keywordset>
+
+</articleinfo>
+<sect1 id="konq-browsing">
+<title
+>Webbläsning</title>
+
+<para
+>Modulen webbläsaren &konqueror; i systeminställningarna låter dig välja olika alternativ för beteendet hos &konqueror;, &kde;:s integrerade webbläsare.</para>
+
+<para
+>Om <guilabel
+>Fråga efter namn och katalog när bokmärken läggs till</guilabel
+> är markerad kommer &konqueror; låta dig ändra bokmärkets namn och välja en katalog där det ska lagras när du lägger till ett bokmärke.</para>
+
+<para
+>Aktivera <guilabel
+>Visa bara markerade bokmärken i bokmärkesverktygsraden</guilabel
+>, så kommer Konqueror bara att visa de bokmärken i bokmärkesverktygsraden som du har markerat ska visas i bokmärkeseditorn.</para>
+
+<para
+>Nästa alternativet du kan aktivera på den här sidan är <guilabel
+>Komplettering av formulär</guilabel
+>. Om du markerar rutan, försöker &konqueror; att komma ihåg vad du svarat på frågor i formulär, och försöker fylla i formulären åt dig med svaren du gav tidigare.</para>
+
+<para
+>Du kan ställa in antal formulärsvar som &konqueror; kommer ihåg med nummerrutan som heter <guilabel
+>Maximalt antal kompletteringar</guilabel
+>.</para>
+
+<note
+><para
+>Du kan förstås fortfarande redigera allt som &konqueror; fyller i formuläret med innan du skickar det!</para
+></note>
+
+<para
+>Nästa alternativ är <guilabel
+>Ändra muspekaren över länkar</guilabel
+>. Om detta alternativ markeras, ändras pekaren (oftast till en hand) när den flyttas över en hyperlänk. Det här gör det lätt att identifiera länkar, särskilt om de är i form av bilder.</para>
+
+<para
+>Om rutan <guilabel
+>Mittenklick öppnar webbadress i markering</guilabel
+> är markerad kan du öppna webbadressen i markeringen genom att mittenklicka i ett &konqueror;-fönster.</para>
+
+<para
+>Som en bekvämlighetsfunktion, om du aktiverar <guilabel
+>Högerklick går bakåt i historiken</guilabel
+>, så fungerar ett högerklick i ett tomt område (dvs. inte på en länk) i &konqueror;s fönster som om du tryckt på knappen <guiicon
+>Tillbaka</guiicon
+> i verktygsraden.</para>
+
+<para
+>Genom att aktivera <guilabel
+>Tillåt automatisk fördröjd omladdning/omdirigering</guilabel
+>, låter du webbplatser skicka dig till en annan sida utan att du ingriper. I många fall är detta bekvämt, till exempel om webbplatsen har bytt till en ny webbadress. Många webbansvariga visar då en sida på den gamla platsen, som talar om att den har flyttat och att du bör ändra bokmärket, och flyttar dig sedan automatiskt till den nya platsen. Sådana funktioner kan dock vara förvillande, eller irriterande när de missbrukas, och därför kan du vilja stänga av det.</para>
+
+<para
+><guilabel
+>Använd aktivering av åtkomsttangenter med &Ctrl;-tangenten</guilabel
+>: Genom att trycka på &Ctrl;-tangenten när webbsidor visas aktiveras  åtkomsttangenter. Avmarkeras rutan stängs denna handikappfunktion av. &konqueror; måste startas om för att ändringen ska få någon effekt.</para>
+
+<para
+><guilabel
+>Skicka DNT-huvud för att säga till webbsidor att du inte vill spåras</guilabel
+>. Markera rutan om du vill informera en webbplats att du inte vill att dina webbläsningsvanor ska spåras. </para>
+
+<para
+><guilabel
+>Erbjud att spara webbplatsers lösenord</guilabel
+>. Avmarkera rutan för att förhindra frågor om att spara webbplatsers lösenord </para>
+
+<para
+><guilabel
+>Visa &PDF;-filer på nätet med WebEngine</guilabel
+>. Avmarkera rutan för att visa &PDF;-filer på nätet enligt inställningarna i systeminställningarnas modul <guilabel
+>Filbindningar</guilabel
+>. </para>
+
+</sect1>
+
+</article>

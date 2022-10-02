@@ -1,0 +1,368 @@
+# translation of libkonq.po to Uzbek
+# Copyright (C) 2003, 2004, 2005, 2006 Free Software Foundation, Inc.
+#
+# Mashrab Kuvatov <kmashrab@uni-bremen.de>, 2003, 2004, 2005, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2006-04-07 18:03+0200\n"
+"Last-Translator: Mashrab Kuvatov <kmashrab@uni-bremen.de>\n"
+"Language-Team: Uzbek <floss-uz-l10n@googlegroups.com>\n"
+"Language: uz@cyrillic\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "&Очиш"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "Жилдни &яратиш"
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "Қ&айта тиклаш"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "Чиқиндилар қутисини &бўшатиш"
+
+#: src/konq_popupmenu.cpp:312
+#, fuzzy, kde-format
+#| msgid "&Empty Trash Bin"
+msgid "&Configure Trash Bin"
+msgstr "Чиқиндилар қутисини &бўшатиш"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "Бу саҳифани &хатчўпларга қўшиш"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "Бу манзилни &хатчўпларга қўшиш"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "Бу жилдни &хатчўпларга қўшиш"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "Бу боғни &хатчўпларга қўшиш"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "Бу файлни &хатчўпларга қўшиш"
+
+#: src/konq_popupmenu.cpp:379
+#, fuzzy, kde-format
+#| msgid "Preview"
+msgid "Preview In"
+msgstr "Кўриб чиқиш"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "&Хоссалари"
+
+#, fuzzy
+#~| msgid "Move to Trash"
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "Чиқиндилар қутисига олиб ташлаш"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "Янги жилд"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "Янги жилд"
+
+#, fuzzy
+#~| msgid "&Copy Here"
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "Шу ерга &нусха олиш"
+
+#, fuzzy
+#~| msgid "&Move Here"
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "Шу ерга &кўчириш"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "Жилдни ўзидан ўзига кўчириб бўлмайди"
+
+#~ msgid "File name for dropped contents:"
+#~ msgstr "Файлнинг номи:"
+
+#~ msgid "&Move Here"
+#~ msgstr "Шу ерга &кўчириш"
+
+#~ msgid "&Copy Here"
+#~ msgstr "Шу ерга &нусха олиш"
+
+#~ msgid "&Link Here"
+#~ msgstr "Шу ерга &боғлаш"
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "Иш &столига қўйиш"
+
+#~ msgid "C&ancel"
+#~ msgstr "&Бекор қилиш"
+
+#, fuzzy
+#~| msgid "Create New"
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "Яратиш"
+
+#, fuzzy
+#~| msgid "Enter folder name:"
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "Жилднинг номини киритинг:"
+
+#, fuzzy
+#~| msgid "Create New"
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "Яратиш"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "Янги жилд"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "Янги жилд"
+
+#, fuzzy
+#~| msgid "Enter folder name:"
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "Жилднинг номини киритинг:"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "Янги жилд"
+
+#~ msgid "Share"
+#~ msgstr "Бўлишиш"
+
+#~ msgid "Create New"
+#~ msgstr "Яратиш"
+
+#~ msgid "Link to Device"
+#~ msgstr "Ускунага боғ"
+
+#~ msgid "<qt>The template file <b>%1</b> does not exist.</qt>"
+#~ msgstr "<qt>Намуна файли <b>%1</b> мавжуд эмас.</qt>"
+
+#~ msgid "File name:"
+#~ msgstr "Файлнинг номи:"
+
+#, fuzzy
+#~| msgid "Ac&tions"
+#~ msgctxt "@title:menu"
+#~ msgid "&Actions"
+#~ msgstr "&Амаллар"
+
+#, fuzzy
+#~| msgid "&Open With"
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With"
+#~ msgstr "...билан &очиш"
+
+#, fuzzy
+#~| msgid "&Other..."
+#~ msgctxt "@action:inmenu Open With"
+#~ msgid "&Other..."
+#~ msgstr "&Бошқа..."
+
+#, fuzzy
+#~| msgid "&Open With..."
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With..."
+#~ msgstr "...билан &очиш"
+
+#, fuzzy
+#~| msgid "Open with %1"
+#~ msgid "Open &with %1"
+#~ msgstr "%1 билан очиш"
+
+#~ msgid "Open in New &Window"
+#~ msgstr "&Янги ойнада очиш"
+
+#~ msgid "Open the trash in a new window"
+#~ msgstr "Чиқиндилар қутисини янги ойнада очиш"
+
+#~ msgid "Open the medium in a new window"
+#~ msgstr "Янги ойнада очиш"
+
+#~ msgid "Open the document in a new window"
+#~ msgstr "Ҳужжатни янги ойнада очиш"
+
+#, fuzzy
+#~| msgid "Delete Files"
+#~ msgid "Deleting"
+#~ msgstr "Файлларни ўчириш"
+
+#~ msgid "Und&o"
+#~ msgstr "&Бекор қилиш"
+
+#~ msgid "Und&o: Copy"
+#~ msgstr "&Бекор қилиш: Нусха олиш"
+
+#~ msgid "Und&o: Link"
+#~ msgstr "&Бекор қилиш: Боғлаш"
+
+#~ msgid "Und&o: Move"
+#~ msgstr "&Бекор қилиш: Кўчириш"
+
+#, fuzzy
+#~ msgid "Und&o: Rename"
+#~ msgstr "&Бекор қилиш: Боғлаш"
+
+#~ msgid "Und&o: Trash"
+#~ msgstr "&Бекор қилиш: Чиқиндилар қутисига жўнатиш"
+
+#~ msgid "Und&o: Create Folder"
+#~ msgstr "&Бекор қилиш: Жилдни яратиш"
+
+#, fuzzy
+#~ msgid "Do you really want to delete this item?"
+#~ msgid_plural "Do you really want to delete these %1 items?"
+#~ msgstr[0] "Ростдан бу элементни ўчирмоқчимисиз?"
+
+#~ msgid "Delete Files"
+#~ msgstr "Файлларни ўчириш"
+
+#, fuzzy
+#~ msgid "Do you really want to move this item to the trash?"
+#~ msgid_plural "Do you really want to move these %1 items to the trash?"
+#~ msgstr[0] ""
+#~ "Ростдан бу элементни чиқиндилар қутисига олиб ташламоқчимисиз?Ростдан бу "
+#~ "%1 элементни чиқиндилар қутисига олиб ташламоқчимисиз?"
+
+#~ msgid "Move to Trash"
+#~ msgstr "Чиқиндилар қутисига олиб ташлаш"
+
+#~ msgctxt "Verb"
+#~ msgid "&Trash"
+#~ msgstr "Чиқиндилар қутисига &жўнатиш"
+
+#, fuzzy
+#~| msgid "Und&o"
+#~ msgid "Und&o: %1"
+#~ msgstr "&Бекор қилиш"
+
+#~ msgid "Background Settings"
+#~ msgstr "Орқа фон мосламалари"
+
+#~ msgid "Background"
+#~ msgstr "Орқа фон"
+
+#~ msgid "Co&lor:"
+#~ msgstr "&Ранг:"
+
+#~ msgid "&Picture:"
+#~ msgstr "&Расм:"
+
+#~ msgid "Preview"
+#~ msgstr "Кўриб чиқиш"
+
+#~ msgid "None"
+#~ msgstr "Йўқ"
+
+#~ msgid "Enlarge Icons"
+#~ msgstr "Нишончаларни катталаштириш"
+
+#~ msgid "Shrink Icons"
+#~ msgstr "Нишончаларни кичиклаштириш"
+
+#~ msgid "&Default Size"
+#~ msgstr "&Андоза ўлчам"
+
+#~ msgid "&Huge"
+#~ msgstr "&Баҳайбат"
+
+#~ msgid "&Very Large"
+#~ msgstr "Ж&уда катта"
+
+#~ msgid "&Large"
+#~ msgstr "К&атта"
+
+#~ msgid "&Medium"
+#~ msgstr "Ўр&та"
+
+#~ msgid "&Small"
+#~ msgstr "&Кичик"
+
+#~ msgid "&Tiny"
+#~ msgstr "&Жуда кичик"
+
+#~ msgid "Configure Background..."
+#~ msgstr "Орқа фонни мослаш"
+
+#~ msgid "Allows choosing of background settings for this view"
+#~ msgstr "Бу кўриниш учун орқа фонни мослаш"
+
+#~ msgid "<p>You do not have enough permissions to read <b>%1</b></p>"
+#~ msgstr "<p><b>%1</b>'ни ўқиш учун сизда етарли ҳуқуқлар йўқ</p>"
+
+#~ msgid "<p><b>%1</b> does not seem to exist anymore</p>"
+#~ msgstr "<p><b>%1</b> мавжуд эмасга ўхшайди</p>"
+
+#~ msgid "Search result: %1"
+#~ msgstr "Қидирув натижаси: %1"
+
+#~ msgid "Do you really want to shred this item?"
+#~ msgid_plural "Do you really want to shred these %1 items?"
+#~ msgstr[0] "Ростдан бу элементни қириб ташламоқчимисиз?"
+
+#~ msgid "Shred Files"
+#~ msgstr "Файлни қириб ташлаш"
+
+#~ msgid "Shred"
+#~ msgstr "Қириб ташлаш"

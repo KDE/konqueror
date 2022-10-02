@@ -1,0 +1,274 @@
+# translation of libkonq.po to Latvian
+# Copyright (C) 2007, 2008 Free Software Foundation, Inc.
+#
+# Maris Nartiss <maris.kde@gmail.com>, 2007, 2008.
+# Viesturs Zarins <viesturs.zarins@mii.lu.lv>, 2007, 2008, 2009.
+# Viesturs Zariņš <viesturs.zarins@mii.lu.lv>, 2009.
+# Rūdofls Mazurs <rudolfs.mazurs@gmail.com>, 2011.
+# Einars Sprugis <einars8@gmail.com>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2012-01-07 20:02+0200\n"
+"Last-Translator: Einars Sprugis <einars8@gmail.com>\n"
+"Language-Team: Latvian <locale@laka.lv>\n"
+"Language: lv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2);\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "&Atvērt"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "Izveidot &mapi..."
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "A&tjaunot"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr "Parādīt orģinālo mapi"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr "Parādīt orģinālo failu"
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "&Iztukšot miskasti"
+
+#: src/konq_popupmenu.cpp:312
+#, kde-format
+msgid "&Configure Trash Bin"
+msgstr "&Konfigurēt miskasti"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "Pievienot &grāmatzīmi lapai"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "Pievienot &grāmatzīmi vietai"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "Pievienot &grāmatzīmi mapei"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "Pievienot &grāmatzīmi saitei"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "Pievienot &grāmatzīmi failam"
+
+#: src/konq_popupmenu.cpp:379
+#, kde-format
+msgid "Preview In"
+msgstr "Priekšskatīt iekš"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "Ī&pašības"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy To"
+#~ msgstr "Kopēt uz"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "Pārvietot uz"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "Mājas mape"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "Saknes mape"
+
+#~ msgctxt "@title:menu in Copy To or Move To submenu"
+#~ msgid "Browse..."
+#~ msgstr "Pārlūkot..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "Kopēt šeit"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "Pārvietot šeit"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "Jūs nevarat iemest mapi pašu sevī"
+
+#~ msgid "File name for dropped contents:"
+#~ msgstr "Iemestā satura faila nosaukums:"
+
+#~ msgid "&Move Here"
+#~ msgstr "&Pārvietot šeit"
+
+#~ msgid "&Copy Here"
+#~ msgstr "&Kopēt šeit"
+
+#~ msgid "&Link Here"
+#~ msgstr "&Saitēt šeit"
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "Uzlikt par ekrān&tapeti"
+
+#~ msgid "C&ancel"
+#~ msgstr "&Atcelt"
+
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "Izveidot mapi"
+
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "Ievadiet citu nosaukumu"
+
+#~ msgid ""
+#~ "The name \"%1\" starts with a dot, so the directory will be hidden by "
+#~ "default."
+#~ msgstr ""
+#~ "Nosaukums \"%1\" sākas ar punktu un tāpēc izveidotā mape būs noklusēti "
+#~ "slēpta."
+
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "Izveidot slēptu mapi?"
+
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "Jauna mape"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "Jauna mape"
+
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "Ievadiet mapes nosaukumu:"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "Ielīmēt vienu mapi"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One File"
+#~ msgstr "Ielīmēt vienu failu"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Item"
+#~ msgid_plural "Paste %1 Items"
+#~ msgstr[0] "Ielīmēt %1 vienību"
+#~ msgstr[1] "Ielīmēt %1 vienības"
+#~ msgstr[2] "Ielīmēt %1 vienības"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste Clipboard Contents..."
+#~ msgstr "Ielīmēt starpliktuves saturu..."
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste"
+#~ msgstr "Ielīmēt"
+
+#~ msgid ""
+#~ "Restores this file or directory, back to the location where it was "
+#~ "deleted from initially"
+#~ msgstr ""
+#~ "Atjauno šo failu vai mapi atpakaļ tajā vietā, no kuras tas tika izdzēsts"
+
+#~ msgid ""
+#~ "Opens a new file manager window showing the target of this link, in its "
+#~ "parent directory."
+#~ msgstr ""
+#~ "Atver jaunu failu pārvaldnieka logu, kas parāda šīs saites mērķi, tās "
+#~ "vecāka mapē."
+
+#~ msgid "Share"
+#~ msgstr "Kopīgot"
+
+#~ msgctxt "@info"
+#~ msgid "Close"
+#~ msgstr "Aizvērt"
+
+#~ msgid "Close"
+#~ msgstr "Aizvērt"
+
+#~ msgid "Error: %1"
+#~ msgstr "Kļūda: %1"
+
+#~ msgid "Create New"
+#~ msgstr "Veidot jaunu"
+
+#~ msgid "Link to Device"
+#~ msgstr "Saite uz ierīci"
+
+#~ msgid "<qt>The template file <b>%1</b> does not exist.</qt>"
+#~ msgstr "<qt>Šablona fails <b>%1</b> neeksistē.</qt>"
+
+#~ msgid "File name:"
+#~ msgstr "Faila nosaukums:"
+
+#~ msgid ""
+#~ "Basic links can only point to local files or directories.\n"
+#~ "Please use \"Link to Location\" for remote URLs."
+#~ msgstr ""
+#~ "Vienkāršas saites var rādīt tikai uz lokāliem failiem vai mapēm.\n"
+#~ "Lūdzu lietojiet \"Saite uz vietu\", attālinātām saitēm."
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Actions"
+#~ msgstr "D&arbības"
+
+#~ msgid "&Open With"
+#~ msgstr "&Atvērt ar"
+
+#~ msgid "Open &with %1"
+#~ msgstr "Atvērt a&r %1"
+
+#~ msgid "&Other..."
+#~ msgstr "&Citi..."
+
+#~ msgid "&Open With..."
+#~ msgstr "&Atvērt ar..."
+
+#~ msgid "Open in New &Window"
+#~ msgstr "Atvērt jaunā &logā"
+
+#~ msgid "Open the trash in a new window"
+#~ msgstr "Atvērt miskasti jaunā logā"
+
+#~ msgid "Open the medium in a new window"
+#~ msgstr "Atvērt datu nesēju jaunā logā"
+
+#~ msgid "Open the document in a new window"
+#~ msgstr "Atvērt dokumentu jaunā logā"

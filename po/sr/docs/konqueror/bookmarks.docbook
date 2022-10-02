@@ -1,0 +1,223 @@
+<chapter id="bookmarks">
+<chapterinfo>
+<authorgroup>
+<author
+><personname
+><firstname
+>Памела</firstname
+> <surname
+>Робертс</surname
+></personname
+></author>
+<othercredit role="translator"
+><firstname
+>Драган</firstname
+><surname
+>Пантелић</surname
+><affiliation
+><address
+><email
+>falcon-10@gmx.de</email
+></address
+></affiliation
+><contrib
+>превод</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>24. 9. 2010.</date>
+<releaseinfo
+>КДЕ 4.5</releaseinfo>
+</chapterinfo>
+
+<title
+>Коришћење обележивача</title>
+
+<para
+>Мада <application
+>К‑освајачеве</application
+> обележиваче можете користити за памћење локација личних фајлова и фасцикли, најкориснији су кад претражујете Веб, за састављање списка корисних сајтова.</para>
+
+<para
+>Мени <guimenu
+>Обележивачи</guimenu
+> отварате <mousebutton
+>левим</mousebutton
+> кликом на наслов менија. Пошто се списак развије, кроз њега се можете кретати стрелицама или мишем, па притиснути <keycap
+>Enter</keycap
+> или кликнути <mousebutton
+>левим</mousebutton
+> да посетите изабрану локацију.</para>
+
+<para
+>За додавање нове ставке списку, користите <menuchoice
+><guimenu
+>Обележивачи</guimenu
+><guimenuitem
+>Додавање обележивача</guimenuitem
+></menuchoice
+>, или <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>B</keycap
+></keycombo
+>, или кликните <mousebutton
+>десним</mousebutton
+> на празан простор на веб страници (или у приказу фасцикле) и из искачућег менија одаберите <guimenuitem
+>Обележи ову локацију</guimenuitem
+>.</para>
+
+<para
+>Списак обележивача може садржати потфасцикле са другим обележивачима, а њих можете направити помоћу <menuchoice
+><guimenu
+>Обележивачи</guimenu
+><guimenuitem
+>Нова фасцикла обележивача...</guimenuitem
+></menuchoice
+>. За додавање обележивача у потфасциклу радије него у главни списак, изаберите фасциклу са списка, па употребите ставку <guimenuitem
+>Додавање обележивача</guimenuitem
+> у тој фасцикли.</para>
+
+<para
+>Обележивачима можете приступити и из <link linkend="sidebar"
+>бочне траке</link
+>, или преко траке обележивача.</para>
+
+<para
+>Ако унесете <userinput
+>bookmarks:/</userinput
+> у траку локације, појавиће се домаћа страница обележивача са прегледом свих обележивача по фасциклама.</para
+> 
+
+<sect1 id="orgbmark">
+<title
+>Уређивач обележивача</title>
+
+<para
+>Ставка <menuchoice
+><guimenu
+>Обележивачи</guimenu
+><guimenuitem
+>Уреди обележиваче</guimenuitem
+></menuchoice
+> отвара <emphasis
+>уређивач обележивача</emphasis
+>.</para>
+<para
+>У њему је дат стаблолик приказ обележивача и потфасцикли с обележивачима. Као што је уобичајено у <acronym
+>КДЕ‑у</acronym
+>, потфасцикле се приказују малом стрелицом <keycap
+>&gt;</keycap
+> лево од имена фасцикле; <mousebutton
+>левим</mousebutton
+> кликом на стрелицу проширујете приказ тако да обухвати садржај потфасцикле, при чему ће се <keycap
+>&gt;</keycap
+> променити у <keycap
+>v</keycap
+>. <mousebutton
+>Левим</mousebutton
+> кликом на <keycap
+>v</keycap
+> сажимате приказ потфасцикле.</para>
+
+<para
+>За избор ставке са списка можете кликнути <mousebutton
+>левим</mousebutton
+> на њу, или шетати кроз списак користећи стрелице горе и доле, стрелицу десно да проширите потфасциклу, те стрелицу лево да је сажмете.</para>
+
+<para
+>Ставку можете преместити другде на списку уобичајеним превлачењем, или исецањем и налепљивањем. Редослед ставки у уређивачу обележивача исти је као редослед у падајућем списку менија <guimenu
+>Обележивачи</guimenu
+>. Ставка <menuchoice
+><guimenu
+>Фасцикла</guimenu
+><guimenuitem
+>Уметни раздвајач</guimenuitem
+></menuchoice
+> може се употребити за уметање раздвајачких редова у списку где год пожелите.</para>
+
+<para
+>Нова потфасцикла може се створити на изабраној тачки у списку коришћењем ставке <guimenuitem
+>Нова фасцикла...</guimenuitem
+> у менију <guimenu
+>Фасцикла</guimenu
+>, или из падајућег менија који добијате кад кликнете <mousebutton
+>десним</mousebutton
+> на ставку у главном делу прозора, или пречицом <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>N</keycap
+></keycombo
+>. </para>
+
+<para
+>За измену имена обележивача (или фасцикле), одаберите га па притисните <keycap
+>F2</keycap
+>, или изаберите ставку <guimenuitem
+>Преименуј</guimenuitem
+> из менија <guimenu
+>Уређивање</guimenu
+> или искачућег менија који добијете пошто кликнете <mousebutton
+>десним</mousebutton
+> на ставку. Слично можете уредити УРЛ, притиском <keycap
+>F3</keycap
+> или избором ставке менија <guimenuitem
+>Измени локацију</guimenuitem
+>.</para>
+
+<para
+>Уређивачем обележивача можете увозити обележиваче из мноштва других прегледача у <application
+>К‑освајачев</application
+> списак обележивача, притом их ставивши у нову фасциклу или заменити све тренутне обележиваче. Ово изводите ставком <guisubmenu
+>Увоз</guisubmenu
+> из менија <guimenu
+>Фајл</guimenu
+>. Ставка <menuchoice
+><guimenu
+>Фајл</guimenu
+><guisubmenu
+>Извоз</guisubmenu
+> </menuchoice
+> може се користити за извоз <application
+>К‑освајачевих</application
+> обележивача у Нетскејпов или Мозилин прегледач.</para>
+
+<para
+>За избор потфасцикле обележивача која ће садржати ставке за траку обележивача, одаберите потфасциклу па <guimenuitem
+>Постави као траку фасцикли</guimenuitem
+> из менија <guimenu
+>Фасцикла</guimenu
+>.</para>
+
+<para
+>Док поспремате обележиваче, ако сте заборавили шта је дата веб страница, лако је можете отворити из уређивача обележивача <mousebutton
+>десним</mousebutton
+> кликом на ставку и избором <guimenuitem
+>Отвори у К‑освајачу</guimenuitem
+> из падајућег менија. Ако само желите да проверите да ли је УРЛ још увек важећи, уместо тога одаберите <guimenuitem
+>Провери стање</guimenuitem
+>.</para>
+
+<note
+><para
+>Све измене које начините аутоматски ће бити сачуване чим затворите уређивач обележивача. </para
+></note>
+</sect1
+> 
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

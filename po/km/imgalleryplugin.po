@@ -1,0 +1,288 @@
+# translation of imgalleryplugin.po to Khmer
+# Khoem Sokhem <khoemsokhem@khmeros.info>, 2006, 2007, 2008.
+# Auk Piseth <piseth_dv@khmeros.info>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: imgalleryplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"PO-Revision-Date: 2008-08-21 09:02+0700\n"
+"Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
+"Language-Team: Khmer <en@li.org>\n"
+"Language: km\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: KBabel 1.11.4\n"
+"X-Language: km-KH\n"
+
+#: imgallerydialog.cpp:37
+#, kde-format
+msgctxt "@title:window"
+msgid "Create Image Gallery"
+msgstr "​បង្កើត​វិចិត្រសាល​រូបភាព"
+
+#: imgallerydialog.cpp:38
+#, kde-format
+msgid "Create"
+msgstr "បង្កើត​"
+
+#: imgallerydialog.cpp:48 imgallerydialog.cpp:84
+#, kde-format
+msgid "Image Gallery for %1"
+msgstr "វិចិត្រសាល​រូបភាព​សម្រាប់ %1"
+
+#: imgallerydialog.cpp:76
+#, kde-format
+msgid "Look"
+msgstr "រូបរាង"
+
+#: imgallerydialog.cpp:77
+#, kde-format
+msgid "Page Look"
+msgstr "រូបរាង​ទំព័រ"
+
+#: imgallerydialog.cpp:85
+#, kde-format
+msgid "&Page title:"
+msgstr "ចំណងជើង​ទំព័រ ៖"
+
+#: imgallerydialog.cpp:93
+#, kde-format
+msgid "I&mages per row:"
+msgstr "រូបភាព​ក្នុង​មួយ​ជួរ​ដេក ៖"
+
+#: imgallerydialog.cpp:95
+#, kde-format
+msgid "Show image file &name"
+msgstr "បង្ហាញ​ឈ្មោះ​ឯកសារ​រូបភាព"
+
+#: imgallerydialog.cpp:99
+#, kde-format
+msgid "Show image file &size"
+msgstr "បង្ហាញ​ទំហំ​ឯកសារ​រូបភាព"
+
+#: imgallerydialog.cpp:103
+#, kde-format
+msgid "Show image &dimensions"
+msgstr "បង្ហាញ​វិមាត្រ​រូបភាព"
+
+#: imgallerydialog.cpp:114
+#, kde-format
+msgid "Fon&t name:"
+msgstr "ឈ្មោះ​ពុម្ពអក្សរ​ ៖"
+
+#: imgallerydialog.cpp:122
+#, kde-format
+msgid "Font si&ze:"
+msgstr "​ទំហំ​ពុម្ពអក្សរ ៖"
+
+#: imgallerydialog.cpp:126
+#, kde-format
+msgid "&Foreground color:"
+msgstr "​ពណ៌​ផ្ទៃ​ខាង​មុខ ៖"
+
+#: imgallerydialog.cpp:130
+#, kde-format
+msgid "&Background color:"
+msgstr "​ពណ៌​ផ្ទៃ​ខាង​ក្រោយ ៖"
+
+#: imgallerydialog.cpp:136 imgallerydialog.cpp:137
+#, kde-format
+msgid "Folders"
+msgstr "​ថត"
+
+#: imgallerydialog.cpp:145
+#, kde-format
+msgid "&Save to HTML file:"
+msgstr "រក្សាទុក​ទៅ​​​ឯកសារ​ HTML ៖"
+
+#: imgallerydialog.cpp:147
+#, kde-format
+msgid "<p>The name of the HTML file this gallery will be saved to.</p>"
+msgstr "<p>ឈ្មោះ​របស់​ឯកសារ HTML វិចិត្រសាល​នេះ​នឹង​ត្រូវ​បាន​រក្សាទុក​ទៅ​កាន់ ។</p>"
+
+#: imgallerydialog.cpp:150
+#, kde-format
+msgid "&Recurse subfolders"
+msgstr "ការ​ហៅ​ថតរង​ដោយ​ខ្លួន​ឯង"
+
+#: imgallerydialog.cpp:152
+#, kde-format
+msgid ""
+"<p>Whether subfolders should be included for the image gallery creation or "
+"not.</p>"
+msgstr "<p>ថាតើ​ថតរង​គួរ​ត្រូវ​បាន​រួម​បញ្ចូល​សម្រាប់​ការ​បង្កើត​វិចិត្រសាល​រូបភាព​ ឬ​ក៏​អត់ ។</p>"
+
+#: imgallerydialog.cpp:163
+#, kde-format
+msgid "Endless"
+msgstr "គ្មាន​ទី​បញ្ចប់"
+
+#: imgallerydialog.cpp:165
+#, kde-format
+msgid ""
+"<p>You can limit the number of folders the image gallery creator will "
+"traverse to by setting an upper bound for the recursion depth.</p>"
+msgstr ""
+"<p>អ្នក​អាច​កំណត់​ចំនួន​ថតនូវ​​កម្មវិធី​បង្កើត​វិចិត្រសាល​រូបភាព​នឹង​ឆ្លង​កាត់​ដោយ​​កំណត់​​ព្រំដែន​ខាង​លើ​សម្រាប់​ជម្រៅ​"
+"ការហៅ​ខ្លួនឯង ។</p>"
+
+#: imgallerydialog.cpp:168
+#, kde-format
+msgid "Rec&ursion depth:"
+msgstr "ជម្រៅ​ការ​ហៅ​ខ្លួន​ឯង ៖"
+
+#: imgallerydialog.cpp:172
+#, kde-format
+msgid "Copy or&iginal files"
+msgstr "ចម្លង​ឯកសារ​ដើម"
+
+#: imgallerydialog.cpp:174
+#, kde-format
+msgid ""
+"<p>This makes a copy of all images and the gallery will refer to these "
+"copies instead of the original images.</p>"
+msgstr "<p>វា​ធ្វើ​ការ​ចម្លង​រូបភាព​ទាំង​អស់​ ហើយ​វិចិត្រសាល​នឹង​​យោង​​លើ​ច្បាប់​ចម្លង​ជំនួស​​ឲ្យ​រូបភាព​ដើម ។</p>"
+
+#: imgallerydialog.cpp:179
+#, kde-format
+msgid "Use &comment file"
+msgstr "ប្រើ​ឯកសារ​សេចក្តី​អធិប្បាយ ៖"
+
+#: imgallerydialog.cpp:181
+#, kde-format
+msgid ""
+"<p>If you enable this option you can specify a comment file which will be "
+"used for generating subtitles for the images.</p><p>For details about the "
+"file format please see the \"What's This?\" help below.</p>"
+msgstr ""
+"<p>ប្រសិន​បើអ្នក​បើក​ជម្រើស​នេះ អ្នក​អាច​បញ្ជាក់​ឯកសារ​សេចក្ដីអធិប្បាយ​ដែល​នឹង​ត្រូវ​បានប្រើ​សម្រាប់​បង្កើត​"
+"ចំណង​ជើង​រងសម្រាប់​រូបភាព ។</p><p>សម្រាប់​សេចក្ដី​លម្អិត​​អំពី​ទ្រង់ទ្រាយ​ឯកសារ សូម​មើលជំនួយ \"នេះ​ជា​អ្វី?"
+"\" ខាង​ក្រោម ។</p>"
+
+#: imgallerydialog.cpp:190
+#, kde-format
+msgid ""
+"<p>You can specify the name of the comment file here. The comment file "
+"contains the subtitles for the images. The format of this file is:</"
+"p><p>FILENAME1:<br />Description<br /><br />FILENAME2:<br />Description<br /"
+"><br />and so on</p>"
+msgstr ""
+"<p>អ្នក​អាច​បញ្ជាក់​ឈ្មោះ​របស់​ឯកសារ​អធិប្បាយ​នៅ​ទី​នេះ ។ ឯកសារ​អធិប្បាយ​មាន​ចំណង​ជើង​រង​សម្រាប់​រូពភាព ។ "
+"ទ្រង់ទ្រាយ​របស់​ឯកសារ​នេះ​គឺ ៖</p><p>FILENAME1:<br />សេចក្តី​ពិពណ៌នា<br /><br />FILENAME2:"
+"<br />សេចក្តី​អធិប្បាយ<br /><br />និង​បន្តបន្ទាប់</p>"
+
+#: imgallerydialog.cpp:200
+#, kde-format
+msgid "Comments &file:"
+msgstr "ឯកសារ​សេចក្តី​អធិប្បាយ ៖"
+
+#: imgallerydialog.cpp:210 imgallerydialog.cpp:211
+#, kde-format
+msgid "Thumbnails"
+msgstr "​រូបភាព​តូច"
+
+#: imgallerydialog.cpp:224
+#, kde-format
+msgid "Image f&ormat:"
+msgstr ""
+
+#: imgallerydialog.cpp:232
+#, kde-format
+msgid "Thumbnail size:"
+msgstr "ទំហំ​រូបភាព​តូច ៖"
+
+#: imgallerydialog.cpp:235
+#, kde-format
+msgid "&Set different color depth:"
+msgstr "កំណត់​ជម្រៅ​ពណ៌​ខុសៗគ្នា ៖"
+
+#: imgallerydialog.cpp:246
+#, kde-format
+msgid "Color depth:"
+msgstr ""
+
+#: imgalleryplugin.cpp:52
+#, kde-format
+msgid "&Create Image Gallery..."
+msgstr "បង្កើត​វិចិត្រសាល​រូបភាព..."
+
+#: imgalleryplugin.cpp:62
+#, kde-format
+msgid "Could not create the plugin, please report a bug."
+msgstr "មិន​អាច​បង្កើត​កម្មវិធី​ជំនួយ​បានទេ សូម​រាយការណ៍​កំហុស​ ។"
+
+#: imgalleryplugin.cpp:68
+#, kde-format
+msgid "Creating an image gallery works only on local folders."
+msgstr "ការ​បង្កើត​វិចិត្រ​សាល​​រូបភាព​មួយ​​​ធ្វើការ​តែ​នៅ​លើ​ថត​មូលដ្ឋាន​ប៉ុណ្ណោះ ។"
+
+#: imgalleryplugin.cpp:88
+#, kde-format
+msgid "Creating thumbnails"
+msgstr "ការ​បង្កើត​រូបភាព​តូចៗ"
+
+#: imgalleryplugin.cpp:111 imgalleryplugin.cpp:275
+#, kde-format
+msgid "Could not create folder: %1"
+msgstr "មិន​អាច​បង្កើត​ថត ៖ %1 បាន​ទេ"
+
+#: imgalleryplugin.cpp:173
+#, kde-format
+msgid "<i>Number of images</i>: %1"
+msgstr "<i>ចំនួន​រូបភាព</i> ៖ %1"
+
+#: imgalleryplugin.cpp:174
+#, kde-format
+msgid "<i>Created on</i>: %1"
+msgstr "<i>បាន​បង្កើត​នៅ</i> ៖ %1"
+
+#: imgalleryplugin.cpp:179
+#, kde-format
+msgid "<i>Subfolders</i>:"
+msgstr "<i>ថត​រង</i> ៖"
+
+#: imgalleryplugin.cpp:212
+#, kde-format
+msgid ""
+"Created thumbnail for: \n"
+"%1"
+msgstr ""
+"បាន​បង្កើត​រូបភាព​តូចៗ​សម្រាប់ ៖ \n"
+"%1"
+
+#: imgalleryplugin.cpp:215
+#, kde-format
+msgid ""
+"Creating thumbnail for: \n"
+"%1\n"
+" failed"
+msgstr ""
+"ការ​បង្កើត​រូបភាព​តូចៗ​​សម្រាប់ ៖ \n"
+"%1\n"
+" បាន​បរាជ័យ"
+
+#: imgalleryplugin.cpp:230
+#, kde-format
+msgid "KiB"
+msgstr "KiB"
+
+#: imgalleryplugin.cpp:344 imgalleryplugin.cpp:439
+#, kde-format
+msgid "Could not open file: %1"
+msgstr "មិន​អាច​បើក​ឯកសារ ៖ %1"
+
+#. i18n: ectx: Menu (tools)
+#: kimgallery.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "ឧបករណ៍"
+
+#~ msgid "Image format f&or the thumbnails:"
+#~ msgstr "ទ្រង់ទ្រាយ​រូបភាព​សម្រាប់​រូបភាព​តូច ៖"
+
+#~ msgctxt "@title:window"
+#~ msgid "Configure"
+#~ msgstr "កំណត់​រចនាសម្ព័ន្ធ"

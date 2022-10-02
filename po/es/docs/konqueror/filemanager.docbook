@@ -1,0 +1,1451 @@
+<chapter id="filemanager">
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+> <firstname
+>Rocío</firstname
+> <surname
+>Gallego</surname
+> <affiliation
+><address
+><email
+>traducciones@rociogallego.com</email
+></address
+></affiliation
+> <contrib
+>Traductor</contrib
+> </othercredit
+> <othercredit role="translator"
+> <firstname
+>Pablo</firstname
+> <surname
+>de Vicente</surname
+> <affiliation
+><address
+><email
+>pablo.devicente@gmail.com</email
+></address
+></affiliation
+> <contrib
+>Traductor</contrib
+> </othercredit
+> <othercredit role="translator"
+> <firstname
+>Marcos</firstname
+> <surname
+>Fouces Lago</surname
+> <affiliation
+><address
+><email
+>mfouces@yahoo.es</email
+></address
+></affiliation
+> <contrib
+>Traductor</contrib
+> </othercredit
+> <othercredit role="translator"
+> <firstname
+>Santiago</firstname
+> <surname
+>Fernández Sancho</surname
+> <affiliation
+><address
+><email
+>santi@kde-es.org</email
+></address
+></affiliation
+> <contrib
+>Traductor</contrib
+> </othercredit
+> 
+</authorgroup
+> 
+
+<date
+>2012-07-02</date>
+<releaseinfo
+>&kde; 4.9</releaseinfo>
+</chapterinfo>
+
+<title
+>&konqueror; el administrador de archivos</title>
+
+<sect1 id="dirfolders">
+<title
+>Directorios y rutas</title>
+<para
+>En &UNIX; y &Linux; todas las carpetas están ordenadas según una estructura jerárquica simple. Comenzando desde la carpeta superior (también llamada directorio raíz), la estructura desciende de forma que las ramas contienen varios archivos y subcarpetas. Esto significa que puede ir de un directorio a otro «subiendo» hasta que alcance un punto común y después «descendiendo» por las subcarpetas adecuadas hasta alcanzar su objetivo.</para>
+
+<para
+>La posición de cualquier archivo o carpeta en la estructura (también llamada árbol de directorios) se puede describir por su «ruta», que es una lista simple de carpetas por los que hay que descender hasta llegar a la carpeta de destino. Por ejemplo, <filename class="directory"
+>/home/pam</filename
+> es la subcarpeta <filename class="directory"
+>pam</filename
+> de la subcarpeta <filename class="directory"
+>home</filename
+> de la carpeta raíz de más alto nivel, y <filename
+> /home/pam/palabras.txt</filename
+> es el archivo <filename
+>palabras.txt</filename
+> en esa subcarpeta. El prefijo «/» en esas rutas representa la carpeta de más alto nivel.</para>
+
+<para
+>Cada carpeta accesible en su sistema &mdash;, incluidas aquellas de las otras particiones del disco duro, de un dispositivo USB o de un &CD-ROM; &mdash;, aparecerán en el árbol que parte de /; sus rutas exactas dependerán de cómo configuró su sistema (consulte también la sección <link linkend="removable-devices"
+>Dispositivos extraíbles</link
+>). </para>
+<para
+>Cada usuario en un sistema &UNIX; / &Linux; tiene su propia carpeta «personal» para guardar sus archivos personales y preferencias, por ejemplo, <filename class="directory"
+>/home/juan</filename
+> y <filename class="directory"
+>/home/maría</filename
+>. El símbolo <keycap
+>~</keycap
+> se usa frecuentemente para representar el directorio de inicio del usuario, de modo que <filename
+>~/carta.txt</filename
+> se refiere al archivo <filename
+>carta.txt</filename
+> en mi carpeta personal.</para>
+<para
+>Note que el término «carpeta» se usa frecuentemente en lugar de «directorio».</para>
+</sect1>
+
+<sect1 id="viewmode">
+<title
+>Modos de vistas</title>
+<para
+>En el modo de Administrador de archivos, &konqueror; lista los archivos y subcarpetas contenidos dentro de una carpeta dada y puede proporcionarle información sobre ellos. La «ruta» de la carpeta actual se muestra en la barra de dirección. La forma en que &konqueror; muestra los archivos y carpetas depende fundamentalmente de la elección que haga del modo de vista. Éste se puede seleccionar desde el menú <menuchoice
+> <guimenu
+>Ver</guimenu
+><guisubmenu
+>Modo de vista</guisubmenu
+></menuchoice
+>, que le ofrece las siguientes que se muestran a continuación. </para>
+
+<note
+><para
+>En el modo de administración de archivos, &konqueror; utiliza un componente &dolphin; empotrado.</para
+></note>
+<!-- begin copy from dolphin docbook synced for 4.10--> 
+<itemizedlist>
+
+<listitem
+><para
+>En la vista de <guibutton
+>Iconos</guibutton
+>, que es la predeterminada, los archivos se representan mediante un icono que muestra su tipo, y las subcarpetas mediante un icono de una carpeta. Los nombres de las carpetas y los archivos se muestran bajo los iconos. </para
+></listitem>
+
+<listitem
+><para
+>La vista <guilabel
+>Compacta</guilabel
+> muestra el contenido de la carpeta en forma de iconos con su nombre al lado y agrupados en columnas de forma similar a la vista <guilabel
+>Resumen</guilabel
+> en el diálogo de archivos de &kde;. </para
+></listitem>
+
+<listitem
+><para
+>En la vista de <guibutton
+>Detalles</guibutton
+>, los contenidos de la carpeta se muestran en una lista detallada que contiene su nombre, tamaño y hora de la última modificación de cada elemento. Puede añadir columnas adicionales haciendo clic con el &RMB; en la cabecera de las columnas. </para>
+<para
+>En el menú de contexto de la línea de cabecera, puede elegir entre un ancho de columna automático o personalizado. El ancho automático ajusta el ancho de todas las columnas a la vez, de manera que el elemento más largo de la columna se vea completamente, excepto en la columna <guilabel
+>Nombre</guilabel
+>, en la que la extensión se reemplaza por «...» </para>
+<para
+>El orden de las columnas se puede cambiar arrastrando y soltando las cabeceras de las columnas. </para>
+<para
+>La vista de detalles permite ver la carpeta actual en forma de árbol si está activada la opción <guilabel
+>Carpetas expansibles</guilabel
+>: cada una de las subcarpetas se puede «expandir» o «contraer»pulsando en el icono <guiicon
+>&lt;</guiicon
+> o en el icono <guiicon
+>v</guiicon
+> situado a su lado. </para>
+</listitem>
+</itemizedlist>
+
+<screenshot>
+<screeninfo
+>Vista agrupada</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="grouping-view.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Vista agrupada</phrase>
+</textobject>
+<caption
+><para
+>Todos los modos de vista admiten agrupar por el tipo de ordenación seleccionado en <menuchoice
+><guimenu
+>Ver</guimenu
+><guisubmenu
+>Ordenar por</guisubmenu
+></menuchoice
+></para
+></caption>
+</mediaobject>
+</screenshot>
+<!-- end copy from dolphin docbook --> 
+
+<sect2 id="filetipinfo">
+<title
+>Sugerencias informativas de archivo</title>
+<para
+>Si marca la casilla <guilabel
+>Mostrar consejos</guilabel
+> en la página <menuchoice
+> <guimenu
+>Administración de archivos</guimenu
+><guimenuitem
+>General</guimenuitem
+></menuchoice
+> del diálogo de de Configuración de &konqueror;, aparecerá una pequeña ventana emergente cuando el puntero del ratón permanezca sobre un archivo, un nombre de carpeta o un icono. </para>
+</sect2>
+
+<sect2 id="previews">
+<title
+>Previsualizaciones de archivos</title>
+<para
+>La pestaña <guilabel
+>Vistas previas</guilabel
+> de la página de preferencias <menuchoice
+><guimenu
+>Administración de archivos</guimenu
+> <guimenuitem
+>General</guimenuitem
+></menuchoice
+> le permite obtener una vista previa de cierto tipo de archivos.</para>
+<para
+>Generalmente esto significa que el icono del archivo será reemplazado por una pequeña imagen mostrando los contenidos del archivo.</para>
+<para
+>Debido a que &konqueror; tiene que leer muchos más datos que el nombre de un archivo para generar una vista previa, las vistas previas de archivos pueden no ser apropiadas cuando se visualizan archivos desde un sistema remoto. Para desactivar las vistas previas para archivos remotos en los casos en los se tardaría demasiado en leer los datos adicionales, establezca un límite de tamaño de archivo en la parte inferior de la pestaña <guilabel
+>Vistas previas</guilabel
+>.</para>
+</sect2>
+</sect1>
+
+<!-- begin copy from dolphin docbook synced for 4.10--> 
+<sect1 id="view-properties">
+<title
+>Propiedades de la vista de carpeta</title>
+
+<para
+>Las siguientes preferencias controlan cómo se muestra el contenido de una carpeta en la vista &kappname; y se guardan por carpetas de forma predeterminada: <itemizedlist
+> <listitem
+><para
+> El modo de vista (iconos, compacta, detalles) </para
+></listitem
+> <listitem
+><para
+> La ordenación de los elementos, que viene determinada por el tipo de ordenación </para
+></listitem
+> <listitem
+><para
+>Ordenación de las carpetas y los archivos: ¿se muestran primero las carpetas o no? </para
+></listitem
+> <listitem
+><para
+> Vistas previas: ¿se muestran en lugar de los iconos (basándose en las preferencias definidas en <link linkend="previews"
+><guilabel
+>Vistas previas</guilabel
+> pestaña de preferencias generales de &kappname;</link
+>) o no? </para
+></listitem
+> <listitem
+><para
+> ¿Los elementos se muestran agrupados en las vistas? </para
+></listitem
+> <listitem
+><para
+> ¿Se muestran los elementos ocultos? </para
+></listitem
+> <listitem
+><para
+> ¿Qué información adicional se muestra (además del nombre) en la vista de iconos o en la detallada? </para
+></listitem
+> </itemizedlist
+> Las propiedades de la vista se pueden configurar en el menú <menuchoice
+><guimenu
+>Ver</guimenu
+></menuchoice
+>; algunas (como el modo de vista) también se puede cambiar mediante botones de la barra de herramientas. view mode) can also be changed using toolbar buttons. </para>
+
+<sect2 id="view-properties-dialog">
+<title
+>Diálogo de propiedades de vista</title>
+
+<para>
+
+<screenshot>
+<screeninfo
+>Captura de pantalla del diálogo de propiedades de vista</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="viewproperties-dialog.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Diálogo de propiedades de vista</phrase>
+</textobject>
+<caption
+><para
+>Diálogo de propiedades de vista.</para
+></caption>
+</mediaobject>
+</screenshot>
+El diálogo de <guilabel
+>Propiedades de vista</guilabel
+> se puede utilizar para modificar rápidamente varias propiedades de la vista a la vez. Esto se puede hacer para la carpeta actual, para la carpeta actual incluidas todas las subcarpetas o incluso para todas las carpetas, dependiendo de lo que se seleccione en la sección <guilabel
+>Aplicar propiedades de vista a</guilabel
+>. </para>
+
+<para
+>Si está activada la opción <guilabel
+>Usar estas propiedades de vista de manera predeterminada</guilabel
+>, las propiedades de vista seleccionadas también se aplicarán a todas las carpetas que no tengan propiedades de vista personalizadas aún. </para>
+
+</sect2>
+
+</sect1>
+<!-- end copy from dolphin docbook -->
+
+<sect1 id="navigation">
+<title
+>Navegación</title>
+<para
+>Para descargar un archivo con &konqueror; primero necesita navegar por el árbol de carpetas para encontrar la carpeta que contiene ese archivo.</para>
+
+<para
+>Para moverse de una carpeta a otro, simplemente ascienda y descienda por el árbol:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Para descender a una subcarpeta pulse con el botón <mousebutton
+>izquierdo</mousebutton
+> del ratón sobre su nombre o icono - o si la ha «seleccionado» (véase más abajo) - simplemente pulse &Enter;.</para
+></listitem
+> 
+<listitem
+><para
+>Para ascender por el árbol de carpetas, pulse el botón <guiicon
+>Arriba</guiicon
+> de la barra de herramientas o pulse <keycombo action="simul"
+>&Alt;<keysym
+>Flecha arriba</keysym
+></keycombo
+> o seleccione la opción de la barra del menú <menuchoice
+><guimenu
+>Ir</guimenu
+><guimenuitem
+>Arriba</guimenuitem
+></menuchoice
+>.</para
+></listitem>
+</itemizedlist>
+
+<para
+>Para «seleccionar» un archivo o carpeta en la carpeta mostrada sin abrirlo utilice las flechas <keysym
+>arriba</keysym
+> y <keysym
+>abajo</keysym
+> para moverse por los elementos. El elemento seleccionado se resaltará y se mostrará algo de información sobre él en la barra de estado.</para>
+
+<para
+>Seleccionar el <link linkend="viewmode"
+>modo de vista</link
+> <guimenuitem
+>Vista de árbol</guimenuitem
+> le puede ayudar a localizar las carpetas del árbol situadas bajo la carpeta actual. En este modo, cada carpeta se muestra con un pequeño cuadro a su izquierda. Si el cuadro contiene un signo <keycap
+>+</keycap
+>, al pulsar con el botón <mousebutton
+>izquierdo</mousebutton
+> del ratón sobre él (y no sobre el nombre de la carpeta o del icono) aparecerá un subárbol que muestra todas las subcarpetas de dicha carpeta. Entonces, el pequeño cuadro cambiará para mostrar un signo <keycap
+>v</keycap
+>. Pulse con el botón <mousebutton
+>izquierdo</mousebutton
+> sobre él para contraer el subárbol. Una vez haya encontrado la carpeta que está buscando, pulse con el botón <mousebutton
+>izquierdo</mousebutton
+> sobre el nombre de la carpeta o sobre su icono para abrirla.</para>
+
+<para
+>La <link linkend="sidebar"
+>barra lateral</link
+> también le puede ayudar a orientarse por el sistema de archivos.</para>
+
+<para
+>Puede ir directamente a cualquier carpeta introduciendo su ruta en la barra de dirección de la ventana o en el cuadro de diálogo que se muestra al seleccionar la opción de menú <menuchoice
+><guimenu
+>Archivo</guimenu
+><guimenuitem
+>Abrir ubicación</guimenuitem
+> </menuchoice
+>o mediante <keycombo action="simul"
+>&Alt;<keycap
+> O</keycap
+></keycombo
+>. La funcionalidad de <link linkend="path-complete"
+>Completar texto</link
+> de &konqueror; puede resultar útil. No olvide que en &Linux; / &UNIX;, se distingue entre mayúsculas y minúsculas para los nombres de archivo y de directorio.</para>
+
+<para
+>Una vez que se ha movido a una carpeta nueva, puede volver a la selección anterior utilizando el botón <guiicon
+>Atrás</guiicon
+> de la barra de herramientas, seleccionando la opción de menú <menuchoice
+><guimenu
+>Ir</guimenu
+> <guimenuitem
+>Atrás</guimenuitem
+></menuchoice
+> o mediante<keycombo action="simul"
+>&Alt;<keysym
+>Flecha izquierda</keysym
+></keycombo
+>. Una vez que haya ido hacia atrás, puede ir hacia delante. Utilice el botón <guiicon
+>Adelante</guiicon
+> de la barra de herramientas, la opción de menú <menuchoice
+><guimenu
+>Ir</guimenu
+><guimenuitem
+>Adelante</guimenuitem
+></menuchoice
+> o <keycombo action="simul"
+>&Alt;<keysym
+>Flecha derecha</keysym
+></keycombo
+>.</para>
+
+<para
+>También puede moverse a la carpeta superior pulsando el botón <guiicon
+>Arriba</guiicon
+> de la barra de herramientas, seleccionando la opción de menú <menuchoice
+><guimenu
+>Ir</guimenu
+><guimenuitem
+>Arriba</guimenuitem
+></menuchoice
+> o mediante <keycombo action="simul"
+>&Alt;<keysym
+>Flecha arriba</keysym
+></keycombo
+>.</para>
+
+<tip
+><para
+>Si hace clic en la marca de selección situada a la derecha de los botones <guiicon
+>Arriba</guiicon
+>, <guiicon
+>Atrás</guiicon
+> o <guiicon
+>Adelante</guiicon
+> la barra de herramientas o si selecciona dichas opciones del menú <guimenu
+>Ir</guimenu
+>, aparecerá un submenú con las direcciones visitadas recientemente.</para>
+</tip>
+<!-- 4.5 -->
+<sect2 id="file-find">
+<title
+>Buscando archivos y carpetas</title>
+
+<para
+>Si no sabe o no recuerda en qué lugar de su sistema se encuentra un archivo o carpeta, utilice el botón de la barra de herramientas <guiicon
+>Buscar archivo</guiicon
+> o la opción de menú<menuchoice
+><guimenu
+>Herramientas</guimenu
+><guimenuitem
+>Buscar archivo...</guimenuitem
+></menuchoice
+>. Esto inicia la aplicación de búsqueda de archivos &kfind;. Consulte <ulink url="help:/kfind/index.html"
+>Manual de &kfind; </ulink
+> para obtener más información sobre el uso de &kfind;. </para>
+
+<note
+><para
+>Si el nombre de un archivo o carpeta comienza con un punto, entonces se trata de un archivo «oculto», y normalmente &konqueror; no lo mostrará. Para ver archivos ocultos o carpetas utilice la opción de la barra del menú <menuchoice
+> <guimenu
+>Ver</guimenu
+><guimenuitem
+>Mostrar archivos ocultos</guimenuitem
+> </menuchoice
+>.</para>
+
+<para
+>Otra razón por la que &konqueror; puede no mostrar el archivo o carpeta que está mirando es que puede que tenga la extensión <link linkend="konq-plugin"
+><guisubmenu
+>Filtro de vista</guisubmenu
+></link
+> configurada para cierto tipo de archivos.</para>
+</note>
+
+</sect2>
+
+<sect2 id="removable-devices">
+<title
+>Dispositivos extraíbles</title>
+
+<para
+>Cualquier dispositivo extraíble (memoria USB, disquetera, unidad de &CD; u otra partición de disco duro que usted tenga en su sistema aparecerá habitualmente en la carpeta <filename class="directory"
+>/ </filename
+>, <filename class="directory"
+>/media</filename
+>, <filename class="directory"
+>/mnt</filename
+> o <filename class="directory"
+>/auto</filename
+>, cuya ruta será algo así como<filename class="directory"
+>/mnt/floppy</filename
+> o <filename class="directory"
+>/cdrom</filename
+>. Los detalles dependerán de cómo se configuró su sistema.</para>
+
+<para
+>En &UNIX; / &Linux;, es necesario que usted monte (<command
+>mount</command
+>) los dispositivos extraíbles una vez que los haya introducido en el dispositivo de lectura y que monte (<command
+>mount</command
+>) otras particiones de disco duro para poder acceder a ellas. También es necesario desmontarlos (<command
+>umount</command
+>) antes de retirarlos, de modo que el sistema sepa que ya no están disponibles.</para>
+
+<para
+>El modo de hacer esto depende de cómo esté configurado su sistema:</para>
+
+<itemizedlist>
+
+<listitem
+><para
+>Uso del <guilabel
+>Notificador de dispositivos</guilabel
+></para>
+<para
+>En una sesión de &kde;, cuando inserte un dispositivo extraíble, aparecerá la ventana <ulink url="help:/plasma-desktop/index.html#device-notifier"
+>Notificador de dispositivos</ulink
+>, la cual le permitirá seleccionar la aplicación adecuada para dicho medio o simplemente, montar el dispositivo.</para>
+</listitem>
+
+<listitem
+><para
+>Puede que en su escritorio haya iconos para dispositivos extraíbles, en cuyo caso, podrá montarlos pulsando con el &LMB; sobre el icono. Además, al hacer esto, se abrirá una ventana de &konqueror; que mostrará los contenidos del dispositivo. Para desmontarlos, pulse el icono con el botón <mousebutton
+>derecho</mousebutton
+> y elija la opción <guimenuitem
+>Desmontar</guimenuitem
+>. Consulte la sección <link linkend="making"
+>Crear nuevo...</link
+> en este manual para ver cómo crear un icono como ese.</para
+></listitem>
+
+<listitem
+><para
+>O lo puede hacer del modo tradicional, introduciendo en una ventana de texto de una consola:</para>
+<para
+><userinput
+><command
+>mount /mnt/floppy</command
+></userinput
+></para>
+<para
+>para montar, por ejemplo, el disquete, y</para>
+<para
+><userinput
+><command
+>umount /mnt/floppy</command
+></userinput
+></para>
+<para
+>para desmontarlo (<command
+>umount</command
+> y no <command
+>unmount</command
+>). </para>
+<note
+><para
+>En lugar de tener que abrir una consola de texto para introducir las órdenes <command
+>mount </command
+> o <command
+>umount</command
+>, puede preferir utilizar la propiedad de &konqueror; <menuchoice
+><guimenu
+> Herramientas</guimenu
+><guimenuitem
+>Ejecutar orden del intérprete de órdenes</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+>&Ctrl;<keycap
+>E</keycap
+></keycombo
+>). </para
+></note>
+
+</listitem>
+
+</itemizedlist>
+</sect2>
+
+</sect1>
+<!-- 4.5-->
+<sect1 id="deleting">
+<title
+>Borrando archivos y carpetas</title>
+
+<para
+>&konqueror; le ofrece tres modos de deshacerse de archivos o carpetas no deseados:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Puede moverlos a la carpeta <filename
+>Papelera</filename
+>, el método más seguro, porque los puede recuperar si se da cuenta de que ha cometido un error.</para
+></listitem
+> 
+
+<listitem
+><para
+>Puede borrarlos, lo que elimina la entrada de la carpeta y añade el área del disco que ocupaba el archivo a la lista de áreas del disco disponibles para ser utilizadas, de la misma forma que la orden <command
+>rm</command
+>.</para>
+<para
+>Si quiere usar esta característica, marque la opción <guilabel
+>Mostrar «Borrar» entradas del menú que no pasen por la papelera</guilabel
+> en la página de preferencias del <guilabel
+>Administrador de archivos</guilabel
+>.</para
+></listitem>
+</itemizedlist>
+
+<para
+>El método más sencillo de borrar un archivo o una carpeta es posicionarse con el puntero del ratón sobre su nombre o icono y pulsar con el &RMB; del ratón, lo que mostrará un menú que contiene las opciones <guimenuitem
+>Mover a la papelera</guimenuitem
+> y <guimenuitem
+>Eliminar</guimenuitem
+>.</para>
+
+<para
+>O, si ha «seleccionado» el elemento, el menú de la barra de menús <guimenu
+>Editar</guimenu
+> le ofrecerá la posibilidad de «<guimenuitem
+>Mover a la papelera</guimenuitem
+>» y «<guimenuitem
+>Eliminar</guimenuitem
+>».</para>
+
+<para
+><keycap
+>Supr</keycap
+> moverá el elemento o elementos seleccionados a la Papelera.</para>
+
+<para
+><keycombo action="simul"
+>&Shift;<keycap
+>Supr</keycap
+></keycombo
+> borrará los elementos seleccionados irrevocablemente.</para>
+
+<note
+><para
+>No podrá eliminar un archivo o carpeta si no tiene los permisos necesarios.</para
+></note>
+
+</sect1>
+<!-- 4.5-->
+<sect1 id="moving">
+<title
+>Moviendo y copiando</title>
+
+<para
+>Para copiar un archivo o subcarpeta entre carpetas puede:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Situarse con el puntero del ratón sobre su nombre o icono y mantener pulsado el botón derecho del ratón, lo que hará aparecer un menú con la opción <guimenuitem
+>Copiar</guimenuitem
+>. Selecciónela.</para>
+
+<para
+>O si el elemento está «seleccionado», puede utilizar el botón <guiicon
+>Copiar</guiicon
+> en la barra de herramientas o seleccionar la opción de menú <menuchoice
+><guimenu
+>Editar</guimenu
+> <guimenuitem
+>Copiar</guimenuitem
+></menuchoice
+> o el acceso rápido <keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+>. También puede seleccionar <link linkend="selection"
+>varios</link
+> archivos o carpetas para copiar o mover.</para
+></listitem>
+
+<listitem
+><para
+>Navegue hasta la carpeta en la que quiere copiar el elemento para pegarlo allí en la nueva carpeta utilizando el botón <guiicon
+>Pegar</guiicon
+> de la barra de herramientas, o la opción <menuchoice
+><guimenu
+>Editar</guimenu
+><guimenuitem
+>Pegar</guimenuitem
+></menuchoice
+> de la barra de menús, o el acceso rápido <keycombo
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+>, o mover el puntero del ratón hasta un área vacía de la ventana y manteniendo pulsado el &RMB; hacer que aparezca un menú que contiene la opción <guimenuitem
+>Pegar</guimenuitem
+>. </para
+></listitem>
+</itemizedlist>
+
+<para
+>Mover un archivo o subcarpeta entre carpetas se puede hacer del mismo modo que copiar, excepto que si elije la opción <guimenuitem
+>Cortar</guimenuitem
+> o <keycombo action="simul"
+>&Ctrl;<keycap
+>X</keycap
+></keycombo
+> en lugar de <guimenuitem
+>Copiar</guimenuitem
+>. El elemento que ha <guimenuitem
+>Cortado</guimenuitem
+> se eliminará del directorio original y se <guimenuitem
+>Pegará</guimenuitem
+> en la nueva carpeta.</para>
+
+<para
+>También puede copiar o mover los elementos seleccionados a otra carpeta seleccionando <guimenuitem
+>Copiar a</guimenuitem
+> o <guimenuitem
+>Mover a</guimenuitem
+> en el menú de contexto que se obtiene al hacer clic con el botón <mousebutton
+>derecho</mousebutton
+> del ratón sobre un archivo o nombre de carpeta en la ventana del administrador de archivos.</para>
+<para
+>Para activar esta característica, seleccione <guilabel
+>Mostrar órdenes «Copiar a» y «Mover a» </guilabel
+> en la página <menuchoice
+><guimenu
+>Administración de archivos</guimenu
+> <guimenuitem
+>Servicios</guimenuitem
+></menuchoice
+> de las preferencias.</para>
+<note
+><para
+>No podrá copiar o mover archivos o carpetas si no dispone de los permisos necesarios. </para
+></note>
+<!-- 4.5-->
+<sect2 id="dnd">
+<title
+>Utilizando arrastrar y soltar</title>
+
+<para
+>&konqueror; también permite copiar y mover archivos y carpetas utilizando arrastrar y soltar.</para>
+
+<para
+>Puede hacer esto teniendo dos instancias de &konqueror; una mostrando la carpeta desde la que quiere copiar y la otra mostrando la carpeta de destino. Coloque el puntero del ratón sobre el elemento que desea copiar o mover y después, manteniendo el &LMB; pulsado, «arrástrelo» a un lugar vacío en la carpeta de destino. Suelte el botón y se le presentará un menú con las posibilidades <guimenuitem
+>Copiar aquí</guimenuitem
+>, <guimenuitem
+>Mover aquí</guimenuitem
+> o <guimenuitem
+>Enlazar aquí</guimenuitem
+>. Asegúrese de «soltar» el elemento en un área vacía de la vista de la carpeta de destino; si lo suelta encima de una subcarpeta, el elemento se copiará o se moverá en dicha subcarpeta.</para>
+
+<para
+>También puede configurar &konqueror; para mostrar más de una carpeta dentro de esta ventana y arrastrar y soltar entre ellas.</para>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="dragdrop.png"/></imageobject>
+<textobject>
+<phrase
+>Vistas separadas para arrastrar y soltar</phrase>
+</textobject>
+</mediaobject>
+
+<para
+>Esta captura de pantalla ilustra el uso de la opción de menú <menuchoice
+><guimenu
+>Ventana</guimenu
+><guimenuitem
+>Dividir vista izquierda/derecha</guimenuitem
+></menuchoice
+>, también disponible con el acceso rápido <keycombo
+>&Ctrl;&Shift;<keycap
+>L</keycap
+></keycombo
+>, para dividir la ventana principal de &konqueror; en dos vistas, cada una de las cuales mostrará el contenido de una carpeta diferente.</para>
+
+<para
+>Para poder mostrar carpetas diferentes en cada vista, es mejor asegurarse de que no estén enlazadas. Las casillas en la esquina inferior derecha deberían estar vacías. </para>
+
+<para
+>La vista «activa», aquella cuya ruta se muestra en la barra de dirección y que responde a las órdenes de navegación y de la barra de menús, se muestra por la lucecita verde en la esquina inferior izquierda. Para activar una vista pulse con el botón <mousebutton
+>izquierdo</mousebutton
+> sobre un área vacía o en la barra de estado.</para>
+
+<para
+>Para borrar una vista activa de la ventana de &konqueror; utilice el acceso rápido <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>W</keycap
+></keycombo
+> o la opción de menú <menuchoice
+><guimenu
+>Ventana</guimenu
+> <guimenuitem
+>Cerrar vista activa</guimenuitem
+></menuchoice
+> o pulse con el &RMB; del ratón en la barra de estado y seleccione la opción <guimenuitem
+>Cerrar vista</guimenuitem
+> del menú mostrado.</para>
+
+<para
+>Si utiliza las pestañas de &konqueror;, puede arrastrar y soltar entre las pestañas arrastrando el archivo a la etiqueta de la pestaña, sin soltar todavía. La pestaña de destino se colocará al frente, permitiéndole continuar arrastrando y soltando el archivo.</para>
+
+</sect2>
+<!-- 4.5-->
+<sect2 id="dups">
+<title
+>Nombres de archivos o carpetas duplicados</title>
+<para
+>Si intenta pegar un archivo o una carpeta en una carpeta que ya contiene un elemento con el mismo nombre, &konqueror; mostrará un diálogo que le avisará de que ese archivo ya existe. Tendrá varias opciones: </para>
+<itemizedlist>
+<listitem
+><para
+>Cancelar la operación de pegado pulsando el botón <guibutton
+>Cancelar</guibutton
+>.</para
+></listitem>
+<listitem
+><para
+>Dar un nombre diferente al elemento que se está copiando. Puede hacer esto introduciendo un nuevo nombre en el cuadro de entrada de texto o hacer que lo haga &konqueror; mediante <guibutton
+>Sugerir un nuevo nombre</guibutton
+>. Cuando haya hecho esto, pulse el botón <guibutton
+>Continuar</guibutton
+>.</para
+></listitem>
+<listitem
+><para
+>Si ha copiado varios elementos, puede <guibutton
+>Saltar</guibutton
+> el elemento actual. </para
+></listitem>
+</itemizedlist>
+<para
+>Si ha copiado varios elementos, puede utilizar el botón <guibutton
+>Aplicar a todo</guibutton
+>.</para>
+</sect2>
+</sect1>
+<!-- begin copy from dolphin docbook synced for 4.10-->
+<sect1 id="selection">
+<title
+>Seleccionar elementos en una vista</title>
+
+<para
+>Hay varias formas de seleccionar elementos en la vista. Una vez que se ha seleccionado un grupo de elementos, todas las acciones, tales como las operaciones de<menuchoice
+><guimenuitem
+>Cortar</guimenuitem
+></menuchoice
+>, <menuchoice
+><guimenuitem
+>Copiar</guimenuitem
+></menuchoice
+>, <menuchoice
+><guimenuitem
+>Mover a la papelera</guimenuitem
+></menuchoice
+> y arrastrar y soltar, afectan a todos los elementos seleccionados. </para>
+
+<sect2 id="selection-mouse">
+<title
+>Selección de los elementos mediante el ratón</title>
+
+<itemizedlist>
+
+<listitem
+><para
+>Puede pulsar el &LMB; del ratón en cualquier lugar de la vista y dibujar un rectángulo alrededor de un grupo de elementos antes de soltar el botón. Así, seleccionará todos los elementos que queden dentro del rectángulo y descartar la selección anterior. Si se pulsa la tecla &Shift; durante el proceso de selección, se mantiene la selección previa. </para
+></listitem>
+
+<listitem
+><para
+>Si se pulsa la tecla &Ctrl; mientras se hace clic en un elemento con el &LMB; del ratón,  se conmuta el estado de selección de dicho elemento. Si se pulsa la tecla &Ctrl; mientras se dibuja un rectángulo alrededor de un grupo de elementos, tal como se describe más arriba, se conmuta el estado de selección de todos los elementos dentro del rectángulo. </para
+></listitem>
+
+<listitem
+><para
+>Si se pulsa la tecla &Shift; mientras se hace clic en un elemento con el &LMB;, todos los elementos que queden entre el elemento seleccionado anterior y el elemento sobre el que se ha hecho clic quedarán seleccionados. </para
+></listitem>
+
+<listitem
+><para
+>Si la opción <guilabel
+>Mostrar marcador de selección</guilabel
+> está activada en la pestaña de<guilabel
+>cCmportamiento</guilabel
+> de la sección <menuchoice
+><guimenu
+>Administración de archivos</guimenu
+> <guimenuitem
+>General</guimenuitem
+></menuchoice
+> de las preferencias, aparece un pequeño botón con el signo  <guiicon
+>+</guiicon
+> o <guiicon
+>-</guiicon
+> en la esquina superior izquierda del elemento sobre el que está el puntero actualmente. Al pulsar dicho signo, se selecciona o se elimina la selección del elemento, respectivamente. </para
+></listitem>
+
+</itemizedlist>
+
+</sect2>
+
+<sect2 id="selection-keyboard">
+<title
+>Selección de elementos mediante el teclado</title>
+
+<itemizedlist>
+
+<listitem
+><para
+>Si se pulsa una tecla de flecha, <keycap
+>RePág</keycap
+>, <keycap
+>AvPág</keycap
+>, <keycap
+>Inicio</keycap
+> o <keycap
+>Fin</keycap
+> se selecciona el nuevo elemento actual y se descarta la selección anterior. </para
+></listitem>
+
+<listitem
+><para
+>Si se pulsa la tecla &Ctrl; mientras se pulsa alguna de las teclas anteriormente mencionadas, la selección permanece sin cambios. </para
+></listitem>
+
+<listitem
+><para
+>Si se mantiene pulsada la tecla &Shift; mientras se pulsa alguna de las teclas anteriormente mencionadas, se seleccionarán todos los elementos entre el elemento anteriormente seleccionado y el nuevo elemento seleccionado. </para
+></listitem>
+
+<listitem
+><para
+>Si presiona <keycombo action="simul"
+>&Ctrl;<keysym
+>Espacio</keysym
+></keycombo
+>, se conmutará el estado de selección del elemento actual. </para
+></listitem>
+
+<listitem
+><para
+><keycombo action="simul"
+>&Ctrl;<keycap
+>A</keycap
+></keycombo
+> seleccionará todos los elementos de la vista. </para
+></listitem>
+
+<listitem
+><para
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>A</keycap
+></keycombo
+> conmutará el estado de selección de todos los elementos de la vista. </para
+></listitem>
+
+<listitem
+><para
+>Seleccione un archivo o una carpeta escribiendo las primeras letras de su nombre; de esta manera, se seleccionará el primer elemento que coincida. Para borrar la selección y cancelar la búsqueda del teclado, pulse &Esc; o espere hasta que pase el tiempo de espera de un segundo. </para
+></listitem>
+</itemizedlist>
+
+</sect2>
+<!-- end copy from dolphin docbook-->
+
+<!-- selection-menu applies to dolphin as well copy over?-->
+<sect2 id="selection-menu">
+<title
+>Seleccionar elementos usando el menú</title>
+
+<para
+>Algunas veces puede querer borrar, copiar o mover archivos similares. Por ejemplo, puede que quiera mover todos los archivos gráficos .png de una carpeta a otra. &konqueror; simplifica esta operación permitiéndole seleccionar varios archivos basándose en similitudes en los nombres de archivos.</para>
+
+<para
+>Seleccione la opción de menú <menuchoice
+><guimenu
+>Editar</guimenu
+><guisubmenu
+>Selección</guisubmenu
+> <guimenuitem
+>Seleccionar elementos que coincidan...</guimenuitem
+></menuchoice
+> o el acceso rápido <keycombo action="simul"
+>&Ctrl;<keycap
+>+</keycap
+></keycombo
+>. Esto mostrará un cuadro de diálogo en el que puede introducir un nombre de archivo que contenga comodines como <keycap
+>*</keycap
+>, que corresponde a cualquier número de caracteres, y <keycap
+>?</keycap
+> que corresponde a un solo carácter. Pulse <guibutton
+>Aceptar</guibutton
+> y &konqueror; resaltará todos los archivos cuyos nombres que coincidan. Por ejemplo:</para>
+      
+<itemizedlist>
+<listitem
+><para
+><userinput
+><filename
+>flag*.png</filename
+></userinput
+> seleccionará todos aquellos archivos cuyo nombre comience por las letras «flag» y acabe por «<literal role="extension"
+>.png</literal
+>».</para
+></listitem>
+<listitem
+><para
+><userinput
+><filename
+>memo?.txt</filename
+></userinput
+> seleccionará <filename
+>memo1.txt</filename
+> y <filename
+>memo9.txt</filename
+> pero no <filename
+>memo99.txt</filename
+>.</para
+></listitem>
+</itemizedlist>
+
+<para
+>Una vez seleccionado un rango de archivos, puede reducir la selección seleccionando la opción de menú <menuchoice
+><guimenu
+>Editar</guimenu
+> <guimenuitem
+>Eliminar selección de elementos que coincidan...</guimenuitem
+></menuchoice
+> para especificar cuáles de los archivos seleccionados deben eliminarse de la selección.</para>
+
+<para
+>Seleccione la opción de menú <menuchoice
+><guimenu
+>Editar</guimenu
+><guisubmenu
+>Selección</guisubmenu
+> <guimenuitem
+>Cancelar toda la selección</guimenuitem
+></menuchoice
+> o simplemente,pulse con el &LMB; sobre un espacio vacío para cancelar la selección.</para>
+
+<para
+>Puede incluso invertir la selección, es decir, descartar la selección de todos los archivos seleccionados y seleccionar los que no lo estaban. Para ello, seleccione la opción de menú <menuchoice
+><guimenu
+>Editar</guimenu
+><guisubmenu
+>Selección</guisubmenu
+><guimenuitem
+>Invertir selección</guimenuitem
+></menuchoice
+> o <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>A</keycap
+></keycombo
+>.</para>
+</sect2>
+
+</sect1>
+
+<!-- 4.5 -->
+<sect1 id="making">
+<title
+>Crear nuevo</title>
+
+<para
+>Cuando &konqueror; esté en el modo de administrador de archivos seleccionando <guisubmenu
+>Crear nuevo</guisubmenu
+> desde el menú <guimenu
+>Editar</guimenu
+> o desde el menú desplegable que se obtiene al pulsar el &RMB; sobre un área libre en una vista de directorio le ofrece un submenú que le permite crear cualquiera de las siguientes acciones en la carpeta actual:</para>
+
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Carpeta...</guimenuitem
+></term>
+<listitem
+><para
+>Un método sencillo de crear una nueva (sub)carpeta.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Archivo de texto...</guimenuitem
+></term>
+<listitem
+><para
+>Utilice esto para crear un archivo de texto ordinario y vacío. Se abrirá un cuadro de diálogo para que pueda introducir el nombre de su nuevo archivo.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Archivo HTML...</guimenuitem
+></term>
+<listitem
+><para
+>Crea el esqueleto de un archivo fuente <acronym
+>HTML</acronym
+>. Es aconsejable darle una extensión <literal role="extension"
+>.html </literal
+> para evitar confusiones.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+><replaceable
+>Tipo de documento</replaceable
+> Documento...</guimenuitem
+></term>
+<listitem
+><para
+>Dependiendo de las aplicaciones instaladas y de las asociaciones de archivo, se muestran varias opciones de menú para los diferentes tipos de documentos, las cuales le permiten crear plantillas de documentos de los tipos seleccionados.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Enlace a la ubicación (URL)...</guimenuitem
+></term>
+<listitem
+><para
+>Esto le permite crear un icono para abrir &konqueror; en una carpeta o en una página web enparticular. Con <guimenuitem
+>Enlazar a aplicación...</guimenuitem
+> puede hacer que el icono de la aplicación aparezca en su escritorio creando el enlace en su carpeta <filename
+>~/Desktop</filename
+> o mediante el submenú <guisubmenu
+>Crear nuevo...</guisubmenu
+> pulsando con el botón derecho del ratón sobre una área libre del escritorio.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Enlace básico a un archivo o a un directorio...</guimenuitem
+></term>
+<listitem
+><para
+>Creación de un enlace simbólico a archivos o carpetas locales.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Enlace a una aplicación...</guimenuitem
+></term>
+<listitem
+><para
+>Esta opción es muy útil si desea crear un icono que abra una aplicación en particular. Abre un cuadro de diálogo con varias páginas con pestañas. La primera, <guilabel
+>General</guilabel
+>, es donde se elige un icono y el texto que aparecerá con él. La segunda página, <guilabel
+>Permisos</guilabel
+>, permite seleccionar quién puede usar o modificar el icono. En la página <guilabel
+>Aplicación</guilabel
+>, puede introducir la <guilabel
+>orden</guilabel
+> que hará que se ejecute la aplicación, por ejemplo, <userinput
+>kwrite</userinput
+> iniciará el editor de textos &kwrite;. <userinput
+>kwrite /home/pam/todo.txt</userinput
+> abrirá el archivo <filename
+>/home/pam/todo.txt</filename
+> en &kwrite;.</para>
+
+<para
+>Para hacer que el icono de la aplicación aparezca en su escritorio, cree el enlace en su carpeta <filename class="directory"
+>~/Desktop</filename
+> (puede que tenga un nombre algo distinto dependiendo de cómo se instaló &kde; es su sistema) o acceda al submenú <guisubmenu
+>Crear nuevo... </guisubmenu
+> pulsando con el botón <mousebutton
+>derecho</mousebutton
+> del ratón sobre un área libre del escritorio en lugar de dentro de una ventana de &konqueror;.</para>
+
+<para
+>Si tiene muchos enlaces de aplicaciones especializadas y no desea desordenar el escritorio, puede crearlas en su carpeta de Aplicaciones. Puede acceder a él desde &konqueror; eligiendo <menuchoice
+><guimenu
+>Ir</guimenu
+> <guimenuitem
+>Aplicaciones</guimenuitem
+></menuchoice
+>. Después, cree un solo icono en su escritorio para abrir su carpeta de aplicaciones, que normalmente está en <filename class="directory"
+>~/.local/share/applications</filename
+>.</para>
+<para
+>Para poner un enlace a una aplicación en el panel, primero créelo en el directorio de aplicaciones, después arrastre el icono a un área limpia del panel.</para>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guisubmenu
+>Enlace a un dispositivo</guisubmenu
+></term>
+<listitem
+><para
+>Utilice las opciones de este submenú para crear un icono que montará un dispositivo y abrirá una instancia de &konqueror; que mostrará su contenido. Para desmontar el dispositivo cuando haya terminado de usarlo, pulse con el botón <mousebutton
+>derecho</mousebutton
+> del ratón sobre el icono y seleccione <guimenuitem
+>Desmontar</guimenuitem
+>. No obstante, en la mayoría de los casos querrá crear el icono en su escritorio. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+<!-- 4.5 -->
+<sect1 id="newname">
+<title
+>Cambiar nombres y permisos</title>
+
+<para
+>Los dos modos más sencillos de cambiar el nombre de un archivo o carpeta es pulsar con el botón <mousebutton
+>derecho</mousebutton
+> del ratón sobre el elemento y seleccionar <guimenuitem
+>Renombrar</guimenuitem
+> o bien, seleccionar el archivo o carpeta y pulsar la tecla <keycap
+>F2</keycap
+>.</para>
+
+<para
+>Para cambiar el nombre o los permisos de un archivo o carpeta, pulse con el botón <mousebutton
+>derecho</mousebutton
+> del ratón sobre su nombre o icono y seleccione la opción de menú <guimenuitem
+>Propiedades</guimenuitem
+> o, si ha «seleccionado» el archivo o carpeta, entonces puede utilizar la opción de menú <menuchoice
+><guimenu
+>Editar</guimenu
+> <guimenuitem
+>Propiedades</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+>&Alt;<keycap
+>Intro</keycap
+></keycombo
+>).</para>
+
+<para
+>Esto le mostrará el cuadro de diálogo de propiedades con varias páginas con pestañas:</para>
+
+<itemizedlist>
+<listitem
+><para
+><guilabel
+>General</guilabel
+>, que le ofrece alguna información sobre el elemento y le permite cambiar su nombre y, si se trata de una carpeta, su icono asociado.</para
+></listitem>
+<listitem
+><para
+><guilabel
+>Permisos</guilabel
+>, que le muestra el propietario y los permisos de acceso y le permite cambiar dichos permisos. </para
+></listitem>
+</itemizedlist>
+<!-- 4.5 -->
+<sect2 id="copyrename">
+<title
+>Copiar y renombrar</title>
+<para
+>Si desea hacer una copia de un archivo que ya existe con un nombre diferente, quizá como copia de seguridad, en la misma carpeta que el archivo original, seleccione <guimenuitem
+>Copiar</guimenuitem
+>; después, cuando seleccione <guimenuitem
+>Pegar</guimenuitem
+>, aparecerá un cuadro de diálogo quejándose de que el archivo ya existe. Simplemente, introduzca el nuevo nombre en el cuadro de diálogo de texto y pulse el botón <guibutton
+>Continuar</guibutton
+> (o si le da pereza, pulse el botón<guibutton
+>Sugerir nuevo nombre</guibutton
+> y se generará un nuevo nombre).</para>
+</sect2>
+
+<!--sect2 id="super-user"
+> this is obsolete!
+<title
+>Super User Mode</title>
+
+<para
+>If you are running as a normal user and try to access files outside of
+your own home folder you will often be prevented from doing so and get an
+error message such as <errorname
+>Access Denied</errorname
+>. </para>
+
+<para
+>To access these files you need to be logged in as the system
+administrator, often known as the Super User or <systemitem class="username"
+>root</systemitem
+>. </para>
+
+<para
+>Rather than logging out then in again, you can launch &konqueror; from
+the
+<guimenu
+>K</guimenu
+> Menu in Super User mode by selecting
+<menuchoice
+><guisubmenu
+>System</guisubmenu
+><guimenuitem
+>File Manager - Super
+ User Mode
+</guimenuitem
+></menuchoice
+>. You will be asked for the <systemitem class="username"
+>root</systemitem>
+login password but as long as you can provide that &konqueror; will be started
+up with full access privileges to all files on your system.</para>
+
+<warning
+><para
+>Take care.  As Super User (<systemitem class="username"
+>root</systemitem
+>), you have complete control of
+your system, and a wrong command can easily do irrevocable damage.</para>
+<para
+>Also, connecting to the internet as <systemitem class="username"
+>root</systemitem
+> is an extremely bad idea, as it
+seriously increases your vulnerability to malicious hacking.</para
+></warning>
+
+</sect2-->
+</sect1>
+<!-- 4.5 -->
+<sect1 id="file-associations">
+<title
+>Configurar asociaciones de archivo</title>
+
+<!-- TODO: The content should probably be here too, but this'll do for -->
+<!-- now. -->
+<para
+>&kde; proporciona algunas aplicaciones con las que abrir diferentes tipos de archivo. La mayor parte de las veces, los valores predeterminados no darán problemas, pero &konqueror; proporciona un potente sistema para permitirle cambiar la aplicación utilizada para abrir cada tipo de archivo. Para obtener más detalles, seleccione el elemento de menú <menuchoice
+><guimenu
+>Preferencias</guimenu
+><guimenuitem
+>Configurar Konqueror...</guimenuitem
+></menuchoice
+>, seleccione <guilabel
+>Asociaciones de archivo</guilabel
+> en el diálogo de configuración, y pulse sobre <guibutton
+>Ayuda</guibutton
+>.</para>
+
+</sect1>
+
+<!-- 4.5 -->
+<sect1 id="commandline">
+<title
+>En la línea de órdenes</title>
+
+<para
+>Aunque &konqueror; es un administrador de archivos gráfico (<acronym
+>GUI</acronym
+>) muy potente y flexible, hay ocasiones en las que un usuario experimentado de &Linux; / &UNIX; desea descender a lo más básico y trabajar en el nivel de la línea de órdenes.</para>
+
+<para
+>Por supuesto, podría abrir una instancia de &konsole;, quizá con la opción de menú de &konqueror; <menuchoice
+><guimenu
+>Herramientas</guimenu
+><guimenuitem
+>Abrir terminal</guimenuitem
+></menuchoice
+> o con <keycap
+>F4</keycap
+>.</para>
+<para
+>Si sólo desea iniciar un programa o ver una &URL;, la opción <menuchoice
+> <guimenu
+>Herramientas</guimenu
+><guimenuitem
+>Ejecutar orden en terminal...</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+>&Ctrl;<keycap
+>E</keycap
+></keycombo
+>) es más sencilla.</para>
+
+<para
+><menuchoice
+><guimenu
+>Herramientas</guimenu
+><guimenuitem
+>Ejecutar orden del intérprete... </guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+>&Ctrl; <keycap
+>E</keycap
+></keycombo
+>) abre una ventana de diálogo de órdenes en línea donde puede introducir una orden tal como <userinput
+>ps -ax | grep kdeinit </userinput
+>. Tenga en cuenta que no soporta caracteres de control para un terminal con todas las propiedades, de modo que las aplicaciones como <userinput
+>top</userinput
+> y <userinput
+> less</userinput
+> no funcionarán adecuadamente, aunque sin embargo no sufrirá el retardo impuesto por el inicio de &konsole;. </para>
+
+<para
+>Para operaciones más complejas, &konqueror; dispone de otra característica muy práctica, la opción <menuchoice
+><guimenu
+>Preferencias</guimenu
+> <guimenuitem
+>Mostrar emulador de terminal</guimenuitem
+></menuchoice
+> de la barra de menús, que abre una ventana de terminal con una vista dentro de &konqueror; y, mientras el icono de enlace en la esquina inferior derecha esté visible en cada vista, el terminal seguirá todos los cambios de directorio que haga en la vista normal del administrador de archivos.</para>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="cmndline.png"/></imageobject>
+<textobject>
+<phrase
+>Incluyendo el emulador de terminal</phrase>
+</textobject>
+</mediaobject>
+
+</sect1>
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

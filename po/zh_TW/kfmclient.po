@@ -1,0 +1,133 @@
+# Copyright (C) 2010 Free Software Foundation, Inc.
+#
+# Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv dot tw>, 2010.
+# Franklin Weng <franklin@goodhorse.idv.tw>, 2011.
+# Jeff Huang <s8321414@gmail.com>, 2016.
+msgid ""
+msgstr ""
+"Project-Id-Version: kfmclient\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"PO-Revision-Date: 2016-11-16 08:54+0800\n"
+"Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
+"Language-Team: Chinese <kde-i18n-doc@kde.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 2.0\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Franklin Weng, Jeff Huang"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "franklin@goodhorse.idv.tw, s8321414@gmail.com"
+
+#: kfmclient.cpp:49
+#, kde-format
+msgid "kfmclient"
+msgstr "kfmclient"
+
+#: kfmclient.cpp:57
+#, kde-format
+msgid "KDE tool for opening URLs from the command line"
+msgstr "從命令行開啟 URLs 的 KDE 工具"
+
+#: kfmclient.cpp:65
+#, kde-format
+msgid "Non interactive use: no message boxes"
+msgstr "無交互使用：沒有訊息方塊"
+
+#: kfmclient.cpp:67
+#, kde-format
+msgid "Show available commands"
+msgstr "顯示可用的命令"
+
+#: kfmclient.cpp:69
+#, kde-format
+msgid "Command (see --commands)"
+msgstr "命令 (參照 --commands)"
+
+#: kfmclient.cpp:71
+#, kde-format
+msgid "Arguments for command"
+msgstr "給命令的引數"
+
+#: kfmclient.cpp:73
+#, kde-format
+msgid "The files/URLs opened by the application will be deleted after use"
+msgstr "應用程式開啟的檔案/URL在使用後會被刪除"
+
+#: kfmclient.cpp:81
+#, kde-format
+msgid ""
+"\n"
+"Syntax:\n"
+msgstr ""
+"\n"
+"語法:\n"
+
+#: kfmclient.cpp:82
+#, kde-format
+msgid ""
+"  kfmclient openURL 'url' ['mimetype']\n"
+"            # Opens a window showing 'url'.\n"
+"            #  'url' may be a relative path\n"
+"            #   or file name, such as . or subdir/\n"
+"            #   If 'url' is omitted, $HOME is used instead.\n"
+"\n"
+msgstr ""
+"  kfmclient openURL 'url' ['mimetype']\n"
+"            # 開啟視窗並顯示 'url'。\n"
+"            #  'url' 可以是相對路徑\n"
+"            #   或檔名，例如 . 或 subdir/\n"
+"            #   如果省略 'url'，$HOME 即會被使用。\n"
+"\n"
+
+#: kfmclient.cpp:87
+#, kde-format
+msgid ""
+"            # If 'mimetype' is specified, it will be used to determine the\n"
+"            #   component that Konqueror should use. For instance, set it "
+"to\n"
+"            #   text/html for a web page, to make it appear faster\n"
+"\n"
+msgstr ""
+"            # 如果指定 'mimetype'，它將會被用來決定 Konqueror 應\n"
+"            #   使用的元件。例如，把它設成 text/html 給一個網頁，\n"
+"            #   來讓它顯示快一點\n"
+"\n"
+
+#: kfmclient.cpp:91
+#, kde-format
+msgid ""
+"  kfmclient newTab 'url' ['mimetype']\n"
+"            # Same as above but opens a new tab with 'url' in an existing "
+"Konqueror\n"
+"            #   window on the current active desktop if possible.\n"
+"\n"
+msgstr ""
+"  kfmclient newTab 'url' ['mimetype']\n"
+"            # 如同前面但在可能的情況下於目前作用中的桌面上\n"
+"            #   既存的 Konqueror 中以 'url' 開啟新分頁。\n"
+"\n"
+
+#: kfmclient.cpp:271
+#, kde-format
+msgid "Syntax error, not enough arguments\n"
+msgstr "語法錯誤，沒有足夠的參數\n"
+
+#: kfmclient.cpp:275
+#, kde-format
+msgid "Syntax error, too many arguments\n"
+msgstr "語法錯誤，參數過多\n"
+
+#: kfmclient.cpp:324
+#, kde-format
+msgid "Syntax error, unknown command '%1'\n"
+msgstr "語法錯誤，未知的指令「%1」\n"

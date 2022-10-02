@@ -1,0 +1,280 @@
+# translation of libkonq.po to Français
+# traduction de libkonq.po en Français
+# Copyright (C) 2003, 2004, 2005, 2007, 2008 Free Software Foundation, Inc.
+# Gilles Caulier <caulier.gilles@free.fr>, 2002,2003.
+# Matthieu Robin <kde@macolu.org>, 2003, 2004.
+# Matthieu Robin <kde@macolu.org>, 2004.
+# Delafond <gerard@delafond.org>, 2004.
+# Nicolas Ternisien <nicolas.ternisien@gmail.com>, 2004, 2005.
+# Nicolas Ternisien <nicolas.ternisien@gmail.com>, 2007, 2008, 2010.
+# Sébastien Renard <Sebastien.Renard@digitalfox.org>, 2008.
+# Anne-Marie Mahfouf <annma@kde.org>, 2009, 2012.
+# xavier <ktranslator31@yahoo.fr>, 2013.
+# Xavier Besnard <xavier.besnard@neuf.fr>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2020-12-05 16:57+0100\n"
+"Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
+"Language-Team: French <kde-francophone@kde.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 20.08.3\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "&Ouvrir"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "Créer un do&ssier..."
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "&Restaurer"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr "Afficher le dossier original"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr "Afficher le fichier original"
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "Vid&er la corbeille"
+
+#: src/konq_popupmenu.cpp:312
+#, kde-format
+msgid "&Configure Trash Bin"
+msgstr "&Configurer la corbeille"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "&Ajouter cette page aux signets"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "&Ajouter cet emplacement aux signets"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "&Ajouter ce dossier aux signets"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "&Ajouter ce lien aux signets"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "&Ajouter ce fichier aux signets"
+
+#: src/konq_popupmenu.cpp:379
+#, kde-format
+msgid "Preview In"
+msgstr "Aperçu dans"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr "Ouvrir un terminal ici"
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "&Propriétés"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy To"
+#~ msgstr "Copier vers"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "Déplacer vers"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "Dossier personnel"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "Dossier racine"
+
+#~ msgctxt "@title:menu in Copy To or Move To submenu"
+#~ msgid "Browse..."
+#~ msgstr "Naviguer..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "Copier ici"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "Déplacer ici"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "Vous ne pouvez pas déposer un dossier sur lui-même"
+
+#~ msgid "File name for dropped contents:"
+#~ msgstr "Nom du fichier pour les contenus déposés :"
+
+#~ msgid "&Move Here"
+#~ msgstr "&Déplacer ici"
+
+#~ msgid "&Copy Here"
+#~ msgstr "&Copier ici"
+
+#~ msgid "&Link Here"
+#~ msgstr "&Lier ici"
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "Définir comme &papier peint"
+
+#~ msgid "C&ancel"
+#~ msgstr "&Annuler"
+
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "Créer un dossier"
+
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "Saisissez un nom différent"
+
+#~ msgid ""
+#~ "The name \"%1\" starts with a dot, so the directory will be hidden by "
+#~ "default."
+#~ msgstr ""
+#~ "Le nom « %1 » commence par un point, en conséquence, le dossier sera "
+#~ "masqué par défaut."
+
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "Créer un dossier caché ?"
+
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "Nouveau dossier"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "Nouveau dossier"
+
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "Saisir le nom du dossier :"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "Coller un dossier"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One File"
+#~ msgstr "Coller un fichier"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Item"
+#~ msgid_plural "Paste %1 Items"
+#~ msgstr[0] "Coller un élément"
+#~ msgstr[1] "Coller %1 éléments"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste Clipboard Contents..."
+#~ msgstr "Coller le contenu du presse-papier..."
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste"
+#~ msgstr "Coller"
+
+#~ msgid ""
+#~ "Restores this file or directory, back to the location where it was "
+#~ "deleted from initially"
+#~ msgstr ""
+#~ "Restaurer ce fichier ou ce dossier à l'emplacement d'où il a été "
+#~ "initialement supprimé"
+
+#~ msgid ""
+#~ "Opens a new file manager window showing the target of this link, in its "
+#~ "parent directory."
+#~ msgstr ""
+#~ "Ouvre une nouvelle fenêtre du gestionnaire de fichiers affichant la cible "
+#~ "du lien, dans son dossier parent."
+
+#~ msgid "Share"
+#~ msgstr "Partager"
+
+#~ msgctxt "@info"
+#~ msgid "Close"
+#~ msgstr "Fermer"
+
+#~ msgid "Close"
+#~ msgstr "Fermer"
+
+#~ msgid "Error: %1"
+#~ msgstr "Erreur : %1"
+
+#~ msgid "Create New"
+#~ msgstr "Créer un nouveau"
+
+#~ msgid "Link to Device"
+#~ msgstr "Lien vers un périphérique"
+
+#~ msgid "<qt>The template file <b>%1</b> does not exist.</qt>"
+#~ msgstr "<qt>Le fichier modèle <b>%1</b> n'existe pas.</qt>"
+
+#~ msgid "File name:"
+#~ msgstr "Nom de fichier :"
+
+#~ msgid ""
+#~ "Basic links can only point to local files or directories.\n"
+#~ "Please use \"Link to Location\" for remote URLs."
+#~ msgstr ""
+#~ "Les liens simples ne peuvent pointer que vers des fichiers ou des "
+#~ "dossiers locaux.\n"
+#~ "Veuillez utiliser « Lien vers l'emplacement » pour les URLs distantes."
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Actions"
+#~ msgstr "&Actions"
+
+#, fuzzy
+#~| msgid "&Open With"
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With"
+#~ msgstr "&Ouvrir avec"
+
+#, fuzzy
+#~| msgid "&Other..."
+#~ msgctxt "@action:inmenu Open With"
+#~ msgid "&Other..."
+#~ msgstr "A&utre..."
+
+#, fuzzy
+#~| msgid "&Open With..."
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With..."
+#~ msgstr "&Ouvrir avec..."
+
+#~ msgid "Open &with %1"
+#~ msgstr "Ouvrir &avec « %1 »"

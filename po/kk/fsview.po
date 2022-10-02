@@ -1,0 +1,425 @@
+# translation of fsview.po to Kazakh
+#
+# Sairan Kikkarin <sairan@computer.org>, 2006, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: fsview\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"PO-Revision-Date: 2011-02-13 05:12+0600\n"
+"Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
+"Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
+"Language: kk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Сайран Киккарин"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "sairan@computer.org"
+
+#: fsview.cpp:35 fsview.cpp:413
+#, kde-format
+msgid "Name"
+msgstr "Атауы"
+
+#: fsview.cpp:36
+#, kde-format
+msgid "Size"
+msgstr "Көлемі"
+
+#: fsview.cpp:37
+#, kde-format
+msgid "File Count"
+msgstr "Файлдар саны"
+
+#: fsview.cpp:38
+#, kde-format
+msgid "Directory Count"
+msgstr "Каталогтар саны"
+
+#: fsview.cpp:39
+#, kde-format
+msgid "Last Modified"
+msgstr "Соңғы өзгерісі"
+
+#: fsview.cpp:40 fsview.cpp:414
+#, kde-format
+msgid "Owner"
+msgstr "Иесі"
+
+#: fsview.cpp:41 fsview.cpp:415
+#, kde-format
+msgid "Group"
+msgstr "Тобы"
+
+#: fsview.cpp:42 fsview.cpp:416
+#, kde-format
+msgid "Mime Type"
+msgstr "MIME түрі"
+
+#: fsview.cpp:283
+#, kde-format
+msgid "Go To"
+msgstr "Келесіге өту"
+
+#: fsview.cpp:284 fsview_part.cpp:106
+#, kde-format
+msgid "Stop at Depth"
+msgstr "Тереңділік шегі"
+
+#: fsview.cpp:285 fsview_part.cpp:103
+#, kde-format
+msgid "Stop at Area"
+msgstr "Аумағының шегі"
+
+#: fsview.cpp:286
+#, kde-format
+msgid "Stop at Name"
+msgstr "Атауында тоқтау"
+
+#: fsview.cpp:292
+#, kde-format
+msgid "Go Up"
+msgstr "Жоғарға өту"
+
+#: fsview.cpp:294
+#, kde-format
+msgid "Stop Refresh"
+msgstr "Жаңартуды тоқтату"
+
+#: fsview.cpp:296
+#, kde-format
+msgid "Refresh"
+msgstr "Жаңарту"
+
+#: fsview.cpp:301
+#, kde-format
+msgid "Refresh '%1'"
+msgstr "'%1' дегенді жаңарту"
+
+#: fsview.cpp:313 fsview_part.cpp:113
+#, kde-format
+msgid "Color Mode"
+msgstr "Түсін белгілейтіні"
+
+#: fsview.cpp:316 fsview_part.cpp:109
+#, kde-format
+msgid "Visualization"
+msgstr "Көрсету"
+
+#: fsview.cpp:411
+#, kde-format
+msgid "None"
+msgstr "Жоқ"
+
+#: fsview.cpp:412
+#, kde-format
+msgid "Depth"
+msgstr "Тереңдігі"
+
+#: fsview_part.cpp:69
+#, kde-format
+msgid "Read 1 folder, in %2"
+msgid_plural "Read %1 folders, in %2"
+msgstr[0] "%2 дегенде %1 қапшығын оқу"
+
+#: fsview_part.cpp:73
+#, kde-format
+msgid "1 folder"
+msgid_plural "%1 folders"
+msgstr[0] "%1 қапшық"
+
+#: fsview_part.cpp:87
+#, kde-format
+msgid ""
+"<p>This is the FSView plugin, a graphical browsing mode showing filesystem "
+"utilization by using a tree map visualization.</p><p>Note that in this mode, "
+"automatic updating when filesystem changes are made is intentionally <b>not</"
+"b> done.</p><p>For details on usage and options available, see the online "
+"help under menu 'Help/FSView Manual'.</p>"
+msgstr ""
+"<p>Бұл FSView плагин модулі, файлдар жүйесін бұтақ түрінде көрсететін "
+"графикалық шолу құралы.</p><p>Файлдар жүйесі өзгертілген кезде, көрініс "
+"жаңартуы әдейі <b>жасалмайтынын</b> ескеріңіз.</p><p>Егжей-текжейін "
+"'Анықтама/FSView нұсқауы' мәзірін таңдап біле аласыз.</p>"
+
+#: fsview_part.cpp:119
+#, kde-format
+msgid "&FSView Manual"
+msgstr "&FSView нұсқауы"
+
+#: fsview_part.cpp:121
+#, kde-format
+msgid "Show FSView manual"
+msgstr "FSView нұсқауын көрсету"
+
+#: fsview_part.cpp:122
+#, kde-format
+msgid "Opens the help browser with the FSView documentation"
+msgstr "FSView құжаттамасын анықтама шолғышында ашу"
+
+#: fsview_part.cpp:154
+#, kde-format
+msgctxt "@action:inmenu File"
+msgid "Move to Trash"
+msgstr "Шелекке тастау"
+
+#: fsview_part.cpp:161
+#, kde-format
+msgctxt "@action:inmenu File"
+msgid "Delete"
+msgstr "Өшіру"
+
+#: fsview_part.cpp:166
+#, kde-format
+msgctxt "@action:inmenu Edit"
+msgid "&Edit File Type..."
+msgstr "Файл түрін ө&згерту..."
+
+#: fsview_part.cpp:170
+#, kde-format
+msgctxt "@action:inmenu File"
+msgid "Properties"
+msgstr "Қасиеттері"
+
+#: fsview_part.cpp:203
+#, kde-format
+msgid ""
+"FSView intentionally does not support automatic updates when changes are "
+"made to files or directories, currently visible in FSView, from the "
+"outside.\n"
+"For details, see the 'Help/FSView Manual'."
+msgstr ""
+"Көрсетіліп тұрған файлдар мен каталогтар сырттан өзгертілген кезде, FSView "
+"көрініс жаңартуын әдейі жасамайды.\n"
+"Егжей-текжейін 'Анықтама/FSView нұсқауы' мәзірін таңдап біле аласыз."
+
+#. i18n: ectx: Menu (edit)
+#: fsview_part.rc:4
+#, kde-format
+msgid "&Edit"
+msgstr "Өңд&еу"
+
+#. i18n: ectx: Menu (view)
+#: fsview_part.rc:13
+#, kde-format
+msgid "&View"
+msgstr "1ыFSView"
+
+#. i18n: ectx: Menu (help)
+#: fsview_part.rc:20
+#, kde-format
+msgid "&Help"
+msgstr "&Анықтама"
+
+#: main.cpp:23
+#, kde-format
+msgid "FSView"
+msgstr "FSView"
+
+#: main.cpp:24
+#, kde-format
+msgid "Filesystem Viewer"
+msgstr "Файлдар жүйесін карап шығу"
+
+#: main.cpp:26
+#, kde-format
+msgid "(c) 2002, Josef Weidendorfer"
+msgstr "(c) 2002, Josef Weidendorfer"
+
+#: main.cpp:33
+#, kde-format
+msgid "View filesystem starting from this folder"
+msgstr "Файлдар жүйесін осы қапшықтан бастап көрсету"
+
+#: treemap.cpp:1436
+#, kde-format
+msgid "Text %1"
+msgstr "%1 мәтіні"
+
+#: treemap.cpp:3163
+#, kde-format
+msgid "Recursive Bisection"
+msgstr "Рекурсивті қақ бөлу"
+
+#: treemap.cpp:3165
+#, kde-format
+msgid "Columns"
+msgstr "Бағандар"
+
+#: treemap.cpp:3167
+#, kde-format
+msgid "Rows"
+msgstr "Жолдар"
+
+#: treemap.cpp:3169
+#, kde-format
+msgid "Always Best"
+msgstr "Әрқашанда шақтау"
+
+#: treemap.cpp:3171
+#, kde-format
+msgid "Best"
+msgstr "Шақтау"
+
+#: treemap.cpp:3173
+#, kde-format
+msgid "Alternate (V)"
+msgstr "Кезектестіру (тігінен)"
+
+#: treemap.cpp:3175
+#, kde-format
+msgid "Alternate (H)"
+msgstr "Кезектестіру (жатығынан)"
+
+#: treemap.cpp:3177
+#, kde-format
+msgid "Horizontal"
+msgstr "Көлденеңінен"
+
+#: treemap.cpp:3179
+#, kde-format
+msgid "Vertical"
+msgstr "Тігінен"
+
+#: treemap.cpp:3231
+#, kde-format
+msgid "Nesting"
+msgstr "Орналастыру"
+
+#: treemap.cpp:3235
+#, kde-format
+msgid "Border"
+msgstr "Шекара"
+
+#: treemap.cpp:3238
+#, kde-format
+msgid "Correct Borders Only"
+msgstr "Шектерін түзеу"
+
+#: treemap.cpp:3241
+#, kde-format
+msgid "Width %1"
+msgstr "Ені %1"
+
+#: treemap.cpp:3244
+#, kde-format
+msgid "Allow Rotation"
+msgstr "Бұрылысты рұқсат ету"
+
+#: treemap.cpp:3245
+#, kde-format
+msgid "Shading"
+msgstr "Көлеңкелеу"
+
+#: treemap.cpp:3256
+#, kde-format
+msgid "Visible"
+msgstr "Көрсетілсін"
+
+#: treemap.cpp:3257
+#, kde-format
+msgid "Take Space From Children"
+msgstr "Еншілестің орнын алсын"
+
+#: treemap.cpp:3261
+#, kde-format
+msgid "Top Left"
+msgstr "Жоғары сол жақта"
+
+#: treemap.cpp:3264
+#, kde-format
+msgid "Top Center"
+msgstr "Жоғары ортада"
+
+#: treemap.cpp:3267
+#, kde-format
+msgid "Top Right"
+msgstr "Жоғары оң жақта"
+
+#: treemap.cpp:3270
+#, kde-format
+msgid "Bottom Left"
+msgstr "Төменгі сол жақта"
+
+#: treemap.cpp:3273
+#, kde-format
+msgid "Bottom Center"
+msgstr "Төменгі ортада"
+
+#: treemap.cpp:3276
+#, kde-format
+msgid "Bottom Right"
+msgstr "Төменгі оң жақта"
+
+#: treemap.cpp:3343
+#, kde-format
+msgid "No %1 Limit"
+msgstr "%1 шегі жоқ"
+
+#: treemap.cpp:3402
+#, kde-format
+msgid "No Area Limit"
+msgstr "Аумағының шегі жоқ"
+
+#: treemap.cpp:3408
+#, kde-format
+msgid "Area of '%1' (%2)"
+msgstr "'%1' (%2) аумағы"
+
+#: treemap.cpp:3420 treemap.cpp:3433
+#, kde-format
+msgid "1 Pixel"
+msgid_plural "%1 Pixels"
+msgstr[0] "%1 пиксел"
+
+#: treemap.cpp:3437
+#, kde-format
+msgid "Double Area Limit (to %1)"
+msgstr "Аумақ шегін екі еселеу (%1 дейін)"
+
+#: treemap.cpp:3439
+#, kde-format
+msgid "Halve Area Limit (to %1)"
+msgstr "Аумақ шегін жартылау (%1 дейін)"
+
+#: treemap.cpp:3475
+#, kde-format
+msgid "No Depth Limit"
+msgstr "Тереңдігінің шегі жоқ"
+
+#: treemap.cpp:3481
+#, kde-format
+msgid "Depth of '%1' (%2)"
+msgstr "'%1' (%2) тереңдігі"
+
+#: treemap.cpp:3493 treemap.cpp:3506
+#, kde-format
+msgid "Depth %1"
+msgstr "Тереңдігі %1"
+
+#: treemap.cpp:3510
+#, kde-format
+msgid "Decrement (to %1)"
+msgstr "Азайту (%1 дейін)"
+
+#: treemap.cpp:3512
+#, kde-format
+msgid "Increment (to %1)"
+msgstr "Тереңдету (%1 дейін)"
+
+#~ msgid "Filesystem Utilization Viewer"
+#~ msgstr "Файлдар жүйесінің пайдаланылуын карап шығу"
+
+#~ msgid "(c) 2003-2005, Josef Weidendorfer"
+#~ msgstr "(c) 2003-2005, Josef Weidendorfer"

@@ -1,0 +1,196 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Portuguese "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article lang="&language;" id="konq-general-behavior">
+<title
+>Comportamento Geral do &konqueror;</title>
+<articleinfo>
+
+<authorgroup>
+<author
+>&Burkhard.Lueck;</author>
+<othercredit role="translator"
+><firstname
+>José</firstname
+><surname
+>Pires</surname
+><affiliation
+><address
+><email
+>zepires@gmail.com</email
+></address
+></affiliation
+><contrib
+>Tradução</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2016-11-08</date>
+<releaseinfo
+>Aplicações 16.12</releaseinfo>
+
+</articleinfo>
+<para
+>Nesta página, poderá descobrir as configurações da pasta pessoal e página inicial, assim como o comportamento da navegação com páginas separadas, tanto no modo de gestão de ficheiros como de navegação do &konqueror;.</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Ao iniciar o Konqueror</guilabel
+></term>
+<listitem>
+<para
+>Esta página define qual a página que é apresentada quando o &konqueror; é iniciado, a página de introdução, a sua página pessoal, uma página em branco ou a sua página de favoritos. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Página pessoal</guilabel
+></term>
+<listitem
+><para
+>Este é o &URL; (&eg; uma pasta ou uma página Web) para onde o &konqueror;, no modo de navegação, irá saltar quando carregar no botão <guibutton
+>Página Pessoal</guibutton
+> da barra de ferramentas. Poderá definir uma localização da sua <guilabel
+>Página pessoal</guilabel
+>, introduzindo-a no campo de texto ou usando o botão para <guiicon
+>escolher</guiicon
+>, caso deseje seleccionar uma pasta local. O &konqueror; precisa de ser reiniciado para as alterações fazerem efeito.</para>
+<para
+>Quando o &konqueror; é usado no modo de gestão de ficheiros, a <guilabel
+>Página Pessoal</guilabel
+> da barra de ferramentas é substituída por uma <guilabel
+>Pasta Pessoal</guilabel
+>, que fará com que vá para a sua pasta pessoal (área do utilizador) em alternativa.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Abrir as ligações numa página nova em vez de uma janela nova</guilabel
+></term>
+<listitem
+><para
+>O &konqueror; usa por omissão uma única janela por página, mas tem a capacidade de abrir várias <firstterm
+>páginas</firstterm
+> separadas dentro de uma única janela. O &konqueror; também tem por omissão um atalho do &MMB; para abrir qualquer ligação numa nova janela. Se activar a opção <guilabel
+>Abrir as ligações numa nova página em vez de uma nova janela</guilabel
+>, poderá carregar com o &MMB; sobre uma ligação para que esta seja aberta numa página nova.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Abrir os anúncios em páginas novas em vez de janelas novas</guilabel
+></term>
+<listitem
+><para
+>Se as janelas automáticas de JavaScript deverão abrir, se forem permitidas, numa janela nova ou numa página da mesma janela.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Abrir como uma página no Konqueror existente quando o URL é chamado externamente</guilabel
+></term>
+<listitem
+><para
+>Quando carregar num &URL; noutro programa do &kde; ou invocar o 'kfmclient' para abrir um &URL;, o ecrã actual será sondado à procura de um &konqueror; não-minimizado e, se for encontrado, o &URL; será aberto como uma página nova dentro dele. Caso contrário, será aberta uma nova janela do &konqueror; com o &URL; pedido.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Abrir as páginas novas em segundo plano</guilabel
+></term>
+<listitem
+><para
+>Se estiver a usar a navegação com páginas separadas, poderá escolher se uma nova página aberta ficará a activa (<quote
+>à frente</quote
+>) ou se fica atrás das outras. Numa ligação à Internet lenta, ou ao navegar numa página que tem uma lista de destaques ou outras ligações numa lista, poderá querer ter as páginas novas a carregar em segundo plano, enquanto continuar a ler. Nesse caso, active esta opção. Se preferir ir directamente para a página nova, deixando a antiga em segundo plano para voltar lá mais tarde, desactive-a.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Abrir uma página nova depois da actual</guilabel
+></term>
+<listitem
+><para
+>Isto irá abrir uma nova página a seguir à actual, em vez de ser depois da última.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Esconder a barra de páginas quando só está uma visível</guilabel
+></term>
+<listitem
+><para
+>Isto irá mostrar a barra das páginas só se existirem duas ou mais páginas. Caso contrário, ficará sempre visível.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Mostrar o botão de fecho nas páginas</guilabel
+></term>
+<listitem
+><para
+>Isto irá mostrar os botões de fecho dentro de cada separador da página, em vez de ser nos ícones das páginas Web.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>O botão do meio numa página fecha-a</guilabel
+></term>
+<listitem
+><para
+>Quando carregar sobre uma página com o botão do meio do rato ou com a roda, irá fechar essa página. É necessário reiniciar o &konqueror; para as alterações fazerem efeito.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Confirmar ao fechar as janelas com várias páginas</guilabel
+></term>
+<listitem
+><para
+>Se fechar uma janela no &konqueror; com várias páginas abertas, o &konqueror; irá perguntar se tem a certeza que necessita de a fechar. Poderá activar ou desactivar este comportamento com esta opção.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Activar a página usada anteriormente ao fechar a página actual</guilabel
+></term>
+<listitem
+><para
+>Quando activar esta opção, a página usada ou aberta anteriormente será activada quando você fechar a página activa de momento em vez da página à direita da actual.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</article>

@@ -1,0 +1,371 @@
+# translation of libkonq.po to Afrikaans
+# UTF-8 test:äëïöü
+# Copyright (C) 2001, 2005 Free Software Foundation, Inc.
+# Juanita Franz <juanita.franz@vr-web,de>, 2005.
+# Kobus Venter <kabousv@therugby.co.za>, 2005.
+# Frikkie Thirion <frikkie.thirion@deneloptronics.co.za>, 2006
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq stable\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2006-01-17 21:16+0200\n"
+"Last-Translator: Frikkie Thirion <frikkie.thirion@deneloptronics.co.za>\n"
+"Language-Team: Afrikaans <af@li.org>\n"
+"Language: af\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "Maak oop"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "Skep Gids..."
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "Herstel"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "Maak asblik leeg"
+
+#: src/konq_popupmenu.cpp:312
+#, fuzzy, kde-format
+#| msgid "&Empty Trash Bin"
+msgid "&Configure Trash Bin"
+msgstr "Maak asblik leeg"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "Boekmerk hierdie bladsy"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "Boekmerk hierdie ligging"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "Boekmerk hierdie gids"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "Boekmerk hierdie skakel"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "Boekmerk hierdie lêer"
+
+#: src/konq_popupmenu.cpp:379
+#, fuzzy, kde-format
+#| msgid "Preview"
+msgid "Preview In"
+msgstr "Voorskou"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "Eienskappe"
+
+#, fuzzy
+#~| msgid "Move to Trash"
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "Beweeg na die asblik"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "Nuwe Gids"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "Nuwe Gids"
+
+#, fuzzy
+#~| msgid "&Copy Here"
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "Kopiëer Hierna"
+
+#, fuzzy
+#~| msgid "&Move Here"
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "Beweeg Hierna"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "Jy kan nie 'n gids op homself laat val nie"
+
+#~ msgid "File name for dropped contents:"
+#~ msgstr "Lêer naam vir gevalde inhoud:"
+
+#~ msgid "&Move Here"
+#~ msgstr "Beweeg Hierna"
+
+#~ msgid "&Copy Here"
+#~ msgstr "Kopiëer Hierna"
+
+#~ msgid "&Link Here"
+#~ msgstr "Skakel Hierna"
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "Stel as Muurpapier"
+
+#~ msgid "C&ancel"
+#~ msgstr "Kanseleer"
+
+#, fuzzy
+#~| msgid "Create New"
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "Skep Nuwe"
+
+#, fuzzy
+#~| msgid "Enter folder name:"
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "Voer gidsnaam in:"
+
+#, fuzzy
+#~| msgid "Create New"
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "Skep Nuwe"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "Nuwe Gids"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "Nuwe Gids"
+
+#, fuzzy
+#~| msgid "Enter folder name:"
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "Voer gidsnaam in:"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "Nuwe Gids"
+
+#~ msgid "Share"
+#~ msgstr "Deel"
+
+#~ msgid "Create New"
+#~ msgstr "Skep Nuwe"
+
+#~ msgid "Link to Device"
+#~ msgstr "Koppel na Toestel"
+
+#~ msgid "<qt>The template file <b>%1</b> does not exist.</qt>"
+#~ msgstr "<qt>Die sjabloon lêer <b>%1</b> bestaan nie.</qt>"
+
+#~ msgid "File name:"
+#~ msgstr "Lêer naam:"
+
+#, fuzzy
+#~| msgid "Ac&tions"
+#~ msgctxt "@title:menu"
+#~ msgid "&Actions"
+#~ msgstr "Aksies"
+
+#, fuzzy
+#~| msgid "&Open With"
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With"
+#~ msgstr "Maak oop met"
+
+#, fuzzy
+#~| msgid "&Other..."
+#~ msgctxt "@action:inmenu Open With"
+#~ msgid "&Other..."
+#~ msgstr "Ander..."
+
+#, fuzzy
+#~| msgid "&Open With..."
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With..."
+#~ msgstr "Maak Oop Met..."
+
+#, fuzzy
+#~| msgid "Open with %1"
+#~ msgid "Open &with %1"
+#~ msgstr "Maak met %1 oop"
+
+#~ msgid "Open in New &Window"
+#~ msgstr "Maak in Nuwe Venster oop"
+
+#~ msgid "Open the trash in a new window"
+#~ msgstr "Maak die asblik in 'n nuwe venster oop"
+
+#~ msgid "Open the medium in a new window"
+#~ msgstr "Maak die medium in 'n nuwe venster oop"
+
+#~ msgid "Open the document in a new window"
+#~ msgstr "Maak die dokument in 'n nuwe venster oop"
+
+#, fuzzy
+#~| msgid "Delete Files"
+#~ msgid "Deleting"
+#~ msgstr "Vee Lêers Uit"
+
+#~ msgid "Und&o"
+#~ msgstr "Herstel"
+
+#~ msgid "Und&o: Copy"
+#~ msgstr "Herstel: Kopiëer"
+
+#~ msgid "Und&o: Link"
+#~ msgstr "Herstel: Skakel"
+
+#~ msgid "Und&o: Move"
+#~ msgstr "Herstel: Beweeg"
+
+#, fuzzy
+#~ msgid "Und&o: Rename"
+#~ msgstr "Herstel: Skakel"
+
+#~ msgid "Und&o: Trash"
+#~ msgstr "Herstel: Asblik"
+
+#~ msgid "Und&o: Create Folder"
+#~ msgstr "Herstel: Skep Gids"
+
+#, fuzzy
+#~ msgid "Do you really want to delete this item?"
+#~ msgid_plural "Do you really want to delete these %1 items?"
+#~ msgstr[0] "Wil jy rêrig hierdie item uitvee?"
+#~ msgstr[1] "Wil jy rêrig hierdie %1 items uitvee??"
+
+#~ msgid "Delete Files"
+#~ msgstr "Vee Lêers Uit"
+
+#, fuzzy
+#~ msgid "Do you really want to move this item to the trash?"
+#~ msgid_plural "Do you really want to move these %1 items to the trash?"
+#~ msgstr[0] "Wil jy rêrig hierdie item na die asblik beweeg?"
+#~ msgstr[1] "Wil jy rêrig hierdie %1 items na die asblik beweeg?"
+
+#~ msgid "Move to Trash"
+#~ msgstr "Beweeg na die asblik"
+
+#~ msgctxt "Verb"
+#~ msgid "&Trash"
+#~ msgstr "Na die Asblik"
+
+#, fuzzy
+#~| msgid "Und&o"
+#~ msgid "Und&o: %1"
+#~ msgstr "Herstel"
+
+#~ msgid "Background Settings"
+#~ msgstr "Agtergrond Instellings..."
+
+#~ msgid "Background"
+#~ msgstr "Agtergrond"
+
+#~ msgid "Co&lor:"
+#~ msgstr "Kleur"
+
+#~ msgid "&Picture:"
+#~ msgstr "Prent:"
+
+#~ msgid "Preview"
+#~ msgstr "Voorskou"
+
+#~ msgid "None"
+#~ msgstr "Geen"
+
+#~ msgid "Enlarge Icons"
+#~ msgstr "Vergrote Ikoone"
+
+#~ msgid "Shrink Icons"
+#~ msgstr "Gekrimpte Ikoone"
+
+#~ msgid "&Default Size"
+#~ msgstr "Standaard Grootte"
+
+#~ msgid "&Huge"
+#~ msgstr "Baie groot"
+
+#~ msgid "&Very Large"
+#~ msgstr "Baie Groot"
+
+#~ msgid "&Large"
+#~ msgstr "Groot"
+
+#~ msgid "&Medium"
+#~ msgstr "Medium"
+
+#~ msgid "&Small"
+#~ msgstr "Klein"
+
+#~ msgid "&Tiny"
+#~ msgstr "Baie Klein"
+
+#~ msgid "Configure Background..."
+#~ msgstr "Stel Agtergrond Op..."
+
+#~ msgid "Allows choosing of background settings for this view"
+#~ msgstr "Laat kiesing van agtergrond instellings vir hierdie aansig"
+
+#~ msgid "<p>You do not have enough permissions to read <b>%1</b></p>"
+#~ msgstr "<p>Jy doen nie het genoeg regte na lees <b>%1</b></p>"
+
+#~ msgid "<p><b>%1</b> does not seem to exist anymore</p>"
+#~ msgstr "<p><b>%1</b> blyk nie meer om te te bestaan</p>"
+
+#~ msgid "Search result: %1"
+#~ msgstr "Soektog resultaat: %1"
+
+#~ msgid "Do you really want to shred this item?"
+#~ msgid_plural "Do you really want to shred these %1 items?"
+#~ msgstr[0] "Wil jy rêrig die versnipper van hierdie item?"
+#~ msgstr[1] "Wil jy rêrig die versnipper van hierdie %1 items?"
+
+#~ msgid "Shred Files"
+#~ msgstr "Versnipper Lêers"
+
+#~ msgid "Shred"
+#~ msgstr "Versnipper"

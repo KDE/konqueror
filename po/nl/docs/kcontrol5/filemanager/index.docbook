@@ -1,0 +1,89 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Dutch "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="filemanager" lang="&language;">
+<articleinfo>
+<title
+>Bestandsbeheer</title>
+<authorgroup>
+<author
+>&Mike.McBride; &Mike.McBride.mail;</author>
+&Niels.Reedijk;&Sander.Koning; 
+</authorgroup>
+
+<date
+>2016-11-08</date>
+<releaseinfo
+>Applications 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Systeeminstellingen</keyword>
+<keyword
+>bestandsbeheerder</keyword>
+</keywordset>
+</articleinfo>
+
+<para
+>In deze modulen kunt u de verschillende aspecten van de functionaliteit van &konqueror;'s bestandsbeheer configureren. </para>
+
+<note
+><para
+>De functionaliteit van &konqueror;'s webbrowser heeft zijn <ulink url="help:/kcontrol/khtml/index.html"
+>eigen configuratiemodulen</ulink
+>.</para
+></note>
+
+<variablelist>
+<title
+><guilabel
+>Diverse opties</guilabel
+></title>
+<varlistentry>
+<term
+><guilabel
+>Mappen in aparte vensters openen</guilabel
+></term>
+<listitem
+> <para
+>Als deze optie is ingeschakeld, wordt een nieuw &konqueror;-venster geopend wanneer u een map opent in plaats van simpelweg de inhoud van de map te tonen in het huidige venster.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>De menu-items van 'Verwijderen' tonen die de prullenbak omzeilt</guilabel
+></term>
+<listitem>
+<para
+>Selecteer deze optie als u wilt dat menuopties <quote
+>Verwijderen</quote
+> worden getoond in de (context)menu's van het bureaublad en de bestandsbeheerder. U kunt altijd bestanden permanent verwijderen door de toets &Shift; ingedrukt te houden terwijl u <guimenuitem
+>Naar de prullenbak verplaatsen</guimenuitem
+> gebruikt.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>De instellingen voor de bestandsbeheerdermodus van &konqueror; in de <guilabel
+>Weergavemodussen</guilabel
+>, <guilabel
+>Navigatie</guilabel
+>, <guilabel
+>Services</guilabel
+>, <guilabel
+>Algemeen</guilabel
+> en <guilabel
+>Prullenbak</guilabel
+> pagina's worden ook door &dolphin; gebruikt. </para>
+
+</article>

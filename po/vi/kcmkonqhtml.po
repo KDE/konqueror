@@ -1,0 +1,2139 @@
+# Vietnamese translation for kcmkonqhtml.
+# Copyright © 2007 KDE i18n Project for Vietnamese.
+#
+# Clytie Siddall <clytie@riverland.net.au>, 2006-2007.
+# Lê Hoàng Phương <herophuong93@gmail.com>, 2012.
+# Phu Hung Nguyen <phu.nguyen@kdemail.net>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkonqhtml\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-24 00:46+0000\n"
+"PO-Revision-Date: 2020-12-17 20:30+0100\n"
+"Last-Translator: Phu Hung Nguyen <phu.nguyen@kdemail.net>\n"
+"Language-Team: Vietnamese <kde-l10n-vi@kde.org>\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 20.08.1\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Nhóm Việt hoá KDE"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kde-l10n-vi@kde.org"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pShowMMBInTabs)
+#: advancedTabOptions.ui:21
+#, kde-format
+msgid ""
+"This will open a new tab instead of a new window in various situations, such "
+"as choosing a link or a folder with the middle mouse button."
+msgstr ""
+"Tuỳ chọn này sẽ mở một thanh nhỏ mới thay vào một cửa sổ mới, trong vài "
+"trường hợp khác nhau, như việc chọn liên kết hay thư mục bằng nút giữa trên "
+"chuột."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pShowMMBInTabs)
+#: advancedTabOptions.ui:24
+#, kde-format
+msgid "Open &links in new tab instead of in new window"
+msgstr "Mở &liên kết trong thanh nhỏ mới thay vì trong cửa sổ mới."
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPopupsWithinTabs)
+#: advancedTabOptions.ui:31
+#, kde-format
+msgid ""
+"Whether or not JavaScript popups if allowed shall open in a new tab or in a "
+"new window."
+msgstr ""
+"Có nên mở cửa sổ bật lên JavaScript (nếu được phép) trong trang mới hay "
+"trong cửa sổ mới."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pPopupsWithinTabs)
+#: advancedTabOptions.ui:34
+#, kde-format
+msgid "Open pop&ups in new tab instead of in new window"
+msgstr "Mở cửa sổ bật lên trong trang mới thay vì trong cửa sổ mới."
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pKonquerorTabforExternalURL)
+#: advancedTabOptions.ui:41
+#, kde-format
+msgid ""
+"When you click a URL in another KDE program or call kfmclient to open a URL, "
+"the current desktop will be searched for a non-minimized Konqueror and, if "
+"found, the URL opened as a new tab within it. Otherwise a new Konqueror "
+"window will be opened with the required URL."
+msgstr ""
+"Khi bạn bấm vào địa chỉ Mạng trong chương trình KDE khác, hoặc gọi kfmclient "
+"để mở địa chỉ Mạng, KDE sẽ quét qua môi trường hiện thời tìm Konqueror không "
+"được thu nhỏ, và nếu tìm, sẽ mở địa chỉ Mạng đó trong nó. Nếu không thì KDE "
+"sẽ mở một cửa sổ Konqueror mới để hiển thị bằng địa chỉ Mạng đó."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pKonquerorTabforExternalURL)
+#: advancedTabOptions.ui:44
+#, kde-format
+msgid "Open as tab in existing Konqueror when URL is called externally"
+msgstr ""
+"Mở như trang trong Konqueror đang chạy khi địa chỉ Mạng được gọi bên ngoài"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pNewTabsInBackground)
+#: advancedTabOptions.ui:51
+#, kde-format
+msgid ""
+"This will open a new tab in the background, instead of in the foreground."
+msgstr "Lựa chọn này sẽ mở một thẻ mới ở dưới nền, thay vì mở lên trước."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
+#: advancedTabOptions.ui:54
+#, kde-format
+msgid "O&pen new tabs in the background"
+msgstr "Mở trang mới trong &nền"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pOpenAfterCurrentPage)
+#: advancedTabOptions.ui:61
+#, kde-format
+msgid ""
+"This will open a new tab opened from a page after the current tab, instead "
+"of after the last tab."
+msgstr ""
+"Tuỳ chọn này sẽ mở trang mới từ liên kết trên trang, sau trang hiện thời, "
+"thay vào sau trang cuối cùng."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pOpenAfterCurrentPage)
+#: advancedTabOptions.ui:64
+#, kde-format
+msgid "Open &new tab after current tab"
+msgstr "Mở trang &mới sau trang hiện thời"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pDynamicTabbarHide)
+#: advancedTabOptions.ui:71
+#, kde-format
+msgid ""
+"This will display the tab bar only if there are two or more tabs. Otherwise "
+"it will always be displayed."
+msgstr ""
+"Tuỳ chọn này sẽ hiển thị thanh đa trang chỉ nếu có ít nhất hai trang đã mở. "
+"Nếu không, nó luôn luôn được hiển thị."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pDynamicTabbarHide)
+#: advancedTabOptions.ui:74
+#, kde-format
+msgid "Hide the tab bar when only one tab is open"
+msgstr "Ẩn thanh đa trang khi chỉ có một trang đã mở"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
+#: advancedTabOptions.ui:81
+#, fuzzy, kde-format
+#| msgid ""
+#| "This will display close buttons inside each tab instead of websites' "
+#| "icons."
+msgid "This will display close buttons inside each tab."
+msgstr ""
+"Tuỳ chọn này sẽ hiển thị cái nút Đóng bên trong mỗi trang, thay cho biểu "
+"tượng của nơi Mạng đó."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pPermanentCloseButton)
+#: advancedTabOptions.ui:84
+#, fuzzy, kde-format
+msgid "&Show close button on tabs"
+msgstr "Hiện nút &Đóng thay cho biểu tượng nơi Mạng"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pMiddleClickClose)
+#: advancedTabOptions.ui:91
+#, fuzzy, kde-format
+msgid ""
+"When you click on a tab using the middle mouse button or mouse wheel, it "
+"will close that tab."
+msgstr ""
+"Việc bấm phím Ctrl khi xem trang Mạng sẽ kích hoạt Phím Truy Cập của KDE. Bỏ "
+"chọn hộp nay để tắt tính năng khả năng truy cập này. (Konqueror cần phải "
+"được khởi chạy lại để thay đổi có tác động.)"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pMiddleClickClose)
+#: advancedTabOptions.ui:94
+#, kde-format
+msgid "Middle-click on a tab to close it"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabConfirm)
+#: advancedTabOptions.ui:101
+#, kde-format
+msgid ""
+"This will ask you whether you are sure you want to close a window when it "
+"has multiple tabs opened in it."
+msgstr "Tuỳ chọn sẽ hỏi nếu bạn muốn đóng cửa sổ chứa nhiều trang mở không."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pTabConfirm)
+#: advancedTabOptions.ui:104
+#, kde-format
+msgid "Confirm &when closing windows with multiple tabs"
+msgstr "Xác nhận khi đóng cửa sổ đa trang"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabCloseActivatePrevious)
+#: advancedTabOptions.ui:111
+#, kde-format
+msgid ""
+"When checking this the previous used or opened tab will be activated when "
+"you close the current active tab instead of the one right to the current tab."
+msgstr ""
+"Khi bật, trang đã dùng hay mở trước sẽ được kích hoạt khi bạn đóng trang "
+"hoạt động hiện thời, thay cho trang nằm sau điều hiện thời."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pTabCloseActivatePrevious)
+#: advancedTabOptions.ui:114
+#, fuzzy, kde-format
+msgid "Activate previously used tab when closing the current tab"
+msgstr "Kích hoạt trang đã dùng trước, khi đóng trang hiện có."
+
+#: appearance.cpp:39
+#, kde-format
+msgctxt "@title:tab"
+msgid "General"
+msgstr ""
+
+#: appearance.cpp:40
+#, kde-format
+msgctxt "@title:tab"
+msgid "Fonts"
+msgstr ""
+
+#: appearance.cpp:41
+#, kde-format
+msgctxt "@title:tab"
+msgid "Stylesheets"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, GroupBox3_2)
+#: appearance.cpp:48 css/csscustom.ui:296
+#, kde-format
+msgid "Images"
+msgstr "Ảnh"
+
+#: appearance.cpp:52
+#, kde-format
+msgid "A&utomatically load images"
+msgstr "T&ự động tải ảnh"
+
+#: appearance.cpp:53
+#, fuzzy, kde-format
+msgid ""
+"<html>If this box is checked, Konqueror will automatically load any images "
+"that are embedded in a web page. Otherwise, it will display placeholders for "
+"the images, and you can then manually load the images by clicking on the "
+"image button.<br />Unless you have a very slow network connection, you will "
+"probably want to check this box to enhance your browsing experience.</html>"
+msgstr ""
+"Bật thì trình Konqueror tự động nạp ảnh nào nhúng trong trang Mạng. Không "
+"thì nó hiển thị bộ giữ chỗ cho mỗi ảnh, để bạn tự nạp ảnh bằng cách nhấn vào "
+"cái nút ảnh.<br>Nếu bạn không có kết nối mạng nhanh, khuyên bạn bật tuỳ chọn "
+"này để tăng cường kinh nghiệm duyệt Mạng."
+
+#: appearance.cpp:63
+#, kde-format
+msgid "Dra&w frame around not completely loaded images"
+msgstr "&Vẽ khung chung quanh ảnh nào chưa tải hoàn toàn"
+
+#: appearance.cpp:64
+#, fuzzy, kde-format
+msgid ""
+"<html>If this box is checked, Konqueror will draw a frame as a placeholder "
+"around images embedded in a web page that are not yet fully loaded.<br />You "
+"will probably want to check this box to enhance your browsing experience, "
+"especially if have a slow network connection.</html>"
+msgstr ""
+"Khi bật, Konqueror sẽ vẽ một khung là ảnh giữ chỗ chung quanh ảnh chưa tải "
+"hoàn toàn có nhúng trong trang Mạng.<br>Đặc biệt nếu em có sự kết nối chậm, "
+"rất có thể là bạn sẽ muốn bật tuỳ chọn này để làm cho trang Mạng tải nhanh "
+"hơn."
+
+#: appearance.cpp:74
+#, kde-format
+msgctxt "animations"
+msgid "Enabled"
+msgstr "Bật"
+
+#: appearance.cpp:75
+#, kde-format
+msgctxt "animations"
+msgid "Disabled"
+msgstr "Tắt"
+
+#: appearance.cpp:76
+#, kde-format
+msgid "Show Only Once"
+msgstr "HIện một lần"
+
+#: appearance.cpp:77
+#, fuzzy, kde-format
+msgid ""
+"<html>Controls how Konqueror shows animated images:<br /><ul><li><b>Enabled</"
+"b>: Show all animations completely.</li><li><b>Disabled</b>: Never show "
+"animations, show the starting image only.</li><li><b>Show only once</b>: "
+"Show all animations completely but do not repeat them.</li></ul></html>"
+msgstr ""
+"Điều khiển phương pháp hiển thị ảnh hoạt cảnh của Konqueror:"
+"<br><ul><li><b>Bật</b>: hiển thị mọi hoạt ảnh hoàn toàn.</li><li><b>Tắt</b>: "
+"không bao giờ hiển thị hoạt ảnh, chỉ hiển thị ảnh đầu.</li><li><b>Hiện một "
+"lần</b>: hiển thị mỗi hoạt ảnh hoàn toàn, nhưng không phát lại.</li></ul>"
+
+#: appearance.cpp:82
+#, kde-format
+msgid "A&nimations:"
+msgstr "H&oạt ảnh:"
+
+#: appearance.cpp:85 htmlopts.cpp:110
+#, kde-format
+msgctxt "@title:group"
+msgid "Miscellaneous"
+msgstr ""
+
+#: appearance.cpp:90
+#, kde-format
+msgctxt "underline"
+msgid "Enabled"
+msgstr "Bật"
+
+#: appearance.cpp:91
+#, kde-format
+msgctxt "underline"
+msgid "Disabled"
+msgstr "Tắt"
+
+#: appearance.cpp:92
+#, kde-format
+msgid "Only on Hover"
+msgstr "Chỉ khi di chuyển ở trên"
+
+#: appearance.cpp:93
+#, kde-format
+msgid "Und&erline links:"
+msgstr "Li&ên kết gạch chân:"
+
+#: appearance.cpp:96
+#, fuzzy, kde-format
+msgid ""
+"<html>Controls how Konqueror handles underlining hyperlinks:<br /"
+"><ul><li><b>Enabled</b>: Always underline links</li><li><b>Disabled</b>: "
+"Never underline links</li><li><b>Only on Hover</b>: Underline when the mouse "
+"is moved over the link</li></ul><br /><i>Note: The site's CSS definitions "
+"can override this value.</i></html>"
+msgstr ""
+"Điều khiển cách Konqueror quản lí khả năng gạch dưới siêu liên kết:"
+"<br><ul><li><b>Bật</b>: luôn luôn gạch chân liên kết</li><li><b>Tắt</b>: "
+"không bao giờ gạch chân liên kết</li><li><b>Chỉ khi di chuyển ở trên</b>: "
+"gạch chân chỉ khi con chuột di chuyển ở trên liên kết thôi</li></"
+"ul><br><i>Ghi chú : các lời định nghĩa CSS của nơi Mạng đó có thể có quyền "
+"cao hơn giá trị này.</i>"
+
+#: appearance.cpp:105
+#, kde-format
+msgid "When Efficient"
+msgstr ""
+
+#: appearance.cpp:106
+#, kde-format
+msgctxt "smooth scrolling"
+msgid "Always"
+msgstr ""
+
+#: appearance.cpp:107
+#, kde-format
+msgctxt "soft scrolling"
+msgid "Never"
+msgstr ""
+
+#: appearance.cpp:108
+#, kde-format
+msgid "S&mooth scrolling:"
+msgstr ""
+
+#: appearance.cpp:110
+#, kde-format
+msgid ""
+"<html>Determines whether Konqueror should use smooth steps to scroll HTML "
+"pages, or whole steps:<br /><ul><li><b>Always</b>: Always use smooth steps "
+"when scrolling.</li><li><b>Never</b>: Never use smooth scrolling, scroll "
+"with whole steps instead.</li><li><b>When Efficient</b>: Only use smooth "
+"scrolling on pages where it can be achieved with moderate usage of system "
+"resources.</li></ul></html>"
+msgstr ""
+
+#: appearance.cpp:119
+#, kde-format
+msgid ""
+"<h1>Konqueror Fonts</h1>On this page, you can configure which fonts "
+"Konqueror should use to display the web pages you view."
+msgstr ""
+"<h1>Phông chữ Konqueror</h1>Trên trang này, bạn có thể cấu hình những phông "
+"chữ trình duyệt Mạng Konqueror nên dùng để hiển thị các trang Mạng cho bạn "
+"xem."
+
+#: appearance.cpp:131
+#, kde-format
+msgid "Font Si&ze"
+msgstr "Cỡ &phông chữ"
+
+#: appearance.cpp:134 appearance.cpp:152
+#, kde-format
+msgid "This is the relative font size Konqueror uses to display web sites."
+msgstr ""
+"Giá trị này là kích cỡ phông chữ tương đối bị Konqueror dùng để hiển thị "
+"trang Mạng."
+
+#: appearance.cpp:138
+#, kde-format
+msgid "M&inimum font size:"
+msgstr "Cỡ phông chữ tối th&iểu :"
+
+#: appearance.cpp:142
+#, fuzzy, kde-format
+msgid ""
+"Konqueror will never display text smaller than this size,<br />overriding "
+"any other settings."
+msgstr ""
+"Konqueror sẽ không bao giờ hiển thị chữ nhỏ hơn kích cỡ này,<br>mà có quyền "
+"cao hơn các thiết lập kích cỡ phông chữ khác."
+
+#: appearance.cpp:147
+#, kde-format
+msgid "&Medium font size:"
+msgstr "Cỡ phông chữ &vừa :"
+
+#: appearance.cpp:160
+#, kde-format
+msgid "S&tandard font:"
+msgstr "Phông chữ &chuẩn:"
+
+#: appearance.cpp:161
+#, kde-format
+msgid "This is the font used to display normal text in a web page."
+msgstr "Đây là phông chữ được dùng để hiển thị các chữ chuẩn trên trang Mạng."
+
+#: appearance.cpp:165
+#, kde-format
+msgid "&Fixed font:"
+msgstr "Phông chữ cố &định:"
+
+#: appearance.cpp:166
+#, kde-format
+msgid ""
+"This is the font used to display fixed-width (i.e. non-proportional) text."
+msgstr ""
+"Đây là phông chữ được dùng để hiển thị chữ có độ rộng cố định (không tỉ lệ)."
+
+#: appearance.cpp:170
+#, kde-format
+msgid "S&erif font:"
+msgstr "Phông chữ ch&ân:"
+
+#: appearance.cpp:171
+#, kde-format
+msgid "This is the font used to display text that is marked up as serif."
+msgstr "Đây là phông chữ được dùng để hiển thị chữ có đường gạch chân."
+
+#: appearance.cpp:175
+#, kde-format
+msgid "Sa&ns serif font:"
+msgstr "Chữ _không chân:"
+
+#: appearance.cpp:176
+#, kde-format
+msgid "This is the font used to display text that is marked up as sans-serif."
+msgstr "Đây là phông chữ được dùng để hiển thị chữ không có đường gạch chân."
+
+#: appearance.cpp:180
+#, kde-format
+msgid "C&ursive font:"
+msgstr "Phông chữ &thảo :"
+
+#: appearance.cpp:181
+#, kde-format
+msgid "This is the font used to display text that is marked up as italic."
+msgstr "Đây là phông chữ được dùng để hiển thị chữ có định dạng in nghiêng."
+
+#: appearance.cpp:185
+#, kde-format
+msgid "Fantas&y font:"
+msgstr "Phông chữ kiểu cũ :"
+
+#: appearance.cpp:186
+#, kde-format
+msgid ""
+"This is the font used to display text that is marked up as a fantasy font."
+msgstr ""
+"Đây là phông chữ được dùng để hiển thị chữ có kiểu cũ, dùng để trang trí "
+"trang."
+
+#: appearance.cpp:195
+#, kde-format
+msgid "Font &size adjustment for this encoding:"
+msgstr "Điều chỉnh kích cỡ &phông chữ cho bộ kí tự này:"
+
+#: appearance.cpp:203 appearance.cpp:401
+#, kde-format
+msgid "Use Language Encoding"
+msgstr "Dùng bộ kí tự của ngôn ngữ"
+
+#: appearance.cpp:205
+#, kde-format
+msgid "Default encoding:"
+msgstr "Bộ kí tự mặc định:"
+
+#: appearance.cpp:207
+#, kde-format
+msgid ""
+"Select the default encoding to be used; normally, you will be fine with 'Use "
+"language encoding' and should not have to change this."
+msgstr ""
+"Chọn bộ kí tự mặc định cần dùng. Bình thường, tuỳ chọn « Dùng bộ kí tự của "
+"ngôn ngữ » đặt bộ kí tự thích hợp với ngôn ngữ bạn đã chon nên không cần "
+"thay đổi giá trị này."
+
+#. i18n: ectx: property (whatsThis), widget (QWidget, CSSConfigWidget)
+#. i18n: ectx: property (whatsThis), widget (QWidget, CSSCustomDialog)
+#: css/cssconfig.ui:5 css/csscustom.ui:13
+#, kde-format
+msgid ""
+"<b>Stylesheets</b><p>See http://www.w3.org/Style/CSS for further information "
+"on cascading style sheets.</p>"
+msgstr ""
+"<b>Tờ kiểu dáng</b><p>Xem thêm thông tin về CSS tại http://www.w3.org/Style/"
+"CSS.</p>"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, ButtonGroup1)
+#: css/cssconfig.ui:17
+#, kde-format
+msgid ""
+"<b>Stylesheets</b><p>Use this groupbox to determine how Konqueror will "
+"render style sheets.</p>"
+msgstr ""
+"<b>Tờ kiểu dáng</b><p>Dùng nhóm hộp này để xác định cách Konqueror xử lí các "
+"tờ kiểu dáng.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, ButtonGroup1)
+#: css/cssconfig.ui:20
+#, kde-format
+msgid "Stylesheets"
+msgstr "Tờ kiểu dáng"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, useDefault)
+#: css/cssconfig.ui:26
+#, kde-format
+msgid ""
+"<b>Use default stylesheet</b><p>Select this option to use the default "
+"stylesheet.</p>"
+msgstr ""
+"<b>Dùng tờ kiểu dáng mặc định</b><p>Chọn tuỳ chọn này để dùng tờ kiểu dáng "
+"mặc định.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useDefault)
+#: css/cssconfig.ui:29
+#, kde-format
+msgid "Us&e default stylesheet"
+msgstr "Dùng tờ kiểu dáng &mặc định"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, useUser)
+#: css/cssconfig.ui:39
+#, kde-format
+msgid ""
+"<b>Use user-defined stylesheet</b><p>If this box is checked, Konqueror will "
+"try to load a user-defined style sheet as specified in the location below. "
+"The style sheet allows you to completely override the way web pages are "
+"rendered in your browser. The file specified should contain a valid style "
+"sheet (see http://www.w3.org/Style/CSS for further information on cascading "
+"style sheets).</p>"
+msgstr ""
+"<b>Dùng tờ kiểu dáng do người dùng định nghĩa</b><p> Nếu chọn hộp này, thì "
+"Konqueror sẽ nạp tờ kiểu dáng do người dùng định nghĩa từ vị trí chỉ ra ở "
+"dưới đây.Tờ kiểu dáng này cho phép ghi chèn lên cách trang trí do nhà thiết "
+"kế đã tạo ra. Tệp được chỉ định cần phải chứa một tờ kiểu dáng đúng (xin xem "
+"http://www.w3.org/Style/CSS để biết thêm chi tiết).</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useUser)
+#: css/cssconfig.ui:42
+#, kde-format
+msgid "Use &user-defined stylesheet"
+msgstr "Dùng tờ kiểu dáng do &người dùng định nghĩa"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, useAccess)
+#: css/cssconfig.ui:94
+#, kde-format
+msgid ""
+"<b>Use accessibility stylesheet</b><p>Selecting this option will allow you "
+"to define a default font, font size, and font color with a few simple clicks "
+"of the mouse. Simply wander over to the Customize... dialog and pick out "
+"your desired options.</p>"
+msgstr ""
+"<b>Dùng tờ kiểu dáng khả năng truy cập</b><p>Chọn tuỳ chọn này sẽ cho phép "
+"bạn chọn phông mặc định, cỡ phông và màu chữ chỉ với vài cú nhấp chuột đơn "
+"giản. Chỉ cần mở hộp thoại Tuỳ biến... và tìm lấy các tuỳ chọn bạn thích.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useAccess)
+#: css/cssconfig.ui:97
+#, kde-format
+msgid "U&se accessibility stylesheet"
+msgstr "Dùng tờ kiểu dáng khả năng truy cập"
+
+#. i18n: ectx: property (text), widget (QPushButton, customize)
+#: css/cssconfig.ui:137
+#, kde-format
+msgid "Custom&ize..."
+msgstr "&Tuỳ biến..."
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox7)
+#: css/csscustom.ui:21
+#, kde-format
+msgid ""
+"<b>Font family</b><p>A font family is a group of fonts that resemble one "
+"another, with family members that are e.g. bold, italic, or any number of "
+"the above.</p>"
+msgstr ""
+"<b>Họ phông chữ</b><p>Họ phông chữ là một nhóm các phông chữ tương tự nhau "
+"với các thành viên chẳng hạn như đậm, nghiêng, hay các tổ hợp của chúng.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, GroupBox7)
+#: css/csscustom.ui:24
+#, kde-format
+msgid "Font Family"
+msgstr "Họ phông chữ"
+
+#. i18n: ectx: property (text), widget (QLabel, txtBaseFontFamily)
+#: css/csscustom.ui:30
+#, kde-format
+msgid "Base family:"
+msgstr "Họ cơ sở:"
+
+#. i18n: ectx: property (whatsThis), widget (QFontComboBox, fontFamily)
+#: css/csscustom.ui:37
+#, kde-format
+msgid "<p>This is the currently selected font family</p>"
+msgstr "<p>Đây là họ phông chữ đang được chọn</p>"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, sameFamily)
+#: css/csscustom.ui:44
+#, kde-format
+msgid ""
+"<b>Use same family for all text</b><p>Select this option to override custom "
+"fonts everywhere in favor of the base font.</p>"
+msgstr ""
+"<b>Dùng cùng một họ cho tất cả chữ</b><p>Chọn lựa chọn này để làm mất hiệu "
+"lực các phông chữ tự chọn ở mọi nơi, để chỉ dùng phông chữ cơ sở.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, sameFamily)
+#: css/csscustom.ui:47
+#, kde-format
+msgid "Use same family for all text"
+msgstr "Dùng cùng một họ cho tất cả chữ"
+
+#. i18n: ectx: property (title), widget (QGroupBox, GroupBox3)
+#: css/csscustom.ui:57
+#, fuzzy, kde-format
+msgid "Font Size"
+msgstr "Cỡ &phông chữ"
+
+#. i18n: ectx: property (text), widget (QLabel, txtFontsize)
+#: css/csscustom.ui:63
+#, fuzzy, kde-format
+msgid "Base font si&ze:"
+msgstr "Cỡ phông chữ &vừa :"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:80
+#, kde-format
+msgid "7"
+msgstr "7"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:85
+#, kde-format
+msgid "8"
+msgstr "8"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:90
+#, kde-format
+msgid "9"
+msgstr "9"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:95
+#, kde-format
+msgid "10"
+msgstr "10"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:100
+#, kde-format
+msgid "11"
+msgstr "11"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:105
+#, kde-format
+msgid "12"
+msgstr "12"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:110
+#, kde-format
+msgid "14"
+msgstr "14"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:115
+#, kde-format
+msgid "16"
+msgstr "16"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:120
+#, kde-format
+msgid "20"
+msgstr "20"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:125
+#, kde-format
+msgid "24"
+msgstr "24"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:130
+#, kde-format
+msgid "32"
+msgstr "32"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:135
+#, kde-format
+msgid "48"
+msgstr "48"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:140
+#, kde-format
+msgid "64"
+msgstr "64"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, dontScale)
+#: css/csscustom.ui:148
+#, kde-format
+msgid ""
+"<b>Use same size for all elements</b><p>Select this option to override "
+"custom font sizes in favor of the base font size. All fonts will be "
+"displayed in the same size.</p>"
+msgstr ""
+"<b>Dùng chung cỡ cho mọi phần tử</b><p>Chọn tuỳ chọn này để ghi đè lên các "
+"cỡ phông đã chọn cho từng phần tử. Mọi phông chữ sẽ được hiển thị cùng một "
+"cỡ.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, dontScale)
+#: css/csscustom.ui:151
+#, kde-format
+msgid "&Use same size for all elements"
+msgstr "&Dùng cỡ chung cho mọi phần tử"
+
+#. i18n: ectx: property (title), widget (QGroupBox, ButtonGroup2)
+#: css/csscustom.ui:161
+#, fuzzy, kde-format
+msgid "Colors"
+msgstr "Quét thư mục"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, blackOnWhite)
+#: css/csscustom.ui:183
+#, kde-format
+msgid "<b>Black on White</b><p>This is what you normally see.</p>"
+msgstr "<b>Đen trên trắng</b><p>Đây là những gì bạn thường thấy.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, blackOnWhite)
+#: css/csscustom.ui:186
+#, kde-format
+msgid "&Black on white"
+msgstr "Đe&n trên Trắng"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, whiteOnBlack)
+#: css/csscustom.ui:196
+#, kde-format
+msgid "<b>White on Black</b><p>This is your classic inverse color scheme.</p>"
+msgstr "<b>Trắng trên đen</b><p>Đảo lại của sự pha màu truyền thống.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, whiteOnBlack)
+#: css/csscustom.ui:199
+#, kde-format
+msgid "&White on black"
+msgstr "&Trắng trên đen"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, customColor)
+#: css/csscustom.ui:206
+#, kde-format
+msgid ""
+"<b>Custom</b><p>Select this option to define a custom color for the default "
+"font.</p>"
+msgstr ""
+"<b>Tuỳ biến</b><p>Chọn tuỳ chọn này để xác định màu cho phông mặc định.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, customColor)
+#: css/csscustom.ui:209
+#, kde-format
+msgid "Cus&tom"
+msgstr "&Tuỳ biến"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, txtBackground)
+#: css/csscustom.ui:219
+#, kde-format
+msgid ""
+"<b>Background</b><p>This background color is the one displayed behind the "
+"text by default. A background image will override this.</p>"
+msgstr ""
+"<b>Nền</b> <p> Màu nền là màu được hiển thị phía sau văn bản. Một hình ảnh "
+"nền có thể ghi chèn lên tuỳ chọn này. </p>"
+
+#. i18n: ectx: property (text), widget (QLabel, txtBackground)
+#: css/csscustom.ui:222
+#, kde-format
+msgid "Bac&kground:"
+msgstr "&Nền:"
+
+#. i18n: ectx: property (whatsThis), widget (KColorButton, backgroundColorButton)
+#: css/csscustom.ui:238
+#, kde-format
+msgid ""
+"<b>Background</b><p>Behind this door lays the ability to choose a custom "
+"default background.</p>"
+msgstr "<b>Nền</b><p>Sau cánh cửa này là khả năng chọn một nền mặc định.</p>"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, sameColor)
+#: css/csscustom.ui:248
+#, kde-format
+msgid ""
+"<b>Use same color for all text</b><p>Select this option to apply your chosen "
+"color to the default font as well as any custom fonts as specified in a "
+"stylesheet.</p>"
+msgstr ""
+"<b>Dùng chung màu cho mọi văn bản</b><p>Chọn tuỳ chọn này để áp dụng màu đã "
+"chọn cho phông mặc định cũng như bất kì phông nào được chỉ ra trong tờ kiểu "
+"dáng.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, sameColor)
+#: css/csscustom.ui:251
+#, kde-format
+msgid "Use same color for all text"
+msgstr "Dùng chung màu cho mọi văn bản"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, txtForeground)
+#. i18n: ectx: property (whatsThis), widget (KColorButton, foregroundColorButton)
+#: css/csscustom.ui:261 css/csscustom.ui:280
+#, kde-format
+msgid ""
+"<b>Foreground color</b><p>The foreground color is the color that the text is "
+"drawn in.</p>"
+msgstr ""
+"<b>Màu tiền cảnh</b><p>Màu tiền cảnh là màu của chữ sẽ được hiển thị.</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, txtForeground)
+#: css/csscustom.ui:264
+#, kde-format
+msgid "&Foreground:"
+msgstr "Tiền &cảnh:"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox3_2)
+#: css/csscustom.ui:293
+#, fuzzy, kde-format
+msgid "<b>Images</b>"
+msgstr "<b>Ảnh</b><p>"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, hideImages)
+#: css/csscustom.ui:302
+#, kde-format
+msgid ""
+"<b>Suppress images</b><p>Selecting this will prevent Konqueror from loading "
+"images.</p>"
+msgstr ""
+"<b>Khử ảnh</b><p>Chọn mục này để Konqueror không tải và hiển thị các hình "
+"ảnh.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, hideImages)
+#: css/csscustom.ui:305
+#, kde-format
+msgid "&Suppress images"
+msgstr "&Khử ảnh"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, hideBackground)
+#: css/csscustom.ui:312
+#, kde-format
+msgid ""
+"<b>Suppress background images</b><p>Selecting this option will prevent "
+"Konqueror from loading background images.</p>"
+msgstr ""
+"<b>Khử ảnh nền</b><p>Chọn tuỳ chọn này để Konqueror không tải và hiển thị "
+"ảnh nền.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, hideBackground)
+#: css/csscustom.ui:315
+#, kde-format
+msgid "Suppress background images"
+msgstr "Không tải ảnh nền"
+
+#. i18n: ectx: property (title), widget (QGroupBox, previewBox)
+#: css/csscustom.ui:347
+#, kde-format
+msgid "Preview"
+msgstr "Xem thử"
+
+#: css/kcmcss.cpp:51
+#, fuzzy, kde-format
+msgid ""
+"<h1>Konqueror Stylesheets</h1> This module allows you to apply your own "
+"color and font settings to Konqueror by using stylesheets (CSS). You can "
+"either specify options or apply your own self-written stylesheet by pointing "
+"to its location.<br /> Note that these settings will always have precedence "
+"before all other settings made by the site author. This can be useful to "
+"visually impaired people or for web pages that are unreadable due to bad "
+"design."
+msgstr ""
+"<h1>Tờ kiểu dáng Konqueror</h1>. Khối này cho phép dùng các thiết lập màu và "
+"phông cá nhân cho Konqueror bằng tờ kiểu dáng (stylesheet bằng CSS). Bạn có "
+"thể chỉ định các tuỳ chọn hay áp dụng CSS tự viết bằng cách chỉ đến vị trí "
+"của nó.<br>Chú ý là các thiết lập này luôn luôn được thực hiện sau các thiết "
+"lập của nhà thiết kế trang web. Tính năng này rất có ích cho những người có "
+"khả năng nhìn kém hay khi các trang web có thiết kế xấu khó đọc."
+
+#: css/kcmcss.cpp:336
+#, fuzzy, kde-format
+msgid ""
+"<html>\n"
+"<head>\n"
+"<style>\n"
+"<!--\n"
+"%1\n"
+"-->\n"
+"</style>\n"
+"</head>\n"
+"<body>\n"
+"<h1>Heading 1</h1>\n"
+"<h2>Heading 2</h2>\n"
+"<h3>Heading 3</h3>\n"
+"\n"
+"<p>User-defined stylesheets allow increased\n"
+"accessibility for visually handicapped\n"
+"people.</p>\n"
+"\n"
+"</body>\n"
+"</html>\n"
+msgstr ""
+"<qt>\n"
+"\n"
+"<h1>Đầu đề 1</h1><br/>\n"
+"<h2>Đầu đề 2</h2><br/>\n"
+"<h3>Đầu đề 3</h3><br/>\n"
+"\n"
+"<p>Dùng tờ kiểu dáng do người dùng định nghĩa\n"
+"cho phép tăng khả năng tiếp nhận thông tin cho người\n"
+"khiếm thị.\n"
+"\n"
+"</qt>"
+
+#: domainlistview.cpp:37
+#, kde-format
+msgid "Host/Domain"
+msgstr "Máy/Miền"
+
+#: domainlistview.cpp:37
+#, kde-format
+msgid "Policy"
+msgstr "Chính sách"
+
+#: domainlistview.cpp:45
+#, kde-format
+msgid "&New..."
+msgstr "&Mới..."
+
+#: domainlistview.cpp:49
+#, kde-format
+msgid "Chan&ge..."
+msgstr "Đổ&i..."
+
+#: domainlistview.cpp:53
+#, kde-format
+msgid "De&lete"
+msgstr "&Xoá bỏ"
+
+#: domainlistview.cpp:57
+#, kde-format
+msgid "&Import..."
+msgstr "&Nhập..."
+
+#: domainlistview.cpp:63
+#, kde-format
+msgid "&Export..."
+msgstr "&Xuất..."
+
+#: domainlistview.cpp:71
+#, kde-format
+msgid "Click on this button to manually add a host or domain specific policy."
+msgstr ""
+"Hãy bấm vào cái nút này để tự thêm một chính sách đặc trưng cho máy hay miền."
+
+#: domainlistview.cpp:73
+#, kde-format
+msgid ""
+"Click on this button to change the policy for the host or domain selected in "
+"the list box."
+msgstr ""
+"Hãy bấm vào cái nút này để thay đổi chính sách cho máy hay miền được chọn "
+"trong hộp danh sách."
+
+#: domainlistview.cpp:75
+#, kde-format
+msgid ""
+"Click on this button to delete the policy for the host or domain selected in "
+"the list box."
+msgstr ""
+"Hãy bấm vào cái nút này để xoá bỏ chính sách cho máy hay miền được chọn "
+"trong hộp danh sách."
+
+#: domainlistview.cpp:122
+#, kde-format
+msgid "You must first select a policy to be changed."
+msgstr "Trước tiên, bạn cần phải chọn một chính sách cần thay đổi."
+
+#: domainlistview.cpp:149
+#, kde-format
+msgid "You must first select a policy to delete."
+msgstr "Trước tiên, bạn cần phải chọn một chính sách cần xoá bỏ."
+
+#: domainlistview.cpp:187 policydlg.cpp:63
+#, kde-format
+msgid "Use Global"
+msgstr "Dùng toàn cục"
+
+#: domainlistview.cpp:189 policydlg.cpp:63
+#, kde-format
+msgid "Accept"
+msgstr "Chấp nhận"
+
+#: domainlistview.cpp:191 policydlg.cpp:63
+#, kde-format
+msgid "Reject"
+msgstr "Từ chối"
+
+#: filteropts.cpp:48
+#, kde-format
+msgid "Enable filters"
+msgstr "Bật bộ lọc"
+
+#: filteropts.cpp:51
+#, kde-format
+msgid "Hide filtered images"
+msgstr "Ẩn ảnh đã lọc"
+
+#: filteropts.cpp:58
+#, fuzzy, kde-format
+#| msgid "Enable filters"
+msgid "Manual Filter"
+msgstr "Bật bộ lọc"
+
+#: filteropts.cpp:76
+#, kde-format
+msgid "Search:"
+msgstr ""
+
+#: filteropts.cpp:84
+#, kde-format
+msgid ""
+"<qt>Filter expression (e.g. <tt>http://www.example.com/ad/*</tt>, <a href="
+"\"filterhelp\">more information</a>):"
+msgstr ""
+
+#: filteropts.cpp:100
+#, kde-format
+msgid "Automatic Filter"
+msgstr ""
+
+#: filteropts.cpp:109
+#, kde-format
+msgid "Automatic update interval:"
+msgstr ""
+
+#: filteropts.cpp:114
+#, kde-format
+msgid " day"
+msgid_plural " days"
+msgstr[0] ""
+
+#: filteropts.cpp:120
+#, kde-format
+msgid "Insert"
+msgstr "Chèn"
+
+#: filteropts.cpp:123
+#, kde-format
+msgid "Update"
+msgstr "Cập nhật"
+
+#: filteropts.cpp:126
+#, kde-format
+msgid "Remove"
+msgstr "Xoá"
+
+#: filteropts.cpp:130
+#, kde-format
+msgid "Import..."
+msgstr "Nhập..."
+
+#: filteropts.cpp:133
+#, kde-format
+msgid "Export..."
+msgstr "Xuất..."
+
+#: filteropts.cpp:140
+#, kde-format
+msgid ""
+"<qt>More information on <a href=\"importhelp\">import format</a>, <a href="
+"\"exporthelp\">export format</a>"
+msgstr ""
+
+#: filteropts.cpp:154
+#, fuzzy, kde-format
+#| msgid ""
+#| "Enable or disable AdBlocK filters. When enabled a set of expressions to "
+#| "be blocked should be defined in the filter list for blocking to take "
+#| "effect."
+msgid ""
+"Enable or disable AdBlocK filters. When enabled, a set of URL expressions "
+"should be defined in the filter list for blocking to take effect."
+msgstr ""
+"Bật/tắt bộ lọc chặn quảng cáo AdBlocK. Khi bật, bận cần phải xác định trong "
+"danh sách lọc một tập biểu thức cần chặn, để làm cho khả năng chặn quảng cáo "
+"có kết quả."
+
+#: filteropts.cpp:156
+#, fuzzy, kde-format
+#| msgid ""
+#| "When enabled blocked images will be removed from the page completely "
+#| "otherwise a placeholder 'blocked' image will be used."
+msgid ""
+"When enabled blocked images will be removed from the page completely, "
+"otherwise a placeholder 'blocked' image will be used."
+msgstr ""
+"Khi bật, các ảnh bị chặn sẽ bị gỡ bỏ hoàn toàn ra trang, hoặc ảnh « bị chặn "
+"» giữ chỗ sẻ được hiển thị thay thế."
+
+#: filteropts.cpp:163
+#, fuzzy, kde-format
+#| msgid ""
+#| "This is the list of URL filters that will be applied to all linked images "
+#| "and frames. The filters are processed in order so place more generic "
+#| "filters towards the top of the list."
+msgid ""
+"This is the list of URL filters that will be applied to all embedded images "
+"and media objects."
+msgstr ""
+"Đây là danh sách các bộ lọc địa chỉ Mạng sẽ được áp dụng vào mọi ảnh và "
+"khung đã liên kết. Có xử lí những bộ lọc theo thứ tự, vậy bạn nên định vị "
+"những bộ lọc giống loài hơn gần đầu danh sách."
+
+#: filteropts.cpp:167
+#, kde-format
+msgid ""
+"<qt><p>Enter an expression to filter. Filters can be defined as either:"
+"<ul><li>a shell-style wildcard, e.g. <tt>http://www.example.com/ads*</tt>, "
+"the wildcards <tt>*?[]</tt> may be used</li><li>a full regular expression by "
+"surrounding the string with '<tt>/</tt>', e.g. <tt>/\\/(ad|banner)\\./</tt></"
+"li></ul><p>Any filter string can be preceded by '<tt>@@</tt>' to whitelist "
+"(allow) any matching URL, which takes priority over any blacklist (blocking) "
+"filter."
+msgstr ""
+
+#: filteropts.cpp:183
+#, kde-format
+msgid ""
+"<qt><p>The filter import format is a plain text file. Blank lines, comment "
+"lines starting with '<tt>!</tt>' and the header line <tt>[AdBlock]</tt> are "
+"ignored. Any other line is added as a filter expression."
+msgstr ""
+
+#: filteropts.cpp:188
+#, kde-format
+msgid ""
+"<qt><p>The filter export format is a plain text file. The file begins with a "
+"header line <tt>[AdBlock]</tt>, then all of the filters follow each on a "
+"separate line."
+msgstr ""
+
+#: filteropts.cpp:256
+#, kde-format
+msgid "Import Filters"
+msgstr ""
+
+#: filteropts.cpp:301
+#, fuzzy, kde-format
+#| msgid "URL Expressions to Filter"
+msgid "Export Filters"
+msgstr "Biểu thức địa chỉ Mạng cần lọc"
+
+#: filteropts.cpp:436
+#, kde-format
+msgid ""
+"<h1>Konqueror AdBlocK</h1> Konqueror AdBlocK allows you to create a list of "
+"filters that are checked against linked images and frames. URL's that match "
+"are either discarded or replaced with a placeholder image. "
+msgstr ""
+"<h1>Konqueror AdBlocK</h1>Bộ chặn quảng cáo Konqueror AdBlocK cho bạn khả "
+"năng tạo một danh sách bộ lọc được so sánh với các ảnh và khung đã liên kết. "
+"Mọi địa chỉ Mạng khớp hoặc bị huỷ hoặc bị thay thế bằng ảnh giữ chỗ."
+
+#: filteropts.cpp:558
+#, kde-format
+msgid "Name"
+msgstr ""
+
+#: filteropts.cpp:559
+#, kde-format
+msgid "URL"
+msgstr ""
+
+#: generalopts.cpp:53
+#, kde-format
+msgid "Tabbed Browsing"
+msgstr "Duyệt đa trang"
+
+#: generalopts.cpp:79
+#, kde-format
+msgctxt ""
+"The user chose to use a custom start page but left the corresponding field "
+"empty"
+msgid "Please, insert the custom start page"
+msgstr ""
+
+#: generalopts.cpp:85
+#, kde-format
+msgctxt "@label:listbox"
+msgid "When &Konqueror starts:"
+msgstr ""
+
+#: generalopts.cpp:94
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Show Introduction Page"
+msgstr ""
+
+#: generalopts.cpp:95
+#, fuzzy, kde-format
+msgctxt "@item:inlistbox"
+msgid "Show My Start Page"
+msgstr "Chọn thư mục quét bổ sung"
+
+#: generalopts.cpp:96
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Show Blank Page"
+msgstr ""
+
+#: generalopts.cpp:97
+#, fuzzy, kde-format
+msgctxt "@item:inlistbox"
+msgid "Show My Bookmarks"
+msgstr "&Đánh dấu"
+
+#: generalopts.cpp:103
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Select Start Page"
+msgstr "Chọn thư mục quét bổ sung"
+
+#: generalopts.cpp:107
+#, kde-format
+msgid "This is the URL of the web page Konqueror will show when starting."
+msgstr ""
+
+#: generalopts.cpp:118
+#, fuzzy, kde-format
+msgid "Home page:"
+msgstr "Chọn thư mục quét bổ sung"
+
+#: generalopts.cpp:121
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Select Home Page"
+msgstr "Chọn thư mục quét bổ sung"
+
+#: generalopts.cpp:126
+#, kde-format
+msgid ""
+"This is the URL of the web page where Konqueror will jump to when the \"Home"
+"\" button is pressed."
+msgstr ""
+
+#: generalopts.cpp:134
+#, kde-format
+msgid "Default web browser engine:"
+msgstr ""
+
+#: generalopts.cpp:143
+#, kde-format
+msgid "When splitting a view"
+msgstr ""
+
+#: generalopts.cpp:147
+#, kde-format
+msgid "Always duplicate current view"
+msgstr ""
+
+#: generalopts.cpp:148
+#, kde-format
+msgid "Duplicate current view only for local files"
+msgstr ""
+
+#: htmlopts.cpp:36
+#, kde-format
+msgid ""
+"<h1>Konqueror Browser</h1> Here you can configure Konqueror's browser "
+"functionality. Please note that the file manager functionality has to be "
+"configured using the \"File Manager\" configuration module. You can make "
+"some settings how Konqueror should handle the HTML code in the web pages it "
+"loads. It is usually not necessary to change anything here."
+msgstr ""
+"<h1>Bộ duyệt Konqueror</h1>Ở đây bạn co thể cấu hình chức năng của bộ duyệt "
+"Mạng Konqueror. Ghi chú rằng chức năng bộ quản lí tệp phải được cấu hình "
+"bằng khối cấu hình « File Manager ». Bạn có thể thiết lập Konqueror để xử lí "
+"mã HTML của các trang Mạng được tải một cách thích hợp với bạn."
+
+#: htmlopts.cpp:44
+#, kde-format
+msgid "Boo&kmarks"
+msgstr "&Đánh dấu"
+
+#: htmlopts.cpp:47
+#, kde-format
+msgid "Ask for name and folder when adding bookmarks"
+msgstr "Nhắc với tên và thư mục khi thêm Đánh dấu"
+
+#: htmlopts.cpp:50
+#, kde-format
+msgid ""
+"If this box is checked, Konqueror will allow you to change the title of the "
+"bookmark and choose a folder in which to store it when you add a new "
+"bookmark."
+msgstr ""
+"Khi bật, Konqueror sẽ cho phép bạn thay đổi tựa đề của Đánh dấu, cũng chọn "
+"thư mục nơi cất giữ nó khi bạn thêm Đánh dấu mới."
+
+#: htmlopts.cpp:56
+#, kde-format
+msgid "Show only marked bookmarks in bookmark toolbar"
+msgstr "Hiện chỉ Đánh dấu có nhãn trong thanh công cụ Đánh dấu"
+
+#: htmlopts.cpp:58
+#, kde-format
+msgid ""
+"If this box is checked, Konqueror will show only those bookmarks in the "
+"bookmark toolbar which you have marked to do so in the bookmark editor."
+msgstr ""
+"Khi bật, Konqueror sẽ hiển thị chỉ những Đánh dấu trên thanh công cụ Đánh "
+"dấu mà bạn đã nhãn để làm như thế trong bộ hiệu chỉnh Đánh dấu."
+
+#: htmlopts.cpp:65
+#, kde-format
+msgid "Form Com&pletion"
+msgstr "Gõ &xong đơn"
+
+#: htmlopts.cpp:69
+#, kde-format
+msgid ""
+"If this box is checked, Konqueror will remember the data you enter in web "
+"forms and suggest it in similar fields for all forms."
+msgstr ""
+"Nếu ô này được chọn, Konqueror sẽ nhớ dữ liệu mà bạn nhập vào các biểu mẫu "
+"web, và sẽ gợi ý dữ liệu đó ở các trường tương tự cho tất cả các biểu mẫu."
+
+#: htmlopts.cpp:75
+#, kde-format
+msgid "&Maximum completions:"
+msgstr "Lần gõ xong tối &đa :"
+
+#: htmlopts.cpp:77
+#, kde-format
+msgid ""
+"Here you can select how many values Konqueror will remember for a form field."
+msgstr ""
+"Ở đây bạn có thể chọn bao nhiều giá trị Konqueror sẽ nhớ cho mỗi trường "
+"trong đơn."
+
+#: htmlopts.cpp:84
+#, kde-format
+msgid "Mouse Beha&vior"
+msgstr "Ứng xử ch&uột"
+
+#: htmlopts.cpp:87
+#, kde-format
+msgid "Chan&ge cursor over links"
+msgstr "Th&ay đổi con chạy ở trên liên kết"
+
+#: htmlopts.cpp:89
+#, kde-format
+msgid ""
+"If this option is set, the shape of the cursor will change (usually to a "
+"hand) if it is moved over a hyperlink."
+msgstr ""
+"Nếu bật, hình của con chạy sẽ thay đổi (thường trở nên một tay) nếu nó được "
+"di chuyển ở trên một siêu liên kết."
+
+#: htmlopts.cpp:93
+#, kde-format
+msgid "M&iddle click opens URL in selection"
+msgstr "Bấm-&giữa mở URL trong vùng chọn"
+
+#: htmlopts.cpp:96
+#, kde-format
+msgid ""
+"If this box is checked, you can open the URL in the selection by middle "
+"clicking on a Konqueror view."
+msgstr ""
+"Khi bật, bạn có thể mở địa chỉ Mạng trong vùng chọn bằng cách bấm nút giữa "
+"trên chuột vào một ô xem Konqueror."
+
+#: htmlopts.cpp:100
+#, kde-format
+msgid "Right click goes &back in history"
+msgstr "Bấm-phải đi &lùi trong Lịch sử"
+
+#: htmlopts.cpp:103
+#, kde-format
+msgid ""
+"If this box is checked, you can go back in history by right clicking on a "
+"Konqueror view. To access the context menu, press the right mouse button and "
+"move."
+msgstr ""
+"Khi bật, bạn có thể đi lùi trong Lịch sử bằng cách bấm nút phải trên chuột "
+"vào một ô xem Konqueror. Để truy cập trình đơn ngữ cảnh, hãy bấm nút phải "
+"trên chuột rồi di chuyển."
+
+#: htmlopts.cpp:113
+#, kde-format
+msgid "Allow automatic delayed &reloading/redirecting"
+msgstr "Cho phép tải /chuyển tiếp &lại bị hoãn tự động"
+
+#: htmlopts.cpp:114
+#, kde-format
+msgid ""
+"Some web pages request an automatic reload or redirection after a certain "
+"period of time. By unchecking this box Konqueror will ignore these requests."
+msgstr ""
+"Một số trang web yêu cầu việc tải lại hay chuyển tiếp lại tự động sau một "
+"thời gian riêng. Khi tuỳ chọn này bị tắt, Konqueror sẽ bỏ qua các yêu cầu "
+"này."
+
+#: htmlopts.cpp:120
+#, fuzzy, kde-format
+#| msgid "Enable/disable Access Ke&y activation with Ctrl key"
+msgid "Enable Access Ke&y activation with Ctrl key"
+msgstr "Bật/tắt kích hoạt Phím Tru&y Cập với phím Ctrl"
+
+#: htmlopts.cpp:121
+#, fuzzy, kde-format
+msgid ""
+"Pressing the Ctrl key when viewing webpages activates Access Keys. "
+"Unchecking this box will disable this accessibility feature. (Konqueror "
+"needs to be restarted for this change to take effect.)"
+msgstr ""
+"Việc bấm phím Ctrl khi xem trang web sẽ kích hoạt Phím Truy Cập của KDE. Bỏ "
+"chọn hộp nay để tắt tính năng khả năng truy cập này. (Konqueror cần phải "
+"được khởi chạy lại để thay đổi có tác động.)"
+
+#: htmlopts.cpp:125
+#, kde-format
+msgid "Send the DNT header to tell web sites you do not want to be tracked"
+msgstr ""
+
+#: htmlopts.cpp:126
+#, kde-format
+msgid ""
+"Check this box if you want to inform a web site that you do not want your "
+"web browsing habits tracked."
+msgstr ""
+
+#: htmlopts.cpp:130
+#, kde-format
+msgid "Offer to save website passwords"
+msgstr ""
+
+#: htmlopts.cpp:131
+#, kde-format
+msgid "Uncheck this box to prevent being prompted to save website passwords"
+msgstr ""
+
+#: htmlopts.cpp:136
+#, kde-format
+msgid "Display online PDF files using WebEngine"
+msgstr ""
+
+#: htmlopts.cpp:137
+#, kde-format
+msgid ""
+"Uncheck this box to display online PDF files as configured in System Settings"
+msgstr ""
+
+#: javaopts.cpp:78
+#, kde-format
+msgid "Enable Ja&va globally"
+msgstr "Bật Ja&va toàn cục"
+
+#: javaopts.cpp:93
+#, kde-format
+msgid "Java Runtime Settings"
+msgstr "Thiết lập lúc chạy Java"
+
+#: javaopts.cpp:97
+#, kde-format
+msgid "&Use security manager"
+msgstr "Dùng bộ &quản lí bảo mật"
+
+#: javaopts.cpp:101
+#, kde-format
+msgid "Use &KIO"
+msgstr "Dùng &KIO"
+
+#: javaopts.cpp:105
+#, fuzzy, kde-format
+msgid "Shu&tdown applet server when inactive for more than"
+msgstr "&Tắt trình phục vụ tiểu dụng khi không hoạt động"
+
+#: javaopts.cpp:117
+#, fuzzy, kde-format
+#| msgid " sec"
+msgid " second"
+msgid_plural " seconds"
+msgstr[0] " giây"
+
+#: javaopts.cpp:123
+#, kde-format
+msgid "&Path to Java executable, or 'java':"
+msgstr "&Đường dẫn đến tệp thực hiện Java, hay gõ 'java':"
+
+#: javaopts.cpp:127
+#, kde-format
+msgid "Additional Java a&rguments:"
+msgstr "Đối &số Java thêm:"
+
+#: javaopts.cpp:132
+#, kde-format
+msgid ""
+"Enables the execution of scripts written in Java that can be contained in "
+"HTML pages. Note that, as with any browser, enabling active contents can be "
+"a security problem."
+msgstr ""
+"HIệu lực thực hiện tập lệnh được ghi bằng Java mà có thể được chứa trong "
+"trang HTML. Ghi chú rằng, như đối với bất kì trình duyệt Mạng, sự bật chạy "
+"nội dung hoạt động có thể là vấn đề bảo mật."
+
+#: javaopts.cpp:135
+#, fuzzy, kde-format
+msgid ""
+"<p>This box contains the domains and hosts you have set a specific Java "
+"policy for. This policy will be used instead of the default policy for "
+"enabling or disabling Java applets on pages sent by these domains or hosts.</"
+"p><p>Select a policy and use the controls on the right to modify it.</p>"
+msgstr ""
+"Hộp này chứa mỗi miền và máy cho đó bạn đã đặt một chính sách riêng. Chính "
+"sách này sẽ được dùng thay vào chính sách mặc định để bật hay tắt tiểu dụng "
+"Java trên trang được gởi bởi miền hay máy đó.<p>Hãy chọn một chính sách và "
+"sửa đổi nó bằng những công cụ bên phải."
+
+#: javaopts.cpp:142
+#, kde-format
+msgid ""
+"Click this button to choose the file that contains the Java policies. These "
+"policies will be merged with the existing ones. Duplicate entries are "
+"ignored."
+msgstr ""
+"Hãy bấm vào cái nút này để chọn tệp chứa các chính sách Java. Những chính "
+"sách này sẽ được hoà trộn với những điều đã có. Mục nhập trùng nào bị bỏ qua."
+
+#: javaopts.cpp:145
+#, kde-format
+msgid ""
+"Click this button to save the Java policy to a zipped file. The file, named "
+"<b>java_policy.tgz</b>, will be saved to a location of your choice."
+msgstr ""
+"Hãy bấm vào cái nút này để lưu chính sách Java vào tệp đã nén bằng zip. Tệp "
+"này, tên <b>java_policy.tgz</b>, sẽ được lưu vào địa điểm bạn chọn."
+
+#: javaopts.cpp:149
+#, kde-format
+msgid ""
+"Here you can set specific Java policies for any particular host or domain. "
+"To add a new policy, simply click the <i>New...</i> button and supply the "
+"necessary information requested by the dialog box. To change an existing "
+"policy, click on the <i>Change...</i> button and choose the new policy from "
+"the policy dialog box. Clicking on the <i>Delete</i> button will remove the "
+"selected policy, causing the default policy setting to be used for that "
+"domain."
+msgstr ""
+"Ở đây bạn có thể đặt chính sách Java riêng cho bất cứ máy hay miền nào. Để "
+"thêm một chính sách mới, đơn giản hãy bấm vào nút <i>Mới...</i> và cung cấp "
+"thông tin đã yêu cầu. Để sửa đổi một chính sách đã có, hãy bấm vào nút "
+"<i>Đổi...</i> rồi chọn chính sách mới trong hộp thoại chính sách. Việc bấm "
+"vào nút <i>Xoá bỏ</i> sẽ gỡ bỏ chính sách đã chọn, gây ra thiết lập chính "
+"sách mặc định được dùng cho miền đó."
+
+#: javaopts.cpp:162
+#, kde-format
+msgid ""
+"Enabling the security manager will cause the jvm to run with a Security "
+"Manager in place. This will keep applets from being able to read and write "
+"to your file system, creating arbitrary sockets, and other actions which "
+"could be used to compromise your system. Disable this option at your own "
+"risk. You can modify your $HOME/.java.policy file with the Java policytool "
+"utility to give code downloaded from certain sites more permissions."
+msgstr ""
+"Việc hiệu lực bộ quản lí bảo mật sẽ chạy jvm (cơ chế ảo Java) với một bộ "
+"quản lí bảo mật tại chỗ. Nó sẽ ngăn cản tiểu dụng đọc hay ghi vào hệ thống "
+"tệp của bạn, tạo ổ cắm tuỳ ý, hoặc hành động khác mà có thể hại thậm hệ "
+"thống của bạn. Hãy tự chịu trách nhiệm khi bạn tắt tuỳ chọn này. Bạn có thể "
+"sửa đổi tệp chính sách Java $HOME/.java.policy mình bằng tiện ích policytool "
+"(công cụ chính sách) Java để gán quyền thêm cho mã được tải xuống một số nơi "
+"Mạng riêng."
+
+#: javaopts.cpp:170
+#, kde-format
+msgid "Enabling this will cause the jvm to use KIO for network transport "
+msgstr "Việc bật tuỳ chọn này sẽ gây ra jvm dùng KIO để truyền trên mạng "
+
+#: javaopts.cpp:172
+#, kde-format
+msgid ""
+"Enter the path to the java executable. If you want to use the jre in your "
+"path, simply leave it as 'java'. If you need to use a different jre, enter "
+"the path to the java executable (e.g. /usr/lib/jdk/bin/java), or the path to "
+"the directory that contains 'bin/java' (e.g. /opt/IBMJava2-13)."
+msgstr ""
+"Hãy nhập đường dẫn đến tệp thực hiện Java. Nếu bạn muốn dùng jre đã có trong "
+"đường dẫn của bạn, đơn giản để lại nó là « java ». Nếu bạn cần dùng một jre "
+"khác, hãy nhập đường dẫn đến tệp thực hiện Java (vd. /usr/lib/jdk/bin/java), "
+"hoặc đường dẫn đến thư mục chứa « bin/java » (vd. /opt/IBMJava2-13)."
+
+#: javaopts.cpp:177
+#, kde-format
+msgid ""
+"If you want special arguments to be passed to the virtual machine, enter "
+"them here."
+msgstr "Nếu bạn muốn gởi đối số đặc biệt cho cơ chế ảo, hãy nhập vào đây."
+
+#: javaopts.cpp:179
+#, kde-format
+msgid ""
+"When all the applets have been destroyed, the applet server should shut "
+"down. However, starting the jvm takes a lot of time. If you would like to "
+"keep the java process running while you are browsing, you can set the "
+"timeout value to whatever you like. To keep the java process running for the "
+"whole time that the konqueror process is, leave the Shutdown Applet Server "
+"checkbox unchecked."
+msgstr ""
+"Khi tất cả các tiểu dụng đã bị kết thúc, trình phục vụ tiểu dụng nên tắt. "
+"Tuy nhiên, việc khởi chạy jvm mất nhiều thời gian. Nếu bạn muốn cứ chạy tiến "
+"trình Java trong khi duyệt, bạn có thể đặt giá trị thời hạn thành số đã "
+"muốn. Để cứ chạy tiến trình Java trong toàn bộ thời gian chạy Konqueror, hãy "
+"bỏ chọn mục « Tắt trình phục vụ tiểu dụng »."
+
+#: javaopts.cpp:288
+#, fuzzy, kde-format
+msgctxt "@title:group"
+msgid "Doma&in-Specific"
+msgstr "Đặc điểm &miền"
+
+#: javaopts.cpp:323
+#, fuzzy, kde-format
+#| msgid "New Java Policy"
+msgctxt "@title:window"
+msgid "New Java Policy"
+msgstr "Chính sách Java mới"
+
+#: javaopts.cpp:326
+#, fuzzy, kde-format
+#| msgid "Change Java Policy"
+msgctxt "@title:window"
+msgid "Change Java Policy"
+msgstr "Đổi chính sách Java"
+
+#: javaopts.cpp:330
+#, kde-format
+msgid "&Java policy:"
+msgstr "Chính sách &Java:"
+
+#: javaopts.cpp:331
+#, kde-format
+msgid "Select a Java policy for the above host or domain."
+msgstr "Chọn một chính sách Java cho máy hay miền bên trên."
+
+#: jsopts.cpp:50
+#, kde-format
+msgid "Ena&ble JavaScript globally"
+msgstr "&Bật JavaScript toàn cục"
+
+#: jsopts.cpp:51
+#, kde-format
+msgid ""
+"Enables the execution of scripts written in ECMA-Script (also known as "
+"JavaScript) that can be contained in HTML pages. Note that, as with any "
+"browser, enabling scripting languages can be a security problem."
+msgstr ""
+"HIệu lực thực hiện tập lệnh được ghi bằng ECMA-Script (cũng được gọi là "
+"JavaScript) mà có thể được chứa trong trang HTML. Ghi chú rằng, như đối với "
+"bất kì trình duyệt Mạng, sự bật chạy nội dung hoạt động có thể là vấn đề bảo "
+"mật."
+
+#: jsopts.cpp:59
+#, kde-format
+msgid "Debugging"
+msgstr ""
+
+#: jsopts.cpp:63
+#, kde-format
+msgid "Enable debu&gger"
+msgstr "Bật &gỡ lỗi"
+
+#: jsopts.cpp:64
+#, kde-format
+msgid "Enables builtin JavaScript debugger."
+msgstr "Hiệu lực bộ gỡ lỗi JavaScript có sẵn."
+
+#: jsopts.cpp:68
+#, kde-format
+msgid "Report &errors"
+msgstr "Thông báo &lỗi"
+
+#: jsopts.cpp:69
+#, kde-format
+msgid ""
+"Enables the reporting of errors that occur when JavaScript code is executed."
+msgstr "HIệu lực thông báo lỗi mà xảy ra khi thực hiện mã JavaScript."
+
+#: jsopts.cpp:79
+#, kde-format
+msgid ""
+"Here you can set specific JavaScript policies for any particular host or "
+"domain. To add a new policy, simply click the <i>New...</i> button and "
+"supply the necessary information requested by the dialog box. To change an "
+"existing policy, click on the <i>Change...</i> button and choose the new "
+"policy from the policy dialog box. Clicking on the <i>Delete</i> button will "
+"remove the selected policy causing the default policy setting to be used for "
+"that domain. The <i>Import</i> and <i>Export</i> button allows you to easily "
+"share your policies with other people by allowing you to save and retrieve "
+"them from a zipped file."
+msgstr ""
+"Ở đây bạn có thể đặt chính sách JavaScript riêng cho bất cứ máy hay miền "
+"nào. Để thêm một chính sách mới, đơn giản hãy bấm vào nút <i>Mới...</i> và "
+"cung cấp thông tin đã yêu cầu. Để sửa đổi một chính sách đã có, hãy bấm vào "
+"nút <i>Đổi...</i> rồi chọn chính sách mới trong hộp thoại chính sách. Việc "
+"bấm vào nút <i>Xoá bỏ</i> sẽ gỡ bỏ chính sách đã chọn, gây ra thiết lập "
+"chính sách mặc định được dùng cho miền đó. Nút <i>Nhập</i> và <i>Xuất</i> "
+"cho bạn khả năng chia sẻ dễ dàng các chính sách với người khác, bằng cách "
+"cho phép bạn lưu vào và lấy chúng từ tệp đã nén bằng zip."
+
+#: jsopts.cpp:89
+#, fuzzy, kde-format
+msgid ""
+"<p>This box contains the domains and hosts you have set a specific "
+"JavaScript policy for. This policy will be used instead of the default "
+"policy for enabling or disabling JavaScript on pages sent by these domains "
+"or hosts.</p><p>Select a policy and use the controls on the right to modify "
+"it.</p>"
+msgstr ""
+"Hộp này chứa mỗi miền và máy cho đó bạn đã đặt một chính sách JavaScript "
+"riêng. Chính sách này sẽ được dùng thay vào chính sách mặc định để bật hay "
+"tắt JavaScript trên trang được gởi bởi miền hay máy đó.<p>Hãy chọn một chính "
+"sách và sửa đổi nó bằng những công cụ bên phải."
+
+#: jsopts.cpp:96
+#, kde-format
+msgid ""
+"Click this button to choose the file that contains the JavaScript policies. "
+"These policies will be merged with the existing ones. Duplicate entries are "
+"ignored."
+msgstr ""
+"Hãy bấm vào cái nút này để chọn tệp chứa các chính sách JavaScript. Những "
+"chính sách này sẽ được hoà trộn với những điều đã có. Mục nhập trùng nào bị "
+"bỏ qua."
+
+#: jsopts.cpp:99
+#, kde-format
+msgid ""
+"Click this button to save the JavaScript policy to a zipped file. The file, "
+"named <b>javascript_policy.tgz</b>, will be saved to a location of your "
+"choice."
+msgstr ""
+"Hãy bấm vào cái nút này để lưu chính sách JavaScript vào tệp đã nén bằng "
+"zip. Tệp này, tên <b>javascript_policy.tgz</b>, sẽ được lưu vào địa điểm bạn "
+"chọn."
+
+#: jsopts.cpp:105
+#, kde-format
+msgid "Global JavaScript Policies"
+msgstr "Chính sách Javascript toàn cục"
+
+#: jsopts.cpp:173
+#, fuzzy, kde-format
+msgctxt "@title:group"
+msgid "Do&main-Specific"
+msgstr "Đặc điểm m&iền"
+
+#: jsopts.cpp:212
+#, fuzzy, kde-format
+#| msgid "New JavaScript Policy"
+msgctxt "@title:window"
+msgid "New JavaScript Policy"
+msgstr "Chính sách Javascript mới"
+
+#: jsopts.cpp:215
+#, fuzzy, kde-format
+#| msgid "Change JavaScript Policy"
+msgctxt "@title:window"
+msgid "Change JavaScript Policy"
+msgstr "Đổi chính sách Javascript"
+
+#: jsopts.cpp:219
+#, kde-format
+msgid "JavaScript policy:"
+msgstr "Chính sách Javascript:"
+
+#: jsopts.cpp:220
+#, kde-format
+msgid "Select a JavaScript policy for the above host or domain."
+msgstr "Hãy chọn một chính sách Javascript cho máy hay miền bên trên."
+
+#: jsopts.cpp:222
+#, kde-format
+msgid "Domain-Specific JavaScript Policies"
+msgstr "Chính sách Javascript đặc điểm miền"
+
+#: jspolicies.cpp:132
+#, kde-format
+msgid "Open new windows:"
+msgstr "Mở cửa sổ mới :"
+
+#: jspolicies.cpp:140 jspolicies.cpp:194 jspolicies.cpp:231 jspolicies.cpp:268
+#: jspolicies.cpp:308
+#, kde-format
+msgid "Use global"
+msgstr "Dùng toàn cục"
+
+#: jspolicies.cpp:141 jspolicies.cpp:195 jspolicies.cpp:232 jspolicies.cpp:269
+#: jspolicies.cpp:309
+#, kde-format
+msgid "Use setting from global policy."
+msgstr "Dùng thiết lập từ chính sách toàn cục."
+
+#: jspolicies.cpp:147 jspolicies.cpp:201 jspolicies.cpp:238 jspolicies.cpp:275
+#: jspolicies.cpp:315
+#, kde-format
+msgid "Allow"
+msgstr "Cho phép"
+
+#: jspolicies.cpp:148
+#, kde-format
+msgid "Accept all popup window requests."
+msgstr "Chấp nhận mọi yêu cầu cửa sổ bật lên."
+
+#: jspolicies.cpp:153
+#, kde-format
+msgid "Ask"
+msgstr "Hỏi"
+
+#: jspolicies.cpp:154
+#, kde-format
+msgid "Prompt every time a popup window is requested."
+msgstr "Nhắc mỗi lần cửa sổ bật lên được yêu cầu."
+
+#: jspolicies.cpp:159
+#, kde-format
+msgid "Deny"
+msgstr "Từ chối"
+
+#: jspolicies.cpp:160
+#, kde-format
+msgid "Reject all popup window requests."
+msgstr "Từ chối mọi yêu cầu cửa sổ bật lên."
+
+#: jspolicies.cpp:165
+#, kde-format
+msgid "Smart"
+msgstr "Thông minh"
+
+#: jspolicies.cpp:166
+#, kde-format
+msgid ""
+"Accept popup window requests only when links are activated through an "
+"explicit mouse click or keyboard operation."
+msgstr ""
+"Chấp nhận yêu cầu cửa sổ bật lên chỉ khi liên kết được kích hoạt bằng việc "
+"bấm chuột hay thao tác bàn phím dựt khoát."
+
+#: jspolicies.cpp:173
+#, fuzzy, kde-format
+msgid ""
+"If you disable this, Konqueror will stop interpreting the <i>window.open()</"
+"i> JavaScript command. This is useful if you regularly visit sites that make "
+"extensive use of this command to pop up ad banners.<br /><br /><b>Note:</b> "
+"Disabling this option might also break certain sites that require <i>window."
+"open()</i> for proper operation. Use this feature carefully."
+msgstr ""
+"Nếu tắt, trình Konqueror sẽ không còn giải thích lại lệnh JavaScript "
+"<i>window.open()</i> (cửa sổ mở). Có ích nếu bạn thường thăm nơi Mạng sử "
+"dụng lệnh này nhiều lần để bật lên băng cờ quảng cáo. <br><br><b>Ghi chú :</"
+"b> việc tắt tuỳ chọn này có lẽ sẽ hỏng nơi Mạng cần thiết chức năng "
+"<i>window.open()</i> để chạy đúng. Hãy dùng tính năng này một cách cẩn thận."
+
+#: jspolicies.cpp:187
+#, kde-format
+msgid "Resize window:"
+msgstr "Đổi cỡ cửa sổ :"
+
+#: jspolicies.cpp:202
+#, kde-format
+msgid "Allow scripts to change the window size."
+msgstr "Cho phép tập lệnh thay đổi kích cỡ của cửa sổ."
+
+#: jspolicies.cpp:207 jspolicies.cpp:244 jspolicies.cpp:281 jspolicies.cpp:321
+#, kde-format
+msgid "Ignore"
+msgstr "Bỏ qua"
+
+#: jspolicies.cpp:208
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to change the window size. The web page will "
+"<i>think</i> it changed the size but the actual window is not affected."
+msgstr ""
+"Bỏ qua việc cố thay đổi kích cỡ cửa sổ của tập lệnh. Phần mềm của trang Mạng "
+"đó sẽ <i>giả sử</i> nó đã thay đổi kích cỡ, còn cửa sổ thật không thay đổi."
+
+#: jspolicies.cpp:215
+#, kde-format
+msgid ""
+"Some websites change the window size on their own by using <i>window."
+"resizeBy()</i> or <i>window.resizeTo()</i>. This option specifies the "
+"treatment of such attempts."
+msgstr ""
+"Một số nơi Mạng thay đổi kích cỡ cửa sổ một cách riêng bằng cách sử dụng "
+"chức năng <i>window.resizeBy()</i> (cửa sổ thay đổi kích cỡ theo) hay "
+"<i>window.resizeTo()</i> (cửa sổ thay đổi kích cỡ thành). Tuỳ chọn này xác "
+"định cách quản lí việc cố như vậy."
+
+#: jspolicies.cpp:224
+#, kde-format
+msgid "Move window:"
+msgstr "Di chuyển cửa sổ :"
+
+#: jspolicies.cpp:239
+#, kde-format
+msgid "Allow scripts to change the window position."
+msgstr "Cho phép tập lệnh thay đổi vị trí của cửa sổ."
+
+#: jspolicies.cpp:245
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to change the window position. The web page will "
+"<i>think</i> it moved the window but the actual position is not affected."
+msgstr ""
+"Bỏ qua việc cố thay đổi vị trí cửa sổ của tập lệnh. Phần mềm của trang Mạng "
+"đó sẽ <i>giả sử</i> nó đã thay đổi vị trí, còn cửa sổ thật không thay đổi."
+
+#: jspolicies.cpp:252
+#, kde-format
+msgid ""
+"Some websites change the window position on their own by using <i>window."
+"moveBy()</i> or <i>window.moveTo()</i>. This option specifies the treatment "
+"of such attempts."
+msgstr ""
+"Một số nơi Mạng thay đổi vị trí cửa sổ một cách riêng bằng cách sử dụng chức "
+"năng <i>window.moveBy()</i> (cửa sổ thay di chuyển theo) hay <i>window."
+"moveTo()</i> (cửa sổ di chuyển đến). Tuỳ chọn này xác định cách quản lí việc "
+"cố như vậy."
+
+#: jspolicies.cpp:261
+#, kde-format
+msgid "Focus window:"
+msgstr "Nhắm vào cửa sổ:"
+
+#: jspolicies.cpp:276
+#, kde-format
+msgid "Allow scripts to focus the window."
+msgstr "Cho phép các kịch bản đặt nhắm vào cửa sổ."
+
+#: jspolicies.cpp:282
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to focus the window. The web page will <i>think</"
+"i> it brought the focus to the window but the actual focus will remain "
+"unchanged."
+msgstr ""
+"Bỏ qua các cố gắng của các kịch bản để nhắm vào cửa sổ. Trang web sẽ <i>cho "
+"là</i> nó đã đặt được nhắm vào cửa sổ, nhưng nhắm thật sự sẽ không thay đổi."
+
+#: jspolicies.cpp:290
+#, kde-format
+msgid ""
+"Some websites set the focus to their browser window on their own by using "
+"<i>window.focus()</i>. This usually leads to the window being moved to the "
+"front interrupting whatever action the user was dedicated to at that time. "
+"This option specifies the treatment of such attempts."
+msgstr ""
+"Một số địa điểm web tự đặt nhắm vào cửa sổ trình duyệt của họ bằng hàm "
+"<i>window.focus()</i>. Việc này thường làm cho cửa sổ đó được chuyển lên "
+"trước, gây gián đoạn bất cứ hành động nào mà lúc đó người dùng đang tập "
+"trung làm. Lựa chọn này xác định cách xử lí các cố gắng làm như vậy."
+
+#: jspolicies.cpp:301
+#, kde-format
+msgid "Modify status bar text:"
+msgstr "Sửa đổi đoạn thanh trạng thái :"
+
+#: jspolicies.cpp:316
+#, kde-format
+msgid "Allow scripts to change the text of the status bar."
+msgstr "Cho phép tập lệnh thay đổi đoạn trên thanh trạng thái."
+
+#: jspolicies.cpp:322
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to change the status bar text. The web page will "
+"<i>think</i> it changed the text but the actual text will remain unchanged."
+msgstr ""
+"Bỏ qua việc cố thay đổi đoạn trên thanh trạng thái của tập lệnh. Phần mềm "
+"của trang Mạng đó sẽ <i>giả sử</i> nó đã thay đổi đoạn, còn đoạn thật không "
+"thay đổi."
+
+#: jspolicies.cpp:330
+#, kde-format
+msgid ""
+"Some websites change the status bar text by setting <i>window.status</i> or "
+"<i>window.defaultStatus</i>, thus sometimes preventing displaying the real "
+"URLs of hyperlinks. This option specifies the treatment of such attempts."
+msgstr ""
+"Một số nơi Mạng thay đổi đoạn trên thanh trạng thái một cách riêng bằng cách "
+"sử dụng chức năng <i>window.defaultStatus</i> (cửa sổ trạng thái mặc định) "
+"nên đôi khi ngăn cản hiển thị địa chỉ Mạng thật của siêu liên kết. Tuỳ chọn "
+"này xác định cách quản lí việc cố như vậy."
+
+#: main.cpp:43
+#, kde-format
+msgid "Konqueror Browsing Control Module"
+msgstr "Khối điều khiển duyệt Konqueror"
+
+#: main.cpp:45
+#, kde-format
+msgid "(c) 1999 - 2001 The Konqueror Developers"
+msgstr "Bản quyền © năm 1999-2001 của Những nhà phát triển Konqueror"
+
+#: main.cpp:47
+#, kde-format
+msgid "Waldo Bastian"
+msgstr ""
+
+#: main.cpp:48
+#, kde-format
+msgid "David Faure"
+msgstr ""
+
+#: main.cpp:49
+#, kde-format
+msgid "Matthias Kalle Dalheimer"
+msgstr ""
+
+#: main.cpp:50
+#, kde-format
+msgid "Lars Knoll"
+msgstr ""
+
+#: main.cpp:51
+#, kde-format
+msgid "Dirk Mueller"
+msgstr ""
+
+#: main.cpp:52
+#, kde-format
+msgid "Daniel Molkentin"
+msgstr ""
+
+#: main.cpp:53
+#, kde-format
+msgid "Wynn Wilkes"
+msgstr ""
+
+#: main.cpp:55
+#, kde-format
+msgid "Leo Savernik"
+msgstr ""
+
+#: main.cpp:55
+#, kde-format
+msgid ""
+"JavaScript access controls\n"
+"Per-domain policies extensions"
+msgstr ""
+"Điều khiển truy cập JavaScript\n"
+"Phần mở rộng chính sách cho mỗi miền"
+
+# Name: don't translate / Tên: đừng dịch
+#: main.cpp:67
+#, kde-format
+msgid "&Java"
+msgstr "&Java"
+
+#: main.cpp:71
+#, kde-format
+msgid "Java&Script"
+msgstr "Java&Script"
+
+#: main.cpp:111
+#, fuzzy, kde-format
+msgid ""
+"<h2>JavaScript</h2>On this page, you can configure whether JavaScript "
+"programs embedded in web pages should be allowed to be executed by Konqueror."
+"<h2>Java</h2>On this page, you can configure whether Java applets embedded "
+"in web pages should be allowed to be executed by Konqueror.<br /><br /"
+"><b>Note:</b> Active content is always a security risk, which is why "
+"Konqueror allows you to specify very fine-grained from which hosts you want "
+"to execute Java and/or JavaScript programs."
+msgstr ""
+"<h2>JavaScript</h2>Trên trang này, bạn có thể cấu hình nếu chương trình "
+"JavaScript nhúng trong trang Mạng nên bị Konqueror thực hiện không.<h2>Java</"
+"h2>Trên trang này, bạn có thể cấu hình nếu tiểu dụng Java nhúng trong trang "
+"Mạng nên bị Konqueror thực hiện không.<br><br><b>Ghi chú :</b> nội dung hoạt "
+"động luôn luôn rủi ro bảo mật thì trình Konqueror cho phép bạn xác định rất "
+"chi tiết những máy nào nơi bạn muốn thực hiện chương trình Java hay/và "
+"JavaScript."
+
+#: policydlg.cpp:30
+#, fuzzy, kde-format
+#| msgid "Domain-Specific Policies"
+msgctxt "@title:window"
+msgid "Domain-Specific Policies"
+msgstr "Chính sách đặc điểm miền"
+
+#: policydlg.cpp:47
+#, kde-format
+msgid "&Host or domain name:"
+msgstr "Tên &máy hay miền:"
+
+#: policydlg.cpp:55
+#, kde-format
+msgid ""
+"Enter the name of a host (like www.kde.org) or a domain, starting with a dot "
+"(like .kde.org or .org)"
+msgstr ""
+"Hãy nhập tên của máy (như www.kde.org) hay miền, bắt đầu với dấu chấm (như ."
+"kde.org hay .org)"
+
+#: policydlg.cpp:139
+#, kde-format
+msgid "You must first enter a domain name."
+msgstr "Trước tiên bạn phải nhập một tên miền."

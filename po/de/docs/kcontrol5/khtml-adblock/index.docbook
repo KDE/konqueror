@@ -1,0 +1,122 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % German "INCLUDE"
+> <!-- change language only here -->
+]>
+<!-- extragear has another adblock ? -->
+<article lang="&language;" id="khtml-adblock">
+<articleinfo>
+<title
+>Werbefilter</title>
+<authorgroup>
+<author
+>&Krishna.Tateneni; &Krishna.Tateneni.mail;</author>
+<othercredit role="translator"
+><firstname
+>Jürgen</firstname
+><surname
+>Nagel</surname
+><affiliation
+><address
+><email
+>JuergenNagel@web.de</email
+></address
+></affiliation
+><contrib
+>Deutsche Übersetzung</contrib
+></othercredit
+> <othercredit role="translator"
+><firstname
+>Frank</firstname
+><surname
+>Brücker</surname
+><affiliation
+><address
+><email
+>f.bruecker@gmx.de</email
+></address
+></affiliation
+><contrib
+>Überarbeitung der deutschen Übersetzung</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2016-11-08</date>
+<releaseinfo
+>Anwendungen 16.12</releaseinfo>
+</articleinfo>
+
+<para
+>Der Werbefilter von &konqueror; kann so eingerichtet werden, dass Bilder oder Rahmen von Webseiten entfernt oder ersetzt werden. Dazu wird ein Satz an Filterregeln herangezogen.</para>
+
+<para
+>Das Häkchen bei <guilabel
+>Filter aktivieren</guilabel
+> aktiviert bzw. deaktiviert den Werbefilter.</para>
+<para
+>Wenn <guilabel
+>Gefilterte Bilder ausblenden</guilabel
+> markiert ist, werden geblockte Bilder vollständig von der Webseite entfernt und der freigegebene Platz kann anderweitig verwendet werden. Wenn die Einstellung nicht markiert ist, werden geblockte Bilder mit einem Platzhalter ersetzt.</para>
+
+<variablelist>
+<varlistentry id="khtml-adblock-manual">
+<term
+><guilabel
+>Manueller Filter</guilabel
+></term>
+<listitem>
+<para
+>Der Hauptteil dieser Karteikarte zeigt eine Liste der Adressen, die zum Filtern von Bildern und Rahmen herangezogen wird. Sie können Platzhalter in der Syntax regulärer Ausdrücke benutzen.</para>
+
+<para
+>Jeder Eintrag kann die üblichen Datei-Platzhalter enthalten (&eg; http://www.seite.com/ads/*) oder als regulärer Ausdruck zwischen rechtsgerichteten Schrägstrichen angegeben werden (&eg; //(ads|dclk)\./).</para>
+
+<para
+>Jeder Filter-Zeichenfolge können die Zeichen <literal
+>@@</literal
+> vorangestellt werden, um diese in die Positivliste der erlaubten Adressen aufzunehmen. Die Positivliste hat grundsätzlich Vorrang vor blockierenden Filtern.</para>
+
+<para
+>Mit <guilabel
+>Exportieren ...</guilabel
+> und <guilabel
+>Importieren ...</guilabel
+> können Sie die Filterliste in eine Datei speichern und wieder einlesen. Die Datei hat als erste Zeile den Vorspann <userinput
+>[AdBlock]</userinput
+>, dann alle Filter auf einer einzelnen Zeile. Zeilen, die mit einem Ausruf-Zeichen beginnen (<userinput
+>!</userinput
+>) werden als Kommentar behandelt. Sie können solche Zeilen &eg; zur Erklärung der nachfolgenden Filter verwenden.</para>
+
+<para
+>Klicken Sie auf einen Eintrag in der Liste, um ihn im Textfeld zu ändern oder ihn zu entfernen. Um einen neuen Filterausdruck zu erstellen, geben Sie ihn in das Textfeld ein und klicken dann auf <guibutton
+>Einfügen</guibutton
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry id="khtml-adblock-automatic">
+<term
+><guilabel
+>Automatischer Filter</guilabel
+></term>
+<listitem>
+<para
+>Diese Karteikarte zeigt eine Liste von Namen und Adressen von vordefinierten Filtereinträgen. Klicken Sie auf das Ankreuzfeld neben dem Namen des Filters und passen Sie das <guilabel
+>Automatische Aktualisierungsintervall</guilabel
+> an. Die Voreinstellung für die Aktualisierung beträgt 7 Tage. </para>
+</listitem>
+</varlistentry>
+  
+</variablelist>
+
+<para
+>Wenn Werbefilter aktiviert sind, wird rechts in der Statusleiste ein Symbol angezeigt. Kicken Sie mit der &RMBn; auf dieses Symbol, um ein Kontextmenü mit Aktionen, um alle blockierbaren Element einer Webseite anzuzeigen, dieses &systemsettings;-Modul zu öffnen und vorübergehend den Filter für eine Webseite auszuschalten.</para>
+
+<para
+>Ein Klick mit der &LMBn; zeigt ebenfalls einen Dialog mit allen blockierbaren Elementen auf einer Webseite. In diesem Dialog können Sie direkt neue Filter hinzufügen, ohne dieses &systemsettings;-Modul öffnen zu müssen.</para>
+
+</article>

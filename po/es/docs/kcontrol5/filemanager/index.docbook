@@ -1,0 +1,117 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Spanish "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="filemanager" lang="&language;">
+<articleinfo>
+<title
+>Gestión de archivos</title>
+<authorgroup>
+<author
+>&Mike.McBride; &Mike.McBride.mail;</author>
+<othercredit role="translator"
+> <firstname
+>Pablo</firstname
+> <surname
+>de Vicente</surname
+> <affiliation
+><address
+><email
+>pablo.devicente@gmail.com</email
+></address
+></affiliation
+> <contrib
+>Traductor</contrib
+> </othercredit
+> <othercredit role="translator"
+> <firstname
+>Marcos</firstname
+> <surname
+>Fouces Lago</surname
+> <affiliation
+><address
+><email
+>mfouces@yahoo.es</email
+></address
+></affiliation
+> <contrib
+>Traductor</contrib
+> </othercredit
+> 
+</authorgroup>
+
+<date
+>2016-11-08</date>
+<releaseinfo
+>Aplicaciones 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Preferencias del sistema</keyword>
+<keyword
+>administrador de archivos</keyword>
+</keywordset>
+</articleinfo>
+
+<para
+>En estos módulos puede configurar varios aspectos de la funcionalidad de gestión de archivos de &konqueror;. </para>
+
+<note
+><para
+>La funcionalidad de &konqueror; como navegador web tiene su <ulink url="help:/kcontrol/khtml-behavior/index.html"
+>propio módulo de configuración</ulink
+>.</para
+></note>
+
+<variablelist>
+<title
+><guilabel
+>Opciones varias</guilabel
+></title>
+<varlistentry>
+<term
+><guilabel
+>Abrir carpetas en ventanas separadas</guilabel
+></term>
+<listitem
+> <para
+>Si esta opción está seleccionada, se creará una nueva ventana de &konqueror; cuando abra un directorio, en lugar de mostrar simplemente el contenido del directorio en la ventana actual.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Mostrar entradas de menú «Borrar» que evitan la papelera</guilabel
+></term>
+<listitem>
+<para
+>Marque esto si quiere que se muestren órdenes de menú <quote
+>Borrar</quote
+> en el escritorio y en los menús de contexto del gestor de archivos. Siempre podrá borrar archivos manteniendo pulsada la tecla &Shift; cuando llama a <guimenuitem
+>Mover a la papelera</guimenuitem
+>.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Las preferencias del modo de gestión de archivos de &konqueror; en las páginas <guilabel
+>Modos de vista</guilabel
+>, <guilabel
+>Navegación</guilabel
+>, <guilabel
+>Servicios</guilabel
+>, <guilabel
+>General</guilabel
+> y <guilabel
+>Papelera</guilabel
+> también son usadas por &dolphin;. </para>
+
+</article>

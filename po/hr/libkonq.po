@@ -1,0 +1,421 @@
+# Translation of libkonq to Croatian
+#
+# Zarko Pintar <zarko.pintar@gmail.com>, 2009.
+# DoDo <DoDoEntertainment@gmail.com>, 2009.
+# Andrej Dundovic <andrej@dundovic.com.hr>, 2009, 2010, 2011.
+# Marko Dimjasevic <marko@dimjasevic.net>, 2011.
+# Marko Dimjašević <marko@dimjasevic.net>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq 0\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2011-07-16 15:25+0200\n"
+"Last-Translator: Marko Dimjašević <marko@dimjasevic.net>\n"
+"Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
+"Language: hr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 1.2\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "&Otvori"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "&Stvori mapu …"
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "&Obnovi"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr "Pokaži izvorni direktorij"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr "Pokaži izvornu datoteku"
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "Isprazni o&tpad"
+
+#: src/konq_popupmenu.cpp:312
+#, kde-format
+msgid "&Configure Trash Bin"
+msgstr "&Podešavanje kante za smeće"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "Izradi knjišku oznaku ove &stranice"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "Izradi knjišku oznaku ove &lokacije"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "Izradi knjišku oznaku ove &mape"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "Izradi knjišku oznaku ove &poveznice"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "Izradi knjišku oznaku ove &datoteke"
+
+#: src/konq_popupmenu.cpp:379
+#, kde-format
+msgid "Preview In"
+msgstr "Pregled"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "&Svojstva"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy To"
+#~ msgstr "Kopiraj u"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "Pomakni na"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "Osobna mapa"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "Ishodište"
+
+#~ msgctxt "@title:menu in Copy To or Move To submenu"
+#~ msgid "Browse..."
+#~ msgstr "Pretraži…"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "Kopiraj ovdje"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "Premjesti ovdje"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "Mapu ne možete premjestiti u samu sebe"
+
+#~ msgid "File name for dropped contents:"
+#~ msgstr "Naziv datoteke za ispušteni sadržaj:"
+
+#~ msgid "&Move Here"
+#~ msgstr "&Premjesti ovdje"
+
+#~ msgid "&Copy Here"
+#~ msgstr "&Kopiraj ovdje"
+
+#~ msgid "&Link Here"
+#~ msgstr "&Poveži ovdje"
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "Postavi kao &pozadinsku sliku"
+
+#~ msgid "C&ancel"
+#~ msgstr "&Prekini"
+
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "Stvori direktorij"
+
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "Koristi drugačije ime"
+
+#~ msgid ""
+#~ "The name \"%1\" starts with a dot, so the directory will be hidden by "
+#~ "default."
+#~ msgstr ""
+#~ "Naziv \"%1\" počinje točkom, stoga će taj direktorij biti skriven ukoliko "
+#~ "se ne odabere drugačije."
+
+#, fuzzy
+#~| msgid "Create hidden directory?"
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "Stvori skriveni direktori?"
+
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "Nova mapa"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "Nova mapa"
+
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "Unesite naziv mape:"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "Zalijepi jednu mapu"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One File"
+#~ msgstr "Zalijepi jednu datoteku"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Item"
+#~ msgid_plural "Paste %1 Items"
+#~ msgstr[0] "Zalijepi %1 stavku"
+#~ msgstr[1] "Zalijepi %1 stavke"
+#~ msgstr[2] "Zalijepi %1 stavaka"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste Clipboard Contents..."
+#~ msgstr "Zalijepi sadržaj odlagališta …"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste"
+#~ msgstr "Zalijepi"
+
+#~ msgid ""
+#~ "Restores this file or directory, back to the location where it was "
+#~ "deleted from initially"
+#~ msgstr ""
+#~ "Obnovi ovu datoteku ili direktorij i vrati se na lokaciju od kuda je bilo "
+#~ "inicijalno izbrisano"
+
+#~ msgid ""
+#~ "Opens a new file manager window showing the target of this link, in its "
+#~ "parent directory."
+#~ msgstr ""
+#~ "Otvara novi prozor upravitelja datotekama koji ukazuje na ciljanu "
+#~ "poveznicu, u njezinom naddirektoriju."
+
+#~ msgid "Share"
+#~ msgstr "Dijeljenje"
+
+#~ msgctxt "@info"
+#~ msgid "Close"
+#~ msgstr "Zatvori"
+
+#, fuzzy
+#~| msgctxt "@info"
+#~| msgid "Close"
+#~ msgid "Close"
+#~ msgstr "Zatvori"
+
+#~ msgid "Create New"
+#~ msgstr "Stvori novo"
+
+#~ msgid "Link to Device"
+#~ msgstr "Veza prema uređaju"
+
+#~ msgid "<qt>The template file <b>%1</b> does not exist.</qt>"
+#~ msgstr "<qt>Datoteka predloška<b>%1</b> ne postoji.</qt>"
+
+#~ msgid "File name:"
+#~ msgstr "Naziv datoteke:"
+
+#~ msgid ""
+#~ "Basic links can only point to local files or directories.\n"
+#~ "Please use \"Link to Location\" for remote URLs."
+#~ msgstr ""
+#~ "Osnovne poveznice mogu samo pokazivati prema lokalnim datotekama i "
+#~ "direktorijima.\n"
+#~ "Molim koristite \"Poveznica do Mjesta\" za udaljene URL-ove."
+
+#, fuzzy
+#~| msgid "Ac&tions"
+#~ msgctxt "@title:menu"
+#~ msgid "&Actions"
+#~ msgstr "&Aktivnosti"
+
+#, fuzzy
+#~| msgid "&Open With"
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With"
+#~ msgstr "&Otvori s"
+
+#, fuzzy
+#~| msgid "&Other..."
+#~ msgctxt "@action:inmenu Open With"
+#~ msgid "&Other..."
+#~ msgstr "&Ostalo..."
+
+#, fuzzy
+#~| msgid "&Open With..."
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With..."
+#~ msgstr "&Otvori s..."
+
+#, fuzzy
+#~| msgid "Open with %1"
+#~ msgid "Open &with %1"
+#~ msgstr "Otvori s %1"
+
+#~ msgid "Open in New &Window"
+#~ msgstr "Otvori u &novom prozoru"
+
+#~ msgid "Open the trash in a new window"
+#~ msgstr "Otvori otpad u novom prozoru"
+
+#~ msgid "Open the medium in a new window"
+#~ msgstr "Otvori medij u novom prozoru"
+
+#~ msgid "Open the document in a new window"
+#~ msgstr "Otvori dokument u novom prozoru"
+
+#, fuzzy
+#~| msgid "Delete Files"
+#~ msgid "Deleting"
+#~ msgstr "Izbriši datoteke"
+
+#~ msgid "Und&o"
+#~ msgstr "&Poništi"
+
+#~ msgid "Und&o: Copy"
+#~ msgstr "&Poništi kopiranje"
+
+#~ msgid "Und&o: Link"
+#~ msgstr "&Poništi povezivanje"
+
+#~ msgid "Und&o: Move"
+#~ msgstr "&Poništi premještanje"
+
+#, fuzzy
+#~ msgid "Und&o: Rename"
+#~ msgstr "&Poništi povezivanje"
+
+#~ msgid "Und&o: Trash"
+#~ msgstr "&Poništi bacanje u otpad"
+
+#~ msgid "Und&o: Create Folder"
+#~ msgstr "&Poništi izradu mape"
+
+#, fuzzy
+#~ msgid "Do you really want to delete this item?"
+#~ msgid_plural "Do you really want to delete these %1 items?"
+#~ msgstr[0] "Jeste li sigurni da želite izbrisati ovu datoteku?"
+#~ msgstr[1] "Jeste li sigurni da želite izbrisati ove %1 datoteke?"
+#~ msgstr[2] "Jeste li sigurni da želite izbrisati ovih %1 datoteka?"
+
+#~ msgid "Delete Files"
+#~ msgstr "Izbriši datoteke"
+
+#, fuzzy
+#~ msgid "Do you really want to move this item to the trash?"
+#~ msgid_plural "Do you really want to move these %1 items to the trash?"
+#~ msgstr[0] "Jeste li sigurni da želite premjestiti ovu stavku u otpad?"
+#~ msgstr[1] "Jeste li sigurni da želite premjestiti ove %1 stavke u otpad?"
+#~ msgstr[2] "Jeste li sigurni da želite premjestite ovih %1 stavki u otpad?"
+
+#~ msgid "Move to Trash"
+#~ msgstr "Pošalji u otpad"
+
+#~ msgctxt "Verb"
+#~ msgid "&Trash"
+#~ msgstr "&U otpad"
+
+#, fuzzy
+#~| msgid "Und&o"
+#~ msgid "Und&o: %1"
+#~ msgstr "&Poništi"
+
+#~ msgid "Background Settings"
+#~ msgstr "Postavke pozadine"
+
+#~ msgid "Background"
+#~ msgstr "Pozadina"
+
+#~ msgid "Co&lor:"
+#~ msgstr "Bo&ja:"
+
+#~ msgid "&Picture:"
+#~ msgstr "&Slika:"
+
+#~ msgid "Preview"
+#~ msgstr "Pregled"
+
+#~ msgid "None"
+#~ msgstr "Bez"
+
+#~ msgid "Enlarge Icons"
+#~ msgstr "Povećaj ikone"
+
+#~ msgid "Shrink Icons"
+#~ msgstr "Smanji ikone"
+
+#~ msgid "&Default Size"
+#~ msgstr "&Zadana veličina"
+
+#~ msgid "&Huge"
+#~ msgstr "&Ogroman"
+
+#~ msgid "&Very Large"
+#~ msgstr "&Jako velik"
+
+#~ msgid "&Large"
+#~ msgstr "&Velik"
+
+#~ msgid "&Medium"
+#~ msgstr "S&rednji"
+
+#~ msgid "&Small"
+#~ msgstr "&Malen"
+
+#~ msgid "&Tiny"
+#~ msgstr "&Sitan"
+
+#~ msgid "Configure Background..."
+#~ msgstr "Konfiguriranje pozadine..."
+
+#~ msgid "Allows choosing of background settings for this view"
+#~ msgstr "Dopusti odabir postavki pozadini za ovaj prikaz"
+
+#~ msgid "<p>You do not have enough permissions to read <b>%1</b></p>"
+#~ msgstr "<p>Nemate dopuštenja potrebna za čitanje<b>%1</b></p>"
+
+#~ msgid "<p><b>%1</b> does not seem to exist anymore</p>"
+#~ msgstr "<p><b>%1</b> izgleda da više ne postoji</p>"
+
+#~ msgid "Search result: %1"
+#~ msgstr "Rezultati pretraživanja: %1"
+
+#~ msgid "Do you really want to shred this item?"
+#~ msgid_plural "Do you really want to shred these %1 items?"
+#~ msgstr[0] "Jeste li sigurni da želite uništiti ovu datoteku?"
+#~ msgstr[1] "Jeste li sigurni da želite uništiti ove %1 datoteke?"
+#~ msgstr[2] "Jeste li sigurni da želite uništiti ovih %1 datoteka?"
+
+#~ msgid "Shred Files"
+#~ msgstr "Uništi datoteke"
+
+#~ msgid "Shred"
+#~ msgstr "Uništi"

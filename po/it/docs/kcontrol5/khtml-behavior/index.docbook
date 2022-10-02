@@ -1,0 +1,136 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Italian "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="khtml-behavior" lang="&language;">
+<articleinfo>
+<title
+>Navigazione nel Web</title>
+<authorgroup>
+<author
+>&Krishna.Tateneni; &Krishna.Tateneni.mail;</author>
+<othercredit role="translator"
+><firstname
+>Luciano</firstname
+><surname
+>Montanaro</surname
+><contrib
+>Traduzione della documentazione</contrib
+></othercredit
+><othercredit role="translator"
+><firstname
+>Federico</firstname
+><surname
+>Zenith</surname
+><affiliation
+><address
+><email
+>federico.zenith@member.fsf.org</email
+></address
+></affiliation
+><contrib
+>Manutenzione della traduzione</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>04/11/2019</date>
+<releaseinfo
+>Applications 19.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Impostazioni di sistema</keyword>
+<keyword
+>konqueror</keyword>
+<keyword
+>navigare</keyword>
+</keywordset>
+
+</articleinfo>
+<sect1 id="konq-browsing">
+<title
+>Navigazione nel Web</title>
+
+<para
+>Il modulo del browser &konqueror; delle &systemsettings; permette di fare varie scelte riguardo al comportamento di &konqueror;, il programma di navigazione integrato di &kde;.</para>
+
+<para
+>Se è segnata l'opzione <guilabel
+>Chiedi il nome e la cartella quando aggiungi un segnalibro</guilabel
+>, &konqueror; ti permetterà di cambiare il titolo del segnalibro e di scegliere una cartella in cui salvarlo quando lo aggiungi.</para>
+
+<para
+>Se abiliti <guilabel
+>Mostra solo i segnalibri segnati nella barra</guilabel
+>, &konqueror; visualizzerà nella barra dei segnalibri solo quelli che hai appositamente selezionato nell'editor dei segnalibri.</para>
+
+<para
+>La prossima opzione di questa pagina è <guilabel
+>Completamento dei moduli</guilabel
+>. Se attivi questa casella, &konqueror; cercherà di ricordarsi cosa scrivi nelle caselle dei moduli, e cercherà di compilarle con risposte date in precedenza.</para>
+
+<para
+>Puoi cambiare il numero di campi dei moduli ricordati da &konqueror; con la casella numerica indicata con <guilabel
+>Completamenti massimi</guilabel
+>.</para>
+
+<note
+><para
+>Naturalmente puoi sempre cambiare quello che &konqueror; scrive nei moduli prima di inviarli!</para
+></note>
+
+<para
+>La prossima opzione è <guilabel
+>Cambia il puntatore sopra i collegamenti</guilabel
+>. Se questa casella è attiva, la forma del puntatore cambierà (di solito in una mano) quando passerà sopra un collegamento ipertestuale. Questo semplifica l'identificazione dei collegamenti, soprattutto se sono immagini.</para>
+
+<para
+>Se <guilabel
+>Clic con il tasto centrale apre l'URL selezionato</guilabel
+> è attivo, puoi aprire l'&URL; nella selezione facendo clic centrale in una vista di &konqueror;.</para>
+
+<para
+>Per comodità, se abiliti <guilabel
+>Un clic con il tasto destro va indietro nella cronologia</guilabel
+>, fare clic in un'area vuota (cioè non su un collegamento) della finestra di &konqueror; sarà come premere l'icona <guiicon
+>Indietro</guiicon
+> della barra degli strumenti.</para>
+
+<para
+><guilabel
+>Permetti l'aggiornamento automatico e la redirezione</guilabel
+> permette ai siti di inviarti un'altra pagina senza che tu faccia nulla. Nella maggior parte dei casi è utile, ad esempio se un sito è stato spostato in un altro &URL;: in questo caso molti amministratori mettono al suo posto una pagina che spiega che il sito è stato spostato e dovresti aggiornare i segnalibri, e poi ti mandano al nuovo sito. Questa funzionalità può però generare confusione, o può essere fastidiosa quando ne viene fatto abuso, quindi è possibile disabilitarla.</para>
+
+<para
+><guilabel
+>Abilita l'attivazione attraverso il tasto Ctrl dei tasti di accesso</guilabel
+>: premere il testo &Ctrl; quando si guardano le pagine Web attiva i tasti d'accesso. Disattivare questa casella disattiverà questa funzione di accessibilità. &konqueror; deve essere riavviato per rendere effettiva questa modifica.</para>
+
+<para
+><guilabel
+>Imposta l'intestazione DNT per dire ai siti Web che non vuoi essere tracciato</guilabel
+>. Spunta questa casella se vuoi informare i siti Web che non vuoi che le tue abitudini di navigazione siano registrate. </para>
+
+<para
+><guilabel
+>Offri di salvare le password dei siti Web</guilabel
+>. Disattiva questa casella per non farti chiedere di salvare le password dei siti Web. </para>
+
+<para
+><guilabel
+>Visualizza i file &PDF; online usando WebEngine</guilabel
+>. Deseleziona questa casella per visualizzare i file &PDF; online come configurato nel modulo <guilabel
+>Associazioni dei file</guilabel
+> delle &systemsettings;. </para>
+
+</sect1>
+
+</article>

@@ -1,0 +1,1879 @@
+#
+# Marcell Lengyel <marcell@kde.hu>, 1999.
+# Kristóf Kiszel <ulysses@kubuntu.org>, 2010, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: KDE 4.2\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2011-07-29 23:31+0200\n"
+"Last-Translator: Kristóf Kiszel <ulysses@kubuntu.org>\n"
+"Language-Team: Hungarian <kde-lista@sophia.jpte.hu>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.2\n"
+
+#. i18n: ectx: Menu (tools)
+#: konq_shellcmdplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "&Eszközök"
+
+#: kshellcmdexecutor.cpp:106
+#, kde-format
+msgid "Input Required:"
+msgstr "Bevitel szükséges:"
+
+#: kshellcmdplugin.cpp:32
+#, kde-format
+msgid "&Execute Shell Command..."
+msgstr "&Parancs végrehajtása (parancsértelmezőben)..."
+
+#: kshellcmdplugin.cpp:41
+#, kde-format
+msgid ""
+"KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a bug."
+msgstr ""
+"KShellCmdPlugin::slotExecuteShellCommand: Programhiba, kérjük jelentse be a "
+"hibát."
+
+#: kshellcmdplugin.cpp:51
+#, kde-format
+msgid "Executing shell commands works only on local directories."
+msgstr "Csak helyi könyvtárakra vonatkozó parancsokat lehet kiadni."
+
+#: kshellcmdplugin.cpp:73
+#, kde-format
+msgctxt "@title:window"
+msgid "Execute Shell Command"
+msgstr "Parancs végrehajtása (parancsértelmezőben)"
+
+#: kshellcmdplugin.cpp:74
+#, kde-format
+msgid "Execute shell command in current directory:"
+msgstr "Parancs végrehajtása az aktuális könyvtárban:"
+
+#: kshellcmdplugin.cpp:85
+#, kde-format
+msgid "Output from command: \"%1\""
+msgstr "A parancs kimenete: \"%1\""
+
+#~ msgid "no name"
+#~ msgstr "névtelen"
+
+#~ msgid "Configure"
+#~ msgstr "Beállítás"
+
+#~ msgid "Extensions"
+#~ msgstr "Kiterjesztések"
+
+#~ msgid ""
+#~ "There was an error loading the module %1.\n"
+#~ "The diagnostics is:\n"
+#~ "%2"
+#~ msgstr ""
+#~ "Hiba történt a(z) %1 modul betöltése közben.\n"
+#~ "A hibaüzenet:\n"
+#~ "%2"
+
+#~ msgid "Konqueror"
+#~ msgstr "Konqueror"
+
+#~ msgid "Web browser, file manager and document viewer."
+#~ msgstr "Webböngésző, fájlkezelő és dokumentummegjelenítő."
+
+#~ msgid "(C) 1999-2008, The Konqueror developers"
+#~ msgstr "(c) A Konqueror fejlesztői, 1999-2008."
+
+#~ msgid "http://konqueror.kde.org"
+#~ msgstr "http://konqueror.kde.org"
+
+#~ msgid "David Faure"
+#~ msgstr "David Faure"
+
+#~ msgid "Developer (framework, parts, JavaScript, I/O library) and maintainer"
+#~ msgstr ""
+#~ "Fejlesztő (keretrendszer, objektumok, Javascript, I/O könyvtár) és "
+#~ "karbantartó"
+
+#~ msgid "Simon Hausmann"
+#~ msgstr "Simon Hausmann"
+
+#~ msgid "Developer (framework, parts)"
+#~ msgstr "Fejlesztő (keretrendszer, objektumok)"
+
+#~ msgid "Michael Reiher"
+#~ msgstr "Michael Reiher"
+
+#~ msgid "Developer (framework)"
+#~ msgstr "Fejlesztő (keretrendszer)"
+
+#~ msgid "Matthias Welk"
+#~ msgstr "Matthias Welk"
+
+#~ msgid "Developer"
+#~ msgstr "Fejlesztő"
+
+#~ msgid "Alexander Neundorf"
+#~ msgstr "Alexander Neundorf"
+
+#~ msgid "Developer (List views)"
+#~ msgstr "Fejlesztő (listanézetek)"
+
+#~ msgid "Michael Brade"
+#~ msgstr "Michael Brade"
+
+#~ msgid "Developer (List views, I/O library)"
+#~ msgstr "Fejlesztő (listanézetek, I/O könyvtár)"
+
+#~ msgid "Lars Knoll"
+#~ msgstr "Lars Knoll"
+
+#~ msgid "Developer (HTML rendering engine)"
+#~ msgstr "Fejlesztő (HTML megjelenítőmotor)"
+
+#~ msgid "Dirk Mueller"
+#~ msgstr "Dirk Mueller"
+
+#~ msgid "Peter Kelly"
+#~ msgstr "Peter Kelly"
+
+#~ msgid "Waldo Bastian"
+#~ msgstr "Waldo Bastian"
+
+#~ msgid "Developer (HTML rendering engine, I/O library)"
+#~ msgstr "Fejlesztő (HTML megjelenítőmotor, I/O könyvtár)"
+
+#~ msgid "Germain Garand"
+#~ msgstr "Germain Garand"
+
+#~ msgid "Leo Savernik"
+#~ msgstr "Leo Savernik"
+
+#~ msgid "Stephan Kulow"
+#~ msgstr "Stephan Kulow"
+
+#~ msgid ""
+#~ "Developer (HTML rendering engine, I/O library, regression test framework)"
+#~ msgstr ""
+#~ "Fejlesztő (HTML megjelenítőmotor, I/O könyvtár, keretrendszer a "
+#~ "regressziótesztekhez)"
+
+#~ msgid "Antti Koivisto"
+#~ msgstr "Antti Koivisto"
+
+#~ msgid "Zack Rusin"
+#~ msgstr "Zack Rusin"
+
+#~ msgid "Tobias Anton"
+#~ msgstr "Tobias Anton"
+
+#~ msgid "Lubos Lunak"
+#~ msgstr "Lubos Lunak"
+
+#~ msgid "Developer (HTML rendering engine, JavaScript)"
+#~ msgstr "Fejlesztő (HTML megjelenítőmotor, Javascript)"
+
+#~ msgid "Allan Sandfeld Jensen"
+#~ msgstr "Allan Sandfeld Jensen"
+
+#~ msgid "Apple Safari Developers"
+#~ msgstr "Az Apple Safari fejlesztői"
+
+#~ msgid "Harri Porten"
+#~ msgstr "Harri Porten"
+
+#~ msgid "Developer (JavaScript)"
+#~ msgstr "Fejlesztő (Javascript)"
+
+#~ msgid "Koos Vriezen"
+#~ msgstr "Koos Vriezen"
+
+#~ msgid "Developer (Java applets and other embedded objects)"
+#~ msgstr "Fejlesztő (Java kisalkalmazások és más beágyazott objektumok)"
+
+#~ msgid "Matt Koss"
+#~ msgstr "Matt Koss"
+
+#~ msgid "Developer (I/O library)"
+#~ msgstr "Fejlesztő (I/O könyvtár)"
+
+#~ msgid "Alex Zepeda"
+#~ msgstr "Alex Zepeda"
+
+#~ msgid "Richard Moore"
+#~ msgstr "Richard Moore"
+
+#~ msgid "Developer (Java applet support)"
+#~ msgstr "Fejlesztő (Java kisalkalmazások támogatása)"
+
+#~ msgid "Dima Rogozin"
+#~ msgstr "Dima Rogozin"
+
+#~ msgid "Wynn Wilkes"
+#~ msgstr "Wynn Wilkes"
+
+#~ msgid ""
+#~ "Developer (Java 2 security manager support,\n"
+#~ " and other major improvements to applet support)"
+#~ msgstr ""
+#~ "Fejlesztő (Java 2 biztonságkezelő és\n"
+#~ " más nagyobb fejlesztések a kisalkalmazások támogatásához)"
+
+#~ msgid "Stefan Schimanski"
+#~ msgstr "Stefan Schimanski"
+
+#~ msgid "Developer (Netscape plugin support)"
+#~ msgstr "Fejlesztő (Netscape bővítmények támogatása)"
+
+#~ msgid "George Staikos"
+#~ msgstr "George Staikos"
+
+#~ msgid "Developer (SSL, Netscape plugins)"
+#~ msgstr "Fejlesztő (SSL, Netscape bővítmények)"
+
+#~ msgid "Dawit Alemayehu"
+#~ msgstr "Dawit Alemayehu"
+
+#~ msgid "Developer (I/O library, Authentication support)"
+#~ msgstr "Fejlesztő (I/O könyvtár, felhasználóazonosítás)"
+
+#~ msgid "Carsten Pfeiffer"
+#~ msgstr "Carsten Pfeiffer"
+
+#~ msgid "Torsten Rahn"
+#~ msgstr "Torsten Rahn"
+
+#~ msgid "Graphics/icons"
+#~ msgstr "Grafika/ikonok"
+
+#~ msgid "Torben Weis"
+#~ msgstr "Torben Weis"
+
+#~ msgid "KFM author"
+#~ msgstr "A KFM szerzője"
+
+#~ msgid "Joseph Wenninger"
+#~ msgstr "Joseph Wenninger"
+
+#~ msgid "Developer (navigation panel framework)"
+#~ msgstr "Fejlesztő (a navigációs panel keretrendszere)"
+
+#~ msgid "Stephan Binner"
+#~ msgstr "Stephan Binner"
+
+#~ msgid "Developer (misc stuff)"
+#~ msgstr "Fejlesztő (egyéb dolgok)"
+
+#~ msgid "Ivor Hewitt"
+#~ msgstr "Ivor Hewitt"
+
+#~ msgid "Developer (AdBlock filter)"
+#~ msgstr "Fejlesztő (AdBlock szűrő)"
+
+#~ msgid "Eduardo Robles Elvira"
+#~ msgstr "Eduardo Robles Elvira"
+
+#~ msgid ""
+#~ "Checking this box on at least two views sets those views as 'linked'. "
+#~ "Then, when you change directories in one view, the other views linked "
+#~ "with it will automatically update to show the current directory. This is "
+#~ "especially useful with different types of views, such as a directory tree "
+#~ "with an icon view or detailed view, and possibly a terminal emulator "
+#~ "window."
+#~ msgstr ""
+#~ "Ha bekapcsolja ezt a beállítást legalább két nézetnél, akkor azok a "
+#~ "nézetek 'összekapcsolódnak'. Ilyenkor, ha az egyik nézetben könyvtárat "
+#~ "vált, akkor a többi összekapcsolt nézet szintén követni fogja a "
+#~ "könyvtárváltást. Ez különösen hasznos különböző nézettípusok esetén, "
+#~ "például ha egy könyvtárfa-nézet egy ikonnézettel, egy részletes nézettel "
+#~ "vagy esetleg egy parancsértelmező-ablakkal van összekapcsolva."
+
+#~ msgid "Close View"
+#~ msgstr "A nézet bezárása"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#~ msgid "Stalled"
+#~ msgstr "Várakozás adatra"
+
+#~ msgid "Preview &in %1"
+#~ msgstr "Gyorsnézet e&zzel: %1"
+
+#~ msgid "Show %1"
+#~ msgstr "%1 megjelenítése"
+
+#~ msgctxt "@title:window"
+#~ msgid "History"
+#~ msgstr "Előzmények"
+
+#~ msgctxt "@action:inmenu Parent of 'By Name' and 'By Date'"
+#~ msgid "Sort"
+#~ msgstr "Rendezés"
+
+#~ msgid ""
+#~ "<qt><center><b>%1</b></center><hr />Last visited: %2<br />First visited: "
+#~ "%3<br />Number of times visited: %4</qt>"
+#~ msgstr ""
+#~ "<qt><center><b>%1</b></center><hr />Legutóbbi megtekintés: %2<br />Első "
+#~ "megtekintés: %3<br />A megtekintések száma eddig: %4</qt>"
+
+#~ msgid "Miscellaneous"
+#~ msgstr "Egyéb"
+
+#~ msgid "Open in New &Window"
+#~ msgstr "Megnyitás új &ablakban"
+
+#~ msgid "Open in New Tab"
+#~ msgstr "Megnyitás új lapon"
+
+#, fuzzy
+#~| msgid "Copy Link Address"
+#~ msgid "&Copy Link Address"
+#~ msgstr "A link másolása"
+
+#~ msgid "&Remove Entry"
+#~ msgstr "A bejegyzés eltá&volítása"
+
+#~ msgid "C&lear History"
+#~ msgstr "Törölni szeretné a n&apló tartalmát?"
+
+#~ msgid "&Preferences..."
+#~ msgstr "Beá&llítások..."
+
+#~ msgid "By &Name"
+#~ msgstr "név szer&int"
+
+#~ msgid "By &Date"
+#~ msgstr "&dátum szerint"
+
+#, fuzzy
+#~| msgid "Clear History"
+#~ msgid "Search in history"
+#~ msgstr "A napló tartalmának törlése"
+
+#~ msgid "Do you really want to clear the entire history?"
+#~ msgstr "Biztosan törölni szeretné a napló teljes tartalmát?"
+
+#~ msgid "Clear History?"
+#~ msgstr "Törölni szeretné a napló tartalmát?"
+
+#, fuzzy
+#~| msgid "Start without a default window"
+#~ msgid "Start without a default window, when called without URLs"
+#~ msgstr "Indítás alapértelmezett ablak nélkül"
+
+#~ msgid "Profile to open"
+#~ msgstr "A megnyitandó profil"
+
+#~ msgid "List available profiles"
+#~ msgstr "A profilok kilistázása"
+
+#~ msgid "List available sessions"
+#~ msgstr "A munkamenetek kilistázása"
+
+#~ msgid "Session to open"
+#~ msgstr "Megnyitandó munkamenet"
+
+#~ msgid "Mimetype to use for this URL (e.g. text/html or inode/directory)"
+#~ msgstr "Az URL-hez rendelt MIME-típus (pl. text/html vagy inode/directory)."
+
+#~ msgid ""
+#~ "For URLs that point to files, opens the directory and selects the file, "
+#~ "instead of opening the actual file"
+#~ msgstr ""
+#~ "Fájlra mutató URL esetén a program nyissa meg a könyvtárat és válassza ki "
+#~ "a fájlt (a fájl megnyitása helyett)"
+
+#~ msgid "Location to open"
+#~ msgstr "A megnyitandó cím"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Loading..."
+#~ msgstr "Betöltés..."
+
+#~ msgid "Canceled."
+#~ msgstr "Félbeszakítva."
+
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Reloading the page will discard these changes."
+#~ msgstr ""
+#~ "Ez az oldal olyan módosításokat tartalmaz, amelyek még nincsenek "
+#~ "elmentve.\n"
+#~ "Az oldal bezárása esetén a módosítások elvesznek."
+
+#~ msgid "Discard Changes?"
+#~ msgstr "El szeretné dobni a módosításokat?"
+
+#~ msgid "&Discard Changes"
+#~ msgstr "A módosítások el&dobása"
+
+#~ msgid "File Management"
+#~ msgstr "Fájlkezelő"
+
+#~ msgid "Web Browsing"
+#~ msgstr "Webböngésző"
+
+#~ msgid "Home Folder"
+#~ msgstr "Saját mappa"
+
+#, fuzzy
+#~| msgid "Home Page"
+#~ msgid "Home"
+#~ msgstr "Saját alapcím"
+
+#~ msgid "Navigate to your 'Home Folder'"
+#~ msgstr "A saját mappa betöltése"
+
+#~ msgid "Navigate to your local 'Home Folder'"
+#~ msgstr "A helyi saját mappa betöltése"
+
+#~ msgid "Home Page"
+#~ msgstr "Saját alapcím"
+
+#~ msgid "Navigate to your 'Home Page'"
+#~ msgstr "Az alapcím betöltése"
+
+#~ msgid ""
+#~ "<html>Navigate to your 'Home Page'<br /><br />You can configure the "
+#~ "location where this button takes you under <b>Settings -> Configure "
+#~ "Konqueror -> General</b>.</html>"
+#~ msgstr ""
+#~ "<html>A saját alapcím betöltése<br /><br />A <b>Beállítások -> A "
+#~ "Konqueror beállításai->Általános</b> részben lehet beállítani, hogy mi "
+#~ "legyen az alapcím.</html>"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Detaching the tab will discard these changes."
+#~ msgstr ""
+#~ "Ez a lap még nem mentett módosításokat tartalmaz.\n"
+#~ "A lap kiemelésekor a módosítások elvesznek."
+
+#~ msgid ""
+#~ "This view contains changes that have not been submitted.\n"
+#~ "Closing the view will discard these changes."
+#~ msgstr ""
+#~ "Ez a nézet még nem mentett módosításokat tartalmaz.\n"
+#~ "A nézet bezárásakor a módosítások elvesznek."
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the tab will discard these changes."
+#~ msgstr ""
+#~ "Ez a lap még nem mentett módosításokat tartalmaz.\n"
+#~ "A lap bezárásakor a módosítások elvesznek."
+
+#~ msgid "Do you really want to close all other tabs?"
+#~ msgstr "Biztosan be szeretné zárni a többi lapot?"
+
+#~ msgid "Close Other Tabs Confirmation"
+#~ msgstr "A többi lap bezárásának megerősítése"
+
+#~ msgid "Close &Other Tabs"
+#~ msgstr "A többi lap bezárás&a"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing other tabs will discard these changes."
+#~ msgstr ""
+#~ "Ez a lap még nem mentett módosításokat tartalmaz.\n"
+#~ "A többi lap bezárásakor a módosítások elvesznek."
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Reloading all tabs will discard these changes."
+#~ msgstr ""
+#~ "Ez a lap még nem mentett módosításokat tartalmaz.\n"
+#~ "A lapok frissítésekor a módosítások elvesznek."
+
+#~ msgid "Enter Target"
+#~ msgstr "Adja meg a célpontot"
+
+#~ msgid "<qt><b>%1</b> is not valid</qt>"
+#~ msgstr "<qt><b>%1</b> nem érvényes</qt>"
+
+#~ msgid "Copy selected files from %1 to:"
+#~ msgstr "A kijelölt fájlok másolása innen: %1 ide:"
+
+#~ msgid "Move selected files from %1 to:"
+#~ msgstr "A kijelölt fájlok átmozgatása innen: %1 ide:"
+
+#~ msgctxt "This menu entry empties the closed items history"
+#~ msgid "Empty Closed Items History"
+#~ msgstr "A bezárt lapok naplójának kiürítése"
+
+#~ msgid "Save As..."
+#~ msgstr "Mentés másként..."
+
+#~ msgid "Manage..."
+#~ msgstr "Kezelés..."
+
+#~ msgid "New &Window"
+#~ msgstr "Új &ablak"
+
+#~ msgid "&Duplicate Window"
+#~ msgstr "Az ablak &duplikálása"
+
+#~ msgid "Send &Link Address..."
+#~ msgstr "A l&ink elküldése..."
+
+#~ msgid "S&end File..."
+#~ msgstr "A fájl elkül&dése..."
+
+#~ msgid "&Open Location"
+#~ msgstr "&Cím megnyitása"
+
+#~ msgid "&Open File..."
+#~ msgstr "&Fájl megnyitása..."
+
+#~ msgid "&Find File..."
+#~ msgstr "&Fájlkeresés..."
+
+#~ msgid "&Use index.html"
+#~ msgstr "Az &index.html használata"
+
+#~ msgid "Lock to Current Location"
+#~ msgstr "Rögzítés a jelenlegi helyen"
+
+#~ msgctxt "This option links konqueror views"
+#~ msgid "Lin&k View"
+#~ msgstr "Nézetkap&csolás"
+
+#~ msgid "&Up"
+#~ msgstr "&Fel"
+
+#~ msgid "Closed Items"
+#~ msgstr "Bezárt lapok"
+
+#~ msgid "Sessions"
+#~ msgstr "Munkamenetek"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Most Often Visited"
+#~ msgstr "Leggyakrabban felkeresett oldalak"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Recently Visited"
+#~ msgstr "Nemrég felkeresett oldalak"
+
+#, fuzzy
+#~| msgid "Show History Sidebar"
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History"
+#~ msgstr "Naplósáv megjelenítése oldalt"
+
+#, fuzzy
+#~| msgid "&Save View Profile..."
+#~ msgid "&Save View Profile As..."
+#~ msgstr "A nézet&profil mentése..."
+
+#~ msgid "Configure Extensions..."
+#~ msgstr "A kiterjesztések beállításai..."
+
+#~ msgid "Configure Spell Checking..."
+#~ msgstr "Helyesírás-ellenőrzés..."
+
+#~ msgid "Split View &Left/Right"
+#~ msgstr "Nézetelvál&asztás függőlegesen"
+
+#~ msgid "Split View &Top/Bottom"
+#~ msgstr "Nézetelválasztás vízsz&intesen"
+
+#~ msgid "&New Tab"
+#~ msgstr "Új &lap"
+
+#~ msgid "&Duplicate Current Tab"
+#~ msgstr "Az aktuális lap &duplikálása"
+
+#~ msgid "Detach Current Tab"
+#~ msgstr "Az aktuális lap kiemelése külön ablakba"
+
+#~ msgid "&Close Active View"
+#~ msgstr "Az aktív nézet bezá&rása"
+
+#~ msgid "Close Current Tab"
+#~ msgstr "Az aktuális lap bezárása"
+
+#~ msgid "Activate Next Tab"
+#~ msgstr "Váltás a következő lapra"
+
+#~ msgid "Activate Previous Tab"
+#~ msgstr "Váltás az előző lapra"
+
+#~ msgid "Activate Tab %1"
+#~ msgstr "Váltás a(z) %1. lapra"
+
+#~ msgid "Move Tab Left"
+#~ msgstr "A lap balra mozgatása"
+
+#~ msgid "Move Tab Right"
+#~ msgstr "A lap jobbra mozgatása"
+
+#~ msgid "Dump Debug Info"
+#~ msgstr "A nyomkövetési adatok megjelenítése"
+
+#~ msgid "C&onfigure View Profiles..."
+#~ msgstr "&Profilok..."
+
+#~ msgid "Load &View Profile"
+#~ msgstr "Profil be&töltése"
+
+#~ msgid "&Reload"
+#~ msgstr "Új&ratöltés"
+
+#~ msgid "&Reload All Tabs"
+#~ msgstr "Újratö&ltés az összes lapon"
+
+#~ msgid "&Force Reload"
+#~ msgstr "Új&ratöltés (kényszerített)"
+
+#~ msgid "&Stop"
+#~ msgstr "Á&llj"
+
+#~ msgid "L&ocation: "
+#~ msgstr "Cí&m: "
+
+#~ msgid "Location Bar"
+#~ msgstr "Címmegadási eszköztár"
+
+#~ msgid ""
+#~ "<html>Location Bar<br /><br />Enter a web address or search term.</html>"
+#~ msgstr ""
+#~ "<html>Címmező eszköztár<br /><br />Írjon be egy internetcímet vagy egy "
+#~ "keresési kifejezést.</html>"
+
+#~ msgid "Clear Location Bar"
+#~ msgstr "A Címmező eszköztár tartalmának törlése"
+
+#~ msgid ""
+#~ "<html>Clear Location bar<br /><br />Clears the contents of the location "
+#~ "bar.</html>"
+#~ msgstr ""
+#~ "<html>A Címmező eszköztár tartalmának törlése<br /><br />Törli a Címmező "
+#~ "eszköztár tartalmát.</html>"
+
+#~ msgid "&Bookmarks"
+#~ msgstr "Könyv&jelzők"
+
+#~ msgid "Kon&queror Introduction"
+#~ msgstr "A Konqueror bem&utatkozó oldala"
+
+#~ msgid "Go"
+#~ msgstr "A cím bevitele"
+
+#~ msgid ""
+#~ "<html>Go<br /><br />Goes to the page that has been entered into the "
+#~ "location bar.</html>"
+#~ msgstr ""
+#~ "<html>A cím bevitele<br /><br />Ennek hatására a program betölti a "
+#~ "címmezőben megadott oldalt.</html>"
+
+#~ msgid ""
+#~ "<html>Enter the parent folder<br /><br />For instance, if the current "
+#~ "location is file:/home/%1 clicking this button will take you to file:/"
+#~ "home.</html>"
+#~ msgstr ""
+#~ "<html>Visszalépés a szülőkönyvtárba<br /><br />Ha például az aktuális cím "
+#~ "ez: file:/home/%1, akkor a gombra kattintva visszajut a file:/home helyre."
+#~ "</html>"
+
+#~ msgid "Enter the parent folder"
+#~ msgstr "Belépés a szülőkönyvtárba"
+
+#~ msgid "Move backwards one step in the browsing history"
+#~ msgstr "Visszalépés eggyel a böngészési naplóban"
+
+#~ msgid "Move forward one step in the browsing history"
+#~ msgstr "Előrelépés eggyel a böngészési naplóban"
+
+#~ msgid "Move backwards one step in the closed tabs history"
+#~ msgstr "Visszalépés eggyel a bezárt lapok naplójában"
+
+#~ msgid ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.</html>"
+#~ msgstr ""
+#~ "<html>Az aktuális dokumentum újratöltése<br /><br />Erre például akkor "
+#~ "van szükség, ha a megjelenített oldal megváltozik, és az oldal új "
+#~ "változatát szeretné megtekinteni.</html>"
+
+#~ msgid "Reload the currently displayed document"
+#~ msgstr "Az aktuális lap tartalmának újratöltése"
+
+#~ msgid ""
+#~ "<html>Reload all currently displayed documents in tabs<br /><br />This "
+#~ "may, for example, be needed to refresh web pages that have been modified "
+#~ "since they were loaded, in order to make the changes visible.</html>"
+#~ msgstr ""
+#~ "<html>Az összes lap újratöltése<br /><br />Erre például akkor lehet "
+#~ "szükség, ha a megjelenített oldalak megváltoztak, és azok új változatát "
+#~ "szeretné megtekinteni.</html>"
+
+#~ msgid "Reload all currently displayed document in tabs"
+#~ msgstr "Az összes lap tartalmának újratöltése"
+
+#~ msgid ""
+#~ "<html>Stop loading the document<br /><br />All network transfers will be "
+#~ "stopped and Konqueror will display the content that has been received so "
+#~ "far.</html>"
+#~ msgstr ""
+#~ "<html>A betöltés megszakítása<br /><br />A letöltés félbeszakad, a "
+#~ "Konqueror megjeleníti az eddig letöltött dokumentumrészt.</html>"
+
+#~ msgid ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.  Any images on "
+#~ "the page are downloaded again, even if cached copies exist.</html>"
+#~ msgstr ""
+#~ "<html>Az aktuális dokumentum újratöltése<br /><br />Erre például akkor "
+#~ "van szükség, ha a megjelenített oldal megváltozik, és az oldal új "
+#~ "változatát szeretné megtekinteni. Az oldalon található képeket "
+#~ "mindenképpen újra letölti a program, akkor is, ha nem változtak, és "
+#~ "elérhetőek a helyi gyorsítótárban.</html>"
+
+#~ msgid ""
+#~ "Force a reload of the currently displayed document and any contained "
+#~ "images"
+#~ msgstr "A megjelenített dokumentum újratöltése (képekkel együtt)"
+
+#~ msgid "Stop loading the document"
+#~ msgstr "A betöltés megszakítása"
+
+#~ msgid ""
+#~ "<html>Cut the currently selected text or item(s) and move it to the "
+#~ "system clipboard<br /><br />This makes it available to the <b>Paste</b> "
+#~ "command in Konqueror and other KDE applications.</html>"
+#~ msgstr ""
+#~ "<html>Kattintson erre a gombra a kijelölt szöveg vagy más elemek "
+#~ "kivágásához és a vágólapra mozgatásához<br /><br />Az adatokat ezután a "
+#~ "Konqueror vagy bármely más KDE-alkalmazás <b>Beillesztés</b> "
+#~ "menüpontjával lehet átvenni.</html>"
+
+#~ msgid "Move the selected text or item(s) to the clipboard"
+#~ msgstr "A kijelölt szöveg vagy más elemek vágólapra mozgatása"
+
+#~ msgid ""
+#~ "<html>Copy the currently selected text or item(s) to the system "
+#~ "clipboard<br /><br />This makes it available to the <b>Paste</b> command "
+#~ "in Konqueror and other KDE applications.</html>"
+#~ msgstr ""
+#~ "<html>A kijelölt szöveg vagy elemek vágólapra másolása<br /><br />A "
+#~ "vágólap tartalma a <b>Beillesztés</b> paranccsal bármely más "
+#~ "alkalmazásban, pl. a Konquerorban beilleszthető.</html>"
+
+#~ msgid "Copy the selected text or item(s) to the clipboard"
+#~ msgstr "A kijelölt szövegrész vagy elem(ek) kimásolása a vágólapra"
+
+#~ msgid ""
+#~ "<html>Paste the previously cut or copied clipboard contents<br /><br /"
+#~ ">This also works for text copied or cut from other KDE applications.</"
+#~ "html>"
+#~ msgstr ""
+#~ "<html>Az előzőleg vágólapra másolt vagy mozgatott adatok beillesztése<br /"
+#~ "><br />Az adatok természetesen más KDE-alkalmazásból is származhatnak.</"
+#~ "html>"
+
+#~ msgid "Paste the clipboard contents"
+#~ msgstr "A vágólap tartalmának beillesztése"
+
+#~ msgid ""
+#~ "<html>Print the currently displayed document<br /><br />You will be "
+#~ "presented with a dialog where you can set various options, such as the "
+#~ "number of copies to print and which printer to use.<br /><br />This "
+#~ "dialog also provides access to special KDE printing services such as "
+#~ "creating a PDF file from the current document.</html>"
+#~ msgstr ""
+#~ "<html>Az aktuális dokumentum kinyomtatása<br /><br />Megjelenik a "
+#~ "nyomtatási párbeszédablak, melyben a nyomtatás előtt beállíthatók a "
+#~ "szükséges paraméterek, például a példányszám és a használni kívánt "
+#~ "nyomtató.<br /><br />Az ablakban elérhetők a KDE nyomtatási rendszer "
+#~ "speciális lehetőségei, például a dokumentum PDF formátumba menthető.</"
+#~ "html>"
+
+#~ msgid "Print the current document"
+#~ msgstr "Az aktuális dokumentum kinyomtatása"
+
+#~ msgid "If present, open index.html when entering a folder."
+#~ msgstr ""
+#~ "Az index.html fájl megnyitása a könyvtárba való belépéskor (ha a fájl "
+#~ "létezik)."
+
+#~ msgid ""
+#~ "A locked view cannot change folders. Use in combination with 'link view' "
+#~ "to explore many files from one folder"
+#~ msgstr ""
+#~ "Rögzített nézetben nem lehet könyvtárat váltani. A 'Nézetkapcsolás'-sal "
+#~ "kombinálva könnyen lehet egy könyvtárban sok fájlt áttekinteni."
+
+#~ msgid ""
+#~ "Sets the view as 'linked'. A linked view follows folder changes made in "
+#~ "other linked views."
+#~ msgstr ""
+#~ "A nézetet 'kapcsolt'-tá teszi. Kapcsolt nézeteknél az egyik nézet "
+#~ "könyvtárváltása hat a többi nézetre is."
+
+#~ msgid "Copy &Files..."
+#~ msgstr "Fájlmás&olás..."
+
+#~ msgid "M&ove Files..."
+#~ msgstr "Fájlmoz&gatás..."
+
+#~ msgid ""
+#~ "You have requested to open more than 20 bookmarks in tabs. This might "
+#~ "take a while. Continue?"
+#~ msgstr ""
+#~ "20-nál több könyvjelző megnyitását kérte (mindet új lapon). Biztosan ezt "
+#~ "szeretné?"
+
+#~ msgid "Open bookmarks folder in new tabs"
+#~ msgstr "Könyvjelzőmappa megnyitása új lapokon"
+
+#~ msgid "Open in T&his Window"
+#~ msgstr "Megnyitás &ebben az ablakban"
+
+#~ msgid "Open the document in current window"
+#~ msgstr "A dokumentum megnyitása az aktuális ablakban"
+
+#~ msgid "Open the document in a new window"
+#~ msgstr "A dokumentum megnyitása új ablakban"
+
+#~ msgid "Open in &New Tab"
+#~ msgstr "Megnyitás új la&pon"
+
+#~ msgid "Open the document in a new tab"
+#~ msgstr "A dokumentum megnyitása új lapon"
+
+#~ msgid "&Open With"
+#~ msgstr "Megnyitás &ezzel"
+
+#~ msgid "Open with %1"
+#~ msgstr "Megnyitás ezzel: %1"
+
+#~ msgctxt "@action:inmenu View"
+#~ msgid "&View Mode"
+#~ msgstr "Né&zetmód"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window, are you sure you want to quit?"
+#~ msgstr "Több lap is meg van nyitva, biztosan be szeretné zárni az ablakot?"
+
+#~ msgid "Confirmation"
+#~ msgstr "Megerősítés"
+
+#~ msgid "C&lose Current Tab"
+#~ msgstr "Az &aktuális lap bezárása"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the window will discard these changes."
+#~ msgstr ""
+#~ "Ez a lap még nem mentett módosításokat tartalmaz.\n"
+#~ "Az ablak bezárásakor a módosítások elvesznek."
+
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Closing the window will discard these changes."
+#~ msgstr ""
+#~ "Ez a lap még nem mentett módosításokat tartalmaz.\n"
+#~ "Az ablak bezárásakor ezek a módosítások elvesznek."
+
+#~ msgid ""
+#~ "Your sidebar is not functional or unavailable. A new entry cannot be "
+#~ "added."
+#~ msgstr ""
+#~ "Az oldalsáv nem működik megfelelően vagy nem érhető el. Nem sikerült új "
+#~ "bejegyzést felvenni."
+
+#~ msgid "Web Sidebar"
+#~ msgstr "Webes oldalsáv"
+
+#~ msgid "Add new web extension \"%1\" to your sidebar?"
+#~ msgstr "Hozzá szeretné adni a(z) \"%1\" webes bővítményt az oldalsávhoz?"
+
+#~ msgid "Add"
+#~ msgstr "Hozzáadás"
+
+#~ msgid "Do Not Add"
+#~ msgstr "Nem kell hozzáadni"
+
+#~ msgid ""
+#~ "There appears to be a configuration error. You have associated Konqueror "
+#~ "with %1, but it cannot handle this file type."
+#~ msgstr ""
+#~ "Úgy tűnik, hogy valami nincs megfelelően beállítva. Hozzárendelte a "
+#~ "Konquerort ehhez: %1, de a program mégsem tudja kezelni ezt a fájltípust."
+
+#~ msgid "Profile Management"
+#~ msgstr "Profilkezelő"
+
+#~ msgid "&Rename Profile"
+#~ msgstr "A profil á&tnevezése"
+
+#~ msgid "&Delete Profile"
+#~ msgstr "A profil &törlése"
+
+#~ msgid "Manage Sessions"
+#~ msgstr "Munkamenetkezelő"
+
+#~ msgid "&Open"
+#~ msgstr "&Megnyitás"
+
+#~ msgid "Rename Session"
+#~ msgstr "Munkamenet átnevezése"
+
+#~ msgid "Save Session"
+#~ msgstr "A munkamenet mentése"
+
+#~ msgid ""
+#~ "A session with the name '%1' already exists, do you want to overwrite it?"
+#~ msgstr "Már létezik \"%1\" nevű munkamenet, felül szeretné írni?"
+
+#~ msgid "Session exists. Overwrite?"
+#~ msgstr "Már létezik ilyen nevű munkamenet, felül szeretné írni?"
+
+#, fuzzy
+#~| msgid ""
+#~| "Konqueror didn't close correctly. Would you like to restore session?"
+#~ msgid ""
+#~ "Konqueror did not close correctly. Would you like to restore the previous "
+#~ "session?"
+#~ msgstr ""
+#~ "A Konqueror legutóbb nem szabályosan állt le. Vissza szeretné állítani a "
+#~ "munkamenetet?"
+
+#~ msgid "Restore Session?"
+#~ msgstr "Visszaálljon a legutóbbi munkamenet?"
+
+#~ msgid "Restore Session"
+#~ msgstr "Igen, visszaállítás"
+
+#~ msgid "Do Not Restore"
+#~ msgstr "Nem kell visszaállítani"
+
+#~ msgid "Ask Me Later"
+#~ msgstr "Rákérdezés később"
+
+#~ msgid ""
+#~ "This bar contains the list of currently open tabs. Click on a tab to make "
+#~ "it active. You can also use keyboard shortcuts to navigate through tabs. "
+#~ "The text on the tab shows the content currently open in it; place your "
+#~ "mouse over the tab to see the full title, in case it has been shortened "
+#~ "to fit the tab width."
+#~ msgstr ""
+#~ "Ez a sáv a megnyitott lapok listáját tartalmazza. Kattintson rá az "
+#~ "aktiválni kívánt lapra. A lapok között billentyűzettel is lehet váltani. "
+#~ "A fülön látható szöveg a megnyitott weblap címe (esetleg rövidítve, ha a "
+#~ "fül nem elég széles). Ha az egérmutatót a fül fölé viszi, megjelenik a "
+#~ "teljes cím."
+
+#~ msgid "Open a new tab"
+#~ msgstr "Új lap"
+
+#~ msgid "Close the current tab"
+#~ msgstr "Az aktuális lap bezárása"
+
+#~ msgid "&Duplicate Tab"
+#~ msgstr "A lap &duplikálása"
+
+#~ msgid "&Reload Tab"
+#~ msgstr "A lap új&ratöltése"
+
+#~ msgid "Other Tabs"
+#~ msgstr "A többi lap"
+
+#~ msgid "D&etach Tab"
+#~ msgstr "A lap kiemelése külön ablakba"
+
+#~ msgid "&Close Tab"
+#~ msgstr "A lap be&zárása"
+
+#~ msgid "Und&o: Closed Tab"
+#~ msgstr "Visszavonás: Lap bezárása"
+
+#~ msgid "Und&o: Closed Window"
+#~ msgstr "&Visszavonás: Ablak bezárása"
+
+#~ msgid ""
+#~ "The page you are trying to view is the result of posted form data. If you "
+#~ "resend the data, any action the form carried out (such as search or "
+#~ "online purchase) will be repeated. "
+#~ msgstr ""
+#~ "A megtekinteni kívánt oldal tartalma űrlapból elküldött adatoktól függ. "
+#~ "Ha újból elküldi az adatokat, az űrlapművelet (pl. keresés, "
+#~ "vásárlókorsárba helyezés) meg fog ismétlődni. "
+
+#~ msgid "Warning"
+#~ msgstr "Figyelmeztetés"
+
+#~ msgid "Resend"
+#~ msgstr "Újraküldés"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window.\n"
+#~ "Loading a view profile will close them."
+#~ msgstr ""
+#~ "Ez az ablak több lapot is tartalmaz.\n"
+#~ "Profilváltás esetén ezek mind bezáródnak."
+
+#~ msgid "Load View Profile"
+#~ msgstr "Új profil betöltése"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Loading a profile will discard these changes."
+#~ msgstr ""
+#~ "Ez a lap olyan módosításokat tartalmaz, melyek még nincsenek elmentve.\n"
+#~ "Más profil betöltése esetén a módosítások elvesznek."
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "History Sidebar Module"
+#~ msgstr "Webes oldalsáv"
+
+#~ msgctxt "@title:tab"
+#~ msgid "History"
+#~ msgstr "Előzmények"
+
+#~ msgid " day"
+#~ msgid_plural " days"
+#~ msgstr[0] " nap"
+#~ msgstr[1] " nap"
+
+#~ msgid "Minute"
+#~ msgid_plural "Minutes"
+#~ msgstr[0] "perc"
+#~ msgstr[1] "perc"
+
+#~ msgid "Day"
+#~ msgid_plural "Days"
+#~ msgstr[0] "nap"
+#~ msgstr[1] "nap"
+
+#~ msgid "<h1>History Sidebar</h1> You can configure the history sidebar here."
+#~ msgstr ""
+#~ "<h1>Napló-oldalsáv</h1> Itt lehet módosítani a napló-oldalsáv "
+#~ "beállításait."
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Places Sidebar Module"
+#~ msgstr "Webes oldalsáv"
+
+#~ msgid "Extended Sidebar"
+#~ msgstr "Kibővített oldalsáv"
+
+#~ msgid "Rollback to System Default"
+#~ msgstr "A rendszer alapértelmezéseinek visszaállítása"
+
+#~ msgid "Configure Sidebar"
+#~ msgstr "Az oldalsáv beállítása"
+
+#~ msgid "Add New"
+#~ msgstr "Új bejegyzés felvétele"
+
+#~ msgid "Multiple Views"
+#~ msgstr "Több nézet"
+
+#~ msgid "Show Tabs Left"
+#~ msgstr "A lapok fülei balról legyenek"
+
+#~ msgid "Show Configuration Button"
+#~ msgstr "A beállítógomb megjelenítése"
+
+#~ msgid "Close Sidebar"
+#~ msgstr "Oldalsáv bezárása"
+
+#~ msgid "This entry already exists."
+#~ msgstr "Ilyen bejegyzés már létezik."
+
+#~ msgid ""
+#~ "<qt>This removes all your entries from the sidebar and adds the system "
+#~ "default ones.<br /><b>This procedure is irreversible</b><br />Do you want "
+#~ "to proceed?</qt>"
+#~ msgstr ""
+#~ "<qt>Törli az oldalsávban levő bejegyzéseket, újból a rendszer "
+#~ "alapértelmezése lesz érvényes.<br /><b>A művelet nem vonható vissza.</"
+#~ "b><br />Biztosan ezt szeretné?</qt>"
+
+#~ msgid "Show Tabs Right"
+#~ msgstr "A lapok jobbról induljanak"
+
+#~ msgid "Set Name"
+#~ msgstr "Név megadása"
+
+#~ msgid "Enter the name:"
+#~ msgstr "Adja meg a nevet:"
+
+#~ msgid "Enter a URL:"
+#~ msgstr "Adjon meg egy URL-t:"
+
+#~ msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
+#~ msgstr "<qt>Biztosan törölni szeretné a(z) <b>%1</b> lapot?</qt>"
+
+#, fuzzy
+#~| msgid ""
+#~| "You have hidden the navigation panel configuration button. To make it "
+#~| "visible again, click the right mouse button on any of the navigation "
+#~| "panel buttons and select \"Show Configuration Button\"."
+#~ msgid ""
+#~ "You have hidden the sidebar configuration button. To make it visible "
+#~ "again, click the right mouse button on any of the sidebar buttons and "
+#~ "select \"Show Configuration Button\"."
+#~ msgstr ""
+#~ "Elrejtette a navigációs panel beállítógombját. Ha újból láthatóvá "
+#~ "szeretné tenni, kattintson a panel egyik navigációs gombjára, majd "
+#~ "válassza \"A beállítógomb megjelenítése\" opciót."
+
+#~ msgid "Set Name..."
+#~ msgstr "Név megadása..."
+
+#~ msgid "Set URL..."
+#~ msgstr "URL beállítása..."
+
+#~ msgid "Set Icon..."
+#~ msgstr "Ikon beállítása..."
+
+#~ msgid "Remove"
+#~ msgstr "Törlés"
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgid "Web module"
+#~ msgstr "Webes oldalsáv"
+
+#~ msgid "&Create New Folder"
+#~ msgstr "Új m&appa létrehozása"
+
+#~ msgid "Delete Folder"
+#~ msgstr "Mappa törlése"
+
+#~ msgid "Delete Bookmark"
+#~ msgstr "Könyvjelző törlése"
+
+#~ msgid "Properties"
+#~ msgstr "Tulajdonságok"
+
+#~ msgid "Open in New Window"
+#~ msgstr "Megnyitás új ablakban"
+
+#~ msgid "Open Folder in Tabs"
+#~ msgstr "Mappamegnyitás lapokon"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "A link másolása"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark folder\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "Biztosan törölni szeretné ezt a könyvjelzőmappát:\n"
+#~ "\"%1\"?"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "Biztosan törölni szeretné ezt a könyvjelzőt:\n"
+#~ "\"%1\"?"
+
+#~ msgid "Bookmark Folder Deletion"
+#~ msgstr "Könyvjelzőmappa törlése"
+
+#~ msgid "Bookmark Deletion"
+#~ msgstr "Könyvjelző törlése"
+
+#~ msgid "Bookmark Properties"
+#~ msgstr "A könyvjelző tulajdonságai"
+
+#~ msgid "&Update"
+#~ msgstr "&Frissítés"
+
+#~ msgid "Name:"
+#~ msgstr "Név:"
+
+#~ msgid "Location:"
+#~ msgstr "Cím:"
+
+#~ msgid "Add Bookmark"
+#~ msgstr "Könyvjelző felvétele"
+
+#~ msgid "Cannot find parent item %1 in the tree. Internal error."
+#~ msgstr "Nem található a fastruktúrában a(z) %1 szülőelem. Belső hiba."
+
+#~ msgid "&Create New Folder..."
+#~ msgstr "Új ma&ppa létrehozása..."
+
+#~ msgid "Rename"
+#~ msgstr "Átnevezés"
+
+#~ msgid "Delete Link"
+#~ msgstr "A link törlése"
+
+#~ msgid "New Folder"
+#~ msgstr "Új mappa"
+
+#~ msgid "Create New Folder"
+#~ msgstr "Új mappa létrehozása"
+
+#~ msgid "Enter folder name:"
+#~ msgstr "Adja meg a mappa nevét:"
+
+#~ msgctxt "@label"
+#~ msgid "Name:"
+#~ msgstr "Név:"
+
+#~ msgid "&Open Link"
+#~ msgstr "A l&ink megnyitása"
+
+#~ msgid "Set &Automatic Reload"
+#~ msgstr "Automatikus újr&atöltés beállítása"
+
+#~ msgid "Set Refresh Timeout (0 disables)"
+#~ msgstr "A frissítési időköz megadása (0 = letiltás)"
+
+#~ msgid " min"
+#~ msgstr " perc"
+
+#~ msgid " sec"
+#~ msgstr " másodperc"
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Web Sidebar Module"
+#~ msgstr "Webes oldalsáv"
+
+#~ msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
+#~ msgid "Be free."
+#~ msgstr "Légy szabad."
+
+#~ msgid ""
+#~ "Konqueror is a web browser, file manager and universal document viewer."
+#~ msgstr ""
+#~ "A Konqueror egy univerzális program, mely fájlkezelésre, webböngészésre "
+#~ "és dokumentumok megjelenítésére is képes."
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "Starting Points"
+#~ msgstr "Kiindulópontok"
+
+#~ msgid "Introduction"
+#~ msgstr "Bemutatkozás"
+
+#~ msgid "Tips"
+#~ msgstr "Tippek"
+
+#~ msgid "Specifications"
+#~ msgstr "Technikai jellemzők"
+
+#~ msgid "Your personal files"
+#~ msgstr "Személyes fájlok"
+
+#~ msgid "Trash"
+#~ msgstr "Kuka"
+
+#~ msgid "Browse and restore the trash"
+#~ msgstr "A törölt elemek átnézése, visszaállítása"
+
+#~ msgid "Network Folders"
+#~ msgstr "Hálózati mappák"
+
+#~ msgid "Shared files and folders"
+#~ msgstr "Megosztott könyvtárak és fájlok"
+
+#~ msgid "Bookmarks"
+#~ msgstr "Könyvjelzők"
+
+#~ msgid "Quick access to your bookmarks"
+#~ msgstr "Gyors hozzáférés a könyvjelzőkhöz"
+
+#~ msgid "Next: An Introduction to Konqueror"
+#~ msgstr "Tovább: A Konqueror rövid leírása"
+
+#~ msgid "Search the Web"
+#~ msgstr "Keresés a weben"
+
+#~ msgid ""
+#~ "Konqueror makes working with and managing your files easy. You can browse "
+#~ "both local and networked folders while enjoying advanced features such as "
+#~ "the powerful sidebar and file previews."
+#~ msgstr ""
+#~ "A Konqueror segítségével könnyen lehet fájlműveleteket végezni. A helyi "
+#~ "és távoli fájlok kezelése szinte teljesen egyforma módon történik. "
+#~ "Speciális oldalsáv és fájl-gyorsnézetek segítik a jobb áttekinthetőséget."
+
+#~ msgid ""
+#~ "Konqueror is also a full featured and easy to use web browser which you "
+#~ "can use to explore the Internet. Enter the address (e.g. <a href=\"http://"
+#~ "www.kde.org\">http://www.kde.org</a>) of a web page you would like to "
+#~ "visit in the location bar and press Enter, or choose an entry from the "
+#~ "Bookmarks menu."
+#~ msgstr ""
+#~ "A Konqueror egy modern, könnyen kezelhető webböngésző. Csak be kell írni "
+#~ "az elérni kívánt internetcímet (pl. <a href=\"http://www.kde.org\">http://"
+#~ "www.kde.org</a>) a program címmezőjébe és meg kell nyomni az Entert. Ha "
+#~ "egy cím már fel van véve könyvjelzőként, elég rákattintani a könyvjelzőre."
+
+#~ msgid ""
+#~ "To return to the previous location, press the back button <img width='16' "
+#~ "height='16' src=\"%1\"></img> in the toolbar. "
+#~ msgstr ""
+#~ "Ha vissza szeretne lépni az utoljára megnézett oldalra, nyomja meg a "
+#~ "Vissza gombot <img width='16' height='16' src=\"%1\"></img> az "
+#~ "eszköztáron."
+
+#~ msgid ""
+#~ "To quickly go to your Home folder press the  home button <img width='16' "
+#~ "height='16' src=\"%1\"></img>."
+#~ msgstr ""
+#~ "Ha gyorsan el szeretné érni a saját könyvtárát, kattintson a Saját "
+#~ "könyvtár <img width='16' height='16' src=\"%1\"></img> gombra."
+
+#~ msgid ""
+#~ "For more detailed documentation on Konqueror click <a href=\"%1\">here</"
+#~ "a>."
+#~ msgstr ""
+#~ "Ha többet szeretne tudni a Konquerorról, <a href=\"%1\">kattintson ide</"
+#~ "a>."
+
+#, fuzzy
+#~| msgid ""
+#~| "<em>Tuning Tip:</em> If you want the Konqueror web browser to start "
+#~| "faster, you can turn off this information screen by clicking <a href="
+#~| "\"%1\">here</a>. You can re-enable it by choosing the Help -> Konqueror "
+#~| "Introduction menu option, and then pressing Settings -> Save View "
+#~| "Profile \"Web Browsing\"."
+#~ msgid ""
+#~ "<em>Tuning Tip:</em> If you want the Konqueror web browser to start "
+#~ "faster, you can turn off this information screen by clicking <a href="
+#~ "\"%1\">here</a>. You can re-enable it by choosing the Help -> Konqueror "
+#~ "Introduction menu option, and then pressing Settings -> Save View Profile "
+#~ "As... -> \"Web Browsing\"."
+#~ msgstr ""
+#~ "<em>Egy gyorsítási tipp:</em> Ha azt szeretné, hogy a Konqueror "
+#~ "gyorsabban induljon el, <a href=\"%1\">kapcsolja ki ezt a bemutatkozó "
+#~ "oldalt</a>. Ha később vissza szeretné állítani az oldalt, jelölje be a "
+#~ "Segítség->A Konqueror bemutatkozó oldala opciót, majd kattintson a "
+#~ "Beállítások->A \"Webböngészés\" profil mentése menüpontra."
+
+#~ msgid "Next: Tips &amp; Tricks"
+#~ msgstr "Tovább: Tippek és trükkök"
+
+#, fuzzy
+#~| msgid ""
+#~| "Konqueror is designed to embrace and support Internet standards. The aim "
+#~| "is to fully implement the officially sanctioned standards from "
+#~| "organizations such as the W3 and OASIS, while also adding extra support "
+#~| "for other common usability features that arise as de facto standards "
+#~| "across the Internet. Along with this support, for such functions as "
+#~| "favicons, Internet Keywords, and <A HREF=\"%1\">XBEL bookmarks</A>, "
+#~| "Konqueror also implements:"
+#~ msgid ""
+#~ "Konqueror is designed to embrace and support Internet standards. The aim "
+#~ "is to fully implement the officially sanctioned standards from "
+#~ "organizations such as the W3 and OASIS, while also adding extra support "
+#~ "for other common usability features that arise as de facto standards "
+#~ "across the Internet. Along with this support, for such functions as "
+#~ "favicons, Web Shortcuts, and <A HREF=\"%1\">XBEL bookmarks</A>, Konqueror "
+#~ "also implements:"
+#~ msgstr ""
+#~ "A Konqueror az összes fontosabb internetes szabványt támogatja. A "
+#~ "kitűzött cél a W3, az OASIS és más hasonló szervezetek által kiadott "
+#~ "összes nyílt szabvány támogatása, kiegészítve azoknak a de facto "
+#~ "szabványként elfogadott funkcióknak a támogatásával, amelyek széles "
+#~ "körben elterjedtek az interneten. Ez utóbbiak közé sorolhatók a kedvenc "
+#~ "ikonok, az internetes kulcsszavak, az <A HREF=\"%1\">XBEL könyvjelzők</"
+#~ "A>. A Konqueror a következőket támogatja még:"
+
+#~ msgid "Supported standards"
+#~ msgstr "Támogatott szabványok"
+
+#~ msgid "Additional requirements*"
+#~ msgstr "További követelmények*"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">DOM</A> (Level 1, részben a Level 2 is) alapú <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+
+#~ msgid "built-in"
+#~ msgstr "Beépített"
+
+#~ msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, részben a CSS2 is)"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Edition 3 (körülbelül a JavaScript 1.5-nek "
+#~ "felel meg)"
+
+#~ msgid ""
+#~ "JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
+#~ msgstr ""
+#~ "A JavaScript használata le van tiltva, kattintson <A HREF=\"%1\">ide</A>, "
+#~ "ha engedélyezni szeretné."
+
+#~ msgid ""
+#~ "JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\"
+#~ "\">here</A>."
+#~ msgstr ""
+#~ "A JavaScript használata engedélyezett, <A HREF=\\\"%1\\\">itt</A> lehet "
+#~ "módosítani a beállításait."
+
+#~ msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
+#~ msgstr "Biztonságos <A HREF=\"%1\">Java</A><SUP>&reg;</SUP>-támogatás"
+
+#~ msgid ""
+#~ "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">IBM</A> or <A HREF="
+#~ "\"%2\">Sun/Oracle</A>)"
+#~ msgstr ""
+#~ "JDK 1.2.0 (Java 2) kompatibili VM (<A HREF=\"%1\">IBM</A> or <A HREF="
+#~ "\"%2\">Sun/Oracle</A>)"
+
+#~ msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
+#~ msgstr "A Java engedélyezéséhez kattintson <A HREF=\"%1\">ide</A>."
+
+#~ msgid ""
+#~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">plugins</A> (for "
+#~ "viewing <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
+#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Video, etc.)"
+#~ msgstr ""
+#~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">bővítőmodulok</A> "
+#~ "támogatása (például a <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, a <A HREF="
+#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, a <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Video használatához)"
+
+#~ msgid "Secure Sockets Layer"
+#~ msgstr "Secure Sockets Layer"
+
+#~ msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
+#~ msgstr ""
+#~ "(TLS/SSL v2/3) a biztonságos internetes kommunikációhoz (max. 168-bit)"
+
+#~ msgid "OpenSSL"
+#~ msgstr "OpenSSL"
+
+#~ msgid "Bidirectional 16bit unicode support"
+#~ msgstr "A kétirányú 16 bites Unicode támogatása"
+
+#~ msgid "AutoCompletion for forms"
+#~ msgstr "Automatikus űrlapkitöltés"
+
+#~ msgctxt "Title of an html 'group box' explaining konqueror features"
+#~ msgid "General"
+#~ msgstr "Általános"
+
+#~ msgid "Feature"
+#~ msgstr "Szolgáltatás"
+
+#~ msgid "Details"
+#~ msgstr "Részletek"
+
+#~ msgid "Image formats"
+#~ msgstr "Képformátumok"
+
+#~ msgid "PNG<br />JPG<br />GIF"
+#~ msgstr "PNG<br />JPG<br />GIF"
+
+#~ msgid "Transfer protocols"
+#~ msgstr "Adatátviteli protokollok"
+
+#~ msgid "HTTP 1.1 (including gzip/bzip2 compression)"
+#~ msgstr "HTTP 1.1 (a gzip/bzip2 tömörítés kezelésével)"
+
+#~ msgid "FTP"
+#~ msgstr "FTP"
+
+#, fuzzy
+#~| msgid "and <A HREF=\"%1\">many more...</A>"
+#~ msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpcenter)...</A>"
+#~ msgstr "és <A HREF=\"%1\">még sok más...</A>"
+
+#~ msgctxt "A feature of Konqueror"
+#~ msgid "URL-Completion"
+#~ msgstr "URL-kiegészítés"
+
+#~ msgid "Manual"
+#~ msgstr "Kézi"
+
+#~ msgid "Popup"
+#~ msgstr "Listából"
+
+#~ msgid "(Short-) Automatic"
+#~ msgstr "Automatikus (intelligens)"
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "<a href=\"%1\">Return to Starting Points</a>"
+#~ msgstr "<a href=\"%1\">Vissza a kiindulópontok lapjára</a>"
+
+#~ msgid "Tips &amp; Tricks"
+#~ msgstr "Tippek és trükkök"
+
+#, fuzzy
+#~| msgid ""
+#~| "Use Internet-Keywords and Web-Shortcuts: by typing \"gg: KDE\" one can "
+#~| "search the Internet, using Google, for the search phrase \"KDE\". There "
+#~| "are a lot of Web-Shortcuts predefined to make searching for software or "
+#~| "looking up certain words in an encyclopedia a breeze. You can even <a "
+#~| "href=\"%1\">create your own</a> Web-Shortcuts."
+#~ msgid ""
+#~ "Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, "
+#~ "using Google, for the search phrase \"KDE\". There are a lot of Web-"
+#~ "Shortcuts predefined to make searching for software or looking up certain "
+#~ "words in an encyclopedia a breeze. You can even <a href=\"%1\">create "
+#~ "your own</a> Web-Shortcuts."
+#~ msgstr ""
+#~ "Használja bátran az internetes kulcsszavakat és keresőazonosítókat! Ha "
+#~ "beírja, hogy: \"gg: KDE\", akkor elindul a Google keresőszolgáltatón a "
+#~ "\"KDE\" szöveg keresése. A Konqueror sok előre definiált keresőazonosítót "
+#~ "tartalmaz, hogy egy szoftver vagy témakör a lehető leggyorsabban "
+#~ "megtalálható legyen. A keresőazonosítók listája <a href=\"%1\">tetszés "
+#~ "szerint bővíthető</a>!"
+
+#, fuzzy
+#~| msgid ""
+#~| "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> "
+#~| "in the toolbar to increase the font size on your web page."
+#~ msgid ""
+#~ "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
+#~ "the HTML toolbar to increase the font size on your web page."
+#~ msgstr ""
+#~ "Az eszköztáron levő Nagyító gomb <img width='16' height='16' src=\"%1\"></"
+#~ "img> megnyomásával megnövelhető a megjelenített szöveg betűmérete."
+
+#~ msgid ""
+#~ "When you want to paste a new address into the Location toolbar you might "
+#~ "want to clear the current entry by pressing the black arrow with the "
+#~ "white cross <img width='16' height='16' src=\"%1\"></img> in the toolbar."
+#~ msgstr ""
+#~ "Ha be szeretne illeszteni egy címet a címmezőbe, akkor előbb érdemes "
+#~ "kitörölni a mező tartalmát. Ehhez elég rákattintani az eszköztáron a "
+#~ "fekete nyilat és fehér keresztet ábrázoló gombra <img width='16' "
+#~ "height='16' src=\"%1\"></img>."
+
+#, fuzzy
+#~| msgid ""
+#~| "To create a link on your desktop pointing to the current page, simply "
+#~| "drag the \"Location\" label that is to the left of the Location toolbar, "
+#~| "drop it on to the desktop, and choose \"Link\"."
+#~ msgid ""
+#~ "To create a link on your desktop pointing to the current page, simply "
+#~ "drag the icon (favicon) that is to the left of the Location toolbar, drop "
+#~ "it on to the desktop, and choose \"Icon\"."
+#~ msgstr ""
+#~ "Ha a munkaasztalon linket szeretne létrehozni az aktuális oldalhoz, akkor "
+#~ "fogja meg a \"Cím\" címkét (a címmezőtől balra látható), ejtse rá az "
+#~ "asztalra, majd válassza a \"Link\" menüpontot."
+
+#~ msgid ""
+#~ "You can also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen "
+#~ "Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
+#~ "sessions."
+#~ msgstr ""
+#~ "A Beállítások menüben található egy <img width='16' height='16' src="
+#~ "\"%1\" /> \"Teljes képernyős mód\" nevű menüpont. Ez például a \"Talk\" "
+#~ "használata esetén nagyon hasznos lehet."
+
+#~ msgid ""
+#~ "Divide et impera (lat. \"Divide and conquer\") - by splitting a window "
+#~ "into two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> "
+#~ "Split View Left/Right) you can make Konqueror appear the way you like. "
+#~ "You can even load some example view-profiles (e.g. Midnight Commander), "
+#~ "or create your own ones."
+#~ msgstr ""
+#~ "A főablak két részre osztható (pl.: Ablak -> <img width='16' height='16' "
+#~ "src=\"%1\" /> Nézetelválasztás függőlegesen), ha a felület így jobban "
+#~ "tetszik Önnek. Próbálja ki az előre definiált profilokat (pl. a Midnight "
+#~ "Commandert) (újakat is létre lehet hozni)."
+
+#~ msgid ""
+#~ "Use the <a href=\"%1\">user-agent</a> feature if the website you are "
+#~ "visiting asks you to use a different browser (and do not forget to send a "
+#~ "complaint to the webmaster!)"
+#~ msgstr ""
+#~ "Ha egy website csak egy másik típusú böngészővel hajlandó működni, "
+#~ "próbálja megváltoztatni a <a href=\"%1\">böngészőazonosítót</a> (persze "
+#~ "ha lehet, kérje meg a site gazdáját, hogy tegye lehetővé a többi böngésző "
+#~ "használatát is)."
+
+#, fuzzy
+#~| msgid ""
+#~| "The <img width='16' height='16' src=\"%1\"></img> History in your "
+#~| "SideBar ensures that you can keep track of the pages you have visited "
+#~| "recently."
+#~ msgid ""
+#~ "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
+#~ "ensures that you can keep track of the pages you have visited recently."
+#~ msgstr ""
+#~ "Az oldalsávon levő <img width='16' height='16' src=\"%1\"></img> napló "
+#~ "segítségével áttekinthetők a korábban elért oldalak."
+
+#~ msgid ""
+#~ "Use a caching <a href=\"%1\">proxy</a> to speed up your Internet "
+#~ "connection."
+#~ msgstr ""
+#~ "Használjon gyorstáras <a href=\"%1\">proxy</a> kiszolgálót a böngészés "
+#~ "meggyorsításához."
+
+#, fuzzy
+#~| msgid ""
+#~| "Advanced users will appreciate the Konsole which you can embed into "
+#~| "Konqueror (Window -> <img width='16' height='16' SRC=\"%1\"></img> Show "
+#~| "Terminal Emulator)."
+#~ msgid ""
+#~ "Advanced users will appreciate the Konsole which you can embed into "
+#~ "Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
+#~ "Terminal Emulator)."
+#~ msgstr ""
+#~ "A gyakorlottabb felhasználók biztosan hasznát veszik a Konquerorba "
+#~ "beágyazható Konsole parancsértelmezőnek (Ablak -> <img width='16' "
+#~ "height='16' src=\"%1\"></img> Parancsértelmező megjelenítése)."
+
+#~ msgid "Next: Specifications"
+#~ msgstr "Tovább: Technikai jellemzők"
+
+#~ msgid "Installed Plugins"
+#~ msgstr "Telepített bővítőmodulok"
+
+#~ msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
+#~ msgstr "<td>Bővítőmodul</td><td>Leírás</td><td>Fájl</td><td>Típusok</td>"
+
+#~ msgid "Installed"
+#~ msgstr "Telepítve"
+
+#~ msgid ""
+#~ "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
+#~ msgstr ""
+#~ "<td>MIME-típus</td><td>Leírás</td><td>Kiterjesztések</td><td>Bővítőmodul</"
+#~ "td>"
+
+#~ msgid ""
+#~ "Do you want to disable showing the introduction in the webbrowsing "
+#~ "profile?"
+#~ msgstr ""
+#~ "Le szeretné tiltani a bemutatkozási oldalt a webböngészési profilban?"
+
+#~ msgid "Faster Startup?"
+#~ msgstr "Gyorsabb indulást szeretne?"
+
+#~ msgid "Disable"
+#~ msgstr "Kikapcsolás"
+
+#~ msgid "Keep"
+#~ msgstr "Megtartás"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Lengyel Marcell,Szántó Tamás"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "marcell@kde.hu,tszanto@interware.hu"
+
+#~ msgid "&File"
+#~ msgstr "&Fájl"
+
+#~ msgid "&Edit"
+#~ msgstr "S&zerkesztés"
+
+#~ msgid "&View"
+#~ msgstr "Né&zet"
+
+#~ msgid "&Go"
+#~ msgstr "&Ugrás"
+
+#~ msgid "&Settings"
+#~ msgstr "&Beállítások"
+
+#~ msgid "&Window"
+#~ msgstr "&Ablak"
+
+#~ msgid "&Help"
+#~ msgstr "&Súgó"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Alap eszköztár"
+
+#~ msgid "Extra Toolbar"
+#~ msgstr "Extra eszköztár"
+
+#~ msgid "Location Toolbar"
+#~ msgstr "Címbeviteli eszköztár"
+
+#~ msgid "Bookmark Toolbar"
+#~ msgstr "Könyvjelző eszköztár"
+
+#~ msgid "Save open tabs and windows for easy retrieval"
+#~ msgstr "A megnyitott lapok és ablakok elmentése"
+
+#~ msgid "&Session name:"
+#~ msgstr "A m&unkamenet neve:"
+
+#~ msgid "&Profile name:"
+#~ msgstr "&Profil:"
+
+#~ msgid "Save &URLs in profile"
+#~ msgstr "Az &internetcím mentése a profilba"
+
+#~ msgctxt "@action:button New session"
+#~ msgid "New..."
+#~ msgstr "Új..."
+
+#~ msgctxt "@action:button Save current session"
+#~ msgid "Save Current"
+#~ msgstr "Az aktuális mentése"
+
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename..."
+#~ msgstr "Átnevezés..."
+
+#~ msgctxt "@action:button Delete session"
+#~ msgid "Delete"
+#~ msgstr "Törlés"
+
+#~ msgid "Open tabs inside current window"
+#~ msgstr "A lapok megnyitása az aktuális ablakban történjen"
+
+#~ msgid "Limits"
+#~ msgstr "Korlátok"
+
+#~ msgid "URLs e&xpire after"
+#~ msgstr "Az &URL-ek érvényességének vége"
+
+#~ msgid "Maximum &number of URLs:"
+#~ msgstr "Az URL-ek ma&ximális száma:"
+
+#~ msgid "Custom Fonts For"
+#~ msgstr "Egyéni betűtípusok"
+
+#~ msgid "URLs newer than"
+#~ msgstr "Ennél újabb URL-ek:"
+
+#~ msgid "Choose Font..."
+#~ msgstr "Betűtípus választása..."
+
+#~ msgid "URLs older than"
+#~ msgstr "Ennél régebbi URL-ek:"
+
+#~ msgid ""
+#~ "Shows the number of times visited and the dates of the first and last "
+#~ "visits, in addition to the URL"
+#~ msgstr ""
+#~ "Az URL mellett megjelenik az eddigi látogatások száma, az első és az "
+#~ "utolsó látogatás dátuma."
+
+#~ msgid "Detailed tooltips"
+#~ msgstr "Részletes tippek"
+
+#~ msgid "Clear History"
+#~ msgstr "A napló tartalmának törlése"
+
+#, fuzzy
+#~| msgid "Maximum &number of URLs:"
+#~ msgid "Maximum number of Closed Items"
+#~ msgstr "Az URL-ek ma&ximális száma:"
+
+#, fuzzy
+#~| msgid "Open tabs inside current window"
+#~ msgid "Open folders in separate windows"
+#~ msgstr "A lapok megnyitása az aktuális ablakban történjen"
+
+#~ msgid "Hide %1"
+#~ msgstr "Elrejtés - %1"
+
+#, fuzzy
+#~| msgid "Web SideBar Plugin"
+#~ msgid "SideBar Test Plugin"
+#~ msgstr "Webes oldalsáv-bővítőmodul"
+
+#~ msgid "Bookmark This Location"
+#~ msgstr "Könyvjelző erre a címre"
+
+#~ msgid ""
+#~ "Malformed URL\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Hibás URL.\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Protocol not supported\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Nem támogatott protokoll:\n"
+#~ "%1"
+
+#~ msgid "Cannot create the find part, check your installation."
+#~ msgstr ""
+#~ "A keresési objektum nem hozható létre, ellenőrizze a program beállításait."
+
+#~ msgid "My Bookmarks"
+#~ msgstr "Saját könyvjelzők"
+
+#~ msgid "Preload for later use"
+#~ msgstr "Előre betöltés későbbi felhasználásra"
+
+#~ msgid "&Save View Profile \"%1\"..."
+#~ msgstr "A(z) \"%1\" profil men&tése..."
+
+#~ msgid "Configure Navigation Panel"
+#~ msgstr "A navigációs panel beállításai"
+
+#~ msgid "Close Navigation Panel"
+#~ msgstr "A navigációs panel bezárása"
+
+#~ msgid "Select Type"
+#~ msgstr "Típusválasztás"
+
+#~ msgid "Select type:"
+#~ msgstr "Típusválasztás:"
+
+#~ msgid "Web SideBar Plugin"
+#~ msgstr "Webes oldalsáv-bővítőmodul"
+
+#~ msgid "<qt><b>%1</b> does not exist</qt>"
+#~ msgstr "<qt><b>%1</b> nem létezik</qt>"
+
+#~ msgid "Minutes"
+#~ msgstr "perc"
+
+#~ msgid "Days"
+#~ msgstr "nap"
+
+#~ msgid "Your sidebar is not functional or unavailable."
+#~ msgstr "Az oldalsáv nem működik megfelelően vagy nem érhető el."
+
+#~ msgid "Cannot find running history plugin in your sidebar."
+#~ msgstr "Nem található naplómodul az oldalsávban."
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History in Sidebar"
+#~ msgstr "Napló megjelenítése az oldalsávban"
+
+#~ msgid "Select Remote Charset"
+#~ msgstr "A távoli karakterkészlet kiválasztása"
+
+#~ msgid "Reload"
+#~ msgstr "Újratöltés"
+
+#~ msgid "Default"
+#~ msgstr "Alapértelmezés"

@@ -1,0 +1,90 @@
+# translation of searchbarplugin.po to Estonian
+# Marek Laane <bald@starman.ee>, 2004-2007.
+# Marek Laane <bald@smail.ee>, 2009, 2010, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: searchbarplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-25 00:45+0000\n"
+"PO-Revision-Date: 2012-10-10 08:50+0300\n"
+"Last-Translator: Marek Laane <bald@smail.ee>\n"
+"Language-Team: Estonian <kde-et@linux.ee>\n"
+"Language: et\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: searchbar.cpp:65
+#, kde-format
+msgid ""
+"Search Bar<p>Enter a search term. Click on the icon to change search mode or "
+"provider.</p>"
+msgstr ""
+"Otsimisriba<p>Sisesta otsitav väljend. Klõpsa ikoonile otsimisrežiimi või "
+"otsingumootori muutmiseks.</p>"
+
+#: searchbar.cpp:70
+#, kde-format
+msgid "Search Bar"
+msgstr "Otsimisriba"
+
+#: searchbar.cpp:75
+#, kde-format
+msgid "Focus Searchbar"
+msgstr "Otsimisriba fookusse"
+
+#: searchbar.cpp:267
+#, fuzzy, kde-format
+#| msgid "Find in This Page"
+msgid "Find in Page..."
+msgstr "Otsi sellel leheküljel"
+
+#: searchbar.cpp:287
+#, kde-format
+msgid "Find in This Page"
+msgstr "Otsi sellel leheküljel"
+
+#: searchbar.cpp:299
+#, kde-format
+msgid "Select Search Engines..."
+msgstr "Vali otsingumootorid..."
+
+#: searchbar.cpp:318
+#, kde-format
+msgid "Add %1..."
+msgstr "Lisa %1..."
+
+#. i18n: ectx: ToolBar (locationToolBar)
+#: searchbarplugin.rc:3
+#, kde-format
+msgid "Search Toolbar"
+msgstr "Otsimisriba"
+
+#: WebShortcutWidget.cpp:33
+#, kde-format
+msgid "Set Uri Shortcuts"
+msgstr "URI kiirklahvide määramine"
+
+#: WebShortcutWidget.cpp:47
+#, kde-format
+msgid "Name:"
+msgstr "Nimi:"
+
+#: WebShortcutWidget.cpp:51
+#, kde-format
+msgid "Shortcuts:"
+msgstr "Kiirklahvid:"
+
+#~ msgid "Enable Suggestion"
+#~ msgstr "Pakkumiste lubamine"
+
+#~ msgid "Cancel"
+#~ msgstr "Loobu"
+
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#~ msgid "Ok"
+#~ msgstr "OK"

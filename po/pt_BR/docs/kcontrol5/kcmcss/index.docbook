@@ -1,0 +1,454 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Brazilian-Portuguese "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="kcmcss" lang="&language;">
+<articleinfo>
+<title
+>Aparência</title>
+<authorgroup>
+<author
+>&Lauri.Watts; &Lauri.Watts.mail;</author>
+<othercredit role="translator"
+><firstname
+>Lisiane</firstname
+> <surname
+>Sztoltz</surname
+><affiliation
+><address
+> <email
+>lisiane@conectiva.com.br</email
+></address
+></affiliation
+><contrib
+>Tradução</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>01/12/2009</date>
+<releaseinfo
+>&kde; 4.4</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>CSS</keyword>
+<keyword
+>Aparência</keyword>
+<keyword
+>Fonte</keyword>
+<keyword
+>CSS</keyword>
+<keyword
+>Folhas de estilo</keyword>
+<keyword
+>Acessibilidade</keyword>
+</keywordset>
+
+</articleinfo>
+
+<sect1 id="appearance">
+<title
+>Aparência</title>
+<para
+>Este módulo contém três páginas com opções de configuração sobre como exibir páginas Web.</para>
+
+<sect2 id="general">
+<title
+>Geral</title
+> <!-- modified copy from khtml/index.docbook <sect2 id="kbrowse-html"-->
+
+<para
+>A opção <guilabel
+>Carregar imagens automaticamente</guilabel
+> permite-lhe controlar se as imagens das páginas Web são carregadas por padrão. A menos que você tenha uma conexão muito lenta, irá querer deixar esta opção selecionada, uma vez que existem muitas páginas Web que são difíceis de usar sem imagens. Se você não selecionar a opção de carregamento automático das imagens, você ainda poderá ver o texto da página, e então carregar as imagens se precisar delas.</para>
+
+<para
+>Se a opção <guilabel
+>Desenhar quadro ao redor de imagens não completamente carregadas</guilabel
+> estiver habilitada, o &konqueror; irá desenhar um quadro como um reservador de espaço no lugar das imagens embutidas em uma página Web que não foram completamente carregadas. Você provavelmente desejará habilitar esta opção para aprimorar sua experiência de navegação, especialmente se você tiver uma conexão lenta.</para>
+
+<para
+>Muitas páginas Web usam imagens no formato GIF animado, e isto pode ser muito irritante e, em alguns casos, ocupar muito os recursos de seu sistema. A opção <guilabel
+>Animações</guilabel
+> deixa você escolher quando as animações serão habilitadas. O padrão é estar habilitado, mas você pode desabilitar ou executar a animação somente uma vez, mesmo se o arquivo contém instruções dizendo que a animação deve ser executada mais vezes ou continuamente.</para>
+
+<para
+>A próxima opção é a <guilabel
+>Sublinhar links:</guilabel
+>. Você poderá optar para que o sublinhado dos links esteja <guilabel
+>Habilitado</guilabel
+>. Se esta opção estiver selecionada, todo o texto das páginas Web que funcione como um link será mostrado sublinhado. Embora muitas páginas usem cores para distinguir o texto dos links, os sublinhados facilitam bastante a sua localização.</para>
+
+<para
+>Se você não gostar dos links sublinhados, poderá deixar este recurso <guilabel
+>Desabilitado</guilabel
+>, de modo que nenhum link fique sublinhado. Ou você poderá optar por um meio termo com a opção <guilabel
+>Somente ao pairar</guilabel
+>, de modo a que os links são sublinhados quando o cursor do mouse passa por cima deles e não são sublinhados no resto do tempo.</para>
+
+<note
+><para
+>As definições CSS da página Web podem sobrepor este valor.</para
+></note>
+
+<para
+><guilabel
+>Rolagem suave</guilabel
+> determina se o &konqueror; deve usar passos suaves para rolar páginas &HTML;, ou usar incrementos inteiros: <itemizedlist>
+<listitem
+><para
+><guilabel
+>Sempre</guilabel
+>: Sempre usa passos suaves durante a rolagem.</para
+></listitem>
+<listitem
+><para
+><guilabel
+>Nunca</guilabel
+>: Nunca usa rolagem suave, devendo rolar em incrementos inteiros.</para
+></listitem>
+<listitem
+><para
+><guilabel
+>Quando for eficiente</guilabel
+>: Somente usa a rolagem suave em páginas onde isto pode ser conseguido com um uso moderado dos recursos do sistema.</para
+></listitem>
+</itemizedlist>
+</para>
+
+</sect2>
+
+<sect2 id="fonts"
+> <!-- modified copy from khtml/index.docbook <sect2 id="kbrowse-appearance"-->
+<title
+>Fontes</title>
+<para
+>Neste aba você pode selecionar várias opções relacionadas ao uso de fontes. Embora as formas e tamanhos de fontes frequentemente fazem parte do projeto de uma página Web, você pode selecionar algumas configurações padrão para o uso com o &konqueror;.</para>
+
+<para
+>A primeira configuração possível é o tamanho da fonte. Existe duas opções que trabalham juntas para permitir a você uma navegação mais confortável.</para>
+
+<para
+>Inicialmente, você poderá definir um <guilabel
+>Tamanho de fonte mínimo</guilabel
+>. Isto significa que mesmo que o tamanho de fonte esteja especificado na página que você está visualizando, o &konqueror; irá ignorar a instrução e nunca mostrará texto menor do que o que for indicado aqui.</para>
+
+<para
+>Em seguida, você poderá definir um <guilabel
+>Tamanho de fonte médio</guilabel
+>. Ele não é só o tamanho padrão do texto, usado quando a página não indica o tamanho, mas também é o tamanho base que os tamanhos de fonte relativos usam como referência. Isto é, a instrução de &HTML; <quote
+>smaller</quote
+> corresponde a um tamanho menor do que o indicado nesta opção.</para>
+
+<para
+>Para qualquer uma das opções, você pode selecionar o tamanho exato da fonte, em pontos, usando o controle para aumentar ou diminuir (ou simplesmente digitando) o tamanho exato para a opção relacionada.</para>
+
+<para
+>Estas opções são independentes umas das outras. As páginas que não definam um tamanho de fonte, ou que peçam o valor padrão, serão mostradas com o tamanho definido em <guilabel
+>Tamanho de fonte médio</guilabel
+>, enquanto as páginas que precisem de um tamanho menor que o seu <guilabel
+>Tamanho de fonte mínimo</guilabel
+> serão, nesse caso, mostradas com esse tamanho. Uma opção não afeta a outra.</para>
+
+<para
+>As opções restantes são para as fontes a serem associadas com os diferentes tipos de marcação usadas em páginas &HTML;. Observe que muitas páginas Web podem sobrepor estas configurações. Para qualquer tipo de fonte (padrão, fixa, com serifa, &etc;), você pode selecionar uma fonte diferente se você desejar.</para>
+
+<para
+>Abaixo destas opções, você pode configurar o <guilabel
+>Ajuste do tamanho da fonte para esta codificação</guilabel
+>. Algumas vezes, as fontes que você deseja usar para uma codificação ou idioma em particular são muito maiores ou menores do que a média e, portanto, você pode usar esta configuração para trazê-las novamente ao normal.</para>
+
+<para
+>Você poderá indicar uma codificação padrão que o &konqueror; deverá assumir nas páginas ao renderizá-las. A opção padrão é a <guilabel
+>Usar codificação do idioma</guilabel
+>, mas você poderá alterá-la para qualquer codificação disponível na lista.</para>
+
+</sect2>
+
+<sect2 id="stylesheets">
+
+<title
+>Folhas de estilo</title>
+
+<sect3>
+<title
+>Introdução</title>
+
+<para
+>Folhas de estilo <acronym
+>CSS</acronym
+> afetam o modo como as páginas Web aparecem. O <acronym
+>CSS</acronym
+> é o acrônimo para <emphasis
+>C</emphasis
+>ascading <emphasis
+>S</emphasis
+>tyle <emphasis
+>S</emphasis
+>heets (Folhas de Estilo em Cascata).</para>
+
+<para
+>O &kde; pode usar sua própria folha de estilo, baseado em padrões simples e no esquema de cor que você está usando em seu ambiente de trabalho. O &kde; também pode usar uma folha de estilo que você mesmo escreveu: basta você especificar uma folha de estilo neste módulo. As opções apresentadas estão sintonizadas com outro módulo, especialmente para pessoas com visão reduzida.</para>
+
+<para
+>Suas escolhas feitas aqui afetam todo aplicativo do &kde; que renderiza páginas em HTML com o renderizador do &kde; que é chamado khtml. Entre estes aplicativos incluem-se o &kmail;, o &khelpcenter; e, é claro, o &konqueror;. As escolhas aqui não afetam outros navegadores, tais como o &Netscape;.</para>
+
+</sect3>
+
+<sect3 id="css-general">
+<title
+>Folhas de estilo</title>
+
+<para
+>Esta seção contém as seguintes opções:</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Usar a folha de estilo padrão</guilabel
+></term>
+<listitem>
+<para
+>O &kde; usará a folha de estilo padrão. Algumas das cores irão ser padronizadas para aquelas definidas no seu esquema de cor escolhido. A maioria das configurações são facilmente sobrescritas pela página que você está visualizando.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Usar uma folha de estilo definida pelo usuário</guilabel
+></term>
+<listitem>
+<para
+>O &kde; usará uma folha de estilo que você escreveu. Você pode usar o botão de navegação para localizar o arquivo em seu sistema. Os arquivos <acronym
+>CSS</acronym
+> geralmente têm extensão <literal role="extension"
+>.css</literal
+>, mas isso não é obrigatório.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Usar a folha de estilo de acessibilidade</guilabel
+></term>
+<listitem>
+<para
+>Usa as configurações definidas na janela <guilabel
+>Personalizar</guilabel
+>. Habilitar esta opção irá permitir que o botão <guibutton
+>Personalizar</guibutton
+> abra a janela para definir as configurações de folha de estilo.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect3>
+
+<sect3 id="css-customize">
+<title
+>Personalizar</title>
+
+<para
+>Nesta janela você pode configurar uma folha de estilo do usuário. As opções disponíveis estão somente em um subconjunto das instruções que você pode adicionar em uma folha de estilo. Elas são feitas para pessoas com problemas de visão para permitir que usuários possam criar folhas de estilo que tornam as páginas Web e os arquivos de ajuda do &kde; mais fáceis de ler.</para>
+
+<para
+>As opções desta página estão desabilitadas, a menos que você escolha a opção <guilabel
+>Usar a folha de estilo de acessibilidade</guilabel
+>.</para>
+
+<sect4>
+<title
+><guilabel
+>Família da fonte</guilabel
+></title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Família de base</guilabel
+></term>
+<listitem>
+<para
+>Escolha uma família de fonte a ser usada para o corpo do texto.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Usar a mesma família para todo o texto</guilabel
+></term>
+<listitem>
+<para
+>Se você habilitar isto, então a mesma família de fonte será usada para todos os textos, apesar das configurações da página que você está visualizando. Isto é útil para páginas que usam fontes decorativas ou difíceis de ler.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect4>
+
+<sect4>
+<title
+>Tamanho da fonte</title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Tamanho de fonte da base</guilabel
+></term>
+<listitem>
+<para
+>Este é o tamanho padrão para o texto na página. Muitos sites configuram o tamanho de suas fontes baseados neste padrão, usando <quote
+>maior</quote
+> ou <quote
+>+1</quote
+> para tornar o texto maior e <quote
+>menor</quote
+> ou <quote
+>-1</quote
+> para tornar o texto menor.</para>
+<para
+>Muitas pessoas projetam suas páginas Web em plataformas onde o tamanho padrão do texto é muito grande para leitura do usuário médio. Assim, é muito comum aparecerem páginas que "forçam" fontes menores.</para>
+<para
+>Esta opção permitirá configurar a fonte padrão para um bom tamanho, pois os tamanhos relativos são também aumentados o bastante para que sejam confortáveis de se ler.</para>
+<para
+>Não esqueça que você também pode obrigar o &konqueror; a minimizar o tamanho, pois o texto <emphasis
+>nunca</emphasis
+> é muito pequeno para se ler. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Usar o mesmo tamanho para todos os elementos</guilabel
+></term>
+<listitem>
+<para
+>Se você habilitar esta opção, então todo o texto será modificado para o tamanho de fonte especificado, independente das instruções que a página contém. O tamanho relativo de fonte, como discutido anteriormente, deve ser renderizado para um certo tamanho, que será sobrescrito aqui.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect4>
+
+<sect4>
+<title
+>Imagens</title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Suprimir as imagens</guilabel
+></term>
+<listitem>
+<para
+>Se você não deseja visualizar imagens, pode configurar isto aqui.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Suprimir as imagens de fundo</guilabel
+></term>
+<listitem>
+<para
+>Um dos maiores problemas para usuários com deficiência visual é que as imagens de fundo não fornecem um contraste suficiente, que permita ler o texto. Você pode desabilitar imagens de fundo aqui, independente da sua escolha anterior de visualizar todas as imagens.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect4>
+
+<sect4>
+<title
+>Cores</title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Preto sobre branco</guilabel
+></term>
+<listitem>
+<para
+>Muitas pessoas com problemas de visão acham que o texto preto sobre a tela branca fornece mais contraste e é mais fácil de se ler. Se isto se aplica a você, ajuste esta opção aqui.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Branco sobre preto</guilabel
+></term>
+<listitem>
+<para
+>Muitas outras pessoas com visão reduzida acham o oposto verdadeiro: que o texto branco sobre a tela preta é mais fácil de se ler.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Personalizado</guilabel
+></term>
+<listitem>
+<para
+>Outras pessoas ainda acham que o preto e o branco puros, por outro lado, tornam o texto difícil de se ler. Você pode configurar cores personalizadas tanto para o <guilabel
+>Plano de fundo</guilabel
+> como para a <guilabel
+>Cor do texto</guilabel
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Usar a mesma cor para todo o texto</guilabel
+></term>
+<listitem>
+<para
+>Muitos sites usam uma diferente (frequentemente contrastante) cor para cabeçalhos ou outros detalhes. Se isto interfere em sua capacidade de ler o conteúdo, você pode habilitar isto nesta caixa de verificação para que o &kde; use as cores que você ajustou anteriormente para todo o texto.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect4>
+
+<sect4>
+<title
+>Visualização</title>
+
+<para
+>A seção <guilabel
+>Visualização</guilabel
+> permite-lhe verificar o efeito de suas mudanças. Vários tipos de cabeçalho são mostrados com sua folha de estilo, bem como uma frase no corpo do texto padrão.</para>
+
+<para
+>Isto deve permitir a você fazer um ajuste fino de sua folha de estilo, até que você possa ler de maneira confortável.</para>
+
+<para
+>Boa navegação!</para>
+
+</sect4>
+
+</sect3>
+
+</sect2>
+
+</sect1>
+
+</article>

@@ -1,0 +1,99 @@
+# translation of autorefresh.po to Hindi
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Ravishankar Shrivastava <raviratlami@yahoo.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: autorefresh\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2008-03-27 10:56+0530\n"
+"Last-Translator: Ravishankar Shrivastava <raviratlami@yahoo.com>\n"
+"Language-Team: Hindi <indlinux-hindi@lists.sourceforge.net>\n"
+"Language: hne\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: autorefresh.cpp:28
+#, kde-format
+msgid "&Auto Refresh"
+msgstr "अपने अपन ताजा करव (&A)"
+
+#: autorefresh.cpp:32
+#, kde-format
+msgid "None"
+msgstr "कुछ नइ"
+
+#: autorefresh.cpp:33
+#, kde-format
+msgid "Every 15 Seconds"
+msgstr "हर 15 सेकन्ड"
+
+#: autorefresh.cpp:34
+#, kde-format
+msgid "Every 30 Seconds"
+msgstr "हर 30 सेकन्ड"
+
+#: autorefresh.cpp:35
+#, kde-format
+msgid "Every Minute"
+msgstr "हर मिनट"
+
+#: autorefresh.cpp:36
+#, kde-format
+msgid "Every 5 Minutes"
+msgstr "हर 5  मिनट"
+
+#: autorefresh.cpp:37
+#, kde-format
+msgid "Every 10 Minutes"
+msgstr "हर 10  मिनट"
+
+#: autorefresh.cpp:38
+#, kde-format
+msgid "Every 15 Minutes"
+msgstr "हर 15 मिनट"
+
+#: autorefresh.cpp:39
+#, kde-format
+msgid "Every 30 Minutes"
+msgstr "हर 30  मिनट"
+
+#: autorefresh.cpp:40
+#, kde-format
+msgid "Every 60 Minutes"
+msgstr "हर 60 मिनट"
+
+#: autorefresh.cpp:41
+#, fuzzy, kde-format
+#| msgid "Every 5 Minutes"
+msgid "Every 2 Hours"
+msgstr "हर 5  मिनट"
+
+#: autorefresh.cpp:42
+#, fuzzy, kde-format
+#| msgid "Every 60 Minutes"
+msgid "Every 6 Hours"
+msgstr "हर 60 मिनट"
+
+#: autorefresh.cpp:100
+#, fuzzy, kde-format
+#| msgid "Cannot Refresh Source"
+msgctxt "@title:window"
+msgid "Cannot Refresh Source"
+msgstr "स्रोत ताजा नइ कर सके"
+
+#: autorefresh.cpp:101
+#, kde-format
+msgid "<qt>This plugin cannot auto-refresh the current part.</qt>"
+msgstr "<qt>ये प्लगइन अभी हाल के पार्ट ल अपने अपन ताजा नइ कर सके.</qt>"
+
+#. i18n: ectx: Menu (tools)
+#: autorefresh.rc:5
+#, kde-format
+msgid "&Tools"
+msgstr "औजार (&T)"

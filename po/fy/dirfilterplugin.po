@@ -1,0 +1,104 @@
+# translation of dirfilterplugin.po to Frysk
+# translation of dirfilterplugin.po to
+# Nederlandse vertaling van dirfilterplugin
+# Copyright (C) 22001-002 KDE e.v..
+# KDE-vertaalgroep Nederlands <www.kde.nl>
+# Proefgelezen 20-01-2002 Douwe van der Schaaf <dvdsch@bigfoot.com>
+#
+# Rinse de Vries <Rinse@kde.nl>, 2001-2002,2003.
+# Rinse de Vries <rinse@kde.nl>, 2003.
+# Rinse de Vries <rinsedevries@kde.nl>, 2005, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: dirfilterplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2008-07-02 13:55+0100\n"
+"Last-Translator: Berend Ytsma <berendy@gmail.com>\n"
+"Language-Team: Frysk <kde-i18n-fry@kde.org>\n"
+"Language: fy\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: dirfilterplugin.cpp:120
+#, fuzzy, kde-format
+#| msgid "View F&ilter"
+msgctxt "@info:tooltip"
+msgid "Hide Filter Bar"
+msgstr "Werjeftef&ilter"
+
+#: dirfilterplugin.cpp:124
+#, fuzzy, kde-format
+#| msgid "View F&ilter"
+msgctxt "@label:textbox"
+msgid "F&ilter:"
+msgstr "Werjeftef&ilter"
+
+#: dirfilterplugin.cpp:136
+#, kde-format
+msgctxt "@label:button"
+msgid "Filter by t&ype"
+msgstr ""
+
+#: dirfilterplugin.cpp:137
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Filter items by file type."
+msgstr ""
+
+#: dirfilterplugin.cpp:228
+#, fuzzy, kde-format
+#| msgid "Filter Toolbar"
+msgctxt "@action:inmenu Tools"
+msgid "Show Filter Bar"
+msgstr "Filterbalke"
+
+#: dirfilterplugin.cpp:322
+#, kde-format
+msgid "Use Multiple Filters"
+msgstr "Meardere filters brûke"
+
+#: dirfilterplugin.cpp:328
+#, kde-format
+msgid "Show Count"
+msgstr "Telling sjen litte"
+
+#: dirfilterplugin.cpp:333
+#, kde-format
+msgid "Reset"
+msgstr "Weromsette"
+
+#. i18n: ectx: Menu (tools)
+#: dirfilterplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "H&elpmiddels"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: dirfilterplugin.rc:8
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "Ekstra arkbalke"
+
+#~ msgid "Allow to filter the currently displayed items by filetype."
+#~ msgstr "Tastean om de items dy no te sjen binne op triemtype te filterjen."
+
+#~ msgid "Only Show Items of Type"
+#~ msgstr "Allinnich items sjen litte fan dit type"
+
+#~ msgid "Filter Field"
+#~ msgstr "Filterfjild"
+
+#~ msgid "Clear Filter Field"
+#~ msgstr "Filterfjild wiskje"
+
+#~ msgid "Clear filter field<p>Clears the content of the filter field.</p>"
+#~ msgstr "Filterfjild wiskje<p>Wisket de ynhâld fan it filterfjild.</p>"
+
+#~ msgid ""
+#~ "Enter here a text which an item in the view must contain anywhere to be "
+#~ "shown."
+#~ msgstr "Fier hjir in term yn mei de namme fan in item om sjen te litten."

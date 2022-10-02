@@ -1,0 +1,70 @@
+# translation of akregator_konqplugin.po to icelandic
+#
+# Arnar Leosson <leosson@frisurf.no>, 2005.
+# Sveinn í Felli <sveinki@nett.is>, 2009, 2010, 2011.
+# Sveinn í Felli <sv1@fellsnet.is>, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: akregator_konqplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2015-03-16 09:42+0000\n"
+"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
+"Language-Team: icelandic <translation-team-is@lists.sourceforge.net>\n"
+"Language: is\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
+"\n"
+"\n"
+"\n"
+
+#: akregatorplugin.cpp:63
+#, fuzzy, kde-format
+#| msgid "Add Feed to Akregator"
+msgctxt "@action:inmenu"
+msgid "Add Feed to Akregator"
+msgstr "Bæta straum við Akregator"
+
+#: konqfeedicon.cpp:127
+#, kde-format
+msgid "Add Feed to Akregator"
+msgstr "Bæta straum við Akregator"
+
+#: konqfeedicon.cpp:129
+#, kde-format
+msgid "Add Feeds to Akregator"
+msgstr "Bæta straumum við Akregator"
+
+#: konqfeedicon.cpp:138
+#, kde-format
+msgid "Add All Found Feeds to Akregator"
+msgstr "Bæta öllum fundnum straumum við Akregator"
+
+#: konqfeedicon.cpp:162
+#, kde-format
+msgid "Subscribe to site updates (using news feed)"
+msgstr "Fylgjast með þessari síðu (notast við fréttastrauma)"
+
+#: pluginutil.cpp:36 pluginutil.cpp:46
+#, kde-format
+msgid "Imported Feeds"
+msgstr "Innfluttir straumar"
+
+#: pluginutil.cpp:38
+#, kde-format
+msgid "Unable to contact Akregator via D-Bus"
+msgstr ""
+
+#: pluginutil.cpp:39
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "The DBus call addFeedToGroup failed"
+msgctxt "@title:window"
+msgid "D-Bus call failed"
+msgstr "DBus kallið addFeedToGroup mistókst"
+
+#~ msgid "Akregator feed icon - DBus Call failed"
+#~ msgstr "Táknmynd fyrir Akregator fréttastraum - DBus kall misfórst"

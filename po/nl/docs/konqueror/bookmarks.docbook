@@ -1,0 +1,213 @@
+<chapter id="bookmarks">
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+&Niels.Reedijk;&Bram.Schoenmakers;&Rinse.Devries; 
+</authorgroup>
+
+<date
+>2010-09-24</date>
+<releaseinfo
+>&kde; 4.5</releaseinfo>
+</chapterinfo>
+
+<title
+>Bladwijzers gebruiken</title>
+
+<para
+>Hoewel u de bladwijzers kunt gebruiken om de locaties van uw bestanden en mappen vast te leggen, komen ze het meest van pas bij het surfen op internet, zodat u een lijst van nuttige webpagina's kunt maken.</para>
+
+<para
+>Om het menu <guimenu
+>Bladwijzers</guimenu
+> te openen klikt u met de <mousebutton
+>linker</mousebutton
+>-muisknop op het menu <guimenu
+>Bladwijzers</guimenu
+>. Wanneer het bladwijzermenu open is kunt u hier doorheen bladeren met de pijltoetsen of de muis. Om de gekozen bladwijzer te openen drukt u op &Enter; of klikt u <mousebutton
+>links</mousebutton
+> op de geselecteerde locatie.</para>
+
+<para
+>Om een nieuw item toe te voegen aan de lijst gaat u naar <menuchoice
+><guimenu
+>Bladwijzers</guimenu
+><guimenuitem
+>Bladwijzer toevoegen</guimenuitem
+></menuchoice
+>. U kunt ook <keycombo action="simul"
+>&Ctrl;<keycap
+>B</keycap
+></keycombo
+> indrukken of met de <mousebutton
+>rechter</mousebutton
+>muisknop op een leeg gedeelte van de webpagina klikken en dan vervolgens <guimenuitem
+>Bladwijzer voor deze pagina</guimenuitem
+> / <guimenuitem
+>Bladwijzer voor deze locatie</guimenuitem
+>kiezen uit het afrolmenu.</para>
+
+<para
+>Het menu <guimenu
+>Bladwijzers</guimenu
+> kan submappen hebben met meer bladwijzers. U maakt een nieuwe submap aan met behulp van <menuchoice
+><guimenu
+>Bladwijzers </guimenu
+><guimenuitem
+>Nieuwe bladwijzermap...</guimenuitem
+></menuchoice
+>. Om een bladwijzer in een submap te plaatsen in plaats van de hoofdmap bladert u eerst naar die map en drukt u dan op <guimenu
+>Bladwijzer toevoegen</guimenu
+>.</para>
+
+<para
+>U kunt de bladwijzers ook terugvinden in het <link linkend="sidebar"
+> <guilabel
+>Zijbalk</guilabel
+></link
+> of in de <guilabel
+>Bladwijzerwerkbalk</guilabel
+>.</para>
+
+<para
+>Als u <userinput
+>bookmarks:/</userinput
+> in de locatiebalk invoert, dan wordt de homepagina van de bladwijzers met een overzicht van alle bladwijzers en mappen getoond.</para
+> 
+
+<sect1 id="orgbmark">
+<title
+>De Bladwijzerbewerker</title>
+
+<para
+>Het menu-item <menuchoice
+><guimenu
+>Bladwijzers</guimenu
+><guimenuitem
+>Bladwijzers bewerken</guimenuitem
+> </menuchoice
+> opent de <guilabel
+>Bladwijzerbewerker</guilabel
+>.</para>
+<para
+>Dit toont een boomstructuur van al uw bladwijzers en submappen hiervan. Zoals gebruikelijk in &kde; worden submappen weergegeven met een klein <keycap
+>&gt;</keycap
+> pijltje links van de mapnaam. Wanneer u er <mousebutton
+>links</mousebutton
+> op klikt zal de map uitklappen, de inhoud zichtbaar worden en het <keycap
+>&gt;</keycap
+> pijltje zal veranderen in een <keycap
+>v</keycap
+>; <mousebutton
+>links</mousebutton
+> klikken op de <keycap
+>v</keycap
+> laat de submap weer inklappen.</para>
+
+<para
+>Om een item uit de lijst te selecteren kunt u daar met de <mousebutton
+>linker</mousebutton
+>muisknop op klikken, of u navigeert door de lijst met <keysym
+>Pijl naar boven</keysym
+> en <keysym
+>Pijl naar beneden</keysym
+>. Om menu's uit te klappen gebruikt u <keysym
+>Pijl naar rechts</keysym
+> en om ze weer in te klappen gebruikt u <keysym
+>Pijl naar links</keysym
+>.</para>
+
+<para
+>U kunt een item verplaatsen door te slepen of met <guimenuitem
+>Knippen</guimenuitem
+> en <guimenuitem
+>Plakken</guimenuitem
+>. De volgorde van de bladwijzers in de <guilabel
+>Bladwijzerbewerker</guilabel
+> is hetzelfde als in het menu <guimenu
+>Bladwijzers</guimenu
+>. De optie <menuchoice
+><guimenu
+>Map</guimenu
+><guimenuitem
+>Scheidingslijn invoegen</guimenuitem
+></menuchoice
+> kan gebruikt worden om een scheidingslijn in te voegen in de lijst.</para>
+
+<para
+>U kunt een nieuwe submap aanmaken door naar <guimenuitem
+>Nieuwe map...</guimenuitem
+> te gaan, zowel in het menu <guimenu
+>Map</guimenu
+> als in het context-menu van een item, of met de sneltoets <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </para>
+
+<para
+>Om de naam van een bladwijzer of map te wijzigen drukt u op <keycap
+>F2</keycap
+> of kiest u <guimenuitem
+>Hernoemen</guimenuitem
+> in zowel het menu <guimenu
+>Bewerken</guimenu
+> als in het context-menu van dat item. U kunt het &URL; aanpassen door op <keycap
+>F3</keycap
+> te drukken of met het menu-item <guimenuitem
+>Locatie wijzigen</guimenuitem
+>.</para>
+
+<para
+>Met de <guilabel
+>Bladwijzerbewerker</guilabel
+> kunt u bladwijzers van andere browsers importeren in &konqueror;. Deze worden in een nieuwe map geplaatst of kunnen alle huidige bladwijzers vervangen. Dit kunt u doen door <guisubmenu
+>Importeren</guisubmenu
+> te kiezen in het menu <guimenu
+>Bestand</guimenu
+>. De optie <menuchoice
+><guimenu
+>Bestand</guimenu
+><guisubmenu
+>Exporteren</guisubmenu
+></menuchoice
+> kan gebruikt worden om &konqueror;s bladwijzers te exporteren naar &Netscape; of naar Mozilla.</para>
+
+<para
+>Om de submap te kiezen die de inhoud bevat voor de bladwijzerwerkbalk, selecteert u die submap en kiest dan <guimenuitem
+>Als werkbalkmap instellen</guimenuitem
+> uit het menu <guimenu
+>Map</guimenu
+>.</para>
+
+<para
+>Wanneer u bij het opruimen van de bladwijzers afvraagt wat die ene website ook al weer was, kunt u het gemakkelijk openen door er met de <mousebutton
+>rechter</mousebutton
+>muisknop op te klikken en vervolgens het menu-item <guimenuitem
+>Openen in Konqueror</guimenuitem
+> te kiezen. Als u enkel na wilt gaan of het &URL; nog klopt selecteer dan <guimenuitem
+>Status controleren</guimenuitem
+>.</para>
+
+<note
+><para
+>Al uw wijzigingen worden automatisch opgeslagen als u de <guilabel
+>Bladwijzerbewerker</guilabel
+> sluit. </para
+></note>
+</sect1
+> 
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

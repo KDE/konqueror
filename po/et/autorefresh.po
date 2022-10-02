@@ -1,0 +1,96 @@
+# translation of autorefresh.po to Estonian
+# Copyright (C) 2003 Free Software Foundation, Inc.
+#
+# Marek Laane <bald@starman.ee>, 2003,2007-2008.
+# Marek Laane <bald@smail.ee>, 2010, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: autorefresh\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2011-06-22 23:33+0300\n"
+"Last-Translator: Marek Laane <bald@smail.ee>\n"
+"Language-Team: Estonian <kde-et@linux.ee>\n"
+"Language: et\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: autorefresh.cpp:28
+#, kde-format
+msgid "&Auto Refresh"
+msgstr "&Automaatuuendus"
+
+#: autorefresh.cpp:32
+#, kde-format
+msgid "None"
+msgstr "Puudub"
+
+#: autorefresh.cpp:33
+#, kde-format
+msgid "Every 15 Seconds"
+msgstr "15 sekundi järel"
+
+#: autorefresh.cpp:34
+#, kde-format
+msgid "Every 30 Seconds"
+msgstr "30 sekundi järel"
+
+#: autorefresh.cpp:35
+#, kde-format
+msgid "Every Minute"
+msgstr "Iga minut"
+
+#: autorefresh.cpp:36
+#, kde-format
+msgid "Every 5 Minutes"
+msgstr "5 minuti järel"
+
+#: autorefresh.cpp:37
+#, kde-format
+msgid "Every 10 Minutes"
+msgstr "10 minuti järel"
+
+#: autorefresh.cpp:38
+#, kde-format
+msgid "Every 15 Minutes"
+msgstr "15 minuti järel"
+
+#: autorefresh.cpp:39
+#, kde-format
+msgid "Every 30 Minutes"
+msgstr "30 minuti järel"
+
+#: autorefresh.cpp:40
+#, kde-format
+msgid "Every 60 Minutes"
+msgstr "60 minuti järel"
+
+#: autorefresh.cpp:41
+#, kde-format
+msgid "Every 2 Hours"
+msgstr "2 tunni järel"
+
+#: autorefresh.cpp:42
+#, kde-format
+msgid "Every 6 Hours"
+msgstr "6 tunni järel"
+
+#: autorefresh.cpp:100
+#, kde-format
+msgctxt "@title:window"
+msgid "Cannot Refresh Source"
+msgstr "Uuendamine nurjus"
+
+#: autorefresh.cpp:101
+#, kde-format
+msgid "<qt>This plugin cannot auto-refresh the current part.</qt>"
+msgstr "<qt>Vabandust, seda osa ei suuda plugin automaatselt uuendada.</qt>"
+
+#. i18n: ectx: Menu (tools)
+#: autorefresh.rc:5
+#, kde-format
+msgid "&Tools"
+msgstr "&Tööriistad"

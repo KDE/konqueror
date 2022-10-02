@@ -1,0 +1,782 @@
+# Uyghur translation for kcmkio.
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Sahran <sahran.ug@gmail.com>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkio\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2013-09-08 07:04+0900\n"
+"Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
+"Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
+"Language: ug\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: bookmarks.cpp:92
+#, kde-format
+msgid ""
+"<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
+"page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
+"\">bookmarks:/</a>.</p>"
+msgstr ""
+"<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
+"page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
+"\">bookmarks:/</a>.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: bookmarks.ui:16
+#, kde-format
+msgid "Bookmarks"
+msgstr "خەتكۈشلەر"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowRoot)
+#: bookmarks.ui:23
+#, kde-format
+msgid ""
+"If this option is unchecked, bookmarks at the root of the hierarchy (not in "
+"a folder) are not displayed.\n"
+"If checked, they are gathered in a \"root\" folder."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowRoot)
+#: bookmarks.ui:26
+#, kde-format
+msgid "&Show bookmarks without folder"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbFlattenTree)
+#: bookmarks.ui:37
+#, kde-format
+msgid ""
+"Sub-folders are shown within their parent by default. If you activate this "
+"option, sub-folders are displayed on their own.\n"
+"It looks less nice but it may help if you have a very big folder you want to "
+"spread in two columns."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbFlattenTree)
+#: bookmarks.ui:40
+#, kde-format
+msgid "&Flatten bookmarks tree"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowPlaces)
+#: bookmarks.ui:47
+#, kde-format
+msgid ""
+"Show a box with KDE places (Home, Network, ...). Useful if you use konqueror "
+"as a file manager."
+msgstr ""
+"ك د ئې(KDE) ئورۇنلىرى(ماكان، تور،…)لار بار كۆزنەكنى كۆرسىتىدۇ. konqueror نى "
+"ھۆججەت باشقۇرغۇ قىلى ئىشلەتكەن چاغدا، بۇ بەكمۇ قۇلايلىق."
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowPlaces)
+#: bookmarks.ui:50
+#, kde-format
+msgid "Show system &places"
+msgstr "سىستېما ئورۇنلىرىنى كۆرسەت(&P)"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: bookmarks.ui:63
+#, kde-format
+msgid "General Settings"
+msgstr "ئادەتتىكى تەڭشەك"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, label)
+#: bookmarks.ui:71
+#, kde-format
+msgid ""
+"Folders are automatically distributed in several columns. The optimal number "
+"of columns depends on the width of the konqueror window and the number of "
+"bookmarks you have."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: bookmarks.ui:74
+#, kde-format
+msgid "Number of columns to show:"
+msgstr "كۆرسىتىدىغان ئىستون سانى:"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowBackgrounds)
+#: bookmarks.ui:109
+#, kde-format
+msgid "Disable it on slow system to disable background images."
+msgstr ""
+"سۈرئىتى ئاستا سىستېمىلاردا تەگلىك سۈرىتىنى ئىناۋەتسىز قىلىش ئارقىلىق بۇنى "
+"ئىناۋەتسىز قىلىدۇ."
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowBackgrounds)
+#: bookmarks.ui:112
+#, kde-format
+msgid "Show folder &backgrounds"
+msgstr "قىسقۇچ تەگلىكىنى كۆرسەت(&B)"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, groupBox_3)
+#: bookmarks.ui:138
+#, kde-format
+msgid "How much disk space is used to cache the pixmaps"
+msgstr "pixmap نى غەملەش ئۈچۈن قانچىلىك دىسكا بوشلۇقى كېرەك بولىدۇ"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: bookmarks.ui:141
+#, kde-format
+msgid "Pixmap Cache"
+msgstr "Pixmap غەملىكى"
+
+#. i18n: ectx: property (text), widget (QLabel, lbMaxCacheSize)
+#: bookmarks.ui:150
+#, kde-format
+msgid "Disk cache size:"
+msgstr "دىسكا غەملىكىنىڭ چوڭلۇقى:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, sbCacheSize)
+#: bookmarks.ui:163
+#, kde-format
+msgid " kB"
+msgstr " كىلوبايت"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, clearCacheButton)
+#: bookmarks.ui:173
+#, kde-format
+msgid "Clear the pixmap cache"
+msgstr "Pixmap غەملىكىنى تازىلايدۇ"
+
+#. i18n: ectx: property (text), widget (QPushButton, clearCacheButton)
+#: bookmarks.ui:176
+#, kde-format
+msgid "&Clear Cache"
+msgstr "غەملەك تازىلا(&C)"
+
+#~ msgid "&Use cache"
+#~ msgstr "غەملەك ئىشلەت(&U)"
+
+#~ msgid "Policy"
+#~ msgstr "تۈزۈم"
+
+#~ msgid ""
+#~ "Verify whether the cached web page is valid before attempting to fetch "
+#~ "the web page again."
+#~ msgstr ""
+#~ "غەملەنگەن تور بېتى، ئۇنى قايتا ئوقۇشتىن بۇرۇن ئىناۋەتلىكمۇ ئەمەسمۇ "
+#~ "جەزملەڭ."
+
+#~ msgid "&Keep cache in sync"
+#~ msgstr "غەملەك قەدەمداشلانسۇن(&K)"
+
+#~ msgid ""
+#~ "Always use documents from the cache when available. You can still use the "
+#~ "reload button to synchronize the cache with the remote host."
+#~ msgstr ""
+#~ "ھەمىشە غەملەنگەن پۈتۈكلەرنى ئىشلىتىدۇ(بار بولسا). قايتا ئوقۇش توپچىسىنى "
+#~ "بېسىش ئارقىلىق مۇلازىمېتىر بىلەن قەدەمداشلىغىلى بولىدۇ."
+
+#~ msgid "Use cache whenever &possible"
+#~ msgstr "مۇمكىن بولسىلا غەملەك ئىشلەت(&P)"
+
+#~ msgid ""
+#~ "Do not fetch web pages that are not already stored in the cache. Offline "
+#~ "mode prevents you from viewing pages that you have not previously visited."
+#~ msgstr ""
+#~ "بۇرۇن غەملەنمىگەن بەتلەرنى ئوقۇمايدۇ. بۇ ئارقىلىق تورسىز ھالەتتە سىز "
+#~ "بۇرۇن كۆرۈپ باقمىغان بەتلەرنى كۆرۈشىڭىزدىن ساقلانغىلى بولىدۇ."
+
+#~ msgid "O&ffline browsing mode"
+#~ msgstr "تورسىز كۆرۈش ھالىتى(&F)"
+
+#~ msgid "Disk cache &size:"
+#~ msgstr "دىسكا غەملىكىنىڭ چوڭلۇقى(&S)"
+
+#~ msgid " KiB"
+#~ msgstr " كىلوبايت"
+
+#~ msgid "C&lear Cache"
+#~ msgstr "غەملەكنى تازىلا(&L)"
+
+#~ msgid ""
+#~ "Unable to start the cookie handler service.\n"
+#~ "You will not be able to manage the cookies that are stored on your "
+#~ "computer."
+#~ msgstr ""
+#~ "cookie باشقۇرۇش مۇلازىمىتىنى باشلىغىلى بولمىدى.\n"
+#~ "كومپيۇتېرىڭىزغا ساقلانغان cookie لارنى باشقۇرغىلى بولمايدۇ."
+
+#~ msgid "&Policy"
+#~ msgstr "تۈزۈم(&P)"
+
+#~ msgid "&Management"
+#~ msgstr "باشقۇرۇش(&M)"
+
+#~ msgid "D-Bus Communication Error"
+#~ msgstr "D-Bus ئالاقە خاتالىقى"
+
+#~ msgid "Unable to delete all the cookies as requested."
+#~ msgstr "تەلەپ قىلغان بارلىق cookies لارنى ئۆچۈرگىلى بولمىدى."
+
+#~ msgid "Unable to delete cookies as requested."
+#~ msgstr "تەلەپ قىلغان cookies لارنى ئۆچۈرگىلى بولمىدى."
+
+#~ msgid "<h1>Cookie Management Quick Help</h1>"
+#~ msgstr "<h1>Cookie باشقۇرۇش ھەققىدە ئاددىي ياردەم</h1>"
+
+#~ msgid "Information Lookup Failure"
+#~ msgstr "ئۇچۇر ئىزدەش مەغلۇپ بولدى"
+
+#~ msgid ""
+#~ "Unable to retrieve information about the cookies stored on your computer."
+#~ msgstr ""
+#~ "كومپيۇتېرىڭىزدا ساقلانغان cookies ھەققىدىكى ئۇچۇرلارنى ئىزدەپ تاپالمىدى."
+
+#~ msgid "End of session"
+#~ msgstr "ئەڭگىمە تامام"
+
+#~ msgid "Yes"
+#~ msgstr "ھەئە"
+
+#~ msgid "Search"
+#~ msgstr "ئىزدە"
+
+#~ msgid "Site"
+#~ msgstr "بېكەت"
+
+#~ msgid "Cookie Name"
+#~ msgstr "Cookie ئاتى"
+
+#~ msgid "D&elete"
+#~ msgstr "ئۆچۈر(&E)"
+
+#~ msgid "Delete A&ll"
+#~ msgstr "ھەممىنى ئۆچۈر(&L)"
+
+#~ msgid "&Reload List"
+#~ msgstr "تىزىمنى قايتا يۈكلە(&R)"
+
+#~ msgid "Details"
+#~ msgstr "تەپسىلاتلار"
+
+#~ msgid "Name:"
+#~ msgstr "ئاتى:"
+
+#~ msgid "Value:"
+#~ msgstr "قىممىتى:"
+
+#~ msgid "Domain:"
+#~ msgstr "دائىرە:"
+
+#~ msgid "Path:"
+#~ msgstr "يول:"
+
+#~ msgid "Expires:"
+#~ msgstr "ئىناۋەتلىك ۋاقتى:"
+
+#~ msgid "Secure:"
+#~ msgstr "بىخەتەر:"
+
+#~ msgctxt "@title:window"
+#~ msgid "Change Cookie Policy"
+#~ msgstr "cookies تۈزۈمىنى ئۆزگەرتىش"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Cookie Policy"
+#~ msgstr "يېڭى cookies تۈزۈمى"
+
+#~ msgid ""
+#~ "<qt>A policy already exists for<center><b>%1</b></center>Do you want to "
+#~ "replace it?</qt>"
+#~ msgstr "<qt><center><b>%1</b>نىڭ تۈزۈمى مەۋجۇت</center>قاپلامسىز؟</qt>"
+
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Policy"
+#~ msgstr "تۈزۈمنى كۆچۈرۈش"
+
+#~ msgid "Replace"
+#~ msgstr "ئالماشتۇر"
+
+#~ msgid ""
+#~ "Unable to communicate with the cookie handler service.\n"
+#~ "Any changes you made will not take effect until the service is restarted."
+#~ msgstr ""
+#~ "cookie باشقۇرۇش مۇلازىمىتى بىلەن ئالاقە قىلغىلى بولمىدى.\n"
+#~ "مۇلازىمەت قايتا باشلانمىغۇچە ئۆزگەرتىشلىرىڭىزنىڭ ئۈنۈمى بولمايدۇ."
+
+#~ msgid "Enable coo&kies"
+#~ msgstr "Cookies نى ئىناۋەتلىك قىل(&K)"
+
+#~ msgid "Only acce&pt cookies from originating server"
+#~ msgstr "پەقەت ئەسلى مۇلازىمېتىردىن كەلگەن cookie لارنىلا قوبۇل قىل(&P)"
+
+#~ msgid "Automaticall&y accept session cookies"
+#~ msgstr "ئەڭگىمە Cookies سىنى ئاپتوماتىك قوبۇل قىل(&Y)"
+
+#~ msgid "Default Policy"
+#~ msgstr "كۆڭۈلدىكى تۈزۈم"
+
+#~ msgid "Accep&t all cookies"
+#~ msgstr "بارلىق cookies نى قوبۇل قىل(&T)"
+
+#~ msgid "Re&ject all cookies"
+#~ msgstr "بارلىق cookies نى رەت قىل(&J)"
+
+#~ msgid "Site Policy"
+#~ msgstr "تورتۇرا تۈزۈمى"
+
+#~ msgid "Domain"
+#~ msgstr "دائىرە"
+
+#~ msgid "&New..."
+#~ msgstr "يېڭى(&N)…"
+
+#~ msgid "Chan&ge..."
+#~ msgstr "ئۆزگەرت(&G)…"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the host or domain to which this policy applies, e.g. <b>www.kde."
+#~ "org</b> or <b>.kde.org</b>.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "بۇ تۇزۇمنى ئىشلىتىدىغان كومپيۇتېر ياكى دائىرە ئاتىنى كىرگۈزۈڭ. مەسىلەن:"
+#~ "<b>www.kde.org</b> ياكى <b>.kde.org</b> .\n"
+#~ "</qt>"
+
+#~ msgid "Accept"
+#~ msgstr "قوشۇل"
+
+#~ msgid "Reject"
+#~ msgstr "رەت قىل"
+
+#~ msgid "Ask"
+#~ msgstr "سورا"
+
+#~ msgid "Disable Passive FTP"
+#~ msgstr "پاسسىپ FTP نى ئىناۋەتسىز قىلىش"
+
+#~ msgid "Connect to the Internet directly."
+#~ msgstr "ئىنتېرنېتقا بىۋاسىتە باغلىنىدۇ."
+
+#~ msgid "Enter the address for the proxy configuration script."
+#~ msgstr "ۋاكالەتچى سەپلەش پروگراممىسىنىڭ(script) ئادرېسىنى كىرگۈزۈڭ."
+
+#~ msgid "HTTP Proxy:"
+#~ msgstr "HTTP ۋاكالەتچى:"
+
+#~ msgid "FTP Proxy:"
+#~ msgstr "FTP ۋاكالەتچى:"
+
+#~ msgid "Exceptions:"
+#~ msgstr "مۇستەسنا:"
+
+#~ msgid "Show the &value of the environment variables"
+#~ msgstr "مۇھىت ئۆزگەرگۈچىلىرىنىڭ قىممىتىنى كۆرسەت(&V)"
+
+#~ msgid "Manually enter proxy server configuration information."
+#~ msgstr "ۋاكالەتچى مۇلازىمېتىر سەپلىمە ئۇچۇرلىرىنى قولدا كىرگۈزىدۇ."
+
+#~ msgid "Enter the address of the HTTP proxy server."
+#~ msgstr "HTTP ۋاكالەتچى مۇلازىمېتىرىنىڭ ئادرېسىنى كىرگۈزۈڭ."
+
+#~ msgid "Port:"
+#~ msgstr "ئېغىز:"
+
+#~ msgid "Enter the address of the HTTPS proxy server."
+#~ msgstr "HTTPS ۋاكالەتچى مۇلازىمېتىرىنىڭ ئادرېسىنى كىرگۈزۈڭ."
+
+#~ msgid "Enter the address of the FTP proxy server."
+#~ msgstr "FTP ۋاكالەتچى مۇلازىمېتىرىنىڭ ئادرېسىنى كىرگۈزۈڭ."
+
+#~ msgid ""
+#~ "You have to restart the running applications for these changes to take "
+#~ "effect."
+#~ msgstr ""
+#~ "بۇ ئۆزگىرىشلەرنىڭ ئۈنۈمىنى كۆرمەكچى بولسىڭىز ئىجرا بولۇۋاتقان پروگراممىنى "
+#~ "قايتا باشلىشىڭىز كېرەك."
+
+#~ msgctxt "@title:window"
+#~ msgid "Update Failed"
+#~ msgstr "يېڭىلاش مەغلۇپ بولدى"
+
+#~ msgid "You have to restart KDE for these changes to take effect."
+#~ msgstr ""
+#~ "بۇ ئۆزگىرىشلەرنىڭ كۈچكە ئىگە قىلماقچى بولسىڭىز KDE نى قايتا قوزغىتىشىڭىز "
+#~ "كېرەك."
+
+#~ msgid "Timeout Values"
+#~ msgstr "مۆھلەت قىممىتى"
+
+#~ msgid ""
+#~ "Here you can set timeout values. You might want to tweak them if your "
+#~ "connection is very slow. The maximum allowed value is 1 second."
+#~ msgid_plural ""
+#~ "Here you can set timeout values. You might want to tweak them if your "
+#~ "connection is very slow. The maximum allowed value is %1 seconds."
+#~ msgstr[0] ""
+#~ "بۇ يەردە مۆھلەت قىممىتىنى بەلگىلىيەلەيسىز. ئەگەر باغلىنىشنىڭ سۈرىتى بەك "
+#~ "ئاستا بولسا ئۇنى تۈزەتسىڭىز بولىدۇ. ئىجازەت بېرىلگەن ئەڭ چوڭ قىممىتى %1 "
+#~ "سېكۇنت."
+
+#~ msgid " second"
+#~ msgid_plural " seconds"
+#~ msgstr[0] " سېكۇنت"
+
+#~ msgid "Soc&ket read:"
+#~ msgstr "ئوقۇش سوكېتى(&K):"
+
+#~ msgid "Pro&xy connect:"
+#~ msgstr "ۋاكالەتچى باغلىنىشى:"
+
+#~ msgid "Server co&nnect:"
+#~ msgstr "مۇلازىمېتىر باغلىنىشى(&N):"
+
+#~ msgid "&Server response:"
+#~ msgstr "مۇلازىمېتىر جاۋابى(&S):"
+
+#~ msgid "FTP Options"
+#~ msgstr "ف ت پ(FTP) تاللانمىلىرى"
+
+#~ msgid "Enable passive &mode (PASV)"
+#~ msgstr "پاسسىپ ھالەتنى(PASV) ئىناۋەتلىك قىل(&M)"
+
+#~ msgid ""
+#~ "Enables FTP's \"passive\" mode. This is required to allow FTP to work "
+#~ "from behind firewalls."
+#~ msgstr ""
+#~ "FTP نىڭ «پاسسىپ» ھالىتىنى ئىناۋەتلىك قىلىدۇ. FTP نى ئوتتام(firewalls) نىڭ "
+#~ "كەينىدە ئىشلىتىشكە ئىجازەت بېرىشتە ئىشلىتىلىدۇ."
+
+#~ msgid "Mark &partially uploaded files"
+#~ msgstr "قىسمەن يۈكلەنگەن ھۆججەتلەرگە بەلگە قوي(&P)"
+
+#~ msgid ""
+#~ "<p>Marks partially uploaded FTP files.</p><p>When this option is enabled, "
+#~ "partially uploaded files will have a \".part\" extension. This extension "
+#~ "will be removed once the transfer is complete.</p>"
+#~ msgstr ""
+#~ "<p>قىسمەن يۈكلەنگەن FTP ھۆججەتلىرىگە بەلگە قويىدۇ.</p><p>بۇ تاللانما "
+#~ "كۈچكە ئىگە بولسا، قىسمەن يۈكلەنگەن ھۆججەتلەرنىڭ كېڭەيتىلمە ئاتى «.part» "
+#~ "بولىدۇ. يوللاش تاماملانغاندىن كېيىن بۇنداق كېڭەيتىلمە نامدىكى ھۆججەتلەر "
+#~ "ئۆچۈرۈلىدۇ.</p>"
+
+#~ msgid "These settings apply to network browsing only."
+#~ msgstr "بۇ تەڭشەكلەر تورنى كۆرۈشتىلا ئىشلىتىلىدۇ."
+
+#~ msgid "Default user name:"
+#~ msgstr "كۆڭۈلدىكى ئىشلەتكۈچى ئاتى:"
+
+#~ msgid "Default password:"
+#~ msgstr "كۆڭۈلدىكى ئىم:"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add Identification"
+#~ msgstr "كىملىك قوش"
+
+#~ msgctxt "@title:window"
+#~ msgid "Modify Identification"
+#~ msgstr "كىملىك ئۆزگەرت"
+
+#~ msgid ""
+#~ "<qt><center>Found an existing identification for<br/><b>%1</b><br/>Do you "
+#~ "want to replace it?</center></qt>"
+#~ msgstr ""
+#~ "<qt><center><b>%1</b><br/>نىڭ بۇرۇن بار بولغان كىملىكى تېپىلدى<br/>ئۇنى "
+#~ "قاپلامسىز؟</center></qt>"
+
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Identification"
+#~ msgstr "تەكرار كىملىك"
+
+#~ msgid "&Send identification"
+#~ msgstr "كىملىكنى ئەۋەت(&S)"
+
+#~ msgid ""
+#~ "The browser identification text sent to the sites you visit. Use the "
+#~ "provided options to customize it."
+#~ msgstr ""
+#~ "سىز زىيارەت قىلغان تورتۇراغا ئەۋەتىدىغان توركۆرگۈ كىملىك تېكىستى. ئۇنى "
+#~ "ئۆزلەشتۈرۈش ئۈچۈن تەمىنلىگەن تاللانمىلارنى ئىشلىتىدۇ."
+
+#~ msgid "Default Identification"
+#~ msgstr "كۆڭۈلدىكى كىملىك"
+
+#~ msgid ""
+#~ "The browser identification text sent to the sites you visit. You can "
+#~ "customize it using the options provided below."
+#~ msgstr ""
+#~ "سىز زىيارەت قىلغان تورتۇراغا ئەۋەتىدىغان توركۆرگۈ كىملىك تېكىستى. "
+#~ "تەمىنلىگەن تاللانمىلارنى ئىشلىتىپ سىز ئۇنى ئۆزلەشتۈرەلەيسىز."
+
+#~ msgid ""
+#~ "Includes your operating system's name in the browser identification text."
+#~ msgstr ""
+#~ "توركۆرگۈ كىملىك تېكىستى تەركىبىگە سىز ئىشلىتىۋاتقان مەشغۇلات سىستېمىسىنىڭ "
+#~ "ئاتىنى قوشىدۇ."
+
+#~ msgid "Add operating s&ystem name"
+#~ msgstr "مەشغۇلات سىستېمىسى ئاتىنى قوش(&Y)"
+
+#~ msgid ""
+#~ "Includes your operating system's version number in the browser "
+#~ "identification text."
+#~ msgstr ""
+#~ "توركۆرگۈ كىملىك تېكىستى تەركىبىگە سىز ئىشلىتىۋاتقان مەشغۇلات سىستېمىسىنىڭ "
+#~ "نەشرىنى قوشىدۇ."
+
+#~ msgid "Add operating system &version"
+#~ msgstr "مەشغۇلات سىستېمىسى نەشرىنى قوش(&V)"
+
+#~ msgid "Includes your machine's CPU type in the browser identification text."
+#~ msgstr ""
+#~ "توركۆرگۈ كىملىك تېكىستى تەركىبىگە سىز ئىشلىتىۋاتقان ماشىنىنىڭ CPU نىڭ "
+#~ "تىپىنى قوشىدۇ."
+
+#~ msgid "Add &machine (processor) type"
+#~ msgstr "ماشىنىنىڭ CPU تىپىنى قوش(&M)"
+
+#~ msgid ""
+#~ "Includes your language settings in the browser identification text to "
+#~ "obtain localized versions of the page."
+#~ msgstr ""
+#~ "توركۆرگۈ كىملىك تېكىستى تەركىبىگە تىل تەڭشەك ئۇچۇرلىرىنى قوشىدۇ. بۇ "
+#~ "ئارقىلىق مەزكۇر تىلغا ماس كەلگەن بەتلەرنى كۆرۈشكە بولىدۇ."
+
+#~ msgid "Add lang&uage information"
+#~ msgstr "تىل ئۇچۇرى قوش(&U)"
+
+#~ msgid "Site Specific Identification"
+#~ msgstr "تورتۇراغا خاس كىملىك"
+
+#~ msgid "Site Name"
+#~ msgstr "تورتۇرا ئاتى"
+
+#~ msgid "Identification"
+#~ msgstr "كىملىك"
+
+#~ msgid "User Agent"
+#~ msgstr "ئىشلەتكۈچى ۋاكالەتچى"
+
+#~ msgid "Add new identification text for a site."
+#~ msgstr "تورتۇراغا يېڭى كىملىك تېكىستى قوشىدۇ."
+
+#~ msgid "Change the selected identifier text."
+#~ msgstr "تاللانغان كىملىك تېكىستنى ئۆزگەرتىدۇ"
+
+#~ msgid "Delete the selected identifier text."
+#~ msgstr "تاللانغان كىملىك تېكىستىنى ئۆچۈرىدۇ."
+
+#~ msgid "Delete all identifiers."
+#~ msgstr "ھەممە كىملىكنى ئۆچۈرىدۇ."
+
+#~ msgid "&When browsing the following site:"
+#~ msgstr "تۆۋەندىكى تورتۇرانى كۆرگەن چاغدا(&W):"
+
+#~ msgid "&Use the following identification:"
+#~ msgstr "تۆۋەندىكى كىملىكنى ئىشلەت(&U):"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "The actual browser identification text that will be sent to the remote "
+#~ "machine.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "يىراقتىكى ماشىنىغا ئەۋەتىلىدىغان ھەقىقىي توركۆرگۈ كىملىك تېكىستى.\n"
+#~ "</qt>"
+
+#~ msgid "Real identification:"
+#~ msgstr "ھەقىقىي كىملىكى:"
+
+#~ msgid "Treat &all cookies as session cookies"
+#~ msgstr "بارلىق cookies لارنى ئەڭگىمە cookies سۈپىتىدە بىر تەرەپ قىل(&A)"
+
+#~ msgid ""
+#~ "Enter the port number of the HTTP proxy server. Default is 8080. Another "
+#~ "common value is 3128."
+#~ msgstr ""
+#~ "HTTP ۋاكالەتچى مۇلازىمېتىرىنىڭ ئېغىز نومۇرىنى كىرگۈزۈڭ. كۆڭۈلدىكى قىممىتى "
+#~ "8080. ئورتاق ئىشلىتىلىدىغان يەنە بىر قىممەت 3128."
+
+#~ msgid ""
+#~ "Enter the port number of the FTP proxy server. Default 8080. Another "
+#~ "common value is 3128."
+#~ msgstr ""
+#~ "FTP ۋاكالەتچى مۇلازىمېتىرىنىڭ ئېغىز نومۇرىنى كىرگۈزۈڭ. كۆڭۈلدىكى قىممىتى "
+#~ "8080. ئورتاق ئىشلىتىلىدىغان يەنە بىر قىممەت 3128."
+
+#~ msgid "You must specify at least one valid proxy environment variable."
+#~ msgstr ""
+#~ "ئاز دېگەندە بىر ئىناۋەتلىك ۋاكالەتچىنىڭ مۇھىت ئۆزگەرگۈچىسىنى كۆرسىتىپ "
+#~ "بېرىشىڭىز كېرەك."
+
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Proxy Setup"
+#~ msgstr "ئىناۋەتسىز ۋاكالەتچى تەڭشىكى"
+
+#~ msgid "Successfully verified."
+#~ msgstr "تەكشۈرۈش مۇۋەپپەقىيەتلىك بولدى."
+
+#~ msgctxt "@title:window"
+#~ msgid "Proxy Setup"
+#~ msgstr "ۋاكالەتچى تەڭشەك"
+
+#~ msgid ""
+#~ "Did not detect any environment variables commonly used to set system wide "
+#~ "proxy information."
+#~ msgstr ""
+#~ "سىستېما مىقياسىدىكى ۋاكالەتچى ئۇچۇرلىرىنى بەلگىلەشتە ئورتاق "
+#~ "ئىشلىتىلىدىغان مۇھىت ئۆزگەرگۈچىلىرى تېپىلمىدى"
+
+#~ msgctxt "@title:window"
+#~ msgid "Automatic Proxy Variable Detection"
+#~ msgstr "ۋاكالەتچى ئۆزگەرگۈچىلىرىنى ئاپتوماتىك بايقاش"
+
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Proxy Setting"
+#~ msgstr "ئىناۋەتسىز ۋاكالەتچى تەڭشىكى"
+
+#~ msgid ""
+#~ "One or more of the specified proxy settings are invalid. The incorrect "
+#~ "entries are highlighted."
+#~ msgstr ""
+#~ "بىر ياكى بىر قانچە ۋاكالەتچى تەڭشىكى ئىناۋەتسىز. ئىناۋەتسىز كىرگۈلەر "
+#~ "يورۇتۇپ كۆرسىتىلدى."
+
+#~ msgid "You entered a duplicate address. Please try again."
+#~ msgstr "سىز تەكرارلانغان ئادرېس كىرگۈزدىڭىز. قايتا سىناڭ."
+
+#~ msgid "<qt><center><b>%1</b></center> is already in the list.</qt>"
+#~ msgstr "<qt><center><b>%1</b></center> ئاللىقاچان تىزىمدا.</qt>"
+
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Entry"
+#~ msgstr "تەكرارلانغان كىرگۈ"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Exception"
+#~ msgstr "يېڭى مۇستەسنا"
+
+#~ msgctxt "@title:window"
+#~ msgid "Change Exception"
+#~ msgstr "مۇستەسنا ئۆزگەرتىش"
+
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Entry"
+#~ msgstr "ئىناۋەتسىز كىرگۈ"
+
+#~ msgid "The address you have entered is not valid."
+#~ msgstr "كىرگۈزگەن ئادرېس ئىناۋەتسىز."
+
+#~ msgid "Enter the URL or address that should use the above proxy settings:"
+#~ msgstr ""
+#~ "يۇقىرىقى ۋاكالەتچى مۇلازىمېتىر تەڭشىكىدە ئىشلىتىدىغان URL ياكى ئادرېسنى "
+#~ "كىرگۈزۈڭ:"
+
+#~ msgid ""
+#~ "Enter the address or URL that should be excluded from using the above "
+#~ "proxy settings:"
+#~ msgstr ""
+#~ "يۇقىرىقى ۋاكالەتچى مۇلازىمېتىر تەڭشىكىگە بويسۇنمايدىغان URL ياكى ئادرېسنى "
+#~ "كىرگۈزۈڭ:"
+
+#~ msgid ""
+#~ "The address of the automatic proxy configuration script is invalid. "
+#~ "Please correct this problem before proceeding. Otherwise, your changes "
+#~ "will be ignored."
+#~ msgstr ""
+#~ "ئاپتوماتىك ۋاكالەتچى مۇلازىمەت سەپلىمە پروگراممىسى(script) نىڭ ئادرېسى "
+#~ "ئىناۋەتسىز. بىر تەرەپ قىلىشتىن بۇرۇن بۇ مەسىلىنى تۈزىتىڭ. بولمىسا "
+#~ "ئۆزگەرتىشلەرنىڭ ھەممىسى ئىناۋەتسىز بولىدۇ."
+
+#~ msgid ""
+#~ "<qt>The proxy settings you specified are invalid.<br /><br />Please click "
+#~ "on the <b>Setup...</b> button and correct the problem before proceeding; "
+#~ "otherwise your changes will be ignored.</qt>"
+#~ msgstr ""
+#~ "<qt>بېكىتكەن ۋاكالەتچى مۇلازىمېتىر تەڭشىكى ئىناۋەتسىز.<br /><br />بىر "
+#~ "تەرەپ قىلىشتىن بۇرۇن <b>ئورنات…</b> توپچىسىنى چېكىپ مەسىلىنى تۈزىتىڭ؛ "
+#~ "بولمىسا ئۆزگەرتىشلەرنىڭ ھەممىسى ئىناۋەتسىز بولىدۇ.</qt>"
+
+#~ msgid "H&TTP:"
+#~ msgstr "H&TTP:"
+
+#~ msgid "HTTP&S:"
+#~ msgstr "HTTP&S:"
+
+#~ msgid "&FTP:"
+#~ msgstr "FTP(&F):"
+
+#~ msgid "NO &PROXY:"
+#~ msgstr "ۋاكالەتچى يوق(&P):"
+
+#~ msgid "&Verify"
+#~ msgstr "تەكشۈر(&V)"
+
+#~ msgid "Connect to the &Internet directly"
+#~ msgstr "ئىنتېرنېتقا بىۋاسىتە باغلان(&I)"
+
+#~ msgid "Use preset proxy environment &variables"
+#~ msgstr "ئالدىن بەلگىلەنگەن ۋاكالەتچى مۇھىت ئۆزگەرگۈچىلىرىنى ئىشلەت(&V)"
+
+#~ msgid "Show the proxy environment variable configuration dialog."
+#~ msgstr ""
+#~ "ۋاكالەتچى مۇھىت ئۆزگەرگۈچى قىممەتلىرىنى سەپلەش سۆزلەشكۈسىنى كۆرسىتىدۇ."
+
+#~ msgid "Setup..."
+#~ msgstr "ئورنات…"
+
+#~ msgid "&Manually specify the proxy settings"
+#~ msgstr "ۋاكالەتچى تەڭشىكىنى قولدا بەلگىلەش(&M)"
+
+#~ msgid "Authori&zation"
+#~ msgstr "سالاھىيەت دەلىللەش(&Z)"
+
+#~ msgid "Prompt for login information whenever it is required."
+#~ msgstr "زۆرۈر بولغاندا كىرىش ئۇچۇرلىرىنى كۆرسىتىدۇ."
+
+#~ msgid "Prompt as &needed"
+#~ msgstr "زۆرۈر بولغاندا كۆرسەت(&N)"
+
+#~ msgid "Use this login information."
+#~ msgstr "بۇ كىرىش ئۇچۇرىنى ئىشلىتىدۇ."
+
+#~ msgid ""
+#~ "Use information specified here to login into proxy servers as needed."
+#~ msgstr ""
+#~ "زۆرۈر بولغاندا، بۇ يەردىكى ئۇچۇرلارنى ۋاكالەتچى مۇلازىمېتىرغا كىرىش ئۈچۈن "
+#~ "ئىشلىتىدۇ."
+
+#~ msgid "Username:"
+#~ msgstr "ئىشلەتكۈچى ئاتى:"
+
+#~ msgid "Login name."
+#~ msgstr "كىرىش ئاتى."
+
+#~ msgid "Login password."
+#~ msgstr "كىرىش ئىمى."
+
+#~ msgid "Password:"
+#~ msgstr "ئىم:"
+
+#~ msgid "O&ptions"
+#~ msgstr "تاللانما(&P)"
+
+#~ msgid "Use persistent connections to proxy"
+#~ msgstr "ۋاكالەتچى مۇلازىمېتىر بىلەن مەڭگۈلۈك باغلىنىش ئىشلەت"
+
+#~ msgid "Ser&vers"
+#~ msgstr "مۇلازىمېتىرلار(&V)"
+
+#~ msgid "D&elete All"
+#~ msgstr "ھەممىنى ئۆچۈر(&E)"
+
+#~ msgid "De&lete"
+#~ msgstr "ئۆچۈر(&L)"
+
+#~ msgid "C&hange..."
+#~ msgstr "ئۆزگەرت(&H)…"
+
+#~ msgid "&Domain name:"
+#~ msgstr "دائىرە ئاتى(&D)"

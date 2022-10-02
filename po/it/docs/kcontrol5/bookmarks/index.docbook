@@ -1,0 +1,166 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Italian "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="bookmarks" lang="&language;">
+<articleinfo>
+
+<title
+>Segnalibri</title>
+<authorgroup>
+<author
+><personname
+><firstname
+>Xavier</firstname
+><surname
+>Vello</surname
+></personname
+> <email
+>xavier.vello@gmail.com</email
+> </author>
+<othercredit role="translator"
+><firstname
+>Pino</firstname
+><surname
+>Toscano</surname
+><affiliation
+><address
+><email
+>toscano.pino@tiscali.it</email
+></address
+></affiliation
+><contrib
+>Traduzione italiana</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>08/11/2016</date>
+<releaseinfo
+>Applications 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Impostazioni di sistema</keyword>
+<keyword
+>segnalibri</keyword>
+<keyword
+>KIO</keyword>
+</keywordset>
+</articleinfo>
+<sect1 id="conf">
+<title
+>Pagina di partenza di segnalibri</title>
+<para
+>Questo modulo ti permette di configurare la pagina di partenza dei segnalibri.</para>
+<para
+>Per visualizzare la pagina di partenza dei segnalibri inserisci <userinput
+>bookmarks:/</userinput
+> nella barra dell'indirizzo.</para>
+<para
+>È possibile aprire le impostazioni in questo modulo anche inserendo <userinput
+>bookmarks:/config</userinput
+> nella barra dell'indirizzo.</para>
+<sect2 id="conf-general">
+<title
+>Impostazioni generali</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Numero di colonne da mostrare</guilabel
+></term>
+<listitem>
+<para
+>Le cartelle sono distribuite automaticamente in più colonne. Il numero ottimale delle colonne dipende dalla larghezza della finestra di &konqueror; e dal numero di segnalibri presenti.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Mostra gli sfondi delle cartelle</guilabel
+></term>
+<listitem>
+<para
+>Disabilitalo nei sistemi lenti, per eliminare le immagini di sfondo.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="conf-bookmark">
+<title
+>Segnalibri</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Mostra i segnalibri senza le cartelle</guilabel
+></term>
+<listitem>
+<para
+>Se questa opzione non è marcata, i segnalibri nella radice della gerarchia (non in una cartella) non vengono visualizzati, diversamente sono raccolti in una cartella «radice».</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Albero dei segnalibri appiattito</guilabel
+></term>
+<listitem>
+<para
+>Le sottocartelle sono mostrate nelle cartelle genitrici in modo predefinito. Se attivi questa opzione, le sottocartelle saranno visualizzate da sole. L'aspetto meno piacevole, ma potrebbe esserti utile se hai delle cartelle molto grandi e vuoi dividerle in due colonne.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Mostra risorse di sistema</guilabel
+></term>
+<listitem>
+<para
+>Mostra un riquadro con le risorse di KDE (Home, Rete, ...). Utile se utilizzi &konqueror; come gestore di file.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="conf-cache">
+<title
+>Cache delle immagini</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Dimensione della cache su disco</guilabel
+></term>
+<listitem>
+<para
+>Quanto spazio del disco è utilizzato per conservare le immagini.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Svuota la cache</guilabel
+></term>
+<listitem>
+<para
+>Rimuove tutte le immagini memorizzate. Può essere necessario se alcune icone di siti web sono rovinate e non sono aggiornate automaticamente.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+</sect1>
+</article>

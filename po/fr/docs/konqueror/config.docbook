@@ -1,0 +1,310 @@
+<chapter id="config">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+&traducteurJoelleCornavin; &traducteurGerardDelafond;&traducteurLudovicGrossard; 
+</authorgroup>
+
+<date
+>07/02/2010</date>
+<releaseinfo
+>4.4.0</releaseinfo>
+</chapterinfo>
+
+
+<title
+>Configuration de &konqueror;</title>
+
+<para
+>Comme le reste de &kde;, &konqueror; est extrêmement configurable, de sorte que vous pouvez vraiment obtenir l'aspect et le mode de fonctionnement qui correspondent le mieux à vos souhaits et besoins.</para>
+
+<sect1 id="configure-bars">
+<title
+>Barres d'outils</title>
+
+<para
+>Lorsque &kde; vient d'être installé, la fenêtre de &konqueror; contient une barre de menus, deux barres d'outils et d'emplacement, et éventuellement une barre de signets.</para>
+
+<para
+>Peut-être n'avez-vous pas besoin de toutes ces barres d'outils. Pour masquer l'une d'elles, allez dans le menu <menuchoice
+><guimenu
+>Configuration</guimenu
+> <guisubmenu
+>Barre d'outils affichées</guisubmenu
+> </menuchoice
+> et décochez-la. Pour afficher une barre d'outils masquée, cochez simplement la case correspondante.</para
+> 
+
+<para
+>La barre d'outils elle-même peut être activée ou désactivée à l'aide de la combinaison de touches <keycombo action="simul"
+>&Ctrl;<keycap
+>M</keycap
+></keycombo
+>. </para>
+
+<para
+>Un clic <mousebutton
+>droit</mousebutton
+> sur une barre d'outils permet d'obtenir un menu pour configurer cette barre. Vous pouvez verrouiller ou déverrouiller la position de la barre d'outil, et choisir la position du texte, la taille des icônes et l'orientation des barres déverrouillées.</para>
+
+<para
+>Si les barres d'outils sont déverrouillées, vous pouvez voir une poignée à l'extrémité gauche de chaque barre d'outil. En cliquant avec le &BGS;, vous pouvez glisser une barre vers une nouvelle position ou même la détacher de la fenêtre et la placer n'importe où votre écran.</para>
+
+<para
+>Les icônes affichées dans les diverses barres peuvent être changées à l'aide de l'option <menuchoice
+><guimenu
+>Configuration</guimenu
+><guimenuitem
+>Configurer les barres d'outils...</guimenuitem
+></menuchoice
+> qui ouvre la boîte de dialogue <guilabel
+>Configuration des barres d'outils</guilabel
+>. Le nombre et le type de ces barres d'outils varient selon que &konqueror; est en mode <quote
+>navigateur web</quote
+> ou <quote
+>gestionnaire de fichiers</quote
+> et si vous avez installé les modules externes de &konqueror;.</para>
+
+</sect1>
+
+<sect1 id="configshort">
+<title
+>Raccourcis</title>
+<para
+>Pour modifier l'organisation des raccourcis clavier qu'utilise &konqueror;, choisissez <menuchoice
+><guimenu
+>Configuration</guimenu
+><guimenuitem
+>Configurer les raccourcis clavier...</guimenuitem
+></menuchoice
+>. Vous obtenez une boîte de dialogue comme ci-après. </para>
+<mediaobject>
+<imageobject>
+<imagedata fileref="shortcut1.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Configuration des raccourcis - Copie d'écran 1</phrase>
+</textobject>
+</mediaobject>
+<para
+>Utilisez la boîte de recherche pour trouver l'action pour laquelle vous souhaitez ajouter ou modifier les touches de raccourcis, et sélectionnez-la en cliquant sur son nom avec le bouton <mousebutton
+>gauche</mousebutton
+> de la souris. </para>
+
+<para
+>Après avoir choisi une action dans la liste, vous verrez que cet élément est mis en surbrillance, et en-dessous, deux cases à cocher supplémentaires dans la liste. Vous pouvez configurer ici une combinaison de touches ou pas de raccourci du tout pour l'action choisie. </para>
+
+<mediaobject>
+<imageobject>
+<imagedata fileref="shortcut2.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Configuration des raccourcis - Copie d'écran 2</phrase>
+</textobject>
+</mediaobject>
+
+<itemizedlist>
+<listitem
+><para
+><guilabel
+>Par défaut</guilabel
+> : l'action choisie sera associée à la valeur par défaut de &kde;. C'est un bon choix pour la plupart des actions, &kde; étant fourni avec des raccourcis bien pensés. </para
+></listitem>
+<listitem
+><para
+><guilabel
+>Personnalisé</guilabel
+> : si cette option est cochée, vous pouvez créer une combinaison de touches pour l'action choisie. Cliquez sur le bouton étiqueté soit <guibutton
+>Aucun</guibutton
+>, soit avec le raccourci clavier précédent. Maintenant, l'étiquette du bouton devient <guibutton
+>Saisie…</guibutton
+>. Appuyez alors sur un modificateur (&cad; &Maj;, &Ctrl; ou &Alt;) puis sur la touche normale ou la touche fonction (&pex; <keycap
+>F11</keycap
+>) que vous souhaitez assigner à cette combinaison de touches.</para
+></listitem>
+<listitem
+><para
+>Vous pouvez réinitialiser le raccourci à <guilabel
+>Aucun</guilabel
+> en utilisant le bouton <inlinemediaobject
+><imageobject
+><imagedata fileref="reset.png" format="PNG"/></imageobject
+></inlinemediaobject
+>. </para>
+<para
+>En cliquant dans la colonne <guilabel
+>Auxiliaire</guilabel
+> d'une ligne de la liste, vous pouvez modifier le second raccourci pour cette action.</para
+></listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="othersettings">
+<title
+>Autres paramètres</title>
+<para
+>Le choix de <menuchoice
+><guimenu
+>Configuration</guimenu
+><guimenuitem
+> Configurer Konqueror...</guimenuitem
+></menuchoice
+> fait apparaître une boîte de dialogue pouvant contrôler la majorité des aspects du comportement de &konqueror;.</para
+> 
+<para
+>Elle contient plusieurs sections choisies par un clic <mousebutton
+>gauche </mousebutton
+> sur une des icônes placées à gauche de la boîte de dialogue.</para>
+<itemizedlist>
+<listitem
+><para
+><ulink url="help:/kcontrol/khtml-general/index.html"
+>Général</ulink
+> : configuration du comportement général de &konqueror;</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/performance/index.html"
+>Performance</ulink
+> : configure les réglages qui permettent d'améliorer les performances de &konqueror;</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/bookmarks/index.html"
+>Signets</ulink
+> : configure la page d'accueil des favoris</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/filemanager/index.html"
+>Gestion de fichiers</ulink
+> : vous pouvez configurer ici le comportement de Konqueror en tant que gestionnaire de fichiers.</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/dolphin/configuring-dolphin.html#preferences-dialog-viewmodes"
+>Modes d'affichage</ulink
+> : configure les modes d'affichage du gestionnaire de fichiers.</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/dolphin/configuring-dolphin.html#preferences-dialog-navigation"
+>Navigationt</ulink
+> : configure la navigation dans le gestionnaire de fichiers.</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/dolphin/configuring-dolphin.html#preferences-dialog-services"
+>Services</ulink
+> : configure les services du gestionnaire de fichiers.</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/dolphin/configuring-dolphin.html#preferences-dialog-general"
+>Général</ulink
+> : configure les paramètres généraux du gestionnaire de fichiers.</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/filetypes/index.html"
+>Associations de fichiers</ulink
+> : configure les associations de fichiers.</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/trash/index.html"
+>Corbeille</ulink
+> : configurer les réglages de la corbeille.</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/khtml-behavior/index.html"
+>Navigation Internet</ulink
+> : configure le comportement du navigateur.</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/proxy/index.html"
+>Serveur mandataire (proxy)</ulink
+> : configure les serveurs mandataires utilisés.</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/kcmcss/index.html"
+>Apparence</ulink
+> : configure la manière d'afficher les pages web.</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/khtml-adblock/index.html"
+>Filtres AdBlock</ulink
+> : configure les filtres AlBlocK de Konqueror.</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/ebrowsing/index.html"
+>Racourcis Web</ulink
+> : configure la navigation avancée.</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/cache/index.html"
+>Cache</ulink
+> : configure les paramètres du cache Web.</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/history/index.html"
+>Historique</ulink
+> : configure la barre latérale d'historique.</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/cookies/index.html"
+>Cookies</ulink
+> : configure la manière dont les cookies fonctionnent.</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/useragent/index.html"
+>Identification du navigateur</ulink
+> : configure la manière dont Konqueror se signale.</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/khtml-java-js/index.html"
+>Java &amp; JavaScript</ulink
+> : configure le comportement de Java et JavaScript.</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/khtml-plugins/index.html"
+>Modules externes</ulink
+> : configure les modules externes du navigateur.</para
+></listitem>
+</itemizedlist>
+<para
+>Un clic sur le bouton <guibutton
+>Aide</guibutton
+> donne des instructions détaillées sur la manière d'utiliser chacune de ces sections, sinon vous disposez de la fonctionnalité <link linkend="bubble"
+>Qu'est-ce que c'est ?</link
+></para>
+</sect1>
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

@@ -1,0 +1,606 @@
+<chapter id="basics">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>Tomas</firstname
+><surname
+>Straupis</surname
+><affiliation
+><address
+><email
+>tomasstraupis@gmail.com</email
+></address
+></affiliation
+><contrib
+>Vertė</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2010-02-08</date>
+<releaseinfo
+>4.4.0</releaseinfo>
+</chapterinfo>
+
+<title
+>&konqueror; pagrindai</title>
+
+<important
+><para
+>Kaip ir daugumą &kde; programų, &konqueror; galima labai lanksčiai konfigūruoti. Šiame dokumente aprašoma, kaip &konqueror; elgiasi esant standartinei konfigūracijai.</para>
+<para
+>Trys pelės klavišai naudojami tiek &konqueror;, tiek ir kitose &kde; programose. Jei jūsų pelė turi tik du mygtukus, jūs galite susikonfigūruoti sistemą taip, kad vidurinysis pelės mygtukas; būtų simuliuojamas spaudžiant vienu metu abu pelės klavišus.</para>
+<para
+>Daugiau apie pelės naudojimą galite paskaityti <xref linkend="lmb-mmb"/></para>
+<para
+>Jei esate įpratę du kartus spausti pelės mygtuką, kad įvykdytumėte kokį nors veiksmą, – būkite atsargūs, nes, kaip ir kitose &kde; programose, &konqueror; dauguma veiksmų vykdomį pelės mygtuką paspaudus tik vieną kartą.</para
+></important>
+
+<sect1 id="konq-start">
+<title
+>&konqueror; paleidimas</title>
+
+<para
+>Kadangi &konqueror; yra ir failų tvarkyklė, ir interneto naršyklė, ji automatiškai persijunginės tarp atitinkamų režimų. Kaip ten bebūtų, vidgi patogu pasirinkti, kokiu režimu turi būti paleistas &konqueror;.</para>
+
+<itemizedlist>
+<!--
+<listitem
+><para
+>If you have a <guiicon
+>house</guiicon
+> shaped icon on the panel 
+or desktop, then <mousebutton
+>left</mousebutton
+> click on it to open 
+&konqueror; as a file manager.</para
+></listitem>
+
+<listitem
+><para
+>Or <mousebutton
+>left</mousebutton
+> click on <guiicon
+>world
+</guiicon
+> shaped icon on the panel or desktop to open &konqueror; in browser 
+mode.</para
+></listitem>
+-->
+<listitem
+><para
+>Norėdami paleisti interneto naršyklę programų paleidimo meniu parinkite <menuchoice
+><guisubmenu
+>Internetas</guisubmenu
+><guimenuitem
+>Konqueror (Žiniatinklio naršyklė)</guimenuitem
+></menuchoice
+>. </para
+></listitem>
+
+<listitem
+><para
+><keycombo action="simul"
+>&Alt;<keycap
+>F2</keycap
+></keycombo
+> paleidžia &krunner;, įveskite kelią iki aplanko ir spauskite &Enter;, jei norite paleisti &konqueror; failų tvarkyklės režime. Jei tiesiog įvesite &URL;, sakykime <userinput
+>http://www.konqueror.org</userinput
+>, &konqueror; bus paleistas interneto naršyklės režimu.</para
+></listitem>
+
+</itemizedlist>
+
+<note
+><para
+>Spauskite ant juodos rodyklės <guiicon
+>Namų puslapio</guiicon
+> dešinėje pusėje, jei norite persijungti į jūsų <guiicon
+>Namų aplanką</guiicon
+> failų tvarkyklėje ir atvirkščiai. </para
+></note>
+
+<para
+>Jei &konqueror; yra nustatytas kaip numatytoji failų tvarkyklė, jis paleidžiamas automatiškai paspaudus <mousebutton
+>kairį</mousebutton
+> pelės klavišą ant darbastalio ženkliuko, žyminčio aplanką, tokį kaip kietasis diskas arba <guiicon
+>Šiukšliadėžės</guiicon
+> ženkliuką. </para>
+
+
+</sect1>
+
+<sect1 id="parts">
+<title
+>&konqueror; dalys</title>
+
+<para
+>Trumpas pagrindinių &konqueror; lango dalių sąrašas:</para>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="parts.png"/></imageobject>
+<textobject>
+<phrase
+>&konqueror; nuotrauka</phrase>
+</textobject>
+</mediaobject>
+
+<para
+><interface
+>Antraštė</interface
+> – tai viršutinėje &konqueror; lango dalyje esanti juosta, kuri veikia taip pat, kaip ir kitose &kde; programose. Spauskite <mousebutton
+>dešinįjį</mousebutton
+> pelės mygtuką ant centrinės antraštės dalies, jei norite pamatyti puikųjį antraštės meniu.</para>
+
+<para
+><interface
+>Meniu</interface
+> – juosta, kurioje matosi iškrentančių meniu punktų pavadinimai. Spausdami <mousebutton
+>kairįjį</mousebutton
+> pelės mygtuką ant atitinkamo meniu punkto galite jį rodyti ar slėpti. Kitas variantas – galite spausti <keycombo action="simul"
+>&Alt;<keycap
+>pabrauktą raidę</keycap
+></keycombo
+> tame meniu, kurį norite iškviesti. Pavzydžiui <keycombo action="simul"
+>&Alt;<keycap
+>K</keycap
+></keycombo
+> norėdami iškviesti meniu <guimenu
+>Keisti</guimenu
+>. Visi meniu elementai detaliau išvardinti šio dokumento skyriuje <link linkend="menubar"
+>Meniu</link
+>.</para>
+
+<para
+><interface
+>Įrankinėje</interface
+> rasite dažniausiai naudojamų komandų ženkliukus. Spausdami ženkliuką <mousebutton
+>kairiuoju</mousebutton
+> pelės mygtuku iškviesite atitinkamą komandą. Jei Sistemos nustatymuose įjungėte patarimus (<menuchoice
+><guimenu
+>Darbo erdvės išvaizda</guimenu
+><guisubmenu
+>Lango dekoracijos</guisubmenu
+></menuchoice
+> <guilabel
+>Konfigūruoti mygtukus</guilabel
+>), užvedus pelės žytmeklį virš mygtuko bus rodomas trumpas mygtuko komandos paaiškinimas.</para>
+
+<para
+>Kai kurie ženkliukai, kaip antai aukščiau esančioje nuotraukoje matomi „pirmyn“ ir „atgal“, turi nedidelę juodą rodyklėlę žemyn. Jei laikysite paspaude <mousebutton
+>kairįjį</mousebutton
+> pelės mygtuką ant tokio ženkliuko – bus parodytas nedidelis iškrentantis meniu.</para
+> <para
+>Spaudžiant <mousebutton
+>dešinįjį</mousebutton
+> pelės mygtuką ant <interface
+>Įrankinės</interface
+> bus parodytas meniu <link linkend="rmb-menus"
+><guilabel
+>Įrankių juostos nustatymai</guilabel
+></link
+>, kurio pagalba galėsite keisti <interface
+>Įrankinės</interface
+> išvaizdą ir poziciją.</para>
+
+<para
+><interface
+>Vietos įrankinė</interface
+> rodo kelią iki dabartinio aplanko, &URL; arba peržiūrimo failo. Čia galite įvesti kelią arba &URL; ir spausti &Enter; arba <mousebutton
+>kairiuoju</mousebutton
+> pelės mygtuku spustelėti dešiniau <interface
+>vietos įrankinės</interface
+> esantį ženkliuką <guiicon
+>Eiti</guiicon
+>, kad patektumėte į nurodytą vietą. Dešinėje <interface
+>vietos įrankinės</interface
+> pusėje esantis juodas ženkliukas išvalys vietos juostą.</para>
+
+<para
+>Aukščiau esančioje nuotraukoje <interface
+>žymelių įrankinė</interface
+> yra po <interface
+>vietos įrankine</interface
+>. Čia galite įkelti dažnai naudojamas žymeles. Daugiau informacijos apie tai rasite skyriuje <link linkend="orgbmark"
+>Jūsų žymelių valdymas</link
+>.</para>
+
+<para
+><interface
+>Langas</interface
+> – tai pagrindinis &konqueror; plotas, kuriame rodomas aplanko, interneto puslapio, dokumento ar piešinio turinys. Naudodami <link linkend="menu-window"
+><guimenu
+>Lango</guimenu
+></link
+> meniu galite padalinti &konqueror; pagrindinį langą į dvi ar daugiau dalių. Taip daug patogiau pernešinėjant ar kopijuojant įvairius objektus. Taipogi galima pridėti vieną ar daugiau papildomų kortelių. </para>
+
+<para
+><interface
+>Būsenos juostą</interface
+> rasite apatinėje &konqueror; lango dalyje. Joje paprastai rodoma bendra informacija apie tai, virš ko užvestas pelės žymeklis. Jei pagrindinį langą padalinote į dvi ar daugiau dalių – kiekviena iš jų turės savo atskirą būsenos juostą, kurios kairėje pusėje bus nedidelė žalia lemputė, rodanti, kuris dalis šiuo metu <quote
+>aktyvi</quote
+>. Paspaudus <mousebutton
+>dešinį</mousebutton
+> pelės mygtuką ant būsenos juostos bus rodomas būsenos juostos <link linkend="rmb-menus"
+><mousebutton
+>Dešinio</mousebutton
+> pelės mygtuko meniu</link
+>.</para>
+
+<note
+><para
+>Neišsigąskite, jei jūsų &konqueror; atrodo lygiai taip pat, kaip parodyta aukščiau esančioje nuotraukoje. &konqueror; galima labai lanksčiai konfigūruoti. Pavyzdžiui:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Naudodami <link linkend="menu-settings"
+><guimenu
+>Nustatymų</guimenu
+></link
+> meniu galite pasirinkti, ar reikia rodyti meniu juostą, pagrindinę įrankinę, vietos įrankinę, žymelių įrankinę ar netgi įkelti papildomą įrankinę.</para
+></listitem>
+<listitem
+><para
+>Jei įrankinės nėra užrakintos – galite perkėlinėti jas į kitas vietas <mousebutton
+>kairiuoju</mousebutton
+> pelės mygtuku prispaudę kairę įrankinių pusės dalį. </para
+></listitem>
+<listitem
+><para
+>Šioje nuotraukoje nepavaizduota pasirenkama <link linkend="sidebar"
+>Šoninė juosta</link
+>.</para
+></listitem>
+</itemizedlist>
+
+<para
+>Daugiau informacijos apie &konqueror; išvaizdos konfigūravimą rasite skyriuje <link linkend="config"
+>&konqueror; konfigūravimas</link
+>.</para
+></note>
+
+</sect1>
+
+<sect1 id="bubble">
+<title
+>Patarimai ir kas tai yra?</title>
+
+<para
+>Daug &konqueror; veikimo sąvybių galite sužinoti net ir neskaitydami viso šito dokumento, jei pasinaudosite <guilabel
+>Patarimų</guilabel
+> ir <guimenuitem
+>Kas tai yra?</guimenuitem
+> funkcionalumu.</para>
+
+<para
+>Kai pelės žymeklį užvedate virš įrankinės ar šoninės juostos mygtuko, turėtų būti parodytas trumpas aprašymas, ką tas mygtukas daro.</para>
+
+<para
+><guimenuitem
+>Kas tai yra?</guimenuitem
+> įjungiamas per meniu punktą <menuchoice
+><guimenu
+>Pagalba</guimenu
+><guimenuitem
+>Kas tai yra?</guimenuitem
+></menuchoice
+>, arba paspaudus <keycombo action="simul"
+>&Shift;<keycap
+>F1</keycap
+></keycombo
+>, arba spaudžiant <mousebutton
+>kairįjį</mousebutton
+> pelės mygtuką ant klaustuko, esančio netoli viršutinio dešinio &konqueror; lango kampo. Paspaudus pelės žymeklyje greta rodyklės atsiras klaustukas.</para>
+
+<para
+>Kai matomas klaustukas, paspaudus <mousebutton
+>kairįjį</mousebutton
+> pelės mygtuką nieko neįvyks, kol jūs nepaspausite ant mygtuko ar šalia jo esančio teksto, palaikančio šitą <guimenuitem
+>Kas tai yra?</guimenuitem
+> funkcionalumą. Tokiu atveju trumpas aprašymas, ką daro (ar kam skirtas) jūsų paspaustas elementas. Dauguma &konqueror; dialogų palaiko <guimenuitem
+>Kas tai yra?</guimenuitem
+> funkcionalumą.</para>
+
+</sect1>
+
+<sect1 id="lmb-mmb">
+<title
+><mousebutton
+>Kairiojo</mousebutton
+> ir <mousebutton
+>dešiniojo</mousebutton
+> pelės mygtukų veiksmai</title>
+
+<para
+>Paspaudus <mousebutton
+>kairįjį</mousebutton
+> pelės mygtuką ant elemento &konqueror; lange, jis bus <quote
+>aktyvuotas</quote
+>. Taigi:</para>
+
+<itemizedlist>
+
+<listitem
+><para
+><mousebutton
+>Kairysis</mousebutton
+> paspaudimas ant ženkliuko įrankinėje įvykdys nurodytą komandą. </para
+></listitem>
+<listitem
+><para
+><mousebutton
+>Kairysis</mousebutton
+> paspaudimas ant meniu parodys atitinkamą iškrentantį meniu.</para
+></listitem>
+<listitem
+><para
+><mousebutton
+>Kairysis</mousebutton
+> paspaudimas ant meniu punkto įvykdys komandą.</para
+></listitem
+> 
+<listitem
+><para
+><mousebutton
+>Kairysis</mousebutton
+> paspaudimas ant ženkliuko žymelių įrankinėje atvers parinktą &URL;.</para
+></listitem>
+<listitem
+><para
+><mousebutton
+>Kairysis</mousebutton
+> paspaudimas ant puslapyje esančios nuorodos nuves &konqueror; į rodomą vietą ar puslapį.</para
+></listitem>
+<listitem
+><para
+><mousebutton
+>Kairysis</mousebutton
+> paspaudimas ant aplanko ženkliuko arba pavadinimo nuves &konqueror; į atitinkamą aplanką (parodys aplanko turinį). </para
+></listitem>
+<listitem
+><para
+><mousebutton
+>Kairysis</mousebutton
+> paspaudimas ant failo pavadinimo ar ženkliuko nurodys, kad &konqueror; vykdytų tai, kas priklauso, priklausomai nuo failo tipo. Dažniausiai tai reikš atidaryti <acronym
+>HTML</acronym
+> puslapius, peržiūrėti tekstą, nuotrauką ar <application
+>KOffice</application
+> failus, rodant juos &konqueror; lange (<quote
+>Peržiūra</quote
+> reiškia, kad failo turinį jūs galite peržiūrėti, bet negalite jo keisti).</para
+> 
+
+<para
+>&konqueror; nuspręs, kokio tipo failą jūs pasirinkote, sulyginęs failo praplėtimą su žinomų praplėtimų sąrašu. Jei toks praplėtimas nebus rastas, bus pabandyta atspėti patikrinus failo turinį. Jūs galite keisti žinomų failų tipų bei su jais susijusių programų sąrašą per <guilabel
+>Failų sąsajų</guilabel
+> puslapį <menuchoice
+><guimenu
+>Nustatymai</guimenu
+><guimenuitem
+>Konfigūruoti Konqueror...</guimenuitem
+></menuchoice
+> dialoge.</para
+></listitem>
+
+</itemizedlist>
+
+<para
+>Paspaudus vidurinįjį pelės mygtuką ant failo ar aplanko pavadinimo daro tą patį, ką ir <mousebutton
+>kairiojo</mousebutton
+> mygtuko paspaudimas, išskyrus tai, kad veiksmas atliekamas naujame &konqueror; lange, nebent <menuchoice
+><guimenu
+>Nustatymai</guimenu
+><guimenuitem
+>Konfigūruoti Konqueror...</guimenuitem
+></menuchoice
+> dialogo puslapyje <guimenuitem
+>Bendrieji</guimenuitem
+> įjungta parinktis <guilabel
+>Atverti nuorodas naujoje kortelėje vietoje naujo lango</guilabel
+>. &konqueror; gali naujame lange arba kortelėje atverti nuorodas esančias puslapiuose, <menuchoice
+><guimenu
+>Žymelėse</guimenu
+></menuchoice
+> bei <guibutton
+>Namų puslapio</guibutton
+>, <guibutton
+>Aukštyn</guibutton
+>, <guibutton
+>Atgal</guibutton
+> ir <guibutton
+>Pirmyn</guibutton
+> įrašuose.</para>
+
+<para
+>Jei spausdami vidurinįjį pelės mygtuką laikysite paspaudę &Shift; klavišą, nuoroda bus atidaryta fone.</para>
+<!-- not in 4.4.0
+<important
+><para
+>If you click the &MMB; when the mouse cursor is over a blank 
+part of the main view (not over a link or file name or icon) &konqueror; will 
+copy the contents of the clipboard into the Location Toolbar and try to use 
+that as a &URL;.</para
+></important>
+-->
+</sect1>
+
+<sect1 id="rmb-menus">
+<title
+><mousebutton
+>Dešiniojo</mousebutton
+> pelės klavišo meniu</title>
+
+<para
+>Spaudžiant <mousebutton
+>dešinįjį</mousebutton
+> pelės mygtuką ant praktiškai bet kurios &konqueror; lango dalies bus atvertas atitinkamas kontekstinis meniu.</para>
+
+<note
+><para
+>Jei &konqueror;'s <link linkend="othersettings"
+>konfigūracijoje</link
+>įjungta parinktis <guilabel
+>Dešinysis spragtelėjimas veda atgal žurnalo įrašuose</guilabel
+>, paprastas <mousebutton
+>dešiniojo mygtuko</mousebutton
+> spragtelėjimas prilygsta mygtuko <guibutton
+>Atgal</guibutton
+> paspaudimui. Tokiu atveju kontekstinį meniu galite pasiekti paspaudę <mousebutton
+>dešinį</mousebutton
+> mygtuką ir patempę pelės žymeklį.</para
+></note>
+
+<variablelist>
+
+<varlistentry>
+<term
+>Antraštėje</term>
+<listitem
+><para
+><mousebutton
+>Dešinysis</mousebutton
+> spragtelėjimas bet kurioje laisvoje antraštės vietoje iškviečia antraštės meniu, kurio pagalba galite valdyti &konqueror; lango poziciją bei visų &kde; programų apipavidalinimą. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Pagrindinėje įrankinėje</term>
+<listitem
+><para
+><mousebutton
+>Dešinysis</mousebutton
+> spragtelėjimas bet kurioje neužimtoje įrankinės vietoje pakvies įrankinės meniu. Jame galėsite nurodyti, ar įrankinę reikia rodyti viršuje, apačioje, kairėje ar dešinėje &konqueror; lango pusėje. Šiame meniu taipogi galite pasirinkti įrankinės ženkliukų dydį bei ar reidyti ženkliukus, tekstą ar ir tą, ir tą.</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+>Vietos įrankinėje</term>
+<listitem
+><para
+><mousebutton
+>Dešinysis</mousebutton
+> spragtelėjimas ant &URL; atlieka iškirpimo, kopijavimo, įkėlimo arba išvalymo funkcijas arba keičia automatinio <link linkend="path-complete"
+>teksto užbaigimo</link
+> ypatybes.</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+>Ant vaizdo</term>
+<listitem
+><para
+>Paspaudus <mousebutton
+>dešinįjį</mousebutton
+> bet kurioje vaizdo dalyje gausite meniu, kuriame be kitų pasirinkimų bus ir <guiicon
+>Aukštyn</guiicon
+>, <guiicon
+>Atgal</guiicon
+>, <guiicon
+>Pirmyn</guiicon
+> ir <guiicon
+>Įkelti iš naujo</guiicon
+> navigacijos komandos. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Ant failo ar aplanko</term>
+<listitem
+><para
+>Tai pati naudingiausia ypatybė. <mousebutton
+>Dešinysis</mousebutton
+> spragtelėjimas ant failo ar aplanko ženkliuko ar pavadinimo ne tik <quote
+>pažymės</quote
+> nurodytą elementą, bet ir parodys meniu, kurio pagalba galėsite <guiicon
+>iškirpti</guiicon
+>, perkelti, <guiicon
+>kopijuoti</guiicon
+> arba pašalinti elementą įvairiais būdais, atidaryti jį jūsų pasirinkta programa, peržiūrėti, pervardinti arba redaguoti failo tipo ypatybes.</para
+></listitem
+> </varlistentry>
+
+<varlistentry>
+<term
+>Būsenos juostoje</term>
+<listitem
+><para
+><mousebutton
+>Dešinysis</mousebutton
+> spragtelėjimas būsenos juostoje leis pridėti ar pašalinti &konqueror; lango rodinį.</para
+></listitem
+> 
+</varlistentry>
+</variablelist>
+
+</sect1>
+
+<sect1 id="man-info">
+<title
+>Pagalbos, vadovų (man) ir informacinių puslapių peržiūra</title>
+
+<para
+>Su &konqueror; galite tiesiogiai peržiūrėti &kde; Pagalbą bei &UNIX; Man ir Info puslapius, neatidarinėdami <application
+>KHelpCenter</application
+>. </para>
+
+<para
+>Norėdami peržiūrėti &kde; pagalbos puslapį, į vietos įrankinę įveskite <userinput
+>help:/<replaceable
+>programos pavadinimas</replaceable
+></userinput
+> (pavyzdžiui <userinput
+>help:/kmail</userinput
+>, jei norite pažiūrėti &kmail; dokumentaciją). </para>
+
+<para
+>Su &konqueror; labai patogu skaityti &UNIX; Man puslapius. Pavyzdžiui vietos įrankinėję parašę <userinput
+>man:/touch</userinput
+> arba <userinput
+>#touch</userinput
+> pamatysite <command
+>touch</command
+> komandos aprašymą.</para
+> 
+
+<para
+>Norėdami peržiūrėti &UNIX; Info puslapius, įveskite <userinput
+>info:/dir</userinput
+> ir jums bus parodytas pagrindinis informacijos aplankas, jums beliks tik pasirinkti komandą ar puslapį, kurį norite perskaityti. Taipogi galite tiesiai rašyti <userinput
+>info:/<replaceable
+>komandos pavadinimas</replaceable
+></userinput
+>, jei norite atverti konkrečios komandos informacinį puslapį.</para>
+
+<note
+><para
+>Labai gaila, bet &kde; Pagalbos puslapiai saugomi tokiu formatu, kurio nemoka rodyti jokia kita naršyklė. Jei jums tikrai reikia peržiūrėti pagalbą su kita naršykle – aplankykite <ulink url="http://docs.kde.org"
+>http://docs.kde.org</ulink
+>.</para
+></note>
+</sect1>
+
+</chapter>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

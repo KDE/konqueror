@@ -1,0 +1,77 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Korean "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="performance" lang="&language;">
+<articleinfo>
+<title
+>성능</title>
+<authorgroup>
+<author
+>&Mike.McBride; &Mike.McBride.mail;</author>
+<othercredit lang="ko" role="translator"
+><surname
+>박</surname
+><firstname
+>신조</firstname
+><affiliation
+><address
+><email
+>kde@peremen.name</email
+></address
+></affiliation
+><contrib
+>한국어 번역</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2016-11-08</date>
+<releaseinfo
+>프로그램 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>시스템 설정</keyword>
+<keyword
+>성능</keyword>
+<keyword
+>미리 불러오기</keyword>
+</keywordset>
+</articleinfo>
+
+<sect1 id="sys-performance">
+<title
+>성능 설정</title>
+
+<para
+>&konqueror;는 다양한 컴퓨터에서 다양한 사용자가 사용합니다. 이 대화 상자는 성능 부분으로 분류되어 있으며 설치되어 있는 &konqueror;를 더 빠르게 반응할 수 있는 옵션을 설정할 수 있습니다. </para>
+
+<sect2
+><title
+>미리 불러오기</title>
+<para
+><guilabel
+>미리 불러오기</guilabel
+>에서는 메모리와 성능 간의 절충안을 설정할 수 있습니다.</para>
+
+<para
+><emphasis
+>미리 불러오기</emphasis
+>를 사용하면 사용자가 &konqueror;를 시작하기 전에 &konqueror;의 인스턴스를 메모리에 불러오는 것을 의미합니다. 긍정적인 효과는 사용자가 &konqueror;를 불러올 때 대부분의 프로그램을 미리 불러왔기 때문에 즉시 창이 나타납니다. 부정적인 효과는 &konqueror; 인스턴스가 다른 프로그램에서 사용할 수도 있는 메모리를 사용합니다. 기본적으로 사용자가 &konqueror;를 닫아도 인스턴스가 닫히지 않습니다. 다음에 사용자가 &konqueror;를 불러올 때 거의 즉시 불러오게 됩니다.</para>
+
+<para
+><guilabel
+>항상 인스턴스를 미리 불러오기</guilabel
+> 확인란을 선택하면 최소한 하나의 &konqueror; 인스턴스를 불러온 상태로 유지합니다. 이 옵션은 실제로 일부 컴퓨터(특히 물리적 메모리가 적은 컴퓨터)의 성능을 저하시킵니다.</para>
+</sect2>
+</sect1>
+
+</article>

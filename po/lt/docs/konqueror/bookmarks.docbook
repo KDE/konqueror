@@ -1,0 +1,233 @@
+<chapter id="bookmarks">
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>Tomas</firstname
+><surname
+>Straupis</surname
+><affiliation
+><address
+><email
+>tomasstraupis@gmail.com</email
+></address
+></affiliation
+><contrib
+>Vertė</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2010-09-24</date>
+<releaseinfo
+>&kde; 4.5</releaseinfo>
+</chapterinfo>
+
+<title
+>Žymelių naudojimas</title>
+
+<para
+>Nors jūs galite naudoti &konqueror; žymeles tam, kad pasižymėtumėte dažniausiai naudojamus aplankus ar failus jūsų kompiuteryje, visgi žymelės duoda daugiausia naudos, jei jas naudojate interneto puslapių žymėjimui. Taip galite susikurti sau įdomių ir naudingų puslapių sąrašą.</para>
+
+<para
+>Norėdami atverti <guimenu
+>Žymelių</guimenu
+> meniu galite <mousebutton
+>kairiu</mousebutton
+> pelės mygtuku spausti ant meniu <guimenu
+>Žymelės</guimenu
+>. Pasirodžius žymelių sąrašui galite po jį vaikščioti klaviatūra ir pasirinkę spausti &Enter; arba galite naudoti <mousebutton
+>kairį</mousebutton
+> pelės klavišą reikiamos žymelės pasirinkimui.</para>
+
+<para
+>Norėdami pridėti naują elementą naudokite <menuchoice
+><guimenu
+>Žymelės</guimenu
+><guimenuitem
+>Pridėti žymelę</guimenuitem
+></menuchoice
+> arba <keycombo action="simul"
+>&Ctrl;<keycap
+>B</keycap
+></keycombo
+> arba spauskite <mousebutton
+>dešinį</mousebutton
+> pelės mygtuką tuščioje puslapio vietoje ir iš konteksinio meniu parinkite <guimenuitem
+>Įtraukti šią vietą prie žymelių</guimenuitem
+>.</para>
+
+<para
+><guimenu
+>Žymelių</guimenu
+> sąraše gali būti poaplankiai, kuriuose bus kitos žymelės. Poaplankius galite sukurti parinkę <menuchoice
+><guimenu
+>Žymelės</guimenu
+><guimenuitem
+>Naujas žymelių aplankas...</guimenuitem
+></menuchoice
+>. Norėdami pridėti žymelę ne į pagrindinį sąrašą, o į poaplankį, parinkite poaplankį <guimenu
+>Žymelių</guimenu
+> sąraše ir jame spauskite ant <guimenuitem
+>Pridėti žymelę</guimenuitem
+>.</para>
+
+<para
+>Žymeles taipogi galite rasti <link linkend="sidebar"
+><guilabel
+>šoninėje juostoje</guilabel
+></link
+> arba <guilabel
+>žymelių įrankinėje</guilabel
+>.</para>
+
+<para
+>Jei vietos eilutėje įvesite <userinput
+>bookmarks:/</userinput
+>, bus parodytas žymelių namų puslapis, kuriame rasite visų žymelių ir jų aplankų apžvalgą.</para
+> 
+
+<sect1 id="orgbmark">
+<title
+>Žymelių redaktorius</title>
+
+<para
+>Meniu punktas <menuchoice
+><guimenu
+>Žymelės</guimenu
+><guimenuitem
+>Redaguoti žymeles</guimenuitem
+> </menuchoice
+> atidaro <guilabel
+>Žymelių redaktorių</guilabel
+>.</para>
+<para
+>Čia rodoma jūsų žymelių bei žymelių aplankų hierarchija. Kaip ir kitose &kde; programose, medžio pavidalo hierarhijos poaplankiai rodomi su nedideliu kvadračiuku prie aplanko pavadinimo. Jei kvadračiuke rodomas <keycap
+>+</keycap
+>, reiškia paspaudus <mousebutton
+>kairįjį</mousebutton
+> pelės mygtuką šaka bus išskleista parodant aplanko turinį, ženkliukas <keycap
+>+</keycap
+> pasikeis į <keycap
+>-</keycap
+>. Dar kartą paspaudus <mousebutton
+>kairįjį</mousebutton
+> mygtuką and <keycap
+>-</keycap
+> ženkliuko poaplankis bus suskleistas.</para>
+
+<para
+>Norimą žymelę galite pasirinkti arba <mousebutton
+>kairiuoju</mousebutton
+> pelės mygtuku, arba klavišais <keysym
+>Aukštyn</keysym
+> ir <keysym
+>Žemyn</keysym
+>. Aplankų išskleidimui naudokite <keysym
+>Dešinėn</keysym
+>, o suskleidimui – <keysym
+>Kairėn</keysym
+>.</para>
+
+<para
+>Žymelę galite perkelti į kitą aplanką arba ją pertempdami, arba naudodami standartinį <guimenuitem
+>Iškirpimo</guimenuitem
+> ir <guimenuitem
+>Įkėlimo</guimenuitem
+> metodą. Kokia eilės tvarka žymelės sudėliotos <guilabel
+>Žymelių redaktoriuje</guilabel
+>, tokia tvarka jie ir pasirodys <guimenu
+>Žymelių</guimenu
+> meniu. Norėdami įterpti žymeles atskiriančias linijas – skirtukus, naudokite meniu punktą <menuchoice
+><guimenu
+>Aplankas</guimenu
+><guimenuitem
+>Įterpti skirtuką</guimenuitem
+></menuchoice
+>.</para>
+
+<para
+>Naują aplanką galite sukurti parinkę <guimenuitem
+>Naujas aplankas...</guimenuitem
+> iš meniu <guimenu
+>Aplankas</guimenu
+> arba iš kontekstinio meniu paspaudus <mousebutton
+>dešinį</mousebutton
+> pelės mygtuką arba tiesiog paspaudę <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </para>
+
+<para
+>Norėdami pakeisti žymelės ar aplanko pavadinimą, pažymėkite jį ir spauskite <keycap
+>F2</keycap
+> arba pasirinkite <guimenuitem
+>Pervadinti</guimenuitem
+> iš meniu <guimenu
+>Keisti</guimenu
+> arba kontekstinio meniu, parodomo paspaudus <mousebutton
+>dešinį</mousebutton
+> pelės mygtuką. Žymelės nuorodą (&URL;) galite keisti atitinkamai paspaudę <keycap
+>F3</keycap
+> arba iš meniu pasirinkę <guimenuitem
+>Pakeisti URL</guimenuitem
+>.</para>
+
+<para
+><guilabel
+>Žymelių redaktoriumi</guilabel
+> galite įkelti žymeles iš eilės kitų naršyklių į &konqueror; žymelių sąrašo naują katalogą arba pakeičiant visas esamas žymeles. Kad tą padarytumėte, iš meniu <guimenu
+>Failas</guimenu
+> parinkite <guisubmenu
+>Importuoti</guisubmenu
+>. Meniu punktas <menuchoice
+><guimenu
+>Failas</guimenu
+><guisubmenu
+>Eksportuoti</guisubmenu
+></menuchoice
+> leidžia eksportuoti &konqueror; žymeles į &Netscape; ar Mozilla naršykles.</para>
+
+<para
+>Norėdami nurodyti, kuris žymelių poaplankis rodomas žymelių įrankinėje, pažymėkite poaplankį ir iš meniu <guimenu
+>Aplankas</guimenu
+> parinkite punktą <guimenuitem
+>Nustatyti įrankių juostos aplanku</guimenuitem
+>.</para>
+
+<para
+>Jei tvarkote savo žymeles ir pamiršote, koks yra kuris nors puslapis, galite patogiai jį atidaryti tiesiai iš <guilabel
+>žymelių redaktoriaus</guilabel
+> spausdami <mousebutton
+>dešinį</mousebutton
+> pelės mygtuką ir iš konteksinio meniu pasirinkdami <guimenuitem
+>Atverti su Konqueror</guimenuitem
+>. Jei tiesiog norite patikrinti, ar nuoroda vis dar galioja, parinkite <guimenuitem
+>Tikrinti būvį</guimenuitem
+>.</para>
+
+<note
+><para
+>Visi pakeitimai automatiškai išsaugomi uždarius <guilabel
+>Žymelių redaktorių</guilabel
+>. </para
+></note>
+</sect1
+> 
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

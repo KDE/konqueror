@@ -1,0 +1,97 @@
+# translation of dirfilterplugin.po to Estonian
+# Copyright (C) 2003, 2005 Free Software Foundation, Inc.
+#
+# Marek Laane <bald@starman.ee>, 2003-2005,2007, 2012.
+# Peeter Russak <pezz@tkwcy.ee>, 2005.
+msgid ""
+msgstr ""
+"Project-Id-Version: dirfilterplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2012-10-10 08:07+0300\n"
+"Last-Translator: Marek Laane <bald@smail.ee>\n"
+"Language-Team: Estonian <kde-et@linux.ee>\n"
+"Language: et\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: dirfilterplugin.cpp:120
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Hide Filter Bar"
+msgstr "Filtririba peitmine"
+
+#: dirfilterplugin.cpp:124
+#, kde-format
+msgctxt "@label:textbox"
+msgid "F&ilter:"
+msgstr "F&ilter:"
+
+#: dirfilterplugin.cpp:136
+#, kde-format
+msgctxt "@label:button"
+msgid "Filter by t&ype"
+msgstr "Filtreerimine tüü&bi järgi"
+
+#: dirfilterplugin.cpp:137
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Filter items by file type."
+msgstr "Elementide filtreerimine failitüübi järgi."
+
+#: dirfilterplugin.cpp:228
+#, kde-format
+msgctxt "@action:inmenu Tools"
+msgid "Show Filter Bar"
+msgstr "Filtririba näitamine"
+
+#: dirfilterplugin.cpp:322
+#, kde-format
+msgid "Use Multiple Filters"
+msgstr "Mitme filtri kasutamine"
+
+#: dirfilterplugin.cpp:328
+#, kde-format
+msgid "Show Count"
+msgstr "Näidatakse arvu"
+
+#: dirfilterplugin.cpp:333
+#, kde-format
+msgid "Reset"
+msgstr "Taasta algsätted"
+
+#. i18n: ectx: Menu (tools)
+#: dirfilterplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "&Tööriistad"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: dirfilterplugin.rc:8
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "Ekstratööriistariba"
+
+#~ msgid "Allow to filter the currently displayed items by filetype."
+#~ msgstr ""
+#~ "Võimaldab parajasti nähtavaid elemente filtreerida failitüübi järgi."
+
+#~ msgid "Only Show Items of Type"
+#~ msgstr "Näidatakse ainult järgneva tüübiga elemente: "
+
+#~ msgid "Filter Field"
+#~ msgstr "Filtriväli"
+
+#~ msgid "Clear Filter Field"
+#~ msgstr "Puhasta filtriväli"
+
+#~ msgid "Clear filter field<p>Clears the content of the filter field.</p>"
+#~ msgstr "Puhasta filtriväli<p>Puhastab filtriväljalt selle sisu.</p>"
+
+#~ msgid ""
+#~ "Enter here a text which an item in the view must contain anywhere to be "
+#~ "shown."
+#~ msgstr "Kirjuta siia tekst, mida vaates näidatav element peab sisaldama."

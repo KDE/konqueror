@@ -1,0 +1,229 @@
+<chapter id="bookmarks">
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+&erik.kjaer.pedersen.role; 
+</authorgroup>
+<date
+>2003-11-05</date
+> <releaseinfo
+>3.2</releaseinfo
+> </chapterinfo>
+
+<title
+>Brug af bogmærker</title>
+
+<para
+>Selvom du kan bruge &konqueror;'s bogmærker til at huske steder for dine egne filer og mapper, er de mere nyttige når du oser på nettet, da de lader dig opbygge en liste af nyttige steder.</para>
+
+<para
+>For at åbne <guimenu
+>Bogmærker</guimenu
+>-menuen skal du enten <mousebutton
+>venstre</mousebutton
+>klikke på <guimenu
+>Bogmærker</guimenu
+>-menuen eller bruge <keycombo action="simul"
+>&Alt;<keycap
+>B</keycap
+></keycombo
+> genvejstasten. Når listen er synlig kan du navigere gennem den med piletasterne eller med musen, og trykke på &Enter; eller med et <mousebutton
+>venstre</mousebutton
+> museknap klik for at besøge det valgte sted.</para>
+
+<para
+>For at tilføje et nyt punkt til listen, brug <menuchoice
+><guimenu
+>Bogmærker </guimenu
+> <guimenuitem
+>Tilføj bogmærke</guimenuitem
+></menuchoice
+> eller <keycombo action="simul"
+>&Ctrl;<keycap
+>B</keycap
+></keycombo
+> eller <mousebutton
+>højre</mousebutton
+>-klik på et klart sted i  netsiden eller mappen og vælg <guimenuitem
+>Bogmærke for dette sted</guimenuitem
+> fra popop-menuen.</para>
+
+<para
+><guimenu
+>Bogmærker</guimenu
+> listen kan indeholder undermapper der indeholder andre bogmærker, du kan lave disse med <menuchoice
+><guimenu
+>Bogmærker </guimenu
+><guimenuitem
+>Ny bogmærkemappe...</guimenuitem
+></menuchoice
+> . Hvis du vil tilføje et bogmærke til en undermappe i stedet for til hoved-bogmærkelisten, så vælg mappen fra <guimenu
+>Bogmærker</guimenu
+>menuen og brug <guimenuitem
+>Tilføj bogmærke</guimenuitem
+> punktet i denne mappe.</para>
+
+<para
+>Du kan også få adgang til dine bogmærker fra <link linkend="sidebar"
+> Navigationspanel</link
+>.</para>
+
+<sect1 id="orgbmark">
+<title
+>Bogmærke-editoren</title>
+
+<para
+><menuchoice
+><guimenu
+>Bogmærker</guimenu
+><guimenuitem
+>Redigér bogmærker</guimenuitem
+> </menuchoice
+> åbner for <guilabel
+>Bogmærkeredigering</guilabel
+>.</para>
+<para
+>Dette viser en trævisning af dine bogmærker og bogmærkeundermapper. Som sædvanligt for trævisninger i &kde;, vises undermapper med en lille firkant til venstre for mappenavnet; hvis firkanten indeholder et <keycap
+>+</keycap
+> tegn vil <mousebutton
+>venstre</mousebutton
+>klik på det ekspandere visningen til at vise indholdet af den undermappe og <keycap
+>+</keycap
+> tegnet ændres til et <keycap
+>-</keycap
+>, <mousebutton
+>venstre</mousebutton
+>klik på <keycap
+>-</keycap
+> tegnet vil kollapse undermappevisningen.</para>
+
+<para
+>For at vælge et punkt i listen kan du <mousebutton
+>venstre</mousebutton
+>-klikke på det, eller du kan navigere gennem listen ved at bruge <keysym
+> Op</keysym
+>- og <keysym
+>Ned</keysym
+>-tasterne til at flytte rundt, <keysym
+>Højre</keysym
+>-tasten til at ekspandere en undermappe og <keysym
+> Venstre</keysym
+>-tasten for at kollapse den.</para>
+
+<para
+>Du kan flytte et punkt til et andet sted med det normale træk og slip, eller ved <guimenuitem
+>Klip</guimenuitem
+> og <guimenuitem
+>Indsæt</guimenuitem
+>metoden. Rækkefølgen i hvilken punkterne ses i <guilabel
+>Bogmærkeredigeringen</guilabel
+> er rækkefølgen de vil vise sig i i <guimenu
+>Bogmærker</guimenu
+> drop-ned listen. <menuchoice
+><guimenu
+>Indsæt </guimenu
+><guimenuitem
+>Indsæt adskiller</guimenuitem
+></menuchoice
+> kan bruges til at indsætte adskillelseslinjer i listen efter behov.</para>
+
+<para
+>En ny undermapper kan laves på det valgte punkt i listen ved at bruge <guimenuitem
+>Opret ny mappe...</guimenuitem
+> i <guimenu
+>Indsæt</guimenu
+>menuen eller fra drop-ned menuen du får når du <mousebutton
+>højre</mousebutton
+>klikker på et punkt i hoveddelen af et vindue eller med <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </para>
+
+<para
+>For at ændre navnet på et bogmærke eller en mappe vælges den og du trykker på <keycap
+>F2</keycap
+> eller <guimenuitem
+>Omdøb</guimenuitem
+>-punktet fra <guimenu
+>Redigér</guimenu
+>-menuen vælges, eller fra popop-menuen der kommer frem når du <mousebutton
+>højre</mousebutton
+>-klikker på punktet. Tilsvarende kan du redigere en &URL; ved at trykke på <keycap
+>F3</keycap
+> eller ved at vælge <guimenuitem
+>Ændr URL</guimenuitem
+> menupunktet.</para>
+
+<para
+><guilabel
+>Bogmærke-editoren</guilabel
+> lader dig importere bogmærker fra et antal andre browsere til &konqueror;'s bogmærkeliste, idet den putter dem i en ny mappe eller erstatter alle nuværende bogmærker. For at gøre dette vælges <guisubmenu
+>Importér</guisubmenu
+> fra <guimenu
+>Fil</guimenu
+>-menuen. <menuchoice
+><guimenu
+>Fil</guimenu
+><guisubmenu
+>Eksportér</guisubmenu
+> </menuchoice
+>-valget kan bruges til at eksportere &konqueror;'s bogmærker til  &Netscape; eller Mozilla.</para>
+
+<para
+>Hvis du ofte bruger &Netscape; foruden &konqueror;, så er det bedre snarere end at importere dine &Netscape;-bogmærker til &konqueror; at vælge <guimenuitem
+>Vis Netscape-bogmærker i Konquerors vinduer</guimenuitem
+> punktet i <guimenu
+>Opsætnings</guimenu
+>menuen. Hvis du gør dette vil alle opdateringer af &Netscape;'s bogmærker automatisk blive set af &konqueror;.</para>
+
+<para
+>For at vælge hvilken bogmærke-undermappe der bruges til at holde bogmærkeværktøjslinjens punkter vælges undermappen og så <guimenuitem
+>Sæt som værktøjslinjemappe</guimenuitem
+> fra <guimenu
+>Redigér</guimenu
+>-menuen.</para>
+
+<para
+>Hvis du rydder op i dine bogmærker og har glemt hvad en bestemt netside er, kan du nemt åbne den indefra <guilabel
+> Bogmærke-editoren</guilabel
+> ved at <mousebutton
+>højre</mousebutton
+>-klikke på punktet og vælge <guimenuitem
+>Åbn i Konqueror</guimenuitem
+> fra popop-menuen. Hvis du blot ønsker at tjekke at &URL;'en stadig er gyldig vælges <guimenuitem
+>Tjek status</guimenuitem
+> i stedet for.</para>
+
+<important
+><para
+>Glem ikke at gemme dine ændringer med <menuchoice
+> <guimenu
+>Fil</guimenu
+><guimenuitem
+>Gem</guimenuitem
+></menuchoice
+> eller <keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+> før du forlader din <guilabel
+>Bogmærke-editor</guilabel
+>. </para
+></important>
+</sect1
+> 
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

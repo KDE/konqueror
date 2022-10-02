@@ -1,0 +1,195 @@
+<chapter id="path-complete">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+> <firstname
+>Rocío</firstname
+> <surname
+>Gallego</surname
+> <affiliation
+><address
+><email
+>traducciones@rociogallego.com</email
+></address
+></affiliation
+> <contrib
+>Traductor</contrib
+> </othercredit
+><othercredit role="translator"
+> <firstname
+>Pablo</firstname
+> <surname
+>de Vicente</surname
+> <affiliation
+><address
+><email
+>pablo.devicente@gmail.com</email
+></address
+></affiliation
+> <contrib
+>Traductor</contrib
+> </othercredit
+> <othercredit role="translator"
+> <firstname
+>Marcos</firstname
+> <surname
+>Fouces Lago</surname
+> <affiliation
+><address
+><email
+>mfouces@yahoo.es</email
+></address
+></affiliation
+> <contrib
+>Traductor</contrib
+> </othercredit
+> 
+</authorgroup
+> 
+
+<date
+>2010-10-26</date>
+<releaseinfo
+>&kde; 4.5</releaseinfo>
+</chapterinfo>
+
+
+<title
+>Relleno automático de texto</title
+> 
+
+<para
+>Puede hacer que &konqueror; le ayude cuando introduce una ruta o una &URL; en la barra de herramientas de ubicación activando una de las funcionalidades de <guimenuitem
+>Relleno de texto</guimenuitem
+>. Para ello, pulse con el <mousebutton
+>botón derecho</mousebutton
+> del ratón en una parte vacía de la casilla de entrada de la barra de herramientas de ubicación y seleccione <guisubmenu
+>Relleno de texto</guisubmenu
+> en el menú emergente. Esto le permitirá elegir entre las siguientes opciones:</para>
+
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Ninguno</guimenuitem
+></term>
+<listitem
+><para
+>Lo que obtiene es lo que escribe.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Manual</guimenuitem
+></term>
+<!-- in 4.5 I see no diff to None -->
+<listitem
+><para
+>Cuando haya introducido parte de una ruta o de una &URL;, pulse <keycombo action="simul"
+>&Ctrl;<keycap
+>E</keycap
+></keycombo
+> o &Tab; para completar la entrada si es posible hacerlo sin ambigüedad.</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Automático</guimenuitem
+></term>
+<listitem
+><para
+>Cuando se escribe una dirección en la barra de herramientas de ubicación de &konqueror;, automáticamente se extenderá lo que usted escriba para completar una posible ruta o &URL;, resaltando los caracteres añadidos. Continúe escribiendo si lo obtenido no es lo que deseaba o pulse <keycap
+>Intro</keycap
+> para aceptarlo.</para
+></listitem>
+ </varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Lista desplegable</guimenuitem
+></term>
+<listitem
+><para
+>Aparecerá una ventana desplegable mientras escribe una dirección, mostrando todas las posibles entradas de acuerdo con lo que haya escrito hasta el momento. Cuando aparezca la ruta o &URL; que desea en la ventana, pulse sobre ella con el &LMB;. También puede utilizar las teclas de <keysym
+>flecha abajo</keysym
+> o &Tab; y <keysym
+>flecha arriba</keysym
+> o <keycombo action="simul"
+>&Shift;&Tab;</keycombo
+> para seleccionarla y después pulse &Enter;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Automático corto</guimenuitem
+></term>
+<listitem
+><para
+>Este es como el modo automático, excepto que solo extiende lo que usted ha introducido hasta el símbolo <keycap
+>/</keycap
+> en la ruta o &URL;. Pulse <keycombo action="simul"
+>&Ctrl;<keycap
+>E</keycap
+></keycombo
+> o &Tab; para aceptar la sugerencia, e &Enter; cuando se muestre la ruta o &URL; completa.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Lista desplegable y automática</guimenuitem
+></term>
+<listitem
+><para
+>Esta es una combinación de las dos opciones descritas anteriormente.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Predeterminado</guimenuitem
+></term>
+<listitem
+><para
+>Este elemento aparece en la parte inferior del submenú y le permite cambiar al comportamiento predeterminado de <guimenuitem
+>Lista desplegable</guimenuitem
+>.</para
+></listitem>
+</varlistentry>
+<!-- Del to end 
+substring completion F7 http://websvn.kde.org/?view=revision&revision=1096306-->
+</variablelist>
+<para
+>Debería intentar estos modos diferentes y seleccionar aquel que se ajuste mejor a sus preferencias.</para>
+<para
+>El historial de las &URL; visitadas recientemente que &konqueror; utiliza para la función de relleno de texto se puede ver y editar en la página de <guilabel
+>Historial </guilabel
+> del <link linkend="sidebar"
+>Panel lateral</link
+>.</para>
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

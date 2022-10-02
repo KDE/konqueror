@@ -1,0 +1,3662 @@
+# translation of konqueror.po to Persian
+# Nazanin Kazemi <kazemi@itland.ir>, 2006, 2007.
+# Tahereh Dadkhahfar <dadkhahfar@itland.ir>, 2006.
+# MaryamSadat Razavi <razavi@itland.ir>, 2006.
+# Nasim Daniarzadeh <daniarzadeh@itland.ir>, 2006.
+# Mohamad Reza Mirdamadi <mohi@ubuntu.ir>, 2010, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2014-06-23 23:18+0430\n"
+"Last-Translator: Mohi Mirdamadi <mohi@ubuntu.ir>\n"
+"Language-Team: Farsi (Persian) <kde-i18n-fa@kde.org>\n"
+"Language: fa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. i18n: ectx: Menu (tools)
+#: konq_shellcmdplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "&ابزارها‌"
+
+#: kshellcmdexecutor.cpp:106
+#, kde-format
+msgid "Input Required:"
+msgstr "ورودی مورد نیاز:"
+
+#: kshellcmdplugin.cpp:32
+#, kde-format
+msgid "&Execute Shell Command..."
+msgstr "&اجرای فرمان پوسته..."
+
+#: kshellcmdplugin.cpp:41
+#, kde-format
+msgid ""
+"KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a bug."
+msgstr ""
+"KShellCmdPlugin::slotExecuteShellCommand: خطای برنامه، لطفا اشکال را گزارش "
+"کنید."
+
+#: kshellcmdplugin.cpp:51
+#, kde-format
+msgid "Executing shell commands works only on local directories."
+msgstr "اجرای فرمان پوسته فقط روی فهرست محلی کار می‌کند."
+
+#: kshellcmdplugin.cpp:73
+#, kde-format
+msgctxt "@title:window"
+msgid "Execute Shell Command"
+msgstr "اجرای فرمان پوسته"
+
+#: kshellcmdplugin.cpp:74
+#, kde-format
+msgid "Execute shell command in current directory:"
+msgstr "اجرای فرمان پوسته در فهرست جاری:"
+
+#: kshellcmdplugin.cpp:85
+#, kde-format
+msgid "Output from command: \"%1\""
+msgstr "خروجی از فرمان: »%1«"
+
+#, fuzzy
+#~ msgid "no name"
+#~ msgstr "نازنین کاظمی"
+
+#~ msgid "Configure"
+#~ msgstr "پیکربندی"
+
+#~ msgid "Extensions"
+#~ msgstr "پسوندها"
+
+#~ msgid ""
+#~ "There was an error loading the module %1.\n"
+#~ "The diagnostics is:\n"
+#~ "%2"
+#~ msgstr ""
+#~ "یک خطای بارگذاری پیمانه  %1 وجود داشت.\n"
+#~ "خطا عبارت است از:\n"
+#~ "%2"
+
+#~ msgid "Web browser, file manager and document viewer."
+#~ msgstr "مرورگر وب، مدیر پرونده و مشاهده‌گر سند."
+
+#~ msgid "Developer"
+#~ msgstr "توسعه‌دهنده"
+
+#~ msgid "Graphics/icons"
+#~ msgstr "نگاره‌ها/شمایلها"
+
+#~ msgid "KFM author"
+#~ msgstr "نویسنده KFM"
+
+#~ msgid ""
+#~ "Checking this box on at least two views sets those views as 'linked'. "
+#~ "Then, when you change directories in one view, the other views linked "
+#~ "with it will automatically update to show the current directory. This is "
+#~ "especially useful with different types of views, such as a directory tree "
+#~ "with an icon view or detailed view, and possibly a terminal emulator "
+#~ "window."
+#~ msgstr ""
+#~ "با علامت زدن این جعبه در حداقل دو نما، آن نماها را به عنوان »پیوندی« "
+#~ "تنظیم می‌کند. سپس، هنگامی که شما فهرستهای راهنما را در یک نما تغییر "
+#~ "می‌دهید، نماهای دیگر که با آن پیوند خورده است به طور خودکار برای نمایش "
+#~ "فهرست راهنمای جاری به‌روز می‌شود. این به ویژه برای انواع مختلف نماها، نظیر "
+#~ "یک درخت فهرست راهنما با یک شمایل نما یا نمای جزئی، و احتمالاً یک پنجره "
+#~ "مقلد پایانه، مفید است."
+
+#~ msgid "Close View"
+#~ msgstr "بستن نما"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/ثانیه"
+
+#~ msgid "Stalled"
+#~ msgstr "ایستاد"
+
+#, fuzzy
+#~| msgid "Preview in %1"
+#~ msgid "Preview &in %1"
+#~ msgstr "پیش‌نمایش در %1"
+
+#~ msgid "Show %1"
+#~ msgstr "نمایش %1"
+
+#, fuzzy
+#~| msgid "History"
+#~ msgctxt "@title:window"
+#~ msgid "History"
+#~ msgstr "تاریخچه"
+
+#, fuzzy
+#~| msgid "Sort"
+#~ msgctxt "@action:inmenu Parent of 'By Name' and 'By Date'"
+#~ msgid "Sort"
+#~ msgstr "مرتب کردن"
+
+#~ msgid ""
+#~ "<qt><center><b>%1</b></center><hr />Last visited: %2<br />First visited: "
+#~ "%3<br />Number of times visited: %4</qt>"
+#~ msgstr ""
+#~ "<qt><center><b>%1</b></center><hr />آخرین بازدید: %2<br />اولین بازدید:"
+#~ "%3<br />تعداد دفعات بازدیدشده: %4</qt>"
+
+#~ msgid "Miscellaneous"
+#~ msgstr "متفرقه"
+
+#~ msgid "Open in New &Window"
+#~ msgstr "باز کردن در &پنجره جدید‌"
+
+#~ msgid "Open in New Tab"
+#~ msgstr "باز کردن در تب جدید"
+
+#, fuzzy
+#~| msgid "Copy Link Address"
+#~ msgid "&Copy Link Address"
+#~ msgstr "رونوشت نشانی پیوند"
+
+#~ msgid "&Remove Entry"
+#~ msgstr "&حذف مدخل‌"
+
+#~ msgid "C&lear History"
+#~ msgstr "&پاک کردن تاریخچه‌"
+
+#~ msgid "&Preferences..."
+#~ msgstr "&تنظیمات..."
+
+#~ msgid "By &Name"
+#~ msgstr "بر اساس &نام‌"
+
+#~ msgid "By &Date"
+#~ msgstr "بر اساس &تاریخ‌"
+
+#, fuzzy
+#~| msgid "Clear History"
+#~ msgid "Search in history"
+#~ msgstr "پاک کردن تاریخچه"
+
+#~ msgid "Do you really want to clear the entire history?"
+#~ msgstr "واقعاً می‌خواهید تمام تاریخچه را پاک کنید؟"
+
+#~ msgid "Clear History?"
+#~ msgstr "تاریخچه پاک شود؟"
+
+#, fuzzy
+#~| msgid "Start without a default window"
+#~ msgid "Start without a default window, when called without URLs"
+#~ msgstr "شروع بدون یک پنجره پیش‌فرض"
+
+#~ msgid "Profile to open"
+#~ msgstr "profile برای باز کردن"
+
+#~ msgid "List available profiles"
+#~ msgstr "فهرست profileهای موجود"
+
+#, fuzzy
+#~| msgid "List available profiles"
+#~ msgid "List available sessions"
+#~ msgstr "فهرست profileهای موجود"
+
+#, fuzzy
+#~| msgid "Location to open"
+#~ msgid "Session to open"
+#~ msgstr "محل برای باز کردن"
+
+#~ msgid "Mimetype to use for this URL (e.g. text/html or inode/directory)"
+#~ msgstr ""
+#~ "نوع مایم مورد استفاده برای این نشانی وب )مثلاً متنی/زنگام یا گره اطلاعاتی/"
+#~ "فهرست راهنما("
+
+#~ msgid ""
+#~ "For URLs that point to files, opens the directory and selects the file, "
+#~ "instead of opening the actual file"
+#~ msgstr ""
+#~ "برای نشانیهای وبی که به پرونده اشاره می‌کنند، به جای باز کردن پرونده "
+#~ "حقیقی، فهرست راهنما را باز کرده و پرونده را برمی‌گزیند"
+
+#~ msgid "Location to open"
+#~ msgstr "محل برای باز کردن"
+
+#~ msgid "Canceled."
+#~ msgstr "لغو شد."
+
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Reloading the page will discard these changes."
+#~ msgstr ""
+#~ "این صفحه شامل تغییراتی است که ارائه نشده‌اند.\n"
+#~ "بارگذاری مجدد این صفحه این تغییرات را دور می‌ریزد."
+
+#~ msgid "Discard Changes?"
+#~ msgstr "تغییرات دور انداخته شوند؟"
+
+#~ msgid "&Discard Changes"
+#~ msgstr "&دور ریختن تغییرات‌"
+
+#~ msgid "File Management"
+#~ msgstr "مدیریت پرونده"
+
+#~ msgid "Web Browsing"
+#~ msgstr "مرور وب"
+
+#~ msgid "Home Folder"
+#~ msgstr "پوشه آغازه"
+
+#, fuzzy
+#~| msgid "Home"
+#~ msgid "Home"
+#~ msgstr "آغازه"
+
+#, fuzzy
+#~| msgid "Navigate to your 'Home Location'"
+#~ msgid "Navigate to your 'Home Folder'"
+#~ msgstr "ناوش به »محل آغازه« شما"
+
+#, fuzzy
+#~| msgid "Navigate to your 'Home Location'"
+#~ msgid "Navigate to your local 'Home Folder'"
+#~ msgstr "ناوش به »محل آغازه« شما"
+
+#, fuzzy
+#~| msgid "Home"
+#~ msgid "Home Page"
+#~ msgstr "آغازه"
+
+#, fuzzy
+#~| msgid "Navigate to your 'Home Location'"
+#~ msgid "Navigate to your 'Home Page'"
+#~ msgstr "ناوش به »محل آغازه« شما"
+
+#, fuzzy
+#~ msgid ""
+#~ "<html>Navigate to your 'Home Page'<br /><br />You can configure the "
+#~ "location where this button takes you under <b>Settings -> Configure "
+#~ "Konqueror -> General</b>.</html>"
+#~ msgstr ""
+#~ "ناوش به »محل آغازه« شما<br /><br />می‌توانید محلی که این دکمه شما را "
+#~ "می‌برد، در <b>مرکز کنترل KDE</b>، تحت <b>مدیر پرونده</b>/<b>رفتار</b> "
+#~ "پیکربندی کنید."
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Detaching the tab will discard these changes."
+#~ msgstr ""
+#~ "این تب شامل تغییراتی است که ارائه نشده‌اند.\n"
+#~ " جداسازی تب این تغییرات را دور می‌اندازد."
+
+#~ msgid ""
+#~ "This view contains changes that have not been submitted.\n"
+#~ "Closing the view will discard these changes."
+#~ msgstr ""
+#~ "این نما تغییراتی را شامل می‌شود که ارائه نشده‌اند.\n"
+#~ "بستن نما این تغییرات را دور می‌ریزد."
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the tab will discard these changes."
+#~ msgstr ""
+#~ "این تب شامل تغییراتی است که ارائه نشده‌اند.\n"
+#~ "با بستن تب، این تغییرات دور ریخته می‌شوند."
+
+#~ msgid "Do you really want to close all other tabs?"
+#~ msgstr "آیا واقعاً می‌خواهید همه تبهای دیگر را ببندید؟"
+
+#~ msgid "Close Other Tabs Confirmation"
+#~ msgstr "تأیید بستن تبهای دیگر"
+
+#~ msgid "Close &Other Tabs"
+#~ msgstr "بستن تبهای &دیگر‌"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing other tabs will discard these changes."
+#~ msgstr ""
+#~ "این تب شامل تغییراتی است که ارائه نشده‌اند.\n"
+#~ "بستن تبهای دیگر، باعث دور ریختن این تغییرات می‌شود."
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Reloading all tabs will discard these changes."
+#~ msgstr ""
+#~ "این تب شامل تغییراتی است که ارائه نشده‌اند.\n"
+#~ "بارگذاری مجدد همه تبها باعث دور ریختن این تغییرات می‌شود."
+
+#~ msgid "Enter Target"
+#~ msgstr "هدف را وارد کنید"
+
+#~ msgid "<qt><b>%1</b> is not valid</qt>"
+#~ msgstr "<qt><b>%1</b> معتبر نیست</qt>"
+
+#~ msgid "Copy selected files from %1 to:"
+#~ msgstr "رونوشت پرونده‌های برگزیده از %1 به:"
+
+#~ msgid "Move selected files from %1 to:"
+#~ msgstr "حرکت پرونده‌های برگزیده از %1 به:"
+
+#~ msgctxt "This menu entry empties the closed items history"
+#~ msgid "Empty Closed Items History"
+#~ msgstr "پاک کردن تاریخچه‌ی فقره‌های بسته‌شده"
+
+#~ msgid "Save As..."
+#~ msgstr "ذخیره به عنوان..."
+
+#~ msgid "Manage..."
+#~ msgstr "مدیریت..."
+
+#~ msgid "New &Window"
+#~ msgstr "&پنجره جدید‌"
+
+#~ msgid "&Duplicate Window"
+#~ msgstr "پنجره &مضاعف‌"
+
+#~ msgid "Send &Link Address..."
+#~ msgstr "ارسال نشانی &پیوند...‌"
+
+#~ msgid "S&end File..."
+#~ msgstr "&ارسال پرونده...‌"
+
+#~ msgid "&Open Location"
+#~ msgstr "باز کردن محل"
+
+#~ msgid "&Open File..."
+#~ msgstr "باز کردن &پرونده‌..."
+
+#~ msgid "&Find File..."
+#~ msgstr "&یافتن پرونده...‌"
+
+#~ msgid "&Use index.html"
+#~ msgstr "&استفاده از index.html‌"
+
+#~ msgid "Lock to Current Location"
+#~ msgstr "قفل برای محل جاری"
+
+#~ msgctxt "This option links konqueror views"
+#~ msgid "Lin&k View"
+#~ msgstr "نمای &پیوند‌"
+
+#~ msgid "&Up"
+#~ msgstr "&بالا‌"
+
+#~ msgid "Closed Items"
+#~ msgstr "&بستن فقره‌ها"
+
+#~ msgid "Sessions"
+#~ msgstr "نشست‌ها"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Most Often Visited"
+#~ msgstr "اغلب بازدیدشده"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Recently Visited"
+#~ msgstr "به تازگی بازدیدشده"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History"
+#~ msgstr "نمایش تاریخچه"
+
+#~ msgid "&Save View Profile As..."
+#~ msgstr "&ذخیره profile نما به عنوان..."
+
+#~ msgid "Configure Extensions..."
+#~ msgstr "پیکربندی پسوندها..."
+
+#~ msgid "Configure Spell Checking..."
+#~ msgstr "پیکربندی غلط‌یاب..."
+
+#~ msgid "Split View &Left/Right"
+#~ msgstr "شکافتن نمای &چپ/راست‌"
+
+#~ msgid "Split View &Top/Bottom"
+#~ msgstr "شکافتن نمای &بالا/پایین‌"
+
+#~ msgid "&New Tab"
+#~ msgstr "تب &جدید‌"
+
+#~ msgid "&Duplicate Current Tab"
+#~ msgstr "تب &مضاعف جاری‌"
+
+#~ msgid "Detach Current Tab"
+#~ msgstr "جداسازی تب جاری"
+
+#~ msgid "&Close Active View"
+#~ msgstr "&بستن نمای فعال‌"
+
+#~ msgid "Close Current Tab"
+#~ msgstr "بستن تب جاری"
+
+#~ msgid "Activate Next Tab"
+#~ msgstr "فعال کردن تب بعدی"
+
+#~ msgid "Activate Previous Tab"
+#~ msgstr "فعال کردن تب قبلی"
+
+#~ msgid "Activate Tab %1"
+#~ msgstr "فعال کردن تب %1"
+
+#~ msgid "Move Tab Left"
+#~ msgstr "حرکت تب به چپ"
+
+#~ msgid "Move Tab Right"
+#~ msgstr "حرکت تب به راست"
+
+#~ msgid "Dump Debug Info"
+#~ msgstr " تخلیه اطلاعات اشکال‌زدایی"
+
+#~ msgid "C&onfigure View Profiles..."
+#~ msgstr "&پیکربندی نمای profileها...‌"
+
+#~ msgid "Load &View Profile"
+#~ msgstr "بارگذاری &نمای Profile‌"
+
+#~ msgid "&Reload"
+#~ msgstr "&بارگذاری مجدد‌"
+
+#~ msgid "&Reload All Tabs"
+#~ msgstr "&بارگذاری مجدد همه تبها‌"
+
+#, fuzzy
+#~| msgid "&Reload"
+#~ msgid "&Force Reload"
+#~ msgstr "&بارگذاری مجدد‌"
+
+#~ msgid "&Stop"
+#~ msgstr "&ایست‌"
+
+#~ msgid "L&ocation: "
+#~ msgstr "&محل:‌"
+
+#~ msgid "Location Bar"
+#~ msgstr "میله محل"
+
+#, fuzzy
+#~ msgid ""
+#~ "<html>Location Bar<br /><br />Enter a web address or search term.</html>"
+#~ msgstr "میله محل<br /><br />یک نشانی وب یا اصطلاح جستجو وارد کنید."
+
+#~ msgid "Clear Location Bar"
+#~ msgstr "پاک کردن میله محل"
+
+#, fuzzy
+#~ msgid ""
+#~ "<html>Clear Location bar<br /><br />Clears the contents of the location "
+#~ "bar.</html>"
+#~ msgstr "برو<br /><br />به صفحه‌ای که در میله محل واردشده می‌رود."
+
+#~ msgid "&Bookmarks"
+#~ msgstr "&چوب الفها‌"
+
+#~ msgid "Kon&queror Introduction"
+#~ msgstr "مقدمه Kon&queror‌"
+
+#~ msgid "Go"
+#~ msgstr "برو"
+
+#, fuzzy
+#~ msgid ""
+#~ "<html>Go<br /><br />Goes to the page that has been entered into the "
+#~ "location bar.</html>"
+#~ msgstr "برو<br /><br />به صفحه‌ای که در میله محل واردشده می‌رود."
+
+#, fuzzy
+#~ msgid ""
+#~ "<html>Enter the parent folder<br /><br />For instance, if the current "
+#~ "location is file:/home/%1 clicking this button will take you to file:/"
+#~ "home.</html>"
+#~ msgstr ""
+#~ "پوشه پدر را وارد کنید<br /><br />برای نمونه، اگر محل جاری file:/home/%1 "
+#~ "است، با فشار این دکمه شما را به file:/home می‌برد."
+
+#~ msgid "Enter the parent folder"
+#~ msgstr "پوشه پدر را وارد کنید"
+
+#~ msgid "Move backwards one step in the browsing history"
+#~ msgstr "حرکت پس‌سوها یک گام در تاریخچه مرورگر"
+
+#~ msgid "Move forward one step in the browsing history"
+#~ msgstr "حرکت پیش‌سوها یک گام در تاریخچه مرورگر"
+
+#, fuzzy
+#~ msgid "Move backwards one step in the closed tabs history"
+#~ msgstr "حرکت پس‌سوها یک گام در تاریخچه مرورگر"
+
+#, fuzzy
+#~ msgid ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.</html>"
+#~ msgstr ""
+#~ "بارگذاری مجدد سندی که اخیراً نمایش داده شده<br /><br />برای مثال، ممکن است "
+#~ "به منظور مرئی ساختن تغییرات، لازم باشد که صفحات وبی که از زمان بار شدن "
+#~ "تغییر یافته‌اند بازآوری شوند."
+
+#~ msgid "Reload the currently displayed document"
+#~ msgstr "بارگذاری مجدد سندی که اخیراً نمایش داده شده"
+
+#, fuzzy
+#~ msgid ""
+#~ "<html>Reload all currently displayed documents in tabs<br /><br />This "
+#~ "may, for example, be needed to refresh web pages that have been modified "
+#~ "since they were loaded, in order to make the changes visible.</html>"
+#~ msgstr ""
+#~ "بارگذاری مجدد همه اسنادی که اخیراً نمایش داده شده در تبها<br /><br />برای "
+#~ "مثال، ممکن است به منظور مرئی ساختن تغییرات، لازم باشد که صفحات وبی که از "
+#~ "زمان بار شدن تغییر یافته‌اند بازآوری شوند."
+
+#~ msgid "Reload all currently displayed document in tabs"
+#~ msgstr "بارگذاری مجدد کل سندی که اخیراً نمایش داده شده در تبها"
+
+#, fuzzy
+#~ msgid ""
+#~ "<html>Stop loading the document<br /><br />All network transfers will be "
+#~ "stopped and Konqueror will display the content that has been received so "
+#~ "far.</html>"
+#~ msgstr ""
+#~ "ایست بارگیری سند<br /><br />همه انتقالهای شبکه می‌ایستد و Konqueror "
+#~ "محتوایی را نشان می‌دهد که تاکنون دریافت شده است."
+
+#, fuzzy
+#~ msgid ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.  Any images on "
+#~ "the page are downloaded again, even if cached copies exist.</html>"
+#~ msgstr ""
+#~ "بارگذاری مجدد سندی که اخیراً نمایش داده شده<br /><br />برای مثال، ممکن است "
+#~ "به منظور مرئی ساختن تغییرات، لازم باشد که صفحات وبی که از زمان بار شدن "
+#~ "تغییر یافته‌اند بازآوری شوند."
+
+#, fuzzy
+#~| msgid "Reload all currently displayed document in tabs"
+#~ msgid ""
+#~ "Force a reload of the currently displayed document and any contained "
+#~ "images"
+#~ msgstr "بارگذاری مجدد کل سندی که اخیراً نمایش داده شده در تبها"
+
+#~ msgid "Stop loading the document"
+#~ msgstr "ایست بارگذاری سند"
+
+#, fuzzy
+#~ msgid ""
+#~ "<html>Cut the currently selected text or item(s) and move it to the "
+#~ "system clipboard<br /><br />This makes it available to the <b>Paste</b> "
+#~ "command in Konqueror and other KDE applications.</html>"
+#~ msgstr ""
+#~ "برش متن یا فقره)های( برگزیده اخیر و حرکت آن به تخته یادداشت سیستم<br /"
+#~ "><br /> این کار آن را برای فرمان <b>چسباندن</b> در Konqueror و کاربردهای "
+#~ "دیگر KDE قابل دسترس می‌کند."
+
+#~ msgid "Move the selected text or item(s) to the clipboard"
+#~ msgstr "حرکت متن یا فقره)های( برگزیده به تخته یادداشت"
+
+#, fuzzy
+#~ msgid ""
+#~ "<html>Copy the currently selected text or item(s) to the system "
+#~ "clipboard<br /><br />This makes it available to the <b>Paste</b> command "
+#~ "in Konqueror and other KDE applications.</html>"
+#~ msgstr ""
+#~ "رونوشت متن یا فقره)های( برگزیده اخیر به تخته یادداشت سیستم<br /><br />با "
+#~ "این کار، برای فرمان <b>چسباندن</b> در Konqueror و دیگر کاربردهای KDE  "
+#~ "قابل دسترس می‌شود."
+
+#~ msgid "Copy the selected text or item(s) to the clipboard"
+#~ msgstr "رونوشت متن یا فقره)های( برگزیده به تخته یادداشت"
+
+#, fuzzy
+#~ msgid ""
+#~ "<html>Paste the previously cut or copied clipboard contents<br /><br /"
+#~ ">This also works for text copied or cut from other KDE applications.</"
+#~ "html>"
+#~ msgstr ""
+#~ "چسباندن محتویات برش یا رونوشت قبلی تخته یادداشت<br /><br />برای متن "
+#~ "رونوشت‌شده یا برش‌خورده از کاربردهای دیگرKDE نیز کار می‌کند."
+
+#~ msgid "Paste the clipboard contents"
+#~ msgstr "چسباندن محتویات تخته یادداشت"
+
+#, fuzzy
+#~ msgid ""
+#~ "<html>Print the currently displayed document<br /><br />You will be "
+#~ "presented with a dialog where you can set various options, such as the "
+#~ "number of copies to print and which printer to use.<br /><br />This "
+#~ "dialog also provides access to special KDE printing services such as "
+#~ "creating a PDF file from the current document.</html>"
+#~ msgstr ""
+#~ "چاپ سند نمایش داده‌شده اخیر<br /><br />محاوره‌ای به شما ارائه می‌شود که "
+#~ "می‌توانید گزینه‌های مختلف، نظیر تعداد رونوشتها برای چاپ، و اینکه از کدام "
+#~ "چاپگر استفاده شود را در آن تنظیم کنید.<br /><br />این محاوره، دستیابی به "
+#~ "خدمات ویژه چاپ KDE ،نظیر ایجاد یک پرونده PDF از سند جاری را نیز فراهم "
+#~ "می‌کند."
+
+#~ msgid "Print the current document"
+#~ msgstr "چاپ سند جاری"
+
+#~ msgid "If present, open index.html when entering a folder."
+#~ msgstr "در صورت ارائه، index.html را هنگام وارد کردن یک پوشه باز کنید."
+
+#~ msgid ""
+#~ "A locked view cannot change folders. Use in combination with 'link view' "
+#~ "to explore many files from one folder"
+#~ msgstr ""
+#~ "یک نمای قفل شده نمی‌تواند پوشه‌ها را تغییر دهد. در ترکیب با »نمای پیوند« "
+#~ "برای کشف بسیاری از پرونده‌ها از یک پوشه، استفاده شود."
+
+#~ msgid ""
+#~ "Sets the view as 'linked'. A linked view follows folder changes made in "
+#~ "other linked views."
+#~ msgstr ""
+#~ "نما را به عنوان »پیوندیافته« تنظیم می‌کند. یک نمای پیوندی به دنبال تغییرات "
+#~ "پوشه اعمال‌شده در نماهای پیوندی دیگر می‌آید."
+
+#~ msgid "Copy &Files..."
+#~ msgstr "رونوشت &پرونده‌ها...‌"
+
+#~ msgid "M&ove Files..."
+#~ msgstr "&حرکت پرونده‌ها...‌"
+
+#, fuzzy
+#~| msgid "Open Folder in Tabs"
+#~ msgid "Open bookmarks folder in new tabs"
+#~ msgstr "باز کردن پوشه در تبها"
+
+#~ msgid "Open in T&his Window"
+#~ msgstr "باز کردن در &این پنجره‌"
+
+#~ msgid "Open the document in current window"
+#~ msgstr "باز کردن سند در پنجره جاری"
+
+#~ msgid "Open the document in a new window"
+#~ msgstr "باز کردن سند در یک پنجره جدید"
+
+#~ msgid "Open in &New Tab"
+#~ msgstr "باز کردن در تب &جدید‌"
+
+#~ msgid "Open the document in a new tab"
+#~ msgstr "باز کردن سند در تب جدید"
+
+#, fuzzy
+#~| msgid "Open with %1"
+#~ msgid "&Open With"
+#~ msgstr "باز کردن با %1"
+
+#~ msgid "Open with %1"
+#~ msgstr "باز کردن با %1"
+
+#, fuzzy
+#~ msgctxt "@action:inmenu View"
+#~ msgid "&View Mode"
+#~ msgstr "حالت &نما‌"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window, are you sure you want to quit?"
+#~ msgstr ""
+#~ "شما چندین تب را در این پنجره باز کرده‌اید، مطمئن هستید که می‌خواهید خارج "
+#~ "شوید؟"
+
+#~ msgid "Confirmation"
+#~ msgstr "تأیید"
+
+#~ msgid "C&lose Current Tab"
+#~ msgstr "&بستن تب جاری‌"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the window will discard these changes."
+#~ msgstr ""
+#~ "این تب، شامل تغییراتی است که ارائه نشده‌اند.\n"
+#~ "با بستن این پنجره، این تغییرات دور ریخته می‌شوند."
+
+#, fuzzy
+#~| msgid ""
+#~| "This tab contains changes that have not been submitted.\n"
+#~| "Closing the window will discard these changes."
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Closing the window will discard these changes."
+#~ msgstr ""
+#~ "این تب، شامل تغییراتی است که ارائه نشده‌اند.\n"
+#~ "با بستن این پنجره، این تغییرات دور ریخته می‌شوند."
+
+#~ msgid ""
+#~ "Your sidebar is not functional or unavailable. A new entry cannot be "
+#~ "added."
+#~ msgstr ""
+#~ "میله جانبی شما تابعی یا قابل دسترس نیست. مدخل جدید را نمی‌توان اضافه کرد."
+
+#~ msgid "Web Sidebar"
+#~ msgstr "میله جانبی وب"
+
+#~ msgid "Add new web extension \"%1\" to your sidebar?"
+#~ msgstr "پسوند جدید وب »%1« به میله جانبی شما اضافه شود؟"
+
+#~ msgid "Add"
+#~ msgstr "افزودن"
+
+#~ msgid "Do Not Add"
+#~ msgstr "اضافه نشود"
+
+#~ msgid ""
+#~ "There appears to be a configuration error. You have associated Konqueror "
+#~ "with %1, but it cannot handle this file type."
+#~ msgstr ""
+#~ "به نظر می‌رسد خطای پیکربندی باشد. شما Konqueror را به  %1 مربوط کردید، ولی "
+#~ "قادر به گرداندن این نوع پرونده نیست."
+
+#~ msgid "Profile Management"
+#~ msgstr "مدیریت profile"
+
+#~ msgid "&Rename Profile"
+#~ msgstr "&تغییر نام Profile‌"
+
+#~ msgid "&Delete Profile"
+#~ msgstr "&حذف Profile‌"
+
+#, fuzzy
+#~| msgid "&Management"
+#~ msgid "Manage Sessions"
+#~ msgstr "&مدیریت‌"
+
+#, fuzzy
+#~| msgid "&Open Link"
+#~ msgid "&Open"
+#~ msgstr "&باز کردن پیوند‌"
+
+#, fuzzy
+#~| msgid "End of session"
+#~ msgid "Rename Session"
+#~ msgstr "پایان نشست"
+
+#, fuzzy
+#~| msgid "End of session"
+#~ msgid "Restore Session?"
+#~ msgstr "پایان نشست"
+
+#, fuzzy
+#~| msgid "End of session"
+#~ msgid "Restore Session"
+#~ msgstr "پایان نشست"
+
+#, fuzzy
+#~ msgid ""
+#~ "This bar contains the list of currently open tabs. Click on a tab to make "
+#~ "it active. You can also use keyboard shortcuts to navigate through tabs. "
+#~ "The text on the tab shows the content currently open in it; place your "
+#~ "mouse over the tab to see the full title, in case it has been shortened "
+#~ "to fit the tab width."
+#~ msgstr ""
+#~ "این میله، شامل فهرستی از تبهای بازشده اخیر می‌باشد. با فشار روی تب، آن را "
+#~ "فعال کنید. گزینه نمایش دکمه بستن به جای شمایل وب‌گاه در گوشه چپ تب، قابل "
+#~ "پیکربندی است. همچنین، می‌توانید از میان‌برهای صفحه کلید برای ناوش در تبها "
+#~ "استفاده کنید. متن روی تب، عنوان وب‌گاهی است که اخیراً در آن باز شده است، "
+#~ "برای دیدن عنوان کامل مورد موجود در آن، که برای تناسب با اندازه تب برش "
+#~ "خورده، موشی خود را روی تب قرار دهید."
+
+#~ msgid "Open a new tab"
+#~ msgstr "باز کردن تب جدید"
+
+#~ msgid "Close the current tab"
+#~ msgstr "بستن تب جاری"
+
+#~ msgid "&Duplicate Tab"
+#~ msgstr "تب &مضاعف‌"
+
+#~ msgid "&Reload Tab"
+#~ msgstr "&بارگذاری مجدد تب‌"
+
+#~ msgid "Other Tabs"
+#~ msgstr "تبهای دیگر"
+
+#~ msgid "D&etach Tab"
+#~ msgstr "&جداسازی تب‌"
+
+#~ msgid "&Close Tab"
+#~ msgstr "&بستن تب‌"
+
+#, fuzzy
+#~ msgid "Und&o: Closed Tab"
+#~ msgstr "&بستن تب‌"
+
+#, fuzzy
+#~ msgid "Und&o: Closed Window"
+#~ msgstr "&بستن تب‌"
+
+#~ msgid ""
+#~ "The page you are trying to view is the result of posted form data. If you "
+#~ "resend the data, any action the form carried out (such as search or "
+#~ "online purchase) will be repeated. "
+#~ msgstr ""
+#~ "صفحه‌ای که سعی دارید نمایش دهید، نتیجه داده‌های فرم پست‌ شده است. اگر مجدداً "
+#~ "داده را ارسال کنید، هر کنش انجام‌شده فرم)نظیر جستجو یا خرید برخط( تکرار "
+#~ "خواهد شد."
+
+#~ msgid "Warning"
+#~ msgstr "اخطار"
+
+#~ msgid "Resend"
+#~ msgstr "ارسال مجدد"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window.\n"
+#~ "Loading a view profile will close them."
+#~ msgstr ""
+#~ "چندین تب را در این پنجره باز کرده‌اید .\n"
+#~ "با بارگذاری یک نمای profile، بسته می‌شوند."
+
+#~ msgid "Load View Profile"
+#~ msgstr "بارگذاری نمای profile"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Loading a profile will discard these changes."
+#~ msgstr ""
+#~ "این تب شامل تغییرات ارائه نشده می‌باشد.\n"
+#~ "با بارگذاری یک profile، این تغییرات دور ریخته می‌شوند."
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "History Sidebar Module"
+#~ msgstr "میله جانبی وب"
+
+#, fuzzy
+#~| msgid "History"
+#~ msgctxt "@title:tab"
+#~ msgid "History"
+#~ msgstr "تاریخچه"
+
+#~ msgid " day"
+#~ msgid_plural " days"
+#~ msgstr[0] " روز"
+
+#~ msgid "Minute"
+#~ msgid_plural "Minutes"
+#~ msgstr[0] "دقیقه"
+
+#~ msgid "Day"
+#~ msgid_plural "Days"
+#~ msgstr[0] "روز"
+
+#~ msgid "<h1>History Sidebar</h1> You can configure the history sidebar here."
+#~ msgstr ""
+#~ "<h1>میله جانبی تاریخچه</h1> می‌توانید میله جانبی تاریخچه را در اینجا "
+#~ "پیکربندی کنید."
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Places Sidebar Module"
+#~ msgstr "میله جانبی وب"
+
+#, fuzzy
+#~| msgid "Replace"
+#~ msgctxt "@title:tab"
+#~ msgid "Places"
+#~ msgstr "جایگزینی"
+
+#~ msgid "Extended Sidebar"
+#~ msgstr "میله جانبی توسعه‌یافته"
+
+#~ msgid "Rollback to System Default"
+#~ msgstr "عقب‌‌گرد به پیش‌فرض سیستم"
+
+#~ msgid "Configure Sidebar"
+#~ msgstr "پیکربندی میله جانبی"
+
+#~ msgid "Add New"
+#~ msgstr "افزودن جدید"
+
+#~ msgid "Multiple Views"
+#~ msgstr "نماهای چندگانه"
+
+#~ msgid "Show Tabs Left"
+#~ msgstr "نمایش تبهای چپ"
+
+#~ msgid "Show Configuration Button"
+#~ msgstr "نمایش دکمه پیکربندی"
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgid "Close Sidebar"
+#~ msgstr "میله جانبی وب"
+
+#~ msgid "This entry already exists."
+#~ msgstr "این مدخل، قبلاً وجود داشته است."
+
+#~ msgid ""
+#~ "<qt>This removes all your entries from the sidebar and adds the system "
+#~ "default ones.<br /><b>This procedure is irreversible</b><br />Do you want "
+#~ "to proceed?</qt>"
+#~ msgstr ""
+#~ "<qt>همه مدخلها را از میله جانبی حذف کرده و به پیش‌فرض سیستم اضافه می‌کند."
+#~ "<br /><b>این رویه غیرقابل تغییر است </b><br />آیا می‌خواهید ادامه دهید?</"
+#~ "qt>"
+
+#, fuzzy
+#~ msgid "Show Tabs Right"
+#~ msgstr "حرکت تب به راست"
+
+#~ msgid "Set Name"
+#~ msgstr "تنظیم نام"
+
+#~ msgid "Enter the name:"
+#~ msgstr "نام را وارد کنید:"
+
+#~ msgid "Enter a URL:"
+#~ msgstr "یک نشانی وب وارد کنید:"
+
+#~ msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
+#~ msgstr "<qt>آیا واقعا می‌خواهید تب  <b>%1</b> را حذف کنید؟</qt>"
+
+#, fuzzy
+#~| msgid ""
+#~| "You have hidden the navigation panel configuration button. To make it "
+#~| "visible again, click the right mouse button on any of the navigation "
+#~| "panel buttons and select \"Show Configuration Button\"."
+#~ msgid ""
+#~ "You have hidden the sidebar configuration button. To make it visible "
+#~ "again, click the right mouse button on any of the sidebar buttons and "
+#~ "select \"Show Configuration Button\"."
+#~ msgstr ""
+#~ "دکمه پیکربندی تابلوی ناوش را مخفی کرده‌اید. برای مرئی کردن دوباره آن، دکمه "
+#~ "راست موشی را روی هر یک از دکمه‌های تابلوی ناوش فشار داده و »نمایش دکمه "
+#~ "پیکربندی« را انتخاب کنید."
+
+#~ msgid "Set Name..."
+#~ msgstr "تنظیم نام..."
+
+#~ msgid "Set URL..."
+#~ msgstr "تنظیم نشانی وب..."
+
+#~ msgid "Set Icon..."
+#~ msgstr "تنظیم شمایل..."
+
+#~ msgid "Remove"
+#~ msgstr "حذف‌"
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgid "Web module"
+#~ msgstr "میله جانبی وب"
+
+#~ msgid "&Create New Folder"
+#~ msgstr "&ایجاد پوشه جدید‌"
+
+#~ msgid "Delete Folder"
+#~ msgstr "حذف پوشه"
+
+#~ msgid "Delete Bookmark"
+#~ msgstr "حذف چوب الف"
+
+#~ msgid "Properties"
+#~ msgstr "ویژگیها"
+
+#~ msgid "Open in New Window"
+#~ msgstr "باز کردن در پنجره جدید"
+
+#~ msgid "Open Folder in Tabs"
+#~ msgstr "باز کردن پوشه در تبها"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "رونوشت نشانی پیوند"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark folder\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "مطمئن هستید که می‌خواهید پوشه چوب الف\n"
+#~ "»%1« را حذف کنید؟"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "مطمئن هستید که می‌خواهید پوشه چوب الف\n"
+#~ "»%1« را حذف کنید؟"
+
+#~ msgid "Bookmark Folder Deletion"
+#~ msgstr "حذف پوشه چوب الف"
+
+#~ msgid "Bookmark Deletion"
+#~ msgstr "حذف چوب الف"
+
+#~ msgid "Bookmark Properties"
+#~ msgstr "ویژگیهای چوب الف"
+
+#~ msgid "&Update"
+#~ msgstr "&به‌روزرسانی‌"
+
+#~ msgid "Name:"
+#~ msgstr "نام:"
+
+#~ msgid "Location:"
+#~ msgstr "محل:"
+
+#~ msgid "Add Bookmark"
+#~ msgstr "افزودن چوب الف"
+
+#~ msgid "Cannot find parent item %1 in the tree. Internal error."
+#~ msgstr "فقره پدر %1 را نمی‌توان در درخت یافت. خطای درونی."
+
+#~ msgid "&Create New Folder..."
+#~ msgstr "&ایجاد پوشه جدید...‌"
+
+#, fuzzy
+#~| msgid "&Move to Trash"
+#~ msgid "Move to Trash"
+#~ msgstr "&حرکت به زباله‌دان‌"
+
+#~ msgid "Rename"
+#~ msgstr "تغییر نام"
+
+#~ msgid "Delete Link"
+#~ msgstr "حذف پیوند"
+
+#~ msgid "New Folder"
+#~ msgstr "پوشه جدید"
+
+#~ msgid "Create New Folder"
+#~ msgstr "ایجاد پوشه جدید"
+
+#~ msgid "Enter folder name:"
+#~ msgstr "نام پوشه را وارد کنید:"
+
+#, fuzzy
+#~| msgid "Name:"
+#~ msgctxt "@label"
+#~ msgid "Name:"
+#~ msgstr "نام:"
+
+#~ msgid "&Open Link"
+#~ msgstr "&باز کردن پیوند‌"
+
+#~ msgid "Set &Automatic Reload"
+#~ msgstr "تنظیم بارگذاری مجدد &خودکار‌"
+
+#~ msgid "Set Refresh Timeout (0 disables)"
+#~ msgstr "تنظیم اتمام وقت بازآوری )۰ غیرفعال می‌کند("
+
+#~ msgid " min"
+#~ msgstr " دقیقه"
+
+#~ msgid " sec"
+#~ msgstr " ثانیه"
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Web Sidebar Module"
+#~ msgstr "میله جانبی وب"
+
+#, fuzzy
+#~ msgid ""
+#~ "Konqueror is a web browser, file manager and universal document viewer."
+#~ msgstr "Konqueror مدیر پرونده، مرورگر وب و مشاهده‌گر عمومی سند شماست."
+
+#, fuzzy
+#~| msgid "Starting Points"
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "Starting Points"
+#~ msgstr "نقاط آغاز"
+
+#~ msgid "Introduction"
+#~ msgstr "مقدمه"
+
+#~ msgid "Tips"
+#~ msgstr "نکات"
+
+#~ msgid "Specifications"
+#~ msgstr "مشخصه‌ها"
+
+#~ msgid "Your personal files"
+#~ msgstr "پرونده‌های شخصی شما"
+
+#~ msgid "Trash"
+#~ msgstr "زباله"
+
+#~ msgid "Browse and restore the trash"
+#~ msgstr "مرور و بازگردانی زباله"
+
+#~ msgid "Network Folders"
+#~ msgstr "پوشه‌های شبکه"
+
+#~ msgid "Shared files and folders"
+#~ msgstr "پرونده‌ها و پوشه‌های مشترک"
+
+#, fuzzy
+#~| msgid "&Bookmarks"
+#~ msgid "Bookmarks"
+#~ msgstr "&چوب الفها‌"
+
+#~ msgid "Next: An Introduction to Konqueror"
+#~ msgstr "بعدی: مقدمه‌ای بر Konqueror"
+
+#~ msgid "Search the Web"
+#~ msgstr "جستجوی وب"
+
+#~ msgid ""
+#~ "Konqueror makes working with and managing your files easy. You can browse "
+#~ "both local and networked folders while enjoying advanced features such as "
+#~ "the powerful sidebar and file previews."
+#~ msgstr ""
+#~ "Konqueror کار با پرونده‌های شما و مدیریت آنها را آسان می‌سازد. شما می‌توانید "
+#~ "هم پوشه‌های محلی و هم شبکه‌ای را تا ویژگیهای پیشرفته، نظیر میله جانبی "
+#~ "پرقدرت و پیش‌نمایشهای پرونده را مرور کنید."
+
+#~ msgid ""
+#~ "Konqueror is also a full featured and easy to use web browser which you "
+#~ "can use to explore the Internet. Enter the address (e.g. <a href=\"http://"
+#~ "www.kde.org\">http://www.kde.org</a>) of a web page you would like to "
+#~ "visit in the location bar and press Enter, or choose an entry from the "
+#~ "Bookmarks menu."
+#~ msgstr ""
+#~ "Konqueror همچنین یک مرورگر کامل و آسان وب قابل استفاده است که می‌توانید "
+#~ "برای کاوش در اینترنت از آن استفاده کنید. نشانی یک صفحه وب را )مثلاً <a "
+#~ "href=\"http://www.kde.org\">http://www.kde.org</a>) که می‌خواهید مشاهده "
+#~ "کنید در میله محل وارد نموده و ورود را فشار دهید، یا از گزینگان چوب الفها "
+#~ "یک مدخل انتخاب کنید."
+
+#~ msgid ""
+#~ "To return to the previous location, press the back button <img width='16' "
+#~ "height='16' src=\"%1\"></img> in the toolbar. "
+#~ msgstr ""
+#~ "برای بازگشت به محل قبلی، دکمه پس <img width='16' height='16' src=\"%1\"></"
+#~ "img> در میله ابزار را فشار دهید."
+
+#~ msgid ""
+#~ "To quickly go to your Home folder press the  home button <img width='16' "
+#~ "height='16' src=\"%1\"></img>."
+#~ msgstr ""
+#~ "برای رفتن سریع به پوشه آغازه خود، دکمه آغازه <img width='16' height='16' "
+#~ "src=\"%1\"></img> را فشار دهید."
+
+#~ msgid ""
+#~ "For more detailed documentation on Konqueror click <a href=\"%1\">here</"
+#~ "a>."
+#~ msgstr ""
+#~ "برای مستندات جزئی بیشتر روی Konqueror <a href=\"%1\">اینجا</a> را فشار "
+#~ "دهید"
+
+#, fuzzy
+#~| msgid ""
+#~| "<em>Tuning Tip:</em> If you want the Konqueror web browser to start "
+#~| "faster, you can turn off this information screen by clicking <a href="
+#~| "\"%1\">here</a>. You can re-enable it by choosing the Help -> Konqueror "
+#~| "Introduction menu option, and then pressing Settings -> Save View "
+#~| "Profile \"Web Browsing\"."
+#~ msgid ""
+#~ "<em>Tuning Tip:</em> If you want the Konqueror web browser to start "
+#~ "faster, you can turn off this information screen by clicking <a href="
+#~ "\"%1\">here</a>. You can re-enable it by choosing the Help -> Konqueror "
+#~ "Introduction menu option, and then pressing Settings -> Save View Profile "
+#~ "As... -> \"Web Browsing\"."
+#~ msgstr ""
+#~ "<em>نکته میزان‌سازی:</em>اگر می‌خواهید Konquerorمرورگر وب را سریع‌تر آغاز "
+#~ "کند، می‌توانید این پرده اطلاعات را با فشار <a href=\"%1\">اینجا</a> خاموش "
+#~ "کنید. می‌توانید با انتخاب کمک ->گزینه مقدمه Konqueror و سپس فشار تنظیمات -"
+#~ ">Profile ذخیره نمای »مرورگز وب«، آن را دوباره فعال کنید."
+
+#~ msgid "Next: Tips &amp; Tricks"
+#~ msgstr "بعدی: نکات و شگردها"
+
+#, fuzzy
+#~| msgid ""
+#~| "Konqueror is designed to embrace and support Internet standards. The aim "
+#~| "is to fully implement the officially sanctioned standards from "
+#~| "organizations such as the W3 and OASIS, while also adding extra support "
+#~| "for other common usability features that arise as de facto standards "
+#~| "across the Internet. Along with this support, for such functions as "
+#~| "favicons, Internet Keywords, and <A HREF=\"%1\">XBEL bookmarks</A>, "
+#~| "Konqueror also implements:"
+#~ msgid ""
+#~ "Konqueror is designed to embrace and support Internet standards. The aim "
+#~ "is to fully implement the officially sanctioned standards from "
+#~ "organizations such as the W3 and OASIS, while also adding extra support "
+#~ "for other common usability features that arise as de facto standards "
+#~ "across the Internet. Along with this support, for such functions as "
+#~ "favicons, Web Shortcuts, and <A HREF=\"%1\">XBEL bookmarks</A>, Konqueror "
+#~ "also implements:"
+#~ msgstr ""
+#~ "Konqueror برای پذیرش و پشتیبانی استانداردهای اینترنت طراحی شده است. هدف، "
+#~ "پیاده‌سازی کامل استانداردهای تأییدشده رسمی از سازمانهایی نظیر W3 و OASIS "
+#~ "می‌باشد، در حالی که افزودن پشتیبانی اضافی برای ویژگیهای قابل استفاده مشترک "
+#~ "دیگر، که به عنوان استانداردهای کارخانه deاز طریق اینترنت ناشی می‌شود. همرا "
+#~ "با این پشتیبانی، برای توابعی نظیر شمایلهای پسندان، کلیدواژه‌های اینترنتی، "
+#~ "و <A HREF=\"%1\">چوب الفهای XBEL</A>، Konqueror هم پیاده‌سازی می‌کند:"
+
+#~ msgid "Supported standards"
+#~ msgstr "استانداردهای پشتیبانی‌شده"
+
+#~ msgid "Additional requirements*"
+#~ msgstr "نیازهای اضافی*"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">DOM</A> )سطح ۱، تا حدی سطح ۲( بر مبنای <A HREF="
+#~ "\"%2\">زنگام 4.01</A>"
+
+#~ msgid "built-in"
+#~ msgstr "توکار"
+
+#~ msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
+#~ msgstr "<A HREF=\"%1\">آبشاری کردن برگه‌های سبک</A> (CSS 1، تا حدی  CSS 2)"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
+#~ msgstr "<A HREF=\"%1\">ECMA-262</A> ویرایش ۳ )تقریباً معادل جاوااسکریپت 1.5)"
+
+#~ msgid ""
+#~ "JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
+#~ msgstr ""
+#~ "جاوااسکریپت غیرفعال )سراسری(. جاوااسکریپت را در <A HREF=\"%1\">اینجا</"
+#~ "A>فعال کنید."
+
+#~ msgid ""
+#~ "JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\"
+#~ "\">here</A>."
+#~ msgstr ""
+#~ "جاوااسکریپت فعال‌شده )سراسری(. جاوااسکریپت را <A HREF=\\\"%1\\\">در اینجا</"
+#~ "A>پیکربندی کنید"
+
+#~ msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
+#~ msgstr "پشتیبانی امن <A HREF=\"%1\">جاوا</A><SUP>&reg;</SUP>"
+
+#, fuzzy
+#~| msgid ""
+#~| "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">Blackdown</A>, <A HREF="
+#~| "\"%2\">IBM</A> or <A HREF=\"%3\">Sun</A>)"
+#~ msgid ""
+#~ "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">IBM</A> or <A HREF="
+#~ "\"%2\">Sun/Oracle</A>)"
+#~ msgstr ""
+#~ "JDK ۱.۲.۰ )جاوا ۲( همساز VM )<A HREF=\"%1\">Blackdown</A>، <A HREF="
+#~ "\"%2\">IBM</A> یا <A HREF=\"%3\">Sun</A>("
+
+#~ msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
+#~ msgstr "فعال‌سازی جاوا )سراسری( <A HREF=\"%1\">در اینجا</A>."
+
+#~ msgid ""
+#~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">plugins</A> (for "
+#~ "viewing <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
+#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Video, etc.)"
+#~ msgstr ""
+#~ "ارتباط دهنده نت‌اسکیپ<SUP>&reg;</SUP> <A HREF=\"%4\">وصله‌ها</A> )برای "
+#~ "نمایش <A HREF=\"%1\">فلش<SUP>&reg;</SUP></A>، <A HREF="
+#~ "\"%2\">حقیقی<SUP>&reg;</SUP></A>صوتی <A HREF=\"%3\">حقیقی<SUP>&reg;</"
+#~ "SUP></A>ویدیو، و غیره.("
+
+#~ msgid "Secure Sockets Layer"
+#~ msgstr "لایه سوکتهای امن"
+
+#~ msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
+#~ msgstr "TLS/SSL v2/3) برای ارتباطات امن تا ۱۶۸ بیت"
+
+#~ msgid "Bidirectional 16bit unicode support"
+#~ msgstr "پشتیبانی یونی‌کد ۱۶ بیتی دوسویه"
+
+#~ msgid "AutoCompletion for forms"
+#~ msgstr "تکمیل خودکار برگه‌ها"
+
+#, fuzzy
+#~| msgid "&General"
+#~ msgctxt "Title of an html 'group box' explaining konqueror features"
+#~ msgid "General"
+#~ msgstr "&عمومی‌"
+
+#~ msgid "Feature"
+#~ msgstr "ویژگی"
+
+#~ msgid "Details"
+#~ msgstr "جزئیات"
+
+#~ msgid "Image formats"
+#~ msgstr "قالبهای تصویر"
+
+#~ msgid "Transfer protocols"
+#~ msgstr "قراردادهای انتقال"
+
+#~ msgid "HTTP 1.1 (including gzip/bzip2 compression)"
+#~ msgstr "قام ۱/۱)gzip/bzip2 شامل فشرده‌سازی("
+
+#~ msgid "FTP"
+#~ msgstr "قاپ"
+
+#, fuzzy
+#~| msgid "and <A HREF=\"%1\">many more...</A>"
+#~ msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpcenter)...</A>"
+#~ msgstr "و <A HREF=\"%1\">خیلی بیشتر...</A>"
+
+#, fuzzy
+#~| msgid "URL-Completion"
+#~ msgctxt "A feature of Konqueror"
+#~ msgid "URL-Completion"
+#~ msgstr "تکمیل نشانی وب"
+
+#~ msgid "Manual"
+#~ msgstr "راهنما"
+
+#~ msgid "Popup"
+#~ msgstr "بالاپر"
+
+#~ msgid "(Short-) Automatic"
+#~ msgstr ")کوتاه-( خودکار"
+
+#, fuzzy
+#~| msgid "<a href=\"%1\">Return to Starting Points</a>"
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "<a href=\"%1\">Return to Starting Points</a>"
+#~ msgstr "<a href=\"%1\">بازگشت به نقطه آغاز</a>"
+
+#~ msgid "Tips &amp; Tricks"
+#~ msgstr "نکات و شگردها"
+
+#, fuzzy
+#~| msgid ""
+#~| "Use Internet-Keywords and Web-Shortcuts: by typing \"gg: KDE\" one can "
+#~| "search the Internet, using Google, for the search phrase \"KDE\". There "
+#~| "are a lot of Web-Shortcuts predefined to make searching for software or "
+#~| "looking up certain words in an encyclopedia a breeze. You can even <a "
+#~| "href=\"%1\">create your own</a> Web-Shortcuts."
+#~ msgid ""
+#~ "Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, "
+#~ "using Google, for the search phrase \"KDE\". There are a lot of Web-"
+#~ "Shortcuts predefined to make searching for software or looking up certain "
+#~ "words in an encyclopedia a breeze. You can even <a href=\"%1\">create "
+#~ "your own</a> Web-Shortcuts."
+#~ msgstr ""
+#~ "از کلیدواژه‌های اینترنت و میان‌برهای وب استفاده کنید: با تحریر  »gg: "
+#~ "KDE«می‌توان با استفاده از گوگل، برای عبارت »KDE« در اینترنت جستجو کرد. "
+#~ "میان‌برهای وب از پیش تعیین‌شده زیادی برای جستجوی نرم‌افزار یا جستجوی واژه "
+#~ "مشخص در فرهنگ‌نامه وجود دارد. شما حتی می‌توانید <a href=\"%1\">میانبرهای "
+#~ "وب</a> خود را ایجاد کنید."
+
+#, fuzzy
+#~| msgid ""
+#~| "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> "
+#~| "in the toolbar to increase the font size on your web page."
+#~ msgid ""
+#~ "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
+#~ "the HTML toolbar to increase the font size on your web page."
+#~ msgstr ""
+#~ "از دکمه ذره‌بین <img width='16' height='16' src=\"%1\"></img> در میله "
+#~ "ابزار، برای افزایش اندازه قلم روی صفحه وب استفاده کنید."
+
+#~ msgid ""
+#~ "When you want to paste a new address into the Location toolbar you might "
+#~ "want to clear the current entry by pressing the black arrow with the "
+#~ "white cross <img width='16' height='16' src=\"%1\"></img> in the toolbar."
+#~ msgstr ""
+#~ "زمانی که می‌خواهید نشانی جدید را در میله ابزار محل بچسبانید، ممکن است "
+#~ "بخواهید مدخل جاری را توسط فشار پیکان سیاه با خط سفید <img width='16' "
+#~ "height='16' src=\"%1\"></img> در میله ابزار پاک کنید."
+
+#, fuzzy
+#~| msgid ""
+#~| "To create a link on your desktop pointing to the current page, simply "
+#~| "drag the \"Location\" label that is to the left of the Location toolbar, "
+#~| "drop it on to the desktop, and choose \"Link\"."
+#~ msgid ""
+#~ "To create a link on your desktop pointing to the current page, simply "
+#~ "drag the icon (favicon) that is to the left of the Location toolbar, drop "
+#~ "it on to the desktop, and choose \"Icon\"."
+#~ msgstr ""
+#~ "برای ایجاد یک پیوند روی رومیزی که به صفحه جاری اشاره کند، کافی است برچسب "
+#~ "»محل« را که سمت چپ میله ابزار محل می‌باشد کشیده و روی رومیزی رها کرده، و "
+#~ "»پیوند« را انتخاب کنید."
+
+#~ msgid ""
+#~ "You can also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen "
+#~ "Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
+#~ "sessions."
+#~ msgstr ""
+#~ "همچنین می‌توانید <img width='16' height='16' src=\"%1\"></img> »حالت تمام "
+#~ "صفحه« را در گزینگان تنظیمات پیدا کنید. این ویژگی برای نشست »گفتگو« بسیار "
+#~ "مفید است."
+
+#~ msgid ""
+#~ "Divide et impera (lat. \"Divide and conquer\") - by splitting a window "
+#~ "into two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> "
+#~ "Split View Left/Right) you can make Konqueror appear the way you like. "
+#~ "You can even load some example view-profiles (e.g. Midnight Commander), "
+#~ "or create your own ones."
+#~ msgstr ""
+#~ ") »تفرقه بیندازید و حکومت کنید«( با شکاف یک پنجره به دو بخش )مثلاً پنجره -"
+#~ "<img width='16' height='16' src=\"%1\"> شکاف نما چپ/راست( می‌توانید "
+#~ "Konqueror را آن ‌گونه که دوست دارید ظاهر سازید. حتی می‌توانید چند مثال نمای "
+#~ "profile را )مثلاً Midnight Commander( را بارگذاری کرده، یا مورد دلخواه خود "
+#~ "را ایجاد کنید."
+
+#~ msgid ""
+#~ "Use the <a href=\"%1\">user-agent</a> feature if the website you are "
+#~ "visiting asks you to use a different browser (and do not forget to send a "
+#~ "complaint to the webmaster!)"
+#~ msgstr ""
+#~ "اگر پایگاه وبی که مشاهده می‌کنید برای استفاده از مرورگر متفاوت سؤال می‌کند، "
+#~ "از ویژگی <a href=\"%1\">عامل کاربر</a> استفاده کنید )و فراموش نکنید که یک "
+#~ "شکایت به وب‌دار بفرستید!("
+
+#, fuzzy
+#~| msgid ""
+#~| "The <img width='16' height='16' src=\"%1\"></img> History in your "
+#~| "SideBar ensures that you can keep track of the pages you have visited "
+#~| "recently."
+#~ msgid ""
+#~ "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
+#~ "ensures that you can keep track of the pages you have visited recently."
+#~ msgstr ""
+#~ "تاریخچه <img width='16' height='16' src=\"%1\"></img> در میله ابزار شما، "
+#~ "اطمینان می‌دهد که می‌توانید رد صفحاتی که اخیراً مشاهده کرده‌اید را حفظ کنید."
+
+#~ msgid ""
+#~ "Use a caching <a href=\"%1\">proxy</a> to speed up your Internet "
+#~ "connection."
+#~ msgstr ""
+#~ "یک <a href=\"%1\">پیشکار</a> نهان‌شده برای بالا بردن سرعت اتصال اینترنت "
+#~ "خود استفاده کنید."
+
+#, fuzzy
+#~| msgid ""
+#~| "Advanced users will appreciate the Konsole which you can embed into "
+#~| "Konqueror (Window -> <img width='16' height='16' SRC=\"%1\"></img> Show "
+#~| "Terminal Emulator)."
+#~ msgid ""
+#~ "Advanced users will appreciate the Konsole which you can embed into "
+#~ "Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
+#~ "Terminal Emulator)."
+#~ msgstr ""
+#~ "کاربران پیشرفته، قدردان Konsole هستند که می‌توانید در Konqueror جا "
+#~ "دهید )پنجره -<<img width='16' height='16' SRC=\"%1\"></img> نمایش مقلد "
+#~ "پایانه(."
+
+#~ msgid "Next: Specifications"
+#~ msgstr "بعدی: مشخصه‌ها"
+
+#~ msgid "Installed Plugins"
+#~ msgstr "وصله‌های نصب‌شده"
+
+#~ msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
+#~ msgstr "<td>وصله </td><td>توصیف</td><td>پرونده</td><td>انواع</td>"
+
+#~ msgid "Installed"
+#~ msgstr "نصب‌شده"
+
+#~ msgid ""
+#~ "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
+#~ msgstr "<td>نوع مایم</td><td>توصیف</td><td>پسوندها</td><td>وصله</td>"
+
+#~ msgid ""
+#~ "Do you want to disable showing the introduction in the webbrowsing "
+#~ "profile?"
+#~ msgstr "می‌خواهید نمایش مقدمه را در profile مرورگر وب غیرفعال کنید؟"
+
+#~ msgid "Faster Startup?"
+#~ msgstr "راه‌اندازی سریعتر باشد؟"
+
+#~ msgid "Disable"
+#~ msgstr "غیرفعال"
+
+#~ msgid "Keep"
+#~ msgstr "نگه داشتن"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "محمدرضا میردامادی ، نازنین کاظمی"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "mohi@ubuntu.ir , kazemi@itland.ir"
+
+#, fuzzy
+#~ msgid "&File"
+#~ msgstr "&پالایه‌ها‌"
+
+#~ msgid "&Edit"
+#~ msgstr "&ویرایش‌"
+
+#~ msgid "&View"
+#~ msgstr "&نما‌"
+
+#~ msgid "&Go"
+#~ msgstr "&برو‌"
+
+#~ msgid "&Settings"
+#~ msgstr "&تنظیمات‌"
+
+#~ msgid "&Window"
+#~ msgstr "&پنجره‌"
+
+#~ msgid "&Help"
+#~ msgstr "&کمک‌"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "میله ابزار اصلی"
+
+#~ msgid "Extra Toolbar"
+#~ msgstr "میله ابزار اضافی"
+
+#~ msgid "Location Toolbar"
+#~ msgstr "میله ابزار محل"
+
+#~ msgid "Bookmark Toolbar"
+#~ msgstr "میله ابزار چوب الف"
+
+#~ msgid "&Profile name:"
+#~ msgstr "نام &Profile:‌"
+
+#~ msgid "Save &URLs in profile"
+#~ msgstr "ذخیره &نشانیهای وب در profile‌"
+
+#, fuzzy
+#~| msgid "&New..."
+#~ msgctxt "@action:button New session"
+#~ msgid "New..."
+#~ msgstr "&جدید...‌"
+
+#, fuzzy
+#~| msgid "Close Current Tab"
+#~ msgctxt "@action:button Save current session"
+#~ msgid "Save Current"
+#~ msgstr "بستن تب جاری"
+
+#, fuzzy
+#~| msgid "Rename"
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename..."
+#~ msgstr "تغییر نام"
+
+#, fuzzy
+#~| msgid "D&elete"
+#~ msgctxt "@action:button Delete session"
+#~ msgid "Delete"
+#~ msgstr "&حذف‌"
+
+#, fuzzy
+#~| msgid "Open the document in current window"
+#~ msgid "Open tabs inside current window"
+#~ msgstr "باز کردن سند در پنجره جاری"
+
+#~ msgid "Limits"
+#~ msgstr "حدود"
+
+#~ msgid "URLs e&xpire after"
+#~ msgstr "&انقضای نشانیهای وب بعد از‌"
+
+#~ msgid "Maximum &number of URLs:"
+#~ msgstr "&تعداد بیشینه نشانیهای وب:‌"
+
+#~ msgid "Custom Fonts For"
+#~ msgstr "قلمهای سفارشی برای"
+
+#~ msgid "URLs newer than"
+#~ msgstr "نشانیهای وب جدیدتر از"
+
+#~ msgid "Choose Font..."
+#~ msgstr "انتخاب قلم..."
+
+#~ msgid "URLs older than"
+#~ msgstr "نشانیهای وب قدیمی‌تر از"
+
+#~ msgid ""
+#~ "Shows the number of times visited and the dates of the first and last "
+#~ "visits, in addition to the URL"
+#~ msgstr ""
+#~ "علاوه بر نشانی وب، تعداد دفعات بازدید و تاریخهای اولین و آخرین بازدیدها "
+#~ "را نمایش می‌دهد"
+
+#~ msgid "Detailed tooltips"
+#~ msgstr "نکته ابزارهای جزئی"
+
+#~ msgid "Clear History"
+#~ msgstr "پاک کردن تاریخچه"
+
+#, fuzzy
+#~| msgid ""
+#~| "This is the URL (e.g. a folder or a web page) where Konqueror will jump "
+#~| "to when the \"Home\" button is pressed. This is usually your home "
+#~| "folder, symbolized by a 'tilde' (~)."
+#~ msgid ""
+#~ "This is the URL of the web page where Konqueror (as web browser) will "
+#~ "jump to when the \\\"Home\\\" button is pressed. When Konqueror is "
+#~ "started as a file manager, that button makes it jump to your local home "
+#~ "folder instead."
+#~ msgstr ""
+#~ "این یک نشانی وب است )مثلاً یک پوشه یا یک صفحه وب( که Konqueror هنگامی که "
+#~ "دکمه »آغازه« فشار داده شود به آنجا پرش می‌کند. این معمولاً پوشه آغازه "
+#~ "شماست، که با یک علامت )~( نمادگذاری شده است."
+
+#, fuzzy
+#~| msgid "Maximum &number of URLs:"
+#~ msgid "Maximum number of Closed Items"
+#~ msgstr "&تعداد بیشینه نشانیهای وب:‌"
+
+#, fuzzy
+#~| msgid "Open folders in separate &windows"
+#~ msgid "Open folders in separate windows"
+#~ msgstr "باز کردن پوشه‌ها در &پنجره‌های جداگانه‌"
+
+#~ msgid ""
+#~ "If this option is checked, Konqueror will open a new window when you open "
+#~ "a folder, rather than showing that folder's contents in the current "
+#~ "window."
+#~ msgstr ""
+#~ "اگر این گزینه علامت زده شود، هنگامی که شما یک پوشه باز می‌کنید، Konqueror  "
+#~ "به جای نمایش محتویات پوشه در پنجره جاری، یک پنجره جدید باز می‌کند."
+
+#, fuzzy
+#~| msgid "Show file &tips"
+#~ msgid "Show file tips"
+#~ msgstr "نمایش &نکات پرونده‌"
+
+#~ msgid ""
+#~ "Here you can control if, when moving the mouse over a file, you want to "
+#~ "see a small popup window with additional information about that file"
+#~ msgstr ""
+#~ " اگر بخواهید هنگام حرکت موشی روی یک پرونده، پنجره بالاپر کوچکی همراه با "
+#~ "اطلاعات اضافی در مورد این پرونده را ببینید، می‌توانید از اینجا کنترل کنید"
+
+#, fuzzy
+#~| msgid "Show &previews in file tips"
+#~ msgid "Show previews in file tips"
+#~ msgstr "نمایش &پیش‌نمایشها در نکات پرونده‌"
+
+#, fuzzy
+#~| msgid ""
+#~| "Here you can control if you want the popup window to contain a larger "
+#~| "preview for the file, when moving the mouse over it."
+#~ msgid ""
+#~ "Here you can control if you want the popup window to contain a larger "
+#~ "preview for the file, when moving the mouse over it"
+#~ msgstr ""
+#~ "اگر می‌خواهید هنگام حرکت موشی روی پرونده، پنجره بالاپر پیش‌نمایش بزرگ "
+#~ "پرونده داشته باشد، می‌توانید از اینجا کنترل کنید."
+
+#, fuzzy
+#~| msgid "Show 'Delete' context me&nu entries which bypass the trashcan"
+#~ msgid "Show 'Delete' menu entries which bypass the trashcan"
+#~ msgstr "نمایش مدخلهای &گزینگان متن »حذف« که به زباله‌دان می‌روند"
+
+#, fuzzy
+#~| msgid ""
+#~| "Check this if you want 'Delete' menu commands to be displayed on the "
+#~| "desktop and in the file manager's context menus. You can always delete "
+#~| "files by holding the Shift key while calling 'Move to Trash'."
+#~ msgid ""
+#~ "Check this if you want 'Delete' menu commands to be displayed on the "
+#~ "desktop and in the file manager's menus and context menus. You can always "
+#~ "delete files when hidden by holding the Shift key while calling 'Move to "
+#~ "Trash'."
+#~ msgstr ""
+#~ " اگر نمی‌خواهید فرمانهای گزینگان »حذف« روی رومیزی و در گزینگان متن مدیر "
+#~ "پرونده نشان داده شوند، این را علامت بزنید. همیشه می‌توانید پرونده‌ها را با "
+#~ "نگه داشتن کلید تبدیل حین فراخوانی »حرکت به زباله«، حذف کنید."
+
+#, fuzzy
+#~| msgid "S&tandard font:"
+#~ msgid "Standard font"
+#~ msgstr "قلم &استاندارد:‌"
+
+#~ msgid "This is the font used to display text in Konqueror windows."
+#~ msgstr "این قلم  مورد استفاده برای نمایش متن در پنجره‌های Konqueror است."
+
+#, fuzzy
+#~| msgid "Ask Confirmation For"
+#~ msgid "Ask confirmation for deleting a file."
+#~ msgstr "درخواست تأیید برای"
+
+#, fuzzy
+#~| msgid ""
+#~| "This option tells Konqueror whether to ask for a confirmation when you "
+#~| "\"delete\" a file. <ul><li><em>Move To Trash:</em> moves the file to "
+#~| "your trash folder, from where it can be recovered very easily.</li> "
+#~| "<li><em>Delete:</em> simply deletes the file.</li> </ul>"
+#~ msgid ""
+#~ "This option tells Konqueror whether to ask for a confirmation when you "
+#~ "delete a file without using the trash folder. Warning, deleted files can "
+#~ "not be recovered, so it is recommended to leave this confirmation enabled."
+#~ msgstr ""
+#~ "این گزینه به Konqueror می‌گوید که آیا برای تأیید هنگام »حذف« یک پرونده "
+#~ "سؤال شود. <ul><li><em>حرکت به زباله:</em> پرونده را به پوشه زباله حرکت "
+#~ "می‌دهد،که از آنجا به آسانی بازیافت می‌شود.</li> <li><em>حذف:</em> پرونده را "
+#~ "به سادگی حذف می‌کند.</li> </ul>"
+
+#, fuzzy
+#~| msgid "Ask Confirmation For"
+#~ msgid "Ask confirmation for move to trash"
+#~ msgstr "درخواست تأیید برای"
+
+#, fuzzy
+#~| msgid ""
+#~| "This option tells Konqueror whether to ask for a confirmation when you "
+#~| "\"delete\" a file. <ul><li><em>Move To Trash:</em> moves the file to "
+#~| "your trash folder, from where it can be recovered very easily.</li> "
+#~| "<li><em>Delete:</em> simply deletes the file.</li> </ul>"
+#~ msgid ""
+#~ "This option tells Konqueror whether to ask for a confirmation when you "
+#~ "move the file to your trash folder, from where it can be recovered very "
+#~ "easily."
+#~ msgstr ""
+#~ "این گزینه به Konqueror می‌گوید که آیا برای تأیید هنگام »حذف« یک پرونده "
+#~ "سؤال شود. <ul><li><em>حرکت به زباله:</em> پرونده را به پوشه زباله حرکت "
+#~ "می‌دهد،که از آنجا به آسانی بازیافت می‌شود.</li> <li><em>حذف:</em> پرونده را "
+#~ "به سادگی حذف می‌کند.</li> </ul>"
+
+#~ msgid "Hide %1"
+#~ msgstr "مخفی کردن %1"
+
+#, fuzzy
+#~| msgid "Web SideBar Plugin"
+#~ msgid "SideBar Test Plugin"
+#~ msgstr "وصله میله جانبی وب"
+
+#~ msgid "Bookmark This Location"
+#~ msgstr "چوب الف این محل"
+
+#~ msgid ""
+#~ "Malformed URL\n"
+#~ "%1"
+#~ msgstr ""
+#~ "نشانی وب بد شکل\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Protocol not supported\n"
+#~ "%1"
+#~ msgstr ""
+#~ "قرارداد پشتیبانی نشده\n"
+#~ "%1"
+
+#~ msgid "Cannot create the find part, check your installation."
+#~ msgstr "بخش یافتن را نمی‌توان ایجاد کرد، نصب خود را بررسی کنید."
+
+#, fuzzy
+#~| msgid "&Bookmarks"
+#~ msgid "My Bookmarks"
+#~ msgstr "&چوب الفها‌"
+
+#~ msgid "Preload for later use"
+#~ msgstr "پیش بارگذاری برای استفاده بعدی"
+
+#~ msgid "&Save View Profile \"%1\"..."
+#~ msgstr "&ذخیره Profile نمای »%1« ...‌"
+
+#~ msgid "Configure Navigation Panel"
+#~ msgstr "پیکربندی تابلوی ناوش"
+
+#~ msgid "Close Navigation Panel"
+#~ msgstr "بستن تابلوی ناوش"
+
+#~ msgid "Select Type"
+#~ msgstr "برگزیدن نوع"
+
+#~ msgid "Select type:"
+#~ msgstr "برگزیدن نوع:"
+
+#~ msgid "Web SideBar Plugin"
+#~ msgstr "وصله میله جانبی وب"
+
+#~ msgid "<qt><b>%1</b> does not exist</qt>"
+#~ msgstr "<qt><b>%1</b> موجود نیست</qt>"
+
+#~ msgid "Minutes"
+#~ msgstr "دقیقه"
+
+#~ msgid "Days"
+#~ msgstr "روز"
+
+#~ msgid "Your sidebar is not functional or unavailable."
+#~ msgstr "میله جانبی شما تابعی یا قابل دسترس نیست."
+
+#~ msgid "Cannot find running history plugin in your sidebar."
+#~ msgstr "نمی‌توان وصله تاریخچه در حال اجرا را در میله جانبی شما یافت."
+
+#, fuzzy
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History in Sidebar"
+#~ msgstr "نمایش میله جانبی تاریخچه"
+
+#~ msgid "Select Remote Charset"
+#~ msgstr "برگزیدن نویسه‌گان دور"
+
+#~ msgid "Reload"
+#~ msgstr "&بارگذاری مجدد‌"
+
+#~ msgid "Default"
+#~ msgstr "پیش‌فرض"
+
+#, fuzzy
+#~| msgid "New..."
+#~ msgctxt "@action:button New session"
+#~ msgid "New"
+#~ msgstr "جدید..."
+
+#, fuzzy
+#~| msgid "Rename"
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename"
+#~ msgstr "تغییر نام"
+
+#~ msgid ""
+#~ "Konqueror is your file manager, web browser and universal document viewer."
+#~ msgstr "Konqueror مدیر پرونده، مرورگر وب و مشاهده‌گر عمومی سند شماست."
+
+#~ msgid "Applications"
+#~ msgstr "کاربردها"
+
+#~ msgid "Installed programs"
+#~ msgstr "برنامه‌های نصب‌شده"
+
+#~ msgid "&Location"
+#~ msgstr "&محل‌"
+
+#~ msgid "Open &Terminal"
+#~ msgstr "باز کردن &پایانه‌"
+
+#~ msgid "Unknown"
+#~ msgstr "ناشناخته"
+
+#~ msgid ""
+#~ "This bar contains the list of currently open tabs. Click on a tab to make "
+#~ "it active. The option to show a close button instead of the website icon "
+#~ "in the left corner of the tab is configurable. You can also use keyboard "
+#~ "shortcuts to navigate through tabs. The text on the tab is the title of "
+#~ "the website currently open in it, put your mouse over the tab too see the "
+#~ "full title in case it was truncated to fit the tab size."
+#~ msgstr ""
+#~ "این میله، شامل فهرستی از تبهای بازشده اخیر می‌باشد. با فشار روی تب، آن را "
+#~ "فعال کنید. گزینه نمایش دکمه بستن به جای شمایل وب‌گاه در گوشه چپ تب، قابل "
+#~ "پیکربندی است. همچنین، می‌توانید از میان‌برهای صفحه کلید برای ناوش در تبها "
+#~ "استفاده کنید. متن روی تب، عنوان وب‌گاهی است که اخیراً در آن باز شده است، "
+#~ "برای دیدن عنوان کامل مورد موجود در آن، که برای تناسب با اندازه تب برش "
+#~ "خورده، موشی خود را روی تب قرار دهید."
+
+#~ msgid "Most Often Visited"
+#~ msgstr "اغلب، بازدیدشده"
+
+#, fuzzy
+#~ msgid ""
+#~ "<html>Navigate to your 'Home Location'<br /><br />You can configure the "
+#~ "location this button takes you to under <b>Settings -> Configure "
+#~ "Konqueror -> General</b>.</html>"
+#~ msgstr ""
+#~ "ناوش به »محل آغازه« شما<br /><br />می‌توانید محلی که این دکمه شما را "
+#~ "می‌برد، در <b>مرکز کنترل KDE</b>، تحت <b>مدیر پرونده</b>/<b>رفتار</b> "
+#~ "پیکربندی کنید."
+
+#, fuzzy
+#~ msgid ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh webpages that have been modified since they "
+#~ "were loaded, in order to make the changes visible.</html>"
+#~ msgstr ""
+#~ "بارگذاری مجدد سندی که اخیراً نمایش داده شده<br /><br />برای مثال، ممکن است "
+#~ "به منظور مرئی ساختن تغییرات، لازم باشد که صفحات وبی که از زمان بار شدن "
+#~ "تغییر یافته‌اند بازآوری شوند."
+
+#, fuzzy
+#~ msgid ""
+#~ "<html>Reload all currently displayed documents in tabs<br /><br />This "
+#~ "may, for example, be needed to refresh webpages that have been modified "
+#~ "since they were loaded, in order to make the changes visible.<html>"
+#~ msgstr ""
+#~ "بارگذاری مجدد همه اسنادی که اخیراً نمایش داده شده در تبها<br /><br />برای "
+#~ "مثال، ممکن است به منظور مرئی ساختن تغییرات، لازم باشد که صفحات وبی که از "
+#~ "زمان بار شدن تغییر یافته‌اند بازآوری شوند."
+
+#~ msgid "&View Mode"
+#~ msgstr "حالت &نما‌"
+
+#~ msgid ""
+#~ "You cannot read anything except web pages with\n"
+#~ "this plugin, sorry."
+#~ msgstr ""
+#~ "با استفاده از این وصله، به استثنای صفحات وب، چیزی را\n"
+#~ "نمی‌توانید بخوانید، متأسفم."
+
+#~ msgid "The D-Bus call startText failed."
+#~ msgstr "خرابی در فراخوانی startText D-Bus."
+
+#~ msgid "Save &window size in profile"
+#~ msgstr "ذخیره اندازه &پنجره در profile‌"
+
+#~ msgid "&Speak Text"
+#~ msgstr "&گفتن متن‌"
+
+#, fuzzy
+#~| msgid ""
+#~| "You cannot read anything except web pages with\n"
+#~| "this plugin, sorry."
+#~ msgid "You cannot read anything except web pages with this plugin, sorry."
+#~ msgstr ""
+#~ "با استفاده از این وصله، به استثنای صفحات وب، چیزی را\n"
+#~ "نمی‌توانید بخوانید، متأسفم."
+
+#~ msgid "Cannot Read source"
+#~ msgstr "نمی‌توان متن را خواند"
+
+#~ msgid "Starting KTTSD Failed"
+#~ msgstr "خرابی در آغاز KTTSD"
+
+#, fuzzy
+#~| msgid "The D-Bus call startText failed."
+#~ msgid "The D-Bus call say() failed."
+#~ msgstr "خرابی در فراخوانی startText D-Bus."
+
+#~ msgid "D-Bus Call Failed"
+#~ msgstr "خرابی در فراخوانی D-Bus"
+
+#~ msgid "Speech Toolbar"
+#~ msgstr "میله ابزار گفتار"
+
+#~ msgid "The D-Bus call supportsMarkup failed."
+#~ msgstr "خرابی در فراخوانی supportsMarkup D-Bus."
+
+#~ msgid "The D-Bus call setText failed."
+#~ msgstr "خرابی در فراخوانی setText D-Bus."
+
+#~ msgid "Conquer your Desktop!"
+#~ msgstr "بر رومیزی خود حکومت کنید!"
+
+#~ msgid "Storage Media"
+#~ msgstr "رسانه ذخیره‌گاه"
+
+#~ msgid "Disks and removable media"
+#~ msgstr "دیسکها و رسانه قابل حذف"
+
+#~ msgid "Settings"
+#~ msgstr "تنظیمات"
+
+#~ msgid "Desktop configuration"
+#~ msgstr "پیکربندی رومیزی"
+
+#~ msgid "Home &URL:"
+#~ msgstr "&نشانی وب آغازه‌:"
+
+#~ msgid "&Edit File Type..."
+#~ msgstr "&ویرایش نوع پرونده...‌"
+
+#~ msgid "S&ystem"
+#~ msgstr "&سیستم‌"
+
+#~ msgid "App&lications"
+#~ msgstr "&کاربردها‌"
+
+#~ msgid "&Storage Media"
+#~ msgstr "رسانه &ذخیره‌سازی‌"
+
+#~ msgid "&Network Folders"
+#~ msgstr "پوشه‌های &شبکه‌"
+
+#~ msgid "Sett&ings"
+#~ msgstr "&تنظیمات‌"
+
+#~ msgid "Autostart"
+#~ msgstr "آغاز خودکار"
+
+#~ msgid "KDE tool for opening URLs from the command line"
+#~ msgstr "ابزار KDE برای باز کردن نشانیهای وب از خط فرمان"
+
+#~ msgid "Non interactive use: no message boxes"
+#~ msgstr "تعاملی استفاده نمی‌شود. بدون جعبه‌های پیام"
+
+#~ msgid "Show available commands"
+#~ msgstr "نمایش فرمانهای موجود"
+
+#~ msgid "Command (see --commands)"
+#~ msgstr "فرمان )--commands را ببینید("
+
+#~ msgid "Arguments for command"
+#~ msgstr "نشانوندها برای فرمان"
+
+#~ msgid ""
+#~ "\n"
+#~ "Syntax:\n"
+#~ msgstr ""
+#~ "\n"
+#~ "نحو:\n"
+
+#~ msgid ""
+#~ "  kfmclient openURL 'url' ['mimetype']\n"
+#~ "            # Opens a window showing 'url'.\n"
+#~ "            #  'url' may be a relative path\n"
+#~ "            #   or file name, such as . or subdir/\n"
+#~ "            #   If 'url' is omitted, $HOME is used instead.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmclient openURL 'نشانی وب' ['نوع مایم']\n"
+#~ "            # پنجره‌ای که »نشانی وب« را نمایش می‌دهد، باز می‌کند.\n"
+#~ "            #  »نشانی وب« ممکن است مسیر نسبی باشد\n"
+#~ "            #   یا نام پرونده، نظیر . یا زیرفهرست/\n"
+#~ "            #   اگر »نشانی وب« جا افتاده باشد، در عوض $HOME  استفاده "
+#~ "می‌شود.\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "            # If 'mimetype' is specified, it will be used to determine "
+#~ "the\n"
+#~ "            #   component that Konqueror should use. For instance, set it "
+#~ "to\n"
+#~ "            #   text/html for a web page, to make it appear faster\n"
+#~ "\n"
+#~ msgstr ""
+#~ "            # اگر »نوع مایم« مشخص شود، برای تعیین\n"
+#~ "            #   مولفه‌ای که Konqueror باید استفاده کند، استفاده می شود. "
+#~ "برای نمونه، آن را به\n"
+#~ "            #   متن/زنگام برای صفحه وب تنظیم کنید، تا سریع‌تر ظاهر شود\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "  kfmclient newTab 'url' ['mimetype']\n"
+#~ "            # Same as above but opens a new tab with 'url' in an existing "
+#~ "Konqueror\n"
+#~ "            #   window on the current active desktop if possible.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmclient newTab 'نشانی وب' ['نوع مایم']\n"
+#~ "            # مانند بالا ولی تب جدیدی را با »نشانی وب« در پنجره Konqueror "
+#~ "موجود\n"
+#~ "            #   روی رومیزی فعال جاری در صورت امکان باز می‌کند.\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "  kfmclient openProfile 'profile' ['url']\n"
+#~ "            # Opens a window using the given profile.\n"
+#~ "            #   'profile' is a file under ~/.kde/share/apps/konqueror/"
+#~ "profiles.\n"
+#~ "            #   'url' is an optional URL to open.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmclient openProfile 'profile' ['نشانی وب']\n"
+#~ "            # پنجره‌ای را با استفاده از profile داده‌شده باز می‌کند.\n"
+#~ "            #   »profile« پرونده‌ای تحت ~/.kde/share/apps/konqueror/"
+#~ "profiles است.\n"
+#~ "            #   »نشانی وب« نشانی وب اختیاری برای باز کردن است.\n"
+#~ "\n"
+
+#~ msgid "Profile %1 not found\n"
+#~ msgstr "profile %1 یافت نشد\n"
+
+#~ msgid "Syntax Error: Not enough arguments\n"
+#~ msgstr "خطای نحوی: نشانوندهای کافی وجود ندارد\n"
+
+#~ msgid "Syntax Error: Too many arguments\n"
+#~ msgstr "خطای نحوی: نشانوندهای زیادی وجود دارد\n"
+
+#~ msgid "Syntax Error: Unknown command '%1'\n"
+#~ msgstr "خطای نحوی: فرمان ناشناخته »%1«\n"
+
+#~ msgid ""
+#~ "<h1>Konqueror Stylesheets</h1> This module allows you to apply your own "
+#~ "color and font settings to Konqueror by using stylesheets (CSS). You can "
+#~ "either specify options or apply your own self-written stylesheet by "
+#~ "pointing to its location.<br /> Note that these settings will always have "
+#~ "precedence before all other settings made by the site author. This can be "
+#~ "useful to visually impaired people or for web pages that are unreadable "
+#~ "due to bad design."
+#~ msgstr ""
+#~ "<h1>صفحه‌سبکهای Konqueror </h1> این پیمانه به شما اجازه اعمال تنظیمات رنگ "
+#~ "و قلم شخصیتان به Konqueror با استفاده از صفحه‌سبکها )CSS( می‌دهد. می‌توانید "
+#~ "گزینه‌ها را مشخص کنید یا صفحه‌سبکهای خود نوشته شخصیتان را با اشاره به "
+#~ "مکانشان، اعمال کنید.<br /> توجه کنید که این تنظیمات همیشه قبل از همه "
+#~ "تنظیمات دیگر که توسط نویسنده پایگاه ایجادشده، تقدم دارد. این می‌تواند برای "
+#~ "افرادی که از نظر بینایی معلولین دارند یا صفحات وبی که به دلیل طراحی بد، "
+#~ "قابل خواندن نیستند* مفید باشد."
+
+#~ msgid "Manual Proxy Configuration"
+#~ msgstr "پیکربندی پیشکار راهنما"
+
+#~ msgid "Invalid Proxy Setting"
+#~ msgstr "تنظیم پیشکار نامعتبر"
+
+#~ msgid ""
+#~ "One or more of the specified proxy settings are invalid. The incorrect "
+#~ "entries are highlighted."
+#~ msgstr ""
+#~ "یک یا بیشتر تنظیمات پیشکار مشخص‌شده نامعتبرند. مدخلهای نادرست مشخص‌ می‌شوند."
+
+#~ msgid "You entered a duplicate address. Please try again."
+#~ msgstr "نشانی تکراری وارد کردید. لطفاً، دوباره سعی کنید."
+
+#~ msgid "<qt><center><b>%1</b></center> is already in the list.</qt>"
+#~ msgstr "<qt><center><b>%1</b></center> از قبل در فهرست است.</qt>"
+
+#~ msgid "Duplicate Entry"
+#~ msgstr "مدخل ضاعف‌"
+
+#~ msgid "New Exception"
+#~ msgstr "استثنای جدید"
+
+#~ msgid "Change Exception"
+#~ msgstr "تغییر پسوند"
+
+#~ msgid "Invalid Entry"
+#~ msgstr "مدخل نامعتبر"
+
+#~ msgid "The address you have entered is not valid."
+#~ msgstr "نشانی که وارد کرده‌اید معتبر نیست."
+
+#~ msgid ""
+#~ "<qt>Make sure none of the addresses or URLs you specified contain invalid "
+#~ "or wildcard characters such as spaces, asterisks (*), or question "
+#~ "marks(?).<br /><br /><u>Examples of VALID entries:</u><br /><code>http://"
+#~ "mycompany.com, 192.168.10.1, mycompany.com, localhost, http://localhost</"
+#~ "code><br /><br /><u>Examples of INVALID entries:</u><br /><code>http://my "
+#~ "company.com, http:/mycompany,com file:/localhost</code></qt>"
+#~ msgstr ""
+#~ "<qt>مطمئن شوید که هیچ‌کدام از نشانیها یا نشانیهای وبی که مشخص کردید شامل "
+#~ "نویسه‌های نامعتبر یا عام نظیر فاصله، ستاره )*(، یا علامت سوال نباشد.<br /"
+#~ "><br /><u>مثالهایی از مدخلهای معتبر:</u><br /><code>http://mycompany.com، "
+#~ "192.168.10.1، mycompany.com، localhost، http://localhost</code><br /><br /"
+#~ "><u>مثالهایی از مدخلهای نامعتبر:</u><br /><code>http://my company.com، "
+#~ "http:/mycompany,com file:/localhost</code></qt>"
+
+#~ msgid "Enter the URL or address that should use the above proxy settings:"
+#~ msgstr ""
+#~ "نشانی وب یا نشانی که باید تنظیمات پیشکار بالا را استفاده کند، وارد نمایید:"
+
+#~ msgid ""
+#~ "Enter the address or URL that should be excluded from using the above "
+#~ "proxy settings:"
+#~ msgstr ""
+#~ "نشانی یا نشانی وبی که باید از استفاده از تنظیمات پیشکار بالا شامل شود را "
+#~ "وارد کنید:"
+
+#~ msgid ""
+#~ "<qt>Enter a valid address or url.<br /><br /><b><u>NOTE:</u></b> Wildcard "
+#~ "matching such as <code>*.kde.org</code> is not supported. If you want to "
+#~ "match any host in the <code>.kde.org</code> domain, e.g. <code>printing."
+#~ "kde.org</code>, then simply enter <code>.kde.org</code></qt>"
+#~ msgstr ""
+#~ "<qt>نشانی معتبر یا نشانی وب را وارد کنید.<br /><br /><b><u>نکته:</u></b> "
+#~ "تطبیق نویسه‌های عام نظیر <code>*.kde.org</code> پشتیبانی نمی‌شود. اگر می "
+#~ "خواهید هر میزبانی را دردامنه <code>.kde.org</code> تطبیق دهید، مثلاً "
+#~ "<code>printing.kde.org</code>، پس به سادگی <code>.kde.org</code> را وارد "
+#~ "کنید</qt>"
+
+#~ msgid "This is the configuration for the samba client only, not the server."
+#~ msgstr "این پیکربندی فقط برای کارخواه samba است، نه کارساز."
+
+#~ msgid "Default user name:"
+#~ msgstr "نام کاربر پیش‌فرض:"
+
+#~ msgid "Default password:"
+#~ msgstr "اسم رمز پیش‌فرض:"
+
+#~ msgid "Accept"
+#~ msgstr "پذیرفتن"
+
+#~ msgid "Reject"
+#~ msgstr "رد کردن"
+
+#~ msgid "Ask"
+#~ msgstr "پرسیدن"
+
+#~ msgid "Timeout Values"
+#~ msgstr "مقادیر اتمام وقت"
+
+#~ msgid ""
+#~ "Here you can set timeout values. You might want to tweak them if your "
+#~ "connection is very slow. The maximum allowed value is %1 seconds."
+#~ msgstr ""
+#~ "در اینجا می‌توانید مقادیر اتمام وقت را تنظیم کنید. بیشینه مقدار مجاز %1 "
+#~ "ثانیه است."
+
+#~ msgid "Soc&ket read:"
+#~ msgstr "خواندن &سوکت‌:"
+
+#~ msgid "Pro&xy connect:"
+#~ msgstr "اتصال &پیشکار‌:"
+
+#~ msgid "Server co&nnect:"
+#~ msgstr "&اتصال کارساز‌:"
+
+#~ msgid "&Server response:"
+#~ msgstr "پاسخ &کارساز‌:"
+
+#~ msgid "FTP Options"
+#~ msgstr "گزینه‌های FTP"
+
+#~ msgid "Enable passive &mode (PASV)"
+#~ msgstr "فعال‌سازی &پیمانه مجهول‌ )PASV("
+
+#~ msgid ""
+#~ "Enables FTP's \"passive\" mode. This is required to allow FTP to work "
+#~ "from behind firewalls."
+#~ msgstr ""
+#~ "حالت »مجهول« FTP را فعال می‌سازد، نیاز به اجازه FTP برای کار کردن از پشت "
+#~ "باروها دارد."
+
+#~ msgid "Mark &partially uploaded files"
+#~ msgstr "نشان‌گذاری پرونده‌های بارگذاری‌شده &جزئی‌"
+
+#~ msgid ""
+#~ "<p>Marks partially uploaded FTP files.</p><p>When this option is enabled, "
+#~ "partially uploaded files will have a \".part\" extension. This extension "
+#~ "will be removed once the transfer is complete.</p>"
+#~ msgstr ""
+#~ "<p>پرونده‌های بارگذاری‌شده جزئی FTP را نشان‌گذاری می‌کند.</p><p>وقتی این "
+#~ "گزینه فعال  می‌شود، پرونده‌های بارگذاری‌شده جزئی پسوند» .part« خواهند داشت. "
+#~ "این پسوند به محض اینکه انتقال کامل می‌شود، حذف می‌شوند.</p>"
+
+#~ msgid ""
+#~ "<h1>Network Preferences</h1>Here you can define the behavior of KDE "
+#~ "programs when using Internet and network connections. If you experience "
+#~ "timeouts or use a modem to connect to the Internet, you might want to "
+#~ "adjust these settings."
+#~ msgstr ""
+#~ "<h1>تنظیمات شبکه</h1>در اینجا می توانید رفتار برنامه‌های KDE را هنگام "
+#~ "استفاده از اتصالهای اینترنت و شبکه تعریف کنید. اگر اتمام وقتها را تجربه "
+#~ "کرده یا از مودم برای اتصال به اینترنت استفاده می‌کنید، ممکن است بخواهید "
+#~ "این نظیمات را میزان کنید."
+
+#~ msgid "D-Bus Communication Error"
+#~ msgstr "خطای ارتباط D-Bus"
+
+#~ msgid "Unable to delete all the cookies as requested."
+#~ msgstr "قادر به حذف همه کوکیهای درخواست‌شده نیست."
+
+#~ msgid "Unable to delete cookies as requested."
+#~ msgstr "قادر به حذف کوکیها درخواست‌شده نیست."
+
+#~ msgid "<h1>Cookies Management Quick Help</h1>"
+#~ msgstr "<h1>کمک سریع مدیریت کوکیها</h1>"
+
+#~ msgid "Information Lookup Failure"
+#~ msgstr "خرابی در مراجعه اطلاعات"
+
+#~ msgid ""
+#~ "Unable to retrieve information about the cookies stored on your computer."
+#~ msgstr ""
+#~ "قادر به بازیابی اطلاعات درمورد کوکیهای ذخیره‌شده روس رایانه شما نیست."
+
+#~ msgid "Yes"
+#~ msgstr "بله"
+
+#~ msgid ""
+#~ "<h1>Cache</h1><p>This module lets you configure your cache settings.</"
+#~ "p><p>The cache is an internal memory in Konqueror where recently read web "
+#~ "pages are stored. If you want to retrieve a web page again that you have "
+#~ "recently read, it will not be downloaded from the Internet, but rather "
+#~ "retrieved from the cache, which is a lot faster.</p>"
+#~ msgstr ""
+#~ "<h1>نهانگاه</h1><p>این پیمانه اجازه پیکربندی تنظیمات نهانگاهتان را می‌دهد."
+#~ "</p><p>نهانگاه حافظه درونی در Konqueror است که صفحات وب اخیراً خوانده‌شده "
+#~ "ذخیره می‌شوند. اگر می‌خواهید صفحه وبی را دوباره بازیابی کنید که اخیراً "
+#~ "خوانده‌اید، از اینترنت بارگیری نمی‌شود، بلکه از نهانگاه بازیابی می‌شود، که "
+#~ "بسیار سریع‌تر است.</p>"
+
+#~ msgid "&Windows Shares"
+#~ msgstr "مشترکات &ویندوز‌"
+
+#~ msgid "&LISa Daemon"
+#~ msgstr "شبح &LISa"
+
+#~ msgid "Add Identification"
+#~ msgstr "افزودن شناسه"
+
+#~ msgid "Modify Identification"
+#~ msgstr "تغییر شناسایی"
+
+#~ msgid ""
+#~ "<qt><center>Found an existing identification for<br/><b>%1</b><br/>Do you "
+#~ "want to replace it?</center></qt>"
+#~ msgstr ""
+#~ "<qt><center>یافت شناسایی موجودی برای<br/><b>%1</b><br/>می‌خواهید آن را "
+#~ "جایگزین کنید؟</center></qt>"
+
+#~ msgid "Duplicate Identification"
+#~ msgstr "شناسه مضاعف"
+
+#~ msgid "Variable Proxy Configuration"
+#~ msgstr "پیکربندی پیشکار متغیر"
+
+#~ msgid "You must specify at least one valid proxy environment variable."
+#~ msgstr "باید حداقل یک متغیر محیطی پیشکار معتبر را مشخص کنید."
+
+#~ msgid ""
+#~ "<qt>Make sure you entered the actual environment variable name rather "
+#~ "than its value. For example, if the environment variable is <br /"
+#~ "><b>HTTP_PROXY=http://localhost:3128</b><br /> you need to enter "
+#~ "<b>HTTP_PROXY</b> here instead of the actual value http://localhost:3128."
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>مطمئن شوید که نام متغیر محیطی واقعی را به جای مقدار آن وارد کردید. "
+#~ "برای مثال، اگر متغیر محیطی <br /><b>HTTP_PROXY=http://localhost:3128</"
+#~ "b><br /> باشد، باید <b>HTTP_PROXY</b> را به جای مقدار واقعی http://"
+#~ "localhost:3128 وارد کنید.</qt>"
+
+#~ msgid "Invalid Proxy Setup"
+#~ msgstr "برپایی پیشکار نامعتبر"
+
+#~ msgid "Successfully verified."
+#~ msgstr "با موفقیت اعتبارسنجی شد."
+
+#~ msgid "Proxy Setup"
+#~ msgstr "برپایی پیشکار"
+
+#~ msgid ""
+#~ "Did not detect any environment variables commonly used to set system wide "
+#~ "proxy information."
+#~ msgstr ""
+#~ "هیچ متغیر محیطی رایج مورد استفاده برای تنظیم اطلاعات پیشکار کل سیستم "
+#~ "آشکار نکرد."
+
+#~ msgid ""
+#~ "<qt>To learn about the variable names the automatic detection process "
+#~ "searches for, press OK, click on the quick help button on the window "
+#~ "title bar of the previous dialog and then click on the \"<b>Auto Detect</"
+#~ "b>\" button.</qt>"
+#~ msgstr ""
+#~ "<qt>برای یادگیری نام متغیرها، فرآیند آشکارسازی خودکار جستجو می‌کند، تأیید "
+#~ "را فشار داده، دکمه کمک سریع را روی میله عنوان پنجره محاوره قبلی فشار دهید "
+#~ "و سپس دکمه » <b>آشکارسازی خودکار</b>« را فشار دهید.</qt>"
+
+#~ msgid "Automatic Proxy Variable Detection"
+#~ msgstr "آشکارسازی متغیر محیطی خودکار"
+
+#~ msgid ""
+#~ "Unable to start the cookie handler service.\n"
+#~ "You will not be able to manage the cookies that are stored on your "
+#~ "computer."
+#~ msgstr ""
+#~ "قادر به آغاز خدمت گرداننده کوکی نیست.\n"
+#~ "قادر به مدیریت کوکیهایی که روی رایانه شما ذخیره می‌شوند، نیستید."
+
+#~ msgid "&Policy"
+#~ msgstr "&سیاست‌"
+
+#~ msgid "KDE SOCKS Control Module"
+#~ msgstr "پیمانه کنترل KDE SOCKS"
+
+#~ msgid "These changes will only apply to newly started applications."
+#~ msgstr "این تغییرات فقط به کاربردهای اخیراً آغازشده اعمال می‌شود."
+
+#~ msgid "SOCKS Support"
+#~ msgstr "پشتیبانی SOCKS"
+
+#~ msgid "Success: SOCKS was found and initialized."
+#~ msgstr "موفقیت: SOCKS پیدا و مقداردهی اولیه شد."
+
+#~ msgid "SOCKS could not be loaded."
+#~ msgstr "SOCKS نتوانست بار شود."
+
+#~ msgid ""
+#~ "<h1>SOCKS</h1><p>This module allows you to configure KDE support for a "
+#~ "SOCKS server or proxy.</p><p>SOCKS is a protocol to traverse firewalls as "
+#~ "described in <a href=\"http://rfc.net/rfc1928.html\">RFC 1928</a>.</p> "
+#~ "<p>If you have no idea what this is and if your system administrator does "
+#~ "not tell you to use it, leave it disabled.</p>"
+#~ msgstr ""
+#~ "<h1>SOCKS</h1><p>این پیمانه اجازه پیکربندی پشتیبانی KDE برای یک کارساز "
+#~ "SOCKS یا پیشکار را می‌دهد.</p><p>SOCKS قراردادی است برای پیمودن باروها "
+#~ "همان طور که در <a href=\"http://rfc.net/rfc1928.html\">RFC 1928</a> شرح "
+#~ "داده شده است.</p> <p>اگر ایده‌ای در مورد این که این چیست ندارید و سرپرست "
+#~ "سیستمتان درباره استفاده از آن چیزی به شما نگفته، آن را غیرفعال بگذارید.</"
+#~ "p>"
+
+#~ msgid "Update Failed"
+#~ msgstr "خرابی در به‌روزرسانی"
+
+#~ msgid ""
+#~ "You have to restart the running applications for these changes to take "
+#~ "effect."
+#~ msgstr "باید اجرای کاربردها را برای تأثیر این تغییرات باز آغاز کنید."
+
+#~ msgid "You have to restart KDE for these changes to take effect."
+#~ msgstr "باید KDE را برای تأثیر این تغییرات باز آغاز کنید."
+
+#~ msgid "New Cookie Policy"
+#~ msgstr "سیاست کوکی جدید"
+
+#~ msgid "Change Cookie Policy"
+#~ msgstr "تغییر سیاست کوکی"
+
+#~ msgid ""
+#~ "<qt>A policy already exists for<center><b>%1</b></center>Do you want to "
+#~ "replace it?</qt>"
+#~ msgstr ""
+#~ "<qt>سیاستی از قبل برای<center><b>%1</b></center>وجود دارد. می‌خواهید آن را "
+#~ "جایگزین کنید؟</qt>"
+
+#~ msgid "Duplicate Policy"
+#~ msgstr "سیاست مضاعف"
+
+#~ msgid ""
+#~ "Unable to communicate with the cookie handler service.\n"
+#~ "Any changes you made will not take effect until the service is restarted."
+#~ msgstr ""
+#~ "قادر به ارتباط با کارساز گرداننده کوکیها نیست.\n"
+#~ "هر تغییری که ایجاد کنید تأثیر نمی‌گذارد تا کارساز باز آغاز شود."
+
+#~ msgid "&Proxy"
+#~ msgstr "&پیشکار‌"
+
+#~ msgid ""
+#~ "The address of the automatic proxy configuration script is invalid. "
+#~ "Please correct this problem before proceeding. Otherwise, your changes "
+#~ "will be ignored."
+#~ msgstr ""
+#~ "نشانی دست‌نوشته پیکربندی پیشکار خودکار نامعتبر است. لطفاً، این مسئله را قبل "
+#~ "از ادامه دادن اصلاح کنید. در غیر این صورت، تغییراتتان چشم‌پوشی می‌شود."
+
+#~ msgid ""
+#~ "<qt>The proxy settings you specified are invalid.<br /><br />Please click "
+#~ "on the <b>Setup...</b> button and correct the problem before proceeding; "
+#~ "otherwise your changes will be ignored.</qt>"
+#~ msgstr ""
+#~ "<qt>.تنظیمات پیشکاری که مشخص کردید نامعتبر است<br /><br />لطفاً، دکمه "
+#~ "<b>برپایی...</b> را فشار داده و مسئله را قبل از ادامه اصلاح کنید، در غیر "
+#~ "این صورت تغییراتتان چشم‌پوشی می‌شود.</qt>"
+
+#~ msgid "test app"
+#~ msgstr "کاربرد آزمون"
+
+#~ msgid "Menu Editor"
+#~ msgstr "ویرایشگر گزینگان"
+
+#~ msgid "Menu"
+#~ msgstr "گزینگان"
+
+#~ msgid "Move Up"
+#~ msgstr "حرکت به بالا"
+
+#~ msgid "Move Down"
+#~ msgstr "حرکت به پایین"
+
+#~ msgid ""
+#~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "
+#~ "file manager here."
+#~ msgstr ""
+#~ "<h1>رفتار Konqueror</h1> در اینجا می‌توانید پیکربندی کنید که Konqueror به "
+#~ "عنوان یک مدیر پرونده چگونه رفتار کند."
+
+#~ msgid "Misc Options"
+#~ msgstr "گزینه‌های متفرقه"
+
+#~ msgid "&Move to trash"
+#~ msgstr "&حرکت به زباله‌"
+
+#~ msgid "Sound Files"
+#~ msgstr "پرونده‌های صوتی"
+
+#~ msgid "&Left button:"
+#~ msgstr "دکمه &چپ‌:"
+
+#~ msgid ""
+#~ "You can choose what happens when you click the left button of your "
+#~ "pointing device on the desktop:"
+#~ msgstr ""
+#~ "می‌توانید انتخاب کنید که هنگام فشار دکمه چپ دستگاه اشاره‌گرتان روی رومیزی "
+#~ "چه اتفاقی بیفتد:"
+
+#~ msgid "Right b&utton:"
+#~ msgstr "&دکمه راست‌:"
+
+#~ msgid ""
+#~ "You can choose what happens when you click the right button of your "
+#~ "pointing device on the desktop:"
+#~ msgstr ""
+#~ "می‌توانید انتخاب کنید که هنگام فشار دکمه راست دستگاه اشاره‌گرتان روی رومیزی "
+#~ "چه اتفاقی بیفتد:"
+
+#~ msgid "No Action"
+#~ msgstr "بدون کنش"
+
+#~ msgid "Window List Menu"
+#~ msgstr "گزینگان فهرست پنجره"
+
+#~ msgid "Desktop Menu"
+#~ msgstr "گزینگان رومیزی"
+
+#~ msgid "Application Menu"
+#~ msgstr "گزینگان کاربرد"
+
+#~ msgid "Bookmarks Menu"
+#~ msgstr "گزینگان چوب الفها"
+
+#~ msgid "Custom Menu 1"
+#~ msgstr "گزینگان سفارشی ۱"
+
+#~ msgid "Custom Menu 2"
+#~ msgstr "گزینگان سفارشی ۲"
+
+#~ msgid ""
+#~ "<h1>Behavior</h1>\n"
+#~ "This module allows you to choose various options\n"
+#~ "for your desktop, including the way in which icons are arranged and\n"
+#~ "the pop-up menus associated with clicks of the middle and right mouse\n"
+#~ "buttons on the desktop.\n"
+#~ "Use the \"Whats This?\" (Shift+F1) to get help on specific options."
+#~ msgstr ""
+#~ "<h1>رفتار</h1>\n"
+#~ "این پیمانه اجازه انتخاب گزینه‌های گوناگون\n"
+#~ "را برای رومیزیتان می‌دهد، شامل روشی که شمایلها مرتب می‌شوند و\n"
+#~ "گزینگان بالاپر مربوط به فشار دکمه‌های میانی و راست موشی\n"
+#~ "روی رومیزی.\n"
+#~ "برای کمک گرفتن در مورد گزینه‌های مشخص از »این چیست« )تبدیل+F1( استفاده "
+#~ "کنید."
+
+#~ msgid ""
+#~ "<p>Allow previews, \"Folder Icons Reflect Contents\", and retrieval of "
+#~ "meta-data on protocols:</p>"
+#~ msgstr ""
+#~ "<p>اجازه به پیش‌نمایشها، »شمایلهای پوشه بازتاب محتویات«، و بازیابی "
+#~ "فراداده‌های قراردادها:</p>"
+
+#~ msgid "Select Protocols"
+#~ msgstr "برگزیدن قراردادها"
+
+#~ msgid "Local Protocols"
+#~ msgstr "قراردادهای محلی"
+
+#~ msgid "Internet Protocols"
+#~ msgstr "قراردادهای اینترنت"
+
+#~ msgid ""
+#~ "This option makes it possible to choose when the file previews, smart "
+#~ "folder icons, and meta-data in the File Manager should be activated.\n"
+#~ "In the list of protocols that appear, select which ones are fast enough "
+#~ "for you to allow previews to be generated."
+#~ msgstr ""
+#~ "این گزینه انتخاب پیش نمایشهای پرونده، شمایلهای هوشمند پوشه، و فراداده در "
+#~ "مدیر پرونده‌ای که باید فهال شود را ممکن می‌سازد.\n"
+#~ "در فهرست قراردادهایی که ظاهر می‌شود، موردی که به قدر کافی برایتان سریع است "
+#~ "که اجازه دهد پیش‌نمایشها تولید شوند را برگزینید."
+
+#~ msgid "&Maximum file size:"
+#~ msgstr "&بیشینه اندازه پرونده‌:"
+
+#~ msgid " MB"
+#~ msgstr " مگابایت"
+
+#~ msgid "&Increase size of previews relative to icons"
+#~ msgstr "&افزایش اندازه پیش‌نمایشها نسبت به شمایلها‌"
+
+#~ msgid "&Use thumbnails embedded in files"
+#~ msgstr "&استفاده از ریزنقشهای نهفته در پرونده‌ها‌"
+
+#~ msgid "&Behavior"
+#~ msgstr "&رفتار‌"
+
+#~ msgid "&Previews && Meta-Data"
+#~ msgstr "&پیش‌نمایشها و فراداده‌"
+
+#~ msgid "Des&ktop path:"
+#~ msgstr "مسیر &رومیزی‌:"
+
+#~ msgid "A&utostart path:"
+#~ msgstr "مسیر &آغاز خودکار:"
+
+#~ msgid "D&ocuments path:"
+#~ msgstr "مسیر &سندها‌:"
+
+#~ msgid ""
+#~ "This folder will be used by default to load or save documents from or to."
+#~ msgstr ""
+#~ "این پوشه به طور پیش‌فرض برای بار کردن یا ذخیره اسناد از یا به استفاده "
+#~ "می‌شود."
+
+#~ msgid "Desktop"
+#~ msgstr "رومیزی"
+
+#~ msgid ""
+#~ "The path for '%1' has been changed;\n"
+#~ "do you want the files to be moved from '%2' to '%3'?"
+#~ msgstr ""
+#~ "مسیر »%1« تغییر یافته است؛\n"
+#~ "می‌خواهید پرونده‌ها از »%2« به »%3« حرکت داده شوند؟"
+
+#~ msgid "Confirmation Required"
+#~ msgstr "تأیید درخواست شد"
+
+#~ msgid "Move"
+#~ msgstr "حرکت"
+
+#~ msgid ""
+#~ "KDE file type editor - simplified version for editing a single file type"
+#~ msgstr "ویرایشگر نوع پرونده KDE - نسخه ساده‌شده برای ویرایش نوع پرونده ساده"
+
+#~ msgid "Makes the dialog transient for the window specified by winid"
+#~ msgstr "محاوره گذرا برای پنجره‌های مشخص‌شده توسط شناسه پنجره را ایجاد می‌کند"
+
+#~ msgid "File type to edit (e.g. text/html)"
+#~ msgstr "نوع پرونده برای ویرایش )مثلاً متن/زنگام("
+
+#~ msgid "%1 File"
+#~ msgstr "پرونده %1"
+
+#~ msgid "Edit File Type %1"
+#~ msgstr "ویرایش نوع پرونده %1"
+
+#~ msgid "Create New File Type %1"
+#~ msgstr "ایجاد نوع پرونده جدید %1"
+
+#~ msgid "Create New File Type"
+#~ msgstr "ایجاد نوع پرونده جدید"
+
+#~ msgid "Group:"
+#~ msgstr "گروه:"
+
+#~ msgid "Select the category under which the new file type should be added."
+#~ msgstr "برگزیدن دسته تحت نوع پرونده جدیدی که باید اضافه شود"
+
+#~ msgid "Type name:"
+#~ msgstr "نام گروه:"
+
+#~ msgid "Left Click Action"
+#~ msgstr "کنش فشار چپ"
+
+#~ msgid "Show file in embedded viewer"
+#~ msgstr "نمایش پرونده در مشاهده‌گر نهفته"
+
+#~ msgid "Show file in separate viewer"
+#~ msgstr "نمایش پرونده در مشاهده‌گر جداگانه"
+
+#~ msgid "Add Service"
+#~ msgstr "افزودن خدمت"
+
+#~ msgid "Select service:"
+#~ msgstr "برگزیدن خدمت:"
+
+#~ msgid "F&ind filename pattern:"
+#~ msgstr "&یافتن الگوی نام پرونده‌:"
+
+#~ msgid ""
+#~ "Enter a part of a filename pattern. Only file types with a matching file "
+#~ "pattern will appear in the list."
+#~ msgstr ""
+#~ "جزئی از الگوی نام پرونده را وارد کنید. فقط انواع پرونده مطابق با الگوی "
+#~ "پرونده در فهرست ظاهر می‌شوند."
+
+#~ msgid "Known Types"
+#~ msgstr "انواع شناخته‌شده"
+
+#~ msgid "Add..."
+#~ msgstr "افزودن..."
+
+#~ msgid "Click here to add a new file type."
+#~ msgstr "برای افزودن نوع پرونده جدیدی اینجا را فشار دهید."
+
+#~ msgid "&Remove"
+#~ msgstr "&حذف‌"
+
+#~ msgid "Click here to remove the selected file type."
+#~ msgstr "اینجا را برای حذف نوع پرونده برگزیده فشار دهید."
+
+#~ msgid "Select a file type by name or by extension"
+#~ msgstr "نوع پرونده‌ای را بر اساس نام یا پسوند برگزینید"
+
+#~ msgid ""
+#~ "This button displays the icon associated with the selected file type. "
+#~ "Click on it to choose a different icon."
+#~ msgstr ""
+#~ "این دکمه شمایل مربوط به نوع پرونده برگزیده را نمایش می‌دهد. برای انتخاب "
+#~ "شمایل متفاوتی آن را فشار دهید."
+
+#~ msgid "Filename Patterns"
+#~ msgstr "الگوهای نام پرونده"
+
+#~ msgid ""
+#~ "This box contains a list of patterns that can be used to identify files "
+#~ "of the selected type. For example, the pattern *.txt is associated with "
+#~ "the file type 'text/plain'; all files ending in '.txt' are recognized as "
+#~ "plain text files."
+#~ msgstr ""
+#~ "این جعبه شامل فهرستی از الگوهایی که برای شناختن پرونده‌های نوع برگزیده "
+#~ "استفاده می‌شود، می‌باشد. برای مثال، الگوی *.txt به نوع پرونده »متن/زنگام« "
+#~ "مربوط می‌شود؛ همه پرونده‌های منتهی به ».txt« به عنوان پرونده‌های متن ساده "
+#~ "شناخته می شوند."
+
+#~ msgid "Add a new pattern for the selected file type."
+#~ msgstr "افزودن الگوی جدیدی برای نوع پرونده برگزیده."
+
+#~ msgid "Remove the selected filename pattern."
+#~ msgstr "حذف الگوی نام پرونده برگزیده."
+
+#~ msgid "Description"
+#~ msgstr "توصیف"
+
+#~ msgid "Ask whether to save to disk instead"
+#~ msgstr "بپرسد که آیا در عوض در دیسک ذخیره شود؟"
+
+#~ msgid "&Embedding"
+#~ msgstr "&نهفته‌"
+
+#~ msgid "Add New Extension"
+#~ msgstr "افزودن پسوند جدید"
+
+#~ msgid "Extension:"
+#~ msgstr "پسوند:"
+
+#~ msgid "Use settings for '%1' group"
+#~ msgstr "استفاده از تنظیمات برای گروه »%1«"
+
+#~ msgid "Application Preference Order"
+#~ msgstr "ترتیب تنظیم کاربرد"
+
+#~ msgid "Services Preference Order"
+#~ msgstr "ترتیب تنظیم خدمات"
+
+#~ msgid "Move &Up"
+#~ msgstr "حرکت &به بالا‌"
+
+#~ msgid ""
+#~ "Assigns a higher priority to the selected\n"
+#~ "service, moving it up in the list."
+#~ msgstr ""
+#~ "اولویت بالاتری را به خدمت برگزیده اختصاص داده،\n"
+#~ "آن را به بالای فهرست حرکت می‌دهد."
+
+#~ msgid "Move &Down"
+#~ msgstr "حرکت به &پایین‌"
+
+#~ msgid ""
+#~ "Assigns a lower priority to the selected\n"
+#~ "service, moving it down in the list."
+#~ msgstr ""
+#~ "اولویت پایین‌تری را به خدمت برگزیده اختصاص داده،\n"
+#~ "آن را به پایین فهرست حرکت می‌دهد."
+
+#~ msgid "Add a new application for this file type."
+#~ msgstr "افزودن کاربرد جدیدی برای این نوع پرونده."
+
+#~ msgid "Edit..."
+#~ msgstr "ویرایش..."
+
+#~ msgid "Edit command line of the selected application."
+#~ msgstr "ویرایش خط فرمان کاربرد برگزیده."
+
+#~ msgid "Remove the selected application from the list."
+#~ msgstr "حذف کاربرد برگزیده از فهرست."
+
+#~ msgid "None"
+#~ msgstr "هیچ‌کدام"
+
+#~ msgid "You are not authorized to remove this service."
+#~ msgstr "اجازه حذف این کاربرد را ندارید."
+
+#~ msgid "The service <b>%1</b> can not be removed."
+#~ msgstr "خدمت <b>%1</b> نتوانست حذف شود."
+
+#~ msgid ""
+#~ "The service is listed here because it has been associated with the <b>%1</"
+#~ "b> (%2) file type and files of type <b>%3</b> (%4) are per definition "
+#~ "also of type <b>%5</b>."
+#~ msgstr ""
+#~ "خدمت اینجا فهرست می‌شود زیرا مربوط به نوع پرونده <b>%1</b> )%2( است و "
+#~ "پرونده‌های نوع <b>%3</b> )%4( در هر تعریف نوع <b>%5</b> نیز هستند."
+
+#~ msgid ""
+#~ "Either select the <b>%1</b> file type to remove the service from there or "
+#~ "move the service down to deprecate it."
+#~ msgstr ""
+#~ "یا برگزیدن نوع پرونده <b>%1</b> برای حذف خدمت از آنجا یا حرکت خدمت به "
+#~ "پایین برای مخالفت با آن."
+
+#~ msgid "Global Settings"
+#~ msgstr "تنظیمات سراسری"
+
+#~ msgid "&Enable plugins globally"
+#~ msgstr "&فعال‌سازی وصله‌های سراسری‌"
+
+#~ msgid "Only allow &HTTP and HTTPS URLs for plugins"
+#~ msgstr "فقط اجازه به &HTTP و نشانیهای وب HTTPS برای وصله‌ها"
+
+#~ msgid "&Load plugins on demand only"
+#~ msgstr "&بار کردن وصله‌ها فقط بر حسب نیاز‌"
+
+#~ msgid "CPU priority for plugins: %1"
+#~ msgstr "اولویت واحد پردازش مرکزی برای: %1"
+
+#~ msgid "Domain-Specific Settin&gs"
+#~ msgstr "&تنظیمات مشخص‌ دامنه‌"
+
+#~ msgid "Domain-Specific Policies"
+#~ msgstr "سیاستهای مشخص دامنه"
+
+#~ msgid "Netscape Plugins"
+#~ msgstr "وصله‌های نت اسکیپ"
+
+#~ msgctxt "lowest priority"
+#~ msgid "lowest"
+#~ msgstr "پایین‌تر"
+
+#~ msgctxt "low priority"
+#~ msgid "low"
+#~ msgstr "پایین"
+
+#~ msgctxt "medium priority"
+#~ msgid "medium"
+#~ msgstr "متوسط"
+
+#~ msgctxt "high priority"
+#~ msgid "high"
+#~ msgstr "بالا"
+
+#~ msgctxt "highest priority"
+#~ msgid "highest"
+#~ msgstr "بالاتر"
+
+#~ msgid ""
+#~ "Do you want to apply your changes before the scan? Otherwise the changes "
+#~ "will be lost."
+#~ msgstr ""
+#~ "می‌خواهید تغییراتتان را قبل از مرور اعمال کنید؟ در غیر این صورت تغییرات از "
+#~ "دست می‌روند."
+
+#~ msgid ""
+#~ "The nspluginscan executable cannot be found. Netscape plugins will not be "
+#~ "scanned."
+#~ msgstr ""
+#~ "برنامه قابل اجرای nspluginscan یافت نشد. وصله‌های نت اسکیپ مرور نمی‌شوند."
+
+#~ msgid "Scanning for plugins"
+#~ msgstr "پویش برای وصله‌ها"
+
+#~ msgid "Cancel"
+#~ msgstr "لغو"
+
+#~ msgid "Select Plugin Scan Folder"
+#~ msgstr "برگزیدن پوشه پوییدن وصله"
+
+#~ msgid "Plugin"
+#~ msgstr "وصله"
+
+#~ msgid "MIME type"
+#~ msgstr "نوع مایم"
+
+#~ msgid "Suffixes"
+#~ msgstr "پسوندها"
+
+#~ msgid "Doma&in-Specific"
+#~ msgstr "مشخص &دامنه"
+
+#~ msgid "New Plugin Policy"
+#~ msgstr "سیاست وصله جدید"
+
+#~ msgid "Change Plugin Policy"
+#~ msgstr "تغییر سیاست وصله"
+
+#~ msgid "&Plugin policy:"
+#~ msgstr "سیاست &وصله‌:"
+
+#~ msgid "Select a plugin policy for the above host or domain."
+#~ msgstr "برگزیدن سیاست وصله برای میزبان یا دامنه بالا."
+
+#~ msgid "Host/Domain"
+#~ msgstr "میزبان/دامنه"
+
+#~ msgid "Policy"
+#~ msgstr "سیاست"
+
+#~ msgid "De&lete"
+#~ msgstr "&حذف‌"
+
+#~ msgid "&Import..."
+#~ msgstr "&واردات...‌"
+
+#~ msgid "&Export..."
+#~ msgstr "&صادرات...‌"
+
+#~ msgid ""
+#~ "Click on this button to manually add a host or domain specific policy."
+#~ msgstr ""
+#~ "فشار روی این دکمه برای افزودن سیاست مشخص میزبان یا دامنه به طور دستی."
+
+#~ msgid ""
+#~ "Click on this button to change the policy for the host or domain selected "
+#~ "in the list box."
+#~ msgstr ""
+#~ "فشار روی این دکمه برای تغییر سیاست برای میزبان یا دامنه برگزیده در جعبه "
+#~ "فهرست."
+
+#~ msgid ""
+#~ "Click on this button to delete the policy for the host or domain selected "
+#~ "in the list box."
+#~ msgstr ""
+#~ "فشار روی این دکمه برای حذف سیاست برای میزبان یا دامنه برگزیده در جعبه "
+#~ "فهرست."
+
+#~ msgid "You must first select a policy to be changed."
+#~ msgstr "ابتدا باید سیاستی را برای تغییر برگزینید."
+
+#~ msgid "You must first select a policy to delete."
+#~ msgstr "ابتدا باید سیاستی را برای حذف برگزینید."
+
+#~ msgid "Use Global"
+#~ msgstr "استفاده سراسری"
+
+#~ msgid "Accept languages:"
+#~ msgstr "پذیرفتن زبانها:"
+
+#~ msgid "Accept character sets:"
+#~ msgstr "پذیرفتن نویسه‌گان:"
+
+#~ msgid "Select Home Folder"
+#~ msgstr "برگزیدن پوشه آغازه"
+
+#~ msgid "Tabbed Browsing"
+#~ msgstr "مرور تب‌یافته"
+
+#~ msgid "Open new windows:"
+#~ msgstr "باز کردن پنجره‌های جدید:"
+
+#~ msgid "Use global"
+#~ msgstr "استفاده سراسری"
+
+#~ msgid "Use setting from global policy."
+#~ msgstr "استفاده تنظیم از سیاست سراسری."
+
+#~ msgid "Allow"
+#~ msgstr "اجازه"
+
+#~ msgid "Accept all popup window requests."
+#~ msgstr "پذیرفتن همه درخواستهای پنجره بالاپر."
+
+#~ msgid "Prompt every time a popup window is requested."
+#~ msgstr "اعلان هر زمان که پنجره بالاپر درخواست می شود."
+
+#~ msgid "Deny"
+#~ msgstr "انکار"
+
+#~ msgid "Reject all popup window requests."
+#~ msgstr "رد کردن همه درخواستهای پنجره بالاتر."
+
+#~ msgid "Smart"
+#~ msgstr "هوشمند"
+
+#~ msgid "Resize window:"
+#~ msgstr "تغییر اندازه پنجره:"
+
+#~ msgid "Allow scripts to change the window size."
+#~ msgstr "اجازه به پنجره‌ها برای تغییر اندازه پنجره."
+
+#~ msgid "Ignore"
+#~ msgstr "چشم‌پوشی"
+
+#~ msgid "Move window:"
+#~ msgstr "حرکت پنجره:"
+
+#~ msgid "Allow scripts to change the window position."
+#~ msgstr "اجازه به دست‌نوشته برای تغییر موقعیت پنجره."
+
+#~ msgid "Focus window:"
+#~ msgstr "کانون پنجره:"
+
+#~ msgid "Allow scripts to focus the window."
+#~ msgstr "اجازه به دست‌نوشته برای کانون پنجره."
+
+#~ msgid "Modify status bar text:"
+#~ msgstr "تغییر متن میله وضعیت:"
+
+#~ msgid "Allow scripts to change the text of the status bar."
+#~ msgstr "اجازه به دست‌نوشته برای تغییر متن میله وضعیت."
+
+#~ msgid ""
+#~ "Ignore attempts of scripts to change the status bar text. The web page "
+#~ "will <i>think</i> it changed the text but the actual text will remain "
+#~ "unchanged."
+#~ msgstr ""
+#~ "چشم‌پوشی از تلاشهای دست‌نوشته برای تغییر متن میله وضعیت. صفحه وب <i>فکر "
+#~ "می‌کند</i> متن را تغییر داده، ولی متن واقعی بدون تغییر می‌ماند."
+
+#~ msgid "Konqueror Browsing Control Module"
+#~ msgstr "پیمانه کنترل مرور Konqueror"
+
+#~ msgid ""
+#~ "JavaScript access controls\n"
+#~ "Per-domain policies extensions"
+#~ msgstr ""
+#~ "کنترلهای دستیابی جاوا اسکریپت\n"
+#~ "پسوندهای سیاستهای هر دامنه"
+
+#~ msgid "&Java"
+#~ msgstr "&جاوا‌"
+
+#~ msgid "Java&Script"
+#~ msgstr "جاوا&اسکریپت‌"
+
+#~ msgid "Enable filters"
+#~ msgstr "فعال‌سازی پالایه‌ها"
+
+#~ msgid "Hide filtered images"
+#~ msgstr "مخفی کردن تصاویر پالایه‌شده"
+
+#~ msgid "URL Expressions to Filter"
+#~ msgstr "عبارتهای نشانی وب برای پالایه"
+
+#~ msgid "Expression (e.g. http://www.site.com/ad/*):"
+#~ msgstr "عبارت )مثلاً http://www.site.com/ad/*(:"
+
+#~ msgid "Insert"
+#~ msgstr "درج"
+
+#~ msgid "Update"
+#~ msgstr "به‌روزرسانی"
+
+#~ msgid "Import..."
+#~ msgstr "واردات..."
+
+#~ msgid "Export..."
+#~ msgstr "صادرات..."
+
+#~ msgid ""
+#~ "Enable or disable AdBlocK filters. When enabled a set of expressions to "
+#~ "be blocked should be defined in the filter list for blocking to take "
+#~ "effect."
+#~ msgstr ""
+#~ "فعال یا غیرفعال‌سازی پالایه‌های AdBlocK. هنگامی که فعال باشد، مجموعه‌ای از "
+#~ "عباراتی که باید بلوک شوند، باید در فهرست پالایه برای بازداشت جهت تأثیر "
+#~ "گرفتن، تعریف شوند."
+
+#~ msgid ""
+#~ "When enabled blocked images will be removed from the page completely "
+#~ "otherwise a placeholder 'blocked' image will be used."
+#~ msgstr ""
+#~ "هنگامی که فعال شود، تصاویر بلوک‌شده از صفحه کاملاً حذف می‌شوند، در غیر این "
+#~ "صورت تصویر »بلوکه‌شده« جانگه‌دار استفاده می‌شود."
+
+#~ msgid ""
+#~ "<h1>Konqueror Fonts</h1>On this page, you can configure which fonts "
+#~ "Konqueror should use to display the web pages you view."
+#~ msgstr ""
+#~ "<h1>قلمهای Konqueror</h1>روی این صفحه، می‌توانید قلمهایی که Konqueror باید "
+#~ "برای نمایش صفحات وبی که مشاهده می‌کنید استفاده کند را پیکربندی نمایید."
+
+#~ msgid "Font Si&ze"
+#~ msgstr "اندازه قلم"
+
+#~ msgid "This is the relative font size Konqueror uses to display web sites."
+#~ msgstr ""
+#~ "این اندازه قلم نسبی مورد استفاده Konqueror برای نمایش پایگاههای وب است."
+
+#~ msgid "M&inimum font size:"
+#~ msgstr "&بیشینه اندازه قلم‌:"
+
+#~ msgid ""
+#~ "Konqueror will never display text smaller than this size,<br />overriding "
+#~ "any other settings"
+#~ msgstr ""
+#~ "Konqueror هرگز متن کوچکتر از این اندازه را نمایش نمی‌دهد، <br />لغو هر "
+#~ "تنظیم دیگر"
+
+#~ msgid "&Medium font size:"
+#~ msgstr "&متوسط اندازه قلم‌:"
+
+#~ msgid "This is the font used to display normal text in a web page."
+#~ msgstr "این قلم مورد استفاده برای نمایش متن عادی در یک صفحه وب است."
+
+#~ msgid "&Fixed font:"
+#~ msgstr "قلم &ثابت‌:"
+
+#~ msgid ""
+#~ "This is the font used to display fixed-width (i.e. non-proportional) text."
+#~ msgstr ""
+#~ "این قلم مورد استفاده برای نمایش متن با عرض ثابت (یعنی نامتناسب) است."
+
+#~ msgid "S&erif font:"
+#~ msgstr "قلم &سریف‌:"
+
+#~ msgid "This is the font used to display text that is marked up as serif."
+#~ msgstr ""
+#~ "این قلم مورد استفاده برای نمایش متنی است که به عنوان سریف نشان‌گذاری می‌شود."
+
+#~ msgid "Sa&ns serif font:"
+#~ msgstr "قلم &سن سریف:‌‌"
+
+#~ msgid ""
+#~ "This is the font used to display text that is marked up as sans-serif."
+#~ msgstr ""
+#~ "این قلم مورد استفاده برای نمایش متنی است که به عنوان سن سریف نشان گذاری "
+#~ "می‌شود."
+
+#~ msgid "C&ursive font:"
+#~ msgstr "قلم &پیوسته:‌"
+
+#~ msgid "This is the font used to display text that is marked up as italic."
+#~ msgstr ""
+#~ "این قلم مورد استفاده برای نمایش متنی است که به عنوان کج نشان‌گذاری می‌شود."
+
+#~ msgid "Fantas&y font:"
+#~ msgstr "قلم &فانتزی‌:"
+
+#~ msgid ""
+#~ "This is the font used to display text that is marked up as a fantasy font."
+#~ msgstr ""
+#~ "این قلم مورد استفاده برای نمایش متنی است که به عنوان فانتزی نشان‌گذاری "
+#~ "می‌شود."
+
+#~ msgid "Font &size adjustment for this encoding:"
+#~ msgstr "تنظیم &اندازه قلم برای این کدبندی‌:"
+
+#~ msgid "Default encoding:"
+#~ msgstr "کدبندی پیش‌فرض:"
+
+#~ msgid "Use Language Encoding"
+#~ msgstr "استفاده از کدبندی زبان"
+
+#~ msgid ""
+#~ "Select the default encoding to be used; normally, you will be fine with "
+#~ "'Use language encoding' and should not have to change this."
+#~ msgstr ""
+#~ "برگزیدن کدبندی پیش‌فرض مورد استفاده؛ معمولاً، »استفاده از کدبندی زبان« خوب "
+#~ "است و نباید این را تغییر دهید."
+
+#~ msgid "Boo&kmarks"
+#~ msgstr "&چوب الفها‌"
+
+#~ msgid "Ask for name and folder when adding bookmarks"
+#~ msgstr "سوال برای نام و پوشه هنگام افزودن چوب الفها"
+
+#~ msgid ""
+#~ "If this box is checked, Konqueror will allow you to change the title of "
+#~ "the bookmark and choose a folder in which to store it when you add a new "
+#~ "bookmark."
+#~ msgstr ""
+#~ "اگر این جعبه علامت زده شود، Konqueror اجازه تغییر عنوان چوب الف و انتخاب "
+#~ "پوشه‌ای برای ذخیره در آن هنگام افزودن چوب الف جدید، را می‌دهد."
+
+#~ msgid "Show only marked bookmarks in bookmark toolbar"
+#~ msgstr "فقط نمایش چوب الفهای نشان‌دار در میله ابزار چوب الف"
+
+#~ msgid "Form Com&pletion"
+#~ msgstr "&تکمیل برگه‌"
+
+#~ msgid "Enable completion of &forms"
+#~ msgstr "فعال‌سازی تکمیل &برگه‌ها‌"
+
+#~ msgid ""
+#~ "If this box is checked, Konqueror will remember the data you enter in web "
+#~ "forms and suggest it in similar fields for all forms."
+#~ msgstr ""
+#~ "اگر این جعبه علامت زده شود، Konqueror داده‌هایی که در برگه‌های وب وارد "
+#~ "کردید را یادآوری کرده و در حوزه‌های مشابه برای همه برگه‌ها پیشنهاد می‌دهد."
+
+#~ msgid "&Maximum completions:"
+#~ msgstr "&بیشینه تکمیلها‌:"
+
+#~ msgid ""
+#~ "Here you can select how many values Konqueror will remember for a form "
+#~ "field."
+#~ msgstr ""
+#~ "در اینجا می‌توانید انتخاب کنید Konqueror چند مقدار را برای حوزه برگه "
+#~ "یادآوری کند."
+
+#~ msgid "Mouse Beha&vior"
+#~ msgstr "&رفتار موشی‌"
+
+#~ msgid "Chan&ge cursor over links"
+#~ msgstr "&تغییر مکان‌نما روی پیوندها‌"
+
+#~ msgid ""
+#~ "If this option is set, the shape of the cursor will change (usually to a "
+#~ "hand) if it is moved over a hyperlink."
+#~ msgstr ""
+#~ "اگر این گزینه تنظیم شود، شکل مکان‌نما، در صورتی که روی فوق پیوندی حرکت "
+#~ "کند، تغییر می‌کند )معمولاً به دست(."
+
+#~ msgid "M&iddle click opens URL in selection"
+#~ msgstr "فشار &راست نشانی وب را در گزینش باز می‌کند"
+
+#~ msgid ""
+#~ "If this box is checked, you can open the URL in the selection by middle "
+#~ "clicking on a Konqueror view."
+#~ msgstr ""
+#~ "اگر این جعبه علامت زده شود، می‌توانید نشانی وب را در گزینش توسط فشار میانی "
+#~ "روی نمای Konqueror باز کنید."
+
+#~ msgid "Right click goes &back in history"
+#~ msgstr "فشار راست در تاریخچه &عقب می‌رود‌"
+
+#~ msgid ""
+#~ "If this box is checked, you can go back in history by right clicking on a "
+#~ "Konqueror view. To access the context menu, press the right mouse button "
+#~ "and move."
+#~ msgstr ""
+#~ "اگر این علامت زده شود، می‌توانید با فشار راست روی نمای Konqueror در "
+#~ "تاریخچه عقب بروید. برای دستیابی گزینگان متن، دکمه راست موشی را فشار داده "
+#~ "و حرکت دهید."
+
+#~ msgid "A&utomatically load images"
+#~ msgstr "بار کردن &خودکار تصاویر‌"
+
+#~ msgid "Dra&w frame around not completely loaded images"
+#~ msgstr "&ترسیم قابک اطراف تصاویر بارگذاری‌شده کامل‌نشده‌"
+
+#~ msgid "Allow automatic delayed &reloading/redirecting"
+#~ msgstr "اجازه برای &بارگذاری مجدد/تغییر جهت مجدد به تأخیرافتاده خودکار"
+
+#~ msgid ""
+#~ "Some web pages request an automatic reload or redirection after a certain "
+#~ "period of time. By unchecking this box Konqueror will ignore these "
+#~ "requests."
+#~ msgstr ""
+#~ "برخی صفحات وب بارگذاری مجدد یا تغییر جهت خودکار را پس از دوره زمانی مشخص "
+#~ "درخواست می‌کنند. با بدون علامت گذاشتن این جعبه Konqueror از این درخواست "
+#~ "چشم‌پوشی می‌کند."
+
+#~ msgid "Enable/disable Access Ke&y activation with Ctrl key"
+#~ msgstr "فعال/غیرفعال‌سازی فعالیت &کلید دستیابی با کلید مهار‌"
+
+#~ msgid "Und&erline links:"
+#~ msgstr "&زیرخط‌دار کردن پیوندها:"
+
+#~ msgctxt "underline"
+#~ msgid "Enabled"
+#~ msgstr "فعال"
+
+#~ msgctxt "underline"
+#~ msgid "Disabled"
+#~ msgstr "غیرفعال"
+
+#~ msgid "Only on Hover"
+#~ msgstr "فقط هنگام پلکیدن"
+
+#~ msgid "A&nimations:"
+#~ msgstr "&پویانماییها:‌"
+
+#~ msgctxt "animations"
+#~ msgid "Enabled"
+#~ msgstr "فعال"
+
+#~ msgctxt "animations"
+#~ msgid "Disabled"
+#~ msgstr "غیرفعال"
+
+#~ msgid "Show Only Once"
+#~ msgstr "فقط یک بار نمایش"
+
+#~ msgid "&Host or domain name:"
+#~ msgstr "نام &میزبان یا دامنه:"
+
+#~ msgid ""
+#~ "Enter the name of a host (like www.kde.org) or a domain, starting with a "
+#~ "dot (like .kde.org or .org)"
+#~ msgstr ""
+#~ "نام میزبان )مثلاً www.kde.org( یا دامنه‌ای را وارد کنید، آغاز با یک "
+#~ "نقطه )مانند .kde.org or .org("
+
+#~ msgid "You must first enter a domain name."
+#~ msgstr "ابتدا باید نام دامنه‌ای را وارد کنید."
+
+#~ msgid "Ena&ble JavaScript globally"
+#~ msgstr "&فعال‌سازی سراسری جاوا اسکریپت"
+
+#~ msgid "Report &errors"
+#~ msgstr "گزارش &خطاها‌"
+
+#~ msgid ""
+#~ "Enables the reporting of errors that occur when JavaScript code is "
+#~ "executed."
+#~ msgstr ""
+#~ "گزارش خطاهایی که هنگام اجرای کد جاوا اسکریپت رخ می‌دهد را فعال می‌سازد."
+
+#~ msgid "Enable debu&gger"
+#~ msgstr "فعال‌سازی &اشکال‌زدا‌"
+
+#~ msgid "Enables builtin JavaScript debugger."
+#~ msgstr "فعال‌سازی اشکال‌زدای جاوااسکریپت توکار."
+
+#~ msgid ""
+#~ "Click this button to choose the file that contains the JavaScript "
+#~ "policies. These policies will be merged with the existing ones. Duplicate "
+#~ "entries are ignored."
+#~ msgstr ""
+#~ "برای انتخاب پرونده‌ای که شامل سیاستهای جاوا اسکریپت است، این دکمه را فشار "
+#~ "دهید. این سیاستها با موارد موجود ادغام می‌شود. مدخلهای تکراری چشم‌پوشی "
+#~ "می‌شود."
+
+#~ msgid ""
+#~ "Click this button to save the JavaScript policy to a zipped file. The "
+#~ "file, named <b>javascript_policy.tgz</b>, will be saved to a location of "
+#~ "your choice."
+#~ msgstr ""
+#~ "برای ذخیره سیاست جاوااسکریپت در پرونده فشرده‌شده، این دکمه را فشار دهید. "
+#~ "پرونده با نام <b>javascript_policy.tgz</b>، در محل انتخابتان ذخیره می‌شود."
+
+#~ msgid "Global JavaScript Policies"
+#~ msgstr "سیاستهای جاوااسکریپت سراسری"
+
+#~ msgid "Do&main-Specific"
+#~ msgstr "مشخص &دامنه‌"
+
+#~ msgid "New JavaScript Policy"
+#~ msgstr "سیاست جاوااسکریپت جدید"
+
+#~ msgid "Change JavaScript Policy"
+#~ msgstr "تغییر سیاست جاوااسکریپت"
+
+#~ msgid "JavaScript policy:"
+#~ msgstr "سیاست جاوااسکریپت:"
+
+#~ msgid "Select a JavaScript policy for the above host or domain."
+#~ msgstr "برگزیدن سیاست جاوااسکریپت برای میزبان یا دامنه بالا."
+
+#~ msgid "Domain-Specific JavaScript Policies"
+#~ msgstr "سیاستهای جاوااسکریپت مشخص دامنه"
+
+#~ msgid "Enable Ja&va globally"
+#~ msgstr "فعال‌سازی سراسری &جاوا‌"
+
+#~ msgid "Java Runtime Settings"
+#~ msgstr "تنظیمات زمان اجرای جاوا"
+
+#~ msgid "&Use security manager"
+#~ msgstr "&استفاده از مدیر امنیت‌"
+
+#~ msgid "Use &KIO"
+#~ msgstr "استفاده از &KIO"
+
+#~ msgid "Shu&tdown applet server when inactive"
+#~ msgstr "&تعطیل کارساز برنامک هنگام غیرفعال بودن‌"
+
+#~ msgid "App&let server timeout:"
+#~ msgstr "اتمام وقت کارساز &برنامک‌:"
+
+#~ msgid "&Path to Java executable, or 'java':"
+#~ msgstr "&مسیر اجرایی جاوااسکریپت، یا »جاوا:"
+
+#~ msgid "Additional Java a&rguments:"
+#~ msgstr "&نشانوندهای اضافی جاوا:‌"
+
+#~ msgid ""
+#~ "Enables the execution of scripts written in Java that can be contained in "
+#~ "HTML pages. Note that, as with any browser, enabling active contents can "
+#~ "be a security problem."
+#~ msgstr ""
+#~ "اجرای دست‌نوشته های نوشته‌شده در جاوا که می‌تواند در برچسبهای زنگام شامل شود "
+#~ "را فعال می‌سازد. توجه کنید، با هر مرورگری، فعال‌سازی محتویات فعال می‌تواند "
+#~ "مسئله امنیتی باشد."
+
+#~ msgid ""
+#~ "Click this button to choose the file that contains the Java policies. "
+#~ "These policies will be merged with the existing ones. Duplicate entries "
+#~ "are ignored."
+#~ msgstr ""
+#~ "برای انتخاب پرونده‌ای که شامل سیاستهای جاوا اسکریپت می‌شود، این دکمه را "
+#~ "فشار دهید. این سیاستها با موارد موجود ادغام می‌شوند. مدخلهای تکراری "
+#~ "چشم‌پوشی می‌شوند."
+
+#~ msgid ""
+#~ "Click this button to save the Java policy to a zipped file. The file, "
+#~ "named <b>java_policy.tgz</b>, will be saved to a location of your choice."
+#~ msgstr ""
+#~ "برای ذخیره سیاست جاوا در یک پرونده فشرده این دکمه را فشار دهید. پرونده، "
+#~ "با نام <b>java_policy.tgz</b> در محل انتخاب شما ذخیره می‌شود."
+
+#~ msgid "Enabling this will cause the jvm to use KIO for network transport "
+#~ msgstr "فعال‌سازی این، موجب می‌شود jvm برای انتقال شبکه از KIO استفاده کند "
+
+#~ msgid ""
+#~ "If you want special arguments to be passed to the virtual machine, enter "
+#~ "them here."
+#~ msgstr ""
+#~ "اگر می خواهید نشانوندهای ویژه به ماشین مجازی عبور داده شود، آنها را اینجا "
+#~ "وارد کنید."
+
+#~ msgid "New Java Policy"
+#~ msgstr "سیاست جدید جاوا"
+
+#~ msgid "Change Java Policy"
+#~ msgstr "تغییر سیاست جاوا"
+
+#~ msgid "&Java policy:"
+#~ msgstr "سیاست &جاوا‌:"
+
+#~ msgid "Select a Java policy for the above host or domain."
+#~ msgstr "برگزیدن سیاست جاوا برای میزبان یا دامنه بالا."
+
+#~ msgid "&Filters"
+#~ msgstr "&پالایه‌ها‌"
+
+#~ msgid "Under construction..."
+#~ msgstr "زیر ساخت..."
+
+#~ msgid ""
+#~ "Disables the minimization of memory usage and allows you to make each "
+#~ "browsing activity independent from the others"
+#~ msgstr ""
+#~ "کمینه‌سازی کاربرد حافظه را غیرفعال ساخته و اجازه می‌دهد هر مرور را مستقل از "
+#~ "بقیه انجام دهید"
+
+#~ msgid ""
+#~ "<p>If non-zero, this option allows keeping Konqueror instances in memory "
+#~ "after all their windows have been closed, up to the number specified in "
+#~ "this option.</p><p>When a new Konqueror instance is needed, one of these "
+#~ "preloaded instances will be reused instead, improving responsiveness at "
+#~ "the expense of the memory required by the preloaded instances.</p>"
+#~ msgstr ""
+#~ "<p>اگر غیر صفر باشد، این گزینه اجازه می‌دهد نمونه‌های Konqueror در حافظه پس "
+#~ "از اینکه پنجره‌هایشان بسته شدند، تا عدد مشخص‌شده در این گزینه حفظ شوند.</"
+#~ "p><p>هنگامی که نمونه Konqueror جدیدی نیاز است، یکی از این نمونه‌های "
+#~ "پیش‌بارشده در عوض استفاده مجدد می‌شود. بهبود پاسخ‌گویی به قیمت حافظه "
+#~ "موردنیاز توسط نمونه‌های پیش‌بارگذاری شده است.</p>"
+
+#~ msgid ""
+#~ "<p>If enabled, an instance of Konqueror will be preloaded after the "
+#~ "ordinary KDE startup sequence.</p><p>This will make the first Konqueror "
+#~ "window open faster, but at the expense of longer KDE startup times (but "
+#~ "you will be able to work while it is loading, so you may not even notice "
+#~ "that it is taking longer).</p>"
+#~ msgstr ""
+#~ "<p>اگر فعال شود، نمونه‌ای از Konqueror بعد از دنباله راه‌اندازی معمولی KDE "
+#~ "پیش‌بارگذاری می‌شود.<p></p>این باعث می‌شود اولین پنجره Konqueror سریع‌تر باز "
+#~ "شود، ولی به قیمت طولانی‌تر شدن زمان راه‌اندازی )ولی شما را هنگام بارگذاری، "
+#~ "قادر به کار کردن می‌کند، بنابراین ممکن است حتی متوجه طولانی‌تر شدن آن "
+#~ "نشوید(.</p>"
+
+#~ msgid ""
+#~ "<p>If enabled, KDE will always try to have one preloaded Konqueror "
+#~ "instance ready; preloading a new instance in the background whenever "
+#~ "there is not one available, so that windows will always open quickly.</"
+#~ "p><p><b>Warning:</b> In some cases, it is actually possible that this "
+#~ "will reduce perceived performance.</p>"
+#~ msgstr ""
+#~ "<p>اگر فعال شود، KDE سعی می‌کند همیشه دارای یک نمونه Konqueror  "
+#~ "پیش‌بارگذاری شده آماده باشد؛ پیش‌بارگذاری نمونه‌ای جدید در زمینه هرگاه یکی "
+#~ "موجود نباشد، باعث می‌شود پنجره‌ها همیشه به سرعت باز شوند..</p><p><b>اخطار:</"
+#~ "b> در برخی موارد، واقعاً ممکن است کارایی دریافتی را کاهش دهد.</p>"
+
+#~ msgid ""
+#~ "<h1>KDE Performance</h1> You can configure settings that improve KDE "
+#~ "performance here."
+#~ msgstr ""
+#~ "<h1>تنظیم KDE</h1> تنظیماتی را که کارایی KDE را بهبود می‌بخشد را می‌توانید "
+#~ "در اینجا پیکربندی کنید."
+
+#~ msgid "System"
+#~ msgstr "سیستم"
+
+#~ msgid ""
+#~ "<h1>Konqueror Performance</h1> You can configure several settings that "
+#~ "improve Konqueror performance here. These include options for reusing "
+#~ "already running instances and for keeping instances preloaded."
+#~ msgstr ""
+#~ "<h1>کارآیی Konqueror</h1> تنظیمات متعددی را که کارآیی  Konqueror را بهبود "
+#~ "می‌بخشد، در اینجا می‌توانید تنظیم کنید. این شامل گزینه‌هایی برای استفاده "
+#~ "مجدد نمونه‌های در حال اجرا شده و برای حفظ نمونه‌های پیش‌بارگذاری‌شده می‌باشد."
+
+#~ msgid "No permissions to write to %1"
+#~ msgstr "برای نوشتن در  %1، مجوز نیست"
+
+#~ msgid "Save View Changes per &Folder"
+#~ msgstr "ذخیره تغییرات نمای هر &پوشه‌"
+
+#~ msgid "Remove Folder Properties"
+#~ msgstr "حذف ویژگیهای پوشه"
+
+#~ msgid "Create Folder..."
+#~ msgstr "ایجاد پوشه..."
+
+#~ msgid "&Delete"
+#~ msgstr "&حذف‌"
+
+#~ msgid "&Rename"
+#~ msgstr "&تغییر نام‌"
+
+#~ msgid ""
+#~ "<h1>Multiple Desktops</h1>In this module, you can configure how many "
+#~ "virtual desktops you want and how these should be labeled."
+#~ msgstr ""
+#~ "<h1>رومیزیهای چندگانه</h1>در این پیمانه، می‌توانید پیکربندی کنید که چگونه "
+#~ "رومیزیهای مجازی زیادی را می‌خواهید و چگونه باید برچسب‌گذاری شوند."
+
+#~ msgid "N&umber of desktops: "
+#~ msgstr "&تعداد رومیزیها‌: "
+
+#~ msgid ""
+#~ "Here you can set how many virtual desktops you want on your KDE desktop. "
+#~ "Move the slider to change the value."
+#~ msgstr ""
+#~ "در اینجا می‌توانید تعداد رومیزیهایی مجازی را که روی رومیزی KDE خود "
+#~ "می‌خواهید را تنظیم کنید. برای تغییر مقدار لغزنده را حرکت دهید."
+
+#~ msgid "Desktop &Names"
+#~ msgstr "&نامهای رومیزی‌"
+
+#~ msgid "Desktop %1:"
+#~ msgstr "رومیزی %1:"
+
+#~ msgid "Here you can enter the name for desktop %1"
+#~ msgstr "در اینجا می‌توانید نامی را برای رومیزی %1 وارد کنید"
+
+#~ msgid "Mouse wheel over desktop background switches desktop"
+#~ msgstr "چرخ موشی روی زمینه رومیزی رومیزی را سودهی می‌کند"
+
+#~ msgid "Desktop %1"
+#~ msgstr "رومیزی %1"
+
+#~ msgid "Move backwards one step in the browsing history<br /><br />"
+#~ msgstr "حرکت پس‌سوها یک گام در تاریخچه مرورگر<br /><br />"
+
+#~ msgid "Move forward one step in the browsing history<br /><br />"
+#~ msgstr "حرکت پیش‌سوها یک گام در تاریخچه مرورگر<br /><br />"
+
+#~ msgid "Rename icons in&line"
+#~ msgstr "تغییر نام شمایلهای &درون برنامه‌ای‌"
+
+#~ msgid ""
+#~ "Checking this option will allow files to be renamed by clicking directly "
+#~ "on the icon name. "
+#~ msgstr ""
+#~ "با علامت زدن این گزینه، امکان تغییر نام پرونده‌ها با فشار مستقیم روی نام "
+#~ "شمایل فراهم می‌شود. "
+
+#~ msgid "&Standard font:"
+#~ msgstr "قلم &استاندارد:‌"
+
+#~ msgid "Font si&ze:"
+#~ msgstr "&اندازه قلم:‌"
+
+#~ msgid "This is the font size used to display text in Konqueror windows."
+#~ msgstr ""
+#~ "این اندازه قلم مورد استفاده برای نمایش متن در پنجره‌های Konqueror است."
+
+#~ msgid "Normal te&xt color:"
+#~ msgstr "رنگ &متن عادی‌:"
+
+#~ msgid "This is the color used to display text in Konqueror windows."
+#~ msgstr "این رنگ مورد استفاده برای نمایش متن در پنجره‌های Konqueror است."
+
+#~ msgid "&Text background color:"
+#~ msgstr "رنگ زمینه &متن‌:"
+
+#~ msgid "This is the color used behind the text for the icons on the desktop."
+#~ msgstr "این رنگ مورد استفاده پشت متن برای شمایلهای روی رومیزی است."
+
+#~ msgid "H&eight for icon text:"
+#~ msgstr "&مشخص برای متن شمایل‌:"
+
+#~ msgid ""
+#~ "This is the maximum number of lines that can be used to draw icon text. "
+#~ "Long file names are truncated at the end of the last line."
+#~ msgstr ""
+#~ "این بیشینه تعداد خطوطی است که برای ترسیم متن شمایل می‌تواند استفاده شود. "
+#~ "نامهای طولانی پرونده‌ها در انتهای سطر آخر برش می‌خورد."
+
+#~ msgid "&Width for icon text:"
+#~ msgstr "&عرض متن شمایل‌:"
+
+#~ msgid ""
+#~ "This is the maximum width for the icon text when konqueror is used in "
+#~ "multi column view mode."
+#~ msgstr ""
+#~ "این بیشینه عرض متن شمایل هنگامی که konqueror در حالت نمای چندستونی "
+#~ "استفاده می‌شود."
+
+#~ msgid "&Underline filenames"
+#~ msgstr "&زیرخط‌دار کردن نام پرونده‌ها:"
+
+#~ msgid "Display file sizes in b&ytes"
+#~ msgstr "نمایش اندازه پرونده‌ها بر حسب &بایت‌"
+
+#~ msgid " line"
+#~ msgid_plural " lines"
+#~ msgstr[0] " خط"
+
+#~ msgid " pixel"
+#~ msgid_plural " pixels"
+#~ msgstr[0] " تصویردانه"
+
+#~ msgid ""
+#~ "<h1>Appearance</h1> You can configure how Konqueror looks as a file "
+#~ "manager here."
+#~ msgstr ""
+#~ "<h1>ظاهر</h1>در اینجا می‌توانید پیکربندی کنید که Konqueror به عنوان یک "
+#~ "مدیر پرونده، چگونه به نظر برسد"
+
+#~ msgid "&Appearance"
+#~ msgstr "&ظاهر‌"
+
+#~ msgid "MS Windows encoding:"
+#~ msgstr "کدبندی پنجره‌های MS:"
+
+#~ msgid "&Show network operations in a single window"
+#~ msgstr "&نمایش عملیات شبکه در یک پنجره منفرد‌"
+
+#~ msgid ""
+#~ "Checking this option will group the progress information for all network "
+#~ "file transfers into a single window with a list. When the option is not "
+#~ "checked, all transfers appear in a separate window."
+#~ msgstr ""
+#~ "علامت زدن این گزینه اطلاعات پیشرفت را برای همه انتقالهای پرونده شبکه به "
+#~ "پنجره منفردی با یک فهرست گروه می‌کند. وقتی این گزینه بدون علامت باشد، همه "
+#~ "انتقالها در پنجره جداگانه‌ای ظاهر می‌شود."
+
+#~ msgid ""
+#~ "Thanks to <a href=\"%1\">DCOP</a> you can have full control over "
+#~ "Konqueror using a script."
+#~ msgstr ""
+#~ "به برکت <a href=\"%1\">DCOP</a> می‌توانید با استفاده از دست‌نوشته بر "
+#~ "Konqueror کنترل کامل داشته باشید."
+
+#~ msgid "Preview In"
+#~ msgstr "پیش‌نمایش در"
+
+#~ msgid "&Open Location..."
+#~ msgstr "&باز کردن محل...‌"
+
+#~ msgid "Animated Logo"
+#~ msgstr "آرم پویا‌شده"
+
+#~ msgid "Selection"
+#~ msgstr "گزینش"
+
+#~ msgid "Icon Size"
+#~ msgstr "اندازه شمایل"
+
+#~ msgid "Show Details"
+#~ msgstr "نمایش جزئیات"
+
+#~ msgid "Detailed Listview Toolbar"
+#~ msgstr "میله ابزار فهرست نمای جزئی"

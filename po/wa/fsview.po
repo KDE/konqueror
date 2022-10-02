@@ -1,0 +1,432 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Jean Cayron <jean.cayron@base.be>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"PO-Revision-Date: 2011-07-17 15:06+0200\n"
+"Last-Translator: Jean Cayron <jean.cayron@base.be>\n"
+"Language-Team: Walloon <linux-wa@walon.org>\n"
+"Language: wa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.2\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Djan Cayron"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "jean.cayron@gmail.com"
+
+#: fsview.cpp:35 fsview.cpp:413
+#, kde-format
+msgid "Name"
+msgstr "No"
+
+#: fsview.cpp:36
+#, kde-format
+msgid "Size"
+msgstr "Grandeu"
+
+#: fsview.cpp:37
+#, kde-format
+msgid "File Count"
+msgstr "Contaedje des fitchîs"
+
+#: fsview.cpp:38
+#, kde-format
+msgid "Directory Count"
+msgstr "Contaedje des ridants"
+
+#: fsview.cpp:39
+#, kde-format
+msgid "Last Modified"
+msgstr "Dierins candjîs"
+
+#: fsview.cpp:40 fsview.cpp:414
+#, kde-format
+msgid "Owner"
+msgstr "Propiyetaire"
+
+#: fsview.cpp:41 fsview.cpp:415
+#, kde-format
+msgid "Group"
+msgstr "Groupe"
+
+#: fsview.cpp:42 fsview.cpp:416
+#, kde-format
+msgid "Mime Type"
+msgstr "Sôre mime"
+
+#: fsview.cpp:283
+#, kde-format
+msgid "Go To"
+msgstr "Potchî a"
+
+#: fsview.cpp:284 fsview_part.cpp:106
+#, kde-format
+msgid "Stop at Depth"
+msgstr "Arester al parfondeu"
+
+#: fsview.cpp:285 fsview_part.cpp:103
+#, kde-format
+msgid "Stop at Area"
+msgstr "Arester al redjon"
+
+#: fsview.cpp:286
+#, kde-format
+msgid "Stop at Name"
+msgstr "Arester å no"
+
+#: fsview.cpp:292
+#, kde-format
+msgid "Go Up"
+msgstr "Monter"
+
+#: fsview.cpp:294
+#, kde-format
+msgid "Stop Refresh"
+msgstr "Arester rafristaedje"
+
+#: fsview.cpp:296
+#, kde-format
+msgid "Refresh"
+msgstr "Rafrister"
+
+#: fsview.cpp:301
+#, kde-format
+msgid "Refresh '%1'"
+msgstr "Rafrister « %1 »"
+
+#: fsview.cpp:313 fsview_part.cpp:113
+#, kde-format
+msgid "Color Mode"
+msgstr "Môde coleur"
+
+#: fsview.cpp:316 fsview_part.cpp:109
+#, kde-format
+msgid "Visualization"
+msgstr "Voeyaedje"
+
+#: fsview.cpp:411
+#, kde-format
+msgid "None"
+msgstr "Nouk"
+
+#: fsview.cpp:412
+#, kde-format
+msgid "Depth"
+msgstr "Parfondeu"
+
+#: fsview_part.cpp:69
+#, kde-format
+msgid "Read 1 folder, in %2"
+msgid_plural "Read %1 folders, in %2"
+msgstr[0] "Lére 1 ridant, dins %2"
+msgstr[1] "Lére %1 ridants, dins %2"
+
+#: fsview_part.cpp:73
+#, kde-format
+msgid "1 folder"
+msgid_plural "%1 folders"
+msgstr[0] "1 ridant"
+msgstr[1] "%1 ridants"
+
+#: fsview_part.cpp:87
+#, kde-format
+msgid ""
+"<p>This is the FSView plugin, a graphical browsing mode showing filesystem "
+"utilization by using a tree map visualization.</p><p>Note that in this mode, "
+"automatic updating when filesystem changes are made is intentionally <b>not</"
+"b> done.</p><p>For details on usage and options available, see the online "
+"help under menu 'Help/FSView Manual'.</p>"
+msgstr ""
+"<p>Çoucial est l' tchôke-divins FSView, on môde di naiviaedje grafike ki "
+"mostere l' eployaedje do sistinme di fitchîs tot s' siervant d' on voeyaedje "
+"èn coxhlaedje d' åbe.</p><p>Sepoz k' dins ç' môde cial, li metaedje a djoû "
+"otomatike cwand des candjmints sont fwaits e sistinme di fitchîs ni sont "
+"<b>nén</b> mostrés, et c' est nosse tchoes.</p><p>Po ndè saveur di dpus eyet "
+"conoxhe les tchuzes k' i gn a, alez vey l' aidance so fyis dins l' dressêye "
+"« Aidance/Esplikêyes di FSView ».</p>"
+
+#: fsview_part.cpp:119
+#, kde-format
+msgid "&FSView Manual"
+msgstr "Esplikêyes di &FSView"
+
+#: fsview_part.cpp:121
+#, kde-format
+msgid "Show FSView manual"
+msgstr "Mostrer ls esplikêyes da FSView"
+
+#: fsview_part.cpp:122
+#, kde-format
+msgid "Opens the help browser with the FSView documentation"
+msgstr "Drove li naivieu dins l' aidance avou l' documintåcion da FSView"
+
+#: fsview_part.cpp:154
+#, kde-format
+msgctxt "@action:inmenu File"
+msgid "Move to Trash"
+msgstr "Taper å batch"
+
+#: fsview_part.cpp:161
+#, kde-format
+msgctxt "@action:inmenu File"
+msgid "Delete"
+msgstr "Disfacer"
+
+#: fsview_part.cpp:166
+#, kde-format
+msgctxt "@action:inmenu Edit"
+msgid "&Edit File Type..."
+msgstr "&Candjî li sôre di fitchî..."
+
+#: fsview_part.cpp:170
+#, kde-format
+msgctxt "@action:inmenu File"
+msgid "Properties"
+msgstr "Prôpietés"
+
+#: fsview_part.cpp:203
+#, kde-format
+msgid ""
+"FSView intentionally does not support automatic updates when changes are "
+"made to files or directories, currently visible in FSView, from the "
+"outside.\n"
+"For details, see the 'Help/FSView Manual'."
+msgstr ""
+"FSView ni sopoite nén li metaedje a djoû otomatike cwand des candjmints sont "
+"fwaits då dfoû, ezès fitchîs ou ridants veyåves pol moumint dins FSView, et "
+"c' est nosse tchoes.\n"
+"Po ndè saveur di dpus, alez vey« Aidance/Esplikêyes di FSView »."
+
+#. i18n: ectx: Menu (edit)
+#: fsview_part.rc:4
+#, kde-format
+msgid "&Edit"
+msgstr "&Candjî"
+
+#. i18n: ectx: Menu (view)
+#: fsview_part.rc:13
+#, kde-format
+msgid "&View"
+msgstr "&Vuwe"
+
+#. i18n: ectx: Menu (help)
+#: fsview_part.rc:20
+#, kde-format
+msgid "&Help"
+msgstr "&Aidance"
+
+#: main.cpp:23
+#, kde-format
+msgid "FSView"
+msgstr "FSView"
+
+#: main.cpp:24
+#, kde-format
+msgid "Filesystem Viewer"
+msgstr "Håyneu di sistinme di fitchîs"
+
+#: main.cpp:26
+#, kde-format
+msgid "(c) 2002, Josef Weidendorfer"
+msgstr "© 2002, Josef Weidendorfer"
+
+#: main.cpp:33
+#, kde-format
+msgid "View filesystem starting from this folder"
+msgstr "Vey li sistinme di fitchîs e pårtant d' ci ridant la"
+
+#: treemap.cpp:1436
+#, kde-format
+msgid "Text %1"
+msgstr "Tecse %1"
+
+#: treemap.cpp:3163
+#, kde-format
+msgid "Recursive Bisection"
+msgstr "Biseccion recursive"
+
+#: treemap.cpp:3165
+#, kde-format
+msgid "Columns"
+msgstr "Colones"
+
+#: treemap.cpp:3167
+#, kde-format
+msgid "Rows"
+msgstr "Royes"
+
+#: treemap.cpp:3169
+#, kde-format
+msgid "Always Best"
+msgstr "Todi l' meyeus"
+
+#: treemap.cpp:3171
+#, kde-format
+msgid "Best"
+msgstr "Meyeus"
+
+#: treemap.cpp:3173
+#, kde-format
+msgid "Alternate (V)"
+msgstr "Candjant (V)"
+
+#: treemap.cpp:3175
+#, kde-format
+msgid "Alternate (H)"
+msgstr "Candjant (H)"
+
+#: treemap.cpp:3177
+#, kde-format
+msgid "Horizontal"
+msgstr "Di coutchî"
+
+#: treemap.cpp:3179
+#, kde-format
+msgid "Vertical"
+msgstr "D' astampé"
+
+#: treemap.cpp:3231
+#, kde-format
+msgid "Nesting"
+msgstr "Discôpaedje"
+
+#: treemap.cpp:3235
+#, kde-format
+msgid "Border"
+msgstr "Boirdeure"
+
+#: treemap.cpp:3238
+#, kde-format
+msgid "Correct Borders Only"
+msgstr "Seulmint des bounès boirdeures"
+
+#: treemap.cpp:3241
+#, kde-format
+msgid "Width %1"
+msgstr "Lårdjeur %1"
+
+#: treemap.cpp:3244
+#, kde-format
+msgid "Allow Rotation"
+msgstr "Permete li tournaedje"
+
+#: treemap.cpp:3245
+#, kde-format
+msgid "Shading"
+msgstr "Ombion"
+
+#: treemap.cpp:3256
+#, kde-format
+msgid "Visible"
+msgstr "Veyåve"
+
+#: treemap.cpp:3257
+#, kde-format
+msgid "Take Space From Children"
+msgstr "Prinde del plaece ås efants"
+
+#: treemap.cpp:3261
+#, kde-format
+msgid "Top Left"
+msgstr "Al copete di hintche"
+
+#: treemap.cpp:3264
+#, kde-format
+msgid "Top Center"
+msgstr "Al copete do mitan"
+
+#: treemap.cpp:3267
+#, kde-format
+msgid "Top Right"
+msgstr "Al copete di droete"
+
+#: treemap.cpp:3270
+#, kde-format
+msgid "Bottom Left"
+msgstr "Al valêye di hintche"
+
+#: treemap.cpp:3273
+#, kde-format
+msgid "Bottom Center"
+msgstr "Al valêye do mitan"
+
+#: treemap.cpp:3276
+#, kde-format
+msgid "Bottom Right"
+msgstr "Al valêye di droete"
+
+#: treemap.cpp:3343
+#, kde-format
+msgid "No %1 Limit"
+msgstr "Nole limite di %1"
+
+#: treemap.cpp:3402
+#, kde-format
+msgid "No Area Limit"
+msgstr "Nole limite di redjon"
+
+#: treemap.cpp:3408
+#, kde-format
+msgid "Area of '%1' (%2)"
+msgstr "Redjon di « %1 » (%2)"
+
+#: treemap.cpp:3420 treemap.cpp:3433
+#, kde-format
+msgid "1 Pixel"
+msgid_plural "%1 Pixels"
+msgstr[0] "1 picsel"
+msgstr[1] "%1 picsels"
+
+#: treemap.cpp:3437
+#, kde-format
+msgid "Double Area Limit (to %1)"
+msgstr "Dobe limite di redjon (viè %1)"
+
+#: treemap.cpp:3439
+#, kde-format
+msgid "Halve Area Limit (to %1)"
+msgstr "Dimeye limite di redjon (viè %1)"
+
+#: treemap.cpp:3475
+#, kde-format
+msgid "No Depth Limit"
+msgstr "Nole limite di parfondeu"
+
+#: treemap.cpp:3481
+#, kde-format
+msgid "Depth of '%1' (%2)"
+msgstr "Parfondeu di « %1 » (%2)"
+
+#: treemap.cpp:3493 treemap.cpp:3506
+#, kde-format
+msgid "Depth %1"
+msgstr "Parfondeu %1"
+
+#: treemap.cpp:3510
+#, kde-format
+msgid "Decrement (to %1)"
+msgstr "Discreminter (viè %1)"
+
+#: treemap.cpp:3512
+#, kde-format
+msgid "Increment (to %1)"
+msgstr "Ecreminter (viè %1)"
+
+#~ msgid "Filesystem Utilization Viewer"
+#~ msgstr "Håyneu di l' eployaedje do sistinme di fitchîs"
+
+#~ msgid "(c) 2003-2005, Josef Weidendorfer"
+#~ msgstr "© 2003-2005, Josef Weidendorfer"

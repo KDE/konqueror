@@ -1,0 +1,166 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Norwegian-Bokmal "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="bookmarks" lang="&language;">
+<articleinfo>
+
+<title
+>Bokmerker</title>
+<authorgroup>
+<author
+><personname
+><firstname
+>Xavier</firstname
+><surname
+>Vello</surname
+></personname
+> <email
+>xavier.vello@gmail.com</email
+> </author>
+<othercredit role="translator"
+><firstname
+>Bjørn</firstname
+><surname
+>Steensrud</surname
+><affiliation
+><address
+><email
+>bjornst@skogkatt.homelinux.org</email
+></address
+></affiliation
+><contrib
+>Oversettelse</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2010-09-24</date>
+<releaseinfo
+>0.2 (&kde; 4.5)</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>KControl</keyword>
+<keyword
+>bokmerker</keyword>
+<keyword
+>KIO</keyword>
+</keywordset>
+</articleinfo>
+<sect1 id="conf">
+<title
+>Hjemmeside for bokmerker</title>
+<para
+>Med denne modulen kan du sette opp hjemmesida for bokmerker.</para>
+<para
+>Se hjemmesida for bokmerker ved å skrive <userinput
+>bookmarks:/</userinput
+> på stedslinja.</para>
+<para
+>Du kan også sette opp innstillingene i denne dialogen ved å skrive <userinput
+>bookmarks:/config</userinput
+> på stedslinja.</para>
+<sect2 id="conf-general">
+<title
+>Generelle innstillinger</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Antall kolonner som skal vises</guilabel
+></term>
+<listitem>
+<para
+>Mapper fordeles automatisk på flere kolonner. Det beste antall kolonner avhenger av hvor bredt konqueror-vinduet er og hvor mange bokmerker du har.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Vis mappebakgrunner</guilabel
+></term>
+<listitem>
+<para
+>Slå det av på langsomme systemer for å slå av bakgrunnsbilder.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="conf-bookmark">
+<title
+>Bokmerker</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Vis bokmerker uten mappe</guilabel
+></term>
+<listitem>
+<para
+>Hvis det ikke er krysset av her, vil bokmerker i rota av hierarkiet (ikke i en mappe) ikke bli vist. Hvis det er krysset av blir de samlet i en «rot»-mappe.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Flat ut bokmerketreet</guilabel
+></term>
+<listitem>
+<para
+>Undermapper vises som standard inni den overliggende mappa. Hvis dette er slått på, så vises undermapper for seg selv. Det ser mindre bra ut, men kan hjelpe hvis du har en svært stor mappe som du vil spre over to kolonner.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Vis systemsteder</guilabel
+></term>
+<listitem>
+<para
+>Vis en boks med KDE-steder (Hjemme, Nettverk osv). Nyttig hvis konqueror brukes som filbehandler.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="conf-cache">
+<title
+>Pixmap-mellomlager</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Størrelsen på diskmellomlageret</guilabel
+></term>
+<listitem>
+<para
+>Hvor mye diskplass brukes til å mellomlagre pixmap-bildene.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Tøm mellomlageret</guilabel
+></term>
+<listitem>
+<para
+>Fjern alle mellomlagrede bilder. Dette kan være nødvendig hvis noen favorittikoner blir ødelagt og ikke friskes opp automatisk.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+</sect1>
+</article>

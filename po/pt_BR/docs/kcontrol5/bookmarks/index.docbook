@@ -1,0 +1,166 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Brazilian-Portuguese "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="bookmarks" lang="&language;">
+<articleinfo>
+
+<title
+>Favoritos</title>
+<authorgroup>
+<author
+><personname
+><firstname
+>Xavier</firstname
+><surname
+>Vello</surname
+></personname
+> <email
+>xavier.vello@gmail.com</email
+> </author>
+<othercredit role="translator"
+><firstname
+>Marcus</firstname
+><surname
+> Gama</surname
+><affiliation
+><address
+><email
+> marcus.gama@gmail.com</email
+></address
+></affiliation
+><contrib
+>Tradução</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>24/09/2010</date>
+<releaseinfo
+>0.2 (&kde; 4.5)</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>KControl</keyword>
+<keyword
+>favoritos</keyword>
+<keyword
+>KIO</keyword>
+</keywordset>
+</articleinfo>
+<sect1 id="conf">
+<title
+>Página inicial de favoritos</title>
+<para
+>Este módulo permite que você configure sua página de favoritos.</para>
+<para
+>Para ver a sua página de favoritos digite <userinput
+>bookmarks:/</userinput
+> na barra de localização.</para>
+<para
+>As configurações deste módulo ficarão também disponíveis inserindo-se <userinput
+>bookmarks:/config</userinput
+> na barra de localização.</para>
+<sect2 id="conf-general">
+<title
+>Configurações gerais</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Número de colunas a serem exibidas</guilabel
+></term>
+<listitem>
+<para
+>As pastas serão automaticamente distribuídas em diversas colunas. O número ideal de colunas dependerá da largura da janela do Konqueror e do número de favoritos que você possuir.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Exibir os planos de fundo das pastas</guilabel
+></term>
+<listitem>
+<para
+>Desative a opção nos sistemas lentos para desativar as imagens de fundo.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="conf-bookmark">
+<title
+>Favoritos</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Exibir os favoritos sem as pastas</guilabel
+></term>
+<listitem>
+<para
+>Se esta opção estiver desligada, os favoritos no topo da hierarquia (fora de uma pasta) não são apresentados. Caso esteja ativada, são guardados numa pasta "raiz".</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Árvore de favoritos plana</guilabel
+></term>
+<listitem>
+<para
+>As subpastas são apresentadas dentro das suas pastas de nível superior por padrão. Se ativar esta opção, as subpastas aparecem por si só. Fica menos agradável, mas poderá ajudá-lo se tiver uma pasta muito grande que queira dividir em duas colunas.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Mostrar os locais do sistema</guilabel
+></term>
+<listitem>
+<para
+>Mostra uma caixa com os locais do KDE (Pasta Pessoal, Rede, ...). Isto será útil se você usar o Konqueror como gerenciador de arquivos.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="conf-cache">
+<title
+>Cache de imagens</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Tamanho da cache em disco</guilabel
+></term>
+<listitem>
+<para
+>Especifica quanto espaço em disco é usado para a cache de imagens.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Limpar cache</guilabel
+></term>
+<listitem>
+<para
+>Remove todas as imagens em cache. Isto poderá ser necessário se alguns 'favicons' (ícones dos favoritos) ficarem corrompidos e não se atualizarem automaticamente.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+</sect1>
+</article>

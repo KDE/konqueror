@@ -1,0 +1,3071 @@
+# translation of kget.po to
+# translation of kget.po to Hebrew
+# translation of kget.po to hebrew
+# KDE Hebrew Localization Project
+# Translation of kget.po into Hebrew
+#
+# In addition to the copyright owners of the program
+# which this translation accompanies, this translation is
+# Copyright (C) 2000-2003 Meni Livne <livne@kde.org>
+#
+# This translation is subject to the same Open Source
+# license as the program which it accompanies.
+# Shlomi Loubaton <shlomil@hotmail.com>, 2003.
+# Zviki Karov <karovz@gmail.com>, 2005.
+# Diego Iastrubni <elcuco@kde.org>, 2005, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kget\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2006-02-16 23:35+0200\n"
+"Last-Translator: \n"
+"Language-Team:  <en@li.org>\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: kget_plugin.cpp:56
+#, fuzzy, kde-format
+msgid "Download Manager"
+msgstr "מנהל ההורדה"
+
+#: kget_plugin.cpp:62
+#, fuzzy, kde-format
+#| msgid "Show Drop &Target"
+msgid "Show Drop Target"
+msgstr "הצג מטרת &גרירה"
+
+#: kget_plugin.cpp:69
+#, kde-format
+msgid "List All Links"
+msgstr "הצג רשימה של כל הקישורים"
+
+#: kget_plugin.cpp:74
+#, fuzzy, kde-format
+#| msgid "List All Links"
+msgid "List Selected Links"
+msgstr "הצג רשימה של כל הקישורים"
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No downloadable links were found."
+msgstr ""
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No Links"
+msgstr "אין קישורים"
+
+#. i18n: ectx: Menu (tools)
+#: konqueror_kget_browser_integration.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr ""
+
+#, fuzzy
+#~ msgid "New Group"
+#~ msgstr "תיקיית ברירת מחדל"
+
+#, fuzzy
+#~ msgid "Network and Downloads"
+#~ msgstr "סמן הורדות חלקיות"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Verification"
+#~ msgstr "יעד:"
+
+#, fuzzy
+#~ msgctxt "integration of KGet with other applications"
+#~ msgid "Integration"
+#~ msgstr "שילוב עם Konqueror"
+
+#, fuzzy
+#~| msgid "Advanced"
+#~ msgctxt "Advanced Options"
+#~ msgid "Advanced"
+#~ msgstr "מתקדם"
+
+#~ msgid "Advanced Options"
+#~ msgstr "אפשרויות מתקדמות"
+
+#, fuzzy
+#~ msgid "Transfer Plugins"
+#~ msgstr "פתח העברה:"
+
+#~ msgid "KGet"
+#~ msgstr "KGet"
+
+#~ msgid "%1/s"
+#~ msgstr "%1 לשנייה"
+
+#, fuzzy
+#~ msgctxt "start transfergroup downloads"
+#~ msgid "Start"
+#~ msgstr "ה&תחל מחדש"
+
+#, fuzzy
+#~ msgctxt "stop transfergroup downloads"
+#~ msgid "Stop"
+#~ msgstr "נעצר"
+
+#, fuzzy
+#~ msgid "KGet is downloading %1 file"
+#~ msgid_plural "KGet is downloading %1 files"
+#~ msgstr[0] "מנהל ההורדה"
+#~ msgstr[1] "מנהל ההורדה"
+
+#, fuzzy
+#~| msgid ""
+#~| "Error while writing file:\n"
+#~| "%1"
+#~ msgid "Error trying to get %1"
+#~ msgstr ""
+#~ "שגיאה במהלך כתיבת הקובץ:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Are you sure that you want to remove the group named %1?"
+#~ msgstr "האם אתה בטוח שברצונך למחוק העברה זו?"
+
+#, fuzzy
+#~ msgid "Remove Group"
+#~ msgstr "תיקיית ברירת מחדל"
+
+#, fuzzy
+#~ msgid "Are you sure that you want to remove the following groups?"
+#~ msgstr "האם אתה בטוח שברצונך למחוק העברה זו?"
+
+#, fuzzy
+#~ msgid "Remove groups"
+#~ msgstr "תיקיית ברירת מחדל"
+
+#, fuzzy
+#~ msgid "Download added"
+#~ msgstr "ההורדה חודשה"
+
+#, fuzzy
+#~ msgid ""
+#~ "The file %1 already exists.\n"
+#~ "Overwrite?"
+#~ msgstr ""
+#~ "קובץ היעד \n"
+#~ "%1\n"
+#~ "כבר קיים.\n"
+#~ "האם ברצונך לכתוב עליו?"
+
+#, fuzzy
+#~ msgid "My Downloads"
+#~ msgstr "ההורדה חודשה"
+
+#, fuzzy
+#~ msgid "New Download"
+#~ msgstr "הורד שוב"
+
+#~ msgid ""
+#~ "Malformed URL:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "כתובת שגויה:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URL, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "כתובת שגויה:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Download it again?"
+#~ msgstr "הורד שוב"
+
+#, fuzzy
+#~ msgid "Delete it and download again?"
+#~ msgstr "הורד שוב"
+
+#, fuzzy
+#~ msgid "File already downloaded. Download anyway?"
+#~ msgstr ""
+#~ "הכתובת כבר נשמרה\n"
+#~ "%1\n"
+#~ "האם להורידה שוב?"
+
+#, fuzzy
+#~| msgid "File Already exists"
+#~ msgid "File already exists"
+#~ msgstr "הקובץ כבר קיים"
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is a directory."
+#~ msgstr ""
+#~ "לא מוחק את\n"
+#~ "%1\n"
+#~ "כיוון שזו תיקייה."
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is not a local file."
+#~ msgstr ""
+#~ "לא מוחק את\n"
+#~ "%1\n"
+#~ "כיוון שזה לא קובץ מקומי."
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Download completed"
+#~ msgstr "ההורדה הושלמה"
+
+#, fuzzy
+#~ msgid "Download started"
+#~ msgstr "ההורדה חודשה"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Resolve"
+#~ msgstr "פתח העברה"
+
+#, fuzzy
+#~| msgid "All the downloads are finished."
+#~ msgid "KGet is now closing, as all downloads have completed."
+#~ msgstr "כל ההורדות הסתיימו."
+
+#, fuzzy
+#~| msgid "All the downloads are finished."
+#~ msgid "The computer will now turn off, as all downloads have completed."
+#~ msgstr "כל ההורדות הסתיימו."
+
+#, fuzzy
+#~ msgctxt "Shutting down computer"
+#~ msgid "Shutdown"
+#~ msgstr "כיבוי אוטומטי מופעל."
+
+#, fuzzy
+#~| msgid "All the downloads are finished."
+#~ msgid ""
+#~ "The computer will now suspend to disk, as all downloads have completed."
+#~ msgstr "כל ההורדות הסתיימו."
+
+#, fuzzy
+#~| msgid "All the downloads are finished."
+#~ msgid ""
+#~ "The computer will now suspend to RAM, as all downloads have completed."
+#~ msgstr "כל ההורדות הסתיימו."
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgctxt "Suspending computer"
+#~ msgid "Suspending"
+#~ msgstr "מתזמן"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgctxt "abort the proposed action"
+#~ msgid "Abort"
+#~ msgstr "גופן:"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Downloads completed"
+#~ msgstr "ההורדה הושלמה"
+
+#, fuzzy
+#~ msgctxt "file in a filesystem"
+#~ msgid "File"
+#~ msgstr "פתח &קובץ"
+
+#, fuzzy
+#~ msgctxt "status of the download"
+#~ msgid "Status"
+#~ msgstr "ה&תחל מחדש"
+
+#, fuzzy
+#~| msgid " Size: %1 "
+#~ msgctxt "size of the download"
+#~ msgid "Size"
+#~ msgstr " גודל: %1 "
+
+#, fuzzy
+#~ msgid "KGet Transfer"
+#~ msgstr "פתח העברה:"
+
+#, fuzzy
+#~ msgctxt "the type of the hash, e.g. MD5"
+#~ msgid "Type"
+#~ msgstr "סוג קובץ"
+
+#~ msgid "Stalled"
+#~ msgstr "תקוע"
+
+#, fuzzy
+#~ msgid "Downloading...."
+#~ msgstr "ההורדה חודשה"
+
+#, fuzzy
+#~| msgid "Delayed"
+#~ msgctxt "transfer state: delayed"
+#~ msgid "Delayed"
+#~ msgstr "מושהה"
+
+#, fuzzy
+#~| msgid "Stopped"
+#~ msgctxt "transfer state: stopped"
+#~ msgid "Stopped"
+#~ msgstr "נעצר"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgctxt "transfer state: aborted"
+#~ msgid "Aborted"
+#~ msgstr "גופן:"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "transfer state: finished"
+#~ msgid "Finished"
+#~ msgstr "הושלם"
+
+#, fuzzy
+#~ msgctxt "changing the destination of the file"
+#~ msgid "Changing destination"
+#~ msgstr "&פתח יעד"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgctxt "name of download"
+#~ msgid "Name"
+#~ msgstr "שם"
+
+#, fuzzy
+#~ msgctxt "status of download"
+#~ msgid "Status"
+#~ msgstr "ה&תחל מחדש"
+
+#, fuzzy
+#~ msgctxt "progress of download"
+#~ msgid "Progress"
+#~ msgstr "דו־שיח התקדמות"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgctxt "speed of download"
+#~ msgid "Speed"
+#~ msgstr "מהירות"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgctxt "remaining time of download"
+#~ msgid "Remaining Time"
+#~ msgstr "זמן נותר"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "No download destination specified."
+#~ msgstr "יעד:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Invalid download destination specified."
+#~ msgstr "יעד:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Download destination is not writeable."
+#~ msgstr "יעד:"
+
+#, fuzzy
+#~| msgid "Malformed URL:\n"
+#~ msgid "Malformed URL."
+#~ msgstr "כתובת שגויה:\n"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid "Malformed URL, protocol missing."
+#~ msgstr ""
+#~ "כתובת שגויה:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid "Malformed URL, host missing."
+#~ msgstr ""
+#~ "כתובת שגויה:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid ""
+#~ "Invalid download destination specified:\n"
+#~ "%1"
+#~ msgstr "יעד:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid ""
+#~ "Download destination is not writeable:\n"
+#~ "%1"
+#~ msgstr "יעד:"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URL, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "כתובת שגויה:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "File already exists. Overwrite it?"
+#~ msgstr ""
+#~ "קובץ היעד \n"
+#~ "%1\n"
+#~ "כבר קיים.\n"
+#~ "האם ברצונך לכתוב עליו?"
+
+#, fuzzy
+#~ msgid ""
+#~ "File already exists:\n"
+#~ "%1\n"
+#~ "Overwrite it?"
+#~ msgstr ""
+#~ "קובץ היעד \n"
+#~ "%1\n"
+#~ "כבר קיים.\n"
+#~ "האם ברצונך לכתוב עליו?"
+
+#, fuzzy
+#~| msgid "Malformed URL:\n"
+#~ msgid "Malformed URLs."
+#~ msgstr "כתובת שגויה:\n"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid "Malformed URLs, protocol missing."
+#~ msgstr ""
+#~ "כתובת שגויה:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid "Malformed URLs, host missing."
+#~ msgstr ""
+#~ "כתובת שגויה:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "כתובת שגויה:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "כתובת שגויה:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "כתובת שגויה:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Files exist already. Overwrite them?"
+#~ msgstr ""
+#~ "קובץ היעד \n"
+#~ "%1\n"
+#~ "כבר קיים.\n"
+#~ "האם ברצונך לכתוב עליו?"
+
+#~ msgid "Question"
+#~ msgstr "שאלה"
+
+#, fuzzy
+#~| msgid "Normal"
+#~ msgctxt "on a question"
+#~ msgid "No all"
+#~ msgstr "רגיל"
+
+#, fuzzy
+#~| msgid "Local File Name"
+#~ msgid "Engine name:"
+#~ msgstr "שם קובץ מקומי"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "transfer state: connecting"
+#~ msgid "Connecting...."
+#~ msgstr "חיבור"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Set Script File"
+#~ msgstr "תיאור"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "Transfer State: Finished"
+#~ msgid "Finished"
+#~ msgstr "הושלם"
+
+#, fuzzy
+#~ msgid "Downloading Metalink File...."
+#~ msgstr "ההורדה חודשה"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Redownload Metalink"
+#~ msgstr "ההורדה הושלמה"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgid "File Selection"
+#~ msgstr "מתזמן"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "the string that is used to modify an url"
+#~ msgid "Change string"
+#~ msgstr "חיבור"
+
+#, fuzzy
+#~| msgid "Stopped"
+#~ msgid "Append"
+#~ msgstr "נעצר"
+
+#, fuzzy
+#~ msgid "Replace file"
+#~ msgstr "פתח &קובץ"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "transfer state: running"
+#~ msgid "Running...."
+#~ msgstr "חיבור"
+
+#, fuzzy
+#~| msgid "Address (URL)"
+#~ msgid "IP Address"
+#~ msgstr "כתובת"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Down Speed"
+#~ msgstr "מהירות"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Up Speed"
+#~ msgstr "מהירות"
+
+#, fuzzy
+#~| msgid "Docked"
+#~ msgid "Choked"
+#~ msgstr "עגון"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgid "Score"
+#~ msgstr "מקור:"
+
+#, fuzzy
+#~ msgid "Downloaded"
+#~ msgstr "ההורדה חודשה"
+
+#, fuzzy
+#~ msgid "Interesting"
+#~ msgstr "שילוב עם Konqueror"
+
+#, fuzzy
+#~ msgid "Download speed"
+#~ msgstr "ההורדה חודשה"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Upload speed"
+#~ msgstr "מהירות"
+
+#, fuzzy
+#~| msgid "Count"
+#~ msgid "Chunk"
+#~ msgstr "מספר"
+
+#, fuzzy
+#~ msgid "Progress"
+#~ msgstr "דו־שיח התקדמות"
+
+#, fuzzy
+#~ msgid "Files"
+#~ msgstr "פתח &קובץ"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of the chunk"
+#~ msgstr "מספר ניסיונות:"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Download speed of the chunk"
+#~ msgstr "ההורדה הושלמה"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed"
+#~ msgstr "מהירות"
+
+#, fuzzy
+#~ msgid "Status"
+#~ msgstr "ה&תחל מחדש"
+
+#, fuzzy
+#~ msgid "File"
+#~ msgstr "פתח &קובץ"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Advanced Details for %1"
+#~ msgstr "תיקיית ברירת מחדל:"
+
+#, fuzzy
+#~ msgid "Trackers"
+#~ msgstr "הע&ברה"
+
+#, fuzzy
+#~ msgctxt "Open file"
+#~ msgid "Open"
+#~ msgstr "פתח &קובץ"
+
+#, fuzzy
+#~ msgid "Download first"
+#~ msgstr "ההורדה חודשה"
+
+#, fuzzy
+#~ msgid "Download normally"
+#~ msgstr "תיקיית ברירת מחדל"
+
+#, fuzzy
+#~ msgid "Download last"
+#~ msgstr "ההורדה חודשה"
+
+#, fuzzy
+#~ msgid "Do Not Download"
+#~ msgstr "הורד שוב"
+
+#, fuzzy
+#~| msgid "Download Selected Files"
+#~ msgid "Delete File(s)"
+#~ msgstr "הורד קבצים מסומנים"
+
+#, fuzzy
+#~ msgid "Move File"
+#~ msgstr "פתח &קובץ"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Seeders"
+#~ msgstr "מהירות"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Leechers"
+#~ msgstr "מהירות"
+
+#, fuzzy
+#~ msgid "Times Downloaded"
+#~ msgstr "ההורדה חודשה"
+
+#, fuzzy
+#~| msgid "Normal"
+#~ msgctxt "Download normally(not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "רגיל"
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 %"
+#~ msgstr " %1 לשנייה "
+
+#, fuzzy
+#~| msgid "Normal"
+#~ msgctxt "Download Normal (not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "רגיל"
+
+#, fuzzy
+#~| msgid "Advanced Options"
+#~ msgid "&Advanced Details"
+#~ msgstr "אפשרויות מתקדמות"
+
+#, fuzzy
+#~ msgid "&Scan Files"
+#~ msgstr "פתח &קובץ"
+
+#, fuzzy
+#~ msgid "Downloading Torrent File...."
+#~ msgstr "ההורדה חודשה"
+
+#, fuzzy
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading...."
+#~ msgstr "ההורדה חודשה"
+
+#, fuzzy
+#~| msgid ""
+#~| "Folder does not exist:\n"
+#~| "%1"
+#~ msgid "Torrent file does not exist"
+#~ msgstr ""
+#~ "התיקייה לא קיימת:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Analyzing torrent...."
+#~ msgstr "ההורדה חודשה"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgctxt "Transfer status: seeding"
+#~ msgid "Seeding...."
+#~ msgstr "מתזמן"
+
+#, fuzzy
+#~| msgid "Default Folder"
+#~ msgid "Select a default torrent folder"
+#~ msgstr "תיקיית ברירת מחדל"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Select a default temporary folder"
+#~ msgstr "תיקיית ברירת מחדל:"
+
+#, fuzzy
+#~| msgid "Import Text &File..."
+#~ msgid "Import dropped files"
+#~ msgstr "ייבוא קובץ &טקסט..."
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgid "File Properties"
+#~ msgstr "מתזמן"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a filename."
+#~ msgstr "אתרנט"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter at least one URL."
+#~ msgstr "אתרנט"
+
+#, fuzzy
+#~ msgid "Metalink Version 4.0 file (*.meta4)"
+#~ msgstr "פתח &קובץ"
+
+#, fuzzy
+#~ msgid "Metalink Version 3.0 file (*.metalink)"
+#~ msgstr "פתח &קובץ"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "Import Links"
+#~ msgstr "אין קישורים"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgctxt "Download the items which have been selected"
+#~ msgid "&Download Checked"
+#~ msgstr "ההורדה הושלמה"
+
+#, fuzzy
+#~| msgid "Local File Name"
+#~ msgid "File Name"
+#~ msgstr "שם קובץ מקומי"
+
+#~ msgid "Description"
+#~ msgstr "תיאור"
+
+#, fuzzy
+#~ msgctxt "list header: type of file"
+#~ msgid "File Type"
+#~ msgstr "סוג קובץ"
+
+#~ msgid "Location (URL)"
+#~ msgstr "מיקום (כתובת URL)"
+
+#~ msgid "Links in: %1 - KGet"
+#~ msgstr "קישורים ב: %1 - KGet"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgctxt "The priority of the mirror"
+#~ msgid "Priority"
+#~ msgstr "גופן:"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "Number of paralell connections to the mirror"
+#~ msgid "Connections"
+#~ msgstr "חיבור"
+
+#, fuzzy
+#~| msgid "Location (URL)"
+#~ msgctxt "Location = country"
+#~ msgid "Location"
+#~ msgstr "מיקום (כתובת URL)"
+
+#, fuzzy
+#~| msgid "<i>%1</i> successfully downloaded."
+#~ msgid "%1 has been successfully added."
+#~ msgstr "<i>%1</i> הורד בהצלחה."
+
+#, fuzzy
+#~ msgid "Download again"
+#~ msgstr "הורד שוב"
+
+#, fuzzy
+#~ msgctxt "Delete selected history-item"
+#~ msgid "Delete selected"
+#~ msgstr "לא נבחרו קבצים"
+
+#, fuzzy
+#~ msgid "Open file"
+#~ msgstr "פתח &קובץ"
+
+#, fuzzy
+#~ msgid "Transfer History"
+#~ msgstr "פתח העברה:"
+
+#, fuzzy
+#~ msgid "&Open File"
+#~ msgstr "פתח &קובץ"
+
+#, fuzzy
+#~| msgid "Stopped"
+#~ msgctxt "The transfer is stopped"
+#~ msgid "Stopped"
+#~ msgstr "נעצר"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "The transfer is finished"
+#~ msgid "Finished"
+#~ msgstr "הושלם"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgid "Source File"
+#~ msgstr "מקור:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Destination"
+#~ msgstr "יעד:"
+
+#, fuzzy
+#~| msgid "Timer"
+#~ msgid "Time"
+#~ msgstr "שעון"
+
+#, fuzzy
+#~ msgid "File Size"
+#~ msgstr "פתח &קובץ"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "the transfer has been finished"
+#~ msgid "Finished"
+#~ msgstr "הושלם"
+
+#, fuzzy
+#~| msgid "To: %1"
+#~ msgctxt "an error happened in connection with the user input"
+#~ msgid "Error:"
+#~ msgstr "אל: %1"
+
+#, fuzzy
+#~| msgid "unknown"
+#~ msgctxt "trust level"
+#~ msgid "Unknown"
+#~ msgstr "לא ידוע"
+
+#, fuzzy
+#~| msgid "<i>%1</i> successfully downloaded."
+#~ msgid "The signature has been verified successfully."
+#~ msgstr "<i>%1</i> הורד בהצלחה."
+
+#, fuzzy
+#~ msgctxt "pgp signature is not verified"
+#~ msgid "Failed"
+#~ msgstr "פתח &קובץ"
+
+#, fuzzy
+#~| msgid "To: %1"
+#~ msgid "Error:"
+#~ msgstr "אל: %1"
+
+#, fuzzy
+#~ msgid "Information:"
+#~ msgstr "שילוב עם Konqueror"
+
+#, fuzzy
+#~ msgid "Transfer Details"
+#~ msgstr " העברות: %1 "
+
+#, fuzzy
+#~| msgid "<i>%1</i> successfully downloaded."
+#~ msgid "%1 %2 has been successfully added."
+#~ msgstr "<i>%1</i> הורד בהצלחה."
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Transfer Verification for %1"
+#~ msgstr "תיקיית ברירת מחדל:"
+
+#, fuzzy
+#~| msgid "<i>%1</i> successfully downloaded."
+#~ msgid "%1 was successfully verified."
+#~ msgstr "<i>%1</i> הורד בהצלחה."
+
+#, fuzzy
+#~ msgid "Rename File"
+#~ msgstr "תיקיית ברירת מחדל"
+
+#, fuzzy
+#~ msgid "Rename %1 to:"
+#~ msgstr "תיקיית ברירת מחדל"
+
+#, fuzzy
+#~ msgid "&Rename"
+#~ msgstr "תיקיית ברירת מחדל"
+
+#, fuzzy
+#~ msgid "Rename Group..."
+#~ msgid_plural "Rename Groups..."
+#~ msgstr[0] "תיקיית ברירת מחדל"
+#~ msgstr[1] "תיקיית ברירת מחדל"
+
+#, fuzzy
+#~| msgid "Sticky"
+#~ msgctxt "fix position for droptarget"
+#~ msgid "Sticky"
+#~ msgstr "דביק"
+
+#, fuzzy
+#~| msgid "KGet"
+#~ msgid "Quit KGet"
+#~ msgstr "KGet"
+
+#, fuzzy
+#~ msgid "The dropped file is a KGet Transfer List"
+#~ msgstr "פתח העברה:"
+
+#, fuzzy
+#~ msgid "&Download"
+#~ msgstr "ההורדה חודשה"
+
+#, fuzzy
+#~ msgid "&Load transfer list"
+#~ msgstr "פתח העברה:"
+
+#, fuzzy
+#~ msgid "Show Main Window"
+#~ msgstr "הצג את החלון הראשי בעת ההפעלה"
+
+#, fuzzy
+#~ msgid "Hide Main Window"
+#~ msgstr "הסתר חלון &רישום"
+
+#, fuzzy
+#~| msgid "Drop target"
+#~ msgid "Drop Target"
+#~ msgstr "יעד גרירה"
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgctxt "%1 filename, %2 total size, %3 status"
+#~ msgid "%1(%2) %3"
+#~ msgstr " %1 לשנייה "
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgctxt ""
+#~ "%1 filename, %2 percent complete, %3 downloaded out of %4 total size, %5 "
+#~ "status"
+#~ msgid "%1(%2% %3/%4) %5"
+#~ msgstr " %1 לשנייה "
+
+#, fuzzy
+#~ msgid "Hiding drop target"
+#~ msgstr "הסתר יעד &גרירה"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Transfer Settings for %1"
+#~ msgstr "תיקיית ברירת מחדל:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Destination unmodified"
+#~ msgstr "יעד:"
+
+#, fuzzy
+#~| msgid "%1% of %2 - %3"
+#~ msgid "%1 of %2"
+#~ msgstr "%1% מתוך %2 - %3"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Group Settings for %1"
+#~ msgstr "תיקיית ברירת מחדל:"
+
+#, fuzzy
+#~| msgid "%1/s"
+#~ msgctxt "@item speed of transfer per seconds"
+#~ msgid "%1/s"
+#~ msgstr "%1 לשנייה"
+
+#, fuzzy
+#~| msgid "Local File Name"
+#~ msgctxt "@label"
+#~ msgid "File name"
+#~ msgstr "שם קובץ מקומי"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "@label Progress of transfer"
+#~ msgid "Finished"
+#~ msgstr "הושלם"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgctxt "@label Speed of transfer"
+#~ msgid "Speed"
+#~ msgstr "מהירות"
+
+#, fuzzy
+#~ msgctxt "@label Status of transfer"
+#~ msgid "Status"
+#~ msgstr "ה&תחל מחדש"
+
+#, fuzzy
+#~ msgctxt "@action:button start a transfer"
+#~ msgid "Start"
+#~ msgstr "ה&תחל מחדש"
+
+#, fuzzy
+#~ msgctxt "@action:button"
+#~ msgid "Stop"
+#~ msgstr "נעצר"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgctxt "@action:button"
+#~ msgid "Remove"
+#~ msgstr "פתח העברה"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgctxt "@label Download from"
+#~ msgid "Source:"
+#~ msgstr "מקור:"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgctxt "@action"
+#~ msgid "Settings"
+#~ msgstr "מתזמן"
+
+#, fuzzy
+#~| msgctxt "OK as in 'finished'"
+#~| msgid "OK"
+#~ msgctxt "@action:button"
+#~ msgid "OK"
+#~ msgstr "הושלם"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgctxt "@action Refresh download list every x (seconds)"
+#~ msgid "Refresh download list every"
+#~ msgstr "ההורדה הושלמה"
+
+#, fuzzy
+#~ msgctxt "@action:button"
+#~ msgid "Save Settings"
+#~ msgstr " העברות: %1 "
+
+#, fuzzy
+#~ msgctxt "@title"
+#~ msgid "Downloads"
+#~ msgstr "ההורדה חודשה"
+
+#~ msgid "An advanced download manager for KDE"
+#~ msgstr "מנהל הורדות מתקדם עבור KDE."
+
+#~ msgid "Start KGet with drop target"
+#~ msgstr "הפעל את KGet עם יעד גרירה"
+
+#, fuzzy
+#~| msgid "Start KGet with drop target"
+#~ msgid "Start KGet with hidden main window"
+#~ msgstr "הפעל את KGet עם יעד גרירה"
+
+#, fuzzy
+#~| msgid "Start KGet with drop target"
+#~ msgid "Start KGet without drop target animation"
+#~ msgstr "הפעל את KGet עם יעד גרירה"
+
+#~ msgid "URL(s) to download"
+#~ msgstr "כתובות אינטרנט להורדה"
+
+#, fuzzy
+#~ msgid "KGet Transfer List"
+#~ msgstr "פתח העברה:"
+
+#, fuzzy
+#~ msgid "Export Transfers"
+#~ msgstr "&ייצוא רשימת העברות..."
+
+#, fuzzy
+#~| msgid "&Import Transfer List..."
+#~ msgid "&Import Transfers..."
+#~ msgstr "יי&בוא רשימת העברות..."
+
+#, fuzzy
+#~ msgid "&Export Transfers List..."
+#~ msgstr "&ייצוא רשימת העברות..."
+
+#, fuzzy
+#~ msgid "&Export Transfers as Plain Text..."
+#~ msgstr "&ייצוא רשימת העברות..."
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Top Priority"
+#~ msgstr "גופן:"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Least Priority"
+#~ msgstr "גופן:"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Increase Priority"
+#~ msgstr "גופן:"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Decrease Priority"
+#~ msgstr "גופן:"
+
+#, fuzzy
+#~ msgid "Auto-Paste Mode"
+#~ msgstr "מצב ה&דבקה אוטומטית"
+
+#, fuzzy
+#~ msgid ""
+#~ "<b>Auto paste</b> button toggles the auto-paste mode on and off.\n"
+#~ "When set, KGet will periodically scan the clipboard for URLs and paste "
+#~ "them automatically."
+#~ msgstr ""
+#~ "הכפתור <b>מצב הדבקה אוטומטית</b> מפעיל\n"
+#~ "או מכבה את מצב ההדבקה האוטומטית.\n"
+#~ "\n"
+#~ "כאשר אפשרות זו נבחרת, KGet יסרוק את הלוח מידי\n"
+#~ "פעם בחיפוש אחר כתובות, וידביק אותן באופן אוטומטי."
+
+#, fuzzy
+#~ msgid "Use KGet as Konqueror Download Manager"
+#~ msgstr "אל תאפשר מצב עבודה של KGet כמנהל ההורדות של Konqueror"
+
+#, fuzzy
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Remove Selected"
+#~ msgstr "&המשך"
+
+#, fuzzy
+#~| msgid "Download Selected Files"
+#~ msgctxt "delete all finished transfers"
+#~ msgid "Remove All Finished"
+#~ msgstr "הורד קבצים מסומנים"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgctxt "redownload selected transfer item"
+#~ msgid "Redownload Selected"
+#~ msgstr "ההורדה הושלמה"
+
+#, fuzzy
+#~ msgid "Start / Resume Selected"
+#~ msgstr "לא נבחרו קבצים"
+
+#, fuzzy
+#~ msgid "Stop Selected"
+#~ msgstr "לא נבחרו קבצים"
+
+#, fuzzy
+#~ msgid "Stop"
+#~ msgstr "נעצר"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Remove"
+#~ msgstr "פתח העברה"
+
+#, fuzzy
+#~ msgid "Open Destination"
+#~ msgstr "&פתח יעד"
+
+#, fuzzy
+#~ msgid "Open File"
+#~ msgstr "פתח &קובץ"
+
+#, fuzzy
+#~ msgid "Show Details"
+#~ msgstr "kde-l10n-he@kde.org karovz@gmail.com"
+
+#, fuzzy
+#~ msgid "Copy URL to Clipboard"
+#~ msgstr "הע&תק כתובת ללוח"
+
+#, fuzzy
+#~ msgid "&Transfer History"
+#~ msgstr "פתח העברה:"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "&Group Settings"
+#~ msgstr "תיקיית ברירת מחדל:"
+
+#, fuzzy
+#~ msgid "&Transfer Settings"
+#~ msgstr " העברות: %1 "
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "Import &Links..."
+#~ msgstr "אין קישורים"
+
+#, fuzzy
+#~| msgid ""
+#~| "This is the first time that you have run KGet.\n"
+#~| "Do you want to use KGet as Download Manager for Konqueror?"
+#~ msgid ""
+#~ "This is the first time you have run KGet.\n"
+#~ "Would you like to enable KGet as the download manager for Konqueror?"
+#~ msgstr ""
+#~ "זו הפעם הראשונה שאתה מפעיל את KGet.\n"
+#~ "האם ברצונך להשתמש ב-KGet כמנהל ההורדות עבור Konqueror?"
+
+#, fuzzy
+#~ msgid "Konqueror Integration"
+#~ msgstr "שילוב עם Konqueror"
+
+#~ msgid "Enable"
+#~ msgstr "אפשר"
+
+#~ msgid "Do Not Enable"
+#~ msgstr "אל תאפשר"
+
+#, fuzzy
+#~| msgid ""
+#~| "Some transfers are still running.\n"
+#~| "Are you sure you want to quit KGet?"
+#~ msgid ""
+#~ "Some transfers are still running.\n"
+#~ "Are you sure you want to close KGet?"
+#~ msgstr ""
+#~ "תהליך ההורדה של מספר קבצים טרם הסתיים.\n"
+#~ "האם אתה בטוח שברצונך לסגור את KGet?"
+
+#, fuzzy
+#~ msgid "Enter Group Name"
+#~ msgstr "צוות התרגום של KDE ישראל צביקי קרוב"
+
+#, fuzzy
+#~ msgid "Group name:"
+#~ msgstr "צוות התרגום של KDE ישראל צביקי קרוב"
+
+#, fuzzy
+#~| msgid "Are you sure you want to delete this transfer?"
+#~ msgid "Are you sure you want to delete the selected transfer?"
+#~ msgid_plural "Are you sure you want to delete the selected transfers?"
+#~ msgstr[0] "האם אתה בטוח שברצונך למחוק העברה זו?"
+#~ msgstr[1] "האם אתה בטוח שברצונך למחוק העברה זו?"
+
+#, fuzzy
+#~ msgid "Confirm transfer delete"
+#~ msgstr "פתח העברה:"
+
+#, fuzzy
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "צוות התרגום של KDE ישראל צביקי קרוב"
+
+#, fuzzy
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "kde-l10n-he@kde.org karovz@gmail.com"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Automatic verification:"
+#~ msgstr "תיאור"
+
+#, fuzzy
+#~| msgid "Automation Options"
+#~ msgid "Automatic verification"
+#~ msgstr "אפשרויות אוטומציה"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Keyservers:"
+#~ msgstr "מהירות"
+
+#, fuzzy
+#~| msgid "Move to &End"
+#~ msgid "Move &Up"
+#~ msgstr "העבר ל&סוף"
+
+#, fuzzy
+#~| msgid "Move to &End"
+#~ msgid "Move &Down"
+#~ msgstr "העבר ל&סוף"
+
+#, fuzzy
+#~ msgid "Rename"
+#~ msgstr "תיקיית ברירת מחדל"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Limit Maximum Downloads Per Group"
+#~ msgstr "ההורדה הושלמה"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of downloads:"
+#~ msgstr "מספר ניסיונות:"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed Limit"
+#~ msgstr "מהירות"
+
+#, fuzzy
+#~ msgid "Global download limit:"
+#~ msgstr "ההורדה חודשה"
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid " KiB/s"
+#~ msgstr " %1 KB לשנייה "
+
+#, fuzzy
+#~ msgid "Global upload limit:"
+#~ msgstr "ההורדה חודשה"
+
+#, fuzzy
+#~ msgid "Per transfer:"
+#~ msgstr "הע&ברה"
+
+#, fuzzy
+#~ msgid "Reconnect on Error or Broken Connection"
+#~ msgstr "במקרה של חיבור שנותק"
+
+#~ msgid "Number of retries:"
+#~ msgstr "מספר ניסיונות:"
+
+#, fuzzy
+#~ msgid "Retry after:"
+#~ msgstr "התחבר מחדש אחרי:"
+
+#, fuzzy
+#~ msgid "After Completing Downloads"
+#~ msgstr "כבה אוטומטית בגמר ההורדה"
+
+#, fuzzy
+#~ msgid "Auto shutdown"
+#~ msgstr "כיבוי אוטומטי מופעל."
+
+#, fuzzy
+#~ msgid "Auto disconnect"
+#~ msgstr "התנתקות אוטומטית מופעלת."
+
+#, fuzzy
+#~ msgid "Enable Web Interface"
+#~ msgstr "השתמש באנימציה"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Port:"
+#~ msgstr "גופן:"
+
+#, fuzzy
+#~ msgid "Startup"
+#~ msgstr "ה&תחל מחדש"
+
+#, fuzzy
+#~ msgid "Enable animations"
+#~ msgstr "השתמש באנימציה"
+
+#, fuzzy
+#~ msgid "Show drop target"
+#~ msgstr "הצג מטרת גרירה"
+
+#, fuzzy
+#~ msgid "Enable system tray icon"
+#~ msgstr "השתמש באנימציה"
+
+#, fuzzy
+#~| msgid "All the downloads are finished."
+#~ msgid "Execute action after all downloads have been finished:"
+#~ msgstr "כל ההורדות הסתיימו."
+
+#, fuzzy
+#~ msgid "At startup:"
+#~ msgstr "ה&תחל מחדש"
+
+#, fuzzy
+#~ msgid "Restore Download State"
+#~ msgstr "ההורדה חודשה"
+
+#, fuzzy
+#~ msgid "Start All Downloads"
+#~ msgstr "סמן הורדות חלקיות"
+
+#, fuzzy
+#~ msgid "Stop All Downloads"
+#~ msgstr "סמן הורדות חלקיות"
+
+#, fuzzy
+#~ msgid "History"
+#~ msgstr "פתח העברה:"
+
+#, fuzzy
+#~ msgid "History backend:"
+#~ msgstr "פתח העברה:"
+
+#, fuzzy
+#~ msgid "Use as download manager for Konqueror:"
+#~ msgstr "השתמש ב-KGet כמנהל ההורדות עבור Konqueror"
+
+#, fuzzy
+#~ msgid "Monitor clipboard for files to download"
+#~ msgstr "לא נבחרו קבצים להורדה."
+
+#, fuzzy
+#~| msgid "Local File Name"
+#~ msgid "Engine Name"
+#~ msgstr "שם קובץ מקומי"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of connections per URL:"
+#~ msgstr "מספר ניסיונות:"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgid "File Settings"
+#~ msgstr "מתזמן"
+
+#, fuzzy
+#~| msgid "Local File Name"
+#~ msgid "Filename:"
+#~ msgstr "שם קובץ מקומי"
+
+#, fuzzy
+#~| msgid "Log Window"
+#~ msgid "Login Info"
+#~ msgstr "חלון רישום"
+
+#, fuzzy
+#~ msgid "Username:"
+#~ msgstr "תיקיית ברירת מחדל"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Path:"
+#~ msgstr "גופן:"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Description:"
+#~ msgstr "תיאור"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of simultaneous file downloads:"
+#~ msgstr "מספר ניסיונות:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of mirrors per file:"
+#~ msgstr "מספר ניסיונות:"
+
+#, fuzzy
+#~ msgid "Mode:"
+#~ msgstr "תיקיות"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Remove Tracker"
+#~ msgstr "פתח העברה"
+
+#, fuzzy
+#~ msgid "Update Trackers"
+#~ msgstr "הע&ברה"
+
+#, fuzzy
+#~ msgid "Remove Webseed"
+#~ msgstr "&המשך"
+
+#, fuzzy
+#~| msgid "Total"
+#~ msgid "Total:"
+#~ msgstr "סך הכל"
+
+#, fuzzy
+#~ msgid "Downloaded:"
+#~ msgstr "ההורדה חודשה"
+
+#, fuzzy
+#~| msgid " Size: %1 "
+#~ msgid "Size:"
+#~ msgstr " גודל: %1 "
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of chunks found:"
+#~ msgstr "מספר ניסיונות:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of chunks failed:"
+#~ msgstr "מספר ניסיונות:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of chunks not downloaded:"
+#~ msgstr "מספר ניסיונות:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of chunks downloaded:"
+#~ msgstr "מספר ניסיונות:"
+
+#, fuzzy
+#~ msgid "Stats"
+#~ msgstr "ה&תחל מחדש"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Seeders:"
+#~ msgstr "מהירות"
+
+#, fuzzy
+#~ msgid "Download speed:"
+#~ msgstr "ההורדה חודשה"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Upload speed:"
+#~ msgstr "מהירות"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgctxt "source-file"
+#~ msgid "Source:"
+#~ msgstr "מקור:"
+
+#, fuzzy
+#~ msgid "Upload limit per transfer:"
+#~ msgstr "ההורדה חודשה"
+
+#, fuzzy
+#~| msgid "Limits"
+#~ msgid "No Limit"
+#~ msgstr "הגבלות"
+
+#, fuzzy
+#~ msgid "Download limit per transfer:"
+#~ msgstr "ההורדה חודשה"
+
+#~ msgid "Folders"
+#~ msgstr "תיקיות"
+
+#, fuzzy
+#~| msgid "Default Folder"
+#~ msgid "Default torrent folder:"
+#~ msgstr "תיקיית ברירת מחדל"
+
+#, fuzzy
+#~| msgid "Default Folder"
+#~ msgid "Default temporary folder"
+#~ msgstr "תיקיית ברירת מחדל"
+
+#, fuzzy
+#~| msgid "Resumed"
+#~ msgid "Required"
+#~ msgstr "הומשך"
+
+#, fuzzy
+#~| msgid "Total size is %1 bytes"
+#~ msgid "File size (in bytes):"
+#~ msgstr "הגודל הכולל עומד על %1 בתים"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Verification:"
+#~ msgstr "תיאור"
+
+#, fuzzy
+#~ msgid "*.metalink *.meta4|Metalink file (*.metalink *.meta4)"
+#~ msgstr "פתח &קובץ"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgid "Date and time:"
+#~ msgstr "זמן נותר"
+
+#, fuzzy
+#~ msgid "Version:"
+#~ msgstr "סיומת"
+
+#, fuzzy
+#~| msgid "Log"
+#~ msgid "Logo:"
+#~ msgstr "רישום"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "Name:"
+#~ msgstr "שם"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Name of the publisher"
+#~ msgstr "מספר ניסיונות:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "URL to the publisher"
+#~ msgstr "מספר ניסיונות:"
+
+#, fuzzy
+#~ msgctxt "Files as in files on a server"
+#~ msgid "Files:"
+#~ msgstr "פתח &קובץ"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "&Import Links"
+#~ msgstr "אין קישורים"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgid "Contains"
+#~ msgstr "חיבור"
+
+#, fuzzy
+#~ msgid "Does Not Contain"
+#~ msgstr "הורד שוב"
+
+#, fuzzy
+#~ msgctxt "Check as in mark, not as in verify"
+#~ msgid "Chec&k Selected"
+#~ msgstr "לא נבחרו קבצים"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of connections:"
+#~ msgstr "מספר ניסיונות:"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a URL"
+#~ msgstr "אתרנט"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Priority:"
+#~ msgstr "גופן:"
+
+#, fuzzy
+#~| msgid "Location (URL)"
+#~ msgid "Location:"
+#~ msgstr "מיקום (כתובת URL)"
+
+#, fuzzy
+#~| msgid "Offline mode"
+#~ msgctxt "View modes"
+#~ msgid "View Modes"
+#~ msgstr "מצב לא מקוון"
+
+#, fuzzy
+#~ msgid "Date"
+#~ msgstr "ה&תחל מחדש"
+
+#, fuzzy
+#~ msgid "Filter History"
+#~ msgstr "פתח העברה:"
+
+#, fuzzy
+#~ msgctxt "delete selected transfer"
+#~ msgid "Delete Selected"
+#~ msgstr "לא נבחרו קבצים"
+
+#, fuzzy
+#~ msgid "Download"
+#~ msgstr "ההורדה חודשה"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgctxt "hash as a hash of type md5, sha1 etc."
+#~ msgid "Hash:"
+#~ msgstr "גופן:"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgid "Remaining Time:"
+#~ msgstr "זמן נותר"
+
+#, fuzzy
+#~ msgid "Transfer Settings"
+#~ msgstr " העברות: %1 "
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Download Destination:"
+#~ msgstr "יעד:"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgctxt "No value has been set"
+#~ msgid "Not set"
+#~ msgstr "אין קישורים"
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid " KiB"
+#~ msgstr " %1 KB לשנייה "
+
+#, fuzzy
+#~ msgid "Upload Limit:"
+#~ msgstr "ההורדה חודשה"
+
+#, fuzzy
+#~ msgid "Download Limit:"
+#~ msgstr "ההורדה חודשה"
+
+#, fuzzy
+#~| msgid "Maximum open connections:"
+#~ msgid "Maximum Share Ratio:"
+#~ msgstr "מספר מרבי של חיבורים פתוחים:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgctxt "verification of the download (e.g. by using MD5)"
+#~ msgid "Verification"
+#~ msgstr "יעד:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Creation:"
+#~ msgstr "יעד:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Expiration:"
+#~ msgstr "יעד:"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Group Settings"
+#~ msgstr "תיקיית ברירת מחדל:"
+
+#, fuzzy
+#~| msgid "Default Folder"
+#~ msgid "Default folder:"
+#~ msgstr "תיקיית ברירת מחדל"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Maximum download speed:"
+#~ msgstr "ההורדה הושלמה"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Maximum upload speed:"
+#~ msgstr "ההורדה הושלמה"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Destination:"
+#~ msgstr "יעד:"
+
+#, fuzzy
+#~ msgid "Transfer group:"
+#~ msgstr "הע&ברה"
+
+#, fuzzy
+#~ msgid "&File"
+#~ msgstr "פתח &קובץ"
+
+#, fuzzy
+#~ msgid "&Downloads"
+#~ msgstr "ההורדה חודשה"
+
+#~ msgid "There are no links in the active frame of the current HTML page."
+#~ msgstr "אין קישורים במסגרת הפעילה של עמוד ה HTML."
+
+#, fuzzy
+#~ msgid "Form"
+#~ msgstr "או"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Remove Tag"
+#~ msgstr "פתח העברה"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Tag Settings for the groups"
+#~ msgstr "תיקיית ברירת מחדל:"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgid "Tag Settings"
+#~ msgstr "מתזמן"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Available tags:"
+#~ msgstr "פתח העברה"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a new Tag"
+#~ msgstr "אתרנט"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a new tag"
+#~ msgstr "אתרנט"
+
+#, fuzzy
+#~| msgctxt "OK as in 'finished'"
+#~| msgid "OK"
+#~ msgid "OK"
+#~ msgstr "הושלם"
+
+#, fuzzy
+#~| msgid "To: %1"
+#~ msgid "Error: %1"
+#~ msgstr "אל: %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open log file %1 : %2"
+#~ msgstr ""
+#~ "אין אפשרות לפתוח את הקובץ:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not write to file:\n"
+#~| "%1"
+#~ msgid "Cannot write to %1 : %2"
+#~ msgstr ""
+#~ "אין אפשרות לכתוב אל הקובץ:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Copy file from: %1"
+#~ msgid "Cannot read from %1"
+#~ msgstr "העתק קובץ מ: %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot create directory %1"
+#~ msgstr ""
+#~ "אין אפשרות לקרוא את הקובץ:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file: %1"
+#~ msgstr ""
+#~ "אין אפשרות לקרוא את הקובץ:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot seek in file : %1"
+#~ msgstr ""
+#~ "אין אפשרות לפתוח את הקובץ:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgid "Connections"
+#~ msgstr "חיבור"
+
+#, fuzzy
+#~ msgid "Tracker"
+#~ msgstr "הע&ברה"
+
+#, fuzzy
+#~| msgid "Stay Connected"
+#~ msgid "Not connected"
+#~ msgstr "השאר מחובר"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "Not in use"
+#~ msgstr "אין קישורים"
+
+#, fuzzy
+#~| msgid "Connection Type"
+#~ msgid "Connection closed"
+#~ msgstr "סוג חיבור"
+
+#, fuzzy
+#~| msgid "Stay Connected"
+#~ msgid "Connected"
+#~ msgstr "השאר מחובר"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgid "Connecting"
+#~ msgstr "חיבור"
+
+#, fuzzy
+#~| msgid ""
+#~| "The specified file does not exist:\n"
+#~| "%1"
+#~ msgid "The directory %1 does not exist"
+#~ msgstr ""
+#~ "הקובץ המצוין לא קיים:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open index file %1 : %2"
+#~ msgstr ""
+#~ "אין אפשרות לפתוח את הקובץ:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot create file %1 : %2"
+#~ msgstr ""
+#~ "אין אפשרות לקרוא את הקובץ:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not write to file:\n"
+#~| "%1"
+#~ msgid "Failed to write last chunk to DND file : %1"
+#~ msgstr ""
+#~ "אין אפשרות לכתוב אל הקובץ:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file %1 : %2"
+#~ msgstr ""
+#~ "אין אפשרות לקרוא את הקובץ:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Failed to seek file %1 : %2"
+#~ msgstr ""
+#~ "אין אפשרות לקרוא את הקובץ:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Error while reading file:\n"
+#~| "%1"
+#~ msgid "Error reading from %1"
+#~ msgstr ""
+#~ "שגיאה במהלך קריאת הקובץ:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not write to file:\n"
+#~| "%1"
+#~ msgid "Failed to write to file %1 : %2"
+#~ msgstr ""
+#~ "אין אפשרות לכתוב אל הקובץ:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open file %1 : %2"
+#~ msgstr ""
+#~ "אין אפשרות לפתוח את הקובץ:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Not Deleted"
+#~ msgid "Not started"
+#~ msgstr "לא נמחק"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgctxt "Status of a torrent file"
+#~ msgid "Seeding"
+#~ msgstr "מתזמן"
+
+#, fuzzy
+#~ msgid "Downloading"
+#~ msgstr "ההורדה חודשה"
+
+#, fuzzy
+#~| msgid "Stopped"
+#~ msgid "Stopped"
+#~ msgstr "נעצר"
+
+#, fuzzy
+#~| msgid "Queueing"
+#~ msgid "Queued for seeding"
+#~ msgstr "שם בתור"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Queued for downloading"
+#~ msgstr "מספר ניסיונות:"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open file %1: %2"
+#~ msgstr ""
+#~ "אין אפשרות לפתוח את הקובץ:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot create index file: %1"
+#~ msgstr ""
+#~ "אין אפשרות לקרוא את הקובץ:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open file : %1 : %2"
+#~ msgstr ""
+#~ "אין אפשרות לפתוח את הקובץ:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Not Deleted"
+#~ msgid "Delete"
+#~ msgstr "לא נמחק"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Details for: %1"
+#~ msgstr "תיקיית ברירת מחדל:"
+
+#, fuzzy
+#~ msgid "All downloads"
+#~ msgstr "סמן הורדות חלקיות"
+
+#, fuzzy
+#~ msgid "Finished downloads"
+#~ msgstr "הושלם"
+
+#, fuzzy
+#~ msgid "Transfers:"
+#~ msgstr "הע&ברה"
+
+#, fuzzy
+#~ msgid "Downloads"
+#~ msgstr "ההורדה חודשה"
+
+#, fuzzy
+#~ msgid "Transfer details:"
+#~ msgstr " העברות: %1 "
+
+#, fuzzy
+#~ msgid "Transfer List"
+#~ msgstr "פתח העברה:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of threads:"
+#~ msgstr "מספר ניסיונות:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Name of the license"
+#~ msgstr "מספר ניסיונות:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "URL to the license"
+#~ msgstr "מספר ניסיונות:"
+
+#, fuzzy
+#~| msgid "Delayed"
+#~ msgctxt "The transfer is delayed"
+#~ msgid "Delayed"
+#~ msgstr "מושהה"
+
+#~ msgid ""
+#~ "Destination file \n"
+#~ "%1\n"
+#~ "already exists.\n"
+#~ "Do you want to overwrite it?"
+#~ msgstr ""
+#~ "קובץ היעד \n"
+#~ "%1\n"
+#~ "כבר קיים.\n"
+#~ "האם ברצונך לכתוב עליו?"
+
+#, fuzzy
+#~ msgid "Overwrite destination"
+#~ msgstr "&פתח יעד"
+
+#~ msgid "Queued"
+#~ msgstr "בתור"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Current Tracker"
+#~ msgstr "פתח העברה"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgid "Scrape"
+#~ msgstr "מקור:"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Available Trackers"
+#~ msgstr "פתח העברה"
+
+#, fuzzy
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Delete Selected"
+#~ msgstr "לא נבחרו קבצים"
+
+#, fuzzy
+#~| msgid "We are online."
+#~ msgid "We are sorry"
+#~ msgstr "אנחנו מקוונים."
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Rename transfer"
+#~ msgstr "פתח העברה"
+
+#, fuzzy
+#~ msgid "Download URL again?"
+#~ msgstr "הורד שוב"
+
+#, fuzzy
+#~ msgctxt "file in a filsystem"
+#~ msgid "File"
+#~ msgstr "פתח &קובץ"
+
+#, fuzzy
+#~ msgid "Are you sure that you want to remove all selected groups?"
+#~ msgstr "האם אתה בטוח שברצונך למחוק העברה זו?"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "Name"
+#~ msgstr "שם"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgid "Remaining Time"
+#~ msgstr "זמן נותר"
+
+#, fuzzy
+#~ msgid "KGet - Download Manager"
+#~ msgstr "מנהל ההורדה"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgctxt "@label transfer source"
+#~ msgid "Source:"
+#~ msgstr "מקור:"
+
+#, fuzzy
+#~| msgid "0 B/s"
+#~ msgid "kBi"
+#~ msgstr "0 B/s"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file : %1"
+#~ msgstr ""
+#~ "אין אפשרות לקרוא את הקובץ:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "&Transfer History..."
+#~ msgstr "פתח העברה:"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "&Group Settings..."
+#~ msgstr "תיקיית ברירת מחדל:"
+
+#, fuzzy
+#~ msgid "&Transfer Settings..."
+#~ msgstr " העברות: %1 "
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed limit"
+#~ msgstr "מהירות"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Download Speed:"
+#~ msgstr "ההורדה הושלמה"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Upload Speed:"
+#~ msgstr "מהירות"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "&Import links"
+#~ msgstr "אין קישורים"
+
+#, fuzzy
+#~| msgid "Not Deleted"
+#~ msgid "&Delete"
+#~ msgstr "לא נמחק"
+
+#, fuzzy
+#~ msgid "Default Download Folders"
+#~ msgstr "תיקיית ברירת מחדל"
+
+#, fuzzy
+#~| msgid "Extension"
+#~ msgid "File Extension"
+#~ msgstr "סיומת"
+
+#~ msgid "Default Folder"
+#~ msgstr "תיקיית ברירת מחדל"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Set as default folder"
+#~ msgstr "תיקיית ברירת מחדל:"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "extRegExp, defaultFolder"
+#~ msgstr "תיקיית ברירת מחדל:"
+
+#, fuzzy
+#~ msgid "Downloading.."
+#~ msgstr "ההורדה חודשה"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Advanced-Details for %1"
+#~ msgstr "תיקיית ברירת מחדל:"
+
+#, fuzzy
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading.."
+#~ msgstr "ההורדה חודשה"
+
+#, fuzzy
+#~ msgid "Downloads number:"
+#~ msgstr "מנהל ההורדה"
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 GB"
+#~ msgstr " %1 לשנייה "
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 MB"
+#~ msgstr " %1 לשנייה "
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid "%1 KB"
+#~ msgstr " %1 KB לשנייה "
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 B"
+#~ msgstr " %1 לשנייה "
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid "%1 KB/s"
+#~ msgstr " %1 KB לשנייה "
+
+#, fuzzy
+#~| msgid "0 B/s"
+#~ msgid "kBi/s"
+#~ msgstr "0 B/s"
+
+#~ msgid "Not Deleted"
+#~ msgstr "לא נמחק"
+
+#, fuzzy
+#~ msgid "Konqueror Integration disabled"
+#~ msgstr "שילוב עם Konqueror"
+
+#~ msgid "Show main window at startup"
+#~ msgstr "הצג את החלון הראשי בעת ההפעלה"
+
+#, fuzzy
+#~ msgid "<speed>"
+#~ msgstr "מהירות"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgid "<remaining time>"
+#~ msgstr "זמן נותר"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file %1"
+#~ msgstr ""
+#~ "אין אפשרות לקרוא את הקובץ:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Error while writing file:\n"
+#~| "%1"
+#~ msgid "Error writing to %1 : %2"
+#~ msgstr ""
+#~ "שגיאה במהלך כתיבת הקובץ:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Error while writing file:\n"
+#~| "%1"
+#~ msgid "Error writing to %1"
+#~ msgstr ""
+#~ "שגיאה במהלך כתיבת הקובץ:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "List All Links"
+#~ msgid "&List Links"
+#~ msgstr "הצג רשימה של כל הקישורים"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file"
+#~ msgstr ""
+#~ "אין אפשרות לקרוא את הקובץ:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Normal"
+#~ msgctxt "Download normally(not as first or last"
+#~ msgid "Normal"
+#~ msgstr "רגיל"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Bittorrent-Speedlimits"
+#~ msgstr "מהירות"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed-Limits"
+#~ msgstr "מהירות"
+
+#, fuzzy
+#~ msgid " of "
+#~ msgstr "%1 מתוך %2"
+
+#, fuzzy
+#~ msgid "Download Folder"
+#~ msgstr "תיקיית ברירת מחדל"
+
+#, fuzzy
+#~ msgid "Hide Drop Target"
+#~ msgstr "הסתר יעד &גרירה"
+
+#, fuzzy
+#~ msgid "Hide drop target"
+#~ msgstr "הסתר יעד &גרירה"
+
+#~ msgid ""
+#~ "Already saving URL\n"
+#~ "%1"
+#~ msgstr ""
+#~ "הכתובת כבר נשמרת\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Default Group"
+#~ msgstr "תיקיית ברירת מחדל"
+
+#, fuzzy
+#~ msgid "DlgAdvanced"
+#~ msgstr "מתקדם"
+
+#, fuzzy
+#~ msgid "Delete Group."
+#~ msgstr "תיקיית ברירת מחדל"
+
+#, fuzzy
+#~ msgid "Hide Me"
+#~ msgstr "שם קובץ"
+
+#~ msgid ""
+#~ "Each row consists of exactly one\n"
+#~ "extension type and one folder."
+#~ msgstr ""
+#~ "כל טור מורכב מסיומות מסוג\n"
+#~ "אחד ותיקייה אחת בדיוק"
+
+#~ msgid "&Dock"
+#~ msgstr "&עגן"
+
+#~ msgid "Source Label"
+#~ msgstr "תווית מקור:"
+
+#~ msgid "&Keep this window open after the operation is complete."
+#~ msgstr "&השאר חלון זה פתוח לאחר סיום הפעולה"
+
+#~ msgid "Not resumed"
+#~ msgstr "לא הומשך"
+
+#~ msgid "Automation"
+#~ msgstr "אוטומציה"
+
+#~ msgid "System"
+#~ msgstr "מערכת"
+
+#~ msgid "Maximize"
+#~ msgstr "הגדל"
+
+#~ msgid "Minimize"
+#~ msgstr "מזער"
+
+#~ msgid ""
+#~ "This is a folder and not a file:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "זוהי תיקייה ולא קובץ:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "You do not have read permission for the file:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "אין לך הרשאות קריאה לקובץ:\n"
+#~ "%1"
+
+#~ msgid "Could only read %1 bytes of %2."
+#~ msgstr "ניתן לקרוא רק %1 בתים מתוך %2."
+
+#~ msgid ""
+#~ "File %1 exists.\n"
+#~ "Do you want to replace it?"
+#~ msgstr ""
+#~ "הקובץ %1 קיים.\n"
+#~ "האם ברצונך להחליפו?"
+
+#~ msgid ""
+#~ "Failed to make a backup copy of %1.\n"
+#~ "Continue anyway?"
+#~ msgstr ""
+#~ "כישלון ביצירת עותק גיבוי של %1.\n"
+#~ "האם להמשיך בכל זאת?"
+
+#~ msgid ""
+#~ "Could not open file for writing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "אין אפשרות לפתוח את הקובץ לכתיבה:\n"
+#~ "%1"
+
+#~ msgid "Could only write %1 bytes of %2."
+#~ msgstr "ניתן לכתוב רק %1 בתים מתוך %2."
+
+#~ msgid "Welcome to KGet"
+#~ msgstr "ברוכים הבאים אל KGet"
+
+#~ msgid "Could not create valid socket"
+#~ msgstr "אין אפשרות ליצור שקע שמיש"
+
+#~ msgid "Offline"
+#~ msgstr "לא מקוון"
+
+#~ msgid "Starting offline"
+#~ msgstr "מתחיל במצב לא מקוון"
+
+#~ msgid "&Open Individual Window"
+#~ msgstr "&פתח בחלון נפרד"
+
+#~ msgid "Move to &Beginning"
+#~ msgstr "העבר להת&חלה"
+
+#~ msgid "&Pause"
+#~ msgstr "ה&שהה"
+
+#~ msgid "&Queue"
+#~ msgstr "שים &בתור"
+
+#~ msgid "&Timer"
+#~ msgstr "ש&עון"
+
+#~ msgid "De&lay"
+#~ msgstr "השה&יה"
+
+#~ msgid "Use &Animation"
+#~ msgstr "השתמש ב&אנימציה"
+
+#~ msgid "&Expert Mode"
+#~ msgstr "&מצב מומחה"
+
+#~ msgid "&Use-Last-Folder Mode"
+#~ msgstr "מצב &שימוש בתיקייה האחרונה"
+
+#~ msgid "Auto-&Disconnect Mode"
+#~ msgstr "מצב &התנתקות אוטומטית"
+
+#~ msgid "Auto-S&hutdown Mode"
+#~ msgstr "מצב &כיבוי אוטומטי"
+
+#~ msgid "&Offline Mode"
+#~ msgstr "מצב &לא מקוון"
+
+#~ msgid "Show &Log Window"
+#~ msgstr "הצג &חלון רישום"
+
+#~ msgid "Enable &KGet as Konqueror Download Manager"
+#~ msgstr "אפשר מצב עבודה של KGet כמנהל ההורדות של Konqueror"
+
+#~ msgid " Files: %1 "
+#~ msgstr " קבצים: %1 "
+
+#~ msgid " Size: %1 KB "
+#~ msgstr " גודל: %1 KB "
+
+#~ msgid " Time: %1 "
+#~ msgstr " זמן: %1 "
+
+#~ msgid ""
+#~ "<b>Resume</b> button starts selected transfers\n"
+#~ "and sets their mode to <i>queued</i>."
+#~ msgstr ""
+#~ "הכפתור <b>המשך</b> מתחיל את ההעברות הנבחרות\n"
+#~ "ומגדיר את המצב שלהן ל<i>בתור</i>."
+
+#~ msgid ""
+#~ "<b>Pause</b> button stops selected transfers\n"
+#~ "and sets their mode to <i>delayed</i>."
+#~ msgstr ""
+#~ "הכפתור <b>השהה</b> עוצר את ההעברות הנבחרות\n"
+#~ "ומגדיר את המצב שלהן ל<i>מושהה</i>."
+
+#~ msgid ""
+#~ "<b>Delete</b> button removes selected transfers\n"
+#~ "from the list."
+#~ msgstr ""
+#~ "הכפתור <b>מחק</b> מסיר את ההעברות הנבחרות\n"
+#~ "מהרשימה."
+
+#~ msgid ""
+#~ "<b>Restart</b> button is a convenience button\n"
+#~ "that simply does Pause and Resume."
+#~ msgstr ""
+#~ "הכפתור <b>התחל מחדש</b> הוא כפתור לצרכי\n"
+#~ "נוחיות שפעולתו מקבילה לביצוע של השהה והמשך."
+
+#~ msgid ""
+#~ "<b>Queued</b> button sets the mode of selected\n"
+#~ "transfers to <i>queued</i>.\n"
+#~ "\n"
+#~ "It is a radio button -- you can choose between\n"
+#~ "three modes."
+#~ msgstr ""
+#~ "הכפתור <b>שים בתור</b> משנה את המצב של\n"
+#~ "ההעברות הנבחרות ל<i>בתור</i>\n"
+#~ "\n"
+#~ "זהו כפתור בחירה, באפשרותך לבחור\n"
+#~ "בין שלושה מצבים."
+
+#~ msgid ""
+#~ "<b>Scheduled</b> button sets the mode of selected\n"
+#~ "transfers to <i>scheduled</i>.\n"
+#~ "\n"
+#~ "It is a radio button -- you can choose between\n"
+#~ "three modes."
+#~ msgstr ""
+#~ "הכפתור <b>שעון</b> משנה את המצב של ההעברות\n"
+#~ "הנבחרות ל<i>מתוזמן</i>.\n"
+#~ "\n"
+#~ "זהו כפתור בחירה, באפשרותך לבחור\n"
+#~ "בין שלושה מצבים."
+
+#~ msgid ""
+#~ "<b>Delayed</b> button sets the mode of selected\n"
+#~ "transfers to <i>delayed</i>.This also causes the selected transfers to "
+#~ "stop.\n"
+#~ "\n"
+#~ "It is a radio button -- you can choose between\n"
+#~ "three modes."
+#~ msgstr ""
+#~ "הכפתור <b>השהיה</b> משנה את המצב של ההעברות\n"
+#~ "הנבחרות ל<i>מושהה</i>. דבר זה גם מביא לעצירת ההעברות הנבחרות.\n"
+#~ "\n"
+#~ "זהו כפתור בחירה, באפשרותך לבחור\n"
+#~ "בין שלושה מצבים."
+
+#~ msgid ""
+#~ "<b>Preferences</b> button opens a preferences dialog\n"
+#~ "where you can set various options.\n"
+#~ "\n"
+#~ "Some of these options can be more easily set using the toolbar."
+#~ msgstr ""
+#~ "הכפתור <b>העדפות</b> פותח דו־שיח העדפות\n"
+#~ "בו באפשרותך להגדיר אפשרויות שונות.\n"
+#~ "\n"
+#~ "חלק מאפשרויות אלה ניתן להגדיר ביתר קלות בעזרת סרגל הכלים."
+
+#~ msgid ""
+#~ "<b>Log window</b> button opens a log window.\n"
+#~ "The log window records all program events that occur\n"
+#~ "while KGet is running."
+#~ msgstr ""
+#~ "הכפתור <b>הצג חלון רישום</b> פותח חלון רישום.\n"
+#~ "חלון הרישום שומר תיעוד של כל אירועי התוכנית שקורים\n"
+#~ "בזמן ש־KGet פועל."
+
+#~ msgid ""
+#~ "<b>Paste transfer</b> button adds a URL from\n"
+#~ "the clipboard as a new transfer.\n"
+#~ "\n"
+#~ "This way you can easily copy&paste URLs between\n"
+#~ "applications."
+#~ msgstr ""
+#~ "הכפתור <b>הדבק</b> מוסיף כתובת מתוך לוח\n"
+#~ "העריכה בתור העברה חדשה.\n"
+#~ "\n"
+#~ "בדרך זו באפשרותך ל&העתיק ולהדביק כתובות בין\n"
+#~ "יישומים בקלות."
+
+#~ msgid ""
+#~ "<b>Expert mode</b> button toggles the expert mode\n"
+#~ "on and off.\n"
+#~ "\n"
+#~ "Expert mode is recommended for experienced users.\n"
+#~ "When set, you will not be \"bothered\" by confirmation\n"
+#~ "messages.\n"
+#~ "<b>Important!</b>\n"
+#~ "Turn it on if you are using auto-disconnect or\n"
+#~ "auto-shutdown features and you want KGet to disconnect \n"
+#~ "or shut down without asking."
+#~ msgstr ""
+#~ "הכפתור <b>מצב מומחה</b> מפעיל או מכבה את מצב\n"
+#~ "המומחה.\n"
+#~ "\n"
+#~ "מצב המומחה מומלץ למשתמשים מנוסים. כאשר\n"
+#~ "הוא נבחר, התוכנית לא \"תטריד\" אותך עם בקשות\n"
+#~ "לאישור.\n"
+#~ "<b>חשוב:</b>\n"
+#~ "הפעל אפשרות זו אם אתה משתמש באפשרות ההתנתקות\n"
+#~ "האוטומטית או הכיבוי האוטומטי, ואתה רוצה ש־KGet \n"
+#~ "יתנתק או יכבה מבלי לשאול."
+
+#~ msgid ""
+#~ "<b>Use last folder</b> button toggles the\n"
+#~ "use-last-folder feature on and off.\n"
+#~ "\n"
+#~ "When set, KGet will ignore the folder settings\n"
+#~ "and put all new added transfers into the folder\n"
+#~ "where the last transfer was put."
+#~ msgstr ""
+#~ "הכפתור <b>שימוש בתיקייה האחרונה</b> מפעיל\n"
+#~ "או מכבה את אפשרות השימוש בתיקייה האחרונה.\n"
+#~ "\n"
+#~ "כאשר אפשרות זו נבחרת, KGet יתעלם מהגדרות\n"
+#~ "הספריות וישים את כל ההעברות החדשות שמתווספות\n"
+#~ "בספריה שבה הושמה ההעברה האחרונה."
+
+#~ msgid ""
+#~ "<b>Auto disconnect</b> button toggles the auto-disconnect\n"
+#~ "mode on and off.\n"
+#~ "\n"
+#~ "When set, KGet will disconnect automatically\n"
+#~ "after all queued transfers are finished.\n"
+#~ "\n"
+#~ "<b>Important!</b>\n"
+#~ "Also turn on the expert mode when you want KGet\n"
+#~ "to disconnect without asking."
+#~ msgstr ""
+#~ "הכפתור <b>מצב התנתקות אוטומטית</b> מפעיל או מכבה\n"
+#~ "את מצב ההתנתקות האוטומטית.\n"
+#~ "\n"
+#~ "כאשר אפשרות זו נבחרת, KGet יתנתק באופן אוטומטי\n"
+#~ "לאחר השלמת כל ההעברות שבתור.\n"
+#~ "\n"
+#~ "<b>חשוב:</b>\n"
+#~ "הפעל גם את מצב המומחה אם אתה רוצה ש־KGet\n"
+#~ "יתנתק מבלי לשאול."
+
+#~ msgid ""
+#~ "<b>Auto shutdown</b> button toggles the auto-shutdown\n"
+#~ "mode on and off.\n"
+#~ "\n"
+#~ "When set, KGet will quit automatically\n"
+#~ "after all queued transfers are finished.\n"
+#~ "<b>Important!</b>\n"
+#~ "Also turn on the expert mode when you want KGet\n"
+#~ "to quit without asking."
+#~ msgstr ""
+#~ "הכפתור <b>מצב כיבוי אוטומטי</b> מפעיל או מכבה\n"
+#~ "את מצב הכיבוי האוטומטי.\n"
+#~ "\n"
+#~ "כאשר אפשרות זו נבחרת, KGet ייצא באופן אוטומטי\n"
+#~ "לאחר השלמת כל ההעברות שבתור.\n"
+#~ "<b>חשוב!</b>\n"
+#~ "הפעל גם את מצב המומחה אם אתה רוצה ש־KGet\n"
+#~ " ייצא מבלי לשאול."
+
+#~ msgid ""
+#~ "<b>Offline mode</b> button toggles the offline mode\n"
+#~ "on and off.\n"
+#~ "\n"
+#~ "When set, KGet will act as if it was not connected\n"
+#~ "to the Internet.\n"
+#~ "\n"
+#~ "You can browse offline, while still being able to add\n"
+#~ "new transfers as queued."
+#~ msgstr ""
+#~ "הכפתור <b>מצב לא מקוון</b> מפעיל או מכבה את\n"
+#~ "המצב הלא מקוון.\n"
+#~ "\n"
+#~ "כאשר אפשרות זו נבחרת, KGet יפעל כאילו הוא\n"
+#~ "לא מחובר לאינטרנט.\n"
+#~ "\n"
+#~ "באפשרותך לגלוש באופן לא מקוון, ועדיין תוכל\n"
+#~ "להוסיף לתור העברות חדשות."
+
+#~ msgid ""
+#~ "<b>Drop target</b> button toggles the window style\n"
+#~ "between a normal window and a drop target.\n"
+#~ "\n"
+#~ "When set, the main window will be hidden and\n"
+#~ "instead a small shaped window will appear.\n"
+#~ "\n"
+#~ "You can show/hide a normal window with a simple click\n"
+#~ "on a shaped window."
+#~ msgstr ""
+#~ "הכפתור <b>יעד גרירה</b> מחליף את סגנון החלון\n"
+#~ "בין חלון רגיל ובין יעד גרירה.\n"
+#~ "\n"
+#~ "כאשר אפשרות זו נבחרת, החלון הראשי\n"
+#~ "יוסתר ויופיע במקומו חלון קטן.\n"
+#~ "\n"
+#~ "באפשרותך להציג או להסתיר את החלון הרגיל\n"
+#~ "על ידי לחיצה על החלון הקטן."
+
+#~ msgid ""
+#~ "*.kgt|*.kgt\n"
+#~ "*|All Files"
+#~ msgstr ""
+#~ "*.kgt|*.kgt\n"
+#~ "*|כל הקבצים"
+
+#~ msgid "Quitting..."
+#~ msgstr "יוצא..."
+
+#~ msgid ""
+#~ "The transfer you wanted to delete completed before it could be deleted."
+#~ msgid_plural ""
+#~ "%n transfers you wanted to delete completed before they could be deleted."
+#~ msgstr[0] "ההעברה שרצית למחוק הושלמה לפני ביצוע המחיקה."
+#~ msgstr[1] "%1 ההעברות שרצית למחוק הושלמו לפני ביצוע המחיקה"
+
+#~ msgid "Stopping all jobs"
+#~ msgstr "משהה את כל העבודות"
+
+#~ msgid "Overwrite"
+#~ msgstr "כתוב עליו"
+
+#~ msgid "Do Not Overwrite"
+#~ msgstr "אל תכתוב עליו"
+
+#~ msgid "<i>%1</i> has been added."
+#~ msgstr "<i>%1</i> נוסף."
+
+#~ msgid "1 download has been added."
+#~ msgid_plural "%n downloads have been added."
+#~ msgstr[0] "נוספה הורדה אחת."
+#~ msgstr[1] "נוספו %1 הורדות."
+
+#~ msgid "Starting another queued job."
+#~ msgstr "מתחיל עוד עבודה בתור."
+
+#~ msgid "Offline mode on."
+#~ msgstr "המצב הלא מקוון מופעל."
+
+#~ msgid "Offline mode off."
+#~ msgstr "המצב הלא מקוון מבוטל."
+
+#~ msgid "Expert mode on."
+#~ msgstr "מצב מומחה מופעל."
+
+#~ msgid "Expert mode off."
+#~ msgstr "מצב מומחה מבוטל."
+
+#~ msgid "Use last folder on."
+#~ msgstr "מצב השימוש בתיקייה האחרונה מופעל."
+
+#~ msgid "Use last folder off."
+#~ msgstr "מצב השימוש בתיקייה האחרונה מבוטל."
+
+#~ msgid "Auto disconnect off."
+#~ msgstr "התנתקות אוטומטית מבוטלת."
+
+#~ msgid "Auto shutdown off."
+#~ msgstr "כיבוי אוטומטי מבוטל."
+
+#~ msgid "Auto paste on."
+#~ msgstr "הדבקה אוטומטית מופעלת."
+
+#~ msgid "Auto paste off."
+#~ msgstr "הדבקה אוטומטית מבוטלת."
+
+#~ msgid "<b>Transfers:</b> %1 "
+#~ msgstr "<b> העברות:</b> %1 "
+
+#~ msgid "<br /><b>Files:</b> %1 "
+#~ msgstr "<br /><b>קבצים:</b> %1 "
+
+#~ msgid "<br /><b>Size:</b> %1 "
+#~ msgstr "<br /><b>גודל:</b> %1 "
+
+#~ msgid "<br /><b>Time:</b> %1 "
+#~ msgstr "<br /><b>זמן:</b> %1 "
+
+#~ msgid "<br /><b>Speed:</b> %1/s"
+#~ msgstr "<br /><b>מהירות:</b> %1/שניה"
+
+#~ msgid "Do you really want to disconnect?"
+#~ msgstr "האם אתה בטוח שברצונך להתנתק?"
+
+#~ msgid "Disconnect"
+#~ msgstr "התנתק"
+
+#~ msgid "Disconnecting..."
+#~ msgstr "מתנתק..."
+
+#~ msgid "We are offline."
+#~ msgstr "אנחנו לא מקוונים."
+
+#~ msgid "Id"
+#~ msgstr "זיהוי"
+
+#~ msgid "Mixed"
+#~ msgstr "מעורב"
+
+#~ msgid "Separated"
+#~ msgstr "מופרד"
+
+#~ msgid "Add new transfers as:"
+#~ msgstr "הוסף העברות חדשות במצב:"
+
+#~ msgid "Iconified"
+#~ msgstr "ממוזערים"
+
+#~ msgid "Advanced individual windows"
+#~ msgstr "חלונות נפרדים מתקדמים"
+
+#~ msgid "Remove files from a list after success"
+#~ msgstr "הסר קבצים מהרשימה לאחר הצלחה"
+
+#~ msgid "Get file sizes"
+#~ msgstr "הורד גדלי קבצים"
+
+#~ msgid "Expert mode (do not prompt for Cancel or Delete)"
+#~ msgstr "מצב מומחה (אל תשאל לגבי ביטול או מחיקה)"
+
+#~ msgid "Show individual windows"
+#~ msgstr "הצג חלונות נפרדים"
+
+#~ msgid " min"
+#~ msgstr " דקות"
+
+#~ msgid "Auto disconnect after completing downloads"
+#~ msgstr "התנתק אוטומטית בגמר ההורדה"
+
+#~ msgid "Autosave file list every:"
+#~ msgstr "שמור באופן אוטומטי את רשימת הקבצים כל:"
+
+#~ msgid "Timed disconnect"
+#~ msgstr "ניתוק מתוזמן"
+
+#~ msgid "Disconnect command:"
+#~ msgstr "פקודת ניתוק:"
+
+#~ msgid "Auto paste from clipboard"
+#~ msgstr "הדבק אוטומטית מלוח העריכה"
+
+#~ msgid "Reconnect Options"
+#~ msgstr "אפשרויות התחברות מחדש"
+
+#~ msgid "On login or timeout error"
+#~ msgstr "במקרה של שגיאת כניסה או זמן מוקצב"
+
+#~ msgid "Timeout Options"
+#~ msgstr "אפשרויות זמנים מוקצבים"
+
+#~ msgid "If no data arrives in:"
+#~ msgstr "אם לא מגיעים נתונים במשך:"
+
+#~ msgid "If server cannot resume:"
+#~ msgstr "אם השרת לא יכול להמשיך הורדה:"
+
+#~ msgid "Permanent"
+#~ msgstr "קבוע"
+
+#~ msgid "PLIP"
+#~ msgstr "PLIP"
+
+#~ msgid "SLIP"
+#~ msgstr "SLIP"
+
+#~ msgid "PPP"
+#~ msgstr "PPP"
+
+#~ msgid "ISDN"
+#~ msgstr "ISDN"
+
+#~ msgid "Link number:"
+#~ msgstr "מספר קישור:"
+
+#~ msgid "Extension (* for all files):"
+#~ msgstr "סיומת (* עבור כל הקבצים):"
+
+#~ msgid "Limits Options"
+#~ msgstr "אפשרויות הגבלה"
+
+#~ msgid "Minimum network bandwidth:"
+#~ msgstr "רוחב פס מינימלי של רשת:"
+
+#~ msgid "Maximum network bandwidth:"
+#~ msgstr "רוחב פס מרבי של רשת:"
+
+#~ msgid " bytes/sec"
+#~ msgstr " בתים/שנייה"
+
+#~ msgid "Window style:"
+#~ msgstr "סגנון חלון:"
+
+#~ msgid "Attempt number %1"
+#~ msgstr "ניסיון מספר %1"
+
+#~ msgid "Stopping"
+#~ msgstr "מפסיק"
+
+#~ msgid "Pausing"
+#~ msgstr "משהה"
+
+#~ msgid "Delaying"
+#~ msgstr "דוחה"
+
+#~ msgid "The file size does not match."
+#~ msgstr "גודל הקובץ לא תואם."
+
+#~ msgid "File Size checked"
+#~ msgstr "גודל הקובץ נבדק"
+
+#~ msgid "checking if file is in cache...no"
+#~ msgstr "בודק האם הקובץ במטמון... לא"
+
+#~ msgid "S"
+#~ msgstr "מצב"
+
+#~ msgid "%"
+#~ msgstr "%"

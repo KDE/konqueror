@@ -1,0 +1,101 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Ukrainian "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="filemanager" lang="&language;">
+<articleinfo>
+<title
+>Керування файлами</title>
+<authorgroup>
+<author
+>&Mike.McBride; &Mike.McBride.mail;</author>
+<othercredit role="translator"
+><firstname
+>Юрій</firstname
+><surname
+>Чорноіван</surname
+><affiliation
+><address
+><email
+>yurchor@ukr.net</email
+></address
+></affiliation
+><contrib
+>Переклад українською</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>8 листопада 2016 року</date>
+<releaseinfo
+>Програми 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Системні параметри</keyword>
+<keyword
+>менеджер файлів</keyword>
+</keywordset>
+</articleinfo>
+
+<para
+>За допомогою цих модулів ви можете налаштувати різноманітні параметри функціональних можливостей інструменту для роботи з файлами &konqueror;. </para>
+
+<note
+><para
+>Функціональні можливості переглядача Тенет &konqueror; можна налаштувати за допомогою <ulink url="help:/kcontrol/khtml-behavior/index.html"
+>відповідних модулів налаштування</ulink
+>.</para
+></note>
+
+<variablelist>
+<title
+><guilabel
+>Інші параметри</guilabel
+></title>
+<varlistentry>
+<term
+><guilabel
+>Відкривати теки у окремих вікнах</guilabel
+></term>
+<listitem
+> <para
+>Якщо позначено цей пункт, під час відкриття теки буде використано нове вікно &konqueror;, замість показу вмісту теки у поточному вікні.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Показувати пункт контекстного меню «Вилучити», що оминає смітник</guilabel
+></term>
+<listitem>
+<para
+>Позначте, якщо ви хочете, щоб пункти меню «Вилучити» було показано на стільниці та в контекстному меню програми для керування файлами. Ви завжди можете вилучити файли остаточно: для цього слід натиснути клавішу &Shift; і обрати пункт меню <guimenuitem
+>Пересунути в смітник</guimenuitem
+>.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Параметри керування файлами, визначені для режиму керування файлами &konqueror; на сторінках <guilabel
+>Режими перегляду</guilabel
+>, <guilabel
+>Навігація</guilabel
+>, <guilabel
+>Служби</guilabel
+>, <guilabel
+>Загальне</guilabel
+> та <guilabel
+>Смітник</guilabel
+>, також використовуються і у &dolphin;. </para>
+
+</article>

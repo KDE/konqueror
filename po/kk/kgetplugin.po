@@ -1,0 +1,3490 @@
+# translation of kget.po to Kazakh
+# translation of kget.po to
+#
+# Sairan Kikkarin <sairan@computer.org>, 2006, 2007, 2008.
+# Sairan Kikkarin <sairan@computer.org>, 2010.
+# Sairan Kikkarin <sairan(at)computer.org>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: kget\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2010-12-11 09:08+0600\n"
+"Last-Translator: Sairan Kikkarin <sairan(at)computer.org>\n"
+"Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
+"Language: kk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"\n"
+
+#: kget_plugin.cpp:56
+#, kde-format
+msgid "Download Manager"
+msgstr "Жүктеу менеджері"
+
+#: kget_plugin.cpp:62
+#, kde-format
+msgid "Show Drop Target"
+msgstr "Сүйреп әкелетін орнын көрсету"
+
+#: kget_plugin.cpp:69
+#, kde-format
+msgid "List All Links"
+msgstr "Барлық сілтемелерді тізімдеу"
+
+#: kget_plugin.cpp:74
+#, kde-format
+msgid "List Selected Links"
+msgstr "Таңдаған сілтемелерді тізімдеу"
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No downloadable links were found."
+msgstr "Жуктеуге келетін сілтеме табылған жоқ"
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No Links"
+msgstr "Сілтемелер жоқ"
+
+#. i18n: ectx: Menu (tools)
+#: konqueror_kget_browser_integration.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "Құ&ралдар"
+
+#~ msgid "Unable to communicate with the KGet download manager."
+#~ msgstr "KGet жүктеу менеджерімен қатынау жоқ."
+
+#~ msgid "Communication Error"
+#~ msgstr "Қатынау қатесі"
+
+#~ msgid "Plugins"
+#~ msgstr "Плагиндер"
+
+#~ msgid "New Group"
+#~ msgstr "Жаңа топ"
+
+#~ msgid "Xml"
+#~ msgstr "Xml"
+
+#~ msgid "Sqlite"
+#~ msgstr "Sqlite"
+
+#~ msgid "Nepomuk"
+#~ msgstr "Nepomuk"
+
+#~ msgid "Turn Off Computer"
+#~ msgstr "Компьютерді сөндіру"
+
+#~ msgid "Hibernate Computer"
+#~ msgstr "Компьютерді ұйықтату"
+
+#~ msgid "Suspend Computer"
+#~ msgstr "Компьютерді қалғыту"
+
+#~ msgid "Appearance"
+#~ msgstr "Көрінісі"
+
+#~ msgid "Change appearance settings"
+#~ msgstr "Көрінісін өзгерту"
+
+#~ msgid "Groups"
+#~ msgstr "Топтар"
+
+#~ msgid "Manage the groups"
+#~ msgstr "Топтарды басқару"
+
+#~ msgid "Network"
+#~ msgstr "Желі"
+
+#~ msgid "Network and Downloads"
+#~ msgstr "Желі және жүктеп алу"
+
+#~ msgid "Web Interface"
+#~ msgstr "Веб интерфейсі"
+
+#~ msgid "Control KGet over a Network or the Internet"
+#~ msgstr "KGet-ті желі не Интернет арқылы басқару"
+
+#~ msgid "Verification"
+#~ msgstr "Тексеру"
+
+#~ msgctxt "integration of KGet with other applications"
+#~ msgid "Integration"
+#~ msgstr "Біріктіру"
+
+#~ msgctxt "Advanced Options"
+#~ msgid "Advanced"
+#~ msgstr "Қосымша"
+
+#~ msgid "Advanced Options"
+#~ msgstr "Қосымша параметрлері"
+
+#~ msgid "Transfer Plugins"
+#~ msgstr "Тасымалдау плагиндері"
+
+#~ msgid "Include"
+#~ msgstr "Қатарға қосу"
+
+#~ msgid "Exclude"
+#~ msgstr "Шығарып тастау"
+
+#~ msgid "Escape sequences"
+#~ msgstr "Escape-тіізбегі"
+
+#~ msgid "Regular expression"
+#~ msgstr "Үлгі өрнегі"
+
+#~ msgid "Pattern"
+#~ msgstr "Өрнек"
+
+#~ msgid "Syntax"
+#~ msgstr "Синтаксис"
+
+#~ msgid "KGet"
+#~ msgstr "KGet"
+
+#~ msgid "1 Item"
+#~ msgid_plural "%1 Items"
+#~ msgstr[0] "%1 нысан"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/сек"
+
+#~ msgctxt "start transfergroup downloads"
+#~ msgid "Start"
+#~ msgstr "Бастау"
+
+#~ msgctxt "stop transfergroup downloads"
+#~ msgid "Stop"
+#~ msgstr "Тоқтау"
+
+#~ msgid "KGet is downloading %1 file"
+#~ msgid_plural "KGet is downloading %1 files"
+#~ msgstr[0] "KGet %1 файлды жүктеуде"
+
+#~ msgid "Error trying to get %1"
+#~ msgstr "%1 дегенді алу жаңылысы"
+
+#~ msgid "Are you sure that you want to remove the group named %1?"
+#~ msgstr "%1 деп аталған топты шын өшірмексіз бе?"
+
+#~ msgid "Remove Group"
+#~ msgstr "Топты өшіру"
+
+#~ msgid "Are you sure that you want to remove the following groups?"
+#~ msgstr "Келесі топты шын өшірмексіз бе?"
+
+#~ msgid "Remove groups"
+#~ msgstr "Топты өшіру"
+
+#~ msgid ""
+#~ "<p>The following transfer has been added to the download list:</p><p "
+#~ "style=\"font-size: small;\">\\%1</p>"
+#~ msgstr ""
+#~ "<p>Келесі файлдың жүктеп алуы аяқталды:</p><p style=\"font-size: small;\">"
+#~ "\\%1</p>"
+
+#~ msgid "Download added"
+#~ msgstr "Жүктеп алу қосылды"
+
+#~ msgid "<p>The following transfer has been added to the download list:</p>"
+#~ msgstr "<p>Жүктеп алу тізіміне келесі тасымалдау тапсырмасы енгізілді:</p>"
+
+#~ msgid "<p>The following transfers have been added to the download list:</p>"
+#~ msgstr "<p>Жүктеп алу тізіміне келесі тасымалдау тапсырмалар енгізілді:</p>"
+
+#~ msgid ""
+#~ "The file %1 already exists.\n"
+#~ "Overwrite?"
+#~ msgstr ""
+#~ "%1 деген файл бар екен.\n"
+#~ "Үстінен жаза берейік пе?"
+
+#~ msgid "Overwrite existing file?"
+#~ msgstr "Файл үстінен жаза берейік пе?"
+
+#~ msgid "Unable to save to: %1"
+#~ msgstr "Келесіге сақталмады: %1"
+
+#~ msgid "My Downloads"
+#~ msgstr "Жүктеп алғандарым"
+
+#~ msgid ""
+#~ "<p>The following URL cannot be downloaded, its protocol is not supported "
+#~ "by KGet:</p>"
+#~ msgid_plural ""
+#~ "<p>The following URLs cannot be downloaded, their protocols are not "
+#~ "supported by KGet:</p>"
+#~ msgstr[0] ""
+#~ "<p>Келесі URL-лер жүктеп алуға келмейді, өйтені олардың протоколдарын "
+#~ "KGet түсінбейді:</p>"
+
+#~ msgid "Protocol unsupported"
+#~ msgstr "Танымайтын протокол"
+
+#~ msgid "New Download"
+#~ msgstr "Жаңа жүктеліс"
+
+#~ msgid "Enter URL:"
+#~ msgstr "URL:"
+
+#~ msgid "Save As"
+#~ msgstr "Былай сақтау"
+
+#~ msgid ""
+#~ "Malformed URL:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Жарамсыз URL:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Malformed URL, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Жарамсыз URL, протоколы келтірілмеген:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "You have already completed a download from the location: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Download it again?"
+#~ msgstr ""
+#~ "Бұл орынынан бірде толығымен жүктеп алынған екен: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Қайтадан жүктейік пе?"
+
+#~ msgid "Download it again?"
+#~ msgstr "Қайта жүктейік пе?"
+
+#~ msgid ""
+#~ "You have a download in progress from the location: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Delete it and download again?"
+#~ msgstr ""
+#~ "Бұл орынынан жүктеу басталған: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Өшіріп, қайта жүктейік пе?"
+
+#~ msgid "Delete it and download again?"
+#~ msgstr "Өшіріп, қайта жүктейік пе?"
+
+#~ msgid "Directory is not writable"
+#~ msgstr "Қапшыққа жазуға болмайды"
+
+#~ msgid ""
+#~ "You have already downloaded that file from another location.\n"
+#~ "\n"
+#~ "Download and delete the previous one?"
+#~ msgstr ""
+#~ "Бұл файл басқа орынынан бірде жүктеп алынған: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Қайтадан жүктеп, алдыңғысын өшіріп тастайық па?"
+
+#~ msgid "File already downloaded. Download anyway?"
+#~ msgstr "Файл жүктелген екен. Сонда да жүктелсін бе?"
+
+#~ msgid "You are already downloading the same file"
+#~ msgstr "Дәл осындай файл жүктелуде екен"
+
+#~ msgid "File already exists"
+#~ msgstr "Файл бар екен"
+
+#~ msgid "Plugin loader could not load the plugin: %1."
+#~ msgstr "Плагин жүктегіші келесі плагинді жүктей алмады: %1."
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is a directory."
+#~ msgstr ""
+#~ "%1\n"
+#~ "деген өшірілмейді\n"
+#~ "өйткені бұл қапшық."
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is not a local file."
+#~ msgstr ""
+#~ "%1\n"
+#~ "деген өшірілмейді\n"
+#~ "өйткені бұл жергілікті файл емес."
+
+#~ msgid ""
+#~ "<p>The following file has finished downloading:</p><p style=\"font-size: "
+#~ "small;\">\\%1</p>"
+#~ msgstr ""
+#~ "<p>Келесі файлдың жүктеп алуы аяқталды:</p><p style=\"font-size: small;\">"
+#~ "\\%1</p>"
+
+#~ msgid "Download completed"
+#~ msgstr "Жүктеу аяқталды"
+
+#~ msgid ""
+#~ "<p>The following transfer has been started:</p><p style=\"font-size: "
+#~ "small;\">\\%1</p>"
+#~ msgstr ""
+#~ "<p>Келесі тасымалдау басталды:</p><p style=\"font-size: small;\">\\%1</p>"
+
+#~ msgid "Download started"
+#~ msgstr "Жүктеп алу басталды"
+
+#~ msgid "Error"
+#~ msgstr "Қате"
+
+#~ msgid ""
+#~ "<p>There has been an error in the following transfer:</p><p style=\"font-"
+#~ "size: small;\">\\%1</p><p>The error message is:</p><p style=\"font-size: "
+#~ "small;\">\\%2</p>"
+#~ msgstr ""
+#~ "<p>Келесі тасымалдауда қате орын алды:</p><p style=\"font-size: small;\">"
+#~ "\\%1</p><p>Қатенің хабарламасы:</p><p style=\"font-size: small;\">\\%2</p>"
+
+#~ msgid "Resolve"
+#~ msgstr "Шешу"
+
+#~ msgid "KGet is now closing, as all downloads have completed."
+#~ msgstr "KGet барлық тапсырмаларын орындап енді доғарады."
+
+#~ msgid "The computer will now turn off, as all downloads have completed."
+#~ msgstr "KGet барлық тапсырмаларын орындады, компьютер енді сөндіріледі."
+
+#~ msgctxt "Shutting down computer"
+#~ msgid "Shutdown"
+#~ msgstr "Компьютерді сөндіру"
+
+#~ msgid ""
+#~ "The computer will now suspend to disk, as all downloads have completed."
+#~ msgstr ""
+#~ "Барлығы жүктеп алынып, компьютер енді күйін діскіне сақтап ұйықтайды."
+
+#~ msgctxt "Hibernating computer"
+#~ msgid "Hibernating"
+#~ msgstr "Ұйықтату"
+
+#~ msgid ""
+#~ "The computer will now suspend to RAM, as all downloads have completed."
+#~ msgstr "Барлығы жүктеп алынып, компьютер енді күйін жадына сақтап қалғиды."
+
+#~ msgctxt "Suspending computer"
+#~ msgid "Suspending"
+#~ msgstr "Қалғу"
+
+#~ msgctxt "abort the proposed action"
+#~ msgid "Abort"
+#~ msgstr "Доғару"
+
+#~ msgid "<p>All transfers have been finished.</p>"
+#~ msgstr "<p>Барлық тасымалдары аяқталды.</p>"
+
+#~ msgid "Downloads completed"
+#~ msgstr "Жүктеулер аяқталды"
+
+#~ msgctxt "file in a filesystem"
+#~ msgid "File"
+#~ msgstr "Файл"
+
+#~ msgctxt "status of the download"
+#~ msgid "Status"
+#~ msgstr "Күй-жайы"
+
+#~ msgctxt "size of the download"
+#~ msgid "Size"
+#~ msgstr "Өлшемі"
+
+#~ msgctxt "checksum of a file"
+#~ msgid "Checksum"
+#~ msgstr "Бақылау қосындысы"
+
+#~ msgctxt "signature of a file"
+#~ msgid "Signature"
+#~ msgstr "Қолтаңбасы"
+
+#~ msgid "KGet Transfer"
+#~ msgstr "KGet тасымалдауы"
+
+#~ msgctxt "the type of the hash, e.g. MD5"
+#~ msgid "Type"
+#~ msgstr "Түріі"
+
+#~ msgctxt "the used hash for verification"
+#~ msgid "Hash"
+#~ msgstr "Хеші"
+
+#~ msgctxt "verification-result of a file, can be true/false"
+#~ msgid "Verified"
+#~ msgstr "Тексерілгені"
+
+#~ msgid ""
+#~ "The key to verify the signature is missing, do you want to download it?"
+#~ msgstr "Қолтаңбасын тексеретін кілт жоқ, оны жүктеп алмақсыз ба?"
+
+#~ msgid ""
+#~ "The signature could not be verified for %1. See transfer settings for "
+#~ "more information."
+#~ msgstr ""
+#~ "%1 дегеннің қолтаңбасы тексерілген жоқ. Толығрақ параметрлерінен білуге "
+#~ "болады."
+
+#~ msgid "Signature not verified"
+#~ msgstr "Қолтаңбасы тексерілмеді"
+
+#~ msgid ""
+#~ "No server for downloading keys is specified in settings. Downloading "
+#~ "aborted."
+#~ msgstr "Кілттерді алатын сервер келтірілмеген. Жүктеу доғарылды."
+
+#~ msgid "No key server"
+#~ msgstr "Кілт сервері жоқ"
+
+#~ msgid ""
+#~ "No useful key server found, key not downloaded. Add more servers to the "
+#~ "settings or restart KGet and retry downloading."
+#~ msgstr ""
+#~ "Істейтін кілт сервері табылмады, кілт алынбады. Параметрлерінде қосымша "
+#~ "серверлерін келтіріп, KGet-ті қайта жегіп, жүктеуді қайта бастаңыз."
+
+#~ msgid "Filesize is larger than maximum file size supported by VFAT."
+#~ msgstr "Фалдың өлшемі VFAT.рұқсат ететін шегінен асады."
+
+#~ msgctxt "A mirror is removed when the file has the wrong download size"
+#~ msgid "%1 removed as it did report a wrong file size."
+#~ msgstr "Файлдың өлшемін дұрыс хабарламаған соң %1 деген өшірілді."
+
+#~ msgctxt "not available"
+#~ msgid "n/a"
+#~ msgstr "а/ж"
+
+#~ msgid "Stalled"
+#~ msgstr "Тоқтап тұр"
+
+#~ msgid "Downloading...."
+#~ msgstr "Жүктеу..."
+
+#~ msgctxt "transfer state: delayed"
+#~ msgid "Delayed"
+#~ msgstr "Кідіртілген"
+
+#~ msgctxt "transfer state: stopped"
+#~ msgid "Stopped"
+#~ msgstr "Тоқталған"
+
+#~ msgctxt "transfer state: aborted"
+#~ msgid "Aborted"
+#~ msgstr "Доғарылған"
+
+#~ msgctxt "transfer state: finished"
+#~ msgid "Finished"
+#~ msgstr "Біткен"
+
+#~ msgctxt "changing the destination of the file"
+#~ msgid "Changing destination"
+#~ msgstr "Мақсаттаған орынды өзгерту"
+
+#~ msgctxt "name of download"
+#~ msgid "Name"
+#~ msgstr "Атауы"
+
+#~ msgctxt "status of download"
+#~ msgid "Status"
+#~ msgstr "Күй-жайы"
+
+#~ msgctxt "size of download"
+#~ msgid "Size"
+#~ msgstr "Өлшемі"
+
+#~ msgctxt "progress of download"
+#~ msgid "Progress"
+#~ msgstr "Барысы"
+
+#~ msgctxt "speed of download"
+#~ msgid "Speed"
+#~ msgstr "Жылдамдығы"
+
+#~ msgctxt "remaining time of download"
+#~ msgid "Remaining Time"
+#~ msgstr "Қалған уақыт"
+
+#~ msgid "No download directory specified."
+#~ msgstr "Жүктеп алатын қапшық келтірілмеген."
+
+#~ msgid "Invalid download directory specified."
+#~ msgstr "Жүктеп алатын қапшық дұрыс келтірілмеген."
+
+#~ msgid "Download directory is not writeable."
+#~ msgstr "Жүктеп алатын қапшыққа жазуға болмайды."
+
+#~ msgid "No download destination specified."
+#~ msgstr "Қайда жүктеп алу келтірілмеген."
+
+#~ msgid "Invalid download destination specified."
+#~ msgstr "Қайда жүктеп алу дұрыс келтірілмеген."
+
+#~ msgid "Download destination is not writeable."
+#~ msgstr "Жүктеп алатын орынға жазуға болмайды."
+
+#~ msgid "No URL specified."
+#~ msgstr "URL-адресі келтірілмеген."
+
+#~ msgid "Malformed URL."
+#~ msgstr "Жарамсыз URL"
+
+#~ msgid "Malformed URL, protocol missing."
+#~ msgstr "Жарамсыз URL, протоколы келтірілмеген."
+
+#~ msgid "Malformed URL, host missing."
+#~ msgstr "Жарамсыз URL, хосты келтірілмеген."
+
+#~ msgid ""
+#~ "Invalid download directory specified:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Жүктеп алатын қапшық дұрыс келтірілмеген:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Download directory is not writeable:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Жүктеп алатын қапшыққа жазуға болмайды:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Invalid download destination specified:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Жүктеп алатын орын дұрыс келтірілмеген:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Download destination is not writeable:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Жүктеп алатын орынға жазуға болмайды:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Malformed URL, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Жарамсыз URL, хосты келтірілмеген:\n"
+#~ "%1"
+
+#~ msgid "File already exists. Overwrite it?"
+#~ msgstr "Бұндай файл бар екен. Үстінен жаза берейік пе?"
+
+#~ msgid ""
+#~ "You have already downloaded that file from another location.\n"
+#~ "Download and delete the previous one?"
+#~ msgstr ""
+#~ "Бұл файл басқа орынынан бірде жүктеп алынған екен.\n"
+#~ "Қайтадан жүктеп, алдыңғысын өшіріп тастайық па?"
+
+#~ msgid ""
+#~ "You are already downloading that file from another location.\n"
+#~ "Download and delete the previous one?"
+#~ msgstr ""
+#~ "Бұл файл басқа орынынан жүктеп алынуда екен.\n"
+#~ "Қайтадан жүктеп, алдыңғысын өшіріп тастайық па?"
+
+#~ msgid ""
+#~ "You have already completed a download from that location. Download it "
+#~ "again?"
+#~ msgstr "Бұл орынынан жүктеп алуы біткен. Қайтадан жүктейік пе?"
+
+#~ msgid ""
+#~ "You have a download in progress from that location.\n"
+#~ "Delete it and download again?"
+#~ msgstr "Бұл орынынан жүктеу басталған. Өшіріп, қайта жүктейік пе?"
+
+#~ msgid ""
+#~ "File already exists:\n"
+#~ "%1\n"
+#~ "Overwrite it?"
+#~ msgstr ""
+#~ "%1\n"
+#~ "деген файл бар екен.\n"
+#~ "Үстінен жаза берейік пе?"
+
+#~ msgid "Malformed URLs."
+#~ msgstr "Жарамсыз URL-адрестер."
+
+#~ msgid "Malformed URLs, protocol missing."
+#~ msgstr "Жарамсыз URL-лер, протоколы келтірілмеген."
+
+#~ msgid "Malformed URLs, host missing."
+#~ msgstr "Жарамсыз URL-лер, хосты келтірілмеген."
+
+#~ msgid ""
+#~ "Malformed URLs:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Жарамсыз URL-адрестер:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Malformed URLs, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Жарамсыз URL-лер, протоколы келтірілмеген:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Malformed URLs, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Жарамсыз URL-лер, хосты келтірілмеген:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Destinations are not writable:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Көздеген орынға жазуға болмайды:\n"
+#~ "%1"
+
+#~ msgid "Files exist already. Overwrite them?"
+#~ msgstr "Бұндай файлдар бар екен. Үстінен жаза берейік пе?"
+
+#~ msgid ""
+#~ "You have already completed downloads at those destinations. Download them "
+#~ "again?"
+#~ msgstr "Бұнда жүктеуі біткендері бар екен. Оларды қайта жүктейік пе?"
+
+#~ msgid ""
+#~ "You have downloads in progress to these destinations.\n"
+#~ "Delete them and download again?"
+#~ msgstr ""
+#~ "Бұнда жүктеуі басталғандары бар.\n"
+#~ "Оларды өшіріп, қайта жүктейік пе?"
+
+#~ msgid ""
+#~ "You have already completed downloads from these locations. Download them "
+#~ "again?"
+#~ msgstr ""
+#~ "Бұл орынынан жүктеп алуы біткендері бар екен. Оларды қайта жүктейік пе?"
+
+#~ msgid ""
+#~ "You have downloads in progress from these locations.\n"
+#~ "Delete them and download again?"
+#~ msgstr ""
+#~ "Бұл орынынан жүктеліп жатқандар бар.\n"
+#~ "Оларды өшіріп, қайта жүктейік пе?"
+
+#~ msgid ""
+#~ "Files exist already:\n"
+#~ "%1\n"
+#~ "Overwrite them?"
+#~ msgstr ""
+#~ "Мынау файлдар бар екен:\n"
+#~ "%1\n"
+#~ "Үстінен жаза берейік пе?"
+
+#~ msgid ""
+#~ "You have already completed downloads at those destinations: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ " Download them again?"
+#~ msgstr ""
+#~ "Бұнда жүктеп алуы біткендері бар екен: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Оларды қайта жүктейік пе?"
+
+#~ msgid ""
+#~ "You have downloads in progress to these destinations: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Delete them and download again?"
+#~ msgstr ""
+#~ "Бұнда жүктеу басталғандары бар: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Оларды өшіріп, қайта жүктейік пе?"
+
+#~ msgid ""
+#~ "You have already completed downloads from these locations: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Download them again?"
+#~ msgstr ""
+#~ "Бұл орынынан жүктеп алуы біткендері бар екен:\n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Оларды қайта жүктейік пе?"
+
+#~ msgid ""
+#~ "You have downloads in progress from these locations: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Delete them and download again?"
+#~ msgstr ""
+#~ "Бұл орынынан жүктеу басталған: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Өшіріп, қайта жүктейік пе?"
+
+#~ msgid "Question"
+#~ msgstr "Сұрақ"
+
+#~ msgctxt "on a question"
+#~ msgid "Yes all"
+#~ msgstr "Бүкіліне Иә"
+
+#~ msgctxt "on a question"
+#~ msgid "No all"
+#~ msgstr "Бүкіліне Жоқ"
+
+#~ msgid "Insert Engine"
+#~ msgstr "Тетігін келтіру"
+
+#~ msgid "Engine name:"
+#~ msgstr "Тетігінің атауы:"
+
+#~ msgid "URL:"
+#~ msgstr "URL:"
+
+#~ msgid "The download (%1) could not be verified. Do you want to repair it?"
+#~ msgstr "Бұл жүктеу (%1) тексерілмейді. Жөндейік пе?"
+
+#~ msgid ""
+#~ "The download (%1) could not be verified. Do you want to redownload it?"
+#~ msgstr "Бұл жүктеу (%1) тексерілмейді. Қайта жүктейік пе?"
+
+#~ msgid "Verification failed."
+#~ msgstr "Тексеру жаңылысы."
+
+#~ msgctxt "transfer state: connecting"
+#~ msgid "Connecting...."
+#~ msgstr "Қосылу.."
+
+#~ msgid "Add New Script"
+#~ msgstr "Жаңа скриптті қосу"
+
+#~ msgid "Edit Script"
+#~ msgstr "Скрипті өзгерту"
+
+#~ msgid "Set Script File"
+#~ msgstr "Скрипт файлын орнату"
+
+#~ msgctxt "Configure script"
+#~ msgid "Configure script"
+#~ msgstr "Скриптті баптау"
+
+#~ msgctxt "Transfer state: processing script"
+#~ msgid "Processing script...."
+#~ msgstr "Скриптті орындау..."
+
+#~ msgctxt "Transfer State: Finished"
+#~ msgid "Finished"
+#~ msgstr "Аякталды"
+
+#~ msgctxt "Transfer State: Aborted"
+#~ msgid "Aborted"
+#~ msgstr "Доғарылды"
+
+#~ msgid "Downloading Metalink File...."
+#~ msgstr "Метасілтеме файлды жүктеу..."
+
+#~ msgid ""
+#~ "A newer version of this Metalink might exist, do you want to download it?"
+#~ msgstr ""
+#~ "Бұл метасілтеменің жаңа нұсқасы болуы мүмкін, оны жүктеп алмақсыз ба?"
+
+#~ msgid "Redownload Metalink"
+#~ msgstr "Метасілтемені қайта жүктеп алу"
+
+#~ msgid "Download failed, no working URLs were found."
+#~ msgstr "Жуктеу жаңылысы, істейтін URL табылған жоқ."
+
+#~ msgid ""
+#~ "The download could not be verified, do you want to repair (if repairing "
+#~ "does not work the download would be restarted) it?"
+#~ msgstr ""
+#~ "Жүктеген тексеруден өтпеді, жөндеп (жөндеуге келмесе - қайта жүктеп) "
+#~ "көресіз бе?"
+
+#~ msgid "File Selection"
+#~ msgstr "Файл таңдау"
+
+#~ msgid "Add item"
+#~ msgstr "Нысанды қосу"
+
+#~ msgid "%1 would become %2"
+#~ msgstr "%1 деген %2 болу керек"
+
+#~ msgctxt "the string that is used to modify an url"
+#~ msgid "Change string"
+#~ msgstr "Жазуды өзгерту"
+
+#~ msgctxt "the mode defines how the url should be changed"
+#~ msgid "Change mode"
+#~ msgstr "Нені өзгерту"
+
+#~ msgctxt "the type of the checksum e.g. md5"
+#~ msgid "Checksum type"
+#~ msgstr "Бақылау қосындысын"
+
+#~ msgid "Append"
+#~ msgstr "Жалғастыру"
+
+#~ msgid "Replace file"
+#~ msgstr "Файлды ауыстыру"
+
+#~ msgid "Replace file-ending"
+#~ msgstr "Файлдың соңын ауыстыру"
+
+#~ msgctxt "transfer state: running"
+#~ msgid "Running...."
+#~ msgstr "Орындау..."
+
+#~ msgctxt "Choked"
+#~ msgid "Yes"
+#~ msgstr "Иә"
+
+#~ msgctxt "Not choked"
+#~ msgid "No"
+#~ msgstr "Жоқ"
+
+#~ msgctxt "Snubbed"
+#~ msgid "Yes"
+#~ msgstr "Иә"
+
+#~ msgctxt "Not snubbed"
+#~ msgid "No"
+#~ msgstr "Жоқ"
+
+#~ msgctxt "Interested"
+#~ msgid "Yes"
+#~ msgstr "Иә"
+
+#~ msgctxt "Not Interested"
+#~ msgid "No"
+#~ msgstr "Жоқ"
+
+#~ msgctxt "Interesting"
+#~ msgid "Yes"
+#~ msgstr "Иә"
+
+#~ msgctxt "Not Interesting"
+#~ msgid "No"
+#~ msgstr "Жоқ"
+
+#~ msgid "IP Address"
+#~ msgstr "IP адресі"
+
+#~ msgid "Client"
+#~ msgstr "Клиент"
+
+#~ msgid "Down Speed"
+#~ msgstr "Алу жылдамдығы"
+
+#~ msgid "Up Speed"
+#~ msgstr "Беру жылдамдығы"
+
+#~ msgid "Choked"
+#~ msgstr "Басылған"
+
+#~ msgid "Snubbed"
+#~ msgstr "Үзілген"
+
+#~ msgid "Availability"
+#~ msgstr "Мүмкіндік"
+
+#~ msgid "DHT"
+#~ msgstr "DHT"
+
+#~ msgid "Score"
+#~ msgstr "Ұпайы"
+
+#~ msgid "Upload Slot"
+#~ msgstr "Жүктеп беретін орын"
+
+#~ msgid "Requests"
+#~ msgstr "Талаптар"
+
+#~ msgid "Downloaded"
+#~ msgstr "Жүктеп алынғаны"
+
+#~ msgid "Uploaded"
+#~ msgstr "Жүктеп берілгені"
+
+#~ msgid "Interested"
+#~ msgstr "Мүдделігі"
+
+#~ msgid "Interesting"
+#~ msgstr "Мүдделігіміз"
+
+#~ msgid "IP address of the peer"
+#~ msgstr "Қарсы жақ IP адресі"
+
+#~ msgid "Which client the peer is using"
+#~ msgstr "Қарсы жақта қолданатын бағдарламасы"
+
+#~ msgid "Download speed"
+#~ msgstr "Жүктеп алу жылдамдығы"
+
+#~ msgid "Upload speed"
+#~ msgstr "Жүктеп беру жылдамдығы"
+
+#~ msgid ""
+#~ "Whether or not the peer has choked us.  If we are choked, the peer will "
+#~ "not send us any data."
+#~ msgstr ""
+#~ "Қарсы жақ бізді басып тастады ма, жоқ па. Басып тастаса, қарсы жақ бізге "
+#~ "ештеңе жібермейді."
+
+#~ msgid ""
+#~ "Snubbed means the peer has not sent us any data in the last 2 minutes"
+#~ msgstr ""
+#~ "'Үзілген'  -  қарсы жақ, соңғы 2 минут бізге ештеңе жібермеді деген сөз."
+
+#~ msgid "How much of the torrent's data the peer has"
+#~ msgstr "Қарсы жақта торренттің қанша деректері бар"
+
+#~ msgid "Whether or not the peer has DHT enabled"
+#~ msgstr "Қарсы жақта DHT рұқсат етілген бе, жоқ па"
+
+#~ msgid ""
+#~ "The score of the peer. KTorrent uses this to determine who to upload to."
+#~ msgstr ""
+#~ "Қарсы жақтың ұпайы. Осыған жүгініп, KTorrent қайсысына жүктеп беретінін "
+#~ "ұйғарады."
+
+#~ msgid "Only peers which have an upload slot will get data from us"
+#~ msgstr "Жүктеп беруге орыны бар жақтар ғана бізден деректерді алады"
+
+#~ msgid "The number of download and upload requests"
+#~ msgstr "Орындалған жүктеп алу мен беру талаптар саны"
+
+#~ msgid "How much data we have downloaded from this peer"
+#~ msgstr "Осы жақтан қаншама дерек жүктеп алынғаны"
+
+#~ msgid "How much data we have uploaded to this peer"
+#~ msgstr "Осы жаққа қаншама дерек жүктеп берілгені"
+
+#~ msgid "Whether the peer is interested in downloading data from us"
+#~ msgstr "Қарсы жақ бізден деректі жүктеп алуға мұдделі ме, жоқ па"
+
+#~ msgid "Whether we are interested in downloading from this peer"
+#~ msgstr "Қарсы жақтан біз деректі жүктеп алуға мұдделіміз бе, жоқ па"
+
+#~ msgid "Chunk"
+#~ msgstr "Тілімі"
+
+#~ msgid "Progress"
+#~ msgstr "Барысы"
+
+#~ msgid "Peer"
+#~ msgstr "Қарсы жақ"
+
+#~ msgid "Files"
+#~ msgstr "Файлдар"
+
+#~ msgid "Number of the chunk"
+#~ msgstr "Тілімдер саны"
+
+#~ msgid "Download progress of the chunk"
+#~ msgstr "Тілімінің жүктеу барысы"
+
+#~ msgid "Which peer we are downloading it from"
+#~ msgstr "Қай жақтан оны жүктеп алып жатырмыз"
+
+#~ msgid "Download speed of the chunk"
+#~ msgstr "Тілімінің жүктеу жылдамдығы"
+
+#~ msgid "Which files the chunk is located in"
+#~ msgstr "Тілімінің жататын файлдары"
+
+#~ msgid "URL"
+#~ msgstr "URL"
+
+#~ msgid "Speed"
+#~ msgstr "Жылдамдығы"
+
+#~ msgid "Status"
+#~ msgstr "Күй-жайы"
+
+#~ msgid "Kick Peer"
+#~ msgstr "Қарсы жақтан ажырау"
+
+#~ msgid "Ban Peer"
+#~ msgstr "Қарсы жаққа тыйым салу"
+
+#~ msgid ""
+#~ "Cannot add the webseed %1, it is already part of the list of webseeds."
+#~ msgstr ""
+#~ "%1 веб-таратушысы қосылмады, ол веб-таратушылар тізімінің бір бөлігі екен."
+
+#~ msgid "Cannot remove webseed %1, it is part of the torrent."
+#~ msgstr "%1 веб-таратушысы өшірілмеді, ол торренттің бір бөлігі екен."
+
+#~ msgid "File"
+#~ msgstr "Файл"
+
+#~ msgid "Size"
+#~ msgstr "Өлшемі"
+
+#~ msgid "Advanced Details for %1"
+#~ msgstr "%1 дегеннің қосымша егжей-тегжейлері"
+
+#~ msgid "Trackers"
+#~ msgstr "Трекерлері"
+
+#~ msgid "Webseeds"
+#~ msgstr "Веб-таратушылар"
+
+#~ msgctxt "Open file"
+#~ msgid "Open"
+#~ msgstr "Ашу"
+
+#~ msgid "Download first"
+#~ msgstr "Алдында жүктеп алу"
+
+#~ msgid "Download normally"
+#~ msgstr "Ретімен жүктеп алу"
+
+#~ msgid "Download last"
+#~ msgstr "Соңында жүктеп алу"
+
+#~ msgid "Do Not Download"
+#~ msgstr "Жүктеп алмау"
+
+#~ msgid "Delete File(s)"
+#~ msgstr "Файл(дар)ды өшіру"
+
+#~ msgid "Move File"
+#~ msgstr "Файлды жылжыту"
+
+#~ msgid "Collapse Folder Tree"
+#~ msgstr "Қапшық бұтақтарын бүктеу"
+
+#~ msgid "Expand Folder Tree"
+#~ msgstr "Қапшық бұтақтарын тарқату"
+
+#~ msgid ""
+#~ "You will lose all data in this file, are you sure you want to do this?"
+#~ msgid_plural ""
+#~ "You will lose all data in these files, are you sure you want to do this?"
+#~ msgstr[0] ""
+#~ "Бұл файл(дар)дағы бүкіл дерек жоғалса да, бәрібір амалды істемексіз бе?"
+
+#~ msgid "Select a directory to move the data to."
+#~ msgstr "Деректі қай қапшыққа жылжытатынын таңдаңыз."
+
+#~ msgid "Url"
+#~ msgstr "URL"
+
+#~ msgid "Seeders"
+#~ msgstr "Таратушылар"
+
+#~ msgid "Leechers"
+#~ msgstr "Сүліктер"
+
+#~ msgid "Times Downloaded"
+#~ msgstr "Жүктеу саны"
+
+#~ msgid "Next Update"
+#~ msgstr "Келесі жаңарту"
+
+#~ msgid "Priority"
+#~ msgstr "Артықшылығы"
+
+#~ msgid "Preview"
+#~ msgstr "Қарап-шығу"
+
+#~ msgctxt "Percent of File Downloaded"
+#~ msgid "% Complete"
+#~ msgstr "Біткен %"
+
+#~ msgctxt "Download first"
+#~ msgid "First"
+#~ msgstr "Алғашқы"
+
+#~ msgctxt "Download last"
+#~ msgid "Last"
+#~ msgstr "Соңғы"
+
+#~ msgctxt "Download normally(not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "Ретімен"
+
+#~ msgctxt "preview available"
+#~ msgid "Available"
+#~ msgstr "Бар"
+
+#~ msgctxt "Preview pending"
+#~ msgid "Pending"
+#~ msgstr "Күтлуде"
+
+#~ msgctxt "No preview available"
+#~ msgid "No"
+#~ msgstr "Жоқ"
+
+#~ msgid "%1 %"
+#~ msgstr "%1 %"
+
+#~ msgctxt "Preview available"
+#~ msgid "Available"
+#~ msgstr "Бар"
+
+#~ msgid "Add Tracker"
+#~ msgstr "Трекерді қосу"
+
+#~ msgid "Enter the URL of the tracker:"
+#~ msgstr "Трекердің URL-адресін келтіріңіз."
+
+#~ msgid "There already is a tracker named <b>%1</b>."
+#~ msgstr "<b>%1</b> деп аталған трекер бар екен."
+
+#~ msgctxt "Download Normal (not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "Кәдімгі ретімен"
+
+#~ msgid "Cannot initialize libktorrent. Torrent support might not work."
+#~ msgstr "libktorrent бастау күйіне келмеді. Торренті істемеуі мүмкін."
+
+#~ msgid "&Advanced Details"
+#~ msgstr "&Жетелеу егжейі-тегжейі"
+
+#~ msgid "&Scan Files"
+#~ msgstr "&Файлдарды зерттеу"
+
+#~ msgid "Downloading Torrent File...."
+#~ msgstr "Торрент файлын жүктеп алу..."
+
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading...."
+#~ msgstr "Жүктеп алу..."
+
+#~ msgid "Cannot add a tracker to a private torrent."
+#~ msgstr "Трекер жекеше торрентке қосылмады."
+
+#~ msgid "Torrent file does not exist"
+#~ msgstr "Торрент файлы жоқ"
+
+#~ msgid "Analyzing torrent...."
+#~ msgstr "Торрентті талдау..."
+
+#~ msgid "Cannot initialize port..."
+#~ msgstr "Порт бастау күйіне келмеді..."
+
+#~ msgctxt "Transfer status: seeding"
+#~ msgid "Seeding...."
+#~ msgstr "Тарату..."
+
+#~ msgid "Error scanning data: %1"
+#~ msgstr "Деректі зерттеу қатесі: %1"
+
+#~ msgid "Scanning data of <b>%1</b> :"
+#~ msgstr "<b>%1</b> дерегін зерттеу :"
+
+#~ msgid "Select a default torrent folder"
+#~ msgstr "Әдетті торрент қапшығын таңдау"
+
+#~ msgid "Select a default temporary folder"
+#~ msgstr "Әдетті уақытша қапшығын таңдау"
+
+#~ msgid "Import dropped files"
+#~ msgstr "Әкелген файлдарды импорттау"
+
+#~ msgctxt "comma, to seperate members of a list"
+#~ msgid ","
+#~ msgstr ","
+
+#~ msgid "File Properties"
+#~ msgstr "Файл қасиеттері"
+
+#~ msgid "Enter a filename."
+#~ msgstr "Файл атауын келтіру."
+
+#~ msgid "The filename exists already, choose a different one."
+#~ msgstr "Былай аталған файл бар екен, басқаша атаңыз."
+
+#~ msgid "Enter at least one URL."
+#~ msgstr "Кемінде бір URL-ін келтіріңіз."
+
+#~ msgid ""
+#~ "Required data entered; also consider entering additional information."
+#~ msgstr "Қажетті дерек келтірілді, мүмкін қосымша мәліметті де толтырасыз?"
+
+#~ msgid "Create a Metalink"
+#~ msgstr "Метасілтемені құру"
+
+#~ msgid "General optional information for the metalink."
+#~ msgstr "Метасілтеменің міндетті емес жалпы мәліметі."
+
+#~ msgid "Unable to load: %1"
+#~ msgstr "Жүктеуге келмейді: %1"
+
+#~ msgid "Metalink Version 4.0 file (*.meta4)"
+#~ msgstr "Метасілтеме файлы, нұсқасы 4.0 (*.meta4)"
+
+#~ msgid "Metalink Version 3.0 file (*.metalink)"
+#~ msgstr "Метасілтеме файлы, нұсқасы 3.0 (*.metalink)"
+
+#~ msgid "Define the saving location."
+#~ msgstr "Сақтайтын орнын анықтаңыз."
+
+#~ msgctxt "file as in file on hard drive"
+#~ msgid "Enter at least one file."
+#~ msgstr "Кемінде бір файлды келтіріңіз."
+
+#~ msgid "Import Links"
+#~ msgstr "Сілтемелерді импорттау"
+
+#~ msgctxt "Download the items which have been selected"
+#~ msgid "&Download Checked"
+#~ msgstr "&Жүктеме тексерілді"
+
+#~ msgid "Auxiliary header"
+#~ msgstr "Қосалқы айдары"
+
+#~ msgid "File Name"
+#~ msgstr "Файл атауы"
+
+#~ msgid "Description"
+#~ msgstr "Сипаттамасы"
+
+#~ msgctxt "list header: type of file"
+#~ msgid "File Type"
+#~ msgstr "Файл түрі"
+
+#~ msgid "Location (URL)"
+#~ msgstr "Орналасуы (URL)"
+
+#~ msgid "Links in: %1 - KGet"
+#~ msgstr "Сілтемелер: %1 - KGet"
+
+#~ msgid "&Select All Filtered"
+#~ msgstr "Барлық сүзгіленгенді &таңдау"
+
+#~ msgid "&Select All"
+#~ msgstr "Барлығын &таңдау"
+
+#~ msgid "D&eselect All Filtered"
+#~ msgstr "Барлық сүзгілен таңдауын ш&ешу"
+
+#~ msgid "D&eselect All"
+#~ msgstr "Барлық таңдауын ш&ешу"
+
+#~ msgid "not specified"
+#~ msgstr "келтірілмеген"
+
+#~ msgctxt "Mirror as in server, in url"
+#~ msgid "Mirror"
+#~ msgstr "Айна"
+
+#~ msgctxt "The priority of the mirror"
+#~ msgid "Priority"
+#~ msgstr "Артықшылық"
+
+#~ msgctxt "Number of paralell connections to the mirror"
+#~ msgid "Connections"
+#~ msgstr "Қосылымдар"
+
+#~ msgctxt "Location = country"
+#~ msgid "Location"
+#~ msgstr "Орналасуы"
+
+#~ msgid "Add mirror"
+#~ msgstr "Айнасын қосу"
+
+#~ msgctxt "Adds the item and reopens the dialog to add a further item"
+#~ msgid "Add more"
+#~ msgstr "Тағы қосу"
+
+#~ msgid "%1 has been successfully added."
+#~ msgstr "%1 айнасы сәтті қосылды."
+
+#~ msgid "Modify the used mirrors."
+#~ msgstr "Қолданған айналарды өзгерту."
+
+#~ msgid "Download again"
+#~ msgstr "Қайта жүктеп алу"
+
+#~ msgctxt "Delete selected history-item"
+#~ msgid "Delete selected"
+#~ msgstr "Таңдалғанын өшіру"
+
+#~ msgid "Open file"
+#~ msgstr "Файлды ашу"
+
+#~ msgid "Today"
+#~ msgstr "Бүгін"
+
+#~ msgid "Last week"
+#~ msgstr "Өткен аптада"
+
+#~ msgid "Last Month"
+#~ msgstr "Өткен айда"
+
+#~ msgid "A long time ago"
+#~ msgstr "Баяғыда"
+
+#~ msgid "Under 10MiB"
+#~ msgstr "10MiBтен төмен"
+
+#~ msgid "Between 10MiB and 50MiB"
+#~ msgstr "10MiB пен 50MiB арасында"
+
+#~ msgid "Between 50MiB and 100MiB"
+#~ msgstr "50MiB пен 100MiB арасында"
+
+#~ msgid "More than 100MiB"
+#~ msgstr "100MiBтен артық"
+
+#~ msgid "Transfer History"
+#~ msgstr "Тасымалдау журналы"
+
+#~ msgid "&Open File"
+#~ msgstr "&Файлды ашу"
+
+#~ msgctxt "The transfer is running"
+#~ msgid "Running"
+#~ msgstr "Орындалып жатыр"
+
+#~ msgctxt "The transfer is stopped"
+#~ msgid "Stopped"
+#~ msgstr "Тоқталды"
+
+#~ msgctxt "The transfer is aborted"
+#~ msgid "Aborted"
+#~ msgstr "Доғарылды"
+
+#~ msgctxt "The transfer is finished"
+#~ msgid "Finished"
+#~ msgstr "Аяқталды"
+
+#~ msgid "Source File"
+#~ msgstr "Қайдан"
+
+#~ msgid "Destination"
+#~ msgstr "Қайда"
+
+#~ msgid "Time"
+#~ msgstr "Уақыты"
+
+#~ msgid "File Size"
+#~ msgstr "Өлшемі"
+
+#~ msgid "Less than 1MiB"
+#~ msgstr "1MiBтан кем"
+
+#~ msgid "Between 1MiB-10MiB"
+#~ msgstr "1MiB-10MiB аралықта"
+
+#~ msgid "Between 10MiB-100MiB"
+#~ msgstr "10MiB-100MiB аралықта"
+
+#~ msgid "Between 100MiB-1GiB"
+#~ msgstr "100MiB-1GiB аралықта"
+
+#~ msgid "More than 1GiB"
+#~ msgstr "1GiBтен артық"
+
+#~ msgid "Last month"
+#~ msgstr "Өткен айда"
+
+#~ msgctxt "the transfer has been finished"
+#~ msgid "Finished"
+#~ msgstr "Аяқталды"
+
+#~ msgid "You have no source URLs selected."
+#~ msgstr "Көз URL-дер таңдалмаған."
+
+#~ msgid "Files that exist already in the current folder have been marked."
+#~ msgstr "Назардағы қапшықта табылған файлдар белгіленді."
+
+#~ msgctxt "an error happened in connection with the user input"
+#~ msgid "Error:"
+#~ msgstr "Қате:"
+
+#~ msgctxt "a warning happened in connection with the user input"
+#~ msgid "Warning:"
+#~ msgstr "Ескерту:"
+
+#~ msgctxt "trust level"
+#~ msgid "Unknown"
+#~ msgstr "Беймәлім"
+
+#~ msgctxt "trust level"
+#~ msgid "Undefined"
+#~ msgstr "Анықталмаған"
+
+#~ msgctxt "trust level"
+#~ msgid "Never"
+#~ msgstr "Ешқашан"
+
+#~ msgctxt "trust level"
+#~ msgid "Marginal"
+#~ msgstr "Толық емес"
+
+#~ msgctxt "trust level"
+#~ msgid "Full"
+#~ msgstr "Толығымен"
+
+#~ msgctxt "trust level"
+#~ msgid "Ultimate"
+#~ msgstr "Әлбетте"
+
+#~ msgctxt ""
+#~ "Signature here is meant in cryptographic terms, so the signature of a "
+#~ "file."
+#~ msgid "Signature of %1."
+#~ msgstr "%1 қолтаңбасы"
+
+#~ msgid "This option is not supported for the current transfer."
+#~ msgstr "Болып жатқан тасымалда бұл параметр қолданбайды."
+
+#~ msgid "You need to define a signature."
+#~ msgstr "Қолтаңбалау керек еді."
+
+#~ msgid ""
+#~ "No fingerprint could be found, check if the signature is correct or "
+#~ "verify the download."
+#~ msgstr ""
+#~ "Бақылау тізбегі табылған жоқ, қолтаңбасының дұрыстығын не жүктемесін "
+#~ "тексеріңіз."
+
+#~ msgid "The key has been revoked."
+#~ msgstr "Қілті қайтарылып алынған."
+
+#~ msgid "The key is disabled."
+#~ msgstr "Кілт бұғатталған."
+
+#~ msgid "The key is invalid."
+#~ msgstr "Кілт жарамсыз."
+
+#~ msgid "The key is expired."
+#~ msgstr "Кілт ескірген."
+
+#~ msgid "The key is not to be trusted."
+#~ msgstr "Сенім артылмаған кілт."
+
+#~ msgid "The key is to be trusted marginally."
+#~ msgstr "КІлтке толық сенім жоқ."
+
+#~ msgid "The key is to be trusted fully."
+#~ msgstr "Толығымен сенімді кілт."
+
+#~ msgid "The key is to be trusted ultimately."
+#~ msgstr "Әлбетте сенімді кілт."
+
+#~ msgid "Trust level of the key is unclear."
+#~ msgstr "Кілтке артылған сенімділігі анықсыз."
+
+#~ msgid "Unlimited"
+#~ msgstr "Шектелмеген"
+
+#~ msgctxt "pgp signature is verified"
+#~ msgid "Verified"
+#~ msgstr "Расталды"
+
+#~ msgid "The signature has been verified successfully."
+#~ msgstr "Қолтаңбасы сәтті расталды."
+
+#~ msgid "The signature has been verified successfully:"
+#~ msgstr "Қолтаңбасы сәтті расталды:"
+
+#~ msgctxt "pgp signature is not verified"
+#~ msgid "Failed"
+#~ msgstr "Расталмады"
+
+#~ msgid ""
+#~ "Caution: Verification failed. Either you entered the wrong signature, or "
+#~ "the data has been modified."
+#~ msgstr ""
+#~ "Абайлаңыз: Қолтаңбасы расталған жоқ. Келтіргеніңіз қате, немесе дерегі "
+#~ "өзгертілген."
+
+#~ msgid ""
+#~ "Verification not possible. Check the entered data, whether gpg-agent is "
+#~ "running, or whether you have an Internet connection (for retrieving keys.)"
+#~ msgstr ""
+#~ "Растау мүмкін емес. Келтірілген деректі, gpg-агенті жегілгенін, "
+#~ "Интернетке қосылуыңыз (қілттерін алу үшін) істейтінін тексеріңіз."
+
+#~ msgid ""
+#~ "Feature is not supported, as KGet is not compiled with QPGME support."
+#~ msgstr ""
+#~ "Таңымайтын қасиет, себебі - KGet бағдарламасы QPGME-қолдауысыз "
+#~ "компиляцияланған."
+
+#~ msgid "Error:"
+#~ msgstr "Қате:"
+
+#~ msgid "Problems:"
+#~ msgstr "Мәселе:"
+
+#~ msgid "Information:"
+#~ msgstr "Ақпарат:"
+
+#~ msgid "Select columns"
+#~ msgstr "Бағандарды таңдау"
+
+#~ msgid "Transfer Details"
+#~ msgstr "Тасымалдың егжей-тегжейлері"
+
+#~ msgid "Add checksum"
+#~ msgstr "Бақылау қосындысын қосу"
+
+#~ msgid "%1 %2 has been successfully added."
+#~ msgstr "%1 %2 сәтті қосылды."
+
+#~ msgid "Transfer Verification for %1"
+#~ msgstr "%1 тасымалын растау"
+
+#~ msgid "%1 was successfully verified."
+#~ msgstr "%1 сәтті расталды."
+
+#~ msgid "Verification successful"
+#~ msgstr "Растауы сәтті өтті"
+
+#~ msgid "Rename File"
+#~ msgstr "Файлды қайта атау"
+
+#~ msgid "Rename %1 to:"
+#~ msgstr "%1 дегенді келесіге өзгерту:"
+
+#~ msgid "&Rename"
+#~ msgstr "Қ&айта атау"
+
+#~ msgid "Semantic Desktop"
+#~ msgstr "Семантикалық Үстел"
+
+#~ msgid "Delete Group"
+#~ msgid_plural "Delete Groups"
+#~ msgstr[0] "Топт(ард)ы өшіру"
+
+#~ msgid "Rename Group..."
+#~ msgid_plural "Rename Groups..."
+#~ msgstr[0] "Топт(ард)ы қайта атау..."
+
+#~ msgctxt "fix position for droptarget"
+#~ msgid "Sticky"
+#~ msgstr "Жабыстыру"
+
+#~ msgid "Quit KGet"
+#~ msgstr "KGet-тен шығу"
+
+#~ msgid "The dropped file is a KGet Transfer List"
+#~ msgstr "Әкелген файл KGet тасымалдар тзімі"
+
+#~ msgid "&Download"
+#~ msgstr "&Жүктеп алу"
+
+#~ msgid "&Load transfer list"
+#~ msgstr "&Тасымалдар тізімін жүктеу"
+
+#~ msgid "Show Main Window"
+#~ msgstr "Негізгі терезені көрсету"
+
+#~ msgid "Hide Main Window"
+#~ msgstr "Негізгі терезені жасыру"
+
+#~ msgid "Drop Target"
+#~ msgstr "Сүйреп әкелетін орын"
+
+#~ msgid "You can drag download links into the drop target."
+#~ msgstr "Жүктеп алатынды осыған сүйреп әкеліп тастаңыз."
+
+#~ msgctxt "%1 filename, %2 total size, %3 status"
+#~ msgid "%1(%2) %3"
+#~ msgstr "%1(%2) %3"
+
+#~ msgctxt ""
+#~ "%1 filename, %2 percent complete, %3 downloaded out of %4 total size"
+#~ msgid "%1(%2% %3/%4) Speed:%5/s"
+#~ msgstr "%1(%2% %3/%4) Жылдамдығы:%5/с"
+
+#~ msgctxt ""
+#~ "%1 filename, %2 percent complete, %3 downloaded out of %4 total size, %5 "
+#~ "status"
+#~ msgid "%1(%2% %3/%4) %5"
+#~ msgstr "%1(%2% %3/%4) %5"
+
+#~ msgid "Ready"
+#~ msgstr "Дайын"
+
+#~ msgid ""
+#~ "Drop target has been hidden. If you want to show it again, go to Settings-"
+#~ ">Configure KGet->Look & Feel."
+#~ msgstr ""
+#~ "Сүйреп әкелетін орын тығылды. Қайтарам десеңіз, 'Баптау-> KGet баптауы -"
+#~ ">Көрінісі' мәзіріне барыңыз."
+
+#~ msgid "Hiding drop target"
+#~ msgstr "Сүйреп әкелетін орынды жасыру"
+
+#~ msgid "Transfer Settings for %1"
+#~ msgstr "%1 тасымалдың параметрлері"
+
+#~ msgid ""
+#~ "Changing the destination did not work, the destination stays unmodified."
+#~ msgstr "Қабылдау орны өзгертілмейті - ол өзгермей қалды."
+
+#~ msgid "Destination unmodified"
+#~ msgstr "Қабылдау орны өзгерген жоқ"
+
+#~ msgid "Average speed: %1/s"
+#~ msgstr "Орташа жылдамдығы: %1/с"
+
+#~ msgid "%1 of %2"
+#~ msgstr "%1 / %2"
+
+#~ msgid "Group Settings for %1"
+#~ msgstr "'%1' топтық параметрлері"
+
+#~ msgctxt "@info"
+#~ msgid "Unable to start the server: %1."
+#~ msgstr "Сервер жегілмеді: %1"
+
+#~ msgctxt "@item speed of transfer per seconds"
+#~ msgid "%1/s"
+#~ msgstr "%1/с"
+
+#~ msgctxt "@label"
+#~ msgid "KGet Web Interface"
+#~ msgstr "KGet Веб интерфейсі"
+
+#~ msgctxt "@label number"
+#~ msgid "Nr"
+#~ msgstr "№"
+
+#~ msgctxt "@label"
+#~ msgid "File name"
+#~ msgstr "Файл атауы"
+
+#~ msgctxt "@label Progress of transfer"
+#~ msgid "Finished"
+#~ msgstr "Аяқталды"
+
+#~ msgctxt "@label Speed of transfer"
+#~ msgid "Speed"
+#~ msgstr "Жылдамдығы"
+
+#~ msgctxt "@label Status of transfer"
+#~ msgid "Status"
+#~ msgstr "Күй-жайы"
+
+#~ msgctxt "@action:button start a transfer"
+#~ msgid "Start"
+#~ msgstr "Бастау"
+
+#~ msgctxt "@action:button"
+#~ msgid "Stop"
+#~ msgstr "Тоқтау"
+
+#~ msgctxt "@action:button"
+#~ msgid "Remove"
+#~ msgstr "Өшіру"
+
+#~ msgctxt "@label Download from"
+#~ msgid "Source:"
+#~ msgstr "Қайдан:"
+
+#~ msgctxt "@label Save download to"
+#~ msgid "Saving to:"
+#~ msgstr "Қайда:"
+
+#~ msgctxt "@label Title in header"
+#~ msgid "Web Interface"
+#~ msgstr "Веб интерфейсі"
+
+#~ msgctxt "@action"
+#~ msgid "Settings"
+#~ msgstr "Параметрлері"
+
+#~ msgctxt "@action"
+#~ msgid "Refresh"
+#~ msgstr "Жаңарту"
+
+#~ msgctxt "@action"
+#~ msgid "Enter URL: "
+#~ msgstr "URL:"
+
+#~ msgctxt "@action:button"
+#~ msgid "OK"
+#~ msgstr "ОК"
+
+#~ msgctxt "@action Refresh download list every x (seconds)"
+#~ msgid "Refresh download list every"
+#~ msgstr "Жүктеу тізімінің жаңарту аралығы:"
+
+#~ msgctxt "@action (Refresh very x )seconds"
+#~ msgid "seconds"
+#~ msgstr "секунд"
+
+#~ msgctxt "@action:button"
+#~ msgid "Save Settings"
+#~ msgstr "Параметрлерін сақтау"
+
+#~ msgctxt "@title"
+#~ msgid "Downloads"
+#~ msgstr "Жүктеп алымдары"
+
+#~ msgctxt "@label text in footer"
+#~ msgid "KGet Web Interface | Valid XHTML 1.0 Strict &amp; CSS"
+#~ msgstr "KGet Веб-интерфейсі | Нақты XHTML 1.0 Strict &amp; CSS"
+
+#~ msgid "An advanced download manager for KDE"
+#~ msgstr "Озық KDE жүктеу менеджері"
+
+#~ msgid ""
+#~ "(C) 2005 - 2009, The KGet developers\n"
+#~ "(C) 2001 - 2002, Patrick Charbonnier\n"
+#~ "(C) 2002, Carsten Pfeiffer\n"
+#~ "(C) 1998 - 2000, Matej Koss"
+#~ msgstr ""
+#~ "(C) 2005 - 2009, KGet құрастырушылары\n"
+#~ "(C) 2001 - 2002, Patrick Charbonnier\n"
+#~ "(C) 2002, Carsten Pfeiffer\n"
+#~ "(C) 1998 - 2000, Matej Koss"
+
+#~ msgid "<a href=\"mailto:kget@kde.org\">kget@kde.org</a>"
+#~ msgstr "<a href=\"mailto:kget@kde.org\">kget@kde.org</a>"
+
+#~ msgid "Lukas Appelhans"
+#~ msgstr "Lukas Appelhans"
+
+#~ msgid "Maintainer, Core Developer, Torrent Plugin Author"
+#~ msgstr "Жетілдірушісі, Негізін жасаушысы, Торрент плагинінің авторы"
+
+#~ msgid "Dario Massarin"
+#~ msgstr "Dario Massarin"
+
+#~ msgid "Core Developer"
+#~ msgstr "Негізін жасаушысы"
+
+#~ msgid "Urs Wolfer"
+#~ msgstr "Urs Wolfer"
+
+#~ msgid "Manolo Valdes"
+#~ msgstr "Manolo Valdes"
+
+#~ msgid "Core Developer, Multithreaded Plugin Author"
+#~ msgstr "Негізін жасаушысы, Көпағынды плагинінің авторы"
+
+#~ msgid "Matthias Fuchs"
+#~ msgstr "Matthias Fuchs"
+
+#~ msgid "Javier Goday"
+#~ msgstr "Javier Goday"
+
+#~ msgid "Developer"
+#~ msgstr "Құрастырушысы"
+
+#~ msgid "Patrick Charbonnier"
+#~ msgstr "Patrick Charbonnier"
+
+#~ msgid "Former Developer"
+#~ msgstr "Бұрыңғы құрастырушысы"
+
+#~ msgid "Carsten Pfeiffer"
+#~ msgstr "Carsten Pfeiffer"
+
+#~ msgid "Matej Koss"
+#~ msgstr "Matej Koss"
+
+#~ msgid "Joris Guisson"
+#~ msgstr "Joris Guisson"
+
+#~ msgid "BTCore (KTorrent) Developer"
+#~ msgstr "BTCore (KTorrent) құрастырушысы"
+
+#~ msgid "Mensur Zahirovic (Nookie)"
+#~ msgstr "Mensur Zahirovic (Nookie)"
+
+#~ msgid "Design of Web Interface"
+#~ msgstr "Веб интерфейсін жобалау"
+
+#~ msgid "Start KGet with drop target"
+#~ msgstr "KGet-ті сүйреп әкелетін орынымен бастау"
+
+#~ msgid "Start KGet with hidden main window"
+#~ msgstr "KGet-ті негізгі терезесін жасырып бастау"
+
+#~ msgid "Start KGet without drop target animation"
+#~ msgstr "KGet-ті сүйреп әкелетін орнының анимациясыз бастау"
+
+#~ msgid "Execute Unit Testing"
+#~ msgstr "Модуль сынағын орындау"
+
+#~ msgid "URL(s) to download"
+#~ msgstr "Жүктейтін URL адрес(тер)"
+
+#~ msgid "KGet Transfer List"
+#~ msgstr "KGet тасымалдар тізімі"
+
+#~ msgid "Export Transfers"
+#~ msgstr "Тасымалдар тзімін экспорттау"
+
+#~ msgid "&New Download..."
+#~ msgstr "&Жаңа жүктеу..."
+
+#~ msgid "&Import Transfers..."
+#~ msgstr "Тасымалдар тізімін &импорттау..."
+
+#~ msgid "&Export Transfers List..."
+#~ msgstr "Тасымалдар тізімін &экспорттау..."
+
+#~ msgid "&Export Transfers as Plain Text..."
+#~ msgstr "Тасымалдар тізімін кәдімгі мәтінімен &экспорттау..."
+
+#~ msgid "&Create a Metalink"
+#~ msgstr "Метасілтемені құ&ру"
+
+#~ msgid "Top Priority"
+#~ msgstr "Ең жоғары артықшылығы"
+
+#~ msgid "Least Priority"
+#~ msgstr "Ең төмен артықшылығы"
+
+#~ msgid "Increase Priority"
+#~ msgstr "Артықшылығын көтеру"
+
+#~ msgid "Decrease Priority"
+#~ msgstr "Артықшылығын түсіру"
+
+#~ msgid "Set Icon..."
+#~ msgstr "Таңбашасын орнату..."
+
+#~ msgid "Auto-Paste Mode"
+#~ msgstr "Авто орналастыру режімі"
+
+#~ msgid ""
+#~ "<b>Auto paste</b> button toggles the auto-paste mode on and off.\n"
+#~ "When set, KGet will periodically scan the clipboard for URLs and paste "
+#~ "them automatically."
+#~ msgstr ""
+#~ "<b>Авто орналастыру</b> батырмасы - авто орналастыру режімді\n"
+#~ "қосып-өшіреді. Бұл режімде KGet алмасу буферде URL адресі бар-жоғын "
+#~ "мезгіл сайын қарап тұрады, бар болса - автоматты түрде орналастырады."
+
+#~ msgid "Use KGet as Konqueror Download Manager"
+#~ msgstr "KGet Konqueror-дың жүктеу менеджері болсын"
+
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Remove Selected"
+#~ msgstr "Таңдалғанды алып тастау"
+
+#~ msgctxt "delete all finished transfers"
+#~ msgid "Remove All Finished"
+#~ msgstr "Аяқталғандарды алып тастау"
+
+#~ msgctxt "redownload selected transfer item"
+#~ msgid "Redownload Selected"
+#~ msgstr "Таңдалғанды қайта жүктеп алу"
+
+#~ msgid "Start / Resume All"
+#~ msgstr "Барлығын бастау/жалғастыру"
+
+#~ msgid "Start / Resume Selected"
+#~ msgstr "Таңдалғанды бастау/жалғастыру"
+
+#~ msgid "Stop All"
+#~ msgstr "Барлығын тоқтату"
+
+#~ msgid "Stop Selected"
+#~ msgstr "Таңдалғанды тоқтату"
+
+#~ msgid "Start / Resume"
+#~ msgstr "Бастау/жалғастыру"
+
+#~ msgid "Stop"
+#~ msgstr "Тоқтату"
+
+#~ msgid "Remove"
+#~ msgstr "Алып тастау"
+
+#~ msgid "Open Destination"
+#~ msgstr "Мақсатталған орынды ашу"
+
+#~ msgid "Open File"
+#~ msgstr "Файлды ашу"
+
+#~ msgid "Show Details"
+#~ msgstr "Егжей-тегжейлерін көрсету"
+
+#~ msgid "Copy URL to Clipboard"
+#~ msgstr "URL-ді алмасу буферіне көшіріп алу"
+
+#~ msgid "&Transfer History"
+#~ msgstr "&Тасымалдар журналы"
+
+#~ msgid "&Group Settings"
+#~ msgstr "&Топ параметрлері"
+
+#~ msgid "&Transfer Settings"
+#~ msgstr "&Тасымалдың параметрлері"
+
+#~ msgid "Import &Links..."
+#~ msgstr "&Сілтемелерді импорттау..."
+
+#~ msgid ""
+#~ "This is the first time you have run KGet.\n"
+#~ "Would you like to enable KGet as the download manager for Konqueror?"
+#~ msgstr ""
+#~ "KGet-ті бірінші рет жегіп жатырсыз.\n"
+#~ "KGet-ті Konqueror-дың жүктеу менеджері болсын ба?"
+
+#~ msgid "Konqueror Integration"
+#~ msgstr "Konqueror-мен біріктіру"
+
+#~ msgid "Enable"
+#~ msgstr "Болсын"
+
+#~ msgid "Do Not Enable"
+#~ msgstr "Болмасын"
+
+#~ msgid "All Openable Files"
+#~ msgstr "Барлық ашылатын файлдар"
+
+#~ msgctxt "window title including overall download progress in percent"
+#~ msgid "KGet - %1%"
+#~ msgstr "KGet - %1%"
+
+#~ msgid ""
+#~ "Some transfers are still running.\n"
+#~ "Are you sure you want to close KGet?"
+#~ msgstr ""
+#~ "Кейбір тасымалдаулар әлі орындалып жатыр.\n"
+#~ "KGet-тен шыққыңыз келгені рас па?"
+
+#~ msgid "Confirm Quit"
+#~ msgstr "Шығуды құптау"
+
+#~ msgid "Enter Group Name"
+#~ msgstr "Топтың атауын келтіріңіз"
+
+#~ msgid "Group name:"
+#~ msgstr "Топтың атауы:"
+
+#~ msgid "Are you sure you want to delete the selected transfer?"
+#~ msgid_plural "Are you sure you want to delete the selected transfers?"
+#~ msgstr[0] "Таңдалған тасымалды өшірмексіз бе?"
+
+#~ msgid "Confirm transfer delete"
+#~ msgstr "Тасымалды өшіруін құптау"
+
+#~ msgid ""
+#~ "KGet has been temporarily disabled as download manager for Konqueror. If "
+#~ "you want to disable it forever, go to Settings->Advanced and disable "
+#~ "\"Use as download manager for Konqueror\"."
+#~ msgstr ""
+#~ "KGet уақытша Konqueror-дың жүктеу менеджері болудан айырылды. Оны тұрақты "
+#~ "айыру үшін мәзірдегі 'KGet баптауы->Қосымша' дегенге барып, \"Konqueror-"
+#~ "дың жүктеу менеджері қылу\"."
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Сайран Киккарин"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "sairan@computer.org"
+
+#~ msgid "Checksums"
+#~ msgstr "Бақылау қосындылар"
+
+#~ msgid "Automatic verification:"
+#~ msgstr "Автоматты түрде растауы:"
+
+#~ msgid "Weak (fastest)"
+#~ msgstr "Босаң (ең жылдамы)"
+
+#~ msgid "Strong (recommended)"
+#~ msgstr "Қатаң (лайықтысы осы)"
+
+#~ msgid "Strongest (slowest)"
+#~ msgstr "Ең қатаң (баяу)"
+
+#~ msgid "Used checksum:"
+#~ msgstr "Қолданатын бақылау қосындысы:"
+
+#~ msgid "Signature"
+#~ msgstr "Қолтаңба"
+
+#~ msgid "Automatic verification"
+#~ msgstr "Автоматты түрде расталсын"
+
+#~ msgid "Automatic downloading of missing keys"
+#~ msgstr "Жетпеген кілттер автоматты түрде алынсын"
+
+#~ msgid "Keyservers:"
+#~ msgstr "Қілт серверлері:"
+
+#~ msgid "Move &Up"
+#~ msgstr "&Жоғарлату"
+
+#~ msgid "Move &Down"
+#~ msgstr "&Төмендету"
+
+#~ msgid "Use default folders for groups as suggestion"
+#~ msgstr "Топтардың әдетті қапшықтары ұсынылғандай болсын"
+
+#~ msgid "Rename"
+#~ msgstr "Атауын өзгерту"
+
+#~ msgid "Select Icon..."
+#~ msgstr "Таңбашаны таңдау"
+
+#~ msgid "Limit Maximum Downloads Per Group"
+#~ msgstr "Топтағы жүктеу саның шектеу"
+
+#~ msgid "Number of downloads:"
+#~ msgstr "Жүктеулер саны:"
+
+#~ msgid "Downloads from the same server:"
+#~ msgstr "Бір серверінен жүктеулер саны:"
+
+#~ msgid "Speed Limit"
+#~ msgstr "Жылдамдығын шектеу"
+
+#~ msgid "Global download limit:"
+#~ msgstr "Жалпы жүктеп алу шегі:"
+
+#~ msgid " KiB/s"
+#~ msgstr " КиБ/сек"
+
+#~ msgid "Global upload limit:"
+#~ msgstr "Жалпы жүктеп беру шегі:"
+
+#~ msgid "Per transfer:"
+#~ msgstr "Әр тасымал үшін:"
+
+#~ msgid "Reconnect on Error or Broken Connection"
+#~ msgstr "Қосылым жаңылғанда не үзілгенде қайталансын"
+
+#~ msgid "Number of retries:"
+#~ msgstr "Қайталау саны:"
+
+#~ msgid "Retry after:"
+#~ msgstr "Қайталау аралығы:"
+
+#~ msgid " sec"
+#~ msgstr " сек"
+
+#~ msgid "After Completing Downloads"
+#~ msgstr "Жүктеулері біткен соң"
+
+#~ msgid "Auto shutdown"
+#~ msgstr "Компьютерді сөндіру"
+
+#~ msgid "Auto disconnect"
+#~ msgstr "Қосылымын ажырату"
+
+#~ msgid "Enable Web Interface"
+#~ msgstr "Веб интерфейсі істесін"
+
+#~ msgid "Port:"
+#~ msgstr "Порты:"
+
+#~ msgid "User:"
+#~ msgstr "Пайдаланушы:"
+
+#~ msgid "Password:"
+#~ msgstr "Паролі:"
+
+#~ msgid "Startup"
+#~ msgstr "Жегілгенде"
+
+#~ msgid "Show splashscreen"
+#~ msgstr "Бейнепердесі көрсетілсін"
+
+#~ msgid "Enable animations"
+#~ msgstr "Анимациясы болсын"
+
+#~ msgid "Enable popup tooltip"
+#~ msgstr "Қалқымалы ишарасы болсын"
+
+#~ msgid "Show drop target"
+#~ msgstr "Сүйреп әкелетін орын көрсетілсін"
+
+#~ msgid "Disable confirmation dialogs (less verbosity)"
+#~ msgstr "Құптау диалогтары болмасын (сұрақтарын қысқарту)"
+
+#~ msgid "Enable system tray icon"
+#~ msgstr "Жүйелік сөреде таңбашасы болсын"
+
+#~ msgid "Execute action after all downloads have been finished:"
+#~ msgstr "Барлық жүктеулері аяқталған соң орындайтыны:"
+
+#~ msgid "At startup:"
+#~ msgstr "Бастағанда:"
+
+#~ msgid "Restore Download State"
+#~ msgstr "Жүктеуді қалпына келтіру"
+
+#~ msgid "Start All Downloads"
+#~ msgstr "Барлық жүктеп алуды бастау"
+
+#~ msgid "Stop All Downloads"
+#~ msgstr "Барлық жүктеп алуды тоқтату"
+
+#~ msgid "History"
+#~ msgstr "Журналы"
+
+#~ msgid "History backend:"
+#~ msgstr "Журналы:"
+
+#~ msgid "Enable KDE global progress tracking"
+#~ msgstr "Жалпы KDE жүйелік қадағалауы рұқсат етілсін"
+
+#~ msgid "Show every single download "
+#~ msgstr "Әрбір жүктеп алуы көрсетілсін "
+
+#~ msgid "Show overall progress"
+#~ msgstr "Жалпы барысы көрсетілсін"
+
+#~ msgid "Use as download manager for Konqueror:"
+#~ msgstr "Konqueror-дың жүктеу менеджері қылу."
+
+#~ msgid "Monitor clipboard for files to download"
+#~ msgstr "Жүктейтін файлдарды алмасу буферінен күту"
+
+#~ msgid "Case insensitive:"
+#~ msgstr "Үлкен-кішісін елемеу:"
+
+#~ msgid "Search Engines"
+#~ msgstr "Іздеу тетіктері"
+
+#~ msgid "Engine Name"
+#~ msgstr "Тетіктің атауы"
+
+#~ msgid "New Engine..."
+#~ msgstr "Жаңа тетігі..."
+
+#~ msgid "Number of connections per URL:"
+#~ msgstr "Әр URL-дің қосылым саны:"
+
+#~ msgid "Use search engines"
+#~ msgstr "Іздеу тетіктері қолданылсын"
+
+#~ msgid "Search for verification information"
+#~ msgstr "Растау мәліметін іздеу"
+
+#~ msgid "File Settings"
+#~ msgstr "Файл параметрлері"
+
+#~ msgid "Filename:"
+#~ msgstr "Файл атауы:"
+
+#~ msgid "Use Normalized Name"
+#~ msgstr "Нормаланған атауы"
+
+#~ msgid "Use Literal Name"
+#~ msgstr "Нақты атауы"
+
+#~ msgid "Quality:"
+#~ msgstr "Сапасы:"
+
+#~ msgid "Best Quality (.mp4)"
+#~ msgstr "Жоғары сапасы (.mp4)"
+
+#~ msgid "Normal Quality (.flv)"
+#~ msgstr "Кәдімгі сапасы (.flv)"
+
+#~ msgid ""
+#~ "Provide login info of your YouTube account in order to access restricted "
+#~ "media."
+#~ msgstr ""
+#~ "Шектелген медиасына қатынау үшін YouTube тіркелгіңіздін кіру "
+#~ "мәліметіңізді келтіріңіз."
+
+#~ msgid "Login Info"
+#~ msgstr "Кіру мәліметі"
+
+#~ msgid "Username:"
+#~ msgstr "Пайдаланушы:"
+
+#~ msgid ".netrc must have a hostname called 'youtube'."
+#~ msgstr ".netrc файлында 'youtube' деп аталған хост болу керек."
+
+#~ msgid "User .netrc file"
+#~ msgstr "Пайдаланушының .netrc файлы"
+
+#~ msgid "User Scripts"
+#~ msgstr "Пайдаланушының скрипттері"
+
+#~ msgid "Path"
+#~ msgstr "Жолы"
+
+#~ msgid "RegExp"
+#~ msgstr "Үлгі өрнегі"
+
+#~ msgid "New Script...."
+#~ msgstr "Жаңа скрипт..."
+
+#~ msgid "Edit...."
+#~ msgstr "Өңдеу..."
+
+#~ msgid "Configure...."
+#~ msgstr "Баптау..."
+
+#~ msgid "Regexp:"
+#~ msgstr "ҮлгіӨрнек:"
+
+#~ msgid "Path:"
+#~ msgstr "Жолы:"
+
+#~ msgid "Description:"
+#~ msgstr "Сипаттамасы:"
+
+#~ msgid "Select the files you want to be downloaded."
+#~ msgstr "Жүктеп алатын файлдарды таңдау."
+
+#~ msgid "Number of simultaneous file downloads:"
+#~ msgstr "Бірмезгілде жүктейтін файл саны:"
+
+#~ msgid "Number of mirrors per file:"
+#~ msgstr "Әр файлдың айналар саны:"
+
+#~ msgid "Change string:"
+#~ msgstr "Өзгертетін жазу жолы:"
+
+#~ msgid "Mode:"
+#~ msgstr "Режімі:"
+
+#~ msgid "Checksum type:"
+#~ msgstr "Бақылау қосындының түрі:"
+
+#~ msgid "Result:"
+#~ msgstr "Нәтижесі:"
+
+#~ msgid "label"
+#~ msgstr "тамға"
+
+#~ msgid "Remove Tracker"
+#~ msgstr "Трекерді өшіру"
+
+#~ msgid "Change Tracker"
+#~ msgstr "Трекерді өзгерту"
+
+#~ msgid "Update Trackers"
+#~ msgstr "Трекерлерді жаңарту"
+
+#~ msgid "Restore Defaults"
+#~ msgstr "Әдеттегілеріне қайту"
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Webseed to add to the "
+#~ "torrent.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">Note: </span>Only http webseeds are supported.</p></body></"
+#~ "html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Торрентіне қосылатын "
+#~ "веб-тарату.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">Ескерту: </span>Тек http веб-таратушыларды ғана таниды.</"
+#~ "p></body></html>"
+
+#~ msgid "Add Webseed"
+#~ msgstr "Веб-таратушыны қосу"
+
+#~ msgid "Remove Webseed"
+#~ msgstr "Веб-таратушыны кетіру"
+
+#~ msgid "Chunks"
+#~ msgstr "Тілімдер"
+
+#~ msgid "Total:"
+#~ msgstr "Жалпы:"
+
+#~ msgid "Currently downloading:"
+#~ msgstr "Жүктеп жатқаны:"
+
+#~ msgid "Downloaded:"
+#~ msgstr "Жүктеп алынғаны:"
+
+#~ msgid "Excluded:"
+#~ msgstr "Шығарылып тастағаны:"
+
+#~ msgid "Left:"
+#~ msgstr "Қалғаны:"
+
+#~ msgid "Size:"
+#~ msgstr "Өлшемі:"
+
+#~ msgid "Scanning data of torrent:"
+#~ msgstr "Торренттің деректерін зерттеу:"
+
+#~ msgid "Number of chunks found:"
+#~ msgstr "Табылған тілімдер саны:"
+
+#~ msgid "Number of chunks failed:"
+#~ msgstr "Қате тілімдер саны:"
+
+#~ msgid "Number of chunks not downloaded:"
+#~ msgstr "Жүктеп алынбаған тілімдер саны:"
+
+#~ msgid "Number of chunks downloaded:"
+#~ msgstr "Жүктеп алынған тілімдер саны:"
+
+#~ msgid "0"
+#~ msgstr "0"
+
+#~ msgid "Cancel"
+#~ msgstr "Қ айту"
+
+#~ msgid "Stats"
+#~ msgstr "Статистика"
+
+#~ msgid "Seeders:"
+#~ msgstr "Таратушылары:"
+
+#~ msgid "<n>"
+#~ msgstr "<n>"
+
+#~ msgid "Download speed:"
+#~ msgstr "Жүктеп  алу жылдамдығы:"
+
+#~ msgid "Leechers:"
+#~ msgstr "Сүліктері:"
+
+#~ msgid "Upload speed:"
+#~ msgstr "Жүктеп  беру жылдамдығы:"
+
+#~ msgctxt "chunks left"
+#~ msgid "Left:"
+#~ msgstr "Қалғаны:"
+
+#~ msgctxt "all chunks"
+#~ msgid "All:"
+#~ msgstr "Барлығы:"
+
+#~ msgctxt "source-file"
+#~ msgid "Source:"
+#~ msgstr "Қайдан:"
+
+#~ msgid "Saving to:"
+#~ msgstr "Қайда:"
+
+#~ msgid "Upload limit per transfer:"
+#~ msgstr "Әр тасымал үшін жүктеп беру шегі:"
+
+#~ msgid "No Limit"
+#~ msgstr "Шеғі жоқ"
+
+#~ msgid "KiB"
+#~ msgstr "КиБ"
+
+#~ msgid "Download limit per transfer:"
+#~ msgstr "Әр тасымал үшін жүктеп алу шегі:"
+
+#~ msgid "Enable UTP protocol"
+#~ msgstr "UTP протоколы рұқсат етілсін"
+
+#~ msgid "Folders"
+#~ msgstr "Қапшықтар"
+
+#~ msgid "Default torrent folder:"
+#~ msgstr "Әдетті торент қапшығы:"
+
+#~ msgid "Default temporary folder"
+#~ msgstr "Әдетті уақытша сақтау қапшығы:"
+
+#~ msgid "Pre-allocate disk space"
+#~ msgstr "Алдын-ала арнаған диск орны"
+
+#~ msgctxt "General options."
+#~ msgid "General"
+#~ msgstr "Жалпы"
+
+#~ msgid "Create partial checksums"
+#~ msgstr "Бөлшек бақылау қосындылары есептелсін"
+
+#~ msgid "General URL:"
+#~ msgstr "Жалпқ URL-і:"
+
+#~ msgid ""
+#~ "Automatically create checksums for the selected types. Keep in mind that "
+#~ "this might take a while."
+#~ msgstr ""
+#~ "Таңдалған түріндегі бақылау қосындыларын құру. Құруға біршама уақыт "
+#~ "керегі екенін ескерген жөн."
+
+#~ msgid ""
+#~ "Enter URLs here if all the dropped files are on that server and in the "
+#~ "same directory. For each dropped file the URL would consist of the "
+#~ "entered part and the filename."
+#~ msgstr ""
+#~ "Егер сүйреп әкелген файлдар серверде бір қапшықта болса, олардын ULR-ін "
+#~ "осында келтіріңіз. Әрбір файлдың адресі келтірілген ULR-ден жане файл "
+#~ "атауынан құрылады.."
+
+#~ msgid "Types of the checksums:"
+#~ msgstr "Бақылау қорсындылар түрі:"
+
+#~ msgid "Create checksums:"
+#~ msgstr "Келесінің қосындылары:"
+
+#~ msgctxt "These entries are optional."
+#~ msgid "Optional"
+#~ msgstr "Міндетті емес"
+
+#~ msgid "Optional data:"
+#~ msgstr "Міндетті емес деректер:"
+
+#~ msgid "Enter information that all chosen files share."
+#~ msgstr "Барлық таңдалған файлдарға ортақ мәліметті келтіріңіз."
+
+#~ msgid "Required"
+#~ msgstr "Міндетті"
+
+#~ msgid "Used Mirrors:"
+#~ msgstr "Қолданатын айналары:"
+
+#~ msgid "Recommended"
+#~ msgstr "Толырғаны жөн болары"
+
+#~ msgid "File size (in bytes):"
+#~ msgstr "Файл өлшемі (байт):"
+
+#~ msgid "0123456789"
+#~ msgstr "0123456789"
+
+#~ msgid "Verification:"
+#~ msgstr "Растауы:"
+
+#~ msgid "Optional"
+#~ msgstr "Міндетті емес"
+
+#~ msgid ""
+#~ "This assistant allows you to create metalinks from scratch or base them "
+#~ "on existing metalinks. A lot of the fields are optional or recommended, "
+#~ "so enter them if desired. The minimum is a save location, at least one "
+#~ "file and one URL."
+#~ msgstr ""
+#~ "Бұл көмекші метасилтемелерді негізінен бастап, не бар метасілтемелерді "
+#~ "негіздеп кұрып береді. Өрістерінің көбі міндетті емес не толтырылғаны жөн "
+#~ "болар дегендері, қаласаңыз ғана толтырыңыз. Міндеттісі тек сақтау орыны, "
+#~ "кемінде бір файлы мен бір URL-і."
+
+#~ msgid "Save created Metalink at:"
+#~ msgstr "Құрылған метасілтеменің сақтау орны:"
+
+#~ msgid "Create new Metalink"
+#~ msgstr "Жаңа метасілтеме құру"
+
+#~ msgid "Load existing Metalink:"
+#~ msgstr "Бар метасілтеме жүктеу"
+
+#~ msgid "*.metalink *.meta4|Metalink file (*.metalink *.meta4)"
+#~ msgstr "*.metalink *.meta4|Метасілтеме файлы (*.metalink *.meta4)"
+
+#~ msgid "General information:"
+#~ msgstr "Жалпы мәліметі"
+
+#~ msgid "Here you can enter optional general information on the metalink."
+#~ msgstr "Мұнда метасілтеме туралы жалпы мәліметті келтіре аласыз."
+
+#~ msgid "Origin:"
+#~ msgstr "Көзі:"
+
+#~ msgid "Web URL to the metalink"
+#~ msgstr "Метасілтеменің Веб URL-і"
+
+#~ msgid "Dynamic means that updated metalinks can be found at \"Origin\"."
+#~ msgstr ""
+#~ "Динамикалық дегені жаңартылған метасілтеме \"Көзінде\" табылатынын "
+#~ "көрсетеді."
+
+#~ msgid "Dynamic:"
+#~ msgstr "Динамикалық"
+
+#~ msgid "Metalink published"
+#~ msgstr "Метасілтеме жарияланды"
+
+#~ msgid "Date and time:"
+#~ msgstr "Күні мен уақыты"
+
+#~ msgid "Timezone offset:"
+#~ msgstr "Уақыт белдеуі:"
+
+#~ msgid "Negative offset:"
+#~ msgstr "Теріс шегінуі:"
+
+#~ msgid "Metalink updated"
+#~ msgstr "Метасілтеме жаңартылды"
+
+#~ msgid "Identity"
+#~ msgstr "Іс-әлпеті"
+
+#~ msgid "Version:"
+#~ msgstr "Нұсқасы:"
+
+#~ msgid "Logo:"
+#~ msgstr "Логотипі"
+
+#~ msgid "URL to the logo"
+#~ msgstr "Логотипінің URL-адресі"
+
+#~ msgid "The language of the file"
+#~ msgstr "Файл қай тілде"
+
+#~ msgid "Language:"
+#~ msgstr "Тілі:"
+
+#~ msgid "Operating systems:"
+#~ msgstr "Операциялық жүйелері:"
+
+#~ msgid "Supported OSes, separated with commas"
+#~ msgstr "Танитын ОЖ-лері, үтірмен бөліктелген"
+
+#~ msgid "Copyright:"
+#~ msgstr "Авторлық құқықтары"
+
+#~ msgid "Publisher:"
+#~ msgstr "Жариялаушысы:"
+
+#~ msgid "Name:"
+#~ msgstr "Атауы:"
+
+#~ msgid "publisher"
+#~ msgstr "жариялаушы"
+
+#~ msgid "Name of the publisher"
+#~ msgstr "Жариялаушының атауы"
+
+#~ msgid "URL to the publisher"
+#~ msgstr "Жариялаушының URL-адресі"
+
+#~ msgctxt "Files as in files on a server"
+#~ msgid "Files:"
+#~ msgstr "Файлдар:"
+
+#~ msgid "Add local files"
+#~ msgstr "Жергілікті файлдарды қосу"
+
+#~ msgid ""
+#~ "Add at least one file. Adding local files adds a lot of information "
+#~ "automatically."
+#~ msgstr ""
+#~ "Кемінде бір файлды қосыңыз. Жергілікті файлды қосқанда, автоматты түрде "
+#~ "көп мәлімет келтіріледі."
+
+#~ msgid "Adding local files..."
+#~ msgstr "Жергілікті файлдарды қосу..."
+
+#~ msgid "You need to set mirrors for the entries with an icon."
+#~ msgstr "Таңбашасы бар жазулар үшін айналарын көрсету керек."
+
+#~ msgid "&File with links to import:"
+#~ msgstr "Импорттайтын &файл мен сілтемелер"
+
+#~ msgid "&Import Links"
+#~ msgstr "Cілтемелерді &импорттау"
+
+#~ msgid "Show:"
+#~ msgstr "Көрсететіні:"
+
+#~ msgctxt "filter: show all file types"
+#~ msgid "&All"
+#~ msgstr "&Барлығы"
+
+#~ msgid "&Videos"
+#~ msgstr "&Видео"
+
+#~ msgid "Ima&ges"
+#~ msgstr "&Кескіндер"
+
+#~ msgid "A&udio"
+#~ msgstr "&Аудио"
+
+#~ msgid "A&rchives"
+#~ msgstr "А&рхивтер"
+
+#~ msgid "You can use wildcards for filtering."
+#~ msgstr "Сүзгілеу үшін үлгі қалқаларын қолдануға болады."
+
+#~ msgid "Filter files here...."
+#~ msgstr "Файлдарды сүзгілеу..."
+
+#~ msgid "Contains"
+#~ msgstr "Мазмұнында бары:"
+
+#~ msgid "Does Not Contain"
+#~ msgstr "Мазмұнында жоғы:"
+
+#~ msgid "Inver&t Selection"
+#~ msgstr "&Таңдауын терістеу"
+
+#~ msgctxt "Check as in mark, not as in verify"
+#~ msgid "Chec&k Selected"
+#~ msgstr "Таңдағанды &белгілеу"
+
+#~ msgid "Show &web content"
+#~ msgstr "&Веб мазмұны көрсетілсін"
+
+#~ msgid "Mirror:"
+#~ msgstr "Айнасы:"
+
+#~ msgid "Number of connections:"
+#~ msgstr "Қосылым саны:"
+
+#~ msgid "Enter a URL"
+#~ msgstr "URL-ді келтіріңіз"
+
+#~ msgid "Priority:"
+#~ msgstr "Артықшылығы:"
+
+#~ msgid "Optional: The priority of the mirror, 1 highest 999999 lowest."
+#~ msgstr ""
+#~ "Міндетті емес: Айнаның артықшылығы, 1 -ең жоғарғысы, 999999 - ең "
+#~ "төменгісі."
+
+#~ msgid "Location:"
+#~ msgstr "Орналасуы:"
+
+#~ msgid "Clear History"
+#~ msgstr "Журналды тазалау"
+
+#~ msgctxt "View modes"
+#~ msgid "View Modes"
+#~ msgstr "Көрсету режімдері"
+
+#~ msgid "Select Ranges"
+#~ msgstr "Ауқымдарды таңдау"
+
+#~ msgid "Date"
+#~ msgstr "Күні"
+
+#~ msgid "Host"
+#~ msgstr "Хост"
+
+#~ msgid "Filter History"
+#~ msgstr "Журналды сүзгілеу"
+
+#~ msgctxt "delete selected transfer"
+#~ msgid "Delete Selected"
+#~ msgstr "Таңдаланын өшіру"
+
+#~ msgid "Download"
+#~ msgstr "Жүктеп алу"
+
+#~ msgid "TextLabel"
+#~ msgstr "ЖарлықЖазуы"
+
+#~ msgctxt "hash type as in md5t, sha1 etc."
+#~ msgid "Hash type:"
+#~ msgstr "Хеш түрі:"
+
+#~ msgctxt "hash as a hash of type md5, sha1 etc."
+#~ msgid "Hash:"
+#~ msgstr "Хеші:"
+
+#~ msgid "Enter a hash key"
+#~ msgstr "Хеш кілтің келтіріңіз"
+
+#~ msgid "Status:"
+#~ msgstr "Күй-жайы:"
+
+#~ msgid "Remaining Time:"
+#~ msgstr "Қалған уақыт:"
+
+#~ msgid "Transfer Settings"
+#~ msgstr "Тасымалдың параметрлері"
+
+#~ msgid "Download Destination:"
+#~ msgstr "Қайда жүктеп алу:"
+
+#~ msgctxt "No value has been set"
+#~ msgid "Not set"
+#~ msgstr "Орнатылмаған"
+
+#~ msgid " KiB"
+#~ msgstr " КиБ"
+
+#~ msgid "Upload Limit:"
+#~ msgstr "Жүктеп беру шегі:"
+
+#~ msgid "Download Limit:"
+#~ msgstr "Жүктеп алу шегі:"
+
+#~ msgid "Maximum Share Ratio:"
+#~ msgstr "Максимум ортақтасу ара-қатынасы:"
+
+#~ msgid "Modify the mirrors used for downloading."
+#~ msgstr "Жүктеп алатын айналарды өзгерту."
+
+#~ msgctxt "The available mirrors (servers) for downloading"
+#~ msgid "Mirrors"
+#~ msgstr "Айналары"
+
+#~ msgctxt "verification of the download (e.g. by using MD5)"
+#~ msgid "Verification"
+#~ msgstr "Растау"
+
+#~ msgid "PGP signature:"
+#~ msgstr "PGP қолтаңбасы:"
+
+#~ msgid "Key"
+#~ msgstr "Кілті"
+
+#~ msgid "Issuer:"
+#~ msgstr "Шығарушысы:"
+
+#~ msgid "E-Mail:"
+#~ msgstr "Эл.пошта:"
+
+#~ msgid "Comment:"
+#~ msgstr "Түсініктеме"
+
+#~ msgid "Creation:"
+#~ msgstr "Шығарған кезі:"
+
+#~ msgid "Expiration:"
+#~ msgstr "Жарамдылық соңы:"
+
+#~ msgid "Trust:"
+#~ msgstr "Сенімділігі:"
+
+#~ msgid "Fingerprint:"
+#~ msgstr "Бақылау тізбегі:"
+
+#~ msgid "Verify"
+#~ msgstr "Растау"
+
+#~ msgid "Group Settings"
+#~ msgstr "Топтық параметрлері"
+
+#~ msgid "Default folder:"
+#~ msgstr "Әдетті қапшық:"
+
+#~ msgid "Moves all transfers with the regular expression to this group"
+#~ msgstr "Үлгі өрнегіне сәйкесті тасымалдарын осы топқа жылжыту"
+
+#~ msgid "Regular expression:"
+#~ msgstr "Үлгі өрнегі:"
+
+#~ msgid "*movies*"
+#~ msgstr "*фильмдер*"
+
+#~ msgid "Maximum download speed:"
+#~ msgstr "Жүктеп алу жылдамдығының шегі:"
+
+#~ msgid "Maximum upload speed:"
+#~ msgstr "Жүктеп беру жылдамдығының шегі:"
+
+#~ msgid "Destination:"
+#~ msgstr "Қайда:"
+
+#~ msgid "Transfer group:"
+#~ msgstr "Тасымалдар тобы:"
+
+#~ msgid "Verify the finished download with the selected checksum."
+#~ msgstr "Жүктеп алғанды таңдалған бақылау қосындысын есептеп растау."
+
+#~ msgid "&Verify"
+#~ msgstr "&Растау"
+
+#~ msgid "Verifying:"
+#~ msgstr "Растап жатқаны:"
+
+#~ msgid "&File"
+#~ msgstr "&Файл"
+
+#~ msgid "&Downloads"
+#~ msgstr "&Жүктеп алулары"
+
+#~ msgid "&Settings"
+#~ msgstr "&Баптау"
+
+#~ msgid "&Help"
+#~ msgstr "&Анықтама"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Негізгі Құралдар панелі"
+
+#~ msgid "Sets to show the splashscreen while KGet is loading"
+#~ msgstr "KGet жүктелгенде бейнепердесін көрсетуді орнату"
+
+#~ msgid "The width of the columns in the history view"
+#~ msgstr "Журнал көрінісіндегі бағандарының ені"
+
+#~ msgid "List of the available search engines"
+#~ msgstr "Бар іздеу тетіктерінің тізімі"
+
+#~ msgid "List of the available search engine URLs"
+#~ msgstr "Бар іздеу тетіктерінің URL-адрестері"
+
+#~ msgid "List of the Regexp to match input URL"
+#~ msgstr "Кірістегі URL-ге сәйкесті үлгі өрнектер тізімі"
+
+#~ msgid "List of descriptions for user scripts"
+#~ msgstr "Пайдаланушы скрипттердің сипаттамалар тізімі"
+
+#~ msgid "List of whether the script is enabled"
+#~ msgstr "Скрипт рұқсатты-бұғатталған күйінің тізімі"
+
+#~ msgid "There are no links in the active frame of the current HTML page."
+#~ msgstr "Назардағы HTML парағындағы белсенді фреймде сілтемелер жоқ."
+
+#~ msgid "Form"
+#~ msgstr "Пішін"
+
+#~ msgid "An error occurred...."
+#~ msgstr "Бір қате орын алды..."
+
+#~ msgid "Remove Tag"
+#~ msgstr "Тегті өшіру"
+
+#~ msgid "Add Tag"
+#~ msgstr "Тегті қосу"
+
+#~ msgid "Tag Settings for the groups"
+#~ msgstr "Топтарының тег параметрлері"
+
+#~ msgid "Tag Settings"
+#~ msgstr "Тег параметрлері"
+
+#~ msgid "Available tags:"
+#~ msgstr "Болатын тегтер:"
+
+#~ msgid "Used tags:"
+#~ msgstr "Қолданған тегері:"
+
+#~ msgid "Enter a new Tag"
+#~ msgstr "Жаңа тегті келтіру"
+
+#~ msgid "Enter a new tag"
+#~ msgstr "Жаңа тегті келтіру"
+
+#~ msgid "Modify Tags..."
+#~ msgstr "Тегтерді өзгерту..."
+
+#~ msgid "Unable to continue: KGet cannot download using this protocol."
+#~ msgstr "Жалғастыру болмады: KGet бұл протоколмен істемейді."
+
+#~ msgid "The width of the columns in the main view"
+#~ msgstr "Негізгі көрінісіндегі бағандарының ені"
+
+#~ msgid ""
+#~ "Another group with this name already exists. Please select a different "
+#~ "name."
+#~ msgstr "Былай аталған басқа топ бар екен. Басқаша атаңыз."
+
+#~ msgid "Group Name Already in Use"
+#~ msgstr "Былай аталған топ бар екен"
+
+#~ msgid "Add"
+#~ msgstr "Қосу"
+
+#~ msgid "Delete"
+#~ msgstr "Өшіру"
+
+#~ msgid "Configure..."
+#~ msgstr "Баптау..."
+
+#~ msgid "Illegal token: %1"
+#~ msgstr "Дұрыс емес лексема: %1"
+
+#~ msgid "Decode error"
+#~ msgstr "Шифрды шешу қатесі"
+
+#~ msgid "Unexpected end of input"
+#~ msgstr "Кірістің кутпеген соңы"
+
+#~ msgid "Cannot convert %1 to an int"
+#~ msgstr "%1 деген int-ке түрлендірілмейді"
+
+#~ msgid "Torrent is incomplete."
+#~ msgstr "Торрент толық емес."
+
+#~ msgid "Cannot open %1 : %2"
+#~ msgstr "%1 ашылмады: %2"
+
+#~ msgid "Cannot open %1 for writing : readonly filesystem"
+#~ msgstr "%1 жазуға ашылмады: тек оқитын ғана файлдық жүйе"
+
+#~ msgid "Cannot expand file %1 : %2"
+#~ msgstr "%1 файл тарқатылмады: %2"
+
+#~ msgid "Error : Reading past the end of the file %1"
+#~ msgstr "Қате: %1 файлдың соңынан кейін оқу"
+
+#~ msgid "Failed to seek file %1 : %2"
+#~ msgstr "%1 файлында іздеу жаңылысы: %2"
+
+#~ msgid "Error reading from %1"
+#~ msgstr "%1 дегеннен оқу қатесі"
+
+#~ msgid "Failed to write to file %1 : %2"
+#~ msgstr "%1 файлына жазу жаңылысы: %2"
+
+#~ msgid "Cannot preallocate diskspace : %1"
+#~ msgstr "Дискіде орын арнап бөлінбеді: %1"
+
+#~ msgid "Cannot open index file %1 : %2"
+#~ msgstr "%1 индекс файлы ашылмады: %2"
+
+#~ msgid "Failed to open %1 : %2"
+#~ msgstr "%1  ашылмады: %2"
+
+#~ msgid "Failed to create %1 : %2"
+#~ msgstr "%1 дегенді құру жаңылысы: %2"
+
+#~ msgid "Cannot create file %1 : %2"
+#~ msgstr "%1 файлы құрылмады: %2"
+
+#~ msgid "Failed to write first chunk to DND file : %1"
+#~ msgstr "DND файлына бірінші тілімін жазу жаңылысы: %1"
+
+#~ msgid "Failed to write last chunk to DND file : %1"
+#~ msgstr "DND файлына соңғы тілімін жазу жаңылысы: %1"
+
+#~ msgid "Cannot open file %1 : %2"
+#~ msgstr "%1 файлы ашылмады: %2"
+
+#~ msgid "OK"
+#~ msgstr "ОК"
+
+#~ msgid "Announcing"
+#~ msgstr "Жариялау"
+
+#~ msgid "Error: %1"
+#~ msgstr "Қате: %1"
+
+#~ msgid "Redirect without a redirect location"
+#~ msgstr "Жаңа орынға бағыттаусыз қайта бағыттау"
+
+#~ msgid "Timeout contacting tracker %1"
+#~ msgstr "%1 трекермен байланысуды күту уақыты өтті"
+
+#~ msgid "Unable to resolve hostname %1"
+#~ msgstr "%1 хост атауының IP-і анықталмады"
+
+#~ msgid "Invalid response from tracker"
+#~ msgstr "Трекер дұрыс жауап бермеді"
+
+#~ msgid "Invalid data from tracker"
+#~ msgstr "Трекерден жарамсыз дерек келді"
+
+#~ msgid "Invalid tracker URL"
+#~ msgstr "Трекер URL-і дұрыс емес"
+
+#~ msgid "Cannot bind to udp port %1 or the 10 following ports."
+#~ msgstr "udp %1 портымен не ілеспе 10 портымен байланыс құрылмады."
+
+#~ msgid "Unknown client"
+#~ msgstr "Беймәлім клиент"
+
+#~ msgid ""
+#~ "An error occurred while loading the torrent <b>%1</b>:<br/><b>%2</b><br/"
+#~ ">The torrent is probably corrupt or is not a valid torrent file."
+#~ msgstr ""
+#~ "<b>%1</b> торрентын жүктеу кезде қате орын алды:<br/><b>%2</b> <br/"
+#~ ">Торрент мүмкін бүлінген не бұл дұрыс торрент файлы емес."
+
+#~ msgid ""
+#~ "An error occurred while loading the torrent:<br/><b>%1</b><br/>The "
+#~ "torrent is probably corrupt or is not a valid torrent file."
+#~ msgstr ""
+#~ "Торрентті жүктеу кезде қате орын алды:<br/> <b>%1</b> <br/>Торрент мүмкін "
+#~ "бүлінген не бұл дұрыс торрент файлы емес."
+
+#~ msgid "Unable to create %1 : %2"
+#~ msgstr "%1 құрылмады: %2"
+
+#~ msgid ""
+#~ "You are already downloading this torrent %1, the list of trackers of both "
+#~ "torrents has been merged."
+#~ msgstr ""
+#~ "%1 деген торрент жүктелуде, екеуінің де трекерлер тізімі біріктірілген."
+
+#~ msgid "You are already downloading the torrent %1"
+#~ msgstr "%1 деген торрент жүктелуде екен"
+
+#~ msgid "Not started"
+#~ msgstr "Басталмаған"
+
+#~ msgid "Seeding completed"
+#~ msgstr "Тарату бітті"
+
+#~ msgctxt "Status of a torrent file"
+#~ msgid "Seeding"
+#~ msgstr "Тарату"
+
+#~ msgid "Downloading"
+#~ msgstr "Жүктеп алу"
+
+#~ msgid "Stopped"
+#~ msgstr "Тоқталды"
+
+#~ msgid "Allocating diskspace"
+#~ msgstr "Дискіде орынды арнау"
+
+#~ msgid "Queued for seeding"
+#~ msgstr "Тарату кезегіне қойылды"
+
+#~ msgid "Queued for downloading"
+#~ msgstr "Жүктеп алу кезегіне қойылды"
+
+#~ msgid "Checking data"
+#~ msgstr "Дерегін тексеру"
+
+#~ msgid "Stopped. No space left on device."
+#~ msgstr "Тоқтатылды. Құрылғыда орын қалған жоқ."
+
+#~ msgid "Cannot open file %1: %2"
+#~ msgstr "%1 файлы ашылмады: %2"
+
+#~ msgid "Cannot create index file: %1"
+#~ msgstr "Индекс файлы құрылмады: %1"
+
+#~ msgid "Corrupted torrent."
+#~ msgstr "Бүлінген торрент"
+
+#~ msgid " Unable to open torrent file %1 : %2"
+#~ msgstr " %1 торрент файлы ашылмайды: %2"
+
+#~ msgid "Parse Error"
+#~ msgstr "Талдау қатесі"
+
+#~ msgid "Cannot open file : %1 : %2"
+#~ msgstr "%1 файлы ашылмады: %2"
+
+#~ msgid "Not connected"
+#~ msgstr "Қосылмаған"
+
+#~ msgid "Resolving proxy %1:%2"
+#~ msgstr "%1 проксиді тану: %2"
+
+#~ msgid "Resolving hostname %1"
+#~ msgstr "%1 хосттың IP-ін анықтау"
+
+#~ msgid "Connection closed"
+#~ msgstr "Қосылым жабылды"
+
+#~ msgid "Error: request failed: %1"
+#~ msgstr "Қате: талап жаңылысы: %1"
+
+#~ msgid "Connected"
+#~ msgstr "Қосылған"
+
+#~ msgid "Error: Failed to connect to webseed"
+#~ msgstr "Қате: веб-таратушысына қосылу жаңылысы"
+
+#~ msgid "Connecting"
+#~ msgstr "Қосылу"
+
+#~ msgid "Failed to connect to webseed"
+#~ msgstr "Веб-таратушысына қосылу жаңылысы"
+
+#~ msgid "Failed to resolve hostname of webseed"
+#~ msgstr "Веб-таратушысы хост IP-ін анықтау жаңылысы"
+
+#~ msgid "Error: failed to connect, server not responding"
+#~ msgstr "Қате: қосылу жаңылысы, сервер жауап бермейді"
+
+#~ msgid "Error: request timed out"
+#~ msgstr "Қате: талаптың күту уақыты өтті"
+
+#~ msgid "Redirected without a new location."
+#~ msgstr "Жаңа орынсыз қайта бағыттау."
+
+#~ msgid "1 peer"
+#~ msgid_plural "%1 peers"
+#~ msgstr[0] "%1 қарсы жақ"
+
+#~ msgid "Not in use"
+#~ msgstr "Қолданыста жоқ"
+
+#~ msgid "Cannot write to %1 : %2"
+#~ msgstr "%1 дегенге жазу болмады: %2"
+
+#~ msgid "Cannot read from %1"
+#~ msgstr "%1 дегеннен оқу болмады"
+
+#~ msgid "Cannot open log file %1 : %2"
+#~ msgstr "%1 журнал файлы ашылмады: %2"
+
+#~ msgid "Cannot create directory %1"
+#~ msgstr "%1 қапшығы құрылмады"
+
+#~ msgid "Cannot symlink %1 to %2: %3"
+#~ msgstr "%1 -> %2 символдық сілтеме құрылмады: %3"
+
+#~ msgid "Cannot move %1 to %2: %3"
+#~ msgstr "%1 -> %2 жылжымады: %3"
+
+#~ msgid "Cannot copy %1 to %2: %3"
+#~ msgstr "%1 -> %2 көшірмеленбеді: %3"
+
+#~ msgid "Cannot delete %1: %2"
+#~ msgstr "%1 өшірілмеді: %2"
+
+#~ msgid "Cannot create %1: %2"
+#~ msgstr "%1 құрылмады: %2"
+
+#~ msgid "Cannot calculate the filesize of %1: %2"
+#~ msgstr "%1 файлдың өшемі есептелінбеді: %2"
+
+#~ msgid "Cannot calculate the filesize : %1"
+#~ msgstr "Файлдың өшемі есептелінбеді: %1"
+
+#~ msgid "Cannot expand file: %1"
+#~ msgstr "Файл тарқатылмады: %1"
+
+#~ msgid "Cannot seek in file : %1"
+#~ msgstr "Файлда іздеу болмады: %1"
+
+#~ msgid "1 day "
+#~ msgid_plural "%1 days "
+#~ msgstr[0] "%1 күн "
+
+#~ msgid "General"
+#~ msgstr "Жалпы"
+
+#~ msgid "Connections"
+#~ msgstr "Қосылымдар"
+
+#~ msgid "Tracker"
+#~ msgstr "Трекер"
+
+#~ msgid "Disk Input/Output"
+#~ msgstr "Дискінің Е/Ш"
+
+#~| msgid "Details for: %1"
+#~ msgid "Details for: %1"
+#~ msgstr "Келесінің егжей-тегжейі: %1"
+
+#~ msgid "All downloads"
+#~ msgstr "Барлық жүктеп алғаны"
+
+#~ msgid "Finished downloads"
+#~ msgstr "Аяқталған жүктеп алулары"
+
+#~ msgid "Transfers:"
+#~ msgstr "Тасымалдары:"
+
+#~ msgid "Downloads"
+#~ msgstr "Жүктеп алулары"
+
+#~ msgid "Transfer details:"
+#~ msgstr "Тасымалдың егжей-тегжейі:"
+
+#~ msgid "Transfer List"
+#~ msgstr "Тасымалдар тізімі"
+
+#~ msgid "Expandable transfer details instead of separate tabs"
+#~ msgstr "Бөлек қойындылардың орнына тасымалдың кеңейтілмек егжей-тегжейлері"
+
+#~ msgid "Threads"
+#~ msgstr "Ағындар"
+
+#~ msgid "Number of threads:"
+#~ msgstr "Ағындар саны:"
+
+#~ msgid "Preference:"
+#~ msgstr "Артықшылығы:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Name of the license"
+#~ msgstr "Қайталау саны:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "URL to the license"
+#~ msgstr "Қайталау саны:"
+
+#, fuzzy
+#~| msgctxt "transfer state: delayed"
+#~| msgid "Delayed"
+#~ msgctxt "The transfer is delayed"
+#~ msgid "Delayed"
+#~ msgstr "Кідіртілген"
+
+#~ msgid ""
+#~ "Destination file \n"
+#~ "%1\n"
+#~ "already exists.\n"
+#~ "Do you want to overwrite it?"
+#~ msgstr ""
+#~ "%1\n"
+#~ "деген мақсатты файл\n"
+#~ "бар ғой.\n"
+#~ "Үстінен жазыла берсін бе?"
+
+#, fuzzy
+#~| msgid "Overwrite existing file?"
+#~ msgid "Overwrite destination"
+#~ msgstr "Бардың үстінен жазыла берсін бе?"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Current Tracker"
+#~ msgstr "Тапсырманы ашу"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgid "Scrape"
+#~ msgstr "Қайдан:"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Available Trackers"
+#~ msgstr "Тапсырманы ашу"
+
+#, fuzzy
+#~| msgid "Enter URL:"
+#~ msgid "Enter an url"
+#~ msgstr "URL:"
+
+#, fuzzy
+#~| msgid "Clear History"
+#~ msgid "We are sorry"
+#~ msgstr "Журналды тазалау"
+
+#~ msgid "Download URL again?"
+#~ msgstr "URL-ді қайта жүктеу керек пе?"
+
+#, fuzzy
+#~ msgctxt "file in a filsystem"
+#~ msgid "File"
+#~ msgstr "&Файлды ашу"
+
+#, fuzzy
+#~| msgid ""
+#~| "Are you sure that you want to remove\n"
+#~| "the group named %1?"
+#~ msgid "Are you sure that you want to remove all selected groups?"
+#~ msgstr ""
+#~ "%1 деп аталған топты\n"
+#~ "өшірмексіз бе?"
+
+#, fuzzy
+#~| msgctxt "name of download"
+#~| msgid "Name"
+#~ msgid "Name"
+#~ msgstr "Атауы"
+
+#, fuzzy
+#~| msgctxt "remaining time of download"
+#~| msgid "Remaining Time"
+#~ msgid "Remaining Time"
+#~ msgstr "Қалған уақыт"
+
+#, fuzzy
+#~ msgid "KGet - Download Manager"
+#~ msgstr "Жүктеу менеджері"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgctxt "@label transfer source"
+#~ msgid "Source:"
+#~ msgstr "Қайдан:"
+
+#, fuzzy
+#~| msgid "0 B/s"
+#~ msgid "kBi"
+#~ msgstr "0 б/сек"
+
+#, fuzzy
+#~| msgid "Select Icon"
+#~ msgid "&Select all"
+#~ msgstr "Таңбашаны таңдау"
+
+#, fuzzy
+#~ msgid "&Transfer History..."
+#~ msgstr "Ашылатын тапсырма:"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "&Group Settings..."
+#~ msgstr "Әдетті қапшығы:"
+
+#, fuzzy
+#~ msgid "&Transfer Settings..."
+#~ msgstr " %1 тапсырма "
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Download Speed:"
+#~ msgstr "Жүктеу аяқталды"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Upload Speed:"
+#~ msgstr "Жылдамдығы"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "&Import links"
+#~ msgstr "Сілтемелер жоқ"
+
+#~ msgid "The group name is empty"
+#~ msgstr "Топтың атауы жоқ"
+
+#, fuzzy
+#~| msgid ""
+#~| "A group can not have an empty name\n"
+#~| "Please select a new one"
+#~ msgid ""
+#~ "A group can not have an empty name.\n"
+#~ "Please select a new one."
+#~ msgstr ""
+#~ "Топтың атауы бос бола алмайды\n"
+#~ "Жаңа атау беріңіз"
+
+#, fuzzy
+#~| msgid "You can not delete this group!"
+#~ msgid "You can not delete this group."
+#~ msgstr "Бұл топты өшіре алмайсыз!"
+
+#, fuzzy
+#~| msgid "Delete"
+#~ msgid "&Delete"
+#~ msgstr "Өшіру"
+
+#~ msgid "Default Download Folders"
+#~ msgstr "Әдетті жүктеп алу қапшықтары"
+
+#, fuzzy
+#~| msgid "Extension"
+#~ msgid "File Extension"
+#~ msgstr "Жұрнағы"
+
+#~ msgid "Default Folder"
+#~ msgstr "Әдетті қапшық"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Set as default folder"
+#~ msgstr "Әдетті қапшығы:"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "extRegExp, defaultFolder"
+#~ msgstr "Әдетті қапшығы:"
+
+#~ msgid "Downloading.."
+#~ msgstr "Жүктеп алу.."
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Advanced-Details for %1"
+#~ msgstr "Әдетті қапшығы:"
+
+#, fuzzy
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading.."
+#~ msgstr "Жүктеу жалғастырылды"
+
+#, fuzzy
+#~| msgid "Webinterface"
+#~ msgctxt "@label Title in header"
+#~ msgid "Webinterface"
+#~ msgstr "Веб интерфейсі"
+
+#, fuzzy
+#~ msgid "Downloads number:"
+#~ msgstr "Жүктеу менеджері"
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 GB"
+#~ msgstr " %1/сек "
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 MB"
+#~ msgstr " %1/сек "
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 KB"
+#~ msgstr " %1/сек "
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 B"
+#~ msgstr " %1/сек "
+
+#, fuzzy
+#~| msgid "%1/s"
+#~ msgid "%1 KB/s"
+#~ msgstr "%1/сек"
+
+#, fuzzy
+#~| msgid "0 B/s"
+#~ msgid "kBi/s"
+#~ msgstr "0 б/сек"
+
+#~ msgid "Not Deleted"
+#~ msgstr "Өшіру болмады"
+
+#, fuzzy
+#~ msgid "Konqueror Integration disabled"
+#~ msgstr "Konqueror-мен біріктіру"
+
+#~ msgid "Show main window at startup"
+#~ msgstr "Бастағанда негізгі терезені көрсету"
+
+#~ msgid "<speed>"
+#~ msgstr "<жылдамдығы>"
+
+#, fuzzy
+#~| msgctxt "remaining time of download"
+#~| msgid "Remaining Time"
+#~ msgid "<remaining time>"
+#~ msgstr "Қалған уақыт"
+
+#, fuzzy
+#~| msgid "List All Links"
+#~ msgid "&List Links"
+#~ msgstr "Барлық сілтемелерді тізімдеу"
+
+#, fuzzy
+#~| msgid "Normal"
+#~ msgctxt "Download normally(not as first or last"
+#~ msgid "Normal"
+#~ msgstr "Кәдімгі"

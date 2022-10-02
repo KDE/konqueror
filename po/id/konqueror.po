@@ -1,0 +1,2797 @@
+# Indonesian translations for konqueror package.
+# Copyright (C) 2009 This_file_is_part_of_KDE
+# This file is distributed under the same license as the konqueror package.
+# Andhika Padmawan <andhika.padmawan@gmail.com>, 2010.
+# Arif Budiman <arif@kangarif.com>, 2014.
+# Wantoyo <wantoyek@gmail.com>, 2017, 2018, 2019, 2020, 2021, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-22 00:44+0000\n"
+"PO-Revision-Date: 2022-09-27 17:54+0700\n"
+"Last-Translator: Wantoyèk <wantoyek@gmail.com>\n"
+"Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
+"Language: id\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 21.12.3\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Andhika Padmawan, Arif Budiman,Wantoyo"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "andhika.padmawan@gmail.com,arif@kangarif.com,wantoyek@gmail.com"
+
+#: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4881
+#: src/konqmainwindow.cpp:4927
+#, kde-format
+msgid "no name"
+msgstr "tanpa nama"
+
+#: src/konqextensionmanager.cpp:50
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure Extensions"
+msgstr "Konfigurasi Ekstensi"
+
+#: src/konqextensionmanager.cpp:70
+#, kde-format
+msgid "Extensions"
+msgstr "Ekstensi"
+
+#: src/konqfactory.cpp:67
+#, kde-format
+msgid ""
+"There was an error loading the module %1.\n"
+"The diagnostics is:\n"
+"%2"
+msgstr ""
+"Terjadi galat ketika memuat modul %1.\n"
+"Hasil diagnostik adalah:\n"
+"%2"
+
+#: src/konqframestatusbar.cpp:108
+#, kde-format
+msgid ""
+"Checking this box on at least two views sets those views as 'linked'. Then, "
+"when you change directories in one view, the other views linked with it will "
+"automatically update to show the current directory. This is especially "
+"useful with different types of views, such as a directory tree with an icon "
+"view or detailed view, and possibly a terminal emulator window."
+msgstr ""
+"Mencentang kotak ini setidaknya menampilkan dua set yang tampil sebagai "
+"'tertaut'. Maka, ketika kamu mengubah direktori di satu tampilan, tampilan "
+"lain yang tertaut dengannya akan meperbarui secara otomatis untuk "
+"menampilkan direktori saat ini. Hal ini khususnya berguna dengan tipe "
+"tampilan yang berbeda, seperti ranting direktori dengan tampilan ikon atau "
+"tampilan terperinci, dan kemungkinan jendela emulator terminal."
+
+#: src/konqframestatusbar.cpp:154
+#, kde-format
+msgid "Close View"
+msgstr "Tutup Tampilan"
+
+#: src/konqframestatusbar.cpp:232
+#, kde-format
+msgid "%1/s"
+msgstr "%1/dt"
+
+#: src/konqframestatusbar.cpp:234
+#, kde-format
+msgid "Stalled"
+msgstr "Macet"
+
+#: src/konqguiclients.cpp:51
+#, kde-format
+msgid "Preview &in %1"
+msgstr "Pratinjau d&i %1"
+
+#: src/konqguiclients.cpp:118
+#, kde-format
+msgid "Show %1"
+msgstr "Tampilkan %1"
+
+#: src/konqhistorydialog.cpp:39
+#, kde-format
+msgctxt "@title:window"
+msgid "History"
+msgstr "Histori"
+
+#: src/konqhistorydialog.cpp:55 src/konqhistoryview.cpp:140
+#, kde-format
+msgctxt "@action:inmenu Parent of 'By Name' and 'By Date'"
+msgid "Sort"
+msgstr "Urutkan"
+
+#: src/konqhistorymodel.cpp:119
+#, kde-format
+msgid ""
+"<qt><center><b>%1</b></center><hr />Last visited: %2<br />First visited: "
+"%3<br />Number of times visited: %4</qt>"
+msgstr ""
+"<qt><center><b>%1</b></center><hr />Terakhir dikunjungi: %2<br />Pertama "
+"dikunjungi: %3<br />Jumlah kunjungan: %4</qt>"
+
+#: src/konqhistorymodel.cpp:213
+#, kde-format
+msgid "Local"
+msgstr "Lokal"
+
+#: src/konqhistorymodel.cpp:216
+#, kde-format
+msgid "Miscellaneous"
+msgstr "Beraneka"
+
+#: src/konqhistoryview.cpp:53 src/konqmainwindow.cpp:4412
+#, kde-format
+msgid "Open in New &Window"
+msgstr "Buka di Jende&la Baru"
+
+#: src/konqhistoryview.cpp:58
+#, kde-format
+msgid "Open in New Tab"
+msgstr "Buka di Tab Baru"
+
+#: src/konqhistoryview.cpp:63
+#, kde-format
+msgid "Open in Current Tab"
+msgstr "Buka di Tab Saat Ini"
+
+#: src/konqhistoryview.cpp:67
+#, kde-format
+msgid "&Copy Link Address"
+msgstr "&Salin Alamat Tautan"
+
+#: src/konqhistoryview.cpp:72
+#, kde-format
+msgid "&Remove Entry"
+msgstr "&Hapus Lema"
+
+#: src/konqhistoryview.cpp:79
+#, kde-format
+msgid "C&lear History"
+msgstr "&Hapus Histori"
+
+#: src/konqhistoryview.cpp:84
+#, kde-format
+msgid "&Preferences..."
+msgstr "&Preferensi..."
+
+#: src/konqhistoryview.cpp:91
+#, kde-format
+msgid "By &Name"
+msgstr "Menurut &Nama"
+
+#: src/konqhistoryview.cpp:97
+#, kde-format
+msgid "By &Date"
+msgstr "Menurut Tan&ggal"
+
+#: src/konqhistoryview.cpp:107
+#, kde-format
+msgid "Search in history"
+msgstr "Cari di histori"
+
+#: src/konqhistoryview.cpp:168
+#, kde-format
+msgid "Do you really want to clear the entire history?"
+msgstr "Anda yakin ingin menghapus seluruh histori?"
+
+#: src/konqhistoryview.cpp:169
+#, kde-format
+msgctxt "@title:window"
+msgid "Clear History?"
+msgstr "Hapus Histori?"
+
+#: src/konqmain.cpp:170
+#, kde-format
+msgid "Konqueror"
+msgstr "Konqueror"
+
+#: src/konqmain.cpp:171
+#, kde-format
+msgid "Web browser, file manager and document viewer."
+msgstr "Penelusur web, pengelola file dan penampil dokumen."
+
+#: src/konqmain.cpp:173
+#, kde-format
+msgid "(C) 1999-2016, The Konqueror developers"
+msgstr "(C) 1999-2016, Developer Konqueror"
+
+#: src/konqmain.cpp:176
+#, kde-format
+msgid "Stefano Crocco"
+msgstr "Stefano Crocco"
+
+#: src/konqmain.cpp:176
+#, kde-format
+msgid "Current maintainer"
+msgstr "Pemelihara saat ini"
+
+#: src/konqmain.cpp:177
+#, kde-format
+msgid "David Faure"
+msgstr "David Faure"
+
+#: src/konqmain.cpp:177
+#, kde-format
+msgid ""
+"Developer (framework, parts, JavaScript, I/O library) and former maintainer"
+msgstr ""
+"Developer (kerangka kerja, suku cadang, JavaScript, pustaka I/O) dan "
+"pemelihara"
+
+#: src/konqmain.cpp:178
+#, kde-format
+msgid "Simon Hausmann"
+msgstr "Simon Hausmann"
+
+#: src/konqmain.cpp:178
+#, kde-format
+msgid "Developer (framework, parts)"
+msgstr "Pengembang (kerangka kerja, suku cadang)"
+
+#: src/konqmain.cpp:179
+#, kde-format
+msgid "Michael Reiher"
+msgstr "Michael Reiher"
+
+#: src/konqmain.cpp:179 src/konqmain.cpp:207 src/konqmain.cpp:213
+#, kde-format
+msgid "Developer (framework)"
+msgstr "Pengembang (kerangka kerja)"
+
+#: src/konqmain.cpp:180
+#, kde-format
+msgid "Matthias Welk"
+msgstr "Matthias Welk"
+
+#: src/konqmain.cpp:180
+#, kde-format
+msgid "Developer"
+msgstr "Pengembang"
+
+#: src/konqmain.cpp:181
+#, kde-format
+msgid "Alexander Neundorf"
+msgstr "Alexander Neundorf"
+
+#: src/konqmain.cpp:181
+#, kde-format
+msgid "Developer (List views)"
+msgstr "Pengembang (Tampilan senarai)"
+
+#: src/konqmain.cpp:182
+#, kde-format
+msgid "Michael Brade"
+msgstr "Michael Brade"
+
+#: src/konqmain.cpp:182
+#, kde-format
+msgid "Developer (List views, I/O library)"
+msgstr "Pengembang (Tampilan senarai, pustaka I/O)"
+
+#: src/konqmain.cpp:183
+#, kde-format
+msgid "Lars Knoll"
+msgstr "Lars Knoll"
+
+#: src/konqmain.cpp:183 src/konqmain.cpp:184 src/konqmain.cpp:185
+#: src/konqmain.cpp:187 src/konqmain.cpp:188 src/konqmain.cpp:190
+#: src/konqmain.cpp:191 src/konqmain.cpp:192 src/konqmain.cpp:193
+#: src/konqmain.cpp:195
+#, kde-format
+msgid "Developer (HTML rendering engine)"
+msgstr "Pengembang (Mesin render HTML)"
+
+#: src/konqmain.cpp:184
+#, kde-format
+msgid "Dirk Mueller"
+msgstr "Dirk Mueller"
+
+#: src/konqmain.cpp:185
+#, kde-format
+msgid "Peter Kelly"
+msgstr "Peter Kelly"
+
+#: src/konqmain.cpp:186
+#, kde-format
+msgid "Waldo Bastian"
+msgstr "Waldo Bastian"
+
+#: src/konqmain.cpp:186
+#, kde-format
+msgid "Developer (HTML rendering engine, I/O library)"
+msgstr "Pengembang (mesin render HTML, pustaka I/O)"
+
+#: src/konqmain.cpp:187
+#, kde-format
+msgid "Germain Garand"
+msgstr "Germain Garand"
+
+#: src/konqmain.cpp:188
+#, kde-format
+msgid "Leo Savernik"
+msgstr "Leo Savernik"
+
+#: src/konqmain.cpp:189
+#, kde-format
+msgid "Stephan Kulow"
+msgstr "Stephan Kulow"
+
+#: src/konqmain.cpp:189
+#, kde-format
+msgid ""
+"Developer (HTML rendering engine, I/O library, regression test framework)"
+msgstr ""
+"Pengembang (Mesin render HTML, pustaka I/O, kerangka kerja tes regresi)"
+
+#: src/konqmain.cpp:190
+#, kde-format
+msgid "Antti Koivisto"
+msgstr "Antti Koivisto"
+
+#: src/konqmain.cpp:191
+#, kde-format
+msgid "Zack Rusin"
+msgstr "Zack Rusin"
+
+#: src/konqmain.cpp:192
+#, kde-format
+msgid "Tobias Anton"
+msgstr "Tobias Anton"
+
+#: src/konqmain.cpp:193
+#, kde-format
+msgid "Lubos Lunak"
+msgstr "Lubos Lunak"
+
+#: src/konqmain.cpp:194
+#, kde-format
+msgid "Maks Orlovich"
+msgstr "Maks Orlovich"
+
+#: src/konqmain.cpp:194 src/konqmain.cpp:196
+#, kde-format
+msgid "Developer (HTML rendering engine, JavaScript)"
+msgstr "Pengembang (Mesin render HTML, JavaScript)"
+
+#: src/konqmain.cpp:195
+#, kde-format
+msgid "Allan Sandfeld Jensen"
+msgstr "Allan Sandfeld Jensen"
+
+#: src/konqmain.cpp:196
+#, kde-format
+msgid "Apple Safari Developers"
+msgstr "Pengembang Apple Safari"
+
+#: src/konqmain.cpp:197
+#, kde-format
+msgid "Harri Porten"
+msgstr "Harri Porten"
+
+#: src/konqmain.cpp:197
+#, kde-format
+msgid "Developer (JavaScript)"
+msgstr "Pengembang (JavaScript)"
+
+#: src/konqmain.cpp:198
+#, kde-format
+msgid "Koos Vriezen"
+msgstr "Koos Vriezen"
+
+#: src/konqmain.cpp:198
+#, kde-format
+msgid "Developer (Java applets and other embedded objects)"
+msgstr "Pengembang (Applet Java dan objek tertanam lainnya)"
+
+#: src/konqmain.cpp:199
+#, kde-format
+msgid "Matt Koss"
+msgstr "Matt Koss"
+
+#: src/konqmain.cpp:199 src/konqmain.cpp:200
+#, kde-format
+msgid "Developer (I/O library)"
+msgstr "Pengembang (Pustaka I/O)"
+
+#: src/konqmain.cpp:200
+#, kde-format
+msgid "Alex Zepeda"
+msgstr "Alex Zepeda"
+
+#: src/konqmain.cpp:201
+#, kde-format
+msgid "Richard Moore"
+msgstr "Richard Moore"
+
+#: src/konqmain.cpp:201 src/konqmain.cpp:202
+#, kde-format
+msgid "Developer (Java applet support)"
+msgstr "Pengembang (Dukungan applet Java)"
+
+#: src/konqmain.cpp:202
+#, kde-format
+msgid "Dima Rogozin"
+msgstr "Dima Rogozin"
+
+#: src/konqmain.cpp:203
+#, kde-format
+msgid "Wynn Wilkes"
+msgstr "Wynn Wilkes"
+
+#: src/konqmain.cpp:203
+#, kde-format
+msgid ""
+"Developer (Java 2 security manager support,\n"
+" and other major improvements to applet support)"
+msgstr ""
+"Pengembang (Dukungan pengelola keamanan Java 2,\n"
+" dan peningkatan mayor ke dukungan applet lainnya)"
+
+#: src/konqmain.cpp:204
+#, kde-format
+msgid "Stefan Schimanski"
+msgstr "Stefan Schimanski"
+
+#: src/konqmain.cpp:204
+#, kde-format
+msgid "Developer (Netscape plugin support)"
+msgstr "Pengembang (Dukungan plugin Netscape)"
+
+#: src/konqmain.cpp:205
+#, kde-format
+msgid "George Staikos"
+msgstr "George Staikos"
+
+#: src/konqmain.cpp:205
+#, kde-format
+msgid "Developer (SSL, Netscape plugins)"
+msgstr "Pengembang (SSL, plugin Netscape)"
+
+#: src/konqmain.cpp:206
+#, kde-format
+msgid "Dawit Alemayehu"
+msgstr "Dawit Alemayehu"
+
+#: src/konqmain.cpp:206
+#, kde-format
+msgid "Developer (I/O library, Authentication support)"
+msgstr "Pengembang (Pustaka I/O, dukungan otentikasi)"
+
+#: src/konqmain.cpp:207
+#, kde-format
+msgid "Carsten Pfeiffer"
+msgstr "Carsten Pfeiffer"
+
+#: src/konqmain.cpp:208
+#, kde-format
+msgid "Torsten Rahn"
+msgstr "Torsten Rahn"
+
+#: src/konqmain.cpp:208
+#, kde-format
+msgid "Graphics/icons"
+msgstr "Grafik/ikon"
+
+#: src/konqmain.cpp:209
+#, kde-format
+msgid "Torben Weis"
+msgstr "Torben Weis"
+
+#: src/konqmain.cpp:209
+#, kde-format
+msgid "KFM author"
+msgstr "Penulis KFM"
+
+#: src/konqmain.cpp:210
+#, kde-format
+msgid "Joseph Wenninger"
+msgstr "Joseph Wenninger"
+
+#: src/konqmain.cpp:210
+#, kde-format
+msgid "Developer (navigation panel framework)"
+msgstr "Pengembang (kerangka kerja panel navigasi)"
+
+#: src/konqmain.cpp:211
+#, kde-format
+msgid "Stephan Binner"
+msgstr "Stephan Binner"
+
+#: src/konqmain.cpp:211
+#, kde-format
+msgid "Developer (misc stuff)"
+msgstr "Pengembang (hal lainnya)"
+
+#: src/konqmain.cpp:212
+#, kde-format
+msgid "Ivor Hewitt"
+msgstr "Ivor Hewitt"
+
+#: src/konqmain.cpp:212
+#, kde-format
+msgid "Developer (AdBlock filter)"
+msgstr "Pengembang (filter AdBlock)"
+
+#: src/konqmain.cpp:213
+#, kde-format
+msgid "Eduardo Robles Elvira"
+msgstr "Eduardo Robles Elvira"
+
+#: src/konqmain.cpp:223
+#, kde-format
+msgid "Start without a default window, when called without URLs"
+msgstr "Jalankan tanpa jendela baku, jika dipanggil tanpa URL"
+
+#: src/konqmain.cpp:224
+#, kde-format
+msgid ""
+"Preload for later use. This mode does not support URLs on the command line"
+msgstr ""
+"Pramuat untuk digunakan nanti. Mode ini tidak mendukung URL di baris perintah"
+
+#: src/konqmain.cpp:225
+#, kde-format
+msgid "Profile to open (DEPRECATED, IGNORED)"
+msgstr "Profil untuk pembukaan (TIDAK DIGUNAKAN, DIABAIKAN)"
+
+#: src/konqmain.cpp:225
+#, kde-format
+msgid "profile"
+msgstr "profil"
+
+#: src/konqmain.cpp:226
+#, kde-format
+msgid "List available sessions"
+msgstr "Senarai sesi tersedia"
+
+#: src/konqmain.cpp:227
+#, kde-format
+msgid "Session to open"
+msgstr "Sesi untuk dibuka"
+
+#: src/konqmain.cpp:227
+#, kde-format
+msgid "session"
+msgstr "sesi"
+
+#: src/konqmain.cpp:228
+#, kde-format
+msgid "Mimetype to use for this URL (e.g. text/html or inode/directory)"
+msgstr ""
+"Tipe mime yang digunakan untuk URL ini (misalnya teks/html atau inode/"
+"direktori)"
+
+#: src/konqmain.cpp:228
+#, kde-format
+msgid "mimetype"
+msgstr "mimetype"
+
+#: src/konqmain.cpp:229
+#, kde-format
+msgid "Part to use (e.g. khtml or kwebkitpart)"
+msgstr "Komponen untuk penggunaan (mis. khtml atau kwebkitpart)"
+
+#: src/konqmain.cpp:229
+#, kde-format
+msgid "service"
+msgstr "layanan"
+
+#: src/konqmain.cpp:230
+#, kde-format
+msgid ""
+"For URLs that point to files, opens the directory and selects the file, "
+"instead of opening the actual file"
+msgstr ""
+"Untuk URL yang menunjuk ke file, buka direktori lalu pilih file, ketimbang "
+"membuka file sebenarnya"
+
+#: src/konqmain.cpp:231
+#, kde-format
+msgid "The files/URLs opened by the application will be deleted after use"
+msgstr "File/URL yang dibuka oleh aplikasi akan dihapus usai penggunaan"
+
+#: src/konqmain.cpp:233
+#, kde-format
+msgid "Location to open"
+msgstr "Lokasi untuk dibuka"
+
+#: src/konqmainwindow.cpp:658
+#, kde-format
+msgctxt "@title:tab"
+msgid "Loading..."
+msgstr "Memuat..."
+
+#: src/konqmainwindow.cpp:690
+#, kde-format
+msgid "Access denied"
+msgstr "Akses ditolak"
+
+#: src/konqmainwindow.cpp:1465
+#, kde-format
+msgid "Open File"
+msgstr "Buka File"
+
+#: src/konqmainwindow.cpp:1548
+#, kde-format
+msgid "Canceled."
+msgstr "Dibatalkan."
+
+#: src/konqmainwindow.cpp:1584
+#, kde-format
+msgid ""
+"This page contains changes that have not been submitted.\n"
+"Reloading the page will discard these changes."
+msgstr ""
+"Halaman ini berisi perubahan yang belum diterapkan.\n"
+"Memuat ulang halaman akan mengabaikan perubahan ini."
+
+#: src/konqmainwindow.cpp:1585 src/konqmainwindow.cpp:2282
+#: src/konqmainwindow.cpp:2375 src/konqmainwindow.cpp:2407
+#: src/konqmainwindow.cpp:2450 src/konqmainwindow.cpp:2472
+#: src/konqmainwindow.cpp:4849
+#, kde-format
+msgctxt "@title:window"
+msgid "Discard Changes?"
+msgstr "Abaikan Perubahan?"
+
+#: src/konqmainwindow.cpp:1585 src/konqmainwindow.cpp:2282
+#: src/konqmainwindow.cpp:2375 src/konqmainwindow.cpp:2407
+#: src/konqmainwindow.cpp:2450 src/konqmainwindow.cpp:2473
+#: src/konqmainwindow.cpp:4849
+#, kde-format
+msgid "&Discard Changes"
+msgstr "&Abaikan Perubahan"
+
+#: src/konqmainwindow.cpp:1952 src/konqmainwindow.cpp:1958
+#, kde-format
+msgid "Home Folder"
+msgstr "Folder Beranda"
+
+#: src/konqmainwindow.cpp:1953 src/konqmainwindow.cpp:3424
+#, kde-format
+msgid "Home"
+msgstr "Beranda"
+
+#: src/konqmainwindow.cpp:1959
+#, kde-format
+msgid "Navigate to your 'Home Folder'"
+msgstr "Navigasi ke 'Folder Beranda' anda"
+
+#: src/konqmainwindow.cpp:1960
+#, kde-format
+msgid "Navigate to your local 'Home Folder'"
+msgstr "Navigasi ke 'Folder Beranda' lokal anda"
+
+#. i18n: ectx: label, entry, group (UserSettings)
+#: src/konqmainwindow.cpp:1963 src/konqueror.kcfg:16
+#, kde-format
+msgid "Home Page"
+msgstr "Laman"
+
+#: src/konqmainwindow.cpp:1965
+#, kde-format
+msgid "Navigate to your 'Home Page'"
+msgstr "Navigasi ke 'Laman' anda"
+
+#: src/konqmainwindow.cpp:1966
+#, kde-format
+msgid ""
+"<html>Navigate to your 'Home Page'<br /><br />You can configure the location "
+"where this button takes you under <b>Settings -> Configure Konqueror -> "
+"General</b>.</html>"
+msgstr ""
+"<html>Navigasi ke 'Laman' anda<br /><br />Anda dapat mengkonfigurasi lokasi "
+"kemana tombol ini akan membawa anda di <b>Pengaturan -> konfigurasi "
+"Konqueror -> Umum</b>.</html>"
+
+#: src/konqmainwindow.cpp:2281
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Detaching the tab will discard these changes."
+msgstr ""
+"Tab ini berisi perubahan yang belum diterapkan.\n"
+"Melepas tab akan mengabaikan perubahan ini."
+
+#: src/konqmainwindow.cpp:2374
+#, kde-format
+msgid ""
+"This view contains changes that have not been submitted.\n"
+"Closing the view will discard these changes."
+msgstr ""
+"Tampilan ini berisi perubahan yang belum diterapkan.\n"
+"Menutup tampilan akan mengabaikan perubahan ini."
+
+#: src/konqmainwindow.cpp:2406
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Closing the tab will discard these changes."
+msgstr ""
+"Tab ini berisi perubahan yang belum diterapkan.\n"
+"Menutup tab akan mengabaikan perubahan ini."
+
+#: src/konqmainwindow.cpp:2432
+#, kde-format
+msgid "Do you really want to close all other tabs?"
+msgstr "Anda yakin ingin menutup semua tab lainnya?"
+
+#: src/konqmainwindow.cpp:2433 src/konqmainwindow.cpp:3505 src/konqtabs.cpp:335
+#, kde-format
+msgid "Close &Other Tabs"
+msgstr "Tutup Tab &Lainnya"
+
+#: src/konqmainwindow.cpp:2433
+#, kde-format
+msgctxt "@title:window"
+msgid "Close Other Tabs Confirmation"
+msgstr "Konfirmasi Tutup Tab Lainnya"
+
+#: src/konqmainwindow.cpp:2449
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Closing other tabs will discard these changes."
+msgstr ""
+"Tab ini berisi perubahan yang belum diterapkan.\n"
+"Menutup tab lainnya akan mengabaikan perubahan ini."
+
+#: src/konqmainwindow.cpp:2471
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Reloading all tabs will discard these changes."
+msgstr ""
+"Tab ini berisi perubahan yang belum diterapkan.\n"
+"Memuat ulang semua tab akan mengabaikan perubahan ini."
+
+#: src/konqmainwindow.cpp:2513
+#, kde-format
+msgctxt "@title:window"
+msgid "Enter Target"
+msgstr "Masukkan Sasaran"
+
+#: src/konqmainwindow.cpp:2520
+#, kde-format
+msgid "<qt><b>%1</b> is not valid</qt>"
+msgstr "<qt><b>%1</b> tidak absah</qt>"
+
+#: src/konqmainwindow.cpp:2530
+#, kde-format
+msgid "Copy selected files from %1 to:"
+msgstr "Salin file terpilih dari %1 ke:"
+
+#: src/konqmainwindow.cpp:2543
+#, kde-format
+msgid "Move selected files from %1 to:"
+msgstr "Pindah file terpilih dari %1 ke:"
+
+#: src/konqmainwindow.cpp:2717
+#, kde-format
+msgctxt "This menu entry empties the closed items history"
+msgid "Empty Closed Items History"
+msgstr "Histori Butir Tertutup Kosong"
+
+#: src/konqmainwindow.cpp:2740
+#, kde-format
+msgid "Save As..."
+msgstr "Simpan Sebagai..."
+
+#: src/konqmainwindow.cpp:2742
+#, kde-format
+msgid "Manage..."
+msgstr "Kelola..."
+
+#: src/konqmainwindow.cpp:3333
+#, kde-format
+msgid "New &Window"
+msgstr "&Jendela Baru"
+
+#: src/konqmainwindow.cpp:3338
+#, kde-format
+msgid "&Duplicate Window"
+msgstr "&Duplikasi Jendela"
+
+#: src/konqmainwindow.cpp:3343
+#, kde-format
+msgid "Send &Link Address..."
+msgstr "Kiri&m Tautan Alamat..."
+
+#: src/konqmainwindow.cpp:3347
+#, kde-format
+msgid "S&end File..."
+msgstr "Kirim B&erkas..."
+
+#: src/konqmainwindow.cpp:3351
+#, kde-format
+msgid "&Open Location"
+msgstr "Buka &Lokasi"
+
+#: src/konqmainwindow.cpp:3357
+#, kde-format
+msgid "&Open File..."
+msgstr "&Buka File..."
+
+#: src/konqmainwindow.cpp:3362
+#, kde-format
+msgid "&Find File..."
+msgstr "&Temukan File..."
+
+#: src/konqmainwindow.cpp:3371
+#, kde-format
+msgid "Lock to Current Location"
+msgstr "Kunci ke Lokasi Saat Ini"
+
+#: src/konqmainwindow.cpp:3374
+#, kde-format
+msgctxt "This option links konqueror views"
+msgid "Lin&k View"
+msgstr "Tampilan Ta&utan"
+
+#: src/konqmainwindow.cpp:3379
+#, kde-format
+msgid "&Up"
+msgstr "&Atas"
+
+#: src/konqmainwindow.cpp:3389
+#, kde-format
+msgid "Closed Items"
+msgstr "Butir Tertutup"
+
+#: src/konqmainwindow.cpp:3402
+#, kde-format
+msgid "Sessions"
+msgstr "Sesi"
+
+#: src/konqmainwindow.cpp:3429
+#, kde-format
+msgctxt "@action:inmenu Go"
+msgid "Most Often Visited"
+msgstr "Paling Sering Dikunjungi"
+
+#: src/konqmainwindow.cpp:3433
+#, kde-format
+msgctxt "@action:inmenu Go"
+msgid "Recently Visited"
+msgstr "Barusan Dikunjungi"
+
+#: src/konqmainwindow.cpp:3442
+#, kde-format
+msgctxt "@action:inmenu Go"
+msgid "Show History"
+msgstr "Tampilkan Histori"
+
+#: src/konqmainwindow.cpp:3455
+#, kde-format
+msgid "Configure Extensions..."
+msgstr "Konfigurasikan Ekstensi..."
+
+#: src/konqmainwindow.cpp:3459
+#, kde-format
+msgid "Configure Spell Checking..."
+msgstr "Konfigurasikan Pemeriksaan Ejaan..."
+
+#: src/konqmainwindow.cpp:3465
+#, kde-format
+msgid "Split View &Left/Right"
+msgstr "Belah &Kiri/Kanan"
+
+#: src/konqmainwindow.cpp:3470
+#, kde-format
+msgid "Split View &Top/Bottom"
+msgstr "Belah Atas/&Bawah"
+
+#: src/konqmainwindow.cpp:3475 src/konqtabs.cpp:456
+#, kde-format
+msgid "&New Tab"
+msgstr "&Tab Baru"
+
+#: src/konqmainwindow.cpp:3484
+#, kde-format
+msgid "&Duplicate Current Tab"
+msgstr "&Duplikasi Tab Saat Ini"
+
+#: src/konqmainwindow.cpp:3489
+#, kde-format
+msgid "Detach Current Tab"
+msgstr "Lepas Tab Saat Ini"
+
+#: src/konqmainwindow.cpp:3494
+#, kde-format
+msgid "&Close Active View"
+msgstr "Tutu&p Tampilan Aktif"
+
+#: src/konqmainwindow.cpp:3499
+#, kde-format
+msgid "Close Current Tab"
+msgstr "Tutup Tab Saat Ini"
+
+#: src/konqmainwindow.cpp:3509
+#, kde-format
+msgid "Activate Next Tab"
+msgstr "Aktifkan Tab Selanjutnya"
+
+#: src/konqmainwindow.cpp:3513
+#, kde-format
+msgid "Activate Previous Tab"
+msgstr "Aktifkan Tab Sebelumnya"
+
+#: src/konqmainwindow.cpp:3520
+#, kde-format
+msgid "Activate Tab %1"
+msgstr "Aktifkan Tab %1"
+
+#: src/konqmainwindow.cpp:3525
+#, kde-format
+msgid "Move Tab Left"
+msgstr "Pindah Tab Ke Kiri"
+
+#: src/konqmainwindow.cpp:3530
+#, kde-format
+msgid "Move Tab Right"
+msgstr "Pindah Tab Ke Kanan"
+
+#: src/konqmainwindow.cpp:3538
+#, kde-format
+msgid "Dump Debug Info"
+msgstr "Info Debug Data"
+
+#: src/konqmainwindow.cpp:3556
+#, kde-format
+msgid "&Reload"
+msgstr "M&uat Ulang"
+
+#: src/konqmainwindow.cpp:3561 src/konqtabs.cpp:313
+#, kde-format
+msgid "&Reload All Tabs"
+msgstr "Muat Ulang Se&mua Tab"
+
+#: src/konqmainwindow.cpp:3569
+#, kde-format
+msgid "&Force Reload"
+msgstr "&Paksa Muat Ulang"
+
+#: src/konqmainwindow.cpp:3595
+#, kde-format
+msgid "&Stop"
+msgstr "&Hentikan"
+
+#: src/konqmainwindow.cpp:3604
+#, kde-format
+msgid "Throbber"
+msgstr "Throbber"
+
+#: src/konqmainwindow.cpp:3608 src/konqmainwindow.cpp:3611
+#, kde-format
+msgid "L&ocation: "
+msgstr "L&okasi: "
+
+#: src/konqmainwindow.cpp:3618
+#, kde-format
+msgid "Location Bar"
+msgstr "Bilah Lokasi"
+
+#: src/konqmainwindow.cpp:3624
+#, kde-format
+msgid ""
+"<html>Location Bar<br /><br />Enter a web address or search term.</html>"
+msgstr ""
+"<html>Bilah Lokasi<br /><br />Masukkan sebuah halaman web atau kata "
+"pencarian.</html>"
+
+#: src/konqmainwindow.cpp:3628
+#, kde-format
+msgid "Clear Location Bar"
+msgstr "Bersihkan Bilah Lokasi"
+
+#: src/konqmainwindow.cpp:3632
+#, kde-format
+msgid ""
+"<html>Clear Location bar<br /><br />Clears the contents of the location bar."
+"</html>"
+msgstr ""
+"<html>Bersihkan bilah Lokasi<br /><br />Bersihkan konten bilah lokasi.</html>"
+
+#: src/konqmainwindow.cpp:3637
+#, kde-format
+msgid "&Bookmarks"
+msgstr "&Markah"
+
+#: src/konqmainwindow.cpp:3665
+#, kde-format
+msgid "Kon&queror Introduction"
+msgstr "Pengenalan Kon&queror"
+
+#: src/konqmainwindow.cpp:3670
+#, kde-format
+msgid "Go"
+msgstr "Menuju"
+
+#: src/konqmainwindow.cpp:3672
+#, kde-format
+msgid ""
+"<html>Go<br /><br />Goes to the page that has been entered into the location "
+"bar.</html>"
+msgstr ""
+"<html>Ke<br /><br />Menuju ke halaman yang telah dimasukkan ke dalam bilah "
+"lokasi.</html>"
+
+#: src/konqmainwindow.cpp:3678
+#, kde-format
+msgid ""
+"<html>Enter the parent folder<br /><br />For instance, if the current "
+"location is file:/home/%1 clicking this button will take you to file:/home.</"
+"html>"
+msgstr ""
+"<html>Masukkan folder induk<br /><br />Misalnya, jika lokasi saat ini adalah "
+"file:/home/%1 maka menekan tombol ini akan membawa anda ke file:/home.</html>"
+
+#: src/konqmainwindow.cpp:3681
+#, kde-format
+msgid "Enter the parent folder"
+msgstr "Masukkan folder induk"
+
+#: src/konqmainwindow.cpp:3683 src/konqmainwindow.cpp:3684
+#, kde-format
+msgid "Move backwards one step in the browsing history"
+msgstr "Mundur ke belakang satu langkah di meramban histori"
+
+#: src/konqmainwindow.cpp:3686 src/konqmainwindow.cpp:3687
+#, kde-format
+msgid "Move forward one step in the browsing history"
+msgstr "Maju ke depan satu langkah di meramban histori"
+
+#: src/konqmainwindow.cpp:3689 src/konqmainwindow.cpp:3690
+#, kde-format
+msgid "Move backwards one step in the closed tabs history"
+msgstr "Mundur ke belakang satu langkah di histori tab tertutup"
+
+#: src/konqmainwindow.cpp:3692
+#, kde-format
+msgid ""
+"<html>Reload the currently displayed document<br /><br />This may, for "
+"example, be needed to refresh web pages that have been modified since they "
+"were loaded, in order to make the changes visible.</html>"
+msgstr ""
+"<html>Muat ulang dokumen yang ditampilkan saat ini<br /><br />Ini akan, "
+"misalnya, diperlukan untuk menyegarkan halaman web yang telah dimodifikasi "
+"sejak halaman tersebut dimuat, agar membuat perubahan terlihat.</html>"
+
+#: src/konqmainwindow.cpp:3695
+#, kde-format
+msgid "Reload the currently displayed document"
+msgstr "Muat ulang dokumen yang ditampilkan saat ini"
+
+#: src/konqmainwindow.cpp:3697
+#, kde-format
+msgid ""
+"<html>Reload all currently displayed documents in tabs<br /><br />This may, "
+"for example, be needed to refresh web pages that have been modified since "
+"they were loaded, in order to make the changes visible.</html>"
+msgstr ""
+"<html>Muat ulang semua dokumen yang ditampilkan saat ini di tab<br /><br /"
+">Ini akan, misalnya, diperlukan untuk menyegarkan halaman web yang telah "
+"dimodifikasi sejak halaman tersebut dimuat, agar membuat perubahan terlihat."
+"</html>"
+
+#: src/konqmainwindow.cpp:3700
+#, kde-format
+msgid "Reload all currently displayed document in tabs"
+msgstr "Muat ulang semua dokumen yang ditampilkan saat ini di tab"
+
+#: src/konqmainwindow.cpp:3702
+#, kde-format
+msgid ""
+"<html>Stop loading the document<br /><br />All network transfers will be "
+"stopped and Konqueror will display the content that has been received so far."
+"</html>"
+msgstr ""
+"<html>Hentikan memuat dokumen<br /><br />Semua transfer jaringan akan "
+"dihentikan dan Konqueror akan menampilkan konten yang telah diterimanya "
+"sejauh ini.</html>"
+
+#: src/konqmainwindow.cpp:3706
+#, kde-format
+msgid ""
+"<html>Reload the currently displayed document<br /><br />This may, for "
+"example, be needed to refresh web pages that have been modified since they "
+"were loaded, in order to make the changes visible. Any images on the page "
+"are downloaded again, even if cached copies exist.</html>"
+msgstr ""
+"<html>Muat ulang dokumen yang ditampilkan saat ini<br /><br />Ini akan, "
+"misalnya, diperlukan untuk menyegarkan halaman web yang telah dimodifikasi "
+"sejak halaman tersebut dimuat, agar membuat perubahan terlihat.  Gambar "
+"apapun akan diunduh kembali, bahkan jika salinan cache ada.</html>"
+
+#: src/konqmainwindow.cpp:3710
+#, kde-format
+msgid ""
+"Force a reload of the currently displayed document and any contained images"
+msgstr ""
+"Paksa memuat ulang dokumen yang ditampilkan saat ini beserta gambar yang ada "
+"di dalamnya"
+
+#: src/konqmainwindow.cpp:3712
+#, kde-format
+msgid "Stop loading the document"
+msgstr "Stop memuat dokumen"
+
+#: src/konqmainwindow.cpp:3714
+#, kde-format
+msgid ""
+"<html>Cut the currently selected text or item(s) and move it to the system "
+"clipboard<br /><br />This makes it available to the <b>Paste</b> command in "
+"Konqueror and other KDE applications.</html>"
+msgstr ""
+"<html>Potong teks atau butir yang saat ini terpilih lalu pindahkan ke papan-"
+"klip sistem<br /><br />Hal ini akan membuat teks atau butir tersebut "
+"tersedia bagi perintah <b>Tempel</b> di Konqueror dan aplikasi KDE lainnya.</"
+"html>"
+
+#: src/konqmainwindow.cpp:3718
+#, kde-format
+msgid "Move the selected text or item(s) to the clipboard"
+msgstr "Pindahkan teks atau butir terpilih ke papan-klip"
+
+#: src/konqmainwindow.cpp:3720
+#, kde-format
+msgid ""
+"<html>Copy the currently selected text or item(s) to the system "
+"clipboard<br /><br />This makes it available to the <b>Paste</b> command in "
+"Konqueror and other KDE applications.</html>"
+msgstr ""
+"<html>Salin teks atau butir yang saat ini terpilih lalu pindahkan ke papan-"
+"klip sistem<br /><br />Hal ini akan membuat teks atau butir tersebut "
+"tersedia bagi perintah <b>Tempel</b> di Konqueror dan aplikasi KDE lainnya.</"
+"html>"
+
+#: src/konqmainwindow.cpp:3724
+#, kde-format
+msgid "Copy the selected text or item(s) to the clipboard"
+msgstr "Salin teks atau butir terpilih ke papan-klip"
+
+#: src/konqmainwindow.cpp:3726
+#, kde-format
+msgid ""
+"<html>Paste the previously cut or copied clipboard contents<br /><br />This "
+"also works for text copied or cut from other KDE applications.</html>"
+msgstr ""
+"<html>Tempel konten papan-klip yang sebelumnya dipotong atau disalin<br /"
+"><br />Hal ini juga bekerja untuk teks yang disalin atau dipotong dari "
+"aplikasi KDE lainnya.</html>"
+
+#: src/konqmainwindow.cpp:3729
+#, kde-format
+msgid "Paste the clipboard contents"
+msgstr "Tempel konten papan-klip"
+
+#: src/konqmainwindow.cpp:3731
+#, kde-format
+msgid ""
+"<html>Print the currently displayed document<br /><br />You will be "
+"presented with a dialog where you can set various options, such as the "
+"number of copies to print and which printer to use.<br /><br />This dialog "
+"also provides access to special KDE printing services such as creating a PDF "
+"file from the current document.</html>"
+msgstr ""
+"<html>Cetak dokumen yang ditampilkan saat ini<br /><br />Anda akan diberikan "
+"dialog tempat anda dapat mengatur berbagai opsi, seperti jumlah salinan yang "
+"akan dicetak dan printer mana yang akan digunakan.<br /><br />Dialog ini "
+"juga menyediakan akses ke layanan mencetak KDE spesial seperti membuat file "
+"PDF dari dokumen saat ini.</html>"
+
+#: src/konqmainwindow.cpp:3737
+#, kde-format
+msgid "Print the current document"
+msgstr "Cetak dokumen saat ini"
+
+#: src/konqmainwindow.cpp:3739
+#, kde-format
+msgid ""
+"A locked view cannot change folders. Use in combination with 'link view' to "
+"explore many files from one folder"
+msgstr ""
+"Sebuah tampilan terkunci tak dapat mengubah folder. Gunakan dalam kombinasi "
+"dengan 'tampilan tautan' untuk menjelajah banyak file dari satu folder"
+
+#: src/konqmainwindow.cpp:3740
+#, kde-format
+msgid ""
+"Sets the view as 'linked'. A linked view follows folder changes made in "
+"other linked views."
+msgstr ""
+"Atur tampilan sebagai 'tertaut'. Sebuah tampilan tertaut mengikuti perubahan "
+"di tampilan tertaut lainnya."
+
+#: src/konqmainwindow.cpp:3744
+#, kde-format
+msgid "&Inspect Current Page"
+msgstr "&Periksa Halaman Saat Ini"
+
+#: src/konqmainwindow.cpp:3745
+#, kde-format
+msgid ""
+"<html>Shows the developer tools for the current page<br/><br/>The current "
+"view is split in two and the developer tools are displayed in the second half"
+msgstr ""
+"<html>Menampilkan alat pengembang untuk halaman saat ini<br/><br/>Tampilan "
+"saat ini dibelah menjadi dua dan alat pengembang ditampilkan di babak kedua"
+
+#: src/konqmainwindow.cpp:3746
+#, kde-format
+msgid "Shows the developer tools for the current page"
+msgstr "Menampilkan alat pengembang untuk halaman saat ini"
+
+#: src/konqmainwindow.cpp:3912
+#, kde-format
+msgid "Copy &Files..."
+msgstr "Salin &File..."
+
+#: src/konqmainwindow.cpp:3916
+#, kde-format
+msgid "M&ove Files..."
+msgstr "P&indah File..."
+
+#: src/konqmainwindow.cpp:4245
+#, kde-format
+msgid ""
+"You have requested to open more than 20 bookmarks in tabs. This might take a "
+"while. Continue?"
+msgstr ""
+"Anda telah meminta untuk membuka lebih dari 20 markah di tab. Ini akan "
+"memakan waktu beberapa saat. Lanjutkan?"
+
+#: src/konqmainwindow.cpp:4247
+#, kde-format
+msgctxt "@title:window"
+msgid "Open bookmarks folder in new tabs"
+msgstr "Buka folder markah di tab baru"
+
+#: src/konqmainwindow.cpp:4405
+#, kde-format
+msgid "Open in T&his Window"
+msgstr "Buka di &Jendela Ini"
+
+#: src/konqmainwindow.cpp:4406
+#, kde-format
+msgid "Open the document in current window"
+msgstr "Buka dokumen di jendela saat ini"
+
+#: src/konqmainwindow.cpp:4413
+#, kde-format
+msgid "Open the document in a new window"
+msgstr "Buka dokumen di sebuah jendela baru"
+
+#: src/konqmainwindow.cpp:4419
+#, kde-format
+msgid "Open in &New Tab"
+msgstr "Buka di &Tab Baru"
+
+#: src/konqmainwindow.cpp:4421
+#, kde-format
+msgid "Open the document in a new tab"
+msgstr "Buka dokumen di sebuah tab baru"
+
+#: src/konqmainwindow.cpp:4637
+#, kde-format
+msgid "&Open With"
+msgstr "Buka &Dengan"
+
+#: src/konqmainwindow.cpp:4650
+#, kde-format
+msgid "Open with %1"
+msgstr "Buka dengan %1"
+
+#: src/konqmainwindow.cpp:4698
+#, kde-format
+msgctxt "@action:inmenu View"
+msgid "&View Mode"
+msgstr "&Mode Tampilan"
+
+#: src/konqmainwindow.cpp:4815
+#, kde-format
+msgid ""
+"You have multiple tabs open in this window, are you sure you want to quit?"
+msgstr ""
+"Anda memiliki banyak tab yang terbuka di jendela ini, anda yakin bahwa anda "
+"ingin berhenti?"
+
+#: src/konqmainwindow.cpp:4817
+#, kde-format
+msgctxt "@title:window"
+msgid "Confirmation"
+msgstr "Konfirmasi"
+
+#: src/konqmainwindow.cpp:4819
+#, kde-format
+msgid "C&lose Current Tab"
+msgstr "T&tutup Tab Saat Ini"
+
+#: src/konqmainwindow.cpp:4845
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Closing the window will discard these changes."
+msgstr ""
+"Tab ini berisi perubahan yang belum diterapkan.\n"
+"Menutup jendela akan mengabaikan perubahan ini."
+
+#: src/konqmainwindow.cpp:4846
+#, kde-format
+msgid ""
+"This page contains changes that have not been submitted.\n"
+"Closing the window will discard these changes."
+msgstr ""
+"Halaman ini berisi perubahan yang belum diterapkan.\n"
+"Menutup jendela akan mengabaikan perubahan ini."
+
+#: src/konqmainwindow.cpp:5003
+#, kde-format
+msgid ""
+"Your sidebar is not functional or unavailable. A new entry cannot be added."
+msgstr ""
+"Bilah sisi anda tidak berfungsi atau tidak tersedia. Sebuah lema baru tidak "
+"dapat ditambahkan."
+
+#: src/konqmainwindow.cpp:5003 src/konqmainwindow.cpp:5010
+#, kde-format
+msgctxt "@title:window"
+msgid "Web Sidebar"
+msgstr "Bilah Sisi Web"
+
+#: src/konqmainwindow.cpp:5008
+#, kde-format
+msgid "Add new web extension \"%1\" to your sidebar?"
+msgstr "Tambah ekstensi web baru \"%1\" ke bilah sisi anda?"
+
+#: src/konqmainwindow.cpp:5010
+#, kde-format
+msgid "Add"
+msgstr "Tambah"
+
+#: src/konqmainwindow.cpp:5010
+#, kde-format
+msgid "Do Not Add"
+msgstr "Jangan Tambah"
+
+#: src/konqmainwindow.cpp:5358
+#, kde-format
+msgid ""
+"There appears to be a configuration error. You have associated Konqueror "
+"with %1, but it cannot handle this file type."
+msgstr ""
+"Kelihatannya terjadi sebuah galat konfigurasi. Anda telah mengasosiasikan "
+"Konqueror dengan %1, tapi Konqueror tak dapat menangani tipe file ini."
+
+#: src/konqmainwindow.cpp:5439
+#, kde-format
+msgid ""
+"Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
+"proxy will be used\n"
+"\n"
+" QtWebEngine only support a fixed proxy, so proxy auto-configuration (PAC) "
+"and Web Proxy Auto-Discovery protocol can't be used with QtWebEngine. If you "
+"need a proxy, please select the system proxy configuration or specify a "
+"proxy URL manually in the settings dialog. Do you want to change proxy "
+"settings now?"
+msgstr ""
+"Konfigurasi proxy-mu tidak bisa digunakan dengan mesin QtWebEngine HTML. "
+"Tanpa proxy akan menggunakan\n"
+"\n"
+" QTWebengine yang hanya mendukung proxy tetap, jadi proxy auto-configuration "
+"(PAC) dan protokol Web Proxy Auto-Discovery tidak bisa digunakan dengan "
+"QtWebEngine. Jika kamu memerlukan proxy, silakan pilih konfigurasi proxy "
+"sistem atau tentukan URL proxy secara manual dalam dialog pengaturan. Apakah "
+"kamu ingin mengubah pengaturan proxy sekarang?"
+
+#: src/konqmainwindow.cpp:5444
+#, kde-format
+msgid "Unsupported proxy configuration"
+msgstr "Konfigurasi proxy yang tidak didukung"
+
+#: src/konqmainwindow.cpp:5444
+#, kde-format
+msgid "Don't use a proxy"
+msgstr "Jangan gunakan proxy"
+
+#: src/konqmainwindow.cpp:5445 src/konqmainwindow.cpp:5463
+#, kde-format
+msgid "Show proxy configuration dialog"
+msgstr "Tampilkan dialog konfigurasi proxy"
+
+#: src/konqmainwindow.cpp:5459
+#, kde-format
+msgid ""
+"Your proxy configuration can't be used with the QtWebEngine HTML engine "
+"because it doesn't support having different proxies for the HTTP and HTTPS "
+"protocols. Your current settings are:<p><b>HTTP proxy:</b> <tt>%1</tt></"
+"p><p><b>HTTPS proxy: </b><tt>%2</tt></p>What do you want to do?"
+msgstr ""
+"Konfigurasi proxy-mu tidak bisa digunakan dengan mesin QtWebEngine HTML "
+"karena tidak memiliki dukungan proxy yang berbeda untuk protokol HTTP dan "
+"HTTPS. Pengaturanmu saat ini adalah:<p><b>HTTP proxy:</b> <tt>%1</tt></"
+"p><p><b>HTTPS proxy: </b><tt>%2</tt></p>Apa yang akan kamu lakukan?"
+
+#: src/konqmainwindow.cpp:5462
+#, kde-format
+msgid "Conflicting proxy configuration"
+msgstr "Konfigurasi proxy yang bentrok"
+
+#: src/konqmainwindow.cpp:5463
+#, kde-format
+msgid "Use HTTP proxy (only this time)"
+msgstr "Gunakan proxy HTTP (hanya kali ini)"
+
+#: src/konqmainwindow.cpp:5463
+#, kde-format
+msgid "Use HTTPS proxy (only this time)"
+msgstr "Gunakan proxy HTTPS (hanya kali ini)"
+
+#: src/konqmainwindow.cpp:5540
+#, kde-format
+msgid ""
+"You have entered Complete Full Screen mode (the user interface is completely "
+"hidden). You can exit it by pressing the keyboard shortcut for Full Screen "
+"Mode (%1)"
+msgstr ""
+"Kamu telah memasukkan mode Layar Penuh Lengkap (antarmuka pengguna "
+"sepenuhnya disembunyikan). Kamu bisa keluar dengan menekan pintasan keyboard "
+"untuk Mode Layar Penuh (%1)"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: src/konqnewsessiondlg_base.ui:28
+#, kde-format
+msgid "Save open &tabs and windows for easy retrieval"
+msgstr "Simpan &tab-tab dan jendela yang terbuka untuk penerimaan yang mudah"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_pAllWindows)
+#: src/konqnewsessiondlg_base.ui:34
+#, kde-format
+msgid "A&ll open windows"
+msgstr "Buka semua jende&la"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_pCurrentWindow)
+#: src/konqnewsessiondlg_base.ui:44
+#, kde-format
+msgid "Onl&y current window"
+msgstr "Han&ya jendela saat ini"
+
+#. i18n: ectx: property (text), widget (QLabel, lblSessionName)
+#: src/konqnewsessiondlg_base.ui:56
+#, kde-format
+msgid "Session n&ame:"
+msgstr "N&ama sesi:"
+
+#: src/konqsessiondlg.cpp:60
+#, kde-format
+msgctxt "@title:window"
+msgid "Manage Sessions"
+msgstr "Kelola Sesi"
+
+#: src/konqsessiondlg.cpp:168
+#, kde-format
+msgctxt "@title:window"
+msgid "Rename Session"
+msgstr "Ubah Nama Sesi"
+
+#: src/konqsessiondlg.cpp:215
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Session"
+msgstr "Simpan Sesi"
+
+#: src/konqsessiondlg.cpp:251
+#, kde-format
+msgid ""
+"A session with the name '%1' already exists, do you want to overwrite it?"
+msgstr "Sebuah sesi bernama '%1' telah ada, anda ingin menimpanya?"
+
+#: src/konqsessiondlg.cpp:252
+#, kde-format
+msgctxt "@title:window"
+msgid "Session exists. Overwrite?"
+msgstr "Sesi sudah ada. Timpa?"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pNewButton)
+#: src/konqsessiondlg_base.ui:26
+#, kde-format
+msgctxt "@action:button New session"
+msgid "New..."
+msgstr "Baru..."
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pSaveCurrentButton)
+#: src/konqsessiondlg_base.ui:33
+#, kde-format
+msgctxt "@action:button Save current session"
+msgid "Save Current..."
+msgstr "Simpan Saat Ini..."
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pRenameButton)
+#: src/konqsessiondlg_base.ui:40
+#, kde-format
+msgctxt "@action:button Rename session"
+msgid "Rename..."
+msgstr "Ganti Nama..."
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pDeleteButton)
+#: src/konqsessiondlg_base.ui:47
+#, kde-format
+msgctxt "@action:button Delete session"
+msgid "Delete"
+msgstr "Hapus"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pOpenTabsInsideCurrentWindow)
+#. i18n: ectx: label, entry, group (Trash)
+#: src/konqsessiondlg_base.ui:73 src/konqueror.kcfg:517
+#, kde-format
+msgid "Open tabs inside current window"
+msgstr "Buka tab di dalam jendela saat ini"
+
+#: src/konqsessionmanager.cpp:86
+#, kde-format
+msgctxt "@title:window"
+msgid "Restore Session?"
+msgstr "Kembalikan Sesi?"
+
+#: src/konqsessionmanager.cpp:107
+#, kde-format
+msgid ""
+"Konqueror did not close correctly. Would you like to restore these previous "
+"sessions?"
+msgstr ""
+"Konqueror tidak menutup secara benar. Apakah anda ingin mengembalikan sesi "
+"sebelumnya?"
+
+#: src/konqsessionmanager.cpp:119
+#, kde-format
+msgctxt "@tooltip:session list"
+msgid "Uncheck the sessions you do not want to be restored"
+msgstr "Hapus tanda centang pada sesi yang tidak ingin dikembalikan"
+
+#: src/konqsessionmanager.cpp:152
+#, kde-format
+msgctxt "@item:treewidget"
+msgid "Window %1"
+msgstr "Jendela %1"
+
+#: src/konqsessionmanager.cpp:190
+#, kde-format
+msgid "Do not ask again"
+msgstr "Jangan tanyakan lagi"
+
+#: src/konqsessionmanager.cpp:204
+#, kde-format
+msgctxt "@action:button yes"
+msgid "Restore Session"
+msgstr "Kembalikan Sesi"
+
+#: src/konqsessionmanager.cpp:205
+#, kde-format
+msgctxt "@action:button no"
+msgid "Do Not Restore"
+msgstr "Jangan Kembalikan"
+
+#: src/konqsessionmanager.cpp:206
+#, kde-format
+msgctxt "@action:button ask later"
+msgid "Ask Me Later"
+msgstr "Tanya Saya Nanti"
+
+#: src/konqstatusbarmessagelabel.cpp:67
+#, kde-format
+msgctxt "@info"
+msgid "Close"
+msgstr "Tutup"
+
+#: src/konqstatusbarmessagelabel.cpp:68
+#, kde-format
+msgid "Close"
+msgstr "Tutup"
+
+#: src/konqstatusbarmessagelabel.cpp:147
+#, kde-format
+msgid "Error: %1"
+msgstr "Galat: %1"
+
+#: src/konqtabs.cpp:51
+#, kde-format
+msgid ""
+"This bar contains the list of currently open tabs. Click on a tab to make it "
+"active. You can also use keyboard shortcuts to navigate through tabs. The "
+"text on the tab shows the content currently open in it; place your mouse "
+"over the tab to see the full title, in case it has been shortened to fit the "
+"tab width."
+msgstr ""
+"Bilah ini berisi senarai tab yang terbuka saat ini. Klik pada sebuah tab "
+"untuk membuatnya aktif. Anda dapat juga menggunakan pintasan keyboard untuk "
+"bernavigasi di antara tab. Teks di tab menampilkan konten yang saat ini "
+"terbuka di dalamnya; letakkan mouse anda di atas tab untuk melihat judul "
+"lengkap, dalam hal judul telah dipersingkat agar pas dengan lebar tab."
+
+#: src/konqtabs.cpp:86
+#, kde-format
+msgid "Open a new tab"
+msgstr "Buka tab baru"
+
+#: src/konqtabs.cpp:95
+#, kde-format
+msgid "Close the current tab"
+msgstr "Tutup tab saat ini"
+
+#: src/konqtabs.cpp:461
+#, kde-format
+msgid "&Duplicate Tab"
+msgstr "&Duplikasi Tab"
+
+#: src/konqtabs.cpp:466
+#, kde-format
+msgid "&Reload Tab"
+msgstr "Muat U&lang Tab"
+
+#: src/konqtabs.cpp:473
+#, kde-format
+msgid "Other Tabs"
+msgstr "Tab Lain"
+
+#: src/konqtabs.cpp:478
+#, kde-format
+msgid "D&etach Tab"
+msgstr "L&epas Tab"
+
+#: src/konqtabs.cpp:484
+#, kde-format
+msgid "&Close Tab"
+msgstr "T&utup Tab"
+
+#. i18n: ectx: label, entry, group (UserSettings)
+#: src/konqueror.kcfg:11
+#, kde-format
+msgid "Start Page"
+msgstr "Halaman Awal"
+
+#. i18n: ectx: whatsthis, entry, group (UserSettings)
+#: src/konqueror.kcfg:12
+#, kde-format
+msgid "This is the URL of the web page where Konqueror will start from."
+msgstr ""
+"Ini adalah URL dari halaman web di mana Konqueror akan mulai dari mana."
+
+#. i18n: ectx: whatsthis, entry, group (UserSettings)
+#: src/konqueror.kcfg:17
+#, kde-format
+msgid ""
+"This is the URL of the web page where Konqueror will jump to when the \\"
+"\"Home\\\" button is pressed."
+msgstr ""
+"Ini adalah URL dari halaman web di mana Konqueror akan menuju ketika tombol "
+"\\\"Home\\\" ditekan."
+
+#. i18n: ectx: label, entry, group (UndoManagerSettings)
+#: src/konqueror.kcfg:26
+#, kde-format
+msgid "Maximum number of Closed Items"
+msgstr "Jumlah maksimum Butir Tertutup"
+
+#. i18n: ectx: whatsthis, entry, group (UndoManagerSettings)
+#: src/konqueror.kcfg:27
+#, kde-format
+msgid ""
+"This sets the maximum number of closed items that will be stored in memory. "
+"This limit will not be surpassed."
+msgstr ""
+"Ini mengatur jumlah maksimum butir tertutup yang akan disimpan dalam memori. "
+"Batas ini tidak akan dilewati."
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:36
+#, kde-format
+msgid "Open folders in separate windows"
+msgstr "Buka folder di jendela terpisah"
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:37
+#, kde-format
+msgid ""
+"If this option is checked, Konqueror will open a new window when you open a "
+"folder, rather than showing that folder's contents in the current window."
+msgstr ""
+"Jika opsi ini dicentang, Konqueror akan membuka sebuah jendela baru ketika "
+"anda membuka sebuah folder, ketimbang membuka konten folder tersebut di "
+"jendela saat ini."
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:42
+#, kde-format
+msgid "Show file tips"
+msgstr "Tampilkan tip file"
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:43
+#, kde-format
+msgid ""
+"Here you can control if, when moving the mouse over a file, you want to see "
+"a small popup window with additional information about that file"
+msgstr ""
+"Di sini anda dapat mengendalikan apakah, ketika memindahkan mouse ke sebuah "
+"file, anda ingin melihat sebuah jendela sembul kecil dengan informasi "
+"tambahan tentang file tersebut"
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:54
+#, kde-format
+msgid "Show previews in file tips"
+msgstr "Tampilkan pratinjau di tips file"
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:55
+#, kde-format
+msgid ""
+"Here you can control if you want the popup window to contain a larger "
+"preview for the file, when moving the mouse over it"
+msgstr ""
+"Di sini anda dapat mengendalikan jika anda ingin jendela sembul agar berisi "
+"pratinjau yang lebih besar untuk file, ketika memindahkan mouse ke file "
+"tersebut"
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:60
+#, kde-format
+msgid "Show 'Delete' menu entries which bypass the trashcan"
+msgstr "Tampilkan lema menu 'Hapus' yang akan melewati tong sampah"
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:61
+#, kde-format
+msgid ""
+"Check this if you want 'Delete' menu commands to be displayed on the desktop "
+"and in the file manager's menus and context menus. You can always delete "
+"files when hidden by holding the Shift key while calling 'Move to Trash'."
+msgstr ""
+"Centang ini jika anda ingin perintah menu 'Hapus' ditampilkan di desktop dan "
+"di menu pengelola file serta menu konteks. Anda tetap dapat menghapus file "
+"yang disembunyikan dengan menahan tombol Shift ketika memanggil 'Pindah ke "
+"Tong Sampah'."
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:153 src/konqueror.kcfg:154
+#, kde-format
+msgid "Number of Open With items in the File menu"
+msgstr "Jumlah butir Buka Dengan di menu File"
+
+#. i18n: ectx: label, entry, group (HTML Settings)
+#: src/konqueror.kcfg:163
+#, kde-format
+msgid "Standard font"
+msgstr "Fon standar"
+
+#. i18n: ectx: whatsthis, entry, group (HTML Settings)
+#: src/konqueror.kcfg:164
+#, kde-format
+msgid "This is the font used to display text in Konqueror windows."
+msgstr ""
+"Ini adalah font yang digunakan untuk menampilkan teks di jendela Konqueror."
+
+#. i18n: ectx: label, entry, group (HistorySettings)
+#: src/konqueror.kcfg:314
+#, kde-format
+msgid "Maximum number of history items per view"
+msgstr "Jumlah maksimum butir histori per tampilan"
+
+#. i18n: ectx: label, entry, group (Trash)
+#: src/konqueror.kcfg:504
+#, kde-format
+msgid "Ask confirmation for deleting a file."
+msgstr "Tanya konfirmasi ketika menghapus sebuah file."
+
+#. i18n: ectx: whatsthis, entry, group (Trash)
+#: src/konqueror.kcfg:505
+#, kde-format
+msgid ""
+"This option tells Konqueror whether to ask for a confirmation when you "
+"delete a file without using the trash folder. Warning, deleted files can not "
+"be recovered, so it is recommended to leave this confirmation enabled."
+msgstr ""
+"Opsi ini memberitahu Konqueror apakah akan menanyakan konfirmasi ketika anda "
+"menghapus sebuah file tanpa menggunakan folder tong sampah. Peringatan, file "
+"yang terhapus tidak dapat dikembalikan, sehingga disarankan untuk "
+"meninggalkan konfirmasi ini tetap aktif."
+
+#. i18n: ectx: label, entry, group (Trash)
+#: src/konqueror.kcfg:510
+#, kde-format
+msgid "Ask confirmation for move to trash"
+msgstr "Tanya konfirmasi ketika memindahkan ke tong sampah"
+
+#. i18n: ectx: whatsthis, entry, group (Trash)
+#: src/konqueror.kcfg:511
+#, kde-format
+msgid ""
+"This option tells Konqueror whether to ask for a confirmation when you move "
+"the file to your trash folder, from where it can be recovered very easily."
+msgstr ""
+"Opsi ini memberitahu Konqueror apakah akan menanyakan konfirmasi ketika anda "
+"memindahkan file ke folder tong sampah anda, dari sana file dapat "
+"dikembalikan dengan sangat mudah."
+
+#. i18n: ectx: whatsthis, entry, group (Trash)
+#: src/konqueror.kcfg:518
+#, kde-format
+msgid ""
+"If true, when opening a session from within the sessions dialog the tabs "
+"will be opened inside current window."
+msgstr ""
+"Jika benar, ketika membuka sebuah sesi dari dalam dialog sesi maka tab akan "
+"dibuka di dalam jendela saat ini."
+
+#. i18n: ectx: Menu (file)
+#: src/konqueror.rc:5
+#, kde-format
+msgid "&File"
+msgstr "&File"
+
+#. i18n: ectx: Menu (edit)
+#: src/konqueror.rc:24
+#, kde-format
+msgid "&Edit"
+msgstr "&Edit"
+
+#. i18n: ectx: Menu (view)
+#: src/konqueror.rc:33
+#, kde-format
+msgid "&View"
+msgstr "&Tampilan"
+
+#. i18n: ectx: Menu (go)
+#: src/konqueror.rc:44
+#, kde-format
+msgid "&Go"
+msgstr "&Ke"
+
+#. i18n: ectx: Menu (tools)
+#: src/konqueror.rc:54
+#, kde-format
+msgid "&Tools"
+msgstr "&Alat"
+
+#. i18n: ectx: Menu (settings)
+#: src/konqueror.rc:59
+#, kde-format
+msgid "&Settings"
+msgstr "Peng&aturan"
+
+#. i18n: ectx: Menu (window)
+#: src/konqueror.rc:77
+#, kde-format
+msgid "&Window"
+msgstr "&Jendela"
+
+#. i18n: ectx: Menu (help)
+#: src/konqueror.rc:93
+#, kde-format
+msgid "&Help"
+msgstr "&Bantuan"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: src/konqueror.rc:98
+#, kde-format
+msgid "Main Toolbar"
+msgstr "Bilah Alat Utama"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: src/konqueror.rc:109
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "Bilah Alat Ekstra"
+
+#. i18n: ectx: ToolBar (locationToolBar)
+#: src/konqueror.rc:116
+#, kde-format
+msgid "Location Toolbar"
+msgstr "Bilah Alat Lokasi"
+
+#. i18n: ectx: ToolBar (bookmarkToolBar)
+#: src/konqueror.rc:122
+#, kde-format
+msgid "Bookmark Toolbar"
+msgstr "Bilah Alat Markah"
+
+#: src/konqundomanager.cpp:90 src/konqundomanager.cpp:252
+#, kde-format
+msgid "Und&o: Closed Tab"
+msgstr "&Urung: Tab Tertutup"
+
+#: src/konqundomanager.cpp:92 src/konqundomanager.cpp:103
+#: src/konqundomanager.cpp:147
+#, kde-format
+msgid "Und&o: Closed Window"
+msgstr "&Urung: Jendela Tertutup"
+
+#: src/konqundomanager.cpp:105
+#, kde-format
+msgid "Und&o"
+msgstr "&Urung"
+
+#: src/konqview.cpp:1162
+#, kde-format
+msgid ""
+"The page you are trying to view is the result of posted form data. If you "
+"resend the data, any action the form carried out (such as search or online "
+"purchase) will be repeated. "
+msgstr ""
+"Halaman yang anda coba lihat adalah hasil dari data formulir yang "
+"dikirimkan. Jika anda mengirim ulang data, aksi apapun yang formulir bawa "
+"(seperti pencarian atau pembelian online) akan diulangi."
+
+#: src/konqview.cpp:1164
+#, kde-format
+msgctxt "@title:window"
+msgid "Warning"
+msgstr "Peringatan"
+
+#: src/konqview.cpp:1164
+#, kde-format
+msgid "Resend"
+msgstr "Kirim Ulang"
+
+#: src/urlloader.cpp:253
+#, kde-format
+msgctxt "Execute an executable file"
+msgid "Execute it"
+msgstr "Mengeksekusinya"
+
+#: src/urlloader.cpp:258
+#, kde-format
+msgctxt ""
+"The user has to decide whether to execute an executable file or display it"
+msgid ""
+"<tt>%1</tt> can be executed. Do you want to execute it or to display it?"
+msgstr ""
+"<tt>%1</tt> bisa dieksekusi. Apakah Anda ingin mengeksekusinya atau hanya "
+"menampilkannya?"
+
+#: src/urlloader.cpp:259
+#, kde-format
+msgctxt "Display an executable file"
+msgid "Display it"
+msgstr "Menampilkannya"
+
+#: src/urlloader.cpp:263
+#, kde-format
+msgctxt "The user has to decide whether to execute an executable file or not"
+msgid "<tt>%1</tt> can be executed. Do you want to execute it?"
+msgstr "<tt>%1</tt> bisa dieksekusi. Apakah Anda ingin mengeksekusinya?"
+
+#: src/urlloader.cpp:438
+#, kde-format
+msgid "Save As"
+msgstr "Simpan Sebagai"
+
+#~ msgid ""
+#~ "Malformed URL\n"
+#~ "%1"
+#~ msgstr ""
+#~ "URL salah bentuk\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "<qt>Unable to run the command specified. The file or folder <b>%1</b> "
+#~ "does not exist.</qt>"
+#~ msgstr ""
+#~ "<qt>Tidak bisa menjalankan perintah yang ditentukan. File atau folder <b>"
+#~ "%1</b> tidak ada.</qt>"
+
+#~ msgid "Could not find any application or handler for %1"
+#~ msgstr "Tidak bisa menemukan penanganan atau aplikasi apapun untuk %1"
+
+#~ msgid "File Management"
+#~ msgstr "Pengelolaan File"
+
+#~ msgid "Web Browsing"
+#~ msgstr "Meramban Web"
+
+#~ msgctxt "@title:window"
+#~ msgid "Configure"
+#~ msgstr "Konfigurasikan"
+
+#~ msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
+#~ msgid "Be free."
+#~ msgstr "Secara bebas."
+
+#~ msgid ""
+#~ "Konqueror is a web browser, file manager and universal document viewer."
+#~ msgstr ""
+#~ "Konqueror adalah sebuah penelusur web, pengelola file dan penampil "
+#~ "dokumen universal."
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "Starting Points"
+#~ msgstr "Titik Awal"
+
+#~ msgid "Introduction"
+#~ msgstr "Pengenalan"
+
+#~ msgid "Tips"
+#~ msgstr "Tips"
+
+#~ msgid "Specifications"
+#~ msgstr "Spesifikasi"
+
+#~ msgid "Your personal files"
+#~ msgstr "File pribadi anda"
+
+#~ msgid "Trash"
+#~ msgstr "Sesampahan"
+
+#~ msgid "Browse and restore the trash"
+#~ msgstr "Telusur dan kembalikan isi sesampahan"
+
+#~ msgid "Network Folders"
+#~ msgstr "Folder Jaringan"
+
+#~ msgid "Shared files and folders"
+#~ msgstr "File dan folder yang dibagikan"
+
+#~ msgid "Bookmarks"
+#~ msgstr "Markah"
+
+#~ msgid "Quick access to your bookmarks"
+#~ msgstr "Akses cepat ke markah anda"
+
+#~ msgid "Next: An Introduction to Konqueror"
+#~ msgstr "Selanjutnya: Sebuah Pengenalan terhadap Konqueror"
+
+#~ msgid "Search the Web"
+#~ msgstr "Pencarian Web"
+
+#~ msgid ""
+#~ "Konqueror makes working with and managing your files easy. You can browse "
+#~ "both local and networked folders while enjoying advanced features such as "
+#~ "the powerful sidebar and file previews."
+#~ msgstr ""
+#~ "Konqueror menjadikan bekerja dengan dan mengelola file anda terasa mudah. "
+#~ "Anda dapat meramban folder baik lokal maupun jaringan sambil menikmati "
+#~ "fitur-fitur canggih seperti bilah sisi yang hebat dan pratinjau file."
+
+#~ msgid ""
+#~ "Konqueror is also a full featured and easy to use web browser which you "
+#~ "can use to explore the Internet. Enter the address (e.g. <a href=\"http://"
+#~ "www.kde.org\">http://www.kde.org</a>) of a web page you would like to "
+#~ "visit in the location bar and press Enter, or choose an entry from the "
+#~ "Bookmarks menu."
+#~ msgstr ""
+#~ "Konqueror juga merupakan sebuah penelusur web yang penuh fitur dan mudah "
+#~ "digunakan untuk menjelajah Internet. Masukkan alamat (misalnya <a href="
+#~ "\"http://www.kde.org\">http://www.kde.org</a>) dari sebuah halaman web "
+#~ "yang ingin anda kunjungi di bilah lokasi lalu tekan Enter, atau pilih "
+#~ "sebuah lema dari menu Markah."
+
+#~ msgid ""
+#~ "To return to the previous location, press the back button <img width='16' "
+#~ "height='16' src=\"%1\"></img> in the toolbar. "
+#~ msgstr ""
+#~ "Untuk kembali ke lokasi sebelumnya, tekan tombol mundur <img width='16' "
+#~ "height='16' src=\"%1\"></img> di bilah alat. "
+
+#~ msgid ""
+#~ "To quickly go to your Home folder press the home button <img width='16' "
+#~ "height='16' src=\"%1\"></img>."
+#~ msgstr ""
+#~ "Untuk secara cepat menuju ke folder Beranda anda tekan tombol home <img "
+#~ "width='16' height='16' src=\"%1\"></img>."
+
+#~ msgid ""
+#~ "For more detailed documentation on Konqueror click <a href=\"%1\">here</"
+#~ "a>."
+#~ msgstr ""
+#~ "Untuk mengetahui dokumentasi yang lebih terperinci di Konqueror klik di "
+#~ "<a href=\"%1\">sini</a>."
+
+#~ msgid "Next: Tips & Tricks"
+#~ msgstr "Selanjutnya: Tip & Trik"
+
+#~ msgid ""
+#~ "Konqueror is designed to embrace and support Internet standards. The aim "
+#~ "is to fully implement the officially sanctioned standards from "
+#~ "organizations such as the W3 and OASIS, while also adding extra support "
+#~ "for other common usability features that arise as de facto standards "
+#~ "across the Internet. Along with this support, for such functions as "
+#~ "favicons, Web Shortcuts, and <A HREF=\"%1\">XBEL bookmarks</A>, Konqueror "
+#~ "also implements:"
+#~ msgstr ""
+#~ "Konqueror didesain untuk mendorong dan mendukung standar Internet. "
+#~ "Tujuannya adalah untuk mengimplementasikan sepenuhnya standar yang dapat "
+#~ "dikenakan sanksi dari organisasi seperti W3 dan OASIS, sementara "
+#~ "menyertakan juga dukungan ekstra dari fitur penggunaan yang muncul "
+#~ "sebagai standar de facto di Internet. Bersama dengan dukungan ini, untuk "
+#~ "fungsi seperti favicon, Pintasan Web, dan <A HREF=\"%1\">markah XBEL</A>, "
+#~ "Konqueror juga mengimplementasikan:"
+
+#~ msgid "Supported standards"
+#~ msgstr "Standar yang didukung"
+
+#~ msgid "Additional requirements*"
+#~ msgstr "Kebutuhan tambahan*"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">DOM</A> (Level 1, sebagian Level 2) berbasis <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+
+#~ msgid "built-in"
+#~ msgstr "terpasang"
+
+#~ msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
+#~ msgstr "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, sebagian CSS 2)"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Edisi 3 (hampir menyamai JavaScript 1.5)"
+
+#~ msgid ""
+#~ "JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
+#~ msgstr ""
+#~ "JavaScript dinonfungsikan (secara global). Fungsikan JavaScript di <A "
+#~ "HREF=\"%1\">sini</A>."
+
+#~ msgid ""
+#~ "JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\"
+#~ "\">here</A>."
+#~ msgstr ""
+#~ "JavaScript difungsikan (secara global). Konfigurasikan JavaScript di <A "
+#~ "HREF=\\\"%1\\\">sini</A>."
+
+#~ msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
+#~ msgstr "Dukungan <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> aman"
+
+#~ msgid ""
+#~ "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">OpenJDK</A> or <A HREF="
+#~ "\"%2\">Sun/Oracle</A>)"
+#~ msgstr ""
+#~ "JDK 1.2.0 (Java 2) kompatibel VM (<A HREF=\"%1\">OpenJDK</A> atau <A HREF="
+#~ "\"%2\">Sun/Oracle</A>)"
+
+#~ msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
+#~ msgstr "Fungsikan Java (secara global) <A HREF=\"%1\">sini</A>."
+
+#~ msgid ""
+#~ "NPAPI <A HREF=\"%2\">plugins</A> (for viewing <A HREF="
+#~ "\"%1\">Flash<SUP>&reg;</SUP></A>, etc.)"
+#~ msgstr ""
+#~ "NPAPI <A HREF=\"%2\">plugin</A> (untuk menampilkan <A HREF="
+#~ "\"%1\">Flash<SUP>&reg;</SUP></A>, dll.)"
+
+#~ msgid "Secure Sockets Layer"
+#~ msgstr "Lapisan Soket Aman"
+
+#~ msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
+#~ msgstr "(TLS/SSL v2/3) untuk komunikasi yang aman sampai 168bit"
+
+#~ msgid "OpenSSL"
+#~ msgstr "OpenSSL"
+
+#~ msgid "Bidirectional 16bit unicode support"
+#~ msgstr "Dukungan unicode 16bit dua arah"
+
+#~ msgid "AutoCompletion for forms"
+#~ msgstr "Penyelesai Otomatis untuk formulir"
+
+#~ msgctxt "Title of an html 'group box' explaining konqueror features"
+#~ msgid "General"
+#~ msgstr "Umum"
+
+#~ msgid "Feature"
+#~ msgstr "Fitur"
+
+#~ msgid "Details"
+#~ msgstr "Perincian"
+
+#~ msgid "Image formats"
+#~ msgstr "Format gambar"
+
+#~ msgid "PNG<br />JPG<br />GIF"
+#~ msgstr "PNG<br />JPG<br />GIF"
+
+#~ msgid "Transfer protocols"
+#~ msgstr "Protokol transfer"
+
+#~ msgid "HTTP 1.1 (including gzip/bzip2 compression)"
+#~ msgstr "HTTP 1.1 (termasuk kompresi gzip/bzip2)"
+
+#~ msgid "FTP"
+#~ msgstr "FTP"
+
+#~ msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpCenter)...</A>"
+#~ msgstr ""
+#~ "dan <A HREF=\"%1\">banyak lagi (lihat Kioslaves di KHelpCenter)...</A>"
+
+#~ msgctxt "A feature of Konqueror"
+#~ msgid "URL-Completion"
+#~ msgstr "Penyelesai-URL"
+
+#~ msgid "Manual"
+#~ msgstr "Manual"
+
+#~ msgid "Popup"
+#~ msgstr "Sembulan"
+
+#~ msgid "(Short-) Automatic"
+#~ msgstr "(Urutkan-) Otomatis"
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "<a href=\"%1\">Return to Starting Points</a>"
+#~ msgstr "<a href=\"%1\">Kembali ke Titik Awal</a>"
+
+#~ msgid "Tips & Tricks"
+#~ msgstr "Tip & Trik"
+
+#~ msgid ""
+#~ "Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, "
+#~ "using Google, for the search phrase \"KDE\". There are a lot of Web-"
+#~ "Shortcuts predefined to make searching for software or looking up certain "
+#~ "words in an encyclopedia a breeze. You can even <a href=\"%1\">create "
+#~ "your own</a> Web-Shortcuts."
+#~ msgstr ""
+#~ "Gunakan Pintasan-Web: dengan mengetik \"gg: KDE\" seseorang dapat mencari "
+#~ "Internet, menggunakan Google, untuk frasa pencarian \"KDE\". Ada beragam "
+#~ "Pintasan-Web yang telah ditentukan sebelumnya untuk menciptakan pencarian "
+#~ "perangkat lunak atau pencarian kata tertentu di ensiklopedia menjadi "
+#~ "mudah. Anda bahkan dapat <a href=\"%1\">menciptakan sendiri</a> Pintasan-"
+#~ "Web anda."
+
+#~ msgid ""
+#~ "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
+#~ "the HTML toolbar to increase the font size on your web page."
+#~ msgstr ""
+#~ "Gunakan tombol pembesar <img width='16' height='16' src=\"%1\"></img> di "
+#~ "bilah alat HTML untuk memperbesar ukuran font di halaman web Anda."
+
+#~ msgid ""
+#~ "When you want to paste a new address into the Location toolbar you might "
+#~ "want to clear the current entry by pressing the black arrow with the "
+#~ "white cross <img width='16' height='16' src=\"%1\"></img> in the toolbar."
+#~ msgstr ""
+#~ "Ketika anda ingin menempelkan sebuah alamat baru ke bilah alat Lokasi, "
+#~ "anda mungkin ingin membersihkan lema saat ini dengan menekan anak panah "
+#~ "hitam dengan tanda silang <img width='16' height='16' src=\"%1\"></img> "
+#~ "di bilah alat."
+
+#~ msgid ""
+#~ "To create a link on your desktop pointing to the current page, simply "
+#~ "drag the icon (favicon) that is to the left of the Location toolbar, drop "
+#~ "it on to the desktop, and choose \"Icon\"."
+#~ msgstr ""
+#~ "Untuk menciptakan sebuah tautan di desktop yang menunjuk ke halaman saat "
+#~ "ini, cukup seret ikon (favicon) yang ada di sebelah kiri dari Lokasi "
+#~ "bilah alat, taruh ke desktop, dan pilih \"Ikon\"."
+
+#~ msgid ""
+#~ "You can also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen "
+#~ "Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
+#~ "sessions."
+#~ msgstr ""
+#~ "Anda juga dapat menemukan <img width='16' height='16' src=\"%1\" /> "
+#~ "\"Mode Layar Penuh\" di menu Pengaturan. Fitur ini sangat berguna untuk "
+#~ "sesi \"Bicara\"."
+
+#~ msgid ""
+#~ "Divide et impera (lat. \"Divide and conquer\") - by splitting a window "
+#~ "into two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> "
+#~ "Split View Left/Right) you can make Konqueror appear the way you like."
+#~ msgstr ""
+#~ "Divide et impera (lat. \"Belah lalu taklukkan\") - dengan membelahkan "
+#~ "sebuah window menjadi dua bagian (misalnya Window -> <img width='16' "
+#~ "height='16' src=\"%1\" /> Belahkan Tampilan Kiri/Kanan) anda dapat "
+#~ "membuat Konqueror terlihat seperti yang anda inginkan."
+
+#~ msgid ""
+#~ "Use the <a href=\"%1\">user-agent</a> feature if the website you are "
+#~ "visiting asks you to use a different browser (and do not forget to send a "
+#~ "complaint to the webmaster!)"
+#~ msgstr ""
+#~ "Gunakan fitur <a href=\"%1\">agen pengguna</a> jika situs web yang anda "
+#~ "kunjungi meminta anda untuk menggunakan penelusur web yang berbeda (dan "
+#~ "jangan lupa untuk menyampaikan komplain kepada webmaster!)"
+
+#~ msgid ""
+#~ "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
+#~ "ensures that you can keep track of the pages you have visited recently."
+#~ msgstr ""
+#~ "Histori <img width='16' height='16' src=\"%1\"></img> di BilahSisi "
+#~ "memastikan bahwa Anda dapat tetap melacak halaman yang baru-baru ini Anda "
+#~ "kunjungi."
+
+#~ msgid ""
+#~ "Use a caching <a href=\"%1\">proxy</a> to speed up your Internet "
+#~ "connection."
+#~ msgstr ""
+#~ "Gunakan penyimpanan <a href=\"%1\">proxy</a> untuk mempercepat koneksi "
+#~ "Internet anda."
+
+#~ msgid ""
+#~ "Advanced users will appreciate the Konsole which you can embed into "
+#~ "Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
+#~ "Terminal Emulator)."
+#~ msgstr ""
+#~ "Pengguna mahir akan menghargai Konsole yang dapat anda sertakan ke dalam "
+#~ "Konqueror (Pengaturan -> <img width='16' height='16' SRC=\"%1\"></img> "
+#~ "Tampilkan Emulator Terminal)."
+
+#~ msgid "Next: Specifications"
+#~ msgstr "Selanjutnya: Spesifikasi"
+
+#~ msgid "Installed Plugins"
+#~ msgstr "Plugin Terinstal"
+
+#~ msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
+#~ msgstr "<td>Plugin</td><td>Deskripsi</td><td>File</td><td>Tipe</td>"
+
+#~ msgid "Installed"
+#~ msgstr "Terinstal"
+
+#~ msgid ""
+#~ "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
+#~ msgstr "<td>Tipe Mime</td><td>Deskripsi</td><td>Akhiran</td><td>Plugin</td>"
+
+#~ msgid "&Open"
+#~ msgstr "&Buka"
+
+#~ msgid ""
+#~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">plugins</A> (for "
+#~ "viewing <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
+#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Video, etc.)"
+#~ msgstr ""
+#~ "<A HREF=\"%4\">Plugins</A> Netscape Communicator<SUP>&reg;</SUP> (untuk "
+#~ "menampilkan <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
+#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Video, etc.)"
+
+#~ msgid "http://konqueror.kde.org"
+#~ msgstr "http://konqueror.kde.org"
+
+#~ msgid "Limits"
+#~ msgstr "Batas"
+
+#~ msgid "URLs e&xpire after"
+#~ msgstr "URL kadalu&warsa setelah"
+
+#~ msgid "Maximum &number of URLs:"
+#~ msgstr "&Jumlah maksimum URL:"
+
+#~ msgid "Custom Fonts For"
+#~ msgstr "Fonta Suai Untuk"
+
+#~ msgid "URLs newer than"
+#~ msgstr "URL lebih baru dari"
+
+#~ msgid "Choose Font..."
+#~ msgstr "Pilih Fonta..."
+
+#~ msgid "URLs older than"
+#~ msgstr "URL lebih lama dari"
+
+#~ msgid ""
+#~ "Shows the number of times visited and the dates of the first and last "
+#~ "visits, in addition to the URL"
+#~ msgstr ""
+#~ "Tampilkan jumlah berapa kali kunjungan dan tanggal kunjungan pertama "
+#~ "serta terakhir, sebagai tambahan untuk URL"
+
+#~ msgid "Detailed tooltips"
+#~ msgstr "Tip alat detail"
+
+#~ msgid "Clear History"
+#~ msgstr "Hapus Riwayat"
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "History Sidebar Module"
+#~ msgstr "Modul Bilah Sisi Riwayat"
+
+#~ msgctxt "@title:tab"
+#~ msgid "History"
+#~ msgstr "Riwayat"
+
+#~ msgid "Minute"
+#~ msgid_plural "Minutes"
+#~ msgstr[0] "Menit"
+
+#~ msgid "Day"
+#~ msgid_plural "Days"
+#~ msgstr[0] "Hari"
+
+#~ msgid "<h1>History Sidebar</h1> You can configure the history sidebar here."
+#~ msgstr ""
+#~ "<h1>Bilah Sisi Riwayat</h1> Anda dapat mengatur bilah sisi riwayat di "
+#~ "sini."
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Places Sidebar Module"
+#~ msgstr "Modul Bilah Sisi Tempat"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Places"
+#~ msgstr "Tempat"
+
+#~ msgid "Extended Sidebar"
+#~ msgstr "Bilah Sisi Diperluas"
+
+#~ msgid "Rollback to System Default"
+#~ msgstr "Gulung Balik ke Standar Sistem"
+
+#~ msgid "Configure Sidebar"
+#~ msgstr "Atur Bilah Sisi"
+
+#~ msgid "Add New"
+#~ msgstr "Tambah Baru"
+
+#~ msgid "Multiple Views"
+#~ msgstr "Tampilan Banyak"
+
+#~ msgid "Show Tabs Left"
+#~ msgstr "Tampilkan Tab Kiri"
+
+#~ msgid "Close Sidebar"
+#~ msgstr "Tutup Bilah Sisi"
+
+#~ msgid "This entry already exists."
+#~ msgstr "Lema ini telah ada."
+
+#~ msgid ""
+#~ "<qt>This removes all your entries from the sidebar and adds the system "
+#~ "default ones.<br /><b>This procedure is irreversible</b><br />Do you want "
+#~ "to proceed?</qt>"
+#~ msgstr ""
+#~ "<qt>Ini menghapus semua lema anda dari bilah sisi dan menambahkannya ke "
+#~ "standar sistem.<br /><b>Prosedur ini tidak dapat dikembalikan</b><br /"
+#~ ">Anda ingin melanjutkan?</qt>"
+
+#~ msgid "Show Tabs Right"
+#~ msgstr "Tampilkan Tab Kanan"
+
+#~ msgctxt "@title:window"
+#~ msgid "Set Name"
+#~ msgstr "Atur Nama"
+
+#~ msgid "Enter the name:"
+#~ msgstr "Masukkan nama:"
+
+#~ msgid "Enter a URL:"
+#~ msgstr "Masukkan URL:"
+
+#~ msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
+#~ msgstr "<qt>Anda yakin ingin menghapus tab <b>%1</b>?</qt>"
+
+#~ msgid ""
+#~ "You have hidden the sidebar configuration button. To make it visible "
+#~ "again, click the right mouse button on any of the sidebar buttons and "
+#~ "select \"Show Configuration Button\"."
+#~ msgstr ""
+#~ "Anda memiliki tombol konfigurasi bilah sisi yang tersembunyi. Untuk "
+#~ "membuatnya tampak kembali, klik tombol tetikus kanan di tombol panel "
+#~ "navigasi manapun lalu pilih \"Tampilkan Tombol Konfigurasi\"."
+
+#~ msgid "Set Name..."
+#~ msgstr "Atur Nama..."
+
+#~ msgid "Set URL..."
+#~ msgstr "Atur URL..."
+
+#~ msgid "Set Icon..."
+#~ msgstr "Atur Ikon..."
+
+#~ msgid "Remove"
+#~ msgstr "Hapus"
+
+#~ msgid "Web module"
+#~ msgstr "Modul Web"
+
+#~ msgid "&Create New Folder"
+#~ msgstr "Buat &Folder Baru"
+
+#~ msgid "Delete Folder"
+#~ msgstr "Hapus Folder"
+
+#~ msgid "Delete Bookmark"
+#~ msgstr "Hapus Penanda"
+
+#~ msgid "Properties"
+#~ msgstr "Properti"
+
+#~ msgid "Open in New Window"
+#~ msgstr "Buka di Jendela Baru"
+
+#~ msgid "Open Folder in Tabs"
+#~ msgstr "Buka Folder di Tab"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "Salin Alamat Tautan"
+
+#~ msgctxt "@title:window"
+#~ msgid "Create New Bookmark Folder"
+#~ msgstr "Buat Folder Penanda Baru"
+
+#~ msgid "New folder:"
+#~ msgstr "Folder Baru:"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark folder\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "Anda yakin bahwa anda ingin menghapus folder penanda\n"
+#~ "\"%1\"?"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "Anda yakin bahwa anda ingin menghapus penanda\n"
+#~ "\"%1\"?"
+
+#~ msgctxt "@title:window"
+#~ msgid "Bookmark Folder Deletion"
+#~ msgstr "Penghapusan Folder Penanda"
+
+#~ msgctxt "@title:window"
+#~ msgid "Bookmark Deletion"
+#~ msgstr "Penghapusan Penanda"
+
+#~ msgctxt "@title:window"
+#~ msgid "Bookmark Properties"
+#~ msgstr "Properti Penanda"
+
+#~ msgid "&Update"
+#~ msgstr "&Pemutakhiran"
+
+#~ msgid "Name:"
+#~ msgstr "Nama:"
+
+#~ msgid "Location:"
+#~ msgstr "Lokasi:"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add Bookmark"
+#~ msgstr "Tambah Penanda"
+
+#~ msgid "Cannot find parent item %1 in the tree. Internal error."
+#~ msgstr "Tak dapat menemukan item induk %1 di pohon. Galat internal."
+
+#~ msgid "&Create New Folder..."
+#~ msgstr "&Buat Folder Baru..."
+
+#~ msgid "Move to Trash"
+#~ msgstr "Pindah ke Tempat Sampah"
+
+#~ msgid "Rename"
+#~ msgstr "Ganti Nama"
+
+#~ msgid "Delete Link"
+#~ msgstr "Hapus Tautan"
+
+#~ msgid "New Folder"
+#~ msgstr "Folder Baru"
+
+#~ msgctxt "@title:window"
+#~ msgid "Create New Folder"
+#~ msgstr "Buat Folder Baru"
+
+#~ msgid "Enter folder name:"
+#~ msgstr "Masukkan nama folder:"
+
+#~ msgctxt "@label"
+#~ msgid "Name:"
+#~ msgstr "Nama:"
+
+#~ msgctxt "@label"
+#~ msgid "Path or URL:"
+#~ msgstr "Alamat atau URL:"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add folder sidebar module"
+#~ msgstr "Tambah modul bilah sisi folder"
+
+#~ msgid "&Open Link"
+#~ msgstr "&Buka Tautan"
+
+#~ msgid "Set &Automatic Reload"
+#~ msgstr "&Atur Muat Ulang Otomatis"
+
+#~ msgctxt "@title:window"
+#~ msgid "Set Refresh Timeout (0 disables)"
+#~ msgstr "Atur Waktu Habis Segarkan (0 menonaktifkan)"
+
+#~ msgid " minute"
+#~ msgid_plural " minutes"
+#~ msgstr[0] " menit"
+
+#~ msgid " second"
+#~ msgid_plural " seconds"
+#~ msgstr[0] " detik"
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Web Sidebar Module"
+#~ msgstr "Modul Bilah Sisi Web"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add web sidebar module"
+#~ msgstr "Tambah modul bilah sisi web"
+
+#~ msgid "&Use index.html"
+#~ msgstr "&Gunakan index.html"
+
+#~ msgid "If present, open index.html when entering a folder."
+#~ msgstr "Jika ada, buka index.html ketika memasuki sebuah folder."
+
+#~ msgid ""
+#~ "<em>Tuning Tip:</em> If you want the Konqueror web browser to start "
+#~ "faster, you can turn off this information screen by clicking <a href="
+#~ "\"%1\">here</a>. You can re-enable it by choosing the Help -> Konqueror "
+#~ "Introduction menu option, and then pressing Settings -> Save View Profile "
+#~ "As... -> \"Web Browsing\"."
+#~ msgstr ""
+#~ "<em>Tip Menyesuaikan:</em> Jika anda ingin agar peramban web Konqueror "
+#~ "memulai lebih cepat, anda dapat mematikan layar informasi ini dengan klik "
+#~ "di <a href=\"%1\">sini</a>. Anda dapat mengaktifkannya kembali dengan "
+#~ "memilih opsi menu Bantuan -> Pengantar Konqueror, dan kemudian tekan "
+#~ "Pengaturan -> Simpan Profil Tampilan Sebagai... -> \"Meramban Web\"."
+
+#~ msgid ""
+#~ "Do you want to disable showing the introduction in the webbrowsing "
+#~ "profile?"
+#~ msgstr ""
+#~ "Apakah anda ingin nonaktifkan menampilkan pengantar di profil meramban "
+#~ "web?"
+
+#~ msgctxt "@title:window"
+#~ msgid "Faster Startup?"
+#~ msgstr "Memulai Lebih Cepat?"
+
+#~ msgid "Disable"
+#~ msgstr "Nonaktifkan"
+
+#~ msgid "Keep"
+#~ msgstr "Simpan"
+
+#~ msgid "Profile to open"
+#~ msgstr "Profil untuk dibuka"
+
+#~ msgid "List available profiles"
+#~ msgstr "Senarai profil tersedia"
+
+#~ msgid "&Save View Profile As..."
+#~ msgstr "&Simpan Tampilan Profil Sebagai..."
+
+#~ msgid "C&onfigure View Profiles..."
+#~ msgstr "A&tur Profil Tampilan..."
+
+#~ msgid "Load &View Profile"
+#~ msgstr "Muat Pro&fil Tampilan"
+
+#~ msgctxt "@title:window"
+#~ msgid "Profile Management"
+#~ msgstr "Manajemen Profil"
+
+#~ msgid "&Rename Profile"
+#~ msgstr "&Ganti Nama Profil"
+
+#~ msgid "&Delete Profile"
+#~ msgstr "&Hapus Profil"
+
+#~ msgid "&Profile name:"
+#~ msgstr "&Nama profil:"
+
+#~ msgid "Save &URLs in profile"
+#~ msgstr "Simpan &URL di profil"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window.\n"
+#~ "Loading a view profile will close them."
+#~ msgstr ""
+#~ "Anda memiliki banyak tab yang terbuka di jendela ini.\n"
+#~ "Memuat sebuah profil tampilan akan menutup tab."
+
+#~ msgid "Load View Profile"
+#~ msgstr "Muat Profil Tampilan"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Loading a profile will discard these changes."
+#~ msgstr ""
+#~ "Tab ini berisi perubahan yang belum diterapkan.\n"
+#~ "Memuat sebuah profil akan mengabaikan perubahan ini."
+
+#~ msgid " day"
+#~ msgid_plural " days"
+#~ msgstr[0] " hari"
+
+#~ msgid " min"
+#~ msgstr " men"
+
+#~ msgid "Input Required:"
+#~ msgstr "Masukan Diperlukan:"
+
+#~ msgid "&Execute Shell Command..."
+#~ msgstr "&Eksekusi Perintah Shell..."
+
+#~ msgid ""
+#~ "KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a "
+#~ "bug."
+#~ msgstr ""
+#~ "KShellCmdPlugin::slotExecuteShellCommand: Galat program, silakan laporkan "
+#~ "kutu."
+
+#~ msgid "Executing shell commands works only on local directories."
+#~ msgstr "Mengeksekusi perintah shell hanya bekerja di direktori lokal"
+
+#~ msgid "Execute Shell Command"
+#~ msgstr "Eksekusi Perintah Shell"
+
+#~ msgid "Execute shell command in current directory:"
+#~ msgstr "Eksekusi perintah shell di direktori saat ini:"
+
+#~ msgid "Output from command: \"%1\""
+#~ msgstr "Keluaran dari perintah: \"%1\""
+
+#~ msgid "Hide %1"
+#~ msgstr "Sembunyikan %1"
+
+#~ msgid "SideBar Test Plugin"
+#~ msgstr "Plugin Tes Batang Sisi"
+
+#~ msgid "Bookmark This Location"
+#~ msgstr "Tandai Lokasi Ini"
+
+#~ msgid ""
+#~ "Protocol not supported\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Protokol tak didukung\n"
+#~ "%1"
+
+#~ msgid "Cannot create the find part, check your installation."
+#~ msgstr "Tak dapat membuat bagian cari, cek instalasi anda."
+
+#~ msgid "My Bookmarks"
+#~ msgstr "Penanda Saya"
+
+#~ msgid "Preload for later use"
+#~ msgstr "Pramuat untuk digunakan nanti"
+
+#~ msgid "&Save View Profile \"%1\"..."
+#~ msgstr "&Simpan Profil Tampilan \"%1\"..."
+
+#~ msgid "Configure Navigation Panel"
+#~ msgstr "Atur Panel Navigasi"
+
+#~ msgid "Close Navigation Panel"
+#~ msgstr "Tutup Panel Navigasi"
+
+#~ msgid "Select Type"
+#~ msgstr "Pilih Tipe"
+
+#~ msgid "Select type:"
+#~ msgstr "Pilih tipe:"
+
+#~ msgid "Web SideBar Plugin"
+#~ msgstr "Plugin Batang Sisi Web"
+
+#~ msgid "<qt><b>%1</b> does not exist</qt>"
+#~ msgstr "<qt><b>%1</b> tidak ada</qt>"

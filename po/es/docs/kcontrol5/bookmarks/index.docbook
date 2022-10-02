@@ -1,0 +1,166 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Spanish "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="bookmarks" lang="&language;">
+<articleinfo>
+
+<title
+>Marcadores</title>
+<authorgroup>
+<author
+><personname
+><firstname
+>Xavier</firstname
+><surname
+>Vello</surname
+></personname
+> <email
+>xavier.vello@gmail.com</email
+> </author>
+<othercredit role="translator"
+><firstname
+>Cristina Yenyxe</firstname
+><surname
+>González García</surname
+><affiliation
+><address
+><email
+>the.blue.valkyrie@gmail.com</email
+></address
+></affiliation
+><contrib
+>Traductor</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2016-11-08</date>
+<releaseinfo
+>Aplicaciones 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Preferencias del sistema</keyword>
+<keyword
+>marcadores</keyword>
+<keyword
+>KIO</keyword>
+</keywordset>
+</articleinfo>
+<sect1 id="conf">
+<title
+>Página de inicio de marcadores</title>
+<para
+>Este modulo le permite configurar los marcadores de la página inicial.</para>
+<para
+>Para ver los marcadores de la página inicial introduzca <userinput
+>bookmarks:/</userinput
+> en la barra de ubicación.</para>
+<para
+>Las preferencias de este modulo también son accesibles introduciendo <userinput
+>bookmarks:/config</userinput
+> en la barra de ubicación.</para>
+<sect2 id="conf-general">
+<title
+>Preferencias generales</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Número de columnas a mostrar</guilabel
+></term>
+<listitem>
+<para
+>Las carpetas se distribuyen automáticamente en varias columnas. El número óptimo de ellas depende del ancho de la ventana de &konqueror; y del número de marcadores que tenga.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Mostrar fondos de carpetas</guilabel
+></term>
+<listitem>
+<para
+>Utilícelo en sistemas lentos para desactivar las imágenes de fondo.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="conf-bookmark">
+<title
+>Marcadores</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Mostrar marcadores sin carpeta</guilabel
+></term>
+<listitem>
+<para
+>Si desmarca esta opción, no se mostrarán los marcadores que estén en la raíz de la jerarquía (no en una carpeta). Si lo marca, se mostrarán en una carpeta «raíz».</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Aplanar árbol de marcadores</guilabel
+></term>
+<listitem>
+<para
+>Por defecto, las subcarpetas se muestran dentro de sus padres. Si activa esta opción se mostrarán de manera independiente. No es tan bonito, pero puede serle útil si quiere dividir una carpeta muy grande en dos columnas.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Mostrar lugares del sistema</guilabel
+></term>
+<listitem>
+<para
+>Muestra un cuadro con lugares comunes (Inicio, Red...). Es útil si usa &konqueror; como gestor de archivos.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="conf-cache">
+<title
+>Caché de imágenes</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Tamaño de caché de disco</guilabel
+></term>
+<listitem>
+<para
+>Especifica cuánto disco utilizar para la caché de imágenes.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Limpiar caché</guilabel
+></term>
+<listitem>
+<para
+>Elimina todas las imágenes cacheadas. Esto puede ser necesario si algunos favicons se corrompen y no se refrescan automáticamente.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+</sect1>
+</article>

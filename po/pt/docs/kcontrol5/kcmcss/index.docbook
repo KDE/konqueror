@@ -1,0 +1,454 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Portuguese "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="kcmcss" lang="&language;">
+<articleinfo>
+<title
+>Aparência</title>
+<authorgroup>
+<author
+>&Lauri.Watts; &Lauri.Watts.mail;</author>
+<othercredit role="translator"
+><firstname
+>José</firstname
+><surname
+>Pires</surname
+><affiliation
+><address
+><email
+>zepires@gmail.com</email
+></address
+></affiliation
+><contrib
+>Tradução</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2016-11-08</date>
+<releaseinfo
+>Aplicações 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>CSS</keyword>
+<keyword
+>Aparência</keyword>
+<keyword
+>Tipo de Letra</keyword>
+<keyword
+>CSS</keyword>
+<keyword
+>Folhas de estilo</keyword>
+<keyword
+>Acessibilidade</keyword>
+</keywordset>
+
+</articleinfo>
+
+<sect1 id="appearance">
+<title
+>Aparência</title>
+<para
+>Este módulo consiste em três páginas com opções de configuração sobre a apresentação das páginas Web.</para>
+
+<sect2 id="general">
+<title
+>Geral</title
+> <!-- modified copy from khtml/index.docbook <sect2 id="kbrowse-html"-->
+
+<para
+>A opção chamada <guilabel
+>Carregar automaticamente as imagens</guilabel
+> permite-lhe controlar se as imagens nas páginas Web são carregadas por omissão. A menos que tenha uma ligação muito lenta, provavelmente irá querer deixar esta opção seleccionada, dado que existem bastantes páginas Web que são difíceis de usar sem imagens. Se não seleccionar a opção para carregar automaticamente as imagens, poderá à mesma ver o texto na página e carregar depois as imagens se necessitar delas.</para>
+
+<para
+>Se a opção <guilabel
+>Desenhar uma moldura em torno das imagens ainda não carregadas por completo</guilabel
+> estiver assinalada, o &konqueror; irá desenhar um contorno em substituição das imagens incorporadas numa página Web que ainda não tenham sido carregadas por completo. Provavelmente irá querer assinalar esta opção para melhorar a sua experiência de navegação, especialmente se tiver uma ligação lenta de rede.</para>
+
+<para
+>Muitas das páginas Web usam imagens GIF animadas, e estas podem-se tornar muito incomodativos, podendo tornar-se mesmo prejudiciais aos recursos do seu sistema. A opção <guilabel
+>Animações</guilabel
+> permite-lhe escolher se as animações estão activas. Por omissão, estas estão activas, mas podê-la-á desligar ou permitir a sua animação apenas uma vez, mesmo que o ficheiro em si tenha instruções para que a animação corra mais vezes ou continuamente.</para>
+
+<para
+>A opção seguinte é a <guilabel
+>Sublinhar as ligações:</guilabel
+>. Poderá optar por deixar o sublinhado das ligações <guilabel
+>Activado</guilabel
+>. Se esta opção estiver seleccionada, todo o texto nas páginas Web que funcione como uma hiperligação irá aparecer com um texto sublinhado. Dado que muitas páginas Web usam cores para distinguir o texto que funciona como ligações, se o mostrar sublinhado será ainda mais fácil de detectar as ligações.</para>
+
+<para
+>Se não gostar das ligações sublinhadas, poderá optar por deixar <guilabel
+>Inactivo</guilabel
+>, para que as ligações não apareçam sublinhadas, ou optar por um meio-termo, o <guilabel
+>Apenas à Passagem</guilabel
+>, de modo que as ligações aparecem sublinhadas quando o cursor do rato fica sobre elas, deixando de estar sublinhadas durante o resto do tempo.</para>
+
+<note
+><para
+>As definições de CSS da página poderão substituir este valor.</para
+></note>
+
+<para
+>O <guilabel
+>Deslocamento suave</guilabel
+> define se o &konqueror; deverá usar passos suaves para deslocar as páginas &HTML; ou passos inteiros: <itemizedlist>
+<listitem
+><para
+><guilabel
+>Sempre</guilabel
+>: Usar sempre passos suaves ao deslocar.</para
+></listitem>
+<listitem
+><para
+><guilabel
+>Nunca</guilabel
+>: Nunca usar o deslocamento suave, deslocando sempre com passos completos.</para
+></listitem>
+<listitem
+><para
+><guilabel
+>Quando Eficiente</guilabel
+>: Usar apenas o deslocamento suave nas páginas onde tal possa ser obtido, às custas apenas de um custo moderado dos recursos do sistema.</para
+></listitem>
+</itemizedlist>
+</para>
+
+</sect2>
+
+<sect2 id="fonts"
+> <!-- modified copy from khtml/index.docbook <sect2 id="kbrowse-appearance"-->
+<title
+>Tipos de Letra</title>
+<para
+>Nesta secção, poderá seleccionar várias opções relacionadas com o uso dos tipos de letra. Ainda que o tipo e o tamanho da letra sejam frequentemente parte integrante do desenho de uma página Web, poderá seleccionar algumas opções por omissão para o &konqueror; usar.</para>
+
+<para
+>A primeira coisa que poderá definir aqui é o tamanho da letra. Existem duas opções que funcionam em conjunto para lhe permitir uma sensação de navegação confortável.</para>
+
+<para
+>Em primeiro lugar, poderá definir um <guilabel
+>Tamanho de letra mínimo</guilabel
+>. Isto significa que, mesmo que o tamanho de letra seja definido de forma específica na página que está a ver, o &konqueror; irá ignorar essa instrução e nunca irá mostrar tamanhos de letra menores que os aqui definidos.</para>
+
+<para
+>De seguida, poderá definir um <guilabel
+>Tamanho de letra médio</guilabel
+>. Este é não só o tamanho predefinido do texto, usado quando a página não define qualquer tamanho, mas também serve como o tamanho de base que os outros tamanhos de letra usam como referência de cálculo. Isto é, a instrução de &HTML; <quote
+>smaller</quote
+> corresponde a ser menor que o tamanho definido para esta opção.</para>
+
+<para
+>Para qualquer uma das opções, poderá indicar o tamanho exacto em pontos, usando o controlo incremental (ou escrevendo simplesmente) no campo correspondente.</para>
+
+<para
+>Estas opções são independentes entre si. As páginas que não definirem um tamanho de letra ou que peçam o predefinido, irão apresentar o texto com o tamanho que definir em <guilabel
+>Tamanho de letra médio</guilabel
+>, enquanto as páginas que pedirem um tamanho de letra menor que o seu <guilabel
+>Tamanho de letra mínimo</guilabel
+> irão mostrar esse tamanho em alternativa. Uma opção não afecta a outra.</para>
+
+<para
+>As restantes opções são para associar os tipos de letra aos diferentes tipos de formatação usados nas páginas &HTML;. Lembre-se que muitas páginas Web poderão substituir esta configuração. Para qualquer tipo de letra (Normal, Monoespaçado, Serif, &etc;) poderá seleccionar um tipo de letra diferente, se o desejar.</para>
+
+<para
+>Por baixo disto, poderá definir o <guilabel
+>Ajuste do tamanho de letra para esta codificação</guilabel
+>. Em algumas das vezes, os tipos de letra que usa para uma codificação ou língua são muito maiores ou mais pequenos do que a média, como tal, poderá usar esta opção para os rectificar.</para>
+
+<para
+>Poderá definir uma codificação por omissão que o &konqueror; deverá assumir para as páginas, ao representá-las. A configuração por omissão é <guilabel
+>Usar a Codificação da Língua</guilabel
+>, mas podê-la-á alterar para qualquer codificação disponível na lista.</para>
+
+</sect2>
+
+<sect2 id="stylesheets">
+
+<title
+>Folhas de Estilo</title>
+
+<sect3>
+<title
+>Introdução</title>
+
+<para
+>As folhas de estilo ou 'stylesheets' <acronym
+>CSS</acronym
+> afectam a maneira como as páginas Web aparecem. <acronym
+>CSS</acronym
+> significa <emphasis
+>C</emphasis
+>ascading <emphasis
+>S</emphasis
+>tyle <emphasis
+>S</emphasis
+>heets.</para>
+
+<para
+>O &kde; pode utilizar a sua própria 'stylesheet', baseada em predefinições simples e no esquema de cores utilizado no seu ambiente de trabalho. O &kde; também pode utilizar uma 'stylesheet' feita por si. Finalmente, poderá especificar uma 'stylesheet' neste módulo. As opções aqui apresentadas são ajustáveis por questões de acessibilidade, especialmente para as pessoas com visão reduzida.</para>
+
+<para
+>As suas escolhas aqui afectam todas as aplicações do &kde; que apresentam HTML com o módulo de desenho próprio do &kde;, que se chama 'khtml'. Estas incluem o &kmail;, o &khelpcenter; e obviamente o &konqueror;. As escolhas aqui não afectam os outros navegadores, como o &firefox;.</para>
+
+</sect3>
+
+<sect3 id="css-general">
+<title
+>Folhas de Estilo</title>
+
+<para
+>Esta secção contém as seguintes opções:</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Usar a 'stylesheet' por omissão</guilabel
+></term>
+<listitem>
+<para
+>O &kde; irá utilizar a 'stylesheet' por omissão. Algumas das cores serão as definidas no esquema de cores escolhido por si. A maioria das definições são substituídas pelas páginas que pesquisar.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Usar uma 'stylesheet' definida pelo utilizador</guilabel
+></term>
+<listitem>
+<para
+>O &kde; irá usar uma 'stylesheet' feita por si. Você poderá usar o botão de escolha para localizar a 'stylesheet' no seu sistema. Os ficheiros <acronym
+>CSS</acronym
+> têm normalmente uma extensão <literal role="extension"
+>.css</literal
+>, mas não é obrigatório.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Usar a 'stylesheet' de acessibilidade</guilabel
+></term>
+<listitem>
+<para
+>Utiliza as definições da página <guilabel
+>Personalizar</guilabel
+>. A activação desta opção irá activar o botão <guilabel
+>Personalizar</guilabel
+>, para invocar uma janela de definição de 'stylesheets'.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect3>
+
+<sect3 id="css-customize">
+<title
+>Personalizar</title>
+
+<para
+>Aqui poderá definir uma 'stylesheet' personalizada. As opções disponíveis são apenas um sub-conjunto das instruções que poderá adicionar numa 'stylesheet' e são vocacionadas para as pessoas com vista reduzida, de modo a permitir-lhes criar uma 'stylesheet' que torne as páginas Web e os ficheiros de ajuda do &kde; mais legíveis.</para>
+
+<para
+>As opções desta página estão desactivadas, a menos que tenha seleccionado a opção <guilabel
+>Usar a 'stylesheet' de acessibilidade</guilabel
+>.</para>
+
+<sect4>
+<title
+><guilabel
+>Família do Tipo de Letra</guilabel
+></title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Família de base</guilabel
+></term>
+<listitem>
+<para
+>Escolha uma família do tipo de letra usado para o texto do conteúdo.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Usar a mesma família para todo o texto</guilabel
+></term>
+<listitem>
+<para
+>Se activar isto, então será usada a mesma família de tipos de letra para todo o texto, independentemente das configurações da página que esteja a ver. Isto é útil para as páginas que utilizam um tipo de letra decorativo ou ilegível para os títulos.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect4>
+
+<sect4>
+<title
+>Tamanho da Letra</title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Tamanho da letra de base</guilabel
+></term>
+<listitem>
+<para
+>Este é o tamanho por omissão do texto da página. Muitos dos 'sites' Web definem os seus tamanhos de letra de base relativamente a este valor, utilizando <quote
+>larger</quote
+> ou <quote
+>+1</quote
+> para tornar o texto maior, e <quote
+>smaller</quote
+> ou <quote
+>-1</quote
+> para ficar mais pequeno.</para>
+<para
+>Muitas pessoas desenham as suas páginas Web em plataformas onde os tipos de letra por omissão são muito grandes para o utilizador médio ler, por isso é bastante normal passar por páginas Web que obrigaram o tamanho da letra a ser menor deste modo.</para>
+<para
+>Esta opção permitir-lhe-á definir um tamanho razoável para a letra por omissão, de modo a que os tamanhos relativos sejam também alargados o suficiente.</para>
+<para
+>Não se esqueça que o &konqueror; também define um valor mínimo, como tal o texto <emphasis
+>nunca</emphasis
+> é demasiado pequeno para ser lido. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Usar o mesmo tamanho para todos os elementos</guilabel
+></term>
+<listitem>
+<para
+>Se você activar esta opção, então todo o texto será representado com o tipo de letra especificado por si, independentemente das instruções que a página contenha. Os tamanhos de letra referidos anteriormente, assim como as instruções específicas acerca do tamanho com que o texto deve ser representado, serão sobrepostas aqui.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect4>
+
+<sect4>
+<title
+>Imagens</title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Suprimir as imagens</guilabel
+></term>
+<listitem>
+<para
+>Se não quiser ver as imagens, poderá desligar isso aqui.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Suprimir as imagens de fundo</guilabel
+></term>
+<listitem>
+<para
+>Um grande problema para os utilizadores com visão reduzida é o das imagens de fundo não darem contraste suficiente para lhes permitir ler texto. Você poderá desligar as imagens de fundo aqui, independentemente da sua escolha de ver todas as imagens.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect4>
+
+<sect4>
+<title
+>Cores</title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Preto sobre branco</guilabel
+></term>
+<listitem>
+<para
+>Muitas pessoas com vista reduzida acham que o texto a preto num ecrã branco causa mais contraste e é mais fácil de ler. Se isto se aplica a si, poderá activar esta opção aqui.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Branco sobre preto</guilabel
+></term>
+<listitem>
+<para
+>Muitas outras pessoas com visão reduzida acham verdadeiro o contrário, isto é, que o texto a branco num fundo preto é mais fácil de ler.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Personalizada</guilabel
+></term>
+<listitem>
+<para
+>Ainda existem outras pessoas que acham que o preto e o branco puros, seja em que ordem for, é difícil de ler. Poderá definir cores personalizadas aqui, tanto para o <guilabel
+>Fundo</guilabel
+> como para a <guilabel
+>Cor do Texto</guilabel
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Usar a mesma cor para todo o texto</guilabel
+></term>
+<listitem>
+<para
+>Muitos dos 'sites' Web utilizam uma cor diferente e geralmente contrastante para os cabeçalhos e outros floreados. Se isto interfere com a sua capacidade de ler o conteúdo, poderá activar esta opção, para que o &kde; utilize as cores que definiu em cima para todo o texto.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect4>
+
+<sect4>
+<title
+>Antevisão</title>
+
+<para
+>A <guibutton
+>Antevisão</guibutton
+> permite-lhe ver o efeito das suas alterações. Irá aparecer uma janela que mostra como os diferentes tipos de cabeçalhos irão aparecer com a sua 'stylesheet', bem como uma frase com o tipo de letra normal.</para>
+
+<para
+>Isto dever-lhe-á permitir ajustar a sua 'stylesheet' até ter algo que possa ler confortavelmente.</para>
+
+<para
+>Boa navegação!</para>
+
+</sect4>
+
+</sect3>
+
+</sect2>
+
+</sect1>
+
+</article>

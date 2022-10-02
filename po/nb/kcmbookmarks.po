@@ -1,0 +1,172 @@
+# Translation of kcmbookmarks to Norwegian Bokmål
+#
+# Knut Yrvin <knut.yrvin@gmail.com>, 2003, 2004, 2005.
+# Knut Erik Hollund <khollund@responze.net>, 2003.
+# Håvard Korsvoll <korsvoll@skulelinux.no>, 2003.
+# Bjørn Steensrud <bjornst@skogkatt.homelinux.org>, 2003, 2004, 2007, 2008, 2009, 2010, 2011, 2012, 2014, 2015.
+# Sven Harald Klein Bakke <sirius@nonline.org>, 2004.
+# Eskild Hustvedt <zerodogg@skolelinux.no>, 2005.
+# Jørgen Grønlund <jorgenhg@broadpark.no>, 2005.
+# Axel Bojer <fri_programvare@bojer.no>, 2005, 2006.
+# Nils Kristian Tomren <slx@nilsk.net>, 2005, 2007.
+# Alexander Nicolaysen Sørnes <alex@thehandofagony.com>, 2006.
+# Øyvind A. Holm <sunny@sunbase.org>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kio4\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2015-04-28 08:48+0200\n"
+"Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
+"Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
+"Language: nb\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#: bookmarks.cpp:92
+#, kde-format
+msgid ""
+"<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
+"page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
+"\">bookmarks:/</a>.</p>"
+msgstr ""
+"<h1>Mine bokmerker</h1><p>Med denne modulen kan du sette opp hjemmesida for "
+"bokmerker.</p><p>Bokmerkesiden kan finnes på <a href=\"bookmarks:/"
+"\">bookmarks:/</a>.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: bookmarks.ui:16
+#, kde-format
+msgid "Bookmarks"
+msgstr "Bokmerker"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowRoot)
+#: bookmarks.ui:23
+#, kde-format
+msgid ""
+"If this option is unchecked, bookmarks at the root of the hierarchy (not in "
+"a folder) are not displayed.\n"
+"If checked, they are gathered in a \"root\" folder."
+msgstr ""
+"Hvis det ikke er krysset av her, vil bokmerker i rota av hierarkiet (ikke i "
+"en mappe) ikke bli vist.\n"
+"Hvis det er krysset av blir de samlet i en «rot»-mappe."
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowRoot)
+#: bookmarks.ui:26
+#, kde-format
+msgid "&Show bookmarks without folder"
+msgstr "Vi&s bokmerker uten mappe"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbFlattenTree)
+#: bookmarks.ui:37
+#, kde-format
+msgid ""
+"Sub-folders are shown within their parent by default. If you activate this "
+"option, sub-folders are displayed on their own.\n"
+"It looks less nice but it may help if you have a very big folder you want to "
+"spread in two columns."
+msgstr ""
+"Undermapper vises som standard inni den overliggende mappa. Hvis dette er "
+"slått på, så vises undermapper for seg selv.\n"
+"Det ser mindre bra ut, men kan hjelpe hvis du har en svært stor mappe som du "
+"vil spre over to kolonner."
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbFlattenTree)
+#: bookmarks.ui:40
+#, kde-format
+msgid "&Flatten bookmarks tree"
+msgstr "&Flat ut bokmerketreet"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowPlaces)
+#: bookmarks.ui:47
+#, kde-format
+msgid ""
+"Show a box with KDE places (Home, Network, ...). Useful if you use konqueror "
+"as a file manager."
+msgstr ""
+"Vis en boks med KDE-steder (Hjemme, Nettverk osv). Nyttig hvis konqueror "
+"brukes som filbehandler."
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowPlaces)
+#: bookmarks.ui:50
+#, kde-format
+msgid "Show system &places"
+msgstr "&Vis systemsteder"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: bookmarks.ui:63
+#, kde-format
+msgid "General Settings"
+msgstr "Generelle innstillinger"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, label)
+#: bookmarks.ui:71
+#, kde-format
+msgid ""
+"Folders are automatically distributed in several columns. The optimal number "
+"of columns depends on the width of the konqueror window and the number of "
+"bookmarks you have."
+msgstr ""
+"Mapper fordeles automatisk på flere kolonner. Det beste antall kolonner "
+"avhenger av hvor bredt konqueror-vinduet er og hvor mange bokmerker du har."
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: bookmarks.ui:74
+#, kde-format
+msgid "Number of columns to show:"
+msgstr "Antall kolonner som skal vises."
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowBackgrounds)
+#: bookmarks.ui:109
+#, kde-format
+msgid "Disable it on slow system to disable background images."
+msgstr "Slå det av på langsomme systemer for å slå av bakgrunnsbilder."
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowBackgrounds)
+#: bookmarks.ui:112
+#, kde-format
+msgid "Show folder &backgrounds"
+msgstr "Vis mappe&bakgrunner"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, groupBox_3)
+#: bookmarks.ui:138
+#, kde-format
+msgid "How much disk space is used to cache the pixmaps"
+msgstr "Hvor mye diskplass brukes til å mellomlagre pixmap-bildene"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: bookmarks.ui:141
+#, kde-format
+msgid "Pixmap Cache"
+msgstr "Pixmap-mellomlager"
+
+#. i18n: ectx: property (text), widget (QLabel, lbMaxCacheSize)
+#: bookmarks.ui:150
+#, kde-format
+msgid "Disk cache size:"
+msgstr "Størrelsen på diskmellomlageret:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, sbCacheSize)
+#: bookmarks.ui:163
+#, kde-format
+msgid " kB"
+msgstr " kB"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, clearCacheButton)
+#: bookmarks.ui:173
+#, kde-format
+msgid "Clear the pixmap cache"
+msgstr "Tøm pixmap-mellomlageret"
+
+#. i18n: ectx: property (text), widget (QPushButton, clearCacheButton)
+#: bookmarks.ui:176
+#, kde-format
+msgid "&Clear Cache"
+msgstr "&Tøm mellomlageret"

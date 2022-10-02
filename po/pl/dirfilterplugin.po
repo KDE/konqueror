@@ -1,0 +1,103 @@
+# Version: $Revision: 1609756 $
+# translation of dirfilterplugin.po to
+# Copyright (C) 2002,2003, 2004, 2005, 2007 Free Software Foundation, Inc.
+#
+# Marcin Giedz <mgiedz@elka.pw.edu.pl>, 2002.
+# Mikolaj Machowski <mikmach@wp.pl>, 2004.
+# Krzysztof Lichota <lichota@mimuw.edu.pl>, 2005.
+# Marta Rybczyńska <kde-i18n@rybczynska.net>, 2007.
+# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: dirfilterplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2012-10-26 16:07+0200\n"
+"Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
+"Language-Team: Polish <kde-i18n-doc@kde.org>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+
+#: dirfilterplugin.cpp:120
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Hide Filter Bar"
+msgstr "Ukryj pasek filtru"
+
+#: dirfilterplugin.cpp:124
+#, kde-format
+msgctxt "@label:textbox"
+msgid "F&ilter:"
+msgstr "F&iltr:"
+
+#: dirfilterplugin.cpp:136
+#, kde-format
+msgctxt "@label:button"
+msgid "Filter by t&ype"
+msgstr "Odfiltruj wg. t&ypu"
+
+#: dirfilterplugin.cpp:137
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Filter items by file type."
+msgstr "Odfiltruj elementy po typie pliku."
+
+#: dirfilterplugin.cpp:228
+#, kde-format
+msgctxt "@action:inmenu Tools"
+msgid "Show Filter Bar"
+msgstr "Pokaż pasek filtru"
+
+#: dirfilterplugin.cpp:322
+#, kde-format
+msgid "Use Multiple Filters"
+msgstr "Użyj wielokrotnych filtrów"
+
+#: dirfilterplugin.cpp:328
+#, kde-format
+msgid "Show Count"
+msgstr "Pokaż licznik"
+
+#: dirfilterplugin.cpp:333
+#, kde-format
+msgid "Reset"
+msgstr "Wyzeruj"
+
+#. i18n: ectx: Menu (tools)
+#: dirfilterplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "&Narzędzia"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: dirfilterplugin.rc:8
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "Dodatkowy pasek"
+
+#~ msgid "Allow to filter the currently displayed items by filetype."
+#~ msgstr "Zezwól na filtrowanie wyświetlanych elementów według typu pliku."
+
+#~ msgid "Only Show Items of Type"
+#~ msgstr "Pokaż tylko pozycje o typie"
+
+#~ msgid "Filter Field"
+#~ msgstr "Pole filtrowania"
+
+#~ msgid "Clear Filter Field"
+#~ msgstr "Wyczyść pole filtrowania"
+
+#~ msgid "Clear filter field<p>Clears the content of the filter field.</p>"
+#~ msgstr "Wyczyść pole filtrowania<p>Usuwa zawartość pola filtrowania.</p>"
+
+#~ msgid ""
+#~ "Enter here a text which an item in the view must contain anywhere to be "
+#~ "shown."
+#~ msgstr ""
+#~ "Proszę podać tutaj tekst, który musi zawierać element widoku, aby został "
+#~ "pokazany."

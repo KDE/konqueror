@@ -1,0 +1,2681 @@
+# translation of kget.po to Hindi
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Ravishankar Shrivastava <raviratlami@yahoo.com>, 2008.
+# Ravishankar Shrivastava <raviratlami@aol.in>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kget\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2009-02-26 22:16+0530\n"
+"Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
+"Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
+"Language: hne\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Lokalize 0.2\n"
+
+#: kget_plugin.cpp:56
+#, kde-format
+msgid "Download Manager"
+msgstr "डाउनलोड  प्रबंधक"
+
+#: kget_plugin.cpp:62
+#, kde-format
+msgid "Show Drop Target"
+msgstr "ड्राप लक्छ्य देखाव"
+
+#: kget_plugin.cpp:69
+#, kde-format
+msgid "List All Links"
+msgstr "सब्बो संकली के सूची देव"
+
+#: kget_plugin.cpp:74
+#, kde-format
+msgid "List Selected Links"
+msgstr "चुने गे संकली के सूची देव"
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No downloadable links were found."
+msgstr ""
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No Links"
+msgstr "संकली नइ"
+
+#. i18n: ectx: Menu (tools)
+#: konqueror_kget_browser_integration.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "औजार (&T)"
+
+#~ msgid "Plugins"
+#~ msgstr "प्लगइन्स"
+
+#~ msgid "New Group"
+#~ msgstr "नवा समूह"
+
+#~ msgid "Xml"
+#~ msgstr "एक्सएमएल"
+
+#~ msgid "Sqlite"
+#~ msgstr "एसक्यूलाइट"
+
+#, fuzzy
+#~| msgid "Turn off the computer"
+#~ msgid "Turn Off Computer"
+#~ msgstr "कम्प्यूटर बन्द करव"
+
+#, fuzzy
+#~| msgid "Turn off the computer"
+#~ msgid "Hibernate Computer"
+#~ msgstr "कम्प्यूटर बन्द करव"
+
+#, fuzzy
+#~| msgid "Turn off the computer"
+#~ msgid "Suspend Computer"
+#~ msgstr "कम्प्यूटर बन्द करव"
+
+#~ msgid "Appearance"
+#~ msgstr "रूप"
+
+#~ msgid "Change appearance settings"
+#~ msgstr "रूप सेटिंग बदलव"
+
+#~ msgid "Groups"
+#~ msgstr "समूह"
+
+#~ msgid "Manage the groups"
+#~ msgstr "समूह मन के प्रबंधन करव"
+
+#~ msgid "Network"
+#~ msgstr "नेटवर्क"
+
+#~ msgid "Network and Downloads"
+#~ msgstr "नेटवर्क अउ डाउनलोड्स"
+
+#, fuzzy
+#~ msgid "Web Interface"
+#~ msgstr "वेबइंटरफेस"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgid "Verification"
+#~ msgstr "गंतव्य"
+
+#, fuzzy
+#~| msgid "Integration"
+#~ msgctxt "integration of KGet with other applications"
+#~ msgid "Integration"
+#~ msgstr "एकीकरन"
+
+#~ msgctxt "Advanced Options"
+#~ msgid "Advanced"
+#~ msgstr "विस्तृत"
+
+#~ msgid "Advanced Options"
+#~ msgstr "विस्तृत विकल्प"
+
+#~ msgid "Transfer Plugins"
+#~ msgstr "हस्तांतरन प्लगइन"
+
+#, fuzzy
+#~| msgid "Excluded:"
+#~ msgid "Include"
+#~ msgstr "अलावा:"
+
+#, fuzzy
+#~| msgid "Excluded:"
+#~ msgid "Exclude"
+#~ msgstr "अलावा:"
+
+#~ msgid "KGet"
+#~ msgstr "के-गेट"
+
+#~ msgid "1 Item"
+#~ msgid_plural "%1 Items"
+#~ msgstr[0] "1 चीज"
+#~ msgstr[1] "%1 चीज"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#~ msgctxt "start transfergroup downloads"
+#~ msgid "Start"
+#~ msgstr "सुरू"
+
+#~ msgctxt "stop transfergroup downloads"
+#~ msgid "Stop"
+#~ msgstr "रुकव"
+
+#, fuzzy
+#~| msgid "KGet - Download Manager"
+#~ msgid "KGet is downloading %1 file"
+#~ msgid_plural "KGet is downloading %1 files"
+#~ msgstr[0] "केगेट - डाउनलोड प्रबंधक"
+#~ msgstr[1] "केगेट - डाउनलोड प्रबंधक"
+
+#~ msgid "Error trying to get %1"
+#~ msgstr "%1 ल लाय के कोसिस मं एक गलती होइस"
+
+#, fuzzy
+#~| msgid ""
+#~| "Are you sure that you want to remove\n"
+#~| "the group named %1?"
+#~ msgid "Are you sure that you want to remove the group named %1?"
+#~ msgstr ""
+#~ "का आप मन सचमुच समूह नाम %1 \n"
+#~ "को मिटाना चाहथो ?"
+
+#, fuzzy
+#~| msgid "Rename Group"
+#~ msgid "Remove Group"
+#~ msgstr "समूह ल नवा नाम देव"
+
+#, fuzzy
+#~| msgid ""
+#~| "Are you sure that you want to remove\n"
+#~| "the group named %1?"
+#~ msgid "Are you sure that you want to remove the following groups?"
+#~ msgstr ""
+#~ "का आप मन सचमुच समूह नाम %1 \n"
+#~ "को मिटाना चाहथो ?"
+
+#, fuzzy
+#~| msgid "Rename Group"
+#~ msgid "Remove groups"
+#~ msgstr "समूह ल नवा नाम देव"
+
+#, fuzzy
+#~| msgid "Downloaded"
+#~ msgid "Download added"
+#~ msgstr "डाउनलोडेड"
+
+#~ msgid ""
+#~ "The file %1 already exists.\n"
+#~ "Overwrite?"
+#~ msgstr ""
+#~ "एक फाइल %1 पहिली से ही मौजूद हे\n"
+#~ " मेटाय के लिखव?"
+
+#~ msgid "Overwrite existing file?"
+#~ msgstr "अभी हाल के फाइल मेटाय के लिखव?"
+
+#~ msgid "Unable to save to: %1"
+#~ msgstr "%1 मं सहेज नइ सके."
+
+#~ msgid "My Downloads"
+#~ msgstr "मोर डाउनलोड्स"
+
+#~ msgid "New Download"
+#~ msgstr "नवा डाउनलोड"
+
+#~ msgid "Enter URL:"
+#~ msgstr "यूआरएल भरव:"
+
+#~ msgid ""
+#~ "Malformed URL:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "गलत रूप मं यूआरएल:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Malformed URL, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "गलत रूप मं यूआरएल, प्रोटोकाल नइ हे:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Download again"
+#~ msgid "Download it again?"
+#~ msgstr "फिर से डाउनलोड करव"
+
+#, fuzzy
+#~| msgid "Download again"
+#~ msgid "Delete it and download again?"
+#~ msgstr "फिर से डाउनलोड करव"
+
+#, fuzzy
+#~| msgid ""
+#~| "URL already saved:\n"
+#~| "%1\n"
+#~| "Download again?"
+#~ msgid "File already downloaded. Download anyway?"
+#~ msgstr ""
+#~ "यूआरएल पहिली ही सहेजे जा गे हे\n"
+#~ "%1\n"
+#~ "फिर से डाउनलोड करव?"
+
+#, fuzzy
+#~| msgid ""
+#~| "The file %1 already exists.\n"
+#~| "Overwrite?"
+#~ msgid "File already exists"
+#~ msgstr ""
+#~ "एक फाइल %1 पहिली से ही मौजूद हे\n"
+#~ " मेटाय के लिखव?"
+
+#, fuzzy
+#~| msgid ""
+#~| "<html><p>Plugin loader could not load the plugin:<br/><i>%1</i></p></"
+#~| "html>"
+#~ msgid "Plugin loader could not load the plugin: %1."
+#~ msgstr ""
+#~ "<html><p>प्लगइन लोडर ह प्लगइन ल लोड नइ कर सकिस:<br/><i>%1</i></p></html>"
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is a directory."
+#~ msgstr ""
+#~ "मिटा नइ रहे\n"
+#~ "%1\n"
+#~ "काबर कि ए एक डिरेक्टरी हे."
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is not a local file."
+#~ msgstr ""
+#~ "मिटा नइ रहे\n"
+#~ "%1\n"
+#~ "काबर कि ए लोकल फाइल नइ हे."
+
+#~ msgid "Download completed"
+#~ msgstr "डाउनलोड पूरा"
+
+#, fuzzy
+#~ msgid "Download started"
+#~ msgstr "डाउनलोडेड"
+
+#~ msgid "Error"
+#~ msgstr "गलती"
+
+#, fuzzy
+#~ msgid "Resolve"
+#~ msgstr "हटाव"
+
+#, fuzzy
+#~| msgid "Auto shutdown"
+#~ msgctxt "Shutting down computer"
+#~ msgid "Shutdown"
+#~ msgstr "अपने अपन बन्द"
+
+#, fuzzy
+#~| msgctxt "Preview pending"
+#~| msgid "Pending"
+#~ msgctxt "Suspending computer"
+#~ msgid "Suspending"
+#~ msgstr "लंबित"
+
+#, fuzzy
+#~| msgid "Aborted"
+#~ msgctxt "abort the proposed action"
+#~ msgid "Abort"
+#~ msgstr "छोड़ दे गिस"
+
+#, fuzzy
+#~| msgid "Download completed"
+#~ msgid "Downloads completed"
+#~ msgstr "डाउनलोड पूरा"
+
+#, fuzzy
+#~| msgid "File"
+#~ msgctxt "file in a filesystem"
+#~ msgid "File"
+#~ msgstr "फाइल"
+
+#, fuzzy
+#~| msgid "Status"
+#~ msgctxt "status of the download"
+#~ msgid "Status"
+#~ msgstr "स्थिति"
+
+#, fuzzy
+#~| msgid "Size"
+#~ msgctxt "size of the download"
+#~ msgid "Size"
+#~ msgstr "आकार"
+
+#, fuzzy
+#~| msgid "KGet Transfer List"
+#~ msgid "KGet Transfer"
+#~ msgstr "केगेट ट्रांसफर सूची"
+
+#, fuzzy
+#~| msgctxt "list header: type of file"
+#~| msgid "File Type"
+#~ msgctxt "the type of the hash, e.g. MD5"
+#~ msgid "Type"
+#~ msgstr "फाइल किसिम"
+
+#~ msgctxt "not available"
+#~ msgid "n/a"
+#~ msgstr "n/a"
+
+#~ msgid "Stalled"
+#~ msgstr "रुका होइस"
+
+#, fuzzy
+#~ msgid "Downloading...."
+#~ msgstr "डाउनलोड करत हे..."
+
+#~ msgctxt "transfer state: delayed"
+#~ msgid "Delayed"
+#~ msgstr "विलम्बित"
+
+#~ msgctxt "transfer state: stopped"
+#~ msgid "Stopped"
+#~ msgstr "रुक गिस"
+
+#~ msgctxt "transfer state: aborted"
+#~ msgid "Aborted"
+#~ msgstr "छोड़ दे गिस"
+
+#~ msgctxt "transfer state: finished"
+#~ msgid "Finished"
+#~ msgstr "पूरा"
+
+#, fuzzy
+#~| msgid "Open Destination"
+#~ msgctxt "changing the destination of the file"
+#~ msgid "Changing destination"
+#~ msgstr "गंतव्य खोलव"
+
+#~ msgctxt "name of download"
+#~ msgid "Name"
+#~ msgstr "नाम"
+
+#~ msgctxt "status of download"
+#~ msgid "Status"
+#~ msgstr "स्थिति"
+
+#~ msgctxt "size of download"
+#~ msgid "Size"
+#~ msgstr "आकार"
+
+#~ msgctxt "progress of download"
+#~ msgid "Progress"
+#~ msgstr "प्रगति"
+
+#~ msgctxt "speed of download"
+#~ msgid "Speed"
+#~ msgstr "गति"
+
+#~ msgctxt "remaining time of download"
+#~ msgid "Remaining Time"
+#~ msgstr "बाकी समय"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "No download destination specified."
+#~ msgstr "गंतव्य:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Invalid download destination specified."
+#~ msgstr "गंतव्य:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Download destination is not writeable."
+#~ msgstr "गंतव्य:"
+
+#~ msgid "Malformed URL."
+#~ msgstr "गलत रूप मं यूआरएल."
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL, protocol missing:\n"
+#~| "%1"
+#~ msgid "Malformed URL, protocol missing."
+#~ msgstr ""
+#~ "गलत रूप मं यूआरएल, प्रोटोकाल नइ हे:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL, protocol missing:\n"
+#~| "%1"
+#~ msgid "Malformed URL, host missing."
+#~ msgstr ""
+#~ "गलत रूप मं यूआरएल, प्रोटोकाल नइ हे:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid ""
+#~ "Invalid download destination specified:\n"
+#~ "%1"
+#~ msgstr "गंतव्य:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid ""
+#~ "Download destination is not writeable:\n"
+#~ "%1"
+#~ msgstr "गंतव्य:"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL, protocol missing:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URL, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "गलत रूप मं यूआरएल, प्रोटोकाल नइ हे:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "The file %1 already exists.\n"
+#~| "Overwrite?"
+#~ msgid "File already exists. Overwrite it?"
+#~ msgstr ""
+#~ "एक फाइल %1 पहिली से ही मौजूद हे\n"
+#~ " मेटाय के लिखव?"
+
+#, fuzzy
+#~| msgid ""
+#~| "The file %1 already exists.\n"
+#~| "Overwrite?"
+#~ msgid ""
+#~ "File already exists:\n"
+#~ "%1\n"
+#~ "Overwrite it?"
+#~ msgstr ""
+#~ "एक फाइल %1 पहिली से ही मौजूद हे\n"
+#~ " मेटाय के लिखव?"
+
+#, fuzzy
+#~| msgid "Malformed URL."
+#~ msgid "Malformed URLs."
+#~ msgstr "गलत रूप मं यूआरएल."
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL, protocol missing:\n"
+#~| "%1"
+#~ msgid "Malformed URLs, protocol missing."
+#~ msgstr ""
+#~ "गलत रूप मं यूआरएल, प्रोटोकाल नइ हे:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL, protocol missing:\n"
+#~| "%1"
+#~ msgid "Malformed URLs, host missing."
+#~ msgstr ""
+#~ "गलत रूप मं यूआरएल, प्रोटोकाल नइ हे:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "गलत रूप मं यूआरएल:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL, protocol missing:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "गलत रूप मं यूआरएल, प्रोटोकाल नइ हे:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL, protocol missing:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "गलत रूप मं यूआरएल, प्रोटोकाल नइ हे:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "The file %1 already exists.\n"
+#~| "Overwrite?"
+#~ msgid "Files exist already. Overwrite them?"
+#~ msgstr ""
+#~ "एक फाइल %1 पहिली से ही मौजूद हे\n"
+#~ " मेटाय के लिखव?"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Question"
+#~ msgstr "वर्नन"
+
+#, fuzzy
+#~| msgid "Deselect all"
+#~ msgctxt "on a question"
+#~ msgid "Yes all"
+#~ msgstr "सब्बो मतचुनव"
+
+#, fuzzy
+#~| msgctxt "Download normally(not as first or last)"
+#~| msgid "Normal"
+#~ msgctxt "on a question"
+#~ msgid "No all"
+#~ msgstr "सामान्य"
+
+#, fuzzy
+#~ msgid "Engine name:"
+#~ msgstr "फाइल नाम"
+
+#~ msgid "URL:"
+#~ msgstr "यूआरएल:"
+
+#, fuzzy
+#~ msgctxt "transfer state: connecting"
+#~ msgid "Connecting...."
+#~ msgstr "कनेक्सन होवत हे..."
+
+#~ msgid "Edit Script"
+#~ msgstr "स्क्रिप्ट संपादित करव"
+
+#, fuzzy
+#~ msgid "Set Script File"
+#~ msgstr "वर्नन"
+
+#, fuzzy
+#~ msgctxt "Configure script"
+#~ msgid "Configure script"
+#~ msgstr "कान्फिगर..."
+
+#, fuzzy
+#~ msgctxt "Transfer State: Finished"
+#~ msgid "Finished"
+#~ msgstr "पूरा"
+
+#, fuzzy
+#~ msgctxt "Transfer State: Aborted"
+#~ msgid "Aborted"
+#~ msgstr "छोड़ दे गिस"
+
+#, fuzzy
+#~ msgid "Downloading Metalink File...."
+#~ msgstr "टोरेंट फाइल डाउनलोड करत हे..."
+
+#, fuzzy
+#~| msgctxt "redownload selected transfer item"
+#~| msgid "Redownload Selected"
+#~ msgid "Redownload Metalink"
+#~ msgstr "चुने गे ल फिर से डाउनलोड करव"
+
+#, fuzzy
+#~ msgid "File Selection"
+#~ msgstr "सेटिंग सहेजव"
+
+#, fuzzy
+#~| msgid "Change appearance settings"
+#~ msgctxt "the string that is used to modify an url"
+#~ msgid "Change string"
+#~ msgstr "रूप सेटिंग बदलव"
+
+#, fuzzy
+#~| msgid "Change Tracker"
+#~ msgctxt "the mode defines how the url should be changed"
+#~ msgid "Change mode"
+#~ msgstr "ट्रैकर बदलव"
+
+#, fuzzy
+#~| msgid "Appearance"
+#~ msgid "Append"
+#~ msgstr "रूप"
+
+#, fuzzy
+#~| msgid "Open file"
+#~ msgid "Replace file"
+#~ msgstr "फाइल खोलव"
+
+#, fuzzy
+#~ msgctxt "transfer state: running"
+#~ msgid "Running...."
+#~ msgstr "चलत हे"
+
+#~ msgctxt "Choked"
+#~ msgid "Yes"
+#~ msgstr "हाँ"
+
+#~ msgctxt "Not choked"
+#~ msgid "No"
+#~ msgstr "नइ"
+
+#~ msgctxt "Snubbed"
+#~ msgid "Yes"
+#~ msgstr "हाँ"
+
+#~ msgctxt "Not snubbed"
+#~ msgid "No"
+#~ msgstr "नइ"
+
+#, fuzzy
+#~ msgctxt "Interested"
+#~ msgid "Yes"
+#~ msgstr "हाँ"
+
+#, fuzzy
+#~ msgctxt "Not Interested"
+#~ msgid "No"
+#~ msgstr "नइ"
+
+#, fuzzy
+#~ msgctxt "Interesting"
+#~ msgid "Yes"
+#~ msgstr "हाँ"
+
+#, fuzzy
+#~ msgctxt "Not Interesting"
+#~ msgid "No"
+#~ msgstr "नइ"
+
+#~ msgid "IP Address"
+#~ msgstr "आईपी पता"
+
+#~ msgid "Client"
+#~ msgstr "क्लायंट"
+
+#~ msgid "Down Speed"
+#~ msgstr "डाउन गति"
+
+#~ msgid "Up Speed"
+#~ msgstr "अपलोड गति"
+
+#~ msgid "Choked"
+#~ msgstr "चोक्ड"
+
+#~ msgid "Snubbed"
+#~ msgstr "स्नब्ड"
+
+#~ msgid "Availability"
+#~ msgstr "मिलत"
+
+#~ msgid "DHT"
+#~ msgstr "डीएचटी"
+
+#~ msgid "Score"
+#~ msgstr "अंक"
+
+#~ msgid "Upload Slot"
+#~ msgstr "अपलोड स्लाट"
+
+#~ msgid "Requests"
+#~ msgstr "निवेदन"
+
+#~ msgid "Downloaded"
+#~ msgstr "डाउनलोडेड"
+
+#~ msgid "Uploaded"
+#~ msgstr "अपलोड कर दे गिस"
+
+#, fuzzy
+#~ msgid "Interesting"
+#~ msgstr "एकीकरन"
+
+#, fuzzy
+#~ msgid "Download speed"
+#~ msgstr "डाउनलोडेड"
+
+#, fuzzy
+#~ msgid "Upload speed"
+#~ msgstr "अपलोड कर दे गिस"
+
+#~ msgid "Chunk"
+#~ msgstr "चंक"
+
+#~ msgid "Progress"
+#~ msgstr "प्रगति"
+
+#~ msgid "Peer"
+#~ msgstr "पीअर"
+
+#~ msgid "Files"
+#~ msgstr "फाइल"
+
+#, fuzzy
+#~ msgid "Number of the chunk"
+#~ msgstr "थ्रेड की संख्या:"
+
+#, fuzzy
+#~ msgid "Download speed of the chunk"
+#~ msgstr "चेक करे ल डाउनलोड करव"
+
+#~ msgid "URL"
+#~ msgstr "यूआरएल"
+
+#~ msgid "Speed"
+#~ msgstr "गति"
+
+#~ msgid "Status"
+#~ msgstr "स्थिति"
+
+#~ msgid "Kick Peer"
+#~ msgstr "किक पीअर"
+
+#~ msgid "Ban Peer"
+#~ msgstr "बेन पीअर"
+
+#~ msgid "File"
+#~ msgstr "फाइल"
+
+#~ msgid "Size"
+#~ msgstr "आकार"
+
+#~ msgid "Advanced Details for %1"
+#~ msgstr "%1 बर विस्तृत विवरन"
+
+#~ msgid "Trackers"
+#~ msgstr "ट्रेकर"
+
+#~ msgid "Webseeds"
+#~ msgstr "वेबसीड"
+
+#~ msgctxt "Open file"
+#~ msgid "Open"
+#~ msgstr "खोलव"
+
+#~ msgid "Download first"
+#~ msgstr "पहलि डाउनलोड करव"
+
+#~ msgid "Download normally"
+#~ msgstr "सामान्य डाउनलोड"
+
+#~ msgid "Download last"
+#~ msgstr "आखिरी मं डाउनलोड करव"
+
+#~ msgid "Do Not Download"
+#~ msgstr "डाउनलोड नइ करव"
+
+#~ msgid "Delete File(s)"
+#~ msgstr "फाइल मेटाव"
+
+#~ msgid "Move File"
+#~ msgstr "फाइल खिसकाव"
+
+#, fuzzy
+#~ msgid "Url"
+#~ msgstr "कमइया:"
+
+#, fuzzy
+#~| msgid "Seeders:"
+#~ msgid "Seeders"
+#~ msgstr "सीडर्स:"
+
+#, fuzzy
+#~| msgid "Leechers:"
+#~ msgid "Leechers"
+#~ msgstr "लीचर्स:"
+
+#, fuzzy
+#~| msgid "Times Downloaded:"
+#~ msgid "Times Downloaded"
+#~ msgstr "अतेक बार डाउनलोडेड:"
+
+#~ msgid "Next Update"
+#~ msgstr "अपडेट"
+
+#~ msgid "Priority"
+#~ msgstr "प्राथमिकता"
+
+#~ msgid "Preview"
+#~ msgstr "प्रिव्यू"
+
+#~ msgctxt "Percent of File Downloaded"
+#~ msgid "% Complete"
+#~ msgstr "% पूरा"
+
+#~ msgctxt "Download first"
+#~ msgid "First"
+#~ msgstr "पहिली"
+
+#~ msgctxt "Download last"
+#~ msgid "Last"
+#~ msgstr "आखरी"
+
+#~ msgctxt "Download normally(not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "सामान्य"
+
+#~ msgctxt "preview available"
+#~ msgid "Available"
+#~ msgstr "मिलत "
+
+#~ msgctxt "Preview pending"
+#~ msgid "Pending"
+#~ msgstr "लंबित"
+
+#~ msgctxt "No preview available"
+#~ msgid "No"
+#~ msgstr "नइ"
+
+#~ msgid "%1 %"
+#~ msgstr "%1 %"
+
+#~ msgctxt "Preview available"
+#~ msgid "Available"
+#~ msgstr "मिलत "
+
+#~ msgid "Add Tracker"
+#~ msgstr "ट्रैकर जोड़व"
+
+#~ msgctxt "Download Normal (not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "सामान्य"
+
+#~ msgid "&Advanced Details"
+#~ msgstr "विस्तृत विवरन (&A)"
+
+#~ msgid "&Scan Files"
+#~ msgstr "फाइल स्कैन करव (&S)"
+
+#, fuzzy
+#~ msgid "Downloading Torrent File...."
+#~ msgstr "टोरेंट फाइल डाउनलोड करत हे..."
+
+#, fuzzy
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading...."
+#~ msgstr "डाउनलोड करत हे..."
+
+#, fuzzy
+#~| msgid "The directory %1 does not exist"
+#~ msgid "Torrent file does not exist"
+#~ msgstr "डिरेक्टरी %1 मौजूद नइ हे"
+
+#, fuzzy
+#~ msgid "Analyzing torrent...."
+#~ msgstr "टोरेंट एनलाइज करत हे..."
+
+#, fuzzy
+#~ msgctxt "Transfer status: seeding"
+#~ msgid "Seeding...."
+#~ msgstr "सीडिंग..."
+
+#~ msgid "Error scanning data: %1"
+#~ msgstr "डाटा %1 स्कैन करे मं गलती"
+
+#~ msgid "Scanning data of <b>%1</b> :"
+#~ msgstr "<b>%1</b> के डाटा स्कैन करत हे"
+
+#, fuzzy
+#~ msgid "Select a default torrent folder"
+#~ msgstr "डिफाल्ट टोरेंट फोल्डर चुनव"
+
+#, fuzzy
+#~ msgid "Select a default temporary folder"
+#~ msgstr "डिफाल्ट अस्थाई फोल्डर चुनव"
+
+#, fuzzy
+#~ msgid "File Properties"
+#~ msgstr "सेटिंग सहेजव"
+
+#, fuzzy
+#~| msgid "Enter Group Name"
+#~ msgid "Enter a filename."
+#~ msgstr "समूह नाम भरव"
+
+#, fuzzy
+#~| msgid "Enter Group Name"
+#~ msgid "Enter at least one URL."
+#~ msgstr "समूह नाम भरव"
+
+#, fuzzy
+#~| msgid "Unable to save to: %1"
+#~ msgid "Unable to load: %1"
+#~ msgstr "%1 मं सहेज नइ सके."
+
+#, fuzzy
+#~| msgid "Open file"
+#~ msgid "Metalink Version 4.0 file (*.meta4)"
+#~ msgstr "फाइल खोलव"
+
+#, fuzzy
+#~| msgid "Open file"
+#~ msgid "Metalink Version 3.0 file (*.metalink)"
+#~ msgstr "फाइल खोलव"
+
+#~ msgid "Import Links"
+#~ msgstr "संकली आयात करव"
+
+#, fuzzy
+#~ msgctxt "Download the items which have been selected"
+#~ msgid "&Download Checked"
+#~ msgstr "चेक करे ल डाउनलोड करव"
+
+#~ msgid "File Name"
+#~ msgstr "फाइल नाम"
+
+#~ msgid "Description"
+#~ msgstr "वर्नन"
+
+#~ msgctxt "list header: type of file"
+#~ msgid "File Type"
+#~ msgstr "फाइल किसिम"
+
+#~ msgid "Location (URL)"
+#~ msgstr "जगह (यूआरएल)"
+
+#, fuzzy
+#~| msgid "Select all filtered"
+#~ msgid "&Select All Filtered"
+#~ msgstr "सब्बो छनइया चुनव"
+
+#, fuzzy
+#~| msgid "Select all"
+#~ msgid "&Select All"
+#~ msgstr "सब्बो चुनव"
+
+#, fuzzy
+#~| msgid "Deselect all filtered"
+#~ msgid "D&eselect All Filtered"
+#~ msgstr "सब्बो छनइया मत चुनव"
+
+#, fuzzy
+#~| msgid "Deselect all"
+#~ msgid "D&eselect All"
+#~ msgstr "सब्बो मतचुनव"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgctxt "Mirror as in server, in url"
+#~ msgid "Mirror"
+#~ msgstr "गलती"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgctxt "The priority of the mirror"
+#~ msgid "Priority"
+#~ msgstr "प्राथमिकता"
+
+#, fuzzy
+#~ msgctxt "Number of paralell connections to the mirror"
+#~ msgid "Connections"
+#~ msgstr "कनेक्सन होवत हे"
+
+#, fuzzy
+#~| msgid "Location (URL)"
+#~ msgctxt "Location = country"
+#~ msgid "Location"
+#~ msgstr "जगह (यूआरएल)"
+
+#, fuzzy
+#~| msgid "Add Tracker"
+#~ msgctxt "Adds the item and reopens the dialog to add a further item"
+#~ msgid "Add more"
+#~ msgstr "ट्रैकर जोड़व"
+
+#~ msgid "Download again"
+#~ msgstr "फिर से डाउनलोड करव"
+
+#~ msgctxt "Delete selected history-item"
+#~ msgid "Delete selected"
+#~ msgstr "चुने गे ल मेटाव"
+
+#~ msgid "Open file"
+#~ msgstr "फाइल खोलव"
+
+#~ msgid "Today"
+#~ msgstr "आज"
+
+#~ msgid "Last week"
+#~ msgstr "पिछले हफ्ता"
+
+#~ msgid "Last Month"
+#~ msgstr "पिछले महिना"
+
+#~ msgid "Transfer History"
+#~ msgstr "ट्रांसफर सूची"
+
+#~ msgid "&Open File"
+#~ msgstr "फाइल खोलव (&O)"
+
+#~ msgctxt "The transfer is running"
+#~ msgid "Running"
+#~ msgstr "चलत हे"
+
+#~ msgctxt "The transfer is stopped"
+#~ msgid "Stopped"
+#~ msgstr "रुक गिस"
+
+#~ msgctxt "The transfer is aborted"
+#~ msgid "Aborted"
+#~ msgstr "छोड़ दे गिस"
+
+#~ msgctxt "The transfer is finished"
+#~ msgid "Finished"
+#~ msgstr "पूरा"
+
+#, fuzzy
+#~ msgid "Source File"
+#~ msgstr "स्रोत फाइल"
+
+#~ msgid "Destination"
+#~ msgstr "गंतव्य"
+
+#~ msgid "Time"
+#~ msgstr "समय"
+
+#~ msgid "File Size"
+#~ msgstr "फाइल आकार"
+
+#~ msgid "Less than 1MiB"
+#~ msgstr "१ मेबा से कम"
+
+#~ msgid "Between 1MiB-10MiB"
+#~ msgstr "१-१० मेबा के बीच"
+
+#~ msgid "Between 10MiB-100MiB"
+#~ msgstr "१०-१०० मेबा के बीच"
+
+#~ msgid "Between 100MiB-1GiB"
+#~ msgstr "१०० मेबा - १ जीबा के बीच"
+
+#~ msgid "More than 1GiB"
+#~ msgstr "१ जीबा से अधिक"
+
+#~ msgid "Last month"
+#~ msgstr "पिछले महिना"
+
+#~ msgctxt "the transfer has been finished"
+#~ msgid "Finished"
+#~ msgstr "पूरा"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgctxt "an error happened in connection with the user input"
+#~ msgid "Error:"
+#~ msgstr "गलती"
+
+#, fuzzy
+#~| msgid "Unknown client"
+#~ msgctxt "trust level"
+#~ msgid "Unknown"
+#~ msgstr "अग्यात क्लायंट"
+
+#, fuzzy
+#~| msgid "Peer"
+#~ msgctxt "trust level"
+#~ msgid "Never"
+#~ msgstr "पीअर"
+
+#~ msgid "Unlimited"
+#~ msgstr "असीमित"
+
+#, fuzzy
+#~| msgid "File"
+#~ msgctxt "pgp signature is not verified"
+#~ msgid "Failed"
+#~ msgstr "फाइल"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgid "Error:"
+#~ msgstr "गलती"
+
+#, fuzzy
+#~| msgid "Integration"
+#~ msgid "Information:"
+#~ msgstr "एकीकरन"
+
+#~ msgid "Select columns"
+#~ msgstr "खंभा चुनव"
+
+#, fuzzy
+#~| msgid "Transfer details"
+#~ msgid "Transfer Details"
+#~ msgstr "ट्रांसफर विवरन"
+
+#, fuzzy
+#~ msgid "Transfer Verification for %1"
+#~ msgstr "%1 बर हस्तांरन सेटिंग"
+
+#, fuzzy
+#~| msgid "Rename"
+#~ msgid "Rename File"
+#~ msgstr "नाम बदलव"
+
+#, fuzzy
+#~| msgid "Rename"
+#~ msgid "Rename %1 to:"
+#~ msgstr "नाम बदलव"
+
+#, fuzzy
+#~| msgid "Rename"
+#~ msgid "&Rename"
+#~ msgstr "नाम बदलव"
+
+#, fuzzy
+#~| msgid "Delete Group"
+#~ msgid "Delete Group"
+#~ msgid_plural "Delete Groups"
+#~ msgstr[0] "समूह मेटाव"
+#~ msgstr[1] "समूह मेटाव"
+
+#, fuzzy
+#~| msgid "Rename Group"
+#~ msgid "Rename Group..."
+#~ msgid_plural "Rename Groups..."
+#~ msgstr[0] "समूह ल नवा नाम देव"
+#~ msgstr[1] "समूह ल नवा नाम देव"
+
+#~ msgctxt "fix position for droptarget"
+#~ msgid "Sticky"
+#~ msgstr "स्टिकी"
+
+#~ msgid "Quit KGet"
+#~ msgstr "के-गेट से बाहिर हों"
+
+#, fuzzy
+#~ msgid "The dropped file is a KGet Transfer List"
+#~ msgstr "केगेट ट्रांसफर सूची"
+
+#~ msgid "&Download"
+#~ msgstr "डाउनलोड (&D)"
+
+#, fuzzy
+#~ msgid "&Load transfer list"
+#~ msgstr "ट्रांसफर सूची लोड करव (&L)"
+
+#~ msgid "Show Main Window"
+#~ msgstr "मुख्य विंडो देखाव"
+
+#~ msgid "Hide Main Window"
+#~ msgstr "मुख्य विंडो लुकाव"
+
+#~ msgid "Drop Target"
+#~ msgstr "ड्राप लक्छ्य"
+
+#~ msgid "You can drag download links into the drop target."
+#~ msgstr "आप डाउनलोड संकली ल ड्ऱाप लक्छ्य मं खींच कर ला सकथो ."
+
+#, fuzzy
+#~| msgid "%1 %"
+#~ msgctxt "%1 filename, %2 total size, %3 status"
+#~ msgid "%1(%2) %3"
+#~ msgstr "%1 %"
+
+#~ msgid ""
+#~ "Drop target has been hidden. If you want to show it again, go to Settings-"
+#~ ">Configure KGet->Look & Feel."
+#~ msgstr ""
+#~ "ड्राप लक्छ्य छुपा हे. यदि आप मन एला फिर से दिखाना चाहथो तहां सेटिंग->केगेट कान्फिगर "
+#~ "करव->रूप & रंग मं जाव."
+
+#~ msgid "Hiding drop target"
+#~ msgstr "ड्राप लक्छ्य छुपाना"
+
+#, fuzzy
+#~ msgid "Transfer Settings for %1"
+#~ msgstr "%1 बर हस्तांरन सेटिंग"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgid "Destination unmodified"
+#~ msgstr "गंतव्य"
+
+#~ msgid "%1 of %2"
+#~ msgstr "%2 मं से %1"
+
+#, fuzzy
+#~ msgid "Group Settings for %1"
+#~ msgstr "%1 बर समूह सेटिंग"
+
+#~ msgctxt "@info"
+#~ msgid "Unable to start the server: %1."
+#~ msgstr "सर्वर: %1 चालू करे मं अक्छम."
+
+#~ msgctxt "@item speed of transfer per seconds"
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#, fuzzy
+#~ msgctxt "@label"
+#~ msgid "KGet Web Interface"
+#~ msgstr "केगेट वेबइंटरफेस"
+
+#~ msgctxt "@label number"
+#~ msgid "Nr"
+#~ msgstr "एनआर"
+
+#~ msgctxt "@label"
+#~ msgid "File name"
+#~ msgstr "फाइल नाम"
+
+#~ msgctxt "@label Progress of transfer"
+#~ msgid "Finished"
+#~ msgstr "पूरा"
+
+#~ msgctxt "@label Speed of transfer"
+#~ msgid "Speed"
+#~ msgstr "गति"
+
+#~ msgctxt "@label Status of transfer"
+#~ msgid "Status"
+#~ msgstr "स्थिति"
+
+#~ msgctxt "@action:button start a transfer"
+#~ msgid "Start"
+#~ msgstr "सुरू"
+
+#~ msgctxt "@action:button"
+#~ msgid "Stop"
+#~ msgstr "रुकव"
+
+#~ msgctxt "@action:button"
+#~ msgid "Remove"
+#~ msgstr "हटाव"
+
+#~ msgctxt "@label Download from"
+#~ msgid "Source:"
+#~ msgstr "स्रोत:"
+
+#~ msgctxt "@label Save download to"
+#~ msgid "Saving to:"
+#~ msgstr "इहां सहेजत हे:"
+
+#, fuzzy
+#~ msgctxt "@label Title in header"
+#~ msgid "Web Interface"
+#~ msgstr "वेबइंटरफेस"
+
+#~ msgctxt "@action"
+#~ msgid "Settings"
+#~ msgstr "सेटिंग"
+
+#~ msgctxt "@action"
+#~ msgid "Refresh"
+#~ msgstr "ताजा करव"
+
+#~ msgctxt "@action"
+#~ msgid "Enter URL: "
+#~ msgstr "यूआरएल भरव:"
+
+#~ msgctxt "@action:button"
+#~ msgid "OK"
+#~ msgstr "ठीक"
+
+#~ msgctxt "@action Refresh download list every x (seconds)"
+#~ msgid "Refresh download list every"
+#~ msgstr "डाउनलोड सूची ताजा करव हर बार -"
+
+#~ msgctxt "@action (Refresh very x )seconds"
+#~ msgid "seconds"
+#~ msgstr "सेकन्ड"
+
+#~ msgctxt "@action:button"
+#~ msgid "Save Settings"
+#~ msgstr "सेटिंग सहेजव"
+
+#~ msgctxt "@title"
+#~ msgid "Downloads"
+#~ msgstr "डाउनलोड्स"
+
+#~ msgid "An advanced download manager for KDE"
+#~ msgstr "केडीई बर एक उन्नत डाउनलोड प्रबंधक"
+
+#, fuzzy
+#~ msgid ""
+#~ "(C) 2005 - 2009, The KGet developers\n"
+#~ "(C) 2001 - 2002, Patrick Charbonnier\n"
+#~ "(C) 2002, Carsten Pfeiffer\n"
+#~ "(C) 1998 - 2000, Matej Koss"
+#~ msgstr ""
+#~ "(C) 2005 - 2008, केगेट बनइया मन\n"
+#~ "(C) 2001 - 2002, पेट्रिक कार्बोनियर\n"
+#~ "(C) 2002, कार्स्टेन पेइफर\n"
+#~ "(C) 1998 - 2000, मातेज कास"
+
+#~ msgid "<a href=\"mailto:kget@kde.org\">kget@kde.org</a>"
+#~ msgstr "<a href=\"mailto:kget@kde.org\">kget@kde.org</a>"
+
+#~ msgid "Lukas Appelhans"
+#~ msgstr "लुकास एपलहान्स"
+
+#, fuzzy
+#~| msgid "Developer, Torrent Plugin Author"
+#~ msgid "Maintainer, Core Developer, Torrent Plugin Author"
+#~ msgstr "डेवलपर, टोरेंट प्लगइन लेखक"
+
+#~ msgid "Dario Massarin"
+#~ msgstr "दारियो मासारिन"
+
+#~ msgid "Core Developer"
+#~ msgstr "कोर डेवलपर"
+
+#~ msgid "Urs Wolfer"
+#~ msgstr "उर वोल्फर"
+
+#~ msgid "Manolo Valdes"
+#~ msgstr "मानोलो वाल्देस"
+
+#~ msgid "Core Developer, Multithreaded Plugin Author"
+#~ msgstr "कोर डेवलपर, मल्टीथ्रेडेड प्लगइन लेखक"
+
+#~ msgid "Javier Goday"
+#~ msgstr "जेवियर गोदाय"
+
+#~ msgid "Developer"
+#~ msgstr "डेवलपर"
+
+#~ msgid "Patrick Charbonnier"
+#~ msgstr "पैट्रिक कार्बोनियर"
+
+#~ msgid "Former Developer"
+#~ msgstr "पूर्व डेवलपर"
+
+#~ msgid "Carsten Pfeiffer"
+#~ msgstr "कार्स्टेन फेइफर"
+
+#~ msgid "Matej Koss"
+#~ msgstr "मातेज कास"
+
+#~ msgid "Joris Guisson"
+#~ msgstr "जोरिस गुइसन"
+
+#~ msgid "BTCore (KTorrent) Developer"
+#~ msgstr "बीटीकोर (केटोरेंट) डेवलपर"
+
+#~ msgid "Mensur Zahirovic (Nookie)"
+#~ msgstr "मेन्सुर जोहिरोविक (नुकी)"
+
+#, fuzzy
+#~ msgid "Design of Web Interface"
+#~ msgstr "वेबइंटरफेस के डिजाइन"
+
+#~ msgid "Start KGet with drop target"
+#~ msgstr "के-गेट ड्राप लक्छ्य के साथ चालू करव"
+
+#~ msgid "Start KGet with hidden main window"
+#~ msgstr "केगेट ल मुख्य विंडो छुपा होय चालू करव"
+
+#~ msgid "Start KGet without drop target animation"
+#~ msgstr "केगेट ल ड्राप लक्छ्य एनीमेसन के बिना चालू करव"
+
+#~ msgid "URL(s) to download"
+#~ msgstr "यूआरएल जऊन ल डाउनलोड करे जाही "
+
+#~ msgid "KGet Transfer List"
+#~ msgstr "केगेट ट्रांसफर सूची"
+
+#~ msgid "Export Transfers"
+#~ msgstr "ट्रांसफर निर्यात करव"
+
+#~ msgid "&New Download..."
+#~ msgstr "नवा डाउनलोड... (&N)"
+
+#~ msgid "&Import Transfers..."
+#~ msgstr "ट्रांसफर आयात करव... (&I)"
+
+#~ msgid "&Export Transfers List..."
+#~ msgstr "ट्रांसफर सूची निर्यात करव... (&E)"
+
+#, fuzzy
+#~ msgid "&Export Transfers as Plain Text..."
+#~ msgstr "ट्रांसफर ल सादा पाठ जइसन निर्यात करव... (&E)"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Top Priority"
+#~ msgstr "प्राथमिकता"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Least Priority"
+#~ msgstr "प्राथमिकता"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Increase Priority"
+#~ msgstr "प्राथमिकता"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Decrease Priority"
+#~ msgstr "प्राथमिकता"
+
+#, fuzzy
+#~| msgid "Set Icon"
+#~ msgid "Set Icon..."
+#~ msgstr "चिनहा सेट करव"
+
+#~ msgid "Auto-Paste Mode"
+#~ msgstr "अपने अपन-चिपकाव मोड"
+
+#~ msgid "Use KGet as Konqueror Download Manager"
+#~ msgstr "केगेट ल कान्करर डाउनलोड प्रबंधक के जइसन परयोग करव"
+
+#, fuzzy
+#~| msgid "Remove Webseed"
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Remove Selected"
+#~ msgstr "वेबसीड मेटाव"
+
+#, fuzzy
+#~| msgctxt "delete all finished transfers"
+#~| msgid "Delete all finished"
+#~ msgctxt "delete all finished transfers"
+#~ msgid "Remove All Finished"
+#~ msgstr "सब्बो पूरा करे गे ल मेटाव"
+
+#~ msgctxt "redownload selected transfer item"
+#~ msgid "Redownload Selected"
+#~ msgstr "चुने गे ल फिर से डाउनलोड करव"
+
+#~ msgid "Start / Resume All"
+#~ msgstr "सुरू / सब्बो बहाल करव"
+
+#~ msgid "Start / Resume Selected"
+#~ msgstr "सुरू / चुने गे बहाल करव"
+
+#~ msgid "Stop All"
+#~ msgstr "सब्बो बन्द करव"
+
+#~ msgid "Stop Selected"
+#~ msgstr "चुने गे बन्द करव"
+
+#~ msgid "Start / Resume"
+#~ msgstr "सुरू / बहाल करव"
+
+#~ msgid "Stop"
+#~ msgstr "रुकव"
+
+#, fuzzy
+#~ msgid "Remove"
+#~ msgstr "हटाव"
+
+#~ msgid "Open Destination"
+#~ msgstr "गंतव्य खोलव"
+
+#~ msgid "Open File"
+#~ msgstr "फाइल खोलव"
+
+#~ msgid "Show Details"
+#~ msgstr "विवरन देखाव"
+
+#~ msgid "Copy URL to Clipboard"
+#~ msgstr "यूआरएल के नकल क्लिपबोर्ड मं बनाव"
+
+#, fuzzy
+#~| msgid "Transfer History"
+#~ msgid "&Transfer History"
+#~ msgstr "ट्रांसफर सूची"
+
+#, fuzzy
+#~ msgid "&Group Settings"
+#~ msgstr "समूह सेटिंग"
+
+#, fuzzy
+#~ msgid "&Transfer Settings"
+#~ msgstr "ट्रांसफर-विवरन"
+
+#~ msgid "Import &Links..."
+#~ msgstr "संकली आयात करव... (&L)"
+
+#~ msgid "Konqueror Integration"
+#~ msgstr "कान्करर के साथ एकीकरन"
+
+#~ msgid "Enable"
+#~ msgstr "सक्छम करव"
+
+#~ msgid "Do Not Enable"
+#~ msgstr "सक्छम नइ करव"
+
+#~ msgid "All Openable Files"
+#~ msgstr "सब्बो खोले जा सके फाइल मन ल"
+
+#~ msgctxt "window title including overall download progress in percent"
+#~ msgid "KGet - %1%"
+#~ msgstr "के-गेट - %1%"
+
+#~ msgid ""
+#~ "Some transfers are still running.\n"
+#~ "Are you sure you want to close KGet?"
+#~ msgstr ""
+#~ "कुछ हस्तांतरन अभी घलोक होवत हे.\n"
+#~ "का आप मन सही मं के-गेट बन्द करना चाहथो ?"
+
+#~ msgid "Confirm Quit"
+#~ msgstr "बाहिर जाय के पुस्टि करव"
+
+#~ msgid "Enter Group Name"
+#~ msgstr "समूह नाम भरव"
+
+#~ msgid "Group name:"
+#~ msgstr "समूह नामः"
+
+#, fuzzy
+#~| msgid ""
+#~| "Are you sure that you want to remove\n"
+#~| "the group named %1?"
+#~ msgid "Are you sure you want to delete the selected transfer?"
+#~ msgid_plural "Are you sure you want to delete the selected transfers?"
+#~ msgstr[0] ""
+#~ "का आप मन सचमुच समूह नाम %1 \n"
+#~ "को मिटाना चाहथो ?"
+#~ msgstr[1] ""
+#~ "का आप मन सचमुच समूह नाम %1 \n"
+#~ "को मिटाना चाहथो ?"
+
+#, fuzzy
+#~ msgid "Confirm transfer delete"
+#~ msgstr "ट्रांसफर सूची लोड करव (&L)"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "रविसंकर सिरीवास्तव, जी. करूनाकर"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "raviratlami@aol.in"
+
+#, fuzzy
+#~ msgid "Automatic verification:"
+#~ msgstr "वर्नन"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgid "Automatic verification"
+#~ msgstr "गंतव्य"
+
+#, fuzzy
+#~| msgid "Seeders:"
+#~ msgid "Keyservers:"
+#~ msgstr "सीडर्स:"
+
+#~ msgid "Rename"
+#~ msgstr "नाम बदलव"
+
+#, fuzzy
+#~| msgid "Select Icon"
+#~ msgid "Select Icon..."
+#~ msgstr "चिनहा चुनव"
+
+#, fuzzy
+#~| msgid "Limit maximum downloads per group"
+#~ msgid "Limit Maximum Downloads Per Group"
+#~ msgstr "प्रति समूह सबसे अधिक डाउनलोड सीमित करव"
+
+#, fuzzy
+#~ msgid "Number of downloads:"
+#~ msgstr "थ्रेड की संख्या:"
+
+#~ msgid "Downloads from the same server:"
+#~ msgstr "इसी सर्वर से डाउनलोड:"
+
+#, fuzzy
+#~ msgid "Speed Limit"
+#~ msgstr "गति सीमा"
+
+#, fuzzy
+#~ msgid "Global download limit:"
+#~ msgstr "वैस्विक डाउनलोड सीमा:"
+
+#, fuzzy
+#~| msgid "KiB/s"
+#~ msgid " KiB/s"
+#~ msgstr "कि.बा./s"
+
+#, fuzzy
+#~ msgid "Global upload limit:"
+#~ msgstr "वैस्विक अपलोड सीमा:"
+
+#, fuzzy
+#~| msgid "Per Transfer:"
+#~ msgid "Per transfer:"
+#~ msgstr "प्रति ट्रांसफर:"
+
+#, fuzzy
+#~| msgid "Reconnect on error or broken connection"
+#~ msgid "Reconnect on Error or Broken Connection"
+#~ msgstr "गलती या कनेक्सन टूटने मं फिर से कनेक्ट करव "
+
+#~ msgid "Number of retries:"
+#~ msgstr "फिर से  कोसिसों के संख्या"
+
+#~ msgid "Retry after:"
+#~ msgstr "के बाद् फिर से कोसिस करव:"
+
+#~ msgid "After Completing Downloads"
+#~ msgstr "डाउनलोड पूरा होए के बाद"
+
+#~ msgid "Auto shutdown"
+#~ msgstr "अपने अपन बन्द"
+
+#~ msgid "Auto disconnect"
+#~ msgstr "अपने अपन डिस्कनेक्ट"
+
+#, fuzzy
+#~ msgid "Enable Web Interface"
+#~ msgstr "वेबइंटरफेस सक्छम करव"
+
+#~ msgid "Port:"
+#~ msgstr "पोर्टः"
+
+#~ msgid "User:"
+#~ msgstr "कमइया:"
+
+#~ msgid "Password:"
+#~ msgstr "पासवर्ड: "
+
+#~ msgid "Startup"
+#~ msgstr "सुरू में"
+
+#~ msgid "Show splashscreen"
+#~ msgstr "स्प्लैस स्क्रीन देखाव"
+
+#~ msgid "Enable animations"
+#~ msgstr "चलचित्र सक्छम करव"
+
+#~ msgid "Show drop target"
+#~ msgstr "ड्राप लक्छ्य देखाव"
+
+#~ msgid "Disable confirmation dialogs (less verbosity)"
+#~ msgstr "पुस्टिकरन गोठों ल अक्छम करव (कम बर्बोसिटी)"
+
+#~ msgid "Enable system tray icon"
+#~ msgstr "तंत्र तस्तरी चिनहा सक्छम करव"
+
+#, fuzzy
+#~| msgid "Execute action after all downloads have been finished"
+#~ msgid "Execute action after all downloads have been finished:"
+#~ msgstr "जब डाउनलोड पूरा होही तहां ए काम करना हे"
+
+#~ msgid "At startup:"
+#~ msgstr "सुरू मं:"
+
+#, fuzzy
+#~ msgid "Restore Download State"
+#~ msgstr "चुने गे ल फिर से डाउनलोड करव"
+
+#, fuzzy
+#~| msgid "Start all Downloads"
+#~ msgid "Start All Downloads"
+#~ msgstr "सब्बो डाउनलोड चालू करव"
+
+#, fuzzy
+#~| msgid "Stop all Downloads"
+#~ msgid "Stop All Downloads"
+#~ msgstr "सब्बो डाउनलोड्स बन्द करव"
+
+#~ msgid "History"
+#~ msgstr "इतिहास "
+
+#~ msgid "History backend:"
+#~ msgstr "इतिहास बैकएन्ड"
+
+#~ msgid "Show overall progress"
+#~ msgstr "कुल प्रगति देखाव"
+
+#, fuzzy
+#~| msgid "Use as download manager for Konqueror"
+#~ msgid "Use as download manager for Konqueror:"
+#~ msgstr "कान्करर के डाउनलोड प्रबंधक जइसन परयोग करव"
+
+#~ msgid "Monitor clipboard for files to download"
+#~ msgstr "फाइल मन के डाउनलोड बर क्लिबोर्ड ल मानिटर करव"
+
+#, fuzzy
+#~ msgid "Search Engines"
+#~ msgstr "खोज इंजिन उपयोग करव"
+
+#, fuzzy
+#~ msgid "Engine Name"
+#~ msgstr "फाइल नाम"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of connections per URL:"
+#~ msgstr "फिर से  कोसिसों के संख्या"
+
+#~ msgid "Use search engines"
+#~ msgstr "खोज इंजिन उपयोग करव"
+
+#, fuzzy
+#~ msgid "File Settings"
+#~ msgstr "सेटिंग सहेजव"
+
+#, fuzzy
+#~ msgid "Filename:"
+#~ msgstr "फाइल नाम"
+
+#, fuzzy
+#~ msgid "Username:"
+#~ msgstr "कमइया:"
+
+#, fuzzy
+#~ msgid "Edit...."
+#~ msgstr "संपादन"
+
+#, fuzzy
+#~ msgid "Configure...."
+#~ msgstr "कान्फिगर..."
+
+#, fuzzy
+#~ msgid "Path:"
+#~ msgstr "पोर्टः"
+
+#, fuzzy
+#~ msgid "Description:"
+#~ msgstr "वर्नन"
+
+#, fuzzy
+#~ msgid "Number of simultaneous file downloads:"
+#~ msgstr "थ्रेड की संख्या:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of mirrors per file:"
+#~ msgstr "फिर से  कोसिसों के संख्या"
+
+#, fuzzy
+#~| msgid "Change appearance settings"
+#~ msgid "Change string:"
+#~ msgstr "रूप सेटिंग बदलव"
+
+#~ msgid "Mode:"
+#~ msgstr "मोडः"
+
+#~ msgid "Remove Tracker"
+#~ msgstr "ट्रैकर मेटाव"
+
+#~ msgid "Change Tracker"
+#~ msgstr "ट्रैकर बदलव"
+
+#, fuzzy
+#~| msgid "Update Tracker"
+#~ msgid "Update Trackers"
+#~ msgstr "ट्रैकर अद्यतन करव"
+
+#~ msgid "Restore Defaults"
+#~ msgstr "डिफाल्ट बहाल करव"
+
+#~ msgid "Remove Webseed"
+#~ msgstr "वेबसीड मेटाव"
+
+#~ msgid "Chunks"
+#~ msgstr "चंक"
+
+#~ msgid "Total:"
+#~ msgstr "कुलः"
+
+#~ msgid "Currently downloading:"
+#~ msgstr "अभी हाल मं डाउनलोड करत हे:"
+
+#~ msgid "Downloaded:"
+#~ msgstr "डाउनलोडेड:"
+
+#~ msgid "Excluded:"
+#~ msgstr "अलावा:"
+
+#~ msgid "Left:"
+#~ msgstr "बाकी:"
+
+#~ msgid "Size:"
+#~ msgstr "आकारः"
+
+#, fuzzy
+#~ msgid "Scanning data of torrent:"
+#~ msgstr "<b>%1</b> के डाटा स्कैन करत हे"
+
+#, fuzzy
+#~ msgid "Number of chunks found:"
+#~ msgstr "थ्रेड की संख्या:"
+
+#, fuzzy
+#~ msgid "Number of chunks failed:"
+#~ msgstr "थ्रेड की संख्या:"
+
+#~ msgid "0"
+#~ msgstr "0"
+
+#~ msgid "Cancel"
+#~ msgstr "खारिज करव"
+
+#~ msgid "Stats"
+#~ msgstr "स्थिति"
+
+#~ msgid "Seeders:"
+#~ msgstr "सीडर्स:"
+
+#~ msgid "<n>"
+#~ msgstr "<n>"
+
+#, fuzzy
+#~ msgid "Download speed:"
+#~ msgstr "डाउनलोडेड"
+
+#~ msgid "Leechers:"
+#~ msgstr "लीचर्स:"
+
+#, fuzzy
+#~ msgid "Upload speed:"
+#~ msgstr "अपलोड कर दे गिस"
+
+#~ msgctxt "chunks left"
+#~ msgid "Left:"
+#~ msgstr "बाकी:"
+
+#~ msgctxt "all chunks"
+#~ msgid "All:"
+#~ msgstr "सब्बो:"
+
+#~ msgctxt "source-file"
+#~ msgid "Source:"
+#~ msgstr "स्रोत:"
+
+#~ msgid "Saving to:"
+#~ msgstr "इहां सहेजत हे:"
+
+#, fuzzy
+#~| msgid "Upload Limit per Transfer:"
+#~ msgid "Upload limit per transfer:"
+#~ msgstr "प्रति ट्रांसफर अपलोड सीमा:"
+
+#~ msgid "No Limit"
+#~ msgstr "कोई सीमा नइ"
+
+#~ msgid "KiB"
+#~ msgstr "कि.बा."
+
+#, fuzzy
+#~| msgid "Download Limit per Transfer:"
+#~ msgid "Download limit per transfer:"
+#~ msgstr "प्रति ट्रांसफर अपलोड सीमा:"
+
+#~ msgid "Folders"
+#~ msgstr "फोल्डर"
+
+#, fuzzy
+#~ msgid "Default torrent folder:"
+#~ msgstr "डिफाल्ट टोरेंट फोल्डर:"
+
+#~ msgid "Default temporary folder"
+#~ msgstr "डिफाल्ट अस्थाई फोल्डर"
+
+#, fuzzy
+#~| msgid "Enter URL:"
+#~ msgid "General URL:"
+#~ msgstr "यूआरएल भरव:"
+
+#, fuzzy
+#~| msgid "Requests"
+#~ msgid "Required"
+#~ msgstr "निवेदन"
+
+#, fuzzy
+#~ msgid "Verification:"
+#~ msgstr "वर्नन"
+
+#, fuzzy
+#~| msgid "Open file"
+#~ msgid "*.metalink *.meta4|Metalink file (*.metalink *.meta4)"
+#~ msgstr "फाइल खोलव"
+
+#, fuzzy
+#~| msgid "Remaining Time:"
+#~ msgid "Date and time:"
+#~ msgstr "बाकी समय:"
+
+#, fuzzy
+#~ msgid "Version:"
+#~ msgstr "वर्नन"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "Name:"
+#~ msgstr "नाम"
+
+#, fuzzy
+#~ msgid "Name of the publisher"
+#~ msgstr "थ्रेड की संख्या:"
+
+#, fuzzy
+#~ msgid "URL to the publisher"
+#~ msgstr "थ्रेड की संख्या:"
+
+#, fuzzy
+#~| msgid "Files"
+#~ msgctxt "Files as in files on a server"
+#~ msgid "Files:"
+#~ msgstr "फाइल"
+
+#, fuzzy
+#~| msgid "Import Links"
+#~ msgid "&Import Links"
+#~ msgstr "संकली आयात करव"
+
+#~ msgid "Show:"
+#~ msgstr "देखाव:"
+
+#, fuzzy
+#~| msgctxt "filter: show all file types"
+#~| msgid "All"
+#~ msgctxt "filter: show all file types"
+#~ msgid "&All"
+#~ msgstr "सब्बो"
+
+#, fuzzy
+#~| msgid "Videos"
+#~ msgid "&Videos"
+#~ msgstr "वीडियो"
+
+#, fuzzy
+#~| msgid "Audio"
+#~ msgid "A&udio"
+#~ msgstr "आडियो"
+
+#, fuzzy
+#~| msgid "Archives"
+#~ msgid "A&rchives"
+#~ msgstr "अभिलेखागार"
+
+#, fuzzy
+#~| msgid "Do Not Download"
+#~ msgid "Does Not Contain"
+#~ msgstr "डाउनलोड नइ करव"
+
+#, fuzzy
+#~| msgid "Invert selection"
+#~ msgid "Inver&t Selection"
+#~ msgstr "चयन लहुटाव"
+
+#, fuzzy
+#~ msgctxt "Check as in mark, not as in verify"
+#~ msgid "Chec&k Selected"
+#~ msgstr "चुने गे ल जांचव"
+
+#, fuzzy
+#~| msgid "Error: "
+#~ msgid "Mirror:"
+#~ msgstr "गलती:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of connections:"
+#~ msgstr "फिर से  कोसिसों के संख्या"
+
+#, fuzzy
+#~| msgid "Enter URL:"
+#~ msgid "Enter a URL"
+#~ msgstr "यूआरएल भरव:"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Priority:"
+#~ msgstr "प्राथमिकता"
+
+#, fuzzy
+#~| msgid "Location (URL)"
+#~ msgid "Location:"
+#~ msgstr "जगह (यूआरएल)"
+
+#~ msgid "Clear History"
+#~ msgstr "इतिहास साफ करव"
+
+#~ msgctxt "View modes"
+#~ msgid "View Modes"
+#~ msgstr "मोड्स देखाव"
+
+#, fuzzy
+#~| msgid "Select ranges"
+#~ msgid "Select Ranges"
+#~ msgstr "सीमा चुनव"
+
+#~ msgid "Date"
+#~ msgstr "तारीक"
+
+#~ msgid "Host"
+#~ msgstr "होस्ट"
+
+#, fuzzy
+#~| msgid "Filter history"
+#~ msgid "Filter History"
+#~ msgstr "फिल्टर इतिहास "
+
+#~ msgctxt "delete selected transfer"
+#~ msgid "Delete Selected"
+#~ msgstr "चुने गे ल मेटाव"
+
+#~ msgid "Download"
+#~ msgstr "डाउनलोड"
+
+#, fuzzy
+#~| msgid "KSqueezedTextLabel"
+#~ msgid "TextLabel"
+#~ msgstr "के-स्क्वीज-टेक्स्ट-लेबल"
+
+#, fuzzy
+#~ msgctxt "hash as a hash of type md5, sha1 etc."
+#~ msgid "Hash:"
+#~ msgstr "पोर्टः"
+
+#~ msgid "Status:"
+#~ msgstr "स्थिति:"
+
+#, fuzzy
+#~| msgid "Remaining Time"
+#~ msgid "Remaining Time:"
+#~ msgstr "बाकी समय"
+
+#, fuzzy
+#~ msgid "Transfer Settings"
+#~ msgstr "ट्रांसफर-विवरन"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Download Destination:"
+#~ msgstr "गंतव्य:"
+
+#, fuzzy
+#~ msgctxt "No value has been set"
+#~ msgid "Not set"
+#~ msgstr "संकली नइ"
+
+#, fuzzy
+#~| msgid "KiB"
+#~ msgid " KiB"
+#~ msgstr "कि.बा."
+
+#, fuzzy
+#~| msgid "Upload Limit"
+#~ msgid "Upload Limit:"
+#~ msgstr "अपलोड सीमा"
+
+#, fuzzy
+#~| msgid "Download Limit"
+#~ msgid "Download Limit:"
+#~ msgstr "डाउनलोड सीमा"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgctxt "The available mirrors (servers) for downloading"
+#~ msgid "Mirrors"
+#~ msgstr "गलती"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgctxt "verification of the download (e.g. by using MD5)"
+#~ msgid "Verification"
+#~ msgstr "गंतव्य"
+
+#, fuzzy
+#~| msgid "User:"
+#~ msgid "Issuer:"
+#~ msgstr "कमइया:"
+
+#~ msgid "E-Mail:"
+#~ msgstr "ई-मेल:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Creation:"
+#~ msgstr "गंतव्य:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Expiration:"
+#~ msgstr "गंतव्य:"
+
+#, fuzzy
+#~ msgid "Group Settings"
+#~ msgstr "समूह सेटिंग"
+
+#~ msgid "Default folder:"
+#~ msgstr "डिफाल्ट फोल्डर:"
+
+#, fuzzy
+#~| msgid "Maximum download speed"
+#~ msgid "Maximum download speed:"
+#~ msgstr "अधिकतम डाउनलोड गति"
+
+#, fuzzy
+#~| msgid "Maximum upload speed"
+#~ msgid "Maximum upload speed:"
+#~ msgstr "अधिकतम अपलोड गति"
+
+#~ msgid "Destination:"
+#~ msgstr "गंतव्य:"
+
+#, fuzzy
+#~| msgid "Transfer Group:"
+#~ msgid "Transfer group:"
+#~ msgstr "ट्रांसफर समूह:"
+
+#~ msgid "&File"
+#~ msgstr "फाइल (&F)"
+
+#~ msgid "&Downloads"
+#~ msgstr "डाउनलोड (&D)"
+
+#~ msgid "&Settings"
+#~ msgstr "सेटिंग (&S)"
+
+#~ msgid "&Help"
+#~ msgstr "मदद (&H)"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "मुख्य औजार पट्टी"
+
+#, fuzzy
+#~ msgid "List of the available search engines"
+#~ msgstr "खोज इंजिन उपयोग करव"
+
+#, fuzzy
+#~ msgid "List of the available search engine URLs"
+#~ msgstr "खोज इंजिन उपयोग करव"
+
+#, fuzzy
+#~ msgid "An error occurred...."
+#~ msgstr "एक गलती होइस..."
+
+#~ msgid "Remove Tag"
+#~ msgstr "टैग हटाव"
+
+#, fuzzy
+#~| msgid "Add Tracker"
+#~ msgid "Add Tag"
+#~ msgstr "ट्रैकर जोड़व"
+
+#, fuzzy
+#~| msgid "Manage the groups"
+#~ msgid "Tag Settings for the groups"
+#~ msgstr "समूह मन के प्रबंधन करव"
+
+#, fuzzy
+#~| msgctxt "@action"
+#~| msgid "Settings"
+#~ msgid "Tag Settings"
+#~ msgstr "सेटिंग"
+
+#, fuzzy
+#~| msgctxt "Preview available"
+#~| msgid "Available"
+#~ msgid "Available tags:"
+#~ msgstr "मिलत "
+
+#~ msgid "OK"
+#~ msgstr "ठीक"
+
+#~ msgid "Announcing"
+#~ msgstr "घोसना करत हे"
+
+#, fuzzy
+#~| msgid "Error: "
+#~ msgid "Error: %1"
+#~ msgstr "गलती:"
+
+#~ msgid "Unknown client"
+#~ msgstr "अग्यात क्लायंट"
+
+#~ msgid "1 day "
+#~ msgid_plural "%1 days "
+#~ msgstr[0] "१दिन"
+#~ msgstr[1] "%1 दिन"
+
+#~ msgid "Cannot open log file %1 : %2"
+#~ msgstr "लाग फ़ाइल खोल नइ सकिस  %1 : %2"
+
+#~ msgid "Cannot write to %1 : %2"
+#~ msgstr "एमां लिख नइ सकिस  %1 : %2"
+
+#~ msgid "Cannot read from %1"
+#~ msgstr " %1 से पढ़ नइ सकिस"
+
+#, fuzzy
+#~ msgid "Cannot create directory %1"
+#~ msgstr " %1 से पढ़ नइ सकिस"
+
+#~ msgid "Cannot create %1: %2"
+#~ msgstr "बना नइ सकिस %1: %2"
+
+#~ msgid "Cannot open %1 : %2"
+#~ msgstr "खोल नइ सकिस %1 : %2"
+
+#~ msgid "General"
+#~ msgstr "सामान्य"
+
+#, fuzzy
+#~ msgid "Connections"
+#~ msgstr "कनेक्सन होवत हे"
+
+#, fuzzy
+#~ msgid "Tracker"
+#~ msgstr "ट्रेकर"
+
+#~ msgid "Not connected"
+#~ msgstr "कनेक्टेड नइ हे"
+
+#, fuzzy
+#~ msgid "Not in use"
+#~ msgstr "संकली नइ"
+
+#~ msgid "Connection closed"
+#~ msgstr "कनेक्सन बन्द"
+
+#~ msgid "Connected"
+#~ msgstr "कनेक्टेड"
+
+#~ msgid "Connecting"
+#~ msgstr "कनेक्सन होवत हे"
+
+#, fuzzy
+#~ msgid "1 peer"
+#~ msgid_plural "%1 peers"
+#~ msgstr[0] " %1 पीअर"
+#~ msgstr[1] " %1 पीअर"
+
+#~ msgid "Decode error"
+#~ msgstr "डिकोड गलती"
+
+#~ msgid "Torrent is incomplete."
+#~ msgstr "टोरेंट फाइल"
+
+#~ msgid "Failed to create %1 : %2"
+#~ msgstr "बना नइ सकिस %1 : %2"
+
+#~ msgid "Cannot create file %1 : %2"
+#~ msgstr "फाइल बना नइ सकिस %1: %2"
+
+#~ msgid "Failed to seek file %1 : %2"
+#~ msgstr "फाइल %1 : %2 सीक करे मं असफल"
+
+#~ msgid "Error reading from %1"
+#~ msgstr "%1 से पढ़े मं गलती"
+
+#~ msgid "Failed to write to file %1 : %2"
+#~ msgstr "फाइल %1 : %2 लिखे मं असफल."
+
+#~ msgid "Cannot open file %1 : %2"
+#~ msgstr "फ़ाइल%1 : %2 खोल नइ सकिस"
+
+#, fuzzy
+#~| msgid "Corrupted torrent!"
+#~ msgid "Corrupted torrent."
+#~ msgstr "खराब टोरेंट!"
+
+#~ msgid "Parse Error"
+#~ msgstr "व्याख्या गलती"
+
+#~ msgid "Unable to create %1 : %2"
+#~ msgstr "%1 : %2 बनाए मं अक्छम"
+
+#~ msgid "Not started"
+#~ msgstr "सुरू नइ होइस"
+
+#~ msgid "Seeding completed"
+#~ msgstr "सीडिंग पूरा"
+
+#, fuzzy
+#~| msgid "Seeding"
+#~ msgctxt "Status of a torrent file"
+#~ msgid "Seeding"
+#~ msgstr "सीडिंग"
+
+#~ msgid "Downloading"
+#~ msgstr "डाउनलोड करत हे"
+
+#~ msgid "Stopped"
+#~ msgstr "रुक गिस"
+
+#, fuzzy
+#~| msgid "Currently downloading:"
+#~ msgid "Queued for downloading"
+#~ msgstr "अभी हाल मं डाउनलोड करत हे:"
+
+#~ msgid "Checking data"
+#~ msgstr "डाटा चेक करत हे"
+
+#~ msgid "Stopped. No space left on device."
+#~ msgstr "बन्द हो गिस. उपकरन मं कोनो जगह नइ बचिस."
+
+#~ msgid "Cannot open file %1: %2"
+#~ msgstr "फ़ाइल खोल नइ सकिस %1 : %2"
+
+#, fuzzy
+#~ msgid "Unable to resolve hostname %1"
+#~ msgstr "%1 मं सहेज नइ सके."
+
+#~ msgid "Invalid tracker URL"
+#~ msgstr "अवैध ट्रैकर यूआरएल"
+
+#~ msgid "Cannot open file : %1 : %2"
+#~ msgstr "फ़ाइल खोल नइ सकिस %1 : %2"
+
+#, fuzzy
+#~| msgid "Group name already in use"
+#~ msgid "Group Name Already in Use"
+#~ msgstr "समूह नाम पहिली से ही उपयोग मं हे"
+
+#~ msgid "Add"
+#~ msgstr "जोड़व"
+
+#~ msgid "Delete"
+#~ msgstr "मेटाव"
+
+#~ msgid "Configure..."
+#~ msgstr "कान्फिगर..."
+
+#~ msgid "Details for: %1"
+#~ msgstr "बर विवरन: %1"
+
+#~ msgid "All downloads"
+#~ msgstr "सब्बो डाउनलोड्स"
+
+#~ msgid "Finished downloads"
+#~ msgstr "संपन्न डाउनलोड्स"
+
+#~ msgid "Transfers:"
+#~ msgstr "हस्तांतरन:"
+
+#~ msgid "Downloads"
+#~ msgstr "डाउनलोड्स"
+
+#~ msgid "Transfer details:"
+#~ msgstr "ट्रांसफर विवरन:"
+
+#~ msgid "Transfer List"
+#~ msgstr "ट्रांसफर सूची"
+
+#~ msgid "Threads"
+#~ msgstr "लड़ियाँ"
+
+#~ msgid "Number of threads:"
+#~ msgstr "थ्रेड की संख्या:"
+
+#, fuzzy
+#~ msgid "Name of the license"
+#~ msgstr "थ्रेड की संख्या:"
+
+#, fuzzy
+#~ msgid "URL to the license"
+#~ msgstr "थ्रेड की संख्या:"
+
+#~ msgctxt "The transfer is delayed"
+#~ msgid "Delayed"
+#~ msgstr "विलम्बित"
+
+#~ msgid ""
+#~ "Destination file \n"
+#~ "%1\n"
+#~ "already exists.\n"
+#~ "Do you want to overwrite it?"
+#~ msgstr ""
+#~ "गंतव्य फाइल\n"
+#~ "%1\n"
+#~ " पहिली से ही मौजूद हे. \n"
+#~ "का आप मन एखर ऊपर लिखना चाहथो ?"
+
+#, fuzzy
+#~| msgid "Overwrite existing file?"
+#~ msgid "Overwrite destination"
+#~ msgstr "अभी हाल के फाइल मेटाय के लिखव?"
+
+#~ msgid "Cannot migrate %1 : %2"
+#~ msgstr "माइग्रेट नइ कर सकिस %1 : %2"
+
+#~ msgid "Select Folder to Save To"
+#~ msgstr "सहेजे बर फोल्डर चुनव"
+
+#~ msgid "Queued"
+#~ msgstr "कतार मं"
+
+#~ msgid "Current Tracker"
+#~ msgstr "अभी हाल के ट्रैकर"
+
+#, fuzzy
+#~ msgid "Scrape"
+#~ msgstr "अंक"
+
+#~ msgid "Available Trackers"
+#~ msgstr "मिलत ट्रेकर"
+
+#, fuzzy
+#~| msgid "Enter Url"
+#~ msgid "Enter an url"
+#~ msgstr "यूआरएल भरव"
+
+#, fuzzy
+#~ msgid "Urls list of the available search engines"
+#~ msgstr "खोज इंजिन उपयोग करव"
+
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Delete Selected"
+#~ msgstr "चुने गे ल मेटाव"
+
+#, fuzzy
+#~| msgid "Clear History"
+#~ msgid "We are sorry"
+#~ msgstr "इतिहास साफ करव"
+
+#~ msgid "Rename transfer"
+#~ msgstr "ट्रांसफर के नाम बदलव"
+
+#~ msgid "Download URL again?"
+#~ msgstr "यूआरएल फिर से डाउनलोड करव?"
+
+#, fuzzy
+#~| msgid "File"
+#~ msgctxt "file in a filsystem"
+#~ msgid "File"
+#~ msgstr "फाइल"
+
+#, fuzzy
+#~| msgid ""
+#~| "Are you sure that you want to remove\n"
+#~| "the group named %1?"
+#~ msgid "Are you sure that you want to remove all selected groups?"
+#~ msgstr ""
+#~ "का आप मन सचमुच समूह नाम %1 \n"
+#~ "को मिटाना चाहथो ?"
+
+#~ msgid "Name"
+#~ msgstr "नाम"
+
+#~ msgid "Remaining Time"
+#~ msgstr "बाकी समय"
+
+#~ msgid "KGet - Download Manager"
+#~ msgstr "केगेट - डाउनलोड प्रबंधक"
+
+#~ msgctxt "@label transfer source"
+#~ msgid "Source:"
+#~ msgstr "स्रोत:"
+
+#~ msgid "kBi"
+#~ msgstr "केबीआई"
+
+#~ msgid "Save data every:"
+#~ msgstr "डाटा सहेजव हर:"
+
+#~ msgid "Maintainer, Core Developer"
+#~ msgstr "मेंटेनर, कोर डेवलपर"
+
+#~ msgid "Peers"
+#~ msgstr "पीअर"
+
+#, fuzzy
+#~| msgid "Select all"
+#~ msgid "&Select all"
+#~ msgstr "सब्बो चुनव"
+
+#~ msgid "&Transfer History..."
+#~ msgstr "इतिहास ट्रांसफर करव... (&T)"
+
+#~ msgid "&Group Settings..."
+#~ msgstr "समूह सेटिंग... (&G)"
+
+#~ msgid "&Transfer Settings..."
+#~ msgstr "ट्रांसफर सेटिंग्स... (&T)"
+
+#~ msgid "Speed limit"
+#~ msgstr "गति सीमा"
+
+#, fuzzy
+#~ msgid "Download Speed:"
+#~ msgstr "डाउनलोड गति:"
+
+#, fuzzy
+#~ msgid "Upload Speed:"
+#~ msgstr "अपलोड गति:"
+
+#, fuzzy
+#~| msgid "Import links"
+#~ msgid "&Import links"
+#~ msgstr "संकली आयात करव"
+
+#~ msgid "The group name is empty"
+#~ msgstr "समूह नाम खाली हे"
+
+#, fuzzy
+#~ msgid "You can not delete this group."
+#~ msgstr "आप एखर समूह ल मिटा नइ सकहू!"
+
+#, fuzzy
+#~| msgid "Delete"
+#~ msgid "&Delete"
+#~ msgstr "मेटाव"
+
+#, fuzzy
+#~| msgid "Cancel"
+#~ msgid "&Cancel"
+#~ msgstr "खारिज करव"
+
+#~ msgid "Default Download Folders"
+#~ msgstr "डिफाल्ट डाउनलोड फोल्डर"
+
+#~ msgid "Folder and extension can not be empty."
+#~ msgstr "फोल्डर अउ एक्सटेंसन खाली नइ हो सके."
+
+#~ msgid "Ask save location for every new download"
+#~ msgstr "हर एक नवा डाउनलोड बर सहेजे के जगह बर पूछव"
+
+#~ msgid "Place new downloads inside default folder:"
+#~ msgstr "नवा डाउनलोड डिफाल्ट फोल्डर मं रखव"
+
+#~ msgid "Except for specific file types"
+#~ msgstr "विसिस्ट फाइल किसिमों के अलावा"
+
+#~ msgid "Specify extension and target folder:"
+#~ msgstr "लक्छ्य फोल्डर अउ एक्सटेंसन बताव."
+
+#, fuzzy
+#~ msgid "File Extension"
+#~ msgstr "फाइल-एक्सटेंसन"
+
+#~ msgid "Default Folder"
+#~ msgstr "डिफाल्ट फोल्डर"
+
+#~ msgid "Edit"
+#~ msgstr "संपादन"
+
+#~ msgid ""
+#~ "Use a regular expression for the extension. \n"
+#~ "Examples: *.tar.gz or *movies*.zip"
+#~ msgstr ""
+#~ "एक्सटेंसन बर रेगुलर एक्सप्रेसन परयोग करव. \n"
+#~ "उदाहरन: *.tar.gz या *movies*.zip"
+
+#~ msgid "Set as default folder"
+#~ msgstr "डिफाल्ट फोल्डर के रूप मं सेट करव"
+
+#, fuzzy
+#~ msgid "extRegExp, defaultFolder"
+#~ msgstr "डिफाल्ट फोल्डर के रूप मं सेट करव"
+
+#~ msgid "Downloading.."
+#~ msgstr "डाउनलोड करत हे..."
+
+#~ msgid "Advanced-Details for %1"
+#~ msgstr "%1 बर विस्तृत विवरन"
+
+#~ msgid "Assigned Peers"
+#~ msgstr "आबंटित पीअर"
+
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading.."
+#~ msgstr "डाउनलोड करत हे..."
+
+#~ msgid "%1 GB"
+#~ msgstr "%1 गी.बा."
+
+#~ msgid "%1 MB"
+#~ msgstr "%1 मे.बा."
+
+#~ msgid "%1 KB"
+#~ msgstr "%1 कि.बा."
+
+#~ msgid "%1 B"
+#~ msgstr "%1 बा"
+
+#~| msgid "%1/s"
+#~ msgid "%1 KB/s"
+#~ msgstr "%1 किबा/से"
+
+#~ msgctxt "@label Title in header"
+#~ msgid "Webinterface"
+#~ msgstr "वेबइंटरफेस"
+
+#~ msgid "Downloads number:"
+#~ msgstr "डाउनलोड संख्या:"
+
+#~ msgid "kBi/s"
+#~ msgstr "किबा/से."
+
+#~ msgid "Start downloading files immediately after startup"
+#~ msgstr "सुरू होए के तुरंत बाद फाइल मन के डाउनलोड चालू करव"
+
+#~ msgid "Not Deleted"
+#~ msgstr "मेटाइस नइ"
+
+#~ msgid "Konqueror Integration disabled"
+#~ msgstr "कान्करर के साथ एकीकरन अक्छम"
+
+#~ msgid "Show main window at startup"
+#~ msgstr "सुरू मं मुख्य विंडों देखाव"
+
+#~ msgid "<done> MiB of <todo> MiB"
+#~ msgstr "<done> मेबा ये मां से: <todo> मेबा"
+
+#~ msgid "<icon>"
+#~ msgstr "<icon>"
+
+#~ msgid "<status>"
+#~ msgstr "<स्थिति>"
+
+#~ msgid "<speed>"
+#~ msgstr "<speed>"
+
+#, fuzzy
+#~ msgid "Bittorrent-Speedlimits"
+#~ msgstr "गति सीमा"
+
+#, fuzzy
+#~ msgid "Speed-Limits"
+#~ msgstr "गति सीमा"
+
+#~ msgid "Download Folder"
+#~ msgstr "डाउनलोड फोल्डर"
+
+#~ msgid "Hide Drop Target"
+#~ msgstr "ड्राप लक्छ्य लुकाव"

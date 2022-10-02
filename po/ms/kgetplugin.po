@@ -1,0 +1,2432 @@
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kget\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2006-08-24 22:53+0800\n"
+"Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
+"Language-Team: KDE <kde-i18n-doc@kde.org>\n"
+"Language: ms\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=1;\n"
+
+#: kget_plugin.cpp:56
+#, fuzzy, kde-format
+msgid "Download Manager"
+msgstr "Pengurus Pencetak"
+
+#: kget_plugin.cpp:62
+#, fuzzy, kde-format
+msgid "Show Drop Target"
+msgstr "Menukar polisi sasaran ke DROP: "
+
+#: kget_plugin.cpp:69
+#, fuzzy, kde-format
+msgid "List All Links"
+msgstr "Membuang semua rantai:"
+
+#: kget_plugin.cpp:74
+#, fuzzy, kde-format
+msgid "List Selected Links"
+msgstr "Membuang semua rantai:"
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No downloadable links were found."
+msgstr ""
+
+#: kget_plugin.cpp:170
+#, fuzzy, kde-format
+msgid "No Links"
+msgstr "Pautan Pelayan"
+
+#. i18n: ectx: Menu (tools)
+#: konqueror_kget_browser_integration.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr ""
+
+#~ msgid "Plugins"
+#~ msgstr "Plugin"
+
+#~ msgid "New Group"
+#~ msgstr "Tambah Direktori"
+
+#~ msgid "Network"
+#~ msgstr "Rangkaian"
+
+#, fuzzy
+#~ msgid "Network and Downloads"
+#~ msgstr "Bahagian mesej emel"
+
+#, fuzzy
+#~ msgid "Verification"
+#~ msgstr "Destinasi:"
+
+#, fuzzy
+#~ msgctxt "integration of KGet with other applications"
+#~ msgid "Integration"
+#~ msgstr "Pelayar Konqueror"
+
+#, fuzzy
+#~| msgid "Advanced"
+#~ msgctxt "Advanced Options"
+#~ msgid "Advanced"
+#~ msgstr "Lanjutan"
+
+#, fuzzy
+#~ msgid "Advanced Options"
+#~ msgstr "Pilihan Lanjutan"
+
+#, fuzzy
+#~ msgid "Transfer Plugins"
+#~ msgstr "Log Pemindahan"
+
+#~ msgid "KGet"
+#~ msgstr "KGet"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#, fuzzy
+#~ msgctxt "start transfergroup downloads"
+#~ msgid "Start"
+#~ msgstr "Memulakan VNC"
+
+#, fuzzy
+#~ msgctxt "stop transfergroup downloads"
+#~ msgid "Stop"
+#~ msgstr "Dihentikan"
+
+#, fuzzy
+#~ msgid "KGet is downloading %1 file"
+#~ msgid_plural "KGet is downloading %1 files"
+#~ msgstr[0] "Pengurus Pencetak"
+#~ msgstr[1] "Pengurus Pencetak"
+
+#, fuzzy
+#~ msgid "Error trying to get %1"
+#~ msgstr "Ralat bila menulis ke fail keutamaan"
+
+#, fuzzy
+#~ msgid "Are you sure that you want to remove the group named %1?"
+#~ msgstr "Adakah anda pasti untuk memadam volum logikal \"%s\"?"
+
+#, fuzzy
+#~ msgid "Remove Group"
+#~ msgstr "Tambah _direktori"
+
+#, fuzzy
+#~ msgid "Are you sure that you want to remove the following groups?"
+#~ msgstr "Adakah anda pasti untuk memadam volum logikal \"%s\"?"
+
+#, fuzzy
+#~ msgid "Remove groups"
+#~ msgstr "Tambah _direktori"
+
+#, fuzzy
+#~ msgid "Download added"
+#~ msgstr "Muatturun Dipilih"
+
+#~ msgid "My Downloads"
+#~ msgstr "Muatturun Saya"
+
+#, fuzzy
+#~ msgid "New Download"
+#~ msgstr "Katalaluan (sekali l_agi):"
+
+#, fuzzy
+#~ msgid ""
+#~ "Malformed URL:\n"
+#~ "%1"
+#~ msgstr "URL Autokonfigurasi:"
+
+#, fuzzy
+#~ msgid ""
+#~ "Malformed URL, protocol missing:\n"
+#~ "%1"
+#~ msgstr "URL Autokonfigurasi:"
+
+#, fuzzy
+#~ msgid "Download it again?"
+#~ msgstr "Katalaluan (sekali l_agi):"
+
+#, fuzzy
+#~ msgid "Delete it and download again?"
+#~ msgstr "Katalaluan (sekali l_agi):"
+
+#, fuzzy
+#~ msgid "File already exists"
+#~ msgstr "Profil \"%s\" telah wujud!"
+
+#, fuzzy
+#~ msgid "Download completed"
+#~ msgstr "Pemasangan selesai"
+
+#, fuzzy
+#~ msgid "Download started"
+#~ msgstr "Muatturun Dipilih"
+
+#~ msgid "Error"
+#~ msgstr "Ralat"
+
+#, fuzzy
+#~ msgid "Resolve"
+#~ msgstr "Log Pemindahan"
+
+#, fuzzy
+#~ msgid "KGet is now closing, as all downloads have completed."
+#~ msgstr "Semua selesai. Klik \"Maju\" untuk meneruskan."
+
+#, fuzzy
+#~ msgid "The computer will now turn off, as all downloads have completed."
+#~ msgstr "Semua selesai. Klik \"Maju\" untuk meneruskan."
+
+#, fuzzy
+#~ msgctxt "Shutting down computer"
+#~ msgid "Shutdown"
+#~ msgstr "%s %s pemasangan pada hos %s"
+
+#, fuzzy
+#~ msgid ""
+#~ "The computer will now suspend to disk, as all downloads have completed."
+#~ msgstr "Semua selesai. Klik \"Maju\" untuk meneruskan."
+
+#, fuzzy
+#~ msgid ""
+#~ "The computer will now suspend to RAM, as all downloads have completed."
+#~ msgstr "Semua selesai. Klik \"Maju\" untuk meneruskan."
+
+#, fuzzy
+#~| msgctxt "Preview pending"
+#~| msgid "Pending"
+#~ msgctxt "Suspending computer"
+#~ msgid "Suspending"
+#~ msgstr "Tertangguh"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgctxt "abort the proposed action"
+#~ msgid "Abort"
+#~ msgstr "Font:"
+
+#, fuzzy
+#~ msgid "Downloads completed"
+#~ msgstr "Pemasangan selesai"
+
+#, fuzzy
+#~ msgctxt "file in a filesystem"
+#~ msgid "File"
+#~ msgstr "Buka Fail"
+
+#, fuzzy
+#~ msgctxt "status of the download"
+#~ msgid "Status"
+#~ msgstr "Memulakan VNC"
+
+#, fuzzy
+#~ msgctxt "size of the download"
+#~ msgid "Size"
+#~ msgstr "Saiz"
+
+#, fuzzy
+#~ msgid "KGet Transfer"
+#~ msgstr "Log Pemindahan"
+
+#, fuzzy
+#~ msgctxt "the type of the hash, e.g. MD5"
+#~ msgid "Type"
+#~ msgstr "Jenis Sistem _Fail:"
+
+#~ msgid "Stalled"
+#~ msgstr "Tergantung"
+
+#, fuzzy
+#~ msgid "Downloading...."
+#~ msgstr "Muatturun Dipilih"
+
+#, fuzzy
+#~ msgctxt "transfer state: delayed"
+#~ msgid "Delayed"
+#~ msgstr "Tetap sebagai de_fault"
+
+#, fuzzy
+#~| msgid "Stopped"
+#~ msgctxt "transfer state: stopped"
+#~ msgid "Stopped"
+#~ msgstr "Dihentikan"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgctxt "transfer state: aborted"
+#~ msgid "Aborted"
+#~ msgstr "Font:"
+
+#, fuzzy
+#~ msgctxt "transfer state: finished"
+#~ msgid "Finished"
+#~ msgstr "Pemasangan selesai"
+
+#, fuzzy
+#~ msgctxt "changing the destination of the file"
+#~ msgid "Changing destination"
+#~ msgstr "Fail destinasi"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgctxt "name of download"
+#~ msgid "Name"
+#~ msgstr "Nama"
+
+#, fuzzy
+#~ msgctxt "status of download"
+#~ msgid "Status"
+#~ msgstr "Memulakan VNC"
+
+#~ msgctxt "size of download"
+#~ msgid "Size"
+#~ msgstr "Saiz"
+
+#, fuzzy
+#~ msgctxt "progress of download"
+#~ msgid "Progress"
+#~ msgstr "Dialog Kemajuan"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgctxt "speed of download"
+#~ msgid "Speed"
+#~ msgstr "Kelajuan"
+
+#, fuzzy
+#~ msgctxt "remaining time of download"
+#~ msgid "Remaining Time"
+#~ msgstr "Waktu Alaska"
+
+#, fuzzy
+#~ msgid "No download destination specified."
+#~ msgstr "Destinasi:"
+
+#, fuzzy
+#~ msgid "Invalid download destination specified."
+#~ msgstr "Destinasi:"
+
+#, fuzzy
+#~ msgid "Download destination is not writeable."
+#~ msgstr "Destinasi:"
+
+#, fuzzy
+#~ msgid "Malformed URL."
+#~ msgstr "URL Autokonfigurasi:"
+
+#, fuzzy
+#~ msgid "Malformed URL, protocol missing."
+#~ msgstr "URL Autokonfigurasi:"
+
+#, fuzzy
+#~ msgid "Malformed URL, host missing."
+#~ msgstr "URL Autokonfigurasi:"
+
+#, fuzzy
+#~ msgid ""
+#~ "Invalid download destination specified:\n"
+#~ "%1"
+#~ msgstr "Destinasi:"
+
+#, fuzzy
+#~ msgid ""
+#~ "Download destination is not writeable:\n"
+#~ "%1"
+#~ msgstr "Destinasi:"
+
+#, fuzzy
+#~ msgid ""
+#~ "Malformed URL, host missing:\n"
+#~ "%1"
+#~ msgstr "URL Autokonfigurasi:"
+
+#, fuzzy
+#~ msgid "File already exists. Overwrite it?"
+#~ msgstr "Profil \"%s\" telah wujud!"
+
+#, fuzzy
+#~ msgid ""
+#~ "File already exists:\n"
+#~ "%1\n"
+#~ "Overwrite it?"
+#~ msgstr "Profil \"%s\" telah wujud!"
+
+#, fuzzy
+#~ msgid "Malformed URLs."
+#~ msgstr "URL Autokonfigurasi:"
+
+#, fuzzy
+#~ msgid "Malformed URLs, protocol missing."
+#~ msgstr "URL Autokonfigurasi:"
+
+#, fuzzy
+#~ msgid "Malformed URLs, host missing."
+#~ msgstr "URL Autokonfigurasi:"
+
+#, fuzzy
+#~ msgid ""
+#~ "Malformed URLs:\n"
+#~ "%1"
+#~ msgstr "URL Autokonfigurasi:"
+
+#, fuzzy
+#~ msgid ""
+#~ "Malformed URLs, protocol missing:\n"
+#~ "%1"
+#~ msgstr "URL Autokonfigurasi:"
+
+#, fuzzy
+#~ msgid ""
+#~ "Malformed URLs, host missing:\n"
+#~ "%1"
+#~ msgstr "URL Autokonfigurasi:"
+
+#~ msgid "Question"
+#~ msgstr "Soalan"
+
+#, fuzzy
+#~| msgid "Normal"
+#~ msgctxt "on a question"
+#~ msgid "No all"
+#~ msgstr "Normal"
+
+#, fuzzy
+#~ msgid "Engine name:"
+#~ msgstr "Dari Fail Tempatan"
+
+#~ msgid "URL:"
+#~ msgstr "URL:"
+
+#, fuzzy
+#~ msgctxt "transfer state: connecting"
+#~ msgid "Connecting...."
+#~ msgstr "Perhubungan"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Set Script File"
+#~ msgstr "Huraian"
+
+#, fuzzy
+#~ msgctxt "Transfer State: Finished"
+#~ msgid "Finished"
+#~ msgstr "Pemasangan selesai"
+
+#, fuzzy
+#~ msgid "Downloading Metalink File...."
+#~ msgstr "Muatturun Dipilih"
+
+#, fuzzy
+#~ msgid "Redownload Metalink"
+#~ msgstr "Pemasangan selesai"
+
+#, fuzzy
+#~ msgid "File Selection"
+#~ msgstr "Jadual Program"
+
+#, fuzzy
+#~ msgctxt "the string that is used to modify an url"
+#~ msgid "Change string"
+#~ msgstr "Perhubungan"
+
+#, fuzzy
+#~| msgid "Stopped"
+#~ msgid "Append"
+#~ msgstr "Dihentikan"
+
+#, fuzzy
+#~ msgid "Replace file"
+#~ msgstr "Buka Fail"
+
+#, fuzzy
+#~ msgctxt "transfer state: running"
+#~ msgid "Running...."
+#~ msgstr "Perhubungan"
+
+#~ msgctxt "Choked"
+#~ msgid "Yes"
+#~ msgstr "Ya"
+
+#~ msgctxt "Not choked"
+#~ msgid "No"
+#~ msgstr "Tidak"
+
+#, fuzzy
+#~ msgid "IP Address"
+#~ msgstr "URL Autokonfigurasi:"
+
+#~ msgid "Client"
+#~ msgstr "Klien"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Down Speed"
+#~ msgstr "Kelajuan"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Up Speed"
+#~ msgstr "Kelajuan"
+
+#~ msgid "DHT"
+#~ msgstr "DHT"
+
+#, fuzzy
+#~ msgid "Score"
+#~ msgstr "Sumber"
+
+#, fuzzy
+#~ msgid "Downloaded"
+#~ msgstr "Muatturun Dipilih"
+
+#, fuzzy
+#~ msgid "Interesting"
+#~ msgstr "Pelayar Konqueror"
+
+#, fuzzy
+#~ msgid "Download speed"
+#~ msgstr "Muatturun Dipilih"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Upload speed"
+#~ msgstr "Kelajuan"
+
+#, fuzzy
+#~ msgid "Chunk"
+#~ msgstr "Kiraan perkataan"
+
+#, fuzzy
+#~ msgid "Progress"
+#~ msgstr "Dialog Kemajuan"
+
+#, fuzzy
+#~ msgid "Files"
+#~ msgstr "Buka Fail"
+
+#, fuzzy
+#~ msgid "Number of the chunk"
+#~ msgstr "Numbor peranti"
+
+#, fuzzy
+#~ msgid "Download speed of the chunk"
+#~ msgstr "Pemasangan selesai"
+
+#~ msgid "URL"
+#~ msgstr "URL"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed"
+#~ msgstr "Kelajuan"
+
+#, fuzzy
+#~ msgid "Status"
+#~ msgstr "Memulakan VNC"
+
+#, fuzzy
+#~ msgid "File"
+#~ msgstr "Buka Fail"
+
+#, fuzzy
+#~ msgid "Advanced Details for %1"
+#~ msgstr "Tambah _direktori"
+
+#, fuzzy
+#~ msgid "Trackers"
+#~ msgstr "Pemindahan"
+
+#, fuzzy
+#~ msgctxt "Open file"
+#~ msgid "Open"
+#~ msgstr "Buka Fail"
+
+#, fuzzy
+#~ msgid "Download first"
+#~ msgstr "Muatturun Dipilih"
+
+#, fuzzy
+#~ msgid "Download normally"
+#~ msgstr "Tambah _direktori"
+
+#, fuzzy
+#~ msgid "Download last"
+#~ msgstr "Muatturun Dipilih"
+
+#, fuzzy
+#~ msgid "Do Not Download"
+#~ msgstr "Katalaluan (sekali l_agi):"
+
+#, fuzzy
+#~ msgid "Delete File(s)"
+#~ msgstr "Tambah fail dipilih"
+
+#, fuzzy
+#~ msgid "Move File"
+#~ msgstr "Buka Fail"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Seeders"
+#~ msgstr "Kelajuan"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Leechers"
+#~ msgstr "Kelajuan"
+
+#, fuzzy
+#~ msgid "Times Downloaded"
+#~ msgstr "Muatturun Dipilih"
+
+#~ msgid "Next Update"
+#~ msgstr "Kemaskini"
+
+#~ msgid "Priority"
+#~ msgstr "Keutamaan"
+
+#~ msgid "Preview"
+#~ msgstr "Pralihat"
+
+#~ msgctxt "Download first"
+#~ msgid "First"
+#~ msgstr "Pertama"
+
+#~ msgctxt "Download last"
+#~ msgid "Last"
+#~ msgstr "Akhir"
+
+#, fuzzy
+#~| msgid "Normal"
+#~ msgctxt "Download normally(not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "Normal"
+
+#~ msgctxt "Preview pending"
+#~ msgid "Pending"
+#~ msgstr "Tertangguh"
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 %"
+#~ msgstr " %1/s "
+
+#~ msgctxt "Preview available"
+#~ msgid "Available"
+#~ msgstr "Ada"
+
+#, fuzzy
+#~| msgid "Normal"
+#~ msgctxt "Download Normal (not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "Normal"
+
+#, fuzzy
+#~ msgid "&Advanced Details"
+#~ msgstr "Pilihan Lanjutan"
+
+#, fuzzy
+#~ msgid "&Scan Files"
+#~ msgstr "Buka Fail"
+
+#, fuzzy
+#~ msgid "Downloading Torrent File...."
+#~ msgstr "Muatturun Dipilih"
+
+#, fuzzy
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading...."
+#~ msgstr "Muatturun Dipilih"
+
+#, fuzzy
+#~ msgid "Torrent file does not exist"
+#~ msgstr "Pengguna %s tidak wujud.\n"
+
+#, fuzzy
+#~ msgid "Analyzing torrent...."
+#~ msgstr "Muatturun Dipilih"
+
+#, fuzzy
+#~ msgctxt "Transfer status: seeding"
+#~ msgid "Seeding...."
+#~ msgstr "Jadual Program"
+
+#, fuzzy
+#~ msgid "Select a default torrent folder"
+#~ msgstr "Tambah _direktori"
+
+#, fuzzy
+#~ msgid "Select a default temporary folder"
+#~ msgstr "Tambah _direktori"
+
+#, fuzzy
+#~ msgid "Import dropped files"
+#~ msgstr "import daripada fail"
+
+#, fuzzy
+#~ msgid "File Properties"
+#~ msgstr "Jadual Program"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a filename."
+#~ msgstr "Ethernet"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter at least one URL."
+#~ msgstr "Ethernet"
+
+#, fuzzy
+#~ msgid "Metalink Version 4.0 file (*.meta4)"
+#~ msgstr "Buka Fail"
+
+#, fuzzy
+#~ msgid "Metalink Version 3.0 file (*.metalink)"
+#~ msgstr "Buka Fail"
+
+#, fuzzy
+#~ msgid "Import Links"
+#~ msgstr "Pautan Pelayan"
+
+#, fuzzy
+#~ msgctxt "Download the items which have been selected"
+#~ msgid "&Download Checked"
+#~ msgstr "Pemasangan selesai"
+
+#, fuzzy
+#~ msgid "File Name"
+#~ msgstr "Dari Fail Tempatan"
+
+#~ msgid "Description"
+#~ msgstr "Huraian"
+
+#, fuzzy
+#~ msgctxt "list header: type of file"
+#~ msgid "File Type"
+#~ msgstr "Jenis Sistem _Fail:"
+
+#, fuzzy
+#~ msgid "Location (URL)"
+#~ msgstr "URL Autokonfigurasi:"
+
+#, fuzzy
+#~ msgid "Links in: %1 - KGet"
+#~ msgstr "Nama sudah digunakan"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgctxt "The priority of the mirror"
+#~ msgid "Priority"
+#~ msgstr "Font:"
+
+#, fuzzy
+#~ msgctxt "Number of paralell connections to the mirror"
+#~ msgid "Connections"
+#~ msgstr "Perhubungan"
+
+#, fuzzy
+#~ msgctxt "Location = country"
+#~ msgid "Location"
+#~ msgstr "URL Autokonfigurasi:"
+
+#, fuzzy
+#~ msgid "%1 has been successfully added."
+#~ msgstr "Berjaya keluar"
+
+#, fuzzy
+#~ msgid "Download again"
+#~ msgstr "Katalaluan (sekali l_agi):"
+
+#, fuzzy
+#~ msgctxt "Delete selected history-item"
+#~ msgid "Delete selected"
+#~ msgstr "Tambah fail dipilih"
+
+#, fuzzy
+#~ msgid "Open file"
+#~ msgstr "Buka Fail"
+
+#, fuzzy
+#~ msgid "Transfer History"
+#~ msgstr "Log Pemindahan"
+
+#, fuzzy
+#~ msgid "&Open File"
+#~ msgstr "Buka Fail"
+
+#~ msgctxt "The transfer is running"
+#~ msgid "Running"
+#~ msgstr "Berfungsi"
+
+#, fuzzy
+#~| msgid "Stopped"
+#~ msgctxt "The transfer is stopped"
+#~ msgid "Stopped"
+#~ msgstr "Dihentikan"
+
+#, fuzzy
+#~ msgctxt "The transfer is finished"
+#~ msgid "Finished"
+#~ msgstr "Pemasangan selesai"
+
+#, fuzzy
+#~ msgid "Source File"
+#~ msgstr "Sumber"
+
+#, fuzzy
+#~ msgid "Destination"
+#~ msgstr "Destinasi:"
+
+#, fuzzy
+#~ msgid "Time"
+#~ msgstr "Pemasa Kanak-kanak"
+
+#, fuzzy
+#~ msgid "File Size"
+#~ msgstr "Buka Fail"
+
+#, fuzzy
+#~ msgctxt "the transfer has been finished"
+#~ msgid "Finished"
+#~ msgstr "Pemasangan selesai"
+
+#, fuzzy
+#~ msgctxt "an error happened in connection with the user input"
+#~ msgid "Error:"
+#~ msgstr "Kepada"
+
+#, fuzzy
+#~| msgid "unknown"
+#~ msgctxt "trust level"
+#~ msgid "Unknown"
+#~ msgstr "tidak diketahui"
+
+#~ msgctxt "trust level"
+#~ msgid "Never"
+#~ msgstr "Tidak sekali"
+
+#~ msgid "Unlimited"
+#~ msgstr "Tanpa had"
+
+#, fuzzy
+#~ msgid "The signature has been verified successfully."
+#~ msgstr "Berjaya keluar"
+
+#, fuzzy
+#~ msgctxt "pgp signature is not verified"
+#~ msgid "Failed"
+#~ msgstr "Buka Fail"
+
+#, fuzzy
+#~ msgid "Error:"
+#~ msgstr "Kepada"
+
+#, fuzzy
+#~ msgid "Information:"
+#~ msgstr "Pelayar Konqueror"
+
+#, fuzzy
+#~ msgid "Transfer Details"
+#~ msgstr "Pemindahan fail"
+
+#, fuzzy
+#~ msgid "%1 %2 has been successfully added."
+#~ msgstr "Berjaya keluar"
+
+#, fuzzy
+#~ msgid "Transfer Verification for %1"
+#~ msgstr "Tambah _direktori"
+
+#, fuzzy
+#~ msgid "%1 was successfully verified."
+#~ msgstr "Berjaya keluar"
+
+#, fuzzy
+#~ msgid "Rename File"
+#~ msgstr "Tambah _direktori"
+
+#, fuzzy
+#~ msgid "Rename %1 to:"
+#~ msgstr "Tambah _direktori"
+
+#, fuzzy
+#~ msgid "&Rename"
+#~ msgstr "Tambah _direktori"
+
+#, fuzzy
+#~ msgid "Rename Group..."
+#~ msgid_plural "Rename Groups..."
+#~ msgstr[0] "Tambah _direktori"
+#~ msgstr[1] "Tambah _direktori"
+
+#, fuzzy
+#~ msgctxt "fix position for droptarget"
+#~ msgid "Sticky"
+#~ msgstr "Nota Lekat"
+
+#, fuzzy
+#~| msgid "KGet"
+#~ msgid "Quit KGet"
+#~ msgstr "KGet"
+
+#, fuzzy
+#~ msgid "The dropped file is a KGet Transfer List"
+#~ msgstr "Log Pemindahan"
+
+#, fuzzy
+#~ msgid "&Download"
+#~ msgstr "Muatturun Dipilih"
+
+#, fuzzy
+#~ msgid "&Load transfer list"
+#~ msgstr "Log Pemindahan"
+
+#, fuzzy
+#~ msgid "Show Main Window"
+#~ msgstr "Pelayan Fail Windows"
+
+#, fuzzy
+#~ msgid "Hide Main Window"
+#~ msgstr "Pengurus tetingkap Sawfish"
+
+#, fuzzy
+#~ msgid "Drop Target"
+#~ msgstr "Pemacu Sasaran:"
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgctxt "%1 filename, %2 total size, %3 status"
+#~ msgid "%1(%2) %3"
+#~ msgstr " %1/s "
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgctxt ""
+#~ "%1 filename, %2 percent complete, %3 downloaded out of %4 total size, %5 "
+#~ "status"
+#~ msgid "%1(%2% %3/%4) %5"
+#~ msgstr " %1/s "
+
+#, fuzzy
+#~ msgid "Hiding drop target"
+#~ msgstr "Menukar polisi sasaran ke DROP: "
+
+#, fuzzy
+#~ msgid "Transfer Settings for %1"
+#~ msgstr "Tambah _direktori"
+
+#, fuzzy
+#~ msgid "Destination unmodified"
+#~ msgstr "Destinasi:"
+
+#, fuzzy
+#~| msgid "%1% of %2 - %3"
+#~ msgid "%1 of %2"
+#~ msgstr "%1% dari %2 - %3"
+
+#, fuzzy
+#~ msgid "Group Settings for %1"
+#~ msgstr "Tambah _direktori"
+
+#, fuzzy
+#~| msgid "%1/s"
+#~ msgctxt "@item speed of transfer per seconds"
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#, fuzzy
+#~ msgctxt "@label"
+#~ msgid "File name"
+#~ msgstr "Dari Fail Tempatan"
+
+#, fuzzy
+#~ msgctxt "@label Progress of transfer"
+#~ msgid "Finished"
+#~ msgstr "Pemasangan selesai"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgctxt "@label Speed of transfer"
+#~ msgid "Speed"
+#~ msgstr "Kelajuan"
+
+#, fuzzy
+#~ msgctxt "@label Status of transfer"
+#~ msgid "Status"
+#~ msgstr "Memulakan VNC"
+
+#, fuzzy
+#~ msgctxt "@action:button start a transfer"
+#~ msgid "Start"
+#~ msgstr "Memulakan VNC"
+
+#, fuzzy
+#~ msgctxt "@action:button"
+#~ msgid "Stop"
+#~ msgstr "Dihentikan"
+
+#, fuzzy
+#~ msgctxt "@action:button"
+#~ msgid "Remove"
+#~ msgstr "Log Pemindahan"
+
+#, fuzzy
+#~ msgctxt "@label Download from"
+#~ msgid "Source:"
+#~ msgstr "Sumber"
+
+#, fuzzy
+#~ msgctxt "@action"
+#~ msgid "Settings"
+#~ msgstr "Jadual Program"
+
+#~ msgctxt "@action"
+#~ msgid "Refresh"
+#~ msgstr "Muat semula"
+
+#, fuzzy
+#~ msgctxt "@action Refresh download list every x (seconds)"
+#~ msgid "Refresh download list every"
+#~ msgstr "Pemasangan selesai"
+
+#, fuzzy
+#~ msgctxt "@action:button"
+#~ msgid "Save Settings"
+#~ msgstr "Pemindahan fail"
+
+#, fuzzy
+#~ msgctxt "@title"
+#~ msgid "Downloads"
+#~ msgstr "Muatturun Dipilih"
+
+#, fuzzy
+#~ msgid "URL(s) to download"
+#~ msgstr "Muatturun fail ke:"
+
+#, fuzzy
+#~ msgid "KGet Transfer List"
+#~ msgstr "Log Pemindahan"
+
+#, fuzzy
+#~ msgid "Export Transfers"
+#~ msgstr "eksport senarai (default)"
+
+#, fuzzy
+#~ msgid "&Import Transfers..."
+#~ msgstr "eksport / import senarai perkakasan"
+
+#, fuzzy
+#~ msgid "&Export Transfers List..."
+#~ msgstr "eksport senarai (default)"
+
+#, fuzzy
+#~ msgid "&Export Transfers as Plain Text..."
+#~ msgstr "eksport senarai (default)"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Top Priority"
+#~ msgstr "Keutamaan"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Least Priority"
+#~ msgstr "Keutamaan"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Increase Priority"
+#~ msgstr "Keutamaan"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Decrease Priority"
+#~ msgstr "Keutamaan"
+
+#, fuzzy
+#~ msgid "Auto-Paste Mode"
+#~ msgstr "%s %s pemasangan pada hos %s"
+
+#, fuzzy
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Remove Selected"
+#~ msgstr "Teruskan"
+
+#, fuzzy
+#~ msgctxt "delete all finished transfers"
+#~ msgid "Remove All Finished"
+#~ msgstr "Tambah fail dipilih"
+
+#, fuzzy
+#~ msgctxt "redownload selected transfer item"
+#~ msgid "Redownload Selected"
+#~ msgstr "Pemasangan selesai"
+
+#, fuzzy
+#~ msgid "Start / Resume Selected"
+#~ msgstr "Tambah fail dipilih"
+
+#, fuzzy
+#~ msgid "Stop Selected"
+#~ msgstr "Tambah fail dipilih"
+
+#, fuzzy
+#~ msgid "Stop"
+#~ msgstr "Dihentikan"
+
+#, fuzzy
+#~ msgid "Remove"
+#~ msgstr "Log Pemindahan"
+
+#, fuzzy
+#~ msgid "Open Destination"
+#~ msgstr "Fail destinasi"
+
+#, fuzzy
+#~ msgid "Open File"
+#~ msgstr "Buka Fail"
+
+#, fuzzy
+#~ msgid "Show Details"
+#~ msgstr "<sharuzzaman@myrealbox.com>"
+
+#, fuzzy
+#~ msgid "Copy URL to Clipboard"
+#~ msgstr "Salin fail setempat ke remote"
+
+#, fuzzy
+#~ msgid "&Transfer History"
+#~ msgstr "Log Pemindahan"
+
+#, fuzzy
+#~ msgid "&Group Settings"
+#~ msgstr "Tambah _direktori"
+
+#, fuzzy
+#~ msgid "&Transfer Settings"
+#~ msgstr "Pemindahan fail"
+
+#, fuzzy
+#~ msgid "Import &Links..."
+#~ msgstr "Pautan Pelayan"
+
+#, fuzzy
+#~ msgid "Konqueror Integration"
+#~ msgstr "Pelayar Konqueror"
+
+#, fuzzy
+#~ msgid "Enable"
+#~ msgstr "Hidupkan"
+
+#, fuzzy
+#~ msgid "Do Not Enable"
+#~ msgstr "_Jangan Format"
+
+#, fuzzy
+#~ msgid "Enter Group Name"
+#~ msgstr "Sharuzzaman Ahmat Raslan"
+
+#, fuzzy
+#~ msgid "Group name:"
+#~ msgstr "Sharuzzaman Ahmat Raslan"
+
+#, fuzzy
+#~ msgid "Are you sure you want to delete the selected transfer?"
+#~ msgid_plural "Are you sure you want to delete the selected transfers?"
+#~ msgstr[0] "Anda pasti anda mahu memadam item ini?\n"
+#~ msgstr[1] "Anda pasti anda mahu memadam item ini?\n"
+
+#, fuzzy
+#~ msgid "Confirm transfer delete"
+#~ msgstr "Log Pemindahan"
+
+#, fuzzy
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Sharuzzaman Ahmat Raslan"
+
+#, fuzzy
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "<sharuzzaman@myrealbox.com>"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Automatic verification:"
+#~ msgstr "Huraian"
+
+#, fuzzy
+#~ msgid "Automatic verification"
+#~ msgstr "Opsyen RAID"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Keyservers:"
+#~ msgstr "Kelajuan"
+
+#, fuzzy
+#~ msgid "Move &Up"
+#~ msgstr "Gerak ke penghujung baris semasa"
+
+#, fuzzy
+#~ msgid "Move &Down"
+#~ msgstr "Gerak ke penghujung baris semasa"
+
+#, fuzzy
+#~ msgid "Rename"
+#~ msgstr "Tambah _direktori"
+
+#, fuzzy
+#~ msgid "Limit Maximum Downloads Per Group"
+#~ msgstr "Pemasangan selesai"
+
+#, fuzzy
+#~ msgid "Number of downloads:"
+#~ msgstr "Numbor peranti"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed Limit"
+#~ msgstr "Kelajuan"
+
+#, fuzzy
+#~ msgid "Global download limit:"
+#~ msgstr "Muatturun Dipilih"
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid " KiB/s"
+#~ msgstr " %1 KB/s "
+
+#, fuzzy
+#~ msgid "Global upload limit:"
+#~ msgstr "Muatturun Dipilih"
+
+#, fuzzy
+#~ msgid "Per transfer:"
+#~ msgstr "Pemindahan"
+
+#, fuzzy
+#~ msgid "Reconnect on Error or Broken Connection"
+#~ msgstr "Permintaan per Sambungan"
+
+#, fuzzy
+#~ msgid "Number of retries:"
+#~ msgstr "Numbor peranti"
+
+#, fuzzy
+#~ msgid "Retry after:"
+#~ msgstr "dibuang selepas 7.7.3\n"
+
+#, fuzzy
+#~ msgid "After Completing Downloads"
+#~ msgstr "Bahagian mesej emel"
+
+#, fuzzy
+#~ msgid "Auto shutdown"
+#~ msgstr "%s %s pemasangan pada hos %s"
+
+#, fuzzy
+#~ msgid "Auto disconnect"
+#~ msgstr "%s %s pemasangan pada hos %s"
+
+#, fuzzy
+#~ msgid "Enable Web Interface"
+#~ msgstr "Animasi ANIM"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Port:"
+#~ msgstr "Font:"
+
+#~ msgid "Password:"
+#~ msgstr "Katalaluan:"
+
+#, fuzzy
+#~ msgid "Startup"
+#~ msgstr "Memulakan VNC"
+
+#, fuzzy
+#~ msgid "Enable animations"
+#~ msgstr "Animasi ANIM"
+
+#, fuzzy
+#~ msgid "Show drop target"
+#~ msgstr "Menukar polisi sasaran ke DROP: "
+
+#, fuzzy
+#~ msgid "Enable system tray icon"
+#~ msgstr "Animasi ANIM"
+
+#, fuzzy
+#~ msgid "Execute action after all downloads have been finished:"
+#~ msgstr "Semua selesai. Klik \"Maju\" untuk meneruskan."
+
+#, fuzzy
+#~ msgid "At startup:"
+#~ msgstr "Memulakan VNC"
+
+#, fuzzy
+#~ msgid "Restore Download State"
+#~ msgstr "Muatturun Dipilih"
+
+#, fuzzy
+#~ msgid "Start All Downloads"
+#~ msgstr "Bahagian mesej emel"
+
+#, fuzzy
+#~ msgid "Stop All Downloads"
+#~ msgstr "Bahagian mesej emel"
+
+#, fuzzy
+#~ msgid "History"
+#~ msgstr "Log Pemindahan"
+
+#, fuzzy
+#~ msgid "History backend:"
+#~ msgstr "Log Pemindahan"
+
+#, fuzzy
+#~ msgid "Engine Name"
+#~ msgstr "Dari Fail Tempatan"
+
+#, fuzzy
+#~ msgid "Number of connections per URL:"
+#~ msgstr "Numbor peranti"
+
+#, fuzzy
+#~ msgid "File Settings"
+#~ msgstr "Jadual Program"
+
+#, fuzzy
+#~ msgid "Filename:"
+#~ msgstr "Dari Fail Tempatan"
+
+#, fuzzy
+#~ msgid "Login Info"
+#~ msgstr "Tetingkap Pemasangan"
+
+#, fuzzy
+#~ msgid "Username:"
+#~ msgstr "Tambah _direktori"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Path:"
+#~ msgstr "Font:"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Description:"
+#~ msgstr "Huraian"
+
+#, fuzzy
+#~ msgid "Number of simultaneous file downloads:"
+#~ msgstr "Numbor peranti"
+
+#, fuzzy
+#~ msgid "Number of mirrors per file:"
+#~ msgstr "Numbor peranti"
+
+#~ msgid "Mode:"
+#~ msgstr "Mod:"
+
+#, fuzzy
+#~ msgid "Remove Tracker"
+#~ msgstr "Log Pemindahan"
+
+#, fuzzy
+#~ msgid "Update Trackers"
+#~ msgstr "Pemindahan"
+
+#, fuzzy
+#~ msgid "Remove Webseed"
+#~ msgstr "Teruskan"
+
+#, fuzzy
+#~| msgid "Total"
+#~ msgid "Total:"
+#~ msgstr "Jumlah"
+
+#, fuzzy
+#~ msgid "Downloaded:"
+#~ msgstr "Muatturun Dipilih"
+
+#~ msgid "Left:"
+#~ msgstr "Kiri:"
+
+#, fuzzy
+#~ msgid "Size:"
+#~ msgstr "Saiz"
+
+#, fuzzy
+#~ msgid "Number of chunks found:"
+#~ msgstr "Numbor peranti"
+
+#, fuzzy
+#~ msgid "Number of chunks failed:"
+#~ msgstr "Numbor peranti"
+
+#, fuzzy
+#~ msgid "Number of chunks not downloaded:"
+#~ msgstr "Numbor peranti"
+
+#, fuzzy
+#~ msgid "Number of chunks downloaded:"
+#~ msgstr "Numbor peranti"
+
+#~ msgid "0"
+#~ msgstr "0"
+
+#~ msgid "Cancel"
+#~ msgstr "Batal"
+
+#, fuzzy
+#~ msgid "Stats"
+#~ msgstr "Memulakan VNC"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Seeders:"
+#~ msgstr "Kelajuan"
+
+#, fuzzy
+#~ msgid "Download speed:"
+#~ msgstr "Muatturun Dipilih"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Upload speed:"
+#~ msgstr "Kelajuan"
+
+#, fuzzy
+#~ msgctxt "source-file"
+#~ msgid "Source:"
+#~ msgstr "Sumber"
+
+#, fuzzy
+#~ msgid "Upload limit per transfer:"
+#~ msgstr "Muatturun Dipilih"
+
+#, fuzzy
+#~ msgid "No Limit"
+#~ msgstr "Muatturun Dipilih"
+
+#, fuzzy
+#~ msgid "Download limit per transfer:"
+#~ msgstr "Muatturun Dipilih"
+
+#~ msgid "Folders"
+#~ msgstr "Folder"
+
+#, fuzzy
+#~ msgid "Default torrent folder:"
+#~ msgstr "Tambah _direktori"
+
+#, fuzzy
+#~ msgid "Default temporary folder"
+#~ msgstr "Tambah _direktori"
+
+#, fuzzy
+#~ msgid "File size (in bytes):"
+#~ msgstr "(Saiz maks %s MB)"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Verification:"
+#~ msgstr "Huraian"
+
+#, fuzzy
+#~ msgid "*.metalink *.meta4|Metalink file (*.metalink *.meta4)"
+#~ msgstr "Buka Fail"
+
+#, fuzzy
+#~ msgid "Date and time:"
+#~ msgstr "Waktu Alaska"
+
+#, fuzzy
+#~ msgid "Version:"
+#~ msgstr "Penghujungan"
+
+#, fuzzy
+#~| msgid "Log"
+#~ msgid "Logo:"
+#~ msgstr "Log"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "Name:"
+#~ msgstr "Nama"
+
+#, fuzzy
+#~ msgid "Name of the publisher"
+#~ msgstr "Numbor peranti"
+
+#, fuzzy
+#~ msgid "URL to the publisher"
+#~ msgstr "Numbor peranti"
+
+#, fuzzy
+#~ msgctxt "Files as in files on a server"
+#~ msgid "Files:"
+#~ msgstr "Buka Fail"
+
+#, fuzzy
+#~ msgid "&Import Links"
+#~ msgstr "Pautan Pelayan"
+
+#, fuzzy
+#~ msgid "Contains"
+#~ msgstr "Perhubungan"
+
+#, fuzzy
+#~ msgid "Does Not Contain"
+#~ msgstr "Katalaluan (sekali l_agi):"
+
+#, fuzzy
+#~ msgctxt "Check as in mark, not as in verify"
+#~ msgid "Chec&k Selected"
+#~ msgstr "Tambah fail dipilih"
+
+#, fuzzy
+#~ msgid "Number of connections:"
+#~ msgstr "Numbor peranti"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a URL"
+#~ msgstr "Ethernet"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Priority:"
+#~ msgstr "Keutamaan"
+
+#, fuzzy
+#~ msgid "Location:"
+#~ msgstr "URL Autokonfigurasi:"
+
+#, fuzzy
+#~ msgctxt "View modes"
+#~ msgid "View Modes"
+#~ msgstr "Mod Penyelamatan"
+
+#, fuzzy
+#~ msgid "Date"
+#~ msgstr "Memulakan VNC"
+
+#, fuzzy
+#~ msgid "Filter History"
+#~ msgstr "Log Pemindahan"
+
+#, fuzzy
+#~ msgctxt "delete selected transfer"
+#~ msgid "Delete Selected"
+#~ msgstr "Tambah fail dipilih"
+
+#, fuzzy
+#~ msgid "Download"
+#~ msgstr "Muatturun Dipilih"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgctxt "hash as a hash of type md5, sha1 etc."
+#~ msgid "Hash:"
+#~ msgstr "Font:"
+
+#~ msgid "Status:"
+#~ msgstr "Status:"
+
+#, fuzzy
+#~ msgid "Remaining Time:"
+#~ msgstr "Waktu Alaska"
+
+#, fuzzy
+#~ msgid "Transfer Settings"
+#~ msgstr "Pemindahan fail"
+
+#, fuzzy
+#~ msgid "Download Destination:"
+#~ msgstr "Destinasi:"
+
+#, fuzzy
+#~ msgctxt "No value has been set"
+#~ msgid "Not set"
+#~ msgstr "Pautan Pelayan"
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid " KiB"
+#~ msgstr " %1 KB/s "
+
+#, fuzzy
+#~ msgid "Upload Limit:"
+#~ msgstr "Muatturun Dipilih"
+
+#, fuzzy
+#~ msgid "Download Limit:"
+#~ msgstr "Muatturun Dipilih"
+
+#, fuzzy
+#~ msgid "Maximum Share Ratio:"
+#~ msgstr "Guna sambungan TLS"
+
+#, fuzzy
+#~ msgctxt "verification of the download (e.g. by using MD5)"
+#~ msgid "Verification"
+#~ msgstr "Destinasi:"
+
+#~ msgid "E-Mail:"
+#~ msgstr "E-Mel:"
+
+#, fuzzy
+#~ msgid "Creation:"
+#~ msgstr "Destinasi:"
+
+#, fuzzy
+#~ msgid "Expiration:"
+#~ msgstr "Destinasi:"
+
+#, fuzzy
+#~ msgid "Group Settings"
+#~ msgstr "Tambah _direktori"
+
+#, fuzzy
+#~ msgid "Default folder:"
+#~ msgstr "Tambah _direktori"
+
+#, fuzzy
+#~ msgid "Maximum download speed:"
+#~ msgstr "Pemasangan selesai"
+
+#, fuzzy
+#~ msgid "Maximum upload speed:"
+#~ msgstr "Pemasangan selesai"
+
+#, fuzzy
+#~ msgid "Destination:"
+#~ msgstr "Destinasi:"
+
+#, fuzzy
+#~ msgid "Transfer group:"
+#~ msgstr "Pemindahan"
+
+#, fuzzy
+#~ msgid "&File"
+#~ msgstr "Buka Fail"
+
+#, fuzzy
+#~ msgid "&Downloads"
+#~ msgstr "Muatturun Dipilih"
+
+#, fuzzy
+#~ msgid "Form"
+#~ msgstr "atau"
+
+#, fuzzy
+#~ msgid "Remove Tag"
+#~ msgstr "Log Pemindahan"
+
+#, fuzzy
+#~ msgid "Tag Settings for the groups"
+#~ msgstr "Tambah _direktori"
+
+#, fuzzy
+#~ msgid "Tag Settings"
+#~ msgstr "Jadual Program"
+
+#, fuzzy
+#~ msgid "Available tags:"
+#~ msgstr "Log Pemindahan"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a new Tag"
+#~ msgstr "Ethernet"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a new tag"
+#~ msgstr "Ethernet"
+
+#, fuzzy
+#~ msgid "Cannot expand file %1 : %2"
+#~ msgstr "Tidak dapat membaca fail %s."
+
+#, fuzzy
+#~ msgid "Failed to seek file %1 : %2"
+#~ msgstr "Tidak dapat membaca fail %s."
+
+#, fuzzy
+#~ msgid "Error reading from %1"
+#~ msgstr "Ralat membaca fail keutamaan."
+
+#, fuzzy
+#~ msgid "Failed to write to file %1 : %2"
+#~ msgstr "Tidak dapat menulis ke fail %s."
+
+#, fuzzy
+#~ msgid "Cannot open index file %1 : %2"
+#~ msgstr "tidak dapat membuka fail tetapan `%s': %s"
+
+#, fuzzy
+#~ msgid "Cannot create file %1 : %2"
+#~ msgstr "Tidak dapat membaca fail %s."
+
+#, fuzzy
+#~ msgid "Failed to write last chunk to DND file : %1"
+#~ msgstr "Tidak dapat menulis ke fail %s."
+
+#, fuzzy
+#~ msgid "Cannot open file %1 : %2"
+#~ msgstr "tidak dapat membuka fail tetapan `%s': %s"
+
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#, fuzzy
+#~ msgid "Error: %1"
+#~ msgstr "Kepada"
+
+#, fuzzy
+#~ msgid "The directory %1 does not exist"
+#~ msgstr "Tiada direktori %s tertentu (%s)."
+
+#, fuzzy
+#~ msgid "Not started"
+#~ msgstr " item dipadam"
+
+#, fuzzy
+#~ msgctxt "Status of a torrent file"
+#~ msgid "Seeding"
+#~ msgstr "Jadual Program"
+
+#, fuzzy
+#~ msgid "Downloading"
+#~ msgstr "Muatturun Dipilih"
+
+#, fuzzy
+#~| msgid "Stopped"
+#~ msgid "Stopped"
+#~ msgstr "Dihentikan"
+
+#, fuzzy
+#~ msgid "Queued for seeding"
+#~ msgstr "Servis Giliran"
+
+#, fuzzy
+#~ msgid "Queued for downloading"
+#~ msgstr "Numbor peranti"
+
+#, fuzzy
+#~ msgid "Cannot open file %1: %2"
+#~ msgstr "tidak dapat membuka fail tetapan `%s': %s"
+
+#, fuzzy
+#~ msgid "Cannot create index file: %1"
+#~ msgstr "Tidak dapat membaca fail %s."
+
+#~ msgid "Corrupted torrent."
+#~ msgstr "Hasilkan fax"
+
+#, fuzzy
+#~ msgid "Cannot open file : %1 : %2"
+#~ msgstr "tidak dapat membuka fail tetapan `%s': %s"
+
+#, fuzzy
+#~ msgid "Not connected"
+#~ msgstr "_Sambungan tempatan"
+
+#, fuzzy
+#~ msgid "Connection closed"
+#~ msgstr "Jenis perhubungan tidak diketahui"
+
+#, fuzzy
+#~ msgid "Connected"
+#~ msgstr "_Sambungan tempatan"
+
+#, fuzzy
+#~ msgid "Connecting"
+#~ msgstr "Perhubungan"
+
+#, fuzzy
+#~ msgid "Not in use"
+#~ msgstr "Pautan Pelayan"
+
+#, fuzzy
+#~ msgid "Cannot write to %1 : %2"
+#~ msgstr "Tidak dapat menulis ke fail %s."
+
+#, fuzzy
+#~ msgid "Cannot read from %1"
+#~ msgstr "Dari Fail Tempatan"
+
+#, fuzzy
+#~ msgid "Cannot open log file %1 : %2"
+#~ msgstr "tidak dapat membuka fail tetapan `%s': %s"
+
+#, fuzzy
+#~ msgid "Cannot create directory %1"
+#~ msgstr "Tidak dapat membaca fail %s."
+
+#~ msgid "Cannot create %1: %2"
+#~ msgstr "Tidak dapat cipta %1: %2"
+
+#, fuzzy
+#~ msgid "Cannot expand file: %1"
+#~ msgstr "Tidak dapat membaca fail %s."
+
+#, fuzzy
+#~ msgid "Cannot seek in file : %1"
+#~ msgstr "tidak dapat membuka fail tetapan `%s': %s"
+
+#~ msgid "General"
+#~ msgstr "Umum"
+
+#, fuzzy
+#~ msgid "Connections"
+#~ msgstr "Perhubungan"
+
+#, fuzzy
+#~ msgid "Tracker"
+#~ msgstr "Pemindahan"
+
+#, fuzzy
+#~| msgid "Group name already in use"
+#~ msgid "Group Name Already in Use"
+#~ msgstr "Nama kumpulan telah digunakan"
+
+#~ msgid "Add"
+#~ msgstr "Tambah"
+
+#, fuzzy
+#~ msgid "Delete"
+#~ msgstr " item dipadam"
+
+#, fuzzy
+#~ msgid "Details for: %1"
+#~ msgstr "Tambah _direktori"
+
+#, fuzzy
+#~ msgid "All downloads"
+#~ msgstr "Bahagian mesej emel"
+
+#, fuzzy
+#~ msgid "Finished downloads"
+#~ msgstr "Pemasangan selesai"
+
+#, fuzzy
+#~ msgid "Transfers:"
+#~ msgstr "Pemindahan"
+
+#, fuzzy
+#~ msgid "Downloads"
+#~ msgstr "Muatturun Dipilih"
+
+#, fuzzy
+#~ msgid "Transfer details:"
+#~ msgstr "Pemindahan fail"
+
+#, fuzzy
+#~ msgid "Transfer List"
+#~ msgstr "Log Pemindahan"
+
+#, fuzzy
+#~ msgid "Number of threads:"
+#~ msgstr "Numbor peranti"
+
+#~ msgid "License:"
+#~ msgstr "Lesen:"
+
+#, fuzzy
+#~ msgid "Name of the license"
+#~ msgstr "Numbor peranti"
+
+#, fuzzy
+#~ msgid "URL to the license"
+#~ msgstr "Numbor peranti"
+
+#, fuzzy
+#~ msgctxt "The transfer is delayed"
+#~ msgid "Delayed"
+#~ msgstr "Tetap sebagai de_fault"
+
+#, fuzzy
+#~ msgid "Overwrite destination"
+#~ msgstr "Fail destinasi"
+
+#, fuzzy
+#~ msgid "Queued"
+#~ msgstr "Giliran"
+
+#, fuzzy
+#~ msgid "Current Tracker"
+#~ msgstr "Log Pemindahan"
+
+#, fuzzy
+#~ msgid "Scrape"
+#~ msgstr "Sumber"
+
+#, fuzzy
+#~ msgid "Available Trackers"
+#~ msgstr "Log Pemindahan"
+
+#, fuzzy
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Delete Selected"
+#~ msgstr "Tambah fail dipilih"
+
+#, fuzzy
+#~ msgid "We are sorry"
+#~ msgstr "Tetapan Akaun _T-Online"
+
+#, fuzzy
+#~ msgid "Rename transfer"
+#~ msgstr "Log Pemindahan"
+
+#, fuzzy
+#~ msgid "Download URL again?"
+#~ msgstr "Katalaluan (sekali l_agi):"
+
+#, fuzzy
+#~ msgctxt "file in a filsystem"
+#~ msgid "File"
+#~ msgstr "Buka Fail"
+
+#, fuzzy
+#~ msgid "Are you sure that you want to remove all selected groups?"
+#~ msgstr "Adakah anda pasti untuk memadam volum logikal \"%s\"?"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "Name"
+#~ msgstr "Nama"
+
+#, fuzzy
+#~ msgid "Remaining Time"
+#~ msgstr "Waktu Alaska"
+
+#, fuzzy
+#~ msgid "KGet - Download Manager"
+#~ msgstr "Pengurus Pencetak"
+
+#, fuzzy
+#~ msgctxt "@label transfer source"
+#~ msgid "Source:"
+#~ msgstr "Sumber"
+
+#, fuzzy
+#~| msgid "0 B/s"
+#~ msgid "kBi"
+#~ msgstr "0 B/s"
+
+#, fuzzy
+#~ msgid "Cannot expand file : %1"
+#~ msgstr "Tidak dapat membaca fail %s."
+
+#, fuzzy
+#~ msgid "&Transfer History..."
+#~ msgstr "Log Pemindahan"
+
+#, fuzzy
+#~ msgid "&Group Settings..."
+#~ msgstr "Tambah _direktori"
+
+#, fuzzy
+#~ msgid "&Transfer Settings..."
+#~ msgstr "Pemindahan fail"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed limit"
+#~ msgstr "Kelajuan"
+
+#, fuzzy
+#~ msgid "Download Speed:"
+#~ msgstr "Pemasangan selesai"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Upload Speed:"
+#~ msgstr "Kelajuan"
+
+#, fuzzy
+#~ msgid "&Import links"
+#~ msgstr "Pautan Pelayan"
+
+#, fuzzy
+#~| msgid "You can not delete this group!"
+#~ msgid "You can not delete this group."
+#~ msgstr "Anda tidak boleh padam kumpulan ini!"
+
+#, fuzzy
+#~ msgid "&Delete"
+#~ msgstr " item dipadam"
+
+#, fuzzy
+#~ msgid "Default Download Folders"
+#~ msgstr "Tambah _direktori"
+
+#, fuzzy
+#~ msgid "File Extension"
+#~ msgstr "Penghujungan"
+
+#, fuzzy
+#~ msgid "Default Folder"
+#~ msgstr "Tambah _direktori"
+
+#, fuzzy
+#~ msgid "Set as default folder"
+#~ msgstr "Tambah _direktori"
+
+#, fuzzy
+#~ msgid "extRegExp, defaultFolder"
+#~ msgstr "Tambah _direktori"
+
+#, fuzzy
+#~ msgid "Downloading.."
+#~ msgstr "Muatturun Dipilih"
+
+#, fuzzy
+#~ msgid "Advanced-Details for %1"
+#~ msgstr "Tambah _direktori"
+
+#, fuzzy
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading.."
+#~ msgstr "Muatturun Dipilih"
+
+#, fuzzy
+#~ msgid "Downloads number:"
+#~ msgstr "Pengurus Pencetak"
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 GB"
+#~ msgstr " %1/s "
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 MB"
+#~ msgstr " %1/s "
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid "%1 KB"
+#~ msgstr " %1 KB/s "
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 B"
+#~ msgstr " %1/s "
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid "%1 KB/s"
+#~ msgstr " %1 KB/s "
+
+#, fuzzy
+#~| msgid "0 B/s"
+#~ msgid "kBi/s"
+#~ msgstr "0 B/s"
+
+#, fuzzy
+#~ msgid "Not Deleted"
+#~ msgstr " item dipadam"
+
+#, fuzzy
+#~ msgid "Konqueror Integration disabled"
+#~ msgstr "Pelayar Konqueror"
+
+#, fuzzy
+#~ msgid "<speed>"
+#~ msgstr "Kelajuan"
+
+#, fuzzy
+#~ msgid "<remaining time>"
+#~ msgstr "Waktu Alaska"
+
+#, fuzzy
+#~ msgid "Cannot expand file %1"
+#~ msgstr "Tidak dapat membaca fail %s."
+
+#, fuzzy
+#~ msgid "Error writing to %1 : %2"
+#~ msgstr "Ralat bila menulis ke fail keutamaan"
+
+#, fuzzy
+#~ msgid "Error writing to %1"
+#~ msgstr "Ralat bila menulis ke fail keutamaan"
+
+#, fuzzy
+#~ msgid "&List Links"
+#~ msgstr "Membuang semua rantai:"
+
+#, fuzzy
+#~ msgid "Cannot expand file"
+#~ msgstr "Tidak dapat membaca fail %s."
+
+#, fuzzy
+#~| msgid "Normal"
+#~ msgctxt "Download normally(not as first or last"
+#~ msgid "Normal"
+#~ msgstr "Normal"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Bittorrent-Speedlimits"
+#~ msgstr "Kelajuan"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed-Limits"
+#~ msgstr "Kelajuan"
+
+#, fuzzy
+#~ msgid "Download Folder"
+#~ msgstr "Tambah _direktori"
+
+#, fuzzy
+#~ msgid "Hide Drop Target"
+#~ msgstr "Menukar polisi sasaran ke DROP: "
+
+#, fuzzy
+#~ msgid "Hide drop target"
+#~ msgstr "Menukar polisi sasaran ke DROP: "
+
+#, fuzzy
+#~ msgid ""
+#~ "Already saving URL\n"
+#~ "%1"
+#~ msgstr "Simpan masih dalam process"
+
+#, fuzzy
+#~ msgid "Default Group"
+#~ msgstr "Tambah _direktori"
+
+#, fuzzy
+#~ msgid "DlgAdvanced"
+#~ msgstr "Lanjutan"
+
+#, fuzzy
+#~ msgid "Delete Group."
+#~ msgstr "Tambah _direktori"
+
+#, fuzzy
+#~ msgid "Hide Me"
+#~ msgstr "Nama fail"
+
+#, fuzzy
+#~ msgid "Source Label"
+#~ msgstr "Label Bertindan"
+
+#, fuzzy
+#~ msgid "Not resumed"
+#~ msgstr "%s tidak dijumpai"
+
+#~ msgid "System"
+#~ msgstr "Sistem"
+
+#~ msgid "Maximize"
+#~ msgstr "Maksimakan"
+
+#~ msgid "Minimize"
+#~ msgstr "Minimakan"
+
+#, fuzzy
+#~ msgid ""
+#~ "This is a folder and not a file:\n"
+#~ "%1"
+#~ msgstr "fail salinan `%s' wujud dan bukan fail biasa"
+
+#, fuzzy
+#~ msgid "Could only read %1 bytes of %2."
+#~ msgstr "Hanya boleh membaca  %lu drpd  %lu byte"
+
+#, fuzzy
+#~ msgid ""
+#~ "Could not open file for writing:\n"
+#~ "%1"
+#~ msgstr "Fail tidak dapat dibuka untuk ditulis: %s"
+
+#, fuzzy
+#~ msgid "Could only write %1 bytes of %2."
+#~ msgstr "Hanya boleh membaca  %lu drpd  %lu byte"
+
+#, fuzzy
+#~ msgid "Welcome to KGet"
+#~ msgstr "Selamat datang ke &RHL;"
+
+#, fuzzy
+#~ msgid "Could not create valid socket"
+#~ msgstr "Tidak dapat menulis pada soket: %s"
+
+#, fuzzy
+#~ msgid "Offline"
+#~ msgstr "LuarTalian"
+
+#, fuzzy
+#~ msgid "Starting offline"
+#~ msgstr "  %-20s luartalian\n"
+
+#, fuzzy
+#~ msgid "&Open Individual Window"
+#~ msgstr "Buka Tetingkap Dialog"
+
+#, fuzzy
+#~ msgid "Move to &Beginning"
+#~ msgstr "Gerak ke permulaan baris semasa"
+
+#, fuzzy
+#~ msgid "&Pause"
+#~ msgstr "Sebentar"
+
+#, fuzzy
+#~ msgid "&Timer"
+#~ msgstr "Pemasa Kanak-kanak"
+
+#, fuzzy
+#~ msgid "Use &Animation"
+#~ msgstr "Animasi ANIM"
+
+#, fuzzy
+#~ msgid "&Expert Mode"
+#~ msgstr "/Mod pakar dalam _wizard"
+
+#, fuzzy
+#~ msgid "Auto-&Disconnect Mode"
+#~ msgstr "Sila guna mod teks"
+
+#, fuzzy
+#~ msgid "Auto-S&hutdown Mode"
+#~ msgstr "Sila guna mod teks"
+
+#, fuzzy
+#~ msgid "&Offline Mode"
+#~ msgstr "Mod Penyelamatan"
+
+#, fuzzy
+#~ msgid "Show &Log Window"
+#~ msgstr "Paparkan tetingkap rangkaian"
+
+#, fuzzy
+#~ msgid " Files: %1 "
+#~ msgstr "Fail"
+
+#, fuzzy
+#~ msgid " Size: %1 KB "
+#~ msgstr "Saiz penimbal (kb):"
+
+#, fuzzy
+#~ msgid " Time: %1 "
+#~ msgstr "        Masa"
+
+#, fuzzy
+#~ msgid ""
+#~ "*.kgt|*.kgt\n"
+#~ "*|All Files"
+#~ msgstr "kemaskini semua fail tetapan"
+
+#, fuzzy
+#~ msgid "Stopping all jobs"
+#~ msgstr "Laksana tugas terjadual"
+
+#, fuzzy
+#~ msgid "Overwrite"
+#~ msgstr "Tindih"
+
+#, fuzzy
+#~ msgid "Do Not Overwrite"
+#~ msgstr "_Jangan Format"
+
+#, fuzzy
+#~ msgid "<i>%1</i> has been added."
+#~ msgstr "%s: Direktori telah ditukarnama"
+
+#, fuzzy
+#~ msgid "1 download has been added."
+#~ msgid_plural "%n downloads have been added."
+#~ msgstr[0] "Nama pengguna ini telahpun ditambah"
+
+#, fuzzy
+#~ msgid "Offline mode on."
+#~ msgstr "mod tidak sah pada baris 1 daripada %s\n"
+
+#, fuzzy
+#~ msgid "Offline mode off."
+#~ msgstr "Mematikan kuota: "
+
+#, fuzzy
+#~ msgid "Expert mode on."
+#~ msgstr "mod tidak sah pada baris 1 daripada %s\n"
+
+#, fuzzy
+#~ msgid "Expert mode off."
+#~ msgstr "/Mod pakar dalam _wizard"
+
+#, fuzzy
+#~ msgid "Use last folder on."
+#~ msgstr "Pengguna terakhir menukar katalaluan pada:"
+
+#, fuzzy
+#~ msgid "Auto disconnect off."
+#~ msgstr "Mematikan kuota: "
+
+#, fuzzy
+#~ msgid "Auto shutdown off."
+#~ msgstr "Mematikan kuota: "
+
+#, fuzzy
+#~ msgid "Auto paste off."
+#~ msgstr "Mematikan kuota: "
+
+#, fuzzy
+#~ msgid "<b>Transfers:</b> %1 "
+#~ msgstr "Pemindahan fail"
+
+#, fuzzy
+#~ msgid "<br /><b>Files:</b> %1 "
+#~ msgstr "Fail Log"
+
+#, fuzzy
+#~ msgid "<br /><b>Size:</b> %1 "
+#~ msgstr "_Saiz (MB):"
+
+#, fuzzy
+#~ msgid "<br /><b>Time:</b> %1 "
+#~ msgstr "Waktu Alaska"
+
+#, fuzzy
+#~ msgid "<br /><b>Speed:</b> %1/s"
+#~ msgstr "Kelajuan Failover"
+
+#, fuzzy
+#~ msgid "Do you really want to disconnect?"
+#~ msgstr "Adakah anda pasti untuk memadam \"%s\"?"
+
+#, fuzzy
+#~ msgid "Disconnect"
+#~ msgstr "Putus"
+
+#, fuzzy
+#~ msgid "We are offline."
+#~ msgstr "Pilihan anda adalah:"
+
+#~ msgid "Id"
+#~ msgstr "Id"
+
+#, fuzzy
+#~ msgid "Mixed"
+#~ msgstr "Persekitaran Bercampur"
+
+#, fuzzy
+#~ msgid "Add new transfers as:"
+#~ msgstr "Tambah pilihan giliran baru"
+
+#, fuzzy
+#~ msgid "Advanced individual windows"
+#~ msgstr "Pelayan Fail Windows"
+
+#, fuzzy
+#~ msgid "Get file sizes"
+#~ msgstr "Gagal mendapatkan status fail %s"
+
+#~ msgid " min"
+#~ msgstr " min"
+
+#, fuzzy
+#~ msgid "Autosave file list every:"
+#~ msgstr "Segarkan fail log setiap "
+
+#, fuzzy
+#~ msgid "Timed disconnect"
+#~ msgstr "Sambungan melebihi hadmasa "
+
+#, fuzzy
+#~ msgid "Disconnect command:"
+#~ msgstr "  Pilihan    Arahan\n"
+
+#, fuzzy
+#~ msgid "Reconnect Options"
+#~ msgstr "Opsyen RAID"
+
+#, fuzzy
+#~ msgid "Timeout Options"
+#~ msgstr "Opsyen RAID"
+
+#, fuzzy
+#~ msgid "If server cannot resume:"
+#~ msgstr "Lihat samada pelayan hidup"
+
+#~ msgid "PLIP"
+#~ msgstr "PLIP"
+
+#~ msgid "SLIP"
+#~ msgstr "SLIP"
+
+#~ msgid "PPP"
+#~ msgstr "PPP"
+
+#~ msgid "ISDN"
+#~ msgstr "ISDN"
+
+#, fuzzy
+#~ msgid "Link number:"
+#~ msgstr "Numbor peranti"
+
+#, fuzzy
+#~ msgid "Extension (* for all files):"
+#~ msgstr "kemaskini semua fail tetapan"
+
+#, fuzzy
+#~ msgid "Limits Options"
+#~ msgstr "Opsyen RAID"
+
+#, fuzzy
+#~ msgid "Minimum network bandwidth:"
+#~ msgstr "Konfigurasi Rangkaian bagi %s"
+
+#, fuzzy
+#~ msgid "Maximum network bandwidth:"
+#~ msgstr "Konfigurasi Rangkaian bagi %s"
+
+#, fuzzy
+#~ msgid " bytes/sec"
+#~ msgstr "IP_sec"
+
+#, fuzzy
+#~ msgid "Window style:"
+#~ msgstr "Gaya Halaman"
+
+#, fuzzy
+#~ msgid "Attempt number %1"
+#~ msgstr "Numbor peranti"
+
+#, fuzzy
+#~ msgid "Stopping"
+#~ msgstr "Berhentikan %s: "
+
+#, fuzzy
+#~ msgid "The file size does not match."
+#~ msgstr "'%s' tidak kelihatan seperti fail PPD."
+
+#, fuzzy
+#~ msgid "File Size checked"
+#~ msgstr "%s: fail saiz tidak sah"
+
+#~ msgid "S"
+#~ msgstr "S"
+
+#~ msgid "%"
+#~ msgstr "%"

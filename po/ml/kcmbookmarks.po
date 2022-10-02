@@ -1,0 +1,1020 @@
+# Malayalam translation of kcmkio.
+# Copyright (C) 2008 This_file_is_part_of_KDE
+# This file is distributed under the same license as the kcmkio package.
+# Manu S Madhav <manusmad@gmail.com>, 2008.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkio trunk\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2008-07-10 11:17+0530\n"
+"Last-Translator: Manu S Madhav | മനു എസ് മാധവ് <manusmad@gmail.com>\n"
+"Language-Team: Swathanthra|സ്വതന്ത്ര Malayalam|മലയാളം Computing|കമ്പ്യൂട്ടിങ്ങ് <smc-"
+"discuss@googlegroups.com>\n"
+"Language: ml\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: bookmarks.cpp:92
+#, kde-format
+msgid ""
+"<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
+"page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
+"\">bookmarks:/</a>.</p>"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: bookmarks.ui:16
+#, kde-format
+msgid "Bookmarks"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowRoot)
+#: bookmarks.ui:23
+#, kde-format
+msgid ""
+"If this option is unchecked, bookmarks at the root of the hierarchy (not in "
+"a folder) are not displayed.\n"
+"If checked, they are gathered in a \"root\" folder."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowRoot)
+#: bookmarks.ui:26
+#, kde-format
+msgid "&Show bookmarks without folder"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbFlattenTree)
+#: bookmarks.ui:37
+#, kde-format
+msgid ""
+"Sub-folders are shown within their parent by default. If you activate this "
+"option, sub-folders are displayed on their own.\n"
+"It looks less nice but it may help if you have a very big folder you want to "
+"spread in two columns."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbFlattenTree)
+#: bookmarks.ui:40
+#, kde-format
+msgid "&Flatten bookmarks tree"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowPlaces)
+#: bookmarks.ui:47
+#, kde-format
+msgid ""
+"Show a box with KDE places (Home, Network, ...). Useful if you use konqueror "
+"as a file manager."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowPlaces)
+#: bookmarks.ui:50
+#, kde-format
+msgid "Show system &places"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: bookmarks.ui:63
+#, kde-format
+msgid "General Settings"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, label)
+#: bookmarks.ui:71
+#, kde-format
+msgid ""
+"Folders are automatically distributed in several columns. The optimal number "
+"of columns depends on the width of the konqueror window and the number of "
+"bookmarks you have."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: bookmarks.ui:74
+#, kde-format
+msgid "Number of columns to show:"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowBackgrounds)
+#: bookmarks.ui:109
+#, kde-format
+msgid "Disable it on slow system to disable background images."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowBackgrounds)
+#: bookmarks.ui:112
+#, kde-format
+msgid "Show folder &backgrounds"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, groupBox_3)
+#: bookmarks.ui:138
+#, kde-format
+msgid "How much disk space is used to cache the pixmaps"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: bookmarks.ui:141
+#, kde-format
+msgid "Pixmap Cache"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, lbMaxCacheSize)
+#: bookmarks.ui:150
+#, fuzzy, kde-format
+msgid "Disk cache size:"
+msgstr "ഡിസ്ക്ക് കാഷ് &വലിപ്പം:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, sbCacheSize)
+#: bookmarks.ui:163
+#, kde-format
+msgid " kB"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, clearCacheButton)
+#: bookmarks.ui:173
+#, kde-format
+msgid "Clear the pixmap cache"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, clearCacheButton)
+#: bookmarks.ui:176
+#, fuzzy, kde-format
+msgid "&Clear Cache"
+msgstr "കാഷ് &വൃത്തിയാക്കുക"
+
+#~ msgid ""
+#~ "<h1>Cache</h1><p>This module lets you configure your cache settings.</"
+#~ "p><p>The cache is an internal memory in Konqueror where recently read web "
+#~ "pages are stored. If you want to retrieve a web page again that you have "
+#~ "recently read, it will not be downloaded from the Internet, but rather "
+#~ "retrieved from the cache, which is a lot faster.</p>"
+#~ msgstr ""
+#~ "<h1>കാഷ്</h1><p>ഈ മോഡ്യൂള്‍ നിങ്ങളെ കാഷ് സജ്ജീകരണങ്ങള്‍ ക്രമീകരിക്കാന്‍ അനുവദിക്കും.</"
+#~ "p><p>അടുത്തയിടെ വായിച്ച വെബ്ബ് പേജുകള്‍ സൂക്ഷിക്കുന്ന കോണ്‍കററിലെ ഒരു ആന്തരിക മെമ്മറിയാണ് "
+#~ "കാഷ്. അടുത്തയിടെ വായിച്ച ഒരു വെബ്ബ് പേജ് നിങ്ങള്‍ക്ക് തിരിച്ചെടുക്കണമെന്നുണ്ടെങ്കില്‍, അത് ഇന്റര്‍"
+#~ "നെറ്റില്‍ നിന്നു ഡൌണ്‍ലോഡ് ചെയ്യുന്നതിനുപകരം വളരെ വേഗത്തില്‍ കാഷില്‍ നിന്നു തിരിച്ചെടുക്കുന്നു.</p>"
+
+#~ msgid "&Use cache"
+#~ msgstr "കാഷ് &ഉപയോഗിക്കുക"
+
+#~ msgid "Policy"
+#~ msgstr "നയം"
+
+#~ msgid "&Keep cache in sync"
+#~ msgstr "&കാഷ് പൊരുത്തപ്പെടുത്തിക്കൊണ്ടുപോകുക"
+
+#~ msgid ""
+#~ "Always use documents from the cache when available. You can still use the "
+#~ "reload button to synchronize the cache with the remote host."
+#~ msgstr ""
+#~ "ലഭ്യമായിടത്തെല്ലാം കാഷില്‍ നിന്നുള്ള ഡോക്യുമെന്റുകള്‍ ഉപയോഗിക്കുക. ഇപ്പോഴും നിങ്ങള്‍ക്ക് റീലോഡ് "
+#~ "ബട്ടണുപയോഗിച്ച് ദൂരെയുള്ള ഹോസ്റ്റും കാഷുമായി പൊരുത്തപ്പെടുത്താം."
+
+#~ msgid "Use cache whenever &possible"
+#~ msgstr "കാഷ് &സാധിക്കുന്നയിടത്തെല്ലാം ഉപയോഗിക്കുക"
+
+#~ msgid "O&ffline browsing mode"
+#~ msgstr "&ഓഫ്‌ലൈന്‍ തെരച്ചില്‍ അവസ്ഥ"
+
+#~ msgid "Disk cache &size:"
+#~ msgstr "ഡിസ്ക്ക് കാഷ് &വലിപ്പം:"
+
+#~ msgid "C&lear Cache"
+#~ msgstr "കാഷ് &വൃത്തിയാക്കുക"
+
+#~ msgid ""
+#~ "Unable to start the cookie handler service.\n"
+#~ "You will not be able to manage the cookies that are stored on your "
+#~ "computer."
+#~ msgstr ""
+#~ "കുക്കി കൈകാര്യസേവനം തുടങ്ങാന്‍ സാധിച്ചില്ല.\n"
+#~ "നിങ്ങളുടെ കമ്പ്യൂട്ടറില്‍ സൂക്ഷിച്ചിട്ടുള്ള കുക്കികളുടെ പാലനം നിങ്ങള്‍ക്ക് ചെയ്യാന്‍ സാധിക്കില്ല."
+
+#~ msgid "&Policy"
+#~ msgstr "&നയം"
+
+#~ msgid "&Management"
+#~ msgstr "&നടത്തിപ്പു്"
+
+#~ msgid "D-Bus Communication Error"
+#~ msgstr "D-Bus ആശയവിനിമയ തെറ്റ്"
+
+#~ msgid "Unable to delete all the cookies as requested."
+#~ msgstr "ആവശ്യപ്പെട്ടതുപോലെ എല്ലാ കുക്കികളും നീക്കം ചെയ്യാന്‍ കഴിഞ്ഞില്ല."
+
+#~ msgid "Unable to delete cookies as requested."
+#~ msgstr "ആവശ്യപ്പെട്ടതുപോലെ കുക്കികള്‍ നീക്കം ചെയ്യാന്‍ കഴിഞ്ഞില്ല."
+
+#, fuzzy
+#~ msgid "<h1>Cookie Management Quick Help</h1>"
+#~ msgstr "<h1>കുക്കികളുടെ പാലനത്തിനായുള്ള ദ്രുതസഹായം</h1>"
+
+#~ msgid "Information Lookup Failure"
+#~ msgstr "വിവരം വായിക്കുന്നതില്‍ പരാജയം"
+
+#~ msgid ""
+#~ "Unable to retrieve information about the cookies stored on your computer."
+#~ msgstr ""
+#~ "നിങ്ങളുടെ കമ്പ്യൂട്ടറില്‍ സൂക്ഷിച്ചിട്ടുള്ള കുക്കികളെക്കുറിച്ചുള്ള വിവരങ്ങള്‍ കണ്ടെത്താന്‍ സാധിച്ചില്ല."
+
+#~ msgid "End of session"
+#~ msgstr "സെഷനിന്റെ അന്ത്യം"
+
+#~ msgid "Yes"
+#~ msgstr "അതെ"
+
+#~ msgid "Search"
+#~ msgstr "തിരയുക"
+
+#~ msgid "Search interactively for domains and hosts"
+#~ msgstr "ഡൊമെയ്നുകള്‍ക്കും ഹോസ്റ്റുകള്‍ക്കുമായി ഇന്ററാക്ടീവായി തെരയുക."
+
+#, fuzzy
+#~ msgid "Site"
+#~ msgstr "സൈറ്റിന്റെ പേരു്"
+
+#, fuzzy
+#~ msgid "Cookie Name"
+#~ msgstr "സൈറ്റിന്റെ പേരു്"
+
+#~ msgid "D&elete"
+#~ msgstr "&നീക്കം ചെയ്യുക"
+
+#~ msgid "Delete A&ll"
+#~ msgstr "എ&ല്ലാം നീക്കം ചെയ്യുക"
+
+#, fuzzy
+#~ msgid "Configure &Policy..."
+#~ msgstr "നയം മാറ്റുക..."
+
+#~ msgid "&Reload List"
+#~ msgstr "പട്ടിക &വീണ്ടും ലോഡ് ചെയ്യുക"
+
+#~ msgid "Details"
+#~ msgstr "വിശദാംശങ്ങള്‍"
+
+#~ msgid "Name:"
+#~ msgstr "പേരു്:"
+
+#~ msgid "Value:"
+#~ msgstr "മൂല്യം:"
+
+#~ msgid "Domain:"
+#~ msgstr "ഡൊമെയ്നു്:"
+
+#~ msgid "Path:"
+#~ msgstr "വഴി:"
+
+#~ msgid "Secure:"
+#~ msgstr "സുരക്ഷിതമായ:"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Change Cookie Policy"
+#~ msgstr "കുക്കി നയം മാറ്റുക"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "New Cookie Policy"
+#~ msgstr "പുതിയ കുക്കി നയം"
+
+#~ msgid ""
+#~ "<qt>A policy already exists for<center><b>%1</b></center>Do you want to "
+#~ "replace it?</qt>"
+#~ msgstr ""
+#~ "<qt><center><b>%1</b></center>എന്നതിനായി ഒരു നയം ഇപ്പോഴേയുണ്ട്. നിങ്ങള്‍ക്കിത് "
+#~ "മാറ്റണോ?</qt>"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Policy"
+#~ msgstr "ഡ്യൂപ്ളിക്കേറ്റ് നയം"
+
+#~ msgid "Replace"
+#~ msgstr "മാറ്റുക"
+
+#~ msgid ""
+#~ "Unable to communicate with the cookie handler service.\n"
+#~ "Any changes you made will not take effect until the service is restarted."
+#~ msgstr ""
+#~ "കുക്കി കൈകാര്യസേവനവുമായി ആശയവിനിമയം നടത്താന്‍ സാധിച്ചില്ല.\n"
+#~ "സേവനം പുനരാരംഭിക്കുന്നതുവരെ ഉണ്ടാക്കിയ ഒരു മാറ്റങ്ങളും ഫലവത്താകില്ല."
+
+#~ msgid "Enable coo&kies"
+#~ msgstr "കുക്കികള്‍ &പ്രാവര്‍ത്തികമാക്കുക"
+
+#~ msgid "Automaticall&y accept session cookies"
+#~ msgstr "സെഷന്‍ കുക്കികള്‍ &തനിയെ സ്വീകരിക്കുക"
+
+#~ msgid "Default Policy"
+#~ msgstr "സഹജമായ നയം"
+
+#~ msgid "Accep&t all cookies"
+#~ msgstr "കുക്കികളെല്ലാം സ്വീകരിക്കുക"
+
+#, fuzzy
+#~ msgid "Accept &until end of session"
+#~ msgstr "സെഷനിന്റെ അന്ത്യം"
+
+#~ msgid "Ask &for confirmation"
+#~ msgstr "രണ്ടാമതും ചോദിയ്ക്കുക:"
+
+#~ msgid "Re&ject all cookies"
+#~ msgstr "കുക്കികളെല്ലാം നിരാകരിക്കുക"
+
+#~ msgid "Site Policy"
+#~ msgstr "സൈറ്റിന്റെ നയം"
+
+#~ msgid "Search interactively for domains"
+#~ msgstr "ഡൊമെയ്നുകള്‍ക്കായി ഇന്ററാക്ടീവായി തെരയുക."
+
+#~ msgid "Domain"
+#~ msgstr "ഡൊമെയ്നു്"
+
+#~ msgid "&New..."
+#~ msgstr "&പുതിയ..."
+
+#~ msgid "Chan&ge..."
+#~ msgstr "&മാറ്റുക..."
+
+#, fuzzy
+#~ msgid "Site name:"
+#~ msgstr "സൈറ്റിന്റെ പേരു്"
+
+#, fuzzy
+#~ msgid "Policy:"
+#~ msgstr "&നയം:"
+
+#~ msgid "Accept"
+#~ msgstr "അംഗീകരിക്കുക"
+
+#, fuzzy
+#~ msgid "Accept until end of session"
+#~ msgstr "സെഷനിന്റെ അന്ത്യം"
+
+#~ msgid "Reject"
+#~ msgstr "നിരാകരിക്കുക"
+
+#~ msgid "Ask"
+#~ msgstr "ചോദിക്കുക"
+
+#~ msgid "Disable Passive FTP"
+#~ msgstr "നിര്‍ജ്ജീവ എഫ്‌ടിപി പ്രാവര്‍ത്തികമല്ലാതാക്കുക"
+
+#~ msgid "Mark partially uploaded files"
+#~ msgstr "ഭാഗികമായി അപ്ലോഡ് ചെയ്ത ഫയലുകള്‍ അടയാളപ്പെടുത്തുക"
+
+#~ msgid "Connect to the Internet directly."
+#~ msgstr "ഇന്റര്‍നെറ്റിലേക്ക് നേരിട്ട് ബന്ധപ്പെടുക."
+
+#, fuzzy
+#~ msgid "No Proxy"
+#~ msgstr "&പ്രോക്സി"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Automatically detect and configure the proxy settings.<p>\n"
+#~ "Automatic detection is performed using the <b>Web Proxy Auto-Discovery "
+#~ "Protocol (WPAD)</b>.<p>\n"
+#~ "<b>NOTE:</b> This option might not work properly or not work at all in "
+#~ "some UNIX/Linux distributions. If you encounter a problem when using this "
+#~ "option, please check the FAQ section at http://konqueror.kde.org.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "തനിയെ പ്രോക്സി സജ്ജീകരണങ്ങള്‍ കണ്ടുപിടിക്കുകയും ക്രമീകരിക്കുകയും ചെയ്യുക.<p>\n"
+#~ "തനിയെ കണ്ടുപിടിത്തം <b>വെബ്ബ് പ്രോക്സി ഓട്ടോ-ഡിസ്കവറി പ്രോട്ടോക്കോള്‍ (WPAD)</b> "
+#~ "ഉപയോഗിച്ച് നിര്‍വഹിക്കുന്നു.<p>\n"
+#~ "<b>കുറിപ്പ്:</b> ഈ ഐച്ഛികം ചില യൂണിക്സ്/ലിനക്സ് വിതരണങ്ങളില്‍ ശരിയായി പ്രവര്‍"
+#~ "ത്തിക്കാതിരിക്കുകയോ ഒട്ടും പ്രവര്‍ത്തിക്കാതിരിക്കുകയോ ചെയ്തേക്കാം. ഈ ഐച്ഛികം ഉപയോഗിക്കുമ്പോള്‍ "
+#~ "പ്രശ്നം നേരിടുകയാണെങ്കില്‍ http://konqueror.kde.org എന്നയിടത്തെ FAQ ഭാഗം നോക്കുക.\n"
+#~ "</qt>"
+
+#, fuzzy
+#~ msgid "Detect proxy configuration automatically"
+#~ msgstr "ഇനി പറയുന്ന പ്രോക്സി ക്രമീകരണ യുആര്‍എല്‍ ഉപയോഗിക്കുക"
+
+#, fuzzy
+#~ msgid "Use the specified proxy script to configure the proxy settings."
+#~ msgstr "&തനിയെ പ്രോക്സി ക്രമീകരണം കണ്ടുപിടിക്കുക"
+
+#, fuzzy
+#~ msgid "Use proxy auto configuration URL:"
+#~ msgstr "ഇനി പറയുന്ന പ്രോക്സി ക്രമീകരണ യുആര്‍എല്‍ ഉപയോഗിക്കുക"
+
+#~ msgid "Enter the address for the proxy configuration script."
+#~ msgstr "പ്രോക്സി ക്രമീകരണ സ്ക്രിപ്റ്റിന്റെ വിലാസം നല്‍കുക."
+
+#, fuzzy
+#~ msgid "Use system proxy configuration:"
+#~ msgstr "ഇനി പറയുന്ന പ്രോക്സി ക്രമീകരണ യുആര്‍എല്‍ ഉപയോഗിക്കുക"
+
+#, fuzzy
+#~ msgid "Auto D&etect"
+#~ msgstr "തനിയെ &കണ്ടുപിടിക്കുക"
+
+#, fuzzy
+#~ msgid "HTTP Proxy:"
+#~ msgstr "&പ്രോക്സി"
+
+#, fuzzy
+#~ msgid "SSL Proxy:"
+#~ msgstr "&പ്രോക്സി"
+
+#, fuzzy
+#~ msgid "FTP Proxy:"
+#~ msgstr "&പ്രോക്സി"
+
+#, fuzzy
+#~ msgid "SOCKS Proxy:"
+#~ msgstr "&പ്രോക്സി"
+
+#, fuzzy
+#~ msgid "Exceptions:"
+#~ msgstr "എ&ക്സപ്ഷനുകള്‍"
+
+#~ msgid "Show the &value of the environment variables"
+#~ msgstr "പരിസ്ഥിതി വേരിയബിളുകളുടെ &മൂല്യം കാണിയ്ക്കുക"
+
+#~ msgid "Manually enter proxy server configuration information."
+#~ msgstr "സ്വയം പ്രോക്സി ക്രമീകരണ വിവരം നല്‍കുക."
+
+#, fuzzy
+#~ msgid "Use manually specified proxy configuration:"
+#~ msgstr "&തനിയെ പ്രോക്സി ക്രമീകരണം കണ്ടുപിടിക്കുക"
+
+#~ msgid "Enter the address of the HTTP proxy server."
+#~ msgstr "എച്ച്ടിടിപി പ്രോക്സി സെര്‍വറിന്റെ വിലാസം നല്‍കുക."
+
+#, fuzzy
+#~ msgid "Enter the port number of the HTTP proxy server."
+#~ msgstr "എച്ച്ടിടിപി പ്രോക്സി സെര്‍വറിന്റെ വിലാസം നല്‍കുക."
+
+#, fuzzy
+#~ msgid "Use this proxy server for a&ll protocols"
+#~ msgstr "എല്ലാ നിയമാവലികള്‍ക്കും ഒരേ പ്രോക്സി സെര്‍വര്‍ &ഉപയോഗിക്കുക"
+
+#~ msgid "Enter the address of the HTTPS proxy server."
+#~ msgstr "എച്ച്ടിടിപിഎസ് പ്രോക്സി സെര്‍വറിന്റെ വിലാസം നല്‍കുക."
+
+#, fuzzy
+#~ msgid "Enter the port number of the HTTPS proxy server."
+#~ msgstr "എച്ച്ടിടിപിഎസ് പ്രോക്സി സെര്‍വറിന്റെ വിലാസം നല്‍കുക."
+
+#~ msgid "Enter the address of the FTP proxy server."
+#~ msgstr "എഫ്‌ടിപി പ്രോക്സി സെര്‍വറിന്റെ വിലാസം നല്‍കുക."
+
+#, fuzzy
+#~ msgid "Enter the port number of the FTP proxy server."
+#~ msgstr "എഫ്‌ടിപി പ്രോക്സി സെര്‍വറിന്റെ വിലാസം നല്‍കുക."
+
+#, fuzzy
+#~ msgid "Enter the address of the SOCKS proxy server."
+#~ msgstr "എച്ച്ടിടിപിഎസ് പ്രോക്സി സെര്‍വറിന്റെ വിലാസം നല്‍കുക."
+
+#, fuzzy
+#~ msgid "Enter the port number of the SOCKS proxy server."
+#~ msgstr "എച്ച്ടിടിപിഎസ് പ്രോക്സി സെര്‍വറിന്റെ വിലാസം നല്‍കുക."
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Check this box if you want the above proxy settings to apply only to the "
+#~ "addresses listed in the <i>Exceptions</i> list.</qt>"
+#~ msgstr "പട്ടികയിലുള്ളവയ്ക്ക് പ്രോക്സി മാത്രം ഉപയോഗിക്കുക"
+
+#, fuzzy
+#~ msgid "Use proxy settings only for addresses in the Exceptions list"
+#~ msgstr "പട്ടികയിലുള്ളവയ്ക്ക് പ്രോക്സി മാത്രം ഉപയോഗിക്കുക"
+
+#~ msgid ""
+#~ "You have to restart the running applications for these changes to take "
+#~ "effect."
+#~ msgstr ""
+#~ "ഈ മാറ്റങ്ങള്‍ ഫലവത്താകാന്‍ ഓടിക്കൊണ്ടിരിക്കുന്ന പ്രയോഗങ്ങള്‍ പുനരാരംഭിക്കേണ്ടിയിരിക്കുന്നു."
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Update Failed"
+#~ msgstr "%s: പ്രവര്‍ത്തിപ്പിക്കുന്നതില്‍ പിഴവ്: %s"
+
+#~ msgid "You have to restart KDE for these changes to take effect."
+#~ msgstr "ഈ മാറ്റങ്ങള്‍ ഫലവത്താകാന്‍ കെഡിഇ പുനരാരംഭിക്കേണ്ടിയിരിക്കുന്നു."
+
+#~ msgid "Timeout Values"
+#~ msgstr "ടൈമൌട്ട് മൂല്യങ്ങള്‍"
+
+#, fuzzy
+#~ msgid " second"
+#~ msgid_plural " seconds"
+#~ msgstr[0] " sec"
+#~ msgstr[1] " sec"
+
+#~ msgid "Soc&ket read:"
+#~ msgstr "സോ&ക്കറ്റ് വായന:"
+
+#~ msgid "Pro&xy connect:"
+#~ msgstr "പ്രോക്സി ബന്ധം"
+
+#~ msgid "Server co&nnect:"
+#~ msgstr "സെര്‍വര്‍ ബന്ധം:"
+
+#, fuzzy
+#~ msgid "&Server response:"
+#~ msgstr "എക്സ് സേവക പ്രവര്‍ത്തകം:"
+
+#~ msgid "FTP Options"
+#~ msgstr "എഫ്‌ടിപി ഐച്ഛികങ്ങള്‍"
+
+#~ msgid "Enable passive &mode (PASV)"
+#~ msgstr "&നിര്‍ജ്ജീവാവസ്ഥ (PASV) പ്രാവര്‍ത്തികമാക്കുക"
+
+#~ msgid ""
+#~ "Enables FTP's \"passive\" mode. This is required to allow FTP to work "
+#~ "from behind firewalls."
+#~ msgstr ""
+#~ "എഫ്‌ടിപിയുടെ \"നിര്‍ജ്ജീവം\" (\"passive\") എന്ന അവസ്ഥ പ്രാവര്‍ത്തികമാക്കുന്നു. എഫ്‌ടിപി ഫയര്‍"
+#~ "വാളുകളുടെ പിറകില്‍നിന്നു പ്രവര്‍ത്തിക്കാന്‍ ഇതാവശ്യമാണ്."
+
+#~ msgid "Mark &partially uploaded files"
+#~ msgstr "&ഭാഗികമായി അപ്ലോഡ് ചെയ്ത ഫയലുകള്‍ അടയാളപ്പെടുത്തുക"
+
+#~ msgid ""
+#~ "<p>Marks partially uploaded FTP files.</p><p>When this option is enabled, "
+#~ "partially uploaded files will have a \".part\" extension. This extension "
+#~ "will be removed once the transfer is complete.</p>"
+#~ msgstr ""
+#~ "ഭാഗികമായി അപ്ലോഡ് ചെയ്ത എഫ്‌ടിപി ഫയലുകള്‍ അടയാളപ്പെടുത്തുക. ഈ ഐച്ഛികം പ്രാവര്‍"
+#~ "ത്തികമാക്കുമ്പോള്‍ ഭാഗികമായി അപ്ലോഡ് ചെയ്ത ഫയലുകള്‍ക്ക് ഒരു \".part\" എക്സ്റ്റന്‍ഷനുണ്ടാകും. ഈ "
+#~ "എക്സ്റ്റന്‍ഷന്‍ മാറ്റം പൂര്‍ത്തിയാകുന്നതോടെ നീക്കം ചെയ്യപ്പെടും."
+
+#~ msgid "These settings apply to network browsing only."
+#~ msgstr "ഈ സജ്ജീകരണങ്ങള്‍ ശൃംഖലാ തിരച്ചിലിനേ ബാധകമാവൂ."
+
+#~ msgid "Default user name:"
+#~ msgstr "സഹജമായ ഉപയോക്താവിന്റെ പേരു്:"
+
+#~ msgid "Default password:"
+#~ msgstr "സഹജമായ അടയാളവാക്കു്:"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Add Identification"
+#~ msgstr "തിരിച്ചറിയല്‍ കൂട്ടിച്ചേര്‍ക്കുക"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Modify Identification"
+#~ msgstr "തിരിച്ചറിയല്‍ മാറ്റം വരുത്തുക"
+
+#~ msgid ""
+#~ "<qt><center>Found an existing identification for<br/><b>%1</b><br/>Do you "
+#~ "want to replace it?</center></qt>"
+#~ msgstr ""
+#~ "<qt><center><br/><b>%1</b><br/>എന്നതിനായി നിലവിലുള്ള ഒരു തിരിച്ചറിയല്‍ കണ്ടെത്തി. "
+#~ "നിങ്ങള്‍ക്കിത് മാറ്റണമെന്നുണ്ടോ?</center></qt>"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Identification"
+#~ msgstr "ഡ്യൂപ്ളിക്കേറ്റ് തിരിച്ചറിയല്‍"
+
+#~ msgid "&Send identification"
+#~ msgstr "തിരിച്ചറിയല്‍ &അയയ്ക്കുക"
+
+#~ msgid ""
+#~ "The browser identification text sent to the sites you visit. Use the "
+#~ "provided options to customize it."
+#~ msgstr ""
+#~ "നിങ്ങള്‍ സന്ദര്‍ശിച്ച സൈറ്റുകളിലേക്കയച്ച ബ്രൌസര്‍ തിരിച്ചറിയല്‍ പദാവലി. തന്നിരിക്കുന്ന "
+#~ "ഐച്ഛികങ്ങളുപയോഗിച്ച് അത് ഇഷ്ടപ്രകാരമാക്കിയെടുക്കുക."
+
+#~ msgid "Default Identification"
+#~ msgstr "സഹജമായ തിരിച്ചറിയല്‍"
+
+#, fuzzy
+#~ msgid ""
+#~ "The browser identification text sent to the sites you visit. You can "
+#~ "customize it using the options provided below."
+#~ msgstr ""
+#~ "നിങ്ങള്‍ സന്ദര്‍ശിച്ച സൈറ്റുകളിലേക്കയച്ച ബ്രൌസര്‍ തിരിച്ചറിയല്‍ പദാവലി. തന്നിരിക്കുന്ന "
+#~ "ഐച്ഛികങ്ങളുപയോഗിച്ച് അത് ഇഷ്ടപ്രകാരമാക്കിയെടുക്കുക."
+
+#, fuzzy
+#~ msgid ""
+#~ "Includes your operating system's name in the browser identification text."
+#~ msgstr ""
+#~ "ബ്രൌസര്‍ തിരിച്ചറിയല്‍ പദാവലിയില്‍ നിങ്ങളുടെ ഓപ്പറേറ്റിങ് സിസ്റ്റം പതിപ്പു് നംബര്‍ ഉള്‍പ്പെടുത്തുന്നു."
+
+#~ msgid "Add operating s&ystem name"
+#~ msgstr "ഓപ്പറേറ്റിങ് &സിസ്റ്റം പേരു് കൂട്ടിച്ചേര്‍ക്കുക"
+
+#~ msgid ""
+#~ "Includes your operating system's version number in the browser "
+#~ "identification text."
+#~ msgstr ""
+#~ "ബ്രൌസര്‍ തിരിച്ചറിയല്‍ പദാവലിയില്‍ നിങ്ങളുടെ ഓപ്പറേറ്റിങ് സിസ്റ്റം പതിപ്പു് നംബര്‍ ഉള്‍പ്പെടുത്തുന്നു."
+
+#~ msgid "Add operating system &version"
+#~ msgstr "ഓപ്പറേറ്റിങ് &സിസ്റ്റം പതിപ്പു് കൂട്ടിച്ചേര്‍ക്കുക"
+
+#~ msgid "Includes your machine's CPU type in the browser identification text."
+#~ msgstr "ബ്രൌസര്‍ തിരിച്ചറിയല്‍ പദാവലിയില്‍ നിങ്ങളുടെ യന്ത്രത്തിന്റെ സിപിയു തരം ഉള്‍പ്പെടുത്തുന്നു"
+
+#~ msgid "Add &machine (processor) type"
+#~ msgstr "&യന്ത്രം (പ്രൊസസര്‍) തരം കൂട്ടിച്ചേര്‍ക്കുക"
+
+#~ msgid ""
+#~ "Includes your language settings in the browser identification text to "
+#~ "obtain localized versions of the page."
+#~ msgstr ""
+#~ "ബ്രൌസര്‍ തിരിച്ചറിയല്‍ പദാവലിയില്‍ താളിന്റെ പ്രാദേശികവല്‍ക്കരിച്ച പകര്‍പ്പുകള്‍ ലഭിക്കാനായി "
+#~ "നിങ്ങളുടെ ഭാഷാസജ്ജീകരണങ്ങള്‍ ഉള്‍പ്പെടുത്തുന്നു"
+
+#~ msgid "Add lang&uage information"
+#~ msgstr "&ഭാഷാവിവരങ്ങള്‍ കൂട്ടിച്ചേര്‍ക്കുക"
+
+#~ msgid "Site Specific Identification"
+#~ msgstr "സൈറ്റിനു് പ്രത്യേകമായ തിരിച്ചറിയല്‍"
+
+#~ msgid "Site Name"
+#~ msgstr "സൈറ്റിന്റെ പേരു്"
+
+#~ msgid "Identification"
+#~ msgstr "തിരിച്ചറിയല്‍"
+
+#~ msgid "User Agent"
+#~ msgstr "ഉപയോക്താവിനുളള ഏജന്റ്"
+
+#~ msgid "Add new identification text for a site."
+#~ msgstr "ഒരു സൈറ്റിനായി പുതിയ തിരിച്ചറിയല്‍ വാക്യം കൂട്ടിച്ചേര്‍ക്കുക."
+
+#~ msgid "Change the selected identifier text."
+#~ msgstr "സെലക്ട് ചെയ്ത തിരിച്ചറിയല്‍ പദാവലിയില്‍ മാറ്റം വരുത്തുക."
+
+#~ msgid "Delete the selected identifier text."
+#~ msgstr "സെലക്ട് ചെയ്ത തിരിച്ചറിയല്‍ പദാവലി നീക്കം ചെയ്യുക."
+
+#~ msgid "Delete all identifiers."
+#~ msgstr "തിരിച്ചറിയാനുതകുന്നവയെല്ലാം നീക്കം ചെയ്യുക."
+
+#~ msgid "&When browsing the following site:"
+#~ msgstr "&ഇനിപ്പറയുന്ന സൈറ്റ് തിരയുമ്പോള്‍:"
+
+#~ msgid "&Use the following identification:"
+#~ msgstr "ഇനി പറയുന്ന തിരിച്ചറിയല്‍ &ഉപയോഗിക്കുക:"
+
+#~ msgid "Real identification:"
+#~ msgstr "ശരിയായ തിരിച്ചറിയല്‍:"
+
+#~ msgid "Treat &all cookies as session cookies"
+#~ msgstr "&എല്ലാ കുക്കികളും സെഷന്‍ കുക്കികളായി കണക്കാക്കുക"
+
+#~ msgid ""
+#~ "Enter the port number of the HTTP proxy server. Default is 8080. Another "
+#~ "common value is 3128."
+#~ msgstr ""
+#~ "എച്ച്ടിടിപി പ്രോക്സി സെര്‍വറിന്റെ പോര്‍ട്ട് സംഖ്യ നല്‍കുക. സഹജമായി 8080 ആണു്. വേറൊരു സാധാരണ "
+#~ "മൂല്യം 3128 ആണു്."
+
+#~ msgid ""
+#~ "Enter the port number of the FTP proxy server. Default 8080. Another "
+#~ "common value is 3128."
+#~ msgstr ""
+#~ "എഫ്‌ടിപി പ്രോക്സി സെര്‍വറിന്റെ പോര്‍ട്ട് സംഖ്യ നല്‍കുക. സഹജമായി 8080 ആണു്. വേറൊരു സാധാരണ "
+#~ "മൂല്യം 3128 ആണു്."
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Variable Proxy Configuration"
+#~ msgstr "പ്രോക്സിയുടെ മാറ്റാവുന്ന ക്രമീകരണം"
+
+#~ msgid "You must specify at least one valid proxy environment variable."
+#~ msgstr "ഒരു സാധുവായ പ്രോക്സി പരിസ്ഥിതി വേരിയബിളെങ്കിലും നിങ്ങള്‍ വ്യക്തമാക്കണം."
+
+#~ msgid ""
+#~ "<qt>Make sure you entered the actual environment variable name rather "
+#~ "than its value. For example, if the environment variable is <br /"
+#~ "><b>HTTP_PROXY=http://localhost:3128</b><br /> you need to enter "
+#~ "<b>HTTP_PROXY</b> here instead of the actual value http://localhost:3128."
+#~ "</qt>"
+#~ msgstr ""
+#~ "നിങ്ങള്‍ പരിസ്ഥിതി വേരിയബിളിന്റെ പേരാണ്, മൂല്യമല്ല നല്‍കിയിട്ടുള്ളതെന്നുറപ്പാക്കുക. "
+#~ "ഉദാഹരണത്തിന്, പരിസ്ഥിതി വേരിയബിള്‍ <br /><b>HTTP_PROXY=http://localhost:3128</"
+#~ "b><br /> ആണെങ്കില്‍, നിങ്ങള്‍ ഇവിടെ ശരിയായ മൂല്യമായ http://localhost:3128 "
+#~ "എന്നതിനുപകരം <b>HTTP_PROXY</b> എന്നാണ് നല്‍കേണ്ടത്."
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Proxy Setup"
+#~ msgstr "അസാധുവായ പ്രോക്സി സജ്ജീകരണം"
+
+#~ msgid "Successfully verified."
+#~ msgstr "വിജയകരമായി ഉറപ്പാക്കിയിരിയ്ക്കുന്നു."
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Proxy Setup"
+#~ msgstr "പ്രോക്സി സജ്ജീകരണം"
+
+#~ msgid ""
+#~ "Did not detect any environment variables commonly used to set system wide "
+#~ "proxy information."
+#~ msgstr ""
+#~ "സിസ്റ്റമൊട്ടാകെയുള്ള പ്രോക്സി വിവരം സാധാരണ സജ്ജീകരിക്കാനുപയോഗിക്കുന്ന പരിസ്ഥിതി "
+#~ "വേരിയബിളുകളൊന്നും കണ്ടുപിടിക്കാനായില്ല."
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Automatic Proxy Variable Detection"
+#~ msgstr "തനിയെയുള്ള പ്രോക്സി വേരിയബിള്‍ കണ്ടുപിടിത്തം"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Manual Proxy Configuration"
+#~ msgstr "പ്രോക്സിയുടെ സ്വയം ക്രമീകരണം"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Proxy Setting"
+#~ msgstr "അസാധുവായ പ്രോക്സി സജ്ജീകരണം"
+
+#~ msgid ""
+#~ "One or more of the specified proxy settings are invalid. The incorrect "
+#~ "entries are highlighted."
+#~ msgstr ""
+#~ "നല്‍കിയവയില്‍ ഒന്നോ അതിലേറെയോ പ്രോക്സി സജ്ജീകരണങ്ങള്‍ അസാധുവാണ്. തെറ്റായ എന്‍ട്രികള്‍ "
+#~ "എടുത്തുകാണിച്ചിരിക്കുന്നു."
+
+#~ msgid "You entered a duplicate address. Please try again."
+#~ msgstr "നിങ്ങള്‍ ഡ്യൂപ്ളിക്കേറ്റ് വിലാസമാണ് നല്‍കിയത്. ദയവായി വീണ്ടും ശ്രമിയ്ക്കുക."
+
+#~ msgid "<qt><center><b>%1</b></center> is already in the list.</qt>"
+#~ msgstr "<qt><center><b>%1</b></center> ഇപ്പോഴേ പട്ടികയിലുണ്ട്.</qt>"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Entry"
+#~ msgstr "ഡ്യൂപ്ളിക്കേറ്റ് എന്‍ട്രി"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "New Exception"
+#~ msgstr "പുതിയ എക്സപ്ഷന്‍"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Change Exception"
+#~ msgstr "എക്സപ്ഷന്‍ മാറ്റുക"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Entry"
+#~ msgstr "അസാധുവായ എന്‍ട്രി"
+
+#~ msgid "The address you have entered is not valid."
+#~ msgstr "നിങ്ങള്‍ നല്‍കിയ വിലാസം അസാധുവാണ്."
+
+#~ msgid "Enter the URL or address that should use the above proxy settings:"
+#~ msgstr "മേല്‍പ്പറഞ്ഞ പ്രോക്സി സജ്ജീകരണങ്ങള്‍ ഉപയോഗിക്കേണ്ട URL അഥവാ വിലാസം നല്‍കുക:"
+
+#~ msgid ""
+#~ "Enter the address or URL that should be excluded from using the above "
+#~ "proxy settings:"
+#~ msgstr ""
+#~ "മേല്‍പ്പറഞ്ഞ പ്രോക്സി സജ്ജീകരണങ്ങള്‍ ഉപയോഗിക്കുന്നതില്‍ നിന്നൊഴിവാക്കപ്പെടേണ്ട URL അഥവാ "
+#~ "വിലാസം നല്‍കുക:"
+
+#~ msgid "H&TTP:"
+#~ msgstr "&എച്ച്ടിടിപി:"
+
+#~ msgid "HTTP&S:"
+#~ msgstr "എച്ച്ടിടിപി&എസ്:"
+
+#~ msgid "&FTP:"
+#~ msgstr "&എഫ്‌ടിപി:"
+
+#~ msgid "NO &PROXY:"
+#~ msgstr "&പ്രോക്സി ഇല്ല:"
+
+#~ msgid "&Verify"
+#~ msgstr "&ഉറപ്പാക്കുക"
+
+#~ msgid "Connect to the &Internet directly"
+#~ msgstr "&ഇന്റര്‍നെറ്റിലേക്ക് നേരിട്ട് ബന്ധപ്പെടുക"
+
+#~ msgid "Use preset proxy environment &variables"
+#~ msgstr "നേരത്തേ സജ്ജീകരിച്ച പ്രോക്സി പരിസ്ഥിതി വേരിയബിളുകള്‍ ഉപയോഗിക്കുക"
+
+#~ msgid "Show the proxy environment variable configuration dialog."
+#~ msgstr "പ്രോക്സി പരിസ്ഥിതി വേരിയബിള്‍ ക്രമീകരണ ലഘുജാലകം കാണിക്കുക."
+
+#~ msgid "Setup..."
+#~ msgstr "സജ്ജീകരണം..."
+
+#~ msgid "&Manually specify the proxy settings"
+#~ msgstr "&സ്വയം പ്രോക്സി സജ്ജീകരണങ്ങള്‍ വ്യക്തമാക്കുക"
+
+#~ msgid "Show the manual proxy configuration dialog."
+#~ msgstr "സ്വയം പ്രോക്സി ക്രമീകരണ ലഘുജാലകം കാണിക്കുക."
+
+#~ msgid "Authori&zation"
+#~ msgstr "അധികാരപ്പെടുത്തല്‍"
+
+#~ msgid "Prompt for login information whenever it is required."
+#~ msgstr "ആവശ്യമുള്ളപ്പോളെല്ലാം ലോഗിന്‍ വിവരം ചോദിയ്ക്കുക."
+
+#~ msgid "Prompt as &needed"
+#~ msgstr "&ആവശ്യമുണ്ടാകുമ്പോള്‍ ചോദിക്കുക"
+
+#, fuzzy
+#~ msgid "Use this login information."
+#~ msgstr "ഇനിപ്പറയുന്ന ലോ&ഗിന്‍ വിവരം ഉപയോഗിക്കുക."
+
+#, fuzzy
+#~ msgid ""
+#~ "Use information specified here to login into proxy servers as needed."
+#~ msgstr ""
+#~ "താഴെക്കൊടുത്തിരിക്കുന്ന വിവരങ്ങള്‍ പ്രോക്സി സര്‍വറുകളിലേക്ക് ആവശ്യാനുസരണം ലോഗിന്‍ "
+#~ "ചെയ്യാനുപയോഗിക്കുക."
+
+#~ msgid "Username:"
+#~ msgstr "ഉപയോക്താവിന്റെ പേരു്:"
+
+#~ msgid "Login name."
+#~ msgstr "ലോഗിന്‍ പേരു്."
+
+#~ msgid "Login password."
+#~ msgstr "ലോഗിന്‍ അടയാളവാക്കു്."
+
+#~ msgid "Password:"
+#~ msgstr "അടയാളവാക്കു്:"
+
+#~ msgid "O&ptions"
+#~ msgstr "ഐ&ച്ഛികങ്ങള്‍"
+
+#~ msgid "Ser&vers"
+#~ msgstr "സെര്‍&വറുകള്‍"
+
+#~ msgid "Remove all proxy exception addresses from the list."
+#~ msgstr "എല്ലാ പ്രോക്സി എക്സപ്ഷന്‍ വിലാസങ്ങളും പട്ടികയില്‍ നിന്നു നീക്കം ചെയ്യുക."
+
+#~ msgid "D&elete All"
+#~ msgstr "എ&ല്ലാം നീക്കം ചെയ്യുക"
+
+#~ msgid "Remove the selected proxy exception address from the list."
+#~ msgstr "സെലക്ട് ചെയ്ത പ്രോക്സി എക്സപ്ഷന്‍ വിലാസം പട്ടികയില്‍ നിന്നു നീക്കം ചെയ്യുക."
+
+#~ msgid "De&lete"
+#~ msgstr "&നീക്കം ചെയ്യുക"
+
+#~ msgid "Add new proxy exception address to the list."
+#~ msgstr "പുതിയ പ്രോക്സി എക്സപ്ഷന്‍ വിലാസം പട്ടികയിലേക്ക് കൂട്ടിച്ചേര്‍ക്കുക."
+
+#~ msgid "Change the selected proxy exception address."
+#~ msgstr "സെലക്ട് ചെയ്ത പ്രോക്സി എക്സപ്ഷന്‍ വിലാസം മാറ്റുക."
+
+#~ msgid "C&hange..."
+#~ msgstr "&മാറ്റുക..."
+
+#~ msgid "&Domain name:"
+#~ msgstr "&ഡൊമെയ്നു് പേരു്:"
+
+#~ msgid "Includes your platform type in the browser identification text"
+#~ msgstr "ബ്രൌസര്‍ തിരിച്ചറിയല്‍ പദാവലിയില്‍ നിങ്ങളുടെ പ്ലാറ്റ്ഫോം തരം ഉള്‍പ്പെടുത്തുന്നു"
+
+#~ msgid "Add &platform name"
+#~ msgstr "&പ്ലാറ്റ്ഫോം പേരു് കൂട്ടിച്ചേര്‍ക്കുക"
+
+#~ msgid "Domain [Group]"
+#~ msgstr "ഡൊമെയ്നു് [കൂട്ടം]"
+
+#~ msgid "Host [Set By]"
+#~ msgstr "ഹോസ്റ്റ് [സജ്ജീകരിച്ചത്]"
+
+#~ msgid "&Windows Shares"
+#~ msgstr "&വിന്‍ഡോസില്‍ നിന്നും പങ്കിട്ടവ"
+
+#~ msgid "&LISa Daemon"
+#~ msgstr "&LISa ഡെമണ്‍"
+
+#~ msgid "lan:/ Iosla&ve"
+#~ msgstr "lan:/ Iosla&ve"
+
+#, fuzzy
+#~ msgctxt "just a placeholder; do not translate"
+#~ msgid "KSqueezedTextLabel"
+#~ msgstr "KSqueezedTextLabel"
+
+#~ msgid "&Search:"
+#~ msgstr "&തിരയുക:"
+
+#~ msgid "&SOCKS"
+#~ msgstr "&സോക്സ്"
+
+#~ msgid "SOCKS"
+#~ msgstr "സോക്സ്"
+
+#~ msgid ""
+#~ "Check this to enable SOCKS4 and SOCKS5 support in KDE applications and I/"
+#~ "O subsystems."
+#~ msgstr ""
+#~ "കെഡിഇ പ്രയോഗങ്ങളിലും I/O സബ്സിസ്റ്റങ്ങളിലും സോക്സ്4, സോക്സ്5 പിന്തുണ പ്രാവര്‍ത്തികമാക്കാന്‍ ഇത് "
+#~ "ചെക്ക് ചെയ്യുക."
+
+#~ msgid "&Enable SOCKS support"
+#~ msgstr "സോക്സ് പിന്തുണ &പ്രാവര്‍ത്തികമാക്കുക"
+
+#~ msgid "Click here to test SOCKS support."
+#~ msgstr "സോക്സ് പിന്തുണ പരീക്ഷിക്കാനായി ഇവിടെ ക്ലിക്ക് ചെയ്യുക."
+
+#~ msgid "&Test"
+#~ msgstr "&പരീക്ഷിക്കുക"
+
+#~ msgid "SOCKS Implementation"
+#~ msgstr "സോക്സ് പ്രവര്‍ത്തിപ്പിക്കുക"
+
+#~ msgid "Use &custom library"
+#~ msgstr "&ഇഷ്ടപ്പെട്ട ലൈബ്രറി ഉപയോഗിക്കുക"
+
+#~ msgid "Enter the path to an unsupported SOCKS library."
+#~ msgstr "പിന്തുണയില്ലാത്ത സോക്സ് ലൈബ്രറിയിലേക്കുള്ള വഴി നല്‍കുക."
+
+#~ msgid "A&uto detect"
+#~ msgstr "&തനിയെ കണ്ടെത്തുക"
+
+#~ msgid "This will force KDE to use NEC SOCKS if it can be found."
+#~ msgstr "NEC സോക്സ് കണ്ടുപിടിക്കുകയാണെങ്കില്‍ അതുപയോഗിക്കാന്‍ കെഡിഇയെ ഇതു പ്രേരിപ്പിക്കും."
+
+#~ msgid "&NEC SOCKS"
+#~ msgstr "&NEC സോക്സ്"
+
+#~ msgid "This will force KDE to use Dante if it can be found."
+#~ msgstr "ഡാന്റെ കണ്ടുപിടിക്കുകയാണെങ്കില്‍ അതുപയോഗിക്കാന്‍ കെഡിഇയെ ഇതു പ്രേരിപ്പിക്കും."
+
+#~ msgid "&Dante"
+#~ msgstr "&ഡാന്റെ"
+
+#~ msgid ""
+#~ "Here you can specify additional directories to search for the SOCKS "
+#~ "libraries. /usr/lib, /usr/local/lib, /usr/local/socks5/lib and /opt/"
+#~ "socks5/lib are already searched by default."
+#~ msgstr ""
+#~ "സോക്സ് ലൈബ്രറികള്‍ തിരയാന്‍ കൂടുതല്‍ തട്ടുകള്‍ ഇവിടെ നിങ്ങള്‍ക്ക് നല്‍കാം. /usr/lib, /usr/local/"
+#~ "lib, /usr/local/socks5/lib, /opt/socks5/lib എന്നിവ സഹജമായി തിരയപ്പെടുന്നു."
+
+#~ msgid "Additional Library Search Paths"
+#~ msgstr "കൂടുതലായുള്ള ലൈബ്രറി തിരച്ചില്‍ വഴികള്‍"
+
+#, fuzzy
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Manu S Madhav | മനു എസ് മാധവ്"
+
+#, fuzzy
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "manusmad@gmail.com"
+
+#~ msgid "kcmsocks"
+#~ msgstr "kcmsocks"
+
+#~ msgid "KDE SOCKS Control Module"
+#~ msgstr "കെഡിഇ സോക്സ് നിയന്ത്രണ മൊഡ്യൂള്‍"
+
+#~ msgid "(c) 2001 George Staikos"
+#~ msgstr "(c) 2001 ജോര്‍ജ്ജ് സ്റ്റൈക്കോസ്"
+
+#~ msgid "George Staikos"
+#~ msgstr "ജോര്‍ജ്ജ് സ്റ്റൈക്കോസ്"
+
+#~ msgid "These changes will only apply to newly started applications."
+#~ msgstr "ഈ മാറ്റങ്ങള്‍ പുതുതായി തുടങ്ങുന്ന പ്രയോഗങ്ങള്‍ക്കേ ബാധകമാവൂ."
+
+#~ msgid "SOCKS Support"
+#~ msgstr "സോക്സ് പിന്തുണ"
+
+#~ msgid "Success: SOCKS was found and initialized."
+#~ msgstr "വിജയം: സോക്സ് കണ്ടുപിടിക്കുകയും തുടക്കമിടുകയും ചെയ്തു."
+
+#~ msgid "SOCKS could not be loaded."
+#~ msgstr "സോക്സ് ലോഡ് ചെയ്യാന്‍ കഴിഞ്ഞില്ല."
+
+#~ msgid "&Path:"
+#~ msgstr "&വഴി:"
+
+#~ msgid "This is the list of additional paths that will be searched."
+#~ msgstr "പുതുതായി തിരയുന്ന വഴികളുടെ പട്ടിക ഇതാണ്."
+
+#~ msgid "Path"
+#~ msgstr "വഴി"
+
+#~ msgid "&Add"
+#~ msgstr "&കൂട്ടിച്ചേര്‍ക്കുക"
+
+#~ msgid "&Remove"
+#~ msgstr "&എടുത്തുമാറ്റുക"

@@ -1,0 +1,121 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Serbian-Latin "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="filemanager" lang="&language;">
+<articleinfo>
+<title
+>Upravljanje fajlovima</title>
+<authorgroup>
+<author
+><personname
+><firstname
+>Majk</firstname
+> <surname
+>Mekbrajd</surname
+></personname
+> &Mike.McBride.mail;</author>
+<othercredit role="translator"
+><firstname
+>Dragan</firstname
+><surname
+>Pantelić</surname
+><affiliation
+><address
+><email
+>falcon-10@gmx.de</email
+></address
+></affiliation
+><contrib
+>prevod</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>8. 11. 2016.</date>
+<releaseinfo
+>Programi KDE‑a 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Sistemske postavke</keyword>
+<keyword
+>menadžer fajlova</keyword>
+</keywordset>
+</articleinfo>
+
+<para
+>U ovim modulima možete podesiti razne aspekte funkcionalnosti <application
+>K‑osvajača</application
+> kao menadžera fajlova. </para>
+
+<note
+><para
+>Funkcionalnost <application
+>K‑osvajača</application
+> kao veb pregledača ima <ulink url="help:/kcontrol/khtml-behavior/index.html"
+>sopstveni modul za podešavanje</ulink
+>.</para
+></note>
+
+<variablelist>
+<title
+><guilabel
+>Razne opcije</guilabel
+></title>
+<varlistentry>
+<term
+><guilabel
+>Otvaraj fascikle u zasebnim prozorima</guilabel
+></term>
+<listitem
+> <para
+>Ako je ovo popunjeno, fascikle će biti otvarane u novom prozoru <application
+>K‑osvajača</application
+>, umesto da sadržaj fascikle prosto zameni onaj u tekućem prozoru.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Brisanje u menijima zaobilazi smeće</guilabel
+></term>
+<listitem>
+<para
+>Popunite ovo ako želite da se u kontekstnim menijima površi i menadžera fajlova daje naredba <guimenuitem
+>Obriši</guimenuitem
+>. Fajlove u svakom slučaju može obrisati držanjem tastera <keycap
+>Shift</keycap
+> pri izboru <guimenuitem
+>Premesti u smeće</guimenuitem
+>.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Postavke za <application
+>K‑osvajač</application
+> u režimu menadžera fajlova, na stranicama <guilabel
+>Načini prikaza</guilabel
+>, <guilabel
+>Navigacija</guilabel
+>, <guilabel
+>Servisi</guilabel
+>, <guilabel
+>Opšte</guilabel
+> i <guilabel
+>Smeće</guilabel
+>, važe i u <application
+>Dolphinu</application
+>. </para>
+
+</article>

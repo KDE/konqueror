@@ -1,0 +1,176 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY nsplugins-kcontrol SYSTEM "nsplugin.docbook">
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Estonian  "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="khtml-java-js" lang="&language;">
+<articleinfo>
+<title
+>Java ja JavaScript</title>
+<authorgroup>
+<author
+>&Krishna.Tateneni; &Krishna.Tateneni.mail;</author>
+<othercredit role="translator"
+><firstname
+>Marek</firstname
+><surname
+>Laane</surname
+><affiliation
+><address
+><email
+>bald@starman.ee</email
+></address
+></affiliation
+><contrib
+>Tõlge eesti keelde</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2009-11-24</date>
+<releaseinfo
+>&kde; 4.4</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Süsteemi seadistused</keyword>
+<keyword
+>konqueror</keyword>
+<keyword
+>lehitsemine</keyword>
+<keyword
+>Java</keyword>
+<keyword
+>JavaScript</keyword>
+</keywordset>
+
+</articleinfo>
+<sect1 id="konq-browsing">
+<title
+>&Java; ja JavaScript</title>
+
+<sect2 id="kbrowse-java">
+<title
+>&Java;</title>
+
+<para
+>&Java; võimaldab veebilehitsejal rakendusi alla laadida ja käivitada, kui arvutile on paigaldatud sobiv tarkvara. &Java; on kasutusel paljudel veebilehekülgedel (näiteks internetipanganduses või interaktiivsete mängude saitidel). Sa peaksid siiski teadmiseks võtma, et tundmatust allikast pärit rakenduste käivitamine võib kujutada endast ohtu sinu arvuti turvalisusele isegi juhul, kui võimalik kahju ei ole väga suur.</para>
+
+<para
+>Märkekast <guilabel
+>Java lubamine globaalselt</guilabel
+> võimaldab lubada vaikimisi &Java; toe kõigil veebilehekülgedel. Samuti võib määrata &Java; keelamise või lubamise konkreetsetel domeenidel. Sellise reegli lisamiseks klõpsa nupul <guibutton
+>Uus...</guibutton
+>, mille järel ilmub dialoog, kus saab kirja panna domeeni nime ning määrata, kas selle avamisel on &Java; koodi tunnustamine lubatud või keelatud.</para>
+
+<para
+>Nimekirjast võib valida hosti või domeeni ning klõpsuga nupul <guibutton
+>Muuda...</guibutton
+> määrata teistsuguse reegli. Klõps nupul <guibutton
+>Kustuta</guibutton
+> eemaldab valitud hosti või domeeni kohta käiva reegli ja pärast seda rakenduvad antud hostile või domeenile globaalsed seadistused.</para>
+
+<para
+>Rühm valikuid üldnimetusega <guilabel
+>Java käivitamise seadistused</guilabel
+> võimaldab teatud määral otsustada, kuidas &Java; käivitamine peab välja nägema.</para>
+
+<para
+><guilabel
+>Turvahalduri kasutamine</guilabel
+> on reeglina vaikimisi sisse lülitatud. See paneb <acronym
+>JVM</acronym
+>-i töötama käsikäes turvahalduriga. Nii ei ole aplettidel sinu failisüsteemis lugemis- ja kirjutamisõigust ega õigust luua sokleid või võtta ette muid toiminguid, mis võivad sinu süsteemile ettearvamatut kahju tekitada. Enne selle võimaluse väljalülitamist peaksid väga hoolikalt järele mõtlema. Vahest oleks mõttekam muuta &Java; reeglite määramise vahendiga faili <filename
+>$<envar
+>HOME</envar
+>/.java.policy</filename
+>, et anda teatud saitidele rohkem tegutsemisvabadust.</para>
+
+<para
+><guilabel
+>KIO mooduli kasutamine</guilabel
+> paneb <acronym
+>JVM</acronym
+>-i kasutama võrguühenduste jaoks &kde; <acronym
+>KIO</acronym
+> moodulit.</para>
+
+<para
+>Märkekast <guilabel
+>Apleti server peatatakse, kui see on mitteaktiivne üle</guilabel
+> võimaldab säästa ressursse, sulgedes &Java; apleti serveri, kui see ei ole kasutusel, mitte jätta see taustal töötama. Kui see on keelatud, käivituvad &Java; apletid kiiremini, kuid tarbivad süsteemi ressursse ka siis, kui sa enam &Java; apletti ei kasuta. Lubamise korral on võimalik määrata ka apleti serveri aegumise periood.</para>
+
+<para
+>&konqueror;il võib lasta automaatselt tuvastada &Java; paigaldus, aga paigalduse asukoht on võimalik ka käsitsi määrata väljal <guilabel
+>Java käivitatava faili otsingutee või 'java':</guilabel
+>. See võimalus võib olla tulus, kui masinale on paigaldatud mitu &Java; versiooni, sest nii saab määrata, millist neist kasutada. Kui kasutatav &Java; virtuaalmasin nõuab erilisi käivitusvõtmeid, saab ka need määrata väljal <guilabel
+>Java lisaargumendid</guilabel
+>.</para>
+
+</sect2>
+
+<sect2 id="kbrowse-javascript">
+<title
+>JavaScript</title>
+
+<para
+>Nimele vaatatama ei ole JavaScript üldsegi &Java; sugulane.</para>
+
+<para
+>Esimene osa kaardist näeb välja ja on ka sama toimega nagu &Java; lehekülg.</para>
+
+<para
+>Märkekast <guilabel
+>JavaScripti lubamine globaalselt</guilabel
+> võimaldab vaikimisi lubada JavaScripti toe kõigile veebilehekülgedele. Võimalik on määrata ka JavaScripti toe lubamine või keelamine konkreetsetel serveritel või domeenidel. Konkreetse reegli lisamiseks klõpsa nupul <guibutton
+>Uus...</guibutton
+>, mile järel ilmub dialoog, kus saab sisestada masina/domeeni nime ja määrata, kas selle puhul JavaScript lubada või keelata. Seejärel ilmub domeen lehekülje vasakus ääres asuvasse nimekirja.</para>
+
+<para
+>Nimekirjast võib valida hosti või domeeni ning klõpsuga nupul <guibutton
+>Muuda...</guibutton
+> määrata teistsuguse reegli. Klõps nupul <guibutton
+>Kustuta</guibutton
+> eemaldab valitud hosti või domeeni kohta käiva reegli ja pärast seda rakenduvad antud hostile või domeenile globaalsed seadistused.</para>
+<!-- missing section Debugging
+Enable debugger Enables builtin JavaScript debugger.
+Report errors Enables the reporting of errors that occur when JavaScript code is executed.
+How are errors reported? popup window? icon in status bar?
+-->
+<para
+>Viimased valikud sektsioonis <guilabel
+>Üldised JavaScripti reeglid</guilabel
+> võimaldavad määrata, mis juhtub siis, kui lehekülg kasutab JavaScripti teatud konkreetsete toimingute jaoks.</para>
+
+<para
+>Võimalik on ükshaaval keelata või lubada JavaScriptil akendega midagi ette võtta (neid liigutada, suurust muuta või fookusse tuua). Samuti võib keelata JavaScriptil olekuriba teksti muutmise, et saaksid näiteks alati näha, millele ja kuhu osutab leheküljel olev viit, aga mitte JavaScripti tekitatavat teksti. Kõigi nende võimaluste puhul saab valida kas <guilabel
+>Lubatud</guilabel
+> või <guilabel
+>Keelatud</guilabel
+>.</para>
+
+<para
+>Uue akna avamist on võimalik veelgi täpsemalt kontrollida. Võimalikud käsud &konqueror;ile sellisel puhul talitamiseks on: kõik sellised soovid on <guilabel
+>lubatud</guilabel
+> või <guilabel
+>leelatud</guilabel
+>, kui aga ära on märgitud <guilabel
+>Küsitakse</guilabel
+>, siis pärib &konqueror; kasutaja käest, mida teha.</para>
+
+<para
+>Võimalus <guilabel
+>Kaval</guilabel
+> lubab ainult JavaScripti hüpikaknaid ainult juhul, kui sa oled konkreetselt valinud viida, mis sellise akna esile kutsub.</para>
+</sect2>
+
+</sect1>
+
+</article>

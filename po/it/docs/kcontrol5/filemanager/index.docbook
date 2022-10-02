@@ -1,0 +1,131 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Italian "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="filemanager" lang="&language;">
+<articleinfo>
+<title
+>Gestione dei file</title>
+<authorgroup>
+<author
+>&Mike.McBride; &Mike.McBride.mail;</author>
+<othercredit role="translator"
+> <firstname
+>Andrea</firstname
+><surname
+>Celli</surname
+><affiliation
+><address
+><email
+>andrea.celli@libero.it</email
+></address
+></affiliation
+><contrib
+>Traduzione italiana della documentazione</contrib
+></othercredit
+> <othercredit role="translator"
+> <firstname
+>Andrea</firstname
+><surname
+>Rizzi</surname
+><affiliation
+><address
+><email
+>rizzi@kde.org</email
+></address
+></affiliation
+><contrib
+>Traduzione italiana dell'interfaccia grafica</contrib
+></othercredit
+> <othercredit role="translator"
+> <firstname
+>Federico</firstname
+><surname
+>Cozzi</surname
+><affiliation
+> <address
+><email
+>federicocozzi@federicocozzi.it</email
+></address
+></affiliation
+> <contrib
+>Traduzione italiana dell'interfaccia grafica</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>08/11/2016</date>
+<releaseinfo
+>Applications 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Impostazioni di sistema</keyword>
+<keyword
+>gestore dei file</keyword>
+</keywordset>
+</articleinfo>
+
+<para
+>In questi moduli puoi configurare vari aspetti dell'utilizzo di &konqueror; come gestore dei file. </para>
+
+<note
+><para
+>L'utilizzo di &konqueror; come browser è regolato da <ulink url="help:/kcontrol/khtml-behavior/index.html"
+>appositi moduli di configurazione</ulink
+>.</para
+></note>
+
+<variablelist>
+<title
+><guilabel
+>Opzioni varie</guilabel
+></title>
+<varlistentry>
+<term
+><guilabel
+>Apri le cartelle in finestre separate</guilabel
+></term>
+<listitem
+> <para
+>Se questa opzione è attiva, viene aperta una nuova finestra di &konqueror; ogni volta che apri una cartella, invece di mostrare il contenuto della cartella nella finestra attuale.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Mostra le voci di menu «Elimina» che aggirano il cestino</guilabel
+></term>
+<listitem>
+<para
+>Marca questa opzione se vuoi che i comandi del menu <quote
+>Elimina</quote
+> siano mostrati nei menu contestuali del desktop e del gestore di file. Potrai sempre eliminare dei file tenendo premuto il tasto &Shift; mentre utilizzi l'opzione <guimenuitem
+>Cestina</guimenuitem
+>.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Le impostazioni per le <guilabel
+>Modalità di visualizzazione</guilabel
+>, e per le pagine <guilabel
+>Navigazione</guilabel
+>, <guilabel
+>Servizi</guilabel
+>, <guilabel
+>Generale</guilabel
+> e <guilabel
+>Cestino</guilabel
+> del gestore di file &konqueror; vengono utilizzate anche da &dolphin;. </para>
+
+</article>

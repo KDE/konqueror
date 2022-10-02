@@ -1,0 +1,819 @@
+# translation of kcmkio.po to Punjabi
+# Amanpreet Singh Alam <aalam@redhat.com>, 2004, 2005.
+# Amanpreet Singh Brar <amanpreetalam@yahoo.com>, 2005.
+# Amanpreet Singh Brar <aalam@redhat.com>, 2005.
+# Amanpreet Singh Alam <amanpreetalam@yahoo.com>, 2005.
+# A S Alam <aalam@users.sf.net>, 2007, 2008, 2009, 2010, 2011.
+# ASB <aalam@users.sf.net>, 2007.
+# Amanpreet Singh Alam <aalam@users.sf.net>, 2009, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkio\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2012-05-17 22:13+0530\n"
+"Last-Translator: A S Alam <aalam@users.sf.net>\n"
+"Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
+"Language: pa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"\n"
+
+#: bookmarks.cpp:92
+#, kde-format
+msgid ""
+"<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
+"page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
+"\">bookmarks:/</a>.</p>"
+msgstr ""
+"<h1>ਮੇਰੇ ਬੁੱਕਮਾਰਕ</h1><p>ਇਹ ਮੋਡੀਊਲ ਤੁਹਾਨੂੰ ਮੁੱਖ ਸਫ਼ੇ ਲਈ ਬੁੱਕਮਾਰਕ ਦੀ ਸੰਰਚਨਾ ਕਰਨ ਲਈ ਹੈ।</p> "
+"<p>ਬੁੱਕਮਾਰਕ ਮੁੱਖ ਸਫ਼ੇ ਨੂੰ <a href=\"bookmarks:/\">bookmarks:/</a> ਰਾਹੀਂ ਵਰਤਿਆ ਜਾ ਸਕਦਾ "
+"ਹੈ।</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: bookmarks.ui:16
+#, kde-format
+msgid "Bookmarks"
+msgstr "ਬੁੱਕਮਾਰਕ"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowRoot)
+#: bookmarks.ui:23
+#, kde-format
+msgid ""
+"If this option is unchecked, bookmarks at the root of the hierarchy (not in "
+"a folder) are not displayed.\n"
+"If checked, they are gathered in a \"root\" folder."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowRoot)
+#: bookmarks.ui:26
+#, kde-format
+msgid "&Show bookmarks without folder"
+msgstr "ਬਿਨਾਂ ਫੋਲਡਰ ਬੁੱਕਮਾਰਕ ਵੇਖੋ(&S)"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbFlattenTree)
+#: bookmarks.ui:37
+#, kde-format
+msgid ""
+"Sub-folders are shown within their parent by default. If you activate this "
+"option, sub-folders are displayed on their own.\n"
+"It looks less nice but it may help if you have a very big folder you want to "
+"spread in two columns."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbFlattenTree)
+#: bookmarks.ui:40
+#, kde-format
+msgid "&Flatten bookmarks tree"
+msgstr "ਬੁੱਕਮਾਰਕ ਟਰੀ ਸਮਤਲ(&F)"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowPlaces)
+#: bookmarks.ui:47
+#, kde-format
+msgid ""
+"Show a box with KDE places (Home, Network, ...). Useful if you use konqueror "
+"as a file manager."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowPlaces)
+#: bookmarks.ui:50
+#, kde-format
+msgid "Show system &places"
+msgstr "ਸਿਸਟਮ ਥਾਵਾਂ ਵੇਖੋ(&p)"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: bookmarks.ui:63
+#, kde-format
+msgid "General Settings"
+msgstr "ਆਮ ਸੈਟਿੰਗ"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, label)
+#: bookmarks.ui:71
+#, kde-format
+msgid ""
+"Folders are automatically distributed in several columns. The optimal number "
+"of columns depends on the width of the konqueror window and the number of "
+"bookmarks you have."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: bookmarks.ui:74
+#, kde-format
+msgid "Number of columns to show:"
+msgstr "ਵੇਖਾਉਣ ਲਈ ਕਾਲਮਾਂ ਦੀ ਗਿਣਤੀ:"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowBackgrounds)
+#: bookmarks.ui:109
+#, kde-format
+msgid "Disable it on slow system to disable background images."
+msgstr "ਹੌਲੀ ਸਿਸਟਮ ਉੱਤੇ ਬੈਕਗਰਾਊਂਡ ਚਿੱਤਰ ਆਯੋਗ ਕਰਨ ਲਈ ਇਹ ਆਯੋਗ ਕਰੋ।"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowBackgrounds)
+#: bookmarks.ui:112
+#, kde-format
+msgid "Show folder &backgrounds"
+msgstr "ਫੋਲਡਰ ਬੈਕਗਰਾਊਂਡ ਵੇਖੋ(&b)"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, groupBox_3)
+#: bookmarks.ui:138
+#, kde-format
+msgid "How much disk space is used to cache the pixmaps"
+msgstr "ਕੈਸ਼ ਪਿਕਸਮੈਪ ਲਈ ਕਿੰਨੀ ਡਿਸਕ ਥਾਂ ਵਰਤੀ"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: bookmarks.ui:141
+#, kde-format
+msgid "Pixmap Cache"
+msgstr "ਪਿਕਸਮੈਪ ਕੈਸ਼"
+
+#. i18n: ectx: property (text), widget (QLabel, lbMaxCacheSize)
+#: bookmarks.ui:150
+#, kde-format
+msgid "Disk cache size:"
+msgstr "ਡਿਸਕ ਕੈਸ਼ ਸਾਈਜ਼:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, sbCacheSize)
+#: bookmarks.ui:163
+#, kde-format
+msgid " kB"
+msgstr " kB"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, clearCacheButton)
+#: bookmarks.ui:173
+#, kde-format
+msgid "Clear the pixmap cache"
+msgstr "ਪਿਕਸਮੈਪ ਕੈਸ਼ ਸਾਫ਼ ਕਰੋ"
+
+#. i18n: ectx: property (text), widget (QPushButton, clearCacheButton)
+#: bookmarks.ui:176
+#, kde-format
+msgid "&Clear Cache"
+msgstr "ਕੈਸ਼ ਸਾਫ ਕਰੋ(&l)"
+
+#~ msgid "&Use cache"
+#~ msgstr "ਕੈਸ਼ ਵਰਤੋਂ(&U)"
+
+#~ msgid "Policy"
+#~ msgstr "ਪਾਲਸੀ"
+
+#~ msgid ""
+#~ "Verify whether the cached web page is valid before attempting to fetch "
+#~ "the web page again."
+#~ msgstr "ਜਾਂਚ ਕਰੋ ਕਿ ਕੈਸ਼ ਵੈੱਬ ਸਫਾ ਜਾਇਜ ਹੈ, ਇਸ ਪਹਿਲਾਂ ਕਿ ਇਸ ਨੂੰ ਖੋਲਿਆ ਜਾਵੇ।"
+
+#~ msgid "&Keep cache in sync"
+#~ msgstr "ਸੈਕਰੋ (sync) ਵਿੱਚ ਕੈਸ਼ ਰੱਖੋ(&K)"
+
+#~ msgid ""
+#~ "Always use documents from the cache when available. You can still use the "
+#~ "reload button to synchronize the cache with the remote host."
+#~ msgstr ""
+#~ "ਹਮੇਸ਼ਾ ਡੌਕੂਮੈਂਟ ਨੂੰ ਕੈਸ਼ ਵਿੱਚੋਂ ਹੀ ਵਰਤੋਂ, ਜਦੋਂ ਵੀ ਇਹ ਸੰਭਵ ਹੋਵੇ। ਤੁਸੀਂ ਹਾਲੇ ਵੀ ਮੁੜ-ਤਾਜ਼ਾ ਬਟਨ ਨੂੰ ਕੈਸ਼ "
+#~ "ਰਿਮੋਟ ਹੋਸਟ ਨਾਲ ਸਮਕਾਲੀ ਕਰਨ ਲਈ ਵਰਤ ਸਕਦੇ ਹੋ।"
+
+#~ msgid "Use cache whenever &possible"
+#~ msgstr "ਜਦੋਂ ਵੀ ਸੰਭਵ ਹੋਵੇ ਤਾਂ ਕੈਸ਼ ਵਰਤੋਂ(&p)"
+
+#~ msgid "O&ffline browsing mode"
+#~ msgstr "ਆਫਲਾਇਨ ਬਰਾਊਜ਼ਿੰਗ ਮੋਡ(&f)"
+
+#~ msgid "Disk cache &size:"
+#~ msgstr "ਡਿਸਕ ਕੈਸ਼ ਆਕਾਰ(&s):"
+
+#~ msgid " KiB"
+#~ msgstr " KiB"
+
+#~ msgid "C&lear Cache"
+#~ msgstr "ਕੈਸ਼ ਸਾਫ ਕਰੋ(&l)"
+
+#~ msgid ""
+#~ "Unable to start the cookie handler service.\n"
+#~ "You will not be able to manage the cookies that are stored on your "
+#~ "computer."
+#~ msgstr ""
+#~ "ਕੂਕੀਜ ਹੈਂਡਲਰ ਸੇਵਾ ਸੁਰੂ ਕਰਨ ਵਿੱਚ ਅਸਫਲ\n"
+#~ "ਤੁਸੀਂ ਆਪਣੇ ਕੰਪਿਊਟਰ ਤੇ ਸੰਭਾਲੇ ਕੂਕੀਜ਼ ਦਾ ਪਰਬੰਧਨ ਨਹੀਂ ਕਰ ਸਕਦੇ ਹੋ।"
+
+#~ msgid "&Policy"
+#~ msgstr "ਪਾਲਸੀ(&P)"
+
+#~ msgid "&Management"
+#~ msgstr "ਪਰਬੰਧ(&M)"
+
+#~ msgid "D-Bus Communication Error"
+#~ msgstr "D-Bus ਕਮਿਊਨੀਕੇਸ਼ਨ ਗਲਤੀ"
+
+#~ msgid "Unable to delete all the cookies as requested."
+#~ msgstr "ਲੋੜ ਮੁਤਾਬਕ ਸਭ ਕੂਕੀਜ਼ ਹਟਾਉਣ ਲਈ ਅਸਮਰੱਥ ਹੈ।"
+
+#~ msgid "Unable to delete cookies as requested."
+#~ msgstr "ਬੇਨਤੀ ਉੱਤੇ ਸਭ ਕੂਕੀਜ਼ ਹਟਾਉਣ ਤੇ ਅਸਫਲ"
+
+#~ msgid "<h1>Cookie Management Quick Help</h1>"
+#~ msgstr "<h1>ਕੂਕੀਜ ਪਰਬੰਧਨ ਤੁਰੰਤ ਮੱਦਦ</h1>"
+
+#~ msgid "Information Lookup Failure"
+#~ msgstr "ਜਾਣਕਾਰੀ ਖੋਜ ਅਸਫਲ"
+
+#~ msgid ""
+#~ "Unable to retrieve information about the cookies stored on your computer."
+#~ msgstr "ਤੁਹਾਡੇ ਕੰਪਿਊਟਰ ਤੇ ਸਟੋਰ ਕੂਕੀਜ਼ ਬਾਰੇ ਜਾਣਕਾਰੀ ਪ੍ਰਾਪਤ ਨਹੀਂ ਕੀਤੀ ਜਾ ਸਕਦੀ ਹੈ।"
+
+#~ msgid "End of session"
+#~ msgstr "ਸ਼ੈਸ਼ਨ ਦਾ ਅੰਤ"
+
+#~ msgid "Yes"
+#~ msgstr "ਹਾਂ"
+
+#~ msgid "Search"
+#~ msgstr "ਖੋਜ"
+
+#~ msgid "Search interactively for domains and hosts"
+#~ msgstr "ਡੋਮੇਨਾਂ ਅਤੇ ਹੋਸਟਾਂ ਲਈ ਖਾਸ ਖੋਜ"
+
+#~ msgid "Site"
+#~ msgstr "ਸਾਈਟ"
+
+#~ msgid "Cookie Name"
+#~ msgstr "ਕੂਕੀਜ਼ ਨਾਂ"
+
+#~ msgid "D&elete"
+#~ msgstr "ਹਟਾਓ(&e)"
+
+#~ msgid "Delete A&ll"
+#~ msgstr "ਸਭ ਹਟਾਓ(&l)"
+
+#, fuzzy
+#~| msgid "Change &Policy..."
+#~ msgid "Configure &Policy..."
+#~ msgstr "ਪਾਲਸੀ ਬਦਲੋ(&P)..."
+
+#~ msgid "&Reload List"
+#~ msgstr "ਲਿਸਟ ਮੁੜ ਲੋਡ(&R)"
+
+#~ msgid "Details"
+#~ msgstr "ਵੇਰਵਾ"
+
+#~ msgid "Name:"
+#~ msgstr "ਨਾਂ:"
+
+#~ msgid "Value:"
+#~ msgstr "ਮੁੱਲ:"
+
+#~ msgid "Domain:"
+#~ msgstr "ਡੋਮੇਨ:"
+
+#~ msgid "Path:"
+#~ msgstr "ਮਾਰਗ:"
+
+#~ msgid "Expires:"
+#~ msgstr "ਮਿਆਦ:"
+
+#~ msgid "Secure:"
+#~ msgstr "ਸੁਰੱਖਿਅਤ:"
+
+#~ msgctxt "@title:window"
+#~ msgid "Change Cookie Policy"
+#~ msgstr "ਕੂਕੀਜ਼ ਪਾਲਸੀ ਬਦਲੋ"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Cookie Policy"
+#~ msgstr "ਨਵੀਂ ਕੂਕੀਜ਼ ਪਾਲਸੀ"
+
+#~ msgid ""
+#~ "<qt>A policy already exists for<center><b>%1</b></center>Do you want to "
+#~ "replace it?</qt>"
+#~ msgstr ""
+#~ "<qt><center><b>%1</b>ਲਈ ਇੱਕ ਪਾਲਸੀ ਮੌਜੂਦ ਹੈ।</center> ਕੀ ਤੁਸੀਂ ਇਸ ਨੂੰ ਤਬਦੀਲ ਕਰਨਾ "
+#~ "ਚਾਹੁੰਦੇ ਹੋ?</qt>"
+
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Policy"
+#~ msgstr "ਡੁਪਲੀਕੇਟ ਪਾਲਸੀ"
+
+#~ msgid "Replace"
+#~ msgstr "ਤਬਦੀਲ"
+
+#~ msgid ""
+#~ "Unable to communicate with the cookie handler service.\n"
+#~ "Any changes you made will not take effect until the service is restarted."
+#~ msgstr ""
+#~ "ਕੂਕੀਜ਼ ਹੈਂਡਰ ਸਰਵਿਸ ਨਾਲ ਸੰਚਾਰ ਕਰਨ ਵਿੱਚ ਅਸਫਲ\n"
+#~ "ਕੋਈ ਤਬਦੀਲ, ਜੋ ਵੀ ਤੁਸੀਂ ਕੀਤੀ ਹੈ, ਨੂੰ ਸਰਵਿਸ ਦੇ ਮੁੜ ਤਬਦੀਲ ਕਰਨ ਤੱਕ ਲਾਗੂ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕੇਗਾ।"
+
+#~ msgid "Enable coo&kies"
+#~ msgstr "ਕੂਕੀਜ਼ ਯੋਗ(&k)"
+
+#~ msgid "Automaticall&y accept session cookies"
+#~ msgstr "ਆਟੋਮੈਟਿਕ ਸ਼ੈਸ਼ਨ ਕੂਕੀਜ਼ ਸਵੀਕਾਰ(&y)"
+
+#~ msgid "Default Policy"
+#~ msgstr "ਡਿਫਾਲਟ ਪਾਲਸੀ"
+
+#~ msgid "Accep&t all cookies"
+#~ msgstr "ਸਭ ਕੂਕੀਜ਼ ਮਨਜ਼ੂਰ(&t)"
+
+#, fuzzy
+#~| msgid "End of session"
+#~ msgid "Accept &until end of session"
+#~ msgstr "ਸ਼ੈਸ਼ਨ ਦਾ ਅੰਤ"
+
+#~ msgid "Ask &for confirmation"
+#~ msgstr "ਪੁਸ਼ਟੀ ਲਈ ਪੁੱਛੋ(&f)"
+
+#~ msgid "Re&ject all cookies"
+#~ msgstr "ਸਭ ਕੂਕੀਜ਼ ਨਾ-ਮਨਜ਼ੂਰ(&j)"
+
+#~ msgid "Site Policy"
+#~ msgstr "ਸਾਇਟ ਪਾਲਸੀ"
+
+#~ msgid "Search interactively for domains"
+#~ msgstr "ਖਾਸ ਡੋਮੇਨ ਲਈ ਖੋਜ"
+
+#~ msgid "Domain"
+#~ msgstr "ਡੋਮੇਨ"
+
+#~ msgid "&New..."
+#~ msgstr "ਨਵਾਂ(&N)..."
+
+#~ msgid "Chan&ge..."
+#~ msgstr "ਤਬਦੀਲ(&g)..."
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the host or domain to which this policy applies, e.g. <b>www.kde."
+#~ "org</b> or <b>.kde.org</b>.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "ਇਹ ਨੀਤੀ ਲਾਗੂ ਕਰਨ ਲਈ ਹੋਸਟ ਜਾਂ ਡੋਮੇਨ ਦਿਓ, ਜਿਵੇਂ ਕਿ <b>www.kde.org</b> ਜਾਂ <b>.kde."
+#~ "org</b>.\n"
+#~ "</qt>"
+
+#~ msgid "Site name:"
+#~ msgstr "ਸਾਈਟ ਨਾਂ:"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Select the desired policy:\n"
+#~| "<ul>\n"
+#~| "<li><b>Accept</b> - Allows this site to set cookies</li>\n"
+#~| "<li><b>Reject</b> - Refuse all cookies sent from this site</li>\n"
+#~| "<li><b>Ask</b> - Prompt when cookies are received from this site</li>\n"
+#~| "</ul>\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Select the desired policy:\n"
+#~ "<ul>\n"
+#~ "<li><b>Accept</b> - Allows this site to set cookies</li>\n"
+#~ "<li><b>Accept until end of session</b> - Allows this site to set cookies "
+#~ "but they will expire at the end of the session.</li>\n"
+#~ "<li><b>Reject</b> - Refuse all cookies sent from this site</li>\n"
+#~ "<li><b>Ask</b> - Prompt when cookies are received from this site</li>\n"
+#~ "</ul>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "ਪਸੰਦੀਦਾ ਨੀਤੀ ਚੁਣੋ:\n"
+#~ "<ul>\n"
+#~ "<li><b> ਸਵੀਕਾਰ</b> - ਇਸ ਸਾਇਟ ਨੂੰ ਕੂਕੀਜ਼ ਸੈੱਟ ਕਰਨ ਦਿਓ</li>\n"
+#~ "<li><b> ਅਸਵੀਕਾਰ</b> - ਇਸ ਸਾਇਟ ਤੋਂ ਸਭ ਕੂਕੀਜ਼ ਅਸਵੀਕਾਰ ਕਰੋ</li>\n"
+#~ "<li><b>ਪੁਸ਼ਟੀ</b> - ਜਦੋਂ ਵੀ ਇਸ ਸਾਇਟ ਤੋਂ ਕੂਕੀਜ਼ ਪ੍ਰਾਪਤ ਹੋਣ ਤੇ ਪੁੱਛੋ</li>\n"
+#~ "</ul>\n"
+#~ "</qt>"
+
+#~ msgid "Policy:"
+#~ msgstr "ਨੀਤੀ:"
+
+#~ msgid "Accept"
+#~ msgstr "ਮਨਜ਼ੂਰ"
+
+#, fuzzy
+#~| msgid "End of session"
+#~ msgid "Accept until end of session"
+#~ msgstr "ਸ਼ੈਸ਼ਨ ਦਾ ਅੰਤ"
+
+#~ msgid "Reject"
+#~ msgstr "ਨਾ-ਮਨਜ਼ੂਰ"
+
+#~ msgid "Ask"
+#~ msgstr "ਪੁੱਛੋ"
+
+#~ msgid "Disable Passive FTP"
+#~ msgstr "ਅਕਰਮਕ FTP ਅਯੋਗ"
+
+#~ msgid "Mark partially uploaded files"
+#~ msgstr "ਅਧੂਰੀਆਂ ਅੱਪਲੋਡ ਫਾਇਲਾਂ ਨਿਸ਼ਾਨਬੱਧ ਕਰੋ"
+
+#~ msgid "Connect to the Internet directly."
+#~ msgstr "ਇੰਟਰਨੈੱਟ ਨਾਲ ਸਿੱਧਾ ਕੁਨੈਕਟ ਕਰੋ।"
+
+#~ msgid "No Proxy"
+#~ msgstr "ਕੋਈ ਪਰਾਕਸੀ ਨਹੀਂ"
+
+#~ msgid "Detect proxy configuration automatically"
+#~ msgstr "ਪਰਾਕਸੀ ਸੰਰਚਨਾ ਆਟੋਮੈਟਿਕ ਹੀ ਖੋਜੋ"
+
+#~ msgid "Use the specified proxy script to configure the proxy settings."
+#~ msgstr "ਪਰਾਕਸੀ ਸੈਟਿੰਗ ਲਈ ਦਿੱਤੀ ਪਰਾਕਸੀ ਸਕਰਿਪਟ ਵਰਤੋਂ।"
+
+#~ msgid "Use proxy auto configuration URL:"
+#~ msgstr "ਪਰਾਕਸੀ ਆਪੇ ਸੰਰਚਨਾ URL ਵਰਤੋਂ:"
+
+#~ msgid "Enter the address for the proxy configuration script."
+#~ msgstr "ਪਰਾਕਸੀ ਸੰਰਚਨਾ ਸਕਰਿਪਟ ਲਈ ਐਡਰੈੱਸ ਦਿਓ।"
+
+#~ msgid "Use system proxy configuration:"
+#~ msgstr "ਸਿਸਟਮ ਪਰਾਕਸੀ ਸੰਰਚਨਾ ਵਰਤੋਂ:"
+
+#~ msgid "Auto D&etect"
+#~ msgstr "ਆਟੋ ਖੋਜ(&e)"
+
+#~ msgid "HTTP Proxy:"
+#~ msgstr "HTTP ਪਰਾਕਸੀ:"
+
+#~ msgid "SSL Proxy:"
+#~ msgstr "SSL ਪਰਾਕਸੀ:"
+
+#~ msgid "FTP Proxy:"
+#~ msgstr "FTP ਪਰਾਕਸੀ:"
+
+#~ msgid "SOCKS Proxy:"
+#~ msgstr "SOCKS ਪਰਾਕਸੀ:"
+
+#~ msgid "Exceptions:"
+#~ msgstr "ਛੋਟ:"
+
+#~ msgid "Show the &value of the environment variables"
+#~ msgstr "ਵਾਤਾਵਰਣ ਵੇਰੀਬਲਾਂ ਦਾ ਮੁੱਲ ਵੇਖਾਓ(&v)"
+
+#~ msgid "Manually enter proxy server configuration information."
+#~ msgstr "ਪਰਾਕਸੀ ਸਰਵਰ ਸੰਰਚਨਾ ਜਾਣਕਾਰੀ ਦਸਤੀ ਦਿਓ।"
+
+#~ msgid "Use manually specified proxy configuration:"
+#~ msgstr "ਦਿੱਤੀ ਹੋਈ ਪਰਾਕਸੀ ਜਾਣਕਾਰੀ ਖੁਦ ਦਿਉ:"
+
+#~ msgid "Enter the address of the HTTP proxy server."
+#~ msgstr "HTTP ਪਰਾਕਸੀ ਸਰਵਰ ਦਾ ਐਡਰੈੱਸ ਦਿਓ"
+
+#~ msgid "Port:"
+#~ msgstr "ਪੋਰਟ:"
+
+#~ msgid "Enter the port number of the HTTP proxy server."
+#~ msgstr "HTTP ਪਰਾਕਸੀ ਸਰਵਰ ਦਾ ਪੋਰਟ ਨੰਬਰ ਦਿਓ।"
+
+#~ msgid "Use this proxy server for a&ll protocols"
+#~ msgstr "ਸਭ ਪਰੋਟੋਕਾਲ ਲਈ ਇਹ ਪਰਾਕਸੀ ਸਰਵਰ ਵਰਤੋਂ(&l)"
+
+#~ msgid "Enter the address of the HTTPS proxy server."
+#~ msgstr "HTTPS ਪਰਾਕਸੀ ਸਰਵਰ ਦਾ ਐਡਰੈੱਸ ਦਿਓ"
+
+#~ msgid "Enter the port number of the HTTPS proxy server."
+#~ msgstr "HTTPS ਪਰਾਕਸੀ ਸਰਵਰ ਦਾ ਪੋਰਟ ਨੰਬਰ ਦਿਓ।"
+
+#~ msgid "Enter the address of the FTP proxy server."
+#~ msgstr "FTP ਪਰਾਕਸੀ ਸਰਵਰ ਦਾ ਐਡਰੈੱਸ ਦਿਓ"
+
+#~ msgid "Enter the port number of the FTP proxy server."
+#~ msgstr "FTP ਪਰਾਕਸੀ ਸਰਵਰ ਦਾ ਪੋਰਟ ਨੰਬਰ ਦਿਉ।"
+
+#~ msgid "Enter the address of the SOCKS proxy server."
+#~ msgstr "SOCKS ਪਰਾਕਸੀ ਸਰਵਰ ਦਾ ਐਡਰੈੱਸ ਦਿਓ।"
+
+#~ msgid "Enter the port number of the SOCKS proxy server."
+#~ msgstr "SOCKS ਪਰਾਕਸੀ ਸਰਵਰ ਦਾ ਪੋਰਟ ਨੰਬਰ ਦਿਉ।"
+
+#, fuzzy
+#~| msgid "Use proxy only for entries in this list"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Check this box if you want the above proxy settings to apply only to the "
+#~ "addresses listed in the <i>Exceptions</i> list.</qt>"
+#~ msgstr "ਇਸ ਲਿਸਟ ਵਿਚਲੇ ਇੰਦਰਾਜ਼ਾਂ ਲਈ ਹੀ ਪਰਾਕਸੀ ਵਰਤੋਂ"
+
+#, fuzzy
+#~| msgid "Use proxy only for entries in this list"
+#~ msgid "Use proxy settings only for addresses in the Exceptions list"
+#~ msgstr "ਇਸ ਲਿਸਟ ਵਿਚਲੇ ਇੰਦਰਾਜ਼ਾਂ ਲਈ ਹੀ ਪਰਾਕਸੀ ਵਰਤੋਂ"
+
+#~ msgid ""
+#~ "You have to restart the running applications for these changes to take "
+#~ "effect."
+#~ msgstr "ਤੁਹਾਨੂੰ ਤਬਦੀਲੀਆਂ ਲਾਗੂ ਕਰਨ ਲਈ ਤੁਹਾਨੂੰ ਚੱਲ ਰਹੀ ਸਰਵਿਸ ਮੁੜ ਚਾਲੂ ਕਰਨੀ ਪਵੇਗੀ।"
+
+#~ msgctxt "@title:window"
+#~ msgid "Update Failed"
+#~ msgstr "ਅੱਪਡੇਟ ਅਸਫਲ"
+
+#~ msgid "You have to restart KDE for these changes to take effect."
+#~ msgstr "ਇਹਨਾਂ ਤਬਦੀਲੀਆਂ ਨੂੰ ਲਾਗੂ ਕਰਨ ਲਈ ਤੁਹਾਨੂੰ KDE ਮੁੜ ਚਾਲੂ ਕਰਨਾ ਪਵੇਗਾ।"
+
+#~ msgid "Timeout Values"
+#~ msgstr "ਟਾਈਮ-ਆਉਟ ਮੁੱਲ"
+
+#~ msgid " second"
+#~ msgid_plural " seconds"
+#~ msgstr[0] " ਸਕਿੰਟ"
+#~ msgstr[1] " ਸਕਿੰਟ"
+
+#~ msgid "Soc&ket read:"
+#~ msgstr "ਸਾਕਟ ਪੜ੍ਹੇ(&k):"
+
+#~ msgid "Pro&xy connect:"
+#~ msgstr "ਪਰਾਕਸੀ ਕੁਨੈਕਟ(&x):"
+
+#~ msgid "Server co&nnect:"
+#~ msgstr "ਸਰਵਰ ਕੁਨੈਕਟ(&n):"
+
+#~ msgid "&Server response:"
+#~ msgstr "ਸਰਵਰ ਜਵਾਬ(&S):"
+
+#~ msgid "FTP Options"
+#~ msgstr "FTP ਚੋਣ"
+
+#~ msgid "Enable passive &mode (PASV)"
+#~ msgstr "ਅਕਰਮਕ ਢੰਗ ਯੋਗ(&m) (PASV)"
+
+#~ msgid "Mark &partially uploaded files"
+#~ msgstr "ਅਧੂਰੀ ਅੱਪਲੋਡ ਫਾਇਲਾਂ ਨਿਸ਼ਾਨਬੱਧ ਕਰੋ(&p)"
+
+#~ msgid ""
+#~ "<h1>Network Preferences</h1>Here you can define the behavior of KDE "
+#~ "programs when using Internet and network connections. If you experience "
+#~ "timeouts or use a modem to connect to the Internet, you might want to "
+#~ "adjust these settings."
+#~ msgstr ""
+#~ "<h1>ਨੈੱਟਵਰਕ ਪਸੰਦ</h1>ਇੱਥੇ ਤੁਸੀਂ ਇੰਟਰਨੈੱਟ ਤੇ ਨੈੱਟਵਰਕ ਕੁਨੈਕਸ਼ਨ ਵਰਤਣ ਲਈ KDE ਪਰੋਗਰਾਮਾਂ ਦਾ ਰਵੱਈਆ "
+#~ "ਪਰਿਭਾਸ਼ਤ ਕਰ ਸਕਦੇ ਹੋ। ਜੇਕਰ ਤੁਹਾਨੂੰ ਮਾਡਮ ਨੂੰ ਇੰਟਰਨੈੱਟ ਨਾਲ ਜੁੜਨ ਸਮੇਂ ਸਮਾਂ-ਸਮਾਪਤੀ ਦੀ ਸਮੱਸਿਆ ਆ "
+#~ "ਰਹੀ ਹੋਵੇ ਤਾਂ ਤੁਸੀਂ ਇਸ ਸੈਟਿੰਗ ਨੂੰ ਠੀਕ ਕਰਨਾ ਚਾਹੋਗੇ।"
+
+#~ msgid "These settings apply to network browsing only."
+#~ msgstr "ਇਹ ਸੈਟਿੰਗ ਕੇਵਲ ਨੈੱਟਵਰਕ ਬਰਾਊਜ਼ਿੰਗ ਲਈ ਹੀ ਲਾਗੂ ਹੈ।"
+
+#~ msgid "Default user name:"
+#~ msgstr "ਡਿਫਾਲਟ ਯੂਜ਼ਰ ਨਾਂ:"
+
+#~ msgid "Default password:"
+#~ msgstr "ਡਿਫਾਲਟ ਪਾਸਵਰਡ:"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add Identification"
+#~ msgstr "ਪਛਾਣ ਸ਼ਾਮਲ"
+
+#~ msgctxt "@title:window"
+#~ msgid "Modify Identification"
+#~ msgstr "ਪਛਾਣ ਸੋਧੋ"
+
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Identification"
+#~ msgstr "ਡੁਪਲੀਕੇਟ ਪਛਾਣ"
+
+#~ msgid "&Send identification"
+#~ msgstr "ਪਛਾਣ ਭੇਜੋ(&S)"
+
+#~ msgid "Default Identification"
+#~ msgstr "ਮੂਲ ਪਛਾਣ"
+
+#~ msgid "Add operating s&ystem name"
+#~ msgstr "ਓਪਰੇਟਿੰਗ ਸਿਸਟਮ ਨਾਂ ਸ਼ਾਮਲ ਕਰੋ(&y)"
+
+#~ msgid "Add operating system &version"
+#~ msgstr "ਓਪਰੇਟਿੰਗ ਸਿਸਟਮ ਵਰਜਨ ਸ਼ਾਮਲ(&v)"
+
+#~ msgid "Add &machine (processor) type"
+#~ msgstr "ਮਸ਼ੀਨ (ਪਰੋਸੈਂਸਰ) ਕਿਸਮ ਸ਼ਾਮਲ(&m)"
+
+#~ msgid "Add lang&uage information"
+#~ msgstr "ਭਾਸ਼ਾ ਜਾਣਕਾਰੀ ਸ਼ਾਮਲ(&u)"
+
+#~ msgid "Site Specific Identification"
+#~ msgstr "ਸਾਇਟ ਖਾਸ ਪਛਾਣ"
+
+#~ msgid "Site Name"
+#~ msgstr "ਸਾਈਟ ਨਾਂ"
+
+#~ msgid "Identification"
+#~ msgstr "ਪਛਾਣ"
+
+#~ msgid "User Agent"
+#~ msgstr "ਯੂਜ਼ਰ ਏਜੰਟ"
+
+#~ msgid "Add new identification text for a site."
+#~ msgstr "ਇੱਕ ਸਾਇਟ ਲਈ ਨਵੀਂ ਪਛਾਣ ਜਾਣਕਾਰੀ ਸ਼ਾਮਲ ਕਰੋ।"
+
+#~ msgid "Change the selected identifier text."
+#~ msgstr "ਚੁਣੇ ਪਛਾਣ ਟੈਕਸਟ ਨੂੰ ਬਦਲੋ।"
+
+#~ msgid "Delete the selected identifier text."
+#~ msgstr "ਚੁਣੀ ਪਛਾਣ ਟੈਕਸਟ ਹਟਾਉ।"
+
+#~ msgid "Delete all identifiers."
+#~ msgstr "ਸਭ ਪਛਾਣ ਹਟਾਓ"
+
+#~ msgid "&When browsing the following site:"
+#~ msgstr "ਜਦੋਂ ਵੀ ਹੇਠ ਦਿੱਤੀ ਸਾਈਟ ਬਰਾਊਜ਼ਰ ਕਰੋ(&W):"
+
+#~ msgid "&Use the following identification:"
+#~ msgstr "ਹੇਠ ਲਿਖੀ ਪਛਾਣ ਵਰਤੋਂ(&U):"
+
+#~ msgid "Real identification:"
+#~ msgstr "ਅਸਲੀ ਪਛਾਣ:"
+
+#~ msgid "Treat &all cookies as session cookies"
+#~ msgstr "ਸਭ ਕੂਕੀਜ਼ ਨੂੰ ਸ਼ੈਸ਼ਨ ਕੂਕੀਜ਼ ਹੀ ਮੰਨ ਕੇ ਚੱਲੋ(&a)"
+
+#~ msgid ""
+#~ "Enter the port number of the HTTP proxy server. Default is 8080. Another "
+#~ "common value is 3128."
+#~ msgstr "HTTP ਪਰਾਕਸੀ ਸਰਵਰ ਲਈ ਪੋਰਟ ਨੰਬਰ ਦਿਓ। ਮੂਲ 8080 ਹੈ। ਇੱਕ ਹੋਰ ਆਮ ਮੁੱਲ 3128 ਹੈ।"
+
+#~ msgid ""
+#~ "Enter the port number of the FTP proxy server. Default 8080. Another "
+#~ "common value is 3128."
+#~ msgstr "FTP ਪਰਾਕਸੀ ਸਰਵਰ ਲਈ ਪੋਰਟ ਨੰਬਰ ਦਿਓ। ਮੂਲ 8080 ਹੈ। ਇੱਕ ਹੋਰ ਆਮ ਮੁੱਲ 3128 ਹੈ।"
+
+#~ msgctxt "@title:window"
+#~ msgid "Variable Proxy Configuration"
+#~ msgstr "ਬਦਲਣਯੋਗ ਪਰਾਕਸੀ ਸੰਰਚਨਾ"
+
+#~ msgid "You must specify at least one valid proxy environment variable."
+#~ msgstr "ਤੁਹਾਨੂੰ ਘੱਟੋ-ਘੱਟ ਇੱਕ ਜਾਇਜ ਪਰਾਕਸੀ ਇੰਵਾਇਰਨਮੈਂਟ ਵੇਰੀਬਲ ਪਰਿਭਾਸ਼ਤ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ।"
+
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Proxy Setup"
+#~ msgstr "ਗਲਤ ਪਰਾਕਸੀ ਸੈੱਟਅੱਪ"
+
+#~ msgid "Successfully verified."
+#~ msgstr "ਸਫਲਤਾਪੂਰਕ ਜਾਂਚ"
+
+#~ msgctxt "@title:window"
+#~ msgid "Proxy Setup"
+#~ msgstr "ਪਰਾਕਸੀ ਸੈੱਟਅੱਪ"
+
+#~ msgctxt "@title:window"
+#~ msgid "Automatic Proxy Variable Detection"
+#~ msgstr "ਆਟੋਮੈਟਿਕ ਪਰਾਕਸੀ ਵੇਰੀਬਲ ਖੋਜ"
+
+#~ msgctxt "@title:window"
+#~ msgid "Manual Proxy Configuration"
+#~ msgstr "ਦਸਤੀ ਸੰਰਚਨਾ ਸੰਰਚਨਾ"
+
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Proxy Setting"
+#~ msgstr "ਗਲਤ ਪਰਾਕਸੀ ਸੈਟਿੰਗ"
+
+#~ msgid ""
+#~ "One or more of the specified proxy settings are invalid. The incorrect "
+#~ "entries are highlighted."
+#~ msgstr "ਇੱਕ ਜਾਂ ਵਧੇਰੇ ਪਰਾਕਸੀ ਸੈਟਿੰਗ ਠੀਕ ਨਹੀਂ ਹੈ। ਗਲਤ ਇਕਾਈ ਉਭਾਰ ਕੇ ਵੇਖਾਈ ਜਾ ਰਹੀ ਹੈ।"
+
+#~ msgid "You entered a duplicate address. Please try again."
+#~ msgstr "ਤੁਸੀਂ ਐਡਰੈੱਸ ਦੋ ਵਾਰੀ ਦੇ ਦਿੱਤਾ ਹੈ, ਕਿਰਪਾ ਕਰਕੇ ਮੁੜ ਕੋਸ਼ਸ਼ ਕਰੋ।"
+
+#~ msgid "<qt><center><b>%1</b></center> is already in the list.</qt>"
+#~ msgstr "<qt><center><b>%1</b></center> ਲਿਸਟ ਵਿੱਚ ਪਹਿਲਾਂ ਹੀ ਹੈ।</qt>"
+
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Entry"
+#~ msgstr "ਡੁਪਲੀਕੇਟ ਐਂਟਰੀ"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Exception"
+#~ msgstr "ਨਵੀਂ ਛੋਟ"
+
+#~ msgctxt "@title:window"
+#~ msgid "Change Exception"
+#~ msgstr "ਛੋਟ ਬਦਲੋ"
+
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Entry"
+#~ msgstr "ਗਲਤ ਐਂਟਰੀ"
+
+#~ msgid "The address you have entered is not valid."
+#~ msgstr "ਜੋ ਐਡਰੈੱਸ ਤੁਸੀਂ ਦਿੱਤਾ ਹੈ, ਉਹ ਗਲਤ ਹੈ।"
+
+#~ msgid "Enter the URL or address that should use the above proxy settings:"
+#~ msgstr "URL ਜਾਂ ਐਡਰੈੱਸ, ਜੋ ਕਿ ਉੱਪਰ ਦਿਤੀ ਪਰਕਾਸੀ ਸੈਟਿੰਗ ਵਰਤੇਗਾ,ਲਿਖੋ:"
+
+#~ msgid ""
+#~ "Enter the address or URL that should be excluded from using the above "
+#~ "proxy settings:"
+#~ msgstr "URL ਜਾਂ ਐਡਰੈੱਸ, ਜੋ ਕਿ ਉੱਪਰ ਦਿਤੀ ਪਰਕਾਸੀ ਸੈਟਿੰਗ ਨੂੰ ਵਰਤ ਸਕੇਗਾ,ਲਿਖੋ:"
+
+#~ msgid "H&TTP:"
+#~ msgstr "H&TTP:"
+
+#~ msgid "HTTP&S:"
+#~ msgstr "HTTP&S:"
+
+#~ msgid "&FTP:"
+#~ msgstr "&FTP:"
+
+#~ msgid "NO &PROXY:"
+#~ msgstr "ਕੋਈ ਪਰਾਕਸੀ(&P):"
+
+#~ msgid "&Verify"
+#~ msgstr "ਜਾਂਚ(&V)"
+
+#~ msgid "Connect to the &Internet directly"
+#~ msgstr "ਇੰਟਰਨੈੱਟ ਨਾਲ ਸਿੱਧਾ ਕੁਨੈਕਟ ਕਰੋ(&I)"
+
+#~ msgid "Use preset proxy environment &variables"
+#~ msgstr "ਪਰਾਕਸੀ ਵਾਤਾਵਰਣ ਵੇਰੀਬਲ ਵਰਤੋਂ(&v)"
+
+#~ msgid "Setup..."
+#~ msgstr "ਸੈੱਟਅੱਪ..."
+
+#~ msgid "&Manually specify the proxy settings"
+#~ msgstr "ਪਰਾਕਸੀ ਸੈਟਿੰਗ ਦਸਤੀ ਕਰੋ(&M)"
+
+#~ msgid "Show the manual proxy configuration dialog."
+#~ msgstr "ਦਸਤੀ ਪਰਾਕਸੀ ਸੰਰਚਨਾ ਡਾਈਲਾਗ ਵੇਖੋ"
+
+#~ msgid "Authori&zation"
+#~ msgstr "ਪਰਮਾਣਕਿਤਾ(&z)"
+
+#~ msgid "Prompt for login information whenever it is required."
+#~ msgstr "ਜਦੋਂ ਵੀ ਲਾਗਇਨ ਲੋੜੀਦਾ ਹੋਵੇ ਤਾਂ ਪੁੱਛੋ।"
+
+#~ msgid "Prompt as &needed"
+#~ msgstr "ਲੋੜ ਸਮੇਂ ਪੁੱਛੋ(&n)"
+
+#~ msgid "Use this login information."
+#~ msgstr "ਇਹ ਲਾਗਇਨ ਜਾਣਕਾਰੀ ਵਰਤੋਂ।"
+
+#~ msgid ""
+#~ "Use information specified here to login into proxy servers as needed."
+#~ msgstr "ਪਰਾਕਸੀ ਸਰਵਰ ਤੇ ਲਾਗਇਨ ਕਰਨ ਲਈ ਹੇਠ ਦਿੱਤੀ ਜਾਣਕਾਰੀ ਵਰਤੋਂ।"
+
+#~ msgid "Username:"
+#~ msgstr "ਯੂਜ਼ਰ ਨਾਂ: "
+
+#~ msgid "Login name."
+#~ msgstr "ਲਾਗਇਨ ਨਾਂ ਹੈ।"
+
+#~ msgid "Login password."
+#~ msgstr "ਲਾਗਇਨ ਪਾਸਵਰਡ"
+
+#~ msgid "Password:"
+#~ msgstr "ਪਾਸਵਰਡ:"
+
+#~ msgid "O&ptions"
+#~ msgstr "ਚੋਣ(&p)"
+
+#~ msgid "Ser&vers"
+#~ msgstr "ਸਰਵਰ(&v)"
+
+#~ msgid "Remove all proxy exception addresses from the list."
+#~ msgstr "ਲਿਸਟ ਵਿੱਚੋਂ ਸਭ ਪਰਾਕਸੀ ਅਪਵਾਦ ਐਡਰੈੱਸ ਹਟਾਓ"
+
+#~ msgid "D&elete All"
+#~ msgstr "ਸਭ ਹਟਾਓ(&e)"
+
+#~ msgid "Remove the selected proxy exception address from the list."
+#~ msgstr "ਲਿਸਟ ਵਿੱਚੋਂ ਚੁਣੇ ਪਰਾਕਸੀ ਅਪਵਾਦ ਐਡਰੈੱਸ ਹਟਾਓ"
+
+#~ msgid "De&lete"
+#~ msgstr "ਹਟਾਓ(&l)"
+
+#~ msgid "Add new proxy exception address to the list."
+#~ msgstr "ਲਿਸਟ ਵਿੱਚ ਨਵਾਂ ਪਰਾਕਸੀ ਐਡਰੈੱਸ ਸ਼ਾਮਲ ਕਰੋ।"
+
+#~ msgid "Change the selected proxy exception address."
+#~ msgstr "ਚੁਣਿਆ ਪਰਾਕਸੀ ਅਪਵਾਦ ਐਡਰੈੱਸ ਬਦਲੋ।"
+
+#~ msgid "C&hange..."
+#~ msgstr "ਬਦਲੋ(&h)..."
+
+#~ msgid "&Domain name:"
+#~ msgstr "ਡੋਮੇਨ ਨਾਂ(&D):"
+
+#~ msgid "Add &platform name"
+#~ msgstr "ਪਲੇਟਫਾਰਮ ਨਾਂ ਸ਼ਾਮਲ(&p)"
+
+#~ msgid "Domain [Group]"
+#~ msgstr "ਡੋਮੇਨ [ਗਰੁੱਪ]"
+
+#~ msgid "Host [Set By]"
+#~ msgstr "ਹੋਸਟ [ਦਿੱਤਾ ਜਾਵੇਗਾ]"
+
+#~ msgid "&Windows Shares"
+#~ msgstr "ਵਿੰਡੋ ਸਾਂਝ(&W)"
+
+#~ msgid "&LISa Daemon"
+#~ msgstr "&LISa ਡੈਮਨ"
+
+#~ msgid "lan:/ Iosla&ve"
+#~ msgstr "lan:/ Iosla&ve"
+
+#~ msgctxt "just a placeholder; do not translate"
+#~ msgid "KSqueezedTextLabel"
+#~ msgstr "KSqueezedTextLabel"
+
+#~ msgid "&Search:"
+#~ msgstr "ਖੋਜ(&S):"

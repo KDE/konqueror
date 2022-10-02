@@ -1,0 +1,69 @@
+# Translation of kget.po to Spanish
+# translation of kget.po to Español
+# Copyright (C) 2003, 2004, 2005, 2006, 2008 Free Software Foundation, Inc.
+#
+# Jaime Robles <jaime@kde.org>, 2003, 2004.
+# Matias Costa <mcc3@alu.um.es>, 2005.
+# Pablo de Vicente <p.devicente@oan.es>, 2005.
+# Pablo de Vicente <pablo.devicente@gmail.com>, 2006.
+# Israel Garcia <israelgarcia86@gmail.com>, 2008.
+# Eloy Cuadra <ecuadra@eloihr.net>, 2008, 2010.
+# Israel Garcia Garcia <israelgarcia86@gmail.com>, 2008, 2009, 2010.
+# Enrique Matias Sanchez <cronopios@gmail.com>, 2009.
+# Rocio Gallego <traducciones@rociogallego.com>, 2010, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: kget\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2012-02-05 17:57+0100\n"
+"Last-Translator: Rocio Gallego <traducciones@rociogallego.com>\n"
+"Language-Team: Español <kde-l10n-es@kde.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: kget_plugin.cpp:56
+#, kde-format
+msgid "Download Manager"
+msgstr "Gestor de descargas"
+
+#: kget_plugin.cpp:62
+#, kde-format
+msgid "Show Drop Target"
+msgstr "Mostrar la etiqueta para soltar"
+
+#: kget_plugin.cpp:69
+#, kde-format
+msgid "List All Links"
+msgstr "Mostrar todos los enlaces"
+
+#: kget_plugin.cpp:74
+#, kde-format
+msgid "List Selected Links"
+msgstr "Hacer una lista de los enlaces seleccionados"
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No downloadable links were found."
+msgstr "No se encontró ningún enlace descargable."
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No Links"
+msgstr "No hay enlaces"
+
+#. i18n: ectx: Menu (tools)
+#: konqueror_kget_browser_integration.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "Herramien&tas"
+
+#~ msgid "Unable to communicate with the KGet download manager."
+#~ msgstr "No ha sido posible comunicar con el gestor de descargas KGet."
+
+#~ msgid "Communication Error"
+#~ msgstr "Error de comunicación"

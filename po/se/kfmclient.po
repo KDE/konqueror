@@ -1,0 +1,136 @@
+# Translation of kfmclient to Northern Sami
+#
+# Børre Gaup <boerre@skolelinux.no>, 2003, 2004, 2005.
+msgid ""
+msgstr ""
+"Project-Id-Version: kfmclient\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"PO-Revision-Date: 2005-10-23 23:55+0200\n"
+"Last-Translator: Børre Gaup <boerre@skolelinux.no>\n"
+"Language-Team: Northern Sami <l10n-no@lister.huftis.org>\n"
+"Language: se\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: kfmclient.cpp:49
+#, kde-format
+msgid "kfmclient"
+msgstr "kfmclient"
+
+#: kfmclient.cpp:57
+#, kde-format
+msgid "KDE tool for opening URLs from the command line"
+msgstr "KDE reaidu mainna rahpá URL:aid gohččunlinnjás"
+
+#: kfmclient.cpp:65
+#, kde-format
+msgid "Non interactive use: no message boxes"
+msgstr "Ii-interaktiivalaš geavaheapmi: ale čájet dieđihanláseža"
+
+#: kfmclient.cpp:67
+#, kde-format
+msgid "Show available commands"
+msgstr "Čájet olamuttus gohččumiid"
+
+#: kfmclient.cpp:69
+#, kde-format
+msgid "Command (see --commands)"
+msgstr "Gohččun (geahča --commands)."
+
+#: kfmclient.cpp:71
+#, kde-format
+msgid "Arguments for command"
+msgstr "Argumeanttat gohččuma várás."
+
+#: kfmclient.cpp:73
+#, kde-format
+msgid "The files/URLs opened by the application will be deleted after use"
+msgstr ""
+"Fiillat dahje URL:at maid prográmma rahpá sihkkojuvvot maŋŋá geavaheami"
+
+#: kfmclient.cpp:81
+#, kde-format
+msgid ""
+"\n"
+"Syntax:\n"
+msgstr ""
+"\n"
+"Syntáksa:\n"
+
+#: kfmclient.cpp:82
+#, kde-format
+msgid ""
+"  kfmclient openURL 'url' ['mimetype']\n"
+"            # Opens a window showing 'url'.\n"
+"            #  'url' may be a relative path\n"
+"            #   or file name, such as . or subdir/\n"
+"            #   If 'url' is omitted, $HOME is used instead.\n"
+"\n"
+msgstr ""
+"  kfmclient openURL «url» [«mimešládja»]\n"
+"            # Rahpá láse mii čájeha «url».\n"
+"            #  «url» sáhttá leat \"relative\" bálggis\n"
+"            #   dahje fiilanamma, nugo . dahje vuollemáhppa/\n"
+"            #   Jos it adde «url», de baicce $HOME geavahuvvo.\n"
+"\n"
+
+#: kfmclient.cpp:87
+#, kde-format
+msgid ""
+"            # If 'mimetype' is specified, it will be used to determine the\n"
+"            #   component that Konqueror should use. For instance, set it "
+"to\n"
+"            #   text/html for a web page, to make it appear faster\n"
+"\n"
+msgstr ""
+"            # Jos «mimešládja» lea meroštallon, dat mearrida guđe\n"
+"            #   oasi KDE geavaha. Ovdamearka dihte, jos geavahat             "
+"#   text/html fierpmádatsiidu várás vai čájehuvvo johtileabbut.\n"
+"\n"
+
+#: kfmclient.cpp:91
+#, kde-format
+msgid ""
+"  kfmclient newTab 'url' ['mimetype']\n"
+"            # Same as above but opens a new tab with 'url' in an existing "
+"Konqueror\n"
+"            #   window on the current active desktop if possible.\n"
+"\n"
+msgstr ""
+"  kfmclient newTab 'url' ['mimetype']\n"
+"            # Seamma go bajábealde, muhto geahččala rahpat ođđa gilkora mas "
+"lea «url»\n"
+"            #   rabas Konqueror láses aktiivalaš čállinbeavddis.\n"
+"\n"
+
+#: kfmclient.cpp:271
+#, kde-format
+msgid "Syntax error, not enough arguments\n"
+msgstr ""
+
+#: kfmclient.cpp:275
+#, kde-format
+msgid "Syntax error, too many arguments\n"
+msgstr ""
+
+#: kfmclient.cpp:324
+#, kde-format
+msgid "Syntax error, unknown command '%1'\n"
+msgstr ""

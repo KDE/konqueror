@@ -1,0 +1,94 @@
+# translation of searchbarplugin.po to Arabic
+# translation of searchbarplugin.po to
+# محمد سعد  Mohamed SAAD <metehyi@free.fr>, 2006.
+# Youssef Chahibi <chahibi@gmail.com>, 2007.
+# zayed <zayed.alsaidi@gmail.com>, 2008, 2012.
+# Safa Alfulaij <safa1996alfulaij@gmail.com>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: searchbarplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-25 00:45+0000\n"
+"PO-Revision-Date: 2014-08-17 14:18+0300\n"
+"Last-Translator: Safa Alfulaij <safa1996alfulaij@gmail.com>\n"
+"Language-Team: Arabic <doc@arabeyes.org>\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: searchbar.cpp:65
+#, kde-format
+msgid ""
+"Search Bar<p>Enter a search term. Click on the icon to change search mode or "
+"provider.</p>"
+msgstr ""
+"شريط البحث<p>أدخِل كلمة البحث. انقر على الأيقونة لتغيير وضع البحث أو المزوّد.</"
+"p>"
+
+#: searchbar.cpp:70
+#, kde-format
+msgid "Search Bar"
+msgstr "شريط البحث"
+
+#: searchbar.cpp:75
+#, kde-format
+msgid "Focus Searchbar"
+msgstr "ركّز شريط البحث"
+
+#: searchbar.cpp:267
+#, fuzzy, kde-format
+#| msgid "Find in This Page"
+msgid "Find in Page..."
+msgstr "اعثر في هذه الصفحة"
+
+#: searchbar.cpp:287
+#, kde-format
+msgid "Find in This Page"
+msgstr "اعثر في هذه الصفحة"
+
+#: searchbar.cpp:299
+#, kde-format
+msgid "Select Search Engines..."
+msgstr "اختر محرّكات البحث..."
+
+#: searchbar.cpp:318
+#, kde-format
+msgid "Add %1..."
+msgstr "أضف %1..."
+
+#. i18n: ectx: ToolBar (locationToolBar)
+#: searchbarplugin.rc:3
+#, kde-format
+msgid "Search Toolbar"
+msgstr "شريط أدوات البحث"
+
+#: WebShortcutWidget.cpp:33
+#, fuzzy, kde-format
+msgid "Set Uri Shortcuts"
+msgstr "ضع اختصار الرابط"
+
+#: WebShortcutWidget.cpp:47
+#, kde-format
+msgid "Name:"
+msgstr "الاسم:"
+
+#: WebShortcutWidget.cpp:51
+#, kde-format
+msgid "Shortcuts:"
+msgstr "الاختصارات:"
+
+#~ msgid "Enable Suggestion"
+#~ msgstr "مكّن الاقتراحات"
+
+#~ msgid "Cancel"
+#~ msgstr "ألغِ"
+
+#~ msgid "OK"
+#~ msgstr "حسنًا"
+
+#~ msgid "Ok"
+#~ msgstr "موافق"

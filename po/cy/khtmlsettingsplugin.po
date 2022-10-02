@@ -1,0 +1,126 @@
+# translation of khtmlsettingsplugin.po to Cymraeg
+# Bwrdd Gwaith yn Gymraeg.
+# Copyright (C) 2003, 2004 Free Software Foundation, Inc.
+# www.kyfieithu.co.uk<kyfieithu@dotmon.com>, www.gyfieithu.co.uk<kyfieithu@dotmon.com>, 2003.
+# KD at KGyfieithu <kyfieithu@dotmon.com>, 2004.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: khtmlsettingsplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"PO-Revision-Date: 2004-02-25 10:01+0000\n"
+"Last-Translator: KD at KGyfieithu <kyfieithu@dotmon.com>\n"
+"Language-Team: Cymraeg <cy@li.org>\n"
+"Language: cy\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.2\n"
+"\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. i18n: ectx: Menu (tools)
+#: khtmlsettingsplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr ""
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: khtmlsettingsplugin.rc:8
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "Bar Offer Ychwanegol"
+
+#: settingsplugin.cpp:41
+#, kde-format
+msgid "HTML Settings"
+msgstr "Gosodiadau HTML"
+
+#: settingsplugin.cpp:46
+#, kde-format
+msgid "Java&Script"
+msgstr "Java&Script"
+
+#: settingsplugin.cpp:51
+#, kde-format
+msgid "&Java"
+msgstr "&Java"
+
+#: settingsplugin.cpp:56
+#, kde-format
+msgid "&Cookies"
+msgstr "&Bisgedi"
+
+#: settingsplugin.cpp:61
+#, kde-format
+msgid "&Plugins"
+msgstr "&Ategion"
+
+#: settingsplugin.cpp:66
+#, kde-format
+msgid "Autoload &Images"
+msgstr "Hunan-lwytho &Delweddau"
+
+#: settingsplugin.cpp:73
+#, kde-format
+msgid "Enable Pro&xy"
+msgstr "Galluogi D&irprwy"
+
+#: settingsplugin.cpp:78
+#, kde-format
+msgid "Enable Cac&he"
+msgstr "Galluogi &Celc"
+
+#: settingsplugin.cpp:83
+#, kde-format
+msgid "Cache Po&licy"
+msgstr "&Polisi'r Celc"
+
+#: settingsplugin.cpp:85
+#, kde-format
+msgid "&Keep Cache in Sync"
+msgstr "Cadw'r Celc yn &Gyfoes"
+
+#: settingsplugin.cpp:86
+#, kde-format
+msgid "&Use Cache if Possible"
+msgstr "Defnyddio'r Celc os &Bosibl"
+
+#: settingsplugin.cpp:87
+#, kde-format
+msgid "&Offline Browsing Mode"
+msgstr "Modd &Pori All-lein"
+
+#: settingsplugin.cpp:180
+#, fuzzy, kde-format
+#| msgid ""
+#| "I can't enable cookies, because the cookie daemon could not be started."
+msgid ""
+"The cookie setting could not be changed, because the cookie daemon could not "
+"be contacted."
+msgstr "Fedra' i ddim alluogi bisgedi, am na ellir cychwyn ellyll y bisgedi."
+
+#: settingsplugin.cpp:182
+#, fuzzy, kde-format
+#| msgid "Cookies Disabled"
+msgctxt "@title:window"
+msgid "Cookie Settings Unavailable"
+msgstr "Analluogwyd Bisgedi"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "KD wrth KGyfieithu"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "kyfieithu@dotmon.com"
+
+#, fuzzy
+#~ msgid "Disable Pro&xy"
+#~ msgstr "Galluogi D&irprwy"
+
+#, fuzzy
+#~ msgid "Disable Cac&he"
+#~ msgstr "Galluogi &Celc"

@@ -1,0 +1,263 @@
+# translation of libkonq.po to Karakh
+#
+# Sairan Kikkarin <sairan@computer.org>, 2005, 2007, 2008, 2010.
+# Sairan Kikkarin <sairan@computer.org>, 2010, 2011.
+# Sairan Kikkarin <sairan(at)computer.org>, 2010, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2013-03-20 01:42+0600\n"
+"Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
+"Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
+"Language: kk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"\n"
+"\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "&Ашу"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "Қ&апшықты құру..."
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "Орнына қайта&ру"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr "Бастапқы қапшығын көрсету"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr "Бастапқы файлын көрсету"
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "Өшірілгендерді &жою"
+
+#: src/konq_popupmenu.cpp:312
+#, kde-format
+msgid "&Configure Trash Bin"
+msgstr "Өшірілгендер Шелегін &баптау"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "Парақты &бетбегілеу"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "Орынды &бетбегілеу"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "Қапшықты &бетбегілеу"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "Сілтемені &бетбегілеу"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "Файлды &бетбегілеу"
+
+#: src/konq_popupmenu.cpp:379
+#, kde-format
+msgid "Preview In"
+msgstr "Қарау құралы"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "Қасиетте&р"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy To"
+#~ msgstr "Мынаған көшірмелеу"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "Мынаған жылжыту"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "Мекен қапшығы"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "Түбір қапшығы"
+
+#~ msgctxt "@title:menu in Copy To or Move To submenu"
+#~ msgid "Browse..."
+#~ msgstr "Ақтару..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "Осында көшірмелеу"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "Осында жылжыту"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "Қапшықты өзін өзіне салуға болмайды"
+
+#~ msgid "File name for dropped contents:"
+#~ msgstr "Жылжытқанға атау беріңіз:"
+
+#~ msgid "&Move Here"
+#~ msgstr "Осында &жылжыту"
+
+#~ msgid "&Copy Here"
+#~ msgstr "Осында &көшірмелеу"
+
+#~ msgid "&Link Here"
+#~ msgstr "Осында &сілтеме құру"
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "&Тұсқағаз ретінде орнату"
+
+#~ msgid "C&ancel"
+#~ msgstr "Қ&айту"
+
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "Қапшықты құру"
+
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "Басқа атауын беріңіз"
+
+#~ msgid ""
+#~ "The name \"%1\" starts with a dot, so the directory will be hidden by "
+#~ "default."
+#~ msgstr ""
+#~ "\"%1\" атауы нүктеден басталады, сондықтан қапшық, әдет бойынша, жасырын "
+#~ "болады."
+
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "Жасырын қапшық құрылсын ба?"
+
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "New Folder"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "Жаңа қапшық"
+
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "Қапшықтың атауы:"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "Бір қапшықты орналастыру"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One File"
+#~ msgstr "Бір файлды орналастыру"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Item"
+#~ msgid_plural "Paste %1 Items"
+#~ msgstr[0] "%1 нысанды орналастыру"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste Clipboard Contents..."
+#~ msgstr "Алмасу буфер мазмұның орналастыру"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste"
+#~ msgstr "Орналастыру"
+
+#~ msgid ""
+#~ "Restores this file or directory, back to the location where it was "
+#~ "deleted from initially"
+#~ msgstr "Файл не қапшықты өшірілген орнына қайтарып қалпына келтіру"
+
+#~ msgid ""
+#~ "Opens a new file manager window showing the target of this link, in its "
+#~ "parent directory."
+#~ msgstr ""
+#~ "Осы сілтеме меңзейтін нысанды, ол жатқан қапшығын жаңа файл менеджер "
+#~ "терезесінде ашып көрсетеді."
+
+#~ msgid "Share"
+#~ msgstr "Ортақтастыру"
+
+#~ msgctxt "@info"
+#~ msgid "Close"
+#~ msgstr "Жабу"
+
+#~ msgid "Close"
+#~ msgstr "Жабу"
+
+#~ msgid "Error: %1"
+#~ msgstr "Қате: %1"
+
+#~ msgid "Create New"
+#~ msgstr "Жаңасын құру"
+
+#~ msgid "Link to Device"
+#~ msgstr "Құрылғыға сілтеме"
+
+#~ msgid "<qt>The template file <b>%1</b> does not exist.</qt>"
+#~ msgstr "<qt><b>%1</b> деген үлгі файлы жоқ.</qt>"
+
+#~ msgid "File name:"
+#~ msgstr "Файл атауы:"
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Actions"
+#~ msgstr "Әреке&ттер"
+
+#, fuzzy
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With"
+#~ msgstr "Мынамен &ашу"
+
+#, fuzzy
+#~ msgctxt "@action:inmenu Open With"
+#~ msgid "&Other..."
+#~ msgstr "Б&асқа..."
+
+#, fuzzy
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With..."
+#~ msgstr "Мынамен &ашу..."
+
+#~ msgid "Open &with %1"
+#~ msgstr "%1 &дегенмен ашу"
+
+#~ msgid ""
+#~ "Basic links can only point to local files or directories.\n"
+#~ "Please use \"Link to Location\" for remote URLs."
+#~ msgstr ""
+#~ "Негізгі сілтемелер тек жергілікті файл мен қапшықтарға меңзейді.\n"
+#~ "Қашықтағы URL үшін \"Сілтеме (URL)\" дегенді қолданыңыз."

@@ -1,0 +1,226 @@
+# translation of libkonq.po to Slovak
+# Peter Strelec <beko@profi.sk>
+# Branislav Gajdos <brian@linuxee.sk>
+# Stanislav Visnovsky <visnovsky@nenya.ms.mff.cuni.cz>, 2001,2002.
+# Stanislav Visnovsky <visnovsky@kde.org>, 2003, 2004.
+# Richard Fric <Richard.Fric@kdemail.net>, 2006.
+# Jozef Říha <jose1711@gmail.com>, 2006.
+# Michal Sulek <misurel@gmail.com>, 2009, 2010.
+# Roman Paholik <wizzardsk@gmail.com>, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2022-04-09 15:17+0200\n"
+"Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
+"Language-Team: Slovak <kde-sk@linux.sk>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 21.12.3\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "&Otvoriť"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "Vytvoriť priečino&k..."
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "O&bnoviť"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr "Zobraziť pôvodný adresár"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr "Zobraziť pôvodný súbor"
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "&Vyprázdniť kôš"
+
+#: src/konq_popupmenu.cpp:312
+#, kde-format
+msgid "&Configure Trash Bin"
+msgstr "Nastaviť &kôš"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "Pridať stránku medzi &záložky"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "Pridať umiestnenie medzi &záložky"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "Pridať priečinok medzi &záložky"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "Pridať odkaz medzi &záložky"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "Pridať súbor medzi &záložky"
+
+#: src/konq_popupmenu.cpp:379
+#, kde-format
+msgid "Preview In"
+msgstr "Náhľad v"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr "Tu otvoriť terminál"
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "Vlas&tnosti"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy To"
+#~ msgstr "Kopírovať do"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "Presunúť do"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "Domovský priečinok"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "Koreňový priečinok"
+
+#~ msgctxt "@title:menu in Copy To or Move To submenu"
+#~ msgid "Browse..."
+#~ msgstr "Prechádzať..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "Kopírovať sem"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "Presunúť sem"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "Nemôžete pustiť priečinok do seba samého"
+
+#~ msgid "File name for dropped contents:"
+#~ msgstr "Názov súboru pre pustený obsah:"
+
+#~ msgid "&Move Here"
+#~ msgstr "&Presunúť sem"
+
+#~ msgid "&Copy Here"
+#~ msgstr "&Kopírovať sem"
+
+#~ msgid "&Link Here"
+#~ msgstr "&Odkaz sem"
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "Nastaviť ako &tapetu"
+
+#~ msgid "C&ancel"
+#~ msgstr "&Zrušiť"
+
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "Vytvoriť adresár"
+
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "Zadať iný názov"
+
+#~ msgid ""
+#~ "The name \"%1\" starts with a dot, so the directory will be hidden by "
+#~ "default."
+#~ msgstr "Názov \"%1\" začína s bodkou, preto bude adresár štandardne skrytý."
+
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "Vytvoriť skrytý adresár?"
+
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "Nový priečinok"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "Nový priečinok"
+
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "Zadajte názov priečinka:"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "Vložiť jeden priečinok"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One File"
+#~ msgstr "Vložiť jeden súbor"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Item"
+#~ msgid_plural "Paste %1 Items"
+#~ msgstr[0] "Vložiť jednu položku"
+#~ msgstr[1] "Vložiť %1 položky"
+#~ msgstr[2] "Vložiť %1 položiek"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste Clipboard Contents..."
+#~ msgstr "Vložiť obsah schránky..."
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste"
+#~ msgstr "Vložiť"
+
+#~ msgid ""
+#~ "Restores this file or directory, back to the location where it was "
+#~ "deleted from initially"
+#~ msgstr ""
+#~ "Obnoví tento súbor alebo adresár späť na miesto, odkiaľ bol pôvodne "
+#~ "odstránený"
+
+#~ msgid ""
+#~ "Opens a new file manager window showing the target of this link, in its "
+#~ "parent directory."
+#~ msgstr ""
+#~ "Otvorí nové okno správcu súborov, ktoré zobrazí cieľ tohto odkazu v "
+#~ "nadradenom adresári."
+
+#~ msgid "Share"
+#~ msgstr "Zdieľať"
+
+#~ msgctxt "@info"
+#~ msgid "Close"
+#~ msgstr "Zavrieť"
+
+#~ msgid "Close"
+#~ msgstr "Zavrieť"
+
+#~ msgid "Error: %1"
+#~ msgstr "Chyba: %1"

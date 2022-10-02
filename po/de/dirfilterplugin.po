@@ -1,0 +1,98 @@
+# Thomas Fischer <thomas.fischer@t-fischer.net>, 2002, 2003, 2005.
+# Stephan Johach <hunsum@gmx.de>, 2005.
+# Thomas Reitelbach <tr@erdfunkstelle.de>, 2005.
+# Frederik Schwarzer <schwarzer@kde.org>, 2007.
+# Burkhard Lück <lueck@hube-lueck.de>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: dirfilterplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2012-10-04 21:40+0200\n"
+"Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: dirfilterplugin.cpp:120
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Hide Filter Bar"
+msgstr "Filterleiste ausblenden"
+
+#: dirfilterplugin.cpp:124
+#, kde-format
+msgctxt "@label:textbox"
+msgid "F&ilter:"
+msgstr "F&ilter:"
+
+#: dirfilterplugin.cpp:136
+#, kde-format
+msgctxt "@label:button"
+msgid "Filter by t&ype"
+msgstr "Nach T&yp filtern"
+
+#: dirfilterplugin.cpp:137
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Filter items by file type."
+msgstr "Elemente nach Dateityp filtern:"
+
+#: dirfilterplugin.cpp:228
+#, kde-format
+msgctxt "@action:inmenu Tools"
+msgid "Show Filter Bar"
+msgstr "Filterleiste anzeigen"
+
+#: dirfilterplugin.cpp:322
+#, kde-format
+msgid "Use Multiple Filters"
+msgstr "Mehrere Filter verwenden"
+
+#: dirfilterplugin.cpp:328
+#, kde-format
+msgid "Show Count"
+msgstr "Anzahl einblenden"
+
+#: dirfilterplugin.cpp:333
+#, kde-format
+msgid "Reset"
+msgstr "Zurücksetzen"
+
+#. i18n: ectx: Menu (tools)
+#: dirfilterplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "E&xtras"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: dirfilterplugin.rc:8
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "Extras-Werkzeugleiste"
+
+#~ msgid "Allow to filter the currently displayed items by filetype."
+#~ msgstr ""
+#~ "Erlaubt die Filterung der aktuell angezeigten Elemente nach Dateityp."
+
+#~ msgid "Only Show Items of Type"
+#~ msgstr "Nur bestimmte Dateitypen anzeigen"
+
+#~ msgid "Filter Field"
+#~ msgstr "Filterfeld"
+
+#~ msgid "Clear Filter Field"
+#~ msgstr "Filterfeld zurücksetzen"
+
+#~ msgid "Clear filter field<p>Clears the content of the filter field.</p>"
+#~ msgstr "Filter zurücksetzen<p>Setzt den Inhalt des Filterfeldes zurück.</p>"
+
+#~ msgid ""
+#~ "Enter here a text which an item in the view must contain anywhere to be "
+#~ "shown."
+#~ msgstr ""
+#~ "Hier kann Text eingegeben werden, den ein Element in der Liste enthalten "
+#~ "muss, um angezeigt zu werden."

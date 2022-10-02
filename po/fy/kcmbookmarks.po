@@ -1,0 +1,1987 @@
+# translation of kcmkio.po to Frysk
+# translation of kcmkio.po to
+#
+# Rinse de Vries <rinsedevries@kde.nl>, 2006, 2007.
+# Rinse de Vries <RinseDeVries@home.nl>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkio\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2009-06-21 13:33+0100\n"
+"Last-Translator: Berend Ytsma <berendy@gmail.com>\n"
+"Language-Team: Frysk <kde-i18n-fry@kde.org>\n"
+"Language: fy\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: bookmarks.cpp:92
+#, kde-format
+msgid ""
+"<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
+"page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
+"\">bookmarks:/</a>.</p>"
+msgstr ""
+"<h1>Myn blêdwizers</h1><p>Dizze module lit jo it blêdwizer thúsblêd ynstelle."
+"</p><p>It blêdwizer thúsblêd is tagonglik op <a href=\"bookmarks:/"
+"\">blêdwizers:/</a>.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: bookmarks.ui:16
+#, kde-format
+msgid "Bookmarks"
+msgstr "Blêdwizers"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowRoot)
+#: bookmarks.ui:23
+#, kde-format
+msgid ""
+"If this option is unchecked, bookmarks at the root of the hierarchy (not in "
+"a folder) are not displayed.\n"
+"If checked, they are gathered in a \"root\" folder."
+msgstr ""
+"As dizze opsje net oankarre is, sille de blêdwizers oan it begjin fan de "
+"hyrarchy (net yn in map) net wêrjun wurde.\n"
+"As it wol oankarre is, dan binne se fersammelt yn in \"root\" map."
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowRoot)
+#: bookmarks.ui:26
+#, kde-format
+msgid "&Show bookmarks without folder"
+msgstr "Blêdwizers &sûnder map sjen litte"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbFlattenTree)
+#: bookmarks.ui:37
+#, kde-format
+msgid ""
+"Sub-folders are shown within their parent by default. If you activate this "
+"option, sub-folders are displayed on their own.\n"
+"It looks less nice but it may help if you have a very big folder you want to "
+"spread in two columns."
+msgstr ""
+"Syb-mappen binne standert te sjen yn har boppelizzende map. As jo dizze "
+"opsje ynskeakelje, sub-mappen sille op harsels werjûn wurde.\n"
+"It likjet net moaier mar it kin helpe as jo in grutte map ha dy't jo spriede "
+"wolle oer twa kolommen."
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbFlattenTree)
+#: bookmarks.ui:40
+#, kde-format
+msgid "&Flatten bookmarks tree"
+msgstr "Blêdwizerstruktuer &flak meitsje"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowPlaces)
+#: bookmarks.ui:47
+#, kde-format
+msgid ""
+"Show a box with KDE places (Home, Network, ...). Useful if you use konqueror "
+"as a file manager."
+msgstr ""
+"Lit in fak sjen mei KDE plakken (Thús, Netwurk, ...). Brûkber as jo "
+"konqueror as triembehearder brûke."
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowPlaces)
+#: bookmarks.ui:50
+#, kde-format
+msgid "Show system &places"
+msgstr "Systeem&lokaasjes sjen litte"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: bookmarks.ui:63
+#, kde-format
+msgid "General Settings"
+msgstr "Algemiene ynstellings"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, label)
+#: bookmarks.ui:71
+#, kde-format
+msgid ""
+"Folders are automatically distributed in several columns. The optimal number "
+"of columns depends on the width of the konqueror window and the number of "
+"bookmarks you have."
+msgstr ""
+"Mappen wurde automatysk ûnderbrocht yn meardere kolommen. It oantal fan "
+"optimale kolommen is ôfhinklik fan de breedte fan it konqueror finster en it "
+"oantal fan blêdwizers jo hawwe."
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: bookmarks.ui:74
+#, kde-format
+msgid "Number of columns to show:"
+msgstr "Oantal kolommen om sjen te litten:"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowBackgrounds)
+#: bookmarks.ui:109
+#, kde-format
+msgid "Disable it on slow system to disable background images."
+msgstr ""
+"Skeakelje it út op trage systemen om eftergrûnôfbyldings út te skeakeljen."
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowBackgrounds)
+#: bookmarks.ui:112
+#, kde-format
+msgid "Show folder &backgrounds"
+msgstr "Ma&peftergrûnen sjen litte"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, groupBox_3)
+#: bookmarks.ui:138
+#, kde-format
+msgid "How much disk space is used to cache the pixmaps"
+msgstr ""
+"Hoefolle skiifromte wurdt brûkt om de pixmaps yn it lytsûnthâld ûnder te "
+"bringen"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: bookmarks.ui:141
+#, kde-format
+msgid "Pixmap Cache"
+msgstr "Pixmap lytsûnthâld"
+
+#. i18n: ectx: property (text), widget (QLabel, lbMaxCacheSize)
+#: bookmarks.ui:150
+#, kde-format
+msgid "Disk cache size:"
+msgstr "Lltstûnthâldgrutte op skiif:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, sbCacheSize)
+#: bookmarks.ui:163
+#, kde-format
+msgid " kB"
+msgstr " kB"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, clearCacheButton)
+#: bookmarks.ui:173
+#, kde-format
+msgid "Clear the pixmap cache"
+msgstr "Pixmap lytsûnthâld opskjinje"
+
+#. i18n: ectx: property (text), widget (QPushButton, clearCacheButton)
+#: bookmarks.ui:176
+#, kde-format
+msgid "&Clear Cache"
+msgstr "Lytsûnthâld op&skjinje"
+
+#~ msgid ""
+#~ "<h1>Cache</h1><p>This module lets you configure your cache settings.</"
+#~ "p><p>The cache is an internal memory in Konqueror where recently read web "
+#~ "pages are stored. If you want to retrieve a web page again that you have "
+#~ "recently read, it will not be downloaded from the Internet, but rather "
+#~ "retrieved from the cache, which is a lot faster.</p>"
+#~ msgstr ""
+#~ "<h1>Lyts ûnthâld</h1> <p>Yn dizze module kinne jo lyts ûnthâld ynstelle.</"
+#~ "p> <p>It lyts ûnthâld is in yntern ûnthâld yn Konqueror wêr koartlyn "
+#~ "iepene siden yn bewarre wurde. As jo in webside dy jo koartlyn lêzen ha "
+#~ "opnij iepenje, dan sil Konqueror dizze net op'e nij fan 't ynternet "
+#~ "helje, mar út it lyts ûnthâld. Dizze wurkwize is in stik flugger.</p>"
+
+#~ msgid ""
+#~ "Check this box if you want the web pages you visit to be stored on your "
+#~ "hard disk for quicker access. The stored pages will only be updated as "
+#~ "needed instead of on every visit to that site. This is especially useful "
+#~ "if you have a slow connection to the Internet."
+#~ msgstr ""
+#~ "Skeakel dizze opsje yn as jo wolle dat de websiden dy jo iepenje, bewarre "
+#~ "wurde op jo fêsteskiif, sadat jo se letter flugger iepenje kinne. It "
+#~ "aktivearjen fan dizze opsje makket it blêdzjen flugger omdat de websiden "
+#~ "allinne ynladen wurde as dizze net op de fêste skiif steane. Dit is seker "
+#~ "it gefal as jo in trage ynternetferbining ha."
+
+#~ msgid "&Use cache"
+#~ msgstr "Lyts ûnthâld brû&ke"
+
+#~ msgid "Policy"
+#~ msgstr "Belied"
+
+#~ msgid ""
+#~ "Verify whether the cached web page is valid before attempting to fetch "
+#~ "the web page again."
+#~ msgstr ""
+#~ "Sjoch of de webside yn it lyts ûnthâld jildich is foardat jo dizze "
+#~ "ynladen geane."
+
+#~ msgid "&Keep cache in sync"
+#~ msgstr "Lyts ûnthâld ly&k litte rinne"
+
+#~ msgid ""
+#~ "Always use documents from the cache when available. You can still use the "
+#~ "reload button to synchronize the cache with the remote host."
+#~ msgstr ""
+#~ "Selektearje dit om altyd de yn it lyts ûnthâld steande dokuminten te "
+#~ "brûken. Jo kinne de knop \"Ferfarskje\" brûke om jo lyts ûnthâld lyk "
+#~ "rinne te litten mei de kompjûter op ôfstân."
+
+#~ msgid "Use cache whenever &possible"
+#~ msgstr "Lyst ûnhâld brûke, as it mo&oglik is"
+
+#~ msgid ""
+#~ "Do not fetch web pages that are not already stored in the cache. Offline "
+#~ "mode prevents you from viewing pages that you have not previously visited."
+#~ msgstr ""
+#~ "Besykje gjin siden sjen te litten dy net al yn it lyts ûnthâld sitte. "
+#~ "Wurkje sûnder ferbining hâld jo tsjin om siden te besjen dy jo koartlyn "
+#~ "net besocht ha."
+
+#~ msgid "O&ffline browsing mode"
+#~ msgstr "Sûnder ferbinnng w&urkje"
+
+#~ msgid "Disk cache &size:"
+#~ msgstr "Grutte fan't lytst ûnthâld op &skiif:"
+
+#~ msgid "C&lear Cache"
+#~ msgstr "&Lyts ûnhâld opskjinje"
+
+#~ msgid ""
+#~ "Unable to start the cookie handler service.\n"
+#~ "You will not be able to manage the cookies that are stored on your "
+#~ "computer."
+#~ msgstr ""
+#~ "It koekje-handlertsjinst koe net begjinne.\n"
+#~ "Jo sille de koekjes dy bewarre binne op jo kompjûter net beheare kinne."
+
+#~ msgid "&Policy"
+#~ msgstr "&Belied"
+
+#~ msgid "&Management"
+#~ msgstr "Be&hear"
+
+#~ msgid ""
+#~ "<p><h1>Cookies</h1> Cookies contain information that Konqueror (or other "
+#~ "KDE applications using the HTTP protocol) stores on your computer, "
+#~ "initiated by a remote Internet server. This means that a web server can "
+#~ "store information about you and your browsing activities on your machine "
+#~ "for later use. You might consider this an invasion of privacy.</p><p> "
+#~ "However, cookies are useful in certain situations. For example, they are "
+#~ "often used by Internet shops, so you can 'put things into a shopping "
+#~ "basket'. Some sites require you have a browser that supports cookies.</"
+#~ "p><p> Because most people want a compromise between privacy and the "
+#~ "benefits cookies offer, KDE offers you the ability to customize the way "
+#~ "it handles cookies. So you might want to set KDE's default policy to ask "
+#~ "you whenever a server wants to set a cookie, allowing you to decide. For "
+#~ "your favorite shopping web sites that you trust, you might want to set "
+#~ "the policy to accept, then you can access the web sites without being "
+#~ "prompted every time KDE receives a cookie.</p>"
+#~ msgstr ""
+#~ "<p><h1>Koekjes</h1> Koekjes befetsje ynformaasje dy Konqueror (of oare "
+#~ "KDE-applikaassjes dy it http-protokol brûke yn opdracht fan in "
+#~ "ynternettsjinner op ôfstân bewarret op jo kompjûter. Dit betekent dat in "
+#~ "webtsjinner ynformaasje oer jo en jo ynternetgedrach foar letter gebrûk "
+#~ "bewarret op jo kompjûter. Dit kinne jo sjen as ynbreuk op jo privacy. </"
+#~ "p><p> Mar yn sommige situaasjes kinne koekjes hiel brûkber wêze. Se wurde "
+#~ "bygelyks brûkt troch ynternetwinkels, sadat jo 'boadskippen yn jo "
+#~ "boadskipsweintsje lizze kinne'. Der binne ek siden dy fereaskje dan ek "
+#~ "dat jo blêder koekjes akseptearret. </p><p>Omdat de measte brûkers in "
+#~ "tuskenoplossing ôfslute wolle tusken har privacy behoeften en de "
+#~ "foardielen fan koekjes biedt KDE dy de mooglikheid om sels te bepalen hoe "
+#~ "KDE omgiet mei koekjes. Sa kinne jo oanjaan dat KDE jo standert om in "
+#~ "befêstiging freget, as de tsjinner in koekje pleatse wol. Mar foar jo "
+#~ "favorite ynternetwinkels en websiden dy jo fertrouwe wolle jo tinke wy de "
+#~ "koekjes deagewoan akseptearje, sadat jo gewoan lekker op dizze siden "
+#~ "surfe kinne sûnder dat KDE stees wer om in befêstiging freget.</p>"
+
+#~ msgid "D-Bus Communication Error"
+#~ msgstr "D-Bus-kommunikaasjeflater"
+
+#~ msgid "Unable to delete all the cookies as requested."
+#~ msgstr "It slagge net om al de koekjes te wiskjen lykas jo frege ha."
+
+#~ msgid "Unable to delete cookies as requested."
+#~ msgstr "It slagge net om de koekjes te wiskjen lykas jo frege ha."
+
+#~ msgid "<h1>Cookie Management Quick Help</h1>"
+#~ msgstr "<h1>Koekjesbehear::Fluch Help</h1>"
+
+#~ msgid "Information Lookup Failure"
+#~ msgstr "It opsykjen fan ynformaasje is mislearre"
+
+#~ msgid ""
+#~ "Unable to retrieve information about the cookies stored on your computer."
+#~ msgstr ""
+#~ "Der koe gjin ynformaasje ynwûn wurde oer de koekjes dy bewarre binne op "
+#~ "jo kompjûter."
+
+#~ msgid "End of session"
+#~ msgstr "It ein fan de sesje"
+
+#~ msgid "Yes"
+#~ msgstr "Jawis"
+
+#~ msgid "Search"
+#~ msgstr "Sykje"
+
+#~ msgid "Search interactively for domains and hosts"
+#~ msgstr "Ynteraktyf sykje om hosts en domeinen"
+
+#, fuzzy
+#~| msgid "Site Name"
+#~ msgid "Site"
+#~ msgstr "Side namme"
+
+#, fuzzy
+#~| msgid "Site Name"
+#~ msgid "Cookie Name"
+#~ msgstr "Side namme"
+
+#~ msgid "D&elete"
+#~ msgstr "Wiskj&e"
+
+#~ msgid "Delete A&ll"
+#~ msgstr "A&lles wiskje"
+
+#, fuzzy
+#~| msgid "Change &Policy..."
+#~ msgid "Configure &Policy..."
+#~ msgstr "Belie&d feroarje..."
+
+#~ msgid "&Reload List"
+#~ msgstr "List op 'e nij &lade"
+
+#~ msgid "Details"
+#~ msgstr "Details"
+
+#~ msgid "Name:"
+#~ msgstr "Namme:"
+
+#~ msgid "Value:"
+#~ msgstr "Wearde:"
+
+#~ msgid "Domain:"
+#~ msgstr "Domein:"
+
+#~ msgid "Path:"
+#~ msgstr "Paad:"
+
+#~ msgid "Expires:"
+#~ msgstr "Ferrint op:"
+
+#~ msgid "Secure:"
+#~ msgstr "Is befeiligd:"
+
+#, fuzzy
+#~| msgid "Change Cookie Policy"
+#~ msgctxt "@title:window"
+#~ msgid "Change Cookie Policy"
+#~ msgstr "Koekje belied feroarje"
+
+#, fuzzy
+#~| msgid "New Cookie Policy"
+#~ msgctxt "@title:window"
+#~ msgid "New Cookie Policy"
+#~ msgstr "Nij koekje belied"
+
+#~ msgid ""
+#~ "<qt>A policy already exists for<center><b>%1</b></center>Do you want to "
+#~ "replace it?</qt>"
+#~ msgstr ""
+#~ "<qt>Der is al in belied foar <center><b>%1</b></center>. Wolle jo dizze "
+#~ "ferfange?</qt>"
+
+#, fuzzy
+#~| msgid "Duplicate Policy"
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Policy"
+#~ msgstr "Duplikaat van belied meitsje"
+
+#~ msgid "Replace"
+#~ msgstr "Ferfange"
+
+#~ msgid ""
+#~ "Unable to communicate with the cookie handler service.\n"
+#~ "Any changes you made will not take effect until the service is restarted."
+#~ msgstr ""
+#~ "Der wie gjin kommunikaasje mooglik mei de koekje-handlertsjinst.\n"
+#~ "Eltse feroaring dy't jo makke ha sil gjin effekt ha oant de tsjinst op 'e "
+#~ "nij úteinsetten wurdt."
+
+#~ msgid ""
+#~ "<p><h1>Cookies</h1> Cookies contain information that Konqueror (or any "
+#~ "other KDE application using the HTTP protocol) stores on your computer "
+#~ "from a remote Internet server. This means that a web server can store "
+#~ "information about you and your browsing activities on your machine for "
+#~ "later use. You might consider this an invasion of privacy.</p><p>However, "
+#~ "cookies are useful in certain situations. For example, they are often "
+#~ "used by Internet shops, so you can 'put things into a shopping basket'. "
+#~ "Some sites require you have a browser that supports cookies.</"
+#~ "p><p>Because most people want a compromise between privacy and the "
+#~ "benefits cookies offer, KDE offers you the ability to customize the way "
+#~ "it handles cookies. You might, for example want to set KDE's default "
+#~ "policy to ask you whenever a server wants to set a cookie or simply "
+#~ "reject or accept everything. For example, you might choose to accept all "
+#~ "cookies from your favorite shopping web site. For this all you have to do "
+#~ "is either browse to that particular site and when you are presented with "
+#~ "the cookie dialog box, click on <i> This domain </i> under the 'apply to' "
+#~ "tab and choose accept or simply specify the name of the site in the <i> "
+#~ "Domain Specific Policy </i> tab and set it to accept. This enables you to "
+#~ "receive cookies from trusted web sites without being asked every time KDE "
+#~ "receives a cookie.</p>"
+#~ msgstr ""
+#~ "<p><h1>Koekjes</h1> Koekjes befetsje ynformaasje dy Konqueror (of oare "
+#~ "KDE-applikaassjes dy it http-protokol brûke) bewarret op jo kompjûter yn "
+#~ "opdracht fan in eksterne ynternettsjinner. Dit jout oan dat in "
+#~ "webtsjinner ynformaasje oer jo en jo ynternetgedrach foar letter gebrûk "
+#~ "bewarret op jo kompjûter. Dit kinne jo sjen as ynbreuk op jo privacy. </"
+#~ "p><p>  Mar yn guon situaasjes kinne koekjes hiel brûkber wêze. Se wurde "
+#~ "bygelyks brûkt troch ynternetwinkels, sadat jo 'boadskippen yn jo "
+#~ "boadskipsweintsje lizze kinne'. Der binne ek siden dy fereaskje dan ek "
+#~ "dat jo blêder koekjes akseptearret. </p><p> Omdat de measte brûkers in "
+#~ "tuskenoplossing ôfslute wolle tusken har privacybehoeften en de "
+#~ "foardielen fan koekjes biedt KDE de mooglikheid om sels te bepalen hoe "
+#~ "KDE omgiet mei koekjes. Sa kinne jo oanjaan dat KDE standert om in "
+#~ "befêstiging freget, as de tsjinner in koekje pleatse wol. Mar foar jo "
+#~ "favorite ynternetwinkels en websiden dy jo fertrouwe wolle jo tinke wy de "
+#~ "koekjes deagewoan akseptearje. Jo hoege hjirfoar allinne mar efkes nei de "
+#~ "jildende side te gean en as jo in koekje-skerm tsjinkomme, dan kinne jo "
+#~ "klikke op <i>Dit domein</i> ûnder de ljepper “Tapasse” en dan op "
+#~ "\"Akseptearje\". Of jo beskriuwe gewoan de namme fan de side yn de "
+#~ "ljepper <i>Domeinspesifyk belied</i> en set dizze op 'Akseptearje'. Dit "
+#~ "jout jo de mooglikheid om koekjes te akseptearjen fan fertroude websiden "
+#~ "sûnder dat KDE stees wer om in befêstiging freget.</p>"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "<p>Enable cookie support. Normally you will want to have cookie support "
+#~ "enabled and customize it to suit your privacy needs.</p><p>\n"
+#~ "Please note that disabling cookie support might make many web sites "
+#~ "unbrowsable.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "<p>Dizze opsje aktivearret de koekjesstipe. Under gewoane omstannichheden "
+#~ "wolle jo de koekjesstipe aktivearje en oanpasse sadat dizze dy yn jo "
+#~ "privacyferlet yn de mjitte komme.</p><p>\n"
+#~ "Taljochting: it útskeakeljen fan de koekjesstipe kin derfoar soargje dat "
+#~ "in soad websiden net mear tagonklik binne.</p>\n"
+#~ "</qt>"
+
+#~ msgid "Enable coo&kies"
+#~ msgstr "Koe&kjes oansette"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Reject the so called third-party cookies. These are cookies that "
+#~ "originate from a site other than the one you are currently browsing. For "
+#~ "example, if you visit <b>www.foobar.com</b> while this option is on, only "
+#~ "cookies that originate from www.foobar.com will be processed per your "
+#~ "settings. Cookies from any other site will be rejected. This reduces the "
+#~ "chances of site operators compiling a profile about your daily browsing "
+#~ "habits.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "Saneamde koekjes fan tredden ôfkarre. Dit binne koekjes dy net ôfkomstich "
+#~ "binne fan de side dy't jo besikje. Bygelyks, as jo de side <b>www.kde.nl</"
+#~ "b> besjogge mei dizze opsje ynskeakele, dan sille allinne koekjes fan www."
+#~ "kde.nl neffens jo ynstellings ferwurke wurde. Alle oare koekjes sille "
+#~ "automatysk ôfkarre wurde. Hjirmei beheinne jo de kâns dat sidebehearders "
+#~ "in profiel opbouwe kinne fan jo dagelikse ynternetgewoanten.\n"
+#~ "</qt>"
+
+#~ msgid "Only acce&pt cookies from originating server"
+#~ msgstr "Allinnich koekjes fan de orizjinele tsjinner akse&ptearje"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "<p>Automatically accept temporary cookies meant to expire at the end of "
+#~| "the current session. Such cookies will not be stored in your computer's "
+#~| "hard drive or storage device. Instead, they are deleted when you close "
+#~| "all applications (e.g. your browser) that use them.</p><p>\n"
+#~| "<u>NOTE:</u> Checking this option along with the next one will override "
+#~| "your default as well as site specific cookie policies. However, doing so "
+#~| "also increases your privacy since all cookies will be removed when the "
+#~| "current session ends.</p>\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<p>\n"
+#~ "Automatically accept temporary cookies meant to expire at the end of the "
+#~ "current session. Such cookies will not be stored in your computer's hard "
+#~ "drive or storage device. Instead, they are deleted when you close all "
+#~ "applications (e.g. your browser) that use them.</p><p><u>NOTE</u> "
+#~ "Checking this option overrides your default as well as site specific "
+#~ "cookie policies for session cookies.</p>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "<p>Automatysk koekjes akseptearje dy`'t oan ein fan de aktive sesje "
+#~ "ferrinne sille. Soksoarte koekjes sille net bewarre wurde op jo fêste "
+#~ "skiif of oar opslach apparaat. Ynstee dêrfan sille se wiske wurde as alle "
+#~ "applikaasjes (lykas jo blêder) dy brûk meitsje fan dizze koekjes ôfsluten "
+#~ "binne.</p><p>\n"
+#~ "<u>Taljochting:</u> As jo dizze opsje tegearre mei de neikommende "
+#~ "selektearje, dan sille dizze jo standertynstellings en ek jo side-"
+#~ "spesifyke koekje-ynstellings oerskriuwe. Like goed ferheget dit wol jo "
+#~ "privacy omdat alle koekjes fuortsmiten wurde sa gou’t de aktive sesje "
+#~ "beëine wurdt.</p>\n"
+#~ "</qt>"
+
+#~ msgid "Automaticall&y accept session cookies"
+#~ msgstr "Sesje-koekjes automat&ysk akseptearje"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Determines how cookies received from a remote machine will be handled: \n"
+#~| "<ul>\n"
+#~| "<li><b>Ask</b> will cause KDE to ask for your confirmation whenever a "
+#~| "server wants to set a cookie.</li>\n"
+#~| "<li><b>Accept</b> will cause cookies to be accepted without prompting "
+#~| "you.</li>\n"
+#~| "<li><b>Reject</b> will cause the cookiejar to refuse all cookies it "
+#~| "receives.</li>\n"
+#~| "</ul><p>\n"
+#~| "<u>NOTE:</u> Domain specific policies, which can be set below, always "
+#~| "take precedence over the default policy.</p>\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Determines how cookies received from a remote machine will be handled: \n"
+#~ "<ul>\n"
+#~ "<li><b>Ask</b> will cause KDE to ask for your confirmation whenever a "
+#~ "server wants to set a cookie.</li>\n"
+#~ "<li><b>Accept</b> will cause cookies to be accepted without prompting you."
+#~ "</li>\n"
+#~ "<li><b>Accept until end of session</b> will cause cookies to be accepted "
+#~ "but they will expire at the end of the session.</li>\n"
+#~ "<li><b>Reject</b> will cause the cookiejar to refuse all cookies it "
+#~ "receives.</li>\n"
+#~ "</ul><p>\n"
+#~ "<u>NOTE:</u> Domain specific policies, which can be set below, always "
+#~ "take precedence over the default policy.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "Stelt fêst hoe koekjes dy ûntfongen wurde fan in eksterne kompjûter sille "
+#~ "ôfhannele wurde:\n"
+#~ "<ul> \n"
+#~ "<li><b>Freegje</b> soarget derfoar dat KDE freget om in befêstiging, "
+#~ "eltse kear as in tsjinner in koekje pleatse wol.</li>\n"
+#~ "<li><b>Akseptearje</b> soarget derfoar dat KDE alle koekje swijend "
+#~ "akseptearret.</li>\n"
+#~ "<li><b>Ofkarre</em> soarget derfoar dat KDE gjin koekjes akseptearret.</"
+#~ "li>\n"
+#~ "</ul><p>\n"
+#~ "<u>Taljochting:</u> domeinspesifyk belied, hokker hjirûnder ynsteld kin "
+#~ "wurde, wurdt altyd brûkt ynstee fan it standertbelied.\n"
+#~ "</qt>"
+
+#~ msgid "Default Policy"
+#~ msgstr "Standert belied"
+
+#~ msgid "Accep&t all cookies"
+#~ msgstr "Alle koekjes aksep&tearje"
+
+#, fuzzy
+#~| msgid "End of session"
+#~ msgid "Accept &until end of session"
+#~ msgstr "It ein fan de sesje"
+
+#~ msgid "Ask &for confirmation"
+#~ msgstr "&Freegje om befêstiging"
+
+#~ msgid "Re&ject all cookies"
+#~ msgstr "Alle koekjes ô&fkarre"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "To add a new policy, simply click on the <b>Add...</b> button and supply "
+#~ "the necessary information. To change an existing policy, use the "
+#~ "<b>Change...</b> button and choose the new policy from the policy dialog "
+#~ "box. Clicking on the <b>Delete</b> button will remove the currently "
+#~ "selected policy causing the default policy setting to be used for that "
+#~ "domain, whereas <b>Delete All</b> will remove all the site specific "
+#~ "policies.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "Om in nij belied ta te heakjen, klik ienfâldich op de knop<b>Taheakje...</"
+#~ "b> en folje de nedige ynformaasje yn, yn it dialoochfinster. Om in "
+#~ "besteand belied te feroarjen kinne jo klikke op de knop <b>Feroarje...</"
+#~ "b> en in nij belied yn it dialoochfinster kieze. As jo op de knop "
+#~ "<b>Wiskje...</b> klikke, dan wurdt foar it keazen domein it standert "
+#~ "koekjebelied brûkt. De knop <b>Alles wiskje</b> sil elts sidespesifyk "
+#~ "belied wiskje.\n"
+#~ "</qt>"
+
+#~ msgid "Site Policy"
+#~ msgstr "Side belied"
+
+#~ msgid "Search interactively for domains"
+#~ msgstr "Ynteraktyf sykje om domeinen"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "List of sites for which you have set a specific cookie policy. Specific "
+#~ "policies override the default policy setting for these sites.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "List mei de websiden wêrfoar dat jo in spesifyk koekjebelied ynsteld "
+#~ "hawwe. Spesifyk belied skriuwt it standertbeleid oer foar dizze "
+#~ "websiden.\n"
+#~ "</qt>"
+
+#~ msgid "Domain"
+#~ msgstr "Domein"
+
+#~ msgid "&New..."
+#~ msgstr "&Nij..."
+
+#~ msgid "Chan&ge..."
+#~ msgstr "Wizi&gje..."
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the host or domain to which this policy applies, e.g. <b>www.kde."
+#~ "org</b> or <b>.kde.org</b>.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "Fier de namme fan de host of it domein yn wêr dit belied op fan tapassing "
+#~ "is. Bgl. <i>www.kde.nl</i> of <i>.kde.nl</i>.\n"
+#~ "</qt>"
+
+#, fuzzy
+#~| msgid "Site Name"
+#~ msgid "Site name:"
+#~ msgstr "Side namme"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Select the desired policy:\n"
+#~| "<ul>\n"
+#~| "<li><b>Accept</b> - Allows this site to set cookies</li>\n"
+#~| "<li><b>Reject</b> - Refuse all cookies sent from this site</li>\n"
+#~| "<li><b>Ask</b> - Prompt when cookies are received from this site</li>\n"
+#~| "</ul>\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Select the desired policy:\n"
+#~ "<ul>\n"
+#~ "<li><b>Accept</b> - Allows this site to set cookies</li>\n"
+#~ "<li><b>Accept until end of session</b> - Allows this site to set cookies "
+#~ "but they will expire at the end of the session.</li>\n"
+#~ "<li><b>Reject</b> - Refuse all cookies sent from this site</li>\n"
+#~ "<li><b>Ask</b> - Prompt when cookies are received from this site</li>\n"
+#~ "</ul>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "Selektearje it winske belied:\n"
+#~ "<ul>\n"
+#~ "<li><b>Akseptearje</b> - stiet dizze side ta om in koekje te stjoeren</"
+#~ "li>\n"
+#~ "<li><b>Ofkarre</b> - wegert alle koekjes dy fan dizze side ôfkomme.</li>\n"
+#~ "<li><b>Freegje</b> - freget jo om in befêstiging as der in koekje fan "
+#~ "dizze side ûntfongen wurdt</li></ul>\n"
+#~ "</qt>"
+
+#, fuzzy
+#~| msgid "&Policy:"
+#~ msgid "Policy:"
+#~ msgstr "&Belied:"
+
+#~ msgid "Accept"
+#~ msgstr "Akseptearje"
+
+#, fuzzy
+#~| msgid "End of session"
+#~ msgid "Accept until end of session"
+#~ msgstr "It ein fan de sesje"
+
+#~ msgid "Reject"
+#~ msgstr "Ofkarre"
+
+#~ msgid "Ask"
+#~ msgstr "Freegje"
+
+#~ msgid "Disable Passive FTP"
+#~ msgstr "Passive FTP útskeakelje"
+
+#~ msgid ""
+#~ "When FTP connections are passive the client connects to the server, "
+#~ "instead of the other way round, so firewalls do not block the connection; "
+#~ "old FTP servers may not support Passive FTP though."
+#~ msgstr ""
+#~ "As in brûker in fersyk dat om in trien te ûntfangen wurdt in datastream "
+#~ "opsetten. By aktive FTP wurdt dizze datastream start troch de tsjinner, "
+#~ "mar omdat folle brânmuorren dit warje kinne jo brûk meitsje fan passive "
+#~ "FTP, wêrby de datastream start wurdt fan út de client. Aldere ftp-"
+#~ "tsjinners stypje dit miskien net."
+
+#~ msgid "Mark partially uploaded files"
+#~ msgstr "Foar in diel ferstjoerde triemmen markearje"
+
+#~ msgid ""
+#~ "While a file is being uploaded its extension is \".part\". When fully "
+#~ "uploaded it is renamed to its real name."
+#~ msgstr ""
+#~ "Under it ferstjoeren fan in triem krijt it de taheaksel  \"*.part\". As "
+#~ "de triem folslein fersjoerd is wurdt dit taheaksel wer ferwidere en wurdt "
+#~ "it oarspronkelike taheaksel wer taheakke."
+
+#~ msgid ""
+#~ "<h1>Proxy</h1><p>A proxy server is an intermediate program that sits "
+#~ "between your machine and the Internet and provides services such as web "
+#~ "page caching and/or filtering.</p><p>Caching proxy servers give you "
+#~ "faster access to sites you have already visited by locally storing or "
+#~ "caching the content of those pages; filtering proxy servers, on the other "
+#~ "hand, provide the ability to block out requests for ads, spam, or "
+#~ "anything else you want to block.</p><p><u>Note:</u> Some proxy servers "
+#~ "provide both services.</p>"
+#~ msgstr ""
+#~ "<h1>Proksy</h1><p>In proksytsjinner is in tsjinner dy tusken jo ynterne "
+#~ "netwurk en it ynternet sit en de websiden filtert en/of bewarret.</"
+#~ "p><p>Cashing-proksytsjinner jouwe fluggere tagong ta siden dy jo al "
+#~ "besocht ha troch de ynhâld fan dizze siden lokaal te bewarjen. Dêrtsjin "
+#~ "oer biede filterjende proksytsjinner de mooglikheid om bepaalde websiden, "
+#~ "lykas reklamesiden, ûnpost en oare siden te warjen.</p><p><u>Taljochting:"
+#~ "</u> dêr binne proksytsjinners dy beide mooglikheden oanbiede.</p>"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Setup proxy configuration.\n"
+#~ "<p>\n"
+#~ "A proxy server is an intermediate machine that sits between your computer "
+#~ "and the Internet and provides services such as web page caching and "
+#~ "filtering. Caching proxy servers give you faster access to web sites you "
+#~ "have already visited by locally storing or caching those pages; filtering "
+#~ "proxy servers usually provide the ability to block out requests for ads, "
+#~ "spam, or anything else you want to block.\n"
+#~ "<p>\n"
+#~ "If you are uncertain whether or not you need to use a proxy server to "
+#~ "connect to the Internet, consult your Internet service provider's setup "
+#~ "guide or your system administrator.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "Proxykonfiguraasje ynstelle.\n"
+#~ "<p>\n"
+#~ "In proxytsjinner is in kompjûter dy't tusken jo ynterne netwurk en "
+#~ "ynternet sit, en de websiden filtert en/of bewarret. Hjirtroch ha jo "
+#~ "flugger tagong ta siden dy jo al besjoen ha. Caching proxies jouwe "
+#~ "fluggere tagong ta websiden dy jo al earder besjoen ha troch se lokaal te "
+#~ "bewarjen of te cachen. Filterjende proxies binne hannich om bepaalde "
+#~ "websiden, lukas reklamesiden, ûnpost en oare siden mei ynformaasje dy jo "
+#~ "net ûntfange wolle te warjen.\n"
+#~ "<p>\n"
+#~ "As jo net wis binne of jo in proxytsjinner brûke moast, nim dan kontakt "
+#~ "op mei jo systeembehearder of de hânlieding fan jo ynternetferskaffer.\n"
+#~ "</qt>"
+
+#~ msgid "Connect to the Internet directly."
+#~ msgstr "Direkte ferbining mei ynternet."
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "No Proxy"
+#~ msgstr "&Proxy"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Automatically detect and configure the proxy settings.<p>\n"
+#~ "Automatic detection is performed using the <b>Web Proxy Auto-Discovery "
+#~ "Protocol (WPAD)</b>.<p>\n"
+#~ "<b>NOTE:</b> This option might not work properly or not work at all in "
+#~ "some UNIX/Linux distributions. If you encounter a problem when using this "
+#~ "option, please check the FAQ section at http://konqueror.kde.org.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "De proxy-ynstellings automatysk ûntdekke en ynstelle.<p>\n"
+#~ "Automatyske ûntdekking wurdt dien mei help fan it <b>Web Proxy Auto-"
+#~ "Discovery Protokol (WPAD)</b>.<p>\n"
+#~ "<b>Taljochting:</b> dizze opsje wurket mooglik net goed of hielendal net "
+#~ "op guon UNIX/Linux-distribúsjes. Ast swierrichheid tsjinkomst by it "
+#~ "brûken fan dizze opsje, lês dan de FAQ op http://konqueror.kde.org.\n"
+#~ "</qt>"
+
+#, fuzzy
+#~| msgid "U&se proxy configuration URL:"
+#~ msgid "Detect proxy configuration automatically"
+#~ msgstr "Dit URL-adres foar de proksykonfiguraasje brûke:"
+
+#, fuzzy
+#~| msgid "Use the specified proxy script URL to configure the proxy settings."
+#~ msgid "Use the specified proxy script to configure the proxy settings."
+#~ msgstr ""
+#~ "Brûk it oantsjutte konfiguraasjeskript foar it ynstellen fan de proxy-"
+#~ "ynstellings."
+
+#, fuzzy
+#~| msgid "U&se proxy configuration URL:"
+#~ msgid "Use proxy auto configuration URL:"
+#~ msgstr "Dit URL-adres foar de proksykonfiguraasje brûke:"
+
+#~ msgid "Enter the address for the proxy configuration script."
+#~ msgstr "Fier it adres yn foar it proxykonfiguraasjeskript."
+
+#, fuzzy
+#~| msgid "U&se proxy configuration URL:"
+#~ msgid "Use system proxy configuration:"
+#~ msgstr "Dit URL-adres foar de proksykonfiguraasje brûke:"
+
+#~ msgid ""
+#~ "<qt>Attempt automatic discovery of the environment variables used for "
+#~ "setting system wide proxy information.<p> This feature works by searching "
+#~ "for commonly used variable names such as HTTP_PROXY, FTP_PROXY and "
+#~ "NO_PROXY.</qt>"
+#~ msgstr ""
+#~ "<qt>Besykje automatysk de omjouwingsfariabelen dy brûkt wurde foar "
+#~ "globale proxy-ynformaasje te finen. <p> Dizze funksje wurket by it sykjen "
+#~ "nei algemien brûkte fariabelenammen sa as HTTP_PROXY, FTP_PROXY en "
+#~ "NO_PROXY.</qt>"
+
+#, fuzzy
+#~| msgid "Auto &Detect"
+#~ msgid "Auto D&etect"
+#~ msgstr "Auto-ûnt&dekke"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Enter the name of the environment variable, e.g. <b>HTTP_PROXY</b>, used "
+#~| "to store the address of the HTTP proxy server.<p>\n"
+#~| "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~| "attempt automatic discovery of this variable.\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the name of the environment variable, e.g. <b>HTTP_PROXY</b>, used "
+#~ "to store the address of the HTTP proxy server.<p>\n"
+#~ "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~ "attempt automatic discovery of this variable.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "Fier de namme yn fan de omjouwingsfariabele, bgl. <b>HTTP_PROXY</b>, dy "
+#~ "it adres fan de HTTP-proxytsjinner befet.<p>\n"
+#~ "Jo kinne ek op de knop <b>\"Autoûntdekke\"</b> drukke om te besykjen "
+#~ "dizze fariabele automatysk op te spoaren.\n"
+#~ "</qt>"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "HTTP Proxy:"
+#~ msgstr "&Proxy"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Enter the name of the environment variable, e.g. <b>HTTPS_PROXY</b>, "
+#~| "used to store the address of the HTTPS proxy server.<p>\n"
+#~| "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~| "attempt an automatic discovery of this variable.\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the name of the environment variable, e.g. <b>HTTPS_PROXY</b>, used "
+#~ "to store the address of the HTTPS proxy server.<p>\n"
+#~ "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~ "attempt an automatic discovery of this variable.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "Fier de namme yn fan de omjouwingsfariabele, bgl. <b>HTTPS_PROXY</b>, dy "
+#~ "it adres fan de HTTPS-proxytsjinner befettet.<p>\n"
+#~ "Jo kinne ek op de knop <b>\"Auto-ûntdekke\"</b> drukke om te besykjen "
+#~ "dizze fariabele automatysk op te spoaren.\n"
+#~ "</qt>"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "SSL Proxy:"
+#~ msgstr "&Proxy"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Enter the name of the environment variable, e.g. <b>FTP_PROXY</b>, used "
+#~| "to store the address of the FTP proxy server.<p>\n"
+#~| "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~| "attempt an automatic discovery of this variable.\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the name of the environment variable, e.g. <b>FTP_PROXY</b>, used "
+#~ "to store the address of the FTP proxy server.<p>\n"
+#~ "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~ "attempt an automatic discovery of this variable.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "Fier de namme yn fan de omjouwingsfariabele, bgl. <b>FTP_PROXY</b>, dy it "
+#~ "adres fan de FTP-proxytsjinner befettet.<p>\n"
+#~ "Jo kinne ek op de knop <b>\"Auto-ûntdekke\"</b> drukke om te besykjen "
+#~ "dizze fariabele automatysk op te spoaren.\n"
+#~ "</qt>"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "FTP Proxy:"
+#~ msgstr "&Proxy"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Enter the name of the environment variable, e.g. <b>HTTPS_PROXY</b>, "
+#~| "used to store the address of the HTTPS proxy server.<p>\n"
+#~| "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~| "attempt an automatic discovery of this variable.\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the name of the environment variable, e.g. <b>SOCKS_PROXY</b>, used "
+#~ "to store the address of the SOCKS proxy server.<p>\n"
+#~ "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~ "attempt an automatic discovery of this variable.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "Fier de namme yn fan de omjouwingsfariabele, bgl. <b>HTTPS_PROXY</b>, dy "
+#~ "it adres fan de HTTPS-proxytsjinner befettet.<p>\n"
+#~ "Jo kinne ek op de knop <b>\"Auto-ûntdekke\"</b> drukke om te besykjen "
+#~ "dizze fariabele automatysk op te spoaren.\n"
+#~ "</qt>"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "SOCKS Proxy:"
+#~ msgstr "&Proxy"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Enter the name of the environment variable, e.g. <b>HTTPS_PROXY</b>, "
+#~| "used to store the address of the HTTPS proxy server.<p>\n"
+#~| "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~| "attempt an automatic discovery of this variable.\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>Enter the name of the environment variable, e.g. <b>SOCKS_PROXY</b>, "
+#~ "used to store the address of the SOCKS proxy server.<p>Alternatively, you "
+#~ "can click on the <b>\"Auto Detect\"</b> button to attempt an automatic "
+#~ "discovery of this variable.</p></qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "Fier de namme yn fan de omjouwingsfariabele, bgl. <b>HTTPS_PROXY</b>, dy "
+#~ "it adres fan de HTTPS-proxytsjinner befettet.<p>\n"
+#~ "Jo kinne ek op de knop <b>\"Auto-ûntdekke\"</b> drukke om te besykjen "
+#~ "dizze fariabele automatysk op te spoaren.\n"
+#~ "</qt>"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the environment variable, e.g. <b>NO_PROXY</b>, used to store the "
+#~ "addresses of sites for which the proxy server should not be used.<p>\n"
+#~ "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~ "attempt an automatic discovery of this variable.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "Fier de namme yn fan de omjouwingsfariabele, bgl. <b>NO_PROXY</b>, dy "
+#~ "brûkt wurdt foar it bewarjen fan ynternetadressen wêrfoar de "
+#~ "proxytsjinner net brûkt wurdt.<p>\n"
+#~ "Jo kinne ek op de knop <b>\"Auto-ûntdekke\"</b> drukke om te besykjen "
+#~ "dizze fariabele automatysk op te spoaren.\n"
+#~ "</qt>"
+
+#, fuzzy
+#~| msgid "E&xceptions"
+#~ msgid "Exceptions:"
+#~ msgstr "U&tsûnderings"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Enter the environment variable, e.g. <b>NO_PROXY</b>, used to store the "
+#~| "addresses of sites for which the proxy server should not be used.<p>\n"
+#~| "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~| "attempt an automatic discovery of this variable.\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>Enter the environment variable, e.g. <b>NO_PROXY</b>, used to store "
+#~ "the addresses of sites for which the above proxy settings should not be "
+#~ "used.<p>Alternatively, you can click on the <b>\"Auto Detect\"</b> button "
+#~ "to attempt an automatic discovery of this variable.</p></qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "Fier de namme yn fan de omjouwingsfariabele, bgl. <b>NO_PROXY</b>, dy "
+#~ "brûkt wurdt foar it bewarjen fan ynternetadressen wêrfoar de "
+#~ "proxytsjinner net brûkt wurdt.<p>\n"
+#~ "Jo kinne ek op de knop <b>\"Auto-ûntdekke\"</b> drukke om te besykjen "
+#~ "dizze fariabele automatysk op te spoaren.\n"
+#~ "</qt>"
+
+#~ msgid "Show the &value of the environment variables"
+#~ msgstr "Wearde fan de omjouwings%fariabele sjen litte"
+
+#~ msgid "Manually enter proxy server configuration information."
+#~ msgstr "Proxytsjinnerkonfiguraasje mei de hân ynfiere."
+
+#, fuzzy
+#~| msgid "A&utomatically detect proxy configuration"
+#~ msgid "Use manually specified proxy configuration:"
+#~ msgstr "Proxykonfiguraasje a&utomatysk ûntdekke"
+
+#~ msgid "Enter the address of the HTTP proxy server."
+#~ msgstr "Fier hjir it adres yn fan de HTTP-proxytsjinner."
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTP proxy server."
+#~ msgid "Enter the port number of the HTTP proxy server."
+#~ msgstr "Fier hjir it adres yn fan de HTTP-proxytsjinner."
+
+#, fuzzy
+#~| msgid "&Use the same proxy server for all protocols"
+#~ msgid "Use this proxy server for a&ll protocols"
+#~ msgstr "De&selde proxy brûke foar alle protokollen"
+
+#~ msgid "Enter the address of the HTTPS proxy server."
+#~ msgstr "Fier hjir it adres yn fan de HTTPS-proxytsjinner."
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTPS proxy server."
+#~ msgid "Enter the port number of the HTTPS proxy server."
+#~ msgstr "Fier hjir it adres yn fan de HTTPS-proxytsjinner."
+
+#~ msgid "Enter the address of the FTP proxy server."
+#~ msgstr "Fier hjir it adres yn fan de FTP-proxytsjinner."
+
+#, fuzzy
+#~| msgid "Enter the address of the FTP proxy server."
+#~ msgid "Enter the port number of the FTP proxy server."
+#~ msgstr "Fier hjir it adres yn fan de FTP-proxytsjinner."
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTPS proxy server."
+#~ msgid "Enter the address of the SOCKS proxy server."
+#~ msgstr "Fier hjir it adres yn fan de HTTPS-proxytsjinner."
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTPS proxy server."
+#~ msgid "Enter the port number of the SOCKS proxy server."
+#~ msgstr "Fier hjir it adres yn fan de HTTPS-proxytsjinner."
+
+#, fuzzy
+#~| msgid "Use proxy only for entries in this list"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Check this box if you want the above proxy settings to apply only to the "
+#~ "addresses listed in the <i>Exceptions</i> list.</qt>"
+#~ msgstr "Proxy allinnich brûke foar items yn dizze list"
+
+#, fuzzy
+#~| msgid "Use proxy only for entries in this list"
+#~ msgid "Use proxy settings only for addresses in the Exceptions list"
+#~ msgstr "Proxy allinnich brûke foar items yn dizze list"
+
+#~ msgid ""
+#~ "You have to restart the running applications for these changes to take "
+#~ "effect."
+#~ msgstr ""
+#~ "Om dizze ynstellings te aktivearjen moat de rinnende applikaasjes "
+#~ "werstart wurde."
+
+#, fuzzy
+#~| msgid "Update Failed"
+#~ msgctxt "@title:window"
+#~ msgid "Update Failed"
+#~ msgstr "Bywurkjen mislearre"
+
+#~ msgid "You have to restart KDE for these changes to take effect."
+#~ msgstr "Start KDE opnij op om de feroarings te aktivearje."
+
+#~ msgid "Timeout Values"
+#~ msgstr "Wearden fan tiidsferrin"
+
+#~ msgid ""
+#~ "Here you can set timeout values. You might want to tweak them if your "
+#~ "connection is very slow. The maximum allowed value is 1 second."
+#~ msgid_plural ""
+#~ "Here you can set timeout values. You might want to tweak them if your "
+#~ "connection is very slow. The maximum allowed value is %1 seconds."
+#~ msgstr[0] ""
+#~ "Hjir kinne jo de wearden fan tiidsferrin ynstelle. By trage ferbinings is "
+#~ "it oan te rieden dizze ynstelling oan te passen. De maksimum tasteane "
+#~ "wearde is 1 sekonde."
+#~ msgstr[1] ""
+#~ "Hjir kinne jo de tiidsferrin wearden ynstelle. By trage ferbinings is it "
+#~ "oan te rieden dizze ynstelling oan te passen. De maksimum tasteane wearde "
+#~ "is %1 sekonden."
+
+#, fuzzy
+#~| msgid " sec"
+#~ msgid " second"
+#~ msgid_plural " seconds"
+#~ msgstr[0] " sek"
+#~ msgstr[1] " sek"
+
+#~ msgid "Soc&ket read:"
+#~ msgstr "Soc&ket lêze:"
+
+#~ msgid "Pro&xy connect:"
+#~ msgstr "Pro&ksy ferbine:"
+
+#~ msgid "Server co&nnect:"
+#~ msgstr "Tsjinner ferbi&ne:"
+
+#~ msgid "&Server response:"
+#~ msgstr "T&sjinner reaksje:"
+
+#~ msgid "FTP Options"
+#~ msgstr "FTP-opsjes"
+
+#~ msgid "Enable passive &mode (PASV)"
+#~ msgstr "Passive &modus (PASV) ynskeakelje"
+
+#~ msgid ""
+#~ "Enables FTP's \"passive\" mode. This is required to allow FTP to work "
+#~ "from behind firewalls."
+#~ msgstr ""
+#~ "Skeakelt de passive modus fan FTP yn. Dit is nedich om FTP wurkje te "
+#~ "litten fan efter de brânmuorre."
+
+#~ msgid "Mark &partially uploaded files"
+#~ msgstr "Foar in diel fer&stjoerde triemmen markearje"
+
+#~ msgid ""
+#~ "<p>Marks partially uploaded FTP files.</p><p>When this option is enabled, "
+#~ "partially uploaded files will have a \".part\" extension. This extension "
+#~ "will be removed once the transfer is complete.</p>"
+#~ msgstr ""
+#~ "<p>Markearret FTP-triemmen dy foar in diel ferstjoerd binne nei de "
+#~ "tsjinner.</p><p>As dizze opsje selektearre is ha triemmen dy foar in diel "
+#~ "ferstjoerd binne nei de tsjinner de taheaksel \".part\". Dizze taheaksel "
+#~ "sil fuortsmiten wurde as de oerdracht klear is.</p>"
+
+#~ msgid ""
+#~ "<h1>Network Preferences</h1>Here you can define the behavior of KDE "
+#~ "programs when using Internet and network connections. If you experience "
+#~ "timeouts or use a modem to connect to the Internet, you might want to "
+#~ "adjust these settings."
+#~ msgstr ""
+#~ "<h1>Netwurk eigenskippen</h1> Hjir kinne jo it gedrach fan KDE-"
+#~ "programma's ûnder it gebrûk fan ynternet en netwurkferbiningen ynstelle. "
+#~ "As jo lêst hawwe fan it tiidsferrin, oare swierrichheid, of in modem "
+#~ "brûke, dan kinne jo it bêste dizze wearden oanpasse."
+
+#~ msgid "These settings apply to network browsing only."
+#~ msgstr "Dizze ynstellings jilde allinne foar it sneupen oer it netwurk"
+
+#~ msgid "Default user name:"
+#~ msgstr "Standert brûkersnamme:"
+
+#~ msgid "Default password:"
+#~ msgstr "Standert wachtwurd:"
+
+#~ msgid ""
+#~ "<p><h1>Windows Shares</h1>Konqueror is able to access shared Microsoft "
+#~ "Windows file systems, if properly configured. If there is a specific "
+#~ "computer from which you want to browse, fill in the <em>Browse server</"
+#~ "em> field. This is mandatory if you are not running Samba locally. The "
+#~ "<em>Broadcast address</em> and <em>WINS address</em> fields will also be "
+#~ "available, if you use the native code, or the location of the 'smb.conf' "
+#~ "file from which the options are read, when using Samba. In any case, the "
+#~ "broadcast address (interfaces in smb.conf) must be set up if it is "
+#~ "guessed incorrectly or you have multiple cards. A WINS server usually "
+#~ "improves performance, and reduces the network load a lot.</p><p>The "
+#~ "bindings are used to assign a default user for a given server, possibly "
+#~ "with the corresponding password, or for accessing specific shares. If you "
+#~ "choose to, new bindings will be created for logins and shares accessed "
+#~ "during browsing. You can edit all of them from here. Passwords will be "
+#~ "stored locally, and scrambled so as to render them unreadable to the "
+#~ "human eye. For security reasons, you may not want to do that, as entries "
+#~ "with passwords are clearly indicated as such.</p>"
+#~ msgstr ""
+#~ "<p><h1>Windows Netwurken</h1>Konqueror is in steat him tagong te "
+#~ "ferskaffen ta dielde Windows-triemsystemen, at dizzen teminste goed "
+#~ "ynsteld binne. As der in spesifike kompjûter is wêrop jo blêdzje wolle, "
+#~ "folje dizze dan yn, yn it fjild <em>Blêdzje-tsjinner</em>. Dit is "
+#~ "ferplicht as jo Samba net lokaal brûke. De fjilden <em>Broadcast-adres</"
+#~ "em> en <em>WINS-adres</em> sille ek beskikber wêze as jo de lokale koade "
+#~ "brûke, of de lokaasje fan wêrút de 'smb.conf'-opsjes kinne lêzen wurde. "
+#~ "Yn elts gefal moat it broadcast-adres (ynterfaces yn smb.conf) ynstelt "
+#~ "wurde as dizze net just rieden wurdt, of wannear jo meardere kaarten "
+#~ "brûke. In WINS-tsjinner ferbetteret gewoanlik de prestaasjes en "
+#~ "fermindert de netwurklading.</p><p>De biningen wurde brûkt om in "
+#~ "standertbrûker foar in beskate tsjinner ta te wizen. Ek kin dit mei it "
+#~ "korrespondearjende wachtwurd, of foar tagong ta spesifike dielen fan "
+#~ "netwurkboarnen. As jo dêrfoar kieze wurde nije biningen oanmakke foar "
+#~ "oanmeldings en dielde netwurkboarnen dy ûnder it blêdzjen brûkt wurde. Jo "
+#~ "kinne se allegear fanút hjir bewurkje. Wachtwurden wurde lokaal bewarre "
+#~ "en kodearre sadat se net foar minsken lêsber binne. yn ferbân mei de "
+#~ "feiligens kinne jo dêr fan ôf sjen. Yngongen mei wachtwurden binne dúdlik "
+#~ "as sadanich markearre.</p>"
+
+#, fuzzy
+#~| msgid "Add Identification"
+#~ msgctxt "@title:window"
+#~ msgid "Add Identification"
+#~ msgstr "Identifikaasje taheakje"
+
+#, fuzzy
+#~| msgid "Modify Identification"
+#~ msgctxt "@title:window"
+#~ msgid "Modify Identification"
+#~ msgstr "Identifikaasje feroarje"
+
+#~ msgid ""
+#~ "<qt><center>Found an existing identification for<br/><b>%1</b><br/>Do you "
+#~ "want to replace it?</center></qt>"
+#~ msgstr ""
+#~ "<qt><center>Der bestiet al in identifikaasje foar <br/><b>%1</b><br/"
+#~ ">Wolle jo dizze ferfange?</center></qt>"
+
+#, fuzzy
+#~| msgid "Duplicate Identification"
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Identification"
+#~ msgstr "Identifikaasje duplisearje"
+
+#~ msgid ""
+#~ "<p><h1>Browser Identification</h1> The browser-identification module "
+#~ "allows you to have full control over how Konqueror will identify itself "
+#~ "to web sites you browse.</p><p>This ability to fake identification is "
+#~ "necessary because some web sites do not display properly when they detect "
+#~ "that they are not talking to current versions of either Netscape "
+#~ "Navigator or Internet Explorer, even if the browser actually supports all "
+#~ "the necessary features to render those pages properly. For such sites, "
+#~ "you can use this feature to try to browse them. Please understand that "
+#~ "this might not always work, since such sites might be using non-standard "
+#~ "web protocols and or specifications.</p><p><u>NOTE:</u> To obtain "
+#~ "specific help on a particular section of the dialog box, simply click on "
+#~ "the quick help button on the window title bar, then click on the section "
+#~ "for which you are seeking help.</p>"
+#~ msgstr ""
+#~ "<p><h1>Blêderidentifikaasje</h1>Yn de konfiguraasjemodule "
+#~ "Blêderidentifikaasje ha jo folsleine kontrôle oer hoe Konqueror himsels "
+#~ "identifisearret by websiden. </p><p>De mooglikheid om de identifikaasje "
+#~ "te mislieden is nedich omdat bepaalde websiden net op de juste wize, of "
+#~ "sels hielendal net te sjen binne at se merke dat se net kommunisearje mei "
+#~ "de nijste ferzjes fan Netscape Navigator of Ynternet Explorer, sels as de "
+#~ "\"net-stipe blêder\" oanjout dat se alle nedige funksjes yn hûs hat om "
+#~ "dizze siden op de just wize sjen te litten. Foar soksoarte websiden wolle "
+#~ "jo tink ik de standertidentifikaasje oerskriuwe troch in side-/"
+#~ "domeinspesifike yngong ta te heakjen. </p><p><u>Taljochting:</u> as jo in "
+#~ "bepaalde seksje yn it dialoochfinster net snappe, klik dan op de "
+#~ "fraagknop yn de titelbalke fan dit finster, en klik dan op de seksje wêr "
+#~ "jo in fraach oer hawwe.</p>"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Here you can modify the default browser-identification text or set a site "
+#~ "<code>(eg. www.kde.org)</code> or a domain <code>(eg. kde.org)</code> "
+#~ "specific identification text.<p>\n"
+#~ "To add a new site-specific identification text, click the <code>New</"
+#~ "code> button and supply the necessary information. To change an existing "
+#~ "site-specific entry, click on the <code>Change</code> button. The "
+#~ "<code>Delete</code> button will remove the selected site-specific "
+#~ "identification text, causing the default setting to be used for that site "
+#~ "or domain.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "Hjir kinne jo de standert blêderidentifikaasje bewurkje. Jo kinne ek in "
+#~ "sidespesifike <code>(bgl. www.kde.org)</code> of in "
+#~ "domeinspesifike<code>(bgl. kde.org</code> identifikaasje ynstelle.<P>\n"
+#~ "Om in nije identifikaasje ta te heakjen kinne jo ienfâldichwei op de knop "
+#~ "<code>Nij</code> klikke en de nedige ynformaasje ynfolje yn it "
+#~ "dialoochfinster. Om in besteande sidespesifike yngong te feroarjen klikke "
+#~ "jo op de knop <code>Feroarje</code>. De knop <code>wiskje</code> wisket "
+#~ "it selektearre belied. yn dat gefal wurdt tenei by dy side of dat domein "
+#~ "de standertynstelling brûkt.\n"
+#~ "</qt>"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Send the browser identification to web sites.<p>\n"
+#~ "<u>NOTE:</u> Many sites rely on this information to display pages "
+#~ "properly, hence, it is highly recommended that you do not totally disable "
+#~ "this feature but rather customize it.<p>\n"
+#~ "By default, only minimal identification information is sent to remote "
+#~ "sites. The identification text that will be sent is shown below.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "Stjoerd blêderidentifikaasje nei websiden.<p>\n"
+#~ "<u>Taljochting:</u> in protte siden binne ôfhinklik fan dizze ynformaasje "
+#~ "om de websiden goed wer te jaan. Dêrom is it seker oan te rieden om dizze "
+#~ "funksje net yn syn gehiel út te skeakeljen, mar just op maat te meitsjen. "
+#~ "<P>\n"
+#~ "Standert wurdt allinnich in minimale mannichte fan identifikaasje-"
+#~ "ynformaasje stjoerd nei eksterne siden. Dizze identifikaasjetekst is "
+#~ "hjirûnder te sjen.\n"
+#~ "</qt>"
+
+#~ msgid "&Send identification"
+#~ msgstr "Identifikaasje fer&stjoere"
+
+#~ msgid ""
+#~ "The browser identification text sent to the sites you visit. Use the "
+#~ "provided options to customize it."
+#~ msgstr ""
+#~ "De blêderidentifikaasje dy ferstjoerd wurdt nei websiden dyst besikest. "
+#~ "Brûk de ferskafte opsjes om dizze oan te passen."
+
+#~ msgid "Default Identification"
+#~ msgstr "Standert identifikaasje"
+
+#~ msgid ""
+#~ "The browser identification text sent to the sites you visit. You can "
+#~ "customize it using the options provided below."
+#~ msgstr ""
+#~ "De blêderidentifikaasje dy ferstjoerd wurdt nei websiden dy jo besykje. "
+#~ "Jo kinnne dizze oanpasse mei hirûnder ferskafte opsjes."
+
+#~ msgid ""
+#~ "Includes your operating system's name in the browser identification text."
+#~ msgstr ""
+#~ "Heaket de namme fan jo bestjoeringssysteem ta oan de blêderidentifikaasje."
+
+#~ msgid "Add operating s&ystem name"
+#~ msgstr "Namme fan bestjoeringss&ysteem taheakje"
+
+#~ msgid ""
+#~ "Includes your operating system's version number in the browser "
+#~ "identification text."
+#~ msgstr ""
+#~ "Heakket it ferzjenûmer fan jo bestjoeringssysteem ta oan de "
+#~ "blêderidentifikaasje."
+
+#~ msgid "Add operating system &version"
+#~ msgstr "&Ferzje fan bestjoeringssysteem taheakje"
+
+#~ msgid "Includes your machine's CPU type in the browser identification text."
+#~ msgstr "Heakket it type prosessor ta oan de blêderidentifikaasje."
+
+#~ msgid "Add &machine (processor) type"
+#~ msgstr "&Masinetype (prosessor) taheakje"
+
+#~ msgid ""
+#~ "Includes your language settings in the browser identification text to "
+#~ "obtain localized versions of the page."
+#~ msgstr ""
+#~ "Heaket jo taalynstellings ta oan de blêderidentifikaasjetekst om "
+#~ "lokalisearre ferzje fan de side te krijen."
+
+#~ msgid "Add lang&uage information"
+#~ msgstr "Taal &ynformaasje taheakje"
+
+#~ msgid "Site Specific Identification"
+#~ msgstr "Side spesifike identifikaasje"
+
+#~ msgid "Site Name"
+#~ msgstr "Side namme"
+
+#~ msgid "Identification"
+#~ msgstr "Identifikaasje"
+
+#~ msgid "User Agent"
+#~ msgstr "Brûkeragint"
+
+#~ msgid "Add new identification text for a site."
+#~ msgstr "Nije identifikaasje taheakje foar in webside."
+
+#~ msgid "Change the selected identifier text."
+#~ msgstr "Feroarje de selektearre identifikaasjetekst."
+
+#~ msgid "Delete the selected identifier text."
+#~ msgstr "Wiskje de selektearre identifikaasjetekst."
+
+#~ msgid "Delete all identifiers."
+#~ msgstr "Alle identifikaasje wiskje."
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Enter the site or domain name where a fake browser identification should "
+#~| "be used.<p>\n"
+#~| "<u>NOTE:</u> Wildcard syntax such as \\\"*,?\\\" is NOT allowed: "
+#~| "instead, use the top level address of a site to make generic matches; "
+#~| "for example, if you want all KDE sites to receive a fake browser "
+#~| "identification, you would enter <code>.kde.org</code> - the fake "
+#~| "identity would then be sent to any KDE site that ends with <code>kde."
+#~| "org</code>.\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the site or domain name where a fake browser identification should "
+#~ "be used.<p>\n"
+#~ "<u>NOTE:</u> Wildcard syntax such as \\\"*,?\\\" is NOT allowed: instead, "
+#~ "use the top level address of a site to make generic matches; for example, "
+#~ "if you want all KDE sites to receive a fake browser identification, you "
+#~ "would enter <code>kde.org</code> - the fake identity would then be sent "
+#~ "to any KDE site that ends with <code>kde.org</code>.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "Fier de side- of domeinnamme yn wêrfoar in nepidentiteit brûkt sil wurde. "
+#~ "<p>\n"
+#~ "<u>Taljochting:</u> jokertekens sa as \\\"*,?\\\" binne net tastien. Fier "
+#~ "ynplak dêrfan de domeinnamme yn fan in side ast de nepidentiteit brûke "
+#~ "wolst op alle mooglike siden binnen dit domein. Bygelyks, ast oan alle "
+#~ "siden fan KDE in nepidentiteit stjoere wolst, fier dan hjir ienfâldich "
+#~ "<code>.kde.org</code> yn. De nepidentiteit sil dan stjoerd wurde nei alle "
+#~ "KDE-siden dy einje op <code>.kde.org</code>.\n"
+#~ "</qt>"
+
+#~ msgid "&When browsing the following site:"
+#~ msgstr "&Wannear der ferbining socht wurdt mei de neikommende side:"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Select the browser identification to use whenever contacting the site you "
+#~ "specified above.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "Selektearje de blêder-identiteit hokker brûkt sil wurde as jo ferbining "
+#~ "meitsje mei de webside dy't hjirboppe oantsjutte is.\n"
+#~ "</qt>"
+
+#~ msgid "&Use the following identification:"
+#~ msgstr "Brûk de folgjende &identiteit:"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "The actual browser identification text that will be sent to the remote "
+#~ "machine.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "De echte blêder-identifikaasjetekst hokker ferstjoert wurde sil nei de "
+#~ "eksterne masine.\n"
+#~ "</qt>"
+
+#~ msgid "Real identification:"
+#~ msgstr "Echte identifikaasje:"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "<p>Treat all cookies as session cookies. Session cookies are small pieces "
+#~ "of data that are temporarily stored in your computer's memory until you "
+#~ "quit or close all applications (e.g. your browser) that use them. Unlike "
+#~ "regular cookies, session cookies are never stored on your hard drive or "
+#~ "other storage medium.</p><p>\n"
+#~ "<u>NOTE:</u> Checking this option along with the previous one will "
+#~ "override your default as well as site specific cookie policies. However, "
+#~ "doing so also increases your privacy since all cookies will be removed "
+#~ "when the current session ends.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "<p>Behannelje alle koekjes as sesje-koekjes. Sesje-koekjes binne lytse "
+#~ "dielen gegevens dy't tydlik bewarre wurde yn it ûnthâld fan jo kompjûter "
+#~ "oan't alle applikaasjes (bgl. jo blêder) dy brûk meitsje fan dizze "
+#~ "koekjes ôfslutten binne. Oars dan gewoane koekes wurde sesje-koekjes nea "
+#~ "op jo fêste skiif of oar opslach apparaat bewarre.</p><p>\n"
+#~ "<u>Taljochting:</u> as jo dizze opsje tegeare mei de foarige selektearje, "
+#~ "dan sille dizzen jo standertynstellings en ek jo side-spesifyke koekje-"
+#~ "ynstellings oerskriuwe. Like goed ferheget dit wol jo privacy omdat alle "
+#~ "koekjes fuortsmiten wurde sa gou’t de aktive sesje beëine wurdt.</p>\n"
+#~ "</qt>"
+
+#~ msgid "Treat &all cookies as session cookies"
+#~ msgstr "&Alle koekjes behannelje as sesje-koekjes"
+
+#~ msgid ""
+#~ "Enter the port number of the HTTP proxy server. Default is 8080. Another "
+#~ "common value is 3128."
+#~ msgstr ""
+#~ "Fier hjir it poartenûmer yn fan de HTTP-proxytsjinner. 8080 is standert. "
+#~ "In oare brûkte wearde is 3128. As it nedich is sykje dan de gegevens op "
+#~ "fan jo ynternetferskaffer."
+
+#~ msgid ""
+#~ "Enter the port number of the FTP proxy server. Default 8080. Another "
+#~ "common value is 3128."
+#~ msgstr ""
+#~ "Fier hjir it poartenûmer yn fan de FTP-proxytsjinner. 8080 is standert. "
+#~ "In oare brûkte wearde is 3128. As it nedich is sykje dan de gegevens op "
+#~ "fan jo ynternetferskaffer."
+
+#, fuzzy
+#~| msgid "Variable Proxy Configuration"
+#~ msgctxt "@title:window"
+#~ msgid "Variable Proxy Configuration"
+#~ msgstr "Fariabele proksy-konfiguraasje"
+
+#~ msgid "You must specify at least one valid proxy environment variable."
+#~ msgstr "Jo moatte earst in jildich proksy-omjouwingsfariabele oantsjutte."
+
+#~ msgid ""
+#~ "<qt>Make sure you entered the actual environment variable name rather "
+#~ "than its value. For example, if the environment variable is <br /"
+#~ "><b>HTTP_PROXY=http://localhost:3128</b><br /> you need to enter "
+#~ "<b>HTTP_PROXY</b> here instead of the actual value http://localhost:3128."
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>Meitsje jo der wis fan dat jo de omjouwingsfariabele sels ynfiere, "
+#~ "ynstee fan de namme fan de proxytsjinner. Foarbyld: as de "
+#~ "omjouwingsfariabele dy brûkt wurdt om in http-proxytsjinner oan te "
+#~ "tsjutten <br /> <b>HTTP_PROXY=http://localhost:3128</b><br /> is, folje "
+#~ "dan <b>HTTP_PROXY</b> yn, en net de wearde http://localhost:3128.</qt>"
+
+#, fuzzy
+#~| msgid "Invalid Proxy Setup"
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Proxy Setup"
+#~ msgstr "Unjildige proksy ynstelling"
+
+#~ msgid "Successfully verified."
+#~ msgstr "Mei sukses ferifiearre."
+
+#, fuzzy
+#~| msgid "Proxy Setup"
+#~ msgctxt "@title:window"
+#~ msgid "Proxy Setup"
+#~ msgstr "Proxy opset"
+
+#~ msgid ""
+#~ "Did not detect any environment variables commonly used to set system wide "
+#~ "proxy information."
+#~ msgstr ""
+#~ "Der waard gjin inkele faak brûkte omjouwingsfariabele fûn foar "
+#~ "systeemwide proxy-ynformaasje."
+
+#~ msgid ""
+#~ "<qt>To learn about the variable names the automatic detection process "
+#~ "searches for, press OK, click on the quick help button on the window "
+#~ "title bar of the previous dialog and then click on the \"<b>Auto Detect</"
+#~ "b>\" button.</qt>"
+#~ msgstr ""
+#~ "<qt> Om tesjen hokker fariabelen der binne hokker de automatyske-ûntdekke "
+#~ "nei siket: klik op \"Okee\", en dan op de helpknop (<b>?</b>) yn de "
+#~ "finsterbalke en klik dan op de knop \"Auto-ûndekke\".</qt>"
+
+#, fuzzy
+#~| msgid "Automatic Proxy Variable Detection"
+#~ msgctxt "@title:window"
+#~ msgid "Automatic Proxy Variable Detection"
+#~ msgstr "Automatyske proxy fariabele ûntdekking"
+
+#, fuzzy
+#~| msgid "Manual Proxy Configuration"
+#~ msgctxt "@title:window"
+#~ msgid "Manual Proxy Configuration"
+#~ msgstr "Proxy konfiguraasje mei de hân ynstelle"
+
+#, fuzzy
+#~| msgid "Invalid Proxy Setting"
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Proxy Setting"
+#~ msgstr "Unjildige proxy ynstelling"
+
+#~ msgid ""
+#~ "One or more of the specified proxy settings are invalid. The incorrect "
+#~ "entries are highlighted."
+#~ msgstr ""
+#~ "Ien of inkele fan de oantsjutte proxy-ynstellings binne ûnjildich. De net "
+#~ "juste ynstellings binne markearre."
+
+#~ msgid "You entered a duplicate address. Please try again."
+#~ msgstr "Jo ha in dûbel adres ynfierd. Besykje it nochris."
+
+#~ msgid "<qt><center><b>%1</b></center> is already in the list.</qt>"
+#~ msgstr "<qt><center><b>%1</b><br/>stiet al yn de list.</qt>"
+
+#, fuzzy
+#~| msgid "Duplicate Entry"
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Entry"
+#~ msgstr "Dûbel item"
+
+#, fuzzy
+#~| msgid "New Exception"
+#~ msgctxt "@title:window"
+#~ msgid "New Exception"
+#~ msgstr "Nije útsûndering"
+
+#, fuzzy
+#~| msgid "Change Exception"
+#~ msgctxt "@title:window"
+#~ msgid "Change Exception"
+#~ msgstr "Utsûndering feroare"
+
+#, fuzzy
+#~| msgid "Invalid Entry"
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Entry"
+#~ msgstr "Unjildich item"
+
+#~ msgid "The address you have entered is not valid."
+#~ msgstr "It adres dat jo ynfierd hawwe in ûnjildich"
+
+#~ msgid ""
+#~ "<qt>Make sure none of the addresses or URLs you specified contain invalid "
+#~ "or wildcard characters such as spaces, asterisks (*), or question "
+#~ "marks(?).<br /><br /><u>Examples of VALID entries:</u><br /><code>http://"
+#~ "mycompany.com, 192.168.10.1, mycompany.com, localhost, http://localhost</"
+#~ "code><br /><br /><u>Examples of INVALID entries:</u><br /><code>http://my "
+#~ "company.com, http:/mycompany,com file:/localhost</code></qt>"
+#~ msgstr ""
+#~ "<qt>Soarget derfoar dat de (URL-)adressen dy jo oantsjutte gjin "
+#~ "ûnjildige- of jokertekens befetje, lykas wytromten, asterisk(*) of "
+#~ "fraachtekens (?). <br /><br /><u>Foarbylden fan JILDIGE adressen:</u> <br/"
+#~ "><code>http://mynbedriuw.nl, 192.168.10.1, mynbedriuw.nl, localhost, "
+#~ "http://localhost</code> </code><br /><u>Foarbylden fan UNJILDIGE adressen:"
+#~ "</u> <br/><code>http://myn bedriuw.nl, http://mynbedriuw,nl, file:/"
+#~ "localhost</code></qt>"
+
+#~ msgid "Enter the URL or address that should use the above proxy settings:"
+#~ msgstr ""
+#~ "Fier it (URL-)adres yn dat brûk soe meitsje moatte fan de boppesteande "
+#~ "proksy-ynstellings:"
+
+#~ msgid ""
+#~ "Enter the address or URL that should be excluded from using the above "
+#~ "proxy settings:"
+#~ msgstr ""
+#~ "Fier it (URL-)adres yn dat útsletten sil wurde fan brûk fan de "
+#~ "boppesteande proksy-ynstellings:"
+
+#~ msgid ""
+#~ "<qt>Enter a valid address or URL.<br /><br /><b><u>NOTE:</u></b> Wildcard "
+#~ "matching such as <code>*.kde.org</code> is not supported. If you want to "
+#~ "match any host in the <code>.kde.org</code> domain, e.g. <code>printing."
+#~ "kde.org</code>, then simply enter <code>.kde.org</code>.</qt>"
+#~ msgstr ""
+#~ "<qt>Fier in jildich (URL-)adres yn. <br /><br /><b><u>Taljochting:</u></"
+#~ "b> jokertekens lykas <code>*.kde.nl</code> wurde net stipe. As jo wolle "
+#~ "dat de ynstelling oerienkomt mei eltse host yn it domein <code>.kde.nl</"
+#~ "code>, lykas <code>www.kde.nl</code>, fier dan deagewoan <code>.kde.nl</"
+#~ "code> yn.</qt>"
+
+#~ msgid ""
+#~ "The address of the automatic proxy configuration script is invalid. "
+#~ "Please correct this problem before proceeding. Otherwise, your changes "
+#~ "will be ignored."
+#~ msgstr ""
+#~ "It adres fan it skript mei de automatyske proxykonfiguraasje is "
+#~ "ûnjildich. Herstel dit foardat jo trochgean. Oars geane de feroarings dy;"
+#~ "t jo makke ha ferlern."
+
+#~ msgid ""
+#~ "<qt>The proxy settings you specified are invalid.<br /><br />Please click "
+#~ "on the <b>Setup...</b> button and correct the problem before proceeding; "
+#~ "otherwise your changes will be ignored.</qt>"
+#~ msgstr ""
+#~ "<qt>De proksy-ynstellings dy jo oantsjutte ha, binne ûnjildich. <br /"
+#~ "><br />Druk op de knop <b>ynstelle...</b> om dit te ferbetterjen foardat "
+#~ "jo trochgean. Oars sille de makke feroarings ferlern gean.</qt>"
+
+#~ msgid "H&TTP:"
+#~ msgstr "H&TTP:"
+
+#~ msgid "HTTP&S:"
+#~ msgstr "HTTP&S:"
+
+#~ msgid "&FTP:"
+#~ msgstr "&FTP:"
+
+#~ msgid "NO &PROXY:"
+#~ msgstr "GJIN &PROXY:"
+
+#~ msgid ""
+#~ "<qt>Verify whether or not the environment variable names you supplied are "
+#~ "valid. If an environment variable is not found, the associated labels "
+#~ "will be <b>highlighted</b> to indicate that they are invalid.</qt>"
+#~ msgstr ""
+#~ "<qt>Kontrolearje of de omjouwingsfariabelen dy jo oanlevere ha wol of net "
+#~ "jildich binne. As in omjouwingsfariabele net fûn wurdt, dan sille de "
+#~ "byhearende kaartsjes <b>markearre</b> wurde om oan te jaan dat se "
+#~ "ûnjildich binne.</qt>"
+
+#~ msgid "&Verify"
+#~ msgstr "&Ferifiearje"
+
+#~ msgid "Connect to the &Internet directly"
+#~ msgstr "Direkte ferbining mei &ynternet"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Use environment variables to configure the proxy settings.<p>\n"
+#~ "Environment variables such as <b>HTTP_PROXY</b> and <b>NO_PROXY</b> are "
+#~ "usually used in multi-user UNIX installations, where both graphical and "
+#~ "non-graphical applications need to share the same proxy configuration "
+#~ "information.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "Brûk omjouwingsfariabelen foar it ynstellen fan de proxy-ynstellings.<p>\n"
+#~ "Omjouwingsfariabelen as <b>HTTP_PROXY</b> en <b>NO_PROXY</b> wurde faak "
+#~ "brûkt op UNIX-ynstallaasjes mei meardere brûkers dy deselde proxy-"
+#~ "ynstellings brûke yn grafyske en net-grafyske applikaasjes.\n"
+#~ "</qt>"
+
+#~ msgid "Use preset proxy environment &variables"
+#~ msgstr "Brûk foarynstelde proxy-omjouwings&fariabelen"
+
+#~ msgid "Show the proxy environment variable configuration dialog."
+#~ msgstr ""
+#~ "It daloochfinster foar it ynstellen fan de proxy-omjouwingsfariabelen "
+#~ "sjen litte."
+
+#~ msgid "Setup..."
+#~ msgstr "Ynstellings..."
+
+#~ msgid "&Manually specify the proxy settings"
+#~ msgstr "Proxy-ynstellings mei de hân oantsjutte"
+
+#~ msgid "Show the manual proxy configuration dialog."
+#~ msgstr ""
+#~ "It dialoochfinster foar it mei de hân ynfiere fan de proxykonfiguraasje "
+#~ "sjen litte."
+
+#~ msgid "Authori&zation"
+#~ msgstr "Oanmeldin&g"
+
+#~ msgid "Prompt for login information whenever it is required."
+#~ msgstr "Freegje om oanmeldgegevens wannear dizzen nedich binne."
+
+#~ msgid "Prompt as &needed"
+#~ msgstr "Freegje as &nedich"
+
+#~ msgid "Use this login information."
+#~ msgstr "Brûk de folgjende ynlochgegevens."
+
+#~ msgid ""
+#~ "Use information specified here to login into proxy servers as needed."
+#~ msgstr ""
+#~ "Brûk de ûndersteande gegevens om jo yn te loggen by proksytsjinners as "
+#~ "dat nedich is."
+
+#~ msgid "Username:"
+#~ msgstr "Brûkersnamme:"
+
+#~ msgid "Login name."
+#~ msgstr "Oanmeldnamme."
+
+#~ msgid "Login password."
+#~ msgstr "Oanmeldwachtwurd."
+
+#~ msgid "Password:"
+#~ msgstr "Wachtwurd:"
+
+#~ msgid "O&ptions"
+#~ msgstr "O&psjes"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Use persistent proxy connection.<p>\n"
+#~ "Although a persistent proxy connection is faster, note that it only works "
+#~ "correctly with proxies that are fully HTTP 1.1 compliant. Do <b>not</b> "
+#~ "use this option in combination with non-HTTP 1.1 compliant proxy servers "
+#~ "such as JunkBuster and WWWOfle.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "Ferbinings mei proxytsjinner yn stân hâlde (keep-alive).<p>\n"
+#~ "As de ferbining mei in proxytsjinner tusken ferskate fersiken yn in stân "
+#~ "hâlden bliuwt, sille ynternetsiden flugger lade. Mar dit wurket allinnich "
+#~ "mei proxies dy folslein oan HTTP 1.1 foldogge. Brûk dizze opsje <b>net</"
+#~ "b> yn kombinaasje mei proxytsjinners dy net oan HTTP1.1 foldogge, lykas "
+#~ "JunkBuster en WWWOfle.\n"
+#~ "</qt>"
+
+#~ msgid "Use persistent connections to proxy"
+#~ msgstr "Bliuwende ferbining nei proxy brûke"
+
+#~ msgid "Ser&vers"
+#~ msgstr "Tsji&nners"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Reverse the use of the exception list. Checking this box will result in "
+#~ "the proxy servers being used only when the requested URL matches one of "
+#~ "the addresses listed here.<p>This feature is useful if all you want or "
+#~ "need is to use a proxy server  for a few specific sites.<p>If you have "
+#~ "more complex requirements you might want to use a configuration script.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "Selektearje dit karfakje om it brûkken fan de útsûnderingslist om te "
+#~ "draaien. Dat jout oan dat de proxytsjinners allinne brûkt wurde as it "
+#~ "fersochte URL-adres oerienkomt mei in adres dat hjir ynfierd is.<p>Dizze "
+#~ "funksje is hannich as jo proxytsjinners allinne brûke wollle foar in pear "
+#~ "spesifike siden.<p>As jo mear komplekse easken hawwe dan kinne jo tink ik "
+#~ "better in konfiguraasjeskript brûke.\n"
+#~ "</qt>"
+
+#~ msgid "Remove all proxy exception addresses from the list."
+#~ msgstr "Alle proxy-útsûnderings ût de list fuortsmite."
+
+#~ msgid "D&elete All"
+#~ msgstr "Alles wiskj&e"
+
+#~ msgid "Remove the selected proxy exception address from the list."
+#~ msgstr "De selektearre proxy-útsûnderings ût de list fuortsmite."
+
+#~ msgid "De&lete"
+#~ msgstr "W&iskje"
+
+#~ msgid "Add new proxy exception address to the list."
+#~ msgstr "In nije proxy-útsûndering oan de list taheakje"
+
+#~ msgid "Change the selected proxy exception address."
+#~ msgstr "Feroarje de selektearre proksy-útsûndering."
+
+#~ msgid "C&hange..."
+#~ msgstr "Wi&zigje..."
+
+#~ msgid "&Domain name:"
+#~ msgstr "&Domeinnamme:"
+
+#~ msgid "Includes your platform type in the browser identification text"
+#~ msgstr "Heakket it platfoarmtype ta oan de blêderidentifikaasje."
+
+#~ msgid "Add &platform name"
+#~ msgstr "&Platfoarmnamme tafoegje"
+
+#~ msgid "Domain [Group]"
+#~ msgstr "Domein [Groep]"
+
+#~ msgid "Host [Set By]"
+#~ msgstr "Host [ynstelt troch]"
+
+#~ msgid ""
+#~ "<h1>Local Network Browsing</h1>Here you setup your <b>\"Network "
+#~ "Neighborhood\"</b>. You can use either the LISa daemon and the lan:/ "
+#~ "ioslave, or the ResLISa daemon and the rlan:/ ioslave.<br /><br />About "
+#~ "the <b>LAN ioslave</b> configuration:<br /> If you select it, the "
+#~ "ioslave, <i>if available</i>, will check whether the host supports this "
+#~ "service when you open this host. Please note that paranoid people might "
+#~ "consider even this to be an attack.<br /><i>Always</i> means that you "
+#~ "will always see the links for the services, regardless of whether they "
+#~ "are actually offered by the host. <i>Never</i> means that you will never "
+#~ "have the links to the services. In both cases you will not contact the "
+#~ "host, so nobody will ever regard you as an attacker.<br /><br />More "
+#~ "information about <b>LISa</b> can be found at <a href=\"http://lisa-home."
+#~ "sourceforge.net\">the LISa Homepage</a> or contact Alexander Neundorf &lt;"
+#~ "<a href=\"mailto:neundorf@kde.org\">neundorf@kde.org</a>&gt;."
+#~ msgstr ""
+#~ "<h1>Lokaal-netwurk-blêdzje</h1>Hjir kinne jo <b>\"Netwurkomjouwing\"</b> "
+#~ "ynstelle. Jo kinne de LISa-daemon en de io-slave \"lan:/\" of de ResLISa-"
+#~ "daemon en de io-slave \"rlan:/\" brûke.<br /><br />Oer de <b>LAN-io-"
+#~ "slave</b>-konfiguraasje: <br />As jo dizze selektearje, dan kontrolearret "
+#~ "de io-slave, <i>as it beskikber is</i>, of de host dizze tsjinsten wol "
+#~ "stipet as jo dizze iepenje. Hâld der rekken mei dat persoanen dy wat "
+#~ "paranoia binne sels dizze aksje as in oanfol sjogge.<br /><i>Altyd</i> "
+#~ "jout oan dat jo altyd de keppelings nei de tsjinst sjogge, of se no wol "
+#~ "of net oanbean wurde troch de host. <i>Nea</i> jout oan dat jo nea "
+#~ "keppelings nei de tsjinsten hawwe. Yn beide gefallen nimme jo gjin "
+#~ "kontakt op mei de host, sa dat gjinien jo mear oansjochtt as in oanfoller."
+#~ "<br /><br />Mear ynformaasje oer <b>LISa</b> kinne jo fine op <a href="
+#~ "\"http://lisa-home.sourceforge.net\">LISa's webside</a>. Of nim kontakt "
+#~ "op mei Alexander Neundorf &lt;<a href=\"mailto:neundorf@kde.org"
+#~ "\">neundorf@kde.org</a>&gt;."
+
+#~ msgid "&Windows Shares"
+#~ msgstr "&Windows-netwurk"
+
+#~ msgid "&LISa Daemon"
+#~ msgstr "&LISa Daemon"
+
+#~ msgid "lan:/ Iosla&ve"
+#~ msgstr "lan:/ Iosla&ve"
+
+#~ msgctxt "just a placeholder; do not translate"
+#~ msgid "KSqueezedTextLabel"
+#~ msgstr "KSqueezedTextLabel"
+
+#~ msgid "&Search:"
+#~ msgstr "&Sykje:"
+
+#~ msgid "&SOCKS"
+#~ msgstr "&SOCKS"
+
+#~ msgid "SOCKS"
+#~ msgstr "SOCKS"
+
+#~ msgid ""
+#~ "Check this to enable SOCKS4 and SOCKS5 support in KDE applications and I/"
+#~ "O subsystems."
+#~ msgstr ""
+#~ "Selektearje dit om SOCKS4- en SOCKS5-stipe te aktivearjen yn KDE-"
+#~ "applikaasjes en I/O-subsystemen."
+
+#~ msgid "&Enable SOCKS support"
+#~ msgstr "SOCKS stip&e oansette"
+
+#~ msgid "Click here to test SOCKS support."
+#~ msgstr "Klik hjir om de SOCKS-stipe te testen."
+
+#~ msgid "&Test"
+#~ msgstr "&Besykje"
+
+#~ msgid "SOCKS Implementation"
+#~ msgstr "SOCKS-implementaasje"
+
+#~ msgid ""
+#~ "Select custom if you wish to use an unlisted SOCKS library. Please note "
+#~ "that this may not always work as it depends on the API of the library "
+#~ "which you specify (below)."
+#~ msgstr ""
+#~ "Selektearje dit as jo in net yn de list steande SOCKS-biblioteek brûke "
+#~ "wolle. Hâld der rekken mei dat dit net altyd wurket, omdat dit ôfhinklik "
+#~ "is fan de API fan de biblioteek dy jo hjirûnder ynfiere."
+
+#~ msgid "Use &custom library"
+#~ msgstr "Oanpa&ste bibleteek brûke"
+
+#~ msgid "Enter the path to an unsupported SOCKS library."
+#~ msgstr "Fier hjir it paad yn nei in net-stipe SOCKS-biblioteek."
+
+#~ msgid ""
+#~ "If you select Autodetect, then KDE will automatically search for an "
+#~ "implementation of SOCKS on your computer."
+#~ msgstr ""
+#~ "As jo automatysk ûntdekken selektearje, dan siket KDE automatysk nei in "
+#~ "ymplemintaasje fan SOCKS op jo kompjûter."
+
+#~ msgid "A&uto detect"
+#~ msgstr "A&uto ûntdekke"
+
+#~ msgid "This will force KDE to use NEC SOCKS if it can be found."
+#~ msgstr "Dit twingt KDE om NEC SOCKS te brûken as dizze fûn wurdt."
+
+#~ msgid "&NEC SOCKS"
+#~ msgstr "&NEC SOCKS"
+
+#~ msgid "This will force KDE to use Dante if it can be found."
+#~ msgstr "Dit twingt KDE om Dante te brûken as dizze fûn wurdt."
+
+#~ msgid "&Dante"
+#~ msgstr "&Dante"
+
+#~ msgid ""
+#~ "Here you can specify additional directories to search for the SOCKS "
+#~ "libraries. /usr/lib, /usr/local/lib, /usr/local/socks5/lib and /opt/"
+#~ "socks5/lib are already searched by default."
+#~ msgstr ""
+#~ "Hjir kinne jo ekstra triemtafels oantsjutte wêryn nei SOCKS-biblioteken "
+#~ "socht wurde wil. /usr/lib, /usr/local/lib, /usr/local/socks5/lib en /opt/"
+#~ "socks5/lib binne triemtafels dy standert trochsocht wurde."
+
+#~ msgid "Additional Library Search Paths"
+#~ msgstr "Paden om yn te sykjen foar ekstra biblioteken"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Berend Ytsma"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "berendy@bigfoot.com"
+
+#~ msgid "kcmsocks"
+#~ msgstr "kcmsocks"
+
+#~ msgid "KDE SOCKS Control Module"
+#~ msgstr "KDE SOCKS Konfiguraasjemodule"
+
+#~ msgid "(c) 2001 George Staikos"
+#~ msgstr "(c) 2001 George Staikos"

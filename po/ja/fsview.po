@@ -1,0 +1,429 @@
+# Translation of fsview into Japanese.
+# This file is distributed under the same license as the kdeaddons package.
+# oki <s-ooki@mic.jp>, 2004.
+# Taiki Komoda <kom@kde.gr.jp>, 2004.
+# Toyohiro Asukai <toyohiro@ksmplus.com>, 2004.
+# hu <hu_renraku@yahoo.co.jp>, 2005.
+# Yukiko Bando <ybando@k6.dion.ne.jp>, 2006, 2007.
+# Fumiaki Okushi <okushi@kde.gr.jp>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: fsview\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"PO-Revision-Date: 2011-02-13 13:24-0800\n"
+"Last-Translator: Fumiaki Okushi <okushi@kde.gr.jp>\n"
+"Language-Team: Japanese <kde-jp@kde.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "oki, Toyohiro Asukai"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "s-ooki@mic.jp, toyohiro@ksmplus.com"
+
+#: fsview.cpp:35 fsview.cpp:413
+#, kde-format
+msgid "Name"
+msgstr "名前"
+
+#: fsview.cpp:36
+#, kde-format
+msgid "Size"
+msgstr "サイズ"
+
+#: fsview.cpp:37
+#, kde-format
+msgid "File Count"
+msgstr "ファイルの数"
+
+#: fsview.cpp:38
+#, kde-format
+msgid "Directory Count"
+msgstr "ディレクトリの数"
+
+#: fsview.cpp:39
+#, kde-format
+msgid "Last Modified"
+msgstr "最終更新日時"
+
+#: fsview.cpp:40 fsview.cpp:414
+#, kde-format
+msgid "Owner"
+msgstr "所有者"
+
+#: fsview.cpp:41 fsview.cpp:415
+#, kde-format
+msgid "Group"
+msgstr "グループ"
+
+#: fsview.cpp:42 fsview.cpp:416
+#, kde-format
+msgid "Mime Type"
+msgstr "MIME タイプ"
+
+#: fsview.cpp:283
+#, kde-format
+msgid "Go To"
+msgstr "移動"
+
+#: fsview.cpp:284 fsview_part.cpp:106
+#, kde-format
+msgid "Stop at Depth"
+msgstr "深さで停止"
+
+#: fsview.cpp:285 fsview_part.cpp:103
+#, kde-format
+msgid "Stop at Area"
+msgstr "エリアで停止"
+
+#: fsview.cpp:286
+#, kde-format
+msgid "Stop at Name"
+msgstr "名前で停止"
+
+#: fsview.cpp:292
+#, kde-format
+msgid "Go Up"
+msgstr "上へ"
+
+#: fsview.cpp:294
+#, kde-format
+msgid "Stop Refresh"
+msgstr "更新停止"
+
+#: fsview.cpp:296
+#, kde-format
+msgid "Refresh"
+msgstr "更新"
+
+#: fsview.cpp:301
+#, kde-format
+msgid "Refresh '%1'"
+msgstr "%1 を更新"
+
+#: fsview.cpp:313 fsview_part.cpp:113
+#, kde-format
+msgid "Color Mode"
+msgstr "カラーモード"
+
+#: fsview.cpp:316 fsview_part.cpp:109
+#, kde-format
+msgid "Visualization"
+msgstr "ビジュアル化"
+
+#: fsview.cpp:411
+#, kde-format
+msgid "None"
+msgstr "なし"
+
+#: fsview.cpp:412
+#, kde-format
+msgid "Depth"
+msgstr "深さ"
+
+#: fsview_part.cpp:69
+#, kde-format
+msgid "Read 1 folder, in %2"
+msgid_plural "Read %1 folders, in %2"
+msgstr[0] "%2 中の 1 フォルダを読み込み"
+msgstr[1] "%2 中の %1 フォルダを読み込み"
+
+#: fsview_part.cpp:73
+#, kde-format
+msgid "1 folder"
+msgid_plural "%1 folders"
+msgstr[0] "1 フォルダ"
+msgstr[1] "%1 フォルダ"
+
+#: fsview_part.cpp:87
+#, kde-format
+msgid ""
+"<p>This is the FSView plugin, a graphical browsing mode showing filesystem "
+"utilization by using a tree map visualization.</p><p>Note that in this mode, "
+"automatic updating when filesystem changes are made is intentionally <b>not</"
+"b> done.</p><p>For details on usage and options available, see the online "
+"help under menu 'Help/FSView Manual'.</p>"
+msgstr ""
+"<p>FSView プラグインはツリーマップをビジュアル化し、ファイルシステムの使用状"
+"況をグラフィカルに表示します。</p><p>このモードでは、ファイルシステムに変更が"
+"あっても意図的に表示を自動更新しません。</p><p>詳しい使い方および利用可能なオ"
+"プションについては「ヘルプ|FSView マニュアル」を参照してください。</p>"
+
+#: fsview_part.cpp:119
+#, kde-format
+msgid "&FSView Manual"
+msgstr "FSView マニュアル(&F)"
+
+#: fsview_part.cpp:121
+#, kde-format
+msgid "Show FSView manual"
+msgstr "FSView マニュアルを見る"
+
+#: fsview_part.cpp:122
+#, kde-format
+msgid "Opens the help browser with the FSView documentation"
+msgstr "FSView マニュアルをヘルプブラウザで開く"
+
+#: fsview_part.cpp:154
+#, kde-format
+msgctxt "@action:inmenu File"
+msgid "Move to Trash"
+msgstr "ごみ箱に移動"
+
+#: fsview_part.cpp:161
+#, kde-format
+msgctxt "@action:inmenu File"
+msgid "Delete"
+msgstr "削除"
+
+#: fsview_part.cpp:166
+#, kde-format
+msgctxt "@action:inmenu Edit"
+msgid "&Edit File Type..."
+msgstr "ファイルタイプを編集(&E)..."
+
+#: fsview_part.cpp:170
+#, kde-format
+msgctxt "@action:inmenu File"
+msgid "Properties"
+msgstr "プロパティ"
+
+#: fsview_part.cpp:203
+#, kde-format
+msgid ""
+"FSView intentionally does not support automatic updates when changes are "
+"made to files or directories, currently visible in FSView, from the "
+"outside.\n"
+"For details, see the 'Help/FSView Manual'."
+msgstr ""
+"現在 FSView に表示されているファイルまたはディレクトリが外部アプリケーション"
+"によって変更されたときに、FSView は意図的に表示を自動更新しません。\n"
+"詳しくは「ヘルプ|FSView マニュアル」を参照してください。"
+
+#. i18n: ectx: Menu (edit)
+#: fsview_part.rc:4
+#, kde-format
+msgid "&Edit"
+msgstr "編集(&E)"
+
+#. i18n: ectx: Menu (view)
+#: fsview_part.rc:13
+#, kde-format
+msgid "&View"
+msgstr "表示(&V)"
+
+#. i18n: ectx: Menu (help)
+#: fsview_part.rc:20
+#, kde-format
+msgid "&Help"
+msgstr "ヘルプ(&H)"
+
+#: main.cpp:23
+#, kde-format
+msgid "FSView"
+msgstr "FSView"
+
+#: main.cpp:24
+#, kde-format
+msgid "Filesystem Viewer"
+msgstr "ファイルシステムビューア"
+
+#: main.cpp:26
+#, kde-format
+msgid "(c) 2002, Josef Weidendorfer"
+msgstr "(c) 2002, Josef Weidendorfer"
+
+#: main.cpp:33
+#, kde-format
+msgid "View filesystem starting from this folder"
+msgstr "このフォルダから始まるファイルシステムを見る"
+
+#: treemap.cpp:1436
+#, kde-format
+msgid "Text %1"
+msgstr "テキスト %1"
+
+#: treemap.cpp:3163
+#, kde-format
+msgid "Recursive Bisection"
+msgstr "再帰的な二分"
+
+#: treemap.cpp:3165
+#, kde-format
+msgid "Columns"
+msgstr "列"
+
+#: treemap.cpp:3167
+#, kde-format
+msgid "Rows"
+msgstr "行"
+
+#: treemap.cpp:3169
+#, kde-format
+msgid "Always Best"
+msgstr "常に最適化"
+
+#: treemap.cpp:3171
+#, kde-format
+msgid "Best"
+msgstr "最適化"
+
+#: treemap.cpp:3173
+#, kde-format
+msgid "Alternate (V)"
+msgstr "交互 (V)"
+
+#: treemap.cpp:3175
+#, kde-format
+msgid "Alternate (H)"
+msgstr "交互 (H)"
+
+#: treemap.cpp:3177
+#, kde-format
+msgid "Horizontal"
+msgstr "水平"
+
+#: treemap.cpp:3179
+#, kde-format
+msgid "Vertical"
+msgstr "垂直"
+
+#: treemap.cpp:3231
+#, kde-format
+msgid "Nesting"
+msgstr "ネスト"
+
+#: treemap.cpp:3235
+#, kde-format
+msgid "Border"
+msgstr "境界"
+
+#: treemap.cpp:3238
+#, kde-format
+msgid "Correct Borders Only"
+msgstr "正確な境界のみ"
+
+#: treemap.cpp:3241
+#, kde-format
+msgid "Width %1"
+msgstr "幅 %1"
+
+#: treemap.cpp:3244
+#, kde-format
+msgid "Allow Rotation"
+msgstr "回転を許可"
+
+#: treemap.cpp:3245
+#, kde-format
+msgid "Shading"
+msgstr "濃淡を付ける"
+
+#: treemap.cpp:3256
+#, kde-format
+msgid "Visible"
+msgstr "表示する"
+
+#: treemap.cpp:3257
+#, kde-format
+msgid "Take Space From Children"
+msgstr "子からスペースを取得する"
+
+#: treemap.cpp:3261
+#, kde-format
+msgid "Top Left"
+msgstr "上 左"
+
+#: treemap.cpp:3264
+#, kde-format
+msgid "Top Center"
+msgstr "上 中央"
+
+#: treemap.cpp:3267
+#, kde-format
+msgid "Top Right"
+msgstr "上 右"
+
+#: treemap.cpp:3270
+#, kde-format
+msgid "Bottom Left"
+msgstr "下 左"
+
+#: treemap.cpp:3273
+#, kde-format
+msgid "Bottom Center"
+msgstr "下 中央"
+
+#: treemap.cpp:3276
+#, kde-format
+msgid "Bottom Right"
+msgstr "下 右"
+
+#: treemap.cpp:3343
+#, kde-format
+msgid "No %1 Limit"
+msgstr "%1 の制限なし"
+
+#: treemap.cpp:3402
+#, kde-format
+msgid "No Area Limit"
+msgstr "エリアの制限なし"
+
+#: treemap.cpp:3408
+#, kde-format
+msgid "Area of '%1' (%2)"
+msgstr "%1 のエリア (%2)"
+
+#: treemap.cpp:3420 treemap.cpp:3433
+#, kde-format
+msgid "1 Pixel"
+msgid_plural "%1 Pixels"
+msgstr[0] "1 ピクセル"
+msgstr[1] "%1 ピクセル"
+
+#: treemap.cpp:3437
+#, kde-format
+msgid "Double Area Limit (to %1)"
+msgstr "エリア制限を二倍に (%1 に)"
+
+#: treemap.cpp:3439
+#, kde-format
+msgid "Halve Area Limit (to %1)"
+msgstr "エリア制限を半分に (%1 に)"
+
+#: treemap.cpp:3475
+#, kde-format
+msgid "No Depth Limit"
+msgstr "深さの制限なし"
+
+#: treemap.cpp:3481
+#, kde-format
+msgid "Depth of '%1' (%2)"
+msgstr "%1 の深さ (%2)"
+
+#: treemap.cpp:3493 treemap.cpp:3506
+#, kde-format
+msgid "Depth %1"
+msgstr "深さ %1"
+
+#: treemap.cpp:3510
+#, kde-format
+msgid "Decrement (to %1)"
+msgstr "減らす (%1 に)"
+
+#: treemap.cpp:3512
+#, kde-format
+msgid "Increment (to %1)"
+msgstr "増やす (%1 に)"

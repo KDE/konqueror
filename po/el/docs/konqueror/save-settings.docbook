@@ -1,0 +1,167 @@
+<chapter id="save-settings">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>Δημήτριος</firstname
+><surname
+>Γλενταδάκης</surname
+><affiliation
+><address
+><email
+>dglent@gmail.com</email
+></address
+></affiliation
+><contrib
+>Μεταφραστής</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2010-02-26</date>
+<releaseinfo
+>&kde; 4.4</releaseinfo>
+</chapterinfo>
+
+<title
+>Αποθήκευση ρυθμίσεων &amp; προφίλ</title>
+<sect1 id="save-settings-general">
+<title
+>Γενικές ρυθμίσεις</title>
+<para
+>Όταν τερματίζετε τον &konqueror; οι τρέχουσες ρυθμίσεις του μενού <guimenu
+>Προβολή</guimenu
+> (όπως τα <guimenuitem
+>Κατάσταση προβολής</guimenuitem
+>, <guimenuitem
+>Χρήση index.html</guimenuitem
+> και <guimenuitem
+>Εμφάνιση κρυφών αρχείων</guimenuitem
+>) δεν αποθηκεύονται αυτόματα από προεπιλογή. Όμως μπορείτε να ορίσετε στον &konqueror; να απομνημονεύει αυτές τις ρυθμίσεις επιλέγοντας <menuchoice
+><guimenu
+>Ρυθμίσεις</guimenu
+><guimenuitem
+>Αποθήκευση προφίλ προβολής ως...</guimenuitem
+></menuchoice
+> και η τρέχουσα ρύθμιση θα γίνει η προκαθορισμένη την επόμενη φορά που θα εκτελέσετε τον &konqueror;.</para>
+
+<para
+>Αλλά μπορείτε επίσης να ορίσετε διαφορετικές ρυθμίσεις του μενού <guimenu
+>Προβολή</guimenu
+> για ένα φάκελο. Για να το κάνετε αυτό επιλέξτε <menuchoice
+><guimenu
+>Προβολή</guimenu
+> <guimenuitem
+>Ρύθμιση ιδιοτήτων προβολής...</guimenuitem
+></menuchoice
+>, αλλάξτε την <guimenu
+>Λειτουργία προβολής</guimenu
+> με την επιλογή της αρεσκείας σας. Έπειτα εφαρμόστε τις ιδιότητες προβολής στον <guilabel
+>Τρέχον φάκελο</guilabel
+>. Με αυτό τον τρόπο δημιουργείται ένα αρχείο <filename
+>.directory</filename
+> σε αυτό τον φάκελο για την αποθήκευση των ρυθμίσεων του μενού <guimenu
+>Προβολή</guimenu
+>. Χρησιμοποιήστε ξανά αυτό τον παράθυρο για να αφαιρέσετε τις προσαρμοσμένες ρυθμίσεις γι' αυτό τον φάκελο (ή απλά διαγράψτε το αρχείο <filename
+>.directory</filename
+>).</para>
+<note
+><para
+>Μια ωραία εφαρμογή αυτού του χαρακτηριστικού είναι αν έχετε ένα φάκελο γεμάτο από φωτογραφίες. Μπορείτε να ορίσετε σε αυτόν τον φάκελο την προβολή προεπισκόπησης (επιλέγοντας <menuchoice
+><guisubmenu
+>Κατάσταση προβολής</guisubmenu
+> <guimenuitem
+>Εικονίδια</guimenuitem
+></menuchoice
+> και <guimenuitem
+>Προεπισκόπηση</guimenuitem
+> από το μενού <guimenu
+>Προβολή</guimenu
+>) όταν τον ανοίγετε. Με αυτό τον τρόπο δεν θα εμφανίζεται η προεπισκόπηση σε άλλους φακέλους.</para
+></note>
+</sect1>
+
+<sect1 id="save-settings-view-profiles">
+<title
+>Προφίλ προβολής</title>
+<para
+>Ο &konqueror; μπορεί να αποθηκεύσει ένα ολόκληρο σετ επιλογών ως <quote
+>Προφίλ προβολής</quote
+>. Μερικά προφίλ προβολής είναι είναι μέρος της τυπικής εγκατάστασης του &konqueror;, όπως <property
+>Περιήγηση ιστού</property
+>, <property
+>Διαχείριση αρχείων</property
+>, <property
+>Ανάπτυξη του KDE</property
+>, <property
+>Midnight Commander</property
+> και <property
+>Περιήγηση με καρτέλες</property
+>, αλλά μπορείτε να προσθέσετε και τα δικά σας.</para>
+
+<para
+>Για να επεξεργαστείτε ένα προφίλ προβολής (το προφίλ <property
+>Περιήγηση ιστού</property
+>), φορτώστε το προφίλ από το μενού <menuchoice
+><guimenu
+>Ρυθμίσεις</guimenu
+>  <guisubmenu
+>Φόρτωση προφίλ προβολής</guisubmenu
+> <guimenuitem
+>Περιήγηση ιστού</guimenuitem
+> </menuchoice
+>, και αλλάξτε τις ρυθμίσεις του &konqueror; που επιθυμείτε. Κατόπιν επιλέξτε <menuchoice
+><guimenu
+>Ρυθμίσεις</guimenu
+> <guimenuitem
+>Αποθήκευση προφίλ προβολής ως...</guimenuitem
+></menuchoice
+>. Στο παράθυρο που θα εμφανιστεί, μπορείτε να αλλάξετε το όνομα του προφίλ, και θα δημιουργηθεί ένα νέο προφίλ με το όνομα αυτό ή μπορείτε να αφήσετε το όνομα ως έχει και να τροποποιήσετε το τρέχον προφίλ. Αν επιλέξετε <guilabel
+>Αποθήκευση των URL στο προφίλ</guilabel
+>, το τρέχον &URL; θα φορτώνεται κατά τη φόρτωση του προφίλ προβολής. Αυτό το χαρακτηριστικό λειτουργεί όπως το <quote
+>Αρχική σελίδα</quote
+> σε πολλούς περιηγητές ιστού. Αν επιθυμείτε κατά τη φόρτωση του &konqueror; να εμφανίζεται ένα κενό παράθυρο εισάγετε <userinput
+>about:blank</userinput
+> στη γραμμή τοποθεσίας πριν την αποθήκευση του προφίλ.</para>
+
+<note
+><para
+>Μπορείτε να δημιουργήσετε ένα εικονίδιο στην επιφάνεια εργασίας για την εκκίνηση του &konqueror; με το νέο σας προφίλ. Πρώτα δημιουργήστε ένα εικονίδιο επιφάνειας εργασίας πατώντας &RMB; στον &konqueror; στο μενού εκκίνησης εφαρμογών. Έπειτα επιλέξτε <guimenuitem
+>Προσθήκη στην επιφάνεια εργασίας</guimenuitem
+>. Ανοίξτε το παράθυρο ρυθμίσεων του νέου εικονιδίου στην επιφάνεια εργασίας σας πατώντας στο εικονίδιο <guiicon
+>Ρυθμίσεις</guiicon
+>. Αλλάξτε την <guilabel
+>Εντολή</guilabel
+> στην καρτέλα <guilabel
+>Εφαρμογή</guilabel
+> σε <userinput
+><command
+>kfmclient</command
+> <option
+>openProfile <replaceable
+>ΤοΝέοΜουΠροφίλ</replaceable
+></option
+></userinput
+>, όπου <replaceable
+>ΤοΝέοΜουΠροφίλ</replaceable
+> το όνομα του νέου προφίλ που δημιουργήσατε. Έπειτα αλλάξτε το όνομα σε κάτι όπως <filename
+>ΤοΝέοΜουΠροφίλ</filename
+>.</para
+></note>
+
+</sect1>
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

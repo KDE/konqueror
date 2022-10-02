@@ -1,0 +1,231 @@
+# translation of libkonq.po to icelandic
+# Íslenskun á libkonq.po
+# Copyright (C) 2003, 2005, 2008, 2009, 2010, 2011, 2015 Free Software Foundation, Inc.
+#
+# Pjetur G. Hjaltason <pjetur@pjetur.net>, 2003.
+# Richard Allen <ra@ra.is>, 2003.
+# Logi Ragnarsson <logi@logi.org>, 2003.
+# Arnar Leósson <leosson@frisurf.no>, 2003.
+# Arnar Leosson <leosson@frisurf.no>, 2005.
+# Sveinn í Felli <sveinki@nett.is>, 2009, 2010, 2011.
+# Sveinn í Felli <sv1@fellsnet.is>, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2015-03-16 09:43+0000\n"
+"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
+"Language-Team: icelandic <translation-team-is@lists.sourceforge.net>\n"
+"Language: is\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
+"\n"
+"\n"
+"\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "&Opna"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "Búa til &möppu..."
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "Endu&rheimta"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr "Sýna upprunalega möppu"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr "Sýna upprunalega skrá"
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "&Tæma ruslakörfu"
+
+#: src/konq_popupmenu.cpp:312
+#, kde-format
+msgid "&Configure Trash Bin"
+msgstr "Stilla r&uslafötu"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "&Bókamerkja þessa síðu"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "&Bókamerkja þessa staðsetningu"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "&Bókamerkja þessa möppu"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "&Bókamerkja þennan tengil"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "&Bókamerkja þessa skrá"
+
+#: src/konq_popupmenu.cpp:379
+#, kde-format
+msgid "Preview In"
+msgstr "Forsýna í"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "&Eiginleikar"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy To"
+#~ msgstr "Afrita í"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "Færa í"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "Heimamappa"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "Rótarmappa"
+
+#~ msgctxt "@title:menu in Copy To or Move To submenu"
+#~ msgid "Browse..."
+#~ msgstr "Flakka..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "Afrita hingað"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "Færa hingað"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "Þú getur ekki sleppt möppu á sjálfa sig"
+
+#~ msgid "File name for dropped contents:"
+#~ msgstr "Skráarheiti fyrir gögn sem er sleppt:"
+
+#~ msgid "&Move Here"
+#~ msgstr "&Færa hingað"
+
+#~ msgid "&Copy Here"
+#~ msgstr "&Afrita hingað"
+
+#~ msgid "&Link Here"
+#~ msgstr "&Hlekk hér"
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "Gera að &veggfóðri"
+
+#~ msgid "C&ancel"
+#~ msgstr "&Hætta við"
+
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "Búa til möppu"
+
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "Settu inn annað nafn"
+
+#~ msgid ""
+#~ "The name \"%1\" starts with a dot, so the directory will be hidden by "
+#~ "default."
+#~ msgstr ""
+#~ "Heitið \"%1\" byrjar með punkti, þannig að sjálfgefið er að hún sé falin."
+
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "Búa til falda möppu?"
+
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "Ný mappa"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "Ný mappa"
+
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "Sláðu inn heiti möppu:"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "Líma eina möppu"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One File"
+#~ msgstr "Líma eina skrá"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Item"
+#~ msgid_plural "Paste %1 Items"
+#~ msgstr[0] "Líma einn hlut"
+#~ msgstr[1] "Líma %1 hluti"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste Clipboard Contents..."
+#~ msgstr "Líma innihald klippispjalds..."
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste"
+#~ msgstr "Líma"
+
+#~ msgid ""
+#~ "Restores this file or directory, back to the location where it was "
+#~ "deleted from initially"
+#~ msgstr ""
+#~ "Endurheimtir þessa skrá eða möppu, til baka á þann stað þar sem henni var "
+#~ "eytt upphaflega"
+
+#~ msgid ""
+#~ "Opens a new file manager window showing the target of this link, in its "
+#~ "parent directory."
+#~ msgstr ""
+#~ "Opnar nýjan skráastjóraglugga sem sýnir áfangastað þessa tengils inni í "
+#~ "yfirmöppu hans."
+
+#~ msgid "Share"
+#~ msgstr "Sameign"
+
+#~ msgctxt "@info"
+#~ msgid "Close"
+#~ msgstr "Loka"
+
+#~ msgid "Close"
+#~ msgstr "Loka"
+
+#~ msgid "Error: %1"
+#~ msgstr "Villa: %1"

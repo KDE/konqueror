@@ -1,0 +1,166 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Estonian  "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="bookmarks" lang="&language;">
+<articleinfo>
+
+<title
+>Järjehoidjad</title>
+<authorgroup>
+<author
+><personname
+><firstname
+>Xavier</firstname
+><surname
+>Vello</surname
+></personname
+> <email
+>xavier.vello@gmail.com</email
+> </author>
+<othercredit role="translator"
+><firstname
+>Marek</firstname
+><surname
+>Laane</surname
+><affiliation
+><address
+><email
+>bald@smail.ee</email
+></address
+></affiliation
+><contrib
+>Tõlge eesti keelde</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2010-09-24</date>
+<releaseinfo
+>0.2 (&kde; 4.5)</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>KControl</keyword>
+<keyword
+>järjehoidjad</keyword>
+<keyword
+>KIO</keyword>
+</keywordset>
+</articleinfo>
+<sect1 id="conf">
+<title
+>Järjehoidjate kodulehekülg</title>
+<para
+>See moodul võimaldab seadistada järjehoidjate kodulehekülge.</para>
+<para
+>Järjehoidjate kodulehekülje nägemiseks sisesta asukoharibale <userinput
+>bookmarks:/</userinput
+>.</para>
+<para
+>Seda moodulit saab seadistada ka siis, kui sisestada asukoharibale <userinput
+>bookmarks:/config</userinput
+>.</para>
+<sect2 id="conf-general">
+<title
+>Üldised seadistused</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Näidatavate veergude arv</guilabel
+></term>
+<listitem>
+<para
+>Kataloogid jagatakse automaatselt mitmesse veergu. Veergude optimaalne arv sõltub Konquerori akna laiusest ja sinu järjehoidjate arvust.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Kataloogide tausta näitamine</guilabel
+></term>
+<listitem>
+<para
+>Aeglase süsteemi korral on mõttekas taustapildid välja lülitada.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="conf-bookmark">
+<title
+>Järjehoidjad</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Kataloogita järjehoidjate näitamine</guilabel
+></term>
+<listitem>
+<para
+>Selle valimata jätmisel ei näidata hierarhia juurkataloogis olevaid järjehoidjaid. Kui see on valitud, koondatakse nad kataloogi "juur".</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Ühtlane järjehoidjapuu</guilabel
+></term>
+<listitem>
+<para
+>Vaikimisi näidatakse alamkatalooge nende eellase all. Selle valiku sisselülitamisel näidatakse alamkatalooge omaette. See ei ole vahest nii kena, aga võib olla abiks, kui sul on väga suur kataloog ja sa soovid seda näha kahes veerus.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Süsteemi asukohtade näitamine</guilabel
+></term>
+<listitem>
+<para
+>Kasti näitamine KDE asukohtadega (Kodu, Võrk...). See on abiks, kui kasutada failihaldurina Konquerori.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="conf-cache">
+<title
+>Pildipuhver</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Kettapuhvri suurus</guilabel
+></term>
+<listitem>
+<para
+>Määrab, kui palju kettaruumi eraldada piltide puhverdamiseks.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Tühjenda puhver</guilabel
+></term>
+<listitem>
+<para
+>Eemaldab kõik puhverdatud pildid. See võib olla vajalik, kui mõned lemmikikoonid riknevad ega värskenda end enam automaatselt.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+</sect1>
+</article>

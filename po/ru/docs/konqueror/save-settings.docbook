@@ -1,0 +1,170 @@
+<chapter id="save-settings">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>Kernel</firstname
+><surname
+>Panic</surname
+><affiliation
+><address
+><email
+>rzhevskiy@mail.ru</email
+></address
+></affiliation
+><contrib
+> Перевод на русский</contrib
+></othercredit
+><othercredit role="reviewer"
+><firstname
+>Григорий</firstname
+><surname
+>Мохин</surname
+><affiliation
+><address
+><email
+>mok@kde.ru</email
+></address
+></affiliation
+><contrib
+> Редакция русского перевода</contrib
+></othercredit
+> 
+</authorgroup>
+<date
+>2003-11-06</date
+> <releaseinfo
+>3.2</releaseinfo
+> </chapterinfo>
+
+<title
+>Сохранение настроек и профилей</title>
+<sect1 id="save-settings-general">
+<title
+>Общие параметры</title>
+<para
+>При закрытии &konqueror; текущие настройки отображения (такие, как <guimenuitem
+>Режим просмотра</guimenuitem
+>, <guimenuitem
+>Использовать index.html</guimenuitem
+> и <guimenuitem
+>Показывать скрытые файлы</guimenuitem
+> в меню <guimenu
+>Вид</guimenu
+>) не сохраняются для использования при в следующем запуске &konqueror;. Для их сохранения вызовите меню <menuchoice
+><guimenu
+>настройка</guimenu
+><guimenuitem
+>Сохранить профиль просмотра "webbrowsing"...</guimenuitem
+></menuchoice
+> и при следующих запусках &konqueror; с этим профилем перечисленные параметры будут восстанавливаться.</para>
+
+<para
+>Однако также имеется возможность указать для какого-либо каталога отдельные настройки. Для этого установите флажок напротив пункта меню <menuchoice
+><guimenu
+>Настройка</guimenu
+><guimenuitem
+>Сохранять настройки просмотра для каталога</guimenuitem
+> </menuchoice
+>, измените нужные настройки и снимите этот флажок. При этом в каталоге будет создан файл <filename
+>.directory</filename
+>, в котором будут храниться настройки отображения. Чтобы снова показать этот каталог с обычными настройками, выберите пункт меню <menuchoice
+><guimenu
+>Настройка</guimenu
+><guimenuitem
+>Удалить свойства каталога</guimenuitem
+></menuchoice
+> (или просто удалите файл <filename
+>.directory</filename
+>).</para>
+<note
+><para
+>Возможность установить отдельные настройки для любого каталога может оказаться особенно удобной, если у вас есть каталог со множеством рисунков. Вы можете указать, что в этом каталоге для каждого файла следует отображать миниатюры. Для этого в меню <guimenu
+>Вид</guimenu
+> выберите пункт <guimenuitem
+>Значки</guimenuitem
+>, а затем <menuchoice
+> <guisubmenu
+>Миниатюры</guisubmenu
+><guimenuitem
+>Показывать миниатюры</guimenuitem
+></menuchoice
+>.</para
+></note>
+</sect1>
+
+<sect1 id="save-settings-view-profiles">
+<title
+>Профиль просмотра</title>
+<para
+>&konqueror; может сохранить весь набор параметров, касающихся внешнего вида в <quote
+>профиле просмотра</quote
+>. С &konqueror; уже поставляются некоторые общие профили, такие как <property
+>Просмотр Web</property
+> и <property
+>Управление файлами</property
+>, однако вы всегда сможете добавить свой.</para>
+
+<para
+>Чтобы изменить профиль просмотра (например <property
+>Просмотр Web</property
+>), загрузите его через <menuchoice
+><guimenu
+>Настройка</guimenu
+><guisubmenu
+>Загрузить профиль просмотра</guisubmenu
+><guimenuitem
+>Просмотр Web</guimenuitem
+></menuchoice
+>, и измените нужные вам параметры. Затем через<menuchoice
+><guimenu
+>Настройка</guimenu
+><guimenuitem
+>Сохранить профиль "Просмотр Web"...</guimenuitem
+></menuchoice
+> произведите желаемые настройки.</para>
+
+<note
+><para
+>Часто бывает удобно поместить на рабочий стол значок, с помощью которого &konqueror; запускался бы и автоматически загружал определённый профиль. Для этого сначала перетащите мышью значок &konqueror; из главного меню <guimenu
+>K</guimenu
+> на рабочий стол и в появившемся меню выберите пункт <guimenuitem
+>Копировать сюда</guimenuitem
+>. Затем щёлкните по этому значку <mousebutton
+>правой</mousebutton
+> кнопкой мыши, в появившемся меню выберите пункт <guimenuitem
+>Свойства...</guimenuitem
+>, щёлкните по вкладке <guilabel
+>Программа</guilabel
+> и в поле <guilabel
+>Название программы</guilabel
+> введите: <userinput
+><command
+>kfmclient</command
+> <option
+>openProfile <replaceable
+>ВашПрофиль</replaceable
+></option
+></userinput
+>; вместо <replaceable
+>ВашПрофиль</replaceable
+> следует подставить название нужного вам профиля. Далее во вкладке <guilabel
+>Общие</guilabel
+> укажите новое имя и, если это необходимо, выберите новый значок.</para
+></note>
+
+</sect1>
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

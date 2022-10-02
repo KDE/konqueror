@@ -1,0 +1,2400 @@
+# translation of kcmkonqhtml.po to Тоҷикӣ
+# translation of kcmkonqhtml.po to Tajik
+# Copyright (C) 2004 Free Software Foundation, Inc.
+# 2004, infoDev, a World Bank Organization
+# 2004, Khujand Computer Technologies, Inc.
+# 2004, KCT1, NGO
+#
+# Victor Ibragimov <youth_opportunities@tajik.net>, 2004, 2019.
+# Dilshod Marupov <dma165@hotmail.com>, 2004.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkonqhtml\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-24 00:46+0000\n"
+"PO-Revision-Date: 2019-09-29 12:43+0500\n"
+"Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
+"Language-Team: English <kde-i18n-doc@kde.org>\n"
+"Language: tg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 19.04.3\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Victor Ibragimov"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "victor.ibragimov@gmail.com"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pShowMMBInTabs)
+#: advancedTabOptions.ui:21
+#, kde-format
+msgid ""
+"This will open a new tab instead of a new window in various situations, such "
+"as choosing a link or a folder with the middle mouse button."
+msgstr ""
+"Он ҷадвалбандии навро ба ҷои тирезаи нав дар ҳодисаҳои гуногун мекушояд, ба "
+"монанди интихоби пайванд ё феҳрист ба воситаи тугмаи миёнаи муш."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pShowMMBInTabs)
+#: advancedTabOptions.ui:24
+#, kde-format
+msgid "Open &links in new tab instead of in new window"
+msgstr "Дар ҷадвалбандии нав &пайвандҳоро ба ҷои тирезаҳои нав кушоед"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPopupsWithinTabs)
+#: advancedTabOptions.ui:31
+#, kde-format
+msgid ""
+"Whether or not JavaScript popups if allowed shall open in a new tab or in a "
+"new window."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pPopupsWithinTabs)
+#: advancedTabOptions.ui:34
+#, fuzzy, kde-format
+msgid "Open pop&ups in new tab instead of in new window"
+msgstr "Дар ҷадвалбандии нав &пайвандҳоро ба ҷои тирезаҳои нав кушоед"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pKonquerorTabforExternalURL)
+#: advancedTabOptions.ui:41
+#, kde-format
+msgid ""
+"When you click a URL in another KDE program or call kfmclient to open a URL, "
+"the current desktop will be searched for a non-minimized Konqueror and, if "
+"found, the URL opened as a new tab within it. Otherwise a new Konqueror "
+"window will be opened with the required URL."
+msgstr ""
+"Агар шумо ба URL дар дигар барномаи KDE ангушт занед ё kfmclient-ро барои "
+"кушодани URL бозхонед, мизи кории ҷорӣ Konqueror-и ғайри пӯшидаро ҷустуҷӯ "
+"мекунад, ва агар он пайдо гардад, URL ҳамчун ҷадвалбанди нав бо он кушода "
+"мешавад. Дар дигар ҳолат тирезаи Konqueror-и нав бо URL-и талабшуда кушода "
+"мешавад."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pKonquerorTabforExternalURL)
+#: advancedTabOptions.ui:44
+#, kde-format
+msgid "Open as tab in existing Konqueror when URL is called externally"
+msgstr ""
+"Ҳамчун ҷадвалбандӣ дар Konqueror-и ҳозирбуда ҳангоми бозхонии берунбудаи URL "
+"кушоед"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pNewTabsInBackground)
+#: advancedTabOptions.ui:51
+#, kde-format
+msgid ""
+"This will open a new tab in the background, instead of in the foreground."
+msgstr "Он ҷадвалбандии навро дар паснамо ба ҷои пешзамима мекушояд."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
+#: advancedTabOptions.ui:54
+#, kde-format
+msgid "O&pen new tabs in the background"
+msgstr "&Навъи tabs-ро дар пасзамина кушоед"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pOpenAfterCurrentPage)
+#: advancedTabOptions.ui:61
+#, fuzzy, kde-format
+msgid ""
+"This will open a new tab opened from a page after the current tab, instead "
+"of after the last tab."
+msgstr ""
+"Он ҷадвалбандии навро баъди ҷадвалбандии ҷорӣ, ба ҷои ё баъди ҷадвалбандии "
+"охирон мегузорад."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pOpenAfterCurrentPage)
+#: advancedTabOptions.ui:64
+#, kde-format
+msgid "Open &new tab after current tab"
+msgstr "Баъди ҷадвалбандии ҷорӣ ҷадвалбандии &навро кушоед"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pDynamicTabbarHide)
+#: advancedTabOptions.ui:71
+#, kde-format
+msgid ""
+"This will display the tab bar only if there are two or more tabs. Otherwise "
+"it will always be displayed."
+msgstr ""
+"Он танҳо ҳангоми мавҷудияти ду ва ё зиёда ҷадвалбандиҳо навори ҷадвалбандиро "
+"намоиш медиҳад. Дар дигар ҳолатҳо он ҳама вақт намоиш дода мешавад."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pDynamicTabbarHide)
+#: advancedTabOptions.ui:74
+#, kde-format
+msgid "Hide the tab bar when only one tab is open"
+msgstr ""
+"Ҳангоми кушодани танҳо як ҷадвалбандӣ, навори ҷадвалбандиҳоро пинҳон кунед"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
+#: advancedTabOptions.ui:81
+#, fuzzy, kde-format
+#| msgid ""
+#| "This will display close buttons inside each tab instead of websites' "
+#| "icons."
+msgid "This will display close buttons inside each tab."
+msgstr ""
+"Он тугмаи пӯшишро дар дохили ҳар як ҷадвалбандӣ ба ҷои тасвирҳои 'web "
+"пойгоҳҳо', намоиш медиҳад."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pPermanentCloseButton)
+#: advancedTabOptions.ui:84
+#, fuzzy, kde-format
+msgid "&Show close button on tabs"
+msgstr "Тугмаи пӯшишро ба ҷои тасвири web-пойгоҳ &нишон медиҳад"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pMiddleClickClose)
+#: advancedTabOptions.ui:91
+#, kde-format
+msgid ""
+"When you click on a tab using the middle mouse button or mouse wheel, it "
+"will close that tab."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pMiddleClickClose)
+#: advancedTabOptions.ui:94
+#, kde-format
+msgid "Middle-click on a tab to close it"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabConfirm)
+#: advancedTabOptions.ui:101
+#, kde-format
+msgid ""
+"This will ask you whether you are sure you want to close a window when it "
+"has multiple tabs opened in it."
+msgstr ""
+"Ин аз шумо пурсон мешавад, ки оё бовари доред, ки шумо тирезаро ҳангоми "
+"мавҷудияти бисёр ҷадвалбандиҳои кушода, дар он пӯшидан мехоҳед."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pTabConfirm)
+#: advancedTabOptions.ui:104
+#, kde-format
+msgid "Confirm &when closing windows with multiple tabs"
+msgstr "&Вақти пӯшидани тирезаҳоро бо ҷадвалбандиҳои бисёр, тасдиқ кунед"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabCloseActivatePrevious)
+#: advancedTabOptions.ui:111
+#, kde-format
+msgid ""
+"When checking this the previous used or opened tab will be activated when "
+"you close the current active tab instead of the one right to the current tab."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pTabCloseActivatePrevious)
+#: advancedTabOptions.ui:114
+#, kde-format
+msgid "Activate previously used tab when closing the current tab"
+msgstr ""
+
+#: appearance.cpp:39
+#, kde-format
+msgctxt "@title:tab"
+msgid "General"
+msgstr "Умумӣ"
+
+#: appearance.cpp:40
+#, kde-format
+msgctxt "@title:tab"
+msgid "Fonts"
+msgstr "Ҳарфҳо"
+
+#: appearance.cpp:41
+#, kde-format
+msgctxt "@title:tab"
+msgid "Stylesheets"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, GroupBox3_2)
+#: appearance.cpp:48 css/csscustom.ui:296
+#, kde-format
+msgid "Images"
+msgstr "Тасвирҳо"
+
+#: appearance.cpp:52
+#, kde-format
+msgid "A&utomatically load images"
+msgstr "&Бор кардани худкори тасвирот"
+
+#: appearance.cpp:53
+#, fuzzy, kde-format
+msgid ""
+"<html>If this box is checked, Konqueror will automatically load any images "
+"that are embedded in a web page. Otherwise, it will display placeholders for "
+"the images, and you can then manually load the images by clicking on the "
+"image button.<br />Unless you have a very slow network connection, you will "
+"probably want to check this box to enhance your browsing experience.</html>"
+msgstr ""
+"Агар ин қутти қайд карда шуда бошад, Konqueror ҳамаи симоҳоро, ки дар web "
+"саҳифа гузошта шудаанд, ба таври худкор бор мекунад. Дар дигар ҳолат он "
+"сифри сохториро барои симоҳо намоиш медиҳад ва пас шумо метавонед ба таври "
+"дастӣ симоҳоро ба воситаи ангуштзанӣ ба тугмаи симо, бор кунед.<br>Агар, ки "
+"шумо пайвастшавии сустро ба шабака надошта бошед, шумо метавонед ин қуттиро "
+"барои густариши таҷрибаи баррасии худ истифода баред."
+
+#: appearance.cpp:63
+#, kde-format
+msgid "Dra&w frame around not completely loaded images"
+msgstr ""
+
+#: appearance.cpp:64
+#, fuzzy, kde-format
+msgid ""
+"<html>If this box is checked, Konqueror will draw a frame as a placeholder "
+"around images embedded in a web page that are not yet fully loaded.<br />You "
+"will probably want to check this box to enhance your browsing experience, "
+"especially if have a slow network connection.</html>"
+msgstr ""
+"Агар ин қутти қайд карда шуда бошад, Konqueror ҳамаи симоҳоро, ки дар web "
+"саҳифа гузошта шудаанд, ба таври худкор бор мекунад. Дар дигар ҳолат он "
+"сифри сохториро барои симоҳо намоиш медиҳад ва пас шумо метавонед ба таври "
+"дастӣ симоҳоро ба воситаи ангуштзанӣ ба тугмаи симо, бор кунед.<br>Агар, ки "
+"шумо пайвастшавии сустро ба шабака надошта бошед, шумо метавонед ин қуттиро "
+"барои густариши таҷрибаи баррасии худ истифода баред."
+
+#: appearance.cpp:74
+#, kde-format
+msgctxt "animations"
+msgid "Enabled"
+msgstr "Фаъол "
+
+#: appearance.cpp:75
+#, kde-format
+msgctxt "animations"
+msgid "Disabled"
+msgstr "Ғайрифаъол шуд"
+
+#: appearance.cpp:76
+#, kde-format
+msgid "Show Only Once"
+msgstr "Намоиш додани фақат яке"
+
+#: appearance.cpp:77
+#, fuzzy, kde-format
+msgid ""
+"<html>Controls how Konqueror shows animated images:<br /><ul><li><b>Enabled</"
+"b>: Show all animations completely.</li><li><b>Disabled</b>: Never show "
+"animations, show the starting image only.</li><li><b>Show only once</b>: "
+"Show all animations completely but do not repeat them.</li></ul></html>"
+msgstr ""
+"Аз болои он, ки чи тавр Konqueror симои мутаҳаррикро идора мекунад, нишон "
+"медиҳад:<br><ul><li><b>Даргирифта</b>: Ҳамаи тасвирҳои мутаҳаррикро пурра "
+"нишон медиҳад.</li><li><b>Хомӯш шуда</b>: Ҳеҷ гоҳ тасвирҳои мутаҳаррикро "
+"нишон надода, балки фаҳат симои оғозиро нишон медиҳад.</li><li><b>Танҳо як "
+"маротиба нишон медиҳад</b>: Ҳамаи тасвирҳои мутаҳаррикро пурра нишон "
+"медиҳад, лекин онҳоро такрор намекунад.</li>"
+
+#: appearance.cpp:82
+#, kde-format
+msgid "A&nimations:"
+msgstr "&Аниматсияҳо:"
+
+#: appearance.cpp:85 htmlopts.cpp:110
+#, kde-format
+msgctxt "@title:group"
+msgid "Miscellaneous"
+msgstr "Гуногун"
+
+#: appearance.cpp:90
+#, kde-format
+msgctxt "underline"
+msgid "Enabled"
+msgstr "Фаъол"
+
+#: appearance.cpp:91
+#, kde-format
+msgctxt "underline"
+msgid "Disabled"
+msgstr "Ғайрифаъол шуд"
+
+#: appearance.cpp:92
+#, kde-format
+msgid "Only on Hover"
+msgstr "Фақат дар Hover"
+
+#: appearance.cpp:93
+#, kde-format
+msgid "Und&erline links:"
+msgstr "&Пайвандҳои зерхат:"
+
+#: appearance.cpp:96
+#, fuzzy, kde-format
+msgid ""
+"<html>Controls how Konqueror handles underlining hyperlinks:<br /"
+"><ul><li><b>Enabled</b>: Always underline links</li><li><b>Disabled</b>: "
+"Never underline links</li><li><b>Only on Hover</b>: Underline when the mouse "
+"is moved over the link</li></ul><br /><i>Note: The site's CSS definitions "
+"can override this value.</i></html>"
+msgstr ""
+"Чӣ тавр Konqueror абарпайвастҳои зерхаткашидаро дасткорӣ мекунад, назорат "
+"мебарад:<br><ul><li><b>Даргирифта шудааст</b>: Ҳамеша пайвастҳои "
+"зерхаткашидашуда</li><li><b>Хомӯш кардашуда</b>: Ҳеҷ гоҳ пайвастҳои "
+"зерхаткашидашуда</li><li><b>Танҳо дар Hover</b>: Зерхаткашӣ ҳангоми ҳаракати "
+"муш дар зери пайванд</li></ul><br><i>Эзоҳ: Муайянсозии пойгоҳи CSS ин "
+"қимматро рад карда метавонад</i>"
+
+#: appearance.cpp:105
+#, kde-format
+msgid "When Efficient"
+msgstr ""
+
+#: appearance.cpp:106
+#, kde-format
+msgctxt "smooth scrolling"
+msgid "Always"
+msgstr "Ҳамеша"
+
+#: appearance.cpp:107
+#, kde-format
+msgctxt "soft scrolling"
+msgid "Never"
+msgstr "Ҳеҷгоҳ"
+
+#: appearance.cpp:108
+#, kde-format
+msgid "S&mooth scrolling:"
+msgstr ""
+
+#: appearance.cpp:110
+#, kde-format
+msgid ""
+"<html>Determines whether Konqueror should use smooth steps to scroll HTML "
+"pages, or whole steps:<br /><ul><li><b>Always</b>: Always use smooth steps "
+"when scrolling.</li><li><b>Never</b>: Never use smooth scrolling, scroll "
+"with whole steps instead.</li><li><b>When Efficient</b>: Only use smooth "
+"scrolling on pages where it can be achieved with moderate usage of system "
+"resources.</li></ul></html>"
+msgstr ""
+
+#: appearance.cpp:119
+#, kde-format
+msgid ""
+"<h1>Konqueror Fonts</h1>On this page, you can configure which fonts "
+"Konqueror should use to display the web pages you view."
+msgstr ""
+"<h1>Ҳарфҳои Konqueror</h1>Дар ин сафҳа метавонед ҳарфҳое ки Konqueror бояд "
+"тавассути онҳо сафҳоти вэбро намоиш диҳандаро танзим кунед."
+
+#: appearance.cpp:131
+#, kde-format
+msgid "Font Si&ze"
+msgstr "Андозаи &ҳарф"
+
+#: appearance.cpp:134 appearance.cpp:152
+#, kde-format
+msgid "This is the relative font size Konqueror uses to display web sites."
+msgstr ""
+"Ин андозаи ҳарф нисбӣ аст ки Konqueror барои намоиши пойгоҳҳои вэб аз он "
+"истифожда мекунад."
+
+#: appearance.cpp:138
+#, kde-format
+msgid "M&inimum font size:"
+msgstr "Андозаи &ҳарфи хурдтарин:"
+
+#: appearance.cpp:142
+#, fuzzy, kde-format
+msgid ""
+"Konqueror will never display text smaller than this size,<br />overriding "
+"any other settings."
+msgstr ""
+"Konqueror ҳаргиз матнеро бо ҳарфи хурде аз ин нишон нахоҳад дод, боқии "
+"танзимотро дуборанависӣ кунед"
+
+#: appearance.cpp:147
+#, kde-format
+msgid "&Medium font size:"
+msgstr "&Андозаи ҳарфи мӯътадил:"
+
+#: appearance.cpp:160
+#, kde-format
+msgid "S&tandard font:"
+msgstr "&Ҳарфи стандартӣ:"
+
+#: appearance.cpp:161
+#, kde-format
+msgid "This is the font used to display normal text in a web page."
+msgstr ""
+"Ин ҳарфест ки барои намоиши матн маъмуле дар як сафҳаи вэб истифода мекунад."
+
+#: appearance.cpp:165
+#, kde-format
+msgid "&Fixed font:"
+msgstr "&Ҳарфи собит:"
+
+#: appearance.cpp:166
+#, kde-format
+msgid ""
+"This is the font used to display fixed-width (i.e. non-proportional) text."
+msgstr ""
+"Ин ҳарфест ки барои намоиши матн бо урзи собит (ғайринисбӣ) истифода мешавад."
+
+#: appearance.cpp:170
+#, kde-format
+msgid "S&erif font:"
+msgstr "&Ҳарфи Serif:"
+
+#: appearance.cpp:171
+#, kde-format
+msgid "This is the font used to display text that is marked up as serif."
+msgstr ""
+"Ин ҳарфест ки барои намоиши матне ки ба унвони serif нишон шудааст истифода "
+"мешавад."
+
+#: appearance.cpp:175
+#, kde-format
+msgid "Sa&ns serif font:"
+msgstr "&Ҳарфи Sans serif:"
+
+#: appearance.cpp:176
+#, kde-format
+msgid "This is the font used to display text that is marked up as sans-serif."
+msgstr ""
+"Ин ҳарфест ки барои намоиши матне ки ба унвони sans-serif нишон шудааст "
+"истифода мешавад. "
+
+#: appearance.cpp:180
+#, kde-format
+msgid "C&ursive font:"
+msgstr "&Ҳарфи курсивӣ:"
+
+#: appearance.cpp:181
+#, kde-format
+msgid "This is the font used to display text that is marked up as italic."
+msgstr ""
+"Ин ҳарфест ки барои намоиши матне ки ба унвони italic нишон шудааст истифода "
+"мешавад. "
+
+#: appearance.cpp:185
+#, kde-format
+msgid "Fantas&y font:"
+msgstr "&Ҳарфи Fantasy:"
+
+#: appearance.cpp:186
+#, kde-format
+msgid ""
+"This is the font used to display text that is marked up as a fantasy font."
+msgstr ""
+"Ин ҳарфест ки барои намоиши матне ки ба унвони fantasy нишон шудааст "
+"истифода мешавад. "
+
+#: appearance.cpp:195
+#, kde-format
+msgid "Font &size adjustment for this encoding:"
+msgstr "&Ислоҳи андозаи ҳарф барои ин рамзгузорӣ:"
+
+#: appearance.cpp:203 appearance.cpp:401
+#, kde-format
+msgid "Use Language Encoding"
+msgstr "Истифода аз рамзгузории забон"
+
+#: appearance.cpp:205
+#, kde-format
+msgid "Default encoding:"
+msgstr "Рамзгузории пешфарз:"
+
+#: appearance.cpp:207
+#, fuzzy, kde-format
+msgid ""
+"Select the default encoding to be used; normally, you will be fine with 'Use "
+"language encoding' and should not have to change this."
+msgstr ""
+"Рамзгузории пешфарз мавриди истифодаро интихоб кунед. Маъмулан бо 'истифода "
+"аз рамзгузории замон' шумо роҳат хоҳед бурд ва ниёзе ба таъғир нест."
+
+#. i18n: ectx: property (whatsThis), widget (QWidget, CSSConfigWidget)
+#. i18n: ectx: property (whatsThis), widget (QWidget, CSSCustomDialog)
+#: css/cssconfig.ui:5 css/csscustom.ui:13
+#, kde-format
+msgid ""
+"<b>Stylesheets</b><p>See http://www.w3.org/Style/CSS for further information "
+"on cascading style sheets.</p>"
+msgstr ""
+"<b>Варақаи номгузорӣ</b><p>Обшори http://www.w3.org/Style/CSS -ро мушоҳида "
+"кунед.</p>. "
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, ButtonGroup1)
+#: css/cssconfig.ui:17
+#, kde-format
+msgid ""
+"<b>Stylesheets</b><p>Use this groupbox to determine how Konqueror will "
+"render style sheets.</p>"
+msgstr ""
+"<b>Намуди варақа</b><p> Ин монданиро барои мушоҳидаи намуд,  барои он ки ин "
+"монданиҳо истифода бурда мешаванд,барои нишондоди матн дар Konqueror "
+"истифода кунед.</p> "
+
+#. i18n: ectx: property (title), widget (QGroupBox, ButtonGroup1)
+#: css/cssconfig.ui:20
+#, kde-format
+msgid "Stylesheets"
+msgstr "Намуди варақа"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, useDefault)
+#: css/cssconfig.ui:26
+#, kde-format
+msgid ""
+"<b>Use default stylesheet</b><p>Select this option to use the default "
+"stylesheet.</p>"
+msgstr ""
+"<b> Бозхомӯшии номи матнро истифода кунед</b><p>Ин матнро интихоб кунед "
+"барои бозхомӯшии номи матн.</p> "
+
+#. i18n: ectx: property (text), widget (QRadioButton, useDefault)
+#: css/cssconfig.ui:29
+#, kde-format
+msgid "Us&e default stylesheet"
+msgstr "Матни &намуди хомӯширо истифода кунед"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, useUser)
+#: css/cssconfig.ui:39
+#, kde-format
+msgid ""
+"<b>Use user-defined stylesheet</b><p>If this box is checked, Konqueror will "
+"try to load a user-defined style sheet as specified in the location below. "
+"The style sheet allows you to completely override the way web pages are "
+"rendered in your browser. The file specified should contain a valid style "
+"sheet (see http://www.w3.org/Style/CSS for further information on cascading "
+"style sheets).</p>"
+msgstr ""
+"<b>Истифода аз намуди варақаи таъғиршуда тавассути корбари</b><p>Агар ин "
+"қуттӣ мушоҳида карда бошад, Konqueror кӯшиш дар боргузории намуди варақаи "
+"таъғир шуда тавассути корбар мутобиқи макони зерин хоҳад кард. Дар намуди "
+"варақаҳои ба шумо иҷозат медиҳад, ки комили тариқаи идораи роҳи web-"
+"варақаҳои кушоишро нишон диҳад. Файли мушаххасшуда бояд намуди варақа бояд "
+"дуруст бошад. (барои иттилоот бештар дар мавриди сафҳот сабки обшори,  "
+"http://www.w3.org/Style/CSS ро мушоҳида кунед).</p> "
+
+#. i18n: ectx: property (text), widget (QRadioButton, useUser)
+#: css/cssconfig.ui:42
+#, kde-format
+msgid "Use &user-defined stylesheet"
+msgstr "Матни намуди &бо коргузор мушоҳида шударо истифода кунед"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, useAccess)
+#: css/cssconfig.ui:94
+#, kde-format
+msgid ""
+"<b>Use accessibility stylesheet</b><p>Selecting this option will allow you "
+"to define a default font, font size, and font color with a few simple clicks "
+"of the mouse. Simply wander over to the Customize... dialog and pick out "
+"your desired options.</p>"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, useAccess)
+#: css/cssconfig.ui:97
+#, kde-format
+msgid "U&se accessibility stylesheet"
+msgstr "Использовать &специальную таблицу стилей"
+
+#. i18n: ectx: property (text), widget (QPushButton, customize)
+#: css/cssconfig.ui:137
+#, kde-format
+msgid "Custom&ize..."
+msgstr "&Танзимот..."
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox7)
+#: css/csscustom.ui:21
+#, kde-format
+msgid ""
+"<b>Font family</b><p>A font family is a group of fonts that resemble one "
+"another, with family members that are e.g. bold, italic, or any number of "
+"the above.</p>"
+msgstr ""
+"<b>Хонаводаи Ҳарф</b><p> Харфи нишондод метавонад гурӯҳи ҳарфҳоро бо номи "
+"якхела муайян кунад, лекин бо нависгоҳи ҳархела: монанди курсиви нимпаҳм ва "
+"дигар комбинасияи онҳо.</p> "
+
+#. i18n: ectx: property (title), widget (QGroupBox, GroupBox7)
+#: css/csscustom.ui:24
+#, kde-format
+msgid "Font Family"
+msgstr "Хонаводаи Ҳарф"
+
+#. i18n: ectx: property (text), widget (QLabel, txtBaseFontFamily)
+#: css/csscustom.ui:30
+#, kde-format
+msgid "Base family:"
+msgstr "Базовый шрифт:"
+
+#. i18n: ectx: property (whatsThis), widget (QFontComboBox, fontFamily)
+#: css/csscustom.ui:37
+#, kde-format
+msgid "<p>This is the currently selected font family</p>"
+msgstr "<p>Ҳарфи равони интихоб карда шуда</p>"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, sameFamily)
+#: css/csscustom.ui:44
+#, kde-format
+msgid ""
+"<b>Use same family for all text</b><p>Select this option to override custom "
+"fonts everywhere in favor of the base font.</p>"
+msgstr ""
+"<b>Ҳарфи якхеларо барои ҳамаи матн истифода кунед</b><p> Ҳамаи ҳарф дар "
+"саҳифа бо истифода кардани ҳарфи интихоб кардаро нишон дода мешавад.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, sameFamily)
+#: css/csscustom.ui:47
+#, kde-format
+msgid "Use same family for all text"
+msgstr "Ҳарфи якхеларо барои ҳамаи матн истифода кунед"
+
+#. i18n: ectx: property (title), widget (QGroupBox, GroupBox3)
+#: css/csscustom.ui:57
+#, fuzzy, kde-format
+msgid "Font Size"
+msgstr "Андозаи &ҳарф"
+
+#. i18n: ectx: property (text), widget (QLabel, txtFontsize)
+#: css/csscustom.ui:63
+#, fuzzy, kde-format
+msgid "Base font si&ze:"
+msgstr "&Андозаи ҳарфи мӯътадил:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:80
+#, kde-format
+msgid "7"
+msgstr "7"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:85
+#, kde-format
+msgid "8"
+msgstr "8"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:90
+#, kde-format
+msgid "9"
+msgstr "9"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:95
+#, kde-format
+msgid "10"
+msgstr "10"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:100
+#, kde-format
+msgid "11"
+msgstr "11"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:105
+#, kde-format
+msgid "12"
+msgstr "12"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:110
+#, kde-format
+msgid "14"
+msgstr "14"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:115
+#, kde-format
+msgid "16"
+msgstr "14"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:120
+#, kde-format
+msgid "20"
+msgstr "20"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:125
+#, kde-format
+msgid "24"
+msgstr "24"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:130
+#, kde-format
+msgid "32"
+msgstr "32"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:135
+#, kde-format
+msgid "48"
+msgstr "48"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:140
+#, kde-format
+msgid "64"
+msgstr "64"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, dontScale)
+#: css/csscustom.ui:148
+#, kde-format
+msgid ""
+"<b>Use same size for all elements</b><p>Select this option to override "
+"custom font sizes in favor of the base font size. All fonts will be "
+"displayed in the same size.</p>"
+msgstr ""
+"<b>Барои тамоми иҷро аз андозаи яксон истифода кунед</b><p>Ин интихоб ҳаҷми "
+"ҳарфҳоро дар коди HTML бударо  муайян мекунад. Ҳамаи ҳарфҳои дар саҳифа "
+"бударо бо ҳаҷми якхела нишон медиҳад.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, dontScale)
+#: css/csscustom.ui:151
+#, kde-format
+msgid "&Use same size for all elements"
+msgstr "&Барои тамоми иҷро аз андозаи яксон истифода кунед "
+
+#. i18n: ectx: property (title), widget (QGroupBox, ButtonGroup2)
+#: css/csscustom.ui:161
+#, fuzzy, kde-format
+msgid "Colors"
+msgstr "Ҷустуҷӯи феҳристҳо"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, blackOnWhite)
+#: css/csscustom.ui:183
+#, kde-format
+msgid "<b>Black on White</b><p>This is what you normally see.</p>"
+msgstr "<b>Сиёҳ дар сафед</b><p> Ин ҳамон аст ки ба сурати маъмул мебинед.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, blackOnWhite)
+#: css/csscustom.ui:186
+#, kde-format
+msgid "&Black on white"
+msgstr "&Сиёҳ дар сафед"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, whiteOnBlack)
+#: css/csscustom.ui:196
+#, kde-format
+msgid "<b>White on Black</b><p>This is your classic inverse color scheme.</p>"
+msgstr "<b>Сафед дар Сиёҳ</b><p>Бозгашти классикии схемаи рангӣ дар матн.</p> "
+
+#. i18n: ectx: property (text), widget (QRadioButton, whiteOnBlack)
+#: css/csscustom.ui:199
+#, kde-format
+msgid "&White on black"
+msgstr "&Сафед дар сиёҳ"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, customColor)
+#: css/csscustom.ui:206
+#, kde-format
+msgid ""
+"<b>Custom</b><p>Select this option to define a custom color for the default "
+"font.</p>"
+msgstr ""
+"<b>Соз кунӣ</b><p>Метавонад ранг барои ҳарфи бо хомӯширо муайян кунед.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, customColor)
+#: css/csscustom.ui:209
+#, kde-format
+msgid "Cus&tom"
+msgstr "&Соз кунӣ "
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, txtBackground)
+#: css/csscustom.ui:219
+#, kde-format
+msgid ""
+"<b>Background</b><p>This background color is the one displayed behind the "
+"text by default. A background image will override this.</p>"
+msgstr ""
+"<b>Замина</b><p> Ранги замина бо хомӯшӣ нишон дода мешавад барои ҳар як "
+"саҳифа баъд аз матн.</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, txtBackground)
+#: css/csscustom.ui:222
+#, kde-format
+msgid "Bac&kground:"
+msgstr "&Замина:"
+
+#. i18n: ectx: property (whatsThis), widget (KColorButton, backgroundColorButton)
+#: css/csscustom.ui:238
+#, kde-format
+msgid ""
+"<b>Background</b><p>Behind this door lays the ability to choose a custom "
+"default background.</p>"
+msgstr ""
+"<b>Замина</b><p>Метавонад заминаи расми худро барои матн интихоб кунад.</p>"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, sameColor)
+#: css/csscustom.ui:248
+#, kde-format
+msgid ""
+"<b>Use same color for all text</b><p>Select this option to apply your chosen "
+"color to the default font as well as any custom fonts as specified in a "
+"stylesheet.</p>"
+msgstr ""
+"<b>Танҳо як рангро барои ҳамаи матн истфода кунед</b><p>Барои матнро нишон "
+"додан рангҳои нишондод ба ҷои рангҳое ки дар саҳифаи намуд дода аст истифода "
+"карда мешаванд.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, sameColor)
+#: css/csscustom.ui:251
+#, kde-format
+msgid "Use same color for all text"
+msgstr "Танҳо як рангро барои ҳамаи матн истфода кунед"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, txtForeground)
+#. i18n: ectx: property (whatsThis), widget (KColorButton, foregroundColorButton)
+#: css/csscustom.ui:261 css/csscustom.ui:280
+#, kde-format
+msgid ""
+"<b>Foreground color</b><p>The foreground color is the color that the text is "
+"drawn in.</p>"
+msgstr "<b>Ранги матн</b><p>Ранги матни бо хомӯширо муайян кунад.</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, txtForeground)
+#: css/csscustom.ui:264
+#, kde-format
+msgid "&Foreground:"
+msgstr "&Ранги матн:"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox3_2)
+#: css/csscustom.ui:293
+#, fuzzy, kde-format
+msgid "<b>Images</b>"
+msgstr "Тасвирҳо"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, hideImages)
+#: css/csscustom.ui:302
+#, kde-format
+msgid ""
+"<b>Suppress images</b><p>Selecting this will prevent Konqueror from loading "
+"images.</p>"
+msgstr ""
+"<b>Хомӯш кардани тасвир</b><p> Интихоби ин барнома аз боргузорӣ тавири "
+"тавассути Konqueror кашиш намекунад </p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, hideImages)
+#: css/csscustom.ui:305
+#, kde-format
+msgid "&Suppress images"
+msgstr "&Хомӯш кардани тасвир"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, hideBackground)
+#: css/csscustom.ui:312
+#, kde-format
+msgid ""
+"<b>Suppress background images</b><p>Selecting this option will prevent "
+"Konqueror from loading background images.</p>"
+msgstr ""
+"<b>Хомӯш кардани тасвири замина</b><p>Интихоби ин барнома аз боргузорӣ "
+"тавири тавассути Konqueror кашиш намекунад </p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, hideBackground)
+#: css/csscustom.ui:315
+#, kde-format
+msgid "Suppress background images"
+msgstr "Хомӯш кардани тасвири замина"
+
+#. i18n: ectx: property (title), widget (QGroupBox, previewBox)
+#: css/csscustom.ui:347
+#, kde-format
+msgid "Preview"
+msgstr "Намоиши пешакӣ "
+
+#: css/kcmcss.cpp:51
+#, kde-format
+msgid ""
+"<h1>Konqueror Stylesheets</h1> This module allows you to apply your own "
+"color and font settings to Konqueror by using stylesheets (CSS). You can "
+"either specify options or apply your own self-written stylesheet by pointing "
+"to its location.<br /> Note that these settings will always have precedence "
+"before all other settings made by the site author. This can be useful to "
+"visually impaired people or for web pages that are unreadable due to bad "
+"design."
+msgstr ""
+
+#: css/kcmcss.cpp:336
+#, fuzzy, kde-format
+#| msgid ""
+#| "<html>\n"
+#| "\n"
+#| "<h1>Heading 1</h1>\n"
+#| "<h2>Heading 2</h2>\n"
+#| "<h3>Heading 3</h3>\n"
+#| "\n"
+#| "<p>User defined stylesheets allow increased\n"
+#| "accessibility for visually handicapped\n"
+#| "people.</p>\n"
+#| "\n"
+#| "</html>\n"
+msgid ""
+"<html>\n"
+"<head>\n"
+"<style>\n"
+"<!--\n"
+"%1\n"
+"-->\n"
+"</style>\n"
+"</head>\n"
+"<body>\n"
+"<h1>Heading 1</h1>\n"
+"<h2>Heading 2</h2>\n"
+"<h3>Heading 3</h3>\n"
+"\n"
+"<p>User-defined stylesheets allow increased\n"
+"accessibility for visually handicapped\n"
+"people.</p>\n"
+"\n"
+"</body>\n"
+"</html>\n"
+msgstr ""
+"<html>\n"
+"\n"
+"<h1>Заголовок 1</h1>\n"
+"<h2>Заголовок 2</h2>\n"
+"<h3>Заголовок 3</h3>\n"
+"\n"
+"<p>Определённые пользователем таблицы стилей \n"
+"позволяют улучшить восприятие для людей с \n"
+"ослабленным зрением.</p>\n"
+"\n"
+"</html>\n"
+
+#: domainlistview.cpp:37
+#, kde-format
+msgid "Host/Domain"
+msgstr "Мизбон/Domain"
+
+#: domainlistview.cpp:37
+#, kde-format
+msgid "Policy"
+msgstr "Сиёсат"
+
+#: domainlistview.cpp:45
+#, kde-format
+msgid "&New..."
+msgstr "&Нав..."
+
+#: domainlistview.cpp:49
+#, kde-format
+msgid "Chan&ge..."
+msgstr "Таъ&ғир..."
+
+#: domainlistview.cpp:53
+#, kde-format
+msgid "De&lete"
+msgstr "Ноб&уд сохтан"
+
+#: domainlistview.cpp:57
+#, kde-format
+msgid "&Import..."
+msgstr "&Ворид кардан..."
+
+#: domainlistview.cpp:63
+#, kde-format
+msgid "&Export..."
+msgstr "&Содир кардан..."
+
+#: domainlistview.cpp:71
+#, kde-format
+msgid "Click on this button to manually add a host or domain specific policy."
+msgstr ""
+"Барои афзудани дастии як сиёсати хоси мизбон ё domain ба сурати дастӣ ин "
+"кнопкаро пахш кунед."
+
+#: domainlistview.cpp:73
+#, kde-format
+msgid ""
+"Click on this button to change the policy for the host or domain selected in "
+"the list box."
+msgstr ""
+"Барои таъғир додани сиёсати мизбон ё domain-и интихобшуда дар инҷо пахш "
+"кунед."
+
+#: domainlistview.cpp:75
+#, kde-format
+msgid ""
+"Click on this button to delete the policy for the host or domain selected in "
+"the list box."
+msgstr ""
+"Барои нобуд сохтани сиёсати мизбон ё domain-и интихобшуда дар инҷо пахш "
+"кунед."
+
+#: domainlistview.cpp:122
+#, fuzzy, kde-format
+msgid "You must first select a policy to be changed."
+msgstr "Дар ибтидо бояд як сиёсате ки таъғир кардабударо интихоб кунед!"
+
+#: domainlistview.cpp:149
+#, fuzzy, kde-format
+msgid "You must first select a policy to delete."
+msgstr "Дар ибтидо бояд як сиёсате ки нобуд кардабударо интихоб кунед!"
+
+#: domainlistview.cpp:187 policydlg.cpp:63
+#, kde-format
+msgid "Use Global"
+msgstr "Глобалиро истифода кунед"
+
+#: domainlistview.cpp:189 policydlg.cpp:63
+#, kde-format
+msgid "Accept"
+msgstr "Қабул кардан"
+
+#: domainlistview.cpp:191 policydlg.cpp:63
+#, kde-format
+msgid "Reject"
+msgstr "Рад кардан"
+
+#: filteropts.cpp:48
+#, fuzzy, kde-format
+msgid "Enable filters"
+msgstr "&Дебаггеро фаъол созед"
+
+#: filteropts.cpp:51
+#, kde-format
+msgid "Hide filtered images"
+msgstr ""
+
+#: filteropts.cpp:58
+#, fuzzy, kde-format
+msgid "Manual Filter"
+msgstr "&Дебаггеро фаъол созед"
+
+#: filteropts.cpp:76
+#, kde-format
+msgid "Search:"
+msgstr ""
+
+#: filteropts.cpp:84
+#, kde-format
+msgid ""
+"<qt>Filter expression (e.g. <tt>http://www.example.com/ad/*</tt>, <a href="
+"\"filterhelp\">more information</a>):"
+msgstr ""
+
+#: filteropts.cpp:100
+#, kde-format
+msgid "Automatic Filter"
+msgstr ""
+
+#: filteropts.cpp:109
+#, kde-format
+msgid "Automatic update interval:"
+msgstr ""
+
+#: filteropts.cpp:114
+#, kde-format
+msgid " day"
+msgid_plural " days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: filteropts.cpp:120
+#, kde-format
+msgid "Insert"
+msgstr "Ворид"
+
+#: filteropts.cpp:123
+#, kde-format
+msgid "Update"
+msgstr "Навсозӣ"
+
+#: filteropts.cpp:126
+#, kde-format
+msgid "Remove"
+msgstr "Тоза кардан"
+
+#: filteropts.cpp:130
+#, kde-format
+msgid "Import..."
+msgstr "&Воридот..."
+
+#: filteropts.cpp:133
+#, kde-format
+msgid "Export..."
+msgstr "&Содирот..."
+
+#: filteropts.cpp:140
+#, kde-format
+msgid ""
+"<qt>More information on <a href=\"importhelp\">import format</a>, <a href="
+"\"exporthelp\">export format</a>"
+msgstr ""
+
+#: filteropts.cpp:154
+#, kde-format
+msgid ""
+"Enable or disable AdBlocK filters. When enabled, a set of URL expressions "
+"should be defined in the filter list for blocking to take effect."
+msgstr ""
+
+#: filteropts.cpp:156
+#, kde-format
+msgid ""
+"When enabled blocked images will be removed from the page completely, "
+"otherwise a placeholder 'blocked' image will be used."
+msgstr ""
+
+#: filteropts.cpp:163
+#, kde-format
+msgid ""
+"This is the list of URL filters that will be applied to all embedded images "
+"and media objects."
+msgstr ""
+
+#: filteropts.cpp:167
+#, kde-format
+msgid ""
+"<qt><p>Enter an expression to filter. Filters can be defined as either:"
+"<ul><li>a shell-style wildcard, e.g. <tt>http://www.example.com/ads*</tt>, "
+"the wildcards <tt>*?[]</tt> may be used</li><li>a full regular expression by "
+"surrounding the string with '<tt>/</tt>', e.g. <tt>/\\/(ad|banner)\\./</tt></"
+"li></ul><p>Any filter string can be preceded by '<tt>@@</tt>' to whitelist "
+"(allow) any matching URL, which takes priority over any blacklist (blocking) "
+"filter."
+msgstr ""
+
+#: filteropts.cpp:183
+#, kde-format
+msgid ""
+"<qt><p>The filter import format is a plain text file. Blank lines, comment "
+"lines starting with '<tt>!</tt>' and the header line <tt>[AdBlock]</tt> are "
+"ignored. Any other line is added as a filter expression."
+msgstr ""
+
+#: filteropts.cpp:188
+#, kde-format
+msgid ""
+"<qt><p>The filter export format is a plain text file. The file begins with a "
+"header line <tt>[AdBlock]</tt>, then all of the filters follow each on a "
+"separate line."
+msgstr ""
+
+#: filteropts.cpp:256
+#, kde-format
+msgid "Import Filters"
+msgstr ""
+
+#: filteropts.cpp:301
+#, kde-format
+msgid "Export Filters"
+msgstr ""
+
+#: filteropts.cpp:436
+#, kde-format
+msgid ""
+"<h1>Konqueror AdBlocK</h1> Konqueror AdBlocK allows you to create a list of "
+"filters that are checked against linked images and frames. URL's that match "
+"are either discarded or replaced with a placeholder image. "
+msgstr ""
+
+#: filteropts.cpp:558
+#, kde-format
+msgid "Name"
+msgstr ""
+
+#: filteropts.cpp:559
+#, kde-format
+msgid "URL"
+msgstr ""
+
+#: generalopts.cpp:53
+#, kde-format
+msgid "Tabbed Browsing"
+msgstr "Баррасии Ҷадвалбандшуда"
+
+#: generalopts.cpp:79
+#, kde-format
+msgctxt ""
+"The user chose to use a custom start page but left the corresponding field "
+"empty"
+msgid "Please, insert the custom start page"
+msgstr ""
+
+#: generalopts.cpp:85
+#, kde-format
+msgctxt "@label:listbox"
+msgid "When &Konqueror starts:"
+msgstr ""
+
+#: generalopts.cpp:94
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Show Introduction Page"
+msgstr ""
+
+#: generalopts.cpp:95
+#, fuzzy, kde-format
+msgctxt "@item:inlistbox"
+msgid "Show My Start Page"
+msgstr "Шохаи ҷустуҷӯи муттасакунандаро интихоб кунед"
+
+#: generalopts.cpp:96
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Show Blank Page"
+msgstr ""
+
+#: generalopts.cpp:97
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Show My Bookmarks"
+msgstr "Нишон додани хатчӯбҳои ман"
+
+#: generalopts.cpp:103
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Select Start Page"
+msgstr "Шохаи ҷустуҷӯи муттасакунандаро интихоб кунед"
+
+#: generalopts.cpp:107
+#, kde-format
+msgid "This is the URL of the web page Konqueror will show when starting."
+msgstr ""
+
+#: generalopts.cpp:118
+#, kde-format
+msgid "Home page:"
+msgstr "Саҳифаи асосӣ:"
+
+#: generalopts.cpp:121
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Select Home Page"
+msgstr "Шохаи ҷустуҷӯи муттасакунандаро интихоб кунед"
+
+#: generalopts.cpp:126
+#, kde-format
+msgid ""
+"This is the URL of the web page where Konqueror will jump to when the \"Home"
+"\" button is pressed."
+msgstr ""
+
+#: generalopts.cpp:134
+#, kde-format
+msgid "Default web browser engine:"
+msgstr ""
+
+#: generalopts.cpp:143
+#, kde-format
+msgid "When splitting a view"
+msgstr ""
+
+#: generalopts.cpp:147
+#, kde-format
+msgid "Always duplicate current view"
+msgstr ""
+
+#: generalopts.cpp:148
+#, kde-format
+msgid "Duplicate current view only for local files"
+msgstr ""
+
+#: htmlopts.cpp:36
+#, kde-format
+msgid ""
+"<h1>Konqueror Browser</h1> Here you can configure Konqueror's browser "
+"functionality. Please note that the file manager functionality has to be "
+"configured using the \"File Manager\" configuration module. You can make "
+"some settings how Konqueror should handle the HTML code in the web pages it "
+"loads. It is usually not necessary to change anything here."
+msgstr ""
+"<h1>Барраси Konqueror</h1> Дар ин ҷо шумо метавонед вазифаи барраси "
+"Konqueror-ро танзим намоед. Дар хотир доред, ки вазифаи мудири файл бояд ба "
+"воситаи танзимкунии \"Мудири Файл\" - модул, танзим карда шавад. Шумо "
+"метавонед баъзе гузоришҳоро оиди тарзи боркунии дасткории рамзи HTML дар web "
+"саҳифа иҷро созед. Одатан дар ин ҷо ҳеҷ чизро иваз кардан лозим нест."
+
+#: htmlopts.cpp:44
+#, kde-format
+msgid "Boo&kmarks"
+msgstr "Хат&чӯбҳо"
+
+#: htmlopts.cpp:47
+#, kde-format
+msgid "Ask for name and folder when adding bookmarks"
+msgstr ""
+
+#: htmlopts.cpp:50
+#, kde-format
+msgid ""
+"If this box is checked, Konqueror will allow you to change the title of the "
+"bookmark and choose a folder in which to store it when you add a new "
+"bookmark."
+msgstr ""
+
+#: htmlopts.cpp:56
+#, kde-format
+msgid "Show only marked bookmarks in bookmark toolbar"
+msgstr ""
+
+#: htmlopts.cpp:58
+#, kde-format
+msgid ""
+"If this box is checked, Konqueror will show only those bookmarks in the "
+"bookmark toolbar which you have marked to do so in the bookmark editor."
+msgstr ""
+
+#: htmlopts.cpp:65
+#, kde-format
+msgid "Form Com&pletion"
+msgstr "&Итмоми намуд"
+
+#: htmlopts.cpp:69
+#, kde-format
+msgid ""
+"If this box is checked, Konqueror will remember the data you enter in web "
+"forms and suggest it in similar fields for all forms."
+msgstr ""
+"Агар ин намунаро интихоб кунед, Konqueror додаҳое ки дар намудҳои вэб ворид "
+"кардаи шуморо ба хотира месупорад ва дар бахшҳои осон дар ҳамаи намудҳо "
+"онҳоро ба шумо пешниҳод мекунад."
+
+#: htmlopts.cpp:75
+#, kde-format
+msgid "&Maximum completions:"
+msgstr "&Миқдори зиёди вариантҳо:"
+
+#: htmlopts.cpp:77
+#, kde-format
+msgid ""
+"Here you can select how many values Konqueror will remember for a form field."
+msgstr ""
+"Дар инҷо метавонед таъдоди миқдоре ки Konqueror ба хотира месупорад, интихоб "
+"кунед."
+
+#: htmlopts.cpp:84
+#, kde-format
+msgid "Mouse Beha&vior"
+msgstr ""
+
+#: htmlopts.cpp:87
+#, kde-format
+msgid "Chan&ge cursor over links"
+msgstr "Таъғири &курсори рӯи пайвандҳо"
+
+#: htmlopts.cpp:89
+#, kde-format
+msgid ""
+"If this option is set, the shape of the cursor will change (usually to a "
+"hand) if it is moved over a hyperlink."
+msgstr ""
+"Агар ин интихоботро танзим карда бошед, шакли маконнамо (маъмулан ба сурати "
+"як даст) ҳангоме ки рӯи як убурпайванд қарор мегирад, таъғир мекунад."
+
+#: htmlopts.cpp:93
+#, kde-format
+msgid "M&iddle click opens URL in selection"
+msgstr ""
+
+#: htmlopts.cpp:96
+#, kde-format
+msgid ""
+"If this box is checked, you can open the URL in the selection by middle "
+"clicking on a Konqueror view."
+msgstr ""
+
+#: htmlopts.cpp:100
+#, kde-format
+msgid "Right click goes &back in history"
+msgstr "&Пахши рости рӯи торихча ба уқубе бармегардад"
+
+#: htmlopts.cpp:103
+#, kde-format
+msgid ""
+"If this box is checked, you can go back in history by right clicking on a "
+"Konqueror view. To access the context menu, press the right mouse button and "
+"move."
+msgstr ""
+"Агар ин қутти қайд карда шуда бошад, шумо метавонед ба воситаи ангуштзании "
+"тугмаи рости муш дар назари Konqueror ба таърих баргардонед. Барои дастёбӣ "
+"ба менюи матнӣ, тугмаи рости мушро пахш кунед ва онро ҳаракат диҳед."
+
+#: htmlopts.cpp:113
+#, kde-format
+msgid "Allow automatic delayed &reloading/redirecting"
+msgstr "Иҷозати &бозсозӣ/ҷиҳатгирии маҷдуди худкор бо пеш аз пурборкунӣ"
+
+#: htmlopts.cpp:114
+#, kde-format
+msgid ""
+"Some web pages request an automatic reload or redirection after a certain "
+"period of time. By unchecking this box Konqueror will ignore these requests."
+msgstr ""
+"Баъзе web саҳифаҳо баъди мӯҳлати муайяни вақт баркунии дубора ё бознишонии "
+"худкорро талаб мекунанд. Бо қайд намудани ин қуттиҳо Konqueror ин "
+"дархостҳоро рад мекунад."
+
+#: htmlopts.cpp:120
+#, kde-format
+msgid "Enable Access Ke&y activation with Ctrl key"
+msgstr ""
+
+#: htmlopts.cpp:121
+#, kde-format
+msgid ""
+"Pressing the Ctrl key when viewing webpages activates Access Keys. "
+"Unchecking this box will disable this accessibility feature. (Konqueror "
+"needs to be restarted for this change to take effect.)"
+msgstr ""
+
+#: htmlopts.cpp:125
+#, kde-format
+msgid "Send the DNT header to tell web sites you do not want to be tracked"
+msgstr ""
+
+#: htmlopts.cpp:126
+#, kde-format
+msgid ""
+"Check this box if you want to inform a web site that you do not want your "
+"web browsing habits tracked."
+msgstr ""
+
+#: htmlopts.cpp:130
+#, kde-format
+msgid "Offer to save website passwords"
+msgstr ""
+
+#: htmlopts.cpp:131
+#, kde-format
+msgid "Uncheck this box to prevent being prompted to save website passwords"
+msgstr ""
+
+#: htmlopts.cpp:136
+#, kde-format
+msgid "Display online PDF files using WebEngine"
+msgstr ""
+
+#: htmlopts.cpp:137
+#, kde-format
+msgid ""
+"Uncheck this box to display online PDF files as configured in System Settings"
+msgstr ""
+
+#: javaopts.cpp:78
+#, kde-format
+msgid "Enable Ja&va globally"
+msgstr "Фаъолсози Ja&va ба таври саросарӣ"
+
+#: javaopts.cpp:93
+#, kde-format
+msgid "Java Runtime Settings"
+msgstr "Танзимоти замони иҷрои Java "
+
+#: javaopts.cpp:97
+#, kde-format
+msgid "&Use security manager"
+msgstr "&Истифода аз мудири амният"
+
+#: javaopts.cpp:101
+#, kde-format
+msgid "Use &KIO"
+msgstr "&KIO-ро истифода баред"
+
+#: javaopts.cpp:105
+#, fuzzy, kde-format
+msgid "Shu&tdown applet server when inactive for more than"
+msgstr "&Вақте ки ғайрифаъол аст коргузори барномаро хомӯш кунед"
+
+#: javaopts.cpp:117
+#, fuzzy, kde-format
+#| msgid " sec"
+msgid " second"
+msgid_plural " seconds"
+msgstr[0] "сония"
+msgstr[1] "сония"
+
+#: javaopts.cpp:123
+#, kde-format
+msgid "&Path to Java executable, or 'java':"
+msgstr "&Роҳча ба иҷрои Java ё 'java':"
+
+#: javaopts.cpp:127
+#, kde-format
+msgid "Additional Java a&rguments:"
+msgstr "Ҷиҳатҳои &изофии Java:"
+
+#: javaopts.cpp:132
+#, kde-format
+msgid ""
+"Enables the execution of scripts written in Java that can be contained in "
+"HTML pages. Note that, as with any browser, enabling active contents can be "
+"a security problem."
+msgstr ""
+"Иҷроиши навиштани дастнависҳоро дар Java дармегиронад, ки дар таркиби "
+"саҳифаҳои HTML буда метавонед. Дар хотир доред, ки ба монанди дигар баррасҳо "
+"даргиронидани мазмуни фаъол ба мушкилотҳои бехатарӣ оварда расониданаш "
+"мумкин аст."
+
+#: javaopts.cpp:135
+#, fuzzy, kde-format
+msgid ""
+"<p>This box contains the domains and hosts you have set a specific Java "
+"policy for. This policy will be used instead of the default policy for "
+"enabling or disabling Java applets on pages sent by these domains or hosts.</"
+"p><p>Select a policy and use the controls on the right to modify it.</p>"
+msgstr ""
+"Ба ин қуттӣ доменҳо ва соҳибҳое, ки дар қоидаҳои мушаххаси Java барпо "
+"кардаед, дохил мешаванд... Ин қоида ба ҷои қоида бо нобаёнӣ барои "
+"даргиронидан ё хомӯш кардани апплетҳои Java дар саҳифаҳое, ки аз тарафи ин "
+"далелҳо ва соҳибҳо фиристода шудаанд, истифода бурда мешавад.<p>"
+
+#: javaopts.cpp:142
+#, kde-format
+msgid ""
+"Click this button to choose the file that contains the Java policies. These "
+"policies will be merged with the existing ones. Duplicate entries are "
+"ignored."
+msgstr ""
+"Барои интихоби файле, ки қоидаҳои Java-ро дар бар мегирад, ин тугмаро ангушт "
+"занед. Ин қоидаҳо ба қоидаҳои ҳозирбуда пайваст мешаванд. Дунусхагирии "
+"элементҳо рад карда мешавад."
+
+#: javaopts.cpp:145
+#, kde-format
+msgid ""
+"Click this button to save the Java policy to a zipped file. The file, named "
+"<b>java_policy.tgz</b>, will be saved to a location of your choice."
+msgstr ""
+"Ин тугмаро барои захиракунии қоидаи Java дар файли омехташудаи фаврӣ, ангушт "
+"занед. Файл бо номи <b>java_policy.tgz</b>, дар маҳалли интихобшудаи шумо "
+"захира карда мешавад."
+
+#: javaopts.cpp:149
+#, kde-format
+msgid ""
+"Here you can set specific Java policies for any particular host or domain. "
+"To add a new policy, simply click the <i>New...</i> button and supply the "
+"necessary information requested by the dialog box. To change an existing "
+"policy, click on the <i>Change...</i> button and choose the new policy from "
+"the policy dialog box. Clicking on the <i>Delete</i> button will remove the "
+"selected policy, causing the default policy setting to be used for that "
+"domain."
+msgstr ""
+"Дар ин ҷо шумо қоидаҳои махсуси Java-ро барои соҳиб ё домени дилхоҳ барпо "
+"сохта метавонед. Барои иловакунии қоидаи нав танҳо ба тугмаи <i>Нав...</i> "
+"ангушт занед ва ахбороти заруриро, ки аз тарафи қуттии муколама дархоста "
+"шуда буд, илова кунед. Барои ивази қоидаи мавчудбуда ба тугмаи <i>Иваз "
+"кардан...</i> ангушт занед ва қоидаи навро аз қуттии муколамаи қоидаҳо, "
+"интихоб кунед. Ангуштзанӣ ба тугмаи <i>Нобудкунӣ</i>, қоидаи интихобшударо "
+"хориҷ мекунад, барои он, ки гузоришҳои қоидаҳо бо нобаёнӣ барои ин домен "
+"истифода хоҳад шуд."
+
+#: javaopts.cpp:162
+#, kde-format
+msgid ""
+"Enabling the security manager will cause the jvm to run with a Security "
+"Manager in place. This will keep applets from being able to read and write "
+"to your file system, creating arbitrary sockets, and other actions which "
+"could be used to compromise your system. Disable this option at your own "
+"risk. You can modify your $HOME/.java.policy file with the Java policytool "
+"utility to give code downloaded from certain sites more permissions."
+msgstr ""
+"Даргиронидани мудири бехатарӣ ба воситаи jvm, ки аз тарафи мудири Бехатарӣ "
+"дар ҷояш коргузорӣ шудааст, амалӣ мешавад. Он апплетҳоро дар низоми файлии "
+"шумо хондашаванда ва навишташаванда мекунад, бастаҳои довариро меофарад ва "
+"дигар амалиётҳое, ки барои гузаштани низоми шумо истифода мешавад. Хомӯш "
+"кардани ин хосият ба хатари шумо аст. Шумо метавонед файли $HOME/.java."
+"policy-ро ба воситаи барномаи пуштибонии асбоби қоидаҳо барои додани рамзҳои "
+"боршуда аз сайтҳои рухсатдории зиёд, тағир диҳед."
+
+#: javaopts.cpp:170
+#, kde-format
+msgid "Enabling this will cause the jvm to use KIO for network transport "
+msgstr ""
+"Даргиронидани он боиси итифодаи KIO аз тарафи jvm барои интиқоли шабакавӣ "
+"мегардад "
+
+#: javaopts.cpp:172
+#, kde-format
+msgid ""
+"Enter the path to the java executable. If you want to use the jre in your "
+"path, simply leave it as 'java'. If you need to use a different jre, enter "
+"the path to the java executable (e.g. /usr/lib/jdk/bin/java), or the path to "
+"the directory that contains 'bin/java' (e.g. /opt/IBMJava2-13)."
+msgstr ""
+"Барои имконпазирии java роҳро ворид кунед. Агар хоҳед, ки jre-ро дар роҳи "
+"худ истифода баред, танҳо онро ҳамчун 'java' боқӣ монед. Агар хоҳед, ки jre-"
+"и дигареро истифода баред, роҳро барои иконпазирии java ворид кунед "
+"(масалан /usr/lib/jdk/bin/java), ё роҳро ба феҳристе, ки 'bin/java'-ро дар "
+"бар мегирад (масалан /opt/IBMJava2-13)."
+
+#: javaopts.cpp:177
+#, kde-format
+msgid ""
+"If you want special arguments to be passed to the virtual machine, enter "
+"them here."
+msgstr ""
+"Агар хоҳед баҳсҳои хосро ба мошини миҷозӣ бифиристед, онҳоро дар инҷо ворид "
+"кунед."
+
+#: javaopts.cpp:179
+#, kde-format
+msgid ""
+"When all the applets have been destroyed, the applet server should shut "
+"down. However, starting the jvm takes a lot of time. If you would like to "
+"keep the java process running while you are browsing, you can set the "
+"timeout value to whatever you like. To keep the java process running for the "
+"whole time that the konqueror process is, leave the Shutdown Applet Server "
+"checkbox unchecked."
+msgstr ""
+"Вақте, ки ҳама апплетҳо вайрон мегарданд, хидматрасони апплет қатъ мегардад. "
+"Лекин оғозёбии jvm вақти зиёдро талаб мекунад. Агар хоҳед, ки ҷараёни java "
+"ҳангоми баррасии шумо иҷро шуда истад, шумо қиммати итмоми вақтро бо хоҳиши "
+"худ барпо карда метавонед. Барои давомдиҳии ҷараёни иҷроиши java дар тамоми "
+"мӯҳлати мавҷудияти ҷараёни konqueror қуттии қайдкунии Хидматрасони Апплети "
+"қатъшавиро қайд кунед."
+
+#: javaopts.cpp:288
+#, fuzzy, kde-format
+msgctxt "@title:group"
+msgid "Doma&in-Specific"
+msgstr "Doma&in-и хос"
+
+#: javaopts.cpp:323
+#, fuzzy, kde-format
+#| msgid "New Java Policy"
+msgctxt "@title:window"
+msgid "New Java Policy"
+msgstr "Сиёсати нави Java"
+
+#: javaopts.cpp:326
+#, fuzzy, kde-format
+#| msgid "Change Java Policy"
+msgctxt "@title:window"
+msgid "Change Java Policy"
+msgstr "Таъғири сиёсати Java"
+
+#: javaopts.cpp:330
+#, kde-format
+msgid "&Java policy:"
+msgstr "&Сиёсати Java:"
+
+#: javaopts.cpp:331
+#, kde-format
+msgid "Select a Java policy for the above host or domain."
+msgstr "Як сиёсати Java барои мизбонҳо ё domain-ҳои боло ворид кунед."
+
+#: jsopts.cpp:50
+#, kde-format
+msgid "Ena&ble JavaScript globally"
+msgstr "&Фаъолсози JavaScript ба таври саросарӣ"
+
+#: jsopts.cpp:51
+#, kde-format
+msgid ""
+"Enables the execution of scripts written in ECMA-Script (also known as "
+"JavaScript) that can be contained in HTML pages. Note that, as with any "
+"browser, enabling scripting languages can be a security problem."
+msgstr ""
+"Иҷроиши дастнависро, ки бо ECMA-Script (инчунин ҳамчун JavaScript маълуманд) "
+"навишта шудаанд, ки дар саҳифаҳои HTML мавҷуд буда метавонанд, дармегиронад. "
+"Дар хотир доред, ки даргиронидани забони дастнавис ҳамчун бо дигар баррасҳо "
+"мушкилотҳои бехатариро меоварад."
+
+#: jsopts.cpp:59
+#, kde-format
+msgid "Debugging"
+msgstr ""
+
+#: jsopts.cpp:63
+#, kde-format
+msgid "Enable debu&gger"
+msgstr "&Дебаггеро фаъол созед"
+
+#: jsopts.cpp:64
+#, kde-format
+msgid "Enables builtin JavaScript debugger."
+msgstr "Ғалатёби дарунсохтаи JavaScript-ро дармегиронад."
+
+#: jsopts.cpp:68
+#, kde-format
+msgid "Report &errors"
+msgstr "&Дар бораи хатоҳо"
+
+#: jsopts.cpp:69
+#, kde-format
+msgid ""
+"Enables the reporting of errors that occur when JavaScript code is executed."
+msgstr ""
+"Маърӯзакунии оиди ҳатогиҳо, ки ҳангоми иҷроиши рамзи JavaScript ба амал "
+"меояд, дармегиронад."
+
+#: jsopts.cpp:79
+#, kde-format
+msgid ""
+"Here you can set specific JavaScript policies for any particular host or "
+"domain. To add a new policy, simply click the <i>New...</i> button and "
+"supply the necessary information requested by the dialog box. To change an "
+"existing policy, click on the <i>Change...</i> button and choose the new "
+"policy from the policy dialog box. Clicking on the <i>Delete</i> button will "
+"remove the selected policy causing the default policy setting to be used for "
+"that domain. The <i>Import</i> and <i>Export</i> button allows you to easily "
+"share your policies with other people by allowing you to save and retrieve "
+"them from a zipped file."
+msgstr ""
+"Дар ин ҷо шумо қоидаҳои махсуси Java-ро барои соҳиб ё домени дилхоҳ барпо "
+"сохта метавонед. Барои иловакунии қоидаи нав танҳо ба тугмаи <i>Нав...</i> "
+"ангушт занед ва ахбороти заруриро, ки аз тарафи қуттии муколама дархоста "
+"шуда буд, илова кунед. Барои ивази қоидаи мавчудбуда ба тугмаи <i>Иваз "
+"кардан...</i> ангушт занед ва қоидаи навро аз қуттии муколамаи қоидаҳо, "
+"интихоб кунед. Ангуштзанӣ ба тугмаи <i>Нобудкунӣ</i>, қоидаи интихобшударо "
+"хориҷ мекунад, барои он, ки гузоришҳои қоидаҳо бо нобаёнӣ барои ин домен "
+"истифода хоҳад шуд. Тугмаи <i>Воридот</i> ва <i>Содирот</i> ба шумо "
+"имконияти ба осонӣ тақсим кардани қоидаҳои худро бо одамони дигар ба воситаи "
+"захиракунӣ ба барқароркунии онҳо аз файли омезиши фаврӣ медиҳад."
+
+#: jsopts.cpp:89
+#, fuzzy, kde-format
+msgid ""
+"<p>This box contains the domains and hosts you have set a specific "
+"JavaScript policy for. This policy will be used instead of the default "
+"policy for enabling or disabling JavaScript on pages sent by these domains "
+"or hosts.</p><p>Select a policy and use the controls on the right to modify "
+"it.</p>"
+msgstr ""
+"Ин қуттӣ домен ва соҳибҳоеро, ки барои онҳо шумо бояд қоидаи мушаххаси "
+"JavaScript-ро барпо созед, дар бар мегирад. Ин қоидаҳо ба ҷои қоидаҳо бо "
+"нобаёнӣ барои даргиронидан ё хомӯш кардани JavaScript дар саҳифаҳое, ки аз "
+"тарафи ин доменҳо ва соҳибҳо фиристода мешаванд, истифода мегарданд."
+"<p>Қоидаҳоро интихоб кунед ва идоракуниро аз рост барои тағири он истифода "
+"баред."
+
+#: jsopts.cpp:96
+#, kde-format
+msgid ""
+"Click this button to choose the file that contains the JavaScript policies. "
+"These policies will be merged with the existing ones. Duplicate entries are "
+"ignored."
+msgstr ""
+"Барои интихоби файли шомил сиёсатҳои JavaScript ин кнопкаро пахш кунед. Ин "
+"сиёсатҳо бо онҳое ки мавҷуданд ҳамроҳ хоҳанд шуд. Аз мудохилҳои такрорӣ "
+"сарфи назар мешавад."
+
+#: jsopts.cpp:99
+#, kde-format
+msgid ""
+"Click this button to save the JavaScript policy to a zipped file. The file, "
+"named <b>javascript_policy.tgz</b>, will be saved to a location of your "
+"choice."
+msgstr ""
+"Барои захиракунии қоидаҳои JavaScript дар файли омезиши фаврӣ ба ин тугма "
+"ангушт занед. Файл бо номи  <b>plugin_policy.tgz</b>, дар маҳалли "
+"интихобшудаи шумо захира хоҳад шуд."
+
+#: jsopts.cpp:105
+#, kde-format
+msgid "Global JavaScript Policies"
+msgstr "Сиёсати JavaScript-и умумӣ"
+
+#: jsopts.cpp:173
+#, fuzzy, kde-format
+msgctxt "@title:group"
+msgid "Do&main-Specific"
+msgstr "Do&main-и мушаххас"
+
+#: jsopts.cpp:212
+#, fuzzy, kde-format
+#| msgid "New JavaScript Policy"
+msgctxt "@title:window"
+msgid "New JavaScript Policy"
+msgstr "Сиёсати JavaScript-и нав"
+
+#: jsopts.cpp:215
+#, fuzzy, kde-format
+#| msgid "Change JavaScript Policy"
+msgctxt "@title:window"
+msgid "Change JavaScript Policy"
+msgstr "Таъғири сиёсати JavaScript"
+
+#: jsopts.cpp:219
+#, kde-format
+msgid "JavaScript policy:"
+msgstr "Сиёсати JavaScript:"
+
+#: jsopts.cpp:220
+#, kde-format
+msgid "Select a JavaScript policy for the above host or domain."
+msgstr "Як сиёсати JavaScript барои мизбонҳо ё domain-ҳои боло ворид кунед."
+
+#: jsopts.cpp:222
+#, kde-format
+msgid "Domain-Specific JavaScript Policies"
+msgstr "Таъғири сиёсати JavaScript"
+
+#: jspolicies.cpp:132
+#, kde-format
+msgid "Open new windows:"
+msgstr "Тирезаи наве боз кунед:"
+
+#: jspolicies.cpp:140 jspolicies.cpp:194 jspolicies.cpp:231 jspolicies.cpp:268
+#: jspolicies.cpp:308
+#, kde-format
+msgid "Use global"
+msgstr "Истифодаи умумӣ"
+
+#: jspolicies.cpp:141 jspolicies.cpp:195 jspolicies.cpp:232 jspolicies.cpp:269
+#: jspolicies.cpp:309
+#, kde-format
+msgid "Use setting from global policy."
+msgstr "Истифодаи танзимот аз сиёсати умумӣ."
+
+#: jspolicies.cpp:147 jspolicies.cpp:201 jspolicies.cpp:238 jspolicies.cpp:275
+#: jspolicies.cpp:315
+#, kde-format
+msgid "Allow"
+msgstr "Иҷозат"
+
+#: jspolicies.cpp:148
+#, kde-format
+msgid "Accept all popup window requests."
+msgstr "Ҳамаи тиреза дархостҳои ҷаҳширо бипазиред."
+
+#: jspolicies.cpp:153
+#, kde-format
+msgid "Ask"
+msgstr "Савол кардан"
+
+#: jspolicies.cpp:154
+#, kde-format
+msgid "Prompt every time a popup window is requested."
+msgstr "Эъломи ҳар дафъаи тирезаи бароянда талаб карда мешавад."
+
+#: jspolicies.cpp:159
+#, kde-format
+msgid "Deny"
+msgstr "Инкор кардан"
+
+#: jspolicies.cpp:160
+#, kde-format
+msgid "Reject all popup window requests."
+msgstr "Ҳамаи тирезаи дархостҳои ҷаҳширо рад кунед."
+
+#: jspolicies.cpp:165
+#, kde-format
+msgid "Smart"
+msgstr "Ҳушманд"
+
+#: jspolicies.cpp:166
+#, kde-format
+msgid ""
+"Accept popup window requests only when links are activated through an "
+"explicit mouse click or keyboard operation."
+msgstr ""
+"Дархостҳои тирезаи ба рӯй барояндаро танҳо ҳангоми фаъолкунии пайвандҳо ба "
+"воситаи ангуштзании дақиқи тугмаи муш ё амалиёти забонак, қабул кунед."
+
+#: jspolicies.cpp:173
+#, fuzzy, kde-format
+msgid ""
+"If you disable this, Konqueror will stop interpreting the <i>window.open()</"
+"i> JavaScript command. This is useful if you regularly visit sites that make "
+"extensive use of this command to pop up ad banners.<br /><br /><b>Note:</b> "
+"Disabling this option might also break certain sites that require <i>window."
+"open()</i> for proper operation. Use this feature carefully."
+msgstr ""
+"Агар шумо инро хомӯш кунед Konqueror тафсиркунии фармони JavaScript "
+"<i>window.open()</i>-ро қатъ мекунад. Он хеле фоданок аст, агар шумо тез-тез "
+"пойгоҳҳоеро, ки ин фармонҳоро барои барӯй баровардани сарлавҳа ҷиддан "
+"истифода мебарад, ташриф оваред.<br><br><b>Эзоҳ:</b> Хомӯшсозии ин хосият "
+"инчунин пойгоҳҳои ҳастиро, ки барои амалиёти муайян <i>window.open()</i>-ро "
+"талаб мекунад, боздошта метавонад. Ин хосиятро эҳтиётона истифода баред!"
+
+#: jspolicies.cpp:187
+#, kde-format
+msgid "Resize window:"
+msgstr "Тирезаро бозандоза гиред:"
+
+#: jspolicies.cpp:202
+#, kde-format
+msgid "Allow scripts to change the window size."
+msgstr "Ба дастнависҳо имконияти ивази андозаи дастнавҳоро медиҳад."
+
+#: jspolicies.cpp:207 jspolicies.cpp:244 jspolicies.cpp:281 jspolicies.cpp:321
+#, kde-format
+msgid "Ignore"
+msgstr "Рад кардан"
+
+#: jspolicies.cpp:208
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to change the window size. The web page will "
+"<i>think</i> it changed the size but the actual window is not affected."
+msgstr ""
+"Кӯшишҳои дастнависро оиди тағири андозаи тирезаро рад кунед. Web саҳифа онро "
+"ҳамчун тағирёфта <i>ҳисоб</i> мекунад, лекин дар асл ба тиреза таъсир "
+"намерасонад."
+
+#: jspolicies.cpp:215
+#, kde-format
+msgid ""
+"Some websites change the window size on their own by using <i>window."
+"resizeBy()</i> or <i>window.resizeTo()</i>. This option specifies the "
+"treatment of such attempts."
+msgstr ""
+"Баъзе web пойгоҳҳои андозаи тирезаҳоро худашон ба воситаи <i>window."
+"resizeBy()</i> ё <i>window.resizeTo()</i> иваз мекунад. Ин хосият рафтори "
+"чунин кӯшишҳоро таъин мекунад."
+
+#: jspolicies.cpp:224
+#, kde-format
+msgid "Move window:"
+msgstr "Тирезаро ҳаракат кунед:"
+
+#: jspolicies.cpp:239
+#, kde-format
+msgid "Allow scripts to change the window position."
+msgstr "Ба дастнавис тағири ҷои тирезаро иҷозат медиҳад."
+
+#: jspolicies.cpp:245
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to change the window position. The web page will "
+"<i>think</i> it moved the window but the actual position is not affected."
+msgstr ""
+"Кӯшишҳои дастнависро оиди тағири андозаи тирезаро рад кунед. Web саҳифа онро "
+"ҳамчун тағирёфта <i>ҳисоб</i> мекунад, лекин дар асл ба тиреза таъсир "
+"намерасонад."
+
+#: jspolicies.cpp:252
+#, kde-format
+msgid ""
+"Some websites change the window position on their own by using <i>window."
+"moveBy()</i> or <i>window.moveTo()</i>. This option specifies the treatment "
+"of such attempts."
+msgstr ""
+"Баъзе web пойгоҳҳои мавқеъи тирезаҳоро худашон ба воситаи <i>window."
+"moveBy()</i> ё <i>window.moveTo()</i> иваз мекунад. Ин хосият рафтори чунин "
+"кӯшишҳоро таъин мекунад."
+
+#: jspolicies.cpp:261
+#, kde-format
+msgid "Focus window:"
+msgstr "Фокуси тиреза:"
+
+#: jspolicies.cpp:276
+#, kde-format
+msgid "Allow scripts to focus the window."
+msgstr "Ба дастнавис оиди фокускунии тиреза иҷозат диҳед."
+
+#: jspolicies.cpp:282
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to focus the window. The web page will <i>think</"
+"i> it brought the focus to the window but the actual focus will remain "
+"unchanged."
+msgstr ""
+"Кӯшишҳои дастнависро оиди тағири андозаи тирезаро рад кунед. Web саҳифа онро "
+"ҳамчун тағирёфта <i>ҳисоб</i> мекунад, лекин дар асл ба тиреза таъсир "
+"намерасонад."
+
+#: jspolicies.cpp:290
+#, kde-format
+msgid ""
+"Some websites set the focus to their browser window on their own by using "
+"<i>window.focus()</i>. This usually leads to the window being moved to the "
+"front interrupting whatever action the user was dedicated to at that time. "
+"This option specifies the treatment of such attempts."
+msgstr ""
+"Баъзе web пойгоҳҳои фокусро барои баррасии тирезаи худ бо истифодаи "
+"<i>window.focus()</i> худашон барпо месозад.Ин хосият рафтори чунин "
+"кӯшишҳоро таъин мекунад."
+
+#: jspolicies.cpp:301
+#, kde-format
+msgid "Modify status bar text:"
+msgstr "Ҳолати матни наворро тағир диҳед:"
+
+#: jspolicies.cpp:316
+#, kde-format
+msgid "Allow scripts to change the text of the status bar."
+msgstr "Allow scripts to change the text of the status bar."
+
+#: jspolicies.cpp:322
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to change the status bar text. The web page will "
+"<i>think</i> it changed the text but the actual text will remain unchanged."
+msgstr ""
+"Кӯшишҳои дастнависро оиди ивази матни навори ҳолат рад кунед. Web саҳифа "
+"онро ҳамчун тағирёфта <i>ҳисоб</i> мекунад, лекин дар асл ба тиреза таъсир "
+"намерасонад."
+
+#: jspolicies.cpp:330
+#, kde-format
+msgid ""
+"Some websites change the status bar text by setting <i>window.status</i> or "
+"<i>window.defaultStatus</i>, thus sometimes preventing displaying the real "
+"URLs of hyperlinks. This option specifies the treatment of such attempts."
+msgstr ""
+"Баъзе web пойгоҳҳои матни навори ҳолатро ба воситаи гузоришҳои <i>window."
+"status</i> ё <i>window.defaultStatus</i> тағир медихад, ки баъзе вақт "
+"намоиши URL-и ҳақиқии абарпайвандҳо пешгирӣ мекунад. Ин хосият рафтори чунин "
+"кӯшишҳоро таъин мекунад."
+
+#: main.cpp:43
+#, kde-format
+msgid "Konqueror Browsing Control Module"
+msgstr "Бахши контроли мурури Konqueror"
+
+#: main.cpp:45
+#, kde-format
+msgid "(c) 1999 - 2001 The Konqueror Developers"
+msgstr "(c) 1999 - 2001 The Konqueror Developers"
+
+#: main.cpp:47
+#, kde-format
+msgid "Waldo Bastian"
+msgstr ""
+
+#: main.cpp:48
+#, kde-format
+msgid "David Faure"
+msgstr ""
+
+#: main.cpp:49
+#, kde-format
+msgid "Matthias Kalle Dalheimer"
+msgstr ""
+
+#: main.cpp:50
+#, kde-format
+msgid "Lars Knoll"
+msgstr ""
+
+#: main.cpp:51
+#, kde-format
+msgid "Dirk Mueller"
+msgstr ""
+
+#: main.cpp:52
+#, kde-format
+msgid "Daniel Molkentin"
+msgstr ""
+
+#: main.cpp:53
+#, kde-format
+msgid "Wynn Wilkes"
+msgstr ""
+
+#: main.cpp:55
+#, kde-format
+msgid "Leo Savernik"
+msgstr ""
+
+#: main.cpp:55
+#, kde-format
+msgid ""
+"JavaScript access controls\n"
+"Per-domain policies extensions"
+msgstr ""
+"JavaScript идоракунии\n"
+"васеъшавии қоидаҳои Per-доменро дастрас мекунад"
+
+#: main.cpp:67
+#, kde-format
+msgid "&Java"
+msgstr "&Java"
+
+#: main.cpp:71
+#, kde-format
+msgid "Java&Script"
+msgstr "Java&Script"
+
+#: main.cpp:111
+#, fuzzy, kde-format
+msgid ""
+"<h2>JavaScript</h2>On this page, you can configure whether JavaScript "
+"programs embedded in web pages should be allowed to be executed by Konqueror."
+"<h2>Java</h2>On this page, you can configure whether Java applets embedded "
+"in web pages should be allowed to be executed by Konqueror.<br /><br /"
+"><b>Note:</b> Active content is always a security risk, which is why "
+"Konqueror allows you to specify very fine-grained from which hosts you want "
+"to execute Java and/or JavaScript programs."
+msgstr ""
+"<h2>JavaScript</h2>Дар ин саҳифа шумо метавонед имконияти иҷроиши барномаҳои "
+"JavaScript дар web саҳифаҳои дарунсохташуда гарави Konqueror, танзим кунед."
+"<h2>Java</h2>Дар ин саҳифа шумо метавонед имконияти иҷроиши апплетҳои Java "
+"дар web саҳифаи дарунсохташуда аз тарафи Konqueror танзим кунед."
+"<br><br><b>Эзоҳ:</b> Мазмуни фаъол ин ҳама вақт хатари бехатарӣ аст, бинобар "
+"ин Konqueror ба шумо имконияти таъминкунии соҳиберо, ки дар он барномаҳои "
+"Java ва/ё JavaScript-ро иҷро кардан мехоҳед, медиҳад."
+
+#: policydlg.cpp:30
+#, fuzzy, kde-format
+#| msgid "Domain-Specific Policies"
+msgctxt "@title:window"
+msgid "Domain-Specific Policies"
+msgstr "Қоидаҳои Хоси Домен"
+
+#: policydlg.cpp:47
+#, kde-format
+msgid "&Host or domain name:"
+msgstr "&Номи мизбон ё domain:"
+
+#: policydlg.cpp:55
+#, kde-format
+msgid ""
+"Enter the name of a host (like www.kde.org) or a domain, starting with a dot "
+"(like .kde.org or .org)"
+msgstr ""
+"Номи соҳибро (ба монанди www.kde.org) ё доменро, ки бо нуқта оғоз меёбад, "
+"ворид кунед (ба монанди .kde.org ё .org)"
+
+#: policydlg.cpp:139
+#, fuzzy, kde-format
+msgid "You must first enter a domain name."
+msgstr "Шумо бояд якум номи domain-ро ворид кунед!"
+
+#~ msgid "Accept languages:"
+#~ msgstr "Қабули забонҳо:"
+
+#~ msgid "Accept character sets:"
+#~ msgstr "Қабули маҷмӯъаи ҳуруф:"
+
+#~ msgid "Plugins"
+#~ msgstr "Мутассалкунандаҳо"
+
+#, fuzzy
+#~ msgid "Folders"
+#~ msgstr "Ҷустуҷӯи феҳристҳо"
+
+#~ msgid "&Remove"
+#~ msgstr "&Тоза кардан"
+
+#~ msgid "&New"
+#~ msgstr "&Нав"
+
+#~ msgid "Do&wn"
+#~ msgstr "&Поён"
+
+#~ msgid "&Up"
+#~ msgstr "&Боло"
+
+#~ msgid "Click here to scan for newly installed Netscape plugins now."
+#~ msgstr ""
+#~ "Барои сканеркунии муттасилкунандаи Netscape-и навакак коргузорӣ шуда, дар "
+#~ "ин ҷо ангушт занед."
+
+#, fuzzy
+#~ msgid "&Scan for Plugins"
+#~ msgstr "&Ҷустуҷӯи мутассалкунандаи нав"
+
+#~ msgid "Here you can see a list of the Netscape plugins KDE has found."
+#~ msgstr ""
+#~ "Дар ин ҷо шумо рӯйхати муттасилкунандаҳои KDE-и пайдокардашударо дида "
+#~ "метавонед."
+
+#, fuzzy
+#~ msgid "Information"
+#~ msgstr "&Аниматсияҳо:"
+
+#~ msgid "Value"
+#~ msgstr "Миқдор"
+
+#~ msgid "Global Settings"
+#~ msgstr "Танзимоти умумӣ"
+
+#~ msgid "&Enable plugins globally"
+#~ msgstr "&Фаъолсози мутассалкунандаҳо ба сурати саросарӣ"
+
+#~ msgid "Only allow &HTTP and HTTPS URLs for plugins"
+#~ msgstr "Танҳо &HTTP ва HTTPS URL-ро барои ворид иҷозат диҳед"
+
+#, fuzzy
+#~ msgid "Domain-Specific Settin&gs"
+#~ msgstr "Domain-и &мушаххас..."
+
+#~ msgid ""
+#~ "Enables the execution of plugins that can be contained in HTML pages, e."
+#~ "g. Macromedia Flash. Note that, as with any browser, enabling active "
+#~ "contents can be a security problem."
+#~ msgstr ""
+#~ "Иҷроиши воридҳоро, ки дар HTML саҳифаҳо мавҷуданд, дармегиронад, масалан "
+#~ "Macromedia Flash. Дар хотир доред, ки мисли ҳамаи баррасҳо даргиронидани "
+#~ "мазмуни фаъол мушкилоти бехатариро меоварад."
+
+#, fuzzy
+#~ msgid ""
+#~ "<p>This box contains the domains and hosts you have set a specific plugin "
+#~ "policy for. This policy will be used instead of the default policy for "
+#~ "enabling or disabling plugins on pages sent by these domains or hosts.</"
+#~ "p><p>Select a policy and use the controls on the right to modify it.</p>"
+#~ msgstr ""
+#~ "Ин қуттӣ доменҳо ва соҳибҳоеро, ки барои онҳо шумо қоидаҳои хоси "
+#~ "воридшавиро барпо кардаед, дар бар мегирад. Ин қоидаҳо ба ҷои қоидаҳо бо "
+#~ "нобаёнӣ барои даргиронидан ё хомӯш кардани воридҳо дар саҳифаҳои аз "
+#~ "тарафи домен ё соҳиб фиристодашуда истифода бурда мешаванд.<p>Қоидаҳоро "
+#~ "интихоб кунед ва идоракуниҳоро аз рост барои тағирдиҳӣ истифода баред."
+
+#~ msgid ""
+#~ "Click this button to choose the file that contains the plugin policies. "
+#~ "These policies will be merged with the existing ones. Duplicate entries "
+#~ "are ignored."
+#~ msgstr ""
+#~ "Барои интихоби файле, ки қоидаҳои воридро дар бар мегирад, ин тугмаро "
+#~ "ангушт занед. Ин қоидаҳо ба қоидаҳои мавҷуда ҳамроҳ карда мешаванд. "
+#~ "Дунусхагирии элементҳо рад шудааст."
+
+#~ msgid ""
+#~ "Click this button to save the plugin policy to a zipped file. The file, "
+#~ "named <b>plugin_policy.tgz</b>, will be saved to a location of your "
+#~ "choice."
+#~ msgstr ""
+#~ "Барои захиракунии қоидаҳои ворид дар файли омезиши фаврӣ ба ин тугма "
+#~ "ангушт занед. Файл бо номи  <b>plugin_policy.tgz</b>, дар маҳалли "
+#~ "интихобшудаи шумо захира хоҳад шуд."
+
+#~ msgid ""
+#~ "Here you can set specific plugin policies for any particular host or "
+#~ "domain. To add a new policy, simply click the <i>New...</i> button and "
+#~ "supply the necessary information requested by the dialog box. To change "
+#~ "an existing policy, click on the <i>Change...</i> button and choose the "
+#~ "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
+#~ "button will remove the selected policy causing the default policy setting "
+#~ "to be used for that domain."
+#~ msgstr ""
+#~ "Дар ин ҷо шумо қоидаҳои вориди хосро барои соҳиб ё домени муайян барпо "
+#~ "карда метавонед. Дар ин ҷо шумо қоидаҳои махсуси Java-ро барои соҳиб ё "
+#~ "домени дилхоҳ барпо сохта метавонед. Барои иловакунии қоидаи нав танҳо ба "
+#~ "тугмаи <i>Нав...</i> ангушт занед ва ахбороти заруриро, ки аз тарафи "
+#~ "қуттии муколама дархоста шуда буд, илова кунед. Барои ивази қоидаи "
+#~ "мавчудбуда ба тугмаи <i>Иваз кардан...</i> ангушт занед ва қоидаи навро "
+#~ "аз қуттии муколамаи қоидаҳо, интихоб кунед. Ангуштзанӣ ба тугмаи "
+#~ "<i>Нобудкунӣ</i>, қоидаи интихобшударо хориҷ мекунад, барои он, ки "
+#~ "гузоришҳои қоидаҳо бо нобаёнӣ барои ин домен истифода хоҳад шуд."
+
+#~ msgctxt "low priority"
+#~ msgid "low"
+#~ msgstr "паст"
+
+#~ msgctxt "medium priority"
+#~ msgid "medium"
+#~ msgstr "миёна"
+
+#~ msgctxt "high priority"
+#~ msgid "high"
+#~ msgstr "баланд"
+
+#~ msgid ""
+#~ "<h1>Konqueror Plugins</h1> The Konqueror web browser can use Netscape "
+#~ "plugins to show special content, just like the Navigator does. Please "
+#~ "note that the way you have to install Netscape plugins may depend on your "
+#~ "distribution. A typical place to install them is, for example, '/opt/"
+#~ "netscape/plugins'."
+#~ msgstr ""
+#~ "<h1>Муттасилкунандаи Konqueror</h1> Web барраси Konqueror "
+#~ "муттасилкунандаи Netscape-ро барои намоиши мазмуни махсус ба монанди "
+#~ "Navigator истифода бурда мешавад. Дар хотир доред, ки роҳе, ки ба он "
+#~ "муттасилкунандаи Netscape-ро коргузорӣ мекунед аз тақсимоти шумо "
+#~ "вобастагӣ дошта бошад. Ҷои муқаррарие, ки дар он ҷо онҳоро коргузорӣ "
+#~ "намудан мумкин аст, масалан '/opt/netscape/plugins' мебошад."
+
+#~ msgid ""
+#~ "Do you want to apply your changes before the scan? Otherwise the changes "
+#~ "will be lost."
+#~ msgstr ""
+#~ "Оё мехоҳед, ки тағиротҳои худро пеш аз канеркунӣ илова кунед? Дар дигар "
+#~ "ҳолат тағиротҳо гум мешаванд."
+
+#~ msgid ""
+#~ "The nspluginscan executable cannot be found. Netscape plugins will not be "
+#~ "scanned."
+#~ msgstr ""
+#~ "nspluginscan-и иҷрошуда пайдо нагардид. Муттасакунандаи Netscape сканер "
+#~ "карда намешавад."
+
+#~ msgid "Scanning for plugins"
+#~ msgstr "Ҷустуҷӯи мутассалкунандаҳо"
+
+#, fuzzy
+#~| msgid "Select Plugin Scan Folder"
+#~ msgctxt "@title:window"
+#~ msgid "Select Plugin Scan Folder"
+#~ msgstr "Шохаи ҷустуҷӯи муттасакунандаро интихоб кунед"
+
+#~ msgid "Netscape Plugins"
+#~ msgstr "Муттасалкунандаи Netscape"
+
+#~ msgid "Plugin"
+#~ msgstr "Мутассалкунанда"
+
+#~ msgid "MIME type"
+#~ msgstr "Намуди MIME"
+
+#~ msgid "Description"
+#~ msgstr "Тавзеҳ"
+
+#~ msgid "Suffixes"
+#~ msgstr "Пасвандҳо"
+
+#~ msgid "Doma&in-Specific"
+#~ msgstr "Doma&in-и хос"
+
+#, fuzzy
+#~| msgid "New Plugin Policy"
+#~ msgctxt "@title:window"
+#~ msgid "New Plugin Policy"
+#~ msgstr "Нави сиёсати мутассалкунанда"
+
+#, fuzzy
+#~| msgid "Change Plugin Policy"
+#~ msgctxt "@title:window"
+#~ msgid "Change Plugin Policy"
+#~ msgstr "Таъғири сиёсати мутассалкунанда"
+
+#~ msgid "&Plugin policy:"
+#~ msgstr "&Сиёсати мутассалкунанда:"
+
+#~ msgid "Select a plugin policy for the above host or domain."
+#~ msgstr ""
+#~ "Барои соҳиб ё домени дар боло буда қоидаҳои муттасилкуниро интихоб кунед."
+
+#, fuzzy
+#~| msgid "Sa&ns serif font:"
+#~ msgid "Sans Serif"
+#~ msgstr "&Ҳарфи Sans serif:"
+
+#, fuzzy
+#~| msgid "S&tandard font:"
+#~ msgid "Standard Symbols L"
+#~ msgstr "&Ҳарфи стандартӣ:"
+
+#~ msgid "kcmkonqhtml"
+#~ msgstr "kcmkonqhtml"
+
+#~ msgid "Enable completion of &forms"
+#~ msgstr "Фаъолсозии &итмоми намудҳо"
+
+#~ msgid "App&let server timeout:"
+#~ msgstr "&Поёни вақти коргузори барнома:"
+
+#~ msgid "Netscape Plugin Config"
+#~ msgstr "Танзими мутассалкунандаи нетскейп"
+
+#~ msgid "Scan"
+#~ msgstr "Ҷустуҷӯ"
+
+#~ msgid "Use a&rtsdsp to pipe plugin sound through aRts"
+#~ msgstr ""
+#~ "Барои ҷараён додани садои мутассал рӯи aRts аз a&rtsdsp истифода кунед"
+
+#~ msgid ""
+#~ "If this option is enabled, KDE will look for new Netscape plugins every "
+#~ "time it starts up. This makes it easier for you if you often install new "
+#~ "plugins, but it may also slow down KDE startup. You might want to disable "
+#~ "this option, especially if you seldom install plugins."
+#~ msgstr ""
+#~ "Агар ин хосият даргиронида шуда бошад, KDE муттасилкунандаҳои нави "
+#~ "Netscape-ро ҳар дафъае, ки он оғоз меёбад, ҷустуҷӯ мекунад. Агар шумо зуд-"
+#~ "зуд муттасилкунандаҳои навро коргузорӣ кунед, ин кори шуморо осон "
+#~ "мегардонад, лекин он инчунин оғозёбии KDE-ро суст карда метавонад. Шумо "
+#~ "ин хосиятро бекор карда метавонед, махсусан агар, ки муттасилкунандаҳоро "
+#~ "аҳён-аҳён коргузорӣ кунед."
+
+#~ msgid "Scan for new plugins at &KDE startup"
+#~ msgstr "Ҷустуҷӯ барои мутассалҳои нав дар шурӯъи &KDE"
+
+#~ msgid "Advanced Options"
+#~ msgstr "Интихоботҳои пешакӣ"
+
+#~ msgid "<b>Advanced Options</b>"
+#~ msgstr "<b>Интихоботҳои пешакӣ</b>"

@@ -1,0 +1,224 @@
+# translation of kcmperformance.po to Kashubian
+# Copyright (C) 2003, 2004, 2005, 2006, 2007 Free Software Foundation, Inc.
+#
+# Michôł Òstrowsczi <michol@linuxcsb.org>, 2007.
+# Mark Kwidzińsczi <mark@linuxcsb.org>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmperformance\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-21 00:16+0000\n"
+"PO-Revision-Date: 2009-01-08 18:55+0100\n"
+"Last-Translator: Mark Kwidzińsczi <mark@linuxcsb.org>\n"
+"Language-Team: Kashubian <i18n-csb@linuxcsb.org>\n"
+"Language: csb\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.2\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2)\n"
+
+#: kcmperformance.cpp:28
+#, kde-format
+msgid ""
+"<h1>KDE Performance</h1> You can configure settings that improve KDE "
+"performance here."
+msgstr ""
+"<h1>Spòrosc KDE</h1> Tuwò mòże skònfigùrowac elementë cësnące na spòrosc KDE."
+
+#: kcmperformance.cpp:35
+#, kde-format
+msgid "Konqueror"
+msgstr "Konqueror"
+
+#: kcmperformance.cpp:38
+#, kde-format
+msgid "System"
+msgstr "Systema"
+
+#: kcmperformance.cpp:63
+#, kde-format
+msgid ""
+"<h1>Konqueror Performance</h1> You can configure several settings that "
+"improve Konqueror performance here. These include options for reusing "
+"already running instances and for keeping instances preloaded."
+msgstr ""
+"<h1>Spòrosc Konquerora</h1> Tuwò mòże skònfigùrowac elementë cësnącé na "
+"spòrosc Konquerora, m.jin. wëzwëskanié ju dzejającëc kòpiji ë preladowanié "
+"programë do pamiãcë."
+
+#: konqueror.cpp:24
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>If enabled, an instance of Konqueror will be preloaded after the "
+#| "ordinary KDE startup sequence.</p><p>This will make the first Konqueror "
+#| "window open faster, but at the expense of longer KDE startup times (but "
+#| "you will be able to work while it is loading, so you may not even notice "
+#| "that it is taking longer).</p>"
+msgid ""
+"<p>If enabled, an instance of Konqueror will be preloaded after the ordinary "
+"Plasma startup sequence.</p><p>This will make the first Konqueror window "
+"open faster, but at the expense of longer Plasma startup times (but you will "
+"be able to work while it is loading, so you may not even notice that it is "
+"taking longer).</p>"
+msgstr ""
+"<p>Jeżlë ta òptacëjô bãdze włączonô, Konqueror bãdze preladowóny do pamiãce "
+"zarôzkù pò zrëszënim KDE.</p><p>Pòzwôli to na chùtszé òtemkniãcé pierszégò "
+"òkna Konquerora, leno kòsztã zwikszeniô czasu zrëszaniô KDE (bò robòta w "
+"cządze zrëszaniô je mòżlewô, òpòzdzenié mòże bëc niezmerkóné.</p>"
+
+#: konqueror.cpp:30
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>If enabled, KDE will always try to have one preloaded Konqueror "
+#| "instance ready; preloading a new instance in the background whenever "
+#| "there is not one available, so that windows will always open quickly.</"
+#| "p><p><b>Warning:</b> In some cases, it is actually possible that this "
+#| "will reduce perceived performance.</p>"
+msgid ""
+"<p>If enabled, Konqueror will always try to have one preloaded instance "
+"ready; preloading a new instance in the background whenever there is not one "
+"available, so that windows will always open quickly.</p><p><b>Warning:</b> "
+"In some cases, it is actually possible that this will reduce perceived "
+"performance.</p>"
+msgstr ""
+"<p>Jeżlë ta òptacëjô je włączonô, jedna kòpija Konquerora bãdze wiedno "
+"preladowónô do pamiãcë ë parôt do robòtë. Dzãka temù òkna Konquerora bãdą "
+"òtmekac sã chùtczi.</p><p><b>Bôczënk:</b> w niechtërnëch przëtrôfkach "
+"włączenié ti òptacëji mòże zmniészëc wigòdã robòtë.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
+#: konqueror_ui.ui:17
+#, kde-format
+msgid "Preloading"
+msgstr "Preladowanié"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_preload_on_startup)
+#: konqueror_ui.ui:23
+#, fuzzy, kde-format
+#| msgid "Preload an instance after KDE startup"
+msgid "Preload an instance after desktop startup"
+msgstr "Wladëjë kòpijã pò zrëszenim KDE"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_always_have_preloaded)
+#: konqueror_ui.ui:30
+#, fuzzy, kde-format
+#| msgid "Always try to have at least one preloaded instance"
+msgid "Always try to have one preloaded instance"
+msgstr "Wiedno trzëmôj jedną wòlną kòpijã w pamiãcë"
+
+#: system.cpp:22
+#, kde-format
+msgid ""
+"<p>During startup KDE needs to perform a check of its system configuration "
+"(mimetypes, installed applications, etc.), and in case the configuration has "
+"changed since the last time, the system configuration cache (KSyCoCa) needs "
+"to be updated.</p><p>This option delays the check, which avoid scanning all "
+"directories containing files describing the system during KDE startup, thus "
+"making KDE startup faster. However, in the rare case the system "
+"configuration has changed since the last time, and the change is needed "
+"before this delayed check takes place, this option may lead to various "
+"problems (missing applications in the K Menu, reports from applications "
+"about missing required mimetypes, etc.).</p><p>Changes of system "
+"configuration mostly happen by (un)installing applications. It is therefore "
+"recommended to turn this option temporarily off while (un)installing "
+"applications.</p>"
+msgstr ""
+"<p>Òbczas zrëszaniô KDE mùszi wëkònac sprôwdzenié kònfigùracëji systemë "
+"(ôrtów MIME, zainstalowónëch programów, ëtp.) ë eżlë kònfgùracëjô òsta "
+"zmienionô, pòdrãcznô pamiãc kònfigùracëji systemë (KSyCoCa) mùszi òstac "
+"aktualnionô.</p><p>Ta òptacëjô pòzwôlô òpòzdzëc sprôwdzenié, co pòzwôlô "
+"niechac skanowania wszëtczéch katalogów zamëkającëch lopczi òpisëjącë "
+"systemã w cządze zrëszaniô KDE, co schùtczô sztart KDE. Równak, eżlë "
+"kònfigùracëjô òsta zmienionô òs slédnégò razu, ë ta zmiana je nót nim "
+"òpòzdzóné sprôwdzenié òstanié zrobioné, na òptacëjô mòże sprawiac problemë "
+"(felëjącé programë w menu KDE, zgłôszanié felejącëch ôrtów MIME bez "
+"programë, ëtp.).</p><p>Zmianë kònfigùracëji systemë w wikszim dzélu zdôrzają "
+"sã przë instalowanim abò rëmanim programów. Zalécô sã tedë timczasné "
+"wëłączenié ti òptacëji òbczas instalowaniô abò rëmaniô programów.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gb_)
+#: system_ui.ui:8
+#, kde-format
+msgid "System Configuration"
+msgstr "Kònfigùracëjô systemë"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_disable_kbuildsycoca)
+#: system_ui.ui:14
+#, kde-format
+msgid "Disable &system configuration startup check"
+msgstr "Wëłączë &sprôwdzanié kònfigùracëji systemë przë zrëszanim"
+
+#. i18n: ectx: property (text), widget (QLabel, label_kbuildsycoca)
+#: system_ui.ui:21
+#, kde-format
+msgid ""
+"This option may in rare cases lead to various problems. Consult the What's "
+"This (Shift+F1) help for details."
+msgstr ""
+"Ta òptacëjô w gwësnëch apartnëch lëżnoscach mòże sprawiac wszelejaczé "
+"problemë. Proszã przeczëtac kòntekstową pòmòc (Shift+F1), abë pòznac detale."
+
+#~ msgid ""
+#~ "<p>If non-zero, this option allows keeping Konqueror instances in memory "
+#~ "after all their windows have been closed, up to the number specified in "
+#~ "this option.</p><p>When a new Konqueror instance is needed, one of these "
+#~ "preloaded instances will be reused instead, improving responsiveness at "
+#~ "the expense of the memory required by the preloaded instances.</p>"
+#~ msgstr ""
+#~ "<p>Jeżlë wôrtnota je jina òd zera, gwësna lëczba kòpijów Konquerora bãdze "
+#~ "trzëmònô w pamiãcë, nawetka eżlë wszëtczé òkna òstaną zamkniãté. </"
+#~ "p><p>Eżlë nót mdze zrëszëc pòstãpné kòpiji Konquerora, wëzwëskónô òstanié "
+#~ "jedna z taczich kòpiji w pamiãcë. Sprawi to schùtczenié dzejania kòsztã "
+#~ "zbrëkòwania pamiãcë.</p>"
+
+#, fuzzy
+#~| msgid "Maximum number of instances kept &preloaded:"
+#~ msgid "&Maximum number of instances kept preloaded:"
+#~ msgstr "Maksymalnô lëczba kòpijów &preladowónëch:"
+
+#~ msgid ""
+#~ "Disables the minimization of memory usage and allows you to make each "
+#~ "browsing activity independent from the others"
+#~ msgstr ""
+#~ "Wëłącza minimalizacëjã zbrëkòwaniô pamiãcë ë pòzwôlô na ùsamòjistnienié "
+#~ "apartnëch òperacëjów przezéraniô"
+
+#~ msgid ""
+#~ "<p>With this option activated, only one instance of Konqueror used for "
+#~ "file browsing will exist in the memory of your computer at any moment, no "
+#~ "matter how many file browsing windows you open, thus reducing resource "
+#~ "requirements.</p><p>Be aware that this also means that, if something goes "
+#~ "wrong, all your file browsing windows will be closed simultaneously</p>"
+#~ msgstr ""
+#~ "<p>Jeżlë na òptacëjô je włączonô, w kòmpùtrze naleze sã blós jedna kòpija "
+#~ "menadżera lopków, samòbëtno òd lëczbë òtemkłëch katalogów. Dzãka temù "
+#~ "zbrëkòwanié dostónków mdze mniészé. </p><p>Bôczënk: wëbiérk ti òptacëji "
+#~ "sprawi, że w przëtrôfkù awarëji Konquerora wszëtczé òkna òstaną zarôzkù "
+#~ "zamkniãté!</p>"
+
+#~ msgid ""
+#~ "<p>With this option activated, only one instance of Konqueror will exist "
+#~ "in the memory of your computer at any moment, no matter how many browsing "
+#~ "windows you open, thus reducing resource requirements.</p><p>Be aware "
+#~ "that this also means that, if something goes wrong, all your browsing "
+#~ "windows will be closed simultaneously.</p>"
+#~ msgstr ""
+#~ "<p>Jeżlë na òptacëjô je włączonô, w kòmpùtrze naleze sã blós jedna kòpija "
+#~ "Konquerora, samòbëtno òd lëczbë òtemkłëch òknów przezérnika.  od liczby "
+#~ "otwartych okien przeglądarki. Dzãka temù zbrëkòwanié dostónków mdze "
+#~ "mniészé. </p><p>Bôczënk: wëbiérk ti òptacëji sprawi, że w przëtrôfkù "
+#~ "awarëji Konquerora wszëtczé òkna òstaną zarôzkù zamkniãté!</p>"
+
+#~ msgid "Minimize Memory Usage"
+#~ msgstr "Minimalizëjë zbrëkòwanié pamiãcë"
+
+#~ msgid "&Never"
+#~ msgstr "&Nigdë"
+
+#~ msgid "For &file browsing only (recommended)"
+#~ msgstr "&Dlô menadżera lopków (zalécóné)"
+
+#~ msgid "Alwa&ys (use with care)"
+#~ msgstr "&Wiedno (òbzérno!)"

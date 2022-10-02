@@ -1,0 +1,3130 @@
+# translation of kget.po to Arabic
+# translation of kget.po to
+# Copyright (C) 2003, 2004, 2007, 2009 Free Software Foundation, Inc.
+# Nuriddin Aminagha <nuriddin@haydarlinux.org>, 2002,2003.
+# Nuriddin Aminagha <nuriddin@eminaga.de>, 2003.
+# Mohamed Assar (محمد عَصَر) <aser@arabeyes.org>, 2003.
+# Ammar Tabbaa <atabba@kacst.edu.sa>, 2004.
+# Munzir Taha <munzir@kacst.edu.sa>, 2004.
+# Mohamed SAAD محمد سعد <metehyi@free.fr>, 2007.
+# Youssef Chahibi <chahibi@gmail.com>, 2007.
+# zayed <zayed.alsaidi@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kget\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2009-01-15 13:37+0400\n"
+"Last-Translator: zayed <zayed.alsaidi@gmail.com>\n"
+"Language-Team: Arabic <linuxac-kde-arabic-team@googlegroups.com>\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: KBabel 1.11.4\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: kget_plugin.cpp:56
+#, kde-format
+msgid "Download Manager"
+msgstr "مدير التنزيل"
+
+#: kget_plugin.cpp:62
+#, kde-format
+msgid "Show Drop Target"
+msgstr "أظهر هدف الإسقاط"
+
+#: kget_plugin.cpp:69
+#, kde-format
+msgid "List All Links"
+msgstr "اسرد جميع الروابط"
+
+#: kget_plugin.cpp:74
+#, kde-format
+msgid "List Selected Links"
+msgstr "اسرد الروابط المحددة"
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No downloadable links were found."
+msgstr ""
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No Links"
+msgstr "لا توجد روابط"
+
+#. i18n: ectx: Menu (tools)
+#: konqueror_kget_browser_integration.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "أ&دوات"
+
+#~ msgid "Plugins"
+#~ msgstr "الملحقات"
+
+#~ msgid "New Group"
+#~ msgstr "مجموعة جديدة"
+
+#~ msgid "Xml"
+#~ msgstr "Xml"
+
+#~ msgid "Sqlite"
+#~ msgstr "Sqlite"
+
+#~ msgid "Turn Off Computer"
+#~ msgstr "أوقف تشغيل الحاسوب"
+
+#, fuzzy
+#~| msgid "Turn Off Computer"
+#~ msgid "Hibernate Computer"
+#~ msgstr "أوقف تشغيل الحاسوب"
+
+#, fuzzy
+#~| msgid "Turn Off Computer"
+#~ msgid "Suspend Computer"
+#~ msgstr "أوقف تشغيل الحاسوب"
+
+#~ msgid "Appearance"
+#~ msgstr "المظهر"
+
+#~ msgid "Change appearance settings"
+#~ msgstr "غيّر إعدادات المظهر"
+
+#~ msgid "Groups"
+#~ msgstr "المجموعات"
+
+#~ msgid "Manage the groups"
+#~ msgstr "أدِر المجموعات"
+
+#~ msgid "Network"
+#~ msgstr "الشبكة"
+
+#~ msgid "Network and Downloads"
+#~ msgstr "الشبكة والتنزيلات"
+
+#~ msgid "Web Interface"
+#~ msgstr "واجهة الوب"
+
+#~ msgid "Control KGet over a Network or the Internet"
+#~ msgstr "تحكم بكجت من خلال الشبكة أو الإنترنت."
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgid "Verification"
+#~ msgstr "الوجهة"
+
+#, fuzzy
+#~| msgid "Integration"
+#~ msgctxt "integration of KGet with other applications"
+#~ msgid "Integration"
+#~ msgstr "التكامل"
+
+#~ msgctxt "Advanced Options"
+#~ msgid "Advanced"
+#~ msgstr "متقدم"
+
+#~ msgid "Advanced Options"
+#~ msgstr "خيارات متقدمة"
+
+#~ msgid "Transfer Plugins"
+#~ msgstr "ملحقات النقل"
+
+#, fuzzy
+#~| msgid "Excluded:"
+#~ msgid "Include"
+#~ msgstr "المستبعد:"
+
+#, fuzzy
+#~| msgid "Excluded:"
+#~ msgid "Exclude"
+#~ msgstr "المستبعد:"
+
+#, fuzzy
+#~| msgid "Regular expression:"
+#~ msgid "Regular expression"
+#~ msgstr "العبارة المنطقية:"
+
+#~ msgid "KGet"
+#~ msgstr "كجت"
+
+#~ msgid "1 Item"
+#~ msgid_plural "%1 Items"
+#~ msgstr[0] "لا عناصر"
+#~ msgstr[1] "عنصر واحد"
+#~ msgstr[2] "عنصرين"
+#~ msgstr[3] "%1 عناصر"
+#~ msgstr[4] "%1 عنصرًا"
+#~ msgstr[5] "%1 عنصر"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/ث"
+
+#~ msgctxt "start transfergroup downloads"
+#~ msgid "Start"
+#~ msgstr "ابدأ"
+
+#~ msgctxt "stop transfergroup downloads"
+#~ msgid "Stop"
+#~ msgstr "أوقف"
+
+#, fuzzy
+#~| msgid "KGet - Download Manager"
+#~ msgid "KGet is downloading %1 file"
+#~ msgid_plural "KGet is downloading %1 files"
+#~ msgstr[0] "KGet - مدير التحميل"
+#~ msgstr[1] "KGet - مدير التحميل"
+#~ msgstr[2] "KGet - مدير التحميل"
+#~ msgstr[3] "KGet - مدير التحميل"
+#~ msgstr[4] "KGet - مدير التحميل"
+#~ msgstr[5] "KGet - مدير التحميل"
+
+#~ msgid "Error trying to get %1"
+#~ msgstr "خطأ عند محاولة الحصول على %1"
+
+#~ msgid "Are you sure that you want to remove the group named %1?"
+#~ msgstr "أمتأكد أنك تريد إزالة المجموعة المسماة %1؟ "
+
+#~ msgid "Remove Group"
+#~ msgstr "أزل المجموعة"
+
+#, fuzzy
+#~| msgid ""
+#~| "Are you sure that you want to remove\n"
+#~| "the group named %1?"
+#~ msgid "Are you sure that you want to remove the following groups?"
+#~ msgstr ""
+#~ "هل أنت متأكد من أنك تريد حذف\n"
+#~ "المجموعة المسماة%1؟"
+
+#, fuzzy
+#~| msgid "Rename Group"
+#~ msgid "Remove groups"
+#~ msgstr "أعد تسمية المجموعة"
+
+#, fuzzy
+#~| msgid "Downloaded"
+#~ msgid "Download added"
+#~ msgstr "المُنزّل"
+
+#~ msgid ""
+#~ "The file %1 already exists.\n"
+#~ "Overwrite?"
+#~ msgstr ""
+#~ "الملف %1 موجود مسبقًا.\n"
+#~ "أأكتب فوقه؟"
+
+#~ msgid "Overwrite existing file?"
+#~ msgstr "أأكتب فوق الملف الموجود؟"
+
+#~ msgid "Unable to save to: %1"
+#~ msgstr "تعذّر الحفظ الحفظ إلى: %1"
+
+#~ msgid "My Downloads"
+#~ msgstr "تنزيلاتي"
+
+#~ msgid "New Download"
+#~ msgstr "تنزيل جديد"
+
+#~ msgid "Enter URL:"
+#~ msgstr "أدخل المسار:"
+
+#~ msgid "Save As"
+#~ msgstr "احفظ باسم"
+
+#~ msgid ""
+#~ "Malformed URL:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "عنوان المسار خاطئ التكوين:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Malformed URL, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "عنوان المسار خاطئ التكوين، البروتوكول مفقود:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Download again"
+#~ msgid "Download it again?"
+#~ msgstr "نزل مرة أخرى"
+
+#, fuzzy
+#~| msgid "Download again"
+#~ msgid "Delete it and download again?"
+#~ msgstr "نزل مرة أخرى"
+
+#~ msgid "Directory is not writable"
+#~ msgstr "المجلد غير قابل للكتابة"
+
+#, fuzzy
+#~| msgid ""
+#~| "URL already saved:\n"
+#~| "%1\n"
+#~| "Download again?"
+#~ msgid "File already downloaded. Download anyway?"
+#~ msgstr ""
+#~ "الرابط محفوظ مسبقاً:\n"
+#~ "%1\n"
+#~ "تنزيل مرة أخرى؟"
+
+#, fuzzy
+#~| msgid "You are already downloading the torrent %1"
+#~ msgid "You are already downloading the same file"
+#~ msgstr "أنت بالفعل تقوم بتنزيل هذا التورنت %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "The file %1 already exists.\n"
+#~| "Overwrite?"
+#~ msgid "File already exists"
+#~ msgstr ""
+#~ "الملف %1 موجود بالفعل .\n"
+#~ "الكتابة فوقه؟"
+
+#, fuzzy
+#~| msgid ""
+#~| "<html><p>Plugin loader could not load the plugin:<br/><i>%1</i></p></"
+#~| "html>"
+#~ msgid "Plugin loader could not load the plugin: %1."
+#~ msgstr ""
+#~ "<html><p>لم يتمكن محمل الملحقات من تحميل الملحق:<br/><i>%1</i></p></html>"
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is a directory."
+#~ msgstr ""
+#~ "لن يحذف\n"
+#~ "%1\n"
+#~ "لأنه دليل."
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is not a local file."
+#~ msgstr ""
+#~ "لن يحذف\n"
+#~ "%1\n"
+#~ "لأنه ليس ملفًا محليًا."
+
+#~ msgid "Download completed"
+#~ msgstr "اكتمل التنزيل"
+
+#, fuzzy
+#~| msgid "Download speed"
+#~ msgid "Download started"
+#~ msgstr "سرعة التنزيل"
+
+#~ msgid "Error"
+#~ msgstr "خطأ"
+
+#, fuzzy
+#~| msgid "Remove"
+#~ msgid "Resolve"
+#~ msgstr "أزل"
+
+#~ msgid "KGet is now closing, as all downloads have completed."
+#~ msgstr "سيتم الآن إغلاق كجت لأن جميع التنزيلات اكتملت."
+
+#~ msgid "The computer will now turn off, as all downloads have completed."
+#~ msgstr "سيتم الآن إيقاف تشغيل الحاسوب لأن جميع التنزيلات اكتملت."
+
+#, fuzzy
+#~| msgid "Auto shutdown"
+#~ msgctxt "Shutting down computer"
+#~ msgid "Shutdown"
+#~ msgstr "إغلاق الحاسوب تلقائيًا"
+
+#, fuzzy
+#~| msgid "The computer will now turn off, as all downloads have completed."
+#~ msgid ""
+#~ "The computer will now suspend to disk, as all downloads have completed."
+#~ msgstr "سيتم الآن إيقاف تشغيل الحاسوب لأن جميع التنزيلات اكتملت."
+
+#, fuzzy
+#~| msgid "The computer will now turn off, as all downloads have completed."
+#~ msgid ""
+#~ "The computer will now suspend to RAM, as all downloads have completed."
+#~ msgstr "سيتم الآن إيقاف تشغيل الحاسوب لأن جميع التنزيلات اكتملت."
+
+#, fuzzy
+#~| msgctxt "Preview pending"
+#~| msgid "Pending"
+#~ msgctxt "Suspending computer"
+#~ msgid "Suspending"
+#~ msgstr "معلق"
+
+#, fuzzy
+#~| msgid "Aborted"
+#~ msgctxt "abort the proposed action"
+#~ msgid "Abort"
+#~ msgstr "ملغي"
+
+#, fuzzy
+#~| msgid "Download completed"
+#~ msgid "Downloads completed"
+#~ msgstr "اكتمل التنزيل"
+
+#, fuzzy
+#~| msgid "File"
+#~ msgctxt "file in a filesystem"
+#~ msgid "File"
+#~ msgstr "ملف"
+
+#, fuzzy
+#~| msgid "Status"
+#~ msgctxt "status of the download"
+#~ msgid "Status"
+#~ msgstr "الحالة"
+
+#, fuzzy
+#~| msgid "Size"
+#~ msgctxt "size of the download"
+#~ msgid "Size"
+#~ msgstr "الحجم"
+
+#, fuzzy
+#~| msgid "KGet Transfer List"
+#~ msgid "KGet Transfer"
+#~ msgstr "قائمة عمليات نقل كجت"
+
+#, fuzzy
+#~| msgctxt "list header: type of file"
+#~| msgid "File Type"
+#~ msgctxt "the type of the hash, e.g. MD5"
+#~ msgid "Type"
+#~ msgstr "نوع الملف"
+
+#~ msgctxt "not available"
+#~ msgid "n/a"
+#~ msgstr "غير متوفر"
+
+#~ msgid "Stalled"
+#~ msgstr "متوقف"
+
+#~ msgid "Downloading...."
+#~ msgstr "يجري التنزيل..."
+
+#~ msgctxt "transfer state: delayed"
+#~ msgid "Delayed"
+#~ msgstr "مؤجل"
+
+#~ msgctxt "transfer state: stopped"
+#~ msgid "Stopped"
+#~ msgstr "متوقف"
+
+#~ msgctxt "transfer state: aborted"
+#~ msgid "Aborted"
+#~ msgstr "ملغي"
+
+#~ msgctxt "transfer state: finished"
+#~ msgid "Finished"
+#~ msgstr "منتهي"
+
+#, fuzzy
+#~| msgid "Open Destination"
+#~ msgctxt "changing the destination of the file"
+#~ msgid "Changing destination"
+#~ msgstr "افتح الوجهة"
+
+#~ msgctxt "name of download"
+#~ msgid "Name"
+#~ msgstr "الاسم"
+
+#~ msgctxt "status of download"
+#~ msgid "Status"
+#~ msgstr "الحالة"
+
+#~ msgctxt "size of download"
+#~ msgid "Size"
+#~ msgstr "الحجم"
+
+#~ msgctxt "progress of download"
+#~ msgid "Progress"
+#~ msgstr "التقدم"
+
+#~ msgctxt "speed of download"
+#~ msgid "Speed"
+#~ msgstr "السرعة"
+
+#~ msgctxt "remaining time of download"
+#~ msgid "Remaining Time"
+#~ msgstr "الوقت المتبقي"
+
+#, fuzzy
+#~| msgid "Directory is not writable"
+#~ msgid "Download directory is not writeable."
+#~ msgstr "المجلد غير قابل للكتابة"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "No download destination specified."
+#~ msgstr "الهدف"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Invalid download destination specified."
+#~ msgstr "الهدف"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Download destination is not writeable."
+#~ msgstr "الهدف"
+
+#~ msgid "Malformed URL."
+#~ msgstr "مسار مُكوّن خطأً."
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL, protocol missing:\n"
+#~| "%1"
+#~ msgid "Malformed URL, protocol missing."
+#~ msgstr ""
+#~ "عنوان المسار خاطئ التكوين، البروتوكول مفقود:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL, protocol missing:\n"
+#~| "%1"
+#~ msgid "Malformed URL, host missing."
+#~ msgstr ""
+#~ "عنوان المسار خاطئ التكوين، البروتوكول مفقود:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Directory is not writable"
+#~ msgid ""
+#~ "Download directory is not writeable:\n"
+#~ "%1"
+#~ msgstr "المجلد غير قابل للكتابة"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid ""
+#~ "Invalid download destination specified:\n"
+#~ "%1"
+#~ msgstr "الهدف"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid ""
+#~ "Download destination is not writeable:\n"
+#~ "%1"
+#~ msgstr "الهدف"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL, protocol missing:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URL, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "عنوان المسار خاطئ التكوين، البروتوكول مفقود:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "The file %1 already exists.\n"
+#~| "Overwrite?"
+#~ msgid "File already exists. Overwrite it?"
+#~ msgstr ""
+#~ "الملف %1 موجود مسبقًا.\n"
+#~ "أأكتب فوقه؟"
+
+#, fuzzy
+#~| msgid ""
+#~| "The file %1 already exists.\n"
+#~| "Overwrite?"
+#~ msgid ""
+#~ "File already exists:\n"
+#~ "%1\n"
+#~ "Overwrite it?"
+#~ msgstr ""
+#~ "الملف %1 موجود مسبقًا.\n"
+#~ "أأكتب فوقه؟"
+
+#, fuzzy
+#~| msgid "Malformed URL."
+#~ msgid "Malformed URLs."
+#~ msgstr "مسار مُكوّن خطأً."
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL, protocol missing:\n"
+#~| "%1"
+#~ msgid "Malformed URLs, protocol missing."
+#~ msgstr ""
+#~ "عنوان المسار خاطئ التكوين، البروتوكول مفقود:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL, protocol missing:\n"
+#~| "%1"
+#~ msgid "Malformed URLs, host missing."
+#~ msgstr ""
+#~ "عنوان المسار خاطئ التكوين، البروتوكول مفقود:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "عنوان المسار خاطئ التكوين:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL, protocol missing:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "عنوان المسار خاطئ التكوين، البروتوكول مفقود:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL, protocol missing:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "عنوان المسار خاطئ التكوين، البروتوكول مفقود:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Directory is not writable"
+#~ msgid ""
+#~ "Destinations are not writable:\n"
+#~ "%1"
+#~ msgstr "المجلد غير قابل للكتابة"
+
+#, fuzzy
+#~| msgid ""
+#~| "The file %1 already exists.\n"
+#~| "Overwrite?"
+#~ msgid "Files exist already. Overwrite them?"
+#~ msgstr ""
+#~ "الملف %1 موجود مسبقًا.\n"
+#~ "أأكتب فوقه؟"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Question"
+#~ msgstr "الوصف"
+
+#, fuzzy
+#~| msgid "Deselect all"
+#~ msgctxt "on a question"
+#~ msgid "Yes all"
+#~ msgstr "ألغ أختيار الكل"
+
+#, fuzzy
+#~| msgctxt "Download normally(not as first or last)"
+#~| msgid "Normal"
+#~ msgctxt "on a question"
+#~ msgid "No all"
+#~ msgstr "عادي"
+
+#~ msgid "Insert Engine"
+#~ msgstr "محرك الإدخال"
+
+#~ msgid "Engine name:"
+#~ msgstr "اسم المحرك:"
+
+#~ msgid "URL:"
+#~ msgstr "المسار:"
+
+#~ msgctxt "transfer state: connecting"
+#~ msgid "Connecting...."
+#~ msgstr "يجري الاتصال..."
+
+#~ msgid "Add New Script"
+#~ msgstr "أضف سكربتًا جديدًا"
+
+#~ msgid "Edit Script"
+#~ msgstr "حرّر السكربت"
+
+#~ msgid "Set Script File"
+#~ msgstr "اضبط ملف السكربت"
+
+#~ msgctxt "Configure script"
+#~ msgid "Configure script"
+#~ msgstr "اضبط السكربت"
+
+#~ msgctxt "Transfer state: processing script"
+#~ msgid "Processing script...."
+#~ msgstr "تنفيذ السكربت..."
+
+#~ msgctxt "Transfer State: Finished"
+#~ msgid "Finished"
+#~ msgstr "منتهي"
+
+#~ msgctxt "Transfer State: Aborted"
+#~ msgid "Aborted"
+#~ msgstr "مُجهض"
+
+#, fuzzy
+#~| msgid "Downloading Torrent-File.."
+#~ msgid "Downloading Metalink File...."
+#~ msgstr "تنزيل ملف تورنت.."
+
+#, fuzzy
+#~| msgctxt "redownload selected transfer item"
+#~| msgid "Redownload Selected"
+#~ msgid "Redownload Metalink"
+#~ msgstr "أعد تنزيل النقل المحدد"
+
+#, fuzzy
+#~| msgctxt "@action"
+#~| msgid "Settings"
+#~ msgid "File Selection"
+#~ msgstr "إعدادات"
+
+#, fuzzy
+#~| msgid "Change appearance settings"
+#~ msgctxt "the string that is used to modify an url"
+#~ msgid "Change string"
+#~ msgstr "غير خصائص المظهر"
+
+#, fuzzy
+#~| msgid "Change Tracker"
+#~ msgctxt "the mode defines how the url should be changed"
+#~ msgid "Change mode"
+#~ msgstr "تغيير المتتبع"
+
+#, fuzzy
+#~| msgid "Appearance"
+#~ msgid "Append"
+#~ msgstr "المظهر"
+
+#, fuzzy
+#~| msgid "Open file"
+#~ msgid "Replace file"
+#~ msgstr "افتح ملف"
+
+#~ msgctxt "transfer state: running"
+#~ msgid "Running...."
+#~ msgstr "يجري التشغيل..."
+
+#~ msgctxt "Choked"
+#~ msgid "Yes"
+#~ msgstr "نعم"
+
+#~ msgctxt "Not choked"
+#~ msgid "No"
+#~ msgstr "لا"
+
+#~ msgctxt "Snubbed"
+#~ msgid "Yes"
+#~ msgstr "نعم"
+
+#~ msgctxt "Not snubbed"
+#~ msgid "No"
+#~ msgstr "لا"
+
+#~ msgctxt "Interested"
+#~ msgid "Yes"
+#~ msgstr "نعم"
+
+#~ msgctxt "Not Interested"
+#~ msgid "No"
+#~ msgstr "لا"
+
+#~ msgctxt "Interesting"
+#~ msgid "Yes"
+#~ msgstr "نعم"
+
+#~ msgctxt "Not Interesting"
+#~ msgid "No"
+#~ msgstr "لا"
+
+#~ msgid "IP Address"
+#~ msgstr "عنوان IP"
+
+#~ msgid "Client"
+#~ msgstr "عميل"
+
+#~ msgid "Down Speed"
+#~ msgstr "سرعة التنزيل"
+
+#~ msgid "Up Speed"
+#~ msgstr "سرعة الرفع"
+
+#~ msgid "Choked"
+#~ msgstr "مختنق"
+
+#~ msgid "Snubbed"
+#~ msgstr "توقف مفاجئ"
+
+#~ msgid "Availability"
+#~ msgstr "توفر"
+
+#~ msgid "DHT"
+#~ msgstr "DHT"
+
+#~ msgid "Score"
+#~ msgstr "المُحرَز"
+
+#~ msgid "Upload Slot"
+#~ msgstr "شَق الرفع"
+
+#~ msgid "Requests"
+#~ msgstr "الطلبات"
+
+#~ msgid "Downloaded"
+#~ msgstr "المُنزّل"
+
+#~ msgid "Uploaded"
+#~ msgstr "المرفوع"
+
+#~ msgid "Interested"
+#~ msgstr "مهتم"
+
+#~ msgid "Interesting"
+#~ msgstr "الاهتمام"
+
+#~ msgid "IP address of the peer"
+#~ msgstr "عنوان آيبي النظير"
+
+#~ msgid "Which client the peer is using"
+#~ msgstr "العميل الذي يستخدمه النظير"
+
+#~ msgid "Download speed"
+#~ msgstr "سرعة التنزيل"
+
+#~ msgid "Upload speed"
+#~ msgstr "سرعة الرفع"
+
+#~ msgid ""
+#~ "Whether or not the peer has choked us.  If we are choked, the peer will "
+#~ "not send us any data."
+#~ msgstr ""
+#~ "فيما إذا كان النظير خنقنا. إذن خُنقنا، فلن يرسل لنا النظير أي بيانات."
+
+#~ msgid ""
+#~ "Snubbed means the peer has not sent us any data in the last 2 minutes"
+#~ msgstr ""
+#~ "المصدود يعني أن النظير لم يرسل لنا أي بيانات خلال الدقيقتين الماضيتين"
+
+#~ msgid "How much of the torrent's data the peer has"
+#~ msgstr "مقدار ما يملكه النظير من بيانات"
+
+#~ msgid "Whether or not the peer has DHT enabled"
+#~ msgstr "فيما إذا كان النظير مُفعلًا DHT"
+
+#~ msgid ""
+#~ "The score of the peer. KTorrent uses this to determine who to upload to."
+#~ msgstr "درجة النظير. يستخدم KTorrent هذه الدرجة لتحديد من يرفع له."
+
+#~ msgid "Only peers which have an upload slot will get data from us"
+#~ msgstr "النظراء الذين لديهم شَق رفع وحدهم سيحصلون على بيانات منا"
+
+#~ msgid "The number of download and upload requests"
+#~ msgstr "عدد طلبات الرفع والتنزيل"
+
+#~ msgid "How much data we have downloaded from this peer"
+#~ msgstr "مقدار البيانات التي نزّلناها من هذا النظير"
+
+#~ msgid "How much data we have uploaded to this peer"
+#~ msgstr "مقدار البيانات التي رفعناها إلى هذا النظير."
+
+#~ msgid "Whether the peer is interested in downloading data from us"
+#~ msgstr "فيما إذا كان النظير مهتمًا بتلقي البيانات منا"
+
+#~ msgid "Whether we are interested in downloading from this peer"
+#~ msgstr "فيما إذا كنا مهتمين بالتنزيل من هذا النظير"
+
+#~ msgid "Chunk"
+#~ msgstr "كتلة"
+
+#~ msgid "Progress"
+#~ msgstr "التقدم"
+
+#~ msgid "Peer"
+#~ msgstr "نظير"
+
+#~ msgid "Files"
+#~ msgstr "الملفات"
+
+#~ msgid "Number of the chunk"
+#~ msgstr "رقم الكتلة"
+
+#~ msgid "Download progress of the chunk"
+#~ msgstr "تقدم تنزيل الكتلة"
+
+#~ msgid "Which peer we are downloading it from"
+#~ msgstr "النظير الذي نزلناه منه"
+
+#~ msgid "Download speed of the chunk"
+#~ msgstr "سرعة تنزيل الكتلة"
+
+#~ msgid "Which files the chunk is located in"
+#~ msgstr "الملف الذي تقع فيه هذه الكتلة"
+
+#~ msgid "URL"
+#~ msgstr "مسار"
+
+#~ msgid "Speed"
+#~ msgstr "السرعة"
+
+#~ msgid "Status"
+#~ msgstr "الحالة"
+
+#~ msgid "Kick Peer"
+#~ msgstr "اطرد النظير"
+
+#~ msgid "Ban Peer"
+#~ msgstr "احظر النظير"
+
+#~ msgid ""
+#~ "Cannot add the webseed %1, it is already part of the list of webseeds."
+#~ msgstr "تعذّر إضافة بذرة الوب %1, فهي أصلًا موجودة في قائمة بذور الةب."
+
+#~ msgid "Cannot remove webseed %1, it is part of the torrent."
+#~ msgstr "تعذّرت إزالة بذرة الوب %1، فهي جزء من التورنت."
+
+#~ msgid "File"
+#~ msgstr "ملف"
+
+#~ msgid "Size"
+#~ msgstr "الحجم"
+
+#~ msgid "Advanced Details for %1"
+#~ msgstr "تفاصيل %1 المتقدمة"
+
+#~ msgid "Trackers"
+#~ msgstr "المتتبعون:"
+
+#~ msgid "Webseeds"
+#~ msgstr "بذور الوب"
+
+#~ msgctxt "Open file"
+#~ msgid "Open"
+#~ msgstr "افتح"
+
+#~ msgid "Download first"
+#~ msgstr "نزّل أولاً"
+
+#~ msgid "Download normally"
+#~ msgstr "نزّل بشكل عادي"
+
+#~ msgid "Download last"
+#~ msgstr "نزّل أخيرًا"
+
+#~ msgid "Do Not Download"
+#~ msgstr "لا تنزّل"
+
+#~ msgid "Delete File(s)"
+#~ msgstr "احذف الملف(ات)"
+
+#~ msgid "Move File"
+#~ msgstr "انقل الملف"
+
+#~ msgid "Collapse Folder Tree"
+#~ msgstr "اطوِ شجرة المجلد"
+
+#~ msgid "Expand Folder Tree"
+#~ msgstr "وسّع شجرة المجلد"
+
+#, fuzzy
+#~| msgid ""
+#~| "You will lose all data in this file, are you sure you want to do this ?"
+#~ msgid ""
+#~ "You will lose all data in this file, are you sure you want to do this?"
+#~ msgid_plural ""
+#~ "You will lose all data in these files, are you sure you want to do this?"
+#~ msgstr[0] ""
+#~ "ستفقد جميع البيانات في هذا الملف ، هل أنت متأكد من أنك تريد فعل هذا ؟ "
+#~ msgstr[1] ""
+#~ "ستفقد جميع البيانات في هذا الملف ، هل أنت متأكد من أنك تريد فعل هذا ؟ "
+#~ msgstr[2] ""
+#~ "ستفقد جميع البيانات في هذا الملف ، هل أنت متأكد من أنك تريد فعل هذا ؟ "
+#~ msgstr[3] ""
+#~ "ستفقد جميع البيانات في هذا الملف ، هل أنت متأكد من أنك تريد فعل هذا ؟ "
+#~ msgstr[4] ""
+#~ "ستفقد جميع البيانات في هذا الملف ، هل أنت متأكد من أنك تريد فعل هذا ؟ "
+#~ msgstr[5] ""
+#~ "ستفقد جميع البيانات في هذا الملف ، هل أنت متأكد من أنك تريد فعل هذا ؟ "
+
+#~ msgid "Select a directory to move the data to."
+#~ msgstr "اختر المجلد الذي تريد نقل الملفات إليه."
+
+#, fuzzy
+#~| msgid "User:"
+#~ msgid "Url"
+#~ msgstr "المستخدم:"
+
+#, fuzzy
+#~| msgid "Seeders:"
+#~ msgid "Seeders"
+#~ msgstr "موزعين:"
+
+#, fuzzy
+#~| msgid "Leechers:"
+#~ msgid "Leechers"
+#~ msgstr "العلق:"
+
+#, fuzzy
+#~| msgid "Times Downloaded:"
+#~ msgid "Times Downloaded"
+#~ msgstr "عدد مرات التنزيل:"
+
+#, fuzzy
+#~| msgid "Next Update In:"
+#~ msgid "Next Update"
+#~ msgstr "التحديث التالي عند:"
+
+#~ msgid "Priority"
+#~ msgstr "الأولوية"
+
+#~ msgid "Preview"
+#~ msgstr "معاينة"
+
+#~ msgctxt "Percent of File Downloaded"
+#~ msgid "% Complete"
+#~ msgstr "% اكتمل"
+
+#~ msgctxt "Download first"
+#~ msgid "First"
+#~ msgstr "أولًا"
+
+#~ msgctxt "Download last"
+#~ msgid "Last"
+#~ msgstr "أخيرًا"
+
+#~ msgctxt "Download normally(not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "عادي"
+
+#~ msgctxt "preview available"
+#~ msgid "Available"
+#~ msgstr "متوفر"
+
+#~ msgctxt "Preview pending"
+#~ msgid "Pending"
+#~ msgstr "معلق"
+
+#~ msgctxt "No preview available"
+#~ msgid "No"
+#~ msgstr "لا"
+
+#~ msgid "%1 %"
+#~ msgstr "%1 %"
+
+#~ msgctxt "Preview available"
+#~ msgid "Available"
+#~ msgstr "متوفر"
+
+#~ msgid "Add Tracker"
+#~ msgstr "أضف متتبعًا"
+
+#~ msgid "There already is a tracker named <b>%1</b>."
+#~ msgstr "يوجد بالفعل متتبع بالاسم <b>%1</b>."
+
+#~ msgctxt "Download Normal (not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "عادي"
+
+#~ msgid "&Advanced Details"
+#~ msgstr "التفاصيل المتقد&مة"
+
+#~ msgid "&Scan Files"
+#~ msgstr "م&سح الملفات"
+
+#~ msgid "Downloading Torrent File...."
+#~ msgstr "تنزيل ملف التورنت....."
+
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading...."
+#~ msgstr "يجري التنزيل..."
+
+#~ msgid "Cannot add a tracker to a private torrent."
+#~ msgstr "لا يمكن إضافة متتبع إلى تورنت خاص."
+
+#, fuzzy
+#~| msgid "The directory %1 does not exist"
+#~ msgid "Torrent file does not exist"
+#~ msgstr "المجلد %1 غير موجود"
+
+#~ msgid "Analyzing torrent...."
+#~ msgstr "يجري تحليل التورنت..."
+
+#~ msgctxt "Transfer status: seeding"
+#~ msgid "Seeding...."
+#~ msgstr "توزيع..."
+
+#~ msgid "Error scanning data: %1"
+#~ msgstr "خطأ في مسح البيانات: %1"
+
+#~ msgid "Scanning data of <b>%1</b> :"
+#~ msgstr "يجري مسح بيانات <b>%1</b> :"
+
+#~ msgid "Select a default torrent folder"
+#~ msgstr "اختر مجلد التورنت المبدئي"
+
+#~ msgid "Select a default temporary folder"
+#~ msgstr "إختر المجلد المؤقت المبدئي"
+
+#, fuzzy
+#~| msgctxt "@action"
+#~| msgid "Settings"
+#~ msgid "File Properties"
+#~ msgstr "إعدادات"
+
+#, fuzzy
+#~| msgid "Enter Group Name"
+#~ msgid "Enter a filename."
+#~ msgstr "أدخل اسم المجموعة"
+
+#, fuzzy
+#~| msgid "Enter Group Name"
+#~ msgid "Enter at least one URL."
+#~ msgstr "أدخل اسم المجموعة"
+
+#, fuzzy
+#~| msgid "Unable to save to: %1"
+#~ msgid "Unable to load: %1"
+#~ msgstr "غير قادر على الحفظ إلى :%1"
+
+#, fuzzy
+#~| msgid "Open file"
+#~ msgid "Metalink Version 4.0 file (*.meta4)"
+#~ msgstr "افتح ملف"
+
+#, fuzzy
+#~| msgid "Open file"
+#~ msgid "Metalink Version 3.0 file (*.metalink)"
+#~ msgstr "افتح ملف"
+
+#~ msgid "Import Links"
+#~ msgstr "استورد روابطًا"
+
+#~ msgctxt "Download the items which have been selected"
+#~ msgid "&Download Checked"
+#~ msgstr "&نزّل المحدد"
+
+#~ msgid "Auxiliary header"
+#~ msgstr "ترويسة إضافية"
+
+#~ msgid "File Name"
+#~ msgstr "اسم الملف"
+
+#~ msgid "Description"
+#~ msgstr "الوصف"
+
+#~ msgctxt "list header: type of file"
+#~ msgid "File Type"
+#~ msgstr "نوع الملف"
+
+#~ msgid "Location (URL)"
+#~ msgstr "الموقع (المسار)"
+
+#~ msgid "Links in: %1 - KGet"
+#~ msgstr "الروابط في: %1 - كجت"
+
+#~ msgid "&Select All Filtered"
+#~ msgstr "ح&دّد كل المُرَشّح"
+
+#~ msgid "&Select All"
+#~ msgstr "ح&دّد الكل"
+
+#~ msgid "D&eselect All Filtered"
+#~ msgstr "ألغِ تحديد المُرَشح"
+
+#~ msgid "D&eselect All"
+#~ msgstr "أل&غِ تحديد الكل"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgctxt "Mirror as in server, in url"
+#~ msgid "Mirror"
+#~ msgstr "خطأ"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgctxt "The priority of the mirror"
+#~ msgid "Priority"
+#~ msgstr "أولوية"
+
+#, fuzzy
+#~| msgid "Connecting"
+#~ msgctxt "Number of paralell connections to the mirror"
+#~ msgid "Connections"
+#~ msgstr "جاري الاتصال..."
+
+#, fuzzy
+#~| msgid "Location (URL)"
+#~ msgctxt "Location = country"
+#~ msgid "Location"
+#~ msgstr "موضع URL"
+
+#, fuzzy
+#~| msgid "Add Tracker"
+#~ msgctxt "Adds the item and reopens the dialog to add a further item"
+#~ msgid "Add more"
+#~ msgstr "إضافة متتبع"
+
+#~ msgid "Download again"
+#~ msgstr "نزل مرة أخرى"
+
+#~ msgctxt "Delete selected history-item"
+#~ msgid "Delete selected"
+#~ msgstr "احذف المحدد"
+
+#~ msgid "Open file"
+#~ msgstr "افتح ملفًا"
+
+#~ msgid "Today"
+#~ msgstr "اليوم"
+
+#~ msgid "Last week"
+#~ msgstr "الأسبوع الماضي"
+
+#~ msgid "Last Month"
+#~ msgstr "الشهر الماضي"
+
+#~ msgid "A long time ago"
+#~ msgstr "منذ فترة طويلة مضت"
+
+#~ msgid "Under 10MiB"
+#~ msgstr "تحت 10 مب"
+
+#~ msgid "Between 10MiB and 50MiB"
+#~ msgstr "بين 10 مب و 50 مب"
+
+#~ msgid "Between 50MiB and 100MiB"
+#~ msgstr "بين 50 مب و 100 مب"
+
+#~ msgid "More than 100MiB"
+#~ msgstr "أكثر من 100 مب"
+
+#~ msgid "Transfer History"
+#~ msgstr "تاريخ النقل"
+
+#~ msgid "&Open File"
+#~ msgstr "ا&فتح ملفًا"
+
+#~ msgctxt "The transfer is running"
+#~ msgid "Running"
+#~ msgstr "قيد التشغيل"
+
+#~ msgctxt "The transfer is stopped"
+#~ msgid "Stopped"
+#~ msgstr "موقف"
+
+#~ msgctxt "The transfer is aborted"
+#~ msgid "Aborted"
+#~ msgstr "مُجعض"
+
+#~ msgctxt "The transfer is finished"
+#~ msgid "Finished"
+#~ msgstr "منتهي"
+
+#~ msgid "Source File"
+#~ msgstr "الملف المصدر"
+
+#~ msgid "Destination"
+#~ msgstr "المقصد"
+
+#~ msgid "Time"
+#~ msgstr "الوقت"
+
+#~ msgid "File Size"
+#~ msgstr "حجم الملف"
+
+#~ msgid "Less than 1MiB"
+#~ msgstr "أقل من ميجابايت"
+
+#~ msgid "Between 1MiB-10MiB"
+#~ msgstr "بين 1 مب و10 مب"
+
+#~ msgid "Between 10MiB-100MiB"
+#~ msgstr "بين 10 مب و 100 مب"
+
+#~ msgid "Between 100MiB-1GiB"
+#~ msgstr "بين 100 مب-1 جب"
+
+#~ msgid "More than 1GiB"
+#~ msgstr "أكثر من 1جيجابايت"
+
+#~ msgid "Last month"
+#~ msgstr "آخر شهر"
+
+#~ msgctxt "the transfer has been finished"
+#~ msgid "Finished"
+#~ msgstr "منتهي"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgctxt "an error happened in connection with the user input"
+#~ msgid "Error:"
+#~ msgstr "خطأ"
+
+#, fuzzy
+#~| msgid "Unknown client"
+#~ msgctxt "trust level"
+#~ msgid "Unknown"
+#~ msgstr "عميل غير معروف"
+
+#, fuzzy
+#~| msgid "Peer"
+#~ msgctxt "trust level"
+#~ msgid "Never"
+#~ msgstr "نظير"
+
+#~ msgid "Unlimited"
+#~ msgstr "غير محدود"
+
+#, fuzzy
+#~| msgid "File"
+#~ msgctxt "pgp signature is not verified"
+#~ msgid "Failed"
+#~ msgstr "ملف"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgid "Error:"
+#~ msgstr "خطأ"
+
+#, fuzzy
+#~| msgid "Integration"
+#~ msgid "Information:"
+#~ msgstr "التكامل"
+
+#~ msgid "Select columns"
+#~ msgstr "اختر الأعمدة"
+
+#~ msgid "Transfer Details"
+#~ msgstr "تفاصيل عملية النقل"
+
+#, fuzzy
+#~| msgid "Transfer-Settings for %1"
+#~ msgid "Transfer Verification for %1"
+#~ msgstr "إعدادات نقل %1"
+
+#, fuzzy
+#~| msgid "Rename"
+#~ msgid "Rename File"
+#~ msgstr "أعِد التسمية"
+
+#, fuzzy
+#~| msgid "Rename"
+#~ msgid "Rename %1 to:"
+#~ msgstr "أعِد التسمية"
+
+#, fuzzy
+#~| msgid "Rename"
+#~ msgid "&Rename"
+#~ msgstr "أعِد التسمية"
+
+#~ msgid "Semantic Desktop"
+#~ msgstr "سطح المكتب الدلالي"
+
+#~ msgid "Delete Group"
+#~ msgid_plural "Delete Groups"
+#~ msgstr[0] "احذف المجموعة"
+#~ msgstr[1] "احذف  المجموعة"
+#~ msgstr[2] "احذف المجموعتين"
+#~ msgstr[3] "احذف المجموعات"
+#~ msgstr[4] "احذف المجموعات"
+#~ msgstr[5] "احذف المجموعات"
+
+#~ msgid "Rename Group..."
+#~ msgid_plural "Rename Groups..."
+#~ msgstr[0] "أعد تسمية المجموعة..."
+#~ msgstr[1] "أعد تسمية المجموعة..."
+#~ msgstr[2] "أعد تسمية المجموعتين..."
+#~ msgstr[3] "أعد تسمية المجموعات..."
+#~ msgstr[4] "أعد تسمية المجموعات..."
+#~ msgstr[5] "أعد تسمية المجموعات..."
+
+#~ msgctxt "fix position for droptarget"
+#~ msgid "Sticky"
+#~ msgstr "ثبات المفتاح"
+
+#~ msgid "Quit KGet"
+#~ msgstr "أنه كجت"
+
+#~ msgid "The dropped file is a KGet Transfer List"
+#~ msgstr "الملف المُسقط هو قائمة عمليات نقل لكجت"
+
+#~ msgid "&Download"
+#~ msgstr "ن&زّل"
+
+#~ msgid "&Load transfer list"
+#~ msgstr "&حمّل قائمة عمليات النقل"
+
+#~ msgid "Show Main Window"
+#~ msgstr "اعرض النافذة الرئيسية"
+
+#~ msgid "Hide Main Window"
+#~ msgstr "أخفِ النافذة الرئيسية"
+
+#~ msgid "Drop Target"
+#~ msgstr "سلة الإسقاط"
+
+#~ msgid "You can drag download links into the drop target."
+#~ msgstr "تستطيع سحب وإسقاط روابط التنزيل على هدف  الإسقاط"
+
+#~ msgctxt "%1 filename, %2 total size, %3 status"
+#~ msgid "%1(%2) %3"
+#~ msgstr "%1(%2) %3"
+
+#~ msgctxt ""
+#~ "%1 filename, %2 percent complete, %3 downloaded out of %4 total size"
+#~ msgid "%1(%2% %3/%4) Speed:%5/s"
+#~ msgstr "%1(%2% %3/%4) السرعة:%5/ث"
+
+#~ msgctxt ""
+#~ "%1 filename, %2 percent complete, %3 downloaded out of %4 total size, %5 "
+#~ "status"
+#~ msgid "%1(%2% %3/%4) %5"
+#~ msgstr "%1(%2% %3/%4) %5"
+
+#~ msgid "Ready"
+#~ msgstr "جاهز"
+
+#~ msgid ""
+#~ "Drop target has been hidden. If you want to show it again, go to Settings-"
+#~ ">Configure KGet->Look & Feel."
+#~ msgstr ""
+#~ "تم إخفاء هدف الإسقاط. إذا أردت إظهاره مرة أخرى فاذهب إلى إعدادات --> ضبط "
+#~ "كجت --> المظهر"
+
+#~ msgid "Hiding drop target"
+#~ msgstr "إخفاء هدف الإسقاط"
+
+#~ msgid "Transfer Settings for %1"
+#~ msgstr "إعدادات نقل %1"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgid "Destination unmodified"
+#~ msgstr "الوجهة"
+
+#~ msgid "%1 of %2"
+#~ msgstr "%1 من %2"
+
+#~ msgid "Group Settings for %1"
+#~ msgstr "إعدادات المجموعة %1"
+
+#~ msgctxt "@info"
+#~ msgid "Unable to start the server: %1."
+#~ msgstr "غير قادر على بدء الخادم: %1."
+
+#~ msgctxt "@item speed of transfer per seconds"
+#~ msgid "%1/s"
+#~ msgstr "%1/ث"
+
+#~ msgctxt "@label"
+#~ msgid "KGet Web Interface"
+#~ msgstr "واجهة وب كجت"
+
+#~ msgctxt "@label number"
+#~ msgid "Nr"
+#~ msgstr "رقم"
+
+#~ msgctxt "@label"
+#~ msgid "File name"
+#~ msgstr "اسم الملف"
+
+#~ msgctxt "@label Progress of transfer"
+#~ msgid "Finished"
+#~ msgstr "منتهي"
+
+#~ msgctxt "@label Speed of transfer"
+#~ msgid "Speed"
+#~ msgstr "السرعة"
+
+#~ msgctxt "@label Status of transfer"
+#~ msgid "Status"
+#~ msgstr "الحالة"
+
+#~ msgctxt "@action:button start a transfer"
+#~ msgid "Start"
+#~ msgstr "أبدء"
+
+#~ msgctxt "@action:button"
+#~ msgid "Stop"
+#~ msgstr "أوقف"
+
+#~ msgctxt "@action:button"
+#~ msgid "Remove"
+#~ msgstr "أزل"
+
+#~ msgctxt "@label Download from"
+#~ msgid "Source:"
+#~ msgstr "المصدر:"
+
+#~ msgctxt "@label Save download to"
+#~ msgid "Saving to:"
+#~ msgstr "جاري الحفظ إلى:"
+
+#~ msgctxt "@label Title in header"
+#~ msgid "Web Interface"
+#~ msgstr "واجهة الوب"
+
+#~ msgctxt "@action"
+#~ msgid "Settings"
+#~ msgstr "إعدادات"
+
+#~ msgctxt "@action"
+#~ msgid "Refresh"
+#~ msgstr "أنعش"
+
+#~ msgctxt "@action"
+#~ msgid "Enter URL: "
+#~ msgstr "أدخل المسار:"
+
+#~ msgctxt "@action:button"
+#~ msgid "OK"
+#~ msgstr "موافق"
+
+#~ msgctxt "@action Refresh download list every x (seconds)"
+#~ msgid "Refresh download list every"
+#~ msgstr "أنعش قائمة التنزيل كل"
+
+#~ msgctxt "@action (Refresh very x )seconds"
+#~ msgid "seconds"
+#~ msgstr "ثوانٍ"
+
+#~ msgctxt "@action:button"
+#~ msgid "Save Settings"
+#~ msgstr "احفظ الإعدادات"
+
+#~ msgctxt "@title"
+#~ msgid "Downloads"
+#~ msgstr "التنزيلات"
+
+#~ msgctxt "@label text in footer"
+#~ msgid "KGet Web Interface | Valid XHTML 1.0 Strict &amp; CSS"
+#~ msgstr " واجهة وب كجت | Valid XHTML 1.0 Strict &amp; CSS"
+
+#~ msgid "An advanced download manager for KDE"
+#~ msgstr "مدير تنزيل متقدم لكدي"
+
+#~ msgid ""
+#~ "(C) 2005 - 2009, The KGet developers\n"
+#~ "(C) 2001 - 2002, Patrick Charbonnier\n"
+#~ "(C) 2002, Carsten Pfeiffer\n"
+#~ "(C) 1998 - 2000, Matej Koss"
+#~ msgstr ""
+#~ "(C) 2005 - 2009, مطورو كجت\n"
+#~ "(C) 2001 - 2002, Patrick Charbonnier\n"
+#~ "(C) 2002, Carsten Pfeiffer\n"
+#~ "(C) 1998 - 2000, Matej Koss"
+
+#~ msgid "<a href=\"mailto:kget@kde.org\">kget@kde.org</a>"
+#~ msgstr "<a href=\"mailto:kget@kde.org\">kget@kde.org</a>"
+
+#~ msgid "Lukas Appelhans"
+#~ msgstr "Lukas Appelhans"
+
+#, fuzzy
+#~| msgid "Developer, Torrent Plugin Author"
+#~ msgid "Maintainer, Core Developer, Torrent Plugin Author"
+#~ msgstr "مطور ، كاتب ملحقات تورنت"
+
+#~ msgid "Dario Massarin"
+#~ msgstr "Dario Massarin"
+
+#~ msgid "Core Developer"
+#~ msgstr "مطور أساسي"
+
+#~ msgid "Urs Wolfer"
+#~ msgstr "Urs Wolfer"
+
+#~ msgid "Manolo Valdes"
+#~ msgstr "Manolo Valdes"
+
+#~ msgid "Core Developer, Multithreaded Plugin Author"
+#~ msgstr "مطور أساسي، وكاتب ملحق مسارات المعالجة المتعددة"
+
+#~ msgid "Javier Goday"
+#~ msgstr "Javier Goday"
+
+#~ msgid "Developer"
+#~ msgstr "مطور"
+
+#~ msgid "Patrick Charbonnier"
+#~ msgstr "Patrick Charbonnier"
+
+#~ msgid "Former Developer"
+#~ msgstr "مطور سابق"
+
+#~ msgid "Carsten Pfeiffer"
+#~ msgstr "Carsten Pfeiffer"
+
+#~ msgid "Matej Koss"
+#~ msgstr "Matej Koss"
+
+#~ msgid "Joris Guisson"
+#~ msgstr "Joris Guisson"
+
+#~ msgid "BTCore (KTorrent) Developer"
+#~ msgstr "مطور BTCore (KTorrent)"
+
+#~ msgid "Mensur Zahirovic (Nookie)"
+#~ msgstr "Mensur Zahirovic (Nookie)"
+
+#~ msgid "Design of Web Interface"
+#~ msgstr "تصميم واجهة الوب"
+
+#~ msgid "Start KGet with drop target"
+#~ msgstr "ابدأ كجت مع هدف الإسقاط"
+
+#~ msgid "Start KGet with hidden main window"
+#~ msgstr "ابدأ كجت مع إخفاء النافذة الرئيسية"
+
+#~ msgid "Start KGet without drop target animation"
+#~ msgstr "أبدأ كجت بدون تحريكات هدف الإسقاط"
+
+#~ msgid "URL(s) to download"
+#~ msgstr "المسارات المطلوب تنزيلها"
+
+#~ msgid "KGet Transfer List"
+#~ msgstr "قائمة عمليات نقل كجت"
+
+#~ msgid "Export Transfers"
+#~ msgstr "صدّر عمليات النقل"
+
+#~ msgid "&New Download..."
+#~ msgstr "تنزيل &جديد..."
+
+#~ msgid "&Import Transfers..."
+#~ msgstr "اس&تورد عمليات النقل..."
+
+#~ msgid "&Export Transfers List..."
+#~ msgstr "صدِّر &قائمة عمليات النقل..."
+
+#~ msgid "&Export Transfers as Plain Text..."
+#~ msgstr "صدِّر عمليات النقل &كنص مجرد..."
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Top Priority"
+#~ msgstr "الأولوية"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Least Priority"
+#~ msgstr "الأولوية"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Increase Priority"
+#~ msgstr "الأولوية"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Decrease Priority"
+#~ msgstr "الأولوية"
+
+#~ msgid "Set Icon..."
+#~ msgstr "اضبط الأيقونة..."
+
+#~ msgid "Auto-Paste Mode"
+#~ msgstr "وضع اللصق التلقائي"
+
+#~ msgid ""
+#~ "<b>Auto paste</b> button toggles the auto-paste mode on and off.\n"
+#~ "When set, KGet will periodically scan the clipboard for URLs and paste "
+#~ "them automatically."
+#~ msgstr ""
+#~ "يشغل زر <b> لصق تلقائي</b> ويعطل وضع اللصق التلقائي.\n"
+#~ "عند تشغيله ، سيقوم كجت بمسح للحافظة بشكل دوري لأي مسارات وسيقوم بلصقها "
+#~ "تلقائياً إن وجدها."
+
+#~ msgid "Use KGet as Konqueror Download Manager"
+#~ msgstr "استخدم كجت كمدير التنزيل لكنرر"
+
+#, fuzzy
+#~| msgid "Remove Webseed"
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Remove Selected"
+#~ msgstr "أزل موزع ويب"
+
+#, fuzzy
+#~| msgctxt "delete all finished transfers"
+#~| msgid "Delete all finished"
+#~ msgctxt "delete all finished transfers"
+#~ msgid "Remove All Finished"
+#~ msgstr "أحذف كل المنتهية"
+
+#~ msgctxt "redownload selected transfer item"
+#~ msgid "Redownload Selected"
+#~ msgstr "أعد تنزيل النقل المحدد"
+
+#~ msgid "Start / Resume All"
+#~ msgstr "أبدأ/استأنف الكل"
+
+#~ msgid "Start / Resume Selected"
+#~ msgstr "أبدأ/استأنف المحدد"
+
+#~ msgid "Stop All"
+#~ msgstr "أوقف الكل"
+
+#~ msgid "Stop Selected"
+#~ msgstr "أوقف المحدد"
+
+#~ msgid "Start / Resume"
+#~ msgstr "ابدأ/استأنف"
+
+#~ msgid "Stop"
+#~ msgstr "أوقف"
+
+#~ msgid "Remove"
+#~ msgstr "أزل"
+
+#~ msgid "Open Destination"
+#~ msgstr "افتح المقصد"
+
+#~ msgid "Open File"
+#~ msgstr "افتح الملف"
+
+#~ msgid "Show Details"
+#~ msgstr "أظهر التفاصيل"
+
+#~ msgid "Copy URL to Clipboard"
+#~ msgstr "انسخ المسار إلى الحافظة"
+
+#~ msgid "&Transfer History"
+#~ msgstr "تاريخ ال&نقل"
+
+#~ msgid "&Group Settings"
+#~ msgstr "إعدادات الم&جموعات"
+
+#~ msgid "&Transfer Settings"
+#~ msgstr "إعدادات الن&قل"
+
+#~ msgid "Import &Links..."
+#~ msgstr "استورد ر&وابطًا..."
+
+#~ msgid ""
+#~ "This is the first time you have run KGet.\n"
+#~ "Would you like to enable KGet as the download manager for Konqueror?"
+#~ msgstr ""
+#~ "هذه هي المرة الأولى التي تشغل فيها كجت.\n"
+#~ "أتريد تفعيل كجت كمدير التحميل كنكرر ؟"
+
+#~ msgid "Konqueror Integration"
+#~ msgstr "التكامل مع كنكرر"
+
+#~ msgid "Enable"
+#~ msgstr "مكّن"
+
+#~ msgid "Do Not Enable"
+#~ msgstr "لا تمكّن"
+
+#~ msgid "All Openable Files"
+#~ msgstr "كل الملفات القابلة للفتح"
+
+#~ msgctxt "window title including overall download progress in percent"
+#~ msgid "KGet - %1%"
+#~ msgstr "كجت - %1%"
+
+#~ msgid ""
+#~ "Some transfers are still running.\n"
+#~ "Are you sure you want to close KGet?"
+#~ msgstr ""
+#~ "بعض عمليات النقل لا زالت قيد التشغيل.\n"
+#~ "أمتأكد من أنك تريد إنهاء كجت؟"
+
+#~ msgid "Confirm Quit"
+#~ msgstr "تأكيد الإنهاء"
+
+#~ msgid "Enter Group Name"
+#~ msgstr "أدخل اسم المجموعة"
+
+#~ msgid "Group name:"
+#~ msgstr "اسم المجموعة:"
+
+#~ msgid "Are you sure you want to delete the selected transfer?"
+#~ msgid_plural "Are you sure you want to delete the selected transfers?"
+#~ msgstr[0] "أمتأكد أنك تريد حذف عملية النقل المحددة؟"
+#~ msgstr[1] "أمتأكد أنك تريد حذف عملية النقل المحددة؟"
+#~ msgstr[2] "أمتأكد أنك تريد حذف عمليتا النقل المحددتان؟"
+#~ msgstr[3] "أمتأكد أنك تريد حذف عمليات النقل المحددة؟"
+#~ msgstr[4] "أمتأكد أنك تريد حذف عمليات النقل المحددة؟"
+#~ msgstr[5] "أمتأكد أنك تريد حذف عمليات النقل المحددة؟"
+
+#~ msgid "Confirm transfer delete"
+#~ msgstr "أكّد حذف النقل"
+
+#~ msgid ""
+#~ "KGet has been temporarily disabled as download manager for Konqueror. If "
+#~ "you want to disable it forever, go to Settings->Advanced and disable "
+#~ "\"Use as download manager for Konqueror\"."
+#~ msgstr ""
+#~ "كجت معطل مؤقتًا كمدير تنزيل لكنكرر. إذا أردت تعطيله إلى الأبد، اذهب إلى "
+#~ "إعدادات -> متقدمة وعطل \"استعمل كمدير التنزيل لكنكرر\""
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Majed Ali,زايد السعيدي,أسامة خالد"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "GMajedli@gmail.com,zayed.alsaidi@gmail.com,osamak.wfm@gmail.com"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Automatic verification:"
+#~ msgstr "الوصف"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgid "Automatic verification"
+#~ msgstr "الوجهة"
+
+#, fuzzy
+#~| msgid "Seeders:"
+#~ msgid "Keyservers:"
+#~ msgstr "موزعين:"
+
+#, fuzzy
+#~| msgid "Use default directories for groups as suggestion"
+#~ msgid "Use default folders for groups as suggestion"
+#~ msgstr "استخدم الأدلة المبدئية المقترحة للمجموعات"
+
+#~ msgid "Rename"
+#~ msgstr "أعِد التسمية"
+
+#~ msgid "Select Icon..."
+#~ msgstr "اختر أيقونة..."
+
+#~ msgid "Limit Maximum Downloads Per Group"
+#~ msgstr "حدّ التنزيلات القصوى لكل مجموعة"
+
+#~ msgid "Number of downloads:"
+#~ msgstr "عدد التنزيلات:"
+
+#~ msgid "Downloads from the same server:"
+#~ msgstr "التنزيلات من نفس الخادوم:"
+
+#~ msgid "Speed Limit"
+#~ msgstr "حد السرعة"
+
+#~ msgid "Global download limit:"
+#~ msgstr "حد التنزيل العام:"
+
+#, fuzzy
+#~| msgid "KiB/s"
+#~ msgid " KiB/s"
+#~ msgstr "كيلوبايت/ثانية"
+
+#~ msgid "Global upload limit:"
+#~ msgstr "حد الرفع العام:"
+
+#~ msgid "Per transfer:"
+#~ msgstr "لكل نقل:"
+
+#~ msgid "Reconnect on Error or Broken Connection"
+#~ msgstr "أعد الإتصال عند حدوث خطأ أو انقطاع الاتصال"
+
+#~ msgid "Number of retries:"
+#~ msgstr "عدد المحاولات:"
+
+#~ msgid "Retry after:"
+#~ msgstr "أعِد المحاولة بعد:"
+
+#, fuzzy
+#~| msgid "sec"
+#~ msgid " sec"
+#~ msgstr "ثانية"
+
+#~ msgid "After Completing Downloads"
+#~ msgstr "بعد اكتمال التنزيلات"
+
+#~ msgid "Auto shutdown"
+#~ msgstr "إغلاق الحاسوب تلقائيًا"
+
+#~ msgid "Auto disconnect"
+#~ msgstr "قطع الاتصال تلقائيًا"
+
+#~ msgid "Enable Web Interface"
+#~ msgstr "فعّل واجهة الوب"
+
+#~ msgid "Port:"
+#~ msgstr "منفذ:"
+
+#~ msgid "User:"
+#~ msgstr "المستخدم:"
+
+#~ msgid "Password:"
+#~ msgstr "كلمة المرور:"
+
+#~ msgid "Startup"
+#~ msgstr "بدء التشغيل"
+
+#~ msgid "Show splashscreen"
+#~ msgstr "أظهر شاشة البدء"
+
+#~ msgid "Enable animations"
+#~ msgstr "فعّل التحريكات"
+
+#~ msgid "Show drop target"
+#~ msgstr "أظهر هدف الإسقاط"
+
+#~ msgid "Disable confirmation dialogs (less verbosity)"
+#~ msgstr "عطل مربع حوار التأكيد (أقل اسهابًا)"
+
+#~ msgid "Enable system tray icon"
+#~ msgstr "مكّن أيقونة صينية النظام"
+
+#~ msgid "Execute action after all downloads have been finished:"
+#~ msgstr "نفذ أمرًا معينًا بعد انتهاء جميع التنزيلات:"
+
+#~ msgid "At startup:"
+#~ msgstr "عند بدء التشغيل:"
+
+#~ msgid "Restore Download State"
+#~ msgstr "استعد حالة التنزيل"
+
+#~ msgid "Start All Downloads"
+#~ msgstr "ابدء جميع التنزيلات"
+
+#~ msgid "Stop All Downloads"
+#~ msgstr "أوقف جميع التنزيلات"
+
+#~ msgid "History"
+#~ msgstr "التاريخ"
+
+#~ msgid "History backend:"
+#~ msgstr "النهاية الخلفية للتاريخ"
+
+#~ msgid "Enable KDE global progress tracking"
+#~ msgstr "فعّل تتبع تقدم كدي العام"
+
+#~ msgid "Show every single download "
+#~ msgstr "أظهر كل عملية تنزيل"
+
+#~ msgid "Show overall progress"
+#~ msgstr "أظهر التقدم الإجمالي"
+
+#, fuzzy
+#~| msgid "Use as download manager for Konqueror"
+#~ msgid "Use as download manager for Konqueror:"
+#~ msgstr "استعمل كمدير التنزيل لكنكرر"
+
+#~ msgid "Monitor clipboard for files to download"
+#~ msgstr "راقب الحافظة لتنزيل أي ملفات"
+
+#~ msgid "Search Engines"
+#~ msgstr "محركات البحث"
+
+#~ msgid "Engine Name"
+#~ msgstr "اسم المحرك"
+
+#~ msgid "New Engine..."
+#~ msgstr "محرك جديد..."
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of connections per URL:"
+#~ msgstr "عدد المحاولات:"
+
+#~ msgid "Use search engines"
+#~ msgstr "استخدم محركات البحث"
+
+#~ msgid "File Settings"
+#~ msgstr "إعدادات الملفات"
+
+#~ msgid "Filename:"
+#~ msgstr "اسم الملف:"
+
+#~ msgid "Use Normalized Name"
+#~ msgstr "استخدم اسم الملف  معدلًا"
+
+#~ msgid "Use Literal Name"
+#~ msgstr "استخدم اسمًا حرفيًا"
+
+#~ msgid "Quality:"
+#~ msgstr "الجودة:"
+
+#~ msgid "Best Quality (.mp4)"
+#~ msgstr "أفضل جودة  (.mp4)"
+
+#~ msgid "Normal Quality (.flv)"
+#~ msgstr "جودة عادية (.flv)"
+
+#~ msgid ""
+#~ "Provide login info of your YouTube account in order to access restricted "
+#~ "media."
+#~ msgstr "أعطِ معلومات الدخول لحسابك على يوتيوب لكي تصل إلى الوسائط المُقيّدة"
+
+#~ msgid "Login Info"
+#~ msgstr "معلومات الدخول"
+
+#~ msgid "Username:"
+#~ msgstr "اسم المستخدم:"
+
+#~ msgid ".netrc must have a hostname called 'youtube'."
+#~ msgstr "يجب أن يكون في .netrc اسم مضيف يدعى 'youtube'."
+
+#~ msgid "User .netrc file"
+#~ msgstr "ملف المستخدم .netrc"
+
+#~ msgid "User Scripts"
+#~ msgstr "سكربتات المستخدم"
+
+#~ msgid "Path"
+#~ msgstr "المسار"
+
+#~ msgid "RegExp"
+#~ msgstr "العبارة المنطقية"
+
+#~ msgid "New Script...."
+#~ msgstr "سكربت جديد..."
+
+#~ msgid "Edit...."
+#~ msgstr "حرّر..."
+
+#~ msgid "Configure...."
+#~ msgstr "اضبط..."
+
+#~ msgid "Regexp:"
+#~ msgstr "العبارة المنطقية:"
+
+#~ msgid "Path:"
+#~ msgstr "المسار:"
+
+#~ msgid "Description:"
+#~ msgstr "الوصف:"
+
+#, fuzzy
+#~| msgid "Number of chunks downloaded:"
+#~ msgid "Number of simultaneous file downloads:"
+#~ msgstr "عدد الكتل التي تم تنزيلها:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of mirrors per file:"
+#~ msgstr "عدد المحاولات:"
+
+#, fuzzy
+#~| msgid "Change appearance settings"
+#~ msgid "Change string:"
+#~ msgstr "غير خصائص المظهر"
+
+#~ msgid "Mode:"
+#~ msgstr "نقطة اتّصال:"
+
+#~ msgid "Remove Tracker"
+#~ msgstr "أزل متتبعًا"
+
+#~ msgid "Change Tracker"
+#~ msgstr "غيّر متتبعًا"
+
+#, fuzzy
+#~| msgid "Update Tracker"
+#~ msgid "Update Trackers"
+#~ msgstr "تحديث المتتبع"
+
+#~ msgid "Restore Defaults"
+#~ msgstr "استعد المبدئيات"
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Webseed to add to the "
+#~ "torrent.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">Note: </span>Only http webseeds are supported.</p></body></"
+#~ "html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">بذرة وب لإضافتها "
+#~ "للتورنت</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">ملاحظة: </span>موزع ويب http فقط مدعوم</p></body></html>"
+
+#~ msgid "Add Webseed"
+#~ msgstr "أضف بذرة وب"
+
+#~ msgid "Remove Webseed"
+#~ msgstr "أزل بذرة وب"
+
+#~ msgid "Chunks"
+#~ msgstr "الكتل"
+
+#~ msgid "Total:"
+#~ msgstr "الإجمالي:"
+
+#~ msgid "Currently downloading:"
+#~ msgstr "ما يجري تحميله حالياً:"
+
+#~ msgid "Downloaded:"
+#~ msgstr "المُنزّل:"
+
+#~ msgid "Excluded:"
+#~ msgstr "المستبعد:"
+
+#~ msgid "Left:"
+#~ msgstr "المتبقي:"
+
+#~ msgid "Size:"
+#~ msgstr "الحجم:"
+
+#~ msgid "Scanning data of torrent:"
+#~ msgstr "مسح بيانات التورنت:"
+
+#~ msgid "Number of chunks found:"
+#~ msgstr "عدد الكتل التي عُثر عليها:"
+
+#~ msgid "Number of chunks failed:"
+#~ msgstr "عدد الكتل التي فشلت:"
+
+#~ msgid "Number of chunks not downloaded:"
+#~ msgstr "عدد الكتل التي لم تُنزّل:"
+
+#~ msgid "Number of chunks downloaded:"
+#~ msgstr "عدد الكتل التي نُزّلت:"
+
+#~ msgid "0"
+#~ msgstr "0"
+
+#~ msgid "Cancel"
+#~ msgstr "ألغِ"
+
+#~ msgid "Stats"
+#~ msgstr "الحالة"
+
+#~ msgid "Seeders:"
+#~ msgstr "الموزعون:"
+
+#~ msgid "<n>"
+#~ msgstr "<n>"
+
+#~ msgid "Download speed:"
+#~ msgstr "سرعة التنزيل:"
+
+#~ msgid "Leechers:"
+#~ msgstr "العلق:"
+
+#~ msgid "Upload speed:"
+#~ msgstr "سرعة الرفع:"
+
+#~ msgctxt "chunks left"
+#~ msgid "Left:"
+#~ msgstr "المتبقي:"
+
+#~ msgctxt "all chunks"
+#~ msgid "All:"
+#~ msgstr "الكل:"
+
+#~ msgctxt "source-file"
+#~ msgid "Source:"
+#~ msgstr "المصدر:"
+
+#~ msgid "Saving to:"
+#~ msgstr "يحفظ إلى:"
+
+#~ msgid "Upload limit per transfer:"
+#~ msgstr "حد الرفع لعملية النقل الواحدة:"
+
+#~ msgid "No Limit"
+#~ msgstr "بدون حد"
+
+#~ msgid "KiB"
+#~ msgstr "ك.ب"
+
+#~ msgid "Download limit per transfer:"
+#~ msgstr "حد التنزيل لعملية النقل الواحدة:"
+
+#~ msgid "Folders"
+#~ msgstr "المجلدات"
+
+#~ msgid "Default torrent folder:"
+#~ msgstr "مجلد التورنت المبدئي:"
+
+#~ msgid "Default temporary folder"
+#~ msgstr "المجلد المؤفت المبدئي:"
+
+#~ msgid "Pre-allocate disk space"
+#~ msgstr "مساحة القرص المسبقة"
+
+#, fuzzy
+#~| msgid "Enter URL:"
+#~ msgid "General URL:"
+#~ msgstr "أدخل الرابط:"
+
+#, fuzzy
+#~| msgid "Requests"
+#~ msgid "Required"
+#~ msgstr "الطلبات"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Verification:"
+#~ msgstr "الوصف"
+
+#, fuzzy
+#~| msgid "Open file"
+#~ msgid "*.metalink *.meta4|Metalink file (*.metalink *.meta4)"
+#~ msgstr "افتح ملف"
+
+#, fuzzy
+#~| msgid "Next Update In:"
+#~ msgid "Metalink published"
+#~ msgstr "التحديث التالي عند:"
+
+#, fuzzy
+#~| msgid "Remaining Time:"
+#~ msgid "Date and time:"
+#~ msgstr "الوقت المتبقي"
+
+#, fuzzy
+#~| msgid "Next Update In:"
+#~ msgid "Metalink updated"
+#~ msgstr "التحديث التالي عند:"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Version:"
+#~ msgstr "الوصف"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "Name:"
+#~ msgstr "الاسم"
+
+#, fuzzy
+#~| msgid "Number of threads:"
+#~ msgid "Name of the publisher"
+#~ msgstr "عدد مسارات المعالجة:"
+
+#, fuzzy
+#~| msgid "Number of threads:"
+#~ msgid "URL to the publisher"
+#~ msgstr "عدد مسارات المعالجة:"
+
+#, fuzzy
+#~| msgid "Files"
+#~ msgctxt "Files as in files on a server"
+#~ msgid "Files:"
+#~ msgstr "ملفات"
+
+#~ msgid "&File with links to import:"
+#~ msgstr "&ملف بروابط لاستيرادها:"
+
+#~ msgid "&Import Links"
+#~ msgstr "اس&تورد روابطًا"
+
+#~ msgid "Show:"
+#~ msgstr "أظهر:"
+
+#~ msgctxt "filter: show all file types"
+#~ msgid "&All"
+#~ msgstr "ال&كل"
+
+#~ msgid "&Videos"
+#~ msgstr "&فيديو"
+
+#~ msgid "Ima&ges"
+#~ msgstr "*صور"
+
+#~ msgid "A&udio"
+#~ msgstr "ص&وت"
+
+#~ msgid "A&rchives"
+#~ msgstr "أر&شيفات"
+
+#~ msgid "You can use wildcards for filtering."
+#~ msgstr "تستطيع استخدام الفارغات للترشيح."
+
+#~ msgid "Filter files here...."
+#~ msgstr "رشّح الملفات هنا..."
+
+#~ msgid "Contains"
+#~ msgstr "تحتوي"
+
+#~ msgid "Does Not Contain"
+#~ msgstr "لا تحتوي"
+
+#~ msgid "Inver&t Selection"
+#~ msgstr "اع&كس التحديد"
+
+#~ msgctxt "Check as in mark, not as in verify"
+#~ msgid "Chec&k Selected"
+#~ msgstr "علّم المحدد&"
+
+#~ msgid "Show &web content"
+#~ msgstr "أظهر محتوي الوب"
+
+#, fuzzy
+#~| msgid "Error: "
+#~ msgid "Mirror:"
+#~ msgstr "خطأ:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of connections:"
+#~ msgstr "عدد المحاولات:"
+
+#, fuzzy
+#~| msgid "Enter URL:"
+#~ msgid "Enter a URL"
+#~ msgstr "أدخل الرابط:"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Priority:"
+#~ msgstr "الأولوية"
+
+#, fuzzy
+#~| msgid "Location (URL)"
+#~ msgid "Location:"
+#~ msgstr "موضع URL"
+
+#~ msgid "Clear History"
+#~ msgstr "امسح التاريخ"
+
+#~ msgctxt "View modes"
+#~ msgid "View Modes"
+#~ msgstr "أوضاع العرض"
+
+#~ msgid "Select Ranges"
+#~ msgstr "اختر المدى"
+
+#~ msgid "Date"
+#~ msgstr "التاريخ"
+
+#~ msgid "Host"
+#~ msgstr "المضيف"
+
+#~ msgid "Filter History"
+#~ msgstr "ترشيح التاريخ"
+
+#~ msgctxt "delete selected transfer"
+#~ msgid "Delete Selected"
+#~ msgstr "امسح المحدد"
+
+#~ msgid "Download"
+#~ msgstr "تنزيل"
+
+#, fuzzy
+#~| msgid "Port:"
+#~ msgctxt "hash as a hash of type md5, sha1 etc."
+#~ msgid "Hash:"
+#~ msgstr "منفذ:"
+
+#~ msgid "Status:"
+#~ msgstr "الحالة:"
+
+#, fuzzy
+#~| msgid "Remaining Time"
+#~ msgid "Remaining Time:"
+#~ msgstr "الوقت المتبقي"
+
+#~ msgid "Transfer Settings"
+#~ msgstr "إعدادات النقل"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Download Destination:"
+#~ msgstr "الهدف"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgctxt "No value has been set"
+#~ msgid "Not set"
+#~ msgstr "لا يوجد ارتباطات"
+
+#, fuzzy
+#~| msgid "KiB"
+#~ msgid " KiB"
+#~ msgstr "ك.بايت"
+
+#, fuzzy
+#~| msgid "Upload Limit"
+#~ msgid "Upload Limit:"
+#~ msgstr "حد الرفع"
+
+#, fuzzy
+#~| msgid "Download Limit"
+#~ msgid "Download Limit:"
+#~ msgstr "حد التنزيل"
+
+#, fuzzy
+#~| msgid "Maximum Share Ratio"
+#~ msgid "Maximum Share Ratio:"
+#~ msgstr "نسبة المشاركة العليا"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgctxt "The available mirrors (servers) for downloading"
+#~ msgid "Mirrors"
+#~ msgstr "خطأ"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgctxt "verification of the download (e.g. by using MD5)"
+#~ msgid "Verification"
+#~ msgstr "الوجهة"
+
+#, fuzzy
+#~| msgid "User:"
+#~ msgid "Issuer:"
+#~ msgstr "المستخدم:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Creation:"
+#~ msgstr "الهدف"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Expiration:"
+#~ msgstr "الهدف"
+
+#~ msgid "Group Settings"
+#~ msgstr "إعدادات المجموعة"
+
+#~ msgid "Default folder:"
+#~ msgstr "المجلد المبدئي:"
+
+#~ msgid "Moves all transfers with the regular expression to this group"
+#~ msgstr "ينقل كل عمليات النقل ذات العبارة المنطقية إلى هذه المجموعة"
+
+#~ msgid "Regular expression:"
+#~ msgstr "العبارة المنطقية:"
+
+#~ msgid "*movies*"
+#~ msgstr "*أفلام*"
+
+#~ msgid "Maximum download speed:"
+#~ msgstr "سرعة التنزيل القصوى:"
+
+#~ msgid "Maximum upload speed:"
+#~ msgstr "سرعة الرفع القصوى:"
+
+#~ msgid "Destination:"
+#~ msgstr "المقصد:"
+
+#~ msgid "Transfer group:"
+#~ msgstr "مجموعة النقل:"
+
+#~ msgid "&File"
+#~ msgstr "&ملف"
+
+#~ msgid "&Downloads"
+#~ msgstr "التن&زيلات"
+
+#~ msgid "&Settings"
+#~ msgstr "إ&عدادات"
+
+#~ msgid "&Help"
+#~ msgstr "&مساعدة"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "شريط الأدوات الرئيسي"
+
+#~ msgid "Sets to show the splashscreen while KGet is loading"
+#~ msgstr "يعرض شاشة البدء أثناء تحميل كجت"
+
+#~ msgid "The width of the columns in the history view"
+#~ msgstr "عرض الأعمدة في عرض التاريخ"
+
+#~ msgid "List of the available search engines"
+#~ msgstr "قائمة بمحركات البحث المتوفرة"
+
+#, fuzzy
+#~| msgid "Use search engines"
+#~ msgid "List of the available search engine URLs"
+#~ msgstr "استخدم محركات البحث"
+
+#~ msgid "List of descriptions for user scripts"
+#~ msgstr "قائمة أوصاف سكربتات المستخدم"
+
+#~ msgid "List of whether the script is enabled"
+#~ msgstr "قائمة السكربتات المفعلة"
+
+#~ msgid "There are no links in the active frame of the current HTML page."
+#~ msgstr "لا توجد روابط في الإطار النشط في صفحة HTML الحالية"
+
+#~ msgid "An error occurred...."
+#~ msgstr "حدث خطأ...."
+
+#~ msgid "Remove Tag"
+#~ msgstr "أزل الوسم"
+
+#~ msgid "Add Tag"
+#~ msgstr "أضف وسمًا"
+
+#~ msgid "Tag Settings for the groups"
+#~ msgstr "إعدادات وسم المجموعات"
+
+#~ msgid "Tag Settings"
+#~ msgstr "إعدادات الوسم"
+
+#~ msgid "Available tags:"
+#~ msgstr "الأوسمة المتوفرة"
+
+#~ msgid "Used tags:"
+#~ msgstr "الأوسمة المستخدمة:"
+
+#~ msgid "Enter a new Tag"
+#~ msgstr "أدخل وسمًا جديدًأ"
+
+#~ msgid "Enter a new tag"
+#~ msgstr "أدخل وسمًا جديدًا"
+
+#~ msgid "Modify Tags..."
+#~ msgstr "عدّل الأوسمة..."
+
+#~ msgid "The width of the columns in the main view"
+#~ msgstr "عرض الأعمدة في العرض الرئيسي"
+
+#~ msgid "Illegal token: %1"
+#~ msgstr "علامة غير نظامية: %1"
+
+#~ msgid "Decode error"
+#~ msgstr "خطأ فك ترميز"
+
+#~ msgid "Unexpected end of input"
+#~ msgstr "نهاية غير متوقعة للإدخال"
+
+#~ msgid "Cannot convert %1 to an int"
+#~ msgstr "لا يمكن تحويل %1 إلى عدد"
+
+#, fuzzy
+#~| msgid "Torrent is incomplete!"
+#~ msgid "Torrent is incomplete."
+#~ msgstr "التورنت غير مكتمل"
+
+#~ msgid "Cannot open %1 : %2"
+#~ msgstr "تعذّر فتح %1: %2"
+
+#~ msgid "Cannot open %1 for writing : readonly filesystem"
+#~ msgstr "لا يمكن فتح %1 للكتابة: نظام ملفات للقراءة فقط"
+
+#~ msgid "Cannot expand file %1 : %2"
+#~ msgstr "تعذر تمديد الملف %1 : %2"
+
+#~ msgid "Error : Reading past the end of the file %1"
+#~ msgstr "خطأ: قراءة ما قبل نهاية الملف %1"
+
+#~ msgid "Failed to seek file %1 : %2"
+#~ msgstr "فشل في البحث عن الملف %1: %2"
+
+#~ msgid "Error reading from %1"
+#~ msgstr "خطأ في القراءة من %1"
+
+#~ msgid "Failed to write to file %1 : %2"
+#~ msgstr "فشل في الكتابة إلى الملف %1: %2"
+
+#~ msgid "Cannot preallocate diskspace : %1"
+#~ msgstr "تعذر حجز مساحة مسبقة على القرص: %1"
+
+#~ msgid "Cannot open index file %1 : %2"
+#~ msgstr "تعذر فتح ملف الفهرس %1 : %2"
+
+#~ msgid "Failed to open %1 : %2"
+#~ msgstr "فشل فتح %1 : %2"
+
+#~ msgid "Failed to create %1 : %2"
+#~ msgstr "فشل إنشاء %1 : %2"
+
+#~ msgid "Cannot create file %1 : %2"
+#~ msgstr "تعذر إنشاء الملف %1 : %2"
+
+#~ msgid "Failed to write first chunk to DND file : %1"
+#~ msgstr "فشل في كتابة أول كتلة إلى ملف DND: %1"
+
+#~ msgid "Failed to write last chunk to DND file : %1"
+#~ msgstr "فشل في كتابة آخر كتلة إلى ملف DND: %1"
+
+#~ msgid "Cannot open file %1 : %2"
+#~ msgstr "تعذر فتح الملف %1: %2"
+
+#~ msgid "OK"
+#~ msgstr "موافق"
+
+#~ msgid "Announcing"
+#~ msgstr "إعلان"
+
+#, fuzzy
+#~| msgid "Error: "
+#~ msgid "Error: %1"
+#~ msgstr "خطأ:"
+
+#~ msgid "Unable to resolve hostname %1"
+#~ msgstr "غير قادر على تحليل اسم المضيف %1"
+
+#~ msgid "Invalid response from tracker"
+#~ msgstr "استجابة غير صحيحة من المتتبع"
+
+#~ msgid "Invalid data from tracker"
+#~ msgstr "بيانات صحيحة من المتتبع"
+
+#~ msgid "Invalid tracker URL"
+#~ msgstr "مسار المتتبع غير صحيح"
+
+#~ msgid "Cannot bind to udp port %1 or the 10 following ports."
+#~ msgstr "لا يمكن ربط منفذ udp %1 أو المنافذة العشرة التالية."
+
+#~ msgid "Unknown client"
+#~ msgstr "عميل غير معروف"
+
+#~ msgid ""
+#~ "An error occurred while loading the torrent <b>%1</b>:<br/><b>%2</b><br/"
+#~ ">The torrent is probably corrupt or is not a valid torrent file."
+#~ msgstr ""
+#~ "حدث خطأ أثناء محاولة فتح التورنت <b>%1</b>:<br/><b>%2</b><br/> من المحتمل "
+#~ "أن يكون معطوب أو أنه ليس ملف تورنت."
+
+#~ msgid ""
+#~ "An error occurred while loading the torrent:<br/><b>%1</b><br/>The "
+#~ "torrent is probably corrupt or is not a valid torrent file."
+#~ msgstr ""
+#~ "حدث خطأ أثناء محاولة فتح التورنت:<br/><b>%1</b><br/> من المحتمل أن يكون "
+#~ "معطوب أو أنه ليس ملف تورنت "
+
+#~ msgid "Unable to create %1 : %2"
+#~ msgstr "غير قادر على إنشاء %1 : %2"
+
+#~ msgid ""
+#~ "You are already downloading this torrent %1, the list of trackers of both "
+#~ "torrents has been merged."
+#~ msgstr ""
+#~ "هذا  التورنت يتم تنزيله الآن بالفعل %1، تم دمج قائمة المتتبعين لكلا "
+#~ "الملفين."
+
+#~ msgid "You are already downloading the torrent %1"
+#~ msgstr "أنت أصلا تقوم بتنزيل هذا التورنت %1"
+
+#~ msgid "Not started"
+#~ msgstr "لم يبدأ"
+
+#~ msgid "Seeding completed"
+#~ msgstr "اكتمل التوزيع"
+
+#, fuzzy
+#~| msgid "Seeding"
+#~ msgctxt "Status of a torrent file"
+#~ msgid "Seeding"
+#~ msgstr "توزيع"
+
+#~ msgid "Downloading"
+#~ msgstr "يجري التنزيل"
+
+#~ msgid "Stopped"
+#~ msgstr "متوقف"
+
+#~ msgid "Allocating diskspace"
+#~ msgstr "تخصيص مساحة على القرص"
+
+#, fuzzy
+#~| msgid "Currently downloading:"
+#~ msgid "Queued for downloading"
+#~ msgstr "ما يجري تحميله حالياً:"
+
+#~ msgid "Checking data"
+#~ msgstr "فحص البيانات"
+
+#~ msgid "Stopped. No space left on device."
+#~ msgstr "متوقف . لا توجد مساحة كافية على القرص"
+
+#~ msgid "Cannot open file %1: %2"
+#~ msgstr "لا يمكن فتح الملف %1: %2"
+
+#~ msgid "Cannot create index file: %1"
+#~ msgstr "لايمكن انشاء ملف الفهرس: %1"
+
+#, fuzzy
+#~| msgid "Corrupted torrent!"
+#~ msgid "Corrupted torrent."
+#~ msgstr "تورنت معطوب"
+
+#~ msgid " Unable to open torrent file %1 : %2"
+#~ msgstr "غير قادر على فتح ملف التورنت %1: %2"
+
+#~ msgid "Parse Error"
+#~ msgstr "خطأ لغوي"
+
+#~ msgid "Cannot open file : %1 : %2"
+#~ msgstr "تعذّر فتح الملف : %1 : %2"
+
+#~ msgid "Not connected"
+#~ msgstr "غير متصل"
+
+#~ msgid "Resolving proxy %1:%2"
+#~ msgstr "تحليل الوسيط %1:%2"
+
+#~ msgid "Resolving hostname %1"
+#~ msgstr "تحليل اسم المضيف %1"
+
+#~ msgid "Connection closed"
+#~ msgstr "أُعلق الاتصال"
+
+#~ msgid "Error: request failed: %1"
+#~ msgstr "خطأ: فشل الطلب: %1"
+
+#~ msgid "Connected"
+#~ msgstr "متصل"
+
+#~ msgid "Error: Failed to connect to webseed"
+#~ msgstr "خطأ : فشل في الاتصال ببذرة الوب"
+
+#~ msgid "Connecting"
+#~ msgstr "جاري الاتصال..."
+
+#~ msgid "Failed to connect to webseed"
+#~ msgstr "فشل في الاتصال ببذرة الوب"
+
+#~ msgid "Failed to resolve hostname of webseed"
+#~ msgstr "فشل في تحليل اسم المضيف لبذرة وب"
+
+#~ msgid "Error: failed to connect, server not responding"
+#~ msgstr "خطأ: فشل في الاتصال، الخادم لا يستجيب"
+
+#~ msgid "Error: request timed out"
+#~ msgstr "خطأ: أنتهى الوقت المقدر للطلب"
+
+#~ msgid "1 peer"
+#~ msgid_plural "%1 peers"
+#~ msgstr[0] "لا نظراء"
+#~ msgstr[1] "نظير واحد"
+#~ msgstr[2] "نظيران"
+#~ msgstr[3] "%1 نظراء"
+#~ msgstr[4] "%1 نظيرًا"
+#~ msgstr[5] "%1 نظير"
+
+#~ msgid "Not in use"
+#~ msgstr "غير مستخدم"
+
+#~ msgid "Cannot write to %1 : %2"
+#~ msgstr "تعذّرت الكتابة إلى %1: %2"
+
+#~ msgid "Cannot read from %1"
+#~ msgstr "تعذّرت القراءة من %1"
+
+#~ msgid "Cannot open log file %1 : %2"
+#~ msgstr "تعذر فتح ملف السجل %1: %2"
+
+#~ msgid "Cannot create directory %1"
+#~ msgstr "تعذّر إنشاء المجلد %1"
+
+#~ msgid "Cannot symlink %1 to %2: %3"
+#~ msgstr "تعذّر ربط %1 ب %2: %3"
+
+#~ msgid "Cannot move %1 to %2: %3"
+#~ msgstr "تغذّر نقل %1 إلى %2: %3"
+
+#~ msgid "Cannot copy %1 to %2: %3"
+#~ msgstr "تعذّر نسخ %1 إلى %2: %3"
+
+#~ msgid "Cannot delete %1: %2"
+#~ msgstr "تعذّر حذف %1: %2"
+
+#~ msgid "Cannot create %1: %2"
+#~ msgstr "تعذّر إنشاء %1: %2"
+
+#~ msgid "Cannot calculate the filesize of %1: %2"
+#~ msgstr "تعذّر حساب حجم الملف %1: %2"
+
+#~ msgid "Cannot calculate the filesize : %1"
+#~ msgstr "تعذّر حساب حجم الملف: %1"
+
+#~ msgid "Cannot expand file: %1"
+#~ msgstr "تعذّر تمديد الملف: %1"
+
+#~ msgid "Cannot seek in file : %1"
+#~ msgstr "تعذّر البحث في الملف: %1"
+
+#~ msgid "1 day "
+#~ msgid_plural "%1 days "
+#~ msgstr[0] "يومًا"
+#~ msgstr[1] "يوم واحد"
+#~ msgstr[2] "يومين"
+#~ msgstr[3] "%1 أيام"
+#~ msgstr[4] "%1 يومًا"
+#~ msgstr[5] "%1 يوم"
+
+#~ msgid "General"
+#~ msgstr "عام"
+
+#~ msgid "Connections"
+#~ msgstr "الاتصالات"
+
+#~ msgid "Tracker"
+#~ msgstr "الممتبعون"
+
+#~ msgid "Disk Input/Output"
+#~ msgstr "الادخال والأخراج للقرص"
+
+#~ msgid ""
+#~ "Another group with this name already exists. Please select a different "
+#~ "name."
+#~ msgstr "توجد بالفعل مجموعة أخرى بهذا الاسم. من فضلك اختر اسمًا آخرًا."
+
+#~ msgid "Group Name Already in Use"
+#~ msgstr "اسم المجموعة مستخدم بالفعل"
+
+#~ msgid "Add"
+#~ msgstr "أضف"
+
+#~ msgid "Delete"
+#~ msgstr "احذف"
+
+#~ msgid "Configure..."
+#~ msgstr "اضبط..."
+
+#~ msgid "Details for: %1"
+#~ msgstr "تفاصيل: %1"
+
+#~ msgid "All downloads"
+#~ msgstr "جميع التنزيلات"
+
+#~ msgid "Finished downloads"
+#~ msgstr "التنزيلات المنتهية"
+
+#~ msgid "Transfers:"
+#~ msgstr "عمليات النقل:"
+
+#~ msgid "Downloads"
+#~ msgstr "التنزيلات"
+
+#~ msgid "Transfer details:"
+#~ msgstr "تفاصيل النقل:"
+
+#~ msgid "Transfer List"
+#~ msgstr "قائمة النقل"
+
+#~ msgid "Expandable transfer details instead of separate tabs"
+#~ msgstr "تفاصيل نقل قابلة للتمدد بدلاً من ألسنة منفصلة"
+
+#~ msgid "Threads"
+#~ msgstr "مسارات المعالجة"
+
+#~ msgid "Number of threads:"
+#~ msgstr "عدد مسارات المعالجة:"
+
+#, fuzzy
+#~| msgid "Number of threads:"
+#~ msgid "Name of the license"
+#~ msgstr "عدد مسارات المعالجة:"
+
+#, fuzzy
+#~| msgid "Number of threads:"
+#~ msgid "URL to the license"
+#~ msgstr "عدد مسارات المعالجة:"
+
+#~ msgctxt "The transfer is delayed"
+#~ msgid "Delayed"
+#~ msgstr "مؤجل"
+
+#~ msgid ""
+#~ "Destination file \n"
+#~ "%1\n"
+#~ "already exists.\n"
+#~ "Do you want to overwrite it?"
+#~ msgstr ""
+#~ "الملف الهدف \n"
+#~ "%1\n"
+#~ "موجود مسبقًا.\n"
+#~ "أتريد الكتابة فوقه؟"
+
+#~ msgid "Overwrite destination"
+#~ msgstr "مكان الكتابة"
+
+#~ msgid "Cannot remove torrent default tracker."
+#~ msgstr "لا يمكن إزالة متتبع التورنت الإفتراضي."
+
+#~ msgid "You cannot add trackers to a private torrent"
+#~ msgstr "لا يمكنك إضافة متتبع إلى تورنت خاص."
+
+#~ msgid "Cannot migrate %1 : %2"
+#~ msgstr "لا يمكن ترحيل %1 : %2"
+
+#~ msgid ""
+#~ "The torrent %1 was started with a previous version of KTorrent. To make "
+#~ "sure this torrent still works with this version of KTorrent, we will "
+#~ "migrate this torrent. You will be asked for a location to save the "
+#~ "torrent to. If you press cancel, we will select your home directory."
+#~ msgstr ""
+#~ "التورنت %1 بدأ مع إصدار سابقة من KTorrent. للتأكد من أن هذا التورنت لا "
+#~ "يزال يعمل مع هذا الإصدار من KTorrent ، سيتم ترحيل هذا التورنت. سيتم سؤالك "
+#~ "عن مكان فظ التورنت. إذا قمت بالضغط على الغ ، سيتم اختيار مجلد المنزل "
+#~ "الخاص بك ."
+
+#~ msgid "Select Folder to Save To"
+#~ msgstr "إختر المجلد المراد الحفظ فيه"
+
+#~ msgid "Queued"
+#~ msgstr "رصف في طابور"
+
+#~ msgid "Current Tracker"
+#~ msgstr "المتتبع الحالي:"
+
+#, fuzzy
+#~| msgid "Score"
+#~ msgid "Scrape"
+#~ msgstr "المُحرَز"
+
+#~ msgid "Available Trackers"
+#~ msgstr "المتتبعين المتوفرين"
+
+#, fuzzy
+#~| msgctxt "@action"
+#~| msgid "Enter URL: "
+#~ msgid "Enter an url"
+#~ msgstr "أدخل URL:"
+
+#, fuzzy
+#~| msgid "Use search engines"
+#~ msgid "Urls list of the available search engines"
+#~ msgstr "استخدم محركات البحث"
+
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Delete Selected"
+#~ msgstr "أحذف المحدد"
+
+#, fuzzy
+#~| msgid "Clear History"
+#~ msgid "We are sorry"
+#~ msgstr "مسح المحفوظات"
+
+#~ msgid "Rename transfer"
+#~ msgstr "أعد تسمية النقل"
+
+#~ msgid "Download URL again?"
+#~ msgstr "تنزيل الرابط مرة أخرى ؟"
+
+#, fuzzy
+#~| msgid "File"
+#~ msgctxt "file in a filsystem"
+#~ msgid "File"
+#~ msgstr "ملف"
+
+#, fuzzy
+#~| msgid ""
+#~| "Are you sure that you want to remove\n"
+#~| "the group named %1?"
+#~ msgid "Are you sure that you want to remove all selected groups?"
+#~ msgstr ""
+#~ "هل أنت متأكد من أنك تريد حذف\n"
+#~ "المجموعة المسماة%1؟"
+
+#~ msgid "Name"
+#~ msgstr "الاسم"
+
+#~ msgid "Remaining Time"
+#~ msgstr "الوقت المتبقي"
+
+#~ msgid "KGet - Download Manager"
+#~ msgstr "KGet - مدير التحميل"
+
+#~ msgctxt "@label transfer source"
+#~ msgid "Source:"
+#~ msgstr "المصدر:"
+
+#~ msgid "Minimal segment size:"
+#~ msgstr "حجم القطعة الأدنى:"
+
+#~ msgid "kBi"
+#~ msgstr "ك.بت"
+
+#~ msgid "Save data every:"
+#~ msgstr "حفظ البيانات كل :"
+
+#, fuzzy
+#~| msgid ""
+#~| "You will lose all data in these files, are you sure you want to do this ?"
+#~ msgid ""
+#~ "You will lose all data in these files, are you sure you want to do this?"
+#~ msgstr ""
+#~ "ستفقد جميع البيانات في هذه الملفات ، هل أنت متأكد من أنك تريد فعل هذا ؟"
+
+#~ msgid "Maintainer, Core Developer"
+#~ msgstr "مشرف ومطور أساسي"
+
+#~ msgid "Cannot expand file : %1"
+#~ msgstr "لا يمكن تمديد الملف : %1"
+
+#~ msgid "Peers"
+#~ msgstr "النظراء"
+
+#~ msgid "Torrent has no announce or nodes field"
+#~ msgstr "لا يحتوي التورنت على حقل إعلان أو عُقد"
+
+#, fuzzy
+#~| msgid ""
+#~| "An error occurred while loading the torrent.<br/>The torrent is probably "
+#~| "corrupt or is not a torrent file."
+#~ msgid ""
+#~ "An error occurred while loading the torrent.\n"
+#~ "The torrent is probably corrupt or is not a torrent file."
+#~ msgstr ""
+#~ "حدث خطأ أثناء محاولة فتح التورنت .<br/> من المحتمل أن يكون معطوب أو أنه "
+#~ "ليس ملف تورنت "
+
+#, fuzzy
+#~| msgid "Select all"
+#~ msgid "&Select all"
+#~ msgstr "انتق الكل"
+
+#~ msgid "&Transfer History..."
+#~ msgstr "محفوظات الن&قل..."
+
+#~ msgid "&Group Settings..."
+#~ msgstr "إعدادات المجمو&عة..."
+
+#~ msgid "&Transfer Settings..."
+#~ msgstr "إعدادات النق&ل..."
+
+#, fuzzy
+#~| msgid "Download-Speed:"
+#~ msgid "Download Speed:"
+#~ msgstr "سرعة التنزيل:"
+
+#, fuzzy
+#~| msgid "Upload-Speed:"
+#~ msgid "Upload Speed:"
+#~ msgstr "سرعة الرفع:"
+
+#, fuzzy
+#~| msgid "Import links"
+#~ msgid "&Import links"
+#~ msgstr "استورد روابط"
+
+#~ msgid "The group name is empty"
+#~ msgstr "اسم المجموعة فارغ"
+
+#, fuzzy
+#~| msgid ""
+#~| "A group can not have an empty name\n"
+#~| "Please select a new one"
+#~ msgid ""
+#~ "A group can not have an empty name.\n"
+#~ "Please select a new one."
+#~ msgstr ""
+#~ "لا يمكن أن تحتوي المجموعة على اسم فارغ\n"
+#~ "الرجاء اختيار اسم جديد"
+
+#, fuzzy
+#~| msgid "You can not delete this group!"
+#~ msgid "You can not delete this group."
+#~ msgstr "لا تستطيع حذف هذه المجموعة"
+
+#, fuzzy
+#~| msgid "Delete"
+#~ msgid "&Delete"
+#~ msgstr "احذف"
+
+#, fuzzy
+#~| msgid "Cancel"
+#~ msgid "&Cancel"
+#~ msgstr "ألغ"
+
+#~ msgid "Default Download Folders"
+#~ msgstr "مجلدات التنزيل الافتراضية"
+
+#~ msgid "Folder and extension can not be empty."
+#~ msgstr "المجلد والامتداد لا يمكن أن تكون فارغة ."
+
+#~ msgid "Ask save location for every new download"
+#~ msgstr "اسأل عن مكان الحفظ لكل عملية تنزيل جديدة"
+
+#~ msgid "Place new downloads inside default folder:"
+#~ msgstr "ضع التنزيلات الجديدة داخل المجلد الإفتراضي:"
+
+#~ msgid "Except for specific file types"
+#~ msgstr "باستثناء أنواع ملفات محددة"
+
+#~ msgid "Specify extension and target folder:"
+#~ msgstr "حدد الامتداد والمجلد الهدف:"
+
+#, fuzzy
+#~| msgid "File-Extension"
+#~ msgid "File Extension"
+#~ msgstr "امتداد الملف"
+
+#~ msgid "Default Folder"
+#~ msgstr "المجلد الافتراضي"
+
+#~ msgid "Edit"
+#~ msgstr "حرر"
+
+#~ msgid ""
+#~ "Use a regular expression for the extension. \n"
+#~ "Examples: *.tar.gz or *movies*.zip"
+#~ msgstr ""
+#~ "استخدم التعابير الشرطة للامتداد.\n"
+#~ "على سبيل المثال: *.tar.gz أو *فيديو*.zip"
+
+#~ msgid "Set as default folder"
+#~ msgstr "ضبط كمجلد افتراضي"
+
+#, fuzzy
+#~| msgid "Set as default folder"
+#~ msgid "extRegExp, defaultFolder"
+#~ msgstr "ضبط كمجلد افتراضي"
+
+#~ msgid "Downloading.."
+#~ msgstr "جاري التنزيل"
+
+#~ msgid "Advanced-Details for %1"
+#~ msgstr "التفاصيل المتقدمة لـ %1"
+
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading.."
+#~ msgstr "جاري التنزيل"
+
+#~ msgctxt "@label Title in header"
+#~ msgid "Webinterface"
+#~ msgstr "واجهة ويب"
+
+#~ msgid "Downloads number:"
+#~ msgstr "عدد التنزيلات:"
+
+#~ msgid "Assigned Peers"
+#~ msgstr "النظراء المعينين"
+
+#~ msgid "%1 GB"
+#~ msgstr "%1 جيجابايت"
+
+#~ msgid "%1 MB"
+#~ msgstr "%1 ميجابايت"
+
+#~ msgid "%1 KB"
+#~ msgstr "%1 ك.بايت"
+
+#~ msgid "%1 B"
+#~ msgstr "%1 بايت"
+
+#~ msgid "%1 KB/s"
+#~ msgstr "%1 ك.بايت/ثانية"

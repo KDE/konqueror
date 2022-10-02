@@ -1,0 +1,2331 @@
+# translation of kcmkonqhtml.po to
+# translation of kcmkonqhtml.po to
+# translation of kcmkonqhtml.po to Xhosa
+# K Desktop Environment - kdebase
+# Copyright (C) 2001 translate.org.za
+# Antoinette Dekeni <antoinette@transalate.org.za>, 2001.
+# Lwandle Mgidlana <lwandle@translate.org.za>, 2002
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkonqhtml\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-24 00:46+0000\n"
+"PO-Revision-Date: 2002-11-04 09:23SAST\n"
+"Last-Translator: Lwandle Mgidlana <lwandle@translate.org.za>\n"
+"Language-Team: Xhosa <xhosa@translate.org.za>\n"
+"Language: xh\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0beta2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Lwandle Mgidlana"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "lwandle@translate.org.za"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pShowMMBInTabs)
+#: advancedTabOptions.ui:21
+#, kde-format
+msgid ""
+"This will open a new tab instead of a new window in various situations, such "
+"as choosing a link or a folder with the middle mouse button."
+msgstr ""
+"Oku kuzakuvula isithuba esitsha endaweni ye window entsha kwiziganeko "
+"eziliqela, njengokukhetha ikhonkco okanye incwadi eneenkcukacha ngeqosha le "
+"mouse elisembindini."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pShowMMBInTabs)
+#: advancedTabOptions.ui:24
+#, kde-format
+msgid "Open &links in new tab instead of in new window"
+msgstr "Ivula &amakhonkco kwisithuba esitsha endaweni ye window entsha"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPopupsWithinTabs)
+#: advancedTabOptions.ui:31
+#, kde-format
+msgid ""
+"Whether or not JavaScript popups if allowed shall open in a new tab or in a "
+"new window."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pPopupsWithinTabs)
+#: advancedTabOptions.ui:34
+#, fuzzy, kde-format
+msgid "Open pop&ups in new tab instead of in new window"
+msgstr "Ivula &amakhonkco kwisithuba esitsha endaweni ye window entsha"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pKonquerorTabforExternalURL)
+#: advancedTabOptions.ui:41
+#, kde-format
+msgid ""
+"When you click a URL in another KDE program or call kfmclient to open a URL, "
+"the current desktop will be searched for a non-minimized Konqueror and, if "
+"found, the URL opened as a new tab within it. Otherwise a new Konqueror "
+"window will be opened with the required URL."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pKonquerorTabforExternalURL)
+#: advancedTabOptions.ui:44
+#, kde-format
+msgid "Open as tab in existing Konqueror when URL is called externally"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pNewTabsInBackground)
+#: advancedTabOptions.ui:51
+#, fuzzy, kde-format
+msgid ""
+"This will open a new tab in the background, instead of in the foreground."
+msgstr ""
+"Oku kuzakuvula isithuba esitsha ngaphambili kungenjalo njengesithuba "
+"sesiqalo."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
+#: advancedTabOptions.ui:54
+#, fuzzy, kde-format
+msgid "O&pen new tabs in the background"
+msgstr ""
+"Oku kuzakuvula isithuba esitsha ngaphambili kungenjalo njengesithuba "
+"sesiqalo."
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pOpenAfterCurrentPage)
+#: advancedTabOptions.ui:61
+#, fuzzy, kde-format
+msgid ""
+"This will open a new tab opened from a page after the current tab, instead "
+"of after the last tab."
+msgstr ""
+"Oku kuzakuvula isithuba esitsha ngaphambili kungenjalo njengesithuba "
+"sesiqalo."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pOpenAfterCurrentPage)
+#: advancedTabOptions.ui:64
+#, fuzzy, kde-format
+msgid "Open &new tab after current tab"
+msgstr ""
+"Oku kuzakuvula isithuba esitsha ngaphambili kungenjalo njengesithuba "
+"sesiqalo."
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pDynamicTabbarHide)
+#: advancedTabOptions.ui:71
+#, kde-format
+msgid ""
+"This will display the tab bar only if there are two or more tabs. Otherwise "
+"it will always be displayed."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pDynamicTabbarHide)
+#: advancedTabOptions.ui:74
+#, kde-format
+msgid "Hide the tab bar when only one tab is open"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
+#: advancedTabOptions.ui:81
+#, kde-format
+msgid "This will display close buttons inside each tab."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pPermanentCloseButton)
+#: advancedTabOptions.ui:84
+#, kde-format
+msgid "&Show close button on tabs"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pMiddleClickClose)
+#: advancedTabOptions.ui:91
+#, kde-format
+msgid ""
+"When you click on a tab using the middle mouse button or mouse wheel, it "
+"will close that tab."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pMiddleClickClose)
+#: advancedTabOptions.ui:94
+#, kde-format
+msgid "Middle-click on a tab to close it"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabConfirm)
+#: advancedTabOptions.ui:101
+#, kde-format
+msgid ""
+"This will ask you whether you are sure you want to close a window when it "
+"has multiple tabs opened in it."
+msgstr ""
+"Oku kuzakubuza ukuba uqinisekile ukuba ufuna ukuvala i window xa inezithuba "
+"ezininzi ezivulekileyo kuyo."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pTabConfirm)
+#: advancedTabOptions.ui:104
+#, kde-format
+msgid "Confirm &when closing windows with multiple tabs"
+msgstr "Qinisekisa &xa ukhetha i windows ezinezithuba ezininzi"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabCloseActivatePrevious)
+#: advancedTabOptions.ui:111
+#, kde-format
+msgid ""
+"When checking this the previous used or opened tab will be activated when "
+"you close the current active tab instead of the one right to the current tab."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pTabCloseActivatePrevious)
+#: advancedTabOptions.ui:114
+#, kde-format
+msgid "Activate previously used tab when closing the current tab"
+msgstr ""
+
+#: appearance.cpp:39
+#, kde-format
+msgctxt "@title:tab"
+msgid "General"
+msgstr ""
+
+#: appearance.cpp:40
+#, kde-format
+msgctxt "@title:tab"
+msgid "Fonts"
+msgstr ""
+
+#: appearance.cpp:41
+#, kde-format
+msgctxt "@title:tab"
+msgid "Stylesheets"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, GroupBox3_2)
+#: appearance.cpp:48 css/csscustom.ui:296
+#, kde-format
+msgid "Images"
+msgstr "Imifanekiso"
+
+#: appearance.cpp:52
+#, kde-format
+msgid "A&utomatically load images"
+msgstr "Y&ongeza imifanekiso ngojuzitshintshayo"
+
+#: appearance.cpp:53
+#, fuzzy, kde-format
+msgid ""
+"<html>If this box is checked, Konqueror will automatically load any images "
+"that are embedded in a web page. Otherwise, it will display placeholders for "
+"the images, and you can then manually load the images by clicking on the "
+"image button.<br />Unless you have a very slow network connection, you will "
+"probably want to check this box to enhance your browsing experience.</html>"
+msgstr ""
+"Ukuba le bhokisi iyakhangelwa, iKonqueror izakulayishwa ngokuzenzekela "
+"imifanekiso elungiselwe iphepha le web. Kungenjalo, izakubonisa ababambi "
+"bendawo bemifanekiso, kwaye ungalayisha imifanekiso ngokunqakraza kwiqhosha "
+"lomfanekiso.<br> Ngaphandle kokuba unodibaniso olucothayo kakhulu lomsebenzi "
+"womnatha, ungafuna ngenene ukukhangela le bhokisi ukwenza ulwazi lwakho "
+"lokukhangela iincwadi."
+
+#: appearance.cpp:63
+#, kde-format
+msgid "Dra&w frame around not completely loaded images"
+msgstr ""
+
+#: appearance.cpp:64
+#, fuzzy, kde-format
+msgid ""
+"<html>If this box is checked, Konqueror will draw a frame as a placeholder "
+"around images embedded in a web page that are not yet fully loaded.<br />You "
+"will probably want to check this box to enhance your browsing experience, "
+"especially if have a slow network connection.</html>"
+msgstr ""
+"Ukuba le bhokisi iyakhangelwa, iKonqueror izakulayishwa ngokuzenzekela "
+"imifanekiso elungiselwe iphepha le web. Kungenjalo, izakubonisa ababambi "
+"bendawo bemifanekiso, kwaye ungalayisha imifanekiso ngokunqakraza kwiqhosha "
+"lomfanekiso.<br> Ngaphandle kokuba unodibaniso olucothayo kakhulu lomsebenzi "
+"womnatha, ungafuna ngenene ukukhangela le bhokisi ukwenza ulwazi lwakho "
+"lokukhangela iincwadi."
+
+#: appearance.cpp:74
+#, kde-format
+msgctxt "animations"
+msgid "Enabled"
+msgstr ""
+
+#: appearance.cpp:75
+#, kde-format
+msgctxt "animations"
+msgid "Disabled"
+msgstr ""
+
+#: appearance.cpp:76
+#, kde-format
+msgid "Show Only Once"
+msgstr "Bonisa Kuphela Kanye"
+
+#: appearance.cpp:77
+#, fuzzy, kde-format
+msgid ""
+"<html>Controls how Konqueror shows animated images:<br /><ul><li><b>Enabled</"
+"b>: Show all animations completely.</li><li><b>Disabled</b>: Never show "
+"animations, show the starting image only.</li><li><b>Show only once</b>: "
+"Show all animations completely but do not repeat them.</li></ul></html>"
+msgstr ""
+"Ilawula indlela iKonqueror ebonisa izilwanyana imfanekiso: "
+"<br><ul><li><b>Yenziswe</b>: Bonisa zonke iimposiso ngokugcweleyo.</ii> "
+"<li><b>Khubaza </b>: Ungaze ubonise iimposiso, bonisa uqalo lwe nto qa.</ii> "
+"<li><b>Bonisa kanye</b>; Bonisa zonke iimposiso kodwa ungaziphindi </li>"
+
+#: appearance.cpp:82
+#, kde-format
+msgid "A&nimations:"
+msgstr "&Iimpiliso:"
+
+#: appearance.cpp:85 htmlopts.cpp:110
+#, kde-format
+msgctxt "@title:group"
+msgid "Miscellaneous"
+msgstr ""
+
+#: appearance.cpp:90
+#, kde-format
+msgctxt "underline"
+msgid "Enabled"
+msgstr ""
+
+#: appearance.cpp:91
+#, kde-format
+msgctxt "underline"
+msgid "Disabled"
+msgstr ""
+
+#: appearance.cpp:92
+#, kde-format
+msgid "Only on Hover"
+msgstr "Kwi Hover"
+
+#: appearance.cpp:93
+#, kde-format
+msgid "Und&erline links:"
+msgstr "Yenza &umgca ngaphantsi kwamakhonkco:"
+
+#: appearance.cpp:96
+#, fuzzy, kde-format
+msgid ""
+"<html>Controls how Konqueror handles underlining hyperlinks:<br /"
+"><ul><li><b>Enabled</b>: Always underline links</li><li><b>Disabled</b>: "
+"Never underline links</li><li><b>Only on Hover</b>: Underline when the mouse "
+"is moved over the link</li></ul><br /><i>Note: The site's CSS definitions "
+"can override this value.</i></html>"
+msgstr ""
+"Ilawula indlela iKonqueror ephatha ngayo ufako lomgca amakhonkco aphezulu:"
+"<br><ul><li><b>Oko</b>: Ifaka umgca ngaphantsi oko amakhonkco</"
+"li><li><b>Suku</b>: Sukufaka umgca ngaphantsi kwamakhonkco</li><li><b>Hover</"
+"b>: Faka umgca ngaphantsi xa imouse isusiwe phezu kwekhonkco</li></"
+"ul><br><i>Qaphela: I nkcazelo yenxuwa le CSS lingaliqhuba ngaphezulu eli "
+"xabiso</i>"
+
+#: appearance.cpp:105
+#, kde-format
+msgid "When Efficient"
+msgstr ""
+
+#: appearance.cpp:106
+#, kde-format
+msgctxt "smooth scrolling"
+msgid "Always"
+msgstr ""
+
+#: appearance.cpp:107
+#, kde-format
+msgctxt "soft scrolling"
+msgid "Never"
+msgstr ""
+
+#: appearance.cpp:108
+#, kde-format
+msgid "S&mooth scrolling:"
+msgstr ""
+
+#: appearance.cpp:110
+#, kde-format
+msgid ""
+"<html>Determines whether Konqueror should use smooth steps to scroll HTML "
+"pages, or whole steps:<br /><ul><li><b>Always</b>: Always use smooth steps "
+"when scrolling.</li><li><b>Never</b>: Never use smooth scrolling, scroll "
+"with whole steps instead.</li><li><b>When Efficient</b>: Only use smooth "
+"scrolling on pages where it can be achieved with moderate usage of system "
+"resources.</li></ul></html>"
+msgstr ""
+
+#: appearance.cpp:119
+#, kde-format
+msgid ""
+"<h1>Konqueror Fonts</h1>On this page, you can configure which fonts "
+"Konqueror should use to display the web pages you view."
+msgstr ""
+"<h1>Imigca ye Konqueror</h1>Kweliphepha, uyakwazi ukuqwalasela ukuba izakuba "
+"yeyiphi imgca ye Konqueror ezakusebenziswa ukubonisa amaphepha akho e web "
+"awajongayo."
+
+#: appearance.cpp:131
+#, kde-format
+msgid "Font Si&ze"
+msgstr "&Ubungakanani bomgca"
+
+#: appearance.cpp:134 appearance.cpp:152
+#, kde-format
+msgid "This is the relative font size Konqueror uses to display web sites."
+msgstr ""
+"Lo ngumgca ozalanayo iKonqueror ewusebenzisayo ukubonisa amanxuwa e web."
+
+#: appearance.cpp:138
+#, kde-format
+msgid "M&inimum font size:"
+msgstr "&Ubungakanani obuncinane bomgca:"
+
+#: appearance.cpp:142
+#, fuzzy, kde-format
+msgid ""
+"Konqueror will never display text smaller than this size,<br />overriding "
+"any other settings."
+msgstr ""
+"iKonqueror ayizukubonisa okubhaliweyo okuncinane kunobungakanani,<br>iqhuba "
+"ngaphezulu naziphi ezinye izicwangciso"
+
+#: appearance.cpp:147
+#, kde-format
+msgid "&Medium font size:"
+msgstr "U&bungakanani bomgca ophakathi:"
+
+#: appearance.cpp:160
+#, kde-format
+msgid "S&tandard font:"
+msgstr "U&mgca osezantsi:"
+
+#: appearance.cpp:161
+#, kde-format
+msgid "This is the font used to display normal text in a web page."
+msgstr ""
+"Lo mgca osetyenziswa ukubonisa okubhaliweyo okuqhelekileyo kwiphepha le web."
+
+#: appearance.cpp:165
+#, kde-format
+msgid "&Fixed font:"
+msgstr "&Umgca olungisiweyo:"
+
+#: appearance.cpp:166
+#, kde-format
+msgid ""
+"This is the font used to display fixed-width (i.e. non-proportional) text."
+msgstr ""
+"Lo ngumgca osetyenziswayo ukubonisa okulungisiweyo-ububanzi (kuthetha ukuba "
+"engathele-kisekiyo) okubhaliweyo."
+
+#: appearance.cpp:170
+#, kde-format
+msgid "S&erif font:"
+msgstr "&Umgca we serif:"
+
+#: appearance.cpp:171
+#, kde-format
+msgid "This is the font used to display text that is marked up as serif."
+msgstr ""
+"Lo ngumgca osetyenziswa ukubonisa okubhaliweyo okuphawulwe njenge serif."
+
+#: appearance.cpp:175
+#, kde-format
+msgid "Sa&ns serif font:"
+msgstr "&Umgca we Sans Serif"
+
+#: appearance.cpp:176
+#, kde-format
+msgid "This is the font used to display text that is marked up as sans-serif."
+msgstr ""
+"Lo mgca usetyenziswa ukubonisa okubhaliweyo okuphawulwe njenge sans-serif."
+
+#: appearance.cpp:180
+#, kde-format
+msgid "C&ursive font:"
+msgstr "&Umgca owenziwa ngaphandle kokunyusa usiba konobumba:"
+
+#: appearance.cpp:181
+#, kde-format
+msgid "This is the font used to display text that is marked up as italic."
+msgstr ""
+"Lo mgca usetyenziswa ukubonisa okubhaliweyo okuphawulwe njenge Italic."
+"(kekeleyo)"
+
+#: appearance.cpp:185
+#, kde-format
+msgid "Fantas&y font:"
+msgstr "&Umgca woyilo:"
+
+#: appearance.cpp:186
+#, kde-format
+msgid ""
+"This is the font used to display text that is marked up as a fantasy font."
+msgstr ""
+"Lo mgca usetyenziswa ukubonisa okubhaliweyo ophawulwe njengomgca woyilo."
+
+#: appearance.cpp:195
+#, kde-format
+msgid "Font &size adjustment for this encoding:"
+msgstr "Unyenyiso &lobungakanani bomgca we encoding:"
+
+#: appearance.cpp:203 appearance.cpp:401
+#, kde-format
+msgid "Use Language Encoding"
+msgstr "Sebenzisa Ulwimi ye Encoding"
+
+#: appearance.cpp:205
+#, kde-format
+msgid "Default encoding:"
+msgstr "Ulwenzo lwekhowudi yendalo:"
+
+#: appearance.cpp:207
+#, fuzzy, kde-format
+msgid ""
+"Select the default encoding to be used; normally, you will be fine with 'Use "
+"language encoding' and should not have to change this."
+msgstr ""
+"Khetha i encoding engagqibekanga ezakusetyenziswa. Ngokuqhelekileyo, "
+"uzakulunga ngo 'Sebenzisa i encoding yolwimi' kwaye awunaku yitshintsha le "
+"nto."
+
+#. i18n: ectx: property (whatsThis), widget (QWidget, CSSConfigWidget)
+#. i18n: ectx: property (whatsThis), widget (QWidget, CSSCustomDialog)
+#: css/cssconfig.ui:5 css/csscustom.ui:13
+#, kde-format
+msgid ""
+"<b>Stylesheets</b><p>See http://www.w3.org/Style/CSS for further information "
+"on cascading style sheets.</p>"
+msgstr ""
+"<b>Amakhasi ohlobo</b><p>Bona http://www.w3.org/Style/CSS kwinkcukacha "
+"eziphangaleleyo zokuwisa amakhasi ohlobo.</p>"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, ButtonGroup1)
+#: css/cssconfig.ui:17
+#, kde-format
+msgid ""
+"<b>Stylesheets</b><p>Use this groupbox to determine how Konqueror will "
+"render style sheets.</p>"
+msgstr ""
+"<b>Amakhasi ohlobo</b><p>Sebenzisa le bhokisi yeqela ukugqiba indlela i "
+"Konqueror iza kunikezela amakhasi ohlobo.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, ButtonGroup1)
+#: css/cssconfig.ui:20
+#, kde-format
+msgid "Stylesheets"
+msgstr "Amakhasi ohlobo"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, useDefault)
+#: css/cssconfig.ui:26
+#, kde-format
+msgid ""
+"<b>Use default stylesheet</b><p>Select this option to use the default "
+"stylesheet.</p>"
+msgstr ""
+"<b>Sebenzisa ikhasi lohlobo lokwendalo</b><p>Khetha olu khetho ukusebenzisa "
+"lokwendalo lekhasi lohlobo.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useDefault)
+#: css/cssconfig.ui:29
+#, kde-format
+msgid "Us&e default stylesheet"
+msgstr "Sebenzisa &ikhasi lohlobo lokwendala"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, useUser)
+#: css/cssconfig.ui:39
+#, kde-format
+msgid ""
+"<b>Use user-defined stylesheet</b><p>If this box is checked, Konqueror will "
+"try to load a user-defined style sheet as specified in the location below. "
+"The style sheet allows you to completely override the way web pages are "
+"rendered in your browser. The file specified should contain a valid style "
+"sheet (see http://www.w3.org/Style/CSS for further information on cascading "
+"style sheets).</p>"
+msgstr ""
+"<b>Sebenzisa ikhasi lohlobo elichaziweyo-lomsebenzisi</b><p>Ukuba le bhokisi "
+"ikhangelwe, i konqueror iza kuzama ukulayisha ikhasi lohlobo elichaziweyo-"
+"lomsebenzisi njengoko kukhankanyiwe kwindawo engezantsi. IKhasi lohlobo "
+"lizakukuvumela ukugqiba uqhubeko lwendlela amaphepha e web anikezwa ngayo "
+"kumkhangeli wencwadi wakho. Ifayile ekhankanyiweyo izakuqulatha ikhasi "
+"olusebenzayo lohlobo (bona http://www.w3.org/Style/CSS kwinkcukacha "
+"eziphangaleleyo zokuwisa amakhasi ohlobo).</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useUser)
+#: css/cssconfig.ui:42
+#, kde-format
+msgid "Use &user-defined stylesheet"
+msgstr "Sebenzisa &ikhasi lohlobo elichaziweyo-lomsebenzisi"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, useAccess)
+#: css/cssconfig.ui:94
+#, fuzzy, kde-format
+msgid ""
+"<b>Use accessibility stylesheet</b><p>Selecting this option will allow you "
+"to define a default font, font size, and font color with a few simple clicks "
+"of the mouse. Simply wander over to the Customize... dialog and pick out "
+"your desired options.</p>"
+msgstr ""
+"<b>Sebenzisa unikezelo lohlobo lwekhasi oluchaziweyo kwi &quot;"
+"ngokwesiko&quot;-tab</b><p>Ukukhetha olu khetho kuzakuvumela uku chaza umgca "
+"ongagqibekanga, ubungakanani bomgca, kunye nombala womgca ononqakrazo "
+"olumbalwa le mouse.  Jikeleza ngokulula ukwenza isithuba kwaye chola-"
+"cholaiinketho ozifunayo.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useAccess)
+#: css/cssconfig.ui:97
+#, fuzzy, kde-format
+msgid "U&se accessibility stylesheet"
+msgstr "Sebenzisa &ikhasi lohlobo lokwendala"
+
+#. i18n: ectx: property (text), widget (QPushButton, customize)
+#: css/cssconfig.ui:137
+#, fuzzy, kde-format
+msgid "Custom&ize..."
+msgstr "Yenza ngok&usesikweni"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox7)
+#: css/csscustom.ui:21
+#, kde-format
+msgid ""
+"<b>Font family</b><p>A font family is a group of fonts that resemble one "
+"another, with family members that are e.g. bold, italic, or any number of "
+"the above.</p>"
+msgstr ""
+"<b>Uhlobo lwamagama osapho</b><p>Usapho lohlobo lwamagama liqela lohlobo "
+"lwamagama efana kunye namanye, kunye namalungu osapho a umzekelo. amagama "
+"amakhulu, akekeleyo, okanye naliphi na inani lokungentla.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, GroupBox7)
+#: css/csscustom.ui:24
+#, kde-format
+msgid "Font Family"
+msgstr "Isapho Lohlobo lwamagama"
+
+#. i18n: ectx: property (text), widget (QLabel, txtBaseFontFamily)
+#: css/csscustom.ui:30
+#, fuzzy, kde-format
+msgid "Base family:"
+msgstr "&Isiseko sosapho:"
+
+#. i18n: ectx: property (whatsThis), widget (QFontComboBox, fontFamily)
+#: css/csscustom.ui:37
+#, kde-format
+msgid "<p>This is the currently selected font family</p>"
+msgstr "<p>Olu luhlobo lwamagama osapho akhethiweyo angoku</p>"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, sameFamily)
+#: css/csscustom.ui:44
+#, kde-format
+msgid ""
+"<b>Use same family for all text</b><p>Select this option to override custom "
+"fonts everywhere in favor of the base font.</p>"
+msgstr ""
+"<b>Sebenzisa usapho olunye kumbhalo wonke</b><p>Khetha olu khetho ukuqhuba "
+"ngaphezulu uhlobo lwamagama esiko ngokuthanda kwesiseko sohlobo lwamagama.</"
+"p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, sameFamily)
+#: css/csscustom.ui:47
+#, kde-format
+msgid "Use same family for all text"
+msgstr "Sebenzisa usapho olunye kumbhalo wonke"
+
+#. i18n: ectx: property (title), widget (QGroupBox, GroupBox3)
+#: css/csscustom.ui:57
+#, fuzzy, kde-format
+msgid "Font Size"
+msgstr "&Ubungakanani bomgca"
+
+#. i18n: ectx: property (text), widget (QLabel, txtFontsize)
+#: css/csscustom.ui:63
+#, fuzzy, kde-format
+msgid "Base font si&ze:"
+msgstr "U&bungakanani bomgca ophakathi:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:80
+#, kde-format
+msgid "7"
+msgstr "7"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:85
+#, kde-format
+msgid "8"
+msgstr "8"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:90
+#, kde-format
+msgid "9"
+msgstr "9"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:95
+#, kde-format
+msgid "10"
+msgstr "10"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:100
+#, kde-format
+msgid "11"
+msgstr "11"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:105
+#, kde-format
+msgid "12"
+msgstr "12"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:110
+#, kde-format
+msgid "14"
+msgstr "14"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:115
+#, kde-format
+msgid "16"
+msgstr "16"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:120
+#, kde-format
+msgid "20"
+msgstr "20"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:125
+#, kde-format
+msgid "24"
+msgstr "24"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:130
+#, kde-format
+msgid "32"
+msgstr "32"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:135
+#, kde-format
+msgid "48"
+msgstr "48"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:140
+#, kde-format
+msgid "64"
+msgstr "64"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, dontScale)
+#: css/csscustom.ui:148
+#, kde-format
+msgid ""
+"<b>Use same size for all elements</b><p>Select this option to override "
+"custom font sizes in favor of the base font size. All fonts will be "
+"displayed in the same size.</p>"
+msgstr ""
+"<b>Sebenzisa ubungakanani obufanayo beengxenye zonke</b><p>Khetha olu khetho "
+"ukuqhuba ngaphezulu uhlobo lwamagama esiko ngokuthanda kwesiseko "
+"sobungakanani bohlobo lwamagama. Zonke iintlobo zamagama zizakuboniswa "
+"kubungakanani obufanayo.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, dontScale)
+#: css/csscustom.ui:151
+#, kde-format
+msgid "&Use same size for all elements"
+msgstr "&Sebenzisa ubungakanani obufanayo beengxenye zonke"
+
+#. i18n: ectx: property (title), widget (QGroupBox, ButtonGroup2)
+#: css/csscustom.ui:161
+#, kde-format
+msgid "Colors"
+msgstr "Imibala"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, blackOnWhite)
+#: css/csscustom.ui:183
+#, kde-format
+msgid "<b>Black on White</b><p>This is what you normally see.</p>"
+msgstr "<b>Mnyama kokumhlophe</b><p>Oku kokuqhele ukukubona.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, blackOnWhite)
+#: css/csscustom.ui:186
+#, kde-format
+msgid "&Black on white"
+msgstr "&Mnyama kokumhlophe"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, whiteOnBlack)
+#: css/csscustom.ui:196
+#, kde-format
+msgid "<b>White on Black</b><p>This is your classic inverse color scheme.</p>"
+msgstr ""
+"<b>Mhlophe Kokumnyama</b><p>Olu ludweliso olubuyiselwe umbala onempumelelo.</"
+"p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, whiteOnBlack)
+#: css/csscustom.ui:199
+#, kde-format
+msgid "&White on black"
+msgstr "&Mhlophe kwemnyama"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, customColor)
+#: css/csscustom.ui:206
+#, kde-format
+msgid ""
+"<b>Custom</b><p>Select this option to define a custom color for the default "
+"font.</p>"
+msgstr ""
+"<b>Isiko</b><p>Khetha olu khetho ukuchaza umbala wesiko womgca wokwendalo.</"
+"p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, customColor)
+#: css/csscustom.ui:209
+#, kde-format
+msgid "Cus&tom"
+msgstr "&Isiko"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, txtBackground)
+#: css/csscustom.ui:219
+#, kde-format
+msgid ""
+"<b>Background</b><p>This background color is the one displayed behind the "
+"text by default. A background image will override this.</p>"
+msgstr ""
+"<b>Isiqalo</b><p>Lo mbala wesiqalo ngulo ububoniswe ngasemva kokubhaliweyo "
+"kokungagqibekanga. Umfanekiso wendawo yangasemva uzakuyiqhuba ngaphezulu le."
+"</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, txtBackground)
+#: css/csscustom.ui:222
+#, kde-format
+msgid "Bac&kground:"
+msgstr "Indawo yangasemv&a:"
+
+#. i18n: ectx: property (whatsThis), widget (KColorButton, backgroundColorButton)
+#: css/csscustom.ui:238
+#, kde-format
+msgid ""
+"<b>Background</b><p>Behind this door lays the ability to choose a custom "
+"default background.</p>"
+msgstr ""
+"<b>Indawo yangasemva</b><p>Emva kolu cango kukho indlela yokukhetha isiqalo "
+"sokwendalo sesiko.</p>"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, sameColor)
+#: css/csscustom.ui:248
+#, kde-format
+msgid ""
+"<b>Use same color for all text</b><p>Select this option to apply your chosen "
+"color to the default font as well as any custom fonts as specified in a "
+"stylesheet.</p>"
+msgstr ""
+"<b>Sebenzisa umbala omnye kokubhaliweyo konke</b><p>Khetha olu khetho "
+"ukufaka umbala wakho owukhethileyo kumgca ongagqibekanga nakwimigca yesiko "
+"njegoko kukhankanyiwe kwikhasi lohlobo.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, sameColor)
+#: css/csscustom.ui:251
+#, kde-format
+msgid "Use same color for all text"
+msgstr "Sebenzisa umbala omnye kokubhaliweyo konke"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, txtForeground)
+#. i18n: ectx: property (whatsThis), widget (KColorButton, foregroundColorButton)
+#: css/csscustom.ui:261 css/csscustom.ui:280
+#, kde-format
+msgid ""
+"<b>Foreground color</b><p>The foreground color is the color that the text is "
+"drawn in.</p>"
+msgstr ""
+"<b>Umbala wemboniselo yommameli</b><p>Umbala wommameli ngumbala okubhaliweyo "
+"kuzotywe ngawo.</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, txtForeground)
+#: css/csscustom.ui:264
+#, kde-format
+msgid "&Foreground:"
+msgstr "&Indawo yommameli:"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox3_2)
+#: css/csscustom.ui:293
+#, fuzzy, kde-format
+msgid "<b>Images</b>"
+msgstr "<b>Imifanekiso</b><p></b>"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, hideImages)
+#: css/csscustom.ui:302
+#, kde-format
+msgid ""
+"<b>Suppress images</b><p>Selecting this will prevent Konqueror from loading "
+"images.</p>"
+msgstr ""
+"<b>Nyanzela imifanekiso</b><p>Ukukhetha oku kuzakukhusela i Konqueror "
+"ekulayisheni imifanekiso.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, hideImages)
+#: css/csscustom.ui:305
+#, kde-format
+msgid "&Suppress images"
+msgstr "&Nyanzela imifabekiso"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, hideBackground)
+#: css/csscustom.ui:312
+#, kde-format
+msgid ""
+"<b>Suppress background images</b><p>Selecting this option will prevent "
+"Konqueror from loading background images.</p>"
+msgstr ""
+"<b>Nyanzela imifanekiso yendawo yangaphambili</b><p>Ukukhetha olu khetho "
+"kuzakukhusela i Konqueror ekulayisheni imifanekiso yesiqalo.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, hideBackground)
+#: css/csscustom.ui:315
+#, kde-format
+msgid "Suppress background images"
+msgstr "Nyanzela imifanekiso yesiqalo"
+
+#. i18n: ectx: property (title), widget (QGroupBox, previewBox)
+#: css/csscustom.ui:347
+#, kde-format
+msgid "Preview"
+msgstr "Imboniso yangaphambili"
+
+#: css/kcmcss.cpp:51
+#, fuzzy, kde-format
+msgid ""
+"<h1>Konqueror Stylesheets</h1> This module allows you to apply your own "
+"color and font settings to Konqueror by using stylesheets (CSS). You can "
+"either specify options or apply your own self-written stylesheet by pointing "
+"to its location.<br /> Note that these settings will always have precedence "
+"before all other settings made by the site author. This can be useful to "
+"visually impaired people or for web pages that are unreadable due to bad "
+"design."
+msgstr ""
+"<hi>Uhlobo lwamakhasi e Konqueror</h1>Lo mnqongo womlinganiselo ukuvumela "
+"ukufaka umbala wakho kunye nezicwangciso zomgca kwi konqueror ngokusebenzisa "
+"amakhasi ohlobo (CSS). Ungakhankanya noba ziinketho okanye faka elakho-"
+"ikhasi lohlobo elibhaliweyo ngokwalatha kwindawo yayo. <br> Qaphela ukuba "
+"ezi zicwangciso zizakuba zizakuba phambili phambi kwazo zonke ezinye "
+"izicwangciso ezenziwe ngumbhali wenxuwa. Oku kunokubaluncedo kubantu "
+"abangaboniyo ngokwenzakala okanye kumaphepha e web angafundekiyo "
+"ngokuxhomekeke kuyilo olubi."
+
+#: css/kcmcss.cpp:336
+#, fuzzy, kde-format
+msgid ""
+"<html>\n"
+"<head>\n"
+"<style>\n"
+"<!--\n"
+"%1\n"
+"-->\n"
+"</style>\n"
+"</head>\n"
+"<body>\n"
+"<h1>Heading 1</h1>\n"
+"<h2>Heading 2</h2>\n"
+"<h3>Heading 3</h3>\n"
+"\n"
+"<p>User-defined stylesheets allow increased\n"
+"accessibility for visually handicapped\n"
+"people.</p>\n"
+"\n"
+"</body>\n"
+"</html>\n"
+msgstr ""
+"<qt>\n"
+"\n"
+"<h1>Isihloko 1</h1><br/>\n"
+"<h2>Isihloko 2</h2><br/>\n"
+"<h3>Isihloko 3</h3><br/>\n"
+"\n"
+"<p>Amakhasi ohlobo achaziweyo omsebenzisi avumela unikezelo\n"
+"olwandisiweyo kubantu abakhubazekileyo\n"
+"ngokubona.</p>\n"
+"\n"
+"</qt>"
+
+#: domainlistview.cpp:37
+#, kde-format
+msgid "Host/Domain"
+msgstr "Inginginya/Ithambeka"
+
+#: domainlistview.cpp:37
+#, kde-format
+msgid "Policy"
+msgstr "Inkqubo"
+
+#: domainlistview.cpp:45
+#, kde-format
+msgid "&New..."
+msgstr "&Entsha..."
+
+#: domainlistview.cpp:49
+#, kde-format
+msgid "Chan&ge..."
+msgstr "Tsh&intsha..."
+
+#: domainlistview.cpp:53
+#, kde-format
+msgid "De&lete"
+msgstr "Ci&ma"
+
+#: domainlistview.cpp:57
+#, kde-format
+msgid "&Import..."
+msgstr "&Rhweba ngaphakathi..."
+
+#: domainlistview.cpp:63
+#, kde-format
+msgid "&Export..."
+msgstr "&Rhweba ngaphandle..."
+
+#: domainlistview.cpp:71
+#, kde-format
+msgid "Click on this button to manually add a host or domain specific policy."
+msgstr ""
+"Nqakraza kweli qhosha ukudibanisa ngokwencwadi inginginya okanye ithambeka "
+"lenkqubo ekhankanywayo."
+
+#: domainlistview.cpp:73
+#, kde-format
+msgid ""
+"Click on this button to change the policy for the host or domain selected in "
+"the list box."
+msgstr ""
+"Nqakraza kweli qhosha ukutshintsha inkqubo yenginginya okanye ithambeka "
+"elikhethiweyo kwi bhokisi yoluhlu."
+
+#: domainlistview.cpp:75
+#, fuzzy, kde-format
+msgid ""
+"Click on this button to delete the policy for the host or domain selected in "
+"the list box."
+msgstr ""
+"Nqakraza kweli qhosha ukutshintsha inkqubo yenginginya okanye ithambeka "
+"elikhethiweyo kwi bhokisi yoluhlu."
+
+#: domainlistview.cpp:122
+#, fuzzy, kde-format
+msgid "You must first select a policy to be changed."
+msgstr "Kufuneka ukhethe kuqala inkqubo ezakutshintshwa!"
+
+#: domainlistview.cpp:149
+#, fuzzy, kde-format
+msgid "You must first select a policy to delete."
+msgstr "Kufuneka ukhethe kuqala inkqubo ezakucinywa!"
+
+#: domainlistview.cpp:187 policydlg.cpp:63
+#, kde-format
+msgid "Use Global"
+msgstr ""
+
+#: domainlistview.cpp:189 policydlg.cpp:63
+#, kde-format
+msgid "Accept"
+msgstr "Yamkela"
+
+#: domainlistview.cpp:191 policydlg.cpp:63
+#, kde-format
+msgid "Reject"
+msgstr "Khuphela ngaphandle"
+
+#: filteropts.cpp:48
+#, fuzzy, kde-format
+msgid "Enable filters"
+msgstr "Yenziwe"
+
+#: filteropts.cpp:51
+#, kde-format
+msgid "Hide filtered images"
+msgstr ""
+
+#: filteropts.cpp:58
+#, fuzzy, kde-format
+msgid "Manual Filter"
+msgstr "Yenziwe"
+
+#: filteropts.cpp:76
+#, kde-format
+msgid "Search:"
+msgstr ""
+
+#: filteropts.cpp:84
+#, kde-format
+msgid ""
+"<qt>Filter expression (e.g. <tt>http://www.example.com/ad/*</tt>, <a href="
+"\"filterhelp\">more information</a>):"
+msgstr ""
+
+#: filteropts.cpp:100
+#, kde-format
+msgid "Automatic Filter"
+msgstr ""
+
+#: filteropts.cpp:109
+#, kde-format
+msgid "Automatic update interval:"
+msgstr ""
+
+#: filteropts.cpp:114
+#, kde-format
+msgid " day"
+msgid_plural " days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: filteropts.cpp:120
+#, kde-format
+msgid "Insert"
+msgstr ""
+
+#: filteropts.cpp:123
+#, kde-format
+msgid "Update"
+msgstr ""
+
+#: filteropts.cpp:126
+#, kde-format
+msgid "Remove"
+msgstr ""
+
+#: filteropts.cpp:130
+#, fuzzy, kde-format
+msgid "Import..."
+msgstr "&Rhweba ngaphakathi..."
+
+#: filteropts.cpp:133
+#, fuzzy, kde-format
+msgid "Export..."
+msgstr "&Rhweba ngaphandle..."
+
+#: filteropts.cpp:140
+#, kde-format
+msgid ""
+"<qt>More information on <a href=\"importhelp\">import format</a>, <a href="
+"\"exporthelp\">export format</a>"
+msgstr ""
+
+#: filteropts.cpp:154
+#, kde-format
+msgid ""
+"Enable or disable AdBlocK filters. When enabled, a set of URL expressions "
+"should be defined in the filter list for blocking to take effect."
+msgstr ""
+
+#: filteropts.cpp:156
+#, kde-format
+msgid ""
+"When enabled blocked images will be removed from the page completely, "
+"otherwise a placeholder 'blocked' image will be used."
+msgstr ""
+
+#: filteropts.cpp:163
+#, kde-format
+msgid ""
+"This is the list of URL filters that will be applied to all embedded images "
+"and media objects."
+msgstr ""
+
+#: filteropts.cpp:167
+#, kde-format
+msgid ""
+"<qt><p>Enter an expression to filter. Filters can be defined as either:"
+"<ul><li>a shell-style wildcard, e.g. <tt>http://www.example.com/ads*</tt>, "
+"the wildcards <tt>*?[]</tt> may be used</li><li>a full regular expression by "
+"surrounding the string with '<tt>/</tt>', e.g. <tt>/\\/(ad|banner)\\./</tt></"
+"li></ul><p>Any filter string can be preceded by '<tt>@@</tt>' to whitelist "
+"(allow) any matching URL, which takes priority over any blacklist (blocking) "
+"filter."
+msgstr ""
+
+#: filteropts.cpp:183
+#, kde-format
+msgid ""
+"<qt><p>The filter import format is a plain text file. Blank lines, comment "
+"lines starting with '<tt>!</tt>' and the header line <tt>[AdBlock]</tt> are "
+"ignored. Any other line is added as a filter expression."
+msgstr ""
+
+#: filteropts.cpp:188
+#, kde-format
+msgid ""
+"<qt><p>The filter export format is a plain text file. The file begins with a "
+"header line <tt>[AdBlock]</tt>, then all of the filters follow each on a "
+"separate line."
+msgstr ""
+
+#: filteropts.cpp:256
+#, kde-format
+msgid "Import Filters"
+msgstr ""
+
+#: filteropts.cpp:301
+#, kde-format
+msgid "Export Filters"
+msgstr ""
+
+#: filteropts.cpp:436
+#, kde-format
+msgid ""
+"<h1>Konqueror AdBlocK</h1> Konqueror AdBlocK allows you to create a list of "
+"filters that are checked against linked images and frames. URL's that match "
+"are either discarded or replaced with a placeholder image. "
+msgstr ""
+
+#: filteropts.cpp:558
+#, kde-format
+msgid "Name"
+msgstr ""
+
+#: filteropts.cpp:559
+#, kde-format
+msgid "URL"
+msgstr ""
+
+#: generalopts.cpp:53
+#, kde-format
+msgid "Tabbed Browsing"
+msgstr ""
+
+#: generalopts.cpp:79
+#, kde-format
+msgctxt ""
+"The user chose to use a custom start page but left the corresponding field "
+"empty"
+msgid "Please, insert the custom start page"
+msgstr ""
+
+#: generalopts.cpp:85
+#, kde-format
+msgctxt "@label:listbox"
+msgid "When &Konqueror starts:"
+msgstr ""
+
+#: generalopts.cpp:94
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Show Introduction Page"
+msgstr ""
+
+#: generalopts.cpp:95
+#, fuzzy, kde-format
+msgctxt "@item:inlistbox"
+msgid "Show My Start Page"
+msgstr "Khetha Umlawuli Wovavanyo Lweplagi efakiweyo"
+
+#: generalopts.cpp:96
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Show Blank Page"
+msgstr ""
+
+#: generalopts.cpp:97
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Show My Bookmarks"
+msgstr ""
+
+#: generalopts.cpp:103
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Select Start Page"
+msgstr "Khetha Umlawuli Wovavanyo Lweplagi efakiweyo"
+
+#: generalopts.cpp:107
+#, kde-format
+msgid "This is the URL of the web page Konqueror will show when starting."
+msgstr ""
+
+#: generalopts.cpp:118
+#, fuzzy, kde-format
+msgid "Home page:"
+msgstr "Khetha Umlawuli Wovavanyo Lweplagi efakiweyo"
+
+#: generalopts.cpp:121
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Select Home Page"
+msgstr "Khetha Umlawuli Wovavanyo Lweplagi efakiweyo"
+
+#: generalopts.cpp:126
+#, kde-format
+msgid ""
+"This is the URL of the web page where Konqueror will jump to when the \"Home"
+"\" button is pressed."
+msgstr ""
+
+#: generalopts.cpp:134
+#, kde-format
+msgid "Default web browser engine:"
+msgstr ""
+
+#: generalopts.cpp:143
+#, kde-format
+msgid "When splitting a view"
+msgstr ""
+
+#: generalopts.cpp:147
+#, kde-format
+msgid "Always duplicate current view"
+msgstr ""
+
+#: generalopts.cpp:148
+#, kde-format
+msgid "Duplicate current view only for local files"
+msgstr ""
+
+#: htmlopts.cpp:36
+#, kde-format
+msgid ""
+"<h1>Konqueror Browser</h1> Here you can configure Konqueror's browser "
+"functionality. Please note that the file manager functionality has to be "
+"configured using the \"File Manager\" configuration module. You can make "
+"some settings how Konqueror should handle the HTML code in the web pages it "
+"loads. It is usually not necessary to change anything here."
+msgstr ""
+"<h1>Umkhangeli zincwadi we Konqueror</h1> Apha uyakwazi ukuqwalasela "
+"usebenziso lomkhangeli zincwadi we Konqueror. Nceda qaphela ukuba usebenziso "
+"lomphathi  wefayile kufuneka iqwalaselwe nge \"Umphathi Wefayile\" umqongo "
+"womlinganiselo wendlela. Uyakwazi ukwenza ezinye izicwangciso zendlela i "
+"Konqueror ufuna iphathe ikhowudi ye HTML emaphepheni  e web ewalayishayo. "
+"Kudla ngokungabikho mfuneko yokuthsintsha nantoni na apha."
+
+#: htmlopts.cpp:44
+#, kde-format
+msgid "Boo&kmarks"
+msgstr ""
+
+#: htmlopts.cpp:47
+#, kde-format
+msgid "Ask for name and folder when adding bookmarks"
+msgstr ""
+
+#: htmlopts.cpp:50
+#, kde-format
+msgid ""
+"If this box is checked, Konqueror will allow you to change the title of the "
+"bookmark and choose a folder in which to store it when you add a new "
+"bookmark."
+msgstr ""
+
+#: htmlopts.cpp:56
+#, kde-format
+msgid "Show only marked bookmarks in bookmark toolbar"
+msgstr ""
+
+#: htmlopts.cpp:58
+#, kde-format
+msgid ""
+"If this box is checked, Konqueror will show only those bookmarks in the "
+"bookmark toolbar which you have marked to do so in the bookmark editor."
+msgstr ""
+
+#: htmlopts.cpp:65
+#, kde-format
+msgid "Form Com&pletion"
+msgstr "U&gqityo Lwefomu"
+
+#: htmlopts.cpp:69
+#, kde-format
+msgid ""
+"If this box is checked, Konqueror will remember the data you enter in web "
+"forms and suggest it in similar fields for all forms."
+msgstr ""
+"Ukuba le bhokisi ikhangelwe, i Konqueror izakukhumbula idata oyingenisayo "
+"kwiifomu ze web kwaye iyiphakamisa kwimihlaba efanayo yeefomu zonke."
+
+#: htmlopts.cpp:75
+#, kde-format
+msgid "&Maximum completions:"
+msgstr "&Ugqityo olukhulu:"
+
+#: htmlopts.cpp:77
+#, kde-format
+msgid ""
+"Here you can select how many values Konqueror will remember for a form field."
+msgstr ""
+"Apha ungakhetha ukubamaninzi kwamaxabiso i Konqueror ezakuwakhumbula "
+"kumhlaba wefomu."
+
+#: htmlopts.cpp:84
+#, kde-format
+msgid "Mouse Beha&vior"
+msgstr ""
+
+#: htmlopts.cpp:87
+#, kde-format
+msgid "Chan&ge cursor over links"
+msgstr "Tshintsha isalathisi &kumakhonkco"
+
+#: htmlopts.cpp:89
+#, kde-format
+msgid ""
+"If this option is set, the shape of the cursor will change (usually to a "
+"hand) if it is moved over a hyperlink."
+msgstr ""
+"Ukuba olu khetho luyacwangciswa, ukuma kwesalathisi sizakutshintsha "
+"(ngokwesiqhelo kwi sandla) ukuba isiwe kwikhonkco eliphezulu."
+
+#: htmlopts.cpp:93
+#, kde-format
+msgid "M&iddle click opens URL in selection"
+msgstr ""
+
+#: htmlopts.cpp:96
+#, kde-format
+msgid ""
+"If this box is checked, you can open the URL in the selection by middle "
+"clicking on a Konqueror view."
+msgstr ""
+
+#: htmlopts.cpp:100
+#, kde-format
+msgid "Right click goes &back in history"
+msgstr "Unqakrazo lwasekunene &lubuyela kwimbali"
+
+#: htmlopts.cpp:103
+#, kde-format
+msgid ""
+"If this box is checked, you can go back in history by right clicking on a "
+"Konqueror view. To access the context menu, press the right mouse button and "
+"move."
+msgstr ""
+"Ukuba le bhokisi ikhangelwe, ungabuyela kwimbali ngokunqakraza ekunene "
+"kwimboniselo ye Konqueror. Ukunikezela imenu yentsingiselo, cinezela iqhosha "
+"lemouse ekunene kwaye ushukume."
+
+#: htmlopts.cpp:113
+#, kde-format
+msgid "Allow automatic delayed &reloading/redirecting"
+msgstr "Vumela okuzenzekelayo kumiswe &okuzongezayo/okuzijikayo"
+
+#: htmlopts.cpp:114
+#, kde-format
+msgid ""
+"Some web pages request an automatic reload or redirection after a certain "
+"period of time. By unchecking this box Konqueror will ignore these requests."
+msgstr ""
+"Ezinye amaphepa esicelo seweb sokuzifaka okanye ukufumana enye indlela emva "
+"kwexesha elithile.Ngokujonga lebhokisi iKonqueror izakungazihoyi ezizicelo."
+
+#: htmlopts.cpp:120
+#, kde-format
+msgid "Enable Access Ke&y activation with Ctrl key"
+msgstr ""
+
+#: htmlopts.cpp:121
+#, kde-format
+msgid ""
+"Pressing the Ctrl key when viewing webpages activates Access Keys. "
+"Unchecking this box will disable this accessibility feature. (Konqueror "
+"needs to be restarted for this change to take effect.)"
+msgstr ""
+
+#: htmlopts.cpp:125
+#, kde-format
+msgid "Send the DNT header to tell web sites you do not want to be tracked"
+msgstr ""
+
+#: htmlopts.cpp:126
+#, kde-format
+msgid ""
+"Check this box if you want to inform a web site that you do not want your "
+"web browsing habits tracked."
+msgstr ""
+
+#: htmlopts.cpp:130
+#, kde-format
+msgid "Offer to save website passwords"
+msgstr ""
+
+#: htmlopts.cpp:131
+#, kde-format
+msgid "Uncheck this box to prevent being prompted to save website passwords"
+msgstr ""
+
+#: htmlopts.cpp:136
+#, kde-format
+msgid "Display online PDF files using WebEngine"
+msgstr ""
+
+#: htmlopts.cpp:137
+#, kde-format
+msgid ""
+"Uncheck this box to display online PDF files as configured in System Settings"
+msgstr ""
+
+#: javaopts.cpp:78
+#, kde-format
+msgid "Enable Ja&va globally"
+msgstr "&Yenza i Java ngqukuva"
+
+#: javaopts.cpp:93
+#, kde-format
+msgid "Java Runtime Settings"
+msgstr "Izicwangciso zexesha elisebenzayo le Java"
+
+#: javaopts.cpp:97
+#, kde-format
+msgid "&Use security manager"
+msgstr "&Sebenzisa umphathi wokhuseleko"
+
+#: javaopts.cpp:101
+#, kde-format
+msgid "Use &KIO"
+msgstr ""
+
+#: javaopts.cpp:105
+#, fuzzy, kde-format
+msgid "Shu&tdown applet server when inactive for more than"
+msgstr "&Vala umncedisi we applet xa ungasebenzi"
+
+#: javaopts.cpp:117
+#, fuzzy, kde-format
+#| msgid " sec"
+msgid " second"
+msgid_plural " seconds"
+msgstr[0] " sec"
+msgstr[1] " sec"
+
+#: javaopts.cpp:123
+#, kde-format
+msgid "&Path to Java executable, or 'java':"
+msgstr "&Umendo oya kuphunyezo lwe Java, okanye 'java':"
+
+#: javaopts.cpp:127
+#, kde-format
+msgid "Additional Java a&rguments:"
+msgstr "Impikiswano ezo&ngezelelweyo ze Java:"
+
+#: javaopts.cpp:132
+#, fuzzy, kde-format
+msgid ""
+"Enables the execution of scripts written in Java that can be contained in "
+"HTML pages. Note that, as with any browser, enabling active contents can be "
+"a security problem."
+msgstr ""
+"Yenza uphumezo lokushicilelweyo okubhaliweyo kwiJava okunokuqulathwa ku "
+"maphepha e HTML. Lumka kuba inkxaso ye Java ayigqitywanga. Qaphela, njengo "
+"mkhangeli zincwadi nawuphi, owenza imixholo esebenzayo ingayingxaki "
+"yokhuseleko."
+
+#: javaopts.cpp:135
+#, fuzzy, kde-format
+msgid ""
+"<p>This box contains the domains and hosts you have set a specific Java "
+"policy for. This policy will be used instead of the default policy for "
+"enabling or disabling Java applets on pages sent by these domains or hosts.</"
+"p><p>Select a policy and use the controls on the right to modify it.</p>"
+msgstr ""
+"Le bhokisi iqulathe amathambeka kunye neenginginya ozibekileyo zenkqubo ye "
+"Java zokukhankayiweyo. Le nkqubo izakusetyenziswa endaweni yenkqubo "
+"engagqibekanga yokwenza okanye ikhubaze iJava applets emaphepheni athunyelwe "
+"ngamathambeka okanye zinginginya. <p>Khetha i nkqubo kwaye usebenzise "
+"ulawulo ekunene ukuyiguqula kancinane."
+
+#: javaopts.cpp:142
+#, fuzzy, kde-format
+msgid ""
+"Click this button to choose the file that contains the Java policies. These "
+"policies will be merged with the existing ones. Duplicate entries are "
+"ignored."
+msgstr ""
+"Nqakraza eliqhosha ukukhetha ifayile equlathe iinkqubo ze Java.  Ezi nkqubo "
+"zizakudityaniswa nesele zikhona. Ungeniso oluphindwe kabini luzakulahlwa."
+
+#: javaopts.cpp:145
+#, kde-format
+msgid ""
+"Click this button to save the Java policy to a zipped file. The file, named "
+"<b>java_policy.tgz</b>, will be saved to a location of your choice."
+msgstr ""
+"Nqakraza eli qhosha ukugcina inkqubo ye Java kwifayile evalwayo. Ifayile, "
+"enegama <b>java_policy.tgz</b>, izakugcinwa kwindawo yakho oyikhethileyo."
+
+#: javaopts.cpp:149
+#, fuzzy, kde-format
+msgid ""
+"Here you can set specific Java policies for any particular host or domain. "
+"To add a new policy, simply click the <i>New...</i> button and supply the "
+"necessary information requested by the dialog box. To change an existing "
+"policy, click on the <i>Change...</i> button and choose the new policy from "
+"the policy dialog box. Clicking on the <i>Delete</i> button will remove the "
+"selected policy, causing the default policy setting to be used for that "
+"domain."
+msgstr ""
+"Apha ungacwangcisa iinkqubo ze cookie zalo naliphi ithambeka. Ukudibanisa "
+"inkqubo entsha, nqakraza ngokulula ku <i>Dibanisa...</i> iqhosha kwaye "
+"unikezele ulwazi oluyimfuneko olucelwe yibhokisi yencoko yababini. "
+"Ukutshintsha esele ikhona inkqubo, Nqakraza ku <i>Tshintsha...</i> iqhosha "
+"kwaye khetha inkqubo entsha esuka kwibhokisi yenkqubo yencoko yababini.  "
+"Ukunqakraza ku <i>Cima</i> iqhosha lizakususa inkqubo ekhethiweyo eyenza "
+"ucwangciso olungagqibekanga lwenkqubo ezakusetyenziselwa elo thambeka. "
+
+#: javaopts.cpp:162
+#, kde-format
+msgid ""
+"Enabling the security manager will cause the jvm to run with a Security "
+"Manager in place. This will keep applets from being able to read and write "
+"to your file system, creating arbitrary sockets, and other actions which "
+"could be used to compromise your system. Disable this option at your own "
+"risk. You can modify your $HOME/.java.policy file with the Java policytool "
+"utility to give code downloaded from certain sites more permissions."
+msgstr ""
+"Ukwenza umphathi wokhuseleko kuzakubangela i jvm isebenze noMphathi "
+"woKhuseleko endaweni. Oku kuzakugcina i applets ekubeni zifunde kwaye "
+"zibhale kwindlela yakho yefayile, isenza imigxuma engenasizathu, kunye "
+"nezinye iintshukumo ezino kusetyenziswa ukumela indlela yakho.  Khubaza olu "
+"khetho kumngcipheko wakho. Ungaguqula kancinane i $HOME/.java.policy file "
+"ngesixhobo senkqubo ye Java into eluncedo yokunika ikhowudi elayishelwe "
+"ezantsi esuka kumanxuwa athile aneemvume ezininzi."
+
+#: javaopts.cpp:170
+#, kde-format
+msgid "Enabling this will cause the jvm to use KIO for network transport "
+msgstr ""
+
+#: javaopts.cpp:172
+#, kde-format
+msgid ""
+"Enter the path to the java executable. If you want to use the jre in your "
+"path, simply leave it as 'java'. If you need to use a different jre, enter "
+"the path to the java executable (e.g. /usr/lib/jdk/bin/java), or the path to "
+"the directory that contains 'bin/java' (e.g. /opt/IBMJava2-13)."
+msgstr ""
+"Ngenisa umendo kwi Java ephunyeziweyo.  Ukuba ufuna ukusebenzisa i jre "
+"kumendo wakho, yishiye ngokulula njenge 'java'. Ukuba ufuna ukusebenzisa "
+"eyahlukileyo i jre, ngenisa umendo kwijava ephunyeziweyo(umzekelo, /usr/lib/"
+"jdk/bin/java), okanye u mendo kulawulo oluqulathe i 'bin/java' (umzekelo, /"
+"opt/IBMJava2-13)."
+
+#: javaopts.cpp:177
+#, kde-format
+msgid ""
+"If you want special arguments to be passed to the virtual machine, enter "
+"them here."
+msgstr ""
+"Ukuba ufuna iimpikiswano ezithile zigqithiswe kumatshini onesiqhamo, "
+"zingenise apha."
+
+#: javaopts.cpp:179
+#, kde-format
+msgid ""
+"When all the applets have been destroyed, the applet server should shut "
+"down. However, starting the jvm takes a lot of time. If you would like to "
+"keep the java process running while you are browsing, you can set the "
+"timeout value to whatever you like. To keep the java process running for the "
+"whole time that the konqueror process is, leave the Shutdown Applet Server "
+"checkbox unchecked."
+msgstr ""
+"Xa zonke i applets zitshatyalalisiwe, umncedisi we applet uzaku vala.  Ngoko "
+"ke, ukuqala i jvm kuthatha ixesha elide. Ukuba ufuna ukugcina inkqubela ye "
+"java esebenzayo ngexesha ukhangela iincwadi, ungabeka ixabiso lexesha "
+"lokuphuma kukufunayo.  Ukugcina inkqubela ye java isebenza ngexesha lonke "
+"inkqubela ye Konqueror isenza, shiya uMncedisi woValo lwe Applet lwebhokisi "
+"yokhangelo ingakhangelwa."
+
+#: javaopts.cpp:288
+#, fuzzy, kde-format
+msgctxt "@title:group"
+msgid "Doma&in-Specific"
+msgstr "Ithamb&eka-Ngokhankanyo"
+
+#: javaopts.cpp:323
+#, fuzzy, kde-format
+#| msgid "New Java Policy"
+msgctxt "@title:window"
+msgid "New Java Policy"
+msgstr "Inkqubo entsha ye Java"
+
+#: javaopts.cpp:326
+#, fuzzy, kde-format
+#| msgid "Change Java Policy"
+msgctxt "@title:window"
+msgid "Change Java Policy"
+msgstr "Tshintsha inkqubo ye Java"
+
+#: javaopts.cpp:330
+#, kde-format
+msgid "&Java policy:"
+msgstr "&Inkqubo ye Java:"
+
+#: javaopts.cpp:331
+#, kde-format
+msgid "Select a Java policy for the above host or domain."
+msgstr "Khetha inkqubo ye Java yenginginya engasentla okanye ithambeka."
+
+#: jsopts.cpp:50
+#, kde-format
+msgid "Ena&ble JavaScript globally"
+msgstr "&Yenza Okushicilelweyo kwe Java kubengqukuva"
+
+#: jsopts.cpp:51
+#, fuzzy, kde-format
+msgid ""
+"Enables the execution of scripts written in ECMA-Script (also known as "
+"JavaScript) that can be contained in HTML pages. Note that, as with any "
+"browser, enabling scripting languages can be a security problem."
+msgstr ""
+"Yenza uphumezo lokushicilelweyo olubhalwe kwi ECMA-Eshicilelweyo (ebizwa "
+"ngokuba yi JavaScipt) enokuqulathwa kumaphepha e HTML. Lumka kuba inkxaso ye "
+"JavaScript ayigqitywanga. Qaphela ukuba,njengawuphi na umkhangeli zincwadi, "
+"owenza ushicilelo lweelwimi ingayingxaki yokhuseleko."
+
+#: jsopts.cpp:59
+#, kde-format
+msgid "Debugging"
+msgstr ""
+
+#: jsopts.cpp:63
+#, fuzzy, kde-format
+msgid "Enable debu&gger"
+msgstr "Yenziwe"
+
+#: jsopts.cpp:64
+#, fuzzy, kde-format
+msgid "Enables builtin JavaScript debugger."
+msgstr "&Yenza okushicilelweyo kweJava kubengqukuva"
+
+#: jsopts.cpp:68
+#, kde-format
+msgid "Report &errors"
+msgstr ""
+
+#: jsopts.cpp:69
+#, kde-format
+msgid ""
+"Enables the reporting of errors that occur when JavaScript code is executed."
+msgstr ""
+
+#: jsopts.cpp:79
+#, fuzzy, kde-format
+msgid ""
+"Here you can set specific JavaScript policies for any particular host or "
+"domain. To add a new policy, simply click the <i>New...</i> button and "
+"supply the necessary information requested by the dialog box. To change an "
+"existing policy, click on the <i>Change...</i> button and choose the new "
+"policy from the policy dialog box. Clicking on the <i>Delete</i> button will "
+"remove the selected policy causing the default policy setting to be used for "
+"that domain. The <i>Import</i> and <i>Export</i> button allows you to easily "
+"share your policies with other people by allowing you to save and retrieve "
+"them from a zipped file."
+msgstr ""
+"Apha ungabeka iinkqubo ezithile ze JavaScript zayo nayiphi na inginginya "
+"okanye ithambeka. Ukudibanisa inkqubo entsha, nqakraza ngokulula i "
+"<i>Dibanisa...</i> iqhosha kwaye unikeze ulwazi olufanelekileyo olufunwayo "
+"yibhokisi yencoko yababini. Ukutshintsha inkqubo esele ikhona, nqakraza kwi "
+"<i>Tshintsha...</i> iqhosha kwaye khetha entsha inkqubo esuka kwibhokisi "
+"yenkqubo yencoko yababini.  Inqakraza ku<i>Cima</i> iqhosha lizakususa "
+"inkqubo ekhethiweyo ebangela ucwangciso olungagqibekanga lwenkqubo "
+"lusetyenziselwe ithambeka. I <i>Rhweba ngaphakathi</i> no <i>Rhweba "
+"ngaphandle</i> iqhosha likuvumela ukwahlula ngokulula iinkqubo zakho nabanye "
+"abantu ngokukuvumela ukugcina noku zifumanela kwakhona indawo kwifayile "
+"evaliweyo."
+
+#: jsopts.cpp:89
+#, fuzzy, kde-format
+msgid ""
+"<p>This box contains the domains and hosts you have set a specific "
+"JavaScript policy for. This policy will be used instead of the default "
+"policy for enabling or disabling JavaScript on pages sent by these domains "
+"or hosts.</p><p>Select a policy and use the controls on the right to modify "
+"it.</p>"
+msgstr ""
+"Le bhokisi iqulathe amathambeka kunye neenginginya ozibeke kwi JavaScript "
+"yenkqubo. Le nkqubo izakusetyenziswa endaweni yenkqubo engagqibekanga "
+"yokwenza okanye ukukhubaza amaphepha eJavaScript ethunyelwe kumathambeka "
+"okanye kwiinginginya. <p>Khetha inkqubo kwaye usebenzise ulawulo ekunene "
+"ukuyiguqula kancinane."
+
+#: jsopts.cpp:96
+#, kde-format
+msgid ""
+"Click this button to choose the file that contains the JavaScript policies. "
+"These policies will be merged with the existing ones. Duplicate entries are "
+"ignored."
+msgstr ""
+"Nqakraza kweli qhosha ukukhetha ifayile equlathe iinkqubo zokushicilelweyo "
+"kwe Java. Ezi nkqubo zizakudityaniswa kwesele zikhona.  Ungeniso kokuphindwe "
+"kabini luyalahlwa."
+
+#: jsopts.cpp:99
+#, kde-format
+msgid ""
+"Click this button to save the JavaScript policy to a zipped file. The file, "
+"named <b>javascript_policy.tgz</b>, will be saved to a location of your "
+"choice."
+msgstr ""
+"Nqakraza eli qhosha ukugcina inkqubo yokushicilelweyo kweJava ukuya "
+"kwifayile evalwayo. Ifayile, enegama <b>javascript_policy.tgz</b>, "
+"izakugcinwa kwindawo yakho oyikhethayo."
+
+#: jsopts.cpp:105
+#, fuzzy, kde-format
+msgid "Global JavaScript Policies"
+msgstr "Inkqubo entsha yokushicilelweyo kweJava"
+
+#: jsopts.cpp:173
+#, fuzzy, kde-format
+msgctxt "@title:group"
+msgid "Do&main-Specific"
+msgstr "It&hambeka-Ngokhankanyo"
+
+#: jsopts.cpp:212
+#, fuzzy, kde-format
+#| msgid "New JavaScript Policy"
+msgctxt "@title:window"
+msgid "New JavaScript Policy"
+msgstr "Inkqubo entsha yokushicilelweyo kweJava"
+
+#: jsopts.cpp:215
+#, fuzzy, kde-format
+#| msgid "Change JavaScript Policy"
+msgctxt "@title:window"
+msgid "Change JavaScript Policy"
+msgstr "Tshintsha inkqubo yokushicilelweyo kwe Java"
+
+#: jsopts.cpp:219
+#, kde-format
+msgid "JavaScript policy:"
+msgstr "inqubo yokuShicilelweyo kweJava:"
+
+#: jsopts.cpp:220
+#, kde-format
+msgid "Select a JavaScript policy for the above host or domain."
+msgstr ""
+"Khetha inkqubo yokushicilelweyo kwe Java yenginginya engasentla okanye "
+"ithambeka."
+
+#: jsopts.cpp:222
+#, fuzzy, kde-format
+msgid "Domain-Specific JavaScript Policies"
+msgstr "Tshintsha inkqubo yokushicilelweyo kwe Java"
+
+#: jspolicies.cpp:132
+#, kde-format
+msgid "Open new windows:"
+msgstr ""
+
+#: jspolicies.cpp:140 jspolicies.cpp:194 jspolicies.cpp:231 jspolicies.cpp:268
+#: jspolicies.cpp:308
+#, kde-format
+msgid "Use global"
+msgstr ""
+
+#: jspolicies.cpp:141 jspolicies.cpp:195 jspolicies.cpp:232 jspolicies.cpp:269
+#: jspolicies.cpp:309
+#, kde-format
+msgid "Use setting from global policy."
+msgstr ""
+
+#: jspolicies.cpp:147 jspolicies.cpp:201 jspolicies.cpp:238 jspolicies.cpp:275
+#: jspolicies.cpp:315
+#, kde-format
+msgid "Allow"
+msgstr "Vumela"
+
+#: jspolicies.cpp:148
+#, kde-format
+msgid "Accept all popup window requests."
+msgstr "Yamkela zonke izicelo ze window ze popup."
+
+#: jspolicies.cpp:153
+#, kde-format
+msgid "Ask"
+msgstr "Buza/Cela"
+
+#: jspolicies.cpp:154
+#, kde-format
+msgid "Prompt every time a popup window is requested."
+msgstr "Cela ngalolonke ixesha xa ingxolo eqhekezayo ye window licelwa."
+
+#: jspolicies.cpp:159
+#, kde-format
+msgid "Deny"
+msgstr "Khanyela"
+
+#: jspolicies.cpp:160
+#, kde-format
+msgid "Reject all popup window requests."
+msgstr "Khuphela ngaphandle zonke iingxolo eqhekezayo ze window eziceliweyo."
+
+#: jspolicies.cpp:165
+#, kde-format
+msgid "Smart"
+msgstr "Ebukekayo"
+
+#: jspolicies.cpp:166
+#, kde-format
+msgid ""
+"Accept popup window requests only when links are activated through an "
+"explicit mouse click or keyboard operation."
+msgstr ""
+"Ukuba Ukhetha ukheto olubukekayo, ifestile evulekayo izaku khubazwa "
+"ngapandle kokuba i iqaliswe ekusukeleni kwe mouse okanye kukusenza kwebhodi "
+"yezitshixho."
+
+#: jspolicies.cpp:173
+#, fuzzy, kde-format
+msgid ""
+"If you disable this, Konqueror will stop interpreting the <i>window.open()</"
+"i> JavaScript command. This is useful if you regularly visit sites that make "
+"extensive use of this command to pop up ad banners.<br /><br /><b>Note:</b> "
+"Disabling this option might also break certain sites that require <i>window."
+"open()</i> for proper operation. Use this feature carefully."
+msgstr ""
+"If you disable this, Konqueror will stop interpreting the <i>window.open()</"
+"i> JavaScript command. This is useful if you regulary visit sites that make "
+"extensive use of this command to pop up ad banners.<br><br><b>Note:</b> "
+"Disabling this option might also break certain sites that require <i>window."
+"open()</i> for proper operation. Use this feature carefully!"
+
+#: jspolicies.cpp:187
+#, kde-format
+msgid "Resize window:"
+msgstr ""
+
+#: jspolicies.cpp:202
+#, kde-format
+msgid "Allow scripts to change the window size."
+msgstr ""
+
+#: jspolicies.cpp:207 jspolicies.cpp:244 jspolicies.cpp:281 jspolicies.cpp:321
+#, kde-format
+msgid "Ignore"
+msgstr ""
+
+#: jspolicies.cpp:208
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to change the window size. The web page will "
+"<i>think</i> it changed the size but the actual window is not affected."
+msgstr ""
+
+#: jspolicies.cpp:215
+#, kde-format
+msgid ""
+"Some websites change the window size on their own by using <i>window."
+"resizeBy()</i> or <i>window.resizeTo()</i>. This option specifies the "
+"treatment of such attempts."
+msgstr ""
+
+#: jspolicies.cpp:224
+#, kde-format
+msgid "Move window:"
+msgstr ""
+
+#: jspolicies.cpp:239
+#, kde-format
+msgid "Allow scripts to change the window position."
+msgstr ""
+
+#: jspolicies.cpp:245
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to change the window position. The web page will "
+"<i>think</i> it moved the window but the actual position is not affected."
+msgstr ""
+
+#: jspolicies.cpp:252
+#, kde-format
+msgid ""
+"Some websites change the window position on their own by using <i>window."
+"moveBy()</i> or <i>window.moveTo()</i>. This option specifies the treatment "
+"of such attempts."
+msgstr ""
+
+#: jspolicies.cpp:261
+#, kde-format
+msgid "Focus window:"
+msgstr ""
+
+#: jspolicies.cpp:276
+#, kde-format
+msgid "Allow scripts to focus the window."
+msgstr ""
+
+#: jspolicies.cpp:282
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to focus the window. The web page will <i>think</"
+"i> it brought the focus to the window but the actual focus will remain "
+"unchanged."
+msgstr ""
+
+#: jspolicies.cpp:290
+#, kde-format
+msgid ""
+"Some websites set the focus to their browser window on their own by using "
+"<i>window.focus()</i>. This usually leads to the window being moved to the "
+"front interrupting whatever action the user was dedicated to at that time. "
+"This option specifies the treatment of such attempts."
+msgstr ""
+
+#: jspolicies.cpp:301
+#, kde-format
+msgid "Modify status bar text:"
+msgstr ""
+
+#: jspolicies.cpp:316
+#, kde-format
+msgid "Allow scripts to change the text of the status bar."
+msgstr ""
+
+#: jspolicies.cpp:322
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to change the status bar text. The web page will "
+"<i>think</i> it changed the text but the actual text will remain unchanged."
+msgstr ""
+
+#: jspolicies.cpp:330
+#, kde-format
+msgid ""
+"Some websites change the status bar text by setting <i>window.status</i> or "
+"<i>window.defaultStatus</i>, thus sometimes preventing displaying the real "
+"URLs of hyperlinks. This option specifies the treatment of such attempts."
+msgstr ""
+
+#: main.cpp:43
+#, kde-format
+msgid "Konqueror Browsing Control Module"
+msgstr "Konqueror Umnqongo Wolawulo Wokhangelo zincwadi"
+
+#: main.cpp:45
+#, kde-format
+msgid "(c) 1999 - 2001 The Konqueror Developers"
+msgstr "(c) 1999 - 2001 Ababhekisi phambili be Konqueror"
+
+#: main.cpp:47
+#, kde-format
+msgid "Waldo Bastian"
+msgstr ""
+
+#: main.cpp:48
+#, kde-format
+msgid "David Faure"
+msgstr ""
+
+#: main.cpp:49
+#, kde-format
+msgid "Matthias Kalle Dalheimer"
+msgstr ""
+
+#: main.cpp:50
+#, kde-format
+msgid "Lars Knoll"
+msgstr ""
+
+#: main.cpp:51
+#, kde-format
+msgid "Dirk Mueller"
+msgstr ""
+
+#: main.cpp:52
+#, kde-format
+msgid "Daniel Molkentin"
+msgstr ""
+
+#: main.cpp:53
+#, kde-format
+msgid "Wynn Wilkes"
+msgstr ""
+
+#: main.cpp:55
+#, kde-format
+msgid "Leo Savernik"
+msgstr ""
+
+#: main.cpp:55
+#, kde-format
+msgid ""
+"JavaScript access controls\n"
+"Per-domain policies extensions"
+msgstr ""
+
+#: main.cpp:67
+#, kde-format
+msgid "&Java"
+msgstr "&Java"
+
+#: main.cpp:71
+#, kde-format
+msgid "Java&Script"
+msgstr "&Okushicilelweyo kwe Java"
+
+#: main.cpp:111
+#, fuzzy, kde-format
+msgid ""
+"<h2>JavaScript</h2>On this page, you can configure whether JavaScript "
+"programs embedded in web pages should be allowed to be executed by Konqueror."
+"<h2>Java</h2>On this page, you can configure whether Java applets embedded "
+"in web pages should be allowed to be executed by Konqueror.<br /><br /"
+"><b>Note:</b> Active content is always a security risk, which is why "
+"Konqueror allows you to specify very fine-grained from which hosts you want "
+"to execute Java and/or JavaScript programs."
+msgstr ""
+"<h2>Igama elishicilelwe phantsi le Java</h2>Kweli phepha, ungaqwalasela "
+"nokuba igama elishicilelwe phantsi le Java lilungiswe kumaphepha e web "
+"anokuvunyelwa ukuphunyezwa yi Konqueror.<h2>Java</h2>Kweliphepha, uyakwazi "
+"ukuqwalasela ukuba i applets ze Java zilungisewe kumaphepha e web "
+"anokuvunyelwa ukuphunyezwa yi Konqueror.<br><br><b>Qaphela:</b> Umxholo "
+"osebenzayo usoloko unomngcipheko wokhuseleko, apho kungenxa yokuba "
+"iKonqueror ikuvumela ukuba ukhankanye ngokuhle kakhulu-olungisiweyo kwi "
+"nginginya ofuna ukuphumeza kuzo iJava kunye/okanye iinkqubo ze JavaScript."
+
+#: policydlg.cpp:30
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Domain-Specific Policies"
+msgstr "Tshintsha inkqubo yokushicilelweyo kwe Java"
+
+#: policydlg.cpp:47
+#, kde-format
+msgid "&Host or domain name:"
+msgstr "&Inginginya okanye igama lethambeka:"
+
+#: policydlg.cpp:55
+#, kde-format
+msgid ""
+"Enter the name of a host (like www.kde.org) or a domain, starting with a dot "
+"(like .kde.org or .org)"
+msgstr ""
+"Ngenisa igama lenginginya (njenge www.kde.org) okanye ithambeka, uqale "
+"ngechaphaza (njenge .kde.org or .org)"
+
+#: policydlg.cpp:139
+#, fuzzy, kde-format
+msgid "You must first enter a domain name."
+msgstr "Kufuneka kuqala ungenise igama lethambeka!"
+
+#~ msgid "Accept languages:"
+#~ msgstr "Yamkela iilwimi:"
+
+#~ msgid "Accept character sets:"
+#~ msgstr "Yamkela izicwangciso zomsebenzi:"
+
+#~ msgid "Plugins"
+#~ msgstr "Iiplagi ezifakiweyo"
+
+#~ msgid "&New"
+#~ msgstr "&Entsha"
+
+#~ msgid "Do&wn"
+#~ msgstr "Pha&ntsi"
+
+#~ msgid "&Up"
+#~ msgstr "&Ngentla"
+
+#~ msgid "Click here to scan for newly installed Netscape plugins now."
+#~ msgstr ""
+#~ "Nqakraza apha ukuvavanya iiplagi ezifakiweyo ezintsha ze netscape ngoku."
+
+#, fuzzy
+#~ msgid "&Scan for Plugins"
+#~ msgstr "&Imita Yovavanyo Lweeplagi Ezifakiweyo Ezintsha"
+
+#~ msgid "Here you can see a list of the Netscape plugins KDE has found."
+#~ msgstr ""
+#~ "Apha ungabona uluhlu lweeplagi ezifakiweyo ze Netscape ezifunyenwe yi kde."
+
+#, fuzzy
+#~ msgid "Information"
+#~ msgstr "&Iimpiliso:"
+
+#~ msgid "Value"
+#~ msgstr "Ixabiso"
+
+#~ msgid "Global Settings"
+#~ msgstr "Izicwangciso ezingqukuva"
+
+#, fuzzy
+#~ msgid "&Enable plugins globally"
+#~ msgstr "Yenza iplagi ezweni"
+
+#, fuzzy
+#~ msgid "Domain-Specific Settin&gs"
+#~ msgstr "Ithambeka-ngokhankanyo"
+
+#~ msgid ""
+#~ "Enables the execution of plugins that can be contained in HTML pages, e."
+#~ "g. Macromedia Flash. Note that, as with any browser, enabling active "
+#~ "contents can be a security problem."
+#~ msgstr ""
+#~ "Yenza uphumezo lweplagi ezifakiweyo ezinokuqulathwa kumaphepha e HTML, "
+#~ "umzekelo Ukhanyiselo lwe Macromedia. Qaphela ukuba, njengawuphi na "
+#~ "umkhangeli zincwadi, owenza imixholo ingayingxaki yokhuseleko."
+
+#, fuzzy
+#~ msgid ""
+#~ "<p>This box contains the domains and hosts you have set a specific plugin "
+#~ "policy for. This policy will be used instead of the default policy for "
+#~ "enabling or disabling plugins on pages sent by these domains or hosts.</"
+#~ "p><p>Select a policy and use the controls on the right to modify it.</p>"
+#~ msgstr ""
+#~ "Le bhokisi iqulathe amathambeka kunye neenginginya ozibekileyo zenkqubo "
+#~ "ye Java zokukhankayiweyo. Le nkqubo izakusetyenziswa endaweni yenkqubo "
+#~ "engagqibekanga yokwenza okanye ikhubaze iJava applets emaphepheni "
+#~ "athunyelwe ngamathambeka okanye zinginginya. <p>Khetha i nkqubo kwaye "
+#~ "usebenzise ulawulo ekunene ukuyiguqula kancinane."
+
+#, fuzzy
+#~ msgid ""
+#~ "Click this button to choose the file that contains the plugin policies. "
+#~ "These policies will be merged with the existing ones. Duplicate entries "
+#~ "are ignored."
+#~ msgstr ""
+#~ "Nqakraza eliqhosha ukukhetha ifayile equlathe iinkqubo ze Java.  Ezi "
+#~ "nkqubo zizakudityaniswa nesele zikhona. Ungeniso oluphindwe kabini "
+#~ "luzakulahlwa."
+
+#, fuzzy
+#~ msgid ""
+#~ "Click this button to save the plugin policy to a zipped file. The file, "
+#~ "named <b>plugin_policy.tgz</b>, will be saved to a location of your "
+#~ "choice."
+#~ msgstr ""
+#~ "Nqakraza eli qhosha ukugcina inkqubo ye Java kwifayile evalwayo. Ifayile, "
+#~ "enegama <b>java_policy.tgz</b>, izakugcinwa kwindawo yakho oyikhethileyo."
+
+#, fuzzy
+#~ msgid ""
+#~ "Here you can set specific plugin policies for any particular host or "
+#~ "domain. To add a new policy, simply click the <i>New...</i> button and "
+#~ "supply the necessary information requested by the dialog box. To change "
+#~ "an existing policy, click on the <i>Change...</i> button and choose the "
+#~ "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
+#~ "button will remove the selected policy causing the default policy setting "
+#~ "to be used for that domain."
+#~ msgstr ""
+#~ "Apha ungacwangcisa iinkqubo ze cookie zalo naliphi ithambeka. Ukudibanisa "
+#~ "inkqubo entsha, nqakraza ngokulula ku <i>Dibanisa...</i> iqhosha kwaye "
+#~ "unikezele ulwazi oluyimfuneko olucelwe yibhokisi yencoko yababini. "
+#~ "Ukutshintsha esele ikhona inkqubo, Nqakraza ku <i>Tshintsha...</i> "
+#~ "iqhosha kwaye khetha inkqubo entsha esuka kwibhokisi yenkqubo yencoko "
+#~ "yababini.  Ukunqakraza ku <i>Cima</i> iqhosha lizakususa inkqubo "
+#~ "ekhethiweyo eyenza ucwangciso olungagqibekanga lwenkqubo "
+#~ "ezakusetyenziselwa elo thambeka. "
+
+#~ msgid ""
+#~ "<h1>Konqueror Plugins</h1> The Konqueror web browser can use Netscape "
+#~ "plugins to show special content, just like the Navigator does. Please "
+#~ "note that the way you have to install Netscape plugins may depend on your "
+#~ "distribution. A typical place to install them is, for example, '/opt/"
+#~ "netscape/plugins'."
+#~ msgstr ""
+#~ "<h1>Iiplagi zangaphakathi</h1> Umkhangeli zinwadi we Konqueror web "
+#~ "angasebenzisa iiplagi ze netscape ukubonisa umxholo othile, njengoko "
+#~ "Umlawuli esenza. Nceda qaphela ukuba kufuneka uzifake njani iiplagi ze "
+#~ "netscape kwaye zizakuxhomekeka kunikezelo lwakho. Indawo enohlobo "
+#~ "oluthile ukuzifaka kungumzekelo '/opt/netscape/plugins'."
+
+#~ msgid ""
+#~ "Do you want to apply your changes before the scan? Otherwise the changes "
+#~ "will be lost."
+#~ msgstr ""
+#~ "Ufuna ukufaka utshintsho lwakho phambi kwemita yovavanyo? Ngoko "
+#~ "utshintsho luzakulahleka."
+
+#~ msgid ""
+#~ "The nspluginscan executable cannot be found. Netscape plugins will not be "
+#~ "scanned."
+#~ msgstr ""
+#~ "nspluginscan ephunyeziweyo ayifumaneki. Iiplagi ezifakiweyo ze Netscape "
+#~ "azina kuvavanywa."
+
+#~ msgid "Scanning for plugins"
+#~ msgstr "Uvavanyo lweeplagi ezifakiweyo"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Select Plugin Scan Folder"
+#~ msgstr "Khetha Umlawuli Wovavanyo Lweplagi efakiweyo"
+
+#~ msgid "Netscape Plugins"
+#~ msgstr "Iiplagi ezifakiweyo ze Netscape"
+
+#~ msgid "Plugin"
+#~ msgstr "Iplagi efakiweyo"
+
+#~ msgid "MIME type"
+#~ msgstr "Udidi lwe MIME"
+
+#~ msgid "Description"
+#~ msgstr "Inkcazelo"
+
+#~ msgid "Suffixes"
+#~ msgstr "Izimamva"
+
+#~ msgid "Doma&in-Specific"
+#~ msgstr "Ithamb&eka-Ngokhankanyo"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "New Plugin Policy"
+#~ msgstr "Inkqubo entsha ye Java"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Change Plugin Policy"
+#~ msgstr "Tshintsha inkqubo ye Java"
+
+#, fuzzy
+#~ msgid "&Plugin policy:"
+#~ msgstr "&Inkqubo ye Java:"
+
+#, fuzzy
+#~ msgid "Select a plugin policy for the above host or domain."
+#~ msgstr "Khetha inkqubo ye Java yenginginya engasentla okanye ithambeka."
+
+#, fuzzy
+#~| msgid "Sa&ns serif font:"
+#~ msgid "Sans Serif"
+#~ msgstr "&Umgca we Sans Serif"
+
+#, fuzzy
+#~| msgid "S&tandard font:"
+#~ msgid "Standard Symbols L"
+#~ msgstr "U&mgca osezantsi:"
+
+#~ msgid "kcmkonqhtml"
+#~ msgstr "kcmkonqhtml"
+
+#~ msgid "Enable completion of &forms"
+#~ msgstr "&Yenza ugqityo lweefomu"
+
+#~ msgid "App&let server timeout:"
+#~ msgstr "Ix&esha lokuphuma lomncedisi we applet:"
+
+#~ msgid "Netscape Plugin Config"
+#~ msgstr "Uqwalaselo lweplagi efakiweyo ye Netscape"
+
+#~ msgid "Scan"
+#~ msgstr "Umkhangeli ngokunempumelelo"
+
+#~ msgid "Use a&rtsdsp to pipe plugin sound through aRts"
+#~ msgstr "Sebenzisa i a&tsdsp ukwenza umbhobho wesandi ngapha kwe aRts"
+
+#~ msgid ""
+#~ "If this option is enabled, KDE will look for new Netscape plugins every "
+#~ "time it starts up. This makes it easier for you if you often install new "
+#~ "plugins, but it may also slow down KDE startup. You might want to disable "
+#~ "this option, especially if you seldom install plugins."
+#~ msgstr ""
+#~ "Ukuba olukhetho luyenzeka, KDE izakujonga iiplagi ezifakiweyoezintsha "
+#~ "lonke ixesha iyaqala. Oku kuyenza lula kuwe ukuba ufaka iiplagi ezintsha "
+#~ "rhoqo, kodwa inokucothisa uqalo lwe KDE. Ungafuna ukukhubaza olu khetho, "
+#~ "ingakumbi ukuba uzifaka manqapha-nqapha iiplagi."
+
+#~ msgid "Scan for new plugins at &KDE startup"
+#~ msgstr "&Imita yovavanyo lweeplagi ezifakiweyo ezintsha zoqalo lwe KDE"

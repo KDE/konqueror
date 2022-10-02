@@ -1,0 +1,181 @@
+<chapter id="save-settings">
+
+<chapterinfo>
+<authorgroup>
+<author
+><personname
+><firstname
+>Памела</firstname
+> <surname
+>Робертс</surname
+></personname
+></author>
+<othercredit role="translator"
+><firstname
+>Драган</firstname
+><surname
+>Пантелић</surname
+><affiliation
+><address
+><email
+>falcon-10@gmx.de</email
+></address
+></affiliation
+><contrib
+>превод</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>26. 2. 2010.</date>
+<releaseinfo
+>КДЕ 4.4</releaseinfo>
+</chapterinfo>
+
+<title
+>Уписивање поставки и профила</title>
+<sect1 id="save-settings-general">
+<title
+>Опште поставке</title>
+<para
+>Кад затварате <application
+>К‑освајач</application
+>, ваше тренутне поставке менија <guimenu
+>Приказ</guimenu
+> (као што су ставке <guimenuitem
+>Начин приказа</guimenuitem
+>, <guimenuitem
+>Користи index.html</guimenuitem
+>, <guimenuitem
+>Приказуј скривене фајлове</guimenuitem
+>) не уписују се аутоматски као подразумеване. Међутим, можете рећи <application
+>К‑освајачу</application
+> да их запамти одабиром <menuchoice
+><guimenu
+>Подешавање</guimenu
+><guimenuitem
+>Сачувај профил приказа као...</guimenuitem
+></menuchoice
+>; тренутне поставке постаће подразумеване за наредна покретања <application
+>К‑освајача</application
+>.</para>
+
+<para
+>Но, за текућу фасциклу можете задати и засебне поставке менија <guimenu
+>Приказ</guimenu
+>. Да ово урадите, идите на <menuchoice
+><guimenu
+>Приказ</guimenu
+> <guimenuitem
+>Подеси својства приказа...</guimenuitem
+></menuchoice
+> и измените поставке приказа по жељи. Затим примените својства приказа на текућу фасциклу, што ће у њој створити фајл <filename
+>.directory</filename
+> који ће садржати поставке. Поставке посебне по фасцикли уклањате или исто у овом дијалогу, или простим брисањем фајла <filename
+>.directory</filename
+>.</para>
+<note
+><para
+>Згодна употреба ове могућности је када имате фасциклу пуну слика. За њу можете поставити да се приказују сличице кад је отворите (преко <menuchoice
+><guisubmenu
+>Начин приказа</guisubmenu
+> <guimenuitem
+>Иконе</guimenuitem
+></menuchoice
+> и <guimenuitem
+>Преглед</guimenuitem
+> у менију <guimenu
+>Приказ</guimenu
+>), а да то не важи за остале фасцикле.</para
+></note>
+</sect1>
+
+<sect1 id="save-settings-view-profiles">
+<title
+>Профили приказа</title>
+<para
+><application
+>К‑освајач</application
+> може да сачува цео скуп опција као <emphasis
+>профил приказа</emphasis
+>. Неки профили приказа део су стандардне инсталације <application
+>К‑освајача</application
+>, нпр. <property
+>Прегледање Веба</property
+>, <property
+>Управљање фајловима</property
+>, <property
+>Развој за КДЕ</property
+>, <property
+>Поноћни командир</property
+> и <property
+>Прегледање са језичцима</property
+>, а можете додати и сопствене.</para>
+
+<para
+>За измену профила приказа, рецимо <property
+>Прегледање Веба</property
+>, учитајте профил помоћу <menuchoice
+><guimenu
+>Подешавање</guimenu
+><guisubmenu
+>Учитај профил приказа</guisubmenu
+><guimenuitem
+>Прегледање Веба</guimenuitem
+> </menuchoice
+> и измените поставке <application
+>К‑освајача</application
+> како желите. Затим изаберите <menuchoice
+><guimenu
+>Подешавање</guimenu
+><guimenuitem
+>Сачувај профил приказа као...</guimenuitem
+></menuchoice
+>. У дијалогу који добијете, можете изменити име профила, тако да направите нови профил с тим именом, или оставити име какво јесте, да измените тренутни профил. Ако изаберете <guilabel
+>Сачувај УРЛ‑ове у профилу</guilabel
+>, тренутни УРЛ учитаће се заједно са тим профилом приказа. Ово функционише слично као „домаћа страница“ у многим веб прегледачима. Ако желите да се <application
+>К‑освајач</application
+> покрене са празним прозором, пре него што сачувате профил унесите у траку локације <userinput
+>about:blank</userinput
+>.</para>
+
+<note
+><para
+>Можете направити и икону површи за покретање <application
+>К‑освајача</application
+> са новоствореним профилом. Прво направите икону тако што кликнете десним на унос <application
+>К‑освајача</application
+> у менију покретача програма, па из контекстног менија изаберете <guimenuitem
+>Додај на површ</guimenuitem
+>. Отворите дијалог поставки нове иконе на површи тако што кликнете на икону алатке. Измените <guilabel
+>Наредба:</guilabel
+> под језичком <guilabel
+>Програм</guilabel
+> да гласи <userinput
+><command
+>kfmclient</command
+> <option
+>openProfile <replaceable
+>Мој‑нови‑профил</replaceable
+></option
+></userinput
+>, где је <replaceable
+>Мој‑нови‑профил</replaceable
+> име које желите за профил. Затим промените име иконе на <userinput
+>Мој‑нови‑профил</userinput
+> или нешто слично.</para
+></note>
+
+</sect1>
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

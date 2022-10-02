@@ -1,0 +1,291 @@
+<chapter id="bookmarks">
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+> <firstname
+>Rocío</firstname
+> <surname
+>de Gallego</surname
+> <affiliation
+><address
+><email
+>traducciones@rociogallego.com</email
+></address
+></affiliation
+> <contrib
+>Traductora</contrib
+> </othercredit
+><othercredit role="translator"
+> <firstname
+>Pablo</firstname
+> <surname
+>de Vicente</surname
+> <affiliation
+><address
+><email
+>pablo.devicente@gmail.com</email
+></address
+></affiliation
+> <contrib
+>Traductor</contrib
+> </othercredit
+> <othercredit role="translator"
+> <firstname
+>Marcos</firstname
+> <surname
+>Fouces Lago</surname
+> <affiliation
+><address
+><email
+>mfouces@yahoo.es</email
+></address
+></affiliation
+> <contrib
+>Traductor</contrib
+> </othercredit
+> <othercredit role="translator"
+> <firstname
+>Santiago</firstname
+> <surname
+>Fernández Sancho</surname
+> <affiliation
+><address
+><email
+>santi@kde-es.org</email
+></address
+></affiliation
+> <contrib
+>Traductor</contrib
+> </othercredit
+> <othercredit role="translator"
+> <firstname
+>Cristina Yenyxe</firstname
+> <surname
+>González García</surname
+> <affiliation
+><address
+><email
+>the.blue.valkyrie@gmail.com</email
+></address
+></affiliation
+> <contrib
+>Traductor</contrib
+> </othercredit
+> 
+</authorgroup>
+
+<date
+>2010-09-24</date>
+<releaseinfo
+>&kde; 4.5</releaseinfo>
+</chapterinfo>
+
+<title
+>Utilizar los marcadores</title>
+
+<para
+>Aunque puede utilizar los marcadores de &konqueror; para guardar las ubicaciones de sus propios archivos y carpetas, estos son especialmente útiles cuando navega por la web, permitiéndole crear una lista de sitios útiles.</para>
+
+<para
+>To open the <guimenu
+>Bookmarks</guimenu
+> menu <mousebutton
+>left</mousebutton
+> click on the <guimenu
+>Bookmarks</guimenu
+> menu. Once the list is visible, you can navigate through it with the arrow keys or with your mouse, then press &Enter; or <mousebutton
+>left</mousebutton
+> click to visit the selected location.</para>
+
+<para
+>Para añadir un nuevo elemento a la lista utilice <menuchoice
+><guimenu
+>Marcadores </guimenu
+> <guimenuitem
+>Añadir marcador</guimenuitem
+></menuchoice
+> o <keycombo action="simul"
+>&Ctrl;<keycap
+>B</keycap
+></keycombo
+> o pulse con el <mousebutton
+>botón derecho</mousebutton
+> del ratón sobre un espacio vacío en la página web o en la vista de carpetas y seleccione <guimenuitem
+>Añadir marcador de página</guimenuitem
+> / <guimenuitem
+>Añadir marcador de ubicación</guimenuitem
+> en el menú emergente.</para>
+
+<para
+>La lista de <guimenu
+>Marcadores</guimenu
+> puede contener subcarpetas con otros marcadores. Puede crearlas con <menuchoice
+><guimenu
+>Marcadores </guimenu
+><guimenuitem
+>Nueva carpeta de marcadores...</guimenuitem
+></menuchoice
+>. Para añadir un marcador en una subcarpeta en lugar de en la lista principal de marcadores, seleccione la carpeta desde el menú de <guimenu
+>Marcadores</guimenu
+> y utilice el elemento <guimenuitem
+>Añadir marcador</guimenuitem
+> en dicha carpeta.</para>
+
+<para
+>También puede acceder a sus marcadores desde la <link linkend="sidebar"
+> <guilabel
+>Panel lateral</guilabel
+></link
+> o desde la <guilabel
+>Barra de herramientas de marcadores</guilabel
+>.</para>
+
+<para
+>Si introduce <userinput
+>bookmarks:/</userinput
+> en la barra de ubicaciones se mostrará una página inicial con un resumen de todos los marcadores y carpetas.</para
+> 
+
+<sect1 id="orgbmark">
+<title
+>El editor de marcadores</title>
+
+<para
+>La opción <menuchoice
+><guimenu
+>Marcadores</guimenu
+> <guimenuitem
+>Editar marcadores</guimenuitem
+> </menuchoice
+> abre el <guilabel
+>Editor de marcadores</guilabel
+>.</para>
+<para
+>This shows a tree view of your bookmarks and bookmark subfolders. As is usual for tree views in &kde;, subfolders are shown with a small <keycap
+>&gt;</keycap
+> arrow at the left of the folder name; <mousebutton
+>left</mousebutton
+> clicking on it will expand the view to show the contents of that subfolder and the <keycap
+>&gt;</keycap
+> arrow will change to <keycap
+>v</keycap
+>; <mousebutton
+>left</mousebutton
+> clicking on the <keycap
+>v</keycap
+> arrow will collapse the subfolder view.</para>
+
+<para
+>Para seleccionar un elemento en la lista usted puede pulsar con el botón <mousebutton
+>izquierdo</mousebutton
+> sobre él o puede navegar por la lista utilizando las teclas <keysym
+>Flecha arriba</keysym
+> y <keysym
+>Flecha abajo</keysym
+> para moverse, la <keysym
+>Flecha derecha</keysym
+> expandirá una subcarpeta y la <keysym
+>Flecha izquierda</keysym
+> la contraerá.</para>
+
+<para
+>Puede mover elementos de un lugar a otro lugar de la lista mediante los métodos habituales de arrastrar y soltar o <guimenuitem
+>Cortar</guimenuitem
+> y <guimenuitem
+>Pegar</guimenuitem
+>. El orden en el que se muestran los elementos en el <guilabel
+>Editor de marcadores</guilabel
+> es el orden en el que aparecerán en la lista desplegable de <guimenu
+>Marcadores</guimenu
+>. La opción <menuchoice
+><guimenu
+>Carpeta </guimenu
+><guimenuitem
+>Insertar separador</guimenuitem
+></menuchoice
+> se puede utilizar para insertar líneas separadoras en los lugares que desee.</para>
+
+<para
+>Se puede crear una nueva subcarpeta en el lugar seleccionado de la lista utilizando la opción <guimenuitem
+>Nueva carpeta...</guimenuitem
+> del menú <guimenu
+>Archivo</guimenu
+> o desde el menú desplegable que se muestra al pulsar el <mousebutton
+>botón derecho</mousebutton
+> del ratón sobre un elemento en la parte principal de la ventana, o con <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </para>
+
+<para
+>Para cambiar el nombre de un marcador o carpeta selecciónelo y pulse <keycap
+>F2</keycap
+> o seleccione la opción <guimenuitem
+>Cambiar nombre </guimenuitem
+> del menú <guimenu
+>Editar</guimenu
+> o desde el menú emergente que aparece cuando pulsa con el botón <mousebutton
+>derecho </mousebutton
+> del ratón sobre el elemento. De modo similar, puede editar la &URL; pulsando <keycap
+>F3</keycap
+> o mediante la opción de menú <guimenuitem
+>Cambiar ubicación</guimenuitem
+>.</para>
+
+<para
+>El <guilabel
+>Editor de marcadores</guilabel
+> le permite importar marcadores desde diversos navegadores a la lista de marcadores de &konqueror;, colocándolos en una nueva carpeta o remplazando todos los marcadores actuales. Para ello seleccione <guisubmenu
+>Importar</guisubmenu
+> desde el menú <guimenu
+>Archivo</guimenu
+>. La opción <menuchoice
+><guimenu
+>Archivo</guimenu
+><guisubmenu
+>Exportar</guisubmenu
+> </menuchoice
+> se puede utilizar para exportar los marcadores de &konqueror; a los navegadores &Netscape; o Mozilla.</para>
+
+<para
+>Para seleccionar qué subcarpeta de marcadores se utiliza para guardar los elementos de la barra de marcadores seleccione la subcarpeta y después, seleccione <guimenuitem
+>Establecer como carpeta de barra de herramientas</guimenuitem
+> en el menú <guimenu
+>Carpeta</guimenu
+>.</para>
+
+<para
+>Si está limpiando sus marcadores y ha olvidado lo que contiene una cierta página web, puede abrirla fácilmente desde el <guilabel
+> Editor de marcadores</guilabel
+> con el botón <mousebutton
+>derecho</mousebutton
+> del ratón pulsando sobre un elemento y seleccionando <guimenuitem
+>Abrir en Konqueror</guimenuitem
+> desde el menú emergente. Si solo desea comprobar que la &URL; es válida todavía elija <guimenuitem
+>Comprobar estado</guimenuitem
+>.</para>
+
+<note
+><para
+>Todos los cambios se guardan automáticamente al cerrar el <guilabel
+>Editor de marcadores</guilabel
+>. </para
+></note>
+</sect1
+> 
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

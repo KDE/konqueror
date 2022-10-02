@@ -1,0 +1,153 @@
+# Malayalam traslation of kfmclient.po.
+# Copyright (C) 2008 This_file_is_part_of_KDE
+# This file is distributed under the same license as the kdebase package.
+# Reviewed by Santhosh Thottingal <santhosh.thottingal@gmail.com>
+# Remya Thottingal <remyaguptha@yahoo.com>, 2008.
+# Manu S Madhav <manusmad@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: KDE Malayalam Translation\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"PO-Revision-Date: 2019-12-12 21:24+0000\n"
+"Last-Translator: Vivek KJ Pazhedath <vivekkj2004@gmail.com>\n"
+"Language-Team: SMC <smc.org.in>\n"
+"Language: ml\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "shijualexonline@gmail.com,snalledam@dataone.in,vivekkj2004@gmail.com"
+
+#: kfmclient.cpp:49
+#, kde-format
+msgid "kfmclient"
+msgstr "കെഎഫ്എംക്ലയന്റ്"
+
+#: kfmclient.cpp:57
+#, kde-format
+msgid "KDE tool for opening URLs from the command line"
+msgstr "ആജ്ഞാസ്ഥലത്തു നിന്നു് യുആര്‍എല്ലുകള്‍ തുറക്കാനുള്ള കെഡിഇ ഉപകരണം"
+
+#: kfmclient.cpp:65
+#, kde-format
+msgid "Non interactive use: no message boxes"
+msgstr "ഇന്ററാക്ടിവല്ലാത്ത ഉപയോഗം: സന്ദേശപെട്ടികളില്ല"
+
+#: kfmclient.cpp:67
+#, kde-format
+msgid "Show available commands"
+msgstr "ലഭ്യമായ ആജ്ഞകള്‍ കാണിയ്ക്കുക"
+
+#: kfmclient.cpp:69
+#, kde-format
+msgid "Command (see --commands)"
+msgstr "ആജ്ഞ (--commands കാണുക)"
+
+#: kfmclient.cpp:71
+#, kde-format
+msgid "Arguments for command"
+msgstr "ആജ്ഞയ്ക്കായുള്ള ആര്‍ഗ്യുമെന്റുകള്‍"
+
+#: kfmclient.cpp:73
+#, kde-format
+msgid "The files/URLs opened by the application will be deleted after use"
+msgstr ""
+
+#: kfmclient.cpp:81
+#, kde-format
+msgid ""
+"\n"
+"Syntax:\n"
+msgstr ""
+"\n"
+"വ്യാകരണം:\n"
+
+#: kfmclient.cpp:82
+#, kde-format
+msgid ""
+"  kfmclient openURL 'url' ['mimetype']\n"
+"            # Opens a window showing 'url'.\n"
+"            #  'url' may be a relative path\n"
+"            #   or file name, such as . or subdir/\n"
+"            #   If 'url' is omitted, $HOME is used instead.\n"
+"\n"
+msgstr ""
+"  kfmclient openURL 'url' ['mimetype']\n"
+"            # 'url' കാണിക്കുന്ന ജാലകം തുറക്കുക.\n"
+"            # 'url' ആപേക്ഷികപാത ആയിരിക്കാം\n"
+"            # അല്ലെങ്കില്‍, . അഥവാ subdir/ പോലുള്ള ഫയല്‍നാമമായിരിക്കാം             "
+"#'url' ഒഴിവാക്കുകയാണെങ്കില്‍, പകരം $HOME ഉപയോഗിക്കപ്പെടുന്നു.\n"
+"\n"
+
+#: kfmclient.cpp:87
+#, kde-format
+msgid ""
+"            # If 'mimetype' is specified, it will be used to determine the\n"
+"            #   component that Konqueror should use. For instance, set it "
+"to\n"
+"            #   text/html for a web page, to make it appear faster\n"
+"\n"
+msgstr ""
+"            # 'മൈമ്ടൈപ്പ്' വ്യക്തമാക്കിയിട്ടുണ്ടെങ്കില്‍, കോണ്‍ക്വറര്‍ ഉപയോഗിക്കേണ്ട\n"
+"            #   ഘടകം മനസ്സിലാക്കാന്‍ അതുപയോഗിക്കും. ഉദാഹരണത്തിനു്, വെബ്ബ്പേജ്\n"
+"            #   പെട്ടെന്നു് കാണുന്നതിനായി അതു് text/html ആക്കുക\n"
+"\n"
+
+#: kfmclient.cpp:91
+#, kde-format
+msgid ""
+"  kfmclient newTab 'url' ['mimetype']\n"
+"            # Same as above but opens a new tab with 'url' in an existing "
+"Konqueror\n"
+"            #   window on the current active desktop if possible.\n"
+"\n"
+msgstr ""
+"  kfmclient newTab 'url' ['mimetype']\n"
+"            # മുകളിലെപോലെതന്നെ, എന്നാല്‍, സാധിക്കുമെങ്കില്‍, സജീവപണിയിടത്തില്‍ത്തന്നെ "
+"നിലവിലുള്ള \n"
+"            #   കോണ്‍ക്വറര്‍ ജാലകത്തില്‍ 'url'-നായി ഒരു പുതിയ ടാബ് തുറക്കുന്നു.\n"
+"\n"
+
+#: kfmclient.cpp:271
+#, fuzzy, kde-format
+msgid "Syntax error, not enough arguments\n"
+msgstr "വ്യാകരണ തെറ്റു്: ആവശ്യത്തിനു് ആര്‍ഗ്യുമെന്റുകള്‍ ഇല്ല\n"
+
+#: kfmclient.cpp:275
+#, fuzzy, kde-format
+msgid "Syntax error, too many arguments\n"
+msgstr "വ്യാകരണ തെറ്റു്: ആവശ്യത്തിലധികും ആര്‍ഗ്യുമെന്റുകള്‍\n"
+
+#: kfmclient.cpp:324
+#, fuzzy, kde-format
+msgid "Syntax error, unknown command '%1'\n"
+msgstr "വ്യാകരണ തെറ്റു്: അറിയാത്ത ആജ്ഞ '%1'\n"
+
+#~ msgid ""
+#~ "  kfmclient openProfile 'profile' ['url']\n"
+#~ "            # Opens a window using the given profile.\n"
+#~ "            #   'profile' is a file under ~/.kde/share/apps/konqueror/"
+#~ "profiles.\n"
+#~ "            #   'url' is an optional URL to open.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmclient openProfile 'profile' ['url']\n"
+#~ "            # തന്നിരിക്കുന്ന പ്രൊഫൈല്‍ ഉപയോഗിച്ചു് ഒരു ജാലകം തുറക്കുന്നു.\n"
+#~ "            #   'profile' ~/.kde/share/apps/konqueror/profiles എന്നതിനുകീഴെ "
+#~ "ഒരു ഫയലാണു്.\n"
+#~ "            #   'url' ഐച്ഛികമായി തുറക്കാനുള്ള ഒരു URL ആണു്.\n"
+#~ "\n"
+
+#, fuzzy
+#~ msgid "Profile '%1' not found\n"
+#~ msgstr "പ്രൊഫൈല്‍ %1 കാണുന്നില്ല\n"

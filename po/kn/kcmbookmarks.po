@@ -1,0 +1,1166 @@
+# translation of kcmkio.po to Kannada
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Shankar Prasad <svenkate@redhat.com>, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkio\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2009-01-06 16:58+0530\n"
+"Last-Translator: Shankar Prasad <svenkate@redhat.com>\n"
+"Language-Team: Kannada <en@li.org>\n"
+"Language: kn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: bookmarks.cpp:92
+#, kde-format
+msgid ""
+"<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
+"page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
+"\">bookmarks:/</a>.</p>"
+msgstr ""
+"<h1>ನನ್ನ ಪುಟಗುರುತುಗಳು</h1><p>ಈ ಪುಟವು ನಿಮ್ಮ ಪುಟಗುರುತಗಳ ನೆಲೆ ಪುಟವನ್ನು ಸಂರಚಿಸಲು "
+"ಅನುವು ಮಾಡಿಕೊಡುತ್ತದೆ.</p><p>ಪುಟಗುರುತುಗಳ ನೆಲೆಪುಟವನ್ನು <a href=\"bookmarks:/"
+"\">bookmarks:/</a> ನಲ್ಲಿ ಕಾಣಬಹುದಾಗಿದೆ.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: bookmarks.ui:16
+#, kde-format
+msgid "Bookmarks"
+msgstr "ಪುಟಗುರುತುಗಳು (ಬುಕ್‌ಮಾರ್ಕುಗಳು)"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowRoot)
+#: bookmarks.ui:23
+#, kde-format
+msgid ""
+"If this option is unchecked, bookmarks at the root of the hierarchy (not in "
+"a folder) are not displayed.\n"
+"If checked, they are gathered in a \"root\" folder."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowRoot)
+#: bookmarks.ui:26
+#, kde-format
+msgid "&Show bookmarks without folder"
+msgstr "ಕಡತಕೋಶಗಳಿಲ್ಲದೆ ಪುಟಗುರುತುಗಳನ್ನು ತೋರಿಸು(&S)"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbFlattenTree)
+#: bookmarks.ui:37
+#, kde-format
+msgid ""
+"Sub-folders are shown within their parent by default. If you activate this "
+"option, sub-folders are displayed on their own.\n"
+"It looks less nice but it may help if you have a very big folder you want to "
+"spread in two columns."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbFlattenTree)
+#: bookmarks.ui:40
+#, kde-format
+msgid "&Flatten bookmarks tree"
+msgstr "ಪುಟಗುರುತುಗಳ ವೃಕ್ಷವನ್ನು ಸಪಾಟುಗೊಳಿಸು(&F)"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowPlaces)
+#: bookmarks.ui:47
+#, kde-format
+msgid ""
+"Show a box with KDE places (Home, Network, ...). Useful if you use konqueror "
+"as a file manager."
+msgstr ""
+"KDE ಸ್ಥಳಗಳ (ನೆಲೆ, ಜಾಲಬಂಧ, ...) ಒಂದು ಚೌಕವನ್ನು ತೋರಿಸುತ್ತದೆ. ಕಾಂಕರರ್ ಅನ್ನು ನಿಮ್ಮ ಕಡತ "
+"ವ್ಯವಸ್ಥಾಪಕವಾಗಿ ಬಳಸುವುದಾದಲ್ಲಿ ಇದು ಸಹಕಾರಿಯಾಗುತ್ತದೆ."
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowPlaces)
+#: bookmarks.ui:50
+#, kde-format
+msgid "Show system &places"
+msgstr "ಗಣಕದ ಸ್ಥಳಗಳನ್ನು ತೋರಿಸು(&p)"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: bookmarks.ui:63
+#, kde-format
+msgid "General Settings"
+msgstr "ಸಾಮಾನ್ಯ ಸಂಯೋಜನೆಗಳು"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, label)
+#: bookmarks.ui:71
+#, kde-format
+msgid ""
+"Folders are automatically distributed in several columns. The optimal number "
+"of columns depends on the width of the konqueror window and the number of "
+"bookmarks you have."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: bookmarks.ui:74
+#, fuzzy, kde-format
+#| msgid "Number of columns to show"
+msgid "Number of columns to show:"
+msgstr "ತೋರಿಸಲಾಗುವ  ಲಂಬಸಾಲುಗಳ ಸಂಖ್ಯೆ"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowBackgrounds)
+#: bookmarks.ui:109
+#, kde-format
+msgid "Disable it on slow system to disable background images."
+msgstr "ನಿಧಾನಗತಿಯ ಗಣಕಗಳಲ್ಲಿ ಹಿನ್ನಲೆ ಬಿಂಬಗಳನ್ನು ಅಶಕ್ತಗೊಳಿಸಲು ಇದನ್ನು ಅಶಕ್ತಗೊಳಿಸಿ."
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowBackgrounds)
+#: bookmarks.ui:112
+#, kde-format
+msgid "Show folder &backgrounds"
+msgstr "ಕಡತಕೋಶದ ಹಿನ್ನಲೆಯನ್ನು ತೋರಿಸು (&b)"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, groupBox_3)
+#: bookmarks.ui:138
+#, kde-format
+msgid "How much disk space is used to cache the pixmaps"
+msgstr "ಪಿಕ್ಸ್‍ಮ್ಯಾಪ್‌ಗಳನ್ನು ಹಿಡಿದಿಡಲು ಡಿಸ್ಕಿನಲ್ಲಿ ಎಷ್ಟು ಜಾಗವನ್ನು ಬಳಸಲಾಗುತ್ತದೆ"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: bookmarks.ui:141
+#, kde-format
+msgid "Pixmap Cache"
+msgstr "ಪಿಕ್ಸ್‍ಮ್ಯಾಪ್‌ ಹಿಡಿದಿಡುವಿಕೆ"
+
+#. i18n: ectx: property (text), widget (QLabel, lbMaxCacheSize)
+#: bookmarks.ui:150
+#, kde-format
+msgid "Disk cache size:"
+msgstr "ಡಿಸ್ಕಿನ ಕ್ಯಾಶೆ ಗಾತ್ರ:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, sbCacheSize)
+#: bookmarks.ui:163
+#, kde-format
+msgid " kB"
+msgstr " kB"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, clearCacheButton)
+#: bookmarks.ui:173
+#, kde-format
+msgid "Clear the pixmap cache"
+msgstr "ಹಿಡಿದಿಡಲಾದ ಪಿಕ್ಸ್‍ಮ್ಯಾಪ್‌ ಅನ್ನು ಅಳಿಸಿಹಾಕು"
+
+#. i18n: ectx: property (text), widget (QPushButton, clearCacheButton)
+#: bookmarks.ui:176
+#, kde-format
+msgid "&Clear Cache"
+msgstr "ಕ್ಯಾಶೆಯನ್ನು ಅಳಿಸು(&C)"
+
+#~ msgid "&Use cache"
+#~ msgstr "ಕ್ಯಾಶೆಯನ್ನು ಬಳಸು(&U)"
+
+#~ msgid "Policy"
+#~ msgstr "ಪಾಲಿಸಿ"
+
+#~ msgid "&Keep cache in sync"
+#~ msgstr "ಕ್ಯಾಶೆಯನ್ನು ಹೊಂದಿಕೊಳ್ಳುವಂತೆ ಇರಿಸಿಕೊ(&K)"
+
+#~ msgid "Use cache whenever &possible"
+#~ msgstr "ಸಾಧ್ಯವಿದ್ದಾಗಲೆಲ್ಲಾ ಕ್ಯಾಶೆಯನ್ನು ಬಳಸು (&p)"
+
+#~ msgid "O&ffline browsing mode"
+#~ msgstr "ಜಾಲಬಂಧದ ಹೊರಗೆ ವೀಕ್ಷಣೆಯ ಕ್ರಮ(&f)"
+
+#~ msgid "Disk cache &size:"
+#~ msgstr "ಡಿಸ್ಕಿನ ಕ್ಯಾಶೆ ಗಾತ್ರ:(&s):"
+
+#~ msgid "C&lear Cache"
+#~ msgstr "ಕ್ಯಾಶೆಯನ್ನು ಅಳಿಸು(&l)"
+
+#~ msgid ""
+#~ "Unable to start the cookie handler service.\n"
+#~ "You will not be able to manage the cookies that are stored on your "
+#~ "computer."
+#~ msgstr ""
+#~ "ಕುಕಿಯನ್ನು ನಿಭಾಯಿಸುವ ಸೇವೆಯನ್ನು ಆರಂಭಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ.\n"
+#~ "ನಿಮ್ಮ ಗಣಕದಲ್ಲಿ ಶೇಖರಿಸಿಡಲಾದ ಕುಕಿಗಳನ್ನು ನೀವು ವ್ಯವಸ್ಥಾಪಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ."
+
+#~ msgid "&Policy"
+#~ msgstr "ಪಾಲಿಸಿ(&P)"
+
+#~ msgid "&Management"
+#~ msgstr "ನಿರ್ವಹಣೆ(&M)"
+
+#~ msgid "D-Bus Communication Error"
+#~ msgstr "ಡಿ-ಬಸ್ ಸಂವಹನ ದೋಷ"
+
+#~ msgid "Unable to delete all the cookies as requested."
+#~ msgstr "ಮನವಿ ಸಲ್ಲಿಸಿದಂತೆ ಎಲ್ಲಾ ಕುಕಿಗಳನ್ನು ಅಳಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ."
+
+#~ msgid "Unable to delete cookies as requested."
+#~ msgstr "ಮನವಿ ಸಲ್ಲಿಸಲಾದ ಕುಕಿಗಳನ್ನು ಅಳಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ."
+
+#, fuzzy
+#~| msgid "<h1>Cookies Management Quick Help</h1>"
+#~ msgid "<h1>Cookie Management Quick Help</h1>"
+#~ msgstr "<h1>ಕುಕಿಗಳ ನಿರ್ವಹಣೆಗೆ ಕ್ಷಿಪ್ರ ನೆರವು</h1>"
+
+#~ msgid "Information Lookup Failure"
+#~ msgstr "ಮಾಹಿತಿ ನೋಡುವಲ್ಲಿ ವಿಫಲತೆ"
+
+#~ msgid ""
+#~ "Unable to retrieve information about the cookies stored on your computer."
+#~ msgstr "ನಿಮ್ಮ ಗಣಕದಲ್ಲಿ ಶೇಖರಿಸಿಡಲಾದಂತಹ ಕುಕಿಗಳ ಮಾಹಿತಿಯನ್ನು ಪಡೆಯಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ."
+
+#~ msgid "End of session"
+#~ msgstr "ಅಧೀವೇಶನದ ಕೊನೆ"
+
+#~ msgid "Yes"
+#~ msgstr "ಹೌದು"
+
+#~ msgid "Search"
+#~ msgstr "ಹುಡುಕು"
+
+#~ msgid "Search interactively for domains and hosts"
+#~ msgstr "ಡೊಮೈನುಗಳಿಗಾಗಿ ಹಾಗು ಅತಿಥೇಯಗಳಿಗಾಗಿ ಸಂವಾದಾತ್ಮಕವಾಗಿ ಹುಡುಕು"
+
+#, fuzzy
+#~| msgid "Site Name"
+#~ msgid "Site"
+#~ msgstr "ತಾಣದ ಹೆಸರು"
+
+#, fuzzy
+#~| msgid "Site Name"
+#~ msgid "Cookie Name"
+#~ msgstr "ತಾಣದ ಹೆಸರು"
+
+#~ msgid "D&elete"
+#~ msgstr "ಅಳಿಸಿ ಹಾಕು(&e)"
+
+#~ msgid "Delete A&ll"
+#~ msgstr "ಎಲ್ಲವನ್ನೂ ಅಳಿಸಿಹಾಕು(&l)"
+
+#, fuzzy
+#~| msgid "Change &Policy..."
+#~ msgid "Configure &Policy..."
+#~ msgstr "ಪಾಲಿಸಿಯನ್ನು ಬದಲಾಯಿಸು(&P)..."
+
+#~ msgid "&Reload List"
+#~ msgstr "ಮರಳಿ ಲೋಡ್ ಮಾಡುವ ಪಟ್ಟಿ(&R)"
+
+#~ msgid "Details"
+#~ msgstr "ವಿವರಗಳು"
+
+#~ msgid "Name:"
+#~ msgstr "ಹೆಸರು:"
+
+#~ msgid "Value:"
+#~ msgstr "ಮೌಲ್ಯ:"
+
+#~ msgid "Domain:"
+#~ msgstr "ಕ್ಷೇತ್ರ:"
+
+#~ msgid "Path:"
+#~ msgstr "ಮಾರ್ಗ"
+
+#~ msgid "Expires:"
+#~ msgstr "ವಾಯಿದೆ:"
+
+#~ msgid "Secure:"
+#~ msgstr "ಸುರಕ್ಷಿತ:"
+
+#, fuzzy
+#~| msgid "Change Cookie Policy"
+#~ msgctxt "@title:window"
+#~ msgid "Change Cookie Policy"
+#~ msgstr "ಕುಕಿ ಪಾಲಿಸಿಯನ್ನು ಬದಲಾಯಿಸಿ"
+
+#, fuzzy
+#~| msgid "New Cookie Policy"
+#~ msgctxt "@title:window"
+#~ msgid "New Cookie Policy"
+#~ msgstr "ಹೊಸ ಕುಕಿ ಪಾಲಿಸಿ"
+
+#~ msgid ""
+#~ "<qt>A policy already exists for<center><b>%1</b></center>Do you want to "
+#~ "replace it?</qt>"
+#~ msgstr ""
+#~ "<qt>ಈಗಾಗಲೆ <center><b>%1</b></center> ಗಾಗಿ ಒಂದು ಪಾಲಿಸಿಯು ಅಸ್ತಿತ್ವದಲ್ಲಿದೆ "
+#~ "ನೀವದನ್ನು ಬದಲಾಯಿಸಲು ಬಯಸುತ್ತೀರೆ?</qt>"
+
+#, fuzzy
+#~| msgid "Duplicate Policy"
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Policy"
+#~ msgstr "ಪಾಲಿಸಿಯ ನಕಲಿ ಪ್ರತಿ"
+
+#~ msgid "Replace"
+#~ msgstr "ಬದಲಾಯಿಸು"
+
+#~ msgid ""
+#~ "Unable to communicate with the cookie handler service.\n"
+#~ "Any changes you made will not take effect until the service is restarted."
+#~ msgstr ""
+#~ "ಕುಕಿ ನಿಭಾಯಿಸುವ ಸೇವೆಯೊಂದಿಗೆ ವ್ಯವಹರಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ.\n"
+#~ "ಸೇವೆಯನ್ನು ಮರಳಿ ಆರಂಭಿಸುವವರೆಗೂ ನೀವು ಮಾಡಿದ ಯಾವುದೆ ಬದಲಾವಣೆಗಳು ಕಾರ್ಯರೂಪಕ್ಕೆ "
+#~ "ಬರುವುದಿಲ್ಲ."
+
+#~ msgid "Enable coo&kies"
+#~ msgstr "ಕುಕಿಗಳನ್ನು ಶಕ್ತಗೊಳಿಸು(&k)"
+
+#~ msgid "Only acce&pt cookies from originating server"
+#~ msgstr "ಪರಿಚಾರಕದಿಂದ ಉತ್ಪತ್ತಿಯಾಗುವ ಕುಕಿಗಳನ್ನು ಮಾತ್ರ ಅನುಮತಿಸು(&p)"
+
+#~ msgid "Automaticall&y accept session cookies"
+#~ msgstr "ಅಧಿವೇಶನ ಕುಕಿಗಳನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಅಂಗೀಕರಿಸು(&y)"
+
+#~ msgid "Default Policy"
+#~ msgstr "ಪೂರ್ವನಿಯೋಜಿತ ಪಾಲಿಸಿ"
+
+#~ msgid "Accep&t all cookies"
+#~ msgstr "ಎಲ್ಲಾ ಕುಕಿಗಳನ್ನು ಅನುಮತಿಸು(&t)"
+
+#, fuzzy
+#~| msgid "End of session"
+#~ msgid "Accept &until end of session"
+#~ msgstr "ಅಧೀವೇಶನದ ಕೊನೆ"
+
+#~ msgid "Ask &for confirmation"
+#~ msgstr "ಮಾಹಿತಿಗಾಗಿ ಕೇಳು(&f)"
+
+#~ msgid "Re&ject all cookies"
+#~ msgstr "ಎಲ್ಲಾ ಕುಕಿಗಳನ್ನು ತಿರಸ್ಕರಿಸು(&j)"
+
+#~ msgid "Site Policy"
+#~ msgstr "ತಾಣದ ಪಾಲಿಸಿ"
+
+#~ msgid "Search interactively for domains"
+#~ msgstr "ಡೊಮೈನುಗಳಿಗಾಗಿ ಸಂವಾದಾತ್ಮಕವಾಗಿ ಹುಡುಕು"
+
+#~ msgid "Domain"
+#~ msgstr "ಕ್ಷೇತ್ರ"
+
+#~ msgid "&New..."
+#~ msgstr "ಹೊಸ(&N)..."
+
+#~ msgid "Chan&ge..."
+#~ msgstr "ಬದಲಾಯಿಸು(&g)..."
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the host or domain to which this policy applies, e.g. <b>www.kde."
+#~ "org</b> or <b>.kde.org</b>.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "ಈ ಪಾಲಿಸಿಯು ಅನ್ವಯವಾಗುವ ಅತಿಥೇಯ ಅಥವ ಡೊಮೈನ್ ಹೆಸರನ್ನು ಸೂಚಿಸಿ, ಉದಾ. <b>www.kde."
+#~ "org</b> ಅಥವ <b>.kde.org</b>.\n"
+#~ "</qt>"
+
+#, fuzzy
+#~| msgid "Site Name"
+#~ msgid "Site name:"
+#~ msgstr "ತಾಣದ ಹೆಸರು"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Select the desired policy:\n"
+#~| "<ul>\n"
+#~| "<li><b>Accept</b> - Allows this site to set cookies</li>\n"
+#~| "<li><b>Reject</b> - Refuse all cookies sent from this site</li>\n"
+#~| "<li><b>Ask</b> - Prompt when cookies are received from this site</li>\n"
+#~| "</ul>\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Select the desired policy:\n"
+#~ "<ul>\n"
+#~ "<li><b>Accept</b> - Allows this site to set cookies</li>\n"
+#~ "<li><b>Accept until end of session</b> - Allows this site to set cookies "
+#~ "but they will expire at the end of the session.</li>\n"
+#~ "<li><b>Reject</b> - Refuse all cookies sent from this site</li>\n"
+#~ "<li><b>Ask</b> - Prompt when cookies are received from this site</li>\n"
+#~ "</ul>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "ಇಚ್ಛೆಯ ಪಾಲಿಸಿಯನ್ನು ಆಯ್ಕೆ ಮಾಡಿ:\n"
+#~ "<ul>\n"
+#~ "<li><b>ಅಂಗೀಕರಿಸು</b> - ಈ ತಾಣವು ಕುಕಿಗಳನ್ನು ಹೊಂದಿಸಲು ಅನುಮತಿಸು</li>\n"
+#~ "<li><b>ತಿರಸ್ಕರಿಸು</b> - ಈ ತಾಣದಿಂದ ಕಳುಹಿಸಲಾಗುವ ಎಲ್ಲಾ ಕುಕಿಗಳನ್ನು ತಿರಸ್ಕರಿಸು/"
+#~ "li>\n"
+#~ "<li><b>ಕೇಳು</b> - ಈ ತಾಣದಿಂದ ಕುಕಿಗಳು ಬಂದಾಗ ಕೇಳು </li>\n"
+#~ "</ul>\n"
+#~ "</qt>"
+
+#, fuzzy
+#~| msgid "&Policy:"
+#~ msgid "Policy:"
+#~ msgstr "ಪಾಲಿಸಿ(&P):"
+
+#~ msgid "Accept"
+#~ msgstr "ಒಪ್ಪಿಕೋ"
+
+#, fuzzy
+#~| msgid "End of session"
+#~ msgid "Accept until end of session"
+#~ msgstr "ಅಧೀವೇಶನದ ಕೊನೆ"
+
+#~ msgid "Reject"
+#~ msgstr "ತಿರಸ್ಕರಿಸು"
+
+#~ msgid "Ask"
+#~ msgstr "ಕೋರು"
+
+#~ msgid "Disable Passive FTP"
+#~ msgstr "ಜಡ FTP ಅನ್ನು ಅಶಕ್ತಗೊಳಿಸಿ"
+
+#~ msgid "Mark partially uploaded files"
+#~ msgstr "ಭಾಗಶಃ ಅಪ್‌ಲೋಡ್‌ ಮಾಡಲಾದ ಕಡತಗಳನ್ನು ಗುರುತುಹಾಕಿ"
+
+#~ msgid ""
+#~ "While a file is being uploaded its extension is \".part\". When fully "
+#~ "uploaded it is renamed to its real name."
+#~ msgstr ""
+#~ "ಕಡತವೊಂದನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡುವಾಗ ಅದರ ವಿಸ್ತರಣೆಯು \".part\" ಆಗಿರುತ್ತದೆ. ಸಂಪೂರ್ಣವಾಗಿ "
+#~ "ಅಪ್‌ಲೋಡ್ ಆದ ಮೇಲೆ ಅದರ ಹೆಸರನ್ನು ನಿಜವಾದ ಹೆಸರಿಗೆ ಬದಲಾಯಿಸಲಾಗುತ್ತದೆ."
+
+#~ msgid "Connect to the Internet directly."
+#~ msgstr "ಅಂತರ್ಜಾಲಕ್ಕೆ ನೇರವಾಗಿ ಸಂಪರ್ಕಜೋಡಿಸಿ."
+
+#, fuzzy
+#~| msgid "U&se proxy configuration URL:"
+#~ msgid "Detect proxy configuration automatically"
+#~ msgstr "ಪ್ರಾಕ್ಸಿ ಸಂರಚನಾ ತಾಣಸೂಚಿಯನ್ನು ಬಳಸು(&s):"
+
+#, fuzzy
+#~| msgid "Use the specified proxy script URL to configure the proxy settings."
+#~ msgid "Use the specified proxy script to configure the proxy settings."
+#~ msgstr ""
+#~ "ಪ್ರಾಕ್ಸಿ ಸಂಯೋಜನೆಗಳನ್ನು ಸಂರಚಿಸಲು ನಿಶ್ಚಿತ ಪ್ರಾಕ್ಸಿ ಸ್ಕ್ರಿಪ್ಟಿನ ತಾಣಸೂಚಿಯನ್ನು ಬಳಸಿ."
+
+#, fuzzy
+#~| msgid "U&se proxy configuration URL:"
+#~ msgid "Use proxy auto configuration URL:"
+#~ msgstr "ಪ್ರಾಕ್ಸಿ ಸಂರಚನಾ ತಾಣಸೂಚಿಯನ್ನು ಬಳಸು(&s):"
+
+#~ msgid "Enter the address for the proxy configuration script."
+#~ msgstr "ಪ್ರಾಕ್ಸಿ ಸಂರಚನಾ ಸ್ಕ್ರಿಪ್ಟಿಗಾಗಿ ವಿಳಾಸವನ್ನು ನಮೂದಿಸಿ."
+
+#, fuzzy
+#~| msgid "U&se proxy configuration URL:"
+#~ msgid "Use system proxy configuration:"
+#~ msgstr "ಪ್ರಾಕ್ಸಿ ಸಂರಚನಾ ತಾಣಸೂಚಿಯನ್ನು ಬಳಸು(&s):"
+
+#, fuzzy
+#~| msgid "Auto &Detect"
+#~ msgid "Auto D&etect"
+#~ msgstr "ಸ್ವಯಂಪತ್ತೆ(&D)"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Enter the name of the environment variable, e.g. <b>HTTP_PROXY</b>, used "
+#~| "to store the address of the HTTP proxy server.<p>\n"
+#~| "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~| "attempt automatic discovery of this variable.\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the name of the environment variable, e.g. <b>HTTP_PROXY</b>, used "
+#~ "to store the address of the HTTP proxy server.<p>\n"
+#~ "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~ "attempt automatic discovery of this variable.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "HTTP ಪ್ರಾಕ್ಸಿ ಪರಿಚಾರಕದ ವಿಳಾಸವನ್ನು ಶೇಖರಿಸಿಡಲು ಬಳಸಲಾಗುವ ಪರಿಸರ ವೇರಿಯೇಬಲ್‌ನ "
+#~ "ಹೆಸರನ್ನು ನಮೂದಿಸಿ, ಉದಾ. <b>HTTP_PROXY</b>.<p>\n"
+#~ "ಪರ್ಯಾಯವಾಗಿ, ಈ ವೇರಿಯಬಲ್ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಪತ್ತೆಯಾಗಲು <b>\"ಸ್ವಯಂ ಪತ್ತೆ\"</b> ಗುಂಡಿಯ "
+#~ "ಮೇಲೆ ಕ್ಲಿಕ್ಕಿಸಬಹುದಾಗಿದೆ.\n"
+#~ "</qt>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Enter the name of the environment variable, e.g. <b>HTTPS_PROXY</b>, "
+#~| "used to store the address of the HTTPS proxy server.<p>\n"
+#~| "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~| "attempt an automatic discovery of this variable.\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the name of the environment variable, e.g. <b>HTTPS_PROXY</b>, used "
+#~ "to store the address of the HTTPS proxy server.<p>\n"
+#~ "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~ "attempt an automatic discovery of this variable.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "HTTPS ಪ್ರಾಕ್ಸಿ ಪರಿಚಾರಕದ ವಿಳಾಸವನ್ನು ಶೇಖರಿಸಿಡಲು ಬಳಸಲಾಗುವ ಪರಿಸರ ವೇರಿಯೇಬಲ್‌ನ "
+#~ "ಹೆಸರನ್ನು ನಮೂದಿಸಿ, ಉದಾ. <b>HTTPS_PROXY</b>.<p>\n"
+#~ "ಪರ್ಯಾಯವಾಗಿ, ಈ ವೇರಿಯಬಲ್ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಪತ್ತೆಯಾಗಲು <b>\"ಸ್ವಯಂ ಪತ್ತೆ\"</b> ಗುಂಡಿಯ "
+#~ "ಮೇಲೆ ಕ್ಲಿಕ್ಕಿಸಬಹುದಾಗಿದೆ.\n"
+#~ "</qt>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Enter the name of the environment variable, e.g. <b>FTP_PROXY</b>, used "
+#~| "to store the address of the FTP proxy server.<p>\n"
+#~| "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~| "attempt an automatic discovery of this variable.\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the name of the environment variable, e.g. <b>FTP_PROXY</b>, used "
+#~ "to store the address of the FTP proxy server.<p>\n"
+#~ "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~ "attempt an automatic discovery of this variable.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "FTP ಪ್ರಾಕ್ಸಿ ಪರಿಚಾರಕದ ವಿಳಾಸವನ್ನು ಶೇಖರಿಸಿಡಲು ಬಳಸಲಾಗುವ ಪರಿಸರ ವೇರಿಯೇಬಲ್‌ನ ಹೆಸರನ್ನು "
+#~ "ನಮೂದಿಸಿ, ಉದಾ. <b>FTP_PROXY</b>.<p>\n"
+#~ "ಪರ್ಯಾಯವಾಗಿ, ಈ ವೇರಿಯಬಲ್ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಪತ್ತೆಯಾಗಲು <b>\"ಸ್ವಯಂ ಪತ್ತೆ\"</b> ಗುಂಡಿಯ "
+#~ "ಮೇಲೆ ಕ್ಲಿಕ್ಕಿಸಬಹುದಾಗಿದೆ.\n"
+#~ "</qt>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Enter the name of the environment variable, e.g. <b>HTTPS_PROXY</b>, "
+#~| "used to store the address of the HTTPS proxy server.<p>\n"
+#~| "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~| "attempt an automatic discovery of this variable.\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the name of the environment variable, e.g. <b>SOCKS_PROXY</b>, used "
+#~ "to store the address of the SOCKS proxy server.<p>\n"
+#~ "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~ "attempt an automatic discovery of this variable.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "HTTPS ಪ್ರಾಕ್ಸಿ ಪರಿಚಾರಕದ ವಿಳಾಸವನ್ನು ಶೇಖರಿಸಿಡಲು ಬಳಸಲಾಗುವ ಪರಿಸರ ವೇರಿಯೇಬಲ್‌ನ "
+#~ "ಹೆಸರನ್ನು ನಮೂದಿಸಿ, ಉದಾ. <b>HTTPS_PROXY</b>.<p>\n"
+#~ "ಪರ್ಯಾಯವಾಗಿ, ಈ ವೇರಿಯಬಲ್ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಪತ್ತೆಯಾಗಲು <b>\"ಸ್ವಯಂ ಪತ್ತೆ\"</b> ಗುಂಡಿಯ "
+#~ "ಮೇಲೆ ಕ್ಲಿಕ್ಕಿಸಬಹುದಾಗಿದೆ.\n"
+#~ "</qt>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Enter the name of the environment variable, e.g. <b>HTTPS_PROXY</b>, "
+#~| "used to store the address of the HTTPS proxy server.<p>\n"
+#~| "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~| "attempt an automatic discovery of this variable.\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>Enter the name of the environment variable, e.g. <b>SOCKS_PROXY</b>, "
+#~ "used to store the address of the SOCKS proxy server.<p>Alternatively, you "
+#~ "can click on the <b>\"Auto Detect\"</b> button to attempt an automatic "
+#~ "discovery of this variable.</p></qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "HTTPS ಪ್ರಾಕ್ಸಿ ಪರಿಚಾರಕದ ವಿಳಾಸವನ್ನು ಶೇಖರಿಸಿಡಲು ಬಳಸಲಾಗುವ ಪರಿಸರ ವೇರಿಯೇಬಲ್‌ನ "
+#~ "ಹೆಸರನ್ನು ನಮೂದಿಸಿ, ಉದಾ. <b>HTTPS_PROXY</b>.<p>\n"
+#~ "ಪರ್ಯಾಯವಾಗಿ, ಈ ವೇರಿಯಬಲ್ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಪತ್ತೆಯಾಗಲು <b>\"ಸ್ವಯಂ ಪತ್ತೆ\"</b> ಗುಂಡಿಯ "
+#~ "ಮೇಲೆ ಕ್ಲಿಕ್ಕಿಸಬಹುದಾಗಿದೆ.\n"
+#~ "</qt>"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the environment variable, e.g. <b>NO_PROXY</b>, used to store the "
+#~ "addresses of sites for which the proxy server should not be used.<p>\n"
+#~ "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~ "attempt an automatic discovery of this variable.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "ಯಾವ ತಾಣಗಳಿಗೆ ಪ್ರಾಕ್ಸಿ ಪರಿಚಾರಕವನ್ನು ಬಳಸಬಾರದೊ ಅಂತಹ ತಾಣಗಳ ವಿಳಾಸಗಳನ್ನು ಶೇಖರಿಸಿಡಲು "
+#~ "ಬಳಸಲಾಗುವ ಪರಿಸರ ವೇರಿಯೇಬಲ್‌ನ ಹೆಸರನ್ನು ನಮೂದಿಸಿ, ಉದಾ. <b>NO_PROXY</b>.<p>\n"
+#~ "ಪರ್ಯಾಯವಾಗಿ, ಈ ವೇರಿಯಬಲ್ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಪತ್ತೆಯಾಗಲು <b>\"ಸ್ವಯಂ ಪತ್ತೆ\"</b> ಗುಂಡಿಯ "
+#~ "ಮೇಲೆ ಕ್ಲಿಕ್ಕಿಸಬಹುದಾಗಿದೆ.\n"
+#~ "</qt>"
+
+#, fuzzy
+#~| msgid "E&xceptions"
+#~ msgid "Exceptions:"
+#~ msgstr "ವಿನಾಯಿತಿಗಳು(&x)"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Enter the environment variable, e.g. <b>NO_PROXY</b>, used to store the "
+#~| "addresses of sites for which the proxy server should not be used.<p>\n"
+#~| "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~| "attempt an automatic discovery of this variable.\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>Enter the environment variable, e.g. <b>NO_PROXY</b>, used to store "
+#~ "the addresses of sites for which the above proxy settings should not be "
+#~ "used.<p>Alternatively, you can click on the <b>\"Auto Detect\"</b> button "
+#~ "to attempt an automatic discovery of this variable.</p></qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "ಯಾವ ತಾಣಗಳಿಗೆ ಪ್ರಾಕ್ಸಿ ಪರಿಚಾರಕವನ್ನು ಬಳಸಬಾರದೊ ಅಂತಹ ತಾಣಗಳ ವಿಳಾಸಗಳನ್ನು ಶೇಖರಿಸಿಡಲು "
+#~ "ಬಳಸಲಾಗುವ ಪರಿಸರ ವೇರಿಯೇಬಲ್‌ನ ಹೆಸರನ್ನು ನಮೂದಿಸಿ, ಉದಾ. <b>NO_PROXY</b>.<p>\n"
+#~ "ಪರ್ಯಾಯವಾಗಿ, ಈ ವೇರಿಯಬಲ್ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಪತ್ತೆಯಾಗಲು <b>\"ಸ್ವಯಂ ಪತ್ತೆ\"</b> ಗುಂಡಿಯ "
+#~ "ಮೇಲೆ ಕ್ಲಿಕ್ಕಿಸಬಹುದಾಗಿದೆ.\n"
+#~ "</qt>"
+
+#~ msgid "Show the &value of the environment variables"
+#~ msgstr "ಪರಿಸರ ವೇರಿಯೇಬಲ್‌ನ ಮೌಲ್ಯವನ್ನು ತೋರಿಸು (&v)"
+
+#~ msgid "Manually enter proxy server configuration information."
+#~ msgstr "ಪ್ರಾಕ್ಸಿ ಪರಿಚಾರಕ ಸಂರಚನೆಯನ್ನು ಕೈಯಾರೆ ನಮೂದಿಸಿ."
+
+#, fuzzy
+#~| msgid "A&utomatically detect proxy configuration"
+#~ msgid "Use manually specified proxy configuration:"
+#~ msgstr "ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಪ್ರಾಕ್ಸಿ ಸಂರಚನೆಯನ್ನು ಪತ್ತೆಹಚ್ಚು(&u)"
+
+#~ msgid "Enter the address of the HTTP proxy server."
+#~ msgstr "HTTP ಪ್ರಾಕ್ಸಿ ಪರಿಚಾರಕದ ವಿಳಾಸವನ್ನು ನಮೂದಿಸಿ."
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTP proxy server."
+#~ msgid "Enter the port number of the HTTP proxy server."
+#~ msgstr "HTTP ಪ್ರಾಕ್ಸಿ ಪರಿಚಾರಕದ ವಿಳಾಸವನ್ನು ನಮೂದಿಸಿ."
+
+#, fuzzy
+#~| msgid "&Use the same proxy server for all protocols"
+#~ msgid "Use this proxy server for a&ll protocols"
+#~ msgstr "ಎಲ್ಲಾ ಪ್ರೊಟೊಕಾಲ್‌ಗಳಿಗೂ ಒಂದೇ ಪ್ರಾಕ್ಸಿ ಪರಿಚಾರಕವನ್ನು ಬಳಸು(&U)"
+
+#~ msgid "Enter the address of the HTTPS proxy server."
+#~ msgstr "HTTPS ಪ್ರಾಕ್ಸಿ ಪರಿಚಾರಕದ ವಿಳಾಸವನ್ನು ನಮೂದಿಸಿ."
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTPS proxy server."
+#~ msgid "Enter the port number of the HTTPS proxy server."
+#~ msgstr "HTTPS ಪ್ರಾಕ್ಸಿ ಪರಿಚಾರಕದ ವಿಳಾಸವನ್ನು ನಮೂದಿಸಿ."
+
+#~ msgid "Enter the address of the FTP proxy server."
+#~ msgstr "FTP ಪ್ರಾಕ್ಸಿ ಪರಿಚಾರಕದ ವಿಳಾಸವನ್ನು ನಮೂದಿಸಿ."
+
+#, fuzzy
+#~| msgid "Enter the address of the FTP proxy server."
+#~ msgid "Enter the port number of the FTP proxy server."
+#~ msgstr "FTP ಪ್ರಾಕ್ಸಿ ಪರಿಚಾರಕದ ವಿಳಾಸವನ್ನು ನಮೂದಿಸಿ."
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTPS proxy server."
+#~ msgid "Enter the address of the SOCKS proxy server."
+#~ msgstr "HTTPS ಪ್ರಾಕ್ಸಿ ಪರಿಚಾರಕದ ವಿಳಾಸವನ್ನು ನಮೂದಿಸಿ."
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTPS proxy server."
+#~ msgid "Enter the port number of the SOCKS proxy server."
+#~ msgstr "HTTPS ಪ್ರಾಕ್ಸಿ ಪರಿಚಾರಕದ ವಿಳಾಸವನ್ನು ನಮೂದಿಸಿ."
+
+#, fuzzy
+#~| msgid "Use proxy only for entries in this list"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Check this box if you want the above proxy settings to apply only to the "
+#~ "addresses listed in the <i>Exceptions</i> list.</qt>"
+#~ msgstr "ಈ ಪಟ್ಟಿಯಲ್ಲಿನ ನಮೂದುಗಳಿಗೆ ಮಾತ್ರ ಪ್ರಾಕ್ಸಿಯನ್ನು ಬಳಸಿ"
+
+#, fuzzy
+#~| msgid "Use proxy only for entries in this list"
+#~ msgid "Use proxy settings only for addresses in the Exceptions list"
+#~ msgstr "ಈ ಪಟ್ಟಿಯಲ್ಲಿನ ನಮೂದುಗಳಿಗೆ ಮಾತ್ರ ಪ್ರಾಕ್ಸಿಯನ್ನು ಬಳಸಿ"
+
+#~ msgid ""
+#~ "You have to restart the running applications for these changes to take "
+#~ "effect."
+#~ msgstr ""
+#~ "ಈ ಬದಲಾವಣೆಗಳು ಕಾರ್ಯರೂಪಕ್ಕೆ ಬರಲು ಚಾಲನೆಯಲ್ಲಿರುವ ಅನ್ವಯಗಳನ್ನು ನೀವು ಮರಳಿ "
+#~ "ಆರಂಭಿಸಬೇಕಾಗುತ್ತದೆ."
+
+#, fuzzy
+#~| msgid "Update Failed"
+#~ msgctxt "@title:window"
+#~ msgid "Update Failed"
+#~ msgstr "ಅಪ್‌ಡೇಟ್ ವಿಫಲಗೊಂಡಿದೆ"
+
+#~ msgid "You have to restart KDE for these changes to take effect."
+#~ msgstr ""
+#~ "ಈ ಬದಲಾವಣೆಗಳು ಪರಿಣಾಮ ಬೀರಲು ನೀವು ಕೆಡಿಇಯನ್ನು ಪುನರಾರಂಭಿಸಬೇಕಾಗುತ್ತದೆ (ರಿಸ್ಟಾರ್ಟ್)."
+
+#~ msgid "Timeout Values"
+#~ msgstr "ಕಾಲಾವಧಿ ತೀರುವ ಮೌಲ್ಯಗಳು"
+
+#, fuzzy
+#~| msgid " sec"
+#~ msgid " second"
+#~ msgid_plural " seconds"
+#~ msgstr[0] " ಸೆಕೆಂಡು"
+#~ msgstr[1] " ಸೆಕೆಂಡು"
+
+#~ msgid "Soc&ket read:"
+#~ msgstr "ಓದಲಾಗುವ ಸಾಕೆಟ್(&k):"
+
+#~ msgid "Pro&xy connect:"
+#~ msgstr "ಪ್ರಾಕ್ಸಿ ಜೋಡಣೆ(&x):"
+
+#~ msgid "Server co&nnect:"
+#~ msgstr "ಪರಿಚಾರಕ ಜೋಡಣೆ(&n):"
+
+#~ msgid "&Server response:"
+#~ msgstr "ಪರಿಚಾರಕದ ಪ್ರತಿಸ್ಪಂದನ(&S):"
+
+#~ msgid "FTP Options"
+#~ msgstr "FTP ಆಯ್ಕೆಗಳು"
+
+#~ msgid "Enable passive &mode (PASV)"
+#~ msgstr "ಜಡ ಕ್ರಮವನ್ನು ಶಕ್ತಗೊಳಿಸು (PASV)(&m)"
+
+#~ msgid ""
+#~ "Enables FTP's \"passive\" mode. This is required to allow FTP to work "
+#~ "from behind firewalls."
+#~ msgstr ""
+#~ "ಇದು FTP ಯ \"ಜಡ\" ಕ್ರಮವನ್ನು ಶಕ್ತಗೊಳಿಸುತ್ತದೆ. FTP ಯು ಫೈರ್ವಾಲ್‌ನ ಹಿಂದಿನಿಂದ "
+#~ "ಕೆಲಸಮಾಡುವಂತಾಗಲು ಇದು ಅಗತ್ಯವಾಗುತ್ತದೆ."
+
+#~ msgid "Mark &partially uploaded files"
+#~ msgstr "ಭಾಗಶಃ ಅಪ್‌ಲೋಡ್ ಮಾಡಲಾದ ಕಡತಗಳನ್ನು ಗುರುತು ಹಾಕು(&p)"
+
+#~ msgid ""
+#~ "<p>Marks partially uploaded FTP files.</p><p>When this option is enabled, "
+#~ "partially uploaded files will have a \".part\" extension. This extension "
+#~ "will be removed once the transfer is complete.</p>"
+#~ msgstr ""
+#~ "<p>ಭಾಗಶಃ ಅಪ್‌ಲೋಡ್ ಆದಂತಹ FTP ಕಡತಗಳನ್ನು ಗುರುತು ಹಾಕುತ್ತದೆ.</p><p>ಈ ಆಯ್ಕೆಯನ್ನು "
+#~ "ಶಕ್ತಗೊಳಿಸಿದಲ್ಲಿ, ಭಾಗಶಃ ಅಪ್‌ಲೋಡ್ ಆದಂತಹ ಕಡತಗಳು \".part\" ಎಂಬ "
+#~ "ವಿಸ್ತರಣೆಯನ್ನು(extension) ಹೊಂದಿರುತ್ತವೆ. ಕಡತದ ವರ್ಗಾವಣೆ ಪೂರ್ಣಗೊಂಡ ನಂತರ ಈ "
+#~ "ವಿಸ್ತರಣೆಯನ್ನು ತೆಗೆದು ಹಾಕಲಾಗುತ್ತದೆ.</p>"
+
+#~ msgid "These settings apply to network browsing only."
+#~ msgstr "ಈ ಸಂಯೋಜನೆಗಳು ಕೇವಲ ಜಾಲ ವೀಕ್ಷಣೆಗೆ ಮಾತ್ರ ಅನ್ವಯಿಸುತ್ತದೆ."
+
+#~ msgid "Default user name:"
+#~ msgstr "ಪೂರ್ವನಿಯೋಜಿತ ಬಳಕೆದಾರ ಹೆಸರು:"
+
+#~ msgid "Default password:"
+#~ msgstr "ಪೂರ್ವನಿಯೋಜಿತ ಗುಪ್ತಪದ:"
+
+#, fuzzy
+#~| msgid "Add Identification"
+#~ msgctxt "@title:window"
+#~ msgid "Add Identification"
+#~ msgstr "ಗುರುತನ್ನು ಸೇರಿಸಿ"
+
+#, fuzzy
+#~| msgid "Modify Identification"
+#~ msgctxt "@title:window"
+#~ msgid "Modify Identification"
+#~ msgstr "ಗುರುತನ್ನು ಬದಲಾಯಿಸಿ"
+
+#~ msgid ""
+#~ "<qt><center>Found an existing identification for<br/><b>%1</b><br/>Do you "
+#~ "want to replace it?</center></qt>"
+#~ msgstr ""
+#~ "<qt><center><br/><b>%1</b><br/> ಗಾಗಿ ಈಗಿರುವ ಗುರುತು ಕಂಡುಬಂದಿದೆ, ನೀವದನ್ನು "
+#~ "ಅಳಿಸಿ ಹಾಕಲು ಬಯಸುತ್ತೀರೆ?</center></qt>"
+
+#, fuzzy
+#~| msgid "Duplicate Identification"
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Identification"
+#~ msgstr "ನಕಲಿ ಗುರುತು"
+
+#~ msgid "&Send identification"
+#~ msgstr "ಗುರುತನ್ನು ಕಳುಹಿಸು(&S)"
+
+#~ msgid ""
+#~ "The browser identification text sent to the sites you visit. Use the "
+#~ "provided options to customize it."
+#~ msgstr ""
+#~ "ನೀವು ಭೇಟಿ ನೀಡುವ ತಾಣಗಳಿಗೆ ವೀಕ್ಷಕ ಪತ್ತೆಗಾರ ಪಠ್ಯವನ್ನು ಕಳುಹಿಸಲಾಗುತ್ತದೆ. ಅದನ್ನು ನಿಮ್ಮ "
+#~ "ಇಚ್ಛೆಗೆ ತಕ್ಕಂತೆ ಬದಲಾಯಿಸಲು ಒದಗಿಸಲಾದ ಆಯ್ಕೆಗಳನ್ನು ಬಳಸಿ."
+
+#~ msgid "Default Identification"
+#~ msgstr "ಪೂರ್ವನಿಯೋಜಿತ ಗುರುತು"
+
+#~ msgid ""
+#~ "The browser identification text sent to the sites you visit. You can "
+#~ "customize it using the options provided below."
+#~ msgstr ""
+#~ "ನೀವು ಭೇಟಿ ನೀಡುವ ತಾಣಗಳಿಗೆ ವೀಕ್ಷಕ ಪತ್ತೆಗಾರ ಪಠ್ಯವನ್ನು ಕಳುಹಿಸಲಾಗುತ್ತದೆ. ಅದನ್ನು ನಿಮ್ಮ "
+#~ "ಇಚ್ಛೆಗೆ ತಕ್ಕಂತೆ ಬದಲಾಯಿಸಲು ಈ ಕೆಳಗೆ ಒದಗಿಸಲಾದ ಆಯ್ಕೆಗಳನ್ನು ಬಳಸಿ."
+
+#~ msgid ""
+#~ "Includes your operating system's name in the browser identification text."
+#~ msgstr "ವೀಕ್ಷಕ ಪತ್ತೆಗಾರ ಪಠ್ಯದಲ್ಲಿ ನಿಮ್ಮ ಕಾರ್ಯವ್ಯವಸ್ಥೆಯ ಹೆಸರನ್ನು ಸೇರಿಸುತ್ತದೆ."
+
+#~ msgid "Add operating s&ystem name"
+#~ msgstr "ಕಾರ್ಯವ್ಯವಸ್ಥೆಯ ಹೆಸರನ್ನು ಸೇರಿಸು(&v)"
+
+#~ msgid ""
+#~ "Includes your operating system's version number in the browser "
+#~ "identification text."
+#~ msgstr ""
+#~ "ವೀಕ್ಷಕ ಪತ್ತೆಗಾರ ಪಠ್ಯದಲ್ಲಿ ನಿಮ್ಮ ಕಾರ್ಯವ್ಯವಸ್ಥೆಯ ಆವೃತ್ತಿಯ ಸಂಖ್ಯೆಯನ್ನು ಸೇರಿಸುತ್ತದೆ."
+
+#~ msgid "Add operating system &version"
+#~ msgstr "ಕಾರ್ಯವ್ಯವಸ್ಥೆಯ ಆವೃತ್ತಿಯನ್ನು ಸೇರಿಸು(&v)"
+
+#~ msgid "Includes your machine's CPU type in the browser identification text."
+#~ msgstr "ವೀಕ್ಷಕ ಪತ್ತೆಗಾರ ಪಠ್ಯದಲ್ಲಿ ನಿಮ್ಮ ಗಣಕದ ಸಿಪಿಯು ಬಗೆಯನ್ನು ಸೇರಿಸುತ್ತದೆ."
+
+#~ msgid "Add &machine (processor) type"
+#~ msgstr "ಯಂತ್ರದ (ಸಂಸ್ಕಾರಕ) ಬಗೆಯನ್ನು ಸೇರಿಸು(&m)"
+
+#~ msgid ""
+#~ "Includes your language settings in the browser identification text to "
+#~ "obtain localized versions of the page."
+#~ msgstr ""
+#~ "ಪುಟದ ಪ್ರಾದೇಶಿಕ ಭಾಷೆಯ ಆವೃತ್ತಿಯನ್ನು ಪಡೆದುಕೊಳ್ಳಲು ವೀಕ್ಷಕ ಪತ್ತೆಗಾರ ಪಠ್ಯದಲ್ಲಿ ನಿಮ್ಮ "
+#~ "ಭಾಷಾ ಸಂಯೋಜನೆಗಳನ್ನು ಸೇರಿಸುತ್ತದೆ."
+
+#~ msgid "Add lang&uage information"
+#~ msgstr "ಭಾಷೆಯ ಮಾಹಿತಿಯನ್ನು ಸೇರಿಸು(&u)"
+
+#~ msgid "Site Specific Identification"
+#~ msgstr "ತಾಣ ನಿಶ್ಚಿತ ಗುರುತು"
+
+#~ msgid "Site Name"
+#~ msgstr "ತಾಣದ ಹೆಸರು"
+
+#~ msgid "Identification"
+#~ msgstr "ಗುರುತು"
+
+#~ msgid "User Agent"
+#~ msgstr "ಬಳಕೆದಾರ ಮಧ್ಯವರ್ತಿ"
+
+#~ msgid "Add new identification text for a site."
+#~ msgstr "ತಾಣಕ್ಕೆ ಹೊಸತಾದ ಪತ್ತೆಗಾರ ಪಠ್ಯವನ್ನು ಸೇರಿಸು."
+
+#~ msgid "Change the selected identifier text."
+#~ msgstr "ಆಯ್ಕೆ ಮಾಡಲಾದ ಪತ್ತೆಗಾರ ಪಠ್ಯವನ್ನು ಬದಲಾಯಿಸಿ."
+
+#~ msgid "Delete the selected identifier text."
+#~ msgstr "ಆಯ್ಕೆ ಮಾಡಲಾದ ಪತ್ತೆಗಾರ ಪಠ್ಯವನ್ನು ಅಳಿಸಿಹಾಕಿ."
+
+#~ msgid "Delete all identifiers."
+#~ msgstr "ಎಲ್ಲಾ ಪತ್ತೆಗಾರಗಳನ್ನೂ ಅಳಿಸಿಹಾಕಿ."
+
+#~ msgid "&When browsing the following site:"
+#~ msgstr "ಈ ಕೆಳಗಿನ ತಾಣವನ್ನು ವೀಕ್ಷಿಸುವಾಗ(&W):"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Select the browser identification to use whenever contacting the site you "
+#~ "specified above.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "ನೀವು ಮೇಲೆ ಸೂಚಿಸಿದ ತಾಣವನ್ನು ಸಂಪರ್ಕಿಸುವಾಗ ಬಳಸಲು ವೀಕ್ಷಕದ ಗುರುತನ್ನು ಆಯ್ಕೆ ಮಾಡಿ.\n"
+#~ "</qt>"
+
+#~ msgid "&Use the following identification:"
+#~ msgstr "ಈ ಕೆಳಗಿನ ಗುರುತನ್ನು ಬಳಸು(&U):"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "The actual browser identification text that will be sent to the remote "
+#~ "machine.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "ದೂರಸ್ಥ ಗಣಕಕ್ಕೆ ಕಳುಹಿಸಲಾಗುವ ನಿಜವಾದ ವೀಕ್ಷಕ ಪತ್ತೆಗಾರ ಪಠ್ಯ.\n"
+#~ "</qt>"
+
+#~ msgid "Real identification:"
+#~ msgstr "ನಿಜವಾದ ಗುರುತು:"
+
+#~ msgid "Treat &all cookies as session cookies"
+#~ msgstr "ಎಲ್ಲಾ ಕುಕಿಗಳನ್ನು ಅಧಿವೇಶನ ಕುಕಿಗಳು ಎಂದು ಪರಿಗಣಿಸು"
+
+#~ msgid ""
+#~ "Enter the port number of the HTTP proxy server. Default is 8080. Another "
+#~ "common value is 3128."
+#~ msgstr ""
+#~ "HTTP ಪ್ರಾಕ್ಸಿ ಪರಿಚಾರಕದ ಸಂಪರ್ಕಸ್ಥಾನದ ಸಂಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿ. ಪೂರ್ವನಿಯೋಜಿತ 8080 "
+#~ "ಆಗಿರುತ್ತದೆ. ಸಾಮನ್ಯವಾಗಿ ಬಳಸಲಾಗುವ ಇನ್ನೊಂದು ಸಂಖ್ಯೆ ಎಂದರೆ 3128 ಆಗಿದೆ."
+
+#~ msgid ""
+#~ "Enter the port number of the FTP proxy server. Default 8080. Another "
+#~ "common value is 3128."
+#~ msgstr ""
+#~ "FTP ಪ್ರಾಕ್ಸಿ ಪರಿಚಾರಕದ ಸಂಪರ್ಕಸ್ಥಾನದ ಸಂಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿ. ಪೂರ್ವನಿಯೋಜಿತ 8080 "
+#~ "ಆಗಿರುತ್ತದೆ. ಸಾಮನ್ಯವಾಗಿ ಬಳಸಲಾಗುವ ಇನ್ನೊಂದು ಸಂಖ್ಯೆ ಎಂದರೆ 3128 ಆಗಿದೆ."
+
+#, fuzzy
+#~| msgid "Variable Proxy Configuration"
+#~ msgctxt "@title:window"
+#~ msgid "Variable Proxy Configuration"
+#~ msgstr "ವೇರಿಯೇಬಲ್ ಪ್ರಾಕ್ಸಿ ಸಂರಚನೆ"
+
+#~ msgid "You must specify at least one valid proxy environment variable."
+#~ msgstr "ನೀವು ಕನಿಷ್ಟ ಒಂದು ಪ್ರಾಕ್ಸಿ ಪರಿಸರ ವೇರಿಯೇಬಲ್ ಅನ್ನು ಸೂಚಿಸಬೇಕು."
+
+#~ msgid ""
+#~ "<qt>Make sure you entered the actual environment variable name rather "
+#~ "than its value. For example, if the environment variable is <br /"
+#~ "><b>HTTP_PROXY=http://localhost:3128</b><br /> you need to enter "
+#~ "<b>HTTP_PROXY</b> here instead of the actual value http://localhost:3128."
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>ನೀವು ಪರಿಸರ ವೇರಿಯಬಲ್‌ನ ಮೌಲ್ಯದ ಬದಲಿಗೆ ಅದರ ನಿಜವಾದ ಹೆಸರನ್ನು ನಮೂದಿಸಿದ್ದೀರಿ ಎಂದು "
+#~ "ಖಚಿತಪಡಿಸಕೊಳ್ಳಿ. ಉದಾಹರಣೆಗೆ, ಪರಿಸರ ವೇರಿಯೇಬಲ್ <br /><b>HTTP_PROXY=http://"
+#~ "localhost:3128</b><br /> ಆಗಿದ್ದಲ್ಲಿ ನೀವು<b>HTTP_PROXY</b> ಎಂದು "
+#~ "ನಮೂದಿಸಬೇಕಾಗುತ್ತದೆಯೆ ಹೊರತು http://localhost:3128 ಎಂಬುದನ್ನು ಅಲ್ಲ.</qt>"
+
+#, fuzzy
+#~| msgid "Invalid Proxy Setup"
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Proxy Setup"
+#~ msgstr "ಅಮಾನ್ಯವಾದ ಪ್ರಾಕ್ಸಿ ಸಿದ್ಧತೆ"
+
+#~ msgid "Successfully verified."
+#~ msgstr "ಯಶಸ್ವಿಯಾಗಿ ಪರಿಶೀಲಿಸಲಾಗಿದೆ."
+
+#, fuzzy
+#~| msgid "Proxy Setup"
+#~ msgctxt "@title:window"
+#~ msgid "Proxy Setup"
+#~ msgstr "ಪ್ರಾಕ್ಸಿ ಸಿದ್ಧತೆ"
+
+#~ msgid ""
+#~ "Did not detect any environment variables commonly used to set system wide "
+#~ "proxy information."
+#~ msgstr ""
+#~ "ಗಣಕದಾದ್ಯಂತದ ಪ್ರಾಕ್ಸಿ ಮಾಹಿತಿಗಾಗಿ ಸಾಮಾನ್ಯವಾಗಿ ಅಣಿಗೊಳಿಸಲಾದ ಯಾವುದೆ ಪರಿಸರ ವೇರಿಯೇಬಲ್ "
+#~ "ಅನ್ನು ಹುಡುಕಬೇಡಿ."
+
+#, fuzzy
+#~| msgid "Automatic Proxy Variable Detection"
+#~ msgctxt "@title:window"
+#~ msgid "Automatic Proxy Variable Detection"
+#~ msgstr "ಸ್ವಯಂಚಾಲಿತ ಪ್ರಾಕ್ಸಿ ವೇರಿಯೇಬಲ್ ಪತ್ತೆ"
+
+#, fuzzy
+#~| msgid "Manual Proxy Configuration"
+#~ msgctxt "@title:window"
+#~ msgid "Manual Proxy Configuration"
+#~ msgstr "ಕೈಯಾರೆ ಪ್ರಾಕ್ಸಿ ಸಂರಚನೆ"
+
+#, fuzzy
+#~| msgid "Invalid Proxy Setting"
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Proxy Setting"
+#~ msgstr "ಅಮಾನ್ಯವಾದ ಪ್ರಾಕ್ಸಿ ಸಂಯೋಜನೆ"
+
+#~ msgid ""
+#~ "One or more of the specified proxy settings are invalid. The incorrect "
+#~ "entries are highlighted."
+#~ msgstr ""
+#~ "ಸೂಚಿಸಲಾದ ಪ್ರಾಕ್ಸಿಗಳಲ್ಲಿ ಕೆಲವು ಅಮಾನ್ಯವಾದವುಗಳಾಗಿವೆ. ಸರಿಯಲ್ಲದ ನಮೂದುಗಳನ್ನು "
+#~ "ಸುಪ್ರಕಾಶಗೊಳಿಸಲಾಗಿದೆ."
+
+#~ msgid "You entered a duplicate address. Please try again."
+#~ msgstr "ನೀವು ಒಂದು ನಕಲಿ ವಿಳಾಸವನ್ನು ನಮೂದಿಸಿದ್ದೀರಿ, ದಯವಿಟ್ಟು ಇನ್ನೊಮ್ಮೆ ಪ್ರಯತ್ನಿಸಿ."
+
+#~ msgid "<qt><center><b>%1</b></center> is already in the list.</qt>"
+#~ msgstr "<qt><center><b>%1</b></center> ಈಗಾಗಲೆ ಪಟ್ಟಿಯಲ್ಲಿದೆ.</qt>"
+
+#, fuzzy
+#~| msgid "Duplicate Entry"
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Entry"
+#~ msgstr "ನಕಲಿ ನಮೂದು"
+
+#, fuzzy
+#~| msgid "New Exception"
+#~ msgctxt "@title:window"
+#~ msgid "New Exception"
+#~ msgstr "ಹೊಸ ವಿನಾಯಿಸತಿ"
+
+#, fuzzy
+#~| msgid "Change Exception"
+#~ msgctxt "@title:window"
+#~ msgid "Change Exception"
+#~ msgstr "ವಿನಾಯಿತಿಯನ್ನು ಬದಲಾಯಿಸು"
+
+#, fuzzy
+#~| msgid "Invalid Entry"
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Entry"
+#~ msgstr "ಅಮಾನ್ಯವಾದ ನಮೂದು"
+
+#~ msgid "The address you have entered is not valid."
+#~ msgstr "ನೀವು ನಮೂದಿಸಿದ ವಿಳಾಸವು ಮಾನ್ಯವಾದುದಲ್ಲ."
+
+#~ msgid ""
+#~ "<qt>Make sure none of the addresses or URLs you specified contain invalid "
+#~ "or wildcard characters such as spaces, asterisks (*), or question "
+#~ "marks(?).<br /><br /><u>Examples of VALID entries:</u><br /><code>http://"
+#~ "mycompany.com, 192.168.10.1, mycompany.com, localhost, http://localhost</"
+#~ "code><br /><br /><u>Examples of INVALID entries:</u><br /><code>http://my "
+#~ "company.com, http:/mycompany,com file:/localhost</code></qt>"
+#~ msgstr ""
+#~ "<qt>ನೀವು ಸೂಚಿಸಿದ ವಿಳಾಸಗಳು ಅಥವ ತಾಣಸೂಚಿಗಳು ಖಾಲಿ ಸ್ಥಳ, ನಕ್ಷತ್ರ ಚಿಹ್ನೆ(*), ಅಥವ "
+#~ "ಪ್ರಶ್ನಾರ್ಥಕ ಚಿಹ್ನೆಯಂತಹ(?) ಅಮಾನ್ಯವಾದ ಅಥವ ವೈಲ್ಡ್‍ಕಾರ್ಡ್ ಅಕ್ಷರಗಳನ್ನು ಹೊಂದಿಲ್ಲ ಎಂದು "
+#~ "ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಿ.<br /><br /><u>ಮಾನ್ಯವಾದ ನಮೂದುಗಳಿಗೆ ಉದಾಹರಣೆಗಳೆಂದರೆ:</u><br /"
+#~ "><code>http://mycompany.com, 192.168.10.1, mycompany.com, localhost, "
+#~ "http://localhost</code><br /><br /><u>ಅಮಾನ್ಯವಾದ ನಮೂದುಗಳಿಗೆ ಉದಾಹರಣೆಗಳೆಂದರೆ:"
+#~ "</u><br /><code>http://my company.com, http:/mycompany,com file:/"
+#~ "localhost</code></qt>"
+
+#~ msgid "Enter the URL or address that should use the above proxy settings:"
+#~ msgstr "ಮೇಲಿನ ಪ್ರಾಕ್ಸಿ ಸಂರಚನೆಗಳನ್ನು ಬಳಸಬೇಕಿರುವ ತಾಣಸೂಚಿ ಅಥವ ವಿಳಾಸವನ್ನು ನಮೂದಿಸಿ:"
+
+#~ msgid ""
+#~ "Enter the address or URL that should be excluded from using the above "
+#~ "proxy settings:"
+#~ msgstr ""
+#~ "ಮೇಲಿನ ಪ್ರಾಕ್ಸಿ ಸಂರಚನೆಗಳ ಬಳಕೆಯಿಂದ ಹೊರಗಿಡಬೇಕಿರುವ ತಾಣಸೂಚಿ ಅಥವ ವಿಳಾಸವನ್ನು "
+#~ "ನಮೂದಿಸಿ:"
+
+#~ msgid ""
+#~ "<qt>Enter a valid address or URL.<br /><br /><b><u>NOTE:</u></b> Wildcard "
+#~ "matching such as <code>*.kde.org</code> is not supported. If you want to "
+#~ "match any host in the <code>.kde.org</code> domain, e.g. <code>printing."
+#~ "kde.org</code>, then simply enter <code>.kde.org</code>.</qt>"
+#~ msgstr ""
+#~ "<qt>ಒಂದು ಮಾನ್ಯವಾದ ವಿಳಾಸ ಅಥವ ತಾಣಸೂಚಿಯನ್ನು ನಮೂದಿಸಿ.<br /><br /><b><u>ಸೂಚನೆ:</"
+#~ "u></b> <code>*.kde.org</code> ನಂತಹ ವೈಲ್ಡ್‍ಕಾರ್ಡ್ ತಾಳೆಯಾಗುವವುಗಳಿಗೆ ಬೆಂಬಲವಿಲ್ಲ. "
+#~ "ನೀವು <code>.kde.org</code> ಡೊಮೈನಿನಲ್ಲಿ ಯಾವುದೆ ಅತಿಥೇಯವನ್ನು ತಾಳೆ "
+#~ "ಮಾಡಬೇಕಿದ್ದಲ್ಲಿ, ಉದಾ. <code>printing.kde.org</code>, ಕೇವಲ <code>.kde.org</"
+#~ "code> ಅನ್ನು ಮಾತ್ರ ನಮೂದಿಸಿ.</qt>"
+
+#~ msgid ""
+#~ "The address of the automatic proxy configuration script is invalid. "
+#~ "Please correct this problem before proceeding. Otherwise, your changes "
+#~ "will be ignored."
+#~ msgstr ""
+#~ "ಸ್ವಯಂಚಾಲಿತ ಪ್ರಾಕ್ಸಿ ಸಂರಚನಾ ಸ್ಕ್ರಿಪ್ಟಿನ ವಿಳಾಸವು ಅಮಾನ್ಯವಾಗಿದೆ. ಮುಂದುವರೆಯುವ ಮೊದಲು "
+#~ "ದಯವಿಟ್ಟು ಇದನ್ನು ಸರಿಪಡಿಸಿ. ಇಲ್ಲದೆ ಹೋದಲ್ಲಿ, ನೀವು ಮಾಡಿದ ಬದಲಾವಣೆಗಳನ್ನು "
+#~ "ಆಲಕ್ಷಿಸಲಾಗುವುದು."
+
+#~ msgid ""
+#~ "<qt>The proxy settings you specified are invalid.<br /><br />Please click "
+#~ "on the <b>Setup...</b> button and correct the problem before proceeding; "
+#~ "otherwise your changes will be ignored.</qt>"
+#~ msgstr ""
+#~ "<qt>ನೀವು ಸೂಚಿಸಿದ ಪ್ರಾಕ್ಸಿ ಸಂಯೋಜನೆಗಳು ಅಮಾನ್ಯವಾಗಿವೆ.<br /><br />ದಯವಿಟ್ಟು  "
+#~ "<b>ಸಿದ್ಧತೆ...</b> ಗುಂಡಿಯ ಮೇಲೆ ಕ್ಲಿಕ್ಕಿಸಿ ನಂತರ ಮುಂದುವರೆಯುವ ಮೊದಲು ಈ ತೊಂದರೆಯನ್ನು "
+#~ "ಸರಿಪಡಿಸಿ; ಇಲ್ಲದೆ ಹೋದಲ್ಲಿ, ನೀವು ಮಾಡಿದ ಬದಲಾವಣೆಗಳನ್ನು ಆಲಕ್ಷಿಸಲಾಗುವುದು.</qt>"
+
+#~ msgid "H&TTP:"
+#~ msgstr "H&TTP:"
+
+#~ msgid "HTTP&S:"
+#~ msgstr "HTTP&S:"
+
+#~ msgid "&FTP:"
+#~ msgstr "&FTP:"
+
+#~ msgid "NO &PROXY:"
+#~ msgstr "ಯಾವುದೆ ಪ್ರಾಕ್ಸಿ ಇಲ್ಲ(&P):"
+
+#~ msgid "&Verify"
+#~ msgstr "ಪರಿಶೀಲಿಸು(&V)"
+
+#~ msgid "Connect to the &Internet directly"
+#~ msgstr "ಅಂತರ್ಜಾಲಕ್ಕೆ ನೇರವಾಗಿ ಸಂಪರ್ಕಜೋಡಿಸು(&I)"
+
+#~ msgid "Use preset proxy environment &variables"
+#~ msgstr "ಪ್ರಾಕ್ಸಿ ಪರಿಸರ ವೇರಿಯೇಬಲ್‌ಗಳನ್ನು ಬಳಸು(&v)"
+
+#~ msgid "Show the proxy environment variable configuration dialog."
+#~ msgstr "ಪ್ರಾಕ್ಸಿ ಪರಿಸರ ವೇರಿಯೇಬಲ್‌ ಸಂರಚನೆಯ ಸಂವಾದವನ್ನು ತೋರಿಸು."
+
+#~ msgid "Setup..."
+#~ msgstr "ಸಿದ್ಧತೆ..."
+
+#~ msgid "&Manually specify the proxy settings"
+#~ msgstr "ಪ್ರಾಕ್ಸಿ ಸಂಯೋಜನೆಗಳನ್ನು ಕೈಯಾರೆ ಸೂಚಿಸು(&M)"
+
+#~ msgid "Show the manual proxy configuration dialog."
+#~ msgstr "ಕೈಯಾರೆ ಪ್ರಾಕ್ಸಿ ಸಂರಚನೆಯ ಸಂವಾದವನ್ನು ತೋರಿಸು."
+
+#~ msgid "Authori&zation"
+#~ msgstr "ದೃಢೀಕರಣ(&z)"
+
+#~ msgid "Prompt for login information whenever it is required."
+#~ msgstr "ಅಗತ್ಯವಿದ್ದಾಗಲೆಲ್ಲಾ ಪ್ರವೇಶ ಮಾಹಿತಿಗಾಗಿ ಕೇಳುವುದು."
+
+#~ msgid "Prompt as &needed"
+#~ msgstr "ಅಗತ್ಯವಿದ್ದಾಗ ಕೇಳು(&n)"
+
+#~ msgid "Use this login information."
+#~ msgstr "ಈ ಪ್ರವೇಶ ಮಾಹಿತಿಯನ್ನು ಬಳಸಿ."
+
+#~ msgid ""
+#~ "Use information specified here to login into proxy servers as needed."
+#~ msgstr ""
+#~ "ಅಗತ್ಯ ಬಿದ್ದಾಗ ಪ್ರಾಕ್ಸಿ ಪರಿಚಾರಕಕ್ಕೆ ಪ್ರವೇಶಿಸಲು ಇಲ್ಲಿ ಸೂಚಿಸಲಾದ ಮಾಹಿತಿಯನ್ನು ಬಳಸಿ."
+
+#~ msgid "Username:"
+#~ msgstr "ಬಳಕೆದಾರ ಹೆಸರು:"
+
+#~ msgid "Login name."
+#~ msgstr "ಪ್ರವೇಶ ಹೆಸರು."
+
+#~ msgid "Login password."
+#~ msgstr "ಪ್ರವೇಶ ಗುಪ್ತಪದ."
+
+#~ msgid "Password:"
+#~ msgstr "ಗುಪ್ತಪದ:"
+
+#~ msgid "O&ptions"
+#~ msgstr "ಆಯ್ಕೆಗಳು(&p)"
+
+#~ msgid "Use persistent connections to proxy"
+#~ msgstr "ಪ್ರಾಕ್ಸಿಗೆ ಸ್ಥಿರ ಸಂಪರ್ಕಗಳನ್ನು ಬಳಸಿ"
+
+#~ msgid "Ser&vers"
+#~ msgstr "ಪರಿಚಾರಕಗಳು(&v)"
+
+#~ msgid "Remove all proxy exception addresses from the list."
+#~ msgstr "ಈ ಪಟ್ಟಿಯಿಂದ ಎಲ್ಲಾ ಪ್ರಾಕ್ಸಿ ವಿನಾಯಿತಿ ವಿಳಾಸಗಳನ್ನು ತೆಗೆದುಹಾಕಿ."
+
+#~ msgid "D&elete All"
+#~ msgstr "ಎಲ್ಲವನ್ನೂ ಅಳಿಸಿಹಾಕು(&e)"
+
+#~ msgid "Remove the selected proxy exception address from the list."
+#~ msgstr "ಆಯ್ಕೆ ಮಾಡಲಾದ ಪ್ರಾಕ್ಸಿ ವಿನಾಯಿತಿ ವಿಳಾಸಗಳನ್ನು ಈ ಪಟ್ಟಿಯಿಂದ ತೆಗೆದುಹಾಕಿ."
+
+#~ msgid "De&lete"
+#~ msgstr "ಅಳಿಸಿಹಾಕು(&l)"
+
+#~ msgid "Add new proxy exception address to the list."
+#~ msgstr "ಹೊಸ ಪ್ರಾಕ್ಸಿ ವಿನಾಯಿತಿ ವಿಳಾಸವನ್ನು ಪಟ್ಟಿಗೆ ಸೇರಿಸಿ."
+
+#~ msgid "Change the selected proxy exception address."
+#~ msgstr "ಆಯ್ಕೆ ಮಾಡಲಾದ ಪ್ರಾಕ್ಸಿ ವಿನಾಯಿತಿ ವಿಳಾಸವನ್ನು ಬದಲಾಯಿಸಿ."
+
+#~ msgid "C&hange..."
+#~ msgstr "ಬದಲಾಯಿಸು(&h)..."
+
+#~ msgid "&Domain name:"
+#~ msgstr "ಕ್ಷೇತ್ರದ ಹೆಸರು(&D):"
+
+#~ msgid "Includes your platform type in the browser identification text"
+#~ msgstr "ವೀಕ್ಷಕ ಪತ್ತೆಗಾರ ಪಠ್ಯದಲ್ಲಿ ನಿಮ್ಮ ಪ್ಲಾಟ್‌ಫಾರ್ಮನ್ನು ಸೇರಿಸುತ್ತದೆ."
+
+#~ msgid "Add &platform name"
+#~ msgstr "ಪ್ಲಾಟ್‌ಫಾರ್ಮಿನ ಹೆಸರನ್ನು ಸೇರಿಸು(&p)"
+
+#~ msgid "Domain [Group]"
+#~ msgstr "ಕ್ಷೇತ್ರ [ಗುಂಪು]"
+
+#~ msgid "Host [Set By]"
+#~ msgstr "ಅತಿಥೇಯ [ಸಿದ್ಧಗೊಳಿಸಲಾಗಿದ್ದು]"
+
+#~ msgid "&Windows Shares"
+#~ msgstr "ವಿಂಡೋಸ್ ಹಂಚಿಕೆಗಳು(&W)"
+
+#~ msgid "&LISa Daemon"
+#~ msgstr "&LISa ಡೀಮನ್"
+
+#~ msgid "lan:/ Iosla&ve"
+#~ msgstr "lan:/ Iosla&ve"

@@ -1,0 +1,88 @@
+# Translation of searchbarplugin to Korean.
+# Copyright (C) 2008 This_file_is_part_of_KDE
+# This file is distributed under the same license as the extragear-base package.
+# Shinjo Park <kde@peremen.name>, 2008, 2009, 2011, 2012, 2015, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: searchbarplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-25 00:45+0000\n"
+"PO-Revision-Date: 2022-08-09 13:23+0200\n"
+"Last-Translator: Shinjo Park <kde@peremen.name>\n"
+"Language-Team: Korean <kde-kr@kde.org>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 21.12.3\n"
+
+#: searchbar.cpp:65
+#, kde-format
+msgid ""
+"Search Bar<p>Enter a search term. Click on the icon to change search mode or "
+"provider.</p>"
+msgstr ""
+"검색 표시줄<p>검색할 단어를 입력하십시오. 아이콘을 클릭하면 검색 모드나 공급"
+"자를 바꿀 수 있습니다.</p>"
+
+#: searchbar.cpp:70
+#, kde-format
+msgid "Search Bar"
+msgstr "검색 표시줄"
+
+#: searchbar.cpp:75
+#, kde-format
+msgid "Focus Searchbar"
+msgstr "검색 표시줄 초점 맞추기"
+
+#: searchbar.cpp:267
+#, kde-format
+msgid "Find in Page..."
+msgstr "페이지에서 찾기..."
+
+#: searchbar.cpp:287
+#, kde-format
+msgid "Find in This Page"
+msgstr "이 페이지에서 찾기"
+
+#: searchbar.cpp:299
+#, kde-format
+msgid "Select Search Engines..."
+msgstr "검색 엔진 선택..."
+
+#: searchbar.cpp:318
+#, kde-format
+msgid "Add %1..."
+msgstr "%1 추가..."
+
+#. i18n: ectx: ToolBar (locationToolBar)
+#: searchbarplugin.rc:3
+#, kde-format
+msgid "Search Toolbar"
+msgstr "찾기 도구 모음"
+
+#: WebShortcutWidget.cpp:33
+#, kde-format
+msgid "Set Uri Shortcuts"
+msgstr "URI 바로 가기 설정"
+
+#: WebShortcutWidget.cpp:47
+#, kde-format
+msgid "Name:"
+msgstr "이름:"
+
+#: WebShortcutWidget.cpp:51
+#, kde-format
+msgid "Shortcuts:"
+msgstr "바로 가기:"
+
+#~ msgid "Enable Suggestion"
+#~ msgstr "제안 사용하기"
+
+#~ msgid "Cancel"
+#~ msgstr "취소"
+
+#~ msgid "OK"
+#~ msgstr "확인"

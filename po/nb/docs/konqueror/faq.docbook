@@ -1,0 +1,309 @@
+<chapter id="faq">
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>Gunnhild</firstname
+><surname
+>Lurås</surname
+><affiliation
+><address
+><email
+>gluras@c2i.net</email
+></address
+></affiliation
+><contrib
+></contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2010-10-24</date>
+<releaseinfo
+>&kde; 4.5</releaseinfo>
+</chapterinfo>
+
+<title
+>Spørsmål og svar</title>
+
+<qandaset>
+
+<!-- Link is dead, unfortunately. I suppose this is a more general thing anyway
+<qandaentry>
+<question
+><para
+>How can I browse web sites using non latin
+ scripts?</para
+></question>
+<answer
+><para
+>Detailed instructions can be found at <ulink
+url="http://www.konqueror.org/i18n.html"
+>http://www.konqueror.org/i18n.html</ulink
+></para
+></answer>
+</qandaentry>
+-->
+
+<qandaentry>
+<question
+><para
+>Kan jeg kjøre &konqueror; fra en annen vindusbehandler?</para
+></question>
+
+<answer
+><para
+>Installer &Qt;, kdelibs og kdebase, så kan du starte &konqueror; fra den vindusbehandleren du liker best. Det skal virke fint, men hvis det ikke gjør det (&kde;-utviklerne tester ikke dette ofte), rapporter det til <ulink url="http://bugs.kde.org"
+>http://bugs.kde.org</ulink
+> og prøv å kjøre<application
+>kdeinit</application
+> før du kjører &konqueror;, det hjelper vanligvis.</para
+></answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Hvor ligger alle innstillingsdataene til &konqueror;?</para
+></question>
+<answer
+><para
+>Som oftest i mappa <filename
+>~/.kde</filename
+> (dette kan også være <filename
+>~/kde4</filename
+> på systemet ditt, avhengig av hvordan &kde; ble installert). Ikke gjør noen endringer på disse filene hvis du ikke vet akkurat hva du gjør.</para>
+
+<itemizedlist>
+
+<listitem
+><para
+>Mappa <filename class="directory"
+>~/.kde/share/apps/konqueror/profiles</filename
+> inneholder de individuelle filene med tilpasninger til hver av dine <link linkend="save-settings"
+>profiler.</link
+></para
+></listitem>
+
+<listitem
+><para
+>Bokmerkene dine ligger i mappa <filename class="directory"
+>~/.kde/share/apps/konqueror/bookmarks.xml</filename
+></para
+></listitem>
+<listitem
+><para
+>Informasjonskapsler ligger i  <filename class="directory"
+>~/.kde/share/apps/kcookiejar/cookies</filename
+></para
+></listitem>
+<listitem
+><para
+>Historiefila, som brukes til autofullføring, ligger i <filename
+>~/.kde/share/config/konq_history</filename
+></para
+></listitem>
+
+<listitem
+><para
+>Filene <filename
+>konqiconviewrc</filename
+>, <filename
+>konqlistviewrc</filename
+> og <filename
+>konquerorrc</filename
+> i mappa <filename class="directory"
+>~/.kde/share/config/</filename
+> inneholder mange generelle tilpasningsinnstillinger.</para
+></listitem>
+
+<listitem
+><para
+>Mappa <filename class="directory"
+>~/.kde/share/cache-<replaceable
+>vertsnavn</replaceable
+>/http/</filename
+> inneholder hurtiglageret for nettleseren.</para
+></listitem>
+
+<listitem
+><para
+>Navigasjonspanelet bruker filene og undermappene i <filename class="directory"
+>~/.kde/share/apps/konqsidebartng</filename
+></para
+></listitem>
+</itemizedlist>
+
+<para
+>Alle mappespesifikke innstillinger ligger i filer med etternavnet <literal role="extension"
+>.directory</literal
+> i de forskjellige mappene.</para
+></answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Hvordan tømmer jeg historiefila?</para
+></question>
+<answer
+><para
+>Det finnes to <quote
+>historier</quote
+>:</para>
+<itemizedlist>
+<listitem
+><para
+>Den ene brukes til tekstfullføring i adressefeltet. For å tømme denne <mousebutton
+>høyre</mousebutton
+>-klikker du i feltet og velger <guimenuitem
+>Tøm innhold</guimenuitem
+>.</para>
+</listitem>
+<listitem
+><para
+>Den andre er historien over besøkte adresser. Velg historiebladet på sidestolpen, <mousebutton
+>høyre</mousebutton
+>-klikk på en oppføring og velg <guimenuitem
+>Fjern oppføring</guimenuitem
+> for å fjerne akkurat den oppføringa eller <guimenuitem
+>Tøm historie</guimenuitem
+> for å fjerne alle oppføringene.</para
+></listitem>
+</itemizedlist>
+<note
+><para
+>Du kan også bruke programmet <application
+>Systemrenser</application
+> fra kdeutils-modulen, som du kan bruke til å rydde opp i informsjonskapsler, favoritt-ikoner, nettleserhstorie og mellomlager, skjemautfyllinger og mellomlagerpraksis for besøkte nettsteder.</para
+></note>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Hvordan skrur jeg av eller på eller tømmer mellomlageret for nettleseren?</para
+></question
+> <answer>
+<para
+>Hvis du velger <menuchoice
+><guimenu
+>Nettlesing</guimenu
+> <guimenuitem
+>Mellomlager</guimenuitem
+></menuchoice
+> i dialogruten du får opp når du velger <menuchoice
+><guimenu
+>Innstillinger</guimenu
+> <guimenuitem
+>Oppsett av konqueror …</guimenuitem
+></menuchoice
+> får du fram en dialogboks der du kan skru av hurtiglageret, tømme det eller sette størrelsen og endre reglene for hurtiglagring.</para>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Hvordan endrer jeg verdiene for tidsavbrudd ved nettsurfing som &konqueror; bruker?</para
+></question
+> <answer>
+<para
+>I &systemsettings;-modulen <guilabel
+>Internett og Nettverk</guilabel
+> på sida <menuchoice
+><guimenu
+>Nettverksinnstillinger</guimenu
+><guimenuitem
+>Forbindelsesinnstillinger</guimenuitem
+></menuchoice
+>.</para>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Hvordan stiller jeg inn <quote
+>hjemmesida</quote
+> – den sida som blir lastet inn ved oppstart?</para
+></question>
+<answer
+><para
+>&konqueror; har en <guilabel
+>Hjemmemappe</guilabel
+> som brukes i filbehandlermodus og en <guilabel
+>Hjemmeside</guilabel
+> som brukes i nettlesermodus.</para>
+
+<para
+>For å endre disse innstillingene start <menuchoice
+><guimenu
+>Innstillinger</guimenu
+><guimenuitem
+>Oppsett av konqueror</guimenuitem
+><guilabel
+>Generelt</guilabel
+></menuchoice
+>.</para>
+
+<para
+>For å sette opp &konqueror;s oppstartsside i filbehandlermodus velg <guilabel
+>Vis  innledningssiden</guilabel
+>, <guilabel
+>Vis min hjemmeside</guilabel
+>, <guilabel
+>Vis en tom side</guilabel
+> eller <guilabel
+>Vis bokmerker</guilabel
+> i nedtrekksboksen merket <guilabel
+>Når Konqueror starter:</guilabel
+>.</para>
+
+<para
+>I nettlesermodus starter &konqueror; med sida oppgitt i <guilabel
+>Hjemmeside</guilabel
+>.</para>
+
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Jeg finner ikke svaret på spørsmålet mitt her.</para
+></question
+> 
+<answer>
+<para
+>Se på <ulink url="http://www.konqueror.org/faq.html"
+>http://www.konqueror.org/faq.html</ulink
+> eller <ulink url="http://www.konqueror.org/konq-java.html"
+> http://www.konqueror.org/konq-java.html</ulink
+>.</para>
+<para
+>Du kan finne mer informasjon i  <ulink url="http://forum.kde.org/"
+> KDE Community Forums</ulink
+> eller på <ulink url="http://userbase.kde.org/Konqueror"
+> Konquerors KDE Userbase page</ulink
+>.</para>
+</answer>
+</qandaentry>
+
+</qandaset>
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

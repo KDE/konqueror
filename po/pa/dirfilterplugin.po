@@ -1,0 +1,97 @@
+# translation of dirfilterplugin.po to Punjabi
+#
+# Amanpreet Singh Alam <aalam@redhat.com>, 2005.
+# A S Alam <aalam@users.sf.net>, 2007, 2012, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: dirfilterplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2013-01-05 08:40+0530\n"
+"Last-Translator: A S Alam <aalam@users.sf.net>\n"
+"Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
+"Language: pa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: dirfilterplugin.cpp:120
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Hide Filter Bar"
+msgstr "ਫਿਲਟਰ ਪੱਟੀ ਓਹਲੇ"
+
+#: dirfilterplugin.cpp:124
+#, kde-format
+msgctxt "@label:textbox"
+msgid "F&ilter:"
+msgstr "ਫਿਲਟਰ(&i):"
+
+#: dirfilterplugin.cpp:136
+#, kde-format
+msgctxt "@label:button"
+msgid "Filter by t&ype"
+msgstr "ਕਿਸਮ ਮੁਤਾਬਕ ਫਿਲਟਰ(&y)"
+
+#: dirfilterplugin.cpp:137
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Filter items by file type."
+msgstr "ਆਈਟਮਾਂ ਨੂੰ ਫਾਇਲ ਕਿਸਮ ਰਾਹੀਂ ਫਿਲਟਰ ਕਰੋ।"
+
+#: dirfilterplugin.cpp:228
+#, kde-format
+msgctxt "@action:inmenu Tools"
+msgid "Show Filter Bar"
+msgstr "ਫਿਲਟਰ ਪੱਟੀ ਵੇਖੋ"
+
+#: dirfilterplugin.cpp:322
+#, kde-format
+msgid "Use Multiple Filters"
+msgstr "ਬਹੁ-ਫਿਲਟਰ ਵਰਤੋਂ"
+
+#: dirfilterplugin.cpp:328
+#, kde-format
+msgid "Show Count"
+msgstr "ਗਿਣਤੀ ਵੇਖਾਓ"
+
+#: dirfilterplugin.cpp:333
+#, kde-format
+msgid "Reset"
+msgstr "ਮੁੜ-ਸੈੱਟ"
+
+#. i18n: ectx: Menu (tools)
+#: dirfilterplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "ਟੂਲ(&T)"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: dirfilterplugin.rc:8
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "ਵਾਧੂ ਟੂਲਬਾਰ"
+
+#~ msgid "Allow to filter the currently displayed items by filetype."
+#~ msgstr "ਫਿਲਟਰ ਨੂੰ ਇਸ ਸਮੇਂ ਫਾਇਲ ਕਿਸਮ ਨਾਲ ਇਕਾਈਆਂ ਵਿਖਾਉਣਾ ਸੰਭਵ ਕਰੋ।"
+
+#~ msgid "Only Show Items of Type"
+#~ msgstr "ਇਸ ਕਿਸਮ ਦੀਆਂ ਹੀ ਇਕਾਈਆਂ ਵਿਖਾਓ"
+
+#~ msgid "Filter Field"
+#~ msgstr "ਫਿਲਟਰ ਖੇਤਰ"
+
+#~ msgid "Clear Filter Field"
+#~ msgstr "ਫਿਲਟਰ ਖੇਤਰ ਸਾਫ਼"
+
+#, fuzzy
+#~| msgid "Clear filter field<p>Clears the content of the filter field."
+#~ msgid "Clear filter field<p>Clears the content of the filter field.</p>"
+#~ msgstr "ਫਿਲਟਰ ਖੇਤਰ ਸਾਫ਼<p>ਫਿਲਟਰ ਖੇਤਰ ਵਿੱਚ ਮੌਜੂਦ ਅੱਖਰਾਂ ਨੂੰ ਹਟਾਏਗਾ।"
+
+#~ msgid ""
+#~ "Enter here a text which an item in the view must contain anywhere to be "
+#~ "shown."
+#~ msgstr "ਪਾਠ ਇੱਥੇ ਦਿਓ, ਜੋ ਕਿ ਇੱਕ ਇਕਾਈ ਹੈ, ਜੋ ਕਿ ਕਿਤੇ ਵੀ ਵਿਖਾਇਆ ਜਾ ਸਕਦਾ ਹੈ।"

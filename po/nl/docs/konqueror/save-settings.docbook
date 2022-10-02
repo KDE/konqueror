@@ -1,0 +1,149 @@
+<chapter id="save-settings">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+&Bram.Schoenmakers;&Freek.de.Kruijf; 
+</authorgroup>
+
+<date
+>2010-02-26</date>
+<releaseinfo
+>&kde; 4.4</releaseinfo>
+</chapterinfo>
+
+<title
+>Profielen en instellingen opslaan</title>
+<sect1 id="save-settings-general">
+<title
+>Algemene instellingen</title>
+<para
+>Wanneer u &konqueror; afsluit worden weergave-instellingen zoals <guimenuitem
+>Weergavemodus</guimenuitem
+>, <guimenuitem
+>Gebruik index.html</guimenuitem
+> en <guimenuitem
+>Verborgen bestanden tonen</guimenuitem
+> niet automatisch opgeslagen. U kunt deze instellingen opslaan door te selecteren: <menuchoice
+><guimenu
+>Instellingen</guimenu
+><guimenuitem
+>Weergave profiel opslaan...</guimenuitem
+></menuchoice
+>. De volgende keer zal &konqueror; opstarten met de nieuwe standaard instellingen.</para>
+
+<para
+>Maar u kunt ook aparte <guimenu
+>Beeld</guimenu
+>-instellingen maken voor iedere map. Om dit te doen selecteer <menuchoice
+><guimenu
+>Beeld</guimenu
+><guimenuitem
+>Weergave-eigenschappen aanpassen...</guimenuitem
+></menuchoice
+>, wijzig de <guimenu
+>Beeld</guimenu
+>-instellingen in de dialoog zoals u ze wilt hebben. Pas dan beeld-eigenschappen toe in de <guilabel
+>Huidige map</guilabel
+>.  Dit zal een bestand  met de naam <filename
+>.directory</filename
+> in de huidige map opslaan, die al de<guimenu
+>Beeld</guimenu
+>-instellingen zal bewaren. Gebruik deze dialoog opnieuw om de specifieke instellingen voor deze map te verwijderen (u kunt ook gewoon het bestand <filename
+>.directory</filename
+> uit die map verwijderen).</para>
+<note
+><para
+>Een aardige toepassing van deze mogelijkheid is dat u alleen bij mappen die afbeeldingen bevatten voorbeelden kunt aanmaken (door <menuchoice
+><guisubmenu
+>Beeldmodus</guisubmenu
+><guimenuitem
+>Pictogrammen</guimenuitem
+></menuchoice
+> te kiezen en <guimenuitem
+>Voorbeelden</guimenuitem
+> te activeren uit het menu <guimenu
+>Beeld</guimenu
+>). Andere mappen zullen dan geen voorbeelden tonen.</para
+></note>
+</sect1>
+
+<sect1 id="save-settings-view-profiles">
+<title
+>Weergaveprofielen</title>
+<para
+>&konqueror; kan een hele reeks instellingen opslaan als een <quote
+>Weergaveprofiel</quote
+>. Sommige weergaveprofielen maken deel uit van de standaard installatie, zoals <property
+>Webbrowser</property
+>, <property
+>Bestandsbeheer</property
+>, <property
+>KDE-ontwikkeling</property
+>, <property
+>Midnight Commander</property
+> en <property
+>Browsen met tabbladen</property
+>. Maar het is natuurlijk ook mogelijk om zelf een profiel aan te maken.</para>
+
+<para
+>Om een weergaveprofiel aan te passen (bijvoorbeeld het profiel <property
+>Webbrowser</property
+>) laadt u het profiel in door in het menu <menuchoice
+><guimenu
+>Instellingen</guimenu
+><guisubmenu
+>Weergaveprofiel laden</guisubmenu
+><guimenuitem
+>Webbrowser</guimenuitem
+></menuchoice
+> te kiezen. Verander nu de instellingen zoals u ze wilt hebben. Selecteer dan <menuchoice
+><guimenu
+>Instellingen</guimenu
+><guimenuitem
+>Weergaveprofiel opslaan als...</guimenuitem
+></menuchoice
+>. In het dialoogvenster kunt u dan de naam van het profiel veranderen, of u laat de naam staan zodat het huidige profiel wordt overschreven. Wanneer u kiest voor <guilabel
+>URL-adressen in profiel opslaan</guilabel
+> zal het huidige URL-adres ingeladen worden wanneer u dat profiel opent. Dit is hetzelfde als een startpagina zoals u ziet in andere webbrowsers. Om &konqueror; een leeg scherm te tonen bij het opstarten dient u <userinput
+>about:blank</userinput
+> te typen in de locatiebalk voordat u het profiel opslaat.</para>
+
+<note
+><para
+>U kunt een bureaubladpictogram aanmaken om &konqueror; te starten met uw zelfgemaakte profiel. Om te beginnen maakt u een pictogram aan door het &konqueror;-pictogram uit het toepassingstart-menu te slepen naar het bureaublad. Klik dan met de <mousebutton
+>rechter</mousebutton
+>muisknop op het nieuwe pictogram en kies voor <guimenuitem
+>Pictogram instellingen</guimenuitem
+> en verander <guilabel
+>Commando</guilabel
+> in het tabblad <guilabel
+>Toepassingen</guilabel
+> naar <userinput
+><command
+>kfmclient</command
+> <option
+>openProfile <replaceable
+>MijnProfielNaam</replaceable
+></option
+></userinput
+>, waar <replaceable
+>MijnProfielNaam</replaceable
+> de naam is van het nieuwe profiel dat u hebt aangemaakt. Verander vervolgens de naam in zoiets als <filename
+>MijnNieuweProfiel</filename
+>.</para
+></note>
+
+</sect1>
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

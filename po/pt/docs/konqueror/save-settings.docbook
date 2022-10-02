@@ -1,0 +1,167 @@
+<chapter id="save-settings">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>José</firstname
+><surname
+>Pires</surname
+><affiliation
+><address
+><email
+>zepires@gmail.com</email
+></address
+></affiliation
+><contrib
+>Tradução</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2010-02-26</date>
+<releaseinfo
+>&kde; 4.4</releaseinfo>
+</chapterinfo>
+
+<title
+>Gravar as Configurações e os Perfis</title>
+<sect1 id="save-settings-general">
+<title
+>Configuração Geral</title>
+<para
+>Quando você fechar o &konqueror; as suas opções actuais do menu <guimenu
+>Ver</guimenu
+> (como os itens <guimenuitem
+>Modo de Visualização</guimenuitem
+>, <guimenuitem
+>Usar o index.html</guimenuitem
+> e o <guimenuitem
+>Mostrar os Ficheiros Escondidos </guimenuitem
+>) não são gravados automaticamente como opções por omissão; contudo, poderá fazer com que o &konqueror; recorde estas opções se seleccionar <menuchoice
+><guimenu
+>Configuração</guimenu
+><guimenuitem
+>Gravar o Perfil de Vista Como...</guimenuitem
+></menuchoice
+> para que a configuração actual fique a opção por omissão a usar da próxima vez que o &konqueror; for iniciado.</para>
+
+<para
+>Mas você poderá também indicar várias configurações do menu <guimenu
+>Ver</guimenu
+> para uma pasta em particular. Para o fazer assinale a opção <menuchoice
+><guimenu
+>Ver</guimenu
+><guimenuitem
+>Ajustar as Propriedades da Vista...</guimenuitem
+></menuchoice
+> do menu, mude a configuração do <guimenu
+>Ver</guimenu
+> para o que desejar. Depois aplique as modificações da janela na <guilabel
+>Pasta actual</guilabel
+>. Se o fizer, irá criar um ficheiro <filename
+>.directory</filename
+> nessa pasta para lidar com a configuração do menu <guimenu
+>Ver</guimenu
+> da pasta. Use esta janela de novo para remover as opções específicas da pasta (ou simplesmente remova o ficheiro <filename
+>.directory</filename
+>).</para>
+<note
+><para
+>Uma utilização interessante desta funcionalidade é se você tiver uma pasta cheia de imagens. Poderá indicar a essa pasta em particular para mostrar as miniaturas das imagens (ao escolher os <menuchoice
+><guisubmenu
+>Modo de Visualização</guisubmenu
+><guimenuitem
+>Ícones</guimenuitem
+></menuchoice
+> e a <guimenuitem
+>Antevisão</guimenuitem
+> no menu <guimenu
+>Ver</guimenu
+>) quando a abrir, enquanto que não mostra as imagens como miniaturas nas outras pastas.</para
+></note>
+</sect1>
+
+<sect1 id="save-settings-view-profiles">
+<title
+>Perfis de Vista</title>
+<para
+>O &konqueror; poderá gravar um conjunto completo de opções como um <quote
+>Perfil de Vista</quote
+>. Alguns dos perfis de vista fazem parte da instalação padrão do &konqueror;, como a <property
+>Navegação Web</property
+>, a <property
+>Gestão de Ficheiros</property
+>, o <property
+>Desenvolvimento Web</property
+>, o <property
+>Midnight Commander</property
+> e a <property
+>Navegação por Páginas</property
+>, mas você poderá adicionar os seus próprios perfis, também.</para>
+
+<para
+>Para modificar um perfil de vista (por exemplo, o <property
+>Navegação Web</property
+>), carregue o perfil com a opção do menu <menuchoice
+><guimenu
+>Configuração</guimenu
+><guisubmenu
+>Carregar o Perfil de Vista</guisubmenu
+><guimenuitem
+>Navegação Web</guimenuitem
+> </menuchoice
+>, e mude a configuração do &konqueror; para o que quiser. Agora escolha a opção <menuchoice
+><guimenu
+>Configuração</guimenu
+><guimenuitem
+>Gravar o Perfil de Vista Como...</guimenuitem
+></menuchoice
+>. Na janela que lhe aparece, você poderá alterar o nome do perfil, o qual irá criar um novo perfil com esse nome, ou poderá deixar o nome como está para modificar o perfil actual. Se você seleccionar a opção <guilabel
+>Gravar os URLs no perfil</guilabel
+>, o &URL; actual será lido sempre que carregar esse perfil de vista. Isto funciona de uma forma semelhante à <quote
+>Página Pessoal</quote
+> de muitos navegadores Web. Se você quiser que o &konqueror; se inicie com uma janela vazia escreva <userinput
+>about:blank</userinput
+> na barra de localização antes de gravar o perfil.</para>
+
+<note
+><para
+>Você poderá criar um ícone do ecrã para iniciar o &konqueror; com o seu novo perfil. Crie primeiro um ícone no ecrã, carregando com o &RMB; no item do &konqueror; no menu do lançador de aplicações. Depois seleccione a opção <guimenuitem
+>Adicionar ao Ecrã</guimenuitem
+> no menu de contexto. Abra a janela de configuração do novo ícone, carregando no ícone de <guiicon
+>Ferramentas</guiicon
+>. Mude o <guilabel
+>Comando</guilabel
+> na página <guilabel
+>Aplicação</guilabel
+> para <userinput
+><command
+>kfmclient</command
+> <option
+>openProfile <replaceable
+>OMeuNovoPerfil</replaceable
+></option
+></userinput
+>, onde <replaceable
+>OMeuNovoPerfil</replaceable
+> deverá ser substituído pelo nome do seu novo perfil. Depois, mude o nome para algo do tipo <filename
+>OMeuNovoPerfil</filename
+>.</para
+></note>
+
+</sect1>
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

@@ -1,0 +1,1205 @@
+# translation of desktop_kdebase.po to Upper Sorbian
+# Prof. Dr. Eduard Werner <e.werner@rz.uni-leipzig.de>, 2003.
+# Eduard Werner <edi.werner@gmx.de>, 2005, 2008.
+# Bianka Šwejdźic <hertn@gmx.de>, 2005, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: desktop_kdebase\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2008-11-06 22:08+0100\n"
+"Last-Translator: Eduard Werner <edi.werner@gmx.de>\n"
+"Language-Team: en_US <kde-i18n-doc@lists.kde.org>\n"
+"Language: hsb\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3;\n"
+
+#: kget_plugin.cpp:56
+#, kde-format
+msgid "Download Manager"
+msgstr ""
+
+#: kget_plugin.cpp:62
+#, kde-format
+msgid "Show Drop Target"
+msgstr ""
+
+#: kget_plugin.cpp:69
+#, kde-format
+msgid "List All Links"
+msgstr ""
+
+#: kget_plugin.cpp:74
+#, fuzzy, kde-format
+#| msgid "Settings"
+msgid "List Selected Links"
+msgstr "Nastajenja"
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No downloadable links were found."
+msgstr ""
+
+#: kget_plugin.cpp:170
+#, fuzzy, kde-format
+#| msgid "&Import"
+msgid "No Links"
+msgstr "&Importować"
+
+#. i18n: ectx: Menu (tools)
+#: konqueror_kget_browser_integration.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "&Nastroje"
+
+#, fuzzy
+#~ msgid "Network"
+#~ msgstr "Žane zapiski"
+
+#, fuzzy
+#~| msgctxt "Name"
+#~| msgid "Network Interfaces"
+#~ msgid "Web Interface"
+#~ msgstr "Syćowe interfejsy"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgid "Verification"
+#~ msgstr "Cil"
+
+#, fuzzy
+#~| msgctxt "Name"
+#~| msgid "Internet"
+#~ msgctxt "integration of KGet with other applications"
+#~ msgid "Integration"
+#~ msgstr "Internet"
+
+#, fuzzy
+#~| msgid "Regular e&xpression"
+#~ msgid "Regular expression"
+#~ msgstr "P&rawidłowny wuraz"
+
+#, fuzzy
+#~ msgid "1 Item"
+#~ msgid_plural "%1 Items"
+#~ msgstr[0] "%1 objekt"
+#~ msgstr[1] "%1 objektaj"
+#~ msgstr[2] "%1 objekty"
+#~ msgstr[3] "%1 objektow"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#, fuzzy
+#~| msgid "Remove"
+#~ msgid "Remove Group"
+#~ msgstr "Zničić"
+
+#, fuzzy
+#~| msgid "Remove"
+#~ msgid "Remove groups"
+#~ msgstr "Zničić"
+
+#, fuzzy
+#~| msgid "Download"
+#~ msgid "Download added"
+#~ msgstr "Sćahnyć"
+
+#, fuzzy
+#~| msgid "Download"
+#~ msgid "Download it again?"
+#~ msgstr "Sćahnyć"
+
+#, fuzzy
+#~| msgid "Download"
+#~ msgid "Download started"
+#~ msgstr "Sćahnyć"
+
+#~ msgid "Error"
+#~ msgstr "Zmylk"
+
+#, fuzzy
+#~| msgid "Remove"
+#~ msgid "Resolve"
+#~ msgstr "Zničić"
+
+#, fuzzy
+#~ msgctxt "Shutting down computer"
+#~ msgid "Shutdown"
+#~ msgstr "Pokaž %1"
+
+#, fuzzy
+#~| msgid "Settings..."
+#~ msgctxt "Suspending computer"
+#~ msgid "Suspending"
+#~ msgstr "Nastajenja..."
+
+#, fuzzy
+#~| msgctxt "Comment"
+#~| msgid "Aborted."
+#~ msgctxt "abort the proposed action"
+#~ msgid "Abort"
+#~ msgstr "Přetorhnjene."
+
+#, fuzzy
+#~| msgid "Download"
+#~ msgid "Downloads completed"
+#~ msgstr "Sćahnyć"
+
+#, fuzzy
+#~| msgid "File"
+#~ msgctxt "file in a filesystem"
+#~ msgid "File"
+#~ msgstr "Dataja"
+
+#, fuzzy
+#~| msgid "Status"
+#~ msgctxt "status of the download"
+#~ msgid "Status"
+#~ msgstr "Status"
+
+#, fuzzy
+#~| msgid "Size"
+#~ msgctxt "size of the download"
+#~ msgid "Size"
+#~ msgstr "Wulkosć"
+
+#~ msgid "Stalled"
+#~ msgstr "Zastajene"
+
+#, fuzzy
+#~| msgid "Download"
+#~ msgid "Downloading...."
+#~ msgstr "Sćahnyć"
+
+#, fuzzy
+#~ msgctxt "transfer state: delayed"
+#~ msgid "Delayed"
+#~ msgstr "Niču"
+
+#, fuzzy
+#~| msgctxt "Comment"
+#~| msgid "Aborted."
+#~ msgctxt "transfer state: aborted"
+#~ msgid "Aborted"
+#~ msgstr "Přetorhnjene."
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgctxt "changing the destination of the file"
+#~ msgid "Changing destination"
+#~ msgstr "Cil"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "No download destination specified."
+#~ msgstr "Cil:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Invalid download destination specified."
+#~ msgstr "Cil:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Download destination is not writeable."
+#~ msgstr "Cil:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid ""
+#~ "Invalid download destination specified:\n"
+#~ "%1"
+#~ msgstr "Cil:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid ""
+#~ "Download destination is not writeable:\n"
+#~ "%1"
+#~ msgstr "Cil:"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Question"
+#~ msgstr "Wopisanje"
+
+#, fuzzy
+#~| msgid "Dese&lect"
+#~ msgctxt "on a question"
+#~ msgid "Yes all"
+#~ msgstr "Wubraće z&běhnyć"
+
+#, fuzzy
+#~| msgctxt "Comment"
+#~| msgid "Search Engine"
+#~ msgid "Insert Engine"
+#~ msgstr "Pytanska mašina"
+
+#, fuzzy
+#~| msgid "Device name"
+#~ msgid "Engine name:"
+#~ msgstr "Mjeno grata"
+
+#~ msgid "URL:"
+#~ msgstr "URL:"
+
+#, fuzzy
+#~| msgid "Connecting to %1..."
+#~ msgctxt "transfer state: connecting"
+#~ msgid "Connecting...."
+#~ msgstr "Zwjazam so z %1..."
+
+#, fuzzy
+#~| msgid "Add a new script."
+#~ msgid "Add New Script"
+#~ msgstr "Nowy skript dodać."
+
+#, fuzzy
+#~| msgid "Edit selected script."
+#~ msgid "Edit Script"
+#~ msgstr "Wubrany skript wobdźěłać."
+
+#, fuzzy
+#~| msgid "Scriptfile"
+#~ msgid "Set Script File"
+#~ msgstr "Skriptowa dataja"
+
+#, fuzzy
+#~ msgctxt "Configure script"
+#~ msgid "Configure script"
+#~ msgstr "&Pokročować"
+
+#, fuzzy
+#~| msgid "Close script..."
+#~ msgctxt "Transfer state: processing script"
+#~ msgid "Processing script...."
+#~ msgstr "Skript začinić ..."
+
+#, fuzzy
+#~| msgid "&Finished"
+#~ msgctxt "Transfer State: Finished"
+#~ msgid "Finished"
+#~ msgstr "&Zakónčene"
+
+#, fuzzy
+#~| msgctxt "Comment"
+#~| msgid "Aborted."
+#~ msgctxt "Transfer State: Aborted"
+#~ msgid "Aborted"
+#~ msgstr "Přetorhnjene."
+
+#, fuzzy
+#~| msgid "Download"
+#~ msgid "Downloading Metalink File...."
+#~ msgstr "Sćahnyć"
+
+#, fuzzy
+#~| msgid "Download"
+#~ msgid "Redownload Metalink"
+#~ msgstr "Sćahnyć"
+
+#, fuzzy
+#~| msgid "Stopped"
+#~ msgid "Append"
+#~ msgstr "Zastajene"
+
+#, fuzzy
+#~| msgid "Open file"
+#~ msgid "Replace file"
+#~ msgstr "Dataju wočinić"
+
+#, fuzzy
+#~| msgid "Run single test..."
+#~ msgctxt "transfer state: running"
+#~ msgid "Running...."
+#~ msgstr "Jenički test ..."
+
+#, fuzzy
+#~| msgid "Yes"
+#~ msgctxt "Interested"
+#~ msgid "Yes"
+#~ msgstr "Haj"
+
+#, fuzzy
+#~| msgid "No"
+#~ msgctxt "Not Interested"
+#~ msgid "No"
+#~ msgstr "Ně"
+
+#, fuzzy
+#~| msgid "Yes"
+#~ msgctxt "Interesting"
+#~ msgid "Yes"
+#~ msgstr "Haj"
+
+#, fuzzy
+#~| msgid "No"
+#~ msgctxt "Not Interesting"
+#~ msgid "No"
+#~ msgstr "Ně"
+
+#~ msgid "Client"
+#~ msgstr "Client"
+
+#, fuzzy
+#~| msgctxt "Name"
+#~| msgid "Internet"
+#~ msgid "Interested"
+#~ msgstr "Internet"
+
+#, fuzzy
+#~| msgctxt "Name"
+#~| msgid "Internet"
+#~ msgid "Interesting"
+#~ msgstr "Internet"
+
+#, fuzzy
+#~| msgid "Download"
+#~ msgid "Download speed"
+#~ msgstr "Sćahnyć"
+
+#, fuzzy
+#~ msgid "Upload speed"
+#~ msgstr "Čitać"
+
+#, fuzzy
+#~| msgid "Number, Other"
+#~ msgid "Number of the chunk"
+#~ msgstr "čisło, druhe"
+
+#, fuzzy
+#~| msgid "Download"
+#~ msgid "Download speed of the chunk"
+#~ msgstr "Sćahnyć"
+
+#~ msgid "URL"
+#~ msgstr "URL"
+
+#~ msgid "Status"
+#~ msgstr "Status"
+
+#~ msgid "File"
+#~ msgstr "Dataja"
+
+#~ msgid "Size"
+#~ msgstr "Wulkosć"
+
+#~ msgid "Do Not Download"
+#~ msgstr "Nic sćahnyć"
+
+#, fuzzy
+#~| msgid "User:"
+#~ msgid "Url"
+#~ msgstr "Wužiwar:"
+
+#, fuzzy
+#~| msgid "No Downloads"
+#~ msgid "Times Downloaded"
+#~ msgstr "Ničo sćehnjene"
+
+#~ msgid "Preview"
+#~ msgstr "Přehladka"
+
+#, fuzzy
+#~ msgid "%1 %"
+#~ msgstr "%1%2"
+
+#, fuzzy
+#~| msgid "Download"
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading...."
+#~ msgstr "Sćahnyć"
+
+#, fuzzy
+#~| msgid "Settings..."
+#~ msgctxt "Transfer status: seeding"
+#~ msgid "Seeding...."
+#~ msgstr "Nastajenja..."
+
+#, fuzzy
+#~| msgid "sets the default button color"
+#~ msgid "Select a default torrent folder"
+#~ msgstr "postaji standardowu kneflowu barbu."
+
+#, fuzzy
+#~| msgid "Could not create temporary file."
+#~ msgid "Select a default temporary folder"
+#~ msgstr "Njemóžach temporarnu dataju stworić."
+
+#, fuzzy
+#~| msgid "Settings"
+#~ msgid "File Properties"
+#~ msgstr "Nastajenja"
+
+#, fuzzy
+#~| msgid "Unable to create io-slave: %1"
+#~ msgid "Unable to load: %1"
+#~ msgstr "Njemóžach io-slave stworić: %1"
+
+#, fuzzy
+#~| msgid "Open file"
+#~ msgid "Metalink Version 4.0 file (*.meta4)"
+#~ msgstr "Dataju wočinić"
+
+#, fuzzy
+#~| msgid "Open file"
+#~ msgid "Metalink Version 3.0 file (*.metalink)"
+#~ msgstr "Dataju wočinić"
+
+#, fuzzy
+#~| msgid "Download"
+#~ msgctxt "Download the items which have been selected"
+#~ msgid "&Download Checked"
+#~ msgstr "Sćahnyć"
+
+#~ msgid "Description"
+#~ msgstr "Wopisanje"
+
+#, fuzzy
+#~| msgid "Select a week"
+#~ msgid "&Select All Filtered"
+#~ msgstr "Wubjerće tydźeń"
+
+#, fuzzy
+#~| msgctxt "@action"
+#~| msgid "Select All"
+#~ msgid "&Select All"
+#~ msgstr "Wšitko wubrać"
+
+#, fuzzy
+#~| msgid "Select a week"
+#~ msgid "D&eselect All Filtered"
+#~ msgstr "Wubjerće tydźeń"
+
+#, fuzzy
+#~| msgid "Dese&lect"
+#~ msgid "D&eselect All"
+#~ msgstr "Wubraće z&běhnyć"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgctxt "Mirror as in server, in url"
+#~ msgid "Mirror"
+#~ msgstr "Zmylk"
+
+#, fuzzy
+#~| msgid "C&onnect"
+#~ msgctxt "Number of paralell connections to the mirror"
+#~ msgid "Connections"
+#~ msgstr "&Zwjazać"
+
+#, fuzzy
+#~| msgid "C&onnect"
+#~ msgctxt "Location = country"
+#~ msgid "Location"
+#~ msgstr "&Zwjazać"
+
+#~ msgid "Open file"
+#~ msgstr "Dataju wočinić"
+
+#~ msgid "Today"
+#~ msgstr "dźensa"
+
+#, fuzzy
+#~| msgctxt "Name"
+#~| msgid "SourceForge"
+#~ msgid "Source File"
+#~ msgstr "SourceForge"
+
+#~ msgid "Destination"
+#~ msgstr "Cil"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgctxt "an error happened in connection with the user input"
+#~ msgid "Error:"
+#~ msgstr "Zmylk"
+
+#, fuzzy
+#~| msgid "File"
+#~ msgctxt "pgp signature is not verified"
+#~ msgid "Failed"
+#~ msgstr "Dataja"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgid "Error:"
+#~ msgstr "Zmylk"
+
+#, fuzzy
+#~| msgid "C&onnect"
+#~ msgid "Information:"
+#~ msgstr "&Zwjazać"
+
+#, fuzzy
+#~| msgctxt "@title job"
+#~| msgid "Transferring"
+#~ msgid "Transfer Details"
+#~ msgstr "Přenjesu"
+
+#, fuzzy
+#~| msgid "Setting ACL for %1"
+#~ msgid "Transfer Verification for %1"
+#~ msgstr "Sćelu ACL na %1"
+
+#, fuzzy
+#~| msgid "Open file"
+#~ msgid "Rename File"
+#~ msgstr "Dataju wočinić"
+
+#, fuzzy
+#~| msgid "File:"
+#~ msgid "&Rename"
+#~ msgstr "Dataja:"
+
+#, fuzzy
+#~| msgid "Remove"
+#~ msgid "Rename Group..."
+#~ msgid_plural "Rename Groups..."
+#~ msgstr[0] "Zničić"
+#~ msgstr[1] "Zničić"
+#~ msgstr[2] "Zničić"
+#~ msgstr[3] "Zničić"
+
+#, fuzzy
+#~ msgctxt "%1 filename, %2 total size, %3 status"
+#~ msgid "%1(%2) %3"
+#~ msgstr "%1%2"
+
+#, fuzzy
+#~| msgctxt "Items (Folders, Files), Size"
+#~| msgid "%1 (%2, %3), %4"
+#~ msgctxt ""
+#~ "%1 filename, %2 percent complete, %3 downloaded out of %4 total size"
+#~ msgid "%1(%2% %3/%4) Speed:%5/s"
+#~ msgstr "%1 (%2, %3), %4"
+
+#, fuzzy
+#~| msgctxt "Items (Folders, Files), Size"
+#~| msgid "%1 (%2, %3), %4"
+#~ msgctxt ""
+#~ "%1 filename, %2 percent complete, %3 downloaded out of %4 total size, %5 "
+#~ "status"
+#~ msgid "%1(%2% %3/%4) %5"
+#~ msgstr "%1 (%2, %3), %4"
+
+#~ msgid "Ready"
+#~ msgstr "Hotowo"
+
+#, fuzzy
+#~| msgid "Setting ACL for %1"
+#~ msgid "Transfer Settings for %1"
+#~ msgstr "Sćelu ACL na %1"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgid "Destination unmodified"
+#~ msgstr "Cil"
+
+#, fuzzy
+#~| msgid "Properties for %1"
+#~ msgid "Group Settings for %1"
+#~ msgstr "Swójstwa %1"
+
+#, fuzzy
+#~| msgctxt "Name"
+#~| msgid "Network Interfaces"
+#~ msgctxt "@label"
+#~ msgid "KGet Web Interface"
+#~ msgstr "Syćowe interfejsy"
+
+#, fuzzy
+#~| msgctxt "Name"
+#~| msgid "Network Interfaces"
+#~ msgctxt "@label Title in header"
+#~ msgid "Web Interface"
+#~ msgstr "Syćowe interfejsy"
+
+#~ msgid "Developer"
+#~ msgstr "Programowar"
+
+#, fuzzy
+#~| msgid "Select Icon"
+#~ msgid "Set Icon..."
+#~ msgstr "Wubjerće piktogram"
+
+#, fuzzy
+#~| msgctxt "@action"
+#~| msgid "Deselect"
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Remove Selected"
+#~ msgstr "Nic wubrać"
+
+#~ msgid "Stop"
+#~ msgstr "Zastajić"
+
+#~ msgid "Remove"
+#~ msgstr "Zničić"
+
+#, fuzzy
+#~| msgctxt "@title job"
+#~| msgid "Transferring"
+#~ msgid "&Transfer History"
+#~ msgstr "Přenjesu"
+
+#, fuzzy
+#~| msgctxt "Name"
+#~| msgid "Settings"
+#~ msgid "&Group Settings"
+#~ msgstr "Nastajenja"
+
+#, fuzzy
+#~| msgctxt "@title job"
+#~| msgid "Transferring"
+#~ msgid "&Transfer Settings"
+#~ msgstr "Přenjesu"
+
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Automatic verification:"
+#~ msgstr "Wopisanje:"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgid "Automatic verification"
+#~ msgstr "Cil"
+
+#, fuzzy
+#~| msgid "Select Icon"
+#~ msgid "Select Icon..."
+#~ msgstr "Wubjerće piktogram"
+
+#, fuzzy
+#~| msgid "No Downloads"
+#~ msgid "Number of downloads:"
+#~ msgstr "Ničo sćehnjene"
+
+#~ msgid "User:"
+#~ msgstr "Wužiwar:"
+
+#~ msgid "Password:"
+#~ msgstr "Hesło:"
+
+#, fuzzy
+#~| msgid "Most Downloads"
+#~ msgid "Restore Download State"
+#~ msgstr "Najhusćišo sćehnjene"
+
+#, fuzzy
+#~| msgid "Do Not Download"
+#~ msgid "Stop All Downloads"
+#~ msgstr "Nic sćahnyć"
+
+#, fuzzy
+#~| msgctxt "Comment"
+#~| msgid "Search Engine"
+#~ msgid "Search Engines"
+#~ msgstr "Pytanska mašina"
+
+#, fuzzy
+#~| msgid "Device name"
+#~ msgid "Engine Name"
+#~ msgstr "Mjeno grata"
+
+#, fuzzy
+#~ msgid "New Engine..."
+#~ msgstr "Name=Tekstowe dataje"
+
+#, fuzzy
+#~| msgid "Number, Other"
+#~ msgid "Number of connections per URL:"
+#~ msgstr "čisło, druhe"
+
+#, fuzzy
+#~| msgid "Settings"
+#~ msgid "File Settings"
+#~ msgstr "Nastajenja"
+
+#, fuzzy
+#~| msgid "File:"
+#~ msgid "Filename:"
+#~ msgstr "Dataja:"
+
+#, fuzzy
+#~| msgid "Username:"
+#~ msgid "Use Normalized Name"
+#~ msgstr "Wužiwar:"
+
+#, fuzzy
+#~| msgid "Username:"
+#~ msgid "Use Literal Name"
+#~ msgstr "Wužiwar:"
+
+#, fuzzy
+#~| msgid "Locality:"
+#~ msgid "Quality:"
+#~ msgstr "Městno:"
+
+#, fuzzy
+#~| msgid "Login OK"
+#~ msgid "Login Info"
+#~ msgstr "Přizjewjenje OK"
+
+#~ msgid "Username:"
+#~ msgstr "Wužiwar:"
+
+#, fuzzy
+#~| msgctxt "KCharSelect section name"
+#~| msgid "Other Scripts"
+#~ msgid "User Scripts"
+#~ msgstr "Druhe pisma"
+
+#, fuzzy
+#~| msgid "Path:"
+#~ msgid "Path"
+#~ msgstr "Puć:"
+
+#, fuzzy
+#~| msgid "Close script..."
+#~ msgid "New Script...."
+#~ msgstr "Skript začinić ..."
+
+#, fuzzy
+#~| msgid "Edit..."
+#~ msgid "Edit...."
+#~ msgstr "Wobdźěłać..."
+
+#, fuzzy
+#~| msgid "Confi&gure..."
+#~ msgid "Configure...."
+#~ msgstr "Konfigura&cija..."
+
+#~ msgid "Path:"
+#~ msgstr "Puć:"
+
+#~ msgid "Description:"
+#~ msgstr "Wopisanje:"
+
+#, fuzzy
+#~| msgid "No Downloads"
+#~ msgid "Number of simultaneous file downloads:"
+#~ msgstr "Ničo sćehnjene"
+
+#, fuzzy
+#~| msgid "Number, Other"
+#~ msgid "Number of mirrors per file:"
+#~ msgstr "čisło, druhe"
+
+#, fuzzy
+#~| msgctxt "Name"
+#~| msgid "TuxRacer"
+#~ msgid "Update Trackers"
+#~ msgstr "TuxRacer"
+
+#~ msgid "Size:"
+#~ msgstr "Wulkosć:"
+
+#, fuzzy
+#~| msgid "Sending data to %1"
+#~ msgid "Scanning data of torrent:"
+#~ msgstr "Sćelu day na %1"
+
+#, fuzzy
+#~| msgid "Number, Other"
+#~ msgid "Number of chunks found:"
+#~ msgstr "čisło, druhe"
+
+#, fuzzy
+#~| msgid "Number, Other"
+#~ msgid "Number of chunks failed:"
+#~ msgstr "čisło, druhe"
+
+#~ msgid "0"
+#~ msgstr "0"
+
+#~ msgid "Cancel"
+#~ msgstr "Přetorhnyć"
+
+#, fuzzy
+#~| msgid "Download"
+#~ msgid "Download speed:"
+#~ msgstr "Sćahnyć"
+
+#, fuzzy
+#~ msgid "Upload speed:"
+#~ msgstr "Čitać"
+
+#, fuzzy
+#~| msgid "Download"
+#~ msgid "Download limit per transfer:"
+#~ msgstr "Sćahnyć"
+
+#, fuzzy
+#~ msgid "Folders"
+#~ msgstr "Filter"
+
+#, fuzzy
+#~| msgid "Default for new files in this folder"
+#~ msgid "Default torrent folder:"
+#~ msgstr "Standard za nowe dataje w tutym zapisku"
+
+#, fuzzy
+#~ msgid "Pre-allocate disk space"
+#~ msgstr "Swobodny rum na %1:"
+
+#, fuzzy
+#~| msgid "General"
+#~ msgctxt "General options."
+#~ msgid "General"
+#~ msgstr "Generelnje"
+
+#, fuzzy
+#~| msgid "General"
+#~ msgid "General URL:"
+#~ msgstr "Generelnje"
+
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Verification:"
+#~ msgstr "Wopisanje:"
+
+#, fuzzy
+#~| msgid "Open file"
+#~ msgid "*.metalink *.meta4|Metalink file (*.metalink *.meta4)"
+#~ msgstr "Dataju wočinić"
+
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Version:"
+#~ msgstr "Wopisanje:"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "Name:"
+#~ msgstr "Mjeno"
+
+#, fuzzy
+#~| msgid "Number, Other"
+#~ msgid "Name of the publisher"
+#~ msgstr "čisło, druhe"
+
+#, fuzzy
+#~| msgid "Number, Other"
+#~ msgid "URL to the publisher"
+#~ msgstr "čisło, druhe"
+
+#, fuzzy
+#~| msgid "File"
+#~ msgctxt "Files as in files on a server"
+#~ msgid "Files:"
+#~ msgstr "Dataja"
+
+#, fuzzy
+#~ msgid "Show:"
+#~ msgstr "Pokaž %1"
+
+#, fuzzy
+#~| msgid "&All"
+#~ msgctxt "filter: show all file types"
+#~ msgid "&All"
+#~ msgstr "&Wšitke"
+
+#, fuzzy
+#~ msgid "&Videos"
+#~ msgstr "&Přehladka"
+
+#, fuzzy
+#~| msgctxt "Name"
+#~| msgid "Images"
+#~ msgid "Ima&ges"
+#~ msgstr "Wobrazy"
+
+#, fuzzy
+#~| msgid "A&uthor"
+#~ msgid "A&udio"
+#~ msgstr "A&wtor"
+
+#, fuzzy
+#~| msgid "Archives"
+#~ msgid "A&rchives"
+#~ msgstr "Archiwy"
+
+#, fuzzy
+#~| msgid "Do not ask again"
+#~ msgid "Does Not Contain"
+#~ msgstr "Njeprašej so hišće raz"
+
+#, fuzzy
+#~| msgid "Language Selection"
+#~ msgid "Inver&t Selection"
+#~ msgstr "Wuběr rěče"
+
+#, fuzzy
+#~| msgctxt "@action"
+#~| msgid "Deselect"
+#~ msgctxt "Check as in mark, not as in verify"
+#~ msgid "Chec&k Selected"
+#~ msgstr "Nic wubrać"
+
+#, fuzzy
+#~| msgid "Error: "
+#~ msgid "Mirror:"
+#~ msgstr "Zmylk: "
+
+#, fuzzy
+#~| msgid "No Downloads"
+#~ msgid "Number of connections:"
+#~ msgstr "Ničo sćehnjene"
+
+#, fuzzy
+#~| msgid "C&onnect"
+#~ msgid "Location:"
+#~ msgstr "&Zwjazać"
+
+#, fuzzy
+#~| msgid "Select Icon"
+#~ msgid "Select Ranges"
+#~ msgstr "Wubjerće piktogram"
+
+#, fuzzy
+#~ msgid "Date"
+#~ msgstr "Terminy"
+
+#~ msgid "Host"
+#~ msgstr "Host"
+
+#~ msgid "Download"
+#~ msgstr "Sćahnyć"
+
+#, fuzzy
+#~| msgid "Path:"
+#~ msgctxt "hash as a hash of type md5, sha1 etc."
+#~ msgid "Hash:"
+#~ msgstr "Puć:"
+
+#, fuzzy
+#~| msgctxt "@title job"
+#~| msgid "Transferring"
+#~ msgid "Transfer Settings"
+#~ msgstr "Přenjesu"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Download Destination:"
+#~ msgstr "Cil:"
+
+#, fuzzy
+#~| msgid "Continue"
+#~ msgctxt "No value has been set"
+#~ msgid "Not set"
+#~ msgstr "Dale"
+
+#, fuzzy
+#~ msgid "Upload Limit:"
+#~ msgstr "Čitać"
+
+#, fuzzy
+#~| msgid "Download"
+#~ msgid "Download Limit:"
+#~ msgstr "Sćahnyć"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgctxt "The available mirrors (servers) for downloading"
+#~ msgid "Mirrors"
+#~ msgstr "Zmylk"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgctxt "verification of the download (e.g. by using MD5)"
+#~ msgid "Verification"
+#~ msgstr "Cil"
+
+#, fuzzy
+#~| msgid "User:"
+#~ msgid "Issuer:"
+#~ msgstr "Wužiwar:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Creation:"
+#~ msgstr "Cil:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Expiration:"
+#~ msgstr "Cil:"
+
+#, fuzzy
+#~| msgctxt "Name"
+#~| msgid "Settings"
+#~ msgid "Group Settings"
+#~ msgstr "Nastajenja"
+
+#, fuzzy
+#~| msgid "Regular e&xpression"
+#~ msgid "Regular expression:"
+#~ msgstr "P&rawidłowny wuraz"
+
+#, fuzzy
+#~| msgid "Download"
+#~ msgid "Maximum download speed:"
+#~ msgstr "Sćahnyć"
+
+#, fuzzy
+#~ msgid "Maximum upload speed:"
+#~ msgstr "Čitać"
+
+#~ msgid "Destination:"
+#~ msgstr "Cil:"
+
+#, fuzzy
+#~| msgctxt "@title job"
+#~| msgid "Transferring"
+#~ msgid "Transfer group:"
+#~ msgstr "Přenjesu"
+
+#~ msgid "&File"
+#~ msgstr "&Dataja"
+
+#~ msgid "&Settings"
+#~ msgstr "&Nastajenja"
+
+#~ msgid "&Help"
+#~ msgstr "Po&moc"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Hłowny nastrojowy pas"
+
+#, fuzzy
+#~| msgctxt "Name"
+#~| msgid "Mamma - Mother of all Search Engines"
+#~ msgid "List of the available search engines"
+#~ msgstr "Mamma - Mother of all Search Engines"
+
+#, fuzzy
+#~| msgctxt "Name"
+#~| msgid "Mamma - Mother of all Search Engines"
+#~ msgid "List of the available search engine URLs"
+#~ msgstr "Mamma - Mother of all Search Engines"
+
+#, fuzzy
+#~| msgctxt "Comment"
+#~| msgid "A print error has occurred"
+#~ msgid "An error occurred...."
+#~ msgstr "Zmylk při ćišćenju je so stało"
+
+#, fuzzy
+#~| msgid "Add"
+#~ msgid "Add Tag"
+#~ msgstr "Dodać"
+
+#, fuzzy
+#~| msgid "Setting ACL for %1"
+#~ msgid "Tag Settings for the groups"
+#~ msgstr "Sćelu ACL na %1"
+
+#, fuzzy
+#~| msgid "&Settings"
+#~ msgid "Tag Settings"
+#~ msgstr "&Nastajenja"
+
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#, fuzzy
+#~| msgid "Error: "
+#~ msgid "Error: %1"
+#~ msgstr "Zmylk: "
+
+#, fuzzy
+#~| msgid "Creating directory"
+#~ msgid "Cannot create directory %1"
+#~ msgstr "Stworju zapisk"
+
+#~ msgid "General"
+#~ msgstr "Generelnje"
+
+#, fuzzy
+#~| msgid "C&onnect"
+#~ msgid "Connections"
+#~ msgstr "&Zwjazać"
+
+#, fuzzy
+#~| msgctxt "Name"
+#~| msgid "TuxRacer"
+#~ msgid "Tracker"
+#~ msgstr "TuxRacer"
+
+#, fuzzy
+#~| msgid "Continue"
+#~ msgid "Not in use"
+#~ msgstr "Dale"
+
+#, fuzzy
+#~| msgid "Settings..."
+#~ msgctxt "Status of a torrent file"
+#~ msgid "Seeding"
+#~ msgstr "Nastajenja..."
+
+#~ msgid "Stopped"
+#~ msgstr "Zastajene"
+
+#, fuzzy
+#~| msgid "No Downloads"
+#~ msgid "Queued for downloading"
+#~ msgstr "Ničo sćehnjene"
+
+#, fuzzy
+#~| msgid "Unable to create io-slave: %1"
+#~ msgid "Unable to resolve hostname %1"
+#~ msgstr "Njemóžach io-slave stworić: %1"
+
+#~ msgid "Add"
+#~ msgstr "Dodać"
+
+#, fuzzy
+#~| msgid "Number, Other"
+#~ msgid "Name of the license"
+#~ msgstr "čisło, druhe"
+
+#, fuzzy
+#~| msgid "Number, Other"
+#~ msgid "URL to the license"
+#~ msgstr "čisło, druhe"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgid "Overwrite destination"
+#~ msgstr "Cil"
+
+#, fuzzy
+#~| msgid "Escape"
+#~ msgid "Scrape"
+#~ msgstr "Escape"
+
+#, fuzzy
+#~| msgid "File"
+#~ msgctxt "file in a filsystem"
+#~ msgid "File"
+#~ msgstr "Dataja"
+
+#~ msgid "Name"
+#~ msgstr "Mjeno"
+
+#, fuzzy
+#~| msgctxt "@action"
+#~| msgid "Select All"
+#~ msgid "&Select all"
+#~ msgstr "Wšitko wubrać"
+
+#, fuzzy
+#~| msgid "Could not delete file %1."
+#~ msgid "You can not delete this group."
+#~ msgstr "Njemóžach dataju %1 zničić"
+
+#, fuzzy
+#~ msgid "&Delete"
+#~ msgstr "Niču"
+
+#~ msgid "&Cancel"
+#~ msgstr "&Přetorhnyć"

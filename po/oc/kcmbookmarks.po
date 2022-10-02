@@ -1,0 +1,324 @@
+# translation of kcmkio.po to Occitan
+# Occitan translation of kcmkio.po
+# Copyright (C) 2002, 2003, 2004, 2007, 2008 Free Software Foundation, Inc.
+#
+# Yannig MARCHEGAY (Kokoyaya) <yannig@marchegay.org> - 2006-2007
+#
+# Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>, 2007, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkio\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2008-08-06 00:02+0200\n"
+"Last-Translator: \n"
+"Language-Team: Occitan <oc@li.org>\n"
+"Language: oc\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: bookmarks.cpp:92
+#, kde-format
+msgid ""
+"<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
+"page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
+"\">bookmarks:/</a>.</p>"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: bookmarks.ui:16
+#, kde-format
+msgid "Bookmarks"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowRoot)
+#: bookmarks.ui:23
+#, kde-format
+msgid ""
+"If this option is unchecked, bookmarks at the root of the hierarchy (not in "
+"a folder) are not displayed.\n"
+"If checked, they are gathered in a \"root\" folder."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowRoot)
+#: bookmarks.ui:26
+#, kde-format
+msgid "&Show bookmarks without folder"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbFlattenTree)
+#: bookmarks.ui:37
+#, kde-format
+msgid ""
+"Sub-folders are shown within their parent by default. If you activate this "
+"option, sub-folders are displayed on their own.\n"
+"It looks less nice but it may help if you have a very big folder you want to "
+"spread in two columns."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbFlattenTree)
+#: bookmarks.ui:40
+#, kde-format
+msgid "&Flatten bookmarks tree"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowPlaces)
+#: bookmarks.ui:47
+#, kde-format
+msgid ""
+"Show a box with KDE places (Home, Network, ...). Useful if you use konqueror "
+"as a file manager."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowPlaces)
+#: bookmarks.ui:50
+#, kde-format
+msgid "Show system &places"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: bookmarks.ui:63
+#, kde-format
+msgid "General Settings"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, label)
+#: bookmarks.ui:71
+#, kde-format
+msgid ""
+"Folders are automatically distributed in several columns. The optimal number "
+"of columns depends on the width of the konqueror window and the number of "
+"bookmarks you have."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: bookmarks.ui:74
+#, kde-format
+msgid "Number of columns to show:"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowBackgrounds)
+#: bookmarks.ui:109
+#, kde-format
+msgid "Disable it on slow system to disable background images."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowBackgrounds)
+#: bookmarks.ui:112
+#, kde-format
+msgid "Show folder &backgrounds"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, groupBox_3)
+#: bookmarks.ui:138
+#, kde-format
+msgid "How much disk space is used to cache the pixmaps"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: bookmarks.ui:141
+#, kde-format
+msgid "Pixmap Cache"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, lbMaxCacheSize)
+#: bookmarks.ui:150
+#, kde-format
+msgid "Disk cache size:"
+msgstr ""
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, sbCacheSize)
+#: bookmarks.ui:163
+#, kde-format
+msgid " kB"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, clearCacheButton)
+#: bookmarks.ui:173
+#, kde-format
+msgid "Clear the pixmap cache"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, clearCacheButton)
+#: bookmarks.ui:176
+#, fuzzy, kde-format
+#| msgid "&Search:"
+msgid "&Clear Cache"
+msgstr "&Recercar :"
+
+#, fuzzy
+#~| msgid "&Search:"
+#~ msgid "&Use cache"
+#~ msgstr "&Recercar :"
+
+#, fuzzy
+#~| msgid "&Search:"
+#~ msgid "C&lear Cache"
+#~ msgstr "&Recercar :"
+
+#~ msgid "Yes"
+#~ msgstr "Òc"
+
+#~ msgid "Search"
+#~ msgstr "Recercar"
+
+#, fuzzy
+#~| msgid "De&lete"
+#~ msgid "D&elete"
+#~ msgstr "&Suprimir"
+
+#, fuzzy
+#~| msgid "De&lete"
+#~ msgid "Delete A&ll"
+#~ msgstr "&Suprimir"
+
+#~ msgid "Details"
+#~ msgstr "Detalhs"
+
+#~ msgid "Name:"
+#~ msgstr "Nom :"
+
+#~ msgid "Value:"
+#~ msgstr "Valor :"
+
+#, fuzzy
+#~| msgid "Domain"
+#~ msgid "Domain:"
+#~ msgstr "Domeni"
+
+#~ msgid "Path:"
+#~ msgstr "Camin:"
+
+#~ msgid "Replace"
+#~ msgstr "Remplaçar"
+
+#~ msgid "Domain"
+#~ msgstr "Domeni"
+
+#~ msgid "&New..."
+#~ msgstr "&Novèl..."
+
+#, fuzzy
+#~| msgid "Username:"
+#~ msgid "Site name:"
+#~ msgstr "Nom d'utilizaire :"
+
+#~ msgid "Accept"
+#~ msgstr "Acceptar"
+
+#~ msgid "Ask"
+#~ msgstr "Demandar"
+
+#, fuzzy
+#~| msgid "O&ptions"
+#~ msgid "Exceptions:"
+#~ msgstr "O&pcions"
+
+#, fuzzy
+#~| msgid " sec"
+#~ msgid " second"
+#~ msgid_plural " seconds"
+#~ msgstr[0] " seg"
+#~ msgstr[1] " seg"
+
+#~ msgid "FTP Options"
+#~ msgstr "Opcions FTP"
+
+#, fuzzy
+#~| msgid "Identification"
+#~ msgctxt "@title:window"
+#~ msgid "Add Identification"
+#~ msgstr "Identificacion"
+
+#, fuzzy
+#~| msgid "Identification"
+#~ msgctxt "@title:window"
+#~ msgid "Modify Identification"
+#~ msgstr "Identificacion"
+
+#, fuzzy
+#~| msgid "Identification"
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Identification"
+#~ msgstr "Identificacion"
+
+#, fuzzy
+#~| msgid "Identification"
+#~ msgid "&Send identification"
+#~ msgstr "Identificacion"
+
+#, fuzzy
+#~| msgid "Identification"
+#~ msgid "Default Identification"
+#~ msgstr "Identificacion"
+
+#, fuzzy
+#~| msgid "Identification"
+#~ msgid "Site Specific Identification"
+#~ msgstr "Identificacion"
+
+#, fuzzy
+#~| msgid "Username:"
+#~ msgid "Site Name"
+#~ msgstr "Nom d'utilizaire :"
+
+#~ msgid "Identification"
+#~ msgstr "Identificacion"
+
+#, fuzzy
+#~| msgid "Identification"
+#~ msgid "Real identification:"
+#~ msgstr "Identificacion"
+
+#~ msgid "H&TTP:"
+#~ msgstr "H&TTP :"
+
+#~ msgid "HTTP&S:"
+#~ msgstr "HTTP&S :"
+
+#~ msgid "&FTP:"
+#~ msgstr "&FTP :"
+
+#~ msgid "Username:"
+#~ msgstr "Nom d'utilizaire :"
+
+#~ msgid "Password:"
+#~ msgstr "Mot de pas :"
+
+#~ msgid "Ser&vers"
+#~ msgstr "Ser&vidors"
+
+#~ msgid "&Search:"
+#~ msgstr "&Recercar :"
+
+#~ msgid "&Test"
+#~ msgstr "&Tèst"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Yannig Marchegay (Kokoyaya)"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "yannig@marchegay.org"
+
+#~ msgid "(c) 2001 George Staikos"
+#~ msgstr "(c) 2001 George Staikos"
+
+#~ msgid "George Staikos"
+#~ msgstr "George Staikos"
+
+#~ msgid "&Path:"
+#~ msgstr "&Camin :"
+
+#~ msgid "Path"
+#~ msgstr "Camin"
+
+#~ msgid "&Add"
+#~ msgstr "&Apondre"
+
+#~ msgid "&Remove"
+#~ msgstr "&Suprimir "

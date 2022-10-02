@@ -1,0 +1,235 @@
+<chapter id="bookmarks">
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>Gunnhild</firstname
+><surname
+>Lurås</surname
+><affiliation
+><address
+><email
+>gluras@c2i.net</email
+></address
+></affiliation
+><contrib
+></contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2010-09-24</date>
+<releaseinfo
+>&kde; 4.5</releaseinfo>
+</chapterinfo>
+
+<title
+>Å bruke bokmerker</title>
+
+<para
+>Selv om du kan bruke bokmerkene til &konqueror; for å lagre plasseringene til dine egne filer og mapper, er de mest nyttige når du surfer på nettet  og bygger opp en liste over nyttige sider.</para>
+
+<para
+>For å åpne <guimenu
+>Bokmerke</guimenu
+>-menyen kan du <mousebutton
+>venstre</mousebutton
+>-klikke på menylinja <guimenu
+>Bokmerker</guimenu
+>. Når lista først vises kan du navigere gjennom den med piltastene eller med musa, trykk &Enter; eller <mousebutton
+>venstre</mousebutton
+>-klikk for å gå til den valgte adressen.</para>
+
+<para
+>Bruk <menuchoice
+><guimenu
+>Bokmerker</guimenu
+><guimenuitem
+>Legg til bokmerke</guimenuitem
+></menuchoice
+>, <keycombo action="simul"
+>&Ctrl;<keycap
+>B</keycap
+></keycombo
+> eller <mousebutton
+>høyre</mousebutton
+>-klikk på et ledig område i nettsiden eller mappevisningen og velg <guimenuitem
+>Lag bokmerke for denne siden</guimenuitem
+>  / <guimenuitem
+>Lag bokmerke for denne adressen</guimenuitem
+> fra sprettoppmenyen.</para>
+
+<para
+><guimenu
+>Bokmerke</guimenu
+>-lista kan inneholde underkataloger med andre bokmerker, du kan lage disse med <menuchoice
+><guimenu
+>Bokmerker</guimenu
+><guimenuitem
+>Ny bokmerkemappe …</guimenuitem
+></menuchoice
+> Velg underkatalogen fra <guimenu
+>Bokmerke</guimenu
+>-lista og bruk <guimenuitem
+>Legg til bokmerke</guimenuitem
+> i den katalogen for å legge til et bokmerke til en underkatalog istedenfor i hovedlista.</para>
+
+<para
+>Du kan også få tilgang til bokmerkene dine fra <link linkend="sidebar"
+><guilabel
+>sidestolpen</guilabel
+></link
+> eller fra <guilabel
+>bokmerke-verktøylinja</guilabel
+>.</para>
+
+<para
+>Hvis du skriver inn <userinput
+>bookmarks:/</userinput
+> i adresselinja, vises hjemmesiden for bokmerker med en oversikt over alle bokmerker og mapper.</para
+> 
+
+<sect1 id="orgbmark">
+<title
+>Bokmerkeredigerer</title>
+
+<para
+><menuchoice
+><guimenu
+>Bokmerker</guimenu
+><guimenuitem
+>Rediger bokmerker</guimenuitem
+></menuchoice
+> åpner <guilabel
+>bokmerkeredigereren</guilabel
+>.</para>
+<para
+>Dette henter fram bokmerkene og undermappene med bokmerker i en trevisning. Slik det er vanlig i &kde;, vises undermappa som en liten firkant til venstre for mappenavnet, hvis firkanten inneholder et <keycap
+>+</keycap
+>-tegn kan du <mousebutton
+>venstre</mousebutton
+>-klikke på det for å utvide visninga til å vise innholdet av den undermappa og <keycap
+>+</keycap
+> vil endres til <keycap
+>-</keycap
+>, <mousebutton
+>venstre</mousebutton
+>-klikk på <keycap
+>-</keycap
+>-tegnet for å slå undermappa sammen igjen.</para>
+
+<para
+>For å velge et element i lista kan du <mousebutton
+>venstre</mousebutton
+>-klikke på den, eller du kan navigere gjennom lista ved å bruke <keysym
+>pil opp</keysym
+> og <keysym
+>pil ned</keysym
+> for å flytte rundt. <keysym
+>Høyrepil</keysym
+> for å utvide og <keysym
+>venstrepil</keysym
+> for å slå en mappe sammen.</para>
+
+<para
+>Du kan flytte et element til en annen plass i lista ved å bruke den vanlige dra-og-slipp-metoden eller <guimenuitem
+>Klipp ut</guimenuitem
+> og <guimenuitem
+>Lim inn</guimenuitem
+>. Elementene opptrer i samme rekkefølge i <guilabel
+>Rediger bokmerker</guilabel
+> som de gjør i nedtrekkslista <guimenu
+>Bokmerker</guimenu
+>. <menuchoice
+><guimenu
+>Mappe</guimenu
+><guimenuitem
+> Sett inn delelinje</guimenuitem
+></menuchoice
+> kan brukes for å sette inn delelinjer i lista der du ønsker.</para>
+
+<para
+>En ny undermappe kan lages på et gitt sted i lista ved å bruke valget <guimenuitem
+>Ny mappe …</guimenuitem
+> i <guimenu
+>Mappe</guimenu
+>-menyen eller fra nedtrekksmenyen du får når du <mousebutton
+>høyre</mousebutton
+>-klikker på et element eller hoveddelen av vinduet, eller med <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </para>
+
+<para
+>For å endre navnet på et bokmerke eller en mappe, velg den og trykk deretter <keycap
+>F2</keycap
+> eller velg <guimenuitem
+>Gi nytt navn</guimenuitem
+> fra <guimenu
+>Rediger</guimenu
+>-menyen eller sprettoppmenyen som kommer fram når du <mousebutton
+>høyre</mousebutton
+>-klikker på et element. Du kan endre &URL;-en ved å trykke <keycap
+>F3</keycap
+> eller velge <guimenuitem
+>Endre sted</guimenuitem
+>.</para>
+
+<para
+>Med <guilabel
+>Rediger bokmerker</guilabel
+> kan du importere bokmerker fra flere andre nettlesere til &konqueror;s bokmerkeliste. De kan legges i en egen mappe eller erstatte alle de gjeldende bokmerkene. For å gjøre dette velger du <guisubmenu
+>Importer</guisubmenu
+> fra <guimenu
+>Fil</guimenu
+>-menyen. <menuchoice
+><guimenu
+>Fil</guimenu
+><guisubmenu
+>Eksporter </guisubmenu
+></menuchoice
+> kan brukes til å eksportere bokmerker fra &konqueror; til &Netscape; eller Mozilla.</para>
+
+<para
+>For å velge hvilken undermappe av bokmerkene som inneholder elementene fra bokmerke-verktøylinja, marker undermappa og velg <guimenuitem
+>Bruk som verktøylinjemappe</guimenuitem
+> fra <guimenu
+>Mappe</guimenu
+>-menyen.</para>
+
+<para
+>Hvis du rydder i bokmerkene dine og har glemt hva en spesiell nettside er, kan du enkelt åpne den fra <guilabel
+> Bokmerkeredigereren</guilabel
+> ved å <mousebutton
+>høyre</mousebutton
+>-klikke på oppføringa og velge <guimenuitem
+>Åpne i konqueror</guimenuitem
+> fra sprettoppmenyen. Hvis du bare vil sjekke at &URL;-en fortsatt er gyldig, velg <guimenuitem
+>sjekk status</guimenuitem
+> isteden.</para>
+
+<note
+><para
+>Alle endringer lagres automatisk hvis du lukker <guilabel
+>bokmerkeredigereren</guilabel
+>. </para
+></note>
+</sect1
+> 
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

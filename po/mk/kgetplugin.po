@@ -1,0 +1,3073 @@
+# translation of kget.po to Macedonian
+# Copyright (C) 2003, 2004, 2006, 2007 Free Software Foundation, Inc.
+#
+# Cvitan Grguricin <cvitang@free.linux.net.mk>, 2003.
+# Zoran Dimovski <decata@mt.net.mk>, 2004.
+# Bozidar Proevski <bobibobi@freemail.com.mk>, 2004, 2006, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kget\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2007-02-26 22:30+0100\n"
+"Last-Translator: Bozidar Proevski <bobibobi@freemail.com.mk>\n"
+"Language-Team: Macedonian <mkde-l10n@lists.sourceforge.net>\n"
+"Language: mk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: Plural-Forms: nplurals=3; plural=n%10==1 ? 0 : n%10==2 ? 1 : "
+"2;\n"
+
+#: kget_plugin.cpp:56
+#, fuzzy, kde-format
+msgid "Download Manager"
+msgstr "Менаџер за симнувања"
+
+#: kget_plugin.cpp:62
+#, fuzzy, kde-format
+#| msgid "Show Drop &Target"
+msgid "Show Drop Target"
+msgstr "Прикажи цел за &испуштање"
+
+#: kget_plugin.cpp:69
+#, kde-format
+msgid "List All Links"
+msgstr "Прикажи ги сите врски"
+
+#: kget_plugin.cpp:74
+#, fuzzy, kde-format
+#| msgid "List All Links"
+msgid "List Selected Links"
+msgstr "Прикажи ги сите врски"
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No downloadable links were found."
+msgstr ""
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No Links"
+msgstr "Нема врски"
+
+#. i18n: ectx: Menu (tools)
+#: konqueror_kget_browser_integration.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr ""
+
+#, fuzzy
+#~ msgid "New Group"
+#~ msgstr "Почетна папка"
+
+#, fuzzy
+#~ msgid "Network and Downloads"
+#~ msgstr "Означи парцијални симнувања"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Verification"
+#~ msgstr "Одредиште:"
+
+#, fuzzy
+#~ msgctxt "integration of KGet with other applications"
+#~ msgid "Integration"
+#~ msgstr "Интеграција со Konqueror"
+
+#, fuzzy
+#~| msgid "Advanced"
+#~ msgctxt "Advanced Options"
+#~ msgid "Advanced"
+#~ msgstr "Напредно"
+
+#~ msgid "Advanced Options"
+#~ msgstr "Напредни опции"
+
+#, fuzzy
+#~ msgid "Transfer Plugins"
+#~ msgstr "Отворам пренос:"
+
+#~ msgid "KGet"
+#~ msgstr "KGet"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#, fuzzy
+#~ msgctxt "start transfergroup downloads"
+#~ msgid "Start"
+#~ msgstr "Ре&стартирај"
+
+#, fuzzy
+#~ msgctxt "stop transfergroup downloads"
+#~ msgid "Stop"
+#~ msgstr "Запрено"
+
+#, fuzzy
+#~ msgid "KGet is downloading %1 file"
+#~ msgid_plural "KGet is downloading %1 files"
+#~ msgstr[0] "Менаџер за симнувања"
+#~ msgstr[1] "Менаџер за симнувања"
+#~ msgstr[2] "Менаџер за симнувања"
+
+#, fuzzy
+#~| msgid ""
+#~| "Error while writing file:\n"
+#~| "%1"
+#~ msgid "Error trying to get %1"
+#~ msgstr ""
+#~ "Грешка при запишување на датотеката:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Are you sure that you want to remove the group named %1?"
+#~ msgstr "Дали навистина сакате да ги отстраните овие преноси?"
+
+#, fuzzy
+#~ msgid "Remove Group"
+#~ msgstr "Почетна папка"
+
+#, fuzzy
+#~ msgid "Are you sure that you want to remove the following groups?"
+#~ msgstr "Дали навистина сакате да ги отстраните овие преноси?"
+
+#, fuzzy
+#~ msgid "Remove groups"
+#~ msgstr "Почетна папка"
+
+#, fuzzy
+#~ msgid "Download added"
+#~ msgstr "Симнувањето е продолжено"
+
+#, fuzzy
+#~ msgid ""
+#~ "The file %1 already exists.\n"
+#~ "Overwrite?"
+#~ msgstr ""
+#~ "Одредишната датотека \n"
+#~ "%1\n"
+#~ "веќе постои.\n"
+#~ "Дали сакате да запишете врз неа?"
+
+#, fuzzy
+#~ msgid "My Downloads"
+#~ msgstr "Симнувањето е продолжено"
+
+#, fuzzy
+#~ msgid "New Download"
+#~ msgstr "Симни повторно"
+
+#~ msgid ""
+#~ "Malformed URL:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Неправилен URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URL, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Неправилен URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Download it again?"
+#~ msgstr "Симни повторно"
+
+#, fuzzy
+#~ msgid "Delete it and download again?"
+#~ msgstr "Симни повторно"
+
+#, fuzzy
+#~ msgid "File already downloaded. Download anyway?"
+#~ msgstr ""
+#~ "URL е веќе зачуван\n"
+#~ "%1\n"
+#~ "Да го симнам повторно?"
+
+#, fuzzy
+#~| msgid "File Already exists"
+#~ msgid "File already exists"
+#~ msgstr "Датотеката веќе постои"
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is a directory."
+#~ msgstr ""
+#~ "Не го бришам\n"
+#~ "%1\n"
+#~ "бидејќи е именик."
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is not a local file."
+#~ msgstr ""
+#~ "Не го бришам\n"
+#~ "%1\n"
+#~ "бидејќи не е локална датотека."
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Download completed"
+#~ msgstr "Симнувањето е завршено"
+
+#, fuzzy
+#~ msgid "Download started"
+#~ msgstr "Симнувањето е продолжено"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Resolve"
+#~ msgstr "Отворам пренос"
+
+#, fuzzy
+#~| msgid "All the downloads are finished."
+#~ msgid "KGet is now closing, as all downloads have completed."
+#~ msgstr "Сите симнувања завршија."
+
+#, fuzzy
+#~| msgid "All the downloads are finished."
+#~ msgid "The computer will now turn off, as all downloads have completed."
+#~ msgstr "Сите симнувања завршија."
+
+#, fuzzy
+#~ msgctxt "Shutting down computer"
+#~ msgid "Shutdown"
+#~ msgstr "Автоспушти е вклучено."
+
+#, fuzzy
+#~| msgid "All the downloads are finished."
+#~ msgid ""
+#~ "The computer will now suspend to disk, as all downloads have completed."
+#~ msgstr "Сите симнувања завршија."
+
+#, fuzzy
+#~| msgid "All the downloads are finished."
+#~ msgid ""
+#~ "The computer will now suspend to RAM, as all downloads have completed."
+#~ msgstr "Сите симнувања завршија."
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgctxt "Suspending computer"
+#~ msgid "Suspending"
+#~ msgstr "Закажувам"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgctxt "abort the proposed action"
+#~ msgid "Abort"
+#~ msgstr "Фонт:"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Downloads completed"
+#~ msgstr "Симнувањето е завршено"
+
+#, fuzzy
+#~ msgctxt "file in a filesystem"
+#~ msgid "File"
+#~ msgstr "Отвори &датотека"
+
+#, fuzzy
+#~ msgctxt "status of the download"
+#~ msgid "Status"
+#~ msgstr "Ре&стартирај"
+
+#, fuzzy
+#~| msgid " Size: %1 "
+#~ msgctxt "size of the download"
+#~ msgid "Size"
+#~ msgstr " Големина : %1 "
+
+#, fuzzy
+#~ msgid "KGet Transfer"
+#~ msgstr "Отворам пренос:"
+
+#, fuzzy
+#~ msgctxt "the type of the hash, e.g. MD5"
+#~ msgid "Type"
+#~ msgstr "Тип на датотека"
+
+#~ msgid "Stalled"
+#~ msgstr "Во застој"
+
+#, fuzzy
+#~ msgid "Downloading...."
+#~ msgstr "Симнувањето е продолжено"
+
+#, fuzzy
+#~| msgid "Delayed"
+#~ msgctxt "transfer state: delayed"
+#~ msgid "Delayed"
+#~ msgstr "Одложено"
+
+#, fuzzy
+#~| msgid "Stopped"
+#~ msgctxt "transfer state: stopped"
+#~ msgid "Stopped"
+#~ msgstr "Запрено"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgctxt "transfer state: aborted"
+#~ msgid "Aborted"
+#~ msgstr "Фонт:"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "transfer state: finished"
+#~ msgid "Finished"
+#~ msgstr "Завршено"
+
+#, fuzzy
+#~ msgctxt "changing the destination of the file"
+#~ msgid "Changing destination"
+#~ msgstr "Отвори &одредиште"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgctxt "name of download"
+#~ msgid "Name"
+#~ msgstr "Име"
+
+#, fuzzy
+#~ msgctxt "status of download"
+#~ msgid "Status"
+#~ msgstr "Ре&стартирај"
+
+#, fuzzy
+#~ msgctxt "progress of download"
+#~ msgid "Progress"
+#~ msgstr "Дијалог за напредување"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgctxt "speed of download"
+#~ msgid "Speed"
+#~ msgstr "Брзина"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgctxt "remaining time of download"
+#~ msgid "Remaining Time"
+#~ msgstr "Преост. време"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "No download destination specified."
+#~ msgstr "Одредиште:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Invalid download destination specified."
+#~ msgstr "Одредиште:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Download destination is not writeable."
+#~ msgstr "Одредиште:"
+
+#, fuzzy
+#~| msgid "Malformed URL:\n"
+#~ msgid "Malformed URL."
+#~ msgstr "Неправилен URL:\n"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid "Malformed URL, protocol missing."
+#~ msgstr ""
+#~ "Неправилен URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid "Malformed URL, host missing."
+#~ msgstr ""
+#~ "Неправилен URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid ""
+#~ "Invalid download destination specified:\n"
+#~ "%1"
+#~ msgstr "Одредиште:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid ""
+#~ "Download destination is not writeable:\n"
+#~ "%1"
+#~ msgstr "Одредиште:"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URL, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Неправилен URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "File already exists. Overwrite it?"
+#~ msgstr ""
+#~ "Одредишната датотека \n"
+#~ "%1\n"
+#~ "веќе постои.\n"
+#~ "Дали сакате да запишете врз неа?"
+
+#, fuzzy
+#~ msgid ""
+#~ "File already exists:\n"
+#~ "%1\n"
+#~ "Overwrite it?"
+#~ msgstr ""
+#~ "Одредишната датотека \n"
+#~ "%1\n"
+#~ "веќе постои.\n"
+#~ "Дали сакате да запишете врз неа?"
+
+#, fuzzy
+#~| msgid "Malformed URL:\n"
+#~ msgid "Malformed URLs."
+#~ msgstr "Неправилен URL:\n"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid "Malformed URLs, protocol missing."
+#~ msgstr ""
+#~ "Неправилен URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid "Malformed URLs, host missing."
+#~ msgstr ""
+#~ "Неправилен URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Неправилен URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Неправилен URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Неправилен URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Files exist already. Overwrite them?"
+#~ msgstr ""
+#~ "Одредишната датотека \n"
+#~ "%1\n"
+#~ "веќе постои.\n"
+#~ "Дали сакате да запишете врз неа?"
+
+#~ msgid "Question"
+#~ msgstr "Прашање"
+
+#, fuzzy
+#~| msgid "Normal"
+#~ msgctxt "on a question"
+#~ msgid "No all"
+#~ msgstr "Нормален"
+
+#, fuzzy
+#~| msgid "Local File Name"
+#~ msgid "Engine name:"
+#~ msgstr "Име на локална датотека"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "transfer state: connecting"
+#~ msgid "Connecting...."
+#~ msgstr "Поврзување"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Set Script File"
+#~ msgstr "Опис"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "Transfer State: Finished"
+#~ msgid "Finished"
+#~ msgstr "Завршено"
+
+#, fuzzy
+#~ msgid "Downloading Metalink File...."
+#~ msgstr "Симнувањето е продолжено"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Redownload Metalink"
+#~ msgstr "Симнувањето е завршено"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgid "File Selection"
+#~ msgstr "Закажувам"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "the string that is used to modify an url"
+#~ msgid "Change string"
+#~ msgstr "Поврзување"
+
+#, fuzzy
+#~| msgid "Stopped"
+#~ msgid "Append"
+#~ msgstr "Запрено"
+
+#, fuzzy
+#~ msgid "Replace file"
+#~ msgstr "Отвори &датотека"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "transfer state: running"
+#~ msgid "Running...."
+#~ msgstr "Поврзување"
+
+#, fuzzy
+#~| msgid "Address (URL)"
+#~ msgid "IP Address"
+#~ msgstr "Адреса (URL)"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Down Speed"
+#~ msgstr "Брзина"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Up Speed"
+#~ msgstr "Брзина"
+
+#, fuzzy
+#~| msgid "Docked"
+#~ msgid "Choked"
+#~ msgstr "Вкотвено"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgid "Score"
+#~ msgstr "Извор:"
+
+#, fuzzy
+#~ msgid "Downloaded"
+#~ msgstr "Симнувањето е продолжено"
+
+#, fuzzy
+#~ msgid "Interesting"
+#~ msgstr "Интеграција со Konqueror"
+
+#, fuzzy
+#~ msgid "Download speed"
+#~ msgstr "Симнувањето е продолжено"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Upload speed"
+#~ msgstr "Брзина"
+
+#, fuzzy
+#~| msgid "Count"
+#~ msgid "Chunk"
+#~ msgstr "Број"
+
+#, fuzzy
+#~ msgid "Progress"
+#~ msgstr "Дијалог за напредување"
+
+#, fuzzy
+#~ msgid "Files"
+#~ msgstr "Отвори &датотека"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of the chunk"
+#~ msgstr "Број на обиди:"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Download speed of the chunk"
+#~ msgstr "Симнувањето е завршено"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed"
+#~ msgstr "Брзина"
+
+#, fuzzy
+#~ msgid "Status"
+#~ msgstr "Ре&стартирај"
+
+#, fuzzy
+#~ msgid "File"
+#~ msgstr "Отвори &датотека"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Advanced Details for %1"
+#~ msgstr "Почетна папка:"
+
+#, fuzzy
+#~ msgid "Trackers"
+#~ msgstr "&Пренос"
+
+#, fuzzy
+#~ msgctxt "Open file"
+#~ msgid "Open"
+#~ msgstr "Отвори &датотека"
+
+#, fuzzy
+#~ msgid "Download first"
+#~ msgstr "Симнувањето е продолжено"
+
+#, fuzzy
+#~ msgid "Download normally"
+#~ msgstr "Почетна папка"
+
+#, fuzzy
+#~ msgid "Download last"
+#~ msgstr "Симнувањето е продолжено"
+
+#, fuzzy
+#~ msgid "Do Not Download"
+#~ msgstr "Симни повторно"
+
+#, fuzzy
+#~| msgid "Download Selected Files"
+#~ msgid "Delete File(s)"
+#~ msgstr "Симни ги избраните датотеки"
+
+#, fuzzy
+#~ msgid "Move File"
+#~ msgstr "Отвори &датотека"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Seeders"
+#~ msgstr "Брзина"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Leechers"
+#~ msgstr "Брзина"
+
+#, fuzzy
+#~ msgid "Times Downloaded"
+#~ msgstr "Симнувањето е продолжено"
+
+#, fuzzy
+#~| msgid "Normal"
+#~ msgctxt "Download normally(not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "Нормален"
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 %"
+#~ msgstr " %1/s "
+
+#, fuzzy
+#~| msgid "Normal"
+#~ msgctxt "Download Normal (not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "Нормален"
+
+#, fuzzy
+#~| msgid "Advanced Options"
+#~ msgid "&Advanced Details"
+#~ msgstr "Напредни опции"
+
+#, fuzzy
+#~ msgid "&Scan Files"
+#~ msgstr "Отвори &датотека"
+
+#, fuzzy
+#~ msgid "Downloading Torrent File...."
+#~ msgstr "Симнувањето е продолжено"
+
+#, fuzzy
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading...."
+#~ msgstr "Симнувањето е продолжено"
+
+#, fuzzy
+#~| msgid ""
+#~| "Folder does not exist:\n"
+#~| "%1"
+#~ msgid "Torrent file does not exist"
+#~ msgstr ""
+#~ "Папката не постои:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Analyzing torrent...."
+#~ msgstr "Симнувањето е продолжено"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgctxt "Transfer status: seeding"
+#~ msgid "Seeding...."
+#~ msgstr "Закажувам"
+
+#, fuzzy
+#~| msgid "Default Folder"
+#~ msgid "Select a default torrent folder"
+#~ msgstr "Почетна папка"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Select a default temporary folder"
+#~ msgstr "Почетна папка:"
+
+#, fuzzy
+#~| msgid "Import Text &File..."
+#~ msgid "Import dropped files"
+#~ msgstr "Внеси текстуална &датотека..."
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgid "File Properties"
+#~ msgstr "Закажувам"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a filename."
+#~ msgstr "Ethernet"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter at least one URL."
+#~ msgstr "Ethernet"
+
+#, fuzzy
+#~ msgid "Metalink Version 4.0 file (*.meta4)"
+#~ msgstr "Отвори &датотека"
+
+#, fuzzy
+#~ msgid "Metalink Version 3.0 file (*.metalink)"
+#~ msgstr "Отвори &датотека"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "Import Links"
+#~ msgstr "Нема врски"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgctxt "Download the items which have been selected"
+#~ msgid "&Download Checked"
+#~ msgstr "Симнувањето е завршено"
+
+#, fuzzy
+#~| msgid "Local File Name"
+#~ msgid "File Name"
+#~ msgstr "Име на локална датотека"
+
+#~ msgid "Description"
+#~ msgstr "Опис"
+
+#, fuzzy
+#~ msgctxt "list header: type of file"
+#~ msgid "File Type"
+#~ msgstr "Тип на датотека"
+
+#~ msgid "Location (URL)"
+#~ msgstr "Локација (URL)"
+
+#~ msgid "Links in: %1 - KGet"
+#~ msgstr "Врски во: %1 - KGet"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgctxt "The priority of the mirror"
+#~ msgid "Priority"
+#~ msgstr "Фонт:"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "Number of paralell connections to the mirror"
+#~ msgid "Connections"
+#~ msgstr "Поврзување"
+
+#, fuzzy
+#~| msgid "Location (URL)"
+#~ msgctxt "Location = country"
+#~ msgid "Location"
+#~ msgstr "Локација (URL)"
+
+#, fuzzy
+#~| msgid "<i>%1</i> successfully downloaded."
+#~ msgid "%1 has been successfully added."
+#~ msgstr "<i>%1</i> е успешно симнато."
+
+#, fuzzy
+#~ msgid "Download again"
+#~ msgstr "Симни повторно"
+
+#, fuzzy
+#~ msgctxt "Delete selected history-item"
+#~ msgid "Delete selected"
+#~ msgstr "Не се избрани датотеки"
+
+#, fuzzy
+#~ msgid "Open file"
+#~ msgstr "Отвори &датотека"
+
+#, fuzzy
+#~ msgid "Transfer History"
+#~ msgstr "Отворам пренос:"
+
+#, fuzzy
+#~ msgid "&Open File"
+#~ msgstr "Отвори &датотека"
+
+#, fuzzy
+#~| msgid "Stopped"
+#~ msgctxt "The transfer is stopped"
+#~ msgid "Stopped"
+#~ msgstr "Запрено"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "The transfer is finished"
+#~ msgid "Finished"
+#~ msgstr "Завршено"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgid "Source File"
+#~ msgstr "Извор:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Destination"
+#~ msgstr "Одредиште:"
+
+#, fuzzy
+#~ msgid "Time"
+#~ msgstr "Тајмер"
+
+#, fuzzy
+#~ msgid "File Size"
+#~ msgstr "Отвори &датотека"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "the transfer has been finished"
+#~ msgid "Finished"
+#~ msgstr "Завршено"
+
+#, fuzzy
+#~| msgid "To: %1"
+#~ msgctxt "an error happened in connection with the user input"
+#~ msgid "Error:"
+#~ msgstr "Во: %1"
+
+#, fuzzy
+#~| msgid "unknown"
+#~ msgctxt "trust level"
+#~ msgid "Unknown"
+#~ msgstr "непознато"
+
+#, fuzzy
+#~| msgid "<i>%1</i> successfully downloaded."
+#~ msgid "The signature has been verified successfully."
+#~ msgstr "<i>%1</i> е успешно симнато."
+
+#, fuzzy
+#~ msgctxt "pgp signature is not verified"
+#~ msgid "Failed"
+#~ msgstr "Отвори &датотека"
+
+#, fuzzy
+#~| msgid "To: %1"
+#~ msgid "Error:"
+#~ msgstr "Во: %1"
+
+#, fuzzy
+#~ msgid "Information:"
+#~ msgstr "Интеграција со Konqueror"
+
+#, fuzzy
+#~ msgid "Transfer Details"
+#~ msgstr " Преноси: %1 "
+
+#, fuzzy
+#~| msgid "<i>%1</i> successfully downloaded."
+#~ msgid "%1 %2 has been successfully added."
+#~ msgstr "<i>%1</i> е успешно симнато."
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Transfer Verification for %1"
+#~ msgstr "Почетна папка:"
+
+#, fuzzy
+#~| msgid "<i>%1</i> successfully downloaded."
+#~ msgid "%1 was successfully verified."
+#~ msgstr "<i>%1</i> е успешно симнато."
+
+#, fuzzy
+#~ msgid "Rename File"
+#~ msgstr "Почетна папка"
+
+#, fuzzy
+#~ msgid "Rename %1 to:"
+#~ msgstr "Почетна папка"
+
+#, fuzzy
+#~ msgid "&Rename"
+#~ msgstr "Почетна папка"
+
+#, fuzzy
+#~ msgid "Rename Group..."
+#~ msgid_plural "Rename Groups..."
+#~ msgstr[0] "Почетна папка"
+#~ msgstr[1] "Почетна папка"
+#~ msgstr[2] "Почетна папка"
+
+#, fuzzy
+#~| msgid "Sticky"
+#~ msgctxt "fix position for droptarget"
+#~ msgid "Sticky"
+#~ msgstr "Лепливо"
+
+#, fuzzy
+#~| msgid "KGet"
+#~ msgid "Quit KGet"
+#~ msgstr "KGet"
+
+#, fuzzy
+#~ msgid "The dropped file is a KGet Transfer List"
+#~ msgstr "Отворам пренос:"
+
+#, fuzzy
+#~ msgid "&Download"
+#~ msgstr "Симнувањето е продолжено"
+
+#, fuzzy
+#~ msgid "&Load transfer list"
+#~ msgstr "Отворам пренос:"
+
+#, fuzzy
+#~ msgid "Show Main Window"
+#~ msgstr "Прикажи го главниот прозорец на стартување"
+
+#, fuzzy
+#~ msgid "Hide Main Window"
+#~ msgstr "Скриј прозорец со записи"
+
+#, fuzzy
+#~| msgid "Drop target"
+#~ msgid "Drop Target"
+#~ msgstr "Цел за испуштање"
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgctxt "%1 filename, %2 total size, %3 status"
+#~ msgid "%1(%2) %3"
+#~ msgstr " %1/s "
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgctxt ""
+#~ "%1 filename, %2 percent complete, %3 downloaded out of %4 total size, %5 "
+#~ "status"
+#~ msgid "%1(%2% %3/%4) %5"
+#~ msgstr " %1/s "
+
+#, fuzzy
+#~ msgid "Hiding drop target"
+#~ msgstr "Скриј цел за &испуштање"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Transfer Settings for %1"
+#~ msgstr "Почетна папка:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Destination unmodified"
+#~ msgstr "Одредиште:"
+
+#, fuzzy
+#~| msgid "%1% of %2 - %3"
+#~ msgid "%1 of %2"
+#~ msgstr "%1% од %2 - %3"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Group Settings for %1"
+#~ msgstr "Почетна папка:"
+
+#, fuzzy
+#~| msgid "%1/s"
+#~ msgctxt "@item speed of transfer per seconds"
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#, fuzzy
+#~| msgid "Local File Name"
+#~ msgctxt "@label"
+#~ msgid "File name"
+#~ msgstr "Име на локална датотека"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "@label Progress of transfer"
+#~ msgid "Finished"
+#~ msgstr "Завршено"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgctxt "@label Speed of transfer"
+#~ msgid "Speed"
+#~ msgstr "Брзина"
+
+#, fuzzy
+#~ msgctxt "@label Status of transfer"
+#~ msgid "Status"
+#~ msgstr "Ре&стартирај"
+
+#, fuzzy
+#~ msgctxt "@action:button start a transfer"
+#~ msgid "Start"
+#~ msgstr "Ре&стартирај"
+
+#, fuzzy
+#~ msgctxt "@action:button"
+#~ msgid "Stop"
+#~ msgstr "Запрено"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgctxt "@action:button"
+#~ msgid "Remove"
+#~ msgstr "Отворам пренос"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgctxt "@label Download from"
+#~ msgid "Source:"
+#~ msgstr "Извор:"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgctxt "@action"
+#~ msgid "Settings"
+#~ msgstr "Закажувам"
+
+#, fuzzy
+#~| msgctxt "OK as in 'finished'"
+#~| msgid "OK"
+#~ msgctxt "@action:button"
+#~ msgid "OK"
+#~ msgstr "Во ред"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgctxt "@action Refresh download list every x (seconds)"
+#~ msgid "Refresh download list every"
+#~ msgstr "Симнувањето е завршено"
+
+#, fuzzy
+#~ msgctxt "@action:button"
+#~ msgid "Save Settings"
+#~ msgstr " Преноси: %1 "
+
+#, fuzzy
+#~ msgctxt "@title"
+#~ msgid "Downloads"
+#~ msgstr "Симнувањето е продолжено"
+
+#~ msgid "An advanced download manager for KDE"
+#~ msgstr "Напреден менаџер за симнување за KDE"
+
+#~ msgid "Start KGet with drop target"
+#~ msgstr "Старувај го KGet со цел за испуштање"
+
+#, fuzzy
+#~| msgid "Start KGet with drop target"
+#~ msgid "Start KGet with hidden main window"
+#~ msgstr "Старувај го KGet со цел за испуштање"
+
+#, fuzzy
+#~| msgid "Start KGet with drop target"
+#~ msgid "Start KGet without drop target animation"
+#~ msgstr "Старувај го KGet со цел за испуштање"
+
+#~ msgid "URL(s) to download"
+#~ msgstr "URL(а) за симнување"
+
+#, fuzzy
+#~ msgid "KGet Transfer List"
+#~ msgstr "Отворам пренос:"
+
+#, fuzzy
+#~ msgid "Export Transfers"
+#~ msgstr "&Изнеси ја листата за пренос..."
+
+#, fuzzy
+#~| msgid "&Import Transfer List..."
+#~ msgid "&Import Transfers..."
+#~ msgstr "&Внеси листа за пренос..."
+
+#, fuzzy
+#~ msgid "&Export Transfers List..."
+#~ msgstr "&Изнеси ја листата за пренос..."
+
+#, fuzzy
+#~ msgid "&Export Transfers as Plain Text..."
+#~ msgstr "&Изнеси ја листата за пренос..."
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Top Priority"
+#~ msgstr "Фонт:"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Least Priority"
+#~ msgstr "Фонт:"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Increase Priority"
+#~ msgstr "Фонт:"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Decrease Priority"
+#~ msgstr "Фонт:"
+
+#, fuzzy
+#~ msgid "Auto-Paste Mode"
+#~ msgstr "Режим автовмет&ни"
+
+#, fuzzy
+#~ msgid ""
+#~ "<b>Auto paste</b> button toggles the auto-paste mode on and off.\n"
+#~ "When set, KGet will periodically scan the clipboard for URLs and paste "
+#~ "them automatically."
+#~ msgstr ""
+#~ "Копчето <b>Авто вметни</b> го менува режимот автовметни \n"
+#~ "во вклучен и исклучен.\n"
+#~ "\n"
+#~ "Кога е поставен, KGet периодично ќе ја скенира таблата со исечоци\n"
+#~ "за URL и ќе ги вметнува автоматски."
+
+#, fuzzy
+#~ msgid "Use KGet as Konqueror Download Manager"
+#~ msgstr "Оневозможи го &KGet како менаџер на симнувања за Konqueror"
+
+#, fuzzy
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Remove Selected"
+#~ msgstr "&Продолжи"
+
+#, fuzzy
+#~| msgid "Download Selected Files"
+#~ msgctxt "delete all finished transfers"
+#~ msgid "Remove All Finished"
+#~ msgstr "Симни ги избраните датотеки"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgctxt "redownload selected transfer item"
+#~ msgid "Redownload Selected"
+#~ msgstr "Симнувањето е завршено"
+
+#, fuzzy
+#~ msgid "Start / Resume Selected"
+#~ msgstr "Не се избрани датотеки"
+
+#, fuzzy
+#~ msgid "Stop Selected"
+#~ msgstr "Не се избрани датотеки"
+
+#, fuzzy
+#~ msgid "Stop"
+#~ msgstr "Запрено"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Remove"
+#~ msgstr "Отворам пренос"
+
+#, fuzzy
+#~ msgid "Open Destination"
+#~ msgstr "Отвори &одредиште"
+
+#, fuzzy
+#~ msgid "Open File"
+#~ msgstr "Отвори &датотека"
+
+#, fuzzy
+#~ msgid "Show Details"
+#~ msgstr "bobibobi@freemail.com.mk"
+
+#, fuzzy
+#~ msgid "Copy URL to Clipboard"
+#~ msgstr "&Копирај URL на табла со исечоци"
+
+#, fuzzy
+#~ msgid "&Transfer History"
+#~ msgstr "Отворам пренос:"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "&Group Settings"
+#~ msgstr "Почетна папка:"
+
+#, fuzzy
+#~ msgid "&Transfer Settings"
+#~ msgstr " Преноси: %1 "
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "Import &Links..."
+#~ msgstr "Нема врски"
+
+#, fuzzy
+#~| msgid ""
+#~| "This is the first time that you have run KGet.\n"
+#~| "Do you want to use KGet as Download Manager for Konqueror?"
+#~ msgid ""
+#~ "This is the first time you have run KGet.\n"
+#~ "Would you like to enable KGet as the download manager for Konqueror?"
+#~ msgstr ""
+#~ "Ова е прв пат како го вклучувате KGet.\n"
+#~ "Дали сакате да го користите KGet како менаџер на симнувања за Konqueror?"
+
+#, fuzzy
+#~ msgid "Konqueror Integration"
+#~ msgstr "Интеграција со Konqueror"
+
+#~ msgid "Enable"
+#~ msgstr "Користи"
+
+#~ msgid "Do Not Enable"
+#~ msgstr "Не користи"
+
+#, fuzzy
+#~| msgid ""
+#~| "Some transfers are still running.\n"
+#~| "Are you sure you want to quit KGet?"
+#~ msgid ""
+#~ "Some transfers are still running.\n"
+#~ "Are you sure you want to close KGet?"
+#~ msgstr ""
+#~ "Некои преноси сѐ уште се извршуваат.\n"
+#~ "Дали навистина сакате да го затворите KGet?"
+
+#, fuzzy
+#~ msgid "Enter Group Name"
+#~ msgstr "Божидар Проевски"
+
+#, fuzzy
+#~ msgid "Group name:"
+#~ msgstr "Божидар Проевски"
+
+#, fuzzy
+#~| msgid "Are you sure you want to delete this transfer?"
+#~ msgid "Are you sure you want to delete the selected transfer?"
+#~ msgid_plural "Are you sure you want to delete the selected transfers?"
+#~ msgstr[0] "Дали навистина сакате да го избришете овој пренос?"
+#~ msgstr[1] "Дали навистина сакате да го избришете овој пренос?"
+#~ msgstr[2] "Дали навистина сакате да го избришете овој пренос?"
+
+#, fuzzy
+#~ msgid "Confirm transfer delete"
+#~ msgstr "Отворам пренос:"
+
+#, fuzzy
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Божидар Проевски"
+
+#, fuzzy
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "bobibobi@freemail.com.mk"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Automatic verification:"
+#~ msgstr "Опис"
+
+#, fuzzy
+#~| msgid "Automation Options"
+#~ msgid "Automatic verification"
+#~ msgstr "Опции за автоматизација"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Keyservers:"
+#~ msgstr "Брзина"
+
+#, fuzzy
+#~| msgid "Move to &End"
+#~ msgid "Move &Up"
+#~ msgstr "Премести на &крај"
+
+#, fuzzy
+#~| msgid "Move to &End"
+#~ msgid "Move &Down"
+#~ msgstr "Премести на &крај"
+
+#, fuzzy
+#~ msgid "Rename"
+#~ msgstr "Почетна папка"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Limit Maximum Downloads Per Group"
+#~ msgstr "Симнувањето е завршено"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of downloads:"
+#~ msgstr "Број на обиди:"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed Limit"
+#~ msgstr "Брзина"
+
+#, fuzzy
+#~ msgid "Global download limit:"
+#~ msgstr "Симнувањето е продолжено"
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid " KiB/s"
+#~ msgstr " %1 kB/s "
+
+#, fuzzy
+#~ msgid "Global upload limit:"
+#~ msgstr "Симнувањето е продолжено"
+
+#, fuzzy
+#~ msgid "Per transfer:"
+#~ msgstr "&Пренос"
+
+#, fuzzy
+#~ msgid "Reconnect on Error or Broken Connection"
+#~ msgstr "На прекинато поврзување"
+
+#~ msgid "Number of retries:"
+#~ msgstr "Број на обиди:"
+
+#, fuzzy
+#~ msgid "Retry after:"
+#~ msgstr "Повторно поврзи се по:"
+
+#, fuzzy
+#~ msgid "After Completing Downloads"
+#~ msgstr "Автоматски спушти го компјутерот по завршување на симнувањата"
+
+#, fuzzy
+#~ msgid "Auto shutdown"
+#~ msgstr "Автоспушти е вклучено."
+
+#, fuzzy
+#~ msgid "Auto disconnect"
+#~ msgstr "Автоисклучи е вклучено."
+
+#, fuzzy
+#~ msgid "Enable Web Interface"
+#~ msgstr "Користи анимација"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Port:"
+#~ msgstr "Фонт:"
+
+#, fuzzy
+#~ msgid "Startup"
+#~ msgstr "Ре&стартирај"
+
+#, fuzzy
+#~ msgid "Enable animations"
+#~ msgstr "Користи анимација"
+
+#, fuzzy
+#~ msgid "Show drop target"
+#~ msgstr "Прикажи цел за испуштање"
+
+#, fuzzy
+#~ msgid "Enable system tray icon"
+#~ msgstr "Користи анимација"
+
+#, fuzzy
+#~| msgid "All the downloads are finished."
+#~ msgid "Execute action after all downloads have been finished:"
+#~ msgstr "Сите симнувања завршија."
+
+#, fuzzy
+#~ msgid "At startup:"
+#~ msgstr "Ре&стартирај"
+
+#, fuzzy
+#~ msgid "Restore Download State"
+#~ msgstr "Симнувањето е продолжено"
+
+#, fuzzy
+#~ msgid "Start All Downloads"
+#~ msgstr "Означи парцијални симнувања"
+
+#, fuzzy
+#~ msgid "Stop All Downloads"
+#~ msgstr "Означи парцијални симнувања"
+
+#, fuzzy
+#~ msgid "History"
+#~ msgstr "Отворам пренос:"
+
+#, fuzzy
+#~ msgid "History backend:"
+#~ msgstr "Отворам пренос:"
+
+#, fuzzy
+#~ msgid "Use as download manager for Konqueror:"
+#~ msgstr "Користи го KGet како менаџер на симнувања за Konqueror"
+
+#, fuzzy
+#~ msgid "Monitor clipboard for files to download"
+#~ msgstr "Не избравте ниту една датотека за симнување."
+
+#, fuzzy
+#~| msgid "Local File Name"
+#~ msgid "Engine Name"
+#~ msgstr "Име на локална датотека"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of connections per URL:"
+#~ msgstr "Број на обиди:"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgid "File Settings"
+#~ msgstr "Закажувам"
+
+#, fuzzy
+#~| msgid "Local File Name"
+#~ msgid "Filename:"
+#~ msgstr "Име на локална датотека"
+
+#, fuzzy
+#~| msgid "Log Window"
+#~ msgid "Login Info"
+#~ msgstr "Прозорец за евиденција"
+
+#, fuzzy
+#~ msgid "Username:"
+#~ msgstr "Почетна папка"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Path:"
+#~ msgstr "Фонт:"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Description:"
+#~ msgstr "Опис"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of simultaneous file downloads:"
+#~ msgstr "Број на обиди:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of mirrors per file:"
+#~ msgstr "Број на обиди:"
+
+#, fuzzy
+#~ msgid "Mode:"
+#~ msgstr "Папки"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Remove Tracker"
+#~ msgstr "Отворам пренос"
+
+#, fuzzy
+#~ msgid "Update Trackers"
+#~ msgstr "&Пренос"
+
+#, fuzzy
+#~ msgid "Remove Webseed"
+#~ msgstr "&Продолжи"
+
+#, fuzzy
+#~| msgid "Total"
+#~ msgid "Total:"
+#~ msgstr "Вкупно"
+
+#, fuzzy
+#~ msgid "Downloaded:"
+#~ msgstr "Симнувањето е продолжено"
+
+#, fuzzy
+#~| msgid " Size: %1 "
+#~ msgid "Size:"
+#~ msgstr " Големина : %1 "
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of chunks found:"
+#~ msgstr "Број на обиди:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of chunks failed:"
+#~ msgstr "Број на обиди:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of chunks not downloaded:"
+#~ msgstr "Број на обиди:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of chunks downloaded:"
+#~ msgstr "Број на обиди:"
+
+#, fuzzy
+#~ msgid "Stats"
+#~ msgstr "Ре&стартирај"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Seeders:"
+#~ msgstr "Брзина"
+
+#, fuzzy
+#~ msgid "Download speed:"
+#~ msgstr "Симнувањето е продолжено"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Upload speed:"
+#~ msgstr "Брзина"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgctxt "source-file"
+#~ msgid "Source:"
+#~ msgstr "Извор:"
+
+#, fuzzy
+#~ msgid "Upload limit per transfer:"
+#~ msgstr "Симнувањето е продолжено"
+
+#, fuzzy
+#~| msgid "Limits"
+#~ msgid "No Limit"
+#~ msgstr "Ограничувања"
+
+#, fuzzy
+#~ msgid "Download limit per transfer:"
+#~ msgstr "Симнувањето е продолжено"
+
+#~ msgid "Folders"
+#~ msgstr "Папки"
+
+#, fuzzy
+#~| msgid "Default Folder"
+#~ msgid "Default torrent folder:"
+#~ msgstr "Почетна папка"
+
+#, fuzzy
+#~| msgid "Default Folder"
+#~ msgid "Default temporary folder"
+#~ msgstr "Почетна папка"
+
+#, fuzzy
+#~| msgid "Resumed"
+#~ msgid "Required"
+#~ msgstr "Продолжено"
+
+#, fuzzy
+#~| msgid "Total size is %1 bytes"
+#~ msgid "File size (in bytes):"
+#~ msgstr "Вкупната големина е %1 бајти"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Verification:"
+#~ msgstr "Опис"
+
+#, fuzzy
+#~ msgid "*.metalink *.meta4|Metalink file (*.metalink *.meta4)"
+#~ msgstr "Отвори &датотека"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgid "Date and time:"
+#~ msgstr "Преост. време"
+
+#, fuzzy
+#~ msgid "Version:"
+#~ msgstr "Наставка"
+
+#, fuzzy
+#~| msgid "Log"
+#~ msgid "Logo:"
+#~ msgstr "Записи"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "Name:"
+#~ msgstr "Име"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Name of the publisher"
+#~ msgstr "Број на обиди:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "URL to the publisher"
+#~ msgstr "Број на обиди:"
+
+#, fuzzy
+#~ msgctxt "Files as in files on a server"
+#~ msgid "Files:"
+#~ msgstr "Отвори &датотека"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "&Import Links"
+#~ msgstr "Нема врски"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgid "Contains"
+#~ msgstr "Поврзување"
+
+#, fuzzy
+#~ msgid "Does Not Contain"
+#~ msgstr "Симни повторно"
+
+#, fuzzy
+#~ msgctxt "Check as in mark, not as in verify"
+#~ msgid "Chec&k Selected"
+#~ msgstr "Не се избрани датотеки"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of connections:"
+#~ msgstr "Број на обиди:"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a URL"
+#~ msgstr "Ethernet"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Priority:"
+#~ msgstr "Фонт:"
+
+#, fuzzy
+#~| msgid "Location (URL)"
+#~ msgid "Location:"
+#~ msgstr "Локација (URL)"
+
+#, fuzzy
+#~| msgid "Offline mode"
+#~ msgctxt "View modes"
+#~ msgid "View Modes"
+#~ msgstr "Режим не на линија"
+
+#, fuzzy
+#~ msgid "Date"
+#~ msgstr "Ре&стартирај"
+
+#, fuzzy
+#~ msgid "Filter History"
+#~ msgstr "Отворам пренос:"
+
+#, fuzzy
+#~ msgctxt "delete selected transfer"
+#~ msgid "Delete Selected"
+#~ msgstr "Не се избрани датотеки"
+
+#, fuzzy
+#~ msgid "Download"
+#~ msgstr "Симнувањето е продолжено"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgctxt "hash as a hash of type md5, sha1 etc."
+#~ msgid "Hash:"
+#~ msgstr "Фонт:"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgid "Remaining Time:"
+#~ msgstr "Преост. време"
+
+#, fuzzy
+#~ msgid "Transfer Settings"
+#~ msgstr " Преноси: %1 "
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Download Destination:"
+#~ msgstr "Одредиште:"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgctxt "No value has been set"
+#~ msgid "Not set"
+#~ msgstr "Нема врски"
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid " KiB"
+#~ msgstr " %1 kB/s "
+
+#, fuzzy
+#~ msgid "Upload Limit:"
+#~ msgstr "Симнувањето е продолжено"
+
+#, fuzzy
+#~ msgid "Download Limit:"
+#~ msgstr "Симнувањето е продолжено"
+
+#, fuzzy
+#~| msgid "Maximum open connections:"
+#~ msgid "Maximum Share Ratio:"
+#~ msgstr "Максимум отворени поврзувања:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgctxt "verification of the download (e.g. by using MD5)"
+#~ msgid "Verification"
+#~ msgstr "Одредиште:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Creation:"
+#~ msgstr "Одредиште:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Expiration:"
+#~ msgstr "Одредиште:"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Group Settings"
+#~ msgstr "Почетна папка:"
+
+#, fuzzy
+#~| msgid "Default Folder"
+#~ msgid "Default folder:"
+#~ msgstr "Почетна папка"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Maximum download speed:"
+#~ msgstr "Симнувањето е завршено"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Maximum upload speed:"
+#~ msgstr "Симнувањето е завршено"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Destination:"
+#~ msgstr "Одредиште:"
+
+#, fuzzy
+#~ msgid "Transfer group:"
+#~ msgstr "&Пренос"
+
+#, fuzzy
+#~ msgid "&File"
+#~ msgstr "Отвори &датотека"
+
+#, fuzzy
+#~ msgid "&Downloads"
+#~ msgstr "Симнувањето е продолжено"
+
+#~ msgid "There are no links in the active frame of the current HTML page."
+#~ msgstr "Нема врски во активната рамка на моменталната HTML-страница."
+
+#, fuzzy
+#~ msgid "Form"
+#~ msgstr "или"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Remove Tag"
+#~ msgstr "Отворам пренос"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Tag Settings for the groups"
+#~ msgstr "Почетна папка:"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgid "Tag Settings"
+#~ msgstr "Закажувам"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Available tags:"
+#~ msgstr "Отворам пренос"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a new Tag"
+#~ msgstr "Ethernet"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a new tag"
+#~ msgstr "Ethernet"
+
+#, fuzzy
+#~| msgctxt "OK as in 'finished'"
+#~| msgid "OK"
+#~ msgid "OK"
+#~ msgstr "Во ред"
+
+#, fuzzy
+#~| msgid "To: %1"
+#~ msgid "Error: %1"
+#~ msgstr "Во: %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open log file %1 : %2"
+#~ msgstr ""
+#~ "Не можам да ја отворам датотеката:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not write to file:\n"
+#~| "%1"
+#~ msgid "Cannot write to %1 : %2"
+#~ msgstr ""
+#~ "Не можам да запишам во датотеката:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Copy file from: %1"
+#~ msgid "Cannot read from %1"
+#~ msgstr "Копирај датотека од: %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot create directory %1"
+#~ msgstr ""
+#~ "Не можам да ја прочитам датотеката:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file: %1"
+#~ msgstr ""
+#~ "Не можам да ја прочитам датотеката:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot seek in file : %1"
+#~ msgstr ""
+#~ "Не можам да ја отворам датотеката:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgid "Connections"
+#~ msgstr "Поврзување"
+
+#, fuzzy
+#~ msgid "Tracker"
+#~ msgstr "&Пренос"
+
+#, fuzzy
+#~| msgid "Stay Connected"
+#~ msgid "Not connected"
+#~ msgstr "Остани поврзан"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "Not in use"
+#~ msgstr "Нема врски"
+
+#, fuzzy
+#~| msgid "Connection Type"
+#~ msgid "Connection closed"
+#~ msgstr "Тип на поврзување"
+
+#, fuzzy
+#~| msgid "Stay Connected"
+#~ msgid "Connected"
+#~ msgstr "Остани поврзан"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgid "Connecting"
+#~ msgstr "Поврзување"
+
+#, fuzzy
+#~| msgid ""
+#~| "The specified file does not exist:\n"
+#~| "%1"
+#~ msgid "The directory %1 does not exist"
+#~ msgstr ""
+#~ "Наведената датотека не постои:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open index file %1 : %2"
+#~ msgstr ""
+#~ "Не можам да ја отворам датотеката:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot create file %1 : %2"
+#~ msgstr ""
+#~ "Не можам да ја прочитам датотеката:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not write to file:\n"
+#~| "%1"
+#~ msgid "Failed to write last chunk to DND file : %1"
+#~ msgstr ""
+#~ "Не можам да запишам во датотеката:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file %1 : %2"
+#~ msgstr ""
+#~ "Не можам да ја прочитам датотеката:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Failed to seek file %1 : %2"
+#~ msgstr ""
+#~ "Не можам да ја прочитам датотеката:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Error while reading file:\n"
+#~| "%1"
+#~ msgid "Error reading from %1"
+#~ msgstr ""
+#~ "Грешка во читање на датотеката:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not write to file:\n"
+#~| "%1"
+#~ msgid "Failed to write to file %1 : %2"
+#~ msgstr ""
+#~ "Не можам да запишам во датотеката:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open file %1 : %2"
+#~ msgstr ""
+#~ "Не можам да ја отворам датотеката:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Not Deleted"
+#~ msgid "Not started"
+#~ msgstr "Не е избришан"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgctxt "Status of a torrent file"
+#~ msgid "Seeding"
+#~ msgstr "Закажувам"
+
+#, fuzzy
+#~ msgid "Downloading"
+#~ msgstr "Симнувањето е продолжено"
+
+#, fuzzy
+#~| msgid "Stopped"
+#~ msgid "Stopped"
+#~ msgstr "Запрено"
+
+#, fuzzy
+#~| msgid "Queueing"
+#~ msgid "Queued for seeding"
+#~ msgstr "Во редица"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Queued for downloading"
+#~ msgstr "Број на обиди:"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open file %1: %2"
+#~ msgstr ""
+#~ "Не можам да ја отворам датотеката:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot create index file: %1"
+#~ msgstr ""
+#~ "Не можам да ја прочитам датотеката:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open file : %1 : %2"
+#~ msgstr ""
+#~ "Не можам да ја отворам датотеката:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Not Deleted"
+#~ msgid "Delete"
+#~ msgstr "Не е избришан"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Details for: %1"
+#~ msgstr "Почетна папка:"
+
+#, fuzzy
+#~ msgid "All downloads"
+#~ msgstr "Означи парцијални симнувања"
+
+#, fuzzy
+#~ msgid "Finished downloads"
+#~ msgstr "Завршено"
+
+#, fuzzy
+#~ msgid "Transfers:"
+#~ msgstr "&Пренос"
+
+#, fuzzy
+#~ msgid "Downloads"
+#~ msgstr "Симнувањето е продолжено"
+
+#, fuzzy
+#~ msgid "Transfer details:"
+#~ msgstr " Преноси: %1 "
+
+#, fuzzy
+#~ msgid "Transfer List"
+#~ msgstr "Отворам пренос:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of threads:"
+#~ msgstr "Број на обиди:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Name of the license"
+#~ msgstr "Број на обиди:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "URL to the license"
+#~ msgstr "Број на обиди:"
+
+#, fuzzy
+#~| msgid "Delayed"
+#~ msgctxt "The transfer is delayed"
+#~ msgid "Delayed"
+#~ msgstr "Одложено"
+
+#~ msgid ""
+#~ "Destination file \n"
+#~ "%1\n"
+#~ "already exists.\n"
+#~ "Do you want to overwrite it?"
+#~ msgstr ""
+#~ "Одредишната датотека \n"
+#~ "%1\n"
+#~ "веќе постои.\n"
+#~ "Дали сакате да запишете врз неа?"
+
+#, fuzzy
+#~ msgid "Overwrite destination"
+#~ msgstr "Отвори &одредиште"
+
+#~ msgid "Queued"
+#~ msgstr "Во редица"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Current Tracker"
+#~ msgstr "Отворам пренос"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgid "Scrape"
+#~ msgstr "Извор:"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Available Trackers"
+#~ msgstr "Отворам пренос"
+
+#, fuzzy
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Delete Selected"
+#~ msgstr "Не се избрани датотеки"
+
+#, fuzzy
+#~| msgid "We are online."
+#~ msgid "We are sorry"
+#~ msgstr "На линија сме."
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Rename transfer"
+#~ msgstr "Отворам пренос"
+
+#, fuzzy
+#~ msgid "Download URL again?"
+#~ msgstr "Симни повторно"
+
+#, fuzzy
+#~ msgctxt "file in a filsystem"
+#~ msgid "File"
+#~ msgstr "Отвори &датотека"
+
+#, fuzzy
+#~ msgid "Are you sure that you want to remove all selected groups?"
+#~ msgstr "Дали навистина сакате да ги отстраните овие преноси?"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "Name"
+#~ msgstr "Име"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgid "Remaining Time"
+#~ msgstr "Преост. време"
+
+#, fuzzy
+#~ msgid "KGet - Download Manager"
+#~ msgstr "Менаџер за симнувања"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgctxt "@label transfer source"
+#~ msgid "Source:"
+#~ msgstr "Извор:"
+
+#, fuzzy
+#~| msgid "0 B/s"
+#~ msgid "kBi"
+#~ msgstr "0 B/s"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file : %1"
+#~ msgstr ""
+#~ "Не можам да ја прочитам датотеката:\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "&Transfer History..."
+#~ msgstr "Отворам пренос:"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "&Group Settings..."
+#~ msgstr "Почетна папка:"
+
+#, fuzzy
+#~ msgid "&Transfer Settings..."
+#~ msgstr " Преноси: %1 "
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed limit"
+#~ msgstr "Брзина"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Download Speed:"
+#~ msgstr "Симнувањето е завршено"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Upload Speed:"
+#~ msgstr "Брзина"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "&Import links"
+#~ msgstr "Нема врски"
+
+#, fuzzy
+#~| msgid "Not Deleted"
+#~ msgid "&Delete"
+#~ msgstr "Не е избришан"
+
+#, fuzzy
+#~ msgid "Default Download Folders"
+#~ msgstr "Почетна папка"
+
+#, fuzzy
+#~| msgid "Extension"
+#~ msgid "File Extension"
+#~ msgstr "Наставка"
+
+#~ msgid "Default Folder"
+#~ msgstr "Почетна папка"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Set as default folder"
+#~ msgstr "Почетна папка:"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "extRegExp, defaultFolder"
+#~ msgstr "Почетна папка:"
+
+#, fuzzy
+#~ msgid "Downloading.."
+#~ msgstr "Симнувањето е продолжено"
+
+#, fuzzy
+#~| msgid "Default folder:"
+#~ msgid "Advanced-Details for %1"
+#~ msgstr "Почетна папка:"
+
+#, fuzzy
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading.."
+#~ msgstr "Симнувањето е продолжено"
+
+#, fuzzy
+#~ msgid "Downloads number:"
+#~ msgstr "Менаџер за симнувања"
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 GB"
+#~ msgstr " %1/s "
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 MB"
+#~ msgstr " %1/s "
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid "%1 KB"
+#~ msgstr " %1 kB/s "
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 B"
+#~ msgstr " %1/s "
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid "%1 KB/s"
+#~ msgstr " %1 kB/s "
+
+#, fuzzy
+#~| msgid "0 B/s"
+#~ msgid "kBi/s"
+#~ msgstr "0 B/s"
+
+#~ msgid "Not Deleted"
+#~ msgstr "Не е избришан"
+
+#, fuzzy
+#~ msgid "Konqueror Integration disabled"
+#~ msgstr "Интеграција со Konqueror"
+
+#~ msgid "Show main window at startup"
+#~ msgstr "Прикажи го главниот прозорец на стартување"
+
+#, fuzzy
+#~ msgid "<speed>"
+#~ msgstr "Брзина"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgid "<remaining time>"
+#~ msgstr "Преост. време"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file %1"
+#~ msgstr ""
+#~ "Не можам да ја прочитам датотеката:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Error while writing file:\n"
+#~| "%1"
+#~ msgid "Error writing to %1 : %2"
+#~ msgstr ""
+#~ "Грешка при запишување на датотеката:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Error while writing file:\n"
+#~| "%1"
+#~ msgid "Error writing to %1"
+#~ msgstr ""
+#~ "Грешка при запишување на датотеката:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "List All Links"
+#~ msgid "&List Links"
+#~ msgstr "Прикажи ги сите врски"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file"
+#~ msgstr ""
+#~ "Не можам да ја прочитам датотеката:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Normal"
+#~ msgctxt "Download normally(not as first or last"
+#~ msgid "Normal"
+#~ msgstr "Нормален"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Bittorrent-Speedlimits"
+#~ msgstr "Брзина"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed-Limits"
+#~ msgstr "Брзина"
+
+#, fuzzy
+#~ msgid " of "
+#~ msgstr "%1 од %2"
+
+#, fuzzy
+#~ msgid "Download Folder"
+#~ msgstr "Почетна папка"
+
+#, fuzzy
+#~ msgid "Hide Drop Target"
+#~ msgstr "Скриј цел за &испуштање"
+
+#, fuzzy
+#~ msgid "Hide drop target"
+#~ msgstr "Скриј цел за &испуштање"
+
+#~ msgid ""
+#~ "Already saving URL\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Веќе го зачувувам URL\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Default Group"
+#~ msgstr "Почетна папка"
+
+#, fuzzy
+#~ msgid "DlgAdvanced"
+#~ msgstr "Напредно"
+
+#, fuzzy
+#~ msgid "Delete Group."
+#~ msgstr "Почетна папка"
+
+#, fuzzy
+#~ msgid "Hide Me"
+#~ msgstr "Име на датотеката"
+
+#~ msgid ""
+#~ "Each row consists of exactly one\n"
+#~ "extension type and one folder."
+#~ msgstr ""
+#~ "Секој ред содржи точно еден\n"
+#~ "тип на наставка и една папка."
+
+#~ msgid "&Dock"
+#~ msgstr "&Вкотви"
+
+#~ msgid "Source Label"
+#~ msgstr "Име на изворот"
+
+#~ msgid "&Keep this window open after the operation is complete."
+#~ msgstr "&Држи го овој прозорец отворен откако ќе заврши операцијата."
+
+#~ msgid "Not resumed"
+#~ msgstr "Не е продолжено"
+
+#~ msgid "Automation"
+#~ msgstr "Автоматизација"
+
+#~ msgid "System"
+#~ msgstr "Систем"
+
+#~ msgid "Maximize"
+#~ msgstr "Рашири"
+
+#~ msgid "Minimize"
+#~ msgstr "Спушти"
+
+#~ msgid ""
+#~ "This is a folder and not a file:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Ова е папка а не датотека:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "You do not have read permission for the file:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Немате дозвола за читање на датотеката:\n"
+#~ "%1"
+
+#~ msgid "Could only read %1 bytes of %2."
+#~ msgstr "Можам да прочитам само %1 бајти од %2."
+
+#~ msgid ""
+#~ "File %1 exists.\n"
+#~ "Do you want to replace it?"
+#~ msgstr ""
+#~ "Датотеката %1 постои.\n"
+#~ "Дали сакате да ја замените?"
+
+#~ msgid ""
+#~ "Failed to make a backup copy of %1.\n"
+#~ "Continue anyway?"
+#~ msgstr ""
+#~ "Не успеав да направам заштитна копија од %1.\n"
+#~ "Дали ќе продолжите и покрај тоа?"
+
+#~ msgid ""
+#~ "Could not open file for writing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Не можам да ја отворам датотеката за запишување:\n"
+#~ "%1"
+
+#~ msgid "Could only write %1 bytes of %2."
+#~ msgstr "Можам да запишам само %1 бајти од %2."
+
+#~ msgid "Welcome to KGet"
+#~ msgstr "Добредојдовте во KGet"
+
+#~ msgid "Could not create valid socket"
+#~ msgstr "Не можам да креирам валиден сокет"
+
+#~ msgid "Offline"
+#~ msgstr "Без мрежа"
+
+#~ msgid "Starting offline"
+#~ msgstr "Стартување без мрежа"
+
+#~ msgid "&Open Individual Window"
+#~ msgstr "&Отвори индивидуален прозорец"
+
+#~ msgid "Move to &Beginning"
+#~ msgstr "Премести на &почеток"
+
+#~ msgid "&Pause"
+#~ msgstr "&Пауза"
+
+#~ msgid "&Queue"
+#~ msgstr "Во &редица"
+
+#, fuzzy
+#~ msgid "&Timer"
+#~ msgstr "&Тајмер"
+
+#~ msgid "De&lay"
+#~ msgstr "Од&ложи"
+
+#~ msgid "Use &Animation"
+#~ msgstr "Користи &анимација"
+
+#~ msgid "&Expert Mode"
+#~ msgstr "Режим &Експерт"
+
+#~ msgid "&Use-Last-Folder Mode"
+#~ msgstr "Режим &користи-последна-папка"
+
+#~ msgid "Auto-&Disconnect Mode"
+#~ msgstr "Режим авто&откачи"
+
+#~ msgid "Auto-S&hutdown Mode"
+#~ msgstr "Режим автос&пушти"
+
+#~ msgid "&Offline Mode"
+#~ msgstr "Режим &без мрежа"
+
+#~ msgid "Show &Log Window"
+#~ msgstr "Прикажи прозорец со &записи"
+
+#~ msgid "Enable &KGet as Konqueror Download Manager"
+#~ msgstr "Овозможи го &KGet како менаџер на симнувања за Konqueror"
+
+#~ msgid " Files: %1 "
+#~ msgstr " Датотеки : %1 "
+
+#~ msgid " Size: %1 KB "
+#~ msgstr " Големина : %1 kB "
+
+#~ msgid " Time: %1 "
+#~ msgstr " Време : %1 "
+
+#~ msgid ""
+#~ "<b>Resume</b> button starts selected transfers\n"
+#~ "and sets their mode to <i>queued</i>."
+#~ msgstr ""
+#~ "Копчето <b>Продолжи</b> стартува избрани преноси\n"
+#~ "и го поставува нивниот режим во <i>редица</i>."
+
+#~ msgid ""
+#~ "<b>Pause</b> button stops selected transfers\n"
+#~ "and sets their mode to <i>delayed</i>."
+#~ msgstr ""
+#~ "Копчето <b>Пауза</b> запира избрани преноси\n"
+#~ "и го поставува нивниот режим во <i>одложени</i>."
+
+#~ msgid ""
+#~ "<b>Delete</b> button removes selected transfers\n"
+#~ "from the list."
+#~ msgstr ""
+#~ "Копчето <b>Избриши</b> ги отстранува избраните преноси\n"
+#~ "од листата."
+
+#~ msgid ""
+#~ "<b>Restart</b> button is a convenience button\n"
+#~ "that simply does Pause and Resume."
+#~ msgstr ""
+#~ "Копчето <b>Рестартирај</b> е згодно копче\n"
+#~ "кое едноставно прави Пауза и Продолжи."
+
+#~ msgid ""
+#~ "<b>Queued</b> button sets the mode of selected\n"
+#~ "transfers to <i>queued</i>.\n"
+#~ "\n"
+#~ "It is a radio button -- you can choose between\n"
+#~ "three modes."
+#~ msgstr ""
+#~ "Копчето <b>Во редица</b> го поставува режимот на избраните\n"
+#~ "преноси во <i>листата за чекање на ред</i>.\n"
+#~ "\n"
+#~ "Ова е радиокопче -- можете да избирате помеѓу\n"
+#~ "три режими."
+
+#~ msgid ""
+#~ "<b>Scheduled</b> button sets the mode of selected\n"
+#~ "transfers to <i>scheduled</i>.\n"
+#~ "\n"
+#~ "It is a radio button -- you can choose between\n"
+#~ "three modes."
+#~ msgstr ""
+#~ "Копчето <b>Закажано</b> ги поставува режимите на избраните\n"
+#~ "преноси во <i>закажани</i>.\n"
+#~ "\n"
+#~ "Ова е радио копче -- можете да избирате помеѓу\n"
+#~ "три режима."
+
+#~ msgid ""
+#~ "<b>Delayed</b> button sets the mode of selected\n"
+#~ "transfers to <i>delayed</i>.This also causes the selected transfers to "
+#~ "stop.\n"
+#~ "\n"
+#~ "It is a radio button -- you can choose between\n"
+#~ "three modes."
+#~ msgstr ""
+#~ "Копчето <b>Одложен</b> ги поставува режимите на избраните\n"
+#~ "преноси во <i>одложени</i>.Ова исто така предизвикува избраните преноси "
+#~ "да запрат.\n"
+#~ "\n"
+#~ "Ова е радиокопче - можете да избирате помеѓу\n"
+#~ "три режими."
+
+#~ msgid ""
+#~ "<b>Preferences</b> button opens a preferences dialog\n"
+#~ "where you can set various options.\n"
+#~ "\n"
+#~ "Some of these options can be more easily set using the toolbar."
+#~ msgstr ""
+#~ "Копчето <b>Параметри</b> го отвора дијалогот за параметри\n"
+#~ "каде може да поставите разни опции.\n"
+#~ "\n"
+#~ "Некои од овие опции може полесно да се наместат преку алатникот."
+
+#~ msgid ""
+#~ "<b>Log window</b> button opens a log window.\n"
+#~ "The log window records all program events that occur\n"
+#~ "while KGet is running."
+#~ msgstr ""
+#~ "Копчето <b>Прозорец со записи</b> отвора прозорец со евиденција.\n"
+#~ "Прозорецот со евиденција ги снима сите настани во програмата\n"
+#~ "додека се извршува KGet."
+
+#~ msgid ""
+#~ "<b>Paste transfer</b> button adds a URL from\n"
+#~ "the clipboard as a new transfer.\n"
+#~ "\n"
+#~ "This way you can easily copy&paste URLs between\n"
+#~ "applications."
+#~ msgstr ""
+#~ "Копчето <b>Вметни трансфер</b> додава URL од\n"
+#~ "таблата со исечоци како нов пренос.\n"
+#~ "\n"
+#~ "На овој начин може брзо да копирате-&вметнувате URL помеѓу\n"
+#~ "апликациите."
+
+#~ msgid ""
+#~ "<b>Expert mode</b> button toggles the expert mode\n"
+#~ "on and off.\n"
+#~ "\n"
+#~ "Expert mode is recommended for experienced users.\n"
+#~ "When set, you will not be \"bothered\" by confirmation\n"
+#~ "messages.\n"
+#~ "<b>Important!</b>\n"
+#~ "Turn it on if you are using auto-disconnect or\n"
+#~ "auto-shutdown features and you want KGet to disconnect \n"
+#~ "or shut down without asking."
+#~ msgstr ""
+#~ "Копчето <b>Режим Експерт</b> го менува режимот експерт \n"
+#~ "меѓу вклучен и исклучен.\n"
+#~ "\n"
+#~ "Режимот Експерт е препорачан за искусни корисници.\n"
+#~ "Кога е поставен, нема да ви „досадува“ со пораки за\n"
+#~ "потврда.\n"
+#~ "<b>Важно!</b>\n"
+#~ "Вклучете го ако ги користите можностите автоисклучување\n"
+#~ "или автоспуштање ако сакате KGet без прашање\n"
+#~ "да се исклучи или да напушти."
+
+#~ msgid ""
+#~ "<b>Use last folder</b> button toggles the\n"
+#~ "use-last-folder feature on and off.\n"
+#~ "\n"
+#~ "When set, KGet will ignore the folder settings\n"
+#~ "and put all new added transfers into the folder\n"
+#~ "where the last transfer was put."
+#~ msgstr ""
+#~ "Копчето <b>Користи последна папка</b> ја менува\n"
+#~ "можноста за последна папка меѓу вклучена и исклучена.\n"
+#~ "\n"
+#~ "Кога е поставена, KGet ќе ги игнорира поставувањата за папка\n"
+#~ "и ќе ги става сите нови преноси во папката\n"
+#~ "каде бил сместен последниот пренос."
+
+#~ msgid ""
+#~ "<b>Auto disconnect</b> button toggles the auto-disconnect\n"
+#~ "mode on and off.\n"
+#~ "\n"
+#~ "When set, KGet will disconnect automatically\n"
+#~ "after all queued transfers are finished.\n"
+#~ "\n"
+#~ "<b>Important!</b>\n"
+#~ "Also turn on the expert mode when you want KGet\n"
+#~ "to disconnect without asking."
+#~ msgstr ""
+#~ "Копчето <b>Автоисклучи</b>го менува режимот автоисклучување\n"
+#~ "меѓу вклучен и исклучен.\n"
+#~ "\n"
+#~ "Кога е поставен, KGet автоматски ќе се исклучи\n"
+#~ "откако ќе завршат сите преноси што чекаат на ред.\n"
+#~ "\n"
+#~ "<b>Важно!</b>\n"
+#~ "Исто така вклучете го режимот експерт кога сакате KGet\n"
+#~ "без прашање да се исклучи."
+
+#~ msgid ""
+#~ "<b>Auto shutdown</b> button toggles the auto-shutdown\n"
+#~ "mode on and off.\n"
+#~ "\n"
+#~ "When set, KGet will quit automatically\n"
+#~ "after all queued transfers are finished.\n"
+#~ "<b>Important!</b>\n"
+#~ "Also turn on the expert mode when you want KGet\n"
+#~ "to quit without asking."
+#~ msgstr ""
+#~ "Копчето <b>Автоспуштање</b> го менува режимот за\n"
+#~ "автоспуштање во вклучен и исклучен.\n"
+#~ "\n"
+#~ "Кога е поставен, KGet автоматски ќе напушти\n"
+#~ "по завршување на сите преноси што чекаат на ред.\n"
+#~ "<b>Важно!</b>\n"
+#~ "Исто така вклучете го режимот експерт кога сакате KGet\n"
+#~ "без прашање да напушти."
+
+#~ msgid ""
+#~ "<b>Offline mode</b> button toggles the offline mode\n"
+#~ "on and off.\n"
+#~ "\n"
+#~ "When set, KGet will act as if it was not connected\n"
+#~ "to the Internet.\n"
+#~ "\n"
+#~ "You can browse offline, while still being able to add\n"
+#~ "new transfers as queued."
+#~ msgstr ""
+#~ "Копчето <b>Режим Не на линија</b> го менува режимот не на линија\n"
+#~ "во вклучен и исклучен.\n"
+#~ "\n"
+#~ "Кога е поставен, KGet ќе се однесува како да не е поврзан\n"
+#~ "на Интернет.\n"
+#~ "\n"
+#~ "Можете да разгледувате додека не сте поврзани, и да додавате\n"
+#~ "нови преноси што ќе чекаат на ред."
+
+#~ msgid ""
+#~ "<b>Drop target</b> button toggles the window style\n"
+#~ "between a normal window and a drop target.\n"
+#~ "\n"
+#~ "When set, the main window will be hidden and\n"
+#~ "instead a small shaped window will appear.\n"
+#~ "\n"
+#~ "You can show/hide a normal window with a simple click\n"
+#~ "on a shaped window."
+#~ msgstr ""
+#~ "Копчето <b>Испушти цел</b> го менува стилот на прозорецот\n"
+#~ "меѓу нормален прозорец и цел за испуштање.\n"
+#~ "\n"
+#~ "Кога е поставен, главниот прозорец ќе биде скриен и\n"
+#~ "наместо него ќе се појави мал обликуван прозорец.\n"
+#~ "\n"
+#~ "Можете да прикажете/скриете нормален прозорец со\n"
+#~ "кликнување на обликуван прозорец."
+
+#~ msgid ""
+#~ "*.kgt|*.kgt\n"
+#~ "*|All Files"
+#~ msgstr ""
+#~ "*.kgt|*.kgt\n"
+#~ "*|Сите датотеки"
+
+#~ msgid "Quitting..."
+#~ msgstr "Напуштам..."
+
+#~ msgid ""
+#~ "The transfer you wanted to delete completed before it could be deleted."
+#~ msgid_plural ""
+#~ "%n transfers you wanted to delete completed before they could be deleted."
+#~ msgstr[0] ""
+#~ "Овој %1 пренос што сакавте да го избришете заврши пред да биде отстранет."
+#~ msgstr[1] ""
+#~ "%1-та преноси што сакавте да ги избришете завршија пред да бидат "
+#~ "отстранети."
+#~ msgstr[2] ""
+#~ "%1-те преноси што сакавте да ги избришете завршија пред да бидат "
+#~ "отстранети."
+
+#~ msgid "Stopping all jobs"
+#~ msgstr "Ги паузирам сите задачи"
+
+#~ msgid "Overwrite"
+#~ msgstr "Запиши"
+
+#~ msgid "Do Not Overwrite"
+#~ msgstr "Не запишувај"
+
+#~ msgid "<i>%1</i> has been added."
+#~ msgstr "<i>%1</i> е додадено."
+
+#~ msgid "1 download has been added."
+#~ msgid_plural "%n downloads have been added."
+#~ msgstr[0] "Додадено е %1 симнување."
+#~ msgstr[1] "Додадени се %1 симнувања."
+#~ msgstr[2] "Додадени се %1 симнувања."
+
+#~ msgid "Starting another queued job."
+#~ msgstr "Започнувам друга задача што чека на ред."
+
+#~ msgid "Offline mode on."
+#~ msgstr "Режимот без мрежа е вклучен."
+
+#~ msgid "Offline mode off."
+#~ msgstr "Режимот без мрежа е исклучен."
+
+#~ msgid "Expert mode on."
+#~ msgstr "Режимот Експерт е вклучен."
+
+#~ msgid "Expert mode off."
+#~ msgstr "Режимот Експерт е исклучен."
+
+#~ msgid "Use last folder on."
+#~ msgstr "Користи последна папка е вклучено."
+
+#~ msgid "Use last folder off."
+#~ msgstr "Користи последна папка е исклучено."
+
+#~ msgid "Auto disconnect off."
+#~ msgstr "Автоисклучи е исклучено."
+
+#~ msgid "Auto shutdown off."
+#~ msgstr "Автоспушти е исклучено."
+
+#~ msgid "Auto paste on."
+#~ msgstr "Автовметни е вклучено."
+
+#~ msgid "Auto paste off."
+#~ msgstr "Автовметни е исклучено."
+
+#~ msgid "<b>Transfers:</b> %1 "
+#~ msgstr "<b>Преноси:</b> %1 "
+
+#~ msgid "<br /><b>Files:</b> %1 "
+#~ msgstr "<br /><b>Датотеки:</b> %1 "
+
+#~ msgid "<br /><b>Size:</b> %1 "
+#~ msgstr "<br /><b>Големина:</b> %1 "
+
+#~ msgid "<br /><b>Time:</b> %1 "
+#~ msgstr "<br /><b>Време:</b> %1 "
+
+#~ msgid "<br /><b>Speed:</b> %1/s"
+#~ msgstr "<br /><b>Брзина:</b> %1/s"
+
+#~ msgid "Do you really want to disconnect?"
+#~ msgstr "Дали навистина сакате да се исклучите?"
+
+#~ msgid "Disconnect"
+#~ msgstr "Исклучи се"
+
+#~ msgid "Disconnecting..."
+#~ msgstr "Се исклучувам..."
+
+#~ msgid "We are offline."
+#~ msgstr "Не сме на линија."
+
+#~ msgid "Id"
+#~ msgstr "Идентификација"
+
+#~ msgid "Mixed"
+#~ msgstr "Мешано"
+
+#~ msgid "Separated"
+#~ msgstr "Издвоено"
+
+#~ msgid "Add new transfers as:"
+#~ msgstr "Додај нови преноси како:"
+
+#~ msgid "Iconified"
+#~ msgstr "Иконифицирано"
+
+#~ msgid "Advanced individual windows"
+#~ msgstr "Напредни самостојни прозорци"
+
+#~ msgid "Remove files from a list after success"
+#~ msgstr "Отстрани датотеки од листата по успех"
+
+#~ msgid "Get file sizes"
+#~ msgstr "Земи големини на датотеки"
+
+#~ msgid "Expert mode (do not prompt for Cancel or Delete)"
+#~ msgstr "Експертски режим (не прашува за Откажи или Избриши)"
+
+#~ msgid "Show individual windows"
+#~ msgstr "Прикажи самостојни прозорци"
+
+#~ msgid " min"
+#~ msgstr " минути"
+
+#~ msgid "Auto disconnect after completing downloads"
+#~ msgstr "Исклучи се автоматски по завршувањето на симнувањата"
+
+#~ msgid "Autosave file list every:"
+#~ msgstr "Автоматски зачувај ја листата на датотеки на секои:"
+
+#~ msgid "Timed disconnect"
+#~ msgstr "Временско исклучување"
+
+#~ msgid "Disconnect command:"
+#~ msgstr "Команда за исклучување:"
+
+#~ msgid "Auto paste from clipboard"
+#~ msgstr "Автовметни од таблата со исечоци"
+
+#~ msgid "Reconnect Options"
+#~ msgstr "Опции за повторно поврзување"
+
+#~ msgid "On login or timeout error"
+#~ msgstr "При најава или грешка во истек на време"
+
+#~ msgid "Timeout Options"
+#~ msgstr "Опции за истек на време"
+
+#~ msgid "If no data arrives in:"
+#~ msgstr "Ако не пристигнат податоци за:"
+
+#~ msgid "If server cannot resume:"
+#~ msgstr "Ако серверот не може да продолжи:"
+
+#~ msgid "Permanent"
+#~ msgstr "Постојано"
+
+#~ msgid "PLIP"
+#~ msgstr "PLIP"
+
+#~ msgid "SLIP"
+#~ msgstr "SLIP"
+
+#~ msgid "PPP"
+#~ msgstr "PPP"
+
+#~ msgid "ISDN"
+#~ msgstr "ISDN"
+
+#~ msgid "Link number:"
+#~ msgstr "Број на врска:"
+
+#~ msgid "Extension (* for all files):"
+#~ msgstr "Наставка (* за сите датотеки):"
+
+#~ msgid "Limits Options"
+#~ msgstr "Опции за ограничувања"
+
+#~ msgid "Minimum network bandwidth:"
+#~ msgstr "Минимален пропусен опсег на мрежа:"
+
+#~ msgid "Maximum network bandwidth:"
+#~ msgstr "Максимален пропусен опсег на мрежа:"
+
+#~ msgid " bytes/sec"
+#~ msgstr " бајти/сек"
+
+#~ msgid "Window style:"
+#~ msgstr "Стил на прозорец:"
+
+#~ msgid "Attempt number %1"
+#~ msgstr "Обид број %1"
+
+#~ msgid "Stopping"
+#~ msgstr "Запирам"
+
+#~ msgid "Pausing"
+#~ msgstr "Паузирам"
+
+#~ msgid "Delaying"
+#~ msgstr "Одложувам"
+
+#~ msgid "The file size does not match."
+#~ msgstr "Големината на датотеката не одговара."
+
+#~ msgid "File Size checked"
+#~ msgstr "Големината на датотеката е проверена"
+
+#~ msgid "checking if file is in cache...no"
+#~ msgstr "проверувам дали датотеката е во кешот...не е"
+
+#~ msgid "S"
+#~ msgstr "S"
+
+#~ msgid "%"
+#~ msgstr "%"

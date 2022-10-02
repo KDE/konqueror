@@ -1,0 +1,334 @@
+# translation of libkonq.po to Persian
+# Nazanin Kazemi <kazemi@itland.ir>, 2006, 2007.
+# MaryamSadat Razavi <razavi@itland.ir>, 2006.
+# Tahereh Dadkhahfar <dadkhahfar@itland.ir>, 2006.
+# Nasim Daniarzadeh <daniarzadeh@itland.ir>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2007-07-31 19:30+0330\n"
+"Last-Translator: Nazanin Kazemi <kazemi@itland.ir>\n"
+"Language-Team: Persian <kde-i18n-fa@kde.org>\n"
+"Language: fa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "&باز کردن‌"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "ایجاد &پوشه...‌"
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "&بازگرداندن‌"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "&خالی کردن سطل زباله‌"
+
+#: src/konq_popupmenu.cpp:312
+#, fuzzy, kde-format
+#| msgid "&Empty Trash Bin"
+msgid "&Configure Trash Bin"
+msgstr "&خالی کردن سطل زباله‌"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "&چوب الف این صفحه‌"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "&چوب الف این مکان‌"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "&چوب الف این پوشه‌"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "&چوب الف این پیوند‌"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "&چوب الف این پرونده‌"
+
+#: src/konq_popupmenu.cpp:379
+#, kde-format
+msgid "Preview In"
+msgstr "پیش‌نمایش در"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "&ویژگیها‌"
+
+#, fuzzy
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "حرکت به زباله"
+
+#, fuzzy
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "پوشه جدید"
+
+#, fuzzy
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "پوشه جدید"
+
+#, fuzzy
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "&رونوشت به اینجا‌"
+
+#, fuzzy
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "&حرکت به اینجا‌"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "شما نمی‌توانید یک پوشه را به داخل خودش بیندازید"
+
+#~ msgid "File name for dropped contents:"
+#~ msgstr "نام پرونده برای محتویات انداخته‌شده:"
+
+#~ msgid "&Move Here"
+#~ msgstr "&حرکت به اینجا‌"
+
+#~ msgid "&Copy Here"
+#~ msgstr "&رونوشت به اینجا‌"
+
+#~ msgid "&Link Here"
+#~ msgstr "&پیوند به اینجا‌"
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "تنظیم به عنوان &کاغذدیواری‌"
+
+#~ msgid "C&ancel"
+#~ msgstr "&لغو‌"
+
+#, fuzzy
+#~| msgid "Creating directory"
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "ایجاد فهرست راهنما"
+
+#, fuzzy
+#~| msgid "Enter folder name:"
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "نام پوشه را وارد کنید:"
+
+#, fuzzy
+#~| msgid "Creating directory"
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "ایجاد فهرست راهنما"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "پوشه جدید"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "پوشه جدید"
+
+#, fuzzy
+#~| msgid "Enter folder name:"
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "نام پوشه را وارد کنید:"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "پوشه جدید"
+
+#~ msgid "Share"
+#~ msgstr "مشترک"
+
+#~ msgid "Create New"
+#~ msgstr "ایجاد جدید"
+
+#~ msgid "Link to Device"
+#~ msgstr "پیوند به دستگاه"
+
+#~ msgid "<qt>The template file <b>%1</b> does not exist.</qt>"
+#~ msgstr "<qt>پرونده قالب <b>%1</b> وجود ندارد.</qt>"
+
+#~ msgid "File name:"
+#~ msgstr "نام پرونده:"
+
+#, fuzzy
+#~| msgctxt "@title:menu"
+#~| msgid "Actions"
+#~ msgctxt "@title:menu"
+#~ msgid "&Actions"
+#~ msgstr "کنش‌ها‌"
+
+#, fuzzy
+#~| msgid "&Open With"
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With"
+#~ msgstr "&باز کردن با‌"
+
+#, fuzzy
+#~| msgid "&Other..."
+#~ msgctxt "@action:inmenu Open With"
+#~ msgid "&Other..."
+#~ msgstr "&غیره...‌"
+
+#, fuzzy
+#~| msgid "&Open With..."
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With..."
+#~ msgstr "&باز کردن با...‌"
+
+#, fuzzy
+#~| msgid "Open with %1"
+#~ msgid "Open &with %1"
+#~ msgstr "باز کردن با %1"
+
+#~ msgid "Open in New &Window"
+#~ msgstr "باز کردن در &پنجره جدید‌"
+
+#~ msgid "Open the trash in a new window"
+#~ msgstr "باز کردن زباله در پنجره جدید"
+
+#~ msgid "Open the medium in a new window"
+#~ msgstr "باز کردن رسانه در پنجره جدید"
+
+#~ msgid "Open the document in a new window"
+#~ msgstr "باز کردن سند در پنجره جدید"
+
+#~ msgid "Directory"
+#~ msgstr "فهرست راهنما"
+
+#~ msgid "Moving"
+#~ msgstr "حرکت"
+
+#~ msgid "Source"
+#~ msgstr "مبدأ"
+
+#~ msgid "Destination"
+#~ msgstr "مقصد"
+
+#~ msgid "Deleting"
+#~ msgstr "حذف"
+
+#~ msgid "File"
+#~ msgstr "پرونده"
+
+#~ msgid "Und&o"
+#~ msgstr "&واگرد‌"
+
+#~ msgid "Und&o: Copy"
+#~ msgstr "&واگرد: رونوشت‌"
+
+#~ msgid "Und&o: Link"
+#~ msgstr "&واگرد: پیوند‌"
+
+#~ msgid "Und&o: Move"
+#~ msgstr "&واگرد: حرکت‌"
+
+#~ msgid "Und&o: Rename"
+#~ msgstr "&واگرد: تغییر نام"
+
+#~ msgid "Und&o: Trash"
+#~ msgstr "&واگرد: زباله‌"
+
+#~ msgid "Und&o: Create Folder"
+#~ msgstr "&واگرد: ایجاد پوشه‌"
+
+#~ msgid ""
+#~ "The file %1 was copied from %2, but since then it has apparently been "
+#~ "modified at %3.\n"
+#~ "Undoing the copy will delete the file, and all modifications will be "
+#~ "lost.\n"
+#~ "Are you sure you want to delete %4?"
+#~ msgstr ""
+#~ "پرونده %1 از %2 رونوشت شد، ولی بعد از آن ظاهراً در %3 تغییر یافته است.\n"
+#~ "واگرد رونوشت پرونده را حذف می‌کند، و همه تغییرات از دست می‌روند.\n"
+#~ "مطمئنید می‌خواهید %4 را حذف کنید؟"
+
+#~ msgid "Undo File Copy Confirmation"
+#~ msgstr "واگرد تأیید رونوشت پرونده"
+
+#~ msgid "Do you really want to delete this item?"
+#~ msgid_plural "Do you really want to delete these %1 items?"
+#~ msgstr[0] "واقعاً می‌خواهید این %1 فقره‌ را حذف کنید؟"
+
+#~ msgid "Delete Files"
+#~ msgstr "حذف پرونده‌ها"
+
+#~ msgid "Do you really want to move this item to the trash?"
+#~ msgid_plural "Do you really want to move these %1 items to the trash?"
+#~ msgstr[0] "واقعاً می‌خواهید این %1 فقره را به زباله حرکت دهید؟"
+
+#~ msgid "Move to Trash"
+#~ msgstr "حرکت به زباله"
+
+#~ msgctxt "Verb"
+#~ msgid "&Trash"
+#~ msgstr "&زباله کردن‌"
+
+#, fuzzy
+#~| msgid "Und&o"
+#~ msgid "Und&o: %1"
+#~ msgstr "&واگرد‌"
+
+#~ msgid "Background Settings"
+#~ msgstr "تنظیمات زمینه"
+
+#~ msgid "Background"
+#~ msgstr "زمینه"
+
+#~ msgid "Co&lor:"
+#~ msgstr "&رنگ‌"
+
+#~ msgid "&Picture:"
+#~ msgstr "&عکس:‌"
+
+#~ msgid "Preview"
+#~ msgstr "پیش‌نمایش"
+
+#~ msgid "None"
+#~ msgstr "هیچ‌کدام"

@@ -1,0 +1,129 @@
+# KDE3 - khtmlsettingsplugin.pot Russian translation.
+# KDE3 - kdeaddons/khtmlsettingsplugin.po Russian translation.
+# Copyright (C) 2004, KDE Team.
+#
+# Alex Miller <asm@som.kiev.ua>, 2001.
+# Nick Shafff <linux@l10n.org.ua>, 2004.
+# Nickolai Shaforostoff <shafff@ukr.net>, 2004.
+# Artem Sereda <overmind88@gmail.com>, 2008, 2009.
+# Alexander Potashev <aspotashev@gmail.com>, 2011.
+# Alexander Yavorsky <kekcuha@gmail.com>, 2019.
+msgid ""
+msgstr ""
+"Project-Id-Version: khtmlsettingsplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"PO-Revision-Date: 2019-10-09 18:27+0300\n"
+"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
+"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 19.08.1\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#. i18n: ectx: Menu (tools)
+#: khtmlsettingsplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "С&ервис"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: khtmlsettingsplugin.rc:8
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "Дополнительная панель инструментов"
+
+#: settingsplugin.cpp:41
+#, kde-format
+msgid "HTML Settings"
+msgstr "Параметры HTML"
+
+#: settingsplugin.cpp:46
+#, kde-format
+msgid "Java&Script"
+msgstr "Java&Script"
+
+#: settingsplugin.cpp:51
+#, kde-format
+msgid "&Java"
+msgstr "&Java"
+
+#: settingsplugin.cpp:56
+#, kde-format
+msgid "&Cookies"
+msgstr "&Cookies"
+
+#: settingsplugin.cpp:61
+#, kde-format
+msgid "&Plugins"
+msgstr "&Модули"
+
+#: settingsplugin.cpp:66
+#, kde-format
+msgid "Autoload &Images"
+msgstr "&Автоматическая загрузка изображений"
+
+#: settingsplugin.cpp:73
+#, kde-format
+msgid "Enable Pro&xy"
+msgstr "&Использовать прокси"
+
+#: settingsplugin.cpp:78
+#, kde-format
+msgid "Enable Cac&he"
+msgstr "Использовать &кэш"
+
+#: settingsplugin.cpp:83
+#, kde-format
+msgid "Cache Po&licy"
+msgstr "Пр&авила кэширования"
+
+#: settingsplugin.cpp:85
+#, kde-format
+msgid "&Keep Cache in Sync"
+msgstr "&Всегда обновлять кэш"
+
+#: settingsplugin.cpp:86
+#, kde-format
+msgid "&Use Cache if Possible"
+msgstr "Исп&ользовать кэш, если это возможно"
+
+#: settingsplugin.cpp:87
+#, kde-format
+msgid "&Offline Browsing Mode"
+msgstr "А&втономный режим работы"
+
+#: settingsplugin.cpp:180
+#, kde-format
+msgid ""
+"The cookie setting could not be changed, because the cookie daemon could not "
+"be contacted."
+msgstr ""
+"Параметры cookie недоступны, так как не удалось установить соединение с "
+"демоном cookie."
+
+#: settingsplugin.cpp:182
+#, kde-format
+msgctxt "@title:window"
+msgid "Cookie Settings Unavailable"
+msgstr "Параметры cookie недоступны"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Николай Шафоростов"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "shafff@ukr.net"
+
+#~ msgid "Disable Pro&xy"
+#~ msgstr "&Не использовать прокси-сервер"
+
+#~ msgid "Disable Cac&he"
+#~ msgstr "Не использовать &кэш"

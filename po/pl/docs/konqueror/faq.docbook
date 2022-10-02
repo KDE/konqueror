@@ -1,0 +1,293 @@
+<chapter id="faq">
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>(c) 2005 Mandriva</firstname
+><surname
+>Poland</surname
+><affiliation
+><address
+><email
+>biuro@mandriva.pl</email
+></address
+></affiliation
+><contrib
+>Polskie tłumaczenie</contrib
+></othercredit
+> 
+</authorgroup>
+<date
+>2003-11-06</date
+> <releaseinfo
+>3.2</releaseinfo
+> </chapterinfo>
+
+<title
+>Pytania i odpowiedzi</title>
+
+<qandaset>
+
+<!-- Link is dead, unfortunately. I suppose this is a more general thing anyway
+<qandaentry>
+<question
+><para
+>How can I browse web sites using non latin
+ scripts?</para
+></question>
+<answer
+><para
+>Detailed instructions can be found at <ulink
+url="http://www.konqueror.org/i18n.html"
+>http://www.konqueror.org/i18n.html</ulink
+></para
+></answer>
+</qandaentry>
+-->
+
+<qandaentry>
+<question
+><para
+>Czy mogę uruchomić &konqueror-dopelniacz; z innego menedżera okien?</para
+></question>
+
+<answer
+><para
+>Wystarczy zainstalować pakiety &Qt;, kdelibs oraz kdebase, i będziesz mógł uruchomić &konqueror-dopelniacz; z Twojego ulubionego menedżera okien. Program powinien funkcjonować bez problemów, ale jeśli nie (programiści &kde; zwykle tego nie sprawdzają), to zgłoś ten problem na stronie <ulink url="http://bugs.kde.org"
+>http://bugs.kde.org</ulink
+> i spróbuj uruchomić <application
+>kdeinit</application
+> przed uruchomieniem &konqueror-dopelniacz;; zwykle to pomaga.</para
+></answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Gdzie &konqueror; przechowuje wszystkie swoje pliki konfiguracyjne?</para
+></question>
+<answer
+><para
+>Zwykle w katalogu <filename
+>~/.kde</filename
+> (może to być również <filename
+>~/.kde3</filename
+>, w zależności jak &kde; 3 zostało zainstalowane). Nie zmieniaj tych plików, chyba, że dokładnie wiesz co robisz.</para>
+
+<itemizedlist>
+
+<listitem
+><para
+>Katalog <filename class="directory"
+>~/.kde/share/apps/konqueror/profiles</filename
+> przechowuje poszczególne pliki zawierające ustawienia każdego z Twoich <link linkend="save-settings"
+>profili. </link
+></para
+></listitem>
+
+<listitem
+><para
+>Twoje zakładki są przechowywane w pliku <filename class="directory"
+>~/.kde/share/apps/konqueror/bookmarks.xml</filename
+></para
+></listitem>
+<listitem
+><para
+>Ciasteczka są przechowywane w katalogu <filename class="directory"
+>~/.kde/share/apps/kcookiejar/cookies</filename
+></para
+></listitem>
+<listitem
+><para
+>Twoja historia, wykorzystywana do automatycznego uzupełniania, przechowywana jest w <filename
+>~/.kde/share/config/konq_history</filename
+></para
+></listitem>
+
+<listitem
+><para
+>W katalogu <filename class="directory"
+>~/.kde/share/config/</filename
+> pliki <filename
+>konqiconviewrc</filename
+>, <filename
+>konqlistviewrc</filename
+> oraz <filename
+>konquerorrc</filename
+> przechowują wiele ogólnych ustawień konfiguracyjnych.</para
+></listitem>
+
+<listitem
+><para
+>Katalog <filename class="directory"
+>~/.kde/share/cache/http/</filename
+> zawiera pamięć podręczną przeglądarki WWW.</para
+></listitem>
+
+<listitem
+><para
+>Panel nawigacyjny wykorzystuje pliki i podkatalogi z katalogu <filename class="directory"
+>~/.kde/share/apps/konqsidebartng</filename
+></para
+></listitem>
+</itemizedlist>
+
+<para
+>Wszystkie ustawienia widoku specyficzne dla danego katalogu są przechowywane w plikach <literal role="extension"
+>.directory</literal
+> w poszczególnych katalogach.</para
+></answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Jak mogę wyczyścić plik historii?</para
+></question>
+<answer
+><para
+>Istnieją dwie <quote
+>historie</quote
+>:</para>
+<itemizedlist>
+<listitem
+><para
+>Jedna jest wykorzystywana do uzupełniania tekstu w pasku adresu. Aby ją oczyścić, kliknij <mousebutton
+>prawym</mousebutton
+> przyciskiem myszy na polu wprowadzania adresu i wybierz polecenie <guimenuitem
+>Wyczyść historię </guimenuitem
+>.</para>
+</listitem>
+<listitem
+><para
+>Drugą stanowi dziennik odwiedzonych stron. Wybierz panel historii z panelu nawigacji, kliknij <mousebutton
+>prawym</mousebutton
+> przyciskiem myszy na wpis i wybierz <guimenuitem
+>Usuń pozycję</guimenuitem
+>, aby usunąć tylko jeden wpis lub wybierz <guimenuitem
+>Wyczyść historię</guimenuitem
+>, aby usunąć wszystkie pozycje.</para
+></listitem>
+
+</itemizedlist>
+
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Jak włączyć, wyłączyć lub wyczyścić pamięć podręczną przeglądarki WWW?</para
+></question
+> <answer>
+<para
+>Jeżeli wybierzesz dział <guimenuitem
+>Bufor</guimenuitem
+> z okna, które się pojawi po wybraniu z menu <menuchoice
+><guimenu
+>Ustawienia</guimenu
+><guimenuitem
+>Konfiguracja: Konqueror... </guimenuitem
+></menuchoice
+>, będziesz miał możliwość włączyć lub wyłączyć bufor, oczyścić go oraz ustawić jego rozmiar, a także zdefiniować jego politykę.</para>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Jak mogę zmienić limity czasowe stosowane przez &konqueror-dopelniacz; podczas przeglądania sieci?</para
+></question
+> <answer>
+<para
+>W &kcontrolcenter-miejscownik;, dział <menuchoice
+><guimenu
+>Internet i sieć</guimenu
+><guimenuitem
+>Konfiguracja połączeń</guimenuitem
+></menuchoice
+>.</para>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Jak ustawić stronę <quote
+>domową</quote
+> - stronę wczytywaną po uruchomieniu przeglądarki?</para
+></question>
+<answer
+><para
+>Uruchom &konqueror-dopelniacz; za pomocą ikony <guiicon
+>Przeglądarki internetowej</guiicon
+>. Otwórz stronę, którą chcesz, aby była wczytywana w nowym oknie przeglądarki. Wybierz <guimenuitem
+>Zapisz profil widoku "Przeglądanie sieci"</guimenuitem
+> z menu <guimenu
+>Ustawienia</guimenu
+>.</para>
+
+<para
+>Wszystkie nowe okna &konqueror-dopelniacz;, które zostaną otworzone za pomocą ikony <guiicon
+>przeglądarki internetowej</guiicon
+> na panelu lub za pomocą menu <guimenu
+>lokalizacji</guimenu
+>, jak również nowe puste karty, będą uruchamiane z tą stroną.</para>
+
+<note
+><para
+>Nie zmienia to działania przycisku <guiicon
+>Przejdź do katalogu domowego</guiicon
+> znajdującego się na pasku narzędzi, który będzie przenosił Cię do adresu zdefiniowanego w module konfiguracyjnym &konqueror-dopelniacz;. Możesz się do niego dostać z, wybierając <menuchoice
+><guimenu
+>Ustawienia</guimenu
+><guimenuitem
+>Konfiguracja: Konqueror</guimenuitem
+><guilabel
+>Zachowanie</guilabel
+></menuchoice
+>. Domyślnie wartość jest ustalona na <userinput
+>~</userinput
+>, co oznacza katalog domowy. Możesz ją zmienić na dowolny adres, zarówno lokalny jak i zdalny, co zmieni działanie przycisku <guiicon
+>Przejdź do katalogu domowego</guiicon
+>.</para
+></note>
+
+<para
+>Aby &konqueror; był uruchamiany z pustym oknem zastosuj <userinput
+>about:blank</userinput
+>.</para>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Nie mogę tutaj znaleźć odpowiedzi na swoje pytanie.</para
+></question
+> 
+<answer>
+<para
+>Sprawdź także <ulink url="http://www.konqueror.org/faq.html"
+> http://www.konqueror.org/faq.html</ulink
+> lub <ulink url="http://www.konqueror.org/konq-java.html"
+> http://www.konqueror.org/konq-java.html</ulink
+>.</para>
+</answer>
+</qandaentry>
+
+</qandaset>
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

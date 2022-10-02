@@ -1,0 +1,220 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Pragnesh Radadiya <pg.radadia@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmperformance\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-21 00:16+0000\n"
+"PO-Revision-Date: 2008-10-03 17:01+0530\n"
+"Last-Translator: Pragnesh Radadiya <pg.radadia@gmail.com>\n"
+"Language-Team: Gujarati <kde-i18n-doc@lists.kde.org>\n"
+"Language: gu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.2\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: kcmperformance.cpp:28
+#, kde-format
+msgid ""
+"<h1>KDE Performance</h1> You can configure settings that improve KDE "
+"performance here."
+msgstr ""
+"<h1>કેડીઇ કાર્યક્ષમતા</h1>તમે ગોઠવણીઓ રૂપરેખાંકિત કરી શકો છો કે જે અહીં કેડીઇની "
+"કાર્યક્ષમતા વધારે છે."
+
+#: kcmperformance.cpp:35
+#, kde-format
+msgid "Konqueror"
+msgstr "કોન્કરર"
+
+#: kcmperformance.cpp:38
+#, kde-format
+msgid "System"
+msgstr "સિસ્ટમ"
+
+#: kcmperformance.cpp:63
+#, kde-format
+msgid ""
+"<h1>Konqueror Performance</h1> You can configure several settings that "
+"improve Konqueror performance here. These include options for reusing "
+"already running instances and for keeping instances preloaded."
+msgstr ""
+"<h1>કોન્કર કાર્યક્ષમતા</h1>તમે ઘણી ગોઠવણીઓ રૂપરેખાંકિત કરી શકો છો કે જે અહીં કોન્કરની "
+"કાર્યક્ષમતા વધારે છે. જેમાં સામાવેશ થાય છે પહેલેથી ચાલતા અસ્તિત્વનો ફરીથી ઉપયોગ કરવો અને "
+"અસ્તિત્વને પહેલેથી લાવી રાખવા."
+
+#: konqueror.cpp:24
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>If enabled, an instance of Konqueror will be preloaded after the "
+#| "ordinary KDE startup sequence.</p><p>This will make the first Konqueror "
+#| "window open faster, but at the expense of longer KDE startup times (but "
+#| "you will be able to work while it is loading, so you may not even notice "
+#| "that it is taking longer).</p>"
+msgid ""
+"<p>If enabled, an instance of Konqueror will be preloaded after the ordinary "
+"Plasma startup sequence.</p><p>This will make the first Konqueror window "
+"open faster, but at the expense of longer Plasma startup times (but you will "
+"be able to work while it is loading, so you may not even notice that it is "
+"taking longer).</p>"
+msgstr ""
+"<p>જો સક્ષમ હોય તો, કોન્કરનો અસ્તિત્વ કેડીઇની શરુઆત પછી પહેલેથી રાખવામાં આવશે.</p><p>જે "
+"પહેલી કોન્કર વિન્ડોને ઝડપથી ખોલશે. પરંતુ તેની સામે કેડીઇને શરુઆત કરવામાં વધારે સમય લાગશે "
+"(પણ તમે  કાર્ય કરી શકશો જયારે તે લાવતુ હોય, અને તમને ખ્યાલ પણ નહીં આવે કે તેને વધારે સમય "
+"લાગ્યો છે).</p>"
+
+#: konqueror.cpp:30
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>If enabled, KDE will always try to have one preloaded Konqueror "
+#| "instance ready; preloading a new instance in the background whenever "
+#| "there is not one available, so that windows will always open quickly.</"
+#| "p><p><b>Warning:</b> In some cases, it is actually possible that this "
+#| "will reduce perceived performance.</p>"
+msgid ""
+"<p>If enabled, Konqueror will always try to have one preloaded instance "
+"ready; preloading a new instance in the background whenever there is not one "
+"available, so that windows will always open quickly.</p><p><b>Warning:</b> "
+"In some cases, it is actually possible that this will reduce perceived "
+"performance.</p>"
+msgstr ""
+"<p>જો સક્ષમ હોય તો, કેડીઇ હમેંશા કોન્કરનો અસ્તિત્વ પહેલેથી લાવવા પ્રયત્ન કરશે; નવો "
+"અસ્તિત્વ પહેલેથી પાશ્વભાગ લાવવો જયારે, એક પણ મળતો હોય, જેથી કરીને તે વિન્ડો હમેંશા ઝડપથી "
+"ખુલી શકે.</p><p><b>ચેતવણી:</b>કેટલાક કિસ્સાઓમાં, તે શકય છે કે ઇચ્છિત કાર્યક્ષમતા ઘટાડે છે."
+"</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
+#: konqueror_ui.ui:17
+#, kde-format
+msgid "Preloading"
+msgstr "પૂર્વલાવવું"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_preload_on_startup)
+#: konqueror_ui.ui:23
+#, fuzzy, kde-format
+#| msgid "Preload an instance after KDE startup"
+msgid "Preload an instance after desktop startup"
+msgstr "કેડીઇ શરૂઆત પછી અસ્તિત્વ પહેલેથી લાવો"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_always_have_preloaded)
+#: konqueror_ui.ui:30
+#, fuzzy, kde-format
+#| msgid "Always try to have at least one preloaded instance"
+msgid "Always try to have one preloaded instance"
+msgstr "હંમેશા ઓછામાં ઓછું એક અસ્તિત્વ પહેલેથી લાવવા પ્રયત્ન કરો"
+
+#: system.cpp:22
+#, kde-format
+msgid ""
+"<p>During startup KDE needs to perform a check of its system configuration "
+"(mimetypes, installed applications, etc.), and in case the configuration has "
+"changed since the last time, the system configuration cache (KSyCoCa) needs "
+"to be updated.</p><p>This option delays the check, which avoid scanning all "
+"directories containing files describing the system during KDE startup, thus "
+"making KDE startup faster. However, in the rare case the system "
+"configuration has changed since the last time, and the change is needed "
+"before this delayed check takes place, this option may lead to various "
+"problems (missing applications in the K Menu, reports from applications "
+"about missing required mimetypes, etc.).</p><p>Changes of system "
+"configuration mostly happen by (un)installing applications. It is therefore "
+"recommended to turn this option temporarily off while (un)installing "
+"applications.</p>"
+msgstr ""
+"<p>કેડીઇ શરુઆત થતી વખતે કેટલીક સિસ્ટમની ગોઠવણીઓ ચકાસવામાં આવે છે (માઇમપ્રકાર, સ્થાપિત "
+"કાર્યક્રમો, વગેરે.), અને જો ગોઠવણી છેલ્લા સમય પછી બદલાઇ હોય, તો સિસ્ટમ ગોઠવણીની કેશ "
+"(KSyCoCa) સુધારવાની જરુર છે.</p><p>આ વિકલ્પો તે તપાસણીને પાછળ ધકેલે છે, જે બધી "
+"ડિરેકટરીને કે જે સિસ્ટમનુ વર્ણન કરે છે તને કેડીઇની શરુઆતના સમયે તપાસવાનુ ટાળે છે, જેથી કેડીઇને "
+"ઝડપી બનાવે છે. પરંતુ, ખૂબ ઓછા સંજોગામાં જયારે સિસ્ટમની ગોઠવણીઓ છેલ્લા સમયથી બદલાઇ ગઇ "
+"હોય ત્યારે, પાછળ ધકેલી તપાસણી થાય એ પહેલા ફેરફારો કરવા જરુરી છે, આ વિકલ્પ  જુદી જુદી "
+"સમસ્યા ઉભી કરી શકે છે ( કેમેનુમાં ગુમ થયેલ કાર્યક્રમ, કાર્યક્રમમાંથી સૂચના કે માઇમટાઇપ ગુમ છે, "
+"વગેરે.).</p><p>સિસ્ટમની ગોઠવણીમાં ફેરફારો મોટેભાગે કાર્યક્રમો સ્થાપિત(કાઠી) નાખવાંથી "
+"થાય છે. માટે એ સૂચવેલ છે કે આ વિકલ્પ જયારે કાર્યક્રમ સ્થાપિત(કાઠી) નાખતા હોય ત્યારે "
+"કામચલાઉ બંદ કરવો.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gb_)
+#: system_ui.ui:8
+#, kde-format
+msgid "System Configuration"
+msgstr "સિસ્ટમ રૂપરેખાંકન"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_disable_kbuildsycoca)
+#: system_ui.ui:14
+#, kde-format
+msgid "Disable &system configuration startup check"
+msgstr "સિસ્ટમ રૂપરેખાંકન શરૂઆત ચકાસણી નિષ્ક્રિય કરેલ છે (&s)"
+
+#. i18n: ectx: property (text), widget (QLabel, label_kbuildsycoca)
+#: system_ui.ui:21
+#, kde-format
+msgid ""
+"This option may in rare cases lead to various problems. Consult the What's "
+"This (Shift+F1) help for details."
+msgstr ""
+"આ વિકલ્પ  ભાગ્યે જ કયારેક જુદ જદી મુશ્કેલી ઉભી કરી શકે છે. વધુ માહિતી માટે (Shift+F1) "
+"મદદનો સંર્પક કરો."
+
+#~ msgid ""
+#~ "<p>If non-zero, this option allows keeping Konqueror instances in memory "
+#~ "after all their windows have been closed, up to the number specified in "
+#~ "this option.</p><p>When a new Konqueror instance is needed, one of these "
+#~ "preloaded instances will be reused instead, improving responsiveness at "
+#~ "the expense of the memory required by the preloaded instances.</p>"
+#~ msgstr ""
+#~ "<p>જો આ શૂન્ય સિવાયની હોય, તો આ વિકલ્પ તમને કોન્કરનો અસ્તિત્વ તેની બધી વિન્ડો બંધ "
+#~ "બંધ કર્યા પછી મેમરીમાં રહેવા દે છે, જયાં સુધી આ વિકલ્પમાં તમે સંખ્યા સૂચવી હશે.</"
+#~ "p><p>જયારે નવા કોન્કરના અસ્તિત્વની જરુર હોય ત્યારે, તેમાંનો એક પહેલેથી લાવેલો ફરીથી "
+#~ "ઉપયોગ કરે છે, જે જવાબ આપવાના ગુણને મેમરીના ભોગે કે જે પહેલેથી લાવેલા અસ્તિત્વ માટે જરુરી "
+#~ "છે દ્રારા સુધારે છે.</p>"
+
+#, fuzzy
+#~| msgid "Maximum number of instances kept &preloaded:"
+#~ msgid "&Maximum number of instances kept preloaded:"
+#~ msgstr "મહત્તમ સંખ્યામાં અસ્તિત્વ પહેલેથી લાવેલા: (&p)"
+
+#~ msgid ""
+#~ "Disables the minimization of memory usage and allows you to make each "
+#~ "browsing activity independent from the others"
+#~ msgstr ""
+#~ "મેમરીના વપરાશને ઘટાડનારને અક્ષમ કરે છે અને તમને દરેક બ્રાઉસીંગ કાર્ય એકબીજાથી જુદીજુદી "
+#~ "રીતે કરવાની પરવાનગી આપે છે"
+
+#~ msgid ""
+#~ "<p>With this option activated, only one instance of Konqueror used for "
+#~ "file browsing will exist in the memory of your computer at any moment, no "
+#~ "matter how many file browsing windows you open, thus reducing resource "
+#~ "requirements.</p><p>Be aware that this also means that, if something goes "
+#~ "wrong, all your file browsing windows will be closed simultaneously</p>"
+#~ msgstr ""
+#~ "<p>આ વિકલ્પ સક્રિય રાખીને, તમારા કોમપ્યુટરની મેમરીમાં કોઇપણ ક્ષણે માત્ર એક કોન્કર "
+#~ "ફાઇલ બ્રાઉસીંગ માટે અસ્તિત્વમાં હશે, જે તમે કેટલા ફાઇલ બ્રાઉસર વિન્ડો ખોલો તેના પર "
+#~ "આધાર રાખતો નથી, આમ તમે સ્ત્રોતની જરુરિયાત ઘટાડી શકો છો.</p><p>તેનુ ધ્યાન રાખો "
+#~ "તેનો એવો પણ અર્થ થાય છે કે, જો કંઈ ખોટુ થશે, તમારી બધી ફાઇલ બ્રાઉસીંગ વિન્ડો એકસાથે "
+#~ "બંધ થઇ જશે</p>"
+
+#~ msgid ""
+#~ "<p>With this option activated, only one instance of Konqueror will exist "
+#~ "in the memory of your computer at any moment, no matter how many browsing "
+#~ "windows you open, thus reducing resource requirements.</p><p>Be aware "
+#~ "that this also means that, if something goes wrong, all your browsing "
+#~ "windows will be closed simultaneously.</p>"
+#~ msgstr ""
+#~ "<p>આ વિકલ્પ સક્રિય રાખીને, તમારા કોમપ્યુટરની મેમરીમાં કોઇપણ ક્ષણે માત્ર એક કોન્કર "
+#~ "અસ્તિત્વમાં હશે, જે તમે કેટલા બ્રાઉસર વિન્ડો ખોલો તેના પર આધાર રાખતો નથી, આમ તમે "
+#~ "સ્ત્રોતની જરુરિયાત ઘટાડી શકો છો.</p><p>તેનુ ધ્યાન રાખો તેનો એવો પણ અર્થ થાય છે કે, "
+#~ "જો કંઈ ખોટુ થશે, તમારી બધી બ્રાઉસીંગ વિન્ડો એકસાથે બંધ થઇ જશે</p>"
+
+#~ msgid "Minimize Memory Usage"
+#~ msgstr "મેમરી વપરાશ ઘટાડો"
+
+#~ msgid "&Never"
+#~ msgstr "કયારેય નહિ (&N)"
+
+#~ msgid "For &file browsing only (recommended)"
+#~ msgstr "માત્ર ફાઈલ બ્રાઉસીંગ કરવા માટે (સૂચવેલ) (&f)"
+
+#~ msgid "Alwa&ys (use with care)"
+#~ msgstr "હંમેશા (કાળજીથી વાપરો) (&y)"

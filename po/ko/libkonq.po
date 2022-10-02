@@ -1,0 +1,217 @@
+# Translation of libkonq to Korean.
+# Copyright (C) 2001 Free Software Foundation, Inc.
+# Sae-keun Kim <segni@susekorea.net>, 2001.
+# Shinjo Park <kde@peremen.name>, 2007, 2008, 2009, 2010, 2011, 2012, 2020, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2021-05-30 19:29+0200\n"
+"Last-Translator: Shinjo Park <kde@peremen.name>\n"
+"Language-Team: Korean <kde-kr@kde.org>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 20.12.3\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "열기(&O)"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "새 폴더 만들기(&F)..."
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "복원(&R)"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr "원본 디렉터리 표시"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr "원본 파일 표시"
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "휴지통 비우기(&E)"
+
+#: src/konq_popupmenu.cpp:312
+#, kde-format
+msgid "&Configure Trash Bin"
+msgstr "휴지통 설정(&C)"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "페이지를 책갈피에 추가하기(&B)"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "위치를 책갈피에 추가(&B)"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "폴더를 책갈피에 추가(&B)"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "링크를 책갈피에 추가(&B)"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "파일을 책갈피에 추가(&B)"
+
+#: src/konq_popupmenu.cpp:379
+#, kde-format
+msgid "Preview In"
+msgstr "다음에서 미리 보기"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr "여기에서 터미널 열기"
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "속성(&P)"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy To"
+#~ msgstr "다음으로 복사하기"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "다음으로 이동하기"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "홈 폴더"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "루트 폴더"
+
+#~ msgctxt "@title:menu in Copy To or Move To submenu"
+#~ msgid "Browse..."
+#~ msgstr "찾아보기"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "여기로 복사하기"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "여기로 이동하기"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "디렉터리를 그 자신에게 떨어트릴 수 없습니다"
+
+#~ msgid "File name for dropped contents:"
+#~ msgstr "떨어트린 내용의 파일 이름:"
+
+#~ msgid "&Move Here"
+#~ msgstr "여기로 이동하기(&M)"
+
+#~ msgid "&Copy Here"
+#~ msgstr "여기로 복사하기(&C)"
+
+#~ msgid "&Link Here"
+#~ msgstr "여기로 연결하기(&L)"
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "배경 그림으로 설정(&W)"
+
+#~ msgid "C&ancel"
+#~ msgstr "취소(&A)"
+
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "디렉터리 만들기"
+
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "다른 이름을 입력하십시오"
+
+#~ msgid ""
+#~ "The name \"%1\" starts with a dot, so the directory will be hidden by "
+#~ "default."
+#~ msgstr ""
+#~ "이름 '%1\"이(가) 점으로 시작하므로 이 디렉터리는 기본적으로 숨겨집니다."
+
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "숨겨진 디렉터리를 만드시겠습니까?"
+
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "새 폴더"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "새 폴더"
+
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "폴더 이름을 입력하십시오:"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "한 폴더 붙여넣기"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One File"
+#~ msgstr "한 파일 붙여넣기"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Item"
+#~ msgid_plural "Paste %1 Items"
+#~ msgstr[0] "항목 %1개 붙여넣기"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste Clipboard Contents..."
+#~ msgstr "클립보드 내용 붙여넣기..."
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste"
+#~ msgstr "붙여넣기"
+
+#~ msgid ""
+#~ "Restores this file or directory, back to the location where it was "
+#~ "deleted from initially"
+#~ msgstr "이 파일이나 디렉터리를 지워지기 전 위치로 복원합니다"
+
+#~ msgid ""
+#~ "Opens a new file manager window showing the target of this link, in its "
+#~ "parent directory."
+#~ msgstr "이 링크가 가리키는 대상을 새 파일 관리자에서 엽니다"
+
+#~ msgid "Share"
+#~ msgstr "공유"
+
+#~ msgctxt "@info"
+#~ msgid "Close"
+#~ msgstr "닫기"
+
+#~ msgid "Close"
+#~ msgstr "닫기"
+
+#~ msgid "Error: %1"
+#~ msgstr "오류: %1"

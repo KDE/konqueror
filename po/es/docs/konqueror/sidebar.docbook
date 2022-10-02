@@ -1,0 +1,415 @@
+<chapter id="sidebar">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+> <firstname
+>Rocío</firstname
+> <surname
+>Gallego</surname
+> <affiliation
+><address
+><email
+>traducciones@rociogallego.com</email
+></address
+></affiliation
+> <contrib
+>Traductor</contrib
+> </othercredit
+><othercredit role="translator"
+> <firstname
+>Pablo</firstname
+> <surname
+>de Vicente</surname
+> <affiliation
+><address
+><email
+>pablo.devicente@gmail.com</email
+></address
+></affiliation
+> <contrib
+>Traductor</contrib
+> </othercredit
+> <othercredit role="translator"
+> <firstname
+>Marcos</firstname
+> <surname
+>Fouces Lago</surname
+> <affiliation
+><address
+><email
+>mfouces@yahoo.es</email
+></address
+></affiliation
+> <contrib
+>Traductor</contrib
+> </othercredit
+> 
+</authorgroup>
+
+<date
+>2011-11-22</date>
+<releaseinfo
+>&kde; 4.8</releaseinfo>
+</chapterinfo>
+
+<title
+>La barra lateral</title>
+
+<para
+>El panel lateral aparece como una vista aparte a la izquierda de la ventana de &konqueror;. Se puede invocar con <menuchoice
+><guimenu
+>Propiedades</guimenu
+><guimenuitem
+>Mostrar panel lateral</guimenuitem
+></menuchoice
+> y se puede conmutar con la tecla <keycap
+>F9</keycap
+>.</para>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="dirtree.png"/></imageobject>
+<textobject>
+<phrase
+>Con el panel lateral</phrase
+>  
+</textobject>
+</mediaobject>
+
+<para
+>Contiene una serie de páginas con pestañas. Pulse con el botón <mousebutton
+>izquierdo</mousebutton
+> del ratón sobre el icono de una pestaña para ver esa página. Al pulsar con el botón <mousebutton
+>izquierdo</mousebutton
+> del ratón sobre el icono de la página visible, el panel de navegación se contraerá, de modo que sólo serán visibles los iconos de las pestañas.</para>
+<variablelist>
+
+<varlistentry>
+<term
+><guilabel
+>Marcadores</guilabel
+></term>
+<listitem
+><para
+>Esta página muestra una vista de árbol de sus marcadores. Pulse con el botón <mousebutton
+>izquierdo</mousebutton
+> del ratón sobre un elemento para abrirlo en la vista principal.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Historial</guilabel
+></term>
+<listitem
+><para
+>Esta página muestra una vista de árbol de su historial de navegación. Al pulsar con el botón <mousebutton
+>izquierdo</mousebutton
+> del ratón sobre un elemento, este se abrirá en la vista principal; también puede abrirlo en una nueva ventana de &konqueror; pulsando con el botón <mousebutton
+>derecho </mousebutton
+> y seleccionando <guimenuitem
+>Abrir en una nueva ventana</guimenuitem
+> desde el menú emergente.</para>
+<para
+>Puede eliminar un elemento del historial pulsando con el botón <mousebutton
+>derecho</mousebutton
+> del ratón sobre él yseleccionando <guimenuitem
+>Eliminar entrada</guimenuitem
+>. Si selecciona <guimenuitem
+>Borrar historial</guimenuitem
+> borrará todo el historial.</para>
+<para
+>El menú emergente que se obtiene cuando pulsa con el botón <mousebutton
+>derecho</mousebutton
+> del ratón sobre cualquier entrada de la página de historial también le ofrece la opción de elegir si el historial se debe ordenar por nombre o por fecha.</para>
+<para
+>Si selecciona <guimenuitem
+>Preferencias...</guimenuitem
+> desde este menú emergente aparecerá el módulo de control de la  <guilabel
+>Barra lateral del historial</guilabel
+>. Esto se puede usar para establecer el máximo tamaño de su historial y establecer un tiempo después del cual los elementos son automáticamente eliminados. También puede configurar fuentes diferentes para &URL;s nuevas y antiguas. La casilla <guilabel
+>Sugerencias detalladas</guilabel
+> controla cuanta información se muestra cuando usted mantiene el cursor del ratón sobre un elemento de la página de historial.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Carpeta personal</guilabel
+></term>
+<listitem
+><para
+>Esta página muestra una vista de árbol de las subcarpetas de su carpeta personal. Tenga en cuenta que las carpetas «ocultas» (cuyos nombres comienzan por punto) no se muestran. Pulse con el botón <mousebutton
+>izquierdo</mousebutton
+> del ratón sobre un elemento para abrirlo en la vista principal o con el <mousebutton
+>derecho</mousebutton
+> para mostrar un menú emergente que le permita abrir la subcarpeta en una nueva ventana o en una nueva pestaña de la vista principal. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Red</guilabel
+></term>
+<listitem
+><para
+>Esta página pretende mostrar una vista en árbol de las conexiones de red importantes, aunque también puede incluir las carpetas locales. De nuevo, usted puede pulsar con el botón <mousebutton
+>izquierdo</mousebutton
+> del ratón sobre un elemento para abrirlo en la vista principal o con el <mousebutton
+>derecho</mousebutton
+> para abrir un menú con un abanico más grande de posibilidades.</para>
+<para
+>Las carpetas mostradas en la página <guilabel
+>Red</guilabel
+> se guardan en la carpeta <filename class="directory"
+> ~/.kde/share/apps/konqsidebartng/virtual_folders/remote/</filename
+>; aquí, puede crear nuevas carpetas como lo haría con cualquier otra subcarpeta. Los elementos deestas carpetas se guardan como archivos <literal role="extension"
+>.desktop</literal
+> y se pueden crear con la opción <menuchoice
+><guisubmenu
+>Crear nuevo</guisubmenu
+> <guimenuitem
+>Enlace a la dirección (URL)...</guimenuitem
+></menuchoice
+> del menú <guimenu
+>Editar</guimenu
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Carpeta raíz</guilabel
+></term>
+<listitem
+><para
+>La carpeta <guilabel
+>raíz</guilabel
+> tiene la ruta <filename class="directory"
+>/</filename
+> y es la carpeta base de su sistema local de archivos. Si expande la carpeta «raíz» se encontrará otra carpeta denominada <filename class="directory"
+>root</filename
+>. Esta pertenece al administrador de sistemas o superusuario y es su carpeta personal. También encontrará una carpeta denominada <filename class="directory"
+>home</filename
+>, en la que debería encontrar su propia «carpeta personal».</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Servicios</guilabel
+></term>
+<listitem
+><para
+>Esta página proporciona acceso rápido a los siguientes servicios: </para>
+<para
+><guilabel
+>Aplicaciones</guilabel
+>, <guilabel
+>Explorador del CD de audio</guilabel
+> y <guilabel
+>Tipos de letra</guilabel
+>.</para>
+<!-- not in 4.4
+<para
+><guilabel
+>Devices</guilabel
+>. This shows your hard disc 
+partitions, floppy and &CD-ROM;. <mousebutton
+>Left</mousebutton
+> click on 
+a device or partition name to mount it and display its contents in the main 
+view.  A mounted device or partition can be unmounted by <mousebutton
+>right
+</mousebutton
+> clicking on the device name and selecting <guimenuitem
+>Unmount
+</guimenuitem
+> from the pop up menu.
+</para>
+<para
+>The <guilabel
+>LAN Browser</guilabel
+> allows you to browse other 
+machines connected to your Local Area Network.</para>
+<para
+>The <guilabel
+>Print System Browser</guilabel
+> tree gives you quick 
+access to &kde;'s print manager <application
+>Kprinter</application
+>.</para>
+-->
+</listitem>
+</varlistentry>
+<!-- begin copy from dolphin docbook-->
+<varlistentry>
+<term
+><guilabel
+>Lugares</guilabel
+></term>
+<listitem
+><para
+>El panel de <guilabel
+>Lugares</guilabel
+> está situado a la izquiera de la ventana de manera predeterminada. El panel <guilabel
+>Lugares</guilabel
+> muestra cualquier ubicación que haya añadido a los marcadores. También muestra cualquier disco o medio conectado al equipo. </para>
+<para
+>La manera más sencilla de añadir una carpeta al panel <guilabel
+>Lugares</guilabel
+> es arrastrarla y soltarla en el panel. Además, puede hacer clic dentro del panel con el &RMB; del ratón y seleccionar <menuchoice
+><guimenuitem
+>Añadir entrada...</guimenuitem
+></menuchoice
+> en el menú de contexto. </para>
+</listitem>
+</varlistentry>
+<!-- end copy from dolphin docbook-->
+</variablelist>
+
+<para
+>The Sidebar configuration can be changed by <mousebutton
+>right </mousebutton
+> clicking on the empty area below the bottom tab icon or by <mousebutton
+>left</mousebutton
+> clicking on the <guilabel
+>Configuration Button</guilabel
+> icon, which is enabled in the context menu. Doing this brings up a menu with the following options:</para>
+<variablelist>
+
+<varlistentry>
+<term
+><guisubmenu
+>Añadir nuevo</guisubmenu
+></term>
+<listitem
+><para
+>This option lets you add a new tab page to the Sidebar. The new page can contain different Sidebar modules or a new <guimenuitem
+>Folder</guimenuitem
+> tree view. The last option in this submenu allows you to rollback to system default.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Vistas múltiples</guimenuitem
+></term>
+<listitem
+><para
+>Si selecciona esta opción, el panel lateral se divide en dos páginas con pestañas que se pueden ver simultáneamente.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Mostrar pestañas a la izquierda</guimenuitem
+>, <guimenuitem
+>Mostrar pestañas a la derecha</guimenuitem
+></term>
+<listitem
+><para
+>This option lets you choose whether the tab icons are shown at the left or right of the Sidebar.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Mostrar botón de configuración</guimenuitem
+></term>
+<listitem
+><para
+>Utilice esta opción para mostrar u ocultar el icono del <guilabel
+>Botón de configuración</guilabel
+>.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Si pulsa con el botón <mousebutton
+>derecho</mousebutton
+> sobre un icono de las pestañas aparecerá un menú con las siguientes opciones:</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guimenuitem
+>Cambiar nombre</guimenuitem
+></term>
+<listitem
+><para
+>Esta opción le permite cambiar el nombre de la página.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Configurar URL</guimenuitem
+></term>
+<listitem
+><para
+>Esta opción le permite cambiar la &URL; (ruta) de la carpeta que se ve en esa página.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Configurar icono</guimenuitem
+></term>
+<listitem
+><para
+>Para cambiar el icono de la pestaña.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Eliminar</guimenuitem
+></term>
+<listitem
+><para
+>To remove the tab page from the Sidebar.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Configurar la barra lateral</guimenuitem
+></term>
+<listitem
+><para
+>The last item shows the Sidebar configuration submenu as described above.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

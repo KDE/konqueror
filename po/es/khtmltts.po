@@ -1,0 +1,52 @@
+# translation of khtmlkttsd.po to Spanish
+# Translation of khtmlkttsd to Spanish
+# traducción de khtmlkttsd.po a Español
+#
+# Jaime Robles <jaime@kde.org>, 2004, 2005, 2008.
+# Jaime Robles <jaime@robles.nu>, 2005.
+# Santiago Fernandez Sancho <santi@kde-es.org>, 2006.
+# Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>, 2007.
+# Pablo de Vicente <pablo.devicente@gmail.com>, 2007.
+# Eloy Cuadra <ecuadra@eloihr.net>, 2010, 2011, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: khtmlkttsd\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2012-01-08 11:15+0100\n"
+"Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
+"Language-Team: Spanish <kde-l10n-es@kde.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: khtmltts.cpp:33
+#, kde-format
+msgid "&Speak Text"
+msgstr "&Leer texto"
+
+#. i18n: ectx: Menu (tools)
+#: khtmlttsplugin.rc:5
+#, kde-format
+msgid "&Tools"
+msgstr "Herramien&tas"
+
+#. i18n: ectx: ToolBar (speechToolbar)
+#: khtmlttsplugin.rc:10
+#, kde-format
+msgid "Speech Toolbar"
+msgstr "Barra de voz"
+
+#~ msgctxt "@title:window"
+#~ msgid "Starting Jovie Text-to-Speech Service Failed"
+#~ msgstr "El inicio del servicio de texto hablado Jovie ha fallado"
+
+#~ msgid "The D-Bus call say() failed."
+#~ msgstr "La llamada a say() de D-Bus falló."
+
+#~ msgctxt "@title:window"
+#~ msgid "D-Bus Call Failed"
+#~ msgstr "La llamada D-BUS ha fallado"

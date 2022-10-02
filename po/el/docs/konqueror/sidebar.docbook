@@ -1,0 +1,393 @@
+<chapter id="sidebar">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>Δημήτριος</firstname
+><surname
+>Γλενταδάκης</surname
+><affiliation
+><address
+><email
+>dglent@gmail.com</email
+></address
+></affiliation
+><contrib
+>Μεταφραστής</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2011-11-22</date>
+<releaseinfo
+>&kde; 4.8</releaseinfo>
+</chapterinfo>
+
+<title
+>Η πλευρική μπάρα</title>
+
+<para
+>Η πλευρική μπάρα εμφανίζεται ως ξεχωριστή προβολή στην αριστερή πλευρά του παραθύρου του &konqueror;. Μπορείτε να την καλέσετε από το μενού  <menuchoice
+><guimenu
+>Ρυθμίσεις</guimenu
+><guimenuitem
+> Εμφάνιση Πλευρική μπάρα</guimenuitem
+></menuchoice
+> ή να χρησιμοποιήσετε <keycap
+>F9</keycap
+> για εμφάνιση και απόκρυψη.</para>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="dirtree.png"/></imageobject>
+<textobject>
+<phrase
+>Με την πλευρική μπάρα</phrase
+>  
+</textobject>
+</mediaobject>
+
+<para
+>Περιέχει έναν αριθμό σελίδων σε καρτέλες. Με <mousebutton
+>αριστερό</mousebutton
+> κλικ στο εικονίδιο μιας καρτέλας μπορείτε να δείτε το περιεχόμενό της. Με <mousebutton
+>αριστερό</mousebutton
+> κλικ στο εικονίδιο της προβαλλόμενης σελίδας συμπτύσσει την πλευρική μπάρα ώστε να είναι ορατά μόνο τα εικονίδια των καρτελών.</para>
+<variablelist>
+
+<varlistentry>
+<term
+><guilabel
+>Σελιδοδείκτες</guilabel
+></term>
+<listitem
+><para
+>Αυτή η σελίδα εμφανίζει τους σελιδοδείκτες σας σε προβολή δέντρου. Με <mousebutton
+>αριστερό</mousebutton
+> κλικ σε ένα αντικείμενο το ανοίγετε στη βασική προβολή.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Ιστορικό</guilabel
+></term>
+<listitem
+><para
+>Αυτή η σελίδα εμφανίζει μια προβολή δέντρου του ιστορικού της περιήγησής σας. Με <mousebutton
+>αριστερό</mousebutton
+> κλικ σε ένα αντικείμενο το ανοίγετε στη βασική προβολή, ή μπορείτε να το ανοίξετε σε ένα νέο παράθυρο του &konqueror; με <mousebutton
+>δεξί</mousebutton
+> κλικ και επιλέγοντας <guimenuitem
+>Άνοιγμα σε νέο παράθυρο</guimenuitem
+> από το αναδυόμενο μενού.</para>
+<para
+>Μπορείτε να αφαιρέσετε ένα αντικείμενο από το ιστορικό με <mousebutton
+>δεξί</mousebutton
+> κλικ σε αυτό και επιλέγοντας <guimenuitem
+>Αφαίρεση καταχώρησης</guimenuitem
+>. Επιλέγοντας <guimenuitem
+>Καθαρισμός ιστορικού</guimenuitem
+> θα διαγράψετε ολόκληρο το ιστορικό.</para>
+<para
+>Το αναδυόμενο μενού που εμφανίζεται με <mousebutton
+>δεξί</mousebutton
+> κλικ σε μια καταχώρηση στη σελίδα του ιστορικού σας δίνει επίσης την επιλογή να επιλέξετε αν θα γίνεται ταξινόμηση ολόκληρου του ιστορικού ανά όνομα ή ανά ημερομηνία.</para>
+<para
+>Επιλέγοντας <guimenuitem
+>Προτιμήσεις...</guimenuitem
+> από το αναδυόμενο μενού εμφανίζεται το άρθρωμα ελέγχου της <guilabel
+>Πλευρικής μπάρας ιστορικού</guilabel
+>. Αυτό το άρθρωμα μπορεί να χρησιμοποιηθεί για να ρυθμίσετε το μέγιστο μέγεθος του ιστορικού και τη ρύθμιση μιας ώρας μετά της οποίας τα αντικείμενα θα αφαιρούνται αυτόματα. Μπορείτε επίσης να ορίσετε διαφορετικές γραμματοσειρές για νέα και παλιά &URL;. Το πλαίσιο ελέγχου <guilabel
+>Λεπτομερείς υποδείξεις</guilabel
+> ελέγχει το πλήθος των εμφανιζόμενων πληροφοριών όταν περνάτε το ποντίκι πάνω από ένα αντικείμενο στη σελίδα ιστορικού.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Προσωπικός φάκελος</guilabel
+></term>
+<listitem
+><para
+>Αυτή η σελίδα εμφανίζει μια προβολή δέντρου των υποφακέλων στον προσωπικό σας φάκελο. Σημειώστε πως δεν εμφανίζονται οι <quote
+>κρυφοί</quote
+> φάκελοι (αυτοί των οποίων το όνομα αρχίζει με μια τελεία). Με <mousebutton
+>αριστερό</mousebutton
+> κλικ σε ένα αντικείμενο μπορείτε να το ανοίξετε στο βασικό παράθυρο, ή πατήστε <mousebutton
+>δεξί</mousebutton
+> κλικ για να εμφανιστεί ένα αναδυόμενο μενού το οποίο σας επιτρέπει να ανοίξετε τον υποφάκελο σε ένα νέο παράθυρο, ή ως νέα σελίδα καρτέλας στη βασική προβολή. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Δίκτυο</guilabel
+></term>
+<listitem
+><para
+>Αυτή η σελίδα έχει σκοπό να εμφανίζει μια προβολή δέντρου των σημαντικών σας δικτυακών συνδέσεων, αν και μπορούν να συμπεριληφθούν επίσης και τοπικοί φάκελοι. Και εδώ, με <mousebutton
+>αριστερό</mousebutton
+> κλικ σε ένα αντικείμενο μπορείτε να το ανοίξετε στη βασική προβολή ή πατήστε  <mousebutton
+>δεξί</mousebutton
+>κλικ για να εμφανιστεί ένα μενού με ένα ευρύτερο φάσμα δυνατοτήτων. </para>
+<para
+>Οι φάκελοι που εμφανίζονται στη σελίδα <guilabel
+>Δίκτυο</guilabel
+> βρίσκονται στο φάκελο <filename class="directory"
+>~/.kde/share/apps/konqsidebartng/virtual_folders/remote/</filename
+>, και μπορείτε να δημιουργήσετε νέους όπως ακριβώς θα κάνατε με άλλους υποφακέλους. Τα αντικείμενα σε αυτούς τους φακέλους διατηρούνται ως αρχεία <literal role="extension"
+>.desktop</literal
+> και μπορούν να δημιουργηθούν στον &konqueror; από την επιλογή <menuchoice
+><guisubmenu
+>Δημιουργία νέου</guisubmenu
+> <guimenuitem
+>Σύνδεσμος σε τοποθεσία (URL)...</guimenuitem
+></menuchoice
+> στο μενού <guimenu
+>Επεξεργασία</guimenu
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Ριζικός φάκελος</guilabel
+></term>
+<listitem
+><para
+>Το δέντρο <guilabel
+>Ριζικός φάκελος</guilabel
+> έχει τη διαδρομή <filename class="directory"
+>/</filename
+>, και είναι ο βασικός φάκελος του τοπικού σας συστήματος αρχείων. Αν αναπτύξετε τον <quote
+>Ριζικό</quote
+> (Root) φάκελο θα βρείτε έναν φάκελο με την ονομασία <filename class="directory"
+>root</filename
+>. Αυτός ανήκει στο διαχειριστή του συστήματος ή τον Υπερχρήστη και είναι ο προσωπικός του φάκελος. Θα βρείτε επίσης ένα φάκελο με την ονομασία <filename class="directory"
+>home</filename
+>, στον οποίο θα πρέπει να έχετε τη δυνατότητα να βρείτε τον <quote
+>Προσωπικός φάκελος</quote
+> ξανά.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Υπηρεσίες</guilabel
+></term>
+<listitem
+><para
+>Αυτή η σελίδα παρέχει γρήγορη πρόσβαση στις ακόλουθες υπηρεσίες: </para>
+<para
+><guilabel
+>Εφαρμογές</guilabel
+>, <guilabel
+>Περιηγητής CD μουσικής</guilabel
+> και <guilabel
+>Γραμματοσειρές</guilabel
+>.</para>
+<!-- not in 4.4
+<para
+><guilabel
+>Devices</guilabel
+>. This shows your hard disc 
+partitions, floppy and &CD-ROM;. <mousebutton
+>Left</mousebutton
+> click on 
+a device or partition name to mount it and display its contents in the main 
+view.  A mounted device or partition can be unmounted by <mousebutton
+>right
+</mousebutton
+> clicking on the device name and selecting <guimenuitem
+>Unmount
+</guimenuitem
+> from the pop up menu.
+</para>
+<para
+>The <guilabel
+>LAN Browser</guilabel
+> allows you to browse other 
+machines connected to your Local Area Network.</para>
+<para
+>The <guilabel
+>Print System Browser</guilabel
+> tree gives you quick 
+access to &kde;'s print manager <application
+>Kprinter</application
+>.</para>
+-->
+</listitem>
+</varlistentry>
+<!-- begin copy from dolphin docbook-->
+<varlistentry>
+<term
+><guilabel
+>Τοποθεσίες</guilabel
+></term>
+<listitem
+><para
+>Ο πίνακας <guilabel
+>Τοποθεσίες</guilabel
+> βρίσκεται στα αριστερά του παραθύρου από προεπιλογή. Ο πίνακας <guilabel
+>Τοποθεσίες</guilabel
+> εμφανίζει όλες τις τοποθεσίες που έχετε στους σελιδοδείκτες. Εμφανίζει επίσης όλα τα μέσα ή τους δίσκους που έχουν συνδεθεί στον υπολογιστή. </para>
+<para
+>Ο ευκολότερος τρόπος για να προσθέσετε ένα φάκελο στον πίνακα <guilabel
+>Τοποθεσίες</guilabel
+> είναι με μεταφορά και απόθεση στον πίνακα. Επιπλέον, μπορείτε να κάνετε κλικ στον πίνακα με το &RMB; και να επιλέξετε <menuchoice
+><guimenuitem
+>Προσθήκη καταχώρησης...</guimenuitem
+></menuchoice
+> από το σχετικό μενού. </para>
+</listitem>
+</varlistentry>
+<!-- end copy from dolphin docbook-->
+</variablelist>
+
+<para
+>Μπορείτε να αλλάξετε τις ρυθμίσεις της πλευρικής μπάρας πατώντας <mousebutton
+>δεξί</mousebutton
+> κλικ σε μια κενή περιοχή κάτω από το τελευταίο εικονίδιο καρτέλας ή πατώντας <mousebutton
+>αριστερό</mousebutton
+> κλικ στο εικονίδιο <guilabel
+>Κουμπί ρύθμισης</guilabel
+>, το οποίο μπορείτε να ενεργοποιήσετε από το σχετικό μενού. Κάνοντας αυτό εμφανίζεται ένα μενού με τις ακόλουθες επιλογές:</para>
+<variablelist>
+
+<varlistentry>
+<term
+><guisubmenu
+>Προσθήκη νέου</guisubmenu
+></term>
+<listitem
+><para
+>Αυτή η επιλογή σας επιτρέπει να προσθέσετε μια νέα σελίδα καρτέλας στην πλευρική μπάρα. Η νέα σελίδα μπορεί να περιέχει διάφορα αθηρώματα της πλευρικής μπάρας ή μια νέα προβολή δέντρου <guimenuitem
+>Φάκελος</guimenuitem
+>. Η τελευταία επιλογή σε αυτό το υπομενού σας επιτρέπει την επαναφορά στο προκαθορισμένο του συστήματος.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Πολλαπλές προβολές</guimenuitem
+></term>
+<listitem
+><para
+>Με αυτή την επιλογή γίνεται διαχωρισμός της πλευρικής μπάρας ώστε οι σελίδες καρτελών να μπορούν να εμφανιστούν ταυτόχρονα.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Εμφάνιση καρτελών αριστερά</guimenuitem
+>, <guimenuitem
+>Εμφάνιση καρτελών δεξιά</guimenuitem
+></term>
+<listitem
+><para
+>Αυτή η επιλογή σας δίνει τη δυνατότητα να επιλέγετε αν τα εικονίδια των καρτελών θα εμφανίζονται στα αριστερά ή δεξιά της πλευρικής μπάρας.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Εμφάνιση κουμπιού ρύθμισης</guimenuitem
+></term>
+<listitem
+><para
+>Χρησιμοποιήστε αυτή την επιλογή για την εμφάνιση ή την απόκρυψη του εικονιδίου <guilabel
+>Κουμπί ρύθμισης</guilabel
+>.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Με <mousebutton
+>δεξί</mousebutton
+> κλικ στο εικονίδιο μιας καρτέλας εμφανίζεται ένα μενού με τις ακόλουθες επιλογές:</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guimenuitem
+>Καθορισμός ονόματος</guimenuitem
+></term>
+<listitem
+><para
+>Αυτή η επιλογή σας επιτρέπει να αλλάξετε το όνομα αυτής της σελίδας.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Ορισμός URL</guimenuitem
+></term>
+<listitem
+><para
+>Αυτή η επιλογή σας επιτρέπει να αλλάξετε το &URL; (διαδρομή) του φακέλου που προβάλλεται σ' αυτή τη σελίδα.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Ορισμός εικονιδίου</guimenuitem
+></term>
+<listitem
+><para
+>Για να αλλάξετε το εικονίδιο της καρτέλας.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Αφαίρεση</guimenuitem
+></term>
+<listitem
+><para
+>Για να αφαιρέσετε τη σελίδα καρτέλας από την πλευρική μπάρα.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Ρυθμίστε την πλευρική μπάρα.</guimenuitem
+></term>
+<listitem
+><para
+>Το τελευταίο αντικείμενο εμφανίζει ένα υπομενού ρυθμίσεων της πλευρικής μπάρας όπως περιγράφεται παραπάνω.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

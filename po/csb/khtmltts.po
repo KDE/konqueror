@@ -1,0 +1,58 @@
+# translation of khtmlkttsd.po to Kaszëbsczi
+# translation of khtmlkttsd.po to
+#
+# Michôł Òstrowsczi <michol@linuxcsb.org>, 2006, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: khtmlkttsd\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2008-04-13 08:54+0200\n"
+"Last-Translator: Michôł Òstrowsczi <michol@linuxcsb.org>\n"
+"Language-Team: Kaszëbsczi\n"
+"Language: csb\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2)\n"
+
+#: khtmltts.cpp:33
+#, kde-format
+msgid "&Speak Text"
+msgstr "&Gôdóny tekst"
+
+#. i18n: ectx: Menu (tools)
+#: khtmlttsplugin.rc:5
+#, kde-format
+msgid "&Tools"
+msgstr "&Nôrzãdza"
+
+#. i18n: ectx: ToolBar (speechToolbar)
+#: khtmlttsplugin.rc:10
+#, kde-format
+msgid "Speech Toolbar"
+msgstr "Lëstwa nôrzãdzów gôdaniô"
+
+#~ msgid "The D-Bus call say() failed."
+#~ msgstr "Wëwòłanié D-Bus say() nie darzëło sã."
+
+#, fuzzy
+#~| msgid "D-Bus Call Failed"
+#~ msgctxt "@title:window"
+#~ msgid "D-Bus Call Failed"
+#~ msgstr "Wëwòłanié D-Bus nie darzëło sã"
+
+#~ msgid "Starting KTTSD Failed"
+#~ msgstr "Zrëszanié KTTSC nie darzëło sã"
+
+#, fuzzy
+#~| msgid "You cannot read anything except web pages with this plugin, sorry."
+#~ msgid "You cannot read anything except web pages with this plugin."
+#~ msgstr "Z tim pluginsã mòże czëtac blós starnë www."
+
+#, fuzzy
+#~| msgid "Cannot Read source"
+#~ msgid "Cannot Read Source"
+#~ msgstr "Nie mòże czëtac ze zdroju"

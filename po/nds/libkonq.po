@@ -1,0 +1,330 @@
+# Translation of libkonq.po to Low Saxon
+# Copyright (C) 2004, 2005, 2006, 2007, 2008 Free Software Foundation, Inc.
+# Heiko Evermann <heiko@evermann.de>, 2004.
+# Volker Jockheck <volkae@gmx.net>, 2004.
+# Sönke Dibbern <s_dibbern@web.de>, 2004, 2005, 2006, 2007, 2008, 2009.
+# SD <s_dibbern@web.de>, 2005.
+# Manfred Wiese <m.j.wiese@web.de>, 2008, 2009, 2010, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2011-09-04 13:45+0200\n"
+"Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
+"Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
+"Language: nds\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "&Opmaken"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "&Orner opstellen..."
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "Wedde&rherstellen"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr "Orginaalorner wiesen"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr "Orginaaldatei wiesen"
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "Affall&tünn leddig maken"
+
+#: src/konq_popupmenu.cpp:312
+#, kde-format
+msgid "&Configure Trash Bin"
+msgstr "Affalltünn &instellen"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "Disse &Siet de Leestekens tofögen"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "Dissen &Oort de Leestekens tofögen"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "Dissen Orner de &Leestekens tofögen"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "Dissen Link de &Leestekens tofögen"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "Disse Datei de &Leestekens tofögen"
+
+#: src/konq_popupmenu.cpp:379
+#, kde-format
+msgid "Preview In"
+msgstr "Vöransicht binnen"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "Egenscha&ppen"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy To"
+#~ msgstr "Koperen na"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "Verschuven na"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "Tohuusorner"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "Wörtelorner"
+
+#~ msgctxt "@title:menu in Copy To or Move To submenu"
+#~ msgid "Browse..."
+#~ msgstr "Utsöken..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "Hierhen koperen"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "Hierhen verschuven"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "Du kannst en Orner nich na sik sülven verschuven"
+
+#~ msgid "File name for dropped contents:"
+#~ msgstr "Dateinaam för droppt Inholden:"
+
+#~ msgid "&Move Here"
+#~ msgstr "Hierhen &verschuven"
+
+#~ msgid "&Copy Here"
+#~ msgstr "Hierhen &koperen"
+
+#~ msgid "&Link Here"
+#~ msgstr "Hierhen en &Link maken"
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "As &Achtergrund fastleggen"
+
+#~ msgid "C&ancel"
+#~ msgstr "&Afbreken"
+
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "Orner opstellen"
+
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "En anner Naam ingeven"
+
+#~ msgid ""
+#~ "The name \"%1\" starts with a dot, so the directory will be hidden by "
+#~ "default."
+#~ msgstr ""
+#~ "De Naam \"%1\" fangt mit en Punkt an, de Orner warrt standardwies also "
+#~ "versteken."
+
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "Versteken Orner opstellen?"
+
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "Nieg Orner"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "Nieg Orner"
+
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "Ornernaam ingeven:"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "Een Orner infögen"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One File"
+#~ msgstr "Een Datei infögen"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Item"
+#~ msgid_plural "Paste %1 Items"
+#~ msgstr[0] "Een Element infögen"
+#~ msgstr[1] "%1 Elementen infögen"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste Clipboard Contents..."
+#~ msgstr "Twischenaflaag-Inholt infögen..."
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste"
+#~ msgstr "Infögen"
+
+#~ msgid ""
+#~ "Restores this file or directory, back to the location where it was "
+#~ "deleted from initially"
+#~ msgstr ""
+#~ "Disse Datei/dissen Ornern an de Steed wedderherstellen, woneem se/he "
+#~ "vördem weer"
+
+#~ msgid ""
+#~ "Opens a new file manager window showing the target of this link, in its "
+#~ "parent directory."
+#~ msgstr ""
+#~ "Maakt en nieg Dateipleger-Finster mit dat Linkteel sien Böverorner op"
+
+#~ msgid "Share"
+#~ msgstr "Freegeven"
+
+#~ msgctxt "@info"
+#~ msgid "Close"
+#~ msgstr "Tomaken"
+
+#~ msgid "Close"
+#~ msgstr "Tomaken"
+
+#~ msgid "Error: %1"
+#~ msgstr "Fehler: %1"
+
+#~ msgid "Create New"
+#~ msgstr "Nieg opstellen"
+
+#~ msgid "Link to Device"
+#~ msgstr "Link na Reedschap"
+
+#~ msgid "<qt>The template file <b>%1</b> does not exist.</qt>"
+#~ msgstr "<qt>Dat gifft de Vörlaag <b>%1</b> nich.</qt>"
+
+#~ msgid "File name:"
+#~ msgstr "Dateinaam:"
+
+#~ msgid ""
+#~ "Basic links can only point to local files or directories.\n"
+#~ "Please use \"Link to Location\" for remote URLs."
+#~ msgstr ""
+#~ "Eenfach Links köönt bloots op lokaal Dateien oder Ornern wiesen.\n"
+#~ "Bruuk bitte \"Link op feern Steed\" bi feern URLs."
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Actions"
+#~ msgstr "&Akschonen"
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With"
+#~ msgstr "&Opmaken mit"
+
+#~ msgctxt "@action:inmenu Open With"
+#~ msgid "&Other..."
+#~ msgstr "&Annere..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With..."
+#~ msgstr "&Opmaken mit..."
+
+#~ msgid "Open &with %1"
+#~ msgstr "&Mit %1 opmaken"
+
+#~ msgid "Open in New &Window"
+#~ msgstr "In'n nieg &Finster opmaken"
+
+#~ msgid "Open the trash in a new window"
+#~ msgstr "De Affalltünn in'n nieg Finster opmaken"
+
+#~ msgid "Open the medium in a new window"
+#~ msgstr "Dat Medium in'n nieg Finster opmaken"
+
+#~ msgid "Open the document in a new window"
+#~ msgstr "Dat Dokment in'n nieg Finster opmaken"
+
+#~ msgid "Directory"
+#~ msgstr "Orner"
+
+#~ msgid "Moving"
+#~ msgstr "Bi to verschuven"
+
+#~ msgid "Source"
+#~ msgstr "Born"
+
+#~ msgid "Destination"
+#~ msgstr "Teel"
+
+#~ msgid "Deleting"
+#~ msgstr "Bi to wegdoon"
+
+#~ msgid "File"
+#~ msgstr "Datei"
+
+#~ msgid "Und&o"
+#~ msgstr "T&orüchnehmen"
+
+#~ msgid "Und&o: Copy"
+#~ msgstr "T&orüchnehmen: Koperen"
+
+#~ msgid "Und&o: Link"
+#~ msgstr "T&orüchnehmen: Link"
+
+#~ msgid "Und&o: Move"
+#~ msgstr "T&orüchnehmen: Verschuven"
+
+#~ msgid "Und&o: Rename"
+#~ msgstr "T&orüchnehmen: Ümnömen"
+
+#~ msgid "Und&o: Trash"
+#~ msgstr "T&orüchnehmen: Wegsmieten"
+
+#~ msgid "Und&o: Create Folder"
+#~ msgstr "T&orüchnehmen: Orner opstellen"
+
+#~ msgid ""
+#~ "The file %1 was copied from %2, but since then it has apparently been "
+#~ "modified at %3.\n"
+#~ "Undoing the copy will delete the file, and all modifications will be "
+#~ "lost.\n"
+#~ "Are you sure you want to delete %4?"
+#~ msgstr ""
+#~ "Du hest de Datei \"%1\" vun \"%2\" kopeert, man as't lett wöör se in de "
+#~ "Twischentiet Klock %3 ännert.\n"
+#~ "Nimmst Du dat Koperen torüch, warrt de Datei wegdaan - all Ännern warrt "
+#~ "wegsmeten.\n"
+#~ "Wullt Du \"%4\" redig wegdoon?"
+
+#~ msgid "Undo File Copy Confirmation"
+#~ msgstr "Torüchnehmen vun't Koperen beglöven"

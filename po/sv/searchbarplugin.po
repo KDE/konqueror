@@ -1,0 +1,91 @@
+# translation of searchbarplugin.po to Swedish
+# Copyright (C) 2004, 2005, 2006, 2007, 2009 Free Software Foundation, Inc.
+#
+# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2004, 2005, 2006, 2007, 2009.
+# Stefan Asserhall <stefan.asserhall@bredband.net>, 2010, 2012, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: searchbarplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-25 00:45+0000\n"
+"PO-Revision-Date: 2022-08-03 10:11+0200\n"
+"Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 20.08.1\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: searchbar.cpp:65
+#, kde-format
+msgid ""
+"Search Bar<p>Enter a search term. Click on the icon to change search mode or "
+"provider.</p>"
+msgstr ""
+"Sökrad<p>Skriv in ett sökbegrepp. Klicka på ikonen för att ändra sökläge "
+"eller söktjänst.</p>"
+
+#: searchbar.cpp:70
+#, kde-format
+msgid "Search Bar"
+msgstr "Sökrad"
+
+#: searchbar.cpp:75
+#, kde-format
+msgid "Focus Searchbar"
+msgstr "Fokusera sökrad"
+
+#: searchbar.cpp:267
+#, kde-format
+msgid "Find in Page..."
+msgstr "Sök på sidan..."
+
+#: searchbar.cpp:287
+#, kde-format
+msgid "Find in This Page"
+msgstr "Sök på denna sida"
+
+#: searchbar.cpp:299
+#, kde-format
+msgid "Select Search Engines..."
+msgstr "Välj söktjänster..."
+
+#: searchbar.cpp:318
+#, kde-format
+msgid "Add %1..."
+msgstr "Lägg till %1..."
+
+#. i18n: ectx: ToolBar (locationToolBar)
+#: searchbarplugin.rc:3
+#, kde-format
+msgid "Search Toolbar"
+msgstr "Sökverktygsrad"
+
+#: WebShortcutWidget.cpp:33
+#, kde-format
+msgid "Set Uri Shortcuts"
+msgstr "Ange genvägar för webbadresser"
+
+#: WebShortcutWidget.cpp:47
+#, kde-format
+msgid "Name:"
+msgstr "Namn:"
+
+#: WebShortcutWidget.cpp:51
+#, kde-format
+msgid "Shortcuts:"
+msgstr "Genvägar:"
+
+#~ msgid "Enable Suggestion"
+#~ msgstr "Aktivera förslag"
+
+#~ msgid "Cancel"
+#~ msgstr "Avbryt"
+
+#~ msgid "OK"
+#~ msgstr "Ok"
+
+#~ msgid "Ok"
+#~ msgstr "Ok"

@@ -1,0 +1,173 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Portuguese "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="khtml-java-js" lang="&language;">
+<articleinfo>
+<title
+>Java e JavaScript</title>
+<authorgroup>
+<author
+>&Krishna.Tateneni; &Krishna.Tateneni.mail;</author>
+<othercredit role="translator"
+><firstname
+>José</firstname
+><surname
+>Pires</surname
+><affiliation
+><address
+><email
+>zepires@gmail.com</email
+></address
+></affiliation
+><contrib
+>Tradução</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2016-11-08</date>
+<releaseinfo
+>Aplicações 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Systemsettings</keyword>
+<keyword
+>konqueror</keyword>
+<keyword
+>navegação</keyword>
+<keyword
+>Java</keyword>
+<keyword
+>JavaScript</keyword>
+</keywordset>
+
+</articleinfo>
+<sect1 id="konq-browsing">
+<title
+>&Java; e JavaScript</title>
+
+<sect2 id="kbrowse-java">
+<title
+>&Java;</title>
+
+<para
+>O &Java; permite às aplicações serem transferidas e executadas por um navegador Web, desde que você tenha o 'software' necessário na sua máquina. Muitos sítios Web utilizam o &Java; (por exemplo, os serviços de banca ou os sítios de jogos interactivos). Deve-se lembrar que os programas executados a partir de fontes desconhecidas podem ameaçar a segurança do seu computador, mesmo que a extensão da ameaça não seja grande.</para>
+
+<para
+>A opção <guilabel
+>Activar o Java globalmente</guilabel
+> permite-lhe activar o suporte de &Java; para todos os sítios por omissão. Também poderá seleccionar a activação do &Java; para máquinas específicas. Para adicionar uma política para uma máquina específica, carregue no botão <guilabel
+>Nova...</guilabel
+> para fazer aparecer uma janela, na qual poderá indicar o nome da máquina e escolher se aceita ou rejeita o código de &Java; dessa máquina em particular, adicionando no final o domínio à lista da esquerda.</para>
+
+<para
+>Poderá seleccionar uma máquina na lista e carregar no botão <guilabel
+>Alterar...</guilabel
+> para escolher uma política diferente para essa máquina. Se carregar no botão <guilabel
+>Apagar</guilabel
+> irá remover a política para a máquina seleccionada; depois de removida, passará a ser aplicada a política global para essa máquina.</para>
+
+<para
+>Finalmente, o grupo de controlos denominado <guilabel
+>Configuração do Ambiente de Execução do Java</guilabel
+> permite ao utilizador definir algumas opções para definir como o &Java; deve correr.</para>
+
+<para
+>A opção <guilabel
+>Usar um gestor de segurança</guilabel
+> está normalmente activa por omissão. Esta opção fará com que a máquina virtual de Java se execute com um Gestor de Segurança activo. Isto irá evitar que as 'applets' sejam capazes de ler ou escrever no seu sistema de ficheiros, criem 'sockets' arbitrários ou outras acções que possam comprometer o seu sistema. Desactive esta opção por sua conta e risco. Você pode alterar o seu ficheiro <filename
+>$<envar
+>HOME</envar
+>/.java.policy</filename
+> com o utilitário do &Java; 'policytool' para dar ao código obtido de certos sítios mais algumas permissões.</para>
+
+<para
+>A opção 0<guilabel
+>Usar o KIO</guilabel
+> irá fazer com que a <acronym
+>JVM</acronym
+> use os próprios transportes de <acronym
+>KIO</acronym
+> do &kde; para as ligações à rede.</para>
+
+<para
+>A opção <guilabel
+>Desligar servidor de 'applets' se inactivo por mais de</guilabel
+> permite-lhe poupar recursos, terminando o Servidor de 'Applets' do &Java; quando não estiver a ser usado, em vez de o deixar a correr em segundo plano. Se ficar desligada, as 'applets' poderão arrancar mais depressa, mas continuará a usar recursos do sistema mesmo quando não estiver a usar uma 'applet' de &Java;. Se activar a opção, poderá definir um tempo-limite.</para>
+
+<para
+>Poderá optar se deseja que o &konqueror; detecte automaticamente a instalação de &Java; no seu sistema ou se irá indicar você próprio a localização da instalação, seleccionando a opção <guilabel
+>Localização do executável do Java ou 'java'</guilabel
+>. Poderá querer escolher o último método, por exemplo, se tiver várias instalações de &Java; no seu sistema e deseja especificar qual delas irá usar. Se a Máquina Virtual de &Java; que usa necessitar de alguns parâmetros-extra iniciais, podê-los-á escrever no campo de texto <guilabel
+>Argumentos adicionais do Java</guilabel
+>.</para>
+
+</sect2>
+
+<sect2 id="kbrowse-javascript">
+<title
+>JavaScript</title>
+
+<para
+>Apesar do nome, o JavaScript não está relacionado de modo algum com o &Java;.</para>
+
+<para
+>A primeira parte desta página funciona da mesma forma que as configurações da página de &Java;.</para>
+
+<para
+>A opção de <guilabel
+>Activar o JavaScript globalmente</guilabel
+> permite ao utilizador activar o suporte de JavaScript para todos os sítios por omissão. Também poderá seleccionar a activação do JavaScript para máquinas específicas. Para você adicionar uma política para uma máquina específica, carregue no botão <guilabel
+>Nova...</guilabel
+> para fazer aparecer uma janela, na qual poderá indicar o nome da máquina e escolher se aceita ou rejeita o código de JavaScript dessa máquina em particular, adicionando no fim o domínio à lista da esquerda.</para>
+
+<para
+>Poderá seleccionar uma máquina na lista e carregar no botão <guilabel
+>Alterar...</guilabel
+> para escolher uma política diferente para essa máquina. Se carregar no botão <guilabel
+>Apagar</guilabel
+> irá remover a política para a máquina seleccionada; depois de removida, passará a ser aplicada a política global para essa máquina.</para>
+<!-- missing section Debugging
+Enable debugger Enables builtin JavaScript debugger.
+Report errors Enables the reporting of errors that occur when JavaScript code is executed.
+How are errors reported? popup window? icon in status bar?
+-->
+<para
+>O conjunto final de opções, na secção <guilabel
+>Políticas Globais de JavaScript</guilabel
+>, determina o que acontece quando uma página usa o JavaScript para algumas acções específicas.</para>
+
+<para
+>Você pode activar ou desactivar a capacidade do JavaScript manipular as suas janelas ao movê-las, redimensioná-las ou ao mudar a janela em primeiro plano. Também pode impedir que o JavaScript altere o texto da barra de estado, para que possa sempre ver para onde as ligações o levam quando você carrega nelas. As alternativas para estas opções são a <guilabel
+>Permitir</guilabel
+> ou a <guilabel
+>Ignorar</guilabel
+>.</para>
+
+<para
+>Para abrir uma nova janela, existe ainda mais controlos. Você pode indicar ao &konqueror; para <guilabel
+>Permitir</guilabel
+> todos os pedidos, <guilabel
+>Perguntar</guilabel
+> cada vez que é feito um pedido ou <guilabel
+>Recusar</guilabel
+> todos os pedidos.</para>
+
+<para
+>A opção <guilabel
+>Inteligente</guilabel
+> permitirá apenas as janelas de JavaScript, quando escolheu explicitamente uma ligação que cria uma.</para>
+</sect2>
+
+</sect1>
+
+</article>

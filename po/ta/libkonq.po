@@ -1,0 +1,376 @@
+# translation of libkonq.po to 
+# translation of libkonq.po to
+# translation of libkonq.po to
+# translation of libkonq.po to Tamil
+# Copyright (C) 2004 Free Software Foundation, Inc.
+#  FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Vasee Vaseeharan <vasee@ieee.org>, 2004.
+# Ambalam <tamilpc@ambalam.com>, 2004.
+# root <root@localhost.localdomain>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2005-03-15 03:02-0800\n"
+"Last-Translator: Tamil PC <tamilpc@ambalam.com>\n"
+"Language-Team:  <ta@li.org>\n"
+"Language: ta\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "&திற"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "ஆவணத்தை &உருவாக்கு..."
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "&மீட்டெடு"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "&குப்பைத் தொட்டியைக் காலியாக்கு"
+
+#: src/konq_popupmenu.cpp:312
+#, fuzzy, kde-format
+#| msgid "&Empty Trash Bin"
+msgid "&Configure Trash Bin"
+msgstr "&குப்பைத் தொட்டியைக் காலியாக்கு"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "&இந்த பக்கத்திற்கு புத்தகக் குறியிடவும்"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "&இந்த இடத்திற்கு புத்தக குறியிடவும்"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "&இந்த ஆவணத்திற்கு புத்தகக் குறியிடவும்"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "&இந்த இணைப்பிற்கு புத்தக குறியிடவும்"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "&இந்த கோப்பிற்கு புத்தகக் குறியிடவும்"
+
+#: src/konq_popupmenu.cpp:379
+#, fuzzy, kde-format
+#| msgid "Preview"
+msgid "Preview In"
+msgstr "முன்காட்சி"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "&பண்புகள்"
+
+#, fuzzy
+#~| msgid "Move to Trash"
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "குப்பைக்கு நகர்த்து"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "புதிய அடைவு"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "புதிய அடைவு"
+
+#, fuzzy
+#~| msgid "&Copy Here"
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "&இங்கே நகலெடு"
+
+#, fuzzy
+#~| msgid "&Move Here"
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "&இங்கே நகர்த்து"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "ஒரு அடைவை அதன் மேலேயே உள்ளிட இயலாது"
+
+#~ msgid "File name for dropped contents:"
+#~ msgstr "விடப்பட்ட உள்ளடக்கங்களுகான கோப்பு பெயர்:"
+
+#~ msgid "&Move Here"
+#~ msgstr "&இங்கே நகர்த்து"
+
+#~ msgid "&Copy Here"
+#~ msgstr "&இங்கே நகலெடு"
+
+#~ msgid "&Link Here"
+#~ msgstr "&இங்கே இணை"
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "வால்பேப்பராக அமை"
+
+#~ msgid "C&ancel"
+#~ msgstr "ரத்து செய்"
+
+#, fuzzy
+#~| msgid "Create New"
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "புதிதாக உருவாக்கு"
+
+#, fuzzy
+#~| msgid "Enter folder name:"
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "அடைவு பெயரைத் உள்ளிடவும்:"
+
+#, fuzzy
+#~| msgid "Create New"
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "புதிதாக உருவாக்கு"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "புதிய அடைவு"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "புதிய அடைவு"
+
+#, fuzzy
+#~| msgid "Enter folder name:"
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "அடைவு பெயரைத் உள்ளிடவும்:"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "புதிய அடைவு"
+
+#~ msgid "Share"
+#~ msgstr "பகிர்"
+
+#~ msgid "Create New"
+#~ msgstr "புதிதாக உருவாக்கு"
+
+#~ msgid "Link to Device"
+#~ msgstr "சாதனத்திற்கு இணை"
+
+#~ msgid "<qt>The template file <b>%1</b> does not exist.</qt>"
+#~ msgstr "<qt>உருவரைக்கோப்பு<b>%1</b>இல்லை.</qt>"
+
+#~ msgid "File name:"
+#~ msgstr "கோப்புப் பெயர்:"
+
+#, fuzzy
+#~| msgid "Ac&tions"
+#~ msgctxt "@title:menu"
+#~ msgid "&Actions"
+#~ msgstr "செயல்கள்"
+
+#, fuzzy
+#~| msgid "&Open With"
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With"
+#~ msgstr "&இதனுடன் திற"
+
+#, fuzzy
+#~| msgid "&Other..."
+#~ msgctxt "@action:inmenu Open With"
+#~ msgid "&Other..."
+#~ msgstr "&மற்றவை..."
+
+#, fuzzy
+#~| msgid "&Open With..."
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With..."
+#~ msgstr "&இதனுடன் திற..."
+
+#, fuzzy
+#~ msgid "Open &with %1"
+#~ msgstr "&இதனுடன் திற"
+
+#~ msgid "Open in New &Window"
+#~ msgstr "புதிய சாளரத்தில் & திற"
+
+#~ msgid "Open the trash in a new window"
+#~ msgstr "குப்பைத்தொட்டியைப் புதிய சாளரத்தில் திற"
+
+#~ msgid "Open the medium in a new window"
+#~ msgstr "புதிய சாளரத்தில் மீடியத்தை திற"
+
+#~ msgid "Open the document in a new window"
+#~ msgstr "ஆவணத்தைப் புதிய சாளரத்தில் திற"
+
+#, fuzzy
+#~| msgid "Delete Files"
+#~ msgid "Deleting"
+#~ msgstr "கோப்புகளை நீக்கு"
+
+#~ msgid "Und&o"
+#~ msgstr "செயல் நீக்கு"
+
+#~ msgid "Und&o: Copy"
+#~ msgstr "நகல் எடுக்காதே"
+
+#~ msgid "Und&o: Link"
+#~ msgstr "இணைக்காதே"
+
+#~ msgid "Und&o: Move"
+#~ msgstr "நகர்த்தாதே"
+
+#, fuzzy
+#~ msgid "Und&o: Rename"
+#~ msgstr "இணைக்காதே"
+
+#~ msgid "Und&o: Trash"
+#~ msgstr "செய்யாதே: குப்பைத்தொட்டி"
+
+#~ msgid "Und&o: Create Folder"
+#~ msgstr "அடைவை உருவாக்காதே"
+
+#, fuzzy
+#~ msgid "Do you really want to delete this item?"
+#~ msgid_plural "Do you really want to delete these %1 items?"
+#~ msgstr[0] " உருப்படியை  நிஜமாக நீக்க வேண்டுமா?"
+#~ msgstr[1] "%1 உருப்படகளைளை நிஜமாக நீக்க வேண்டுமா?"
+
+#~ msgid "Delete Files"
+#~ msgstr "கோப்புகளை நீக்கு"
+
+#, fuzzy
+#~ msgid "Do you really want to move this item to the trash?"
+#~ msgid_plural "Do you really want to move these %1 items to the trash?"
+#~ msgstr[0] "நீங்கள் உண்மையாகவே இந்த உருப்படிகளை குப்பைக்கு நகர்த்த விரும்புகிறீர்களா?"
+#~ msgstr[1] "நீங்கள் உண்மையாகவே இந்த %1 உருப்படிகளை குப்பைக்கு நகர்த்த விரும்புகிறீர்களா?"
+
+#~ msgid "Move to Trash"
+#~ msgstr "குப்பைக்கு நகர்த்து"
+
+#, fuzzy
+#~ msgctxt "Verb"
+#~ msgid "&Trash"
+#~ msgstr ""
+#~ "_: Verb\n"
+#~ "&குப்பைத்தொட்டி"
+
+#, fuzzy
+#~| msgid "Und&o"
+#~ msgid "Und&o: %1"
+#~ msgstr "செயல் நீக்கு"
+
+#~ msgid "Background Settings"
+#~ msgstr "பின்னணி அமைப்புகள்"
+
+#~ msgid "Background"
+#~ msgstr "பின்னணி"
+
+#~ msgid "Co&lor:"
+#~ msgstr "வண்ணம்"
+
+#~ msgid "&Picture:"
+#~ msgstr "&சித்திரம்:"
+
+#~ msgid "Preview"
+#~ msgstr "முன்காட்சி"
+
+#~ msgid "None"
+#~ msgstr "ஏதுமில்லை"
+
+#~ msgid "Enlarge Icons"
+#~ msgstr "குறும்படங்களை பெரிதாக்கு"
+
+#~ msgid "Shrink Icons"
+#~ msgstr "குறும்படங்களை சுருக்கு"
+
+#~ msgid "&Default Size"
+#~ msgstr "&முன்னிருக்கும் அளவு"
+
+#~ msgid "&Huge"
+#~ msgstr "&மிகப்பெரிய"
+
+#~ msgid "&Very Large"
+#~ msgstr "மிகப்்ப் பெரிய"
+
+#~ msgid "&Large"
+#~ msgstr "&பெரிய"
+
+#~ msgid "&Medium"
+#~ msgstr "&நடுத்தர"
+
+#~ msgid "&Small"
+#~ msgstr "&சிறிய"
+
+#~ msgid "&Tiny"
+#~ msgstr "சிறிய"
+
+#~ msgid "Configure Background..."
+#~ msgstr "பின்னணியை வடிவமை..."
+
+#~ msgid "Allows choosing of background settings for this view"
+#~ msgstr "இக்காட்சிக்குரிய பின்னணி அமைப்புகளை தேர்ந்தெடுக்க அனுமதிக்கிறது"
+
+#~ msgid "<p>You do not have enough permissions to read <b>%1</b></p>"
+#~ msgstr "<p><b>%1</b>ஐ வாசிக்க உங்களுக்கு போதுமான அனுமதி இல்லை"
+
+#~ msgid "<p><b>%1</b> does not seem to exist anymore</p>"
+#~ msgstr "<p><b>%1</b> தற்போது எதுவும் இல்லை</p>."
+
+#~ msgid "Search result: %1"
+#~ msgstr "தேடல் முடிவு: %1"
+
+#~ msgid "Do you really want to shred this item?"
+#~ msgid_plural "Do you really want to shred these %1 items?"
+#~ msgstr[0] "நீங்கள் உண்மையாகவே இந்த உருப்படிகளை உதிர்க்க விரும்புகிறீர்களா?"
+#~ msgstr[1] "நீங்கள் உண்மையாகவே இந்த %1 உருப்படிகளை உதிர்க்க விரும்புகிறீர்களா?"
+
+#~ msgid "Shred Files"
+#~ msgstr "கோப்புகளை உதிர்"
+
+#~ msgid "Shred"
+#~ msgstr "உதிர்த்திடு"

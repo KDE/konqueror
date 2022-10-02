@@ -1,0 +1,50 @@
+# translation of khtmlkttsd.po to Dutch
+#
+# Rinse de Vries <rinsedevries@kde.nl>, 2004, 2005, 2007, 2008.
+# Bram Schoenmakers <bramschoenmakers@kde.nl>, 2006.
+# Freek de Kruijf <freekdekruijf@kde.nl>, 2010, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: khtmlkttsd\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2011-05-13 00:13+0200\n"
+"Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
+"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.1\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: khtmltts.cpp:33
+#, kde-format
+msgid "&Speak Text"
+msgstr "Tek&st uitspreken"
+
+#. i18n: ectx: Menu (tools)
+#: khtmlttsplugin.rc:5
+#, kde-format
+msgid "&Tools"
+msgstr "H&ulpmiddelen"
+
+#. i18n: ectx: ToolBar (speechToolbar)
+#: khtmlttsplugin.rc:10
+#, kde-format
+msgid "Speech Toolbar"
+msgstr "Spraakbalk"
+
+#~ msgctxt "@title:window"
+#~ msgid "Starting Jovie Text-to-Speech Service Failed"
+#~ msgstr "Opstarten van tekst-naar-spraak-service van Jovie is mislukt"
+
+#~ msgid "The D-Bus call say() failed."
+#~ msgstr "De DBUS-aanroep say() is mislukt."
+
+#~ msgctxt "@title:window"
+#~ msgid "D-Bus Call Failed"
+#~ msgstr "DBUS-aanroep is mislukt"
+
+#~ msgid "Starting KTTSD Failed"
+#~ msgstr "Het opstarten van KTTSD is mislukt"

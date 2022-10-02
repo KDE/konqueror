@@ -1,0 +1,251 @@
+# Translation of babelfish.po into Serbian.
+# Toplica Tanaskovic <toptan@kde.org.yu>, 2003.
+# Bojan Bozovic <bole89@infosky.net>, 2003.
+# Slobodan Simic <slsimic@gmail.com>, 2008, 2009.
+# Chusslove Illich <caslav.ilic@gmx.net>, 2011, 2012, 2017.
+# Dalibor Djuric <daliborddjuric@gmail.com>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: babelfish\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2019-05-20 02:40+0200\n"
+"PO-Revision-Date: 2017-07-16 22:55+0200\n"
+"Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
+"Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
+"Language: sr@ijekavianlatin\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+"X-Environment: kde\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Slobodan Simić"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "slsimic@gmail.com"
+
+# >> @title:window
+#: plugin_babelfish.cpp:44
+#, kde-format
+msgid "Translate Web Page"
+msgstr "Prevođenje veb stranice"
+
+#: plugin_babelfish.cpp:52
+#, kde-format
+msgid "Translate Web &Page"
+msgstr "Prevedi veb &stranicu"
+
+#: plugin_babelfish.cpp:89
+#, kde-format
+msgid "&English To"
+msgstr "&Engleski na"
+
+#: plugin_babelfish.cpp:92
+#, kde-format
+msgid "&French To"
+msgstr "&Francuski na"
+
+#: plugin_babelfish.cpp:95
+#, kde-format
+msgid "&German To"
+msgstr "&Njemački na"
+
+#: plugin_babelfish.cpp:98
+#, kde-format
+msgid "&Greek To"
+msgstr "&Grčki na"
+
+#: plugin_babelfish.cpp:101
+#, kde-format
+msgid "&Spanish To"
+msgstr "&Španski na"
+
+#: plugin_babelfish.cpp:104
+#, kde-format
+msgid "&Portuguese To"
+msgstr "&Portugalski na"
+
+#: plugin_babelfish.cpp:107
+#, kde-format
+msgid "&Italian To"
+msgstr "&Italijanski na"
+
+#: plugin_babelfish.cpp:110
+#, kde-format
+msgid "&Dutch To"
+msgstr "&Holandski na"
+
+#: plugin_babelfish.cpp:113
+#, kde-format
+msgid "&Russian To"
+msgstr "&Ruski na"
+
+# >> @item:inmenu Translate X to
+#: plugin_babelfish.cpp:129
+#, kde-format
+msgid "&Chinese (Simplified)"
+msgstr "&kineski (pojednostavljeni)"
+
+# >> @item:inmenu Translate X to
+#: plugin_babelfish.cpp:130
+#, kde-format
+msgid "Chinese (&Traditional)"
+msgstr "kineski (&tradicionalni)"
+
+# >> @item:inmenu Translate X to
+#: plugin_babelfish.cpp:131 plugin_babelfish.cpp:144
+#, kde-format
+msgid "&Dutch"
+msgstr "&holandski"
+
+# >> @item:inmenu Translate X to
+#: plugin_babelfish.cpp:132 plugin_babelfish.cpp:153 plugin_babelfish.cpp:155
+#: plugin_babelfish.cpp:157 plugin_babelfish.cpp:159 plugin_babelfish.cpp:161
+#: plugin_babelfish.cpp:163 plugin_babelfish.cpp:165
+#, kde-format
+msgid "&French"
+msgstr "&francuski"
+
+# >> @item:inmenu Translate X to
+#: plugin_babelfish.cpp:133 plugin_babelfish.cpp:146
+#, kde-format
+msgid "&German"
+msgstr "&nemački"
+
+# >> @item:inmenu Translate X to
+#: plugin_babelfish.cpp:134 plugin_babelfish.cpp:147
+#, kde-format
+msgid "&Greek"
+msgstr "&grčki"
+
+# >> @item:inmenu Translate X to
+#: plugin_babelfish.cpp:135 plugin_babelfish.cpp:148
+#, kde-format
+msgid "&Italian"
+msgstr "&italijanski"
+
+# >> @item:inmenu Translate X to
+#: plugin_babelfish.cpp:136
+#, kde-format
+msgid "&Japanese"
+msgstr "&japanski"
+
+# >> @item:inmenu Translate X to
+#: plugin_babelfish.cpp:137
+#, kde-format
+msgid "&Korean"
+msgstr "k&orejski"
+
+# >> @item:inmenu Translate X to
+#: plugin_babelfish.cpp:138
+#, kde-format
+msgid "&Norwegian"
+msgstr "nor&veški"
+
+# >> @item:inmenu Translate X to
+#: plugin_babelfish.cpp:139 plugin_babelfish.cpp:149
+#, kde-format
+msgid "&Portuguese"
+msgstr "&portugalski"
+
+# >> @item:inmenu Translate X to
+#: plugin_babelfish.cpp:140 plugin_babelfish.cpp:151
+#, kde-format
+msgid "&Russian"
+msgstr "&ruski"
+
+# >> @item:inmenu Translate X to
+#: plugin_babelfish.cpp:141 plugin_babelfish.cpp:150
+#, kde-format
+msgid "&Spanish"
+msgstr "&španski"
+
+# >> @item:inmenu Translate X to
+#: plugin_babelfish.cpp:142
+#, kde-format
+msgid "T&hai"
+msgstr "taj&landski"
+
+# >> @item:inmenu Translate X to
+#: plugin_babelfish.cpp:143
+#, kde-format
+msgid "&Arabic"
+msgstr "&arapski"
+
+# >> @item:inmenu Translate X to
+#: plugin_babelfish.cpp:145 plugin_babelfish.cpp:152 plugin_babelfish.cpp:154
+#: plugin_babelfish.cpp:156 plugin_babelfish.cpp:158 plugin_babelfish.cpp:160
+#: plugin_babelfish.cpp:162 plugin_babelfish.cpp:164
+#, kde-format
+msgid "&English"
+msgstr "&engleski"
+
+#: plugin_babelfish.cpp:187
+#, kde-format
+msgid "&Chinese (Simplified) to English"
+msgstr "&Kineski (pojednostavljeni) na engleski"
+
+#: plugin_babelfish.cpp:188
+#, kde-format
+msgid "Chinese (&Traditional) to English"
+msgstr "Kineski (&tradicionalni) na engleski"
+
+#: plugin_babelfish.cpp:197
+#, kde-format
+msgid "&Japanese to English"
+msgstr "&Japanski na engleski"
+
+#: plugin_babelfish.cpp:198
+#, kde-format
+msgid "&Korean to English"
+msgstr "K&orejski na engleski"
+
+#: plugin_babelfish.cpp:266
+#, kde-format
+msgctxt "@title:window"
+msgid "Malformed URL"
+msgstr "Loš URL"
+
+#: plugin_babelfish.cpp:267
+#, kde-format
+msgid "The URL you entered is not valid, please correct it and try again."
+msgstr "URL koji ste unijeli nije dobar, ispravite ga i pokušajte ponovo."
+
+#: plugin_babelfish.cpp:277
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"You are viewing this page over a secure connection.<nl/><nl/>The URL of the "
+"page will sent to the online translation service, which may fetch the "
+"insecure version of the page."
+msgstr ""
+"Gledate ovu stranicu preko bezbedne veze.<nl/><nl/>URL stranice će biti "
+"poslat prevodilačkom servisu na vezi, što može dobaviti nebezbednu verziju "
+"stranice."
+
+#: plugin_babelfish.cpp:281
+#, kde-format
+msgctxt "@title:window"
+msgid "Security Warning"
+msgstr "Upozorenje o bezbednosti"
+
+#. i18n: ectx: Menu (tools)
+#: plugin_babelfish.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "&Alatke"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: plugin_babelfish.rc:8
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "Dodatna traka"

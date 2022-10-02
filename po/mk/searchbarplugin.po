@@ -1,0 +1,87 @@
+# Copyright (C) 2006, 2007 Free Software Foundation, Inc.
+# translation of searchbarplugin.po to Macedonian
+#
+# Damjan Velickovski <damjan91@gmail.com>, 2006.
+# Bozidar Proevski <bobibobi@freemail.com.mk>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: searchbarplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-25 00:45+0000\n"
+"PO-Revision-Date: 2006-07-15 00:53+0200\n"
+"Last-Translator: Bozidar Proevski <bobibobi@freemail.com.mk>\n"
+"Language-Team: Macedonian <mkde-l10n@lists.sourceforge.net>\n"
+"Language: mk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.2\n"
+"Plural-Forms: Plural-Forms: nplurals=3; plural=n%10==1 ? 0 : n%10==2 ? 1 : "
+"2;\n"
+
+#: searchbar.cpp:65
+#, fuzzy, kde-format
+#| msgid ""
+#| "Search Bar<p>Enter a search term. Click on the icon to change search mode "
+#| "or provider."
+msgid ""
+"Search Bar<p>Enter a search term. Click on the icon to change search mode or "
+"provider.</p>"
+msgstr ""
+"Лента за пребарување<p>Внесете поим за пребарување. Кликнете на иконата за "
+"да го смените начинот на пребарување или машината за пребарување."
+
+#: searchbar.cpp:70
+#, kde-format
+msgid "Search Bar"
+msgstr "Лента за пребарување"
+
+#: searchbar.cpp:75
+#, kde-format
+msgid "Focus Searchbar"
+msgstr "Фокусирај лента за пребарување"
+
+#: searchbar.cpp:267
+#, fuzzy, kde-format
+#| msgid "Find in This Page"
+msgid "Find in Page..."
+msgstr "Најди на оваа страница"
+
+#: searchbar.cpp:287
+#, kde-format
+msgid "Find in This Page"
+msgstr "Најди на оваа страница"
+
+#: searchbar.cpp:299
+#, kde-format
+msgid "Select Search Engines..."
+msgstr "Избери машина за пребарување..."
+
+#: searchbar.cpp:318
+#, kde-format
+msgid "Add %1..."
+msgstr ""
+
+#. i18n: ectx: ToolBar (locationToolBar)
+#: searchbarplugin.rc:3
+#, kde-format
+msgid "Search Toolbar"
+msgstr "Алатник за пребарување"
+
+#: WebShortcutWidget.cpp:33
+#, kde-format
+msgid "Set Uri Shortcuts"
+msgstr ""
+
+#: WebShortcutWidget.cpp:47
+#, kde-format
+msgid "Name:"
+msgstr ""
+
+#: WebShortcutWidget.cpp:51
+#, kde-format
+msgid "Shortcuts:"
+msgstr ""
+
+#~ msgid "%1 Search"
+#~ msgstr "Пребарување за %1"

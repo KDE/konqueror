@@ -1,0 +1,106 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Swedish "INCLUDE"
+> <!-- change language only here -->
+]>
+<!-- extragear has another adblock ? -->
+<article lang="&language;" id="khtml-adblock">
+<articleinfo>
+<title
+>Reklamblockeringsfilter</title>
+<authorgroup>
+<author
+>&Krishna.Tateneni; &Krishna.Tateneni.mail;</author>
+<othercredit role="translator"
+> <firstname
+>Stefan</firstname
+> <surname
+>Asserhäll</surname
+> <affiliation
+><address
+><email
+>stefan.asserhall@bredband.net</email
+></address
+></affiliation
+> <contrib
+>Översättare</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2016-11-08</date>
+<releaseinfo
+>Program 16.12</releaseinfo>
+</articleinfo>
+
+<para
+>&konqueror;s reklamblockering kan ställas in att ersätta eller ta bort bilder eller ramar från webbsidor som matchar en serie av filter.</para>
+
+<para
+>Inställningen <guilabel
+>Aktivera filter</guilabel
+> aktiverar eller inaktiverar användning av listan med webbadressfilter.</para>
+<para
+>Om <guilabel
+>Dölj filtrerade bilder</guilabel
+> är markerat tas blockerade bilder helt bort från sidan och utrymmet de upptar återtas. Om alternativet inte är markerat, används en ersättningsbild som markerar platser där bilder filtrerats.</para>
+
+<variablelist>
+<varlistentry id="khtml-adblock-manual">
+<term
+><guilabel
+>Manuellt filter</guilabel
+></term>
+<listitem>
+<para
+>Huvuddelen av den här fliken är en lista med webbadresser som jämförs med bild- och ramnamn för att avgöra filtreringsåtgärder. Jokertecken kan anges på samma sätt som reguljära uttryck för filnamn.</para>
+
+<para
+>Varje filter kan antingen uttryckas som en sträng med jokertecken som för filer (t.ex. http://www.site.com/ads/*) eller som ett fullständigt reguljärt uttryck genom att omge filtret med snedstreck (t.ex.  //(ads|dclk)\./).</para>
+
+<para
+>Alla filtersträngar kan inledas med <literal
+>@@</literal
+> för att vitlista (tillåta) alla motsvarande webbadresser, vilket får prioritet över alla svartlistade (blockerande) filter.</para>
+
+<para
+><guilabel
+>Importera</guilabel
+> och <guilabel
+>Exportera</guilabel
+> sparar eller läser nuvarande filterlista i en vanlig textfil. Filen börjar med en huvudrad <userinput
+>[AdBlock]</userinput
+>, därefter följer alla filter vart och ett på en separat rad. Rader som inleds med utropstecken (!) behandlas som kommentarer och kan användas för att klargöra eller rubricera en uppsättning filter.</para>
+
+<para
+>Markera en post i listan för att ändra den i redigeringsrutan eller ta bort objektet. Skriv in ett nytt filter här och lägg till det i listan med knappen <guibutton
+>Infoga</guibutton
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry id="khtml-adblock-automatic">
+<term
+><guilabel
+>Automatiskt filter</guilabel
+></term>
+<listitem>
+<para
+>Den här fliken visar en lista med namn och webbadresser med fördefinierade reklamblockeringsfilter. Markera kryssrutan intill filternamnet och justera <guilabel
+>Automatiskt uppdateringsintervall</guilabel
+> (normalt 7 dagar). </para>
+</listitem>
+</varlistentry>
+  
+</variablelist>
+
+<para
+>Om reklamblockeringsfilter är aktiverade, visas en ikon på höger sida av statusraden. Använd ett högerklick på ikonen för att visa den sammanhangsberoende menyn med åtgärder för att visa alla blockeringsbara element på en webbsida, visa den här modulen i systeminställningarna och tillfälligt inaktivera blockering för en plats eller sida.</para>
+
+<para
+>Ett klick med vänster musknapp visar dessutom dialogrutan med alla blockeringsbara element på den öppnade webbsidan. Nya filter kan direkt läggas till med dialogrutan utan att öppna den här modulen i systeminställningarna.</para>
+
+</article>

@@ -1,0 +1,560 @@
+<chapter id="basics">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+&traducteurJoelleCornavin; &traducteurGerardDelafond;&traducteurLudovicGrossard; 
+</authorgroup>
+
+<date
+>08/02/2010</date>
+<releaseinfo
+>4.4.0</releaseinfo>
+</chapterinfo>
+
+<title
+>Les bases de &konqueror;</title>
+
+<important
+><para
+>Comme toutes les applications &kde;, &konqueror; est extrêmement configurable. Ce document décrit le comportement de &konqueror; avec les réglages par défaut.</para>
+<para
+>Une souris à trois boutons peut s'avérer utile lors de l'exécution de &konqueror; ou de toute autre application &kde;. Si votre souris ne comporte que deux boutons, vous devriez régler votre système de façon à simuler le &BCS; en appuyant sur les deux boutons simultanément.</para>
+<para
+>Vous pouvez en savoir plus à propos de l'utilisation de la souris dans <xref linkend="lmb-mmb"/></para>
+<para
+>Prenez garde si vous avez l'habitude de double-cliquer pour réaliser une action car, comme dans tout le reste de &kde;, les réglages par défaut de &konqueror; utilisent le simple clic.</para
+></important>
+
+<sect1 id="konq-start">
+<title
+>Démarrage de &konqueror;</title>
+
+<para
+>À la fois gestionnaire de fichiers et navigateur, &konqueror; passera automatiquement d'un mode à l'autre selon les besoins au cours de son fonctionnement, mais il est pratique de pouvoir choisir le mode à utiliser au démarrage.</para>
+
+<itemizedlist>
+<!--
+<listitem
+><para
+>If you have a <guiicon
+>house</guiicon
+> shaped icon on the panel 
+or desktop, then <mousebutton
+>left</mousebutton
+> click on it to open 
+&konqueror; as a file manager.</para
+></listitem>
+
+<listitem
+><para
+>Or <mousebutton
+>left</mousebutton
+> click on <guiicon
+>world
+</guiicon
+> shaped icon on the panel or desktop to open &konqueror; in browser 
+mode.</para
+></listitem>
+-->
+<listitem
+><para
+>Dans le menu du lanceur d'applications, choisissez <menuchoice
+><guisubmenu
+>Internet</guisubmenu
+><guimenuitem
+>Navigateur Web Konqueror</guimenuitem
+></menuchoice
+> pour le démarrer en mode navigateur. </para
+></listitem>
+
+<listitem
+><para
+><keycombo action="simul"
+>&Alt;<keycap
+>F2</keycap
+></keycombo
+> ouvre &krunner;. Saisissez un emplacement vers un dossier et appuyez sur &Enter; pour démarrer en mode gestionnaire de fichiers, ou saisissez simplement une &URL; telle que <userinput
+>http://www.konqueror.org</userinput
+> pour démarrer &konqueror; en mode navigateur.</para
+></listitem>
+
+</itemizedlist>
+
+<note
+><para
+>Cliquez sur la flèche noire à droite de l'icône <guiicon
+>Page personnelle</guiicon
+> pour basculer vers votre <guiicon
+>Dossier personnel</guiicon
+> en mode gestionnaire de fichiers, et vice-versa. </para
+></note>
+
+<para
+>Si &konqueror; est le gestionnaire de fichiers par défaut, il démarre également automatiquement si vous faites un clic <mousebutton
+>gauche</mousebutton
+> sur une icône du bureau représentant un dossier, tel qu'un disque dur ou l'icône de la <guiicon
+>corbeille</guiicon
+>. </para>
+
+
+</sect1>
+
+<sect1 id="parts">
+<title
+>Les éléments de &konqueror;</title>
+
+<para
+>Aperçu rapide des principales parties de la fenêtre de &konqueror; :</para>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="parts.png"/></imageobject>
+<textobject>
+<phrase
+>Voici une copie d'écran de &konqueror;</phrase>
+</textobject>
+</mediaobject>
+
+<para
+>La <interface
+>Barre de titre</interface
+> correspond à la bande qui s'étire sur toute la partie supérieure de la fenêtre de &konqueror; et agit de la même manière que pour les autres applications de &kde;. Un clic <mousebutton
+>droit</mousebutton
+> sur sa partie centrale provoque l'affichage du menu de la barre de titre à proprement parler.</para>
+
+<para
+>La <interface
+>barre de menus</interface
+> correspond à la bande contenant les noms des menus déroulants. Un clic <mousebutton
+>gauche</mousebutton
+> sur un nom fait alternativement apparaître et disparaître ce menu, ou utilisez <keycombo action="simul"
+>&Alt;<keycap
+>la lettre soulignée</keycap
+></keycombo
+> dans le nom en tant que raccourci clavier, &pex; <keycombo action="simul"
+>&Alt;<keycap
+>É</keycap
+></keycombo
+> pour afficher le menu <guimenu
+>Édition</guimenu
+>. Les divers menus sont décrits dans la section <link linkend="menubar"
+>Barre de menus</link
+> de ce document.</para>
+
+<para
+>La <interface
+>barre d'outils</interface
+> contient les icônes utilisées lors des opérations courantes. Un clic <mousebutton
+>gauche</mousebutton
+> sur une icône permet de la lancer. Une brève description de l'action de cette icône apparaît lorsque le pointeur passe dessus.</para>
+
+<para
+>Certaines icônes, par exemple les icônes <quote
+>Dossier parent</quote
+> et <quote
+>Précédent</quote
+> présentées dans la copie d'écran précédente, sont dotées d'une petite flèche noire située à droite. Si vous cliquez sur cette flèche avec le &BGS;, un petit menu déroulant apparaît.</para
+> <para
+>Un clic <mousebutton
+>droit</mousebutton
+> sur la <interface
+>barre d'outils</interface
+> fait apparaître le menu <link linkend="rmb-menus"
+><guilabel
+>Configurer les barres d'outils</guilabel
+></link
+> que vous pouvez utiliser pour changer l'apparence et la position de la <interface
+>barre d'outils</interface
+>.</para>
+
+<para
+>La <interface
+>barre d'emplacement</interface
+> affiche l'emplacement d'un dossier, l'&URL; ou le fichier actuellement à l'écran. Vous pouvez saisir ici un emplacement ou une &URL; et appuyer sur &Enter;, ou cliquer avec le &BGS; sur l'icône <guiicon
+>Aller</guiicon
+> située sur le côté droit de la <interface
+>barre d'emplacement</interface
+> pour vous positionner dessus. L'icône noire située à droite de la <interface
+>barre d'emplacement</interface
+> réinitialise la zone de saisie.</para>
+
+<para
+>La <interface
+>barre de signets</interface
+> correspond, dans la copie d'écran ci-dessus, à la zone située sous la <interface
+>barre d'emplacement</interface
+>. Vous pouvez ajouter ici les signets les plus fréquemment utilisés. Consultez la section de ce document <link linkend="orgbmark"
+>Organisation de vos signets</link
+>.</para>
+
+<para
+>La <interface
+>fenêtre</interface
+>, zone principale de &konqueror;, est capable d'afficher le contenu d'un dossier, une page web, un document ou une image. L'utilisation du menu <link linkend="menu-window"
+><guimenu
+>Fenêtre</guimenu
+></link
+> permet de scinder la fenêtre principale de &konqueror; en une ou plusieurs vues séparées, ce qui est très utile pour les opérations de glisser-déposer, ou de la définir de manière à contenir deux ou plusieurs vues à onglets. </para>
+
+<para
+>La <interface
+>barre d'état</interface
+> s'étire sur toute la partie inférieure de la fenêtre de &konqueror; et affiche la plupart du temps des informations générales sur tout ce que le pointeur de la souris survole. En scindant la fenêtre en plusieurs vues, vous obtenez une barre d'état pour chaque vue, dont chacune est dotée d'une petite diode verte à son extrémité gauche pour indiquer quelle est la vue <quote
+>active</quote
+>. Un clic <mousebutton
+>droit</mousebutton
+> sur la barre d'état fait apparaître le <link linkend="rmb-menus"
+>menu du bouton <mousebutton
+>droit</mousebutton
+> de la souris</link
+> sur la barre d'état.</para>
+
+<note
+><para
+>Ne vous inquiétez pas si votre &konqueror; ne présente pas exactement l'aspect de cette copie d'écran, il est extrêmement configurable. En particulier :</para>
+
+<itemizedlist>
+<listitem
+><para
+>vous pouvez utiliser le menu <link linkend="menu-settings"
+><guimenu
+>Configuration</guimenu
+></link
+> pour choisir si vous souhaitez afficher ou masquer la barre de menus, la barre principale, la barre d'emplacement et la barre de signets, ou même ajouter une barre d'outils supplémentaire ;</para
+></listitem>
+<listitem
+><para
+>Si les barres d'outils sont déverrouillées, vous pouvez également les glisser par un clic <mousebutton
+>gauche</mousebutton
+> sur les poignées situées à l'extrémité gauche des barres, et les déplacer par un glissement du &BGS; que vous maintenez enfoncé tout en tirant ces barres ; </para
+></listitem>
+<listitem
+><para
+>la copie d'écran ne montre pas le <link linkend="sidebar"
+>Barre latérale</link
+> optionnelle.</para
+></listitem>
+</itemizedlist>
+
+<para
+>Pour plus de détails sur la manière de changer l'apparence de &konqueror;, consultez la section <link linkend="config"
+>Configuration de &konqueror;</link
+></para
+></note>
+
+</sect1>
+
+<sect1 id="bubble">
+<title
+>Bulles d'aide et Qu'est-ce que c'est ?</title>
+
+<para
+>Vous pouvez découvrir de nombreuses astuces sur le fonctionnement de &konqueror; sans être obligé de lire ce document en entier, en tirant parti des <guilabel
+>bulles d'aide</guilabel
+> et de la fonction <guimenuitem
+>Qu'est-ce que c'est ? </guimenuitem
+>.</para>
+
+<para
+>Lorsque le pointeur de la souris passe au dessus d'une barre d'outils ou d'un bouton d'onglet de la barre latérale, une brève description de ce que fait ce bouton devrait apparaître.</para>
+
+<para
+>L'élément <guimenuitem
+>Qu'est-ce que c'est ?</guimenuitem
+> est exécuté par l'élément de menu <menuchoice
+><guimenu
+>Aide</guimenu
+><guimenuitem
+>Qu'est-ce que c'est ?</guimenuitem
+></menuchoice
+> ou par la combinaison de touches <keycombo action="simul"
+>&Maj;<keycap
+>F1</keycap
+></keycombo
+>. Cette action transforme le curseur en un point d'interrogation accompagné d'une flèche.</para>
+
+<para
+>Lorsque ce point d'interrogation est visible, un clic avec le &BGS; n'a aucun effet à moins que vous ne cliquiez sur une commande (ou sur le texte placé à côté) prévue pour <guimenuitem
+>Qu'est-ce que c'est ? </guimenuitem
+>, auquel cas s'affiche une description relativement complète de ce que l'élément est supposé faire. La plupart des boîtes de dialogue de &konqueror; réagissent à la fonction <guimenuitem
+>Qu'est-ce que c'est ? </guimenuitem
+></para>
+
+</sect1>
+
+<sect1 id="lmb-mmb">
+<title
+>Actions des boutons <mousebutton
+>gauche</mousebutton
+> et <mousebutton
+>central</mousebutton
+> de la souris</title>
+
+<para
+>Un clic avec le &BGS; sur un élément placé dans la fenêtre de &konqueror; <quote
+>active</quote
+> cet élément. Par conséquent : </para>
+
+<itemizedlist>
+
+<listitem
+><para
+>Cliquez avec le &BGS; sur une icône de la barre d'outils pour exécuter l'action que cette icône est supposée réaliser. </para
+></listitem>
+<listitem
+><para
+>Cliquez avec le &BGS; sur un élément de menu pour faire se dérouler ce menu.</para
+></listitem>
+<listitem
+><para
+>Cliquez avec le &BGS; sur un élément de menu pour exécuter cette action.</para
+></listitem
+> 
+<listitem
+><para
+>Cliquez avec le &BGS; sur une icône de la barre de signets pour ouvrir cette &URL;.</para
+></listitem>
+<listitem
+><para
+>Cliquez avec le &BGS; sur un lien d'une page web pour que &konqueror; suive ce lien.</para
+></listitem>
+<listitem
+><para
+>Cliquez avec le &BGS; sur une icône ou un nom de dossier pour que &konqueror; examine (et affiche le contenu de) ce dossier. </para
+></listitem>
+<listitem
+><para
+>Cliquez avec le &BGS; sur un nom ou une icône de fichier et &konqueror; fera ce qu'il pense être approprié en fonction du type de fichier. En règle générale, cela suppose l'ouverture de pages <acronym
+>HTML</acronym
+> ou l'affichage de l'aperçu d'un texte, d'une image ou de documents &okular; en les présentant dans une fenêtre de &konqueror; (<quote
+>aperçu</quote
+> signifie que vous pouvez voir le fichier, mais pas le modifier).</para
+> 
+
+<para
+>&konqueror; décide de quel type de fichier il s'agit en faisant correspondre l'extension du nom de fichier à une liste de types connus. S'il échoue, il essaie d'en deviner le type d'après le contenu du fichier. Vous pouvez changer la liste des types de fichiers connus, les actions associées à la page <guilabel
+>Associations de fichiers</guilabel
+> de la boîte de dialogue <menuchoice
+><guimenu
+>Configuration</guimenu
+><guimenuitem
+>Configurer Konqueror...</guimenuitem
+></menuchoice
+>.</para
+></listitem>
+
+</itemizedlist>
+
+<para
+>Le clic avec le &BCS; sur un nom de fichier ou de dossier, ou sur une icône a essentiellement la même action que le clic <mousebutton
+>gauche</mousebutton
+> si ce n'est qu'il opère habituellement dans une nouvelle fenêtre de &konqueror;, à moins que la zone <guilabel
+>Ouvrir des liens dans un nouvel onglet plutôt que dans une nouvelle fenêtre</guilabel
+> a été cochée dans la page <guimenuitem
+>Général</guimenuitem
+> de la boîte de dialogue <menuchoice
+><guimenu
+>Configuration </guimenu
+><guimenuitem
+>Configurer Konqueror...</guimenuitem
+></menuchoice
+>. &konqueror; peut ouvrir des liens sur une page et des <menuchoice
+><guimenu
+>signets</guimenu
+></menuchoice
+>, ainsi que les entrées <guibutton
+>Dossier personnel</guibutton
+>, <guibutton
+>Dossier parent</guibutton
+>, <guibutton
+>Précedent</guibutton
+> et <guibutton
+>Suivant</guibutton
+> dans un nouvel onglet ou une nouvelle fenêtre.</para>
+
+<para
+>Le maintien de la touche &Maj; enfoncée tout en appuyant sur le &BCS; ouvre le lien en arrière-plan.</para>
+<!-- not in 4.4.0
+<important
+><para
+>If you click the &MMB; when the mouse cursor is over a blank 
+part of the main view (not over a link or file name or icon) &konqueror; will 
+copy the contents of the clipboard into the Location Toolbar and try to use 
+that as a &URL;.</para
+></important>
+-->
+</sect1>
+
+<sect1 id="rmb-menus">
+<title
+>Menus contextuels du bouton <mousebutton
+>droit</mousebutton
+></title>
+
+<para
+>Un clic avec le &BDS; sur pratiquement n'importe quel endroit de la fenêtre de &konqueror; fait apparaître un menu contextuel approprié.</para>
+
+<note
+><para
+>Si vous avez activé l'option <guilabel
+>Un clic droit permet de remonter dans l'historique</guilabel
+> dans les paramètres de <link linkend="othersettings"
+> configuration</link
+> de &konqueror;, un simple clic <mousebutton
+>droit</mousebutton
+> équivaut à un clic sur le bouton <guibutton
+>Précédent</guibutton
+>. Dans ce cas, vous pouvez accéder au menu contextuel en déplaçant la souris et en en maintenant le bouton <mousebutton
+>droit</mousebutton
+> enfoncé.</para
+></note>
+
+<variablelist>
+
+<varlistentry>
+<term
+>Sur la barre de titre</term>
+<listitem
+><para
+>Le clic <mousebutton
+>droit</mousebutton
+> sur n'importe quelle zone libre de la barre de titre fait apparaître le menu de barre de titre permettant de déterminer la position de la fenêtre de &konqueror; aussi bien que la décoration appliquée à toutes les fenêtres de programmes de &kde;. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Sur la barre principale</term>
+<listitem
+><para
+>Le clic <mousebutton
+>droit</mousebutton
+> sur n'importe quelle zone libre de la barre d'outils fait apparaître le menu de barre d'outils. Par conséquent, vous pouvez déterminer si la barre d'outils est positionnée en haut, en bas, à gauche ou à droite de la fenêtre de &konqueror;. Le menu de barre d'outils permet également de fixer la taille des boutons de celle-ci, s'ils sont affichés sous forme d'icônes, de texte, ou les deux.</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+>Sur la barre d'emplacement</term>
+<listitem
+><para
+>Un clic <mousebutton
+>droit</mousebutton
+> dans la zone de saisie des &URL; permet d'exécuter des opérations de Couper, Copier, Coller ou Effacer dans cette zone, ou de changer les fonctions <link linkend="path-complete"
+>d'autocomplètement de texte</link
+>.</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+>Dans une vue</term>
+<listitem
+><para
+>Un clic <mousebutton
+>droit</mousebutton
+> sur n'importe quelle zone libre d'une vue permet d'obtenir un menu contenant, entre autres options, les commandes de navigation <guiicon
+>Dossier parent</guiicon
+>, <guiicon
+>Précédent</guiicon
+>, <guiicon
+>Suivant</guiicon
+> et <guiicon
+>Recharger</guiicon
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Sur un fichier ou un dossier</term>
+<listitem
+><para
+>Il s'agit d'une des fonctions les plus utiles. Le clic <mousebutton
+>droit</mousebutton
+> sur le nom ou l'icône de n'importe quel fichier ou dossier ne se contente pas de <quote
+>choisir</quote
+> cet élément. Il fait également apparaître un menu permettant de <guiicon
+>couper</guiicon
+>, déplacer, <guiicon
+>copier</guiicon
+> ou supprimer l'élément de diverses façons. Vous pouvez l'ouvrir avec le programme de votre choix ou en afficher un aperçu, le renommer ou éditer le type ou les propriétés du fichier.</para
+></listitem
+> </varlistentry>
+
+<varlistentry>
+<term
+>Sur la barre d'état</term>
+<listitem
+><para
+>Un clic <mousebutton
+>droit</mousebutton
+> sur la barre d'état située au bas d'une fenêtre ou d'une vue permet d'ajouter ou de supprimer une vue dans la fenêtre de &konqueror;.</para
+></listitem
+> 
+</varlistentry>
+</variablelist>
+
+</sect1>
+
+<sect1 id="man-info">
+<title
+>Consultation des pages d'aide, de man et d'Info</title>
+
+<para
+>Vous pouvez afficher l'aide de &kde;, les pages de man et d'infos d'&UNIX; directement dans &konqueror; sans avoir à démarrer <application
+>KHelpCenter</application
+>. </para>
+
+<para
+>Pour afficher une page d'aide de &kde;, saisissez <userinput
+>help:/<replaceable
+>nom_de_l'application</replaceable
+></userinput
+> (par exemple, <userinput
+>help:/kmail</userinput
+> pour voir la documentation de &kmail;) dans la fenêtre de barre d'emplacement de &konqueror;. </para>
+
+<para
+>Si vous désirez lire les pages de man d'&UNIX;, &konqueror; vous facilite les choses en saisissant par exemple <userinput
+>man:touch</userinput
+> ou <userinput
+>#touch</userinput
+> dans la barre d'emplacement pour voir la page concernant la commande <command
+>touch</command
+>.</para
+> 
+
+<para
+>Pour explorer les pages d'info d'&UNIX;, la saisie de <userinput
+>info:/dir</userinput
+> vous conduit au dossier Info de plus haut niveau. Il suffit ensuite de cliquer sur les liens corrects pour trouver la page désirée. Vous pouvez également utiliser <userinput
+>info:/<replaceable
+>nom de la commande</replaceable
+></userinput
+> pour accéder directement à la page info que vous voulez.</para>
+
+<note
+><para
+>Malheureusement, les pages d'aide de &kde; sont enregistrées de telle manière qu'elles ne sont pas affichables dans d'autres navigateurs. Si vous devez réellement le faire, votre seul recours est de vous connecter et de visiter <ulink url="http://docs.kde.org"
+> http://docs.kde.org</ulink
+>.</para
+></note>
+</sect1>
+
+</chapter>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

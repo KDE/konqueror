@@ -1,0 +1,868 @@
+# translation of kcmkio.po to Telugu
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Krishna Babu K <kkrothap@redhat.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkio\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2009-01-16 22:16+0530\n"
+"Last-Translator: Krishna Babu K <kkrothap@redhat.com>\n"
+"Language-Team: Telugu <en@li.org>\n"
+"Language: te\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#: bookmarks.cpp:92
+#, kde-format
+msgid ""
+"<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
+"page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
+"\">bookmarks:/</a>.</p>"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: bookmarks.ui:16
+#, kde-format
+msgid "Bookmarks"
+msgstr "పేజి గుర్తులు"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowRoot)
+#: bookmarks.ui:23
+#, kde-format
+msgid ""
+"If this option is unchecked, bookmarks at the root of the hierarchy (not in "
+"a folder) are not displayed.\n"
+"If checked, they are gathered in a \"root\" folder."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowRoot)
+#: bookmarks.ui:26
+#, kde-format
+msgid "&Show bookmarks without folder"
+msgstr "(&S) ఫోల్డరు లేకుండా బుక్‌మార్క్స్‌ను చూపుము"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbFlattenTree)
+#: bookmarks.ui:37
+#, kde-format
+msgid ""
+"Sub-folders are shown within their parent by default. If you activate this "
+"option, sub-folders are displayed on their own.\n"
+"It looks less nice but it may help if you have a very big folder you want to "
+"spread in two columns."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbFlattenTree)
+#: bookmarks.ui:40
+#, kde-format
+msgid "&Flatten bookmarks tree"
+msgstr "(&F) ఫ్లాటెన్ బుక్‌మార్క్స్ ట్రీ"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowPlaces)
+#: bookmarks.ui:47
+#, kde-format
+msgid ""
+"Show a box with KDE places (Home, Network, ...). Useful if you use konqueror "
+"as a file manager."
+msgstr ""
+"KDE స్థానములు (హోమ్, నెట్వర్కు, ...)తో బాక్స్‌ను చూపుము. మీరు కాంక్వెరర్‌ను ఫైలు నిర్వాహికలాగా "
+"వుపయోగిస్తుంటే వుపయోగకరంగా వుటుంది."
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowPlaces)
+#: bookmarks.ui:50
+#, kde-format
+msgid "Show system &places"
+msgstr "(&p) సిస్టమ్ స్థలములను చూపుము"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: bookmarks.ui:63
+#, kde-format
+msgid "General Settings"
+msgstr "సాదారణ అమర్పులు"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, label)
+#: bookmarks.ui:71
+#, kde-format
+msgid ""
+"Folders are automatically distributed in several columns. The optimal number "
+"of columns depends on the width of the konqueror window and the number of "
+"bookmarks you have."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: bookmarks.ui:74
+#, fuzzy, kde-format
+#| msgid "Number of columns to show"
+msgid "Number of columns to show:"
+msgstr "చూపించవలసిన నిలువువరుసల సంఖ్య"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowBackgrounds)
+#: bookmarks.ui:109
+#, kde-format
+msgid "Disable it on slow system to disable background images."
+msgstr "నిదానమైన సిస్టమ్‌నందు బ్యాక్‌గ్రౌండు చిత్రములను అచేతనము చేయుటకు దీనిని అచేతనము చేయుము."
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowBackgrounds)
+#: bookmarks.ui:112
+#, kde-format
+msgid "Show folder &backgrounds"
+msgstr "(&b) ఫోల్డరు బ్యాక్‌గ్రౌండ్సును చూపుము"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, groupBox_3)
+#: bookmarks.ui:138
+#, kde-format
+msgid "How much disk space is used to cache the pixmaps"
+msgstr "పిక్స్‌మాప్స్‌ను క్యాచీ చేయుటకు యెంత డిస్కు జాగా వుపయోగించబడింది"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: bookmarks.ui:141
+#, kde-format
+msgid "Pixmap Cache"
+msgstr "పిక్స్‌మాప్ క్యాచి"
+
+#. i18n: ectx: property (text), widget (QLabel, lbMaxCacheSize)
+#: bookmarks.ui:150
+#, kde-format
+msgid "Disk cache size:"
+msgstr "డిస్కు క్యాచి పరిమాణము:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, sbCacheSize)
+#: bookmarks.ui:163
+#, kde-format
+msgid " kB"
+msgstr " kB"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, clearCacheButton)
+#: bookmarks.ui:173
+#, kde-format
+msgid "Clear the pixmap cache"
+msgstr "పిక్స్‌మాప్ క్యాచీని శుభ్రముచేయుము"
+
+#. i18n: ectx: property (text), widget (QPushButton, clearCacheButton)
+#: bookmarks.ui:176
+#, kde-format
+msgid "&Clear Cache"
+msgstr "(&C) క్యాచీని శుభ్రముచేయుము"
+
+#~ msgid "&Use cache"
+#~ msgstr "(&U) క్యాచీని వుపయోగించుము"
+
+#~ msgid "Policy"
+#~ msgstr "విధానము"
+
+#~ msgid "&Keep cache in sync"
+#~ msgstr "(&K) క్యాచీని సింకునందు వుంచుము"
+
+#~ msgid "Use cache whenever &possible"
+#~ msgstr "(&p) ఎప్పుడు సాధ్యమైనా క్యాచీని వుపయోగించుము"
+
+#~ msgid "O&ffline browsing mode"
+#~ msgstr "(&f) ఆఫ్‌లైన్ బ్రౌజింగ్ రీతి"
+
+#~ msgid "Disk cache &size:"
+#~ msgstr "(&s) డిస్కు క్యాచీ పరిమాణము:"
+
+#~ msgid "C&lear Cache"
+#~ msgstr "(&l) క్యాచీని శుభ్రముచేయుము"
+
+#~ msgid "&Policy"
+#~ msgstr "(&P) విధానము"
+
+#~ msgid "&Management"
+#~ msgstr "(&M) నిర్వహణ"
+
+#~ msgid "D-Bus Communication Error"
+#~ msgstr "D-Bus సంప్రదింపు దోషము"
+
+#~ msgid "Unable to delete all the cookies as requested."
+#~ msgstr "అభ్యర్దించబడినట్లు అన్ని కుకీలను తొలగించలేదు."
+
+#~ msgid "Unable to delete cookies as requested."
+#~ msgstr "అభ్యర్దించబడినట్లు కుకీలను తొలగించలేదు."
+
+#, fuzzy
+#~| msgid "<h1>Cookies Management Quick Help</h1>"
+#~ msgid "<h1>Cookie Management Quick Help</h1>"
+#~ msgstr "<h1>కుకీల నిర్వహణ త్వరిత సహాయం</h1>"
+
+#~ msgid "Information Lookup Failure"
+#~ msgstr "సమాచారము చూచుటలో విఫలమైంది"
+
+#~ msgid ""
+#~ "Unable to retrieve information about the cookies stored on your computer."
+#~ msgstr "మీ కంప్యూటర్ నందు నిల్వవున్న కుకీల గురించి సమాచారమును వెలికితీయలేక పోయింది."
+
+#~ msgid "End of session"
+#~ msgstr "సెషన్ ముగింపు"
+
+#~ msgid "Yes"
+#~ msgstr "అవును"
+
+#~ msgid "Search"
+#~ msgstr "శోధించుము"
+
+#~ msgid "Search interactively for domains and hosts"
+#~ msgstr "డొమైన్లు మరియు హోస్టుల కొరకు యింటరాక్టివుగా శోధించుము"
+
+#, fuzzy
+#~| msgid "Site Name"
+#~ msgid "Site"
+#~ msgstr "సైటు పేరు"
+
+#, fuzzy
+#~| msgid "Site Name"
+#~ msgid "Cookie Name"
+#~ msgstr "సైటు పేరు"
+
+#~ msgid "D&elete"
+#~ msgstr "(&e) తొలగించు"
+
+#~ msgid "Delete A&ll"
+#~ msgstr "(&l) అన్నిటిని తొలగించుము"
+
+#, fuzzy
+#~| msgid "Change &Policy..."
+#~ msgid "Configure &Policy..."
+#~ msgstr "(&P) విధానమును మార్చుము..."
+
+#~ msgid "&Reload List"
+#~ msgstr "(&R) జాబితాను తిరిగిలేడుచేయుము"
+
+#~ msgid "Details"
+#~ msgstr "వివరాలు"
+
+#~ msgid "Name:"
+#~ msgstr "పేరు:"
+
+#~ msgid "Value:"
+#~ msgstr "విలువ:"
+
+#~ msgid "Domain:"
+#~ msgstr "డొమెయిన్:"
+
+#~ msgid "Path:"
+#~ msgstr "దారి:"
+
+#~ msgid "Expires:"
+#~ msgstr "కాలముతీరిన:"
+
+#~ msgid "Secure:"
+#~ msgstr "సురక్షితమైన:"
+
+#, fuzzy
+#~| msgid "Change Cookie Policy"
+#~ msgctxt "@title:window"
+#~ msgid "Change Cookie Policy"
+#~ msgstr "కుకీ విధానమును మార్చుము"
+
+#, fuzzy
+#~| msgid "New Cookie Policy"
+#~ msgctxt "@title:window"
+#~ msgid "New Cookie Policy"
+#~ msgstr "కొత్త కుకీ విధానము"
+
+#~ msgid ""
+#~ "<qt>A policy already exists for<center><b>%1</b></center>Do you want to "
+#~ "replace it?</qt>"
+#~ msgstr ""
+#~ "<qt><center><b>%1</b> కొరకు వొక విధానము యిప్పటికేవుంది </center> మీకు దానిని "
+#~ "పునఃస్థాపించుదామని అనుకొనుచున్నారా?</qt>"
+
+#, fuzzy
+#~| msgid "Duplicate Policy"
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Policy"
+#~ msgstr "నకిలీ విధానము"
+
+#~ msgid "Replace"
+#~ msgstr "పునఃస్థాపించు"
+
+#~ msgid ""
+#~ "Unable to communicate with the cookie handler service.\n"
+#~ "Any changes you made will not take effect until the service is restarted."
+#~ msgstr ""
+#~ "కుకీని సంభాలించు సేవతో సంప్రదించలేక పోయింది.\n"
+#~ "సేవ పునఃప్రారంభమయ్యే వరకు మీరు చేసిన యెటువంటి మార్పులూ ప్రాభావితం కావు."
+
+#~ msgid "Enable coo&kies"
+#~ msgstr "(&k) కుకీలను చేతనముచేయుము"
+
+#~ msgid "Only acce&pt cookies from originating server"
+#~ msgstr "(&p) సెర్వర్ నుండి జనియించిన కుకీలను మాత్రమే ఆమోదించుము"
+
+#~ msgid "Automaticall&y accept session cookies"
+#~ msgstr "(&y) స్వయంచాలకంగా సెషన్ కుకీలను ఆమోదించుము"
+
+#~ msgid "Default Policy"
+#~ msgstr "అప్రమేయ విధానము"
+
+#~ msgid "Accep&t all cookies"
+#~ msgstr "(&t) అన్ని కుకీలను ఆమోదించుము"
+
+#, fuzzy
+#~| msgid "End of session"
+#~ msgid "Accept &until end of session"
+#~ msgstr "సెషన్ ముగింపు"
+
+#~ msgid "Ask &for confirmation"
+#~ msgstr "(&f) నిర్ధారణ కొరకు అడుగుము"
+
+#~ msgid "Re&ject all cookies"
+#~ msgstr "(&j) అన్ని కుకీలను తిరస్కరించుము"
+
+#~ msgid "Site Policy"
+#~ msgstr "సైటు విధానము"
+
+#~ msgid "Search interactively for domains"
+#~ msgstr "డొమైన్సు కొరకు యింటరాక్టివుగా శోధించుము"
+
+#~ msgid "Domain"
+#~ msgstr "డొమైన్"
+
+#~ msgid "&New..."
+#~ msgstr "(&N) కొత్త..."
+
+#~ msgid "Chan&ge..."
+#~ msgstr "(&g) మార్చు..."
+
+#, fuzzy
+#~| msgid "Site Name"
+#~ msgid "Site name:"
+#~ msgstr "సైటు పేరు"
+
+#, fuzzy
+#~| msgid "&Policy:"
+#~ msgid "Policy:"
+#~ msgstr "(&P) విధానము:"
+
+#~ msgid "Accept"
+#~ msgstr "ఆమోదించు"
+
+#, fuzzy
+#~| msgid "End of session"
+#~ msgid "Accept until end of session"
+#~ msgstr "సెషన్ ముగింపు"
+
+#~ msgid "Reject"
+#~ msgstr "తిరస్కరించు"
+
+#~ msgid "Ask"
+#~ msgstr "అడుగు"
+
+#~ msgid "Disable Passive FTP"
+#~ msgstr "పాసివ్ FTPను అచేతనము చేయుము"
+
+#~ msgid "Mark partially uploaded files"
+#~ msgstr "పాక్షికముగా అప్‌లోడు చేసిన ఫైళ్ళను గుర్తుంచుము"
+
+#~ msgid ""
+#~ "While a file is being uploaded its extension is \".part\". When fully "
+#~ "uploaded it is renamed to its real name."
+#~ msgstr ""
+#~ "ఒక ఫైలు అప్‌లోడు అవుతున్నప్పుడు దాని పొడిగింపు \".part\". అది పూర్తిగా అప్‌లోడు అయిన తర్వాత అది "
+#~ "దాని అసలు పేరుకు పునఃనామకరణము చేయబడుతుంది."
+
+#~ msgid "Connect to the Internet directly."
+#~ msgstr "ఇంటర్నెట్‌కు నేరుగా అనుసంధానించుము."
+
+#, fuzzy
+#~| msgid "U&se proxy configuration URL:"
+#~ msgid "Detect proxy configuration automatically"
+#~ msgstr "(&s) ప్రోక్సీ ఆకృతీకరణ URLను వుపయోగించుము:"
+
+#, fuzzy
+#~| msgid "Use the specified proxy script URL to configure the proxy settings."
+#~ msgid "Use the specified proxy script to configure the proxy settings."
+#~ msgstr "ప్రోక్సీ అమరికలను ఆకృతీకరించుటకు తెలుపబడిన ప్రోక్సీ స్క్రిప్టు URLను వుపయోగించుము."
+
+#, fuzzy
+#~| msgid "U&se proxy configuration URL:"
+#~ msgid "Use proxy auto configuration URL:"
+#~ msgstr "(&s) ప్రోక్సీ ఆకృతీకరణ URLను వుపయోగించుము:"
+
+#~ msgid "Enter the address for the proxy configuration script."
+#~ msgstr "ప్రోక్సీ ఆకృతీకరణ స్క్రిప్టు కొరకు చిరునామాను ప్రవేశపెట్టుము."
+
+#, fuzzy
+#~| msgid "U&se proxy configuration URL:"
+#~ msgid "Use system proxy configuration:"
+#~ msgstr "(&s) ప్రోక్సీ ఆకృతీకరణ URLను వుపయోగించుము:"
+
+#, fuzzy
+#~| msgid "Auto &Detect"
+#~ msgid "Auto D&etect"
+#~ msgstr "(&D) స్వయంచాలకంగా గుర్తించుము"
+
+#, fuzzy
+#~| msgid "E&xceptions"
+#~ msgid "Exceptions:"
+#~ msgstr "(&x) ఎక్సెప్షన్లు"
+
+#~ msgid "Show the &value of the environment variables"
+#~ msgstr "(&v) ఎన్విరాన్మెంట్ వేరియబుల్స్ యొక్క విలువను చూపుము"
+
+#~ msgid "Manually enter proxy server configuration information."
+#~ msgstr "ప్రోక్సీ సెర్వర్ ఆకృతీకరణ సమాచారమును మాన్యువల్‌గా ప్రవేశపెట్టుము."
+
+#, fuzzy
+#~| msgid "A&utomatically detect proxy configuration"
+#~ msgid "Use manually specified proxy configuration:"
+#~ msgstr "(&u) ప్రోక్సీ ఆకృతీకరణను స్వయంచాలకంగా గుర్తించుము"
+
+#~ msgid "Enter the address of the HTTP proxy server."
+#~ msgstr "HTTP ప్రోక్సీ సెర్వర్ యొక్క చిరునామాను ప్రవేశపెట్టుము."
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTP proxy server."
+#~ msgid "Enter the port number of the HTTP proxy server."
+#~ msgstr "HTTP ప్రోక్సీ సెర్వర్ యొక్క చిరునామాను ప్రవేశపెట్టుము."
+
+#, fuzzy
+#~| msgid "&Use the same proxy server for all protocols"
+#~ msgid "Use this proxy server for a&ll protocols"
+#~ msgstr "(&U) ఒకటే ప్రోక్సీ సెర్వరును అన్ని ప్రోటోకాల్సుకు వుపయోగించుము"
+
+#~ msgid "Enter the address of the HTTPS proxy server."
+#~ msgstr "HTTPS ప్రోక్సీ సెర్వర్ యొక్క చిరునామాను ప్రవేశపెట్టుము."
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTPS proxy server."
+#~ msgid "Enter the port number of the HTTPS proxy server."
+#~ msgstr "HTTPS ప్రోక్సీ సెర్వర్ యొక్క చిరునామాను ప్రవేశపెట్టుము."
+
+#~ msgid "Enter the address of the FTP proxy server."
+#~ msgstr "FTP ప్రోక్సీ సెర్వర్ యొక్క చిరునామాను ప్రవేశపెట్టుము."
+
+#, fuzzy
+#~| msgid "Enter the address of the FTP proxy server."
+#~ msgid "Enter the port number of the FTP proxy server."
+#~ msgstr "FTP ప్రోక్సీ సెర్వర్ యొక్క చిరునామాను ప్రవేశపెట్టుము."
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTPS proxy server."
+#~ msgid "Enter the address of the SOCKS proxy server."
+#~ msgstr "HTTPS ప్రోక్సీ సెర్వర్ యొక్క చిరునామాను ప్రవేశపెట్టుము."
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTPS proxy server."
+#~ msgid "Enter the port number of the SOCKS proxy server."
+#~ msgstr "HTTPS ప్రోక్సీ సెర్వర్ యొక్క చిరునామాను ప్రవేశపెట్టుము."
+
+#, fuzzy
+#~| msgid "Use proxy only for entries in this list"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Check this box if you want the above proxy settings to apply only to the "
+#~ "addresses listed in the <i>Exceptions</i> list.</qt>"
+#~ msgstr "ఈ జాబితానందలి ప్రవేశముల కొరకు ప్రోక్సీ మాత్రమే ప్రోక్సీ వుపయోగించుము"
+
+#, fuzzy
+#~| msgid "Use proxy only for entries in this list"
+#~ msgid "Use proxy settings only for addresses in the Exceptions list"
+#~ msgstr "ఈ జాబితానందలి ప్రవేశముల కొరకు ప్రోక్సీ మాత్రమే ప్రోక్సీ వుపయోగించుము"
+
+#~ msgid ""
+#~ "You have to restart the running applications for these changes to take "
+#~ "effect."
+#~ msgstr ""
+#~ "ఈ మార్పులు ప్రభావితం అగుటకు మీరు నడుస్తున్న అనువర్తనములను పునఃప్రారంభించవలసి వుంది."
+
+#, fuzzy
+#~| msgid "Update Failed"
+#~ msgctxt "@title:window"
+#~ msgid "Update Failed"
+#~ msgstr "నవీకరణ విఫలమైంది"
+
+#~ msgid "You have to restart KDE for these changes to take effect."
+#~ msgstr "ఈ మార్పులు ప్రభావితం అగుటకు మీరు KDEను పునఃప్రారంభించవలసి వుంటుంది."
+
+#~ msgid "Timeout Values"
+#~ msgstr "కాలముగింపు విలువలు"
+
+#, fuzzy
+#~| msgid " sec"
+#~ msgid " second"
+#~ msgid_plural " seconds"
+#~ msgstr[0] " సెకను"
+#~ msgstr[1] " సెకను"
+#~ msgstr[2] " సెకను"
+#~ msgstr[3] " సెకను"
+#~ msgstr[4] " సెకను"
+
+#~ msgid "Soc&ket read:"
+#~ msgstr "(&k) సాకెట్ చదువుము:"
+
+#~ msgid "Pro&xy connect:"
+#~ msgstr "(&x) ప్రోక్సీ అనుసంధానము:"
+
+#~ msgid "Server co&nnect:"
+#~ msgstr "(&n) సెర్వర్ అనుసంధానము:"
+
+#~ msgid "&Server response:"
+#~ msgstr "(&S) సెర్వర్ స్పందన:"
+
+#~ msgid "FTP Options"
+#~ msgstr "FTP ఐచ్చికములు"
+
+#~ msgid "Enable passive &mode (PASV)"
+#~ msgstr "(&m) పాసివ్ రీతిని చేతనము చేయుము (PASV)"
+
+#~ msgid ""
+#~ "Enables FTP's \"passive\" mode. This is required to allow FTP to work "
+#~ "from behind firewalls."
+#~ msgstr ""
+#~ "FTP యొక్క \"పాసివ్\" రీతిని చేతనము చేస్తుంది. FTPను ఫైర్‌వాల్ దాటి పనిచేయుటకు అనుమతించవలసిన "
+#~ "అవసరము దీనికివుంది."
+
+#~ msgid "Mark &partially uploaded files"
+#~ msgstr "(&p) పాక్షికంగా అప్‌లోడైన ఫైళ్ళను గుర్తుంచుము"
+
+#~ msgid "These settings apply to network browsing only."
+#~ msgstr "ఈ అమరికలు నెట్వర్కు బ్రౌజింగుకు మాత్రమే ఆపాదించబడతాయి."
+
+#~ msgid "Default user name:"
+#~ msgstr "అప్రమేయ వినియోగదారి నామము:"
+
+#~ msgid "Default password:"
+#~ msgstr "అప్రమేయ సంకేతపదము:"
+
+#, fuzzy
+#~| msgid "Add Identification"
+#~ msgctxt "@title:window"
+#~ msgid "Add Identification"
+#~ msgstr "గుర్తింపును జతచేయుము"
+
+#, fuzzy
+#~| msgid "Modify Identification"
+#~ msgctxt "@title:window"
+#~ msgid "Modify Identification"
+#~ msgstr "గుర్తింపును సవరించుము"
+
+#~ msgid ""
+#~ "<qt><center>Found an existing identification for<br/><b>%1</b><br/>Do you "
+#~ "want to replace it?</center></qt>"
+#~ msgstr ""
+#~ "<qt><center>దీని కొరకు యిప్పటికేవున్న గుర్తింపును కనుగొన్నది <br/><b>%1</b><br/>మీరు "
+#~ "దానిని పునఃస్థాపించుదామని అనుకొనుచున్నారా?</center></qt>"
+
+#, fuzzy
+#~| msgid "Duplicate Identification"
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Identification"
+#~ msgstr "నకిలీ గుర్తింపు"
+
+#~ msgid "&Send identification"
+#~ msgstr "(&S) గుర్తింపును పంపుము"
+
+#~ msgid "Default Identification"
+#~ msgstr "అప్రమేయ గుర్తింపు"
+
+#~ msgid ""
+#~ "Includes your operating system's name in the browser identification text."
+#~ msgstr "బ్రౌజర్ గుర్తింపు వచనము నందు మీ ఆపరేటింగ్ సిస్టమ్ పేరును చేర్చుతుంది."
+
+#~ msgid "Add operating s&ystem name"
+#~ msgstr "(&y) ఆపరేటింగ్ సిస్టమ్ పేరు జతచేయుము"
+
+#~ msgid ""
+#~ "Includes your operating system's version number in the browser "
+#~ "identification text."
+#~ msgstr "బ్రౌజర్ గుర్తింపు వచనమునందు మీ ఆపరేటింగ్ సిస్టమ్ వర్షన్ సంఖ్యను చేర్చుతుంది."
+
+#~ msgid "Add operating system &version"
+#~ msgstr "(&v) ఆపరేటింగ్ సిస్టమ్ వర్షన్‌ను జతచేయుము"
+
+#~ msgid "Includes your machine's CPU type in the browser identification text."
+#~ msgstr "మీ మిషన్‌యొక్క CPU రకమును బ్రౌజర్ గుర్తింపు వచనమునందు చేర్చుము."
+
+#~ msgid "Add &machine (processor) type"
+#~ msgstr "(&m) మిషన్ (ప్రోసెసర్) రకమును జతచేయుము"
+
+#~ msgid ""
+#~ "Includes your language settings in the browser identification text to "
+#~ "obtain localized versions of the page."
+#~ msgstr ""
+#~ "పేజీ యొక్క స్థానికీకరించిన వర్షన్‌లను పొందుటకు బ్రౌజర్ గుర్తింపు వచనమునందు మీ భాష అమరికలను "
+#~ "చేర్చుతుంది."
+
+#~ msgid "Add lang&uage information"
+#~ msgstr "(&u) భాష సమాచారమును జతచేయుము"
+
+#~ msgid "Site Specific Identification"
+#~ msgstr "సైటును బట్టి గుర్తింపు"
+
+#~ msgid "Site Name"
+#~ msgstr "సైటు పేరు"
+
+#~ msgid "Identification"
+#~ msgstr "గుర్తింపు"
+
+#~ msgid "User Agent"
+#~ msgstr "వినియోగదారి ప్రతినిధి"
+
+#~ msgid "Add new identification text for a site."
+#~ msgstr "సైటుకొరకు కొత్త గుర్తింపు వచనమును జతచేయుము."
+
+#~ msgid "Change the selected identifier text."
+#~ msgstr "ఎంపికచేసిన గుర్తింపుదారి వచనమును మార్చుము."
+
+#~ msgid "Delete the selected identifier text."
+#~ msgstr "ఎంపికచేసిన గుర్తింపుదారి వచనమును తొలగించుము."
+
+#~ msgid "Delete all identifiers."
+#~ msgstr "అన్ని గుర్తింపుదారులను తొలగించుము."
+
+#~ msgid "&When browsing the following site:"
+#~ msgstr "(&W) క్రింది సైటును బ్రౌజ్ చేస్తున్నప్పుడు:"
+
+#~ msgid "&Use the following identification:"
+#~ msgstr "(&U) క్రింది గుర్తింపును వుపయోగించుము:"
+
+#~ msgid "Real identification:"
+#~ msgstr "వాస్తవ గుర్తింపు:"
+
+#~ msgid "Treat &all cookies as session cookies"
+#~ msgstr "అన్ని కుకీలను సెషన్ కుకీల వలె చూడుము"
+
+#~ msgid ""
+#~ "Enter the port number of the HTTP proxy server. Default is 8080. Another "
+#~ "common value is 3128."
+#~ msgstr ""
+#~ "HTTP ప్రోక్సీ సెర్వర్ యొక్క పోర్టు సంఖ్యను ప్రవేశపెట్టుము. అప్రమేయ 8080. వేరొక వుమ్మడి విలువ "
+#~ "3128."
+
+#~ msgid ""
+#~ "Enter the port number of the FTP proxy server. Default 8080. Another "
+#~ "common value is 3128."
+#~ msgstr ""
+#~ "FTP ప్రోక్సీ సేవిక యొక్క పోర్టు సంఖ్యను ప్రవేశపెట్టుము. అప్రమేయ 8080. వేరొక వుమ్మడి విలువ 3128."
+
+#, fuzzy
+#~| msgid "Variable Proxy Configuration"
+#~ msgctxt "@title:window"
+#~ msgid "Variable Proxy Configuration"
+#~ msgstr "వేరియబుల్ ప్రోక్సీ ఆకృతీకరణ"
+
+#~ msgid "You must specify at least one valid proxy environment variable."
+#~ msgstr "మీరు కనీసం వొక చెల్లునటువంటి ప్రోక్సీ యెన్విరాన్మెంట్ వేరియబుల్‌ను తెలుపవలెను."
+
+#, fuzzy
+#~| msgid "Invalid Proxy Setup"
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Proxy Setup"
+#~ msgstr "సరికాని ప్రోక్సీ అమర్పు"
+
+#~ msgid "Successfully verified."
+#~ msgstr "సమర్థవంతంగా నిర్ధారించబడింది"
+
+#, fuzzy
+#~| msgid "Proxy Setup"
+#~ msgctxt "@title:window"
+#~ msgid "Proxy Setup"
+#~ msgstr "ప్రోక్సీ అమర్పు"
+
+#~ msgid ""
+#~ "Did not detect any environment variables commonly used to set system wide "
+#~ "proxy information."
+#~ msgstr ""
+#~ "సిస్టమ్ తరహా ప్రోక్సీ సమాచారమును అమర్చుటకు వుమ్మడిగా వుపయోగించే ఏవిధమైన ఎన్విరాన్మెంట్ వేరియబుల్స్ "
+#~ "గుర్తించబడలేదు."
+
+#, fuzzy
+#~| msgid "Automatic Proxy Variable Detection"
+#~ msgctxt "@title:window"
+#~ msgid "Automatic Proxy Variable Detection"
+#~ msgstr "స్వయంచాలక ప్రోక్సీ వేరియబుల్ గుర్తింపు"
+
+#, fuzzy
+#~| msgid "Manual Proxy Configuration"
+#~ msgctxt "@title:window"
+#~ msgid "Manual Proxy Configuration"
+#~ msgstr "మాన్యువల్ ప్రోక్సీ ఆకృతీకరణ"
+
+#, fuzzy
+#~| msgid "Invalid Proxy Setting"
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Proxy Setting"
+#~ msgstr "సరికాని ప్రోక్సీ అమర్పు"
+
+#~ msgid ""
+#~ "One or more of the specified proxy settings are invalid. The incorrect "
+#~ "entries are highlighted."
+#~ msgstr ""
+#~ "తెలుపబడిన ప్రోక్సీ అమరికలలో వొకటి లేదా యెక్కువ అమరికలు చెల్లనవి. సరికాని ప్రవేశములు వుద్దీపనం "
+#~ "చేయబడినాయి."
+
+#~ msgid "You entered a duplicate address. Please try again."
+#~ msgstr "మీరు నకిలీ చిరునామాను ప్రవేశపెట్టినారు. దయచేసి మరలా ప్రయత్నించండి."
+
+#~ msgid "<qt><center><b>%1</b></center> is already in the list.</qt>"
+#~ msgstr "<qt><center><b>%1</b></center>యిప్పటికే జాబితానందు వున్నది.</qt>"
+
+#, fuzzy
+#~| msgid "Duplicate Entry"
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Entry"
+#~ msgstr "నకిలీ ప్రవేశము"
+
+#, fuzzy
+#~| msgid "New Exception"
+#~ msgctxt "@title:window"
+#~ msgid "New Exception"
+#~ msgstr "కొత్త ఎక్సెప్షన్"
+
+#, fuzzy
+#~| msgid "Change Exception"
+#~ msgctxt "@title:window"
+#~ msgid "Change Exception"
+#~ msgstr "ఎక్సెప్షన్‌ను మార్చుము"
+
+#, fuzzy
+#~| msgid "Invalid Entry"
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Entry"
+#~ msgstr "సరికాని ప్రవేశము"
+
+#~ msgid "The address you have entered is not valid."
+#~ msgstr "మీరు ప్రవేశపెట్టిన చిరునామా చెల్లునది కాదు."
+
+#~ msgid "Enter the URL or address that should use the above proxy settings:"
+#~ msgstr "పై ప్రోక్సీ అమరికలను వుపయోగించవలసిన URL లేదా చిరునామాను ప్రవేశపెట్టండి:"
+
+#~ msgid ""
+#~ "Enter the address or URL that should be excluded from using the above "
+#~ "proxy settings:"
+#~ msgstr "పై ప్రోక్సీ అమరికలను వుపయోగించుటనుండి తీసివేయవలసిన చిరునామా లేదా URL ప్రవేశపెట్టండి:"
+
+#~ msgid ""
+#~ "The address of the automatic proxy configuration script is invalid. "
+#~ "Please correct this problem before proceeding. Otherwise, your changes "
+#~ "will be ignored."
+#~ msgstr ""
+#~ "స్వయంచాలక ప్రోక్సీ ఆకృతీకరణ స్క్రిప్టు చిరునామా చెల్లనిది. కొనసాగుటకు ముందుగా దయచేసి ఈ సమస్యను "
+#~ "సరిదిద్దుము. లేకపోతే, మీ మార్పులు విస్మరించబడతాయి."
+
+#~ msgid ""
+#~ "<qt>The proxy settings you specified are invalid.<br /><br />Please click "
+#~ "on the <b>Setup...</b> button and correct the problem before proceeding; "
+#~ "otherwise your changes will be ignored.</qt>"
+#~ msgstr ""
+#~ "<qt>మీరు తెలిపిన ప్రోక్సీ అమరికలు చెల్లనివి.<br /><br />దయచేసి <b>Setup...</b> బటన్‌పై నొక్కి, "
+#~ "కొనసాగించుటకు ముందుగానే సమస్యను సరిదిద్దుము; లేకపోతే మీ మార్పులు విస్మరించబడతాయి.</qt>"
+
+#~ msgid "H&TTP:"
+#~ msgstr "H&TTP:"
+
+#~ msgid "HTTP&S:"
+#~ msgstr "HTTP&S:"
+
+#~ msgid "&FTP:"
+#~ msgstr "&FTP:"
+
+#~ msgid "NO &PROXY:"
+#~ msgstr "NO &PROXY:"
+
+#~ msgid "&Verify"
+#~ msgstr "(&V) నిర్ధారించుము"
+
+#~ msgid "Connect to the &Internet directly"
+#~ msgstr "(&I) ఇంటర్నెట్‌కు నేరుగా అనుసంధానించుము"
+
+#~ msgid "Use preset proxy environment &variables"
+#~ msgstr "(&v) ప్రస్తుత ప్రోక్సీ యెన్విరాన్మెంట్ వేరియబుల్సును వుపయోగించుము"
+
+#~ msgid "Show the proxy environment variable configuration dialog."
+#~ msgstr "ప్రోక్సీ యెన్విరాన్మెంట్ వేరియబుల్ ఆకృతీకరణ డైలాగును చూపుము."
+
+#~ msgid "Setup..."
+#~ msgstr "అమర్పు..."
+
+#~ msgid "&Manually specify the proxy settings"
+#~ msgstr "(&M)ప్రోక్సీ అమరికలను మాన్యువల్‌గా తెలుపుము"
+
+#~ msgid "Show the manual proxy configuration dialog."
+#~ msgstr "మాన్యువల్ ప్రోక్సీ ఆకృతీకరణ డైలాగును చూపుము."
+
+#~ msgid "Authori&zation"
+#~ msgstr "(&z) ధృవీకరణ"
+
+#~ msgid "Prompt for login information whenever it is required."
+#~ msgstr "ఎప్పుడు అవసరమైనా లాగిన్ సమాచారము కొరకు అడుగుము."
+
+#~ msgid "Prompt as &needed"
+#~ msgstr "(&n) అవసరమైనట్లుగా అడుగుము"
+
+#~ msgid "Use this login information."
+#~ msgstr "లాగిన్ సమాచారమును వుపయోగించుము."
+
+#~ msgid ""
+#~ "Use information specified here to login into proxy servers as needed."
+#~ msgstr "ప్రోక్సీ సెర్వర్లకు అవసరమైనట్లుగా లాగిన్ అగుటకు యిక్కడ తెలిపిన సమాచారమును వుపయోగించుము."
+
+#~ msgid "Username:"
+#~ msgstr "యూజర్ పేరు:"
+
+#~ msgid "Login name."
+#~ msgstr "లాగిన్ పేరు."
+
+#~ msgid "Login password."
+#~ msgstr "లాగిన్ సంకేతపదము."
+
+#~ msgid "Password:"
+#~ msgstr "సంకేతపదము:"
+
+#~ msgid "O&ptions"
+#~ msgstr "(&p) ఐచ్చికాలు"
+
+#~ msgid "Use persistent connections to proxy"
+#~ msgstr "ప్రోక్సీకు స్థిరమైన అనుసంధానములను వుపయోగించుము"
+
+#~ msgid "Ser&vers"
+#~ msgstr "(&v) సెర్వర్లు"
+
+#~ msgid "Remove all proxy exception addresses from the list."
+#~ msgstr "అన్ని ప్రోక్సీ ఎక్సెప్షన్ చిరునామాలను జాబితానుండి తీసివేయుము."
+
+#~ msgid "D&elete All"
+#~ msgstr "(&e) అన్నిటిని తొలగించుము"
+
+#~ msgid "Remove the selected proxy exception address from the list."
+#~ msgstr "ఎంపికచేసిన ప్రోక్సీ ఎక్సెప్షన్ చిరునామాను జాబితానుండి తీసివేయుము."
+
+#~ msgid "De&lete"
+#~ msgstr "(&l) తొలగించుము"
+
+#~ msgid "Add new proxy exception address to the list."
+#~ msgstr "కొత్త ప్రోక్సీ ఎక్సెప్షన్ చిరునామాను జాబితాకు జతచేయుము."
+
+#~ msgid "Change the selected proxy exception address."
+#~ msgstr "ఎంపికచేసిన ప్రోక్సీ ఎక్సెప్షన్ చిరునామాను మార్చుము."
+
+#~ msgid "C&hange..."
+#~ msgstr "(&h) మార్చుము..."
+
+#~ msgid "&Domain name:"
+#~ msgstr "(&D) డొమైన్ నామము:"
+
+#~ msgid "Includes your platform type in the browser identification text"
+#~ msgstr "మీ ప్లాట్‌ఫాం రకమును బ్రౌజర్ గుర్తింపు వచనమునందు చేర్చుతుంది"
+
+#~ msgid "Add &platform name"
+#~ msgstr "(&p) ప్లాట్‌ఫాం పేరును జతచేయుము"
+
+#~ msgid "Domain [Group]"
+#~ msgstr "డొమైన్ [సమూహం]"
+
+#~ msgid "Host [Set By]"
+#~ msgstr "హోస్టు [చేత అమర్చబడింది]"
+
+#~ msgid "&LISa Daemon"
+#~ msgstr "&LISa డెమోన్"
+
+#~ msgid "lan:/ Iosla&ve"
+#~ msgstr "lan:/ Iosla&ve"

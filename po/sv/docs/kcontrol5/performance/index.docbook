@@ -1,0 +1,77 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Swedish "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="performance" lang="&language;">
+<articleinfo>
+<title
+>Prestanda</title>
+<authorgroup>
+<author
+>&Mike.McBride; &Mike.McBride.mail;</author>
+<othercredit role="translator"
+> <firstname
+>Stefan</firstname
+> <surname
+>Asserhäll</surname
+> <affiliation
+><address
+><email
+>stefan.asserhall@bredband.net</email
+></address
+></affiliation
+> <contrib
+>Översättare</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2016-11-08</date>
+<releaseinfo
+>Program 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Systeminställningar</keyword>
+<keyword
+>prestanda</keyword>
+<keyword
+>ladda i förväg</keyword>
+</keywordset>
+</articleinfo>
+
+<sect1 id="sys-performance">
+<title
+>Prestandainställningar</title>
+
+<para
+>&konqueror; används på en mängd olika datorer av en stort antal olika användare. Under kategorin prestanda, låter den här dialogrutan varje användare justera alternativ som kan göra att datorn som &konqueror; är installerad på verkar svara snabbare. </para>
+
+<sect2
+><title
+>Ladda i förväg</title>
+<para
+>Gruppen som heter <guilabel
+>Ladda i förväg</guilabel
+> gör en avvägning mellan minne och prestanda.</para>
+
+<para
+><emphasis
+>Ladda i förväg</emphasis
+> avser att ladda en instans av &konqueror; i minne innan en användare anger att &konqueror; ska startas. Den positiva effekten av detta är att när en användare anger &konqueror; ska startas, visas fönstret omedelbart eftersom större delen av programmet har laddats i förväg. Den negativa effekten är att den här instansen av &konqueror; använder minne som skulle kunna användas av andra program. Normalt när en användare stänger &konqueror;, stängs inte den instansen. Det betyder att nästa gång användaren vill ladda &konqueror;, sker det nästan omedelbart igen.</para>
+
+<para
+>Den sista kryssrutan som heter <guilabel
+>Försök alltid ha minst en förladdad instans</guilabel
+> anger att du alltid vill att en instans av &konqueror; ska vara laddad i förväg, men oanvänd. Alternativet minskar i själva verket prestanda på vissa datorer (särskilt de med begränsat fysiskt minne).</para>
+</sect2>
+</sect1>
+
+</article>

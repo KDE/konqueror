@@ -1,0 +1,67 @@
+# Stephan Johach <hunsum@gmx.de>, 2005.
+# Thomas Reitelbach <tr@erdfunkstelle.de>, 2005, 2006, 2007, 2008.
+# Stephan Johach <lucardus@onlinehome.de>, 2006.
+# Burkhard Lück <lueck@hube-lueck.de>, 2010.
+# Frederik Schwarzer <schwarzer@kde.org>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: khtmlkttsd\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2011-05-10 15:49+0200\n"
+"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: khtmltts.cpp:33
+#, kde-format
+msgid "&Speak Text"
+msgstr "&Text vorlesen"
+
+#. i18n: ectx: Menu (tools)
+#: khtmlttsplugin.rc:5
+#, kde-format
+msgid "&Tools"
+msgstr "E&xtras"
+
+#. i18n: ectx: ToolBar (speechToolbar)
+#: khtmlttsplugin.rc:10
+#, kde-format
+msgid "Speech Toolbar"
+msgstr "Vorlesen-Werkzeugleiste"
+
+#~ msgctxt "@title:window"
+#~ msgid "Starting Jovie Text-to-Speech Service Failed"
+#~ msgstr "Das Starten des Sprachausgabedienstes Jovie ist fehlgeschlagen"
+
+#~ msgid "The D-Bus call say() failed."
+#~ msgstr "Die D-Bus-Funktion say() ist fehlgeschlagen."
+
+#~ msgctxt "@title:window"
+#~ msgid "D-Bus Call Failed"
+#~ msgstr "D-Bus-Aufruf fehlgeschlagen"
+
+#~ msgid "Starting KTTSD Failed"
+#~ msgstr "Der Start von KTTSD ist fehlgeschlagen"
+
+#, fuzzy
+#~| msgid ""
+#~| "You cannot read anything except web pages with\n"
+#~| "this plugin, sorry."
+#~ msgid "You cannot read anything except web pages with this plugin."
+#~ msgstr "Mit diesem Modul können Sie leider nur Webseiten lesen."
+
+#, fuzzy
+#~| msgid "Cannot Read source"
+#~ msgid "Cannot Read Source"
+#~ msgstr "Quelle lässt sich nicht lesen"
+
+#~ msgid "The D-Bus call supportsMarkup failed."
+#~ msgstr "Die D-Bus-Funktion supportsMarkup ist fehlgeschlagen."
+
+#~ msgid "The D-Bus call setText failed."
+#~ msgstr "Die D-Bus-Funktion setText ist fehlgeschlagen."

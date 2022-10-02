@@ -1,0 +1,104 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Vít Pelčák <vit@pelcak.org>, 2010, 2011, 2013, 2014, 2016, 2017.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: khtmlsettingsplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"PO-Revision-Date: 2017-09-11 13:55+0100\n"
+"Last-Translator: Vít Pelčák <vit@pelcak.org>\n"
+"Language-Team: Czech <kde-i18n-doc@kde.org>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 2.0\n"
+
+#. i18n: ectx: Menu (tools)
+#: khtmlsettingsplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "&Nástroje"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: khtmlsettingsplugin.rc:8
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "Extra nástrojový panel"
+
+#: settingsplugin.cpp:41
+#, kde-format
+msgid "HTML Settings"
+msgstr "Nastavení HTML"
+
+#: settingsplugin.cpp:46
+#, kde-format
+msgid "Java&Script"
+msgstr "Java&Script"
+
+#: settingsplugin.cpp:51
+#, kde-format
+msgid "&Java"
+msgstr "&Java"
+
+#: settingsplugin.cpp:56
+#, kde-format
+msgid "&Cookies"
+msgstr "&Cookies"
+
+#: settingsplugin.cpp:61
+#, kde-format
+msgid "&Plugins"
+msgstr "&Moduly"
+
+#: settingsplugin.cpp:66
+#, kde-format
+msgid "Autoload &Images"
+msgstr "Automaticky načítat o&brázky"
+
+#: settingsplugin.cpp:73
+#, kde-format
+msgid "Enable Pro&xy"
+msgstr "Povolit pro&xy"
+
+#: settingsplugin.cpp:78
+#, kde-format
+msgid "Enable Cac&he"
+msgstr "Povolit &mezipaměť"
+
+#: settingsplugin.cpp:83
+#, kde-format
+msgid "Cache Po&licy"
+msgstr "Ch&ování mezipaměti"
+
+#: settingsplugin.cpp:85
+#, kde-format
+msgid "&Keep Cache in Sync"
+msgstr "U&držovat mezipaměť synchronizovanou"
+
+#: settingsplugin.cpp:86
+#, kde-format
+msgid "&Use Cache if Possible"
+msgstr "Po&užívat mezipaměť pokud možno"
+
+#: settingsplugin.cpp:87
+#, kde-format
+msgid "&Offline Browsing Mode"
+msgstr "Režim prohlížení &offline"
+
+#: settingsplugin.cpp:180
+#, kde-format
+msgid ""
+"The cookie setting could not be changed, because the cookie daemon could not "
+"be contacted."
+msgstr ""
+"Nastavení cookies nelze změnit protože se nelze spojit s démonem cookies."
+
+#: settingsplugin.cpp:182
+#, kde-format
+msgctxt "@title:window"
+msgid "Cookie Settings Unavailable"
+msgstr "Nastavení cookies není dostupné"

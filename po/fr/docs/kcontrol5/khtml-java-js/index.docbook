@@ -1,0 +1,161 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % French "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="khtml-java-js" lang="&language;">
+<articleinfo>
+<title
+>Java et JavaScript</title>
+<authorgroup>
+<author
+>&Krishna.Tateneni; &Krishna.Tateneni.mail;</author>
+&traducteurDamienRaudeMorvan; &traducteurEricBischoff; &traducteurJoelleCornavin; &traducteurYvesDessertine; &relecteurPierreBuard; 
+</authorgroup>
+
+<date
+>08-11-2016</date>
+<releaseinfo
+>Applications 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Configuration du système</keyword>
+<keyword
+>konqueror</keyword>
+<keyword
+>navigation</keyword>
+<keyword
+>Java</keyword>
+<keyword
+>JavaScript</keyword>
+</keywordset>
+
+</articleinfo>
+<sect1 id="konq-browsing">
+<title
+>&Java; et JavaScript</title>
+
+<sect2 id="kbrowse-java">
+<title
+>&Java;</title>
+
+<para
+>&Java; permet à des applications d'être téléchargées et exécutées par un navigateur web, pourvu que vous ayez installé le logiciel nécessaire sur votre machine. De nombreux sites web utilisent &Java; (&pex;, des services bancaires en ligne ou des sites de jeu interactifs). Vous devez savoir que l'exécution de programmes provenant de sources non connues peut mettre en danger la sécurité de votre ordinateur, même si l'étendue potentielle des dégâts est limitée.</para>
+
+<para
+>La case à cocher <guilabel
+>Toujours activer Java</guilabel
+> permet par défaut à tous les sites web d'utiliser &Java;. Vous pouvez également choisir d'activer ou de désactiver &Java; sur certains sites. Pour ajouter une politique concernant un hôte donné, cliquez sur le bouton <guilabel
+>Nouveau...</guilabel
+> pour faire apparaître une boîte de dialogue dans laquelle vous pourrez saisir le nom de l'hôte puis choisir d'accepter ou de refuser du code &Java; provenant de cet hôte particulier, ce qui ajoutera le domaine correspondant à la liste située à la gauche de la page.</para>
+
+<para
+>Vous pouvez choisir un hôte dans la liste et cliquer sur le bouton <guilabel
+>Changer...</guilabel
+> pour appliquer une autre politique à cet hôte. En cliquant sur le bouton <guilabel
+>Supprimer</guilabel
+>, la politique de l'hôte sélectionné sera retirée ; après suppression, la configuration globale s'appliquera à cet hôte.</para>
+
+<para
+>Pour finir, le groupe de paramètres intitulé <guilabel
+>Configuration de l'environnement d'exécution Java</guilabel
+> permet de régler la façon dont &Java; doit fonctionner.</para>
+
+<para
+>L'option <guilabel
+>Utiliser le gestionnaire de sécurité</guilabel
+> est normalement activée par défaut. L'activation du gestionnaire de sécurité fera fonctionner la <acronym
+>JVM</acronym
+> (machine virtuelle Java) avec un gestionnaire de sécurité. Ceci empêchera les applets d'écrire et de lire sur votre système de fichiers, de créer des connexions arbitraires et toutes autres actions susceptibles de perturber votre système. Désactivez cette option à vos risques et périls. Vous pouvez modifier votre fichier <filename
+>$<envar
+>HOME</envar
+>/.java.policy</filename
+> avec l'utilitaire policytool &Java; pour donner davantage de droits au code téléchargé depuis certains sites.</para>
+
+<para
+><guilabel
+>Utiliser KIO</guilabel
+> permettra à la <acronym
+>JVM</acronym
+> d'employer ses propres transports <acronym
+>KIO</acronym
+> pour les connexions réseau.</para>
+
+<para
+>La case à cocher <guilabel
+>Arrêter le serveur d'applets dans le cas d'une inactivité supérieure à</guilabel
+> permet d'économiser des ressources en fermant le serveur d'applets &Java; lorsqu'il n'est pas actif, au lieu de le laisser tourner en tâche de fond. Si cette case n'est pas cochée, les applets &Java; démarreront sans doute plus vite, mais ce comportement consommera des ressources système lorsque vous n'utiliserez pas d'applet &Java;. En la cochant, vous pourrez définir un délai de temporisation.</para>
+
+<para
+>&konqueror; peut détecter automatiquement l'installation de &Java; sur votre système ou vous laisser spécifier l'endroit où ce dernier est installé en sélectionnant <guilabel
+>Emplacement de l'exécutable Java</guilabel
+>. Vous pouvez être amené à choisir cette méthode, par exemple, si vous avez de multiples installations de Java sur votre système, et, ainsi, indiquer celle que vous souhaitez utiliser. Si la machine virtuelle &Java; que vous employez nécessite des options de démarrage particulières, précisez-les dans le champ de saisie <guilabel
+>Arguments Java supplémentaires</guilabel
+>.</para>
+
+</sect2>
+
+<sect2 id="kbrowse-javascript">
+<title
+>JavaScript</title>
+
+<para
+>Malgré son nom, JavaScript n'a aucun rapport avec &Java;.</para>
+
+<para
+>La première partie de cet onglet fonctionne de la même façon que celui configurant &Java;.</para>
+
+<para
+>La case à cocher <guilabel
+>Toujours activer JavaScript</guilabel
+> permet par défaut à tous les sites web d'utiliser JavaScript. Vous pouvez également choisir d'activer ou de désactiver JavaScript sur certains sites. Pour ajouter une politique concernant un hôte donné, cliquez sur le bouton <guilabel
+>Nouveau...</guilabel
+> pour faire apparaître une boîte de dialogue dans laquelle saisir le nom de l'hôte puis choisir d'accepter ou de refuser du code JavaScript provenant de cet hôte particulier. Cela ajoutera le domaine correspondant à la liste située à la gauche de la page.</para>
+
+<para
+>Vous pouvez choisir un hôte dans la liste et cliquer sur le bouton <guilabel
+>Changer...</guilabel
+> pour appliquer une autre politique à cet hôte. En cliquant sur le bouton <guilabel
+>Supprimer</guilabel
+>, la politique de l'hôte sélectionné sera retirée ; après suppression, la configuration globale s'appliquera à cet hôte.</para>
+<!-- missing section Debugging
+Enable debugger Enables builtin JavaScript debugger.
+Report errors Enables the reporting of errors that occur when JavaScript code is executed.
+How are errors reported? popup window? icon in status bar?
+-->
+<para
+>Le dernier groupe d'options dans la section <guilabel
+>Politique générale pour JavaScript</guilabel
+> détermine ce qui se produit lorsqu'une page utilise JavaScript pour des actions spécifiques.</para>
+
+<para
+>Vous pouvez activer ou désactiver individuellement la capacité de JavaScript à manipuler vos fenêtres par des déplacements, des re-dimensionnements ou des changements de focus. Vous pouvez aussi empêcher les modifications par JavaScript du texte de la barre d'état : dans ce cas, vous verrez toujours avant de cliquer l'endroit vers lequel pointent les liens. Les choix pour ces options sont <guilabel
+>Autoriser</guilabel
+> ou <guilabel
+>Ignorer</guilabel
+>.</para>
+
+<para
+>D'autres possibilités vous sont offertes lorsqu'une page utilisant JavaScript tente d'ouvrir une nouvelle fenêtre. Vous pouvez forcer &konqueror; à <guilabel
+>Autoriser</guilabel
+> toutes les requêtes de ce type, <guilabel
+>Demander</guilabel
+> chaque fois qu'une requête est effectuée ou <guilabel
+>Refuser</guilabel
+> toutes les requêtes d'ouverture.</para>
+
+<para
+>Le paramètre <guilabel
+>Intelligent</guilabel
+> n'autorisera les nouvelles fenêtres JavaScript que lorsque vous aurez explicitement sélectionné un lien qui en crée une.</para>
+</sect2>
+
+</sect1>
+
+</article>

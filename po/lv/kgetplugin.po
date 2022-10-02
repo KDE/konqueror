@@ -1,0 +1,3693 @@
+# translation of kget.po to Latvian
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Viesturs Zarins <viesturs.zarins@mii.lu.lv>, 2008, 2010.
+# Viesturs Zariņš <viesturs.zarins@algorego.com>, 2008.
+# Viesturs Zariņš <viesturs.zarins@mii.lu.lv>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kget\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2010-01-09 18:49+0200\n"
+"Last-Translator: Viesturs Zarins <viesturs.zarins@mii.lu.lv>\n"
+"Language-Team: Latvian <locale@laka.lv>\n"
+"Language: lv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2);\n"
+"X-Generator: Lokalize 1.0\n"
+
+#: kget_plugin.cpp:56
+#, kde-format
+msgid "Download Manager"
+msgstr "Lejupielāžu pārvaldnieks"
+
+#: kget_plugin.cpp:62
+#, kde-format
+msgid "Show Drop Target"
+msgstr "Rādīt nomešanas mērķi"
+
+#: kget_plugin.cpp:69
+#, kde-format
+msgid "List All Links"
+msgstr "Rādīt visas saites"
+
+#: kget_plugin.cpp:74
+#, kde-format
+msgid "List Selected Links"
+msgstr "Rādīt izvēlētās saites"
+
+#: kget_plugin.cpp:170
+#, fuzzy, kde-format
+#| msgid "Download failed, no working URLs were found."
+msgid "No downloadable links were found."
+msgstr "Lejupielāde neveiksmīga, netika atrasts neviens strādājošs URLs."
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No Links"
+msgstr "Nav saišu"
+
+#. i18n: ectx: Menu (tools)
+#: konqueror_kget_browser_integration.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "&Rīki"
+
+#, fuzzy
+#~| msgid "Unable to continue: KGet cannot download using this protocol."
+#~ msgid "Unable to communicate with the KGet download manager."
+#~ msgstr "Nevar turpināt: KGet nespēj lejupielādēt no šī protokola."
+
+#~ msgid "Plugins"
+#~ msgstr "Spraudņi"
+
+#~ msgid "New Group"
+#~ msgstr "Jauna grupa"
+
+#~ msgid "Xml"
+#~ msgstr "Xml"
+
+#~ msgid "Sqlite"
+#~ msgstr "Sqlite"
+
+#~ msgid "Nepomuk"
+#~ msgstr "Nepomuk"
+
+#~ msgid "Turn Off Computer"
+#~ msgstr "Izslēgt datoru"
+
+#, fuzzy
+#~| msgid "Turn Off Computer"
+#~ msgid "Hibernate Computer"
+#~ msgstr "Izslēgt datoru"
+
+#, fuzzy
+#~| msgid "Turn Off Computer"
+#~ msgid "Suspend Computer"
+#~ msgstr "Izslēgt datoru"
+
+#~ msgid "Appearance"
+#~ msgstr "Izskats"
+
+#~ msgid "Change appearance settings"
+#~ msgstr "Mainīt izskata iestatījumus"
+
+#~ msgid "Groups"
+#~ msgstr "Grupas"
+
+#~ msgid "Manage the groups"
+#~ msgstr "Pārvaldīt grupas"
+
+#~ msgid "Network"
+#~ msgstr "Tīkls"
+
+#~ msgid "Network and Downloads"
+#~ msgstr "Tīkls un lejupielādes"
+
+#~ msgid "Web Interface"
+#~ msgstr "Tīmekļa saskarne"
+
+#~ msgid "Control KGet over a Network or the Internet"
+#~ msgstr "Kontrolē KGet caur tīklu vai Internetu"
+
+#~ msgid "Verification"
+#~ msgstr "Pārbaude"
+
+#, fuzzy
+#~| msgid "Integration"
+#~ msgctxt "integration of KGet with other applications"
+#~ msgid "Integration"
+#~ msgstr "Integrācija"
+
+#~ msgctxt "Advanced Options"
+#~ msgid "Advanced"
+#~ msgstr "Paplašināti"
+
+#~ msgid "Advanced Options"
+#~ msgstr "Paplašinātas opcijas"
+
+#~ msgid "Transfer Plugins"
+#~ msgstr "Pārsūtīšanas spraudņi"
+
+#, fuzzy
+#~| msgid "Excluded:"
+#~ msgid "Include"
+#~ msgstr "Izlaisti:"
+
+#, fuzzy
+#~| msgid "Excluded:"
+#~ msgid "Exclude"
+#~ msgstr "Izlaisti:"
+
+#, fuzzy
+#~| msgid "Regular expression:"
+#~ msgid "Regular expression"
+#~ msgstr "Regulāra izteiksme"
+
+#~ msgid "KGet"
+#~ msgstr "KGet"
+
+#~ msgid "1 Item"
+#~ msgid_plural "%1 Items"
+#~ msgstr[0] "%1 vienība"
+#~ msgstr[1] "%1 vienības"
+#~ msgstr[2] "%1 vienību"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#~ msgctxt "start transfergroup downloads"
+#~ msgid "Start"
+#~ msgstr "Sākt"
+
+#~ msgctxt "stop transfergroup downloads"
+#~ msgid "Stop"
+#~ msgstr "Apturēt"
+
+#~ msgid "KGet is downloading %1 file"
+#~ msgid_plural "KGet is downloading %1 files"
+#~ msgstr[0] "KGet lejupielādē %1 failu"
+#~ msgstr[1] "KGet lejupielādē %1 failus"
+#~ msgstr[2] "KGet lejupielādē %1 failus"
+
+#~ msgid "Error trying to get %1"
+#~ msgstr "Kļūda mēģinot ielādēt %1"
+
+#~ msgid "Are you sure that you want to remove the group named %1?"
+#~ msgstr "Vai esat pārliecināts ka vēlaties izdzēst grupu vārdā %1?"
+
+#~ msgid "Remove Group"
+#~ msgstr "Dzēst grupu"
+
+#~ msgid "Are you sure that you want to remove the following groups?"
+#~ msgstr "Vai esat pārliecināts ka vēlaties dzēst šīs grupas?"
+
+#~ msgid "Remove groups"
+#~ msgstr "Dzēst grupas"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>The following file has finished downloading:</p><p style=\"font-size: "
+#~| "small;\">                      %1</p>"
+#~ msgid ""
+#~ "<p>The following transfer has been added to the download list:</p><p "
+#~ "style=\"font-size: small;\">\\%1</p>"
+#~ msgstr ""
+#~ "<p>Pabeigta šī faila lejupielāde:</p><p style=\"font-size: small;"
+#~ "\">                      %1</p>"
+
+#, fuzzy
+#~| msgid "Downloaded"
+#~ msgid "Download added"
+#~ msgstr "Lejupielādēts"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>The following file has finished downloading:</p><p style=\"font-size: "
+#~| "small;\">                      %1</p>"
+#~ msgid "<p>The following transfer has been added to the download list:</p>"
+#~ msgstr ""
+#~ "<p>Pabeigta šī faila lejupielāde:</p><p style=\"font-size: small;"
+#~ "\">                      %1</p>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>The following file has finished downloading:</p><p style=\"font-size: "
+#~| "small;\">                      %1</p>"
+#~ msgid "<p>The following transfers have been added to the download list:</p>"
+#~ msgstr ""
+#~ "<p>Pabeigta šī faila lejupielāde:</p><p style=\"font-size: small;"
+#~ "\">                      %1</p>"
+
+#~ msgid ""
+#~ "The file %1 already exists.\n"
+#~ "Overwrite?"
+#~ msgstr ""
+#~ "Fails %1 jau pastāv.\n"
+#~ "Pārrakstīt?"
+
+#~ msgid "Overwrite existing file?"
+#~ msgstr "Pārrakstīt esošu failu?"
+
+#~ msgid "Unable to save to: %1"
+#~ msgstr "Nevar saglabāt iekš: %1"
+
+#~ msgid "My Downloads"
+#~ msgstr "Manas lejupielādes"
+
+#~ msgid "Protocol unsupported"
+#~ msgstr "Neatbalstīts protokols"
+
+#~ msgid "New Download"
+#~ msgstr "Jauna lejupielāde"
+
+#~ msgid "Enter URL:"
+#~ msgstr "Ievadiet URL:"
+
+#~ msgid "Save As"
+#~ msgstr "Saglabāt kā"
+
+#~ msgid ""
+#~ "Malformed URL:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Kļūdains URL:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Malformed URL, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Kļūdains URL, trūkst protokola:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "You have already completed a download from the location: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Download it again?"
+#~ msgstr ""
+#~ "Jums jau ir pabeigta lejupielāde no šīs vietas: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Lejupielādēt vēlreiz?"
+
+#~ msgid "Download it again?"
+#~ msgstr "Lejupielādēt vēlreiz?"
+
+#~ msgid ""
+#~ "You have a download in progress from the location: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Delete it and download again?"
+#~ msgstr ""
+#~ "Jums jau ir aktīva lejupielāde no šīs vietas: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Dzēst un lejupielādēt vēlreiz?"
+
+#~ msgid "Delete it and download again?"
+#~ msgstr "Dzēst un lejupielādēt vēlreiz?"
+
+#~ msgid "Directory is not writable"
+#~ msgstr "Nevar rakstīt mapē"
+
+#~ msgid ""
+#~ "You have already downloaded that file from another location.\n"
+#~ "\n"
+#~ "Download and delete the previous one?"
+#~ msgstr ""
+#~ "Jūs jau esat ielādējis šo failu no citas vietas.\n"
+#~ "\n"
+#~ "Vai izdzēst iepriekšējo un ielādēt no jauna?"
+
+#~ msgid "File already downloaded. Download anyway?"
+#~ msgstr "Fails jau lejupielādēts. Lejupielādēt vēlreiz?"
+
+#~ msgid "You are already downloading the same file"
+#~ msgstr "Jūs jau ielādējat šo failu"
+
+#~ msgid "File already exists"
+#~ msgstr "Fails jau pastāv"
+
+#, fuzzy
+#~| msgid ""
+#~| "<html><p>Plugin loader could not load the plugin:<br/><i>%1</i></p></"
+#~| "html>"
+#~ msgid "Plugin loader could not load the plugin: %1."
+#~ msgstr ""
+#~ "<html><p>Spraudņu ielādētājs nespēja ielādēt spraudni:<br/><i>%1</i></p></"
+#~ "html>"
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is a directory."
+#~ msgstr ""
+#~ "Nevar izdzēst\n"
+#~ "%1\n"
+#~ "jo tā ir mape."
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is not a local file."
+#~ msgstr ""
+#~ "Nevar izdzēst\n"
+#~ "%1\n"
+#~ "jo tas nav lokāls fails."
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>The following file has finished downloading:</p><p style=\"font-size: "
+#~| "small;\">                      %1</p>"
+#~ msgid ""
+#~ "<p>The following file has finished downloading:</p><p style=\"font-size: "
+#~ "small;\">\\%1</p>"
+#~ msgstr ""
+#~ "<p>Pabeigta šī faila lejupielāde:</p><p style=\"font-size: small;"
+#~ "\">                      %1</p>"
+
+#~ msgid "Download completed"
+#~ msgstr "Lejupielāde pabeigta"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>The following file has finished downloading:</p><p style=\"font-size: "
+#~| "small;\">                      %1</p>"
+#~ msgid ""
+#~ "<p>The following transfer has been started:</p><p style=\"font-size: "
+#~ "small;\">\\%1</p>"
+#~ msgstr ""
+#~ "<p>Pabeigta šī faila lejupielāde:</p><p style=\"font-size: small;"
+#~ "\">                      %1</p>"
+
+#, fuzzy
+#~| msgid "Download speed"
+#~ msgid "Download started"
+#~ msgstr "Lejupielādes ātrums"
+
+#~ msgid "Error"
+#~ msgstr "Kļūda"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>The following file has finished downloading:</p><p style=\"font-size: "
+#~| "small;\">                      %1</p>"
+#~ msgid ""
+#~ "<p>There has been an error in the following transfer:</p><p style=\"font-"
+#~ "size: small;\">\\%1</p><p>The error message is:</p><p style=\"font-size: "
+#~ "small;\">\\%2</p>"
+#~ msgstr ""
+#~ "<p>Pabeigta šī faila lejupielāde:</p><p style=\"font-size: small;"
+#~ "\">                      %1</p>"
+
+#, fuzzy
+#~| msgid "Remove"
+#~ msgid "Resolve"
+#~ msgstr "Izņemt"
+
+#~ msgid "KGet is now closing, as all downloads have completed."
+#~ msgstr "KGet beidz darbu, jo visas lejupielādes ir pabeigtas."
+
+#~ msgid "The computer will now turn off, as all downloads have completed."
+#~ msgstr "Dators tagad tiks izslēgts, jo visas lejupielādes ir pabeigtas."
+
+#, fuzzy
+#~| msgid "Auto shutdown"
+#~ msgctxt "Shutting down computer"
+#~ msgid "Shutdown"
+#~ msgstr "Automātiski izslēgt datoru"
+
+#, fuzzy
+#~| msgid "The computer will now turn off, as all downloads have completed."
+#~ msgid ""
+#~ "The computer will now suspend to disk, as all downloads have completed."
+#~ msgstr "Dators tagad tiks izslēgts, jo visas lejupielādes ir pabeigtas."
+
+#, fuzzy
+#~| msgid "The computer will now turn off, as all downloads have completed."
+#~ msgid ""
+#~ "The computer will now suspend to RAM, as all downloads have completed."
+#~ msgstr "Dators tagad tiks izslēgts, jo visas lejupielādes ir pabeigtas."
+
+#, fuzzy
+#~| msgctxt "Preview pending"
+#~| msgid "Pending"
+#~ msgctxt "Suspending computer"
+#~ msgid "Suspending"
+#~ msgstr "Top"
+
+#, fuzzy
+#~| msgid "Aborted"
+#~ msgctxt "abort the proposed action"
+#~ msgid "Abort"
+#~ msgstr "Pārtraukts"
+
+#~ msgid "Downloads completed"
+#~ msgstr "Lejupielādes pabeigtas"
+
+#~ msgctxt "file in a filesystem"
+#~ msgid "File"
+#~ msgstr "Fails"
+
+#~ msgctxt "status of the download"
+#~ msgid "Status"
+#~ msgstr "Stāvoklis"
+
+#~ msgctxt "size of the download"
+#~ msgid "Size"
+#~ msgstr "Izmērs"
+
+#~ msgctxt "checksum of a file"
+#~ msgid "Checksum"
+#~ msgstr "Kontrolsumma"
+
+#~ msgctxt "signature of a file"
+#~ msgid "Signature"
+#~ msgstr "Paraksts"
+
+#~ msgid "KGet Transfer"
+#~ msgstr "KGet ielādes"
+
+#~ msgctxt "the type of the hash, e.g. MD5"
+#~ msgid "Type"
+#~ msgstr "Tips"
+
+#~ msgctxt "the used hash for verification"
+#~ msgid "Hash"
+#~ msgstr "Hešs"
+
+#~ msgctxt "verification-result of a file, can be true/false"
+#~ msgid "Verified"
+#~ msgstr "Pārbaudīts"
+
+#~ msgid ""
+#~ "The key to verify the signature is missing, do you want to download it?"
+#~ msgstr "Trūkst atslēgas paraksta pārbaudīšanai, vai vēlaties ielādēt to?"
+
+#~ msgid ""
+#~ "The signature could not be verified for %1. See transfer settings for "
+#~ "more information."
+#~ msgstr ""
+#~ "%1 paraksta pārbaude neveiksmīga. Vairāk informācijas skatieties ielādes "
+#~ "iestatījumos."
+
+#~ msgid "Signature not verified"
+#~ msgstr "Paraksts nav apstiprināts"
+
+#~ msgid ""
+#~ "No server for downloading keys is specified in settings. Downloading "
+#~ "aborted."
+#~ msgstr ""
+#~ "Iestatījumos nav norādīts neviens serveris atslēgu ielādēšanai. "
+#~ "Lejupielāde pārtraukta."
+
+#~ msgid "No key server"
+#~ msgstr "Nav atslēgu servera"
+
+#~ msgid ""
+#~ "No useful key server found, key not downloaded. Add more servers to the "
+#~ "settings or restart KGet and retry downloading."
+#~ msgstr ""
+#~ "Netika atrasts derīgs atslēgu serveris, atslēga nav ielādēta. "
+#~ "Pievienojiet citus serverus iestatījumus un pārstartējiet KGet un "
+#~ "mēģiniet ielādēt vēlreiz."
+
+#~ msgctxt "A mirror is removed when the file has the wrong download size"
+#~ msgid "%1 removed as it did report a wrong file size."
+#~ msgstr "%1 izņemts, jo tas ziņoja nepareizu faila izmēru."
+
+#~ msgctxt "not available"
+#~ msgid "n/a"
+#~ msgstr "n/p"
+
+#~ msgid "Stalled"
+#~ msgstr "Apstājies"
+
+#~ msgid "Downloading...."
+#~ msgstr "Lejupielādē..."
+
+#~ msgctxt "transfer state: delayed"
+#~ msgid "Delayed"
+#~ msgstr "Novēlots"
+
+#~ msgctxt "transfer state: stopped"
+#~ msgid "Stopped"
+#~ msgstr "Apturēts"
+
+#~ msgctxt "transfer state: aborted"
+#~ msgid "Aborted"
+#~ msgstr "Pārtraukts"
+
+#~ msgctxt "transfer state: finished"
+#~ msgid "Finished"
+#~ msgstr "Pabeigts"
+
+#~ msgctxt "changing the destination of the file"
+#~ msgid "Changing destination"
+#~ msgstr "Mainīt mērķi"
+
+#~ msgctxt "name of download"
+#~ msgid "Name"
+#~ msgstr "Nosaukums"
+
+#~ msgctxt "status of download"
+#~ msgid "Status"
+#~ msgstr "Statuss"
+
+#~ msgctxt "size of download"
+#~ msgid "Size"
+#~ msgstr "Izmērs"
+
+#~ msgctxt "progress of download"
+#~ msgid "Progress"
+#~ msgstr "Progress"
+
+#~ msgctxt "speed of download"
+#~ msgid "Speed"
+#~ msgstr "Ātrums"
+
+#~ msgctxt "remaining time of download"
+#~ msgid "Remaining Time"
+#~ msgstr "Atlikušais laiks"
+
+#, fuzzy
+#~| msgid "Directory is not writable"
+#~ msgid "Download directory is not writeable."
+#~ msgstr "Nevar rakstīt mapē"
+
+#, fuzzy
+#~| msgid "Download Destination:"
+#~ msgid "No download destination specified."
+#~ msgstr "Lejupielādes mērķis:"
+
+#, fuzzy
+#~| msgid "Download Destination:"
+#~ msgid "Invalid download destination specified."
+#~ msgstr "Lejupielādes mērķis:"
+
+#, fuzzy
+#~| msgid "Download Destination:"
+#~ msgid "Download destination is not writeable."
+#~ msgstr "Lejupielādes mērķis:"
+
+#, fuzzy
+#~| msgid "not specified"
+#~ msgid "No URL specified."
+#~ msgstr "nav norādīts"
+
+#~ msgid "Malformed URL."
+#~ msgstr "Nekorekts URL."
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL, protocol missing:\n"
+#~| "%1"
+#~ msgid "Malformed URL, protocol missing."
+#~ msgstr ""
+#~ "Kļūdains URL, trūkst protokola:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL, protocol missing:\n"
+#~| "%1"
+#~ msgid "Malformed URL, host missing."
+#~ msgstr ""
+#~ "Kļūdains URL, trūkst protokola:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Directory is not writable"
+#~ msgid ""
+#~ "Download directory is not writeable:\n"
+#~ "%1"
+#~ msgstr "Nevar rakstīt mapē"
+
+#, fuzzy
+#~| msgid "Download Destination:"
+#~ msgid ""
+#~ "Invalid download destination specified:\n"
+#~ "%1"
+#~ msgstr "Lejupielādes mērķis:"
+
+#, fuzzy
+#~| msgid "Download Destination:"
+#~ msgid ""
+#~ "Download destination is not writeable:\n"
+#~ "%1"
+#~ msgstr "Lejupielādes mērķis:"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL, protocol missing:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URL, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Kļūdains URL, trūkst protokola:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "The file %1 already exists.\n"
+#~| "Overwrite?"
+#~ msgid "File already exists. Overwrite it?"
+#~ msgstr ""
+#~ "Fails %1 jau pastāv.\n"
+#~ "Pārrakstīt?"
+
+#, fuzzy
+#~| msgid ""
+#~| "You have already downloaded that file from another location.\n"
+#~| "\n"
+#~| "Download and delete the previous one?"
+#~ msgid ""
+#~ "You have already downloaded that file from another location.\n"
+#~ "Download and delete the previous one?"
+#~ msgstr ""
+#~ "Jūs jau esat ielādējis šo failu no citas vietas.\n"
+#~ "\n"
+#~ "Vai izdzēst iepriekšējo un ielādēt no jauna?"
+
+#, fuzzy
+#~| msgid ""
+#~| "You have already downloaded that file from another location.\n"
+#~| "\n"
+#~| "Download and delete the previous one?"
+#~ msgid ""
+#~ "You are already downloading that file from another location.\n"
+#~ "Download and delete the previous one?"
+#~ msgstr ""
+#~ "Jūs jau esat ielādējis šo failu no citas vietas.\n"
+#~ "\n"
+#~ "Vai izdzēst iepriekšējo un ielādēt no jauna?"
+
+#, fuzzy
+#~| msgid ""
+#~| "You have already completed a download from the location: \n"
+#~| "\n"
+#~| "%1\n"
+#~| "\n"
+#~| "Download it again?"
+#~ msgid ""
+#~ "You have already completed a download from that location. Download it "
+#~ "again?"
+#~ msgstr ""
+#~ "Jums jau ir pabeigta lejupielāde no šīs vietas: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Lejupielādēt vēlreiz?"
+
+#, fuzzy
+#~| msgid ""
+#~| "You have a download in progress from the location: \n"
+#~| "\n"
+#~| "%1\n"
+#~| "\n"
+#~| "Delete it and download again?"
+#~ msgid ""
+#~ "You have a download in progress from that location.\n"
+#~ "Delete it and download again?"
+#~ msgstr ""
+#~ "Jums jau ir aktīva lejupielāde no šīs vietas: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Dzēst un lejupielādēt vēlreiz?"
+
+#, fuzzy
+#~| msgid ""
+#~| "The file %1 already exists.\n"
+#~| "Overwrite?"
+#~ msgid ""
+#~ "File already exists:\n"
+#~ "%1\n"
+#~ "Overwrite it?"
+#~ msgstr ""
+#~ "Fails %1 jau pastāv.\n"
+#~ "Pārrakstīt?"
+
+#, fuzzy
+#~| msgid "Malformed URL."
+#~ msgid "Malformed URLs."
+#~ msgstr "Nekorekts URL."
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL, protocol missing:\n"
+#~| "%1"
+#~ msgid "Malformed URLs, protocol missing."
+#~ msgstr ""
+#~ "Kļūdains URL, trūkst protokola:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL, protocol missing:\n"
+#~| "%1"
+#~ msgid "Malformed URLs, host missing."
+#~ msgstr ""
+#~ "Kļūdains URL, trūkst protokola:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Kļūdains URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL, protocol missing:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Kļūdains URL, trūkst protokola:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL, protocol missing:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Kļūdains URL, trūkst protokola:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Directory is not writable"
+#~ msgid ""
+#~ "Destinations are not writable:\n"
+#~ "%1"
+#~ msgstr "Nevar rakstīt mapē"
+
+#, fuzzy
+#~| msgid ""
+#~| "The file %1 already exists.\n"
+#~| "Overwrite?"
+#~ msgid "Files exist already. Overwrite them?"
+#~ msgstr ""
+#~ "Fails %1 jau pastāv.\n"
+#~ "Pārrakstīt?"
+
+#, fuzzy
+#~| msgid ""
+#~| "You have already completed a download from the location: \n"
+#~| "\n"
+#~| "%1\n"
+#~| "\n"
+#~| "Download it again?"
+#~ msgid ""
+#~ "You have already completed downloads at those destinations. Download them "
+#~ "again?"
+#~ msgstr ""
+#~ "Jums jau ir pabeigta lejupielāde no šīs vietas: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Lejupielādēt vēlreiz?"
+
+#, fuzzy
+#~| msgid ""
+#~| "You have a download in progress from the location: \n"
+#~| "\n"
+#~| "%1\n"
+#~| "\n"
+#~| "Delete it and download again?"
+#~ msgid ""
+#~ "You have downloads in progress to these destinations.\n"
+#~ "Delete them and download again?"
+#~ msgstr ""
+#~ "Jums jau ir aktīva lejupielāde no šīs vietas: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Dzēst un lejupielādēt vēlreiz?"
+
+#, fuzzy
+#~| msgid ""
+#~| "You have already completed a download from the location: \n"
+#~| "\n"
+#~| "%1\n"
+#~| "\n"
+#~| "Download it again?"
+#~ msgid ""
+#~ "You have already completed downloads from these locations. Download them "
+#~ "again?"
+#~ msgstr ""
+#~ "Jums jau ir pabeigta lejupielāde no šīs vietas: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Lejupielādēt vēlreiz?"
+
+#, fuzzy
+#~| msgid ""
+#~| "You have a download in progress from the location: \n"
+#~| "\n"
+#~| "%1\n"
+#~| "\n"
+#~| "Delete it and download again?"
+#~ msgid ""
+#~ "You have downloads in progress from these locations.\n"
+#~ "Delete them and download again?"
+#~ msgstr ""
+#~ "Jums jau ir aktīva lejupielāde no šīs vietas: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Dzēst un lejupielādēt vēlreiz?"
+
+#, fuzzy
+#~| msgid ""
+#~| "You have already completed a download from the location: \n"
+#~| "\n"
+#~| "%1\n"
+#~| "\n"
+#~| "Download it again?"
+#~ msgid ""
+#~ "You have already completed downloads at those destinations: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ " Download them again?"
+#~ msgstr ""
+#~ "Jums jau ir pabeigta lejupielāde no šīs vietas: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Lejupielādēt vēlreiz?"
+
+#, fuzzy
+#~| msgid ""
+#~| "You have a download in progress from the location: \n"
+#~| "\n"
+#~| "%1\n"
+#~| "\n"
+#~| "Delete it and download again?"
+#~ msgid ""
+#~ "You have downloads in progress to these destinations: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Delete them and download again?"
+#~ msgstr ""
+#~ "Jums jau ir aktīva lejupielāde no šīs vietas: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Dzēst un lejupielādēt vēlreiz?"
+
+#, fuzzy
+#~| msgid ""
+#~| "You have already completed a download from the location: \n"
+#~| "\n"
+#~| "%1\n"
+#~| "\n"
+#~| "Download it again?"
+#~ msgid ""
+#~ "You have already completed downloads from these locations: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Download them again?"
+#~ msgstr ""
+#~ "Jums jau ir pabeigta lejupielāde no šīs vietas: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Lejupielādēt vēlreiz?"
+
+#, fuzzy
+#~| msgid ""
+#~| "You have a download in progress from the location: \n"
+#~| "\n"
+#~| "%1\n"
+#~| "\n"
+#~| "Delete it and download again?"
+#~ msgid ""
+#~ "You have downloads in progress from these locations: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Delete them and download again?"
+#~ msgstr ""
+#~ "Jums jau ir aktīva lejupielāde no šīs vietas: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Dzēst un lejupielādēt vēlreiz?"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Question"
+#~ msgstr "Aparaksts"
+
+#, fuzzy
+#~| msgctxt "Download normally(not as first or last)"
+#~| msgid "Normal"
+#~ msgctxt "on a question"
+#~ msgid "No all"
+#~ msgstr "Normāli"
+
+#~ msgid "Insert Engine"
+#~ msgstr "Pievienot meklētāju"
+
+#~ msgid "Engine name:"
+#~ msgstr "Meklētāja nosaukums:"
+
+#~ msgid "URL:"
+#~ msgstr "URL:"
+
+#~ msgid "The download (%1) could not be verified. Do you want to repair it?"
+#~ msgstr "Lejupielādes (%1) pārbaude neveiksmīga. Vai vēlaties to izlabot?"
+
+#~ msgid ""
+#~ "The download (%1) could not be verified. Do you want to redownload it?"
+#~ msgstr ""
+#~ "Lejupielādes (%1) pārbaude neveiksmīga. Vai vēlaties to ielādēt atkārtoti?"
+
+#~ msgid "Verification failed."
+#~ msgstr "Pārbaude neveiksmīga."
+
+#~ msgctxt "transfer state: connecting"
+#~ msgid "Connecting...."
+#~ msgstr "Pieslēdzas..."
+
+#~ msgid "Add New Script"
+#~ msgstr "Pievienot jaunu skriptu"
+
+#~ msgid "Edit Script"
+#~ msgstr "Rediģēt skriptu"
+
+#~ msgid "Set Script File"
+#~ msgstr "Iesatīt skripta failu"
+
+#~ msgctxt "Configure script"
+#~ msgid "Configure script"
+#~ msgstr "Konfigurēt skriptu"
+
+#~ msgctxt "Transfer state: processing script"
+#~ msgid "Processing script...."
+#~ msgstr "Darbina skriptu..."
+
+#~ msgctxt "Transfer State: Finished"
+#~ msgid "Finished"
+#~ msgstr "Pabeigts"
+
+#~ msgctxt "Transfer State: Aborted"
+#~ msgid "Aborted"
+#~ msgstr "Pārtraukts"
+
+#~ msgid "Downloading Metalink File...."
+#~ msgstr "Lejupielādē Metalink failu..."
+
+#, fuzzy
+#~| msgid ""
+#~| "The key to verify the signature is missing, do you want to download it?"
+#~ msgid ""
+#~ "A newer version of this Metalink might exist, do you want to download it?"
+#~ msgstr "Trūkst atslēgas paraksta pārbaudīšanai, vai vēlaties ielādēt to?"
+
+#, fuzzy
+#~| msgctxt "redownload selected transfer item"
+#~| msgid "Redownload Selected"
+#~ msgid "Redownload Metalink"
+#~ msgstr "Lejupielādēt izvēlētos vēlreiz"
+
+#~ msgid "Download failed, no working URLs were found."
+#~ msgstr "Lejupielāde neveiksmīga, netika atrasts neviens strādājošs URLs."
+
+#~ msgid ""
+#~ "The download could not be verified, do you want to repair (if repairing "
+#~ "does not work the download would be restarted) it?"
+#~ msgstr ""
+#~ "Lejupielādes pārbaude neveiksmīga, vai vēlaties to izlabot (ja labošana "
+#~ "nepalīdz, lejupielādi vajadzētu sākt no jauna)?"
+
+#~ msgid "File Selection"
+#~ msgstr "Failu izvēle"
+
+#~ msgid "Add item"
+#~ msgstr "Pievienot ierakstu"
+
+#~ msgid "%1 would become %2"
+#~ msgstr "%1 klūs par %2"
+
+#~ msgctxt "the string that is used to modify an url"
+#~ msgid "Change string"
+#~ msgstr "Mainīt virkni"
+
+#~ msgctxt "the mode defines how the url should be changed"
+#~ msgid "Change mode"
+#~ msgstr "Mainīšanas režīms"
+
+#~ msgctxt "the type of the checksum e.g. md5"
+#~ msgid "Checksum type"
+#~ msgstr "Kontrolsummas tips"
+
+#~ msgid "Append"
+#~ msgstr "Pievienot"
+
+#~ msgid "Replace file"
+#~ msgstr "Aizvietot failu"
+
+#~ msgid "Replace file-ending"
+#~ msgstr "Aizvietot faila nobeigumu"
+
+#~ msgctxt "transfer state: running"
+#~ msgid "Running...."
+#~ msgstr "Darbojas..."
+
+#~ msgctxt "Choked"
+#~ msgid "Yes"
+#~ msgstr "Jā"
+
+#~ msgctxt "Not choked"
+#~ msgid "No"
+#~ msgstr "Nē"
+
+#~ msgctxt "Snubbed"
+#~ msgid "Yes"
+#~ msgstr "Jā"
+
+#~ msgctxt "Not snubbed"
+#~ msgid "No"
+#~ msgstr "Nē"
+
+#~ msgctxt "Interested"
+#~ msgid "Yes"
+#~ msgstr "Jā"
+
+#~ msgctxt "Not Interested"
+#~ msgid "No"
+#~ msgstr "Nē"
+
+#~ msgctxt "Interesting"
+#~ msgid "Yes"
+#~ msgstr "Jā"
+
+#~ msgctxt "Not Interesting"
+#~ msgid "No"
+#~ msgstr "Nē"
+
+#~ msgid "IP Address"
+#~ msgstr "IP adrese"
+
+#~ msgid "Client"
+#~ msgstr "Programma"
+
+#~ msgid "Down Speed"
+#~ msgstr "Ātrums iekšā"
+
+#~ msgid "Up Speed"
+#~ msgstr "Ātrums ārā"
+
+#~ msgid "Choked"
+#~ msgstr "Aizņemts"
+
+#~ msgid "Snubbed"
+#~ msgstr "Noraida"
+
+#~ msgid "Availability"
+#~ msgstr "Pieejamība"
+
+#~ msgid "DHT"
+#~ msgstr "DHT"
+
+#~ msgid "Score"
+#~ msgstr "Punkti"
+
+#~ msgid "Upload Slot"
+#~ msgstr "Augšupielādes slots"
+
+#~ msgid "Requests"
+#~ msgstr "Pieprasījumi"
+
+#~ msgid "Downloaded"
+#~ msgstr "Lejupielādēts"
+
+#~ msgid "Uploaded"
+#~ msgstr "Augšupielādēts"
+
+#~ msgid "Interested"
+#~ msgstr "Ieinteresēts"
+
+#~ msgid "Interesting"
+#~ msgstr "Interesants"
+
+#~ msgid "IP address of the peer"
+#~ msgstr "Dalībnieka IP adrese"
+
+#~ msgid "Which client the peer is using"
+#~ msgstr "Dalībnieka lietotais klients"
+
+#~ msgid "Download speed"
+#~ msgstr "Lejupielādes ātrums"
+
+#~ msgid "Upload speed"
+#~ msgstr "Augšupielādes ātrums"
+
+#~ msgid ""
+#~ "Whether or not the peer has choked us.  If we are choked, the peer will "
+#~ "not send us any data."
+#~ msgstr ""
+#~ "Vai dalībnieks ir aizrijies. Aizrijies dalībnieks nesūta mums nekādus "
+#~ "datus."
+
+#~ msgid ""
+#~ "Snubbed means the peer has not sent us any data in the last 2 minutes"
+#~ msgstr ""
+#~ "Noraida nozīmē ka dalībnieks nav nosūtījis nekādus datus pēdējās 2 minūtes"
+
+#~ msgid "How much of the torrent's data the peer has"
+#~ msgstr "Cik daudz no torrenta datiem ir dalībniekam"
+
+#~ msgid "Whether or not the peer has DHT enabled"
+#~ msgstr "Vai dalībniekam ir ieslēgts DHT"
+
+#~ msgid ""
+#~ "The score of the peer. KTorrent uses this to determine who to upload to."
+#~ msgstr "Dalībnieka punkti. KTorrent tos izmanto lai noteiktu kam dot datus."
+
+#~ msgid "Only peers which have an upload slot will get data from us"
+#~ msgstr "Tikai dalībnieki ar augšupielādes slotu varēs dabūt datus no mums"
+
+#~ msgid "The number of download and upload requests"
+#~ msgstr "Lejupielādes un augšupielādes pieprasījumu skaits"
+
+#~ msgid "How much data we have downloaded from this peer"
+#~ msgstr "Cik daudz datu ir lejupielādēts no dalībnieka"
+
+#~ msgid "How much data we have uploaded to this peer"
+#~ msgstr "Cik daudz datu ir augšupielādēts dalībniekam"
+
+#~ msgid "Whether the peer is interested in downloading data from us"
+#~ msgstr "Vai dalībnieks ir ieinteresēts lejupielādēt no mums"
+
+#~ msgid "Whether we are interested in downloading from this peer"
+#~ msgstr "Vai mums ir interese lejupielādēt no šī dalībnieka"
+
+#~ msgid "Chunk"
+#~ msgstr "Gabals"
+
+#~ msgid "Progress"
+#~ msgstr "Progress"
+
+#~ msgid "Peer"
+#~ msgstr "Dalībnieks"
+
+#~ msgid "Files"
+#~ msgstr "Faili"
+
+#~ msgid "Number of the chunk"
+#~ msgstr "Gabala numurs"
+
+#~ msgid "Download progress of the chunk"
+#~ msgstr "Gabala lejupielādes progress"
+
+#~ msgid "Which peer we are downloading it from"
+#~ msgstr "No kura dalībnieka ielādē šo gabalu"
+
+#~ msgid "Download speed of the chunk"
+#~ msgstr "Gabala lejupielādes ātrums"
+
+#~ msgid "Which files the chunk is located in"
+#~ msgstr "Kuri faili atrodas šajā gabalā"
+
+#~ msgid "URL"
+#~ msgstr "URL"
+
+#~ msgid "Speed"
+#~ msgstr "Ātrums"
+
+#~ msgid "Status"
+#~ msgstr "Statuss"
+
+#~ msgid "Kick Peer"
+#~ msgstr "Padzīt dalībnieku"
+
+#~ msgid "Ban Peer"
+#~ msgstr "Aizliegt dalībnieku"
+
+#~ msgid ""
+#~ "Cannot add the webseed %1, it is already part of the list of webseeds."
+#~ msgstr "Nevar pievienot tīmekļa devēju %1, jo tas jau ir devēju sarakstā."
+
+#~ msgid "Cannot remove webseed %1, it is part of the torrent."
+#~ msgstr "Nevar aizvākt tīmekļa devēju %1, tas ir daļa no torrenta."
+
+#~ msgid "File"
+#~ msgstr "Fails"
+
+#~ msgid "Size"
+#~ msgstr "Izmērs"
+
+#~ msgid "Advanced Details for %1"
+#~ msgstr "%1 paplašinātas detaļas"
+
+#~ msgid "Trackers"
+#~ msgstr "Trakeri"
+
+#~ msgid "Webseeds"
+#~ msgstr "Tīmekļa devēji"
+
+#~ msgctxt "Open file"
+#~ msgid "Open"
+#~ msgstr "Atvērt"
+
+#~ msgid "Download first"
+#~ msgstr "Ielādēt pirmo"
+
+#~ msgid "Download normally"
+#~ msgstr "Ielādēt normāli"
+
+#~ msgid "Download last"
+#~ msgstr "Ielādēt pēdējo"
+
+#~ msgid "Do Not Download"
+#~ msgstr "Nevajag lejupielādēt"
+
+#~ msgid "Delete File(s)"
+#~ msgstr "Dzēst failu(s)"
+
+#~ msgid "Move File"
+#~ msgstr "Pārvietot failu"
+
+#~ msgid "Collapse Folder Tree"
+#~ msgstr "Sakļaut mapju koku"
+
+#~ msgid "Expand Folder Tree"
+#~ msgstr "Izvērst mapju koku"
+
+#~ msgid ""
+#~ "You will lose all data in this file, are you sure you want to do this?"
+#~ msgid_plural ""
+#~ "You will lose all data in these files, are you sure you want to do this?"
+#~ msgstr[0] ""
+#~ "Jūs pazaudēsiet visus šī faila datus, vai esat pārliecināts, ka vēlaties "
+#~ "to darīt?"
+#~ msgstr[1] ""
+#~ "Jūs pazaudēsiet visus šo failu datus, vai esat pārliecināts, ka vēlaties "
+#~ "to darīt?"
+#~ msgstr[2] ""
+#~ "Jūs pazaudēsiet visus šo failu datus, vai esat pārliecināts, ka vēlaties "
+#~ "to darīt?"
+
+#~ msgid "Select a directory to move the data to."
+#~ msgstr "Izvēlieties mapi, uz kuru pārvietot datus."
+
+#~ msgid "Url"
+#~ msgstr "Url"
+
+#~ msgid "Seeders"
+#~ msgstr "Devēji"
+
+#~ msgid "Leechers"
+#~ msgstr "Ņēmēji"
+
+#~ msgid "Times Downloaded"
+#~ msgstr "Reizes lejupielādēts"
+
+#~ msgid "Next Update"
+#~ msgstr "Nākamā atjaunošana"
+
+#~ msgid "Priority"
+#~ msgstr "Prioritāte"
+
+#~ msgid "Preview"
+#~ msgstr "Priekšskatījums"
+
+#~ msgctxt "Percent of File Downloaded"
+#~ msgid "% Complete"
+#~ msgstr "% pabeigts"
+
+#~ msgctxt "Download first"
+#~ msgid "First"
+#~ msgstr "Pirmais"
+
+#~ msgctxt "Download last"
+#~ msgid "Last"
+#~ msgstr "Pēdējais"
+
+#~ msgctxt "Download normally(not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "Normāli"
+
+#~ msgctxt "preview available"
+#~ msgid "Available"
+#~ msgstr "Pieejams"
+
+#~ msgctxt "Preview pending"
+#~ msgid "Pending"
+#~ msgstr "Top"
+
+#~ msgctxt "No preview available"
+#~ msgid "No"
+#~ msgstr "Nr."
+
+#~ msgid "%1 %"
+#~ msgstr "%1 %"
+
+#~ msgctxt "Preview available"
+#~ msgid "Available"
+#~ msgstr "Pieejams"
+
+#~ msgid "Add Tracker"
+#~ msgstr "Pievienot trakeri"
+
+#~ msgid "Enter the URL of the tracker:"
+#~ msgstr "Ievadiet trakera URL:"
+
+#~ msgid "There already is a tracker named <b>%1</b>."
+#~ msgstr "Jau ir trakeris ar nosaukumu <b>%1</b>."
+
+#~ msgctxt "Download Normal (not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "Normāla"
+
+#~ msgid "&Advanced Details"
+#~ msgstr "&Paplašinātas detaļas"
+
+#~ msgid "&Scan Files"
+#~ msgstr "&Pārbaudīt failus"
+
+#~ msgid "Downloading Torrent File...."
+#~ msgstr "Lejupielādē torrent failu..."
+
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading...."
+#~ msgstr "Lejupielādē..."
+
+#~ msgid "Cannot add a tracker to a private torrent."
+#~ msgstr "Privātam torrentam nevar pievienot papildus trakeri."
+
+#, fuzzy
+#~| msgid "The directory %1 does not exist"
+#~ msgid "Torrent file does not exist"
+#~ msgstr "Mape %1 nepastāv"
+
+#~ msgid "Analyzing torrent...."
+#~ msgstr "Analizē torrentu..."
+
+#~ msgctxt "Transfer status: seeding"
+#~ msgid "Seeding...."
+#~ msgstr "Piedāvā..."
+
+#~ msgid "Error scanning data: %1"
+#~ msgstr "Kļūda datu skenēšanā: %1"
+
+#~ msgid "Scanning data of <b>%1</b> :"
+#~ msgstr "Skenē datus no  <b>%1</b> :"
+
+#~ msgid "Select a default torrent folder"
+#~ msgstr "Iestatīt par noklusēto torrentu mapi"
+
+#~ msgid "Select a default temporary folder"
+#~ msgstr "Iestatīt par noklusēto pagaidu mapi"
+
+#~ msgid "Import dropped files"
+#~ msgstr "Importēt nomestos failus"
+
+#~ msgctxt "comma, to seperate members of a list"
+#~ msgid ","
+#~ msgstr ","
+
+#~ msgid "File Properties"
+#~ msgstr "Faila īpašības"
+
+#~ msgid "Enter a filename."
+#~ msgstr "Ievadiet faila nosaukumu."
+
+#~ msgid "The filename exists already, choose a different one."
+#~ msgstr "Fails ar šādu nosaukumu jau pastāv, izvēlieties citu nosaukumu."
+
+#~ msgid "Enter at least one URL."
+#~ msgstr "Ievadiet vismaz vienu URL."
+
+#~ msgid ""
+#~ "Required data entered; also consider entering additional information."
+#~ msgstr ""
+#~ "Obligātie dati ievadīti; varbūt pievienojiet arī papildus informāciju."
+
+#~ msgid "Create a Metalink"
+#~ msgstr "Izveidot Metalink"
+
+#~ msgid "General optional information for the metalink."
+#~ msgstr "Vispārēja metalink papildus informācija."
+
+#~ msgid "Unable to load: %1"
+#~ msgstr "Neizdevās ielādēt: %1"
+
+#~ msgid "Metalink Version 4.0 file (*.meta4)"
+#~ msgstr "Metalink versijas 4.0 fails (*.meta4)"
+
+#~ msgid "Metalink Version 3.0 file (*.metalink)"
+#~ msgstr "Metalink versijas 3.0 fails (*.metalink)"
+
+#~ msgid "Define the saving location."
+#~ msgstr "Definējiet saglabāšanas vietu."
+
+#~ msgctxt "file as in file on hard drive"
+#~ msgid "Enter at least one file."
+#~ msgstr "Ievadiet vismaz vienu failu."
+
+#~ msgid "Import Links"
+#~ msgstr "Importēt saites"
+
+#~ msgctxt "Download the items which have been selected"
+#~ msgid "&Download Checked"
+#~ msgstr "&Lejupielādēt atzīmētos"
+
+#~ msgid "Auxiliary header"
+#~ msgstr "Papildus galvene"
+
+#~ msgid "File Name"
+#~ msgstr "Faila nosaukums"
+
+#~ msgid "Description"
+#~ msgstr "Aparaksts"
+
+#~ msgctxt "list header: type of file"
+#~ msgid "File Type"
+#~ msgstr "Faila tips"
+
+#~ msgid "Location (URL)"
+#~ msgstr "Atrašanās vieta (URL)"
+
+#~ msgid "Links in: %1 - KGet"
+#~ msgstr "Saites iekš: %1 - KGet"
+
+#~ msgid "&Select All Filtered"
+#~ msgstr "&Izvēlēties visus filtrētos"
+
+#~ msgid "&Select All"
+#~ msgstr "&Izvēlēties visus"
+
+#~ msgid "D&eselect All Filtered"
+#~ msgstr "Noņ&emt izvēli filtrētajiem"
+
+#~ msgid "D&eselect All"
+#~ msgstr "Noņ&emt izvēli visiem"
+
+#~ msgid "not specified"
+#~ msgstr "nav norādīts"
+
+#~ msgctxt "Mirror as in server, in url"
+#~ msgid "Mirror"
+#~ msgstr "Spogulis"
+
+#~ msgctxt "The priority of the mirror"
+#~ msgid "Priority"
+#~ msgstr "Prioritāte"
+
+#~ msgctxt "Number of paralell connections to the mirror"
+#~ msgid "Connections"
+#~ msgstr "Savienojumi"
+
+#~ msgctxt "Location = country"
+#~ msgid "Location"
+#~ msgstr "Atrašanās vieta"
+
+#~ msgid "Add mirror"
+#~ msgstr "Pievienot spoguli"
+
+#~ msgctxt "Adds the item and reopens the dialog to add a further item"
+#~ msgid "Add more"
+#~ msgstr "Pievienot vēl"
+
+#~ msgid "%1 has been successfully added."
+#~ msgstr "%1 veiksmīgi pievienots."
+
+#~ msgid "Modify the used mirrors."
+#~ msgstr "Mainīt lejupielādes spoguļserverus."
+
+#~ msgid "Download again"
+#~ msgstr "Lejupielādēt vēlreiz"
+
+#~ msgctxt "Delete selected history-item"
+#~ msgid "Delete selected"
+#~ msgstr "Dzēst izvēlētos"
+
+#~ msgid "Open file"
+#~ msgstr "Atvērt failu"
+
+#~ msgid "Today"
+#~ msgstr "Šodien"
+
+#~ msgid "Last week"
+#~ msgstr "Pēdējā nedēļā"
+
+#~ msgid "Last Month"
+#~ msgstr "Pēdējā mēnesī"
+
+#~ msgid "A long time ago"
+#~ msgstr "Senāk"
+
+#~ msgid "Under 10MiB"
+#~ msgstr "Mazāk par 10Mib"
+
+#~ msgid "Between 10MiB and 50MiB"
+#~ msgstr "No 10 līdz 50 MiB"
+
+#~ msgid "Between 50MiB and 100MiB"
+#~ msgstr "No 50 līdz 100 MiB"
+
+#~ msgid "More than 100MiB"
+#~ msgstr "Vairāk par 100MiB"
+
+#~ msgid "Transfer History"
+#~ msgstr "Lejupielāžu vēsture"
+
+#~ msgid "&Open File"
+#~ msgstr "&Atvērt failu"
+
+#~ msgctxt "The transfer is running"
+#~ msgid "Running"
+#~ msgstr "Darbojas"
+
+#~ msgctxt "The transfer is stopped"
+#~ msgid "Stopped"
+#~ msgstr "Apturēts"
+
+#~ msgctxt "The transfer is aborted"
+#~ msgid "Aborted"
+#~ msgstr "Pārtraukts"
+
+#~ msgctxt "The transfer is finished"
+#~ msgid "Finished"
+#~ msgstr "Pabeigts"
+
+#~ msgid "Source File"
+#~ msgstr "Avota fails"
+
+#~ msgid "Destination"
+#~ msgstr "Mērķis"
+
+#~ msgid "Time"
+#~ msgstr "Laiks"
+
+#~ msgid "File Size"
+#~ msgstr "Faila izmērs"
+
+#~ msgid "Less than 1MiB"
+#~ msgstr "Mazāks par 1 MiB"
+
+#~ msgid "Between 1MiB-10MiB"
+#~ msgstr "No 1 līdz 10 MiB"
+
+#~ msgid "Between 10MiB-100MiB"
+#~ msgstr "No 10 līdz 100 MiB"
+
+#~ msgid "Between 100MiB-1GiB"
+#~ msgstr "No 100 MiB līdz 1 GiB"
+
+#~ msgid "More than 1GiB"
+#~ msgstr "Vairāk par 1 GiB"
+
+#~ msgid "Last month"
+#~ msgstr "Pēdējā mēnesī"
+
+#~ msgctxt "the transfer has been finished"
+#~ msgid "Finished"
+#~ msgstr "Pabeigts"
+
+#, fuzzy
+#~| msgid "Error:"
+#~ msgctxt "an error happened in connection with the user input"
+#~ msgid "Error:"
+#~ msgstr "Kļūda:"
+
+#~ msgctxt "trust level"
+#~ msgid "Unknown"
+#~ msgstr "Nezināms"
+
+#~ msgctxt "trust level"
+#~ msgid "Undefined"
+#~ msgstr "Nedefinēts"
+
+#~ msgctxt "trust level"
+#~ msgid "Never"
+#~ msgstr "Nekad"
+
+#~ msgctxt "trust level"
+#~ msgid "Marginal"
+#~ msgstr "Minimāls"
+
+#~ msgctxt "trust level"
+#~ msgid "Full"
+#~ msgstr "Pilns"
+
+#~ msgctxt "trust level"
+#~ msgid "Ultimate"
+#~ msgstr "Absolūts"
+
+#~ msgctxt ""
+#~ "Signature here is meant in cryptographic terms, so the signature of a "
+#~ "file."
+#~ msgid "Signature of %1."
+#~ msgstr "%1 paraksts."
+
+#~ msgid "This option is not supported for the current transfer."
+#~ msgstr "Šī lejupielāde neatbalsta šo iespēju."
+
+#~ msgid "You need to define a signature."
+#~ msgstr "Jums jānorāda paraksts."
+
+#~ msgid ""
+#~ "No fingerprint could be found, check if the signature is correct or "
+#~ "verify the download."
+#~ msgstr ""
+#~ "Neizdevās atrast pirkstu nosaukumu, pārbaudiet vai paraksts ir korekts "
+#~ "vai pārbaudiet lejupielādi."
+
+#~ msgid "The key has been revoked."
+#~ msgstr "Atslēga ir anulēta."
+
+#~ msgid "The key is disabled."
+#~ msgstr "Atslēga ir atslēgta."
+
+#~ msgid "The key is invalid."
+#~ msgstr "Atslēga ir nederīga."
+
+#~ msgid "The key is expired."
+#~ msgstr "Atslēgai beidzies derīgums."
+
+#~ msgid "The key is not to be trusted."
+#~ msgstr "Atslēga nav uzticama."
+
+#~ msgid "The key is to be trusted marginally."
+#~ msgstr "Atslēga ir minimāli uzticama."
+
+#~ msgid "The key is to be trusted fully."
+#~ msgstr "Atslēga ir pilnībā uzticama."
+
+#~ msgid "The key is to be trusted ultimately."
+#~ msgstr "Atslēga ir absolūti uzticama."
+
+#~ msgid "Trust level of the key is unclear."
+#~ msgstr "Atslēgas uzticamība nav zināma."
+
+#~ msgid "Unlimited"
+#~ msgstr "Neierobežots"
+
+#~ msgctxt "pgp signature is verified"
+#~ msgid "Verified"
+#~ msgstr "Pārbaudīts"
+
+#~ msgid "The signature has been verified successfully."
+#~ msgstr "Paraksts veiksmīgi pārbaudīts."
+
+#~ msgid "The signature has been verified successfully:"
+#~ msgstr "Paraksts veiksmīgi pārbaudīts."
+
+#~ msgctxt "pgp signature is not verified"
+#~ msgid "Failed"
+#~ msgstr "Neveiksmīga"
+
+#~ msgid ""
+#~ "Caution: Verification failed. Either you entered the wrong signature, or "
+#~ "the data has been modified."
+#~ msgstr ""
+#~ "Uzmanību: Pārbaude neveiksmīga. Vai nu ievadījāt nepareizu parakstu, vai "
+#~ "dati ir bojāti."
+
+#~ msgid ""
+#~ "Verification not possible. Check the entered data, whether gpg-agent is "
+#~ "running, or whether you have an Internet connection (for retrieving keys.)"
+#~ msgstr ""
+#~ "Pārbaude nav iespējama. Pārbaudiet ievadītos datus, vai gpg-agent "
+#~ "darbojas, vai jums ir Interneta pieslēgums (atslēgu ielādei)."
+
+#~ msgid ""
+#~ "Feature is not supported, as KGet is not compiled with QPGME support."
+#~ msgstr "Ieslēja nav atbalstīta, jo KGet nav kompilēts ar QPGME atbalstu."
+
+#~ msgid "Error:"
+#~ msgstr "Kļūda:"
+
+#~ msgid "Problems:"
+#~ msgstr "Problēmas:"
+
+#~ msgid "Information:"
+#~ msgstr "Informācija:"
+
+#~ msgid "Select columns"
+#~ msgstr "Izvēlieties kolonas"
+
+#~ msgid "Transfer Details"
+#~ msgstr "Ielādes detaļas"
+
+#~ msgid "Add checksum"
+#~ msgstr "Pievienot kontrolsummu"
+
+#~ msgid "%1 %2 has been successfully added."
+#~ msgstr "%1 %2 ir veiksmīgi pievienots."
+
+#~ msgid "Transfer Verification for %1"
+#~ msgstr "Ielādes %1 pārbaude"
+
+#~ msgid "%1 was successfully verified."
+#~ msgstr "%1 ir veiksmīgi pārbaudīts."
+
+#~ msgid "Verification successful"
+#~ msgstr "Pārbaude veiksmīga"
+
+#~ msgid "Rename File"
+#~ msgstr "Pārdēvēt failu"
+
+#~ msgid "Rename %1 to:"
+#~ msgstr "Pārdēvēt %1 par:"
+
+#~ msgid "&Rename"
+#~ msgstr "Pā&rdēvēt"
+
+#~ msgid "Semantic Desktop"
+#~ msgstr "Semantiskā darbvirsma"
+
+#~ msgid "Delete Group"
+#~ msgid_plural "Delete Groups"
+#~ msgstr[0] "Dzēst grupu"
+#~ msgstr[1] "Dzēst grupas"
+#~ msgstr[2] "Dzēst grupas"
+
+#~ msgid "Rename Group..."
+#~ msgid_plural "Rename Groups..."
+#~ msgstr[0] "Pārdēvēt grupu..."
+#~ msgstr[1] "Pārdēvēt grupas..."
+#~ msgstr[2] "Pārdēvēt grupas..."
+
+#~ msgctxt "fix position for droptarget"
+#~ msgid "Sticky"
+#~ msgstr "Lipīgs"
+
+#~ msgid "Quit KGet"
+#~ msgstr "Iziet no KGet"
+
+#~ msgid "The dropped file is a KGet Transfer List"
+#~ msgstr "Nomestais fails ir KGet lejupielāžu saraksts"
+
+#~ msgid "&Download"
+#~ msgstr "&Lejupielādēt"
+
+#~ msgid "&Load transfer list"
+#~ msgstr "Ie&lādēt ielāžu sarakstu"
+
+#~ msgid "Show Main Window"
+#~ msgstr "Rādīt galveno logu"
+
+#~ msgid "Hide Main Window"
+#~ msgstr "Slēpt galveno logu"
+
+#~ msgid "Drop Target"
+#~ msgstr "Nomešanas mērķis"
+
+#~ msgid "You can drag download links into the drop target."
+#~ msgstr "Jūs varat uzvilkt lejupielādes saites uz nomešanas mērķa."
+
+#~ msgctxt "%1 filename, %2 total size, %3 status"
+#~ msgid "%1(%2) %3"
+#~ msgstr "%1(%2) %3"
+
+#~ msgctxt ""
+#~ "%1 filename, %2 percent complete, %3 downloaded out of %4 total size"
+#~ msgid "%1(%2% %3/%4) Speed:%5/s"
+#~ msgstr "%1(%2% %3/%4) Ātrums:%5/s"
+
+#~ msgctxt ""
+#~ "%1 filename, %2 percent complete, %3 downloaded out of %4 total size, %5 "
+#~ "status"
+#~ msgid "%1(%2% %3/%4) %5"
+#~ msgstr "%1(%2% %3/%4) %5"
+
+#~ msgid "Ready"
+#~ msgstr "Pabeigts"
+
+#~ msgid ""
+#~ "Drop target has been hidden. If you want to show it again, go to Settings-"
+#~ ">Configure KGet->Look & Feel."
+#~ msgstr ""
+#~ "Nomenšanas mērķis tika paslēpts. Ja vēlaties to atkal padarīt redzamu, "
+#~ "dodieties uz Iestatījumi->Konfikurēt KGet->Izskats un sajūtas."
+
+#~ msgid "Hiding drop target"
+#~ msgstr "Noslēpj nomešanas mērķi"
+
+#~ msgid "Transfer Settings for %1"
+#~ msgstr "Ielādes %1 iestatījumi"
+
+#~ msgid ""
+#~ "Changing the destination did not work, the destination stays unmodified."
+#~ msgstr "Mērķa mainīšana nenostrādāja, tas paliek nemainīts."
+
+#~ msgid "Destination unmodified"
+#~ msgstr "Mērķis nav mainīts"
+
+#~ msgid "Average speed: %1/s"
+#~ msgstr "Vidējais ātrums: %1/s"
+
+#~ msgid "%1 of %2"
+#~ msgstr "%1 no %2"
+
+#~ msgid "Group Settings for %1"
+#~ msgstr "Grupas %1 iestatījumi"
+
+#~ msgctxt "@info"
+#~ msgid "Unable to start the server: %1."
+#~ msgstr "Neizdevās palaist serveri: %1"
+
+#~ msgctxt "@item speed of transfer per seconds"
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#~ msgctxt "@label"
+#~ msgid "KGet Web Interface"
+#~ msgstr "KGet tīmekļa saskarne"
+
+#~ msgctxt "@label number"
+#~ msgid "Nr"
+#~ msgstr "Nr"
+
+#~ msgctxt "@label"
+#~ msgid "File name"
+#~ msgstr "Faila nosaukums"
+
+#~ msgctxt "@label Progress of transfer"
+#~ msgid "Finished"
+#~ msgstr "Pabeigts"
+
+#~ msgctxt "@label Speed of transfer"
+#~ msgid "Speed"
+#~ msgstr "Ātrums"
+
+#~ msgctxt "@label Status of transfer"
+#~ msgid "Status"
+#~ msgstr "Statuss"
+
+#~ msgctxt "@action:button start a transfer"
+#~ msgid "Start"
+#~ msgstr "Sākt"
+
+#~ msgctxt "@action:button"
+#~ msgid "Stop"
+#~ msgstr "Apturēt"
+
+#~ msgctxt "@action:button"
+#~ msgid "Remove"
+#~ msgstr "Aizvākt"
+
+#~ msgctxt "@label Download from"
+#~ msgid "Source:"
+#~ msgstr "Avots:"
+
+#~ msgctxt "@label Save download to"
+#~ msgid "Saving to:"
+#~ msgstr "Saglabā iekš:"
+
+#~ msgctxt "@label Title in header"
+#~ msgid "Web Interface"
+#~ msgstr "Tīmekļa saskarne"
+
+#~ msgctxt "@action"
+#~ msgid "Settings"
+#~ msgstr "Iestatījumi"
+
+#~ msgctxt "@action"
+#~ msgid "Refresh"
+#~ msgstr "Atsvaidzināt"
+
+#~ msgctxt "@action"
+#~ msgid "Enter URL: "
+#~ msgstr "Ievadiet URL: "
+
+#~ msgctxt "@action:button"
+#~ msgid "OK"
+#~ msgstr "Labi"
+
+#~ msgctxt "@action Refresh download list every x (seconds)"
+#~ msgid "Refresh download list every"
+#~ msgstr "Atsvaidzināt sarakstu ik pēc"
+
+#~ msgctxt "@action (Refresh very x )seconds"
+#~ msgid "seconds"
+#~ msgstr " sekundēm"
+
+#~ msgctxt "@action:button"
+#~ msgid "Save Settings"
+#~ msgstr "Saglabāt iestatījumus"
+
+#~ msgctxt "@title"
+#~ msgid "Downloads"
+#~ msgstr "Lejupielādes"
+
+#~ msgctxt "@label text in footer"
+#~ msgid "KGet Web Interface | Valid XHTML 1.0 Strict &amp; CSS"
+#~ msgstr "KGet tīmekļa saskarne | Atbilst XHTML 1.0 Strict &amp; CSS"
+
+#~ msgid "An advanced download manager for KDE"
+#~ msgstr "Moderns KDE lepjupielāžu pārvaldnieks"
+
+#~ msgid ""
+#~ "(C) 2005 - 2009, The KGet developers\n"
+#~ "(C) 2001 - 2002, Patrick Charbonnier\n"
+#~ "(C) 2002, Carsten Pfeiffer\n"
+#~ "(C) 1998 - 2000, Matej Koss"
+#~ msgstr ""
+#~ "(C) 2005 - 2009, KGet izstrādātāji\n"
+#~ "(C) 2001 - 2002, Patrick Charbonnier\n"
+#~ "(C) 2002, Carsten Pfeiffer\n"
+#~ "(C) 1998 - 2000, Matej Koss"
+
+#~ msgid "<a href=\"mailto:kget@kde.org\">kget@kde.org</a>"
+#~ msgstr "<a href=\"mailto:kget@kde.org\">kget@kde.org</a>"
+
+#~ msgid "Lukas Appelhans"
+#~ msgstr "Lukas Appelhans"
+
+#~ msgid "Maintainer, Core Developer, Torrent Plugin Author"
+#~ msgstr "Izstrādātājs, galvenais izstrādātājs, torrent spraudņa autors"
+
+#~ msgid "Dario Massarin"
+#~ msgstr "Dario Massarin"
+
+#~ msgid "Core Developer"
+#~ msgstr "Galvenais izstrādātājs"
+
+#~ msgid "Urs Wolfer"
+#~ msgstr "Urs Wolfer"
+
+#~ msgid "Manolo Valdes"
+#~ msgstr "Manolo Valdes"
+
+#~ msgid "Core Developer, Multithreaded Plugin Author"
+#~ msgstr "Galvenais izstrādātājs, daudzpavedienu spraudņa autors"
+
+#~ msgid "Matthias Fuchs"
+#~ msgstr "Matthias Fuchs"
+
+#~ msgid "Javier Goday"
+#~ msgstr "Javier Goday"
+
+#~ msgid "Developer"
+#~ msgstr "Izstrādātājs"
+
+#~ msgid "Patrick Charbonnier"
+#~ msgstr "Patrick Charbonnier"
+
+#~ msgid "Former Developer"
+#~ msgstr "Bijušais izstrādātājs"
+
+#~ msgid "Carsten Pfeiffer"
+#~ msgstr "Carsten Pfeiffer"
+
+#~ msgid "Matej Koss"
+#~ msgstr "Matej Koss"
+
+#~ msgid "Joris Guisson"
+#~ msgstr "Joris Guisson"
+
+#~ msgid "BTCore (KTorrent) Developer"
+#~ msgstr "BTCore (KTorrent) izstrādātājs"
+
+#~ msgid "Mensur Zahirovic (Nookie)"
+#~ msgstr "Mensur Zahirovic (Nookie)"
+
+#~ msgid "Design of Web Interface"
+#~ msgstr "Tīmekla saskarnes dizains"
+
+#~ msgid "Start KGet with drop target"
+#~ msgstr "Palaist KGet ar nomešanas mērķi"
+
+#~ msgid "Start KGet with hidden main window"
+#~ msgstr "Palaist KGet ar noslēptu galveno logu"
+
+#~ msgid "Start KGet without drop target animation"
+#~ msgstr "Palaist KGet bez nomešanas mērķā animācijas"
+
+#~ msgid "Execute Unit Testing"
+#~ msgstr "Veikt vienībtestēšanu"
+
+#~ msgid "URL(s) to download"
+#~ msgstr "Lejupielādējamie URL(i)"
+
+#~ msgid "KGet Transfer List"
+#~ msgstr "KGet ielāžu saraksts"
+
+#~ msgid "Export Transfers"
+#~ msgstr "Eksportēt ielādes"
+
+#~ msgid "&New Download..."
+#~ msgstr "&Jauna lejupielāde..."
+
+#~ msgid "&Import Transfers..."
+#~ msgstr "&Importēt ielādes..."
+
+#~ msgid "&Export Transfers List..."
+#~ msgstr "&Eksportēt ielāžu sarakstu..."
+
+#~ msgid "&Export Transfers as Plain Text..."
+#~ msgstr "&Eksportēt ielāžu sarakstu kā vienkāršu tekstu..."
+
+#~ msgid "&Create a Metalink"
+#~ msgstr "&Izveidot Metalink"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Top Priority"
+#~ msgstr "Prioritāte"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Least Priority"
+#~ msgstr "Prioritāte"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Increase Priority"
+#~ msgstr "Prioritāte"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Decrease Priority"
+#~ msgstr "Prioritāte"
+
+#~ msgid "Set Icon..."
+#~ msgstr "Mainīt ikonu..."
+
+#~ msgid "Auto-Paste Mode"
+#~ msgstr "Auto-ielīmēšanas režīms"
+
+#~ msgid ""
+#~ "<b>Auto paste</b> button toggles the auto-paste mode on and off.\n"
+#~ "When set, KGet will periodically scan the clipboard for URLs and paste "
+#~ "them automatically."
+#~ msgstr ""
+#~ "<b>Auto-ielīmēšanas</b> poga ieslēdz/izslēdz automātiskās ielīmēšanas "
+#~ "režīmu.\n"
+#~ "Kad tas ielsēgts, KGet regulāri pārbaudīs vai starpliktuvē nav kāds URL "
+#~ "un ja ir, tad automātiski to ielīmēs."
+
+#~ msgid "Use KGet as Konqueror Download Manager"
+#~ msgstr "Izmantot KGet, lai pārvaldītu Konqueror lejielādes"
+
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Remove Selected"
+#~ msgstr "Izņemt izvēlēto"
+
+#~ msgctxt "delete all finished transfers"
+#~ msgid "Remove All Finished"
+#~ msgstr "Izņemt visus pabeigtos"
+
+#~ msgctxt "redownload selected transfer item"
+#~ msgid "Redownload Selected"
+#~ msgstr "Lejupielādēt izvēlētos vēlreiz"
+
+#~ msgid "Start / Resume All"
+#~ msgstr "Sākt / Turpināt visus"
+
+#~ msgid "Start / Resume Selected"
+#~ msgstr "Sākt / Turpināt izvēlētos"
+
+#~ msgid "Stop All"
+#~ msgstr "Apturēt visus"
+
+#~ msgid "Stop Selected"
+#~ msgstr "Apturēt izvēlētos"
+
+#~ msgid "Start / Resume"
+#~ msgstr "Sākt / Turpināt"
+
+#~ msgid "Stop"
+#~ msgstr "Apturēt"
+
+#~ msgid "Remove"
+#~ msgstr "Izņemt"
+
+#~ msgid "Open Destination"
+#~ msgstr "Atvērt mērķi"
+
+#~ msgid "Open File"
+#~ msgstr "Atvērt failu"
+
+#~ msgid "Show Details"
+#~ msgstr "Rādīt detaļas"
+
+#~ msgid "Copy URL to Clipboard"
+#~ msgstr "Kopēt URL uz starpliktuvi"
+
+#~ msgid "&Transfer History"
+#~ msgstr "Ielāžu &vēsture"
+
+#~ msgid "&Group Settings"
+#~ msgstr "&Grupu iestatījumi"
+
+#~ msgid "&Transfer Settings"
+#~ msgstr "&Ielādes iestatījumi"
+
+#~ msgid "Import &Links..."
+#~ msgstr "Importēt &saites..."
+
+#~ msgid ""
+#~ "This is the first time you have run KGet.\n"
+#~ "Would you like to enable KGet as the download manager for Konqueror?"
+#~ msgstr ""
+#~ "Šī ir pirmā KGet darbināšanas reize.\n"
+#~ "Vai vēlaties iestatīt lai GKet pārvalda visas Konqueror lejupielādes?"
+
+#~ msgid "Konqueror Integration"
+#~ msgstr "Konqueror integrācija"
+
+#~ msgid "Enable"
+#~ msgstr "Iestatīt"
+
+#~ msgid "Do Not Enable"
+#~ msgstr "Neiestatīt"
+
+#~ msgid "All Openable Files"
+#~ msgstr "Visi atveramie faili"
+
+#~ msgctxt "window title including overall download progress in percent"
+#~ msgid "KGet - %1%"
+#~ msgstr "KGet - %1%"
+
+#~ msgid ""
+#~ "Some transfers are still running.\n"
+#~ "Are you sure you want to close KGet?"
+#~ msgstr ""
+#~ "Dažas ielādes vēl tiek veiktas.\n"
+#~ "Vai esat pārliecināts, ka vēlaties aizvērt KGet?"
+
+#~ msgid "Confirm Quit"
+#~ msgstr "Aizvēršanas apstiprināšana"
+
+#~ msgid "Enter Group Name"
+#~ msgstr "Ievadiet grupas nosaukumu"
+
+#~ msgid "Group name:"
+#~ msgstr "Grupas nosaukums:"
+
+#~ msgid "Are you sure you want to delete the selected transfer?"
+#~ msgid_plural "Are you sure you want to delete the selected transfers?"
+#~ msgstr[0] "Vai esat pārliecināts ka vēlaties dzēst izvēlēto ielādi?"
+#~ msgstr[1] "Vai esat pārliecināts ka vēlaties dzēst izvēlētās ielādes?"
+#~ msgstr[2] "Vai esat pārliecināts ka vēlaties dzēst izvēlētās ielādes?"
+
+#~ msgid "Confirm transfer delete"
+#~ msgstr "Apstiprināt ielādes dzēšanu"
+
+#~ msgid ""
+#~ "KGet has been temporarily disabled as download manager for Konqueror. If "
+#~ "you want to disable it forever, go to Settings->Advanced and disable "
+#~ "\"Use as download manager for Konqueror\"."
+#~ msgstr ""
+#~ "KGet ir uz brīdi atslēgts no Konqueror lejupielāžu pārvaldīšanas. Ja "
+#~ "vēlaties to atslēgt pavisam, dodieties uz Iestatījumi ->Paplašināti in "
+#~ "atslēdziet \"Pārvaldīt Konqueror lejupielādes\"."
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Viesturs Zariņš"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "viesturs.zarins@mi.lu.lv"
+
+#~ msgid "Checksums"
+#~ msgstr "Kontrolsummas"
+
+#~ msgid "Automatic verification:"
+#~ msgstr "Automātiska pārbaude:"
+
+#~ msgid "Weak (fastest)"
+#~ msgstr "Vāja (ātrākais)"
+
+#~ msgid "Strong (recommended)"
+#~ msgstr "Stipra (ieteicams)"
+
+#~ msgid "Strongest (slowest)"
+#~ msgstr "Stiprākā (lēnākais)"
+
+#~ msgid "Used checksum:"
+#~ msgstr "Lietotā kontrolsumma:"
+
+#~ msgid "Signature"
+#~ msgstr "Paraksts"
+
+#~ msgid "Automatic verification"
+#~ msgstr "Automātiska pārbaude"
+
+#~ msgid "Automatic downloading of missing keys"
+#~ msgstr "Automātiska trūkstošo atslēgu lejupielāde"
+
+#~ msgid "Keyservers:"
+#~ msgstr "Atslēgu serveri:"
+
+#~ msgid "Move &Up"
+#~ msgstr "Pārvietot augš&up"
+
+#~ msgid "Move &Down"
+#~ msgstr "Pārvietot &lejup"
+
+#, fuzzy
+#~| msgid "Use default directories for groups as suggestion"
+#~ msgid "Use default folders for groups as suggestion"
+#~ msgstr "Lietot noklusētās mapes grupu mapju ieteikšanai"
+
+#~ msgid "Rename"
+#~ msgstr "Pārdēvēt"
+
+#~ msgid "Select Icon..."
+#~ msgstr "Izvēlēties ikonu..."
+
+#~ msgid "Limit Maximum Downloads Per Group"
+#~ msgstr "Ierobežot maksimālo lejupielāžu skaitu grupā"
+
+#~ msgid "Number of downloads:"
+#~ msgstr "Lejupielāžu skaits:"
+
+#~ msgid "Downloads from the same server:"
+#~ msgstr "Lejupielādes no viena un tā paša servera:"
+
+#~ msgid "Speed Limit"
+#~ msgstr "Ātruma ierobežojums"
+
+#~ msgid "Global download limit:"
+#~ msgstr "Globāls lejupielādes ierobežojums:"
+
+#~ msgid " KiB/s"
+#~ msgstr " KiB/s"
+
+#~ msgid "Global upload limit:"
+#~ msgstr "Globāls augšupielādes ierobežojums:"
+
+#~ msgid "Per transfer:"
+#~ msgstr "Katrai lejupielādei:"
+
+#~ msgid "Reconnect on Error or Broken Connection"
+#~ msgstr "Pieslēgties vēlreiz kļūdas vai pārtraukta savienojuma gadījumā"
+
+#~ msgid "Number of retries:"
+#~ msgstr "Reižu skaits:"
+
+#~ msgid "Retry after:"
+#~ msgstr "Mēģināt vēlreiz pēc:"
+
+#~ msgid " sec"
+#~ msgstr " sek"
+
+#~ msgid "After Completing Downloads"
+#~ msgstr "Pēc lejupielādes pabeigšanas"
+
+#~ msgid "Auto shutdown"
+#~ msgstr "Automātiski izslēgt datoru"
+
+#~ msgid "Auto disconnect"
+#~ msgstr "Automātiski atvienoties"
+
+#~ msgid "Enable Web Interface"
+#~ msgstr "Ieslēgt tīmekļa saskarni"
+
+#~ msgid "Port:"
+#~ msgstr "Ports:"
+
+#~ msgid "User:"
+#~ msgstr "Lietotājs:"
+
+#~ msgid "Password:"
+#~ msgstr "Parole:"
+
+#~ msgid "Startup"
+#~ msgstr "Palaišana"
+
+#~ msgid "Show splashscreen"
+#~ msgstr "Rādīt šļaksta ekrānu"
+
+#~ msgid "Enable animations"
+#~ msgstr "Ieslēgt animācijas"
+
+#~ msgid "Enable popup tooltip"
+#~ msgstr "Rādīt uznirstošo paskaidri"
+
+#~ msgid "Show drop target"
+#~ msgstr "Rādīt nomešanas mērķi"
+
+#~ msgid "Disable confirmation dialogs (less verbosity)"
+#~ msgstr "Atslēgt apstiprināšanas dialogus (mazāk uzbāzīgi)"
+
+#~ msgid "Enable system tray icon"
+#~ msgstr "Rādīt ikonu ikonu joslā"
+
+#~ msgid "Execute action after all downloads have been finished:"
+#~ msgstr "Izpildīt darbību pēc visu lejupielāžu pabeigšanas:"
+
+#~ msgid "At startup:"
+#~ msgstr "Palaižot:"
+
+#~ msgid "Restore Download State"
+#~ msgstr "Atjaunot lejupielāžu stāvokli"
+
+#~ msgid "Start All Downloads"
+#~ msgstr "Sākt visas lejupielādes"
+
+#~ msgid "Stop All Downloads"
+#~ msgstr "Apturēt visas lejupielādes"
+
+#~ msgid "History"
+#~ msgstr "Vēsture"
+
+#~ msgid "History backend:"
+#~ msgstr "Vēstures aizmugure:"
+
+#~ msgid "Enable KDE global progress tracking"
+#~ msgstr "Ieslēgt KDE globālo procesu novērošanu"
+
+#~ msgid "Show every single download "
+#~ msgstr "Rādīt katru ielādi atsevišķi"
+
+#~ msgid "Show overall progress"
+#~ msgstr "Rādīt kopējo progresu"
+
+#, fuzzy
+#~| msgid "Use as download manager for Konqueror"
+#~ msgid "Use as download manager for Konqueror:"
+#~ msgstr "Pārvaldīt Konqueror lejupielādes"
+
+#~ msgid "Monitor clipboard for files to download"
+#~ msgstr "Vērot starpliktuvi pēc lejupielādējamiem failiem"
+
+#~ msgid "Search Engines"
+#~ msgstr "Meklēšanas dzinēji"
+
+#~ msgid "Engine Name"
+#~ msgstr "Meklētāja nosaukums"
+
+#~ msgid "New Engine..."
+#~ msgstr "Jauns meklētājs..."
+
+#~ msgid "Number of connections per URL:"
+#~ msgstr "Savienojumu skaits uz URL:"
+
+#~ msgid "Use search engines"
+#~ msgstr "Lietot meklēšanas dzinējus"
+
+#~ msgid "Search for verification information"
+#~ msgstr "Meklēt pārbaudīšanas informāciju"
+
+#~ msgid "File Settings"
+#~ msgstr "Faila iestatījumi"
+
+#~ msgid "Filename:"
+#~ msgstr "Faila nosaukums:"
+
+#~ msgid "Use Normalized Name"
+#~ msgstr "Lietot normalizētu nosaukumu"
+
+#~ msgid "Use Literal Name"
+#~ msgstr "Lietot literāļa nosaukumu"
+
+#~ msgid "Quality:"
+#~ msgstr "Kvalitāte:"
+
+#~ msgid "Best Quality (.mp4)"
+#~ msgstr "Labākā kvalitāte (.mp4)"
+
+#~ msgid "Normal Quality (.flv)"
+#~ msgstr "Normāla kvalitāte (.flv)"
+
+#~ msgid ""
+#~ "Provide login info of your YouTube account in order to access restricted "
+#~ "media."
+#~ msgstr ""
+#~ "Ievadiet pieteikšanās informāciju jūsu Youtube kontam, lai varētu piekļūt "
+#~ "aizsargātiem failiem."
+
+#~ msgid "Login Info"
+#~ msgstr "Pieteikšanās informācija"
+
+#~ msgid "Username:"
+#~ msgstr "Lietotājs:"
+
+#~ msgid ".netrc must have a hostname called 'youtube'."
+#~ msgstr ".netrc jāsatur resursdatora nosaukums 'youtube'."
+
+#~ msgid "User .netrc file"
+#~ msgstr "Lietotāja .netrc fails"
+
+#~ msgid "User Scripts"
+#~ msgstr "Lietotāja skripti"
+
+#~ msgid "Path"
+#~ msgstr "Ceļš"
+
+#~ msgid "RegExp"
+#~ msgstr "Regexp"
+
+#~ msgid "New Script...."
+#~ msgstr "Jauns skripts..."
+
+#~ msgid "Edit...."
+#~ msgstr "Rediģēt...."
+
+#~ msgid "Configure...."
+#~ msgstr "Konfigurēt..."
+
+#~ msgid "Regexp:"
+#~ msgstr "Regexp:"
+
+#~ msgid "Path:"
+#~ msgstr "Ceļš:"
+
+#~ msgid "Description:"
+#~ msgstr "Apraksts:"
+
+#~ msgid "Select the files you want to be downloaded."
+#~ msgstr "Izvēlieties lejupielādējamos failus."
+
+#~ msgid "Number of simultaneous file downloads:"
+#~ msgstr "Paralēlo savienojumu skaits failam:"
+
+#~ msgid "Number of mirrors per file:"
+#~ msgstr "Spoguļu skaits vienam failam:"
+
+#~ msgid "Change string:"
+#~ msgstr "Izmaiņu teksts:"
+
+#~ msgid "Mode:"
+#~ msgstr "Režīms:"
+
+#~ msgid "Checksum type:"
+#~ msgstr "Kontrolsummas tips:"
+
+#~ msgid "Result:"
+#~ msgstr "Rezultāts:"
+
+#~ msgid "label"
+#~ msgstr "Etiķete"
+
+#~ msgid "Remove Tracker"
+#~ msgstr "Izņemt trakeri"
+
+#~ msgid "Change Tracker"
+#~ msgstr "Izmainīt trakeri"
+
+#~ msgid "Update Trackers"
+#~ msgstr "Atjaunot trakerus"
+
+#~ msgid "Restore Defaults"
+#~ msgstr "Atjaunot noklusēto"
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Webseed to add to the "
+#~ "torrent.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">Note: </span>Only http webseeds are supported.</p></body></"
+#~ "html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Torrentam "
+#~ "pievienojamais tīmekļa devējs.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">Piezīme: </span>Ir atbalstīti tikai HTTP tīmekļa devēji.</"
+#~ "p></body></html>"
+
+#~ msgid "Add Webseed"
+#~ msgstr "Pievienot tīmekļa devēju"
+
+#~ msgid "Remove Webseed"
+#~ msgstr "Aizvākt tīmekļa devēju"
+
+#~ msgid "Chunks"
+#~ msgstr "Gabali"
+
+#~ msgid "Total:"
+#~ msgstr "Kopā:"
+
+#~ msgid "Currently downloading:"
+#~ msgstr "Šobrīt ielādē:"
+
+#~ msgid "Downloaded:"
+#~ msgstr "Lejupielādēti:"
+
+#~ msgid "Excluded:"
+#~ msgstr "Izlaisti:"
+
+#~ msgid "Left:"
+#~ msgstr "Palikuši:"
+
+#~ msgid "Size:"
+#~ msgstr "Izmērs:"
+
+#~ msgid "Scanning data of torrent:"
+#~ msgstr "Skenē torrenta datus:"
+
+#~ msgid "Number of chunks found:"
+#~ msgstr "Atrasti gabali:"
+
+#~ msgid "Number of chunks failed:"
+#~ msgstr "Bojāti gabali:"
+
+#~ msgid "Number of chunks not downloaded:"
+#~ msgstr "Nav ielādēti gabali:"
+
+#~ msgid "Number of chunks downloaded:"
+#~ msgstr "Ielādēti galabi:"
+
+#~ msgid "0"
+#~ msgstr "0"
+
+#~ msgid "Cancel"
+#~ msgstr "Atcelt"
+
+#~ msgid "Stats"
+#~ msgstr "Statistika"
+
+#~ msgid "Seeders:"
+#~ msgstr "Devēji:"
+
+#~ msgid "<n>"
+#~ msgstr "<n>"
+
+#~ msgid "Download speed:"
+#~ msgstr "Lejupielādes ātrums:"
+
+#~ msgid "Leechers:"
+#~ msgstr "Ņēmēji:"
+
+#~ msgid "Upload speed:"
+#~ msgstr "Augšupielādes ātrums:"
+
+#~ msgctxt "chunks left"
+#~ msgid "Left:"
+#~ msgstr "Palikuši:"
+
+#~ msgctxt "all chunks"
+#~ msgid "All:"
+#~ msgstr "Kopā:"
+
+#~ msgctxt "source-file"
+#~ msgid "Source:"
+#~ msgstr "Avots:"
+
+#~ msgid "Saving to:"
+#~ msgstr "Saglabā iekš:"
+
+#~ msgid "Upload limit per transfer:"
+#~ msgstr "Augšupielādes ierobežojums vienai ielādei:"
+
+#~ msgid "No Limit"
+#~ msgstr "Nav ierobežojuma"
+
+#~ msgid "KiB"
+#~ msgstr "KiB"
+
+#~ msgid "Download limit per transfer:"
+#~ msgstr "Lejupielādes ierobežojums vienai ielādei:"
+
+#, fuzzy
+#~| msgid "Enable popup tooltip"
+#~ msgid "Enable UTP protocol"
+#~ msgstr "Rādīt uznirstošo paskaidri"
+
+#~ msgid "Folders"
+#~ msgstr "Mapes"
+
+#~ msgid "Default torrent folder:"
+#~ msgstr "Noklusējuma torrentu mape:"
+
+#~ msgid "Default temporary folder"
+#~ msgstr "Noklusētā pagaidu mape"
+
+#~ msgid "Pre-allocate disk space"
+#~ msgstr "Iepriekš izdalīt vietu uz diska"
+
+#~ msgctxt "General options."
+#~ msgid "General"
+#~ msgstr "Pamata"
+
+#~ msgid "Create partial checksums"
+#~ msgstr "Izveidot daļējas kontrolsummas"
+
+#~ msgid "General URL:"
+#~ msgstr "Pamata URL:"
+
+#~ msgid ""
+#~ "Automatically create checksums for the selected types. Keep in mind that "
+#~ "this might take a while."
+#~ msgstr ""
+#~ "Automātiski izveidot kontrolsummas izvēlētajiem failu tipiem. Atcerities "
+#~ "ka kontrolsummu veidošana aizņem kādu brīdi."
+
+#~ msgid ""
+#~ "Enter URLs here if all the dropped files are on that server and in the "
+#~ "same directory. For each dropped file the URL would consist of the "
+#~ "entered part and the filename."
+#~ msgstr ""
+#~ "Šeit ievadiet URLus, ja visi nomestie failu atrodas uz norādītā servera "
+#~ "vienā mapē. Katram nomestajam failam URLs sastāvēs no ievadītās daļas un "
+#~ "faila nosaukuma."
+
+#~ msgid "Types of the checksums:"
+#~ msgstr "Kontrolsummu veidi:"
+
+#~ msgid "Create checksums:"
+#~ msgstr "Izveidot kontrolsummas:"
+
+#~ msgctxt "These entries are optional."
+#~ msgid "Optional"
+#~ msgstr "Papildus"
+
+#~ msgid "Optional data:"
+#~ msgstr "Papildus dati:"
+
+#~ msgid "Enter information that all chosen files share."
+#~ msgstr "Ievadiet izvēlētajiem failiem kopīgo informāciju."
+
+#~ msgid "Required"
+#~ msgstr "Nepieciešams"
+
+#~ msgid "Used Mirrors:"
+#~ msgstr "Izmantotie spoguļi:"
+
+#~ msgid "Recommended"
+#~ msgstr "Rekomendētais"
+
+#~ msgid "File size (in bytes):"
+#~ msgstr "Faila izmērs (baitos):"
+
+#~ msgid "0123456789"
+#~ msgstr "0123456789"
+
+#~ msgid "Verification:"
+#~ msgstr "Pārbaude:"
+
+#~ msgid "Optional"
+#~ msgstr "Papildus"
+
+#~ msgid ""
+#~ "This assistant allows you to create metalinks from scratch or base them "
+#~ "on existing metalinks. A lot of the fields are optional or recommended, "
+#~ "so enter them if desired. The minimum is a save location, at least one "
+#~ "file and one URL."
+#~ msgstr ""
+#~ "Šis palīgs ļaujs jums izveidot jaunus metalinkus vai adaptēt esošus "
+#~ "metalinkus. Vairums lauku ir  papildinoši vai tikai rekomentēti, tāpēc "
+#~ "aizpidiet tikai ko vēlaties. Obligātie ir tikai saglabāšanas vieta un "
+#~ "vismaz viens fails un viens URL."
+
+#~ msgid "Save created Metalink at:"
+#~ msgstr "Saglabāt izvēlēto Metalink uz:"
+
+#~ msgid "Create new Metalink"
+#~ msgstr "Izveidot jaunu Metalink"
+
+#~ msgid "Load existing Metalink:"
+#~ msgstr "Ielādēt esošu Metalink:"
+
+#~ msgid "*.metalink *.meta4|Metalink file (*.metalink *.meta4)"
+#~ msgstr "*.metalink *.meta4|Metalink fails(*.metalink *.meta4)"
+
+#~ msgid "General information:"
+#~ msgstr "Vispārēja informācija:"
+
+#~ msgid "Here you can enter optional general information on the metalink."
+#~ msgstr "Šeit varat ievadīt papildus vispārēju informāciju par metalinku:"
+
+#~ msgid "Origin:"
+#~ msgstr "Avots:"
+
+#~ msgid "Web URL to the metalink"
+#~ msgstr "Metalink tīmekļā URL"
+
+#~ msgid "Dynamic means that updated metalinks can be found at \"Origin\"."
+#~ msgstr ""
+#~ "Dinamsisks nozīmē ka augšupielādētie metalinki ir atrodami iekš \"Avots\"."
+
+#~ msgid "Dynamic:"
+#~ msgstr "Dinamisks:"
+
+#~ msgid "Metalink published"
+#~ msgstr "Metalink publicēts"
+
+#~ msgid "Date and time:"
+#~ msgstr "Datums un laiks:"
+
+#~ msgid "Timezone offset:"
+#~ msgstr "Laika joslas nobīde:"
+
+#~ msgid "Negative offset:"
+#~ msgstr "Negatīvā nobīde:"
+
+#~ msgid "Metalink updated"
+#~ msgstr "Metalink atjaunināts"
+
+#~ msgid "Identity"
+#~ msgstr "Identitāte"
+
+#~ msgid "Version:"
+#~ msgstr "Versija:"
+
+#~ msgid "Logo:"
+#~ msgstr "Logo:"
+
+#~ msgid "URL to the logo"
+#~ msgstr "Logo URL"
+
+#~ msgid "The language of the file"
+#~ msgstr "Faila valoda"
+
+#~ msgid "Language:"
+#~ msgstr "Valoda:"
+
+#~ msgid "Operating systems:"
+#~ msgstr "Operāciju sistēmas:"
+
+#~ msgid "Supported OSes, separated with commas"
+#~ msgstr "Atblastītās operētājsistēmas, atdalītas ar komatiem"
+
+#~ msgid "Copyright:"
+#~ msgstr "Autortiesības:"
+
+#~ msgid "Publisher:"
+#~ msgstr "Publicētājs:"
+
+#~ msgid "Name:"
+#~ msgstr "Nosaukums:"
+
+#~ msgid "publisher"
+#~ msgstr "publicētājs"
+
+#~ msgid "Name of the publisher"
+#~ msgstr "Publicētāja vārds"
+
+#~ msgid "URL to the publisher"
+#~ msgstr "Publicētāja URL"
+
+#~ msgctxt "Files as in files on a server"
+#~ msgid "Files:"
+#~ msgstr "Faili:"
+
+#~ msgid "Add local files"
+#~ msgstr "Pievienot lokālos failus"
+
+#~ msgid ""
+#~ "Add at least one file. Adding local files adds a lot of information "
+#~ "automatically."
+#~ msgstr ""
+#~ "Pievienojiet vismaz vienu failu. Lokālo failu pievienošana automātiski "
+#~ "pievieno daudz informācijas."
+
+#~ msgid "Adding local files..."
+#~ msgstr "Pievieno lokālos failus..."
+
+#~ msgid "You need to set mirrors for the entries with an icon."
+#~ msgstr "Nepieciešams iestatīt spoguļus ierakstiem ar ikonu."
+
+#~ msgid "&File with links to import:"
+#~ msgstr "Importējamais saišu &fails:"
+
+#~ msgid "&Import Links"
+#~ msgstr "&Importēt saites"
+
+#~ msgid "Show:"
+#~ msgstr "Rādīt:"
+
+#~ msgctxt "filter: show all file types"
+#~ msgid "&All"
+#~ msgstr "V&isus"
+
+#~ msgid "&Videos"
+#~ msgstr "&Video"
+
+#~ msgid "Ima&ges"
+#~ msgstr "Attē&lus"
+
+#~ msgid "A&udio"
+#~ msgstr "&Mūziku"
+
+#~ msgid "A&rchives"
+#~ msgstr "A&rhīvus"
+
+#~ msgid "You can use wildcards for filtering."
+#~ msgstr "Filtrēšanai varat izmantot aizstājējzīmes."
+
+#~ msgid "Filter files here...."
+#~ msgstr "Ievadiet failu filtru..."
+
+#~ msgid "Contains"
+#~ msgstr "Satur"
+
+#~ msgid "Does Not Contain"
+#~ msgstr "Nesatur"
+
+#~ msgid "Inver&t Selection"
+#~ msgstr "Inver&tēt izvēli"
+
+#~ msgctxt "Check as in mark, not as in verify"
+#~ msgid "Chec&k Selected"
+#~ msgstr "&Pārbaudīt izvēlētos"
+
+#~ msgid "Show &web content"
+#~ msgstr "Rādīt &tīmekļa saturu"
+
+#~ msgid "Mirror:"
+#~ msgstr "Spoguļserveris:"
+
+#~ msgid "Number of connections:"
+#~ msgstr "Savienojumu skaits:"
+
+#~ msgid "Enter a URL"
+#~ msgstr "Ievadiet URL"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Priority:"
+#~ msgstr "Prioritāte"
+
+#, fuzzy
+#~| msgid "Optional: The preference of the mirror, 1 lowest 100 highest."
+#~ msgid "Optional: The priority of the mirror, 1 highest 999999 lowest."
+#~ msgstr "Papildus: Spoguļservera vēlamība, 1 zemākais, 100 augstākais."
+
+#~ msgid "Location:"
+#~ msgstr "Vieta:"
+
+#~ msgid "Clear History"
+#~ msgstr "Tīrīt vēsturi"
+
+#~ msgctxt "View modes"
+#~ msgid "View Modes"
+#~ msgstr "Skata režīmi"
+
+#~ msgid "Select Ranges"
+#~ msgstr "Izvēlieties diapazonu"
+
+#~ msgid "Date"
+#~ msgstr "Datums"
+
+#~ msgid "Host"
+#~ msgstr "Resursdators"
+
+#~ msgid "Filter History"
+#~ msgstr "Filtrēt vēsturi"
+
+#~ msgctxt "delete selected transfer"
+#~ msgid "Delete Selected"
+#~ msgstr "Dzēst izvēlētos"
+
+#~ msgid "Download"
+#~ msgstr "Lejuplādēt"
+
+#~ msgid "TextLabel"
+#~ msgstr "TextLabel"
+
+#~ msgctxt "hash type as in md5t, sha1 etc."
+#~ msgid "Hash type:"
+#~ msgstr "Heša tips:"
+
+#~ msgctxt "hash as a hash of type md5, sha1 etc."
+#~ msgid "Hash:"
+#~ msgstr "Hešs:"
+
+#~ msgid "Enter a hash key"
+#~ msgstr "Ievadiet heša atslēgu"
+
+#~ msgid "Status:"
+#~ msgstr "Statuss:"
+
+#~ msgid "Remaining Time:"
+#~ msgstr "Atlikušais laiks:"
+
+#~ msgid "Transfer Settings"
+#~ msgstr "Ielādes iestatījumi"
+
+#~ msgid "Download Destination:"
+#~ msgstr "Lejupielādes mērķis:"
+
+#~ msgctxt "No value has been set"
+#~ msgid "Not set"
+#~ msgstr "Nav iestatīts"
+
+#~ msgid " KiB"
+#~ msgstr " KiB"
+
+#~ msgid "Upload Limit:"
+#~ msgstr "Augšupielādes ierobežojums:"
+
+#~ msgid "Download Limit:"
+#~ msgstr "Lejupielādes ierobežojums:"
+
+#~ msgid "Maximum Share Ratio:"
+#~ msgstr "Maksimālā došanas attiecība:"
+
+#~ msgid "Modify the mirrors used for downloading."
+#~ msgstr "Mainīt lejupielādes spoguļserverus."
+
+#~ msgctxt "The available mirrors (servers) for downloading"
+#~ msgid "Mirrors"
+#~ msgstr "Spoguļserveri"
+
+#~ msgctxt "verification of the download (e.g. by using MD5)"
+#~ msgid "Verification"
+#~ msgstr "Pārbaude"
+
+#~ msgid "PGP signature:"
+#~ msgstr "PGP paraksts:"
+
+#~ msgid "Key"
+#~ msgstr "Atslēga"
+
+#~ msgid "Issuer:"
+#~ msgstr "Izdevējs:"
+
+#~ msgid "E-Mail:"
+#~ msgstr "E-pasts:"
+
+#~ msgid "Comment:"
+#~ msgstr "Komentārs:"
+
+#~ msgid "Creation:"
+#~ msgstr "Izveidots:"
+
+#~ msgid "Expiration:"
+#~ msgstr "Beigu datums:"
+
+#~ msgid "Trust:"
+#~ msgstr "Uzticība:"
+
+#~ msgid "Fingerprint:"
+#~ msgstr "Nospiedums:"
+
+#~ msgid "Verify"
+#~ msgstr "Pārbaudīt"
+
+#~ msgid "Group Settings"
+#~ msgstr "Grupas iestatījumi"
+
+#~ msgid "Default folder:"
+#~ msgstr "Noklusējuma mape:"
+
+#~ msgid "Moves all transfers with the regular expression to this group"
+#~ msgstr "Pārvieto visus failus, kas atbilst regulārai izteiksmei uz šo grupu"
+
+#~ msgid "Regular expression:"
+#~ msgstr "Regulāra izteiksme"
+
+#~ msgid "*movies*"
+#~ msgstr "*filmas*"
+
+#~ msgid "Maximum download speed:"
+#~ msgstr "Maksimālais lejupielādes ātrums:"
+
+#~ msgid "Maximum upload speed:"
+#~ msgstr "Maksimālais augšupielādes ātrums:"
+
+#~ msgid "Destination:"
+#~ msgstr "Mērķis:"
+
+#~ msgid "Transfer group:"
+#~ msgstr "Ielādes grupa:"
+
+#~ msgid "Verify the finished download with the selected checksum."
+#~ msgstr "Pārbaudīt pabeigto lejupielādi pret izvēlēto kontrolsummu"
+
+#~ msgid "&Verify"
+#~ msgstr "Pārbaudī&t"
+
+#~ msgid "Verifying:"
+#~ msgstr "Pārbauda:"
+
+#~ msgid "&File"
+#~ msgstr "&Fails"
+
+#~ msgid "&Downloads"
+#~ msgstr "&Lejupielādes"
+
+#~ msgid "&Settings"
+#~ msgstr "Ie&statījumi"
+
+#~ msgid "&Help"
+#~ msgstr "&Palīdzība"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Galvenā rīkjosla "
+
+#~ msgid "Sets to show the splashscreen while KGet is loading"
+#~ msgstr "Iestata vai rādīt šļaksta ekrānu KGet ielādes laikā"
+
+#~ msgid "The width of the columns in the history view"
+#~ msgstr "Vēstures skata kolonu platums"
+
+#~ msgid "List of the available search engines"
+#~ msgstr "Pieejamo meklēšanas dzinēju saraksts"
+
+#~ msgid "List of the available search engine URLs"
+#~ msgstr "Pieejamo meklēšanas dzinēju URLu saraksts"
+
+#~ msgid "List of the Regexp to match input URL"
+#~ msgstr "Regulāro izteiksmju saraskts, ko pielietot URL"
+
+#~ msgid "List of descriptions for user scripts"
+#~ msgstr "Skriptu apraksti"
+
+#~ msgid "List of whether the script is enabled"
+#~ msgstr "Vai skripts ir ieslēgts"
+
+#~ msgid "Unable to continue: KGet cannot download using this protocol."
+#~ msgstr "Nevar turpināt: KGet nespēj lejupielādēt no šī protokola."
+
+#~ msgid "An error occurred...."
+#~ msgstr "Gadījās kļūda..."
+
+#~ msgid "There are no links in the active frame of the current HTML page."
+#~ msgstr "Šīs HTML lapas aktīvajā rāmī nav nevienas saites."
+
+#~ msgid "Remove Tag"
+#~ msgstr "Noņemt tagu"
+
+#~ msgid "Add Tag"
+#~ msgstr "Pievienot tagu"
+
+#~ msgid "Tag Settings for the groups"
+#~ msgstr "Grupu tagu iestatījumi"
+
+#~ msgid "Tag Settings"
+#~ msgstr "Tagu iestatījumi"
+
+#~ msgid "Available tags:"
+#~ msgstr "Pieejamie tagi:"
+
+#~ msgid "Used tags:"
+#~ msgstr "Lietotie tagi:"
+
+#~ msgid "Enter a new Tag"
+#~ msgstr "Ievadiet jaunu tagu"
+
+#~ msgid "Enter a new tag"
+#~ msgstr "Ievadiet jaunu tagu"
+
+#~ msgid "Modify Tags..."
+#~ msgstr "Izmainīt tagus..."
+
+#~ msgid ""
+#~ "Another group with this name already exists. Please select a different "
+#~ "name."
+#~ msgstr ""
+#~ "Jau pastāv cita grupa ar šādu nosaukumu. Lūdzu lietojiet citu nosaukumu."
+
+#~ msgid "Group Name Already in Use"
+#~ msgstr "Grupas nosaukums ir aizņemts"
+
+#~ msgid "Add"
+#~ msgstr "Pievienot"
+
+#~ msgid "Delete"
+#~ msgstr "Izdzēst"
+
+#~ msgid "Configure..."
+#~ msgstr "Konfigurēt..."
+
+#~ msgid "Illegal token: %1"
+#~ msgstr "Nederīga iezīme: %1"
+
+#~ msgid "Decode error"
+#~ msgstr "Atkodēšanas kļūda"
+
+#~ msgid "Unexpected end of input"
+#~ msgstr "Negaidītas ievada beigas"
+
+#~ msgid "Cannot convert %1 to an int"
+#~ msgstr "Neizdevās pārveidot %1 par int"
+
+#~ msgid "Torrent is incomplete."
+#~ msgstr "Torrents ir nepilnīgs."
+
+#~ msgid "Cannot open %1 : %2"
+#~ msgstr "Neizdevās atvērt %1 : %2"
+
+#~ msgid "Cannot open %1 for writing : readonly filesystem"
+#~ msgstr ""
+#~ "Neizdevās atvērt failu %1 rakstīšanas režīmā : failu sistēma neatbalsta "
+#~ "rakstīšanu"
+
+#~ msgid "Cannot expand file %1 : %2"
+#~ msgstr "Nevar paplašināt failu %1: %2"
+
+#~ msgid "Error : Reading past the end of the file %1"
+#~ msgstr "Kļūda : Lasīts ārpus faila %1beigām"
+
+#~ msgid "Failed to seek file %1 : %2"
+#~ msgstr "Neizdevās uzstādīt pozīciju failā %1: %2"
+
+#~ msgid "Error reading from %1"
+#~ msgstr "Kļūda lasot no %1"
+
+#~ msgid "Failed to write to file %1 : %2"
+#~ msgstr "Neizdevās ierakstīt failā %1: %2"
+
+#~ msgid "Cannot preallocate diskspace : %1"
+#~ msgstr "Neizdevās rezervēt vietu uz diska : %1"
+
+#~ msgid "Cannot open index file %1 : %2"
+#~ msgstr "Neizdevās atvērt indeksa failu %1 : %2"
+
+#~ msgid "Failed to open %1 : %2"
+#~ msgstr "Neizdevās atvērt %1 : %2"
+
+#~ msgid "Failed to create %1 : %2"
+#~ msgstr "Neizdevās izveidot %1: %2"
+
+#~ msgid "Cannot create file %1 : %2"
+#~ msgstr "Neizdevās izveidot failu %1 : %2"
+
+#~ msgid "Failed to write first chunk to DND file : %1"
+#~ msgstr "Neizdevās ierakstīt pirmo gabalu DND failā : %1"
+
+#~ msgid "Failed to write last chunk to DND file : %1"
+#~ msgstr "Neizdevās ierakstīt pēdējo gabalu DND failā : %1"
+
+#~ msgid "Cannot open file %1 : %2"
+#~ msgstr "Neizdevās atvērt failu %1 : %2"
+
+#~ msgid "OK"
+#~ msgstr "Labi"
+
+#~ msgid "Announcing"
+#~ msgstr "Paziņo"
+
+#~ msgid "Error: %1"
+#~ msgstr "Kļūda: %1"
+
+#~ msgid "Redirect without a redirect location"
+#~ msgstr "Pārvirzīts bez jaunas vietas."
+
+#~ msgid "Timeout contacting tracker %1"
+#~ msgstr "Noildze sazinoties ar trakeri %1"
+
+#~ msgid "Unable to resolve hostname %1"
+#~ msgstr "Neizdevās sameklēt datora nosaukumu %1"
+
+#~ msgid "Invalid response from tracker"
+#~ msgstr "Nepareiza atbilde no trakera"
+
+#~ msgid "Invalid data from tracker"
+#~ msgstr "Nederīgi dati no trakera"
+
+#~ msgid "Invalid tracker URL"
+#~ msgstr "Nederīgs trakera URL"
+
+#~ msgid "Cannot bind to udp port %1 or the 10 following ports."
+#~ msgstr "Neizdevās pieslēgties ne UDP portam %1, ne kādam no 10 nākamajiem."
+
+#~ msgid "Unknown client"
+#~ msgstr "Nepazīstama programma"
+
+#~ msgid ""
+#~ "An error occurred while loading the torrent <b>%1</b>:<br/><b>%2</b><br/"
+#~ ">The torrent is probably corrupt or is not a valid torrent file."
+#~ msgstr ""
+#~ "Gadījās kļūda ielādējot torrentu <b>%1</b>>:<br/><b>%2</b><br/>Tas droši "
+#~ "vien ir bojāts vai nav torrent fails."
+
+#~ msgid ""
+#~ "An error occurred while loading the torrent:<br/><b>%1</b><br/>The "
+#~ "torrent is probably corrupt or is not a valid torrent file."
+#~ msgstr ""
+#~ "Gadījās kļūda ielādējot torrentu:<br/><b>%1</b><br/>Tas droši vien ir "
+#~ "bojāts vai nav torrent fails."
+
+#~ msgid "Unable to create %1 : %2"
+#~ msgstr "Neizdevās izveidot %1 ; %2"
+
+#~ msgid ""
+#~ "You are already downloading this torrent %1, the list of trackers of both "
+#~ "torrents has been merged."
+#~ msgstr ""
+#~ "Jūs jau ielādējat šo torrentu %1, esošā torrenta trakeru saraksts tika "
+#~ "papildināts no jaunā."
+
+#~ msgid "You are already downloading the torrent %1"
+#~ msgstr "Jūs jau ielādējat šo torrentu %1"
+
+#~ msgid "Not started"
+#~ msgstr "Nav sākts"
+
+#~ msgid "Seeding completed"
+#~ msgstr "Piedāvāšana pabeigta"
+
+#~ msgctxt "Status of a torrent file"
+#~ msgid "Seeding"
+#~ msgstr "Piedāvā"
+
+#~ msgid "Downloading"
+#~ msgstr "Lejuplādē"
+
+#~ msgid "Stopped"
+#~ msgstr "Apturēts"
+
+#~ msgid "Allocating diskspace"
+#~ msgstr "Rezervē viedu uz diska"
+
+#~ msgid "Queued for seeding"
+#~ msgstr "Ierindots piedāvāšanai"
+
+#~ msgid "Queued for downloading"
+#~ msgstr "Ierindots lejupielādei"
+
+#~ msgid "Checking data"
+#~ msgstr "Pārbauda datus"
+
+#~ msgid "Stopped. No space left on device."
+#~ msgstr "Apturēts. Vairs nav vietas uz diska."
+
+#~ msgid "Cannot open file %1: %2"
+#~ msgstr "Neizdevās atvērt failu %1: %2"
+
+#~ msgid "Cannot create index file: %1"
+#~ msgstr "Nevar izveidot indeksa failu: %1"
+
+#~ msgid "Corrupted torrent."
+#~ msgstr "Bojāts torrents."
+
+#~ msgid " Unable to open torrent file %1 : %2"
+#~ msgstr " Neizdevās atvērt torrenta failu %1 : %2"
+
+#~ msgid "Parse Error"
+#~ msgstr "Parsēšanas kļūda"
+
+#~ msgid "Cannot open file : %1 : %2"
+#~ msgstr "Nevar atvērt failu: %1 : %2"
+
+#~ msgid "Not connected"
+#~ msgstr "Nav savienots"
+
+#~ msgid "Resolving proxy %1:%2"
+#~ msgstr "Atrod starpniekserveri %1:%2"
+
+#~ msgid "Resolving hostname %1"
+#~ msgstr "Atrod datoru %1"
+
+#~ msgid "Connection closed"
+#~ msgstr "Savienojums tika slēgts"
+
+#~ msgid "Error: request failed: %1"
+#~ msgstr "Kļūda: neveiksmīgs pieprasījums: %1"
+
+#~ msgid "Connected"
+#~ msgstr "Savienots"
+
+#~ msgid "Error: Failed to connect to webseed"
+#~ msgstr "Kļūda: neizdevās pieslēgties tīmekļa devējam"
+
+#~ msgid "Connecting"
+#~ msgstr "Pieslēdzas"
+
+#~ msgid "Failed to connect to webseed"
+#~ msgstr "Neizdevās pieslēgties tīmekļa devējam"
+
+#~ msgid "Failed to resolve hostname of webseed"
+#~ msgstr "Neizdevās atpazīt tīmekļa devēja datora nosaukumu"
+
+#~ msgid "Error: failed to connect, server not responding"
+#~ msgstr "Kļūda: neizdevās pieslēgties, serveris neatbild"
+
+#~ msgid "Error: request timed out"
+#~ msgstr "Kļūda: pieprasījuma noildze"
+
+#~ msgid "Redirected without a new location."
+#~ msgstr "Pārvirzīts bez jaunas vietas."
+
+#~ msgid "1 peer"
+#~ msgid_plural "%1 peers"
+#~ msgstr[0] "%1 dalībnieks"
+#~ msgstr[1] "%1 dalībnieki"
+#~ msgstr[2] "%1 dalībnieku"
+
+#~ msgid "Not in use"
+#~ msgstr "Nav lietošanā"
+
+#~ msgid "Cannot write to %1 : %2"
+#~ msgstr "Neizdevās ierakstīt failā %1 : %2"
+
+#~ msgid "Cannot read from %1"
+#~ msgstr "Neizdevās nolasīt no %1"
+
+#~ msgid "Cannot open log file %1 : %2"
+#~ msgstr "Neizdevās atvērt žurnāla failu %1 : %2"
+
+#~ msgid "Cannot create directory %1"
+#~ msgstr "Neizdevās izveidot mapi %1"
+
+#~ msgid "Cannot symlink %1 to %2: %3"
+#~ msgstr "Neizdevās saitēt %1 uz %2: %3"
+
+#~ msgid "Cannot move %1 to %2: %3"
+#~ msgstr "Neizdevās pārvietot %1 uz %2: %3"
+
+#~ msgid "Cannot copy %1 to %2: %3"
+#~ msgstr "Neizdevās nokopēt %1 uz %2: %3"
+
+#~ msgid "Cannot delete %1: %2"
+#~ msgstr "Neizdevās izdzēst %1: %2"
+
+#~ msgid "Cannot create %1: %2"
+#~ msgstr "Neizdevās izveidot %1: %2"
+
+#~ msgid "Cannot calculate the filesize of %1: %2"
+#~ msgstr "Neizdevās aprēķināt izmēru failam %1 : %2"
+
+#~ msgid "Cannot calculate the filesize : %1"
+#~ msgstr "Neizdevās aprēķināt faila izmēru : %1"
+
+#~ msgid "Cannot expand file: %1"
+#~ msgstr "Neizdevās paplašināt failu: %1"
+
+#~ msgid "Cannot seek in file : %1"
+#~ msgstr "Neizdevās seek failā : %1"
+
+#~ msgid "1 day "
+#~ msgid_plural "%1 days "
+#~ msgstr[0] "%1 diena"
+#~ msgstr[1] "%1 dienas"
+#~ msgstr[2] "%1 dienu"
+
+#~ msgid "General"
+#~ msgstr "Pamata"
+
+#~ msgid "Connections"
+#~ msgstr "Savienojumi"
+
+#~ msgid "Tracker"
+#~ msgstr "Trakeris"
+
+#~ msgid "Disk Input/Output"
+#~ msgstr "Diska lasīšana/rakstīšana"
+
+#~ msgid "Details for: %1"
+#~ msgstr "%1 detaļas"
+
+#~ msgid "All downloads"
+#~ msgstr "Visas lejupielādes"
+
+#~ msgid "Finished downloads"
+#~ msgstr "Pabeigtās lejupielādes"
+
+#~ msgid "Transfers:"
+#~ msgstr "Ielādes:"
+
+#~ msgid "Downloads"
+#~ msgstr "Lejupielādes"
+
+#~ msgid "Transfer details:"
+#~ msgstr "Ielādes detaļas:"
+
+#~ msgid "Form"
+#~ msgstr "Forma"
+
+#~ msgid "Transfer List"
+#~ msgstr "Ielāžu saraksts"
+
+#~ msgid "Expandable transfer details instead of separate tabs"
+#~ msgstr "Rādīt izvēršamas ielāžu detaļas nevis atsevišķas cilnes"
+
+#~ msgid "Threads"
+#~ msgstr "Pavedieni"
+
+#~ msgid "Number of threads:"
+#~ msgstr "Pavedienu skaits:"
+
+#~ msgid "Preference:"
+#~ msgstr "Iestatījums:"
+
+#~ msgid "The width of the columns in the main view"
+#~ msgstr "Galvenā skata kolonu platums"
+
+#~ msgid "License:"
+#~ msgstr "Licence:"
+
+#, fuzzy
+#~| msgid "Number of the chunk"
+#~ msgid "Name of the license"
+#~ msgstr "Gabala numurs"
+
+#~ msgctxt "The transfer is delayed"
+#~ msgid "Delayed"
+#~ msgstr "Novēlots"
+
+#~ msgid ""
+#~ "Destination file \n"
+#~ "%1\n"
+#~ "already exists.\n"
+#~ "Do you want to overwrite it?"
+#~ msgstr ""
+#~ "Mērķa fails \n"
+#~ "%1\n"
+#~ "jau pastāv.\n"
+#~ "Vai vēlaties to pārrakstīt?"
+
+#~ msgid "Overwrite destination"
+#~ msgstr "Pārrakstīt mērķi"
+
+#~ msgid "Are you sure that you want to remove all selected groups?"
+#~ msgstr "Vai esat pārliecināts ka vēlaties izdzēst visas izvēlētās grupas?"
+
+#~ msgid "Rename transfer"
+#~ msgstr "Pārdēvēt ielādi"
+
+#~ msgid "Download URL again?"
+#~ msgstr "Lejupielādēt vēlreiz URL?"
+
+#~ msgid "Url:"
+#~ msgstr "Url:"
+
+#~ msgid ""
+#~ "You will lose all data in these files, are you sure you want to do this?"
+#~ msgstr ""
+#~ "Jūs pazaudēsiet visus šo failu datus, vai esat pārliecināts, ka vēlaties "
+#~ "to darīt?"
+
+#~ msgid "Cannot remove torrent default tracker."
+#~ msgstr "Nevar izņemt torrenta noklusēto trakeri."
+
+#~ msgid "You cannot add trackers to a private torrent"
+#~ msgstr "Privātam torrentam nevar pievienot papildus trakerus."
+
+#~ msgid "Cannot migrate %1 : %2"
+#~ msgstr "Nevar pārveidot %1 : %2"
+
+#~ msgid ""
+#~ "The torrent %1 was started with a previous version of KTorrent. To make "
+#~ "sure this torrent still works with this version of KTorrent, we will "
+#~ "migrate this torrent. You will be asked for a location to save the "
+#~ "torrent to. If you press cancel, we will select your home directory."
+#~ msgstr ""
+#~ "Torrents %1 tika sākts ar vecāku KTorrent versiju. Lai nodrošinātu, ka "
+#~ "tas joprojām darbojas ar veco versiju, tas tiks pārcelts uz jaunu vietu. "
+#~ "Jums jautās kur to saglabāt. Ja nospiedīsiet Atcelt, tas tiks saglabāts "
+#~ "jūsu mājas mapē."
+
+#~ msgid "Select Folder to Save To"
+#~ msgstr "Izvēlieties saglabāšanas mapi"
+
+#~ msgid "Queued"
+#~ msgstr "Rindā"
+
+#~ msgctxt "@label transfer source"
+#~ msgid "Source:"
+#~ msgstr "Avots:"
+
+#~ msgid "Maintainer, Core Developer"
+#~ msgstr "Uzturētājs, galvenais izstrādātājs"
+
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Delete Selected"
+#~ msgstr "Dzēst izvēlēto"
+
+#~ msgid "Minimal segment size:"
+#~ msgstr "Minimālais segmenta izmērs:"
+
+#~ msgid "kBi"
+#~ msgstr "kBi"
+
+#~ msgid "Save data every:"
+#~ msgstr "Saglabāt datus ik:"
+
+#~ msgid "Current Tracker"
+#~ msgstr "Aktīvais trakeris"
+
+#~ msgid "Manual Announce"
+#~ msgstr "Pašrocīga izziņošana"
+
+#~ msgid "Scrape"
+#~ msgstr "Īsā paziņošana (scrape)"
+
+#~ msgid "Available Trackers"
+#~ msgstr "Pieejamie trakeri"
+
+#~ msgid "Urls list of the available search engines"
+#~ msgstr "Pieejamo meklēšanas dzinēju URLi"
+
+#~ msgid "Cannot expand file : %1"
+#~ msgstr "Neizdevās paplašināt failu : %1"
+
+#~ msgid "filterButtonGroup"
+#~ msgstr "filterButtonGroup"
+
+#~ msgid "Peers"
+#~ msgstr "Dalībnieki"
+
+#~ msgid "Torrent has no announce or nodes field"
+#~ msgstr "Torrents nesatur ne paziņošanas, ne mezglu ierakstus"
+
+#~| msgid ""
+#~| "An error occurred while loading the torrent.<br/>The torrent is probably "
+#~| "corrupt or is not a torrent file."
+#~ msgid ""
+#~ "An error occurred while loading the torrent.\n"
+#~ "The torrent is probably corrupt or is not a torrent file."
+#~ msgstr ""
+#~ "Gadījās kļūda ielādējot torrentu.\n"
+#~ "Tas droši vien ir bojāts vai nav torrent fails."
+
+#~ msgid "The group name is empty"
+#~ msgstr "Grupas nosaukums ir tukšs"
+
+#~ msgid ""
+#~ "A group can not have an empty name\n"
+#~ "Please select a new one"
+#~ msgstr ""
+#~ "Grupai nevar būt tukšs nosauku,s\n"
+#~ "Lūdzu ievadiet nosaukumu"
+
+#~ msgid "You can not delete this group!"
+#~ msgstr "Jūs nevarat izdzēst šo grupu!"
+
+#~ msgid "Default Download Folders"
+#~ msgstr "Noklusējuma lejupielādes mapes"
+
+#~ msgid "Folder and extension can not be empty."
+#~ msgstr "Mape un paplašinājums nevar būt tukši."
+
+#~ msgid "Downloading.."
+#~ msgstr "Lejupielādē.."
+
+#~ msgid "Advanced-Details for %1"
+#~ msgstr "%1 paplašinātas detaļas"
+
+#~ msgid "Assigned Peers"
+#~ msgstr "Iesaistīti dalībnieki"
+
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading.."
+#~ msgstr "Lejupielādē.."
+
+#~ msgid "%1 GB"
+#~ msgstr "%1 GB"
+
+#~ msgid "%1 MB"
+#~ msgstr " %1 MB"
+
+#~ msgid "%1 KB"
+#~ msgstr "%1 KB"
+
+#~ msgid "%1 B"
+#~ msgstr "%1 B"
+
+#~ msgid "%1 KB/s"
+#~ msgstr "%1 KB/s"
+
+#~ msgid "Import links"
+#~ msgstr "Importēt saites"
+
+#~ msgctxt "@label Title in header"
+#~ msgid "Webinterface"
+#~ msgstr "Tīmekļa saskarne"
+
+#~ msgid "&Transfer History..."
+#~ msgstr "Lejupielāžu &vēsture..."
+
+#~ msgid "Downloads number:"
+#~ msgstr "Lejupielāžu skaits:"
+
+#~ msgid "Ask save location for every new download"
+#~ msgstr "Vaicāt saglabāšanas vietu katrai jaunai lejupielādei "
+
+#~ msgid "Place new downloads inside default folder:"
+#~ msgstr "Saglabāt lejupielādes noklusētajā mapē:"
+
+#~ msgid "Except for specific file types"
+#~ msgstr "Izņemot failiem ar norādītajiem tipiem"
+
+#~ msgid "Specify extension and target folder:"
+#~ msgstr "Norādiet paplašinājumu un mērķa mapi:"
+
+#~ msgid "File-Extension"
+#~ msgstr "Paplašinājums"
+
+#~ msgid "Default Folder"
+#~ msgstr "Noklusējuma mape"
+
+#~ msgid "Edit"
+#~ msgstr "Rediģēt"
+
+#~ msgid ""
+#~ "Use a regular expression for the extension. \n"
+#~ "Examples: *.tar.gz or *movies*.zip"
+#~ msgstr ""
+#~ "Paplašinājumam lietojiet regulāru izteiksmi. \n"
+#~ "Piemēram: *.tar.gz, vai *filmas*.zip"
+
+#~ msgid "Set as default folder"
+#~ msgstr "Iestatīt par noklusēto mapi"
+
+#~ msgid "Not Deleted"
+#~ msgstr "Nav izdzēsts"
+
+#, fuzzy
+#~| msgctxt "transfer state: delayed"
+#~| msgid "Delayed"
+#~ msgid "Delayed"
+#~ msgstr "Novēlots"
+
+#, fuzzy
+#~| msgid "Import Links"
+#~ msgid "Import &Links"
+#~ msgstr "Importēt saites"
+
+#~ msgid "Konqueror Integration disabled"
+#~ msgstr "Konqueror integrācija atslēgta"
+
+#~ msgid "Start downloading files immediately after startup"
+#~ msgstr "Sākt liejupielādes uzreiz pēc palaišanas"
+
+#~ msgid "kBi/s"
+#~ msgstr "kBi/s"
+
+#~ msgid "Show main window at startup"
+#~ msgstr "Rādīt galveno logu"
+
+#~ msgid "Maximum Shared Ration: (0 if no limit)"
+#~ msgstr "Maksimālā došanas attiecība (0 nav ierobežojuma)"
+
+#~ msgid "More than 50MiB and 100MiB"
+#~ msgstr "No 50 līdz 100 MiB"

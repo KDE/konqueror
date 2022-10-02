@@ -1,0 +1,124 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Serbian "INCLUDE"
+> <!-- change language only here -->
+]>
+<!-- extragear has another adblock ? -->
+<article lang="&language;" id="khtml-adblock">
+<articleinfo>
+<title
+>Адблокови филтери</title>
+<authorgroup>
+<author
+><personname
+><firstname
+>Кришна</firstname
+> <surname
+>Татенени</surname
+></personname
+> &Krishna.Tateneni.mail;</author>
+<othercredit role="translator"
+><firstname
+>Драган</firstname
+><surname
+>Пантелић</surname
+><affiliation
+><address
+><email
+>falcon-10@gmx.de</email
+></address
+></affiliation
+><contrib
+>превод</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>8. 11. 2016.</date>
+<releaseinfo
+>Програми КДЕ‑а 16.12</releaseinfo>
+</articleinfo>
+
+<para
+><application
+>К‑освајачев</application
+> Адблок може се подесити да замени или уклони слике или оквире са веб страница које поклопи низ филтера.</para>
+
+<para
+>Поставка <guilabel
+>Укључи филтере</guilabel
+> укључује или искључује коришћење списка УРЛ филтера.</para>
+<para
+>Ако је укључено <guilabel
+>Сакриј филтриране слике</guilabel
+>, блокиране слике потпуно се уклањају са странице, а простор које би заузимале сажима. Ако је опција искључена, на место исфилтрираних слика ставља се слика местодржача.</para>
+
+<variablelist>
+<varlistentry id="khtml-adblock-manual">
+<term
+><guilabel
+>Ручно филтрирање</guilabel
+></term>
+<listitem>
+<para
+>Главнину овог језичка чини списак УРЛ‑ова који ће се упоређивати са именима слика и оквира при одлучивању о филтерским радњама. Могу се употребити џокери у стилу имена фајла и регуларни изрази.</para>
+
+<para
+>Филтер се може изразити или као џокерска ниска у стилу фајла (нпр. <literal
+>http://www.site.com/ads/*</literal
+>) или као пуни регуларни израз, омотавањем филтера косим цртама (нпр. <literal
+>//(ads|dclk)\./</literal
+>).</para>
+
+<para
+>Филтерска ниска може почињати са <literal
+>@@</literal
+>, што ставља поклопљене УРЛ‑ове на белу листу (дозвољава их) са приоритетом изнад свих филтера за црну листу (блокирање).</para>
+
+<para
+><guilabel
+>Увези...</guilabel
+> и <guilabel
+>Извези...</guilabel
+> сачуваће или учитати текући списак филтера из текстуалног фајла. Овај фајл почиње заглавним редом <userinput
+>[AdBlock]</userinput
+>, за којим следе филтери сваки у једном реду. Редови префиксовани знаком узвика (<userinput
+>!</userinput
+>) и заглавни ред сматрају се коментарима, па се могу искористити за разјашњавање или етикетирање скупа филтера.</para>
+
+<para
+>Изаберите ставку са списка да је измените кроз поље за унос или уклоните. У поље можете унети нову филтерску ниску и додати је на списак дугметом <guibutton
+>Уметни</guibutton
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry id="khtml-adblock-automatic">
+<term
+><guilabel
+>Аутоматско филтрирање</guilabel
+></term>
+<listitem>
+<para
+>Овај језичак даје списак имена и УРЛ‑ова са предефинисаним Адблоковим филтерским ставкама. Ставку активирате попуњавањем кућице покрај имена филтера, а можете подесити и <guilabel
+>Период аутоматског ажурирања:</guilabel
+> (подразумевано 7 дана). </para>
+</listitem>
+</varlistentry>
+  
+</variablelist>
+
+<para
+>Ако су Адблокови филтери активни, види се иконица на десној страни траке стања. Кликните <mousebutton
+>десним</mousebutton
+> на ову иконицу да добијете контекстни мени са радњама за приказ свих елемената веб странице који се могу блокирати, отварање модула Системских поставки и привремено блокирање сајта или странице.</para>
+
+<para
+>Клик <mousebutton
+>левим</mousebutton
+> позива дијалог са свим елементима који се могу блокирати на текућој веб страници. У њему можете директно додати нове филтере, без отварања модула Системских поставки.</para>
+
+</article>

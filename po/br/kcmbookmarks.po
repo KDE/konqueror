@@ -1,0 +1,691 @@
+# KDE breton translation
+# Thierry Vignaud <tvignaud@mandriva.com>, 2004-2005
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkio\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2004-09-19 18:24+0200\n"
+"Last-Translator: Thierry Vignaud <tvignaud.com>\n"
+"Language-Team: Brezhoneg <Suav.Icb.fr>\n"
+"Language: br\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: bookmarks.cpp:92
+#, kde-format
+msgid ""
+"<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
+"page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
+"\">bookmarks:/</a>.</p>"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: bookmarks.ui:16
+#, kde-format
+msgid "Bookmarks"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowRoot)
+#: bookmarks.ui:23
+#, kde-format
+msgid ""
+"If this option is unchecked, bookmarks at the root of the hierarchy (not in "
+"a folder) are not displayed.\n"
+"If checked, they are gathered in a \"root\" folder."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowRoot)
+#: bookmarks.ui:26
+#, kde-format
+msgid "&Show bookmarks without folder"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbFlattenTree)
+#: bookmarks.ui:37
+#, kde-format
+msgid ""
+"Sub-folders are shown within their parent by default. If you activate this "
+"option, sub-folders are displayed on their own.\n"
+"It looks less nice but it may help if you have a very big folder you want to "
+"spread in two columns."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbFlattenTree)
+#: bookmarks.ui:40
+#, kde-format
+msgid "&Flatten bookmarks tree"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowPlaces)
+#: bookmarks.ui:47
+#, kde-format
+msgid ""
+"Show a box with KDE places (Home, Network, ...). Useful if you use konqueror "
+"as a file manager."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowPlaces)
+#: bookmarks.ui:50
+#, kde-format
+msgid "Show system &places"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: bookmarks.ui:63
+#, kde-format
+msgid "General Settings"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, label)
+#: bookmarks.ui:71
+#, kde-format
+msgid ""
+"Folders are automatically distributed in several columns. The optimal number "
+"of columns depends on the width of the konqueror window and the number of "
+"bookmarks you have."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: bookmarks.ui:74
+#, kde-format
+msgid "Number of columns to show:"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowBackgrounds)
+#: bookmarks.ui:109
+#, kde-format
+msgid "Disable it on slow system to disable background images."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowBackgrounds)
+#: bookmarks.ui:112
+#, kde-format
+msgid "Show folder &backgrounds"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, groupBox_3)
+#: bookmarks.ui:138
+#, kde-format
+msgid "How much disk space is used to cache the pixmaps"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: bookmarks.ui:141
+#, kde-format
+msgid "Pixmap Cache"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, lbMaxCacheSize)
+#: bookmarks.ui:150
+#, fuzzy, kde-format
+#| msgid "Disk cache &size:"
+msgid "Disk cache size:"
+msgstr "Ment krubuilh ar bladenn :"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, sbCacheSize)
+#: bookmarks.ui:163
+#, fuzzy, kde-format
+#| msgid " KB"
+msgid " kB"
+msgstr " Ko"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, clearCacheButton)
+#: bookmarks.ui:173
+#, kde-format
+msgid "Clear the pixmap cache"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, clearCacheButton)
+#: bookmarks.ui:176
+#, fuzzy, kde-format
+#| msgid "C&lear Cache"
+msgid "&Clear Cache"
+msgstr "&Goullonderiñ ar grubuilh"
+
+#~ msgid "&Use cache"
+#~ msgstr "&Implijit ar grubuilh"
+
+#~ msgid "Policy"
+#~ msgstr "Politikerez"
+
+#~ msgid "Disk cache &size:"
+#~ msgstr "Ment krubuilh ar bladenn :"
+
+#~ msgid "C&lear Cache"
+#~ msgstr "&Goullonderiñ ar grubuilh"
+
+#~ msgid "&Policy"
+#~ msgstr "&Politikerez"
+
+#~ msgid "&Management"
+#~ msgstr "&Mererezh"
+
+#, fuzzy
+#~| msgid "<h1>Cookies Management Quick Help</h1>"
+#~ msgid "<h1>Cookie Management Quick Help</h1>"
+#~ msgstr "<h1>Skoazell gant mererezh ar topinoù</h1"
+
+#~ msgid "End of session"
+#~ msgstr "Echu eo an dalc'h"
+
+#~ msgid "Yes"
+#~ msgstr "Ya"
+
+#, fuzzy
+#~| msgid "&Search:"
+#~ msgid "Search"
+#~ msgstr "&Klask :"
+
+#, fuzzy
+#~| msgid "Site Name"
+#~ msgid "Site"
+#~ msgstr "Anv al lec'hienn"
+
+#, fuzzy
+#~| msgid "Site Name"
+#~ msgid "Cookie Name"
+#~ msgstr "Anv al lec'hienn"
+
+#~ msgid "D&elete"
+#~ msgstr "&Dilemel"
+
+#~ msgid "Delete A&ll"
+#~ msgstr "Dilemel an &holl re"
+
+#, fuzzy
+#~| msgid "Change &Policy..."
+#~ msgid "Configure &Policy..."
+#~ msgstr "Kemmañ ar &politikerez ..."
+
+#~ msgid "&Reload List"
+#~ msgstr "&Adkargañ ar roll"
+
+#~ msgid "Details"
+#~ msgstr "Munudoù"
+
+#~ msgid "Name:"
+#~ msgstr "Anv :"
+
+#~ msgid "Value:"
+#~ msgstr "Gwerzh :"
+
+#~ msgid "Domain:"
+#~ msgstr "Domani :"
+
+#~ msgid "Path:"
+#~ msgstr "Hent :"
+
+#, fuzzy
+#~| msgid "Change Cookie Policy"
+#~ msgctxt "@title:window"
+#~ msgid "Change Cookie Policy"
+#~ msgstr "Kemmañ politikerez an toupinoù"
+
+#, fuzzy
+#~| msgid "New Cookie Policy"
+#~ msgctxt "@title:window"
+#~ msgid "New Cookie Policy"
+#~ msgstr "Politikerez nevez evit an toupinoù"
+
+#~ msgid ""
+#~ "<qt>A policy already exists for<center><b>%1</b></center>Do you want to "
+#~ "replace it?</qt>"
+#~ msgstr ""
+#~ "<qt>Ur bolitikerez a zo c'hoazh evit <center><b>%1</b></center>. Fellout "
+#~ "a ra deoc'h resklañ anezhi ?</qt>"
+
+#, fuzzy
+#~| msgid "Duplicate Policy"
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Policy"
+#~ msgstr "Eilañ ar politikerez"
+
+#~ msgid "Replace"
+#~ msgstr "Erlec'hiañ"
+
+#~ msgid "Enable coo&kies"
+#~ msgstr "Bevaat an tou&pinoù"
+
+#~ msgid "Default Policy"
+#~ msgstr "Politikerez dre ziouer"
+
+#~ msgid "Accep&t all cookies"
+#~ msgstr "Aotren an holl doupinoù"
+
+#, fuzzy
+#~| msgid "End of session"
+#~ msgid "Accept &until end of session"
+#~ msgstr "Echu eo an dalc'h"
+
+#~ msgid "Ask &for confirmation"
+#~ msgstr "Goulenn &evit ar gadarnadur"
+
+#~ msgid "Re&ject all cookies"
+#~ msgstr "&Nac'h an holl doupinoù"
+
+#~ msgid "Site Policy"
+#~ msgstr "Politikerez evait al lec'hienn"
+
+#~ msgid "Domain"
+#~ msgstr "Domani"
+
+#~ msgid "&New..."
+#~ msgstr "&Nevez ..."
+
+#~ msgid "Chan&ge..."
+#~ msgstr "Kemmañ ..."
+
+#, fuzzy
+#~| msgid "Site Name"
+#~ msgid "Site name:"
+#~ msgstr "Anv al lec'hienn"
+
+#, fuzzy
+#~| msgid "&Policy:"
+#~ msgid "Policy:"
+#~ msgstr "&Politikerez :"
+
+#~ msgid "Accept"
+#~ msgstr "Aotren"
+
+#, fuzzy
+#~| msgid "End of session"
+#~ msgid "Accept until end of session"
+#~ msgstr "Echu eo an dalc'h"
+
+#~ msgid "Reject"
+#~ msgstr "Nac'h"
+
+#~ msgid "Ask"
+#~ msgstr "Goulenn"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "No Proxy"
+#~ msgstr "&Proksi"
+
+#, fuzzy
+#~| msgid "A&utomatically detect proxy configuration"
+#~ msgid "Detect proxy configuration automatically"
+#~ msgstr "Dinoiñ kefluniadur ar proksi dre a&rdivink"
+
+#, fuzzy
+#~| msgid "A&utomatically detect proxy configuration"
+#~ msgid "Use the specified proxy script to configure the proxy settings."
+#~ msgstr "Dinoiñ kefluniadur ar proksi dre a&rdivink"
+
+#, fuzzy
+#~| msgid "A&utomatically detect proxy configuration"
+#~ msgid "Use proxy auto configuration URL:"
+#~ msgstr "Dinoiñ kefluniadur ar proksi dre a&rdivink"
+
+#~ msgid "Enter the address for the proxy configuration script."
+#~ msgstr "Roit chomlec'h uzhiaoueg gefluniadur ar proksi."
+
+#, fuzzy
+#~| msgid "A&utomatically detect proxy configuration"
+#~ msgid "Use system proxy configuration:"
+#~ msgstr "Dinoiñ kefluniadur ar proksi dre a&rdivink"
+
+#, fuzzy
+#~| msgid "Auto &Detect"
+#~ msgid "Auto D&etect"
+#~ msgstr "&Dinoiñ dre ardivink"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "HTTP Proxy:"
+#~ msgstr "&Proksi"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "SSL Proxy:"
+#~ msgstr "&Proksi"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "FTP Proxy:"
+#~ msgstr "&Proksi"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "SOCKS Proxy:"
+#~ msgstr "&Proksi"
+
+#, fuzzy
+#~| msgid "E&xceptions"
+#~ msgid "Exceptions:"
+#~ msgstr "D&ireolderoù"
+
+#, fuzzy
+#~| msgid "A&utomatically detect proxy configuration"
+#~ msgid "Manually enter proxy server configuration information."
+#~ msgstr "Dinoiñ kefluniadur ar proksi dre a&rdivink"
+
+#, fuzzy
+#~| msgid "A&utomatically detect proxy configuration"
+#~ msgid "Use manually specified proxy configuration:"
+#~ msgstr "Dinoiñ kefluniadur ar proksi dre a&rdivink"
+
+#~ msgid "Enter the address of the HTTP proxy server."
+#~ msgstr "Roit chomlec'h ar servijer proksi HTTP."
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTP proxy server."
+#~ msgid "Enter the port number of the HTTP proxy server."
+#~ msgstr "Roit chomlec'h ar servijer proksi HTTP."
+
+#~ msgid "Enter the address of the HTTPS proxy server."
+#~ msgstr "Roit chomlec'h ar servijer proksi HTTPS."
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTPS proxy server."
+#~ msgid "Enter the port number of the HTTPS proxy server."
+#~ msgstr "Roit chomlec'h ar servijer proksi HTTPS."
+
+#~ msgid "Enter the address of the FTP proxy server."
+#~ msgstr "Roit chomlec'h ar servijer proksi FTP."
+
+#, fuzzy
+#~| msgid "Enter the address of the FTP proxy server."
+#~ msgid "Enter the port number of the FTP proxy server."
+#~ msgstr "Roit chomlec'h ar servijer proksi FTP."
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTPS proxy server."
+#~ msgid "Enter the address of the SOCKS proxy server."
+#~ msgstr "Roit chomlec'h ar servijer proksi HTTPS."
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTPS proxy server."
+#~ msgid "Enter the port number of the SOCKS proxy server."
+#~ msgstr "Roit chomlec'h ar servijer proksi HTTPS."
+
+#~ msgid "You have to restart KDE for these changes to take effect."
+#~ msgstr "Red eo deoc'h da adloc'hañ KDE evit arloañ ar c'hemmoù."
+
+#~ msgid "Timeout Values"
+#~ msgstr "Gwerzhioù an amzer-hont"
+
+#, fuzzy
+#~| msgid " sec"
+#~ msgid " second"
+#~ msgid_plural " seconds"
+#~ msgstr[0] " eil"
+
+#~ msgid "Soc&ket read:"
+#~ msgstr "Lenn ur so&ket :"
+
+#~ msgid "Pro&xy connect:"
+#~ msgstr "Kevreadenn ouzh ur servijer prok&si :"
+
+#~ msgid "Server co&nnect:"
+#~ msgstr "Ke&vreadenn ouzh ur servijer :"
+
+#~ msgid "&Server response:"
+#~ msgstr "Respont ar &servijer :"
+
+#~ msgid "FTP Options"
+#~ msgstr "Dibaboù FTP"
+
+#~ msgid "Default user name:"
+#~ msgstr "Anv an arveriad dre ziouer :"
+
+#~ msgid "Default password:"
+#~ msgstr "Tremenger dre ziouer :"
+
+#, fuzzy
+#~| msgid "Identification"
+#~ msgctxt "@title:window"
+#~ msgid "Add Identification"
+#~ msgstr "Dilesadur"
+
+#, fuzzy
+#~| msgid "Identification"
+#~ msgctxt "@title:window"
+#~ msgid "Modify Identification"
+#~ msgstr "Dilesadur"
+
+#, fuzzy
+#~| msgid "Identification"
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Identification"
+#~ msgstr "Dilesadur"
+
+#~ msgid "&Send identification"
+#~ msgstr "&Kas an anvelezh"
+
+#, fuzzy
+#~| msgid "Identification"
+#~ msgid "Default Identification"
+#~ msgstr "Dilesadur"
+
+#~ msgid "Add operating s&ystem name"
+#~ msgstr "Ouzhpennañ anv ar r&eizhiad korvoiñ"
+
+#~ msgid "Add operating system &version"
+#~ msgstr "Ouzhpennañ doare ar r&eizhiad korvoiñ"
+
+#~ msgid "Add lang&uage information"
+#~ msgstr "Ouzhpennañ titouroù diwar-benn ar y&ezh"
+
+#, fuzzy
+#~| msgid "&Send identification"
+#~ msgid "Site Specific Identification"
+#~ msgstr "&Kas an anvelezh"
+
+#~ msgid "Site Name"
+#~ msgstr "Anv al lec'hienn"
+
+#~ msgid "Identification"
+#~ msgstr "Dilesadur"
+
+#~ msgid "User Agent"
+#~ msgstr "Gwazour arveriad"
+
+#, fuzzy
+#~| msgid "&Send identification"
+#~ msgid "&Use the following identification:"
+#~ msgstr "&Kas an anvelezh"
+
+#, fuzzy
+#~| msgid "&Send identification"
+#~ msgid "Real identification:"
+#~ msgstr "&Kas an anvelezh"
+
+#, fuzzy
+#~| msgid "A&utomatically detect proxy configuration"
+#~ msgctxt "@title:window"
+#~ msgid "Variable Proxy Configuration"
+#~ msgstr "Dinoiñ kefluniadur ar proksi dre a&rdivink"
+
+#, fuzzy
+#~| msgid "Invalid Proxy Setup"
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Proxy Setup"
+#~ msgstr "N'eo ket mat kefluniadur ar proksi"
+
+#, fuzzy
+#~| msgid "Proxy Setup"
+#~ msgctxt "@title:window"
+#~ msgid "Proxy Setup"
+#~ msgstr "Kefluniañ ar proksi"
+
+#, fuzzy
+#~| msgid "A&utomatically detect proxy configuration"
+#~ msgctxt "@title:window"
+#~ msgid "Manual Proxy Configuration"
+#~ msgstr "Dinoiñ kefluniadur ar proksi dre a&rdivink"
+
+#, fuzzy
+#~| msgid "Invalid Proxy Setting"
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Proxy Setting"
+#~ msgstr "N'eo ket mat kefluniadur ar proksi"
+
+#~ msgid "<qt><center><b>%1</b></center> is already in the list.</qt>"
+#~ msgstr "<qt><center><b>%1</b></center> a zo c'hoazh er roll</qt>"
+
+#, fuzzy
+#~| msgid "Duplicate Entry"
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Entry"
+#~ msgstr "Eilañ ar vouetadur"
+
+#, fuzzy
+#~| msgid "E&xceptions"
+#~ msgctxt "@title:window"
+#~ msgid "New Exception"
+#~ msgstr "D&ireolderoù"
+
+#, fuzzy
+#~| msgid "E&xceptions"
+#~ msgctxt "@title:window"
+#~ msgid "Change Exception"
+#~ msgstr "D&ireolderoù"
+
+#, fuzzy
+#~| msgid "Invalid Entry"
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Entry"
+#~ msgstr "Siek eo ar bouetadur"
+
+#~ msgid "H&TTP:"
+#~ msgstr "H&TTP :"
+
+#~ msgid "HTTP&S:"
+#~ msgstr "HTTP&S :"
+
+#~ msgid "&FTP:"
+#~ msgstr "&FTP :"
+
+#~ msgid "NO &PROXY:"
+#~ msgstr "&PROKSI EBET :"
+
+#~ msgid "&Verify"
+#~ msgstr "&Gwiriekaat"
+
+#~ msgid "Setup..."
+#~ msgstr "Kefluniañ ..."
+
+#~ msgid "Username:"
+#~ msgstr "Anv an arveriad :"
+
+#~ msgid "Login name."
+#~ msgstr "Anv ereañ."
+
+#~ msgid "Login password."
+#~ msgstr "Tremenger ereañ."
+
+#~ msgid "Password:"
+#~ msgstr "Tremenger :"
+
+#~ msgid "O&ptions"
+#~ msgstr "&Dibaboù"
+
+#~ msgid "Ser&vers"
+#~ msgstr "Ser&vijeroù"
+
+#~ msgid "D&elete All"
+#~ msgstr "Dilemel an &holl re"
+
+#~ msgid "De&lete"
+#~ msgstr "&Dilemel"
+
+#~ msgid "C&hange..."
+#~ msgstr "&Kemmañ ..."
+
+#~ msgid "&Domain name:"
+#~ msgstr "Anv an &domani :"
+
+#~ msgid "Domain [Group]"
+#~ msgstr "Domani [Strollad]"
+
+#~ msgid "Host [Set By]"
+#~ msgstr "Ostiz [Lakaet gant]"
+
+#~ msgid "&Windows Shares"
+#~ msgstr "Rannadur prenestrer"
+
+#~ msgid "&LISa Daemon"
+#~ msgstr "Diaoul &LISa"
+
+#~ msgid "&Search:"
+#~ msgstr "&Klask :"
+
+#~ msgid "&SOCKS"
+#~ msgstr "&SOCKS"
+
+#~ msgid "SOCKS"
+#~ msgstr "SOCKS"
+
+#~ msgid "&Enable SOCKS support"
+#~ msgstr "&Implijit SOCKS"
+
+#~ msgid "&Test"
+#~ msgstr "&Arnodiñ"
+
+#~ msgid "Use &custom library"
+#~ msgstr "Implijit al levraoueg &diouzhoc'h"
+
+#~ msgid "&NEC SOCKS"
+#~ msgstr "&NEC SOCKS"
+
+#~ msgid "&Dante"
+#~ msgstr "&Dante"
+
+#~ msgid "Additional Library Search Paths"
+#~ msgstr "Hentoù klask levraoueg ouzhpenn :"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Thierry Vignaud, Jañ-Mai Drapier"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "tvignaud@mandriva.com, jdrapier@club-internet.fr"
+
+#~ msgid "kcmsocks"
+#~ msgstr "kcmsocks"
+
+#~ msgid "KDE SOCKS Control Module"
+#~ msgstr "Mollad SOCKS evit KDE"
+
+#~ msgid "(c) 2001 George Staikos"
+#~ msgstr "(c) 2001 George Staikos"
+
+#~ msgid "George Staikos"
+#~ msgstr "George Staikos"
+
+#~ msgid "SOCKS could not be loaded."
+#~ msgstr "Ne ket possubl da kargañ SOCKS."
+
+#~ msgid "&Path:"
+#~ msgstr "&Hent :"
+
+#~ msgid "Path"
+#~ msgstr "Hent"
+
+#~ msgid "&Add"
+#~ msgstr "&Ouzhpennañ"
+
+#~ msgid "&Remove"
+#~ msgstr "&Lemel"
+
+#~ msgid "&OK"
+#~ msgstr "&Mat eo"
+
+#~ msgid "&Cancel"
+#~ msgstr "&Nullañ"
+
+#~ msgid "MS Windows encoding:"
+#~ msgstr "Kodadur MS Windows :"
+
+#~ msgid "..."
+#~ msgstr " ..."
+
+#~ msgid "Clear Search"
+#~ msgstr "Goullonderiñ ar glask"

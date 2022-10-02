@@ -1,0 +1,3181 @@
+# translation of konqueror.po to
+# translation of konqueror.po to
+# translation of konqueror.po to
+# translation of konqueror.po to
+# translation of konqueror.po to
+# Ambalam <tamilpc@ambalam.com>, 2004.
+# root <root@localhost.localdomain>, 2004.
+# ஆமாச்சு <amachu@ubuntu.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2008-05-06 16:40+0530\n"
+"Last-Translator: \n"
+"Language-Team: en_US <kde-i18n-doc@lists.kde.org>\n"
+"Language: ta\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: KAider 0.1\n"
+
+#. i18n: ectx: Menu (tools)
+#: konq_shellcmdplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "&கருவிகள்"
+
+#: kshellcmdexecutor.cpp:106
+#, kde-format
+msgid "Input Required:"
+msgstr "உள்ளீடு தேவை:"
+
+#: kshellcmdplugin.cpp:32
+#, kde-format
+msgid "&Execute Shell Command..."
+msgstr "&முனைய ஆணையை செயற்படுத்துக..."
+
+#: kshellcmdplugin.cpp:41
+#, kde-format
+msgid ""
+"KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a bug."
+msgstr ""
+
+#: kshellcmdplugin.cpp:51
+#, kde-format
+msgid "Executing shell commands works only on local directories."
+msgstr "முனைய ஆணைகளை செயற்படுத்துவது அக அடைவுகளில் மாத்திரமே செயற்படும்."
+
+#: kshellcmdplugin.cpp:73
+#, fuzzy, kde-format
+#| msgid "Execute Shell Command"
+msgctxt "@title:window"
+msgid "Execute Shell Command"
+msgstr "முனைய ஆணையை செயற்படுத்துக"
+
+#: kshellcmdplugin.cpp:74
+#, kde-format
+msgid "Execute shell command in current directory:"
+msgstr "தற்போதைய தத்தில் முனைய ஆணையை செயற்படுத்துக:"
+
+#: kshellcmdplugin.cpp:85
+#, kde-format
+msgid "Output from command: \"%1\""
+msgstr "ஆணையிலிருந்து வெளிக்கிடு: \"%1\""
+
+#~ msgid "no name"
+#~ msgstr "உபுண்டு தமிழ் குழுமம்"
+
+#~ msgid "Configure"
+#~ msgstr "வடிவமைக்க"
+
+#~ msgid "Extensions"
+#~ msgstr "விரிவாக்கங்கள்"
+
+#~ msgid ""
+#~ "There was an error loading the module %1.\n"
+#~ "The diagnostics is:\n"
+#~ "%2"
+#~ msgstr ""
+#~ "%1 பாகந்தனை ஏற்றுகையில் தவறேற்பட்டது.\n"
+#~ "சோதனை முடிவாவது:\n"
+#~ "%2"
+
+#~ msgid "Konqueror"
+#~ msgstr "கான்கொயரர்"
+
+#~ msgid "Web browser, file manager and document viewer."
+#~ msgstr "இணைய உலாவி, கோப்பு நிர்வாகி ஆவணங் காட்டி."
+
+#, fuzzy
+#~| msgid "(C) 1999-2007, The Konqueror developers"
+#~ msgid "(C) 1999-2008, The Konqueror developers"
+#~ msgstr "(c) 1999 - 2007 கான்கொயரர் உருவாக்கிவோர்"
+
+#~ msgid "http://konqueror.kde.org"
+#~ msgstr "http://konqueror.kde.org"
+
+#~ msgid "David Faure"
+#~ msgstr "டேவிட் பவுர்"
+
+#~ msgid "Developer (framework, parts, JavaScript, I/O library) and maintainer"
+#~ msgstr ""
+#~ "உருவாக்கியோர் (வார்ப்பு, பகுதிகள், ஜாவாநிரல், I/O நிரலகம்) மற்றும் பராமரிப்பாளர்"
+
+#~ msgid "Simon Hausmann"
+#~ msgstr "சைமன் ஹவுஸ்மான்"
+
+#~ msgid "Developer (framework, parts)"
+#~ msgstr "உருவாக்கியோர் (வார்ப்பு, பகுதிகள்)"
+
+#~ msgid "Michael Reiher"
+#~ msgstr "மைக்கேல் ரேஹர்"
+
+#~ msgid "Developer (framework)"
+#~ msgstr "உருவாக்கியோர் (வார்ப்பு)"
+
+#~ msgid "Matthias Welk"
+#~ msgstr "மைத்தேயஸ் வெல்க்"
+
+#~ msgid "Developer"
+#~ msgstr "உருவாக்கியோர்"
+
+#~ msgid "Alexander Neundorf"
+#~ msgstr "அலெக்ஸாண்டர் நியுன்டார்ப்"
+
+#~ msgid "Developer (List views)"
+#~ msgstr "உருவாக்கியோர் (காட்சிகளைப் பட்டியலிடு)"
+
+#~ msgid "Michael Brade"
+#~ msgstr "மைக்கேல் பிரேட்"
+
+#~ msgid "Developer (List views, I/O library)"
+#~ msgstr "உருவாக்கியோர் (காட்சிகளை பட்டியலிடு, I/O நிரலகம்)"
+
+#~ msgid "Lars Knoll"
+#~ msgstr "லர்ஸ் க்னோல்"
+
+#~ msgid "Developer (HTML rendering engine)"
+#~ msgstr "உருவாக்கியோர் (HTML தருவிக்கும் பொறி)"
+
+#~ msgid "Dirk Mueller"
+#~ msgstr "டிர்க் முல்லர்"
+
+#~ msgid "Peter Kelly"
+#~ msgstr "பீட்டர் கெல்லி"
+
+#~ msgid "Waldo Bastian"
+#~ msgstr "வால்டோ பஸ்டியான்"
+
+#~ msgid "Developer (HTML rendering engine, I/O library)"
+#~ msgstr "உருவாக்கியோர் (HTML தருவிக்கும் பொறி, I/O நிரலகம்)"
+
+#~ msgid "Germain Garand"
+#~ msgstr "ஜெர்மைன் காரன்ட்"
+
+#~ msgid "Leo Savernik"
+#~ msgstr "லியோ சவர்நிக்"
+
+#~ msgid "Stephan Kulow"
+#~ msgstr "ஸ்டீபன் குளோ"
+
+#~ msgid ""
+#~ "Developer (HTML rendering engine, I/O library, regression test framework)"
+#~ msgstr "உருவாக்கியோர் (HTML தருவிக்கும் பொறி, I/O நிரலகம், கடுஞ் சோதனை வார்ப்பு)"
+
+#~ msgid "Antti Koivisto"
+#~ msgstr "அன்டி கோவிஸ்டோ"
+
+#~ msgid "Zack Rusin"
+#~ msgstr "சாக் ருஸின்"
+
+#~ msgid "Tobias Anton"
+#~ msgstr "டோபியாஸ் அன்டன்"
+
+#~ msgid "Lubos Lunak"
+#~ msgstr "லுபாஸ் லுனாக்"
+
+#~ msgid "Developer (HTML rendering engine, JavaScript)"
+#~ msgstr "உருவாக்குவோர் (HTML தருவிக்கும் பொறி, ஜாவாநிரல்)"
+
+#~ msgid "Allan Sandfeld Jensen"
+#~ msgstr "அல்லான் சான்ட்பெல்டு ஜென்சன்"
+
+#~ msgid "Apple Safari Developers"
+#~ msgstr "ஆப்பிள் சபாரி உருவாக்குவோர்"
+
+#~ msgid "Harri Porten"
+#~ msgstr "ஹாரி போர்டன்"
+
+#~ msgid "Developer (JavaScript)"
+#~ msgstr "உருவாக்குவோர் (ஜாவாநிரல்)"
+
+#~ msgid "Koos Vriezen"
+#~ msgstr "கூஸ் வெரைசன்"
+
+#~ msgid "Developer (Java applets and other embedded objects)"
+#~ msgstr "உருவாக்குவோர் (ஜாவா ஆப்லெட் மற்றும் ஏனைய உட்பொதிந்த பொருட்கள்) "
+
+#~ msgid "Matt Koss"
+#~ msgstr "மாட் கோஸ்"
+
+#~ msgid "Developer (I/O library)"
+#~ msgstr "உருவாக்குவோர் (I/O நிரலகம்)"
+
+#~ msgid "Alex Zepeda"
+#~ msgstr "அலெக்ஸ் செபெடா"
+
+#~ msgid "Richard Moore"
+#~ msgstr "ரிச்சர்ட் மூர்"
+
+#~ msgid "Developer (Java applet support)"
+#~ msgstr "உருவாக்குவோர் (ஜாவா ஆப்லெட் ஆதரவு)"
+
+#~ msgid "Dima Rogozin"
+#~ msgstr "டிமா ரோகோசின்"
+
+#~ msgid "Wynn Wilkes"
+#~ msgstr "வைன் வில்கிஸ்"
+
+#~ msgid ""
+#~ "Developer (Java 2 security manager support,\n"
+#~ " and other major improvements to applet support)"
+#~ msgstr ""
+#~ "உருவாக்கியோர் (ஜாவா 2 பாதுகாப்பு நிர்வாக ஆதரவு,\n"
+#~ "மற்றும் ஆப்லெட் ஆதரவிற்கான ஏனைய மேம்பாடுகள்)"
+
+#~ msgid "Stefan Schimanski"
+#~ msgstr "ஸ்டிபன் சிமான்ஸ்கி"
+
+#~ msgid "Developer (Netscape plugin support)"
+#~ msgstr "உருவாக்கியோர் (நெட்ஸ்கேப் செருகி ஆதரவு)"
+
+#~ msgid "George Staikos"
+#~ msgstr "ஜார்ஜ் ஸ்டைகோஸ்"
+
+#~ msgid "Developer (SSL, Netscape plugins)"
+#~ msgstr "உருவாக்குவோர் (எஸ் எஸ் எல், நெட்ஸ்கேப் செருகி)"
+
+#~ msgid "Dawit Alemayehu"
+#~ msgstr "டாவிட் அலெமேஹூ"
+
+#~ msgid "Developer (I/O library, Authentication support)"
+#~ msgstr "உருவாக்கியோர் (I/O நிரலகம், அத்தாட்சிஉறுதி ஆதரவு)"
+
+#~ msgid "Carsten Pfeiffer"
+#~ msgstr "கார்ஸ்டென் பீபர்"
+
+#~ msgid "Torsten Rahn"
+#~ msgstr "டார்ஸ்டென் ரான்"
+
+#~ msgid "Graphics/icons"
+#~ msgstr "வரைகலை/ ஓவங்கள்"
+
+#~ msgid "Torben Weis"
+#~ msgstr "டார்பென் வீஸ்"
+
+#~ msgid "KFM author"
+#~ msgstr "KFM இயற்றியவர்"
+
+#~ msgid "Joseph Wenninger"
+#~ msgstr "ஜோசப் வென்னிங்னர்"
+
+#~ msgid "Developer (navigation panel framework)"
+#~ msgstr "உருவாக்கியவர் (நாவிகேஷன் பலக வார்ப்பு)"
+
+#~ msgid "Stephan Binner"
+#~ msgstr "ஸடீபன் பின்னர்"
+
+#~ msgid "Developer (misc stuff)"
+#~ msgstr "உருவாக்கியோர் (இதர விடயங்கள்)"
+
+#~ msgid "Ivor Hewitt"
+#~ msgstr "இவோர் ஹெவிட்"
+
+#~ msgid "Developer (AdBlock filter)"
+#~ msgstr "உருவாக்கியோர் (விளம்பர வழிகட்டி)"
+
+#~ msgid ""
+#~ "Checking this box on at least two views sets those views as 'linked'. "
+#~ "Then, when you change directories in one view, the other views linked "
+#~ "with it will automatically update to show the current directory. This is "
+#~ "especially useful with different types of views, such as a directory tree "
+#~ "with an icon view or detailed view, and possibly a terminal emulator "
+#~ "window."
+#~ msgstr ""
+#~ "குறைந்தபட்சம் இரண்டு காட்சிகளில் இப்பெட்டிதனை தேர்வு செய்வது அக்காட்சிகளை "
+#~ "'இணைக்கப்பட்டவையாக' அமைக்கும். பின்னர் ஒரே காட்சியில் தாங்கள் அடைவுகளை மாற்றும் போது, "
+#~ "அதனுடன் இணைக்கப்பெற்ற பிற காட்சிகள் தானாகவே புதுப்பிக்கப்பட்டு தற்போதைய அடைவினைக் "
+#~ "காட்டும். வெவ்வேறு வகையான காட்சிகளை கொண்டிருக்கும் போது இது அதிக பலனளிப்பதாக "
+#~ "இருக்கும். ஓவியக் காட்சி அல்லது விவரக் காட்சியினைக் கொண்ட அடைவுத் தொடர் மற்றும் முனைய "
+#~ "மாதிரி சாளரம் இதற்கு எடுத்துக்காட்டு."
+
+#~ msgid "Close View"
+#~ msgstr "காட்சியை மூடு"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#~ msgid "Stalled"
+#~ msgstr "முடங்கியது"
+
+#, fuzzy
+#~| msgid "Preview in %1"
+#~ msgid "Preview &in %1"
+#~ msgstr "%1 தனில் முன்னோட்டம்"
+
+#~ msgid "Show %1"
+#~ msgstr "%1 காட்டுக"
+
+#, fuzzy
+#~| msgid "History"
+#~ msgctxt "@title:window"
+#~ msgid "History"
+#~ msgstr "வரலாறு"
+
+#, fuzzy
+#~| msgid "Sort"
+#~ msgctxt "@action:inmenu Parent of 'By Name' and 'By Date'"
+#~ msgid "Sort"
+#~ msgstr "அடுக்குக"
+
+#~ msgid ""
+#~ "<qt><center><b>%1</b></center><hr />Last visited: %2<br />First visited: "
+#~ "%3<br />Number of times visited: %4</qt>"
+#~ msgstr ""
+#~ "<qt><center><b>%1</b></center><hr />கடைசியாக அணுகப்பட்டது: %2<br />முதன் "
+#~ "முதலாக அணுகப்பட்டது: %3<br />மொத்தமாக அணுகப்பட்டது: %4</qt>"
+
+#, fuzzy
+#~| msgid "Local file"
+#~ msgid "Local"
+#~ msgstr "வட்டார கோப்பு"
+
+#~ msgid "Miscellaneous"
+#~ msgstr "மற்றவை"
+
+#~ msgid "Open in New &Window"
+#~ msgstr "புதிய &சாளரத்தில் திறக்கவும்"
+
+#~ msgid "Open in New Tab"
+#~ msgstr "புதிய தத்தில் திறக்க"
+
+#, fuzzy
+#~| msgid "Copy Link Address"
+#~ msgid "&Copy Link Address"
+#~ msgstr "இணைப்பு முகவரிகளை நகலெடுக்க"
+
+#~ msgid "&Remove Entry"
+#~ msgstr "&நுழைவை நீக்கு"
+
+#~ msgid "C&lear History"
+#~ msgstr "வரலாற்றைத் &துடை"
+
+#~ msgid "&Preferences..."
+#~ msgstr "&விருப்பத்தேர்வுகள்..."
+
+#~ msgid "By &Name"
+#~ msgstr "&பெயர் வாரியாக"
+
+#~ msgid "By &Date"
+#~ msgstr "&தேதி வாரியாக"
+
+#, fuzzy
+#~| msgid "Clear History"
+#~ msgid "Search in history"
+#~ msgstr "வரலாற்றை நீக்கு"
+
+#~ msgid "Do you really want to clear the entire history?"
+#~ msgstr "உண்மையாகவே முழு வரலாற்றையும் துடைக்க விரும்புகிறீர்களா?"
+
+#~ msgid "Clear History?"
+#~ msgstr "வரலாற்றைத் துடைக்கவா?"
+
+#, fuzzy
+#~| msgid "Start without a default window"
+#~ msgid "Start without a default window, when called without URLs"
+#~ msgstr "இயல்பிருப்பு சாளரமின்றி துவங்கவும்."
+
+#~ msgid "Profile to open"
+#~ msgstr "திறக்கப்படவேண்டிய பண்பு"
+
+#~ msgid "List available profiles"
+#~ msgstr "கிடைக்கக்கூடிய பண்புகளை விவரிக்க"
+
+#, fuzzy
+#~| msgid "List available profiles"
+#~ msgid "List available sessions"
+#~ msgstr "கிடைக்கக்கூடிய பண்புகளை விவரிக்க"
+
+#, fuzzy
+#~| msgid "Location to open"
+#~ msgid "Session to open"
+#~ msgstr "திறக்கவேண்டிய இடம்"
+
+#~ msgid "Mimetype to use for this URL (e.g. text/html or inode/directory)"
+#~ msgstr "இந்த யுஆர்எல்லின் பொருட்டு மைம் வகை (உ.ம்: உரை/html அல்லது inode/அடைவு)."
+
+#~ msgid ""
+#~ "For URLs that point to files, opens the directory and selects the file, "
+#~ "instead of opening the actual file"
+#~ msgstr ""
+#~ "கோப்புகளை சுட்டும் யுஆர்எல் களுக்கு, உரிய கோப்பினை திறந்திடாது, அடைவை திறந்து "
+#~ "கோப்பை தேர்வு செய்யும்."
+
+#~ msgid "Location to open"
+#~ msgstr "திறக்கவேண்டிய இடம்"
+
+#~ msgid "Canceled."
+#~ msgstr "ரத்து செய்யப்பட்டது."
+
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Reloading the page will discard these changes."
+#~ msgstr ""
+#~ "சமர்ப்பிக்கப்படாத மாற்றங்கள் இப்பக்கத்தில் உள்ளன.\n"
+#~ "பக்கத்தை மீளேற்றம் செய்வது இம்மாற்றங்களை புறந்தள்ளிவிடும்."
+
+#~ msgid "Discard Changes?"
+#~ msgstr "மாற்றங்களை கைவிடலாமா?"
+
+#~ msgid "&Discard Changes"
+#~ msgstr "மாற்றங்களை &கைவிடலாமா?"
+
+#~ msgid "File Management"
+#~ msgstr "கோப்பு நிர்வாகம்"
+
+#~ msgid "Web Browsing"
+#~ msgstr "இணைய உலா"
+
+#~ msgid "Home Folder"
+#~ msgstr "இல்ல அடைவு"
+
+#, fuzzy
+#~| msgid "Home"
+#~ msgid "Home"
+#~ msgstr "முதல்"
+
+#, fuzzy
+#~| msgid "Navigate to your 'Home Location'"
+#~ msgid "Navigate to your 'Home Folder'"
+#~ msgstr "தங்களது 'அகவிடத்திற்கு' செல்லவும்"
+
+#, fuzzy
+#~| msgid "Navigate to your 'Home Location'"
+#~ msgid "Navigate to your local 'Home Folder'"
+#~ msgstr "தங்களது 'அகவிடத்திற்கு' செல்லவும்"
+
+#, fuzzy
+#~| msgid "Home"
+#~ msgid "Home Page"
+#~ msgstr "முதல்"
+
+#, fuzzy
+#~| msgid "Navigate to your 'Home Location'"
+#~ msgid "Navigate to your 'Home Page'"
+#~ msgstr "தங்களது 'அகவிடத்திற்கு' செல்லவும்"
+
+#, fuzzy
+#~| msgid ""
+#~| "<html>Navigate to your 'Home Location'<br /><br />You can configure the "
+#~| "location where this button takes you under <b>Settings -> Configure "
+#~| "Konqueror -> General</b>.</html>"
+#~ msgid ""
+#~ "<html>Navigate to your 'Home Page'<br /><br />You can configure the "
+#~ "location where this button takes you under <b>Settings -> Configure "
+#~ "Konqueror -> General</b>.</html>"
+#~ msgstr ""
+#~ "<html>தங்கள் 'அகவிடம்' தனிற்கு செல்க<br /><br />இப்பொத்தான் தங்களை இட்டுச் செல்லும் "
+#~ "இடத்தினை தாங்கள் <b>அமைப்புகள் -> கான்கொயரர் வடிவமை -> பொது</b> மூலம் மாற்றலாகும்.</"
+#~ "html>"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Detaching the tab will discard these changes."
+#~ msgstr ""
+#~ "சமர்ப்பிக்கப்படாத மாற்றங்கள் இத்தத்தில் உள்ளன.\n"
+#~ "தத்தை கைவிடுவது மாற்றங்களை புறந்தள்ளிவிடும்."
+
+#~ msgid ""
+#~ "This view contains changes that have not been submitted.\n"
+#~ "Closing the view will discard these changes."
+#~ msgstr ""
+#~ "இக்காட்சியில் சமர்ப்பிக்கப்படாத மாற்றங்கள் உள்ளன.\n"
+#~ "இந்த காட்சியை மூடினால் இம்மாற்றங்கள் புறந்தள்ளப்படும்."
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the tab will discard these changes."
+#~ msgstr ""
+#~ "இந்த தத்தில் சமர்ப்பிக்கப்படாத மாற்றங்கள் உள்ளன.\n"
+#~ "தத்தினை மூடுவதால் இம்மாற்றங்கள் புறந்தள்ளப்படும்."
+
+#~ msgid "Do you really want to close all other tabs?"
+#~ msgstr "ஏனைய தத்துக்கள் அனைத்தையும் மூடி விடத்தான் வேண்டுமா?"
+
+#~ msgid "Close Other Tabs Confirmation"
+#~ msgstr "மற்ற தத்துக்கள் உறுதிசெய்வதை நிறுத்தவும்"
+
+#~ msgid "Close &Other Tabs"
+#~ msgstr "&ஏனைய தத்துக்களை மூடுக"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing other tabs will discard these changes."
+#~ msgstr ""
+#~ "இத்தத்தில் சமர்ப்பிக்கப்படாத மாற்றங்கள் உள்ளன.\n"
+#~ "ஏனைய தத்துக்களை மூடுவது இம்மாற்றங்களை புறந்தள்ளிவிடும்."
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Reloading all tabs will discard these changes."
+#~ msgstr ""
+#~ "இத்தத்தில் சமர்ப்பிக்கப்படாத மாற்றங்கள் உள்ளன.\n"
+#~ "ஏனைய தத்துக்களை மீளேற்றுவது இம்மாற்றங்களை புறந்தள்ளிவிடும்."
+
+#~ msgid "Enter Target"
+#~ msgstr "இலக்கை உள்ளிடுக"
+
+#~ msgid "<qt><b>%1</b> is not valid</qt>"
+#~ msgstr "<qt><b>%1</b> செல்லாது<qt>"
+
+#~ msgid "Copy selected files from %1 to:"
+#~ msgstr "%1 இருந்து கோப்புகளை நகலெடுப்பதற்கான இடம்:"
+
+#~ msgid "Move selected files from %1 to:"
+#~ msgstr "%1 இருந்து கோப்புகளை நகர்த்துதற்கான இடம்:"
+
+#, fuzzy
+#~| msgid "Empty Closed Items History"
+#~ msgctxt "This menu entry empties the closed items history"
+#~ msgid "Empty Closed Items History"
+#~ msgstr "மூடப்பட்ட உருப்படிகளின் வரலாற்றை நீக்குக"
+
+#, fuzzy
+#~| msgid "Set Name..."
+#~ msgid "Save As..."
+#~ msgstr "பெயரை அமை..."
+
+#, fuzzy
+#~ msgid "Manage..."
+#~ msgstr "குறும்படத்தை மாற்று"
+
+#~ msgid "New &Window"
+#~ msgstr "புதிய &சாளரம்"
+
+#~ msgid "&Duplicate Window"
+#~ msgstr "&போலி சாளரம்"
+
+#~ msgid "Send &Link Address..."
+#~ msgstr "&இணைப்பு முகவரியை அனுப்புக..."
+
+#~ msgid "S&end File..."
+#~ msgstr "கோப்பை &அனுப்புக..."
+
+#~ msgid "&Open Location"
+#~ msgstr "இடத்தை &திற"
+
+#~ msgid "&Open File..."
+#~ msgstr "கோப்பினை &திற..."
+
+#~ msgid "&Find File..."
+#~ msgstr "&கோப்பினை கண்டுபிடி..."
+
+#~ msgid "&Use index.html"
+#~ msgstr "&index.html பயன்படுத்து"
+
+#~ msgid "Lock to Current Location"
+#~ msgstr "நடப்பு இடத்துடன் சாற்று"
+
+#, fuzzy
+#~| msgid "Lin&k View"
+#~ msgctxt "This option links konqueror views"
+#~ msgid "Lin&k View"
+#~ msgstr "இணைப்&பு காட்சி"
+
+#~ msgid "&Up"
+#~ msgstr "&மேல்"
+
+#, fuzzy
+#~| msgid "Copy Items"
+#~ msgid "Closed Items"
+#~ msgstr "உருப்படிகளைக் நகலெடு"
+
+#, fuzzy
+#~| msgid "Permissions"
+#~ msgid "Sessions"
+#~ msgstr "அனுமதிகள்"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Most Often Visited"
+#~ msgstr "அதிகம் அணுகப்பட்டவை"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Recently Visited"
+#~ msgstr "அண்மையில் அணுகியவை"
+
+#, fuzzy
+#~| msgid "Show History Sidebar"
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History"
+#~ msgstr "வரலாறு பக்கப்பட்டியை காட்டுக"
+
+#, fuzzy
+#~| msgid "&Save View Profile..."
+#~ msgid "&Save View Profile As..."
+#~ msgstr "&காட்சிப் பண்பினை காக்க..."
+
+#~ msgid "Configure Extensions..."
+#~ msgstr "விரிவாக்கங்களை வடிவமை..."
+
+#~ msgid "Configure Spell Checking..."
+#~ msgstr "சொற்திருத்தியை வடிவமை..."
+
+#~ msgid "Split View &Left/Right"
+#~ msgstr "காட்சியை &இடது/வலது என பிரி"
+
+#~ msgid "Split View &Top/Bottom"
+#~ msgstr "காட்சியை &மேல்/கீழ் என பிரி"
+
+#~ msgid "&New Tab"
+#~ msgstr "&புதிய தத்து"
+
+#~ msgid "&Duplicate Current Tab"
+#~ msgstr "தற்போதைய தத்தின் &போலியுருவாக்கு"
+
+#~ msgid "Detach Current Tab"
+#~ msgstr "தற்போதைய தத்தை அகற்றிடு"
+
+#~ msgid "&Close Active View"
+#~ msgstr "இயக்கத்திலுள்ள காட்சியை &மூடிடு"
+
+#~ msgid "Close Current Tab"
+#~ msgstr "தற்போதைய தத்தை மூடுக"
+
+#~ msgid "Activate Next Tab"
+#~ msgstr "அடுத்த தத்தை செயற்படுத்து"
+
+#~ msgid "Activate Previous Tab"
+#~ msgstr "முந்தைய தத்தை செயற்படுத்து"
+
+#~ msgid "Activate Tab %1"
+#~ msgstr "%1 தத்தை செயற்படுத்து"
+
+#~ msgid "Move Tab Left"
+#~ msgstr "தத்தை இடப்புறமாக நகர்த்து"
+
+#~ msgid "Move Tab Right"
+#~ msgstr "தத்தை வலப்புறமாக நகர்த்து"
+
+#~ msgid "Dump Debug Info"
+#~ msgstr "வழுசோதனைத் தகவலை கிடத்து"
+
+#~ msgid "C&onfigure View Profiles..."
+#~ msgstr "காட்சிப் பண்புகளை &வடிவமை..."
+
+#~ msgid "Load &View Profile"
+#~ msgstr "&காட்சி பண்பை ஏற்றுக"
+
+#~ msgid "&Reload"
+#~ msgstr "&மீளேற்றுக"
+
+#~ msgid "&Reload All Tabs"
+#~ msgstr "அனைத்து தத்தையும் &மீளேற்றம் செய்க"
+
+#, fuzzy
+#~| msgid "&Reload"
+#~ msgid "&Force Reload"
+#~ msgstr "&மீளேற்றுக"
+
+#~ msgid "&Stop"
+#~ msgstr "&நிறுத்து"
+
+#~ msgid "L&ocation: "
+#~ msgstr "&இடம்:"
+
+#~ msgid "Location Bar"
+#~ msgstr "இடப் பட்டி"
+
+#~ msgid ""
+#~ "<html>Location Bar<br /><br />Enter a web address or search term.</html>"
+#~ msgstr ""
+#~ "<html>இடப்பட்டி<br /><br />இணைய முகவரி அல்லது தேடு பதத்தை உள்ளிடுக.</html>"
+
+#~ msgid "Clear Location Bar"
+#~ msgstr "இடப்பட்டியை துடைக்க"
+
+#~ msgid ""
+#~ "<html>Clear Location bar<br /><br />Clears the contents of the location "
+#~ "bar.</html>"
+#~ msgstr ""
+#~ "<html>இடப்பட்டியை துடைக்க<br /><br />இடப்பட்டியில் உள்ளவற்றை துடைக்கும்.</html>"
+
+#~ msgid "&Bookmarks"
+#~ msgstr "&நினைவுக்குறி"
+
+#~ msgid "Kon&queror Introduction"
+#~ msgstr "&கான்கொயரர் அறிமுகம்"
+
+#~ msgid "Go"
+#~ msgstr "செல்க"
+
+#~ msgid ""
+#~ "<html>Go<br /><br />Goes to the page that has been entered into the "
+#~ "location bar.</html>"
+#~ msgstr "<html>செல்க<br /><br />இடப்பட்டியில் இட்ட பக்கத்திற்கு செல்லும்.</html>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<html>Enter the parent folder<br /><br />For instance, if the current "
+#~| "location is file:/home/%1 clicking this button will take you to file:/"
+#~| "home.<html>"
+#~ msgid ""
+#~ "<html>Enter the parent folder<br /><br />For instance, if the current "
+#~ "location is file:/home/%1 clicking this button will take you to file:/"
+#~ "home.</html>"
+#~ msgstr ""
+#~ "<html>தாய் அடைவை இடவும்<br /><br />உதாரணத்திற்கு, தற்போதைய இடம் file:/home/%1 "
+#~ "எனில் இப்பொத்தானை சொடுக்குவது file:/home தனிற்கு இட்டுச் செல்லும்.<html>"
+
+#~ msgid "Enter the parent folder"
+#~ msgstr "தாய் அடைவை இடுக"
+
+#~ msgid "Move backwards one step in the browsing history"
+#~ msgstr "உலாவற் வரலாற்றில் ஒரு படி பின்னே செல்க"
+
+#~ msgid "Move forward one step in the browsing history"
+#~ msgstr "உலாவற் வரலாற்றில் ஒரு படி முன்னே செல்க"
+
+#~ msgid "Move backwards one step in the closed tabs history"
+#~ msgstr "மூடப்பட்ட தத்துக்கள் வரலாற்றில் ஒரு படி பின்னே செல்க"
+
+#~ msgid ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.</html>"
+#~ msgstr ""
+#~ "<html>தற்போது காட்டப்படும் ஆவணத்தை மீளேற்றுக<br /><br />ஏற்றப்பட்ட பொழுதிற்கு பின்னர் "
+#~ "செய்யப்பட்ட மாற்றங்களை பிரதிபலித்திடும் பொருட்டு இணையப் பக்கங்களை இப்படி மீளேற்றுதல் "
+#~ "அவசியமாகலாம்.</html>"
+
+#~ msgid "Reload the currently displayed document"
+#~ msgstr "தற்போது காட்டப்படும் ஆவணத்தை மீளேற்றுக"
+
+#, fuzzy
+#~| msgid ""
+#~| "<html>Reload all currently displayed documents in tabs<br /><br />This "
+#~| "may, for example, be needed to refresh web pages that have been modified "
+#~| "since they were loaded, in order to make the changes visible.<html>"
+#~ msgid ""
+#~ "<html>Reload all currently displayed documents in tabs<br /><br />This "
+#~ "may, for example, be needed to refresh web pages that have been modified "
+#~ "since they were loaded, in order to make the changes visible.</html>"
+#~ msgstr ""
+#~ "<html>தற்சமயம் தத்துக்களில் காட்டப்படும் அனைத்து ஆவணங்களையும் மீளேற்றுக.<br /><br /"
+#~ ">உதாரணத்திற்கு ஏற்றப்பட்ட பின்னர் மாற்றப்பட்ட இணையபக்கங்களின் மாற்றங்கள் தெரிய இது உதவும்."
+#~ "<html>"
+
+#~ msgid "Reload all currently displayed document in tabs"
+#~ msgstr "தத்துக்களில் தற்போது ஏற்றப்பட்டுள்ள ஆவணங்களை மீளேற்றவும்"
+
+#~ msgid ""
+#~ "<html>Stop loading the document<br /><br />All network transfers will be "
+#~ "stopped and Konqueror will display the content that has been received so "
+#~ "far.</html>"
+#~ msgstr ""
+#~ "<html>ஆவணத்தினை ஏற்றுவதை நிறுத்தவும்<br /><br />அனைத்துப் பிணைய பரிமாற்றங்களும் "
+#~ "நிறுத்தப்பட்டு தற்சமயம் வரை பெறப்பட்ட விவரங்களை மட்டுமே கான்கொயரர் திரையிடும்.</html>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<html>Reload the currently displayed document<br /><br />This may, for "
+#~| "example, be needed to refresh web pages that have been modified since "
+#~| "they were loaded, in order to make the changes visible.</html>"
+#~ msgid ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.  Any images on "
+#~ "the page are downloaded again, even if cached copies exist.</html>"
+#~ msgstr ""
+#~ "<html>தற்போது காட்டப்படும் ஆவணத்தை மீளேற்றுக<br /><br />ஏற்றப்பட்ட பொழுதிற்கு பின்னர் "
+#~ "செய்யப்பட்ட மாற்றங்களை பிரதிபலித்திடும் பொருட்டு இணையப் பக்கங்களை இப்படி மீளேற்றுதல் "
+#~ "அவசியமாகலாம்.</html>"
+
+#, fuzzy
+#~| msgid "Reload all currently displayed document in tabs"
+#~ msgid ""
+#~ "Force a reload of the currently displayed document and any contained "
+#~ "images"
+#~ msgstr "தத்துக்களில் தற்போது ஏற்றப்பட்டுள்ள ஆவணங்களை மீளேற்றவும்"
+
+#~ msgid "Stop loading the document"
+#~ msgstr "ஆவண ஏற்றத்தை நிறுத்துக"
+
+#~ msgid ""
+#~ "<html>Cut the currently selected text or item(s) and move it to the "
+#~ "system clipboard<br /><br />This makes it available to the <b>Paste</b> "
+#~ "command in Konqueror and other KDE applications.</html>"
+#~ msgstr ""
+#~ "<html>தற்சமயம் தேர்வு செய்யப்பட்டுள்ள உரைக அ உருப்படி(களை) வெட்டி அமைப்பின் பிடிப்புப் "
+#~ "பகுதிக்கு நகர்த்துக<br /><br />இதனால் இவை கான்கொயரர் மற்றும் ஏனைய கேபசூ "
+#~ "பயன்பாடுகளில் <b>ஒட்டுக</b> ஆணையிடும் போது ஒட்டிடும் பொருட்டு கிடைக்கப்பெறும்.</"
+#~ "html>"
+
+#~ msgid "Move the selected text or item(s) to the clipboard"
+#~ msgstr "தேர்வு செய்யப்பட்ட உரை அ உருப்படி(களை) பிடிப்புப்பகுதிக்கு நகர்த்துக"
+
+#~ msgid ""
+#~ "<html>Copy the currently selected text or item(s) to the system "
+#~ "clipboard<br /><br />This makes it available to the <b>Paste</b> command "
+#~ "in Konqueror and other KDE applications.</html>"
+#~ msgstr ""
+#~ "<html>தேர்வு செய்யப்பட்ட உரை அ உருப்படி(களை) பிடிப்புப்பகுதிக்கு நகலெடு<br /><br /"
+#~ ">இதனால் இவை கான்கொயரர் மற்றும் ஏனைய கேபசூ பயன்பாடுகளில் <b>ஒட்டுக</b> ஆணையிடும் "
+#~ "போது ஒட்டிடும் பொருட்டு கிடைக்கப்பெறும்.</html>"
+
+#~ msgid "Copy the selected text or item(s) to the clipboard"
+#~ msgstr "தேர்வு செய்யப்பட்ட உரை அ உருப்படி(களை) பிடிப்புப்பகுதிக்கு நகலெடு"
+
+#~ msgid ""
+#~ "<html>Paste the previously cut or copied clipboard contents<br /><br /"
+#~ ">This also works for text copied or cut from other KDE applications.</"
+#~ "html>"
+#~ msgstr ""
+#~ "<html>முன்னமே வெட்டப்பட்ட நகலெடுக்கப்பட்ட பிடிப்புப் பகுதியிலிருப்பவற்றை ஒட்டவும்<br /"
+#~ "><br />ஏனைய கேபசூ பயன்பாடுகளினின்று நகலெடுக்கப்பட்ட வெட்டப்பட்டவைக்கும் இது "
+#~ "பொருந்தும்.</html>"
+
+#~ msgid "Paste the clipboard contents"
+#~ msgstr "பிடிப்புப் பகுதி விவரங்களை ஒட்டுக"
+
+#~ msgid ""
+#~ "<html>Print the currently displayed document<br /><br />You will be "
+#~ "presented with a dialog where you can set various options, such as the "
+#~ "number of copies to print and which printer to use.<br /><br />This "
+#~ "dialog also provides access to special KDE printing services such as "
+#~ "creating a PDF file from the current document.</html>"
+#~ msgstr ""
+#~ "<html>தற்போது திரையிடப்படும் ஆவணத்தை அச்சிடுக<br /><br />எவ்வச்சு இயந்திரத்தை "
+#~ "தேர்வு செய்ய வேண்டும் எத்தனை நகல்கள் வேண்டும் போன்றவற்றினைத் தந்நதிடும் பொருட்டு "
+#~ "பலகமொன்று திரையிடப்படும்.<br /><br />தற்போதைய ஆவணத்தினின்று பிடிஎப் ஆக அச்சிடுதல் "
+#~ "போன்ற சிறப்பு சேவைகளை அணுகுதற்கும் இப்பலகத்தில் வழியுண்டு.</html>"
+
+#~ msgid "Print the current document"
+#~ msgstr "தற்போதைய ஆவணத்தை அச்சிடுக"
+
+#~ msgid "If present, open index.html when entering a folder."
+#~ msgstr "அடைவொன்றினுள் நுழையும் போது index.html தனை திறக்கவும்."
+
+#~ msgid ""
+#~ "A locked view cannot change folders. Use in combination with 'link view' "
+#~ "to explore many files from one folder"
+#~ msgstr ""
+#~ "சாற்றப்பட்ட காட்சியொன்றி அடைவுகளை மாற்ற இயலாது . 'இணைப்பு காட்சி' யுடன் "
+#~ "பயன்படுத்துவதன் வாயிலாக பல கோப்புகளை ஒரு அடைவிலிருந்து ஆராயலாம்"
+
+#~ msgid ""
+#~ "Sets the view as 'linked'. A linked view follows folder changes made in "
+#~ "other linked views."
+#~ msgstr ""
+#~ "காட்சிதனை 'இணைப்புடையதாக' அமைக்கும். இணைக்கப்பட்ட காட்சியொன்று ஏனைய இணைக்கப்பட்ட "
+#~ "காட்சிகளில் நிகழும் அடைவு மாற்றங்களை தொடரும்."
+
+#~ msgid "Copy &Files..."
+#~ msgstr "&கோப்புகளை படியெடு..."
+
+#~ msgid "M&ove Files..."
+#~ msgstr "கோப்புகளை &நகர்த்துக"
+
+#, fuzzy
+#~| msgid "Open Folder in Tabs"
+#~ msgid "Open bookmarks folder in new tabs"
+#~ msgstr "அடைவுகளை தத்துக்களில் திறக்க"
+
+#~ msgid "Open in T&his Window"
+#~ msgstr "&இச்சாளரத்தில் திறக்கவும்"
+
+#~ msgid "Open the document in current window"
+#~ msgstr "தற்போதைய சாளரத்தில் ஆவணத்தைத் திற"
+
+#~ msgid "Open the document in a new window"
+#~ msgstr "புதிய சாளரத்தில் ஆவணத்தை திறக்கவும்"
+
+#~ msgid "Open in &New Tab"
+#~ msgstr "&புதிய தத்தில் திறக்கவும்"
+
+#~ msgid "Open the document in a new tab"
+#~ msgstr "புதிய தத்தில் ஆவணத்தை திறக்கவும்"
+
+#, fuzzy
+#~| msgid "Open with %1"
+#~ msgid "&Open With"
+#~ msgstr "இதனாற் திற %1"
+
+#~ msgid "Open with %1"
+#~ msgstr "இதனாற் திற %1"
+
+#~ msgctxt "@action:inmenu View"
+#~ msgid "&View Mode"
+#~ msgstr "&காட்சி முறைமை"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window, are you sure you want to quit?"
+#~ msgstr "இந்த சாளரத்தில் பல தத்துகள் திறக்கப்படுள்ளன. இவற்றை முடிடத்தான்வேண்டுமா? "
+
+#~ msgid "Confirmation"
+#~ msgstr "உறுதிப்படுத்தல்"
+
+#~ msgid "C&lose Current Tab"
+#~ msgstr "தற்போதைய தத்தை &மூடு"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the window will discard these changes."
+#~ msgstr ""
+#~ "இத்தத்தில் சமர்ப்பிக்கப்படாத மாற்றங்கள் உள்ளன.\n"
+#~ "சாளரத்தை மூடுவதன் மூலம் இம்மாற்றங்கள் புறந்தள்ளப்படும்."
+
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Closing the window will discard these changes."
+#~ msgstr ""
+#~ "இந்த தத்தலில் கொடுக்கப்படாத மாற்றங்கள் உள்ளன.\n"
+#~ "சாளரத்தை மூடுவதன் மூலம் மாற்றங்கள் கைவிடப்படும்."
+
+#~ msgid ""
+#~ "Your sidebar is not functional or unavailable. A new entry cannot be "
+#~ "added."
+#~ msgstr ""
+#~ "தங்களது பக்கப்பட்டி செயற்படவில்லை அல்லது கிடைக்கவில்லை. புதிய பதிவொன்றை சேர்க்க "
+#~ "இயலாது."
+
+#~ msgid "Web Sidebar"
+#~ msgstr "இணைய பக்கப்பட்டி"
+
+#~ msgid "Add new web extension \"%1\" to your sidebar?"
+#~ msgstr "\"%1\"  என்ற புதிய இணைய நீட்டிப்பை உங்கள் பக்கபட்டியுடன் சேர்க்கவா?"
+
+#~ msgid "Add"
+#~ msgstr "சேர்க்க"
+
+#~ msgid "Do Not Add"
+#~ msgstr "சேர்க்க வேண்டாம்"
+
+#~ msgid ""
+#~ "There appears to be a configuration error. You have associated Konqueror "
+#~ "with %1, but it cannot handle this file type."
+#~ msgstr ""
+#~ "வடிவமைப்பில் வழு உள்ளது போல் தெரிகிறது. %1 உடன் கான்கொயரரை தொடர்பு "
+#~ "படுத்தியுள்ளீர்கள், இக்கோப்பு வகையை இதனால் கையாள இயலாது."
+
+#~ msgid "Profile Management"
+#~ msgstr "பண்பு நிர்வாகம்"
+
+#~ msgid "&Rename Profile"
+#~ msgstr "பண்பை &மறுபெயரிடு"
+
+#~ msgid "&Delete Profile"
+#~ msgstr "பண்பை &அகற்றிடு"
+
+#, fuzzy
+#~ msgid "Manage Sessions"
+#~ msgstr "C&hange Comment"
+
+#, fuzzy
+#~| msgid "&Open Link"
+#~ msgid "&Open"
+#~ msgstr "இணைப்பை &திற"
+
+#, fuzzy
+#~| msgid "Renaming"
+#~ msgid "Rename Session"
+#~ msgstr "மறுபெயரிடல்"
+
+#, fuzzy
+#~| msgid "Renaming"
+#~ msgid "Restore Session?"
+#~ msgstr "மறுபெயரிடல்"
+
+#, fuzzy
+#~| msgid "Renaming"
+#~ msgid "Restore Session"
+#~ msgstr "மறுபெயரிடல்"
+
+#, fuzzy
+#~| msgid "As New Folder"
+#~ msgid "Ask Me Later"
+#~ msgstr "As New Folder"
+
+#, fuzzy
+#~| msgid ""
+#~| "This bar contains the list of currently open tabs. Click on a tab to "
+#~| "make it active. You can also use keyboard shortcuts to navigate through "
+#~| "tabs. The text on the tab is the title of the website currently open in "
+#~| "it, put your mouse over the tab too see the full title in case it was "
+#~| "truncated to fit the tab size."
+#~ msgid ""
+#~ "This bar contains the list of currently open tabs. Click on a tab to make "
+#~ "it active. You can also use keyboard shortcuts to navigate through tabs. "
+#~ "The text on the tab shows the content currently open in it; place your "
+#~ "mouse over the tab to see the full title, in case it has been shortened "
+#~ "to fit the tab width."
+#~ msgstr ""
+#~ "தற்சமயம் திறக்கப்பட்டுள்ள த்த்துக்களின் பட்டியல்களை இப்பட்டி கொண்டுள்ளது. செயற்படுத்த தத்தின் "
+#~ "மீது சொடுக்கவும். இத்தத்துக்களினூடே பயனிக்க தாங்கள் விசைப்பலகை சுருக்கு வழிகளையும் "
+#~ "பயன்படுத்தலாம். தத்தில் உள்ள உரை அதில் திறக்கப்பட்டுள்ள இணைய தளத்தின் தலைப்பாகும், "
+#~ "தத்திற்கு ஏற்றவாறு தலைப்பு சிறிதாக்கப்பட்டிருந்தால், எலியத்தினை அதன் மீது இடுவதால் "
+#~ "முழு தலைப்பினையும் காணலாம்."
+
+#~ msgid "Open a new tab"
+#~ msgstr "புதிய தத்தினை திறக்கவும்"
+
+#~ msgid "Close the current tab"
+#~ msgstr "தற்போதைய தத்தினை மூடவும்"
+
+#~ msgid "&Duplicate Tab"
+#~ msgstr "&போலி தத்து"
+
+#~ msgid "&Reload Tab"
+#~ msgstr "தத்தை &மீளேற்றம் செய்க"
+
+#~ msgid "Other Tabs"
+#~ msgstr "ஏனைய தத்துக்கள்"
+
+#~ msgid "D&etach Tab"
+#~ msgstr "தத்தை பி&ரித்தெடு"
+
+#~ msgid "&Close Tab"
+#~ msgstr "தத்தை &மூடுக"
+
+#~ msgid "Und&o: Closed Tab"
+#~ msgstr "திரும்பப்பெறு&: மூடப்பட்ட தத்து"
+
+#~ msgid "Und&o: Closed Window"
+#~ msgstr "திரும்பப்பெறு&: மூடப்பட்ட சாளரம்"
+
+#~ msgid ""
+#~ "The page you are trying to view is the result of posted form data. If you "
+#~ "resend the data, any action the form carried out (such as search or "
+#~ "online purchase) will be repeated. "
+#~ msgstr ""
+#~ "அளிக்கப்பட்ட படிவத் தரவின் விளைவே தாஙங்கள் காண விழையும் பக்கமாகும். தரவினை தாங்கள் மீள "
+#~ "அனுப்பினால், படிவம் செய்த எந்தவொரு காரியமும் (தேடுதல் அ இணையக் கொள்முதல் போன்றவை) "
+#~ "மீண்டும் செய்யப்டும். "
+
+#~ msgid "Warning"
+#~ msgstr "எச்சரிக்கை"
+
+#~ msgid "Resend"
+#~ msgstr "மீளனுப்புக"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window.\n"
+#~ "Loading a view profile will close them."
+#~ msgstr ""
+#~ "இச்சாளரத்தில் பல தத்துக்கள் திறக்கப்பட்டுள்ளன.\n"
+#~ "காட்சியொன்றை ஏற்றுவது அவற்றை மூடிவிடும்."
+
+#~ msgid "Load View Profile"
+#~ msgstr "காட்சிப் பண்பினை ஏற்றுக"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Loading a profile will discard these changes."
+#~ msgstr ""
+#~ "இந்த தத்தலில் சமர்ப்பிக்கப்படாத மாற்றங்கள் உள்ளன.\n"
+#~ "பண்பொன்றினை ஏற்றுவது அவற்றை புறந்தள்ளிவிடும்."
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "History Sidebar Module"
+#~ msgstr "இணைய பக்கப்பட்டி"
+
+#, fuzzy
+#~| msgid "History"
+#~ msgctxt "@title:tab"
+#~ msgid "History"
+#~ msgstr "வரலாறு"
+
+#~ msgid " day"
+#~ msgid_plural " days"
+#~ msgstr[0] "நாள்"
+#~ msgstr[1] "நாட்கள்"
+
+#~ msgid "Minute"
+#~ msgid_plural "Minutes"
+#~ msgstr[0] "நிமிடம்"
+#~ msgstr[1] "நிமிடங்கள்"
+
+#~ msgid "Day"
+#~ msgid_plural "Days"
+#~ msgstr[0] "நாள்"
+#~ msgstr[1] "நாட்கள்"
+
+#~ msgid "<h1>History Sidebar</h1> You can configure the history sidebar here."
+#~ msgstr "<h1>வரலாற்றுப் பட்டி</h1>நீங்கள் இங்கு வரலாற்றுப் பட்டியை வடிவமைக்க முடியும்."
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Places Sidebar Module"
+#~ msgstr "இணைய பக்கப்பட்டி"
+
+#, fuzzy
+#~ msgctxt "@title:tab"
+#~ msgid "Places"
+#~ msgstr "மறுபெயரிடு"
+
+#~ msgid "Extended Sidebar"
+#~ msgstr "விரிவாக்கப்பட்ட பக்கப்பட்டி"
+
+#~ msgid "Rollback to System Default"
+#~ msgstr "கணினியின் இயல்பிருப்பையே கொள்க"
+
+#~ msgid "Configure Sidebar"
+#~ msgstr "பக்கப்பட்டியை வடிவமை"
+
+#~ msgid "Add New"
+#~ msgstr "புதியதை சேர்"
+
+#~ msgid "Multiple Views"
+#~ msgstr "பன்முகக் காட்சிகள்"
+
+#~ msgid "Show Tabs Left"
+#~ msgstr "தத்துக்களை இடப்புறத்தில் காட்டு"
+
+#~ msgid "Show Configuration Button"
+#~ msgstr "வடிவமைப்பு பொத்தானைக் காட்டு"
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgid "Close Sidebar"
+#~ msgstr "இணைய பக்கப்பட்டி"
+
+#~ msgid "This entry already exists."
+#~ msgstr "இந்தப்பதிவு ஏற்கனவே உள்ளது."
+
+#~ msgid ""
+#~ "<qt>This removes all your entries from the sidebar and adds the system "
+#~ "default ones.<br /><b>This procedure is irreversible</b><br />Do you want "
+#~ "to proceed?</qt>"
+#~ msgstr ""
+#~ "<qt>பக்கப்பட்டியிலிருந்து  தங்களது அனைத்து பதிவுகளையும் நீக்கி கணினியின் "
+#~ "இயல்பிருப்புகளை அமைக்கும்.<br /><b>இச்செயலை திரும்பப்பெற இயலாது</b><br /"
+#~ ">தொடர்ந்திட விரும்புகிறீர்களா?</qt>"
+
+#~ msgid "Show Tabs Right"
+#~ msgstr "தத்துக்களை வலப்புறமாகக் காட்டுக"
+
+#~ msgid "Set Name"
+#~ msgstr "பெயரை அமை"
+
+#~ msgid "Enter the name:"
+#~ msgstr "பெயரை இடுக:"
+
+#~ msgid "Enter a URL:"
+#~ msgstr "யுஆர்எல் இடவும்:"
+
+#~ msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
+#~ msgstr "<qt><b>%1</b> தத்தினை அகற்றத் தான் வேண்டுமா?</qt>"
+
+#, fuzzy
+#~| msgid ""
+#~| "You have hidden the navigation panel configuration button. To make it "
+#~| "visible again, click the right mouse button on any of the navigation "
+#~| "panel buttons and select \"Show Configuration Button\"."
+#~ msgid ""
+#~ "You have hidden the sidebar configuration button. To make it visible "
+#~ "again, click the right mouse button on any of the sidebar buttons and "
+#~ "select \"Show Configuration Button\"."
+#~ msgstr ""
+#~ "உலாவற் பலகத்தின் வடிவமைப்பு பொத்தானை தாங்கள் மறைத்து விட்டீர்கள். அதனை மீண்டும் தெரிய "
+#~ "வைக்க, உலாவற் பலகத்தின் எந்தவொரு பொத்தானின் மூதும் எலியத்தினை வலப்புறமாகச் சொடுக்கி "
+#~ "\"வடிவமைப்பு பொத்தானைக் காட்டுக தனை\" தேர்வு செய்யவும்."
+
+#~ msgid "Set Name..."
+#~ msgstr "பெயரை அமை..."
+
+#~ msgid "Set URL..."
+#~ msgstr "யுஆர்எல்லை அமை..."
+
+#~ msgid "Set Icon..."
+#~ msgstr "ஓவியத்தை அமை..."
+
+#~ msgid "Remove"
+#~ msgstr "நீக்குக"
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgid "Web module"
+#~ msgstr "இணைய பக்கப்பட்டி"
+
+#~ msgid "&Create New Folder"
+#~ msgstr "&புதிய அடைவை உருவாக்கு"
+
+#~ msgid "Delete Folder"
+#~ msgstr "அடைவை நீக்குக"
+
+#~ msgid "Delete Bookmark"
+#~ msgstr "நினைவுக்குறியை அகற்றுக"
+
+#~ msgid "Properties"
+#~ msgstr "தன்மைகள்"
+
+#~ msgid "Open in New Window"
+#~ msgstr "புதிய சாளரத்தில் திறக்க"
+
+#~ msgid "Open Folder in Tabs"
+#~ msgstr "அடைவுகளை தத்துக்களில் திறக்க"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "இணைப்பு முகவரிகளை நகலெடுக்க"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark folder\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "நினைவுக்குறி அடைவினை நீக்கத்தான் வேண்டுமா\n"
+#~ "\"%1\"?"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "நினைவுக்குறியினை நீக்கத்தான் வேண்டுமா?\n"
+#~ "\"%1\"?"
+
+#~ msgid "Bookmark Folder Deletion"
+#~ msgstr "நினைவுக்குறி அடைவு நீக்கம்"
+
+#~ msgid "Bookmark Deletion"
+#~ msgstr "நினைவுக்குறி நீக்கம்"
+
+#~ msgid "Bookmark Properties"
+#~ msgstr "நினைவுக்குறி தன்மைகள்"
+
+#~ msgid "&Update"
+#~ msgstr "&புதுப்பிக்க"
+
+#~ msgid "Name:"
+#~ msgstr "பெயர்:"
+
+#~ msgid "Location:"
+#~ msgstr "இடம்:"
+
+#~ msgid "Add Bookmark"
+#~ msgstr "நினைவுக்குறியைச் சேர்"
+
+#~ msgid "Cannot find parent item %1 in the tree. Internal error."
+#~ msgstr "தொடரில் தாய் உருப்படி %1 தனைக் காணவில்லை. உட்பிழை."
+
+#~ msgid "&Create New Folder..."
+#~ msgstr "புதிய அடைவை &உருவாக்கு..."
+
+#, fuzzy
+#~| msgid "&Move to Trash"
+#~ msgid "Move to Trash"
+#~ msgstr "&குப்பைத்தொட்டிக்கு நகர்த்து"
+
+#~ msgid "Rename"
+#~ msgstr "மறுபெயரிடு"
+
+#~ msgid "Delete Link"
+#~ msgstr "இணைப்பை நீக்கு"
+
+#~ msgid "New Folder"
+#~ msgstr "புதிய அடைவு"
+
+#~ msgid "Create New Folder"
+#~ msgstr "புதிய அடைவை உருவாக்கு"
+
+#~ msgid "Enter folder name:"
+#~ msgstr "அடைவின் பெயரை உள்ளிடு:"
+
+#, fuzzy
+#~| msgid "Name:"
+#~ msgctxt "@label"
+#~ msgid "Name:"
+#~ msgstr "பெயர்:"
+
+#, fuzzy
+#~| msgid "Show URL"
+#~ msgctxt "@label"
+#~ msgid "Path or URL:"
+#~ msgstr "URL காட்டு"
+
+#~ msgid "&Open Link"
+#~ msgstr "இணைப்பை &திற"
+
+#~ msgid "Set &Automatic Reload"
+#~ msgstr "&தானியக்க மீளேற்றத்தை அமைக்க"
+
+#~ msgid "Set Refresh Timeout (0 disables)"
+#~ msgstr "மறுமலர்ச்சிக்கான நேரத்தை அமை (0 முடக்கிவிடும்)"
+
+#~ msgid " min"
+#~ msgstr "நிமி"
+
+#~ msgid " sec"
+#~ msgstr "நொடி"
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Web Sidebar Module"
+#~ msgstr "இணைய பக்கப்பட்டி"
+
+#, fuzzy
+#~| msgid "Be free."
+#~ msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
+#~ msgid "Be free."
+#~ msgstr "விடுபெற்றிரு."
+
+#~ msgid ""
+#~ "Konqueror is a web browser, file manager and universal document viewer."
+#~ msgstr ""
+#~ "கான்கொயரர் ஒரி இணைய உலாவி, கோப்பு நிர்வாகி மற்றும் பொதுவான ஆவணங்காட்டியுமாகும்."
+
+#, fuzzy
+#~| msgid "Starting Points"
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "Starting Points"
+#~ msgstr "ஆரம்ப மையங்கள்"
+
+#~ msgid "Introduction"
+#~ msgstr "அறிமுகம்"
+
+#~ msgid "Tips"
+#~ msgstr "துப்புகள்"
+
+#~ msgid "Specifications"
+#~ msgstr "வரையறைகள்"
+
+#~ msgid "Your personal files"
+#~ msgstr "தங்களது தனிப்பட்ட கோப்புகள்"
+
+#~ msgid "Trash"
+#~ msgstr "அகற்றிடம்"
+
+#~ msgid "Browse and restore the trash"
+#~ msgstr "அகற்றிடத்தை ஆய்ந்து மீட்டிடுக"
+
+#~ msgid "Network Folders"
+#~ msgstr "பிணைய அடைவுகள்"
+
+#~ msgid "Shared files and folders"
+#~ msgstr "பகிரப்பட்ட கோப்புகளும் அடைவுகளும்"
+
+#, fuzzy
+#~| msgid "&Bookmarks"
+#~ msgid "Bookmarks"
+#~ msgstr "&நினைவுக்குறி"
+
+#~ msgid "Next: An Introduction to Konqueror"
+#~ msgstr "அடுத்து: கான்கொயரர் ஒரு அறிமுகம்"
+
+#~ msgid "Search the Web"
+#~ msgstr "இணையத்தை தேடு"
+
+#~ msgid ""
+#~ "Konqueror makes working with and managing your files easy. You can browse "
+#~ "both local and networked folders while enjoying advanced features such as "
+#~ "the powerful sidebar and file previews."
+#~ msgstr ""
+#~ "தங்கள் கோப்புகளுடன் பணிபுரிவதையும் அவற்றை நிர்வகிப்பதையும் கான்கொயரர் "
+#~ "எளிமையாக்குகிறது. திறம்பட்ட பக்கப்பட்டி மற்றும் கோப்பு முன்தோற்ற வசதிகளைப் பெற்று "
+#~ "தாங்கள் அக அடைவுகளோடு பிணையத்தில் உள்ள அடைவுகளிலும் உலாவலாம்."
+
+#~ msgid ""
+#~ "Konqueror is also a full featured and easy to use web browser which you "
+#~ "can use to explore the Internet. Enter the address (e.g. <a href=\"http://"
+#~ "www.kde.org\">http://www.kde.org</a>) of a web page you would like to "
+#~ "visit in the location bar and press Enter, or choose an entry from the "
+#~ "Bookmarks menu."
+#~ msgstr ""
+#~ "தாங்கள் இணையத்தில் உலாவுதற்கு ஏதுவான அனைத்து வசதிகளையும் கொண்ட உளிதில் பயன்படுத்த "
+#~ "வல்ல இணைய உலாவியுமாகும் கான்கொயரர். இடப்பட்டியில் தாங்கள் பயணிக்க விரும்பும் முகவரிளை "
+#~ "இட்டு (உ.ம். <a href=\"http://www.kde.org\">http://www.kde.org</a>) உறுதி "
+#~ "படுத்தும் விசையை தட்டவும், அல்லது நினைவுக்குறி மெனுவிலிருந்து ஒன்றை தேர்வு செய்யவும்."
+
+#~ msgid ""
+#~ "To return to the previous location, press the back button <img width='16' "
+#~ "height='16' src=\"%1\"></img> in the toolbar. "
+#~ msgstr ""
+#~ "முந்தைய இடத்திற்கு திரும்ப, கருவிப்பட்டியில் உள்ள பின்னே பொத்தானை சொடுக்கவும் <img "
+#~ "width='16' height='16' src=\"%1\"></img>. "
+
+#~ msgid ""
+#~ "To quickly go to your Home folder press the  home button <img width='16' "
+#~ "height='16' src=\"%1\"></img>."
+#~ msgstr ""
+#~ "தங்களது அக அடைவிற்கு பயணிக்க அகம் பொத்தானைச் சொடுக்கவும் <img width='16' "
+#~ "height='16' src=\"%1\"></img>."
+
+#~ msgid ""
+#~ "For more detailed documentation on Konqueror click <a href=\"%1\">here</"
+#~ "a>."
+#~ msgstr ""
+#~ "கான்கொயரர் குறித்த விரிவான ஆவணமாக்கத்திற்கு <a href=\"%1\">இங்கே</a> சொடுக்கவும்."
+
+#, fuzzy
+#~| msgid ""
+#~| "<em>Tuning Tip:</em> If you want the Konqueror web browser to start "
+#~| "faster, you can turn off this information screen by clicking <a href="
+#~| "\"%1\">here</a>. You can re-enable it by choosing the Help -> Konqueror "
+#~| "Introduction menu option, and then pressing Settings -> Save View "
+#~| "Profile \"Web Browsing\"."
+#~ msgid ""
+#~ "<em>Tuning Tip:</em> If you want the Konqueror web browser to start "
+#~ "faster, you can turn off this information screen by clicking <a href="
+#~ "\"%1\">here</a>. You can re-enable it by choosing the Help -> Konqueror "
+#~ "Introduction menu option, and then pressing Settings -> Save View Profile "
+#~ "As... -> \"Web Browsing\"."
+#~ msgstr ""
+#~ "<em>திறன்கூட்ட துப்பு:</em>கான்கொயரர் விரைவாக துவங்கிட விரும்பினால், இத் தகவற் "
+#~ "திரையை <a href=\"%1\">இங்கே</a> சொடுக்குவதன் மூலம் தடுத்து விடலாம். அதனை மீண்டும் "
+#~ "செயற்படுத்த உதவி -> கான்கொயரர் அறிமுகம் தேர்வுதனை தேர்ந்த பின், அமைப்புகள் -> காட்சிப் "
+#~ "பண்பினைக் காக்க \"இணைய உலாவி\" தனை தேர்வு செய்வதன் மூலம் செய்யலாம்."
+
+#~ msgid "Next: Tips &amp; Tricks"
+#~ msgstr "அடுத்து: துப்புகளும் &amp; தந்திரங்களும்"
+
+#, fuzzy
+#~| msgid ""
+#~| "Konqueror is designed to embrace and support Internet standards. The aim "
+#~| "is to fully implement the officially sanctioned standards from "
+#~| "organizations such as the W3 and OASIS, while also adding extra support "
+#~| "for other common usability features that arise as de facto standards "
+#~| "across the Internet. Along with this support, for such functions as "
+#~| "favicons, Internet Keywords, and <A HREF=\"%1\">XBEL bookmarks</A>, "
+#~| "Konqueror also implements:"
+#~ msgid ""
+#~ "Konqueror is designed to embrace and support Internet standards. The aim "
+#~ "is to fully implement the officially sanctioned standards from "
+#~ "organizations such as the W3 and OASIS, while also adding extra support "
+#~ "for other common usability features that arise as de facto standards "
+#~ "across the Internet. Along with this support, for such functions as "
+#~ "favicons, Web Shortcuts, and <A HREF=\"%1\">XBEL bookmarks</A>, Konqueror "
+#~ "also implements:"
+#~ msgstr ""
+#~ "இணைய நெறிகளை ஏற்றொழுகுமாறு கான்கொயரர் வடிவமைக்கப் பட்டுள்ளது. W3 OASIS போன்ற "
+#~ "அமைப்புகள் அதிகாரப்பூர்வமாக முன்மொழியும் தரக்கட்டுப்பாடுகளை முழுமையாக "
+#~ "செயற்படுத்துவதுவதோடு இணையத்தின் நெடுகே கையாளப்படும் ஏனைய பிற பயன்பாட்டளவிலான "
+#~ "நெறிகளுக்கும் ஆதரவு நல்குவதே இலக்காகும். இவ் ஆதரவுடன், அடைவுரு, இணையத் "
+#~ "துருப்புச்சொற்கள் மற்றும் <A HREF=\"%1\">XBEL நினைவுக்குறிகள்</A> பொன்ற "
+#~ "செயற்பாடுகளுக்கு, கான்கொயரர் செயற்படுத்துபவையாவன:"
+
+#~ msgid "Supported standards"
+#~ msgstr "ஆதரிக்கப்பட்டுள்ள நெறிகள்"
+
+#~ msgid "Additional requirements*"
+#~ msgstr "கூடுதல் தேவைகள்*"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) சார்ந்த <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+
+#~ msgid "built-in"
+#~ msgstr "உள்ளமைக்கப்பட்ட"
+
+#~ msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
+#~ msgstr "<A HREF=\"%1\">மேல் அலங்கார தாட்கள்</A> (CSS 1, partially CSS 2)"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">ECMA-262</A> பதிப்பு 3 (உத்தேசமாக Javascript 1.5க்கு நிகரானது)"
+
+#~ msgid ""
+#~ "JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
+#~ msgstr ""
+#~ "JavaScript முடக்கப்பட்டுள்ளது (பொதுவாக). <A HREF=\"%1\">இவ்விடத்தே</A> "
+#~ "JavaScript தனை செயற்படுத்தவும்."
+
+#~ msgid ""
+#~ "JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\"
+#~ "\">here</A>."
+#~ msgstr ""
+#~ "JavaScript செயற்படுத்தப்பட்டுள்ளது (பொதுவாக). <A HREF=\\\"%1\\\">இவ்விடத்தே</A> "
+#~ "JavaScript வடிவமைக்கவும்."
+
+#~ msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
+#~ msgstr "பாதுகாப்பான <A HREF=\"%1\">ஜாவா</A><SUP>&reg;</SUP> ஆதரவு"
+
+#, fuzzy
+#~| msgid ""
+#~| "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">Blackdown</A>, <A HREF="
+#~| "\"%2\">IBM</A> or <A HREF=\"%3\">Sun</A>)"
+#~ msgid ""
+#~ "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">IBM</A> or <A HREF="
+#~ "\"%2\">Sun/Oracle</A>)"
+#~ msgstr ""
+#~ "JDK 1.2.0 (ஜாவா 2) பொருந்தவல்ல VM (<A HREF=\"%1\">பிளாக்டவுன்</A>, <A HREF="
+#~ "\"%2\">ஐபிஎம்</A> அல்லது <A HREF=\"%3\">சன்</A>)"
+
+#~ msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
+#~ msgstr "<A HREF=\"%1\">இவ்விடத்தே</A> ஜாவாவை செயற்படுத்து."
+
+#~ msgid ""
+#~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">plugins</A> (for "
+#~ "viewing <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
+#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Video, etc.)"
+#~ msgstr ""
+#~ "நெட்ஸ்கேப் கம்யூனிகேடர்<SUP>&reg;</SUP> <A HREF=\"%4\">செருகிகள்</A> (<A HREF="
+#~ "\"%1\">பிளாஷ்<SUP> காண&reg;</SUP></A>, <A HREF=\"%2\">ரியல்<SUP>&reg;</"
+#~ "SUP></A>பதிவொலி, <A HREF=\"%3\">ரியல்<SUP>&reg;</SUP></A>பதிவொளி, முதலியன.)"
+
+#~ msgid "Secure Sockets Layer"
+#~ msgstr "பாதுகாப்புள்ள சாக்கெட் தளம்"
+
+#~ msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
+#~ msgstr "(TLS/SSL v2/3) 168bit வரையிலான பாதுகாப்பான தகவற் பரிமாற்றங்களுக்கு"
+
+#~ msgid "OpenSSL"
+#~ msgstr "ஓபன்எஸ்எஸ்எல்"
+
+#~ msgid "Bidirectional 16bit unicode support"
+#~ msgstr "இருவழி 16bit யுனிகோட் ஆதரவு"
+
+#~ msgid "AutoCompletion for forms"
+#~ msgstr "படிவங்களைத் தன்னியக்கமாக நிரப்புதல்"
+
+#~ msgid "Feature"
+#~ msgstr "வசதி"
+
+#~ msgid "Details"
+#~ msgstr "விவரங்கள்"
+
+#~ msgid "Image formats"
+#~ msgstr "சித்திர வடிவங்கள்"
+
+#, fuzzy
+#~| msgid "PNG<br />MNG<br />JPG<br />GIF"
+#~ msgid "PNG<br />JPG<br />GIF"
+#~ msgstr "PNG<br />MNG<br />JPG<br />GIF"
+
+#~ msgid "Transfer protocols"
+#~ msgstr "பரிமாற்ற நெறிகள்"
+
+#~ msgid "HTTP 1.1 (including gzip/bzip2 compression)"
+#~ msgstr "HTTP 1.1 (gzip/bzip2 சுருக்கத்துடன் கூடிய)"
+
+#~ msgid "FTP"
+#~ msgstr "FTP"
+
+#, fuzzy
+#~| msgid "and <A HREF=\"%1\">many more...</A>"
+#~ msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpcenter)...</A>"
+#~ msgstr "<A HREF=\"%1\">மற்றும் பல...</A>"
+
+#, fuzzy
+#~| msgid "URL-Completion"
+#~ msgctxt "A feature of Konqueror"
+#~ msgid "URL-Completion"
+#~ msgstr "URL-நிறைவுறுமை"
+
+#~ msgid "Manual"
+#~ msgstr "மானுடமாக"
+
+#~ msgid "Popup"
+#~ msgstr "மேலெழும்பும்"
+
+#~ msgid "(Short-) Automatic"
+#~ msgstr "(சுருக்கமான-) தானியக்க"
+
+#, fuzzy
+#~| msgid "<a href=\"%1\">Return to Starting Points</a>"
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "<a href=\"%1\">Return to Starting Points</a>"
+#~ msgstr "<a href=\"%1\">துவக்க மையங்களுக்கு திரும்புக</a>"
+
+#~ msgid "Tips &amp; Tricks"
+#~ msgstr "துப்புகளும் &amp; தந்திரங்களும்"
+
+#, fuzzy
+#~| msgid ""
+#~| "Use Internet-Keywords and Web-Shortcuts: by typing \"gg: KDE\" one can "
+#~| "search the Internet, using Google, for the search phrase \"KDE\". There "
+#~| "are a lot of Web-Shortcuts predefined to make searching for software or "
+#~| "looking up certain words in an encyclopedia a breeze. You can even <a "
+#~| "href=\"%1\">create your own</a> Web-Shortcuts."
+#~ msgid ""
+#~ "Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, "
+#~ "using Google, for the search phrase \"KDE\". There are a lot of Web-"
+#~ "Shortcuts predefined to make searching for software or looking up certain "
+#~ "words in an encyclopedia a breeze. You can even <a href=\"%1\">create "
+#~ "your own</a> Web-Shortcuts."
+#~ msgstr ""
+#~ "இணை துருப்புச் சொற்களையும் சுருக்குவழிகளையும் பயன்படுத்துக: \"gg: KDE\" என "
+#~ "தட்டிடுவதன் மூலமாக ஒருவர் கூகுள் பயன்படுத்தி \"KDE\" என்ற பதத்திற்காக தேட இயலும். "
+#~ "மென்பொருளொன்றையோ தகவற்களஞ்சியத்தை தேடவோ ஏராளமாக இணைய சுருக்கு வழிகள் முன்னாகவே "
+#~ "விவரிக்கப்பட்டு உள்ளன. <a href=\"%1\">தங்களுக்கென</a> இணைய சுருக்கு வழிகளையும் "
+#~ "தாங்கள் விவரிக்கலாம்."
+
+#, fuzzy
+#~| msgid ""
+#~| "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> "
+#~| "in the toolbar to increase the font size on your web page."
+#~ msgid ""
+#~ "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
+#~ "the HTML toolbar to increase the font size on your web page."
+#~ msgstr ""
+#~ "பெரிதாக்கு பொத்தானை பயன்படுத்தி <img width='16' height='16' src=\"%1\"></img> "
+#~ "தங்கள் இணையப் பக்கத்தின் மின்னெழுத்தளவை அதிகரிக்கலாம்."
+
+#~ msgid ""
+#~ "When you want to paste a new address into the Location toolbar you might "
+#~ "want to clear the current entry by pressing the black arrow with the "
+#~ "white cross <img width='16' height='16' src=\"%1\"></img> in the toolbar."
+#~ msgstr ""
+#~ "இடப்பட்டியில் புதிய முகவரியொன்றை இட தற்போதிருக்கும் பதிவை வெள்ளை பெருக்கற் குறியுடன் "
+#~ "<img width='16' height='16' src=\"%1\"></img> கூடிய கருப்பு அம்பின் மீது "
+#~ "சொடுக்கி துடைத்திட தாங்கள் விரும்பலாம்."
+
+#, fuzzy
+#~| msgid ""
+#~| "To create a link on your desktop pointing to the current page, simply "
+#~| "drag the \"Location\" label that is to the left of the Location toolbar, "
+#~| "drop it on to the desktop, and choose \"Link\"."
+#~ msgid ""
+#~ "To create a link on your desktop pointing to the current page, simply "
+#~ "drag the icon (favicon) that is to the left of the Location toolbar, drop "
+#~ "it on to the desktop, and choose \"Icon\"."
+#~ msgstr ""
+#~ "தற்போதைய பக்கத்தை சுட்டும் வண்ணம் தங்கள் பணிமேசைக்கு இணைப்பொன்றினை தாங்கள் தர தாங்கள் "
+#~ "விரும்பினால், இடப்பட்டிக்கு இடப்புறமாக இருக்கும் \"இடம்\" முகப்பை இழுத்து பணிமேசை "
+#~ "மீதுவிட்டு , \"இணைக்க\" வினைத் தேர்வு செய்க."
+
+#~ msgid ""
+#~ "You can also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen "
+#~ "Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
+#~ "sessions."
+#~ msgstr ""
+#~ "<img width='16' height='16' src=\"%1\" /> \"முழுத்-திரை முறை\" யையும் தாங்கள் "
+#~ "அமைப்புகள் மெனுவில் காண இயலும். \"உரையாடல்\" அமர்வுகளுக்கு இது பெரிதும் உதவும்."
+
+#~ msgid ""
+#~ "Divide et impera (lat. \"Divide and conquer\") - by splitting a window "
+#~ "into two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> "
+#~ "Split View Left/Right) you can make Konqueror appear the way you like. "
+#~ "You can even load some example view-profiles (e.g. Midnight Commander), "
+#~ "or create your own ones."
+#~ msgstr ""
+#~ "ஒரு சாளரத்தை இரு பாகங்களாக (உ.ம். சாளரம் -> <IMG WIDTH=16 HEIGHT=16 SRC="
+#~ "\"%1\"> &nbsp; காட்சியை வலமாக/இடமாக பிரி) - Divide et impera (lat. "
+#~ "\"பிரித்து வாகைசூடு\") தேர்வு செய்வதன் மூலம் தாங்கள் விரும்பும் படிக்கு கான்கொயரர் "
+#~ "தோன்ற வைக்கலாம். தாங்கள் மாதிரிக் காட்சிப் பண்புகளை கூட ஏற்றலாகும் (உ.ம். மிட்நைட் "
+#~ "கமாண்டர்), அ தங்களுக்கென்று உருவாக்க இயலும்."
+
+#~ msgid ""
+#~ "Use the <a href=\"%1\">user-agent</a> feature if the website you are "
+#~ "visiting asks you to use a different browser (and do not forget to send a "
+#~ "complaint to the webmaster!)"
+#~ msgstr ""
+#~ "தங்கள் உலாவி பிற உலாவியை பயன்படுத்த கோருமாயின் <a href=\"%1\">பயனர்-முகவர்</a> "
+#~ "வசதியைப் பயன்படுத்துங்கள் (அவ் இணைய நிர்வாகிக்கு புகாரளிக்க மறந்திட வேண்டாம்!)"
+
+#, fuzzy
+#~| msgid ""
+#~| "The <img width='16' height='16' src=\"%1\"></img> History in your "
+#~| "SideBar ensures that you can keep track of the pages you have visited "
+#~| "recently."
+#~ msgid ""
+#~ "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
+#~ "ensures that you can keep track of the pages you have visited recently."
+#~ msgstr ""
+#~ "<img width='16' height='16' src=\"%1\"></img> பக்கப்பட்டிலுள்ள வரலாறு தாங்கள் "
+#~ "அண்மையில் உலாவிய பக்கங்களை நினைவில் கொள்ள உதவுகிறது."
+
+#~ msgid ""
+#~ "Use a caching <a href=\"%1\">proxy</a> to speed up your Internet "
+#~ "connection."
+#~ msgstr ""
+#~ "தற்காலிக <a href=\"%1\">போலிதனைப்</a> பயன்படுத்தி தங்கள் இணைய இணைப்பை "
+#~ "வேகப்படுத்துக."
+
+#, fuzzy
+#~| msgid ""
+#~| "Advanced users will appreciate the Konsole which you can embed into "
+#~| "Konqueror (Window -> <img width='16' height='16' SRC=\"%1\"></img> Show "
+#~| "Terminal Emulator)."
+#~ msgid ""
+#~ "Advanced users will appreciate the Konsole which you can embed into "
+#~ "Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
+#~ "Terminal Emulator)."
+#~ msgstr ""
+#~ "திறம்பட்ட பயனர்கள் கானகொயரருடன் பொதிக்க வல்ல கன்சோல் வசதியை பாராட்டுவர் (சாளரம் -> "
+#~ "<img width='16' height='16' SRC=\"%1\"></img> முனைய மாதிரியைக் காட்டுக)."
+
+#~ msgid "Next: Specifications"
+#~ msgstr "அடுத்து:  வரையறைகள்"
+
+#~ msgid "Installed Plugins"
+#~ msgstr "நிறுவப்பட்ட செருகிககள்"
+
+#~ msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
+#~ msgstr "<td>செருகி</td><td>விவரம்</td><td>கோப்பு</td><td>வகைகள்</td>"
+
+#~ msgid "Installed"
+#~ msgstr "நிறுவப்பட்டது"
+
+#~ msgid ""
+#~ "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
+#~ msgstr "<td>மைம் வகை</td><td>விவரம்</td><td>பின்னொட்டு</td><td>செருகிகள்</td>"
+
+#~ msgid ""
+#~ "Do you want to disable showing the introduction in the webbrowsing "
+#~ "profile?"
+#~ msgstr "இணை உலாவற் பண்பில் அறிமுகத்தை காட்டுவதை முடக்க விரும்புகிறீர்களா?"
+
+#~ msgid "Faster Startup?"
+#~ msgstr "விரைவான துவக்கம்?"
+
+#~ msgid "Disable"
+#~ msgstr "முடக்குக"
+
+#~ msgid "Keep"
+#~ msgstr "வைத்திரு"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "உபுண்டு தமிழ் குழுமம்"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "ubuntu-l10n-tam@lists.ubuntu.com"
+
+#~ msgid "&File"
+#~ msgstr "&கோப்பு"
+
+#~ msgid "&Edit"
+#~ msgstr "&தொகுக்க"
+
+#~ msgid "&View"
+#~ msgstr "&காட்சி"
+
+#~ msgid "&Go"
+#~ msgstr "&செல்க"
+
+#~ msgid "&Settings"
+#~ msgstr "&அமைப்புகள்"
+
+#~ msgid "&Window"
+#~ msgstr "&சாளரம்"
+
+#~ msgid "&Help"
+#~ msgstr "&உதவி"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "பிரதான கருவிப்பட்டி"
+
+#~ msgid "Extra Toolbar"
+#~ msgstr "கூடுதற் கருவிப்பட்டி"
+
+#~ msgid "Location Toolbar"
+#~ msgstr "இடக் கருவிப்பட்டி"
+
+#~ msgid "Bookmark Toolbar"
+#~ msgstr "நினைவுக்குறி கருவிப்பட்டி"
+
+#~ msgid "&Profile name:"
+#~ msgstr "&பண்பின் பெயர்:"
+
+#~ msgid "Save &URLs in profile"
+#~ msgstr "&URL களை பண்பில் காக்கவும்"
+
+#, fuzzy
+#~ msgctxt "@action:button New session"
+#~ msgid "New..."
+#~ msgstr "&புதிய அடைவு..."
+
+#, fuzzy
+#~| msgid "Close Current Tab"
+#~ msgctxt "@action:button Save current session"
+#~ msgid "Save Current"
+#~ msgstr "தற்போதைய தத்தை மூடுக"
+
+#, fuzzy
+#~| msgid "Rename"
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename..."
+#~ msgstr "மறுபெயரிடு"
+
+#, fuzzy
+#~ msgctxt "@action:button Delete session"
+#~ msgid "Delete"
+#~ msgstr "இணைப்பை நீக்கு"
+
+#, fuzzy
+#~| msgid "Open the document in current window"
+#~ msgid "Open tabs inside current window"
+#~ msgstr "தற்போதைய சாளரத்தில் ஆவணத்தைத் திற"
+
+#~ msgid "Limits"
+#~ msgstr "வரம்புகள்"
+
+#~ msgid "URLs e&xpire after"
+#~ msgstr "யுஆர்எல்கள் கா&லாவதியாகும் கெடு"
+
+#~ msgid "Maximum &number of URLs:"
+#~ msgstr "அதிகபட்ச யுஆர்எல் &எண்கள்:"
+
+#~ msgid "Custom Fonts For"
+#~ msgstr "உரிய தனிப்பட்ட மின்னெழுத்துக்கள்"
+
+#~ msgid "URLs newer than"
+#~ msgstr "காட்டிலும் புதிய யுஆர்எல்கள்"
+
+#~ msgid "Choose Font..."
+#~ msgstr "மின்னெழுத்தை தேர்வு செய்..."
+
+#~ msgid "URLs older than"
+#~ msgstr "காட்டிலும் பழைய யுஆர்எல்கள்"
+
+#~ msgid ""
+#~ "Shows the number of times visited and the dates of the first and last "
+#~ "visits, in addition to the URL"
+#~ msgstr ""
+#~ "யுஆர்எல்லுடன் எத்தனை முறை அணுகப்பட்டது, முதன் முதவாக எப்போது அணுகப்பட்டது கடைசியாக "
+#~ "அணுகப்பட்டது எப்போது போன்ற தகவல்களை காட்டும்"
+
+#~ msgid "Detailed tooltips"
+#~ msgstr "விரிவான கருவித் துப்புகள்"
+
+#~ msgid "Clear History"
+#~ msgstr "வரலாற்றை நீக்கு"
+
+#, fuzzy
+#~| msgid ""
+#~| "This is the URL (e.g. a folder or a web page) where Konqueror will jump "
+#~| "to when the \\\"Home\\\" button is pressed. This is usually your home "
+#~| "folder, symbolized by a 'tilde' (~)."
+#~ msgid ""
+#~ "This is the URL of the web page where Konqueror (as web browser) will "
+#~ "jump to when the \\\"Home\\\" button is pressed. When Konqueror is "
+#~ "started as a file manager, that button makes it jump to your local home "
+#~ "folder instead."
+#~ msgstr ""
+#~ "இது (உதாரணமாக,  ஒரு அடைவு அல்லது ஒரு வலைப்பக்கம்)கான்கொரர் \\\"முதல்\\\" பட்டன் "
+#~ "அழுத்தும்போது கான்கொரர் செல்லவேண்டிய வலைமனை. இது உங்கள் ஆரம்ப அடைவு 'tilde' (~) "
+#~ "குறியீடப்பட்டிருக்கும்."
+
+#, fuzzy
+#~| msgid "Maximum &number of URLs:"
+#~ msgid "Maximum number of Closed Items"
+#~ msgstr "அதிகபட்ச யுஆர்எல் &எண்கள்:"
+
+#~ msgid "Open folders in separate windows"
+#~ msgstr "அடைவுகளை தனிச் சாளரங்களில் திற"
+
+#~ msgid ""
+#~ "If this option is checked, Konqueror will open a new window when you open "
+#~ "a folder, rather than showing that folder's contents in the current "
+#~ "window."
+#~ msgstr ""
+#~ "இந்த தேர்வு தேர்ந்தெடுக்கப்பட்டால், நீங்கள் ஒரு அடைவை திறக்கும்போது நடப்பு சாளரத்தில் உள்ள "
+#~ "அடைவின் உள்ளடக்கங்களை காட்டாமல் கான்கொரர் ஒரு புதிய சாளரத்தை திறக்கும்."
+
+#~ msgid "Show file tips"
+#~ msgstr "கோப்பு குறிப்புகளைக் காட்டு"
+
+#~ msgid ""
+#~ "Here you can control if, when moving the mouse over a file, you want to "
+#~ "see a small popup window with additional information about that file"
+#~ msgstr ""
+#~ "இங்கே, சுட்டி ஒரு கோப்பின் மீது நகரும்போது, இந்த கோப்பை பற்றிய கூடுதல் தகவலுடன் ஒரு "
+#~ "மேல்தோன்றும் சாளரத்துடன் பார்க்க நீங்கள் கட்டுப்படுத்தலாம்."
+
+#~ msgid "Show previews in file tips"
+#~ msgstr "முன்காட்சிகளை கோப்பு குறிப்புகளில் காட்டு"
+
+#~ msgid ""
+#~ "Here you can control if you want the popup window to contain a larger "
+#~ "preview for the file, when moving the mouse over it"
+#~ msgstr ""
+#~ "சுட்டியை மேல் நகர்த்தும்போது கோப்புக்கான ஒரு பெரிய முன்காட்சி உள்ள மேல்தோன்றும் "
+#~ "சாளரத்தை நீங்கள் கட்டுப்படுத்தலாம்."
+
+#~ msgid "Show 'Delete' menu entries which bypass the trashcan"
+#~ msgstr "குப்பைத்தொட்டி வழியாக சொல்லும் 'நீக்கு' பட்டியல் உள்ளீடுகளை காட்டு"
+
+#, fuzzy
+#~| msgid ""
+#~| "Uncheck this if you do not want 'Delete' menu commands to be displayed "
+#~| "on the desktop and in the file manager's menus and context menus. You "
+#~| "can still delete files when hidden by holding the Shift key while "
+#~| "calling 'Move to Trash'."
+#~ msgid ""
+#~ "Check this if you want 'Delete' menu commands to be displayed on the "
+#~ "desktop and in the file manager's menus and context menus. You can always "
+#~ "delete files when hidden by holding the Shift key while calling 'Move to "
+#~ "Trash'."
+#~ msgstr ""
+#~ "மேல்மேசை, கோப்பு மேலாளரின் பட்டியல்கள் மற்றும் உள்ளடக்க பட்டியல்களில் 'நீக்கு' பட்டியல் "
+#~ "கட்டளைகளை பார்க்க இதை தேர்வு நீக்கவேண்டும். மறைந்திருக்கும்போதும் கோப்புகளை Shift "
+#~ "விசையைப் பிடித்துக்கொண்டு 'குப்பைத்தொட்டிக்கு நகர்த்து' என்பதற்கு கோப்புகளை நீக்கலாம்."
+
+#~ msgid "Standard font"
+#~ msgstr "நிலையான எழுத்துரு"
+
+#~ msgid "This is the font used to display text in Konqueror windows."
+#~ msgstr "இது கான்கொரர் சாளரங்களில் உரையைக் காட்ட பயன்படுத்தப்பட்ட எழுத்துரு."
+
+#~ msgid "Ask confirmation for deleting a file."
+#~ msgstr "ஒரு கோப்பை நீக்குவதற்கு உறுதிப்படுத்து."
+
+#, fuzzy
+#~| msgid ""
+#~| "This option tells Konqueror whether to ask for a confirmation when you "
+#~| "move the file to your trash folder, from where it can be recovered very "
+#~| "easily."
+#~ msgid ""
+#~ "This option tells Konqueror whether to ask for a confirmation when you "
+#~ "delete a file without using the trash folder. Warning, deleted files can "
+#~ "not be recovered, so it is recommended to leave this confirmation enabled."
+#~ msgstr ""
+#~ "இந்த தேர்வு கான்கொரர் நீங்கள் ஒரு கோப்பை குப்பைத்தொட்டி அடைவுக்கு நகர்த்தும்போது "
+#~ "உறுதிப்படுத்துதலை கேட்கவேண்டுமா என்பதை சொல்லும். அதை அந்த கோப்பில் இருந்து சுலபமாக "
+#~ "திரும்ப பெறலாம்."
+
+#~ msgid "Ask confirmation for move to trash"
+#~ msgstr "குப்பைத்தொட்டிக்கு நகர்த்த உறுதிப்படுத்து"
+
+#~ msgid ""
+#~ "This option tells Konqueror whether to ask for a confirmation when you "
+#~ "move the file to your trash folder, from where it can be recovered very "
+#~ "easily."
+#~ msgstr ""
+#~ "இந்த தேர்வு கான்கொரர் நீங்கள் ஒரு கோப்பை குப்பைத்தொட்டி அடைவுக்கு நகர்த்தும்போது "
+#~ "உறுதிப்படுத்துதலை கேட்கவேண்டுமா என்பதை சொல்லும். அதை அந்த கோப்பில் இருந்து சுலபமாக "
+#~ "திரும்ப பெறலாம்."
+
+#~ msgid "Hide %1"
+#~ msgstr "%1 தனை மறை"
+
+#, fuzzy
+#~| msgid "Web SideBar Plugin"
+#~ msgid "SideBar Test Plugin"
+#~ msgstr "இணைய பக்கப்பட்டி செருகி"
+
+#~ msgid "Bookmark This Location"
+#~ msgstr "இவ்விடத்தை நினைவேற்று"
+
+#~ msgid ""
+#~ "Malformed URL\n"
+#~ "%1"
+#~ msgstr ""
+#~ "தவறாக ஆக்கப்பட்ட URL\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Protocol not supported\n"
+#~ "%1"
+#~ msgstr ""
+#~ "நெறி ஆதரிக்கப்படவில்லை\n"
+#~ "%1"
+
+#~ msgid "Cannot create the find part, check your installation."
+#~ msgstr "தேடு பகுதியை உருவாக்க இயலவில்லை, நிறுவலைச் சரிபார்க்கவும்."
+
+#, fuzzy
+#~ msgid "My Bookmarks"
+#~ msgstr "%1 புத்தகக்குறி"
+
+#~ msgid "Preload for later use"
+#~ msgstr "பிற்பாடு பயன்படுத்த முன்னதாகவே ஏற்றுக"
+
+#~ msgid "&Save View Profile \"%1\"..."
+#~ msgstr "காட்சிப் பண்பு \"%1\" தனை காக்க..."
+
+#~ msgid "Configure Navigation Panel"
+#~ msgstr "உலாவுதற்கான பலகத்தை வடிவமை"
+
+#~ msgid "Close Navigation Panel"
+#~ msgstr "உலாவுதற்கான பலகத்தை மூடு"
+
+#~ msgid "Select Type"
+#~ msgstr "வகையைத் தேர்வுசெய்"
+
+#~ msgid "Select type:"
+#~ msgstr "வகையை தேர்ந்தெடு:"
+
+#~ msgid "Web SideBar Plugin"
+#~ msgstr "இணைய பக்கப்பட்டி செருகி"
+
+#~ msgid "<qt><b>%1</b> does not exist</qt>"
+#~ msgstr "<qt><b>%1</b> இல்லை</qt>"
+
+#~ msgid "Minutes"
+#~ msgstr "நிமிடங்கள்"
+
+#~ msgid "Days"
+#~ msgstr "நாட்கள்"
+
+#~ msgid "Your sidebar is not functional or unavailable."
+#~ msgstr "தங்களது பக்கப்பட்டி செயற்படவில்லை அ கிடைக்கப்பெறவில்லை."
+
+#~ msgid "Cannot find running history plugin in your sidebar."
+#~ msgstr "இயங்கிக்கொண்டிருக்கும் வரலாறு செருகியை தங்களது பக்கப்பட்டியில் தேடஇயலவில்லை."
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History in Sidebar"
+#~ msgstr "பக்கப்பட்டியில் வரலாற்றைக் காட்டுக"
+
+#~ msgid "Select Remote Charset"
+#~ msgstr "புற எழுத்துவகையை தேர்வுசெய்"
+
+#~ msgid "Reload"
+#~ msgstr "&மீளேற்றுக"
+
+#~ msgid "Default"
+#~ msgstr "இயல்பிருப்பு"
+
+#, fuzzy
+#~ msgctxt "@action:button New session"
+#~ msgid "New"
+#~ msgstr "&புதிய அடைவு..."
+
+#, fuzzy
+#~| msgid "Rename"
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename"
+#~ msgstr "மறுபெயரிடு"
+
+#~ msgid ""
+#~ "Konqueror is your file manager, web browser and universal document viewer."
+#~ msgstr ""
+#~ "கான்கொரர் தங்களது கோப்பு நிர்வாகி, இணைய உலாவி மற்றும் பொதுவான ஆவணங் காட்டியுமாகும்."
+
+#~ msgid "Joseph WENNINGER"
+#~ msgstr "ஜோசப் வென்னிங்னர்"
+
+#~ msgid "G E N E R A L"
+#~ msgstr "பொ து "
+
+#~ msgid "<img width='16' height='16' src=\"%1\"></img>"
+#~ msgstr "<img width='16' height='16' src=\"%1\"></img>"
+
+#~ msgid "Applications"
+#~ msgstr "பயன்பாடுகள்"
+
+#~ msgid "Installed programs"
+#~ msgstr "நிறுவப்பட்ட நிரல்கள்"
+
+#~ msgid "&Location"
+#~ msgstr "&இடம்"
+
+#~ msgid "Konqueror mode: FileManager or WebBrowser"
+#~ msgstr "கான்கொயரர் முறை: கோப்பு நிர்வாகி அ இணைய உலாவி"
+
+#~ msgid "Open &Terminal"
+#~ msgstr "முனையத்தை &திற"
+
+#~ msgid "Closed Tabs"
+#~ msgstr "மூடப்பட்ட தத்துக்கள்"
+
+#~ msgid "Unknown"
+#~ msgstr "தெரியாத"
+
+#~ msgid "Save &window size in profile"
+#~ msgstr "Save &window size in profile"
+
+#, fuzzy
+#~ msgid "Speech Toolbar"
+#~ msgstr "மரக்காட்சிக் கருவிப்பட்டி"
+
+#~ msgid "Conquer your Desktop!"
+#~ msgstr "உங்கள் மேசைத்தளத்தை வெல்லுங்கள்!"
+
+#~ msgid "Storage Media"
+#~ msgstr "சேகரிப்பு ஊடகம்"
+
+#~ msgid "Disks and removable media"
+#~ msgstr "வட்டுகள் மற்றும் நீக்கக்கூடிய ஊடகம்"
+
+#~ msgid "Settings"
+#~ msgstr "அமைப்புகள்"
+
+#~ msgid "Desktop configuration"
+#~ msgstr "மேல்மேசை வடிவமைப்பு"
+
+#~ msgid "&Edit File Type..."
+#~ msgstr "&கோப்பு வகையைத் தொகு..."
+
+#~ msgid "App&lications"
+#~ msgstr "பயன்பாடுகள்"
+
+#~ msgid "&Storage Media"
+#~ msgstr "&சேகரிப்பு ஊடகம்"
+
+#~ msgid "&Network Folders"
+#~ msgstr "&வலைப்பின்னல் அடைவுகள்"
+
+#~ msgid "Sett&ings"
+#~ msgstr "அமைப்புகள்"
+
+#~ msgid "Autostart"
+#~ msgstr "தன்னியக்கத் துவக்கம்"
+
+#, fuzzy
+#~ msgid "Profile %1 not found\n"
+#~ msgstr "திறக்கவேண்டிய விளக்கக்குறிப்பு"
+
+#, fuzzy
+#~ msgid "<qt><center><b>%1</b></center> is already in the list.</qt>"
+#~ msgstr "<qt><b>%1</b> செல்லாது<qt>"
+
+#, fuzzy
+#~ msgid "Duplicate Entry"
+#~ msgstr "தாளை நகல் செய்"
+
+#, fuzzy
+#~ msgid "Change Exception"
+#~ msgstr "குறும்படத்தை மாற்று"
+
+#, fuzzy
+#~ msgid "Default user name:"
+#~ msgstr "அடைவின் பெயரை உள்ளிடு:"
+
+#, fuzzy
+#~ msgid "Reject"
+#~ msgstr "&திரும்ப அமை"
+
+#, fuzzy
+#~ msgid "D-Bus Communication Error"
+#~ msgstr "உறுதிப்படுத்தல்"
+
+#, fuzzy
+#~ msgid "&Windows Shares"
+#~ msgstr "&சாளரம்"
+
+#, fuzzy
+#~ msgid "Add Identification"
+#~ msgstr "திறன் குறிப்புகள்"
+
+#, fuzzy
+#~ msgid "Duplicate Identification"
+#~ msgstr "தற்போதைய தாளை நகலெடு"
+
+#, fuzzy
+#~ msgid "Variable Proxy Configuration"
+#~ msgstr "மேல்மேசை வடிவமைப்பு"
+
+#, fuzzy
+#~ msgid "Update Failed"
+#~ msgstr "ாவிகானை புதுப்பி"
+
+#, fuzzy
+#~ msgid "Duplicate Policy"
+#~ msgstr "&மற்றொரு சாளரம்"
+
+#, fuzzy
+#~| msgid "Manual"
+#~ msgid "Menu"
+#~ msgstr "மனித"
+
+#, fuzzy
+#~ msgid "Move Up"
+#~ msgstr "%1ஐ நகர்த்து"
+
+#, fuzzy
+#~ msgid "Move Down"
+#~ msgstr "புதிய &சாளரம்"
+
+#, fuzzy
+#~ msgid ""
+#~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "
+#~ "file manager here."
+#~ msgstr "<h1>வரலாற்றுப் பட்டி</h1> நீங்கள் இங்கு வரலாற்றுப் பட்டியை வடிவமைக்க முடியும்"
+
+#, fuzzy
+#~ msgid "Open folders in separate &windows"
+#~ msgstr "அடைவுகளை தனிச் சாளரங்களில் திற"
+
+#, fuzzy
+#~ msgid "Show file &tips"
+#~ msgstr "கோப்பு குறிப்புகளைக் காட்டு"
+
+#, fuzzy
+#~ msgid "Show &previews in file tips"
+#~ msgstr "முன்காட்சிகளை கோப்பு குறிப்புகளில் காட்டு"
+
+#, fuzzy
+#~ msgid ""
+#~ "Here you can control if you want the popup window to contain a larger "
+#~ "preview for the file, when moving the mouse over it."
+#~ msgstr ""
+#~ "சுட்டியை மேல் நகர்த்தும்போது கோப்புக்கான ஒரு பெரிய முன்காட்சி உள்ள மேல்தோன்றும் "
+#~ "சாளரத்தை நீங்கள் கட்டுப்படுத்தலாம்."
+
+#, fuzzy
+#~ msgid "Ask Confirmation For"
+#~ msgstr "உறுதிப்படுத்தல்"
+
+#, fuzzy
+#~ msgid ""
+#~ "This option tells Konqueror whether to ask for a confirmation when you "
+#~ "\"delete\" a file. <ul><li><em>Move To Trash:</em> moves the file to your "
+#~ "trash folder, from where it can be recovered very easily.</li> "
+#~ "<li><em>Delete:</em> simply deletes the file.</li> </ul>"
+#~ msgstr ""
+#~ "இந்த தேர்வு கான்கொரர் நீங்கள் ஒரு கோப்பை குப்பைத்தொட்டி அடைவுக்கு நகர்த்தும்போது "
+#~ "உறுதிப்படுத்துதலை கேட்கவேண்டுமா என்பதை சொல்லும். அதை அந்த கோப்பில் இருந்து சுலபமாக "
+#~ "திரும்ப பெறலாம்."
+
+#, fuzzy
+#~ msgid "&Move to trash"
+#~ msgstr "&குப்பைத்தொட்டிக்கு நகர்த்து"
+
+#, fuzzy
+#~ msgid "Show 'Delete' context me&nu entries which bypass the trashcan"
+#~ msgstr "குப்பைத்தொட்டி வழியாக சொல்லும் 'நீக்கு' பட்டியல் உள்ளீடுகளை காட்டு"
+
+#, fuzzy
+#~ msgid ""
+#~ "Check this if you want 'Delete' menu commands to be displayed on the "
+#~ "desktop and in the file manager's context menus. You can always delete "
+#~ "files by holding the Shift key while calling 'Move to Trash'."
+#~ msgstr ""
+#~ "மேல்மேசை, கோப்பு மேலாளரின் பட்டியல்கள் மற்றும் உள்ளடக்க பட்டியல்களில் 'நீக்கு' பட்டியல் "
+#~ "கட்டளைகளை பார்க்க இதை தேர்வு நீக்கவேண்டும். மறைந்திருக்கும்போதும் கோப்புகளை Shift "
+#~ "விசையைப் பிடித்துக்கொண்டு 'குப்பைத்தொட்டிக்கு நகர்த்து' என்பதற்கு கோப்புகளை நீக்கலாம்."
+
+#~ msgid "Sound Files"
+#~ msgstr "ஒலிக் கோப்புக்கள்"
+
+#, fuzzy
+#~ msgid "No Action"
+#~ msgstr "&இடவமைவு"
+
+#, fuzzy
+#~ msgid "Desktop Menu"
+#~ msgstr "மேல்மேசை வடிவமைப்பு"
+
+#, fuzzy
+#~ msgid "Application Menu"
+#~ msgstr "பயன்பாடுகள்"
+
+#, fuzzy
+#~ msgid "Bookmarks Menu"
+#~ msgstr "புத்தகக்குறி"
+
+#, fuzzy
+#~ msgid "Custom Menu 1"
+#~ msgstr "தனிப்பயன் எழுத்துருக்கள்"
+
+#, fuzzy
+#~ msgid "Custom Menu 2"
+#~ msgstr "தனிப்பயன் எழுத்துருக்கள்"
+
+#, fuzzy
+#~ msgid "Select Protocols"
+#~ msgstr "Select files:"
+
+#, fuzzy
+#~ msgid "Local Protocols"
+#~ msgstr "இடமாற்ற ஒப்புநெறிகள்"
+
+#, fuzzy
+#~ msgid "Internet Protocols"
+#~ msgstr "இடமாற்ற ஒப்புநெறிகள்"
+
+#, fuzzy
+#~ msgid "A&utostart path:"
+#~ msgstr "தன்னியக்கத் துவக்கம்"
+
+#, fuzzy
+#~ msgid "Confirmation Required"
+#~ msgstr "உறுதிப்படுத்தல்"
+
+#, fuzzy
+#~ msgid "Move"
+#~ msgstr "%1ஐ நகர்த்து"
+
+#, fuzzy
+#~ msgid "KEditFileType"
+#~ msgstr "&கோப்பு வகையைத் தொகு..."
+
+#, fuzzy
+#~ msgid "(c) 2000, KDE developers"
+#~ msgstr "(c) 2000 - 2003, KDE developers"
+
+#, fuzzy
+#~ msgid "Edit File Type %1"
+#~ msgstr "&கோப்பு வகையைத் தொகு..."
+
+#, fuzzy
+#~ msgid "Create New File Type %1"
+#~ msgstr "புதிய அடைவை உருவாக்கு"
+
+#, fuzzy
+#~ msgid "Create New File Type"
+#~ msgstr "புதிய அடைவை உருவாக்கு"
+
+#, fuzzy
+#~ msgid "Group:"
+#~ msgstr "குழு"
+
+#, fuzzy
+#~ msgid "Type name:"
+#~ msgstr "மறுபெயரிடு"
+
+#, fuzzy
+#~ msgid "Show file in separate viewer"
+#~ msgstr "அடைவுகளை தனிச் சாளரங்களில் திற"
+
+#, fuzzy
+#~ msgid "Select service:"
+#~ msgstr "Select files:"
+
+#, fuzzy
+#~ msgid "&Remove"
+#~ msgstr "&மறுபெயரிடு"
+
+#, fuzzy
+#~ msgid "Filename Patterns"
+#~ msgstr "கோப்புப்பெயர்"
+
+#, fuzzy
+#~ msgid "Description"
+#~ msgstr "தேர்வு"
+
+#, fuzzy
+#~ msgid "Add New Extension"
+#~ msgstr "விரிவாக்கங்கள்"
+
+#, fuzzy
+#~ msgid "Extension:"
+#~ msgstr "விரிவாக்கங்கள்"
+
+#, fuzzy
+#~ msgid "Move &Up"
+#~ msgstr "%1ஐ நகர்த்து"
+
+#, fuzzy
+#~ msgid "Global Settings"
+#~ msgstr "அமைப்புகள்"
+
+#, fuzzy
+#~ msgid "Domain-Specific Settin&gs"
+#~ msgstr "திறன் குறிப்புகள்"
+
+#, fuzzy
+#~ msgid "Netscape Plugins"
+#~ msgstr "நிறுவப்பட்ட செருகுப்பொருள்கள்"
+
+#, fuzzy
+#~ msgid "Cancel"
+#~ msgstr "ரத்துச் செய்யப்பட்டது."
+
+#, fuzzy
+#~ msgid "De&lete"
+#~ msgstr "இணைப்பை நீக்கு"
+
+#, fuzzy
+#~ msgid "&Import..."
+#~ msgstr "&இறக்குமதி"
+
+#, fuzzy
+#~ msgid "&Export..."
+#~ msgstr "&ஏற்றுமதி"
+
+#, fuzzy
+#~ msgid "Select Home Folder"
+#~ msgstr "அடைவை நீக்கு"
+
+#, fuzzy
+#~ msgid ""
+#~ "This is the URL (e.g. a folder or a web page) where Konqueror will jump "
+#~ "to when the \"Home\" button is pressed. This is usually your home folder, "
+#~ "symbolized by a 'tilde' (~)."
+#~ msgstr ""
+#~ "இது (உதாரணமாக,  ஒரு அடைவு அல்லது ஒரு வலைப்பக்கம்)கான்கொரர் \\\"முதல்\\\" பட்டன் "
+#~ "அழுத்தும்போது கான்கொரர் செல்லவேண்டிய வலைமனை. இது உங்கள் ஆரம்ப அடைவு 'tilde' (~) "
+#~ "குறியீடப்பட்டிருக்கும்."
+
+#, fuzzy
+#~ msgid "Tabbed Browsing"
+#~ msgstr "வலை உலாவல்"
+
+#, fuzzy
+#~ msgid "Open new windows:"
+#~ msgstr "Open in New Window"
+
+#, fuzzy
+#~ msgid "Smart"
+#~ msgstr "அடுக்கு"
+
+#, fuzzy
+#~ msgid "Resize window:"
+#~ msgstr "மீளனுப்புதல்"
+
+#, fuzzy
+#~ msgid "Move window:"
+#~ msgstr "புதிய &சாளரம்"
+
+#, fuzzy
+#~ msgid "(c) 1999 - 2001 The Konqueror Developers"
+#~ msgstr "(c) 1999 - 2004 கான்கொரர் மேம்படுத்துபவர்கள்"
+
+#, fuzzy
+#~ msgid "Java&Script"
+#~ msgstr "ஆக்கியோர் (ஜாவாஎழுத்தாக்கம்)"
+
+#, fuzzy
+#~ msgid "Enable filters"
+#~ msgstr "முன்னோட்டத்தை காட்டு "
+
+#, fuzzy
+#~ msgid "Hide filtered images"
+#~ msgstr "கோப்பு அளவைக் காட்டு "
+
+#, fuzzy
+#~ msgid "Update"
+#~ msgstr "ாவிகானை புதுப்பி"
+
+#, fuzzy
+#~ msgid "Import..."
+#~ msgstr "&இறக்குமதி"
+
+#, fuzzy
+#~ msgid "Export..."
+#~ msgstr "&ஏற்றுமதி"
+
+#, fuzzy
+#~ msgid "Font Si&ze"
+#~ msgstr "குறும்பட அளவு"
+
+#, fuzzy
+#~ msgid "This is the relative font size Konqueror uses to display web sites."
+#~ msgstr "இது கான்கொரர் சாளரங்களில் உரையைக் காட்ட பயன்படுத்தப்பட்ட எழுத்துரு."
+
+#, fuzzy
+#~ msgid "S&tandard font:"
+#~ msgstr "நிலையான எழுத்துரு"
+
+#, fuzzy
+#~ msgid "This is the font used to display normal text in a web page."
+#~ msgstr "இது கான்கொரர் சாளரங்களில் உரையைக் காட்ட பயன்படுத்தப்பட்ட எழுத்துரு."
+
+#, fuzzy
+#~ msgid ""
+#~ "This is the font used to display fixed-width (i.e. non-proportional) text."
+#~ msgstr "இது கான்கொரர் சாளரங்களில் உரையைக் காட்ட பயன்படுத்தப்பட்ட எழுத்துரு."
+
+#, fuzzy
+#~ msgid "This is the font used to display text that is marked up as serif."
+#~ msgstr "இது கான்கொரர் சாளரங்களில் உரையைக் காட்ட பயன்படுத்தப்பட்ட எழுத்துரு."
+
+#, fuzzy
+#~ msgid "Sa&ns serif font:"
+#~ msgstr "நிலையான எழுத்துரு"
+
+#, fuzzy
+#~ msgid ""
+#~ "This is the font used to display text that is marked up as sans-serif."
+#~ msgstr "இது கான்கொரர் சாளரங்களில் உரையைக் காட்ட பயன்படுத்தப்பட்ட எழுத்துரு."
+
+#, fuzzy
+#~ msgid "C&ursive font:"
+#~ msgstr "மீண்டும் அடுக்கல்"
+
+#, fuzzy
+#~ msgid "This is the font used to display text that is marked up as italic."
+#~ msgstr "இது கான்கொரர் சாளரங்களில் உரையைக் காட்ட பயன்படுத்தப்பட்ட எழுத்துரு."
+
+#, fuzzy
+#~ msgid ""
+#~ "This is the font used to display text that is marked up as a fantasy font."
+#~ msgstr "இது கான்கொரர் சாளரங்களில் உரையைக் காட்ட பயன்படுத்தப்பட்ட எழுத்துரு."
+
+#, fuzzy
+#~ msgid "Boo&kmarks"
+#~ msgstr "புத்தகக்குறி"
+
+#, fuzzy
+#~ msgid "Form Com&pletion"
+#~ msgstr "URL-முடித்தல்"
+
+#, fuzzy
+#~ msgid "Enable completion of &forms"
+#~ msgstr "படிவங்களைத் தன்னியக்கமாக நிரப்புதல்"
+
+#, fuzzy
+#~ msgctxt "underline"
+#~ msgid "Enabled"
+#~ msgstr "நிறுவப்பட்டது"
+
+#, fuzzy
+#~ msgctxt "underline"
+#~ msgid "Disabled"
+#~ msgstr "முன்னோட்டத்தை காட்டு "
+
+#, fuzzy
+#~ msgid "A&nimations:"
+#~ msgstr "பயன்பாடுகள்"
+
+#, fuzzy
+#~ msgctxt "animations"
+#~ msgid "Enabled"
+#~ msgstr "நிறுவப்பட்டது"
+
+#, fuzzy
+#~ msgctxt "animations"
+#~ msgid "Disabled"
+#~ msgstr "முன்னோட்டத்தை காட்டு "
+
+#, fuzzy
+#~ msgid "Show Only Once"
+#~ msgstr "உரிமையாளரைக் காட்டு"
+
+#, fuzzy
+#~ msgid "Enable Ja&va globally"
+#~ msgstr "<A HREF=\"%1\">யாவாவைச் செயற்படுத்து (உலகளாவிய)</A>."
+
+#, fuzzy
+#~ msgid "Additional Java a&rguments:"
+#~ msgstr "மேலதிகத் தேவைகள்*"
+
+#, fuzzy
+#~ msgid "&Filters"
+#~ msgstr "&அடைவு"
+
+#~ msgid "No permissions to write to %1"
+#~ msgstr "%1 இற்கு எழுதுவதற்கு அனுமதியில்லை"
+
+#~ msgid "Save View Changes per &Folder"
+#~ msgstr "ஒவ்வொரு அடைவிலும் காட்சி மாற்றங்களைச் சேமி"
+
+#~ msgid "Remove Folder Properties"
+#~ msgstr "அடைவு பண்புகளை நீக்கு"
+
+#~ msgid "Create Folder..."
+#~ msgstr "அடைவை உருவாக்கு..."
+
+#, fuzzy
+#~ msgid "&Delete"
+#~ msgstr "இணைப்பை நீக்கு"
+
+#~ msgid "&Rename"
+#~ msgstr "&மறுபெயரிடு"
+
+#, fuzzy
+#~ msgid "Desktop &Names"
+#~ msgstr "பெயரை அமை"
+
+#, fuzzy
+#~| msgid "Move backwards one step in the browsing history<p>"
+#~ msgid "Move backwards one step in the browsing history<br /><br />"
+#~ msgstr "வரலாறு உலாவியில் ஒரு அடி பின் போகவும்<p>"
+
+#, fuzzy
+#~| msgid "Move forward one step in the browsing history<p>"
+#~ msgid "Move forward one step in the browsing history<br /><br />"
+#~ msgstr "வரலாறு உலாவியில் ஒரு அடி முன் போகவும்<p>"
+
+#, fuzzy
+#~ msgid "Rename icons in&line"
+#~ msgstr "குறும்படங்களை மறுபெயரிடு"
+
+#, fuzzy
+#~ msgid ""
+#~ "Checking this option will allow files to be renamed by clicking directly "
+#~ "on the icon name. "
+#~ msgstr ""
+#~ "இந்த தேர்வை தேர்ந்தெடுத்தால் குறும்பட பெயர்களை நேரடியாக க்ளிக் செய்வதன் மூலம் கோப்புகளை "
+#~ "மறுபெயரிடும்."
+
+#, fuzzy
+#~ msgid "&Standard font:"
+#~ msgstr "நிலையான எழுத்துரு"
+
+#, fuzzy
+#~ msgid "Font si&ze:"
+#~ msgstr "குறும்பட அளவு"
+
+#, fuzzy
+#~ msgid "This is the font size used to display text in Konqueror windows."
+#~ msgstr "இது கான்கொரர் சாளரங்களில் உரையைக் காட்ட பயன்படுத்தப்பட்ட எழுத்துரு."
+
+#, fuzzy
+#~ msgid "This is the color used to display text in Konqueror windows."
+#~ msgstr "இது கான்கொரர் சாளரங்களில் உரையைக் காட்ட பயன்படுத்தப்பட்ட எழுத்துரு."
+
+#, fuzzy
+#~ msgid "&Underline filenames"
+#~ msgstr "Unselect files:"
+
+#, fuzzy
+#~ msgid " line"
+#~ msgid_plural " lines"
+#~ msgstr[0] "நிமிடங்கள் "
+#~ msgstr[1] "நிமிடங்கள் "
+
+#, fuzzy
+#~ msgid ""
+#~ "<h1>Appearance</h1> You can configure how Konqueror looks as a file "
+#~ "manager here."
+#~ msgstr "<h1>வரலாற்றுப் பட்டி</h1> நீங்கள் இங்கு வரலாற்றுப் பட்டியை வடிவமைக்க முடியும்"
+
+#~ msgid ""
+#~ "Thanks to <a href=\"%1\">DCOP</a> you can have full control over "
+#~ "Konqueror using a script."
+#~ msgstr ""
+#~ "<a href=\"%1\">DCOP நன்றி</a> எழுத்தாக்கத்தை பயன்படுத்தி கான்கொரரின் மீது "
+#~ "முழுக்கட்டுப்பாட்டையும் பெறலாம்."
+
+#~ msgid "Preview In"
+#~ msgstr "இதில் முன்னோட்டம்"
+
+#~ msgid "&Open Location..."
+#~ msgstr "&இடத்தைத் திற..."
+
+#~ msgid "Animated Logo"
+#~ msgstr "உயிரூட்டப்பட்ட சின்னம்"
+
+#~ msgid "Selection"
+#~ msgstr "தேர்வு"
+
+#~ msgid "Icon Size"
+#~ msgstr "குறும்பட அளவு"
+
+#~ msgid "Show Details"
+#~ msgstr "விவரங்களைக் காட்டு"
+
+#~ msgid "Detailed Listview Toolbar"
+#~ msgstr "விரிவான பட்டியற்காட்சிக் கருவிப்பட்டி"
+
+#~ msgid "MimeType"
+#~ msgstr "மைம"
+
+#~ msgid "Size"
+#~ msgstr "அளவு"
+
+#~ msgid "Modified"
+#~ msgstr "மாற்றியமைத்த"
+
+#~ msgid "Accessed"
+#~ msgstr "அணுகிய"
+
+#~ msgid "Created"
+#~ msgstr "ஆக்கிய"
+
+#~ msgid "Owner"
+#~ msgstr "உரிமையாளர்"
+
+#~ msgid "Group"
+#~ msgstr "குழு"
+
+#~ msgid "Link"
+#~ msgstr "இணைப்பு"
+
+#~ msgid "URL"
+#~ msgstr "URL"
+
+#~ msgid "File Type"
+#~ msgstr "கோப்பு வகை"
+
+#~ msgid "Select files:"
+#~ msgstr "Select files:"
+
+#~ msgid "Unselect files:"
+#~ msgstr "Unselect files:"
+
+#~ msgid "Show &Modification Time"
+#~ msgstr "மாற்றியமைத்த நேரத்தைக் காட்டு"
+
+#~ msgid "Hide &Modification Time"
+#~ msgstr "&மாற்றியமைத்த நேரத்தைக் காட்டு"
+
+#~ msgid "Show &File Type"
+#~ msgstr "கோப்பு வகையைக் காட்டு"
+
+#~ msgid "Hide &File Type"
+#~ msgstr "&கோப்பு வகை"
+
+#~ msgid "Show MimeType"
+#~ msgstr "மைம்வகையைக் காட்டு"
+
+#~ msgid "Hide MimeType"
+#~ msgstr "மைம் மறை வகை"
+
+#~ msgid "Show &Access Time"
+#~ msgstr "அணுகிய நேரத்தைக் காட்டு"
+
+#~ msgid "Hide &Access Time"
+#~ msgstr "&அணுகிய நேரத்தைக் காட்டு"
+
+#~ msgid "Show &Creation Time"
+#~ msgstr "உருவாக்கிய நேரத்தைக் காட்டு"
+
+#~ msgid "Hide &Creation Time"
+#~ msgstr "&உருவாக்கிய நேரத்தைக் காட்டு"
+
+#~ msgid "Show &Link Destination"
+#~ msgstr "இணைப்பின் சேருமிடத்தைக் காட்டு"
+
+#~ msgid "Hide &Link Destination"
+#~ msgstr "&இணைப்பின் சேருமிடத்தைக் காட்டு"
+
+#~ msgid "Show Filesize"
+#~ msgstr "கோப்பு அளவைக் காட்டு"
+
+#~ msgid "Hide Filesize"
+#~ msgstr "கோப்பு அளவைக் காட்டு "
+
+#~ msgid "Show Owner"
+#~ msgstr "உரிமையாளரைக் காட்டு"
+
+#~ msgid "Hide Owner"
+#~ msgstr "மறை உரிமையாளர்"
+
+#~ msgid "Show Group"
+#~ msgstr "தொகுதியைக் காட்டு"
+
+#~ msgid "Hide Group"
+#~ msgstr "மறை குழு"
+
+#~ msgid "Show Permissions"
+#~ msgstr "Show Permissions"
+
+#~ msgid "Hide Permissions"
+#~ msgstr "மறை அனுமதிகள்"
+
+#~ msgid "Se&lect..."
+#~ msgstr "தேர்ந்தெடு"
+
+#~ msgid "Unselect..."
+#~ msgstr "தேர்ந்தெடுக்காதே..."
+
+#~ msgid "Unselect All"
+#~ msgstr "அனைத்தையும் தேர்ந்தெடுக்காதே"
+
+#~ msgid "&Invert Selection"
+#~ msgstr "தேர்வுகளைத் தலைகீழாக்கு"
+
+#~ msgid "Show &Hidden Files"
+#~ msgstr "மறைந்துள்ள கோப்புகளைக் காட்டு"
+
+#~ msgid "Case Insensitive Sort"
+#~ msgstr "வகையுணர்வில்லாத வரிசைப்படுத்தல்"
+
+#~ msgid "Name"
+#~ msgstr "பெயர்"
+
+#~ msgid "You must take the file out of the trash before being able to use it."
+#~ msgstr "கோப்பை பயன்படுத்த துங்கும் முன் குப்பையில் இருந்து அதை எடுக்க வேண்டும்"
+
+#~ msgid "View &As"
+#~ msgstr "எனக் &காட்டு"
+
+#~ msgid "Filename"
+#~ msgstr "கோப்புப்பெயர்"
+
+#~ msgid "Toggle displaying of hidden dot files"
+#~ msgstr "மறைக்கப்பட்ட டாட் கோப்புகளை மாற்றிக்காட்டல்"
+
+#~ msgid "&Folder Icons Reflect Contents"
+#~ msgstr "&Folder Icons Reflect Contents"
+
+#~ msgid "&Preview"
+#~ msgstr "&Preview"
+
+#~ msgid "Enable Previews"
+#~ msgstr "முன்னோட்டத்தை காட்டு "
+
+#~ msgid "Disable Previews"
+#~ msgstr "முன்னோட்டத்தை காட்டு "
+
+#~ msgid "By Name (Case Sensitive)"
+#~ msgstr "By Name (Case Sensitive)"
+
+#~ msgid "By Name (Case Insensitive)"
+#~ msgstr "பெயர"
+
+#~ msgid "By Size"
+#~ msgstr "அளவு வாரியாக"
+
+#~ msgid "By Type"
+#~ msgstr "வகை வாரியாக"
+
+#~ msgid "By Date"
+#~ msgstr "இந் நாள்"
+
+#~ msgid "Folders First"
+#~ msgstr "முதல் அடைவு"
+
+#~ msgid "Descending"
+#~ msgstr "Descending"
+
+#~ msgid "Allows selecting of file or folder items based on a given mask"
+#~ msgstr "Allows selecting of file or folder items based on a given mask"
+
+#~ msgid "Allows unselecting of file or folder items based on a given mask"
+#~ msgstr "Allows unselecting of file or folder items based on a given mask"
+
+#~ msgid "Selects all items"
+#~ msgstr "எல்லா உருப்படிகளையும் தேர்வுசெய்"
+
+#~ msgid "Unselects all selected items"
+#~ msgstr "Unselects all selected items"
+
+#~ msgid "Inverts the current selection of items"
+#~ msgstr "நடப்புத் தேர்வுகளைத் தலைகீழாக்கு"
+
+#~ msgid ""
+#~ "You cannot drop any items in a directory in which you do not have write "
+#~ "permission"
+#~ msgstr ""
+#~ "உங்களுக்கு எழுதும் அனுமதி இல்லை என்றால் எந்த உருப்படிகளையும் ஒரு அடைவில் "
+#~ "உள்ளிடமுடியாது."
+
+#~ msgid "Treeview Toolbar"
+#~ msgstr "மரக்காட்சிக் கருவிப்பட்டி"
+
+#~ msgid "Info Listview Toolbar"
+#~ msgstr "விரிவான பட்டியற்காட்சிக் கருவிப்பட்டி"
+
+#~ msgid "Multicolumn View Toolbar"
+#~ msgstr "பல்நிரல் காட்சிக் கருவிப்பட்டி"
+
+#~ msgid "&Icon Size"
+#~ msgstr "&குறும்பட அளவு"
+
+#~ msgid "S&ort"
+#~ msgstr "தொகு"
+
+#~ msgid "Iconview Toolbar"
+#~ msgstr "குறும்படக்காட்சிக் கருவிப்பட்டி"
+
+#~ msgid "Iconview Extra Toolbar"
+#~ msgstr "மேலதிகக் கருவிப்பட்டியைக் குறும்படக்காட்சியாக்கு"
+
+#~ msgid "Rename icons inline"
+#~ msgstr "குறும்படங்களை மறுபெயரிடு"
+
+#~ msgid ""
+#~ "Checking this option will allow files to be renamed by clicking directly "
+#~ "on the icon name."
+#~ msgstr ""
+#~ "இந்த தேர்வை தேர்ந்தெடுத்தால் குறும்பட பெயர்களை நேரடியாக க்ளிக் செய்வதன் மூலம் கோப்புகளை "
+#~ "மறுபெயரிடும்."
+
+#~ msgid ""
+#~ "This option tells Konqueror whether to ask for a confirmation when you "
+#~ "simply delete the file."
+#~ msgstr ""
+#~ "இந்த தேர்வு கான்கொரர் நீங்கள் ஒரு கோப்பை நீக்கும்போது உறுதிப்படுத்துதலை கேட்கவேண்டுமா "
+#~ "என்பதை சொல்லும்."
+
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Loading a profile will discard these changes."
+#~ msgstr ""
+#~ "இந்த பக்கத்தில் கொடுக்கப்படாத மாற்றங்கள் உள்ளன.\n"
+#~ "விளக்கக்குறிப்பை ஏற்றுவதன் மூலம் மாற்றங்கள் கைவிடப்படும்."
+
+#~ msgid "Tools"
+#~ msgstr "கருவிகள்"
+
+#~ msgid "Statusbar"
+#~ msgstr "நிலைப்பட்டி"
+
+#~ msgid "&Show Netscape Bookmarks in Konqueror"
+#~ msgstr "&காண்குறர் சாலரத்தில் நெட்ஸ்கெப் புத்தககுறியை &காண்பி"
+
+#~ msgid "C&hange URL"
+#~ msgstr "URL மாற்று"
+
+#~ msgid "&New Bookmark"
+#~ msgstr "&புதிய புத்தகக்குறி"
+
+#~ msgid "&Insert Separator"
+#~ msgstr "பிரிப்பானைச் செருகு"
+
+#~ msgid "&Sort Alphabetically"
+#~ msgstr "&Sort Alphabetically"
+
+#~ msgid "Set as T&oolbar Folder"
+#~ msgstr "கருவிப்பட்ட"
+
+#~ msgid "Show in T&oolbar"
+#~ msgstr "கருவிப்பட்டியில் காட்டு"
+
+#~ msgid "Hide in T&oolbar"
+#~ msgstr "கருவிப்பட்டியில் தேடு"
+
+#~ msgid "&Expand All Folders"
+#~ msgstr "அ&னைத்து அடைவுகளையும் விரிவாக்கவும்"
+
+#~ msgid "Collapse &All Folders"
+#~ msgstr "அ&னைத்து அடைவுகளையும் நெருக்கவும்"
+
+#~ msgid "&Open in Konqueror"
+#~ msgstr "கான்கொரரிற் திற"
+
+#~ msgid "Check &Status"
+#~ msgstr "நிலையைச் சோதி"
+
+#~ msgid "Check Status: &All"
+#~ msgstr "நிலையைச் சோதி"
+
+#~ msgid "Update All &Favicons"
+#~ msgstr "அணைத்து பாவிகாணையும் புதுப்பி"
+
+#~ msgid "Cancel &Checks"
+#~ msgstr "Cancel &Checks"
+
+#~ msgid "Cancel &Favicon Updates"
+#~ msgstr "ஃபாவிகான் புதுப்பித்தலை நிராகரி"
+
+#~ msgid "Import &Netscape Bookmarks..."
+#~ msgstr "&நெட்ஸ்கேப் புத்தகக்குறிகளை இறக்கு..."
+
+#~ msgid "Import &Opera Bookmarks..."
+#~ msgstr "ஒபெரா புத்தகக்குறிகளை இறக்கு..."
+
+#~ msgid "Import All &Crash Sessions as Bookmarks..."
+#~ msgstr "அணைத்து மோதல் அமைவுகளையும் புத்தககுறிகளாக இரக்கும்தி செய்..."
+
+#~ msgid "Import &Galeon Bookmarks..."
+#~ msgstr "கேலியன் புத்தகக்குறிகளை இறக்கு..."
+
+#, fuzzy
+#~ msgid "Import &KDE2/KDE3 Bookmarks..."
+#~ msgstr "&KDE2 புத்தகக்குறிகளுக்கு இற்க்குமதி செய்..."
+
+#, fuzzy
+#~ msgid "Import &IE Bookmarks..."
+#~ msgstr " IE  புத்தகக்குறிகளை இறக்கு..."
+
+#~ msgid "Import &Mozilla Bookmarks..."
+#~ msgstr "மோசிலா புத்தகக்குறிகளை இறக்கு..."
+
+#, fuzzy
+#~ msgid "Export to &Netscape Bookmarks"
+#~ msgstr "நெட்ஸ்கேப் புத்தகக்குறிகளுக்கு ஏற்றுமதி செய்"
+
+#, fuzzy
+#~ msgid "Export to &Opera Bookmarks..."
+#~ msgstr "Opera புத்தகக்குறிகளுக்கு ஏற்றுதி செய்..."
+
+#, fuzzy
+#~ msgid "Export to &HTML Bookmarks..."
+#~ msgstr "HTML புத்தகக்குறிகளுக்கு ஏற்றுதி செய்..."
+
+#, fuzzy
+#~ msgid "Export to &IE Bookmarks..."
+#~ msgstr "IE புத்தகக்குறிகளுக்கு ஏற்றுதி செய்..."
+
+#~ msgid "Export to &Mozilla Bookmarks..."
+#~ msgstr "மோசிலா புத்தகக்குறிகளுக்கு ஏற்றுமதி செய்..."
+
+#~ msgid "*.html|HTML Bookmark Listing"
+#~ msgstr "*.html|HTML புத்தக குறி பட்டியல்"
+
+#~ msgid "Cut Items"
+#~ msgstr "Cut Items"
+
+#~ msgid "Create New Bookmark Folder"
+#~ msgstr "புதிய புத்தகக்குறியை உருவாக்கு"
+
+#~ msgid "New folder:"
+#~ msgstr "&புதிய அடைவை"
+
+#~ msgid "Sort Alphabetically"
+#~ msgstr "அகரவரிசைப்படுத்து"
+
+#~ msgid "Delete Items"
+#~ msgstr "Delete Items"
+
+#~ msgid "Icon"
+#~ msgstr "குறும்படம்"
+
+#~ msgid "Comment:"
+#~ msgstr "குறிப்பு:"
+
+#~ msgid "First viewed:"
+#~ msgstr "முதலில் பார்த்தது"
+
+#~ msgid "Viewed last:"
+#~ msgstr "கடைசியாக பார்:"
+
+#~ msgid "Times visited:"
+#~ msgstr "கடைசியாக பார்த்தது:"
+
+#~ msgid "Insert Separator"
+#~ msgstr "Insert Separator"
+
+#~ msgid "Create Folder"
+#~ msgstr "அடைவை உருவாக்கு"
+
+#~ msgid "Copy %1"
+#~ msgstr "%1ஐ நகல்செய்"
+
+#~ msgid "Create Bookmark"
+#~ msgstr "Create Bookmark"
+
+#~ msgid "%1 Change"
+#~ msgstr "%1 யை மாற்று"
+
+#~ msgid "Set as Bookmark Toolbar"
+#~ msgstr "புத்தகக்குறிக் கருவிப்பட்டியாக அமை"
+
+#~ msgid "%1 in Bookmark Toolbar"
+#~ msgstr "%1 ல் புத்தகக்குறிக் கருவிப்பட்டி"
+
+#~ msgid "Show"
+#~ msgstr "காட்டு"
+
+#~ msgid "Hide"
+#~ msgstr "மறை"
+
+#~ msgid "Move Items"
+#~ msgstr "உருப்படிகளைக் நகர்த்து"
+
+#~ msgid "No favicon found"
+#~ msgstr "ஃபாவிகான் இல்லை"
+
+#~ msgid "Updating favicon..."
+#~ msgstr "Updating favicon..."
+
+#~ msgid "Import %1 Bookmarks"
+#~ msgstr "Import %1 Bookmarks"
+
+#~ msgid "%1 Bookmarks"
+#~ msgstr "%1 புத்தகக்குறி"
+
+#~ msgid "Import as a new subfolder or replace all the current bookmarks?"
+#~ msgstr "Import as a new subfolder or replace all the current bookmarks?"
+
+#~ msgid "%1 Import"
+#~ msgstr "%1 ஏற்று"
+
+#~ msgid "*.xbel|Galeon Bookmark Files (*.xbel)"
+#~ msgstr "*.xbel|Galeon Bookmark Files (*.xbel)"
+
+#~ msgid "*.xml|KDE Bookmark Files (*.xml)"
+#~ msgstr "*.xml|KDE புத்தகக்குறி கோப்புகள் (*.xml)"
+
+#~ msgid "Directory to scan for extra bookmarks"
+#~ msgstr "அதிகப்படியான புத்தகக்குறிகளுக்கான வருடல் அடைவு"
+
+#~ msgid "KBookmarkMerger"
+#~ msgstr "கேபுத்தகக்குறி கலப்பான்"
+
+#~ msgid "Merges bookmarks installed by 3rd parties into the user's bookmarks"
+#~ msgstr ""
+#~ "3வது நபர்களால் பயனரின் புத்தகக்குறிகளுக்குள் நிறுவப்பட்ட புத்தகக்குறிகளை கலக்கிறது"
+
+#~ msgid "Copyright © 2005 Frerich Raabe"
+#~ msgstr "Copyright © 2005 Frerich Raabe"
+
+#~ msgid "Original author"
+#~ msgstr "மூல ஆசிரியர்"
+
+#~ msgid "Drop Items"
+#~ msgstr "உருப்படிகளைக் தவிர்"
+
+#~ msgid "Comment"
+#~ msgstr "குறிப்பு"
+
+#~ msgid "Status"
+#~ msgstr "நிலை"
+
+#~ msgid "Folder"
+#~ msgstr "கோப்புறை"
+
+#~ msgid "Empty Folder"
+#~ msgstr "வெற்று கோப்புறு"
+
+#~ msgid "Import bookmarks from a file in Mozilla format"
+#~ msgstr "கோப்பிலிருந்து ப்த்தககுறிப்பை மொசிலா வடிவத்தில் இறக்குமதி செய்."
+
+#~ msgid "Import bookmarks from a file in Netscape (4.x and earlier) format"
+#~ msgstr ""
+#~ "நெட்ஸ்கேப் வடிவத்தில் உள்ள கோப்பில் இருந்து புத்தகக்குறிகளை இறக்கு(4.x மற்றும் முன்னது)"
+
+#~ msgid "Import bookmarks from a file in Internet Explorer's Favorites format"
+#~ msgstr ""
+#~ "வலைதள எக்ஸ்ப்ளோரர் விருப்பசேமிப்பு வடிவத்தில் உள்ள கோப்பில் இருந்து புத்தகக்குறிகளை "
+#~ "இறக்கு"
+
+#~ msgid "Import bookmarks from a file in Opera format"
+#~ msgstr "கோப்பிலிருந்து ப்த்தககுறிப்பை ஒபெரா வடிவத்தில் இரக்குமதி செய்."
+
+#~ msgid "Export bookmarks to a file in Mozilla format"
+#~ msgstr "மொசிலா வடிவத்தில் கோப்புகளாக புத்தககுறிப்பை ஏற்று"
+
+#~ msgid "Export bookmarks to a file in Netscape (4.x and earlier) format"
+#~ msgstr "Export bookmarks to a file in Netscape (4.x and earlier) format."
+
+#~ msgid "Export bookmarks to a file in a printable HTML format"
+#~ msgstr "கோப்பிலிருந்து ப்த்தககுறிப்பை HTML அச்சிடும் வடிவத்தில் ஏற்று"
+
+#~ msgid "Export bookmarks to a file in Internet Explorer's Favorites format"
+#~ msgstr "கோப்பிலிருந்து ப்த்தககுறிப்பை இன்ட்டர்நெட் எக்ஸ்ப்லோரர் வடிவத்தில் ஏற்றுமதி செய்"
+
+#~ msgid "Export bookmarks to a file in Opera format"
+#~ msgstr "புத்தககுறியை Opera  வடிவ கோப்பிற்க்கு ஏற்று."
+
+#~ msgid "Open at the given position in the bookmarks file"
+#~ msgstr "கொடுக்கப்பட்ட நிலையில் புத்தகக்குறியிட்ட கோப்புகளை திற"
+
+#~ msgid "Set the user readable caption for example \"Konsole\""
+#~ msgstr "பயண்படுத்துபவர் வகையிற்க்கு எற்ப தலைப்புகளை அமை எடுத்துகாட்டு \"Konsole\""
+
+#~ msgid "Hide all browser related functions"
+#~ msgstr "அனைத்து உலாவி சார்பான செயல்கூறுகளை மறை"
+
+#~ msgid "File to edit"
+#~ msgstr "திருத்த வேண்டிய கோப்பு"
+
+#~ msgid ""
+#~ "Another instance of %1 is already running, do you really want to open "
+#~ "another instance or continue work in the same instance?\n"
+#~ "Please note that, unfortunately, duplicate views are read-only."
+#~ msgstr ""
+#~ "%1 இன் நிகழ்வு ஏற்கெனவே ஓடிக்கொண்டிருக்கிறது, வேறொரு நிகழ்வை திறக்கவேண்டுமா அல்லது "
+#~ "இதே நிகழ்வை பயன்படுத்த வேண்டுமா?\n"
+#~ "குறிப்பு , துரதிஷ்டவசமாக , போலி நிகழ்வுகள் படிக்க மட்டுமே."
+
+#~ msgid "Run Another"
+#~ msgstr "மற்றொன்றை ௾யக்கு"
+
+#~ msgid "Continue in Same"
+#~ msgstr "௾திலேயே தொடர்"
+
+#~ msgid "Bookmark Editor"
+#~ msgstr "புத்தகக்குறித் தொகுப்பாளர்"
+
+#~ msgid "Konqueror Bookmarks Editor"
+#~ msgstr "புத்தகக்குறித் தொகுப்பாளர்"
+
+#~ msgid "Initial author"
+#~ msgstr "முதற் ஆசிரியர்"
+
+#, fuzzy
+#~ msgid "Author"
+#~ msgstr "தன்னியக்கத் துவக்கம்"
+
+#~ msgid "You may only specify a single --export option."
+#~ msgstr "You may only specify a single --export option."
+
+#~ msgid "You may only specify a single --import option."
+#~ msgstr "உங்களால் ஒரே--இறக்கு தேர்வை மட்டும் குறிப்பிட முடியும்."
+
+#~ msgid "Checking..."
+#~ msgstr "சோதிக்கிறது..."
+
+#~ msgid "Error "
+#~ msgstr "பிழை"
+
+#~ msgid "Ok"
+#~ msgstr "சரி"
+
+#~ msgid "Reset Quick Search"
+#~ msgstr "விரைவான தேடுதலை திரும்ப அமை"
+
+#~ msgid ""
+#~ "<b>Reset Quick Search</b><br>Resets the quick search so that all "
+#~ "bookmarks are shown again."
+#~ msgstr ""
+#~ "<b>விரைவான தேடுதலை திரும்ப அமை<b><br>விரைவான தேடுதலை திரும்ப அமைப்பதால் "
+#~ "புத்தகக்குறிப்புகள் திரும்ப தெரியும்."
+
+#~ msgid "Se&arch:"
+#~ msgstr "தேடு:"
+
+#~ msgid "Clear Search"
+#~ msgstr "தேடுதலை துடை"

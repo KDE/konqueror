@@ -1,0 +1,118 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Italian "INCLUDE"
+> <!-- change language only here -->
+]>
+<!-- extragear has another adblock ? -->
+<article lang="&language;" id="khtml-adblock">
+<articleinfo>
+<title
+>Filtri AdBlocK</title>
+<authorgroup>
+<author
+>&Krishna.Tateneni; &Krishna.Tateneni.mail;</author>
+<othercredit role="translator"
+><firstname
+>Luciano</firstname
+><surname
+>Montanaro</surname
+><contrib
+>Traduzione</contrib
+></othercredit
+> <othercredit role="translator"
+><firstname
+>Federico</firstname
+><surname
+>Zenith</surname
+><affiliation
+><address
+><email
+>federico.zenith@member.fsf.org</email
+></address
+></affiliation
+><contrib
+>Manutenzione della traduzione</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>08/11/2016</date>
+<releaseinfo
+>Applications 16.12</releaseinfo>
+</articleinfo>
+
+<para
+>Il modulo AdBlocK di &konqueror; può essere configurato per sostituire o per rimuovere le immagini o i riquadri dalle pagine Web che corrispondono ad una serie di filtri.</para>
+
+<para
+>La casella <guilabel
+>Abilita filtri</guilabel
+> abilita o disabilita l'uso dell'elenco dei filtri sugli URL.</para>
+<para
+>Se attivi <guilabel
+>Nascondi immagini filtrate</guilabel
+>, le immagini bloccate sono completamente rimosse dalla pagina, e lo spazio occupato viene recuperato. Se questa opzione è inattiva verrà mostrata un'immagine <quote
+>segnaposto</quote
+> invece di quelle bloccate.</para>
+
+<variablelist>
+<varlistentry id="khtml-adblock-manual">
+<term
+><guilabel
+>Filtro manuale</guilabel
+></term>
+<listitem>
+<para
+>La parte principale di questa scheda è una lista degli &URL; da confrontare con i nomi delle immagini e dei riquadri per decidere come filtrarli. Si possono usare i caratteri jolly usati per i nomi dei file o delle espressioni regolari complete.</para>
+
+<para
+>Ciascun filtro può essere espresso come una stringa jolly in stile file (ad esempio http://www.site.com/ads/*), oppure come un'espressione regolare completa racchiudendo il filtro fra sbarre (ad esempio //(ads|dclk)\.//).</para>
+
+<para
+>Ogni stringa di filtraggio può essere preceduta da <literal
+>@@</literal
+> per mettere in lista bianca, cioè permettere, ogni &URL; che corrisponda, e che ha la priorità su qualsiasi filtro nella lista nera (cioè bloccante).</para>
+
+<para
+><guilabel
+>Importa</guilabel
+> ed <guilabel
+>Esporta</guilabel
+> leggono o scrivono la lista dei filtri attualmente in uso su un file di testo semplice. Il file comincia con una riga d'intestazione <userinput
+>[AdBlock]</userinput
+>, seguito da tutti i filtri, uno pera riga. Le righe che iniziano con un punto esclamativo (<userinput
+>!</userinput
+>) e la riga d'intestazione sono trattate come commenti, e si possono usare per spiegare o descrivere un insieme di filtri.</para>
+
+<para
+>Evidenzia una voce dall'elenco per cambiarla nella casella di modifica, o per rimuoverla. Inserisci qui una nuova stringa di filtraggio, ed aggiungila all'elenco usando il pulsante <guibutton
+>Inserisci</guibutton
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry id="khtml-adblock-automatic">
+<term
+><guilabel
+>Filtro automatico</guilabel
+></term>
+<listitem>
+<para
+>Questa scheda mostra un elenco di nomi e &URL; con voci predefinite del filtro AdBlock. Per abilitare una voce spunta la casella di fianco al nome del filtro e regola l'<guilabel
+>Intervallo di aggiornamento automatico</guilabel
+> (il valore predefinito è 7 giorni). </para>
+</listitem>
+</varlistentry>
+  
+</variablelist>
+
+<para
+>Se i filtri di AdBlock sono abilitati viene mostrata un'icona sul lato destro della barra di stato. Fai clic con il &RMB; su questa icona per aprire il menu contestuale con le azioni per mostrare tutti gli elementi bloccabili di una pagina Web, per aprire questo modulo delle &systemsettings; e per disabilitare temporaneamente il blocco di un sito o una pagina.</para>
+
+<para
+>Un clic con il &LMB; mostra anche la finestra con tutti gli elementi bloccabili nella pagina Web aperta. Da questa finestra puoi aggiungere dei nuovi filtri direttamente, senza aprire questo modulo delle &systemsettings;.</para>
+
+</article>

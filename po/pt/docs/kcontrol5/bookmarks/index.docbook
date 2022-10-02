@@ -1,0 +1,166 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Portuguese "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="bookmarks" lang="&language;">
+<articleinfo>
+
+<title
+>Favoritos</title>
+<authorgroup>
+<author
+><personname
+><firstname
+>Xavier</firstname
+><surname
+>Vello</surname
+></personname
+> <email
+>xavier.vello@gmail.com</email
+> </author>
+<othercredit role="translator"
+><firstname
+>José</firstname
+><surname
+>Pires</surname
+><affiliation
+><address
+><email
+>zepires@gmail.com</email
+></address
+></affiliation
+><contrib
+>Tradução</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2016-11-08</date>
+<releaseinfo
+>Aplicações 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Systemsettings</keyword>
+<keyword
+>favoritos</keyword>
+<keyword
+>KIO</keyword>
+</keywordset>
+</articleinfo>
+<sect1 id="conf">
+<title
+>Página pessoal dos Favoritos</title>
+<para
+>Este módulo permite-lhe configurar a página pessoal com os seus Favoritos.</para>
+<para
+>Para ver a página pessoal dos favoritos, escreva <userinput
+>bookmarks:/</userinput
+> na barra da localização.</para>
+<para
+>A configuração deste módulo também está acessível se escrever <userinput
+>bookmarks:/config</userinput
+> na barra da localização.</para>
+<sect2 id="conf-general">
+<title
+>Configuração geral</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Número de colunas a mostrar</guilabel
+></term>
+<listitem>
+<para
+>As pastas são distribuídas automaticamente por várias colunas. O número óptimo de colunas depende da largura da janela do &konqueror; e do número de favoritos que tem.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Mostrar os fundos das pastas</guilabel
+></term>
+<listitem>
+<para
+>Desactive a opção nos sistemas lentos para desactivar as imagens de fundo.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="conf-bookmark">
+<title
+>Favoritos</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Mostrar os favoritos sem pasta</guilabel
+></term>
+<listitem>
+<para
+>Se esta opção não estiver assinalada, os favoritos no topo da hierarquia (sem estar dentro de uma pasta) não estão visíveis. Se estiver assinalada, serão recolhidos numa pasta de "raiz".</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Árvore de favoritos plana</guilabel
+></term>
+<listitem>
+<para
+>As sub-pastas aparecem sem a sua pasta-mãe por omissão. Se activar esta opção, as sub-pastas aparecem sozinhas. Parece menos bonito, mas podê-lo-á ajudar se tiver uma pasta muito grande que deseje dividir em duas colunas.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Mostrar os locais do sistema</guilabel
+></term>
+<listitem>
+<para
+>Mostra uma área com os locais comuns (Pasta Pessoal, Rede, ...). É útil se usar o &konqueror; como gestor de ficheiros.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="conf-cache">
+<title
+>'Cache' de imagens</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Tamanho da 'cache' no disco</guilabel
+></term>
+<listitem>
+<para
+>Indique quanto espaço em disco é usado para fazer uma 'cache' das imagens.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Limpar a 'Cache'</guilabel
+></term>
+<listitem>
+<para
+>Remove todas as imagens na 'cache'. Isto poderá ser necessário se alguns 'favicons' ficarem danificados e se não se actualizarem automaticamente.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+</sect1>
+</article>

@@ -1,0 +1,114 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY nsplugins-kcontrol SYSTEM "nsplugin.docbook">
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Brazilian-Portuguese "INCLUDE"
+> <!-- change language only here -->
+]>
+<!-- extragear has another adblock ? -->
+<article lang="&language;" id="khtml-adblock">
+<articleinfo>
+<title
+>Filtros AdBlock</title>
+<authorgroup>
+<author
+>&Krishna.Tateneni; &Krishna.Tateneni.mail;</author>
+<othercredit role="translator"
+><firstname
+>Lisiane</firstname
+> <surname
+>Sztoltz</surname
+><affiliation
+><address
+> <email
+>lisiane@conectiva.com.br</email
+></address
+></affiliation
+><contrib
+>Tradução</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>22/11/2011</date>
+<releaseinfo
+>&kde; 4.8</releaseinfo>
+</articleinfo>
+
+<para
+>O AdBlocK do &konqueror; pode ser configurado para substituir ou remover imagens ou quadros ('frames') das páginas Web que correspondam a uma série de filtros.</para>
+
+<para
+>A opção <guilabel
+>Habilitar filtros</guilabel
+> ativa ou desativa a utilização da lista de filtros de URLs.</para>
+<para
+>Se a opção <guilabel
+>Ocultar imagens filtradas</guilabel
+> estiver ativa, então as imagens bloqueadas são removidas por completo da página e o espaço ocupado por elas será utilizado. Se a opção estiver desativada, então será usada uma imagem de substituição no local das imagens filtradas.</para>
+
+<variablelist>
+<varlistentry id="khtml-adblock-manual">
+<term
+><guilabel
+>Filtro manual</guilabel
+></term>
+<listitem>
+<para
+>A parte principal desta aba é uma lista de URLs que serão comparados em relação aos nomes das imagens e quadros para decidir as ações de filtragem. Podem ser usados caracteres coringas com expressões regulares para os nomes dos arquivos.</para>
+
+<para
+>Use o campo de texto <guilabel
+>Pesquisar</guilabel
+>, acima da lista, para filtrar os itens correspondentes em tempo real.</para>
+
+<para
+>Cada filtro poderá ser expresso como um texto de caracteres especiais para arquivos (por exemplo, http://www.site.com/ads/*) ou como uma expressão regular completa, envolvendo o filtro com barras normais (por exemplo, //(ads|dclk)\./).</para>
+
+<para
+>Qualquer texto de filtragem poderá ser antecedido de <literal
+>@@</literal
+> para permitir qualquer &URL; correspondente, o que terá maior prioridade sobre qualquer filtro de bloqueio.</para>
+
+<para
+>O <guilabel
+>Importar</guilabel
+> e <guilabel
+>Exportar</guilabel
+> irão salvar ou ler a lista de filtros atual para um arquivo de texto normal. O arquivo inicia com uma linha de cabeçalho <userinput
+>[AdBlock</userinput
+>, então todos os filtros se seguem cada um em uma linha separada. As linhas antecedidas de um ponto de exclamação (<userinput
+>!</userinput
+>) serão tratadas como comentários e poderão ser usadas para clarificar ou legendar um conjunto de filtros.</para>
+
+<para
+>Selecione um item na lista para alterá-lo no campo de edição ou para removê-lo. Insira aqui um novo texto de filtragem e adicione-o à lista com o botão <guibutton
+>Inserir</guibutton
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry id="khtml-adblock-automatic">
+<term
+><guilabel
+>Filtro automático</guilabel
+></term>
+<listitem>
+<para
+>Esta aba mostra uma lista de nomes e &URL;s com entradas de filtro AdBlock predefinidas. Para ativar uma entrada, marque a caixa de opção ao lado do nome do filtro e ajuste o <guilabel
+>Intervalo de atualização automática</guilabel
+> (padrão de 7 dias). </para>
+</listitem>
+</varlistentry>
+  
+</variablelist>
+
+<para
+>Se os filtros AdBlock estiverem ativos, um ícone à direita da barra de status é mostrado. Use um clique do &RMB; neste ícone para abrir um menu de contexto com ações para exibir todos os elementos bloqueáveis na página Web, abrir este módulo do &systemsettings; e desativar o bloqueio para um site ou página temporariamente.</para>
+
+<para
+>Um clique com o &LMB; mostra a janela com todos os elementos bloqueáveis na página Web aberta. A partir desta janela, você pode adicionar novos filtros diretamente sem abrir este módulo das &systemsettings;.</para>
+
+</article>

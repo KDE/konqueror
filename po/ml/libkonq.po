@@ -1,0 +1,215 @@
+# translation of libkonq.po to
+# Copyright (C) 2008 This_file_is_part_of_KDE
+# This file is distributed under the same license as the kdebase package.
+# ANI PETER|അനി പീറ്റര്‍ <peter.ani@gmail.com>, 2008.
+# Hari|ഹരി  Vishnu | വിഷ്ണു <harivishnu@gmail.com>, 2008.
+# Praveen Arimbrathodiyil <pravi.a@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdebase\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2008-11-29 01:54-0800\n"
+"Last-Translator: Praveen Arimbrathodiyil <pravi.a@gmail.com>\n"
+"Language-Team: SMC <smc.org.in>\n"
+"Language: ml\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "&തുറക്കുക"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "&അറയുണ്ടാക്കുക..."
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "&വീണ്ടെടുക്കുക"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "ചവറ്റുകുട്ട &കാലിയാക്കുക"
+
+#: src/konq_popupmenu.cpp:312
+#, fuzzy, kde-format
+msgid "&Configure Trash Bin"
+msgstr "ചവറ്റുകുട്ട &കാലിയാക്കുക"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "ഈ താള്‍ &ഓര്‍മ്മക്കറിപ്പായി ചേര്‍ക്കുക"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "ഈ സ്ഥാനം &ഓര്‍മ്മക്കറിപ്പായി ചേര്‍ക്കുക"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "ഈ അറ &ഓര്‍മ്മക്കറിപ്പായി ചേര്‍ക്കുക"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "ഈ കണ്ണി &ഓര്‍മ്മക്കറിപ്പായി ചേര്‍ക്കുക"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "ഈ ഫയല്‍ &ഓര്‍മ്മക്കറിപ്പായി ചേര്‍ക്കുക"
+
+#: src/konq_popupmenu.cpp:379
+#, kde-format
+msgid "Preview In"
+msgstr "കണ്ടുനോക്കാന്‍"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "&ഗുണഗണങ്ങള്‍"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy To"
+#~ msgstr "എവിടേക്കു് പകര്‍ത്തണം"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "എവിടേക്കു് നീക്കണം"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "ആസ്ഥാന അറ"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "റൂട്ട് അറ"
+
+#~ msgctxt "@title:menu in Copy To or Move To submenu"
+#~ msgid "Browse..."
+#~ msgstr "പരതുക..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "ഇവിടെ ഒട്ടിക്കുക"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "ഇവിടേക്കു് നീക്കുക"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "ഒരു അറ അതിന്റെ മുകളിലേക്ക് തന്നെ ഇടാന്‍ കഴിയില്ല"
+
+#~ msgid "File name for dropped contents:"
+#~ msgstr "ഡ്രോപ് ചെയ്ത (ഇട്ട) ഉള്ളടക്കങ്ങള്‍കുള്ള ഫയലിന്റെ പേരു്‌:"
+
+#~ msgid "&Move Here"
+#~ msgstr "ഇവിടേക്കു് &നീക്കുക"
+
+#~ msgid "&Copy Here"
+#~ msgstr "ഇവിടെ &പകര്‍ത്തുക"
+
+#~ msgid "&Link Here"
+#~ msgstr "ഇവിടെ &ബന്ധപ്പെടുത്തുക"
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "&ചുമര്‍ച്ചിത്രമായി ക്രമീകരിക്കുക"
+
+#~ msgid "C&ancel"
+#~ msgstr "റ&ദ്ദാക്കുക"
+
+#, fuzzy
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "പുതിയതുണ്ടാക്കുക"
+
+#, fuzzy
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "അറയുടെ പേരു് നല്‍കുക:"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "പുതിയതുണ്ടാക്കുക"
+
+#, fuzzy
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "പുതിയ അറ"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "പുതിയ അറ"
+
+#, fuzzy
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "അറയുടെ പേരു് നല്‍കുക:"
+
+#, fuzzy
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "പുതിയ അറ"
+
+#~ msgid "Share"
+#~ msgstr "പങ്കിടുക"
+
+#~ msgid "Create New"
+#~ msgstr "പുതിയതുണ്ടാക്കുക"
+
+#~ msgid "Link to Device"
+#~ msgstr "ഡിവൈസുമായി ബന്ധിപ്പിക്കുക"
+
+#~ msgid "<qt>The template file <b>%1</b> does not exist.</qt>"
+#~ msgstr "<qt>ടെംപ്ലേറ്റ് ഫയല്‍ <b>%1</b> നിലവിലില്ല.</qt>"
+
+#~ msgid "File name:"
+#~ msgstr "ഫയലിന്റെ പേരു്:"
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Actions"
+#~ msgstr "&പ്രവൃത്തികള്‍"
+
+#, fuzzy
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With"
+#~ msgstr "ഫയല്‍ &തുറക്കേണ്ട പ്രയോഗം"
+
+#, fuzzy
+#~ msgctxt "@action:inmenu Open With"
+#~ msgid "&Other..."
+#~ msgstr "&മറ്റുള്ളവ..."
+
+#, fuzzy
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With..."
+#~ msgstr "ഫയല്‍ &തുറക്കേണ്ട പ്രയോഗം..."
+
+#~ msgid "Open &with %1"
+#~ msgstr "%1 &ഉപയോഗിച്ചു് തുറക്കുക"

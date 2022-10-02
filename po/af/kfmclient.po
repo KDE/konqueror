@@ -1,0 +1,329 @@
+# UTF-8 test:äëïöü
+# Copyright (C) 2001, 2005 Free Software Foundation, Inc.
+# Frikkie Thirion <frix@expertron.co.za>, 2001,2002.
+# Kobus <kabousv@therugby.co.za>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kfmclient stable\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"PO-Revision-Date: 2005-11-24 21:27+0200\n"
+"Last-Translator: Kobus <kabousv@therugby.co.za>\n"
+"Language-Team: AFRIKAANS <translate-discuss-af@lists.sourceforge.net>\n"
+"Language: af\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: kfmclient.cpp:49
+#, kde-format
+msgid "kfmclient"
+msgstr "kfmkliënt"
+
+#: kfmclient.cpp:57
+#, kde-format
+msgid "KDE tool for opening URLs from the command line"
+msgstr "Kde program vir oopgemaak Urls van die opdrag lyn"
+
+#: kfmclient.cpp:65
+#, kde-format
+msgid "Non interactive use: no message boxes"
+msgstr "Nie interaktiewe gebruik: geen boodskap bokse"
+
+#: kfmclient.cpp:67
+#, kde-format
+msgid "Show available commands"
+msgstr "Vertoon beskikbaar opdragte."
+
+#: kfmclient.cpp:69
+#, kde-format
+msgid "Command (see --commands)"
+msgstr "Opdrag (sien --commands)."
+
+#: kfmclient.cpp:71
+#, kde-format
+msgid "Arguments for command"
+msgstr "Argumente vir opdrag."
+
+#: kfmclient.cpp:73
+#, kde-format
+msgid "The files/URLs opened by the application will be deleted after use"
+msgstr ""
+
+#: kfmclient.cpp:81
+#, kde-format
+msgid ""
+"\n"
+"Syntax:\n"
+msgstr ""
+"\n"
+"Sintaks:\n"
+
+#: kfmclient.cpp:82
+#, kde-format
+msgid ""
+"  kfmclient openURL 'url' ['mimetype']\n"
+"            # Opens a window showing 'url'.\n"
+"            #  'url' may be a relative path\n"
+"            #   or file name, such as . or subdir/\n"
+"            #   If 'url' is omitted, $HOME is used instead.\n"
+"\n"
+msgstr ""
+"  kfmkliënt Openurl 'url' ['mimetype']\n"
+"            # Maak oop 'n venster te wys 'url'.\n"
+"            #  'url' dalk mag wees 'n relatiewe gids soeklys\n"
+"            #   of lêer naam, soos as . of subgids/\n"
+"            #   As 'url' is weggelaat, $Huis is gebruik word in plaas van.\n"
+"\n"
+
+#: kfmclient.cpp:87
+#, kde-format
+msgid ""
+"            # If 'mimetype' is specified, it will be used to determine the\n"
+"            #   component that Konqueror should use. For instance, set it "
+"to\n"
+"            #   text/html for a web page, to make it appear faster\n"
+"\n"
+msgstr ""
+"            # As 'mimetype' is gespesifiseer, dit sal wees gebruik word na "
+"bepaal die\n"
+"            #   komponent wat Konqueror moet gebruik. Vir voorbeeld, stel "
+"dit na\n"
+"            #   teks/html Vir 'n web bladsy, na maak dit verskyn vinniger\n"
+"\n"
+
+#: kfmclient.cpp:91
+#, kde-format
+msgid ""
+"  kfmclient newTab 'url' ['mimetype']\n"
+"            # Same as above but opens a new tab with 'url' in an existing "
+"Konqueror\n"
+"            #   window on the current active desktop if possible.\n"
+"\n"
+msgstr ""
+"  kfmclient newTab 'url' ['mimetype']\n"
+"            # Selfde as bo, maar open 'n nuwe oortjie met 'url' in 'n "
+"bestaande Konqueror\n"
+"            #   venster op die huidige aktiewe werksskerm, indien moontlik.\n"
+"\n"
+
+#: kfmclient.cpp:271
+#, fuzzy, kde-format
+#| msgid "Syntax Error: Not enough arguments\n"
+msgid "Syntax error, not enough arguments\n"
+msgstr "Sintaks Fout: Nie genoeg argumente\n"
+
+#: kfmclient.cpp:275
+#, fuzzy, kde-format
+#| msgid "Syntax Error: Too many arguments\n"
+msgid "Syntax error, too many arguments\n"
+msgstr "Sintaks Fout: Te veel argumente\n"
+
+#: kfmclient.cpp:324
+#, fuzzy, kde-format
+#| msgid "Syntax Error: Unknown command '%1'\n"
+msgid "Syntax error, unknown command '%1'\n"
+msgstr "Sintaks Fout: Onbekende opdrag '%1'\n"
+
+#~ msgid ""
+#~ "  kfmclient openProfile 'profile' ['url']\n"
+#~ "            # Opens a window using the given profile.\n"
+#~ "            #   'profile' is a file under ~/.kde/share/apps/konqueror/"
+#~ "profiles.\n"
+#~ "            #   'url' is an optional URL to open.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmkliënt Openprofiel 'profiel' ['Url']\n"
+#~ "            # Maak oop 'n venster te gebruik die gegewe profiel.\n"
+#~ "            #   'profiel' is 'n lêer onder ~/.kde/deel/programme/"
+#~ "konqueror/profille.\n"
+#~ "            #   'Url' is 'n opsionele Url na open.\n"
+#~ "\n"
+
+#, fuzzy
+#~| msgid "Profile %1 not found\n"
+#~ msgid "Profile '%1' not found\n"
+#~ msgstr "Profiel %1 nie gevind\n"
+
+#~ msgid ""
+#~ "  kfmclient openProperties 'url'\n"
+#~ "            # Opens a properties menu\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmkliënt Open-eienskappe 'url'\n"
+#~ "            # Maak oop 'n eienskappe kieslys\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "  kfmclient exec ['url' ['binding']]\n"
+#~ "            # Tries to execute 'url'. 'url' may be a usual\n"
+#~ "            #   URL, this URL will be opened. You may omit\n"
+#~ "            #   'binding'. In this case the default binding\n"
+#~ msgstr ""
+#~ "  kfmkliënt voer uit ['Url' ['binding']]\n"
+#~ "            # Probeer na uitvoer 'Url'. 'Url' dalk mag wees 'n gewone\n"
+#~ "            #   Url, hierdie Url sal wees geöpende. Jy dalk mag weglaat\n"
+#~ "            #   'binding'. In hierdie kas die verstek binding\n"
+
+#~ msgid ""
+#~ "            #   is tried. Of course URL may be the URL of a\n"
+#~ "            #   document, or it may be a *.desktop file.\n"
+#~ msgstr ""
+#~ "            #   is probeer. Van natuurlik Url dalk mag wees die Url Van "
+#~ "'n\n"
+#~ "            #   dokument, of dit dalk mag wees 'n *.werkskerm lêer.\n"
+
+#~ msgid ""
+#~ "            #   This way you could for example mount a device\n"
+#~ "            #   by passing 'Mount default' as binding to \n"
+#~ "            #   'cdrom.desktop'\n"
+#~ "\n"
+#~ msgstr ""
+#~ "            #   Hierdie weg jy kon vir voorbeeld mount 'n toestel\n"
+#~ "            #   deur aangee 'mount default' as binding na \n"
+#~ "            #   'cdrom.desktop'\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "  kfmclient move 'src' 'dest'\n"
+#~ "            # Moves the URL 'src' to 'dest'.\n"
+#~ "            #   'src' may be a list of URLs.\n"
+#~ msgstr ""
+#~ "  kfmkliënt beweeg 'src' 'dest'\n"
+#~ "            # Skuiwe die Url 'src' na 'dest'.\n"
+#~ "            #   'src' dalk mag wees 'n lys van Urls.\n"
+
+#~ msgid ""
+#~ "  kfmclient download ['src']\n"
+#~ "            # Copies the URL 'src' to a user specified location'.\n"
+#~ "            #   'src' may be a list of URLs, if not present then\n"
+#~ "            #   a URL will be requested.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmkliënt aflaai ['src']\n"
+#~ "            # Kopieër die Url 'src' na 'n gebruiker gespesifiseer "
+#~ "location'.\n"
+#~ "            #   'src' dalk mag wees 'n lys van Urls, as nie voordra dan "
+#~ "word\n"
+#~ "            #   'n Url sal wees versoekte.\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "  kfmclient copy 'src' 'dest'\n"
+#~ "            # Copies the URL 'src' to 'dest'.\n"
+#~ "            #   'src' may be a list of URLs.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmkliënt kopie 'src' 'dest'\n"
+#~ "            # Kopieër die Url 'src' na 'dest'.\n"
+#~ "            #   'src' dalk mag wees 'n lys van Urls.\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "  kfmclient sortDesktop\n"
+#~ "            # Rearranges all icons on the desktop.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmkliënt Sort-werkskerm\n"
+#~ "            # Herrangskik alle ikoone op die werkskerm.\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "  kfmclient configure\n"
+#~ "            # Re-read Konqueror's configuration.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmklinët konfigureer\n"
+#~ "            # Herlees Konqueror se konfigurasie.\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "  kfmclient configureDesktop\n"
+#~ "            # Re-read kdesktop's configuration.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmklinët konfigureer Werksskerm\n"
+#~ "            # Herlees kdewerksskerm konfigurasie.\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "*** Examples:\n"
+#~ "  kfmclient exec file:/root/Desktop/cdrom.desktop \"Mount default\"\n"
+#~ "             // Mounts the CD-ROM\n"
+#~ "\n"
+#~ msgstr ""
+#~ "*** Voorbeelde:\n"
+#~ "  kfmkliënt voer uit lêer:/root/Werkskerm/cdrom.Werkskerm \"Mount verstek"
+#~ "\"\n"
+#~ "             // Koppel die CD-ROM\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "  kfmclient exec file:/home/weis/data/test.html\n"
+#~ "             // Opens the file with default binding\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmkliënt voer uit lêer:/huis/weis/data/toets.html\n"
+#~ "             // Maak oop die lêer met verstek binding\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "  kfmclient exec file:/home/weis/data/test.html Netscape\n"
+#~ "             // Opens the file with netscape\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmkliënt voer uit lêer:/huis/weis/data/toets.html netscape\n"
+#~ "             // Maak oop die lêer met netscape\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "  kfmclient exec ftp://localhost/\n"
+#~ "             // Opens new window with URL\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmkliënt voer uit ftp://localhost/\n"
+#~ "             // Maak oop nuwe venster met Url\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "  kfmclient exec file:/root/Desktop/emacs.desktop\n"
+#~ "             // Starts emacs\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmkliënt opdrag lêer:/root/Werkskerm/emacs.Werkskerm\n"
+#~ "             // Begin emacs\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "  kfmclient exec file:/root/Desktop/cdrom.desktop\n"
+#~ "             // Opens the CD-ROM's mount directory\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmkliënt voer uit lêer:/root/Werkskerm/cdrom.Werkskerm\n"
+#~ "             // Maak oop die CD-ROM's mount gids\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "  kfmclient exec .\n"
+#~ "             // Opens the current directory. Very convenient.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmkliënt voer uit .\n"
+#~ "             // Maak oop die huidige gids. Baie gerieflik.\n"
+#~ "\n"
+
+#~ msgid "Unable to download from an invalid URL."
+#~ msgstr "Nie moontlik na aflaai van 'n ongeldige Url."

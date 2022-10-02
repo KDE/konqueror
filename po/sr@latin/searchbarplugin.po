@@ -1,0 +1,85 @@
+# Translation of searchbarplugin.po into Serbian.
+# Toplica Tanaskovic <toptan@kde.org.yu>, 2004.
+# Bojan Bozovic <bole89@infosky.net>, 2004.
+# Slobodan Simic <slsimic@gmail.com>, 2005, 2008, 2009.
+# Chusslove Illich <caslav.ilic@gmx.net>, 2006, 2009, 2010, 2011, 2012, 2016.
+# Dalibor Djuric <daliborddjuric@gmail.com>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: searchbarplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2020-05-11 02:43+0200\n"
+"PO-Revision-Date: 2016-07-23 22:41+0200\n"
+"Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
+"Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
+"Language: sr@latin\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+"X-Environment: kde\n"
+"X-Generator: Lokalize 1.0\n"
+
+#: searchbar.cpp:76
+#, kde-format
+msgid ""
+"Search Bar<p>Enter a search term. Click on the icon to change search mode or "
+"provider.</p>"
+msgstr ""
+"Traka pretrage<p>Unesite izraz za traženje. Kliknite na ikonicu da promenite "
+"režim ili dobavljača pretrage.</p>"
+
+#: searchbar.cpp:82
+#, kde-format
+msgid "Search Bar"
+msgstr "Traka pretrage"
+
+#: searchbar.cpp:87
+#, kde-format
+msgid "Focus Searchbar"
+msgstr "Fokusiraj traku pretrage"
+
+#: searchbar.cpp:304
+#, kde-format
+msgid "Find in This Page"
+msgstr "Pronađi na ovoj stranici"
+
+#: searchbar.cpp:315
+#, kde-format
+msgid "Select Search Engines..."
+msgstr "Izaberi motor pretrage..."
+
+#: searchbar.cpp:334
+#, kde-format
+msgid "Add %1..."
+msgstr "Dodaj %1...|/|Dodaj $[aku %1]..."
+
+#: searchbar.cpp:585
+#, kde-format
+msgid "Enable Suggestion"
+msgstr "Uključi predloge"
+
+#. i18n: ectx: ToolBar (locationToolBar)
+#: searchbar.rc:3
+#, kde-format
+msgid "Search Toolbar"
+msgstr "Traka pretrage"
+
+# >> @title
+#: WebShortcutWidget.cpp:46
+#, kde-format
+msgid "Set Uri Shortcuts"
+msgstr "Postavljanje prečica ka URI‑ju"
+
+#: WebShortcutWidget.cpp:60
+#, kde-format
+msgid "Name:"
+msgstr "Ime:"
+
+#: WebShortcutWidget.cpp:64
+#, kde-format
+msgid "Shortcuts:"
+msgstr "Prečica:"

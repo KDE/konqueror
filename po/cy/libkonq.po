@@ -1,0 +1,371 @@
+# translation of libkonq.po to Cymraeg
+# Bwrdd Gwaith yn Gymraeg.
+# Copyright (C) 2003, 2004 Free Software Foundation, Inc.
+# www.kyfieithu.co.uk<kyfieithu@dotmon.com>, www.gyfieithu.co.uk<kyfieithu@dotmon.com>, 2003.
+# KD at KGyfieithu <kyfieithu@dotmon.com>, 2003, 2004.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2004-01-05 15:00+0000\n"
+"Last-Translator: KD at KGyfieithu <kyfieithu@dotmon.com>\n"
+"Language-Team: Cymraeg <cy@li.org>\n"
+"Language: cy\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"www.gyfieithu.co.uk<kyfieithu@dotmon.com>\n"
+"X-Generator: KBabel 1.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "&Agor"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "Creu pl&ygell..."
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "&Adfer"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "Gwagio'r Swbri&el"
+
+#: src/konq_popupmenu.cpp:312
+#, fuzzy, kde-format
+#| msgid "&Empty Trash Bin"
+msgid "&Configure Trash Bin"
+msgstr "Gwagio'r Swbri&el"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "&Tudnodi'r Dudalen Yma"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "T&udnodi'r Lleoliad Yma"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "Tu&dnodi'r Blygell Yma"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "Tudnod&i'r Cyswllt Yma"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "Tudnod&i'r Ffeil Yma"
+
+#: src/konq_popupmenu.cpp:379
+#, fuzzy, kde-format
+#| msgid "Preview"
+msgid "Preview In"
+msgstr "Rhagolwg"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "&Priodweddau"
+
+#, fuzzy
+#~| msgid "Move to Trash"
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "Symud i'r Sbwriel"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "Plygell Newydd"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "Plygell Newydd"
+
+#, fuzzy
+#~| msgid "&Copy Here"
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "&Copïo Yma"
+
+#, fuzzy
+#~| msgid "&Move Here"
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "Sy&mud Yma"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "Nid yw'n bosib gollwng plygell ar ei hunan"
+
+#~ msgid "&Move Here"
+#~ msgstr "Sy&mud Yma"
+
+#~ msgid "&Copy Here"
+#~ msgstr "&Copïo Yma"
+
+#~ msgid "&Link Here"
+#~ msgstr "Creu Cysw&llt Yma "
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "Gosod fel Papur &Wal"
+
+#~ msgid "C&ancel"
+#~ msgstr "&Diddymu"
+
+#, fuzzy
+#~| msgid "Create New"
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "Creu Newydd"
+
+#, fuzzy
+#~| msgid "Enter folder name:"
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "Rhowch enw'r blygell:"
+
+#, fuzzy
+#~| msgid "Create New"
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "Creu Newydd"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "Plygell Newydd"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "Plygell Newydd"
+
+#, fuzzy
+#~| msgid "Enter folder name:"
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "Rhowch enw'r blygell:"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "Plygell Newydd"
+
+#~ msgid "Share"
+#~ msgstr "Rhannu"
+
+#~ msgid "Create New"
+#~ msgstr "Creu Newydd"
+
+#, fuzzy
+#~ msgid "Link to Device"
+#~ msgstr "Dyfais"
+
+#, fuzzy
+#~ msgid "<qt>The template file <b>%1</b> does not exist.</qt>"
+#~ msgstr "<qt>Nid yw'r ffeil batrymlun <b>%1</b> yn bodoli.</qt>"
+
+#~ msgid "File name:"
+#~ msgstr "Enw ffeil:"
+
+#, fuzzy
+#~| msgid "Ac&tions"
+#~ msgctxt "@title:menu"
+#~ msgid "&Actions"
+#~ msgstr "Gwei&thredoedd"
+
+#, fuzzy
+#~| msgid "&Open With"
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With"
+#~ msgstr "&Agor Gyda"
+
+#, fuzzy
+#~| msgid "&Other..."
+#~ msgctxt "@action:inmenu Open With"
+#~ msgid "&Other..."
+#~ msgstr "&Eraill..."
+
+#, fuzzy
+#~| msgid "&Open With..."
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With..."
+#~ msgstr "&Agor Gyda..."
+
+#, fuzzy
+#~| msgid "Open with %1"
+#~ msgid "Open &with %1"
+#~ msgstr "Agor gyda %1"
+
+#~ msgid "Open in New &Window"
+#~ msgstr "Agor mewn Ffenestr Ne&wydd"
+
+#~ msgid "Open the trash in a new window"
+#~ msgstr "Agor y sbwriel mewn ffenestr newydd"
+
+#, fuzzy
+#~ msgid "Open the medium in a new window"
+#~ msgstr "Agor y ddogfen mewn ffenestr newydd"
+
+#~ msgid "Open the document in a new window"
+#~ msgstr "Agor y ddogfen mewn ffenestr newydd"
+
+#, fuzzy
+#~| msgid "Delete Files"
+#~ msgid "Deleting"
+#~ msgstr "Dileu Ffeiliau"
+
+#~ msgid "Und&o"
+#~ msgstr "&Datwneud"
+
+#~ msgid "Und&o: Copy"
+#~ msgstr "&Datwneud: Copi"
+
+#~ msgid "Und&o: Link"
+#~ msgstr "&Datwneud: Creu Cyswllt"
+
+#~ msgid "Und&o: Move"
+#~ msgstr "&Datwneud: Symud"
+
+#, fuzzy
+#~ msgid "Und&o: Rename"
+#~ msgstr "&Datwneud: Creu Cyswllt"
+
+#~ msgid "Und&o: Trash"
+#~ msgstr "Diz&ober : Sbwriel"
+
+#~ msgid "Und&o: Create Folder"
+#~ msgstr "&Datwneud: Creu Plygell"
+
+#, fuzzy
+#~ msgid "Do you really want to delete this item?"
+#~ msgid_plural "Do you really want to delete these %1 items?"
+#~ msgstr[0] "Ydych wir eisiau dileu yr eitem yma?"
+#~ msgstr[1] "Ydych wir eisiau dileu y %1 o eitemau yma?"
+
+#~ msgid "Delete Files"
+#~ msgstr "Dileu Ffeiliau"
+
+#, fuzzy
+#~ msgid "Do you really want to move this item to the trash?"
+#~ msgid_plural "Do you really want to move these %1 items to the trash?"
+#~ msgstr[0] "Ydych wir eisiau symud yr eitem yma i'r sbwriel?"
+#~ msgstr[1] "Ydych wir eisiau symud y %1 o eitemau yma i'r sbwriel?"
+
+#~ msgid "Move to Trash"
+#~ msgstr "Symud i'r Sbwriel"
+
+#~ msgctxt "Verb"
+#~ msgid "&Trash"
+#~ msgstr "Symud i'&r sbwriel"
+
+#, fuzzy
+#~| msgid "Und&o"
+#~ msgid "Und&o: %1"
+#~ msgstr "&Datwneud"
+
+#, fuzzy
+#~ msgid "Background Settings"
+#~ msgstr "Cefndir"
+
+#~ msgid "Background"
+#~ msgstr "Cefndir"
+
+#~ msgid "Co&lor:"
+#~ msgstr "&Lliw:"
+
+#~ msgid "&Picture:"
+#~ msgstr "Llu&n:"
+
+#~ msgid "Preview"
+#~ msgstr "Rhagolwg"
+
+#~ msgid "None"
+#~ msgstr "Dim un"
+
+#~ msgid "&Default Size"
+#~ msgstr "Maint Rhagoso&dedig"
+
+#~ msgid "&Huge"
+#~ msgstr "Anfert&h"
+
+#, fuzzy
+#~ msgid "&Very Large"
+#~ msgstr "&Mawr"
+
+#~ msgid "&Large"
+#~ msgstr "&Mawr"
+
+#~ msgid "&Medium"
+#~ msgstr "&Canolig"
+
+#~ msgid "&Small"
+#~ msgstr "&Bach"
+
+#~ msgid "&Tiny"
+#~ msgstr "Bach &Iawn"
+
+#~ msgid "Configure Background..."
+#~ msgstr "Ffurfweddu Cefndir..."
+
+#, fuzzy
+#~ msgid "Allows choosing of background settings for this view"
+#~ msgstr "Caniatáu dewis delwedd gefndir ar gyfer yr olwg hon"
+
+#~ msgid "<p>You do not have enough permissions to read <b>%1</b></p>"
+#~ msgstr "<p>Nid oes gennych ganiatadau digonol i ddarllen <b>%1</b></p>"
+
+#, fuzzy
+#~ msgid "<p><b>%1</b> does not seem to exist anymore</p>"
+#~ msgstr "<p>Nid yw <b>%1</b> yn bodoli mwyach</p>"
+
+#~ msgid "Search result: %1"
+#~ msgstr "Canlyniad y chwiliad: %1"
+
+#~ msgid "Do you really want to shred this item?"
+#~ msgid_plural "Do you really want to shred these %1 items?"
+#~ msgstr[0] "Ydych wir eisiau malu yr eitem yma?"
+#~ msgstr[1] "Ydych wir eisiau malu y %1 o eitemau yma?"
+
+#~ msgid "Shred Files"
+#~ msgstr "Malu Ffeiliau"
+
+#~ msgid "Shred"
+#~ msgstr "Malu"

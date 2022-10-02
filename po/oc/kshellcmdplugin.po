@@ -1,0 +1,607 @@
+# translation of konqueror.po to Occitan
+# Occitan translation of konqueror.po
+# Copyright (C) 2002,2003,2004, 2005, 2006, 2007, 2008 Free Software Foundation, Inc.
+#
+# Yannig MARCHEGAY (Kokoyaya) <yannig@marchegay.org> - 2006-2007
+#
+# Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>, 2007, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2008-08-06 00:03+0200\n"
+"Last-Translator: \n"
+"Language-Team: Occitan <oc@li.org>\n"
+"Language: oc\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#. i18n: ectx: Menu (tools)
+#: konq_shellcmdplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "&Espleches"
+
+#: kshellcmdexecutor.cpp:106
+#, kde-format
+msgid "Input Required:"
+msgstr ""
+
+#: kshellcmdplugin.cpp:32
+#, kde-format
+msgid "&Execute Shell Command..."
+msgstr ""
+
+#: kshellcmdplugin.cpp:41
+#, kde-format
+msgid ""
+"KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a bug."
+msgstr ""
+
+#: kshellcmdplugin.cpp:51
+#, kde-format
+msgid "Executing shell commands works only on local directories."
+msgstr ""
+
+#: kshellcmdplugin.cpp:73
+#, kde-format
+msgctxt "@title:window"
+msgid "Execute Shell Command"
+msgstr ""
+
+#: kshellcmdplugin.cpp:74
+#, kde-format
+msgid "Execute shell command in current directory:"
+msgstr ""
+
+#: kshellcmdplugin.cpp:85
+#, kde-format
+msgid "Output from command: \"%1\""
+msgstr ""
+
+#~ msgid "Configure"
+#~ msgstr "Configurar"
+
+#~ msgid "Extensions"
+#~ msgstr "Extensions"
+
+#~ msgid "Konqueror"
+#~ msgstr "Konqueror"
+
+#~ msgid "http://konqueror.kde.org"
+#~ msgstr "http://konqueror.kde.org"
+
+#~ msgid "David Faure"
+#~ msgstr "David Faure"
+
+#~ msgid "Simon Hausmann"
+#~ msgstr "Simon Hausmann"
+
+#~ msgid "Michael Reiher"
+#~ msgstr "Michael Reiher"
+
+#~ msgid "Matthias Welk"
+#~ msgstr "Matthias Welk"
+
+#~ msgid "Developer"
+#~ msgstr "Desvolopaire"
+
+#~ msgid "Alexander Neundorf"
+#~ msgstr "Alexander Neundorf"
+
+#~ msgid "Michael Brade"
+#~ msgstr "Michael Brade"
+
+#~ msgid "Lars Knoll"
+#~ msgstr "Lars Knoll"
+
+#~ msgid "Dirk Mueller"
+#~ msgstr "Dirk Mueller"
+
+#~ msgid "Peter Kelly"
+#~ msgstr "Peter Kelly"
+
+#~ msgid "Waldo Bastian"
+#~ msgstr "Waldo Bastian"
+
+#~ msgid "Germain Garand"
+#~ msgstr "Germain Garand"
+
+#~ msgid "Leo Savernik"
+#~ msgstr "Leo Savernik"
+
+#~ msgid "Stephan Kulow"
+#~ msgstr "Stephan Kulow"
+
+#~ msgid "Antti Koivisto"
+#~ msgstr "Antti Koivisto"
+
+#~ msgid "Zack Rusin"
+#~ msgstr "Zack Rusin"
+
+#~ msgid "Tobias Anton"
+#~ msgstr "Tobias Anton"
+
+#~ msgid "Lubos Lunak"
+#~ msgstr "Lubos Lunak"
+
+#~ msgid "Allan Sandfeld Jensen"
+#~ msgstr "Allan Sandfeld Jensen"
+
+#~ msgid "Harri Porten"
+#~ msgstr "Harri Porten"
+
+#~ msgid "Wynn Wilkes"
+#~ msgstr "Wynn Wilkes"
+
+#~ msgid "George Staikos"
+#~ msgstr "George Staikos"
+
+#~ msgid "Carsten Pfeiffer"
+#~ msgstr "Carsten Pfeiffer"
+
+#~ msgid "Torsten Rahn"
+#~ msgstr "Torsten Rahn"
+
+#~ msgid "Torben Weis"
+#~ msgstr "Torben Weis"
+
+#~ msgid "Joseph Wenninger"
+#~ msgstr "Joseph Wenninger"
+
+#~ msgid "Stephan Binner"
+#~ msgstr "Stephan Binner"
+
+#~ msgid "Ivor Hewitt"
+#~ msgstr "Ivor Hewitt"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#~ msgid "Show %1"
+#~ msgstr "Mostrar %1"
+
+#, fuzzy
+#~| msgid "Clear History"
+#~ msgctxt "@title:window"
+#~ msgid "History"
+#~ msgstr "Voidar l'istoric"
+
+#, fuzzy
+#~| msgid "Sort"
+#~ msgctxt "@action:inmenu Parent of 'By Name' and 'By Date'"
+#~ msgid "Sort"
+#~ msgstr "Ordenar"
+
+#~ msgid "Miscellaneous"
+#~ msgstr "Divèrs"
+
+#~ msgid "Open in New &Window"
+#~ msgstr "Dobrir dins una &fenèstra nòva"
+
+#~ msgid "Open in New Tab"
+#~ msgstr "Dobrir dins un onglet novèl"
+
+#, fuzzy
+#~| msgid "Copy Link Address"
+#~ msgid "&Copy Link Address"
+#~ msgstr "Copiar l'adreça del ligam"
+
+#~ msgid "&Preferences..."
+#~ msgstr "&Preferéncias..."
+
+#~ msgid "By &Name"
+#~ msgstr "Per &nom"
+
+#~ msgid "By &Date"
+#~ msgstr "Per &data"
+
+#, fuzzy
+#~| msgid "Clear History"
+#~ msgid "Search in history"
+#~ msgstr "Voidar l'istoric"
+
+#, fuzzy
+#~| msgid "Extensions"
+#~ msgid "Session to open"
+#~ msgstr "Sessions"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Loading..."
+#~ msgstr "Cargament..."
+
+#~ msgid "Canceled."
+#~ msgstr "Anullat."
+
+#~ msgid "File Management"
+#~ msgstr "Gestion de fichièrs"
+
+#~ msgid "Home Folder"
+#~ msgstr "Repertòri personal"
+
+#, fuzzy
+#~| msgid "Home Folder"
+#~ msgid "Home"
+#~ msgstr "Repertòri personal"
+
+#, fuzzy
+#~| msgid "Home Folder"
+#~ msgid "Home Page"
+#~ msgstr "Repertòri personal"
+
+#, fuzzy
+#~| msgctxt "@title:tab"
+#~| msgid "Loading..."
+#~ msgid "Manage..."
+#~ msgstr "Cargament..."
+
+#~ msgid "New &Window"
+#~ msgstr "&Fenèstra nòva"
+
+#~ msgid "&Find File..."
+#~ msgstr "&Recercar un fichièr"
+
+#~ msgid "&Use index.html"
+#~ msgstr "&Utilizar index.html"
+
+#, fuzzy
+#~| msgid "&View"
+#~ msgctxt "This option links konqueror views"
+#~ msgid "Lin&k View"
+#~ msgstr "Aficha&tge"
+
+#, fuzzy
+#~| msgid "Extensions"
+#~ msgid "Sessions"
+#~ msgstr "Sessions"
+
+#, fuzzy
+#~| msgid "Clear History"
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History"
+#~ msgstr "Voidar l'istoric"
+
+#~ msgid "&New Tab"
+#~ msgstr "Onglet &nòu"
+
+#~ msgid "Activate Next Tab"
+#~ msgstr "Activar l'onglet seguent"
+
+#~ msgid "Activate Previous Tab"
+#~ msgstr "Activar l'onglet precedent"
+
+#~ msgid "&Reload"
+#~ msgstr "&Tornar cargar"
+
+#, fuzzy
+#~| msgid "&Reload"
+#~ msgid "&Force Reload"
+#~ msgstr "&Tornar cargar"
+
+#~ msgid "&Bookmarks"
+#~ msgstr "&Favorits"
+
+#~ msgid "Kon&queror Introduction"
+#~ msgstr "Presentacion de Kon&queror"
+
+#~ msgid "Go"
+#~ msgstr "Anar"
+
+#~ msgid "Print the current document"
+#~ msgstr "Estampar lo document actiu"
+
+#~ msgid "M&ove Files..."
+#~ msgstr "&Desplaçar de fichièrs..."
+
+#, fuzzy
+#~| msgid "Open a new tab"
+#~ msgid "Open bookmarks folder in new tabs"
+#~ msgstr "Dobrir un onglet nòu"
+
+#~ msgid "Open the document in a new window"
+#~ msgstr "Dobrir lo document dins una fenèstra nòva"
+
+#~ msgid "Open in &New Tab"
+#~ msgstr "Dobrir dis un onglet &nòu"
+
+#~ msgid "Open the document in a new tab"
+#~ msgstr "Dobrir lo document dins un onglet nòu"
+
+#~ msgid "Open with %1"
+#~ msgstr "Dobrir amb %1"
+
+#, fuzzy
+#~| msgid "&View"
+#~ msgctxt "@action:inmenu View"
+#~ msgid "&View Mode"
+#~ msgstr "&Visualizacion"
+
+#~ msgid "Confirmation"
+#~ msgstr "Confirmacion"
+
+#~ msgid "Add"
+#~ msgstr "Apondre"
+
+#~ msgid "Do Not Add"
+#~ msgstr "Apondre pas"
+
+#~ msgid "&Open"
+#~ msgstr "&Dobrir"
+
+#, fuzzy
+#~| msgid "Rename"
+#~ msgid "Rename Session"
+#~ msgstr "Renommar"
+
+#~ msgid "Save Session"
+#~ msgstr "Enregistrar la session"
+
+#, fuzzy
+#~| msgid "Rename"
+#~ msgid "Restore Session?"
+#~ msgstr "Renommar"
+
+#, fuzzy
+#~| msgid "Rename"
+#~ msgid "Restore Session"
+#~ msgstr "Renommar"
+
+#~ msgid "Open a new tab"
+#~ msgstr "Dobrir un onglet nòu"
+
+#~ msgid "Close the current tab"
+#~ msgstr "Tampar l'onglet actual"
+
+#~ msgid "Other Tabs"
+#~ msgstr "Autres onglets"
+
+#~ msgid "&Close Tab"
+#~ msgstr "&Barrar l'onglet"
+
+#~ msgid "Warning"
+#~ msgstr "Alèrta"
+
+#, fuzzy
+#~| msgid "Clear History"
+#~ msgctxt "@title:tab"
+#~ msgid "History"
+#~ msgstr "Voidar l'istoric"
+
+#~ msgid " day"
+#~ msgid_plural " days"
+#~ msgstr[0] " jorn"
+#~ msgstr[1] " jorn"
+
+#~ msgid "Minute"
+#~ msgid_plural "Minutes"
+#~ msgstr[0] "Minuta"
+#~ msgstr[1] "Minuta"
+
+#~ msgid "Day"
+#~ msgid_plural "Days"
+#~ msgstr[0] "Jorn"
+#~ msgstr[1] "Jorn"
+
+#, fuzzy
+#~| msgid "&Close Tab"
+#~ msgid "Close Sidebar"
+#~ msgstr "&Barrar l'onglet"
+
+#~ msgid "Remove"
+#~ msgstr "Suprimir"
+
+#~ msgid "Delete Folder"
+#~ msgstr "Suprimir lo repertòri"
+
+#~ msgid "Delete Bookmark"
+#~ msgstr "Suprimir lo favorit"
+
+#~ msgid "Properties"
+#~ msgstr "Propietats"
+
+#~ msgid "Open in New Window"
+#~ msgstr "Dobrir dins una fenèstra novèla"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "Copiar l'adreça del ligam"
+
+#~ msgid "Bookmark Properties"
+#~ msgstr "Propietats del favorit"
+
+#~ msgid "&Update"
+#~ msgstr "&Metre a jorn"
+
+#~ msgid "Name:"
+#~ msgstr "Nom :"
+
+#~ msgid "Location:"
+#~ msgstr "Emplaçament :"
+
+#~ msgid "Add Bookmark"
+#~ msgstr "Apondre un favorit"
+
+#~ msgid "Rename"
+#~ msgstr "Renommar"
+
+#~ msgid "Delete Link"
+#~ msgstr "Suprimir lo ligam"
+
+#~ msgid "New Folder"
+#~ msgstr "Repertòri novèl"
+
+#~ msgid "Create New Folder"
+#~ msgstr "Crear un repertòri novèl"
+
+#, fuzzy
+#~| msgid "Name:"
+#~ msgctxt "@label"
+#~ msgid "Name:"
+#~ msgstr "Nom :"
+
+#~ msgid "&Open Link"
+#~ msgstr "&Dobrir un ligam"
+
+#~ msgid " sec"
+#~ msgstr " seg"
+
+#~ msgid "Introduction"
+#~ msgstr "Introduccion"
+
+#~ msgid "Tips"
+#~ msgstr "Astúcias"
+
+#~ msgid "Your personal files"
+#~ msgstr "Vòstres fichièrs personals"
+
+#~ msgid "Trash"
+#~ msgstr "Banasta"
+
+#, fuzzy
+#~| msgid "&Bookmarks"
+#~ msgid "Bookmarks"
+#~ msgstr "&Favorits"
+
+#~ msgid "OpenSSL"
+#~ msgstr "OpenSSL"
+
+#~ msgid "Details"
+#~ msgstr "Detalhs"
+
+#~ msgid "FTP"
+#~ msgstr "FTP"
+
+#~ msgid "Manual"
+#~ msgstr "Manual"
+
+#~ msgid "Installed"
+#~ msgstr "Installat"
+
+#~ msgid "Disable"
+#~ msgstr "Desactivar"
+
+#~ msgid "Keep"
+#~ msgstr "Gardar"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Yannig Marchegay (Kokoyaya)"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "yannig@marchegay.org"
+
+#~ msgid "&File"
+#~ msgstr "&Fichièr"
+
+#~ msgid "&Edit"
+#~ msgstr "&Edicion"
+
+#~ msgid "&View"
+#~ msgstr "Aficha&tge"
+
+#~ msgid "&Go"
+#~ msgstr "&Anar"
+
+#~ msgid "&Settings"
+#~ msgstr "&Paramètres"
+
+#~ msgid "&Window"
+#~ msgstr "&Fenèstra"
+
+#~ msgid "&Help"
+#~ msgstr "&Ajuda"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Barra d'espleches principala"
+
+#~ msgid "Extra Toolbar"
+#~ msgstr "Barra d'espleches suplementària"
+
+#~ msgid "Location Toolbar"
+#~ msgstr "Barra d'emplaçament"
+
+#~ msgid "Bookmark Toolbar"
+#~ msgstr "Barra dels favorits"
+
+#, fuzzy
+#~| msgctxt "@action:button New session"
+#~| msgid "New"
+#~ msgctxt "@action:button New session"
+#~ msgid "New..."
+#~ msgstr "Novèl"
+
+#, fuzzy
+#~| msgid "Rename"
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename..."
+#~ msgstr "Renommar"
+
+#, fuzzy
+#~| msgid "Default"
+#~ msgctxt "@action:button Delete session"
+#~ msgid "Delete"
+#~ msgstr "Suprimir"
+
+#, fuzzy
+#~| msgid "Open the document in a new window"
+#~ msgid "Open tabs inside current window"
+#~ msgstr "Dobrir lo document dins una fenèstra nòva"
+
+#~ msgid "Limits"
+#~ msgstr "Limits"
+
+#~ msgid "Choose Font..."
+#~ msgstr "Causir la poliàa..."
+
+#~ msgid "Clear History"
+#~ msgstr "Voidar l'istoric"
+
+#, fuzzy
+#~| msgid "Open the document in a new window"
+#~ msgid "Open folders in separate windows"
+#~ msgstr "Dobrir lo document dins una fenèstra nòva"
+
+#~ msgid "Hide %1"
+#~ msgstr "Amagar %1"
+
+#, fuzzy
+#~| msgid "&Bookmarks"
+#~ msgid "My Bookmarks"
+#~ msgstr "&Favorits"
+
+#~ msgid "Select Type"
+#~ msgstr "Seleccionar lo tipe"
+
+#~ msgid "Select type:"
+#~ msgstr "Seleccionar lo tipe :"
+
+#~ msgid "Minutes"
+#~ msgstr "Minutas"
+
+#~ msgid "Days"
+#~ msgstr "Jorns"
+
+#~ msgid "Reload"
+#~ msgstr "Tornar cargar"
+
+#~ msgid "Default"
+#~ msgstr "Defaut"
+
+#, fuzzy
+#~| msgid "Rename"
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename"
+#~ msgstr "Renommar"
+
+#~ msgid "G E N E R A L"
+#~ msgstr "G E N E R A L"
+
+#~ msgid "Applications"
+#~ msgstr "Aplicacions"
+
+#~ msgid "&Location"
+#~ msgstr "&Emplaçament"

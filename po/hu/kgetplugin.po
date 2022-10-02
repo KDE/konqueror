@@ -1,0 +1,2887 @@
+#
+# Tamas Szanto <taszanto@gmail.com>, 2002.
+# Kristóf Kiszel <ulysses@kubuntu.org>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: KDE 4.3\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2012-01-22 15:23+0100\n"
+"Last-Translator: Kristóf Kiszel <ulysses@kubuntu.org>\n"
+"Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.2\n"
+
+#: kget_plugin.cpp:56
+#, kde-format
+msgid "Download Manager"
+msgstr "Letöltéskezelő"
+
+#: kget_plugin.cpp:62
+#, kde-format
+msgid "Show Drop Target"
+msgstr "Ejtési tálca megjelenítése"
+
+#: kget_plugin.cpp:69
+#, kde-format
+msgid "List All Links"
+msgstr "Az összes link kilistázása"
+
+#: kget_plugin.cpp:74
+#, kde-format
+msgid "List Selected Links"
+msgstr "A kijelölt linkek kilistázása"
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No downloadable links were found."
+msgstr "Nem találhatók letölthető hivatkozások."
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No Links"
+msgstr "Nincs link"
+
+#. i18n: ectx: Menu (tools)
+#: konqueror_kget_browser_integration.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "&Eszközök"
+
+#~ msgid "Unable to communicate with the KGet download manager."
+#~ msgstr "Nem lehet kommunikálni a KGet letöltéskezelővel."
+
+#~ msgid "Communication Error"
+#~ msgstr "Kommunikációs hiba"
+
+#~ msgid "Plugins"
+#~ msgstr "Bővítmények"
+
+#~ msgid "New Group"
+#~ msgstr "Új csoport"
+
+#~ msgid "Xml"
+#~ msgstr "XML"
+
+#~ msgid "Sqlite"
+#~ msgstr "Sqlite"
+
+#~ msgid "Turn Off Computer"
+#~ msgstr "A számítógép kikapcsolása"
+
+#, fuzzy
+#~| msgid "Turn Off Computer"
+#~ msgid "Hibernate Computer"
+#~ msgstr "A számítógép kikapcsolása"
+
+#, fuzzy
+#~| msgid "Turn Off Computer"
+#~ msgid "Suspend Computer"
+#~ msgstr "A számítógép kikapcsolása"
+
+#~ msgid "Appearance"
+#~ msgstr "Megjelenés"
+
+#~ msgid "Change appearance settings"
+#~ msgstr "Megjelenési beállítások"
+
+#~ msgid "Groups"
+#~ msgstr "Csoportok"
+
+#~ msgid "Manage the groups"
+#~ msgstr "Csoportkezelő"
+
+#~ msgid "Network"
+#~ msgstr "Hálózat"
+
+#~ msgid "Network and Downloads"
+#~ msgstr "Hálózat és letöltés"
+
+#~ msgid "Web Interface"
+#~ msgstr "Webes felület"
+
+#~ msgid "Control KGet over a Network or the Internet"
+#~ msgstr "A KGet vezérlése belső hálózaton vagy az interneten keresztül"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgid "Verification"
+#~ msgstr "Célmappa"
+
+#, fuzzy
+#~| msgid "Integration"
+#~ msgctxt "integration of KGet with other applications"
+#~ msgid "Integration"
+#~ msgstr "Integráció"
+
+#~ msgctxt "Advanced Options"
+#~ msgid "Advanced"
+#~ msgstr "Speciális"
+
+#~ msgid "Advanced Options"
+#~ msgstr "Speciális beállítások"
+
+#~ msgid "Transfer Plugins"
+#~ msgstr "Letöltési bővítmények"
+
+#, fuzzy
+#~| msgid "Excluded:"
+#~ msgid "Include"
+#~ msgstr "Kizárva:"
+
+#, fuzzy
+#~| msgid "Excluded:"
+#~ msgid "Exclude"
+#~ msgstr "Kizárva:"
+
+#, fuzzy
+#~| msgid "Regular expression:"
+#~ msgid "Regular expression"
+#~ msgstr "Reguláris kifejezés:"
+
+#~ msgid "KGet"
+#~ msgstr "KGet"
+
+#~ msgid "1 Item"
+#~ msgid_plural "%1 Items"
+#~ msgstr[0] "%1 elem"
+#~ msgstr[1] "%1 elem"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#~ msgctxt "start transfergroup downloads"
+#~ msgid "Start"
+#~ msgstr "Indítás"
+
+#~ msgctxt "stop transfergroup downloads"
+#~ msgid "Stop"
+#~ msgstr "Állj"
+
+#, fuzzy
+#~| msgid "KGet - Download Manager"
+#~ msgid "KGet is downloading %1 file"
+#~ msgid_plural "KGet is downloading %1 files"
+#~ msgstr[0] "KGet letöltéskezelő"
+#~ msgstr[1] "KGet letöltéskezelő"
+
+#~ msgid "Error trying to get %1"
+#~ msgstr "Hiba történt %1 letöltésekor"
+
+#~ msgid "Are you sure that you want to remove the group named %1?"
+#~ msgstr "Biztosan törölni szeretné ezt a csoportot: %1?"
+
+#, fuzzy
+#~| msgid "Remove Group"
+#~| msgid_plural "Remove groups"
+#~ msgid "Remove Group"
+#~ msgstr "Törlés"
+
+#, fuzzy
+#~| msgid "Are you sure that you want to remove the group named %1?"
+#~ msgid "Are you sure that you want to remove the following groups?"
+#~ msgstr "Biztosan törölni szeretné ezt a csoportot: %1?"
+
+#, fuzzy
+#~| msgid "Remove Group"
+#~| msgid_plural "Remove groups"
+#~ msgid "Remove groups"
+#~ msgstr "Törlés"
+
+#, fuzzy
+#~| msgid "Downloaded"
+#~ msgid "Download added"
+#~ msgstr "Letöltve"
+
+#~ msgid ""
+#~ "The file %1 already exists.\n"
+#~ "Overwrite?"
+#~ msgstr ""
+#~ "Már létezik %1 nevű fájl.\n"
+#~ "Felül szeretné írni?"
+
+#~ msgid "Overwrite existing file?"
+#~ msgstr "Felülírást választ?"
+
+#~ msgid "Unable to save to: %1"
+#~ msgstr "Nem sikerült menteni ide: %1"
+
+#~ msgid "My Downloads"
+#~ msgstr "Letöltések"
+
+#~ msgid "New Download"
+#~ msgstr "Új letöltés"
+
+#~ msgid "Enter URL:"
+#~ msgstr "Cím:"
+
+#~ msgid "Save As"
+#~ msgstr "Mentés másként"
+
+#~ msgid ""
+#~ "Malformed URL:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Hibás URL:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Malformed URL, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Hibás URL, a protokoll nincs megadva:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Download again"
+#~ msgid "Download it again?"
+#~ msgstr "Letöltés újból"
+
+#, fuzzy
+#~| msgid "Download again"
+#~ msgid "Delete it and download again?"
+#~ msgstr "Letöltés újból"
+
+#~ msgid "Directory is not writable"
+#~ msgstr "A könyvtárban nem lehet írni"
+
+#, fuzzy
+#~| msgid ""
+#~| "URL already saved:\n"
+#~| "%1\n"
+#~| "Download again?"
+#~ msgid "File already downloaded. Download anyway?"
+#~ msgstr ""
+#~ "Már le van töltve ez:\n"
+#~ "%1\n"
+#~ "Le szeretné újból tölteni?"
+
+#, fuzzy
+#~| msgid "You are already downloading the torrent %1"
+#~ msgid "You are already downloading the same file"
+#~ msgstr "Már folyik a letöltés: %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "The file %1 already exists.\n"
+#~| "Overwrite?"
+#~ msgid "File already exists"
+#~ msgstr ""
+#~ "Már létezik %1 nevű fájl.\n"
+#~ "Felül szeretné írni?"
+
+#, fuzzy
+#~| msgid ""
+#~| "<html><p>Plugin loader could not load the plugin:<br/><i>%1</i></p></"
+#~| "html>"
+#~ msgid "Plugin loader could not load the plugin: %1."
+#~ msgstr ""
+#~ "<html><p>A bővítménykezelő nem tudta betölteni ezt a bővítményt:<br/><i>"
+#~ "%1</i></p></html>"
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is a directory."
+#~ msgstr ""
+#~ "%1\n"
+#~ "nem lesz törölve,\n"
+#~ "mert mappa."
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is not a local file."
+#~ msgstr ""
+#~ "%1\n"
+#~ "nem lesz törölve,\n"
+#~ "mert nem helyi fájl."
+
+#~ msgid "Download completed"
+#~ msgstr "Letöltve"
+
+#, fuzzy
+#~| msgid "Download speed"
+#~ msgid "Download started"
+#~ msgstr "Letöltési sebesség"
+
+#~ msgid "Error"
+#~ msgstr "Hiba"
+
+#, fuzzy
+#~| msgid "Remove"
+#~ msgid "Resolve"
+#~ msgstr "Eltávolítás"
+
+#~ msgid "KGet is now closing, as all downloads have completed."
+#~ msgstr "Minden letöltés befejeződött, ezért a program kilép."
+
+#~ msgid "The computer will now turn off, as all downloads have completed."
+#~ msgstr "Minden letöltés befejeződött, ezért a számítógép leáll."
+
+#, fuzzy
+#~| msgid "Auto shutdown"
+#~ msgctxt "Shutting down computer"
+#~ msgid "Shutdown"
+#~ msgstr "Automatikus kikapcsolás"
+
+#, fuzzy
+#~| msgid "The computer will now turn off, as all downloads have completed."
+#~ msgid ""
+#~ "The computer will now suspend to disk, as all downloads have completed."
+#~ msgstr "Minden letöltés befejeződött, ezért a számítógép leáll."
+
+#, fuzzy
+#~| msgid "The computer will now turn off, as all downloads have completed."
+#~ msgid ""
+#~ "The computer will now suspend to RAM, as all downloads have completed."
+#~ msgstr "Minden letöltés befejeződött, ezért a számítógép leáll."
+
+#, fuzzy
+#~| msgctxt "Preview pending"
+#~| msgid "Pending"
+#~ msgctxt "Suspending computer"
+#~ msgid "Suspending"
+#~ msgstr "Folyamatban"
+
+#, fuzzy
+#~| msgid "Aborted"
+#~ msgctxt "abort the proposed action"
+#~ msgid "Abort"
+#~ msgstr "Megszakítva"
+
+#, fuzzy
+#~| msgid "Download completed"
+#~ msgid "Downloads completed"
+#~ msgstr "Letöltve"
+
+#, fuzzy
+#~| msgid "File"
+#~ msgctxt "file in a filesystem"
+#~ msgid "File"
+#~ msgstr "Fájl"
+
+#, fuzzy
+#~| msgid "Status"
+#~ msgctxt "status of the download"
+#~ msgid "Status"
+#~ msgstr "Állapot"
+
+#, fuzzy
+#~| msgid "Size"
+#~ msgctxt "size of the download"
+#~ msgid "Size"
+#~ msgstr "Méret"
+
+#, fuzzy
+#~| msgid "KGet Transfer List"
+#~ msgid "KGet Transfer"
+#~ msgstr "Letöltési lista"
+
+#, fuzzy
+#~| msgctxt "list header: type of file"
+#~| msgid "File Type"
+#~ msgctxt "the type of the hash, e.g. MD5"
+#~ msgid "Type"
+#~ msgstr "Fájltípus"
+
+#~ msgctxt "not available"
+#~ msgid "n/a"
+#~ msgstr "-"
+
+#~ msgid "Stalled"
+#~ msgstr "Nem halad"
+
+#~ msgid "Downloading...."
+#~ msgstr "Letöltés..."
+
+#~ msgctxt "transfer state: delayed"
+#~ msgid "Delayed"
+#~ msgstr "Késik"
+
+#~ msgctxt "transfer state: stopped"
+#~ msgid "Stopped"
+#~ msgstr "Leállítva"
+
+#~ msgctxt "transfer state: aborted"
+#~ msgid "Aborted"
+#~ msgstr "Megszakítva"
+
+#~ msgctxt "transfer state: finished"
+#~ msgid "Finished"
+#~ msgstr "Befejeződött"
+
+#, fuzzy
+#~| msgid "Open Destination"
+#~ msgctxt "changing the destination of the file"
+#~ msgid "Changing destination"
+#~ msgstr "A célkönyvtár megnyitása"
+
+#~ msgctxt "name of download"
+#~ msgid "Name"
+#~ msgstr "Név"
+
+#~ msgctxt "status of download"
+#~ msgid "Status"
+#~ msgstr "Állapot"
+
+#~ msgctxt "size of download"
+#~ msgid "Size"
+#~ msgstr "Méret"
+
+#~ msgctxt "progress of download"
+#~ msgid "Progress"
+#~ msgstr "Állapotjelző"
+
+#~ msgctxt "speed of download"
+#~ msgid "Speed"
+#~ msgstr "Sebesség"
+
+#~ msgctxt "remaining time of download"
+#~ msgid "Remaining Time"
+#~ msgstr "Hátralévő idő"
+
+#, fuzzy
+#~| msgid "Directory is not writable"
+#~ msgid "Download directory is not writeable."
+#~ msgstr "A könyvtárban nem lehet írni"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "No download destination specified."
+#~ msgstr "Célmappa:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Invalid download destination specified."
+#~ msgstr "Célmappa:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Download destination is not writeable."
+#~ msgstr "Célmappa:"
+
+#~ msgid "Malformed URL."
+#~ msgstr "Hibás formátumú cím."
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL, protocol missing:\n"
+#~| "%1"
+#~ msgid "Malformed URL, protocol missing."
+#~ msgstr ""
+#~ "Hibás URL, a protokoll nincs megadva:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL, protocol missing:\n"
+#~| "%1"
+#~ msgid "Malformed URL, host missing."
+#~ msgstr ""
+#~ "Hibás URL, a protokoll nincs megadva:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Directory is not writable"
+#~ msgid ""
+#~ "Download directory is not writeable:\n"
+#~ "%1"
+#~ msgstr "A könyvtárban nem lehet írni"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid ""
+#~ "Invalid download destination specified:\n"
+#~ "%1"
+#~ msgstr "Célmappa:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid ""
+#~ "Download destination is not writeable:\n"
+#~ "%1"
+#~ msgstr "Célmappa:"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL, protocol missing:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URL, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Hibás URL, a protokoll nincs megadva:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "The file %1 already exists.\n"
+#~| "Overwrite?"
+#~ msgid "File already exists. Overwrite it?"
+#~ msgstr ""
+#~ "Már létezik %1 nevű fájl.\n"
+#~ "Felül szeretné írni?"
+
+#, fuzzy
+#~| msgid ""
+#~| "The file %1 already exists.\n"
+#~| "Overwrite?"
+#~ msgid ""
+#~ "File already exists:\n"
+#~ "%1\n"
+#~ "Overwrite it?"
+#~ msgstr ""
+#~ "Már létezik %1 nevű fájl.\n"
+#~ "Felül szeretné írni?"
+
+#, fuzzy
+#~| msgid "Malformed URL."
+#~ msgid "Malformed URLs."
+#~ msgstr "Hibás formátumú cím."
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL, protocol missing:\n"
+#~| "%1"
+#~ msgid "Malformed URLs, protocol missing."
+#~ msgstr ""
+#~ "Hibás URL, a protokoll nincs megadva:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL, protocol missing:\n"
+#~| "%1"
+#~ msgid "Malformed URLs, host missing."
+#~ msgstr ""
+#~ "Hibás URL, a protokoll nincs megadva:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Hibás URL:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL, protocol missing:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Hibás URL, a protokoll nincs megadva:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL, protocol missing:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Hibás URL, a protokoll nincs megadva:\n"
+#~ "%1"
+
+#, fuzzy
+#~| msgid "Directory is not writable"
+#~ msgid ""
+#~ "Destinations are not writable:\n"
+#~ "%1"
+#~ msgstr "A könyvtárban nem lehet írni"
+
+#, fuzzy
+#~| msgid ""
+#~| "The file %1 already exists.\n"
+#~| "Overwrite?"
+#~ msgid "Files exist already. Overwrite them?"
+#~ msgstr ""
+#~ "Már létezik %1 nevű fájl.\n"
+#~ "Felül szeretné írni?"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Question"
+#~ msgstr "Leírás"
+
+#, fuzzy
+#~| msgctxt "Download normally(not as first or last)"
+#~| msgid "Normal"
+#~ msgctxt "on a question"
+#~ msgid "No all"
+#~ msgstr "Normál"
+
+#~ msgid "Insert Engine"
+#~ msgstr "Feldolgozómodul beszúrása"
+
+#~ msgid "Engine name:"
+#~ msgstr "Feldolgozómodul:"
+
+#~ msgid "URL:"
+#~ msgstr "Cím:"
+
+#~ msgctxt "transfer state: connecting"
+#~ msgid "Connecting...."
+#~ msgstr "Csatlakozás..."
+
+#~ msgid "Add New Script"
+#~ msgstr "Új szkript felvétele"
+
+#~ msgid "Edit Script"
+#~ msgstr "Módosítás"
+
+#~ msgid "Set Script File"
+#~ msgstr "Szkriptfájl beállítása"
+
+#~ msgctxt "Configure script"
+#~ msgid "Configure script"
+#~ msgstr "Szkriptbeállítás"
+
+#~ msgctxt "Transfer state: processing script"
+#~ msgid "Processing script...."
+#~ msgstr "Szkript indítása..."
+
+#~ msgctxt "Transfer State: Finished"
+#~ msgid "Finished"
+#~ msgstr "Befejeződött"
+
+#~ msgctxt "Transfer State: Aborted"
+#~ msgid "Aborted"
+#~ msgstr "Megszakítva"
+
+#, fuzzy
+#~| msgid "Downloading Torrent File...."
+#~ msgid "Downloading Metalink File...."
+#~ msgstr "Torrentfájl letöltése..."
+
+#, fuzzy
+#~| msgctxt "redownload selected transfer item"
+#~| msgid "Redownload Selected"
+#~ msgid "Redownload Metalink"
+#~ msgstr "A kijelöltek letöltése újból"
+
+#, fuzzy
+#~| msgid "File Settings"
+#~ msgid "File Selection"
+#~ msgstr "Fájlbeállítások"
+
+#, fuzzy
+#~| msgid "Change appearance settings"
+#~ msgctxt "the string that is used to modify an url"
+#~ msgid "Change string"
+#~ msgstr "Megjelenési beállítások"
+
+#, fuzzy
+#~| msgid "Change Tracker"
+#~ msgctxt "the mode defines how the url should be changed"
+#~ msgid "Change mode"
+#~ msgstr "Követő módosítása"
+
+#, fuzzy
+#~| msgid "Appearance"
+#~ msgid "Append"
+#~ msgstr "Megjelenés"
+
+#, fuzzy
+#~| msgid "Open file"
+#~ msgid "Replace file"
+#~ msgstr "Fájl megnyitása"
+
+#~ msgctxt "transfer state: running"
+#~ msgid "Running...."
+#~ msgstr "Fut..."
+
+#~ msgctxt "Choked"
+#~ msgid "Yes"
+#~ msgstr "Igen"
+
+#~ msgctxt "Not choked"
+#~ msgid "No"
+#~ msgstr "Nem"
+
+#~ msgctxt "Snubbed"
+#~ msgid "Yes"
+#~ msgstr "Igen"
+
+#~ msgctxt "Not snubbed"
+#~ msgid "No"
+#~ msgstr "Nem"
+
+#~ msgctxt "Interested"
+#~ msgid "Yes"
+#~ msgstr "Igen"
+
+#~ msgctxt "Not Interested"
+#~ msgid "No"
+#~ msgstr "Nem"
+
+#~ msgctxt "Interesting"
+#~ msgid "Yes"
+#~ msgstr "Igen"
+
+#~ msgctxt "Not Interesting"
+#~ msgid "No"
+#~ msgstr "Nem"
+
+#~ msgid "IP Address"
+#~ msgstr "IP-cím"
+
+#~ msgid "Client"
+#~ msgstr "Kliens"
+
+#~ msgid "Down Speed"
+#~ msgstr "Letöltési sebesség"
+
+#~ msgid "Up Speed"
+#~ msgstr "Feltöltési sebesség"
+
+#~ msgid "Choked"
+#~ msgstr "Akadozik"
+
+#~ msgid "Snubbed"
+#~ msgstr "Beragadt"
+
+#~ msgid "Availability"
+#~ msgstr "Elérhetőség"
+
+#~ msgid "DHT"
+#~ msgstr "DHT"
+
+#~ msgid "Score"
+#~ msgstr "Forrás:"
+
+#~ msgid "Upload Slot"
+#~ msgstr "Feltöltési pont"
+
+#~ msgid "Requests"
+#~ msgstr "Kérések"
+
+#~ msgid "Downloaded"
+#~ msgstr "Letöltve"
+
+#~ msgid "Uploaded"
+#~ msgstr "Feltöltve"
+
+#~ msgid "Interested"
+#~ msgstr "Érdekel"
+
+#~ msgid "Interesting"
+#~ msgstr "Érdekes"
+
+#~ msgid "IP address of the peer"
+#~ msgstr "A partner IP-címe"
+
+#~ msgid "Which client the peer is using"
+#~ msgstr "Partnerkliens"
+
+#~ msgid "Download speed"
+#~ msgstr "Letöltési sebesség"
+
+#~ msgid "Upload speed"
+#~ msgstr "Feltöltési sebesség"
+
+#~ msgid ""
+#~ "Whether or not the peer has choked us.  If we are choked, the peer will "
+#~ "not send us any data."
+#~ msgstr ""
+#~ "Azt mutatja, hogy lefulladt-e a kapcsolat. Ha igen, a partner nem fog "
+#~ "több adatot küldeni."
+
+#~ msgid ""
+#~ "Snubbed means the peer has not sent us any data in the last 2 minutes"
+#~ msgstr ""
+#~ "A lelassulás azt jelenti, hogy nem érkezett adat a partnertől az utolsó 2 "
+#~ "percben"
+
+#~ msgid "How much of the torrent's data the peer has"
+#~ msgstr "Ennyi adat van meg a torrentből a partnernél"
+
+#~ msgid "Whether or not the peer has DHT enabled"
+#~ msgstr "Támogatja-e a partner a DHT opciót"
+
+#~ msgid ""
+#~ "The score of the peer. KTorrent uses this to determine who to upload to."
+#~ msgstr ""
+#~ "A partner pontszáma, ez alapján dönti el a KTorrent, hová töltsön fel."
+
+#~ msgid "Only peers which have an upload slot will get data from us"
+#~ msgstr ""
+#~ "Csak azoknak a partnereknek küld a KTorrent adatot, amelyeknél van szabad "
+#~ "feltöltési pont"
+
+#~ msgid "The number of download and upload requests"
+#~ msgstr "A le- és feltöltési kérések száma"
+
+#~ msgid "How much data we have downloaded from this peer"
+#~ msgstr "A partnertől letöltött adatmennyiség"
+
+#~ msgid "How much data we have uploaded to this peer"
+#~ msgstr "A partnerhez feltöltött adatmennyiség"
+
+#~ msgid "Whether the peer is interested in downloading data from us"
+#~ msgstr "Azt mutatja, akar-e a partner tőlünk letölteni"
+
+#~ msgid "Whether we are interested in downloading from this peer"
+#~ msgstr "Azt mutatja, akarunk-e letölteni a partnertől"
+
+#~ msgid "Chunk"
+#~ msgstr "Fájlszelet"
+
+#~ msgid "Progress"
+#~ msgstr "Állapotjelző"
+
+#~ msgid "Peer"
+#~ msgstr "Partner"
+
+#~ msgid "Files"
+#~ msgstr "Fájl"
+
+#~ msgid "Number of the chunk"
+#~ msgstr "Szeletazonosító"
+
+#~ msgid "Download progress of the chunk"
+#~ msgstr "Letöltési állapot"
+
+#~ msgid "Which peer we are downloading it from"
+#~ msgstr "Letöltési partner"
+
+#~ msgid "Download speed of the chunk"
+#~ msgstr "Letöltési sebesség"
+
+#~ msgid "Which files the chunk is located in"
+#~ msgstr "Fájlnevek"
+
+#~ msgid "URL"
+#~ msgstr "Cím"
+
+#~ msgid "Speed"
+#~ msgstr "Sebesség"
+
+#~ msgid "Status"
+#~ msgstr "Állapot"
+
+#~ msgid "Kick Peer"
+#~ msgstr "Partner kirúgása"
+
+#~ msgid "Ban Peer"
+#~ msgstr "Partner letiltása"
+
+#~ msgid ""
+#~ "Cannot add the webseed %1, it is already part of the list of webseeds."
+#~ msgstr ""
+#~ "Nem sikerült hozzáadni ezt a webes feltöltőt: %1, mert már szerepel a "
+#~ "listában."
+
+#~ msgid "Cannot remove webseed %1, it is part of the torrent."
+#~ msgstr ""
+#~ "Nem sikerült eltávolítani ezt a webes feltöltőt: %1, mert része a "
+#~ "torrentnek."
+
+#~ msgid "File"
+#~ msgstr "Fájl"
+
+#~ msgid "Size"
+#~ msgstr "Méret"
+
+#~ msgid "Advanced Details for %1"
+#~ msgstr "Részletek: %1"
+
+#~ msgid "Trackers"
+#~ msgstr "Követők"
+
+#~ msgid "Webseeds"
+#~ msgstr "Webes feltöltők"
+
+#~ msgctxt "Open file"
+#~ msgid "Open"
+#~ msgstr "Megnyitás"
+
+#~ msgid "Download first"
+#~ msgstr "Letöltés elsőként"
+
+#~ msgid "Download normally"
+#~ msgstr "Normál letöltés"
+
+#~ msgid "Download last"
+#~ msgstr "Letöltés utoljára"
+
+#~ msgid "Do Not Download"
+#~ msgstr "Nem kell letölteni"
+
+#~ msgid "Delete File(s)"
+#~ msgstr "Fájl(ok) törlése"
+
+#~ msgid "Move File"
+#~ msgstr "Fájl áthelyezése"
+
+#~ msgid "Collapse Folder Tree"
+#~ msgstr "Összecsukás"
+
+#~ msgid "Expand Folder Tree"
+#~ msgstr "Kibontás"
+
+#, fuzzy
+#~| msgid ""
+#~| "You will lose all data in this file, are you sure you want to do this?"
+#~ msgid ""
+#~ "You will lose all data in this file, are you sure you want to do this?"
+#~ msgid_plural ""
+#~ "You will lose all data in these files, are you sure you want to do this?"
+#~ msgstr[0] "A fájl tartalma el fog veszni, biztosan ezt szeretné?"
+#~ msgstr[1] "A fájl tartalma el fog veszni, biztosan ezt szeretné?"
+
+#~ msgid "Select a directory to move the data to."
+#~ msgstr "Válassza ki, melyik könyvtárba szeretné tenni a fájl(oka)t."
+
+#, fuzzy
+#~| msgid "Url:"
+#~ msgid "Url"
+#~ msgstr "URL:"
+
+#, fuzzy
+#~| msgid "Seeders:"
+#~ msgid "Seeders"
+#~ msgstr "Feltöltők:"
+
+#, fuzzy
+#~| msgid "Leechers:"
+#~ msgid "Leechers"
+#~ msgstr "Letöltők:"
+
+#, fuzzy
+#~| msgid "Times downloaded:"
+#~ msgid "Times Downloaded"
+#~ msgstr "A letöltések száma:"
+
+#, fuzzy
+#~| msgid "Next update in:"
+#~ msgid "Next Update"
+#~ msgstr "Következő frissítés:"
+
+#~ msgid "Priority"
+#~ msgstr "Prioritás"
+
+#~ msgid "Preview"
+#~ msgstr "Előnézet"
+
+#~ msgctxt "Percent of File Downloaded"
+#~ msgid "% Complete"
+#~ msgstr "Kész %"
+
+#~ msgctxt "Download first"
+#~ msgid "First"
+#~ msgstr "Elsőként"
+
+#~ msgctxt "Download last"
+#~ msgid "Last"
+#~ msgstr "Utoljára"
+
+#~ msgctxt "Download normally(not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "Normál"
+
+#~ msgctxt "preview available"
+#~ msgid "Available"
+#~ msgstr "Elérhető"
+
+#~ msgctxt "Preview pending"
+#~ msgid "Pending"
+#~ msgstr "Folyamatban"
+
+#~ msgctxt "No preview available"
+#~ msgid "No"
+#~ msgstr "Nincs"
+
+#~ msgid "%1 %"
+#~ msgstr "%1 %"
+
+#~ msgctxt "Preview available"
+#~ msgid "Available"
+#~ msgstr "Elérhető"
+
+#~ msgid "Add Tracker"
+#~ msgstr "Követő hozzáadása"
+
+#~ msgid "There already is a tracker named <b>%1</b>."
+#~ msgstr "Már létezik <b>%1</b> nevű követő."
+
+#~ msgctxt "Download Normal (not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "Normál"
+
+#~ msgid "&Advanced Details"
+#~ msgstr "%Speciális beállítások"
+
+#~ msgid "&Scan Files"
+#~ msgstr "&Fájlellenőrzés"
+
+#~ msgid "Downloading Torrent File...."
+#~ msgstr "Torrentfájl letöltése..."
+
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading...."
+#~ msgstr "Letöltés..."
+
+#~ msgid "Cannot add a tracker to a private torrent."
+#~ msgstr "Privát követőhöz nem lehet követőt hozzáadni."
+
+#, fuzzy
+#~| msgid "The directory %1 does not exist"
+#~ msgid "Torrent file does not exist"
+#~ msgstr "A könyvtárban (%1) nem lehet írni"
+
+#~ msgid "Analyzing torrent...."
+#~ msgstr "A torrent ellenőrzése..."
+
+#~ msgctxt "Transfer status: seeding"
+#~ msgid "Seeding...."
+#~ msgstr "Feltöltés..."
+
+#~ msgid "Error scanning data: %1"
+#~ msgstr "Hiba történt adatellenőrzés közben: %1"
+
+#~ msgid "Scanning data of <b>%1</b> :"
+#~ msgstr "Adatellenőrzés - <b>%1</b>:"
+
+#~ msgid "Select a default torrent folder"
+#~ msgstr "Alapértelmezett torrentmappa megadása"
+
+#~ msgid "Select a default temporary folder"
+#~ msgstr "Alapértelmezett ideiglenes mappa beállítása"
+
+#, fuzzy
+#~| msgid "File Settings"
+#~ msgid "File Properties"
+#~ msgstr "Fájlbeállítások"
+
+#, fuzzy
+#~| msgid "Enter a new Tag"
+#~ msgid "Enter a filename."
+#~ msgstr "Új címke megadása"
+
+#, fuzzy
+#~| msgid "Unable to save to: %1"
+#~ msgid "Unable to load: %1"
+#~ msgstr "Nem sikerült menteni ide: %1"
+
+#~ msgid "Import Links"
+#~ msgstr "Linkek importálása"
+
+#~ msgctxt "Download the items which have been selected"
+#~ msgid "&Download Checked"
+#~ msgstr "Letöltés &bejelölve"
+
+#~ msgid "Auxiliary header"
+#~ msgstr "Másodlagos fejléc"
+
+#~ msgid "File Name"
+#~ msgstr "Fájlnév"
+
+#~ msgid "Description"
+#~ msgstr "Leírás"
+
+#~ msgctxt "list header: type of file"
+#~ msgid "File Type"
+#~ msgstr "Fájltípus"
+
+#~ msgid "Location (URL)"
+#~ msgstr "Cím"
+
+#~ msgid "Links in: %1 - KGet"
+#~ msgstr "Linkek: %1 - KGet"
+
+#~ msgid "&Select All Filtered"
+#~ msgstr "Min&den szűrt elem kijelölése"
+
+#~ msgid "&Select All"
+#~ msgstr "M&inden kijelölése"
+
+#~ msgid "D&eselect All Filtered"
+#~ msgstr "A szűrt elemek kijelölésének megszün&tetése"
+
+#~ msgid "D&eselect All"
+#~ msgstr "A kij&elölés megszüntetése"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgctxt "Mirror as in server, in url"
+#~ msgid "Mirror"
+#~ msgstr "Hiba"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgctxt "The priority of the mirror"
+#~ msgid "Priority"
+#~ msgstr "Prioritás"
+
+#, fuzzy
+#~| msgid "Connections"
+#~ msgctxt "Number of paralell connections to the mirror"
+#~ msgid "Connections"
+#~ msgstr "Kapcsolatok"
+
+#, fuzzy
+#~| msgid "Location (URL)"
+#~ msgctxt "Location = country"
+#~ msgid "Location"
+#~ msgstr "Cím"
+
+#, fuzzy
+#~| msgid "Add Tracker"
+#~ msgctxt "Adds the item and reopens the dialog to add a further item"
+#~ msgid "Add more"
+#~ msgstr "Követő hozzáadása"
+
+#~ msgid "Download again"
+#~ msgstr "Letöltés újból"
+
+#~ msgctxt "Delete selected history-item"
+#~ msgid "Delete selected"
+#~ msgstr "A kiválasztottak törlése"
+
+#~ msgid "Open file"
+#~ msgstr "Fájl megnyitása"
+
+#~ msgid "Today"
+#~ msgstr "Ma"
+
+#~ msgid "Last week"
+#~ msgstr "Múlt hét"
+
+#~ msgid "Last Month"
+#~ msgstr "Múlt hónap"
+
+#~ msgid "A long time ago"
+#~ msgstr "Régen"
+
+#~ msgid "Under 10MiB"
+#~ msgstr "10MiB alatt"
+
+#~ msgid "Between 10MiB and 50MiB"
+#~ msgstr "10 és 20MiB között"
+
+#~ msgid "Between 50MiB and 100MiB"
+#~ msgstr "50 és 100MiB között"
+
+#~ msgid "More than 100MiB"
+#~ msgstr "100MiB felett"
+
+#~ msgid "Transfer History"
+#~ msgstr "Letöltési előzmények"
+
+#~ msgid "&Open File"
+#~ msgstr "Fájl &megnyitása"
+
+#~ msgctxt "The transfer is running"
+#~ msgid "Running"
+#~ msgstr "Fut"
+
+#~ msgctxt "The transfer is stopped"
+#~ msgid "Stopped"
+#~ msgstr "Leállítva"
+
+#~ msgctxt "The transfer is aborted"
+#~ msgid "Aborted"
+#~ msgstr "Megszakítva"
+
+#~ msgctxt "The transfer is finished"
+#~ msgid "Finished"
+#~ msgstr "Befejeződött"
+
+#~ msgid "Source File"
+#~ msgstr "Forrásfájl"
+
+#~ msgid "Destination"
+#~ msgstr "Célmappa"
+
+#~ msgid "Time"
+#~ msgstr "Idő"
+
+#~ msgid "File Size"
+#~ msgstr "Fájlméret"
+
+#~ msgid "Less than 1MiB"
+#~ msgstr "1MiB alatt"
+
+#~ msgid "Between 1MiB-10MiB"
+#~ msgstr "1 és 10MiB között"
+
+#~ msgid "Between 10MiB-100MiB"
+#~ msgstr "10 és 100 MiBközött"
+
+#~ msgid "Between 100MiB-1GiB"
+#~ msgstr "100MiB és 1GiB között"
+
+#~ msgid "More than 1GiB"
+#~ msgstr "1GiB felett"
+
+#~ msgid "Last month"
+#~ msgstr "Múlt hónapban"
+
+#~ msgctxt "the transfer has been finished"
+#~ msgid "Finished"
+#~ msgstr "Befejeződött"
+
+#, fuzzy
+#~| msgid "Error: "
+#~ msgctxt "an error happened in connection with the user input"
+#~ msgid "Error:"
+#~ msgstr "Hiba: "
+
+#, fuzzy
+#~| msgid "Unknown client"
+#~ msgctxt "trust level"
+#~ msgid "Unknown"
+#~ msgstr "Ismeretlen kliens"
+
+#, fuzzy
+#~| msgid "Peer"
+#~ msgctxt "trust level"
+#~ msgid "Never"
+#~ msgstr "Partner"
+
+#~ msgid "Unlimited"
+#~ msgstr "Korlátlan"
+
+#, fuzzy
+#~| msgid "File"
+#~ msgctxt "pgp signature is not verified"
+#~ msgid "Failed"
+#~ msgstr "Fájl"
+
+#, fuzzy
+#~| msgid "Error: "
+#~ msgid "Error:"
+#~ msgstr "Hiba: "
+
+#, fuzzy
+#~| msgid "Integration"
+#~ msgid "Information:"
+#~ msgstr "Integráció"
+
+#~ msgid "Select columns"
+#~ msgstr "Oszlopkijelölés"
+
+#~ msgid "Transfer Details"
+#~ msgstr "A letöltés jellemzői"
+
+#, fuzzy
+#~| msgid "Transfer Settings for %1"
+#~ msgid "Transfer Verification for %1"
+#~ msgstr "Letöltési jellemzők: %1"
+
+#, fuzzy
+#~| msgid "Rename"
+#~ msgid "Rename File"
+#~ msgstr "Átnevezés"
+
+#, fuzzy
+#~| msgid "Rename"
+#~ msgid "Rename %1 to:"
+#~ msgstr "Átnevezés"
+
+#, fuzzy
+#~| msgid "Rename"
+#~ msgid "&Rename"
+#~ msgstr "Átnevezés"
+
+#~ msgid "Semantic Desktop"
+#~ msgstr "Szemantikus asztal"
+
+#~ msgid "Delete Group"
+#~ msgid_plural "Delete Groups"
+#~ msgstr[0] "Törlés"
+#~ msgstr[1] "Törlés"
+
+#~ msgid "Rename Group..."
+#~ msgid_plural "Rename Groups..."
+#~ msgstr[0] "Átnevezés..."
+#~ msgstr[1] "Átnevezés..."
+
+#~ msgctxt "fix position for droptarget"
+#~ msgid "Sticky"
+#~ msgstr "Rögzítés"
+
+#~ msgid "Quit KGet"
+#~ msgstr "Kilépés"
+
+#~ msgid "The dropped file is a KGet Transfer List"
+#~ msgstr "Az ejtett fájl egy KGet-es letöltési lista"
+
+#~ msgid "&Download"
+#~ msgstr "&Letöltés"
+
+#~ msgid "&Load transfer list"
+#~ msgstr "Letöltési lista &betöltése"
+
+#~ msgid "Show Main Window"
+#~ msgstr "A főablak megjelenítése"
+
+#~ msgid "Hide Main Window"
+#~ msgstr "A főablak elrejtése"
+
+#~ msgid "Drop Target"
+#~ msgstr "Ejtési tálca"
+
+#~ msgid "You can drag download links into the drop target."
+#~ msgstr "Letöltési címet lehet ráhúzni az ejtési tálcára"
+
+#~ msgctxt "%1 filename, %2 total size, %3 status"
+#~ msgid "%1(%2) %3"
+#~ msgstr "%1 (%2) %3"
+
+#~ msgctxt ""
+#~ "%1 filename, %2 percent complete, %3 downloaded out of %4 total size"
+#~ msgid "%1(%2% %3/%4) Speed:%5/s"
+#~ msgstr "%1 (%2% %3/%4) Sebesség: %5/s"
+
+#~ msgctxt ""
+#~ "%1 filename, %2 percent complete, %3 downloaded out of %4 total size, %5 "
+#~ "status"
+#~ msgid "%1(%2% %3/%4) %5"
+#~ msgstr "%1(%2% %3/%4) %5"
+
+#~ msgid "Ready"
+#~ msgstr "Kész"
+
+#~ msgid ""
+#~ "Drop target has been hidden. If you want to show it again, go to Settings-"
+#~ ">Configure KGet->Look & Feel."
+#~ msgstr ""
+#~ "Az ejtési tálca el lett rejtve. Ha meg szeretné jeleníteni, válassza ezt "
+#~ "a menüpontot: Beállítások->KGet beállítóablak->Megjelenés."
+
+#~ msgid "Hiding drop target"
+#~ msgstr "Az ejtési tálca elrejtése"
+
+#~ msgid "Transfer Settings for %1"
+#~ msgstr "Letöltési jellemzők: %1"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgid "Destination unmodified"
+#~ msgstr "Célmappa"
+
+#~ msgid "%1 of %2"
+#~ msgstr "%1 / %2"
+
+#~ msgid "Group Settings for %1"
+#~ msgstr "Csoportbeállítások: %1"
+
+#~ msgctxt "@info"
+#~ msgid "Unable to start the server: %1."
+#~ msgstr "Nem sikerült elindítani egy szolgáltatást: %1"
+
+#~ msgctxt "@item speed of transfer per seconds"
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#~ msgctxt "@label"
+#~ msgid "KGet Web Interface"
+#~ msgstr "KGet webes felület"
+
+#~ msgctxt "@label number"
+#~ msgid "Nr"
+#~ msgstr " "
+
+#~ msgctxt "@label"
+#~ msgid "File name"
+#~ msgstr "Fájlnév"
+
+#~ msgctxt "@label Progress of transfer"
+#~ msgid "Finished"
+#~ msgstr "Befejeződött"
+
+#~ msgctxt "@label Speed of transfer"
+#~ msgid "Speed"
+#~ msgstr "Sebesség"
+
+#~ msgctxt "@label Status of transfer"
+#~ msgid "Status"
+#~ msgstr "Állapot"
+
+#~ msgctxt "@action:button start a transfer"
+#~ msgid "Start"
+#~ msgstr "Indítás"
+
+#~ msgctxt "@action:button"
+#~ msgid "Stop"
+#~ msgstr "Állj"
+
+#~ msgctxt "@action:button"
+#~ msgid "Remove"
+#~ msgstr "Eltávolítás"
+
+#~ msgctxt "@label Download from"
+#~ msgid "Source:"
+#~ msgstr "Forrás:"
+
+#~ msgctxt "@label Save download to"
+#~ msgid "Saving to:"
+#~ msgstr "Mentés ide:"
+
+#~ msgctxt "@label Title in header"
+#~ msgid "Web Interface"
+#~ msgstr "Webes felület"
+
+#~ msgctxt "@action"
+#~ msgid "Settings"
+#~ msgstr "Beállítások"
+
+#~ msgctxt "@action"
+#~ msgid "Refresh"
+#~ msgstr "Frissítés"
+
+#~ msgctxt "@action"
+#~ msgid "Enter URL: "
+#~ msgstr "Cím: "
+
+#~ msgctxt "@action:button"
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#~ msgctxt "@action Refresh download list every x (seconds)"
+#~ msgid "Refresh download list every"
+#~ msgstr "A letöltési lista frissítési időköze"
+
+#~ msgctxt "@action (Refresh very x )seconds"
+#~ msgid "seconds"
+#~ msgstr "s"
+
+#~ msgctxt "@action:button"
+#~ msgid "Save Settings"
+#~ msgstr "A beállítások mentése"
+
+#~ msgctxt "@title"
+#~ msgid "Downloads"
+#~ msgstr "Letöltések"
+
+#~ msgctxt "@label text in footer"
+#~ msgid "KGet Web Interface | Valid XHTML 1.0 Strict &amp; CSS"
+#~ msgstr "KGet webes felület | Érvényes XHTML 1.0 Strict &amp; CSS"
+
+#~ msgid "An advanced download manager for KDE"
+#~ msgstr "Letöltéskezelő a KDE-hez"
+
+#~ msgid ""
+#~ "(C) 2005 - 2009, The KGet developers\n"
+#~ "(C) 2001 - 2002, Patrick Charbonnier\n"
+#~ "(C) 2002, Carsten Pfeiffer\n"
+#~ "(C) 1998 - 2000, Matej Koss"
+#~ msgstr ""
+#~ "(c) A KGet fejlesztői, 2005-2009.\n"
+#~ "(c) Patrick Charbonnier, 2001-2002.\n"
+#~ "(c) Carsten Pfeiffer, 2002.\n"
+#~ "(c) Matej Koss, 1998-2000."
+
+#~ msgid "<a href=\"mailto:kget@kde.org\">kget@kde.org</a>"
+#~ msgstr "<a href=\"mailto:kget@kde.org\">kget@kde.org</a>"
+
+#~ msgid "Lukas Appelhans"
+#~ msgstr "Lukas Appelhans"
+
+#, fuzzy
+#~| msgid "Developer, Torrent Plugin Author"
+#~ msgid "Maintainer, Core Developer, Torrent Plugin Author"
+#~ msgstr "Fejlesztő, a torrent bővítmény szerzője"
+
+#~ msgid "Dario Massarin"
+#~ msgstr "Dario Massarin"
+
+#~ msgid "Core Developer"
+#~ msgstr "Vezető fejlesztő"
+
+#~ msgid "Urs Wolfer"
+#~ msgstr "Urs Wolfer"
+
+#~ msgid "Manolo Valdes"
+#~ msgstr "Manolo Valdes"
+
+#~ msgid "Core Developer, Multithreaded Plugin Author"
+#~ msgstr "Vezető fejlesztő, a többszálas bővítmény szerzője"
+
+#~ msgid "Javier Goday"
+#~ msgstr "Javier Goday"
+
+#~ msgid "Developer"
+#~ msgstr "Fejlesztő"
+
+#~ msgid "Patrick Charbonnier"
+#~ msgstr "Patrick Charbonnier"
+
+#~ msgid "Former Developer"
+#~ msgstr "Korábbi fejlesztő"
+
+#~ msgid "Carsten Pfeiffer"
+#~ msgstr "Carsten Pfeiffer"
+
+#~ msgid "Matej Koss"
+#~ msgstr "Matej Koss"
+
+#~ msgid "Joris Guisson"
+#~ msgstr "Joris Guisson"
+
+#~ msgid "BTCore (KTorrent) Developer"
+#~ msgstr "A BTCore (KTorrent) fejlesztője"
+
+#~ msgid "Mensur Zahirovic (Nookie)"
+#~ msgstr "Mensur Zahirovic (Nookie)"
+
+#~ msgid "Design of Web Interface"
+#~ msgstr "A webes felület tervezője"
+
+#~ msgid "Start KGet with drop target"
+#~ msgstr "A KGet elindítása ejtési tálcával"
+
+#~ msgid "Start KGet with hidden main window"
+#~ msgstr "A KGet elindítása rejtett ejtési tálcával"
+
+#~ msgid "Start KGet without drop target animation"
+#~ msgstr "A KGet elindítása ejtési animáció nélkül"
+
+#~ msgid "URL(s) to download"
+#~ msgstr "Letöltendő URL-ek"
+
+#~ msgid "KGet Transfer List"
+#~ msgstr "Letöltési lista"
+
+#~ msgid "Export Transfers"
+#~ msgstr "A letöltési lista &exportálása"
+
+#~ msgid "&New Download..."
+#~ msgstr "Ú&j letöltés..."
+
+#~ msgid "&Import Transfers..."
+#~ msgstr "Letöltési lista &importálása..."
+
+#~ msgid "&Export Transfers List..."
+#~ msgstr "A letöltési lista &exportálása..."
+
+#~ msgid "&Export Transfers as Plain Text..."
+#~ msgstr "A letöltési lista &exportálása szöveges fájlba..."
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Top Priority"
+#~ msgstr "Prioritás"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Least Priority"
+#~ msgstr "Prioritás"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Increase Priority"
+#~ msgstr "Prioritás"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Decrease Priority"
+#~ msgstr "Prioritás"
+
+#~ msgid "Set Icon..."
+#~ msgstr "Ikon beállítása..."
+
+#~ msgid "Auto-Paste Mode"
+#~ msgstr "Automatikus beillesztés"
+
+#~ msgid ""
+#~ "<b>Auto paste</b> button toggles the auto-paste mode on and off.\n"
+#~ "When set, KGet will periodically scan the clipboard for URLs and paste "
+#~ "them automatically."
+#~ msgstr ""
+#~ "Az <b>Automatikus beillesztés</b> gomb kapcsolja ki-be az automatikus "
+#~ "beillesztést.\n"
+#~ "Ha be van jelölve, a KGet figyelni fogja a vágólap tartalmát, és a talált "
+#~ "URL-eket felveszi a letöltési listába."
+
+#~ msgid "Use KGet as Konqueror Download Manager"
+#~ msgstr "Letöltéskezelés a Konquerorban"
+
+#, fuzzy
+#~| msgid "Remove Webseed"
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Remove Selected"
+#~ msgstr "Webes megosztás törlése"
+
+#, fuzzy
+#~| msgctxt "delete all finished transfers"
+#~| msgid "Delete All Finished"
+#~ msgctxt "delete all finished transfers"
+#~ msgid "Remove All Finished"
+#~ msgstr "A befejeződött letöltések törlése"
+
+#~ msgctxt "redownload selected transfer item"
+#~ msgid "Redownload Selected"
+#~ msgstr "A kijelöltek letöltése újból"
+
+#~ msgid "Start / Resume All"
+#~ msgstr "Indítás / Folytatás (mind)"
+
+#~ msgid "Start / Resume Selected"
+#~ msgstr "Indítás / Folytatás (csak a kijelöltek)"
+
+#~ msgid "Stop All"
+#~ msgstr "Leállítás (mind)"
+
+#~ msgid "Stop Selected"
+#~ msgstr "Leállítás (csak a kijelöltek)"
+
+#~ msgid "Start / Resume"
+#~ msgstr "Indítás / Folytatás"
+
+#~ msgid "Stop"
+#~ msgstr "Állj"
+
+#~ msgid "Remove"
+#~ msgstr "Eltávolítás"
+
+#~ msgid "Open Destination"
+#~ msgstr "A célkönyvtár megnyitása"
+
+#~ msgid "Open File"
+#~ msgstr "Fájl megnyitása"
+
+#~ msgid "Show Details"
+#~ msgstr "Részletek"
+
+#~ msgid "Copy URL to Clipboard"
+#~ msgstr "URL másolása a vágólapra"
+
+#~ msgid "&Transfer History"
+#~ msgstr "Letöltési &előzmények"
+
+#~ msgid "&Group Settings"
+#~ msgstr "&Csoportbeállítások"
+
+#~ msgid "&Transfer Settings"
+#~ msgstr "Le&töltési beállítások"
+
+#~ msgid "Import &Links..."
+#~ msgstr "L&inkimportálás..."
+
+#~ msgid ""
+#~ "This is the first time you have run KGet.\n"
+#~ "Would you like to enable KGet as the download manager for Konqueror?"
+#~ msgstr ""
+#~ "Most indította el először ezt az alkalmazást.\n"
+#~ "A KGet legyen a Konqueror letöltőprogramja?"
+
+#~ msgid "Konqueror Integration"
+#~ msgstr "Integráció a Konquerorral"
+
+#~ msgid "Enable"
+#~ msgstr "Igen"
+
+#~ msgid "Do Not Enable"
+#~ msgstr "Nem"
+
+#~ msgid "All Openable Files"
+#~ msgstr "Minden megnyitható fájl"
+
+#~ msgctxt "window title including overall download progress in percent"
+#~ msgid "KGet - %1%"
+#~ msgstr "KGet - %1%"
+
+#~ msgid ""
+#~ "Some transfers are still running.\n"
+#~ "Are you sure you want to close KGet?"
+#~ msgstr ""
+#~ "Még nem fejeződött be minden letöltés.\n"
+#~ "Biztosan ki szeretne lépni a programból?"
+
+#~ msgid "Confirm Quit"
+#~ msgstr "Igen, kilépek"
+
+#~ msgid "Enter Group Name"
+#~ msgstr "Csoportnév"
+
+#~ msgid "Group name:"
+#~ msgstr "Csoportnév:"
+
+#~ msgid "Are you sure you want to delete the selected transfer?"
+#~ msgid_plural "Are you sure you want to delete the selected transfers?"
+#~ msgstr[0] "Biztosan törölni szeretné a kijelölt letöltéseket?"
+#~ msgstr[1] "Biztosan törölni szeretné a kijelölt letöltéseket?"
+
+#~ msgid "Confirm transfer delete"
+#~ msgstr "Törlés megerősítése"
+
+#~ msgid ""
+#~ "KGet has been temporarily disabled as download manager for Konqueror. If "
+#~ "you want to disable it forever, go to Settings->Advanced and disable "
+#~ "\"Use as download manager for Konqueror\"."
+#~ msgstr ""
+#~ "Ezután átmenetileg a Konqueror nem használja a KGetet letöltéskezelőként. "
+#~ "Ha véglegesen ki szeretné kapcsolni, a Beállítások->Speciális menüben "
+#~ "kapcsolja ki a \"A KGet legyen a Konqueror letöltéskezelője\" opciót."
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Szántó Tamás"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "taszanto@gmail.com"
+
+#, fuzzy
+#~| msgid "Seeders:"
+#~ msgid "Keyservers:"
+#~ msgstr "Feltöltők:"
+
+#, fuzzy
+#~| msgid "Use default directories for groups as suggestion"
+#~ msgid "Use default folders for groups as suggestion"
+#~ msgstr "Javaslat csoportoknál az alapértelmezett mappára"
+
+#~ msgid "Rename"
+#~ msgstr "Átnevezés"
+
+#~ msgid "Select Icon..."
+#~ msgstr "Ikon kiválasztása..."
+
+#~ msgid "Limit Maximum Downloads Per Group"
+#~ msgstr "A letöltések maximális száma egy csoportban"
+
+#~ msgid "Number of downloads:"
+#~ msgstr "A letöltések száma:"
+
+#~ msgid "Downloads from the same server:"
+#~ msgstr "Letöltések ugyanarról a kiszolgálóról:"
+
+#~ msgid "Speed Limit"
+#~ msgstr "Sebességkorlát"
+
+#~ msgid "Global download limit:"
+#~ msgstr "Globális letöltési korlát:"
+
+#, fuzzy
+#~| msgid "KiB/s"
+#~ msgid " KiB/s"
+#~ msgstr "KiB/s"
+
+#~ msgid "Global upload limit:"
+#~ msgstr "Globális feltöltési korlát:"
+
+#~ msgid "Per transfer:"
+#~ msgstr "Letöltésenként:"
+
+#~ msgid "Reconnect on Error or Broken Connection"
+#~ msgstr "Újracsatlakozás, ha hiba történt vagy megszakadt a kapcsolat"
+
+#~ msgid "Number of retries:"
+#~ msgstr "A próbálkozások száma:"
+
+#~ msgid "Retry after:"
+#~ msgstr "Várakozási idő újracsatlakozás előtt:"
+
+#, fuzzy
+#~| msgid "sec"
+#~ msgid " sec"
+#~ msgstr "s"
+
+#~ msgid "After Completing Downloads"
+#~ msgstr "A letöltések befejeződése után"
+
+#~ msgid "Auto shutdown"
+#~ msgstr "Automatikus kikapcsolás"
+
+#~ msgid "Auto disconnect"
+#~ msgstr "Automatikus kapcsolatbontás"
+
+#~ msgid "Enable Web Interface"
+#~ msgstr "Webes felület engedélyezése"
+
+#~ msgid "Port:"
+#~ msgstr "Port:"
+
+#~ msgid "User:"
+#~ msgstr "Név:"
+
+#~ msgid "Password:"
+#~ msgstr "Jelszó:"
+
+#~ msgid "Startup"
+#~ msgstr "Indulás"
+
+#~ msgid "Show splashscreen"
+#~ msgstr "Nyitókép"
+
+#~ msgid "Enable animations"
+#~ msgstr "Animáció"
+
+#~ msgid "Show drop target"
+#~ msgstr "Ejtési tálca megjelenése"
+
+#~ msgid "Disable confirmation dialogs (less verbosity)"
+#~ msgstr "Ne legyenek megerősítést kérő ablakok"
+
+#~ msgid "Enable system tray icon"
+#~ msgstr "Ikon a paneltálcán"
+
+#~ msgid "Execute action after all downloads have been finished:"
+#~ msgstr "Művelet az összes letöltés befejeződése után:"
+
+#~ msgid "At startup:"
+#~ msgstr "Induláskor:"
+
+#~ msgid "Restore Download State"
+#~ msgstr "A letöltési állapot visszaállítása"
+
+#~ msgid "Start All Downloads"
+#~ msgstr "Minden letöltés elindítása"
+
+#~ msgid "Stop All Downloads"
+#~ msgstr "Minden letöltés leállítása"
+
+#~ msgid "History"
+#~ msgstr "Előzmények"
+
+#~ msgid "History backend:"
+#~ msgstr "Előzménykezelő:"
+
+#~ msgid "Enable KDE global progress tracking"
+#~ msgstr "A KDE állapotkövetésének engedélyezése"
+
+#~ msgid "Show every single download "
+#~ msgstr "Minden egyes letöltés megjelenítése"
+
+#~ msgid "Show overall progress"
+#~ msgstr "Csak áttekintés a letöltésekről"
+
+#, fuzzy
+#~| msgid "Use as download manager for Konqueror"
+#~ msgid "Use as download manager for Konqueror:"
+#~ msgstr "A KGet kezelje a letöltéseket a Konquerorban"
+
+#~ msgid "Monitor clipboard for files to download"
+#~ msgstr "A vágólap figyelése letölthető fájlokért"
+
+#~ msgid "Search Engines"
+#~ msgstr "Webes keresők"
+
+#~ msgid "Engine Name"
+#~ msgstr "Modul"
+
+#~ msgid "New Engine..."
+#~ msgstr "Új modul..."
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of connections per URL:"
+#~ msgstr "A próbálkozások száma:"
+
+#~ msgid "Use search engines"
+#~ msgstr "Webes keresők használata"
+
+#~ msgid "File Settings"
+#~ msgstr "Fájlbeállítások"
+
+#~ msgid "Filename:"
+#~ msgstr "Fájlnév:"
+
+#~ msgid "Use Normalized Name"
+#~ msgstr "Normalizált nevek használata"
+
+#~ msgid "Use Literal Name"
+#~ msgstr "Az eredeti nevek meghagyása"
+
+#~ msgid "Quality:"
+#~ msgstr "Minőség:"
+
+#~ msgid "Best Quality (.mp4)"
+#~ msgstr "Maximális (.mp4)"
+
+#~ msgid "Normal Quality (.flv)"
+#~ msgstr "Normál (.flv)"
+
+#~ msgid ""
+#~ "Provide login info of your YouTube account in order to access restricted "
+#~ "media."
+#~ msgstr ""
+#~ "A védett YouTube-videók eléréséhez meg kell adni egy nevet és egy jelszót."
+
+#~ msgid "Login Info"
+#~ msgstr "Bejelentkezési adatok"
+
+#~ msgid "Username:"
+#~ msgstr "Név: "
+
+#~ msgid ".netrc must have a hostname called 'youtube'."
+#~ msgstr "A .netrc-ben a gépnévnek \"youtube\"-nak kell lennie"
+
+#~ msgid "User .netrc file"
+#~ msgstr ".netrc fájl használata"
+
+#~ msgid "User Scripts"
+#~ msgstr "Felhasználói szkriptek"
+
+#~ msgid "Path"
+#~ msgstr "Elérési út"
+
+#~ msgid "RegExp"
+#~ msgstr "Reg. kif."
+
+#~ msgid "New Script...."
+#~ msgstr "Új szkript..."
+
+#~ msgid "Edit...."
+#~ msgstr "Szerkesztés..."
+
+#~ msgid "Configure...."
+#~ msgstr "Beállítások..."
+
+#~ msgid "Regexp:"
+#~ msgstr "REg. kif.:"
+
+#~ msgid "Path:"
+#~ msgstr "Elérési út:"
+
+#~ msgid "Description:"
+#~ msgstr "Leírás:"
+
+#, fuzzy
+#~| msgid "Number of chunks downloaded:"
+#~ msgid "Number of simultaneous file downloads:"
+#~ msgstr "Letöltött szeletek:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of mirrors per file:"
+#~ msgstr "A próbálkozások száma:"
+
+#, fuzzy
+#~| msgid "Change appearance settings"
+#~ msgid "Change string:"
+#~ msgstr "Megjelenési beállítások"
+
+#~ msgid "Mode:"
+#~ msgstr "Mód:"
+
+#~ msgid "Remove Tracker"
+#~ msgstr "Követő törlése"
+
+#~ msgid "Change Tracker"
+#~ msgstr "Követő módosítása"
+
+#, fuzzy
+#~| msgid "Trackers"
+#~ msgid "Update Trackers"
+#~ msgstr "Követők"
+
+#~ msgid "Restore Defaults"
+#~ msgstr "Az alapértelmezések visszaállítása"
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Webseed to add to the "
+#~ "torrent.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">Note: </span>Only http webseeds are supported.</p></body></"
+#~ "html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Webes megosztás "
+#~ "hozzárendelése egy torrenthez.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">Megjegyzés: </span>Csak http-alapú megosztás lehetséges.</"
+#~ "p></body></html>"
+
+#~ msgid "Add Webseed"
+#~ msgstr "Új webes megosztás"
+
+#~ msgid "Remove Webseed"
+#~ msgstr "Webes megosztás törlése"
+
+#~ msgid "Chunks"
+#~ msgstr "Fájlszelet"
+
+#~ msgid "Total:"
+#~ msgstr "Összesen:"
+
+#~ msgid "Currently downloading:"
+#~ msgstr "Letöltés alatt:"
+
+#~ msgid "Downloaded:"
+#~ msgstr "Letöltve:"
+
+#~ msgid "Excluded:"
+#~ msgstr "Kizárva:"
+
+#~ msgid "Left:"
+#~ msgstr "Hátra van:"
+
+#~ msgid "Size:"
+#~ msgstr "Méret:"
+
+#~ msgid "Scanning data of torrent:"
+#~ msgstr "A torrentadatok átvizsgálása:"
+
+#~ msgid "Number of chunks found:"
+#~ msgstr "Megtalált szeletek:"
+
+#~ msgid "Number of chunks failed:"
+#~ msgstr "Hibás szeletek:"
+
+#~ msgid "Number of chunks not downloaded:"
+#~ msgstr "Még nem letöltött szeletek:"
+
+#~ msgid "Number of chunks downloaded:"
+#~ msgstr "Letöltött szeletek:"
+
+#~ msgid "0"
+#~ msgstr "0"
+
+#~ msgid "Cancel"
+#~ msgstr "Mégsem"
+
+#~ msgid "Stats"
+#~ msgstr "Statisztika"
+
+#~ msgid "Seeders:"
+#~ msgstr "Feltöltők:"
+
+#~ msgid "<n>"
+#~ msgstr "<n>"
+
+#~ msgid "Download speed:"
+#~ msgstr "Letöltési sebesség:"
+
+#~ msgid "Leechers:"
+#~ msgstr "Letöltők:"
+
+#~ msgid "Upload speed:"
+#~ msgstr "Feltöltési sebesség:"
+
+#~ msgctxt "chunks left"
+#~ msgid "Left:"
+#~ msgstr "Hátra van:"
+
+#~ msgctxt "all chunks"
+#~ msgid "All:"
+#~ msgstr "Mind:"
+
+#~ msgctxt "source-file"
+#~ msgid "Source:"
+#~ msgstr "Forrás:"
+
+#~ msgid "Saving to:"
+#~ msgstr "Cél:"
+
+#~ msgid "Upload limit per transfer:"
+#~ msgstr "Feltöltési korlát egyenként:"
+
+#~ msgid "No Limit"
+#~ msgstr "Nincs korlát"
+
+#~ msgid "KiB"
+#~ msgstr "KiB"
+
+#~ msgid "Download limit per transfer:"
+#~ msgstr "Letöltési korlát egyenként:"
+
+#~ msgid "Folders"
+#~ msgstr "Mappák"
+
+#~ msgid "Default torrent folder:"
+#~ msgstr "Alapértelmezett torrentmappa:"
+
+#~ msgid "Default temporary folder"
+#~ msgstr "Alapértelmezett ideiglenes mappa"
+
+#~ msgid "Pre-allocate disk space"
+#~ msgstr "Lemezterület lefoglalása előre"
+
+#, fuzzy
+#~| msgid "General"
+#~ msgctxt "General options."
+#~ msgid "General"
+#~ msgstr "Általános"
+
+#, fuzzy
+#~| msgid "General"
+#~ msgid "General URL:"
+#~ msgstr "Általános"
+
+#, fuzzy
+#~| msgid "Requests"
+#~ msgid "Required"
+#~ msgstr "Kérések"
+
+#, fuzzy
+#~| msgid "Used tags:"
+#~ msgid "Used Mirrors:"
+#~ msgstr "Címkék:"
+
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Verification:"
+#~ msgstr "Leírás:"
+
+#, fuzzy
+#~| msgid "Remaining time:"
+#~ msgid "Date and time:"
+#~ msgstr "Hátralévő idő:"
+
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Version:"
+#~ msgstr "Leírás:"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "Name:"
+#~ msgstr "Név"
+
+#, fuzzy
+#~| msgid "IP address of the peer"
+#~ msgid "Name of the publisher"
+#~ msgstr "A partner IP-címe"
+
+#, fuzzy
+#~| msgid "Files"
+#~ msgctxt "Files as in files on a server"
+#~ msgid "Files:"
+#~ msgstr "Fájl"
+
+#~ msgid "&File with links to import:"
+#~ msgstr "&Importálandó linkeket tartalmazó fájl:"
+
+#~ msgid "&Import Links"
+#~ msgstr "&Importálás"
+
+#~ msgid "Show:"
+#~ msgstr "Megjelenítés:"
+
+#~ msgctxt "filter: show all file types"
+#~ msgid "&All"
+#~ msgstr "Min&d"
+
+#~ msgid "&Videos"
+#~ msgstr "&Videók"
+
+#~ msgid "Ima&ges"
+#~ msgstr "&Képek"
+
+#~ msgid "A&udio"
+#~ msgstr "&Zene"
+
+#~ msgid "A&rchives"
+#~ msgstr "&Archívumok"
+
+#~ msgid "You can use wildcards for filtering."
+#~ msgstr "Szűrésnél használhatók a szokásos illesztési karakterek."
+
+#~ msgid "Filter files here...."
+#~ msgstr "Fájlszűrő..."
+
+#~ msgid "Contains"
+#~ msgstr "Tartalmazza"
+
+#~ msgid "Does Not Contain"
+#~ msgstr "Nem tartalmazza"
+
+#~ msgid "Inver&t Selection"
+#~ msgstr "A kijelölés in&vertálása"
+
+#~ msgctxt "Check as in mark, not as in verify"
+#~ msgid "Chec&k Selected"
+#~ msgstr "A ki&választottak megjelölése"
+
+#~ msgid "Show &web content"
+#~ msgstr "A &webes tartalmak megjelenítése"
+
+#, fuzzy
+#~| msgid "Error: "
+#~ msgid "Mirror:"
+#~ msgstr "Hiba: "
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of connections:"
+#~ msgstr "A próbálkozások száma:"
+
+#, fuzzy
+#~| msgid "Enter URL:"
+#~ msgid "Enter a URL"
+#~ msgstr "Cím:"
+
+#, fuzzy
+#~| msgid "Priority"
+#~ msgid "Priority:"
+#~ msgstr "Prioritás"
+
+#, fuzzy
+#~| msgid "Location (URL)"
+#~ msgid "Location:"
+#~ msgstr "Cím"
+
+#~ msgid "Clear History"
+#~ msgstr "Az előzmények törlése"
+
+#~ msgctxt "View modes"
+#~ msgid "View Modes"
+#~ msgstr "Nézetmódok"
+
+#~ msgid "Select Ranges"
+#~ msgstr "Tartomány kijelölése"
+
+#~ msgid "Date"
+#~ msgstr "Dátum"
+
+#~ msgid "Host"
+#~ msgstr "Gépnév"
+
+#~ msgid "Filter History"
+#~ msgstr "Szűrő - Előzmények"
+
+#~ msgctxt "delete selected transfer"
+#~ msgid "Delete Selected"
+#~ msgstr "A kijelöltek törlése"
+
+#~ msgid "Download"
+#~ msgstr "Letöltések"
+
+#, fuzzy
+#~| msgid "Path:"
+#~ msgctxt "hash as a hash of type md5, sha1 etc."
+#~ msgid "Hash:"
+#~ msgstr "Elérési út:"
+
+#~ msgid "Status:"
+#~ msgstr "Állapot:"
+
+#, fuzzy
+#~| msgid "Remaining Time"
+#~ msgid "Remaining Time:"
+#~ msgstr "Hátralévő idő"
+
+#~ msgid "Transfer Settings"
+#~ msgstr "Letöltési beállítások"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Download Destination:"
+#~ msgstr "Célmappa:"
+
+#, fuzzy
+#~| msgid "Not in use"
+#~ msgctxt "No value has been set"
+#~ msgid "Not set"
+#~ msgstr "Nem használt"
+
+#, fuzzy
+#~| msgid "KiB"
+#~ msgid " KiB"
+#~ msgstr "KiB"
+
+#, fuzzy
+#~| msgid "Upload limit:"
+#~ msgid "Upload Limit:"
+#~ msgstr "Feltöltési korlát:"
+
+#, fuzzy
+#~| msgid "Download limit:"
+#~ msgid "Download Limit:"
+#~ msgstr "Letöltési korlát:"
+
+#, fuzzy
+#~| msgid "Maximum share ratio:"
+#~ msgid "Maximum Share Ratio:"
+#~ msgstr "Max. megosztási arány:"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgctxt "The available mirrors (servers) for downloading"
+#~ msgid "Mirrors"
+#~ msgstr "Hiba"
+
+#, fuzzy
+#~| msgid "Destination"
+#~ msgctxt "verification of the download (e.g. by using MD5)"
+#~ msgid "Verification"
+#~ msgstr "Célmappa"
+
+#, fuzzy
+#~| msgid "User:"
+#~ msgid "Issuer:"
+#~ msgstr "Név:"
+
+#~ msgid "E-Mail:"
+#~ msgstr "E-mail:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Creation:"
+#~ msgstr "Célmappa:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Expiration:"
+#~ msgstr "Célmappa:"
+
+#~ msgid "Group Settings"
+#~ msgstr "Csoportbeállítások"
+
+#~ msgid "Default folder:"
+#~ msgstr "Alapértelmezett mappa:"
+
+#~ msgid "Moves all transfers with the regular expression to this group"
+#~ msgstr "Ebbe a csoportba mozgatja a kifejezéshez illeszkedő letöltéseket"
+
+#~ msgid "Regular expression:"
+#~ msgstr "Reguláris kifejezés:"
+
+#~ msgid "*movies*"
+#~ msgstr "*filmek*"
+
+#~ msgid "Maximum download speed:"
+#~ msgstr "Max. letöltési sebesség:"
+
+#~ msgid "Maximum upload speed:"
+#~ msgstr "Max. feltöltési sebesség:"
+
+#~ msgid "Destination:"
+#~ msgstr "Célmappa:"
+
+#~ msgid "Transfer group:"
+#~ msgstr "Letöltési csoport:"
+
+#~ msgid "&File"
+#~ msgstr "&Fájl"
+
+#~ msgid "&Downloads"
+#~ msgstr "&Letöltések"
+
+#~ msgid "&Settings"
+#~ msgstr "&Beállítások"
+
+#~ msgid "&Help"
+#~ msgstr "&Súgó"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Alap eszköztár"
+
+#~ msgid "Sets to show the splashscreen while KGet is loading"
+#~ msgstr "Legyen-e nyitókép a KGet indulásakor"
+
+#~ msgid "The width of the columns in the history view"
+#~ msgstr "Az előzmények nézetben az oszlopok szélessége"
+
+#~ msgid "List of the available search engines"
+#~ msgstr "Elérhető keresők"
+
+#, fuzzy
+#~| msgid "List of the available search engines"
+#~ msgid "List of the available search engine URLs"
+#~ msgstr "Elérhető keresők"
+
+#, fuzzy
+#~| msgid "List of the Regexp to match input Url"
+#~ msgid "List of the Regexp to match input URL"
+#~ msgstr "A bemeneti URL-hez illesztendő kifejezések"
+
+#~ msgid "List of descriptions for user scripts"
+#~ msgstr "Leírások a felhasználói szkriptekhez"
+
+#~ msgid "List of whether the script is enabled"
+#~ msgstr "Engedélyezve van-e a szkript"
+
+#~ msgid "There are no links in the active frame of the current HTML page."
+#~ msgstr "Egy link sincs az aktuális HTML oldal aktív keretében."
+
+#~ msgid "An error occurred...."
+#~ msgstr "Hiba történt."
+
+#~ msgid "Remove Tag"
+#~ msgstr "Címke eltávolítása"
+
+#~ msgid "Add Tag"
+#~ msgstr "Új címke"
+
+#~ msgid "Tag Settings for the groups"
+#~ msgstr "Csoportcímkék"
+
+#~ msgid "Tag Settings"
+#~ msgstr "Címkebeállítások"
+
+#~ msgid "Available tags:"
+#~ msgstr "Elérhető címkék:"
+
+#~ msgid "Used tags:"
+#~ msgstr "Címkék:"
+
+#~ msgid "Enter a new Tag"
+#~ msgstr "Új címke megadása"
+
+#~ msgid "Enter a new tag"
+#~ msgstr "Új címke"
+
+#~ msgid "Modify Tags..."
+#~ msgstr "Módosítás..."
+
+#~ msgid "The width of the columns in the main view"
+#~ msgstr "A fő nézetben az oszlopok szélessége"
+
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#~ msgid "Announcing"
+#~ msgstr "Bejelentés"
+
+#, fuzzy
+#~| msgid "Error: "
+#~ msgid "Error: %1"
+#~ msgstr "Hiba: "
+
+#~ msgid "Unknown client"
+#~ msgstr "Ismeretlen kliens"
+
+#~ msgid "1 day "
+#~ msgid_plural "%1 days "
+#~ msgstr[0] "%1 nap "
+#~ msgstr[1] "%1 nap "
+
+#~ msgid "Cannot open log file %1 : %2"
+#~ msgstr "Nem nyitható meg ez a naplófájl: %1 : %2"
+
+#~ msgid "Cannot write to %1 : %2"
+#~ msgstr "Nem sikerült írni ebbe a fájlba: %1 : %2"
+
+#~ msgid "Cannot read from %1"
+#~ msgstr "Nem sikerült olvasni: %1"
+
+#~ msgid "Cannot create directory %1"
+#~ msgstr "Nem sikerült létrehozni ezt a mappát: %1."
+
+#~ msgid "Cannot symlink %1 to %2: %3"
+#~ msgstr "Nem sikerült létrehozni ezt a linket: %1 -> %2 - %3"
+
+#~ msgid "Cannot move %1 to %2: %3"
+#~ msgstr "Nem sikerült áthelyezni: %1 -> %2 - %3"
+
+#~ msgid "Cannot copy %1 to %2: %3"
+#~ msgstr "Nem sikerült átmásolni: %1 -> %2 - %3"
+
+#~ msgid "Cannot delete %1: %2"
+#~ msgstr "Nem sikerült törölni: %1 - %2"
+
+#~ msgid "Cannot create %1: %2"
+#~ msgstr "Nem sikerült létrehozni: %1 - %2"
+
+#~ msgid "Cannot calculate the filesize of %1: %2"
+#~ msgstr "Nem sikerült lekérdezni a fájlméretet: %1 - %2"
+
+#~ msgid "Cannot calculate the filesize : %1"
+#~ msgstr "Nem sikerült kiszámolni a fájlméretet: %1"
+
+#~ msgid "Cannot open %1 : %2"
+#~ msgstr "Nem sikerült megnyitni: %1 - %2"
+
+#~ msgid "Cannot expand file: %1"
+#~ msgstr "Nem sikerült kitömöríteni: %1"
+
+#~ msgid "Cannot seek in file : %1"
+#~ msgstr "Nem sikerült pozícionálni a fájlban: %1"
+
+#~ msgid "General"
+#~ msgstr "Általános"
+
+#~ msgid "Connections"
+#~ msgstr "Kapcsolatok"
+
+#~ msgid "Tracker"
+#~ msgstr "Követő"
+
+#~ msgid "Disk Input/Output"
+#~ msgstr "Lemezműveletek"
+
+#~ msgid "Not connected"
+#~ msgstr "Nincs kapcsolat"
+
+#~ msgid "Not in use"
+#~ msgstr "Nem használt"
+
+#~ msgid "Connection closed"
+#~ msgstr "A kapcsolat bezárva"
+
+#~ msgid "Resolving proxy %1:%2"
+#~ msgstr "Proxy feloldása: %1:%2"
+
+#~ msgid "Resolving hostname %1"
+#~ msgstr "Gépnév feloldása: %1"
+
+#~ msgid "Error: request failed: %1"
+#~ msgstr "Hiba történt, egy kérés nem sikerült: %1"
+
+#~ msgid "Connected"
+#~ msgstr "Csatlakozva"
+
+#~ msgid "Error: Failed to connect to webseed"
+#~ msgstr "Hiba történt, nem sikerült csatlakozni egy webes feltöltőhöz"
+
+#~ msgid "Connecting"
+#~ msgstr "Csatlakozás"
+
+#~ msgid "Failed to connect to webseed"
+#~ msgstr "Nem sikerült csatlakozni egy webes feltöltőhöz"
+
+#~ msgid "Failed to resolve hostname of webseed"
+#~ msgstr "Nem sikerült feloldani a webes feltöltő gépnevét"
+
+#~ msgid "Error: failed to connect, server not responding"
+#~ msgstr "Hiba történt, nem sikerült csatlakozni, a kiszolgáló nem válaszol"
+
+#~ msgid "Error: request timed out"
+#~ msgstr "Hiba történt, időtúllépés"
+
+#, fuzzy
+#~| msgid "Redirected without a new location !"
+#~ msgid "Redirected without a new location."
+#~ msgstr "Átirányítási kérés új cím nélkül."
+
+#~ msgid "1 peer"
+#~ msgid_plural "%1 peers"
+#~ msgstr[0] "%1 partner"
+#~ msgstr[1] "%1 partner"
+
+#~ msgid "Illegal token: %1"
+#~ msgstr "Nem megengedett token: %1"
+
+#~ msgid "Decode error"
+#~ msgstr "Dekódolási hiba"
+
+#~ msgid "Unexpected end of input"
+#~ msgstr "Váratlanul ért véget a bemenet"
+
+#~ msgid "Cannot convert %1 to an int"
+#~ msgstr "Nem sikerült egésszé alakítani: %1"
+
+#, fuzzy
+#~| msgid "Torrent is incomplete!"
+#~ msgid "Torrent is incomplete."
+#~ msgstr "A torrent nem teljes."
+
+#~ msgid "Failed to open %1 : %2"
+#~ msgstr "Nem sikerült megnyitni: %1 - %2"
+
+#~ msgid "Failed to create %1 : %2"
+#~ msgstr "Nem sikerült létrehozni: %1 - %2"
+
+#~ msgid "Cannot open index file %1 : %2"
+#~ msgstr "Nem sikerült megnyitni ezt az indexfájlt: %1 - %2"
+
+#~ msgid "Cannot create file %1 : %2"
+#~ msgstr "Nem sikerült létrehozni: %1 - %2"
+
+#~ msgid "Failed to write first chunk to DND file : %1"
+#~ msgstr "Nem sikerült kiírni az első fájlszeletet a DND-fájlba: %1"
+
+#~ msgid "Failed to write last chunk to DND file : %1"
+#~ msgstr "Nem sikerült kiírni az utolsó fájlszeletet a DND-fájlba: %1"
+
+#~ msgid "Cannot open %1 for writing : readonly filesystem"
+#~ msgstr "%1 nem nyitható meg írásra: a fájlrendszer csak olvasható"
+
+#~ msgid "Cannot expand file %1 : %2"
+#~ msgstr "Nem sikerült kitömöríteni: %1 - %2"
+
+#~ msgid "Error : Reading past the end of the file %1"
+#~ msgstr "Hiba történt, olvasási kísérlet a fájl végénél: %1"
+
+#~ msgid "Failed to seek file %1 : %2"
+#~ msgstr "Nem sikerült létrehozni a(z) %1 fájlt: %2"
+
+#~ msgid "Error reading from %1"
+#~ msgstr "Hiba történt %1 olvasása közben"
+
+#~ msgid "Failed to write to file %1 : %2"
+#~ msgstr "Nem sikerült létrehozni a(z) %1 fájlt: %2"
+
+#~ msgid "Cannot preallocate diskspace : %1"
+#~ msgstr "Nem sikerült előre lefoglalni lemezterületet: %1"
+
+#~ msgid "Cannot open file %1 : %2"
+#~ msgstr "Nem sikerült megnyitni: %1 - %2"
+
+#, fuzzy
+#~| msgid "Corrupted torrent!"
+#~ msgid "Corrupted torrent."
+#~ msgstr "A torrent hibás."
+
+#~ msgid " Unable to open torrent file %1 : %2"
+#~ msgstr "Nem sikerült megnyitni ezt a torrentfájlt: %1 - %2"
+
+#~ msgid "Parse Error"
+#~ msgstr "Feldolgozási hiba"
+
+#~ msgid ""
+#~ "An error occurred while loading the torrent <b>%1</b>:<br/><b>%2</b><br/"
+#~ ">The torrent is probably corrupt or is not a valid torrent file."
+#~ msgstr ""
+#~ "Hiba történt a következő torrent betöltésekor: <b>%1</b>.<br/><b>%2</"
+#~ "b><br/>A torrentfájl hibás vagy nem is torrentfájl."
+
+#~ msgid ""
+#~ "An error occurred while loading the torrent:<br/><b>%1</b><br/>The "
+#~ "torrent is probably corrupt or is not a valid torrent file."
+#~ msgstr ""
+#~ "Hiba történt a következő torrent betöltésekor:<br/><b>%1</b>.<br/>A "
+#~ "torrentfájl hibás vagy nem is torrentfájl."
+
+#~ msgid "Unable to create %1 : %2"
+#~ msgstr "Nem sikerült létrehozni: %1 - %2"
+
+#~ msgid ""
+#~ "You are already downloading this torrent %1, the list of trackers of both "
+#~ "torrents has been merged."
+#~ msgstr ""
+#~ "Már folyik a letöltés: %1, ezért a két torrent követőlistája össze lett "
+#~ "vonva."
+
+#~ msgid "You are already downloading the torrent %1"
+#~ msgstr "Már folyik a letöltés: %1"
+
+#~ msgid "Not started"
+#~ msgstr "Nincs elindítva"
+
+#~ msgid "Seeding completed"
+#~ msgstr "Feltöltve"
+
+#, fuzzy
+#~| msgid "Seeding"
+#~ msgctxt "Status of a torrent file"
+#~ msgid "Seeding"
+#~ msgstr "Feltöltés"
+
+#~ msgid "Downloading"
+#~ msgstr "Letöltés"
+
+#~ msgid "Stopped"
+#~ msgstr "Leállítva"
+
+#~ msgid "Allocating diskspace"
+#~ msgstr "Lemezterület lefoglalása"
+
+#~ msgid "Queued for seeding"
+#~ msgstr "Ütemezve feltöltéshez"
+
+#, fuzzy
+#~| msgid "Currently downloading:"
+#~ msgid "Queued for downloading"
+#~ msgstr "Letöltés alatt:"
+
+#~ msgid "Checking data"
+#~ msgstr "Adatellenőrzés"
+
+#~ msgid "Stopped. No space left on device."
+#~ msgstr "Leállítva, mert elfogyott a szabad hely az eszközön."
+
+#~ msgid "Cannot open file %1: %2"
+#~ msgstr "Nem sikerült megnyitni ezt a fájlt: %1. A hiba oka: %2."
+
+#~ msgid "Cannot create index file: %1"
+#~ msgstr "Nem sikerült létrehozni egy indexfájlt: %1"
+
+#, fuzzy
+#~| msgid "Redirected without a new location !"
+#~ msgid "Redirect without a redirect location"
+#~ msgstr "Átirányítási kérés új cím nélkül."
+
+#~ msgid "Unable to resolve hostname %1"
+#~ msgstr "Nem sikerült feloldani ezt a gépnevet: %1"
+
+#~ msgid "Cannot bind to udp port %1 or the 10 following ports."
+#~ msgstr ""
+#~ "Nem sikerült kapcsolódni a következő UDP-porthoz vagy az utána következő "
+#~ "tízhez: %1."
+
+#~ msgid "Invalid response from tracker"
+#~ msgstr "Érvénytelen válasz érkezett egy követőtől"
+
+#~ msgid "Invalid data from tracker"
+#~ msgstr "Érvénytelen adat érkezett a követőtől"
+
+#~ msgid "Invalid tracker URL"
+#~ msgstr "Érvénytelen követőcím"
+
+#~ msgid "Cannot open file : %1 : %2"
+#~ msgstr "Nem sikerült megnyitni ezt a fájlt: %1 - %2"
+
+#~ msgid ""
+#~ "Another group with this name already exists. Please select a different "
+#~ "name."
+#~ msgstr "Már létezik ilyen nevű csoport, válasszon más nevet."
+
+#~ msgid "Group Name Already in Use"
+#~ msgstr "Ez a csoportnév már foglalt"
+
+#~ msgid "Add"
+#~ msgstr "Hozzáadás"
+
+#~ msgid "Delete"
+#~ msgstr "Törlés"
+
+#~ msgid "Configure..."
+#~ msgstr "Beállítások..."
+
+#~ msgid "Details for: %1"
+#~ msgstr "Jellemzők: %1"
+
+#~ msgid "All downloads"
+#~ msgstr "Minden letöltés"
+
+#~ msgid "Finished downloads"
+#~ msgstr "Befejeződött letöltések"
+
+#~ msgid "Transfers:"
+#~ msgstr "Letöltések:"
+
+#~ msgid "Downloads"
+#~ msgstr "Letöltések"
+
+#~ msgid "Transfer details:"
+#~ msgstr "Jellemzők:"
+
+#~ msgid "Transfer List"
+#~ msgstr "Letöltési lista"
+
+#~ msgid "Expandable transfer details instead of separate tabs"
+#~ msgstr "Külön lap helyett kibontható részletek"
+
+#~ msgid "Threads"
+#~ msgstr "Szálak"
+
+#~ msgid "Number of threads:"
+#~ msgstr "A szálak száma:"
+
+#~ msgid "License:"
+#~ msgstr "Licenc:"
+
+#, fuzzy
+#~| msgid "Number of the chunk"
+#~ msgid "Name of the license"
+#~ msgstr "Szeletazonosító"
+
+#~ msgctxt "The transfer is delayed"
+#~ msgid "Delayed"
+#~ msgstr "Késik"
+
+#~ msgid ""
+#~ "Destination file \n"
+#~ "%1\n"
+#~ "already exists.\n"
+#~ "Do you want to overwrite it?"
+#~ msgstr ""
+#~ "A célként megadott fájl,\n"
+#~ "%1,\n"
+#~ "már létezik.\n"
+#~ "Felül szeretné írni?"
+
+#~ msgid "Overwrite destination"
+#~ msgstr "Felülírás"
+
+#~ msgid "Are you sure that you want to remove all selected groups?"
+#~ msgstr "Biztosan törölni szeretné a kijelölt csoportokat?"
+
+#~ msgid "Rename transfer"
+#~ msgstr "A letöltés átnevezése"
+
+#~ msgid "Download URL again?"
+#~ msgstr "Letöltés újból?"
+
+#~ msgid ""
+#~ "You will lose all data in these files, are you sure you want to do this?"
+#~ msgstr "A fájlok tartalma el fog veszni, biztosan ezt szeretné?"
+
+#~ msgid "Cannot remove torrent default tracker."
+#~ msgstr "Nem lehet eltávolítani egy torrent alapértelmezett követőjét."
+
+#~ msgid "You cannot add trackers to a private torrent"
+#~ msgstr "Nem lehet követőt adni privát torrenthez."
+
+#~ msgid "Cannot migrate %1 : %2"
+#~ msgstr "Nem sikerült átvinni: %1 - %2"
+
+#~ msgid ""
+#~ "The torrent %1 was started with a previous version of KTorrent. To make "
+#~ "sure this torrent still works with this version of KTorrent, we will "
+#~ "migrate this torrent. You will be asked for a location to save the "
+#~ "torrent to. If you press cancel, we will select your home directory."
+#~ msgstr ""
+#~ "A torrentet (%1) a KTorrent egyik korábbi változatával indították el. A "
+#~ "biztonságos működés érdekében a torrentet migrálni kell a KTorrent "
+#~ "jelenlegi verziójára. Meg kell adni a migrált torrent új helyét - ha a "
+#~ "Mégsem gombra kattint, a torrentfájl a saját mappába kerül."
+
+#~ msgid "Select Folder to Save To"
+#~ msgstr "Válassza ki a mentési mappát"
+
+#~ msgid "Queued"
+#~ msgstr "Várakozik"
+
+#~ msgctxt "@label transfer source"
+#~ msgid "Source:"
+#~ msgstr "Forrás:"
+
+#~ msgid "Maintainer, Core Developer"
+#~ msgstr "Karbantartó, vezető fejlesztő"
+
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Delete Selected"
+#~ msgstr "A kijelöltek törlése"
+
+#~ msgid "Minimal segment size:"
+#~ msgstr "Minimális szegmensméret:"
+
+#~ msgid "kBi"
+#~ msgstr "kBi"
+
+#~ msgid "Save data every:"
+#~ msgstr "Mentés ennyi adat érkezése után:"
+
+#~ msgid "Current Tracker"
+#~ msgstr "Jelenlegi követő"
+
+#~ msgid "Manual Announce"
+#~ msgstr "Kézi bejelentés"
+
+#~ msgid "Scrape"
+#~ msgstr "Kérés"
+
+#~ msgid "Available Trackers"
+#~ msgstr "Elérhető követők"
+
+#~ msgid "Urls list of the available search engines"
+#~ msgstr "Az elérhető keresők címei"

@@ -1,0 +1,767 @@
+<chapter id="browser">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>Tomas</firstname
+><surname
+>Straupis</surname
+><affiliation
+><address
+><email
+>tomasstraupis@gmail.com</email
+></address
+></affiliation
+><contrib
+>Vertė</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2010-10-25</date>
+<releaseinfo
+>&kde; 4.5</releaseinfo>
+</chapterinfo>
+
+
+<title
+>&konqueror; – žiniatinklio naršyklė</title>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="konqorg.png"/></imageobject>
+<textobject>
+<phrase
+>Naršoma www.konqueror.org</phrase>
+</textobject>
+</mediaobject>
+
+<sect1 id="conn-inet">
+<title
+>Prisijungimas prie interneto</title>
+
+<para
+>Prisijungę prie interneto galite naudoti &konqueror; žiniatinklio naršymui. Tai daryti taip pat paprasta, kaip ir našryti po vietinius failus. Įrankių lango lauke <guilabel
+>Vieta</guilabel
+> įrašykite nuorodą (&URL;) ir spauskite &Enter;, to užteks!</para>
+
+<itemizedlist>
+<listitem
+><para
+>Jei prisijungimui naudojate skambinantį modemą, tai jūs naudosite &kppp; arba kokią kitą panašią programą.</para
+></listitem>
+
+<listitem
+><para
+>Jei jūsų kompiuteris prijungtas prie vietinio tinklo (<acronym
+>LAN</acronym
+>), kuriame yra įgaliotasis serveris, leidžiantis jums jungtis prie interneto, tai jūs turėsite nustatyti &konqueror;, kad jis naudotų įgaliotajį serverį. Tai galite padaryti parinkę meniu punktą <menuchoice
+><guimenu
+>Nustatymai</guimenu
+><guimenuitem
+>Konfigūruoti Konqueror...</guimenuitem
+> </menuchoice
+> ir atsidariusiame dialoge parinkę <menuchoice
+><guimenu
+>Žiniarinklio naršymas</guimenu
+> <guimenuitem
+>Įgaliotasis serveris</guimenuitem
+></menuchoice
+>.</para
+></listitem>
+
+<listitem
+><para
+>Jei jums pasisekė ir jūs turite greitaeigį kabelinį ryšį, tai paslaugos tiekėjas tikriausiai jums davė išorinį kabelinį modemą, kuriam reikia ryšio su jūsų mašina. Deja detali informacija, kaip naudoti tokį prisijungimą, priklauso nuo <acronym
+>IPT</acronym
+> (interneto paslaugos tiekėjo) ir dalinai nuo to, kurią naudojate Linux/&UNIX; distribuciją. Kai kurie <acronym
+>IPT</acronym
+> prijungia savo klientus per įgaliotąjį serverį, tokiu atveju reikės jį nurodyti &konqueror; nustatymuose. Informacijos galite rasti savo distribucijos sąrašyno laiškų archyvuose.</para>
+</listitem>
+</itemizedlist>
+
+<note
+><para
+>Klaidos pranešimas <errorname
+>Nežinomas mazgas</errorname
+> paprastai reiškia, kad &konqueror; neranda prisijungimo prie interneto arba kad įvedėte neteisingą &URL;.</para
+></note>
+
+</sect1>
+
+<sect1 id="surf">
+<title
+>Naršymas ir paieška</title>
+
+<para
+>Prisijungę prie interneto, naršyti su &konqueror; galite lygiai taip pat, kaip ir su bet kuria kita naršykle.</para>
+
+<para
+>Įrašykite nuorodą į vietos įrankinės langą ir spauskite &Enter; arba <mousebutton
+>kairįjį</mousebutton
+> pelės mygtuką ant mygtuko <guibutton
+>Eiti</guibutton
+>, esantį dešinėje vietos juostos pusėje. &konqueror; atsiųs ir parodys nurodytą puslapį. Jei puslapį buvote įkėlę anksčiau, konquererio <link linkend="path-complete"
+>automatinio teksto baigimo</link
+> savybė gali padėti rašant nuorodą antrą kartą. Taipogi <link linkend="sidebar"
+>šoninėje juostoje</link
+> galite peržvelgti <guilabel
+>istoriją</guilabel
+>. Jei norite naudoti vieną iš žiniatinklio paieškos variklių, jums padės konquererio savybė <link linkend="enhanced-browsing"
+>žiniatinklio trumpės</link
+>.</para>
+
+<para
+>Eiti į puslapio nuorodos puslapį galite paspaudę ant jos <mousebutton
+>kairįjį</mousebutton
+> pelės mygtuką.</para>
+
+<para
+>Norėdami atverti nuorodą naujoje konquererio kopijoje palikdami atidarytą ir dabartinę kopiją, spauskite ant nuorodos dešinį pelės mygtuką ir iš meniu parinkite <guimenuitem
+>Atverti naujame lange</guimenuitem
+>. Taipogi galite norėti <guimenuitem
+>Atverti naujoje kortelėje</guimenuitem
+>, <link linkend="tabbrowse"
+>naršymas su kortelėmis</link
+> leis atverti daugiau nei vieną puslapį viename &konqueror; lange ir greitai persijunginėti tarp norimų puslapių vienu pelės paspaudimu.</para>
+
+<para
+>Galite pasirinkti vieną iš žiūrėjimo būdų parinkę meniu punktą <menuchoice
+><guimenu
+>Langas</guimenu
+> <guimenuitem
+>Skaidyti rodymą į kairę ir dešinę</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+>&Ctrl; &Shift;<keycap
+>L</keycap
+></keycombo
+>) / <menuchoice
+><guimenu
+>Langas</guimenu
+> <guimenuitem
+>Skaidyti rodymą į viršų ir apačią</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+>&Ctrl; &Shift;<keycap
+>T</keycap
+></keycombo
+>). Šiuo atveju galėsite matyt skirtingus puslapius vienu metu. Tai gali būti naudingą, jei peržiūrinėjate sudėtingus <acronym
+>HTML</acronym
+> puslapius, tik įsitikinkite, kad taip darant nedidelis mažas kvadračiukas apatinėje dešinėje pusėje yra tuščias.</para>
+<para
+>Norėdami grįžti į ankstesnį puslapį spauskite <keycombo action="simul"
+>&Alt;<keysym
+>Kairėn</keysym
+></keycombo
+> kombinaciją, įrankinės mygtuką <guibutton
+>Atgal</guibutton
+> arba meniu parinktį <menuchoice
+><guimenu
+>Eiti</guimenu
+> <guimenuitem
+>Atgal</guimenuitem
+></menuchoice
+>.</para>
+<para
+>Analogiškai, jei grįžte atgal, galite eiti pirmyn paspaudę <keycombo action="simul"
+>&Alt;<keysym
+>Dešinėn</keysym
+></keycombo
+>, mygtuką <guibutton
+>Pirmyn</guibutton
+> arba meniu parinktį <menuchoice
+><guimenu
+>Eiti</guimenu
+> <guimenuitem
+>Pirmyn</guimenuitem
+></menuchoice
+>.</para>
+
+<para
+>Jei dėl kokios nors priežasties norite sustabdyti atsiuntimą, spauskite mygtuką &Esc;, įrankinės mygtuką <guibutton
+>Sustabdyti</guibutton
+> arba meniu punktą <menuchoice
+><guimenu
+>Rodymas</guimenu
+> <guimenuitem
+>Sustabdyti</guimenuitem
+></menuchoice
+>.</para>
+
+<para
+>Jei žiūrite puslapį įjungę <guilabel
+>HTML įrankinę</guilabel
+>, turėtumėte matyti du naujus ženkliukus <guiicon
+><inlinemediaobject
+><imageobject
+> <imagedata fileref="format-font-size-less.png" format="PNG"/> </imageobject
+></inlinemediaobject
+></guiicon
+> ir <guiicon
+><inlinemediaobject
+><imageobject
+> <imagedata fileref="format-font-size-more.png" format="PNG"/> </imageobject
+></inlinemediaobject
+></guiicon
+>. Jei sunku skaityti puslapio tekstą, šių mygtukų pagalba galite keisti teksto dydį. Kaip ši parinktis veiks priklauso nuo to, kaip buvo sukurtas konkretus puslapis.</para>
+</sect1>
+
+<sect1 id="tabbrowse">
+<title
+>Naršymas kortelėse</title>
+<para
+>Naudojant šią savybę Konqueroris rodo daugiau nei vieną puslapį viename lange ir leidžia persijungti tarp jų naudojant korteles. Tokiu būdu galite <quote
+>fone</quote
+> siųstis vieną puslapį ir tuo pačiu metu kitoje kortelėje skaityti kitą puslapį.</para>
+
+<para
+>Norėdami naudoti naršymą kortelėse, spauskite ant nuorodos <mousebutton
+>dešinį</mousebutton
+> pelės mygtuką ir parinkite <guimenuitem
+>Atverti naujoje kortelėje</guimenuitem
+> arba spauskite vidurinį pelės mygtuką. Puslapis bus atsiųstas ir rodomas įprastiniu būdu tik su kortelėmis viršuje. Vienoje kortelėje bus rodomas vienas puslapis. Persijungti į atitinkamą puslapį galima arba paspaudus kairįjį pelės mygtuką ant kortelės, arba naudojant klavišų kombinacijas <keycombo action="simul"
+>&Ctrl;<keycap
+>,</keycap
+></keycombo
+> ir <keycombo action="simul"
+>&Ctrl;<keycap
+>.</keycap
+></keycombo
+>, leidžiančia persijungti į gretimas korteles. Taipogi galima persijungti į kitą kortelę sukant pelės <mousebutton
+>ratuką</mousebutton
+> užvedus pelės žymeklį ant kortelių juostos. Du kartus paspaudus ant tuščios kortelių juostos dalies bus atverta nauja tuščia kortelė.</para>
+
+<para
+><guimenu
+>Nustatymų</guimenu
+> dialogo skilties <guilabel
+>Bendrieji</guilabel
+> parinktis <guilabel
+>Atverti naujas korteles foniniu režimu</guilabel
+> leidžia atidarinėti nuorodas naujose kortelėse, kurios nerodomos tol, kol jūs nepaspausite ant jų <mousebutton
+>kairiuoju</mousebutton
+> pelės mygtuku.</para>
+
+<para
+><menuchoice
+><guimenu
+>Nustatymai</guimenu
+><guimenuitem
+>Konfigūruoti Konqueror... </guimenuitem
+></menuchoice
+> dialogo skiltyje <guimenuitem
+>Bendrieji</guimenuitem
+> pažymėjus parinktį <guilabel
+>Atverti nuorodas naujoje kortelėje vietoje naujo lango</guilabel
+>, spaudžiant vidurinį pelės mygtuką nuoroda bus atverta naujoje kortelėje, o jei spausdami vidurinį mygtuką laikysite nuspaudę &Shift; – nuoroda bus atidaryta kitoje kortelėje foniniu režimu.</para>
+
+<para
+>Paspaudus ant kortelės <mousebutton
+>dešinį</mousebutton
+> pelės mygtuką bus rodomos šios parinktys:</para>
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Nauja kortelė</guimenuitem
+> (<keycombo action="simul"
+>&Ctrl;<keycap
+>T</keycap
+></keycombo
+>)</term>
+<listitem
+><para
+>Atidaro naują tuščią kortelę. Puslapį į kortelę atsiųsti galite arba įrašę nuorodą (&URL;) vietos lauke, arba parinkę ją iš žymelių įrankinės ar istorijos <link linkend="sidebar"
+>šoninės juostos</link
+>.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guimenuitem
+>Dubliuoti kortelę</guimenuitem
+> (<keycombo action="simul"
+>&Ctrl;<keycap
+>D</keycap
+></keycombo
+>)</term>
+<listitem
+><para
+>Sukuria kortelės su puslapiu dublikatą.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guimenuitem
+>Įkelti kortelę iš naujo</guimenuitem
+> (<keycap
+>F5</keycap
+>)</term>
+<listitem
+><para
+>Iš naujo įkelia dabartinės kortelės turinį.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guisubmenu
+>Kitos kortelės</guisubmenu
+></term>
+<listitem
+><para
+>Rodo submeniu su visomis kitomis kortelėmis. Čia galite pasirinkti kortelę, į kurią norite persijungti.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><guisubmenu
+>Kitos kortelės</guisubmenu
+><guimenuitem
+>Iš naujo įkelti visas korteles</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+>&Shift;<keycap
+>F5</keycap
+></keycombo
+>)</term>
+<listitem
+><para
+>Iš naujo įkelia visų kortelių turinį.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><guisubmenu
+>Kitos kortelės</guisubmenu
+><guimenuitem
+>Užverti kitas korteles</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Užveria visas korteles išskyrus pažymėtąją.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guimenuitem
+>Atkabinti kortelę</guimenuitem
+> (<keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>B</keycap
+></keycombo
+>)</term>
+<listitem
+><para
+>Ši parinktis pašalina pažymėtą kortelę iš dabartinio Konquererio lango ir atidaro ją naujame Konquerorio lange.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guimenuitem
+>Užverti kortelę</guimenuitem
+> (<keycombo action="simul"
+>&Ctrl;<keycap
+>W</keycap
+></keycombo
+>)</term>
+<listitem
+><para
+>Uždaro pažymėtą kortelę.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect1>
+
+<sect1 id="enhanced-browsing">
+<title
+>Žiniatinklio trumpės</title
+> 
+
+<para
+>Įjungus šį funkcionalumą žiniatinklio trumpių pagalba galima siųsti paieškos užklausą prieš tai neįkrovus paieškos svetainės.</para
+> <para
+>Pavyzdžiui vietos juostoje įvedus <userinput
+>gg:konqueror</userinput
+> ir paspaudus &Enter; bus vykdoma puslapių, susijusių su &konqueror;, paieška naudojant <trademark
+>Google</trademark
+>.</para
+> <para
+>Norėdami pažiūrėti, kokios yra įvestos žiniatinklio trumpės ir galbūt pridėti savo, naudokite meniu punktą <menuchoice
+><guimenu
+>Nustatymai</guimenu
+><guimenuitem
+>Konfigūruoti Konqueror...</guimenuitem
+></menuchoice
+> ir atverkite skilti <guilabel
+>Žiniatinklio trumpės</guilabel
+>.</para>
+
+<para
+>Norėdami sukurti naują trumpę spauskite <guibutton
+>Nauja...</guibutton
+>, bus parodytas dialogas, kuriame galėsite įvesti jūsų naujos trumpės parinktis. Pirmame lauke įveskite žmogui suprantamą paieškos tiekėjo pavadinimą. Pavyzdžiui <trademark
+>Google</trademark
+>.</para>
+
+<para
+>Kitame lauke įveskite &URI;, kuris naudojamas paieškoje. Visas ieškomas tekstas gali būti nurodytas kaip <userinput
+>\{@}</userinput
+> arba <userinput
+>\{0}</userinput
+>. Rekomenduojama versija yra <userinput
+>\{@}</userinput
+>, nes ji iš atsakymo eilutės pašalina visus užklausos kintamuosius (<replaceable
+>pavadinimas</replaceable
+>=<replaceable
+>reikšmė</replaceable
+>), kai tuo tarpu <userinput
+>\{0}</userinput
+> pakeičiama nemodifikuota užklausos eilute. </para>
+
+<para
+>Galite naudoti <userinput
+>\{1}</userinput
+> ... <userinput
+>\{n}</userinput
+>, kad nurodytumėte konkrečius užklausos žodžius ir <userinput
+>\{<varname
+><replaceable
+>pavadinimas</replaceable
+></varname
+>}</userinput
+>, kad naudotojo užklausoje nurodytumėte reikšmę <userinput
+><varname
+><replaceable
+>pavadinimas</replaceable
+></varname
+>=<replaceable
+>reikšmė</replaceable
+></userinput
+>. Taipogi galima nurodyti daugiau nei vieną nuorodą iš karto (pavadinimai, skaičiai ir eilutės), pavyzdžiui <userinput
+>(\{<varname
+><replaceable
+>pavadinimas1</replaceable
+></varname
+>,<varname
+><replaceable
+>pavadinimas2</replaceable
+></varname
+>,...,"<replaceable
+>eilutė</replaceable
+>"})</userinput
+>. Pirma atitinkanti reikšmė (iš kairės) bus naudojama kaip pakeitimo reikšmė galutiniam &URI;. Kabutėmis apgaubta eilutė gali būti naudojama kaip numatytoji reikšmė, jei netinka niekas iš nurodyto nuorodų sąrašo.</para>
+
+<para
+>Norėdami tiesiog sukurti paprastą žiniatinklio trumpę, reikia tik &URI;, kuris naudojamas paieškos variklyje. Tęsiant ankstesnį <trademark
+>Google</trademark
+> pavyzdį, įvestume <userinput
+>http://www.google.com/search?q=\{@}&amp;ie=UTF-8&amp;oe=UTF-8</userinput
+>. Dažniausiai nesunkiai suprasite, kur reikia įrašyti <userinput
+>\{@}</userinput
+> įvykdę užklausą ir tada išanalizavę adreso &URL;. Pavyzdžiui atlikus <trademark
+>Google</trademark
+> paiešką su kriterijumi &konqueror;, bus sukurtas toks &URL;: <ulink url="http://www.google.com/search?q=konqueror&amp;ie=UTF-8&amp;oe=UTF-8"
+>http://www.google.com/search?q=konqueror&amp;ie=UTF-8&amp;oe=UTF-8</ulink
+>. Jums tereikia pakeisti &konqueror; į <userinput
+>\{@}</userinput
+>, kad gautumėte reikiamą &URI;.</para>
+
+<para
+>Trečiame lauke reikia įvesti &URI; trumpę. Pavyzdžiui <userinput
+>gg</userinput
+>, jei norite rašyti <userinput
+>gg:konqueror</userinput
+>. Kitoje parinktyje &mdash; iškrentančiame meniu &mdash; turite parinkti teksto koduotę, kuri bus naudojama formuojant paieškos užklausą. Įvedus visas parinktis spauskite &Enter; ir nuo tada galėsite naudoti naują žiniatinklio trumpę naršyklėje &konqueror;.</para>
+
+</sect1>
+
+<sect1 id="accesskeys">
+
+<title
+>Prieigos klavišai</title>
+
+<para
+>&konqueror; pilnai palaiko  &HTML; atributą <sgmltag class="attribute"
+>accesskey</sgmltag
+> formose ir nuorodose. Prieigos klavišai leidžia naudoti klaviatūrą ten, kur paprastai reikėtų pelės, – pavyzdžiui spaudžiant nuorodą. Šios savybės privalumas yra tas, kad naudotojai gali sąveikauti su puslapiu ne tik naudodami pelę.</para>
+<para
+>Šią savybę reikia įjungti įgalinus parinktį <guilabel
+>Įgalinti prieigos klavišo aktyvavimą su Vald(Ctrl) klavišu</guilabel
+>, esančią nustatymų skiltyje <guilabel
+>Žiniatinklio naršymas</guilabel
+>.</para>
+<para
+>Norėdami įjungti prieigos klavišus, spauskite ir atleiskite &Ctrl;. Tą padarius, jei kokia nors nuoroda turi atributą <sgmltag class="attribute"
+>accesskey</sgmltag
+>, jo simbolis pasirodys virš nuorodos, tai parodant, ką reikia spausti. Tada galite spausti su nuoroda susietą mygtuką vietoje to, kad spaustumėte nuorodą pele. Išjungti aktyvuotus prieigos klavišus galite pakartotinu &Ctrl; paspaudimu.</para>
+
+<note
+><para
+>Teisingam šios savybės naudojimui reikia, kad svetainės kūrėjai priskirtų konkrečius klavišus naudodami nuorodos atributą <sgmltag class="attribute"
+>accesskey</sgmltag
+>. Daugelis žiniatinklio kūrėjų atributo <sgmltag class="attribute"
+>accesskey</sgmltag
+> prie nuorodų neįtraukia, todėl ši savybė tokiuose puslapiuose neveiks.</para
+></note>
+
+</sect1>
+
+<sect1 id="useragent">
+<title
+>Naršyklės identifikacija</title>
+<para
+>Prisijungęs prie svetainės Konquereris nusiunčia trumpą naršyklės identifikatorių, žinomą kaip <quote
+>Naudotojo agentas</quote
+>. Daugelis svetainių naudoja šią informaciją grąžinamų puslapių pakeitimui, priklausomai nuo konkrečios naršyklės stipriųjų ir silpnųjų pusių.</para>
+<para
+>Deja yra gan daug svetainių, kurios atsisako veikti, jei jūs nenaudojate vienos iš naršyklių, kurią svetainė supranta kaip <quote
+>tinkamą</quote
+>, net jei Konqueroris ir visiškai teisingai veikia su dauguma svetainių.</para>
+<para
+>Šią problemą galima išspręsti pakeitus naršyklės identifikatorių, kurį Konqueroris siunčia konkretiems domenams. Tai galite padaryti nustatymų dialoge parinkę <menuchoice
+><guimenu
+>Žiniatinklio naršymas</guimenu
+><guimenuitem
+> Naršyklės identifikacija</guimenuitem
+></menuchoice
+>.</para>
+<note
+><para
+>Svetainė gali nevisai teisingai veikti ir dėl &Java; ar JavaScript naudojimo. Jei įtariate, kad tai yra neteisingo veikimo priežastis, įsitikinkite, kad šios savybės įjungtos nustatymų dialogo skiltyje <guilabel
+>Java ir JavaScript </guilabel
+>.</para
+></note>
+<note
+><para
+>Įdiekite <guilabel
+>Naudotojo agento keitiklio</guilabel
+> išplėtimą Konquerorio prieduose ir jį įjunkite naudodami meniu punktą <menuchoice
+><guimenu
+>Nustatymai</guimenu
+><guimenuitem
+> Konfigūruoti išplėtimus</guimenuitem
+></menuchoice
+>. Šio išplėtimo pagalba prie <guimenu
+>Įrankių</guimenu
+> meniu bus pridėtas punktas <guimenuitem
+>Keisti naršyklės tapatybę</guimenuitem
+>. Šio punkto pagalba galėsite greitai pakeisti <quote
+>Naudotojo agento</quote
+> reikšmę.</para
+></note>
+
+</sect1>
+
+<sect1 id="save-print-web">
+<title
+>Žiniatinklio elementų įrašymas ir spausdinimas</title>
+
+<para
+>Jūs galite įrašyti skaitomą puslapį (ar bent jau jo pagrindinį &HTML; ar panašų išeities tekstą) į vietinį diską naudodami meniu punktą <menuchoice
+><guimenu
+>Failas</guimenu
+><guimenuitem
+>Įrašyti kaip...</guimenuitem
+></menuchoice
+>. Jei skaitomame puslapyje yra kadrai, taipogi veiks ir punktas <menuchoice
+><guimenu
+>Failas</guimenu
+><guimenuitem
+>Įrašyti kadrą kaip...</guimenuitem
+></menuchoice
+>. Pradžioje spauskite <mousebutton
+>kairįjį</mousebutton
+> pelės mygtuką kadre, kurį norėtumėte įrašyti.</para>
+
+<para
+>Jei puslapyje naudojamas fono piešinukas, jį įrašyti galite naudodami punktą <menuchoice
+><guimenu
+>Failas</guimenu
+><guimenuitem
+>Įrašyti fono paveiksliuką kaip...</guimenuitem
+></menuchoice
+>.</para>
+
+<para
+>Bet jei tai, ko jūs iš tiesų norite yra puikioji paskutinio McLarren nuotrauka, spauskite ant nuotraukos <mousebutton
+>dešinį</mousebutton
+> pelės mygtuką ir iššokusiame meniu parinkite <guimenuitem
+>Įrašyti piešinį kaip...</guimenuitem
+>. Nepamirškite gerbti savininko autorinių teisių ir paprašykite leidimo prieš naudojant piešinį kam nors kitam nei savo malonumui.</para>
+
+<para
+>Jei ant nuorodos (kuri gali būti piešinukas) spausite <mousebutton
+>dešinį</mousebutton
+> pelės mygtuką ir iššokančiame meniu parinksite <guimenuitem
+>Įrašyti jungtį kaip...</guimenuitem
+>, tai į vietinį diską bus atsiųstas ir įrašytas paprastas &HTML; ar panašus išeities kodas.</para>
+
+<para
+>Paspaudus ant nuorodos (kuri gali būti piešinukas) <mousebutton
+>dešinį</mousebutton
+> mygtuką ir parinkus <guimenuitem
+>Kopijuoti nuorodos adresą</guimenuitem
+>, į iškarpinę bus nukopijuota nuoroda (&URL;), kurią vėliau galėsite įkelti sakykime į e-pašto laišką, norėdami papasakoti draugui apie šią naują puikią ir naudingą svetainę.</para>
+
+<para
+><mousebutton
+>Dešiniu</mousebutton
+> mygtuku paspaudus ant piešinuko ir parinkus <guimenuitem
+>Kopijuoti paveikslėlį</guimenuitem
+>, į iškarpinę bus nukopijuotas piešinuko &URL;.</para>
+
+<para
+>Norėdami įrašyti visą puslapį, įskaitant ir piešinukus, <guimenu
+>Įrankių</guimenu
+> meniu parinkite  <guimenuitem
+>Archyvuoti tinklalapį...</guimenuitem
+>. Pastebėtina, kad šią savybę teikia <link linkend="konq-plugin"
+>priedas</link
+>, kuris gali būti ir neįdiegtas jūsų sistemoje. Tinklapis bus įrašytas į vieną failą su praplėtimu <literal role="extension"
+>.war</literal
+> ir gali būti atvertas paspaudus ant jo <mousebutton
+>kairiu</mousebutton
+> pelės mygtuku, kai Konqueroris veikia failų tvarkyklės režime.</para>
+
+<para
+>Žiūrimą puslapį nesunku atspausdinti parinkus meniu punktą <menuchoice
+><guimenu
+>Failas</guimenu
+> <guimenuitem
+>Spausdinti...</guimenuitem
+></menuchoice
+>, <guimenuitem
+>Spausdinti kadrą</guimenuitem
+> arba įrankinės mygtuku <guiicon
+>Spausdinti</guiicon
+>.</para>
+
+</sect1>
+
+<sect1 id="ftp">
+<title
+>&FTP;</title>
+
+<para
+>&FTP; (Failų persiuntimo protokolas) yra vienas anksčiausių, ir tikriausiai vis dar geriausių, būdų  internetu perkelti failus iš vieno kompiuterio į kitą.</para>
+
+<para
+>Naudodami &FTP; jūs galite matyti failus ir aplankus, esančius nutolusiuose kompiuteriuose taip, tarsi jie būtų jūsų sistemoje, tada galite juos atsisiųsti į savo kompiuterį naudodami įprastines Konquerorio komandas <guimenuitem
+>Kopijuoti</guimenuitem
+> ir <guimenuitem
+>Padėti</guimenuitem
+> arba pertempimo būdu ir, jei leidžiama, nusiųsti failus iš savo kompiuterio į nutolusįjį. Norėdami tai pabandyti, įrašykite šią nuorodą &URL;</para>
+
+<screen
+><userinput
+>ftp://ftp.kde.org/pub/kde</userinput
+>
+</screen>
+
+<para
+>į vietos juostą ir spauskite &Enter;. Jei esate prisijungę prie interneto ir jei &kde; &FTP; stotis nėra per daug užimta, jūs turėtumėte pamatyti aplanką <filename class="directory"
+>/pub/kde</filename
+>, esantį stotyje &kde-ftp;</para>
+
+<note
+><para
+>Nors griežtai kalbant &FTP; nuorodos (&URL;) turėtų prasidėti eilute <userinput
+>ftp://</userinput
+>, o <acronym
+>WWW </acronym
+> nuorodos – <userinput
+>http://</userinput
+>, Konqueroris yra pakankamai protingas, kad pats išsiaiškintų, ką turite omenyje ir įterptų reikiamus simbolius, jei jūs juos praleisite.</para
+></note>
+
+<para
+>Jungiantis prie &FTP; stoties paprastai reikia kokio nors naudotojo vardo ir slaptažodžio. Kad būtų paprasčiau, dauguma &FTP; stočių laisvam parsiuntimui priims vardą <systemitem class="username"
+>anonymous</systemitem
+> ir jūsų e-pašto adresą kaip slaptažodį. Kad viskas būtų dar paprasčiau, Konqueroris pats nurodys visą šią informaciją už jus. </para>
+
+<note
+><para
+>Jei bandysite prisijungti prie &FTP; stoties, kuri nereikalauja įprastinio naudotojo vardo ir slaptažodžio,  bet kuri yra per daug užimta, kad priimtų daugiau prisijungimų, Konqueroris dažnai interpretuos pranešimą <quote
+>užimtas</quote
+> kaip naudotojo vardo ir slaptažodžio užklausą, todėl parodys dialogą, kuriame paprašys jūsų įvesti šias reikšmes.</para
+></note>
+
+<para
+>Stotys, kurios labiau rūpinasi saugumu, reikalaus tikro naudotojo vardo ir slaptažodžio. Tokiu atveju Konqueroris paprašys juos įvesti. Jūs taipogi galite įtraukti vardą ir slaptažodį į &URL;. Pavyzdžiui</para>
+
+<screen
+><userinput
+>ftp://<replaceable
+>naudotojas</replaceable
+>@ftp.cia.org</userinput
+>
+</screen>
+
+<para
+>Tada Konqueroris paprašys įvesti slaptažodį.</para>
+
+<para
+>Konqueroris taipogi palaiko automatinį prisijungimą, nurodytą faile <filename
+>.netrc</filename
+>. Daugiau informacijos apie tai, kaip įjungti šią savybę rasite adresu <ulink url="http://www.konqueror.org/faq.html#netrc"
+> http://www.konqueror.org/faq.html#netrc</ulink
+></para>
+
+</sect1>
+
+
+<sect1 id="portnumbers">
+<title
+>Nuorodos su prievadų numeriais</title>
+<para
+>Jei nuorodoje nurodysite prievado numerį, pavyzdžiui taip: <userinput
+>http://intranet.corp.com:1080</userinput
+>, galite gauti klaidos pranešimą <quote
+>Prieiga prie apriboto prievado per POST negalima</quote
+>. Taip daroma saugumo sumetimais. Jei visgi norite pasiekti stotį tuo konkrečiu prievadu, tiesiog pridėkite eilutę <screen
+><userinput>
+OverridenPorts=KableliaisAtskirtasPrievadųSąrašas
+</userinput
+></screen
+> į <filename
+>$KDEDIR/share/config/kio_httprc </filename
+> arba <filename
+>~/.kde/share/config/kio_httprc</filename
+>.</para>
+<para
+>Pavyzdžiui <screen
+><userinput
+>OverridenPorts=23,15
+</userinput
+></screen
+> (neturėtų būti jokių tarpų).</para>
+<para
+>Konqueroris atmes šiuos prievadus (sąrašas yra kietai įprogramuotas faile <filename
+>kdelibs/kio/kio/job.cpp</filename
+>):</para>
+<para
+>1, 7, 9, 11, 13, 15, 17, 19, 20, 21, 22, 23, 25, 37, 42, 43, 53, 77, 79, 87, 95, 101, 102, 103, 104, 109, 110, 111, 113, 115, 117, 119, 123, 135, 139, 143, 179, 389, 512, 513, 514, 515, 526, 530, 531, 532, 540, 556, 587, 601, 989, 990, 992, 993, 995, 1080, 2049, 4045, 6000, 6667 </para>
+</sect1>
+
+
+</chapter>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

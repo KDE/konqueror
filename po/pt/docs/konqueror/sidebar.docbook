@@ -1,0 +1,391 @@
+<chapter id="sidebar">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>José</firstname
+><surname
+>Pires</surname
+><affiliation
+><address
+><email
+>zepires@gmail.com</email
+></address
+></affiliation
+><contrib
+>Tradução</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2011-11-22</date>
+<releaseinfo
+>&kde; 4.8</releaseinfo>
+</chapterinfo>
+
+<title
+>A Barra Lateral</title>
+
+<para
+>A Barra Lateral aparece como uma área em separado à esquerda da janela do &konqueror;. Pode ser invocada com a opção do menu <menuchoice
+><guimenu
+>Configuração</guimenu
+><guimenuitem
+>Mostrar a Barra Lateral</guimenuitem
+></menuchoice
+> ou pode ser comutada com a tecla <keycap
+>F9</keycap
+>.</para>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="dirtree.png"/></imageobject>
+<textobject>
+<phrase
+>Com a Barra Lateral</phrase
+>  
+</textobject>
+</mediaobject>
+
+<para
+>Esta contém um conjunto de páginas; se você carregar com o botão <mousebutton
+>esquerdo</mousebutton
+> no ícone de uma página, poderá ver essa mesma página. Ao carregar com o botão <mousebutton
+>esquerdo</mousebutton
+> no ícone da página visível, irá fechar a Barra Lateral de modo a que só os ícones das páginas ficarão visíveis.</para>
+<variablelist>
+
+<varlistentry>
+<term
+><guilabel
+>Favoritos</guilabel
+></term>
+<listitem
+><para
+>Esta página mostra uma árvore com os seus Favoritos. Carregue com o botão <mousebutton
+> esquerdo</mousebutton
+> num item para o abrir na área principal.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Histórico</guilabel
+></term>
+<listitem
+><para
+>Esta página mostra-lhe uma árvore com o seu histórico de navegação. Se carregar com o botão <mousebutton
+>esquerdo</mousebutton
+> num item irá abri-lo na área principal, ou então poderá abri-lo numa janela nova do &konqueror; se carregar com o botão <mousebutton
+>direito </mousebutton
+> e seleccionar a opção <guimenuitem
+>Abrir numa Nova Janela</guimenuitem
+> no menu de contexto.</para>
+<para
+>Você poderá remover um item do histórico se carregar com o botão <mousebutton
+>direito </mousebutton
+> nele e seleccionar a opção <guimenuitem
+>Remover o Item </guimenuitem
+>. Se seleccionar <guimenuitem
+>Limpar o Histórico</guimenuitem
+> irá limpar todo o histórico.</para>
+<para
+>O menu de contexto que lhe aparece ao carregar com o botão <mousebutton
+>direito</mousebutton
+> num item da página do Histórico também lhe dá a opção de escolher se o histórico completo será ordenado por nome ou por data.</para>
+<para
+>Se seleccionar as <guimenuitem
+>Preferências...</guimenuitem
+> deste menu de contexto fará aparecer o módulo de controlo do <guilabel
+>Barra Lateral do Histórico</guilabel
+>. Este módulo poderá ser usado para indicar o tamanho máximo do seu histórico e definir uma hora a partir da qual os itens serão removidos automaticamente. Você também poderá definir tipos de letra diferentes para os &URL;s antigos e os novos. A opção das <guilabel
+>Dicas detalhadas</guilabel
+> controla qual a informação que é apresentada quando você passa com o cursor do rato por cima de um item da página de histórico.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Pasta Pessoal</guilabel
+></term>
+<listitem
+><para
+>Esta página mostra uma árvore com as subpastas da sua pasta pessoal. Tenha em atenção que as pastas <quote
+>escondidas</quote
+> (aquelas cujos nomes começam por um ponto) não são mostradas. Carregue com o botão <mousebutton
+>esquerdo</mousebutton
+> num item para o abrir na área principal ou com o botão <mousebutton
+>direito</mousebutton
+> para mostrar um menu de contexto, o qual lhe permitirá abrir a subpasta numa nova janela, como sendo uma nova página da área principal. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Rede</guilabel
+></term>
+<listitem
+><para
+>Esta página pretende mostrar uma árvore com as suas ligações de rede mais importantes, ainda que possam também ser incluídas as pastas locais. Mais uma vez, você poderá carregar com o botão <mousebutton
+>esquerdo</mousebutton
+> num item para o abrir na área principal ou com o botão <mousebutton
+>direito</mousebutton
+> para fazer aparecer um menu que uma gama de possibilidades mais vasta.</para>
+<para
+>As pastas mostradas na página <guilabel
+>Rede</guilabel
+> estão guardadas na pasta <filename class="directory"
+> ~/.kde/share/apps/konqsidebartng/virtual_folders/remote/</filename
+>, e você poderá criar mais pastas tal como o faria com qualquer outra subpasta. Os itens dentro destas pastas são mantidos como ficheiros <literal role="extension"
+>.desktop</literal
+> e poderão ser criados com a opção do &konqueror; <menuchoice
+><guimenu
+>Editar</guimenu
+><guisubmenu
+>Criar um Novo</guisubmenu
+> <guimenuitem
+>Atalho para Localização (URL)...</guimenuitem
+></menuchoice
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Pasta Raiz</guilabel
+></term>
+<listitem
+><para
+>A <guilabel
+>Pasta de Topo</guilabel
+> corresponde à localização <filename class="directory"
+>/</filename
+>, e é a pasta de base dos ficheiros locais do seu sistema. Se você expandir a pasta de <quote
+>Topo</quote
+> você irá encontrar outra pasta chamada <filename class="directory"
+>root</filename
+>. Esta pertence ao administrador do sistema ou Super-Utilizador e é a sua pasta pessoal. Você também irá encontrar uma pasta chamada <filename class="directory"
+>home</filename
+>, onde você poderá ser capaz de encontrar a sua <quote
+>Área Pessoal</quote
+> de novo.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Serviços</guilabel
+></term>
+<listitem
+><para
+>Esta página oferece o acesso rápido aos seguintes serviços: </para>
+<para
+><guilabel
+>Aplicações</guilabel
+>, <guilabel
+>Navegador de CD's de Áudio</guilabel
+> e <guilabel
+>Tipos de Letra</guilabel
+>.</para>
+<!-- not in 4.4
+<para
+><guilabel
+>Devices</guilabel
+>. This shows your hard disc 
+partitions, floppy and &CD-ROM;. <mousebutton
+>Left</mousebutton
+> click on 
+a device or partition name to mount it and display its contents in the main 
+view.  A mounted device or partition can be unmounted by <mousebutton
+>right
+</mousebutton
+> clicking on the device name and selecting <guimenuitem
+>Unmount
+</guimenuitem
+> from the pop up menu.
+</para>
+<para
+>The <guilabel
+>LAN Browser</guilabel
+> allows you to browse other 
+machines connected to your Local Area Network.</para>
+<para
+>The <guilabel
+>Print System Browser</guilabel
+> tree gives you quick 
+access to &kde;'s print manager <application
+>Kprinter</application
+>.</para>
+-->
+</listitem>
+</varlistentry>
+<!-- begin copy from dolphin docbook-->
+<varlistentry>
+<term
+><guilabel
+>Locais</guilabel
+></term>
+<listitem
+><para
+>O painel de <guilabel
+>Locais</guilabel
+> aparece à esquerda da janela por omissão, sendo que este mostra todos os locais que tiver marcado como favoritos. Mostra também todos os dispositivos de armazenamento ligados ao computador. </para>
+<para
+>A forma mais simples de adicionar uma pasta ao painel de <guilabel
+>Locais</guilabel
+> é arrastá-la e largá-la nesse painel. Para além disso, poderá carregar dentro do painel com o &RMB; e escolher a opção <menuchoice
+><guimenuitem
+>Adicionar um Item...</guimenuitem
+></menuchoice
+> no menu de contexto. </para>
+</listitem>
+</varlistentry>
+<!-- end copy from dolphin docbook-->
+</variablelist>
+
+<para
+>A configuração da barra lateral poderá ser alterada ao carregar com o botão <mousebutton
+>direito </mousebutton
+> na área em branco por baixo dos ícones das páginas ou ao carregar com o botão <mousebutton
+>esquerdo</mousebutton
+> no ícone do <guilabel
+>Botão de Configuração</guilabel
+> (o ícone de topo na imagem anterior; poderá não estar visível na sua configuração). Ao fazer isto aparecerá um menu com as seguintes opções:</para>
+<variablelist>
+
+<varlistentry>
+<term
+><guisubmenu
+>Adicionar uma Nova</guisubmenu
+></term>
+<listitem
+><para
+>Esta opção permite-lhe adicionar uma nova página à Barra Lateral. Essa nova página poderá conter diferentes módulos da barra lateral ou então uma nova vista em <guimenuitem
+>Árvore</guimenuitem
+>. A última opção deste submenu permite-lhe voltar ao estado predefinido do sistema.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Janelas Múltiplas</guimenuitem
+></term>
+<listitem
+><para
+>Se seleccionar esta opção dividirá a Barra Lateral de modo a que possam ser vistas duas páginas de uma vez.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Mostrar as Páginas à Esquerda</guimenuitem
+>, <guimenuitem
+>Mostrar as Páginas à Direita</guimenuitem
+></term>
+<listitem
+><para
+>Esta opção permite-lhe escolher se os ícones das páginas são mostrados à esquerda ou à direita da barra lateral.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Mostrar o Botão de Configuração</guimenuitem
+></term>
+<listitem
+><para
+>Use esta opção para mostrar ou esconder o ícone <guilabel
+>Botão de Configuração</guilabel
+>.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Se carregar com o botão <mousebutton
+>direito</mousebutton
+> no ícone de uma página fará aparecer um menu com as seguintes opções:</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guimenuitem
+>Mudar o Nome</guimenuitem
+></term>
+<listitem
+><para
+>Esta opção permite-lhe mudar o nome dessa página.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Alterar o URL</guimenuitem
+></term>
+<listitem
+><para
+>Esta opção permite-lhe alterar o &URL; (localização) da pasta que está a ser vista na página.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Alterar o Ícone</guimenuitem
+></term>
+<listitem
+><para
+>Para alterar o ícone da página.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Remover</guimenuitem
+></term>
+<listitem
+><para
+>Para remover a página da barra lateral.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Configurar a Barra Lateral</guimenuitem
+></term>
+<listitem
+><para
+>O último item oferece um submenu de configuração da barra lateral, tal como se encontra descrito acima.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

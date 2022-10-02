@@ -1,0 +1,203 @@
+<chapter id="config">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>Gunnhild</firstname
+><surname
+>Lurås</surname
+><affiliation
+><address
+><email
+>gluras@c2i.net</email
+></address
+></affiliation
+><contrib
+></contrib
+></othercredit
+> 
+</authorgroup>
+<date
+>2003-11-06</date
+> <releaseinfo
+>3.2</releaseinfo
+> </chapterinfo>
+
+
+<title
+>Tilpass &konqueror;</title>
+
+<para
+>Sammen med resten av &kde;, er &konqueror; lett å tilpasse, slik at du kan få akkurat det utseende og følelsen som best passer dine ønsker og behov.</para>
+
+<sect1 id="configure-bars">
+<title
+>Verktøylinjer</title>
+
+<para
+>Når &kde; er nyinstallert, inneholder &konqueror;s hovedvindu en menylinje, hovedverktøylinja og adressefeltet og muligens bokmerkelinja.</para>
+
+<para
+>Kanskje du ikke trenger alle disse verktløylinjene. For å gjemme en av dem, gå til <menuchoice
+><guimenu
+>Innstillinger</guimenu
+><guisubmenu
+>Verktøylinjer </guisubmenu
+></menuchoice
+> og ta vekk merket på boksen. For å vise en skjult verktøylinje, er det bare å krysse av i boksen.</para
+> 
+
+<para
+>Menylinja i seg selv kan skrus av og på med snarveien <keycombo action="simul"
+>&Ctrl;<keycap
+>M</keycap
+></keycombo
+>. </para>
+
+<!-- FIXME -->
+<para
+>På venstre side av hver linje ser du noen vertikale linjer. Når du trykker med &LMB; på dem, kan du <quote
+>gjemme</quote
+> ut linja, som betyr at den skjules, men raskt kan hentes tilbake ved å klikke på den nå horisontale linja. Du kan også dra en linje til en ny posisjon med disse linjene.</para>
+
+<para
+>Hvis du <mousebutton
+>høyreklikker</mousebutton
+> på en verktøylinje, vil du få en meny for å sette opp denne linja. Du kan velge orientering, tekstposisjon og størrelse på ikonene.</para>
+
+<para
+>Ikonene på de forskjellige linjene kan endres ved å gå inn på <menuchoice
+><guimenu
+>Innstillinger</guimenu
+> <guimenuitem
+>Tilpass verktøylinjer …</guimenuitem
+></menuchoice
+>, da hentes dialogboksen <guilabel
+>Tilpass verktøylinjer</guilabel
+> opp. Hovedverktøylinja og de ekstra verktøylinjene deles opp i seksjoner, som Hovedverktøylinje &lt;&konqueror;&gt;, Hovedverktøylinje &lt;khtmlpart&gt; og Ekstra verktøylinje &lt;khtmlsettingsplugin&gt;. Antallet og typen av disse delene avhenger av om &konqueror; er i nettleser eller filbehandlingsmodus og om &konqueror;-programtillegg er installert.</para>
+
+</sect1>
+
+<sect1 id="configshort">
+<title
+>Snarveier</title>
+<para
+>For å endre snarveistastene som &konqueror; bruker, velg <menuchoice
+><guimenu
+>Innstillinger</guimenu
+><guimenuitem
+>Tilpass snarveistaster …</guimenuitem
+></menuchoice
+>. Dette henter fram en dialogboks som den under. </para>
+<mediaobject>
+<imageobject>
+<imagedata fileref="shortcut1.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Snarveistilpassing, skjermbilde 1</phrase>
+</textobject>
+</mediaobject>
+<para
+>Søk gjennom kombinasjonsboksen for å finne handlinga du ønsker å legge til eller endre snarveistastene for og velg den ved å <mousebutton
+>venstreklikke</mousebutton
+> på navnet. Så kan du endre snarveien ved å velge en av radioknappene <guilabel
+>Ingen</guilabel
+>, <guilabel
+>Standard</guilabel
+> eller <guilabel
+>Selvvalgt</guilabel
+> eller ved å trykke på den store knappen i <guilabel
+>Velg en tast for den valgte hendelsen</guilabel
+>-området.</para>
+
+<para
+>Hvis du velger <guilabel
+>Definer snarvei</guilabel
+> og deretter velger <guilabel
+>Avansert</guilabel
+>, så vises dialiogboksen nedenfor: </para>
+<mediaobject>
+<imageobject>
+<imagedata fileref="shortcut2.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Snarveistilpassing, skjermbilde 2</phrase>
+</textobject>
+</mediaobject>
+<para
+>Velg om du vil endre <guilabel
+>Primær</guilabel
+> eller <guilabel
+>Alternativ</guilabel
+>-snarveien og trykk tastekombinasjonen du vil skal være snarveistast, f.eks. <keycombo action="simul"
+> &Ctrl;&Shift;<keycap
+>S</keycap
+></keycombo
+>. Hvis <guilabel
+>Automatisk stenging</guilabel
+> er skrudd på vil dialogboksen lukkes med en gang du skriver inn tastekombinasjonen, ellers vil den være oppe til du trykker <guibutton
+>OK</guibutton
+> eller <guibutton
+>Avbryt</guibutton
+>. Hvis du trykker på det lille svarte ikonet med et hvitt kryss på, tømmes snarveien.</para>
+
+<sect2 id="userdefmenus">
+<title
+>Brukerdefinerte menyer</title>
+<para
+>Du kan legge til din egen sprettoppmeny i &konqueror; slik at menyen kommer fram når du trykker en tastekombinasjon. Trykk en ny tast eller bruk pilene <keysym
+>opp</keysym
+> og <keysym
+>ned</keysym
+> og <keycap
+>Enter</keycap
+> for å velge et element fra den.</para>
+<para
+>For å gjøre dette, legg til en <guilabel
+>Selvvalgt</guilabel
+>-snarveistast for hver av de handlingene du ønsker at skal ende opp i menyen og kryss av for <guilabel
+>Flertast</guilabel
+> i <guilabel
+>Velg en tast for den valgte handlinga</guilabel
+>. Trykk tastekombinasjonen for å få opp menyen og deretter trykk tasten som skal velge det elementet fra menyen.</para>
+</sect2>
+</sect1>
+
+<sect1 id="othersettings">
+<title
+>Andre innstillinger</title>
+<para
+>Når du velger <menuchoice
+><guimenu
+>Innstillinger</guimenu
+><guimenuitem
+>Tilpass konqueror …</guimenuitem
+></menuchoice
+> hentes det fram en dialogboks som du kan bruke til å kotrollere det meste av &konqueror;s oppførsel. Den inneholder flere deler som velges ved å <mousebutton
+>venstre </mousebutton
+>klikke på en av ikonene til venstre i dialogboksen.</para>
+<para
+>Når du trykker på <guibutton
+>Hjelp</guibutton
+>-knappen får du detaljerte instruksjoner om hvordan de forskjellige delene brukes, eller så kan du bruke <link linkend="bubble"
+>Hva er dette?</link
+>-funksjonen.</para>
+</sect1>
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

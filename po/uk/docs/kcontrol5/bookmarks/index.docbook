@@ -1,0 +1,166 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Ukrainian "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="bookmarks" lang="&language;">
+<articleinfo>
+
+<title
+>Закладки</title>
+<authorgroup>
+<author
+><personname
+><firstname
+>Xavier</firstname
+><surname
+>Vello</surname
+></personname
+> <email
+>xavier.vello@gmail.com</email
+> </author>
+<othercredit role="translator"
+><firstname
+>Юрій</firstname
+><surname
+>Чорноіван</surname
+><affiliation
+><address
+><email
+>yurchor@ukr.net</email
+></address
+></affiliation
+><contrib
+>Переклад українською</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>8 листопада 2016 року</date>
+<releaseinfo
+>Програми 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>системні параметри</keyword>
+<keyword
+>закладки</keyword>
+<keyword
+>KIO</keyword>
+</keywordset>
+</articleinfo>
+<sect1 id="conf">
+<title
+>Домашня сторінка закладок</title>
+<para
+>За допомогою цього модуля ви можете налаштувати основну сторінку закладок.</para>
+<para
+>Переглянути основну сторінку закладок можна ввівши адресу <userinput
+>bookmarks:/</userinput
+> у поле адреси.</para>
+<para
+>Доступ до зміни параметрів цього модуля можна також отримати введенням рядка <userinput
+>bookmarks:/config</userinput
+> у поле адреси.</para>
+<sect2 id="conf-general">
+<title
+>Загальні параметри</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Кількість стовпчиків для показу</guilabel
+></term>
+<listitem>
+<para
+>Теки буде автоматично розподілено на декілька стовпчиків. Оптимальна кількість стовпчиків залежить від ширини вікна &konqueror; і кількості ваших закладок.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Показувати тло тек</guilabel
+></term>
+<listitem>
+<para
+>Вимкніть цей параметр на повільних системах, щоб вимкнути зображення у тлі.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="conf-bookmark">
+<title
+>Закладки</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Показувати закладки без теки</guilabel
+></term>
+<listitem>
+<para
+>Якщо цей пункт не буде позначено, закладки у кореневій теці ієрархії (які не належать до жодної з підтек) показано не буде. Якщо позначка навпроти пункту наявна, ці закладки буде зібрано у кореневій теці.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Плоска ієрархія закладок</guilabel
+></term>
+<listitem>
+<para
+>Типово, підтеки буде показано всередині батьківських тек. Якщо позначити цей пункт, підтеки буде показано окремо. Такий вигляд не є аж надто красивим, але може допомогти, якщо ви маєте справу з дуже великою текою, вміст якої ви бажаєте розподілити на два стовпчики.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Показувати системні місця</guilabel
+></term>
+<listitem>
+<para
+>Показати панель із загальними місцями (Домівка, Мережа, ...). Корисно, якщо ви використовуєте &konqueror; як засіб для роботи з файлами.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="conf-cache">
+<title
+>Кеш растра</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Розмір кешу на диску</guilabel
+></term>
+<listitem>
+<para
+>Вкажіть об’єм дискового простору, який буде використано для кешування растрових зображень.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Очистити кеш</guilabel
+></term>
+<listitem>
+<para
+>Вилучити всі зображення з кешу. Така дія може знадобитися, якщо деякі з піктограм буде пошкоджено, а система не зможе відновити їх у автоматичному режимі.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+</sect1>
+</article>

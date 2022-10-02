@@ -1,0 +1,182 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Dutch "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article lang="&language;" id="konq-general-behavior">
+<title
+>Algemeen gedrag van &konqueror;</title>
+<articleinfo>
+
+<authorgroup>
+<author
+>&Burkhard.Lueck;</author>
+&Freek.de.Kruijf; 
+</authorgroup>
+
+<date
+>2016-11-08</date>
+<releaseinfo
+>Applications 16.12</releaseinfo>
+
+</articleinfo>
+<para
+>Op deze pagina vindt u instellingen voor uw persoonlijke website en de startpagina naast het gedrag van bladeren met tabbladen zowel voor &konqueror; als bestandsbeheerder en als bladerprogramma.</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Wanneer Konqueror start</guilabel
+></term>
+<listitem>
+<para
+>Deze optie bepaalt welke pagina wordt getoond als &konqueror; start, de introductiepagina, uw persoonlijke pagina, een lege pagina of uw pagina met bladwijzers. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Persoonlijke website</guilabel
+></term>
+<listitem
+><para
+>Dit is de &URL; (&eg; een map of een webpagina) waar &konqueror; als bladerprogramma naar toe gaat als de knop <guibutton
+>Persoonlijke webpagina</guibutton
+> in de werkbalk wordt ingedrukt. U kunt een pad instellen naar uw <guilabel
+>Persoonlijke pagina</guilabel
+> door deze in te voeren in het tekstveld of door het <guiicon
+>blader</guiicon
+> pictogram te gebruiken om een lokale map te selecteren. &konqueror; moet opnieuw gestart worden om de wijzigingen effectief te maken.</para>
+<para
+>Bij gebruik van &konqueror; als bestandsbeheerder, is de knop <guilabel
+>Persoonlijke pagina</guilabel
+> in de werkbalk vervangen door een knop <guilabel
+>Persoonlijke map</guilabel
+> die er voor zorgt dat u naar uw lokale persoonlijke map toe gaat.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Koppelingen openen in nieuw tabblad in plaats van nieuw venster</guilabel
+></term>
+<listitem
+><para
+>De standaard bij &konqueror; is dat het een venster opent per pagina, het heeft de mogelijkheid om met meerdere <firstterm
+>tabbladen</firstterm
+> te werken in een enkel venster. Ook heeft &konqueror; standaard een &MMB; sneltoets om elke koppeling in een nieuw venster te openen. Als u op <guilabel
+>Koppelingen openen in nieuw tabblad in plaats van nieuw venster</guilabel
+> klikt dan kunt u met &MMB; op een koppeling klikken om deze te openen in een nieuw tabblad.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Popups openen in nieuw tabblad in plaats van nieuw venster</guilabel
+></term>
+<listitem
+><para
+>Of nieuwe documenten die via JavaScript worden geopend in een nieuw venster of nieuw tabblad zullen worden geopend.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Nieuw tabblad openen in Konqueror als er extern een URL-adres wordt aangeroepen</guilabel
+></term>
+<listitem
+><para
+>Als u op een &URL;-adres in een ander &kde;-programma klikt, of kfmclient aanroept om een &URL;-adres te openen, dan wordt er op het huidige bureaublad gezocht naar niet geminimaliseerd &konqueror;-venster. Als dat wordt gevonden dan wordt het &URL;-adres in een nieuw tabblad daarin geopend. Anders wordt een nieuw &konqueror;-venster geopend met het gewenste &URL;-adres;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Nieuwe tabbladen op de achtergrond openen</guilabel
+></term>
+<listitem
+><para
+>Als u aan het bladeren bent met tabbladen, dan kunt u kiezen of een nieuw geopend tabblad actief wordt (<quote
+>voorste</quote
+>) tabblad of op de achtergrond blijft. Met een langzame internetverbinding of terwijl u door een pagina bladert met een lijst koppen of andere koppelingen in een lijst, dan zou u er de voorkeur aan kunnen geven om nieuwe tabbladen in de achtergrond te laden terwijl u doorgaat met lezen. Schakel in dat geval deze instelling in. Als u er de voorkeur aan geeft direct naar de nieuwe pagina te gaan en de oude in de achtergrond te houden voor later, schakel deze dan uit.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Nieuw tabblad openen achter huidig tabblad</guilabel
+></term>
+<listitem
+><para
+>Dit zorgt er voor dat een nieuw tabblad wordt geopend achter het huidige tabblad, in plaats van achter het laatste tabblad.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Tabbalk verbergen als slechts een tabblad is geopend</guilabel
+></term>
+<listitem
+><para
+>Dit zorgt er voor dat de tabbalk alleen wordt weergegeven als er twee of meer tabbladen zijn. Anders wordt de balk altijd weergegeven.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Toon de sluitknop op de tab</guilabel
+></term>
+<listitem
+><para
+>Dit zorgt er voor dat er op elk tabblad een sluitknop wordt getoond in plaats van het pictogram van de websites.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Middelklik op een tabblad sluit deze</guilabel
+></term>
+<listitem
+><para
+>Als u met de middelste muisknop of het muiswiel op een tabblad klikt, dan zal dat tabblad worden gesloten. Om de wijziging van deze instelling door te voeren dient u &konqueror; te herstarten. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Bevestiging vragen bij het sluiten van vensters met meerdere tabbladen</guilabel
+></term>
+<listitem
+><para
+>Als u een &konqueror;-venster sluit, terwijl deze  meerdere tabbladen open heeft, dan zal &konqueror; vragen of het uw bedoeling was ze allen te sluiten. U kunt dit gedrag aan en uit zetten met dit keuzevakje.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Vorig gebruikt tabblad activeren bij het sluiten van het huidige tabblad</guilabel
+></term>
+<listitem
+><para
+>Selecteer dit om het vorig gebruikte of geopende tabblad te activeren wanneer u het huidige tabblad sluit. Normaliter wordt het tabblad rechts van het huidige tabblad geactiveerd.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</article>

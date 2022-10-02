@@ -1,0 +1,2310 @@
+# Translation of kcmkonqhtml.po to Korean
+# Copyright (C) 2001,, 2003-2005, 2007-2008 Free Software Foundation, Inc.
+# Yu-Chan, Park <super@susekorea.net>, 2001.
+# Sung-Du Hong <hkde@hancom.com>, 2003, 2004.
+# 유규형 <master@aerobuster.net>, 2004.
+# Youngbin Park <shrike@nate.com>, 2005.
+# Sung-Jae, Cho <jachin@hanafos.com>, 2005.
+# Shinjo Park <kde@peremen.name>, 2007, 2008, 2009, 2010, 2011, 2012, 2015, 2016, 2020, 2021, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkonqhtml\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-24 00:46+0000\n"
+"PO-Revision-Date: 2022-04-16 23:00+0200\n"
+"Last-Translator: Shinjo Park <kde@peremen.name>\n"
+"Language-Team: Korean <kde-kr@kde.org>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 21.08.1\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "박신조"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kde@peremen.name"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pShowMMBInTabs)
+#: advancedTabOptions.ui:21
+#, kde-format
+msgid ""
+"This will open a new tab instead of a new window in various situations, such "
+"as choosing a link or a folder with the middle mouse button."
+msgstr ""
+"링크나 폴더를 마우스 가운데 단추로 선택하는 등 다양한 상황에서 새 창 대신 새 "
+"탭으로 링크를 엽니다."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pShowMMBInTabs)
+#: advancedTabOptions.ui:24
+#, kde-format
+msgid "Open &links in new tab instead of in new window"
+msgstr "새 창 대신 새 탭으로 링크 열기(&L)"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPopupsWithinTabs)
+#: advancedTabOptions.ui:31
+#, kde-format
+msgid ""
+"Whether or not JavaScript popups if allowed shall open in a new tab or in a "
+"new window."
+msgstr ""
+"JavaScript 팝업 창이 활성화되었다면 그것을 새 탭으로 열지 또는 새 창으로 열"
+"지 선택합니다."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pPopupsWithinTabs)
+#: advancedTabOptions.ui:34
+#, kde-format
+msgid "Open pop&ups in new tab instead of in new window"
+msgstr "팝업 창을 새 창 대신 탭으로 열기(&U)"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pKonquerorTabforExternalURL)
+#: advancedTabOptions.ui:41
+#, kde-format
+msgid ""
+"When you click a URL in another KDE program or call kfmclient to open a URL, "
+"the current desktop will be searched for a non-minimized Konqueror and, if "
+"found, the URL opened as a new tab within it. Otherwise a new Konqueror "
+"window will be opened with the required URL."
+msgstr ""
+"다른 KDE 프로그램에서 URL을 클릭하거나 kfmclient를 통해 URL을 열려고 할 때, "
+"현재 데스크톱에서 최소화되지 않은 Konqueror 창을 찾아봅니다. 창이 있으면 그 "
+"창 안의 탭으로 URL이 열립니다. 그렇지 않으면 새 Konqueror 창을 열고 URL을 불"
+"러옵니다."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pKonquerorTabforExternalURL)
+#: advancedTabOptions.ui:44
+#, kde-format
+msgid "Open as tab in existing Konqueror when URL is called externally"
+msgstr "URL이 외부에서 요청되었을 때 이미 있는 Konqueror의 탭으로 열기"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pNewTabsInBackground)
+#: advancedTabOptions.ui:51
+#, kde-format
+msgid ""
+"This will open a new tab in the background, instead of in the foreground."
+msgstr "배경으로 새 탭을 엽니다."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
+#: advancedTabOptions.ui:54
+#, kde-format
+msgid "O&pen new tabs in the background"
+msgstr "배경으로 새 탭 열기(&P)"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pOpenAfterCurrentPage)
+#: advancedTabOptions.ui:61
+#, kde-format
+msgid ""
+"This will open a new tab opened from a page after the current tab, instead "
+"of after the last tab."
+msgstr "마지막으로 사용한 탭 대신 현재 탭 바로 다음에 새로운 탭을 엽니다."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pOpenAfterCurrentPage)
+#: advancedTabOptions.ui:64
+#, kde-format
+msgid "Open &new tab after current tab"
+msgstr "현재 탭 다음에 새 탭 열기(&N)"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pDynamicTabbarHide)
+#: advancedTabOptions.ui:71
+#, kde-format
+msgid ""
+"This will display the tab bar only if there are two or more tabs. Otherwise "
+"it will always be displayed."
+msgstr ""
+"이 설정을 사용하면 두 개 이상의 탭이 열려 있을 때만 탭 표시줄을 보입니다. 그"
+"렇지 않으면 탭 표시줄을 항상 표시합니다."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pDynamicTabbarHide)
+#: advancedTabOptions.ui:74
+#, kde-format
+msgid "Hide the tab bar when only one tab is open"
+msgstr "탭 한 개만 열려 있을 때 탭 표시줄 숨기기"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
+#: advancedTabOptions.ui:81
+#, kde-format
+msgid "This will display close buttons inside each tab."
+msgstr "각각 탭 안에 닫기 단추를 표시합니다."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pPermanentCloseButton)
+#: advancedTabOptions.ui:84
+#, kde-format
+msgid "&Show close button on tabs"
+msgstr "탭에 닫기 단추 표시(&S)"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pMiddleClickClose)
+#: advancedTabOptions.ui:91
+#, kde-format
+msgid ""
+"When you click on a tab using the middle mouse button or mouse wheel, it "
+"will close that tab."
+msgstr "탭을 마우스 가운데 단추나 휠 단추로 클릭했을 때 탭을 닫습니다."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pMiddleClickClose)
+#: advancedTabOptions.ui:94
+#, kde-format
+msgid "Middle-click on a tab to close it"
+msgstr "탭을 마우스 가운데 단추로 클릭했을 때 닫기"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabConfirm)
+#: advancedTabOptions.ui:101
+#, kde-format
+msgid ""
+"This will ask you whether you are sure you want to close a window when it "
+"has multiple tabs opened in it."
+msgstr "탭이 여러 개 열려 있는 창을 닫을 때 확인합니다."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pTabConfirm)
+#: advancedTabOptions.ui:104
+#, kde-format
+msgid "Confirm &when closing windows with multiple tabs"
+msgstr "탭이 여러 개 있는 창을 닫을 때 물어보기(&W)"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabCloseActivatePrevious)
+#: advancedTabOptions.ui:111
+#, kde-format
+msgid ""
+"When checking this the previous used or opened tab will be activated when "
+"you close the current active tab instead of the one right to the current tab."
+msgstr ""
+"이 설정을 사용하면 현재 탭을 닫을 때, 오른쪽에 있는 탭 대신 이전에 사용했던 "
+"탭을 활성화시킵니다."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pTabCloseActivatePrevious)
+#: advancedTabOptions.ui:114
+#, kde-format
+msgid "Activate previously used tab when closing the current tab"
+msgstr "현재 탭을 닫을 때 전에 사용했던 탭 활성화"
+
+#: appearance.cpp:39
+#, kde-format
+msgctxt "@title:tab"
+msgid "General"
+msgstr "일반"
+
+#: appearance.cpp:40
+#, kde-format
+msgctxt "@title:tab"
+msgid "Fonts"
+msgstr "글꼴"
+
+#: appearance.cpp:41
+#, kde-format
+msgctxt "@title:tab"
+msgid "Stylesheets"
+msgstr "스타일시트"
+
+#. i18n: ectx: property (title), widget (QGroupBox, GroupBox3_2)
+#: appearance.cpp:48 css/csscustom.ui:296
+#, kde-format
+msgid "Images"
+msgstr "그림"
+
+#: appearance.cpp:52
+#, kde-format
+msgid "A&utomatically load images"
+msgstr "자동으로 그림 불러오기(&U)"
+
+#: appearance.cpp:53
+#, kde-format
+msgid ""
+"<html>If this box is checked, Konqueror will automatically load any images "
+"that are embedded in a web page. Otherwise, it will display placeholders for "
+"the images, and you can then manually load the images by clicking on the "
+"image button.<br />Unless you have a very slow network connection, you will "
+"probably want to check this box to enhance your browsing experience.</html>"
+msgstr ""
+"<html>이 상자를 선택하면 Konqueror에서는 웹 페이지에 있는 그림을 자동으로 불"
+"러옵니다. 선택하지 않으면 그림에는 자리 표시자만 표시하고 그림 단추를 클릭했"
+"을 때 수동으로 불러옵니다.<br />매우 느린 네트워크 연결을 사용하지 않는 한, "
+"이 옵션을 사용하여 브라우저 성능 향상을 추천합니다.</html>"
+
+#: appearance.cpp:63
+#, kde-format
+msgid "Dra&w frame around not completely loaded images"
+msgstr "완전히 불러오지 않은 이미지에 외곽선 표시(&W)"
+
+#: appearance.cpp:64
+#, kde-format
+msgid ""
+"<html>If this box is checked, Konqueror will draw a frame as a placeholder "
+"around images embedded in a web page that are not yet fully loaded.<br />You "
+"will probably want to check this box to enhance your browsing experience, "
+"especially if have a slow network connection.</html>"
+msgstr ""
+"<html>이 상자를 선택하면 Konqueror에서는 완전히 불러오지 않은 그림의 프레임"
+"을 그립니다.<br />네트워크 연결이 느릴 경우 이 설정을 사용하면 브라우징 성능"
+"을 향상시킬 수 있습니다.</html>"
+
+#: appearance.cpp:74
+#, kde-format
+msgctxt "animations"
+msgid "Enabled"
+msgstr "사용함"
+
+#: appearance.cpp:75
+#, kde-format
+msgctxt "animations"
+msgid "Disabled"
+msgstr "사용 안 함"
+
+#: appearance.cpp:76
+#, kde-format
+msgid "Show Only Once"
+msgstr "한 번만 보기"
+
+#: appearance.cpp:77
+#, kde-format
+msgid ""
+"<html>Controls how Konqueror shows animated images:<br /><ul><li><b>Enabled</"
+"b>: Show all animations completely.</li><li><b>Disabled</b>: Never show "
+"animations, show the starting image only.</li><li><b>Show only once</b>: "
+"Show all animations completely but do not repeat them.</li></ul></html>"
+msgstr ""
+"<html>Konqueror에서 움직이는 그림을 보여 주는 방법을 설정합니다.<br /"
+"><ul><li><b>사용함</b>: 모든 움직이는 그림을 보여줍니다.</li><li><b>사용 안 "
+"함</b>: 움직이는 그림의 첫 장면만 보여 줍니다.</li><li><b>한 번만 보기</b>: "
+"모든 움직이는 그림을 한 번만 보여줍니다.</li></ul></html>"
+
+#: appearance.cpp:82
+#, kde-format
+msgid "A&nimations:"
+msgstr "애니메이션(&N):"
+
+#: appearance.cpp:85 htmlopts.cpp:110
+#, kde-format
+msgctxt "@title:group"
+msgid "Miscellaneous"
+msgstr "기타"
+
+#: appearance.cpp:90
+#, kde-format
+msgctxt "underline"
+msgid "Enabled"
+msgstr "사용함"
+
+#: appearance.cpp:91
+#, kde-format
+msgctxt "underline"
+msgid "Disabled"
+msgstr "사용 안 함"
+
+#: appearance.cpp:92
+#, kde-format
+msgid "Only on Hover"
+msgstr "마우스가 위에 있을 때만"
+
+#: appearance.cpp:93
+#, kde-format
+msgid "Und&erline links:"
+msgstr "링크에 밑줄 표시하기(&E):"
+
+#: appearance.cpp:96
+#, kde-format
+msgid ""
+"<html>Controls how Konqueror handles underlining hyperlinks:<br /"
+"><ul><li><b>Enabled</b>: Always underline links</li><li><b>Disabled</b>: "
+"Never underline links</li><li><b>Only on Hover</b>: Underline when the mouse "
+"is moved over the link</li></ul><br /><i>Note: The site's CSS definitions "
+"can override this value.</i></html>"
+msgstr ""
+"<html>Konqueror의 하이퍼링크 처리 방식을 설정합니다:<br /><ul><li><b>사용함</"
+"b>: 항상 링크에 밑줄을 표시합니다</li><li><b>사용 안 함</b>: 항상 링크에 밑줄"
+"을 표시하지 않습니다</li><li><b>마우스가 위에 있을 때만</b>: 마우스가 링크 위"
+"에 있을 때에만 링크에 밑줄을 표시합니다</li></ul><br /><i>주의: 사이트의 CSS "
+"정의는 이 값을 수정할 수 있습니다</i></html>"
+
+#: appearance.cpp:105
+#, kde-format
+msgid "When Efficient"
+msgstr "효율적일 때"
+
+#: appearance.cpp:106
+#, kde-format
+msgctxt "smooth scrolling"
+msgid "Always"
+msgstr "항상"
+
+#: appearance.cpp:107
+#, kde-format
+msgctxt "soft scrolling"
+msgid "Never"
+msgstr "하지 않음"
+
+#: appearance.cpp:108
+#, kde-format
+msgid "S&mooth scrolling:"
+msgstr "부드러운 스크롤(&M):"
+
+#: appearance.cpp:110
+#, kde-format
+msgid ""
+"<html>Determines whether Konqueror should use smooth steps to scroll HTML "
+"pages, or whole steps:<br /><ul><li><b>Always</b>: Always use smooth steps "
+"when scrolling.</li><li><b>Never</b>: Never use smooth scrolling, scroll "
+"with whole steps instead.</li><li><b>When Efficient</b>: Only use smooth "
+"scrolling on pages where it can be achieved with moderate usage of system "
+"resources.</li></ul></html>"
+msgstr ""
+"<html>Konqueror의 부드러운 스크롤 기능을 언제 사용할지 결정합니다.<br /"
+"><ul><li><b>항상</b>: 모든 스크롤을 부드럽게 합니다.</li><li><b>하지 않음</"
+"b>: 부드러운 스크롤을 사용하지 않습니다.</li><li><b>효율적일 때</b>: 시스템 "
+"자원을 많이 사용하지 않아도 될 때 부드러운 스크롤을 사용합니다.</li></ul></"
+"html>"
+
+#: appearance.cpp:119
+#, kde-format
+msgid ""
+"<h1>Konqueror Fonts</h1>On this page, you can configure which fonts "
+"Konqueror should use to display the web pages you view."
+msgstr ""
+"<h1>Konqueror 글꼴</h1>Konqueror에서 웹 페이지를 표시할 때 사용할 글꼴을 설정"
+"합니다."
+
+#: appearance.cpp:131
+#, kde-format
+msgid "Font Si&ze"
+msgstr "글꼴 크기(&Z)"
+
+#: appearance.cpp:134 appearance.cpp:152
+#, kde-format
+msgid "This is the relative font size Konqueror uses to display web sites."
+msgstr "Konqueror가 웹사이트를 출력할 때 사용하는 상대적인 글꼴 크기입니다."
+
+#: appearance.cpp:138
+#, kde-format
+msgid "M&inimum font size:"
+msgstr "최소 글꼴 크기(&I):"
+
+#: appearance.cpp:142
+#, kde-format
+msgid ""
+"Konqueror will never display text smaller than this size,<br />overriding "
+"any other settings."
+msgstr ""
+"Konqueror는 어떤 설정과도 관계 없이 텍스트를 이 크기보다<br />작게 표시하지 "
+"않습니다."
+
+#: appearance.cpp:147
+#, kde-format
+msgid "&Medium font size:"
+msgstr "중간 글꼴 크기(&M):"
+
+#: appearance.cpp:160
+#, kde-format
+msgid "S&tandard font:"
+msgstr "표준 글꼴(&T):"
+
+#: appearance.cpp:161
+#, kde-format
+msgid "This is the font used to display normal text in a web page."
+msgstr "웹 페이지에서 일반 텍스트를 나타내는 데 사용하는 글꼴입니다."
+
+#: appearance.cpp:165
+#, kde-format
+msgid "&Fixed font:"
+msgstr "고정폭 글꼴(&F):"
+
+#: appearance.cpp:166
+#, kde-format
+msgid ""
+"This is the font used to display fixed-width (i.e. non-proportional) text."
+msgstr "고정폭 텍스트를 나타내는 데 사용하는 글꼴입니다."
+
+#: appearance.cpp:170
+#, kde-format
+msgid "S&erif font:"
+msgstr "세리프 글꼴(&E):"
+
+#: appearance.cpp:171
+#, kde-format
+msgid "This is the font used to display text that is marked up as serif."
+msgstr "세리프로 표시된 텍스트를 나타내는 데 사용하는 글꼴입니다."
+
+#: appearance.cpp:175
+#, kde-format
+msgid "Sa&ns serif font:"
+msgstr "산세리프 글꼴(&N):"
+
+#: appearance.cpp:176
+#, kde-format
+msgid "This is the font used to display text that is marked up as sans-serif."
+msgstr "산세리프로 표시된 텍스트를 나타내는 데 사용하는 글꼴입니다."
+
+#: appearance.cpp:180
+#, kde-format
+msgid "C&ursive font:"
+msgstr "필기체 글꼴(&U):"
+
+#: appearance.cpp:181
+#, kde-format
+msgid "This is the font used to display text that is marked up as italic."
+msgstr "이탤릭체로 표시된 텍스트를 나타내는 데 사용하는 글꼴입니다."
+
+#: appearance.cpp:185
+#, kde-format
+msgid "Fantas&y font:"
+msgstr "판타지 글꼴(&Y):"
+
+#: appearance.cpp:186
+#, kde-format
+msgid ""
+"This is the font used to display text that is marked up as a fantasy font."
+msgstr "판타지로 표시된 텍스트를 나타내는 데 사용하는 글꼴입니다."
+
+#: appearance.cpp:195
+#, kde-format
+msgid "Font &size adjustment for this encoding:"
+msgstr "이 인코딩의 글꼴 크기 조정(&S):"
+
+#: appearance.cpp:203 appearance.cpp:401
+#, kde-format
+msgid "Use Language Encoding"
+msgstr "언어 인코딩 사용"
+
+#: appearance.cpp:205
+#, kde-format
+msgid "Default encoding:"
+msgstr "기본 인코딩:"
+
+#: appearance.cpp:207
+#, kde-format
+msgid ""
+"Select the default encoding to be used; normally, you will be fine with 'Use "
+"language encoding' and should not have to change this."
+msgstr ""
+"기본으로 사용할 인코딩을 선택하십시오. 일반적으로 '언어 인코딩 사용'을 선택하"
+"는 것이 좋으며 굳이 변경할 필요는 없습니다."
+
+#. i18n: ectx: property (whatsThis), widget (QWidget, CSSConfigWidget)
+#. i18n: ectx: property (whatsThis), widget (QWidget, CSSCustomDialog)
+#: css/cssconfig.ui:5 css/csscustom.ui:13
+#, kde-format
+msgid ""
+"<b>Stylesheets</b><p>See http://www.w3.org/Style/CSS for further information "
+"on cascading style sheets.</p>"
+msgstr ""
+"<b>스타일시트</b><p>CSS에 관해서 더 많은 것을 알고 싶다면 http://www.w3.org/"
+"Style/CSS 페이지를 참고하십시오.</p>"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, ButtonGroup1)
+#: css/cssconfig.ui:17
+#, kde-format
+msgid ""
+"<b>Stylesheets</b><p>Use this groupbox to determine how Konqueror will "
+"render style sheets.</p>"
+msgstr ""
+"<b>스타일시트</b><p>이 그룹 상자에서 Konqueror가 스타일시트를 처리할 방법을 "
+"설정할 수 있습니다.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, ButtonGroup1)
+#: css/cssconfig.ui:20
+#, kde-format
+msgid "Stylesheets"
+msgstr "스타일시트"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, useDefault)
+#: css/cssconfig.ui:26
+#, kde-format
+msgid ""
+"<b>Use default stylesheet</b><p>Select this option to use the default "
+"stylesheet.</p>"
+msgstr ""
+"<b>기본 스타일시트 사용</b><p>이 설정을 사용하면 기본 스타일시트를 사용합니"
+"다.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useDefault)
+#: css/cssconfig.ui:29
+#, kde-format
+msgid "Us&e default stylesheet"
+msgstr "기본 스타일시트 사용(&E)"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, useUser)
+#: css/cssconfig.ui:39
+#, kde-format
+msgid ""
+"<b>Use user-defined stylesheet</b><p>If this box is checked, Konqueror will "
+"try to load a user-defined style sheet as specified in the location below. "
+"The style sheet allows you to completely override the way web pages are "
+"rendered in your browser. The file specified should contain a valid style "
+"sheet (see http://www.w3.org/Style/CSS for further information on cascading "
+"style sheets).</p>"
+msgstr ""
+"<b>사용자 정의 스타일시트</b><p>이 상자를 선택하면 Konqueror에서는 아래 지정"
+"한 위치에 있는 사용자 정의 스타일시트를 불러옵니다. 이 스타일시트는 웹 페이지"
+"가 표시되는 모양을 완전히 바꿀 수 있습니다. 이 파일에는 올바른 스타일시트가 "
+"들어 있어야 합니다. CSS에 대해 더 알고 싶다면 http://www.w3.org/Style/CSS 페"
+"이지를 참고하십시오.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useUser)
+#: css/cssconfig.ui:42
+#, kde-format
+msgid "Use &user-defined stylesheet"
+msgstr "사용자 정의 스타일시트 사용(&U)"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, useAccess)
+#: css/cssconfig.ui:94
+#, kde-format
+msgid ""
+"<b>Use accessibility stylesheet</b><p>Selecting this option will allow you "
+"to define a default font, font size, and font color with a few simple clicks "
+"of the mouse. Simply wander over to the Customize... dialog and pick out "
+"your desired options.</p>"
+msgstr ""
+"<b>접근성 스타일시트 사용</b><p>이 설정을 사용하면 기본 글꼴 크기, 기본 글꼴 "
+"색상 등을 정의할 수 있습니다. 사용자 정의 대화 상자에서 필요한 설정을 찾아 보"
+"십시오.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useAccess)
+#: css/cssconfig.ui:97
+#, kde-format
+msgid "U&se accessibility stylesheet"
+msgstr "접근성 스타일시트 사용(&S)"
+
+#. i18n: ectx: property (text), widget (QPushButton, customize)
+#: css/cssconfig.ui:137
+#, kde-format
+msgid "Custom&ize..."
+msgstr "사용자 정의(&I)..."
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox7)
+#: css/csscustom.ui:21
+#, kde-format
+msgid ""
+"<b>Font family</b><p>A font family is a group of fonts that resemble one "
+"another, with family members that are e.g. bold, italic, or any number of "
+"the above.</p>"
+msgstr ""
+"<b>글꼴 종류</b><p>글꼴 종류는 서로 닮은 글꼴을 하나로 묶은 것입니다. 굵은 글"
+"꼴이나 기울임꼴, 또는 이들 속성을 둘 다 가진 글꼴이 한 글꼴 종류의 구성원입니"
+"다.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, GroupBox7)
+#: css/csscustom.ui:24
+#, kde-format
+msgid "Font Family"
+msgstr "글꼴 종류"
+
+#. i18n: ectx: property (text), widget (QLabel, txtBaseFontFamily)
+#: css/csscustom.ui:30
+#, kde-format
+msgid "Base family:"
+msgstr "기본 종류:"
+
+#. i18n: ectx: property (whatsThis), widget (QFontComboBox, fontFamily)
+#: css/csscustom.ui:37
+#, kde-format
+msgid "<p>This is the currently selected font family</p>"
+msgstr "<p>이것은 지금 선택한 글꼴 종류입니다</p>"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, sameFamily)
+#: css/csscustom.ui:44
+#, kde-format
+msgid ""
+"<b>Use same family for all text</b><p>Select this option to override custom "
+"fonts everywhere in favor of the base font.</p>"
+msgstr ""
+"<b>모든 텍스트에 같은 종류 사용</b><p>기본 글꼴 대신 모든 곳에 사용자 정의 글"
+"꼴을 사용하려면 이 옵션을 선택하십시오.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, sameFamily)
+#: css/csscustom.ui:47
+#, kde-format
+msgid "Use same family for all text"
+msgstr "모든 텍스트에 같은 글꼴 사용"
+
+#. i18n: ectx: property (title), widget (QGroupBox, GroupBox3)
+#: css/csscustom.ui:57
+#, kde-format
+msgid "Font Size"
+msgstr "글꼴 크기"
+
+#. i18n: ectx: property (text), widget (QLabel, txtFontsize)
+#: css/csscustom.ui:63
+#, kde-format
+msgid "Base font si&ze:"
+msgstr "기본 글꼴 크기(&Z):"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:80
+#, kde-format
+msgid "7"
+msgstr "7"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:85
+#, kde-format
+msgid "8"
+msgstr "8"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:90
+#, kde-format
+msgid "9"
+msgstr "9"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:95
+#, kde-format
+msgid "10"
+msgstr "10"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:100
+#, kde-format
+msgid "11"
+msgstr "11"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:105
+#, kde-format
+msgid "12"
+msgstr "12"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:110
+#, kde-format
+msgid "14"
+msgstr "14"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:115
+#, kde-format
+msgid "16"
+msgstr "16"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:120
+#, kde-format
+msgid "20"
+msgstr "20"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:125
+#, kde-format
+msgid "24"
+msgstr "24"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:130
+#, kde-format
+msgid "32"
+msgstr "32"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:135
+#, kde-format
+msgid "48"
+msgstr "48"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:140
+#, kde-format
+msgid "64"
+msgstr "64"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, dontScale)
+#: css/csscustom.ui:148
+#, kde-format
+msgid ""
+"<b>Use same size for all elements</b><p>Select this option to override "
+"custom font sizes in favor of the base font size. All fonts will be "
+"displayed in the same size.</p>"
+msgstr ""
+"<b>모든 구성 요소에 같은 크기 사용하기</b><p>이 설정을 사용하면 모든 글꼴이 "
+"위에서 지정한 똑같은 크기로 표시됩니다.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, dontScale)
+#: css/csscustom.ui:151
+#, kde-format
+msgid "&Use same size for all elements"
+msgstr "모든 요소를 같은 크기로 표시하기(&U)"
+
+#. i18n: ectx: property (title), widget (QGroupBox, ButtonGroup2)
+#: css/csscustom.ui:161
+#, kde-format
+msgid "Colors"
+msgstr "색상"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, blackOnWhite)
+#: css/csscustom.ui:183
+#, kde-format
+msgid "<b>Black on White</b><p>This is what you normally see.</p>"
+msgstr "<b>흰 바탕에 검은색</b><p>일반적인 모습입니다.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, blackOnWhite)
+#: css/csscustom.ui:186
+#, kde-format
+msgid "&Black on white"
+msgstr "흰 바탕에 검은색(&B)"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, whiteOnBlack)
+#: css/csscustom.ui:196
+#, kde-format
+msgid "<b>White on Black</b><p>This is your classic inverse color scheme.</p>"
+msgstr "<b>검은 바탕에 흰색</b><p>반전된 색상 구성입니다.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, whiteOnBlack)
+#: css/csscustom.ui:199
+#, kde-format
+msgid "&White on black"
+msgstr "검은 바탕에 흰색(&W)"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, customColor)
+#: css/csscustom.ui:206
+#, kde-format
+msgid ""
+"<b>Custom</b><p>Select this option to define a custom color for the default "
+"font.</p>"
+msgstr ""
+"<b>사용자 정의</b><p>기본 글꼴에 사용할 사용자 정의 색상을 지정합니다.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, customColor)
+#: css/csscustom.ui:209
+#, kde-format
+msgid "Cus&tom"
+msgstr "사용자 정의(&T)"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, txtBackground)
+#: css/csscustom.ui:219
+#, kde-format
+msgid ""
+"<b>Background</b><p>This background color is the one displayed behind the "
+"text by default. A background image will override this.</p>"
+msgstr ""
+"<b>배경</b><p>이 배경은 기본적으로 텍스트 뒤에 놓여집니다. 배경 이미지는 이것"
+"에 우선합니다. </p>"
+
+#. i18n: ectx: property (text), widget (QLabel, txtBackground)
+#: css/csscustom.ui:222
+#, kde-format
+msgid "Bac&kground:"
+msgstr "배경(&K):"
+
+#. i18n: ectx: property (whatsThis), widget (KColorButton, backgroundColorButton)
+#: css/csscustom.ui:238
+#, kde-format
+msgid ""
+"<b>Background</b><p>Behind this door lays the ability to choose a custom "
+"default background.</p>"
+msgstr "<b>배경</b><p>사용자 정의 기본 배경을 선택합니다.</p>"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, sameColor)
+#: css/csscustom.ui:248
+#, kde-format
+msgid ""
+"<b>Use same color for all text</b><p>Select this option to apply your chosen "
+"color to the default font as well as any custom fonts as specified in a "
+"stylesheet.</p>"
+msgstr ""
+"<b>모든 텍스트에 같은 색 사용</b><p>스타일시트에 정의한 기본 글꼴뿐만 아니라 "
+"기본 색도 적용하려면 이 설정을 사용하십시오.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, sameColor)
+#: css/csscustom.ui:251
+#, kde-format
+msgid "Use same color for all text"
+msgstr "모든 텍스트에 같은 색 사용하기"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, txtForeground)
+#. i18n: ectx: property (whatsThis), widget (KColorButton, foregroundColorButton)
+#: css/csscustom.ui:261 css/csscustom.ui:280
+#, kde-format
+msgid ""
+"<b>Foreground color</b><p>The foreground color is the color that the text is "
+"drawn in.</p>"
+msgstr "<b>글자색</b><p>글자색은 텍스트를 표시할 색상입니다.</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, txtForeground)
+#: css/csscustom.ui:264
+#, kde-format
+msgid "&Foreground:"
+msgstr "글자색(&F):"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox3_2)
+#: css/csscustom.ui:293
+#, kde-format
+msgid "<b>Images</b>"
+msgstr "<b>그림</b>"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, hideImages)
+#: css/csscustom.ui:302
+#, kde-format
+msgid ""
+"<b>Suppress images</b><p>Selecting this will prevent Konqueror from loading "
+"images.</p>"
+msgstr ""
+"<b>그림 감추기</b><p>이 설정을 사용하면 Konqueror에서 그림을 불러 오지 않습니"
+"다.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, hideImages)
+#: css/csscustom.ui:305
+#, kde-format
+msgid "&Suppress images"
+msgstr "그림 감추기(&S)"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, hideBackground)
+#: css/csscustom.ui:312
+#, kde-format
+msgid ""
+"<b>Suppress background images</b><p>Selecting this option will prevent "
+"Konqueror from loading background images.</p>"
+msgstr ""
+"<b>배경 그림 감추기</b><p>이 설정을 사용하면 Konqueror에서 배경 그림을 불러 "
+"오지 않습니다.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, hideBackground)
+#: css/csscustom.ui:315
+#, kde-format
+msgid "Suppress background images"
+msgstr "배경 이미지 감춤"
+
+#. i18n: ectx: property (title), widget (QGroupBox, previewBox)
+#: css/csscustom.ui:347
+#, kde-format
+msgid "Preview"
+msgstr "미리 보기"
+
+#: css/kcmcss.cpp:51
+#, kde-format
+msgid ""
+"<h1>Konqueror Stylesheets</h1> This module allows you to apply your own "
+"color and font settings to Konqueror by using stylesheets (CSS). You can "
+"either specify options or apply your own self-written stylesheet by pointing "
+"to its location.<br /> Note that these settings will always have precedence "
+"before all other settings made by the site author. This can be useful to "
+"visually impaired people or for web pages that are unreadable due to bad "
+"design."
+msgstr ""
+"<h1>Konqueror 스타일시트</h1>이 모듈에서는 스타일시트를 사용해서 Konqueror에 "
+"사용자 정의 색상과 글꼴 설정을 정의하도록 도와 줍니다. 설정을 지정하거나 직"
+"접 작성한 스타일시트를 지정할 수 있습니다.<br />이 설정은 사이트 제작자가 만"
+"든 설정보다 우선적으로 적용됩니다. 시각 장애를 가지고 있는 사람이나, 잘못 디"
+"자인된 웹 페이지를 올바르게 보려고 할 때 유용합니다."
+
+#: css/kcmcss.cpp:336
+#, kde-format
+msgid ""
+"<html>\n"
+"<head>\n"
+"<style>\n"
+"<!--\n"
+"%1\n"
+"-->\n"
+"</style>\n"
+"</head>\n"
+"<body>\n"
+"<h1>Heading 1</h1>\n"
+"<h2>Heading 2</h2>\n"
+"<h3>Heading 3</h3>\n"
+"\n"
+"<p>User-defined stylesheets allow increased\n"
+"accessibility for visually handicapped\n"
+"people.</p>\n"
+"\n"
+"</body>\n"
+"</html>\n"
+msgstr ""
+"<html>\n"
+"<head>\n"
+"<style>\n"
+"<!--\n"
+"%1\n"
+"-->\n"
+"</style>\n"
+"</head>\n"
+"<body>\n"
+"<h1>첫 번째 머리글</h1>\n"
+"<h2>두 번째 머리글</h2>\n"
+"<h3>세 번째 머리글</h3>\n"
+"\n"
+"<p>사용자 정의 스타일시트는 시각 장애인에게\n"
+"더 나은 접근성을\n"
+"제공합니다.</p>\n"
+"\n"
+"</body>\n"
+"</html>\n"
+
+#: domainlistview.cpp:37
+#, kde-format
+msgid "Host/Domain"
+msgstr "호스트/도메인"
+
+#: domainlistview.cpp:37
+#, kde-format
+msgid "Policy"
+msgstr "정책"
+
+#: domainlistview.cpp:45
+#, kde-format
+msgid "&New..."
+msgstr "새로 만들기(&N)..."
+
+#: domainlistview.cpp:49
+#, kde-format
+msgid "Chan&ge..."
+msgstr "변경(&G)..."
+
+#: domainlistview.cpp:53
+#, kde-format
+msgid "De&lete"
+msgstr "삭제(&L)"
+
+#: domainlistview.cpp:57
+#, kde-format
+msgid "&Import..."
+msgstr "가져오기(&I)..."
+
+#: domainlistview.cpp:63
+#, kde-format
+msgid "&Export..."
+msgstr "내보내기(&E)..."
+
+#: domainlistview.cpp:71
+#, kde-format
+msgid "Click on this button to manually add a host or domain specific policy."
+msgstr "호스트나 도메인 지정 정책을 추가하려면 이 단추를 클릭하십시오."
+
+#: domainlistview.cpp:73
+#, kde-format
+msgid ""
+"Click on this button to change the policy for the host or domain selected in "
+"the list box."
+msgstr ""
+"목록 상자에서 선택한 호스트나 도메인의 정책을 변경하려면 이 단추를 클릭하십시"
+"오."
+
+#: domainlistview.cpp:75
+#, kde-format
+msgid ""
+"Click on this button to delete the policy for the host or domain selected in "
+"the list box."
+msgstr ""
+"목록 상자에서 선택한 호스트나 도메인의 정책을 삭제하려면 이 단추를 클릭하십시"
+"오."
+
+#: domainlistview.cpp:122
+#, kde-format
+msgid "You must first select a policy to be changed."
+msgstr "변경할 정책을 먼저 선택하십시오."
+
+#: domainlistview.cpp:149
+#, kde-format
+msgid "You must first select a policy to delete."
+msgstr "삭제할 정책을 먼저 선택하십시오."
+
+#: domainlistview.cpp:187 policydlg.cpp:63
+#, kde-format
+msgid "Use Global"
+msgstr "전역적으로 사용"
+
+#: domainlistview.cpp:189 policydlg.cpp:63
+#, kde-format
+msgid "Accept"
+msgstr "수락"
+
+#: domainlistview.cpp:191 policydlg.cpp:63
+#, kde-format
+msgid "Reject"
+msgstr "거부"
+
+#: filteropts.cpp:48
+#, kde-format
+msgid "Enable filters"
+msgstr "필터 사용하기"
+
+#: filteropts.cpp:51
+#, kde-format
+msgid "Hide filtered images"
+msgstr "걸러낸 그림 숨기기"
+
+#: filteropts.cpp:58
+#, kde-format
+msgid "Manual Filter"
+msgstr "수동 필터"
+
+#: filteropts.cpp:76
+#, kde-format
+msgid "Search:"
+msgstr "찾기:"
+
+#: filteropts.cpp:84
+#, kde-format
+msgid ""
+"<qt>Filter expression (e.g. <tt>http://www.example.com/ad/*</tt>, <a href="
+"\"filterhelp\">more information</a>):"
+msgstr ""
+"<qt>필터 표현식(예:<tt>http://www.example.com/ad/*</tt>, <a href=\"filterhelp"
+"\">자세한 정보 보기</a>):"
+
+#: filteropts.cpp:100
+#, kde-format
+msgid "Automatic Filter"
+msgstr "자동 필터"
+
+#: filteropts.cpp:109
+#, kde-format
+msgid "Automatic update interval:"
+msgstr "자동 업데이트 주기:"
+
+#: filteropts.cpp:114
+#, kde-format
+msgid " day"
+msgid_plural " days"
+msgstr[0] "일"
+
+#: filteropts.cpp:120
+#, kde-format
+msgid "Insert"
+msgstr "삽입"
+
+#: filteropts.cpp:123
+#, kde-format
+msgid "Update"
+msgstr "업데이트"
+
+#: filteropts.cpp:126
+#, kde-format
+msgid "Remove"
+msgstr "삭제"
+
+#: filteropts.cpp:130
+#, kde-format
+msgid "Import..."
+msgstr "가져오기..."
+
+#: filteropts.cpp:133
+#, kde-format
+msgid "Export..."
+msgstr "내보내기..."
+
+#: filteropts.cpp:140
+#, kde-format
+msgid ""
+"<qt>More information on <a href=\"importhelp\">import format</a>, <a href="
+"\"exporthelp\">export format</a>"
+msgstr ""
+"<qt><a href=\"importhelp\">포맷 가져오기</a>와 <a href=\"exporthelp\">포맷 내"
+"보내기</a>에 대한 정보 보기"
+
+#: filteropts.cpp:154
+#, kde-format
+msgid ""
+"Enable or disable AdBlocK filters. When enabled, a set of URL expressions "
+"should be defined in the filter list for blocking to take effect."
+msgstr ""
+"AdBlocK 필터를 켜거나 끕니다. 필터 목록에 차단할 표현을 정의해 두어야 합니다."
+
+#: filteropts.cpp:156
+#, kde-format
+msgid ""
+"When enabled blocked images will be removed from the page completely, "
+"otherwise a placeholder 'blocked' image will be used."
+msgstr ""
+"이 설정을 사용하면 차단된 이미지를 완전히 페이지에서 숨깁니다. 그렇지 않으면 "
+"'차단됨' 그림을 대신 사용합니다."
+
+#: filteropts.cpp:163
+#, kde-format
+msgid ""
+"This is the list of URL filters that will be applied to all embedded images "
+"and media objects."
+msgstr "모든 첨부된 그림과 미디어 개체에 적용할 URL 필터 목록입니다."
+
+#: filteropts.cpp:167
+#, kde-format
+msgid ""
+"<qt><p>Enter an expression to filter. Filters can be defined as either:"
+"<ul><li>a shell-style wildcard, e.g. <tt>http://www.example.com/ads*</tt>, "
+"the wildcards <tt>*?[]</tt> may be used</li><li>a full regular expression by "
+"surrounding the string with '<tt>/</tt>', e.g. <tt>/\\/(ad|banner)\\./</tt></"
+"li></ul><p>Any filter string can be preceded by '<tt>@@</tt>' to whitelist "
+"(allow) any matching URL, which takes priority over any blacklist (blocking) "
+"filter."
+msgstr ""
+"<qt><p>필터 표현식을 입력하십시오. 다음 항목을 사용할 수 있습니다: <ul><li>와"
+"일드카드. 예:<tt>http://www.example.com/ads*</tt>, 사용할 수 있는 와일드카드"
+"는 <tt>*?[]</tt> 입니다.</li><li>완전한 정규 표현식. 정규 표현식을 사용하려"
+"면 텍스트를 '<tt>/</tt>'로 둘러싸십시오. 예: <tt>/\\(ad|banner)\\./</tt></"
+"li></ul><p>허용 목록에 필터를 추가하려면 '<tt>@@</tt>'를 맨 앞에 붙이면 됩니"
+"다. 차단 목록보다 더 높은 우선 순위로 처리됩니다."
+
+#: filteropts.cpp:183
+#, kde-format
+msgid ""
+"<qt><p>The filter import format is a plain text file. Blank lines, comment "
+"lines starting with '<tt>!</tt>' and the header line <tt>[AdBlock]</tt> are "
+"ignored. Any other line is added as a filter expression."
+msgstr ""
+"<qt><p>필터 가져오기 형식은 일반 텍스트입니다. 빈 줄, '<tt>!</tt>'로 시작하"
+"는 주석 줄과 <tt>[AdBlock]</tt> 헤더는 무시됩니다. 다른 모든 줄을 필터 표현식"
+"으로 추가합니다."
+
+#: filteropts.cpp:188
+#, kde-format
+msgid ""
+"<qt><p>The filter export format is a plain text file. The file begins with a "
+"header line <tt>[AdBlock]</tt>, then all of the filters follow each on a "
+"separate line."
+msgstr ""
+"<qt><p>필터 내보내기 형식은 일반 텍스트입니다. <tt>[AdBlock]</tt> 헤더가 파"
+"일 맨 앞에 추가되며, 각각 필터가 줄마다 표시됩니다."
+
+#: filteropts.cpp:256
+#, kde-format
+msgid "Import Filters"
+msgstr "필터 가져오기"
+
+#: filteropts.cpp:301
+#, kde-format
+msgid "Export Filters"
+msgstr "필터 내보내기"
+
+#: filteropts.cpp:436
+#, kde-format
+msgid ""
+"<h1>Konqueror AdBlocK</h1> Konqueror AdBlocK allows you to create a list of "
+"filters that are checked against linked images and frames. URL's that match "
+"are either discarded or replaced with a placeholder image. "
+msgstr ""
+"<h1>Konqueror AdBlocK</h1> Konqueror AdBlocK에서는 연결된 그림과 프레임에 대"
+"한 필터의 목록을 만들 수 있도록 합니다. 필터와 일치하는 URL은 대체 이미지로 "
+"대체되거나 무시됩니다."
+
+#: filteropts.cpp:558
+#, kde-format
+msgid "Name"
+msgstr "이름"
+
+#: filteropts.cpp:559
+#, kde-format
+msgid "URL"
+msgstr "URL"
+
+#: generalopts.cpp:53
+#, kde-format
+msgid "Tabbed Browsing"
+msgstr "탭 브라우징"
+
+#: generalopts.cpp:79
+#, kde-format
+msgctxt ""
+"The user chose to use a custom start page but left the corresponding field "
+"empty"
+msgid "Please, insert the custom start page"
+msgstr "사용자 정의 페이지를 선택하십시오"
+
+#: generalopts.cpp:85
+#, kde-format
+msgctxt "@label:listbox"
+msgid "When &Konqueror starts:"
+msgstr "Konqueror를 시작할 때(&K):"
+
+#: generalopts.cpp:94
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Show Introduction Page"
+msgstr "소개 페이지 표시"
+
+#: generalopts.cpp:95
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Show My Start Page"
+msgstr "내 시작 페이지 표시"
+
+#: generalopts.cpp:96
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Show Blank Page"
+msgstr "빈 페이지 표시"
+
+#: generalopts.cpp:97
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Show My Bookmarks"
+msgstr "내 책갈피 표시"
+
+#: generalopts.cpp:103
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Start Page"
+msgstr "시작 페이지 선택"
+
+#: generalopts.cpp:107
+#, kde-format
+msgid "This is the URL of the web page Konqueror will show when starting."
+msgstr "Konqueror를 시작할 때 표시할 웹 페이지 URL입니다."
+
+#: generalopts.cpp:118
+#, kde-format
+msgid "Home page:"
+msgstr "홈페이지:"
+
+#: generalopts.cpp:121
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Home Page"
+msgstr "홈페이지 선택"
+
+#: generalopts.cpp:126
+#, kde-format
+msgid ""
+"This is the URL of the web page where Konqueror will jump to when the \"Home"
+"\" button is pressed."
+msgstr ""
+"이것은 Konqueror에서 \"홈\" 단추를 눌렀을 때 표시할 웹 페이지 URL입니다."
+
+#: generalopts.cpp:134
+#, kde-format
+msgid "Default web browser engine:"
+msgstr "기본 웹 브라우저 엔진:"
+
+#: generalopts.cpp:143
+#, kde-format
+msgid "When splitting a view"
+msgstr "보기를 나눌 때"
+
+#: generalopts.cpp:147
+#, kde-format
+msgid "Always duplicate current view"
+msgstr "항상 현재 보기 복제"
+
+#: generalopts.cpp:148
+#, kde-format
+msgid "Duplicate current view only for local files"
+msgstr "로컬 파일을 볼 때만 현재 보기 복제"
+
+#: htmlopts.cpp:36
+#, kde-format
+msgid ""
+"<h1>Konqueror Browser</h1> Here you can configure Konqueror's browser "
+"functionality. Please note that the file manager functionality has to be "
+"configured using the \"File Manager\" configuration module. You can make "
+"some settings how Konqueror should handle the HTML code in the web pages it "
+"loads. It is usually not necessary to change anything here."
+msgstr ""
+"<h1>Konqueror 탐색기</h1> 여기에서 Konqueror의 탐색기 기능을 설정할 수 있습니"
+"다. 파일 관리자 기능은 \"파일 관리자\" 설정 모듈에서 설정할 수 있습니다. "
+"Konqueror에서 웹 페이지의 HTML 코드를 불러올 때 처리 방법을 설정할 수도 있습"
+"니다. 대개 이 곳에서 설정할 부분은 없습니다."
+
+#: htmlopts.cpp:44
+#, kde-format
+msgid "Boo&kmarks"
+msgstr "책갈피(&K)"
+
+#: htmlopts.cpp:47
+#, kde-format
+msgid "Ask for name and folder when adding bookmarks"
+msgstr "책갈피를 추가할 때 이름과 폴더 물어보기"
+
+#: htmlopts.cpp:50
+#, kde-format
+msgid ""
+"If this box is checked, Konqueror will allow you to change the title of the "
+"bookmark and choose a folder in which to store it when you add a new "
+"bookmark."
+msgstr ""
+"이 상자를 선택하면 Konqueror에 새 책갈피 항목을 추가할 때 이름과 저장할 폴더"
+"를 변경할 수 있도록 합니다."
+
+#: htmlopts.cpp:56
+#, kde-format
+msgid "Show only marked bookmarks in bookmark toolbar"
+msgstr "책갈피 도구 모음에 선택한 책갈피만 표시"
+
+#: htmlopts.cpp:58
+#, kde-format
+msgid ""
+"If this box is checked, Konqueror will show only those bookmarks in the "
+"bookmark toolbar which you have marked to do so in the bookmark editor."
+msgstr ""
+"이 상자를 선택하면 Konqueror에서는 책갈피 편집기에 표시한 책갈피만 도구 모음"
+"에 표시합니다."
+
+#: htmlopts.cpp:65
+#, kde-format
+msgid "Form Com&pletion"
+msgstr "폼 자동 완성(&P)"
+
+#: htmlopts.cpp:69
+#, kde-format
+msgid ""
+"If this box is checked, Konqueror will remember the data you enter in web "
+"forms and suggest it in similar fields for all forms."
+msgstr ""
+"이 상자를 선택하면 Konqueror에서는 웹 폼에 입력한 데이터를 기억하고 있다가 모"
+"든 폼의 비슷한 필드에 자동으로 추천합니다."
+
+#: htmlopts.cpp:75
+#, kde-format
+msgid "&Maximum completions:"
+msgstr "최대 자동 완성 개수(&M):"
+
+#: htmlopts.cpp:77
+#, kde-format
+msgid ""
+"Here you can select how many values Konqueror will remember for a form field."
+msgstr "Konqueror가 기억할 폼 필드의 최대 개수를 설정합니다."
+
+#: htmlopts.cpp:84
+#, kde-format
+msgid "Mouse Beha&vior"
+msgstr "마우스 작동 방식(&V)"
+
+#: htmlopts.cpp:87
+#, kde-format
+msgid "Chan&ge cursor over links"
+msgstr "링크 위에 있을 때 커서 모양 바꾸기(&G)"
+
+#: htmlopts.cpp:89
+#, kde-format
+msgid ""
+"If this option is set, the shape of the cursor will change (usually to a "
+"hand) if it is moved over a hyperlink."
+msgstr ""
+"이 설정을 사용하면 커서가 하이퍼링크 위에 있을 때 모양이 바뀝니다. 대부분 손"
+"모양입니다."
+
+#: htmlopts.cpp:93
+#, kde-format
+msgid "M&iddle click opens URL in selection"
+msgstr "가운데 단추를 클릭하여 URL 열기(&I)"
+
+#: htmlopts.cpp:96
+#, kde-format
+msgid ""
+"If this box is checked, you can open the URL in the selection by middle "
+"clicking on a Konqueror view."
+msgstr ""
+"이 설정을 사용하면 Konqueror에서 마우스 가운데 단추를 클릭했을 때 URL을 열 "
+"수 있습니다."
+
+#: htmlopts.cpp:100
+#, kde-format
+msgid "Right click goes &back in history"
+msgstr "오른쪽 단추로 뒤로 돌아가기(&B)"
+
+#: htmlopts.cpp:103
+#, kde-format
+msgid ""
+"If this box is checked, you can go back in history by right clicking on a "
+"Konqueror view. To access the context menu, press the right mouse button and "
+"move."
+msgstr ""
+"이 상자를 선택하면 Konqueror 보기에서 마우스 오른쪽 단추를 클릭해서 뒤로 돌아"
+"갈 수 있습니다. 콘텍스트 메뉴에 접근하려면 오른쪽 마우스 단추를 누른 다음 움"
+"직이십시오."
+
+#: htmlopts.cpp:113
+#, kde-format
+msgid "Allow automatic delayed &reloading/redirecting"
+msgstr "자동 새로고침/넘겨주기 허용(&R)"
+
+#: htmlopts.cpp:114
+#, kde-format
+msgid ""
+"Some web pages request an automatic reload or redirection after a certain "
+"period of time. By unchecking this box Konqueror will ignore these requests."
+msgstr ""
+"일부 웹 페이지는 시간이 지나면 자동으로 새로 고치거나 다른 곳으로 넘겨줍니"
+"다. 이 상자의 선택을 해제하면 Konqueror에서 이 요청을 무시합니다."
+
+#: htmlopts.cpp:120
+#, kde-format
+msgid "Enable Access Ke&y activation with Ctrl key"
+msgstr "Ctrl 키를 사용한 액세스 키 사용(&Y)"
+
+#: htmlopts.cpp:121
+#, kde-format
+msgid ""
+"Pressing the Ctrl key when viewing webpages activates Access Keys. "
+"Unchecking this box will disable this accessibility feature. (Konqueror "
+"needs to be restarted for this change to take effect.)"
+msgstr ""
+"웹 페이지를 볼 때 Ctrl 키를 누르면 액세스 키를 사용합니다. 이 상자를 선택하"
+"지 않으면 이 접근성 기능을 끕니다. (설정을 적용하려면 Konqueror를 다시 시작해"
+"야 합니다."
+
+#: htmlopts.cpp:125
+#, kde-format
+msgid "Send the DNT header to tell web sites you do not want to be tracked"
+msgstr "추적하고 싶지 않은 웹사이트에 DNT 헤더를 보냅니다"
+
+#: htmlopts.cpp:126
+#, kde-format
+msgid ""
+"Check this box if you want to inform a web site that you do not want your "
+"web browsing habits tracked."
+msgstr ""
+"웹 브라우징을 추적하고 싶지 않다는 의사를 표시하고 싶으면 이 상자를 선택하십"
+"시오."
+
+#: htmlopts.cpp:130
+#, kde-format
+msgid "Offer to save website passwords"
+msgstr "웹사이트 암호 저장 여부 묻기"
+
+#: htmlopts.cpp:131
+#, kde-format
+msgid "Uncheck this box to prevent being prompted to save website passwords"
+msgstr "웹사이트 암호 저장 여부를 묻지 않으려면 선택 해제하십시오"
+
+#: htmlopts.cpp:136
+#, kde-format
+msgid "Display online PDF files using WebEngine"
+msgstr "WebEngine을 사용하여 온라인 PDF 파일 표시"
+
+#: htmlopts.cpp:137
+#, kde-format
+msgid ""
+"Uncheck this box to display online PDF files as configured in System Settings"
+msgstr ""
+"이 설정을 사용하지 않으면 시스템 설정에서 지정한 방식으로 온라인에 있는 PDF "
+"파일을 표시합니다"
+
+#: javaopts.cpp:78
+#, kde-format
+msgid "Enable Ja&va globally"
+msgstr "전역적으로 자바 사용(&V)"
+
+#: javaopts.cpp:93
+#, kde-format
+msgid "Java Runtime Settings"
+msgstr "자바 런타임 설정"
+
+#: javaopts.cpp:97
+#, kde-format
+msgid "&Use security manager"
+msgstr "보안 관리자 사용(&U)"
+
+#: javaopts.cpp:101
+#, kde-format
+msgid "Use &KIO"
+msgstr "KIO 사용(&K)"
+
+#: javaopts.cpp:105
+#, kde-format
+msgid "Shu&tdown applet server when inactive for more than"
+msgstr "다음 시간 이상 사용하지 않을 때 애플릿 서버 끄기(&T)"
+
+#: javaopts.cpp:117
+#, kde-format
+msgid " second"
+msgid_plural " seconds"
+msgstr[0] "초"
+
+#: javaopts.cpp:123
+#, kde-format
+msgid "&Path to Java executable, or 'java':"
+msgstr "자바 실행 파일의 경로 또는 'java'(&P):"
+
+#: javaopts.cpp:127
+#, kde-format
+msgid "Additional Java a&rguments:"
+msgstr "추가 자바 인자(&R):"
+
+#: javaopts.cpp:132
+#, kde-format
+msgid ""
+"Enables the execution of scripts written in Java that can be contained in "
+"HTML pages. Note that, as with any browser, enabling active contents can be "
+"a security problem."
+msgstr ""
+"HTML 페이지에 포함된 자바로 작성된 스크립트를 실행합니다. 다른 브라우저와 마"
+"찬가지로 액티브 컨텐츠를 사용하면 보안 문제가 발생할 수 있으므로 주의하십시"
+"오."
+
+#: javaopts.cpp:135
+#, kde-format
+msgid ""
+"<p>This box contains the domains and hosts you have set a specific Java "
+"policy for. This policy will be used instead of the default policy for "
+"enabling or disabling Java applets on pages sent by these domains or hosts.</"
+"p><p>Select a policy and use the controls on the right to modify it.</p>"
+msgstr ""
+"<p>이 상자는 도메인이나 호스트 지정 자바 정책이 있는 도메인의 목록을 표시합니"
+"다. 이 도메인이나 호스트에 대해서는 여기에 있는 자바 정책을 기본 정책 대신 사"
+"용합니다.</p><p>정책을 선택하고 오른쪽에 있는 단추를 사용하여 수정하십시오.</"
+"p>"
+
+#: javaopts.cpp:142
+#, kde-format
+msgid ""
+"Click this button to choose the file that contains the Java policies. These "
+"policies will be merged with the existing ones. Duplicate entries are "
+"ignored."
+msgstr ""
+"이 단추를 클릭한 다음 자바 정책이 들어 있는 파일을 선택하십시오. 선택한 정책"
+"은 기존 정책에 합쳐집니다. 중복된 항목은 무시됩니다."
+
+#: javaopts.cpp:145
+#, kde-format
+msgid ""
+"Click this button to save the Java policy to a zipped file. The file, named "
+"<b>java_policy.tgz</b>, will be saved to a location of your choice."
+msgstr ""
+"자바 정책을 압축 파일로 저장하려면 이 단추를 클릭하십시오. 지정한 경로에 "
+"<b>java_policy.tgz</b>라는 파일로 저장됩니다."
+
+#: javaopts.cpp:149
+#, kde-format
+msgid ""
+"Here you can set specific Java policies for any particular host or domain. "
+"To add a new policy, simply click the <i>New...</i> button and supply the "
+"necessary information requested by the dialog box. To change an existing "
+"policy, click on the <i>Change...</i> button and choose the new policy from "
+"the policy dialog box. Clicking on the <i>Delete</i> button will remove the "
+"selected policy, causing the default policy setting to be used for that "
+"domain."
+msgstr ""
+"자주 방문하는 호스트나 도메인에 대한 자바 정책을 지정할 수 있습니다. 새로운 "
+"정책을 추가하려면 간단히 <i>새로 만들기...</i> 단추를 클릭한 다음 대화 상자"
+"에 필요한 정보를 입력하십시오. 기존 정책을 변경하려면 <i>변경...</i> 단추를 "
+"클릭한 다음 정책 대화 상자에 새로운 정책을 입력하십시오. <i>삭제</i> 단추를 "
+"클릭하면 선택한 정책을 삭제하고 기본 정책을 적용합니다."
+
+#: javaopts.cpp:162
+#, kde-format
+msgid ""
+"Enabling the security manager will cause the jvm to run with a Security "
+"Manager in place. This will keep applets from being able to read and write "
+"to your file system, creating arbitrary sockets, and other actions which "
+"could be used to compromise your system. Disable this option at your own "
+"risk. You can modify your $HOME/.java.policy file with the Java policytool "
+"utility to give code downloaded from certain sites more permissions."
+msgstr ""
+"보안 관리자를 이용하면 보안 관리자를 이용하여 jvm을 실행합니다. 이것은 애플릿"
+"에서 파일 시스템을 읽고 기록하거나, 임의의 소켓을 만들거나, 시스템을 손상시키"
+"는 동작을 할 수 없도록 합니다. 이 설정을 사용하지 않는 것은 여러분의 책임입니"
+"다. $HOME/.java.policy 파일을 자바 policytool 도구로 편집해서 특정한 사이트에"
+"서 내려받은 코드에 더 많은 권한을 부여할 수 있습니다."
+
+#: javaopts.cpp:170
+#, kde-format
+msgid "Enabling this will cause the jvm to use KIO for network transport "
+msgstr ""
+"이 설정을 사용하면 자바 가상 머신에서 KIO를 사용하여 네트워크 전송을 합니다"
+
+#: javaopts.cpp:172
+#, kde-format
+msgid ""
+"Enter the path to the java executable. If you want to use the jre in your "
+"path, simply leave it as 'java'. If you need to use a different jre, enter "
+"the path to the java executable (e.g. /usr/lib/jdk/bin/java), or the path to "
+"the directory that contains 'bin/java' (e.g. /opt/IBMJava2-13)."
+msgstr ""
+"java 실행 파일의 경로를 입력하십시오. 경로에 지정되어 있는 JRE를 사용하려면 "
+"'java'라고 두십시오. 만약 다른 JRE를 사용해야 한다면 java 실행 파일의 경로를 "
+"입력하십시오. (예: /usr/lib/jdk/bin/java) 또는 'bin/java' 실행 파일이 들어 있"
+"는 디렉터리를 입력하십시오. (예: /opt/IBMJava2-13)"
+
+#: javaopts.cpp:177
+#, kde-format
+msgid ""
+"If you want special arguments to be passed to the virtual machine, enter "
+"them here."
+msgstr "가상 머신에 인자를 전달해야 한다면 여기에 입력하십시오."
+
+#: javaopts.cpp:179
+#, kde-format
+msgid ""
+"When all the applets have been destroyed, the applet server should shut "
+"down. However, starting the jvm takes a lot of time. If you would like to "
+"keep the java process running while you are browsing, you can set the "
+"timeout value to whatever you like. To keep the java process running for the "
+"whole time that the konqueror process is, leave the Shutdown Applet Server "
+"checkbox unchecked."
+msgstr ""
+"모든 애플릿이 파괴되었을 때 애플릿 서버는 중단됩니다. 하지만 자바 가상 머신"
+"을 시작하는 데는 오랜 시간이 걸립니다. 만약 탐색하는 중에 자바 프로세스가 실"
+"행되도록 하려면 시간 제한 값을 필요한 대로 설정하십시오. Konqueror가 실행되"
+"는 동안 프로세스를 계속 실행하려면, 애플릿 서버 종료 체크 상자를 선택하지 마"
+"십시오."
+
+#: javaopts.cpp:288
+#, kde-format
+msgctxt "@title:group"
+msgid "Doma&in-Specific"
+msgstr "도메인 지정(&I)"
+
+#: javaopts.cpp:323
+#, kde-format
+msgctxt "@title:window"
+msgid "New Java Policy"
+msgstr "새 자바 정책"
+
+#: javaopts.cpp:326
+#, kde-format
+msgctxt "@title:window"
+msgid "Change Java Policy"
+msgstr "자바 정책 변경"
+
+#: javaopts.cpp:330
+#, kde-format
+msgid "&Java policy:"
+msgstr "자바 정책(&J):"
+
+#: javaopts.cpp:331
+#, kde-format
+msgid "Select a Java policy for the above host or domain."
+msgstr "위 호스트나 도메인에 대한 자바 정책을 선택하십시오."
+
+#: jsopts.cpp:50
+#, kde-format
+msgid "Ena&ble JavaScript globally"
+msgstr "전역적으로 자바스크립트 사용하기(&B)"
+
+#: jsopts.cpp:51
+#, kde-format
+msgid ""
+"Enables the execution of scripts written in ECMA-Script (also known as "
+"JavaScript) that can be contained in HTML pages. Note that, as with any "
+"browser, enabling scripting languages can be a security problem."
+msgstr ""
+"HTML 페이지에 포함된 ECMA 스크립트(자바스크립트)로 작성된 스크립트를 실행합니"
+"다. 어떠한 브라우저를 사용해도 스크립트 언어를 사용하면 보안 문제가 발생할 "
+"수 있으므로 주의하십시오."
+
+#: jsopts.cpp:59
+#, kde-format
+msgid "Debugging"
+msgstr "디버깅"
+
+#: jsopts.cpp:63
+#, kde-format
+msgid "Enable debu&gger"
+msgstr "디버거 사용하기(&G)"
+
+#: jsopts.cpp:64
+#, kde-format
+msgid "Enables builtin JavaScript debugger."
+msgstr "내장 자바스크립트 디버거를 사용합니다."
+
+#: jsopts.cpp:68
+#, kde-format
+msgid "Report &errors"
+msgstr "오류 알리기(&E)"
+
+#: jsopts.cpp:69
+#, kde-format
+msgid ""
+"Enables the reporting of errors that occur when JavaScript code is executed."
+msgstr "자바스크립트 코드에서 발생하는 오류를 알려 줍니다."
+
+#: jsopts.cpp:79
+#, kde-format
+msgid ""
+"Here you can set specific JavaScript policies for any particular host or "
+"domain. To add a new policy, simply click the <i>New...</i> button and "
+"supply the necessary information requested by the dialog box. To change an "
+"existing policy, click on the <i>Change...</i> button and choose the new "
+"policy from the policy dialog box. Clicking on the <i>Delete</i> button will "
+"remove the selected policy causing the default policy setting to be used for "
+"that domain. The <i>Import</i> and <i>Export</i> button allows you to easily "
+"share your policies with other people by allowing you to save and retrieve "
+"them from a zipped file."
+msgstr ""
+"임의의 호스트나 도메인에 대한 자바스크립트 정책을 결정할 수 있습니다. 새 정책"
+"을 추가하려면 <i>새로 만들기...</i> 단추를 누르고 필요한 정보를 대화 상자에 "
+"입력하십시오. 존재하는 정책을 변경하려면 <i>변경...</i> 단추를 누르고 정책을 "
+"변경하십시오. <i>삭제</i> 단추를 클릭하면 도메인의 정책을 삭제하고 기본 정책"
+"을 사용합니다. <i>가져오기</i>와 <i>내보내기</i> 단추를 클릭하면 다른 사람과 "
+"정책을 쉽게 공유할 수 있습니다."
+
+#: jsopts.cpp:89
+#, kde-format
+msgid ""
+"<p>This box contains the domains and hosts you have set a specific "
+"JavaScript policy for. This policy will be used instead of the default "
+"policy for enabling or disabling JavaScript on pages sent by these domains "
+"or hosts.</p><p>Select a policy and use the controls on the right to modify "
+"it.</p>"
+msgstr ""
+"<p>이 상자는 도메인이나 호스트 지정 자바스크립트 정책이 있는 도메인의 목록을 "
+"표시합니다. 이 도메인이나 호스트에 대해서는 여기에 있는 자바스크립트 정책을 "
+"기본 정책 대신 사용합니다.</p><p>정책을 선택하고 오른쪽에 있는 단추를 사용해"
+"서 수정하십시오.</p>"
+
+#: jsopts.cpp:96
+#, kde-format
+msgid ""
+"Click this button to choose the file that contains the JavaScript policies. "
+"These policies will be merged with the existing ones. Duplicate entries are "
+"ignored."
+msgstr ""
+"이 단추를 클릭한 다음 자바스크립트 정책이 들어 있는 파일을 선택하십시오. 선택"
+"한 정책은 기존 정책에 합쳐집니다. 중복된 항목은 무시됩니다."
+
+#: jsopts.cpp:99
+#, kde-format
+msgid ""
+"Click this button to save the JavaScript policy to a zipped file. The file, "
+"named <b>javascript_policy.tgz</b>, will be saved to a location of your "
+"choice."
+msgstr ""
+"자바스크립트 정책을 압축 파일로 저장하려면 이 단추를 클릭하십시오. 지정한 경"
+"로에 <b>javascript_policy.tgz</b>라는 파일로 저장합니다."
+
+#: jsopts.cpp:105
+#, kde-format
+msgid "Global JavaScript Policies"
+msgstr "전역 자바스크립트 정책"
+
+#: jsopts.cpp:173
+#, kde-format
+msgctxt "@title:group"
+msgid "Do&main-Specific"
+msgstr "도메인 지정(&M)"
+
+#: jsopts.cpp:212
+#, kde-format
+msgctxt "@title:window"
+msgid "New JavaScript Policy"
+msgstr "새 자바스크립트 정책"
+
+#: jsopts.cpp:215
+#, kde-format
+msgctxt "@title:window"
+msgid "Change JavaScript Policy"
+msgstr "자바스크립트 정책 변경"
+
+#: jsopts.cpp:219
+#, kde-format
+msgid "JavaScript policy:"
+msgstr "자바스크립트 정책:"
+
+#: jsopts.cpp:220
+#, kde-format
+msgid "Select a JavaScript policy for the above host or domain."
+msgstr "위 호스트나 도메인에 대한 자바스크립트 정책을 선택하십시오."
+
+#: jsopts.cpp:222
+#, kde-format
+msgid "Domain-Specific JavaScript Policies"
+msgstr "도메인 지정 자바스크립트 정책"
+
+#: jspolicies.cpp:132
+#, kde-format
+msgid "Open new windows:"
+msgstr "새로운 창 열기:"
+
+#: jspolicies.cpp:140 jspolicies.cpp:194 jspolicies.cpp:231 jspolicies.cpp:268
+#: jspolicies.cpp:308
+#, kde-format
+msgid "Use global"
+msgstr "전역 정책 사용"
+
+#: jspolicies.cpp:141 jspolicies.cpp:195 jspolicies.cpp:232 jspolicies.cpp:269
+#: jspolicies.cpp:309
+#, kde-format
+msgid "Use setting from global policy."
+msgstr "전역 정책 설정을 사용합니다."
+
+#: jspolicies.cpp:147 jspolicies.cpp:201 jspolicies.cpp:238 jspolicies.cpp:275
+#: jspolicies.cpp:315
+#, kde-format
+msgid "Allow"
+msgstr "허용"
+
+#: jspolicies.cpp:148
+#, kde-format
+msgid "Accept all popup window requests."
+msgstr "모든 팝업 창을 열도록 허용합니다."
+
+#: jspolicies.cpp:153
+#, kde-format
+msgid "Ask"
+msgstr "묻기"
+
+#: jspolicies.cpp:154
+#, kde-format
+msgid "Prompt every time a popup window is requested."
+msgstr "팝업 창이 열릴 때마다 물어 봅니다."
+
+#: jspolicies.cpp:159
+#, kde-format
+msgid "Deny"
+msgstr "거부"
+
+#: jspolicies.cpp:160
+#, kde-format
+msgid "Reject all popup window requests."
+msgstr "모든 팝업 창을 거부합니다."
+
+#: jspolicies.cpp:165
+#, kde-format
+msgid "Smart"
+msgstr "스마트"
+
+#: jspolicies.cpp:166
+#, kde-format
+msgid ""
+"Accept popup window requests only when links are activated through an "
+"explicit mouse click or keyboard operation."
+msgstr "마우스 클릭이나 키보드 작동으로 링크를 눌렀을 때만 팝업을 표시합니다."
+
+#: jspolicies.cpp:173
+#, kde-format
+msgid ""
+"If you disable this, Konqueror will stop interpreting the <i>window.open()</"
+"i> JavaScript command. This is useful if you regularly visit sites that make "
+"extensive use of this command to pop up ad banners.<br /><br /><b>Note:</b> "
+"Disabling this option might also break certain sites that require <i>window."
+"open()</i> for proper operation. Use this feature carefully."
+msgstr ""
+"이 설정을 사용하지 않으면 Konqueror에서는 <i>window.open()</i>을 처리하지 않"
+"습니다. 이 명령을 사용해서 팝업 광고를 표시하는 사이트에 자주 방문할 때 유용"
+"합니다.<br /><br /><b>메모:</b> 이 설정을 사용하지 않으면 <i>window.open()</"
+"i>을 올바르게 작동하는 데 사용하는 사이트의 동작을 방해할 수 있습니다. 조심해"
+"서 사용하십시오."
+
+#: jspolicies.cpp:187
+#, kde-format
+msgid "Resize window:"
+msgstr "창 크기 조절:"
+
+#: jspolicies.cpp:202
+#, kde-format
+msgid "Allow scripts to change the window size."
+msgstr "창 크기를 조절하는 스크립트를 허용합니다."
+
+#: jspolicies.cpp:207 jspolicies.cpp:244 jspolicies.cpp:281 jspolicies.cpp:321
+#, kde-format
+msgid "Ignore"
+msgstr "무시"
+
+#: jspolicies.cpp:208
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to change the window size. The web page will "
+"<i>think</i> it changed the size but the actual window is not affected."
+msgstr ""
+"창 크기를 변경하는 스크립트를 무시합니다. 웹 페이지는 창 크기가 <i>바뀌었다고"
+"</i> 간주하지만 실제 크기는 그대로 있습니다."
+
+#: jspolicies.cpp:215
+#, kde-format
+msgid ""
+"Some websites change the window size on their own by using <i>window."
+"resizeBy()</i> or <i>window.resizeTo()</i>. This option specifies the "
+"treatment of such attempts."
+msgstr ""
+"일부 웹사이트에서는 <i>window.resizeBy()</i>나 <i>window.resizeTo()</i>를 사"
+"용해서 브라우저 창 크기를 바꿉니다. 이 설정은 이러한 시도를 어떻게 처리할지 "
+"설정합니다."
+
+#: jspolicies.cpp:224
+#, kde-format
+msgid "Move window:"
+msgstr "창 이동:"
+
+#: jspolicies.cpp:239
+#, kde-format
+msgid "Allow scripts to change the window position."
+msgstr "창의 위치를 변경하는 스크립트를 허용합니다."
+
+#: jspolicies.cpp:245
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to change the window position. The web page will "
+"<i>think</i> it moved the window but the actual position is not affected."
+msgstr ""
+"창을 이동시키는 스크립트를 무시합니다. 웹 페이지는 창이 <i>이동했다고</i> 간"
+"주하지만 실제 위치는 그대로 있습니다."
+
+#: jspolicies.cpp:252
+#, kde-format
+msgid ""
+"Some websites change the window position on their own by using <i>window."
+"moveBy()</i> or <i>window.moveTo()</i>. This option specifies the treatment "
+"of such attempts."
+msgstr ""
+"일부 웹사이트에서는 <i>window.moveBy()</i>나 <i>window.moveTo()</i>를 사용해"
+"서 브라우저 창을 이동시킵니다. 이 설정은 이러한 시도를 어떻게 처리할지 설정합"
+"니다."
+
+#: jspolicies.cpp:261
+#, kde-format
+msgid "Focus window:"
+msgstr "창 초점 맞추기:"
+
+#: jspolicies.cpp:276
+#, kde-format
+msgid "Allow scripts to focus the window."
+msgstr "창에 초점을 맞추는 스크립트를 허용합니다."
+
+#: jspolicies.cpp:282
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to focus the window. The web page will <i>think</"
+"i> it brought the focus to the window but the actual focus will remain "
+"unchanged."
+msgstr ""
+"창에 초점을 맞추는 스크립트를 무시합니다. 웹 페이지는 창의 초점이 <i>바뀌었다"
+"고</i> 간주하지만 실제 초점은 바뀌지 않습니다."
+
+#: jspolicies.cpp:290
+#, kde-format
+msgid ""
+"Some websites set the focus to their browser window on their own by using "
+"<i>window.focus()</i>. This usually leads to the window being moved to the "
+"front interrupting whatever action the user was dedicated to at that time. "
+"This option specifies the treatment of such attempts."
+msgstr ""
+"일부 웹사이트에서는 <i>window.focus()</i>를 사용해서 브라우저 창의 초점을 변"
+"경합니다. 이것은 사용자가 원하지 않은 창이 화면의 앞쪽에 표시되도록 합니다. "
+"이 설정을 사용하면 이러한 시도를 무력화시킵니다."
+
+#: jspolicies.cpp:301
+#, kde-format
+msgid "Modify status bar text:"
+msgstr "상태 표시줄 텍스트 수정:"
+
+#: jspolicies.cpp:316
+#, kde-format
+msgid "Allow scripts to change the text of the status bar."
+msgstr "상태 표시줄의 텍스트를 변경하는 스크립트를 허용합니다."
+
+#: jspolicies.cpp:322
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to change the status bar text. The web page will "
+"<i>think</i> it changed the text but the actual text will remain unchanged."
+msgstr ""
+"상태 표시줄 텍스트를 변경하는 스크립트를 무시합니다. 웹 페이지는 상태 표시줄"
+"의 텍스트가 <i>바뀌었다고</i> 간주하지만 실제 텍스트는 바뀌지 않습니다."
+
+#: jspolicies.cpp:330
+#, kde-format
+msgid ""
+"Some websites change the status bar text by setting <i>window.status</i> or "
+"<i>window.defaultStatus</i>, thus sometimes preventing displaying the real "
+"URLs of hyperlinks. This option specifies the treatment of such attempts."
+msgstr ""
+"일부 웹사이트에서는 <i>window.status</i> 또는 <i>window.defaultStatus</i> 속"
+"성을 편집하여 상태 표시줄에 하이퍼링크의 실제 URL을 표시하지 못하게 합니다. "
+"이 설정을 사용하면 이러한 시도를 무력화시킵니다."
+
+#: main.cpp:43
+#, kde-format
+msgid "Konqueror Browsing Control Module"
+msgstr "Konqueror 탐색 제어 모듈"
+
+#: main.cpp:45
+#, kde-format
+msgid "(c) 1999 - 2001 The Konqueror Developers"
+msgstr "(c) 1999 - 2001 The Konqueror Developers"
+
+#: main.cpp:47
+#, kde-format
+msgid "Waldo Bastian"
+msgstr "Waldo Bastian"
+
+#: main.cpp:48
+#, kde-format
+msgid "David Faure"
+msgstr "David Faure"
+
+#: main.cpp:49
+#, kde-format
+msgid "Matthias Kalle Dalheimer"
+msgstr "Matthias Kalle Dalheimer"
+
+#: main.cpp:50
+#, kde-format
+msgid "Lars Knoll"
+msgstr "Lars Knoll"
+
+#: main.cpp:51
+#, kde-format
+msgid "Dirk Mueller"
+msgstr "Dirk Mueller"
+
+#: main.cpp:52
+#, kde-format
+msgid "Daniel Molkentin"
+msgstr "Daniel Molkentin"
+
+#: main.cpp:53
+#, kde-format
+msgid "Wynn Wilkes"
+msgstr "Wynn Wilkes"
+
+#: main.cpp:55
+#, kde-format
+msgid "Leo Savernik"
+msgstr "Leo Savernik"
+
+#: main.cpp:55
+#, kde-format
+msgid ""
+"JavaScript access controls\n"
+"Per-domain policies extensions"
+msgstr ""
+"자바스크립트 접근 제어\n"
+"도메인별 정책 확장 기능"
+
+#: main.cpp:67
+#, kde-format
+msgid "&Java"
+msgstr "자바(&J)"
+
+#: main.cpp:71
+#, kde-format
+msgid "Java&Script"
+msgstr "자바스크립트(&S)"
+
+#: main.cpp:111
+#, kde-format
+msgid ""
+"<h2>JavaScript</h2>On this page, you can configure whether JavaScript "
+"programs embedded in web pages should be allowed to be executed by Konqueror."
+"<h2>Java</h2>On this page, you can configure whether Java applets embedded "
+"in web pages should be allowed to be executed by Konqueror.<br /><br /"
+"><b>Note:</b> Active content is always a security risk, which is why "
+"Konqueror allows you to specify very fine-grained from which hosts you want "
+"to execute Java and/or JavaScript programs."
+msgstr ""
+"<h2>자바스크립트</h2>이 페이지에서는 웹 페이지에 들어 있는 자바스크립트를 "
+"Konqueror에서 실행할지 결정합니다. <h2>자바</h2>이 페이지에서는 웹 페이지에 "
+"들어 있는 자바 애플릿을 Konqueror에서 실행할지 설정할 수 있습니다.<br /><br /"
+"><b>메모:</b> 액티브 콘텐츠는 보안 위험성을 가지고 있습니다. 그래서 Konqueror"
+"에서는 자바나 자바스크립트 프로그램을 실행하는 자세한 권한 설정을 제공합니다."
+
+#: policydlg.cpp:30
+#, kde-format
+msgctxt "@title:window"
+msgid "Domain-Specific Policies"
+msgstr "도메인 지정 정책"
+
+#: policydlg.cpp:47
+#, kde-format
+msgid "&Host or domain name:"
+msgstr "호스트 또는 도메인 이름(&H):"
+
+#: policydlg.cpp:55
+#, kde-format
+msgid ""
+"Enter the name of a host (like www.kde.org) or a domain, starting with a dot "
+"(like .kde.org or .org)"
+msgstr ""
+"www.kde.org 같은 호스트 이름을 입력하거나, .kde.org나 .org 같이 점으로 시작하"
+"는 도메인 이름을 입력하십시오."
+
+#: policydlg.cpp:139
+#, kde-format
+msgid "You must first enter a domain name."
+msgstr "도메인 이름을 먼저 입력해야 합니다."
+
+#~ msgid "Accept languages:"
+#~ msgstr "받아들일 언어:"
+
+#~ msgid "Accept character sets:"
+#~ msgstr "받아들일 문자 인코딩:"
+
+#~ msgid "Plugins"
+#~ msgstr "플러그인"
+
+#~ msgid "Folders"
+#~ msgstr "폴더"
+
+#~ msgid "&Remove"
+#~ msgstr "삭제(&R)"
+
+#~ msgid "&New"
+#~ msgstr "새로 만들기(&N)"
+
+#~ msgid "Do&wn"
+#~ msgstr "아래로 이동(&W)"
+
+#~ msgid "&Up"
+#~ msgstr "위로 이동(&U)"
+
+#~ msgid "Click here to scan for newly installed Netscape plugins now."
+#~ msgstr "새로 설치된 넷스케이프 플러그인을 지금 검색합니다."
+
+#~ msgid "&Scan for Plugins"
+#~ msgstr "플러그인 찾기(&S)"
+
+#~ msgid "Here you can see a list of the Netscape plugins KDE has found."
+#~ msgstr "KDE에서 찾은 넷스케이프 플러그인 목록입니다."
+
+#~ msgid "Information"
+#~ msgstr "정보"
+
+#~ msgid "Value"
+#~ msgstr "값"
+
+#~ msgid "Global Settings"
+#~ msgstr "전역 설정"
+
+#~ msgid "&Enable plugins globally"
+#~ msgstr "전역적으로 플러그인 사용하기(&E)"
+
+#~ msgid "Only allow &HTTP and HTTPS URLs for plugins"
+#~ msgstr "HTTP와 HTTPS URL에서만 플러그인 사용(&H)"
+
+#~ msgid "&Load plugins on demand only"
+#~ msgstr "필요할 때만 플러그인 불러오기(&L)"
+
+#~ msgid "CPU priority for plugins: %1"
+#~ msgstr "플러그인의 CPU 우선 순위: %1"
+
+#~ msgid "Domain-Specific Settin&gs"
+#~ msgstr "도메인 지정 설정(&G)..."
+
+#~ msgid ""
+#~ "Enables the execution of plugins that can be contained in HTML pages, e."
+#~ "g. Macromedia Flash. Note that, as with any browser, enabling active "
+#~ "contents can be a security problem."
+#~ msgstr ""
+#~ "Adobe 플래시와 같은 HTML 페이지에 포함되는 플러그인을 실행합니다. 어떤 브"
+#~ "라우저를 사용해도 액티브 컨텐츠를 사용하면 보안 문제가 생길 수 있습니다."
+
+#~ msgid ""
+#~ "<p>This box contains the domains and hosts you have set a specific plugin "
+#~ "policy for. This policy will be used instead of the default policy for "
+#~ "enabling or disabling plugins on pages sent by these domains or hosts.</"
+#~ "p><p>Select a policy and use the controls on the right to modify it.</p>"
+#~ msgstr ""
+#~ "<p>이 상자는 도메인이나 호스트 지정 정책이 있는 도메인의 목록을 표시합니"
+#~ "다. 이 도메인이나 호스트에 대해서는 여기에 있는 플러그인 정책을 기본 정책 "
+#~ "대신 사용합니다.</p><p>정책을 선택하고 오른쪽에 있는 단추를 사용해서 수정"
+#~ "하십시오.</p>"
+
+#~ msgid ""
+#~ "Click this button to choose the file that contains the plugin policies. "
+#~ "These policies will be merged with the existing ones. Duplicate entries "
+#~ "are ignored."
+#~ msgstr ""
+#~ "이 단추를 누른 다음 플러그인 정책이 들어 있는 파일을 선택하십시오. 선택한 "
+#~ "정책은 기존 정책에 합쳐집니다. 중복된 항목은 무시됩니다."
+
+#~ msgid ""
+#~ "Click this button to save the plugin policy to a zipped file. The file, "
+#~ "named <b>plugin_policy.tgz</b>, will be saved to a location of your "
+#~ "choice."
+#~ msgstr ""
+#~ "플러그인 정책을 압축 파일로 저장하려면 이 단추를 누르십시오. 지정한 경로"
+#~ "에 <b>plugin_policy.tgz</b>라는 파일로 저장됩니다."
+
+#~ msgid ""
+#~ "Here you can set specific plugin policies for any particular host or "
+#~ "domain. To add a new policy, simply click the <i>New...</i> button and "
+#~ "supply the necessary information requested by the dialog box. To change "
+#~ "an existing policy, click on the <i>Change...</i> button and choose the "
+#~ "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
+#~ "button will remove the selected policy causing the default policy setting "
+#~ "to be used for that domain."
+#~ msgstr ""
+#~ "특정한 호스트나 도메인의 플러그인 정책을 설정할 수 있습니다. 새 정책을 추"
+#~ "가하시려면 <i>새로 만들기...</i> 단추를 누르고 대화 상자에 필요한 정보를 "
+#~ "입력하십시오. 존재하는 정책을 변경하려면 <i>변경...</i> 단추를 누르고 정책"
+#~ "을 변경하십시오. <i>삭제</i> 단추를 누르면 선택한 도메인 지정 정책을 삭제"
+#~ "하고 기본 정책을 적용합니다."
+
+#~ msgctxt "lowest priority"
+#~ msgid "lowest"
+#~ msgstr "가장 낮음"
+
+#~ msgctxt "low priority"
+#~ msgid "low"
+#~ msgstr "낮음"
+
+#~ msgctxt "medium priority"
+#~ msgid "medium"
+#~ msgstr "보통"
+
+#~ msgctxt "high priority"
+#~ msgid "high"
+#~ msgstr "높음"
+
+#~ msgctxt "highest priority"
+#~ msgid "highest"
+#~ msgstr "가장 높음"
+
+#~ msgid ""
+#~ "<h1>Konqueror Plugins</h1> The Konqueror web browser can use Netscape "
+#~ "plugins to show special content, just like the Navigator does. Please "
+#~ "note that the way you have to install Netscape plugins may depend on your "
+#~ "distribution. A typical place to install them is, for example, '/opt/"
+#~ "netscape/plugins'."
+#~ msgstr ""
+#~ "<h1>Konqueror 플러그인</h1> Konqueror 웹 브라우저에서는 특수한 내용을 표시"
+#~ "할 때 넷스케이프 플러그인을 사용합니다. 넷스케이프 플러그인을 설치하는 방"
+#~ "법은 사용자의 배포판에 따라 다르다는 점을 주의하십시오. 보통 플러그인은 '/"
+#~ "opt/netscape/plugins'에 설치됩니다."
+
+#~ msgid ""
+#~ "Do you want to apply your changes before the scan? Otherwise the changes "
+#~ "will be lost."
+#~ msgstr ""
+#~ "검색하기 전에 변경 사항을 저장하시겠습니까? 그렇지 않으면 변경 사항이 사라"
+#~ "집니다."
+
+#~ msgid ""
+#~ "The nspluginscan executable cannot be found. Netscape plugins will not be "
+#~ "scanned."
+#~ msgstr ""
+#~ "nspluginscan 실행 파일을 찾을 수 없습니다. 넷스케이프 플러그인을 검색하지 "
+#~ "않습니다."
+
+#~ msgid "Scanning for plugins"
+#~ msgstr "플러그인 검색 중"
+
+#~ msgctxt "@title:window"
+#~ msgid "Select Plugin Scan Folder"
+#~ msgstr "플러그인 검색 폴더 선택"
+
+#~ msgid "Netscape Plugins"
+#~ msgstr "넷스케이프 플러그인"
+
+#~ msgid "Plugin"
+#~ msgstr "플러그인"
+
+#~ msgid "MIME type"
+#~ msgstr "MIME 형식"
+
+#~ msgid "Description"
+#~ msgstr "설명"
+
+#~ msgid "Suffixes"
+#~ msgstr "접미사"
+
+#~ msgid "Doma&in-Specific"
+#~ msgstr "도메인 지정(&I)"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Plugin Policy"
+#~ msgstr "새 플러그인 정책"
+
+#~ msgctxt "@title:window"
+#~ msgid "Change Plugin Policy"
+#~ msgstr "플러그인 정책 변경"
+
+#~ msgid "&Plugin policy:"
+#~ msgstr "플러그인 정책(&P):"
+
+#~ msgid "Select a plugin policy for the above host or domain."
+#~ msgstr "위 호스트나 도메인에 대한 플러그인 정책을 선택하십시오."
+
+#, fuzzy
+#~| msgid "Sa&ns serif font:"
+#~ msgid "Sans Serif"
+#~ msgstr "산세리프 글꼴(&N):"
+
+#, fuzzy
+#~| msgid "S&tandard font:"
+#~ msgid "Standard Symbols L"
+#~ msgstr "표준 글꼴(&T):"
+
+#~ msgid "kcmkonqhtml"
+#~ msgstr "kcmkonqhtml"

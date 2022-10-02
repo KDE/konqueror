@@ -1,0 +1,2674 @@
+# translation of konqueror.po to
+# translation of konqueror.po to
+# translation of konqueror.po to
+# translation of konqueror.po to
+# translation of konqueror.po to
+# translation of konqueror.po to Xhosa
+# K Desktop Environment - konqueror
+# Copyright (C) 2001 translate.org.za
+# Antoinette Dekeni <antoinette@transalate.org.za>, 2001.
+# Lwandle Mgidlana <lwandle@translate.org.za>, 2002
+# Thelma Lungcuzo <thelma@translate.org.za>, 2002
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2002-11-08 14:54+0200\n"
+"Last-Translator: Thelma Lungcuzo <thelma@translate.org.za>\n"
+"Language-Team: Xhosa <xhosa@translate.org.za>\n"
+"Language: xh\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0beta2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. i18n: ectx: Menu (tools)
+#: konq_shellcmdplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr ""
+
+#: kshellcmdexecutor.cpp:106
+#, fuzzy, kde-format
+msgid "Input Required:"
+msgstr "Igalelo langaphakathi luyafuneka:"
+
+#: kshellcmdplugin.cpp:32
+#, kde-format
+msgid "&Execute Shell Command..."
+msgstr "&Phumeza Umyalelo Weqokobhe..."
+
+#: kshellcmdplugin.cpp:41
+#, kde-format
+msgid ""
+"KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a bug."
+msgstr ""
+
+#: kshellcmdplugin.cpp:51
+#, kde-format
+msgid "Executing shell commands works only on local directories."
+msgstr "Imiyalelo yokuphumeza ishell iyasebenza kubalawuli bobulali kuphela."
+
+#: kshellcmdplugin.cpp:73
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Execute Shell Command"
+msgstr "&Phumeza Umyalelo Weqokobhe..."
+
+#: kshellcmdplugin.cpp:74
+#, kde-format
+msgid "Execute shell command in current directory:"
+msgstr "Umyalelo wophumezo lweShell kulawulo lwangoku:"
+
+#: kshellcmdplugin.cpp:85
+#, kde-format
+msgid "Output from command: \"%1\""
+msgstr "Ugalelo lwangaphandle olusuka kumyalelo: \"%1\""
+
+#, fuzzy
+#~| msgctxt "NAME OF TRANSLATORS"
+#~| msgid "Your names"
+#~ msgid "no name"
+#~ msgstr "Lwandle Mgidlana"
+
+#, fuzzy
+#~ msgid "Configure"
+#~ msgstr "Qwalasela Ibar yasecaleni"
+
+#~ msgid ""
+#~ "There was an error loading the module %1.\n"
+#~ "The diagnostics is:\n"
+#~ "%2"
+#~ msgstr ""
+#~ "Bekukho imposiso yokulayisha indlela ethile yokulinganisa %1.\n"
+#~ "Izixhobo zokukhangela okungalunganga i:\n"
+#~ "%2"
+
+#~ msgid "Konqueror"
+#~ msgstr "Konqueror"
+
+#, fuzzy
+#~| msgid "Web browser, file manager, ..."
+#~ msgid "Web browser, file manager and document viewer."
+#~ msgstr "Umkhangeli zincwadi we-Web, umphathi wefayile, ..."
+
+#, fuzzy
+#~ msgid "(C) 1999-2008, The Konqueror developers"
+#~ msgstr "(c) 1999-2001, Ababhekisi phambili"
+
+#, fuzzy
+#~ msgid "http://konqueror.kde.org"
+#~ msgstr "http://www.konqueror.org"
+
+#, fuzzy
+#~ msgid "Developer (framework, parts, JavaScript, I/O library) and maintainer"
+#~ msgstr "umbhekisi phambili (amaqhekeza, l/O lib) nomlondolozi"
+
+#, fuzzy
+#~| msgid "developer (framework, parts)"
+#~ msgid "Developer (framework, parts)"
+#~ msgstr "umbhekisi phambili (isiseko somsebenzi, amaqhekeza)"
+
+#, fuzzy
+#~| msgid "developer (framework)"
+#~ msgid "Developer (framework)"
+#~ msgstr "umbhekisi phambili (umsebenzi wesakhelo)"
+
+#, fuzzy
+#~| msgid "developer"
+#~ msgid "Developer"
+#~ msgstr "umbhekisi phambili"
+
+#, fuzzy
+#~| msgid "developer (List views)"
+#~ msgid "Developer (List views)"
+#~ msgstr "umbhekisi phambili (Yenza uluhlu lweemboniselo)"
+
+#, fuzzy
+#~| msgid "developer (List views, I/O lib)"
+#~ msgid "Developer (List views, I/O library)"
+#~ msgstr "umenzi (Uluhlu izimvo.I/O lib)"
+
+#, fuzzy
+#~| msgid "developer (HTML rendering engine)"
+#~ msgid "Developer (HTML rendering engine)"
+#~ msgstr "umbhekisi phambili (HTML enikeza ngenjini)"
+
+#, fuzzy
+#~| msgid "developer (HTML rendering engine, I/O lib)"
+#~ msgid "Developer (HTML rendering engine, I/O library)"
+#~ msgstr "umbhekisi phambili (HTML onikeza ngenjini, l/0 lib)"
+
+#, fuzzy
+#~ msgid ""
+#~ "Developer (HTML rendering engine, I/O library, regression test framework)"
+#~ msgstr "umbhekisi phambili (HTML onikeza ngenjini, l/0 lib)"
+
+#, fuzzy
+#~ msgid "Developer (HTML rendering engine, JavaScript)"
+#~ msgstr "umbhekisi phambili (HTML enikeza ngenjini)"
+
+#, fuzzy
+#~| msgid "developer (JavaScript)"
+#~ msgid "Developer (JavaScript)"
+#~ msgstr "umbhekisi phambili (JavaScript)"
+
+#, fuzzy
+#~ msgid "Developer (Java applets and other embedded objects)"
+#~ msgstr "umbhekisi phambili (wemkxaso ye Java applet)"
+
+#, fuzzy
+#~| msgid "developer (I/O lib)"
+#~ msgid "Developer (I/O library)"
+#~ msgstr "umbhekisi phambili (l/0 lib)"
+
+#, fuzzy
+#~| msgid "developer (Java applet support)"
+#~ msgid "Developer (Java applet support)"
+#~ msgstr "umbhekisi phambili (wemkxaso ye Java applet)"
+
+#, fuzzy
+#~| msgid ""
+#~| "developer (Java 2 security manager support,\n"
+#~| " and other major improvements to applet support)"
+#~ msgid ""
+#~ "Developer (Java 2 security manager support,\n"
+#~ " and other major improvements to applet support)"
+#~ msgstr ""
+#~ "umbhekisi phambili (inkxaso ekhuselekileyo yomphathi weJava 2,\n"
+#~ " kunye nezinye iziphuculwa ezingundoqo wenkxaso ye applet)"
+
+#, fuzzy
+#~| msgid "developer (Netscape plugin support)"
+#~ msgid "Developer (Netscape plugin support)"
+#~ msgstr "umbhekisi phambili (wenkxaso yofako phakathi lwe Netscape)"
+
+#, fuzzy
+#~ msgid "Developer (SSL, Netscape plugins)"
+#~ msgstr "umbhekisi phambili (wenkxaso yofako phakathi lwe Netscape)"
+
+#, fuzzy
+#~| msgid "developer (I/O lib, Authentication support)"
+#~ msgid "Developer (I/O library, Authentication support)"
+#~ msgstr "umbhekisi phambili (l/0 lib, Inkxaso yobubhali)"
+
+#, fuzzy
+#~| msgid "graphics/icons"
+#~ msgid "Graphics/icons"
+#~ msgstr "imizobo/iimphawu zemifanekiso"
+
+#, fuzzy
+#~| msgid "kfm author"
+#~ msgid "KFM author"
+#~ msgstr "umbhali we kfm"
+
+#, fuzzy
+#~| msgid "developer (navigation panel framework)"
+#~ msgid "Developer (navigation panel framework)"
+#~ msgstr "umbhekisi phambili (ulawulo lomsebenzi wesakhelo)"
+
+#, fuzzy
+#~ msgid "Developer (misc stuff)"
+#~ msgstr "umbhekisi phambili (Yenza uluhlu lweemboniselo)"
+
+#, fuzzy
+#~ msgid "Developer (AdBlock filter)"
+#~ msgstr "umbhekisi phambili (umsebenzi wesakhelo)"
+
+#~ msgid ""
+#~ "Checking this box on at least two views sets those views as 'linked'. "
+#~ "Then, when you change directories in one view, the other views linked "
+#~ "with it will automatically update to show the current directory. This is "
+#~ "especially useful with different types of views, such as a directory tree "
+#~ "with an icon view or detailed view, and possibly a terminal emulator "
+#~ "window."
+#~ msgstr ""
+#~ "Ukukhangela le bhokisi noko iimboniselo ezimbini icwangcisa ezo mboniselo "
+#~ "njengezenziwe'amakhonkco'. Ngoko, xa utshintsha abalawuli kwimboniselo "
+#~ "enye, ezinye iimboniselo eziqhotyoshelwe kuyo ziza kugqitywa "
+#~ "ngokuzenzekela ukubonisa ulawulo lwangoku. Oku luncedo oluthile "
+#~ "oluneentlobo ezahlukeneyo zemboniselo, ezinjengolawulo lomthi "
+#~ "olunemboniselo ye-icon okanye imboniselo enenkcukacha, kwaye ngokunjalo "
+#~ "iwindow enomzami wokulungisa indlela yesiphelo."
+
+#, fuzzy
+#~ msgid "Close View"
+#~ msgstr "Sukutshixa Imboniselo"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#~ msgid "Stalled"
+#~ msgstr "Imisiwe"
+
+#, fuzzy
+#~| msgid "Preview in %1"
+#~ msgid "Preview &in %1"
+#~ msgstr "Imboniso kwi %1"
+
+#~ msgid "Show %1"
+#~ msgstr "Bonisa %1"
+
+#, fuzzy
+#~| msgid "History"
+#~ msgctxt "@title:window"
+#~ msgid "History"
+#~ msgstr "Imbali"
+
+#, fuzzy
+#~| msgid "Sort"
+#~ msgctxt "@action:inmenu Parent of 'By Name' and 'By Date'"
+#~ msgid "Sort"
+#~ msgstr "Beka ngendlela"
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt><center><b>%1</b></center><hr />Last visited: %2<br />First visited: "
+#~ "%3<br />Number of times visited: %4</qt>"
+#~ msgstr ""
+#~ "<qt><umbindi><b>%4</b></center><hr>Indwendwele ngokugqibela: %1<br> "
+#~ "Endwendwele kuqala: %2<br>Inani lamaxesha ondwendwelo: %3</qt>"
+
+#, fuzzy
+#~ msgid "Open in New &Window"
+#~ msgstr "Entsha &Window"
+
+#, fuzzy
+#~ msgid "Open in New Tab"
+#~ msgstr "Vula kwi &Tab Entsha"
+
+#, fuzzy
+#~ msgid "&Copy Link Address"
+#~ msgstr "&Thumela Ikhonkco"
+
+#~ msgid "&Remove Entry"
+#~ msgstr "&Susa Umngeno"
+
+#~ msgid "C&lear History"
+#~ msgstr "&Cacisa Imbali"
+
+#~ msgid "By &Name"
+#~ msgstr "&Ngegama"
+
+#~ msgid "By &Date"
+#~ msgstr "&Ngomhla"
+
+#, fuzzy
+#~| msgid "Clear History"
+#~ msgid "Search in history"
+#~ msgstr "Cacisa Imbali"
+
+#~ msgid "Do you really want to clear the entire history?"
+#~ msgstr "Ufuna ngokwenene ukucacisa eyona mbali eyiyo?"
+
+#~ msgid "Clear History?"
+#~ msgstr "Imbali Ecacileyo?"
+
+#, fuzzy
+#~ msgid "Start without a default window, when called without URLs"
+#~ msgstr "Qala ngaphandle kwe window engagqibekanga."
+
+#, fuzzy
+#~ msgid "Profile to open"
+#~ msgstr "Imboniso yabucala ezakuvulwa."
+
+#, fuzzy
+#~ msgid "Session to open"
+#~ msgstr "Indawo ekuyo izakuvula."
+
+#, fuzzy
+#~ msgid "Mimetype to use for this URL (e.g. text/html or inode/directory)"
+#~ msgstr ""
+#~ "Kuzakusetyenziswa udidi lwe Mime kule URL, (umzekelo text/html okanye "
+#~ "inode/ulawulo)."
+
+#, fuzzy
+#~ msgid "Location to open"
+#~ msgstr "Indawo ekuyo izakuvula."
+
+#~ msgid "Canceled."
+#~ msgstr "Icinyiwe."
+
+#, fuzzy
+#~| msgid "Profile Management"
+#~ msgid "File Management"
+#~ msgstr "Umphathi Wemboniselo yabucala"
+
+#, fuzzy
+#~ msgid "Home Folder"
+#~ msgstr "Njengencwadi enenkcukacha Entsha"
+
+#, fuzzy
+#~ msgid "Home"
+#~ msgstr "Ikhaya URL"
+
+#, fuzzy
+#~ msgid "Navigate to your 'Home Folder'"
+#~ msgstr "Lawulela kwi 'URL Yasekhaya'"
+
+#, fuzzy
+#~ msgid "Navigate to your local 'Home Folder'"
+#~ msgstr "Lawulela kwi 'URL Yasekhaya'"
+
+#, fuzzy
+#~ msgid "Home Page"
+#~ msgstr "Ikhaya URL"
+
+#, fuzzy
+#~ msgid "Navigate to your 'Home Page'"
+#~ msgstr "Lawulela kwi 'URL Yasekhaya'"
+
+#, fuzzy
+#~ msgid ""
+#~ "<html>Navigate to your 'Home Page'<br /><br />You can configure the "
+#~ "location where this button takes you under <b>Settings -> Configure "
+#~ "Konqueror -> General</b>.</html>"
+#~ msgstr ""
+#~ "Lawulela kweyakho 'Ikhaya URL'<p>Ungaqwalasela indawo eliqhosha "
+#~ "ekuthathela kuyo <b>KDE Umbindi wolawulo</b>, ngaphantsi <b> Umphathi "
+#~ "Wefayile</b> / <b> Ukuziphatha</b>."
+
+#, fuzzy
+#~ msgid "Do you really want to close all other tabs?"
+#~ msgstr "Ufuna ngokwenene ukucacisa eyona mbali eyiyo?"
+
+#, fuzzy
+#~ msgid "Close Other Tabs Confirmation"
+#~ msgstr "Vala Enye i &Tab"
+
+#~ msgid "Close &Other Tabs"
+#~ msgstr "Vala Enye i &Tab"
+
+#~ msgid "Enter Target"
+#~ msgstr "Ngenisa Itekeni"
+
+#, fuzzy
+#~ msgid "Copy selected files from %1 to:"
+#~ msgstr "Khuphela iifayile ezikhethiweyo ku"
+
+#, fuzzy
+#~ msgid "Move selected files from %1 to:"
+#~ msgstr "Hambisa iifayile ezikhethiweyo ku"
+
+#, fuzzy
+#~| msgid "Clear History"
+#~ msgctxt "This menu entry empties the closed items history"
+#~ msgid "Empty Closed Items History"
+#~ msgstr "Cacisa Imbali"
+
+#, fuzzy
+#~ msgid "Save As..."
+#~ msgstr "Cwangcisa i URL"
+
+#, fuzzy
+#~ msgid "Manage..."
+#~ msgstr "Tshints&ha Uphawu lomfanekiso..."
+
+#~ msgid "New &Window"
+#~ msgstr "Entsha &Window"
+
+#~ msgid "&Duplicate Window"
+#~ msgstr "&Yenza Kubini i Window"
+
+#, fuzzy
+#~ msgid "Send &Link Address..."
+#~ msgstr "&Thumela Ikhonkco"
+
+#, fuzzy
+#~ msgid "S&end File..."
+#~ msgstr "Thu&mela Ifayile"
+
+#, fuzzy
+#~| msgid "Open Location"
+#~ msgid "&Open Location"
+#~ msgstr "Vula Indawo ekuyo"
+
+#, fuzzy
+#~ msgid "&Open File..."
+#~ msgstr "Thu&mela Ifayile"
+
+#~ msgid "&Find File..."
+#~ msgstr "&Fumana Ifayile..."
+
+#~ msgid "&Use index.html"
+#~ msgstr "&Sebenzisa i index.html"
+
+#~ msgid "Lock to Current Location"
+#~ msgstr "Tshixa Kwindawo ekuyo Yangoku"
+
+#, fuzzy
+#~| msgid "Lin&k View"
+#~ msgctxt "This option links konqueror views"
+#~ msgid "Lin&k View"
+#~ msgstr "Diban&isa Imboniselo"
+
+#~ msgid "&Up"
+#~ msgstr "&Ngentla"
+
+#, fuzzy
+#~| msgid "Copy Items"
+#~ msgid "Closed Items"
+#~ msgstr "Khuphela Imiba"
+
+#, fuzzy
+#~| msgid "Permissions"
+#~ msgid "Sessions"
+#~ msgstr "Iimvume"
+
+#, fuzzy
+#~| msgid "Most Often Visited"
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Most Often Visited"
+#~ msgstr "Indwendwelwa Rhoqo Kaninzi"
+
+#, fuzzy
+#~| msgid "History"
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History"
+#~ msgstr "Imbali"
+
+#, fuzzy
+#~| msgid "&Save View Profile..."
+#~ msgid "&Save View Profile As..."
+#~ msgstr "&Gcina Imboniselo yabucala Yemboniselo..."
+
+#, fuzzy
+#~ msgid "Configure Extensions..."
+#~ msgstr "&Qwalasela Iimboniselo zabucala Zemboniselo..."
+
+#, fuzzy
+#~ msgid "Configure Spell Checking..."
+#~ msgstr "&Qwalasela Iimboniselo zabucala Zemboniselo..."
+
+#~ msgid "Split View &Left/Right"
+#~ msgstr "&Chaka Imboniselo Ekhohlo/Ekunene"
+
+#~ msgid "Split View &Top/Bottom"
+#~ msgstr "&Chaka Imboniselo Ngentla/Ngezantsi"
+
+#~ msgid "&New Tab"
+#~ msgstr "&Tab Entsha"
+
+#~ msgid "&Duplicate Current Tab"
+#~ msgstr "&Yenza i Tab Yangoku Ngokubini"
+
+#~ msgid "Detach Current Tab"
+#~ msgstr "Susa i Tab Yangoku"
+
+#, fuzzy
+#~ msgid "&Close Active View"
+#~ msgstr "&Susa Imboniselo Esebenzayo"
+
+#, fuzzy
+#~ msgid "Close Current Tab"
+#~ msgstr "Vala i Tab Yangoku"
+
+#~ msgid "Activate Next Tab"
+#~ msgstr "Sebenzisa Isithuba Esilandelayo"
+
+#~ msgid "Activate Previous Tab"
+#~ msgstr "Sebenzisa Isithuba Esidlulileyo"
+
+#, fuzzy
+#~ msgid "Activate Tab %1"
+#~ msgstr "Sebenzisa Isithuba Esilandelayo"
+
+#, fuzzy
+#~ msgid "Move Tab Left"
+#~ msgstr "Bonisa ii T Ekhohlo"
+
+#~ msgid "Dump Debug Info"
+#~ msgstr "Lahla Ulwazi Lokupho lwegciwane"
+
+#~ msgid "C&onfigure View Profiles..."
+#~ msgstr "&Qwalasela Iimboniselo zabucala Zemboniselo..."
+
+#~ msgid "Load &View Profile"
+#~ msgstr "&Layisha Imboniselo yabucala Yemboniselo"
+
+#, fuzzy
+#~ msgid "&Reload"
+#~ msgstr "&Vala i Tab"
+
+#, fuzzy
+#~ msgid "&Force Reload"
+#~ msgstr "&Vala i Tab"
+
+#~ msgid "&Stop"
+#~ msgstr "&Yima"
+
+#~ msgid "L&ocation: "
+#~ msgstr "I&ndawo ekuyo:"
+
+#~ msgid "Location Bar"
+#~ msgstr "Ibar Yendawo ekuyo"
+
+#, fuzzy
+#~ msgid "Clear Location Bar"
+#~ msgstr "Ibar yokucacisa indawo ekuyo"
+
+#, fuzzy
+#~ msgid "&Bookmarks"
+#~ msgstr "&Inqaku lencwadi"
+
+#~ msgid "Kon&queror Introduction"
+#~ msgstr "&Ulwaziso lwe Konqueror"
+
+#~ msgid "Go"
+#~ msgstr "Yiya"
+
+#, fuzzy
+#~ msgid ""
+#~ "<html>Enter the parent folder<br /><br />For instance, if the current "
+#~ "location is file:/home/%1 clicking this button will take you to file:/"
+#~ "home.</html>"
+#~ msgstr ""
+#~ "Ngenisa isilawuli aomzala<p>Umzekelo. ukuba indawo yangoku yefayile:/ "
+#~ "ekhaya/%1 ukucinizela eliqosha lizakusa kwifayile:/ekhaya."
+
+#, fuzzy
+#~ msgid "Enter the parent folder"
+#~ msgstr "Ngenisa umlawuli womzali"
+
+#~ msgid "Move backwards one step in the browsing history"
+#~ msgstr "Yiya ngasemva inyathelo elinye kwimbali yokhangelo lweeencwadi"
+
+#~ msgid "Move forward one step in the browsing history"
+#~ msgstr "Yiya phambili inyathelo elinye kwimbali yokukhangela"
+
+#, fuzzy
+#~| msgid "Move backwards one step in the browsing history"
+#~ msgid "Move backwards one step in the closed tabs history"
+#~ msgstr "Yiya ngasemva inyathelo elinye kwimbali yokhangelo lweeencwadi"
+
+#, fuzzy
+#~| msgid ""
+#~| "Reload the currently displayed document<p>This may, for example, be "
+#~| "needed to refresh webpages that have been modified since they were "
+#~| "loaded, in order to make the changes visible."
+#~ msgid ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.</html>"
+#~ msgstr ""
+#~ "Layisha kwakhona uxwebhu lwangoku<p>Oku, kungafuneka ukuhlaziya amaphepha "
+#~ "e web aguqulwe kancincane ukusuka kwixesha lolayisho, xa ufuna ukwenza "
+#~ "ukuba intshintsho zibonakale."
+
+#~ msgid "Reload the currently displayed document"
+#~ msgstr "Layisha kwakhona uxwebhu oluboniswe lwangoku"
+
+#, fuzzy
+#~ msgid ""
+#~ "<html>Reload all currently displayed documents in tabs<br /><br />This "
+#~ "may, for example, be needed to refresh web pages that have been modified "
+#~ "since they were loaded, in order to make the changes visible.</html>"
+#~ msgstr ""
+#~ "Layisha kwakhona uxwebhu lwangoku<p>Oku, kungafuneka ukuhlaziya amaphepha "
+#~ "e web aguqulwe kancincane ukusuka kwixesha lolayisho, xa ufuna ukwenza "
+#~ "ukuba intshintsho zibonakale."
+
+#, fuzzy
+#~ msgid "Reload all currently displayed document in tabs"
+#~ msgstr "Layisha kwakhona uxwebhu oluboniswe lwangoku"
+
+#, fuzzy
+#~| msgid ""
+#~| "Stop loading the document<p>All network transfers will be stopped and "
+#~| "Konqueror will display the content that has been received so far."
+#~ msgid ""
+#~ "<html>Stop loading the document<br /><br />All network transfers will be "
+#~ "stopped and Konqueror will display the content that has been received so "
+#~ "far.</html>"
+#~ msgstr ""
+#~ "Yeka ukulayisha uxwebhu<p>Lonke uhambiso lomnatha lizakumiswa kwaye i "
+#~ "Konqueror izakubonisa umxholo osele efumaniwe kude kube ngoku."
+
+#, fuzzy
+#~| msgid ""
+#~| "Reload the currently displayed document<p>This may, for example, be "
+#~| "needed to refresh webpages that have been modified since they were "
+#~| "loaded, in order to make the changes visible."
+#~ msgid ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.  Any images on "
+#~ "the page are downloaded again, even if cached copies exist.</html>"
+#~ msgstr ""
+#~ "Layisha kwakhona uxwebhu lwangoku<p>Oku, kungafuneka ukuhlaziya amaphepha "
+#~ "e web aguqulwe kancincane ukusuka kwixesha lolayisho, xa ufuna ukwenza "
+#~ "ukuba intshintsho zibonakale."
+
+#, fuzzy
+#~ msgid ""
+#~ "Force a reload of the currently displayed document and any contained "
+#~ "images"
+#~ msgstr "Layisha kwakhona uxwebhu oluboniswe lwangoku"
+
+#~ msgid "Stop loading the document"
+#~ msgstr "Yima ukulayisha uxwebhu"
+
+#, fuzzy
+#~| msgid ""
+#~| "Cut the currently selected text or item(s) and move it to the system "
+#~| "clipboard<p> This makes it available to the <b>Paste</b> command in "
+#~| "Konqueror and other KDE applications."
+#~ msgid ""
+#~ "<html>Cut the currently selected text or item(s) and move it to the "
+#~ "system clipboard<br /><br />This makes it available to the <b>Paste</b> "
+#~ "command in Konqueror and other KDE applications.</html>"
+#~ msgstr ""
+#~ "Sika okwangoku okukhetiweyo okubhaliweyo okanye umba(ii) uyise kwindlela "
+#~ "yokusebenza yebhodi eqhotyoshwayo<p>Oku kuyenza ifumaneke <b>Cola</b> "
+#~ "umyalelo kwi Konqueror nezinye izicelo ze KDE."
+
+#~ msgid "Move the selected text or item(s) to the clipboard"
+#~ msgstr ""
+#~ "Hamabisa okubhaliweyo okukhetiweyo okanye umba(ii) kwibhodi eqhotyoshwayo"
+
+#, fuzzy
+#~| msgid ""
+#~| "Copy the currently selected text or item(s) to the system "
+#~| "clipboard<p>This makes it available to the <b>Paste</b> command in "
+#~| "Konqueror and other KDE applications."
+#~ msgid ""
+#~ "<html>Copy the currently selected text or item(s) to the system "
+#~ "clipboard<br /><br />This makes it available to the <b>Paste</b> command "
+#~ "in Konqueror and other KDE applications.</html>"
+#~ msgstr ""
+#~ "Kuphela okubhaliweyo okanye umba(ii)okhethwe ngoku kwindlela yokusebenza "
+#~ "kwibhodi eqhotyoshwayo<p>Oku kuyenza ifumaneke kwi <b>Cola</b> umyalelo "
+#~ "kwi Konqueror nezinye izicelo ze KDE."
+
+#~ msgid "Copy the selected text or item(s) to the clipboard"
+#~ msgstr ""
+#~ "Khuphela okukhethiweyo okubhaliweyo okanye umba(imi) kwibhodi "
+#~ "eqhotyoshwayo"
+
+#, fuzzy
+#~| msgid ""
+#~| "Paste the previously cut or copied clipboard contents<p>This also works "
+#~| "for text copied or cut from other KDE applications."
+#~ msgid ""
+#~ "<html>Paste the previously cut or copied clipboard contents<br /><br /"
+#~ ">This also works for text copied or cut from other KDE applications.</"
+#~ "html>"
+#~ msgstr ""
+#~ "Cola okusikiweyo okudlulileyo okanye okukhupelweyo imixholo yebhodi "
+#~ "eqhotyoshiweyo ekhuphelweyo<p> Oku kusebenzela okubhaliweyo "
+#~ "okukhuphelweyo okanye okusikiweyo okusuka kwezinye izicelo ze KDE."
+
+#~ msgid "Paste the clipboard contents"
+#~ msgstr "Cola imixholo yebhodi eqhotyoshwayo"
+
+#, fuzzy
+#~| msgid ""
+#~| "Print the currently displayed document<p>You will be presented with a "
+#~| "dialog where you can set various options, such as the number of copies "
+#~| "to print and which printer to use.<p>This dialog also provides access to "
+#~| "special KDE printing services such as creating a PDF file from the "
+#~| "current document."
+#~ msgid ""
+#~ "<html>Print the currently displayed document<br /><br />You will be "
+#~ "presented with a dialog where you can set various options, such as the "
+#~ "number of copies to print and which printer to use.<br /><br />This "
+#~ "dialog also provides access to special KDE printing services such as "
+#~ "creating a PDF file from the current document.</html>"
+#~ msgstr ""
+#~ "Shicilela uxwebhu oluboniswe ngoku<p>Uzakunikwa incoko yababini apho "
+#~ "ukwazi ukucwangcisa iinketho eziliqela, njengenani lokhuphelo "
+#~ "elizakushicilelwa kwaye kusebenziswa wouphi umshicileli.<p> Lencoko "
+#~ "yababini inikezela ngonikezelo kwinkonzo ezikhethekileyo ze KDE "
+#~ "njengokwenza ifayile ye PDF ukusuka kuxwebhu lwangoku."
+
+#~ msgid "Print the current document"
+#~ msgstr "Shicilela uxwebhu lwangoku"
+
+#, fuzzy
+#~ msgid "If present, open index.html when entering a folder."
+#~ msgstr "Ukuba ikhona, vula isalathisi.html xa ungena kulawulo."
+
+#, fuzzy
+#~ msgid ""
+#~ "A locked view cannot change folders. Use in combination with 'link view' "
+#~ "to explore many files from one folder"
+#~ msgstr ""
+#~ "Imboniselo etshixiweyo ayinakuzitshintsha izilawuli. Yisebenzise "
+#~ "nodibaniso 'lwemboniselo yekhonkco' ukuhlola iifayile ezininzi kulawulo "
+#~ "olunye"
+
+#, fuzzy
+#~ msgid ""
+#~ "Sets the view as 'linked'. A linked view follows folder changes made in "
+#~ "other linked views."
+#~ msgstr ""
+#~ "Icwangcisa imboniselo njenge'khonkco'. Imboniselo enekhonkco ilandela "
+#~ "utshintsho lolawulo olwenziweyo kwezinye iimboniselo ezinekhonkco."
+
+#~ msgid "Copy &Files..."
+#~ msgstr "Khuphela &Iifayile..."
+
+#~ msgid "M&ove Files..."
+#~ msgstr "H&ambisa Iifayile..."
+
+#, fuzzy
+#~ msgid "Open bookmarks folder in new tabs"
+#~ msgstr "Vula kwi &Tab Entsha"
+
+#, fuzzy
+#~ msgid "Open in T&his Window"
+#~ msgstr "Entsha &Window"
+
+#, fuzzy
+#~ msgid "Open the document in current window"
+#~ msgstr "Vula uxwebhu kwisithuba esitsha sekhusi"
+
+#, fuzzy
+#~ msgid "Open the document in a new window"
+#~ msgstr "Vula uxwebhu kwisithuba esitsha sekhusi"
+
+#~ msgid "Open in &New Tab"
+#~ msgstr "Vula kwi &Tab Entsha"
+
+#, fuzzy
+#~ msgid "Open the document in a new tab"
+#~ msgstr "Vula uxwebhu kwisithuba esitsha sekhusi"
+
+#, fuzzy
+#~| msgid "Open with %1"
+#~ msgid "&Open With"
+#~ msgstr "Vula nge %1"
+
+#~ msgid "Open with %1"
+#~ msgstr "Vula nge %1"
+
+#, fuzzy
+#~| msgid "&View Mode"
+#~ msgctxt "@action:inmenu View"
+#~ msgid "&View Mode"
+#~ msgstr "&Indlela Yemboniselo"
+
+#, fuzzy
+#~ msgid "C&lose Current Tab"
+#~ msgstr "Vala i Tab Yangoku"
+
+#, fuzzy
+#~ msgid "Web Sidebar"
+#~ msgstr "Qwalasela Ibar yasecaleni"
+
+#, fuzzy
+#~ msgid "Add"
+#~ msgstr "Idilesi"
+
+#, fuzzy
+#~ msgid ""
+#~ "There appears to be a configuration error. You have associated Konqueror "
+#~ "with %1, but it cannot handle this file type."
+#~ msgstr ""
+#~ "Nako kuvela imposiso uoqwqalaselo. Uyinxulumanise i Konqueror ne %1, "
+#~ "kodwa ayinakuluphatha olu didi lwefayile."
+
+#~ msgid "Profile Management"
+#~ msgstr "Umphathi Wemboniselo yabucala"
+
+#~ msgid "&Rename Profile"
+#~ msgstr "&Nika igama kwakhona Imboniselo yabucala"
+
+#~ msgid "&Delete Profile"
+#~ msgstr "&Cima Imboniselo yabucala"
+
+#, fuzzy
+#~ msgid "Manage Sessions"
+#~ msgstr "&Tshintsha i-Icon"
+
+#, fuzzy
+#~ msgid "&Open"
+#~ msgstr "&Thumela Ikhonkco"
+
+#, fuzzy
+#~| msgid "Renaming"
+#~ msgid "Rename Session"
+#~ msgstr "Inika igama kwakhona"
+
+#, fuzzy
+#~| msgid "Renaming"
+#~ msgid "Restore Session?"
+#~ msgstr "Inika igama kwakhona"
+
+#, fuzzy
+#~| msgid "Renaming"
+#~ msgid "Restore Session"
+#~ msgstr "Inika igama kwakhona"
+
+#, fuzzy
+#~| msgid "As New Folder"
+#~ msgid "Ask Me Later"
+#~ msgstr "Njengencwadi enenkcukacha Entsha"
+
+#, fuzzy
+#~ msgid "Open a new tab"
+#~ msgstr "Vula kwi &Tab Entsha"
+
+#, fuzzy
+#~ msgid "Close the current tab"
+#~ msgstr "Vala i Tab Yangoku"
+
+#~ msgid "&Duplicate Tab"
+#~ msgstr "&Yenza ngokubini i Tab"
+
+#, fuzzy
+#~ msgid "&Reload Tab"
+#~ msgstr "&Vala i Tab"
+
+#, fuzzy
+#~ msgid "Other Tabs"
+#~ msgstr "Vala Enye i &Tab"
+
+#~ msgid "D&etach Tab"
+#~ msgstr "S&usa i Tab"
+
+#~ msgid "&Close Tab"
+#~ msgstr "&Vala i Tab"
+
+#, fuzzy
+#~| msgid "&Close Tab"
+#~ msgid "Und&o: Closed Tab"
+#~ msgstr "&Vala i Tab"
+
+#, fuzzy
+#~| msgid "&Close Tab"
+#~ msgid "Und&o: Closed Window"
+#~ msgstr "&Vala i Tab"
+
+#~ msgid ""
+#~ "The page you are trying to view is the result of posted form data. If you "
+#~ "resend the data, any action the form carried out (such as search or "
+#~ "online purchase) will be repeated. "
+#~ msgstr ""
+#~ "Eliphepha ozama ukulibona lisisphumo se fomula yoposo. Ukuba uthumela "
+#~ "kwakhona i data, nayiphi na intshukumo eyenziweyo (njengophendlo okanye "
+#~ "uthenga lwangaphakathi kwe layini) lizakuphindwa."
+
+#~ msgid "Resend"
+#~ msgstr "Thumela kwakhona"
+
+#, fuzzy
+#~ msgid "Load View Profile"
+#~ msgstr "&Layisha Imboniselo yabucala Yemboniselo"
+
+#, fuzzy
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "History Sidebar Module"
+#~ msgstr "Qwalasela Ibar yasecaleni"
+
+#, fuzzy
+#~| msgid "History"
+#~ msgctxt "@title:tab"
+#~ msgid "History"
+#~ msgstr "Imbali"
+
+#~ msgid "<h1>History Sidebar</h1> You can configure the history sidebar here."
+#~ msgstr ""
+#~ "<h1>Imbali Ze bar esecaleni</h1> Ungaqwalasela apha imbali yebar "
+#~ "esecaleni yesicelo."
+
+#, fuzzy
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Places Sidebar Module"
+#~ msgstr "Qwalasela Ibar yasecaleni"
+
+#, fuzzy
+#~ msgctxt "@title:tab"
+#~ msgid "Places"
+#~ msgstr "Yinike igama kwakhona"
+
+#~ msgid "Extended Sidebar"
+#~ msgstr "Qwalasela Ibar yasecaleni"
+
+#~ msgid "Rollback to System Default"
+#~ msgstr "Jikijelela Kungagqibeki Kwendlela yokusebenza"
+
+#~ msgid "Configure Sidebar"
+#~ msgstr "Qwalasela Ibar yasecaleni"
+
+#~ msgid "Add New"
+#~ msgstr "Yongeza Entsha"
+
+#~ msgid "Multiple Views"
+#~ msgstr "Iimboniselo Ezininzi"
+
+#~ msgid "Show Tabs Left"
+#~ msgstr "Bonisa ii T Ekhohlo"
+
+#~ msgid "Show Configuration Button"
+#~ msgstr "Uqwalaselo Lweqosha Elikhawulezayo"
+
+#, fuzzy
+#~ msgid "Close Sidebar"
+#~ msgstr "Qwalasela Ibar yasecaleni"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>This removes all your entries from the sidebar and adds the system "
+#~| "default ones.<BR><B>This procedure is irreversible</B><BR>Do you want to "
+#~| "proceed?</qt>"
+#~ msgid ""
+#~ "<qt>This removes all your entries from the sidebar and adds the system "
+#~ "default ones.<br /><b>This procedure is irreversible</b><br />Do you want "
+#~ "to proceed?</qt>"
+#~ msgstr ""
+#~ "<qt>Oku kususa onke amangeniso kwical le bar kwaye kudibanisa iindlela "
+#~ "zokusebenza ezingagqibekanga.<BR><B>Lendlela ayibuyiseki umva kwakhona</"
+#~ "B><BR>Ufuna ukuqhubeka?</qt>"
+
+#, fuzzy
+#~| msgid "Show Tabs Left"
+#~ msgid "Show Tabs Right"
+#~ msgstr "Bonisa ii T Ekhohlo"
+
+#, fuzzy
+#~ msgid "Set Name"
+#~ msgstr "Igama"
+
+#, fuzzy
+#~ msgid "Enter the name:"
+#~ msgstr "Ngenisa igama lomlawuli:"
+
+#, fuzzy
+#~ msgid "Enter a URL:"
+#~ msgstr "Ngenisa i URL"
+
+#, fuzzy
+#~ msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
+#~ msgstr "<qt>Ufuna ngokwenene ukucima<b>\"%1\"</b>i tab?</qt>"
+
+#, fuzzy
+#~| msgid ""
+#~| "You have hidden the navigation panel configuration button. To make it "
+#~| "visible again, click the right mouse button on any of the navigation "
+#~| "panel buttons and select \"Show Configuration Button\"."
+#~ msgid ""
+#~ "You have hidden the sidebar configuration button. To make it visible "
+#~ "again, click the right mouse button on any of the sidebar buttons and "
+#~ "select \"Show Configuration Button\"."
+#~ msgstr ""
+#~ "Ufihle iqela lenjongo ethile leqosha loqwalaselo. Ukuyenza ibonakale, "
+#~ "nqakraza kwiqosha le mouse elisekunene kuyo naliphi iqela lenjongo ethile "
+#~ "yolawulo lwamaqosha ukhethe \"Bonisa Amaqosha Oqwalaselo\"."
+
+#, fuzzy
+#~ msgid "Set Name..."
+#~ msgstr "Cwangcisa i URL"
+
+#, fuzzy
+#~ msgid "Set URL..."
+#~ msgstr "Cwangcisa i URL"
+
+#, fuzzy
+#~ msgid "Set Icon..."
+#~ msgstr "Cwangcisa Uphawu lomfanekiso"
+
+#, fuzzy
+#~ msgid "Remove"
+#~ msgstr "Yinike igama kwakhona"
+
+#, fuzzy
+#~ msgid "Web module"
+#~ msgstr "Qwalasela Ibar yasecaleni"
+
+#, fuzzy
+#~ msgid "&Create New Folder"
+#~ msgstr "&Yenza Incwadi enenkcukacha Entsha..."
+
+#, fuzzy
+#~ msgid "Delete Folder"
+#~ msgstr "Yenza Incwadi enenkcukacha"
+
+#, fuzzy
+#~ msgid "Delete Bookmark"
+#~ msgstr "Yenza Inqaku lencwadi"
+
+#, fuzzy
+#~ msgid "Properties"
+#~ msgstr "Susa Iimpahla Zolawulo"
+
+#, fuzzy
+#~ msgid "Open in New Window"
+#~ msgstr "Entsha &Window"
+
+#, fuzzy
+#~ msgid "Open Folder in Tabs"
+#~ msgstr "Vula kwi &Tab Entsha"
+
+#, fuzzy
+#~ msgid "Bookmark Folder Deletion"
+#~ msgstr "Umhleli Wenqaku lencwadi"
+
+#, fuzzy
+#~ msgid "Bookmark Deletion"
+#~ msgstr "Umhleli Wenqaku lencwadi"
+
+#, fuzzy
+#~ msgid "Bookmark Properties"
+#~ msgstr "Susa Iimpahla Zolawulo"
+
+#, fuzzy
+#~ msgid "&Update"
+#~ msgstr "&Ngentla"
+
+#, fuzzy
+#~ msgid "Name:"
+#~ msgstr "Igama"
+
+#, fuzzy
+#~ msgid "Location:"
+#~ msgstr "I&ndawo ekuyo:"
+
+#, fuzzy
+#~ msgid "Add Bookmark"
+#~ msgstr "Inqaku lencwadi"
+
+#, fuzzy
+#~ msgid "Cannot find parent item %1 in the tree. Internal error."
+#~ msgstr "Ayinakuwufumana umba wobuzali %1 emthini. Imposiso yangaphakathi."
+
+#~ msgid "&Create New Folder..."
+#~ msgstr "&Yenza Incwadi enenkcukacha Entsha..."
+
+#, fuzzy
+#~| msgid "&Move to Trash"
+#~ msgid "Move to Trash"
+#~ msgstr "&Yisa kwindawo Yomonakalo"
+
+#~ msgid "Rename"
+#~ msgstr "Yinike igama kwakhona"
+
+#, fuzzy
+#~ msgid "Delete Link"
+#~ msgstr "&Cima Imboniselo yabucala"
+
+#, fuzzy
+#~ msgid "New Folder"
+#~ msgstr "Njengencwadi enenkcukacha Entsha"
+
+#, fuzzy
+#~ msgid "Create New Folder"
+#~ msgstr "&Yenza Incwadi enenkcukacha Entsha..."
+
+#, fuzzy
+#~ msgid "Enter folder name:"
+#~ msgstr "Ngenisa igama lomlawuli:"
+
+#, fuzzy
+#~ msgctxt "@label"
+#~ msgid "Name:"
+#~ msgstr "Igama"
+
+#, fuzzy
+#~| msgid "Show URL"
+#~ msgctxt "@label"
+#~ msgid "Path or URL:"
+#~ msgstr "Bonisa i URL"
+
+#, fuzzy
+#~ msgid "&Open Link"
+#~ msgstr "&Thumela Ikhonkco"
+
+#, fuzzy
+#~ msgid "Set &Automatic Reload"
+#~ msgstr "(Mfutshane-) Ezenzekelayo"
+
+#, fuzzy
+#~ msgid " min"
+#~ msgstr "imizuzu"
+
+#, fuzzy
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Web Sidebar Module"
+#~ msgstr "Qwalasela Ibar yasecaleni"
+
+#, fuzzy
+#~| msgid "Web browser, file manager, ..."
+#~ msgid ""
+#~ "Konqueror is a web browser, file manager and universal document viewer."
+#~ msgstr "Umkhangeli zincwadi we-Web, umphathi wefayile, ..."
+
+#, fuzzy
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "Starting Points"
+#~ msgstr "Izicwangciso ZeMbali"
+
+#~ msgid "Introduction"
+#~ msgstr "Ukwazisa"
+
+#~ msgid "Tips"
+#~ msgstr "Iincam"
+
+#~ msgid "Specifications"
+#~ msgstr "Izikhankanyi"
+
+#~ msgid "Trash"
+#~ msgstr "Umonakalo"
+
+#, fuzzy
+#~ msgid "Network Folders"
+#~ msgstr "Njengencwadi enenkcukacha Entsha"
+
+#, fuzzy
+#~ msgid "Bookmarks"
+#~ msgstr "&Inqaku lencwadi"
+
+#, fuzzy
+#~ msgid "Next: An Introduction to Konqueror"
+#~ msgstr "Ukwazisa"
+
+#, fuzzy
+#~ msgid ""
+#~ "Konqueror is also a full featured and easy to use web browser which you "
+#~ "can use to explore the Internet. Enter the address (e.g. <a href=\"http://"
+#~ "www.kde.org\">http://www.kde.org</a>) of a web page you would like to "
+#~ "visit in the location bar and press Enter, or choose an entry from the "
+#~ "Bookmarks menu."
+#~ msgstr ""
+#~ "Ngenisa idilesi ye Internet ngokulula (umzekelo <A HREF=\"http://www.kde."
+#~ "org\">http://www.kde.org</A>) yephepha le web olufunayo kwaye ushicilele "
+#~ "Ngena, okanye khetha ungeno lubelunye kwi menu yamanqaku encwadi."
+
+#, fuzzy
+#~ msgid ""
+#~ "To return to the previous location, press the back button <img width='16' "
+#~ "height='16' src=\"%1\"></img> in the toolbar. "
+#~ msgstr ""
+#~ "Ukuba ufuna ukubuyela ngasemva kwiphepha elidlulileyo le web, cinezela "
+#~ "iqhosha <IMG WIDTH=16 HEIGHT=16 SRC=\"%1\"> &nbsp;(\"Umva\") kwibar "
+#~ "yesixhobo."
+
+#, fuzzy
+#~ msgid ""
+#~ "To quickly go to your Home folder press the  home button <img width='16' "
+#~ "height='16' src=\"%1\"></img>."
+#~ msgstr ""
+#~ "Ukuba ufuna ukubuyela ngasemva kwiphepha elidlulileyo le web, cinezela "
+#~ "iqhosha <IMG WIDTH=16 HEIGHT=16 SRC=\"%1\"> &nbsp;(\"Umva\") kwibar "
+#~ "yesixhobo."
+
+#, fuzzy
+#~ msgid ""
+#~ "For more detailed documentation on Konqueror click <a href=\"%1\">here</"
+#~ "a>."
+#~ msgstr ""
+#~ "Xa ufuna uxwebhu olunenkcukacha ezininzi ze Konqueror nqakraza <A HREF="
+#~ "\"%1\">apha</A>."
+
+#, fuzzy
+#~ msgid ""
+#~ "<em>Tuning Tip:</em> If you want the Konqueror web browser to start "
+#~ "faster, you can turn off this information screen by clicking <a href="
+#~ "\"%1\">here</a>. You can re-enable it by choosing the Help -> Konqueror "
+#~ "Introduction menu option, and then pressing Settings -> Save View Profile "
+#~ "As... -> \"Web Browsing\"."
+#~ msgstr ""
+#~ "<I>Incam Yomculwana:</l> Ukuba ufuna umkhangeli wencwadi zeweb ziqale "
+#~ "ngokukhawuleza, ungalucima olu lwazi lwekhusi ngokunqakraza <A HREF="
+#~ "\"%1\">apha</A>. Ungayenza kwakhona ngokukhetha Uncedo -> Konqueror "
+#~ "ukhetho lokwazisa imenu, kwaye ucinezele i window -> Gcina Imboniselo "
+#~ "Yabucala  \" Ukhangelo lweencwadi ze Web\"."
+
+#, fuzzy
+#~| msgid ""
+#~| "Konqueror is designed to embrace and support Internet standards. The aim "
+#~| "is to fully implement the officially sanctioned standards from "
+#~| "organizations such as the W3 and OASIS, while also adding extra support "
+#~| "for other common usability features that arise as de facto standards "
+#~| "across the Internet. Along with this support, for such functions as "
+#~| "favicons, Internet Keywords, and <A HREF=\"%1\">XBEL bookmarks</A>, "
+#~| "Konqueror also implements:"
+#~ msgid ""
+#~ "Konqueror is designed to embrace and support Internet standards. The aim "
+#~ "is to fully implement the officially sanctioned standards from "
+#~ "organizations such as the W3 and OASIS, while also adding extra support "
+#~ "for other common usability features that arise as de facto standards "
+#~ "across the Internet. Along with this support, for such functions as "
+#~ "favicons, Web Shortcuts, and <A HREF=\"%1\">XBEL bookmarks</A>, Konqueror "
+#~ "also implements:"
+#~ msgstr ""
+#~ "Konqueror yenzelwe ukwanga kunye nokuxhasa iindawo ezisezantsi ze "
+#~ "Internet. Injongo kukuba kubetheleleke ngokupheleleyo iindawo "
+#~ "ezisezantsize-ofisi enemvume esemthethweni asuka kumaqela anjenge W3 "
+#~ "kunye ne OASIS, njengoko idibanisa kwakhona inkxaso eyongezelelweyo "
+#~ "yezinye izisebenzi ezimqoka ezivela njengezinto ezilungileyo okanye "
+#~ "ezingalunganga kwi Internet. Kunye nale nkxaso, imisebenzi enjalo "
+#~ "njengefavicons, amagama angundoqo e-Internet, kunye <A HREF=\"%1\">XBEL "
+#~ "amanqaku encwadi</A>, i Konqueror iyasebenza:"
+
+#~ msgid "Supported standards"
+#~ msgstr "Iindawo ezisezantsi ezixhaswayo"
+
+#~ msgid "Additional requirements*"
+#~ msgstr "Iimfuno ezidityanisiweyo*"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">DOM</A> (Umphakamo 1, ngokomkhethe Umphakamo 2) isekwe <A "
+#~ "HREF=\"%2\">HTML 4.01</A>"
+
+#~ msgid "built-in"
+#~ msgstr "yakhelwe-ngaphakathi"
+
+#~ msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">Uhlobo lwamakhasi ayingxangxasi</A> (CSS 1, ngokomkhethe "
+#~ "CSS 2)"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Uhlelo lwesithathu (nje ilingana neJavaScript "
+#~ "1.5)"
+
+#~ msgid ""
+#~ "JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
+#~ msgstr ""
+#~ "JavaScript ikhubazekile (ngqukuva). Yenza i-JavaScript <A HREF="
+#~ "\"%1\">apha</A>."
+
+#~ msgid ""
+#~ "JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\"
+#~ "\">here</A>."
+#~ msgstr ""
+#~ "JavaScipt yenziwe (ngqukuva). Qwalasela i JavaScript <A HREF=\\\"%1\\"
+#~ "\">apha</A>."
+
+#~ msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
+#~ msgstr "Khusela <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> xhasa"
+
+#, fuzzy
+#~| msgid ""
+#~| "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">Blackdown</A>, <A HREF="
+#~| "\"%2\">IBM</A> or <A HREF=\"%3\">Sun</A>)"
+#~ msgid ""
+#~ "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">IBM</A> or <A HREF="
+#~ "\"%2\">Sun/Oracle</A>)"
+#~ msgstr ""
+#~ "JDK 1.2.0 (Java 2) ithelekiswa VM (<A HREF=\"%1\">Ubumnyama</A>, <A HREF="
+#~ "\"%2\">IBM</A> okanye <A HREF=\"%3\">Sun</A>)"
+
+#~ msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
+#~ msgstr "Yenza i Java (ngqukuva) <A HREF=\"%1\">apha</A>."
+
+#, fuzzy
+#~ msgid ""
+#~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">plugins</A> (for "
+#~ "viewing <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
+#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Video, etc.)"
+#~ msgstr ""
+#~ "Netscape Umthungelanisi<SUP>&reg;</SUP> plugins (xa kuboniselwa <A HREF="
+#~ "\"%1\">Idangatye</A>, <A HREF=\"%2\"Ngokwenene</A>Ngokwesandi, <A HREF="
+#~ "\"%3\">Ngokwenene</A>Video, njalo-njalo)"
+
+#~ msgid "Secure Sockets Layer"
+#~ msgstr "Khusela Ulwaleko Lwebhola"
+
+#~ msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
+#~ msgstr ""
+#~ "(TSL/SSL v2/3) ngothungelwano olukhuselekileyo ukuya kumasuntswana ayi 168"
+
+#~ msgid "OpenSSL"
+#~ msgstr "Vula i SSL"
+
+#~ msgid "Bidirectional 16bit unicode support"
+#~ msgstr "Ulawulo lobubini bamasuntswana ayi 16 inkxaso yekhowudi enye"
+
+#~ msgid "AutoCompletion for forms"
+#~ msgstr "Ugqibeko oluzenzekelayo lweefomu"
+
+#~ msgid "Feature"
+#~ msgstr "Sebenza ngokusemqoka"
+
+#~ msgid "Details"
+#~ msgstr "Iinkcukacha"
+
+#~ msgid "Image formats"
+#~ msgstr "Iifomati zemifanekiso"
+
+#~ msgid "Transfer protocols"
+#~ msgstr "Gqithisa umthetho olandelwayo"
+
+#~ msgid "HTTP 1.1 (including gzip/bzip2 compression)"
+#~ msgstr "HTTP 1.1 (iquka gzip/bzip2 indibaniso)"
+
+#~ msgid "FTP"
+#~ msgstr "FTP"
+
+#, fuzzy
+#~| msgid "and <A HREF=\"%1\">many more...</A>"
+#~ msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpcenter)...</A>"
+#~ msgstr "kunye <A HREF=\"%1\"> nezininzi...</A>"
+
+#, fuzzy
+#~| msgid "URL-Completion"
+#~ msgctxt "A feature of Konqueror"
+#~ msgid "URL-Completion"
+#~ msgstr "Ugqibeko lwe-URL"
+
+#~ msgid "Manual"
+#~ msgstr "Incwadi yesandla"
+
+#~ msgid "Popup"
+#~ msgstr "Ingxolo eqhekezayo"
+
+#~ msgid "(Short-) Automatic"
+#~ msgstr "(Mfutshane-) Ezenzekelayo"
+
+#, fuzzy
+#~ msgid ""
+#~ "Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, "
+#~ "using Google, for the search phrase \"KDE\". There are a lot of Web-"
+#~ "Shortcuts predefined to make searching for software or looking up certain "
+#~ "words in an encyclopedia a breeze. You can even <a href=\"%1\">create "
+#~ "your own</a> Web-Shortcuts."
+#~ msgstr ""
+#~ "Sebenzisa i-Internet-Amagama angundoqo kunye neWeb-iindlela ezimfutshane! "
+#~ "Ngokuchwetheza \"gg: KDE\" omnye angaphendla i-Internet, esebenzisa "
+#~ "iGoogle, kumba wophendlo \"KDE\". Kukho iweb eninzi-Iindlela ezimfutshane "
+#~ "ezachazwayo ukwenza uphendlo lwecomputer okanye ekujongeni amagama athile "
+#~ "kwi-encyclopedia yomoya. Unga <A HREF=\"%1\">yenza Iindlela zakho</"
+#~ "A>Ezimfutshane ze-Web!"
+
+#, fuzzy
+#~ msgid ""
+#~ "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
+#~ "the HTML toolbar to increase the font size on your web page."
+#~ msgstr ""
+#~ "Sebenzisa iqhosha lokwenza mkhulu <IMG UBUBANZI=16 UBUDE=16 SRC=\"%1\"> "
+#~ "&nbscp; kwi bar yesixhobo ukunyusa ubungakanani bomgca kwiphepha lakho le "
+#~ "web."
+
+#, fuzzy
+#~ msgid ""
+#~ "When you want to paste a new address into the Location toolbar you might "
+#~ "want to clear the current entry by pressing the black arrow with the "
+#~ "white cross <img width='16' height='16' src=\"%1\"></img> in the toolbar."
+#~ msgstr ""
+#~ "Xa ufuna ukucola idilesi entsha kwindawo ekuyo ibar yesixhobo kufuneka "
+#~ "ufune ukucacisa ungeno lwangoku ngokucinezela utolo olumnyama "
+#~ "ngesinqamlezi esimhlophe &nbsp;<IMG UBUBANZI=16 UBUDE=16 SRC=\"%1> &nbsp; "
+#~ "kwibar yesixhobo."
+
+#, fuzzy
+#~| msgid ""
+#~| "To create a link on your desktop pointing to the current page, simply "
+#~| "drag the \"Location\" label that is to the left of the Location toolbar, "
+#~| "drop it on to the desktop, and choose \"Link\"."
+#~ msgid ""
+#~ "To create a link on your desktop pointing to the current page, simply "
+#~ "drag the icon (favicon) that is to the left of the Location toolbar, drop "
+#~ "it on to the desktop, and choose \"Icon\"."
+#~ msgstr ""
+#~ "Ukwenza ikhonkco kwidesktop yakho eyalathe kwiphepha langoku, tsala "
+#~ "ngokulula i \"Indawo ekuyo\" isibonisi esisekhohlo kwibar yesixhobo "
+#~ "Sendawo ekuyo, yilahle kwidesktop, kwaye ukhethe \"Ikhonkco\"."
+
+#, fuzzy
+#~ msgid ""
+#~ "You can also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen "
+#~ "Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
+#~ "sessions."
+#~ msgstr ""
+#~ "Ungafumana kwakhona <IMG WIDTH=16 HEIGHT=16 SRC=\"%1\"> &nbsp; \"Ikhusi-"
+#~ "Elipheleleyo Indlela\" yemenu ye window. Lo msebenzi osemqoka uluncedo "
+#~ "kakhulu kwi \"Ntetho\" intlanganiso."
+
+#, fuzzy
+#~ msgid ""
+#~ "Divide et impera (lat. \"Divide and conquer\") - by splitting a window "
+#~ "into two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> "
+#~ "Split View Left/Right) you can make Konqueror appear the way you like. "
+#~ "You can even load some example view-profiles (e.g. Midnight Commander), "
+#~ "or create your own ones."
+#~ msgstr ""
+#~ "Yahlula et impera (lat. \"Yahlula kwaye woyise\") - ngokwahlula iwindow "
+#~ "ibe ngamaqela amabini (umzekelo Window -> <IMG UBUBANZI=16 UBUDE=16 SRC="
+#~ "\"%1\" &nbsp; Yahlula Imboniselo Ekhohlo/Ekunene) ungayenza iKonqueror "
+#~ "ivele ngendlela othanda yona. Unga layisha umzekelo othile wemboniselo-"
+#~ "iimboniselo zabucala (umzekelo Umyaleli Wasezinzulwini zobusuku), okanye "
+#~ "wenze ezizezakho."
+
+#, fuzzy
+#~ msgid ""
+#~ "Use the <a href=\"%1\">user-agent</a> feature if the website you are "
+#~ "visiting asks you to use a different browser (and do not forget to send a "
+#~ "complaint to the webmaster!)"
+#~ msgstr ""
+#~ "Sebenzisa i <A HREF=\"%1\">umsebenzisi-umncedi</A> womsebenzi osemqoka "
+#~ "ukuba inxuwa leweb olindwendwelayo likucela ukuba usebenzise umkhangeli "
+#~ "wencwadi owahlukileyo (kwaye sukulibala ukuthumela isikhalazo ku mphathi "
+#~ "we web!)"
+
+#, fuzzy
+#~ msgid ""
+#~ "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
+#~ "ensures that you can keep track of the pages you have visited recently."
+#~ msgstr ""
+#~ "I <<IMG WIDTH=16 HEIGHT=16 SRC=\"%1\"> &nbsp; Imbali kwi Bar Esecaleni  "
+#~ "yakho iqinisekisa ukuba ungagcina umkhondo wamaphepha owandwendweleyo "
+#~ "kufutshane nje."
+
+#, fuzzy
+#~ msgid ""
+#~ "Use a caching <a href=\"%1\">proxy</a> to speed up your Internet "
+#~ "connection."
+#~ msgstr ""
+#~ "Sebenzisa indawo efihlakeleyo yokugcina  <A HREF=\"%1\">umntu onegunya "
+#~ "lokusebenzela omnye</A> ukunyusa isantya sonxulumaniso lwe Internet."
+
+#, fuzzy
+#~ msgid ""
+#~ "Advanced users will appreciate the Konsole which you can embed into "
+#~ "Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
+#~ "Terminal Emulator)."
+#~ msgstr ""
+#~ "Abasebenzisi ababhekisa phambili bazakuyivuyela iKonsole "
+#~ "onokukuyilungiselela jikelela iKonqueror (Window -> <IMG UBUBANZI=16 "
+#~ "UBUDE= 16 SRC=\"%1\"> &nbsp; Bonisa Umzami wokulinganisa Isiphelo "
+#~ "sendlela)."
+
+#, fuzzy
+#~ msgid "Next: Specifications"
+#~ msgstr "Izikhankanyi"
+
+#, fuzzy
+#~ msgid "Installed"
+#~ msgstr "Imisiwe"
+
+#~ msgid ""
+#~ "Do you want to disable showing the introduction in the webbrowsing "
+#~ "profile?"
+#~ msgstr ""
+#~ "Ufuna ukukhubaza ukubonisa ukwazisana kwimboniselo yabucala yokhangelo "
+#~ "lwencwadi ze web?"
+
+#~ msgid "Faster Startup?"
+#~ msgstr "Isiqalo Esikhawulezayo?"
+
+#, fuzzy
+#~ msgid "Disable"
+#~ msgstr "Bonisa Iimboniso"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Lwandle Mgidlana"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "lwandle@translate.org.za"
+
+#, fuzzy
+#~ msgid "&File"
+#~ msgstr "Njengencwadi enenkcukacha Entsha"
+
+#, fuzzy
+#~ msgid "&View"
+#~ msgstr "Diban&isa Imboniselo"
+
+#~ msgid "&Go"
+#~ msgstr "&Hamba"
+
+#, fuzzy
+#~ msgid "&Settings"
+#~ msgstr "Izicwangciso ZeMbali"
+
+#~ msgid "&Window"
+#~ msgstr "&Window"
+
+#, fuzzy
+#~ msgid "Main Toolbar"
+#~ msgstr "Ibar Yesixhobo Esendaweni ekuyo"
+
+#~ msgid "Extra Toolbar"
+#~ msgstr "Bonisa Ibar yesixhobo engaphezulu"
+
+#~ msgid "Location Toolbar"
+#~ msgstr "Ibar Yesixhobo Esendaweni ekuyo"
+
+#~ msgid "Bookmark Toolbar"
+#~ msgstr "Bonisa Ibar yesixhobo Yenqaku lencwadi"
+
+#~ msgid "&Profile name:"
+#~ msgstr "&Igama lemboniselo yabucala:"
+
+#~ msgid "Save &URLs in profile"
+#~ msgstr "Gcina ii-&URL kwimboniselo yabucala"
+
+#, fuzzy
+#~ msgctxt "@action:button New session"
+#~ msgid "New..."
+#~ msgstr "Njengencwadi enenkcukacha Entsha"
+
+#, fuzzy
+#~ msgctxt "@action:button Save current session"
+#~ msgid "Save Current"
+#~ msgstr "Vala i Tab Yangoku"
+
+#, fuzzy
+#~| msgid "Rename"
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename..."
+#~ msgstr "Yinike igama kwakhona"
+
+#, fuzzy
+#~ msgctxt "@action:button Delete session"
+#~ msgid "Delete"
+#~ msgstr "&Cima Imboniselo yabucala"
+
+#, fuzzy
+#~ msgid "Open tabs inside current window"
+#~ msgstr "Vula uxwebhu kwisithuba esitsha sekhusi"
+
+#~ msgid "Limits"
+#~ msgstr "Iziphelo"
+
+#~ msgid "URLs e&xpire after"
+#~ msgstr "URLs eziph&elelwa lixesha emva"
+
+#~ msgid "Maximum &number of URLs:"
+#~ msgstr "&Inani eliphezulu lee-URLs:"
+
+#~ msgid "Custom Fonts For"
+#~ msgstr "Imigca Yesiko Ye"
+
+#~ msgid "URLs newer than"
+#~ msgstr "URLs ezintshana kune"
+
+#~ msgid "Choose Font..."
+#~ msgstr "Khetha Umgca..."
+
+#~ msgid "URLs older than"
+#~ msgstr "URLs ezindalana kune"
+
+#~ msgid ""
+#~ "Shows the number of times visited and the dates of the first and last "
+#~ "visits, in addition to the URL"
+#~ msgstr ""
+#~ "Ibonisa inani lamaxesha andwendweleyo kunye nemihla yeendwendwelo "
+#~ "zokuqala nezokugqibela, zidibene ne URL"
+
+#~ msgid "Detailed tooltips"
+#~ msgstr "Iinkcukacha zamancam ezixhobo"
+
+#~ msgid "Clear History"
+#~ msgstr "Cacisa Imbali"
+
+#, fuzzy
+#~| msgid "Maximum &number of URLs:"
+#~ msgid "Maximum number of Closed Items"
+#~ msgstr "&Inani eliphezulu lee-URLs:"
+
+#, fuzzy
+#~ msgid "Open folders in separate windows"
+#~ msgstr "Vula kwi &Tab Entsha"
+
+#, fuzzy
+#~ msgid "Show file tips"
+#~ msgstr "Bonisa Iinkcukacha"
+
+#, fuzzy
+#~ msgid "Show previews in file tips"
+#~ msgstr "Bonisa Iinkcukacha"
+
+#, fuzzy
+#~ msgid "Ask confirmation for deleting a file."
+#~ msgstr "Uqwalaselo Lweqosha Elikhawulezayo"
+
+#, fuzzy
+#~ msgid "Ask confirmation for move to trash"
+#~ msgstr "Uqwalaselo Lweqosha Elikhawulezayo"
+
+#, fuzzy
+#~ msgid "SideBar Test Plugin"
+#~ msgstr "Qwalasela Ibar yasecaleni"
+
+#, fuzzy
+#~ msgid "Bookmark This Location"
+#~ msgstr "Umhleli Wenqaku lencwadi"
+
+#~ msgid ""
+#~ "Malformed URL\n"
+#~ "%1"
+#~ msgstr ""
+#~ "URL eyenziwe kakubi\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Protocol not supported\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Umthetho ozakulandelwa ongaxhaswanga\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Cannot create the find part, check your installation."
+#~ msgstr "Ayinakwenza indawo yokufumana, khangela ufako lwakho."
+
+#, fuzzy
+#~ msgid "My Bookmarks"
+#~ msgstr "Inqaku lencwadi"
+
+#~ msgid "&Save View Profile \"%1\"..."
+#~ msgstr "&Gcina Imboniselo yabucala Yemboniselo \"%1\"..."
+
+#~ msgid "Configure Navigation Panel"
+#~ msgstr "Qwalasela Ulawulo Lweqela lenjongo ethile"
+
+#~ msgid "Close Navigation Panel"
+#~ msgstr "Vala Iqela lenjongo ethile Lombhekisi phambili"
+
+#~ msgid "Select Type"
+#~ msgstr "Khetha Udidi"
+
+#, fuzzy
+#~ msgid "Select type:"
+#~ msgstr "Khetha udidi"
+
+#, fuzzy
+#~ msgid "Web SideBar Plugin"
+#~ msgstr "Qwalasela Ibar yasecaleni"
+
+#~ msgid "Minutes"
+#~ msgstr "Imizuzu"
+
+#~ msgid "Days"
+#~ msgstr "Iimini"
+
+#, fuzzy
+#~ msgid "Reload"
+#~ msgstr "&Vala i Tab"
+
+#, fuzzy
+#~ msgctxt "@action:button New session"
+#~ msgid "New"
+#~ msgstr "Njengencwadi enenkcukacha Entsha"
+
+#, fuzzy
+#~| msgid "Rename"
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename"
+#~ msgstr "Yinike igama kwakhona"
+
+#~ msgid "G E N E R A L"
+#~ msgstr "N g o k u b a n z i"
+
+#, fuzzy
+#~ msgid "Applications"
+#~ msgstr "&Izicelo"
+
+#, fuzzy
+#~ msgid "Installed programs"
+#~ msgstr "Imisiwe"
+
+#~ msgid "&Location"
+#~ msgstr "&Indawo ekuyo"
+
+#~ msgid "Open &Terminal"
+#~ msgstr "&Vula Isiphelo sendlela"
+
+#, fuzzy
+#~| msgid "&Close Tab"
+#~ msgid "Closed Tabs"
+#~ msgstr "&Vala i Tab"
+
+#~ msgid "Unknown"
+#~ msgstr "Engaziwayo"
+
+#~ msgid "Save &window size in profile"
+#~ msgstr "Gcina &ubungakanani be window kwimboniselo yabucala"
+
+#, fuzzy
+#~ msgid "Speech Toolbar"
+#~ msgstr "Ibar yesixhobo Somthi wemboniselo"
+
+#~ msgid "Conquer your Desktop!"
+#~ msgstr "Yoyisa i Desktop yakho!"
+
+#, fuzzy
+#~ msgid "Settings"
+#~ msgstr "Izicwangciso ZeMbali"
+
+#, fuzzy
+#~ msgid "Desktop configuration"
+#~ msgstr "Uqwalaselo Lweqosha Elikhawulezayo"
+
+#~ msgid "&Edit File Type..."
+#~ msgstr "&Hlela Udidi Lwefayile..."
+
+#~ msgid "App&lications"
+#~ msgstr "&Izicelo"
+
+#, fuzzy
+#~ msgid "&Network Folders"
+#~ msgstr "Njengencwadi enenkcukacha Entsha"
+
+#, fuzzy
+#~ msgid "Sett&ings"
+#~ msgstr "Izicwangciso ZeMbali"
+
+#~ msgid "Autostart"
+#~ msgstr "Isiqalo esizenzekelayo"
+
+#, fuzzy
+#~ msgid "Profile %1 not found\n"
+#~ msgstr "Imboniso yabucala ezakuvulwa."
+
+#, fuzzy
+#~ msgid "Duplicate Entry"
+#~ msgstr "&Yenza ngokubini i Tab"
+
+#, fuzzy
+#~ msgid "Change Exception"
+#~ msgstr "Tshints&ha Uphawu lomfanekiso..."
+
+#, fuzzy
+#~ msgid "Default user name:"
+#~ msgstr "Ngenisa igama lomlawuli:"
+
+#, fuzzy
+#~ msgid "Reject"
+#~ msgstr "Thumela kwakhona"
+
+#, fuzzy
+#~ msgid "D-Bus Communication Error"
+#~ msgstr "Uqwalaselo Lweqosha Elikhawulezayo"
+
+#, fuzzy
+#~ msgid "&Windows Shares"
+#~ msgstr "&Window"
+
+#, fuzzy
+#~ msgid "Add Identification"
+#~ msgstr "Izikhankanyi"
+
+#, fuzzy
+#~ msgid "Duplicate Identification"
+#~ msgstr "&Yenza i Tab Yangoku Ngokubini"
+
+#, fuzzy
+#~ msgid "Variable Proxy Configuration"
+#~ msgstr "Uqwalaselo Lweqosha Elikhawulezayo"
+
+#, fuzzy
+#~ msgid "Update Failed"
+#~ msgstr "Gqiba i Favicon"
+
+#, fuzzy
+#~ msgid "Duplicate Policy"
+#~ msgstr "&Yenza Kubini i Window"
+
+#, fuzzy
+#~| msgid "Manual"
+#~ msgid "Menu"
+#~ msgstr "Incwadi yesandla"
+
+#, fuzzy
+#~ msgid "Move Up"
+#~ msgstr "Shukumisa %1"
+
+#, fuzzy
+#~ msgid "Move Down"
+#~ msgstr "Entsha &Window"
+
+#, fuzzy
+#~ msgid ""
+#~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "
+#~ "file manager here."
+#~ msgstr ""
+#~ "<h1>Imbali Ze bar esecaleni</h1> Ungaqwalasela apha imbali yebar "
+#~ "esecaleni yesicelo."
+
+#, fuzzy
+#~ msgid "Open folders in separate &windows"
+#~ msgstr "Vula kwi &Tab Entsha"
+
+#, fuzzy
+#~ msgid "Show file &tips"
+#~ msgstr "Bonisa Iinkcukacha"
+
+#, fuzzy
+#~ msgid "&Move to trash"
+#~ msgstr "&Yisa kwindawo Yomonakalo"
+
+#~ msgid "Sound Files"
+#~ msgstr "Iifayile Zesandi"
+
+#, fuzzy
+#~ msgid "No Action"
+#~ msgstr "&Indawo ekuyo"
+
+#, fuzzy
+#~ msgid "Desktop Menu"
+#~ msgstr "Uqwalaselo Lweqosha Elikhawulezayo"
+
+#, fuzzy
+#~ msgid "Application Menu"
+#~ msgstr "&Izicelo"
+
+#, fuzzy
+#~ msgid "Bookmarks Menu"
+#~ msgstr "Inqaku lencwadi"
+
+#, fuzzy
+#~ msgid "Custom Menu 1"
+#~ msgstr "Imigca Yesiko Ye"
+
+#, fuzzy
+#~ msgid "Custom Menu 2"
+#~ msgstr "Imigca Yesiko Ye"
+
+#, fuzzy
+#~ msgid "Select Protocols"
+#~ msgstr "Khetha iifayile:"
+
+#, fuzzy
+#~ msgid "Local Protocols"
+#~ msgstr "Gqithisa umthetho olandelwayo"
+
+#, fuzzy
+#~ msgid "Internet Protocols"
+#~ msgstr "Gqithisa umthetho olandelwayo"
+
+#, fuzzy
+#~ msgid "A&utostart path:"
+#~ msgstr "Isiqalo esizenzekelayo"
+
+#, fuzzy
+#~ msgid "Confirmation Required"
+#~ msgstr "Igalelo langaphakathi luyafuneka:"
+
+#, fuzzy
+#~ msgid "Move"
+#~ msgstr "Shukumisa %1"
+
+#, fuzzy
+#~ msgid "KEditFileType"
+#~ msgstr "&Hlela Udidi Lwefayile..."
+
+#, fuzzy
+#~ msgid "(c) 2000, KDE developers"
+#~ msgstr "(c) 2000 - 2002, Ababhekisi phambili be KDE"
+
+#, fuzzy
+#~ msgid "Edit File Type %1"
+#~ msgstr "&Hlela Udidi Lwefayile..."
+
+#, fuzzy
+#~ msgid "Create New File Type %1"
+#~ msgstr "&Yenza Incwadi enenkcukacha Entsha..."
+
+#, fuzzy
+#~ msgid "Create New File Type"
+#~ msgstr "&Yenza Incwadi enenkcukacha Entsha..."
+
+#, fuzzy
+#~ msgid "Group:"
+#~ msgstr "Iqela"
+
+#, fuzzy
+#~ msgid "Type name:"
+#~ msgstr "Yinike igama kwakhona"
+
+#, fuzzy
+#~ msgid "Show file in separate viewer"
+#~ msgstr "Vula kwi &Tab Entsha"
+
+#, fuzzy
+#~ msgid "Select service:"
+#~ msgstr "Khetha iifayile:"
+
+#, fuzzy
+#~ msgid "&Remove"
+#~ msgstr "&Yinike igama kwakhona"
+
+#, fuzzy
+#~ msgid "Filename Patterns"
+#~ msgstr "Igama lefayile"
+
+#, fuzzy
+#~ msgid "Description"
+#~ msgstr "&Buyisela ukhetho Endaweni"
+
+#, fuzzy
+#~ msgid "Move &Up"
+#~ msgstr "Shukumisa %1"
+
+#, fuzzy
+#~ msgid "Global Settings"
+#~ msgstr "Izicwangciso ZeMbali"
+
+#, fuzzy
+#~ msgid "Domain-Specific Settin&gs"
+#~ msgstr "Izikhankanyi"
+
+#, fuzzy
+#~ msgid "Netscape Plugins"
+#~ msgstr "umbhekisi phambili (wenkxaso yofako phakathi lwe Netscape)"
+
+#, fuzzy
+#~ msgid "Cancel"
+#~ msgstr "Icinyiwe."
+
+#, fuzzy
+#~ msgid "De&lete"
+#~ msgstr "&Cima Imboniselo yabucala"
+
+#, fuzzy
+#~ msgid "&Import..."
+#~ msgstr "&Rhweba ngaphakathi"
+
+#, fuzzy
+#~ msgid "&Export..."
+#~ msgstr "&Rhweba ngaphandle"
+
+#, fuzzy
+#~ msgid "Select Home Folder"
+#~ msgstr "Yenza Incwadi enenkcukacha"
+
+#, fuzzy
+#~ msgid "Open new windows:"
+#~ msgstr "Entsha &Window"
+
+#, fuzzy
+#~ msgid "Smart"
+#~ msgstr "Beka ngendlela"
+
+#, fuzzy
+#~ msgid "Resize window:"
+#~ msgstr "Thumela kwakhona"
+
+#, fuzzy
+#~ msgid "Move window:"
+#~ msgstr "Entsha &Window"
+
+#, fuzzy
+#~ msgid "(c) 1999 - 2001 The Konqueror Developers"
+#~ msgstr "(c) 1999-2001, Ababhekisi phambili"
+
+#, fuzzy
+#~ msgid "Java&Script"
+#~ msgstr "umbhekisi phambili (JavaScript)"
+
+#, fuzzy
+#~ msgid "Enable filters"
+#~ msgstr "Bonisa Iimboniso"
+
+#, fuzzy
+#~ msgid "Hide filtered images"
+#~ msgstr "Bonisa Ubungakanani befayile"
+
+#, fuzzy
+#~ msgid "Update"
+#~ msgstr "Gqiba i Favicon"
+
+#, fuzzy
+#~ msgid "Import..."
+#~ msgstr "&Rhweba ngaphakathi"
+
+#, fuzzy
+#~ msgid "Export..."
+#~ msgstr "&Rhweba ngaphandle"
+
+#, fuzzy
+#~ msgid "Font Si&ze"
+#~ msgstr "Ubungakanani Bephawu lomfanekiso"
+
+#, fuzzy
+#~ msgid "Boo&kmarks"
+#~ msgstr "Inqaku lencwadi"
+
+#, fuzzy
+#~ msgid "Form Com&pletion"
+#~ msgstr "Ugqibeko lwe-URL"
+
+#, fuzzy
+#~ msgid "Enable completion of &forms"
+#~ msgstr "Ugqibeko oluzenzekelayo lweefomu"
+
+#, fuzzy
+#~ msgctxt "underline"
+#~ msgid "Enabled"
+#~ msgstr "Imisiwe"
+
+#, fuzzy
+#~ msgctxt "underline"
+#~ msgid "Disabled"
+#~ msgstr "Bonisa Iimboniso"
+
+#, fuzzy
+#~ msgid "A&nimations:"
+#~ msgstr "&Izicelo"
+
+#, fuzzy
+#~ msgctxt "animations"
+#~ msgid "Enabled"
+#~ msgstr "Imisiwe"
+
+#, fuzzy
+#~ msgctxt "animations"
+#~ msgid "Disabled"
+#~ msgstr "Bonisa Iimboniso"
+
+#, fuzzy
+#~ msgid "Show Only Once"
+#~ msgstr "Bonisa Umniniyo"
+
+#, fuzzy
+#~ msgid "Enable Ja&va globally"
+#~ msgstr "Yenza i Java (ngqukuva) <A HREF=\"%1\">apha</A>."
+
+#, fuzzy
+#~ msgid "Additional Java a&rguments:"
+#~ msgstr "Iimfuno ezidityanisiweyo*"
+
+#, fuzzy
+#~ msgid "&Filters"
+#~ msgstr "Njengencwadi enenkcukacha Entsha"
+
+#~ msgid "No permissions to write to %1"
+#~ msgstr "Akukho zimvume zokubhala kwi%1"
+
+#, fuzzy
+#~ msgid "Remove Folder Properties"
+#~ msgstr "Susa Iimpahla Zolawulo"
+
+#, fuzzy
+#~ msgid "Create Folder..."
+#~ msgstr "Yenza Incwadi enenkcukacha"
+
+#, fuzzy
+#~ msgid "&Delete"
+#~ msgstr "&Cima Imboniselo yabucala"
+
+#~ msgid "&Rename"
+#~ msgstr "&Yinike igama kwakhona"
+
+#, fuzzy
+#~ msgid "Desktop &Names"
+#~ msgstr "Igama"
+
+#, fuzzy
+#~| msgid "Move backwards one step in the browsing history<p>"
+#~ msgid "Move backwards one step in the browsing history<br /><br />"
+#~ msgstr "Yiya ngasemva inyathelo elinye kwimbali yokhangelo lweencwadi<p>"
+
+#, fuzzy
+#~| msgid "Move forward one step in the browsing history<p>"
+#~ msgid "Move forward one step in the browsing history<br /><br />"
+#~ msgstr "Yiya phambili inyathelo elinye kwimbali yokhangelo lweencwadi<p>"
+
+#, fuzzy
+#~ msgid "Rename icons in&line"
+#~ msgstr "&Nika igama kwakhona Imboniselo yabucala"
+
+#, fuzzy
+#~ msgid "Font si&ze:"
+#~ msgstr "Ubungakanani Bephawu lomfanekiso"
+
+#, fuzzy
+#~ msgid "&Underline filenames"
+#~ msgstr "Sukukhetha iifayile:"
+
+#, fuzzy
+#~ msgid " line"
+#~ msgid_plural " lines"
+#~ msgstr[0] "imizuzu"
+#~ msgstr[1] "imizuzu"
+
+#, fuzzy
+#~ msgid ""
+#~ "<h1>Appearance</h1> You can configure how Konqueror looks as a file "
+#~ "manager here."
+#~ msgstr ""
+#~ "<h1>Imbali Ze bar esecaleni</h1> Ungaqwalasela apha imbali yebar "
+#~ "esecaleni yesicelo."
+
+#, fuzzy
+#~ msgid ""
+#~ "Thanks to <a href=\"%1\">DCOP</a> you can have full control over "
+#~ "Konqueror using a script."
+#~ msgstr ""
+#~ "Enkosi ku <A HREF=\"%1\">DCOP</A> unganolawulo olupheleleyo kwi Konqueror "
+#~ "usebenzisa amagama abhalwe phantsi."
+
+#~ msgid "Preview In"
+#~ msgstr "Imboniso Kwi"
+
+#~ msgid "&Open Location..."
+#~ msgstr "&Vula Indawo ekuyo..."
+
+#~ msgid "Animated Logo"
+#~ msgstr "Uphawu Lophiliso"
+
+#, fuzzy
+#~ msgid "Selection"
+#~ msgstr "&Buyisela ukhetho Endaweni"
+
+#~ msgid "Icon Size"
+#~ msgstr "Ubungakanani Bephawu lomfanekiso"
+
+#~ msgid "Show Details"
+#~ msgstr "Bonisa Iinkcukacha"
+
+#~ msgid "Detailed Listview Toolbar"
+#~ msgstr "Ibar yesixhobo Yemboniselo yoluhlu Yenkcukacha"
+
+#~ msgid "MimeType"
+#~ msgstr "Udidi lwe Mime"
+
+#~ msgid "Size"
+#~ msgstr "Ubungakanani"
+
+#~ msgid "Modified"
+#~ msgstr "Iguqulwe kancinane"
+
+#~ msgid "Accessed"
+#~ msgstr "Igqithiselwe"
+
+#~ msgid "Created"
+#~ msgstr "Yenziwe"
+
+#~ msgid "Owner"
+#~ msgstr "Umniniyo"
+
+#~ msgid "Group"
+#~ msgstr "Iqela"
+
+#~ msgid "Link"
+#~ msgstr "Ikhonkco"
+
+#~ msgid "URL"
+#~ msgstr "URL"
+
+#~ msgid "File Type"
+#~ msgstr "Udidi Lwefayile"
+
+#~ msgid "Select files:"
+#~ msgstr "Khetha iifayile:"
+
+#~ msgid "Unselect files:"
+#~ msgstr "Sukukhetha iifayile:"
+
+#~ msgid "Show &Modification Time"
+#~ msgstr "&Bonisa Ixesha Loguqulelo kancinane"
+
+#, fuzzy
+#~ msgid "Hide &Modification Time"
+#~ msgstr "&Bonisa Ixesha Loguqulelo kancinane"
+
+#~ msgid "Show &File Type"
+#~ msgstr "&Bonisa udidi Lwefayile"
+
+#, fuzzy
+#~ msgid "Hide &File Type"
+#~ msgstr "Udidi Lwefayile"
+
+#~ msgid "Show MimeType"
+#~ msgstr "Bonisa udidi lwe Mime"
+
+#, fuzzy
+#~ msgid "Hide MimeType"
+#~ msgstr "Udidi lwe Mime"
+
+#~ msgid "Show &Access Time"
+#~ msgstr "&Bonisa Ixesha Egqithiselwe ngalo"
+
+#, fuzzy
+#~ msgid "Hide &Access Time"
+#~ msgstr "&Bonisa Ixesha Egqithiselwe ngalo"
+
+#~ msgid "Show &Creation Time"
+#~ msgstr "&Bonisa Ixesha Lokwenziwa kwayo"
+
+#, fuzzy
+#~ msgid "Hide &Creation Time"
+#~ msgstr "&Bonisa Ixesha Lokwenziwa kwayo"
+
+#~ msgid "Show &Link Destination"
+#~ msgstr "&Bonisa Ikhonkco Lendawo eyingqongileyo"
+
+#, fuzzy
+#~ msgid "Hide &Link Destination"
+#~ msgstr "&Bonisa Ikhonkco Lendawo eyingqongileyo"
+
+#~ msgid "Show Filesize"
+#~ msgstr "Bonisa Ubungakanani befayile"
+
+#, fuzzy
+#~ msgid "Hide Filesize"
+#~ msgstr "Bonisa Ubungakanani befayile"
+
+#~ msgid "Show Owner"
+#~ msgstr "Bonisa Umniniyo"
+
+#, fuzzy
+#~ msgid "Hide Owner"
+#~ msgstr "Umniniyo"
+
+#~ msgid "Show Group"
+#~ msgstr "Bonisa Iqela"
+
+#, fuzzy
+#~ msgid "Hide Group"
+#~ msgstr "Iqela"
+
+#~ msgid "Show Permissions"
+#~ msgstr "Bonisa Iimvumelwano"
+
+#, fuzzy
+#~ msgid "Hide Permissions"
+#~ msgstr "Iimvume"
+
+#~ msgid "Se&lect..."
+#~ msgstr "Kh&etha..."
+
+#~ msgid "Unselect..."
+#~ msgstr "Sukukhetha..."
+
+#~ msgid "Unselect All"
+#~ msgstr "Sukukhetha Konke"
+
+#~ msgid "&Invert Selection"
+#~ msgstr "&Buyisela ukhetho Endaweni"
+
+#~ msgid "Show &Hidden Files"
+#~ msgstr "&Bonisa Iifayile Ezifihlakeleyo"
+
+#~ msgid "Case Insensitive Sort"
+#~ msgstr "Ubeko kakuhle Lomzekelo Ongenavakalelo"
+
+#~ msgid "Name"
+#~ msgstr "Igama"
+
+#, fuzzy
+#~ msgid "View &As"
+#~ msgstr "Iimboniselo &njenge"
+
+#, fuzzy
+#~ msgid "Filename"
+#~ msgstr "Igama lefayile"
+
+#~ msgid "Toggle displaying of hidden dot files"
+#~ msgstr "Qhobosha iifayile ezinamachaphaza ezibonisiweyo ezifihlakeleyo"
+
+#~ msgid "&Folder Icons Reflect Contents"
+#~ msgstr "&Incwadi eneenkcukacha Uphawu lomfanekiso Icons Libonisa Imixholo"
+
+#~ msgid "&Preview"
+#~ msgstr "&Imboniso"
+
+#, fuzzy
+#~ msgid "Enable Previews"
+#~ msgstr "Bonisa Iimboniso"
+
+#, fuzzy
+#~ msgid "Disable Previews"
+#~ msgstr "Bonisa Iimboniso"
+
+#~ msgid "By Name (Case Sensitive)"
+#~ msgstr "Ngegama (Umzekelo Onovakalelo)"
+
+#~ msgid "By Name (Case Insensitive)"
+#~ msgstr "Ngegama (Umzekelo ongenavakalelo)"
+
+#~ msgid "By Size"
+#~ msgstr "Ngobungakanani"
+
+#~ msgid "By Type"
+#~ msgstr "Ngodidi"
+
+#, fuzzy
+#~ msgid "By Date"
+#~ msgstr "&Ngomhla"
+
+#, fuzzy
+#~ msgid "Folders First"
+#~ msgstr "Njengencwadi enenkcukacha Entsha"
+
+#~ msgid "Descending"
+#~ msgstr "Iyehla"
+
+#, fuzzy
+#~ msgid "Allows selecting of file or folder items based on a given mask"
+#~ msgstr ""
+#~ "Ivumela ukhetho lwefayile okanye imiba yolawulo esekwe kukhuselo "
+#~ "olunikioweyo"
+
+#, fuzzy
+#~ msgid "Allows unselecting of file or folder items based on a given mask"
+#~ msgstr ""
+#~ "Ivumela ukungakhethwa kwefayile okanye imiba yolawulo esekwe kukhuselo "
+#~ "olunikiweyo"
+
+#~ msgid "Selects all items"
+#~ msgstr "Khetha yonke imiba"
+
+#~ msgid "Unselects all selected items"
+#~ msgstr "Ayizikhethi yonke imiba ekhethiweyo"
+
+#~ msgid "Inverts the current selection of items"
+#~ msgstr "Iphindisa umva ukhetho lwangoku lwemiba"
+
+#~ msgid "Treeview Toolbar"
+#~ msgstr "Ibar yesixhobo Somthi wemboniselo"
+
+#~ msgid "Info Listview Toolbar"
+#~ msgstr "Ulwazi Lwesixhobo se bar Soluhlu lwemboniselo"
+
+#~ msgid "Multicolumn View Toolbar"
+#~ msgstr "Ibar yesixhobo Semihlathi emininzi Yemboniselo"
+
+#~ msgid "&Icon Size"
+#~ msgstr "&Ubungakanani Bophawu lomfanekiso"
+
+#~ msgid "S&ort"
+#~ msgstr "Lu&ngisa ngendlela"
+
+#~ msgid "Iconview Toolbar"
+#~ msgstr "Ibar yesixhobo Semboniselo yemboniso"
+
+#~ msgid "Iconview Extra Toolbar"
+#~ msgstr "Ibar yesixhobo Yombonisi we Icon Eyongezelweyo"
+
+#, fuzzy
+#~ msgid "Rename icons inline"
+#~ msgstr "&Nika igama kwakhona Imboniselo yabucala"
+
+#, fuzzy
+#~ msgid "Statusbar"
+#~ msgstr "Khangela &Indawo engatshintshiyo"
+
+#, fuzzy
+#~ msgid "&Show Netscape Bookmarks in Konqueror"
+#~ msgstr "&Bonisa Amanqaku encwadi e Netscape kwi Windows ze Konqueror"
+
+#~ msgid "C&hange URL"
+#~ msgstr "&Tshintsha i URL"
+
+#, fuzzy
+#~ msgid "&New Bookmark"
+#~ msgstr "&Inqaku lencwadi"
+
+#~ msgid "&Insert Separator"
+#~ msgstr "&Faka Umahluli"
+
+#~ msgid "&Sort Alphabetically"
+#~ msgstr "&Beka kakuhle Ngokulandelelana"
+
+#~ msgid "Set as T&oolbar Folder"
+#~ msgstr "Cwangcisa N&jengebar yesixhobo Yencwadi enenkcukacha"
+
+#, fuzzy
+#~ msgid "Show in T&oolbar"
+#~ msgstr "&Bonisa ibar yesixhobo sendawo ekuyo"
+
+#, fuzzy
+#~ msgid "Hide in T&oolbar"
+#~ msgstr "&Bonisa ibar yesixhobo sendawo ekuyo"
+
+#~ msgid "&Expand All Folders"
+#~ msgstr "&Yandisa Zonke Iincwadi ezineenkcukacha"
+
+#~ msgid "Collapse &All Folders"
+#~ msgstr "Wisa phantsi &Zonke Iincwadi ezineenkcukacha"
+
+#~ msgid "&Open in Konqueror"
+#~ msgstr "&Vula kwi Konqueror"
+
+#~ msgid "Check &Status"
+#~ msgstr "Khangela &Indawo engatshintshiyo"
+
+#~ msgid "Check Status: &All"
+#~ msgstr "Khangela indawo engatshintshiyo: &Zonke"
+
+#, fuzzy
+#~ msgid "Update All &Favicons"
+#~ msgstr "Gqiba i Favicon"
+
+#~ msgid "Cancel &Checks"
+#~ msgstr "Cima &Ukhangelo"
+
+#, fuzzy
+#~ msgid "Import &Netscape Bookmarks..."
+#~ msgstr "Rhweba ngaphakathi &Amanqaku encwadi e Netscape"
+
+#~ msgid "Import &Opera Bookmarks..."
+#~ msgstr "Rhweba ngaphakathi &Amanqaku encwadi e Opera..."
+
+#, fuzzy
+#~ msgid "Import All &Crash Sessions as Bookmarks..."
+#~ msgstr "Rhweba ngaphakathi &Amanqaku encwadi e Galeon..."
+
+#~ msgid "Import &Galeon Bookmarks..."
+#~ msgstr "Rhweba ngaphakathi &Amanqaku encwadi e Galeon..."
+
+#, fuzzy
+#~ msgid "Import &KDE2/KDE3 Bookmarks..."
+#~ msgstr "Rhweba ngaphakathi &Amanqaku encwadi e KDE..."
+
+#, fuzzy
+#~ msgid "Import &IE Bookmarks..."
+#~ msgstr "&Rhweba ngaphakathi Amanqaku encwadi e IE..."
+
+#~ msgid "Import &Mozilla Bookmarks..."
+#~ msgstr "Rhweba ngaphakathi &Amanqaku encwadi e Mozilla..."
+
+#, fuzzy
+#~ msgid "Export to &Netscape Bookmarks"
+#~ msgstr "Rhwebela ngaphandle &Amanqaku encwadi kwi Netscape"
+
+#, fuzzy
+#~ msgid "Export to &Opera Bookmarks..."
+#~ msgstr "Rhwebela ngaphandle &Amanqaku encwadi kwi Netscape"
+
+#, fuzzy
+#~ msgid "Export to &HTML Bookmarks..."
+#~ msgstr "Rhwebela ngaphandle &Amanqaku encwadi kwi Netscape"
+
+#, fuzzy
+#~ msgid "Export to &IE Bookmarks..."
+#~ msgstr "Rhwebela ngaphandle &Amanqaku encwadi kwi Netscape"
+
+#~ msgid "Export to &Mozilla Bookmarks..."
+#~ msgstr "Rhweba ngaphandle &Amanqaku encwadi e Mozilla..."
+
+#, fuzzy
+#~ msgid "Cut Items"
+#~ msgstr "Sika imiba"
+
+#, fuzzy
+#~ msgid "Create New Bookmark Folder"
+#~ msgstr "Yenza &Inqaku lencwadi Elitsha"
+
+#, fuzzy
+#~ msgid "New folder:"
+#~ msgstr "Njengencwadi enenkcukacha Entsha"
+
+#~ msgid "Sort Alphabetically"
+#~ msgstr "Beka kakuhle Ngokulandelelana"
+
+#~ msgid "Delete Items"
+#~ msgstr "Cima Imiba"
+
+#~ msgid "Icon"
+#~ msgstr "Icon"
+
+#, fuzzy
+#~ msgid "Comment:"
+#~ msgstr "&Tshintsha i-Icon"
+
+#, fuzzy
+#~ msgid "Viewed last:"
+#~ msgstr "Iimboniselo &njenge"
+
+#~ msgid "Insert Separator"
+#~ msgstr "Faka Umahluli"
+
+#~ msgid "Create Folder"
+#~ msgstr "Yenza Incwadi enenkcukacha"
+
+#~ msgid "Copy %1"
+#~ msgstr "Khuphela %1"
+
+#~ msgid "Create Bookmark"
+#~ msgstr "Yenza Inqaku lencwadi"
+
+#, fuzzy
+#~ msgid "%1 Change"
+#~ msgstr "Utshintsho lwe URL"
+
+#~ msgid "Set as Bookmark Toolbar"
+#~ msgstr "Cwangcisa Njengebar yesixhobo Yenqaku lencwadi"
+
+#, fuzzy
+#~ msgid "%1 in Bookmark Toolbar"
+#~ msgstr "&Bonisa ibar yesixhobo senqaku lencwadi"
+
+#, fuzzy
+#~ msgid "Show"
+#~ msgstr "Bonisa %1"
+
+#~ msgid "Move Items"
+#~ msgstr "Hambisa Imiba"
+
+#, fuzzy
+#~ msgid "Updating favicon..."
+#~ msgstr "Gqiba i Favicon"
+
+#, fuzzy
+#~ msgid "Import %1 Bookmarks"
+#~ msgstr "Rhweba ngaphakathi IE Amanqaku eencwadi"
+
+#, fuzzy
+#~ msgid "%1 Bookmarks"
+#~ msgstr "Amanqaku eencwadi..."
+
+#~ msgid "Import as a new subfolder or replace all the current bookmarks?"
+#~ msgstr ""
+#~ "Yirhwebele ngaphakathi njengencwadi enenkcukacha esezantsi entsha okanye "
+#~ "ubuyisele onke amanqaku encwadi wangoku?"
+
+#, fuzzy
+#~ msgid "%1 Import"
+#~ msgstr "IE Rhweba ngaphakathi"
+
+#, fuzzy
+#~ msgid "*.xbel|Galeon Bookmark Files (*.xbel)"
+#~ msgstr "*.xbel|Galeon iifayile zenqaku lencwadi (*.xbel)"
+
+#, fuzzy
+#~ msgid "*.xml|KDE Bookmark Files (*.xml)"
+#~ msgstr "*.xml|KDE iifayile zenqaku lencwadi (*.xml)"
+
+#, fuzzy
+#~ msgid "KBookmarkMerger"
+#~ msgstr "Inqaku lencwadi"
+
+#, fuzzy
+#~ msgid "Drop Items"
+#~ msgstr "Yeka imiba"
+
+#, fuzzy
+#~ msgid "Status"
+#~ msgstr "Khangela &Indawo engatshintshiyo"
+
+#, fuzzy
+#~ msgid "Folder"
+#~ msgstr "Njengencwadi enenkcukacha Entsha"
+
+#, fuzzy
+#~ msgid "Empty Folder"
+#~ msgstr "Incwadi eneenkcukacha Engenanto"
+
+#, fuzzy
+#~ msgid "Import bookmarks from a file in Mozilla format"
+#~ msgstr "Rhweba ngaphandle amanqaku encwadi ye Mozilla"
+
+#, fuzzy
+#~ msgid "Import bookmarks from a file in Netscape (4.x and earlier) format"
+#~ msgstr "Rhweba ngaphandle amanqaku encwadi ye Mozilla"
+
+#, fuzzy
+#~ msgid "Import bookmarks from a file in Internet Explorer's Favorites format"
+#~ msgstr "Rhweba ngaphandle amanqaku encwadi ye Mozilla"
+
+#, fuzzy
+#~ msgid "Import bookmarks from a file in Opera format"
+#~ msgstr "Rhweba ngaphandle amanqaku encwadi ye Mozilla"
+
+#, fuzzy
+#~ msgid "Export bookmarks to a file in Mozilla format"
+#~ msgstr "Rhweba ngaphandle amanqaku encwadi ye Mozilla"
+
+#, fuzzy
+#~ msgid "Export bookmarks to a file in Netscape (4.x and earlier) format"
+#~ msgstr "Rhweba ngaphandle amanqaku encwadi ye Mozilla"
+
+#, fuzzy
+#~ msgid "Export bookmarks to a file in a printable HTML format"
+#~ msgstr "Rhweba ngaphandle amanqaku encwadi ye Mozilla"
+
+#, fuzzy
+#~ msgid "Export bookmarks to a file in Internet Explorer's Favorites format"
+#~ msgstr "Rhweba ngaphandle amanqaku encwadi ye Mozilla"
+
+#, fuzzy
+#~ msgid "Export bookmarks to a file in Opera format"
+#~ msgstr "Rhweba ngaphandle amanqaku encwadi ye Mozilla"
+
+#~ msgid "File to edit"
+#~ msgstr "Ifayile ezakuhlelwa"
+
+#, fuzzy
+#~ msgid ""
+#~ "Another instance of %1 is already running, do you really want to open "
+#~ "another instance or continue work in the same instance?\n"
+#~ "Please note that, unfortunately, duplicate views are read-only."
+#~ msgstr ""
+#~ "Omunye umzekelo we KEditBookmarks seleisebenze, ingaba uyafuna enye "
+#~ "okanye ufuna ukulandela kumzekelo ofanayo?\n"
+#~ "Nceda qhapele ukuba awukwazi, ukwenza kabini izimvo zifundeka kanye."
+
+#~ msgid "Run Another"
+#~ msgstr "Sebenzisa Enye"
+
+#~ msgid "Continue in Same"
+#~ msgstr "Qhubeka Kwefanayo"
+
+#~ msgid "Bookmark Editor"
+#~ msgstr "Umhleli Wenqaku lencwadi"
+
+#~ msgid "Konqueror Bookmarks Editor"
+#~ msgstr "Umhleli Wamanqaku eencwadi e Konqueror"
+
+#, fuzzy
+#~ msgid "Author"
+#~ msgstr "Isiqalo esizenzekelayo"
+
+#~ msgid "Checking..."
+#~ msgstr "Iyakhangela..."
+
+#~ msgid "Ok"
+#~ msgstr "Kulungile"
+
+#, fuzzy
+#~ msgid "Se&arch:"
+#~ msgstr "Iyakhangela..."
+
+#, fuzzy
+#~ msgid "Clear Search"
+#~ msgstr "Cima &Ukhangelo"

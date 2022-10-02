@@ -1,0 +1,396 @@
+# translation of libkonq.po into Russian
+# translation of libkonq.po to
+# translation of libkonq.po to Russian
+#
+# KDE2 libkonq.pot Russian translation.
+# Copyright (C) 2000 KDE Team.
+# Alex Miller <asm@som.kiev.ua> 2000.
+#
+# Leonid Kanter <leon@asplinux.ru>, 2004, 2005.
+# Gregory Mokhin <mok@kde.ru>, 2005.
+# Andrey Cherepanov <skull@kde.ru>, 2009.
+# Alexander Potashev <aspotashev@gmail.com>, 2010, 2011.
+# Yuri Efremov <yur.arh@gmail.com>, 2011.
+# Olesya Gerasimenko <translation-team@basealt.ru>, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2021-12-27 16:37+0300\n"
+"Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
+"Language-Team: Basealt Translation Team\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 21.08.3\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "&Открыть"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "Создать &папку..."
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "&Восстановить"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr "Открыть папку назначения"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr "Открыть файл назначения"
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "&Очистить корзину"
+
+#: src/konq_popupmenu.cpp:312
+#, kde-format
+msgid "&Configure Trash Bin"
+msgstr "Настроить &корзину..."
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "Добавить &закладку на эту страницу"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "Добавить &закладку на этот адрес"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "Добавить &закладку на эту папку"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "Добавить &закладку на эту ссылку"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "Добавить &закладку на этот файл"
+
+#: src/konq_popupmenu.cpp:379
+#, kde-format
+msgid "Preview In"
+msgstr "Просмотреть в программе"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr "Открыть терминал"
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "&Свойства"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy To"
+#~ msgstr "Копировать в"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "Переместить в"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "Домашняя папка"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "Корневая папка"
+
+#~ msgctxt "@title:menu in Copy To or Move To submenu"
+#~ msgid "Browse..."
+#~ msgstr "Обзор..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "Копировать сюда"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "Переместить сюда"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "Невозможно переместить папку на неё же"
+
+#~ msgid "File name for dropped contents:"
+#~ msgstr "Имя файла для перемещаемого содержимого:"
+
+#~ msgid "&Move Here"
+#~ msgstr "&Переместить сюда"
+
+#~ msgid "&Copy Here"
+#~ msgstr "&Копировать сюда"
+
+#~ msgid "&Link Here"
+#~ msgstr "&Создать ссылку"
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "Сделать рисунком &обоев"
+
+#~ msgid "C&ancel"
+#~ msgstr "О&тмена"
+
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "Создать папку"
+
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "Ввести другое имя"
+
+#~ msgid ""
+#~ "The name \"%1\" starts with a dot, so the directory will be hidden by "
+#~ "default."
+#~ msgstr ""
+#~ "Имя папки «%1» начинается с точки, поэтому по умолчанию папка будет "
+#~ "скрыта.\n"
+#~ "Создать скрытую папку?"
+
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "Создание скрытой папки"
+
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "Новая папка"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "Создание папки"
+
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "Введите имя папки:"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "Вставить папку"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One File"
+#~ msgstr "Вставить файл"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Item"
+#~ msgid_plural "Paste %1 Items"
+#~ msgstr[0] "Вставить %1 объект"
+#~ msgstr[1] "Вставить %1 объекта"
+#~ msgstr[2] "Вставить %1 объектов"
+#~ msgstr[3] "Вставить %1 объект"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste Clipboard Contents..."
+#~ msgstr "Вставить из буфера обмена..."
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste"
+#~ msgstr "Вставить"
+
+#~ msgid ""
+#~ "Restores this file or directory, back to the location where it was "
+#~ "deleted from initially"
+#~ msgstr ""
+#~ "Восстанавливает этот файл или папку в то место, откуда она была удалена"
+
+#~ msgid ""
+#~ "Opens a new file manager window showing the target of this link, in its "
+#~ "parent directory."
+#~ msgstr "Открыть назначение ссылки в новом окне диспетчера файла."
+
+#~ msgid "Share"
+#~ msgstr "Совместный доступ"
+
+#~ msgctxt "@info"
+#~ msgid "Close"
+#~ msgstr "Закрыть"
+
+#~ msgid "Close"
+#~ msgstr "Закрыть"
+
+#~ msgid "Error: %1"
+#~ msgstr "Ошибка: %1"
+
+#~ msgid "Create New"
+#~ msgstr "Создать"
+
+#~ msgid "Link to Device"
+#~ msgstr "Ссылка на устройство"
+
+#~ msgid "<qt>The template file <b>%1</b> does not exist.</qt>"
+#~ msgstr "<qt>Файл шаблона <b>%1</b> не существует.</qt>"
+
+#~ msgid "File name:"
+#~ msgstr "Имя файла:"
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Actions"
+#~ msgstr "&Действия"
+
+#, fuzzy
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With"
+#~ msgstr "Открыть &в программе"
+
+#, fuzzy
+#~ msgctxt "@action:inmenu Open With"
+#~ msgid "&Other..."
+#~ msgstr "&Другая программа..."
+
+#, fuzzy
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With..."
+#~ msgstr "Открыть с &помощью..."
+
+#~ msgid "Open &with %1"
+#~ msgstr "Открыть &в %1"
+
+#~ msgid "Background Settings"
+#~ msgstr "Настройка фона"
+
+#~ msgid "Background"
+#~ msgstr "Фон"
+
+#~ msgid "Co&lor:"
+#~ msgstr "&Цвет:"
+
+#~ msgid "&Picture:"
+#~ msgstr "&Изображение:"
+
+#~ msgid "None"
+#~ msgstr "Нет"
+
+#~ msgid "Enlarge Icons"
+#~ msgstr "Увеличить значки"
+
+#~ msgid "Shrink Icons"
+#~ msgstr "Уменьшить значки"
+
+#~ msgid "&Default Size"
+#~ msgstr "&Размер по умолчанию"
+
+#~ msgid "&Huge"
+#~ msgstr "&Гигантский"
+
+#~ msgid "&Very Large"
+#~ msgstr "&Очень большой"
+
+#~ msgid "&Large"
+#~ msgstr "&Большой"
+
+#~ msgid "&Medium"
+#~ msgstr "&Средний"
+
+#~ msgid "&Small"
+#~ msgstr "&Маленький"
+
+#~ msgid "&Tiny"
+#~ msgstr "О&чень маленький"
+
+#~ msgid "Configure Background..."
+#~ msgstr "Настроить фон..."
+
+#~ msgid "Allows choosing of background settings for this view"
+#~ msgstr "Позволяет настроить параметры фона для этой панели"
+
+#~ msgid "<p>You do not have enough permissions to read <b>%1</b></p>"
+#~ msgstr "<p>Нет прав на чтение <b>%1</b></p>"
+
+#~ msgid "<p><b>%1</b> does not seem to exist anymore</p>"
+#~ msgstr "<p><b>%1</b> более не существует</p>"
+
+#~ msgid "Search result: %1"
+#~ msgstr "Результаты поиска: %1"
+
+#~ msgid ""
+#~ "_n: Do you really want to delete this item?\n"
+#~ "Do you really want to delete these %n items?"
+#~ msgstr ""
+#~ "Удалить %n файл?\n"
+#~ "Удалить %n файла?\n"
+#~ "Удалить %n файлов?"
+
+#~ msgid "Delete Files"
+#~ msgstr "Удалить файлы"
+
+#~ msgid ""
+#~ "_n: Do you really want to shred this item?\n"
+#~ "Do you really want to shred these %n items?"
+#~ msgstr ""
+#~ "Стереть с диска %n файл?\n"
+#~ "Стереть с диска %n файла?\n"
+#~ "Стереть с диска %n файлов?"
+
+#~ msgid "Shred Files"
+#~ msgstr "Стереть с диска файлы"
+
+#~ msgid "Shred"
+#~ msgstr "Стереть с диска"
+
+#~ msgid ""
+#~ "_n: Do you really want to move this item to the trash?\n"
+#~ "Do you really want to move these %n items to the trash?"
+#~ msgstr ""
+#~ "Переместить %n элемент в корзину?\n"
+#~ "Переместить %n элементов в корзину?\n"
+#~ "Переместить %n элементов в корзину?"
+
+#~ msgid ""
+#~ "_: Verb\n"
+#~ "&Trash"
+#~ msgstr "&Выбросить"
+
+#~ msgid "Open in New &Window"
+#~ msgstr "Открыть в &новом окне"
+
+#~ msgid "Open the trash in a new window"
+#~ msgstr "Открыть корзину в новом окне"
+
+#~ msgid "Open the medium in a new window"
+#~ msgstr "Открыть диск в новом окне"
+
+#~ msgid "Open the document in a new window"
+#~ msgstr "Открыть документ в новом окне"
+
+#~ msgid "Und&o"
+#~ msgstr "&Отмена"
+
+#~ msgid "Und&o: Copy"
+#~ msgstr "О&тмена копирования"
+
+#~ msgid "Und&o: Link"
+#~ msgstr "О&тмена создания ссылки"
+
+#~ msgid "Und&o: Move"
+#~ msgstr "О&тмена перемещения"
+
+#~ msgid "Und&o: Trash"
+#~ msgstr "О&тмена удаления"
+
+#~ msgid "Und&o: Create Folder"
+#~ msgstr "О&тмена создания папки"

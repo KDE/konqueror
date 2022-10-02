@@ -1,0 +1,171 @@
+# Translation of kfmclient.po to Euskara/Basque (eu).
+# Copyright (C) 2003-2018 Free Software Foundation.
+# This file is distributed under the same license as the applications package.
+# KDE euskaratzeko proiektuaren arduraduna <xalba@euskalnet.net>
+#
+# Translators:
+# Marcos  <marcos@euskalgnu.org>, 2003, 2006.
+# Ion Gaztañaga <igaztanaga@gmail.com>, 2005.
+# Iñigo Salvador Azurmendi <xalba@euskalnet.net>, 2010, 2011, 2018.
+# Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: kfmclient\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"PO-Revision-Date: 2018-08-09 19:04+0100\n"
+"Last-Translator: Iñigo Salvador Azurmendi <xalba@euskalnet.net>\n"
+"Language-Team: Basque <kde-i18n-doc@kde.org>\n"
+"Language: eu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 2.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+"Marcos,Ion Gaztañaga,Iñigo Salvador Azurmendi,Iñaki Larrañaga Murgoitio"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+"marcos@euskalgnu.org,igaztanaga@gmail.com,xalba@euskalnet.net,"
+"dooteo@euskalgnu.org"
+
+#: kfmclient.cpp:49
+#, kde-format
+msgid "kfmclient"
+msgstr "kfmclient"
+
+#: kfmclient.cpp:57
+#, kde-format
+msgid "KDE tool for opening URLs from the command line"
+msgstr "KDEren tresna bat komando-lerrotik URLak irekitzeko"
+
+#: kfmclient.cpp:65
+#, kde-format
+msgid "Non interactive use: no message boxes"
+msgstr "Ez dauka erabilpen elkarreragilerik: elkarrizketa-koadrorik ez"
+
+#: kfmclient.cpp:67
+#, kde-format
+msgid "Show available commands"
+msgstr "Erakutsi komando erabilgarriak"
+
+#: kfmclient.cpp:69
+#, kde-format
+msgid "Command (see --commands)"
+msgstr "Komandoa (begiratu --commands)"
+
+#: kfmclient.cpp:71
+#, kde-format
+msgid "Arguments for command"
+msgstr "Komandoaren argumentuak"
+
+#: kfmclient.cpp:73
+#, kde-format
+msgid "The files/URLs opened by the application will be deleted after use"
+msgstr ""
+"Aplikazioak irekitako fitxategiak/URLak ezabatu egingo dira erabili ondoren"
+
+#: kfmclient.cpp:81
+#, kde-format
+msgid ""
+"\n"
+"Syntax:\n"
+msgstr ""
+"\n"
+"Sintaxia:\n"
+
+#: kfmclient.cpp:82
+#, kde-format
+msgid ""
+"  kfmclient openURL 'url' ['mimetype']\n"
+"            # Opens a window showing 'url'.\n"
+"            #  'url' may be a relative path\n"
+"            #   or file name, such as . or subdir/\n"
+"            #   If 'url' is omitted, $HOME is used instead.\n"
+"\n"
+msgstr ""
+"  kfmclient openURL 'url-a' ['mime-mota']\n"
+"            # 'url-a' erakusten duen leiho bat irekitzen du.\n"
+"            #  'url-a' bide-izen erlatiboa izan daiteke\n"
+"            #   edo fitxategi-izena, adibidez: . edo azpidir/\n"
+"            #   'url' ematen ez bada, $HOME erabiliko da.\n"
+"\n"
+
+#: kfmclient.cpp:87
+#, kde-format
+msgid ""
+"            # If 'mimetype' is specified, it will be used to determine the\n"
+"            #   component that Konqueror should use. For instance, set it "
+"to\n"
+"            #   text/html for a web page, to make it appear faster\n"
+"\n"
+msgstr ""
+"            # 'mime-mota' zehazten bada Konqueror-ek erabili\n"
+"            #   beharreko osagaia zehazten du. Adibidez, ezarri\n"
+"            #   text/html web-orri batentzat\n"
+"\n"
+
+#: kfmclient.cpp:91
+#, kde-format
+msgid ""
+"  kfmclient newTab 'url' ['mimetype']\n"
+"            # Same as above but opens a new tab with 'url' in an existing "
+"Konqueror\n"
+"            #   window on the current active desktop if possible.\n"
+"\n"
+msgstr ""
+"  kfmclient newTab 'url-a' ['mime-mota']\n"
+"            # Goikoaren berdina baina ahal bada 'url-a' fitxa berri bat "
+"irekitzen du Konqueror-en leiho batean\n"
+"            #     leihoa uneko mahaigain aktiboan.\n"
+"\n"
+
+#: kfmclient.cpp:271
+#, kde-format
+msgid "Syntax error, not enough arguments\n"
+msgstr "Sintaxi errorea, ez dago nahikoa argumenturik\n"
+
+#: kfmclient.cpp:275
+#, kde-format
+msgid "Syntax error, too many arguments\n"
+msgstr "Sintaxi errorea, argumentu gehiegi\n"
+
+#: kfmclient.cpp:324
+#, kde-format
+msgid "Syntax error, unknown command '%1'\n"
+msgstr "Sintaxi errorea, '%1' komando ezezaguna\n"
+
+#~ msgid ""
+#~ "  kfmclient exec is deprecated and kept for compatibility with KDE 3. \n"
+#~ "            # See kioclient exec for more information.\n"
+#~ msgstr ""
+#~ "  kfmclient exec baztertuta dago eta, KDE 3ren bateragarritasunagatik "
+#~ "mantentzen da. \n"
+#~ "            # Begiratu kioclient exec informazioa zabalagoa jasotzeko.\n"
+
+#~ msgid ""
+#~ "  kfmclient openProfile 'profile' ['url']\n"
+#~ "            # Opens a window using the given profile.\n"
+#~ "            #   'profile' is a file under ~/.kde/share/apps/konqueror/"
+#~ "profiles.\n"
+#~ "            #   'url' is an optional URL to open.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmclient openProfile 'profila' ['url-a']\n"
+#~ "            # Emandako profila erabiliz leiho bat irekitzen du.\n"
+#~ "            #   'profila' ~/.kde/share/apps/konqueror/profiles-eko "
+#~ "fitxategi bat da.\n"
+#~ "            #   'url-a' irekitzeko aukerazko URL bat da.\n"
+#~ "\n"
+
+#, fuzzy
+#~| msgid "Profile %1 not found\n"
+#~ msgid "Profile '%1' not found\n"
+#~ msgstr "Ez da %1 profila aurkitu\n"

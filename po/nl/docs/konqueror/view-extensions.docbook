@@ -1,0 +1,175 @@
+<chapter id="view-extensions">
+
+<title
+>Weergavemodusextensies</title>
+
+<!--filemanager mode:
+default Icons/Details/Columns (Dolphin), File Size View (konq-plugins)
+additional Terminal Emulator (Konsole), File Replace View (kdewebdev), Cervisia (kdesdk), Radial Map (Filelight-kdeutils) and more
+browser mode:
+default KHTML, WebKit, Embedded Advanced Text Editor
+additional KImageMapEditor+KLinkStatusPart (kdewebdev) and more
+  -->
+<para
+>&konqueror; biedt extra weergaven in <menuchoice
+><guimenu
+>Beeld</guimenu
+> <guisubmenu
+>Weergavemodus</guisubmenu
+></menuchoice
+> in bestandsbeheerder- en browsermodus als de bijbehorende toepassingen en plugins zijn geïnstalleerd.</para>
+<para
+>De bestandsbeheerdermodus heeft de extra weergaven <guimenuitem
+>Radiale map</guimenuitem
+> uit de toepassing <application
+>Filelight</application
+> en de &konqueror;-plugin <guimenuitem
+>Bestandsgrootteweergave</guimenuitem
+>.</para>
+
+<sect1 id="fsview">
+<sect1info>
+<authorgroup>
+<author
+><personname
+><firstname
+>Josef</firstname
+> <surname
+>Weidendorfer</surname
+></personname
+> <address
+><email
+>Josef.Weidendorfer@gmx.de</email
+></address
+> </author>
+
+</authorgroup>
+<date
+>2011-05-16</date>
+<releaseinfo
+>&kde; 4.7</releaseinfo>
+</sect1info>
+
+<title
+>&fsview; - de bestandssysteemweergave</title>
+<sect2>
+<title
+>Inleiding</title>
+
+<para
+>De &fsview;-plugin voor &konqueror; is een andere weergavemodus voor lokale mappen. Het kan gezien worden als een alternatief voor de diverse weergaven waarmee u door het systeem kunt bladeren.</para>
+
+<para
+>De unieke eigenschap van &fsview; is de mogelijkheid om complete geneste mapstructuren te tonen, waarbij gebruik wordt gemaakt van een zogenaamde boomstructuur voor de grafische voorstelling.  Boomstructuren maken het mogelijk om de afmeting van objecten in geneste structuren te tonen: elk object wordt voorgesteld door een rechthoek met een oppervlakte die evenredig is aan diens afmeting. De afmeting dient de eigenschap te bezitten dat de som van de afmetingen van de subgebieden van een bepaald object gelijk of kleiner is dan de afmeting van het object zelf.</para>
+
+<para
+>In &fsview; worden de afmetingen van de mappen bepaald door de totale grootte van de subitems. Op deze manier kunt u grote bestanden in mappen terugvinden door gewoon de grote rechthoeken op te zoeken. &fsview; kan eigenlijk gezien worden als een grafische weergave van het commando <command
+>du</command
+>.</para>
+
+<para
+>De integratie van &fsview; in Konqueror maakt het mogelijk om eenvoudig gebruik te maken van de standaard voorzieningen, zoals contextmenu's en het herkennen van MIME-typen. Er is echter voor gekozen dat de weergave niet vernieuwd wordt wanneer er wijzigingen plaatsvinden in de getoonde mappen. Wanneer u een map buiten &konqueror; om verwijdert, zult u de weergave handmatig moeten vernieuwen door op <keycap
+>F5</keycap
+> te drukken. De reden is dat er mogelijk heel veel bestanden in de gaten gehouden moeten worden. Dit zou een ontoelaatbare druk op uw systeem veroorzaken wat niet nodig is voor een kleine voorziening als deze.</para>
+
+</sect2>
+
+<sect2>
+<title
+>Visualisatie-mogelijkheden</title>
+
+<para
+>Deze sectie beschrijft de grafische visualisatie van &fsview; uitvoeriger.</para>
+
+<sect3>
+<title
+>Opties voor de itemweergave</title>
+
+<para
+>In &fsview; wordt een item afgebeeld als een rechthoek, ieder item stelt een bestand of map op uw bestandssysteem voor. Om het wat overzichtelijker te maken zijn de rechthoeken voorzien van verschillende kleuren en teksten.</para>
+
+<para
+>De kleur van een rechthoek, die instelbaar is met het menu <menuchoice
+><guimenu
+>Beeld</guimenu
+><guisubmenu
+>Kleurmodus</guisubmenu
+></menuchoice
+>, kan ofwel de <guimenuitem
+>Diepte</guimenuitem
+> van het pad representeren of verschillende attributen van de bestanden, zoals naam, eigenaar, groep of MIME-type.</para>
+
+<para
+>Een rechthoek kan verschillende teksten bevatten die iets over het betreffende bestand of de map vertellen. U kunt per attribuut kiezen of de bijbehorende tekst getoond moet worden. Als dat het geval is kunt u ook nog kiezen of de tekst alleen getoond moet worden als er voldoende ruimte beschikbaar is of dat de ruimte van de submappen gebruikt moet worden om de tekst te tonen. Bovendien kunt u ook de relatieve positie kiezen van zo'n tekst.</para>
+
+</sect3>
+
+<sect3>
+<title
+>Algoritmes voor het tekenen van de boomstructuur</title>
+
+<para
+>Bij het tekenen van boomstructuren wordt de regel gehandhaafd dat de oppervlakte van een object evenredig is met de afmetingen. Dit doel wordt in &fsview; echter niet altijd gehaald: door het tekenen van randen om geneste items weer te geven blijft er minder ruimte over om de subitems te tekenen. Het is wel zo dat er minder ruimte voor de randen nodig is wanneer een item vierkant is (dus vier gelijke zijden heeft).</para>
+
+<para
+>Zo wordt het ook overzichtelijker om iedere rechthoek op zijn minst te voorzien van een naam. U kunt kiezen of er ruimte vrijgemaakt moet worden voor de teksten of dat ze alleen getoond worden als er voldoende ruimte beschikbaar is. In het laatste geval zal er een tekstballon met informatie in beeld komen wanneer u de muis boven een item plaatst. Ze tonen informatie over het item waarboven de muisaanwijzer zich bevindt, samen met bovenliggende mappen helemaal tot het begin van map in de boomstructuur.</para>
+
+<para
+>Hoe de oppervlakte van een item onderverdeeld wordt door de subitems wordt overgelaten aan de implementatie. Het beste is om oppervlakten zoveel mogelijk in vierkanten op te splitsen, zodat er minder ruimte voor teksten en randen nodig is. De beste methoden zijn in dit geval <guilabel
+>Rijen</guilabel
+>, <guilabel
+>Kolommen</guilabel
+> of <guilabel
+>Recursieve Bisectie</guilabel
+>.</para>
+
+<para
+>Om te zorgen dat items een minimale oppervlakte hebben kunt u het menu <menuchoice
+><guimenu
+>Beeld</guimenu
+><guimenuitem
+>Minimale oppervlakte</guimenuitem
+></menuchoice
+> raadplegen. Wanneer u een minimale oppervlakte instelt zullen items die kleinere subitems bevatten een ruitjespatroon weergeven.</para>
+
+</sect3>
+
+</sect2>
+
+<sect2>
+<title
+>Gebruikersinterface</title>
+
+<para
+>&fsview; ondersteunt het selecteren van meerdere bestanden tegelijkertijd, net zoals in de pictogram- en lijstweergave. Zo kunt u een bepaalde actie tegelijkertijd op meerdere items uit laten voeren. Een gewone muisklik selecteert altijd het item onder de muiswijzer. Gebruik de &Shift;-toets om een bereik te selecteren of de &Ctrl;-toets om meerdere items te (de)selecteren. Houd er rekening mee dat u bij het selecteren van een item zijn subitems niet meer kunt selecteren. Dus door het selecteren van een item zal de selectie alle bovenliggende items uitschakelen.</para>
+
+<para
+>U kunt ook met het toetsenbord door de boomstructuur navigeren: gebruik de pijltjestoetsen <keycap
+>Links</keycap
+> en <keycap
+>Rechts</keycap
+> om tussen twee items op hetzelfde niveau te schakelen. Gebruik de pijltjestoetsen <keycap
+>Omhoog</keycap
+> en <keycap
+>Omlaag</keycap
+> om een niveau omhoog of omlaag te gaan. Met <keycap
+>Spatie</keycap
+> selecteert u een item, dit kan ook in combinatie met &Shift; om een bereik te selecteren, en met de &Ctrl;-toets om meerdere niet-aangrenzende items te selecteren. Druk op <keycap
+>Enter</keycap
+> om de geselecteerde items te openen.</para>
+
+</sect2>
+
+<sect2>
+<title
+>Dankbetuigingen en licentie</title>
+<para
+>Oorspronkelijk was &fsview; bedoeld als een klein testprogramma voor het TreeMap-object dat ontwikkeld werd voor <application
+>KCachegrind</application
+>.</para>
+<para
+>Copyright Josef Weidendorfer, onder de GPL V2-licentie.</para>
+</sect2>
+
+</sect1>
+</chapter>

@@ -1,0 +1,77 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Spanish "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="performance" lang="&language;">
+<articleinfo>
+<title
+>Rendimiento</title>
+<authorgroup>
+<author
+>&Mike.McBride; &Mike.McBride.mail;</author>
+<othercredit role="translator"
+><firstname
+>Marcos</firstname
+><surname
+>Fouces Lago</surname
+><affiliation
+><address
+><email
+>mfouces@yahoo.es</email
+></address
+></affiliation
+><contrib
+>Traductor</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2016-11-08</date>
+<releaseinfo
+>Aplicaciones 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Preferencias del sistema</keyword>
+<keyword
+>rendimiento</keyword>
+<keyword
+>precarga</keyword>
+</keywordset>
+</articleinfo>
+
+<sect1 id="sys-performance">
+<title
+>Configuración del rendimiento</title>
+
+<para
+>&konqueror; se usa en una amplia variedad de ordenadores por una amplia variedad de usuarios. En la categoría de rendimiento, este diálogo permitirá que cada usuario ajuste las opciones que pueden hacer que el ordenador en el que &konqueror; esta instalado ofrezca una mejor respuesta. </para>
+
+<sect2
+><title
+>Precargar</title>
+<para
+>La subsección llamada <guilabel
+>Precargar</guilabel
+> sirve para equilibrar la relación entre memoria y rendimiento.</para>
+
+<para
+><emphasis
+>Precargar</emphasis
+> se refiere a la carga de una sesión de &konqueror; en memoria antes de que que un usuario intente iniciar &konqueror;. El efecto positivo de esto es que cuando un usuario pide que se cargue &konqueror;, la ventana aparecerá instantáneamente, puesto que la mayor parte de la aplicación ya ha sido precargada. El efecto negativo es que esta sesión de &konqueror; utiliza memoria que podría ser utilizada por otros programas. De forma predeterminada, cuando un usuario cierra &konqueror;, no se cierra la sesión. Esto significa que la siguiente vez que un usuario desee cargar &konqueror;, la carga también será instantánea.</para>
+
+<para
+>La última casilla llamada <guilabel
+>Tratar siempre de tener al menos una sesión precargada</guilabel
+> indica que usted desea que se tenga siempre disponible una sesión de &konqueror; precargada, pero sin utilizar. Esta opción decrementará el rendimiento de algunas máquinas (especialmente aquellas limitadas por la memoria física).</para>
+</sect2>
+</sect1>
+
+</article>

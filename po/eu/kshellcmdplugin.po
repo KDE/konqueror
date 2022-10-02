@@ -1,0 +1,1912 @@
+# translation of kshellcmdplugin.po to Euskara/Basque
+#
+# Marcos  <marcos@euskalgnu.org>, 2002,2003, 2005.
+# Hizkuntza Politikarako Sailburuordetza <hizpol@ej-gv.es>, 2004.
+# Ion Gaztañaga <igaztanaga@gmail.com>, 2005.
+# marcos <marcos@euskalgnu.org>, 2006, 2007, 2010.
+# Marcos <marcos@euskalgnu.org>, 2006.
+# Iñigo Salvador Azurmendi <xalba@euskalnet.net>, 2009, 2010, 2011.
+# Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: kshellcmdplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2011-10-08 17:22+0200\n"
+"Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>\n"
+"Language-Team: Basque <itzulpena@euskalgnu.org>\n"
+"Language: eu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. i18n: ectx: Menu (tools)
+#: konq_shellcmdplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "&Tresnak"
+
+#: kshellcmdexecutor.cpp:106
+#, kde-format
+msgid "Input Required:"
+msgstr "Sarrera behar da:"
+
+#: kshellcmdplugin.cpp:32
+#, kde-format
+msgid "&Execute Shell Command..."
+msgstr "&Exekutatu shell-eko komandoa..."
+
+#: kshellcmdplugin.cpp:41
+#, kde-format
+msgid ""
+"KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a bug."
+msgstr ""
+"KShellCmdPlugin::slotExecuteShellCommand: Programaren errorea. Mesedez, "
+"bidali erroreari buruzko txostena."
+
+#: kshellcmdplugin.cpp:51
+#, kde-format
+msgid "Executing shell commands works only on local directories."
+msgstr ""
+"Shell-eko komandoen exekuzioa lokaleko direktorioetan soilik funtzionatzen "
+"du."
+
+#: kshellcmdplugin.cpp:73
+#, kde-format
+msgctxt "@title:window"
+msgid "Execute Shell Command"
+msgstr "Exekutatu shell-eko komandoak"
+
+#: kshellcmdplugin.cpp:74
+#, kde-format
+msgid "Execute shell command in current directory:"
+msgstr "Exekutatu shell-eko komandoa uneko direktorioan:"
+
+#: kshellcmdplugin.cpp:85
+#, kde-format
+msgid "Output from command: \"%1\""
+msgstr "Komandoaren irteera: \"%1\""
+
+#~ msgid "no name"
+#~ msgstr "izenik ez"
+
+#~ msgid "Configure"
+#~ msgstr "Konfiguratu"
+
+#~ msgid "Extensions"
+#~ msgstr "Luzapenak"
+
+#~ msgid ""
+#~ "There was an error loading the module %1.\n"
+#~ "The diagnostics is:\n"
+#~ "%2"
+#~ msgstr ""
+#~ "Errore bat gertatu da %1 modulua kargatzean.\n"
+#~ "Diagnostikoa:\n"
+#~ "%2"
+
+#~ msgid "Konqueror"
+#~ msgstr "Konqueror"
+
+#~ msgid "Web browser, file manager and document viewer."
+#~ msgstr "Web arakatzailea, fitxategi kudeatzailea, eta dokumentu ikustailea."
+
+#~ msgid "(C) 1999-2008, The Konqueror developers"
+#~ msgstr "(c) 1999-2008, Konqueror garatzaileak"
+
+#~ msgid "http://konqueror.kde.org"
+#~ msgstr "http://konqueror.kde.org"
+
+#~ msgid "David Faure"
+#~ msgstr "David Faure"
+
+#~ msgid "Developer (framework, parts, JavaScript, I/O library) and maintainer"
+#~ msgstr ""
+#~ "garatzailea (egitura, zatiak, JavaScript, S/I lib) eta mantentzailea"
+
+#~ msgid "Simon Hausmann"
+#~ msgstr "Simon Hausmann"
+
+#~ msgid "Developer (framework, parts)"
+#~ msgstr "Garatzailea (egitura, zatiak)"
+
+#~ msgid "Michael Reiher"
+#~ msgstr "Michael Reiher"
+
+#~ msgid "Developer (framework)"
+#~ msgstr "Garatzailea (egitura)"
+
+#~ msgid "Matthias Welk"
+#~ msgstr "Matthias Welk"
+
+#~ msgid "Developer"
+#~ msgstr "Garatzailea"
+
+#~ msgid "Alexander Neundorf"
+#~ msgstr "Alexander Neundorf"
+
+#~ msgid "Developer (List views)"
+#~ msgstr "Garatzailea (Zerrenda ikuspegiak)"
+
+#~ msgid "Michael Brade"
+#~ msgstr "Michael Brade"
+
+#~ msgid "Developer (List views, I/O library)"
+#~ msgstr "Garatzailea (Zerrenda ikuspegiak, S/I lib)"
+
+#~ msgid "Lars Knoll"
+#~ msgstr "Lars Knoll"
+
+#~ msgid "Developer (HTML rendering engine)"
+#~ msgstr "Garatzailea (HTML errendatze motorea)"
+
+#~ msgid "Dirk Mueller"
+#~ msgstr "Dirk Mueller"
+
+#~ msgid "Peter Kelly"
+#~ msgstr "Peter Kelly"
+
+#~ msgid "Waldo Bastian"
+#~ msgstr "Waldo Bastian"
+
+#~ msgid "Developer (HTML rendering engine, I/O library)"
+#~ msgstr "Garatzailea (HTML errendatze motorea, S/I lib)"
+
+#~ msgid "Germain Garand"
+#~ msgstr "Germain Garand"
+
+#~ msgid "Leo Savernik"
+#~ msgstr "Leo Savernik"
+
+#~ msgid "Stephan Kulow"
+#~ msgstr "Stephan Kulow"
+
+#~ msgid ""
+#~ "Developer (HTML rendering engine, I/O library, regression test framework)"
+#~ msgstr ""
+#~ "Garatzailea (HTML errendatze motorea, S/I lib, regression test framework)"
+
+#~ msgid "Antti Koivisto"
+#~ msgstr "Antti Koivisto"
+
+#~ msgid "Zack Rusin"
+#~ msgstr "Zack Rusin"
+
+#~ msgid "Tobias Anton"
+#~ msgstr "Tobias Anton"
+
+#~ msgid "Lubos Lunak"
+#~ msgstr "Lubos Lunak"
+
+#~ msgid "Maks Orlovich"
+#~ msgstr "Maks Orlovich"
+
+#~ msgid "Developer (HTML rendering engine, JavaScript)"
+#~ msgstr "Garatzailea (HTML errendatze motorea, JavaScript)"
+
+#~ msgid "Allan Sandfeld Jensen"
+#~ msgstr "Allan Sandfeld Jensen"
+
+#~ msgid "Apple Safari Developers"
+#~ msgstr "Apple Safari garatzaileak"
+
+#~ msgid "Harri Porten"
+#~ msgstr "Harri Porten"
+
+#~ msgid "Developer (JavaScript)"
+#~ msgstr "Garatzailea (JavaScript)"
+
+#~ msgid "Koos Vriezen"
+#~ msgstr "Koos Vriezen"
+
+#~ msgid "Developer (Java applets and other embedded objects)"
+#~ msgstr ""
+#~ "Garatzailea (Java appleten euskarria eta bestelako objektu txertagarriak)"
+
+#~ msgid "Matt Koss"
+#~ msgstr "Matt Koss"
+
+#~ msgid "Developer (I/O library)"
+#~ msgstr "Garatzailea (S/I lib)"
+
+#~ msgid "Alex Zepeda"
+#~ msgstr "Alex Zepeda"
+
+#~ msgid "Richard Moore"
+#~ msgstr "Richard Moore"
+
+#~ msgid "Developer (Java applet support)"
+#~ msgstr "Garatzailea (Java appleten euskarria)"
+
+#~ msgid "Dima Rogozin"
+#~ msgstr "Dima Rogozin"
+
+#~ msgid "Wynn Wilkes"
+#~ msgstr "Wynn Wilkes"
+
+#~ msgid ""
+#~ "Developer (Java 2 security manager support,\n"
+#~ " and other major improvements to applet support)"
+#~ msgstr ""
+#~ "Garatzailea (Java 2 segurtasun kudeatzaile euskarria,\n"
+#~ "eta beste aurrerapen handiak applet euskarrirako)"
+
+#~ msgid "Stefan Schimanski"
+#~ msgstr "Stefan Schimanski"
+
+#~ msgid "Developer (Netscape plugin support)"
+#~ msgstr "Garatzailea (Netscape plugin euskarria)"
+
+#~ msgid "George Staikos"
+#~ msgstr "George Staikos"
+
+#~ msgid "Developer (SSL, Netscape plugins)"
+#~ msgstr "Garatzailea (SSL, Netscape pluginak)"
+
+#~ msgid "Dawit Alemayehu"
+#~ msgstr "Dawit Alemayehu"
+
+#~ msgid "Developer (I/O library, Authentication support)"
+#~ msgstr "Garatzailea (S/I lib, autentifikazio euskarria)"
+
+#~ msgid "Carsten Pfeiffer"
+#~ msgstr "Carsten Pfeiffer"
+
+#~ msgid "Torsten Rahn"
+#~ msgstr "Torsten Rahn"
+
+#~ msgid "Graphics/icons"
+#~ msgstr "Grafikoak/ikonoak"
+
+#~ msgid "Torben Weis"
+#~ msgstr "Torben Weis"
+
+#~ msgid "KFM author"
+#~ msgstr "KFM egilea"
+
+#~ msgid "Joseph Wenninger"
+#~ msgstr "Joseph Wenninger"
+
+#~ msgid "Developer (navigation panel framework)"
+#~ msgstr "Garatzailea (nabigazio panelaren egitura)"
+
+#~ msgid "Stephan Binner"
+#~ msgstr "Stephan Binner"
+
+#~ msgid "Developer (misc stuff)"
+#~ msgstr "Garatzailea (hainbat gauza)"
+
+#~ msgid "Ivor Hewitt"
+#~ msgstr "Ivor Hewitt"
+
+#~ msgid "Developer (AdBlock filter)"
+#~ msgstr "Garatzailea (AdBlock iragazkia)"
+
+#~ msgid "Eduardo Robles Elvira"
+#~ msgstr "Eduardo Robles Elvira"
+
+#~ msgid ""
+#~ "Checking this box on at least two views sets those views as 'linked'. "
+#~ "Then, when you change directories in one view, the other views linked "
+#~ "with it will automatically update to show the current directory. This is "
+#~ "especially useful with different types of views, such as a directory tree "
+#~ "with an icon view or detailed view, and possibly a terminal emulator "
+#~ "window."
+#~ msgstr ""
+#~ "Hau hautatuz gutxienez bi ikuspegi 'lotu'ko dituzu. Orduan ikuspegi "
+#~ "batetan direktorioz aldatzean, beste ikuspegi lotu guztiak automatikoki "
+#~ "eguneratuko dira direktorio bera erakusteko. Hau ikuspegi mota "
+#~ "ezberdinekin oso onuragarria da, adib. direktorio zuhaitz bat ikono "
+#~ "ikuspegi xehatu batekin, edo, agian, terminal emuladore batekin"
+
+#~ msgid "Close View"
+#~ msgstr "Itxi ikuspegia"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#~ msgid "Stalled"
+#~ msgstr "Geldituta"
+
+#~ msgid "Preview &in %1"
+#~ msgstr "%1-ean aurreikus&i"
+
+#~ msgid "Show %1"
+#~ msgstr "Erakutsi %1"
+
+#~ msgctxt "@title:window"
+#~ msgid "History"
+#~ msgstr "Historia"
+
+#~ msgctxt "@action:inmenu Parent of 'By Name' and 'By Date'"
+#~ msgid "Sort"
+#~ msgstr "Sailkatu"
+
+#~ msgid ""
+#~ "<qt><center><b>%1</b></center><hr />Last visited: %2<br />First visited: "
+#~ "%3<br />Number of times visited: %4</qt>"
+#~ msgstr ""
+#~ "<qt><center><b>%4</b></center><hr />Azken aldiz bisitatuta: %1<br />Lehen "
+#~ "aldiz bisitatuta: %2<br />Zenbat aldiz bisitatuta: %3</qt>"
+
+#~ msgid "Local"
+#~ msgstr "Bertako"
+
+#~ msgid "Miscellaneous"
+#~ msgstr "Hainbat"
+
+#~ msgid "Open in New &Window"
+#~ msgstr "Ireki l&eiho berrian"
+
+#~ msgid "Open in New Tab"
+#~ msgstr "Ireki fitxa berrian"
+
+#~ msgid "&Copy Link Address"
+#~ msgstr "&Kopiatu estekaren helbidea"
+
+#~ msgid "&Remove Entry"
+#~ msgstr "&Kendu sarrera"
+
+#~ msgid "C&lear History"
+#~ msgstr "&Garbitu historia"
+
+#~ msgid "&Preferences..."
+#~ msgstr "&Hobespenak..."
+
+#~ msgid "By &Name"
+#~ msgstr "Ize&nez"
+
+#~ msgid "By &Date"
+#~ msgstr "&Dataz"
+
+#~ msgid "Search in history"
+#~ msgstr "Bilatu historian"
+
+#~ msgid "Do you really want to clear the entire history?"
+#~ msgstr "Benetan garbitu nahi duzu historia osoa?"
+
+#~ msgid "Clear History?"
+#~ msgstr "Garbitu historia?"
+
+#~ msgid "Start without a default window, when called without URLs"
+#~ msgstr "Hasi leiho lehenetsirik gabe, URL-rik gabe deitzen denean"
+
+#~ msgid ""
+#~ "Preload for later use. This mode does not support URLs on the command line"
+#~ msgstr ""
+#~ "Aurrezamatu beranduago erabiltzeko. Modu honek ez ditu URL-ak onartzen "
+#~ "komando lerroan"
+
+#~ msgid "Profile to open"
+#~ msgstr "Irekiko den profila"
+
+#~ msgid "List available profiles"
+#~ msgstr "Zerrendatu profil eskuragarriak"
+
+#~ msgid "List available sessions"
+#~ msgstr "Zerrendatu saio eskuragarriak"
+
+#~ msgid "Session to open"
+#~ msgstr "Ireki beharreko saioa"
+
+#~ msgid "Mimetype to use for this URL (e.g. text/html or inode/directory)"
+#~ msgstr ""
+#~ "URL honekin erabiliko den mime mota, (adib. text/html edo inode/directory)"
+
+#~ msgid ""
+#~ "For URLs that point to files, opens the directory and selects the file, "
+#~ "instead of opening the actual file"
+#~ msgstr ""
+#~ "Fitxategiak apuntatzen dituzten URLetarako, direktorioa ireki eta hautatu "
+#~ "egiten du, benetako fitxategia ireki ordez"
+
+#~ msgid "Location to open"
+#~ msgstr "Irekitzeko beharreko kokapena"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Loading..."
+#~ msgstr "Kargatzen..."
+
+#~ msgid "Canceled."
+#~ msgstr "Bertan behera utzita"
+
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Reloading the page will discard these changes."
+#~ msgstr ""
+#~ "Orri honek bidali gabeko aldaketak ditu.\n"
+#~ "Orri hau berkargatzean aldketak baztertuko dira."
+
+#~ msgid "Discard Changes?"
+#~ msgstr "Baztertu aldaketak?"
+
+#~ msgid "&Discard Changes"
+#~ msgstr "&Baztertu aldaketak"
+
+#~ msgid "File Management"
+#~ msgstr "Fitxategi kudeaketa"
+
+#~ msgid "Web Browsing"
+#~ msgstr "Web arakatzea"
+
+#~ msgid "Home Folder"
+#~ msgstr "Etxeko karpeta"
+
+#~ msgid "Home"
+#~ msgstr "Etxea"
+
+#~ msgid "Navigate to your 'Home Folder'"
+#~ msgstr "Nabigatu zure 'Etxe karpetara'"
+
+#~ msgid "Navigate to your local 'Home Folder'"
+#~ msgstr "Nabigatu zure bertako 'Etxeko karpetara'"
+
+#~ msgid "Home Page"
+#~ msgstr "Atariko orria"
+
+#~ msgid "Navigate to your 'Home Page'"
+#~ msgstr "Nabigatu zure 'Atariko orrira'"
+
+#~ msgid ""
+#~ "<html>Navigate to your 'Home Page'<br /><br />You can configure the "
+#~ "location where this button takes you under <b>Settings -> Configure "
+#~ "Konqueror -> General</b>.</html>"
+#~ msgstr ""
+#~ "<html>Joan 'Etxeko karpetara'<br /><br />Botoi honek eramaten zaituen "
+#~ "kokapena hemendik konfiguratu dezakezu: <b>Ezarpenak -> Konqueror "
+#~ "konfiguratu -> Orokorra </b>.</html>"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Detaching the tab will discard these changes."
+#~ msgstr ""
+#~ "Fitxa honek bidali gabeko aldaketak ditu.\n"
+#~ "Fitxa hau askatzean aldaketak baztertuko dira."
+
+#~ msgid ""
+#~ "This view contains changes that have not been submitted.\n"
+#~ "Closing the view will discard these changes."
+#~ msgstr ""
+#~ "Ikuspegi honek bidali gabeko aldaketak ditu.\n"
+#~ "Ikuspegi hau ixtean aldaketak baztertuko dira."
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the tab will discard these changes."
+#~ msgstr ""
+#~ "Fitxa honek bidali gabeko aldaketak ditu.\n"
+#~ "Fitxa hau ixtean aldaketak baztertuko dira."
+
+#~ msgid "Do you really want to close all other tabs?"
+#~ msgstr "Benetan itxi nahi dituzu gainontzeko fitxa guztiak?"
+
+#~ msgid "Close Other Tabs Confirmation"
+#~ msgstr "Gainontzeko fitxa guztiak ixteko berrespena"
+
+#~ msgid "Close &Other Tabs"
+#~ msgstr "Itxi &gainontzeko fitxak"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing other tabs will discard these changes."
+#~ msgstr ""
+#~ "Fitxa honek bidali gabeko aldaketak ditu.\n"
+#~ "Gainontzeko fitxak ixtean aldaketak baztertuko dira."
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Reloading all tabs will discard these changes."
+#~ msgstr ""
+#~ "Fitxa honek bidali gabeko aldaketak ditu.\n"
+#~ "Fitxa guztiak berkargatzean aldaketak baztertuko dira."
+
+#~ msgid "Enter Target"
+#~ msgstr "Sartu helburua"
+
+#~ msgid "<qt><b>%1</b> is not valid</qt>"
+#~ msgstr "<qt><b>%1</b> baliogabea da</qt>"
+
+#~ msgid "Copy selected files from %1 to:"
+#~ msgstr "Kopiatu hautatutako fitxategiak %1(e)tik hona:"
+
+#~ msgid "Move selected files from %1 to:"
+#~ msgstr "Mugitu hautatutako fitxategiak %1(e)tik hona:"
+
+#~ msgctxt "This menu entry empties the closed items history"
+#~ msgid "Empty Closed Items History"
+#~ msgstr "Hustu itxitako gaien historia"
+
+#~ msgid "Save As..."
+#~ msgstr "Gorde honela..."
+
+#~ msgid "Manage..."
+#~ msgstr "Kudeatu..."
+
+#~ msgid "New &Window"
+#~ msgstr "L&eiho berria"
+
+#~ msgid "&Duplicate Window"
+#~ msgstr "&Bikoiztu leihoa"
+
+#~ msgid "Send &Link Address..."
+#~ msgstr "Bidali &estekaren helbidea..."
+
+#~ msgid "S&end File..."
+#~ msgstr "Bi&dali fitxategia..."
+
+#~ msgid "&Open Location"
+#~ msgstr "&Ireki kokapena"
+
+#~ msgid "&Open File..."
+#~ msgstr "&Ireki fitxategia..."
+
+#~ msgid "&Find File..."
+#~ msgstr "&Aurkitu fitxategia..."
+
+#~ msgid "&Use index.html"
+#~ msgstr "&Erabili index.html"
+
+#~ msgid "Lock to Current Location"
+#~ msgstr "Blokeatu uneko kokapena"
+
+#~ msgctxt "This option links konqueror views"
+#~ msgid "Lin&k View"
+#~ msgstr "&Lotu ikuspegia"
+
+#~ msgid "&Up"
+#~ msgstr "&Gora"
+
+#~ msgid "Closed Items"
+#~ msgstr "Itxitako gaiak"
+
+#~ msgid "Sessions"
+#~ msgstr "Saioak"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Most Often Visited"
+#~ msgstr "Gehien bisitatuak"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Recently Visited"
+#~ msgstr "Oraintsu bisitatuak"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History"
+#~ msgstr "Erakutsi historia"
+
+#~ msgid "&Save View Profile As..."
+#~ msgstr "&Gorde ikuspegi profila honela..."
+
+#~ msgid "Configure Extensions..."
+#~ msgstr "Konfiguratu luzapenak..."
+
+#~ msgid "Configure Spell Checking..."
+#~ msgstr "Konfiguratu ortografia zuzenketa..."
+
+#~ msgid "Split View &Left/Right"
+#~ msgstr "Zatitu ikuspegia &ezkerra/eskuina"
+
+#~ msgid "Split View &Top/Bottom"
+#~ msgstr "Zatitu ikuspegia &goian/behean"
+
+#~ msgid "&New Tab"
+#~ msgstr "&Fitxa berria"
+
+#~ msgid "&Duplicate Current Tab"
+#~ msgstr "&Bikoiztu uneko fitxa"
+
+#~ msgid "Detach Current Tab"
+#~ msgstr "Askatu uneko fitxa"
+
+#~ msgid "&Close Active View"
+#~ msgstr "&Ezabatu ikuspegi aktiboa"
+
+#~ msgid "Close Current Tab"
+#~ msgstr "Itxi uneko fitxa"
+
+#~ msgid "Activate Next Tab"
+#~ msgstr "Aktibatu hurrengo fitxa"
+
+#~ msgid "Activate Previous Tab"
+#~ msgstr "Aktibatu aurreko fitxa"
+
+#~ msgid "Activate Tab %1"
+#~ msgstr "Aktibatu %1 fitxa"
+
+#~ msgid "Move Tab Left"
+#~ msgstr "Mugitu fitxa ezkerrera"
+
+#~ msgid "Move Tab Right"
+#~ msgstr "Mugitu fitxa eskuinera"
+
+#~ msgid "Dump Debug Info"
+#~ msgstr "Irauli arazte Info"
+
+#~ msgid "C&onfigure View Profiles..."
+#~ msgstr "K&onfiguratu ikuspegi profilak..."
+
+#~ msgid "Load &View Profile"
+#~ msgstr "Kargatu &ikuspegi profila"
+
+#~ msgid "&Reload"
+#~ msgstr "&Birkargatu"
+
+#~ msgid "&Reload All Tabs"
+#~ msgstr "&Birkargatu fitxa guztiak"
+
+#~ msgid "&Force Reload"
+#~ msgstr "Birzamaketa &behartu"
+
+#~ msgid "&Stop"
+#~ msgstr "&Gelditu"
+
+#~ msgid "Throbber"
+#~ msgstr "Arakatzailearen ikono animatua"
+
+#~ msgid "L&ocation: "
+#~ msgstr "K&okapena: "
+
+#~ msgid "Location Bar"
+#~ msgstr "Kokapen barra"
+
+#~ msgid ""
+#~ "<html>Location Bar<br /><br />Enter a web address or search term.</html>"
+#~ msgstr ""
+#~ "<html>Kokapen barra<br /><br />Sartu web helbide bat edo bilatzeko "
+#~ "termino bat.</html>"
+
+#~ msgid "Clear Location Bar"
+#~ msgstr "Garbitu kokapen barra"
+
+#~ msgid ""
+#~ "<html>Clear Location bar<br /><br />Clears the contents of the location "
+#~ "bar.</html>"
+#~ msgstr ""
+#~ "<html>Garbitu kokapen barra<br /><br />Kokapen barraren edukia garbitzen "
+#~ "du.</html>"
+
+#~ msgid "&Bookmarks"
+#~ msgstr "&Liburu-markak"
+
+#~ msgid "Kon&queror Introduction"
+#~ msgstr "Kon&queror-ri sarrera"
+
+#~ msgid "Go"
+#~ msgstr "Joan"
+
+#~ msgid ""
+#~ "<html>Go<br /><br />Goes to the page that has been entered into the "
+#~ "location bar.</html>"
+#~ msgstr "<html>Joan<br /><br />Kokapen barran sartu den orrira doa.</html>"
+
+#~ msgid ""
+#~ "<html>Enter the parent folder<br /><br />For instance, if the current "
+#~ "location is file:/home/%1 clicking this button will take you to file:/"
+#~ "home.</html>"
+#~ msgstr ""
+#~ "<html>Sartu guraso karpetara<br /><br />Adibidez, uneko kokapena file:/"
+#~ "home/%1 bada, botoi hau klikatzeak file:/home kokapenera eramango zaitu.</"
+#~ "html>"
+
+#~ msgid "Enter the parent folder"
+#~ msgstr "Sartu guraso karpetara"
+
+#~ msgid "Move backwards one step in the browsing history"
+#~ msgstr "Pausu bar atzera mugitzen da arakatze-historian"
+
+#~ msgid "Move forward one step in the browsing history"
+#~ msgstr "Pausu bar aurrera mugitzen da arakatze-historian"
+
+#~ msgid "Move backwards one step in the closed tabs history"
+#~ msgstr "Pausu bar atzera mugitzen da itxitako fitxen historian"
+
+#~ msgid ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.</html>"
+#~ msgstr ""
+#~ "<html>Berkargatu unean erakutsitako dokumentua<br /><br />Beharrezkoa "
+#~ "izan daiteke, adibidez, kargatu zirenetik aldatu diren web orriak, "
+#~ "aldaketak ikus daitezen freskatzeko.</html>"
+
+#~ msgid "Reload the currently displayed document"
+#~ msgstr "Berkargatu unean erakutsitako dokumentua"
+
+#~ msgid ""
+#~ "<html>Reload all currently displayed documents in tabs<br /><br />This "
+#~ "may, for example, be needed to refresh web pages that have been modified "
+#~ "since they were loaded, in order to make the changes visible.</html>"
+#~ msgstr ""
+#~ "<html>Berkargatu fitxetan unean erakutsitako dokumentu guztiak<br /><br /"
+#~ "> Beharrezkoa izan daiteke, adibidez, kargatu zirenetik aldatu diren web "
+#~ "orriak, aldaketak ikus daitezen freskatzeko.</html>"
+
+#~ msgid "Reload all currently displayed document in tabs"
+#~ msgstr "Birkargatu fitxetan erakutsitako dokumentu guztiak"
+
+#~ msgid ""
+#~ "<html>Stop loading the document<br /><br />All network transfers will be "
+#~ "stopped and Konqueror will display the content that has been received so "
+#~ "far.</html>"
+#~ msgstr ""
+#~ "<html>Gelditu dokumentua kargatzen<br /><br />Sare transferentzi guztiak "
+#~ "geldituko dira, eta Konquerorek orain arte eskuratutako edukina "
+#~ "bistaratuko du.</html>"
+
+#~ msgid ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.  Any images on "
+#~ "the page are downloaded again, even if cached copies exist.</html>"
+#~ msgstr ""
+#~ "<html>Birkargatu unean erakutsitako dokumentua<br /><br />Beharrezkoa "
+#~ "izan daiteke, adibidez, kargatu zirenetik aldatu diren web orriak, "
+#~ "aldaketak ikus daitezen freskatzeko. Orriko edozein irudi berriz jaitsiko "
+#~ "da, nahiz eta katxean kopiak egon.</html>"
+
+#~ msgid ""
+#~ "Force a reload of the currently displayed document and any contained "
+#~ "images"
+#~ msgstr ""
+#~ "Unean erakutsitako dokumentuaren eta dituen irudi guztien birzamaketa "
+#~ "behartu"
+
+#~ msgid "Stop loading the document"
+#~ msgstr "Gelditu dokumentua kargatzen"
+
+#~ msgid ""
+#~ "<html>Cut the currently selected text or item(s) and move it to the "
+#~ "system clipboard<br /><br />This makes it available to the <b>Paste</b> "
+#~ "command in Konqueror and other KDE applications.</html>"
+#~ msgstr ""
+#~ "<html>Hautatutako testu edo elementuak ebaki eta sistemaren arbelara "
+#~ "darama(tza)<br /><br /> Honek <b>Itsasi</b> komandoa eskuragarri uzten du "
+#~ "Konqueror eta gainontzeko KDE aplikazioetan.</html>"
+
+#~ msgid "Move the selected text or item(s) to the clipboard"
+#~ msgstr "Hutatutako testu/elementua(k) mugitzen d(it)u arbelara"
+
+#~ msgid ""
+#~ "<html>Copy the currently selected text or item(s) to the system "
+#~ "clipboard<br /><br />This makes it available to the <b>Paste</b> command "
+#~ "in Konqueror and other KDE applications.</html>"
+#~ msgstr ""
+#~ "<html>Hautatutako testu edo elementuak arbelan kopiatzen ditu<br /><br /> "
+#~ "Honek <b>Itsasi</b> komandoa eskuragarri uzten du Konqueror eta "
+#~ "gainontzeko KDE aplikazioetan.</html>"
+
+#~ msgid "Copy the selected text or item(s) to the clipboard"
+#~ msgstr "Hautatutako testu/elementua(k) kopiatzen d(it)u arbelara"
+
+#~ msgid ""
+#~ "<html>Paste the previously cut or copied clipboard contents<br /><br /"
+#~ ">This also works for text copied or cut from other KDE applications.</"
+#~ "html>"
+#~ msgstr ""
+#~ "<html>Lehen ebaki edo kopiatutako arbelaren edukinak itsatsen ditu<br /"
+#~ "><br /> Hau KDE beste aplikazioetan kopiatu edo ebakitako testuan dabil "
+#~ "ere.</html>"
+
+#~ msgid "Paste the clipboard contents"
+#~ msgstr "Arbelaren edukina itsasten du"
+
+#~ msgid ""
+#~ "<html>Print the currently displayed document<br /><br />You will be "
+#~ "presented with a dialog where you can set various options, such as the "
+#~ "number of copies to print and which printer to use.<br /><br />This "
+#~ "dialog also provides access to special KDE printing services such as "
+#~ "creating a PDF file from the current document.</html>"
+#~ msgstr ""
+#~ "<html>Unean erakutsitako dokumentua inprimatzen du<br /><br /"
+#~ ">Elkarrizketa-leihoa erakutsiko zaizu, eta zenbait aukera ezarri ahal "
+#~ "izango duzu, inprimatzeko kopia-kopurua eta zein inprimagailu erabili."
+#~ "<br /><br /> Elkarrizketa honek KDE inprimatze-zerbitzu bereziak "
+#~ "erabiltzen utziko dizu ere bai, uneko dokumentutik PDF motako fitxategia "
+#~ "sortzea, adibidez.</html>"
+
+#~ msgid "Print the current document"
+#~ msgstr "Inprimatu uneko dokumentua"
+
+#~ msgid "If present, open index.html when entering a folder."
+#~ msgstr "Ireki index.html, egonez gero, karpeta baten sartzean"
+
+#~ msgid ""
+#~ "A locked view cannot change folders. Use in combination with 'link view' "
+#~ "to explore many files from one folder"
+#~ msgstr ""
+#~ "Ikuspegi blokeatu bat ezin da karpetaz aldatu. Erabili 'Lotu "
+#~ "ikuspegia'rekin batera karpeta baten fitxategiak aztertzeko"
+
+#~ msgid ""
+#~ "Sets the view as 'linked'. A linked view follows folder changes made in "
+#~ "other linked views."
+#~ msgstr ""
+#~ "Ikuspegia 'lotzen' du. Ikuspegi lotuta beste ikuspegi lotuei jarraitzen "
+#~ "dizkio karpetaz aldatzean."
+
+#~ msgid "Copy &Files..."
+#~ msgstr "Kopiatu &fitxategiak..."
+
+#~ msgid "M&ove Files..."
+#~ msgstr "M&ugitu fitxategiak..."
+
+#~ msgid ""
+#~ "You have requested to open more than 20 bookmarks in tabs. This might "
+#~ "take a while. Continue?"
+#~ msgstr ""
+#~ "Fitxak erabiliz 20 liburu-marka baino gehiago irekitzea eskatu duzu. "
+#~ "Denbora apur bat eraman dezake. Jarraitu?"
+
+#~ msgid "Open bookmarks folder in new tabs"
+#~ msgstr "Ireki liburu-marken karpeta fitxa berritan"
+
+#~ msgid "Open in T&his Window"
+#~ msgstr "Ireki leiho h&onetan"
+
+#~ msgid "Open the document in current window"
+#~ msgstr "Dokumentua uneko leihoan irekitzen du"
+
+#~ msgid "Open the document in a new window"
+#~ msgstr "Irekitzen du dokumentua leiho berrian"
+
+#~ msgid "Open in &New Tab"
+#~ msgstr "Ireki fitxa b&errian"
+
+#~ msgid "Open the document in a new tab"
+#~ msgstr "Irekitzen du dokumentua fitxa berrian"
+
+#~ msgid "&Open With"
+#~ msgstr "Honekin &ireki"
+
+#~ msgid "Open with %1"
+#~ msgstr "Ireki %1(a)rekin"
+
+#~ msgctxt "@action:inmenu View"
+#~ msgid "&View Mode"
+#~ msgstr "I&kuspegi modua"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window, are you sure you want to quit?"
+#~ msgstr "Fitxa bat baino gehiago dituzu irekita, benetan irten nahi duzu?"
+
+#~ msgid "Confirmation"
+#~ msgstr "Berrespena"
+
+#~ msgid "C&lose Current Tab"
+#~ msgstr "I&txi uneko fitxa"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the window will discard these changes."
+#~ msgstr ""
+#~ "Fitxa honek bidali gabeko aldaketak ditu.\n"
+#~ "Leihoa ixteak aldketak baztertuko ditu."
+
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Closing the window will discard these changes."
+#~ msgstr ""
+#~ "Fitxa honek bidali gabeko aldaketak ditu.\n"
+#~ "Leihoa ixteak aldaketak baztertuko ditu."
+
+#~ msgid ""
+#~ "Your sidebar is not functional or unavailable. A new entry cannot be "
+#~ "added."
+#~ msgstr ""
+#~ "Zure alboko barra ez dabil edo ez dago. Ezin gehitu sarrera berririk."
+
+#~ msgid "Web Sidebar"
+#~ msgstr "Web alboko barra"
+
+#~ msgid "Add new web extension \"%1\" to your sidebar?"
+#~ msgstr "Gehitu \"%1\" web luzapen berria alboko barrari?"
+
+#~ msgid "Add"
+#~ msgstr "Gehitu"
+
+#~ msgid "Do Not Add"
+#~ msgstr "Ez gehitu"
+
+#~ msgid ""
+#~ "There appears to be a configuration error. You have associated Konqueror "
+#~ "with %1, but it cannot handle this file type."
+#~ msgstr ""
+#~ "Konfigurazio errore bat dagoela dirudi. Konqueror %1(a)rekin asoziatu "
+#~ "duzu, baina ezin du fitxategi mota hori kudeatu."
+
+#~ msgid "Profile Management"
+#~ msgstr "Profil kudeaketa"
+
+#~ msgid "&Rename Profile"
+#~ msgstr "Be&rrizendatu profila"
+
+#~ msgid "&Delete Profile"
+#~ msgstr "&Ezabatu profila"
+
+#~ msgid "Manage Sessions"
+#~ msgstr "Saioak kudeatu"
+
+#~ msgid "&Open"
+#~ msgstr "&Ireki"
+
+#~ msgid "Rename Session"
+#~ msgstr "Saioa berrizendatu"
+
+#~ msgid "Save Session"
+#~ msgstr "Saioa gorde"
+
+#~ msgid ""
+#~ "A session with the name '%1' already exists, do you want to overwrite it?"
+#~ msgstr "'%1' izena duen saio bat existitzen da, gainidatzi nahi duzu?"
+
+#~ msgid "Session exists. Overwrite?"
+#~ msgstr "Saioa existitzen da. Gainidatzi?"
+
+#~ msgid ""
+#~ "Konqueror did not close correctly. Would you like to restore the previous "
+#~ "session?"
+#~ msgstr ""
+#~ "Konqueror ez zen modu egokian itxi. Aurreko saioa leheneratu nahi duzu?"
+
+#~ msgid "Restore Session?"
+#~ msgstr "Saioa leheneratu?"
+
+#~ msgid "Restore Session"
+#~ msgstr "Saioa leheneratu"
+
+#~ msgid "Do Not Restore"
+#~ msgstr "Ez leheneratu"
+
+#~ msgid "Ask Me Later"
+#~ msgstr "Galdetu beranduago"
+
+#~ msgid ""
+#~ "This bar contains the list of currently open tabs. Click on a tab to make "
+#~ "it active. You can also use keyboard shortcuts to navigate through tabs. "
+#~ "The text on the tab shows the content currently open in it; place your "
+#~ "mouse over the tab to see the full title, in case it has been shortened "
+#~ "to fit the tab width."
+#~ msgstr ""
+#~ "Barra honek irekita dauden fitxen zerrenda dauka. Klikatu fitxa batean "
+#~ "hura aktibatzeko. Teklatuko lasterbideak erabili ditzakezu fitxen artean "
+#~ "nabigatzeko. Fitxako testuak bertan irekitako edukia erakusten du; ipini "
+#~ "sagua fitxaren gainean izenburu osoa ikusteko, fitxaren zabalerara "
+#~ "egokitzeko laburtu bada."
+
+#~ msgid "Open a new tab"
+#~ msgstr "Ireki fitxa berri bat"
+
+#~ msgid "Close the current tab"
+#~ msgstr "Itxi uneko fitxa"
+
+#~ msgid "&Duplicate Tab"
+#~ msgstr "&Bikoiztu fitxa"
+
+#~ msgid "&Reload Tab"
+#~ msgstr "&Birkargatu fitxa"
+
+#~ msgid "Other Tabs"
+#~ msgstr "Beste fitxak"
+
+#~ msgid "D&etach Tab"
+#~ msgstr "&Askatu fitxa"
+
+#~ msgid "&Close Tab"
+#~ msgstr "&Itxi fitxa"
+
+#~ msgid "Und&o: Closed Tab"
+#~ msgstr "&Desegin: Itxi fitxa"
+
+#~ msgid "Und&o: Closed Window"
+#~ msgstr "&Desegin: Itxitako leihoa"
+
+#~ msgid "Und&o"
+#~ msgstr "&Desegin"
+
+#~ msgid ""
+#~ "The page you are trying to view is the result of posted form data. If you "
+#~ "resend the data, any action the form carried out (such as search or "
+#~ "online purchase) will be repeated. "
+#~ msgstr ""
+#~ "Ikusten saiatzen ari zaren orria igorritako inprimaki baten datuetatik "
+#~ "datoz. Datuak berbidaltzen badituzu, inprimakiak zekarren edozein ekintza "
+#~ "(bilatze edo lineako erosketa) berregingo da."
+
+#~ msgid "Warning"
+#~ msgstr "Abisua"
+
+#~ msgid "Resend"
+#~ msgstr "Berbidali"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window.\n"
+#~ "Loading a view profile will close them."
+#~ msgstr ""
+#~ "Fitxa bat baino gehiago dituzu irekita.\n"
+#~ "Ikuspegi profil berria kargatzeak itxiko ditu."
+
+#~ msgid "Load View Profile"
+#~ msgstr "Kargatu ikuspegi profila"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Loading a profile will discard these changes."
+#~ msgstr ""
+#~ "Fitxa honek bidali gabeko datuak ditu.\n"
+#~ "Profila kargatzeak aldaketak baztertuko ditu."
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "History Sidebar Module"
+#~ msgstr "Historia alboko barra modulua"
+
+#~ msgctxt "@title:tab"
+#~ msgid "History"
+#~ msgstr "Historia"
+
+#~ msgid " day"
+#~ msgid_plural " days"
+#~ msgstr[0] " egun"
+#~ msgstr[1] " egun"
+
+#~ msgid "Minute"
+#~ msgid_plural "Minutes"
+#~ msgstr[0] " minutu"
+#~ msgstr[1] " minutu"
+
+#~ msgid "Day"
+#~ msgid_plural "Days"
+#~ msgstr[0] " egun"
+#~ msgstr[1] " egun"
+
+#~ msgid "<h1>History Sidebar</h1> You can configure the history sidebar here."
+#~ msgstr ""
+#~ "<h1>Historia alboko barra</h1>Hemen Historia alboko barra konfigura "
+#~ "dezakezu."
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Places Sidebar Module"
+#~ msgstr "Lekuen alboko barraren modulua"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Places"
+#~ msgstr "Lekuak"
+
+#~ msgid "Extended Sidebar"
+#~ msgstr "Alboko barra zabalduta"
+
+#~ msgid "Rollback to System Default"
+#~ msgstr "Itzuli sistemaren lehenespenetara"
+
+#~ msgid "Configure Sidebar"
+#~ msgstr "Konfiguratu alboko barra"
+
+#~ msgid "Add New"
+#~ msgstr "Gehitu berria"
+
+#~ msgid "Multiple Views"
+#~ msgstr "Ikuspegi anitzak"
+
+#~ msgid "Show Tabs Left"
+#~ msgstr "Erakutsi fitxak ezkerrean"
+
+#~ msgid "Show Configuration Button"
+#~ msgstr "Erakutsi konfiguratzeko botoia"
+
+#~ msgid "Close Sidebar"
+#~ msgstr "Itxi alboko barra"
+
+#~ msgid "This entry already exists."
+#~ msgstr "Sarrera hau lehendik dago."
+
+#~ msgid ""
+#~ "<qt>This removes all your entries from the sidebar and adds the system "
+#~ "default ones.<br /><b>This procedure is irreversible</b><br />Do you want "
+#~ "to proceed?</qt>"
+#~ msgstr ""
+#~ "<qt>Honek alboko barrako zure elementu guztiak ezabatzen ditu eta "
+#~ "sistemaren lehenespenak jartzen ditu.<br /><b>Ekintza deseginezina da</"
+#~ "b><br />Egin nahi duzu?</qt>"
+
+#~ msgid "Show Tabs Right"
+#~ msgstr "Erakutsi eskuineko fitxak"
+
+#~ msgid "Set Name"
+#~ msgstr "Ezarri izena"
+
+#~ msgid "Enter the name:"
+#~ msgstr "Sartu izena:"
+
+#~ msgid "Enter a URL:"
+#~ msgstr "Sartu URL bat:"
+
+#~ msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
+#~ msgstr "<qt>Benetan ezabatu nahi duzu <b>%1</b> fitxa?</qt>"
+
+#~ msgid ""
+#~ "You have hidden the sidebar configuration button. To make it visible "
+#~ "again, click the right mouse button on any of the sidebar buttons and "
+#~ "select \"Show Configuration Button\"."
+#~ msgstr ""
+#~ "Alboko barra konfiguratzeko botoia ezkutatu duzu. Berriz ikusgarri izan "
+#~ "dadin, klikatu saguaren eskuineko botoia alboko barraren botoietako "
+#~ "edozeinetan eta hautatu \"Erakutsi konfiguratzeko botoia\"."
+
+#~ msgid "Set Name..."
+#~ msgstr "Ezarri izena..."
+
+#~ msgid "Set URL..."
+#~ msgstr "Ezarri URLa..."
+
+#~ msgid "Set Icon..."
+#~ msgstr "Ezarri ikonoa"
+
+#~ msgid "Remove"
+#~ msgstr "Kendu"
+
+#~ msgid "Web module"
+#~ msgstr "Web modulua"
+
+#~ msgid "&Create New Folder"
+#~ msgstr "S&ortu karpeta berria"
+
+#~ msgid "Delete Folder"
+#~ msgstr "Ezabatu karpeta"
+
+#~ msgid "Delete Bookmark"
+#~ msgstr "Ezabatu liburu-marka"
+
+#~ msgid "Properties"
+#~ msgstr "Propietateak"
+
+#~ msgid "Open in New Window"
+#~ msgstr "Ireki leiho berrian"
+
+#~ msgid "Open Folder in Tabs"
+#~ msgstr "Ireki karpeta fitxetan"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "Kopiatu esteka helbidea"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark folder\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "Ziur zaude \"%1\"\n"
+#~ "liburu-marka karpeta kendu nahi duzula?"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "Ziur zaude \"%1\"\n"
+#~ "liburu-marka kendu nahi duzula?"
+
+#~ msgid "Bookmark Folder Deletion"
+#~ msgstr "Liburu-marka karpeta ezabaketa"
+
+#~ msgid "Bookmark Deletion"
+#~ msgstr "Liburu-marka ezabaketa"
+
+#~ msgid "Bookmark Properties"
+#~ msgstr "Liburu-markaren propietateak"
+
+#~ msgid "&Update"
+#~ msgstr "&Eguneratu"
+
+#~ msgid "Name:"
+#~ msgstr "Izena:"
+
+#~ msgid "Location:"
+#~ msgstr "Kokapena:"
+
+#~ msgid "Add Bookmark"
+#~ msgstr "Erantsi liburu-marka"
+
+#~ msgid "Cannot find parent item %1 in the tree. Internal error."
+#~ msgstr "Ezin da %1 elementu gurasoa aurkitu zuhaitzean. Barne errorea"
+
+#~ msgid "&Create New Folder..."
+#~ msgstr "&Sortu karpeta berria..."
+
+#~ msgid "Move to Trash"
+#~ msgstr "Mugitu zakarrontzira"
+
+#~ msgid "Rename"
+#~ msgstr "Berrizendatu"
+
+#~ msgid "Delete Link"
+#~ msgstr "Ezabatu esteka"
+
+#~ msgid "New Folder"
+#~ msgstr "Karpeta berria"
+
+#~ msgid "Create New Folder"
+#~ msgstr "Sortu karpeta berria"
+
+#~ msgid "Enter folder name:"
+#~ msgstr "Sartu karpetaren izena:"
+
+#~ msgctxt "@label"
+#~ msgid "Name:"
+#~ msgstr "Izena:"
+
+#~ msgctxt "@label"
+#~ msgid "Path or URL:"
+#~ msgstr "Bidea edo URL:"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add folder sidebar module"
+#~ msgstr "Erantsi karpeta alboko barra modulua"
+
+#~ msgid "&Open Link"
+#~ msgstr "&Ireki esteka"
+
+#~ msgid "Set &Automatic Reload"
+#~ msgstr "Ezarri berkargatze &automatikoa"
+
+#~ msgid "Set Refresh Timeout (0 disables)"
+#~ msgstr "Ezarri freskatze denbora muga (0ak desgaitzen du)"
+
+#~ msgid " min"
+#~ msgstr " min"
+
+#~ msgid " sec"
+#~ msgstr " seg"
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Web Sidebar Module"
+#~ msgstr "Web alboko barra modulua"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add web sidebar module"
+#~ msgstr "Erantsi web alboko barra modulua"
+
+#~ msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
+#~ msgid "Be free."
+#~ msgstr "Aske izan."
+
+#~ msgid ""
+#~ "Konqueror is a web browser, file manager and universal document viewer."
+#~ msgstr ""
+#~ "Konqueror zure web arakatzailea da, fitxategi kudeatzailea eta dokumentu "
+#~ "ikustailu unibertsala."
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "Starting Points"
+#~ msgstr "Abiapuntuak"
+
+#~ msgid "Introduction"
+#~ msgstr "Sarrera"
+
+#~ msgid "Tips"
+#~ msgstr "Aholkuak"
+
+#~ msgid "Specifications"
+#~ msgstr "Xehetasunak"
+
+#~ msgid "Your personal files"
+#~ msgstr "Norberaren fitxategiak"
+
+#~ msgid "Trash"
+#~ msgstr "Zakarrontzia"
+
+#~ msgid "Browse and restore the trash"
+#~ msgstr "Arakatu eta berezarri zakarontzia"
+
+#~ msgid "Network Folders"
+#~ msgstr "Sareko karpetak"
+
+#~ msgid "Shared files and folders"
+#~ msgstr "Partekatutako fitxategi eta karpetak"
+
+#~ msgid "Bookmarks"
+#~ msgstr "Liburu-markak"
+
+#~ msgid "Quick access to your bookmarks"
+#~ msgstr "Zure liburu-marketara sarbide azkarra"
+
+#~ msgid "Next: An Introduction to Konqueror"
+#~ msgstr "Hurrengoa: Konqueror-i sarrera"
+
+#~ msgid "Search the Web"
+#~ msgstr "Bilatu web-ean"
+
+#~ msgid ""
+#~ "Konqueror makes working with and managing your files easy. You can browse "
+#~ "both local and networked folders while enjoying advanced features such as "
+#~ "the powerful sidebar and file previews."
+#~ msgstr ""
+#~ "Konqueror-ek fitxategiekin lan egitea errazten dizu. Bai karpeta lokalak "
+#~ "bai sarekoak araka ditzakezu, alboko barra eta fitxategien aurrebista "
+#~ "ezaugarri aurreratuez gozatzen dituzun bitartean."
+
+#~ msgid ""
+#~ "Konqueror is also a full featured and easy to use web browser which you "
+#~ "can use to explore the Internet. Enter the address (e.g. <a href=\"http://"
+#~ "www.kde.org\">http://www.kde.org</a>) of a web page you would like to "
+#~ "visit in the location bar and press Enter, or choose an entry from the "
+#~ "Bookmarks menu."
+#~ msgstr ""
+#~ "Konqueror ezaugarriz betetako eta erabiltzeko erraza den web arakatzailea "
+#~ "ere bada. Bisitatu nahi duzun Internet orriaren helbidea (adib <a href="
+#~ "\"http://www.kde.org\">http://www.kde.org</a>) kokapen barran idatzi eta "
+#~ "Sartu sakatu, edo liburu-marka menutik sarrera bat hautatu."
+
+#~ msgid ""
+#~ "To return to the previous location, press the back button <img width='16' "
+#~ "height='16' src=\"%1\"></img> in the toolbar. "
+#~ msgstr ""
+#~ "Aurreko kokapenera itzuli nahi baldin baduzu, sakatu <img width='16' "
+#~ "height='16' src=\"%1\"></img> atzera botoia tresna-barran."
+
+#~ msgid ""
+#~ "To quickly go to your Home folder press the  home button <img width='16' "
+#~ "height='16' src=\"%1\"></img>."
+#~ msgstr ""
+#~ "Etxeko karpetara bizkor joateko sakatu<img width='16' height='16' src="
+#~ "\"%1\"></img> etxeko botoia."
+
+#~ msgid ""
+#~ "For more detailed documentation on Konqueror click <a href=\"%1\">here</"
+#~ "a>."
+#~ msgstr ""
+#~ "Dokumentazio xehatuagoak lortzeko, <a href=\"%1\">hemen</a> klik egin."
+
+#~ msgid ""
+#~ "<em>Tuning Tip:</em> If you want the Konqueror web browser to start "
+#~ "faster, you can turn off this information screen by clicking <a href="
+#~ "\"%1\">here</a>. You can re-enable it by choosing the Help -> Konqueror "
+#~ "Introduction menu option, and then pressing Settings -> Save View Profile "
+#~ "As... -> \"Web Browsing\"."
+#~ msgstr ""
+#~ "<em>Doitzeko iradokizuna:</em> Konqureror web arakatzailea azkarrago "
+#~ "abiatu dadin nahi baduzu, informazio pantaila hau desgaitu dezakezu <a "
+#~ "href=\"%1\">hemen </a> klikatuz. Berriz gaitu dezakezu Laguntza -> "
+#~ "Konqueror sarrera menu aukera hautatuz, eta ondoren Ezarpenak -> Gorde "
+#~ "ikuspegi profila honela... -> \"Web arakaketa\"' sakatuz."
+
+#~ msgid "Next: Tips &amp; Tricks"
+#~ msgstr "Hurrengoa: Aholkuak eta mainak"
+
+#~ msgid ""
+#~ "Konqueror is designed to embrace and support Internet standards. The aim "
+#~ "is to fully implement the officially sanctioned standards from "
+#~ "organizations such as the W3 and OASIS, while also adding extra support "
+#~ "for other common usability features that arise as de facto standards "
+#~ "across the Internet. Along with this support, for such functions as "
+#~ "favicons, Web Shortcuts, and <A HREF=\"%1\">XBEL bookmarks</A>, Konqueror "
+#~ "also implements:"
+#~ msgstr ""
+#~ "Konqueror Internet estandarrak onartu eta sostengatzeko diseinatuta dago. "
+#~ "Helburua W3 eta OASIS bezalako erakundeek ofizialki ezarritako "
+#~ "estandarrak osoki inplementatzea da, Interneten zehar de facto "
+#~ "estandarrak bezala sortzen diren erabilera arrunteko ezaugarrientzako "
+#~ "aparteko euskarria ere gehitzen duelarik. favicons, web gako-hitzak, eta "
+#~ "<A HREF=\"%1\">XBEL liburu-markak</A> moduko funtzioentzako "
+#~ "euskarriarekin batera, Konqueror-ek inplementatzen du:"
+
+#~ msgid "Supported standards"
+#~ msgstr "Onartutako estandarrak"
+
+#~ msgid "Additional requirements*"
+#~ msgstr "Behar gehigarriak*"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">DOM</A> (1 maila, 2 maila partzialki)  <A HREF=\"%2\">HTML "
+#~ "4.01</A>-n oinarritua"
+
+#~ msgid "built-in"
+#~ msgstr "barneratua"
+
+#~ msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
+#~ msgstr "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partzialki CSS 2)"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">ECMA-262</A> 3. edizioa (gutxi gora behera JavaScript 1.5 "
+#~ "ordezkoa)"
+
+#~ msgid ""
+#~ "JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
+#~ msgstr ""
+#~ "JavaScript desgaituta (orokorrean). JavaScript gaitu <A HREF="
+#~ "\"%1\">hemen</A>."
+
+#~ msgid ""
+#~ "JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\"
+#~ "\">here</A>."
+#~ msgstr ""
+#~ "JavaScript gaituta (orokorrean). JavaScript konfiguratu <A HREF=\\\"%1\\"
+#~ "\">hemen</A>"
+
+#~ msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
+#~ msgstr " <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> seguru euskarria"
+
+#, fuzzy
+#~| msgid ""
+#~| "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">Blackdown</A>, <A HREF="
+#~| "\"%2\">IBM</A> or <A HREF=\"%3\">Sun</A>)"
+#~ msgid ""
+#~ "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">IBM</A> or <A HREF="
+#~ "\"%2\">Sun/Oracle</A>)"
+#~ msgstr ""
+#~ "JDK 1.2.0 (Java 2) VM bateragarria (<A HREF=\"%1\">Blackdown</A>, <A HREF="
+#~ "\"%2\">IBM</A> edo <A HREF=\"%3\">Sun</A>)"
+
+#~ msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
+#~ msgstr "Gaitu Java (orokorrean) <A HREF=\"%1\">hemen</A>."
+
+#~ msgid ""
+#~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">plugins</A> (for "
+#~ "viewing <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
+#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Video, etc.)"
+#~ msgstr ""
+#~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">pluginak</A> (<A "
+#~ "HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF=\"%2\">Real<SUP>&reg;</"
+#~ "SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</SUP></A>Bideoa, etab "
+#~ "ikusteko.)"
+
+#~ msgid "Secure Sockets Layer"
+#~ msgstr "Secure Sockets Layer"
+
+#~ msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
+#~ msgstr "(TLS/SSL v2/3) komunikazio seguru baterako 168bit-eraino"
+
+#~ msgid "OpenSSL"
+#~ msgstr "OpenSSL"
+
+#~ msgid "Bidirectional 16bit unicode support"
+#~ msgstr "Bidirectional 16bit unicode euskarria"
+
+#~ msgid "AutoCompletion for forms"
+#~ msgstr "Auto-osatzea inprimakietarako"
+
+#~ msgctxt "Title of an html 'group box' explaining konqueror features"
+#~ msgid "General"
+#~ msgstr "Orokorra"
+
+#~ msgid "Feature"
+#~ msgstr "Propietatea"
+
+#~ msgid "Details"
+#~ msgstr "Xehetasunak"
+
+#~ msgid "Image formats"
+#~ msgstr "Irudi formatuak"
+
+#~ msgid "PNG<br />JPG<br />GIF"
+#~ msgstr "PNG<br />JPG<br />GIF"
+
+#~ msgid "Transfer protocols"
+#~ msgstr "Transferentzi protokoloak"
+
+#~ msgid "HTTP 1.1 (including gzip/bzip2 compression)"
+#~ msgstr "HTTP 1.1 (gzip/bzip2 konpresioa barne)"
+
+#~ msgid "FTP"
+#~ msgstr "FTP"
+
+#, fuzzy
+#~| msgid "and <A HREF=\"%1\">many more...</A>"
+#~ msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpcenter)...</A>"
+#~ msgstr "eta <A HREF=\"%1\">asko gehiago...</A>"
+
+#~ msgctxt "A feature of Konqueror"
+#~ msgid "URL-Completion"
+#~ msgstr "URL osaketa"
+
+#~ msgid "Manual"
+#~ msgstr "Eskuz"
+
+#~ msgid "Popup"
+#~ msgstr "Laster-leihoa"
+
+#~ msgid "(Short-) Automatic"
+#~ msgstr "(Laburra-) Automatikoa"
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "<a href=\"%1\">Return to Starting Points</a>"
+#~ msgstr "<a href=\"%1\">Itzuli abiapuntuetara</a>"
+
+#~ msgid "Tips &amp; Tricks"
+#~ msgstr "Aholkuak eta mainak"
+
+#~ msgid ""
+#~ "Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, "
+#~ "using Google, for the search phrase \"KDE\". There are a lot of Web-"
+#~ "Shortcuts predefined to make searching for software or looking up certain "
+#~ "words in an encyclopedia a breeze. You can even <a href=\"%1\">create "
+#~ "your own</a> Web-Shortcuts."
+#~ msgstr ""
+#~ "Erabili web-gakohitzak: \"gg: KDE\" idatzita batek Interneten \"KDE\" "
+#~ "esaldia bilatu dezake, Google erabiliz. Web-lasterbide aurredefinitu asko "
+#~ "dago software bilatu edo enziklopedia batetan zenbait hitz bilatzea "
+#~ "erraza baino errazago izan dadin. Zuk <a href=\"%1\">zeure</a> web-"
+#~ "lasterbideak sor ditzakezu."
+
+#, fuzzy
+#~| msgid ""
+#~| "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> "
+#~| "in the toolbar to increase the font size on your web page."
+#~ msgid ""
+#~ "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
+#~ "the HTML toolbar to increase the font size on your web page."
+#~ msgstr ""
+#~ "Botoi handitzailea erabili <img width='16' height='16' src=\"%1\"></img> "
+#~ "tresna-barran zure web-orriaren letra-tipoaren handiera handitzeko."
+
+#~ msgid ""
+#~ "When you want to paste a new address into the Location toolbar you might "
+#~ "want to clear the current entry by pressing the black arrow with the "
+#~ "white cross <img width='16' height='16' src=\"%1\"></img> in the toolbar."
+#~ msgstr ""
+#~ "Kokapen tresna-barran helbide berri bat itsatsi nahi duzunean uneko "
+#~ "sarrera ezabatu nahi izan dezakezu tresna-barrako gurutze zuridun gezi "
+#~ "beltza <img width='16' height='16' src=\"%1\"></img>sakatuz."
+
+#, fuzzy
+#~| msgid ""
+#~| "To create a link on your desktop pointing to the current page, simply "
+#~| "drag the \"Location\" label that is to the left of the Location toolbar, "
+#~| "drop it on to the desktop, and choose \"Link\"."
+#~ msgid ""
+#~ "To create a link on your desktop pointing to the current page, simply "
+#~ "drag the icon (favicon) that is to the left of the Location toolbar, drop "
+#~ "it on to the desktop, and choose \"Icon\"."
+#~ msgstr ""
+#~ "Mahaigainean uneko orrialdea erakusten duen esteka bat sortzeko, kokapen "
+#~ "tresna-barraren ezkerrean dagoen \"Kokapen\" etiketa arrastatu, "
+#~ "mahaigainean jaregin, eta hautatu \"Estekatu\"."
+
+#~ msgid ""
+#~ "You can also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen "
+#~ "Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
+#~ "sessions."
+#~ msgstr ""
+#~ "Baita ere <img width='16' height='16' src=\"%1\" /> \"Pantaila osoko era"
+#~ "\" leiho menuan. Ezaugarri hau baliagarria da oso \"Hitz egin\" aldietan."
+
+#~ msgid ""
+#~ "Divide et impera (lat. \"Divide and conquer\") - by splitting a window "
+#~ "into two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> "
+#~ "Split View Left/Right) you can make Konqueror appear the way you like. "
+#~ "You can even load some example view-profiles (e.g. Midnight Commander), "
+#~ "or create your own ones."
+#~ msgstr ""
+#~ "Divide et impera (lat. \"Banatu eta agindu\") - Leiho bat bi zatitan "
+#~ "banatzeaz (adibidez Leiho -> <img width='16' height='16' src=\"%1\" /> "
+#~ "Zatitu ikuspegia ezkerra/eskuina) Konqueror zuk nahi duzun bezala "
+#~ "agertzea lor dezakezu. Bai eta zenbait ikuspegi-profilak karga ditzakezu "
+#~ "ere (ad. Midnight Commander), edo zeure berriak sortu."
+
+#~ msgid ""
+#~ "Use the <a href=\"%1\">user-agent</a> feature if the website you are "
+#~ "visiting asks you to use a different browser (and do not forget to send a "
+#~ "complaint to the webmaster!)"
+#~ msgstr ""
+#~ "Erabili <a href=\"%1\">erabiltzaile-agentea</a> ezaugarriai bisitatzen "
+#~ "ari zaren web-orriak beste nabigatzailea eskatzen badizu (eta ez ahaztu "
+#~ "webmasterari kexa bildaltzea)"
+
+#, fuzzy
+#~| msgid ""
+#~| "The <img width='16' height='16' src=\"%1\"></img> History in your "
+#~| "SideBar ensures that you can keep track of the pages you have visited "
+#~| "recently."
+#~ msgid ""
+#~ "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
+#~ "ensures that you can keep track of the pages you have visited recently."
+#~ msgstr ""
+#~ "Zure <img width='16' height='16' src=\"%1\"></img> alboko barrako "
+#~ "historiak orain dela gutxi bisitatu dituzun orriak gogora ditzakezula "
+#~ "ziurtatzen du."
+
+#~ msgid ""
+#~ "Use a caching <a href=\"%1\">proxy</a> to speed up your Internet "
+#~ "connection."
+#~ msgstr ""
+#~ "Erabili <a href=\"%1\">Proxy</a> cachearekin zure Internet konexioa "
+#~ "bizkortzeko."
+
+#~ msgid ""
+#~ "Advanced users will appreciate the Konsole which you can embed into "
+#~ "Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
+#~ "Terminal Emulator)."
+#~ msgstr ""
+#~ "Erabiltzaile adituek estimatuko dute Konquerorren txertatu dezakezun "
+#~ "Konsole (Ezarpenak -> <img width='16' height='16' src=\"%1\"></img> "
+#~ "Erakutsi terminal emuladorea)."
+
+#~ msgid "Next: Specifications"
+#~ msgstr "Hurrengoa: Xehetasunak"
+
+#~ msgid "Installed Plugins"
+#~ msgstr "Instalatutako pluginak"
+
+#~ msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
+#~ msgstr "<td>Plugina</td><td>Azalpena</td><td>Fitxategia</td><td>Motak</td>"
+
+#~ msgid "Installed"
+#~ msgstr "Instalatuta"
+
+#~ msgid ""
+#~ "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
+#~ msgstr ""
+#~ "<td>Mime mota</td><td>Azalpena</td><td>Atzizkiak</td><td>Plugina</td>"
+
+#~ msgid ""
+#~ "Do you want to disable showing the introduction in the webbrowsing "
+#~ "profile?"
+#~ msgstr "Webarakatze profilan sarrera erakustea desgaitu nahi duzu?"
+
+#~ msgid "Faster Startup?"
+#~ msgstr "Abiaraztea bizkorrago?"
+
+#~ msgid "Disable"
+#~ msgstr "Desgaitu"
+
+#~ msgid "Keep"
+#~ msgstr "Mantendu"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Marcos , Ion Gaztañaga, Iñigo Salvador Azurmendi"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "marcos@euskalgnu.org, igaztanaga@gmail.com, xalba@euskalnet.net"
+
+#~ msgid "&File"
+#~ msgstr "&Fitxategia"
+
+#~ msgid "&Edit"
+#~ msgstr "&Editatu"
+
+#~ msgid "&View"
+#~ msgstr "&Ikusi"
+
+#~ msgid "&Go"
+#~ msgstr "&Joan"
+
+#~ msgid "&Settings"
+#~ msgstr "&Ezarpenak"
+
+#~ msgid "&Window"
+#~ msgstr "&Leihoa"
+
+#~ msgid "&Help"
+#~ msgstr "&Laguntza"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Tresnabarra nagusia"
+
+#~ msgid "Extra Toolbar"
+#~ msgstr "Tresnabarra gehigarria"
+
+#~ msgid "Location Toolbar"
+#~ msgstr "Kokapen trena-barra"
+
+#~ msgid "Bookmark Toolbar"
+#~ msgstr "Liburu-marka tresnabarra"
+
+#~ msgid "Save open tabs and windows for easy retrieval"
+#~ msgstr "Gorde irekitako fitxa eta leihoak erraz berreskuratzeko"
+
+#~ msgid "&Session name:"
+#~ msgstr "&Saio izena:"
+
+#~ msgid "&Profile name:"
+#~ msgstr "&Profil izena:"
+
+#~ msgid "Save &URLs in profile"
+#~ msgstr "Gorde &URLak profilan"
+
+#~ msgctxt "@action:button New session"
+#~ msgid "New..."
+#~ msgstr "Berria..."
+
+#~ msgctxt "@action:button Save current session"
+#~ msgid "Save Current"
+#~ msgstr "Gorde unekoa"
+
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename..."
+#~ msgstr "Berrizendatu..."
+
+#~ msgctxt "@action:button Delete session"
+#~ msgid "Delete"
+#~ msgstr "Ezabatu"
+
+#~ msgid "Open tabs inside current window"
+#~ msgstr "Ireki fitxak uneko leihoak"
+
+#~ msgid "Limits"
+#~ msgstr "Mugak"
+
+#~ msgid "URLs e&xpire after"
+#~ msgstr "URL-ak iraungi horrenbeste ondoren"
+
+#~ msgid "Maximum &number of URLs:"
+#~ msgstr "URL &kopuru handiena:"
+
+#~ msgid "Custom Fonts For"
+#~ msgstr "Honentzako tipografia pertsonalizatuak"
+
+#~ msgid "URLs newer than"
+#~ msgstr "Hau baino berriago diren URL-ak"
+
+#~ msgid "Choose Font..."
+#~ msgstr "Tipografia hautatu..."
+
+#~ msgid "URLs older than"
+#~ msgstr "Hau baino zaharrago diren URL-ak"
+
+#~ msgid ""
+#~ "Shows the number of times visited and the dates of the first and last "
+#~ "visits, in addition to the URL"
+#~ msgstr ""
+#~ "Bisitaldi kopurua eta lehen eta azken bisitaren datak erakusten ditu, URL-"
+#~ "az gain"
+
+#~ msgid "Detailed tooltips"
+#~ msgstr "Aholku zehatzak"
+
+#~ msgid "Clear History"
+#~ msgstr "Historia garbitu"
+
+#~ msgid ""
+#~ "This is the URL of the web page where Konqueror (as web browser) will "
+#~ "jump to when the \\\"Home\\\" button is pressed. When Konqueror is "
+#~ "started as a file manager, that button makes it jump to your local home "
+#~ "folder instead."
+#~ msgstr ""
+#~ "Hau da \\\"Etxea\\\" botoia sakatzen denean Konquerorrek (web arakatzaile "
+#~ "gisa) jauzi egingo duen web orrialdearen URL. Konqueror fitxategi "
+#~ "kudeatzaile gisa abiarazten denean berriz, botoi horrek zure bertako etxe "
+#~ "karpetara eramango zaitu."
+
+#~ msgid "Maximum number of Closed Items"
+#~ msgstr "Itxitako elementuen kopuru haundiena"
+
+#~ msgid ""
+#~ "This sets the maximum number of closed items that will be stored in "
+#~ "memory. This limit will not be surpassed."
+#~ msgstr ""
+#~ "Honek ezartzen du memorian gordeko den itxitako elementuen kopuru "
+#~ "haundiena. Muga hau ez da gaindituko."
+
+#~ msgid "Open folders in separate windows"
+#~ msgstr "Ireki karpetak leiho desberdinetan"
+
+#~ msgid ""
+#~ "If this option is checked, Konqueror will open a new window when you open "
+#~ "a folder, rather than showing that folder's contents in the current "
+#~ "window."
+#~ msgstr ""
+#~ "Aukera hau markatuta badago, Konquerorrek leiho berri bat zabalduko du "
+#~ "karpeta bat zabaltzen duzunean, edukia uneko leihoan erakutsi beharrean."
+
+#~ msgid "Show file tips"
+#~ msgstr "Erakutsi fitxategien iradokizunak"
+
+#~ msgid ""
+#~ "Here you can control if, when moving the mouse over a file, you want to "
+#~ "see a small popup window with additional information about that file"
+#~ msgstr ""
+#~ "Hemen kontrolatu dezakezu, sagua fitxategi baten gainetik pasatzean, "
+#~ "fitxategiari buruzko informazio osagarria erakusten duen leiho txiki bat "
+#~ "azaleratzea nahi duzun"
+
+#~ msgid "Show previews in file tips"
+#~ msgstr "Erakutsi aurreikuspenak fitxategiaren iradokizunetan"
+
+#~ msgid ""
+#~ "Here you can control if you want the popup window to contain a larger "
+#~ "preview for the file, when moving the mouse over it"
+#~ msgstr ""
+#~ "Hemen kontrolatu dezakezu azaleratzen den leihoak fitxategiarentzako "
+#~ "aurreikuspen haundiagoa izan dezan nahi duzun, sagua bere gainetik "
+#~ "pasatzean"
+
+#~ msgid "Show 'Delete' menu entries which bypass the trashcan"
+#~ msgstr ""
+#~ "Erakutsi 'Ezabatu' menu sarrerak zakarrontzira baizik gauzak zuzenean "
+#~ "ezabatzen dituena"
+
+#~ msgid ""
+#~ "Check this if you want 'Delete' menu commands to be displayed on the "
+#~ "desktop and in the file manager's menus and context menus. You can always "
+#~ "delete files when hidden by holding the Shift key while calling 'Move to "
+#~ "Trash'."
+#~ msgstr ""
+#~ "Markatu hau 'Ezabatu' menu komandoak mahaigaina edo fitxategi "
+#~ "kudeatzailearen menuetan edo testuinguru menuetan bistaratu daitezen nahi "
+#~ "baduzu. Ezkutuan daudenean, fitxategiak ezabatu ditzakezu 'Mugitu "
+#~ "zakarrontzira' deitu bitartean Maius tekla sakatuz."
+
+#~ msgid "Number of Open With items in the File menu"
+#~ msgstr "Fitxategi menuan 'Ireki honekin' elementu kopurua"
+
+#~ msgid "Standard font"
+#~ msgstr "Tipografia estandarra"
+
+#~ msgid "This is the font used to display text in Konqueror windows."
+#~ msgstr "Hau da Konqueror leihoetn testua erakusteko erabilitako tipografia."
+
+#~ msgid "Maximum number of history items per view"
+#~ msgstr "Ikuspegi bakoitzeko historia gai kopuru haundiena"
+
+#~ msgid "Ask confirmation for deleting a file."
+#~ msgstr "Eskatu berrespena fitxategi bat ezabatzeko."
+
+#~ msgid ""
+#~ "This option tells Konqueror whether to ask for a confirmation when you "
+#~ "delete a file without using the trash folder. Warning, deleted files can "
+#~ "not be recovered, so it is recommended to leave this confirmation enabled."
+#~ msgstr ""
+#~ "Aukera honek Konquerorri esaten dio fitxategi bat zakarrontzia erabili "
+#~ "gabe ezabatzeko berrespena eskatu behar duen. Abisua, ezabatutako "
+#~ "fitxategiak ezin dira berreskuratu, beraz berrespen hau gaituta uztea "
+#~ "gomendatzen da."
+
+#~ msgid "Ask confirmation for move to trash"
+#~ msgstr "Eskatu berrespena mugitu zakarrontzira egiteko"
+
+#~ msgid ""
+#~ "This option tells Konqueror whether to ask for a confirmation when you "
+#~ "move the file to your trash folder, from where it can be recovered very "
+#~ "easily."
+#~ msgstr ""
+#~ "Aukera honek Konquerorri esaten dio fitxategia zure zakarrontzi karpetara "
+#~ "mugitzeko, nondik oso erraz berreskuratu daitekeen, berrespena eskatu "
+#~ "behar duen."
+
+#~ msgid ""
+#~ "If true, when opening a session from within the sessions dialog the tabs "
+#~ "will be opened inside current window."
+#~ msgstr ""
+#~ "Baldin egia, saio elkarrizketatik saio bat zabaltzerakoan fitxak uneko "
+#~ "leihoan zabalduko dira."
+
+#~ msgid "Hide %1"
+#~ msgstr "Ezkutatu %1"
+
+#~ msgid "SideBar Test Plugin"
+#~ msgstr "Alboko barra testu plugina"
+
+#~ msgid "Bookmark This Location"
+#~ msgstr "Gehitu helbide hau laster-marketan"
+
+#~ msgid ""
+#~ "Malformed URL\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Gaizki osatutako URLa\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Protocol not supported\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Protokoloa ez da onartzen\n"
+#~ "%1"
+
+#~ msgid "Cannot create the find part, check your installation."
+#~ msgstr "Ezin da bilaketa zatia sortu, egiaztatu zure instalazioa."
+
+#~ msgid "My Bookmarks"
+#~ msgstr "Nere lastermarkak"
+
+#~ msgid "Preload for later use"
+#~ msgstr "Aurrekargatu gero erabiltzeko"

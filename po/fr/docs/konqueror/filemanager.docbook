@@ -1,0 +1,1434 @@
+<chapter id="filemanager">
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+&traducteurJoelleCornavin; &traducteurGerardDelafond;&traducteurLudovicGrossard; 
+</authorgroup
+> 
+
+<date
+>02/07/2012</date>
+<releaseinfo
+>&kde; 4.9</releaseinfo>
+</chapterinfo>
+
+<title
+>&konqueror;, le gestionnaire de fichiers</title>
+
+<sect1 id="dirfolders">
+<title
+>Dossiers et emplacements</title>
+<para
+>Sous &UNIX; et &Linux;, tous les dossiers sont organisés en une simple hiérarchie. En partant d'un dossier de plus haut niveau (également appelé dossier racine), la structure descend et se ramifie en sous-dossiers et fichiers. Cela signifie que vous pouvez passer d'un dossier à l'autre en <quote
+>remontant</quote
+> dans l'arborescence jusqu'à ce vous atteigniez un point commun, puis <quote
+>redescendre</quote
+> via les sous-dossiers appropriés jusqu'à ce que vous parveniez à votre cible.</para>
+
+<para
+>La position de tout fichier ou dossier dans la structure (également appelée arborescence de dossiers) peut être décrite à l'aide de son <quote
+>emplacement</quote
+> (path), simple liste des dossiers que vous devriez parcourir pour parvenir au dossier ou au fichier cible. Par exemple, <filename class="directory"
+>/home/pam</filename
+> est le sous-dossier <filename class="directory"
+>pam</filename
+> du sous-dossier <filename class="directory"
+>home</filename
+> du dossier de plus haut niveau, et <filename
+> /home/pam/words.txt</filename
+> correspond au fichier <filename
+>words.txt</filename
+> contenu dans ce sous-dossier. Le <quote
+>/</quote
+> placé en tête de ces emplacements représente le dossier de plus haut niveau.</para>
+
+<para
+>Tous les dossiers accessibles à votre système &mdash; y compris ceux qui se trouvent sur d'autres partitions de disques durs, un périphérique USB ou &CD-ROM; &mdash; apparaîtront dans l'arborescence descendant de <quote
+>/</quote
+>. Leurs emplacements exacts dépendent de la manière dont votre système a été configuré (consultez également la section sur <link linkend="removable-devices"
+>Périphériques amovibles</link
+>). </para>
+<para
+>Tous les utilisateurs d'un système &UNIX; / &Linux; disposent de leur propre dossier <quote
+>home</quote
+> pour maintenir leurs fichiers et paramètres personnels, par exemple <filename class="directory"
+>/home/jean</filename
+> et <filename class="directory"
+>/home/marie</filename
+>. Le symbole <keycap
+>~</keycap
+> sert souvent à représenter le dossier personnel de l'utilisateur (home), de façon que <filename
+>~/lettre.txt</filename
+> désigne le fichier <filename
+>lettre.txt</filename
+> dans mon dossier utilisateur.</para>
+<para
+>Notez que le terme <quote
+>dossier</quote
+> est souvent utilisé à la place de <quote
+>répertoire</quote
+>.</para>
+</sect1>
+
+<sect1 id="viewmode">
+<title
+>Modes d'affichage</title>
+<para
+>En mode gestionnaire de fichiers, &konqueror; liste les fichiers et sous-dossiers contenus dans un dossier donné, et peut vous fournir des informations les concernant. L'<quote
+>emplacement</quote
+> du dossier actuel est montré dans la barre de localisation. La manière dont &konqueror; affiche les fichiers et les dossiers dépend surtout de votre choix en termes de mode d'affichage. Celui-ci peut être choisi dans le sous-menu <menuchoice
+><guimenu
+>Affichage</guimenu
+><guisubmenu
+>Type d'affichage</guisubmenu
+></menuchoice
+>. Les types d'affichage fournis par &konqueror; sont décrits ci-dessous. </para>
+
+<note
+><para
+>En mode gestionnaire de fichiers, &konqueror; incorpore un composant &dolphin;.</para
+></note>
+<!-- begin copy from dolphin docbook --> 
+<itemizedlist>
+
+<listitem
+><para
+>Dans la vue <guibutton
+>Icônes</guibutton
+>, le réglage par défaut, les fichiers sont représentés par une icône permettant de voir le type du fichier et une icône de dossier est affichée pour les sous-dossiers. Les noms des dossiers et des fichiers sont affichés en dessous des icônes. </para
+></listitem>
+
+<listitem
+><para
+>La vue <guilabel
+>compacte</guilabel
+> affiche le contenu du dossier sous forme d'icônes avec le nom à côté, groupées dans des colonnes similaires à <guilabel
+>l'affichage simple</guilabel
+> dans la boîte de dialogue de fichiers de &kde;. </para
+></listitem>
+
+<listitem
+><para
+>Dans la vue <guibutton
+>Détails</guibutton
+>, le contenu des dossiers est affiché sous la forme d'une liste détaillée comportant le nom, la taille et la date de la dernière modification de chaque élément. On peut ajouter des colonnes supplémentaires en cliquant sur un en-tête de colonne avec le &BDS;. </para>
+<para
+>Dans le menu contextuel de la ligne d'en-tête, vous pouvez choisir entre les largeurs de colonnes automatiques et personnalisées. Pour les largeurs automatiques, la largeur de toutes les colonnes est ajustée une seule fois, pour afficher entièrement l'élément le plus long dans la colonne, sauf pour la colonne <guilabel
+>Nom</guilabel
+> pour laquelle l'extension est remplacée par « ... ». </para>
+<para
+>L'ordre des colonnes peut être modifié par glisser-déposer des en-têtes de colonnes. </para>
+<para
+>La vue détail permet d'afficher le dossier actuel sous une forme arborescente si <guilabel
+>Dossiers expansibles</guilabel
+> est activé. Chaque sous-dossier du dossier actuel peut être <quote
+>développé</quote
+> ou <quote
+>réduit</quote
+> en cliquant sur l'icône <guiicon
+>&lt;</guiicon
+> ou <quote
+>v</quote
+> à côté de lui.</para>
+</listitem>
+</itemizedlist>
+
+<screenshot>
+<screeninfo
+>Vue groupée</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="grouping-view.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Vue groupée</phrase>
+</textobject>
+<caption
+><para
+>Tous les modes d'affichage prennent en change l'affichage par groupe trié par le type choisi dans <menuchoice
+><guimenu
+>Affichage</guimenu
+><guisubmenu
+>Trier par</guisubmenu
+></menuchoice
+>.</para
+></caption>
+</mediaobject>
+</screenshot>
+<!-- end copy from dolphin docbook --> 
+
+<sect2 id="filetipinfo">
+<title
+>Infos sur les fichiers</title>
+<para
+>En cochant la case <guilabel
+>Afficher les infobulles</guilabel
+> dans la page <menuchoice
+><guimenu
+>Gestion de fichiers</guimenu
+><guimenuitem
+>Général</guimenuitem
+></menuchoice
+> de la boîte de dialogue Configuration de &konqueror;, vous faites apparaître une petite fenêtre contextuelle d'informations lorsque le pointeur de la souris passe sur un nom de fichier ou de dossier ou sur une icône. </para>
+</sect2>
+
+<sect2 id="previews">
+<title
+>Aperçus des fichiers</title>
+<para
+>L'onglet <guilabel
+>Aperçus</guilabel
+> de la page de configuration <menuchoice
+><guimenu
+>Gestion de fichiers</guimenu
+><guimenuitem
+>Général</guimenuitem
+></menuchoice
+> permet d'activer l'aperçu des fichiers pour certains types de fichiers.</para>
+<para
+>Cela signifie généralement que l'icône du fichier sera remplacée par une image miniature montrant le contenu du fichier.</para>
+<para
+>Du fait que &konqueror; doit lire beaucoup plus de données que les simples nom des fichiers pour générer un aperçu, l'aperçu des fichiers peut ne pas être approprié lors de l'affichage de fichiers sur un système distant. Pour désactiver l'aperçu des fichiers distants pour lesquels la lecture de données supplémentaires prendrait trop de temps, réglez une taille de fichier limite en bas de l'onglet <guilabel
+>Aperçu</guilabel
+>.</para>
+</sect2>
+</sect1>
+
+<!-- begin copy from dolphin docbook --> 
+<sect1 id="view-properties">
+<title
+>Propriétés d'affichage des dossiers</title>
+
+<para
+>Les paramètres suivants contrôlent comment est affiché le contenu d'un dossier dans la vue de &kappname;, et sont mémorisés dossier par dossier par défaut : <itemizedlist
+> <listitem
+><para
+> Le mode d'affichage (icônes, compact, détails) </para
+></listitem
+> <listitem
+><para
+> Le tri des éléments, déterminé par l'ordre de tri (croissant, décroissant) et l'attribut (comme le nom, la taille...) selon lesquels les élément sont triés </para
+></listitem
+> <listitem
+><para
+> Le tri des dossiers et des fichiers &ndash; les dossiers sont-ils ou non affichés en premier lieu ? </para
+></listitem
+> <listitem
+><para
+> Les aperçus &ndash; sont-ils affichés ou non à la place des icônes (en fonction des paramètres définis dans l'onglet <link linkend="previews"
+><guilabel
+>Aperçus</guilabel
+> de &kappname; ?</link
+> </para
+></listitem
+> <listitem
+><para
+> Les éléments sont-ils affichés en groupes dans la vue en icônes ? </para
+></listitem
+> <listitem
+><para
+> Les fichiers cachés sont-ils affichés ? </para
+></listitem
+> <listitem
+><para
+> Quelles sont les informations supplémentaires (en plus du nom) affichées dans la vue en icônes ou détaillée ? </para
+></listitem
+> </itemizedlist
+> Les propriétés d'affichage peuvent être configurées dans le menu <menuchoice
+><guimenu
+>Affichage</guimenu
+></menuchoice
+>, on peut également en modifier certaines (comme le mode d'affichage) à l'aide des boutons de barres d'outils. </para>
+
+<sect2 id="view-properties-dialog">
+<title
+>La boîte de dialogue Propriétés d'affichage</title>
+
+<para>
+
+<screenshot>
+<screeninfo
+>Capture d'écran de la boîte de dialogue Propriétés d'affichage</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="viewproperties-dialog.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>La boîte de dialogue Propriétés d'affichage.</phrase>
+</textobject>
+<caption
+><para
+>La boîte de dialogue Propriétés d'affichage.</para
+></caption>
+</mediaobject>
+</screenshot>
+La boîte de dialogue <guilabel
+>Propriétés d'affichage</guilabel
+> permet de modifier rapidement plusieurs propriétés d'affichage à la fois. On peut le faire pour le dossier actuel, pour le dossier actuel y compris tous ses sous-dossiers, voire même pour tous les dossiers, en fonction des choix effectués dans la section <guilabel
+>Appliquer les propriétés d'affichage</guilabel
+>. </para>
+
+<para
+>Si l'option <guilabel
+>Utiliser ces propriétés d'affichage comme propriétés par défaut</guilabel
+> est cochée, les propriétés d'affichage choisies seront également employées pour tous les dossiers dont les propriétés ne sont pas encore personnalisées. </para>
+
+</sect2>
+
+</sect1>
+<!-- end copy from dolphin docbook -->
+
+<sect1 id="navigation">
+<title
+>Navigation</title>
+<para
+>Pour obtenir le fichier sous &konqueror;, explorez d'abord l'arborescence des dossiers pour trouver le dossier contenant ce fichier.</para>
+
+<para
+>Pour vous déplacer entre les dossiers, vous pouvez simplement monter et descendre dans l'arborescence :</para>
+
+<itemizedlist>
+<listitem
+><para
+>Pour descendre dans un sous-dossier, cliquez avec le &BGS; sur son nom ou son icône ou, si vous l'avez <quote
+>sélectionné</quote
+> (voir ci-après), appuyez simplement sur &Entree;.</para
+></listitem
+> 
+<listitem
+><para
+>Pour remonter dans l'arborescence, cliquez sur le bouton <guiicon
+>Dossier parent</guiicon
+> dans la barre d'outils, utilisez la combinaison de touches <keycombo action="simul"
+>&Alt;<keysym
+>Haut</keysym
+></keycombo
+> ou l'option <menuchoice
+><guimenu
+>Aller</guimenu
+><guimenuitem
+>Dossier parent</guimenuitem
+></menuchoice
+> de la barre de menus.</para
+></listitem>
+</itemizedlist>
+
+<para
+>Pour <quote
+>sélectionner</quote
+> un fichier ou un dossier dans le dossier affiché sans aucunement l'ouvrir, utilisez les touches fléchées <keysym
+>haut</keysym
+> et <keysym
+>bas </keysym
+> pour vous déplacer parmi les éléments. L'élément sélectionné sera mis en surbrillance et quelques informations le concernant s'afficheront dans la barre d'état. </para>
+
+<para
+>La définition du <link linkend="viewmode"
+>Type d'affichage</link
+> à <guimenuitem
+>Détails</guimenuitem
+> facilite le repérage des dossiers dans l'affichage arborescent situé sous le dossier actuel. Tous les dossiers affichés dans ce mode comportent une petite case placée à leur gauche. Si la case contient un signe <keycap
+>&gt;</keycap
+> un clic <mousebutton
+>gauche</mousebutton
+> sur celle-ci (ni sur le nom du dossier, ni sur l'icône) affiche une sous-arborescence montrant tous les fichiers et sous-dossiers contenus dans ce dossier. Puis, la petite case se transforme et présente un signe <keycap
+>v</keycap
+>. Cliquer avec le bouton <mousebutton
+>gauche</mousebutton
+> sur celui-ci réduit la sous-arborescence. Lorsque vous avez trouvé le dossier que vous recherchez, cliquez avec le &BGS; sur le nom ou l'icône du dossier pour l'ouvrir.</para>
+
+<para
+>La <link linkend="sidebar"
+>barre latérale</link
+> peut également vous aider à vous orienter dans le système de fichiers.</para>
+
+<para
+>Vous pouvez aller directement vers n'importe quel dossier en saisissant son emplacement dans la fenêtre de la barre d'emplacement ou dans la boîte de dialogue qu'exécute l'élément de menu <menuchoice
+><guimenu
+>Fichier</guimenu
+><guimenuitem
+>Ouvrir un emplacement</guimenuitem
+></menuchoice
+>, ou à l'aide de <keycombo action="simul"
+>&Alt;<keycap
+> O</keycap
+></keycombo
+>. La fonction <link linkend="path-complete"
+> de complètement automatique de texte</link
+> de &konqueror; peut également être utile pour ce faire. N'oubliez pas que les noms de fichiers et de dossiers sont sensibles à la casse (majuscules/minuscules) sous &Linux; / &UNIX;.</para>
+
+<para
+>Après vous être déplacé vers un nouveau dossier, vous pouvez revenir à votre choix précédent à l'aide du bouton de barre d'outils <guiicon
+>Précédent</guiicon
+>, de l'élément de menu <menuchoice
+><guimenu
+>Aller</guimenu
+><guimenuitem
+>Précédent</guimenuitem
+></menuchoice
+>, ou <keycombo action="simul"
+>&Alt;<keysym
+>Gauche</keysym
+></keycombo
+>. Une fois que vous êtes revenu en arrière, vous pouvez avancer de nouveau. utiliser le bouton de barre d'outils <guiicon
+>Suivant</guiicon
+>, l'élément de barre de menu <menuchoice
+><guimenu
+>Aller</guimenu
+><guimenuitem
+>Suivant</guimenuitem
+></menuchoice
+> ou <keycombo action="simul"
+>&Alt;<keysym
+>Droite</keysym
+></keycombo
+>.</para>
+
+<para
+>Vous pouvez également choisir d'aller dans le dossier parent en cliquant sur <guiicon
+>Dossier parent</guiicon
+> dans la barre d'outils, en utilisant l'élément de menu <menuchoice
+><guimenu
+>Aller</guimenu
+><guimenuitem
+>Dossier parent</guimenuitem
+></menuchoice
+>, ou <keycombo action="simul"
+>&Alt;<keysym
+>Haut</keysym
+></keycombo
+>.</para>
+
+<tip
+><para
+>Cliquer sur la coche à droite des boutons <guiicon
+>Dossier parent</guiicon
+>, <guiicon
+>Précédent</guiicon
+> ou <guiicon
+>Suivant</guiicon
+> de la barre d'outils, ou sélectionner ces éléments dans le menu <guimenu
+>Aller</guimenu
+> fait apparaître un sous-menu des emplacements récemment visités.</para>
+</tip>
+<!-- 4.5 -->
+<sect2 id="file-find">
+<title
+>Recherche de fichiers et de dossiers</title>
+
+<para
+>Si vous ne savez pas ou n'arrivez pas à vous rappeler où un fichier ou un dossier se trouve sur votre système, utilisez le bouton de barre d'outils <guiicon
+>Chercher</guiicon
+> ou l'option de barre de menus <menuchoice
+><guimenu
+>Outils</guimenu
+><guimenuitem
+>Chercher</guimenuitem
+></menuchoice
+>. Cette action démarre l'application de recherche de fichiers &kfind;. Consultez le <ulink url="help:/kfind/index.html"
+>manuel de &kfind;</ulink
+> pour une aide sur l'utilisation de &kfind;. </para>
+
+<note
+><para
+>Si le nom d'un fichier ou d'un dossier commence par un point, il s'agit d'un fichier ou d'un dossier <quote
+>caché</quote
+>, et en principe &konqueror; ne l'affiche pas. Pour voir les fichiers ou les dossiers cachés, utilisez l'option de barre de menus <menuchoice
+> <guimenu
+>Affichage</guimenu
+><guimenuitem
+>Afficher les fichiers cachés</guimenuitem
+> </menuchoice
+>..</para>
+
+<para
+>Une autre raison explique que &konqueror; peut ne pas afficher le fichier ou le dossier que vous cherchez lorsque vous êtes censé avoir défini le module graphique <link linkend="konq-plugin"
+><guisubmenu
+> Afficher un filtre</guisubmenu
+></link
+> pour n'afficher que certains types de fichiers.</para>
+</note>
+
+</sect2>
+
+<sect2 id="removable-devices">
+<title
+>Périphériques amovibles</title>
+
+<para
+>Tout périphérique amovible (clé USB, lecteur de disquette, de &CD; ou autre partition de disque dur présent sur votre système apparaît d'ordinaire dans le dossier <filename class="directory"
+>/</filename
+>, <filename class="directory"
+>/media</filename
+>, <filename class="directory"
+>/mnt</filename
+> ou <filename class="directory"
+>/auto</filename
+>, avec un emplacement comme <filename class="directory"
+>/mnt/floppy</filename
+> ou <filename class="directory"
+>/cdrom</filename
+>. Les détails dépendent de la manière dont votre système a été configuré.</para>
+
+<para
+>&UNIX;/&Linux; exige le montage via la commande <command
+>mount</command
+> d'un périphérique amovible lors de son insertion dans le lecteur correspondant, et le montage via la commande <command
+>mount</command
+> d'autres partitions de disques durs pour pouvoir y accéder. Le démontage d'un périphérique amovible est également nécessaire avant son retrait pour signaler qu'il n'est plus accessible.</para>
+
+<para
+>L'exécution de cette opération dépend de la configuration de votre système :</para>
+
+<itemizedlist>
+
+<listitem
+><para
+>Utilisation du <guilabel
+>Notificateur de périphérique</guilabel
+></para>
+<para
+>Dans une session &kde;, la fenêtre du <ulink url="help:/plasma-desktop/index.html#device-notifier"
+>Notificateur de périphérique</ulink
+> apparaît lorsque vous insérez un périphérique amovible, et vous permet soit de choisir l'application appropriée pour ce périphérique, soit de le monter.</para>
+</listitem>
+
+<listitem
+><para
+>Il est possible que vous ayez des icônes pour les périphériques amovibles sur votre bureau, auquel cas un clic avec le &BGS; sur l'icône correspondante en effectue le montage. Ce faisant, une fenêtre &konqueror; devrait apparaître, montrant le contenu du périphérique. Pour libérer, cliquez avec le &BDS; sur l'icône et choisissez l'élément <guimenuitem
+>Libérer</guimenuitem
+>. Consultez la section <link linkend="making"
+>Nouveau...</link
+> pour savoir comment créer une telle icône.</para
+></listitem>
+
+<listitem
+><para
+>Vous pouvez utiliser la méthode traditionnelle, en saisissant dans une console en mode texte :</para>
+<para
+><userinput
+><command
+>mount /mnt/floppy</command
+></userinput
+></para>
+<para
+>pour monter, par exemple, le lecteur de disquette et</para>
+<para
+><userinput
+><command
+>umount /mnt/floppy</command
+></userinput
+></para>
+<para
+>pour le libérer (<command
+>umount</command
+>, et non <command
+>unmount</command
+>). </para>
+<note
+><para
+>Plutôt que d'avoir à ouvrir une console de texte pour saisir les commandes <command
+>mount</command
+> ou <command
+>umount</command
+>, vous pouvez préférer utiliser la fonction <menuchoice
+><guimenu
+>Outils</guimenu
+><guimenuitem
+>Exécuter...</guimenuitem
+></menuchoice
+> de &konqueror; (<keycombo action="simul"
+>&Ctrl;<keycap
+>E</keycap
+></keycombo
+>). </para
+></note>
+
+</listitem>
+
+</itemizedlist>
+</sect2>
+
+</sect1>
+<!-- 4.5-->
+<sect1 id="deleting">
+<title
+>Suppression de fichiers et de dossiers</title>
+
+<para
+>&konqueror; vous propose deux méthodes pour supprimer un fichier ou un dossier indésirable :</para>
+
+<itemizedlist>
+<listitem
+><para
+>Vous pouvez le déplacer vers le dossier <filename
+>Corbeille</filename
+>, ce qui est la méthode la plus sûre pour le retrouver si vous vous êtes trompé.</para
+></listitem
+> 
+
+<listitem
+><para
+>Vous pouvez simplement le supprimer, ce qui retire l'entrée du dossier et ajoute l'espace disque occupé par le(s) fichiers(s) à la liste des zones libres du système, de la même façon que la commande <command
+>rm</command
+>.</para>
+<para
+>Si vous souhaitez utiliser cette caractéristique, cochez l'option <guilabel
+>Afficher dans le menu l'action « Supprimer » ignorant la corbeille</guilabel
+> dans la page de configuration <guilabel
+>Gestion de fichiers</guilabel
+>.</para
+></listitem>
+</itemizedlist>
+
+<para
+>La manière la plus simple de supprimer un fichier ou un dossier consiste à positionner le pointeur de la souris sur son nom ou son icône et à cliquer avec le &BDS;, ce qui ouvre un menu contextuel contenant les options <guimenuitem
+>Mettre à la corbeille</guimenuitem
+>, <guimenuitem
+>Supprimer</guimenuitem
+>.</para>
+
+<para
+>Ou, si vous avez <quote
+>choisi</quote
+> l'élément, le menu <guimenu
+>Édition</guimenu
+> vous donne le choix entre les options <quote
+><guimenuitem
+>Mettre à la corbeille</guimenuitem
+></quote
+> et <quote
+><guimenuitem
+>Supprimer</guimenuitem
+></quote
+>.</para>
+
+<para
+><keycap
+>Suppr</keycap
+> déplacera le ou les éléments sélectionnés vers la corbeille.</para>
+
+<para
+><keycombo action="simul"
+>&Maj;<keycap
+>Suppr</keycap
+></keycombo
+> supprimera réellement et irrémédiablement le ou les éléments sélectionnés.</para>
+
+<note
+><para
+>Vous ne serez pas en mesure de supprimer un fichier ou un dossier si vous ne disposez pas des permissions nécessaires.</para
+></note>
+
+</sect1>
+<!-- 4.5-->
+<sect1 id="moving">
+<title
+>Déplacement et copie</title>
+
+<para
+>Pour copier un fichier ou un sous-dossier d'un dossier à l'autre, vous pouvez :</para>
+
+<itemizedlist>
+<listitem
+><para
+>Positionner le pointeur de la souris sur son nom ou son icône et cliquer avec le &BDS;, qui fera apparaître un menu contextuel contenant l'option <guimenuitem
+>Copier</guimenuitem
+>. Choisissez cette option.</para>
+
+<para
+>Si l'élément est <quote
+>sélectionné</quote
+>, vous pouvez également utiliser le bouton <guiicon
+>Copier</guiicon
+> sur la barre d'outils, l'élément <menuchoice
+><guimenu
+>Édition</guimenu
+><guimenuitem
+>Copier</guimenuitem
+> </menuchoice
+> dans la barre de menus, ou la combinaison de touches de raccourci <keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+>. Vous pouvez également effectuer des sélections <link linkend="selection"
+>multiples</link
+> de fichiers ou de dossiers pour les copier ou les déplacer.</para
+></listitem>
+
+<listitem
+><para
+>Naviguer jusqu'au dossier dans lequel vous souhaitez copier l'élément, puis coller ce dernier dans le nouveau dossier à l'aide du bouton de barre d'outils <guiicon
+>Coller</guiicon
+>, de l'option de barre de menus <menuchoice
+><guimenu
+>Édition</guimenu
+><guimenuitem
+>Coller</guimenuitem
+></menuchoice
+> ou du raccourci <keycombo action="simul"
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+>. Vous pouvez également déplacer le pointeur de la souris vers une zone vide de la fenêtre, et en maintenant le &BDS; enfoncé, faire apparaître un menu contenant l'option <guimenuitem
+>Coller</guimenuitem
+>. </para
+></listitem>
+</itemizedlist>
+
+<para
+>Le déplacement d'un fichier ou d'un sous-dossier d'un dossier à l'autre peut s'effectuer de la même manière que la copie, sauf que vous choisirez l'option <guimenuitem
+>Couper</guimenuitem
+> ou <keycombo action="simul"
+>&Ctrl;<keycap
+>X</keycap
+></keycombo
+> au lieu de <guimenuitem
+>Copier</guimenuitem
+>. L'élément que vous avez <guimenuitem
+>Coupé</guimenuitem
+> sera supprimé du dossier d'origine lors de l'exécution du <guimenuitem
+>Coller</guimenuitem
+> dans le nouveau dossier.</para>
+
+<para
+>Vous pouvez également copier ou déplacer le(s) élément(s) choisi(s) vers un autre dossier en choisissant <guimenuitem
+>Copier vers</guimenuitem
+> ou <guimenuitem
+>Déplacer vers</guimenuitem
+> dans le menu contextuel que vous obtenez par un clic <mousebutton
+>droit</mousebutton
+> sur un nom de fichier ou de dossier dans la fenêtre du gestionnaire de fichiers.</para>
+<para
+>Pour activer cette caractéristique, choisissez <guilabel
+>Afficher les commandes « Copier vers » et « Déplacer vers »</guilabel
+> dans la page <menuchoice
+><guimenu
+>Gestion de fichiers</guimenu
+><guimenuitem
+>Services</guimenuitem
+></menuchoice
+>.</para>
+<note
+><para
+>Vous ne serez pas en mesure de copier ou de déplacer un dossier ou un fichier si vous ne disposez pas des permissions nécessaires. </para
+></note>
+<!-- 4.5-->
+<sect2 id="dnd">
+<title
+>Utilisation du glisser-déposer (<quote
+>Drag'n Drop</quote
+>)</title>
+
+<para
+>&konqueror; prend également en charge le glisser-déposer lors de la copie et du déplacement des fichiers et des dossiers.</para>
+
+<para
+>Vous devez pour ce faire disposer de deux instances de &konqueror;, l'une affichant le dossier à partir duquel vous désirez copier, l'autre affichant le dossier cible. Positionnez le pointeur de la souris sur l'élément que vous souhaitez copier ou déplacer puis, en maintenant le &BGS; enfoncé, <quote
+>glissez</quote
+> vers une zone vide du dossier cible. Relâchez le bouton et un menu apparaît, contenant les choix <guimenuitem
+>Copier ici</guimenuitem
+>, <guimenuitem
+>Déplacer ici</guimenuitem
+> ou <guimenuitem
+>Lier ici</guimenuitem
+>. Veillez à <quote
+>lâcher</quote
+> l'élément dans une zone vide de la vue du dossier cible. Le lâcher sur un autre sous-dossier copiera ou déplacera les éléments dans ce dossier.</para>
+
+<para
+>Vous pouvez également configurer &konqueror; de manière à ce qu'il affiche plusieurs dossiers dans la même fenêtre, puis glissez-déposez entre ces derniers.</para>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="dragdrop.png"/></imageobject>
+<textobject>
+<phrase
+>Scission des vues pour le glisser-déposer (Drag &amp; Drop)</phrase>
+</textobject>
+</mediaobject>
+
+<para
+>Cette copie d'écran illustre l'utilisation de l'option de barre de menus <menuchoice
+><guimenu
+>Fenêtre</guimenu
+><guimenuitem
+>Scinder la vue gauche/droite</guimenuitem
+></menuchoice
+> également accessible avec le raccourci <keycombo action="simul"
+>&Ctrl;&Maj;<keycap
+>L</keycap
+></keycombo
+> pour scinder la fenêtre principale de &konqueror; en deux vues montrant chacune le contenu d'un dossier différent.</para>
+
+<para
+>Pour être en mesure d'afficher différents dossiers dans chaque vue, il est préférable qu'elles ne soient pas liées. De même, les petites cases situées dans la partie inférieure droite de chaque vue doivent être vides. </para>
+
+<para
+>La vue <quote
+>active</quote
+>, qui correspond à celle dont le emplacement (path) est affiché dans la barre d'emplacement et répond aux commandes de navigation et de barre de menus, est signalée par la petite diode verte placée dans le coin inférieur gauche. Pour rendre une vue active, cliquez avec le &BGS; sur une zone vide de la vue ou sur sa barre d'état.</para>
+
+<para
+>Pour supprimer une vue active de la fenêtre de &konqueror;, utilisez le raccourci <keycombo action="simul"
+>&Ctrl;&Maj;<keycap
+>W</keycap
+></keycombo
+>, l'option de barre de menus <menuchoice
+><guimenu
+>Fenêtre</guimenu
+><guimenuitem
+>Fermer la vue active</guimenuitem
+></menuchoice
+> ou cliquez avec le &BDS; sur la barre d'état et choisissez l'option <guimenuitem
+>Fermer la vue active</guimenuitem
+> du menu obtenu.</para>
+
+<para
+>Si vous utilisez les onglets de &konqueror;, vous pouvez glisser-déposer entre les onglets en glissant le fichier sur le label de l'onglet, sans le relâcher tout de suite. L'onglet de destination apparaîtra au premier plan, vous permettant de continuer à glisser puis déposer le fichier.</para>
+
+</sect2>
+<!-- 4.5-->
+<sect2 id="dups">
+<title
+>Noms de fichiers ou de dossier en doublon</title>
+<para
+>Si vous tentez de coller un fichier ou un dossier dans un dossier contenant déjà un élément du même nom, &konqueror; fait apparaître une boîte de dialogue pour vous avertir que l'élément existe déjà. Vous pouvez choisir : </para>
+<itemizedlist>
+<listitem
+><para
+>d'annuler l'opération de collage par un clic sur le bouton <guibutton
+>Annuler</guibutton
+> ;</para
+></listitem>
+<listitem
+><para
+>de donner un autre nom à l'élément en cours de copie. Pour ce faire, saisissez un nouveau nom dans la zone de saisie du texte ou utilisez l'option <guibutton
+>Suggérer un nouveau nom</guibutton
+> de &konqueror;. Lorsque vous avez terminé, cliquez sur le bouton <guibutton
+>Continuer</guibutton
+>.</para
+></listitem>
+<listitem
+><para
+>Si vous avez copié plusieurs éléments, <guibutton
+>Ignorer</guibutton
+> l'élément actuel. </para
+></listitem>
+</itemizedlist>
+<para
+>Le bouton <guibutton
+>Appliquer à tous</guibutton
+> peut être utilisé si vous avez copié plusieurs éléments.</para>
+</sect2>
+</sect1>
+<!-- begin copy from dolphin docbook-->
+<!-- 4.5 -->
+<sect1 id="selection">
+<title
+>Sélectionner des éléments dans la vue</title>
+
+<para
+>Il existe plusieurs façons de sélectionner des éléments dans la vue. Dès l'instant où un groupe d'éléments est sélectionné, toutes les actions comme <menuchoice
+><guimenuitem
+>Couper</guimenuitem
+></menuchoice
+>, <menuchoice
+><guimenuitem
+>Copier</guimenuitem
+></menuchoice
+>, <menuchoice
+><guimenuitem
+>Mettre à la corbeille</guimenuitem
+></menuchoice
+>, ainsi que les opérations de glisser-déposer, affectent tous les éléments sélectionnés. </para>
+
+<sect2 id="selection-mouse">
+<title
+>Sélectionner des éléments à l'aide de la souris</title>
+
+<itemizedlist>
+
+<listitem
+><para
+>On peut cliquer avec le &BGS; quelque part dans la vue et tracer un rectangle autour d'un groupe d'éléments avant de relâcher le bouton. Cette action sélectionnera tous les éléments contenus dans le rectangle et effacera la sélection précédente. En appuyant sur la touche &Maj; pendant le processus de sélection, la sélection précédente est conservée. </para
+></listitem>
+
+<listitem
+><para
+>En appuyant sur la touche &Ctrl; alors qu'on a cliqué sur un élément avec le &BGS;, l'état de la sélection de cet élément est (dés)activé. Si l'on appuie sur la touche &Ctrl; alors qu'un rectangle est tracé autour d'un groupe d'éléments comme décrit ci-dessus, l'état de la sélection de tous les éléments contenus dans le rectangle sera (dés)activé. </para
+></listitem>
+
+<listitem
+><para
+>En appuyant sur la touche &Maj; alors qu'on a cliqué sur un élément avec le &BGS;, tous les éléments se trouvant entre l'élément actuel et l'élément cliqué seront sélectionnés. </para
+></listitem>
+
+<listitem
+><para
+>Si <guilabel
+>Afficher l'indicateur de sélection</guilabel
+> est activé dans l'onglet <guilabel
+>Comportement</guilabel
+> de la section de configuration <menuchoice
+><guimenu
+>Gestion de fichiers</guimenu
+><guimenuitem
+>Général</guimenuitem
+></menuchoice
+>, un petit bouton <guiicon
+>+</guiicon
+> ou <guiicon
+>-</guiicon
+> apparaît dans le coin en haut à gauche de l'élément actuellement survolé avec la souris. En cliquant sur le signe, l'élément sera sélectionné ou désélectionné, respectivement. </para
+></listitem>
+
+</itemizedlist>
+
+</sect2>
+
+<sect2 id="selection-keyboard">
+<title
+>Sélectionner des éléments à l'aide du clavier</title>
+
+<itemizedlist>
+
+<listitem
+><para
+>Si l'on appuie sur une touche fléchée, <keycap
+>Page préc</keycap
+>, <keycap
+>Page suiv</keycap
+>, <keycap
+>Début</keycap
+> ou <keycap
+>Fin</keycap
+>, le nouvel élément est sélectionné et la sélection précédente est effacée. </para
+></listitem>
+
+<listitem
+><para
+>Si l'on maintient la touche &Ctrl; enfoncée tout en appuyant sur les touches ci-dessus, la sélection reste inchangée. </para
+></listitem>
+
+<listitem
+><para
+>Si l'on maintient la touche &Maj; enfoncée tout en appuyant sur l'une des touches ci-dessus, tous les éléments se trouvant entre le précédent élément actuel et le nouvel élément actuel seront sélectionnés. </para
+></listitem>
+
+<listitem
+><para
+>Si l'on appuie sur <keycombo action="simul"
+>&Ctrl;<keysym
+>Espace</keysym
+></keycombo
+>, l'état de la sélection de l'élément actuel est (dés)activé. </para
+></listitem>
+
+<listitem
+><para
+><keycombo action="simul"
+>&Ctrl;<keycap
+>A</keycap
+></keycombo
+> sélectionne tous les éléments dans la vue. </para
+></listitem>
+
+<listitem
+><para
+><keycombo action="simul"
+>&Ctrl;&Maj;<keycap
+>A</keycap
+></keycombo
+> (dés)active l'état de la sélection de tous les éléments dans la vue. </para
+></listitem>
+
+</itemizedlist>
+
+</sect2>
+<!-- end copy from dolphin docbook-->
+
+<!-- selection-menu applies to dolphin as well copy over?-->
+<sect2 id="selection-menu">
+<title
+>Sélectionner des éléments à l'aide du menu</title>
+
+<para
+>Il peut vous arriver de vouloir supprimer, copier ou déplacer un certain nombre de fichiers présentant des similitudes. Par exemple, si vous désirez déplacer tous les fichiers d'images .png d'un dossier vers un autre, &konqueror; facilite les choses en permettant de choisir des fichiers multiples en fonction des similitudes de leurs noms.</para>
+
+<para
+>Utilisez l'élément de menu <menuchoice
+><guimenu
+>Édition</guimenu
+><guisubmenu
+>Sélection</guisubmenu
+><guimenuitem
+>Sélectionner les éléments correspondants...</guimenuitem
+></menuchoice
+> ou le raccourci <keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+>. Une petite boîte de dialogue s'ouvre, dans laquelle vous saisissez un nom de fichier contenant les caractères jokers <keycap
+>*</keycap
+> qui correspond à un nombre quelconque de caractères, et <keycap
+>?</keycap
+> qui correspond à un caractère exactement. Cliquez sur <guibutton
+>Ok</guibutton
+>, pour que &konqueror; surligne tous les noms correspondants. Par exemple :</para>
+      
+<itemizedlist>
+<listitem
+><para
+><userinput
+><filename
+>drapeau*.png</filename
+> </userinput
+> choisit tous les fichiers dont les noms commencent par les lettres <quote
+>drapeau</quote
+> et se terminent par <quote
+><literal role="extension"
+>.png</literal
+></quote
+> ;</para
+></listitem>
+<listitem
+><para
+><userinput
+><filename
+>memo?.txt</filename
+></userinput
+> choisit <filename
+>memo1.txt</filename
+> et <filename
+>memo9.txt</filename
+> mais pas <filename
+>memo99.txt</filename
+>.</para
+></listitem>
+</itemizedlist>
+
+<para
+>Lorsque vous avez choisi une série de fichiers, vous pouvez restreindre la sélection à l'aide de l'option de barre de menus <menuchoice
+><guimenu
+>Édition</guimenu
+><guisubmenu
+>Sélection</guisubmenu
+><guimenuitem
+>Désélectionner les éléments correspondants...</guimenuitem
+></menuchoice
+> pour spécifier lesquels parmi les fichiers choisis doivent être supprimés de la sélection.</para>
+
+<para
+>Utilisez l'option de barre de menus <menuchoice
+><guimenu
+>Édition</guimenu
+><guisubmenu
+>Sélection</guisubmenu
+><guimenuitem
+>Désélectionner tout</guimenuitem
+></menuchoice
+> ou cliquez simplement avec le &BGS; sur une zone vide pour annuler la sélection.</para>
+
+<para
+>Vous pouvez même inverser la sélection : c'est-à-dire désélectionner tous les fichiers choisis, et choisir ceux qui étaient précédemment désélectionnés. Utilisez l'option de barre de menus <menuchoice
+><guimenu
+>Édition</guimenu
+><guisubmenu
+>Sélection</guisubmenu
+><guimenuitem
+>Inverser la sélection</guimenuitem
+></menuchoice
+> ou <keycombo action="simul"
+>&Ctrl;&Maj;<keycap
+>A</keycap
+></keycombo
+> pour ce faire.</para>
+</sect2>
+
+</sect1>
+
+<!-- 4.5 -->
+<sect1 id="making">
+<title
+>Créer un nouveau</title>
+
+<para
+>Lorsque &konqueror; est en mode gestionnaire de fichiers, choisissez <guisubmenu
+>Créer un nouveau</guisubmenu
+> dans le menu <guimenu
+>Édition</guimenu
+> ou le menu contextuel qui s'ouvre avec le &BDS; dans une zone libre d'un dossier pour obtenir un sous-menu permettant de créer n'importe lequel des éléments suivants dans le dossier actuel :</para>
+
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Dossier...</guimenuitem
+></term>
+<listitem
+><para
+>Une manière facile de créer un nouveau (sous-)dossier.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Fichier texte...</guimenuitem
+></term>
+<listitem
+><para
+>Utilisez cette option pour créer un fichier de texte ordinaire, vide. Une boîte de dialogue s'ouvre pour que vous y écriviez le nom de votre nouveau fichier.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Fichier HTML...</guimenuitem
+></term>
+<listitem
+><para
+>Crée un squelette de fichier source <acronym
+>HTML</acronym
+>. Lorsque vous écrivez le nom du nouveau fichier dans la boîte de dialogue il est préférable de lui attribuer une extension <literal role="extension"
+>.html </literal
+> pour éviter toute confusion.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Document <replaceable
+>Type de document</replaceable
+>...</guimenuitem
+></term>
+<listitem
+><para
+>En fonction des applications installées et des associations de fichier, plusieurs éléments de menu pour les différents types de documents sont affichés, et vous permettent de créer un squelette de document du type choisi.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Lien vers un emplacement (URL)...</guimenuitem
+></term>
+<listitem
+><para
+>Cette option permet de créer une icône pour ouvrir &konqueror; à un dossier ou une page web en particulier. Comme avec <guimenuitem
+>Lien vers une application...</guimenuitem
+>, vous pouvez faire apparaître l'icône d'application sur votre bureau en créant le lien dans votre dossier <filename
+>~/Desktop</filename
+> ou en allant vers le sous-menu <guisubmenu
+>Créer un nouveau...</guisubmenu
+> à l'aide d'un clic droit sur une zone vide du bureau.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Lien de base vers un fichier ou un dossier...</guimenuitem
+></term>
+<listitem
+><para
+>crée un lien symbolique pour des fichiers ou dossiers locaux.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Nouveau lien vers une application...</guimenuitem
+></term>
+<listitem
+><para
+>Cette option est surtout utile si vous voulez créer une icône qui lance une application précise. Elle ouvre une boîte de dialogue comportant plusieurs pages à onglets. Le premier, <guilabel
+>Général</guilabel
+>, correspond à celui où vous choisissez une icône et le texte qui apparaît avec. La deuxième page, <guilabel
+>Droits d'accès</guilabel
+>, permet de choisir qui peut utiliser ou modifier l'icône. Dans la page <guilabel
+>Application</guilabel
+>, vous devez saisir la <guilabel
+>commande</guilabel
+> qui lance l'application, par exemple <userinput
+>kwrite</userinput
+> pour démarrer l'éditeur de texte &kwrite;. par exemple, <userinput
+>kwrite /home/pam/todo.txt</userinput
+> ouvrirait le fichier <filename
+>/home/pam/todo.txt</filename
+> dans &kwrite;. Des options avancées comme les types de fichiers que l'application peut ouvrir sont également disponibles depuis cette page.</para>
+
+<para
+>Pour faire apparaître l'icône de l'application sur votre bureau, créez le lien dans votre dossier <filename class="directory"
+>~/Desktop</filename
+> (ce nom peut varier légèrement en fonction du mode d'installation de &kde; sur votre système) ou allez vers le sous-menu <guisubmenu
+>Créer un nouveau...</guisubmenu
+> à l'aide d'un clic <mousebutton
+>droit</mousebutton
+> sur une zone vide du bureau au lieu de l'intérieur de la fenêtre de &konqueror;.</para>
+
+<para
+>Lorsque vous avez de nombreux liens spécialisés vers des applications et que vous ne souhaitez pas encombrer votre bureau, pourquoi ne pas les créer dans votre dossier Applications ? Pour ce faire, choisissez dans &konqueror; <menuchoice
+><guimenu
+>Aller</guimenu
+><guimenuitem
+>Applications</guimenuitem
+></menuchoice
+>. Créez ensuite une simple icône sur votre bureau pour ouvrir votre dossier Applications, habituellement situé dans <filename class="directory"
+>~/.local/share/applications</filename
+>.</para>
+<para
+>Pour placer une icône de lien vers une application dans le panneau, créez-la d'abord dans le dossier Applications, puis tirez l'icône vers une zone vide du panneau.</para>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guisubmenu
+>Lien vers un périphérique</guisubmenu
+></term>
+<listitem
+><para
+>Utilisez les options dans ce sous-menu pour créer une icône qui montera un périphérique, ouvrira une instance de &konqueror;, et affichera son contenu. Lorsque vous n'en avez plus besoin, libérez-le périphérique à l'aide d'un clic <mousebutton
+>droit</mousebutton
+> sur l'icône et choisissez <guimenuitem
+>Libérer</guimenuitem
+>. Cependant, dans la plupart des cas, n'oubliez pas de créer l'icône sur votre bureau. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+<!-- 4.5 -->
+<sect1 id="newname">
+<title
+>Changement des noms et des droits d'accès</title>
+
+<para
+>Les deux façons les plus simples pour changer le nom d'un fichier ou d'un dossier consiste soit à cliquer avec le bouton <mousebutton
+>droit</mousebutton
+> et à choisir <guimenuitem
+>Renommer</guimenuitem
+>, soit à sélectionner le fichier ou le dossier puis appyer sur la touche <keycap
+>F2</keycap
+>.</para>
+
+<para
+>Pour changer le nom ou les permissions d'un fichier ou d'un dossier, cliquez avec le bouton <mousebutton
+>droit</mousebutton
+> sur son nom ou sur l'icône et choisissez l'élément <guimenuitem
+>Propriétés</guimenuitem
+>. Si vous avez <quote
+>choisi</quote
+> le fichier ou le dossier, utilisez l'option de barre de menus <menuchoice
+><guimenu
+>Édition</guimenu
+> <guimenuitem
+>Propriétés</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+>&Alt;<keycap
+>Entrée</keycap
+></keycombo
+>).</para>
+
+<para
+>La boîte de dialogue Propriétés s'ouvre ainsi que plusieurs pages à onglets :</para>
+
+<itemizedlist>
+<listitem
+><para
+><guilabel
+>Général</guilabel
+>, qui donne des informations sur l'élément et permet de changer son nom et, pour un dossier, l'icône associée ;</para
+></listitem>
+<listitem
+><para
+><guilabel
+>Droits d'accès</guilabel
+>, qui montre le propriétaire et les droits d'accès de l'élément, et permet de changer les permissions. </para
+></listitem>
+</itemizedlist>
+<!-- 4.5 -->
+<sect2 id="copyrename">
+<title
+>Copie et renommage</title>
+<para
+>Si vous désirez faire une copie d'un fichier existant en lui donnant un autre nom -- éventuellement à titre de sauvegarde -- dans le même dossier que le fichier d'origine, exécutez un <guimenuitem
+>Copier</guimenuitem
+> normal puis, lorsque vous le <guimenuitem
+>Collez</guimenuitem
+>, une boîte de dialogue apparaît pour vous avertir que le fichier existe déjà. Saisissez simplement le nouveau nom dans la zone de liste de la boîte de dialogue et cliquez sur le bouton <guibutton
+>Continuer</guibutton
+> (ou, si vous êtes paresseux, par un clic sur le bouton <guibutton
+>Suggérer un nouveau nom</guibutton
+> qui en générera un nouveau à votre place).</para>
+</sect2>
+
+<!--sect2 id="super-user"
+> this is obsolete!
+<title
+>Super User Mode</title>
+
+<para
+>If you are running as a normal user and try to access files outside of
+your own home folder you will often be prevented from doing so and get an
+error message such as <errorname
+>Access Denied</errorname
+>. </para>
+
+<para
+>To access these files you need to be logged in as the system
+administrator, often known as the Super User or <systemitem class="username"
+>root</systemitem
+>. </para>
+
+<para
+>Rather than logging out then in again, you can launch &konqueror; from
+the
+<guimenu
+>K</guimenu
+> Menu in Super User mode by selecting
+<menuchoice
+><guisubmenu
+>System</guisubmenu
+><guimenuitem
+>File Manager - Super
+ User Mode
+</guimenuitem
+></menuchoice
+>. You will be asked for the <systemitem class="username"
+>root</systemitem>
+login password but as long as you can provide that &konqueror; will be started
+up with full access privileges to all files on your system.</para>
+
+<warning
+><para
+>Take care.  As Super User (<systemitem class="username"
+>root</systemitem
+>), you have complete control of
+your system, and a wrong command can easily do irrevocable damage.</para>
+<para
+>Also, connecting to the internet as <systemitem class="username"
+>root</systemitem
+> is an extremely bad idea, as it
+seriously increases your vulnerability to malicious hacking.</para
+></warning>
+
+</sect2-->
+</sect1>
+<!-- 4.5 -->
+<sect1 id="file-associations">
+<title
+>Configuration des associations de fichiers</title>
+
+<!-- TODO: The content should probably be here too, but this'll do for -->
+<!-- now. -->
+<para
+>&kde; fournit plusieurs applications qui peuvent ouvrir différents types de fichiers. La plupart du temps, la configuration par défaut fonctionnera sans problèmes, mais &konqueror; dispose d'un puissant système vous permettant de changer les applications utilisées pour ouvrir chaque type de fichier. Pour plus de détails, choisissez l'élément de menu <menuchoice
+><guimenu
+>Configuration</guimenu
+><guimenuitem
+>Configurer Konqueror...</guimenuitem
+></menuchoice
+>, puis <guilabel
+>Associations de fichiers</guilabel
+> dans la boîte de dialogue de configuration, et cliquez sur <guibutton
+>Aide</guibutton
+>.</para>
+
+</sect1>
+
+<!-- 4.5 -->
+<sect1 id="commandline">
+<title
+>Sur la ligne de commande</title>
+
+<para
+>Bien que &konqueror; soit un gestionnaire de fichiers dédié à l'interface graphique utilisateur (<acronym
+>GUI</acronym
+>), puissant et souple, l'utilisateur de &Linux; / &UNIX; souhaite parfois revenir aux concepts fondamentaux et travailler au niveau de la ligne de commande.</para>
+
+<para
+>Il pourrait, bien sûr, ouvrir une instance de &konsole;, éventuellement avec l'option de barre de menus de &konqueror; <menuchoice
+><guimenu
+>Outils</guimenu
+> <guimenuitem
+>Ouvrir un terminal</guimenuitem
+></menuchoice
+> ou avec <keycap
+>F4</keycap
+>.</para>
+<para
+>S'il souhaite uniquement lancer un programme ou afficher une &URL;, l'option <menuchoice
+><guimenu
+>Outils</guimenu
+><guimenuitem
+>Exécuter une commande…</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+>&Ctrl;<keycap
+>E</keycap
+></keycombo
+>) peut s'avérer plus aisée.</para>
+
+<para
+><menuchoice
+><guimenu
+>Outils</guimenu
+><guimenuitem
+>Exécuter une commande...</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+>&Ctrl; <keycap
+>E</keycap
+></keycombo
+>) ouvre une petite fenêtre de dialogue en ligne de commande dans laquelle vous pouvez saisir une commande telle que <userinput
+>ps -ax | grep kdeinit</userinput
+>. Du fait qu'elle ne gère pas toutes les fonctionnalités des caractères de contrôle du terminal, notez que des applications telles que <userinput
+>top</userinput
+> et <userinput
+> less</userinput
+> ne fonctionneront pas correctement, mais elle est immédiatement disponible sans le délai imposé lors du démarrage de &konsole;. </para>
+
+<para
+>Pour des opérations plus complexes, &konqueror; dispose d'une autre fonction très utile : l'option de barre de menus <menuchoice
+><guimenu
+>Configuration</guimenu
+> <guimenuitem
+>Afficher : Émulateur de terminal</guimenuitem
+></menuchoice
+>, qui ouvre une fenêtre de terminal en tant que nouvelle vue intégrée à de &konqueror;. Tant que l'icône de lien est visible dans le coin inférieur droit de chaque vue, le terminal suit tout changement de dossier que vous effectuez dans la vue normale du gestionnaire de fichiers.</para>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="cmndline.png"/></imageobject>
+<textobject>
+<phrase
+>Inclusion de l'émulateur de terminal</phrase>
+</textobject>
+</mediaobject>
+
+</sect1>
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

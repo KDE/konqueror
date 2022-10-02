@@ -1,0 +1,311 @@
+<chapter id="faq">
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>Δημήτριος</firstname
+><surname
+>Γλενταδάκης</surname
+><affiliation
+><address
+><email
+>dglent@gmail.com</email
+></address
+></affiliation
+><contrib
+>Μεταφραστής</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2010-10-24</date>
+<releaseinfo
+>&kde; 4.5</releaseinfo>
+</chapterinfo>
+
+<title
+>Συχνές ερωτήσεις</title>
+
+<qandaset>
+
+<!-- Link is dead, unfortunately. I suppose this is a more general thing anyway
+<qandaentry>
+<question
+><para
+>How can I browse web sites using non latin
+ scripts?</para
+></question>
+<answer
+><para
+>Detailed instructions can be found at <ulink
+url="http://www.konqueror.org/i18n.html"
+>http://www.konqueror.org/i18n.html</ulink
+></para
+></answer>
+</qandaentry>
+-->
+
+<qandaentry>
+<question
+><para
+>Μπορώ να εκτελέσω τον &konqueror; από έναν άλλο διαχειριστή παραθύρων;</para
+></question>
+
+<answer
+><para
+>Απλά εγκαταστήστε τα &Qt;, kdelibs και kdebase, και εκτελέστε τον &konqueror; από τον αγαπημένο σας διαχειριστή παραθύρων. Θα πρέπει να δουλέψει μια χαρά, αλλά αν όχι (οι προγραμματιστές του &kde; δεν δοκιμάζουν συχνά αυτή την περίπτωση), και στείλτε μια αναφορά στο <ulink url="http://bugs.kde.org"
+>http://bugs.kde.org</ulink
+> και δοκιμάστε να εκτελέσετε <application
+>kdeinit</application
+> πριν την εκτέλεση του &konqueror;, συνήθως βοηθά.</para
+></answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Που αποθηκεύει ο &konqueror; τις ρυθμίσεις του;</para
+></question>
+<answer
+><para
+>Γενικά στο φάκελο <filename
+>~/.kde</filename
+> (Μπορεί να είναι <filename
+>~/.kde4</filename
+> στο σύστημά σας, εξαρτάται από τον τρόπο εγκατάστασης του &kde;). Μην τροποποιήσετε αυτά τα αρχεία εκτός και γνωρίζετε ακριβώς τι κάνετε.</para>
+
+<itemizedlist>
+
+<listitem
+><para
+>Ο φάκελος <filename class="directory"
+>~/.kde/share/apps/konqueror/profiles</filename
+> αποθηκεύονται τα αρχεία που περιέχουν ρυθμίσεις για κάθε <link linkend="save-settings"
+>προφίλ</link
+> σας.</para
+></listitem>
+
+<listitem
+><para
+>Οι σελιδοδείκτες σας αποθηκεύονται στο αρχείο <filename class="directory"
+>~/.kde/share/apps/konqueror/bookmarks.xml</filename
+></para
+></listitem>
+<listitem
+><para
+>Τα cookies αποθηκεύονται στο αρχείο <filename class="directory"
+>~/.kde/share/apps/kcookiejar/cookies</filename
+></para
+></listitem>
+<listitem
+><para
+>Το ιστορικό, που χρησιμοποιείται και για το χαρακτηριστικό της αυτόματης συμπλήρωσης, είναι στο αρχείο <filename
+>~/.kde/share/config/konq_history</filename
+></para
+></listitem>
+
+<listitem
+><para
+>Στο φάκελο <filename class="directory"
+>~/.kde/share/config/</filename
+> και στα αρχεία <filename
+>konqiconviewrc</filename
+>, <filename
+>konqlistviewrc</filename
+> και <filename
+>konquerorrc</filename
+> αποθηκεύεται ένα ολόκληρο σύνολο ρυθμίσεων.</para
+></listitem>
+
+<listitem
+><para
+>Ο φάκελος <filename class="directory"
+>~/.kde/share/cache-<replaceable
+>όνομαυπολογιστή</replaceable
+>/http/</filename
+> περιέχει την λανθάνουσα μνήμη του περιηγητή.</para
+></listitem>
+
+<listitem
+><para
+>Η πλευρική μπάρα χρησιμοποιεί τα αρχεία και φακέλους στο <filename class="directory"
+>~/.kde/share/apps/konqsidebartng</filename
+> </para
+></listitem>
+</itemizedlist>
+
+<para
+>Όλες οι ρυθμίσεις προβολής φακέλου τοποθετούνται στο αρχείο <literal role="extension"
+>.directory</literal
+> σε κάθε φάκελο.</para
+></answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Πως μπορώ να διαγράψω το περιεχόμενο του αρχείου του ιστορικού; </para
+></question>
+<answer
+><para
+>Υπάρχουν δύο <quote
+>«ιστορικά»</quote
+></para>
+<itemizedlist>
+<listitem
+><para
+>Το ένα χρησιμοποιείται για την αυτόματη συμπλήρωση κειμένου στο πλαίσιο εισαγωγής της γραμμής εργαλείων τοποθεσίας. Για να το διαγράψετε πατήστε <mousebutton
+>δεξί</mousebutton
+> κλικ στο πλαίσιο εισαγωγής και επιλέξτε <guimenuitem
+>Καθαρισμός ιστορικού</guimenuitem
+>.</para>
+</listitem>
+<listitem
+><para
+>Το άλλο είναι η καταγραφή των τοποθεσιών που έχετε επισκεφτεί. Επιλέξτε την σελίδα ιστορικού στην πλευρική μπάρα, <mousebutton
+>δεξί</mousebutton
+> κλικ σε μια καταχώρηση και επιλέξτε <guimenuitem
+>Αφαίρεση καταχώρησης</guimenuitem
+> (<keycap
+>Del</keycap
+>) για να αφαιρέσετε μόνο αυτή την καταχώρηση ή <guimenuitem
+>Καθαρισμός ιστορικού</guimenuitem
+> για διαγραφή όλων των καταχωρήσεων.</para
+></listitem>
+</itemizedlist>
+<note
+><para
+>Μπορείτε επίσης να χρησιμοποιήσετε την εφαρμογή <application
+>Sweeper</application
+> από το άρθρωμα kdeutils το οποίο σας επιτρέπει τον καθαρισμό των cookies, favicons, ιστορικού ιστού και λανθάνουσας μνήμης, από τη συμπλήρωση εισαγωγών και πολιτικές ιστοσελίδων που έχετε επισκεφτεί.</para
+></note>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Πως ενεργοποιώ, απενεργοποιώ ή καθαρίζω τη λανθάνουσα μνήμη του περιηγητή;</para
+></question
+> <answer>
+<para
+>Αν επιλέξετε <menuchoice
+><guimenu
+>Περιήγηση</guimenu
+><guimenuitem
+>Λανθάνουσα μνήμη</guimenuitem
+> </menuchoice
+> από το μενού <menuchoice
+><guimenu
+>Ρυθμίσεις</guimenu
+><guimenuitem
+>Ρύθμιση του Konqueror...</guimenuitem
+></menuchoice
+>, θα εμφανιστεί το παράθυρο που σας επιτρέπει να απενεργοποιήσετε τη λανθάνουσα μνήμη, να την καθαρίσετε ή να ρυθμίσετε το μέγεθός της, και να αλλάξετε την πολιτική της.</para>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Πως μπορώ να αλλάξω τις τιμές των χρονικών ορίων που χρησιμοποιεί ο &konqueror; κατά την περιήγηση στον ιστό;</para
+></question
+> <answer>
+<para
+>Στο &systemsettings; στην κατηγορία <guilabel
+>Δίκτυο και συνδεσιμότητα</guilabel
+> στη σελίδα <menuchoice
+><guimenu
+>Ρυθμίσεις δικτύου</guimenu
+> <guimenuitem
+>Προτιμήσεις σύνδεσης</guimenuitem
+></menuchoice
+>.</para>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Πως μπορώ να ορίσω την <quote
+>αρχική</quote
+> σελίδα - τη σελίδα που φορτώνεται κατά την εκκίνηση;</para
+></question>
+<answer
+><para
+>Ο &konqueror; έχει έναν <guilabel
+>Προσωπικό φάκελο</guilabel
+> που χρησιμοποιείται στη λειτουργία διαχειριστή αρχείων και μια <guilabel
+>Αρχική σελίδα</guilabel
+> η οποία χρησιμοποιείται στη λειτουργία περιηγητή.</para>
+
+<para
+>Για να αλλάξετε αυτές τις ρυθμίσεις εκκινήστε <menuchoice
+><guimenu
+>Ρυθμίσεις</guimenu
+><guimenuitem
+>Ρύθμιση του Konqueror</guimenuitem
+><guilabel
+>Γενικά</guilabel
+></menuchoice
+>.</para>
+
+<para
+>Για να ορίσετε τη σελίδα εκκίνησης του &konqueror; στη λειτουργία διαχειριστή αρχείων επιλέξτε <guilabel
+>Εμφάνιση εισαγωγικής σελίδας</guilabel
+>, <guilabel
+>Εμφάνιση της αρχικής σελίδας μου</guilabel
+>, <guilabel
+>Εμφάνιση κενής σελίδας</guilabel
+> ή <guilabel
+>Εμφάνιση των σελιδοδεικτών μου</guilabel
+> από το κυλιόμενο μενού <guilabel
+>Όταν εκκινείται ο Konqueror</guilabel
+>.</para>
+
+<para
+>Στη λειτουργία περιηγητή ο  &konqueror; εκκινείται με την <guilabel
+>Αρχική σελίδα</guilabel
+>.</para>
+
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question
+><para
+>Δεν μπορώ να βρω την απάντηση στην ερώτησή μου εδώ.</para
+></question
+> 
+<answer>
+<para
+>Ρίξτε μια ματιά στο <ulink url="http://www.konqueror.org/faq.html"
+>http://www.konqueror.org/faq.html</ulink
+> ή <ulink url="http://www.konqueror.org/konq-java.html"
+>http://www.konqueror.org/konq-java.html</ulink
+>.</para>
+<para
+>Περισσότερες πληροφορίες μπορείτε να βρείτε στα <ulink url="http://forum.kde.org/"
+>φόρουμ της κοινότητας του KDE</ulink
+> ή στη σελίδα <ulink url="http://userbase.kde.org/Konqueror"
+>Konqueror KDE Userbase</ulink
+>.</para>
+</answer>
+</qandaentry>
+
+</qandaset>
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

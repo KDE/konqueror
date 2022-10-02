@@ -1,0 +1,99 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Serbian-Latin "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="performance" lang="&language;">
+<articleinfo>
+<title
+>Performanse</title>
+<authorgroup>
+<author
+><personname
+><firstname
+>Majk</firstname
+> <surname
+>Mekbrajd</surname
+></personname
+> &Mike.McBride.mail;</author>
+<othercredit role="translator"
+><firstname
+>Dragan</firstname
+><surname
+>Pantelić</surname
+><affiliation
+><address
+><email
+>falcon-10@gmx.de</email
+></address
+></affiliation
+><contrib
+>prevod</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>8. 11. 2016.</date>
+<releaseinfo
+>Programi KDE‑a 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Sistemske postavke</keyword>
+<keyword
+>performanse</keyword>
+<keyword
+>predučitavanje</keyword>
+</keywordset>
+</articleinfo>
+
+<sect1 id="sys-performance">
+<title
+>Postavke performansi</title>
+
+<para
+><application
+>K‑osvajač</application
+> koriste raznoliki korisnici na raznovrsnim računarima. Pod plaštom performansi, ovaj dijalog omogućava korisniku da podesi opcije koje mogu učiniti da se računar sa instaliranim <application
+>K‑osvajačem</application
+> odziva živahnije. </para>
+
+<sect2
+><title
+>Predučitavanje</title>
+<para
+>u podsekciji <guilabel
+>Predučitavanje</guilabel
+> vaga se između memorije i performansi.</para>
+
+<para
+><emphasis
+>Predučitavanjem</emphasis
+> se naziva učitavanje primerka <application
+>K‑osvajača</application
+> u memoriju pre nego što ga korisnik zaista pokrene. Pozitivan efekat je u tome što kad korisnik zatraži da se učita <application
+>K‑osvajač</application
+>, prozor se trenutačno pojavljuje, pošto je veći deo programa predučitan. Negativno je to što ovaj primerak <application
+>K‑osvajača</application
+> troši memoriju koja bi mogla poslužiti drugim programima. Podrazumevano, kad korisnik zatvori <application
+>K‑osvajač</application
+>, primerak se zapravo ne zatvara. Tako će naredno pokretanje <application
+>K‑osvajača</application
+> ponovo biti trenutačno.</para>
+
+<para
+>Poslednja kućica, <guilabel
+>Uvek održavaj jedan učitan primerak</guilabel
+>, govori da želite da uvek bude spreman jedan predučitan, ali neiskorišćen primerak <application
+>K‑osvajača</application
+>. Ova opcija će zapravo umanjiti performanse na nekim sistemima (naročito onima sa ograničenom fizičkom memorijom).</para>
+</sect2>
+</sect1>
+
+</article>

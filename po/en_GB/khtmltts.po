@@ -1,0 +1,61 @@
+# translation of khtmlkttsd.po to British English
+# Andrew Coles <andrew_coles@yahoo.co.uk>, 2004, 2005, 2010.
+# Malcolm Hunter <malcolm.hunter@gmx.co.uk>, 2006, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: khtmlkttsd\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2010-09-21 19:08+0100\n"
+"Last-Translator: Andrew Coles <andrew_coles@yahoo.co.uk>\n"
+"Language-Team: British English <kde-l10n-en_gb@kde.org>\n"
+"Language: en_GB\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: khtmltts.cpp:33
+#, kde-format
+msgid "&Speak Text"
+msgstr "&Speak Text"
+
+#. i18n: ectx: Menu (tools)
+#: khtmlttsplugin.rc:5
+#, kde-format
+msgid "&Tools"
+msgstr "&Tools"
+
+#. i18n: ectx: ToolBar (speechToolbar)
+#: khtmlttsplugin.rc:10
+#, kde-format
+msgid "Speech Toolbar"
+msgstr "Speech Toolbar"
+
+#~ msgctxt "@title:window"
+#~ msgid "Starting Jovie Text-to-Speech Service Failed"
+#~ msgstr "Starting Jovie Text-to-Speech Service Failed"
+
+#~ msgid "The D-Bus call say() failed."
+#~ msgstr "The D-Bus call say() failed."
+
+#~ msgctxt "@title:window"
+#~ msgid "D-Bus Call Failed"
+#~ msgstr "D-Bus Call Failed"
+
+#~ msgid "Starting KTTSD Failed"
+#~ msgstr "Starting KTTSD Failed"
+
+#~ msgid "You cannot read anything except web pages with this plugin."
+#~ msgstr "You cannot read anything except web pages with this plugin."
+
+#~ msgid "Cannot Read Source"
+#~ msgstr "Cannot Read Source"
+
+#, fuzzy
+#~ msgid "The D-Bus call supportsMarkup failed."
+#~ msgstr "The DCOP call supportsMarkup failed."
+
+#, fuzzy
+#~ msgid "The D-Bus call setText failed."
+#~ msgstr "The DCOP call setText failed."

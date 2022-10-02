@@ -1,0 +1,109 @@
+<chapter id="introduction">
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>Kernel</firstname
+><surname
+>Panic</surname
+><affiliation
+><address
+><email
+>rzhevskiy@mail.ru</email
+></address
+></affiliation
+><contrib
+> Перевод на русский</contrib
+></othercredit
+><othercredit role="reviewer"
+><firstname
+>Григорий</firstname
+><surname
+>Мохин</surname
+><affiliation
+><address
+><email
+>mok@kde.ru</email
+></address
+></affiliation
+><contrib
+> Редакция русского перевода</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>8 февраля 2010 г.</date>
+<releaseinfo
+>4.4</releaseinfo>
+</chapterinfo>
+
+<title
+>Обзор</title>
+
+<para
+><emphasis
+>&konqueror;</emphasis
+> является <link linkend="filemanager"
+>диспетчером файлов</link
+>; он позволяет выполнять как простые операции (копирование, перемещение), так и достаточно сложные, такие, как просмотр локальных и удалённых дисков. &konqueror; может отображать содержимое каталогов <link linkend="viewmode"
+>различными способами</link
+>, а также показывать мини-изображения файлов. &konqueror; позволяет легко определять и изменять свойства файлов и каталогов, а также запускать приложения одним нажатием кнопки мыши.</para>
+
+<para
+>В &kde; SC 4 &dolphin; является стандартным диспетчером файлов. Чтобы изменить стандартный компонент для просмотра папок, откройте <guimenu
+>Приложения по умолчанию</guimenu
+> в «Параметрах системы» и выберите &konqueror; в качестве диспетчера файлов.</para>
+
+<para
+><emphasis
+>&konqueror;</emphasis
+> как <link linkend="browser"
+>web-обозреватель</link
+> полностью совместим со стандартом <acronym
+>HTML</acronym
+> 4.01, а также имеет встроенную поддержку языка JavaScript (ECMA-262), <acronym
+>CSS</acronym
+> (каскадные таблицы стилей) и двунаправленного письма (арабский и иврит). Он позволяет запускать приложения &Java;, поддерживает <acronym
+>SSL</acronym
+> (использующийся для безопасного сообщения в Интернете), а также дополнительные модули &Netscape; (в частности для проигрывания &Flash;, &RealAudio; и &RealVideo;). Среди особых возможностей &mdash; автодополнение вводимого текста и адресов Интернета, импорт закладок из других обозревателей и открытие нескольких web-страниц в одном окне. </para>
+
+<para
+><emphasis
+>&konqueror;</emphasis
+> также прекрасно работает как полнофункциональный клиент <link linkend="ftp"
+>FTP</link
+>.</para>
+
+<para
+><emphasis
+>&konqueror;</emphasis
+> позволяет просматривать рисунки и документы, не запуская специальных приложений. Для этого он использует встраиваемые компоненты (KDE Parts) этих приложений: <application
+>Gwenview</application
+> &mdash; для просмотра изображений, &okular; &mdash; для просмотра файлов в форматах <acronym
+>PDF</acronym
+> и &PostScript;, компоненты различных приложений &koffice; &mdash; для соответствующих типов файлов. </para>
+
+<para
+>Во внешнем виде <emphasis
+>&konqueror;</emphasis
+> практически всё можно <link linkend="config"
+>изменить на свой вкус</link
+>: от стиля в целом, размера текста и значков до выбора только необходимых панелей инструментов и пунктов меню и даже назначения собственных клавиш быстрого вызова. Различные <link linkend="save-settings"
+>конфигурации</link
+> &konqueror; можно сохранить для последующего использования. </para>
+
+</chapter>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

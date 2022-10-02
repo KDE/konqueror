@@ -1,0 +1,3004 @@
+# translation of kget.po to Cymraeg
+# Penbwrdd yn Gymraeg.
+# Copyright (C) 2003, 2004 Free Software Foundation, Inc.
+# www.kyfieithu.co.uk<kyfieithu@dotmon.com>, 2003.
+# KD at KGyfieithu <kyfieithu@dotmon.com>, 2004.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kget\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2004-01-15 16:48+0000\n"
+"Last-Translator: KD at KGyfieithu <kyfieithu@dotmon.com>\n"
+"Language-Team: Cymraeg <cy@li.org>\n"
+"Language: cy\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.2\n"
+"\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: kget_plugin.cpp:56
+#, fuzzy, kde-format
+msgid "Download Manager"
+msgstr "Trefnydd Lawrlwytho"
+
+#: kget_plugin.cpp:62
+#, fuzzy, kde-format
+#| msgid "Show Drop &Target"
+msgid "Show Drop Target"
+msgstr "Dangos Tar&ged Ollwng"
+
+#: kget_plugin.cpp:69
+#, kde-format
+msgid "List All Links"
+msgstr "Rhestri Pob Cyswllt"
+
+#: kget_plugin.cpp:74
+#, fuzzy, kde-format
+#| msgid "List All Links"
+msgid "List Selected Links"
+msgstr "Rhestri Pob Cyswllt"
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No downloadable links were found."
+msgstr ""
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No Links"
+msgstr "Dim Cyswllt"
+
+#. i18n: ectx: Menu (tools)
+#: konqueror_kget_browser_integration.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr ""
+
+#, fuzzy
+#~ msgid "New Group"
+#~ msgstr "Plygell Ragosodedig"
+
+#, fuzzy
+#~ msgid "Network and Downloads"
+#~ msgstr "Nodi lawrlwythiadau rhannol"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Verification"
+#~ msgstr "Cyrchfan:"
+
+#, fuzzy
+#~ msgctxt "integration of KGet with other applications"
+#~ msgid "Integration"
+#~ msgstr "Cyfuno â Konqueror"
+
+#, fuzzy
+#~| msgid "Advanced"
+#~ msgctxt "Advanced Options"
+#~ msgid "Advanced"
+#~ msgstr "Uwch"
+
+#~ msgid "Advanced Options"
+#~ msgstr "Dewisiadau Uwch"
+
+#, fuzzy
+#~ msgid "Transfer Plugins"
+#~ msgstr "Agor trosglwyddiad:"
+
+#~ msgid "KGet"
+#~ msgstr "KGet"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/eil"
+
+#, fuzzy
+#~ msgctxt "start transfergroup downloads"
+#~ msgid "Start"
+#~ msgstr "Ail-&ddechrau"
+
+#, fuzzy
+#~ msgctxt "stop transfergroup downloads"
+#~ msgid "Stop"
+#~ msgstr "Wedi aros"
+
+#, fuzzy
+#~ msgid "KGet is downloading %1 file"
+#~ msgid_plural "KGet is downloading %1 files"
+#~ msgstr[0] "Trefnydd Lawrlwytho"
+#~ msgstr[1] "Trefnydd Lawrlwytho"
+
+#, fuzzy
+#~| msgid ""
+#~| "Error while writing file:\n"
+#~| "%1"
+#~ msgid "Error trying to get %1"
+#~ msgstr ""
+#~ "Gwall tra'n ysgrifennu i'r ffeil:\n"
+#~ " %1"
+
+#, fuzzy
+#~ msgid "Are you sure that you want to remove the group named %1?"
+#~ msgstr "A ydych yn sicr eich bod am ddileu'r trosglwyddiadau yma?"
+
+#, fuzzy
+#~ msgid "Remove Group"
+#~ msgstr "Plygell Ragosodedig"
+
+#, fuzzy
+#~ msgid "Are you sure that you want to remove the following groups?"
+#~ msgstr "A ydych yn sicr eich bod am ddileu'r trosglwyddiadau yma?"
+
+#, fuzzy
+#~ msgid "Remove groups"
+#~ msgstr "Plygell Ragosodedig"
+
+#, fuzzy
+#~ msgid "Download added"
+#~ msgstr "Parhäwyd â'r lawrlwythiad"
+
+#, fuzzy
+#~ msgid ""
+#~ "The file %1 already exists.\n"
+#~ "Overwrite?"
+#~ msgstr ""
+#~ "Mae'r ffeil gyrchfan\n"
+#~ " %1\n"
+#~ " eisioes yn bodoli.\n"
+#~ " A ydych am ei throsysgrifo?"
+
+#, fuzzy
+#~ msgid "My Downloads"
+#~ msgstr "Parhäwyd â'r lawrlwythiad"
+
+#, fuzzy
+#~ msgid "New Download"
+#~ msgstr "Trefnydd Lawrlwytho"
+
+#~ msgid ""
+#~ "Malformed URL:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "URL wedi'i gamffurfio:\n"
+#~ " %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URL, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "URL wedi'i gamffurfio:\n"
+#~ " %1"
+
+#, fuzzy
+#~ msgid "Download it again?"
+#~ msgstr "Trefnydd Lawrlwytho"
+
+#, fuzzy
+#~ msgid "Delete it and download again?"
+#~ msgstr "Trefnydd Lawrlwytho"
+
+#, fuzzy
+#~ msgid "File already downloaded. Download anyway?"
+#~ msgstr ""
+#~ "Yn cadw'r URL\n"
+#~ " %1 yn barod.\n"
+#~ " Lawrlwytho eto?"
+
+#, fuzzy
+#~| msgid "File Already exists"
+#~ msgid "File already exists"
+#~ msgstr "Ffeil yn Bodoli'n Barod"
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is a directory."
+#~ msgstr ""
+#~ "Ddim yn dileu\n"
+#~ " %1\n"
+#~ " gan ei fod yn gyfeiriadur."
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is not a local file."
+#~ msgstr ""
+#~ "Ddim yn dileu\n"
+#~ " %1\n"
+#~ " gan na'i fod yn ffeil lleol."
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Download completed"
+#~ msgstr "Lawrlwythiad wedi gorffen"
+
+#, fuzzy
+#~ msgid "Download started"
+#~ msgstr "Parhäwyd â'r lawrlwythiad"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Resolve"
+#~ msgstr "Agor Trosglwyddiad"
+
+#, fuzzy
+#~ msgid "KGet is now closing, as all downloads have completed."
+#~ msgstr "Lawrlwythiad wedi gorffen"
+
+#, fuzzy
+#~ msgid "The computer will now turn off, as all downloads have completed."
+#~ msgstr "Lawrlwythiad wedi gorffen"
+
+#, fuzzy
+#~ msgctxt "Shutting down computer"
+#~ msgid "Shutdown"
+#~ msgstr "Cau i lawr ymysgogol ynghyn"
+
+#, fuzzy
+#~ msgid ""
+#~ "The computer will now suspend to disk, as all downloads have completed."
+#~ msgstr "Lawrlwythiad wedi gorffen"
+
+#, fuzzy
+#~ msgid ""
+#~ "The computer will now suspend to RAM, as all downloads have completed."
+#~ msgstr "Lawrlwythiad wedi gorffen"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgctxt "Suspending computer"
+#~ msgid "Suspending"
+#~ msgstr "Yn Trefnlennu"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgctxt "abort the proposed action"
+#~ msgid "Abort"
+#~ msgstr "Wynebfath:"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Downloads completed"
+#~ msgstr "Lawrlwythiad wedi gorffen"
+
+#, fuzzy
+#~ msgctxt "file in a filesystem"
+#~ msgid "File"
+#~ msgstr "Agor &Ffeil"
+
+#, fuzzy
+#~ msgctxt "status of the download"
+#~ msgid "Status"
+#~ msgstr "Ail-&ddechrau"
+
+#, fuzzy
+#~| msgid " Size: %1 "
+#~ msgctxt "size of the download"
+#~ msgid "Size"
+#~ msgstr "Maint: %1"
+
+#, fuzzy
+#~ msgid "KGet Transfer"
+#~ msgstr "Agor trosglwyddiad:"
+
+#, fuzzy
+#~ msgctxt "the type of the hash, e.g. MD5"
+#~ msgid "Type"
+#~ msgstr "Math Ffeil"
+
+#~ msgid "Stalled"
+#~ msgstr "Wedi Seibio"
+
+#, fuzzy
+#~ msgid "Downloading...."
+#~ msgstr "Parhäwyd â'r lawrlwythiad"
+
+#, fuzzy
+#~| msgid "Delayed"
+#~ msgctxt "transfer state: delayed"
+#~ msgid "Delayed"
+#~ msgstr "Oediad"
+
+#, fuzzy
+#~| msgid "Stopped"
+#~ msgctxt "transfer state: stopped"
+#~ msgid "Stopped"
+#~ msgstr "Wedi aros"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgctxt "transfer state: aborted"
+#~ msgid "Aborted"
+#~ msgstr "Wynebfath:"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "transfer state: finished"
+#~ msgid "Finished"
+#~ msgstr "Wedi Gorffen"
+
+#, fuzzy
+#~ msgctxt "changing the destination of the file"
+#~ msgid "Changing destination"
+#~ msgstr "Agor &Cyrchfan"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgctxt "name of download"
+#~ msgid "Name"
+#~ msgstr "Enw"
+
+#, fuzzy
+#~ msgctxt "status of download"
+#~ msgid "Status"
+#~ msgstr "Ail-&ddechrau"
+
+#, fuzzy
+#~ msgctxt "progress of download"
+#~ msgid "Progress"
+#~ msgstr "Ymgom Gynnydd"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgctxt "speed of download"
+#~ msgid "Speed"
+#~ msgstr "Cyflymder"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgctxt "remaining time of download"
+#~ msgid "Remaining Time"
+#~ msgstr "Ams. yn Weddill"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "No download destination specified."
+#~ msgstr "Cyrchfan:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Invalid download destination specified."
+#~ msgstr "Cyrchfan:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Download destination is not writeable."
+#~ msgstr "Cyrchfan:"
+
+#, fuzzy
+#~| msgid "Malformed URL:\n"
+#~ msgid "Malformed URL."
+#~ msgstr "URL wedi'i gamffurfio:\n"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid "Malformed URL, protocol missing."
+#~ msgstr ""
+#~ "URL wedi'i gamffurfio:\n"
+#~ " %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid "Malformed URL, host missing."
+#~ msgstr ""
+#~ "URL wedi'i gamffurfio:\n"
+#~ " %1"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid ""
+#~ "Invalid download destination specified:\n"
+#~ "%1"
+#~ msgstr "Cyrchfan:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid ""
+#~ "Download destination is not writeable:\n"
+#~ "%1"
+#~ msgstr "Cyrchfan:"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URL, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "URL wedi'i gamffurfio:\n"
+#~ " %1"
+
+#, fuzzy
+#~ msgid "File already exists. Overwrite it?"
+#~ msgstr ""
+#~ "Mae'r ffeil gyrchfan\n"
+#~ " %1\n"
+#~ " eisioes yn bodoli.\n"
+#~ " A ydych am ei throsysgrifo?"
+
+#, fuzzy
+#~ msgid ""
+#~ "File already exists:\n"
+#~ "%1\n"
+#~ "Overwrite it?"
+#~ msgstr ""
+#~ "Mae'r ffeil gyrchfan\n"
+#~ " %1\n"
+#~ " eisioes yn bodoli.\n"
+#~ " A ydych am ei throsysgrifo?"
+
+#, fuzzy
+#~| msgid "Malformed URL:\n"
+#~ msgid "Malformed URLs."
+#~ msgstr "URL wedi'i gamffurfio:\n"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid "Malformed URLs, protocol missing."
+#~ msgstr ""
+#~ "URL wedi'i gamffurfio:\n"
+#~ " %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid "Malformed URLs, host missing."
+#~ msgstr ""
+#~ "URL wedi'i gamffurfio:\n"
+#~ " %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "URL wedi'i gamffurfio:\n"
+#~ " %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "URL wedi'i gamffurfio:\n"
+#~ " %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "URL wedi'i gamffurfio:\n"
+#~ " %1"
+
+#, fuzzy
+#~ msgid "Files exist already. Overwrite them?"
+#~ msgstr ""
+#~ "Mae'r ffeil gyrchfan\n"
+#~ " %1\n"
+#~ " eisioes yn bodoli.\n"
+#~ " A ydych am ei throsysgrifo?"
+
+#~ msgid "Question"
+#~ msgstr "Cwestiwn"
+
+#, fuzzy
+#~| msgid "Normal"
+#~ msgctxt "on a question"
+#~ msgid "No all"
+#~ msgstr "Arferol"
+
+#, fuzzy
+#~ msgid "Engine name:"
+#~ msgstr "Enw Ffeil Lleol"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "transfer state: connecting"
+#~ msgid "Connecting...."
+#~ msgstr "Cysylltiad"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Set Script File"
+#~ msgstr "Disgrifiad"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "Transfer State: Finished"
+#~ msgid "Finished"
+#~ msgstr "Wedi Gorffen"
+
+#, fuzzy
+#~ msgid "Downloading Metalink File...."
+#~ msgstr "Parhäwyd â'r lawrlwythiad"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Redownload Metalink"
+#~ msgstr "Lawrlwythiad wedi gorffen"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgid "File Selection"
+#~ msgstr "Yn Trefnlennu"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "the string that is used to modify an url"
+#~ msgid "Change string"
+#~ msgstr "Cysylltiad"
+
+#, fuzzy
+#~| msgid "Stopped"
+#~ msgid "Append"
+#~ msgstr "Wedi aros"
+
+#, fuzzy
+#~ msgid "Replace file"
+#~ msgstr "Agor &Ffeil"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "transfer state: running"
+#~ msgid "Running...."
+#~ msgstr "Cysylltiad"
+
+#, fuzzy
+#~| msgid "Address (URL)"
+#~ msgid "IP Address"
+#~ msgstr "Cyfeiriad (URL)"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Down Speed"
+#~ msgstr "Cyflymder"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Up Speed"
+#~ msgstr "Cyflymder"
+
+#, fuzzy
+#~| msgid "Docked"
+#~ msgid "Choked"
+#~ msgstr "Wedi'i Ddocio"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgid "Score"
+#~ msgstr "Tardd:"
+
+#, fuzzy
+#~ msgid "Downloaded"
+#~ msgstr "Parhäwyd â'r lawrlwythiad"
+
+#, fuzzy
+#~ msgid "Interesting"
+#~ msgstr "Cyfuno â Konqueror"
+
+#, fuzzy
+#~ msgid "Download speed"
+#~ msgstr "Parhäwyd â'r lawrlwythiad"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Upload speed"
+#~ msgstr "Cyflymder"
+
+#, fuzzy
+#~| msgid "Count"
+#~ msgid "Chunk"
+#~ msgstr "Nifer"
+
+#, fuzzy
+#~ msgid "Progress"
+#~ msgstr "Ymgom Gynnydd"
+
+#, fuzzy
+#~ msgid "Files"
+#~ msgstr "Agor &Ffeil"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of the chunk"
+#~ msgstr "Nifer ail-geisiau:"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Download speed of the chunk"
+#~ msgstr "Lawrlwythiad wedi gorffen"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed"
+#~ msgstr "Cyflymder"
+
+#, fuzzy
+#~ msgid "Status"
+#~ msgstr "Ail-&ddechrau"
+
+#, fuzzy
+#~ msgid "File"
+#~ msgstr "Agor &Ffeil"
+
+#, fuzzy
+#~ msgid "Advanced Details for %1"
+#~ msgstr "Plygell Ragosodedig"
+
+#, fuzzy
+#~ msgid "Trackers"
+#~ msgstr "&Trosglwyddo"
+
+#, fuzzy
+#~ msgctxt "Open file"
+#~ msgid "Open"
+#~ msgstr "Agor &Ffeil"
+
+#, fuzzy
+#~ msgid "Download first"
+#~ msgstr "Parhäwyd â'r lawrlwythiad"
+
+#, fuzzy
+#~ msgid "Download normally"
+#~ msgstr "Plygell Ragosodedig"
+
+#, fuzzy
+#~ msgid "Download last"
+#~ msgstr "Parhäwyd â'r lawrlwythiad"
+
+#, fuzzy
+#~ msgid "Do Not Download"
+#~ msgstr "Trefnydd Lawrlwytho"
+
+#, fuzzy
+#~| msgid "Download Selected Files"
+#~ msgid "Delete File(s)"
+#~ msgstr "Lawrlwytho'r Ffeiliau Dewisiedig"
+
+#, fuzzy
+#~ msgid "Move File"
+#~ msgstr "Agor &Ffeil"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Seeders"
+#~ msgstr "Cyflymder"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Leechers"
+#~ msgstr "Cyflymder"
+
+#, fuzzy
+#~ msgid "Times Downloaded"
+#~ msgstr "Parhäwyd â'r lawrlwythiad"
+
+#, fuzzy
+#~| msgid "Normal"
+#~ msgctxt "Download normally(not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "Arferol"
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 %"
+#~ msgstr "%1/eil"
+
+#, fuzzy
+#~| msgid "Normal"
+#~ msgctxt "Download Normal (not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "Arferol"
+
+#, fuzzy
+#~| msgid "Advanced Options"
+#~ msgid "&Advanced Details"
+#~ msgstr "Dewisiadau Uwch"
+
+#, fuzzy
+#~ msgid "&Scan Files"
+#~ msgstr "Agor &Ffeil"
+
+#, fuzzy
+#~ msgid "Downloading Torrent File...."
+#~ msgstr "Parhäwyd â'r lawrlwythiad"
+
+#, fuzzy
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading...."
+#~ msgstr "Parhäwyd â'r lawrlwythiad"
+
+#, fuzzy
+#~| msgid ""
+#~| "Folder does not exist:\n"
+#~| "%1"
+#~ msgid "Torrent file does not exist"
+#~ msgstr ""
+#~ "Nid yw'r cyfeiriadur yn bodoli:\n"
+#~ " %1"
+
+#, fuzzy
+#~ msgid "Analyzing torrent...."
+#~ msgstr "Parhäwyd â'r lawrlwythiad"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgctxt "Transfer status: seeding"
+#~ msgid "Seeding...."
+#~ msgstr "Yn Trefnlennu"
+
+#, fuzzy
+#~| msgid "Default Folder"
+#~ msgid "Select a default torrent folder"
+#~ msgstr "Plygell Ragosodedig"
+
+#, fuzzy
+#~ msgid "Select a default temporary folder"
+#~ msgstr "Plygell Ragosodedig"
+
+#, fuzzy
+#~| msgid "Import Text &File..."
+#~ msgid "Import dropped files"
+#~ msgstr "Mewnforio &Ffeil Destun..."
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgid "File Properties"
+#~ msgstr "Yn Trefnlennu"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a filename."
+#~ msgstr "Ethernet"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter at least one URL."
+#~ msgstr "Ethernet"
+
+#, fuzzy
+#~ msgid "Metalink Version 4.0 file (*.meta4)"
+#~ msgstr "Agor &Ffeil"
+
+#, fuzzy
+#~ msgid "Metalink Version 3.0 file (*.metalink)"
+#~ msgstr "Agor &Ffeil"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "Import Links"
+#~ msgstr "Dim Cyswllt"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgctxt "Download the items which have been selected"
+#~ msgid "&Download Checked"
+#~ msgstr "Lawrlwythiad wedi gorffen"
+
+#, fuzzy
+#~ msgid "File Name"
+#~ msgstr "Enw Ffeil Lleol"
+
+#~ msgid "Description"
+#~ msgstr "Disgrifiad"
+
+#, fuzzy
+#~ msgctxt "list header: type of file"
+#~ msgid "File Type"
+#~ msgstr "Math Ffeil"
+
+#~ msgid "Location (URL)"
+#~ msgstr "Lleoliad (URL)"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgctxt "The priority of the mirror"
+#~ msgid "Priority"
+#~ msgstr "Wynebfath:"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgctxt "Number of paralell connections to the mirror"
+#~ msgid "Connections"
+#~ msgstr "Cysylltiad"
+
+#, fuzzy
+#~| msgid "Location (URL)"
+#~ msgctxt "Location = country"
+#~ msgid "Location"
+#~ msgstr "Lleoliad (URL)"
+
+#, fuzzy
+#~ msgid "Download again"
+#~ msgstr "Trefnydd Lawrlwytho"
+
+#, fuzzy
+#~ msgctxt "Delete selected history-item"
+#~ msgid "Delete selected"
+#~ msgstr "Dim Ffeil Wedi'i Dewis"
+
+#, fuzzy
+#~ msgid "Open file"
+#~ msgstr "Agor &Ffeil"
+
+#, fuzzy
+#~ msgid "Transfer History"
+#~ msgstr "Agor trosglwyddiad:"
+
+#, fuzzy
+#~ msgid "&Open File"
+#~ msgstr "Agor &Ffeil"
+
+#, fuzzy
+#~| msgid "Stopped"
+#~ msgctxt "The transfer is stopped"
+#~ msgid "Stopped"
+#~ msgstr "Wedi aros"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "The transfer is finished"
+#~ msgid "Finished"
+#~ msgstr "Wedi Gorffen"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgid "Source File"
+#~ msgstr "Tardd:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Destination"
+#~ msgstr "Cyrchfan:"
+
+#, fuzzy
+#~| msgid "Timer"
+#~ msgid "Time"
+#~ msgstr "Amserydd"
+
+#, fuzzy
+#~ msgid "File Size"
+#~ msgstr "Agor &Ffeil"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "the transfer has been finished"
+#~ msgid "Finished"
+#~ msgstr "Wedi Gorffen"
+
+#, fuzzy
+#~| msgid "To: %1"
+#~ msgctxt "an error happened in connection with the user input"
+#~ msgid "Error:"
+#~ msgstr "At: %1"
+
+#, fuzzy
+#~| msgid "unknown"
+#~ msgctxt "trust level"
+#~ msgid "Unknown"
+#~ msgstr "anhysbys"
+
+#, fuzzy
+#~ msgctxt "pgp signature is not verified"
+#~ msgid "Failed"
+#~ msgstr "Agor &Ffeil"
+
+#, fuzzy
+#~| msgid "To: %1"
+#~ msgid "Error:"
+#~ msgstr "At: %1"
+
+#, fuzzy
+#~ msgid "Information:"
+#~ msgstr "Cyfuno â Konqueror"
+
+#, fuzzy
+#~ msgid "Transfer Details"
+#~ msgstr "Trosglwyddiadau: %1"
+
+#, fuzzy
+#~ msgid "Transfer Verification for %1"
+#~ msgstr "Plygell Ragosodedig"
+
+#, fuzzy
+#~ msgid "Rename File"
+#~ msgstr "Plygell Ragosodedig"
+
+#, fuzzy
+#~ msgid "Rename %1 to:"
+#~ msgstr "Plygell Ragosodedig"
+
+#, fuzzy
+#~ msgid "&Rename"
+#~ msgstr "Plygell Ragosodedig"
+
+#, fuzzy
+#~ msgid "Rename Group..."
+#~ msgid_plural "Rename Groups..."
+#~ msgstr[0] "Plygell Ragosodedig"
+#~ msgstr[1] "Plygell Ragosodedig"
+
+#, fuzzy
+#~| msgid "Sticky"
+#~ msgctxt "fix position for droptarget"
+#~ msgid "Sticky"
+#~ msgstr "Gludiog"
+
+#, fuzzy
+#~| msgid "KGet"
+#~ msgid "Quit KGet"
+#~ msgstr "KGet"
+
+#, fuzzy
+#~ msgid "The dropped file is a KGet Transfer List"
+#~ msgstr "Agor trosglwyddiad:"
+
+#, fuzzy
+#~ msgid "&Download"
+#~ msgstr "Parhäwyd â'r lawrlwythiad"
+
+#, fuzzy
+#~ msgid "&Load transfer list"
+#~ msgstr "Agor trosglwyddiad:"
+
+#, fuzzy
+#~ msgid "Show Main Window"
+#~ msgstr "Dangos y brif ffenestr wrth gychwyn"
+
+#, fuzzy
+#~ msgid "Hide Main Window"
+#~ msgstr "Ffenestr Gofnodion"
+
+#, fuzzy
+#~| msgid "Drop target"
+#~ msgid "Drop Target"
+#~ msgstr "Targed ollwng"
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgctxt "%1 filename, %2 total size, %3 status"
+#~ msgid "%1(%2) %3"
+#~ msgstr "%1/eil"
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgctxt ""
+#~ "%1 filename, %2 percent complete, %3 downloaded out of %4 total size, %5 "
+#~ "status"
+#~ msgid "%1(%2% %3/%4) %5"
+#~ msgstr "%1/eil"
+
+#, fuzzy
+#~ msgid "Hiding drop target"
+#~ msgstr "&Targed Ollwng"
+
+#, fuzzy
+#~ msgid "Transfer Settings for %1"
+#~ msgstr "Plygell Ragosodedig"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Destination unmodified"
+#~ msgstr "Cyrchfan:"
+
+#, fuzzy
+#~| msgid "%1% of %2 - %3"
+#~ msgid "%1 of %2"
+#~ msgstr "%1% o %2 - %3"
+
+#, fuzzy
+#~ msgid "Group Settings for %1"
+#~ msgstr "Plygell Ragosodedig"
+
+#, fuzzy
+#~| msgid "%1/s"
+#~ msgctxt "@item speed of transfer per seconds"
+#~ msgid "%1/s"
+#~ msgstr "%1/eil"
+
+#, fuzzy
+#~ msgctxt "@label"
+#~ msgid "File name"
+#~ msgstr "Enw Ffeil Lleol"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "@label Progress of transfer"
+#~ msgid "Finished"
+#~ msgstr "Wedi Gorffen"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgctxt "@label Speed of transfer"
+#~ msgid "Speed"
+#~ msgstr "Cyflymder"
+
+#, fuzzy
+#~ msgctxt "@label Status of transfer"
+#~ msgid "Status"
+#~ msgstr "Ail-&ddechrau"
+
+#, fuzzy
+#~ msgctxt "@action:button start a transfer"
+#~ msgid "Start"
+#~ msgstr "Ail-&ddechrau"
+
+#, fuzzy
+#~ msgctxt "@action:button"
+#~ msgid "Stop"
+#~ msgstr "Wedi aros"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgctxt "@action:button"
+#~ msgid "Remove"
+#~ msgstr "Agor Trosglwyddiad"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgctxt "@label Download from"
+#~ msgid "Source:"
+#~ msgstr "Tardd:"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgctxt "@action"
+#~ msgid "Settings"
+#~ msgstr "Yn Trefnlennu"
+
+#, fuzzy
+#~| msgctxt "OK as in 'finished'"
+#~| msgid "OK"
+#~ msgctxt "@action:button"
+#~ msgid "OK"
+#~ msgstr "Iawn"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgctxt "@action Refresh download list every x (seconds)"
+#~ msgid "Refresh download list every"
+#~ msgstr "Lawrlwythiad wedi gorffen"
+
+#, fuzzy
+#~ msgctxt "@action:button"
+#~ msgid "Save Settings"
+#~ msgstr "Trosglwyddiadau: %1"
+
+#, fuzzy
+#~ msgctxt "@title"
+#~ msgid "Downloads"
+#~ msgstr "Parhäwyd â'r lawrlwythiad"
+
+#, fuzzy
+#~ msgid "An advanced download manager for KDE"
+#~ msgstr "Trefnydd lawrlwytho uwch ar gyfer KDE"
+
+#~ msgid "Start KGet with drop target"
+#~ msgstr "Dechrau KGet â tharged ollwng"
+
+#, fuzzy
+#~| msgid "Start KGet with drop target"
+#~ msgid "Start KGet with hidden main window"
+#~ msgstr "Dechrau KGet â tharged ollwng"
+
+#, fuzzy
+#~| msgid "Start KGet with drop target"
+#~ msgid "Start KGet without drop target animation"
+#~ msgstr "Dechrau KGet â tharged ollwng"
+
+#, fuzzy
+#~ msgid "URL(s) to download"
+#~ msgstr "URL(au) i'w lawrlwytho."
+
+#, fuzzy
+#~ msgid "KGet Transfer List"
+#~ msgstr "Agor trosglwyddiad:"
+
+#, fuzzy
+#~ msgid "Export Transfers"
+#~ msgstr "&Allforio Rhestr Drosglwyddo..."
+
+#, fuzzy
+#~| msgid "&Import Transfer List..."
+#~ msgid "&Import Transfers..."
+#~ msgstr "&Mewnforio Rhestr Drosglwyddo..."
+
+#, fuzzy
+#~ msgid "&Export Transfers List..."
+#~ msgstr "&Allforio Rhestr Drosglwyddo..."
+
+#, fuzzy
+#~ msgid "&Export Transfers as Plain Text..."
+#~ msgstr "&Allforio Rhestr Drosglwyddo..."
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Top Priority"
+#~ msgstr "Wynebfath:"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Least Priority"
+#~ msgstr "Wynebfath:"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Increase Priority"
+#~ msgstr "Wynebfath:"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Decrease Priority"
+#~ msgstr "Wynebfath:"
+
+#, fuzzy
+#~ msgid "Auto-Paste Mode"
+#~ msgstr "Modd &Gludo Ymysgogol"
+
+#, fuzzy
+#~ msgid ""
+#~ "<b>Auto paste</b> button toggles the auto-paste mode on and off.\n"
+#~ "When set, KGet will periodically scan the clipboard for URLs and paste "
+#~ "them automatically."
+#~ msgstr ""
+#~ "Mae'r botwm <b>Gludo ymysgogol</b> yn cynnau/diffodd y modd\n"
+#~ " gludo ymysgogol.\n"
+#~ "\n"
+#~ " Pan ynghyn bydd KGet yn syllu ar y clipfwrdd ar adegau\n"
+#~ " am URLau a'u gludo'n ymysgogol."
+
+#, fuzzy
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Remove Selected"
+#~ msgstr "&Parhau"
+
+#, fuzzy
+#~| msgid "Download Selected Files"
+#~ msgctxt "delete all finished transfers"
+#~ msgid "Remove All Finished"
+#~ msgstr "Lawrlwytho'r Ffeiliau Dewisiedig"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgctxt "redownload selected transfer item"
+#~ msgid "Redownload Selected"
+#~ msgstr "Lawrlwythiad wedi gorffen"
+
+#, fuzzy
+#~ msgid "Start / Resume Selected"
+#~ msgstr "Dim Ffeil Wedi'i Dewis"
+
+#, fuzzy
+#~ msgid "Stop Selected"
+#~ msgstr "Dim Ffeil Wedi'i Dewis"
+
+#, fuzzy
+#~ msgid "Stop"
+#~ msgstr "Wedi aros"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Remove"
+#~ msgstr "Agor Trosglwyddiad"
+
+#, fuzzy
+#~ msgid "Open Destination"
+#~ msgstr "Agor &Cyrchfan"
+
+#, fuzzy
+#~ msgid "Open File"
+#~ msgstr "Agor &Ffeil"
+
+#, fuzzy
+#~ msgid "Show Details"
+#~ msgstr "kyfieithu@dotmon.com"
+
+#, fuzzy
+#~ msgid "Copy URL to Clipboard"
+#~ msgstr "&Copïo URL i'r Clipfwrdd"
+
+#, fuzzy
+#~ msgid "&Transfer History"
+#~ msgstr "Agor trosglwyddiad:"
+
+#, fuzzy
+#~ msgid "&Group Settings"
+#~ msgstr "Plygell Ragosodedig"
+
+#, fuzzy
+#~ msgid "&Transfer Settings"
+#~ msgstr "Trosglwyddiadau: %1"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "Import &Links..."
+#~ msgstr "Dim Cyswllt"
+
+#, fuzzy
+#~ msgid ""
+#~ "This is the first time you have run KGet.\n"
+#~ "Would you like to enable KGet as the download manager for Konqueror?"
+#~ msgstr ""
+#~ "Dyma'r tro cyntaf i chi redeg KGet.\n"
+#~ " A ydych am weithredoli'r cyfuno â Konqueror?"
+
+#, fuzzy
+#~ msgid "Konqueror Integration"
+#~ msgstr "Cyfuno â Konqueror"
+
+#~ msgid "Enable"
+#~ msgstr "Galluogi"
+
+#, fuzzy
+#~| msgid "Enable"
+#~ msgid "Do Not Enable"
+#~ msgstr "Galluogi"
+
+#, fuzzy
+#~ msgid ""
+#~ "Some transfers are still running.\n"
+#~ "Are you sure you want to close KGet?"
+#~ msgstr ""
+#~ "Mae rhai trosglwyddiadau'n dal i redeg.\n"
+#~ " A ydych yn sicr eich bod am gau KGet?"
+
+#, fuzzy
+#~ msgid "Enter Group Name"
+#~ msgstr "KGyfieithu - Meddalwedd Gymraeg"
+
+#, fuzzy
+#~ msgid "Group name:"
+#~ msgstr "KGyfieithu - Meddalwedd Gymraeg"
+
+#, fuzzy
+#~| msgid "Are you sure you want to delete this transfer?"
+#~ msgid "Are you sure you want to delete the selected transfer?"
+#~ msgid_plural "Are you sure you want to delete the selected transfers?"
+#~ msgstr[0] "A ydych yn sicr eich bod am ddileu'r trosglwyddiad yma?"
+#~ msgstr[1] "A ydych yn sicr eich bod am ddileu'r trosglwyddiad yma?"
+
+#, fuzzy
+#~ msgid "Confirm transfer delete"
+#~ msgstr "Agor trosglwyddiad:"
+
+#, fuzzy
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "KGyfieithu - Meddalwedd Gymraeg"
+
+#, fuzzy
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "kyfieithu@dotmon.com"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Automatic verification:"
+#~ msgstr "Disgrifiad"
+
+#, fuzzy
+#~| msgid "Automation Options"
+#~ msgid "Automatic verification"
+#~ msgstr "Dewisiadau Ymysgogi"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Keyservers:"
+#~ msgstr "Cyflymder"
+
+#, fuzzy
+#~| msgid "Move to &End"
+#~ msgid "Move &Up"
+#~ msgstr "Symud i'r Di&wedd"
+
+#, fuzzy
+#~| msgid "Move to &End"
+#~ msgid "Move &Down"
+#~ msgstr "Symud i'r Di&wedd"
+
+#, fuzzy
+#~ msgid "Rename"
+#~ msgstr "Plygell Ragosodedig"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Limit Maximum Downloads Per Group"
+#~ msgstr "Lawrlwythiad wedi gorffen"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of downloads:"
+#~ msgstr "Nifer ail-geisiau:"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed Limit"
+#~ msgstr "Cyflymder"
+
+#, fuzzy
+#~ msgid "Global download limit:"
+#~ msgstr "Parhäwyd â'r lawrlwythiad"
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid " KiB/s"
+#~ msgstr "%1 KB/eil"
+
+#, fuzzy
+#~ msgid "Global upload limit:"
+#~ msgstr "Parhäwyd â'r lawrlwythiad"
+
+#, fuzzy
+#~ msgid "Per transfer:"
+#~ msgstr "&Trosglwyddo"
+
+#, fuzzy
+#~ msgid "Reconnect on Error or Broken Connection"
+#~ msgstr "Ar gysylltiad dorredig"
+
+#~ msgid "Number of retries:"
+#~ msgstr "Nifer ail-geisiau:"
+
+#, fuzzy
+#~ msgid "Retry after:"
+#~ msgstr "Ailgysylltu ar ôl:"
+
+#, fuzzy
+#~ msgid "After Completing Downloads"
+#~ msgstr "Cau'n ymysgogol wedi gorffen lawrlwytho"
+
+#, fuzzy
+#~ msgid "Auto shutdown"
+#~ msgstr "Cau i lawr ymysgogol ynghyn"
+
+#, fuzzy
+#~ msgid "Auto disconnect"
+#~ msgstr "Datgysylltu ymysgogol ynghyn"
+
+#, fuzzy
+#~ msgid "Enable Web Interface"
+#~ msgstr "Defnyddio bywlunio"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Port:"
+#~ msgstr "Wynebfath:"
+
+#, fuzzy
+#~ msgid "Startup"
+#~ msgstr "Ail-&ddechrau"
+
+#, fuzzy
+#~ msgid "Enable animations"
+#~ msgstr "Defnyddio bywlunio"
+
+#, fuzzy
+#~ msgid "Show drop target"
+#~ msgstr "Dangos Targed Ollwng"
+
+#, fuzzy
+#~ msgid "Enable system tray icon"
+#~ msgstr "Defnyddio bywlunio"
+
+#, fuzzy
+#~ msgid "Execute action after all downloads have been finished:"
+#~ msgstr "Lawrlwythiad wedi gorffen"
+
+#, fuzzy
+#~ msgid "At startup:"
+#~ msgstr "Ail-&ddechrau"
+
+#, fuzzy
+#~ msgid "Restore Download State"
+#~ msgstr "Parhäwyd â'r lawrlwythiad"
+
+#, fuzzy
+#~ msgid "Start All Downloads"
+#~ msgstr "Nodi lawrlwythiadau rhannol"
+
+#, fuzzy
+#~ msgid "Stop All Downloads"
+#~ msgstr "Nodi lawrlwythiadau rhannol"
+
+#, fuzzy
+#~ msgid "History"
+#~ msgstr "Agor trosglwyddiad:"
+
+#, fuzzy
+#~ msgid "History backend:"
+#~ msgstr "Agor trosglwyddiad:"
+
+#, fuzzy
+#~ msgid "Use as download manager for Konqueror:"
+#~ msgstr "Trefnydd lawrlwytho uwch ar gyfer KDE"
+
+#, fuzzy
+#~ msgid "Monitor clipboard for files to download"
+#~ msgstr "Ni ddewisoch unrhyw ffeiliau i'w lawrlwytho."
+
+#, fuzzy
+#~ msgid "Engine Name"
+#~ msgstr "Enw Ffeil Lleol"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of connections per URL:"
+#~ msgstr "Nifer ail-geisiau:"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgid "File Settings"
+#~ msgstr "Yn Trefnlennu"
+
+#, fuzzy
+#~ msgid "Filename:"
+#~ msgstr "Enw Ffeil Lleol"
+
+#, fuzzy
+#~| msgid "Log Window"
+#~ msgid "Login Info"
+#~ msgstr "Ffenestr Gofnodion"
+
+#, fuzzy
+#~ msgid "Username:"
+#~ msgstr "Plygell Ragosodedig"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Path:"
+#~ msgstr "Wynebfath:"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Description:"
+#~ msgstr "Disgrifiad"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of simultaneous file downloads:"
+#~ msgstr "Nifer ail-geisiau:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of mirrors per file:"
+#~ msgstr "Nifer ail-geisiau:"
+
+#, fuzzy
+#~ msgid "Mode:"
+#~ msgstr "Plygyll"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Remove Tracker"
+#~ msgstr "Agor Trosglwyddiad"
+
+#, fuzzy
+#~ msgid "Update Trackers"
+#~ msgstr "&Trosglwyddo"
+
+#, fuzzy
+#~ msgid "Remove Webseed"
+#~ msgstr "&Parhau"
+
+#, fuzzy
+#~| msgid "Total"
+#~ msgid "Total:"
+#~ msgstr "Cyfanswm"
+
+#, fuzzy
+#~ msgid "Downloaded:"
+#~ msgstr "Parhäwyd â'r lawrlwythiad"
+
+#, fuzzy
+#~| msgid " Size: %1 "
+#~ msgid "Size:"
+#~ msgstr "Maint: %1"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of chunks found:"
+#~ msgstr "Nifer ail-geisiau:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of chunks failed:"
+#~ msgstr "Nifer ail-geisiau:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of chunks not downloaded:"
+#~ msgstr "Nifer ail-geisiau:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of chunks downloaded:"
+#~ msgstr "Nifer ail-geisiau:"
+
+#, fuzzy
+#~ msgid "Stats"
+#~ msgstr "Ail-&ddechrau"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Seeders:"
+#~ msgstr "Cyflymder"
+
+#, fuzzy
+#~ msgid "Download speed:"
+#~ msgstr "Parhäwyd â'r lawrlwythiad"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Upload speed:"
+#~ msgstr "Cyflymder"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgctxt "source-file"
+#~ msgid "Source:"
+#~ msgstr "Tardd:"
+
+#, fuzzy
+#~ msgid "Upload limit per transfer:"
+#~ msgstr "Parhäwyd â'r lawrlwythiad"
+
+#, fuzzy
+#~| msgid "Limits"
+#~ msgid "No Limit"
+#~ msgstr "Terfynau"
+
+#, fuzzy
+#~ msgid "Download limit per transfer:"
+#~ msgstr "Parhäwyd â'r lawrlwythiad"
+
+#~ msgid "Folders"
+#~ msgstr "Plygyll"
+
+#, fuzzy
+#~| msgid "Default Folder"
+#~ msgid "Default torrent folder:"
+#~ msgstr "Plygell Ragosodedig"
+
+#, fuzzy
+#~| msgid "Default Folder"
+#~ msgid "Default temporary folder"
+#~ msgstr "Plygell Ragosodedig"
+
+#, fuzzy
+#~| msgid "Resumed"
+#~ msgid "Required"
+#~ msgstr "Wedi Ail-Gychwyn"
+
+#, fuzzy
+#~| msgid "Total size is %1 bytes"
+#~ msgid "File size (in bytes):"
+#~ msgstr "%1 beit yw'r maint cyfan"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Verification:"
+#~ msgstr "Disgrifiad"
+
+#, fuzzy
+#~ msgid "*.metalink *.meta4|Metalink file (*.metalink *.meta4)"
+#~ msgstr "Agor &Ffeil"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgid "Date and time:"
+#~ msgstr "Ams. yn Weddill"
+
+#, fuzzy
+#~ msgid "Version:"
+#~ msgstr "Estyniad"
+
+#, fuzzy
+#~| msgid "Log"
+#~ msgid "Logo:"
+#~ msgstr "Cofnodion"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "Name:"
+#~ msgstr "Enw"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Name of the publisher"
+#~ msgstr "Nifer ail-geisiau:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "URL to the publisher"
+#~ msgstr "Nifer ail-geisiau:"
+
+#, fuzzy
+#~ msgctxt "Files as in files on a server"
+#~ msgid "Files:"
+#~ msgstr "Agor &Ffeil"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "&Import Links"
+#~ msgstr "Dim Cyswllt"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgid "Contains"
+#~ msgstr "Cysylltiad"
+
+#, fuzzy
+#~ msgid "Does Not Contain"
+#~ msgstr "Trefnydd Lawrlwytho"
+
+#, fuzzy
+#~ msgctxt "Check as in mark, not as in verify"
+#~ msgid "Chec&k Selected"
+#~ msgstr "Dim Ffeil Wedi'i Dewis"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of connections:"
+#~ msgstr "Nifer ail-geisiau:"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a URL"
+#~ msgstr "Ethernet"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Priority:"
+#~ msgstr "Wynebfath:"
+
+#, fuzzy
+#~| msgid "Location (URL)"
+#~ msgid "Location:"
+#~ msgstr "Lleoliad (URL)"
+
+#, fuzzy
+#~| msgid "Offline mode"
+#~ msgctxt "View modes"
+#~ msgid "View Modes"
+#~ msgstr "Modd All-lein"
+
+#, fuzzy
+#~ msgid "Date"
+#~ msgstr "Ail-&ddechrau"
+
+#, fuzzy
+#~ msgid "Filter History"
+#~ msgstr "Agor trosglwyddiad:"
+
+#, fuzzy
+#~ msgctxt "delete selected transfer"
+#~ msgid "Delete Selected"
+#~ msgstr "Dim Ffeil Wedi'i Dewis"
+
+#, fuzzy
+#~ msgid "Download"
+#~ msgstr "Parhäwyd â'r lawrlwythiad"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgctxt "hash as a hash of type md5, sha1 etc."
+#~ msgid "Hash:"
+#~ msgstr "Wynebfath:"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgid "Remaining Time:"
+#~ msgstr "Ams. yn Weddill"
+
+#, fuzzy
+#~ msgid "Transfer Settings"
+#~ msgstr "Trosglwyddiadau: %1"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Download Destination:"
+#~ msgstr "Cyrchfan:"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgctxt "No value has been set"
+#~ msgid "Not set"
+#~ msgstr "Dim Cyswllt"
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid " KiB"
+#~ msgstr "%1 KB/eil"
+
+#, fuzzy
+#~ msgid "Upload Limit:"
+#~ msgstr "Parhäwyd â'r lawrlwythiad"
+
+#, fuzzy
+#~ msgid "Download Limit:"
+#~ msgstr "Parhäwyd â'r lawrlwythiad"
+
+#, fuzzy
+#~| msgid "Maximum open connections:"
+#~ msgid "Maximum Share Ratio:"
+#~ msgstr "Uchafswm cysylltiadau wedi'u hagor:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgctxt "verification of the download (e.g. by using MD5)"
+#~ msgid "Verification"
+#~ msgstr "Cyrchfan:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Creation:"
+#~ msgstr "Cyrchfan:"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Expiration:"
+#~ msgstr "Cyrchfan:"
+
+#, fuzzy
+#~ msgid "Group Settings"
+#~ msgstr "Plygell Ragosodedig"
+
+#, fuzzy
+#~| msgid "Default Folder"
+#~ msgid "Default folder:"
+#~ msgstr "Plygell Ragosodedig"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Maximum download speed:"
+#~ msgstr "Lawrlwythiad wedi gorffen"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Maximum upload speed:"
+#~ msgstr "Lawrlwythiad wedi gorffen"
+
+#, fuzzy
+#~| msgid "Destination:"
+#~ msgid "Destination:"
+#~ msgstr "Cyrchfan:"
+
+#, fuzzy
+#~ msgid "Transfer group:"
+#~ msgstr "&Trosglwyddo"
+
+#, fuzzy
+#~ msgid "&File"
+#~ msgstr "Agor &Ffeil"
+
+#, fuzzy
+#~ msgid "&Downloads"
+#~ msgstr "Parhäwyd â'r lawrlwythiad"
+
+#~ msgid "There are no links in the active frame of the current HTML page."
+#~ msgstr "Nid oes cysylltau yn ffrâm gweithredol y dudalen HTML gyfredol."
+
+#, fuzzy
+#~ msgid "Form"
+#~ msgstr "neu"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Remove Tag"
+#~ msgstr "Agor Trosglwyddiad"
+
+#, fuzzy
+#~ msgid "Tag Settings for the groups"
+#~ msgstr "Plygell Ragosodedig"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgid "Tag Settings"
+#~ msgstr "Yn Trefnlennu"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Available tags:"
+#~ msgstr "Agor Trosglwyddiad"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a new Tag"
+#~ msgstr "Ethernet"
+
+#, fuzzy
+#~| msgid "Ethernet"
+#~ msgid "Enter a new tag"
+#~ msgstr "Ethernet"
+
+#, fuzzy
+#~| msgctxt "OK as in 'finished'"
+#~| msgid "OK"
+#~ msgid "OK"
+#~ msgstr "Iawn"
+
+#, fuzzy
+#~| msgid "To: %1"
+#~ msgid "Error: %1"
+#~ msgstr "At: %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open log file %1 : %2"
+#~ msgstr ""
+#~ "Methwyd agor y ffeil:\n"
+#~ " %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not write to file:\n"
+#~| "%1"
+#~ msgid "Cannot write to %1 : %2"
+#~ msgstr ""
+#~ "Methwyd ysgrifennu i'r ffeil:\n"
+#~ " %1"
+
+#, fuzzy
+#~| msgid "Copy file from: %1"
+#~ msgid "Cannot read from %1"
+#~ msgstr "Copĩo ffeil o: %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot create directory %1"
+#~ msgstr ""
+#~ "Methwyd darllen y ffeil:\n"
+#~ " %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file: %1"
+#~ msgstr ""
+#~ "Methwyd darllen y ffeil:\n"
+#~ " %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot seek in file : %1"
+#~ msgstr ""
+#~ "Methwyd agor y ffeil:\n"
+#~ " %1"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgid "Connections"
+#~ msgstr "Cysylltiad"
+
+#, fuzzy
+#~ msgid "Tracker"
+#~ msgstr "&Trosglwyddo"
+
+#, fuzzy
+#~| msgid "Stay Connected"
+#~ msgid "Not connected"
+#~ msgstr "Aros ar Gyswllt"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "Not in use"
+#~ msgstr "Dim Cyswllt"
+
+#, fuzzy
+#~| msgid "Connection Type"
+#~ msgid "Connection closed"
+#~ msgstr "Math Cysylltiad"
+
+#, fuzzy
+#~| msgid "Stay Connected"
+#~ msgid "Connected"
+#~ msgstr "Aros ar Gyswllt"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgid "Connecting"
+#~ msgstr "Cysylltiad"
+
+#, fuzzy
+#~| msgid ""
+#~| "The specified file does not exist:\n"
+#~| "%1"
+#~ msgid "The directory %1 does not exist"
+#~ msgstr ""
+#~ "Nid yw'r ffeil benodedig yn bodoli:\n"
+#~ " %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open index file %1 : %2"
+#~ msgstr ""
+#~ "Methwyd agor y ffeil:\n"
+#~ " %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot create file %1 : %2"
+#~ msgstr ""
+#~ "Methwyd darllen y ffeil:\n"
+#~ " %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not write to file:\n"
+#~| "%1"
+#~ msgid "Failed to write last chunk to DND file : %1"
+#~ msgstr ""
+#~ "Methwyd ysgrifennu i'r ffeil:\n"
+#~ " %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file %1 : %2"
+#~ msgstr ""
+#~ "Methwyd darllen y ffeil:\n"
+#~ " %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Failed to seek file %1 : %2"
+#~ msgstr ""
+#~ "Methwyd darllen y ffeil:\n"
+#~ " %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Error while reading file:\n"
+#~| "%1"
+#~ msgid "Error reading from %1"
+#~ msgstr ""
+#~ "Gwall tra'n darllen y ffeil:\n"
+#~ " %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not write to file:\n"
+#~| "%1"
+#~ msgid "Failed to write to file %1 : %2"
+#~ msgstr ""
+#~ "Methwyd ysgrifennu i'r ffeil:\n"
+#~ " %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open file %1 : %2"
+#~ msgstr ""
+#~ "Methwyd agor y ffeil:\n"
+#~ " %1"
+
+#, fuzzy
+#~| msgid "Not Deleted"
+#~ msgid "Not started"
+#~ msgstr "Heb ei Ddileu"
+
+#, fuzzy
+#~| msgid "Scheduling"
+#~ msgctxt "Status of a torrent file"
+#~ msgid "Seeding"
+#~ msgstr "Yn Trefnlennu"
+
+#, fuzzy
+#~ msgid "Downloading"
+#~ msgstr "Parhäwyd â'r lawrlwythiad"
+
+#, fuzzy
+#~| msgid "Stopped"
+#~ msgid "Stopped"
+#~ msgstr "Wedi aros"
+
+#, fuzzy
+#~| msgid "Queueing"
+#~ msgid "Queued for seeding"
+#~ msgstr "Yn Ciwio"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Queued for downloading"
+#~ msgstr "Nifer ail-geisiau:"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open file %1: %2"
+#~ msgstr ""
+#~ "Methwyd agor y ffeil:\n"
+#~ " %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot create index file: %1"
+#~ msgstr ""
+#~ "Methwyd darllen y ffeil:\n"
+#~ " %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not open file:\n"
+#~| "%1"
+#~ msgid "Cannot open file : %1 : %2"
+#~ msgstr ""
+#~ "Methwyd agor y ffeil:\n"
+#~ " %1"
+
+#, fuzzy
+#~| msgid "Not Deleted"
+#~ msgid "Delete"
+#~ msgstr "Heb ei Ddileu"
+
+#, fuzzy
+#~ msgid "Details for: %1"
+#~ msgstr "Plygell Ragosodedig"
+
+#, fuzzy
+#~ msgid "All downloads"
+#~ msgstr "Nodi lawrlwythiadau rhannol"
+
+#, fuzzy
+#~ msgid "Finished downloads"
+#~ msgstr "Wedi Gorffen"
+
+#, fuzzy
+#~ msgid "Transfers:"
+#~ msgstr "&Trosglwyddo"
+
+#, fuzzy
+#~ msgid "Downloads"
+#~ msgstr "Parhäwyd â'r lawrlwythiad"
+
+#, fuzzy
+#~ msgid "Transfer details:"
+#~ msgstr "Trosglwyddiadau: %1"
+
+#, fuzzy
+#~ msgid "Transfer List"
+#~ msgstr "Agor trosglwyddiad:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of threads:"
+#~ msgstr "Nifer ail-geisiau:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Name of the license"
+#~ msgstr "Nifer ail-geisiau:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "URL to the license"
+#~ msgstr "Nifer ail-geisiau:"
+
+#, fuzzy
+#~| msgid "Delayed"
+#~ msgctxt "The transfer is delayed"
+#~ msgid "Delayed"
+#~ msgstr "Oediad"
+
+#~ msgid ""
+#~ "Destination file \n"
+#~ "%1\n"
+#~ "already exists.\n"
+#~ "Do you want to overwrite it?"
+#~ msgstr ""
+#~ "Mae'r ffeil gyrchfan\n"
+#~ " %1\n"
+#~ " eisioes yn bodoli.\n"
+#~ " A ydych am ei throsysgrifo?"
+
+#, fuzzy
+#~ msgid "Overwrite destination"
+#~ msgstr "Agor &Cyrchfan"
+
+#~ msgid "Queued"
+#~ msgstr "Wedi rhesi"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Current Tracker"
+#~ msgstr "Agor Trosglwyddiad"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgid "Scrape"
+#~ msgstr "Tardd:"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Available Trackers"
+#~ msgstr "Agor Trosglwyddiad"
+
+#, fuzzy
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Delete Selected"
+#~ msgstr "Dim Ffeil Wedi'i Dewis"
+
+#, fuzzy
+#~ msgid "We are sorry"
+#~ msgstr "Rydym ar-lein!"
+
+#, fuzzy
+#~| msgid "Open Transfer"
+#~ msgid "Rename transfer"
+#~ msgstr "Agor Trosglwyddiad"
+
+#, fuzzy
+#~ msgid "Download URL again?"
+#~ msgstr "Trefnydd Lawrlwytho"
+
+#, fuzzy
+#~ msgctxt "file in a filsystem"
+#~ msgid "File"
+#~ msgstr "Agor &Ffeil"
+
+#, fuzzy
+#~ msgid "Are you sure that you want to remove all selected groups?"
+#~ msgstr "A ydych yn sicr eich bod am ddileu'r trosglwyddiadau yma?"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "Name"
+#~ msgstr "Enw"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgid "Remaining Time"
+#~ msgstr "Ams. yn Weddill"
+
+#, fuzzy
+#~ msgid "KGet - Download Manager"
+#~ msgstr "Trefnydd Lawrlwytho"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgctxt "@label transfer source"
+#~ msgid "Source:"
+#~ msgstr "Tardd:"
+
+#, fuzzy
+#~| msgid "0 B/s"
+#~ msgid "kBi"
+#~ msgstr "0 B/eil"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file : %1"
+#~ msgstr ""
+#~ "Methwyd darllen y ffeil:\n"
+#~ " %1"
+
+#, fuzzy
+#~ msgid "&Transfer History..."
+#~ msgstr "Agor trosglwyddiad:"
+
+#, fuzzy
+#~ msgid "&Group Settings..."
+#~ msgstr "Plygell Ragosodedig"
+
+#, fuzzy
+#~ msgid "&Transfer Settings..."
+#~ msgstr "Trosglwyddiadau: %1"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed limit"
+#~ msgstr "Cyflymder"
+
+#, fuzzy
+#~| msgid "Download finished"
+#~ msgid "Download Speed:"
+#~ msgstr "Lawrlwythiad wedi gorffen"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Upload Speed:"
+#~ msgstr "Cyflymder"
+
+#, fuzzy
+#~| msgid "No Links"
+#~ msgid "&Import links"
+#~ msgstr "Dim Cyswllt"
+
+#, fuzzy
+#~| msgid "Not Deleted"
+#~ msgid "&Delete"
+#~ msgstr "Heb ei Ddileu"
+
+#, fuzzy
+#~ msgid "Default Download Folders"
+#~ msgstr "Plygell Ragosodedig"
+
+#, fuzzy
+#~| msgid "Extension"
+#~ msgid "File Extension"
+#~ msgstr "Estyniad"
+
+#~ msgid "Default Folder"
+#~ msgstr "Plygell Ragosodedig"
+
+#, fuzzy
+#~ msgid "Set as default folder"
+#~ msgstr "Plygell Ragosodedig"
+
+#, fuzzy
+#~ msgid "extRegExp, defaultFolder"
+#~ msgstr "Plygell Ragosodedig"
+
+#, fuzzy
+#~ msgid "Downloading.."
+#~ msgstr "Parhäwyd â'r lawrlwythiad"
+
+#, fuzzy
+#~ msgid "Advanced-Details for %1"
+#~ msgstr "Plygell Ragosodedig"
+
+#, fuzzy
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading.."
+#~ msgstr "Parhäwyd â'r lawrlwythiad"
+
+#, fuzzy
+#~ msgid "Downloads number:"
+#~ msgstr "Trefnydd Lawrlwytho"
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 GB"
+#~ msgstr "%1/eil"
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 MB"
+#~ msgstr "%1/eil"
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid "%1 KB"
+#~ msgstr "%1 KB/eil"
+
+#, fuzzy
+#~| msgid " %1/s "
+#~ msgid "%1 B"
+#~ msgstr "%1/eil"
+
+#, fuzzy
+#~| msgid " %1 KB/s "
+#~ msgid "%1 KB/s"
+#~ msgstr "%1 KB/eil"
+
+#, fuzzy
+#~| msgid "0 B/s"
+#~ msgid "kBi/s"
+#~ msgstr "0 B/eil"
+
+#~ msgid "Not Deleted"
+#~ msgstr "Heb ei Ddileu"
+
+#, fuzzy
+#~ msgid "Konqueror Integration disabled"
+#~ msgstr "Cyfuno â Konqueror"
+
+#~ msgid "Show main window at startup"
+#~ msgstr "Dangos y brif ffenestr wrth gychwyn"
+
+#, fuzzy
+#~ msgid "<speed>"
+#~ msgstr "Cyflymder"
+
+#, fuzzy
+#~| msgid "Rem. Time"
+#~ msgid "<remaining time>"
+#~ msgstr "Ams. yn Weddill"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file %1"
+#~ msgstr ""
+#~ "Methwyd darllen y ffeil:\n"
+#~ " %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Error while writing file:\n"
+#~| "%1"
+#~ msgid "Error writing to %1 : %2"
+#~ msgstr ""
+#~ "Gwall tra'n ysgrifennu i'r ffeil:\n"
+#~ " %1"
+
+#, fuzzy
+#~| msgid ""
+#~| "Error while writing file:\n"
+#~| "%1"
+#~ msgid "Error writing to %1"
+#~ msgstr ""
+#~ "Gwall tra'n ysgrifennu i'r ffeil:\n"
+#~ " %1"
+
+#, fuzzy
+#~| msgid "List All Links"
+#~ msgid "&List Links"
+#~ msgstr "Rhestri Pob Cyswllt"
+
+#, fuzzy
+#~| msgid ""
+#~| "Could not read file:\n"
+#~| "%1"
+#~ msgid "Cannot expand file"
+#~ msgstr ""
+#~ "Methwyd darllen y ffeil:\n"
+#~ " %1"
+
+#, fuzzy
+#~| msgid "Normal"
+#~ msgctxt "Download normally(not as first or last"
+#~ msgid "Normal"
+#~ msgstr "Arferol"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Bittorrent-Speedlimits"
+#~ msgstr "Cyflymder"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed-Limits"
+#~ msgstr "Cyflymder"
+
+#, fuzzy
+#~ msgid " of "
+#~ msgstr "%1 o %2"
+
+#, fuzzy
+#~ msgid "Download Folder"
+#~ msgstr "Plygell Ragosodedig"
+
+#, fuzzy
+#~ msgid "Hide Drop Target"
+#~ msgstr "&Targed Ollwng"
+
+#, fuzzy
+#~ msgid "Hide drop target"
+#~ msgstr "&Targed Ollwng"
+
+#~ msgid ""
+#~ "Already saving URL\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Yn cadw'r URL\n"
+#~ " %1 yn barod"
+
+#, fuzzy
+#~ msgid "Default Group"
+#~ msgstr "Plygell Ragosodedig"
+
+#, fuzzy
+#~ msgid "DlgAdvanced"
+#~ msgstr "Uwch"
+
+#, fuzzy
+#~ msgid "Delete Group."
+#~ msgstr "Plygell Ragosodedig"
+
+#, fuzzy
+#~ msgid "Hide Me"
+#~ msgstr "Enw Ffeil"
+
+#, fuzzy
+#~ msgid ""
+#~ "Each row consists of exactly one\n"
+#~ "extension type and one folder."
+#~ msgstr ""
+#~ "Un math estyniad, ac un cyfeiriadur\n"
+#~ " yn unig sydd ym mhob rhes."
+
+#~ msgid "&Dock"
+#~ msgstr "&Docio"
+
+#~ msgid "Source Label"
+#~ msgstr "Label Tardd"
+
+#~ msgid "&Keep this window open after the operation is complete."
+#~ msgstr "&Cadw'r ffenestr hon ar agor wedi i'r weithred gyflawni."
+
+#~ msgid "Not resumed"
+#~ msgstr "Heb ail-gychwyn"
+
+#~ msgid "Automation"
+#~ msgstr "Ymysgogiant"
+
+#~ msgid "System"
+#~ msgstr "Cysawd"
+
+#~ msgid "Maximize"
+#~ msgstr "Ehangu"
+
+#~ msgid "Minimize"
+#~ msgstr "Lleihau"
+
+#~ msgid ""
+#~ "This is a folder and not a file:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Cyfeiriadur ac nid ffeil yw hwn:\n"
+#~ " %1"
+
+#~ msgid ""
+#~ "You do not have read permission for the file:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Nid oes gennych ganiatadau darllen i'r ffeil:\n"
+#~ " %1"
+
+#~ msgid "Could only read %1 bytes of %2."
+#~ msgstr "Gellid darllen %1 beit allan o %2 yn unig."
+
+#~ msgid ""
+#~ "File %1 exists.\n"
+#~ "Do you want to replace it?"
+#~ msgstr ""
+#~ "Mae'r ffeil %1 yn bodoli.\n"
+#~ " A ydych am ei amnewid?"
+
+#~ msgid ""
+#~ "Failed to make a backup copy of %1.\n"
+#~ "Continue anyway?"
+#~ msgstr ""
+#~ "Methwyd creu copi wrth gefn o %1.\n"
+#~ " Parhau serch hynny?"
+
+#~ msgid ""
+#~ "Could not open file for writing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Methwyd agor y ffeil ar gyfer ysgrifennu:\n"
+#~ " %1"
+
+#~ msgid "Could only write %1 bytes of %2."
+#~ msgstr "Gellid ysgrifennu %1 beit allan o %2 yn unig."
+
+#~ msgid "Welcome to KGet"
+#~ msgstr "Croeso i KGet"
+
+#, fuzzy
+#~ msgid "Could not create valid socket"
+#~ msgstr "Methwyd creu soced ddilys."
+
+#~ msgid "Offline"
+#~ msgstr "All-lein"
+
+#~ msgid "Starting offline"
+#~ msgstr "Yn dechrau all-lein"
+
+#~ msgid "&Open Individual Window"
+#~ msgstr "&Agor Ffenestr Unigol"
+
+#~ msgid "Move to &Beginning"
+#~ msgstr "Symud i'r &Dechrau"
+
+#~ msgid "&Pause"
+#~ msgstr "&Seibio"
+
+#~ msgid "&Queue"
+#~ msgstr "&Rhesu"
+
+#~ msgid "&Timer"
+#~ msgstr "&Amserydd"
+
+#~ msgid "De&lay"
+#~ msgstr "&Oediad"
+
+#~ msgid "Use &Animation"
+#~ msgstr "Defnyddio &Bywlunio"
+
+#~ msgid "&Expert Mode"
+#~ msgstr "Modd &Arbenigwr"
+
+#~ msgid "&Use-Last-Folder Mode"
+#~ msgstr "Modd &Defnyddio-Plygell-Ddiwethaf"
+
+#~ msgid "Auto-&Disconnect Mode"
+#~ msgstr "Modd Da&tgysylltu Ymysgogol"
+
+#~ msgid "Auto-S&hutdown Mode"
+#~ msgstr "Modd &Cau-i-lawr Ymysgogol"
+
+#~ msgid "&Offline Mode"
+#~ msgstr "Modd &All-lein"
+
+#~ msgid "Show &Log Window"
+#~ msgstr "Dangos Ffenestr &Gofnod"
+
+#~ msgid " Files: %1 "
+#~ msgstr "Ffeiliau: %1"
+
+#~ msgid " Size: %1 KB "
+#~ msgstr "Maint: %1 KB"
+
+#~ msgid " Time: %1 "
+#~ msgstr "Amser: %1"
+
+#~ msgid ""
+#~ "<b>Resume</b> button starts selected transfers\n"
+#~ "and sets their mode to <i>queued</i>."
+#~ msgstr ""
+#~ "Mae'r botwm <b>Parhau</b> yn dechrau'r trosglwyddiadau\n"
+#~ " dewisiedig ac yn gosod eu moddau'n <i>giwiedig</i>."
+
+#~ msgid ""
+#~ "<b>Pause</b> button stops selected transfers\n"
+#~ "and sets their mode to <i>delayed</i>."
+#~ msgstr ""
+#~ "Mae'r botwm <b>Seibio</b> yn atal y trosglwyddiadau\n"
+#~ " dewisiedig ac yn gosod eu moddau'n <i>oediedig</i>."
+
+#~ msgid ""
+#~ "<b>Delete</b> button removes selected transfers\n"
+#~ "from the list."
+#~ msgstr ""
+#~ "Mae'r botwm <b>Dileu</b> yn gwaredu'r trosglwyddiadau\n"
+#~ " dewisiedig o'r restr."
+
+#~ msgid ""
+#~ "<b>Restart</b> button is a convenience button\n"
+#~ "that simply does Pause and Resume."
+#~ msgstr ""
+#~ "Botwm hwylustod yw <b>Ail-ddechrau</b> sy'n\n"
+#~ " achosi Seibio a Pharhau."
+
+#~ msgid ""
+#~ "<b>Queued</b> button sets the mode of selected\n"
+#~ "transfers to <i>queued</i>.\n"
+#~ "\n"
+#~ "It is a radio button -- you can choose between\n"
+#~ "three modes."
+#~ msgstr ""
+#~ "Mae'r botwm <b>Ciwiedig</b> yn gosod moddau'r trosglwyddiadau\n"
+#~ " dewisiedig yn <i>giwiedig</i>.\n"
+#~ "\n"
+#~ " Mae'n fotwm radio, gallwch ddewis rhwng\n"
+#~ " tri modd."
+
+#~ msgid ""
+#~ "<b>Scheduled</b> button sets the mode of selected\n"
+#~ "transfers to <i>scheduled</i>.\n"
+#~ "\n"
+#~ "It is a radio button -- you can choose between\n"
+#~ "three modes."
+#~ msgstr ""
+#~ "Mae'r botwm <b>Trefnlenedig</b> yn gosod moddau'r trosglwyddiadau\n"
+#~ " dewisiedig yn <i>drefnlenedig</i>.\n"
+#~ "\n"
+#~ " Mae'n fotwm radio, gallwch ddewis rhwng\n"
+#~ " tri modd."
+
+#~ msgid ""
+#~ "<b>Delayed</b> button sets the mode of selected\n"
+#~ "transfers to <i>delayed</i>.This also causes the selected transfers to "
+#~ "stop.\n"
+#~ "\n"
+#~ "It is a radio button -- you can choose between\n"
+#~ "three modes."
+#~ msgstr ""
+#~ "Mae'r botwm <b>Oediedig</b> yn gosod moddau'r trosglwyddiadau\n"
+#~ " dewisiedig yn <i>oediedig</i>. Mae hefyd yn atal y trosglwyddiadau "
+#~ "dewisiedig.\n"
+#~ "\n"
+#~ " Mae'n fotwm radio, gallwch ddewis rhwng\n"
+#~ " tri modd."
+
+#~ msgid ""
+#~ "<b>Preferences</b> button opens a preferences dialog\n"
+#~ "where you can set various options.\n"
+#~ "\n"
+#~ "Some of these options can be more easily set using the toolbar."
+#~ msgstr ""
+#~ "Mae'r botwm <b>Hoffiannau</b> yn agor ymgom hoffiannau\n"
+#~ " lle gallwch osod amryw o ddewisiadau.\n"
+#~ "\n"
+#~ " Gellir gosod rhai o'r gosodiadau hyn yn haws drwy ddefnyddio'r bar offer."
+
+#~ msgid ""
+#~ "<b>Log window</b> button opens a log window.\n"
+#~ "The log window records all program events that occur\n"
+#~ "while KGet is running."
+#~ msgstr ""
+#~ "Mae'r botwm <b>Ffenestr Gofnodion</b> yn agor ffenestr gofnodion.\n"
+#~ " Mae'r ffenestr gofnodion yn cofnodi pob digwyddiad rhaglenni sy'n "
+#~ "digwydd\n"
+#~ " tra bo KGet yn rhedeg."
+
+#~ msgid ""
+#~ "<b>Paste transfer</b> button adds a URL from\n"
+#~ "the clipboard as a new transfer.\n"
+#~ "\n"
+#~ "This way you can easily copy&paste URLs between\n"
+#~ "applications."
+#~ msgstr ""
+#~ "Mae'r botwm <b>Gludo trosglwyddiad</b> yn ychwanegu URL o'r\n"
+#~ " clipfwrdd yn drosglwyddiad newydd.\n"
+#~ "\n"
+#~ " Fel yma gallwch gopïo a gludo URLau rhwng\n"
+#~ " cymhwysiadau'n hawdd."
+
+#~ msgid ""
+#~ "<b>Expert mode</b> button toggles the expert mode\n"
+#~ "on and off.\n"
+#~ "\n"
+#~ "Expert mode is recommended for experienced users.\n"
+#~ "When set, you will not be \"bothered\" by confirmation\n"
+#~ "messages.\n"
+#~ "<b>Important!</b>\n"
+#~ "Turn it on if you are using auto-disconnect or\n"
+#~ "auto-shutdown features and you want KGet to disconnect \n"
+#~ "or shut down without asking."
+#~ msgstr ""
+#~ "Mae'r botwm <b>Modd arbenigwr</b> yn cynnau/diffodd y modd\n"
+#~ " arbenigwr.\n"
+#~ "\n"
+#~ " Argymellir y modd arbenigwr ar gyfer defnyddwyr profiadol.\n"
+#~ " Pan ynghyn, ni chewch eich \"tarfu\" gan\n"
+#~ " negeseuon gwirio.\n"
+#~ " <b>Pwysig!</b>\n"
+#~ " Cynnwch os ydych yn defnyddio datgysylltu ymysgogol neu\n"
+#~ " gau i lawr ymysgogol ac yr ydych am i KGet ddatgysylltu\n"
+#~ " neu gau i lawr heb ofyn."
+
+#~ msgid ""
+#~ "<b>Use last folder</b> button toggles the\n"
+#~ "use-last-folder feature on and off.\n"
+#~ "\n"
+#~ "When set, KGet will ignore the folder settings\n"
+#~ "and put all new added transfers into the folder\n"
+#~ "where the last transfer was put."
+#~ msgstr ""
+#~ "Mae'r botwm <b>Defnyddio cyfeiriadur diwethaf</b> yn cynnau/diffodd y "
+#~ "nodwedd\n"
+#~ " defnyddio-cyfeiriadur-diwethaf.\n"
+#~ "\n"
+#~ " Pan ynghyn, anwybydda KGet y gosodiadau cyfeiriadu\n"
+#~ " a rhoi'r holl drosglwyddiadau newydd a ychwanegir yn yr un cyfeiriadur\n"
+#~ " a roddwyd y trosglwyddiad diwethaf ynddo."
+
+#~ msgid ""
+#~ "<b>Auto disconnect</b> button toggles the auto-disconnect\n"
+#~ "mode on and off.\n"
+#~ "\n"
+#~ "When set, KGet will disconnect automatically\n"
+#~ "after all queued transfers are finished.\n"
+#~ "\n"
+#~ "<b>Important!</b>\n"
+#~ "Also turn on the expert mode when you want KGet\n"
+#~ "to disconnect without asking."
+#~ msgstr ""
+#~ "Mae'r botwm <b>Datgysylltu ymysgogol</b> yn cynnau/diffodd y modd\n"
+#~ " datgysylltu ymysgogol.\n"
+#~ "\n"
+#~ " Pan ynghyn bydd KGet yn datgysylltu'n ymysgogol\n"
+#~ " wedi i bob trosglwyddiad ciwiedig orffen.\n"
+#~ " \n"
+#~ " <b>Pwysig!</b> Cynnwch y modd arbenigwr pan ydych am i KGet\n"
+#~ " ddatgysylltu heb ofyn."
+
+#~ msgid ""
+#~ "<b>Auto shutdown</b> button toggles the auto-shutdown\n"
+#~ "mode on and off.\n"
+#~ "\n"
+#~ "When set, KGet will quit automatically\n"
+#~ "after all queued transfers are finished.\n"
+#~ "<b>Important!</b>\n"
+#~ "Also turn on the expert mode when you want KGet\n"
+#~ "to quit without asking."
+#~ msgstr ""
+#~ "Mae'r botwm <b>Cau i lawr ymysgogol</b> yn cynnau/diffodd y modd\n"
+#~ " cau i lawr ymysgogol.\n"
+#~ "\n"
+#~ " Pan ynghyn bydd KGet yn cau i lawr yn ymysgogol\n"
+#~ " wedi i bob trosglwyddiad ciwiedig orffen.\n"
+#~ " \n"
+#~ " <b>Pwysig!</b> Cynnwch y modd arbenigwr pan ydych am i KGet\n"
+#~ " gau i lawr heb ofyn."
+
+#~ msgid ""
+#~ "<b>Offline mode</b> button toggles the offline mode\n"
+#~ "on and off.\n"
+#~ "\n"
+#~ "When set, KGet will act as if it was not connected\n"
+#~ "to the Internet.\n"
+#~ "\n"
+#~ "You can browse offline, while still being able to add\n"
+#~ "new transfers as queued."
+#~ msgstr ""
+#~ "Mae'r botwm <b>Modd all-lein</b> yn cynnau/diffodd y modd\n"
+#~ " all-lein.\n"
+#~ "\n"
+#~ " Pan ynghyn bydd KGet yn gweithredu fel na petai weid'i\n"
+#~ " gysylltu â'r rhyngrwyd.\n"
+#~ " \n"
+#~ " Gallwch bori all-lein, tra'n gallu ychwanegu\n"
+#~ " trosglwyddiadau newydd yn giwiedig."
+
+#~ msgid ""
+#~ "<b>Drop target</b> button toggles the window style\n"
+#~ "between a normal window and a drop target.\n"
+#~ "\n"
+#~ "When set, the main window will be hidden and\n"
+#~ "instead a small shaped window will appear.\n"
+#~ "\n"
+#~ "You can show/hide a normal window with a simple click\n"
+#~ "on a shaped window."
+#~ msgstr ""
+#~ "Mae'r botwm <b>Targed ollwng</b> yn newid arddull y ffenestr\n"
+#~ " rhwng ffenestr arferol a tharged ollwng.\n"
+#~ " \n"
+#~ " Pan ynghyn, cuddir y brif ffenestr ac fe\n"
+#~ " ymddengys ffenestr siâp fach.\n"
+#~ " \n"
+#~ " Gallwch ddangos/guddio ffenestr arferol drwy glicio\n"
+#~ " ar ffenestr siâp."
+
+#~ msgid ""
+#~ "*.kgt|*.kgt\n"
+#~ "*|All Files"
+#~ msgstr ""
+#~ " *.kgt|*.kgt\n"
+#~ " *|Pob Ffeil"
+
+#~ msgid "Quitting..."
+#~ msgstr "Yn Diweddu..."
+
+#~ msgid ""
+#~ "The transfer you wanted to delete completed before it could be deleted."
+#~ msgid_plural ""
+#~ "%n transfers you wanted to delete completed before they could be deleted."
+#~ msgstr[0] ""
+#~ "Gorffenodd y trosglwyddiad yr oeddech eisiau ei ddileu cyn iddo gael ei "
+#~ "ddileu."
+#~ msgstr[1] ""
+#~ "Gorffenodd y %1 o drosglwyddiadau yr oeddech eisiau eu dileu cyn iddynt "
+#~ "gael eu dileu."
+
+#, fuzzy
+#~ msgid "Stopping all jobs"
+#~ msgstr "Yn seibio pob swydd"
+
+#~ msgid "Overwrite"
+#~ msgstr "Trosysgrifo"
+
+#~ msgid "Do Not Overwrite"
+#~ msgstr "Peidio â Throsysgrifo"
+
+#~ msgid "Starting another queued job."
+#~ msgstr "Yn dechrau swydd arall wedi'i resu."
+
+#~ msgid "Offline mode on."
+#~ msgstr "Modd all-lein ynghyn."
+
+#~ msgid "Offline mode off."
+#~ msgstr "Modd all-lein wedi'i ddiffodd"
+
+#~ msgid "Expert mode on."
+#~ msgstr "Modd arbenigwr ynghyn."
+
+#~ msgid "Expert mode off."
+#~ msgstr "Modd arbenigwr wedi'i ddiffodd"
+
+#~ msgid "Use last folder on."
+#~ msgstr "Defnyddio'r blygell ddiwethaf ynghyn."
+
+#~ msgid "Use last folder off."
+#~ msgstr "Defnyddio'r blygell ddiwethaf wedi'i diffodd."
+
+#~ msgid "Auto disconnect off."
+#~ msgstr "Datgysylltu ymysgogol wedi'i ddiffodd"
+
+#~ msgid "Auto shutdown off."
+#~ msgstr "Cau i lawr ymysgogol wedi'i ddiffodd."
+
+#~ msgid "Auto paste on."
+#~ msgstr "Gludo ymysgogol ynghyn."
+
+#~ msgid "Auto paste off."
+#~ msgstr "Gludo ymysgogol wedi'i ddiffodd."
+
+#, fuzzy
+#~ msgid "<b>Transfers:</b> %1 "
+#~ msgstr "Trosglwyddiadau: %1"
+
+#, fuzzy
+#~ msgid "<br /><b>Files:</b> %1 "
+#~ msgstr "Ffeiliau: %1"
+
+#, fuzzy
+#~ msgid "<br /><b>Size:</b> %1 "
+#~ msgstr "Maint: %1"
+
+#, fuzzy
+#~ msgid "<br /><b>Time:</b> %1 "
+#~ msgstr "Amser: %1"
+
+#~ msgid "Do you really want to disconnect?"
+#~ msgstr "A ydych wir am ddatgysylltu?"
+
+#~ msgid "Disconnect"
+#~ msgstr "Datgysylltu"
+
+#~ msgid "Disconnecting..."
+#~ msgstr "Yn Datgysylltu..."
+
+#, fuzzy
+#~ msgid "We are offline."
+#~ msgstr "Rydym all-lein!"
+
+#~ msgid "Id"
+#~ msgstr "Dynodiad (Id)"
+
+#~ msgid "Mixed"
+#~ msgstr "Cymysg"
+
+#~ msgid "Separated"
+#~ msgstr "Ar wahan"
+
+#~ msgid "Add new transfers as:"
+#~ msgstr "Ychwanegu trosglwyddiadau newydd  fel:"
+
+#~ msgid "Iconified"
+#~ msgstr "Eiconeiddio"
+
+#~ msgid "Advanced individual windows"
+#~ msgstr "Ffenestri unigol uwch"
+
+#~ msgid "Remove files from a list after success"
+#~ msgstr "Tynnu ffeiliau cyflawn o restr "
+
+#~ msgid "Get file sizes"
+#~ msgstr "Nôl maint ffeieliau"
+
+#, fuzzy
+#~ msgid "Expert mode (do not prompt for Cancel or Delete)"
+#~ msgstr "Modd uwch (dim anogiad am Ddileu na Ddiddymu)"
+
+#~ msgid "Show individual windows"
+#~ msgstr "Dangos ffenestri unigol"
+
+#~ msgid " min"
+#~ msgstr "mun"
+
+#~ msgid "Auto disconnect after completing downloads"
+#~ msgstr "Datgysylltu'n ymysgogol ar ôl cwblhau lawrlwytho"
+
+#~ msgid "Autosave file list every:"
+#~ msgstr "Cadw'r rhestr ffeiliau'n ymysgogol bob:"
+
+#~ msgid "Timed disconnect"
+#~ msgstr "Datgysylltiad Amseredig"
+
+#~ msgid "Disconnect command:"
+#~ msgstr "Gorchymyn Datgysylltu:"
+
+#~ msgid "Auto paste from clipboard"
+#~ msgstr "Gludo ymysgogol o'r clipfwrdd"
+
+#~ msgid "Reconnect Options"
+#~ msgstr "Dewisiadau Ailgysylltu"
+
+#~ msgid "On login or timeout error"
+#~ msgstr "Ar wall mewngofnodi neu oramser"
+
+#~ msgid "Timeout Options"
+#~ msgstr "Dewisiadau Goramser"
+
+#~ msgid "If no data arrives in:"
+#~ msgstr "Os na gyrhaedda data o fewn:"
+
+#, fuzzy
+#~ msgid "If server cannot resume:"
+#~ msgstr "Os na all y gweinydd barhau:"
+
+#~ msgid "Permanent"
+#~ msgstr "Parhaol"
+
+#~ msgid "PLIP"
+#~ msgstr "PLIP"
+
+#~ msgid "SLIP"
+#~ msgstr "SLIP"
+
+#~ msgid "PPP"
+#~ msgstr "PPP"
+
+#~ msgid "ISDN"
+#~ msgstr "ISDN"
+
+#~ msgid "Link number:"
+#~ msgstr "Rhif Cyswllt:"
+
+#~ msgid "Limits Options"
+#~ msgstr "Dewisiadau Terfynnau"
+
+#~ msgid "Minimum network bandwidth:"
+#~ msgstr "Isafswm ystod rhwydwaith:"
+
+#~ msgid "Maximum network bandwidth:"
+#~ msgstr "Uchafswm ystod rhwydwaith:"
+
+#~ msgid " bytes/sec"
+#~ msgstr "beit/eil"
+
+#~ msgid "Window style:"
+#~ msgstr "Arddull ffenestr:"
+
+#~ msgid "Attempt number %1"
+#~ msgstr "Cais rhif %1"
+
+#~ msgid "Pausing"
+#~ msgstr "Yn Seibio"
+
+#~ msgid "Delaying"
+#~ msgstr "Yn Oedi"
+
+#, fuzzy
+#~ msgid "The file size does not match."
+#~ msgstr "Nid yw maint y ffeil yn cydweddu!"
+
+#~ msgid "File Size checked"
+#~ msgstr "Gwiriwyd Maint Ffeil"
+
+#~ msgid "S"
+#~ msgstr "Eil"
+
+#~ msgid "%"
+#~ msgstr "%"

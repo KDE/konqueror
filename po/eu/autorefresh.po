@@ -1,0 +1,97 @@
+# translation of autorefresh.po to Basque
+# Marcos  <marcos@euskalgnu.org>, 2003.
+# Juan Irigoien <juanirigoien@yahoo.es>, 2004.
+# Iñigo Salvador Azurmendi <xalba@euskalnet.net>, 2009, 2011.
+# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2011.
+# Copyright (C) 2003, 2004, 2011 Free Software Foundation, Inc.
+msgid ""
+msgstr ""
+"Project-Id-Version: autorefresh\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2011-09-16 12:07+0200\n"
+"Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
+"Language-Team: Basque <itzulpena@euskalgnu.org>\n"
+"Language: eu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: autorefresh.cpp:28
+#, kde-format
+msgid "&Auto Refresh"
+msgstr "&Automatikoki freskatu"
+
+#: autorefresh.cpp:32
+#, kde-format
+msgid "None"
+msgstr "Bat ere ez"
+
+#: autorefresh.cpp:33
+#, kde-format
+msgid "Every 15 Seconds"
+msgstr "15 segundoro"
+
+#: autorefresh.cpp:34
+#, kde-format
+msgid "Every 30 Seconds"
+msgstr "30 segundoro"
+
+#: autorefresh.cpp:35
+#, kde-format
+msgid "Every Minute"
+msgstr "Minuturo"
+
+#: autorefresh.cpp:36
+#, kde-format
+msgid "Every 5 Minutes"
+msgstr "5 minuturo"
+
+#: autorefresh.cpp:37
+#, kde-format
+msgid "Every 10 Minutes"
+msgstr "10 minuturo"
+
+#: autorefresh.cpp:38
+#, kde-format
+msgid "Every 15 Minutes"
+msgstr "15 minuturo"
+
+#: autorefresh.cpp:39
+#, kde-format
+msgid "Every 30 Minutes"
+msgstr "30 minuturo"
+
+#: autorefresh.cpp:40
+#, kde-format
+msgid "Every 60 Minutes"
+msgstr "60 minuturo"
+
+#: autorefresh.cpp:41
+#, kde-format
+msgid "Every 2 Hours"
+msgstr "2 orduro"
+
+#: autorefresh.cpp:42
+#, kde-format
+msgid "Every 6 Hours"
+msgstr "6 orduro"
+
+#: autorefresh.cpp:100
+#, kde-format
+msgctxt "@title:window"
+msgid "Cannot Refresh Source"
+msgstr "Ezin da iturburua freskatu"
+
+#: autorefresh.cpp:101
+#, kde-format
+msgid "<qt>This plugin cannot auto-refresh the current part.</qt>"
+msgstr "<qt>Plugin honek ezin du uneko zatia automatikoki freskatu.</qt>"
+
+#. i18n: ectx: Menu (tools)
+#: autorefresh.rc:5
+#, kde-format
+msgid "&Tools"
+msgstr "&Tresnak"

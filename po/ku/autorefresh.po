@@ -1,0 +1,100 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: autorefresh\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2009-01-17 21:07+0200\n"
+"Last-Translator: Omer Ensari <oensari@gmail.com>\n"
+"Language-Team: Kurdish <kde-i18n-doc@kde.org>\n"
+"Language: ku\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: Kurdish\n"
+"X-Poedit-SourceCharset: utf8\n"
+
+#: autorefresh.cpp:28
+#, kde-format
+msgid "&Auto Refresh"
+msgstr "Nû-kirina &Bixweber"
+
+#: autorefresh.cpp:32
+#, kde-format
+msgid "None"
+msgstr "Tuneye"
+
+#: autorefresh.cpp:33
+#, kde-format
+msgid "Every 15 Seconds"
+msgstr "Her 15 Xulekan"
+
+#: autorefresh.cpp:34
+#, kde-format
+msgid "Every 30 Seconds"
+msgstr "Her 30 Xulekan"
+
+#: autorefresh.cpp:35
+#, kde-format
+msgid "Every Minute"
+msgstr "Her Xulekê"
+
+#: autorefresh.cpp:36
+#, kde-format
+msgid "Every 5 Minutes"
+msgstr "Her 5 Xulekan"
+
+#: autorefresh.cpp:37
+#, kde-format
+msgid "Every 10 Minutes"
+msgstr "Her 10 Xulekan"
+
+#: autorefresh.cpp:38
+#, kde-format
+msgid "Every 15 Minutes"
+msgstr "Her 15 Xulekan"
+
+#: autorefresh.cpp:39
+#, kde-format
+msgid "Every 30 Minutes"
+msgstr "Her 30 Xulekan"
+
+#: autorefresh.cpp:40
+#, kde-format
+msgid "Every 60 Minutes"
+msgstr "Her 60 Xulekan"
+
+#: autorefresh.cpp:41
+#, fuzzy, kde-format
+#| msgid "Every 5 Minutes"
+msgid "Every 2 Hours"
+msgstr "Her 5 Xulekan"
+
+#: autorefresh.cpp:42
+#, fuzzy, kde-format
+#| msgid "Every 60 Minutes"
+msgid "Every 6 Hours"
+msgstr "Her 60 Xulekan"
+
+#: autorefresh.cpp:100
+#, fuzzy, kde-format
+#| msgid "Cannot Refresh Source"
+msgctxt "@title:window"
+msgid "Cannot Refresh Source"
+msgstr "Nikare Çavkaniyê Nû Bike"
+
+#: autorefresh.cpp:101
+#, kde-format
+msgid "<qt>This plugin cannot auto-refresh the current part.</qt>"
+msgstr "<qt>Ev pêvek nikare beşa heyî bixweber-nû bike.</qt>"
+
+#. i18n: ectx: Menu (tools)
+#: autorefresh.rc:5
+#, kde-format
+msgid "&Tools"
+msgstr "&Amûr"

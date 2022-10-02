@@ -1,0 +1,4037 @@
+# Translation of konqueror to Croatian
+#
+# DoDo <DoDoEntertainment@gmail.com>, 2009.
+# Andrej Dundovic <adundovi@gmail.com>, 2009, 2010.
+# Andrej Dundović <adundovi@gmail.com>, 2010.
+# Marko Dimjasevic <marko@dimjasevic.net>, 2010, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror 0\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-22 00:44+0000\n"
+"PO-Revision-Date: 2011-02-15 16:19+0100\n"
+"Last-Translator: Marko Dimjasevic <marko@dimjasevic.net>\n"
+"Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
+"Language: hr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 1.2\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Renato Pavičić, Andrej Dundović, Nenad Mikša"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+"renato@translator-shop.org, adundovi@gmail.com, DoDoEntertainment@gmail.com"
+
+#: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4881
+#: src/konqmainwindow.cpp:4927
+#, kde-format
+msgid "no name"
+msgstr "bez imena"
+
+#: src/konqextensionmanager.cpp:50
+#, fuzzy, kde-format
+#| msgid "Configure Extensions..."
+msgctxt "@title:window"
+msgid "Configure Extensions"
+msgstr "Konfiguriranje proširenja …"
+
+#: src/konqextensionmanager.cpp:70
+#, kde-format
+msgid "Extensions"
+msgstr "Ekstenzije"
+
+#: src/konqfactory.cpp:67
+#, kde-format
+msgid ""
+"There was an error loading the module %1.\n"
+"The diagnostics is:\n"
+"%2"
+msgstr ""
+"Pogreška pri učitavanju modula %1\n"
+"Dijagnostika je:\n"
+"%2"
+
+#: src/konqframestatusbar.cpp:108
+#, kde-format
+msgid ""
+"Checking this box on at least two views sets those views as 'linked'. Then, "
+"when you change directories in one view, the other views linked with it will "
+"automatically update to show the current directory. This is especially "
+"useful with different types of views, such as a directory tree with an icon "
+"view or detailed view, and possibly a terminal emulator window."
+msgstr ""
+"Označavanjem ovog okvira unutar najmanje dva prikaza povezat ćete te "
+"prikaze. Na taj način, ako u jednom prikazu promijenite mapu i ostali "
+"povezani prikazi prilagodit će se novom sadržaju. Ova je opcija korisna ako "
+"upotrebljavate različite načine prikaza, poput stabla mapa s prikazom ikona "
+"ili detalja u jednom, a konzolu u drugom prozoru."
+
+#: src/konqframestatusbar.cpp:154
+#, kde-format
+msgid "Close View"
+msgstr "Zatvori prikaz"
+
+#: src/konqframestatusbar.cpp:232
+#, kde-format
+msgid "%1/s"
+msgstr "%1/s"
+
+#: src/konqframestatusbar.cpp:234
+#, kde-format
+msgid "Stalled"
+msgstr "Ukočeno"
+
+#: src/konqguiclients.cpp:51
+#, kde-format
+msgid "Preview &in %1"
+msgstr "Pregledaj u %1"
+
+#: src/konqguiclients.cpp:118
+#, kde-format
+msgid "Show %1"
+msgstr "Prikaži %1"
+
+#: src/konqhistorydialog.cpp:39
+#, kde-format
+msgctxt "@title:window"
+msgid "History"
+msgstr "Povijest"
+
+#: src/konqhistorydialog.cpp:55 src/konqhistoryview.cpp:140
+#, kde-format
+msgctxt "@action:inmenu Parent of 'By Name' and 'By Date'"
+msgid "Sort"
+msgstr "Sortiraj"
+
+#: src/konqhistorymodel.cpp:119
+#, kde-format
+msgid ""
+"<qt><center><b>%1</b></center><hr />Last visited: %2<br />First visited: "
+"%3<br />Number of times visited: %4</qt>"
+msgstr ""
+"<qt><center><b>%1</b></center><hr />Posljednja posjeta: %2<br />Prva "
+"posjeta: %3<br />Broj posjeta: %4</qt>"
+
+#: src/konqhistorymodel.cpp:213
+#, kde-format
+msgid "Local"
+msgstr "Lokalno"
+
+#: src/konqhistorymodel.cpp:216
+#, kde-format
+msgid "Miscellaneous"
+msgstr "Ostalo"
+
+#: src/konqhistoryview.cpp:53 src/konqmainwindow.cpp:4412
+#, kde-format
+msgid "Open in New &Window"
+msgstr "Otvori u novom prozoru"
+
+#: src/konqhistoryview.cpp:58
+#, kde-format
+msgid "Open in New Tab"
+msgstr "Otvori u novoj kartici"
+
+#: src/konqhistoryview.cpp:63
+#, fuzzy, kde-format
+#| msgid "Open in New Tab"
+msgid "Open in Current Tab"
+msgstr "Otvori u novoj kartici"
+
+#: src/konqhistoryview.cpp:67
+#, kde-format
+msgid "&Copy Link Address"
+msgstr "&Kopiraj adresu poveznice"
+
+#: src/konqhistoryview.cpp:72
+#, kde-format
+msgid "&Remove Entry"
+msgstr "&Ukloni unos"
+
+#: src/konqhistoryview.cpp:79
+#, kde-format
+msgid "C&lear History"
+msgstr "Izbriši povijest"
+
+#: src/konqhistoryview.cpp:84
+#, kde-format
+msgid "&Preferences..."
+msgstr "&Postavke…"
+
+#: src/konqhistoryview.cpp:91
+#, kde-format
+msgid "By &Name"
+msgstr "Po &nazivu"
+
+#: src/konqhistoryview.cpp:97
+#, kde-format
+msgid "By &Date"
+msgstr "Po &datumu"
+
+#: src/konqhistoryview.cpp:107
+#, kde-format
+msgid "Search in history"
+msgstr "Traži u povijesti"
+
+#: src/konqhistoryview.cpp:168
+#, kde-format
+msgid "Do you really want to clear the entire history?"
+msgstr "Želite li zaista izbrisati čitavu povijest?"
+
+#: src/konqhistoryview.cpp:169
+#, fuzzy, kde-format
+#| msgid "Clear History?"
+msgctxt "@title:window"
+msgid "Clear History?"
+msgstr "Izbrisati povijest?"
+
+#: src/konqmain.cpp:170
+#, kde-format
+msgid "Konqueror"
+msgstr "Konqueror"
+
+#: src/konqmain.cpp:171
+#, kde-format
+msgid "Web browser, file manager and document viewer."
+msgstr "Web preglednik, upravitelj datoteka i preglednik dokumenata."
+
+#: src/konqmain.cpp:173
+#, fuzzy, kde-format
+#| msgid "(C) 1999-2008, The Konqueror developers"
+msgid "(C) 1999-2016, The Konqueror developers"
+msgstr "© 1999–2008 razvijatelji Konquerora"
+
+#: src/konqmain.cpp:176
+#, kde-format
+msgid "Stefano Crocco"
+msgstr ""
+
+#: src/konqmain.cpp:176
+#, kde-format
+msgid "Current maintainer"
+msgstr ""
+
+#: src/konqmain.cpp:177
+#, kde-format
+msgid "David Faure"
+msgstr "David Faure"
+
+#: src/konqmain.cpp:177
+#, fuzzy, kde-format
+#| msgid "Developer (framework, parts, JavaScript, I/O library) and maintainer"
+msgid ""
+"Developer (framework, parts, JavaScript, I/O library) and former maintainer"
+msgstr ""
+"razvijatelj (radno okruženje, dijelovi, Javascript, I/O biblioteka) i "
+"održavanje"
+
+#: src/konqmain.cpp:178
+#, kde-format
+msgid "Simon Hausmann"
+msgstr "Simon Hausmann"
+
+#: src/konqmain.cpp:178
+#, kde-format
+msgid "Developer (framework, parts)"
+msgstr "razvijatelj (radno okruženje, dijelovi)"
+
+#: src/konqmain.cpp:179
+#, kde-format
+msgid "Michael Reiher"
+msgstr "Michael Reiher"
+
+#: src/konqmain.cpp:179 src/konqmain.cpp:207 src/konqmain.cpp:213
+#, kde-format
+msgid "Developer (framework)"
+msgstr "razvijatelj (radno okruženje)"
+
+#: src/konqmain.cpp:180
+#, kde-format
+msgid "Matthias Welk"
+msgstr "Matthias Welk"
+
+#: src/konqmain.cpp:180
+#, kde-format
+msgid "Developer"
+msgstr "razvijatelj"
+
+#: src/konqmain.cpp:181
+#, kde-format
+msgid "Alexander Neundorf"
+msgstr "Alexander Neundorf"
+
+#: src/konqmain.cpp:181
+#, kde-format
+msgid "Developer (List views)"
+msgstr "razvijatelj (prikaz popisa)"
+
+#: src/konqmain.cpp:182
+#, kde-format
+msgid "Michael Brade"
+msgstr "Michael Brade"
+
+#: src/konqmain.cpp:182
+#, kde-format
+msgid "Developer (List views, I/O library)"
+msgstr "razvijatelj (prikaz popisa, I/O biblioteka)"
+
+#: src/konqmain.cpp:183
+#, kde-format
+msgid "Lars Knoll"
+msgstr "Lars Knoll"
+
+#: src/konqmain.cpp:183 src/konqmain.cpp:184 src/konqmain.cpp:185
+#: src/konqmain.cpp:187 src/konqmain.cpp:188 src/konqmain.cpp:190
+#: src/konqmain.cpp:191 src/konqmain.cpp:192 src/konqmain.cpp:193
+#: src/konqmain.cpp:195
+#, kde-format
+msgid "Developer (HTML rendering engine)"
+msgstr "razvijatelj (pogon HTML iscrtavanja)"
+
+#: src/konqmain.cpp:184
+#, kde-format
+msgid "Dirk Mueller"
+msgstr "Dirk Mueller"
+
+#: src/konqmain.cpp:185
+#, kde-format
+msgid "Peter Kelly"
+msgstr "Peter Kelly"
+
+#: src/konqmain.cpp:186
+#, kde-format
+msgid "Waldo Bastian"
+msgstr "Waldo Bastian"
+
+#: src/konqmain.cpp:186
+#, kde-format
+msgid "Developer (HTML rendering engine, I/O library)"
+msgstr "razvijatelj (pogon HTML iscrtavanja, I/O biblioteka)"
+
+#: src/konqmain.cpp:187
+#, kde-format
+msgid "Germain Garand"
+msgstr "Germain Garand"
+
+#: src/konqmain.cpp:188
+#, kde-format
+msgid "Leo Savernik"
+msgstr "Leo Savernik"
+
+#: src/konqmain.cpp:189
+#, kde-format
+msgid "Stephan Kulow"
+msgstr "Stephan Kulow"
+
+#: src/konqmain.cpp:189
+#, kde-format
+msgid ""
+"Developer (HTML rendering engine, I/O library, regression test framework)"
+msgstr ""
+"razvijatelj (pogon HTML iscrtavanja, I/O biblioteka, povratno ispitivanje "
+"radnog okruženja)"
+
+#: src/konqmain.cpp:190
+#, kde-format
+msgid "Antti Koivisto"
+msgstr "Antti Koivisto"
+
+#: src/konqmain.cpp:191
+#, kde-format
+msgid "Zack Rusin"
+msgstr "Zack Rusin"
+
+#: src/konqmain.cpp:192
+#, kde-format
+msgid "Tobias Anton"
+msgstr "Tobias Anton"
+
+#: src/konqmain.cpp:193
+#, kde-format
+msgid "Lubos Lunak"
+msgstr "Lubos Lunak"
+
+#: src/konqmain.cpp:194
+#, kde-format
+msgid "Maks Orlovich"
+msgstr "Maks Orlovich"
+
+#: src/konqmain.cpp:194 src/konqmain.cpp:196
+#, kde-format
+msgid "Developer (HTML rendering engine, JavaScript)"
+msgstr "razvijatelj (pogon HTML iscrtavanja, JavaScript)"
+
+#: src/konqmain.cpp:195
+#, kde-format
+msgid "Allan Sandfeld Jensen"
+msgstr "Allan Sandfeld Jensen"
+
+#: src/konqmain.cpp:196
+#, kde-format
+msgid "Apple Safari Developers"
+msgstr "Razvijatelji Apple Safarija"
+
+#: src/konqmain.cpp:197
+#, kde-format
+msgid "Harri Porten"
+msgstr "Harri Porten"
+
+#: src/konqmain.cpp:197
+#, kde-format
+msgid "Developer (JavaScript)"
+msgstr "razvijatelj (JavaScript)"
+
+#: src/konqmain.cpp:198
+#, kde-format
+msgid "Koos Vriezen"
+msgstr "Koos Vriezen"
+
+#: src/konqmain.cpp:198
+#, kde-format
+msgid "Developer (Java applets and other embedded objects)"
+msgstr "razvijatelj (Java apleti i ostali ugrađeni objekti)"
+
+#: src/konqmain.cpp:199
+#, kde-format
+msgid "Matt Koss"
+msgstr "Matt Koss"
+
+#: src/konqmain.cpp:199 src/konqmain.cpp:200
+#, kde-format
+msgid "Developer (I/O library)"
+msgstr "razvijatelj (I/O biblioteka)"
+
+#: src/konqmain.cpp:200
+#, kde-format
+msgid "Alex Zepeda"
+msgstr "Alex Zepeda"
+
+#: src/konqmain.cpp:201
+#, kde-format
+msgid "Richard Moore"
+msgstr "Richard Moore"
+
+#: src/konqmain.cpp:201 src/konqmain.cpp:202
+#, kde-format
+msgid "Developer (Java applet support)"
+msgstr "razvijatelj (podrška za Java applete)"
+
+#: src/konqmain.cpp:202
+#, kde-format
+msgid "Dima Rogozin"
+msgstr "Dima Rogozin"
+
+#: src/konqmain.cpp:203
+#, kde-format
+msgid "Wynn Wilkes"
+msgstr "Wynn Wilkes"
+
+#: src/konqmain.cpp:203
+#, kde-format
+msgid ""
+"Developer (Java 2 security manager support,\n"
+" and other major improvements to applet support)"
+msgstr ""
+"razvijatelj (podrška za sigurnost Java2,\n"
+"i ostala veća unapređenja podršci apleta)"
+
+#: src/konqmain.cpp:204
+#, kde-format
+msgid "Stefan Schimanski"
+msgstr "Stefan Schimanski"
+
+#: src/konqmain.cpp:204
+#, kde-format
+msgid "Developer (Netscape plugin support)"
+msgstr "razvijatelj (podrška za Netscape dodatke)"
+
+#: src/konqmain.cpp:205
+#, kde-format
+msgid "George Staikos"
+msgstr "George Staikos"
+
+#: src/konqmain.cpp:205
+#, kde-format
+msgid "Developer (SSL, Netscape plugins)"
+msgstr "razvijatelj (SSL, podrška za Netscape dodatke)"
+
+#: src/konqmain.cpp:206
+#, kde-format
+msgid "Dawit Alemayehu"
+msgstr "Dawit Alemayehu"
+
+#: src/konqmain.cpp:206
+#, kde-format
+msgid "Developer (I/O library, Authentication support)"
+msgstr "razvijatelj (I/O biblioteka, podrška za provjeru korisnika)"
+
+#: src/konqmain.cpp:207
+#, kde-format
+msgid "Carsten Pfeiffer"
+msgstr "Carsten Pfeiffer"
+
+#: src/konqmain.cpp:208
+#, kde-format
+msgid "Torsten Rahn"
+msgstr "Torsten Rahn"
+
+#: src/konqmain.cpp:208
+#, kde-format
+msgid "Graphics/icons"
+msgstr "grafika/ikone"
+
+#: src/konqmain.cpp:209
+#, kde-format
+msgid "Torben Weis"
+msgstr "Torben Weis"
+
+#: src/konqmain.cpp:209
+#, kde-format
+msgid "KFM author"
+msgstr "kfm autor"
+
+#: src/konqmain.cpp:210
+#, kde-format
+msgid "Joseph Wenninger"
+msgstr "Joseph Wenninger"
+
+#: src/konqmain.cpp:210
+#, kde-format
+msgid "Developer (navigation panel framework)"
+msgstr "razvijatelj (radnog okruženja navigacijskog panela)"
+
+#: src/konqmain.cpp:211
+#, kde-format
+msgid "Stephan Binner"
+msgstr "Stephan Binner"
+
+#: src/konqmain.cpp:211
+#, kde-format
+msgid "Developer (misc stuff)"
+msgstr "razvijatelj (ostali detalji)"
+
+#: src/konqmain.cpp:212
+#, kde-format
+msgid "Ivor Hewitt"
+msgstr "Ivor Hewitt"
+
+#: src/konqmain.cpp:212
+#, kde-format
+msgid "Developer (AdBlock filter)"
+msgstr "razvijatelj (filtar blokiranja oglasa)"
+
+#: src/konqmain.cpp:213
+#, kde-format
+msgid "Eduardo Robles Elvira"
+msgstr "Eduardo Robles Elvira"
+
+#: src/konqmain.cpp:223
+#, kde-format
+msgid "Start without a default window, when called without URLs"
+msgstr "Pokreni bez zadanog prozora kada je pozvan bez URL-ova"
+
+#: src/konqmain.cpp:224
+#, kde-format
+msgid ""
+"Preload for later use. This mode does not support URLs on the command line"
+msgstr ""
+"Učitaj prijevremeno za kasniju upotrebu. Ovaj mod ne podržava URL-ove u "
+"naredbenom retku"
+
+#: src/konqmain.cpp:225
+#, kde-format
+msgid "Profile to open (DEPRECATED, IGNORED)"
+msgstr ""
+
+#: src/konqmain.cpp:225
+#, kde-format
+msgid "profile"
+msgstr ""
+
+#: src/konqmain.cpp:226
+#, kde-format
+msgid "List available sessions"
+msgstr "Popis dostupnih sjednica"
+
+#: src/konqmain.cpp:227
+#, kde-format
+msgid "Session to open"
+msgstr "Sjednica za otvaranje"
+
+#: src/konqmain.cpp:227
+#, fuzzy, kde-format
+#| msgid "Sessions"
+msgid "session"
+msgstr "Sjednice"
+
+#: src/konqmain.cpp:228
+#, kde-format
+msgid "Mimetype to use for this URL (e.g. text/html or inode/directory)"
+msgstr ""
+"Mime vrsta koja će biti upotrebljavana za ovaj URL (npr. tekst/html ili "
+"inode/mapa)."
+
+#: src/konqmain.cpp:228
+#, kde-format
+msgid "mimetype"
+msgstr ""
+
+#: src/konqmain.cpp:229
+#, kde-format
+msgid "Part to use (e.g. khtml or kwebkitpart)"
+msgstr "Dio koji treba koristiti (npr. khtml ili kwebkitpart)"
+
+#: src/konqmain.cpp:229
+#, fuzzy, kde-format
+msgid "service"
+msgstr "Odaberi datoteke:"
+
+#: src/konqmain.cpp:230
+#, kde-format
+msgid ""
+"For URLs that point to files, opens the directory and selects the file, "
+"instead of opening the actual file"
+msgstr ""
+"Kod URL adresa koje upućuju na datoteke, otvara mapu i označava datoteku "
+"umjesto njezinog otvaranja."
+
+#: src/konqmain.cpp:231
+#, kde-format
+msgid "The files/URLs opened by the application will be deleted after use"
+msgstr ""
+
+#: src/konqmain.cpp:233
+#, kde-format
+msgid "Location to open"
+msgstr "Lokacija koju treba otvoriti"
+
+#: src/konqmainwindow.cpp:658
+#, kde-format
+msgctxt "@title:tab"
+msgid "Loading..."
+msgstr "Učitavam …"
+
+#: src/konqmainwindow.cpp:690
+#, fuzzy, kde-format
+#| msgid "Accessed"
+msgid "Access denied"
+msgstr "Pristupljeno"
+
+#: src/konqmainwindow.cpp:1465
+#, fuzzy, kde-format
+#| msgid "&Open File..."
+msgid "Open File"
+msgstr "Otvori datoteku …"
+
+#: src/konqmainwindow.cpp:1548
+#, kde-format
+msgid "Canceled."
+msgstr "Otkazano."
+
+#: src/konqmainwindow.cpp:1584
+#, kde-format
+msgid ""
+"This page contains changes that have not been submitted.\n"
+"Reloading the page will discard these changes."
+msgstr ""
+"Ova stranica sadrži izmjene koje nisu bile predočene.\n"
+"Osvježavanje stranice odbacit će izmjene."
+
+#: src/konqmainwindow.cpp:1585 src/konqmainwindow.cpp:2282
+#: src/konqmainwindow.cpp:2375 src/konqmainwindow.cpp:2407
+#: src/konqmainwindow.cpp:2450 src/konqmainwindow.cpp:2472
+#: src/konqmainwindow.cpp:4849
+#, fuzzy, kde-format
+#| msgid "Discard Changes?"
+msgctxt "@title:window"
+msgid "Discard Changes?"
+msgstr "Odbaciti izmjene?"
+
+#: src/konqmainwindow.cpp:1585 src/konqmainwindow.cpp:2282
+#: src/konqmainwindow.cpp:2375 src/konqmainwindow.cpp:2407
+#: src/konqmainwindow.cpp:2450 src/konqmainwindow.cpp:2473
+#: src/konqmainwindow.cpp:4849
+#, kde-format
+msgid "&Discard Changes"
+msgstr "&Odbaci izmjene"
+
+#: src/konqmainwindow.cpp:1952 src/konqmainwindow.cpp:1958
+#, kde-format
+msgid "Home Folder"
+msgstr "Početna mapa"
+
+#: src/konqmainwindow.cpp:1953 src/konqmainwindow.cpp:3424
+#, kde-format
+msgid "Home"
+msgstr "Glavna"
+
+#: src/konqmainwindow.cpp:1959
+#, kde-format
+msgid "Navigate to your 'Home Folder'"
+msgstr "Navigiraj do \"Glavne lokacije\""
+
+#: src/konqmainwindow.cpp:1960
+#, kde-format
+msgid "Navigate to your local 'Home Folder'"
+msgstr "Navigiraj do \"Glavne lokacije\""
+
+#. i18n: ectx: label, entry, group (UserSettings)
+#: src/konqmainwindow.cpp:1963 src/konqueror.kcfg:16
+#, kde-format
+msgid "Home Page"
+msgstr "Glavna"
+
+#: src/konqmainwindow.cpp:1965
+#, kde-format
+msgid "Navigate to your 'Home Page'"
+msgstr "Navigiraj do \"Glavne lokacije\""
+
+#: src/konqmainwindow.cpp:1966
+#, kde-format
+msgid ""
+"<html>Navigate to your 'Home Page'<br /><br />You can configure the location "
+"where this button takes you under <b>Settings -> Configure Konqueror -> "
+"General</b>.</html>"
+msgstr ""
+"<html>Navigiraj do \"Glavne lokacije\"<br /> <br />Lokaciju na koju će vas "
+"odvesti ovaj gumb možete konfigurirati na mjestu <b>Postavke → Konfiguriraj "
+"Konqueror → Općenito</b>.</html>"
+
+#: src/konqmainwindow.cpp:2281
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Detaching the tab will discard these changes."
+msgstr ""
+"Ova kartica sadrži izmjene koje nisu bile predočene.\n"
+"Odvajanje kartice odbacit će izmjene."
+
+#: src/konqmainwindow.cpp:2374
+#, kde-format
+msgid ""
+"This view contains changes that have not been submitted.\n"
+"Closing the view will discard these changes."
+msgstr ""
+"Ovaj prikaz sadrži izmjene koje nisu bile predočene.\n"
+"Zatvaranje ovog prikaza odbacit će izmjene."
+
+#: src/konqmainwindow.cpp:2406
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Closing the tab will discard these changes."
+msgstr ""
+"Ova kartica sadrži izmjene koje nisu bile predočene.\n"
+"Zatvaranje kartice odbacit će izmjene."
+
+#: src/konqmainwindow.cpp:2432
+#, kde-format
+msgid "Do you really want to close all other tabs?"
+msgstr "Želite li zaista zatvoriti sve ostale kartice?"
+
+#: src/konqmainwindow.cpp:2433 src/konqmainwindow.cpp:3505 src/konqtabs.cpp:335
+#, kde-format
+msgid "Close &Other Tabs"
+msgstr "Zatvori &ostale kartice"
+
+#: src/konqmainwindow.cpp:2433
+#, fuzzy, kde-format
+#| msgid "Close Other Tabs Confirmation"
+msgctxt "@title:window"
+msgid "Close Other Tabs Confirmation"
+msgstr "Potvrđivanje zatvaranja ostalih kartica"
+
+#: src/konqmainwindow.cpp:2449
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Closing other tabs will discard these changes."
+msgstr ""
+"Ova kartica sadrži izmjene koje nisu bile predočene.\n"
+"Zatvaranje drugih kartica odbacit će izmjene."
+
+#: src/konqmainwindow.cpp:2471
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Reloading all tabs will discard these changes."
+msgstr ""
+"Ova kartica sadrži izmjene koje nisu bile predočene.\n"
+"Osvježavanje svih kartica odbacit će izmjene."
+
+#: src/konqmainwindow.cpp:2513
+#, fuzzy, kde-format
+#| msgid "Enter Target"
+msgctxt "@title:window"
+msgid "Enter Target"
+msgstr "Unesite cilj"
+
+#: src/konqmainwindow.cpp:2520
+#, kde-format
+msgid "<qt><b>%1</b> is not valid</qt>"
+msgstr "<qt><b>%1</b> nije valjan </qt>"
+
+#: src/konqmainwindow.cpp:2530
+#, kde-format
+msgid "Copy selected files from %1 to:"
+msgstr "Kopiraj odabrane datoteke iz %1 u:"
+
+#: src/konqmainwindow.cpp:2543
+#, kde-format
+msgid "Move selected files from %1 to:"
+msgstr "Premjesti odabrane datoteke iz %1 u:"
+
+#: src/konqmainwindow.cpp:2717
+#, kde-format
+msgctxt "This menu entry empties the closed items history"
+msgid "Empty Closed Items History"
+msgstr "Izbriši povijest zatvorenih stavki"
+
+#: src/konqmainwindow.cpp:2740
+#, kde-format
+msgid "Save As..."
+msgstr "Spremi kao …"
+
+#: src/konqmainwindow.cpp:2742
+#, kde-format
+msgid "Manage..."
+msgstr "Upravljaj …"
+
+#: src/konqmainwindow.cpp:3333
+#, kde-format
+msgid "New &Window"
+msgstr "Novi &prozor"
+
+#: src/konqmainwindow.cpp:3338
+#, kde-format
+msgid "&Duplicate Window"
+msgstr "&Izradi kopiju prozora"
+
+#: src/konqmainwindow.cpp:3343
+#, kde-format
+msgid "Send &Link Address..."
+msgstr "Pošalji adresu &veze …"
+
+#: src/konqmainwindow.cpp:3347
+#, kde-format
+msgid "S&end File..."
+msgstr "Pošalji &datoteku …"
+
+#: src/konqmainwindow.cpp:3351
+#, kde-format
+msgid "&Open Location"
+msgstr "Otvori lokaciju"
+
+#: src/konqmainwindow.cpp:3357
+#, kde-format
+msgid "&Open File..."
+msgstr "Otvori datoteku …"
+
+#: src/konqmainwindow.cpp:3362
+#, kde-format
+msgid "&Find File..."
+msgstr "&Traži datoteku …"
+
+#: src/konqmainwindow.cpp:3371
+#, kde-format
+msgid "Lock to Current Location"
+msgstr "Prikaz zaključaj u trenutnoj lokaciji"
+
+#: src/konqmainwindow.cpp:3374
+#, kde-format
+msgctxt "This option links konqueror views"
+msgid "Lin&k View"
+msgstr "Poveži p&rikaz"
+
+#: src/konqmainwindow.cpp:3379
+#, kde-format
+msgid "&Up"
+msgstr "&Gore"
+
+#: src/konqmainwindow.cpp:3389
+#, kde-format
+msgid "Closed Items"
+msgstr "Zatvorene stavke"
+
+#: src/konqmainwindow.cpp:3402
+#, kde-format
+msgid "Sessions"
+msgstr "Sjednice"
+
+#: src/konqmainwindow.cpp:3429
+#, kde-format
+msgctxt "@action:inmenu Go"
+msgid "Most Often Visited"
+msgstr "Najčešće posjećeno"
+
+#: src/konqmainwindow.cpp:3433
+#, kde-format
+msgctxt "@action:inmenu Go"
+msgid "Recently Visited"
+msgstr "Nedavno posjećeno"
+
+#: src/konqmainwindow.cpp:3442
+#, kde-format
+msgctxt "@action:inmenu Go"
+msgid "Show History"
+msgstr "Prikaži povijest"
+
+#: src/konqmainwindow.cpp:3455
+#, kde-format
+msgid "Configure Extensions..."
+msgstr "Konfiguriranje proširenja …"
+
+#: src/konqmainwindow.cpp:3459
+#, kde-format
+msgid "Configure Spell Checking..."
+msgstr "Konfiguriranje provjere pravopisa …"
+
+#: src/konqmainwindow.cpp:3465
+#, kde-format
+msgid "Split View &Left/Right"
+msgstr "Prikaz razdjeli &uspravno"
+
+#: src/konqmainwindow.cpp:3470
+#, kde-format
+msgid "Split View &Top/Bottom"
+msgstr "Prikaz razdjeli &vodoravno"
+
+#: src/konqmainwindow.cpp:3475 src/konqtabs.cpp:456
+#, kde-format
+msgid "&New Tab"
+msgstr "&Nova kartica"
+
+#: src/konqmainwindow.cpp:3484
+#, kde-format
+msgid "&Duplicate Current Tab"
+msgstr "&Izradi kopiju kartice"
+
+#: src/konqmainwindow.cpp:3489
+#, kde-format
+msgid "Detach Current Tab"
+msgstr "Odvoji trenutnu karticu"
+
+#: src/konqmainwindow.cpp:3494
+#, kde-format
+msgid "&Close Active View"
+msgstr "&Zatvori aktivan prikaz"
+
+#: src/konqmainwindow.cpp:3499
+#, kde-format
+msgid "Close Current Tab"
+msgstr "Zatvori trenutnu karticu"
+
+#: src/konqmainwindow.cpp:3509
+#, kde-format
+msgid "Activate Next Tab"
+msgstr "Aktiviraj sljedeću karticu"
+
+#: src/konqmainwindow.cpp:3513
+#, kde-format
+msgid "Activate Previous Tab"
+msgstr "Aktiviraj prethodnu karticu"
+
+#: src/konqmainwindow.cpp:3520
+#, kde-format
+msgid "Activate Tab %1"
+msgstr "Aktiviraj karticu %1"
+
+#: src/konqmainwindow.cpp:3525
+#, kde-format
+msgid "Move Tab Left"
+msgstr "Karticu pomakni ulijevo"
+
+#: src/konqmainwindow.cpp:3530
+#, kde-format
+msgid "Move Tab Right"
+msgstr "Karticu pomakni udesno"
+
+#: src/konqmainwindow.cpp:3538
+#, kde-format
+msgid "Dump Debug Info"
+msgstr "Ispiši podatke o nedostatku"
+
+#: src/konqmainwindow.cpp:3556
+#, kde-format
+msgid "&Reload"
+msgstr "&Osvježi"
+
+#: src/konqmainwindow.cpp:3561 src/konqtabs.cpp:313
+#, kde-format
+msgid "&Reload All Tabs"
+msgstr "&Osvježi sve kartice"
+
+#: src/konqmainwindow.cpp:3569
+#, kde-format
+msgid "&Force Reload"
+msgstr "&Osvježi karticu (prisilno)"
+
+#: src/konqmainwindow.cpp:3595
+#, kde-format
+msgid "&Stop"
+msgstr "&Zaustavi"
+
+#: src/konqmainwindow.cpp:3604
+#, kde-format
+msgid "Throbber"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3608 src/konqmainwindow.cpp:3611
+#, kde-format
+msgid "L&ocation: "
+msgstr "L&okacija: "
+
+#: src/konqmainwindow.cpp:3618
+#, kde-format
+msgid "Location Bar"
+msgstr "Traka lokacija"
+
+#: src/konqmainwindow.cpp:3624
+#, kde-format
+msgid ""
+"<html>Location Bar<br /><br />Enter a web address or search term.</html>"
+msgstr ""
+"<html>Traka lokacija<br /> <br />Unesite web adresu ili izraz za "
+"pretraživanje.</html>"
+
+#: src/konqmainwindow.cpp:3628
+#, kde-format
+msgid "Clear Location Bar"
+msgstr "Očisti traku lokacija"
+
+#: src/konqmainwindow.cpp:3632
+#, kde-format
+msgid ""
+"<html>Clear Location bar<br /><br />Clears the contents of the location bar."
+"</html>"
+msgstr ""
+"<html>Očisti traku lokacija<br /> <br />Briše sadržaj trake lokacija</html>"
+
+#: src/konqmainwindow.cpp:3637
+#, kde-format
+msgid "&Bookmarks"
+msgstr "&Oznake"
+
+#: src/konqmainwindow.cpp:3665
+#, kde-format
+msgid "Kon&queror Introduction"
+msgstr "Uvod u Kon&queror"
+
+#: src/konqmainwindow.cpp:3670
+#, kde-format
+msgid "Go"
+msgstr "Kreni"
+
+#: src/konqmainwindow.cpp:3672
+#, kde-format
+msgid ""
+"<html>Go<br /><br />Goes to the page that has been entered into the location "
+"bar.</html>"
+msgstr ""
+"<html>Kreni<br /> <br />Odlazak na adresu stranice unesenu u lokacijsku "
+"traku.</html>"
+
+#: src/konqmainwindow.cpp:3678
+#, kde-format
+msgid ""
+"<html>Enter the parent folder<br /><br />For instance, if the current "
+"location is file:/home/%1 clicking this button will take you to file:/home.</"
+"html>"
+msgstr ""
+"<html>Unesite nadređenu mapu<br /> <br />Na primjer, ako je trenutna "
+"lokacija datoteka:/home/%1, klikanje ovog gumba odvest će vas u mapu "
+"datoteka:/home.</html>"
+
+#: src/konqmainwindow.cpp:3681
+#, kde-format
+msgid "Enter the parent folder"
+msgstr "Unesite nadređenu mapu"
+
+#: src/konqmainwindow.cpp:3683 src/konqmainwindow.cpp:3684
+#, kde-format
+msgid "Move backwards one step in the browsing history"
+msgstr "Kretanje korak natrag u povijesti pregledavanja"
+
+#: src/konqmainwindow.cpp:3686 src/konqmainwindow.cpp:3687
+#, kde-format
+msgid "Move forward one step in the browsing history"
+msgstr "Kretanje korak naprijed u povijesti pregledavanja"
+
+#: src/konqmainwindow.cpp:3689 src/konqmainwindow.cpp:3690
+#, kde-format
+msgid "Move backwards one step in the closed tabs history"
+msgstr "Kretanje korak natrag u povijesti pregledavanja"
+
+#: src/konqmainwindow.cpp:3692
+#, kde-format
+msgid ""
+"<html>Reload the currently displayed document<br /><br />This may, for "
+"example, be needed to refresh web pages that have been modified since they "
+"were loaded, in order to make the changes visible.</html>"
+msgstr ""
+"<html>Ponovno učitaj trenutni dokument<br /> <br />Ovo može biti potrebno za "
+"osvježavanje web-stranica koje su izmijenjene od njihovog posljednjeg "
+"učitavanja, radi prikazivanja izmijenjenog sadržaja.</html>"
+
+#: src/konqmainwindow.cpp:3695
+#, kde-format
+msgid "Reload the currently displayed document"
+msgstr "Ponovno učitaj trenutni dokument"
+
+#: src/konqmainwindow.cpp:3697
+#, kde-format
+msgid ""
+"<html>Reload all currently displayed documents in tabs<br /><br />This may, "
+"for example, be needed to refresh web pages that have been modified since "
+"they were loaded, in order to make the changes visible.</html>"
+msgstr ""
+"<html>Ponovo učitaj sve dokumente prikazane u karticama<br /> <br />Ovo može "
+"biti potrebno za osvježavanje web-stranica koje su izmijenjene od njihovog "
+"posljednjeg učitavanja, radi prikazivanja izmijenjenog sadržaja.</html>"
+
+#: src/konqmainwindow.cpp:3700
+#, kde-format
+msgid "Reload all currently displayed document in tabs"
+msgstr "Ponovo učitaj sve dokumente prikazane u karticama"
+
+#: src/konqmainwindow.cpp:3702
+#, kde-format
+msgid ""
+"<html>Stop loading the document<br /><br />All network transfers will be "
+"stopped and Konqueror will display the content that has been received so far."
+"</html>"
+msgstr ""
+"<html>Zaustavi učitavanje dokumenta<br /> <br />Svi mrežni prijenosi bit će "
+"prekinuti i Konqueror će prikazati sadržaj koji je primljen do ovog trenutka."
+"</html>"
+
+#: src/konqmainwindow.cpp:3706
+#, fuzzy, kde-format
+#| msgid ""
+#| "<html>Reload the currently displayed document<br /><br />This may, for "
+#| "example, be needed to refresh web pages that have been modified since "
+#| "they were loaded, in order to make the changes visible.  Any images on "
+#| "the page are downloaded again, even if cached copies exist.</html>"
+msgid ""
+"<html>Reload the currently displayed document<br /><br />This may, for "
+"example, be needed to refresh web pages that have been modified since they "
+"were loaded, in order to make the changes visible. Any images on the page "
+"are downloaded again, even if cached copies exist.</html>"
+msgstr ""
+"<html>Ponovno učitaj trenutni dokument<br /> <br />Ovo može biti potrebno za "
+"osvježavanje web-stranica koje su izmijenjene od njihovog posljednjeg "
+"učitavanja, radi prikazivanja izmijenjenog sadržaja.</html>"
+
+#: src/konqmainwindow.cpp:3710
+#, kde-format
+msgid ""
+"Force a reload of the currently displayed document and any contained images"
+msgstr "Ponovo učitaj trenutno prikazani dokument i sve njegove slike"
+
+#: src/konqmainwindow.cpp:3712
+#, kde-format
+msgid "Stop loading the document"
+msgstr "Zaustavi učitavanje dokumenta"
+
+#: src/konqmainwindow.cpp:3714
+#, kde-format
+msgid ""
+"<html>Cut the currently selected text or item(s) and move it to the system "
+"clipboard<br /><br />This makes it available to the <b>Paste</b> command in "
+"Konqueror and other KDE applications.</html>"
+msgstr ""
+"<html>Izrezivanje trenutno odabranog teksta ili stavki i njihovo "
+"premještanje u odlagalište sustava<br /> <br />Sadržaj postaje raspoloživ "
+"naredbi <b>Zalijepi</b> unutar Konquerora i ostalih KDE aplikacija.</html>"
+
+#: src/konqmainwindow.cpp:3718
+#, kde-format
+msgid "Move the selected text or item(s) to the clipboard"
+msgstr "Premještanje odabranog teksta ili stavke/stavki u odlagalište"
+
+#: src/konqmainwindow.cpp:3720
+#, kde-format
+msgid ""
+"<html>Copy the currently selected text or item(s) to the system "
+"clipboard<br /><br />This makes it available to the <b>Paste</b> command in "
+"Konqueror and other KDE applications.</html>"
+msgstr ""
+"<html>Kopiranje trenutno odabranog teksta ili stavki i njihovo premještanje "
+"u odlagalište sustava<br /> <br />Sadržaj postaje raspoloživ naredbi "
+"<b>Zalijepi</b> unutar Konquerora i ostalih KDE aplikacija.</html>"
+
+#: src/konqmainwindow.cpp:3724
+#, kde-format
+msgid "Copy the selected text or item(s) to the clipboard"
+msgstr "Kopiranje odabranog teksta ili stavke/stavki u odlagalište"
+
+#: src/konqmainwindow.cpp:3726
+#, kde-format
+msgid ""
+"<html>Paste the previously cut or copied clipboard contents<br /><br />This "
+"also works for text copied or cut from other KDE applications.</html>"
+msgstr ""
+"<html>Lijepljenje prethodno izrezanog ili kopiranog sadržaja odlagališta<br /"
+"> <br />Funkcionira i za tekst kopiran ili izrezan iz ostalih KDE aplikacija."
+"</html>"
+
+#: src/konqmainwindow.cpp:3729
+#, kde-format
+msgid "Paste the clipboard contents"
+msgstr "Zalijepi sadržaje odlagališta"
+
+#: src/konqmainwindow.cpp:3731
+#, kde-format
+msgid ""
+"<html>Print the currently displayed document<br /><br />You will be "
+"presented with a dialog where you can set various options, such as the "
+"number of copies to print and which printer to use.<br /><br />This dialog "
+"also provides access to special KDE printing services such as creating a PDF "
+"file from the current document.</html>"
+msgstr ""
+"<html>Ispisivanje trenutno prikazanog dokumenta<br /> <br />Bit će prikazan "
+"dijalog s mogućnostima podešavanja raznih opcija, poput broja kopija az "
+"ispisivanj i odabir pisača.<br /><br /> Ovaj dijalog ujedno omogućuje "
+"pristup posebnim KDE uslugama ispisivanja poput izrade PDF dokumenta od "
+"trenutnog dokumenta.</html>"
+
+#: src/konqmainwindow.cpp:3737
+#, kde-format
+msgid "Print the current document"
+msgstr "Ispisivanje trenutnog dokumenta"
+
+#: src/konqmainwindow.cpp:3739
+#, kde-format
+msgid ""
+"A locked view cannot change folders. Use in combination with 'link view' to "
+"explore many files from one folder"
+msgstr ""
+"Zaključani prikaz ne može izmijeniti mape. Upotrijebite u kombinaciji s "
+"\"Povezanim prikaz\" za pregled više datoteka iz jedne mape."
+
+#: src/konqmainwindow.cpp:3740
+#, kde-format
+msgid ""
+"Sets the view as 'linked'. A linked view follows folder changes made in "
+"other linked views."
+msgstr ""
+"Određuje prikaz kao \"povezan\". Povezani prikaz prati promjene mapa unutar "
+"ostalih povezanih prikaza."
+
+#: src/konqmainwindow.cpp:3744
+#, fuzzy, kde-format
+#| msgid "C&lose Current Tab"
+msgid "&Inspect Current Page"
+msgstr "Zatvori trenutnu &karticu"
+
+#: src/konqmainwindow.cpp:3745
+#, kde-format
+msgid ""
+"<html>Shows the developer tools for the current page<br/><br/>The current "
+"view is split in two and the developer tools are displayed in the second half"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3746
+#, kde-format
+msgid "Shows the developer tools for the current page"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3912
+#, kde-format
+msgid "Copy &Files..."
+msgstr "Kopiraj &datoteke …"
+
+#: src/konqmainwindow.cpp:3916
+#, kde-format
+msgid "M&ove Files..."
+msgstr "Pre&mjesti datoteke …"
+
+#: src/konqmainwindow.cpp:4245
+#, kde-format
+msgid ""
+"You have requested to open more than 20 bookmarks in tabs. This might take a "
+"while. Continue?"
+msgstr ""
+"Zahtijevate otvaranje više od 20 oznaka u karticama. To može potrajati. "
+"Želite li nastaviti?"
+
+#: src/konqmainwindow.cpp:4247
+#, fuzzy, kde-format
+#| msgid "Open bookmarks folder in new tabs"
+msgctxt "@title:window"
+msgid "Open bookmarks folder in new tabs"
+msgstr "Otvori mapu oznaka u novim karticama"
+
+#: src/konqmainwindow.cpp:4405
+#, kde-format
+msgid "Open in T&his Window"
+msgstr "Otvori u &ovom prozoru"
+
+#: src/konqmainwindow.cpp:4406
+#, kde-format
+msgid "Open the document in current window"
+msgstr "Otvaranje dokumenta u trenutnom prozoru"
+
+#: src/konqmainwindow.cpp:4413
+#, kde-format
+msgid "Open the document in a new window"
+msgstr "Otvori dokument u novom prozoru"
+
+#: src/konqmainwindow.cpp:4419
+#, kde-format
+msgid "Open in &New Tab"
+msgstr "Otvori u &novoj kartici"
+
+#: src/konqmainwindow.cpp:4421
+#, kde-format
+msgid "Open the document in a new tab"
+msgstr "Dokument otvara u novoj kartici"
+
+#: src/konqmainwindow.cpp:4637
+#, kde-format
+msgid "&Open With"
+msgstr "&Otvori s"
+
+#: src/konqmainwindow.cpp:4650
+#, kde-format
+msgid "Open with %1"
+msgstr "Otvori s %1"
+
+#: src/konqmainwindow.cpp:4698
+#, kde-format
+msgctxt "@action:inmenu View"
+msgid "&View Mode"
+msgstr "&Način prikaza"
+
+#: src/konqmainwindow.cpp:4815
+#, kde-format
+msgid ""
+"You have multiple tabs open in this window, are you sure you want to quit?"
+msgstr ""
+"U prozoru postoji nekoliko otvorenih kartica. Jeste li sigurni da želite "
+"izaći?"
+
+#: src/konqmainwindow.cpp:4817
+#, fuzzy, kde-format
+#| msgid "Confirmation"
+msgctxt "@title:window"
+msgid "Confirmation"
+msgstr "Potvrda"
+
+#: src/konqmainwindow.cpp:4819
+#, kde-format
+msgid "C&lose Current Tab"
+msgstr "Zatvori trenutnu &karticu"
+
+#: src/konqmainwindow.cpp:4845
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Closing the window will discard these changes."
+msgstr ""
+"Ova kartica sadrži izmjene koje nisu bile predočene.\n"
+"Zatvaranje prozora odbacit će izmjene."
+
+#: src/konqmainwindow.cpp:4846
+#, kde-format
+msgid ""
+"This page contains changes that have not been submitted.\n"
+"Closing the window will discard these changes."
+msgstr ""
+"Ova stranica sadrži izmjene koje nisu bile predočene.\n"
+"Zatvaranje prozora odbacit će izmjene."
+
+#: src/konqmainwindow.cpp:5003
+#, kde-format
+msgid ""
+"Your sidebar is not functional or unavailable. A new entry cannot be added."
+msgstr ""
+"Bočna traka nije funkcionalna ili je nedostupna. Nova stavka ne može se "
+"dodati."
+
+#: src/konqmainwindow.cpp:5003 src/konqmainwindow.cpp:5010
+#, fuzzy, kde-format
+#| msgid "Web Sidebar"
+msgctxt "@title:window"
+msgid "Web Sidebar"
+msgstr "Web bočna traka"
+
+#: src/konqmainwindow.cpp:5008
+#, kde-format
+msgid "Add new web extension \"%1\" to your sidebar?"
+msgstr "Dodati novo web proširenje \"%1\" u vašu bočnu traku?"
+
+#: src/konqmainwindow.cpp:5010
+#, kde-format
+msgid "Add"
+msgstr "Dodaj"
+
+#: src/konqmainwindow.cpp:5010
+#, kde-format
+msgid "Do Not Add"
+msgstr "Ne dodaj"
+
+#: src/konqmainwindow.cpp:5358
+#, kde-format
+msgid ""
+"There appears to be a configuration error. You have associated Konqueror "
+"with %1, but it cannot handle this file type."
+msgstr ""
+"Izgleda se da postoji konfiguracijska pogreška. Konqueror je povezan s %1, "
+"no on ne može rukovati datotekama te vrste."
+
+#: src/konqmainwindow.cpp:5439
+#, kde-format
+msgid ""
+"Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
+"proxy will be used\n"
+"\n"
+" QtWebEngine only support a fixed proxy, so proxy auto-configuration (PAC) "
+"and Web Proxy Auto-Discovery protocol can't be used with QtWebEngine. If you "
+"need a proxy, please select the system proxy configuration or specify a "
+"proxy URL manually in the settings dialog. Do you want to change proxy "
+"settings now?"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5444
+#, fuzzy, kde-format
+msgid "Unsupported proxy configuration"
+msgstr "Konfiguracija radne površine"
+
+#: src/konqmainwindow.cpp:5444
+#, kde-format
+msgid "Don't use a proxy"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5445 src/konqmainwindow.cpp:5463
+#, fuzzy, kde-format
+#| msgid "Show Configuration Button"
+msgid "Show proxy configuration dialog"
+msgstr "Prikaži konfiguracijski gumb"
+
+#: src/konqmainwindow.cpp:5459
+#, kde-format
+msgid ""
+"Your proxy configuration can't be used with the QtWebEngine HTML engine "
+"because it doesn't support having different proxies for the HTTP and HTTPS "
+"protocols. Your current settings are:<p><b>HTTP proxy:</b> <tt>%1</tt></"
+"p><p><b>HTTPS proxy: </b><tt>%2</tt></p>What do you want to do?"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5462
+#, fuzzy, kde-format
+msgid "Conflicting proxy configuration"
+msgstr "Konfiguracija radne površine"
+
+#: src/konqmainwindow.cpp:5463
+#, kde-format
+msgid "Use HTTP proxy (only this time)"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5463
+#, kde-format
+msgid "Use HTTPS proxy (only this time)"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5540
+#, kde-format
+msgid ""
+"You have entered Complete Full Screen mode (the user interface is completely "
+"hidden). You can exit it by pressing the keyboard shortcut for Full Screen "
+"Mode (%1)"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: src/konqnewsessiondlg_base.ui:28
+#, fuzzy, kde-format
+#| msgid "Save open tabs and windows for easy retrieval"
+msgid "Save open &tabs and windows for easy retrieval"
+msgstr "Spremi otvorene kartice i prozore za jednostavno vraćanje"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_pAllWindows)
+#: src/konqnewsessiondlg_base.ui:34
+#, fuzzy, kde-format
+msgid "A&ll open windows"
+msgstr "Otvori u novom prozoru"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_pCurrentWindow)
+#: src/konqnewsessiondlg_base.ui:44
+#, fuzzy, kde-format
+#| msgid "Open tabs inside current window"
+msgid "Onl&y current window"
+msgstr "Otvaranje kartica u trenutnom prozoru"
+
+#. i18n: ectx: property (text), widget (QLabel, lblSessionName)
+#: src/konqnewsessiondlg_base.ui:56
+#, fuzzy, kde-format
+#| msgid "&Session name:"
+msgid "Session n&ame:"
+msgstr "Ime &sjednice:"
+
+#: src/konqsessiondlg.cpp:60
+#, fuzzy, kde-format
+#| msgid "Manage Sessions"
+msgctxt "@title:window"
+msgid "Manage Sessions"
+msgstr "Upravljanje sjednicama"
+
+#: src/konqsessiondlg.cpp:168
+#, fuzzy, kde-format
+#| msgid "Rename Session"
+msgctxt "@title:window"
+msgid "Rename Session"
+msgstr "Preimenovanje sjednice"
+
+#: src/konqsessiondlg.cpp:215
+#, fuzzy, kde-format
+#| msgid "Save Session"
+msgctxt "@title:window"
+msgid "Save Session"
+msgstr "Spremi sjednicu"
+
+#: src/konqsessiondlg.cpp:251
+#, kde-format
+msgid ""
+"A session with the name '%1' already exists, do you want to overwrite it?"
+msgstr "Sjednica s imenom '%1' već postoji, želite li je prepisati?"
+
+#: src/konqsessiondlg.cpp:252
+#, fuzzy, kde-format
+#| msgid "Session exists. Overwrite?"
+msgctxt "@title:window"
+msgid "Session exists. Overwrite?"
+msgstr "Sjednica postoji. Prepisati?"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pNewButton)
+#: src/konqsessiondlg_base.ui:26
+#, kde-format
+msgctxt "@action:button New session"
+msgid "New..."
+msgstr "Nova…"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pSaveCurrentButton)
+#: src/konqsessiondlg_base.ui:33
+#, fuzzy, kde-format
+#| msgctxt "@action:button Save current session"
+#| msgid "Save Current"
+msgctxt "@action:button Save current session"
+msgid "Save Current..."
+msgstr "Spremi trenutno"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pRenameButton)
+#: src/konqsessiondlg_base.ui:40
+#, kde-format
+msgctxt "@action:button Rename session"
+msgid "Rename..."
+msgstr "Preimenuj…"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pDeleteButton)
+#: src/konqsessiondlg_base.ui:47
+#, kde-format
+msgctxt "@action:button Delete session"
+msgid "Delete"
+msgstr "Izbriši"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pOpenTabsInsideCurrentWindow)
+#. i18n: ectx: label, entry, group (Trash)
+#: src/konqsessiondlg_base.ui:73 src/konqueror.kcfg:517
+#, kde-format
+msgid "Open tabs inside current window"
+msgstr "Otvaranje kartica u trenutnom prozoru"
+
+#: src/konqsessionmanager.cpp:86
+#, fuzzy, kde-format
+#| msgid "Restore Session?"
+msgctxt "@title:window"
+msgid "Restore Session?"
+msgstr "Vratiti sjednicu?"
+
+#: src/konqsessionmanager.cpp:107
+#, fuzzy, kde-format
+#| msgid ""
+#| "Konqueror did not close correctly. Would you like to restore the previous "
+#| "session?"
+msgid ""
+"Konqueror did not close correctly. Would you like to restore these previous "
+"sessions?"
+msgstr ""
+"Konqueror nije ispravno zatvoren. Želite li vratiti prethodnu sjednicu?"
+
+#: src/konqsessionmanager.cpp:119
+#, kde-format
+msgctxt "@tooltip:session list"
+msgid "Uncheck the sessions you do not want to be restored"
+msgstr ""
+
+#: src/konqsessionmanager.cpp:152
+#, fuzzy, kde-format
+#| msgid "&Window"
+msgctxt "@item:treewidget"
+msgid "Window %1"
+msgstr "&Prozor"
+
+#: src/konqsessionmanager.cpp:190
+#, kde-format
+msgid "Do not ask again"
+msgstr ""
+
+#: src/konqsessionmanager.cpp:204
+#, fuzzy, kde-format
+#| msgid "Restore Session"
+msgctxt "@action:button yes"
+msgid "Restore Session"
+msgstr "Vratiti sjednicu?"
+
+#: src/konqsessionmanager.cpp:205
+#, fuzzy, kde-format
+#| msgid "Do Not Restore"
+msgctxt "@action:button no"
+msgid "Do Not Restore"
+msgstr "Nemoj vratiti"
+
+#: src/konqsessionmanager.cpp:206
+#, fuzzy, kde-format
+#| msgid "Ask Me Later"
+msgctxt "@action:button ask later"
+msgid "Ask Me Later"
+msgstr "Pitaj me kasnije"
+
+#: src/konqstatusbarmessagelabel.cpp:67
+#, fuzzy, kde-format
+#| msgid "Close View"
+msgctxt "@info"
+msgid "Close"
+msgstr "Zatvori prikaz"
+
+#: src/konqstatusbarmessagelabel.cpp:68
+#, fuzzy, kde-format
+#| msgid "Close View"
+msgid "Close"
+msgstr "Zatvori prikaz"
+
+#: src/konqstatusbarmessagelabel.cpp:147
+#, fuzzy, kde-format
+#| msgid "Error "
+msgid "Error: %1"
+msgstr "Pogreška"
+
+#: src/konqtabs.cpp:51
+#, kde-format
+msgid ""
+"This bar contains the list of currently open tabs. Click on a tab to make it "
+"active. You can also use keyboard shortcuts to navigate through tabs. The "
+"text on the tab shows the content currently open in it; place your mouse "
+"over the tab to see the full title, in case it has been shortened to fit the "
+"tab width."
+msgstr ""
+"Ova traka sadrži popis trenutno otvorenih kartica. Za aktiviranje je "
+"potrebno kliknuti karticu. Za navigaciju kroz kartice možete upotrebljavati "
+"i prečace tipkovnice. Tekst na kartici je naziv trenutno otvorene web-"
+"lokacije. Ako je tekst skraćen, da bi stao u prostor kartice, za "
+"prikazivanje punog naziva pokazivač miša postavite iznad kartice."
+
+#: src/konqtabs.cpp:86
+#, kde-format
+msgid "Open a new tab"
+msgstr "Otvori novu karticu"
+
+#: src/konqtabs.cpp:95
+#, kde-format
+msgid "Close the current tab"
+msgstr "Zatvori trenutnu karticu"
+
+#: src/konqtabs.cpp:461
+#, kde-format
+msgid "&Duplicate Tab"
+msgstr "&Izradi kopiju kartice"
+
+#: src/konqtabs.cpp:466
+#, kde-format
+msgid "&Reload Tab"
+msgstr "&Ponovno učitaj karticu"
+
+#: src/konqtabs.cpp:473
+#, kde-format
+msgid "Other Tabs"
+msgstr "Ostale kartice"
+
+#: src/konqtabs.cpp:478
+#, kde-format
+msgid "D&etach Tab"
+msgstr "&Odvoji karticu"
+
+#: src/konqtabs.cpp:484
+#, kde-format
+msgid "&Close Tab"
+msgstr "&Zatvori karticu"
+
+#. i18n: ectx: label, entry, group (UserSettings)
+#: src/konqueror.kcfg:11
+#, kde-format
+msgid "Start Page"
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry, group (UserSettings)
+#: src/konqueror.kcfg:12
+#, kde-format
+msgid "This is the URL of the web page where Konqueror will start from."
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry, group (UserSettings)
+#: src/konqueror.kcfg:17
+#, fuzzy, kde-format
+msgid ""
+"This is the URL of the web page where Konqueror will jump to when the \\"
+"\"Home\\\" button is pressed."
+msgstr ""
+"Ovo je URL adresa (npr. mape ili web-stranice) koju će Konqueror otvoriti "
+"kad kliknete gumb \"Glavna\". Uobičajeno je ovo vaša glavna korisnička mapa "
+"koju predstavlja znak \"tilde\" (~)."
+
+#. i18n: ectx: label, entry, group (UndoManagerSettings)
+#: src/konqueror.kcfg:26
+#, kde-format
+msgid "Maximum number of Closed Items"
+msgstr "Najveći broj Zatvorenih Stavki"
+
+#. i18n: ectx: whatsthis, entry, group (UndoManagerSettings)
+#: src/konqueror.kcfg:27
+#, kde-format
+msgid ""
+"This sets the maximum number of closed items that will be stored in memory. "
+"This limit will not be surpassed."
+msgstr ""
+"Ovo postavlja najveći broj zatvorenih stavki koje će se čuvati u memoriji. "
+"Ova granica neće biti prelažena."
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:36
+#, kde-format
+msgid "Open folders in separate windows"
+msgstr "Otvaranje mapa u posebnom prozoru"
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:37
+#, kde-format
+msgid ""
+"If this option is checked, Konqueror will open a new window when you open a "
+"folder, rather than showing that folder's contents in the current window."
+msgstr ""
+"Označavanjem ove opcije, Konqueror će pri otvaranju mape otvoriti novi "
+"prozor umjesto prikazivanja sadržaja te mape u trenutnom prozoru."
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:42
+#, kde-format
+msgid "Show file tips"
+msgstr "Prikaži savjete"
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:43
+#, kde-format
+msgid ""
+"Here you can control if, when moving the mouse over a file, you want to see "
+"a small popup window with additional information about that file"
+msgstr ""
+"Ovdje možete podesiti želite li pri prelasku mišem preko datoteke prikazati "
+"mali skočni prozor s dodatnim podacima o toj datoteci."
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:54
+#, kde-format
+msgid "Show previews in file tips"
+msgstr "U savjetima prikaži pregled"
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:55
+#, kde-format
+msgid ""
+"Here you can control if you want the popup window to contain a larger "
+"preview for the file, when moving the mouse over it"
+msgstr ""
+"Ovdje možete podesiti želite li pri prelasku mišem preko datoteke prikazati "
+"skočni prozor s većim pregledom dotične datoteke."
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:60
+#, kde-format
+msgid "Show 'Delete' menu entries which bypass the trashcan"
+msgstr ""
+"Prikazivanje stavki izbornika \"Izbriši\" koje zaobilaze kantu za otpad."
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:61
+#, fuzzy, kde-format
+#| msgid ""
+#| "Uncheck this if you do not want 'Delete' menu commands to be displayed on "
+#| "the desktop and in the file manager's menus and context menus. You can "
+#| "still delete files when hidden by holding the Shift key while calling "
+#| "'Move to Trash'."
+msgid ""
+"Check this if you want 'Delete' menu commands to be displayed on the desktop "
+"and in the file manager's menus and context menus. You can always delete "
+"files when hidden by holding the Shift key while calling 'Move to Trash'."
+msgstr ""
+"Uklonite oznaku ove opcije ako ne želite prikazivanje naredbi izbornika "
+"\"Izbriši\" na radnoj površini i u izbornicima upravitelja datotekama i "
+"kontekstualnim izbornicima. Brisanje datoteke bit će omogućeno pozivom "
+"opcije \"Premjesti u otpad\" i istovremenim pritiskom tipke Shift."
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:153 src/konqueror.kcfg:154
+#, kde-format
+msgid "Number of Open With items in the File menu"
+msgstr "Broj \"Otvori s\" stavki u izborniku \"Datoteka\""
+
+#. i18n: ectx: label, entry, group (HTML Settings)
+#: src/konqueror.kcfg:163
+#, kde-format
+msgid "Standard font"
+msgstr "Standardni font"
+
+#. i18n: ectx: whatsthis, entry, group (HTML Settings)
+#: src/konqueror.kcfg:164
+#, kde-format
+msgid "This is the font used to display text in Konqueror windows."
+msgstr ""
+"Ovaj se font upotrebljava za prikazivanje teksta u prozorima Konquerora."
+
+#. i18n: ectx: label, entry, group (HistorySettings)
+#: src/konqueror.kcfg:314
+#, kde-format
+msgid "Maximum number of history items per view"
+msgstr "Najveći broj stavki povijesti po pogledu"
+
+#. i18n: ectx: label, entry, group (Trash)
+#: src/konqueror.kcfg:504
+#, kde-format
+msgid "Ask confirmation for deleting a file."
+msgstr "Pri brisanju datoteke zatraži potvrdu."
+
+#. i18n: ectx: whatsthis, entry, group (Trash)
+#: src/konqueror.kcfg:505
+#, kde-format
+msgid ""
+"This option tells Konqueror whether to ask for a confirmation when you "
+"delete a file without using the trash folder. Warning, deleted files can not "
+"be recovered, so it is recommended to leave this confirmation enabled."
+msgstr ""
+"Označavanjem ove opcije, Konqueror će tražiti potvrdu pri premještanju "
+"datoteke u mapu s otpadom. Upozorenje, izbrisane datoteke ne mogu biti "
+"vraćene, pa je preporučeno ostaviti ovu opciju uključenom."
+
+#. i18n: ectx: label, entry, group (Trash)
+#: src/konqueror.kcfg:510
+#, kde-format
+msgid "Ask confirmation for move to trash"
+msgstr "Pri premještanju u otpad zatraži potvrdu."
+
+#. i18n: ectx: whatsthis, entry, group (Trash)
+#: src/konqueror.kcfg:511
+#, kde-format
+msgid ""
+"This option tells Konqueror whether to ask for a confirmation when you move "
+"the file to your trash folder, from where it can be recovered very easily."
+msgstr ""
+"Označavanjem ove opcije, Konqueror će tražiti potvrdu pri premještanju "
+"datoteke u mapu s otpadom. Povratak datoteke iz otpada je jako jednostavan."
+
+#. i18n: ectx: whatsthis, entry, group (Trash)
+#: src/konqueror.kcfg:518
+#, kde-format
+msgid ""
+"If true, when opening a session from within the sessions dialog the tabs "
+"will be opened inside current window."
+msgstr ""
+"Ako je označeno, pri otvaranju sjednice iz dijaloga sa sjednicama kartice će "
+"biti otvorene unutar trenutnog prozora."
+
+#. i18n: ectx: Menu (file)
+#: src/konqueror.rc:5
+#, kde-format
+msgid "&File"
+msgstr "&Datoteka"
+
+#. i18n: ectx: Menu (edit)
+#: src/konqueror.rc:24
+#, kde-format
+msgid "&Edit"
+msgstr "&Uredi"
+
+#. i18n: ectx: Menu (view)
+#: src/konqueror.rc:33
+#, kde-format
+msgid "&View"
+msgstr "&Prikaz"
+
+#. i18n: ectx: Menu (go)
+#: src/konqueror.rc:44
+#, kde-format
+msgid "&Go"
+msgstr "&Kreni"
+
+#. i18n: ectx: Menu (tools)
+#: src/konqueror.rc:54
+#, kde-format
+msgid "&Tools"
+msgstr "&Alati"
+
+#. i18n: ectx: Menu (settings)
+#: src/konqueror.rc:59
+#, kde-format
+msgid "&Settings"
+msgstr "Po&stavke"
+
+#. i18n: ectx: Menu (window)
+#: src/konqueror.rc:77
+#, kde-format
+msgid "&Window"
+msgstr "&Prozor"
+
+#. i18n: ectx: Menu (help)
+#: src/konqueror.rc:93
+#, kde-format
+msgid "&Help"
+msgstr "Pomo&ć"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: src/konqueror.rc:98
+#, kde-format
+msgid "Main Toolbar"
+msgstr "Glavna alatna traka"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: src/konqueror.rc:109
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "Dodatna alatna traka"
+
+#. i18n: ectx: ToolBar (locationToolBar)
+#: src/konqueror.rc:116
+#, kde-format
+msgid "Location Toolbar"
+msgstr "Traka lokacija"
+
+#. i18n: ectx: ToolBar (bookmarkToolBar)
+#: src/konqueror.rc:122
+#, kde-format
+msgid "Bookmark Toolbar"
+msgstr "Traka oznaka"
+
+#: src/konqundomanager.cpp:90 src/konqundomanager.cpp:252
+#, kde-format
+msgid "Und&o: Closed Tab"
+msgstr "Po&ništiti: Zatvorenu karticu"
+
+#: src/konqundomanager.cpp:92 src/konqundomanager.cpp:103
+#: src/konqundomanager.cpp:147
+#, kde-format
+msgid "Und&o: Closed Window"
+msgstr "Po&ništiti: Zatvoreni prozor"
+
+#: src/konqundomanager.cpp:105
+#, kde-format
+msgid "Und&o"
+msgstr "Po&ništi"
+
+#: src/konqview.cpp:1162
+#, kde-format
+msgid ""
+"The page you are trying to view is the result of posted form data. If you "
+"resend the data, any action the form carried out (such as search or online "
+"purchase) will be repeated. "
+msgstr ""
+"Stranica koju želite otvoriti rezultat je podataka objavljenih u obliku "
+"obrasca. Ako ponovno pošaljete podatke svaka će akcija koja proizlazi iz "
+"obrasca biti ponovljena (npr. pretraživanje ili kupovina putem Interneta)."
+
+#: src/konqview.cpp:1164
+#, fuzzy, kde-format
+#| msgid "Warning"
+msgctxt "@title:window"
+msgid "Warning"
+msgstr "Upozorenje"
+
+#: src/konqview.cpp:1164
+#, kde-format
+msgid "Resend"
+msgstr "Ponovno pošalji"
+
+#: src/urlloader.cpp:253
+#, kde-format
+msgctxt "Execute an executable file"
+msgid "Execute it"
+msgstr ""
+
+#: src/urlloader.cpp:258
+#, kde-format
+msgctxt ""
+"The user has to decide whether to execute an executable file or display it"
+msgid ""
+"<tt>%1</tt> can be executed. Do you want to execute it or to display it?"
+msgstr ""
+
+#: src/urlloader.cpp:259
+#, kde-format
+msgctxt "Display an executable file"
+msgid "Display it"
+msgstr ""
+
+#: src/urlloader.cpp:263
+#, kde-format
+msgctxt "The user has to decide whether to execute an executable file or not"
+msgid "<tt>%1</tt> can be executed. Do you want to execute it?"
+msgstr ""
+
+#: src/urlloader.cpp:438
+#, fuzzy, kde-format
+#| msgid "Save As..."
+msgid "Save As"
+msgstr "Spremi kao …"
+
+#~ msgid ""
+#~ "Malformed URL\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Neispravan URL\n"
+#~ "%1"
+
+#~ msgid "File Management"
+#~ msgstr "Upravljanje datotekama"
+
+#~ msgid "Web Browsing"
+#~ msgstr "Pregledavanje Interneta"
+
+#, fuzzy
+#~| msgid "Configure"
+#~ msgctxt "@title:window"
+#~ msgid "Configure"
+#~ msgstr "Konfiguriranje"
+
+#~ msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
+#~ msgid "Be free."
+#~ msgstr "Budi slobodan."
+
+#~ msgid ""
+#~ "Konqueror is a web browser, file manager and universal document viewer."
+#~ msgstr ""
+#~ "Konqueror je web preglednik, upravljač datotekama i univerzalni "
+#~ "preglednik dokumenata."
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "Starting Points"
+#~ msgstr "Početne točke"
+
+#~ msgid "Introduction"
+#~ msgstr "Uvod"
+
+#~ msgid "Tips"
+#~ msgstr "Savjeti"
+
+#~ msgid "Specifications"
+#~ msgstr "Specifikacije"
+
+#~ msgid "Your personal files"
+#~ msgstr "Vaše osobne datoteke"
+
+#~ msgid "Trash"
+#~ msgstr "Otpad"
+
+#~ msgid "Browse and restore the trash"
+#~ msgstr "Pretraži i obnovi otpad"
+
+#~ msgid "Network Folders"
+#~ msgstr "Mrežne mape"
+
+#~ msgid "Shared files and folders"
+#~ msgstr "Dijeljene datoteka i mapa"
+
+#~ msgid "Bookmarks"
+#~ msgstr "Oznake"
+
+#~ msgid "Quick access to your bookmarks"
+#~ msgstr "Brzi pristup vašim oznakama"
+
+#~ msgid "Next: An Introduction to Konqueror"
+#~ msgstr "Sljedeće: Uvod u Konqueror"
+
+#~ msgid "Search the Web"
+#~ msgstr "Pretraži Web"
+
+#~ msgid ""
+#~ "Konqueror makes working with and managing your files easy. You can browse "
+#~ "both local and networked folders while enjoying advanced features such as "
+#~ "the powerful sidebar and file previews."
+#~ msgstr ""
+#~ "Konqueror olakšava rad s datotekama i njihovo upravljanje. Možete "
+#~ "pretraživati podjednako lokalne i mrežne mape, uživajući pritom u "
+#~ "naprednim mogućnostima poput moćne bočne trake i brzog pregleda datoteka."
+
+#~ msgid ""
+#~ "Konqueror is also a full featured and easy to use web browser which you "
+#~ "can use to explore the Internet. Enter the address (e.g. <a href=\"http://"
+#~ "www.kde.org\">http://www.kde.org</a>) of a web page you would like to "
+#~ "visit in the location bar and press Enter, or choose an entry from the "
+#~ "Bookmarks menu."
+#~ msgstr ""
+#~ "Konqueror je također i web preglednik sa svim mogućnostima kojeg možete "
+#~ "koristiti kako bi istraživali Internet. U adresnu traku unesite adresu "
+#~ "koju želite posjetiti (npr. <a href=\"http://www.kde.org\">http://www.kde."
+#~ "org</a>) i pritisnite tipku Enter ili odaberite stavku s izbornika "
+#~ "\"Oznake\"."
+
+#~ msgid ""
+#~ "To return to the previous location, press the back button <img width='16' "
+#~ "height='16' src=\"%1\"></img> in the toolbar. "
+#~ msgstr ""
+#~ "Da biste se vratili na prethodnu lokaciju, na alatnoj traci kliknite gumb "
+#~ "<img width='16' height='16' src=\"%1\"></img>."
+
+#, fuzzy
+#~| msgid ""
+#~| "To quickly go to your Home folder press the  home button <img width='16' "
+#~| "height='16' src=\"%1\"></img>."
+#~ msgid ""
+#~ "To quickly go to your Home folder press the home button <img width='16' "
+#~ "height='16' src=\"%1\"></img>."
+#~ msgstr ""
+#~ "Da biste se vratili u vašu glavnu mapu, na alatnoj traci kliknite gumb "
+#~ "<img width='16' height='16' src=\"%1\"></img>."
+
+#~ msgid ""
+#~ "For more detailed documentation on Konqueror click <a href=\"%1\">here</"
+#~ "a>."
+#~ msgstr ""
+#~ "Za detaljniju dokumentaciju o Konqueroru kliknite <a href=\"%1\">ovdje</"
+#~ "a>."
+
+#, fuzzy
+#~| msgid "Next: Tips &amp; Tricks"
+#~ msgid "Next: Tips & Tricks"
+#~ msgstr "Sljedeće: Savjeti i trikovi"
+
+#~ msgid ""
+#~ "Konqueror is designed to embrace and support Internet standards. The aim "
+#~ "is to fully implement the officially sanctioned standards from "
+#~ "organizations such as the W3 and OASIS, while also adding extra support "
+#~ "for other common usability features that arise as de facto standards "
+#~ "across the Internet. Along with this support, for such functions as "
+#~ "favicons, Web Shortcuts, and <A HREF=\"%1\">XBEL bookmarks</A>, Konqueror "
+#~ "also implements:"
+#~ msgstr ""
+#~ "Konqueror je dizajniran radi prihvaćanja i podržavanja internetskih "
+#~ "standarda. Cilj je potpuna podrška za službeno propisane standarde od "
+#~ "strane organizacija kao što su W3 i OASIS uz dodavanje dodatne podrške "
+#~ "nekim drugim uobičajenim uporabljivosnim mogućnostima koji su se "
+#~ "nametnule kao 'de facto' standardi na Internetu. Uz navedenu podršku za "
+#~ "funkcije favikona, web prečaca i <A HREF=\"%1\">XBEL oznaka</A>, "
+#~ "Konqueror također implementira:"
+
+#~ msgid "Supported standards"
+#~ msgstr "Podržani standardi"
+
+#~ msgid "Additional requirements*"
+#~ msgstr "Dodatni zahtjevi*"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">DOM</A> Zasnovano na (Razina 1, djelomično Razina 2) <A "
+#~ "HREF=\"%2\">HTML 4.01</A>"
+
+#~ msgid "built-in"
+#~ msgstr "ugrađeno"
+
+#~ msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">Kaskadne liste oblikovanja</A> (CSS 1, dijelom CSS 2)"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Izdanje 3 (ugrubo odgovara JavaScript-u 1.5)"
+
+#~ msgid ""
+#~ "JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
+#~ msgstr ""
+#~ "JavaScript je globalno onemogućen. JavaScript omogućite <A HREF="
+#~ "\"%1\">ovdje</A>."
+
+#~ msgid ""
+#~ "JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\"
+#~ "\">here</A>."
+#~ msgstr ""
+#~ "JavaScript je omogućen (globalno). JavaScript konfigurirajte <A HREF=\\"
+#~ "\"%1\\\">ovdje</A>."
+
+#~ msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
+#~ msgstr "Podrška osiguranoj <A HREF=\"%1\">Java-i</A><SUP>&reg;</SUP>"
+
+#, fuzzy
+#~| msgid ""
+#~| "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">IBM</A> or <A HREF="
+#~| "\"%2\">Sun/Oracle</A>)"
+#~ msgid ""
+#~ "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">OpenJDK</A> or <A HREF="
+#~ "\"%2\">Sun/Oracle</A>)"
+#~ msgstr ""
+#~ "JDK 1.2.0 (Java 2) kompatibilni VM (<A HREF=\"%1\">IBM</A> ili <A HREF="
+#~ "\"%2\">Sun/Oracle</A>)"
+
+#~ msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
+#~ msgstr "Java-u globalno omogućite <A HREF=\"%1\">ovdje</A>."
+
+#~ msgid "Secure Sockets Layer"
+#~ msgstr "Sloj osiguranih priključaka (SSL)"
+
+#~ msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
+#~ msgstr ""
+#~ "(TLS/SSL v2/3) za osiguranu komunikaciju zaštićenu ključem do 168 bita"
+
+#~ msgid "OpenSSL"
+#~ msgstr "OpenSSL"
+
+#~ msgid "Bidirectional 16bit unicode support"
+#~ msgstr "Dvosmjerna podrška za 16-bitni unicode"
+
+#~ msgid "AutoCompletion for forms"
+#~ msgstr "Automatsko dopunjavanje obrazaca"
+
+#~ msgctxt "Title of an html 'group box' explaining konqueror features"
+#~ msgid "General"
+#~ msgstr "Općenito"
+
+#~ msgid "Feature"
+#~ msgstr "Osobine"
+
+#~ msgid "Details"
+#~ msgstr "Detalji"
+
+#~ msgid "Image formats"
+#~ msgstr "Oblikovanja slika"
+
+#~ msgid "PNG<br />JPG<br />GIF"
+#~ msgstr "PNG<br />JPG<br />GIF"
+
+#~ msgid "Transfer protocols"
+#~ msgstr "Protokoli za prijenos"
+
+#~ msgid "HTTP 1.1 (including gzip/bzip2 compression)"
+#~ msgstr "HTTP 1.1 (uključujući kompresiju gzip/bzip2)"
+
+#~ msgid "FTP"
+#~ msgstr "FTP"
+
+#, fuzzy
+#~| msgid "and <A HREF=\"%1\">many more...</A>"
+#~ msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpCenter)...</A>"
+#~ msgstr "i <A HREF=\"%1\">mnogo više…</A>"
+
+#~ msgctxt "A feature of Konqueror"
+#~ msgid "URL-Completion"
+#~ msgstr "Dopunjavanje URL-a"
+
+#~ msgid "Manual"
+#~ msgstr "Ručno"
+
+#~ msgid "Popup"
+#~ msgstr "Skočni izbornik"
+
+#~ msgid "(Short-) Automatic"
+#~ msgstr "(Kratko-) Automatsko"
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "<a href=\"%1\">Return to Starting Points</a>"
+#~ msgstr "<a href=\"%1\">Povratak na početak</a>"
+
+#, fuzzy
+#~| msgid "Tips &amp; Tricks"
+#~ msgid "Tips & Tricks"
+#~ msgstr "Savjeti i trikovi"
+
+#~ msgid ""
+#~ "Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, "
+#~ "using Google, for the search phrase \"KDE\". There are a lot of Web-"
+#~ "Shortcuts predefined to make searching for software or looking up certain "
+#~ "words in an encyclopedia a breeze. You can even <a href=\"%1\">create "
+#~ "your own</a> Web-Shortcuts."
+#~ msgstr ""
+#~ "Koristite Web-prečace: unošenjem \"gg: KDE\", pretraživat ćete Internet "
+#~ "pomoću tražilice Google s izrazom \"KDE\". Postoji velik broj unaprijed "
+#~ "definiranih web-prečaca koji ubrzavaju pretraživanje za softverom ili "
+#~ "traženje određenih riječi u enciklopedijama. Također, možete <a href="
+#~ "\"%1\">izraditi vlastite</a> web-prečace."
+
+#, fuzzy
+#~| msgid ""
+#~| "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> "
+#~| "in the toolbar to increase the font size on your web page."
+#~ msgid ""
+#~ "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
+#~ "the HTML toolbar to increase the font size on your web page."
+#~ msgstr ""
+#~ "Upotrebom gumba s povećalom na traci sa alatima <img width='16' "
+#~ "height='16' src=\"%1\"></img> jednostavno i brzo možete povećati veličinu "
+#~ "fonta trenutne stranice."
+
+#~ msgid ""
+#~ "When you want to paste a new address into the Location toolbar you might "
+#~ "want to clear the current entry by pressing the black arrow with the "
+#~ "white cross <img width='16' height='16' src=\"%1\"></img> in the toolbar."
+#~ msgstr ""
+#~ "Kad novu adresu želite prelijepiti u traku lokacije, njezin trenutni unos "
+#~ "prvo možete izbrisati klikanjem crne strelice s bijelim križićem <img "
+#~ "width='16' height='16' src=\"%1\"></img> na alatnoj traci."
+
+#, fuzzy
+#~| msgid ""
+#~| "To create a link on your desktop pointing to the current page, simply "
+#~| "drag the \"Location\" label that is to the left of the Location toolbar, "
+#~| "drop it on to the desktop, and choose \"Link\"."
+#~ msgid ""
+#~ "To create a link on your desktop pointing to the current page, simply "
+#~ "drag the icon (favicon) that is to the left of the Location toolbar, drop "
+#~ "it on to the desktop, and choose \"Icon\"."
+#~ msgstr ""
+#~ "Da biste na radnoj površini izradili vezu koja će pokazivati prema "
+#~ "trenutnoj web-stranici, jednostavno prevucite oznaku \"Lokacija\" koja se "
+#~ "nalazi lijevo od adresne trake lokacije i ispustite ju na radnu površinu "
+#~ "te odaberite \"Veza\"."
+
+#~ msgid ""
+#~ "You can also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen "
+#~ "Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
+#~ "sessions."
+#~ msgstr ""
+#~ "U izborniku postavki također možete pronaći <img width='16' height='16' "
+#~ "src=\"%1\" /> \"Puni zaslon\". Ova je osobina jako korisna tijekom sesija "
+#~ "\"Govora\"."
+
+#, fuzzy
+#~| msgid ""
+#~| "Divide et impera (lat. \"Divide and conquer\") - by splitting a window "
+#~| "into two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> "
+#~| "Split View Left/Right) you can make Konqueror appear the way you like. "
+#~| "You can even load some example view-profiles (e.g. Midnight Commander), "
+#~| "or create your own ones."
+#~ msgid ""
+#~ "Divide et impera (lat. \"Divide and conquer\") - by splitting a window "
+#~ "into two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> "
+#~ "Split View Left/Right) you can make Konqueror appear the way you like."
+#~ msgstr ""
+#~ "Divide et impera (lat. \"Podijeli pa vladaj\") – Podjele prozora na dva "
+#~ "dijela (npr. Prozor <img width='16' height='16' src=\"%1\" /> Prikaz "
+#~ "razdjeli uspravno). Na ovaj način Konqueror prilagođavate vašim željama. "
+#~ "Također možete učitati neke primjere prikaza (npr. Midnight Commander) "
+#~ "ili izraditi vlastite."
+
+#~ msgid ""
+#~ "Use the <a href=\"%1\">user-agent</a> feature if the website you are "
+#~ "visiting asks you to use a different browser (and do not forget to send a "
+#~ "complaint to the webmaster!)"
+#~ msgstr ""
+#~ "Ako web-lokacija koju posjećujete traži upotrebu drugog web-preglednika, "
+#~ "upotrijebite značajku <a href=\"%1\">user-agent</a> (i ne zaboravite "
+#~ "poslati pritužbu kreatoru te lokacije)."
+
+#~ msgid ""
+#~ "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
+#~ "ensures that you can keep track of the pages you have visited recently."
+#~ msgstr ""
+#~ "<img width='16' height='16' src=\"%1\"></img> Povijest u bočnoj traci Vam "
+#~ "daje pregled nad stranicama koje ste nedavno posjetili."
+
+#~ msgid ""
+#~ "Use a caching <a href=\"%1\">proxy</a> to speed up your Internet "
+#~ "connection."
+#~ msgstr ""
+#~ "Upotrijebite lokalno pohranjivanje <a href=\"%1\">proxyja</a> radi "
+#~ "ubrzavanja vaše veze s Internetom."
+
+#~ msgid ""
+#~ "Advanced users will appreciate the Konsole which you can embed into "
+#~ "Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
+#~ "Terminal Emulator)."
+#~ msgstr ""
+#~ "Napredni korisnici cijenit će program Konsole koji je moguće uklopiti u "
+#~ "Konqueror (Postavke → <img width='16' height='16' SRC=\"%1\"></img> "
+#~ "Prikaži emulator terminala)."
+
+#~ msgid "Next: Specifications"
+#~ msgstr "Sljedeće: Specifikacije"
+
+#~ msgid "Installed Plugins"
+#~ msgstr "Instalirani dodaci"
+
+#~ msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
+#~ msgstr "<td>Dodatak</td><td>Opis</td><td>Datoteka</td><td>Vrste</td>"
+
+#~ msgid "Installed"
+#~ msgstr "Instalirano"
+
+#~ msgid ""
+#~ "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
+#~ msgstr "<td>MIME vrsta</td><td>Opis</td><td>Sufiksi</td><td>Dodatak</td>"
+
+#~ msgid "&Open"
+#~ msgstr "&Otvori"
+
+#~ msgid ""
+#~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">plugins</A> (for "
+#~ "viewing <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
+#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Video, etc.)"
+#~ msgstr ""
+#~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">dodaci</A> (za "
+#~ "pregledavanje datoteka oblika <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, "
+#~ "<A HREF=\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF="
+#~ "\"%3\">Real<SUP>&reg;</SUP></A>Video, itd.)"
+
+#~ msgid "http://konqueror.kde.org"
+#~ msgstr "http://konqueror.kde.org"
+
+#~ msgid "Limits"
+#~ msgstr "Ograničenja"
+
+#~ msgid "URLs e&xpire after"
+#~ msgstr "&URL ističe nakon"
+
+#~ msgid "Maximum &number of URLs:"
+#~ msgstr "&Najveći broj URL adresa:"
+
+#~ msgid "Custom Fonts For"
+#~ msgstr "Prilagođeni fontovi za"
+
+#~ msgid "URLs newer than"
+#~ msgstr "URL-i noviji od"
+
+#~ msgid "Choose Font..."
+#~ msgstr "Odaberite font …"
+
+#~ msgid "URLs older than"
+#~ msgstr "URL-i stariji od"
+
+#~ msgid ""
+#~ "Shows the number of times visited and the dates of the first and last "
+#~ "visits, in addition to the URL"
+#~ msgstr ""
+#~ "Uz URL adresu prikazuje broj posjeta i datume prve i posljednje posjete"
+
+#~ msgid "Detailed tooltips"
+#~ msgstr "Detaljni savjeti"
+
+#~ msgid "Clear History"
+#~ msgstr "Izbriši povijest"
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "History Sidebar Module"
+#~ msgstr "Modul povijesti za bočnu traku"
+
+#~ msgctxt "@title:tab"
+#~ msgid "History"
+#~ msgstr "Povijest"
+
+#~ msgid "Minute"
+#~ msgid_plural "Minutes"
+#~ msgstr[0] "%1 minuta"
+#~ msgstr[1] "%1 minute"
+#~ msgstr[2] "%1 minuta"
+
+#~ msgid "Day"
+#~ msgid_plural "Days"
+#~ msgstr[0] "%1 dan"
+#~ msgstr[1] "%1 dana"
+#~ msgstr[2] "%1 dana"
+
+#~ msgid "<h1>History Sidebar</h1> You can configure the history sidebar here."
+#~ msgstr ""
+#~ "<h1>Traka povijesti</h1> Ovdje možete konfigurirati bočnu traku povijesti."
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Places Sidebar Module"
+#~ msgstr "Bočni modul za mjesta"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Places"
+#~ msgstr "Mjesta"
+
+#~ msgid "Extended Sidebar"
+#~ msgstr "Proširena bočna traka"
+
+#~ msgid "Rollback to System Default"
+#~ msgstr "Povratak na vrijednosti zadane sustavom"
+
+#~ msgid "Configure Sidebar"
+#~ msgstr "Konfiguriranje bočne trake"
+
+#~ msgid "Add New"
+#~ msgstr "Dodaj nov"
+
+#~ msgid "Multiple Views"
+#~ msgstr "Višestruki prikazi"
+
+#~ msgid "Show Tabs Left"
+#~ msgstr "Kartice prikaži ulijevo"
+
+#~ msgid "Close Sidebar"
+#~ msgstr "Zatvori bočnu traku"
+
+#~ msgid "This entry already exists."
+#~ msgstr "Ovaj unos već postoji."
+
+#~ msgid ""
+#~ "<qt>This removes all your entries from the sidebar and adds the system "
+#~ "default ones.<br /><b>This procedure is irreversible</b><br />Do you want "
+#~ "to proceed?</qt>"
+#~ msgstr ""
+#~ "<qt>Na ovaj ćete način ukloniti sve svoje stavke s bočne trake i "
+#~ "postaviti one definirane zadanim postavkama sustava.<br /><b>Ovaj se "
+#~ "postupak ne može poništiti.</b><br />Želite li nastaviti?</qt>"
+
+#~ msgid "Show Tabs Right"
+#~ msgstr "Kartice prikaži desno"
+
+#, fuzzy
+#~| msgid "Set Name"
+#~ msgctxt "@title:window"
+#~ msgid "Set Name"
+#~ msgstr "Zadaj naziv"
+
+#~ msgid "Enter the name:"
+#~ msgstr "Unesiti naziv:"
+
+#~ msgid "Enter a URL:"
+#~ msgstr "Unesite URL:"
+
+#~ msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
+#~ msgstr "<qt>Želite li zaista ukloniti karticu <b>%1</b>?</qt>"
+
+#~ msgid ""
+#~ "You have hidden the sidebar configuration button. To make it visible "
+#~ "again, click the right mouse button on any of the sidebar buttons and "
+#~ "select \"Show Configuration Button\"."
+#~ msgstr ""
+#~ "Sakrili ste gumb za konfiguriranje bočnih traka. Da bi ste ga ponovno "
+#~ "učinili vidljivim, kliknite desnom tipkom miša na bilo koji gumb bočne "
+#~ "trake i odaberite \"Prikaži konfiguracijski gumb\"."
+
+#~ msgid "Set Name..."
+#~ msgstr "Postavi naziv…"
+
+#~ msgid "Set URL..."
+#~ msgstr "Postavi URL…"
+
+#~ msgid "Set Icon..."
+#~ msgstr "Postavi ikonu…"
+
+#~ msgid "Remove"
+#~ msgstr "Ukloni"
+
+#~ msgid "Web module"
+#~ msgstr "Modul za web"
+
+#~ msgid "&Create New Folder"
+#~ msgstr "Izradi &novu mapu"
+
+#~ msgid "Delete Folder"
+#~ msgstr "Izbriši mapu"
+
+#~ msgid "Delete Bookmark"
+#~ msgstr "Izbriši oznaku"
+
+#~ msgid "Properties"
+#~ msgstr "Svojstva"
+
+#~ msgid "Open in New Window"
+#~ msgstr "Otvori u novom prozoru"
+
+#~ msgid "Open Folder in Tabs"
+#~ msgstr "Mape otvaraj u karticama"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "Kopiraj adresu veze"
+
+#, fuzzy
+#~| msgid "Create New Bookmark Folder"
+#~ msgctxt "@title:window"
+#~ msgid "Create New Bookmark Folder"
+#~ msgstr "Izradi novu mapu oznaka"
+
+#~ msgid "New folder:"
+#~ msgstr "Nova mapa:"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark folder\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "Jeste li sigurni da želite ukloniti mapu oznaka:\n"
+#~ "\"%1\"?"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "Jeste li sigurni da želite ukloniti oznaku:\n"
+#~ "\"%1\"?"
+
+#, fuzzy
+#~| msgid "Bookmark Folder Deletion"
+#~ msgctxt "@title:window"
+#~ msgid "Bookmark Folder Deletion"
+#~ msgstr "Brisanje mape oznaka"
+
+#, fuzzy
+#~| msgid "Bookmark Deletion"
+#~ msgctxt "@title:window"
+#~ msgid "Bookmark Deletion"
+#~ msgstr "Brisanje oznaka"
+
+#, fuzzy
+#~| msgid "Bookmark Properties"
+#~ msgctxt "@title:window"
+#~ msgid "Bookmark Properties"
+#~ msgstr "Svojstva oznake"
+
+#~ msgid "&Update"
+#~ msgstr "&Ažuriraj"
+
+#~ msgid "Name:"
+#~ msgstr "Naziv:"
+
+#~ msgid "Location:"
+#~ msgstr "Lokacija:"
+
+#, fuzzy
+#~| msgid "Add Bookmark"
+#~ msgctxt "@title:window"
+#~ msgid "Add Bookmark"
+#~ msgstr "Dodaj oznaku"
+
+#~ msgid "Cannot find parent item %1 in the tree. Internal error."
+#~ msgstr "U stablu nije moguće pronaći nadređenu stavku %1. Interna pogreška."
+
+#~ msgid "&Create New Folder..."
+#~ msgstr "&Izradi novu mapu …"
+
+#~ msgid "Move to Trash"
+#~ msgstr "Premjesti u smeće"
+
+#~ msgid "Rename"
+#~ msgstr "Preimenuj"
+
+#~ msgid "Delete Link"
+#~ msgstr "Izbriši vezu"
+
+#~ msgid "New Folder"
+#~ msgstr "Nova mapa"
+
+#, fuzzy
+#~| msgid "Create New Folder"
+#~ msgctxt "@title:window"
+#~ msgid "Create New Folder"
+#~ msgstr "Izradi novu mapu"
+
+#~ msgid "Enter folder name:"
+#~ msgstr "Unesite naziv mape:"
+
+#~ msgctxt "@label"
+#~ msgid "Name:"
+#~ msgstr "Naziv:"
+
+#~ msgctxt "@label"
+#~ msgid "Path or URL:"
+#~ msgstr "Putanja ili URL:"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add folder sidebar module"
+#~ msgstr "Dodaj modul mape za bočnu traku"
+
+#~ msgid "&Open Link"
+#~ msgstr "&Otvori vezu"
+
+#~ msgid "Set &Automatic Reload"
+#~ msgstr "Zadaj &automatsko osvježavanje"
+
+#, fuzzy
+#~| msgid "Set Refresh Timeout (0 disables)"
+#~ msgctxt "@title:window"
+#~ msgid "Set Refresh Timeout (0 disables)"
+#~ msgstr "Postavi vrijeme osvježavanja (0 = onemogućeno)"
+
+#, fuzzy
+#~| msgid "Minute"
+#~| msgid_plural "Minutes"
+#~ msgid " minute"
+#~ msgid_plural " minutes"
+#~ msgstr[0] "%1 minuta"
+#~ msgstr[1] "%1 minute"
+#~ msgstr[2] "%1 minuta"
+
+#, fuzzy
+#~| msgid " sec"
+#~ msgid " second"
+#~ msgid_plural " seconds"
+#~ msgstr[0] " sek"
+#~ msgstr[1] " sek"
+#~ msgstr[2] " sek"
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Web Sidebar Module"
+#~ msgstr "Web modul za bočnu traku"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add web sidebar module"
+#~ msgstr "Dodaj web modul za bočnu traku"
+
+#~ msgid ""
+#~ "This is the URL of the web page where Konqueror (as web browser) will "
+#~ "jump to when the \\\"Home\\\" button is pressed. When Konqueror is "
+#~ "started as a file manager, that button makes it jump to your local home "
+#~ "folder instead."
+#~ msgstr ""
+#~ "Ovo je URL adresa (npr. mape ili web-stranice) koju će Konqueror otvoriti "
+#~ "kad kliknete gumb \"Glavna\". Kada je Konqueror pokrenut kao upravitelj "
+#~ "datoteka, taj gumb će Vas odvesti u Vašu Osobnu mapu."
+
+#~ msgid "&Use index.html"
+#~ msgstr "&Upotrijebi index.html"
+
+#~ msgid "If present, open index.html when entering a folder."
+#~ msgstr "Ako postoji, otvora se index.html prilikom ulaska u mapu."
+
+#~ msgid ""
+#~ "<em>Tuning Tip:</em> If you want the Konqueror web browser to start "
+#~ "faster, you can turn off this information screen by clicking <a href="
+#~ "\"%1\">here</a>. You can re-enable it by choosing the Help -> Konqueror "
+#~ "Introduction menu option, and then pressing Settings -> Save View Profile "
+#~ "As... -> \"Web Browsing\"."
+#~ msgstr ""
+#~ "<em>Savjet za fino ugađanje:</em> Ako želite da se Konqueror, preglednik "
+#~ "weba brže pokreće, možete ovaj informativni zaslon isključiti klikanjem "
+#~ "<a href=\"%1\">ovdje</a>. Možete ga ponovno omogućiti putem izbornika "
+#~ "\"Pomoć\" → \"Uvod u Konqueror\" i odabirom opcije \"Postavke\" → "
+#~ "\"Spremi profil prikaza kao… → \"Pregledavanje Weba\"."
+
+#~ msgid ""
+#~ "Do you want to disable showing the introduction in the webbrowsing "
+#~ "profile?"
+#~ msgstr ""
+#~ "Želite li onemogućiti prikazivanje uvoda u profilu za pretraživanje "
+#~ "Interneta?"
+
+#, fuzzy
+#~| msgid "Faster Startup?"
+#~ msgctxt "@title:window"
+#~ msgid "Faster Startup?"
+#~ msgstr "Brže pokretanje?"
+
+#~ msgid "Disable"
+#~ msgstr "Onemogući"
+
+#~ msgid "Keep"
+#~ msgstr "Zadrži"
+
+#~ msgid "Profile to open"
+#~ msgstr "Profil za otvaranje"
+
+#~ msgid "List available profiles"
+#~ msgstr "Popis raspoloživih profila"
+
+#~ msgid "&Save View Profile As..."
+#~ msgstr "&Spremi profil prikaza kao …"
+
+#~ msgid "C&onfigure View Profiles..."
+#~ msgstr "&Konfiguriranje profila prikaza …"
+
+#~ msgid "Load &View Profile"
+#~ msgstr "Uči&taj profil prikaza"
+
+#, fuzzy
+#~| msgid "Profile Management"
+#~ msgctxt "@title:window"
+#~ msgid "Profile Management"
+#~ msgstr "Upravljanje profilima"
+
+#~ msgid "&Rename Profile"
+#~ msgstr "P&romijeni naziv profila"
+
+#~ msgid "&Delete Profile"
+#~ msgstr "&Izbriši profil"
+
+#~ msgid "&Profile name:"
+#~ msgstr "&Naziv profila:"
+
+#~ msgid "Save &URLs in profile"
+#~ msgstr "&URL adrese spremi u profil"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window.\n"
+#~ "Loading a view profile will close them."
+#~ msgstr ""
+#~ "U prozoru postoji nekoliko otvorenih kartica.\n"
+#~ "Učitavanje profila prikaza zatvorit će sve kartice."
+
+#~ msgid "Load View Profile"
+#~ msgstr "Učitaj profil prikaza"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Loading a profile will discard these changes."
+#~ msgstr ""
+#~ "Ova kartica sadrži izmjene koje nisu bile predočene.\n"
+#~ "Učitavanje profila odbacit će izmjene."
+
+#~ msgid " day"
+#~ msgid_plural " days"
+#~ msgstr[0] "%1 dan"
+#~ msgstr[1] "%1 dana"
+#~ msgstr[2] "%1 dana"
+
+#~ msgid " min"
+#~ msgstr " min"
+
+#~ msgid "Input Required:"
+#~ msgstr "Potreban je unos:"
+
+#~ msgid "&Execute Shell Command..."
+#~ msgstr "Izvrši &naredbu ljuske …"
+
+#~ msgid ""
+#~ "KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a "
+#~ "bug."
+#~ msgstr ""
+#~ "KShellCmdPlugin::slotExecuteShellCommand: Greška u programu, molim "
+#~ "prijavite je."
+
+#~ msgid "Executing shell commands works only on local directories."
+#~ msgstr "Izvršavanje naredbi ljuske funkcionira samo u lokalnim mapama."
+
+#~ msgid "Execute Shell Command"
+#~ msgstr "Izvrši naredbu ljuske"
+
+#~ msgid "Execute shell command in current directory:"
+#~ msgstr "Izvrši naredbu ljuske u trenutnoj mapi:"
+
+#~ msgid "Output from command: \"%1\""
+#~ msgstr "Ispis naredbe: \"%1\""
+
+#~ msgid "Hide %1"
+#~ msgstr "Sakrij %1"
+
+#~ msgid "SideBar Test Plugin"
+#~ msgstr "Probni priključak za bočnu traku"
+
+#~ msgid "Bookmark This Location"
+#~ msgstr "Izradi oznaku ove lokacije"
+
+#~ msgid ""
+#~ "Protocol not supported\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Protokol nije podržan\n"
+#~ "%1"
+
+#~ msgid "Cannot create the find part, check your installation."
+#~ msgstr "Nije moguće izraditi dio za traženje. Provjerite instalaciju."
+
+#~ msgid "My Bookmarks"
+#~ msgstr "Moje oznake"
+
+#~ msgid "Preload for later use"
+#~ msgstr "Učitaj unaprijed za kasniju upotrebu"
+
+#~ msgid "&Save View Profile \"%1\"..."
+#~ msgstr "&Spremi profil prikaza \"%1\"…"
+
+#~ msgid "Configure Navigation Panel"
+#~ msgstr "Konfiguriranje navigacijskog panela"
+
+#~ msgid "Close Navigation Panel"
+#~ msgstr "Zatvori navigacijski panel"
+
+#~ msgid "Select Type"
+#~ msgstr "Odaberi vrstu"
+
+#~ msgid "Select type:"
+#~ msgstr "Odaberi vrstu:"
+
+#~ msgid "Minutes"
+#~ msgstr "minuta"
+
+#~ msgid "Days"
+#~ msgstr "dana"
+
+#~ msgid "<qt><b>%1</b> does not exist</qt>"
+#~ msgstr "<qt><b>%1</b> ne postoji</qt>"
+
+#~ msgid "Your sidebar is not functional or unavailable."
+#~ msgstr "Bočna traka nije funkcionalna ili je nedostupna."
+
+#~ msgid "Cannot find running history plugin in your sidebar."
+#~ msgstr "U bočnoj traci nije moguće pronaći pokrenut dodatak za povijesti."
+
+#, fuzzy
+#~| msgid "Show History Sidebar"
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History in Sidebar"
+#~ msgstr "Prikaži traku povijesti"
+
+#~ msgid "Select Remote Charset"
+#~ msgstr "Odaberi udaljeni komplet znakova"
+
+#, fuzzy
+#~ msgid "Reload"
+#~ msgstr "&Osvježi karticu"
+
+#, fuzzy
+#~ msgctxt "@action:button New session"
+#~ msgid "New"
+#~ msgstr "&Nova mapa..."
+
+#, fuzzy
+#~| msgid "Rename"
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename"
+#~ msgstr "Preimenuj"
+
+#~ msgid ""
+#~ "Konqueror is your file manager, web browser and universal document viewer."
+#~ msgstr ""
+#~ "Konqueror je vaš upravljač datotekama, web-preglednik i univerzalni "
+#~ "preglednik dokumenata."
+
+#~ msgid "G E N E R A L"
+#~ msgstr "OPĆENITO"
+
+#, fuzzy
+#~| msgid "<img width='16' height='16' src=\"%1\">"
+#~ msgid "<img width='16' height='16' src=\"%1\"></img>"
+#~ msgstr "<img width='16' height='16' src=\"%1\">"
+
+#~ msgid "Applications"
+#~ msgstr "Aplikacije"
+
+#~ msgid "Installed programs"
+#~ msgstr "Instalirani programi"
+
+#~ msgid "&Location"
+#~ msgstr "&Lokacija"
+
+#~ msgid "Open &Terminal"
+#~ msgstr "Otvori &terminal"
+
+#, fuzzy
+#~| msgid "&Close Tab"
+#~ msgid "Closed Tabs"
+#~ msgstr "&Zatvori karticu"
+
+#~ msgid "Unknown"
+#~ msgstr "Nepoznato"
+
+#~ msgid "Save &window size in profile"
+#~ msgstr "&Veličinu prozora spremi u profil"
+
+#, fuzzy
+#~ msgid "Speech Toolbar"
+#~ msgstr "Traka prikaza u stablu"
+
+#~ msgid "Conquer your Desktop!"
+#~ msgstr "Osvojite vaše računalo!"
+
+#~ msgid "Storage Media"
+#~ msgstr "Medij za pohranu"
+
+#~ msgid "Disks and removable media"
+#~ msgstr "Diskovi i odvojivi mediji"
+
+#~ msgid "Settings"
+#~ msgstr "Postavke"
+
+#~ msgid "Desktop configuration"
+#~ msgstr "Konfiguracija radne površine"
+
+#~ msgid "&Edit File Type..."
+#~ msgstr "&Uredi vrstu datoteke..."
+
+#~ msgid "S&ystem"
+#~ msgstr "S&ustav"
+
+#~ msgid "App&lications"
+#~ msgstr "&Aplikacije"
+
+#~ msgid "&Storage Media"
+#~ msgstr "&Mediji za pohranjivanje"
+
+#~ msgid "&Network Folders"
+#~ msgstr "&Mrežne mape"
+
+#~ msgid "Sett&ings"
+#~ msgstr "&Postavke"
+
+#~ msgid "Autostart"
+#~ msgstr "Automatsko pokretanje"
+
+#, fuzzy
+#~ msgid "Profile %1 not found\n"
+#~ msgstr "Profil za otvaranje"
+
+#, fuzzy
+#~ msgid "<qt><center><b>%1</b></center> is already in the list.</qt>"
+#~ msgstr "<qt><b>%1</b> nije valjan <qt>"
+
+#, fuzzy
+#~ msgid "Duplicate Entry"
+#~ msgstr "&Izradi kopiju kartice"
+
+#, fuzzy
+#~ msgid "Change Exception"
+#~ msgstr "&Izmijeni ikonu..."
+
+#, fuzzy
+#~ msgid "Default user name:"
+#~ msgstr "Unesite naziv mape:"
+
+#, fuzzy
+#~ msgid "Reject"
+#~ msgstr "&Poništi"
+
+#, fuzzy
+#~ msgid "D-Bus Communication Error"
+#~ msgstr "Potvrda"
+
+#, fuzzy
+#~ msgid "&Windows Shares"
+#~ msgstr "&Prozor"
+
+#, fuzzy
+#~ msgid "Add Identification"
+#~ msgstr "Specifikacije"
+
+#, fuzzy
+#~ msgid "Duplicate Identification"
+#~ msgstr "&Izradi kopiju kartice"
+
+#, fuzzy
+#~ msgid "Update Failed"
+#~ msgstr "Osvježi Favikonu"
+
+#, fuzzy
+#~ msgid "Duplicate Policy"
+#~ msgstr "&Izradi kopiju prozora"
+
+#, fuzzy
+#~| msgid "Manual"
+#~ msgid "Menu"
+#~ msgstr "Ručno"
+
+#, fuzzy
+#~ msgid "Move Up"
+#~ msgstr "Premjesti %1"
+
+#, fuzzy
+#~ msgid "Move Down"
+#~ msgstr "Novi &prozor"
+
+#, fuzzy
+#~ msgid ""
+#~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "
+#~ "file manager here."
+#~ msgstr ""
+#~ "<h1>Traka povijesti</h1> Ovdje možete konfigurirati bočnu traku povijesti."
+
+#, fuzzy
+#~ msgid "Open folders in separate &windows"
+#~ msgstr "Otvaranje mapa u posebnom prozoru"
+
+#, fuzzy
+#~ msgid "Show file &tips"
+#~ msgstr "Prikaži savjete"
+
+#, fuzzy
+#~ msgid "Show &previews in file tips"
+#~ msgstr "U savjetima prikaži pregled"
+
+#, fuzzy
+#~ msgid ""
+#~ "Here you can control if you want the popup window to contain a larger "
+#~ "preview for the file, when moving the mouse over it."
+#~ msgstr ""
+#~ "Ovdje možete podesiti želite li pri prelasku mišem preko datoteke "
+#~ "prikazati skočni prozor s većim pregledom dotične datoteke."
+
+#, fuzzy
+#~ msgid "Ask Confirmation For"
+#~ msgstr "Potvrda"
+
+#, fuzzy
+#~ msgid ""
+#~ "This option tells Konqueror whether to ask for a confirmation when you "
+#~ "\"delete\" a file. <ul><li><em>Move To Trash:</em> moves the file to your "
+#~ "trash folder, from where it can be recovered very easily.</li> "
+#~ "<li><em>Delete:</em> simply deletes the file.</li> </ul>"
+#~ msgstr ""
+#~ "Označavanjem ove opcije, Konqueror će tražiti potvrdu pri premještanju "
+#~ "datoteke u mapu s otpadom. Povratak datoteke iz otpada je jako "
+#~ "jednostavan."
+
+#, fuzzy
+#~ msgid "&Move to trash"
+#~ msgstr "Pre&mjesti u otpad"
+
+#, fuzzy
+#~ msgid "Show 'Delete' context me&nu entries which bypass the trashcan"
+#~ msgstr ""
+#~ "Prikazivanje stavki izbornika \"Izbriši\" koje zaobilaze kantu za otpad."
+
+#, fuzzy
+#~ msgid ""
+#~ "Check this if you want 'Delete' menu commands to be displayed on the "
+#~ "desktop and in the file manager's context menus. You can always delete "
+#~ "files by holding the Shift key while calling 'Move to Trash'."
+#~ msgstr ""
+#~ "Uklonite oznaku ove opcije ako ne želite prikazivanje naredbi izbornika "
+#~ "\"Izbriši\" na radnoj površini i u izbornicima upravitelja datotekama i "
+#~ "kontekstualnim izbornicima. Brisanje datoteke bit će omogućeno pozivom "
+#~ "opcije \"Premjesti u otpad\" i istovremenim pritiskom tipke Shift."
+
+#~ msgid "Sound Files"
+#~ msgstr "Datoteke sa zvukom"
+
+#, fuzzy
+#~ msgid "No Action"
+#~ msgstr "&Lokacija"
+
+#, fuzzy
+#~ msgid "Desktop Menu"
+#~ msgstr "Konfiguracija radne površine"
+
+#, fuzzy
+#~ msgid "Application Menu"
+#~ msgstr "Aplikacije"
+
+#, fuzzy
+#~ msgid "Bookmarks Menu"
+#~ msgstr "Oznaka"
+
+#, fuzzy
+#~ msgid "Custom Menu 1"
+#~ msgstr "Prilagođeni fontovi za"
+
+#, fuzzy
+#~ msgid "Custom Menu 2"
+#~ msgstr "Prilagođeni fontovi za"
+
+#, fuzzy
+#~ msgid "Select Protocols"
+#~ msgstr "Odaberi datoteke:"
+
+#, fuzzy
+#~ msgid "Local Protocols"
+#~ msgstr "Protokoli za prijenos"
+
+#, fuzzy
+#~ msgid "Internet Protocols"
+#~ msgstr "Protokoli za prijenos"
+
+#, fuzzy
+#~ msgid "A&utostart path:"
+#~ msgstr "Automatsko pokretanje"
+
+#, fuzzy
+#~ msgid "Confirmation Required"
+#~ msgstr "Potvrda"
+
+#, fuzzy
+#~ msgid "Move"
+#~ msgstr "Premjesti %1"
+
+#, fuzzy
+#~ msgid "KEditFileType"
+#~ msgstr "&Uredi vrstu datoteke..."
+
+#, fuzzy
+#~ msgid "(c) 2000, KDE developers"
+#~ msgstr "(c) 2000 - 2003, KDE razvijatelji"
+
+#, fuzzy
+#~ msgid "Edit File Type %1"
+#~ msgstr "&Uredi vrstu datoteke..."
+
+#, fuzzy
+#~ msgid "Create New File Type %1"
+#~ msgstr "Izradi novu mapu"
+
+#, fuzzy
+#~ msgid "Create New File Type"
+#~ msgstr "Izradi novu mapu"
+
+#, fuzzy
+#~ msgid "Group:"
+#~ msgstr "Grupa"
+
+#, fuzzy
+#~ msgid "Type name:"
+#~ msgstr "Preimenuj"
+
+#, fuzzy
+#~ msgid "Show file in separate viewer"
+#~ msgstr "Otvaranje mapa u posebnom prozoru"
+
+#, fuzzy
+#~ msgid "&Remove"
+#~ msgstr "&Preimenuj"
+
+#, fuzzy
+#~ msgid "Filename Patterns"
+#~ msgstr "Naziv datoteke"
+
+#, fuzzy
+#~ msgid "Description"
+#~ msgstr "Odabir"
+
+#, fuzzy
+#~ msgid "Add New Extension"
+#~ msgstr "Ekstenzije"
+
+#, fuzzy
+#~ msgid "Extension:"
+#~ msgstr "Ekstenzije"
+
+#, fuzzy
+#~ msgid "Move &Up"
+#~ msgstr "Premjesti %1"
+
+#, fuzzy
+#~ msgid "Global Settings"
+#~ msgstr "Postavke"
+
+#, fuzzy
+#~ msgid "Domain-Specific Settin&gs"
+#~ msgstr "Specifikacije"
+
+#, fuzzy
+#~ msgid "Netscape Plugins"
+#~ msgstr "Instalirani dodaci"
+
+#, fuzzy
+#~ msgid "Cancel"
+#~ msgstr "Otkazano."
+
+#, fuzzy
+#~ msgid "De&lete"
+#~ msgstr "Izbriši vezu"
+
+#, fuzzy
+#~ msgid "&Import..."
+#~ msgstr "&Uvoz"
+
+#, fuzzy
+#~ msgid "&Export..."
+#~ msgstr "&Izvoz"
+
+#, fuzzy
+#~ msgid "Select Home Folder"
+#~ msgstr "Izbriši mapu"
+
+#, fuzzy
+#~ msgid "Tabbed Browsing"
+#~ msgstr "Pregledavanje Interneta"
+
+#, fuzzy
+#~ msgid "Smart"
+#~ msgstr "Sortiraj"
+
+#, fuzzy
+#~ msgid "Resize window:"
+#~ msgstr "Ponovno pošalji"
+
+#, fuzzy
+#~ msgid "Move window:"
+#~ msgstr "Novi &prozor"
+
+#, fuzzy
+#~ msgid "(c) 1999 - 2001 The Konqueror Developers"
+#~ msgstr "(c) 1999-2005, Konqueror razvijatelji"
+
+#, fuzzy
+#~ msgid "Java&Script"
+#~ msgstr "razvijatelj (JavaScript)"
+
+#, fuzzy
+#~ msgid "Enable filters"
+#~ msgstr "Omogući preglede"
+
+#, fuzzy
+#~ msgid "Hide filtered images"
+#~ msgstr "Sakrij veličinu"
+
+#, fuzzy
+#~ msgid "Update"
+#~ msgstr "Osvježi Favikonu"
+
+#, fuzzy
+#~ msgid "Import..."
+#~ msgstr "&Uvoz"
+
+#, fuzzy
+#~ msgid "Export..."
+#~ msgstr "&Izvoz"
+
+#, fuzzy
+#~ msgid "Font Si&ze"
+#~ msgstr "Veličina ikone"
+
+#, fuzzy
+#~ msgid "This is the relative font size Konqueror uses to display web sites."
+#~ msgstr ""
+#~ "Ovaj se font upotrebljava za prikazivanje teksta u prozorima Konquerora."
+
+#, fuzzy
+#~ msgid "S&tandard font:"
+#~ msgstr "Standardni font"
+
+#, fuzzy
+#~ msgid "This is the font used to display normal text in a web page."
+#~ msgstr ""
+#~ "Ovaj se font upotrebljava za prikazivanje teksta u prozorima Konquerora."
+
+#, fuzzy
+#~ msgid ""
+#~ "This is the font used to display fixed-width (i.e. non-proportional) text."
+#~ msgstr ""
+#~ "Ovaj se font upotrebljava za prikazivanje teksta u prozorima Konquerora."
+
+#, fuzzy
+#~ msgid "This is the font used to display text that is marked up as serif."
+#~ msgstr ""
+#~ "Ovaj se font upotrebljava za prikazivanje teksta u prozorima Konquerora."
+
+#, fuzzy
+#~ msgid "Sa&ns serif font:"
+#~ msgstr "Standardni font"
+
+#, fuzzy
+#~ msgid ""
+#~ "This is the font used to display text that is marked up as sans-serif."
+#~ msgstr ""
+#~ "Ovaj se font upotrebljava za prikazivanje teksta u prozorima Konquerora."
+
+#, fuzzy
+#~ msgid "C&ursive font:"
+#~ msgstr "Povratno sortiranje"
+
+#, fuzzy
+#~ msgid "This is the font used to display text that is marked up as italic."
+#~ msgstr ""
+#~ "Ovaj se font upotrebljava za prikazivanje teksta u prozorima Konquerora."
+
+#, fuzzy
+#~ msgid ""
+#~ "This is the font used to display text that is marked up as a fantasy font."
+#~ msgstr ""
+#~ "Ovaj se font upotrebljava za prikazivanje teksta u prozorima Konquerora."
+
+#, fuzzy
+#~ msgid "Boo&kmarks"
+#~ msgstr "Oznaka"
+
+#, fuzzy
+#~ msgid "Form Com&pletion"
+#~ msgstr "Dopunjavanje URL-a"
+
+#, fuzzy
+#~ msgid "Enable completion of &forms"
+#~ msgstr "Automatsko dopunjavanje obrazaca"
+
+#, fuzzy
+#~ msgctxt "underline"
+#~ msgid "Enabled"
+#~ msgstr "Instalirano"
+
+#, fuzzy
+#~ msgctxt "underline"
+#~ msgid "Disabled"
+#~ msgstr "Onemogući"
+
+#, fuzzy
+#~ msgid "A&nimations:"
+#~ msgstr "&Aplikacije"
+
+#, fuzzy
+#~ msgctxt "animations"
+#~ msgid "Enabled"
+#~ msgstr "Instalirano"
+
+#, fuzzy
+#~ msgctxt "animations"
+#~ msgid "Disabled"
+#~ msgstr "Onemogući"
+
+#, fuzzy
+#~ msgid "Show Only Once"
+#~ msgstr "Prikaži vlasnika"
+
+#, fuzzy
+#~ msgid "Enable Ja&va globally"
+#~ msgstr "Java-u globalno omogućite <A HREF=\"%1\">ovdje</A>."
+
+#, fuzzy
+#~ msgid "Additional Java a&rguments:"
+#~ msgstr "Dodatni zahtjevi*"
+
+#, fuzzy
+#~ msgid "&Filters"
+#~ msgstr "&Mapa"
+
+#, fuzzy
+#~ msgid "System"
+#~ msgstr "S&ustav"
+
+#~ msgid "No permissions to write to %1"
+#~ msgstr "Nemate dopuštenja za zapisivanje u %1"
+
+#~ msgid "Save View Changes per &Folder"
+#~ msgstr "Spremi izmjene prikaza za &svaku mapu"
+
+#~ msgid "Remove Folder Properties"
+#~ msgstr "Ukloni svojstva mape"
+
+#~ msgid "Create Folder..."
+#~ msgstr "Izradi mapu..."
+
+#, fuzzy
+#~ msgid "&Delete"
+#~ msgstr "Izbriši vezu"
+
+#~ msgid "&Rename"
+#~ msgstr "&Preimenuj"
+
+#, fuzzy
+#~ msgid "Desktop &Names"
+#~ msgstr "Zadaj naziv"
+
+#, fuzzy
+#~| msgid "Move backwards one step in the browsing history<p>"
+#~ msgid "Move backwards one step in the browsing history<br /><br />"
+#~ msgstr "Kretanje korak natrag u povijesti pregledavanja<p>"
+
+#, fuzzy
+#~| msgid "Move forward one step in the browsing history<p>"
+#~ msgid "Move forward one step in the browsing history<br /><br />"
+#~ msgstr "Kretanje korak naprijed u povijesti pregledavanja<p>"
+
+#, fuzzy
+#~ msgid "Rename icons in&line"
+#~ msgstr "Ikone preimenuj unutar retka"
+
+#, fuzzy
+#~ msgid ""
+#~ "Checking this option will allow files to be renamed by clicking directly "
+#~ "on the icon name. "
+#~ msgstr ""
+#~ "Označavanje ove opcije omogućit će preimenovanje datoteka izravnim "
+#~ "klikanje naziva ikone."
+
+#, fuzzy
+#~ msgid "&Standard font:"
+#~ msgstr "Standardni font"
+
+#, fuzzy
+#~ msgid "Font si&ze:"
+#~ msgstr "Veličina ikone"
+
+#, fuzzy
+#~ msgid "This is the font size used to display text in Konqueror windows."
+#~ msgstr ""
+#~ "Ovaj se font upotrebljava za prikazivanje teksta u prozorima Konquerora."
+
+#, fuzzy
+#~ msgid "This is the color used to display text in Konqueror windows."
+#~ msgstr ""
+#~ "Ovaj se font upotrebljava za prikazivanje teksta u prozorima Konquerora."
+
+#, fuzzy
+#~ msgid "&Underline filenames"
+#~ msgstr "Ukloni odabir datoteka:"
+
+#, fuzzy
+#~ msgid " line"
+#~ msgid_plural " lines"
+#~ msgstr[0] " min"
+#~ msgstr[1] " min"
+
+#, fuzzy
+#~ msgid ""
+#~ "<h1>Appearance</h1> You can configure how Konqueror looks as a file "
+#~ "manager here."
+#~ msgstr ""
+#~ "<h1>Traka povijesti</h1> Ovdje možete konfigurirati bočnu traku povijesti."
+
+#~ msgid ""
+#~ "Thanks to <a href=\"%1\">DCOP</a> you can have full control over "
+#~ "Konqueror using a script."
+#~ msgstr ""
+#~ "Zahvaljujući <a href=\"%1\">DCOP-u</a> možete imati potpunu kontrolu nad "
+#~ "Konquerorom upotrebom skripti."
+
+#~ msgid "Preview In"
+#~ msgstr "Pregledaj u"
+
+#~ msgid "&Open Location..."
+#~ msgstr "Otvori &lokaciju..."
+
+#~ msgid "Animated Logo"
+#~ msgstr "Animirani logotip"
+
+#~ msgid "Selection"
+#~ msgstr "Odabir"
+
+#~ msgid "Icon Size"
+#~ msgstr "Veličina ikone"
+
+#~ msgid "Show Details"
+#~ msgstr "Prikaži detalje"
+
+#~ msgid "Detailed Listview Toolbar"
+#~ msgstr "Traka detaljnog popisa"
+
+#~ msgid "MimeType"
+#~ msgstr "MIME vrsta"
+
+#~ msgid "Size"
+#~ msgstr "Veličina"
+
+#~ msgid "Modified"
+#~ msgstr "Izmijenjeno"
+
+#~ msgid "Created"
+#~ msgstr "Izrađeno"
+
+#~ msgid "Owner"
+#~ msgstr "Vlasnik"
+
+#~ msgid "Group"
+#~ msgstr "Grupa"
+
+#~ msgid "Link"
+#~ msgstr "Veza"
+
+#~ msgid "URL"
+#~ msgstr "URL"
+
+#~ msgid "File Type"
+#~ msgstr "Vrsta datoteke"
+
+#~ msgid "Select files:"
+#~ msgstr "Odaberi datoteke:"
+
+#~ msgid "Unselect files:"
+#~ msgstr "Ukloni odabir datoteka:"
+
+#~ msgid "Show &Modification Time"
+#~ msgstr "Prikaži vrijeme zadnje &izmjene"
+
+#~ msgid "Hide &Modification Time"
+#~ msgstr "Sakrij vrijeme &izmjene"
+
+#~ msgid "Show &File Type"
+#~ msgstr "Prikaži &vrstu datoteke"
+
+#~ msgid "Hide &File Type"
+#~ msgstr "Sakrij &vrstu datoteke"
+
+#~ msgid "Show MimeType"
+#~ msgstr "Prikaži MIME vrstu"
+
+#~ msgid "Hide MimeType"
+#~ msgstr "Sakrij MIME vrstu"
+
+#~ msgid "Show &Access Time"
+#~ msgstr "Prikaži vrijeme posljednjeg &pristupanja"
+
+#~ msgid "Hide &Access Time"
+#~ msgstr "Sakrij vrijeme &posljednjeg pristupanja"
+
+#~ msgid "Show &Creation Time"
+#~ msgstr "Prikaži vrijeme &stvaranja datoteke"
+
+#~ msgid "Hide &Creation Time"
+#~ msgstr "Sakrij &vrijeme izrade datoteke"
+
+#~ msgid "Show &Link Destination"
+#~ msgstr "Prikaži &odredište veze"
+
+#~ msgid "Hide &Link Destination"
+#~ msgstr "Sakrij &odredište veze"
+
+#~ msgid "Show Filesize"
+#~ msgstr "Prikaži &veličinu"
+
+#~ msgid "Hide Filesize"
+#~ msgstr "Sakrij veličinu"
+
+#~ msgid "Show Owner"
+#~ msgstr "Prikaži vlasnika"
+
+#~ msgid "Hide Owner"
+#~ msgstr "Sakrij vlasnika"
+
+#~ msgid "Show Group"
+#~ msgstr "Prikaži grupu"
+
+#~ msgid "Hide Group"
+#~ msgstr "Sakrij grupu"
+
+#~ msgid "Show Permissions"
+#~ msgstr "Prikaži dopuštenja"
+
+#~ msgid "Hide Permissions"
+#~ msgstr "Sakrij dopuštenja"
+
+#~ msgid "Se&lect..."
+#~ msgstr "&Odaberi..."
+
+#~ msgid "Unselect..."
+#~ msgstr "Ukloni odabir..."
+
+#~ msgid "Unselect All"
+#~ msgstr "Ukloni sav odabir"
+
+#~ msgid "&Invert Selection"
+#~ msgstr "O&brni odabir"
+
+#~ msgid "Show &Hidden Files"
+#~ msgstr "Prikaži &skrivene datoteke"
+
+#~ msgid "Case Insensitive Sort"
+#~ msgstr "Bez razlikovanja veličine slova"
+
+#~ msgid "Name"
+#~ msgstr "Naziv"
+
+#~ msgid "You must take the file out of the trash before being able to use it."
+#~ msgstr "Da biste upotrijebili datoteku prvo je potrebno izvaditi iz otpada."
+
+#~ msgid "View &As"
+#~ msgstr "Prikaži &kao"
+
+#~ msgid "Filename"
+#~ msgstr "Naziv datoteke"
+
+#~ msgid "Toggle displaying of hidden dot files"
+#~ msgstr ""
+#~ "Uključivanje i isključivanje prikazivanja skrivenih datoteka s točkom"
+
+#~ msgid "&Folder Icons Reflect Contents"
+#~ msgstr "&Ikone mapa odražavaju sadržaj"
+
+#~ msgid "&Preview"
+#~ msgstr "&Pregled"
+
+#~ msgid "Enable Previews"
+#~ msgstr "Omogući preglede"
+
+#~ msgid "Disable Previews"
+#~ msgstr "Onemogući preglede"
+
+#~ msgid "By Name (Case Sensitive)"
+#~ msgstr "Po nazivu (razlikuj mala/velika slova)"
+
+#~ msgid "By Name (Case Insensitive)"
+#~ msgstr "Po nazivu (ne razlikuj mala/velika slova)"
+
+#~ msgid "By Size"
+#~ msgstr "Po veličini"
+
+#~ msgid "By Type"
+#~ msgstr "Po vrsti"
+
+#~ msgid "By Date"
+#~ msgstr "Po datumu"
+
+#~ msgid "Folders First"
+#~ msgstr "Prvo mape"
+
+#~ msgid "Descending"
+#~ msgstr "Silazno"
+
+#~ msgid "Allows selecting of file or folder items based on a given mask"
+#~ msgstr "Omogućuje odabir datoteka ili mapa prema danoj maski"
+
+#~ msgid "Allows unselecting of file or folder items based on a given mask"
+#~ msgstr "Omogućuje uklanjanje odabira datoteka ili mapa prema danoj maski"
+
+#~ msgid "Selects all items"
+#~ msgstr "Odaberi sve"
+
+#~ msgid "Unselects all selected items"
+#~ msgstr "Ukloni sav odabir"
+
+#~ msgid "Inverts the current selection of items"
+#~ msgstr "Obrtanje odabira trenutnih stavki"
+
+#~ msgid ""
+#~ "You cannot drop any items in a directory in which you do not have write "
+#~ "permission"
+#~ msgstr ""
+#~ "Ispuštanje bilo koje stavke u mapu za koju nemate dopuštenja zapisivanja "
+#~ "nije moguće."
+
+#~ msgid "Treeview Toolbar"
+#~ msgstr "Traka prikaza u stablu"
+
+#~ msgid "Info Listview Toolbar"
+#~ msgstr "Alatna traka info popisa"
+
+#~ msgid "Multicolumn View Toolbar"
+#~ msgstr "Traka prikaza u više stupaca"
+
+#~ msgid "&Icon Size"
+#~ msgstr "&Veličina ikona"
+
+#~ msgid "S&ort"
+#~ msgstr "S&ortiraj"
+
+#~ msgid "Iconview Toolbar"
+#~ msgstr "Traka prikaza ikonama"
+
+#~ msgid "Iconview Extra Toolbar"
+#~ msgstr "Dodatna traka prikaz ikonama"
+
+#~ msgid "Rename icons inline"
+#~ msgstr "Ikone preimenuj unutar retka"
+
+#~ msgid ""
+#~ "Checking this option will allow files to be renamed by clicking directly "
+#~ "on the icon name."
+#~ msgstr ""
+#~ "Označavanje ove opcije omogućit će preimenovanje datoteka izravnim "
+#~ "klikanje naziva ikone."
+
+#~ msgid ""
+#~ "This option tells Konqueror whether to ask for a confirmation when you "
+#~ "simply delete the file."
+#~ msgstr ""
+#~ "Označavanjem ove opcije, Konqueror će tražiti potvrdu pri brisanju "
+#~ "datoteke."
+
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Loading a profile will discard these changes."
+#~ msgstr ""
+#~ "Ova stranica sadrži izmjene koje nisu bile predočene.\n"
+#~ "Učitavanje profila odbacit će izmjene."
+
+#~ msgid "Tools"
+#~ msgstr "Alati"
+
+#~ msgid "Statusbar"
+#~ msgstr "Traka stanja"
+
+#~ msgid "&Show Netscape Bookmarks in Konqueror"
+#~ msgstr "U Konqueroru prikaži &Netscape oznake"
+
+#~ msgid "C&hange URL"
+#~ msgstr "Izmijeni &URL"
+
+#~ msgid "&New Bookmark"
+#~ msgstr "&Nova oznaka"
+
+#~ msgid "&Insert Separator"
+#~ msgstr "&Umetni razmak"
+
+#~ msgid "&Sort Alphabetically"
+#~ msgstr "&Složi po abecedi"
+
+#~ msgid "Set as T&oolbar Folder"
+#~ msgstr "Postavi kao mapu alatne trake"
+
+#~ msgid "Show in T&oolbar"
+#~ msgstr "Prikaži u &alatnoj traci"
+
+#~ msgid "Hide in T&oolbar"
+#~ msgstr "Sakrij u &alatnoj traci"
+
+#~ msgid "&Expand All Folders"
+#~ msgstr "&Rastvori sve mape"
+
+#~ msgid "Collapse &All Folders"
+#~ msgstr "&Sklopi sve mape"
+
+#~ msgid "&Open in Konqueror"
+#~ msgstr "&Otvori u Konqueroru"
+
+#~ msgid "Check &Status"
+#~ msgstr "&Provjeri stanje"
+
+#~ msgid "Check Status: &All"
+#~ msgstr "Provjeri stanje &svih"
+
+#~ msgid "Update All &Favicons"
+#~ msgstr "Osvježi sve &Favikone"
+
+#~ msgid "Cancel &Checks"
+#~ msgstr "Poništi pro&vjere"
+
+#~ msgid "Cancel &Favicon Updates"
+#~ msgstr "Poništi osvježavanje &Favikona"
+
+#~ msgid "Import &Netscape Bookmarks..."
+#~ msgstr "Uvoz &Netscape oznaka..."
+
+#~ msgid "Import &Opera Bookmarks..."
+#~ msgstr "Uvoz &Opera oznaka..."
+
+#~ msgid "Import All &Crash Sessions as Bookmarks..."
+#~ msgstr "Uvoz svih &srušenih sesija kao oznaka..."
+
+#~ msgid "Import &Galeon Bookmarks..."
+#~ msgstr "Uvoz &Galeon oznaka..."
+
+#~ msgid "Import &KDE2/KDE3 Bookmarks..."
+#~ msgstr "Uvoz &KDE2/KDE3 oznaka..."
+
+#~ msgid "Import &IE Bookmarks..."
+#~ msgstr "Uvoz &IE oznaka..."
+
+#~ msgid "Import &Mozilla Bookmarks..."
+#~ msgstr "Uvoz &Mozilla oznaka..."
+
+#~ msgid "Export to &Netscape Bookmarks"
+#~ msgstr "Izvoz u &Netscape oznake"
+
+#~ msgid "Export to &Opera Bookmarks..."
+#~ msgstr "Izvoz u &Opera oznake..."
+
+#~ msgid "Export to &HTML Bookmarks..."
+#~ msgstr "Izvoz u &HTML oznake..."
+
+#~ msgid "Export to &IE Bookmarks..."
+#~ msgstr "Izvoz u &IE oznake..."
+
+#~ msgid "Export to &Mozilla Bookmarks..."
+#~ msgstr "Izvoz u &Mozilla oznake..."
+
+#~ msgid "*.html|HTML Bookmark Listing"
+#~ msgstr "*.html|HTML popis oznaka"
+
+#~ msgid "Cut Items"
+#~ msgstr "Izreži stavke"
+
+#~ msgid "Sort Alphabetically"
+#~ msgstr "Složi po abecedi"
+
+#~ msgid "Delete Items"
+#~ msgstr "Izbriši stavke"
+
+#~ msgid "Icon"
+#~ msgstr "Ikona"
+
+#~ msgid "Comment:"
+#~ msgstr "Komentar:"
+
+#~ msgid "First viewed:"
+#~ msgstr "Prvi put pogledano:"
+
+#~ msgid "Viewed last:"
+#~ msgstr "Posljednji put pregledano:"
+
+#~ msgid "Times visited:"
+#~ msgstr "Broj posjeta:"
+
+#~ msgid "Insert Separator"
+#~ msgstr "Umetni razmak"
+
+#~ msgid "Create Folder"
+#~ msgstr "Izradi mapu"
+
+#~ msgid "Copy %1"
+#~ msgstr "Kopiraj %1"
+
+#~ msgid "Create Bookmark"
+#~ msgstr "Izradi oznaku"
+
+#~ msgid "%1 Change"
+#~ msgstr "Izmjena: %1 "
+
+#~ msgid "Set as Bookmark Toolbar"
+#~ msgstr "Postavi kao traku oznaka"
+
+#~ msgid "%1 in Bookmark Toolbar"
+#~ msgstr "U traci oznaka: %1"
+
+#~ msgid "Show"
+#~ msgstr "Prikaži"
+
+#~ msgid "Hide"
+#~ msgstr "Sakrij"
+
+#~ msgid "Move Items"
+#~ msgstr "Premjesti stavke"
+
+#~ msgid "No favicon found"
+#~ msgstr "Favikona nije pronađena"
+
+#~ msgid "Updating favicon..."
+#~ msgstr "Osvježavanje Favikone..."
+
+#~ msgid "Import %1 Bookmarks"
+#~ msgstr "Uvezi %1 oznake"
+
+#~ msgid "%1 Bookmarks"
+#~ msgstr "Oznaka: %1"
+
+#~ msgid "Import as a new subfolder or replace all the current bookmarks?"
+#~ msgstr "Uvesti kao novu podmapu ili zamijeniti sve trenutne oznake?"
+
+#~ msgid "%1 Import"
+#~ msgstr "Uvoz: %1"
+
+#~ msgid "*.xbel|Galeon Bookmark Files (*.xbel)"
+#~ msgstr "*.xbel|Datoteke Galeon oznaka (*.xbel)"
+
+#~ msgid "*.xml|KDE Bookmark Files (*.xml)"
+#~ msgstr "*.xml|Datoteke KDE oznaka (*.xml)"
+
+#~ msgid "Directory to scan for extra bookmarks"
+#~ msgstr "Mapa za pretraživanje dodatnih oznaka"
+
+#~ msgid "KBookmarkMerger"
+#~ msgstr "KBookmarkMerger"
+
+#~ msgid "Merges bookmarks installed by 3rd parties into the user's bookmarks"
+#~ msgstr ""
+#~ "Oznake koje je istalirao neki drugi program udružuje s oznakama korisnika"
+
+#~ msgid "Copyright © 2005 Frerich Raabe"
+#~ msgstr "Autorska prava © 2005 Frerich Raabe"
+
+#~ msgid "Original author"
+#~ msgstr "Izvorni autor"
+
+#~ msgid "Drop Items"
+#~ msgstr "Ispusti stavke"
+
+#~ msgid "Comment"
+#~ msgstr "Komentar"
+
+#~ msgid "Status"
+#~ msgstr "Stanje"
+
+#~ msgid "Folder"
+#~ msgstr "Mapa"
+
+#~ msgid "Empty Folder"
+#~ msgstr "Isprazni mapu"
+
+#~ msgid "Import bookmarks from a file in Mozilla format"
+#~ msgstr "Uvoz oznaka iz datoteke u Mozilla oblikovanju"
+
+#~ msgid "Import bookmarks from a file in Netscape (4.x and earlier) format"
+#~ msgstr "Uvoz oznaka iz datoteke u Netscape oblikovanja (4.x i starije)"
+
+#~ msgid "Import bookmarks from a file in Internet Explorer's Favorites format"
+#~ msgstr "Uvoz oznaka iz datoteke u Internet Explorer oblikovanju favorita"
+
+#~ msgid "Import bookmarks from a file in Opera format"
+#~ msgstr "Uvoz oznaka iz datoteke u Opera oblikovanju"
+
+#~ msgid "Export bookmarks to a file in Mozilla format"
+#~ msgstr "Izvoz oznaka u datoteku Mozilla oblikovanja"
+
+#~ msgid "Export bookmarks to a file in Netscape (4.x and earlier) format"
+#~ msgstr "Izvoz oznaka u datoteku Netscape oblikovanja (4.x i starije)"
+
+#~ msgid "Export bookmarks to a file in a printable HTML format"
+#~ msgstr "Izvoz oznaka u datoteku ispisivog HTML oblikovanja"
+
+#~ msgid "Export bookmarks to a file in Internet Explorer's Favorites format"
+#~ msgstr "Izvoz oznaka u datoteku Internet Explorer oblikovanja favorita"
+
+#~ msgid "Export bookmarks to a file in Opera format"
+#~ msgstr "Izvoz oznaka u datoteku Opera oblikovanja"
+
+#~ msgid "Open at the given position in the bookmarks file"
+#~ msgstr "Otvori na danom položaju u mapi oznaka"
+
+#~ msgid "Set the user readable caption for example \"Konsole\""
+#~ msgstr "Postavi korisnički čitljiv naslov, na primjer \"Konzola\""
+
+#~ msgid "Hide all browser related functions"
+#~ msgstr "Sakrij sve funkcije vezane uz preglednik"
+
+#~ msgid "File to edit"
+#~ msgstr "Datoteka za uređivanje"
+
+#~ msgid ""
+#~ "Another instance of %1 is already running, do you really want to open "
+#~ "another instance or continue work in the same instance?\n"
+#~ "Please note that, unfortunately, duplicate views are read-only."
+#~ msgstr ""
+#~ "Već je pokrenuta instanca programa %1. Želite li zaista pokrenuti još "
+#~ "jednu instancu ovog programa ili nastaviti posao u istoj instanci?\n"
+#~ "Napomena: Nažalost, udvostručeni prikazi predviđeni su samo za čitanje."
+
+#~ msgid "Run Another"
+#~ msgstr "Pokreni još jednu"
+
+#~ msgid "Continue in Same"
+#~ msgstr "Nastavi u postojećoj"
+
+#~ msgid "Bookmark Editor"
+#~ msgstr "Uređivač oznaka"
+
+#~ msgid "Konqueror Bookmarks Editor"
+#~ msgstr "Uređivanje oznaka Konquerora"
+
+#~ msgid "Initial author"
+#~ msgstr "Inicijalni autor"
+
+#~ msgid "Author"
+#~ msgstr "Autor"
+
+#~ msgid "You may only specify a single --export option."
+#~ msgstr "Možete navesti samo jednu opciju --export."
+
+#~ msgid "You may only specify a single --import option."
+#~ msgstr "Možete navesti samo jednu opciju --import."
+
+#~ msgid "Checking..."
+#~ msgstr "Provjeravanje..."
+
+#~ msgid "Ok"
+#~ msgstr "U redu"
+
+#~ msgid "Reset Quick Search"
+#~ msgstr "Poništi brzo pretraživanje"
+
+#~ msgid ""
+#~ "<b>Reset Quick Search</b><br>Resets the quick search so that all "
+#~ "bookmarks are shown again."
+#~ msgstr ""
+#~ "<b>Poništi brzo pretraživanje</b><br>Poništavanje brzog pretraživanja "
+#~ "radi ponovnog prikazivanja svih oznaka."
+
+#~ msgid "Se&arch:"
+#~ msgstr "Tr&aži:"
+
+#~ msgid "Clear Search"
+#~ msgstr "Izbriši pretraživanja"

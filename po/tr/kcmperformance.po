@@ -1,0 +1,213 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Translators:
+# Adil Yıldız <adil@linux-sevenler.org>, 2004
+# Görkem Çetin <gorkem@kde.org>, 2003-2004
+# obsoleteman <tulliana@gmail.com>, 2008
+msgid ""
+msgstr ""
+"Project-Id-Version: applications-kde4\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-21 00:16+0000\n"
+"PO-Revision-Date: 2017-05-04 07:39+0000\n"
+"Last-Translator: Kaan <kaanozdincer@gmail.com>\n"
+"Language-Team: Turkish (http://www.transifex.com/projects/p/applications-k-"
+"tr/language/tr/)\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: kcmperformance.cpp:28
+#, kde-format
+msgid ""
+"<h1>KDE Performance</h1> You can configure settings that improve KDE "
+"performance here."
+msgstr ""
+"<h1>KDE Performansı</h1> Bu bölümden KDE'nin performansını "
+"ayarlayabilirsiniz."
+
+#: kcmperformance.cpp:35
+#, kde-format
+msgid "Konqueror"
+msgstr "Konqueror"
+
+#: kcmperformance.cpp:38
+#, kde-format
+msgid "System"
+msgstr "Sistem"
+
+#: kcmperformance.cpp:63
+#, kde-format
+msgid ""
+"<h1>Konqueror Performance</h1> You can configure several settings that "
+"improve Konqueror performance here. These include options for reusing "
+"already running instances and for keeping instances preloaded."
+msgstr ""
+"<h1>Konqueror Performansı</h1> Konqueror'un performansına illişkin pek çok "
+"ayarı buradan yapabilirsiniz. Buna çalışan programları tekrar kullanarak ve "
+"tekrar yüklenmesini engelleme de dahildir."
+
+#: konqueror.cpp:24
+#, kde-format
+msgid ""
+"<p>If enabled, an instance of Konqueror will be preloaded after the ordinary "
+"Plasma startup sequence.</p><p>This will make the first Konqueror window "
+"open faster, but at the expense of longer Plasma startup times (but you will "
+"be able to work while it is loading, so you may not even notice that it is "
+"taking longer).</p>"
+msgstr ""
+"<p>Eğer etkin ise, Plasma başlatıldıktan sonra Konqueror'un çalışan bir "
+"kopyası bellekte tutulur.</p><p>Bu sayede ilk çalıştırılan Konqueror çok "
+"hızlı açılacaktır. Ancak Plasma biraz daha geç açılacaktır. (ancak "
+"yüklenirken siz çalışabilirsiniz, böylece daha uzun yüklendiği "
+"farketmeyebilirsiniz).</p>"
+
+#: konqueror.cpp:30
+#, kde-format
+msgid ""
+"<p>If enabled, Konqueror will always try to have one preloaded instance "
+"ready; preloading a new instance in the background whenever there is not one "
+"available, so that windows will always open quickly.</p><p><b>Warning:</b> "
+"In some cases, it is actually possible that this will reduce perceived "
+"performance.</p>"
+msgstr ""
+"<p>Bu seçenek etkinleştirildiğinde Konqueror her zaman önyüklenmiş bir "
+"Konqueror örneğini hazır bulundurur; bir örneğin kullanılabilir olmadığı her "
+"durumda arkaplanda önyükleme yapılır, bu nedenle pencereler hızlı bir "
+"şekilde açılır.</p><p><b>Uyarı:</b> Bu seçenek bazı durumlarda alıgılanan "
+"başarımı düşürür.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
+#: konqueror_ui.ui:17
+#, kde-format
+msgid "Preloading"
+msgstr "Önyükleme"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_preload_on_startup)
+#: konqueror_ui.ui:23
+#, kde-format
+msgid "Preload an instance after desktop startup"
+msgstr "Masaüstü başlangıcından sonra önyükleme yap"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_always_have_preloaded)
+#: konqueror_ui.ui:30
+#, kde-format
+msgid "Always try to have one preloaded instance"
+msgstr "En az bir önyüklü örnek bulundurmaya çalış"
+
+#: system.cpp:22
+#, kde-format
+msgid ""
+"<p>During startup KDE needs to perform a check of its system configuration "
+"(mimetypes, installed applications, etc.), and in case the configuration has "
+"changed since the last time, the system configuration cache (KSyCoCa) needs "
+"to be updated.</p><p>This option delays the check, which avoid scanning all "
+"directories containing files describing the system during KDE startup, thus "
+"making KDE startup faster. However, in the rare case the system "
+"configuration has changed since the last time, and the change is needed "
+"before this delayed check takes place, this option may lead to various "
+"problems (missing applications in the K Menu, reports from applications "
+"about missing required mimetypes, etc.).</p><p>Changes of system "
+"configuration mostly happen by (un)installing applications. It is therefore "
+"recommended to turn this option temporarily off while (un)installing "
+"applications.</p>"
+msgstr ""
+"<p>KDE başlarken kendisine bir yapılandırma denetlemesi yapar (mime tipleri, "
+"kurulu uygulamalar vs.) ve yapılandırmanın değiştirilmiş olma olasılığına "
+"karşı sistem yapılandırma önbelleğini (KSyCoCa) güncellemesi gerekir.</"
+"p><p>Bu seçenek sözü edilen denetimi erteler. Bu erteleme sonucunda KDE "
+"başlatılırken sistemi tanımlayan tüm dizinlerin içerisindeki dosyaların "
+"taranması işlemi atlanmış olur ve KDE'nin daha hızlı başlaması sağlanır. "
+"Bununla birlikte, sistem yapılandırması değiştirilmişse ve bu denetime "
+"değişiklik tarafından gereksinim duyuluyorsa bu ayarda yaptığınız değişiklik "
+"bazı sorunlara neden olabilir (K Menü içerisnde kayıp uygulamalar, "
+"uygulamaların gerek duyduğu mime tiplerinin kayıp olduğunu raporlaması vs.)."
+"</p><p>Sistem yapılandırması değişiklikleri genellikle uygulamaların "
+"kaldırılması nedeni ile oluşur. Bu nedenle, bir uygulama kaldırıldığında bu "
+"seçeneğin geçici olarak açılması önerilir.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gb_)
+#: system_ui.ui:8
+#, kde-format
+msgid "System Configuration"
+msgstr "Sistem Yapılandırması"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_disable_kbuildsycoca)
+#: system_ui.ui:14
+#, kde-format
+msgid "Disable &system configuration startup check"
+msgstr "&Sistem yapılandırması başlangıç denetlemesini kapat"
+
+#. i18n: ectx: property (text), widget (QLabel, label_kbuildsycoca)
+#: system_ui.ui:21
+#, kde-format
+msgid ""
+"This option may in rare cases lead to various problems. Consult the What's "
+"This (Shift+F1) help for details."
+msgstr ""
+"Bu seçenek, nadir durumlarda çeşitli problemlere yol açabilir. Detaylar için "
+"Bu Nedir (Shift+F1) kullanın."
+
+#~ msgid ""
+#~ "<p>If non-zero, this option allows keeping Konqueror instances in memory "
+#~ "after all their windows have been closed, up to the number specified in "
+#~ "this option.</p><p>When a new Konqueror instance is needed, one of these "
+#~ "preloaded instances will be reused instead, improving responsiveness at "
+#~ "the expense of the memory required by the preloaded instances.</p>"
+#~ msgstr ""
+#~ "<p>Sıfırdan farklı ise bu seçenek Konqueror'un çalışan kopyasını "
+#~ "(seçenekte belirtildiği kadar) sürekli bellekte tutar.</p><p>Böylece yeni "
+#~ "bir Konqueror penceresi açıldığı zaman bu işlem çok daha hızlı "
+#~ "gerçekleşir.</p>"
+
+#, fuzzy
+#~| msgid "Maximum number of instances kept &preloaded:"
+#~ msgid "&Maximum number of instances kept preloaded:"
+#~ msgstr "Önyüklenen &azami program sayısı:"
+
+#~ msgid ""
+#~ "Disables the minimization of memory usage and allows you to make each "
+#~ "browsing activity independent from the others"
+#~ msgstr ""
+#~ "Bellek kullanımını en aza indirir ve her web tarama etkinliğini "
+#~ "diğerlerinden bağımsız bir şekilde gerçekleştirir"
+
+#~ msgid ""
+#~ "<p>With this option activated, only one instance of Konqueror used for "
+#~ "file browsing will exist in the memory of your computer at any moment, no "
+#~ "matter how many file browsing windows you open, thus reducing resource "
+#~ "requirements.</p><p>Be aware that this also means that, if something goes "
+#~ "wrong, all your file browsing windows will be closed simultaneously</p>"
+#~ msgstr ""
+#~ "<p>Bu seçeneğin etkin olması halinde bellekte sadece tek bir Konqueror "
+#~ "kopyası bulunur. Bu sayede mevcut sistem kaynaklarından daha verimli "
+#~ "faydalanmak mümkün olur.</p><p>Ancak, eğer Konqueror pencerelerinde bir "
+#~ "sorun olursa, bu sorun tüm Konqueror pencerelerini etkileyecektir</p>"
+
+#~ msgid ""
+#~ "<p>With this option activated, only one instance of Konqueror will exist "
+#~ "in the memory of your computer at any moment, no matter how many browsing "
+#~ "windows you open, thus reducing resource requirements.</p><p>Be aware "
+#~ "that this also means that, if something goes wrong, all your browsing "
+#~ "windows will be closed simultaneously.</p>"
+#~ msgstr ""
+#~ "<p>Bu seçenek etkin ise, bellekte sadece bir Konqueror programı "
+#~ "bulunacaktır. Birden fazla Konqueror çalıştırıldığı zaman bellekten "
+#~ "tasarruf sağlanır.</p><p> Ancakbir Konqueror penceresi hata verip "
+#~ "kapanırsa, tüm diğer pencereler dekapanacaktır</p>."
+
+#~ msgid "Minimize Memory Usage"
+#~ msgstr "Bellek Kullanımını Azalt"
+
+#~ msgid "&Never"
+#~ msgstr "&Asla"
+
+#~ msgid "For &file browsing only (recommended)"
+#~ msgstr "&Sadece dosya görüntüleme sırasında (önerilen)"
+
+#~ msgid "Alwa&ys (use with care)"
+#~ msgstr "H&er zaman (dikkatli kullanın)"

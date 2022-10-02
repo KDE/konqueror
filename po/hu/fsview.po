@@ -1,0 +1,430 @@
+#
+# Tamas Szanto <tszanto@mol.hu>, 2003.
+# Kiszel Kristóf <ulysses@kubuntu.org>, 2010.
+# Kristóf Kiszel <ulysses@kubuntu.org>, 2010, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: KDE 3.2\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"PO-Revision-Date: 2011-04-14 22:07+0200\n"
+"Last-Translator: Kristóf Kiszel <ulysses@kubuntu.org>\n"
+"Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.2\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Kiszel Kristóf,Szántó Tamás"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "ulysses@kubuntu.org,tszanto@mol.hu"
+
+#: fsview.cpp:35 fsview.cpp:413
+#, kde-format
+msgid "Name"
+msgstr "Név"
+
+#: fsview.cpp:36
+#, kde-format
+msgid "Size"
+msgstr "Méret"
+
+#: fsview.cpp:37
+#, kde-format
+msgid "File Count"
+msgstr "Fájlok száma"
+
+#: fsview.cpp:38
+#, kde-format
+msgid "Directory Count"
+msgstr "Könyvtárak száma"
+
+#: fsview.cpp:39
+#, kde-format
+msgid "Last Modified"
+msgstr "Utolsó módosítás"
+
+#: fsview.cpp:40 fsview.cpp:414
+#, kde-format
+msgid "Owner"
+msgstr "Tulajdonos"
+
+#: fsview.cpp:41 fsview.cpp:415
+#, kde-format
+msgid "Group"
+msgstr "Csoport"
+
+#: fsview.cpp:42 fsview.cpp:416
+#, kde-format
+msgid "Mime Type"
+msgstr "MIME-típus"
+
+#: fsview.cpp:283
+#, kde-format
+msgid "Go To"
+msgstr "Ugrás"
+
+#: fsview.cpp:284 fsview_part.cpp:106
+#, kde-format
+msgid "Stop at Depth"
+msgstr "Megállási mélység"
+
+#: fsview.cpp:285 fsview_part.cpp:103
+#, kde-format
+msgid "Stop at Area"
+msgstr "Eddig a területig"
+
+#: fsview.cpp:286
+#, kde-format
+msgid "Stop at Name"
+msgstr "Megállás ennél a névnél"
+
+#: fsview.cpp:292
+#, kde-format
+msgid "Go Up"
+msgstr "Felfelé"
+
+#: fsview.cpp:294
+#, kde-format
+msgid "Stop Refresh"
+msgstr "Frissítés leállítása"
+
+#: fsview.cpp:296
+#, kde-format
+msgid "Refresh"
+msgstr "Frissítés"
+
+#: fsview.cpp:301
+#, kde-format
+msgid "Refresh '%1'"
+msgstr "„%1” frissítése"
+
+#: fsview.cpp:313 fsview_part.cpp:113
+#, kde-format
+msgid "Color Mode"
+msgstr "Színezési mód"
+
+#: fsview.cpp:316 fsview_part.cpp:109
+#, kde-format
+msgid "Visualization"
+msgstr "Vizualizáció"
+
+#: fsview.cpp:411
+#, kde-format
+msgid "None"
+msgstr "Egyik sem"
+
+#: fsview.cpp:412
+#, kde-format
+msgid "Depth"
+msgstr "Mélység"
+
+#: fsview_part.cpp:69
+#, kde-format
+msgid "Read 1 folder, in %2"
+msgid_plural "Read %1 folders, in %2"
+msgstr[0] "1 könyvtár beolvasva (%2)"
+msgstr[1] "%1 könyvtár beolvasva (%2)"
+
+#: fsview_part.cpp:73
+#, kde-format
+msgid "1 folder"
+msgid_plural "%1 folders"
+msgstr[0] "1 könyvtár"
+msgstr[1] "%1 könyvtár"
+
+#: fsview_part.cpp:87
+#, kde-format
+msgid ""
+"<p>This is the FSView plugin, a graphical browsing mode showing filesystem "
+"utilization by using a tree map visualization.</p><p>Note that in this mode, "
+"automatic updating when filesystem changes are made is intentionally <b>not</"
+"b> done.</p><p>For details on usage and options available, see the online "
+"help under menu 'Help/FSView Manual'.</p>"
+msgstr ""
+"<p>Az FSView bővítőmodul egy grafikus böngészési mód a fájlrendszer "
+"kihasználtságának megjelenítésére fastruktúra-térkép használatával.</"
+"p><p>Fontos tudni, hogy ebben a módban a fájlrendszer változásai szándékosan "
+"<b>nem</b> jelennek meg automatikusan.</p><p>A felhasználási mód és a "
+"rendelkezésre álló opciók leírása a Segítség menü „FSView kézikönyv” "
+"menüpontjából érhető el.</p>"
+
+#: fsview_part.cpp:119
+#, kde-format
+msgid "&FSView Manual"
+msgstr "FSVi&ew kézikönyv"
+
+#: fsview_part.cpp:121
+#, kde-format
+msgid "Show FSView manual"
+msgstr "Az FSView kézikönyv megnyitása"
+
+#: fsview_part.cpp:122
+#, kde-format
+msgid "Opens the help browser with the FSView documentation"
+msgstr "Megnyitja az FSView dokumentációját"
+
+#: fsview_part.cpp:154
+#, kde-format
+msgctxt "@action:inmenu File"
+msgid "Move to Trash"
+msgstr "Áthelyezés a kukába"
+
+#: fsview_part.cpp:161
+#, kde-format
+msgctxt "@action:inmenu File"
+msgid "Delete"
+msgstr "Törlés"
+
+#: fsview_part.cpp:166
+#, kde-format
+msgctxt "@action:inmenu Edit"
+msgid "&Edit File Type..."
+msgstr "Fájltípus s&zerkesztése…"
+
+#: fsview_part.cpp:170
+#, kde-format
+msgctxt "@action:inmenu File"
+msgid "Properties"
+msgstr "Tulajdonságok"
+
+#: fsview_part.cpp:203
+#, kde-format
+msgid ""
+"FSView intentionally does not support automatic updates when changes are "
+"made to files or directories, currently visible in FSView, from the "
+"outside.\n"
+"For details, see the 'Help/FSView Manual'."
+msgstr ""
+"Az FSView-ban szándékosan nem jelennek meg automatikusan az éppen látható "
+"fájlrendszerekben történő, más programok által történő változtatások.\n"
+"A részletekért tekintse meg az FSView kézikönyvét a Súgó menüben."
+
+#. i18n: ectx: Menu (edit)
+#: fsview_part.rc:4
+#, kde-format
+msgid "&Edit"
+msgstr "S&zerkesztés"
+
+#. i18n: ectx: Menu (view)
+#: fsview_part.rc:13
+#, kde-format
+msgid "&View"
+msgstr "&Nézet"
+
+#. i18n: ectx: Menu (help)
+#: fsview_part.rc:20
+#, kde-format
+msgid "&Help"
+msgstr "&Súgó"
+
+#: main.cpp:23
+#, kde-format
+msgid "FSView"
+msgstr "FSView"
+
+#: main.cpp:24
+#, kde-format
+msgid "Filesystem Viewer"
+msgstr "Fájlrendszer-megjelenítő"
+
+#: main.cpp:26
+#, kde-format
+msgid "(c) 2002, Josef Weidendorfer"
+msgstr "(c) Josef Weidendorfer, 2002."
+
+#: main.cpp:33
+#, kde-format
+msgid "View filesystem starting from this folder"
+msgstr "A fájlrendszer megjelenítése ebből a könyvtárból indulva"
+
+#: treemap.cpp:1436
+#, kde-format
+msgid "Text %1"
+msgstr "Szöveg - %1"
+
+#: treemap.cpp:3163
+#, kde-format
+msgid "Recursive Bisection"
+msgstr "Rekurzív biszekció"
+
+#: treemap.cpp:3165
+#, kde-format
+msgid "Columns"
+msgstr "Oszlopok"
+
+#: treemap.cpp:3167
+#, kde-format
+msgid "Rows"
+msgstr "Sorok"
+
+#: treemap.cpp:3169
+#, kde-format
+msgid "Always Best"
+msgstr "Mindig a legjobb"
+
+#: treemap.cpp:3171
+#, kde-format
+msgid "Best"
+msgstr "Legjobb"
+
+#: treemap.cpp:3173
+#, kde-format
+msgid "Alternate (V)"
+msgstr "Váltakozó (függőlegesen)"
+
+#: treemap.cpp:3175
+#, kde-format
+msgid "Alternate (H)"
+msgstr "Váltakozó (vízszintesen)"
+
+#: treemap.cpp:3177
+#, kde-format
+msgid "Horizontal"
+msgstr "Vízszintes"
+
+#: treemap.cpp:3179
+#, kde-format
+msgid "Vertical"
+msgstr "Függőleges"
+
+#: treemap.cpp:3231
+#, kde-format
+msgid "Nesting"
+msgstr "Beágyazódó"
+
+#: treemap.cpp:3235
+#, kde-format
+msgid "Border"
+msgstr "Szegély"
+
+#: treemap.cpp:3238
+#, kde-format
+msgid "Correct Borders Only"
+msgstr "Csak a helyes szegélyvonalak"
+
+#: treemap.cpp:3241
+#, kde-format
+msgid "Width %1"
+msgstr "Szélesség – %1"
+
+#: treemap.cpp:3244
+#, kde-format
+msgid "Allow Rotation"
+msgstr "Elforgatható"
+
+#: treemap.cpp:3245
+#, kde-format
+msgid "Shading"
+msgstr "Árnyékolás"
+
+#: treemap.cpp:3256
+#, kde-format
+msgid "Visible"
+msgstr "Látható"
+
+#: treemap.cpp:3257
+#, kde-format
+msgid "Take Space From Children"
+msgstr "Helyfoglalás a gyermekelemektől"
+
+#: treemap.cpp:3261
+#, kde-format
+msgid "Top Left"
+msgstr "Fent, balról"
+
+#: treemap.cpp:3264
+#, kde-format
+msgid "Top Center"
+msgstr "Fent, középen"
+
+#: treemap.cpp:3267
+#, kde-format
+msgid "Top Right"
+msgstr "Fent, jobbról"
+
+#: treemap.cpp:3270
+#, kde-format
+msgid "Bottom Left"
+msgstr "Lent, balról"
+
+#: treemap.cpp:3273
+#, kde-format
+msgid "Bottom Center"
+msgstr "Lent, középen"
+
+#: treemap.cpp:3276
+#, kde-format
+msgid "Bottom Right"
+msgstr "Lent, jobbról"
+
+#: treemap.cpp:3343
+#, kde-format
+msgid "No %1 Limit"
+msgstr "Nincs korlát erre: %1"
+
+#: treemap.cpp:3402
+#, kde-format
+msgid "No Area Limit"
+msgstr "Nincs területi korlátozás"
+
+#: treemap.cpp:3408
+#, kde-format
+msgid "Area of '%1' (%2)"
+msgstr "„%1” területe (%2)"
+
+#: treemap.cpp:3420 treemap.cpp:3433
+#, kde-format
+msgid "1 Pixel"
+msgid_plural "%1 Pixels"
+msgstr[0] "1 képpont"
+msgstr[1] "%1 képpont"
+
+#: treemap.cpp:3437
+#, kde-format
+msgid "Double Area Limit (to %1)"
+msgstr "Dupla területi korlát (erre: %1)"
+
+#: treemap.cpp:3439
+#, kde-format
+msgid "Halve Area Limit (to %1)"
+msgstr "Feles területi korlát (erre: %1)"
+
+#: treemap.cpp:3475
+#, kde-format
+msgid "No Depth Limit"
+msgstr "Nincs mélységi korlát"
+
+#: treemap.cpp:3481
+#, kde-format
+msgid "Depth of '%1' (%2)"
+msgstr "„%1” mélysége (%2)"
+
+#: treemap.cpp:3493 treemap.cpp:3506
+#, kde-format
+msgid "Depth %1"
+msgstr "%1. mélység"
+
+#: treemap.cpp:3510
+#, kde-format
+msgid "Decrement (to %1)"
+msgstr "Csökkentés (erre: %1)"
+
+#: treemap.cpp:3512
+#, kde-format
+msgid "Increment (to %1)"
+msgstr "Növelés (erre: %1)"
+
+#~ msgid "Filesystem Utilization Viewer"
+#~ msgstr "A fájlrendszer kihasználtságának megjelenítése"
+
+#~ msgid "(c) 2003-2005, Josef Weidendorfer"
+#~ msgstr "(C) Josef Weidendorfer, 2003-2005."

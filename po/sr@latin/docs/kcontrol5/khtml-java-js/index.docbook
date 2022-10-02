@@ -1,0 +1,189 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Serbian-Latin "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="khtml-java-js" lang="&language;">
+<articleinfo>
+<title
+>Java i JavaScript</title>
+<authorgroup>
+<author
+><personname
+><firstname
+>Krišna</firstname
+> <surname
+>Tateneni</surname
+></personname
+> &Krishna.Tateneni.mail;</author>
+<othercredit role="translator"
+><firstname
+>Dragan</firstname
+><surname
+>Pantelić</surname
+><affiliation
+><address
+><email
+>falcon-10@gmx.de</email
+></address
+></affiliation
+><contrib
+>prevod</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>8. 11. 2016.</date>
+<releaseinfo
+>Programi KDE‑a 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Sistemske postavke</keyword>
+<keyword
+>K‑osvajač</keyword>
+<keyword
+>pregledanje</keyword>
+<keyword
+>Java</keyword>
+<keyword
+>JavaScript</keyword>
+</keywordset>
+
+</articleinfo>
+<sect1 id="konq-browsing">
+<title
+>Java i JavaScript</title>
+
+<sect2 id="kbrowse-java">
+<title
+>Java</title>
+
+<para
+>Java omogućava veb pregledaču da preuzima i izvršava programe, pod uslovom da je na računaru instaliran neophodan softver. Mnogi veb sajtovi koriste Javu npr. bankarski servisi na vezi ili interaktivni igrački sajtovi. Budite svesni da izvršavanje programa iz nepoznatih izvora može predstavljati pretnju po bezbednost vašeg računara, čak i ako potencijalni stepen štete nije visok.</para>
+
+<para
+>Kućicom <guilabel
+>Aktiviraj Javu globalno</guilabel
+> možete zadati da podrška za Javu bude podrazumevano uključena za sve veb sajtove. Takođe možete izabrati da uključite ili isključite Javu za pojedine domaćine. Da dodate smernicu posebnu po domaćinu, kliknite na dugme <guibutton
+>Nova...</guibutton
+>; u dijalogu koji se pojavi upišite ime domaćina, a zatim odaberite da li prihvatate ili odbijate javanski kȏ̑d sa tog domaćina. Domen će se zatim pojaviti na spisku levo na stranici.</para>
+
+<para
+>Za izbor drugačije smernice, izaberite domaćin sa spiska i kliknite na dugme <guibutton
+>Izmeni...</guibutton
+>. Dugme <guibutton
+>Obriši</guibutton
+> uklanja smernicu za izabrani domaćin; posle brisanja, na taj domaćin primenjivaće se globalne postavke.</para>
+
+<para
+>Najzad, grupom kontrola pod <guilabel
+>Postavke Java-mašine</guilabel
+> možete zadati neke opcije izvršavanja Jave.</para>
+
+<para
+>Postavka <guilabel
+>Koristi menadžer bezbednosti</guilabel
+> je podrazumevano uključena, i čini da se JVM izvršava sa aktivnim menadžerom bezbednosti. Ovo će sprečiti aplete da čitaju i pišu po fajl sistemu, stvaraju proizvoljne sokete, i uopšte izvršavaju radnje koje bi mogle ugroziti vaš sistem. Isključite ovu opciju na sopstveni rizik. Alatkom smernica Jave možete izmeniti fajl <filename
+>$<envar
+>HOME</envar
+>/.java.policy</filename
+> tako da kodu preuzetom sa izvesnih sajtova date veće dozvole.</para>
+
+<para
+><guilabel
+>Koristi K‑U/I</guilabel
+> učiniće da JVM koristi KDE‑ove sopstvene U/I zahvate za mrežna povezivanja.</para>
+
+<para
+>Kućicom <guilabel
+>Isključi server apleta kada nije aktivan duže od</guilabel
+> možete prištedeti resurse zatvaranjem servera javanskih apleta dok se ne koristi, umesto da se i dalje izvršava u pozadini. Ako ostane isključeno, javanski apleti se mogu brže pokretati, ali će se sistemski resursi trošiti i dok nema apleta. Ako opciju uključite, možete zadati i prekovreme.</para>
+
+<para
+>Možete ili reći <application
+>K‑osvajaču</application
+> da automatski otkrije instalaciju Jave na sistemu, ili sami zadati putanju ka instalaciji u polju <guilabel
+>Putanja do izvršnog fajla Jave, ili „java“:</guilabel
+>. Potonje može biti zgodno, na primer, ako na sistemu ima nekoliko instalacija Jave, pa želite da zadate koja da se koristi. Ako javanska virtuelna mašina zahteva bilo kakve posebne opcije pokretanja, možete ih upisati u polje <guilabel
+>Dodatni argumenti za Javu:</guilabel
+>.</para>
+
+</sect2>
+
+<sect2 id="kbrowse-javascript">
+<title
+>JavaScript</title>
+
+<para
+>Uprkos imenu, <application
+>JavaScript</application
+> nema nikakve veze sa Javom.</para>
+
+<para
+>Prvi deo ovog jezička radi isto kao postavke Jave.</para>
+
+<para
+>Kućicom <guilabel
+>Aktiviraj JavaScript globalno</guilabel
+> možete zadati da podrška za <application
+>JavaScript</application
+> bude podrazumevano uključena za sve veb sajtove. Takođe možete izabrati da uključite ili isključite <application
+>JavaScript</application
+> za pojedine domaćine. Da dodate smernicu posebnu po domaćinu, kliknite na dugme <guilabel
+>Nova...</guilabel
+>; u dijalogu koji se pojavi upišite ime domaćina, a zatim odaberite da li prihvatate ili odbijate <application
+>JavaScript</application
+> kȏ̑d sa tog domaćina. Domen će se zatim pojaviti na spisku levo na stranici.</para>
+
+<para
+>Za izbor drugačije smernice, izaberite domaćin sa spiska i kliknite na dugme <guibutton
+>Izmeni...</guibutton
+>. Dugme <guibutton
+>Obriši</guibutton
+> uklanja smernicu za izabrani domaćin; posle brisanja, na taj domaćin primenjivaće se globalne postavke.</para>
+<!-- missing section Debugging
+Enable debugger Enables builtin JavaScript debugger.
+Report errors Enables the reporting of errors that occur when JavaScript code is executed.
+How are errors reported? popup window? icon in status bar?
+-->
+<para
+>Poslednji skup opcija u odeljku <guilabel
+>Globalne smernice JavaScripta</guilabel
+> određuje šta biva kad stranica koristi <application
+>JavaScript</application
+> za određene radnje.</para>
+
+<para
+>Možete zasebno dozvoliti ili zabraniti premeštanje, promenu veličine i fokusa prozorima putem <application
+>JavaScripta</application
+>. Takođe možete onemogućiti da se <application
+>JavaScriptom</application
+> menja tekst u traci stanja, tako da, na primer, uvek vidite kuda će vas odvesti veza kad kliknete na nju. Izbori za ove opcije su <guilabel
+>dozvoli</guilabel
+> i <guilabel
+>ignoriši</guilabel
+>.</para>
+
+<para
+>Za otvaranje novog prozora postoji još strožija kontrola. Možete podesiti <application
+>K‑osvajač</application
+> da sve takve zahteve dozvoli, da pita kad god dobije zahteve, ili da odbije svaki zahtev za iskačući prozor.</para>
+
+<para
+>Postavka <guilabel
+>pametno</guilabel
+> dozvoliće iskačući prozor putem <application
+>JavaScripta</application
+> samo ako izričito kliknete na vezu koja ga stvara.</para>
+</sect2>
+
+</sect1>
+
+</article>

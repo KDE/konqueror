@@ -1,0 +1,203 @@
+<chapter id="config">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>Kernel</firstname
+><surname
+>Panic</surname
+><affiliation
+><address
+><email
+>rzhevskiy@mail.ru</email
+></address
+></affiliation
+><contrib
+> Перевод на русский</contrib
+></othercredit
+><othercredit role="reviewer"
+><firstname
+>Григорий</firstname
+><surname
+>Мохин</surname
+><affiliation
+><address
+><email
+>mok@kde.ru</email
+></address
+></affiliation
+><contrib
+> Редакция русского перевода</contrib
+></othercredit
+> 
+</authorgroup>
+<date
+>2003-11-06</date
+> <releaseinfo
+>3.2</releaseinfo
+> </chapterinfo>
+
+
+<title
+>Настройка &konqueror;</title>
+
+<para
+>Внешний вид &konqueror;, как и других приложений &kde;, можно легко изменить.</para>
+
+<sect1 id="configure-bars">
+<title
+>Панели инструментов</title>
+
+<para
+>При первом запуске в &konqueror; отображаются главное меню, панель инструментов, строка адреса и, возможно, панель закладок.</para>
+
+<para
+>Чтобы скрыть какую-либо панель, выберите пункт меню <menuchoice
+><guimenu
+>Настройка</guimenu
+><guisubmenu
+>Панели инструментов</guisubmenu
+> </menuchoice
+> и снимите флажок напротив её названия. Чтобы включить определённую панель, флажок напротив её названия следует установить.</para
+> 
+
+<para
+>Чтобы скрыть главное меню (или показать его, если оно уже скрыто), воспользуйтесь сочетанием клавиш <keycombo action="simul"
+>&Ctrl;<keycap
+>M</keycap
+></keycombo
+>. </para>
+
+<!-- FIXME -->
+<para
+>В левой части каждой панели имеется несколько вертикальных полосок. Щёлкнув по ним <mousebutton
+>левой</mousebutton
+> кнопкой мыши, вы временно отключите панель, а на месте вертикальных полосок появятся горизонтальные. Щёлкнув по ним, вы включите панель. Перемещать панель можно, нажав на области с полосками <mousebutton
+>левую</mousebutton
+> кнопку мыши; переместите панель в нужное вам положение, а затем отпустите кнопку мыши.</para>
+
+<para
+>Если вы щёлкнете по панели инструментов <mousebutton
+>правой</mousebutton
+> кнопкой мыши, появится меню, в котором вы сможете выбрать расположение панели, размер значков и положение подписей к кнопкам.</para>
+
+<para
+>Чтобы изменить значки, отображаемые на панелях инструментов, выберите пункт меню <menuchoice
+><guimenu
+>Настройка</guimenu
+> <guimenuitem
+>Настройка панелей инструментов...</guimenuitem
+></menuchoice
+>; появится окно <guilabel
+>Настройка панелей инструментов</guilabel
+>. Основная панель инструментов разделена на части: Панель &lt;&konqueror;&gt;, Панель &lt;khtmlpart&gt; и Дополнительная панель &lt;khtmlsettingsplugin&gt;. Количество этих частей и их тип зависит от того, работает ли &konqueror; в режиме менеджера файлов или обозревателя Интернета, и от того, какие имеются дополнительные модули.</para>
+
+</sect1>
+
+<sect1 id="configshort">
+<title
+>Клавиатура</title>
+<para
+>Чтобы изменить соответствия определённого сочетания клавиш какому-то действию, выберите пункт меню <menuchoice
+><guimenu
+>Настройка</guimenu
+><guimenuitem
+>Настройка клавиатуры...</guimenuitem
+></menuchoice
+>. Появится окно, показанное ниже. </para>
+<mediaobject>
+<imageobject>
+<imagedata fileref="shortcut1.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Настройка клавиатуры: рисунок 1</phrase>
+</textobject>
+</mediaobject>
+<para
+>Выберите в списке действие, которому вы хотели бы назначить какое-либо сочетание клавиш. После этого вы можете изменить привязку клавиш, выбрав вариант <guilabel
+>Нет</guilabel
+>, <guilabel
+>По умолчанию</guilabel
+>, <guilabel
+>По выбору</guilabel
+> или нажав кнопку справа от последнего варианта.</para>
+
+<para
+>При нажатии в окне задания комбинации клавиш кнопки <guilabel
+>Дополнительно</guilabel
+> будет показано такое окно: </para>
+<mediaobject>
+<imageobject>
+<imagedata fileref="shortcut2.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Настройка клавиатуры: рисунок 2</phrase>
+</textobject>
+</mediaobject>
+<para
+>Укажите, какое из двух сочетаний вы хотите изменить, а затем введите новое сочетание клавиш, например <keycombo action="simul"
+> &Ctrl;&Shift;<keycap
+>S</keycap
+></keycombo
+>. Если включен режим <guilabel
+>Сразу закрыть</guilabel
+>, то сразу после ввода сочетания клавиш окно будет закрыто. Если режим выключен, нажмите кнопку <guibutton
+>OK</guibutton
+>. Щёлкнув по чёрному значку с белым крестиком, вы удалите введенное сочетание клавиш.</para>
+
+<sect2 id="userdefmenus">
+<title
+>Пользовательские меню</title>
+<para
+>&konqueror; даёт вам возможность создавать меню самостоятельно. Таким образом, нажав одно сочетание клавиш, вы вызовете меню, а нажав другую клавишу или воспользовавшись клавишами <keysym
+>Стрелка вверх</keysym
+>, <keysym
+>Стрелка вниз</keysym
+> и <keycap
+>Enter</keycap
+>, вы выберете нужный вам пункт.</para>
+<para
+>Чтобы сделать это, для каждого действия, которое следует поместить в меню, следует указать новое сочетание клавиш, выбрав в окне настройки клавиатуры вариант <guilabel
+>Другой</guilabel
+>. При вводе сочетания клавиш поставьте флажок напротив пункта <guilabel
+>Несколько клавиш</guilabel
+>. Затем введите сочетание клавиш, которое должно вызывать меню, а после этого, отдельно, клавишу, которая должна выбирать нужный вам пункт.</para>
+</sect2>
+</sect1>
+
+<sect1 id="othersettings">
+<title
+>Другие настройки</title>
+<para
+>Выбрав пункт меню <menuchoice
+><guimenu
+>Настройка</guimenu
+><guimenuitem
+> Настроить Konqueror...</guimenuitem
+></menuchoice
+>, вы вызовете окно, которое позволит вам настроить большинство параметров работы &konqueror;. Окно состоит из нескольких разделов, выбрать один из которых можно, щёлкнув по его значку в левой части окна.</para>
+<para
+>Нажав кнопку <guibutton
+>Справка</guibutton
+>, вы получите подробное описание каждого раздела. Также рекомендуется использовать команду <link linkend="bubble"
+>Что это?</link
+>.</para>
+</sect1>
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

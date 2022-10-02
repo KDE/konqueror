@@ -1,0 +1,49 @@
+# translation of khtmlkttsd.po to Esperanto
+#
+# Stéphane Fillod <f8cfe@free.fr>, 2007.
+# Michael Moroni <michael.moroni@mailoo.org>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: khtmlkttsd\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2012-05-23 11:08+0200\n"
+"Last-Translator: Michael Moroni <michael.moroni@mailoo.org>\n"
+"Language-Team: Esperanto <kde-i18n-doc@kde.org>\n"
+"Language: eo\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: khtmltts.cpp:33
+#, kde-format
+msgid "&Speak Text"
+msgstr "Paroli tek&ston"
+
+#. i18n: ectx: Menu (tools)
+#: khtmlttsplugin.rc:5
+#, kde-format
+msgid "&Tools"
+msgstr "&Iloj"
+
+#. i18n: ectx: ToolBar (speechToolbar)
+#: khtmlttsplugin.rc:10
+#, kde-format
+msgid "Speech Toolbar"
+msgstr "Parolilobreto"
+
+#~ msgctxt "@title:window"
+#~ msgid "Starting Jovie Text-to-Speech Service Failed"
+#~ msgstr "Startigado de tekst-al-parola servo Jovie fiaskis"
+
+#~ msgid "The D-Bus call say() failed."
+#~ msgstr "La voko de D-Bus say() fiaskis."
+
+#~ msgctxt "@title:window"
+#~ msgid "D-Bus Call Failed"
+#~ msgstr "Voko de D-Bus fiaskis"
+
+#~ msgid "Starting KTTSD Failed"
+#~ msgstr "Eki KTTSD malsukcesis"

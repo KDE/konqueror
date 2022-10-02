@@ -1,0 +1,308 @@
+# translation of imgalleryplugin.po to Frysk
+# translation of imgalleryplugin.po to
+# translation of imgalleryplugin.po to
+# Nederlandse vertaling van imgalleryplugin
+# Copyright (C) 2001-2002 KDE e.v..
+# KDE-vertaalgroep Nederlands <www.kde.nl>
+# Proefgelezen 20-01-2002 Douwe van der Schaaf <dvdsch@bigfoot.nl>
+#
+# Rinse de Vries <Rinse@kde.nl>, 2001-2002.
+# Rinse de Vries <rinse@kde.nl>, 2003, 2004.
+# Wilbert Berendsen <wbsoft@xs4all.nl>, 2003.
+# Rinse de Vries <rinsedevries@kde.nl>, 2004, 2005, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: imgalleryplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"PO-Revision-Date: 2008-07-02 13:58+0100\n"
+"Last-Translator: Berend Ytsma <berendy@gmail.com>\n"
+"Language-Team: Frysk <kde-i18n-fry@kde.org>\n"
+"Language: fy\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: imgallerydialog.cpp:37
+#, fuzzy, kde-format
+#| msgid "Create Image Gallery"
+msgctxt "@title:window"
+msgid "Create Image Gallery"
+msgstr "Ofbyldengalery meitsje"
+
+#: imgallerydialog.cpp:38
+#, kde-format
+msgid "Create"
+msgstr "Oanmeitsje"
+
+#: imgallerydialog.cpp:48 imgallerydialog.cpp:84
+#, kde-format
+msgid "Image Gallery for %1"
+msgstr "Galery fan ôfbylden foar %1"
+
+#: imgallerydialog.cpp:76
+#, kde-format
+msgid "Look"
+msgstr "Uterlik"
+
+#: imgallerydialog.cpp:77
+#, kde-format
+msgid "Page Look"
+msgstr "Uterlik"
+
+#: imgallerydialog.cpp:85
+#, kde-format
+msgid "&Page title:"
+msgstr "&Sidetitel:"
+
+#: imgallerydialog.cpp:93
+#, kde-format
+msgid "I&mages per row:"
+msgstr "Ofbyld&en per rige:"
+
+#: imgallerydialog.cpp:95
+#, kde-format
+msgid "Show image file &name"
+msgstr "Tri&emnamme fan ôfbylding sjen litte"
+
+#: imgallerydialog.cpp:99
+#, kde-format
+msgid "Show image file &size"
+msgstr "Trie&mgrutte fan ôfbyld sjen litte"
+
+#: imgallerydialog.cpp:103
+#, kde-format
+msgid "Show image &dimensions"
+msgstr "Ofmjittingen fan ôfb&yld sjen litte"
+
+#: imgallerydialog.cpp:114
+#, kde-format
+msgid "Fon&t name:"
+msgstr "Namme fan le&ttertype:"
+
+#: imgallerydialog.cpp:122
+#, kde-format
+msgid "Font si&ze:"
+msgstr "Tekengr&utte:"
+
+#: imgallerydialog.cpp:126
+#, kde-format
+msgid "&Foreground color:"
+msgstr "&Foargrûnkleur:"
+
+#: imgallerydialog.cpp:130
+#, kde-format
+msgid "&Background color:"
+msgstr "&Eftergrûnkleur..."
+
+#: imgallerydialog.cpp:136 imgallerydialog.cpp:137
+#, kde-format
+msgid "Folders"
+msgstr "Mappen"
+
+#: imgallerydialog.cpp:145
+#, kde-format
+msgid "&Save to HTML file:"
+msgstr "Op&slaan nei HTML-triem:"
+
+#: imgallerydialog.cpp:147
+#, kde-format
+msgid "<p>The name of the HTML file this gallery will be saved to.</p>"
+msgstr ""
+"<p>De namme fan de HTML-triem wêr't dizze galery yn bewarre wurde sil.</p>"
+
+#: imgallerydialog.cpp:150
+#, kde-format
+msgid "&Recurse subfolders"
+msgstr "Tro&chgean yn submappen"
+
+#: imgallerydialog.cpp:152
+#, kde-format
+msgid ""
+"<p>Whether subfolders should be included for the image gallery creation or "
+"not.</p>"
+msgstr ""
+"<p>Of submappen sille brûkt wurde by it oanmeitsjen fan de ôfbyldengalery of "
+"net..</p>"
+
+#: imgallerydialog.cpp:163
+#, kde-format
+msgid "Endless"
+msgstr "Sûnder ein"
+
+#: imgallerydialog.cpp:165
+#, kde-format
+msgid ""
+"<p>You can limit the number of folders the image gallery creator will "
+"traverse to by setting an upper bound for the recursion depth.</p>"
+msgstr ""
+"<p>Jo kinne it oantal mappen dat de ôfbyldengalery omsette sil beheine troch "
+"in limyt foar de mapdjipte yn te stellen..</p>"
+
+#: imgallerydialog.cpp:168
+#, kde-format
+msgid "Rec&ursion depth:"
+msgstr "Repetysjeniv&o:"
+
+#: imgallerydialog.cpp:172
+#, kde-format
+msgid "Copy or&iginal files"
+msgstr "Or&izjinele triemmen kopiearje"
+
+#: imgallerydialog.cpp:174
+#, kde-format
+msgid ""
+"<p>This makes a copy of all images and the gallery will refer to these "
+"copies instead of the original images.</p>"
+msgstr ""
+"<p>Dit makket in kopy fan alle ôfbylden en de galery sil ferwize nei dizze "
+"kopyen ynstee fan nei de orizjinele triemmen..</p>"
+
+#: imgallerydialog.cpp:179
+#, kde-format
+msgid "Use &comment file"
+msgstr "Taljo&chtingentriem brûke"
+
+#: imgallerydialog.cpp:181
+#, kde-format
+msgid ""
+"<p>If you enable this option you can specify a comment file which will be "
+"used for generating subtitles for the images.</p><p>For details about the "
+"file format please see the \"What's This?\" help below.</p>"
+msgstr ""
+"<p>As jo dizze opsje selektearje kinne jo in taljochtingentriem opjaan dat "
+"brûkt wurde sil foar it oanmeitsjen fan ûndertiteling foar de ôfbylden. </"
+"p><p>Foar details oer it ôfbyldformaat, klik hjirûnder op de \"Wat is dit?\"-"
+"help..</p>"
+
+#: imgallerydialog.cpp:190
+#, kde-format
+msgid ""
+"<p>You can specify the name of the comment file here. The comment file "
+"contains the subtitles for the images. The format of this file is:</"
+"p><p>FILENAME1:<br />Description<br /><br />FILENAME2:<br />Description<br /"
+"><br />and so on</p>"
+msgstr ""
+"<p>Jo kinne de namme fan de taljochtingentriem hjir opjaan. Yn de "
+"taljochtingentriem sit de ûndertiteling foar de ôfbylden. De opmak fan dizze "
+"triem is: </p><p>TRIEMNAMME1:<br />beskriuwing<br /><br />TRIEMNAMME2:<br /"
+">Beskriuwing<br /> <br />ensfh...</p>"
+
+#: imgallerydialog.cpp:200
+#, kde-format
+msgid "Comments &file:"
+msgstr "Taljochtingen&triem:"
+
+#: imgallerydialog.cpp:210 imgallerydialog.cpp:211
+#, kde-format
+msgid "Thumbnails"
+msgstr "Miniaturen"
+
+#: imgallerydialog.cpp:224
+#, kde-format
+msgid "Image f&ormat:"
+msgstr ""
+
+#: imgallerydialog.cpp:232
+#, kde-format
+msgid "Thumbnail size:"
+msgstr "Miniatuergrutte"
+
+#: imgallerydialog.cpp:235
+#, kde-format
+msgid "&Set different color depth:"
+msgstr "Ferskate kleurdjiptes yn&stelle:"
+
+#: imgallerydialog.cpp:246
+#, kde-format
+msgid "Color depth:"
+msgstr ""
+
+#: imgalleryplugin.cpp:52
+#, kde-format
+msgid "&Create Image Gallery..."
+msgstr "Galery fan ôfbylden oanme&itsje..."
+
+#: imgalleryplugin.cpp:62
+#, kde-format
+msgid "Could not create the plugin, please report a bug."
+msgstr "De plugin koe net oanmakke wurde. Stjoer asjebleaft in bugrapport yn."
+
+#: imgalleryplugin.cpp:68
+#, kde-format
+msgid "Creating an image gallery works only on local folders."
+msgstr ""
+"It oanmeitsjen fan in galery fan ôfbylden wurket allinnich by lokale mappen."
+
+#: imgalleryplugin.cpp:88
+#, kde-format
+msgid "Creating thumbnails"
+msgstr "Miniaturen oanmeitsje"
+
+#: imgalleryplugin.cpp:111 imgalleryplugin.cpp:275
+#, kde-format
+msgid "Could not create folder: %1"
+msgstr "De map %1 koe net oanmakke wurde."
+
+#: imgalleryplugin.cpp:173
+#, kde-format
+msgid "<i>Number of images</i>: %1"
+msgstr "<i>Oantal ôfbylden</i>:%1"
+
+#: imgalleryplugin.cpp:174
+#, kde-format
+msgid "<i>Created on</i>: %1"
+msgstr "<i>Oanmakke op</i>:%1"
+
+#: imgalleryplugin.cpp:179
+#, kde-format
+msgid "<i>Subfolders</i>:"
+msgstr "<i>Submappen</i>:"
+
+#: imgalleryplugin.cpp:212
+#, kde-format
+msgid ""
+"Created thumbnail for: \n"
+"%1"
+msgstr ""
+"Miniatuer oanmakke foar:\n"
+"%1"
+
+#: imgalleryplugin.cpp:215
+#, kde-format
+msgid ""
+"Creating thumbnail for: \n"
+"%1\n"
+" failed"
+msgstr ""
+"It oanmeitsjen fan miniatuer foar:\n"
+"%1\n"
+"is mislearre"
+
+#: imgalleryplugin.cpp:230
+#, fuzzy, kde-format
+#| msgid "KB"
+msgid "KiB"
+msgstr "kB"
+
+#: imgalleryplugin.cpp:344 imgalleryplugin.cpp:439
+#, kde-format
+msgid "Could not open file: %1"
+msgstr "De triem %1 koe net iepene wurde."
+
+#. i18n: ectx: Menu (tools)
+#: kimgallery.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "H&elpmiddels"
+
+#~ msgid "Image format f&or the thumbnails:"
+#~ msgstr "Ofbyld&formaat foar de miniaturen:"
+
+#, fuzzy
+#~| msgid "Configure"
+#~ msgctxt "@title:window"
+#~ msgid "Configure"
+#~ msgstr "Ynstelle"

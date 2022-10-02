@@ -1,0 +1,250 @@
+# translation of libkonq.po to Polish
+# Version: $Revision: 1631308 $
+# translation of libkonq.po to
+# translation of libkonq.po to
+# translation of libkonq.po to
+# Polskie napisy do biblioteki Konquerora.
+# Copyright (C) 2000,2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009 Free Software Foundation, Inc.
+#
+# Daniel Koć <kocio@bigfoot.com>, 2000.
+# Michał Rudolf <mrudolf@kdewebdev.org>, 2002.
+# Michal Rudolf <mrudolf@kdewebdev.org>, 2002, 2003, 2004, 2005, 2007, 2008, 2009, 2010.
+# Krzysztof Lichota <lichota@mimuw.edu.pl>, 2005.
+# Robert Gomulka <rgom@o2.pl>, 2006.
+# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2011, 2012, 2014, 2019, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2021-01-30 11:18+0100\n"
+"Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
+"Language-Team: Polish <kde-i18n-doc@kde.org>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 20.12.1\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "&Otwórz"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "&Nowy katalog..."
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "&Odtwórz"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr "Pokaż oryginalny katalog"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr "Pokaż oryginalny plik"
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "&Opróżnij kosz"
+
+#: src/konq_popupmenu.cpp:312
+#, kde-format
+msgid "&Configure Trash Bin"
+msgstr "&Ustawienia kosza"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "&Dodaj tę stronę do zakładek"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "&Dodaj to miejsce do zakładek"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "&Dodaj ten katalog do zakładek"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "&Dodaj ten odnośnik do zakładek"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "&Dodaj ten plik do zakładek"
+
+#: src/konq_popupmenu.cpp:379
+#, kde-format
+msgid "Preview In"
+msgstr "Podgląd w"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr "Otwórz tutaj terminal"
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "&Właściwości..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy To"
+#~ msgstr "Kopiuj do"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "Przenieś do"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "Katalog domowy"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "Katalog główny"
+
+#~ msgctxt "@title:menu in Copy To or Move To submenu"
+#~ msgid "Browse..."
+#~ msgstr "Przeglądaj..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "Kopiuj tutaj"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "Przenieś tutaj"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "Nie można przenieść katalogu do niego samego"
+
+#~ msgid "File name for dropped contents:"
+#~ msgstr "Nazwa pliku dla upuszczonej zawartości:"
+
+#~ msgid "&Move Here"
+#~ msgstr "&Przenieś tutaj"
+
+#~ msgid "&Copy Here"
+#~ msgstr "&Kopiuj tutaj"
+
+#~ msgid "&Link Here"
+#~ msgstr "&Dowiąż tutaj"
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "Ustaw jako &tapetę"
+
+#~ msgid "C&ancel"
+#~ msgstr "&Anuluj"
+
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "Utwórz katalog"
+
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "Podaj inną nazwę"
+
+#~ msgid ""
+#~ "The name \"%1\" starts with a dot, so the directory will be hidden by "
+#~ "default."
+#~ msgstr ""
+#~ "Nazwa \"%1\" zaczyna się od kropki, więc katalog będzie domyślnie ukryty."
+
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "Czy utworzyć ukryty katalog?"
+
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "Nowy katalog"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "Nowy katalog"
+
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "Podaj nazwę katalogu:"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "Wklej 1 katalog"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One File"
+#~ msgstr "Wklej 1 plik"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Item"
+#~ msgid_plural "Paste %1 Items"
+#~ msgstr[0] "Wklej 1 element"
+#~ msgstr[1] "Wklej %1 elementy"
+#~ msgstr[2] "Wklej %1 elementów"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste Clipboard Contents..."
+#~ msgstr "Wklej zawartość schowka..."
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste"
+#~ msgstr "Wklej"
+
+#~ msgid ""
+#~ "Restores this file or directory, back to the location where it was "
+#~ "deleted from initially"
+#~ msgstr "Przywróć ten plik lub katalog w miejsce, skąd został skasowany"
+
+#~ msgid ""
+#~ "Opens a new file manager window showing the target of this link, in its "
+#~ "parent directory."
+#~ msgstr ""
+#~ "Otwiera nowe okno do zarządzania plikami, pokazujące cel tego odnośnika w "
+#~ "katalogu nadrzędnym."
+
+#~ msgid "Share"
+#~ msgstr "Udostępnij"
+
+#~ msgctxt "@info"
+#~ msgid "Close"
+#~ msgstr "Zamknij"
+
+#~ msgid "Close"
+#~ msgstr "Zamknij"
+
+#~ msgid "Error: %1"
+#~ msgstr "Błąd: %1"
+
+#~ msgid "Create New"
+#~ msgstr "Utwórz nowe"
+
+#~ msgid "Link to Device"
+#~ msgstr "Dowiązanie do urządzenia"
+
+#~ msgid "<qt>The template file <b>%1</b> does not exist.</qt>"
+#~ msgstr "<qt>Plik szablonów <b>%1</b> nie istnieje.</qt>"
+
+#~ msgid "File name:"
+#~ msgstr "Nazwa pliku:"
+
+#~ msgid ""
+#~ "Basic links can only point to local files or directories.\n"
+#~ "Please use \"Link to Location\" for remote URLs."
+#~ msgstr ""
+#~ "Podstawowe odnośniki mogą prowadzić do lokalnych plików lub katalogów.\n"
+#~ "Proszę wybrać \"Odnośnik zewnętrzny\" dla zewnętrznych URL."

@@ -1,0 +1,296 @@
+# translation of imgalleryplugin.po to Arabic
+# translation of imgalleryplugin.po to
+# Copyright (C) 2001,2002, 2004, 2006, 2007, 2008, 2009 Free Software Foundation, Inc.
+# Mohammed Gamal <f2c2001@yahoo.com>, 2001, 2004.
+# Isam Bayazidi <bayazidi@arabeyes.org>, 2002.
+# Ahmad M. Zawawi <azawawi@emirates.net.ae>, 2004.
+# محمد سعد  Mohamed SAAD <metehyi@free.fr>, 2006.
+# Youssef Chahibi <chahibi@gmail.com>, 2007.
+# zayed <zayed.alsaidi@gmail.com>, 2008, 2009, 2012.
+# Safa Alfulaij <safa1996alfulaij@gmail.com>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: imgalleryplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"PO-Revision-Date: 2014-07-30 23:48+0300\n"
+"Last-Translator: Safa Alfulaij <safa1996alfulaij@gmail.com>\n"
+"Language-Team: Arabic <doc@arabeyes.org>\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: imgallerydialog.cpp:37
+#, kde-format
+msgctxt "@title:window"
+msgid "Create Image Gallery"
+msgstr "أنشئ معرضًا للصور"
+
+#: imgallerydialog.cpp:38
+#, kde-format
+msgid "Create"
+msgstr "أنشئ"
+
+#: imgallerydialog.cpp:48 imgallerydialog.cpp:84
+#, kde-format
+msgid "Image Gallery for %1"
+msgstr "معرض صور لِـ ‎%1"
+
+#: imgallerydialog.cpp:76
+#, kde-format
+msgid "Look"
+msgstr "المظهر"
+
+#: imgallerydialog.cpp:77
+#, kde-format
+msgid "Page Look"
+msgstr "مظهر الصفحة"
+
+#: imgallerydialog.cpp:85
+#, kde-format
+msgid "&Page title:"
+msgstr "عنوان ال&صفحة:"
+
+#: imgallerydialog.cpp:93
+#, kde-format
+msgid "I&mages per row:"
+msgstr "الص&ور لكلّ صف:"
+
+#: imgallerydialog.cpp:95
+#, kde-format
+msgid "Show image file &name"
+msgstr "أظهر ا&سم ملف الصورة"
+
+#: imgallerydialog.cpp:99
+#, kde-format
+msgid "Show image file &size"
+msgstr "أظهر &حجم ملف الصورة"
+
+#: imgallerydialog.cpp:103
+#, kde-format
+msgid "Show image &dimensions"
+msgstr "أظهر أب&عاد الصورة"
+
+#: imgallerydialog.cpp:114
+#, kde-format
+msgid "Fon&t name:"
+msgstr "اسم ال&خط:"
+
+#: imgallerydialog.cpp:122
+#, kde-format
+msgid "Font si&ze:"
+msgstr "ح&جم الخط:"
+
+#: imgallerydialog.cpp:126
+#, kde-format
+msgid "&Foreground color:"
+msgstr "لون الأ&مامية:"
+
+#: imgallerydialog.cpp:130
+#, kde-format
+msgid "&Background color:"
+msgstr "لون ال&خلفية:"
+
+#: imgallerydialog.cpp:136 imgallerydialog.cpp:137
+#, kde-format
+msgid "Folders"
+msgstr "المجلدات"
+
+#: imgallerydialog.cpp:145
+#, kde-format
+msgid "&Save to HTML file:"
+msgstr "ا&حفظ إلى ملف HTML:"
+
+#: imgallerydialog.cpp:147
+#, kde-format
+msgid "<p>The name of the HTML file this gallery will be saved to.</p>"
+msgstr "<p>اسم ملف HTML الذي سيُحفظ به اسم هذا المعرض.</p>"
+
+#: imgallerydialog.cpp:150
+#, fuzzy, kde-format
+msgid "&Recurse subfolders"
+msgstr "&ضمن الملفات الفرعية عوديا"
+
+#: imgallerydialog.cpp:152
+#, fuzzy, kde-format
+msgid ""
+"<p>Whether subfolders should be included for the image gallery creation or "
+"not.</p>"
+msgstr "<p>إذا ما كان يجب تضمين الملفات الفرعية لإنشاء معرض الصور أم لا</p>"
+
+#: imgallerydialog.cpp:163
+#, fuzzy, kde-format
+msgid "Endless"
+msgstr "بلا نهاية"
+
+#: imgallerydialog.cpp:165
+#, fuzzy, kde-format
+msgid ""
+"<p>You can limit the number of folders the image gallery creator will "
+"traverse to by setting an upper bound for the recursion depth.</p>"
+msgstr ""
+"<p>You can limit the number of folders the image gallery creator will "
+"traverse to by setting an upper bound for the recursion depth.</p>"
+
+#: imgallerydialog.cpp:168
+#, fuzzy, kde-format
+msgid "Rec&ursion depth:"
+msgstr "عمق ال&تضمين العودي:"
+
+#: imgallerydialog.cpp:172
+#, kde-format
+msgid "Copy or&iginal files"
+msgstr "انسخ الملفات الأ&صلية"
+
+#: imgallerydialog.cpp:174
+#, fuzzy, kde-format
+msgid ""
+"<p>This makes a copy of all images and the gallery will refer to these "
+"copies instead of the original images.</p>"
+msgstr ""
+"<p>سيصنع هذا نسخ من الصور ، وسيجعل المعرض يشير إلى هذه النسخ عوضا عن الصور "
+"الأصلية. </p>"
+
+#: imgallerydialog.cpp:179
+#, kde-format
+msgid "Use &comment file"
+msgstr "استخدم ملف الت&عليق"
+
+#: imgallerydialog.cpp:181
+#, fuzzy, kde-format
+msgid ""
+"<p>If you enable this option you can specify a comment file which will be "
+"used for generating subtitles for the images.</p><p>For details about the "
+"file format please see the \"What's This?\" help below.</p>"
+msgstr ""
+"<p>إذا فعلت هذا الخيار ، فبإمكانك أن تحد ملف تعليق بحيث سيستعمللإنشاء عناوين "
+"فرعية للصورة.</p><p> لمزيد من التفاصيل عن تنسيق الملف انظر مساعدة  \"ما هذا؟"
+"\" في الأسفل.</p>"
+
+#: imgallerydialog.cpp:190
+#, fuzzy, kde-format
+msgid ""
+"<p>You can specify the name of the comment file here. The comment file "
+"contains the subtitles for the images. The format of this file is:</"
+"p><p>FILENAME1:<br />Description<br /><br />FILENAME2:<br />Description<br /"
+"><br />and so on</p>"
+msgstr ""
+"<p>يمكن تحديد اسم ملف التعليق هنا. ملف التعليق يحويالعناوين الفرعية للصور. "
+"تنسيق هذا الملف هو :</p><p>الصور1<br />الوصف<br /><br />الصورة2:<br /"
+">الوصف<br /><br />وهكذا</p>"
+
+#: imgallerydialog.cpp:200
+#, kde-format
+msgid "Comments &file:"
+msgstr "م&لف التعليقات:"
+
+#: imgallerydialog.cpp:210 imgallerydialog.cpp:211
+#, kde-format
+msgid "Thumbnails"
+msgstr "المصغّرات"
+
+#: imgallerydialog.cpp:224
+#, kde-format
+msgid "Image f&ormat:"
+msgstr ""
+
+#: imgallerydialog.cpp:232
+#, kde-format
+msgid "Thumbnail size:"
+msgstr "حجم المصغّرة:"
+
+#: imgallerydialog.cpp:235
+#, kde-format
+msgid "&Set different color depth:"
+msgstr "&عيّن عمق ألوان مختلف:"
+
+#: imgallerydialog.cpp:246
+#, kde-format
+msgid "Color depth:"
+msgstr ""
+
+#: imgalleryplugin.cpp:52
+#, kde-format
+msgid "&Create Image Gallery..."
+msgstr "أ&نشئ معرضًا للصور..."
+
+#: imgalleryplugin.cpp:62
+#, kde-format
+msgid "Could not create the plugin, please report a bug."
+msgstr "تعذّر إنشاء الملحقة، فضلًا أبلغ عن علة."
+
+#: imgalleryplugin.cpp:68
+#, kde-format
+msgid "Creating an image gallery works only on local folders."
+msgstr "إنشاء معرض الصور يعمل فقط على المجلدات المحلية."
+
+#: imgalleryplugin.cpp:88
+#, kde-format
+msgid "Creating thumbnails"
+msgstr "ينشئ المصغّرات"
+
+#: imgalleryplugin.cpp:111 imgalleryplugin.cpp:275
+#, kde-format
+msgid "Could not create folder: %1"
+msgstr "تعذّر إنشاء المجلد: %1"
+
+#: imgalleryplugin.cpp:173
+#, kde-format
+msgid "<i>Number of images</i>: %1"
+msgstr "<i>عدد الصور</i>: %1"
+
+#: imgalleryplugin.cpp:174
+#, kde-format
+msgid "<i>Created on</i>: %1"
+msgstr "<i>أُنشئت في</i>: %1"
+
+#: imgalleryplugin.cpp:179
+#, kde-format
+msgid "<i>Subfolders</i>:"
+msgstr "<i>المجلدات الفرعية</i>:"
+
+#: imgalleryplugin.cpp:212
+#, kde-format
+msgid ""
+"Created thumbnail for: \n"
+"%1"
+msgstr ""
+"أُنشئت مصغّرة لِــ : \n"
+"%1"
+
+#: imgalleryplugin.cpp:215
+#, kde-format
+msgid ""
+"Creating thumbnail for: \n"
+"%1\n"
+" failed"
+msgstr ""
+"فضل إنشاء مصغّرة لِــ: \n"
+"%1"
+
+#: imgalleryplugin.cpp:230
+#, kde-format
+msgid "KiB"
+msgstr "ك.بايت"
+
+#: imgalleryplugin.cpp:344 imgalleryplugin.cpp:439
+#, kde-format
+msgid "Could not open file: %1"
+msgstr "تعذّر فتح الملف %1"
+
+#. i18n: ectx: Menu (tools)
+#: kimgallery.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "أ&دوات"
+
+#~ msgid "Image format f&or the thumbnails:"
+#~ msgstr "هيئة صور الم&صغّرات:"
+
+#~ msgctxt "@title:window"
+#~ msgid "Configure"
+#~ msgstr "اضبط"

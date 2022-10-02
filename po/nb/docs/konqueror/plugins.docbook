@@ -1,0 +1,282 @@
+<chapter id="plugins">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>Gunnhild</firstname
+><surname
+>Lurås</surname
+><affiliation
+><address
+><email
+>gluras@c2i.net</email
+></address
+></affiliation
+><contrib
+></contrib
+></othercredit
+> 
+</authorgroup>
+<date
+>2002-09-22</date
+> <releaseinfo
+>3.1</releaseinfo
+> </chapterinfo>
+
+
+<title
+>Programtillegg</title>
+
+<sect1 id="netscape-plugin">
+<title
+>&Netscape;-programtillegg</title>
+
+<para
+>For tiden støtter &konqueror; &Netscape; 4.x-programtillegg.</para>
+
+<para
+>Når du velger <menuchoice
+><guimenu
+>Innstillinger</guimenu
+><guisubmenu
+>Tilpass Konqueror …</guisubmenu
+><guimenuitem
+>Programtillegg</guimenuitem
+></menuchoice
+> får du opp en dialogboks med to faner; <guilabel
+>Let</guilabel
+> og <guilabel
+>Programtillegg</guilabel
+>.</para>
+
+<para
+><guilabel
+>Let</guilabel
+>-sida kontrollerer om &kde; leter etter nye &Netscape;-programtillegg, enten manuelt ved å trykke <guibutton
+>Let etter nye tillegg</guibutton
+>-knappen eller automatisk hver gang &kde; starter opp.</para>
+	
+<para
+>Letingen gjøres ved å se gjennom mappene som er satt opp i <guilabel
+>Let gjennom mapper</guilabel
+>-lista etter filer med etternavnet <literal role="extension"
+>.so</literal
+> med kode for programtillegg. Det sjekker hver slik fil for å finne ut hvilke <acronym
+>MIME</acronym
+>-typer tillegget støtter. Så lager den <acronym
+>MIME</acronym
+>-typedefinisjoner for &kde; i brukerens <filename class="directory"
+>~/.kde/share/mimelnk</filename
+>-mappe for å gjøre andre programmer oppmerksomme på dem.</para>
+
+<para
+>Siden <guilabel
+>Programtillegg</guilabel
+> viser deg de &Netscape;-tilleggene som &kde; har funnet, og for hvert tillegg står alle <acronym
+>MIME</acronym
+>-typene og filetternavnene som gjenkjenner dem.</para>
+
+<para
+>Dialogboksen inneholder også en avkryssingsboks <guilabel
+>Skru på globale programtillegg</guilabel
+> som du kan bruke til å skru av eller på tillegg som kan finnes på <acronym
+>HTML</acronym
+>-sider (disse kan regnes som en sikkerhetsrisiko).</para>
+
+</sect1>
+
+<sect1 id="konq-plugin">
+<title
+>&konqueror;-programtillegg</title>
+
+<para
+>Pakken kdeaddons inneholder flere nyttige programtillegg som jobber med &konqueror; på forskjellige måter. Disse blir forklart kort under, mer detaljert informasjon kan fås ved å se på delen <guimenuitem
+>Konqueror programtillegg</guimenuitem
+> i &kde;s hjelpesenter.</para>
+
+<variablelist>
+
+<varlistentry>
+<term
+>Nettsideoversetting</term>
+<listitem
+><para
+>Denne bruker  BabelFish-siden hos AltaVista for å oversette den gjeldende <acronym
+>HTML</acronym
+>-siden til det språket du ønsker. Det kan startes med <menuchoice
+><guimenu
+>Verktøy</guimenu
+> <guisubmenu
+>Oversett nettside</guisubmenu
+></menuchoice
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Filter for mappevisning</term>
+<listitem
+><para
+>Dette styres av <menuchoice
+><guimenu
+>Verktøy</guimenu
+><guisubmenu
+> Vis filter</guisubmenu
+></menuchoice
+> og lar deg velge hvilke elementer som vises i mappa.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Vis DOM-tre</term>
+<listitem
+><para
+>Når du velger <menuchoice
+><guimenu
+>Verktøy</guimenu
+><guisubmenu
+>Vis DOM-tre</guisubmenu
+></menuchoice
+> åpnes det et nytt vindu som viser dokumentobjekt-modellen (DOM) til den gjeldende <acronym
+>HTML</acronym
+>-siden.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>HTML-validerer</term>
+<listitem
+><para
+>Dette startes med <menuchoice
+><guimenu
+>Verktøy</guimenu
+><guisubmenu
+>Valider nettside</guisubmenu
+><guimenuitem
+>Valider HTML</guimenuitem
+></menuchoice
+>. Den bruker validereren til W3C for å sjekke om den gjeldende siden er gyldig. Dette er veldig nyttig når man lager nettsider.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Valider CSS</term>
+<listitem
+><para
+>Denne startes med <menuchoice
+><guimenu
+>Verktøy</guimenu
+><guisubmenu
+> Valider nettside</guisubmenu
+><guimenuitem
+>Valider CSS</guimenuitem
+></menuchoice
+>, den bruker CSS-validereren til W3C for å sjekke om stilsettet til den gjeldende siden er gyldig.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>HTML-innstillinger</term>
+<listitem
+><para
+>Velg <menuchoice
+><guimenu
+>Verktøy</guimenu
+><guisubmenu
+>HTML-innstillinger</guisubmenu
+></menuchoice
+> for å skru av eller på et antall HTML-funksjoner uten å måtte gå gjennom <guimenu
+>Innstillinger</guimenu
+>-dialogen. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Bildegalleri</term>
+<listitem
+><para
+>I filbehandlingsmodus kan du velge <menuchoice
+><guimenu
+>Verktøy </guimenu
+><guisubmenu
+>Lag bildegalleri</guisubmenu
+></menuchoice
+> for å lage en HTML-side med miniatyrer av alle bildene i den gjeldende mappa. Som standard kalles HTML-siden <filename
+>images.html</filename
+> og miniatyrene legges inn i en ny <filename
+>thumbs</filename
+>-mappe. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Endre brukeragent</term>
+<listitem
+><para
+>Velg <menuchoice
+><guimenu
+>Verktøy</guimenu
+><guisubmenu
+>Endre identifikasjon av nettleser</guisubmenu
+></menuchoice
+> for å få en meny der du kan endre brukeragent-teksten uten å måtte gå gjennom <guimenu
+>Innstillinger</guimenu
+>-dialogen. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Arkiver nettside</term>
+<listitem
+><para
+>Startes med <menuchoice
+><guimenu
+>Verktøy</guimenu
+><guisubmenu
+>Arkiver nettside</guisubmenu
+></menuchoice
+>, dette verktøyet oppretter en arkivfil (<literal role="extension"
+>.war</literal
+> ) som inneholder nettsiden som ses medregnet bildene.<mousebutton
+>Venstreklikk</mousebutton
+> på arkivfilnavnet for å se på den lagrede siden. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Mediespiller for navigasjonspanel</term>
+<listitem
+><para
+>Dette er en enkel mediespiller, medregnet som et fane i navigasjonspanelet. Du kan dra sanger eller videoer til denne siden for å spille den. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

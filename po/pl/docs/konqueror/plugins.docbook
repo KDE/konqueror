@@ -1,0 +1,278 @@
+<chapter id="plugins">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>(c) 2005 Mandriva</firstname
+><surname
+>Poland</surname
+><affiliation
+><address
+><email
+>biuro@mandriva.pl</email
+></address
+></affiliation
+><contrib
+>Polskie tłumaczenie</contrib
+></othercredit
+> 
+</authorgroup>
+<date
+>2002-09-22</date
+> <releaseinfo
+>3.1</releaseinfo
+> </chapterinfo>
+
+
+<title
+>Wtyczki</title>
+
+<sect1 id="netscape-plugin">
+<title
+>Wtyczki programu &Netscape;</title>
+
+<para
+>Obecnie &konqueror; obsługuje wtyczki &Netscape; 4.x.</para>
+
+<para
+>Kiedy wybierzesz polecenie menu <menuchoice
+><guimenu
+>Ustawienia</guimenu
+><guisubmenu
+> Konfiguracja: Konqueror...</guisubmenu
+><guimenuitem
+>Wtyczki</guimenuitem
+> </menuchoice
+> pojawi się okno z dwiema zakładkami: <guilabel
+>Znajdź</guilabel
+> oraz <guilabel
+>Wtyczki</guilabel
+>.</para>
+
+<para
+>Zakładka <guilabel
+>Znajdź</guilabel
+> określa, w jaki sposób &kde; wyszukuje nowe wtyczki &Netscape;, ręcznie poprzez wciśnięcie przycisku <guibutton
+>Znajdź nowe wtyczki</guibutton
+> lub automatycznie podczas każdego uruchomienia &kde;.</para>
+	
+<para
+>Wyszukiwanie odbywa się poprzez przejrzenie katalogów umieszczonych na liście <guilabel
+>Przeszukaj katalogu</guilabel
+> w poszukiwaniu plików <literal role="extension"
+>.so</literal
+> zawierających kod wtyczki. Sprawdzany jest każdy taki plik, aby określić, jaki typ <acronym
+>MIME</acronym
+> wtyczka obsługuje. Następnie tworzony jest plik definicji typu <acronym
+>MIME</acronym
+> dla &kde; w katalogu użytkownika <filename class="directory"
+> ~/.kde/share/mimelnk</filename
+> tak, aby umożliwić programom korzystanie z nich.</para>
+
+<para
+>Zakładka <guilabel
+>Wtyczki</guilabel
+> pokazuje znalezione przez &kde; wtyczki &Netscape; i dla każdej z nich pokazuje listę typów <acronym
+>MIME</acronym
+> oraz rozszerzenia używane do rozpoznania typu.</para>
+
+<para
+>To okno dialogowe zawiera również opcję <guilabel
+>Włącz obsługę wtyczek globalnie</guilabel
+> która służy do włączenia lub wyłączenia wtyczek zawartych w stronach <acronym
+>HTML</acronym
+> (co może stanowić zagrożenie bezpieczeństwa).</para>
+
+</sect1>
+
+<sect1 id="konq-plugin">
+<title
+>Wtyczki &konqueror-dopelniacz;</title>
+
+<para
+>Pakiet kdeaddons zawiera kilka użytecznych wtyczek, które współpracują z &konqueror-narzednik; na różne sposoby. Krótki opis znajduje się poniżej, więcej szczegółów można znaleźć w sekcji <guimenuitem
+>Wtyczki Konquerora</guimenuitem
+> w &khelpcenter-miejscownik;.</para>
+
+<variablelist>
+
+<varlistentry>
+<term
+>Tłumaczenie stron WWW</term>
+<listitem
+><para
+>Ta wtyczka używa strony BabelFish AltaVisty do przetłumaczenia bieżącej strony &HTML; na inny język. Można ją uruchomić poleceniem menu <menuchoice
+><guimenu
+>Narzędzia</guimenu
+><guisubmenu
+>Przetłumacz stronę WWW</guisubmenu
+></menuchoice
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Filtrowanie widoku katalogu</term>
+<listitem
+><para
+>Pozwala określić, jakie typy plików mają być wyświetlane w widoku katalogu. Można tą opcją sterować za pomocą menu <menuchoice
+><guimenu
+>Narzędzia</guimenu
+><guisubmenu
+>Filtrowanie widoku</guisubmenu
+></menuchoice
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Widok drzewa DOM</term>
+<listitem
+><para
+>Wybranie polecenia menu <menuchoice
+><guimenu
+>Narzędzia</guimenu
+><guisubmenu
+>Pokaż drzewo DOM</guisubmenu
+></menuchoice
+> otwiera nowe okno, które pokazuje drzewo obiektów dokumentu (DOM - document object model) bieżącej strony &HTML;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Walidator kodu HTML</term>
+<listitem
+><para
+>Uruchamiane poleceniem menu <menuchoice
+><guimenu
+>Narzędzia</guimenu
+><guisubmenu
+>Sprawdź poprawność strony WWW</guisubmenu
+><guimenuitem
+>Sprawdź HTML</guimenuitem
+></menuchoice
+>. Używa walidatora HTML ze strony W3C HTML do sprawdzenia bieżącej strony, co jest przydatne przy tworzeniu stron WWW.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Walidator kodu CSS</term>
+<listitem
+><para
+>Uruchamiane poleceniem menu <menuchoice
+><guimenu
+>Narzędzia</guimenu
+><guisubmenu
+>Sprawdź stronę WWW</guisubmenu
+><guimenuitem
+>Sprawdź CSS</guimenuitem
+></menuchoice
+>. Używa walidatora CSS ze strony W3C do sprawdzenia styli CSS bieżącej strony.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Ustawienia HTML</term>
+<listitem
+><para
+>Wybierz polecenie menu <menuchoice
+><guimenu
+>Narzędzia</guimenu
+><guisubmenu
+>Ustawienia HTML</guisubmenu
+></menuchoice
+>, aby włączyć lub wyłączyć niektóre ustawienia &HTML; bez użycia okna dialogowego <guimenu
+>Ustawienia</guimenu
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Galeria obrazków</term>
+<listitem
+><para
+>W trybie menedżera plików możesz uruchomić polecenie menu <menuchoice
+><guimenu
+>Narzędzia</guimenu
+><guisubmenu
+>Utwórz galerię obrazków</guisubmenu
+></menuchoice
+>, aby stworzyć stronę &HTML; z miniaturkami wszystkich obrazków znajdujących się w bieżącym katalogu. Domyślnie strona jest zapisywana w pliku <filename
+>images.html</filename
+> a miniaturki są umieszczane w podkatalogu <filename
+>thumbs</filename
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Zmiana identyfikacji przeglądarki</term>
+<listitem
+><para
+>Wybierz menu <menuchoice
+><guimenu
+>Narzędzia</guimenu
+><guisubmenu
+>Zmień identyfikację przeglądarki</guisubmenu
+></menuchoice
+>, aby otrzymać menu pozwalające na zmianę identyfikacji przeglądarki bez używania okna dialogowego <guimenu
+>Ustawienia</guimenu
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Archiwizacja strony WWW</term>
+<listitem
+><para
+>Wybranie z menu <menuchoice
+><guimenu
+>Narzędzia</guimenu
+><guisubmenu
+>Archiwizuj stronę WWW</guisubmenu
+></menuchoice
+>, powoduje stworzenie pliku archiwum (<literal role="extension"
+>.war</literal
+> ), zawierającego stronę WWW łącznie z obrazkami. Aby obejrzeć zarchiwizowaną stronę kliknij <mousebutton
+>lewym</mousebutton
+> przyciskiem myszy na pliku z archiwum. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Panel nawigacyjny odtwarzacza multimediów</term>
+<listitem
+><para
+>Jest to prosty odtwarzacz multimediów, osadzony jako zakładka w panelu nawigacyjnym. Możesz przeciągać na niego filmy lub piosenki, aby je odtworzyć. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

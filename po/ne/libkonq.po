@@ -1,0 +1,327 @@
+# translation of libkonq.po to Nepali
+# Kapil Timilsina <lipak21@gmail.com>, 2006.
+# Shiva Prasad Pokharel <pokharelshiva@hotmail.com>, 2006.
+# Mahesh Subedi <submanesh@gmail.com>, 2007.
+# shyam krishna bal <shyamkrishna_bal@yahoo.com>, 2007.
+# Nabin Gautam <nabin@mpp.org.np>, 2007.
+# Shyam Krishna Bal <shyamkrishna_bal@yahoo.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2007-11-01 14:06+0545\n"
+"Last-Translator: Shyam Krishna Bal <shyamkrishna_bal@yahoo.com>\n"
+"Language-Team: Nepali <info@mpp.org.np>\n"
+"Language: ne\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n !=1\n"
+"\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "खोल्नुहोस्"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "फोल्डर सिर्जना गर्नुहोस्..."
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "पूर्वावस्थामा ल्याउनुहोस्"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "रद्दीटोकरी खाली गर्नुहोस्"
+
+#: src/konq_popupmenu.cpp:312
+#, fuzzy, kde-format
+#| msgid "&Empty Trash Bin"
+msgid "&Configure Trash Bin"
+msgstr "रद्दीटोकरी खाली गर्नुहोस्"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "यो पृष्ठलाई पृष्ठचिनो लगाउनुहोस्"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "यो स्थानमा पुस्तकचिनो लगाउनुहोस्"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "यो फोल्डरलाई पुस्तकचिनो लगाउनुहोस्"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "यो लिङ्कलाई पुस्तकचिनो लगाउनुहोस्"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "यो फाइललाई पुस्तकचिनो लगाउनुहोस्"
+
+#: src/konq_popupmenu.cpp:379
+#, kde-format
+msgid "Preview In"
+msgstr "यसमा पूर्वावलोकन गर्नुहोस्"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "गुण"
+
+#, fuzzy
+#~| msgid "Move to Trash"
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "रद्दीटोकरीमा सार्नुहोस्"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "नयाँ फोल्डर"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "नयाँ फोल्डर"
+
+#, fuzzy
+#~| msgid "&Copy Here"
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "यहाँ प्रतिलिपि गर्नुहोस्"
+
+#, fuzzy
+#~| msgid "&Move Here"
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "यहाँ सार्नुहोस्"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "तपाईँले फोल्डरमा त्यो नै छोड्न सक्नुहुन्न"
+
+#~ msgid "File name for dropped contents:"
+#~ msgstr "छोडिएको सामग्रीका लागि फाइल नाम:"
+
+#~ msgid "&Move Here"
+#~ msgstr "यहाँ सार्नुहोस्"
+
+#~ msgid "&Copy Here"
+#~ msgstr "यहाँ प्रतिलिपि गर्नुहोस्"
+
+#~ msgid "&Link Here"
+#~ msgstr "यहाँ लिङ्क गर्नुहोस्"
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "वालपेपरको रुपमा सेट गर्नुहोस्"
+
+#~ msgid "C&ancel"
+#~ msgstr "रद्द गर्नुहोस्"
+
+#, fuzzy
+#~| msgid "Creating directory"
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "डाइरेक्टरी सिर्जना गर्दैछ"
+
+#, fuzzy
+#~| msgid "Enter folder name:"
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "फोल्डर नाम प्रविष्ट गर्नुहोस्:"
+
+#, fuzzy
+#~| msgid "Creating directory"
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "डाइरेक्टरी सिर्जना गर्दैछ"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "नयाँ फोल्डर"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "नयाँ फोल्डर"
+
+#, fuzzy
+#~| msgid "Enter folder name:"
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "फोल्डर नाम प्रविष्ट गर्नुहोस्:"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "नयाँ फोल्डर"
+
+#~ msgid "Share"
+#~ msgstr "साझेदारी"
+
+#~ msgid "Create New"
+#~ msgstr "नयाँ सिर्जना गर्नुहोस्"
+
+#~ msgid "Link to Device"
+#~ msgstr "यन्त्रमा लिङ्क गर्नुहोस्"
+
+#~ msgid "<qt>The template file <b>%1</b> does not exist.</qt>"
+#~ msgstr "<qt>टेम्प्लेट फाइल <b>%1</b> अवस्थित छैन ।</qt>"
+
+#~ msgid "File name:"
+#~ msgstr "फाइल नाम:"
+
+#, fuzzy
+#~| msgctxt "@title:menu"
+#~| msgid "Actions"
+#~ msgctxt "@title:menu"
+#~ msgid "&Actions"
+#~ msgstr "कार्य"
+
+#, fuzzy
+#~| msgid "&Open With"
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With"
+#~ msgstr "यससँग खोल्नुहोस्"
+
+#, fuzzy
+#~| msgid "&Other..."
+#~ msgctxt "@action:inmenu Open With"
+#~ msgid "&Other..."
+#~ msgstr "अन्य..."
+
+#, fuzzy
+#~| msgid "&Open With..."
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With..."
+#~ msgstr "यससँग खोल्नुहोस्..."
+
+#, fuzzy
+#~| msgid "Open with %1"
+#~ msgid "Open &with %1"
+#~ msgstr "%1 सँग खोल्नुहोस्"
+
+#~ msgid "Open in New &Window"
+#~ msgstr "नयाँ सञ्झ्यालमा खोल्नुहोस्"
+
+#~ msgid "Open the trash in a new window"
+#~ msgstr "नयाँ सञ्झ्यालमा रद्दीटोकरी खोल्नुहोस्"
+
+#~ msgid "Open the medium in a new window"
+#~ msgstr "नयाँ सञ्झ्यालमा मध्यम खोल्नुहोस्"
+
+#~ msgid "Open the document in a new window"
+#~ msgstr "नयाँ सञ्झ्यालमा कागजात खोल्नुहोस्"
+
+#~ msgid "Directory"
+#~ msgstr "डाइरेक्टरी"
+
+#~ msgid "Moving"
+#~ msgstr "सार्दैछ"
+
+#~ msgid "Source"
+#~ msgstr "स्रोत"
+
+#~ msgid "Destination"
+#~ msgstr "गन्तब्य"
+
+#~ msgid "Deleting"
+#~ msgstr "मेट्दै"
+
+#~ msgid "File"
+#~ msgstr "फाइल"
+
+#~ msgid "Und&o"
+#~ msgstr "पूर्वस्थितिमा फर्काउनुहोस्"
+
+#~ msgid "Und&o: Copy"
+#~ msgstr "प्रतिलिपिलाई पूर्वस्थितिमा फर्काउनुहोस्"
+
+#~ msgid "Und&o: Link"
+#~ msgstr "लिङ्कलाई पूर्वस्थितिमा फर्काउनुहोस्"
+
+#~ msgid "Und&o: Move"
+#~ msgstr "सारेकोलाई पूर्वस्थितिमा फर्काउनुहोस्"
+
+#~ msgid "Und&o: Rename"
+#~ msgstr "पुन: नामकरणलाई पूर्वस्थितिमा फर्काउनुहोस्"
+
+#~ msgid "Und&o: Trash"
+#~ msgstr "रद्दीटोकरीलाई पूर्वस्थितिमा फर्काउनुहोस्"
+
+#~ msgid "Und&o: Create Folder"
+#~ msgstr "फोल्डर सिर्जना गरेको पूर्वस्थितिमा फर्काउनुहोस्"
+
+#~ msgid ""
+#~ "The file %1 was copied from %2, but since then it has apparently been "
+#~ "modified at %3.\n"
+#~ "Undoing the copy will delete the file, and all modifications will be "
+#~ "lost.\n"
+#~ "Are you sure you want to delete %4?"
+#~ msgstr ""
+#~ "%1 फाइल %2 बाट प्रतिलिपि गरिएको थियो, तर त्यहाँदेखि यो स्पष्ट रूपमा %3 मा "
+#~ "परिमार्जन भयो ।\n"
+#~ "प्रतिलिपि नगर्नाले फाइल मेटिनेछ, र सबै परिमार्जनहरू हराउनेछ ।\n"
+#~ "तपाईँ %4 मेट्न निश्चित हुनुहुन्छ?"
+
+#~ msgid "Undo File Copy Confirmation"
+#~ msgstr "फाइल प्रतिलिपि स्वीकृति पूर्वास्थतिमा फर्काउनुहोस्"
+
+#~ msgid "Do you really want to delete this item?"
+#~ msgid_plural "Do you really want to delete these %1 items?"
+#~ msgstr[0] "तपाईँले %1 वस्तु साँच्चिकै मेट्न चाहनुहुन्छ ?"
+#~ msgstr[1] "तपाईँले %1 वस्तु साँच्चिकै मेट्न चाहनुहुन्छ ?"
+
+#~ msgid "Delete Files"
+#~ msgstr "फाइल मेट्नुहोस्"
+
+#~ msgid "Do you really want to move this item to the trash?"
+#~ msgid_plural "Do you really want to move these %1 items to the trash?"
+#~ msgstr[0] "तपाईँले साँच्चै यो %1 वस्तु रद्दीटोकरीमा सार्न चाहनुहुन्छ?"
+#~ msgstr[1] "तपाईँले साँच्चिकै यी %1 वस्तुहरू रद्दीटोकरीमा सार्न चाहनुहुन्छ ?"
+
+#~ msgid "Move to Trash"
+#~ msgstr "रद्दीटोकरीमा सार्नुहोस्"
+
+#~ msgctxt "Verb"
+#~ msgid "&Trash"
+#~ msgstr "रद्दीटोकरी"
+
+#, fuzzy
+#~| msgid "Und&o"
+#~ msgid "Und&o: %1"
+#~ msgstr "पूर्वस्थितिमा फर्काउनुहोस्"

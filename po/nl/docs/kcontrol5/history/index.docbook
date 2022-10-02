@@ -1,0 +1,81 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Dutch "INCLUDE">
+]>
+<article id="history" lang="&language;">
+<title
+>Geschiedeniszijbalk</title>
+<articleinfo>
+<authorgroup>
+<author
+>&Burkhard.Lueck;</author>
+&Freek.de.Kruijf; 
+</authorgroup>
+
+<date
+>2009-11-24</date>
+<releaseinfo
+>&kde; 4.4</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Systeeminstellingen</keyword>
+<keyword
+>geschiedenis</keyword>
+</keywordset>
+</articleinfo>
+
+<para
+>Deze dialoog stelt u in staat de geschiedeniszijbalk in te stellen. </para>
+
+<variablelist>
+<varlistentry
+><term
+><guilabel
+>Limieten</guilabel
+></term>
+<listitem
+><para
+>De opties in deze sectie kunnen gebruikt worden om de maximum grootte van uw geschiedenis in te stellen en stelt een tijd in waarna items automatisch worden verwijderd. </para
+></listitem>
+</varlistentry>
+
+<varlistentry
+><term
+><guilabel
+>Aangepast lettertype</guilabel
+></term>
+<listitem
+><para
+>Hier kunt u ook verschillende lettertypen instellen voor nieuwe en oude &URL;'s door de knop <guibutton
+>Lettertype kiezen</guibutton
+> te selecteren. </para
+></listitem>
+</varlistentry>
+
+<varlistentry
+><term
+><guilabel
+>Details</guilabel
+></term>
+<listitem
+><para
+>Het keuzevakje <guilabel
+>Gedetailleerde tekstballonnen</guilabel
+> bepaalt hoeveel informatie wordt getoond als u met de muisaanwijzer over een item in de geschiedenispagina beweegt.</para>
+<para
+>Het aantal keren bezocht en de datums van eerste en laatste bezoek worden getoond naast de URL, indien geactiveerd.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Selectie van <guibutton
+>Geschiedenis wissen</guibutton
+> zal de gehele geschiedenis uitwissen. </para>
+</article>

@@ -1,0 +1,1616 @@
+# translation of konqueror.po to marathi
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Sandeep Shedmake <sandeep.shedmake@gmail.com>, 2009.
+# Chetan Khona <chetan@kompkin.com>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2013-03-28 15:17+0530\n"
+"Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
+"Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
+"Language: mr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Lokalize 1.5\n"
+
+#. i18n: ectx: Menu (tools)
+#: konq_shellcmdplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "साधने (&T)"
+
+#: kshellcmdexecutor.cpp:106
+#, kde-format
+msgid "Input Required:"
+msgstr "इनपुट आवश्यक:"
+
+#: kshellcmdplugin.cpp:32
+#, kde-format
+msgid "&Execute Shell Command..."
+msgstr "शेल आदेश कार्यान्वित करा (&E)..."
+
+#: kshellcmdplugin.cpp:41
+#, kde-format
+msgid ""
+"KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a bug."
+msgstr "KShellCmdPlugin::slotExecuteShellCommand: कार्यक्रम त्रुटी, कृपया बग कळवा."
+
+#: kshellcmdplugin.cpp:51
+#, kde-format
+msgid "Executing shell commands works only on local directories."
+msgstr "शेल आदेश कार्यान्वित करणे फक्त स्थानिक संचयीका करिता लागू होते."
+
+#: kshellcmdplugin.cpp:73
+#, kde-format
+msgctxt "@title:window"
+msgid "Execute Shell Command"
+msgstr "शेल आदेश कार्यान्वित करा"
+
+#: kshellcmdplugin.cpp:74
+#, kde-format
+msgid "Execute shell command in current directory:"
+msgstr "वर्तमान संचयीक अंतर्गत शेल आदेश कार्यान्वित करा:"
+
+#: kshellcmdplugin.cpp:85
+#, kde-format
+msgid "Output from command: \"%1\""
+msgstr "आदेश पासूनचे आऊटपुट: \"%1\""
+
+#~ msgid "no name"
+#~ msgstr "नाव नाही"
+
+#~ msgid "Configure"
+#~ msgstr "संयोजन"
+
+#~ msgid "Extensions"
+#~ msgstr "वाढीव कार्यक्रम"
+
+#~ msgid ""
+#~ "There was an error loading the module %1.\n"
+#~ "The diagnostics is:\n"
+#~ "%2"
+#~ msgstr ""
+#~ "विभाग %1 दाखल करतेवेळी त्रुटी आढळली.\n"
+#~ "विश्लेषण खालिल नुरूप आहे:\n"
+#~ "%2"
+
+#~ msgid "Konqueror"
+#~ msgstr "कॉन्करर"
+
+#~ msgid "Web browser, file manager and document viewer."
+#~ msgstr "वेब ब्राऊजर, फाइल व्यवस्थापक व दस्तऐवज प्रदर्शक."
+
+#~ msgid "(C) 1999-2008, The Konqueror developers"
+#~ msgstr "(C) 1999-2008, The Konqueror developers"
+
+#~ msgid "http://konqueror.kde.org"
+#~ msgstr "http://konqueror.kde.org"
+
+#~ msgid "David Faure"
+#~ msgstr "डेविड फ़ॉउर"
+
+#~ msgid "Developer (framework, parts, JavaScript, I/O library) and maintainer"
+#~ msgstr "डेव्हलपर (फ्रेमवर्क, पार्टस्, JavaScript, I/O लायब्ररी) व पालक"
+
+#~ msgid "Simon Hausmann"
+#~ msgstr "Simon Hausmann"
+
+#~ msgid "Developer (framework, parts)"
+#~ msgstr "हेव्हलपर (फ्रेमवर्क, पार्टस्)"
+
+#~ msgid "Michael Reiher"
+#~ msgstr "Michael Reiher"
+
+#~ msgid "Developer (framework)"
+#~ msgstr "डेव्हलपर (फ्रेमवर्क)"
+
+#~ msgid "Matthias Welk"
+#~ msgstr "Matthias Welk"
+
+#~ msgid "Developer"
+#~ msgstr "डेवलपर"
+
+#~ msgid "Alexander Neundorf"
+#~ msgstr "अलेक्जेंडर न्यून्दॉर्फ"
+
+#~ msgid "Developer (List views)"
+#~ msgstr "डेव्हलपर (List views)"
+
+#~ msgid "Michael Brade"
+#~ msgstr "Michael Brade"
+
+#~ msgid "Developer (List views, I/O library)"
+#~ msgstr "डेव्हलपर (List views, I/O लायब्ररी)"
+
+#~ msgid "Lars Knoll"
+#~ msgstr "Lars Knoll"
+
+#~ msgid "Developer (HTML rendering engine)"
+#~ msgstr "डेव्हलपर (HTML रेन्डरींग इंजीन)"
+
+#~ msgid "Dirk Mueller"
+#~ msgstr "Dirk Mueller"
+
+#~ msgid "Peter Kelly"
+#~ msgstr "Peter Kelly"
+
+#~ msgid "Waldo Bastian"
+#~ msgstr "Waldo Bastian"
+
+#~ msgid "Developer (HTML rendering engine, I/O library)"
+#~ msgstr "डेव्हलपर (HTML रेन्डरींग इंजीन, I/O लायब्ररी)"
+
+#~ msgid "Germain Garand"
+#~ msgstr "Germain Garand"
+
+#~ msgid "Leo Savernik"
+#~ msgstr "Leo Savernik"
+
+#~ msgid "Stephan Kulow"
+#~ msgstr "Stephan Kulow"
+
+#~ msgid ""
+#~ "Developer (HTML rendering engine, I/O library, regression test framework)"
+#~ msgstr "डेव्हलपर (HTML रेन्डरींग इंजीन, I/O लायब्ररी, regression test फ्रेमवर्क)"
+
+#~ msgid "Antti Koivisto"
+#~ msgstr "Antti Koivisto"
+
+#~ msgid "Zack Rusin"
+#~ msgstr "Zack Rusin"
+
+#~ msgid "Tobias Anton"
+#~ msgstr "Tobias Anton"
+
+#~ msgid "Lubos Lunak"
+#~ msgstr "Lubos Lunak"
+
+#~ msgid "Developer (HTML rendering engine, JavaScript)"
+#~ msgstr "डेव्हलपर (HTML रेन्डरींग इंजीन, JavaScript)"
+
+#~ msgid "Allan Sandfeld Jensen"
+#~ msgstr "Allan Sandfeld Jensen"
+
+#~ msgid "Apple Safari Developers"
+#~ msgstr "Apple Safari डेव्हलपर"
+
+#~ msgid "Harri Porten"
+#~ msgstr "Harri Porten"
+
+#~ msgid "Developer (JavaScript)"
+#~ msgstr "डेव्हलपर (JavaScript)"
+
+#~ msgid "Koos Vriezen"
+#~ msgstr "Koos Vriezen"
+
+#~ msgid "Developer (Java applets and other embedded objects)"
+#~ msgstr "डेव्हलपर (Java ऍपलेट व इतर अंतर्भूतीत घटक)"
+
+#~ msgid "Matt Koss"
+#~ msgstr "Matt Koss"
+
+#~ msgid "Developer (I/O library)"
+#~ msgstr "डेव्हलपर (I/O लायब्ररी)"
+
+#~ msgid "Alex Zepeda"
+#~ msgstr "Alex Zepeda"
+
+#~ msgid "Richard Moore"
+#~ msgstr "Richard Moore"
+
+#~ msgid "Developer (Java applet support)"
+#~ msgstr "डेव्हलपर (I/O ऍपलेट समर्थन)"
+
+#~ msgid "Dima Rogozin"
+#~ msgstr "Dima Rogozin"
+
+#~ msgid "Wynn Wilkes"
+#~ msgstr "Wynn Wilkes"
+
+#~ msgid ""
+#~ "Developer (Java 2 security manager support,\n"
+#~ " and other major improvements to applet support)"
+#~ msgstr ""
+#~ "डेव्हलपर (Java 2 सुरक्षा व्यवस्थापक समर्थन,\n"
+#~ " व ऍपलेट समर्थन करीता मुख्य सुधारणा)"
+
+#~ msgid "Stefan Schimanski"
+#~ msgstr "Stefan Schimanski"
+
+#~ msgid "Developer (Netscape plugin support)"
+#~ msgstr "डेव्हलपर (Netscape प्लगइन समर्थन)"
+
+#~ msgid "George Staikos"
+#~ msgstr "जॉर्ज स्टैकोस"
+
+#~ msgid "Developer (SSL, Netscape plugins)"
+#~ msgstr "डेव्हलपर (SSL, Netscape प्लगइन)"
+
+#~ msgid "Dawit Alemayehu"
+#~ msgstr "Dawit Alemayehu"
+
+#~ msgid "Developer (I/O library, Authentication support)"
+#~ msgstr "डेव्हलपर (I/O लायब्ररी, अधिप्रमाणन समर्थन)"
+
+#~ msgid "Carsten Pfeiffer"
+#~ msgstr "Carsten Pfeiffer"
+
+#~ msgid "Torsten Rahn"
+#~ msgstr "तॉर्स्तेन रान"
+
+#~ msgid "Graphics/icons"
+#~ msgstr "चित्रलेखन/चिन्ह"
+
+#~ msgid "Torben Weis"
+#~ msgstr "Torben Weis"
+
+#~ msgid "KFM author"
+#~ msgstr "KFM लेखक"
+
+#~ msgid "Joseph Wenninger"
+#~ msgstr "Joseph Wenninger"
+
+#~ msgid "Developer (navigation panel framework)"
+#~ msgstr "डेव्हलपर (संचारन पटल फ्रेमवर्क)"
+
+#~ msgid "Stephan Binner"
+#~ msgstr "Stephan Binner"
+
+#~ msgid "Developer (misc stuff)"
+#~ msgstr "डेव्हलपर (मिश्र बाब)"
+
+#~ msgid "Ivor Hewitt"
+#~ msgstr "Ivor Hewitt"
+
+#~ msgid "Developer (AdBlock filter)"
+#~ msgstr "डेव्हलपर (AdBlock फिल्टर)"
+
+#~ msgid "Eduardo Robles Elvira"
+#~ msgstr "Eduardo Robles Elvira"
+
+#~ msgid "Close View"
+#~ msgstr "दृश्य बंद करा"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#~ msgid "Stalled"
+#~ msgstr "स्तब्ध केले"
+
+#~ msgid "Preview &in %1"
+#~ msgstr "%1 अंतर्गत पूर्वदृश्य पहा (&i)"
+
+#~ msgid "Show %1"
+#~ msgstr "%1 दर्शवा"
+
+#, fuzzy
+#~| msgid "Clear History"
+#~ msgctxt "@title:window"
+#~ msgid "History"
+#~ msgstr "इतिहास नष्ट करा"
+
+#~ msgctxt "@action:inmenu Parent of 'By Name' and 'By Date'"
+#~ msgid "Sort"
+#~ msgstr "क्रमबद्ध करा"
+
+#~ msgid ""
+#~ "<qt><center><b>%1</b></center><hr />Last visited: %2<br />First visited: "
+#~ "%3<br />Number of times visited: %4</qt>"
+#~ msgstr ""
+#~ "<qt><center><b>%1</b></center><hr />शेवटी भेट दिलेले: %2<br />प्रथमवेळी भेट "
+#~ "दिलेले: %3<br />भेट दिल्याचे प्रमाण: %4</qt>"
+
+#~ msgid "Miscellaneous"
+#~ msgstr "संकीर्ण"
+
+#~ msgid "Open in New &Window"
+#~ msgstr "नविन चौकट अंतर्गत उघडा (&W)"
+
+#~ msgid "Open in New Tab"
+#~ msgstr "नविन टॅब अंतर्गत उघडा"
+
+#, fuzzy
+#~| msgid "Copy Link Address"
+#~ msgid "&Copy Link Address"
+#~ msgstr "लिंक पत्ता प्रतिकृत करा"
+
+#~ msgid "&Remove Entry"
+#~ msgstr "नोंदणी काढून टाका (&R)"
+
+#~ msgid "C&lear History"
+#~ msgstr "इतिहास काढून टाका (&l)"
+
+#~ msgid "&Preferences..."
+#~ msgstr "प्राधान्यता (&P)..."
+
+#~ msgid "By &Name"
+#~ msgstr "नाव नुरूप (&N)"
+
+#~ msgid "By &Date"
+#~ msgstr "दिनांक नुरूप (&D)"
+
+#, fuzzy
+#~| msgid "Clear History"
+#~ msgid "Search in history"
+#~ msgstr "इतिहास नष्ट करा"
+
+#~ msgid "Do you really want to clear the entire history?"
+#~ msgstr "तुम्हाला नक्की पूर्णतया इतिहास नष्ट करायचे?"
+
+#~ msgid "Clear History?"
+#~ msgstr "इतिहास नष्ट करायचे?"
+
+#, fuzzy
+#~| msgid "Start without a default window"
+#~ msgid "Start without a default window, when called without URLs"
+#~ msgstr "मुलभूत चौकट विना प्रारंभ करा"
+
+#~ msgid "Profile to open"
+#~ msgstr "उघडण्याकरीताचे प्रोफाइल"
+
+#~ msgid "List available profiles"
+#~ msgstr "उपलब्ध प्रोफाइल यादी नुरूप दर्शवा"
+
+#~ msgid "List available sessions"
+#~ msgstr "उपलब्ध सत्र यादी नुरूप दर्शवा"
+
+#~ msgid "Session to open"
+#~ msgstr "उघडण्या करीता सत्र"
+
+#~ msgid "Mimetype to use for this URL (e.g. text/html or inode/directory)"
+#~ msgstr ""
+#~ "या URL करीता वापरण्याजोगी Mimetype (उ.दा. text/html किंवा inode/संचयीका)"
+
+#~ msgid ""
+#~ "For URLs that point to files, opens the directory and selects the file, "
+#~ "instead of opening the actual file"
+#~ msgstr ""
+#~ "URLs जे फाइल करीता निर्देशीत असतात, प्रत्यक्ष फाइल उगडण्यापेक्षा संचयीका उघडतो व "
+#~ "फाइल निवडतो"
+
+#~ msgid "Location to open"
+#~ msgstr "उघडण्याजोगी स्थान"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Loading..."
+#~ msgstr "दाखल करीत आहे..."
+
+#~ msgid "Canceled."
+#~ msgstr "रद्द केले."
+
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Reloading the page will discard these changes."
+#~ msgstr ""
+#~ "या पानात सादर न केलेले बदलावा समाविष्टीत आहे.\n"
+#~ "पान पुन्हदाखल केल्यास बदलाव रद्द केले जातिल."
+
+#~ msgid "Discard Changes?"
+#~ msgstr "बदलाव रद्द करा?"
+
+#~ msgid "&Discard Changes"
+#~ msgstr "बदलाव रद्द करा (&D)"
+
+#~ msgid "File Management"
+#~ msgstr "फाइल व्यवस्थापन"
+
+#~ msgid "Web Browsing"
+#~ msgstr "वेब ब्राउजिंग"
+
+#~ msgid "Home Folder"
+#~ msgstr "मुख्य संचयीका"
+
+#, fuzzy
+#~| msgid "Home Page"
+#~ msgid "Home"
+#~ msgstr "मुख्य पृष्ठ"
+
+#~ msgid "Navigate to your 'Home Folder'"
+#~ msgstr "'मुख्य संचयीका' कडे जा"
+
+#~ msgid "Navigate to your local 'Home Folder'"
+#~ msgstr "स्थानीय 'मुख्य संचयीका' कडे जा"
+
+#~ msgid "Home Page"
+#~ msgstr "मुख्य पृष्ठ"
+
+#~ msgid "Navigate to your 'Home Page'"
+#~ msgstr "'मुख्य पान' कडे जा"
+
+#~ msgid ""
+#~ "<html>Navigate to your 'Home Page'<br /><br />You can configure the "
+#~ "location where this button takes you under <b>Settings -> Configure "
+#~ "Konqueror -> General</b>.</html>"
+#~ msgstr ""
+#~ "<html>'मुख्य पान' कडे जा<br /><br />तुम्ही <b>संयोजना -> Konqueror संयोजीत करा -"
+#~ "> सर्वसाधारण</b> या करीता बटणाचे स्थान संयोजीत करू शकता.</html>"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Detaching the tab will discard these changes."
+#~ msgstr ""
+#~ "या टॅब अंतर्गत सादर न केलेले बदलाव समाविष्ट केले गेले आहे.\n"
+#~ "या टॅबला काढून टाकल्यास हे बदलाव रद्द केले जातिल."
+
+#~ msgid ""
+#~ "This view contains changes that have not been submitted.\n"
+#~ "Closing the view will discard these changes."
+#~ msgstr ""
+#~ "या दृश्य अंतर्गत सादर न केलेले बदलाव समाविष्टीत आहे.\n"
+#~ "दृश्य बंद केल्यास हे बदलाव रद्द केले जातिल."
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the tab will discard these changes."
+#~ msgstr ""
+#~ "या टॅब अंतर्गत सादर न केलेले बदलाव समाविष्टीत आहे.\n"
+#~ "टॅब बंद केल्यास हे बदलाव रद्द केले जातिल."
+
+#~ msgid "Do you really want to close all other tabs?"
+#~ msgstr "तुम्हाला नक्की सर्व टॅब बंद करायचे?"
+
+#~ msgid "Close Other Tabs Confirmation"
+#~ msgstr "इतर टॅब बंद करण्याची थात्री"
+
+#~ msgid "Close &Other Tabs"
+#~ msgstr "इतर टॅब बंद करा (&O)"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing other tabs will discard these changes."
+#~ msgstr ""
+#~ "या टॅब अंतर्गत सादर न केलेले बदलाव समाविष्टीत आहे.\n"
+#~ "टॅब बंद केल्यास हे बदलाव रद्द केले जातिल."
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Reloading all tabs will discard these changes."
+#~ msgstr ""
+#~ "या टॅब अंतर्गत सादर न केलेले बदलाव समाविष्टीत आहे.\n"
+#~ "सर्व टॅब पुन्हदाखल केल्यास हे हे बदलाव रद्द केले जातिल."
+
+#~ msgid "Enter Target"
+#~ msgstr "लक्ष्य प्रविष्ट करा"
+
+#~ msgid "<qt><b>%1</b> is not valid</qt>"
+#~ msgstr "<qt><b>%1</b> वैध नाही</qt>"
+
+#~ msgid "Copy selected files from %1 to:"
+#~ msgstr "%1 पासून निवडलेले फाइल प्रतिकृत करा:"
+
+#~ msgid "Move selected files from %1 to:"
+#~ msgstr "%1 पासून निवडलेले फाइल स्थानांतरीत करा:"
+
+#~ msgctxt "This menu entry empties the closed items history"
+#~ msgid "Empty Closed Items History"
+#~ msgstr "बंद घटकचा इतिहास रिकामे करा"
+
+#~ msgid "Save As..."
+#~ msgstr "यानुरूप संचयीत करा..."
+
+#~ msgid "Manage..."
+#~ msgstr "व्यवस्थापीत करा..."
+
+#~ msgid "New &Window"
+#~ msgstr "नविन चौकट (&W)"
+
+#~ msgid "&Duplicate Window"
+#~ msgstr "हुबेहूब चौकट (&D)"
+
+#~ msgid "Send &Link Address..."
+#~ msgstr "लिंक पत्ता पाठवा (&L)..."
+
+#~ msgid "S&end File..."
+#~ msgstr "फाइल पाठवा (&e)..."
+
+#~ msgid "&Open Location"
+#~ msgstr "स्थान उघडा (&O)"
+
+#~ msgid "&Open File..."
+#~ msgstr "फाइल उघडा (&O)..."
+
+#~ msgid "&Find File..."
+#~ msgstr "फाइल उघडा (&F)..."
+
+#~ msgid "&Use index.html"
+#~ msgstr "index.html वापरा (&U)"
+
+#~ msgid "Lock to Current Location"
+#~ msgstr "वर्तमान स्थान करीता कुलूपबंद करा"
+
+#~ msgctxt "This option links konqueror views"
+#~ msgid "Lin&k View"
+#~ msgstr "दृश्यशी जुळवणी करा (&k)"
+
+#~ msgid "&Up"
+#~ msgstr "वर (&U)"
+
+#~ msgid "Closed Items"
+#~ msgstr "बंद घटक"
+
+#~ msgid "Sessions"
+#~ msgstr "सत्र"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Most Often Visited"
+#~ msgstr "बहुतांशवेळी भेट दिलेले"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Recently Visited"
+#~ msgstr "नकुतेच भेट दिलेले"
+
+#, fuzzy
+#~| msgid "Show History Sidebar"
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History"
+#~ msgstr "इतिहास बाजूचीपट्टी दर्शवा"
+
+#, fuzzy
+#~| msgid "&Save View Profile..."
+#~ msgid "&Save View Profile As..."
+#~ msgstr "दृश्य प्रोफाइल संचयीत करा (&S)..."
+
+#~ msgid "Configure Extensions..."
+#~ msgstr "विस्तारण संयोजीत करा..."
+
+#~ msgid "Configure Spell Checking..."
+#~ msgstr "शब्द तपासणी संयोजीत करा..."
+
+#~ msgid "Split View &Left/Right"
+#~ msgstr "दृश्य डावी/उजवे विभाजीत करा (&L)"
+
+#~ msgid "Split View &Top/Bottom"
+#~ msgstr "दृश्य वर/खाली विभाजीत करा (&L)"
+
+#~ msgid "&New Tab"
+#~ msgstr "नविन टॅब (&N)"
+
+#~ msgid "&Duplicate Current Tab"
+#~ msgstr "वर्तमान टॅबची प्रत बनवा (&D)"
+
+#~ msgid "Detach Current Tab"
+#~ msgstr "वर्तमान टॅब अलग करा"
+
+#~ msgid "&Close Active View"
+#~ msgstr "सक्रीय दृश्य बंद करा (&C)"
+
+#~ msgid "Close Current Tab"
+#~ msgstr "वर्तमान टॅब बंद करा"
+
+#~ msgid "Activate Next Tab"
+#~ msgstr "पुढील टॅब सक्रीय करा"
+
+#~ msgid "Activate Previous Tab"
+#~ msgstr "मागील टॅब सक्रीय करा"
+
+#~ msgid "Activate Tab %1"
+#~ msgstr "टॅब %1 सक्रीय करा"
+
+#~ msgid "Move Tab Left"
+#~ msgstr "टॅब डावीकडे हलवा"
+
+#~ msgid "Move Tab Right"
+#~ msgstr "टॅब उजवीकडे हलवा"
+
+#~ msgid "C&onfigure View Profiles..."
+#~ msgstr "प्रोफाइल दृश्य संयोजीत करा (&o)..."
+
+#~ msgid "Load &View Profile"
+#~ msgstr "प्रोफाइल दृश्य दाखल करा (&V)"
+
+#~ msgid "&Reload"
+#~ msgstr "पुन्हदाखलन (&R)"
+
+#~ msgid "&Reload All Tabs"
+#~ msgstr "सर्व टॅब पुन्हदाखल करा (&R)"
+
+#~ msgid "&Force Reload"
+#~ msgstr "जबरन पुन्हदाखलन (&F)"
+
+#~ msgid "&Stop"
+#~ msgstr "थांबा (&S)"
+
+#~ msgid "L&ocation: "
+#~ msgstr "स्थान (&o): "
+
+#~ msgid "Location Bar"
+#~ msgstr "स्थान पट्टी"
+
+#~ msgid ""
+#~ "<html>Location Bar<br /><br />Enter a web address or search term.</html>"
+#~ msgstr "<html>स्थान पट्टी<br /><br />वेब पत्ता किंवा शोध संज्ञा प्रविष्ट करा.</html>"
+
+#~ msgid "Clear Location Bar"
+#~ msgstr "स्थान पट्टी नष्ट करा"
+
+#~ msgid ""
+#~ "<html>Clear Location bar<br /><br />Clears the contents of the location "
+#~ "bar.</html>"
+#~ msgstr ""
+#~ "<html>स्थान पट्टी नष्ट करा<br /><br />स्थान पट्टीचे अनुक्रम नष्ट करावे लागेल.</html>"
+
+#~ msgid "&Bookmarks"
+#~ msgstr "ओळखचिन्ह (&B)"
+
+#~ msgid "Kon&queror Introduction"
+#~ msgstr "Konqueror परिचय (&q)"
+
+#~ msgid "Go"
+#~ msgstr "जा"
+
+#~ msgid ""
+#~ "<html>Go<br /><br />Goes to the page that has been entered into the "
+#~ "location bar.</html>"
+#~ msgstr "<html>जा<br /><br />स्थान पट्टीवरील प्रविष्ट केलेले पान कडे जाते.</html>"
+
+#~ msgid ""
+#~ "<html>Enter the parent folder<br /><br />For instance, if the current "
+#~ "location is file:/home/%1 clicking this button will take you to file:/"
+#~ "home.</html>"
+#~ msgstr ""
+#~ "<html>मुख्य संचयीका प्रविष्ट करा<br /><br />उदाहरणार्थ, वर्तमान स्थान file:/home/"
+#~ "%1 असल्यावर या बटणावर क्लिक केल्यास file:/home कडे नेते.</html>"
+
+#~ msgid "Enter the parent folder"
+#~ msgstr "मुख्य संचयीका प्रविष्ट करा"
+
+#~ msgid "Move backwards one step in the browsing history"
+#~ msgstr "संचारन इतिहास अंतर्गत एक पद्धत पाठीमागे चला"
+
+#~ msgid "Move forward one step in the browsing history"
+#~ msgstr "संचारन इतिहास अंतर्गत एक पद्धत पुढे चला"
+
+#~ msgid "Move backwards one step in the closed tabs history"
+#~ msgstr "बंद टॅब इतिहास अंतर्गत एक पद्धत पाठीमागे चला"
+
+#~ msgid ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.</html>"
+#~ msgstr ""
+#~ "<html>वर्तमानक्षणी प्रदर्शित दस्तऐवज पुन्हदाखल करा<br /><br />यामुळे, उदाहरणार्थ, "
+#~ "केलेले बदलाव दर्शविण्याकरीता, दाखलन केल्यापासूनचे संपादीत करण्याजोगी वेब पान पुन्हा "
+#~ "दाखल करावे लागेल.</html>"
+
+#~ msgid "Reload the currently displayed document"
+#~ msgstr "वर्तमानक्षणी प्रदर्शित दस्तऐवज पुन्ह दाखल करा"
+
+#~ msgid ""
+#~ "<html>Reload all currently displayed documents in tabs<br /><br />This "
+#~ "may, for example, be needed to refresh web pages that have been modified "
+#~ "since they were loaded, in order to make the changes visible.</html>"
+#~ msgstr ""
+#~ "<html>टॅब अतंर्गत वर्तमानक्षणी प्रदर्शित दस्तऐवज पुन्ह दाखल करा<br /><br />यामुळे, "
+#~ "उदाहरणार्थ, केलेले बदलाव दर्शविण्याकरीता, दाखलन केल्यापासूनचे संपादीत करण्याजोगी वेब "
+#~ "पान पुन्हा दाखल करावे लागेल.</html>"
+
+#~ msgid "Reload all currently displayed document in tabs"
+#~ msgstr "वर्तमानक्षणी सर्व प्रदर्शित दस्तऐवज पुन्हा टॅब अंतर्गत दाखल करा"
+
+#~ msgid ""
+#~ "<html>Stop loading the document<br /><br />All network transfers will be "
+#~ "stopped and Konqueror will display the content that has been received so "
+#~ "far.</html>"
+#~ msgstr ""
+#~ "<html>दस्तऐवज दाखलन बंद करा<br /><br />सर्व संजाळ स्थानांतरन बंद होतील व "
+#~ "Konqueror आता पर्यंत प्राप्त अनुक्रम दर्शवितो.</html>"
+
+#~ msgid ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.  Any images on "
+#~ "the page are downloaded again, even if cached copies exist.</html>"
+#~ msgstr ""
+#~ "<html>वर्तमानक्षणी प्रदर्शित दस्तऐवज पुन्ह दाखल करा<br /><br />यामुळे, उदाहरणार्थ, "
+#~ "केलेले बदलाव दर्शविण्याकरीता, दाखलन केल्यापासूनचे संपादीत करण्याजोगी वेब पान पुन्हा "
+#~ "दाखल करावे लागेल. कॅश प्रत उपलब्ध असल्यावरही पानावरील कुठलिही प्रतिमा पुन्हा "
+#~ "डाऊनलोड केले जाते</html>"
+
+#~ msgid ""
+#~ "Force a reload of the currently displayed document and any contained "
+#~ "images"
+#~ msgstr ""
+#~ "वर्तमान प्रदर्शित दस्तऐवज व कुठलिही समाविष्टीत प्रतिमा जबरनरित्या पुन्हा दाखल करा"
+
+#~ msgid "Stop loading the document"
+#~ msgstr "दस्तऐवजाचे दाखलन थांबवा"
+
+#~ msgid ""
+#~ "<html>Cut the currently selected text or item(s) and move it to the "
+#~ "system clipboard<br /><br />This makes it available to the <b>Paste</b> "
+#~ "command in Konqueror and other KDE applications.</html>"
+#~ msgstr ""
+#~ "<html>वर्तमानक्षणी निवडलेले पाठ्य किंवा घटक कापा व प्रणाली क्लिपबोर्ड येथे हलवा<br /"
+#~ "><br />वरील Konqueror व इतर KDE अनुप्रयोग अंतर्गत <b>चिकटवा</b> आदेश करीता "
+#~ "उपलब्ध करते.</html>"
+
+#~ msgid "Move the selected text or item(s) to the clipboard"
+#~ msgstr "निवडलेले पाठ्य किंवा घटक क्लिपबोर्डकडे हलवा"
+
+#~ msgid ""
+#~ "<html>Copy the currently selected text or item(s) to the system "
+#~ "clipboard<br /><br />This makes it available to the <b>Paste</b> command "
+#~ "in Konqueror and other KDE applications.</html>"
+#~ msgstr ""
+#~ "<html>वर्तमानक्षणी निवडलेले पाठ्य किंवा घटक प्रतिकृत करा व प्रणाली क्लिपबोर्ड येथे "
+#~ "हलवा<br /><br />वरील Konqueror व इतर KDE अनुप्रयोग अंतर्गत <b>चिकटवा</b> आदेश "
+#~ "करीता उपलब्ध करते.</html>"
+
+#~ msgid "Copy the selected text or item(s) to the clipboard"
+#~ msgstr "निवडलेले पाठ्य किंवा घटक क्लिपबोर्ड येथे प्रतिकृत करा"
+
+#~ msgid "Paste the clipboard contents"
+#~ msgstr "क्लिपबोर्ड अनुक्रम चिकटवा"
+
+#~ msgid "Print the current document"
+#~ msgstr "वर्तमान दस्तऐवजची छपाई करा"
+
+#~ msgid "If present, open index.html when entering a folder."
+#~ msgstr "आढळल्यास, संचयीका अंतर्गत प्रवेश करतेवेळी index.html उघडा."
+
+#~ msgid ""
+#~ "A locked view cannot change folders. Use in combination with 'link view' "
+#~ "to explore many files from one folder"
+#~ msgstr ""
+#~ "कुलूपबंद दृश्य संचयीका बदलवू शकत नाही. एकाच संचयीका पासून अनेक फाइलचे विश्लेषण करायचे "
+#~ "असल्यास 'दृश्यशी जुळवणी करा' याच्या सह एकत्रपणे वापर करा"
+
+#~ msgid "Copy &Files..."
+#~ msgstr "फाइल प्रतिकृत करा (&F)..."
+
+#~ msgid "M&ove Files..."
+#~ msgstr "फाइल हलवा (&o)..."
+
+#~ msgid ""
+#~ "You have requested to open more than 20 bookmarks in tabs. This might "
+#~ "take a while. Continue?"
+#~ msgstr ""
+#~ "तुम्ही टॅब अंतर्गत 20 पेक्षा जास्त ओळखचिन्ह उघडण्याची विनंती केली आहे. यांस जरा वेळ लागू "
+#~ "शकतो. पुढे जायचे?"
+
+#~ msgid "Open bookmarks folder in new tabs"
+#~ msgstr "नविन टॅब अंतर्गत ओळखचिन्ह संचयीका उघडा"
+
+#~ msgid "Open in T&his Window"
+#~ msgstr "या चौकट अंतर्गत उघडा (&h)"
+
+#~ msgid "Open the document in current window"
+#~ msgstr "दस्तऐवज वर्तमान चौकट अंतर्गत उघडा"
+
+#~ msgid "Open the document in a new window"
+#~ msgstr "दस्तऐवज नविन चौकट अंतर्गत उघडा"
+
+#~ msgid "Open in &New Tab"
+#~ msgstr "नविन टॅब अंतर्गत उघडा (&N)"
+
+#~ msgid "Open the document in a new tab"
+#~ msgstr "नविन टॅब अंतर्गत दस्तऐवज उघडा"
+
+#~ msgid "&Open With"
+#~ msgstr "याच्यासह उघडा (&O)"
+
+#~ msgid "Open with %1"
+#~ msgstr "%1 सह उघडा"
+
+#~ msgctxt "@action:inmenu View"
+#~ msgid "&View Mode"
+#~ msgstr "दृश्य पद्धत (&V)"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window, are you sure you want to quit?"
+#~ msgstr "या चौकट अंतर्गत अनेक टॅब उघडे आहेत, तुम्हाला नक्की बाहेर पडायचे?"
+
+#~ msgid "Confirmation"
+#~ msgstr "पुष्टिकरण"
+
+#~ msgid "C&lose Current Tab"
+#~ msgstr "वर्तमान टॅब बंद करा (&l)"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the window will discard these changes."
+#~ msgstr ""
+#~ "या टॅब अंतर्गत सादर न केलेले बदलाव समाविष्ट केले गेले आहे.\n"
+#~ "चौकट बंद केल्यास वरील बदलाव बंद रद्द केले जातिल."
+
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Closing the window will discard these changes."
+#~ msgstr ""
+#~ "या पान अंतर्गत सादर न केलेले बदलाव समाविष्ट केले गेले आहे.\n"
+#~ "चौकट बंद केल्यास वरील बदलाव रद्द केले जातिल."
+
+#~ msgid ""
+#~ "Your sidebar is not functional or unavailable. A new entry cannot be "
+#~ "added."
+#~ msgstr "बाजूचीपट्टी कार्यरत किंवा अनुपलब्ध आहे. नविन नोंदणी जोडू शकत नाही."
+
+#~ msgid "Web Sidebar"
+#~ msgstr "वेब बाजूचीपट्टी"
+
+#~ msgid "Add new web extension \"%1\" to your sidebar?"
+#~ msgstr "बाजूचीपट्टी करीता नविन वेब विस्तारण \"%1\" जोडा?"
+
+#~ msgid "Add"
+#~ msgstr "जोडा"
+
+#~ msgid "Do Not Add"
+#~ msgstr "जोडू नका"
+
+#~ msgid ""
+#~ "There appears to be a configuration error. You have associated Konqueror "
+#~ "with %1, but it cannot handle this file type."
+#~ msgstr ""
+#~ "ही संयोजना त्रुटी असू शकते. तुम्ही Konqueror ला %1 सह जोडले आहे, परंतु हे फाइल प्रकार "
+#~ "हाताळले जाऊ शकत नाही."
+
+#~ msgid "Profile Management"
+#~ msgstr "प्रोफाइल व्यवस्थापन"
+
+#~ msgid "&Rename Profile"
+#~ msgstr "प्रोफाइल पुन्हनामांकीत करा (&R)"
+
+#~ msgid "&Delete Profile"
+#~ msgstr "प्रोफाइल काढून टाका (&D)"
+
+#~ msgid "Manage Sessions"
+#~ msgstr "सत्र व्यवस्थापीत करा"
+
+#~ msgid "&Open"
+#~ msgstr "उघडा (&O)"
+
+#, fuzzy
+#~| msgid "Rename session"
+#~ msgid "Rename Session"
+#~ msgstr "सत्र पुन्हनामांकीत करा"
+
+#~ msgid "Save Session"
+#~ msgstr "सत्र संचयीत करा"
+
+#~ msgid ""
+#~ "A session with the name '%1' already exists, do you want to overwrite it?"
+#~ msgstr "'%1' नावाचे सत्र आधिपासूनच अस्तित्वात आहे, तुम्हाला त्यांस खोडून पुन्हा लिहायचे?"
+
+#~ msgid "Session exists. Overwrite?"
+#~ msgstr "सत्र अस्तित्वात आहे. खोडून पुन्हा लिहायचे?"
+
+#, fuzzy
+#~| msgid ""
+#~| "Konqueror didn't close correctly. Would you like to restore session?"
+#~ msgid ""
+#~ "Konqueror did not close correctly. Would you like to restore the previous "
+#~ "session?"
+#~ msgstr "Konqueror योग्यरित्या बंद झाले नाही. सत्र पुन्हा स्थपीत करायचे?"
+
+#~ msgid "Restore Session?"
+#~ msgstr "सत्र पुन्हस्थापन करायचे?"
+
+#~ msgid "Restore Session"
+#~ msgstr "सत्र पुन्हस्थापन"
+
+#~ msgid "Do Not Restore"
+#~ msgstr "पुन्हस्थापन करू नका"
+
+#~ msgid "Ask Me Later"
+#~ msgstr "नंतर विचारा"
+
+#~ msgid "Open a new tab"
+#~ msgstr "नविन टॅब उघडा"
+
+#~ msgid "Close the current tab"
+#~ msgstr "वर्तमान टॅब बंद करा"
+
+#~ msgid "&Duplicate Tab"
+#~ msgstr "हुबेहूब टॅब (&D)"
+
+#~ msgid "&Reload Tab"
+#~ msgstr "टॅब पुन्हदाखल करा (&R)"
+
+#~ msgid "Other Tabs"
+#~ msgstr "इतर टॅब"
+
+#~ msgid "D&etach Tab"
+#~ msgstr "टॅब अलग करा (&e)"
+
+#~ msgid "&Close Tab"
+#~ msgstr "टॅब बंद करा (&C)"
+
+#~ msgid "Und&o: Closed Tab"
+#~ msgstr "पुन्हा करा: बंद टॅब (&o)"
+
+#~ msgid "Und&o: Closed Window"
+#~ msgstr "पुन्हा करा: बंद चौकट (&o)"
+
+#~ msgid ""
+#~ "The page you are trying to view is the result of posted form data. If you "
+#~ "resend the data, any action the form carried out (such as search or "
+#~ "online purchase) will be repeated. "
+#~ msgstr ""
+#~ "तुम्ही जे पान पहाण्याचा प्रयत्न करत आहे ते सहसा पोस्ट केलेले फॉर्म माहितीचा परिणाम आहे. "
+#~ "माहिती पुन्हा पाठविल्यास, फॉर्म द्वारे कार्यरत कुठलिही कृतीची (जसे की शोध किंवा "
+#~ "ऑनलाइन विक्री) पुन्हाकृती केली जाईल. "
+
+#~ msgid "Warning"
+#~ msgstr "धोका"
+
+#~ msgid "Resend"
+#~ msgstr "पुन्हापाठवा"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window.\n"
+#~ "Loading a view profile will close them."
+#~ msgstr ""
+#~ "या चौकटीत अनेक टॅब उघडे आहेत.\n"
+#~ "प्रोफाइल दृश्य दाखलनवेळी बंद होतात."
+
+#~ msgid "Load View Profile"
+#~ msgstr "प्रोफाइल दृश्य दाखल करतात"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Loading a profile will discard these changes."
+#~ msgstr ""
+#~ "या टॅब अंतर्गत सादर न केलेले बदलाव समाविष्टीत आहे.\n"
+#~ "प्रोफाइल दाखल केल्यास बदलाव रद्द केले जातात."
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "History Sidebar Module"
+#~ msgstr "वेब बाजूचीपट्टी"
+
+#, fuzzy
+#~| msgid "Clear History"
+#~ msgctxt "@title:tab"
+#~ msgid "History"
+#~ msgstr "इतिहास नष्ट करा"
+
+#~ msgid " day"
+#~ msgid_plural " days"
+#~ msgstr[0] " दिवस"
+#~ msgstr[1] " दिवस"
+
+#~ msgid "Minute"
+#~ msgid_plural "Minutes"
+#~ msgstr[0] "मिनीट"
+#~ msgstr[1] "मिनीट"
+
+#~ msgid "Day"
+#~ msgid_plural "Days"
+#~ msgstr[0] "दिवस"
+#~ msgstr[1] "दिवस"
+
+#~ msgid "<h1>History Sidebar</h1> You can configure the history sidebar here."
+#~ msgstr "<h1>इतिहास बाजूचीपट्टी</h1> तुम्ही येथे इतिहास बाजूचीपट्टी संयोजीत करू शकता."
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Places Sidebar Module"
+#~ msgstr "वेब बाजूचीपट्टी"
+
+#~ msgid "Extended Sidebar"
+#~ msgstr "विस्तारीत बाजूचीपट्टी"
+
+#~ msgid "Rollback to System Default"
+#~ msgstr "प्रणाली मुलभूत करीता रॉलबॅक करा"
+
+#~ msgid "Configure Sidebar"
+#~ msgstr "साधनपट्टी संयोजीत करा"
+
+#~ msgid "Add New"
+#~ msgstr "नविन जोडा"
+
+#~ msgid "Multiple Views"
+#~ msgstr "बहु दृश्य"
+
+#~ msgid "Show Tabs Left"
+#~ msgstr "डावीकडे टॅब दर्शवा"
+
+#~ msgid "Show Configuration Button"
+#~ msgstr "संयोजना बटण दर्शवा"
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgid "Close Sidebar"
+#~ msgstr "वेब बाजूचीपट्टी"
+
+#~ msgid "This entry already exists."
+#~ msgstr "ही नोंदणी आधिपासूनच अस्तित्वात आहे."
+
+#~ msgid ""
+#~ "<qt>This removes all your entries from the sidebar and adds the system "
+#~ "default ones.<br /><b>This procedure is irreversible</b><br />Do you want "
+#~ "to proceed?</qt>"
+#~ msgstr ""
+#~ "<qt>यामुळे बाजूच्यापट्टीतून सर्व नोंदणी काढून टाकले जाते व प्रणाली करीता मुलभूत जोडले "
+#~ "जातात.<br /><b>ही पद्धती पुन्हा कार्यान्वीत केली जाऊ शकतन नाही</b><br />तुम्हाला "
+#~ "नक्की पुढे जायचे?</qt>"
+
+#~ msgid "Show Tabs Right"
+#~ msgstr "उजवी टॅब दर्शवा"
+
+#~ msgid "Set Name"
+#~ msgstr "नाव निश्चित करा"
+
+#~ msgid "Enter the name:"
+#~ msgstr "नाव प्रविष्ट करा:"
+
+#~ msgid "Enter a URL:"
+#~ msgstr "URL प्रविष्ट करा:"
+
+#~ msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
+#~ msgstr "<qt>तुम्हाला नक्की <b>%1</b> टॅब काढून टाकायचे?</qt>"
+
+#~ msgid "Set Name..."
+#~ msgstr "नाव निश्चित करा..."
+
+#~ msgid "Set URL..."
+#~ msgstr "URL निश्चित करा..."
+
+#~ msgid "Set Icon..."
+#~ msgstr "चिन्ह निश्चित करा..."
+
+#~ msgid "Remove"
+#~ msgstr "काढूण टाका"
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgid "Web module"
+#~ msgstr "वेब बाजूचीपट्टी"
+
+#~ msgid "&Create New Folder"
+#~ msgstr "नविन संचयीका बनवा (&C)"
+
+#~ msgid "Delete Folder"
+#~ msgstr "संचयीका काढून टाका"
+
+#~ msgid "Delete Bookmark"
+#~ msgstr "ओळखचिन्ह काढून टाका"
+
+#~ msgid "Properties"
+#~ msgstr "गुणधर्म"
+
+#~ msgid "Open in New Window"
+#~ msgstr "नविन चौकट उघडा"
+
+#~ msgid "Open Folder in Tabs"
+#~ msgstr "टॅब अंतर्गत संचयीका उघडा"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "लिंक पत्ता प्रतिकृत करा"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark folder\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "तुम्हाला नक्की ओळखचिन्ह संचयीका\n"
+#~ "\"%1\" काढून टाकायचे?"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "तुम्हाला नक्की ओळखचिन्ह\n"
+#~ "\"%1\" काढून टाकायचे?"
+
+#~ msgid "Bookmark Folder Deletion"
+#~ msgstr "ओळखचिन्ह संचयीका नष्ट करणे"
+
+#~ msgid "Bookmark Deletion"
+#~ msgstr "ओळखचिन्ह नष्ट करणे"
+
+#~ msgid "Bookmark Properties"
+#~ msgstr "ओळखचिन्ह गुणधर्म"
+
+#~ msgid "&Update"
+#~ msgstr "अद्ययावत (&U)"
+
+#~ msgid "Name:"
+#~ msgstr "नाव:"
+
+#~ msgid "Location:"
+#~ msgstr "स्थान:"
+
+#~ msgid "Add Bookmark"
+#~ msgstr "ओळखचिन्ह जोडा"
+
+#~ msgid "Cannot find parent item %1 in the tree. Internal error."
+#~ msgstr "वृक्ष अंतर्गत मुख्य घटक %1 आढळला नाही. आंतरीक त्रुटी."
+
+#~ msgid "&Create New Folder..."
+#~ msgstr "नविन संचयीका बनवा (&C)..."
+
+#~ msgid "Rename"
+#~ msgstr "पुन्हनामांकन"
+
+#~ msgid "Delete Link"
+#~ msgstr "लिंक नष्ट करा"
+
+#~ msgid "New Folder"
+#~ msgstr "नवीन संचयीका"
+
+#~ msgid "Create New Folder"
+#~ msgstr "नविन संचयीका बनवा"
+
+#~ msgid "Enter folder name:"
+#~ msgstr "संचयीका नाव प्रविष्ट करा:"
+
+#, fuzzy
+#~| msgid "Name:"
+#~ msgctxt "@label"
+#~ msgid "Name:"
+#~ msgstr "नाव:"
+
+#~ msgid "&Open Link"
+#~ msgstr "लिंक उघडा (&O)"
+
+#~ msgid "Set &Automatic Reload"
+#~ msgstr "आपोआप पुन्हदाखल निश्चित करा (&A)"
+
+#~ msgid "Set Refresh Timeout (0 disables)"
+#~ msgstr "पुन्हदाखलन टाईमआऊट निश्चित करा (0 अकार्यान्वीत करते)"
+
+#~ msgid " min"
+#~ msgstr " min"
+
+#~ msgid " sec"
+#~ msgstr " sec"
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Web Sidebar Module"
+#~ msgstr "वेब बाजूचीपट्टी"
+
+#~ msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
+#~ msgid "Be free."
+#~ msgstr "स्वतंत्र रहा."
+
+#~ msgid ""
+#~ "Konqueror is a web browser, file manager and universal document viewer."
+#~ msgstr "Konqueror वेब ब्राऊजर, फाइल व्यवस्थापक व जागतिक दस्तऐवज प्रदर्शक आहे."
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "Starting Points"
+#~ msgstr "प्रारंभ पॉईन्ट"
+
+#~ msgid "Introduction"
+#~ msgstr "परिचय"
+
+#~ msgid "Tips"
+#~ msgstr "टिप"
+
+#~ msgid "Specifications"
+#~ msgstr "संयोजना"
+
+#~ msgid "Your personal files"
+#~ msgstr "तुमचे व्यक्तिगत फाइल"
+
+#~ msgid "Trash"
+#~ msgstr "कचरापेटी"
+
+#~ msgid "Browse and restore the trash"
+#~ msgstr "ट्रॅश करीता संचारन व पुन्हस्थापन करा"
+
+#~ msgid "Network Folders"
+#~ msgstr "संजाळ संचयीका"
+
+#~ msgid "Shared files and folders"
+#~ msgstr "सहभागीय फाइल व संचयीका"
+
+#, fuzzy
+#~| msgid "&Bookmarks"
+#~ msgid "Bookmarks"
+#~ msgstr "ओळखचिन्ह (&B)"
+
+#~ msgid "Quick access to your bookmarks"
+#~ msgstr "तुमच्या ओळखचिन्ह करीता पटकण प्रवेश"
+
+#~ msgid "Next: An Introduction to Konqueror"
+#~ msgstr "पुढे: Konqueror चे परिचय"
+
+#~ msgid "Search the Web"
+#~ msgstr "वेबवर शोधा"
+
+#~ msgid ""
+#~ "To return to the previous location, press the back button <img width='16' "
+#~ "height='16' src=\"%1\"></img> in the toolbar. "
+#~ msgstr ""
+#~ "पूर्वीच्या स्थानावर जाण्याकरीता, साधनपट्टीतील मागे बटणवर क्लिक करा <img "
+#~ "width='16' height='16' src=\"%1\"></img>. "
+
+#~ msgid ""
+#~ "To quickly go to your Home folder press the  home button <img width='16' "
+#~ "height='16' src=\"%1\"></img>."
+#~ msgstr ""
+#~ "तुमच्या मुख्य संचयीकावर पटकण जाण्याकरीता मुख्य पान बटण दाबा <img width='16' "
+#~ "height='16' src=\"%1\"></img>."
+
+#~ msgid ""
+#~ "For more detailed documentation on Konqueror click <a href=\"%1\">here</"
+#~ "a>."
+#~ msgstr ""
+#~ "Konqueror विषयी अधिक विस्तृत दस्तऐवजीकरण करीता <a href=\"%1\">येथे</a> क्लिक "
+#~ "करा."
+
+#~ msgid "Next: Tips &amp; Tricks"
+#~ msgstr "पुढे: टिप &amp; युक्ती"
+
+#~ msgid "Supported standards"
+#~ msgstr "समर्थनीय मानक"
+
+#~ msgid "Additional requirements*"
+#~ msgstr "अगाऊ आवश्यकता*"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">DOM</A> (स्तर 1, अपुरे स्तर 2) आधारीत <A HREF=\"%2\">HTML "
+#~ "4.01</A>"
+
+#~ msgid "built-in"
+#~ msgstr "अंतर्भूतीत"
+
+#~ msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
+#~ msgstr "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, अपुरे CSS 2)"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
+#~ msgstr "<A HREF=\"%1\">ECMA-262</A> Edition 3 (जवळपास JavaScript 1.5 नुरूपच)"
+
+#~ msgid ""
+#~ "JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
+#~ msgstr ""
+#~ "JavaScript अकार्यान्वीत (जागतिकरित्या). JavaScript <A HREF=\"%1\">येथे</A> "
+#~ "कार्यान्वीत करा."
+
+#~ msgid ""
+#~ "JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\"
+#~ "\">here</A>."
+#~ msgstr ""
+#~ "JavaScript कार्यान्वीत (जागतिकरित्या). JavaScript <A HREF=\"%1\">येथे</A> "
+#~ "संयोजीत करा."
+
+#~ msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
+#~ msgstr "सुरक्षीत <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> समर्थन"
+
+#, fuzzy
+#~| msgid ""
+#~| "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">Blackdown</A>, <A HREF="
+#~| "\"%2\">IBM</A> or <A HREF=\"%3\">Sun</A>)"
+#~ msgid ""
+#~ "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">IBM</A> or <A HREF="
+#~ "\"%2\">Sun/Oracle</A>)"
+#~ msgstr ""
+#~ "JDK 1.2.0 (Java 2) सहत्व VM (<A HREF=\"%1\">Blackdown</A>, <A HREF="
+#~ "\"%2\">IBM</A> किंवा <A HREF=\"%3\">Sun</A>)"
+
+#~ msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
+#~ msgstr "Java <A HREF=\"%1\">येथे</A> कार्यान्वीत करा (जागतिकरित्या)."
+
+#~ msgid ""
+#~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">plugins</A> (for "
+#~ "viewing <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
+#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Video, etc.)"
+#~ msgstr ""
+#~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">प्लगइन</A> (<A HREF="
+#~ "\"%1\">फ्लॅश<SUP>&reg;</SUP></A>, <A HREF=\"%2\">रियल<SUP>&reg;</SUP></"
+#~ "A>ऑडिओ, <A HREF=\"%3\">रियल<SUP>&reg;</SUP></A>विडीओ, उदाहरणार्थ "
+#~ "पहाण्याकरीता)"
+
+#~ msgid "Secure Sockets Layer"
+#~ msgstr "Secure Sockets Layer"
+
+#~ msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
+#~ msgstr "(TLS/SSL v2/3) 168bit पर्यंत सुरक्षीत संवाद करीता"
+
+#~ msgid "OpenSSL"
+#~ msgstr "OpenSSL"
+
+#~ msgid "Bidirectional 16bit unicode support"
+#~ msgstr "द्विबाजू 16बीट यूनिकोड समर्थन"
+
+#~ msgid "AutoCompletion for forms"
+#~ msgstr "फॉर्मचे स्वयंपूर्णत्वता"
+
+#~ msgctxt "Title of an html 'group box' explaining konqueror features"
+#~ msgid "General"
+#~ msgstr "सामान्य"
+
+#~ msgid "Feature"
+#~ msgstr "गुणविशेष"
+
+#~ msgid "Details"
+#~ msgstr "तपशील"
+
+#~ msgid "Image formats"
+#~ msgstr "प्रतिमा स्वरूपन"
+
+#, fuzzy
+#~| msgid "PNG<br />MNG<br />JPG<br />GIF"
+#~ msgid "PNG<br />JPG<br />GIF"
+#~ msgstr "PNG<br />MNG<br />JPG<br />GIF"
+
+#~ msgid "Transfer protocols"
+#~ msgstr "स्थानांतर शिष्टाचार"
+
+#~ msgid "HTTP 1.1 (including gzip/bzip2 compression)"
+#~ msgstr "HTTP 1.1 (gzip/bzip2 संकुचन समाविष्टीत)"
+
+#~ msgid "FTP"
+#~ msgstr "FTP"
+
+#, fuzzy
+#~| msgid "and <A HREF=\"%1\">many more...</A>"
+#~ msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpcenter)...</A>"
+#~ msgstr "व <A HREF=\"%1\">अधिक...</A>"
+
+#~ msgctxt "A feature of Konqueror"
+#~ msgid "URL-Completion"
+#~ msgstr "URL-पूर्णत्वता"
+
+#~ msgid "Manual"
+#~ msgstr "पुस्तिका"
+
+#~ msgid "Popup"
+#~ msgstr "पॉपअप"
+
+#~ msgid "(Short-) Automatic"
+#~ msgstr "(लहान-) आपोआप"
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "<a href=\"%1\">Return to Starting Points</a>"
+#~ msgstr "<a href=\"%1\">प्रारंभिक स्थानकडे जा</a>"
+
+#~ msgid "Tips &amp; Tricks"
+#~ msgstr "टिप &amp; टिपण्णी"
+
+#, fuzzy
+#~| msgid ""
+#~| "To return to the previous location, press the back button <img "
+#~| "width='16' height='16' src=\"%1\"></img> in the toolbar. "
+#~ msgid ""
+#~ "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
+#~ "the HTML toolbar to increase the font size on your web page."
+#~ msgstr ""
+#~ "पूर्वीच्या स्थानावर जाण्याकरीता, साधनपट्टीतील मागे बटणवर क्लिक करा <img "
+#~ "width='16' height='16' src=\"%1\"></img>. "
+
+#~ msgid "Next: Specifications"
+#~ msgstr "पुढे: संयोजना"
+
+#~ msgid "Installed Plugins"
+#~ msgstr "प्रतिष्ठापीत प्लगइन"
+
+#~ msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
+#~ msgstr "<td>प्लगइन</td><td>वर्णन</td><td>फाइल</td><td>प्रकार</td>"
+
+#~ msgid "Installed"
+#~ msgstr "प्रतिष्ठापीत"
+
+#~ msgid ""
+#~ "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
+#~ msgstr "<td>Mime प्रकार</td><td>वर्णन</td><td>सफीक्स्</td><td>प्लगइन</td>"
+
+#~ msgid ""
+#~ "Do you want to disable showing the introduction in the webbrowsing "
+#~ "profile?"
+#~ msgstr "वेबब्राऊजर प्रोफाइल अंतर्गत परिचय दर्शविणे अकार्यान्वीत करायचे?"
+
+#~ msgid "Faster Startup?"
+#~ msgstr "जलद स्टार्टअप?"
+
+#~ msgid "Disable"
+#~ msgstr "अकार्यान्वीत"
+
+#~ msgid "Keep"
+#~ msgstr "ठेवायचे"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "संदिप शेडमाके"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "sandeep.shedmake@gmail.com"
+
+#~ msgid "&File"
+#~ msgstr "फाइल (&F)"
+
+#~ msgid "&Edit"
+#~ msgstr "संपादन (&E)"
+
+#~ msgid "&View"
+#~ msgstr "दृश्य (&V)"
+
+#~ msgid "&Go"
+#~ msgstr "जा (&G)"
+
+#~ msgid "&Settings"
+#~ msgstr "संयोजना (&S)"
+
+#~ msgid "&Window"
+#~ msgstr "चौकट (&W)"
+
+#~ msgid "&Help"
+#~ msgstr "मदत (&H)"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "मुख्य साधनपट्टी"
+
+#~ msgid "Extra Toolbar"
+#~ msgstr "अगाऊ साधनपट्टी"
+
+#~ msgid "Location Toolbar"
+#~ msgstr "स्थान साधनपट्टी"
+
+#~ msgid "Bookmark Toolbar"
+#~ msgstr "ओळखचिन्ह साधनपट्टी"
+
+#~ msgid "Save open tabs and windows for easy retrieval"
+#~ msgstr "सोपे अवधी करीता उघडे टॅब व चौकट संचयीत करा"
+
+#~ msgid "&Session name:"
+#~ msgstr "सत्र नाव (&S):"
+
+#~ msgid "&Profile name:"
+#~ msgstr "प्रोफाइल नाव (&P):"
+
+#~ msgid "Save &URLs in profile"
+#~ msgstr "प्रोफाइल अंतर्गत URLs संचयीत करा (&U)"
+
+#~ msgctxt "@action:button New session"
+#~ msgid "New..."
+#~ msgstr "नविन..."
+
+#~ msgctxt "@action:button Save current session"
+#~ msgid "Save Current"
+#~ msgstr "वर्तमान संचयीत करा"
+
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename..."
+#~ msgstr "नाव बदलवा..."
+
+#~ msgctxt "@action:button Delete session"
+#~ msgid "Delete"
+#~ msgstr "हटवा"
+
+#~ msgid "Open tabs inside current window"
+#~ msgstr "वर्तमान चौकट अंतर्गत टॅब उघडा"
+
+#~ msgid "Limits"
+#~ msgstr "मर्यादा"
+
+#~ msgid "URLs e&xpire after"
+#~ msgstr "URLs काळानंतर कालबाह्य होतिल (&x)"
+
+#~ msgid "Maximum &number of URLs:"
+#~ msgstr "URLs ची कमाल संख्या (&n):"
+
+#~ msgid "Custom Fonts For"
+#~ msgstr "करीता इच्छिक फॉन्ट"
+
+#~ msgid "URLs newer than"
+#~ msgstr "पेक्षा नविन URLs"
+
+#~ msgid "Choose Font..."
+#~ msgstr "फॉन्ट निवडा..."
+
+#~ msgid "URLs older than"
+#~ msgstr "यापेक्षा जुने URLs"
+
+#~ msgid ""
+#~ "Shows the number of times visited and the dates of the first and last "
+#~ "visits, in addition to the URL"
+#~ msgstr ""
+#~ "भेट दिल्याचे प्रमाण दर्शवा आणि URL च्या व्यतिरीक्त, प्रथम व शेवटी भेट दिल्याचे दिनांक "
+#~ "दर्शवा"
+
+#~ msgid "Detailed tooltips"
+#~ msgstr "विस्तृत टूलटिप"
+
+#~ msgid "Clear History"
+#~ msgstr "इतिहास नष्ट करा"
+
+#, fuzzy
+#~| msgid "Maximum &number of URLs:"
+#~ msgid "Maximum number of Closed Items"
+#~ msgstr "URLs ची कमाल संख्या (&n):"
+
+#, fuzzy
+#~| msgid "Open tabs inside current window"
+#~ msgid "Open folders in separate windows"
+#~ msgstr "वर्तमान चौकट अंतर्गत टॅब उघडा"
+
+#~ msgid "Hide %1"
+#~ msgstr "%1 लपवा"
+
+#, fuzzy
+#~| msgid "Web SideBar Plugin"
+#~ msgid "SideBar Test Plugin"
+#~ msgstr "वेब बाजूचीपट्टी प्लगइन"
+
+#~ msgid "Bookmark This Location"
+#~ msgstr "हे स्थान ओळखचिन्हाकृत करा"
+
+#~ msgid ""
+#~ "Malformed URL\n"
+#~ "%1"
+#~ msgstr ""
+#~ "सदोषीत URL\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Protocol not supported\n"
+#~ "%1"
+#~ msgstr ""
+#~ "शिष्टाचार समर्थीत नाही\n"
+#~ "%1"
+
+#~ msgid "Cannot create the find part, check your installation."
+#~ msgstr "शोध विभाग बनवू शकले नाही, प्रतिष्ठापन तपासा."
+
+#~ msgid "My Bookmarks"
+#~ msgstr "माझे ओळखचिन्ह"
+
+#~ msgid "Preload for later use"
+#~ msgstr "पुढिल वापर करीता पूर्वदाखलन करा"
+
+#~ msgid "&Save View Profile \"%1\"..."
+#~ msgstr "प्रोफाइल दृश्य \"%1\" संचयीत करा (&S)..."
+
+#~ msgid "Configure Navigation Panel"
+#~ msgstr "संचारन पटल संयोजीत करा"
+
+#~ msgid "Close Navigation Panel"
+#~ msgstr "संचारन पटल दर्शवा"
+
+#~ msgid "Select Type"
+#~ msgstr "प्रकार निवडा"
+
+#~ msgid "Select type:"
+#~ msgstr "प्रकार निवडा:"
+
+#~ msgid "Web SideBar Plugin"
+#~ msgstr "वेब बाजूचीपट्टी प्लगइन"
+
+#~ msgid "<qt><b>%1</b> does not exist</qt>"
+#~ msgstr "<qt><b>%1</b> अस्तित्वात नाही</qt>"
+
+#~ msgid "Minutes"
+#~ msgstr "मिनीट"
+
+#~ msgid "Days"
+#~ msgstr "दिवस"
+
+#~ msgid "Your sidebar is not functional or unavailable."
+#~ msgstr "बाजूचीपट्टी कार्यरत नाही किंवा अनुपलब्ध आहे."
+
+#~ msgid "Cannot find running history plugin in your sidebar."
+#~ msgstr "बाजूचीपट्टी अंतर्गत कार्यरत इतिहास प्लगइन शोधू शकले नाही."
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History in Sidebar"
+#~ msgstr "बाजूच्यापट्टीत इतिहास दर्शवा"
+
+#~ msgid "Select Remote Charset"
+#~ msgstr "दूरस्थ अक्षरसंच निवडा"
+
+#~ msgid "Reload"
+#~ msgstr "पुनःदाखल करा"
+
+#~ msgid "Default"
+#~ msgstr "मुलभूत"

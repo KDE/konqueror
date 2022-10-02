@@ -1,0 +1,98 @@
+# Vietnamese translation for AutoRefresh.
+# Copyright © 2006 KDE i18n Project for Vietnamese.
+#
+# Clytie Siddall <clytie@riverland.net.au>, 2006.
+# Phu Hung Nguyen <phu.nguyen@kdemail.net>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: autorefresh\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2020-12-10 12:09+0100\n"
+"Last-Translator: Phu Hung Nguyen <phu.nguyen@kdemail.net>\n"
+"Language-Team: Vietnamese <kde-l10n-vi@kde.org>\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 20.08.1\n"
+
+#: autorefresh.cpp:28
+#, kde-format
+msgid "&Auto Refresh"
+msgstr "Cậ&p nhật tự động"
+
+#: autorefresh.cpp:32
+#, kde-format
+msgid "None"
+msgstr "Không có"
+
+#: autorefresh.cpp:33
+#, kde-format
+msgid "Every 15 Seconds"
+msgstr "Mỗi 15 giây"
+
+#: autorefresh.cpp:34
+#, kde-format
+msgid "Every 30 Seconds"
+msgstr "Mỗi 30 giây"
+
+#: autorefresh.cpp:35
+#, kde-format
+msgid "Every Minute"
+msgstr "Mỗi phút"
+
+#: autorefresh.cpp:36
+#, kde-format
+msgid "Every 5 Minutes"
+msgstr "Mỗi 5 phút"
+
+#: autorefresh.cpp:37
+#, kde-format
+msgid "Every 10 Minutes"
+msgstr "Mỗi 10 phút"
+
+#: autorefresh.cpp:38
+#, kde-format
+msgid "Every 15 Minutes"
+msgstr "Mỗi 15 phút"
+
+#: autorefresh.cpp:39
+#, kde-format
+msgid "Every 30 Minutes"
+msgstr "Mỗi 30 phút"
+
+#: autorefresh.cpp:40
+#, kde-format
+msgid "Every 60 Minutes"
+msgstr "Mỗi 60 phút"
+
+#: autorefresh.cpp:41
+#, fuzzy, kde-format
+#| msgid "Every 5 Minutes"
+msgid "Every 2 Hours"
+msgstr "Mỗi 5 phút"
+
+#: autorefresh.cpp:42
+#, fuzzy, kde-format
+#| msgid "Every 60 Minutes"
+msgid "Every 6 Hours"
+msgstr "Mỗi 60 phút"
+
+#: autorefresh.cpp:100
+#, kde-format
+msgctxt "@title:window"
+msgid "Cannot Refresh Source"
+msgstr "Không thể cập nhật nguồn"
+
+#: autorefresh.cpp:101
+#, kde-format
+msgid "<qt>This plugin cannot auto-refresh the current part.</qt>"
+msgstr "<qt>Phần cài cắm này không thể tự động cập nhật phần hiện tại.</qt>"
+
+#. i18n: ectx: Menu (tools)
+#: autorefresh.rc:5
+#, kde-format
+msgid "&Tools"
+msgstr ""

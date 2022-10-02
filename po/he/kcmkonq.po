@@ -1,0 +1,93 @@
+# translation of kcmkonq.po to Hebrew
+# KDE Hebrew Localization Project
+# Translation of kcmkonq.po into Hebrew
+#
+# In addition to the copyright owners of the program
+# which this translation accompanies, this translation is
+# Copyright (C) 1999-2002 Meni Livne <livne@kde.org>
+# Copyright (C) 2003 Amir Tal <tal@whatsup.org.il>
+#
+# This translation is subject to the same Open Source
+# license as the program which it accompanies.
+#
+# Diego Iastrubni <elcuco@kde.org>, 2004.
+# Diego Iastrubni <elcuco@kde.org>, 2005, 2007, 2008, 2009, 2012.
+# Elkana Bardugo <ttv200@gmail.com>, 2017. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkonq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2017-05-16 06:36-0400\n"
+"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
+"Language-Team: Hebrew <kde-i18n-doc@kde.org>\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Zanata 3.9.6\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: behaviour.cpp:36
+#, kde-format
+msgid ""
+"<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "
+"file manager here."
+msgstr ""
+"<h1>הפעולה של Konqueror</h1> כאן באפשרותך לקבוע כיצד Konqueror יפעל בתור "
+"מנהל קבצים."
+
+#: behaviour.cpp:40
+#, kde-format
+msgid "Misc Options"
+msgstr "אפשרויות שונות"
+
+#: behaviour.cpp:49
+#, kde-format
+msgid "Open folders in separate &windows"
+msgstr "פתח תיקיות בחלונות &נפרדים"
+
+#: behaviour.cpp:50
+#, kde-format
+msgid ""
+"If this option is checked, Konqueror will open a new window when you open a "
+"folder, rather than showing that folder's contents in the current window."
+msgstr ""
+"אם אפשרות זו נבחרת, Konqueror יפתח חלון חדש כאשר אתה פותח תיקייה במקום להציג "
+"את תוכן התיקייה הזו בחלון הנוכחי."
+
+#: behaviour.cpp:73
+#, fuzzy, kde-format
+msgid "Show 'Delete' me&nu entries which bypass the trashcan"
+msgstr "הצג פקודות \"מחק\" ב&תפריט, העוקפות את האשפה"
+
+#: behaviour.cpp:77
+#, fuzzy, kde-format
+msgid ""
+"Check this if you want 'Delete' menu commands to be displayed on the desktop "
+"and in the file manager's menus and context menus. You can always delete "
+"files by holding the Shift key while calling 'Move to Trash'."
+msgstr ""
+"בחר באפשרות זו, אם ברצונך לקבל פקודות \"מחק\" בשולחן עבודה ובתפריטי ההקשר של "
+"מנהל הקבצים. ניתן למחוק ישירות גם על ידי לחיצה על shift ולחיצה על \"העבר "
+"לאשפה\"."
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Menu Editor"
+#~ msgstr "עריכת תפריט"
+
+#~ msgid "Menu"
+#~ msgstr "תפריט"
+
+#~ msgid "New..."
+#~ msgstr "חדש..."
+
+#~ msgid "Remove"
+#~ msgstr "הסר"
+
+#~ msgid "Move Up"
+#~ msgstr "הזז מעלה"
+
+#~ msgid "Move Down"
+#~ msgstr "הזז מטה"

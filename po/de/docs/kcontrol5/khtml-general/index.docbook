@@ -1,0 +1,200 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % German "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article lang="&language;" id="konq-general-behavior">
+<title
+>Allgemeines Verhalten von &konqueror;</title>
+<articleinfo>
+
+<authorgroup>
+<author
+>&Burkhard.Lueck;</author>
+<othercredit role="translator"
+><firstname
+>Burkhard</firstname
+><surname
+>Lück</surname
+><affiliation
+><address
+><email
+>lueck@hube-lueck.de</email
+></address
+></affiliation
+><contrib
+>Übersetzung</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2016-11-08</date>
+<releaseinfo
+>Anwendungen 16.12</releaseinfo>
+
+</articleinfo>
+<para
+>Auf dieser Seite befinden sich Einstellungen for die Startseite und das Verhalten von &konqueror; beim Browsen mit Unterfenstern sowohl für den Dateiverwaltungs- als auch den Browsermodus.</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Beim Start von Konqueror</guilabel
+></term>
+<listitem>
+<para
+>Diese Einstellung legt fest, welche Seite &konqueror; beim Start anzeigt, die Willkommensseite, die Startseite, eine leere Seite oder Ihre Lesezeichenseite. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Startseite</guilabel
+></term>
+<listitem
+><para
+>Dies ist die Adresse oder &URL; (&eg; ein Ordner oder eine Webseite), zu der &konqueror; im Browsermodus springt, wenn der Knopf <guibutton
+>Startseite</guibutton
+> in der Werkzeugleiste angeklickt wird. Den Pfad zur <guilabel
+>Startseite</guilabel
+> können Sie entweder in das Text eingeben oder auf das Symbol <guiicon
+>Dateiauswahl</guiicon
+> klicken und dann im Dialog einen lokalen Ordner auswählen. &konqueror; muss neu gestartet werden, damit die Änderung wirksam wird.</para>
+<para
+>Wird &konqueror; als Dateimanger benutzt, dann wird der Knopf <guilabel
+>Startseite</guilabel
+> in der Werkzeugleiste durch den Knopf <guilabel
+>Persönlicher Ordner</guilabel
+> ersetzt und dann wird stattdessen Ihr persönlicher Ordner angezeigt.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Verknüpfungen in Unterfenstern anzeigen statt in eigenen Fenstern</guilabel
+></term>
+<listitem
+><para
+>&konqueror; verwendet gewöhnlich ein Fenster für jede Seite, besitzt aber auch die Möglichkeit, mehrere <firstterm
+>Karteikarten</firstterm
+> innerhalb eines Fensters zu öffnen. Mit einem Klick mit der <mousebutton
+>mittleren</mousebutton
+> Maustaste können Sie standardmäßig jede Verknüpfung in einem neuen Fenster öffnen. Falls Sie die Einstellung <guilabel
+>Verknüpfungen in Unterfenstern anzeigen statt in extra Fenstern</guilabel
+> aktivieren, können Sie mit einem Klick mit der <mousebutton
+>mittleren</mousebutton
+> Maustaste eine Verknüpfung in einer neuen Karteikarte öffnen.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Aufklappfenster („Popups“) in Unterfenstern anzeigen</guilabel
+></term>
+<listitem
+><para
+>Legt fest, ob durch JavaScript gesteuerte Aufklappfenster in einem neuen Fenster oder Unterfenster geöffnet werden sollen, falls die entsprechende JavaScript-Funktion zugelassen ist.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Als Unterfenster in bereits geöffnetem Konqueror anzeigen, falls die Adresse von außerhalb aufgerufen wird</guilabel
+></term>
+<listitem
+><para
+>Sobald Sie in einem anderen &kde;-Programm auf eine Adresse (&URL;) klicken oder kfmclient zum Aufruf einer solchen Adresse verwenden, wird überprüft, ob auf der aktuellen Arbeitsfläche bereits ein nicht-minimierter &konqueror; vorhanden ist. Ist diese Einstellung aktiv und ein solches Konquerorfenster vorhanden, wird die Adresse darin als Unterfenster geöffnet. Anderenfalls wird ein neues Konquerorfenster geöffnet;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Neue Unterfenster im Hintergrund öffnen</guilabel
+></term>
+<listitem
+><para
+>Falls Sie Browsen mit Unterfenstern verwenden, können Sie auswählen, ob eine neu geöffnete Karteikarte die aktive (<quote
+>vordere</quote
+>) Karteikarte wird oder in den Hintergrund geht. Bei einer langsamen Internetverbindung, oder wenn Sie sich auf einer Seite mit vielen Links befinden, kann es gewünscht sein, dass diese Seite im Hintergrund geladen werden, während Sie noch mit dem Lesen fortfahren. Lassen Sie in diesem Fall die Einstellung aktiviert. Falls Sie die neue Seite sofort im Vordergrund geladen haben möchten, sollten Sie die Einstellung deaktivieren.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Neues Unterfenster neben aktuellem öffnen</guilabel
+></term>
+<listitem
+><para
+>Dadurch wird ein Unterfenster neben dem gerade aktuellen geöffnet. Sonst neben dem letzten in der Reihe.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Leiste ausblenden, wenn nur ein Unterfenster geöffnet ist</guilabel
+></term>
+<listitem
+><para
+>Hierdurch wird die Unterfensterleiste nur angezeigt, wenn mindestens zwei Unterfenster vorhanden sind. Anderenfalls wird die Leiste immer angezeigt.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>„Schließen“-Knopf auf Unterfenster-Reitern anzeigen</guilabel
+></term>
+<listitem
+><para
+>Hierdurch wird in jedem Unterfenster anstelle des Webseiten-Symbols ein Symbol zum Schließen angezeigt.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Mittelklick auf Unterfenster-Reiter schließt das Unterfenster</guilabel
+></term>
+<listitem
+><para
+>Durch Drücken der mittleren Maustaste oder des Mausrades auf einem Unterfenster-Reiter, wird das Unterfenster geschlossen (Sie müssen Konqueror neu starten, damit die Änderung wirksam wird).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Beim Schließen von Fenstern mit mehreren Unterfenstern Bestätigung verlangen</guilabel
+></term>
+<listitem
+><para
+>Wenn Sie ein &konqueror;-Fenster schließen, das mehrere Karteikarten offen hat, fragt &konqueror; nach, ob das Fenster wirklich geschlossen werden soll. Sie können dieses Verhalten mit diesem Ankreuzfeld an- und ausschalten.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Nach Schließen eines Unterfensters das zuletzt benutzte aktivieren</guilabel
+></term>
+<listitem
+><para
+>Nach dem Ankreuzen dieses Felds wird das zuletzt geöffnete oder benutzte Unterfenster aktiviert, sobald Sie ein anderes schließen. Ansonsten wird automatisch das Unterfenster rechts davon aktiv.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</article>

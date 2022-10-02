@@ -1,0 +1,601 @@
+<chapter id="basics">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+&erik.kjaer.pedersen.role; 
+</authorgroup>
+<date
+>2003-10-20</date
+> <releaseinfo
+>3.2</releaseinfo
+> </chapterinfo>
+
+<title
+>&konqueror;, det basale</title>
+
+<important
+><para
+>Som alle &kde;-programmer er der mange indstillinger for &konqueror;. Dette dokument beskriver hvordan &konqueror; opfører sig med de sædvanlige standardindstillinger.</para>
+<para
+>En mus med tre knapper er nyttig når man kører &konqueror; eller andre &kde; programmer. Hvis din mus kun har to knapper, kan man indstille systemet så man kan simulere  midterste museknap ved at trykke på begge knapper samtidigt.</para>
+<para
+>Du kan læse mere om brug af musen i <xref linkend="lmb-mmb"/></para>
+<para
+>Hvis du er vant til at dobbeltklikke for at få noget gjort, så pas på, for ligesom resten af &kde;, er  &konqueror;'s standard enkeltklik.</para
+></important>
+
+<sect1 id="konq-start">
+<title
+>Start af &konqueror;</title>
+
+<para
+>Da den er en kombineret filhåndtering og browser, vil &konqueror; automatisk skifte mellem de to tilstande efter behov, når den kører, men det kan være en fordel at være i stand til at vælge hvilken tilstand der skal bruges når man starter den.</para>
+
+<itemizedlist>
+<listitem
+><para
+>Hvis du har en <guiicon
+>hus</guiicon
+>-formet ikon i panelet eller på desktoppen, så vil klik med &LMB; åbne &konqueror; som en filhåndtering.</para
+></listitem>
+
+<listitem
+><para
+>Et &LMB; klik på den <guiicon
+>verdens</guiicon
+>formede ikon i panelet eller på desktoppen vil åbne &konqueror; i browser-tilstand.</para
+></listitem>
+
+<listitem
+><para
+>Fra <guimenu
+>K</guimenu
+>-menuen, vælges <menuchoice
+><guisubmenu
+>Internet</guisubmenu
+><guimenuitem
+>Konqueror browser</guimenuitem
+></menuchoice
+> for at starte den som en browser, eller <guimenuitem
+>Hjem</guimenuitem
+> for at starte &konqueror; i filhåndteringstilstand. </para
+></listitem>
+
+<listitem
+><para
+><keycombo action="simul"
+>&Alt;<keycap
+>F2</keycap
+></keycombo
+> vil åbne en <guilabel
+>Kør kommando</guilabel
+> dialog. Skriv <userinput
+><command
+>konqueror</command
+></userinput
+> (små bogstaver) og tryk på <keycap
+>Enter</keycap
+> eller <guibutton
+>Kør</guibutton
+> knappen for at starte i filhåndteringstilstand, eller indtast blot en &URL; såsom <userinput
+>http://www.konqueror.org</userinput
+> for at starte &konqueror; som en browser.</para
+></listitem>
+
+</itemizedlist>
+
+<para
+>&konqueror; startes også automatisk når man <mousebutton
+>venstre</mousebutton
+>klikker på en desktopikon som repræsenterer en mappe, såsom <guiicon
+>Affalds</guiicon
+>ikonen. </para>
+
+
+</sect1>
+
+<sect1 id="parts">
+<title
+>&konqueror;'s dele</title>
+
+<para
+>Et hurtigt kig på hoveddelene af &konqueror;'s vindue:</para>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="parts.png"/></imageobject>
+<textobject>
+<phrase
+>Her er et skærmbillede af &konqueror;</phrase>
+</textobject>
+</mediaobject>
+
+<para
+><interface
+>Titellinjen</interface
+> er striben henover toppen af &konqueror;'s vindue, som virker på samme måde som for andre &kde; programmer. <mousebutton
+>Højre</mousebutton
+>klik på den midterste del får en lille titellinjemenu frem.</para>
+
+<para
+><interface
+>Menulinen</interface
+> er striben der indeholder navnene på drop-ned menuerne. <mousebutton
+>Venstre</mousebutton
+>klik på et navn skifter mellem at vise og skjule denne menu, eller brug <keycombo action="simul"
+>&Alt;<keycap
+> det understregede bogstav</keycap
+></keycombo
+> i navnet som en genvejstast, for eksempel <keycombo action="simul"
+>&Alt;<keycap
+>R</keycap
+></keycombo
+> til at vise <guimenu
+>Redigér</guimenu
+>menuen. De forskellige menuer bliver beskrevet i <link linkend="menubar"
+>Menulinje</link
+> afsnittet af dette dokument.</para>
+
+<para
+><interface
+>Værktøjslinjen</interface
+> indeholder ikoner for almindeligt brugte operationer. <mousebutton
+>Venstre</mousebutton
+>-klik på en ikon vil aktivere den. Hvis du har aktiveret værktøjsvink i kontrolcentrets <menuchoice
+><guimenu
+>Udseende &amp; Temaer</guimenu
+><guisubmenu
+>Stil</guisubmenu
+></menuchoice
+>-dialog 
+vil en kort beskrivelse af hvad den ikon gør blive vist når du svæver markøren over den.</para>
+
+<para
+>Nogle ikoner, for eksempel Op- og Tilbage-ikonerne i det forrige skærmaftryk, har en lille sort trekant i deres nederste højre hjørne. Hvis du holder <mousebutton
+>venstre</mousebutton
+> museknap trykket nede mens markøren er over denne type ikon vil en lille dropned-menu vise sig.</para
+> <para
+><mousebutton
+>Højre</mousebutton
+> klik på <interface
+>Værktøjslinjen </interface
+> vil få <link linkend="rmb-menus"
+><guilabel
+>Værktøjslinjemenuen</guilabel
+></link
+> frem, som du kan bruge til at ændre <interface
+>Værktøjslinjens</interface
+> udseende og position.</para>
+
+<para
+><interface
+>Stedlinjen</interface
+> viser stien til mappen, &URL;'en eller filen der vises. Man kan indskrive en sti eller &URL; her og trykke på &Enter; eller <mousebutton
+>venstre</mousebutton
+> klik på <guiicon
+>Kør</guiicon
+>-ikonen i højre ende af <interface
+>Stedlinjen</interface
+> for at gå hen til den. Den sorte ikon i venstre ende af <interface
+>stedlinjen</interface
+> rydder teksten i indtastningsfeltet.</para>
+
+<para
+><interface
+>Bogmærke-værktøjslinjen</interface
+> er området under  <interface
+>Stedlinjen</interface
+> i det tidligere skærmbillede. Man kan tilføje ofte brugte bogmærker her, se <link linkend="orgbmark"
+>Organisering af dine bogmærker</link
+> afsnittet i dette dokument.</para>
+
+<para
+><interface
+>Vinduet</interface
+> er hovedområdet af &konqueror; som kan vise indholdet af en mappe, en netside, et dokument eller et billede. Ved brug af <link linkend="menu-window"
+><guimenu
+>Vindue</guimenu
+></link
+>menuen kan man opdele &konqueror;'s hovedvindue i et eller flere adskilte vinduer, hvilket er nyttigt til træk og slip operationer, eller sæt den til at indeholde to eller flere fanebladsvisninger. </para>
+
+<para
+><interface
+>Statuslinjen</interface
+> går henover bunden af &konqueror;'s vindue og viser ofte generel information om det musen svæver henover. Hvis du har opdelt hovedvinduet i et antal visninger vil du se en statuslinje for hver visning, og den vil inkludere et lille grønt lys i venstre side for at angive hvilken er den <quote
+>aktive</quote
+> visning. <mousebutton
+>Højre</mousebutton
+>klik på statuslinjen  får statuslinjens <link linkend="rmb-menus"
+><mousebutton
+>Højre</mousebutton
+> museknap menu frem</link
+>.</para>
+
+<note
+><para
+>Det bør ikke bekymre dig hvis din &konqueror; ikke ser ud nøjagtigt ligesom dette skærmbillede, der er mange indstillinger. For eksempel:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Kan du bruge <link linkend="menu-settings"
+><guimenu
+>Opsætnings</guimenu
+></link
+>menuen til at vælge om du vil vise eller skjule menulinjen, Hovedværktøjslinjen, stedlinjen og bogmærkelinjen, eller endog tilføje en ekstra værktøjslinje.</para
+></listitem>
+<listitem
+><para
+>Man kan også <quote
+>flade</quote
+> værktøjslinjerne ud ved at <mousebutton
+>venstre</mousebutton
+>-klikke på de lodrette linjer ved venstre ende af linjerne, eller flytte dem rundt ved at holde &LMB; nede mens man trækker disse linjer rundt. </para
+></listitem>
+<listitem
+><para
+>Dette skærmaftryk viser ikke det mulige <link linkend="sidebar"
+> Navigationspanel</link
+>.</para
+></listitem>
+</itemizedlist>
+
+<para
+>Hvis du vil vide mere om hvordan man ændrer &konqueror;'s udseende, se <link linkend="config"
+>Indstilling af &konqueror;</link
+> afsnittet</para
+></note>
+
+</sect1>
+
+<sect1 id="bubble">
+<title
+>Værktøjsvink og Hvad er dette?</title>
+
+<para
+>Du kan finde ud af en masse om hvordan &konqueror; virker uden at behøve at læse hele dette dokument hvis du benytter dig af <guilabel
+>Værktøjsvink</guilabel
+> og <guimenuitem
+>Hvad er dette?</guimenuitem
+> egenskaberne.</para>
+
+<para
+>Hvis <guilabel
+>Værktøjsvink</guilabel
+> er blevet aktiveret i &kde; (K menu <menuchoice
+><guimenu
+>Kontrolcenter</guimenu
+><guisubmenu
+>Udseende &amp; Temaer</guisubmenu
+><guisubmenu
+>Stil</guisubmenu
+></menuchoice
+>, <guilabel
+>Stil</guilabel
+>-dialogen) når du så lader musen svæve over en værktøjslinje eller en navigationspanelknap skulle det få en kort beskrivelse frem af hvad denne knap gør.</para>
+
+<para
+><guimenuitem
+>Hvad er dette?</guimenuitem
+> kaldes af punktet i menulinjen <menuchoice
+><guimenu
+>Hjælp</guimenu
+><guimenuitem
+>Hvad er dette?</guimenuitem
+></menuchoice
+>, ved <keycombo action="simul"
+>&Shift;<keycap
+>F1</keycap
+></keycombo
+> genvejstasten eller blot ved at klikke med &LMB; på spørgsmålstegnet nær det øverste højre hjørne  af &konqueror;'s vindue. Dette ændrer markøren til at vise et spørgsmålstegn ved siden af pilen.</para>
+
+<para
+>Når dette spørgsmålstegn er synligt, vil et klik med venstre museknap  rent faktisk ikke gøre noget før på en kontrol (eller teksten langs med den) som understøtter <guimenuitem
+>Hvad er dette?</guimenuitem
+>, i hvilket tilfælde den vil vise en nogenlunde forståelig beskrivelse af hvad denne kontrol er beregnet til. De fleste dialoger som &konqueror; bringer frem understøtter <guimenuitem
+>Hvad er dette?</guimenuitem
+> egenskaben.</para>
+
+</sect1>
+
+<sect1 id="lmb-mmb">
+<title
+><mousebutton
+>Venstre</mousebutton
+> og <mousebutton
+>Midterste</mousebutton
+> museknap handlinger</title>
+
+<para
+>Hvis du klikke med venstre museknap på et punkt i &konqueror;'s vindue vil dette punkt blive <quote
+>aktiveret</quote
+>. Således vil</para>
+
+<itemizedlist>
+
+<listitem
+><para
+><mousebutton
+>Venstre</mousebutton
+>klik på en ikon i værktøjslinjen få ikonen til at gøre det den er beregnet til. </para
+></listitem>
+<listitem
+><para
+><mousebutton
+>Venstre</mousebutton
+>klik på et punkt i menulinjen vil få menuen til at droppe ned.</para
+></listitem>
+<listitem
+><para
+><mousebutton
+>Venstre</mousebutton
+>klik på et menupunkt for at få det udført.</para
+></listitem
+> 
+<listitem
+><para
+><mousebutton
+>Venstre</mousebutton
+>klik på en ikon i bogmærke-værktøjslinjen for at åbne denne &URL;.</para
+></listitem>
+<listitem
+><para
+><mousebutton
+>Venstre</mousebutton
+>klik på et link i en netside for at få &konqueror; til at følge dette link.</para
+></listitem>
+<listitem
+><para
+><mousebutton
+>Venstre</mousebutton
+>klik på en mappeikon eller navnet får &konqueror; til at gå ind i (vise indholdet af) mappen. </para
+></listitem>
+<listitem
+><para
+><mousebutton
+>Venstre</mousebutton
+>klik på et filnavn eller en ikon får &konqueror; til at gøre hvad den tror er passende, baseret på filtypen. Dette betyder i almindelig at åbne <acronym
+>HTML</acronym
+> sider, eller forhåndsvise tekst-, billed- eller <application
+>KOffice</application
+> filer, vist i &konqueror;'s vindue (<quote
+>Forhåndsvis</quote
+> betyder at du kan se filen men du kan ikke ændre den).</para
+> 
+
+<para
+>&konqueror; afgør hvilken filtype det er ved at afpasse filnavnets endelse mod en liste af kendte typer. Hvis det mislykkes forsøger den at gætte typen fra filens indhold. Du kan ændre listen af kendte filtyper og associerede handlinger med <guilabel
+>Fil-tilknytninger</guilabel
+>-siden i <menuchoice
+><guimenu
+>Opsætning</guimenu
+><guimenuitem
+>Indstil Konqueror... </guimenuitem
+></menuchoice
+>-dialogen.</para
+></listitem>
+
+</itemizedlist>
+
+<para
+>Klik med den &MMB; på et fil- eller mappenavn eller ikon gør cirka det samme som <mousebutton
+>venstre</mousebutton
+>-klik bortset fra at det sædvanligvie gør det i et nyt &konqueror;-vindue, med mindre <guilabel
+>Åbn link i nyt faneblad i stedet for i nyt vindue</guilabel
+>-feltet er blevet afkrydset på <guimenuitem
+>Opførsel</guimenuitem
+>-siden a <menuchoice
+><guimenu
+>Opsætning</guimenu
+><guimenuitem
+>Indstil Konqueror...</guimenuitem
+></menuchoice
+>-dialogen. &konqueror; kan åbne link på sider og <menuchoice
+><guimenu
+>Bogmærker</guimenu
+></menuchoice
+>, så vel som <guibutton
+>Hjem</guibutton
+>, <guibutton
+>Opad</guibutton
+>, <guibutton
+>Tilbage</guibutton
+> og <guibutton
+>Fremad</guibutton
+> indgange i et nyt faneblad eller vindue.</para>
+
+<para
+>Ved at holde &Shift;-tasten nede mens der trykkes på den &MMB; åbnes linket i baggrunden.</para>
+<important
+><para
+>Hvis du klikker med &MMB; mens musen er over en blank del af hovedvisningen (ikke over et link eller filnavn eller en ikon) vil &konqueror; kopiere indholdet af klippebordet ind i stedlinjen og prøve at bruge det som en &URL;.</para
+></important>
+</sect1>
+
+<sect1 id="rmb-menus">
+<title
+><mousebutton
+>Højre</mousebutton
+> museknapmenuer</title>
+
+<para
+>Klik med &RMB;højre museknap næsten hvorsomhelst i &konqueror;'s vindue vil få en passende sammenhængsmenu frem.</para>
+
+<note
+><para
+>Hvis du har aktiveret <guilabel
+>Højreklik går tilbage i historikken</guilabel
+> i &konqueror;'s <link linkend="othersettings"
+> configuration</link
+> opsætning vil et simpelt <mousebutton
+>højre</mousebutton
+>klik være ækvivalent med at klikke på <guibutton
+>Tilbage</guibutton
+>-knappen. I dette tilfælde kan du få adgang til sammenhængsmenuen ved at flytte musen med <mousebutton
+>højre</mousebutton
+> knap holdt nede.</para
+></note>
+
+<variablelist>
+
+<varlistentry>
+<term
+>På titellinjen</term>
+<listitem
+><para
+><mousebutton
+>Højre</mousebutton
+>klik på et frit område af titellinjen får titellinjemenuen frem, som tillader dig at kontrollerer placeringen af &konqueror;'s vindue så vel som de dekorationer som anvendes på alle &kde; programvinduer. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>På hovedværktøjslinjen</term>
+<listitem
+><para
+><mousebutton
+>Højre</mousebutton
+>klik på et frit område af værktøjslinjen får værktøjslinjemenuen frem. Den kan man bruge til at kontrollere om værktøjslinjen er for oven, for neden, til venstre eller til højre for &konqueror;'s vindue. Man kan også bruge værktøjslinjemenuen til at sætte størrelsen af knapperne på værktøjslinjen og om de vises som ikoner, som tekst, eller begge.</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+>På stedlinjen</term>
+<listitem
+><para
+><mousebutton
+>Højre</mousebutton
+>klik i &URL; indtastningsområdet for at udføre Klippe-, Kopiere-, Indsætte- eller Rydde-operationer i dette område, eller for at ændre automatisk <link linkend="path-complete"
+>Tekst-kompletterings</link
+> egenskaberne.</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+>På bogmærkeværktøjslinjen</term>
+<listitem
+><para
+>Hvis du har fået bogmærkeværktøjslinjen til at blive vist, så vil <mousebutton
+>højre</mousebutton
+>klik på en fri del af den få menuen frem, som lader dig ændre dens placering og om punkterne vises som ikoner, tekst eller begge. </para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+>Indenfor en visning</term>
+<listitem
+><para
+>Hvis du <mousebutton
+>højre</mousebutton
+>klikker i et frit område af en fremvisning, så får du en menu, der indeholder blandt andet <guiicon
+>Op</guiicon
+>, <guiicon
+>Tilbage</guiicon
+>, <guiicon
+>Fremad</guiicon
+> og <guiicon
+>Genindlæs</guiicon
+> navigation kommandoerne. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Om en fil eller mappe</term>
+<listitem
+><para
+>Dette er en yderst nyttig egenskab. <mousebutton
+>Højre</mousebutton
+>klik på navnet eller ikonen for en fil eller en mappe ikke blot <quote
+>vælger</quote
+> dette punkt, men det får også en menu frem der tillader dig at <guiicon
+>Klippe</guiicon
+>, Flytte, <guiicon
+>Kopiere</guiicon
+> eller Fjerne punktet på forskellige måder, tilføje det til dine <guimenu
+>Bogmærker</guimenu
+>, åbne det med et program du vælger eller forhåndsvise det, omdøbe det eller redigere filtypen eller egenskaber.</para
+></listitem
+> </varlistentry>
+
+<varlistentry>
+<term
+>Om statuslinjen</term>
+<listitem
+><para
+><mousebutton
+>Højre</mousebutton
+>klik på statuslinjen i bunden af et vindue eller visning for at tilføje eller fjerne en visning indenfor &konqueror;'s vindue.</para
+></listitem
+> 
+</varlistentry>
+</variablelist>
+
+</sect1>
+
+<sect1 id="man-info">
+<title
+>Visning af Hjælp, Man og Info sider</title>
+
+<para
+>Du kan se &kde;-hjælp og &UNIX; Man- og Infosider direkte i &konqueror;, uden at skulle starte <application
+>KHelpCenter</application
+>. </para>
+
+<para
+>For at se en &kde;-hjælpeside, indtastes <userinput
+>help:/<replaceable
+>programnavn</replaceable
+></userinput
+> (for eksempel <userinput
+>help:/kmail</userinput
+> for at se &kmail;'s dokumentation.) i &konqueror;'s stedværktøjslinjes vindue. </para>
+
+<para
+>Hvis du ønsker at læse &UNIX; Man-sider gør &konqueror; det nemt. For eksempel kan du skrive <userinput
+>man/:touch</userinput
+> eller <userinput
+>#touch</userinput
+> i stedlinjen for at se siden for  <command
+>touch</command
+>-kommandoen.</para
+> 
+
+<para
+>For at gennemsøge &UNIX; infosider indtastes <userinput
+>info:/dir</userinput
+> som tager dig til Info's topniveau og så er det blot et spørgsmål om at klikke på det rigtige link for at finde den side du ønsker. Alternativt, bruges <userinput
+>info:/<replaceable
+>kommandonavn</replaceable
+></userinput
+> til at gå direkte til den info-side du ønsker.</para>
+
+<note
+><para
+>Uheldigvis er &kde;'s hjælpesider gemt på en sådan måde at de ikke kan ses i andre browsere. Hvis du har brug for at gøre dette, er din eneste mulighed at gå online og besøge <ulink url="http://docs.kde.org"
+> http://docs.kde.org</ulink
+>.</para
+></note>
+</sect1>
+
+</chapter>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

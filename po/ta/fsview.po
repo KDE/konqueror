@@ -1,0 +1,427 @@
+# translation of fsview.po to 
+# translation of fsview.po to Tamil
+# Copyright (C) 2004 Free Software Foundation, Inc.
+# Vasee Vaseeharan <vasee@ieee.org>, 2004.
+# Ambalam <tamilpc@ambalam.com>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: fsview\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"PO-Revision-Date: 2005-03-14 21:34-0800\n"
+"Last-Translator: Tamil PC <tamilpc@ambalam.com>\n"
+"Language-Team:  <tamilpc@ambalam.com>\n"
+"Language: ta\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "prahalad"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "prahal_1983@yahoo.com"
+
+#: fsview.cpp:35 fsview.cpp:413
+#, kde-format
+msgid "Name"
+msgstr "பெயர்"
+
+#: fsview.cpp:36
+#, kde-format
+msgid "Size"
+msgstr "அளவு"
+
+#: fsview.cpp:37
+#, kde-format
+msgid "File Count"
+msgstr "கோப்பு எண்ணிக்கை"
+
+#: fsview.cpp:38
+#, kde-format
+msgid "Directory Count"
+msgstr "அடைவு எண்ணிக்கை"
+
+#: fsview.cpp:39
+#, kde-format
+msgid "Last Modified"
+msgstr "இறுதியாக மாற்றப்பட்டது"
+
+#: fsview.cpp:40 fsview.cpp:414
+#, kde-format
+msgid "Owner"
+msgstr "உரிமையாளர்"
+
+#: fsview.cpp:41 fsview.cpp:415
+#, kde-format
+msgid "Group"
+msgstr "குழு"
+
+#: fsview.cpp:42 fsview.cpp:416
+#, kde-format
+msgid "Mime Type"
+msgstr "மைம் வகை"
+
+#: fsview.cpp:283
+#, kde-format
+msgid "Go To"
+msgstr "இங்கு செல்"
+
+#: fsview.cpp:284 fsview_part.cpp:106
+#, kde-format
+msgid "Stop at Depth"
+msgstr "ஆழத்தில் நிறுத்து"
+
+#: fsview.cpp:285 fsview_part.cpp:103
+#, kde-format
+msgid "Stop at Area"
+msgstr "பரப்பில் நிறுத்தவும்"
+
+#: fsview.cpp:286
+#, kde-format
+msgid "Stop at Name"
+msgstr "பெயரில் நிறுத்து"
+
+#: fsview.cpp:292
+#, kde-format
+msgid "Go Up"
+msgstr "மேலே செல்"
+
+#: fsview.cpp:294
+#, kde-format
+msgid "Stop Refresh"
+msgstr "புதுப்பிப்பதை நிறுத்து "
+
+#: fsview.cpp:296
+#, kde-format
+msgid "Refresh"
+msgstr "புதுப்பி"
+
+#: fsview.cpp:301
+#, kde-format
+msgid "Refresh '%1'"
+msgstr "புதுப்பி %1'"
+
+#: fsview.cpp:313 fsview_part.cpp:113
+#, kde-format
+msgid "Color Mode"
+msgstr "வண்ண வகை"
+
+#: fsview.cpp:316 fsview_part.cpp:109
+#, kde-format
+msgid "Visualization"
+msgstr "படமாக்கல்"
+
+#: fsview.cpp:411
+#, kde-format
+msgid "None"
+msgstr "ஏதுமில்லை"
+
+#: fsview.cpp:412
+#, kde-format
+msgid "Depth"
+msgstr "ஆழம்"
+
+#: fsview_part.cpp:69
+#, fuzzy, kde-format
+msgid "Read 1 folder, in %2"
+msgid_plural "Read %1 folders, in %2"
+msgstr[0] "%2ல், %1 அடைவுகளை படிக்கவும்"
+
+#: fsview_part.cpp:73
+#, fuzzy, kde-format
+msgid "1 folder"
+msgid_plural "%1 folders"
+msgstr[0] "%1 அடைவுகள்"
+
+#: fsview_part.cpp:87
+#, kde-format
+msgid ""
+"<p>This is the FSView plugin, a graphical browsing mode showing filesystem "
+"utilization by using a tree map visualization.</p><p>Note that in this mode, "
+"automatic updating when filesystem changes are made is intentionally <b>not</"
+"b> done.</p><p>For details on usage and options available, see the online "
+"help under menu 'Help/FSView Manual'.</p>"
+msgstr ""
+"<p>FSகாட்சி சொருகுப்பொருள், மர வரைப்பட காட்சியின் மூலம் கோப்பு அமைப்பு பயன்பாட்டை "
+"காண்பிக்கும் சித்திர உலாவி வகையாகும்.</p><p>இந்த முறையில் கோப்பு அமைப்பில் ஏற்படும் "
+"மாற்றங்களை உடனுக்கு உடன் நிகழாது.</p><p>'உதவி/FSகாட்சி கையேடு'.பயன்பாட்டு விவரங்கள் "
+"மற்றும் கிடைக்கக்கூடிய தேர்வுகளுக்கு வலைதள உதவியை 'உதவி/FSகாட்சி கையேடு' என்ற "
+"மெனுவில் பார்க்கவும்</p>"
+
+#: fsview_part.cpp:119
+#, kde-format
+msgid "&FSView Manual"
+msgstr "&FSகாட்சி கையேடு"
+
+#: fsview_part.cpp:121
+#, kde-format
+msgid "Show FSView manual"
+msgstr "FSகாட்சி கையேட்டை காட்டு"
+
+#: fsview_part.cpp:122
+#, kde-format
+msgid "Opens the help browser with the FSView documentation"
+msgstr "FSகாட்சி ஆவணமாக்கல் உடனான உதவி உலாவியை திறக்கும்"
+
+#: fsview_part.cpp:154
+#, kde-format
+msgctxt "@action:inmenu File"
+msgid "Move to Trash"
+msgstr ""
+
+#: fsview_part.cpp:161
+#, kde-format
+msgctxt "@action:inmenu File"
+msgid "Delete"
+msgstr ""
+
+#: fsview_part.cpp:166
+#, kde-format
+msgctxt "@action:inmenu Edit"
+msgid "&Edit File Type..."
+msgstr ""
+
+#: fsview_part.cpp:170
+#, kde-format
+msgctxt "@action:inmenu File"
+msgid "Properties"
+msgstr ""
+
+#: fsview_part.cpp:203
+#, kde-format
+msgid ""
+"FSView intentionally does not support automatic updates when changes are "
+"made to files or directories, currently visible in FSView, from the "
+"outside.\n"
+"For details, see the 'Help/FSView Manual'."
+msgstr ""
+"வெளியில் இருந்து தற்போது செயலில் உள்ள FSகாட்சியில், கோப்புகளுக்கு அல்லது அடைவுகளுக்கு "
+"தானாகவே நிகழும் மாற்றங்களை FSகாட்சி ஆதரிக்காது.\n"
+"விவரங்களுக்கு Help/FSView Manual 'லை பார்க்க."
+
+#. i18n: ectx: Menu (edit)
+#: fsview_part.rc:4
+#, kde-format
+msgid "&Edit"
+msgstr ""
+
+#. i18n: ectx: Menu (view)
+#: fsview_part.rc:13
+#, fuzzy, kde-format
+msgid "&View"
+msgstr "FSதோற்றம்"
+
+#. i18n: ectx: Menu (help)
+#: fsview_part.rc:20
+#, kde-format
+msgid "&Help"
+msgstr ""
+
+#: main.cpp:23
+#, kde-format
+msgid "FSView"
+msgstr "FSதோற்றம்"
+
+#: main.cpp:24
+#, kde-format
+msgid "Filesystem Viewer"
+msgstr "கோப்பு அமைப்பு பார்வையாளர்"
+
+#: main.cpp:26
+#, kde-format
+msgid "(c) 2002, Josef Weidendorfer"
+msgstr "(c) 2002, ஜாஸ்ஃப் வைடண்டார்ஃபர்"
+
+#: main.cpp:33
+#, kde-format
+msgid "View filesystem starting from this folder"
+msgstr "இந்த அடைவிலிருந்து துவங்கும் கோப்பு அமைப்பின் பார்வை."
+
+#: treemap.cpp:1436
+#, kde-format
+msgid "Text %1"
+msgstr "உரை%1"
+
+#: treemap.cpp:3163
+#, kde-format
+msgid "Recursive Bisection"
+msgstr "திரும்பத் திரும்ப வெட்டுதல்"
+
+#: treemap.cpp:3165
+#, kde-format
+msgid "Columns"
+msgstr "நெடுவரிகள்"
+
+#: treemap.cpp:3167
+#, kde-format
+msgid "Rows"
+msgstr "வரிகள்"
+
+#: treemap.cpp:3169
+#, kde-format
+msgid "Always Best"
+msgstr "எப்போதும் சிறந்தது"
+
+#: treemap.cpp:3171
+#, kde-format
+msgid "Best"
+msgstr "சிறந்த"
+
+#: treemap.cpp:3173
+#, kde-format
+msgid "Alternate (V)"
+msgstr "மாற்று(V)"
+
+#: treemap.cpp:3175
+#, kde-format
+msgid "Alternate (H)"
+msgstr "மாற்று(H)"
+
+#: treemap.cpp:3177
+#, kde-format
+msgid "Horizontal"
+msgstr ""
+
+#: treemap.cpp:3179
+#, kde-format
+msgid "Vertical"
+msgstr ""
+
+#: treemap.cpp:3231
+#, kde-format
+msgid "Nesting"
+msgstr "தங்குதல்"
+
+#: treemap.cpp:3235
+#, kde-format
+msgid "Border"
+msgstr ""
+
+#: treemap.cpp:3238
+#, kde-format
+msgid "Correct Borders Only"
+msgstr "எல்லைகளை மட்டும் திருத்து"
+
+#: treemap.cpp:3241
+#, kde-format
+msgid "Width %1"
+msgstr "அகலம் %1"
+
+#: treemap.cpp:3244
+#, kde-format
+msgid "Allow Rotation"
+msgstr "சுழற்சியை அனுமதிக்கவும்"
+
+#: treemap.cpp:3245
+#, kde-format
+msgid "Shading"
+msgstr "நிழலிடுதல்"
+
+#: treemap.cpp:3256
+#, kde-format
+msgid "Visible"
+msgstr "தெரிகின்ற"
+
+#: treemap.cpp:3257
+#, kde-format
+msgid "Take Space From Children"
+msgstr "குழந்தைகளிடமிருந்து இடத்தை எடுக்கவும்"
+
+#: treemap.cpp:3261
+#, kde-format
+msgid "Top Left"
+msgstr "மேல் இடது"
+
+#: treemap.cpp:3264
+#, kde-format
+msgid "Top Center"
+msgstr "மேல் மையம்"
+
+#: treemap.cpp:3267
+#, kde-format
+msgid "Top Right"
+msgstr "மேல் வலது"
+
+#: treemap.cpp:3270
+#, kde-format
+msgid "Bottom Left"
+msgstr "கீழ் இடது"
+
+#: treemap.cpp:3273
+#, kde-format
+msgid "Bottom Center"
+msgstr "கீழ் மையம்"
+
+#: treemap.cpp:3276
+#, kde-format
+msgid "Bottom Right"
+msgstr "கீழ் வலது"
+
+#: treemap.cpp:3343
+#, kde-format
+msgid "No %1 Limit"
+msgstr "%1எல்லை இல்லை"
+
+#: treemap.cpp:3402
+#, kde-format
+msgid "No Area Limit"
+msgstr "பரப்பு எல்லை இல்லை"
+
+#: treemap.cpp:3408
+#, kde-format
+msgid "Area of '%1' (%2)"
+msgstr "%1' (%2) 'வின் பரப்பு"
+
+#: treemap.cpp:3420 treemap.cpp:3433
+#, fuzzy, kde-format
+msgid "1 Pixel"
+msgid_plural "%1 Pixels"
+msgstr[0] "%1 படத்துணுக்குகள்"
+
+#: treemap.cpp:3437
+#, kde-format
+msgid "Double Area Limit (to %1)"
+msgstr "இரு பரப்பு எல்லை (to %1)"
+
+#: treemap.cpp:3439
+#, kde-format
+msgid "Halve Area Limit (to %1)"
+msgstr "அரைப்பரப்பு எல்லை(to %1)"
+
+#: treemap.cpp:3475
+#, kde-format
+msgid "No Depth Limit"
+msgstr "ஆழ எல்லை இல்லை"
+
+#: treemap.cpp:3481
+#, kde-format
+msgid "Depth of '%1' (%2)"
+msgstr "'%1' (%2)'னின் ஆழம்"
+
+#: treemap.cpp:3493 treemap.cpp:3506
+#, kde-format
+msgid "Depth %1"
+msgstr "ஆழம் %1"
+
+#: treemap.cpp:3510
+#, kde-format
+msgid "Decrement (to %1)"
+msgstr "%1'ற்கு குறைக்கவும்"
+
+#: treemap.cpp:3512
+#, kde-format
+msgid "Increment (to %1)"
+msgstr "%1'ற்கு கூட்டல்"
+
+#~ msgid "Filesystem Utilization Viewer"
+#~ msgstr "கோப்பு அமைப்பின் பயன்பாடு காட்சியகம்"
+
+#~ msgid "(c) 2003-2005, Josef Weidendorfer"
+#~ msgstr "(c) 2003-2005, Josef Weidendorfer"

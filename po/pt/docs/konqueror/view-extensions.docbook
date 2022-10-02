@@ -1,0 +1,177 @@
+<chapter id="view-extensions">
+
+<title
+>Extensões dos Modos de Visualização</title>
+
+<!--filemanager mode:
+default Icons/Details/Columns (Dolphin), File Size View (konq-plugins)
+additional Terminal Emulator (Konsole), File Replace View (kdewebdev), Cervisia (kdesdk), Radial Map (Filelight-kdeutils) and more
+browser mode:
+default KHTML, WebKit, Embedded Advanced Text Editor
+additional KImageMapEditor+KLinkStatusPart (kdewebdev) and more
+  -->
+<para
+>O &konqueror; oferece vistas adicionais no menu <menuchoice
+><guimenu
+>Ver</guimenu
+> <guisubmenu
+>Modo de Visualização</guisubmenu
+></menuchoice
+> do modo de gestão de ficheiros e navegação Web, caso estejam instaladas as aplicações e 'plugins' correspondentes.</para>
+<para
+>O modo de gestão de ficheiros tem as vistas adicionais <guimenuitem
+>Mapa Radial</guimenuitem
+> da aplicação <application
+>Filelight</application
+> e o 'plugin' do &konqueror; para a <guimenuitem
+>Vista do Tamanho de Ficheiros</guimenuitem
+>.</para>
+
+<sect1 id="fsview">
+<sect1info>
+<authorgroup>
+<author
+><personname
+><firstname
+>Josef</firstname
+> <surname
+>Weidendorfer</surname
+></personname
+> <address
+><email
+>Josef.Weidendorfer@gmx.de</email
+></address
+> </author>
+
+</authorgroup>
+<date
+>2011-05-16</date>
+<releaseinfo
+>&kde; 4.7</releaseinfo>
+</sect1info>
+
+<title
+>&fsview; - A Vista do Sistema de Ficheiros</title>
+<sect2>
+<title
+>Introdução</title>
+
+<para
+>O 'plugin' do &fsview; para o &konqueror; é outro modo de visualização para os objectos do tipo MIME <literal
+>inode/directory</literal
+> locais. Pode ser visto como uma alternativa para as várias vistas de ícones e de listas para navegar no conteúdo do seu sistema de ficheiros local.</para>
+
+<para
+>A propriedade única do &fsview; é a sua capacidade de mostrar as hierarquias aninhadas de pastas por completo usando uma visualização em árvore para a representação gráfica. As árvores permitem mostrar as métricas dos objectos em estruturas aninhadas: cada objecto é representado por um rectângulo cuja área é proporcional à sua métrica. A métrica deverá ter a propriedade de que a soma das métricas dos filhos de qualquer objecto seja igual ou inferior à métrica do objecto.</para>
+
+<para
+>Para o &fsview;, os tamanhos dos ficheiros e das pastas são escolhidos como métrica, onde o tamanho de uma pasta é definido como sendo a soma dos tamanhos dos seus sub-itens. Desta forma, os ficheiros grandes, mesmo que estejam no fundo da hierarquia de pastas serão localizados facilmente se procurar pelos rectângulos grandes. Assim, o &fsview; poderá ser visto como uma versão gráfica e interactiva do comando do &UNIX; <command
+>du</command
+>.</para>
+
+<para
+>A integração do &fsview; como parte do Konqueror permite-lhe usar as funcionalidades normais como os menus de contexto dos ficheiros ou as acções dependentes do tipo MIME. Mas optou-se por não implementar a actualização automática das modificações do sistema de ficheiros através da vigia: se você apagar um ficheiro mostrado no &fsview; fora do &konqueror;, você terá de actualizar manualmente ao carregar &eg; em <keycap
+>F5</keycap
+>. A razão para esta decisão é a quantidade potencialmente enorme de ficheiros que teriam de ser vigiados o que, por isso, colocar uma pressão pouco razoável dos recursos do sistema numa funcionalidade pequena.</para>
+
+</sect2>
+
+<sect2>
+<title
+>Funcionalidades de Visualização</title>
+
+<para
+>Esta secção explica em detalhe a visualização gráfica do &fsview;.</para>
+
+<sect3>
+<title
+>Opções de Desenho do Item</title>
+
+<para
+>No &fsview;, um item da árvore é um rectângulo que representa uma pasta ou ficheiro do seu sistema de ficheiros. Para uma navegação mais simples, os rectângulos têm uma coloração e uma legendagem compreensíveis.</para>
+
+<para
+>A cor de um rectângulo, alterável através do item do menu <menuchoice
+><guimenu
+>Ver</guimenu
+><guisubmenu
+>Modo da Cor</guisubmenu
+></menuchoice
+> pode tanto ser a <guimenuitem
+>Profundidade</guimenuitem
+> para uma detecção simples do aninhamento, ou um mapeamento em cores dos diferentes atributos dos ficheiros, como o nome, o dono, o grupo ou o tipo MIME.</para>
+
+<para
+>Um rectângulo poderá ser legendado com os vários atributos do ficheiro ou pasta correspondente. Para um dado atributo, você pode escolher se este é mostrado de todo, só se tiver espaço ou se o mesmo espaço deverá ser retirado dos filhos (introduzindo deste modo erros nas representações de árvores puras). Para além disso, você pode escolher a localização relativa do texto no rectângulo.</para>
+
+</sect3>
+
+<sect3>
+<title
+>Algoritmos de Desenho da Árvore</title>
+
+<para
+>Para os algoritmos de desenho de árvores, a regra é que a área é proporcional à métrica de um item e esta regra deve ser mantida como verdadeira. Com a árvore do &fsview;, este objectivo nem sempre é conseguido: são desenhados contornos para mostrar o aninhamento dos itens, e este contorno ocupa espaço para um item, espaço esse que é possivelmente perdido para as áreas dos itens-filhos. Lembre-se que é perdido menos espaço para o contorno se o rectângulo for um quadrado.</para>
+
+<para
+>De forma semelhante, é bom para um melhor visão geral deixar que todos os rectângulos tenham o seu nome como legenda, a ocupar espaço também. É uma opção forçar sempre o espaço para as legendas ou apenas desenhar as legendas quando existir espaço vazio disponível. No último caso, as dicas que aparecem quando o rato é passado por cima de um item poderão ajudar bastante. Estas mostram informações sobre o item onde o rato se encontra, em conjunto com as suas relações com os seus pais até ao item de topo da árvore.</para>
+
+<para
+>Como é dividido o espaço de um item em sub-áreas para os filhos é deixado a cargo da implementação. É sempre melhor tentar dividir as áreas de forma a que os rectângulos sejam tão quadrados quanto possível, tanto para legendar como para poupar em espaço perdido nos contornos. Os melhores métodos neste aspectos são as <guilabel
+>Linhas</guilabel
+>, <guilabel
+>Colunas</guilabel
+> ou <guilabel
+>Bissecção Recursiva</guilabel
+>.</para>
+
+<para
+>Você poderá escolher a área mínima dos itens a desenhar com o item de menu <menuchoice
+><guimenu
+>Ver</guimenu
+><guimenuitem
+>Parar na Área</guimenuitem
+></menuchoice
+>. Nesse caso, será desenhado um padrão de dispersão sobre a área dos pais para assinalar que este espaço é, de facto, ocupado por um filho.</para>
+
+</sect3>
+
+</sect2>
+
+<sect2>
+<title
+>Interface do Utilizador</title>
+
+<para
+>O &fsview; suporta a selecção de vários itens, da mesma forma que a vista de ícones e da lista. Isto permite efectuar várias acções em simultâneo sobre um conjunto de ficheiros. Se carregar uma única vez no botão do rato, irá seleccionar sempre um único item por baixo do cursor do rato. Se carregar uma vez no botão do rato enquanto carrega na tecla &Shift;, poderá fazer uma selecção por intervalos, ou usar a tecla &Ctrl; para comutar a selecção. Lembre-se que, se seleccionar um item, não poderá seleccionar mais os seus sub-itens. A selecção de um item irá também limpar a selecção de todos os seus itens-pais.</para>
+
+<para
+>Está disponível a navegação pelo teclado nas árvores: use as teclas de cursores <keycap
+>Esquerda</keycap
+> e <keycap
+>Direita</keycap
+> para mover o item actual entre os itens no mesmo nível, bem como as teclas <keycap
+>Cima</keycap
+> e <keycap
+>Baixo</keycap
+> para subir e descer na hierarquia de aninhamento. O <keycap
+>Espaço</keycap
+> selecciona o item; em conjunto com a tecla &Shift;, faz a selecção de intervalos, e com a tecla &Ctrl; comuta a selecção do item actual. Carregue em  <keycap
+>Return</keycap
+> para correr a acção de abertura no item actual.</para>
+
+</sect2>
+
+<sect2>
+<title
+>Créditos e Licença</title>
+<para
+>Originalmente, o &fsview; era suposto ser uma pequena aplicação de teste e um tutorial de utilização para o elemento gráfico TreeMap desenvolvido para o <application
+>KCachegrind</application
+>.</para>
+<para
+>Copyright de Josef Weidendorfer, licenciado segundo a GPL V2.</para>
+</sect2>
+
+</sect1>
+</chapter>

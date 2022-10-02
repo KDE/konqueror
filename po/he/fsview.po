@@ -1,0 +1,429 @@
+# translation of fsview.po to Hebrew
+# translation of fsview.po to hebrew
+# Diego Iastrubni <elcuco@kde.org>, 2004.
+# Diego Iastrubni <elcuco@kde.org>, 2005, 2012.
+# Elkana Bardugo <ttv200@gmail.com>, 2017. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: fsview\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"PO-Revision-Date: 2017-05-24 06:42-0400\n"
+"Last-Translator: Elkana Bardugo <ttv200@gmail.com>\n"
+"Language-Team: Hebrew <kde-i18n-doc@kde.org>\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Zanata 3.9.6\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "צוות התרגום של KDE ישראל"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kde-l10n-he@kde.org"
+
+#: fsview.cpp:35 fsview.cpp:413
+#, kde-format
+msgid "Name"
+msgstr "שם"
+
+#: fsview.cpp:36
+#, kde-format
+msgid "Size"
+msgstr "גודל"
+
+#: fsview.cpp:37
+#, kde-format
+msgid "File Count"
+msgstr "כמות קבצים"
+
+#: fsview.cpp:38
+#, kde-format
+msgid "Directory Count"
+msgstr "כמות ספריות"
+
+#: fsview.cpp:39
+#, kde-format
+msgid "Last Modified"
+msgstr "שונה לאחרונה"
+
+#: fsview.cpp:40 fsview.cpp:414
+#, kde-format
+msgid "Owner"
+msgstr "בעלים"
+
+#: fsview.cpp:41 fsview.cpp:415
+#, kde-format
+msgid "Group"
+msgstr "קבוצה"
+
+#: fsview.cpp:42 fsview.cpp:416
+#, kde-format
+msgid "Mime Type"
+msgstr "טיפוס נתונים"
+
+#: fsview.cpp:283
+#, kde-format
+msgid "Go To"
+msgstr "עבור אל"
+
+#: fsview.cpp:284 fsview_part.cpp:106
+#, kde-format
+msgid "Stop at Depth"
+msgstr "עצור בעומק"
+
+#: fsview.cpp:285 fsview_part.cpp:103
+#, kde-format
+msgid "Stop at Area"
+msgstr "עצור באזור"
+
+#: fsview.cpp:286
+#, kde-format
+msgid "Stop at Name"
+msgstr "עצור בשם"
+
+#: fsview.cpp:292
+#, kde-format
+msgid "Go Up"
+msgstr "מעלה"
+
+#: fsview.cpp:294
+#, kde-format
+msgid "Stop Refresh"
+msgstr "עצור רענון"
+
+#: fsview.cpp:296
+#, kde-format
+msgid "Refresh"
+msgstr "רענן"
+
+#: fsview.cpp:301
+#, kde-format
+msgid "Refresh '%1'"
+msgstr "רענן %1"
+
+#: fsview.cpp:313 fsview_part.cpp:113
+#, kde-format
+msgid "Color Mode"
+msgstr "מצב צבעים"
+
+#: fsview.cpp:316 fsview_part.cpp:109
+#, kde-format
+msgid "Visualization"
+msgstr "תצוגה"
+
+#: fsview.cpp:411
+#, kde-format
+msgid "None"
+msgstr "חסר שם"
+
+#: fsview.cpp:412
+#, kde-format
+msgid "Depth"
+msgstr "עומק"
+
+#: fsview_part.cpp:69
+#, kde-format
+msgid "Read 1 folder, in %2"
+msgid_plural "Read %1 folders, in %2"
+msgstr[0] "נקראה תיקייה אחת, ב־%2"
+msgstr[1] "נקראו %1 תיקיות ב־%2"
+
+#: fsview_part.cpp:73
+#, kde-format
+msgid "1 folder"
+msgid_plural "%1 folders"
+msgstr[0] "תיקייה אחת"
+msgstr[1] "%1 תיקיות"
+
+#: fsview_part.cpp:87
+#, kde-format
+msgid ""
+"<p>This is the FSView plugin, a graphical browsing mode showing filesystem "
+"utilization by using a tree map visualization.</p><p>Note that in this mode, "
+"automatic updating when filesystem changes are made is intentionally <b>not</"
+"b> done.</p><p>For details on usage and options available, see the online "
+"help under menu 'Help/FSView Manual'.</p>"
+msgstr ""
+"<p>זהו תוסף FSView, המראה באופן גרפי את השימוש במערכת הקבצים בתצוגת מפה </p> "
+"<p> שים לב שמצב <b>לא נעשים</b> עדכונים, כאשר נעשים שינויים במערכת הקבצים.</"
+"p><p>לקבל פרטים אודות שימוש שאפשרויות קיימות, ניתן להסתכל בתפריט העזרה תחת: "
+"\"עזרה/מדריך FSView\". </p>"
+
+#: fsview_part.cpp:119
+#, kde-format
+msgid "&FSView Manual"
+msgstr "מדריך &FSView"
+
+#: fsview_part.cpp:121
+#, kde-format
+msgid "Show FSView manual"
+msgstr "הצב מדריך FSView"
+
+#: fsview_part.cpp:122
+#, kde-format
+msgid "Opens the help browser with the FSView documentation"
+msgstr "פותח את העזרה עם התיעוד של FSView "
+
+#: fsview_part.cpp:154
+#, kde-format
+msgctxt "@action:inmenu File"
+msgid "Move to Trash"
+msgstr "העברה לאשפה"
+
+#: fsview_part.cpp:161
+#, kde-format
+msgctxt "@action:inmenu File"
+msgid "Delete"
+msgstr "מחק"
+
+#: fsview_part.cpp:166
+#, kde-format
+msgctxt "@action:inmenu Edit"
+msgid "&Edit File Type..."
+msgstr "&ערוך את סוג הקובץ..."
+
+#: fsview_part.cpp:170
+#, kde-format
+msgctxt "@action:inmenu File"
+msgid "Properties"
+msgstr "מאפיינים"
+
+#: fsview_part.cpp:203
+#, kde-format
+msgid ""
+"FSView intentionally does not support automatic updates when changes are "
+"made to files or directories, currently visible in FSView, from the "
+"outside.\n"
+"For details, see the 'Help/FSView Manual'."
+msgstr ""
+"התוכנה FSView  לא תומכת בעדכון אוטומטי כאשר נעשים שינוים מבחוץ בקבצים או "
+"ספריות הנראים בתוכנה בכוונה.\n"
+"לקבלת פרטים, נא עיין בעזרה תחת \"עזרה/מדריך FSView\""
+
+#. i18n: ectx: Menu (edit)
+#: fsview_part.rc:4
+#, kde-format
+msgid "&Edit"
+msgstr "&עריכה"
+
+#. i18n: ectx: Menu (view)
+#: fsview_part.rc:13
+#, kde-format
+msgid "&View"
+msgstr "&תצוגה"
+
+#. i18n: ectx: Menu (help)
+#: fsview_part.rc:20
+#, kde-format
+msgid "&Help"
+msgstr "&עזרה"
+
+#: main.cpp:23
+#, kde-format
+msgid "FSView"
+msgstr "FSView"
+
+#: main.cpp:24
+#, kde-format
+msgid "Filesystem Viewer"
+msgstr "מציג מערכת קבצים"
+
+#: main.cpp:26
+#, kde-format
+msgid "(c) 2002, Josef Weidendorfer"
+msgstr "(c) 2002, Josef Weidendorfer"
+
+#: main.cpp:33
+#, kde-format
+msgid "View filesystem starting from this folder"
+msgstr "הצג את המערכת קבצים מהתיקייה הזאת"
+
+#: treemap.cpp:1436
+#, kde-format
+msgid "Text %1"
+msgstr "טקסט %1"
+
+#: treemap.cpp:3163
+#, kde-format
+msgid "Recursive Bisection"
+msgstr "חלק רקורסיבי"
+
+#: treemap.cpp:3165
+#, kde-format
+msgid "Columns"
+msgstr "עמודות"
+
+#: treemap.cpp:3167
+#, kde-format
+msgid "Rows"
+msgstr "שורות"
+
+#: treemap.cpp:3169
+#, kde-format
+msgid "Always Best"
+msgstr "תמיד הכי טוב"
+
+#: treemap.cpp:3171
+#, kde-format
+msgid "Best"
+msgstr "הכי טוב"
+
+#: treemap.cpp:3173
+#, kde-format
+msgid "Alternate (V)"
+msgstr "אלטרנטיבי (מאוזן)"
+
+#: treemap.cpp:3175
+#, kde-format
+msgid "Alternate (H)"
+msgstr "אלטרנטיבי (מאונך)"
+
+#: treemap.cpp:3177
+#, kde-format
+msgid "Horizontal"
+msgstr "אופקי"
+
+#: treemap.cpp:3179
+#, kde-format
+msgid "Vertical"
+msgstr "אנכי"
+
+#: treemap.cpp:3231
+#, kde-format
+msgid "Nesting"
+msgstr "מקונן"
+
+#: treemap.cpp:3235
+#, kde-format
+msgid "Border"
+msgstr "מסגרת"
+
+#: treemap.cpp:3238
+#, kde-format
+msgid "Correct Borders Only"
+msgstr "תקן מסגרות בלבד"
+
+#: treemap.cpp:3241
+#, kde-format
+msgid "Width %1"
+msgstr "רוחב %1"
+
+#: treemap.cpp:3244
+#, kde-format
+msgid "Allow Rotation"
+msgstr "אפשר סיבוב"
+
+#: treemap.cpp:3245
+#, kde-format
+msgid "Shading"
+msgstr "הצללה"
+
+#: treemap.cpp:3256
+#, kde-format
+msgid "Visible"
+msgstr "נראה"
+
+#: treemap.cpp:3257
+#, kde-format
+msgid "Take Space From Children"
+msgstr "קח מקום מצאצאים"
+
+#: treemap.cpp:3261
+#, kde-format
+msgid "Top Left"
+msgstr "עליון שמאלי"
+
+#: treemap.cpp:3264
+#, kde-format
+msgid "Top Center"
+msgstr "עליון ממורכז"
+
+#: treemap.cpp:3267
+#, kde-format
+msgid "Top Right"
+msgstr "עליון ימני"
+
+#: treemap.cpp:3270
+#, kde-format
+msgid "Bottom Left"
+msgstr "תחתון שמאלי"
+
+#: treemap.cpp:3273
+#, kde-format
+msgid "Bottom Center"
+msgstr "תחתון ממורכז"
+
+#: treemap.cpp:3276
+#, kde-format
+msgid "Bottom Right"
+msgstr "תחתון ימני"
+
+#: treemap.cpp:3343
+#, kde-format
+msgid "No %1 Limit"
+msgstr "בלי גבול %1"
+
+#: treemap.cpp:3402
+#, kde-format
+msgid "No Area Limit"
+msgstr "אין שטח הגבלה"
+
+#: treemap.cpp:3408
+#, kde-format
+msgid "Area of '%1' (%2)"
+msgstr "שטח \"%1\" (%2)"
+
+#: treemap.cpp:3420 treemap.cpp:3433
+#, kde-format
+msgid "1 Pixel"
+msgid_plural "%1 Pixels"
+msgstr[0] "פיקסל אחד"
+msgstr[1] "%1 פיקסלים"
+
+#: treemap.cpp:3437
+#, kde-format
+msgid "Double Area Limit (to %1)"
+msgstr "גבול שטח כפול  (עד %1)"
+
+#: treemap.cpp:3439
+#, kde-format
+msgid "Halve Area Limit (to %1)"
+msgstr "גבול חצי שטח  (עד %1)"
+
+#: treemap.cpp:3475
+#, kde-format
+msgid "No Depth Limit"
+msgstr "ללא הגבלת עומק"
+
+#: treemap.cpp:3481
+#, kde-format
+msgid "Depth of '%1' (%2)"
+msgstr "עומק של \"%1\" (%2("
+
+#: treemap.cpp:3493 treemap.cpp:3506
+#, kde-format
+msgid "Depth %1"
+msgstr "עומק %1"
+
+#: treemap.cpp:3510
+#, kde-format
+msgid "Decrement (to %1)"
+msgstr "הורד (אל %1)"
+
+#: treemap.cpp:3512
+#, kde-format
+msgid "Increment (to %1)"
+msgstr "הוסף (אל %1)"
+
+#~ msgid "Filesystem Utilization Viewer"
+#~ msgstr "מציג שימוש במערכת קבצים"
+
+#~ msgid "(c) 2003-2005, Josef Weidendorfer"
+#~ msgstr "(c) 2003-2005, Josef Weidendorfer"

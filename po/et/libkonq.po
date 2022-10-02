@@ -1,0 +1,426 @@
+# translation of libkonq.po to Estonian
+# Copyright (C) 1999,2002, 2003 Free Software Foundation, Inc.
+#
+# Hasso Tepper <hasso@linux.ee>, 1999.
+# Hasso Tepper <hasso@estpak.ee>, 2002.
+# Marek Laane <bald@starman.ee>, 2003-2005,2007-2009.
+# Marek Laane <bald@smail.ee>, 2009, 2010, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2011-12-20 18:53+0200\n"
+"Last-Translator: Marek Laane <bald@smail.ee>\n"
+"Language-Team: Estonian <kde-et@linux.ee>\n"
+"Language: et\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "&Ava"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "Loo kataloo&g..."
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "&Taasta"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr "Näita algset kataloogi"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr "Näita algset faili"
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "T&ühjenda prügikast"
+
+#: src/konq_popupmenu.cpp:312
+#, kde-format
+msgid "&Configure Trash Bin"
+msgstr "&Prügikasti seadistamine"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "Lis&a see lehekülg järjehoidjatesse"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "Lis&a see asukoht järjehoidjatesse"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "Lis&a see kataloog järjehoidjatesse"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "Lis&a see viit järjehoidjatesse"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "Lis&a see fail järjehoidjatesse"
+
+#: src/konq_popupmenu.cpp:379
+#, kde-format
+msgid "Preview In"
+msgstr "Eelvaatlus rakenduses"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "&Omadused"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy To"
+#~ msgstr "Kopeeri"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "Liiguta"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "Kodukataloog"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "Juurkataloog"
+
+#~ msgctxt "@title:menu in Copy To or Move To submenu"
+#~ msgid "Browse..."
+#~ msgstr "Sirvi..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "Kopeeri siia"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "Liiguta siia"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "Sa ei saa kataloogi iseendasse lohistada"
+
+#~ msgid "File name for dropped contents:"
+#~ msgstr "Lohistatud sisu failinimi:"
+
+#~ msgid "&Move Here"
+#~ msgstr "&Liiguta siia"
+
+#~ msgid "&Copy Here"
+#~ msgstr "&Kopeeri siia"
+
+#~ msgid "&Link Here"
+#~ msgstr "&Lingi siia"
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "Sea &taustapildiks"
+
+#~ msgid "C&ancel"
+#~ msgstr "&Loobu"
+
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "Loo kataloog"
+
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "Sisesta muu nimi"
+
+#~ msgid ""
+#~ "The name \"%1\" starts with a dot, so the directory will be hidden by "
+#~ "default."
+#~ msgstr ""
+#~ "Nimi \"%1\" algab punktiga, mistõttu kataloog on vaikimisi peidetud."
+
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "Kas luua peidetud kataloog?"
+
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "Uus kataloog"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "Uus kataloog"
+
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "Kataloogi nimi:"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "Aseta üks kataloog"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One File"
+#~ msgstr "Aseta üks fail"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Item"
+#~ msgid_plural "Paste %1 Items"
+#~ msgstr[0] "Aseta üks element"
+#~ msgstr[1] "Aseta %1 elementi"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste Clipboard Contents..."
+#~ msgstr "Aseta lõikepuhvri sisu..."
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste"
+#~ msgstr "Aseta"
+
+#~ msgid ""
+#~ "Restores this file or directory, back to the location where it was "
+#~ "deleted from initially"
+#~ msgstr "Faili või kataloogi taastamine asukohta, kust see algselt kustutati"
+
+#~ msgid ""
+#~ "Opens a new file manager window showing the target of this link, in its "
+#~ "parent directory."
+#~ msgstr ""
+#~ "Uue failihalduri akna avamine, mis näitab lingi sihtmärki selle "
+#~ "eellaskataloogis."
+
+#~ msgid "Share"
+#~ msgstr "Jagamine"
+
+#~ msgctxt "@info"
+#~ msgid "Close"
+#~ msgstr "Sulgemine"
+
+#~ msgid "Close"
+#~ msgstr "Sulgemine"
+
+#~ msgid "Error: %1"
+#~ msgstr "Tõrge: %1"
+
+#~ msgid "Create New"
+#~ msgstr "Loo uus"
+
+#~ msgid "Link to Device"
+#~ msgstr "Viit seadmele"
+
+#~ msgid "<qt>The template file <b>%1</b> does not exist.</qt>"
+#~ msgstr "<qt>Mallifaili <b>%1</b> ei ole olemas.</qt>"
+
+#~ msgid "File name:"
+#~ msgstr "Faili nimi:"
+
+#~ msgid ""
+#~ "Basic links can only point to local files or directories.\n"
+#~ "Please use \"Link to Location\" for remote URLs."
+#~ msgstr ""
+#~ "Lihtlingid võivad osutada ainult kohalikele failidele või kataloogidele.\n"
+#~ "Võrgu-URL-ide puhul kasuta valikut \"Viit asukohale\"."
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Actions"
+#~ msgstr "&Toimingud"
+
+#~| msgid "&Open With"
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With"
+#~ msgstr "Ava &rakendusega"
+
+#~| msgid "&Other..."
+#~ msgctxt "@action:inmenu Open With"
+#~ msgid "&Other..."
+#~ msgstr "&Muu..."
+
+#~| msgid "&Open With..."
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With..."
+#~ msgstr "A&va rakendusega..."
+
+#~ msgid "Open &with %1"
+#~ msgstr "Ava &rakendusega %1"
+
+#~ msgid "Open in New &Window"
+#~ msgstr "Ava &uues aknas"
+
+#~ msgid "Open the trash in a new window"
+#~ msgstr "Ava prügikast uues aknas"
+
+#~ msgid "Open the medium in a new window"
+#~ msgstr "Ava andmekandja uues aknas"
+
+#~ msgid "Open the document in a new window"
+#~ msgstr "Ava dokument uues aknas"
+
+#~ msgid "Directory"
+#~ msgstr "Kataloog"
+
+#~ msgid "Moving"
+#~ msgstr "Liigutamine"
+
+#~ msgid "Source"
+#~ msgstr "Lähtekoht"
+
+#~ msgid "Destination"
+#~ msgstr "Sihtkoht"
+
+#~ msgid "Deleting"
+#~ msgstr "Kustutamine"
+
+#~ msgid "File"
+#~ msgstr "Fail"
+
+#~ msgid "Und&o"
+#~ msgstr "&Võta tagasi"
+
+#~ msgid "Und&o: Copy"
+#~ msgstr "&Võta tagasi: Kopeeri"
+
+#~ msgid "Und&o: Link"
+#~ msgstr "&Võta tagasi: Lingi"
+
+#~ msgid "Und&o: Move"
+#~ msgstr "&Võta tagasi: Liiguta"
+
+#~ msgid "Und&o: Rename"
+#~ msgstr "&Võta tagasi: Nimeta ümber"
+
+#~ msgid "Und&o: Trash"
+#~ msgstr "&Võta tagasi: Viska prügikasti"
+
+#~ msgid "Und&o: Create Folder"
+#~ msgstr "&Võta tagasi: Loo kataloog"
+
+#~ msgid ""
+#~ "The file %1 was copied from %2, but since then it has apparently been "
+#~ "modified at %3.\n"
+#~ "Undoing the copy will delete the file, and all modifications will be "
+#~ "lost.\n"
+#~ "Are you sure you want to delete %4?"
+#~ msgstr ""
+#~ "Fail %1 kopeeriti asukohast %2, aga pärast seda on seda asukohas %3 "
+#~ "nähtavasti muudetud.\n"
+#~ "Kopeerimise tagasivõtmine kustutab faili ja kõik muudatused lähevad "
+#~ "kaotsi.\n"
+#~ "Kas tõesti kustutada %4?"
+
+#~ msgid "Undo File Copy Confirmation"
+#~ msgstr "Faili kopeerimise tagasivõtmise kinnitus"
+
+#~ msgid "Do you really want to delete this item?"
+#~ msgid_plural "Do you really want to delete these %1 items?"
+#~ msgstr[0] "Kas tõesti kustutada see element?"
+#~ msgstr[1] "Kas tõesti kustutada need %1 elementi?"
+
+#~ msgid "Delete Files"
+#~ msgstr "Failide kustutamine"
+
+#~ msgid "Do you really want to move this item to the trash?"
+#~ msgid_plural "Do you really want to move these %1 items to the trash?"
+#~ msgstr[0] "Kas tõesti visata see element prügikasti?"
+#~ msgstr[1] "Kas tõesti visata need %1 elementi prügikasti?"
+
+#~ msgid "Move to Trash"
+#~ msgstr "Prügikasti viskamine"
+
+#~ msgctxt "Verb"
+#~ msgid "&Trash"
+#~ msgstr "&Viska prügikasti"
+
+#, fuzzy
+#~| msgid "Und&o"
+#~ msgid "Und&o: %1"
+#~ msgstr "&Võta tagasi"
+
+#~ msgid "Background Settings"
+#~ msgstr "Tausta seadistused"
+
+#~ msgid "Background"
+#~ msgstr "Taust"
+
+#~ msgid "Co&lor:"
+#~ msgstr "&Värv:"
+
+#~ msgid "&Picture:"
+#~ msgstr "&Pilt:"
+
+#~ msgid "Preview"
+#~ msgstr "Eelvaatlus"
+
+#~ msgid "None"
+#~ msgstr "Puudub"
+
+#~ msgid "Enlarge Icons"
+#~ msgstr "Ikoonid suuremaks"
+
+#~ msgid "Shrink Icons"
+#~ msgstr "Ikoonid väiksemaks"
+
+#~ msgid "&Default Size"
+#~ msgstr "&Vaikesuurus"
+
+#~ msgid "&Huge"
+#~ msgstr "&Hiiglaslik"
+
+#~ msgid "&Very Large"
+#~ msgstr "Vä&ga suur"
+
+#~ msgid "&Large"
+#~ msgstr "&Suur"
+
+#~ msgid "&Medium"
+#~ msgstr "&Keskmine"
+
+#~ msgid "&Small"
+#~ msgstr "&Väike"
+
+#~ msgid "&Tiny"
+#~ msgstr "&Tilluke"
+
+#~ msgid "Configure Background..."
+#~ msgstr "Tausta seadistamine..."
+
+#~ msgid "Allows choosing of background settings for this view"
+#~ msgstr "Võimaldab valida selle vaate tausta seadistused"
+
+#~ msgid "<p>You do not have enough permissions to read <b>%1</b></p>"
+#~ msgstr "<p>Sul ei ole piisavalt õigusi, et lugeda asukohta <b>%1</b1></p>"
+
+#~ msgid "<p><b>%1</b> does not seem to exist anymore</p>"
+#~ msgstr "<p><b>%1</b> ei paista enam eksisteerivat</p>"
+
+#~ msgid "Search result: %1"
+#~ msgstr "Otsingu tulemus: %1"
+
+#~ msgid "Do you really want to shred this item?"
+#~ msgid_plural "Do you really want to shred these %1 items?"
+#~ msgstr[0] "Soovid sa tõesti selle elemendi hävitada?"
+#~ msgstr[1] "Soovid sa tõesti need %1 elementi hävitada?"
+
+#~ msgid "Shred Files"
+#~ msgstr "Failide hävitamine"
+
+#~ msgid "Shred"
+#~ msgstr "Hävita"

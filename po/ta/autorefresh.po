@@ -1,0 +1,97 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: autorefresh\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2004-08-09 23:49--800\n"
+"Last-Translator: I. Felix <ifelix25@yahoo.co.in>\n"
+"Language-Team: KDE <kde-i18n-doc@kde.org>\n"
+"Language: ta\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: autorefresh.cpp:28
+#, kde-format
+msgid "&Auto Refresh"
+msgstr "&தானாக புதுப்பி "
+
+#: autorefresh.cpp:32
+#, kde-format
+msgid "None"
+msgstr "ஏதுமில்லை"
+
+#: autorefresh.cpp:33
+#, kde-format
+msgid "Every 15 Seconds"
+msgstr "ஒவ்வொரு 15  நொடிகளும் "
+
+#: autorefresh.cpp:34
+#, kde-format
+msgid "Every 30 Seconds"
+msgstr "ஒவ்வொரு 30 நொடிகளும் "
+
+#: autorefresh.cpp:35
+#, kde-format
+msgid "Every Minute"
+msgstr "ஒவ்வொரு ஒரு நிமிடமும்"
+
+#: autorefresh.cpp:36
+#, kde-format
+msgid "Every 5 Minutes"
+msgstr "ஒவ்வொரு 5 நிமிடமும்"
+
+#: autorefresh.cpp:37
+#, kde-format
+msgid "Every 10 Minutes"
+msgstr "ஒவ்வொரு 15 நொடிகளும் "
+
+#: autorefresh.cpp:38
+#, kde-format
+msgid "Every 15 Minutes"
+msgstr "ஒவ்வொரு 15 நிமிடமும்"
+
+#: autorefresh.cpp:39
+#, kde-format
+msgid "Every 30 Minutes"
+msgstr "ஒவ்வொரு 30 நிமிடமும்"
+
+#: autorefresh.cpp:40
+#, kde-format
+msgid "Every 60 Minutes"
+msgstr "ஒவ்வொரு 60 நிமிடமும்"
+
+#: autorefresh.cpp:41
+#, fuzzy, kde-format
+#| msgid "Every 5 Minutes"
+msgid "Every 2 Hours"
+msgstr "ஒவ்வொரு 5 நிமிடமும்"
+
+#: autorefresh.cpp:42
+#, fuzzy, kde-format
+#| msgid "Every 60 Minutes"
+msgid "Every 6 Hours"
+msgstr "ஒவ்வொரு 60 நிமிடமும்"
+
+#: autorefresh.cpp:100
+#, fuzzy, kde-format
+#| msgid "Cannot Refresh Source"
+msgctxt "@title:window"
+msgid "Cannot Refresh Source"
+msgstr "மூலத்தை புதுப்பிக்க முடியவில்லை"
+
+#: autorefresh.cpp:101
+#, kde-format
+msgid "<qt>This plugin cannot auto-refresh the current part.</qt>"
+msgstr "<qt> தற்போதைய பகுதியை தானாக புதுப்பிக்க முடியாது </qt>"
+
+#. i18n: ectx: Menu (tools)
+#: autorefresh.rc:5
+#, kde-format
+msgid "&Tools"
+msgstr ""

@@ -1,0 +1,136 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Spanish "INCLUDE"
+> <!-- change language only here -->
+]>
+<!-- extragear has another adblock ? -->
+<article lang="&language;" id="khtml-adblock">
+<articleinfo>
+<title
+>Filtros AdBlocK</title>
+<authorgroup>
+<author
+>&Krishna.Tateneni; &Krishna.Tateneni.mail;</author>
+<othercredit role="translator"
+> <firstname
+>Rocío</firstname
+> <surname
+>Gallego</surname
+> <affiliation
+><address
+><email
+>traducciones@rociogallego.com</email
+></address
+></affiliation
+> <contrib
+>Traductora</contrib
+> </othercredit
+><othercredit role="translator"
+> <firstname
+>Pablo</firstname
+> <surname
+>de Vicente</surname
+> <affiliation
+><address
+><email
+>pablo.devicente@gmail.com</email
+></address
+></affiliation
+> <contrib
+>Traductor</contrib
+> </othercredit
+> <othercredit role="translator"
+> <firstname
+>Marcos</firstname
+> <surname
+>Fouces Lago</surname
+> <affiliation
+><address
+><email
+>mfouces@yahoo.es</email
+></address
+></affiliation
+> <contrib
+>Traductor</contrib
+> </othercredit
+> 
+</authorgroup>
+
+<date
+>2016-11-08</date>
+<releaseinfo
+>Aplicaciones 16.12</releaseinfo>
+</articleinfo>
+
+<para
+>&konqueror; AdBlock puede ser configurado para reemplazar o eliminar imágenes o marcos de las páginas web que coincidan con una serie de filtros.</para>
+
+<para
+>La opción <guilabel
+>Activar filtros</guilabel
+> activa o desactiva el uso de los filtros.</para>
+<para
+>Si está activada la opción <guilabel
+>Ocultar imágenes filtradas</guilabel
+> las imágenes bloqueadas se eliminan por completo de la página y el espacio se recupera. Si la opción está desactivada entonces se utiliza el espacio de las imagenes filtradas.</para>
+
+<variablelist>
+<varlistentry id="khtml-adblock-manual">
+<term
+><guilabel
+>Filtro manual</guilabel
+></term>
+<listitem>
+<para
+>La mayor parte de esta pestaña es una lista de URLs que se compararán con las imágenes y nombres de los marcos para decidir acciones de filtrado. Se pueden utilizar comodines en el nombre del archivo al estilo de las expresiones regulares.</para>
+
+<para
+>Cada filtro puede ser expresado como una cadena que contenga un estilo de archivo que incluya comodines (ejem: http://www.site.com/ads/*) o como una expresión regular completa encerrada entre paréntesis (ejem: //(ads|dclk)\./).</para>
+
+<para
+>Cualquier cadena de filtro puede estar precedida por <literal
+>@@</literal
+> para añadir a la lista blanca (permitir) cualquier &URL; que coincida, y tendrá prioridad sobre cualquier filtro de la lista negra (bloquear).</para>
+
+<para
+><guilabel
+>Importar</guilabel
+> and <guilabel
+>Exportar</guilabel
+> guardan o leen la lista actual de filtros en un archivo de texto sin formato. El archivo empieza con una línea de cabecera <userinput
+>[AdBlock]</userinput
+>, después le siguen todos los filtros, uno en cada línea. Las líneas que comiencen por una exclamación (<userinput
+>!</userinput
+>) se tratarán como comentarios y podrán utilizarse para aclarar o etiquetar un conjunto de filtros.</para>
+
+<para
+>Resaltar una entrada de la lista para cambiarla en la caja de edición o borrar ese elemento. Introduzca una nueva cadena de filtro y añádala a la lista utilizando el botón <guibutton
+>Insertar</guibutton
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry id="khtml-adblock-automatic">
+<term
+><guilabel
+>Filtro automático</guilabel
+></term>
+<listitem>
+<para
+>Esta pestaña muestra una lista de nombres y &URL; con entradas predefinidas del filtro AdBlock. Para activar una entrada, marque la casilla de verificación situada junto al nombre del filtro y ajuste el <guilabel
+>Intervalo de actualización automática</guilabel
+> (el predeterminado es de 7 días). </para>
+</listitem>
+</varlistentry>
+  
+</variablelist>
+
+<para
+>Si los filtros de AdBlock están activados, se muestra un icono en la derecha de la barra de estado. Haga clic sobre dicho icono con el &RMB; para abrir el menú de contexto con acciones para mostrar todos los elementos que se pueden bloquear en una página web, abrir este módulo de &systemsettings; y desactivar el bloqueo para un sitio o página de manera tempora.</para>
+
+<para
+>Un clic con el &LMB; también muestra el diálogo con todos los elementos que se pueden bloquear en la página web que está abierta. Desde dicho diálogo, puede añadir nuevos filtros directamente sin abrir este módulo de &systemsettings;.</para>
+
+</article>

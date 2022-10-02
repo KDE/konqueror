@@ -1,0 +1,856 @@
+<chapter id="plugins">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+&traducteurJoelleCornavin; &traducteurGerardDelafond;&traducteurLudovicGrossard; 
+</authorgroup>
+
+<date
+>22/11/2011</date>
+<releaseinfo
+>&kde; 4.8</releaseinfo>
+</chapterinfo>
+
+
+<title
+>Modules externes</title>
+
+<sect1 id="netscape-plugin">
+<title
+>Modules externes de &Netscape;</title>
+
+<para
+>Actuellement, &konqueror; fonctionne avec les modules externes de &Netscape;.</para>
+
+<para
+>En choisissant <menuchoice
+><guimenu
+>Configuration</guimenu
+><guimenuitem
+>Configurer Konqueror…</guimenuitem
+></menuchoice
+>, une boîte de dialogue de configuration s'ouvre. Choisissez la page <guilabel
+>Modules externes</guilabel
+>, qui contient deux onglets : <guilabel
+>Configuration globale</guilabel
+> pour activer les modules externes et configurer la façon dont ils sont utilisés dans &konqueror;, et <guilabel
+>Modules</guilabel
+>, qui vous affiche les modules externes de &Netscape; que &kde; a trouvé, et vous permet de trouver de nouveaux modules.</para>
+
+<para
+>Pour davantage d'informations, voyez la page d'aide <ulink url="help:/kcontrol/khtml-plugins/index.html"
+>Raccourcis Web</ulink
+>.</para>
+
+</sect1>
+
+<!-- 
+missing from extragear base:
+imagerotation context menu Actions -> Convert to -> JPEG,PNG,GIF,TIFF 
+(rotation disabled)
+
+minitools (Bookmarklets - Enables the use of bookmarklets)
+This plugin adds implementation for so-called bookmarklets. Bookmarklets are little
+Javascript programs which can be saved and used like normal web page bookmarks. Therefore,
+they are simple "one-click" tools that can add substantial functionality to the browser.
+http://blog.ssokolow.com/archives/2007/01/30/konqueror-with-bookmarklets/
+
+autorefresh
+This works on any readonly part (though currently it only plugs into
+khtmlpart). It lets you tell konqueror to refresh a page automatically
+after a specific period. This is useful for things like news pages,
+and should be very nice for people using kiosk mode
+
+searchbar
+Comment=Provides a text box for easier access to search engines like Google.
+
+rellinks
+Name=Document Relations
+Comment=Displays the document relations of a document
+
+adblock from baseapps+extragear
+Show all blockable html elements
+
+akregator
+This works on KHTMLPart and allows you to add feeds to Akregator directly from Konqueror.
+
+not ported to kde4 yet
+sidebar
+microformat
+mediarealfolder
+<listitem>
+<para
+><ulink url="help:/konq-plugins/mediaplayer/index.html"
+>The Embedded Media
+Player</ulink
+></para>
+
+konq plugins in other modules
+kdeutils 
+  filelight
+  ark?
+
+kdebase apps
+  kttsdplugin (browser mode ?)
+  shellcmdplugin (file manager mode)
+  
+kdenetwork
+  kget (browser mode)
+-->
+
+<sect1 id="konq-plugin">
+<title
+>Modules externes de &konqueror;</title>
+
+<para
+>&kde; fournit plusieurs modules utiles qui interagissent avec &konqueror; de différentes manières. Ils sont décrits brièvement ci-dessous.</para>
+
+<para
+>Utilisez <menuchoice
+><guimenu
+>Configuration</guimenu
+><guimenuitem
+>Configurer les extensions…</guimenuitem
+></menuchoice
+> pour ouvrir une boîte de dialogue listant tous les modules installés et choisissez ceux dont vous avez besoin. Tous les modules sont accessibles dans le menu <guimenu
+>Outils</guimenu
+>.</para>
+
+<para
+>Seuls les modules appropriés pour le type d'affichage actuel (gestionnaire de fichiers ou navigateur) sont listés dans cette boîte de dialogue.</para>
+
+<variablelist>
+<title
+>Mode navigateur</title>
+<varlistentry>
+<term
+>Traduction de pages web</term>
+<listitem
+><para
+>Celui-ci le service de traduction automatique fourni par <ulink url="http://fr.babelfish.yahoo.com/"
+>le site BabelFish de Yahoo</ulink
+> pour traduire la page <acronym
+>HTML</acronym
+> actuelle dans toute langue que vous désirez (dans les limites du raisonnable). Lancez-le avec <menuchoice
+><guimenu
+>Outils</guimenu
+><guisubmenu
+>Traduire la page web</guisubmenu
+></menuchoice
+>.</para>
+<para
+>Si vous avez une partie du texte de la page qui est sélectionné, il sera traduit à la place de l'&URL; entière.</para>
+
+<para
+>Toutes les langues ne sont pas disponibles à partir du service Babelfish.</para>
+
+<important>
+<para
+>La traduction automatique n'est pas une science parfaite ! Babelfish vous donneras au mieux une traduction approximative et au pire un texte très drôle à lire. Ne basez pas vos décisions importantes sur des choses que vous avez lu à partir d'une page traduite par Babelfish sans avoir la confirmation que la traduction est effectivement précise.</para>
+</important>
+
+<note
+> 
+<para
+>Il n'est possible de traduire que des pages web qui sont accessibles sur l'internet. Pour la traduction de tout autre texte, il est nécessaire de se rendre directement sur le site de Babelfish lui-même, ou il vous est possible de coller du texte à traduire.</para>
+</note>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Afficheur d'arborescence DOM</term>
+<listitem>
+<para
+>L'afficheur de l'arborescence <acronym
+>DOM</acronym
+> permet à un développeur de voir les styles, attributs et éléments d'un document web.</para>
+<para
+>Le choix de <menuchoice
+><guimenu
+>Outils</guimenu
+><guisubmenu
+>Afficher l'arborescence DOM</guisubmenu
+></menuchoice
+> ouvre une nouvelle fenêtre affichant le modèle d'objet de document (DOM) de la page <acronym
+>HTML</acronym
+> actuelle.</para>
+<para
+>Par défaut, l'affichage commence au nœud racine du document, par exemple <quote
+>documentElement</quote
+>. Tous les autres nœuds que vous verrez sont des enfants ou des descendants du nœud racine.</para>
+<para
+>Si vous souhaitez manipuler l'arborescence <acronym
+>DOM</acronym
+>, vous aurez de toutes façons à utiliser un script externe.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Validation de pages web</term>
+<listitem>
+<para
+>Ce module externe utilise le validateur HTML du W3C pour valider la page actuelle. Ceci est très utile lorsque vous créez des pages web.</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guimenuitem
+>Validation &HTML; (par URI)</guimenuitem
+> / <guimenuitem
+>Validation &HTML; (par téléversement)</guimenuitem
+></term>
+<listitem
+><para
+>L'option validation &HTML; vous permet de comparer votre document &HTML; à la syntaxe définie de &HTML;, et de rapporter toute erreur trouvée. La validation de votre &HTML; vous garantit que vos pages s'afficheront correctement sur tous les navigateurs.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Validation CSS (par URI)</guimenuitem
+></term>
+<listitem
+><para
+>Vous permet de vérifier la validité de votre feuille de style &CSS; incorporée dans votre document &HTML; ou &XHTML;. Avoir une feuille de style &CSS; valable est critique afin de vous assurer que votre site web aura une apparence cohérente quel que soit le navigateur utilisé.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Valider les liens</guimenuitem
+></term>
+<listitem
+><para
+>Vous permet de confirmer que les liens sur votre site ne contiennent pas de redirections ou liens cassés. Cet outils vérifie récursivement tous les liens sur un site.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Validation de la page</guimenuitem
+></term>
+<listitem
+><para
+>Valide la page actuelle, mais n'affiche pas le résultat dans une autre fenêtre ou un autre onglet comme les actions précédentes. Utiliser cet élément active l'action <guimenuitem
+>Afficher le rapport de validation</guimenuitem
+> pour voir un résumé de la validation.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Configurer le validateur</guimenuitem
+></term>
+<listitem
+><para
+>L'élément « Configurer le validateur » vous permet de voir les modèles de validation que vous pouvez utiliser pour valider vos documents &HTML; et &CSS;.</para
+></listitem>
+</varlistentry>
+</variablelist>
+</listitem>
+<!-- icon W3 right in statusbar
+&LBM; click context menu with items above but no Configure Validator
+ -->
+</varlistentry>
+
+<varlistentry>
+<term
+>Configuration HTML</term>
+<listitem
+><para
+>Choisissez <menuchoice
+><guimenu
+>Outils</guimenu
+><guisubmenu
+>Configuration HTML</guisubmenu
+></menuchoice
+> pour activer ou désactiver certains réglages HTML sans passer par la boîte de dialogue <guimenu
+>Configuration</guimenu
+>. </para>
+<variablelist>
+<varlistentry>
+<term
+><guimenuitem
+>JavaScript</guimenuitem
+></term>
+<listitem
+><para
+>Permet d'activer / désactiver la gestion de JavaScript de &konqueror;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Java</guimenuitem
+></term>
+<listitem
+><para
+>Permet d'activer / désactiver la gestion de &Java; de &konqueror;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Cookies</guimenuitem
+></term>
+<listitem
+><para
+>Permet d'activer / désactiver la gestion des cookies de &konqueror;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Modules externes</guimenuitem
+></term>
+<listitem
+><para
+>Permet d'activer / désactiver la gestion des modules externes de &konqueror; que vous avez installés.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Chargement automatique des images</guimenuitem
+></term>
+<listitem
+><para
+>Permet d'activer / désactiver le chargement des images dans les pages web.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Activer les serveurs mandataires (proxy)</guimenuitem
+></term>
+<listitem
+><para
+>Permet d'activer / désactiver l'utilisation d'un serveur mandataire (proxy) par le navigateur web &konqueror;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Activer le cache</guimenuitem
+></term>
+<listitem
+><para
+>Permet d'activer / désactiver l'utilisation du cache par le navigateur web &konqueror;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Gestion du cache</guimenuitem
+></term>
+<listitem>
+<para
+>Le sous-menu « Gestion du cache » fournit un moyen de configurer comment &konqueror; utilise son cache. Les différentes possibilités sont : </para>
+<itemizedlist>
+<listitem
+><para
+>Assurer la synchronisation du cache</para
+></listitem>
+<listitem
+><para
+>Utiliser le cache si possible</para
+></listitem>
+<listitem
+><para
+>Navigation hors-ligne</para
+></listitem>
+</itemizedlist>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Changement de l'agent utilisateur</term>
+<listitem
+><para
+>Choisissez <menuchoice
+><guimenu
+>Outils</guimenu
+><guisubmenu
+>Modifier l'identité du navigateur</guisubmenu
+></menuchoice
+> pour obtenir un menu permettant de changer la chaîne Identité du navigateur sans passer par la procédure de la boîte de dialogue <guimenu
+>Configuration</guimenu
+>. </para>
+<para
+>Le module externe vous permet de changer l'identité du navigateur et du système d'exploitation, domaine par domaine. Ceci est utile lorsque vous consultez des sites qui limitent l'accès à ceux qui utilisent un navigateur web particulier.</para>
+<variablelist>
+<varlistentry>
+<term
+><guimenuitem
+>Identification par défaut</guimenuitem
+></term>
+<listitem
+><para
+>L'en-tête par défaut de l'agent utilisateur de &konqueror; est Mozilla/5.0(compatible;Konqueror/4.7)(KHTML/4.7, like Gecko). Si vous consultez un site que refuse l'accès à ce navigateur, modifier votre agent utilisateur pour l'une des options ci-dessous.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Sous-menu navigateur</term>
+<listitem
+><para
+>Les éléments de menu suivants montrent un grand nombre de navigateurs populaires, comme <guimenuitem
+>Firefox</guimenuitem
+>, <guimenuitem
+>Internet Explorer</guimenuitem
+>, <guimenuitem
+>Netscape Navigator</guimenuitem
+>, <guimenuitem
+>Opera</guimenuitem
+>, <guimenuitem
+>Autre</guimenuitem
+>, et <guimenuitem
+>Safari</guimenuitem
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Appliquer au site entier</guimenuitem
+></term>
+<listitem
+><para
+>Cette option vous permet de spécifier que l'agent utilisateur défini s'applique à toutes les pages du site que vous visitez.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Configurer...</guimenuitem
+></term>
+<listitem
+><para
+>En choisissant <guimenuitem
+>Configurer...</guimenuitem
+>, une boîte de dialogue de configuration s'ouvre et vous permet de régler finement la quantité d'informations que vous souhaitez révéler concernant votre navigateur et votre système d'exploitation utilisés.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Archiver des pages web</term>
+<listitem
+><para
+>Exécuté au moyen de <menuchoice
+><guimenu
+>Outils</guimenu
+><guisubmenu
+>Archiver la page web</guisubmenu
+></menuchoice
+>, cet outil crée un fichier d'archive (<literal role="extension"
+>.war</literal
+> ) contenant la page web actuellement affichées, y compris les images. Un clic <mousebutton
+>gauche</mousebutton
+> sur le nom du fichier affiche la page enregistrée. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<variablelist>
+<title
+>Mode gestionnaire de fichiers</title>
+
+<varlistentry>
+<term
+>Filtre d'affichage des dossiers</term>
+<listitem
+><para
+>Celui-ci est contrôlé par <menuchoice
+><guimenu
+>Outils</guimenu
+><guisubmenu
+>Filtre d'affichage</guisubmenu
+></menuchoice
+> et permet de choisir quels types d'éléments sont affichés dans un dossier.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Galerie d'images</term>
+<listitem
+><para
+>En mode gestionnaire de fichiers, choisissez<menuchoice
+><guimenu
+>Outils</guimenu
+><guisubmenu
+>Créer une galerie d'images</guisubmenu
+></menuchoice
+> ou utilisez <keycombo
+>&Ctrl;<keycap
+>I</keycap
+></keycombo
+> pour créer une page HTML avec des vignettes de toutes les images dans le dossier actuel. Par défaut, la page HTML est appelée <filename
+>images.html</filename
+> et les vignettes sont placées dans un nouveau dossier intitulé <filename
+>images</filename
+>.</para>
+<para
+>Quand vous lancez le module externe de galerie d'image, une boîte de dialogue s'ouvre pour vous permettre de préciser comment la galerie sera créée.</para>
+
+<variablelist id="page_look_dialog">
+<title
+>Apparence de la page</title>
+<varlistentry>
+<term
+>La boîte de dialogue d'apparence sert à régler l'apparence de la galerie.</term>
+<listitem>
+  
+<screenshot>
+<screeninfo
+>Capture d'écran de la boîte de dialogue d'apparence de la page</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="look.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Capture d'écran</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Titre de la page</guimenuitem
+></term>
+<listitem
+><para
+>Cette option permet de modifier le titre de la galerie d'image.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Nombre d'images par ligne</guimenuitem
+></term>
+<listitem
+><para
+>L'option images par ligne dispose d'un curseur et d'un compteur pour ajuster le nombre d'aperçus affichés par ligne dans la galerie.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Afficher le nom du fichier image</guimenuitem
+></term>
+<listitem
+><para
+>Cette option permet d'afficher (ou pas) le nom du fichier image sous les aperçus de la galerie.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Afficher la taille du fichier image</guimenuitem
+></term>
+<listitem
+><para
+>Cette option permet d'afficher (ou pas) la taille du fichier image sous les aperçus de la galerie.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Afficher les dimensions de l'image</guimenuitem
+></term>
+<listitem
+><para
+>Cette option permet d'afficher (ou pas) les dimensions de l'image en pixels sous les aperçus de la galerie.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Nom de la police</guimenuitem
+></term>
+<listitem
+><para
+>Cette option permet de choisir la police à utiliser dans la galerie.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Taille de la police</guimenuitem
+></term>
+<listitem
+><para
+>Cette option permet de modifier la taille de la police sélectionnée.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Couleur du texte</guimenuitem
+></term>
+<listitem
+><para
+>Cette option permet de choisir la couleur du texte affiché dans la galerie.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Couleur du fond</guimenuitem
+></term>
+<listitem
+><para
+>Cette option permet de choisir la couleur de fond utilisée dans la galerie.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<variablelist id="folders_dialog">
+<title
+>Dossiers</title>
+<varlistentry>
+<term
+>La boîte de dialogue des dossiers sert à régler où enregistrer la galerie ainsi que les dossiers utilisés.</term>
+<listitem>
+  
+<screenshot>
+<screeninfo
+>Capture d'écran de la boîte de dialogue des dossiers</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="folders.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Capture d'écran</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Enregistrer dans un fichier HTML</guimenuitem
+></term>
+<listitem
+><para
+>Cette option permet de choisir où enregistrer la galerie d'image sous forme d'une page html.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Parcourir les sous-dossiers</guimenuitem
+></term>
+<listitem
+><para
+>Cette option permet de choisir s'il faut parcourir les sous-dossiers. Si cette option est activée, un curseur et un compteur vous permettent de spécifier le nombre de niveau à parcourir.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Copier les fichiers originaux</guimenuitem
+></term>
+<listitem
+><para
+>Cette option permet de choisir si la galerie utilisera un dossier contenant une copie des images originales.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Utiliser un fichier de commentaires</guimenuitem
+></term>
+<listitem
+><para
+>Cette option permet d'utiliser un fichier de commentaires à utiliser avec la galerie. Ce fichier contient les sous-titres des images.</para>
+<para
+>Le format de ce fichier est : </para>
+<programlisting
+># ceci est un commentaire, les lignes commençant par « # » sont ignorées
+NOMDEFICHIER1:
+Description
+
+NOMDEFICHIER2:
+Description
+</programlisting>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+<variablelist id="thumbnails_dialog">
+<title
+>Aperçus</title>
+<varlistentry>
+<term
+>La boîte de dialogue des aperçus sert à régler les propriétés des aperçus dans la galerie.</term>
+<listitem>
+  
+<screenshot>
+<screeninfo
+>Capture d'écran de la boîte de dialogue des aperçus</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="thumbnails.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Capture d'écran</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Format des images pour les vignettes</guimenuitem
+></term>
+<listitem
+><para
+>Cette option permet de choisir le format utilisé pour les vignettes.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Taille des aperçus</guimenuitem
+></term>
+<listitem
+><para
+>L'option taille des miniatures fournit un curseur et un compteur pour ajuster la taille des aperçus utilisée dans la galerie.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Déterminer une profondeur de couleurs différente</guimenuitem
+></term>
+<listitem
+><para
+>Cette option permet de déterminer une profondeur de couleurs différente pour les aperçus si vous voulez la modifier par rapport à l'image d'origine.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</listitem>
+</varlistentry>
+
+<!--How to enable ???-->
+<varlistentry>
+<term
+>Barre de recherche</term>
+<listitem
+><para
+>Fournit une boîte de texte pour un accès facile aux moteurs de recherche comme google. En cliquant sur l'icône à gauche de la boîte de recherche, un menu s'ouvre afin de choisir et activer différents moteurs de recherche et configurer leurs <ulink url="help:/kcontrol/ebrowsing/index.html"
+>raccourcis clavier</ulink
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Module de ligne de commande</term>
+<listitem
+><para
+>Ce module vous permet d'exécuter une commande shell dans le dossier actuel et d'afficher la sortie dans une fenêtre séparée. </para
+></listitem>
+</varlistentry>
+
+<!--not build in 4.4
+<varlistentry>
+<term
+>Sidebar Media Player</term>
+<listitem
+><para
+>This is a simple media player, embedded as a tab page in the
+Sidebar. You can drag songs or videos onto this page to play them.
+</para
+></listitem>
+</varlistentry>
+-->
+</variablelist>
+
+</sect1>
+
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

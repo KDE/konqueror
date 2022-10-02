@@ -1,0 +1,452 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Norwegian-Bokmal "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="kcmcss" lang="&language;">
+<articleinfo>
+<title
+>Utseende</title>
+<authorgroup>
+<author
+>&Lauri.Watts; &Lauri.Watts.mail;</author>
+<othercredit role="translator"
+> <firstname
+>Bjørn</firstname
+><surname
+>Steensrud</surname
+><affiliation
+> <address
+><email
+>bjornst@skogkatt.homelinux.org</email
+></address
+></affiliation
+><contrib
+>Oversettelse</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2009-12-01</date>
+<releaseinfo
+>&kde; 4.4</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>CSS</keyword>
+<keyword
+>Utseende</keyword>
+<keyword
+>Skrift</keyword>
+<keyword
+>CSS</keyword>
+<keyword
+>Stilsett</keyword>
+<keyword
+>Tilgjengelighet</keyword>
+</keywordset>
+
+</articleinfo>
+
+<sect1 id="appearance">
+<title
+>Utseende</title>
+<para
+>Denne modulen har tre faneblad med oppsettsvalg for hvordan nettsider skal vises.</para>
+
+<sect2 id="general">
+<title
+>Generelt</title
+> <!-- modified copy from khtml/index.docbook <sect2 id="kbrowse-html"-->
+
+<para
+>Med avkryssingsboksen <guilabel
+>Last bilder automatisk</guilabel
+> kan du bestemme om bilder på nettsider skal lastes inn som standard. Det er kanskje best å la dette være slått på, hvis du ikke har en svært langsom nettilkobling, for det er mange nettsider som er vanskelige å bruke uten bilder. Hvis du slår av valget om å  laste bilder automatisk kan du likevel se teksten på sida og så laste inn bildene hvis du trenger dem.</para>
+
+<para
+><guilabel
+>Tegn ramme rundt bilder som ikke er fullstendig lastet</guilabel
+> gjør at &konqueror; tegner en ramme som plassholder for bilder i en nettside som ennå ikke er helt lastet inn. Dette bør være på for å få en bedre nettlesing, spesielt hvis nettforbindelsen er langsom.</para>
+
+<para
+>Mange nettsider bruker animerte gif-bilder, og disse kan være temmelig plagsomme og bruke mye systemressurser. Valget <guilabel
+>Animasjoner</guilabel
+> kan brukes til å velge når animasjoner er slått på. Standard er på, men du kan velge å slå det av eller vise animasjon bare én gang, selv om selve fila inneholder kommandoer om at animasjonen skal kjøres flere ganger eller kontinuerlig.</para>
+
+<para
+>Neste innstilling er <guilabel
+>Understrek lenker:</guilabel
+>. Du kan velge å la dette være <guilabel
+>Slått på</guilabel
+>. Da vil all tekst på nettsida som fungerer som en lenke bli vist med understreket skrift. Noen nettsider bruker farger til å fremheve tekst som er lenker, men understreking gjør det svært lett å se lenker.</para>
+
+<para
+>Liker du ikke understrekede lenker kan du la det være <guilabel
+>Slått av</guilabel
+>, så ingen lenker er understreket. Eller du kan velge en middelvei, <guilabel
+>Bare under musepekeren</guilabel
+>, slik at lenker er understreket når musepekeren er over dem og ellers ikke.</para>
+
+<note
+><para
+>CSS-definisjonene for nettstedet kan overstyre dette.</para
+></note>
+
+<para
+><guilabel
+>Jevn rulling</guilabel
+> bestemmer om &konqueror; skal bruke jevn rulling på &HTML;-sider eller flytte sida i hele skritt: <itemizedlist>
+<listitem
+><para
+><guilabel
+>Alltid</guilabel
+>: Bruk alltid jevne steg under rulling.</para
+></listitem>
+<listitem
+><para
+><guilabel
+>Aldri</guilabel
+>: Bruk aldri jevn rulling, rull med hele steg i stedet.</para
+></listitem>
+<listitem
+><para
+><guilabel
+>Når effektivt</guilabel
+>: Bruk bare jevn rulling på sider der det kan oppnås med moderat bruk av systemressurser.</para
+></listitem>
+</itemizedlist>
+</para>
+
+</sect2>
+
+<sect2 id="fonts"
+> <!-- modified copy from khtml/index.docbook <sect2 id="kbrowse-appearance"-->
+<title
+>Skrifter</title>
+<para
+>På dette fanebladet kan du sette opp en del valg om bruken av skrifter. Selv om nettsider ofte selv bestemmer form og størrelse på skrifter i sin utforming kan du velge noen standarder som &konqueror; kan bruke.</para>
+
+<para
+>Det første du kan sette opp her er skriftstørrelsen- Det er to innstillinger som samarbeider for å gjøre det lett å lese nettsidene.</para>
+
+<para
+>Først kan du sette opp en <guilabel
+>Minimum skriftstørrelse</guilabel
+>. Dette betyr at selv om skriftstørrelsen er bestemt fra før i den nettsida du ser på, så vil &konqueror; ignorere det og aldri vise mindre skriftstørrelser en det du bestemmer her.</para>
+
+<para
+>Deretter kan du stille inn en <guilabel
+>Middels skriftstørrelse</guilabel
+>. Dette er standardstørrelsen når nettsida ikke angir en skriftstørrelse, men det er også basis-størrelsen som er utgangspunkt for relative størrelser. Dvs. &HTML;-instruksjonen «smaller» betyr mindre størrelse enn den som er satt opp her.</para>
+
+<para
+>I begge feltene kan du velge nøyaktig skriftstørrelse i punkter ved å bruke telleboksen (eller bare skrive) ved siden av etiketten.</para>
+
+<para
+>Disse valgene er uavhengige av hverandre. Sider som ikke bestemmer en skriftstørrelse, eller ber om standardstørrelsen, blir vist med størrelsen du angir som <guilabel
+>Middels skriftstørrelse</guilabel
+>, mens sider som ber om en størrelse mindre enn <guilabel
+>Minimum skriftstørrelse</guilabel
+> vises med den størrelsen i stedet. Det ene påvirker ikke det andre.</para>
+
+<para
+>De resterende valgene er for skrifter som tilknyttes forskjellig oppmerking brukt på &HTML;-sider. Merk at mange nettsider kan overstyre disse innstillingene. I alle skriftvalgene (Standard, fast, serif osv) kan du velge en annen skrift om du vil.</para>
+
+<para
+>Nedenfor dette kan du angi en <guilabel
+>Justering av skriftstørrelsen for denne tegnkodingen</guilabel
+>. Noen ganger er den skriften du vil bruke for en bestemt tegnkoding eller språk mye større eller mindre enn gjennomsnittlig, så du kan bruke denne innstillingen for å få riktig størrelse.</para>
+
+<para
+>Du kan oppgi en standard tegnkoding som &konqueror; skal anta at sider har når den tegner dem opp. Standardinnstillingen er <guilabel
+>Bruk språktegnsett</guilabel
+>, men du kan endre det til alle tegnkodinger tilgjengelige i lista.</para>
+
+</sect2>
+
+<sect2 id="stylesheets">
+
+<title
+>Stilsett</title>
+
+<sect3>
+<title
+>Innledning</title>
+
+<para
+><acronym
+>CSS</acronym
+> stilsett påvirker hvordan nettsider vises. <acronym
+>CSS</acronym
+> står for <emphasis
+>C</emphasis
+>ascading <emphasis
+>S</emphasis
+>tyle <emphasis
+>S</emphasis
+>heets.</para>
+
+<para
+>&kde; kan bruke sitt eget stilsett, basert på enkle standardvalg og det fargeoppsettet du bruker for skrivebordet. &kde; kan også bruke et stilsett du har skrevet selv. Endelig kan du oppgi et stilark i denne modulen. Valgene som er vist i denne modulen er  innstilt for gpd tilgjengelighet, spesielt for synshemmede.</para>
+
+<para
+>De valg du gjør her påvirker alle &kde;-programmer som tegner opp HTML med &kde;s egen opptegner, som heter kthml. Disse er blant andre &kmail;, &khelpcenter; og selvsagt &konqueror;. Valgene her påvirker ikke andre nettlesere slik som &Netscape;.</para>
+
+</sect3>
+
+<sect3 id="css-general">
+<title
+>Stilsett</title>
+
+<para
+>Dette avsnittet har følgende valg:</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Bruk standardstilsett</guilabel
+></term>
+<listitem>
+<para
+>&kde; vil bruke standard-stilsettet. Noen av fargene blir som standard de du har definert i ditt fargeoppsett. De fleste innstillingene kan lett overstyres av den sida du ser på.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Bruk selvvalgte stilsett</guilabel
+></term>
+<listitem>
+<para
+>&kde; vil bruke et stilsett du har skrevet selv. Du kan bruke bla-knappen til å finne stilsettet på systemet ditt. <acronym
+>CSS</acronym
+>-filer har tradisjonelt fil-etternavnet <literal role="extension"
+>.css</literal
+>, men dette er ikke påkrevet.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Bruk tilgjengelighets-stilsett</guilabel
+></term>
+<listitem>
+<para
+>Bruk innstillingene definert i <guilabel
+>Tilpass …</guilabel
+>-dialogen. Når du slår på dette valget blir knappen <guibutton
+>Tilpass …</guibutton
+> slått på og kan starte en dialog som definerer stilsett-innstillinger.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect3>
+
+<sect3 id="css-customize">
+<title
+>Tilpass</title>
+
+<para
+>I denne dialogen kan du sette opp et bruker-stilsett. Valgene som er tilgjengelige er bare en delmengde av de instruksjonene du kan legge inn i et stilsett, og de er rettet mot folk med redusert syn, slik at brukere kan lage et stilsett som gjør det lettere å lese nettsider og &kde; hjelpefiler.</para>
+
+<para
+>Valgene i denne dialogen er slått av hvis du ikke har valgt <guilabel
+>Bruk tilgjengelighets-stilsett</guilabel
+>.</para>
+
+<sect4>
+<title
+><guilabel
+>Skriftfamilie</guilabel
+></title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Basis-familie</guilabel
+></term>
+<listitem>
+<para
+>Velg en skriftfamilie som skal brukes for brødtekst.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Bruk samme familie for all tekst</guilabel
+></term>
+<listitem>
+<para
+>Hvis du slår på dette, så blir samme skriftfamilie brukt for all tekst, uansett innstillinger på den sida du ser på. Dette kan være nyttig for sider som har brukt en dekorativ skrift eller vanskelig lesbar skrift for overskrifter.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect4>
+
+<sect4>
+<title
+>Skriftstørrelse</title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Grunnskriftstørrelse</guilabel
+></term>
+<listitem>
+<para
+>Dette er standardstørrelsen for tekst på sida. Mange nettsider oppgir sine skriftstørrelser relative til denne standardstørrelsen, og bruker <quote
+>larger</quote
+> eller <quote
+>+1</quote
+> for å gjøre teksten større, og <quote
+>smaller</quote
+> eller <quote
+>-1</quote
+> for å gjøre teksten mindre.</para>
+<para
+>Mange lager sine nettsider på plattformer der den vanlige standard tekststørrelsen er for stor til at den jevne bruker vil lese den, så det er svært vanlig å treffe på nettsider som tvinger fram en mindre skrift på denne måten.</para>
+<para
+>Denne innstillingen kan du bruke til å gi standardskriften en komfortabel størrelse, slik at de relative størrelsene også blir store nok til å være behagelige.</para>
+<para
+>Ikke glem at du også kan få &konqueror; til å håndheve en minstestørrelse, slik at tekst <emphasis
+>aldri</emphasis
+> blir for liten til å kunne leses. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Bruk samme størrelse på alle elementer</guilabel
+></term>
+<listitem>
+<para
+>Hvis du slår på dette blir all tekst vist med den oppgitte skriftstørrelsen, uansett hvilke instruksjoner sida inneholder. Relative skriftstørrelse som drøftet over, og til og med instruksjoner om at teksten skal vises med en bestemt størrelse, vil bli overstyrt.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect4>
+
+<sect4>
+<title
+>Bilder</title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Ikke vis bilder</guilabel
+></term>
+<listitem>
+<para
+>Hvis du ikke vil se bilder kan du slå det av her.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Ikke vis bakgrunnsbilder</guilabel
+></term>
+<listitem>
+<para
+>Et stort problem for mange synshemmede brukere er at bakgrunnsbilder ikke gir høy nok kontrast til at teksten kan leses. Her kan du slå av bakgrunnsbilder uavhengig av valget om å se alle bilder eller ikke.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect4>
+
+<sect4>
+<title
+>Farger</title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Svart på hvitt</guilabel
+></term>
+<listitem>
+<para
+>Mange synshemmede synes at svart tekst på hvit bakgrunn gir mest kontrast og er lettest å lese. Hvis dette gjelder deg, kan du oppgi det her</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Hvitt på Svart</guilabel
+></term>
+<listitem>
+<para
+>Andre med redusert syn har motsatt oppfatning, at hvit tekst på svart bakgrunn er lettere å lese.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Tilpasset</guilabel
+></term>
+<listitem>
+<para
+>Andre igjen synes at rent svart og hvitt, i begge rekkefølger, er vanskelig å lese. Du kan sette opp selvvalgte farger her for både <guilabel
+>Bakgrunn</guilabel
+> og <guilabel
+>Forgrunn</guilabel
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Bruk samme farge på all tekst</guilabel
+></term>
+<listitem>
+<para
+>Mange nettsteder bruker en annen farge, ofte kontrastfarge, for overskrifter og andre effekter. Hvis dette gjør det vanskelig for deg å lese innholdet, så kan du krysse av her slik at &kde; bruker de fargene du har bestemt over for all tekst.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect4>
+
+<sect4>
+<title
+>Forhåndsvisning</title>
+
+<para
+>Ruta <guilabel
+>Forhåndsvisning</guilabel
+> viser virkningen av endringene dine. Flere slags overskrifter vises med stilsettet ditt, og en setning med standard brødtekst.</para>
+
+<para
+>Med dette skulle du kunne finjustere stilsettet til du har noe som er behagelig å lese.</para>
+
+<para
+>God surfing!</para>
+
+</sect4>
+
+</sect3>
+
+</sect2>
+
+</sect1>
+
+</article>

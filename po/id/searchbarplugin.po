@@ -1,0 +1,90 @@
+# Indonesian translation of searchbarplugin.
+# Copyright (C) 2014 This_file_is_part_of_KDE
+# This file is distributed under the same license as the searchbarplugin package.
+# Arif Budiman <arif@kangarif.com>, 2014.
+# Wantoyo <wantoyek@gmail.com>, 2017, 2018, 2021, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: searchbarplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-25 00:45+0000\n"
+"PO-Revision-Date: 2022-08-19 20:36+0700\n"
+"Last-Translator: Wantoyèk <wantoyek@gmail.com>\n"
+"Language-Team: https://t.me/Localizations_KDE_Indonesia\n"
+"Language: id\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 21.12.3\n"
+
+#: searchbar.cpp:65
+#, kde-format
+msgid ""
+"Search Bar<p>Enter a search term. Click on the icon to change search mode or "
+"provider.</p>"
+msgstr ""
+"Bilah Pencarian<p>Masukkan istilah pencarian. Klik pada ikon untuk mengubah "
+"modus pencarian atau penyedia.</p>"
+
+#: searchbar.cpp:70
+#, kde-format
+msgid "Search Bar"
+msgstr "Bilah Pencarian"
+
+#: searchbar.cpp:75
+#, kde-format
+msgid "Focus Searchbar"
+msgstr "Fokus Bilah Pencarian"
+
+#: searchbar.cpp:267
+#, fuzzy, kde-format
+#| msgid "Find in This Page"
+msgid "Find in Page..."
+msgstr "Temukan di Halaman Ini"
+
+#: searchbar.cpp:287
+#, kde-format
+msgid "Find in This Page"
+msgstr "Temukan di Halaman Ini"
+
+#: searchbar.cpp:299
+#, kde-format
+msgid "Select Search Engines..."
+msgstr "Pilih Mesin Pencarian..."
+
+#: searchbar.cpp:318
+#, kde-format
+msgid "Add %1..."
+msgstr "Tambah %1..."
+
+#. i18n: ectx: ToolBar (locationToolBar)
+#: searchbarplugin.rc:3
+#, kde-format
+msgid "Search Toolbar"
+msgstr "Bilah Alat Pencarian"
+
+#: WebShortcutWidget.cpp:33
+#, kde-format
+msgid "Set Uri Shortcuts"
+msgstr "Atur Uri Pintasan"
+
+#: WebShortcutWidget.cpp:47
+#, kde-format
+msgid "Name:"
+msgstr "Nama:"
+
+#: WebShortcutWidget.cpp:51
+#, kde-format
+msgid "Shortcuts:"
+msgstr "Pintasan:"
+
+#~ msgid "Enable Suggestion"
+#~ msgstr "Fungsikan Saran"
+
+#~ msgid "Cancel"
+#~ msgstr "Batal"
+
+#~ msgid "OK"
+#~ msgstr "Oke"

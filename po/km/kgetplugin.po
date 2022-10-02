@@ -1,0 +1,2846 @@
+# translation of kget.po to Khmer
+# Khoem Sokhem <khoemsokhem@khmeros.info>, 2006, 2007, 2008, 2009, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: kget\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2010-12-06 09:53+0700\n"
+"Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
+"Language-Team: Khmer <support@khmeros.info>\n"
+"Language: km\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"\n"
+
+#: kget_plugin.cpp:56
+#, kde-format
+msgid "Download Manager"
+msgstr "កម្មវិធី​គ្រប់គ្រង​ការ​ទាញយក"
+
+#: kget_plugin.cpp:62
+#, kde-format
+msgid "Show Drop Target"
+msgstr "បង្ហាញ​គោលដៅ​ទម្លាក់"
+
+#: kget_plugin.cpp:69
+#, kde-format
+msgid "List All Links"
+msgstr "រាយ​តំណ​ទាំងអស់"
+
+#: kget_plugin.cpp:74
+#, kde-format
+msgid "List Selected Links"
+msgstr "រាយ​តំណ​ដែលបាន​ជ្រើស"
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No downloadable links were found."
+msgstr "រក​មិន​ឃើញ​តំណ​ដែល​អាច​ទាញយក​បាន ។"
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No Links"
+msgstr "គ្មាន​តំណ"
+
+#. i18n: ectx: Menu (tools)
+#: konqueror_kget_browser_integration.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "ឧបករណ៍"
+
+#~ msgid "Unable to communicate with the KGet download manager."
+#~ msgstr "មិនអាច​ទាក់ទង​ជា​មួយ​កម្មវិធី​គ្រប់គ្រង​ការ​ទាញយក​របស់ KGet បាន​ទេ ។"
+
+#~ msgid "Communication Error"
+#~ msgstr "កំហុស​ក្នុង​ការ​ទំនាក់ទំនង"
+
+#~ msgid "Plugins"
+#~ msgstr "កម្មវិធី​ជំនួយ"
+
+#~ msgid "New Group"
+#~ msgstr "ក្រុម​ថ្មី"
+
+#~ msgid "Xml"
+#~ msgstr "Xml"
+
+#~ msgid "Sqlite"
+#~ msgstr "ទំហំ"
+
+#~ msgid "Nepomuk"
+#~ msgstr "Nepomuk"
+
+#~ msgid "Turn Off Computer"
+#~ msgstr "បិទ​កុំព្យូទ័រ"
+
+#~ msgid "Hibernate Computer"
+#~ msgstr "សម្ងំ​កុំព្យូទ័រ"
+
+#~ msgid "Suspend Computer"
+#~ msgstr "ផ្អាក​​កុំព្យូទ័រ"
+
+#~ msgid "Appearance"
+#~ msgstr "រូបរាង"
+
+#~ msgid "Change appearance settings"
+#~ msgstr "ផ្លាស់ប្ដូរ​ការ​កំណត់​រូបរាង"
+
+#~ msgid "Groups"
+#~ msgstr "ក្រុម"
+
+#~ msgid "Manage the groups"
+#~ msgstr "គ្រប់គ្រង​ក្រុម"
+
+#~ msgid "Network"
+#~ msgstr "បណ្ដាញ"
+
+#~ msgid "Network and Downloads"
+#~ msgstr "បណ្ដាញ និង​ការ​ទាញយក"
+
+#~ msgid "Web Interface"
+#~ msgstr "ចំណុច​ប្រទាក់​បណ្ដាញ"
+
+#~ msgid "Control KGet over a Network or the Internet"
+#~ msgstr "ត្រួតពិនិត្យ KGet លើ​បណ្ដាញ ឬ​អ៊ីនធឺណិត"
+
+#~ msgid "Verification"
+#~ msgstr "ការ​ផ្ទៀងផ្ទាត់"
+
+#~ msgctxt "integration of KGet with other applications"
+#~ msgid "Integration"
+#~ msgstr "ការ​រួម​បញ្ចូល"
+
+#~ msgctxt "Advanced Options"
+#~ msgid "Advanced"
+#~ msgstr "កម្រិត​ខ្ពស់"
+
+#~ msgid "Advanced Options"
+#~ msgstr "ជម្រើស​កម្រិត​ខ្ពស់"
+
+#~ msgid "Transfer Plugins"
+#~ msgstr "កម្មវិធី​ជំនួយ​ការ​ផ្ទេរ"
+
+#~ msgid "Include"
+#~ msgstr "​រួម​បញ្ចូល"
+
+#~ msgid "Exclude"
+#~ msgstr "មិន​រាប់បញ្ចូល"
+
+#~ msgid "Escape sequences"
+#~ msgstr "លំដាប់​គេច"
+
+#~ msgid "Regular expression"
+#~ msgstr "កន្សោម​ធម្មតា"
+
+#~ msgid "Pattern"
+#~ msgstr "លំនាំ"
+
+#~ msgid "Syntax"
+#~ msgstr "វាក្យសម្ព័ន្ធ"
+
+#~ msgid "KGet"
+#~ msgstr "KGet"
+
+#~ msgid "1 Item"
+#~ msgid_plural "%1 Items"
+#~ msgstr[0] "ធាតុ %1"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/វិ."
+
+#~ msgctxt "start transfergroup downloads"
+#~ msgid "Start"
+#~ msgstr "ចាប់ផ្ដើម"
+
+#~ msgctxt "stop transfergroup downloads"
+#~ msgid "Stop"
+#~ msgstr "បញ្ឈប់"
+
+#~ msgid "KGet is downloading %1 file"
+#~ msgid_plural "KGet is downloading %1 files"
+#~ msgstr[0] "KGet កំពុង​ទាញយក​ឯកសារ %1"
+
+#~ msgid "Error trying to get %1"
+#~ msgstr "មាន​កំហុស​ក្នុង​ការ​យក %1"
+
+#~ msgid "Are you sure that you want to remove the group named %1?"
+#~ msgstr "តើ​អ្នក​ប្រាកដ​ជា​ចង់​យក​ក្រុម​ដែល​មាន​ឈ្មោះ %1 ចេញ​ឬ ?"
+
+#~ msgid "Remove Group"
+#~ msgstr "យក​ក្រុម​ចេញ"
+
+#~ msgid "Are you sure that you want to remove the following groups?"
+#~ msgstr "តើ​អ្នក​ប្រាកដ​ជា​ចង់​យក​ក្រុម​ដូច​ខាងក្រោម​ចេញ​ឬ ?"
+
+#~ msgid "Remove groups"
+#~ msgstr "យក​ក្រុម​ចេញ"
+
+#~ msgid ""
+#~ "<p>The following transfer has been added to the download list:</p><p "
+#~ "style=\"font-size: small;\">\\%1</p>"
+#~ msgstr ""
+#~ "<p>កា​រផ្ទេរ​ដូច​ខាងក្រោម​ត្រូវ​បានបន្ថែម​ទៅ​ក្នុង​បញ្ជី​ទាញយក ៖</p><p style=\"font-size: "
+#~ "small;\">\\%1</p>"
+
+#~ msgid "Download added"
+#~ msgstr "បាន​បន្ថែម​ការ​ទាញយក"
+
+#~ msgid "<p>The following transfer has been added to the download list:</p>"
+#~ msgstr "<p>កា​រផ្ទេរ​ដូច​ខាងក្រោម​ត្រូវ​បានបន្ថែម​ទៅ​ក្នុង​បញ្ជី​ទាញយក ៖</p>"
+
+#~ msgid "<p>The following transfers have been added to the download list:</p>"
+#~ msgstr "<p>កា​រផ្ទេរ​ដូច​ខាងក្រោម​ត្រូវ​បានបន្ថែម​ទៅ​ក្នុង​បញ្ជី​ទាញយក ៖</p>"
+
+#~ msgid ""
+#~ "The file %1 already exists.\n"
+#~ "Overwrite?"
+#~ msgstr ""
+#~ "មាន​ឯកសារ %1 រួច​ហើយ ។\n"
+#~ "សរសេរ​ជាន់លើ​ឬ?"
+
+#~ msgid "Overwrite existing file?"
+#~ msgstr "សរសេរ​ជាន់លើ​ឯកសារ​ដែល​មាន​រួច?"
+
+#~ msgid "Unable to save to: %1"
+#~ msgstr "មិន​អាច​រក្សា​ទុក​ទៅ ៖ %1"
+
+#~ msgid "My Downloads"
+#~ msgstr "ការ​ទាញយក​របស់​ខ្ញុំ"
+
+#~ msgid ""
+#~ "<p>The following URL cannot be downloaded, its protocol is not supported "
+#~ "by KGet:</p>"
+#~ msgid_plural ""
+#~ "<p>The following URLs cannot be downloaded, their protocols are not "
+#~ "supported by KGet:</p>"
+#~ msgstr[0] ""
+#~ "<p>URLs ដូច​ខាងក្រោម​មិន​អាច​ត្រូវបាន​ទាញយក​បាន​ទេ ពិធិការ​របស់​ពួកគេ​មិន​ត្រូវបានគាំទ្រ​ដោយ​ KGet "
+#~ "ទេ ៖</p>"
+
+#~ msgid "Protocol unsupported"
+#~ msgstr "មិនបានគាំទ្រ​ពិធីការ​ទេ"
+
+#~ msgid "New Download"
+#~ msgstr "ទាញយក​ថ្មី"
+
+#~ msgid "Enter URL:"
+#~ msgstr "បញ្ចូល URL ៖"
+
+#~ msgid "Save As"
+#~ msgstr "រក្សាទុកជា"
+
+#~ msgid ""
+#~ "Malformed URL:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "ទម្រង់ URL មិន​ត្រឹមត្រូវ ៖\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Malformed URL, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "URL មិន​ត្រឹមត្រូវ​ បាត់​ពិធីការ ៖\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "You have already completed a download from the location: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Download it again?"
+#~ msgstr ""
+#~ "អ្នក​បានបញ្ចប់​ការ​ទាញយក​រួចហើយ​ពី​ទីតាំង ៖ \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "ទាញយក​វា​ម្ដង​ទៀត​ដែរឬទេ ?"
+
+#~ msgid "Download it again?"
+#~ msgstr "ទាញយក​ម្ដង​ទៀត ?"
+
+#~ msgid ""
+#~ "You have a download in progress from the location: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Delete it and download again?"
+#~ msgstr ""
+#~ "អ្នក​​​កំពុង​ទាញយក​ពី​ទីតាំង ៖ \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "លុបវា ហើយ​ទាញយក​ម្ដង​ទៀត​ដែរឬទេ ?"
+
+#~ msgid "Delete it and download again?"
+#~ msgstr "លុប​វា ហើយ​ទាញយក​ម្ដងទៀត ?"
+
+#~ msgid "Directory is not writable"
+#~ msgstr "ថត​មិន​អាច​សរសេរ​បាន​ឡើយ"
+
+#~ msgid ""
+#~ "You have already downloaded that file from another location.\n"
+#~ "\n"
+#~ "Download and delete the previous one?"
+#~ msgstr ""
+#~ "អ្នក​បាន​ទាញយក​ឯកសារ​នោះ​ពី​ទីតាំង​ផ្សេង ។\n"
+#~ "\n"
+#~ "ទាញយក ហើយ​លុប​ឯកសារ​មួយ​មុន​ដែរឬទេ ?"
+
+#~ msgid "File already downloaded. Download anyway?"
+#~ msgstr "បាន​ទាញយក​ឯកសារ​រួច​ហើយ ? អញ្ចឹង​ទាញយក​ដែរឬទេ ?"
+
+#~ msgid "You are already downloading the same file"
+#~ msgstr "កំពុង​កំពុង​ទាញយក​ឯកសារ​ដូច​គ្នា​រួច​ហើយ"
+
+#~ msgid "File already exists"
+#~ msgstr "មាន​ឯកសារ​រួច​ហើយ"
+
+#~ msgid "Plugin loader could not load the plugin: %1."
+#~ msgstr "កម្មវិធី​ផ្ទុក​កម្មវិធី​បញ្ជា​មិនអាច​ផ្ទុក​កម្មវិធី​បញ្ជា​បានទេ ៖ %1 ។"
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is a directory."
+#~ msgstr ""
+#~ "មិន​បាន​លុប\n"
+#~ "%1 ឡើយ\n"
+#~ "ដោយ​សារ​តែ​វា​ជា​ថត ។"
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is not a local file."
+#~ msgstr ""
+#~ "មិន​បាន​លុប\n"
+#~ "%1 ឡើយ\n"
+#~ "ដោយ​សារ​តែ​វា​ជា​ឯកសារ​មូលដ្ឋាន ។"
+
+#~ msgid ""
+#~ "<p>The following file has finished downloading:</p><p style=\"font-size: "
+#~ "small;\">\\%1</p>"
+#~ msgstr ""
+#~ "<p>ឯកសារ​ដូច​ខាងក្រោម​បាន​បញ្ចប់​កា​រទាញយក​ហើយ ៖</p><p style=\"font-size: small;\">\\"
+#~ "%1</p>"
+
+#~ msgid "Download completed"
+#~ msgstr "បាន​បញ្ចប់​ការ​ទាញយក"
+
+#~ msgid ""
+#~ "<p>The following transfer has been started:</p><p style=\"font-size: "
+#~ "small;\">\\%1</p>"
+#~ msgstr ""
+#~ "<p>ការ​ផ្ទេរ​ដូច​ខាងក្រោម​ត្រូ​វបាន​ចាប់ផ្ដើម ៖</p><p style=\"font-size: small;\">\\"
+#~ "%1</p>"
+
+#~ msgid "Download started"
+#~ msgstr "បាន​ចាប់ផ្ដើម​កា​រទាញយក"
+
+#~ msgid "Error"
+#~ msgstr "កំហុស"
+
+#~ msgid ""
+#~ "<p>There has been an error in the following transfer:</p><p style=\"font-"
+#~ "size: small;\">\\%1</p><p>The error message is:</p><p style=\"font-size: "
+#~ "small;\">\\%2</p>"
+#~ msgstr ""
+#~ "<p>មាន​កំហុស​នៅ​ក្នុង​ការ​ផ្ទេរ​ដូច​ខាងក្រោម ៖</p><p style=\"font-size: small;\">\\%1</"
+#~ "p><p>សារ​កំហុស​គឺ ៖</p><p style=\"font-size: small;\">\\%2</p>"
+
+#~ msgid "Resolve"
+#~ msgstr "ដោះស្រាយ"
+
+#~ msgid "KGet is now closing, as all downloads have completed."
+#~ msgstr "ឥឡូវ KGet បាន​បិទ ព្រោះ​បាន​បញ្ចប់​ការ​ទាញយក​ទាំងអស់​ហើយ ។"
+
+#~ msgid "The computer will now turn off, as all downloads have completed."
+#~ msgstr "កុំព្យូទ័រ​នឹង​បិទ​ឥឡូវ ពីព្រោះ​ការ​ទាញយក​ទាំងអស់​​បាន​បញ្ចប់​ហើយ ។"
+
+#~ msgctxt "Shutting down computer"
+#~ msgid "Shutdown"
+#~ msgstr "បិទ"
+
+#~ msgid ""
+#~ "The computer will now suspend to disk, as all downloads have completed."
+#~ msgstr "កុំព្យូទ័រ​នឹង​ផ្អាក​ទៅ​ថាស​ឥឡូវ ព្រោះ​ថា​ការ​ទាញយក​ទាំងអស់​បាន​បញ្ចប់​ហើយ ។"
+
+#~ msgctxt "Hibernating computer"
+#~ msgid "Hibernating"
+#~ msgstr "សម្ងំ"
+
+#~ msgid ""
+#~ "The computer will now suspend to RAM, as all downloads have completed."
+#~ msgstr "កុំព្យូទ័រ​នឹង​ផ្អាក​ទៅសតិ​ឥឡូវ ព្រោះថា​ការ​ទាញយក​ទាំងអស់​បាន​បញ្ចប់​ហើយ ។ "
+
+#~ msgctxt "Suspending computer"
+#~ msgid "Suspending"
+#~ msgstr "ផ្អាក"
+
+#~ msgctxt "abort the proposed action"
+#~ msgid "Abort"
+#~ msgstr "​បោះបង់"
+
+#~ msgid "<p>All transfers have been finished.</p>"
+#~ msgstr "<p>ការ​ផ្ទេរ​ទាំងអស់​បាន​ចប់​ហើយ ។</p>"
+
+#~ msgid "Downloads completed"
+#~ msgstr "ការ​ទាញយក​បាន​បញ្ចប់"
+
+#~ msgctxt "file in a filesystem"
+#~ msgid "File"
+#~ msgstr "ឯកសារ"
+
+#~ msgctxt "status of the download"
+#~ msgid "Status"
+#~ msgstr "ស្ថានភាព"
+
+#~ msgctxt "size of the download"
+#~ msgid "Size"
+#~ msgstr "ទំហំ"
+
+#~ msgctxt "checksum of a file"
+#~ msgid "Checksum"
+#~ msgstr "ឆេកសាំ"
+
+#~ msgctxt "signature of a file"
+#~ msgid "Signature"
+#~ msgstr "ហត្ថលេខា"
+
+#~ msgid "KGet Transfer"
+#~ msgstr "ការ​ផ្ទេរ​របស់ KGet"
+
+#~ msgctxt "the type of the hash, e.g. MD5"
+#~ msgid "Type"
+#~ msgstr "ប្រភេទ​"
+
+#~ msgctxt "the used hash for verification"
+#~ msgid "Hash"
+#~ msgstr "Hash"
+
+#~ msgctxt "verification-result of a file, can be true/false"
+#~ msgid "Verified"
+#~ msgstr "បាន​ផ្ទៀងផ្ទាត់"
+
+#~ msgid ""
+#~ "The key to verify the signature is missing, do you want to download it?"
+#~ msgstr "​បាត់​សោ​ត្រូវ​ផ្ទៀងផ្ទាត់​ហត្ថលេខា​​ហើយ តើ​អ្នក​​អ្នក​ចង់​ទាញយក​វា​ដែរឬទេ ?"
+
+#~ msgid ""
+#~ "The signature could not be verified for %1. See transfer settings for "
+#~ "more information."
+#~ msgstr ""
+#~ "ហត្ថលេខា​មិន​ត្រូវ​បាន​ផ្ទៀងផ្ទាត់​សម្រាប់ %1 នោះ​ទេ ។ ចំពោះ​ព័ត៌មាន​បន្ថែម​ សូម​មើល​កា​រកំណត់​ផ្ទេរ​ ។"
+
+#~ msgid "Signature not verified"
+#~ msgstr "ហត្ថលេខា​​មិន​បាន​ផ្ទៀងផ្ទាត់"
+
+#~ msgid ""
+#~ "No server for downloading keys is specified in settings. Downloading "
+#~ "aborted."
+#~ msgstr ""
+#~ "គ្មាន​ម៉ាស៊ីន​បម្រើ​សម្រាប់​ទាញយក​សោ​ ត្រូវ​បាន​បញ្ជាក់​នៅ​ក្នុង​ការ​កំណត់​នោះ​ទេ ។ ការ​ទាញយក​"
+#~ "បានបោះបង់ចោល ។"
+
+#~ msgid "No key server"
+#~ msgstr "គ្មាន​ម៉ាស៊ីន​បម្រើ​សោ​ទេ"
+
+#~ msgid ""
+#~ "No useful key server found, key not downloaded. Add more servers to the "
+#~ "settings or restart KGet and retry downloading."
+#~ msgstr ""
+#~ "រក​មិនឃើញ​សោ​ដែលមានប្រយោជន៍​ទេ សោ​មិន​បានទាញយក​ទេ ។ បន្ថែម​ម៉ាស៊ីនបម្រើ​ផ្សេង​ទៀត​ទៅការ​កំណត់ ឬ​"
+#~ "ចាប់ផ្ដើម KGet ឡើងវិញ ហើយ​ព្យាយាម​ទាញយក​ម្ដង​ទៀត ។"
+
+#~ msgid "Filesize is larger than maximum file size supported by VFAT."
+#~ msgstr "ទំហំ​ឯកសារ​ធំជាង​ទំហំ​ឯកសារ​អតិបរមា​ដែលបានគាំទ្រ​ដោយ VFAT ។"
+
+#~ msgctxt "A mirror is removed when the file has the wrong download size"
+#~ msgid "%1 removed as it did report a wrong file size."
+#~ msgstr "បាន​យក %1 ចេញ ព្រោះ​ថា​វា​បាន​រាយការណ៍​​ទំហំ​ឯកសារ​មិន​ត្រឹមត្រូវ ។"
+
+#~ msgctxt "not available"
+#~ msgid "n/a"
+#~ msgstr "គ្មាន"
+
+#~ msgid "Stalled"
+#~ msgstr "អាក់"
+
+#~ msgid "Downloading...."
+#~ msgstr "កំពុង​ទាញយក..."
+
+#~ msgctxt "transfer state: delayed"
+#~ msgid "Delayed"
+#~ msgstr "បាន​ពន្យារ"
+
+#~ msgctxt "transfer state: stopped"
+#~ msgid "Stopped"
+#~ msgstr "បាន​បញ្ឈប់"
+
+#~ msgctxt "transfer state: aborted"
+#~ msgid "Aborted"
+#~ msgstr "បាន​បោះបង់"
+
+#~ msgctxt "transfer state: finished"
+#~ msgid "Finished"
+#~ msgstr "បាន​បញ្ចប់"
+
+#~ msgctxt "changing the destination of the file"
+#~ msgid "Changing destination"
+#~ msgstr "ផ្លាស់ប្ដូរ​ទិសដៅ"
+
+#~ msgctxt "name of download"
+#~ msgid "Name"
+#~ msgstr "ឈ្មោះ"
+
+#~ msgctxt "status of download"
+#~ msgid "Status"
+#~ msgstr "ស្ថានភាព"
+
+#~ msgctxt "size of download"
+#~ msgid "Size"
+#~ msgstr "ទំហំ"
+
+#~ msgctxt "progress of download"
+#~ msgid "Progress"
+#~ msgstr "វឌ្ឍនភាព"
+
+#~ msgctxt "speed of download"
+#~ msgid "Speed"
+#~ msgstr "ល្បឿន"
+
+#~ msgctxt "remaining time of download"
+#~ msgid "Remaining Time"
+#~ msgstr "ពេល​នៅ​សល់"
+
+#~ msgid "No download directory specified."
+#~ msgstr "គ្មាន​ថត​ទាញយក​បាន​បញ្ជាក់​ទេ ។"
+
+#~ msgid "Invalid download directory specified."
+#~ msgstr "ថត​ទាញយក​ដែល​បានបញ្ជាក់​មិន​ត្រឹមត្រូវ​ទេ ។"
+
+#~ msgid "Download directory is not writeable."
+#~ msgstr "ទាញយក​ថត​មិន​អាច​សរសេរ​បាន​ទេ ។"
+
+#~ msgid "No download destination specified."
+#~ msgstr "គ្មាន​ទិសដៅ​ទាញយក​បាន​បញ្ជាក់ ។"
+
+#~ msgid "Invalid download destination specified."
+#~ msgstr "ទិសដៅ​​ទាញយកដែលបានបញ្ជាក់​​មិន​ត្រឹមត្រូវ ។"
+
+#~ msgid "Download destination is not writeable."
+#~ msgstr "ទិសដៅ​ទាញយក​មិនអាច​សរសេរ​បាន​ទេ ។"
+
+#~ msgid "No URL specified."
+#~ msgstr "គ្មាន URL បាន​បញ្ជាក់ ។"
+
+#~ msgid "Malformed URL."
+#~ msgstr "URL ត្រឹមត្រូវ ។"
+
+#~ msgid "Malformed URL, protocol missing."
+#~ msgstr "URL មិន​ត្រឹមត្រូវ បាត់​ពិធីការ ។"
+
+#~ msgid "Malformed URL, host missing."
+#~ msgstr "URL មិន​ត្រឹមត្រូវ​ បាត់​ម៉ាស៊ីន ។"
+
+#~ msgid ""
+#~ "Invalid download directory specified:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "ថត​ទាញយក​ដែល​បាន​បញ្ជាក់​មិនត្រឹមត្រូវ​ទេ ៖\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Download directory is not writeable:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "ថត​ទាញយក​មិនអាច​សរសេរ​បាន​ទេ ៖\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Invalid download destination specified:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "ទិសដៅ​ទាញយក​ដែល​បានបញ្ជាក់​មិន​ត្រឹមត្រូវ​ទេ ៖\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Download destination is not writeable:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "ទិសដៅ​ទាញយក​មិន​អាច​សរសេរ​បាន​ទេ ៖\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Malformed URL, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "URL មិន​ត្រឹមត្រូវ បាត់​ម៉ាស៊ីន ៖\n"
+#~ "%1"
+
+#~ msgid "File already exists. Overwrite it?"
+#~ msgstr "មាន​ឯកសារ​រួច​ហើយ ។ សរសេរ​ជាន់​លើ​វា ?"
+
+#~ msgid ""
+#~ "You have already downloaded that file from another location.\n"
+#~ "Download and delete the previous one?"
+#~ msgstr ""
+#~ "អ្នក​បាន​ទាញយក​ឯកសារ​នោះ​រួច​ហើយ​ពី​ទីតាំង​ផ្សេង ។\n"
+#~ "ទាញយក ហើយ​លុប​ការ​ទាញយក​មុន ?"
+
+#~ msgid ""
+#~ "You are already downloading that file from another location.\n"
+#~ "Download and delete the previous one?"
+#~ msgstr ""
+#~ "អ្នក​បាន​ទាញយក​ឯកសារ​នោះ​ពី​ទីតាំង​ផ្សេង​រួច​ហើយ ។\n"
+#~ "ទាញយក ហើយ​លុប​ឯកសារ​មួយ​មុន​ដែរឬទេ ?"
+
+#~ msgid ""
+#~ "You have already completed a download from that location. Download it "
+#~ "again?"
+#~ msgstr "អ្នកបាន​បញ្ចប់​ការ​ទាញយក​ពី​ទីតាំង ។ ទាញយក​វា​ម្ដងទៀត ?"
+
+#~ msgid ""
+#~ "You have a download in progress from that location.\n"
+#~ "Delete it and download again?"
+#~ msgstr ""
+#~ "អ្នក​មានការ​ទាញយក​កំពុង​ដំណើរការ​ពី​ទីតាំង​ផ្សេង ។\n"
+#~ "លុប​វា ហើយ​ទាញយក​វា​ម្ដង​ទៀត ?"
+
+#~ msgid ""
+#~ "File already exists:\n"
+#~ "%1\n"
+#~ "Overwrite it?"
+#~ msgstr ""
+#~ "មាន​​ឯកសារ​រួច​ហើយ ៖\n"
+#~ "%1\n"
+#~ "សរសេរ​ជាន់​លើ​វា ?"
+
+#~ msgid "Malformed URLs."
+#~ msgstr "URL ត្រឹមត្រូវ ។"
+
+#~ msgid "Malformed URLs, protocol missing."
+#~ msgstr "URL មិន​ត្រឹមត្រូវ​ បាត់​ពិធីការ ។"
+
+#~ msgid "Malformed URLs, host missing."
+#~ msgstr "URL មិន​ត្រឹមត្រូវ​ បាត់ម៉ាស៊ីន ។%1"
+
+#~ msgid ""
+#~ "Malformed URLs:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "URLs មិន​ត្រឹមត្រូវ ៖\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Malformed URLs, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "URL មិន​ត្រឹមត្រូវ​ បាត់​ពិធីការ ៖\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Malformed URLs, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "URL មិន​ត្រឹមត្រូវ​ បាត់​ពិធីការ ៖\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Destinations are not writable:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "ថត​មិន​អាច​សរសេរ​បាន​ឡើយ​ ៖\n"
+#~ "%1"
+
+#~ msgid "Files exist already. Overwrite them?"
+#~ msgstr "មាន​ឯកសារ​រួច​ហើយ ។ សរសេរ​ជាន់​លើ​វា ?"
+
+#~ msgid ""
+#~ "You have already completed downloads at those destinations. Download them "
+#~ "again?"
+#~ msgstr "អ្នក​មាន​​ការ​ទាញយក​ដែលបានបញ្ចប់​រួច​ហើយ​នៅ​ទិសដៅ​នោះ ។ ទាញយក​ពួកវា​ម្ដង​ទៀត ?"
+
+#~ msgid ""
+#~ "You have downloads in progress to these destinations.\n"
+#~ "Delete them and download again?"
+#~ msgstr ""
+#~ "អ្នក​មាន​ការ​ទាញយក​កំពុង​ដំណើរការ​នៅ​ទិសដៅ​​ទាំង​នេះ ។\n"
+#~ "លុប​ពួកវា ហើយ​ទាញយក​ម្ដង​​ទៀត ?"
+
+#~ msgid ""
+#~ "You have already completed downloads from these locations. Download them "
+#~ "again?"
+#~ msgstr "អ្នក​មានការ​ទាញយក​ពេញលេញ​រួច​ហើយ​ពី​ទិសដៅ​ទាំង​នេះ ។ ទាញយក​ពួកវា​ម្ដង​ទៀត ?"
+
+#~ msgid ""
+#~ "You have downloads in progress from these locations.\n"
+#~ "Delete them and download again?"
+#~ msgstr ""
+#~ "អ្នក​មាន​ការ​ទាញយក​កំពុង​ដំណើរការ​ពី​ទីតាំង​ទាំងនេះ ។\n"
+#~ "លុប​ពួកវា​ ហើយ​ទាញយក​ម្ដង​ទៀត ?"
+
+#~ msgid ""
+#~ "Files exist already:\n"
+#~ "%1\n"
+#~ "Overwrite them?"
+#~ msgstr ""
+#~ "មាន​ឯកសារ​រួច​ហើយ ៖\n"
+#~ "%1\n"
+#~ "សរសេរ​ជាន់​លើ​ពួកវា ?"
+
+#~ msgid ""
+#~ "You have already completed downloads at those destinations: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ " Download them again?"
+#~ msgstr ""
+#~ "អ្នក​បាន​បញ្ចប់​ការ​ទាញយក​នៅ​ទិសដៅ​ទាំង​នោះ ៖ \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ " ទាញយក​ពួក​វា​ម្ដង​ទៀត ?"
+
+#~ msgid ""
+#~ "You have downloads in progress to these destinations: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Delete them and download again?"
+#~ msgstr ""
+#~ "អ្នក​មា​ន​ការ​ទាញយក​កំពុង​ដំណើរការ​​ទៅ​ទិសដៅ​ទាំង​នេះ ៖\n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "លុប​ពួកវា​ ហើយ​ទាញយក​ម្ដង​ទៀត ?"
+
+#~ msgid ""
+#~ "You have already completed downloads from these locations: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Download them again?"
+#~ msgstr ""
+#~ "អ្នក​បានបញ្ចប់​ការ​ទាញយក​ពី​ទីតាំង​ទាំង​នេះ ៖ \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "ទាញយក​ពួកវា​ម្ដង​ទៀត ?"
+
+#~ msgid ""
+#~ "You have downloads in progress from these locations: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Delete them and download again?"
+#~ msgstr ""
+#~ "អ្នក​មាន​ការ​ទាញយក​ដែល​កំពុង​ដំណើរការ​ពី​ទីតាំង​​ទាំង​នេះ ៖ \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "លុប​ពួកវា​ ហើយ​ទាញយក​ម្ដង​ទៀត ?"
+
+#~ msgid "Question"
+#~ msgstr "សំណួរ"
+
+#~ msgctxt "on a question"
+#~ msgid "Yes all"
+#~ msgstr "បាទ/ចាស​ ទាំងអស់"
+
+#~ msgctxt "on a question"
+#~ msgid "No all"
+#~ msgstr "ទេ ទាំងអស់"
+
+#~ msgid "Insert Engine"
+#~ msgstr "បញ្ចូលម៉ាស៊ីន"
+
+#~ msgid "Engine name:"
+#~ msgstr "ឈ្មោះ​ម៉ាស៊ីន ៖"
+
+#~ msgid "URL:"
+#~ msgstr "URL ៖"
+
+#~ msgid "The download (%1) could not be verified. Do you want to repair it?"
+#~ msgstr "ការ​ទាញយក (%1) មិនអាច​ត្រូ​វបាន​ផ្ទៀងផ្ទាត់​ទេ ។ តើ​អ្នក​ចង់​ជួសជុល​វា​ដែរឬទេ ?"
+
+#~ msgid ""
+#~ "The download (%1) could not be verified. Do you want to redownload it?"
+#~ msgstr "ការ​ទាញយក (%1) មិនអាច​ត្រូវ​បាន​ផ្ទៀងផ្ទាត់​ទេ ។ តើ​អ្នក​ចង់​ទាញយក​វា​ម្ដង​ទៀត​ដែរឬទេ ?"
+
+#~ msgid "Verification failed."
+#~ msgstr "បានបរាជ័យ​ក្នុង​កា​រផ្ទៀងផ្ទាត់"
+
+#~ msgctxt "transfer state: connecting"
+#~ msgid "Connecting...."
+#~ msgstr "កំពុង​តភ្ជាប់..."
+
+#~ msgid "Add New Script"
+#~ msgstr "បន្ថែម​ស្គ្រីប​ថ្មី"
+
+#~ msgid "Edit Script"
+#~ msgstr "កែសម្រួល​ស្គ្រីប"
+
+#~ msgid "Set Script File"
+#~ msgstr "កំណត់​ឯកសារ​ស្គ្រីប"
+
+#~ msgctxt "Configure script"
+#~ msgid "Configure script"
+#~ msgstr "កំណត់​រចនាសម្ព័ន្ធ​ស្គ្រីប"
+
+#~ msgctxt "Transfer state: processing script"
+#~ msgid "Processing script...."
+#~ msgstr "កំពុង​ដំណើរការ​ស្គ្រីប..."
+
+#~ msgctxt "Transfer State: Finished"
+#~ msgid "Finished"
+#~ msgstr "បាន​បញ្ចប់"
+
+#~ msgctxt "Transfer State: Aborted"
+#~ msgid "Aborted"
+#~ msgstr "បាន​បោះបង់"
+
+#~ msgid "Downloading Metalink File...."
+#~ msgstr "កំពុង​ទាញយក​ឯកសារ​តំណ​មេតា...."
+
+#~ msgid ""
+#~ "A newer version of this Metalink might exist, do you want to download it?"
+#~ msgstr "មាន​កំណែ​ថ្មីជាង​របស់​តំណមេតា​​នេះ តើ​អ្នក​ចង់ទាញយក​វា​ដែរឬទេ ?"
+
+#~ msgid "Redownload Metalink"
+#~ msgstr "ទាញយក​តំណ​មេតា​ឡើងវិញ"
+
+#~ msgid "Download failed, no working URLs were found."
+#~ msgstr "បាន​បរាជ័យ​ក្នុងកា​រទាញយក រក​មិនឃើញ URLs ដំណើរការ ។"
+
+#~ msgid ""
+#~ "The download could not be verified, do you want to repair (if repairing "
+#~ "does not work the download would be restarted) it?"
+#~ msgstr ""
+#~ "កា​រទាញយក​មិន​អាច​​​ត្រូវ​បាន​ផ្ទៀងផ្ទាត់​ទេ តើ​អ្នក​ចង់​ជួសជុលវា​ដែរឬទេ ?​ (ប្រសិនបើ​ការ​ជួសជុល​មិន​"
+#~ "ដំណើរការ​ ការ​ទាញយក​នឹង​ត្រូវ​បាន​ចាប់ផ្ដើម​ឡើង​វិញ)"
+
+#~ msgid "File Selection"
+#~ msgstr "ការ​ជ្រើស​ឯកសារ"
+
+#~ msgid "Add item"
+#~ msgstr "បន្ថែមធាតុ"
+
+#~ msgid "%1 would become %2"
+#~ msgstr "%1 នឹង​ក្លាយជា %2"
+
+#~ msgctxt "the string that is used to modify an url"
+#~ msgid "Change string"
+#~ msgstr "ផ្លាស់ប្ដូរខ្សែអក្សរ"
+
+#~ msgctxt "the mode defines how the url should be changed"
+#~ msgid "Change mode"
+#~ msgstr "ផ្លាស់ប្ដូរ​របៀប"
+
+#~ msgctxt "the type of the checksum e.g. md5"
+#~ msgid "Checksum type"
+#~ msgstr "ប្រភេទ​ឆេកសាំ"
+
+#~ msgid "Append"
+#~ msgstr "បន្ថែម​ខាង​ចុង"
+
+#~ msgid "Replace file"
+#~ msgstr "ជំនួស​ឯកសារ"
+
+#~ msgid "Replace file-ending"
+#~ msgstr "ជំនួស​ដល់ចុ​ងឯកសារ"
+
+#~ msgctxt "transfer state: running"
+#~ msgid "Running...."
+#~ msgstr "កំពង់​រត់..."
+
+#~ msgctxt "Choked"
+#~ msgid "Yes"
+#~ msgstr "បាទ/ចាស"
+
+#~ msgctxt "Not choked"
+#~ msgid "No"
+#~ msgstr "ទេ"
+
+#~ msgctxt "Snubbed"
+#~ msgid "Yes"
+#~ msgstr "បាទ/ចាស"
+
+#~ msgctxt "Not snubbed"
+#~ msgid "No"
+#~ msgstr "ទេ"
+
+#~ msgctxt "Interested"
+#~ msgid "Yes"
+#~ msgstr "បាទ/ចាស"
+
+#~ msgctxt "Not Interested"
+#~ msgid "No"
+#~ msgstr "ទេ"
+
+#~ msgctxt "Interesting"
+#~ msgid "Yes"
+#~ msgstr "បាទ/ចាស"
+
+#~ msgctxt "Not Interesting"
+#~ msgid "No"
+#~ msgstr "ទេ"
+
+#~ msgid "IP Address"
+#~ msgstr "អាសយដ្ឋាន IP"
+
+#~ msgid "Client"
+#~ msgstr "ម៉ាស៊ីន​ភ្ញៀវ"
+
+#~ msgid "Down Speed"
+#~ msgstr "បន្ថយ​ល្បឿន"
+
+#~ msgid "Up Speed"
+#~ msgstr "បង្កើន​ល្បឿន"
+
+#~ msgid "Choked"
+#~ msgstr "បាន​បង្អន់"
+
+#~ msgid "Snubbed"
+#~ msgstr "មិនអើពើ"
+
+#~ msgid "Availability"
+#~ msgstr "ភាព​អាច​ប្រើ​បាន"
+
+#~ msgid "DHT"
+#~ msgstr "DHT"
+
+#~ msgid "Score"
+#~ msgstr "ពិន្ទុ"
+
+#~ msgid "Upload Slot"
+#~ msgstr "រន្ធ​ផ្ទុក​ឡើង"
+
+#~ msgid "Requests"
+#~ msgstr "សំណើ"
+
+#~ msgid "Downloaded"
+#~ msgstr "បាន​ទាញ​យក"
+
+#~ msgid "Uploaded"
+#~ msgstr "បានផ្ទុក​ឡើង"
+
+#~ msgid "Interested"
+#~ msgstr "បាន​ចាប់អារម្មណ៍"
+
+#~ msgid "Interesting"
+#~ msgstr "ចាប់អារម្មណ៍"
+
+#~ msgid "IP address of the peer"
+#~ msgstr "អាសយដ្ឋាន IP របស់​គូ"
+
+#~ msgid "Which client the peer is using"
+#~ msgstr "គូ​ម៉ាស៊ីន​ភ្ញៀវ​ណាមួយ​កំពុង​ប្រើ"
+
+#~ msgid "Download speed"
+#~ msgstr "ល្បឿន​ទាញយក"
+
+#~ msgid "Upload speed"
+#~ msgstr "ល្បឿន​ផ្ទុក​ឡើង"
+
+#~ msgid ""
+#~ "Whether or not the peer has choked us.  If we are choked, the peer will "
+#~ "not send us any data."
+#~ msgstr ""
+#~ "ថាតើ​គូរ​បាន​បាន​បង្អាក់​យើង ។ ប្រសិន​​បើ​យើង​ត្រូវ​បានបង្អាក់​ គូរ​នឹង​មិន​ត្រូ​វបានផ្ញើ​ទិន្នន័យ​​ឲ្យ​យើងទេ ។"
+
+#~ msgid ""
+#~ "Snubbed means the peer has not sent us any data in the last 2 minutes"
+#~ msgstr "គូ​មធ្យោបាយ​ដែលបាន​ធ្វើ​ខ្លី មិន​ត្រូ​វបានផ្ញើ​មក​យើង​​នូវ​ទិន្នន័យ​ក្នុង​រយៈពេល ២ នាទី​នៅ​ឡើយ​ទេ"
+
+#~ msgid "How much of the torrent's data the peer has"
+#~ msgstr "ទិន្នន័យ​របស់ torrent ប៉ុន្មាន​ដែល​គូ​មាន"
+
+#~ msgid "Whether or not the peer has DHT enabled"
+#~ msgstr "ថាតើ​គូ​បានបើក DHT ដែរ​ឬទេ"
+
+#~ msgid ""
+#~ "The score of the peer. KTorrent uses this to determine who to upload to."
+#~ msgstr "ពិន្ទុ​របស់គូ ។ KTorrent ប្រើ​វា​ដើម្បី​កំណត់​ដែល​ត្រូវ​ផ្ទុកឡើង ។"
+
+#~ msgid "Only peers which have an upload slot will get data from us"
+#~ msgstr "តែ​គូ​ដែល​មាន​រន្ធ​ផ្ទុកនឹងទទួល​ទិន្នន័យ​ពី​យើង"
+
+#~ msgid "The number of download and upload requests"
+#~ msgstr "ចំនួន​ទាញយក និង​សំណើ​ផ្ទុកឡើង"
+
+#~ msgid "How much data we have downloaded from this peer"
+#~ msgstr "ទិន្នន័យ​ប៉ុន្មាន​ដែល​យើង​បានទាញយក​ពី​គូនេះ"
+
+#~ msgid "How much data we have uploaded to this peer"
+#~ msgstr "តើ​មាន​ទិន្នន័យ​ប៉ុន្មាន​ដែល​យើង​បាន​ផ្ទុកឡើង​ទៅកាន់​គូ​នេះ"
+
+#~ msgid "Whether the peer is interested in downloading data from us"
+#~ msgstr "ថាតើ​គូ​ដែល​ចាប់អារម្មណ៍​ក្នុងការ​ទាញយក​ទិន្នន័យ​ពី​យើង"
+
+#~ msgid "Whether we are interested in downloading from this peer"
+#~ msgstr "ថាតើ​យើង​ចាប់អារម្មណ៍​ក្នុងកា​រទាញយក​ពី​គូ​នេះ"
+
+#~ msgid "Chunk"
+#~ msgstr "ចំណិត"
+
+#~ msgid "Progress"
+#~ msgstr "វឌ្ឍនភាព"
+
+#~ msgid "Peer"
+#~ msgstr "គូរ"
+
+#~ msgid "Files"
+#~ msgstr "ឯកសារ"
+
+#~ msgid "Number of the chunk"
+#~ msgstr "ចំនួន​កំណាត់"
+
+#~ msgid "Download progress of the chunk"
+#~ msgstr "វឌ្ឍនភាព​ទាញ​យក​របស់​កំណត់"
+
+#~ msgid "Which peer we are downloading it from"
+#~ msgstr "គូ​ណាមួយ​ដែល​យើង​ទាញយក​វា"
+
+#~ msgid "Download speed of the chunk"
+#~ msgstr "ល្បឿន​ទាញយក​របស់កំណត់"
+
+#~ msgid "Which files the chunk is located in"
+#~ msgstr "ឯកសារ​ណាមួយ​ដែល​កំណត់​ស្ថិត​នៅ"
+
+#~ msgid "URL"
+#~ msgstr "URL"
+
+#~ msgid "Speed"
+#~ msgstr "ល្បឿន"
+
+#~ msgid "Status"
+#~ msgstr "ស្ថានភាព"
+
+#~ msgid "Kick Peer"
+#~ msgstr "ច្រានចោល​គូរ"
+
+#~ msgid "Ban Peer"
+#~ msgstr "រារាំង​គូរ"
+
+#~ msgid ""
+#~ "Cannot add the webseed %1, it is already part of the list of webseeds."
+#~ msgstr "មិនអាច​បង្កើត webseed %1 បានទេ វា​ជា​ផ្នែក​របស់​បញ្ជី webseed ។"
+
+#~ msgid "Cannot remove webseed %1, it is part of the torrent."
+#~ msgstr "មិនអាច​យក webseed %1 ចេញ​បានទេ វា​ជា​ផ្នែក​របស់ torrent ។"
+
+#~ msgid "File"
+#~ msgstr "ឯកសារ"
+
+#~ msgid "Size"
+#~ msgstr "ទំហំ"
+
+#~ msgid "Advanced Details for %1"
+#~ msgstr "សេចក្ដី​លម្អិត​កម្រិត​ខ្ពស់​សម្រាប់ %1"
+
+#~ msgid "Trackers"
+#~ msgstr "កម្មវិធី​តាមដាន"
+
+#~ msgid "Webseeds"
+#~ msgstr "Webseed"
+
+#~ msgctxt "Open file"
+#~ msgid "Open"
+#~ msgstr "បើក​"
+
+#~ msgid "Download first"
+#~ msgstr "ទាញ​យក​ដំបូង"
+
+#~ msgid "Download normally"
+#~ msgstr "​ទាញយក​ធម្មតា"
+
+#~ msgid "Download last"
+#~ msgstr "ទាញ​យក​ចុងក្រោយ"
+
+#~ msgid "Do Not Download"
+#~ msgstr "កុំទាញយក"
+
+#~ msgid "Delete File(s)"
+#~ msgstr "លុប​ឯកសារ"
+
+#~ msgid "Move File"
+#~ msgstr "ផ្លាស់ទី​ឯកសារ"
+
+#~ msgid "Collapse Folder Tree"
+#~ msgstr "វេញ​មែកធាង​ថត"
+
+#~ msgid "Expand Folder Tree"
+#~ msgstr "ពង្រីក​មែកធាង​ថត"
+
+#~ msgid ""
+#~ "You will lose all data in this file, are you sure you want to do this?"
+#~ msgid_plural ""
+#~ "You will lose all data in these files, are you sure you want to do this?"
+#~ msgstr[0] "អ្នក​នឹង​បាត់បង់​ទិន្នន័យ​ទាំងអស់​នៅ​ក្នុង​ឯកសារទាំង​នេះ តើ​អ្នក​ប្រាកដ​ជា​ចង់​ធ្វើ​ដូចនេះ​ឬ ?"
+
+#~ msgid "Select a directory to move the data to."
+#~ msgstr "ជ្រើស​ថត ដើម្បី​​ផ្លាស់ទី​ទិន្នន័យ ។"
+
+#~ msgid "Url"
+#~ msgstr "Url"
+
+#~ msgid "Seeders"
+#~ msgstr "កម្មវិធីបណ្ដុះ"
+
+#~ msgid "Leechers"
+#~ msgstr "កម្មវិធី​ស្រូប"
+
+#~ msgid "Times Downloaded"
+#~ msgstr "ពេលវេលា​បានទាញ​យក"
+
+#~ msgid "Next Update"
+#~ msgstr "បច្ចុប្បន្នភាព​​បន្ទាប់"
+
+#~ msgid "Priority"
+#~ msgstr "អាទិភាព"
+
+#~ msgid "Preview"
+#~ msgstr "មើល​ជា​មុន"
+
+#~ msgctxt "Percent of File Downloaded"
+#~ msgid "% Complete"
+#~ msgstr "% Complete"
+
+#~ msgctxt "Download first"
+#~ msgid "First"
+#~ msgstr "ដំបូង"
+
+#~ msgctxt "Download last"
+#~ msgid "Last"
+#~ msgstr "ចុងក្រោយ"
+
+#~ msgctxt "Download normally(not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "ធម្មតា"
+
+#~ msgctxt "preview available"
+#~ msgid "Available"
+#~ msgstr "មាន"
+
+#~ msgctxt "Preview pending"
+#~ msgid "Pending"
+#~ msgstr "មិន​សម្រេច"
+
+#~ msgctxt "No preview available"
+#~ msgid "No"
+#~ msgstr "ទេ"
+
+#~ msgid "%1 %"
+#~ msgstr "%1 %"
+
+#~ msgctxt "Preview available"
+#~ msgid "Available"
+#~ msgstr "មាន"
+
+#~ msgid "Add Tracker"
+#~ msgstr "បន្ថែម​កម្មវិធី​តាមដាន"
+
+#~ msgid "Enter the URL of the tracker:"
+#~ msgstr "បញ្ចូល URL របស់​កម្មវិធី​តាមដាន ៖"
+
+#~ msgid "There already is a tracker named <b>%1</b>."
+#~ msgstr "មាន​កម្មវិធី​តាមដាន​ដែល​មាន​ឈ្មោះ <b>%1</b> ហើយ ។"
+
+#~ msgctxt "Download Normal (not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "ធម្មតា"
+
+#~ msgid "Cannot initialize libktorrent. Torrent support might not work."
+#~ msgstr "មិនអាច​ចាប់ផ្ដើម libktorrent បាន​ទេ ។ ការ​គាំទ្រ Torrent អាច​មិន​ដំណើរការ ។"
+
+#~ msgid "&Advanced Details"
+#~ msgstr "សេចក្ដី​លម្អិ​ត​កម្រិត​ខ្ពស់"
+
+#~ msgid "&Scan Files"
+#~ msgstr "វិភាគ​ឯកសារ"
+
+#~ msgid "Downloading Torrent File...."
+#~ msgstr "កំពុង​ទាញយក​ឯកសារ Torrent...."
+
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading...."
+#~ msgstr "កំពុង​ទាញយក..."
+
+#~ msgid "Cannot add a tracker to a private torrent."
+#~ msgstr "មិនអាច​បន្ថែម​កម្មវិធី​តាមដាន​ទៅ​ torrent ឯកជន ។"
+
+#~ msgid "Torrent file does not exist"
+#~ msgstr "មិន​ទាន់​មាន​ឯកសារ Torrent ទេ"
+
+#~ msgid "Analyzing torrent...."
+#~ msgstr "កំពុង​វិភាគ torrent..."
+
+#~ msgid "Cannot initialize port..."
+#~ msgstr "មិនអាច​ចាប់ផ្ដើម​ច្រក​បាន​ទេ..."
+
+#~ msgctxt "Transfer status: seeding"
+#~ msgid "Seeding...."
+#~ msgstr "កំពុង​បណ្ដុះ..."
+
+#~ msgid "Error scanning data: %1"
+#~ msgstr "កំហុស​វិភាគ​ទិន្នន័យ ៖ %1"
+
+#~ msgid "Scanning data of <b>%1</b> :"
+#~ msgstr "វិភាគ​ទិន្នន័យ​នៃ <b>%1</b> ៖"
+
+#~ msgid "Select a default torrent folder"
+#~ msgstr "ជ្រើស​ថត torrent លំនាំដើម"
+
+#~ msgid "Select a default temporary folder"
+#~ msgstr "ជ្រើស​ថត​បណ្ដោះអាសន្ន​លំនាំដើម"
+
+#~ msgid "Import dropped files"
+#~ msgstr "នាំចូល​ឯកសារ​ដែល​បាន​ទម្លាក់"
+
+#~ msgctxt "comma, to seperate members of a list"
+#~ msgid ","
+#~ msgstr ","
+
+#~ msgid "File Properties"
+#~ msgstr "លក្ខណសម្បត្តិ​ឯកសារ"
+
+#~ msgid "Enter a filename."
+#~ msgstr "បញ្ចូល​ឈ្មោះ​ឯកសារ ។"
+
+#~ msgid "The filename exists already, choose a different one."
+#~ msgstr "មាន​ឈ្មោះ​ឯកសារ​រួច​ហើយ ជ្រើ​សឈ្មោះ​ឯកសារ​ផ្សេង ។"
+
+#~ msgid "Enter at least one URL."
+#~ msgstr "បញ្ចូល​ URL យ៉ាង​ហោចណាស់​មួយ ។"
+
+#~ msgid ""
+#~ "Required data entered; also consider entering additional information."
+#~ msgstr "តម្រូវ​ឲ្យ​បញ្ចូល​ទិន្នន័យ គិតអំពី​ការ​បញ្ចូលព័ត៌មាន​បន្ថែម​ផងដែរ ។"
+
+#~ msgid "Create a Metalink"
+#~ msgstr "បង្កើត​តំណ​មេតា"
+
+#~ msgid "General optional information for the metalink."
+#~ msgstr "ព័ត៌មាន​ជា​ជម្រើស​ទូទៅ​សម្រាប់​តំណ​មេតា ។"
+
+#~ msgid "Unable to load: %1"
+#~ msgstr "មិនអាច​ផ្ទុក ៖ %1"
+
+#~ msgid "Metalink Version 4.0 file (*.meta4)"
+#~ msgstr "ឯកសារ​តំណ​មេតា​កំណែ 4.0 (*.meta4)"
+
+#~ msgid "Metalink Version 3.0 file (*.metalink)"
+#~ msgstr "ឯកសារ​តំណ​មេតា​កំណែ 3.0 (*.metalink)"
+
+#~ msgid "Define the saving location."
+#~ msgstr "កំណត់​ទីតាំង​រក្សាទុក ។"
+
+#~ msgctxt "file as in file on hard drive"
+#~ msgid "Enter at least one file."
+#~ msgstr "បញ្ចូល​ឯកសារ​យ៉ាង​ហោចណាស់​មួយ ។"
+
+#~ msgid "Import Links"
+#~ msgstr "នាំចូល​តំណ"
+
+#~ msgctxt "Download the items which have been selected"
+#~ msgid "&Download Checked"
+#~ msgstr "បាន​ពិនិត្យ​ការ​ទាញយក"
+
+#~ msgid "Auxiliary header"
+#~ msgstr "បឋមកថា​​បន្ថែម"
+
+#~ msgid "File Name"
+#~ msgstr "ឈ្មោះ​ឯកសារ"
+
+#~ msgid "Description"
+#~ msgstr "សេចក្ដី​ពិពណ៌នា"
+
+#~ msgctxt "list header: type of file"
+#~ msgid "File Type"
+#~ msgstr "ប្រភេទ​ឯកសារ"
+
+#~ msgid "Location (URL)"
+#~ msgstr "ទីតាំង (URL)"
+
+#~ msgid "Links in: %1 - KGet"
+#~ msgstr "តំណ​ក្នុង ៖ %1 - KGet"
+
+#~ msgid "&Select All Filtered"
+#~ msgstr "ជ្រើស​អ្វី​ទាំងអស់​ដែល​បានត្រង"
+
+#~ msgid "&Select All"
+#~ msgstr "ជ្រើស​ទាំងអស់"
+
+#~ msgid "D&eselect All Filtered"
+#~ msgstr "ដោះជ្រើសអ្វី​ដែល​បាន​ត្រង​ទាំងអស់"
+
+#~ msgid "D&eselect All"
+#~ msgstr "ដោះជ្រើស​ទាំងអស់"
+
+#~ msgid "not specified"
+#~ msgstr "មិន​បានបញ្ជាក់ទេ"
+
+#~ msgctxt "Mirror as in server, in url"
+#~ msgid "Mirror"
+#~ msgstr "កញ្ចក់"
+
+#~ msgctxt "The priority of the mirror"
+#~ msgid "Priority"
+#~ msgstr "អាទិភាព"
+
+#~ msgctxt "Number of paralell connections to the mirror"
+#~ msgid "Connections"
+#~ msgstr "ការ​តភ្ជាប់"
+
+#~ msgctxt "Location = country"
+#~ msgid "Location"
+#~ msgstr "ទីតាំង"
+
+#~ msgid "Add mirror"
+#~ msgstr "បន្ថែម​កញ្ចក់"
+
+#~ msgctxt "Adds the item and reopens the dialog to add a further item"
+#~ msgid "Add more"
+#~ msgstr "បន្ថែម​ផ្សេង​ទៀត"
+
+#~ msgid "%1 has been successfully added."
+#~ msgstr "%1 ត្រូវ​បាន​បន្ថែម​ដោយ​ជោគជ័យ ។"
+
+#~ msgid "Modify the used mirrors."
+#~ msgstr "កែប្រែ​កញ្ចក់​ដែល​បានប្រើ ។"
+
+#~ msgid "Download again"
+#~ msgstr "ទាញយក​ម្ដង​ទៀត"
+
+#~ msgctxt "Delete selected history-item"
+#~ msgid "Delete selected"
+#~ msgstr "លុប​អ្វី​ដែល​បាន​ជ្រើស"
+
+#~ msgid "Open file"
+#~ msgstr "បើក​ឯកសារ"
+
+#~ msgid "Today"
+#~ msgstr "ថ្ងៃ​នេះ"
+
+#~ msgid "Last week"
+#~ msgstr "សប្ដាហ៍​មុន"
+
+#~ msgid "Last Month"
+#~ msgstr "ខែ​មុន"
+
+#~ msgid "A long time ago"
+#~ msgstr "យូរ​ណាស់​មកហើយ"
+
+#~ msgid "Under 10MiB"
+#~ msgstr "ក្រោម 10MiB"
+
+#~ msgid "Between 10MiB and 50MiB"
+#~ msgstr "រវាង 10MiB និង 50MiB"
+
+#~ msgid "Between 50MiB and 100MiB"
+#~ msgstr "រវាង 50MiB និង 100MiB"
+
+#~ msgid "More than 100MiB"
+#~ msgstr "ធំជាង 100MiB"
+
+#~ msgid "Transfer History"
+#~ msgstr "ប្រវត្តិ​ផ្ទេរ"
+
+#~ msgid "&Open File"
+#~ msgstr "បើក​ឯកសារ"
+
+#~ msgctxt "The transfer is running"
+#~ msgid "Running"
+#~ msgstr "កំពង់​រត់"
+
+#~ msgctxt "The transfer is stopped"
+#~ msgid "Stopped"
+#~ msgstr "បាន​បញ្ឈប់"
+
+#~ msgctxt "The transfer is aborted"
+#~ msgid "Aborted"
+#~ msgstr "បាន​បោះបង់"
+
+#~ msgctxt "The transfer is finished"
+#~ msgid "Finished"
+#~ msgstr "បាន​បញ្ចប់"
+
+#~ msgid "Source File"
+#~ msgstr "ឯកសារ​ប្រភព"
+
+#~ msgid "Destination"
+#~ msgstr "ទិសដៅ"
+
+#~ msgid "Time"
+#~ msgstr "ពេលវេលា"
+
+#~ msgid "File Size"
+#~ msgstr "ទំហំ​ឯកសារ"
+
+#~ msgid "Less than 1MiB"
+#~ msgstr "តិចជាង 1MiB"
+
+#~ msgid "Between 1MiB-10MiB"
+#~ msgstr "រវាង ១MiB-១០MiB"
+
+#~ msgid "Between 10MiB-100MiB"
+#~ msgstr "រវាង ១០MiB-១០០MiB"
+
+#~ msgid "Between 100MiB-1GiB"
+#~ msgstr "រវាង ១០០MiB-១GiB"
+
+#~ msgid "More than 1GiB"
+#~ msgstr "ច្រើនជាង ១GiB"
+
+#~ msgid "Last month"
+#~ msgstr "ខែ​មុន"
+
+#~ msgctxt "the transfer has been finished"
+#~ msgid "Finished"
+#~ msgstr "បាន​បញ្ចប់"
+
+#~ msgid "You have no source URLs selected."
+#~ msgstr "អ្នក​មិនមាន​ប្រភព URLs ដែល​បាន​ជ្រើស​ទេ ។"
+
+#~ msgid "Files that exist already in the current folder have been marked."
+#~ msgstr "មាន​ឯកសារ​រួច​ហើយ​នៅ​ក្នុង​ថត​បច្ចុប្បន្ន​ត្រូវបាន​សម្គាល់ ។"
+
+#~ msgctxt "an error happened in connection with the user input"
+#~ msgid "Error:"
+#~ msgstr "កំហុស ៖"
+
+#~ msgctxt "a warning happened in connection with the user input"
+#~ msgid "Warning:"
+#~ msgstr "ការ​ព្រមាន ៖"
+
+#~ msgctxt "trust level"
+#~ msgid "Unknown"
+#~ msgstr "មិនស្គាល់"
+
+#~ msgctxt "trust level"
+#~ msgid "Undefined"
+#~ msgstr "មិន​បានកំណត់​ទេ"
+
+#~ msgctxt "trust level"
+#~ msgid "Never"
+#~ msgstr "កុំ"
+
+#~ msgctxt "trust level"
+#~ msgid "Marginal"
+#~ msgstr "បន្ទប់បន្សំ"
+
+#~ msgctxt "trust level"
+#~ msgid "Full"
+#~ msgstr "ពេញលេញ"
+
+#~ msgctxt "trust level"
+#~ msgid "Ultimate"
+#~ msgstr "ចុងក្រោយ"
+
+#~ msgctxt ""
+#~ "Signature here is meant in cryptographic terms, so the signature of a "
+#~ "file."
+#~ msgid "Signature of %1."
+#~ msgstr "ហត្ថលេខា​ %1 ។"
+
+#~ msgid "This option is not supported for the current transfer."
+#~ msgstr "ជម្រើស​នេះ​មិន​ត្រូវ​បានគាំទ្រ​សម្រាប់​ការ​ផ្ទេរ​បច្ចុប្បន្ន​នោះ​ទេ ។"
+
+#~ msgid "You need to define a signature."
+#~ msgstr "អ្នក​ត្រូវតែ​កំណត់​ហត្ថលេខា ។"
+
+#~ msgid ""
+#~ "No fingerprint could be found, check if the signature is correct or "
+#~ "verify the download."
+#~ msgstr ""
+#~ "រក​មិនឃើញ​ស្នាមម្រាមដៃ​ទេ សូម​ពិនិត្យ​មើល ប្រសិនបើ​ហត្ថលេខា​ត្រឹមត្រូវ ឬ​ផ្ទៀងផ្ទាត់​ការ​ទាញយក ។"
+
+#~ msgid "The key has been revoked."
+#~ msgstr "សោ​​ត្រូវ​បានដកហូ​តវិញ ។"
+
+#~ msgid "The key is disabled."
+#~ msgstr "សោ​ត្រូវ​បានបិទ ។"
+
+#~ msgid "The key is invalid."
+#~ msgstr "សោ​មិន​ត្រឹមត្រូវ​ទេ ។"
+
+#~ msgid "The key is expired."
+#~ msgstr "សោ​ផុត​កំណត់​ហើយ ។"
+
+#~ msgid "The key is not to be trusted."
+#~ msgstr "មិន​ត្រូវ​ទុកចិត្ត​សោ​ទេ ។"
+
+#~ msgid "The key is to be trusted marginally."
+#~ msgstr "ត្រូវ​តែ​ទុកចិត្ត​សោ​បន្ទាប់បន្សំ ។​"
+
+#~ msgid "The key is to be trusted fully."
+#~ msgstr "ត្រូវតែ​ទុកចិត្ត​សោ​ពេញលេញ ។"
+
+#~ msgid "The key is to be trusted ultimately."
+#~ msgstr "ត្រូវ​តែ​ទុកចិត្ត​សោ​ចុងក្រោយ​បំផុត ។​"
+
+#~ msgid "Trust level of the key is unclear."
+#~ msgstr "កម្រិត​ដែលទុកចិត្ត​របស់​សោ​មិន​ច្បាស់​ទេ ។"
+
+#~ msgid "Unlimited"
+#~ msgstr "គ្មាន​ដែន​កំណត់"
+
+#~ msgctxt "pgp signature is verified"
+#~ msgid "Verified"
+#~ msgstr "បាន​ផ្ទៀងផ្ទាត់"
+
+#~ msgid "The signature has been verified successfully."
+#~ msgstr "ហត្ថលេខា​ត្រូវ​បាន​ផ្ទៀងផ្ទាត់​ដោយ​ជោគជ័យ ។"
+
+#~ msgid "The signature has been verified successfully:"
+#~ msgstr "ហត្ថលេខា​ត្រូ​វបាន​ផ្ទៀងផ្ទាត់​ដោយ​ជោគជ័យ ៖"
+
+#~ msgctxt "pgp signature is not verified"
+#~ msgid "Failed"
+#~ msgstr "បានបរាជ័យ"
+
+#~ msgid ""
+#~ "Caution: Verification failed. Either you entered the wrong signature, or "
+#~ "the data has been modified."
+#~ msgstr ""
+#~ "ប្រយ័ត្ន ៖ ការ​ផ្ទៀងផ្ទាត់​បានបរាជ័យ ។ អ្នក​បាន​បញ្ចូល​ហត្ថលេខា​មិន​ត្រឹមត្រូវ ឬ​ទិន្នន័យ​ត្រូវ​"
+#~ "បានកែប្រែ ។"
+
+#~ msgid ""
+#~ "Verification not possible. Check the entered data, whether gpg-agent is "
+#~ "running, or whether you have an Internet connection (for retrieving keys.)"
+#~ msgstr ""
+#~ "មិនអាច​ធ្វើការ​ផ្ទៀងផ្ទាត់​បានទេ ។ សូម​ពិនិត្យ​មើលទិន្នន័យ​ដែលបានបញ្ចូល ថាតើ​ gpg-agent កំពុង​តែ​"
+#~ "រត់​ ឬ​ថាតើ​អ្នក​មាន​​កា​រតភ្ជាប់​អ៊ីនធឺណិត​ដែរឬទេ (សម្រាប់សោ​ទៅ​យក ។)"
+
+#~ msgid ""
+#~ "Feature is not supported, as KGet is not compiled with QPGME support."
+#~ msgstr ""
+#~ "លក្ខណពិសេស​នេះ​មិនត្រូវ​បានគាំទ្រ​ទេ ព្រោះ​ថា KGet មិន​ត្រូវ​បានចងក្រង​​​​ដោយ​មាន​ការ​គាំទ្រ​ QPGME "
+#~ "នោះទេ ។"
+
+#~ msgid "Error:"
+#~ msgstr "កំហុស ៖"
+
+#~ msgid "Problems:"
+#~ msgstr "បញ្ហា ៖"
+
+#~ msgid "Information:"
+#~ msgstr "ព័ត៌មាន ៖"
+
+#~ msgid "Select columns"
+#~ msgstr "ជ្រើស​ជួរឈរ"
+
+#~ msgid "Transfer Details"
+#~ msgstr "សេចក្ដី​លម្អិត​នៃ​ការ​ផ្ទេរ"
+
+#~ msgid "Add checksum"
+#~ msgstr "បន្ថែម​ឆេកសាំ"
+
+#~ msgid "%1 %2 has been successfully added."
+#~ msgstr "%1 %2 ត្រូវ​បាន​បន្ថែម​ដោយ​ជោគជ័យ ។"
+
+#~ msgid "Transfer Verification for %1"
+#~ msgstr "ការ​ផ្ទៀងផ្ទាត់​ការ​ផ្ទេរ​សម្រាប់ %1"
+
+#~ msgid "%1 was successfully verified."
+#~ msgstr "%1 ត្រូវ​បាន​ផ្ទៀងផ្ទាត់​ដោយ​ជោគជ័យ ។"
+
+#~ msgid "Verification successful"
+#~ msgstr "ការ​ផ្ទៀងផ្ទាត់​បាន​ជោគជ័យ"
+
+#~ msgid "Rename File"
+#~ msgstr "ប្ដូរ​ឈ្មោះ​ឯកសារ"
+
+#~ msgid "Rename %1 to:"
+#~ msgstr "ប្ដូរ​ឈ្មោះ %1 ទៅ​ជា ៖"
+
+#~ msgid "&Rename"
+#~ msgstr "ប្ដូរ​ឈ្មោះ"
+
+#~ msgid "Semantic Desktop"
+#~ msgstr "ផ្ទៃតុ​ស៊ីមេនទិក"
+
+#~ msgid "Delete Group"
+#~ msgid_plural "Delete Groups"
+#~ msgstr[0] "លុប​ក្រុម"
+
+#~ msgid "Rename Group..."
+#~ msgid_plural "Rename Groups..."
+#~ msgstr[0] "ប្ដូរ​ឈ្មោះ​ក្រុម​..."
+
+#~ msgctxt "fix position for droptarget"
+#~ msgid "Sticky"
+#~ msgstr "ស្អិត"
+
+#~ msgid "Quit KGet"
+#~ msgstr "ចេញ​ពី KGet"
+
+#~ msgid "The dropped file is a KGet Transfer List"
+#~ msgstr "ឯកសារ​ដែល​បានទម្លាក់​គឺ​ជា​បញ្ជី​ផ្ទេរ​របស់ KGet"
+
+#~ msgid "&Download"
+#~ msgstr "ទាញយក"
+
+#~ msgid "&Load transfer list"
+#~ msgstr "ផ្ទុក​​បញ្ជី​ផ្ទេរ"
+
+#~ msgid "Show Main Window"
+#~ msgstr "បង្ហាញ​បង្អួច​មេ"
+
+#~ msgid "Hide Main Window"
+#~ msgstr "លាក់​បង្អួច​មេ"
+
+#~ msgid "Drop Target"
+#~ msgstr "គោលដៅ​ទម្លាក់"
+
+#~ msgid "You can drag download links into the drop target."
+#~ msgstr "អ្នក​អាច​អុស​តំណ​ទាញយក​ទៅ​គោលដៅ​ទម្លាក់ ។"
+
+#~ msgctxt "%1 filename, %2 total size, %3 status"
+#~ msgid "%1(%2) %3"
+#~ msgstr "%1(%2) %3"
+
+#~ msgctxt ""
+#~ "%1 filename, %2 percent complete, %3 downloaded out of %4 total size"
+#~ msgid "%1(%2% %3/%4) Speed:%5/s"
+#~ msgstr "%1(%2% %3/%4) ល្បឿន ៖ %5/s"
+
+#~ msgctxt ""
+#~ "%1 filename, %2 percent complete, %3 downloaded out of %4 total size, %5 "
+#~ "status"
+#~ msgid "%1(%2% %3/%4) %5"
+#~ msgstr "%1(%2% %3/%4) %5"
+
+#~ msgid "Ready"
+#~ msgstr "រួចរាល់"
+
+#~ msgid ""
+#~ "Drop target has been hidden. If you want to show it again, go to Settings-"
+#~ ">Configure KGet->Look & Feel."
+#~ msgstr ""
+#~ "គោលដៅ​ទម្លាក់​ត្រូវ​បាន​លាក់ ។ ប្រសិន​បើ​អ្នក​ចង់​បង្ហាញ​វា​ម្ដងទៀត គឺ​ត្រូវ​ទៅកាន់ ការ​កំណត់->កំណត់​រចនា​"
+#~ "សម្ព័ន្ធ KGet->រូបរាង និង​មុខងារ ។"
+
+#~ msgid "Hiding drop target"
+#~ msgstr "ការ​លាក់​គោលដៅ​ទម្លាក់"
+
+#~ msgid "Transfer Settings for %1"
+#~ msgstr "ការ​កំណត់​ផ្ទេរ​សម្រាប់ %1"
+
+#~ msgid ""
+#~ "Changing the destination did not work, the destination stays unmodified."
+#~ msgstr "ការ​ផ្លាស់ប្ដូ​រទិសដៅ​មិន​ដំណើរការ​ទេ ទិសដៅ​មិន​ត្រូ​វបាន​កែប្រែ​ទេ ។"
+
+#~ msgid "Destination unmodified"
+#~ msgstr "មិនបាន​កែប្រែ​ទិសដៅ​ទេ"
+
+#~ msgid "Average speed: %1/s"
+#~ msgstr "ល្បឿន​មធ្យម ៖ %1/វិ."
+
+#~ msgid "%1 of %2"
+#~ msgstr "%1 នៃ %2"
+
+#~ msgid "Group Settings for %1"
+#~ msgstr "កា​រកំណត់​ក្រុម​សម្រាប់ %1"
+
+#~ msgctxt "@info"
+#~ msgid "Unable to start the server: %1."
+#~ msgstr "មិន​អាច​ចាប់ផ្ដើម​ម៉ាស៊ីន​បម្រើ ៖ %1 ។"
+
+#~ msgctxt "@item speed of transfer per seconds"
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#~ msgctxt "@label"
+#~ msgid "KGet Web Interface"
+#~ msgstr "ចំណុច​ប្រទាក់​បណ្ដាញ​របស់ KGet"
+
+#~ msgctxt "@label number"
+#~ msgid "Nr"
+#~ msgstr "Nr"
+
+#~ msgctxt "@label"
+#~ msgid "File name"
+#~ msgstr "ឈ្មោះ​ឯកសារ"
+
+#~ msgctxt "@label Progress of transfer"
+#~ msgid "Finished"
+#~ msgstr "បាន​បញ្ចប់"
+
+#~ msgctxt "@label Speed of transfer"
+#~ msgid "Speed"
+#~ msgstr "ល្បឿន"
+
+#~ msgctxt "@label Status of transfer"
+#~ msgid "Status"
+#~ msgstr "ស្ថានភាព"
+
+#~ msgctxt "@action:button start a transfer"
+#~ msgid "Start"
+#~ msgstr "ចាប់ផ្ដើម"
+
+#~ msgctxt "@action:button"
+#~ msgid "Stop"
+#~ msgstr "បញ្ឈប់"
+
+#~ msgctxt "@action:button"
+#~ msgid "Remove"
+#~ msgstr "យកចេញ"
+
+#~ msgctxt "@label Download from"
+#~ msgid "Source:"
+#~ msgstr "ប្រភព ៖"
+
+#~ msgctxt "@label Save download to"
+#~ msgid "Saving to:"
+#~ msgstr "រក្សា​ទុក​ទៅ ៖"
+
+#~ msgctxt "@label Title in header"
+#~ msgid "Web Interface"
+#~ msgstr "ចំណុច​ប្រទាក់​បណ្ដាញ"
+
+#~ msgctxt "@action"
+#~ msgid "Settings"
+#~ msgstr "ការ​កំណត់"
+
+#~ msgctxt "@action"
+#~ msgid "Refresh"
+#~ msgstr "ធ្វើ​ឲ្យ​ស្រស់"
+
+#~ msgctxt "@action"
+#~ msgid "Enter URL: "
+#~ msgstr "បញ្ចូល URL ៖"
+
+#~ msgctxt "@action:button"
+#~ msgid "OK"
+#~ msgstr "យល់ព្រម"
+
+#~ msgctxt "@action Refresh download list every x (seconds)"
+#~ msgid "Refresh download list every"
+#~ msgstr "ធ្វើ​ឲ្យ​បញ្ជីទាញយក​ស្រស់​រៀងរាល់"
+
+#~ msgctxt "@action (Refresh very x )seconds"
+#~ msgid "seconds"
+#~ msgstr "វិនាទី"
+
+#~ msgctxt "@action:button"
+#~ msgid "Save Settings"
+#~ msgstr "រក្សាទុក​ការ​កំណត់"
+
+#~ msgctxt "@title"
+#~ msgid "Downloads"
+#~ msgstr "​ទាញយក"
+
+#~ msgctxt "@label text in footer"
+#~ msgid "KGet Web Interface | Valid XHTML 1.0 Strict &amp; CSS"
+#~ msgstr "ចំណុច​ប្រទាក់​បណ្ដាញ​របស់ KGet | XHTML 1.0 មិន​ត្រឹមត្រូវ &amp; CSS"
+
+#~ msgid "An advanced download manager for KDE"
+#~ msgstr "កម្មវិធី​គ្រប់គ្រង​ការ​ទាញយក​កម្រិត​ខ្ពស់​មួយ​សម្រាប់ KDE"
+
+#~ msgid ""
+#~ "(C) 2005 - 2009, The KGet developers\n"
+#~ "(C) 2001 - 2002, Patrick Charbonnier\n"
+#~ "(C) 2002, Carsten Pfeiffer\n"
+#~ "(C) 1998 - 2000, Matej Koss"
+#~ msgstr ""
+#~ "រក្សា​សិទ្ធិ​ឆ្នាំ ២០០៥ - ២០០៩ ដោយ​អ្នក​អភិវឌ្ឍ KGet\n"
+#~ "រក្សា​សិទ្ធិ​ឆ្នាំ ២០០១ - ២០០២ ដោយ Patrick Charbonnier\n"
+#~ "រក្សា​សិទ្ធិ​ឆ្នាំ ២០០២ ដោយ Carsten Pfeiffer\n"
+#~ "រក្សា​សិទ្ធិ​ឆ្នាំ ១៩៩៨ - ២០០០ ដោយ Matej Koss"
+
+#~ msgid "<a href=\"mailto:kget@kde.org\">kget@kde.org</a>"
+#~ msgstr "<a href=\"mailto:kget@kde.org\">kget@kde.org</a>"
+
+#~ msgid "Lukas Appelhans"
+#~ msgstr "Lukas Appelhans"
+
+#~ msgid "Maintainer, Core Developer, Torrent Plugin Author"
+#~ msgstr "អ្នកថែទាំ អ្នក​អភិវឌ្ឍន៍ អ្នក​និពន្ធ​កម្មវិធី​ជំនួយ​របស់ Torrent"
+
+#~ msgid "Dario Massarin"
+#~ msgstr "Dario Massarin"
+
+#~ msgid "Core Developer"
+#~ msgstr "អ្នក​អភិវឌ្ឍន៍​ស្នូល"
+
+#~ msgid "Urs Wolfer"
+#~ msgstr "Urs Wolfer"
+
+#~ msgid "Manolo Valdes"
+#~ msgstr "Manolo Valdes"
+
+#~ msgid "Core Developer, Multithreaded Plugin Author"
+#~ msgstr "អ្នក​អភិវឌ្ឍន៍​ស្នូល និង​អ្នក​និពន្ធ​កម្មវិធី​ជំនួយ​ដែល​បាន​ចង​ខ្សែ​ស្រឡាយ​ច្រើន"
+
+#~ msgid "Matthias Fuchs"
+#~ msgstr "Matthias Fuchs"
+
+#~ msgid "Javier Goday"
+#~ msgstr "Javier Goday"
+
+#~ msgid "Developer"
+#~ msgstr "អ្នក​អភិវឌ្ឍន៍"
+
+#~ msgid "Patrick Charbonnier"
+#~ msgstr "Patrick Charbonnier"
+
+#~ msgid "Former Developer"
+#~ msgstr "អតីត​អ្នក​អភិវឌ្ឍន៍"
+
+#~ msgid "Carsten Pfeiffer"
+#~ msgstr "Carsten Pfeiffer"
+
+#~ msgid "Matej Koss"
+#~ msgstr "Matej Koss"
+
+#~ msgid "Joris Guisson"
+#~ msgstr "Joris Guisson"
+
+#~ msgid "BTCore (KTorrent) Developer"
+#~ msgstr "អ្នក​អភិវឌ្ឍន៍ BTCore (KTorrent)​"
+
+#~ msgid "Mensur Zahirovic (Nookie)"
+#~ msgstr "Mensur Zahirovic (Nookie)"
+
+#~ msgid "Design of Web Interface"
+#~ msgstr "ការ​រចនា​របស់​ចំណុច​ប្រទាក់​បណ្ដាញ"
+
+#~ msgid "Start KGet with drop target"
+#~ msgstr "ចាប់ផ្ដើម KGet ជាមួយ​គោលដៅ​ទម្លាក់"
+
+#~ msgid "Start KGet with hidden main window"
+#~ msgstr "ចាប់ផ្ដើម KGet ជាមួយ​បង្អួច​មេ​ដែល​លាក់"
+
+#~ msgid "Start KGet without drop target animation"
+#~ msgstr "ចាប់ផ្ដើម KGet ជាមួយ​ចលនា​គោលដៅ​ទម្លាក់"
+
+#~ msgid "Execute Unit Testing"
+#~ msgstr "ប្រតិបត្តិ​ការ​សាកល្បង​ឯកតា"
+
+#~ msgid "URL(s) to download"
+#~ msgstr "URL ដែល​ត្រូវ​ទាញយក"
+
+#~ msgid "KGet Transfer List"
+#~ msgstr "បញ្ជី​ការ​ផ្ទេរ​របស់ KGet"
+
+#~ msgid "Export Transfers"
+#~ msgstr "នាំចេញ​ការ​ផ្ទេរ"
+
+#~ msgid "&New Download..."
+#~ msgstr "ការ​ទាញយក​ថ្មី..."
+
+#~ msgid "&Import Transfers..."
+#~ msgstr "នាំចូល​ការ​ផ្ទេរ..."
+
+#~ msgid "&Export Transfers List..."
+#~ msgstr "នាំចេញ​បញ្ជី​ផ្ទេរ..."
+
+#~ msgid "&Export Transfers as Plain Text..."
+#~ msgstr "ផ្ទេរ​ការ​នាំចេញ​ជា​អត្ថបទ​ធម្មតា..."
+
+#~ msgid "&Create a Metalink"
+#~ msgstr "បង្កើត​តំណ​មេតា"
+
+#~ msgid "Top Priority"
+#~ msgstr "អាទិភាព​ខ្ពស់​"
+
+#~ msgid "Least Priority"
+#~ msgstr "អាទិភាពទាប"
+
+#~ msgid "Increase Priority"
+#~ msgstr "បង្កើន​អាទិភាព"
+
+#~ msgid "Decrease Priority"
+#~ msgstr "បន្ថយ​អាទិភាព"
+
+#~ msgid "Set Icon..."
+#~ msgstr "កំណត់​រូបតំណាង..."
+
+#~ msgid "Auto-Paste Mode"
+#~ msgstr "របៀប​បិទភ្ជាប់​ស្វ័យប្រវត្តិ"
+
+#~ msgid ""
+#~ "<b>Auto paste</b> button toggles the auto-paste mode on and off.\n"
+#~ "When set, KGet will periodically scan the clipboard for URLs and paste "
+#~ "them automatically."
+#~ msgstr ""
+#~ "ប៊ូតុង​​<b>បិទភ្ជាប់​ស្វ័យប្រវត្តិ</b> បិទបើក​របៀប​បិទភ្ជាប់​ស្វ័យប្រវត្តិ ។\n"
+#~ "នៅ​ពេល​​ដែល​បាន​កំណត់ នោះ KGet នឹង​វិភាគ​​ក្ដារ​តម្បៀតខ្ទាស់​​រក URL ​យ៉ាង​ទៀងទាត់​ ហើយ​បិទភ្ជាប់​ពួកវា​​"
+#~ "ដោយស្វ័យប្រវត្តិ ។"
+
+#~ msgid "Use KGet as Konqueror Download Manager"
+#~ msgstr "ប្រើ KGet ជា​កម្មវិធី​គ្រប់គ្រង​ការ​ទាញយក​របស់ Konqueror"
+
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Remove Selected"
+#~ msgstr "យកអ្វី​ដែលបានជ្រើស​ចេញ"
+
+#~ msgctxt "delete all finished transfers"
+#~ msgid "Remove All Finished"
+#~ msgstr "យក​អ្វី​ដែល​បានបញ្ចប់​ចេញ"
+
+#~ msgctxt "redownload selected transfer item"
+#~ msgid "Redownload Selected"
+#~ msgstr "ទាញ​យក​អ្វី​ដែលបាន​ជ្រើស​ម្ដង​ទៀត"
+
+#~ msgid "Start / Resume All"
+#~ msgstr "ចាប់ផ្ដើម / ធ្វើ​បន្ត​ទាំងអស់"
+
+#~ msgid "Start / Resume Selected"
+#~ msgstr "ចាប់ផ្ដើម / ធ្វើ​បន្ត​ដែល​បាន​ជ្រើស"
+
+#~ msgid "Stop All"
+#~ msgstr "បញ្ឈប់​ទាំងអស់"
+
+#~ msgid "Stop Selected"
+#~ msgstr "បញ្ឈប់​ដែល​បាន​ជ្រើស"
+
+#~ msgid "Start / Resume"
+#~ msgstr "ចាប់ផ្ដើម / ធ្វើ​បន្ត"
+
+#~ msgid "Stop"
+#~ msgstr "បញ្ឈប់"
+
+#~ msgid "Remove"
+#~ msgstr "យកចេញ"
+
+#~ msgid "Open Destination"
+#~ msgstr "បើក​ទិសដៅ"
+
+#~ msgid "Open File"
+#~ msgstr "បើក​ឯកសារ"
+
+#~ msgid "Show Details"
+#~ msgstr "បង្ហាញ​លម្អិត"
+
+#~ msgid "Copy URL to Clipboard"
+#~ msgstr "ចម្លង URL ទៅ​ក្ដារ​តម្បៀត​ខ្ទាស់"
+
+#~ msgid "&Transfer History"
+#~ msgstr "ប្រវត្តិ​នៃកា​រផ្ទេរ"
+
+#~ msgid "&Group Settings"
+#~ msgstr "ការ​កំណត់​ក្រុម"
+
+#~ msgid "&Transfer Settings"
+#~ msgstr "កំណត់​ការ​ផ្ទេរ"
+
+#~ msgid "Import &Links..."
+#~ msgstr "នាំចូល​តំណ..."
+
+#~ msgid ""
+#~ "This is the first time you have run KGet.\n"
+#~ "Would you like to enable KGet as the download manager for Konqueror?"
+#~ msgstr ""
+#~ "អ្នក​បាន​រត់ KGet ជា​លើក​ដំបូង ។\n"
+#~ "តើ​អ្នក​ចង់​អនុញ្ញាត​​ឲ្យ KGet ធ្វើ​ជា​កម្មវិធី​គ្រប់គ្រង​ការ​ទាញយក​សម្រាប់ Konqueror ឬ​ទេ?"
+
+#~ msgid "Konqueror Integration"
+#~ msgstr "ការ​រួមបញ្ចូល​របស់ Konqueror"
+
+#~ msgid "Enable"
+#~ msgstr "អនុញ្ញាត"
+
+#~ msgid "Do Not Enable"
+#~ msgstr "មិន​អនុញ្ញាត"
+
+#~ msgid "All Openable Files"
+#~ msgstr "ឯកសារ​ដែល​អាច​បើក​ទាំងអស់"
+
+#~ msgctxt "window title including overall download progress in percent"
+#~ msgid "KGet - %1%"
+#~ msgstr "KGet - %1%"
+
+#~ msgid ""
+#~ "Some transfers are still running.\n"
+#~ "Are you sure you want to close KGet?"
+#~ msgstr ""
+#~ "ការ​ផ្ទេរ​មួយ​ចំនួន កំពុង​តែ​ដំណើរការ​នៅ​ឡើយ ។\n"
+#~ "តើ​អ្នក​ពិត​ជា​ចង់​បិទ KGet ឬ?"
+
+#~ msgid "Confirm Quit"
+#~ msgstr "អះអាង​ការ​ចេញ"
+
+#~ msgid "Enter Group Name"
+#~ msgstr "បញ្ចូល​ឈ្មោះ​ក្រុម"
+
+#~ msgid "Group name:"
+#~ msgstr "ឈ្មោះ​ក្រុម ៖"
+
+#~ msgid "Are you sure you want to delete the selected transfer?"
+#~ msgid_plural "Are you sure you want to delete the selected transfers?"
+#~ msgstr[0] "តើអ្នក​ប្រាកដ​ជា​ចង់​លុប​ការ​ផ្ទេរ​ដែល​បានជ្រើស​ឬ ?"
+
+#~ msgid "Confirm transfer delete"
+#~ msgstr "អះអាង​លុប​ការ​ផ្ទេរ"
+
+#~ msgid ""
+#~ "KGet has been temporarily disabled as download manager for Konqueror. If "
+#~ "you want to disable it forever, go to Settings->Advanced and disable "
+#~ "\"Use as download manager for Konqueror\"."
+#~ msgstr ""
+#~ "KGet បាន​បិទ​ជា​កម្មវិធី​គ្រប់គ្រង​ការ​ទាញយក​សម្រាប់ Konqueror ជា​បណ្ដោះអាសន្ន ។ ប្រសិន​បើ​អ្នក​ចង់​"
+#~ "បិទ​វា​ជារៀងរហូត គឺ​ត្រូវ​ទៅកាន់ ការ​កំណត់->កម្រិត​ខ្ពស់ ហើយ​ដោះធីក ​​\"ប្រើជា​កម្មវិធី​គ្រប់គ្រង​ការ​ទាញយក​"
+#~ "សម្រាប់ Konqueror\" ។"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "ខឹម សុខែម, អេង វណ្ណៈ, អោក ពិសិដ្ឋ​​"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr ""
+#~ "khoemsokhem@khmeros.info,​​evannak@khmeros.info,piseth_dv@khmeros.info"
+
+#~ msgid "Checksums"
+#~ msgstr "ឆេកសាំ"
+
+#~ msgid "Automatic verification:"
+#~ msgstr "កា​រផ្ទៀងផ្ទាត់​ដោយ​ស្វ័យ​ប្រវត្តិ ៖"
+
+#~ msgid "Weak (fastest)"
+#~ msgstr "ខ្សោយ (លឿន​បំផុត)"
+
+#~ msgid "Strong (recommended)"
+#~ msgstr "ខ្លាំង (បាន​ផ្ដល់​អនុសាសន៍)"
+
+#~ msgid "Strongest (slowest)"
+#~ msgstr "ខ្លាំង​បំផុត (យឺត​បំផុត)"
+
+#~ msgid "Used checksum:"
+#~ msgstr "ឆេកសាំ​ដែល​បាន​ប្រើ ៖"
+
+#~ msgid "Signature"
+#~ msgstr "ហត្ថលេខា"
+
+#~ msgid "Automatic verification"
+#~ msgstr "ការ​ផ្ទៀងផ្ទាត់​ដោយ​ស្វ័យ​ប្រវត្តិ"
+
+#~ msgid "Automatic downloading of missing keys"
+#~ msgstr "ទាញយក​សោ​ដែល​បាត់​ដោយ​ស្វ័យ​ប្រវត្តិ"
+
+#~ msgid "Keyservers:"
+#~ msgstr "ម៉ាស៊ីន​បម្រើ​សោ ៖"
+
+#~ msgid "Move &Up"
+#~ msgstr "ផ្លាស់ទី​ឡើង​លើ"
+
+#~ msgid "Move &Down"
+#~ msgstr "ផ្លាស់ទី​ចុះក្រោម"
+
+#~ msgid "Use default folders for groups as suggestion"
+#~ msgstr "ប្រើ​ថត​លំនាំដើម​សម្រាប់​ក្រុម​តាម​ការ​ស្នើសុំ"
+
+#~ msgid "Rename"
+#~ msgstr "ប្ដូរ​ឈ្មោះ"
+
+#~ msgid "Select Icon..."
+#~ msgstr "ជ្រើស​​រូបតំណាង..."
+
+#~ msgid "Limit Maximum Downloads Per Group"
+#~ msgstr "កំណត់​ការ​ទាញយក​អតិបរមា​ក្នុង​​ក្រុម​មួយ"
+
+#~ msgid "Number of downloads:"
+#~ msgstr "ចំនួន​ទាញយក ៖"
+
+#~ msgid "Downloads from the same server:"
+#~ msgstr "ការ​ទាញយក​ពី​ម៉ាស៊ីន​បម្រើ​ដូចគ្នា ៖"
+
+#~ msgid "Speed Limit"
+#~ msgstr "ល្បឿន​កំណត់"
+
+#~ msgid "Global download limit:"
+#~ msgstr "ដែន​កំណត់​ទាញយក​សកល ៖"
+
+#~ msgid " KiB/s"
+#~ msgstr " គីឡូបីត/វិ."
+
+#~ msgid "Global upload limit:"
+#~ msgstr "ដែន​កំណត់​ផ្ទុកឡើង​សកល ៖"
+
+#~ msgid "Per transfer:"
+#~ msgstr "ក្នុង​មួយ​ការ​ផ្ទេរ ៖"
+
+#~ msgid "Reconnect on Error or Broken Connection"
+#~ msgstr "តភ្ជាប់​ឡើងវិញ នៅ​ពេល​មាន​កំហុស ឬ​ដាច់​ការ​តភ្ជាប់"
+
+#~ msgid "Number of retries:"
+#~ msgstr "ចំនួន​ការ​ព្យាយាម​ឡើងវិញ ៖"
+
+#~ msgid "Retry after:"
+#~ msgstr "ព្យាយាម​ឡើងវិញ​បន្ទាប់​ពី ៖"
+
+#~ msgid " sec"
+#~ msgstr " វិ."
+
+#~ msgid "After Completing Downloads"
+#~ msgstr "បន្ទាតប់​ពី​បញ្ចប់​ការ​ទាញយក"
+
+#~ msgid "Auto shutdown"
+#~ msgstr "បិទ​ដោយ​ស្វ័យប្រវត្តិ"
+
+#~ msgid "Auto disconnect"
+#~ msgstr "ផ្ដាច់​ដោយ​ស្វ័យប្រវត្តិ"
+
+#~ msgid "Enable Web Interface"
+#~ msgstr "បើក​ចំណុច​ប្រទាក់​បណ្ដាញ"
+
+#~ msgid "Port:"
+#~ msgstr "ច្រក​ ៖"
+
+#~ msgid "User:"
+#~ msgstr "អ្នក​ប្រើ ៖"
+
+#~ msgid "Password:"
+#~ msgstr "ពាក្យ​សម្ងាត់ ៖"
+
+#~ msgid "Startup"
+#~ msgstr "ពេល​ចាប់ផ្ដើម"
+
+#~ msgid "Show splashscreen"
+#~ msgstr "បង្ហាញ​អេក្រង់​ស្វាគមន៍"
+
+#~ msgid "Enable animations"
+#~ msgstr "អនុញ្ញាត​​ចលនា"
+
+#~ msgid "Enable popup tooltip"
+#~ msgstr "បើក​ព័ត៌មាន​ជំនួយ​លេចឡើង"
+
+#~ msgid "Show drop target"
+#~ msgstr "បង្ហាញ​គោលដៅ​ទម្លាក់"
+
+#~ msgid "Disable confirmation dialogs (less verbosity)"
+#~ msgstr "បិទ​ប្រអប់​ការ​អះអាង (មាន​ការ​អធិប្បាយ​តិច)"
+
+#~ msgid "Enable system tray icon"
+#~ msgstr "អនុញ្ញាត​រូប​តំណាង​ថាស​ប្រព័ន្ធ"
+
+#~ msgid "Execute action after all downloads have been finished:"
+#~ msgstr "ប្រតិបត្តិ​សកម្មភាព​បន្ទាប់​ពី​ការ​ទាញយក​ទាំងអស់​ត្រូវ​បាន​បញ្ចប់ ៖"
+
+#~ msgid "At startup:"
+#~ msgstr "នៅ​ពេល​ចាប់ផ្ដើម ៖"
+
+#~ msgid "Restore Download State"
+#~ msgstr "ស្ដារ​ស្ថានភាព​ទាញយក​ឡើង​វិញ"
+
+#~ msgid "Start All Downloads"
+#~ msgstr "ចាប់ផ្ដើម​ការ​ទាញយក​ទាំងអស់"
+
+#~ msgid "Stop All Downloads"
+#~ msgstr "បញ្ឈប់​ការ​ទាញយក​ទាំងអស់"
+
+#~ msgid "History"
+#~ msgstr "ប្រវត្តិ"
+
+#~ msgid "History backend:"
+#~ msgstr "ប្រវត្តិ​កម្មវិធី​ផ្នែក​ខាង​ក្រោយ ៖"
+
+#~ msgid "Enable KDE global progress tracking"
+#~ msgstr "បើក​កា​រតាមដាន​វឌ្ឍនភាព​សកល​របស់ KDE"
+
+#~ msgid "Show every single download "
+#~ msgstr "បង្ហាញ​រាល់​ការ​​ទាញយក​តែ​មួយ​"
+
+#~ msgid "Show overall progress"
+#~ msgstr "បង្ហាញ​វឌ្ឍនភាព​ទាំងអស់"
+
+#~ msgid "Use as download manager for Konqueror:"
+#~ msgstr "ប្រើ​ជា​កម្មវិធី​គ្រប់គ្រង​ការ​ទាញយក​សម្រាប់ Konqueror ។"
+
+#~ msgid "Monitor clipboard for files to download"
+#~ msgstr "គ្រប់គ្រង​ក្ដារ​តម្បៀត​ខ្ទាស់​សម្រាប់​ឯកសារ​ដែល​ត្រូវ​ទាញយក"
+
+#~ msgid "Case insensitive:"
+#~ msgstr "ប្រកាន់​អក្សរតូចធំ ៖"
+
+#~ msgid "Search Engines"
+#~ msgstr "​ម៉ាស៊ីន​ស្វែងរក"
+
+#~ msgid "Engine Name"
+#~ msgstr "ឈ្មោះ​ម៉ាស៊ីន"
+
+#~ msgid "New Engine..."
+#~ msgstr "ម៉ាស៊ីន​ថ្មី..."
+
+#~ msgid "Number of connections per URL:"
+#~ msgstr "ចំនួន​តភ្ជាប់​ក្នុង​មួយ URL ៖"
+
+#~ msgid "Use search engines"
+#~ msgstr "ប្រើ​ម៉ាស៊ីន​ស្វែងរក"
+
+#~ msgid "Search for verification information"
+#~ msgstr "ស្វែងរក​ព័ត៌មាន​ផ្ទៀងផ្ទាត់​"
+
+#~ msgid "File Settings"
+#~ msgstr "ការ​កំណត់​ឯកសារ"
+
+#~ msgid "Filename:"
+#~ msgstr "ឈ្មោះ​ឯកសារ ៖"
+
+#~ msgid "Use Normalized Name"
+#~ msgstr "ប្រើ​ដែល​បាន​ធ្វើ​ឲ្យ​ធម្មតា"
+
+#~ msgid "Use Literal Name"
+#~ msgstr "ប្រើ​ឈ្មោះ​ត្រង់ៗ​"
+
+#~ msgid "Quality:"
+#~ msgstr "គុណភាព ៖"
+
+#~ msgid "Best Quality (.mp4)"
+#~ msgstr "គុណភាព​ល្អ​បំផុត (.mp4)"
+
+#~ msgid "Normal Quality (.flv)"
+#~ msgstr "គុណភាព​ធម្មតា (.flv)"
+
+#~ msgid ""
+#~ "Provide login info of your YouTube account in order to access restricted "
+#~ "media."
+#~ msgstr ""
+#~ "ផ្ដល់​នូវ​កា​រចូល ប្រសិន​បើ​​គណនី YouTube របស់​អ្នក ដើម្បី​ចូលដំណើរការ​មេឌៀ​ដែល​បានដាក់​កម្រិត ។"
+
+#~ msgid "Login Info"
+#~ msgstr "ព័ត៌មាន​ចូល"
+
+#~ msgid "Username:"
+#~ msgstr "ឈ្មោះ​អ្នក​ប្រើ ៖"
+
+#~ msgid ".netrc must have a hostname called 'youtube'."
+#~ msgstr ".netrc ត្រូវតែ​មាន​ឈ្មោះ​ម៉ាស៊ីន​ដែល​ហៅ​ថា 'youtube' ។"
+
+#~ msgid "User .netrc file"
+#~ msgstr "ឯកសារ .netrc របស់​អ្នក​ប្រើ"
+
+#~ msgid "User Scripts"
+#~ msgstr "ស្គ្រីប​របស់​អ្នក​ប្រើ"
+
+#~ msgid "Path"
+#~ msgstr "ផ្លូវ"
+
+#~ msgid "RegExp"
+#~ msgstr "RegExp"
+
+#~ msgid "New Script...."
+#~ msgstr "ស្គ្រីប​ថ្មី..."
+
+#~ msgid "Edit...."
+#~ msgstr "កែ​សម្រួល..."
+
+#~ msgid "Configure...."
+#~ msgstr "កំណត់​រចនាសម្ព័ន្ធ..."
+
+#~ msgid "Regexp:"
+#~ msgstr "Regexp ៖"
+
+#~ msgid "Path:"
+#~ msgstr "ផ្លូវ ៖"
+
+#~ msgid "Description:"
+#~ msgstr "សេចក្ដី​ពិពណ៌នា ៖"
+
+#~ msgid "Select the files you want to be downloaded."
+#~ msgstr "ជ្រើស​ឯកសារ​ដែល​អ្នកចង់​ឲ្យ​ទាញយក ។"
+
+#~ msgid "Number of simultaneous file downloads:"
+#~ msgstr "ចំនួន​ការ​ទាញយក​ឯកសារ​ដំណាលៗ​គ្នា ៖"
+
+#~ msgid "Number of mirrors per file:"
+#~ msgstr "ចំនួន​កញ្ចក់​ក្នុង​មួយ​ឯកសារ ៖"
+
+#~ msgid "Change string:"
+#~ msgstr "ផ្លាស់ប្ដូរ​​ខ្សែអក្សរ ៖"
+
+#~ msgid "Mode:"
+#~ msgstr "របៀប ៖"
+
+#~ msgid "Checksum type:"
+#~ msgstr "ប្រភេទ​ឆេកសាំ  ៖"
+
+#~ msgid "Result:"
+#~ msgstr "លទ្ធផល ៖"
+
+#~ msgid "label"
+#~ msgstr "ស្លាក"
+
+#~ msgid "Remove Tracker"
+#~ msgstr "យក​កម្មវិធី​តាមដាន​ចេញ"
+
+#~ msgid "Change Tracker"
+#~ msgstr "ផ្លាស់ប្ដូរ​កម្មវិធី​តាមដាន"
+
+#~ msgid "Update Trackers"
+#~ msgstr "ធ្វើ​​បច្ចុប្បន្នភាព​កម្មវិធីតាមដាន"
+
+#~ msgid "Restore Defaults"
+#~ msgstr "ស្ដារ​លំនាំ​ដើម"
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Webseed to add to the "
+#~ "torrent.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">Note: </span>Only http webseeds are supported.</p></body></"
+#~ "html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Webseed ដែល​ត្រូវ​បន្ថែមទៅ "
+#~ "torrent ។</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">ចំណាំ ៖ </span>តែ webseeds http ប៉ុណ្ណោះ​ដែល​ត្រូវបាន​គាំទ្រ ។</p></"
+#~ "body></html>"
+
+#~ msgid "Add Webseed"
+#~ msgstr "បន្ថែម Webseed"
+
+#~ msgid "Remove Webseed"
+#~ msgstr "យក Webseed ចេញ"
+
+#~ msgid "Chunks"
+#~ msgstr "ចំណិត"
+
+#~ msgid "Total:"
+#~ msgstr "សរុប ៖"
+
+#~ msgid "Currently downloading:"
+#~ msgstr "កា​រទាញ​យក​បច្ចុប្បន្ន ៖"
+
+#~ msgid "Downloaded:"
+#~ msgstr "បានទាញ​យក ៖"
+
+#~ msgid "Excluded:"
+#~ msgstr "មិនបាន​រួម​បញ្ចូល ៖"
+
+#~ msgid "Left:"
+#~ msgstr "ឆ្វេង ៖"
+
+#~ msgid "Size:"
+#~ msgstr "ទំហំ ៖"
+
+#~ msgid "Scanning data of torrent:"
+#~ msgstr "វិភាគរក​ទិន្នន័យ​របស់ torrent ៖"
+
+#~ msgid "Number of chunks found:"
+#~ msgstr "ចំនួន​កំណាត់​ដែល​បាន​រកឃើញ ៖"
+
+#~ msgid "Number of chunks failed:"
+#~ msgstr "បាន​បរាជ័យ​ក្នុង​ការ​រក​ចំនួន​កំណាត់ ៖"
+
+#~ msgid "Number of chunks not downloaded:"
+#~ msgstr "ចំនួន​កំណាត់​ដែល​មិនបាន​ទាញយក ៖"
+
+#~ msgid "Number of chunks downloaded:"
+#~ msgstr "ចំនួន​កំណាត់​ដែល​បាន​ទាញយក ៖"
+
+#~ msgid "0"
+#~ msgstr "០"
+
+#~ msgid "Cancel"
+#~ msgstr "បោះបង់"
+
+#~ msgid "Stats"
+#~ msgstr "ស្ថានភាព"
+
+#~ msgid "Seeders:"
+#~ msgstr "ឧបករណ៍​បណ្ដុះ ៖"
+
+#~ msgid "<n>"
+#~ msgstr "<n>"
+
+#~ msgid "Download speed:"
+#~ msgstr "ល្បឿន​ទាញយក ៖"
+
+#~ msgid "Leechers:"
+#~ msgstr "ឧបករណ៍​ស្រូប ៖"
+
+#~ msgid "Upload speed:"
+#~ msgstr "ល្បឿន​ផ្ទុក​ឡើង ៖"
+
+#~ msgctxt "chunks left"
+#~ msgid "Left:"
+#~ msgstr "ឆ្វេង ៖"
+
+#~ msgctxt "all chunks"
+#~ msgid "All:"
+#~ msgstr "ទាំងអស់ ៖"
+
+#~ msgctxt "source-file"
+#~ msgid "Source:"
+#~ msgstr "ប្រភព ៖"
+
+#~ msgid "Saving to:"
+#~ msgstr "រក្សា​ទុក​ទៅ ៖"
+
+#~ msgid "Upload limit per transfer:"
+#~ msgstr "ដែន​កំណត់​ផ្ទុក​ឡើង​/ផ្ទេរ ៖"
+
+#~ msgid "No Limit"
+#~ msgstr "គ្មាន​ដែន​កំណត់"
+
+#~ msgid "KiB"
+#~ msgstr "គីឡូបៃ"
+
+#~ msgid "Download limit per transfer:"
+#~ msgstr "ដែន​កំណត់​ទាញយក/កា​រផ្ទេរ ៖"
+
+#~ msgid "Enable UTP protocol"
+#~ msgstr "បើក​ពិធីការ UTP"
+
+#~ msgid "Folders"
+#~ msgstr "ថត"
+
+#~ msgid "Default torrent folder:"
+#~ msgstr "ថត torrent លំនាំដើម ៖"
+
+#~ msgid "Default temporary folder"
+#~ msgstr "ថត​បណ្ដោះ​អាសន្ន​លំនាំដើម"
+
+#~ msgid "Pre-allocate disk space"
+#~ msgstr "បម្រុង​ទុក​ទំហំ​ថាស​ជា​មុន"
+
+#~ msgctxt "General options."
+#~ msgid "General"
+#~ msgstr "ទូទៅ"
+
+#~ msgid "Create partial checksums"
+#~ msgstr "បង្កើត​ឆេកសាំ​ដោយ​ផ្នែក"
+
+#~ msgid "General URL:"
+#~ msgstr "URL ទូទៅ ៖"
+
+#~ msgid ""
+#~ "Automatically create checksums for the selected types. Keep in mind that "
+#~ "this might take a while."
+#~ msgstr ""
+#~ "បង្កើត​ឆេកសាំ​ដោយ​ស្វ័យ​ប្រវត្តិ សម្រាប់​ប្រភេទ​ដែល​បានជ្រើស ។ ចាំថា វា​អាច​ចំណាយ​ពេល​មួយ​រយៈ ។"
+
+#~ msgid ""
+#~ "Enter URLs here if all the dropped files are on that server and in the "
+#~ "same directory. For each dropped file the URL would consist of the "
+#~ "entered part and the filename."
+#~ msgstr ""
+#~ "បញ្ចូល​ URLs ទៅទីនេះ ប្រសិនបើ​ឯកសារ​ដែលបានទម្លាក់ទាំងអស់​នៅ​លើ​ម៉ាស៊ីន​បម្រើ និង​នៅ​ក្នុងថត​តែ​មួយ ។ "
+#~ "ចំពោះ​ឯកសារ​ដែលបានទម្លាក់នីមួយៗ URL នឹង​មាន​ផ្នែក​ដែលបានបញ្ចូល និង​ឈ្មោះ​ឯកសារ ។"
+
+#~ msgid "Types of the checksums:"
+#~ msgstr "ប្រភេទ​ឆេកសាំ ៖"
+
+#~ msgid "Create checksums:"
+#~ msgstr "បង្កើត​ឆេកសាំ ៖"
+
+#~ msgctxt "These entries are optional."
+#~ msgid "Optional"
+#~ msgstr "ជា​ជម្រើស"
+
+#~ msgid "Optional data:"
+#~ msgstr "ទិន្នន័យ​ជា​ជម្រើស ៖"
+
+#~ msgid "Enter information that all chosen files share."
+#~ msgstr "បញ្ចូល​ព័ត៌មាន​ ដែល​​ឯកសារ​បានជ្រើស​ទាំងអស់​ចែករំលែក ។"
+
+#~ msgid "Required"
+#~ msgstr "បាន​ទាមទារ"
+
+#~ msgid "Used Mirrors:"
+#~ msgstr "កញ្ចក់​ដែល​បានប្រើ ៖"
+
+#~ msgid "Recommended"
+#~ msgstr "បាន​ផ្ដល់​អនុសាសន៍"
+
+#~ msgid "File size (in bytes):"
+#~ msgstr "ទំហំ​ឯកសារ (គិត​ជា​បៃ) ៖"
+
+#~ msgid "0123456789"
+#~ msgstr "0123456789"
+
+#~ msgid "Verification:"
+#~ msgstr "កា​រផ្ទៀងផ្ទាត់​ ៖"
+
+#~ msgid "Optional"
+#~ msgstr "ជា​ជម្រើស"
+
+#~ msgid ""
+#~ "This assistant allows you to create metalinks from scratch or base them "
+#~ "on existing metalinks. A lot of the fields are optional or recommended, "
+#~ "so enter them if desired. The minimum is a save location, at least one "
+#~ "file and one URL."
+#~ msgstr ""
+#~ "អ្នក​ជំនួយការ​នេះ អនុញ្ញាត​ឲ្យ​យអ្នក​បង្កើត​តំណ​មេតា​ពី​ដំបូង ឬ​មាន​មូលដ្ឋាន​លើ​តំណ​មេតា​ដែលមានស្រាប់ ។ "
+#~ "វាល​ជា​ច្រើន​គឺជា​ជម្រើស ឬ​បាន​ផ្ដល់​អនុសាសន៍ ដូច្នេះ​ បញ្ចូល​ពួកវា​ប្រសិនបើ​ចង់បាន ។ តិចបំផុត​ត្រូវ​មាន "
+#~ "ទីតាំង​រក្សាទុក យ៉ាង​ហោចណាស់​ឯកសារ​មួយ និង​ URL មួយ ។"
+
+#~ msgid "Save created Metalink at:"
+#~ msgstr "រក្សាទុកតំណ​មេតា​ដែល​បានបង្កើត​នៅ ៖"
+
+#~ msgid "Create new Metalink"
+#~ msgstr "បង្កើត​តំណ​មេ​តា​ថ្មី"
+
+#~ msgid "Load existing Metalink:"
+#~ msgstr "ផ្ទុកតំណ​មេតា​ដែលមាន​ស្រាប់ ៖"
+
+#~ msgid "*.metalink *.meta4|Metalink file (*.metalink *.meta4)"
+#~ msgstr "*.metalink *.meta4|Metalink file (*.metalink *.meta4)"
+
+#~ msgid "General information:"
+#~ msgstr "ព័ត៌មាន​ទូទៅ ៖"
+
+#~ msgid "Here you can enter optional general information on the metalink."
+#~ msgstr "នៅទីនេះ អ្នកអាច​បញ្ចូល​ព័ត៌មាន​ទូទៅ​ជា​ជម្រើស​នៅ​លើ​តំណ​មេតា ។"
+
+#~ msgid "Origin:"
+#~ msgstr "ដើម ៖"
+
+#~ msgid "Web URL to the metalink"
+#~ msgstr "URL បណ្ដាញ​ទៅ​កាន់​តំណ​មេតា"
+
+#~ msgid "Dynamic means that updated metalinks can be found at \"Origin\"."
+#~ msgstr "ថាមវន្ត មាន​ន័យ​ថា​តំណ​មេតា​ដែលបាន​ធ្វើ​បច្ចុប្បន្នភាព​ដែល​​អាច​រក​បាននៅ​ \"Origin\" ។"
+
+#~ msgid "Dynamic:"
+#~ msgstr "ថាមវន្ត ៖"
+
+#~ msgid "Metalink published"
+#~ msgstr "បានបោះពុម្ពផ្សាយ​តំណ​មេតា"
+
+#~ msgid "Date and time:"
+#~ msgstr "កាលបរិច្ឆេទ និង​ពេលវេលា ៖"
+
+#~ msgid "Timezone offset:"
+#~ msgstr "អុហ្វសិត​តំបន់​ពេលវេលា ៖"
+
+#~ msgid "Negative offset:"
+#~ msgstr "អុហ្វសិត​អវិជ្ជមាន ៖"
+
+#~ msgid "Metalink updated"
+#~ msgstr "បាន​ធ្វើ​បច្ចុប្បន្នភាព​​តំណមេតា​"
+
+#~ msgid "Identity"
+#~ msgstr "អត្តសញ្ញាណ"
+
+#~ msgid "Version:"
+#~ msgstr "កំណែ ៖"
+
+#~ msgid "Logo:"
+#~ msgstr "រូប​សញ្ញា ៖"
+
+#~ msgid "URL to the logo"
+#~ msgstr "URL ទៅកាន់​រូបសញ្ញា"
+
+#~ msgid "The language of the file"
+#~ msgstr "ភាសា​ឯកសារ"
+
+#~ msgid "Language:"
+#~ msgstr "ភាសា ៖"
+
+#~ msgid "Operating systems:"
+#~ msgstr "ប្រព័ន្ធ​ប្រតិបត្តិការ ៖"
+
+#~ msgid "Supported OSes, separated with commas"
+#~ msgstr "OSes ដែល​បានគាំទ្រ បំបែក​ដោយ​សញ្ញា(,)"
+
+#~ msgid "Copyright:"
+#~ msgstr "រក្សាសិទ្ធិ ៖"
+
+#~ msgid "Publisher:"
+#~ msgstr "អ្នកបោះពុម្ពផ្សាយ ៖"
+
+#~ msgid "Name:"
+#~ msgstr "ឈ្មោះ ៖"
+
+#~ msgid "publisher"
+#~ msgstr "អ្នក​បោះពុម្ព​ផ្សាយ"
+
+#~ msgid "Name of the publisher"
+#~ msgstr "ចំនួន​​អ្នកបោះពុម្ពផ្សាយ"
+
+#~ msgid "URL to the publisher"
+#~ msgstr "URL ទៅ​កាន់​អ្នកបោះពុម្ព​ផ្សាយ"
+
+#~ msgctxt "Files as in files on a server"
+#~ msgid "Files:"
+#~ msgstr "ឯកសារ ៖"
+
+#~ msgid "Add local files"
+#~ msgstr "បន្ថែម​ឯកសារ​មូលដ្ឋាន"
+
+#~ msgid ""
+#~ "Add at least one file. Adding local files adds a lot of information "
+#~ "automatically."
+#~ msgstr ""
+#~ "បន្ថែម​យ៉ាង​ហោចណាស់​ឯកសារ​មួយ ។ ការ​បន្ថែម​ឯកសារ​មូលដ្ឋាន នឹង​បន្ថែម​ព័ត៌មាន​​ជា​ច្រើន​ដោយ​ស្វ័យ​"
+#~ "ប្រវត្តិ ។"
+
+#~ msgid "Adding local files..."
+#~ msgstr "បន្ថែម​ឯកសា​រមូលដ្ឋាន..."
+
+#~ msgid "You need to set mirrors for the entries with an icon."
+#~ msgstr "អ្នក​ត្រូវ​តែ​កំណត់​កញ្ចក់​សម្រាប់​ធាតុ​ដែល​មាន​រូបតំណាង ។"
+
+#~ msgid "&File with links to import:"
+#~ msgstr "ឯកសារ​ដែល​មាន​តំណ​ដែល​ត្រូវ​នាំចូល ៖"
+
+#~ msgid "&Import Links"
+#~ msgstr "នាំចូល​តំណ"
+
+#~ msgid "Show:"
+#~ msgstr "បង្ហាញ ៖"
+
+#~ msgctxt "filter: show all file types"
+#~ msgid "&All"
+#~ msgstr "ទាំងអស់"
+
+#~ msgid "&Videos"
+#~ msgstr "វីដេអូ"
+
+#~ msgid "Ima&ges"
+#~ msgstr "រូបភាព"
+
+#~ msgid "A&udio"
+#~ msgstr "អូឌីយ៉ូ"
+
+#~ msgid "A&rchives"
+#~ msgstr "ប័ណ្ណសារ"
+
+#~ msgid "You can use wildcards for filtering."
+#~ msgstr "អ្នក​អាច​ប្រើ​តួអក្សរ​ជំនួស​សម្រាប់​ត្រង ។"
+
+#~ msgid "Filter files here...."
+#~ msgstr "ត្រង​ឯកសារ​នៅ​ទីនេះ..."
+
+#~ msgid "Contains"
+#~ msgstr "មាន"
+
+#~ msgid "Does Not Contain"
+#~ msgstr "មិនមាន"
+
+#~ msgid "Inver&t Selection"
+#~ msgstr "ត្រឡប់​ជម្រើស"
+
+#~ msgctxt "Check as in mark, not as in verify"
+#~ msgid "Chec&k Selected"
+#~ msgstr "ពិនិត្យ​អ្វី​ដែល​បាន​ជ្រើស"
+
+#~ msgid "Show &web content"
+#~ msgstr "បង្ហាញ​មាតិកា​បណ្ដាញ"
+
+#~ msgid "Mirror:"
+#~ msgstr "កញ្ចក់ ៖"
+
+#~ msgid "Number of connections:"
+#~ msgstr "ចំនួន​ការ​តភ្ជាប់ ៖"
+
+#~ msgid "Enter a URL"
+#~ msgstr "បញ្ចូល URL"
+
+#~ msgid "Priority:"
+#~ msgstr "អាទិភាព ៖"
+
+#~ msgid "Optional: The priority of the mirror, 1 highest 999999 lowest."
+#~ msgstr "ជា​ជម្រើស ៖ អាទិភាព​របស់​កញ្ចក់ ១ ខ្ពស់​បំផុត ៩៩៩៩៩៩ ទាប​បំផុត ។"
+
+#~ msgid "Location:"
+#~ msgstr "ទីតាំង ៖"
+
+#~ msgid "Clear History"
+#~ msgstr "ជម្រះ​ប្រវត្តិ"
+
+#~ msgctxt "View modes"
+#~ msgid "View Modes"
+#~ msgstr "របៀប​ទិដ្ឋភាព"
+
+#~ msgid "Select Ranges"
+#~ msgstr "ជ្រើស​ជួរ"
+
+#~ msgid "Date"
+#~ msgstr "កាលបរិច្ឆេទ"
+
+#~ msgid "Host"
+#~ msgstr "ម៉ាស៊ីន"
+
+#~ msgid "Filter History"
+#~ msgstr "ប្រវត្តិ​តម្រង"
+
+#~ msgctxt "delete selected transfer"
+#~ msgid "Delete Selected"
+#~ msgstr "លុប​អ្វី​ដែល​បានជ្រើស"
+
+#~ msgid "Download"
+#~ msgstr "​ទាញយក"
+
+#~ msgid "TextLabel"
+#~ msgstr "ស្លាក​អត្ថបទ"
+
+#~ msgctxt "hash type as in md5t, sha1 etc."
+#~ msgid "Hash type:"
+#~ msgstr "ប្រភេទ Hash ៖"
+
+#~ msgctxt "hash as a hash of type md5, sha1 etc."
+#~ msgid "Hash:"
+#~ msgstr "Hash ៖"
+
+#~ msgid "Enter a hash key"
+#~ msgstr "បញ្ចូល​គ្រាប់ចុច hash"
+
+#~ msgid "Status:"
+#~ msgstr "ស្ថានភាព ៖"
+
+#~ msgid "Remaining Time:"
+#~ msgstr "ពេលវេលា​នៅ​សល់ ៖"
+
+#~ msgid "Transfer Settings"
+#~ msgstr "កំណត់​ការ​ផ្ទេរ"
+
+#~ msgid "Download Destination:"
+#~ msgstr "ទិសដៅ​ទាញយក ៖"
+
+#~ msgctxt "No value has been set"
+#~ msgid "Not set"
+#~ msgstr "មិន​កំណត់"
+
+#~ msgid " KiB"
+#~ msgstr " គីឡូបៃ"
+
+#~ msgid "Upload Limit:"
+#~ msgstr "ដែន​កំណត់​ផ្ទុក​ឡើង ៖"
+
+#~ msgid "Download Limit:"
+#~ msgstr "ដែន​កំណត់​ទាញយក ៖"
+
+#~ msgid "Maximum Share Ratio:"
+#~ msgstr "សមាមាត្រ​​​ចែករំលែក​អតិបរមា ៖"
+
+#~ msgid "Modify the mirrors used for downloading."
+#~ msgstr "កែប្រែ​កញ្ចក់​ដែល​បានប្រើ​សម្រាប់​ទាញយក ។"
+
+#~ msgctxt "The available mirrors (servers) for downloading"
+#~ msgid "Mirrors"
+#~ msgstr "កញ្ចក់"
+
+#~ msgctxt "verification of the download (e.g. by using MD5)"
+#~ msgid "Verification"
+#~ msgstr "កា​រផ្ទៀងផ្ទាត់"
+
+#~ msgid "PGP signature:"
+#~ msgstr "ហត្ថលេខា PGP ៖"
+
+#~ msgid "Key"
+#~ msgstr "សោ"
+
+#~ msgid "Issuer:"
+#~ msgstr "អ្នក​ចេញ​ផ្សាយ ៖"
+
+#~ msgid "E-Mail:"
+#~ msgstr "អ៊ីមែល ៖"
+
+#~ msgid "Comment:"
+#~ msgstr "មតិយោបល់ ៖"
+
+#~ msgid "Creation:"
+#~ msgstr "ការ​បង្កើត ៖"
+
+#~ msgid "Expiration:"
+#~ msgstr "កា​រផុត​កំណត់ ៖"
+
+#~ msgid "Trust:"
+#~ msgstr "ទុកចិត្ត ៖"
+
+#~ msgid "Fingerprint:"
+#~ msgstr "ស្នាមម្រាមដៃ ៖"
+
+#~ msgid "Verify"
+#~ msgstr "ផ្ទៀងផ្ទាត់"
+
+#~ msgid "Group Settings"
+#~ msgstr "ការ​កំណត់​ក្រុម"
+
+#~ msgid "Default folder:"
+#~ msgstr "ថត​លំនាំ​ដើម ៖"
+
+#~ msgid "Moves all transfers with the regular expression to this group"
+#~ msgstr "ផ្លាស់ទី​ការ​ផ្ទេរ​ទាំង​អស់​ដែល​មាន​កន្សោម​ធម្មតា​ទៅ​ក្រុម​នេះ"
+
+#~ msgid "Regular expression:"
+#~ msgstr "កន្សោម​ធម្មតា ៖"
+
+#~ msgid "*movies*"
+#~ msgstr "*ភាពយន្ត*"
+
+#~ msgid "Maximum download speed:"
+#~ msgstr "ល្បឿន​ទាញយក​អតិបរមា ៖"
+
+#~ msgid "Maximum upload speed:"
+#~ msgstr "ល្បឿន​ផ្ទុកឡើង​អតិបរមា ៖"
+
+#~ msgid "Destination:"
+#~ msgstr "ទិសដៅ ៖"
+
+#~ msgid "Transfer group:"
+#~ msgstr "ផ្ទេរ​ក្រុម ៖"
+
+#~ msgid "Verify the finished download with the selected checksum."
+#~ msgstr "ផ្ទៀងផ្ទាត់​ការ​ទាញយក​ដែលបានបញ្ចប់ ជា​មួយ​នឹង​ឆេកសាំ​ដែល​បាន​ជ្រើស ។"
+
+#~ msgid "&Verify"
+#~ msgstr "ផ្ទៀងផ្ទាត់"
+
+#~ msgid "Verifying:"
+#~ msgstr "កា​រផ្ទៀងផ្ទាត់ ៖"
+
+#~ msgid "&File"
+#~ msgstr "ឯកសារ"
+
+#~ msgid "&Downloads"
+#~ msgstr "ទាញយក"
+
+#~ msgid "&Settings"
+#~ msgstr "ការ​កំណត់"
+
+#~ msgid "&Help"
+#~ msgstr "ជំនួយ"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "របារ​ឧបករណ៍​មេ"
+
+#~ msgid "Sets to show the splashscreen while KGet is loading"
+#~ msgstr "កំណត់​ត្រូវ​បង្ហាញ​អេក្រង់ស្វាគមន៍​ខណៈពេល​ផ្ទុក KGet"
+
+#~ msgid "The width of the columns in the history view"
+#~ msgstr "ទទឹង​របស់​ជួរឈរ​នៅ​ក្នុង​ទិដ្ឋភាព​ប្រវត្តិ"
+
+#~ msgid "List of the available search engines"
+#~ msgstr "បញ្ជី​ម៉ាស៊ីន​ស្វែងរក​ដែល​អាច​ប្រើ​បាន"
+
+#~ msgid "List of the available search engine URLs"
+#~ msgstr "បញ្ជី​ URLs ម៉ាស៊ីន​ស្វែងរក​ដែលអាច​ប្រើបាន"
+
+#~ msgid "List of the Regexp to match input URL"
+#~ msgstr "បញ្ជី Regexp ដើម្បី​ផ្គូផ្គង​នឹង​ URL បញ្ចូល"
+
+#~ msgid "List of descriptions for user scripts"
+#~ msgstr "បញ្ជី​សេចក្ដីពិពណ៌នា​សម្រាប់​ស្គ្រីប​របស់​អ្នក​ប្រើ"
+
+#~ msgid "List of whether the script is enabled"
+#~ msgstr "បញ្ជី​របស់​ស្គ្រីប​ដែល​ត្រូវ​បើក"

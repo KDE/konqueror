@@ -1,0 +1,1400 @@
+# translation of kcmkio.po to Khmer
+# Khoem Sokhem <khoemsokhem@khmeros.info>, 2007, 2008, 2009, 2010, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkio\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2012-07-09 10:34+0700\n"
+"Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
+"Language-Team: Khmer <support@khmeros.info>\n"
+"Language: km\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: KBabel 1.11.4\n"
+"X-Language: km-KH\n"
+
+#: bookmarks.cpp:92
+#, kde-format
+msgid ""
+"<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
+"page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
+"\">bookmarks:/</a>.</p>"
+msgstr ""
+"<h1>ចំណាំ​របស់​ខ្ញុំ</h1><p>ម៉ូឌុល​នេះ​អនុញ្ញាត​ឲ្យ​អ្នក​កំណត់​រចនាសម្ព័ន្ធ​គេហទំព័រ​ចំណាំ ។</p><p>គេហទំព័រ​ចំណាំ​"
+"អាច​ចូលដំណើរ​បាន​នៅ <a href=\"bookmarks:/\">bookmarks:/</a> ។</p>​"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: bookmarks.ui:16
+#, kde-format
+msgid "Bookmarks"
+msgstr "ចំណាំ"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowRoot)
+#: bookmarks.ui:23
+#, kde-format
+msgid ""
+"If this option is unchecked, bookmarks at the root of the hierarchy (not in "
+"a folder) are not displayed.\n"
+"If checked, they are gathered in a \"root\" folder."
+msgstr ""
+"ប្រសិនបើ​មិន​គូស​ធីក​ជម្រើសនេះ​ទេ ចំណាំ​នៅ​ root របស់​​ឋានានុក្រម (មិន​នៅ​ក្នុង​ថត) មិន​ត្រូវ​បានបង្ហាញ​ទេ ។\n"
+"ប្រសិនបើ​បានគូស​ធីក ពួកវា​ត្រូវ​បានប្រមូលផ្ដុំ​នៅ​ក្នុង​ថត \"root\" ។"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowRoot)
+#: bookmarks.ui:26
+#, kde-format
+msgid "&Show bookmarks without folder"
+msgstr "បង្ហាញ​ចំណាំ​ដោយ​គ្មាន​ថត"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbFlattenTree)
+#: bookmarks.ui:37
+#, kde-format
+msgid ""
+"Sub-folders are shown within their parent by default. If you activate this "
+"option, sub-folders are displayed on their own.\n"
+"It looks less nice but it may help if you have a very big folder you want to "
+"spread in two columns."
+msgstr ""
+"ថត​រង​ត្រូវ​បានបង្ហាញ​នៅ​ក្នុង​ថេ​មេ​របស់ពួកវា​តាម​លំនាំដើម ។ ប្រសិន​បើ​អ្នក​ធ្វើ​ឲ្យ​ជម្រើស​នេះ​សកម្ម ថត​រង​ត្រូវ​"
+"បាន​បង្ហាញ​នៅ​លើ​ថត​​ផ្ទាល់​របស់​វា ។ វា​មើល​ទៅ​មិន​សូវ​ស្អាត ប៉ុន្តែ​វា​អាច​ជួយ​ ប្រសិន​បើ​អ្នក​មាន​ថត​ធំណាស់​"
+"សម្បើម ដែល​អ្នក​ចង់​ចែកចាយ​នៅ​ក្នុងជួរឈរ​ពីរ ។"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbFlattenTree)
+#: bookmarks.ui:40
+#, kde-format
+msgid "&Flatten bookmarks tree"
+msgstr "ធ្វើ​ឲ្យ​មែកធាង​របស់​ចំណាំ​រាបស្មើ"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowPlaces)
+#: bookmarks.ui:47
+#, kde-format
+msgid ""
+"Show a box with KDE places (Home, Network, ...). Useful if you use konqueror "
+"as a file manager."
+msgstr ""
+"បង្ហាញ​ប្រអប់​ដែលមាន​កន្លែង​របស់ KDEs (ផ្ទះ បណ្ដាញ ...) ។ មាន​ប្រយោជន៍​ ប្រសិនបើ​អ្នក​ប្រើ "
+"konqueror ជា​កម្មវិធី​គ្រប់គ្រង​ឯកសារ ។"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowPlaces)
+#: bookmarks.ui:50
+#, kde-format
+msgid "Show system &places"
+msgstr "បង្ហាញ​កន្លែង​ប្រព័ន្ធ"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: bookmarks.ui:63
+#, kde-format
+msgid "General Settings"
+msgstr "ការ​កំណត់​ទូទៅ"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, label)
+#: bookmarks.ui:71
+#, kde-format
+msgid ""
+"Folders are automatically distributed in several columns. The optimal number "
+"of columns depends on the width of the konqueror window and the number of "
+"bookmarks you have."
+msgstr ""
+"ថត​ត្រូវ​បាន​ចែកចាយ​ដោយ​ស្វ័យ​ប្រវត្តិ​នៅ​ក្នុង​ជួរឈរ​ជា​ច្រើន ។ ចំនួន​ជួរឈរ​ប្រសើ​រ​បំផុត​អាស្រ័យ​លើ​ទទឹង​របស់​បង្អួច "
+"konqueror និង​ចំនួន​ចំណាំ​ដែល​អ្នក​មាន ។"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: bookmarks.ui:74
+#, kde-format
+msgid "Number of columns to show:"
+msgstr "ចំនួន​ជួរឈរ​ត្រូវ​បង្ហាញ ៖"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowBackgrounds)
+#: bookmarks.ui:109
+#, kde-format
+msgid "Disable it on slow system to disable background images."
+msgstr "បិទ​វា​នៅ​លើ​ប្រព័ន្ធ​ដែល​យឺត ដើម្បីបិទ​រូបភាព​ផ្ទៃ​ខាង​ក្រោយ ។"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowBackgrounds)
+#: bookmarks.ui:112
+#, kde-format
+msgid "Show folder &backgrounds"
+msgstr "បង្ហាញ​ផ្ទៃខាងក្រោយ​របស់​ថត"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, groupBox_3)
+#: bookmarks.ui:138
+#, kde-format
+msgid "How much disk space is used to cache the pixmaps"
+msgstr "តើ​ទំហំថាស​ប៉ុន្មាន​ត្រូវ​បានប្រើ​ដើម្បី​​ដាក់ pixmaps ជា​ឃ្លាំង​សម្ងាត់"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: bookmarks.ui:141
+#, kde-format
+msgid "Pixmap Cache"
+msgstr "ឃ្លាំង​សម្ងាត់ pixmap"
+
+#  i18n: file cache_ui.ui line 47
+#. i18n: ectx: property (text), widget (QLabel, lbMaxCacheSize)
+#: bookmarks.ui:150
+#, kde-format
+msgid "Disk cache size:"
+msgstr "ទំហំ​ឃ្លាំង​សម្ងាត់​របស់​ថាស ៖"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, sbCacheSize)
+#: bookmarks.ui:163
+#, kde-format
+msgid " kB"
+msgstr " គីឡូបៃ"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, clearCacheButton)
+#: bookmarks.ui:173
+#, kde-format
+msgid "Clear the pixmap cache"
+msgstr "ជម្រះ​ឃ្លាំង​សម្ងាត់ pixmap​"
+
+#  i18n: file cache_ui.ui line 78
+#. i18n: ectx: property (text), widget (QPushButton, clearCacheButton)
+#: bookmarks.ui:176
+#, kde-format
+msgid "&Clear Cache"
+msgstr "ជម្រះ​ឃ្លាំង​សម្ងាត់"
+
+#~ msgid ""
+#~ "<h1>Cache</h1><p>This module lets you configure your cache settings.</"
+#~ "p><p>The cache is an internal memory in Konqueror where recently read web "
+#~ "pages are stored. If you want to retrieve a web page again that you have "
+#~ "recently read, it will not be downloaded from the Internet, but rather "
+#~ "retrieved from the cache, which is a lot faster.</p>"
+#~ msgstr ""
+#~ "<h1>ឃ្លាំង​សម្ងាត់</h1><p>ម៉ូឌុល​នេះ​អនុញ្ញាត​ឲ្យ​អ្នក​កំណត់​រចនាសម្ព័ន្ធ​ការ​កំណត់​ឃ្លាំង​សម្ងាត់​របស់​អ្នក ។"
+#~ "</p><p>ឃ្លាំង​សម្ងាត់​​ គឺ​ជា​សតិ​ខាង​ក្នុង​របស់ Konqueror ដែល​រក្សាទុក​ទំព័រ​បណ្ដាញ​ដែល​បាន​អាន​ថ្មីៗ​"
+#~ "នេះ ។ បើ​អ្នក​ចង់​ទៅ​យក​ទំព័រ​បណ្ដាញ​ដែល​អ្នក​បាន​អាន​ថ្មីៗ​នេះ​ម្ដង​ទៀត ដោយ​អ្នក​មិន​បាច់​ទាញ យក​វា​ពី​"
+#~ "អ៊ិនធឺណិត​ទេ​ គឺ​គ្រាន់​តែ​ទៅ​យក​ពី​ឃ្លាំង​សម្ងាត់​ទៅ​បាន​ហើយ គឺ​វា​មាន​ល្បឿន​លឿន​ជាង ។</p>"
+
+#  i18n: file cache_ui.ui line 106
+#~ msgid ""
+#~ "Check this box if you want the web pages you visit to be stored on your "
+#~ "hard disk for quicker access. The stored pages will only be updated as "
+#~ "needed instead of on every visit to that site. This is especially useful "
+#~ "if you have a slow connection to the Internet."
+#~ msgstr ""
+#~ "ធីក​ប្រអប់​នេះ បើ​អ្នក​ចង់​រក្សា​ទុក​ទំព័រ​បណ្ដាញ​ដែល​អ្នក​បាន​ទស្សនា ក្នុង​ថាស​រឹង​របស់​អ្នក សម្រាប់​ការ​ចូល​"
+#~ "ដំណើរការ​លឿន​ជាង​មុន ។ ទំព័រ​ដែល​បាន​រក្សា​ទុក នឹង​ត្រូវ​បាន​ធ្វើបច្ចុប្បន្នភាព​​តែ​នៅ​ពេល​ដែល​ត្រូវ​ការ​"
+#~ "ប៉ុណ្ណោះ មិនមែន​រាល់​ពេល​ដែល​ទស្សនា​តំបន់​នោះ​ទេ ។ វា​មាន​ប្រយោជន៍​ជា​ពិសេស បើ​ការ​តភ្ជាប់​ទៅ​អ៊ីនធឺណិត​មាន​"
+#~ "ល្បឿន​យឺត ។"
+
+#  i18n: file cache_ui.ui line 103
+#~ msgid "&Use cache"
+#~ msgstr "ប្រើ​ឃ្លាំង​សម្ងាត់"
+
+#  i18n: file cache_ui.ui line 117
+#~ msgid "Policy"
+#~ msgstr "គោលការណ៍"
+
+#  i18n: file cache_ui.ui line 131
+#~ msgid ""
+#~ "Verify whether the cached web page is valid before attempting to fetch "
+#~ "the web page again."
+#~ msgstr ""
+#~ "ផ្ទៀងផ្ទាត់ ​ថា​តើ​ទំព័រ​បណ្ដាញ​ដែល​បាន​រក្សាទុក​ក្នុង​ឃ្លាំង​សម្ងាត់​ត្រឹមត្រូវ​ឬ​ទេ​មុន​នឹង​ប៉ុនប៉ង​ទៅ​ប្រមូល​យក​ទំព័រ​"
+#~ "បណ្ដាញ​ម្ដង​ទៀត ។"
+
+#  i18n: file cache_ui.ui line 128
+#~ msgid "&Keep cache in sync"
+#~ msgstr "រក្សា​ឃ្លាំង​សម្ងាត់​ក្នុង​សមកាលកម្ម"
+
+#~ msgid ""
+#~ "Always use documents from the cache when available. You can still use the "
+#~ "reload button to synchronize the cache with the remote host."
+#~ msgstr ""
+#~ "ប្រើ​ឯកសារ​ពី​ឃ្លាំង​សម្ងាត់​ជានិច្ច​ នៅ​ពេល​មាន ។ អ្នក​នៅ​តែ​អាច​ប្រើ​ប៊ូតុង​ផ្ទុក​ឡើង​វិញ ដើម្បី​ធ្វើ​សមកាល​"
+#~ "កម្ម​ឃ្លាំង​សម្ងាត់​ជាមួយ​ម៉ាស៊ីនពី​ចម្ងាយ ។"
+
+#  i18n: file cache_ui.ui line 139
+#~ msgid "Use cache whenever &possible"
+#~ msgstr "ប្រើ​ឃ្លាំង​សម្ងាត់ ពេល​ណា​ដែល​អាច"
+
+#~ msgid ""
+#~ "Do not fetch web pages that are not already stored in the cache. Offline "
+#~ "mode prevents you from viewing pages that you have not previously visited."
+#~ msgstr ""
+#~ "កុំ​ទៅ​ប្រមូល​យក​ទំព័រ​បណ្ដាញ ដែល​មិន​ទាន់​បាន​រក្សា​ទុក​ក្នុង​ឃ្លាំង​សម្ងាត់ ។ របៀប​ក្រៅ​បណ្ដាញ​រារាំង​មិន​ឲ្យ​អ្នក​"
+#~ "មើល​ទំព័រ ដែល​អ្នក​មិន​បាន​ទស្សនា​ពី​មុន ។"
+
+#~ msgid "O&ffline browsing mode"
+#~ msgstr "របៀប​រុករក​ក្រៅ​បណ្ដាញ"
+
+#  i18n: file cache_ui.ui line 47
+#~ msgid "Disk cache &size:"
+#~ msgstr "ទំហំ​ឃ្លាំង​សម្ងាត់​របស់​ថាស ៖"
+
+#~ msgid " KiB"
+#~ msgstr " គីឡូបៃ"
+
+#  i18n: file cache_ui.ui line 78
+#~ msgid "C&lear Cache"
+#~ msgstr "ជម្រះ​ឃ្លាំង​សម្ងាត់"
+
+#~ msgid ""
+#~ "Unable to start the cookie handler service.\n"
+#~ "You will not be able to manage the cookies that are stored on your "
+#~ "computer."
+#~ msgstr ""
+#~ "មិន​អាច​ចាប់ផ្ដើម​សេវា​កម្មវិធី​ដោះស្រាយ​ខូគី ។\n"
+#~ "អ្នក​នឹង​មិន​អាច​គ្រប់គ្រង​ខូគី ដែល​ត្រូវ​បាន​រក្សា​ទុក​ក្នុង​កុំព្យូទ័រ​របស់​អ្នក​ឡើយ ។"
+
+#~ msgid "&Policy"
+#~ msgstr "គោលការណ៍"
+
+#~ msgid "&Management"
+#~ msgstr "ការ​គ្រប់គ្រង"
+
+#~ msgid ""
+#~ "<p><h1>Cookies</h1> Cookies contain information that Konqueror (or other "
+#~ "KDE applications using the HTTP protocol) stores on your computer, "
+#~ "initiated by a remote Internet server. This means that a web server can "
+#~ "store information about you and your browsing activities on your machine "
+#~ "for later use. You might consider this an invasion of privacy.</p><p> "
+#~ "However, cookies are useful in certain situations. For example, they are "
+#~ "often used by Internet shops, so you can 'put things into a shopping "
+#~ "basket'. Some sites require you have a browser that supports cookies.</"
+#~ "p><p> Because most people want a compromise between privacy and the "
+#~ "benefits cookies offer, KDE offers you the ability to customize the way "
+#~ "it handles cookies. So you might want to set KDE's default policy to ask "
+#~ "you whenever a server wants to set a cookie, allowing you to decide. For "
+#~ "your favorite shopping web sites that you trust, you might want to set "
+#~ "the policy to accept, then you can access the web sites without being "
+#~ "prompted every time KDE receives a cookie.</p>"
+#~ msgstr ""
+#~ "<p><h1>ខូគី</h1> ខូគី​មាន​ព័ត៌មាន​ដែល Konqueror (ឬ​កម្មវិធី KDE ផ្សេងៗ​ទៀត ​ប្រើ​ពិធីការ "
+#~ "HTTP) រក្សា​ទុក​លើ​កុំព្យូទ័រ​របស់​អ្នក ពី​ម៉ាស៊ីន​បម្រើ​អ៊ីនធឺណិត​ពី​ចម្ងាយ ។ នេះ​មាន​ន័យ​ថា ម៉ាស៊ីន​បម្រើ​បណ្តាញ​"
+#~ "អាច​រក្សា​ទុក​ព័ត៌មាន​អំពី​អ្នក និង​សកម្មភាព​រុករក​របស់​អ្នក លើ​ម៉ាស៊ីន​របស់​អ្នក សម្រាប់​ប្រើ​ពេល​ក្រោយ ។ អ្នក​"
+#~ "អាច​ចាត់ទុក​វា​នេះ ជា​ការ​លុកលុយ​ភាព​ឯកជន ។</p><p>ទោះ​បី​យ៉ាង​ណា ខូគី​គឺ​មាន​ប្រយោជន៍​ក្នុង​ស្ថានភាព​"
+#~ "ខ្លះ ។ ឧទាហរណ៍ ពួក​វា​ជា​រឿយៗ​ត្រូវ​បាន​ប្រើ​ដោយ​ហាង​អ៊ីនធឺណិត ដូច្នេះ​អ្នក​អាច​ដាក់​វា​ទៅ​ក្នុង​​កន្ត្រក​"
+#~ "ទំនិញ ។ តំបន់​ខ្លះ​ទាមទារ​ឲ្យ​អ្នក​មាន​កម្មវិធី​រុករក​មួយ​ដែល​គាំទ្រ​ខូគី ។</p><p>ដោយ​សារ​តែ​មនុស្ស​ភាគ​"
+#~ "ច្រើន ចង់​ឲ្យ​មាន​ការ​សម្រួល​រវាង​ភាពឯកជន និង​អត្ថ​ប្រយោជន៍ ដែល​ខូគី​ផ្តល់​ឲ្យ KDE ផ្តល់​ឲ្យ​អ្នក​នូវ​លទ្ធភាព​"
+#~ "ក្នុង​ការ​សម្រួល​នូវ​វិធី​ដែល​ខូគី​ដោះស្រាយ ។ ឧទាហរណ៍ អ្នក​ប្រហែល​ជា​ចង់​កំណត់​គោលការណ៍​លំនាំ​ដើម​ទៅ​ឲ្យ KDE "
+#~ "ដើម្បី​សួរ​អ្នក​ពេល​ណា​ដែល​ម៉ាស៊ីន​បម្រើ​ចង់​កំណត់​ខូគី ឬ​បដិសេធ ឬ​ទទួលយក​​អ្វីៗ​ទាំងអស់ ។ ឧទាហរណ៍ អ្នក​អាច​ជ្រើស​"
+#~ "ទទួល​យក​ខូគី​ទាំងអស់​ពី​តំបន់​បណ្តាញ​ទំនិញ​ដែល​ពេញ​ចិត្ត ។ ដូច្នេះ​អ្វី​ដែ​ល​អ្នក​ត្រូវ​ធ្វើ គឺ​រុករក​ទាំង​តំបន់​ពិសេស​"
+#~ "នោះ និង​ពេល​ប្រអប់​ខូគី​មួយ​បង្ហាញ​ឡើង ចុច​លើ <i>ដែន​នេះ</i> ក្រោម​ផ្ទាំង 'អនុវត្ត​ទៅ' និង​ជ្រើស​ទទួល​"
+#~ "យក ឬ​បញ្ជាក់​ឈ្មោះ​របស់​តំបន់​យ៉ាង​សាមញ្ញ​ក្នុង​ផ្ទាំង <i>គោលការណ៍​ជាក់លាក់​របស់​ដែន</i> ហើយ​កំណត់​វា​ទៅ​"
+#~ "យល់ព្រម ។ វា​នេះ​អនុញ្ញាត​ឲ្យ​អ្នក​ទទួល​ខូគី​ពី​តំបន់​បណ្តាញ​ដែល​ជឿ​ទុកចិត្ត ដោយ​មិន​ត្រូវ​បាន​សួរ​រាល់ពេល ដែល "
+#~ "KDE ទទួល​ខូគី ។</p>"
+
+#~ msgid "D-Bus Communication Error"
+#~ msgstr "កំហុស​ទំនាក់ទំនង​ D-Bus"
+
+#~ msgid "Unable to delete all the cookies as requested."
+#~ msgstr "មិន​អាច​លុប​ខូគី​ទាំងអស់​តាម​សំណើ​បាន​ឡើយ ។"
+
+#~ msgid "Unable to delete cookies as requested."
+#~ msgstr "មិន​អាច​លុប​ខូគី​តាម​សំណើ​បាន​ឡើយ​ ។"
+
+#~ msgid "<h1>Cookie Management Quick Help</h1>"
+#~ msgstr "<h1>ជំនួយ​រហ័ស​ក្នុង​ការ​គ្រប់គ្រង​ខូគី</h1>"
+
+#~ msgid "Information Lookup Failure"
+#~ msgstr "បរាជ័យ​ក្នុង​ការ​ស្វែងរក​ព័ត៌មាន"
+
+#~ msgid ""
+#~ "Unable to retrieve information about the cookies stored on your computer."
+#~ msgstr "មិន​អាច​ទៅ​យក​ព័ត៌មាន​អំពី​ខូគី ដែល​បាន​រក្សា​ទុក​ក្នុង​កុំព្យូទ័រ​របស់​អ្នក ។"
+
+#~ msgid "End of session"
+#~ msgstr "ចុង​នៃ​សម័យ"
+
+#~ msgid "Yes"
+#~ msgstr "បាទ/ចាស"
+
+#  i18n: file kcookiesmanagementdlg_ui.ui line 155
+#~ msgid "Search"
+#~ msgstr "ស្វែងរក"
+
+#  i18n: file kcookiesmanagementdlg_ui.ui line 166
+#~ msgid "Search interactively for domains and hosts"
+#~ msgstr "ស្វែងរក​ដែន និង​ម៉ាស៊ីន​ដែល​ធ្វើ​អន្តរកម្ម​"
+
+#~ msgid "Site"
+#~ msgstr "តំបន់​បណ្តាញ​"
+
+#~ msgid "Cookie Name"
+#~ msgstr "ឈ្មោះខូគី​"
+
+#  i18n: file kcookiesmanagementdlg_ui.ui line 85
+#~ msgid "D&elete"
+#~ msgstr "លុប"
+
+#  i18n: file kcookiesmanagementdlg_ui.ui line 93
+#~ msgid "Delete A&ll"
+#~ msgstr "លុប​ទាំងអស់"
+
+#  i18n: file kcookiesmanagementdlg_ui.ui line 101
+#, fuzzy
+#~| msgid "Change &Policy..."
+#~ msgid "Configure &Policy..."
+#~ msgstr "ផ្លាស់ប្តូរ​គោលការណ៍..."
+
+#  i18n: file kcookiesmanagementdlg_ui.ui line 109
+#~ msgid "&Reload List"
+#~ msgstr "ផ្ទុក​បញ្ជី​ម្តង​ទៀត"
+
+#  i18n: file kcookiesmanagementdlg_ui.ui line 181
+#~ msgid "Details"
+#~ msgstr "លម្អិត"
+
+#  i18n: file kcookiesmanagementdlg_ui.ui line 216
+#~ msgid "Name:"
+#~ msgstr "ឈ្មោះ ៖"
+
+#  i18n: file kcookiesmanagementdlg_ui.ui line 227
+#~ msgid "Value:"
+#~ msgstr "តម្លៃ ៖"
+
+#  i18n: file kcookiesmanagementdlg_ui.ui line 238
+#~ msgid "Domain:"
+#~ msgstr "ដែន ៖"
+
+#  i18n: file kcookiesmanagementdlg_ui.ui line 249
+#~ msgid "Path:"
+#~ msgstr "ផ្លូវ ៖"
+
+#  i18n: file kcookiesmanagementdlg_ui.ui line 260
+#~ msgid "Expires:"
+#~ msgstr "ផុត​កំណត់ ៖"
+
+#  i18n: file kcookiesmanagementdlg_ui.ui line 271
+#~ msgid "Secure:"
+#~ msgstr "សុវត្ថិភាព ៖"
+
+#~ msgctxt "@title:window"
+#~ msgid "Change Cookie Policy"
+#~ msgstr "ផ្លាស់ប្តូរ​គោលការណ៍​ខូគី"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Cookie Policy"
+#~ msgstr "គោលការណ៍​ខូគី​ថ្មី"
+
+#~ msgid ""
+#~ "<qt>A policy already exists for<center><b>%1</b></center>Do you want to "
+#~ "replace it?</qt>"
+#~ msgstr ""
+#~ "<qt>មាន​គោលការណ៍​រួច​ហើយ សម្រាប់<center><b>%1</b></center>តើ​អ្នក​ចង់​ជំនួស​វា​ឬ?</qt>"
+
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Policy"
+#~ msgstr "ស្ទួន​គោលការណ៍"
+
+#~ msgid "Replace"
+#~ msgstr "ជំនួស​"
+
+#~ msgid ""
+#~ "Unable to communicate with the cookie handler service.\n"
+#~ "Any changes you made will not take effect until the service is restarted."
+#~ msgstr ""
+#~ "មិន​អាច​ទាក់ទង​សេវា​កម្មវិធី​ដោះស្រាយ​ខូគី ។\n"
+#~ "ការ​ផ្លាស់ប្ដូរ​ណា​មួយ​ដែល​អ្នក​បាន​ធ្វើ នឹង​មិន​មាន​ប្រសិទ្ធិភាព​ឡើយ ទាល់​តែ​ចាប់​ផ្ដើម​សេវា​ឡើង​វិញ ។"
+
+#~ msgid ""
+#~ "<p><h1>Cookies</h1> Cookies contain information that Konqueror (or any "
+#~ "other KDE application using the HTTP protocol) stores on your computer "
+#~ "from a remote Internet server. This means that a web server can store "
+#~ "information about you and your browsing activities on your machine for "
+#~ "later use. You might consider this an invasion of privacy.</p><p>However, "
+#~ "cookies are useful in certain situations. For example, they are often "
+#~ "used by Internet shops, so you can 'put things into a shopping basket'. "
+#~ "Some sites require you have a browser that supports cookies.</"
+#~ "p><p>Because most people want a compromise between privacy and the "
+#~ "benefits cookies offer, KDE offers you the ability to customize the way "
+#~ "it handles cookies. You might, for example want to set KDE's default "
+#~ "policy to ask you whenever a server wants to set a cookie or simply "
+#~ "reject or accept everything. For example, you might choose to accept all "
+#~ "cookies from your favorite shopping web site. For this all you have to do "
+#~ "is either browse to that particular site and when you are presented with "
+#~ "the cookie dialog box, click on <i> This domain </i> under the 'apply to' "
+#~ "tab and choose accept or simply specify the name of the site in the <i> "
+#~ "Domain Specific Policy </i> tab and set it to accept. This enables you to "
+#~ "receive cookies from trusted web sites without being asked every time KDE "
+#~ "receives a cookie.</p>"
+#~ msgstr ""
+#~ "<p><h1>ខូគី</h1> ខូគី​មាន​ព័ត៌មាន​ដែល Konqueror (ឬ​កម្មវិធី KDE ផ្សេងៗ​ទៀត ដែល​ប្រើ​ពិធីការ "
+#~ "HTTP) រក្សា​ទុក​លើ​កុំព្យូទ័រ​របស់​អ្នក ពី​ម៉ាស៊ីន​បម្រើ​អ៊ីនធឺណិត​ពី​ចម្ងាយ ។ នេះ​​មាន​ន័យ​ថា ម៉ាស៊ីន​បម្រើ​បណ្តាញ​"
+#~ "អាច​រក្សា​ទុក​ព័ត៌មាន​អំពី​អ្នក និងសកម្មភាព​រុករក​របស់​អ្នក លើ​ម៉ាស៊ីន​របស់​អ្នក សម្រាប់​ប្រើ​ពេល​ក្រោយ ។ អ្នក​"
+#~ "អាច​ចាត់ទុក​វា​នេះ ជា​ការ​លុកលុយ​ភាព​ឯកជន ។</p><p>ទោះបីយ៉ាងណា ខូគី​គឺ​មាន​ប្រយោជន៍​ក្នុង​ស្ថានភាព​"
+#~ "ខ្លះ ។ ឧទាហរណ៍ ពួកវា​ជា​រឿយៗ​ត្រូវ​បាន​ប្រើ​ដោយ​ហាង​អ៊ីនធឺណិត ដូច្នេះ​អ្នក​អាច​ដាក់​វា​ទៅ​ក្នុង​កន្ត្រក​ទំនិញ "
+#~ "។តំបន់​ខ្លះ​ទាមទារ​ឲ្យ​អ្នក​មាន​កម្មវិធី​រុករក​មួយ​ដែល​គាំទ្រ​ខូគី ។</p><p>ដោយ​សារ​តែ​មនុស្ស​ភាគច្រើន ចង់​ឲ្យ​"
+#~ "មាន​ការ​សម្រួល​រវាង​ភាពឯកជន និង​អត្ថប្រយោជន៍ ដែល​ខូគី​ផ្តល់​ឲ្យ KDE ផ្តល់​ឲ្យ​អ្នក​នូវ​លទ្ធភាព​ក្នុង​ការ​"
+#~ "សម្រួល​នូវ​វិធី​ដែល​ខូគី​ដោះស្រាយ ។ ឧទាហរណ៍ អ្នក​ប្រហែល​ជា​ចង់​កំណត់​គោលការណ៍​លំនាំដើម​ទៅឲ្យ KDE ដើម្បី​សួរ​"
+#~ "អ្នក​ពេលណា​ដែល​ម៉ាស៊ីន​បម្រើ​ចង់​កំណត់​ខូគី ឬ​បដិសេធ ឬ ទទួលយក​អ្វីៗទាំងអស់ ។ ឧទាហរណ៍ អ្នក​អាច​ជ្រើស​ទទួល​យក​"
+#~ "ខូគី​ទាំងអស់​ពី​តំបន់​បណ្តាញ​ទំនិញ​ដែល​ពេញចិត្ត ។ ដូច្នេះ​អ្វី​ដែល​អ្នក​ត្រូវ​ធ្វើ គឺ​រុករក​ទាំង​តំបន់​ពិសេសនោះ និង "
+#~ "ពេល​ប្រអប់​ខូគី​មួយ​បង្ហាញ​ឡើង ចុច​លើ <i>ដែន​នេះ</i> ក្រោម​ផ្ទាំង 'អនុវត្ត​ទៅ' និង ជ្រើស​ទទួលយក ឬ "
+#~ "បញ្ជាក់​ឈ្មោះ​របស់​តំបន់ ​យ៉ាងសាមញ្ញ​ក្នុង​ផ្ទាំង <i>គោលការណ៍​ជាក់លាក់​របស់​ដែន</i> ហើយ​កំណត់​វា​ទៅ​"
+#~ "យល់ព្រម ។ វា​នេះ​អនុញ្ញាត​ឲ្យ​អ្នក​ទទួល​ខូគី​ពី​តំបន់​បណ្តាញ​ដែល​ជឿ​ទុកចិត្ត ដោយ​មិន​ត្រូវ​បាន​សួរ​រាល់​ពេល ដែល "
+#~ "KDE ទទួល​ខូគី​មួយ ។</p>"
+
+#  i18n: file kcookiespoliciesdlg_ui.ui line 30
+#~ msgid ""
+#~ "<qt>\n"
+#~ "<p>Enable cookie support. Normally you will want to have cookie support "
+#~ "enabled and customize it to suit your privacy needs.</p><p>\n"
+#~ "Please note that disabling cookie support might make many web sites "
+#~ "unbrowsable.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "<p>អនុញ្ញាត​ការ​គាំទ្រ​ខូគី ។ ជា​ធម្មតា អ្នក​ចង់​ឲ្យ​មាន​ការ​គាំទ្រ​ខូគី​ហើយ ​ប្ដូរ​វា​តាម​បំណង​ដើម្បី​បំពេញ ​"
+#~ "សេចក្ដី​ត្រូវការ​គោលការណ៍​របស់​អ្នក ។</p><p>\n"
+#~ "សូម​ចំណាំ​ថា មិន​អនុញ្ញាត​ការ​គាំទ្រ​ខូគី អាច​នឹង​បណ្ដាល​ឲ្យ​អ្នក​មិន​អាច​រុករក​តំបន់​បណ្ដាញ​មួយ​ចំនួន</p> ។\n"
+#~ "</qt>"
+
+#  i18n: file kcookiespoliciesdlg_ui.ui line 24
+#~ msgid "Enable coo&kies"
+#~ msgstr "អនុញ្ញាត​ខូគី ៖"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Reject the so called third-party cookies. These are cookies that "
+#~ "originate from a site other than the one you are currently browsing. For "
+#~ "example, if you visit <b>www.foobar.com</b> while this option is on, only "
+#~ "cookies that originate from www.foobar.com will be processed per your "
+#~ "settings. Cookies from any other site will be rejected. This reduces the "
+#~ "chances of site operators compiling a profile about your daily browsing "
+#~ "habits.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "ច្រានចោល​ខូគី​ភាគី​ទីបី ។ ទាំងនេះ​ជា​ខូគី​ដែល​មាន​ដើម​កំណើត​ពី​តំបន់​មួយ​ផ្សេង​ពី​តំបន់​ដែល​អ្នក​កំពុង​រុករក​"
+#~ "បច្ចុប្បន្ន ។ ឧទាហរណ៍ បើ​អ្នក​ទស្សនា <b>www.foobar.com</b> ខណៈ​ពេល​ជម្រើស​នេះ​បើក នោះ​មាន​"
+#~ "តែ​ខូគី ដែល​មាន​ដើម​កំណើត​ពី www.foobar.com ប៉ុណ្ណោះ ដែល​នឹង​ត្រូវ​បាន​ដំណើរការ​ក្នុង​ការ​កំណត់​របស់​"
+#~ "អ្នក ។ ខូគី​ពី​តំបន់​ផ្សេង​ទៀត នឹង​ត្រូវ​បាន​ច្រានចោល ។ អំពើ​នេះ​នឹង​កាត់​បន្ថយ​ឱកាស ដែល​ការី​តំបន់​មួយ​"
+#~ "ព្យាយាម​ចងក្រង​ទម្រង់​មួយ​អំពី​ទម្លាប់​រុករក​ប្រចាំ​ថ្ងៃ​របស់​អ្នក ។\n"
+#~ "</qt>"
+
+#~ msgid "Only acce&pt cookies from originating server"
+#~ msgstr "ព្រម​ទទួល​តែ​ខូគី​ដែល​បង្កើត​ដោយ​ម៉ាស៊ីន​បម្រើ"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "<p>Automatically accept temporary cookies meant to expire at the end of "
+#~| "the current session. Such cookies will not be stored in your computer's "
+#~| "hard drive or storage device. Instead, they are deleted when you close "
+#~| "all applications (e.g. your browser) that use them.</p><p>\n"
+#~| "<u>NOTE:</u> Checking this option along with the next one will override "
+#~| "your default as well as site specific cookie policies. However, doing so "
+#~| "also increases your privacy since all cookies will be removed when the "
+#~| "current session ends.</p>\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<p>\n"
+#~ "Automatically accept temporary cookies meant to expire at the end of the "
+#~ "current session. Such cookies will not be stored in your computer's hard "
+#~ "drive or storage device. Instead, they are deleted when you close all "
+#~ "applications (e.g. your browser) that use them.</p><p><u>NOTE</u> "
+#~ "Checking this option overrides your default as well as site specific "
+#~ "cookie policies for session cookies.</p>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "ទទួល​យក​ខូគី​បណ្ដោះ​អាសន្ន​ដោយ​ស្វ័យប្រវត្តិ មាន​ន័យ​ថា​ផុត​កំណត់​នៅ​ចុង​បញ្ចប់​នៃ​សម័យ​បច្ចុប្បន្ន ។ ខូគី​ទាំងនោះ​នឹង​"
+#~ "មិន​ត្រូវ​បាន​រក្សាទុក​ក្នុង​ដ្រាយ​រឹង ឬ​ឧបករណ៍​ផ្ទុកនៃ​កុំព្យូទ័ររបស់អ្នក​ឡើយ ។ ពួក​វា​ត្រូវ​បាន​លុប​វិញ ពេល​អ្នក​"
+#~ "បិទ​កម្មវិធី (ឧ. កម្មវិធី​រុករក​របស់​អ្នក) ទាំងអស់​ដែល​ប្រើ ​ពួក​វា ។<p>\n"
+#~ "<u>ចំណាំ ៖</u> ធីក​ជម្រើស​នេះ​ជាមួយ​នឹង​ជម្រើស​បន្ទាប់ នឹង​បដិសេធ​លំនាំដើម​របស់​អ្នក ក៏​ដូចជា​គោលការណ៍​ខូគី​"
+#~ "ជាក់លាក់​របស់​តំបន់​ផង​ដែរ ។ ទោះ​បី​យ៉ាង​ណា ការ​ធ្វើ​ដូច្នេះ បង្កើន​ភាព​ឯកជន​របស់​អ្នក​ផង​ដែរ ដោយ​សារ​តែ​"
+#~ "ខូគី​ទាំងអស់​នឹង​ត្រូវ​បាន​យក​ចេញ ពេល​បញ្ចប់​សម័យ​បច្ចុប្បន្ន ។</p>\n"
+#~ "</qt>"
+
+#~ msgid "Automaticall&y accept session cookies"
+#~ msgstr "ព្រម​ទទួល​ខូគី​សម័យ​ដោយ​ស្វ័យប្រវត្តិ"
+
+#  i18n: file kcookiespoliciesdlg_ui.ui line 106
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Determines how cookies received from a remote machine will be handled: \n"
+#~| "<ul>\n"
+#~| "<li><b>Ask</b> will cause KDE to ask for your confirmation whenever a "
+#~| "server wants to set a cookie.</li>\n"
+#~| "<li><b>Accept</b> will cause cookies to be accepted without prompting "
+#~| "you.</li>\n"
+#~| "<li><b>Reject</b> will cause the cookiejar to refuse all cookies it "
+#~| "receives.</li>\n"
+#~| "</ul><p>\n"
+#~| "<u>NOTE:</u> Domain specific policies, which can be set below, always "
+#~| "take precedence over the default policy.</p>\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Determines how cookies received from a remote machine will be handled: \n"
+#~ "<ul>\n"
+#~ "<li><b>Ask</b> will cause KDE to ask for your confirmation whenever a "
+#~ "server wants to set a cookie.</li>\n"
+#~ "<li><b>Accept</b> will cause cookies to be accepted without prompting you."
+#~ "</li>\n"
+#~ "<li><b>Accept until end of session</b> will cause cookies to be accepted "
+#~ "but they will expire at the end of the session.</li>\n"
+#~ "<li><b>Reject</b> will cause the cookiejar to refuse all cookies it "
+#~ "receives.</li>\n"
+#~ "</ul><p>\n"
+#~ "<u>NOTE:</u> Domain specific policies, which can be set below, always "
+#~ "take precedence over the default policy.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "កំណត់​របៀប​ដោះស្រាយ​ខូគី​ដែល​បាន​ទទួល​ពី​ម៉ាស៊ីនពី​ចម្ងាយ​មួយ ៖ \n"
+#~ "<ul>\n"
+#~ "<li><b>សួរ</b> នឹង​បណ្ដាល​ឲ្យ KDE ស្នើ​សុំ​ការ​អះអាង​របស់​អ្នក រាល់​ពេល​ម៉ាស៊ីន​បម្រើ​មួយ​ចង់​កំណត់​ខូគី ។"
+#~ "\"</li>\n"
+#~ "<li><b>ព្រម​ទទួល</b> នឹង​បណ្ដាល​ឲ្យ​ទទួល​យក​ខូគី ដោយ​គ្មាន​ការ​សួរ​អ្នក ។</li>\n"
+#~ "<li><b>ច្រានចោល</b> នឹង​បណ្ដាល​ឲ្យ cookiejar បដិសេធ​ខូគី​ទាំងអស់ ដែល​វា​ទទួល ។</li>\n"
+#~ "</ul><p>\n"
+#~ "<u>ចំណាំ ៖</u> គោលការណ៍​ជាក់លាក់​របស់​ដែន ដែល​អាច​កំណត់​ខាងក្រោម តែងតែ​ប្រកាន់​យក​អទិភាព​លើ​"
+#~ "គោលការណ៍​លំនាំ​ដើម ។</p>\n"
+#~ "</qt>"
+
+#  i18n: file kcookiespoliciesdlg_ui.ui line 92
+#~ msgid "Default Policy"
+#~ msgstr "គោលការណ៍​លំនាំដើម"
+
+#  i18n: file kcookiespoliciesdlg_ui.ui line 125
+#~ msgid "Accep&t all cookies"
+#~ msgstr "ព្រម​ទទួល​ខូគី​ទាំងអស់"
+
+#, fuzzy
+#~| msgid "End of session"
+#~ msgid "Accept &until end of session"
+#~ msgstr "ចុង​នៃ​សម័យ"
+
+#  i18n: file kcookiespoliciesdlg_ui.ui line 117
+#~ msgid "Ask &for confirmation"
+#~ msgstr "ស្នើ​សុំ​ការ​អះអាង"
+
+#  i18n: file kcookiespoliciesdlg_ui.ui line 133
+#~ msgid "Re&ject all cookies"
+#~ msgstr "ច្រានចោល​ខូគី​ទាំងអស់"
+
+#  i18n: file kcookiespoliciesdlg_ui.ui line 148
+#~ msgid ""
+#~ "<qt>\n"
+#~ "To add a new policy, simply click on the <b>Add...</b> button and supply "
+#~ "the necessary information. To change an existing policy, use the "
+#~ "<b>Change...</b> button and choose the new policy from the policy dialog "
+#~ "box. Clicking on the <b>Delete</b> button will remove the currently "
+#~ "selected policy causing the default policy setting to be used for that "
+#~ "domain, whereas <b>Delete All</b> will remove all the site specific "
+#~ "policies.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "ដើម្បី​បន្ថែម​គោលការណ៍​ថ្មី គ្រាន់​តែ​ចុច​ប៊ូតុង <b>បន្ថែម...</b> និង​ផ្ដល់​ព័ត៌មាន​ដែល​ចាំបាច់​ជា ការ​"
+#~ "ស្រេច ។ ដើម្បី​ប្ដូរ​គោលការណ៍​ដែល​មាន​ស្រាប់ ប្រើ​ប៊ូតុង <b>ផ្លាស់ប្ដូរ...</b> ហើយ​ជ្រើស​គោលការណ៍​ថ្មី​ពី​"
+#~ "ប្រអប់​គោលការណ៍ ។ ការ​ចុច​ប៊ូតុង <b>លុប</b> នឹង​យក​គោលការណ៍​ដែល​បាន​ជ្រើស​បច្ចុប្បន្ន​ចេញ ដែល​ធ្វើ​ឲ្យ​"
+#~ "ដែន​នោះ​ប្រើ​ការ​កំណត់​ប្រូកស៊ី​លំនាំ​ដើម ចំណែក​ឯ <b>លុប​ទាំងអស់</b> វិញ នឹង​យក​គោលការណ៍​ជាក់លាក់​របស់​តំបន់​"
+#~ "ទាំងអស់​ចេញ ។\n"
+#~ "</qt>"
+
+#  i18n: file kcookiespoliciesdlg_ui.ui line 143
+#~ msgid "Site Policy"
+#~ msgstr "គោលការណ៍​តំបន់"
+
+#  i18n: file kcookiespoliciesdlg_ui.ui line 295
+#~ msgid "Search interactively for domains"
+#~ msgstr "ស្វែងរក​ដែនយ៉ាង​អន្តរកម្ម"
+
+#  i18n: file kcookiespoliciesdlg_ui.ui line 254
+#~ msgid ""
+#~ "<qt>\n"
+#~ "List of sites for which you have set a specific cookie policy. Specific "
+#~ "policies override the default policy setting for these sites.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "បញ្ជី​របស់​តំបន់​ដែល​អ្នក​បាន​កំណត់​គោលការណ៍​ខូគី​ជាក់លាក់​មួយ ។ គោលការណ៍​ជាក់លាក់​នឹង បដិសេធ​ការ​កំណត់​"
+#~ "គោលការណ៍​លំនាំ​ដើម សម្រាប់​តំបន់​ទាំងនេះ ។\n"
+#~ "</qt>"
+
+#  i18n: file kcookiespoliciesdlg_ui.ui line 216
+#~ msgid "Domain"
+#~ msgstr "ដែន"
+
+#  i18n: file kcookiespoliciesdlg_ui.ui line 184
+#~ msgid "&New..."
+#~ msgstr "ថ្មី..."
+
+#  i18n: file kcookiespoliciesdlg_ui.ui line 192
+#~ msgid "Chan&ge..."
+#~ msgstr "ផ្លាស់ប្តូរ..."
+
+#  i18n: file policydlg_ui.ui line 35
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the host or domain to which this policy applies, e.g. <b>www.kde."
+#~ "org</b> or <b>.kde.org</b>.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "បញ្ចូល​ម៉ាស៊ីន ឬ​ដែន​នឹង​ទទួល​យក​គោលការណ៍​នេះ ឧ. <b>www.kde.org</b> ឬ <b>.kde.org</b> ។\n"
+#~ "</qt>"
+
+#~ msgid "Site name:"
+#~ msgstr "ឈ្មោះ​តំបន់​បណ្តាញ ៖"
+
+#~ msgid ""
+#~ "Enter the host or domain name, e.g. .kde.org, this policy applies to."
+#~ msgstr "បញ្ចូល​ឈ្មោះ​ម៉ាស៊ីន ឬ​ដែន ឧទាហរណ៍ .kde.org ដែល​គោលការណ៍​នេះ​នឹង​អនុវត្ត​ទៅកាន់ ។"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Select the desired policy:\n"
+#~| "<ul>\n"
+#~| "<li><b>Accept</b> - Allows this site to set cookies</li>\n"
+#~| "<li><b>Reject</b> - Refuse all cookies sent from this site</li>\n"
+#~| "<li><b>Ask</b> - Prompt when cookies are received from this site</li>\n"
+#~| "</ul>\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Select the desired policy:\n"
+#~ "<ul>\n"
+#~ "<li><b>Accept</b> - Allows this site to set cookies</li>\n"
+#~ "<li><b>Accept until end of session</b> - Allows this site to set cookies "
+#~ "but they will expire at the end of the session.</li>\n"
+#~ "<li><b>Reject</b> - Refuse all cookies sent from this site</li>\n"
+#~ "<li><b>Ask</b> - Prompt when cookies are received from this site</li>\n"
+#~ "</ul>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "ជ្រើស​គោលការណ៍​ដែល​ចង់​បាន ៖\n"
+#~ "<ul>\n"
+#~ "<li><b>ព្រម​ទទួល</b> - អនុញ្ញាត​ឲ្យ​តំបន់​នេះ​កំណត់​ខូគី</li>\n"
+#~ "<li><b>ច្រានចោល</b> - បដិសេធ​រាល់​ខូគី​ដែល​បាន​ផ្ញើ​ពី​តំបន់​នេះ</li>\n"
+#~ "<li><b>សួរ</b> - សួរ​នៅ​ពេល​ទទួល​ខូគី​ពី​តំបន់​នេះ</li>\n"
+#~ "</ul>\n"
+#~ "</qt>"
+
+#  i18n: file policydlg_ui.ui line 53
+#~ msgid "Policy:"
+#~ msgstr "គោលការណ៍ ៖"
+
+#  i18n: file policydlg_ui.ui line 72
+#~ msgid "Accept"
+#~ msgstr "ព្រម​ទទួល"
+
+#, fuzzy
+#~| msgid "End of session"
+#~ msgid "Accept until end of session"
+#~ msgstr "ចុង​នៃ​សម័យ"
+
+#  i18n: file policydlg_ui.ui line 77
+#~ msgid "Reject"
+#~ msgstr "ច្រានចោល"
+
+#~ msgid "Ask"
+#~ msgstr "សួរ"
+
+#~ msgid "Disable Passive FTP"
+#~ msgstr "មិន​អនុញ្ញាត FTP អកម្ម"
+
+#~ msgid ""
+#~ "When FTP connections are passive the client connects to the server, "
+#~ "instead of the other way round, so firewalls do not block the connection; "
+#~ "old FTP servers may not support Passive FTP though."
+#~ msgstr ""
+#~ "ពេល​ការ​តភ្ជាប់ FTP អកម្ម ម៉ាស៊ីន​ភ្ញៀវ​នឹង​តភ្ជាប់​ទៅ​ម៉ាស៊ីន​បម្រើ ដូច្នេះ​ជញ្ជាំង​ភ្លើង​មិន​ទប់ស្កាត់​ការ​"
+#~ "តភ្ជាប់​ទេ ទោះបី​យ៉ាងណា ម៉ាស៊ីន​បម្រើ FTP ចាស់ៗ អាច​នឹង​មិន​គាំទ្រ FTP អកម្ម ។"
+
+#  i18n: file kio_ftprc.kcfg line 16
+#~ msgid "Mark partially uploaded files"
+#~ msgstr "សម្គាល់​ឯកសារ​ដែល​បាន​ផ្ទុក​ឡើង​មិន​ពេញលេញ"
+
+#  i18n: file kio_ftprc.kcfg line 17
+#~ msgid ""
+#~ "While a file is being uploaded its extension is \".part\". When fully "
+#~ "uploaded it is renamed to its real name."
+#~ msgstr ""
+#~ "ខណៈ​ពេល​ឯកសារ​មួយ​កំពុង​ត្រូវ​បាន​ផ្ទុកឡើង កន្ទុយ​របស់​វា​គឺ \".part\" ។ នៅ​ពេល​ផ្ទុក​ឡើង​រួច វា​ត្រូវ​បាន​"
+#~ "ប្ដូរ​ឈ្មោះ​ទៅ​ជា​ឈ្មោះ​ពិត​របស់​វា​វិញ ។"
+
+#~ msgid ""
+#~ "<h1>Proxy</h1><p>A proxy server is an intermediate program that sits "
+#~ "between your machine and the Internet and provides services such as web "
+#~ "page caching and/or filtering.</p><p>Caching proxy servers give you "
+#~ "faster access to sites you have already visited by locally storing or "
+#~ "caching the content of those pages; filtering proxy servers, on the other "
+#~ "hand, provide the ability to block out requests for ads, spam, or "
+#~ "anything else you want to block.</p><p><u>Note:</u> Some proxy servers "
+#~ "provide both services.</p>"
+#~ msgstr ""
+#~ "<h1>ប្រូកស៊ី</h1><p>ម៉ាស៊ីន​បម្រើ​ប្រូកស៊ី គឺ​ជា​កម្មវិធី​កណ្ដាល​មួយ ដែល​ស្ថិត​នៅ​ចន្លោះ​ម៉ាស៊ីន​របស់​អ្នក និង​"
+#~ "អ៊ីនធឺណិត ហើយ​ផ្ដល់​នូវ​សេវា​ដូចជា ការ​ត្រង និង/ឬ រក្សាទុក​ទំព័រ​បណ្ដាញ​ក្នុង​ឃ្លាំង​សម្ងាត់ ។</p><p>ម៉ាស៊ីន​"
+#~ "បម្រើ​ប្រូកស៊ី​ឃ្លាំង​សម្ងាត់ ផ្ដល់​ឲ្យ​អ្នក​នូវ​ការ​ចូល​ដំណើរការ​លឿន​ជាង​ទៅ​កាន់​តំបន់ ដែល​អ្នក​បាន​ទស្សនា​រួច "
+#~ "ដោយ​រក្សាទុក​មាតិកា​របស់​ទំព័រ​ទាំងនោះ​ក្នុង​មូលដ្ឋាន ឬ​ឃ្លាំង សម្ងាត់ ។ រី​ឯ​ម៉ាស៊ីន​បម្រើ​ប្រូកស៊ី​ត្រង​វិញ ផ្ដល់​នូ​"
+#~ "វ​សមត្ថភាព​ក្នុង​ការ​ទប់ស្កាត់​ការ​ស្នើសុំ​ផ្សាយ​ពាណិជ្ជកម្ម សារ​ឥត​បាន​ការ ឬ​អ្វី​ផ្សេង​ទៀត​ដែល​អ្នក​ចង​"
+#~ "ទប់ស្កាត់ ។</p><p><u>ចំណាំ ៖</u> ម៉ាស៊ីន​បម្រើ​ប្រូកស៊ី​ខ្លះ ផ្ដល់​នូវ​សេវា​ទាំងពីរ ។</p>"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Setup proxy configuration.\n"
+#~ "<p>\n"
+#~ "A proxy server is an intermediate machine that sits between your computer "
+#~ "and the Internet and provides services such as web page caching and "
+#~ "filtering. Caching proxy servers give you faster access to web sites you "
+#~ "have already visited by locally storing or caching those pages; filtering "
+#~ "proxy servers usually provide the ability to block out requests for ads, "
+#~ "spam, or anything else you want to block.\n"
+#~ "<p>\n"
+#~ "If you are uncertain whether or not you need to use a proxy server to "
+#~ "connect to the Internet, consult your Internet service provider's setup "
+#~ "guide or your system administrator.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "ដំឡើង​ការ​កំណត់​រចនាសម្ព័ន្ធ​ប្រូកស៊ី ។\n"
+#~ "<p>\n"
+#~ "ម៉ាស៊ីន​បម្រើ​ប្រូកស៊ី គឺ​ជា​ម៉ាស៊ីន​កណ្ដាល​មួយ ដែល​ស្ថិត​នៅ​ចន្លោះ​កុំព្យូទ័រ​របស់​អ្នក និង​អ៊ីនធឺណិត ហើយ​ផ្ដល់​នូវ​សេវា​"
+#~ "ដូចជា ឃ្លាំង​សម្ងាត់​ទំព័រ​បណ្តាញ និង​តម្រង ។ ម៉ាស៊ីន​បម្រើ​ប្រូកស៊ី​ឃ្លាំង​សម្ងាត់ ផ្ដល់​ឲ្យ​អ្នក​នូវ​ការ​ចូល​"
+#~ "ដំណើរការ​លឿន​ជាង​ទៅ​កាន់​តំបន់​បណ្ដាញ ដែល​អ្នក​បាន​ទស្សនា​រួច ដោយ​រក្សាទុកទំព័រ​ទាំងនោះ​ក្នុង​មូលដ្ឋាន ឬ​"
+#~ "ឃ្លាំង​សម្ងាត់ការ​ត្រង ។ ម៉ាស៊ីន​បម្រើ​តម្រង ជា​ធម្មតា​ផ្ដល់​នូវ​សមត្ថភាព​ក្នុង​ការ​ទប់ស្កាត់​ការ​ស្នើសុំ​ផ្សាយ​"
+#~ "ពាណិជ្ជកម្ម សារ​ឥត​បាន​ការ ឬ​អ្វី​ផ្សេង​ទៀត​ដែល​អ្នក​ចង់​ទប់ស្កាត់ ។\n"
+#~ "<p>\n"
+#~ "បើ​អ្នក​មិន​ច្បាស់ ថា​តើ​អ្នក​ត្រូវការ​ប្រើ​ម៉ាស៊ីន​បម្រើ​ប្រូកស៊ី​ឬ​ក៏​អត់ ដើម្បី​តភ្ជាប់​ទៅ​អ៊ិនធឺណិត សូម​មើល​"
+#~ "មគ្គុទ្ទេសក៍​ដំឡើង​របស់​អ្នក​ផ្ដល់​សវា​អ៊ីនធឺណិត​របស់​អ្នក ឬ​ពិគ្រោះ​ជាមួយ​អ្នក​គ្រប់គ្រង​ប្រព័ន្ធ​របស់​អ្នក ។\n"
+#~ "</qt>"
+
+#  i18n: file kproxydlg_ui.ui line 65
+#~ msgid "Connect to the Internet directly."
+#~ msgstr "តភ្ជាប់​ទៅ​អ៊ីនធឺណិត​ដោយ​ផ្ទាល់ ។"
+
+#~ msgid "No Proxy"
+#~ msgstr "គ្មាន​ប្រូកស៊ី"
+
+#  i18n: file kproxydlg_ui.ui line 83
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Automatically detect and configure the proxy settings.<p>\n"
+#~ "Automatic detection is performed using the <b>Web Proxy Auto-Discovery "
+#~ "Protocol (WPAD)</b>.<p>\n"
+#~ "<b>NOTE:</b> This option might not work properly or not work at all in "
+#~ "some UNIX/Linux distributions. If you encounter a problem when using this "
+#~ "option, please check the FAQ section at http://konqueror.kde.org.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "រកឃើញ និង​កំណត់​រចនាសម្ព័ន្ធ​ការ​កំណត់​ប្រូកស៊ី​ដោយ​ស្វ័យប្រវត្តិ ។<p>\n"
+#~ "ការ​រកឃើញ​ស្វ័យប្រវត្តិ​ត្រូវ​បាន​ប្រតិបត្តិ​ដោយ <b>Web Proxy Auto-Discovery Protocol "
+#~ "(WPAD)</b> ។<p>\n"
+#~ "<b>ចំណាំ ៖</b> ជម្រើស​នេះ​អាច​នឹង​មិន​ដំណើរការ​ត្រឹមត្រូវ ឬ​មិន​ដំណើរការ​តែ​ម្ដង​ក្នុង​ប្រព័ន្ធ​"
+#~ "ប្រតិបត្តិការ UNIX/Linux ខ្លះ ។ បើ​អ្នក​ជួប​ប្រទះ​បញ្ហា ពេល​ប្រើ​ជម្រើស​នេះ សូម​ពិនិត្យ​មើល​ត្រង់​"
+#~ "ផ្នែក សំណួរ​ដែល​សួរ​ញឹកញាប់ (FAQ) នៅ http://konqueror.kde.org ។\n"
+#~ "</qt>"
+
+#  i18n: file kproxydlg_ui.ui line 94
+#~ msgid "Detect proxy configuration automatically"
+#~ msgstr "រក​ឃើញ​ការ​កំណត់​រចនាសម្ព័ន្ធ​ប្រូកស៊ី​ដោយ​ស្វ័យប្រវត្តិ ៖"
+
+#~ msgid "Use the specified proxy script to configure the proxy settings."
+#~ msgstr "ប្រើ​ស្គ្រីប​ប្រូកស៊ី​ដែល​បាន​បញ្ជាក់​ដើម្បី​កំណត់​រចនាសម្ព័ន្ធ​ការ​កំណត់​ប្រូកស៊ី ។"
+
+#  i18n: file kproxydlg_ui.ui line 94
+#~ msgid "Use proxy auto configuration URL:"
+#~ msgstr "ប្រើ​ការ​កំណត់​រចនាសម្ព័ន្ធ​ប្រូកស៊ី URL ដោយ​ស្វ័យប្រវត្តិ ៖"
+
+#~ msgid "Enter the address for the proxy configuration script."
+#~ msgstr "បញ្ចូល​អាសយដ្ឋាន សម្រាប់​ស្គ្រីប​កំណត់​រចនាសម្ព័ន្ធ​ប្រូកស៊ី ។"
+
+#~ msgid ""
+#~ "<qt><p>Use proxy settings defined on the system.</p>\n"
+#~ "<p>Some platforms offer system wide proxy configuration information and "
+#~ "selecting this option allows you to use those settings.</p>\n"
+#~ "<p>On Mac platforms</p>\n"
+#~ "<p>On Windows platforms</p>\n"
+#~ "<p>On Unix and Linux platforms, such system proxy settings are usually "
+#~ "defined through environment variables. The following environment "
+#~ "variables are detected and used when present: <b>HTTP_PROXY</b>, "
+#~ "<b>HTTPS_PROXY</b>, <b>FTP_PROXY</b>, <b>NO_PROXY</b>.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt><p>ប្រើ​ការ​កំណត់​ប្រូកស៊ី​ដែល​បាន​កំណត់​នៅ​លើ​ប្រព័ន្ធ ។</p>\n"
+#~ "<p>វេទិកា​ខ្លះ​ផ្ដល់​ប្រព័ន្ធ​ព័ត៌មាន​អំពី​ការ​កំណត់​រចនាសម្ព័ន្ធ​ប្រូកស៊ី​យ៉ាង​ទូលំទូលាយ ហើយ​ការ​ជ្រើស​ជម្រើស​នេះ​"
+#~ "នឹង​អនុញ្ញាត​ឲ្យ​អ្នក​ប្រើ​ការ​កំណត់​ទាំងនោះ​បាន ។</p>\n"
+#~ "<p>នៅ​លើ​វេទិកាមេក</p>\n"
+#~ "<p>នៅ​លើ​វេទិកា​វីនដូ</p>\n"
+#~ "<p>នៅ​លើ​វេទិកា​យូនីក និង​លីនុច មាន​ការ​កំណត់​ប្រូកស៊ី​ប្រព័ន្ធ​ជាច្រើន​ដែល ជាទូទៅ​បាន​កំណត់​តាម​អថេរ​"
+#~ "បរិស្ថាន ។ អថេរ​បរិស្ថាន​ខាងក្រោម​គឺ​ត្រូវ​បាន​រក​ឃើញ និង​ប្រើ​នៅ​ពេល​បង្ហាញ ៖ <b>HTTP_PROXY</"
+#~ "b>, <b>HTTPS_PROXY</b>, <b>FTP_PROXY</b>, <b>NO_PROXY</b>.</p>\n"
+#~ "</qt>"
+
+#  i18n: file kproxydlg_ui.ui line 94
+#~ msgid "Use system proxy configuration:"
+#~ msgstr "ប្រើ​ការ​កំណត់​រចនាសម្ព័ន្ធ​ប្រូកស៊ី​ប្រព័ន្ធ ៖"
+
+#~ msgid ""
+#~ "<qt>Attempt automatic discovery of the environment variables used for "
+#~ "setting system wide proxy information.<p> This feature works by searching "
+#~ "for commonly used variable names such as HTTP_PROXY, FTP_PROXY and "
+#~ "NO_PROXY.</qt>"
+#~ msgstr ""
+#~ "<qt>ប៉ុនប៉ង​រក​អថេរ​បរិស្ថាន​ស្វ័យ​ប្រវត្តិ ដែល​ប្រើ​សម្រាប់​កំណត់​ព័ត៌មាន​ប្រូកស៊ី​របស់​ប្រព័ន្ធ​ទាំងមូល ។<p> "
+#~ "លក្ខណៈ​ពិសេស​នេះ​ធ្វើការ ដោយ​ស្វែងរក​ឈ្មោះ​អថេរ​ដែល​បាន​ប្រើ​ដូចជា HTTP_PROXY FTP_PROXY និង "
+#~ "NO_PROXY ។</qt>"
+
+#  i18n: file envvarproxy_ui.ui line 102
+#~ msgid "Auto D&etect"
+#~ msgstr "រក​ឃើញ​ស្វ័យ​ប្រវត្តិ"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the name of the environment variable, e.g. <b>HTTP_PROXY</b>, used "
+#~ "to store the address of the HTTP proxy server.<p>\n"
+#~ "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~ "attempt automatic discovery of this variable.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "បញ្ចូល​ឈ្មោះ​អថេរ​បរិស្ថាន ឧ. <b>HTTP_PROXY</b> ដែល​ប្រើ ដើម្បី​រក្សា​ទុក​អាសយដ្ឋាន​របស់​ម៉ាស៊ីន​"
+#~ "បម្រើ​ប្រូកស៊ី HTTP ។<p>\n"
+#~ "ជា​ជម្រើស អ្នក​អាច​ចុច​លើ​ប៊ូតុង <b>\"រកឃើញ​ដោយ​ស្វ័យ​ប្រវត្តិ\"</b> ដើម្បី​រកឃើញ​អ្នក​អថេរ​នេះ​ដោយ​"
+#~ "ស្វ័យ​ប្រវត្តិ ។</p>\n"
+#~ "</qt>"
+
+#~ msgid "HTTP Proxy:"
+#~ msgstr "ប្រូកស៊ី HTTP ៖"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the name of the environment variable, e.g. <b>HTTPS_PROXY</b>, used "
+#~ "to store the address of the HTTPS proxy server.<p>\n"
+#~ "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~ "attempt an automatic discovery of this variable.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "បញ្ចូល​ឈ្មោះ​អថេរ​បរិស្ថាន ឧ. <b>HTTPS_PROXY</b> ដែល​ប្រើ​ដើម្បី​រក្សាទុក​អាសយដ្ឋាន​របស់​ម៉ាស៊ីន​"
+#~ "បម្រើ​ប្រូកស៊ី HTTPS ។<p>\n"
+#~ "ជា​ជម្រើស អ្នក​អាច​ចុច​លើ​ប៊ូតុង <b>\"រកឃើញ​ដោយ​ស្វ័យ​ប្រវត្តិ\"</b> ដើម្បី​រកឃើញ​អ្នក​អថេរ​នេះ​ដោយ​"
+#~ "ស្វ័យ​ប្រវត្តិ ។</p>\n"
+#~ "</qt>"
+
+#~ msgid "SSL Proxy:"
+#~ msgstr "ប្រូកស៊ី SSL ៖"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the name of the environment variable, e.g. <b>FTP_PROXY</b>, used "
+#~ "to store the address of the FTP proxy server.<p>\n"
+#~ "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~ "attempt an automatic discovery of this variable.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "សូម​បញ្ចូល​ឈ្មោះ​អថេរ​បរិស្ថាន ឧ. <b>FTP_PROXY</b> ដែល​ប្រើ​ដើម្បី​រក្សា​ទុក​អាសយដ្ឋាន​របស់​ម៉ាស៊ីន​"
+#~ "បម្រើ​ប្រូកស៊ី FTP ។<p>\n"
+#~ "ជា​ជម្រើស អ្នក​អាច​ចុច​លើ​ប៊ូតុង <b>\"រកឃើញ​ដោយ​ស្វ័យ​ប្រវត្តិ\"</b> ដើម្បី​រកឃើញ​អ្នក​អថេរ​នេះ​ដោយ​"
+#~ "ស្វ័យ​ប្រវត្តិ ។</p>\n"
+#~ "</qt>"
+
+#~ msgid "FTP Proxy:"
+#~ msgstr "ប្រូកស៊ី FTP ៖"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the name of the environment variable, e.g. <b>SOCKS_PROXY</b>, used "
+#~ "to store the address of the SOCKS proxy server.<p>\n"
+#~ "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~ "attempt an automatic discovery of this variable.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "បញ្ចូល​ឈ្មោះ​អថេរ​បរិស្ថាន ឧ. <b>SOCKS_PROXY</b> ដែល​បាន​ប្រើ​ដើម្បី​រក្សាទុក​អាសយដ្ឋាន​របស់​"
+#~ "ម៉ាស៊ីន​បម្រើ​ប្រូកស៊ី SOCKS ។<p>\n"
+#~ "ជា​ជម្រើស អ្នក​អាច​ចុច​ប៊ូតុង <b>\"រក​ឃើញ​ស្វ័យ​ប្រវត្តិ\"</b> ដើម្បី​ឲ្យ​វា​រក​ឃើញ​អថេរ​នេះ​ដោយ​ស្វ័យ​"
+#~ "ប្រវត្តិ ។</p>\n"
+#~ "</qt>"
+
+#~ msgid "SOCKS Proxy:"
+#~ msgstr "ប្រូកស៊ី SOCKS ៖"
+
+#~ msgid ""
+#~ "<qt>Enter the name of the environment variable, e.g. <b>SOCKS_PROXY</b>, "
+#~ "used to store the address of the SOCKS proxy server.<p>Alternatively, you "
+#~ "can click on the <b>\"Auto Detect\"</b> button to attempt an automatic "
+#~ "discovery of this variable.</p></qt>"
+#~ msgstr ""
+#~ "<qt>បញ្ចូល​ឈ្មោះ​អថេរ​បរិស្ថាន ឧ. <b>SOCKS_PROXY</b> ដែល​បាន​ប្រើ​ដើម្បី​រក្សាទុក​អាសយដ្ឋាន​"
+#~ "របស់​ម៉ាស៊ីន​បម្រើ​ប្រូកស៊ី SOCKS ។<p>ជា​ជម្រើស អ្នក​អាច​ចុច​ប៊ូតុង <b>\"រក​ឃើញ​ស្វ័យ​ប្រវត្តិ\"</b> "
+#~ "ដើម្បី​ឲ្យ​វា​រក​ឃើញ​អថេរ​នេះ​ដោយ​ស្វ័យ​ប្រវត្តិ ។</p></qt>"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the environment variable, e.g. <b>NO_PROXY</b>, used to store the "
+#~ "addresses of sites for which the proxy server should not be used.<p>\n"
+#~ "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~ "attempt an automatic discovery of this variable.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "បញ្ចូល​អថេរ​បរិស្ថាន ឧ. <b>NO_PROXY</b> ដែល​ប្រើ​ដើម្បី​រក្សា​ទុក​អាសយដ្ឋាន​របស់​តំបន់ ដែល​មិន​គួរ​"
+#~ "ប្រើ​ម៉ាស៊ីន​បម្រើ​ប្រូកស៊ី ។<p>\n"
+#~ "ឬ​អ្នក​អាច​ចុច​ប៊ូតុង <b>\"រក​ឃើញ​ស្វ័យប្រវត្តិ\"</b> ដើម្បី​ប៉ុនប៉ង​រក​ឃើញ​អថេរ​នេះ​ស្វ័យប្រវត្តិ ។\n"
+#~ "</qt>"
+
+#  i18n: file manualproxy_ui.ui line 193
+#~ msgid "Exceptions:"
+#~ msgstr "ករណី​លើកលែង ៖"
+
+#~ msgid ""
+#~ "<qt>Enter the environment variable, e.g. <b>NO_PROXY</b>, used to store "
+#~ "the addresses of sites for which the above proxy settings should not be "
+#~ "used.<p>Alternatively, you can click on the <b>\"Auto Detect\"</b> button "
+#~ "to attempt an automatic discovery of this variable.</p></qt>"
+#~ msgstr ""
+#~ "<qt>បញ្ចូល​អថេរ​បរិស្ថាន ឧ. <b>NO_PROXY</b> ដែល​បាន​ប្រើ​ដើម្បី​រក្សា​ទុក​អាសយដ្ឋាន​របស់​"
+#~ "តំបន់បណ្ដាញ ដែល​ការ​កំណត់​ប្រូកស៊ី​ខាងលើ​មិន​គួរ​ត្រូវ​បាន​ប្រើ ។<p>ជា​ជម្រើស អ្នក​អាច​ចុច​ប៊ូតុង <b>\"រក​"
+#~ "ឃើញ​ស្វ័យប្រវត្តិ\"</b> ដើម្បី​ឲ្យ​វា​រក​ឃើញ​អថេរ​នេះ​ដោយ​ស្វ័យប្រវត្តិ ។</p></qt>"
+
+#~ msgid "Show the &value of the environment variables"
+#~ msgstr "បង្ហាញ​តម្លៃ​អថេរ​បរិស្ថាន"
+
+#  i18n: file kproxydlg_ui.ui line 222
+#~ msgid "Manually enter proxy server configuration information."
+#~ msgstr "បញ្ចូល​ព័ត៌មាន​កំណត់​រចនាសម្ព័ន្ធ​ម៉ាស៊ីន​បម្រើ​ប្រូកស៊ី​ដោយ​ដៃ ។"
+
+#~ msgid "Use manually specified proxy configuration:"
+#~ msgstr "ប្រើ​ការ​កំណត់​រចនាសម្ព័ន្ធ​ប្រូកស៊ី​ដែល​បាន​បញ្ជាក់​ដោយ​ដៃ ៖"
+
+#  i18n: file manualproxy_ui.ui line 95
+#~ msgid "Enter the address of the HTTP proxy server."
+#~ msgstr "បញ្ចូល​អាសយដ្ឋាន​ម៉ាស៊ីន​បម្រើ​ប្រូកស៊ី HTTP ។"
+
+#~ msgid "Port:"
+#~ msgstr "ច្រក ៖"
+
+#  i18n: file manualproxy_ui.ui line 95
+#~ msgid "Enter the port number of the HTTP proxy server."
+#~ msgstr "បញ្ចូល​លេខ​ច្រក​របស់​ម៉ាស៊ីន​បម្រើ​ប្រូកស៊ី HTTP ។"
+
+#  i18n: file manualproxy_ui.ui line 175
+#~ msgid "Use this proxy server for a&ll protocols"
+#~ msgstr "ប្រើ​ម៉ាស៊ីន​បម្រើ​ប្រូកស៊ី​នេះ​សម្រាប់​ពិធីការ​ទាំងអស់"
+
+#  i18n: file manualproxy_ui.ui line 103
+#~ msgid "Enter the address of the HTTPS proxy server."
+#~ msgstr "បញ្ចូល​អាសយដ្ឋាន​ម៉ាស៊ីន​បម្រើ​ប្រូកស៊ី HTTPS ។"
+
+#  i18n: file manualproxy_ui.ui line 103
+#~ msgid "Enter the port number of the HTTPS proxy server."
+#~ msgstr "បញ្ចូល​លេខ​ច្រក​របស់​ម៉ាស៊ីន​បម្រើ​ប្រូកស៊ី HTTPS ។"
+
+#  i18n: file manualproxy_ui.ui line 111
+#~ msgid "Enter the address of the FTP proxy server."
+#~ msgstr "បញ្ចូល​អាសយដ្ឋាន​ម៉ាស៊ីន​បម្រើ​ប្រូកស៊ី FTP ។"
+
+#  i18n: file manualproxy_ui.ui line 111
+#~ msgid "Enter the port number of the FTP proxy server."
+#~ msgstr "បញ្ចូល​លេខ​ច្រក​របស់​ម៉ាស៊ីន​បម្រើ​ប្រូកស៊ី FTP ។"
+
+#  i18n: file manualproxy_ui.ui line 103
+#~ msgid "Enter the address of the SOCKS proxy server."
+#~ msgstr "បញ្ចូល​អាសយដ្ឋាន​របស់​ម៉ាស៊ីន​បម្រើ​ប្រូកស៊ី SOCKS ។"
+
+#  i18n: file manualproxy_ui.ui line 103
+#~ msgid "Enter the port number of the SOCKS proxy server."
+#~ msgstr "បញ្ចូល​លេខ​ច្រក​របស់​ម៉ាស៊ីន​បម្រើ​ប្រូកស៊ី SOCKS ។"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "<p>Enter a comma separated list of hostnames or ip addresses that should "
+#~ "be excluded from using the above proxy settings.</p>\n"
+#~ "<p>If you want to exclude all hosts for a given domain, then simply enter "
+#~ "the domain name preceded by a dot. For example, to exclude all hostnames "
+#~ "for <i>kde.org</i>, enter <i>.kde.org</i>. Wildcard characters such as "
+#~ "'*' or '?' are not supported and will have no effect.</p>\n"
+#~ "<p>Additionally, you can also enter IP addresses, e.g. 127.0.0.1 and IP "
+#~ "addresses with a subnet, e.g. 192.168.0.1/24.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "<p>បញ្ចូល​បញ្ជី​បំបែក​ដោយ​សញ្ញា​ក្បៀស​របស់​ឈ្មោះ​ម៉ាស៊ីន ឬ​អាសយដ្ឋាន ip ដែល​គួរតែ​ត្រូវ​បាន​មិន​រាប់បញ្ចូល​ពី​"
+#~ "ការ​ប្រើការ​កំណត់​ប្រូកស៊ី​ខាងលើ ។</p>\n"
+#~ "<p>ប្រសិនបើ​អ្នក​មិន​ចង់​រាប់​បញ្ចូល​ម៉ាស៊ីន​ទាំងអស់​សម្រាប់​ដែន​ដែល​បាន​ផ្ដល់ឲ្យ​ទេ អ្នក​គ្រាន់តែ​បញ្ចូល​ឈ្មោះ​ដែន​"
+#~ "ដែល​នាំមុខ​ដោយ​សញ្ញា​ចុច (.) ជា​ការ​ស្រេច ។ ឧទាហរណ៍ ដើម្បី​មិន​រាប់​បញ្ចូល​ឈ្មោះ​ម៉ាស៊ីន​ទាំងអស់​សម្រាប់ "
+#~ "<i>kde.org</i>សូម​បញ្ចូល <i>.kde.org</i> ។ តួអក្សរ​ជំនួស​មួយ​ចំនួន​ដូចជា '*' ឬ '?' មិន​ត្រូវ​"
+#~ "បាន​គាំទ្រ​ទេ ហើយ​វា​ក៏​នឹង​មិន​មាន​ប្រសិទ្ធភាព​អ្វី​ដែរ ។</p>\n"
+#~ "<p>លើសពីនេះទៀត អ្នក​ក៏​អាច​បញ្ចូល​អាសយដ្ឋាន IP បាន​ផង​ដែរ ឧទាហរណ៍ 127.0.0.1 និង​អាសយដ្ឋាន "
+#~ "IP ដែល​មាន​បណ្ដាញ​រង ដូចជា 192.168.0.1/24.</p>\n"
+#~ "</qt>"
+
+#  i18n: file manualproxy_ui.ui line 204
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Check this box if you want the above proxy settings to apply only to the "
+#~ "addresses listed in the <i>Exceptions</i> list.</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "ធីក​ប្រអប់​នេះ​ប្រសិនបើ​អ្នក​ចង់​ឲ្យ​ការ​កំណត់​ប្រូកស៊ី​ខាងលើ អនុវត្ត​ទៅ​លើ​អាសយដ្ឋាន​ដែល​បាន​រាយ​នៅ​ក្នុង​បញ្ជី "
+#~ "<i>ការ​លើកលែង</i> តែ​ប៉ុណ្ណោះ ។</qt>"
+
+#  i18n: file manualproxy_ui.ui line 204
+#~ msgid "Use proxy settings only for addresses in the Exceptions list"
+#~ msgstr "ប្រើ​ការ​កំណត់​ប្រូកស៊ី​សម្រាប់​អាសយដ្ឋាន​នៅ​ក្នុង​បញ្ជី​លើកលែង​តែប៉ុណ្ណោះ"
+
+#~ msgid ""
+#~ "You have to restart the running applications for these changes to take "
+#~ "effect."
+#~ msgstr ""
+#~ "អ្នក​ត្រូវ​តែ​ចាប់ផ្តើម​កម្មវិធី​ដែល​កំពុង​រត់​ឡើង​វិញ ដើម្បី​ឲ្យ​ការ​ផ្លាស់ប្តូរ​ទាំងនេះ​មាន​ប្រសិទ្ធិភាព ។"
+
+#~ msgctxt "@title:window"
+#~ msgid "Update Failed"
+#~ msgstr "បាន​បរាជ័យ​ក្នុងការ​ធ្វើបច្ចុប្បន្នភាព"
+
+#~ msgid "You have to restart KDE for these changes to take effect."
+#~ msgstr "អ្នក​ត្រូវ​តែ​ចាប់ផ្តើម KDE ឡើងវិញ ដើម្បី​ឲ្យ​ការ​ផ្លាស់ប្តូរ​មាន​ប្រសិទ្ធិភាព ។"
+
+#~ msgid "Timeout Values"
+#~ msgstr "តម្លៃ​សម្រាក"
+
+#~ msgid ""
+#~ "Here you can set timeout values. You might want to tweak them if your "
+#~ "connection is very slow. The maximum allowed value is 1 second."
+#~ msgid_plural ""
+#~ "Here you can set timeout values. You might want to tweak them if your "
+#~ "connection is very slow. The maximum allowed value is %1 seconds."
+#~ msgstr[0] ""
+#~ "នៅ​ទីនេះ អ្នក​អាច​កំណត់​តម្លៃ​សម្រាក ។ អ្នក​ប្រហែល​ជា​ចង់​បង្កើន​ល្បឿន​ពួក​វា បើ​ការ​តភ្ជាប់​របស់​អ្នក​យឺត​"
+#~ "ពេក ។ តម្លៃ​អតិបរមា​ដែល​អនុញ្ញាត​គឺ %1 វិនាទី ។"
+
+#~ msgid " second"
+#~ msgid_plural " seconds"
+#~ msgstr[0] " វិ."
+
+#~ msgid "Soc&ket read:"
+#~ msgstr "​អាន​រន្ធ ៖"
+
+#~ msgid "Pro&xy connect:"
+#~ msgstr "ការ​តភ្ជាប់​របស់​ប្រូកស៊ី ៖"
+
+#~ msgid "Server co&nnect:"
+#~ msgstr "ការ​តភ្ជាប់​របស់​ម៉ាស៊ីន​បម្រើ ៖"
+
+#~ msgid "&Server response:"
+#~ msgstr "ការ​ឆ្លើយ​តប​របស់​ម៉ាស៊ីន​បម្រើ ៖"
+
+#~ msgid "FTP Options"
+#~ msgstr "ជម្រើស FTP"
+
+#~ msgid "Enable passive &mode (PASV)"
+#~ msgstr "អនុញ្ញាត​របៀប​អកម្ម (PASV)"
+
+#~ msgid ""
+#~ "Enables FTP's \"passive\" mode. This is required to allow FTP to work "
+#~ "from behind firewalls."
+#~ msgstr ""
+#~ "អនុញ្ញាត​របៀប \"អកម្ម\" របស់ FTP ។ អំពើ​នេះ​ត្រូវ​បាន​ទាមទារ ដើម្បី​អនុញ្ញាត​ឲ្យ FTP ដំណើរការ​ពី​"
+#~ "ក្រោយ​ជញ្ជាំង​ភ្លើង ។"
+
+#~ msgid "Mark &partially uploaded files"
+#~ msgstr "សម្គាល់​ឯកសារ​ផ្ទុកឡើង​មិន​ពេញ​លេញ"
+
+#~ msgid ""
+#~ "<p>Marks partially uploaded FTP files.</p><p>When this option is enabled, "
+#~ "partially uploaded files will have a \".part\" extension. This extension "
+#~ "will be removed once the transfer is complete.</p>"
+#~ msgstr ""
+#~ "<p>សម្គាល់​ឯកសារ FTP ដែល​បាន​ផ្ទុក​ឡើង​មិន​ពេញលេញ ។</p><p>ពេល​ជម្រើស​នេះ​អនុញ្ញាត ឯកសារ​ដែល​"
+#~ "បាន​ផ្ទុក​ឡើង​តាម​ផ្នែក ហើយ​​មាន​កន្ទុយ \".part\" ។ កន្ទុយ​នេះ​នឹង​ត្រូវ​បាន​យក​ចេញ នៅ​ពេល​ការ​ផ្ទេរ​"
+#~ "នេះ​បាន​បញ្ចប់​ទាំងស្រុង ។</p>"
+
+#~ msgid ""
+#~ "<h1>Network Preferences</h1>Here you can define the behavior of KDE "
+#~ "programs when using Internet and network connections. If you experience "
+#~ "timeouts or use a modem to connect to the Internet, you might want to "
+#~ "adjust these settings."
+#~ msgstr ""
+#~ "<h1>​ចំណូលចិត្ត​បណ្ដាញ</h1>នៅ​ទីនេះ អ្នក​អាច​កំណត់​ឥរិយាបថ​របស់​កម្មវិធី KDE ពេល​ប្រើ​ការ​តភ្ជាប់​"
+#~ "អ៊ីនធឺណិត និង​បណ្ដាញ ។ បើ​អ្នក​ធ្លាប់​ជួប​ប្រទះ​​ពេល​សម្រាក ឬ​ប្រើ​ម៉ូដឹម​ដើម្បី​តភ្ជាប់​ទៅ​អ៊ីនធឺណិត អ្នក​ប្រហែល​ជា​"
+#~ "ចង់​លៃ​តម្រូវ​ការ​កំណត់​ទាំងនេះ ។"
+
+#~ msgid "These settings apply to network browsing only."
+#~ msgstr "ការ​កំណត់​ទាំងនេះ អនុវត្ត​តែ​ទៅកាន់​ការរុករក​បណ្ដាញ​តែ​ប៉ុណ្ណោះ ។"
+
+#~ msgid "Default user name:"
+#~ msgstr "ឈ្មោះ​អ្នក​ប្រើ​លំនាំ​ដើម ៖"
+
+#~ msgid "Default password:"
+#~ msgstr "ពាក្យ​សម្ងាត់​លំនាំ​ដើម ៖"
+
+#~ msgid ""
+#~ "<p><h1>Windows Shares</h1>Konqueror is able to access shared Microsoft "
+#~ "Windows file systems, if properly configured. If there is a specific "
+#~ "computer from which you want to browse, fill in the <em>Browse server</"
+#~ "em> field. This is mandatory if you are not running Samba locally. The "
+#~ "<em>Broadcast address</em> and <em>WINS address</em> fields will also be "
+#~ "available, if you use the native code, or the location of the 'smb.conf' "
+#~ "file from which the options are read, when using Samba. In any case, the "
+#~ "broadcast address (interfaces in smb.conf) must be set up if it is "
+#~ "guessed incorrectly or you have multiple cards. A WINS server usually "
+#~ "improves performance, and reduces the network load a lot.</p><p>The "
+#~ "bindings are used to assign a default user for a given server, possibly "
+#~ "with the corresponding password, or for accessing specific shares. If you "
+#~ "choose to, new bindings will be created for logins and shares accessed "
+#~ "during browsing. You can edit all of them from here. Passwords will be "
+#~ "stored locally, and scrambled so as to render them unreadable to the "
+#~ "human eye. For security reasons, you may not want to do that, as entries "
+#~ "with passwords are clearly indicated as such.</p>"
+#~ msgstr ""
+#~ "<p><h1>ការ​ចែករំលែក​វីនដូ</h1>Konqueror អាច​ចូល​ដំណើរការ​ប្រព័ន្ធ​ឯកសារ​ដែល ម៉ៃក្រូសូហ្វ​វីនដូ "
+#~ "បានចែក​រំលែក​ នោះ​បើ​អ្នកបាន​កំណត់​រចនាសម្ព័ន្ធ​ត្រឹមត្រូវ ។ បើ​មាន​កុំព្យូទ័រ​ជាក់លាក់​ណា​មួយ​ដែល​អ្នក​ចង់​រក​"
+#~ "មើល សូម​បំពេញ​ក្នុង​​វាល <em>រក​មើល​ម៉ាស៊ីន​បម្រើ​</em> ។ វា​ចាំបាច់​ណាស់ បើ​អ្នក​មិន​បាន​រត់​សាំបា "
+#~ "(Samba) មូលដ្ឋាន ។ <em>អាសយដ្ឋាន​ផ្សព្វផ្សាយ</em> និង​វាល​​ <em>អាសយដ្ឋាន​ WINS </em> ក៏​"
+#~ "អាច​ប្រើបាន​ផង​ដែរ បើ​អ្នក​ប្រើ​កូដ​ដើម​ ឬ​ទីតាំង​ឯកសារ​ 'smb.conf' ដែល​បាន​មក​ពី​ជម្រើស​ត្រូវ​បាន​"
+#~ "អាន​ ខណៈ​ពេល​កំពុង​ប្រើ​សាំបា (Samba) ។ ក្នុង​ករណី​មួយ​ចំនួន​ អ្នក​ត្រូវ​តែ​រៀបចំ​អាសយដ្ឋាន​ផ្សព្វផ្សាយ "
+#~ "(ចំណុច​ប្រទាក់​ក្នុង​ smb.conf) បើ​គិត​ថា​មិន​ត្រឹមត្រូវ ឬ​អ្នក​មាន​កាត​ច្រើន ។ ម៉ាស៊ីន​បម្រើ​ WINS ជា​"
+#~ "ធម្មតា​បង្កើន​សម្ថតភាព និង​ជួយ​កាត់​បន្ថយ​ការ​ផ្ទុកបណ្តាញ​បាន​ច្រើន ។</p><p>ការ​ចង​ត្រូវ​បាន​ប្រើ "
+#~ "ដើម្បី​ផ្តល់​តម្លៃ​អ្នកប្រើ​លំនាំ​ដើម​ ទៅ​ឲ្យ​ម៉ាស៊ីន​បម្រើ​ដែល​បាន​ផ្តល់​ប្រហែល​ជាមួយ​ពាក្យ​សម្ងាត់​ដែល​ត្រូវ​គ្នា ឬ​"
+#~ "សម្រាប់​ចូល​ដំណើរ​ការការ​ចែកចាយ​ជាក់លាក់​ ។ បើ​អ្នក​ជ្រើស ការ​ចង​ថ្មី​នឹង​ត្រូវ​បាន​បង្កើត​សម្រាប់​ដំណើរការ​"
+#~ "ចែក​រំលែក​កំឡុង​ពេល​រក​មើល ។ អ្នក​អាច​កែ​សម្រួល​ពួក​វា​ទាំងអស់​ពី​ទីនេះ ។ ពាក្យ​សម្ងាត់​នឹង​ត្រូវ​បាន​ផ្ទុក​"
+#~ "មូលដ្ឋាន​ នឹង​ត្រូវ​បាន​ច្របល់​ចូល​គ្នា ដើម្បី​បង្ហាញ​ពួក​វា​ក្នុង​លក្ខណៈ​​មិន​អាច​​អាន​ដោយ​ភ្នែក​ឡើយ ។ ដោយ​សារ​"
+#~ "ហេតុផល​សុវត្ថិភាព អ្នក​អាច​មិន​ចង់​ធ្វើ​ដូចនេះ​ដោយ​សារ​ការ​បញ្ចូល​ពាក្យ​សម្ងាត់​ត្រូវ​បាន​ចង្អុរ​បង្ហាញ​ច្បាស់​"
+#~ "បែបនេះ ។</p>"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add Identification"
+#~ msgstr "បន្ថែម​ការ​កំណត់​អត្តសញ្ញាណ"
+
+#~ msgctxt "@title:window"
+#~ msgid "Modify Identification"
+#~ msgstr "កែប្រែ​ការ​កំណត់​អត្តសញ្ញាណ"
+
+#~ msgid ""
+#~ "<qt><center>Found an existing identification for<br/><b>%1</b><br/>Do you "
+#~ "want to replace it?</center></qt>"
+#~ msgstr ""
+#~ "<qt><center>បាន​រក​ឃើញ​ការ​កំណត់​អត្តសញ្ញាណ​ដែល​មាន​ស្រាប់ សម្រាប់ <br/><b>%1</b><br/>តើ​"
+#~ "អ្នក​ចង់​ជំនួស​វា​ឬ​ទេ?</center></qt>"
+
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Identification"
+#~ msgstr "ស្ទួន​ការ​កំណត់​អត្តសញ្ញាណ"
+
+#~ msgid ""
+#~ "<p><h1>Browser Identification</h1> The browser-identification module "
+#~ "allows you to have full control over how Konqueror will identify itself "
+#~ "to web sites you browse.</p><p>This ability to fake identification is "
+#~ "necessary because some web sites do not display properly when they detect "
+#~ "that they are not talking to current versions of either Netscape "
+#~ "Navigator or Internet Explorer, even if the browser actually supports all "
+#~ "the necessary features to render those pages properly. For such sites, "
+#~ "you can use this feature to try to browse them. Please understand that "
+#~ "this might not always work, since such sites might be using non-standard "
+#~ "web protocols and or specifications.</p><p><u>NOTE:</u> To obtain "
+#~ "specific help on a particular section of the dialog box, simply click on "
+#~ "the quick help button on the window title bar, then click on the section "
+#~ "for which you are seeking help.</p>"
+#~ msgstr ""
+#~ "<p><h1>ការ​កំណត់​អត្តសញ្ញាណ​​កម្មវិធី​រុករក​</h1> ម៉ូឌុល​ការ​កំណត់​អត្តសញ្ញាណ​កម្មវិធី​រុករក ​អនុញ្ញាត​ឲ្យ​អ្នក​"
+#~ "អាច​ត្រួតពិនិត្យ​ទាំងស្រុង​នូវ​របៀប​ដែល​ Konqueror នឹង​កំណត់​អត្តសញ្ញាណ​ខ្លួន​វា​ ទៅ​កាន់​តំបន់​បណ្តាញ​ដែល​"
+#~ "អ្នករុករក​ ។</p><p>លទ្ធភាព​ក្នុង​ការ​កំណត់​អត្តសញ្ញាណ​ក្លែងក្លាយ​នេះ គឺ​ចាំបាច់​ណាស់ ព្រោះ​តំបន់​បណ្តាញ​"
+#~ "មួយ​ចំនួន​មិន​បង្ហាញ​ត្រឹមត្រូវ​ឡើយ ពួក​វា​រក​ឃើ​ញ​ថា ពួក​វា​មិន​កំពុង​និយាយ​ទៅ​កាន់​កម្មវិធី​រុករក​កំណែ Netscape "
+#~ "ឬ Internet Explorer បច្ចុប្បន្ន ទោះ​ជា​កម្មវិធី​រុករក​ពិត​ជា​គាំទ្រ​លក្ខណៈ​ពិសេស​ទាំងអស់​ដែល​ចាំបាច់ "
+#~ "ដើម្បី​បង្ហាញ​ទំព័រ​ទាំងនោះ​បាន​ត្រឹមត្រូវ​ក៏​ដោយ ។ សម្រាប់​តំបន់​ទាំងនោះ អ្នក​អាច​ប្រើ​លក្ខណៈ​ពិសេស​នេះ "
+#~ "ដើម្បី​ព្យាយាម​រុករក​ពួក​វា ។ សូម​យល់​ថា​វា​អាច​នឹង​មិន​ដំឡើង​ការ​ជានិច្ច​ឡើយ ដោយ​សារ​តែ​តំបន់​ទាំងនោះ​អាច​នឹង​"
+#~ "កំពុង​ប្រើ​ពិធីការ​បណ្តាញ​ និង​សេចក្តី​បញ្ជាក់​ដែល​មិន​មែន​ជា​ស្តង់ដារ ។ </p><p><u>ចំណាំ ៖</u> ដើម្បី​"
+#~ "ទទួល​បាន​ជំនួយ​ជាក់លាក់​អំពី​ផ្នែក​ជាក់លាក់​ណា​មួយ​របស់​ប្រអប់ សូម​ចុច​ប៊ូតុង​ជំនួយ​រហ័ស​លើ​របារ​ចំណង​ជើង​បង្អួច បន្ទាប់​"
+#~ "មក​ចុច​ភាគ​ដែល​អ្នក​កំពុង​ស្វែងរក​ជំនួយ ។</p>"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Here you can modify the default browser-identification text or set a site "
+#~ "<code>(eg. www.kde.org)</code> or a domain <code>(eg. kde.org)</code> "
+#~ "specific identification text.<p>\n"
+#~ "To add a new site-specific identification text, click the <code>New</"
+#~ "code> button and supply the necessary information. To change an existing "
+#~ "site-specific entry, click on the <code>Change</code> button. The "
+#~ "<code>Delete</code> button will remove the selected site-specific "
+#~ "identification text, causing the default setting to be used for that site "
+#~ "or domain.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "នៅទីនេះ អ្នក​អាច​កែប្រែ​អត្ថបទ​កំណត់​អត្តសញ្ញាណ​កម្មវិធី​រុករក ឬ​កំណត់​អត្ថបទ​កំណត់អត្តសញ្ញា​ជាក់លាក់​នៃ​"
+#~ "តំបន់បណ្ដាញ <code>(ឧ. www.kde.org)</code> ឬ​ដែន <code>(ឧ. kde.org)</code> ។"
+#~ "<p>\n"
+#~ "ដើម្បី​បន្ថែម​អត្ថបទ​កំណត់​អត្តសញ្ញាណ​ជាក់លាក់​នៃ​តំបន់បណ្ដាញ ត្រូវ​ចុច​ប៊ូតុង <code>ថ្មី</code> និង​ផ្ដល់​នូវ​"
+#~ "ព័ត៌មាន​ចាំបាច់ ។ ដើម្បី​ផ្លាស់ប្ដូរ​ធាតុ​ជាក់លាក់​នៃ​តំបន់បណ្ដាញ​ដែល​មាន​រួច ត្រូវ​ចុច​លើ​ប៊ូតុង "
+#~ "<code>ផ្លាស់ប្ដូរ</code> ។ ប៊ូតុង <code>លុប</code> នឹង​យក​អត្ថបទ​កំណត់អត្តសញ្ញាណ​ជាក់លាក់​នៃ​"
+#~ "តំបន់បណ្ដាញចេញ ដែល​តម្រូវ​ឲ្យ​ប្រើ​ការ​កំណត់​លំនាំដើម​សម្រាប់​តំបន់បណ្ដាញ ឬ​ដែន​នោះ ។\n"
+#~ "</qt>"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Send the browser identification to web sites.<p>\n"
+#~ "<u>NOTE:</u> Many sites rely on this information to display pages "
+#~ "properly, hence, it is highly recommended that you do not totally disable "
+#~ "this feature but rather customize it.<p>\n"
+#~ "By default, only minimal identification information is sent to remote "
+#~ "sites. The identification text that will be sent is shown below.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "ផ្ញើ​ការ​កំណត់​អត្តសញ្ញាណ​កម្មវិធី​រុករក​ទៅ​តំបន់​បណ្ដាញ ។<p>\n"
+#~ "<u>ចំណាំ ៖</u> តំបន់​មួយ​ចំនួន​ពឹងផ្អែក​លើ​ព័ត៌មាន​នេះ ដើម្បី​បង្ហាញ​ទំព័រ​បាន​ត្រឹមត្រូវ ដូច្នេះ​យើង​សូម​ផ្ដល់​"
+#~ "អនុសាសន៍​ថា ចូរ​កុំ​ធ្វើ​ឲ្យ​លក្ខណៈ​ពិសេស​នេះ​មិនអាច​ប្រើ​បាន​ទាំងស្រុង ប៉ុន្តែ​សូម​ប្ដូរ​វា​តាម​បំណង​វិញ ។<p>\n"
+#~ "តាម​លំនាំ​ដើម មាន​តែ​ព័ត៌មាន​កំណត់​អត្តសញ្ញាណ​តិចតួច​ប៉ុណ្ណោះ នឹង​ត្រូវ​បាន​ផ្ញើ​ទៅ​កុំព្យូទ័រ​នៅ​ឆ្ងាយ ។ អត្ថបទ​"
+#~ "កំណត់​អត្តសញ្ញាណ​ដែល​ត្រូវ​ផ្ញើ ត្រូវ​បាន​បង្ហាញ​នៅ​ខាង​ក្រោម ។\n"
+#~ "</qt>"
+
+#~ msgid "&Send identification"
+#~ msgstr "ផ្ញើ​ការ​កំណត់​អត្តសញ្ញាណ"
+
+#~ msgid ""
+#~ "The browser identification text sent to the sites you visit. Use the "
+#~ "provided options to customize it."
+#~ msgstr ""
+#~ "អត្ថបទ​កំណត់​អត្តសញ្ញាណ​កម្មវិធី​រុករក ដែល​ផ្ញើ​ទៅ​តំបន់​ដែល​អ្នក​ទស្សនា ។ ប្រើ​ជម្រើស​ដែល​បាន​ផ្ដល់ ដើម្បី​"
+#~ "ប្ដូរ​វា​តាម​បំណង ។"
+
+#~ msgid "Default Identification"
+#~ msgstr "ការ​កំណត់​អត្តសញ្ញាណ​លំនាំ​ដើម"
+
+#~ msgid ""
+#~ "The browser identification text sent to the sites you visit. You can "
+#~ "customize it using the options provided below."
+#~ msgstr ""
+#~ "អត្ថបទ​កំណត់​អត្តសញ្ញាណ​កម្មវិធី​រុករក ដែល​ផ្ញើ​ទៅ​តំបន់​ដែល​អ្នក​ទស្សនា ។ អ្នក​អាច​ប្ដូរ​វា​តាម​បំណង ដោយ​"
+#~ "ប្រើ​ជម្រើស​ដែល​បាន​ផ្ដល់​ខាង​ក្រោម ។"
+
+#  i18n: file useragentdlg_ui.ui line 99
+#~ msgid ""
+#~ "Includes your operating system's name in the browser identification text."
+#~ msgstr "រួម​បញ្ចូល​ឈ្មោះ​ប្រព័ន្ធ​ប្រតិបត្តិការ​របស់​អ្នក ក្នុង​អត្ថបទ​កំណត់​អត្តសញ្ញាណ​កម្មវិធី​រុករក ។"
+
+#  i18n: file useragentdlg_ui.ui line 96
+#~ msgid "Add operating s&ystem name"
+#~ msgstr "បន្ថែម​ឈ្មោះ​ប្រព័ន្ធ​ប្រតិបត្តិការ"
+
+#~ msgid ""
+#~ "Includes your operating system's version number in the browser "
+#~ "identification text."
+#~ msgstr "រួម​បញ្ចូល​លេខ​កំណែ​ប្រព័ន្ធ​ប្រតិបត្តិការ​របស់​អ្នក ក្នុង​អត្ថបទ​កំណត់​អត្តសញ្ញាណ​កម្មវិធី​រុករក ។"
+
+#~ msgid "Add operating system &version"
+#~ msgstr "បន្ថែម​កំណែ​ប្រព័ន្ធ​ប្រតិបត្តិការ"
+
+#~ msgid "Includes your machine's CPU type in the browser identification text."
+#~ msgstr "រួម​បញ្ចូល​ប្រភេទ​ស៊ីភីយូ​របស់​ម៉ាស៊ីន​អ្នក ក្នុង​អត្ថបទ​កំណត់​អត្តសញ្ញាណ​កម្មវិធី​រុករក ។"
+
+#~ msgid "Add &machine (processor) type"
+#~ msgstr "បន្ថែម​ប្រភេទ (ប្រព័ន្ធ​ដំណើរការ) ម៉ាស៊ីន"
+
+#~ msgid ""
+#~ "Includes your language settings in the browser identification text to "
+#~ "obtain localized versions of the page."
+#~ msgstr ""
+#~ "រួម​បញ្ចូល​ការ​កំណត់​ភាសា​របស់​អ្នក​នៅ​ក្នុង​អត្ថបទ​ការ​កំណត់​អត្តសញ្ញាត​ដើម្បី​ទទួល​បាន​កំណែ​​ទំព័រ​ដែលបាន​"
+#~ "បកប្រែ ។"
+
+#~ msgid "Add lang&uage information"
+#~ msgstr "បន្ថែម​ព័ត៌មាន​ភាសា"
+
+#~ msgid "Site Specific Identification"
+#~ msgstr "ការ​កំណត់​អត្តសញ្ញាណ​ជាក់លាក់​របស់​តំបន់​បណ្តាញ​"
+
+#~ msgid "Site Name"
+#~ msgstr "ឈ្មោះ​តំបន់​បណ្តាញ​"
+
+#~ msgid "Identification"
+#~ msgstr "ការ​កំណត់​អត្តសញ្ញាណ"
+
+#~ msgid "User Agent"
+#~ msgstr "ភ្នាក់ងារ​អ្នក​ប្រើ"
+
+#~ msgid "Add new identification text for a site."
+#~ msgstr "បន្ថែម​អត្ថបទ​ការ​កំណត់​អត្តសញ្ញាណ​ថ្មី សម្រាប់​តំបន់​បណ្តាញ​មួយ ។"
+
+#~ msgid "Change the selected identifier text."
+#~ msgstr "ផ្លាស់ប្ដូរ​អត្ថបទ​កម្មវិធី​កំណត់​អត្តសញ្ញាណ​ដែល​បាន​ជ្រើស ។"
+
+#~ msgid "Delete the selected identifier text."
+#~ msgstr "លុប​អត្ថបទ​កំណត់​អត្តសញ្ញាណ​ដែល​បាន​ជ្រើស ។"
+
+#~ msgid "Delete all identifiers."
+#~ msgstr "លុប​អត្តសញ្ញាណ​ទាំងអស់​ ។"
+
+#  i18n: file uagentproviderdlg_ui.ui line 41
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the site or domain name where a fake browser identification should "
+#~ "be used.<p>\n"
+#~ "<u>NOTE:</u> Wildcard syntax such as \\\"*,?\\\" is NOT allowed: instead, "
+#~ "use the top level address of a site to make generic matches; for example, "
+#~ "if you want all KDE sites to receive a fake browser identification, you "
+#~ "would enter <code>kde.org</code> - the fake identity would then be sent "
+#~ "to any KDE site that ends with <code>kde.org</code>.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "បញ្ចូល​​ឈ្មោះ​តំបន់ ឬ​ដែន​ដែល​ការ​កំណត់​អត្តសញ្ញាណ​កម្មវិធី​រុករក​គួរ​ត្រូវ​បានប្រើ ។<p>\n"
+#~ "<u>ចំណាំ ៖</u> វាក្យសម្ព័ន្ធ​តួអក្សរ​ជំនួស​ដូច​ជា \\\"*,?\\\" មិន​ត្រូវ​បាន​អនុញ្ញាត​ទេ ៖ ជំនួស​មក​វិញ "
+#~ "ប្រើអាសយដ្ឋាន​កម្រិត​ខ្ពស់​របស់​តំបន់​ដើម្បី​បង្កើត​ការ​ផ្គូផ្គង​ទូទៅ ឧទាហរណ៍ ប្រសិន​បើ​អ្នក​ចង់​ឲ្យ​តំបន់​របស់ "
+#~ "KDE ទាំងអស់​ដើម្បី​ទទួល​ការ​កំណត់​អត្តសញ្ញាណ​របស់​កម្មវិធី​រុករក អ្នកនឹង​បញ្ចូល <code>kde.org</code> "
+#~ "អត្តសញ្ញាណ​បន្ទាប់​នឹង​ត្រូវ​បានផ្ញើ​ទៅ​តំបន់​របស់ KDE ដែល​បញ្ចប់​ដោយ <code>kde.org</code> ។</"
+#~ "p>\n"
+#~ "</qt>"
+
+#  i18n: file uagentproviderdlg_ui.ui line 32
+#~ msgid "&When browsing the following site:"
+#~ msgstr "ពេល​រុករក​តំបន់​បណ្តាញ​ខាង​ក្រោម ៖"
+
+#  i18n: file uagentproviderdlg_ui.ui line 68
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Select the browser identification to use whenever contacting the site you "
+#~ "specified above.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "ជ្រើស​ការ​កំណត់​អត្តសញ្ញាណ​កម្មវិធី​រុករក ដែល​ត្រូវប្រើ​រាល់​ពេល​ការ​តភ្ជាប់​តំបន់ ដែល​អ្នក​បាន​បញ្ជាក់​ខាង​"
+#~ "លើ ។\n"
+#~ "</qt>"
+
+#  i18n: file uagentproviderdlg_ui.ui line 60
+#~ msgid "&Use the following identification:"
+#~ msgstr "ប្រើ​ការ​កំណត់​អត្តសញ្ញាណ​ខាង​ក្រោម ៖"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "The actual browser identification text that will be sent to the remote "
+#~ "machine.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "អត្ថបទ​កំណត់​អត្តសញ្ញាណ​កម្មវិធី​រុករក​ពិត​ប្រាកដ ដែល​នឹង​ត្រូវ​បាន​ផ្ញើ​ទៅ​ម៉ាស៊ីនបម្រើពី​ចម្ងាយ​ ។\n"
+#~ "</qt>"
+
+#~ msgid "Real identification:"
+#~ msgstr "ការ​កំណត់​អត្តសញ្ញាណ​ពិត ៖"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "<p>Treat all cookies as session cookies. Session cookies are small pieces "
+#~ "of data that are temporarily stored in your computer's memory until you "
+#~ "quit or close all applications (e.g. your browser) that use them. Unlike "
+#~ "regular cookies, session cookies are never stored on your hard drive or "
+#~ "other storage medium.</p><p>\n"
+#~ "<u>NOTE:</u> Checking this option along with the previous one will "
+#~ "override your default as well as site specific cookie policies. However, "
+#~ "doing so also increases your privacy since all cookies will be removed "
+#~ "when the current session ends.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "ចាត់​ទុក​ខូគី​ទាំងអស់​ជា​ខូគី​សម័យ ។ ខូគី​សម័យ ​គឺ​ជា​បំណែក​តូចៗ​របស់​ទិន្នន័យ ដែល​ត្រូវ​បាន​រក្សាទុក​ជា​បណ្ដោះ​អាសន្ន​"
+#~ "ក្នុង​សតិ​របស់​កុំព្យូទ័រ​អ្នក រហូត​ទាល់​តែ​អ្នក​បោះបង់ ឬ​បិទ​កម្មវិធី (ឧ. កម្មវិធី​រុករក) ទាំងអស់​ដែល​ប្រើ​"
+#~ "ពួកវា ។ ខុស​ពី​ខូគី​ធម្មតា ខូគី​សម័យ​មិន​ដែល​ត្រូវ​បាន​រក្សា​ទុក​ក្នុង​ដ្រាយ​រឹង ឬ​ឧបករណ៍​ផ្ទុក​ផ្សេង​ទៀត​ឡើយ ។"
+#~ "<p>\n"
+#~ "<u>ចំណាំ ៖</u> ការ​ធីក​ជម្រើស​នេះ​ជាមួយ​​ជម្រើស​មុន នឹង​បដិសេធ​លំនាំ​ដើម​របស់​អ្នក ក៏​ដូចជា​គោលការណ៍​ខូគី​"
+#~ "ជាក់លាក់​របស់​តំបន់​ផង​ដែរ ។ ទោះ​បី​យ៉ាង​ណា ការ​ធ្វើ​ដូច្នេះ​ក៏​បង្កើន​ភាព​ឯកជន​របស់​អ្នក​ផង​ដែរ ដោយ​សារ​តែ​"
+#~ "ខូគី​ទាំងអស់​នឹង​ត្រូវ​បាន​យកចេញ ពេល​បញ្ចប់​សម័យ​បច្ចុប្បន្ន ។</p>\n"
+#~ "</qt>"
+
+#~ msgid "Treat &all cookies as session cookies"
+#~ msgstr "ចាត់ទុក​ខូគី​ទាំងអស់​ជា​ខូគី​សម័យ"

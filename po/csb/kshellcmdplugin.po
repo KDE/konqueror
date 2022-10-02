@@ -1,0 +1,1972 @@
+# translation of konqueror.po to Kaszëbsczi
+#
+# Mark Kwidzińsczi <mark@linuxcsb.org>, 2006, 2008, 2009.
+# Michôł Òstrowsczi <michol@linuxcsb.org>, 2006, 2007, 2008, 2009.
+# Mark Kwidzińśczi <mark@linuxcsb.org>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2009-12-16 23:23+0100\n"
+"Last-Translator: Mark Kwidzińśczi <mark@linuxcsb.org>\n"
+"Language-Team: Kaszëbsczi <i18n-csb@linuxcsb.org>\n"
+"Language: csb\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2)\n"
+
+#. i18n: ectx: Menu (tools)
+#: konq_shellcmdplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "&Nôrzãdza"
+
+#: kshellcmdexecutor.cpp:106
+#, kde-format
+msgid "Input Required:"
+msgstr "Wëmôgóné wéńdzenié:"
+
+#: kshellcmdplugin.cpp:32
+#, kde-format
+msgid "&Execute Shell Command..."
+msgstr "&Wëkònôj pòlét pòwłoczi..."
+
+#: kshellcmdplugin.cpp:41
+#, kde-format
+msgid ""
+"KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a bug."
+msgstr ""
+"KShellCmdPlugin::slotExecuteShellCommand: Fela programë, proszã zarapòrtowac "
+"zmiłkã."
+
+#: kshellcmdplugin.cpp:51
+#, kde-format
+msgid "Executing shell commands works only on local directories."
+msgstr "Pòlét pòwłóczi mòże òstac wëkònany blós w môlowim katalogù."
+
+#: kshellcmdplugin.cpp:73
+#, fuzzy, kde-format
+#| msgid "Execute Shell Command"
+msgctxt "@title:window"
+msgid "Execute Shell Command"
+msgstr "Wëkònôj pòlét pòwłoczi"
+
+#: kshellcmdplugin.cpp:74
+#, kde-format
+msgid "Execute shell command in current directory:"
+msgstr "Wëkònôj pòlét w biéżnym kalalogù:"
+
+#: kshellcmdplugin.cpp:85
+#, kde-format
+msgid "Output from command: \"%1\""
+msgstr "Skùtk pòletu: \"%1\""
+
+#~ msgid "no name"
+#~ msgstr "bez miona"
+
+#~ msgid "Configure"
+#~ msgstr "Kònfigùrëjë"
+
+#~ msgid "Extensions"
+#~ msgstr "Rozszérzenia"
+
+#~ msgid ""
+#~ "There was an error loading the module %1.\n"
+#~ "The diagnostics is:\n"
+#~ "%2"
+#~ msgstr ""
+#~ "Pòkôza sã fela przë wladowaniô mòdułu %1.\n"
+#~ "Prôwdopòdobnô przëczna to:\n"
+#~ "%2"
+
+#~ msgid "Konqueror"
+#~ msgstr "Konqueror"
+
+#~ msgid "Web browser, file manager and document viewer."
+#~ msgstr "Przezérnik, menadżera lopków ë przezérnik dokùmentów."
+
+#~ msgid "(C) 1999-2008, The Konqueror developers"
+#~ msgstr "(C) 1999-2008, Ùsôdzcë Konquerora"
+
+#~ msgid "http://konqueror.kde.org"
+#~ msgstr "http://konqueror.kde.org"
+
+#~ msgid "David Faure"
+#~ msgstr "David Faure"
+
+#~ msgid "Developer (framework, parts, JavaScript, I/O library) and maintainer"
+#~ msgstr ""
+#~ "Ùsôdzca (spòdlowô robòta, dzéle, JavaScript, bibloteka I/O) ë òpiekùn"
+
+#~ msgid "Simon Hausmann"
+#~ msgstr "Simon Hausmann"
+
+#~ msgid "Developer (framework, parts)"
+#~ msgstr "Ùsôdzca (spòdlowô robòta, dzéle)"
+
+#~ msgid "Michael Reiher"
+#~ msgstr "Michael Reiher"
+
+#~ msgid "Developer (framework)"
+#~ msgstr "Ùsôdzca (spòdlowô robòta)"
+
+#~ msgid "Matthias Welk"
+#~ msgstr "Matthias Welk"
+
+#~ msgid "Developer"
+#~ msgstr "Ùsôdzca"
+
+#~ msgid "Alexander Neundorf"
+#~ msgstr "Alexander Neundorf"
+
+#~ msgid "Developer (List views)"
+#~ msgstr "Ùsôdzca (lëstowé wëzdrzatczi)"
+
+#~ msgid "Michael Brade"
+#~ msgstr "Michael Brade"
+
+#~ msgid "Developer (List views, I/O library)"
+#~ msgstr "Ùsôdzca (lëstowé wëzdrzatczi, bibloteka I/O)"
+
+#~ msgid "Lars Knoll"
+#~ msgstr "Lars Knoll"
+
+#~ msgid "Developer (HTML rendering engine)"
+#~ msgstr "Ùsôdzca (wëskrzënianié HTML)"
+
+#~ msgid "Dirk Mueller"
+#~ msgstr "Dirk Mueller"
+
+#~ msgid "Peter Kelly"
+#~ msgstr "Peter Kelly"
+
+#~ msgid "Waldo Bastian"
+#~ msgstr "Waldo Bastian"
+
+#~ msgid "Developer (HTML rendering engine, I/O library)"
+#~ msgstr "Ùsôdzca (wëskrzënianié HTML, bibloteka I/O)"
+
+#~ msgid "Germain Garand"
+#~ msgstr "Germain Garand"
+
+#~ msgid "Leo Savernik"
+#~ msgstr "Leo Savernik"
+
+#~ msgid "Stephan Kulow"
+#~ msgstr "Stephan Kulow"
+
+#~ msgid ""
+#~ "Developer (HTML rendering engine, I/O library, regression test framework)"
+#~ msgstr "Ùsôdzca (wëskrzënianié HTML, bibloteka I/O, testowanié)"
+
+#~ msgid "Antti Koivisto"
+#~ msgstr "Antti Koivisto"
+
+#~ msgid "Zack Rusin"
+#~ msgstr "Zack Rusin"
+
+#~ msgid "Tobias Anton"
+#~ msgstr "Tobias Anton"
+
+#~ msgid "Lubos Lunak"
+#~ msgstr "Lubos Lunak"
+
+#~ msgid "Maks Orlovich"
+#~ msgstr "Maks Orlovich"
+
+#~ msgid "Developer (HTML rendering engine, JavaScript)"
+#~ msgstr "Ùsôdzca (wëskrzënianié HTML, JavaScript)"
+
+#~ msgid "Allan Sandfeld Jensen"
+#~ msgstr "Allan Sandfeld Jensen"
+
+#~ msgid "Apple Safari Developers"
+#~ msgstr "Programiscë Apple Safari"
+
+#~ msgid "Harri Porten"
+#~ msgstr "Harri Porten"
+
+#~ msgid "Developer (JavaScript)"
+#~ msgstr "Ùsôdzca (JavaScript)"
+
+#~ msgid "Koos Vriezen"
+#~ msgstr "Koos Vriezen"
+
+#~ msgid "Developer (Java applets and other embedded objects)"
+#~ msgstr "Ùsôdzca (apletë Javë ë jinszé òbiektë)"
+
+#~ msgid "Matt Koss"
+#~ msgstr "Matt Koss"
+
+#~ msgid "Developer (I/O library)"
+#~ msgstr "Ùsôdzca (bibloteka I/O)"
+
+#~ msgid "Alex Zepeda"
+#~ msgstr "Alex Zepeda"
+
+#~ msgid "Richard Moore"
+#~ msgstr "Richard Moore"
+
+#~ msgid "Developer (Java applet support)"
+#~ msgstr "Ùsôdzca (wspiarce dlô apletów Javë)"
+
+#~ msgid "Dima Rogozin"
+#~ msgstr "Dima Rogozin"
+
+#~ msgid "Wynn Wilkes"
+#~ msgstr "Wynn Wilkes"
+
+#~ msgid ""
+#~ "Developer (Java 2 security manager support,\n"
+#~ " and other major improvements to applet support)"
+#~ msgstr ""
+#~ "Ùsôdzca (menadżer bezpiekù dlô Javë 2 \n"
+#~ " ë jinsze pòprôwczi sprôwianiô apletama)"
+
+#~ msgid "Stefan Schimanski"
+#~ msgstr "Stefan Schimanski"
+
+#~ msgid "Developer (Netscape plugin support)"
+#~ msgstr "Ùsôdzca (wspiarce Netscape pluginsa)"
+
+#~ msgid "George Staikos"
+#~ msgstr "George Staikos"
+
+#~ msgid "Developer (SSL, Netscape plugins)"
+#~ msgstr "Ùsôdzca (SSL, Netscape pluginsë)"
+
+#~ msgid "Dawit Alemayehu"
+#~ msgstr "Dawit Alemayehu"
+
+#~ msgid "Developer (I/O library, Authentication support)"
+#~ msgstr "Ùsôdzca (bibloteka I/O,ùdowierzënié)"
+
+#~ msgid "Carsten Pfeiffer"
+#~ msgstr "Carsten Pfeiffer"
+
+#~ msgid "Torsten Rahn"
+#~ msgstr "Torsten Rahn"
+
+#~ msgid "Graphics/icons"
+#~ msgstr "Grafika/ikònë"
+
+#~ msgid "Torben Weis"
+#~ msgstr "Torben Weis"
+
+#~ msgid "KFM author"
+#~ msgstr "Ùsôdzca kfm"
+
+#~ msgid "Joseph Wenninger"
+#~ msgstr "Joseph Wenninger"
+
+#~ msgid "Developer (navigation panel framework)"
+#~ msgstr "Ùsôdzca (panel nawigacëji)"
+
+#~ msgid "Stephan Binner"
+#~ msgstr "Stephan Binner"
+
+#~ msgid "Developer (misc stuff)"
+#~ msgstr "Ùsôdzca (wszelejaczi)"
+
+#~ msgid "Ivor Hewitt"
+#~ msgstr "Ivor Hewitt"
+
+#~ msgid "Developer (AdBlock filter)"
+#~ msgstr "Ùsôdzca (filter AdBlock)"
+
+#~ msgid "Eduardo Robles Elvira"
+#~ msgstr "Eduardo Robles Elvira"
+
+#~ msgid ""
+#~ "Checking this box on at least two views sets those views as 'linked'. "
+#~ "Then, when you change directories in one view, the other views linked "
+#~ "with it will automatically update to show the current directory. This is "
+#~ "especially useful with different types of views, such as a directory tree "
+#~ "with an icon view or detailed view, and possibly a terminal emulator "
+#~ "window."
+#~ msgstr ""
+#~ "Wëbranié ti òptacëji dô co nômni w dwóch wëzdrzatkach ich sparłączenié. "
+#~ "Tedë zmiana katalogù w jednym wëzdrzatkù sprôwi aùtomatno wëskrzënianié "
+#~ "tegò katalogù w drëdżim. Je to òsoblëwie zdatné dlô rozmajitëch "
+#~ "wëzdrzatków, n.p. wëzdrzatk drzéwiã ë wëzdrzatk ikònów/detalów czë "
+#~ "mòżlëwi emùlacëji terminala."
+
+#~ msgid "Close View"
+#~ msgstr "Zamkni wëzdrzatk"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#~ msgid "Stalled"
+#~ msgstr "Zatrzimanié"
+
+#~ msgid "Preview &in %1"
+#~ msgstr "Pòdzerk &w %1"
+
+#~ msgid "Show %1"
+#~ msgstr "Pòkôżë %1"
+
+#~ msgctxt "@title:window"
+#~ msgid "History"
+#~ msgstr "Historëjô"
+
+#~ msgctxt "@action:inmenu Parent of 'By Name' and 'By Date'"
+#~ msgid "Sort"
+#~ msgstr "Zortëjë"
+
+#~ msgid ""
+#~ "<qt><center><b>%1</b></center><hr />Last visited: %2<br />First visited: "
+#~ "%3<br />Number of times visited: %4</qt>"
+#~ msgstr ""
+#~ "<qt><center><b>%1</b></center><hr />Slédno òbzéróné: %2<br />Pierszi rôz "
+#~ "òbzéróné: %3<br />Wielëna òbzéraniô: %4</qt>"
+
+#~ msgid "Local"
+#~ msgstr "Môlowò"
+
+#~ msgid "Miscellaneous"
+#~ msgstr "Różné"
+
+#~ msgid "Open in New &Window"
+#~ msgstr "Òtemkni w nowim ò&knie"
+
+#~ msgid "Open in New Tab"
+#~ msgstr "Òtemkni w nowi karce"
+
+#~ msgid "&Copy Link Address"
+#~ msgstr "&Kòpérëjë adresã lënka"
+
+#~ msgid "&Remove Entry"
+#~ msgstr "&Rëmôj wpisënk"
+
+#~ msgid "C&lear History"
+#~ msgstr "&Wëczëszczë historëjã"
+
+#~ msgid "&Preferences..."
+#~ msgstr "&Swòjiznë..."
+
+#~ msgid "By &Name"
+#~ msgstr "wedle &miona"
+
+#~ msgid "By &Date"
+#~ msgstr "wedle &datuma"
+
+#~ msgid "Search in history"
+#~ msgstr "Szëkba w historëji"
+
+#~ msgid "Do you really want to clear the entire history?"
+#~ msgstr "Jes gwës tegò, że chcesz wëczëszczëc całą historëjã?"
+
+#~ msgid "Clear History?"
+#~ msgstr "Wëczëszczëc historëjã?"
+
+#, fuzzy
+#~| msgid "Start without a default window"
+#~ msgid "Start without a default window, when called without URLs"
+#~ msgstr "Startëjë bez domëslnegò òkna"
+
+#~ msgid "Profile to open"
+#~ msgstr "Profil do òtemkniãcô"
+
+#~ msgid "List available profiles"
+#~ msgstr "Pòkôżë przistãpne profile"
+
+#~ msgid "List available sessions"
+#~ msgstr "Pòkôżë przëstãpne sesëje"
+
+#~ msgid "Session to open"
+#~ msgstr "Sesëjô do òtemkniãcô"
+
+#~ msgid "Mimetype to use for this URL (e.g. text/html or inode/directory)"
+#~ msgstr "Ôrt MIME dlô tegò URL (np. text/html czë inode/directory)"
+
+#~ msgid ""
+#~ "For URLs that point to files, opens the directory and selects the file, "
+#~ "instead of opening the actual file"
+#~ msgstr ""
+#~ "Dlô adresów URL chtërné są lopkama, òtmëkô katalog ë wëbierô pòdóny lopk "
+#~ "w môlu òtemkniãcô lopkù"
+
+#~ msgid "Location to open"
+#~ msgstr "Adresa do òtemkniãcô"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Loading..."
+#~ msgstr "Ladowanié..."
+
+#~ msgid "Canceled."
+#~ msgstr "Òprzestano."
+
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Reloading the page will discard these changes."
+#~ msgstr ""
+#~ "Na starna zamikô w se niewësłóné zmianë.\n"
+#~ "Wczëtanié starnë znowa cësnié te zjinaczi."
+
+#~ msgid "Discard Changes?"
+#~ msgstr "Pòcësnąc zmianë?"
+
+#~ msgid "&Discard Changes"
+#~ msgstr "&Pòcësni zmianë"
+
+#~ msgid "File Management"
+#~ msgstr "Sprôwianié lopkama"
+
+#~ msgid "Web Browsing"
+#~ msgstr "Przezéranié séce"
+
+#~ msgid "Home Folder"
+#~ msgstr "Domôcy katalog"
+
+#~ msgid "Home"
+#~ msgstr "Dodóm"
+
+#~ msgid "Navigate to your 'Home Folder'"
+#~ msgstr "Biéj do twòjegò 'Domôcegò kataloga'"
+
+#~ msgid "Navigate to your local 'Home Folder'"
+#~ msgstr "Biéj do twòjegò môlowégò 'Domôcegò kataloga'"
+
+#~ msgid "Home Page"
+#~ msgstr "Domôcô starna"
+
+#~ msgid "Navigate to your 'Home Page'"
+#~ msgstr "Biéj do twòji 'Domôcy starnë'"
+
+#~ msgid ""
+#~ "<html>Navigate to your 'Home Page'<br /><br />You can configure the "
+#~ "location where this button takes you under <b>Settings -> Configure "
+#~ "Konqueror -> General</b>.</html>"
+#~ msgstr ""
+#~ "<html>Biéj do twòji 'Domôcy starnë'<br /><br />Mòże skònfigòrować "
+#~ "pòłożenié tegò kataloga w <b>Centróm Kòntrolë KDE</b> w <b>Ùstôwë -> "
+#~ "Kònfigùracëjô Konquerora -> Òglowé</b>.</html>"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Detaching the tab will discard these changes."
+#~ msgstr ""
+#~ "Na kôrta zamëkô w se niewësłóne zmianë.\n"
+#~ "Òdłączenié kôrtë cësnié te zjinaczi."
+
+#~ msgid ""
+#~ "This view contains changes that have not been submitted.\n"
+#~ "Closing the view will discard these changes."
+#~ msgstr ""
+#~ "Nen wëzdrzatk zamëkô w se niewësłóne zmianë.\n"
+#~ "Zamkniãce wëzdrzatkù cësnié te zjinaczi."
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the tab will discard these changes."
+#~ msgstr ""
+#~ "Na kôrta zamëkô w se niewësłóne zmianë.\n"
+#~ "Zamkniãce kôrtë cësnié te zjinaczi."
+
+#~ msgid "Do you really want to close all other tabs?"
+#~ msgstr "Pò prôwdze zamknąc wszëtczé zaòstné kôrtë?"
+
+#~ msgid "Close Other Tabs Confirmation"
+#~ msgstr "Pòcwierdzenié zamkniãcô kôrtów"
+
+#~ msgid "Close &Other Tabs"
+#~ msgstr "Zamkni &zaòstné kôrtë"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing other tabs will discard these changes."
+#~ msgstr ""
+#~ "Na kôrta zamëkô w se niewësłóne zmianë.\n"
+#~ "Zamkniãce zaòstnëch kôrtów cësnié te zjinaczi."
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Reloading all tabs will discard these changes."
+#~ msgstr ""
+#~ "Na kôrta zamëkô w se niewësłóne zmianë.\n"
+#~ "Zladowanié znowa wszëtczich kôrtów cësnié te zjinaczi."
+
+#~ msgid "Enter Target"
+#~ msgstr "Wpiszë cél"
+
+#~ msgid "<qt><b>%1</b> is not valid</qt>"
+#~ msgstr "<qt><b>%1</b> nie je pòprôwny</qt>"
+
+#~ msgid "Copy selected files from %1 to:"
+#~ msgstr "Kòpérëjë wëbróné lopczi z %1 do:"
+
+#~ msgid "Move selected files from %1 to:"
+#~ msgstr "Przeniesë wëbróné lopczi z %1 do:"
+
+#~ msgctxt "This menu entry empties the closed items history"
+#~ msgid "Empty Closed Items History"
+#~ msgstr "Wëczëszczë historëjã zamkniãtëch kôrtów"
+
+#~ msgid "Save As..."
+#~ msgstr "Zapiszë jaknò..."
+
+#~ msgid "Manage..."
+#~ msgstr "Sprawiôj..."
+
+#~ msgid "New &Window"
+#~ msgstr "Nowé ò&kno"
+
+#~ msgid "&Duplicate Window"
+#~ msgstr "&Zwielokrotni òkno"
+
+#~ msgid "Send &Link Address..."
+#~ msgstr "Wëslë a&dresã lënka..."
+
+#~ msgid "S&end File..."
+#~ msgstr "&Wëslë lopk..."
+
+#~ msgid "&Open Location"
+#~ msgstr "Ò&temkni lokalizacëjã"
+
+#~ msgid "&Open File..."
+#~ msgstr "Ò&temkni lopk..."
+
+#~ msgid "&Find File..."
+#~ msgstr "&Nalezë lopk..."
+
+#~ msgid "&Use index.html"
+#~ msgstr "&Brëkùjë index.html"
+
+#~ msgid "Lock to Current Location"
+#~ msgstr "Zablokùjë biéżną adresã"
+
+#~ msgctxt "This option links konqueror views"
+#~ msgid "Lin&k View"
+#~ msgstr "Pòkôżë lën&k"
+
+#~ msgid "&Up"
+#~ msgstr "W &górã"
+
+#~ msgid "Closed Items"
+#~ msgstr "Zamkniãté elementë"
+
+#~ msgid "Sessions"
+#~ msgstr "Sesëje"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Most Often Visited"
+#~ msgstr "Nôczãsczi òdwiedzóné"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Recently Visited"
+#~ msgstr "Slédno òdwiedzóné"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History"
+#~ msgstr "Pòkôżë historëjã"
+
+#~ msgid "&Save View Profile As..."
+#~ msgstr "&Zapiszë profil wëzdrzatkù jakno..."
+
+#~ msgid "Configure Extensions..."
+#~ msgstr "Kònfigùracëjë rozszérzeniów..."
+
+#~ msgid "Configure Spell Checking..."
+#~ msgstr "Kònfigùrëjë sprôwdzanié pisënkù..."
+
+#~ msgid "Split View &Left/Right"
+#~ msgstr "Pòdzelë wëzdrzatk &lewò/prawò"
+
+#~ msgid "Split View &Top/Bottom"
+#~ msgstr "Pòdzelë wëzdrzatk &góra/dół"
+
+#~ msgid "&New Tab"
+#~ msgstr "&Nowô kôrta"
+
+#~ msgid "&Duplicate Current Tab"
+#~ msgstr "&Duplikùjë nã kôrtã"
+
+#~ msgid "Detach Current Tab"
+#~ msgstr "Òdłączë nã kôrtã"
+
+#~ msgid "&Close Active View"
+#~ msgstr "&Zamkni aktiwny wëzdrzatk"
+
+#~ msgid "Close Current Tab"
+#~ msgstr "Zamkni nã kôrtã"
+
+#~ msgid "Activate Next Tab"
+#~ msgstr "Aktiwùjë zôstną kôrtã"
+
+#~ msgid "Activate Previous Tab"
+#~ msgstr "Aktiwùjë wczasniészą kôrtã"
+
+#~ msgid "Activate Tab %1"
+#~ msgstr "Aktiwùjë kôrtã %1"
+
+#~ msgid "Move Tab Left"
+#~ msgstr "Przeniesë kôrtã w lewò"
+
+#~ msgid "Move Tab Right"
+#~ msgstr "Przeniesë kôrtã w prawò"
+
+#~ msgid "Dump Debug Info"
+#~ msgstr "Wpiszë wëdowiédzã do debùgù"
+
+#~ msgid "C&onfigure View Profiles..."
+#~ msgstr "&Kònfigùrëjë profile wëzdrzatków..."
+
+#~ msgid "Load &View Profile"
+#~ msgstr "&Wladëjë profil wëzdrzatkù"
+
+#~ msgid "&Reload"
+#~ msgstr "&Zladëjë znowa"
+
+#~ msgid "&Reload All Tabs"
+#~ msgstr "Zladëjë wszëtczé kôrtë z&nowa"
+
+#~ msgid "&Force Reload"
+#~ msgstr "&Fòrsëjë zladowanié znowa"
+
+#~ msgid "&Stop"
+#~ msgstr "&Zatrzëmôj"
+
+#~ msgid "L&ocation: "
+#~ msgstr "&Adresa: "
+
+#~ msgid "Location Bar"
+#~ msgstr "Listew adresë"
+
+#~ msgid ""
+#~ "<html>Location Bar<br /><br />Enter a web address or search term.</html>"
+#~ msgstr ""
+#~ "<html>Listew adresë<br /><br />Wpiszë internetową adresã, abò szëkóné "
+#~ "słowò.</html>"
+
+#~ msgid "Clear Location Bar"
+#~ msgstr "Wëczëszczë listew adresë"
+
+#~ msgid ""
+#~ "<html>Clear Location bar<br /><br />Clears the contents of the location "
+#~ "bar.</html>"
+#~ msgstr ""
+#~ "<html>Wëczëszczë listew adresë<br /><br />Czëszczë zamkłosc listwë adresë."
+#~ "</html>"
+
+#~ msgid "&Bookmarks"
+#~ msgstr "&Załóżczi"
+
+#~ msgid "Kon&queror Introduction"
+#~ msgstr "Wprowadzenié do Kon&querora"
+
+#~ msgid "Go"
+#~ msgstr "Biéj do"
+
+#~ msgid ""
+#~ "<html>Go<br /><br />Goes to the page that has been entered into the "
+#~ "location bar.</html>"
+#~ msgstr ""
+#~ "<html>Biéj do<br /><br />Jidze do starnë jaczi adresa najdiwô sã w "
+#~ "listwie adresë.</html>"
+
+#~ msgid ""
+#~ "<html>Enter the parent folder<br /><br />For instance, if the current "
+#~ "location is file:/home/%1 clicking this button will take you to file:/"
+#~ "home.</html>"
+#~ msgstr ""
+#~ "<html>Biéj do katalogù wëżi<br /><br />Na przëmiôr, jeżlë bieżny katalog "
+#~ "to file:/home/%1 klëkniãce na knąpã przeniesë ce do file:/home.</html>"
+
+#~ msgid "Enter the parent folder"
+#~ msgstr "Biéj do katalogù wëżi"
+
+#~ msgid "Move backwards one step in the browsing history"
+#~ msgstr "Biéj jeden krok nazôd w przezéraniô historëji"
+
+#~ msgid "Move forward one step in the browsing history"
+#~ msgstr "Biéj jeden krok w przódk w przezéraniô historëji"
+
+#~ msgid "Move backwards one step in the closed tabs history"
+#~ msgstr "Biéj jeden krok nazôd w historëji zamkniãtëch kôrtów"
+
+#~ msgid ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.</html>"
+#~ msgstr ""
+#~ "<html>Zladëjë dokùment znowa<br /> <br />To mòże bëc przëdatné do ùznaniô "
+#~ "zmianów, np. jeżlë starna bëła zmòdifikòwónô pò ji wëskrzënieniu.</html>"
+
+#~ msgid "Reload the currently displayed document"
+#~ msgstr "Zladëjë dokùment znowa"
+
+#~ msgid ""
+#~ "<html>Reload all currently displayed documents in tabs<br /><br />This "
+#~ "may, for example, be needed to refresh web pages that have been modified "
+#~ "since they were loaded, in order to make the changes visible.</html>"
+#~ msgstr ""
+#~ "<html>Zladëjë wszëtczé dokùmentë znowa w kôrtach <br /><br />To mòże bëc "
+#~ "pòtrzébné do uznaniô zmianów, wprowadzonëch ju pò wëskrzënieniu starnów.</"
+#~ "html>"
+
+#~ msgid "Reload all currently displayed document in tabs"
+#~ msgstr "Zladëjë znowa wszëtczé dokùmentë w kôrtach"
+
+#~ msgid ""
+#~ "<html>Stop loading the document<br /><br />All network transfers will be "
+#~ "stopped and Konqueror will display the content that has been received so "
+#~ "far.</html>"
+#~ msgstr ""
+#~ "<html>Strzëmôj wladënk dokùmentu<br /><br />Wszëtczé sécowé transferë "
+#~ "òstôną strzëmóné, a Konqueror wëskrzeni zamkłosc jaką pòbrôł do terô.</"
+#~ "html>"
+
+#~ msgid ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.  Any images on "
+#~ "the page are downloaded again, even if cached copies exist.</html>"
+#~ msgstr ""
+#~ "<html>Zladëjë dokùment znowa<br /> <br />To mòże bëc przëdatné do ùznaniô "
+#~ "zmianów, np. jeżlë starna bëła zmòdifikòwónô pò ji wëskrzënieniu. "
+#~ "Wszëtczé òbrôżczi ze starnë bãdą zladowóné znowa, chòba że jich kòpije ju "
+#~ "są w pòdrãczny pamiãcë</html>"
+
+#~ msgid ""
+#~ "Force a reload of the currently displayed document and any contained "
+#~ "images"
+#~ msgstr "Fòrsëjë zladënk wszëtczich dokùmentów ë òbrôzków znowa"
+
+#~ msgid "Stop loading the document"
+#~ msgstr "Strzëmôj wladënk dokùmentu"
+
+#~ msgid ""
+#~ "<html>Cut the currently selected text or item(s) and move it to the "
+#~ "system clipboard<br /><br />This makes it available to the <b>Paste</b> "
+#~ "command in Konqueror and other KDE applications.</html>"
+#~ msgstr ""
+#~ "<html>Wëtni wëbróny tekst abò element(ë) systemòwégò tacnika<br /><br /"
+#~ ">Wëcãtô zamkłosc mòże pózdni wlëpic pòlétã <b>Wlëpi</b> w Konquerorze ë "
+#~ "jinszëch aplikacëjach KDE.</html>"
+
+#~ msgid "Move the selected text or item(s) to the clipboard"
+#~ msgstr "Przeniesë wëbróny tekst abò element(ë) do tacnika"
+
+#~ msgid ""
+#~ "<html>Copy the currently selected text or item(s) to the system "
+#~ "clipboard<br /><br />This makes it available to the <b>Paste</b> command "
+#~ "in Konqueror and other KDE applications.</html>"
+#~ msgstr ""
+#~ "<html>Skòpérëjë wëbróny tekst abò element(ë) do systemòwegò tacnika<br /"
+#~ "><br />Skòpérowóną zamkłosc mòże pózdni wlepic pòlétã <b>Wlepi</b> w "
+#~ "Konquerorze ë jinszëch aplikacëjach KDE.</html>"
+
+#~ msgid "Copy the selected text or item(s) to the clipboard"
+#~ msgstr "Skòpérëjë wëbróny tekst abò element(ë) do tacnika"
+
+#~ msgid ""
+#~ "<html>Paste the previously cut or copied clipboard contents<br /><br /"
+#~ ">This also works for text copied or cut from other KDE applications.</"
+#~ "html>"
+#~ msgstr ""
+#~ "<html>Wlëpi rëchli wëcãtą zamkłosc do tacnika<br /><br /> Dzejô téż przë "
+#~ "tekstach wëcãtëch abò skòpiérowónëch w jinszëch aplikacëjach KDE.</html>"
+
+#~ msgid "Paste the clipboard contents"
+#~ msgstr "Wlëpi zamkłosc do tacnika"
+
+#~ msgid ""
+#~ "<html>Print the currently displayed document<br /><br />You will be "
+#~ "presented with a dialog where you can set various options, such as the "
+#~ "number of copies to print and which printer to use.<br /><br />This "
+#~ "dialog also provides access to special KDE printing services such as "
+#~ "creating a PDF file from the current document.</html>"
+#~ msgstr ""
+#~ "<html>Drëkùjë aktualny dokùment<br /> <br />Pòkôżë sã òkno, w jaczim mòże "
+#~ "zmienic wszelejaczi nastôwë wëdrëkù, np. wielënã kòpijów czë brëkòwóny "
+#~ "drëker.<br /><br />Mòżlëwé je téż brëkòwanié ekstra òbsłużnotów drëkù "
+#~ "KDE, taczich jakno ùsôdzanié lopkù PDF z aktualnegò dokùmentu.</html>"
+
+#~ msgid "Print the current document"
+#~ msgstr "Drëkùjë aktualny dokùment"
+
+#~ msgid "If present, open index.html when entering a folder."
+#~ msgstr "Òtemkni lopk index.html, jeżlë je w katalogù."
+
+#~ msgid ""
+#~ "A locked view cannot change folders. Use in combination with 'link view' "
+#~ "to explore many files from one folder"
+#~ msgstr ""
+#~ "W zamkniãtëm wëzdrzatkù ni mòże zjinaczac kataloga. Brëkùjë tegò w "
+#~ "zëstôwie z 'lënkòwaniém wëzdrzatków', bë przezérac wiele lopków z jednegò "
+#~ "kataloga"
+
+#~ msgid ""
+#~ "Sets the view as 'linked'. A linked view follows folder changes made in "
+#~ "other linked views."
+#~ msgstr ""
+#~ "Nastôwiô wëzdrzatk jakno 'zlënkòwóny'. Zlënkòwóny wëzdrzatk ùznôwô zmianã "
+#~ "kataloga w jinszëch zlënkòwónëch wëzdrzatkach."
+
+#~ msgid "Copy &Files..."
+#~ msgstr "Kòpérëjë &lopczi..."
+
+#~ msgid "M&ove Files..."
+#~ msgstr "&Przeniesë lopczi..."
+
+#~ msgid ""
+#~ "You have requested to open more than 20 bookmarks in tabs. This might "
+#~ "take a while. Continue?"
+#~ msgstr ""
+#~ "Chcesz òtemknąc wicy jakno 20 załóżków w kôrtach. To mòże kąsk dérowac. "
+#~ "Jisc dali?"
+
+#~ msgid "Open bookmarks folder in new tabs"
+#~ msgstr "Òtemkni katalog załóżków w nowich kôrtach"
+
+#~ msgid "Open in T&his Window"
+#~ msgstr "Òtemkni w &tim òknie"
+
+#~ msgid "Open the document in current window"
+#~ msgstr "Òtemkni dokùment w tim òknie"
+
+#~ msgid "Open the document in a new window"
+#~ msgstr "Òtemkni dokùment w nowim òknie"
+
+#~ msgid "Open in &New Tab"
+#~ msgstr "Òtemkni w &nowi karce"
+
+#~ msgid "Open the document in a new tab"
+#~ msgstr "Òtemkni dokùment w nowi karce"
+
+#~ msgid "&Open With"
+#~ msgstr "Ò&temkni w"
+
+#~ msgid "Open with %1"
+#~ msgstr "Òtemkni w %1"
+
+#~ msgctxt "@action:inmenu View"
+#~ msgid "&View Mode"
+#~ msgstr "Ôrt &wëzdrzatkù"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window, are you sure you want to quit?"
+#~ msgstr "W tim òknie je òtemkłëch wiele kôrtów. Na gwës zakùńczëc?"
+
+#~ msgid "Confirmation"
+#~ msgstr "Pòcwierdzenié"
+
+#~ msgid "C&lose Current Tab"
+#~ msgstr "Zamkni &aktualną kôrtã"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the window will discard these changes."
+#~ msgstr ""
+#~ "Na kôrta zamëkô w se jesz nie wësłóné zmianë.\n"
+#~ "Zamëkając to òknò niechôsz te zmianë."
+
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Closing the window will discard these changes."
+#~ msgstr ""
+#~ "Na starna zamëkô w se jesz ni wësłóné zmianë.\n"
+#~ "Zamëkając to òknò niechôsz te zmianë."
+
+#~ msgid ""
+#~ "Your sidebar is not functional or unavailable. A new entry cannot be "
+#~ "added."
+#~ msgstr ""
+#~ "Twòjô bòcznô listew nie fùnkcjonëje abò je nieprzistãpnô. Ni mòże dodac "
+#~ "wpisënkù."
+
+#~ msgid "Web Sidebar"
+#~ msgstr "Sécowô bòcznô listew"
+
+#~ msgid "Add new web extension \"%1\" to your sidebar?"
+#~ msgstr "Dodac nowé sécowé rozszérzenié \"%1\" do twòji bòczni listewë?"
+
+#~ msgid "Add"
+#~ msgstr "Dodôj"
+
+#~ msgid "Do Not Add"
+#~ msgstr "Nie dodôwôj"
+
+#~ msgid ""
+#~ "There appears to be a configuration error. You have associated Konqueror "
+#~ "with %1, but it cannot handle this file type."
+#~ msgstr ""
+#~ "Pòkôza sã wierã fela kòfigùracëji. Konqueror òstôł sparłączony z ôrtã %1 "
+#~ "jaczégò nie rozmie òbsłużëc."
+
+#~ msgid "Profile Management"
+#~ msgstr "Sprôwianié profilama"
+
+#~ msgid "&Rename Profile"
+#~ msgstr "&Zmieni miono profilu"
+
+#~ msgid "&Delete Profile"
+#~ msgstr "&Rëmôj profil"
+
+#~ msgid "Manage Sessions"
+#~ msgstr "Sprôwiôj sesëjama"
+
+#~ msgid "&Open"
+#~ msgstr "Ò&temkni"
+
+#~ msgid "Rename Session"
+#~ msgstr "Zmieni miono sesëji"
+
+#~ msgid "Save Session"
+#~ msgstr "Zapiszë sesëjã"
+
+#~ msgid ""
+#~ "A session with the name '%1' already exists, do you want to overwrite it?"
+#~ msgstr "Sesëjô z mionã '%1' ju je, chcesz ją nadpisac?"
+
+#~ msgid "Session exists. Overwrite?"
+#~ msgstr "Sesëjô ju je. Nadpisac?"
+
+#~ msgid ""
+#~ "Konqueror did not close correctly. Would you like to restore the previous "
+#~ "session?"
+#~ msgstr ""
+#~ "Konqueror ni zamknął sã pòprôwno. Chcesz przewrócëc rëchliszą sesëjã "
+#~ "nazôd?"
+
+#~ msgid "Restore Session?"
+#~ msgstr "Doprowôdzëc sesëjã nazôd?"
+
+#~ msgid "Restore Session"
+#~ msgstr "Doprowôdzë sesëjã nazôd"
+
+#~ msgid "Do Not Restore"
+#~ msgstr "Nie doprowôdzôj nazôd"
+
+#~ msgid "Ask Me Later"
+#~ msgstr "Pëtôj mie pózdni"
+
+#~ msgid ""
+#~ "This bar contains the list of currently open tabs. Click on a tab to make "
+#~ "it active. You can also use keyboard shortcuts to navigate through tabs. "
+#~ "The text on the tab shows the content currently open in it; place your "
+#~ "mouse over the tab to see the full title, in case it has been shortened "
+#~ "to fit the tab width."
+#~ msgstr ""
+#~ "Na listew zamëkô w se lëstã òtemkłëch kôrtów. Klëkni na kôrtã, bë jã "
+#~ "aktiwòwac. Mòże téż brëkòwac klawiszowëch skródzënów. Tekst na kôrce "
+#~ "wëskrzeni zamkłosc aktualny starnë. Jeżlë titel òstôł òbcãti, fùl titel "
+#~ "mòże òbôczëc pò najachaniu kùrsorã mëszë nad kôrtã."
+
+#~ msgid "Open a new tab"
+#~ msgstr "Òtemkni nową kôrtã"
+
+#~ msgid "Close the current tab"
+#~ msgstr "Zamkni aktualną kôrtã"
+
+#~ msgid "&Duplicate Tab"
+#~ msgstr "&Zwielokrotni kôrtã"
+
+#~ msgid "&Reload Tab"
+#~ msgstr "&Zladëjë kôrtã znowa"
+
+#~ msgid "Other Tabs"
+#~ msgstr "Jinszé kôrtë"
+
+#~ msgid "D&etach Tab"
+#~ msgstr "Ò&dłączë kôrtã"
+
+#~ msgid "&Close Tab"
+#~ msgstr "&Zamkni kôrtã"
+
+#~ msgid "Und&o: Closed Tab"
+#~ msgstr "Przëwrócë: Zamkniãtą kôrtã"
+
+#~ msgid "Und&o: Closed Window"
+#~ msgstr "&Przëwrócë: Zamkniãtą kôrtã"
+
+#~ msgid "Und&o"
+#~ msgstr "P&rzëwrócë"
+
+#~ msgid ""
+#~ "The page you are trying to view is the result of posted form data. If you "
+#~ "resend the data, any action the form carried out (such as search or "
+#~ "online purchase) will be repeated. "
+#~ msgstr ""
+#~ "Starna jaką chcesz òbezdrzec, je skùtkã wësłónëch pòdôwków fòrmùlaru. "
+#~ "Jeżlë wëslesz pòdôwczi znowa, wszëtczé dzejania jaczi są skùtkã wësłaniô "
+#~ "fòlmùlaru (np. wësłanié zamówieniô czë szëkba), òstaną znowioné. "
+
+#~ msgid "Warning"
+#~ msgstr "Òstrzéga"
+
+#~ msgid "Resend"
+#~ msgstr "Wëslë znowa"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window.\n"
+#~ "Loading a view profile will close them."
+#~ msgstr ""
+#~ "W tim òknie òtemkłëch je wiele kôrtów.\n"
+#~ "Wladowanié profilu zamknie je."
+
+#~ msgid "Load View Profile"
+#~ msgstr "Wczëtôj profil wëzdrzatkù"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Loading a profile will discard these changes."
+#~ msgstr ""
+#~ "Ta kôrta zamëkô w se niewësłóné zmianë.\n"
+#~ "Wladowanié profilu cësnié je."
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "History Sidebar Module"
+#~ msgstr "Historëjô bòczny listewë"
+
+#~ msgctxt "@title:tab"
+#~ msgid "History"
+#~ msgstr "Historëjô"
+
+#~ msgid " day"
+#~ msgid_plural " days"
+#~ msgstr[0] " dzéń"
+#~ msgstr[1] " dni"
+#~ msgstr[2] " dniów"
+
+#~ msgid "Minute"
+#~ msgid_plural "Minutes"
+#~ msgstr[0] "Minuta"
+#~ msgstr[1] "Minutë"
+#~ msgstr[2] "Minutów"
+
+#~ msgid "Day"
+#~ msgid_plural "Days"
+#~ msgstr[0] "Dzeń"
+#~ msgstr[1] "Dni"
+#~ msgstr[2] "Dniów"
+
+#~ msgid "<h1>History Sidebar</h1> You can configure the history sidebar here."
+#~ msgstr ""
+#~ "<h1>Bòcznô listew historëji</h1>Tuwò mòże skònfigùrowac bòczną listew "
+#~ "historëji."
+
+#, fuzzy
+#~| msgctxt "@action:inmenu Add"
+#~| msgid "Web Sidebar Module"
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Places Sidebar Module"
+#~ msgstr "Sécowi mòduł bòczny listewë"
+
+#~ msgid "Extended Sidebar"
+#~ msgstr "Rozszérzonô bòcznô listew"
+
+#~ msgid "Rollback to System Default"
+#~ msgstr "Doprowôdzë nazôd do domëslnegò nastôwù systemë"
+
+#~ msgid "Configure Sidebar"
+#~ msgstr "Kònfigùracëjô bòczny listwë"
+
+#~ msgid "Add New"
+#~ msgstr "Dodôj nowi"
+
+#~ msgid "Multiple Views"
+#~ msgstr "Wiele wëzdrzatków"
+
+#~ msgid "Show Tabs Left"
+#~ msgstr "Pòkôżë kôrtë z lewi starnë"
+
+#~ msgid "Show Configuration Button"
+#~ msgstr "Pòkôżë knąpã kònfigùracëji"
+
+#~ msgid "Close Sidebar"
+#~ msgstr "Zamkni bòczną listew"
+
+#~ msgid "This entry already exists."
+#~ msgstr "Nen wpisënk ju je."
+
+#~ msgid ""
+#~ "<qt>This removes all your entries from the sidebar and adds the system "
+#~ "default ones.<br /><b>This procedure is irreversible</b><br />Do you want "
+#~ "to proceed?</qt>"
+#~ msgstr ""
+#~ "<qt>To rëmô wszëtczé Twòje wpisënczi w bòczny listwie ë dodô tam domëslné."
+#~ "<br /><b>Tegò procesu ni mòże copnąc.</b> <br />Jisc dali?</qt>"
+
+#~ msgid "Show Tabs Right"
+#~ msgstr "Pòkażë kôrtë z prawa"
+
+#~ msgid "Set Name"
+#~ msgstr "Ùstôwi miono"
+
+#~ msgid "Enter the name:"
+#~ msgstr "Wpiszë miono:"
+
+#~ msgid "Enter a URL:"
+#~ msgstr "Wpiszë adresã URL:"
+
+#~ msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
+#~ msgstr "<qt>Jes gwës tegò, że chcesz rëmnąc kôrtã <b>\"%1\"</b>?</qt>"
+
+#, fuzzy
+#~| msgid ""
+#~| "You have hidden the navigation panel configuration button. To make it "
+#~| "visible again, click the right mouse button on any of the navigation "
+#~| "panel buttons and select \"Show Configuration Button\"."
+#~ msgid ""
+#~ "You have hidden the sidebar configuration button. To make it visible "
+#~ "again, click the right mouse button on any of the sidebar buttons and "
+#~ "select \"Show Configuration Button\"."
+#~ msgstr ""
+#~ "Knąpa kònfigùracëji nawigacjowi listwë òstała zataconô. Bë jã wëskrzënic, "
+#~ "je nót klëknąc prawą knąpã mëszë na dowólny knąpie nawigacjowi listwë ë "
+#~ "wëbrac \"Pòkôżë knąpã kònfigùracëji\"."
+
+#~ msgid "Set Name..."
+#~ msgstr "Ùstôwi miono..."
+
+#~ msgid "Set URL..."
+#~ msgstr "Ùstôwi adresã URL..."
+
+#~ msgid "Set Icon..."
+#~ msgstr "Ùstôwi ikònã..."
+
+#~ msgid "Remove"
+#~ msgstr "Rëmôj"
+
+#~ msgid "Web module"
+#~ msgstr "Sécowi mòduł"
+
+#~ msgid "&Create New Folder"
+#~ msgstr "Ùsôdzë nowi &katalog"
+
+#~ msgid "Delete Folder"
+#~ msgstr "Rëmôj katalog"
+
+#~ msgid "Delete Bookmark"
+#~ msgstr "Rëmôj załóżkã"
+
+#~ msgid "Properties"
+#~ msgstr "Swòjiznë"
+
+#~ msgid "Open in New Window"
+#~ msgstr "Òtemkni w nowim òknie"
+
+#~ msgid "Open Folder in Tabs"
+#~ msgstr "Òtemkni katalog w kôrtach"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "Kòpérëjë adresã lënka"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark folder\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "Jes gwës tegò, że chcesz rëmnąc katalog załóżków\n"
+#~ "\"%1\"?"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "Jes gwës tegò, że chcesz rëmnąc załóżkã\n"
+#~ "\"%1\"?"
+
+#~ msgid "Bookmark Folder Deletion"
+#~ msgstr "Rëminãce katalogù załóżków"
+
+#~ msgid "Bookmark Deletion"
+#~ msgstr "Rëminãce załóżczi"
+
+#~ msgid "Bookmark Properties"
+#~ msgstr "Swòjizna załóżczi"
+
+#~ msgid "&Update"
+#~ msgstr "&Aktualizacëjô"
+
+#~ msgid "Name:"
+#~ msgstr "Miono:"
+
+#~ msgid "Location:"
+#~ msgstr "Lokalizacëjô:"
+
+#~ msgid "Add Bookmark"
+#~ msgstr "Dodôj załóżkã"
+
+#~ msgid "Cannot find parent item %1 in the tree. Internal error."
+#~ msgstr "Ni mòże nalezc nôdrzãdnegò elementu %1 w drzewie. Bënowô fela."
+
+#~ msgid "&Create New Folder..."
+#~ msgstr "Ùsôdzë nowi &katalog..."
+
+#~ msgid "Move to Trash"
+#~ msgstr "Przeniesë do kòsza"
+
+#~ msgid "Rename"
+#~ msgstr "Zmieni miono"
+
+#~ msgid "Delete Link"
+#~ msgstr "Rëmôj lënk"
+
+#~ msgid "New Folder"
+#~ msgstr "Nowi katalog"
+
+#~ msgid "Create New Folder"
+#~ msgstr "Ùsôdzë nowi katalog"
+
+#~ msgid "Enter folder name:"
+#~ msgstr "Miono katalogù:"
+
+#~ msgctxt "@label"
+#~ msgid "Name:"
+#~ msgstr "Miono:"
+
+#~ msgctxt "@label"
+#~ msgid "Path or URL:"
+#~ msgstr "Stgna adresë URL:"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add folder sidebar module"
+#~ msgstr "Dodôj katalog mòdułu bòcznu listwë"
+
+#~ msgid "&Open Link"
+#~ msgstr "Òtemkni &lënk"
+
+#~ msgid "Set &Automatic Reload"
+#~ msgstr "Wëłączë &aùtomatné òdswierzanié"
+
+#~ msgid "Set Refresh Timeout (0 disables)"
+#~ msgstr "Ùstôwi czas òdswierzaniô (0 wëłączô)"
+
+#~ msgid " min"
+#~ msgstr " min."
+
+#~ msgid " sec"
+#~ msgstr " sek."
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Web Sidebar Module"
+#~ msgstr "Sécowi mòduł bòczny listewë"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add web sidebar module"
+#~ msgstr "Dodôj sécowi mòduł bòczny listwë"
+
+#~ msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
+#~ msgid "Be free."
+#~ msgstr "Bãdzë wòlnym."
+
+#~ msgid ""
+#~ "Konqueror is a web browser, file manager and universal document viewer."
+#~ msgstr ""
+#~ "Konqueror to menadżera lopków, przezérnik WWW ë uniwersalny przezérnik "
+#~ "dokùmentów."
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "Starting Points"
+#~ msgstr "Startowé pùnktë"
+
+#~ msgid "Introduction"
+#~ msgstr "Wprowadzenié"
+
+#~ msgid "Tips"
+#~ msgstr "Pòdpòwiescë"
+
+#~ msgid "Specifications"
+#~ msgstr "Specyfikacëjô"
+
+#~ msgid "Your personal files"
+#~ msgstr "Twòje priwatné lopczi"
+
+#~ msgid "Trash"
+#~ msgstr "Kòsz"
+
+#~ msgid "Browse and restore the trash"
+#~ msgstr "Przezéranié ë doprowadzanié nazôd zamkłoscë kòsza"
+
+#~ msgid "Network Folders"
+#~ msgstr "Sécowé katalodżi"
+
+#~ msgid "Shared files and folders"
+#~ msgstr "Zbiérné lopczi ë katalodżi"
+
+#, fuzzy
+#~| msgid "&Bookmarks"
+#~ msgid "Bookmarks"
+#~ msgstr "&Załóżczi"
+
+#~ msgid "Quick access to your bookmarks"
+#~ msgstr "Chùtczi przëstãp do załóżków"
+
+#~ msgid "Next: An Introduction to Konqueror"
+#~ msgstr "Dali: Wprowadzenié do Konquerora"
+
+#~ msgid "Search the Web"
+#~ msgstr "Szëkba w sécë"
+
+#~ msgid ""
+#~ "Konqueror makes working with and managing your files easy. You can browse "
+#~ "both local and networked folders while enjoying advanced features such as "
+#~ "the powerful sidebar and file previews."
+#~ msgstr ""
+#~ "Konqueror zletcziwô sprôwianié lopkama. Mòże przezérac môlowé jakno ë "
+#~ "sécowé katalodżi, brëkùjąc przë tim awanoswónëch fùnkcëjów, jakno "
+#~ "bòcznëch listwów ë pòdzerkù lopków."
+
+#~ msgid ""
+#~ "Konqueror is also a full featured and easy to use web browser which you "
+#~ "can use to explore the Internet. Enter the address (e.g. <a href=\"http://"
+#~ "www.kde.org\">http://www.kde.org</a>) of a web page you would like to "
+#~ "visit in the location bar and press Enter, or choose an entry from the "
+#~ "Bookmarks menu."
+#~ msgstr ""
+#~ "Konqueror je prostim w ùżëcym przezérnikã WWW, jaczégò mòże brëkòwac do "
+#~ "przezéraniô sécë. Wpiszë adresã (np. <a href=\"http://www.kde.org"
+#~ "\">http://www.kde.org</a>) starnë, jaką chcesz òdwiedzëc ë wcësni knąpã "
+#~ "Enter. Mòżesz téż wëbrac jeden z wpisënków w menu załóżków."
+
+#~ msgid ""
+#~ "To return to the previous location, press the back button <img width='16' "
+#~ "height='16' src=\"%1\"></img> in the toolbar. "
+#~ msgstr ""
+#~ "Bë warcëc sã do wczasniészi starnë wcësni knąpã  <img width='16' "
+#~ "height='16' src=\"%1\"></img> w listwie nôrzãdzów. "
+
+#~ msgid ""
+#~ "To quickly go to your Home folder press the  home button <img width='16' "
+#~ "height='16' src=\"%1\"></img>."
+#~ msgstr ""
+#~ "Bë chùtkò przeńc do Domôcegò katalogù wcësni knąpã <img width='16' "
+#~ "height='16' src=\"%1\"></img>."
+
+#~ msgid ""
+#~ "For more detailed documentation on Konqueror click <a href=\"%1\">here</"
+#~ "a>."
+#~ msgstr ""
+#~ "Akùratnô dokùmentacëjô Konquerora nachôdô sã <a href=\"%1\">tuwò</a>."
+
+#~ msgid ""
+#~ "<em>Tuning Tip:</em> If you want the Konqueror web browser to start "
+#~ "faster, you can turn off this information screen by clicking <a href="
+#~ "\"%1\">here</a>. You can re-enable it by choosing the Help -> Konqueror "
+#~ "Introduction menu option, and then pressing Settings -> Save View Profile "
+#~ "As... -> \"Web Browsing\"."
+#~ msgstr ""
+#~ "<em>Dopasowanié:</em> Jeżlë chcesz przërëchlëc zrëszanié Konquerora, "
+#~ "mòżesz wëłączëc tã wëdowiédzã, klëkając <a href=\"%1\">tuwò</a>. Bë jã "
+#~ "doprowôdzëc nazôd, wëbierzë z menu Pòmòc ->Wprowadzenié do Konquerora ë "
+#~ "wcësni Nastôwë -> Zapiszë profil wëzdrzatkù \"Przezéranié sécë\"."
+
+#~ msgid "Next: Tips &amp; Tricks"
+#~ msgstr "Dali: Pòdpòwiescë ë sztëczki"
+
+#~ msgid ""
+#~ "Konqueror is designed to embrace and support Internet standards. The aim "
+#~ "is to fully implement the officially sanctioned standards from "
+#~ "organizations such as the W3 and OASIS, while also adding extra support "
+#~ "for other common usability features that arise as de facto standards "
+#~ "across the Internet. Along with this support, for such functions as "
+#~ "favicons, Web Shortcuts, and <A HREF=\"%1\">XBEL bookmarks</A>, Konqueror "
+#~ "also implements:"
+#~ msgstr ""
+#~ "Konqueror wspierô wiele internetowëch sztandardów. Przédnym zgrôwã je "
+#~ "fùlwôrtné wspiarce òficjalnegò sztandardu taczich òrganizacëjów jakno W3 "
+#~ "ë OASIS, jakno ë téż dodôwanié jinszëch céchów pòprôwiającëch brëkòwnosc, "
+#~ "ùsôdzanëch jakno niefòrmalné sztandardë w Internece. Są to midzy jinszëma "
+#~ "taczé funkcëje jakno favicons, Internet Keywords ë <A HREF="
+#~ "\"%1\">załóżczi XBEL</A>, Konqueror òbsługiwô téż:"
+
+#~ msgid "Supported standards"
+#~ msgstr "Wspieróné sztandardë"
+
+#~ msgid "Additional requirements*"
+#~ msgstr "Dodôwné wëmòdżi*"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">DOM</A> (Level 1, dzélowò Level 2) òpiarti na <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+
+#~ msgid "built-in"
+#~ msgstr "wbùdowóny"
+
+#~ msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
+#~ msgstr "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, dzélowò CSS 2)"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
+#~ msgstr "<A HREF=\"%1\">ECMA-262</A> Edition 3 (mni wicy Javascript 1.5)"
+
+#~ msgid ""
+#~ "JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
+#~ msgstr ""
+#~ "JavaScript wëłączony (globalno). Włączë JavaScript <A HREF=\"%1\">tuwò</"
+#~ "A>."
+
+#~ msgid ""
+#~ "JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\"
+#~ "\">here</A>."
+#~ msgstr ""
+#~ "JavaScript włączony (globalno). Skònfigùrujë Javascript <A HREF=\\\"%1\\"
+#~ "\"> tuwò</A>."
+
+#~ msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
+#~ msgstr "Bezpiecznô <A HREF=\"%1\">Java</A><SUP>&reg;</SUP>"
+
+#, fuzzy
+#~| msgid ""
+#~| "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">Blackdown</A>, <A HREF="
+#~| "\"%2\">IBM</A> or <A HREF=\"%3\">Sun</A>)"
+#~ msgid ""
+#~ "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">IBM</A> or <A HREF="
+#~ "\"%2\">Sun/Oracle</A>)"
+#~ msgstr ""
+#~ "JDK 1.2.0 (Java 2) kòmpatibilnô z VM (<A HREF=\"%1\">Blackdown</A>, <A "
+#~ "HREF=\"%2\">IBM</A> abò <A HREF=\"%3\">Sun</A>)"
+
+#~ msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
+#~ msgstr "Włączë Javã (globalno) <A HREF=\"%1\">tuwò</A>."
+
+#~ msgid ""
+#~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">plugins</A> (for "
+#~ "viewing <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
+#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Video, etc.)"
+#~ msgstr ""
+#~ "<A HREF=\"%4\">Wtëkôcze</A> Netscape Communicatora<SUP>&reg;</SUP> (do "
+#~ "òdtwôrzaniô lopków <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
+#~ "\"%2\">Real</A>Audio<SUP>&reg;</SUP>, <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Video, ëtd.)"
+
+#~ msgid "Secure Sockets Layer"
+#~ msgstr "Secure Sockets Layer (SSL)"
+
+#~ msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
+#~ msgstr "(TLS/SSL v2/3) dlô bezpiekù parłączeniów do 168bit"
+
+#~ msgid "OpenSSL"
+#~ msgstr "OpenSSL"
+
+#~ msgid "Bidirectional 16bit unicode support"
+#~ msgstr "Dwaczerënkòwô òbsłëga, 16-bitowegò Unicode"
+
+#~ msgid "AutoCompletion for forms"
+#~ msgstr "Aùtodofùlowanié fòrmùlôrów"
+
+#~ msgctxt "Title of an html 'group box' explaining konqueror features"
+#~ msgid "General"
+#~ msgstr "Òglowò"
+
+#~ msgid "Feature"
+#~ msgstr "Fùnkcëjô"
+
+#~ msgid "Details"
+#~ msgstr "Detale"
+
+#~ msgid "Image formats"
+#~ msgstr "Graficzné fòrmôtë"
+
+#, fuzzy
+#~| msgid "PNG<br />MNG<br />JPG<br />GIF"
+#~ msgid "PNG<br />JPG<br />GIF"
+#~ msgstr "PNG<br />MNG<br />JPG<br />GIF"
+
+#~ msgid "Transfer protocols"
+#~ msgstr "Transferowé protokółë"
+
+#~ msgid "HTTP 1.1 (including gzip/bzip2 compression)"
+#~ msgstr "HTTP 1.1 (z kòmpresëją gzip/bzip2)"
+
+#~ msgid "FTP"
+#~ msgstr "FTP"
+
+#, fuzzy
+#~| msgid "and <A HREF=\"%1\">many more...</A>"
+#~ msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpcenter)...</A>"
+#~ msgstr "ë <A HREF=\"%1\">wiele jinszëch...</A>"
+
+#~ msgctxt "A feature of Konqueror"
+#~ msgid "URL-Completion"
+#~ msgstr "Dofùlowanié adresów URL"
+
+#~ msgid "Manual"
+#~ msgstr "Rãczno"
+
+#~ msgid "Popup"
+#~ msgstr "Wëbiérk"
+
+#~ msgid "(Short-) Automatic"
+#~ msgstr "(Pół-)aùtomatno"
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "<a href=\"%1\">Return to Starting Points</a>"
+#~ msgstr "<a href=\"%1\">Nazôd do startowëch pùnktów</a>"
+
+#~ msgid "Tips &amp; Tricks"
+#~ msgstr "Pòdpòwiescë ë sztëczki"
+
+#~ msgid ""
+#~ "Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, "
+#~ "using Google, for the search phrase \"KDE\". There are a lot of Web-"
+#~ "Shortcuts predefined to make searching for software or looking up certain "
+#~ "words in an encyclopedia a breeze. You can even <a href=\"%1\">create "
+#~ "your own</a> Web-Shortcuts."
+#~ msgstr ""
+#~ "Brëkùjë internetowëch kluczowëch słów ë skrodzënów WWW: wpisëwôjąc \"gg:"
+#~ "Kaszëbsczé KDE\", mòżesz brëkòwac Google do òdnalezeniô w Internece "
+#~ "wësłôwù \"Kaszëbsczé KDE\". Zdefiniowónëch je wiele internetowëch "
+#~ "skrodzënów, dôwającëch mòżnotã szëkaniô za soft-wôrą czë słowama w "
+#~ "encyklopediji. Mòże nawetka <a href=\"%1\">ùsôdzac swòje</a> internetowé "
+#~ "skrodzëne."
+
+#, fuzzy
+#~| msgid ""
+#~| "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> "
+#~| "in the toolbar to increase the font size on your web page."
+#~ msgid ""
+#~ "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
+#~ "the HTML toolbar to increase the font size on your web page."
+#~ msgstr ""
+#~ "Brëkùjë knąpë lupë <img width='16' height='16' src=\"%1\"></img> do "
+#~ "zwikszaniô miarë fòntów na starnie WWW."
+
+#~ msgid ""
+#~ "When you want to paste a new address into the Location toolbar you might "
+#~ "want to clear the current entry by pressing the black arrow with the "
+#~ "white cross <img width='16' height='16' src=\"%1\"></img> in the toolbar."
+#~ msgstr ""
+#~ "Jeżlë bãdzesz chcôł wlëmic nową adresã do adresowi listwë, mòżesz rëmnąc "
+#~ "biéżny wpisënk przez wcësniãce biôłegò krziżëka <img width='16' "
+#~ "height='16' src=\"%1\"></img> na adresowi listwie."
+
+#, fuzzy
+#~| msgid ""
+#~| "To create a link on your desktop pointing to the current page, simply "
+#~| "drag the \"Location\" label that is to the left of the Location toolbar, "
+#~| "drop it on to the desktop, and choose \"Link\"."
+#~ msgid ""
+#~ "To create a link on your desktop pointing to the current page, simply "
+#~ "drag the icon (favicon) that is to the left of the Location toolbar, drop "
+#~ "it on to the desktop, and choose \"Icon\"."
+#~ msgstr ""
+#~ "Bë ùsôdzëc na pùlce lënk do aktualny starnë, przecygni zwëczajno etikétã "
+#~ "\"Adresa\" pò lewi starnie adresowi listwë, ùpùszczë jã na pùlt ë "
+#~ "wëbierzë \"Lënkùjë\"."
+
+#~ msgid ""
+#~ "You can also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen "
+#~ "Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
+#~ "sessions."
+#~ msgstr ""
+#~ "W menu Nastôwù najdiwô sã <img width='16' height='16' src=\"%1\"></img> "
+#~ "\"Fùlekranowi trib\". Je òn baro przëdatny dlô sesëji \"Talk\"."
+
+#~ msgid ""
+#~ "Divide et impera (lat. \"Divide and conquer\") - by splitting a window "
+#~ "into two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> "
+#~ "Split View Left/Right) you can make Konqueror appear the way you like. "
+#~ "You can even load some example view-profiles (e.g. Midnight Commander), "
+#~ "or create your own ones."
+#~ msgstr ""
+#~ "Divide et impera (łac. \"Dzelë ë rządzë\") - przez pòdzelenié òkna na dwa "
+#~ "dzéle (np. Òkno -> <img width='16' height='16' src=\"%1\" /> Pòdzelë "
+#~ "wëzdrzatk: prawò/lewò) mòżesz dopasowac wëzdrzatk Konquerora do swòjëch "
+#~ "ùżiwków.  Mòżesz téż wëbrac z cziles przëmiôrów profilów wëzdrzatkù (np. "
+#~ "Midnight Commander) abò ùsôdzëc swòje."
+
+#~ msgid ""
+#~ "Use the <a href=\"%1\">user-agent</a> feature if the website you are "
+#~ "visiting asks you to use a different browser (and do not forget to send a "
+#~ "complaint to the webmaster!)"
+#~ msgstr ""
+#~ "Brëkùjë fùnkcëjã <A HREF=\"%1\">user-agent</A>, jeżlë starna, jaką "
+#~ "òbzerôsz wëmùszô na ce wëbranié jinszegò przezérnika (ë nie zabëj wësłac "
+#~ "skargã do webméstera!)"
+
+#, fuzzy
+#~| msgid ""
+#~| "The <img width='16' height='16' src=\"%1\"></img> History in your "
+#~| "SideBar ensures that you can keep track of the pages you have visited "
+#~| "recently."
+#~ msgid ""
+#~ "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
+#~ "ensures that you can keep track of the pages you have visited recently."
+#~ msgstr ""
+#~ "W <img width='16' height='16' src=\"%1\"></img> historëji na bòczny "
+#~ "listwie najdiwô sã lësta slédno òbzérónëch starnów."
+
+#~ msgid ""
+#~ "Use a caching <a href=\"%1\">proxy</a> to speed up your Internet "
+#~ "connection."
+#~ msgstr ""
+#~ "Brëkùjë <A HREF=\"%1\">pòstrzédnika</A>, bë przërëchlëc łączbã z "
+#~ "Internetã."
+
+#~ msgid ""
+#~ "Advanced users will appreciate the Konsole which you can embed into "
+#~ "Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
+#~ "Terminal Emulator)."
+#~ msgstr ""
+#~ "Awansowóni brëkòwnicë na gwës ùwôżą kònsolã, jakô je wbudowónô w "
+#~ "Konquerora (Òkno -> <img width='16' height='16' SRC=\"%1\"></img> "
+#~ "Wëskrzëni emùlator terminala)."
+
+#~ msgid "Next: Specifications"
+#~ msgstr "Dali: Specyfikacëjô"
+
+#~ msgid "Installed Plugins"
+#~ msgstr "Winstalowóné wtëkôcze"
+
+#~ msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
+#~ msgstr "<td>Wtëkôcz</td><td>Òpisënk</td><td>Lopk</td><td>Ôrt</td>"
+
+#~ msgid "Installed"
+#~ msgstr "Winstalowóné"
+
+#~ msgid ""
+#~ "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
+#~ msgstr ""
+#~ "<td>Ôrt MIME</td><td>Òpisënk</td><td>Rozszérzenié</td><td>Wtëkôcz</td>"
+
+#~ msgid ""
+#~ "Do you want to disable showing the introduction in the webbrowsing "
+#~ "profile?"
+#~ msgstr "Wëłączëc wëskrzeniwanié wprowadzeniô w profilu przezérnika WWW?"
+
+#~ msgid "Faster Startup?"
+#~ msgstr "Chùtczi zrëszanié?"
+
+#~ msgid "Disable"
+#~ msgstr "Wëłączë"
+
+#~ msgid "Keep"
+#~ msgstr "Ùtrzëmôj"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Michôł Òstrowsczi, Mark Kwidzińsczi"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "michol@linuxcsb.org, mark@linuxcsb.org"
+
+#~ msgid "&File"
+#~ msgstr "&Lopk"
+
+#~ msgid "&Edit"
+#~ msgstr "&Edicëjô"
+
+#~ msgid "&View"
+#~ msgstr "&Wëzdrzatk"
+
+#~ msgid "&Go"
+#~ msgstr "&Biéj do"
+
+#~ msgid "&Settings"
+#~ msgstr "&Nastôwë"
+
+#~ msgid "&Window"
+#~ msgstr "Ò&kno"
+
+#~ msgid "&Help"
+#~ msgstr "&Pòmòc"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Przédnô listew nôrzãdzów"
+
+#~ msgid "Extra Toolbar"
+#~ msgstr "Dodôwnô listew"
+
+#~ msgid "Location Toolbar"
+#~ msgstr "Adresowô listew"
+
+#~ msgid "Bookmark Toolbar"
+#~ msgstr "Listew załóżków"
+
+#~ msgid "Save open tabs and windows for easy retrieval"
+#~ msgstr "Zapiszë ôpen kôrtë ë òkna dlô prostegò dobëcô jich nazôd"
+
+#~ msgid "&Session name:"
+#~ msgstr "&Miono sesëji:"
+
+#~ msgid "&Profile name:"
+#~ msgstr "&Miono profilu:"
+
+#~ msgid "Save &URLs in profile"
+#~ msgstr "Zapiszë &adresë w profilu"
+
+#~ msgctxt "@action:button New session"
+#~ msgid "New..."
+#~ msgstr "Nowi..."
+
+#~ msgctxt "@action:button Save current session"
+#~ msgid "Save Current"
+#~ msgstr "Zapiszë biéżny"
+
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename..."
+#~ msgstr "Zmieni miono..."
+
+#~ msgctxt "@action:button Delete session"
+#~ msgid "Delete"
+#~ msgstr "Rëmôj"
+
+#~ msgid "Open tabs inside current window"
+#~ msgstr "Òtemkni kôrtë bënë tegò òkna"
+
+#~ msgid "Limits"
+#~ msgstr "Limitë"
+
+#~ msgid "URLs e&xpire after"
+#~ msgstr "Adresë bãdą &rëmóné pò"
+
+#~ msgid "Maximum &number of URLs:"
+#~ msgstr "&Maksylanô wielëna adresów URL:"
+
+#~ msgid "Custom Fonts For"
+#~ msgstr "Swòje fòntë dlô"
+
+#~ msgid "URLs newer than"
+#~ msgstr "Adresë URL nowszé jakno"
+
+#~ msgid "Choose Font..."
+#~ msgstr "Wëbierzë fònt..."
+
+#~ msgid "URLs older than"
+#~ msgstr "Adresë URL stôrsze jakno"
+
+#~ msgid ""
+#~ "Shows the number of times visited and the dates of the first and last "
+#~ "visits, in addition to the URL"
+#~ msgstr ""
+#~ "Wëskrzëniwô króm adresë téż wielënã òdwòłaniów ë datum pierszi ë slédny "
+#~ "gòscënë"
+
+#~ msgid "Detailed tooltips"
+#~ msgstr "Dokładné pòdpòwiescë"
+
+#~ msgid "Clear History"
+#~ msgstr "Wëczëszczë historëjã"
+
+#~ msgid ""
+#~ "This is the URL of the web page where Konqueror (as web browser) will "
+#~ "jump to when the \\\"Home\\\" button is pressed. When Konqueror is "
+#~ "started as a file manager, that button makes it jump to your local home "
+#~ "folder instead."
+#~ msgstr ""
+#~ "To je adresa URL internetowi starnë do chtërny skòknie Konqueror (jakno "
+#~ "przezérnik WWW) jeżlë bãdze klëkniãtô knąpa \\\"Dodóm\\\". Jeżlë "
+#~ "Konqueror òstôł wëstartowóny jakno menadżera lopków, to klëkniãcé ti "
+#~ "knąpë doprowôdzy naji do môlowégò domôcegò kataloga."
+
+#~ msgid "Maximum number of Closed Items"
+#~ msgstr "Maksylanô wielëna zamkłëch elementów"
+
+#~ msgid ""
+#~ "This sets the maximum number of closed items that will be stored in "
+#~ "memory. This limit will not be surpassed."
+#~ msgstr "Òznôczô maksymalną wielenã zamkłëch elementów trzëmónëch w pamiãcë."
+
+#~ msgid "Open folders in separate windows"
+#~ msgstr "Òtemkni katalodżi w apartnëch òknach"
+
+#~ msgid ""
+#~ "If this option is checked, Konqueror will open a new window when you open "
+#~ "a folder, rather than showing that folder's contents in the current "
+#~ "window."
+#~ msgstr ""
+#~ "Jeżlë na òptacëjô je aktiwnô, to Konqueror òtemknie nowé òkno pò tim jak "
+#~ "klëkniesz na katalog, w placu wëskrzënieniô kataloga w aktualnym òknie."
+
+#~ msgid "Show file tips"
+#~ msgstr "Wëskrzëni wëdowiédzã ò lopkach"
+
+#~ msgid ""
+#~ "Here you can control if, when moving the mouse over a file, you want to "
+#~ "see a small popup window with additional information about that file"
+#~ msgstr ""
+#~ "Tuwò mòżesz kòntrolowac to, czë przë najachaniô mëszą na ikònã lopka, "
+#~ "chcesz widzec môłé wëskakùjącé òkno z dodôwną wëdowiédzą ò lopkù."
+
+#~ msgid "Show previews in file tips"
+#~ msgstr "Wëskrzëni pòdzérk wëdowiédzë ò lopkach"
+
+#~ msgid ""
+#~ "Here you can control if you want the popup window to contain a larger "
+#~ "preview for the file, when moving the mouse over it"
+#~ msgstr ""
+#~ "Tuwò mòżesz kòntrolowac to, czë chcesz wëskakùjącé òkno, pò najachaniu "
+#~ "mëszą na ikònã lopka, mô bëc wikszi miarë"
+
+#~ msgid "Show 'Delete' menu entries which bypass the trashcan"
+#~ msgstr "Wëskrzëni w menu 'Rëmôj' (fùnkcëjô z pòminiãcem kòsza)"
+
+#, fuzzy
+#~| msgid ""
+#~| "Uncheck this if you do not want 'Delete' menu commands to be displayed "
+#~| "on the desktop and in the file manager's menus and context menus. You "
+#~| "can still delete files when hidden by holding the Shift key while "
+#~| "calling 'Move to Trash'."
+#~ msgid ""
+#~ "Check this if you want 'Delete' menu commands to be displayed on the "
+#~ "desktop and in the file manager's menus and context menus. You can always "
+#~ "delete files when hidden by holding the Shift key while calling 'Move to "
+#~ "Trash'."
+#~ msgstr ""
+#~ "Ni brëkùjë ti fùnkcëji, jeżlë ni mô sã wëskrzëniwac 'Rëmôj' w menu. "
+#~ "Mòżesz dali rëmac lopczi, trzëmając wcësniãtą knąpã Shift ë wëbierając  "
+#~ "'Przesënie do Kòsza'."
+
+#~ msgid "Number of Open With items in the File menu"
+#~ msgstr "Wielëna elementów 'Òtemkni w'  w menu lopków"
+
+#~ msgid "Standard font"
+#~ msgstr "Standardowi fònt"
+
+#~ msgid "This is the font used to display text in Konqueror windows."
+#~ msgstr "Fònt brëkòwóny do wëskrzënianiô tekstu w òknie Konquerora."
+
+#~ msgid "Maximum number of history items per view"
+#~ msgstr "Maksymalnô wielëna elementów historëji w wëzdrzatkù"
+
+#~ msgid "Ask confirmation for deleting a file."
+#~ msgstr "Pëtôj ò pòcwierdzenié dlô rëmaniô lopka."
+
+#~ msgid ""
+#~ "This option tells Konqueror whether to ask for a confirmation when you "
+#~ "delete a file without using the trash folder. Warning, deleted files can "
+#~ "not be recovered, so it is recommended to leave this confirmation enabled."
+#~ msgstr ""
+#~ "Na òptacëjô gôdô Konquerorowi ò tim, czë mô òn sã pëtac ò pòcwierdzenié "
+#~ "rëmaniô lopka z pòminiãcem kòsza. Bôczë na to, że tak rëmniãti lopk ni "
+#~ "mòże wëdostac nazôd. Zamòdlëwô sã aktiwòwanié pòcwierdzenia."
+
+#~ msgid "Ask confirmation for move to trash"
+#~ msgstr "Pëtôj ò pòcwierdzenié dlô przesëniãcô do kòsza."
+
+#~ msgid ""
+#~ "This option tells Konqueror whether to ask for a confirmation when you "
+#~ "move the file to your trash folder, from where it can be recovered very "
+#~ "easily."
+#~ msgstr ""
+#~ "Na òptacëjô gôdô Konquerorowi ò tim, czë mô òn sã pëtac ò pòcwierdzenié "
+#~ "przesëniãcô lopka do kòsza. Z kòsza mòże letkò wëdostac lopczi nazôd."
+
+#~ msgid ""
+#~ "If true, when opening a session from within the sessions dialog the tabs "
+#~ "will be opened inside current window."
+#~ msgstr ""
+#~ "Jeżlë prôwdzëwi, òbczas òtmëkaniô sesëjów z bënë dialogòwégò òkna "
+#~ "sesëjów, kôrtë bãdą òtemkniãté bënë biéżnégò òkna."
+
+#~ msgid "Hide %1"
+#~ msgstr "Zatacë %1"
+
+#~ msgid "SideBar Test Plugin"
+#~ msgstr "Testowi wtëkôcz bòczny listwë"
+
+#~ msgid "Bookmark This Location"
+#~ msgstr "Załóżkã dlô ti adresë"
+
+#~ msgid ""
+#~ "Malformed URL\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Lëchi URL\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Protocol not supported\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Nie wspieróny protokół\n"
+#~ "%1"
+
+#~ msgid "Cannot create the find part, check your installation."
+#~ msgstr "Nie mòże òtemknąc mòdułu szëkbë, sprôwdzë instalacëjã."
+
+#~ msgid "My Bookmarks"
+#~ msgstr "Mòjé załóżczi"
+
+#~ msgid "Preload for later use"
+#~ msgstr "Wczëtôj do pózdnyszegò brëkòwaniô"
+
+#~ msgid "&Save View Profile \"%1\"..."
+#~ msgstr "&Zapiszë profil wëzdrzatkù \"%1\"..."
+
+#~ msgid "Configure Navigation Panel"
+#~ msgstr "Kònfigùracëjô nawigacjowi listwë"
+
+#~ msgid "Close Navigation Panel"
+#~ msgstr "Zamkni nawigacjową listew"
+
+#~ msgid "Select Type"
+#~ msgstr "Wëbierzë ôrt"
+
+#~ msgid "Select type:"
+#~ msgstr "Wëbierzë ôrt:"
+
+#~ msgid "Web SideBar Plugin"
+#~ msgstr "Sécowi wtëkôcz bòczny listwë"
+
+#~ msgid "<qt><b>%1</b> does not exist</qt>"
+#~ msgstr "<qt><b>%1</b>felëje</qt>"
+
+#~ msgid "Minutes"
+#~ msgstr "minut"
+
+#~ msgid "Days"
+#~ msgstr "dni"
+
+#~ msgid "Your sidebar is not functional or unavailable."
+#~ msgstr "Twòja bòcznô lëstew nie dzejô abò je nieprzistãpnô."
+
+#~ msgid "Cannot find running history plugin in your sidebar."
+#~ msgstr "Nie mòże nalezc pluginsu historëji w twòji bòczni lëstwie."
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History in Sidebar"
+#~ msgstr "Pòkôżë historëjã w bòczny lëstwie"
+
+#~ msgid "Select Remote Charset"
+#~ msgstr "Wëbierzë z bùtnowëch zestôwów merków"
+
+#~ msgid "Reload"
+#~ msgstr "Zladëjë znowa"
+
+#~ msgid "Default"
+#~ msgstr "Domëslné"
+
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename"
+#~ msgstr "Zmieni miono"
+
+#~ msgid ""
+#~ "Konqueror is your file manager, web browser and universal document viewer."
+#~ msgstr ""
+#~ "Konqueror to menadżer lopków, przezérnik WWW ë uniwersalny przezérnik "
+#~ "dokùmentów."
+
+#~ msgid "Joseph WENNINGER"
+#~ msgstr "Joseph WENNINGER"
+
+#~ msgid "G E N E R A L"
+#~ msgstr "Ò G L O W É"
+
+#~ msgid "<img width='16' height='16' src=\"%1\"></img>"
+#~ msgstr "<img width='16' height='16' src=\"%1\"></img>"
+
+#~ msgid "Applications"
+#~ msgstr "Aplikacëje"
+
+#~ msgid "Installed programs"
+#~ msgstr "Zainstalowóné programë"
+
+#~ msgid "&Location"
+#~ msgstr "&Adresa"

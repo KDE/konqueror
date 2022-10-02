@@ -1,0 +1,1992 @@
+# translation of kget.po to Persian
+# Nazanin Kazemi <kazemi@itland.ir>, 2006, 2007.
+# Tahereh Dadkhahfar <dadkhahfar@itland.ir>, 2006.
+# Nasim Daniarzadeh <daniarzadeh@itland.ir>, 2006.
+# Mohamad Reza Mirdamadi <mohi@ubuntu.ir>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: kget\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2011-06-17 18:22+0430\n"
+"Last-Translator: Mohamad Reza Mirdamadi <mohi@ubuntu.ir>\n"
+"Language-Team: Farsi (Persian) <kde-i18n-doc@kde.org>\n"
+"Language: fa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: kget_plugin.cpp:56
+#, kde-format
+msgid "Download Manager"
+msgstr "مدیر بارگیری"
+
+#: kget_plugin.cpp:62
+#, kde-format
+msgid "Show Drop Target"
+msgstr "نمایش گیرنده هدف"
+
+#: kget_plugin.cpp:69
+#, kde-format
+msgid "List All Links"
+msgstr "لیست همه پیوند‌ها"
+
+#: kget_plugin.cpp:74
+#, kde-format
+msgid "List Selected Links"
+msgstr "لیست پیوندهای انتخاب شده"
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No downloadable links were found."
+msgstr "هیچ پیوند بارگیری شونده‌ای پیدا نشد."
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No Links"
+msgstr "هیچ پیوندی"
+
+#. i18n: ectx: Menu (tools)
+#: konqueror_kget_browser_integration.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "&ابزارها‌"
+
+#~ msgid "Unable to communicate with the KGet download manager."
+#~ msgstr "نتوانست با مدیر بارگیری KGet ارتباط برقرار کند."
+
+#~ msgid "Communication Error"
+#~ msgstr "خطای ارتباط"
+
+#~ msgid "Plugins"
+#~ msgstr "وصله‌ها"
+
+#, fuzzy
+#~ msgid "New Group"
+#~ msgstr "گروهها"
+
+#, fuzzy
+#~ msgid "Sqlite"
+#~ msgstr "اندازه"
+
+#~ msgid "Appearance"
+#~ msgstr "ظاهر"
+
+#~ msgid "Change appearance settings"
+#~ msgstr "تغییر تنظیمات ظاهر"
+
+#~ msgid "Groups"
+#~ msgstr "گروهها"
+
+#~ msgid "Manage the groups"
+#~ msgstr "مدیریت گروهها"
+
+#~ msgid "Network"
+#~ msgstr "شبکه"
+
+#~ msgid "Network and Downloads"
+#~ msgstr "شبکه و بارگیریها"
+
+#, fuzzy
+#~ msgid "Verification"
+#~ msgstr "باز کردن مقصد"
+
+#, fuzzy
+#~| msgid "Integration"
+#~ msgctxt "integration of KGet with other applications"
+#~ msgid "Integration"
+#~ msgstr "مجتمع‌سازی"
+
+#, fuzzy
+#~ msgctxt "Advanced Options"
+#~ msgid "Advanced"
+#~ msgstr "پیشرفته"
+
+#~ msgid "Advanced Options"
+#~ msgstr "گزینه‌های پیشرفته"
+
+#, fuzzy
+#~| msgid "Transfer Plugin Options"
+#~ msgid "Transfer Plugins"
+#~ msgstr "انتقال گزینه‌های وصله"
+
+#~ msgid "1 Item"
+#~ msgid_plural "%1 Items"
+#~ msgstr[0] "%1 فقره"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/ثانیه"
+
+#, fuzzy
+#~ msgctxt "start transfergroup downloads"
+#~ msgid "Start"
+#~ msgstr "آغاز"
+
+#, fuzzy
+#~ msgctxt "stop transfergroup downloads"
+#~ msgid "Stop"
+#~ msgstr "ایست"
+
+#, fuzzy
+#~ msgid "KGet is downloading %1 file"
+#~ msgid_plural "KGet is downloading %1 files"
+#~ msgstr[0] "شماره بارگیری:"
+
+#, fuzzy
+#~| msgid ""
+#~| "Are you sure that you want to remove\n"
+#~| "the group named %1?"
+#~ msgid "Are you sure that you want to remove the group named %1?"
+#~ msgstr ""
+#~ "آیا مطمئنید می‌خواهید\n"
+#~ "گروه با نام %1 را حذف کنید؟"
+
+#, fuzzy
+#~| msgid "Rename Group"
+#~ msgid "Remove Group"
+#~ msgstr "تغییر نام گروه."
+
+#, fuzzy
+#~| msgid ""
+#~| "Are you sure that you want to remove\n"
+#~| "the group named %1?"
+#~ msgid "Are you sure that you want to remove the following groups?"
+#~ msgstr ""
+#~ "آیا مطمئنید می‌خواهید\n"
+#~ "گروه با نام %1 را حذف کنید؟"
+
+#, fuzzy
+#~| msgid "Rename Group"
+#~ msgid "Remove groups"
+#~ msgstr "تغییر نام گروه."
+
+#, fuzzy
+#~ msgid "Download added"
+#~ msgstr "بارگیریها"
+
+#~ msgid ""
+#~ "The file %1 already exists.\n"
+#~ "Overwrite?"
+#~ msgstr ""
+#~ "پرونده %1 از قبل وجود دارد.‌\n"
+#~ "جای‌نوشت شود؟"
+
+#~ msgid "Overwrite existing file?"
+#~ msgstr "پرونده موجود جای‌نوشت شود؟"
+
+#~ msgid "Unable to save to: %1"
+#~ msgstr "قادر به ذخیره در %1 نیست"
+
+#~ msgid "My Downloads"
+#~ msgstr "بارگیریهای من"
+
+#~ msgid "New Download"
+#~ msgstr "بارگیری مجدد"
+
+#~ msgid "Enter URL:"
+#~ msgstr "وارد کردن نشانی وب:"
+
+#~ msgid ""
+#~ "Malformed URL:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "نشانی وب بد شکل:\n"
+#~ "%1‌"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URL, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "نشانی وب بد شکل:\n"
+#~ "%1‌"
+
+#, fuzzy
+#~ msgid "Download it again?"
+#~ msgstr "نشانی وب دوباره بارگیری شود؟"
+
+#, fuzzy
+#~ msgid "Delete it and download again?"
+#~ msgstr "نشانی وب دوباره بارگیری شود؟"
+
+#, fuzzy
+#~| msgid ""
+#~| "URL already saved:\n"
+#~| "%1\n"
+#~| "Download again?"
+#~ msgid "File already downloaded. Download anyway?"
+#~ msgstr ""
+#~ "نشانی وب قبلاً ذخیره شد:\n"
+#~ "%1\n"
+#~ "دوباره بارگیری شود؟"
+
+#, fuzzy
+#~| msgid ""
+#~| "The file %1 already exists.\n"
+#~| "Overwrite?"
+#~ msgid "File already exists"
+#~ msgstr ""
+#~ "پرونده %1 از قبل وجود دارد.‌\n"
+#~ "جای‌نوشت شود؟"
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is a directory."
+#~ msgstr ""
+#~ "عدم حذف\n"
+#~ "%1\n"
+#~ "چون یک فهرست راهنما نیست."
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is not a local file."
+#~ msgstr ""
+#~ "عدم حذف\n"
+#~ "%1\n"
+#~ "چون یک پرونده محلی نیست."
+
+#, fuzzy
+#~ msgid "Download completed"
+#~ msgstr "پوشه‌های بارگیری پیش‌فرض"
+
+#, fuzzy
+#~ msgid "Download started"
+#~ msgstr "بارگیریها"
+
+#~ msgid "Error"
+#~ msgstr "خطا"
+
+#, fuzzy
+#~| msgid "Remove"
+#~ msgid "Resolve"
+#~ msgstr "حذف"
+
+#, fuzzy
+#~| msgid "Auto shutdown"
+#~ msgctxt "Shutting down computer"
+#~ msgid "Shutdown"
+#~ msgstr "تعطیل خودکار"
+
+#, fuzzy
+#~ msgctxt "Suspending computer"
+#~ msgid "Suspending"
+#~ msgstr "سرعت"
+
+#, fuzzy
+#~ msgid "Downloads completed"
+#~ msgstr "پوشه‌های بارگیری پیش‌فرض"
+
+#, fuzzy
+#~ msgctxt "file in a filesystem"
+#~ msgid "File"
+#~ msgstr "&پرونده‌"
+
+#, fuzzy
+#~| msgid "Status"
+#~ msgctxt "status of the download"
+#~ msgid "Status"
+#~ msgstr "وضعیت"
+
+#, fuzzy
+#~| msgid "Size"
+#~ msgctxt "size of the download"
+#~ msgid "Size"
+#~ msgstr "اندازه"
+
+#, fuzzy
+#~| msgid "KGet Transfer List"
+#~ msgid "KGet Transfer"
+#~ msgstr "فهرست انتقال KGet"
+
+#, fuzzy
+#~| msgid "File"
+#~ msgctxt "the type of the hash, e.g. MD5"
+#~ msgid "Type"
+#~ msgstr "پرونده"
+
+#~ msgid "Stalled"
+#~ msgstr "ساکن شد"
+
+#, fuzzy
+#~ msgid "Downloading...."
+#~ msgstr "بارگیریها"
+
+#, fuzzy
+#~ msgctxt "transfer state: delayed"
+#~ msgid "Delayed"
+#~ msgstr "با تأخیر"
+
+#, fuzzy
+#~ msgctxt "transfer state: stopped"
+#~ msgid "Stopped"
+#~ msgstr "ایستاد"
+
+#, fuzzy
+#~ msgctxt "transfer state: finished"
+#~ msgid "Finished"
+#~ msgstr "پایان یافت"
+
+#, fuzzy
+#~| msgid "Open Destination"
+#~ msgctxt "changing the destination of the file"
+#~ msgid "Changing destination"
+#~ msgstr "باز کردن مقصد"
+
+#, fuzzy
+#~ msgctxt "name of download"
+#~ msgid "Name"
+#~ msgstr "نام"
+
+#, fuzzy
+#~ msgctxt "status of download"
+#~ msgid "Status"
+#~ msgstr "وضعیت"
+
+#, fuzzy
+#~ msgctxt "size of download"
+#~ msgid "Size"
+#~ msgstr "اندازه"
+
+#, fuzzy
+#~ msgctxt "progress of download"
+#~ msgid "Progress"
+#~ msgstr "پیشرفت"
+
+#, fuzzy
+#~ msgctxt "speed of download"
+#~ msgid "Speed"
+#~ msgstr "سرعت"
+
+#, fuzzy
+#~ msgid "No download destination specified."
+#~ msgstr "باز کردن مقصد"
+
+#, fuzzy
+#~ msgid "Invalid download destination specified."
+#~ msgstr "باز کردن مقصد"
+
+#, fuzzy
+#~ msgid "Download destination is not writeable."
+#~ msgstr "باز کردن مقصد"
+
+#, fuzzy
+#~ msgid "Malformed URL."
+#~ msgstr ""
+#~ "نشانی وب بد شکل:\n"
+#~ "%1‌"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid "Malformed URL, protocol missing."
+#~ msgstr ""
+#~ "نشانی وب بد شکل:\n"
+#~ "%1‌"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid "Malformed URL, host missing."
+#~ msgstr ""
+#~ "نشانی وب بد شکل:\n"
+#~ "%1‌"
+
+#, fuzzy
+#~ msgid ""
+#~ "Invalid download destination specified:\n"
+#~ "%1"
+#~ msgstr "باز کردن مقصد"
+
+#, fuzzy
+#~ msgid ""
+#~ "Download destination is not writeable:\n"
+#~ "%1"
+#~ msgstr "باز کردن مقصد"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URL, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "نشانی وب بد شکل:\n"
+#~ "%1‌"
+
+#, fuzzy
+#~| msgid ""
+#~| "The file %1 already exists.\n"
+#~| "Overwrite?"
+#~ msgid "File already exists. Overwrite it?"
+#~ msgstr ""
+#~ "پرونده %1 از قبل وجود دارد.‌\n"
+#~ "جای‌نوشت شود؟"
+
+#, fuzzy
+#~| msgid ""
+#~| "The file %1 already exists.\n"
+#~| "Overwrite?"
+#~ msgid ""
+#~ "File already exists:\n"
+#~ "%1\n"
+#~ "Overwrite it?"
+#~ msgstr ""
+#~ "پرونده %1 از قبل وجود دارد.‌\n"
+#~ "جای‌نوشت شود؟"
+
+#, fuzzy
+#~ msgid "Malformed URLs."
+#~ msgstr ""
+#~ "نشانی وب بد شکل:\n"
+#~ "%1‌"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid "Malformed URLs, protocol missing."
+#~ msgstr ""
+#~ "نشانی وب بد شکل:\n"
+#~ "%1‌"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid "Malformed URLs, host missing."
+#~ msgstr ""
+#~ "نشانی وب بد شکل:\n"
+#~ "%1‌"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "نشانی وب بد شکل:\n"
+#~ "%1‌"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "نشانی وب بد شکل:\n"
+#~ "%1‌"
+
+#, fuzzy
+#~| msgid ""
+#~| "Malformed URL:\n"
+#~| "%1"
+#~ msgid ""
+#~ "Malformed URLs, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "نشانی وب بد شکل:\n"
+#~ "%1‌"
+
+#, fuzzy
+#~| msgid ""
+#~| "The file %1 already exists.\n"
+#~| "Overwrite?"
+#~ msgid "Files exist already. Overwrite them?"
+#~ msgstr ""
+#~ "پرونده %1 از قبل وجود دارد.‌\n"
+#~ "جای‌نوشت شود؟"
+
+#, fuzzy
+#~ msgid "Question"
+#~ msgstr "باز کردن مقصد"
+
+#, fuzzy
+#~ msgctxt "on a question"
+#~ msgid "No all"
+#~ msgstr "از"
+
+#, fuzzy
+#~ msgid "Engine name:"
+#~ msgstr "نام"
+
+#, fuzzy
+#~| msgid "Edit Groups"
+#~ msgid "Edit Script"
+#~ msgstr "ویرایش گروهها"
+
+#, fuzzy
+#~| msgid "Confirm Quit"
+#~ msgctxt "Configure script"
+#~ msgid "Configure script"
+#~ msgstr "تأیید خروج"
+
+#, fuzzy
+#~ msgctxt "Transfer State: Finished"
+#~ msgid "Finished"
+#~ msgstr "پایان یافت"
+
+#, fuzzy
+#~ msgid "Downloading Metalink File...."
+#~ msgstr "بارگیریها"
+
+#, fuzzy
+#~ msgid "Redownload Metalink"
+#~ msgstr "پوشه‌های بارگیری پیش‌فرض"
+
+#, fuzzy
+#~| msgid "&Settings"
+#~ msgid "File Selection"
+#~ msgstr "&تنظیمات‌"
+
+#, fuzzy
+#~| msgid "Change appearance settings"
+#~ msgctxt "the string that is used to modify an url"
+#~ msgid "Change string"
+#~ msgstr "تغییر تنظیمات ظاهر"
+
+#, fuzzy
+#~| msgid "Appearance"
+#~ msgid "Append"
+#~ msgstr "ظاهر"
+
+#, fuzzy
+#~ msgid "Replace file"
+#~ msgstr "باز کردن پرونده"
+
+#, fuzzy
+#~ msgid "Down Speed"
+#~ msgstr "سرعت"
+
+#, fuzzy
+#~ msgid "Up Speed"
+#~ msgstr "سرعت"
+
+#, fuzzy
+#~ msgid "Choked"
+#~ msgstr "پیوندشده"
+
+#, fuzzy
+#~ msgid "Score"
+#~ msgstr "متن:"
+
+#, fuzzy
+#~ msgid "Downloaded"
+#~ msgstr "بارگیریها"
+
+#, fuzzy
+#~| msgid "Integration"
+#~ msgid "Interesting"
+#~ msgstr "مجتمع‌سازی"
+
+#, fuzzy
+#~ msgid "Download speed"
+#~ msgstr "بارگیریها"
+
+#, fuzzy
+#~ msgid "Upload speed"
+#~ msgstr "سرعت"
+
+#~ msgid "Progress"
+#~ msgstr "پیشرفت"
+
+#, fuzzy
+#~ msgid "Files"
+#~ msgstr "&پرونده‌"
+
+#, fuzzy
+#~ msgid "Number of the chunk"
+#~ msgstr "تعداد تلاشهای مجدد:"
+
+#, fuzzy
+#~ msgid "Download speed of the chunk"
+#~ msgstr "پوشه‌های بارگیری پیش‌فرض"
+
+#~ msgid "Speed"
+#~ msgstr "سرعت"
+
+#~ msgid "Status"
+#~ msgstr "وضعیت"
+
+#, fuzzy
+#~ msgid "File"
+#~ msgstr "&پرونده‌"
+
+#~ msgid "Size"
+#~ msgstr "اندازه"
+
+#, fuzzy
+#~ msgid "Advanced Details for %1"
+#~ msgstr "جزئیات برای: %1"
+
+#, fuzzy
+#~ msgid "Trackers"
+#~ msgstr "انتقالها:"
+
+#, fuzzy
+#~ msgctxt "Open file"
+#~ msgid "Open"
+#~ msgstr "&باز کردن‌..."
+
+#, fuzzy
+#~ msgid "Download first"
+#~ msgstr "بارگیریها"
+
+#, fuzzy
+#~ msgid "Download normally"
+#~ msgstr "پوشه‌های بارگیری پیش‌فرض"
+
+#, fuzzy
+#~ msgid "Download last"
+#~ msgstr "بارگیریها"
+
+#, fuzzy
+#~ msgid "Do Not Download"
+#~ msgstr "بارگیری مجدد"
+
+#, fuzzy
+#~ msgid "Delete File(s)"
+#~ msgstr "حذف برگزیده"
+
+#, fuzzy
+#~ msgid "Move File"
+#~ msgstr "باز کردن پرونده"
+
+#, fuzzy
+#~ msgid "Seeders"
+#~ msgstr "سرعت"
+
+#, fuzzy
+#~ msgid "Leechers"
+#~ msgstr "سرعت"
+
+#, fuzzy
+#~ msgid "Times Downloaded"
+#~ msgstr "بارگیریها"
+
+#, fuzzy
+#~ msgctxt "Download normally(not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "از"
+
+#, fuzzy
+#~ msgctxt "Download Normal (not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "از"
+
+#, fuzzy
+#~ msgid "&Advanced Details"
+#~ msgstr "گزینه‌های پیشرفته"
+
+#, fuzzy
+#~ msgid "&Scan Files"
+#~ msgstr "&پرونده‌"
+
+#, fuzzy
+#~ msgid "Downloading Torrent File...."
+#~ msgstr "بارگیریها"
+
+#, fuzzy
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading...."
+#~ msgstr "بارگیریها"
+
+#, fuzzy
+#~ msgid "Analyzing torrent...."
+#~ msgstr "بارگیریها"
+
+#, fuzzy
+#~ msgctxt "Transfer status: seeding"
+#~ msgid "Seeding...."
+#~ msgstr "سرعت"
+
+#, fuzzy
+#~ msgid "Select a default torrent folder"
+#~ msgstr "پوشه پیش‌فرض"
+
+#, fuzzy
+#~ msgid "Select a default temporary folder"
+#~ msgstr "پوشه پیش‌فرض:"
+
+#, fuzzy
+#~| msgid "&Settings"
+#~ msgid "File Properties"
+#~ msgstr "&تنظیمات‌"
+
+#, fuzzy
+#~| msgid "Enter Group Name"
+#~ msgid "Enter a filename."
+#~ msgstr "نام گروه را وارد کنید"
+
+#, fuzzy
+#~| msgid "Enter Group Name"
+#~ msgid "Enter at least one URL."
+#~ msgstr "نام گروه را وارد کنید"
+
+#, fuzzy
+#~| msgid "Unable to save to: %1"
+#~ msgid "Unable to load: %1"
+#~ msgstr "قادر به ذخیره در %1 نیست"
+
+#, fuzzy
+#~ msgid "Metalink Version 4.0 file (*.meta4)"
+#~ msgstr "باز کردن پرونده"
+
+#, fuzzy
+#~ msgid "Metalink Version 3.0 file (*.metalink)"
+#~ msgstr "باز کردن پرونده"
+
+#, fuzzy
+#~ msgctxt "Download the items which have been selected"
+#~ msgid "&Download Checked"
+#~ msgstr "پوشه‌های بارگیری پیش‌فرض"
+
+#, fuzzy
+#~ msgid "File Name"
+#~ msgstr "نام"
+
+#, fuzzy
+#~ msgctxt "list header: type of file"
+#~ msgid "File Type"
+#~ msgstr "پرونده"
+
+#, fuzzy
+#~| msgid "Stop All"
+#~ msgid "&Select All Filtered"
+#~ msgstr "ایست همه"
+
+#, fuzzy
+#~| msgid "Stop All"
+#~ msgid "&Select All"
+#~ msgstr "ایست همه"
+
+#, fuzzy
+#~| msgid "Stop All"
+#~ msgid "D&eselect All Filtered"
+#~ msgstr "ایست همه"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgctxt "Mirror as in server, in url"
+#~ msgid "Mirror"
+#~ msgstr "خطا"
+
+#, fuzzy
+#~ msgid "Download again"
+#~ msgstr "نشانی وب دوباره بارگیری شود؟"
+
+#, fuzzy
+#~ msgctxt "Delete selected history-item"
+#~ msgid "Delete selected"
+#~ msgstr "حذف برگزیده"
+
+#, fuzzy
+#~ msgid "Open file"
+#~ msgstr "باز کردن پرونده"
+
+#, fuzzy
+#~ msgid "Transfer History"
+#~ msgstr "فهرست انتقال KGet"
+
+#, fuzzy
+#~| msgid "Open File"
+#~ msgid "&Open File"
+#~ msgstr "باز کردن پرونده"
+
+#, fuzzy
+#~| msgid "Stopped"
+#~ msgctxt "The transfer is stopped"
+#~ msgid "Stopped"
+#~ msgstr "ایستاد"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "The transfer is finished"
+#~ msgid "Finished"
+#~ msgstr "پایان یافت"
+
+#, fuzzy
+#~ msgid "Source File"
+#~ msgstr "متن:"
+
+#, fuzzy
+#~ msgid "Destination"
+#~ msgstr "باز کردن مقصد"
+
+#, fuzzy
+#~ msgid "File Size"
+#~ msgstr "&پرونده‌"
+
+#, fuzzy
+#~ msgctxt "the transfer has been finished"
+#~ msgid "Finished"
+#~ msgstr "پایان یافت"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgctxt "an error happened in connection with the user input"
+#~ msgid "Error:"
+#~ msgstr "خطا"
+
+#, fuzzy
+#~ msgctxt "pgp signature is not verified"
+#~ msgid "Failed"
+#~ msgstr "&پرونده‌"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgid "Error:"
+#~ msgstr "خطا"
+
+#, fuzzy
+#~| msgid "Integration"
+#~ msgid "Information:"
+#~ msgstr "مجتمع‌سازی"
+
+#, fuzzy
+#~ msgid "Transfer Details"
+#~ msgstr "جزئیات انتقال:"
+
+#, fuzzy
+#~ msgid "Transfer Verification for %1"
+#~ msgstr "جزئیات برای: %1"
+
+#, fuzzy
+#~| msgid "Rename"
+#~ msgid "Rename File"
+#~ msgstr "تغییر نام"
+
+#, fuzzy
+#~| msgid "Rename"
+#~ msgid "Rename %1 to:"
+#~ msgstr "تغییر نام"
+
+#, fuzzy
+#~| msgid "Rename"
+#~ msgid "&Rename"
+#~ msgstr "تغییر نام"
+
+#, fuzzy
+#~| msgid "Delete Group"
+#~ msgid "Delete Group"
+#~ msgid_plural "Delete Groups"
+#~ msgstr[0] "حذف گروه"
+
+#, fuzzy
+#~| msgid "Rename Group"
+#~ msgid "Rename Group..."
+#~ msgid_plural "Rename Groups..."
+#~ msgstr[0] "تغییر نام گروه."
+
+#, fuzzy
+#~ msgctxt "fix position for droptarget"
+#~ msgid "Sticky"
+#~ msgstr "چسبناک"
+
+#~ msgid "Quit KGet"
+#~ msgstr "خروج از KGet"
+
+#, fuzzy
+#~| msgid "KGet Transfer List"
+#~ msgid "The dropped file is a KGet Transfer List"
+#~ msgstr "فهرست انتقال KGet"
+
+#, fuzzy
+#~ msgid "&Download"
+#~ msgstr "&بارگیریها‌"
+
+#, fuzzy
+#~ msgid "&Load transfer list"
+#~ msgstr "فهرست انتقال KGet"
+
+#~ msgid "Show Main Window"
+#~ msgstr "نمایش پنجره اصلی"
+
+#~ msgid "Hide Main Window"
+#~ msgstr "مخفی کردن پنجره اصلی"
+
+#~ msgid "Drop Target"
+#~ msgstr "افت هدف"
+
+#~ msgid "Hiding drop target"
+#~ msgstr "مخفی‌ کردن افت هدف"
+
+#, fuzzy
+#~ msgid "Transfer Settings for %1"
+#~ msgstr "جزئیات برای: %1"
+
+#, fuzzy
+#~ msgid "Destination unmodified"
+#~ msgstr "باز کردن مقصد"
+
+#, fuzzy
+#~ msgid "%1 of %2"
+#~ msgstr " از "
+
+#, fuzzy
+#~ msgid "Group Settings for %1"
+#~ msgstr "جزئیات برای: %1"
+
+#, fuzzy
+#~| msgid "Unable to save to: %1"
+#~ msgctxt "@info"
+#~ msgid "Unable to start the server: %1."
+#~ msgstr "قادر به ذخیره در %1 نیست"
+
+#, fuzzy
+#~| msgid "%1/s"
+#~ msgctxt "@item speed of transfer per seconds"
+#~ msgid "%1/s"
+#~ msgstr "%1/ثانیه"
+
+#, fuzzy
+#~ msgctxt "@label"
+#~ msgid "File name"
+#~ msgstr "نام"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgctxt "@label Progress of transfer"
+#~ msgid "Finished"
+#~ msgstr "پایان یافت"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgctxt "@label Speed of transfer"
+#~ msgid "Speed"
+#~ msgstr "سرعت"
+
+#, fuzzy
+#~| msgid "Status"
+#~ msgctxt "@label Status of transfer"
+#~ msgid "Status"
+#~ msgstr "وضعیت"
+
+#, fuzzy
+#~| msgid "Start"
+#~ msgctxt "@action:button start a transfer"
+#~ msgid "Start"
+#~ msgstr "آغاز"
+
+#, fuzzy
+#~| msgid "Stop"
+#~ msgctxt "@action:button"
+#~ msgid "Stop"
+#~ msgstr "ایست"
+
+#, fuzzy
+#~| msgid "Remove"
+#~ msgctxt "@action:button"
+#~ msgid "Remove"
+#~ msgstr "حذف"
+
+#, fuzzy
+#~| msgid "Source:"
+#~ msgctxt "@label Download from"
+#~ msgid "Source:"
+#~ msgstr "متن:"
+
+#, fuzzy
+#~| msgid "Saving to:"
+#~ msgctxt "@label Save download to"
+#~ msgid "Saving to:"
+#~ msgstr "ذخیره در:"
+
+#, fuzzy
+#~| msgid "&Settings"
+#~ msgctxt "@action"
+#~ msgid "Settings"
+#~ msgstr "&تنظیمات‌"
+
+#, fuzzy
+#~| msgid "Enter URL:"
+#~ msgctxt "@action"
+#~ msgid "Enter URL: "
+#~ msgstr "وارد کردن نشانی وب:"
+
+#, fuzzy
+#~ msgctxt "@action Refresh download list every x (seconds)"
+#~ msgid "Refresh download list every"
+#~ msgstr "پوشه‌های بارگیری پیش‌فرض"
+
+#, fuzzy
+#~| msgid "&Settings"
+#~ msgctxt "@action:button"
+#~ msgid "Save Settings"
+#~ msgstr "&تنظیمات‌"
+
+#, fuzzy
+#~| msgid "Downloads"
+#~ msgctxt "@title"
+#~ msgid "Downloads"
+#~ msgstr "بارگیریها"
+
+#~ msgid "An advanced download manager for KDE"
+#~ msgstr "یک مدیر پیشرفته بارگیری برای KDE"
+
+#~ msgid "Start KGet with drop target"
+#~ msgstr "آغاز KGet با افت هدف"
+
+#~ msgid "Start KGet with hidden main window"
+#~ msgstr "آغاز KGet با پنجره اصلی مخفی"
+
+#~ msgid "Start KGet without drop target animation"
+#~ msgstr "آغاز KGet بدون پویانمایی افت هدف"
+
+#~ msgid "URL(s) to download"
+#~ msgstr "بارگیری نشانی)های( وب"
+
+#~ msgid "KGet Transfer List"
+#~ msgstr "فهرست انتقال KGet"
+
+#~ msgid "Export Transfers"
+#~ msgstr "صادرات انتقالها"
+
+#~ msgid "&New Download..."
+#~ msgstr "بارگیری &جدید‌..."
+
+#~ msgid "&Import Transfers..."
+#~ msgstr "&صادرات انتقالها...‌"
+
+#~ msgid "&Export Transfers List..."
+#~ msgstr "&صادرات فهرست انتقالها...‌"
+
+#, fuzzy
+#~| msgid "&Export Transfers List..."
+#~ msgid "&Export Transfers as Plain Text..."
+#~ msgstr "&صادرات فهرست انتقالها...‌"
+
+#~ msgid "Auto-Paste Mode"
+#~ msgstr "حالت چسباندن خودکار"
+
+#~ msgid ""
+#~ "<b>Auto paste</b> button toggles the auto-paste mode on and off.\n"
+#~ "When set, KGet will periodically scan the clipboard for URLs and paste "
+#~ "them automatically."
+#~ msgstr ""
+#~ "دکمه <b>چسباندن خودکار</b>، حالت چسباندن خودکار را به خاموش و روشن تغییر "
+#~ "می‌دهد.\n"
+#~ "زمانی که تنظیم شود، KGet به طور متناوب تخته یادداشت را برای نشانیهای وب و "
+#~ "چسباندن خودکار آنها پویش می‌کند."
+
+#~ msgid "Use KGet as Konqueror Download Manager"
+#~ msgstr "استفاده از KGet به عنوان مدیر بارگیری Konqueror‌"
+
+#, fuzzy
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Remove Selected"
+#~ msgstr "حذف"
+
+#, fuzzy
+#~ msgctxt "delete all finished transfers"
+#~ msgid "Remove All Finished"
+#~ msgstr "حذف برگزیده"
+
+#, fuzzy
+#~ msgctxt "redownload selected transfer item"
+#~ msgid "Redownload Selected"
+#~ msgstr "پوشه‌های بارگیری پیش‌فرض"
+
+#~ msgid "Start / Resume All"
+#~ msgstr "آغاز / از سر گیری همه"
+
+#~ msgid "Start / Resume Selected"
+#~ msgstr "آغاز / از سر گیری برگزیده"
+
+#~ msgid "Stop All"
+#~ msgstr "ایست همه"
+
+#~ msgid "Stop Selected"
+#~ msgstr "ایست برگزیده"
+
+#~ msgid "Start / Resume"
+#~ msgstr "آغاز / از سر گیری"
+
+#~ msgid "Stop"
+#~ msgstr "ایست"
+
+#, fuzzy
+#~| msgid "Remove"
+#~ msgid "Remove"
+#~ msgstr "حذف"
+
+#~ msgid "Open Destination"
+#~ msgstr "باز کردن مقصد"
+
+#~ msgid "Open File"
+#~ msgstr "باز کردن پرونده"
+
+#~ msgid "Show Details"
+#~ msgstr "نمایش جزئیات"
+
+#~ msgid "Copy URL to Clipboard"
+#~ msgstr "رونوشت‌ نشانی وب در تخته یادداشت"
+
+#, fuzzy
+#~ msgid "&Transfer History"
+#~ msgstr "فهرست انتقال KGet"
+
+#, fuzzy
+#~ msgid "&Group Settings"
+#~ msgstr "&تنظیمات‌"
+
+#, fuzzy
+#~ msgid "&Transfer Settings"
+#~ msgstr "جزئیات انتقال:"
+
+#, fuzzy
+#~ msgid "Import &Links..."
+#~ msgstr "ایست برگزیده"
+
+#~ msgid ""
+#~ "This is the first time you have run KGet.\n"
+#~ "Would you like to enable KGet as the download manager for Konqueror?"
+#~ msgstr ""
+#~ "این اولین باری است که KGet را اجرا کرده‌اید.‌\n"
+#~ "آیا مایلید KGet را به عنوان مدیر بارگیری برای Konqueror فعال کنید؟"
+
+#~ msgid "Konqueror Integration"
+#~ msgstr "مجتمع‌سازی Konqueror"
+
+#~ msgid "Enable"
+#~ msgstr "فعال‌سازی"
+
+#~ msgid "Do Not Enable"
+#~ msgstr "فعال‌سازی نشود"
+
+#~ msgid "All Openable Files"
+#~ msgstr "همه پرونده‌های بازشدنی"
+
+#~ msgid ""
+#~ "Some transfers are still running.\n"
+#~ "Are you sure you want to close KGet?"
+#~ msgstr ""
+#~ "بعضی از انتقالها هنوز در حال اجرا هستند.‌\n"
+#~ "آیا مطمئنید می‌خواهید KGet را ببندید؟"
+
+#~ msgid "Confirm Quit"
+#~ msgstr "تأیید خروج"
+
+#~ msgid "Enter Group Name"
+#~ msgstr "نام گروه را وارد کنید"
+
+#~ msgid "Group name:"
+#~ msgstr "نام گروه:"
+
+#, fuzzy
+#~| msgid ""
+#~| "Are you sure that you want to remove\n"
+#~| "the group named %1?"
+#~ msgid "Are you sure you want to delete the selected transfer?"
+#~ msgid_plural "Are you sure you want to delete the selected transfers?"
+#~ msgstr[0] ""
+#~ "آیا مطمئنید می‌خواهید\n"
+#~ "گروه با نام %1 را حذف کنید؟"
+
+#, fuzzy
+#~ msgid "Confirm transfer delete"
+#~ msgstr "فهرست انتقال KGet"
+
+#, fuzzy
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "نام گروه:"
+
+#, fuzzy
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "نمایش جزئیات"
+
+#, fuzzy
+#~ msgid "Automatic verification:"
+#~ msgstr "باز کردن مقصد"
+
+#, fuzzy
+#~ msgid "Automatic verification"
+#~ msgstr "باز کردن مقصد"
+
+#, fuzzy
+#~ msgid "Keyservers:"
+#~ msgstr "سرعت"
+
+#~ msgid "Rename"
+#~ msgstr "تغییر نام"
+
+#, fuzzy
+#~| msgid "Limit maximum downloads per group"
+#~ msgid "Limit Maximum Downloads Per Group"
+#~ msgstr "حد بارگیریهای بیشینه در گروه"
+
+#, fuzzy
+#~ msgid "Number of downloads:"
+#~ msgstr "تعداد تلاشهای مجدد:"
+
+#~ msgid "Downloads from the same server:"
+#~ msgstr "بارگیریها از همان کارساز:"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed Limit"
+#~ msgstr "سرعت"
+
+#, fuzzy
+#~ msgid "Global download limit:"
+#~ msgstr "بارگیریها"
+
+#, fuzzy
+#~ msgid " KiB/s"
+#~ msgstr "%1/ثانیه"
+
+#, fuzzy
+#~ msgid "Global upload limit:"
+#~ msgstr "بارگیریها"
+
+#, fuzzy
+#~ msgid "Per transfer:"
+#~ msgstr "انتقالها:"
+
+#, fuzzy
+#~| msgid "Reconnect on error or broken connection"
+#~ msgid "Reconnect on Error or Broken Connection"
+#~ msgstr "اتصال مجدد هنگام خطا یا اتصال قطع‌شده"
+
+#~ msgid "Number of retries:"
+#~ msgstr "تعداد تلاشهای مجدد:"
+
+#~ msgid "Retry after:"
+#~ msgstr "سعی مجدد بعد از:"
+
+#~ msgid "After Completing Downloads"
+#~ msgstr "بعد از تکمیل بارگیریها"
+
+#~ msgid "Auto shutdown"
+#~ msgstr "تعطیل خودکار"
+
+#~ msgid "Auto disconnect"
+#~ msgstr "قطع خودکار"
+
+#, fuzzy
+#~ msgid "Enable Web Interface"
+#~ msgstr "فعال‌سازی پویانماییها"
+
+#~ msgid "Startup"
+#~ msgstr "راه‌اندازی"
+
+#~ msgid "Enable animations"
+#~ msgstr "فعال‌سازی پویانماییها"
+
+#~ msgid "Show drop target"
+#~ msgstr "نمایش افت هدف"
+
+#, fuzzy
+#~ msgid "Enable system tray icon"
+#~ msgstr "فعال‌سازی پویانماییها"
+
+#, fuzzy
+#~| msgid "Startup"
+#~ msgid "At startup:"
+#~ msgstr "راه‌اندازی"
+
+#, fuzzy
+#~ msgid "Restore Download State"
+#~ msgstr "بارگیریها"
+
+#, fuzzy
+#~| msgid "Network and Downloads"
+#~ msgid "Start All Downloads"
+#~ msgstr "شبکه و بارگیریها"
+
+#, fuzzy
+#~| msgid "Network and Downloads"
+#~ msgid "Stop All Downloads"
+#~ msgstr "شبکه و بارگیریها"
+
+#, fuzzy
+#~ msgid "History"
+#~ msgstr "فهرست انتقال KGet"
+
+#, fuzzy
+#~ msgid "History backend:"
+#~ msgstr "فهرست انتقال KGet"
+
+#, fuzzy
+#~| msgid "Use as download manager for Konqueror"
+#~ msgid "Use as download manager for Konqueror:"
+#~ msgstr "استفاده به عنوان مدیر بارگیری برای Konqueror"
+
+#, fuzzy
+#~ msgid "Engine Name"
+#~ msgstr "نام"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of connections per URL:"
+#~ msgstr "تعداد تلاشهای مجدد:"
+
+#, fuzzy
+#~| msgid "&Settings"
+#~ msgid "File Settings"
+#~ msgstr "&تنظیمات‌"
+
+#, fuzzy
+#~ msgid "Filename:"
+#~ msgstr "نام"
+
+#, fuzzy
+#~| msgid "Rename"
+#~ msgid "Username:"
+#~ msgstr "تغییر نام"
+
+#, fuzzy
+#~| msgid "Edit Groups..."
+#~ msgid "Edit...."
+#~ msgstr "ویرایش گروهها..."
+
+#, fuzzy
+#~| msgid "Confirm Quit"
+#~ msgid "Configure...."
+#~ msgstr "تأیید خروج"
+
+#, fuzzy
+#~ msgid "Description:"
+#~ msgstr "باز کردن مقصد"
+
+#, fuzzy
+#~ msgid "Number of simultaneous file downloads:"
+#~ msgstr "تعداد تلاشهای مجدد:"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of mirrors per file:"
+#~ msgstr "تعداد تلاشهای مجدد:"
+
+#, fuzzy
+#~| msgid "Change appearance settings"
+#~ msgid "Change string:"
+#~ msgstr "تغییر تنظیمات ظاهر"
+
+#, fuzzy
+#~| msgid "Folder:"
+#~ msgid "Mode:"
+#~ msgstr "پوشه:"
+
+#, fuzzy
+#~ msgid "Remove Tracker"
+#~ msgstr "انتقالها:"
+
+#, fuzzy
+#~ msgid "Update Trackers"
+#~ msgstr "انتقالها:"
+
+#, fuzzy
+#~ msgid "Remove Webseed"
+#~ msgstr "حذف"
+
+#, fuzzy
+#~ msgid "Downloaded:"
+#~ msgstr "بارگیریها"
+
+#, fuzzy
+#~ msgid "Size:"
+#~ msgstr "اندازه"
+
+#, fuzzy
+#~ msgid "Number of chunks found:"
+#~ msgstr "تعداد تلاشهای مجدد:"
+
+#, fuzzy
+#~ msgid "Number of chunks failed:"
+#~ msgstr "تعداد تلاشهای مجدد:"
+
+#, fuzzy
+#~ msgid "Number of chunks not downloaded:"
+#~ msgstr "تعداد تلاشهای مجدد:"
+
+#, fuzzy
+#~ msgid "Number of chunks downloaded:"
+#~ msgstr "تعداد تلاشهای مجدد:"
+
+#, fuzzy
+#~ msgid "Cancel"
+#~ msgstr "تغییر"
+
+#, fuzzy
+#~ msgid "Stats"
+#~ msgstr "وضعیت"
+
+#, fuzzy
+#~ msgid "Seeders:"
+#~ msgstr "سرعت"
+
+#, fuzzy
+#~ msgid "Download speed:"
+#~ msgstr "بارگیریها"
+
+#, fuzzy
+#~ msgid "Upload speed:"
+#~ msgstr "سرعت"
+
+#, fuzzy
+#~ msgctxt "source-file"
+#~ msgid "Source:"
+#~ msgstr "متن:"
+
+#~ msgid "Saving to:"
+#~ msgstr "ذخیره در:"
+
+#, fuzzy
+#~ msgid "Upload limit per transfer:"
+#~ msgstr "بارگیریها"
+
+#, fuzzy
+#~ msgid "No Limit"
+#~ msgstr "بارگیریها"
+
+#, fuzzy
+#~ msgid "Download limit per transfer:"
+#~ msgstr "بارگیریها"
+
+#~ msgid "Folders"
+#~ msgstr "پوشه‌ها"
+
+#, fuzzy
+#~ msgid "Default torrent folder:"
+#~ msgstr "پوشه پیش‌فرض"
+
+#, fuzzy
+#~ msgid "Default temporary folder"
+#~ msgstr "پوشه پیش‌فرض"
+
+#, fuzzy
+#~| msgid "Enter URL:"
+#~ msgid "General URL:"
+#~ msgstr "وارد کردن نشانی وب:"
+
+#, fuzzy
+#~ msgid "Verification:"
+#~ msgstr "باز کردن مقصد"
+
+#, fuzzy
+#~ msgid "*.metalink *.meta4|Metalink file (*.metalink *.meta4)"
+#~ msgstr "باز کردن پرونده"
+
+#, fuzzy
+#~| msgid "Extension:"
+#~ msgid "Version:"
+#~ msgstr "پسوند:"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "Name:"
+#~ msgstr "نام"
+
+#, fuzzy
+#~ msgid "Name of the publisher"
+#~ msgstr "تعداد تلاشهای مجدد:"
+
+#, fuzzy
+#~ msgid "URL to the publisher"
+#~ msgstr "تعداد تلاشهای مجدد:"
+
+#, fuzzy
+#~ msgctxt "Files as in files on a server"
+#~ msgid "Files:"
+#~ msgstr "&پرونده‌"
+
+#, fuzzy
+#~ msgid "&Import Links"
+#~ msgstr "ایست برگزیده"
+
+#, fuzzy
+#~ msgid "Does Not Contain"
+#~ msgstr "بارگیری مجدد"
+
+#, fuzzy
+#~ msgctxt "Check as in mark, not as in verify"
+#~ msgid "Chec&k Selected"
+#~ msgstr "حذف برگزیده"
+
+#, fuzzy
+#~ msgid "Mirror:"
+#~ msgstr "خطا"
+
+#, fuzzy
+#~| msgid "Number of retries:"
+#~ msgid "Number of connections:"
+#~ msgstr "تعداد تلاشهای مجدد:"
+
+#, fuzzy
+#~| msgid "Enter URL:"
+#~ msgid "Enter a URL"
+#~ msgstr "وارد کردن نشانی وب:"
+
+#, fuzzy
+#~ msgid "Date"
+#~ msgstr "آغاز"
+
+#, fuzzy
+#~ msgid "Filter History"
+#~ msgstr "فهرست انتقال KGet"
+
+#, fuzzy
+#~ msgctxt "delete selected transfer"
+#~ msgid "Delete Selected"
+#~ msgstr "حذف برگزیده"
+
+#, fuzzy
+#~ msgid "Download"
+#~ msgstr "بارگیریها"
+
+#~ msgid "Status:"
+#~ msgstr "وضعیت:"
+
+#, fuzzy
+#~ msgid "Transfer Settings"
+#~ msgstr "جزئیات انتقال:"
+
+#, fuzzy
+#~ msgid "Download Destination:"
+#~ msgstr "باز کردن مقصد"
+
+#, fuzzy
+#~ msgctxt "No value has been set"
+#~ msgid "Not set"
+#~ msgstr "عدم حذف"
+
+#, fuzzy
+#~ msgid " KiB"
+#~ msgstr "%1/ثانیه"
+
+#, fuzzy
+#~ msgid "Upload Limit:"
+#~ msgstr "بارگیریها"
+
+#, fuzzy
+#~ msgid "Download Limit:"
+#~ msgstr "بارگیریها"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgctxt "The available mirrors (servers) for downloading"
+#~ msgid "Mirrors"
+#~ msgstr "خطا"
+
+#, fuzzy
+#~ msgctxt "verification of the download (e.g. by using MD5)"
+#~ msgid "Verification"
+#~ msgstr "باز کردن مقصد"
+
+#, fuzzy
+#~ msgid "Creation:"
+#~ msgstr "باز کردن مقصد"
+
+#, fuzzy
+#~ msgid "Expiration:"
+#~ msgstr "باز کردن مقصد"
+
+#, fuzzy
+#~ msgid "Group Settings"
+#~ msgstr "&تنظیمات‌"
+
+#, fuzzy
+#~ msgid "Default folder:"
+#~ msgstr "پوشه پیش‌فرض"
+
+#, fuzzy
+#~ msgid "Maximum download speed:"
+#~ msgstr "پوشه‌های بارگیری پیش‌فرض"
+
+#, fuzzy
+#~ msgid "Maximum upload speed:"
+#~ msgstr "پوشه‌های بارگیری پیش‌فرض"
+
+#, fuzzy
+#~ msgid "Destination:"
+#~ msgstr "باز کردن مقصد"
+
+#, fuzzy
+#~ msgid "Transfer group:"
+#~ msgstr "انتقالها:"
+
+#~ msgid "&File"
+#~ msgstr "&پرونده‌"
+
+#~ msgid "&Downloads"
+#~ msgstr "&بارگیریها‌"
+
+#~ msgid "&Settings"
+#~ msgstr "&تنظیمات‌"
+
+#~ msgid "&Help"
+#~ msgstr "&کمک‌"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "میله ابزار اصلی"
+
+#~ msgid "Form"
+#~ msgstr "از"
+
+#, fuzzy
+#~ msgid "Remove Tag"
+#~ msgstr "انتقالها:"
+
+#, fuzzy
+#~| msgid "Add"
+#~ msgid "Add Tag"
+#~ msgstr "افزودن"
+
+#, fuzzy
+#~| msgid "Manage the groups"
+#~ msgid "Tag Settings for the groups"
+#~ msgstr "مدیریت گروهها"
+
+#, fuzzy
+#~| msgid "&Settings"
+#~ msgid "Tag Settings"
+#~ msgstr "&تنظیمات‌"
+
+#, fuzzy
+#~ msgid "Available tags:"
+#~ msgstr "انتقالها:"
+
+#, fuzzy
+#~ msgid "Failed to seek file %1 : %2"
+#~ msgstr "قادر به ذخیره در %1 نیست"
+
+#, fuzzy
+#~ msgid "Failed to write to file %1 : %2"
+#~ msgstr "قادر به ذخیره در %1 نیست"
+
+#, fuzzy
+#~ msgid "Error: %1"
+#~ msgstr "خطا"
+
+#, fuzzy
+#~| msgid "Unable to save to: %1"
+#~ msgid "Unable to resolve hostname %1"
+#~ msgstr "قادر به ذخیره در %1 نیست"
+
+#, fuzzy
+#~ msgid "Unable to create %1 : %2"
+#~ msgstr "قادر به ذخیره در %1 نیست"
+
+#, fuzzy
+#~ msgid "Not started"
+#~ msgstr "عدم حذف"
+
+#, fuzzy
+#~ msgctxt "Status of a torrent file"
+#~ msgid "Seeding"
+#~ msgstr "سرعت"
+
+#, fuzzy
+#~ msgid "Downloading"
+#~ msgstr "بارگیریها"
+
+#~ msgid "Stopped"
+#~ msgstr "ایستاد"
+
+#, fuzzy
+#~ msgid "Queued for downloading"
+#~ msgstr "تعداد تلاشهای مجدد:"
+
+#, fuzzy
+#~ msgid "Checking data"
+#~ msgstr "ذخیره در:"
+
+#, fuzzy
+#~ msgid "Parse Error"
+#~ msgstr "خطا"
+
+#, fuzzy
+#~ msgid "Not connected"
+#~ msgstr "عدم حذف"
+
+#, fuzzy
+#~ msgid "Tracker"
+#~ msgstr "انتقالها:"
+
+#~ msgid "Add"
+#~ msgstr "افزودن"
+
+#~ msgid "Delete"
+#~ msgstr "حذف"
+
+#~ msgid "Details for: %1"
+#~ msgstr "جزئیات برای: %1"
+
+#~ msgid "All downloads"
+#~ msgstr "همه بارگیریها"
+
+#~ msgid "Finished downloads"
+#~ msgstr "بارگیریهای پایان‌یافته"
+
+#~ msgid "Transfers:"
+#~ msgstr "انتقالها:"
+
+#~ msgid "Downloads"
+#~ msgstr "بارگیریها"
+
+#~ msgid "Transfer details:"
+#~ msgstr "جزئیات انتقال:"
+
+#, fuzzy
+#~ msgid "Transfer List"
+#~ msgstr "فهرست انتقال KGet"
+
+#, fuzzy
+#~ msgid "Number of threads:"
+#~ msgstr "تعداد تلاشهای مجدد:"
+
+#, fuzzy
+#~ msgid "Name of the license"
+#~ msgstr "تعداد تلاشهای مجدد:"
+
+#, fuzzy
+#~ msgid "URL to the license"
+#~ msgstr "تعداد تلاشهای مجدد:"
+
+#, fuzzy
+#~| msgid "Delayed"
+#~ msgctxt "The transfer is delayed"
+#~ msgid "Delayed"
+#~ msgstr "با تأخیر"
+
+#~ msgid ""
+#~ "Destination file \n"
+#~ "%1\n"
+#~ "already exists.\n"
+#~ "Do you want to overwrite it?"
+#~ msgstr ""
+#~ "پرونده مقصد\n"
+#~ "%1\n"
+#~ "از قبل وجود دارد.‌\n"
+#~ "آیا می‌خواهید آن را جای‌نوشت کنید؟"
+
+#, fuzzy
+#~| msgid "Overwrite existing file?"
+#~ msgid "Overwrite destination"
+#~ msgstr "پرونده موجود جای‌نوشت شود؟"
+
+#, fuzzy
+#~ msgid "Current Tracker"
+#~ msgstr "انتقالها:"
+
+#, fuzzy
+#~ msgid "Scrape"
+#~ msgstr "متن:"
+
+#, fuzzy
+#~ msgid "Available Trackers"
+#~ msgstr "انتقالها:"
+
+#, fuzzy
+#~| msgid "Enter URL:"
+#~ msgid "Enter an url"
+#~ msgstr "وارد کردن نشانی وب:"
+
+#, fuzzy
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Delete Selected"
+#~ msgstr "حذف برگزیده"
+
+#, fuzzy
+#~ msgid "Rename transfer"
+#~ msgstr "انتقالها:"
+
+#~ msgid "Download URL again?"
+#~ msgstr "نشانی وب دوباره بارگیری شود؟"
+
+#, fuzzy
+#~ msgctxt "file in a filsystem"
+#~ msgid "File"
+#~ msgstr "&پرونده‌"
+
+#, fuzzy
+#~| msgid ""
+#~| "Are you sure that you want to remove\n"
+#~| "the group named %1?"
+#~ msgid "Are you sure that you want to remove all selected groups?"
+#~ msgstr ""
+#~ "آیا مطمئنید می‌خواهید\n"
+#~ "گروه با نام %1 را حذف کنید؟"
+
+#~ msgid "Name"
+#~ msgstr "نام"
+
+#, fuzzy
+#~ msgid "KGet - Download Manager"
+#~ msgstr "شماره بارگیری:"
+
+#, fuzzy
+#~ msgctxt "@label transfer source"
+#~ msgid "Source:"
+#~ msgstr "متن:"
+
+#, fuzzy
+#~ msgid "&Transfer History..."
+#~ msgstr "فهرست انتقال KGet"
+
+#, fuzzy
+#~ msgid "&Group Settings..."
+#~ msgstr "&تنظیمات‌"
+
+#, fuzzy
+#~ msgid "&Transfer Settings..."
+#~ msgstr "جزئیات انتقال:"
+
+#, fuzzy
+#~ msgid "Speed limit"
+#~ msgstr "سرعت"
+
+#, fuzzy
+#~ msgid "Download Speed:"
+#~ msgstr "پوشه‌های بارگیری پیش‌فرض"
+
+#, fuzzy
+#~ msgid "Upload Speed:"
+#~ msgstr "سرعت"
+
+#, fuzzy
+#~ msgid "&Import links"
+#~ msgstr "ایست برگزیده"
+
+#, fuzzy
+#~| msgid "You can not delete this group!"
+#~ msgid "You can not delete this group."
+#~ msgstr "نمی‌توانید این گروه را حذف کنید!"
+
+#, fuzzy
+#~| msgid "Delete"
+#~ msgid "&Delete"
+#~ msgstr "حذف"
+
+#, fuzzy
+#~ msgid "&Cancel"
+#~ msgstr "تغییر"
+
+#~ msgid "Default Download Folders"
+#~ msgstr "پوشه‌های بارگیری پیش‌فرض"
+
+#~ msgid "Folder and extension can not be empty."
+#~ msgstr "پوشه و پسوند نمی‌تواند خالی باشد."
+
+#, fuzzy
+#~ msgid "File Extension"
+#~ msgstr "پسوند"
+
+#~ msgid "Default Folder"
+#~ msgstr "پوشه پیش‌فرض"
+
+#, fuzzy
+#~ msgid "Set as default folder"
+#~ msgstr "پوشه پیش‌فرض:"
+
+#, fuzzy
+#~ msgid "extRegExp, defaultFolder"
+#~ msgstr "پوشه پیش‌فرض:"
+
+#, fuzzy
+#~ msgid "Downloading.."
+#~ msgstr "بارگیریها"
+
+#, fuzzy
+#~ msgid "Advanced-Details for %1"
+#~ msgstr "جزئیات برای: %1"
+
+#, fuzzy
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading.."
+#~ msgstr "بارگیریها"
+
+#~ msgid "Downloads number:"
+#~ msgstr "شماره بارگیری:"
+
+#, fuzzy
+#~ msgid "%1 KB/s"
+#~ msgstr "%1/ثانیه"
+
+#~ msgid "Not Deleted"
+#~ msgstr "عدم حذف"
+
+#~ msgid "Konqueror Integration disabled"
+#~ msgstr "مجتمع‌سازی Konqueror غیرفعال شد"
+
+#~ msgid "Show main window at startup"
+#~ msgstr "نمایش پنجره اصلی در راه‌اندازی"
+
+#~ msgid "Advanced"
+#~ msgstr "پیشرفته"
+
+#~ msgid " of "
+#~ msgstr " از "
+
+#~ msgid "Sticky"
+#~ msgstr "چسبناک"
+
+#~ msgid "Delete Selected"
+#~ msgstr "حذف برگزیده"
+
+#~ msgid "Extension"
+#~ msgstr "پسوند"
+
+#, fuzzy
+#~| msgid "Form"
+#~ msgctxt "Download normally(not as first or last"
+#~ msgid "Normal"
+#~ msgstr "از"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Bittorrent-Speedlimits"
+#~ msgstr "سرعت"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgid "Speed-Limits"
+#~ msgstr "سرعت"
+
+#, fuzzy
+#~| msgid "Default Download Folders"
+#~ msgid "Download Folder"
+#~ msgstr "پوشه‌های بارگیری پیش‌فرض"
+
+#~ msgid "Hide Drop Target"
+#~ msgstr "مخفی‌ کردن افت هدف"
+
+#, fuzzy
+#~| msgid "Hiding drop target"
+#~ msgid "Hide drop target"
+#~ msgstr "مخفی‌ کردن افت هدف"
+
+#~ msgid ""
+#~ "Already saving URL\n"
+#~ "%1"
+#~ msgstr ""
+#~ "هم اکنون در حال ذخیره نشانی وب\n"
+#~ "%1"
+
+#~ msgid "Add Group..."
+#~ msgstr "افزودن گروهها..."
+
+#~ msgid "Default Group"
+#~ msgstr "گروه پیش‌فرض"
+
+#~ msgid "&Open..."
+#~ msgstr "&باز کردن‌..."
+
+#~ msgid "Docked"
+#~ msgstr "پیوندشده"

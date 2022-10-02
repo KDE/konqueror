@@ -1,0 +1,238 @@
+# translation of libkonq.po to Gujarati
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Sweta Kothari <sweta2782@yahoo.co.in>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2008-11-04 08:39+0530\n"
+"Last-Translator: Kartik Mistry <kartik.mistry@gmail.com>\n"
+"Language-Team: Gujarati\n"
+"Language: gu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "ખોલો (&O)"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "ફોલ્ડર બનાવો (&F)..."
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "પુન:સંગ્રહ (&R)"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "કચરાપેટી ખાલી કરો (&E)"
+
+#: src/konq_popupmenu.cpp:312
+#, fuzzy, kde-format
+#| msgid "&Empty Trash Bin"
+msgid "&Configure Trash Bin"
+msgstr "કચરાપેટી ખાલી કરો (&E)"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "આ પાનાંને બુકમાર્ક કરો (&B)"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "આ જગ્યાને બુકમાર્ક કરો (&B)"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "આ ફોલ્ડરને બુકમાર્ક કરો (&B)"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "આ કડીને બુકમાર્ક કરો (&B)"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "આ ફાઇલને બુકમાર્ક કરો (&B)"
+
+#: src/konq_popupmenu.cpp:379
+#, kde-format
+msgid "Preview In"
+msgstr "આમાં પૂર્વદર્શન"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "ગુણધર્મો (&P)"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy To"
+#~ msgstr "અહીં પર નકલ કરો"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "અહીં પર ખસેડો"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "ઘર ફોલ્ડર"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "રુટ ફોલ્ડર"
+
+#~ msgctxt "@title:menu in Copy To or Move To submenu"
+#~ msgid "Browse..."
+#~ msgstr "બ્રાઉઝ..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "અહીં નકલ કરો"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "અહીં ખસેડો"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "તમે ફોલ્ડરને પોતાની પર પાડી શકાતા નથી"
+
+#~ msgid "File name for dropped contents:"
+#~ msgstr "પાડેલા સમાવિષ્ટો માટે ફાઇલ નામ:"
+
+#~ msgid "&Move Here"
+#~ msgstr "અહીં ખસેડો (&M)"
+
+#~ msgid "&Copy Here"
+#~ msgstr "અહીં નકલ કરો (&C)"
+
+#~ msgid "&Link Here"
+#~ msgstr "અહીં કડી કરો (&L)"
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "વોલપેપર તરીકે સુયોજિત કરો (&W)"
+
+#~ msgid "C&ancel"
+#~ msgstr "દૂર કરો (&a)"
+
+#, fuzzy
+#~| msgid "Create New"
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "નવું બનાવો"
+
+#, fuzzy
+#~| msgid "Enter folder name:"
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "ફોલ્ડર નામ દાખલ કરો:"
+
+#, fuzzy
+#~| msgid "Create New"
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "નવું બનાવો"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "નવુ ફોલ્ડર"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "નવુ ફોલ્ડર"
+
+#, fuzzy
+#~| msgid "Enter folder name:"
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "ફોલ્ડર નામ દાખલ કરો:"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "નવુ ફોલ્ડર"
+
+#~ msgid "Share"
+#~ msgstr "વહેંચો"
+
+#~ msgid "Create New"
+#~ msgstr "નવું બનાવો"
+
+#~ msgid "Link to Device"
+#~ msgstr "ઉપકરણ સાથે કડી"
+
+#~ msgid "<qt>The template file <b>%1</b> does not exist.</qt>"
+#~ msgstr "<qt> ટેમ્પલેટ ફાઇલ <b>%1</b> અસ્તિત્વ ધરાવતી નથી.</qt>"
+
+#~ msgid "File name:"
+#~ msgstr "ફાઇલ નામ:"
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Actions"
+#~ msgstr "ક્રિયાઓ (&A)"
+
+#, fuzzy
+#~| msgid "&Open With"
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With"
+#~ msgstr "આની સાથે ખોલો (&O)"
+
+#, fuzzy
+#~| msgid "&Other..."
+#~ msgctxt "@action:inmenu Open With"
+#~ msgid "&Other..."
+#~ msgstr "બીજા (&O)..."
+
+#, fuzzy
+#~| msgid "&Open With..."
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With..."
+#~ msgstr "આની સાથે ખોલો (&O)..."
+
+#~ msgid "Open &with %1"
+#~ msgstr "%1 સાથે ખોલો (&w)"
+
+#~ msgid "Open in New &Window"
+#~ msgstr "નવી વિન્ડોને ખોલો (&W)"
+
+#~ msgid "Open the trash in a new window"
+#~ msgstr "નવી વિન્ડોમાં કચરાપેટીને ખોલો"
+
+#~ msgid "Open the medium in a new window"
+#~ msgstr "નવી વિન્ડોમાં માધ્યમને ખોલો"
+
+#~ msgid "Open the document in a new window"
+#~ msgstr "નવી વિન્ડોમાં દસ્તાવેજને ખોલો"

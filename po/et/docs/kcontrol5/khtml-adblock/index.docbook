@@ -1,0 +1,114 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY nsplugins-kcontrol SYSTEM "nsplugin.docbook">
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Estonian  "INCLUDE"
+> <!-- change language only here -->
+]>
+<!-- extragear has another adblock ? -->
+<article lang="&language;" id="khtml-adblock">
+<articleinfo>
+<title
+>AdBlocK filtrid</title>
+<authorgroup>
+<author
+>&Krishna.Tateneni; &Krishna.Tateneni.mail;</author>
+<othercredit role="translator"
+><firstname
+>Marek</firstname
+><surname
+>Laane</surname
+><affiliation
+><address
+><email
+>bald@starman.ee</email
+></address
+></affiliation
+><contrib
+>Tõlge eesti keelde</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2011-11-22</date>
+<releaseinfo
+>&kde; 4.8</releaseinfo>
+</articleinfo>
+
+<para
+>&konqueror; AdBlocK on võimalik seadistada asendama või eemaldama veebilehekülgedelt pilte või raame vastavalt määratud filtritele.</para>
+
+<para
+><guilabel
+>Filtrite lubamine</guilabel
+> lülitab sisse või välja URL-filtrite nimekirja kasutamise.</para>
+<para
+>Kui <guilabel
+>Filtreeritud pildid peidetakse</guilabel
+> on sisse lülitatud, eemaldatakse blokeeritud pildid täielikult leheküljelt ja nende all olnud ruum täidetakse. Kui see pole sisse lülitatud, näidatakse filtreeritud piltide asemel kohatäitjast pilti.</para>
+
+<variablelist>
+<varlistentry id="khtml-adblock-manual">
+<term
+><guilabel
+>Käsitsi filter</guilabel
+></term>
+<listitem>
+<para
+>Kaardi põhiosa moodustab URL-ide nimekiri, millega võrreldakse pildi- ja raaminime otsustamaks filtreerimise tulemust. Määrangutes võib kasutada ka metamärke.</para>
+
+<para
+>Loendikasti kohal oleva tekstikastiga <guilabel
+>Otsing</guilabel
+> saab sobivaid kirjeid filtreerida lennult.</para>
+
+<para
+>Filtrid võivad olla kas failistiilis metamärkidega stringid (nt. http://www.site.com/ads/*) või puhtad regulaaravaldised, milles filter on ümbritsetud kaldkriipsudega (nt. //(ads|dclk)\./).</para>
+
+<para
+>Kõigile filtritele võib ette lisada <literal
+>@@</literal
+>, mis asetab iga sobiva &URL;-i lubatute loendisse, mida arvestatakse enne kõik musta nimekirja blokeerivaid filtreid.</para>
+
+<para
+><guilabel
+>Import</guilabel
+> ja <guilabel
+>eksport</guilabel
+> lubavad aktiivse filtrite nimekirja tekstifailina salvestada või selle tekstifailist avada. Fail algab päisereaga <userinput
+>[AdBlock]</userinput
+>, millele järgnevad eraldi ridadel kõik filtrid. Ridu, millele eelneb hüüumärk (<userinput
+>!</userinput
+>), koheldakse kommentaaridena, mis võimaldab filtreid selgitada või nimetada.</para>
+
+<para
+>Märgi loendis kirje, kui soovid seda tekstikastis muuta või üldse eemaldada. Sisesta siia uue filtri string ja lisa see loendisse nupuga <guibutton
+> Lisa</guibutton
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry id="khtml-adblock-automatic">
+<term
+><guilabel
+>Automaatne filter</guilabel
+></term>
+<listitem>
+<para
+>See kaart näitab eelnevalt määratud AdBlock filtrite kirjete nimesid ja &URL;-e. Kirje sisselülitamiseks märgi kastike filtri nime kõrval ja kohanda <guilabel
+>automaatse uuendamise intervalli</guilabel
+> (vaikimisi 7 päeva). </para>
+</listitem>
+</varlistentry>
+  
+</variablelist>
+
+<para
+>Kui AdBlock filter on sisse lülitatud, näeb olekuriba paremas servas ikooni. Ikoonile &HPNga; klõpsates avanevas kontekstimenüüs leiab käsud kõigi veebilehel blokitavate elementide näitamiseks, vastava Süsteemi seadistuste mooduli avamiseks ning saidi või lehekülje blokeerimise ajutiseks lõpetamiseks.</para>
+
+<para
+>Klõps &HVNga; näitab samuti kõigi avatud veebilehekülje blokitud elementide dialoogi. Selles dialoogis saab uusi filtreid otse lisada, ilma et oleks vaja avada Süsteemi seadistuste moodulit.</para>
+
+</article>

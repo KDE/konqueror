@@ -1,0 +1,373 @@
+<chapter id="sidebar">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+&Bram.Schoenmakers;&Freek.de.Kruijf; 
+</authorgroup>
+
+<date
+>2011-11-22</date>
+<releaseinfo
+>&kde; 4.8</releaseinfo>
+</chapterinfo>
+
+<title
+>De zijbalk</title>
+
+<para
+>De zijbalk is een apart gedeelte aan de linkerzijde van het &konqueror;-venster. Het paneel kan opgeroepen worden door naar <menuchoice
+><guimenu
+>Instellingen</guimenu
+><guimenuitem
+>Zijbalk tonen</guimenuitem
+></menuchoice
+> te gaan of kan aan- en uitgezet worden met de toets <keycap
+>F9</keycap
+>.</para>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="dirtree.png"/></imageobject>
+<textobject>
+<phrase
+>Met de zijbalk</phrase
+>  
+</textobject>
+</mediaobject>
+
+<para
+>Het paneel bevat een aantal tabbladen, u kunt met de <mousebutton
+>linker</mousebutton
+>muisknop op een pictogram klikken om die pagina te openen. Wanneer u met de <mousebutton
+>linker</mousebutton
+>muisknop op een pictogram klikt van een tabblad dat reeds geopend is, zal de zijbalk invouwen zodat enkel de pictogrammen nog zichtbaar zijn.</para>
+<variablelist>
+
+<varlistentry>
+<term
+><guilabel
+>Bladwijzers</guilabel
+></term>
+<listitem
+><para
+>Deze pagina toont de boomstructuur van uw bladwijzers. Klik met de <mousebutton
+>linker</mousebutton
+>muisknop op een item om het te openen in de hoofdweergave.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Geschiedenis</guilabel
+></term>
+<listitem
+><para
+>Deze pagina toont een boomstructuur van uw geschiedenis. Klik met de <mousebutton
+>linker</mousebutton
+>muisknop op een item zodat het geopend wordt in de hoofdweergave. U kunt er ook met de <mousebutton
+>rechter</mousebutton
+>muisknop op klikken en kiezen voor <guimenuitem
+>Openen in nieuw venster</guimenuitem
+>, zodat het item in een nieuw venster van &konqueror; geopend wordt.</para>
+<para
+>U kunt een item uit de geschiedenis verwijderen door er met de <mousebutton
+>rechter</mousebutton
+>muisknop op te klikken om vervolgens <guimenuitem
+>Ingang verwijderen</guimenuitem
+> te kiezen. Als u kiest voor <guimenuitem
+>Geschiedenis wissen</guimenuitem
+> zal de gehele geschiedenis gewist worden.</para>
+<para
+>Het contextmenu, dat u krijgt door met de <mousebutton
+>rechter</mousebutton
+>muisknop op een ingang te klikken, biedt ook opties om de geschiedenis te sorteren op naam of op datum.</para>
+<para
+>De optie <guimenuitem
+>Voorkeuren...</guimenuitem
+> uit dit contextmenu zal een dialoogvenster openen met de instellingen met betrekking tot de geschiedenis. Hier kunt u de maximale grootte van uw geschiedenis instellen en een tijd instellen wanneer items automatisch zullen worden verwijderd. U kunt ook verschillende lettertypes instellen voor nieuwe en oude URL-adressen. Het keuzevakje <guilabel
+>Gedetailleerde knopinfo</guilabel
+> bepaalt de hoeveelheid informatie die getoond wordt zodra u met de muis boven een ingang zweeft.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Persoonlijke map</guilabel
+></term>
+<listitem
+><para
+>Dit tabblad toont een boomstructuur van al uw submappen in uw persoonlijke map. <quote
+>Verborgen</quote
+> bestanden worden echter niet getoond (bestanden die beginnen met een punt). Klik met de <mousebutton
+>linker</mousebutton
+>muisknop op een item om het in de hoofdweergave te openen, of met de <mousebutton
+>rechter</mousebutton
+>muisknop om een contextmenu te tonen waarmee u de map in een nieuw venster of tabblad kunt openen. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Netwerk</guilabel
+></term>
+<listitem
+><para
+>Deze pagina is bedoeld om een boomstructuur te tonen van al uw belangrijke netwerkverbindingen. U kunt ook lokale mappen aan deze lijst toevoegen. Hier geldt ook weer dat u met de <mousebutton
+>linker</mousebutton
+>muisknop op een item moet klikken om het in de hoofdweergave te openen of dat u op de <mousebutton
+>rechter</mousebutton
+>muisknop drukt om een menu te tonen met meerdere opties.</para>
+<para
+>De mappen die getoond worden op het tabblad <guilabel
+>Netwerk</guilabel
+> worden bewaard in de map <filename class="directory"
+>~/.kde/share/apps/konqsidebartng/virtual_folders/remote/</filename
+>. Daarin kunt u nieuwe mappen aanmaken zoals u dat zou doen in iedere andere map. De items in deze mappen worden bewaard als <literal role="extension"
+>.desktop</literal
+>-bestanden en kunnen in &konqueror; aangemaakt worden door middel van de menu-optie <menuchoice
+><guisubmenu
+>Nieuw aanmaken</guisubmenu
+><guimenuitem
+>Koppeling naar locatie (URL-adres)...</guimenuitem
+></menuchoice
+> in het menu <guimenu
+>Bewerken</guimenu
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Hoofdmap</guilabel
+></term>
+<listitem
+><para
+>De <guilabel
+>Hoofdmap</guilabel
+> heeft als pad <filename class="directory"
+>/</filename
+> en is de basismap van ieder bestand op uw systeem. Wanneer u de hoofdmap uitklapt vindt u een map genaamd <filename class="directory"
+>root</filename
+>. Dit is de persoonlijke map van de systeembeheerder. In het rijtje staat ook de map <filename class="directory"
+>home</filename
+> waarin u uw eigen persoonlijke map terugvindt.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Services</guilabel
+></term>
+<listitem
+><para
+>Met deze pagina kunt u snel bepaalde diensten opvragen: </para>
+<para
+><guilabel
+>Toepassingen</guilabel
+>, <guilabel
+>Audio cd-browser</guilabel
+> en <guilabel
+>Lettertypen</guilabel
+>.</para>
+<!-- not in 4.4
+<para
+><guilabel
+>Devices</guilabel
+>. This shows your hard disc 
+partitions, floppy and &CD-ROM;. <mousebutton
+>Left</mousebutton
+> click on 
+a device or partition name to mount it and display its contents in the main 
+view.  A mounted device or partition can be unmounted by <mousebutton
+>right
+</mousebutton
+> clicking on the device name and selecting <guimenuitem
+>Unmount
+</guimenuitem
+> from the pop up menu.
+</para>
+<para
+>The <guilabel
+>LAN Browser</guilabel
+> allows you to browse other 
+machines connected to your Local Area Network.</para>
+<para
+>The <guilabel
+>Print System Browser</guilabel
+> tree gives you quick 
+access to &kde;'s print manager <application
+>Kprinter</application
+>.</para>
+-->
+</listitem>
+</varlistentry>
+<!-- begin copy from dolphin docbook-->
+<varlistentry>
+<term
+><guilabel
+>Plaatsen</guilabel
+></term>
+<listitem
+><para
+>Het <guilabel
+>Plaatsen</guilabel
+>-paneel bevindt zich standaard aan de linkerzijde van het venster. Het <guilabel
+>Plaatsen</guilabel
+>-paneel toont de locaties waarvan u een bladwijzer hebt aangemaakt. Daarnaast vindt u de schijven en opslagmedia die met deze computer zijn verbonden terug in dit paneel. </para>
+<para
+>De makkelijkste manier om een map toe te voegen aan het <guilabel
+>Plaatsen</guilabel
+>-paneel is door deze te slepen en in het paneel neer te zetten. U kunt ook binnen het paneel met de &RMB; klikken en uit het contextmenu <menuchoice
+><guimenuitem
+>Item toevoegen...</guimenuitem
+></menuchoice
+> kiezen. </para>
+</listitem>
+</varlistentry>
+<!-- end copy from dolphin docbook-->
+</variablelist>
+
+<para
+>U kunt de instellingen van het zijbalk wijzigen door met de <mousebutton
+>rechter</mousebutton
+>muisknop in de lege ruimte onder de onderste knop van de pictogrammen te klikken. U kunt ook met de <mousebutton
+>linker</mousebutton
+>muisknop op het pictogram van de <guilabel
+>Configuratieknop</guilabel
+> drukken, die is ingeschakeld in het contextmenu. Dit zal een menu openen met de volgende opties:</para>
+<variablelist>
+
+<varlistentry>
+<term
+><guisubmenu
+>Nieuwe toevoegen</guisubmenu
+></term>
+<listitem
+><para
+>Deze optie stelt u in staat om een nieuw tabblad toe te voegen aan de zijbalk. Het nieuwe blad kan verschillende zijbalkmodules of een nieuwe boomstructuur van <guimenuitem
+>Map</guimenuitem
+> bevatten. De laatste optie in dit submenu stelt u in staat om een systeemstandaard te herstellen.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Meerdere weergaven</guimenuitem
+></term>
+<listitem
+><para
+>Met deze optie splitst u de zijbalk op zodat u twee tabbladen tegelijkertijd kunt bekijken.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Tabbladen links tonen</guimenuitem
+>, <guimenuitem
+>Tabbladen rechts tonen</guimenuitem
+></term>
+<listitem
+><para
+>Kies hier of u de pictogrammen van de tabbladen aan de linker- of rechterzijde wilt hebben van de zijbalk.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Configuratieknop tonen</guimenuitem
+></term>
+<listitem
+><para
+>Hiermee kunt u kiezen of u de <guilabel
+>Configuratieknop</guilabel
+> wilt tonen of verbergen.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Het klikken met de <mousebutton
+>rechter</mousebutton
+>muisknop op een pictogram zal de volgende opties tonen:</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guimenuitem
+>Naam instellen</guimenuitem
+></term>
+<listitem
+><para
+>Deze optie stelt u in staat de naam van die pagina in te wijzigen.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>URL-adres instellen</guimenuitem
+></term>
+<listitem
+><para
+>Hiermee wijzigt u het URL-adres (pad) van de map die wordt getoond in die pagina.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Pictogram instellen</guimenuitem
+></term>
+<listitem
+><para
+>Om het pictogram van het tabblad te wijzigen.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Verwijderen</guimenuitem
+></term>
+<listitem
+><para
+>Om het tabblad van de zijbalk te verwijderen.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Zijbalk instellen</guimenuitem
+></term>
+<listitem
+><para
+>Het laatste item toont het configuratiesubmenu van de zijbalk zoals hierboven beschreven.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

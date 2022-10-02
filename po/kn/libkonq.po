@@ -1,0 +1,302 @@
+# translation of libkonq.po to Kannada
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Ramaprakasha <ramaprakash.b@gmail.com>, 2007.
+# Ramaprakasha <mecrama@serc.iisc.ernet.in>, 2007.
+# Umesh Rudrapatna <umeshrs@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2008-01-11 11:40+0530\n"
+"Last-Translator: Umesh Rudrapatna <umeshrs@gmail.com>\n"
+"Language-Team: Kannada <kde-l10n-kn@kde.org>\n"
+"Language: kn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "(&ತ)ತೆರೆ"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "ಕ&ಡತಕೋಶವನ್ನು ಸೃಷ್ಟಿಸು..."
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "&ಮರುಸ್ಥಾಪಿಸು (ರಿಸ್ಟೋರ್)"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "(&ಖ) ಕಸಬುಟ್ಟಿಯನ್ನು ಖಾಲಿಮಾಡು"
+
+#: src/konq_popupmenu.cpp:312
+#, fuzzy, kde-format
+#| msgid "&Empty Trash Bin"
+msgid "&Configure Trash Bin"
+msgstr "(&ಖ) ಕಸಬುಟ್ಟಿಯನ್ನು ಖಾಲಿಮಾಡು"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "(&ಪ)ಈ ಪುಟವನ್ನು ಅಂಕನಿಸು (ಬುಕ್ ಮಾರ್ಕ್)"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "(&ಪ)ಈ ತಾಣವನ್ನು ಅಂಕನಿಸು (ಬುಕ್ ಮಾರ್ಕ್)"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "(&ಪ)ಈ ಕಡತಕೋಶವನ್ನು ಅಂಕನಿಸು (ಬುಕ್ ಮಾರ್ಕ್)"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "(&ಪ)ಈ ಸಂಪರ್ಕಕೊಂಡಿಯನ್ನು ಅಂಕನಿಸು (ಬುಕ್ ಮಾರ್ಕ್)"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "(&ಪ)ಈ ಕಡತವನ್ನು ಅಂಕನಿಸು (ಬುಕ್ ಮಾರ್ಕ್)"
+
+#: src/konq_popupmenu.cpp:379
+#, fuzzy, kde-format
+msgid "Preview In"
+msgstr "ಮುನ್ನೋಟ"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "(&ಗ)ಗುಣಗಳು"
+
+#, fuzzy
+#~| msgid "Move to Trash"
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "ಕಸಬುಟ್ಟಿಗೆ ಕಳುಹಿಸು "
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "ಹೊಸ ಕಡತಕೋಶ"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "ಹೊಸ ಕಡತಕೋಶ"
+
+#, fuzzy
+#~| msgid "&Copy Here"
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "ಇಲ್ಲಿಗೆ &ನಕಲಿಸು"
+
+#, fuzzy
+#~| msgid "&Move Here"
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "ಇಲ್ಲಿಗೆ (&ಸ) ಸ್ಥಾನಾಂತರಿಸು (ಮೂವ್)"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "ಒಂದು ಕಡತಕೋಶವನ್ನು ಅದರ ಮೇಲೆಯೇ ಹಾಕಲು ಸಾಧ್ಯವಿಲ್ಲ"
+
+#~ msgid "File name for dropped contents:"
+#~ msgstr "ಎಳೆದು ಹಾಕಿದ ಒಳಪಿಡಿಗಳ (ಕಂಟೆಂಟ್ಸ್) ಕಡತದ ಹೆಸರು:"
+
+#~ msgid "&Move Here"
+#~ msgstr "ಇಲ್ಲಿಗೆ (&ಸ) ಸ್ಥಾನಾಂತರಿಸು (ಮೂವ್)"
+
+#~ msgid "&Copy Here"
+#~ msgstr "ಇಲ್ಲಿಗೆ &ನಕಲಿಸು"
+
+#~ msgid "&Link Here"
+#~ msgstr "ಇಲ್ಲಿಗೆ (&ಕ) ಕೊಂಡಿಹಾಕು (ಲಿಂಕ್)"
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "(&ಹ) ಹಿನ್ನಲೆತೆರೆಚಿತ್ರವಾಗಿ ಹೊಂದಿಸು"
+
+#~ msgid "C&ancel"
+#~ msgstr "&ರದ್ದು ಮಾಡು"
+
+#, fuzzy
+#~| msgid "Create &Folder..."
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "ಕ&ಡತಕೋಶವನ್ನು ಸೃಷ್ಟಿಸು..."
+
+#, fuzzy
+#~| msgid "Enter folder name:"
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "ಕಡತಕೋಶದ ಹೆಸರನ್ನು ನಮೂದಿಸು:"
+
+#, fuzzy
+#~| msgid "Create &Folder..."
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "ಕ&ಡತಕೋಶವನ್ನು ಸೃಷ್ಟಿಸು..."
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "ಹೊಸ ಕಡತಕೋಶ"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "ಹೊಸ ಕಡತಕೋಶ"
+
+#, fuzzy
+#~| msgid "Enter folder name:"
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "ಕಡತಕೋಶದ ಹೆಸರನ್ನು ನಮೂದಿಸು:"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "ಹೊಸ ಕಡತಕೋಶ"
+
+#~ msgid "Share"
+#~ msgstr "ಹಂಚು"
+
+#, fuzzy
+#~| msgctxt "@title:menu"
+#~| msgid "Actions"
+#~ msgctxt "@title:menu"
+#~ msgid "&Actions"
+#~ msgstr "ಕ್ರಿಯೆಗಳು"
+
+#, fuzzy
+#~| msgid "&Open With"
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With"
+#~ msgstr "&ಈ ತಂತ್ರಾಂಶದಿಂದ ತೆರೆ"
+
+#, fuzzy
+#~| msgid "&Other..."
+#~ msgctxt "@action:inmenu Open With"
+#~ msgid "&Other..."
+#~ msgstr "&ಇತರೆ..."
+
+#, fuzzy
+#~| msgid "&Open With..."
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With..."
+#~ msgstr "&ಈ ತಂತ್ರಾಂಶದಿಂದ ತೆರೆ..."
+
+#, fuzzy
+#~| msgid "Open with %1"
+#~ msgid "Open &with %1"
+#~ msgstr "%1 ತಂತ್ರಾಂಶದಿಂದ ತೆರೆ"
+
+#~ msgid "Open in New &Window"
+#~ msgstr "(&ಹ) ಹೊಸ ಕಿಟಿಕಿಯಲ್ಲಿ ತೆರೆ"
+
+#~ msgid "Open the trash in a new window"
+#~ msgstr "ಕಸಬುಟ್ಟಿಯನ್ನು ಹೊಸ ಕಿಟಿಕಿಯಲ್ಲಿ ತೆರೆ"
+
+#~ msgid "Open the medium in a new window"
+#~ msgstr "ಮಾಧ್ಯಮವನ್ನು ಹೊಸ ಕಿಟಿಕಿಯಲ್ಲಿ ತೆರೆ"
+
+#~ msgid "Open the document in a new window"
+#~ msgstr "ಕಡತವನ್ನು ಹೊಸ ಕಿಟಿಕಿಯಲ್ಲಿ ತೆರೆ"
+
+#, fuzzy
+#~ msgid "Deleting"
+#~ msgstr "ಕಡತಗಳನ್ನು ಅಳಿಸು"
+
+#~ msgid "Und&o"
+#~ msgstr "(&ಮ) ಹಿಮ್ಮೆಟ್ಟು"
+
+#~ msgid "Und&o: Copy"
+#~ msgstr "(&ಮ) ಹಿಮ್ಮೆಟ್ಟು: ನಕಲು"
+
+#~ msgid "Und&o: Link"
+#~ msgstr "(&ಮ) ಹಿಮ್ಮೆಟ್ಟು: ಕೊಂಡಿ"
+
+#~ msgid "Und&o: Move"
+#~ msgstr "(&ಮ) ಹಿಮ್ಮೆಟ್ಟು: ಸ್ಥಾನಾಂತರ"
+
+#~ msgid "Und&o: Rename"
+#~ msgstr "(&ಮ) ಹಿಮ್ಮೆಟ್ಟು: ಮರುಹೆಸರು"
+
+#~ msgid "Und&o: Trash"
+#~ msgstr "(&ಮ) ಹಿಮ್ಮೆಟ್ಟು: ಕಸಬುಟ್ಟಿ"
+
+#~ msgid "Und&o: Create Folder"
+#~ msgstr "(&ಮ) ಹಿಮ್ಮೆಟ್ಟು: ಕಡತಕೋಶ ಸೃಷ್ಟಿ"
+
+#~ msgid ""
+#~ "The file %1 was copied from %2, but since then it has apparently been "
+#~ "modified at %3.\n"
+#~ "Undoing the copy will delete the file, and all modifications will be "
+#~ "lost.\n"
+#~ "Are you sure you want to delete %4?"
+#~ msgstr ""
+#~ "%1 ಕಡತವು %2 ಎಂಬ ಕಡತದಿಂದ ನಕಲಾಗಿದೆ,ಆದರೆ ಅನಂತರ %3 ಎಂಬಲ್ಲಿ ಮಾರ್ಪಾಡಗಿದೆ. \n"
+#~ "ನಕಲಿಸುವುದನು ರದ್ದುಮಾಡಿದರೆ ಕಡತವು ಅಳಿಸಿಹೋಗುತ್ತದೆ, ಎಲ್ಲಾ ಮಾರ್ಪಾಡುಗಳು "
+#~ "ಕಳೆದುಹೋಗುತ್ತವೆ.\n"
+#~ "%4 ನ್ನು ಖಚಿತವಾಗಿಯೂ ಅಳಿಸಿಹಾಕಲೇ?"
+
+#~ msgid "Undo File Copy Confirmation"
+#~ msgstr "ಕಡತ ನಕಲು ಖಚಿತಪಡಿಸುವಿಕೆಯನ್ನು ಹಿಮ್ಮೆಟ್ಟು"
+
+#~ msgid "Do you really want to delete this item?"
+#~ msgid_plural "Do you really want to delete these %1 items?"
+#~ msgstr[0] "ನೀವು ಖಚಿತವಾಗಿಯೂ ವಿಷಯಸೂಚಿಯನ್ನು ಅಳಿಸಲು ಇಚ್ಛಿಸುತ್ತೀರಾ?"
+#~ msgstr[1] "ನೀವು ಖಚಿತವಾಗಿಯೂ ಈ %1 ವಿಷಯಸೂಚಿಗಳನ್ನು ಅಳಿಸಲು ಇಚ್ಛಿಸುತ್ತೀರಾ?"
+
+#~ msgid "Delete Files"
+#~ msgstr "ಕಡತಗಳನ್ನು ಅಳಿಸು"
+
+#~ msgid "Do you really want to move this item to the trash?"
+#~ msgid_plural "Do you really want to move these %1 items to the trash?"
+#~ msgstr[0] "ಈ ವಸ್ತುವನ್ನು ಖಚಿತವಾಗಿಯೂ ಕಸಬುಟ್ಟಿಗೆ ಕಳುಹಿಸಬೇಕೇ?"
+#~ msgstr[1] "ಈ  %1 ವಸ್ತುಗಳನ್ನು ಖಚಿತವಾಗಿಯೂ ಕಸಬುಟ್ಟಿಗೆ ಕಳುಹಿಸಬೇಕೇ?"
+
+#~ msgid "Move to Trash"
+#~ msgstr "ಕಸಬುಟ್ಟಿಗೆ ಕಳುಹಿಸು "
+
+#, fuzzy
+#~ msgctxt "Verb"
+#~ msgid "&Trash"
+#~ msgstr "&ಕಸಬುಟ್ಟಿ"
+
+#, fuzzy
+#~| msgid "Und&o"
+#~ msgid "Und&o: %1"
+#~ msgstr "(&ಮ) ಹಿಮ್ಮೆಟ್ಟು"

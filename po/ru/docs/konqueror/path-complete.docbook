@@ -1,0 +1,152 @@
+<chapter id="path-complete">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>Kernel</firstname
+><surname
+>Panic</surname
+><affiliation
+><address
+><email
+>rzhevskiy@mail.ru</email
+></address
+></affiliation
+><contrib
+> Перевод на русский</contrib
+></othercredit
+><othercredit role="reviewer"
+><firstname
+>Григорий</firstname
+><surname
+>Мохин</surname
+><affiliation
+><address
+><email
+>mok@kde.ru</email
+></address
+></affiliation
+><contrib
+> Редакция русского перевода</contrib
+></othercredit
+> 
+</authorgroup
+> 
+
+<date
+>5 ноября 2003 г.</date>
+<releaseinfo
+>3.2</releaseinfo>
+</chapterinfo>
+
+
+<title
+>Автоматическое дополнение текста</title
+> 
+
+<para
+>В &konqueror; имеется возможность, которая существенно облегчит вам ввод адресов Интернета: автозавершение текста. Чтобы включить автозавершение, щёлкните <mousebutton
+>правой</mousebutton
+> кнопкой мыши по свободной части строки адреса и в появившемся меню выберите пункт <guisubmenu
+>Автозавершение текста</guisubmenu
+>. Вам будут предоставлены следующие варианты:</para>
+
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Выключено</guimenuitem
+></term>
+<listitem
+><para
+>Автозавершение текста выключено.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Вручную</guimenuitem
+></term>
+<listitem
+><para
+>После того, как вы введёте часть адреса, вы можете нажать <keycombo
+>&Ctrl;<keycap
+>E</keycap
+></keycombo
+>, и &konqueror; допишет недостающую часть адреса (если это возможно).</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Автоматически</guimenuitem
+></term>
+<listitem
+><para
+>По мере того, как вы вводите адрес, &konqueror; предлагает вам варианты окончания адреса (добавляемая часть будет выделена). Если вариант вас не устраивает, продолжайте вводить адрес самостоятельно; нажмите клавишу &Enter;, если предложен правильный вариант.</para
+></listitem>
+ </varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Выбор из списка</guimenuitem
+></term>
+<listitem
+><para
+>По мере того, как вы вводите адрес, &konqueror; отображает выпадающий список, в котором показаны варианты полного адреса. Если один из вариантов вам подходит, щёлкните по нему <mousebutton
+>левой кнопкой мыши</mousebutton
+>; вы также можете выделить его с помощью клавиш <keysym
+>Стрелка вниз</keysym
+> и <keysym
+>Стрелка вверх</keysym
+>, а затем нажать .                    &Enter;</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>До косой черты</guimenuitem
+></term>
+<listitem
+><para
+>Этот режим похож на режим "Автоматически", однако он дополняет адрес только до следующей косой черты (<keycap
+>/</keycap
+>). Если предлагаемый вариант вас устраивает, нажмите <keycombo
+>&Ctrl;<keycap
+>E</keycap
+></keycombo
+>; когда будет введён весь адрес, нажмите &Enter;.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+<para
+>Попробуйте каждый из этих режимов и выберите тот, который подходит вам наилучшим образом.</para>
+<para
+>Журнал посещённых адресов, который &konqueror; использует для автозавершения, можно просмотреть и изменить на странице <guilabel
+>Журнал</guilabel
+> <link linkend="sidebar"
+>панели навигации</link
+>.</para>
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

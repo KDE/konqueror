@@ -1,0 +1,214 @@
+# translation of libkonq.po to Khmer
+# Khoem Sokhem <khoemsokhem@khmeros.info>, 2007, 2008, 2009, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2010-11-16 15:35+0700\n"
+"Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
+"Language-Team: Khmer <support@khmeros.info>\n"
+"Language: km\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: KBabel 1.11.4\n"
+"X-Language: km-KH\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "បើក"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "បង្កើត​ថត..."
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "ស្តារ"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr "បង្ហាញ​ថត​ដើម"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr "បង្ហាញ​ឯកសារ​ដើម"
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "សម្អាត​ធុង​សំរាម"
+
+#: src/konq_popupmenu.cpp:312
+#, kde-format
+msgid "&Configure Trash Bin"
+msgstr "កំណត់​រចនាសម្ព័ន្ធ​ធុង​សំរាម"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "ចំណាំ​ទំព័រ​នេះ"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "ចំណាំ​ទីតាំង​នេះ"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "ចំណាំ​ថត​នេះ"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "ចំណាំ​តំណ​នេះ"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "ចំណាំ​ឯកសារ​នេះ"
+
+#: src/konq_popupmenu.cpp:379
+#, kde-format
+msgid "Preview In"
+msgstr "មើល​ជាមុន​ក្នុង"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "លក្ខណៈ​សម្បត្តិ"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy To"
+#~ msgstr "ចម្លង​ទៅ"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "ផ្លាស់​ទី​ទៅ"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "ថត​ផ្ទះ"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "ថត Root"
+
+#~ msgctxt "@title:menu in Copy To or Move To submenu"
+#~ msgid "Browse..."
+#~ msgstr "រុករក..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "ចម្លង​ទីនេះ"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "ផ្លាស់ទី​ទីនេះ"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "អ្នក​មិន​អាច​ទម្លាក់​ថត​មួយ​នៅ​លើ​ខ្លួន​វា​ទេ"
+
+#~ msgid "File name for dropped contents:"
+#~ msgstr "ឈ្មោះ​ឯកសារ សម្រាប់​មាតិកា​ដែល​បាន​ទម្លាក់ ៖"
+
+#~ msgid "&Move Here"
+#~ msgstr "ផ្លាស់ទី​ទីនេះ"
+
+#~ msgid "&Copy Here"
+#~ msgstr "ចម្លង​ទីនេះ"
+
+#~ msgid "&Link Here"
+#~ msgstr "តភ្ជាប់​ទីនេះ"
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "កំណត់​ជា​ក្រដាស​បិទ​ជញ្ជាំង"
+
+#~ msgid "C&ancel"
+#~ msgstr "បោះបង់"
+
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "បង្កើត​ថត"
+
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "បញ្ចូលឈ្មោះ​ផ្សេង"
+
+#~ msgid ""
+#~ "The name \"%1\" starts with a dot, so the directory will be hidden by "
+#~ "default."
+#~ msgstr "ឈ្មោះ \"%1\" ចាប់ផ្ដើម​ដោយ​សញ្ញា(.) ដូច្នេះ​ថត​នឹង​ត្រូវ​បានលាក់​តាម​លំនាំដើម ។"
+
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "បង្កើត​ថត​ដែលបានលាក់ ?"
+
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "ថត​ថ្មី"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "ថត​ថ្មី"
+
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "បញ្ចូល​ឈ្មោះ​ថត ៖"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "បិទភ្ជាប់​ថត​មួយ"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One File"
+#~ msgstr "បិទភ្ជាប់​ឯកសារ​មួយ"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Item"
+#~ msgid_plural "Paste %1 Items"
+#~ msgstr[0] "បិទភ្ជាប់ %1 ធាតុ"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste Clipboard Contents..."
+#~ msgstr "បិទភ្ជាប់​មាតិកា​ក្ដារតម្បៀតខ្ទាស់..."
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste"
+#~ msgstr "បិទភ្ជាប់"
+
+#~ msgid ""
+#~ "Restores this file or directory, back to the location where it was "
+#~ "deleted from initially"
+#~ msgstr "ស្ដារ​ឯកសារ ឬ​ថត​នេះ​ឡើង​វិញ ត្រឡប់​ទៅ​ទីតាំង​ដែល​វា​ត្រូវបាន​លុប​ពី​ដំបូង"
+
+#~ msgid ""
+#~ "Opens a new file manager window showing the target of this link, in its "
+#~ "parent directory."
+#~ msgstr "បើក​បង្អួច​កម្មវិធី​គ្រប់គ្រង​ឯកសារ​​ថ្មី ដោយ​បង្ហាញ​គោលដៅ​របស់​តំណ​នេះ នៅ​ក្នុង​ថត​មេ​របស់​វា ។"
+
+#~ msgid "Share"
+#~ msgstr "ចែក​រំលែក"
+
+#~ msgctxt "@info"
+#~ msgid "Close"
+#~ msgstr "បិទ"
+
+#~ msgid "Close"
+#~ msgstr "បិទ"
+
+#~ msgid "Error: %1"
+#~ msgstr "កំហុស ៖ %1"

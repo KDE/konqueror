@@ -1,0 +1,165 @@
+<chapter id="path-complete">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>Δημήτριος</firstname
+><surname
+>Γλενταδάκης</surname
+><affiliation
+><address
+><email
+>dglent@gmail.com</email
+></address
+></affiliation
+><contrib
+>Μεταφραστής</contrib
+></othercredit
+> 
+</authorgroup
+> 
+
+<date
+>2010-10-26</date>
+<releaseinfo
+>&kde; 4.5</releaseinfo>
+</chapterinfo>
+
+
+<title
+>Αυτόματη συμπλήρωση κειμένου</title
+> 
+
+<para
+>Μπορείτε να κάνετε τον &konqueror; να σας βοηθήσει στην εισαγωγή μιας διαδρομής ή &URL; στη γραμμή εργαλείων τοποθεσίας ενεργοποιώντας ένα από τα χαρακτηριστικά <guimenuitem
+>Συμπλήρωσης κειμένου</guimenuitem
+>. Αυτό μπορείτε να το κάνετε πατώντας <mousebutton
+>δεξί</mousebutton
+> κλικ σε ένα καθαρό τμήμα του πλαισίου εισαγωγής κειμένου της γραμμής εργαλείων τοποθεσίας και επιλέγοντας <guisubmenu
+>Συμπλήρωση κειμένου</guisubmenu
+> από το αναδυόμενο μενού. Αυτό θα σας επιτρέψει να επιλέξετε ανάμεσα στις ακόλουθες επιλογές:</para>
+
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Καμία</guimenuitem
+></term>
+<listitem
+><para
+>Αυτό που παίρνετε είναι αυτό που πληκτρολογείτε.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Χειροκίνητη</guimenuitem
+></term>
+<!-- in 4.5 I see no diff to None -->
+<listitem
+><para
+>Όταν έχετε πληκτρολογήσει ένα μέρος της διαδρομής ή του &URL;, πατώντας <keycombo action="simul"
+>&Ctrl;<keycap
+>E</keycap
+></keycombo
+> ή &Tab; θα συμπληρώσει την εισαγωγή αν είναι δυνατό να γίνει.</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Αυτόματη</guimenuitem
+></term>
+<listitem
+><para
+>Καθώς πληκτρολογείτε στο παράθυρο της γραμμής εργαλείων τοποθεσίας ο &konqueror; θα επεκτείνει αυτόματα αυτό που πληκτρολογείτε ώστε να συμπληρώσει μια πιθανή διαδρομή ή &URL;, φωτίζοντας τους χαρακτήρες που προσθέτει. Συνεχίστε να πληκτρολογείτε αν δεν είναι αυτό που θέλατε ή πατήστε &Enter; για αποδοχή.  </para
+></listitem>
+ </varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Κυλιόμενη λίστα</guimenuitem
+></term>
+<listitem
+><para
+>Καθώς πληκτρολογείτε εμφανίζεται ένα κυλιόμενο παράθυρο, δείχνοντάς σας τα αποτελέσματα που ταιριάζουν με αυτό που πληκτρολογείτε. Όταν η διαδρομή ή το &URL; που θέλετε εμφανιστεί στο παράθυρο πατήστε σε αυτό με το &LMB;. Μπορείτε επίσης να χρησιμοποιήσετε το <keysym
+>κάτω βελάκι</keysym
+> ή το &Tab; και το <keysym
+>πάνω βελάκι</keysym
+> ή το συνδυασμό <keycombo action="simul"
+>&Shift;&Tab;</keycombo
+> για να το επιλέξετε και έπειτα πατήστε &Enter;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Σύντομη αυτόματη</guimenuitem
+></term>
+<listitem
+><para
+>Σαν την αυτόματη λειτουργία μόνο που επεκτείνει αυτό που πληκτρολογείτε μέχρι το επόμενο σύμβολο <keycap
+>/</keycap
+> στη διαδρομή ή &URL;. Πατήστε <keycombo action="simul"
+>&Ctrl;<keycap
+>E</keycap
+></keycombo
+> ή &Tab; για αποδοχή της πρότασης, &Enter; όταν εμφανιστεί η πλήρης διαδρομή ή &URL;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Κυλιόμενη λίστα &amp; αυτόματη</guimenuitem
+></term>
+<listitem
+><para
+>Πρόκειται για ένα συνδυασμό των δύο επιλογών που περιγράφονται ανωτέρω.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Προκαθορισμένο</guimenuitem
+></term>
+<listitem
+><para
+>Αυτό το στοιχείο εμφανίζεται στο κάτω μέρος του υπομενού και σας δίνει την δυνατότητα να μεταβείτε στην προκαθορισμένη συμπεριφορά <guimenuitem
+>Κυλιόμενη λίστα</guimenuitem
+>.</para
+></listitem>
+</varlistentry>
+<!-- Del to end 
+substring completion F7 http://websvn.kde.org/?view=revision&revision=1096306-->
+</variablelist>
+<para
+>Θα πρέπει να δοκιμάσετε αυτές τις διαφορετικές λειτουργίες και να επιλέξετε αυτήν που σας ταιριάζει καλύτερα.</para>
+<para
+>Το ιστορικό των &URL; που έχετε επισκεφτεί πρόσφατα, και που χρησιμοποιεί ο &konqueror; για τη λειτουργία της συμπλήρωσης κειμένου, μπορείτε να το δείτε και να το επεξεργαστείτε στη σελίδα <guilabel
+>Ιστορικό</guilabel
+> της <link linkend="sidebar"
+>Πλευρικής μπάρας</link
+>.</para>
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

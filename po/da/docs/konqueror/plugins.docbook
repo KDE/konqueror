@@ -1,0 +1,268 @@
+<chapter id="plugins">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+&erik.kjaer.pedersen.role; 
+</authorgroup>
+<date
+>2002-09-22</date
+> <releaseinfo
+>3.1</releaseinfo
+> </chapterinfo>
+
+
+<title
+>Plugin</title>
+
+<sect1 id="netscape-plugin">
+<title
+>&Netscape; plugin</title>
+
+<para
+>For øjeblikket understøtter &konqueror; &Netscape; 4.x plugin.</para>
+
+<para
+>Valg af <menuchoice
+><guimenu
+>Indstillinger</guimenu
+><guisubmenu
+> Indstil Konqueror...</guisubmenu
+><guimenuitem
+>Plugin</guimenuitem
+> </menuchoice
+> vil give dig en dialog med to fanebladssider; <guilabel
+>Skan</guilabel
+> og <guilabel
+>Plugin</guilabel
+>.</para>
+
+<para
+>På <guilabel
+>Scan</guilabel
+>-kontrollerer du hvordan &kde; skanner efter nye &Netscape;-plugin, enten manuelt ved at trykke på  <guibutton
+>Skan efter nye plugin</guibutton
+> knappen eller automatisk hver gang &kde; starter.</para>
+	
+<para
+>Skanningen udføres ved at kigge de mapper igennem der er i <guilabel
+>Skan-mapper</guilabel
+> listen efter <literal role="extension"
+>.so</literal
+> filer der indeholder plugin-kode. Den undersøger hver sådan fil for at finde ud af hvilke <acronym
+>MIME</acronym
+> typer dette plugin understøtter. Den laver så <acronym
+>MIME</acronym
+> type definitioner for &kde; i brugerens  <filename class="directory"
+> ~/.kde/share/mimelnk</filename
+> mappe for at andre programmer skal blive klar over dem.</para>
+
+<para
+><guilabel
+>Plugin</guilabel
+>-siden viser dig de &Netscape; plugin som &kde; har fundet og for hvert plugin viser den de <acronym
+>MIME</acronym
+> typer og filnavneendelser den bruger til at genkende dem.</para>
+
+<para
+>Dialogen indeholder også en afkrydsningsfelt <guilabel
+> Aktivér plugin globalt</guilabel
+> som du kan bruge til at aktivere eller deaktivere plugin, der kan være indeholdt i <acronym
+>HTML</acronym
+>-sider (disse kan opfattes som en sikkerhedsrisiko).</para>
+
+</sect1>
+
+<sect1 id="konq-plugin">
+<title
+>&konqueror; plugin</title>
+
+<para
+>Pakken kdeaddons indeholder adskillige nyttige plugin der virker sammen med &konqueror; på forskellige måder. Disse forklares kort nedenfor, mere detaljeret information kan fås ved at kigge gennem <guimenuitem
+>Konqueror-plugin</guimenuitem
+> afsnittet i &kde;'s Hjælpecenter.</para>
+
+<variablelist>
+
+<varlistentry>
+<term
+>Netside-oversættelse</term>
+<listitem
+><para
+>Dette bruger AltaVista's BabelFish-sted til at oversætte den aktuelle <acronym
+>HTML</acronym
+>-side til det sprog du har lyst til (med begrænsninger). Det kan startes med <menuchoice
+><guimenu
+>Værktøj</guimenu
+><guisubmenu
+>Oversæt netside</guisubmenu
+></menuchoice
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Mappevisningsfilter</term>
+<listitem
+><para
+>Dette kontrolleres af <menuchoice
+><guimenu
+>Værktøj</guimenu
+><guisubmenu
+>Visningsfilter</guisubmenu
+></menuchoice
+> som tillader dig at vælge hvilke typer punkter der vises i en mappe.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>DOM Trævisning</term>
+<listitem
+><para
+>Valg af <menuchoice
+><guimenu
+>Værktøj</guimenu
+><guisubmenu
+>Vis DOM-træ</guisubmenu
+></menuchoice
+> åbner et nyt vindue der viser dokument objekt modellen (DOM) for den aktuelle <acronym
+>HTML</acronym
+>-side.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>HTML gyldighedstjekker</term>
+<listitem
+><para
+>Dette startes med <menuchoice
+><guimenu
+>Værktøj</guimenu
+><guisubmenu
+>Tjek gyldighed af netside</guisubmenu
+><guimenuitem
+>Tjek gyldighed af TML</guimenuitem
+></menuchoice
+>. Det bruger W3C HTML-tjekkeren til at tjekke gyldigheden af den aktuelle side, meget nyttig når man laver netsider.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>CSS gyldighedstjekker</term>
+<listitem
+><para
+>Startes med <menuchoice
+><guimenu
+>Værktøj</guimenu
+><guisubmenu
+>Tjek gyldighed af netside</guisubmenu
+><guimenuitem
+>Tjek gyldighed af CSS</guimenuitem
+></menuchoice
+>, det bruger W3C CSS-tjekkeren til at tjekke gyldigheden af den aktuelle sides "Cascading Style Sheets".</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>HTML-opsætning</term>
+<listitem
+><para
+>Vælg <menuchoice
+><guimenu
+>Værktøj</guimenu
+><guisubmenu
+>HTML-opsætning</guisubmenu
+></menuchoice
+> for at aktivere eller deaktivere et antal HTML-indstillinger uden at gå gennem <guimenu
+>Opsætnings</guimenu
+>-dialogen. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Billedgalleri</term>
+<listitem
+><para
+>I filhåndteringstilstand, kan du vælge <menuchoice
+><guimenu
+>Værktøj</guimenu
+><guisubmenu
+>Opret billedgalleri</guisubmenu
+></menuchoice
+> til at lave en HTML-side med miniaturer af alle billederne i den aktuelle mappe. Som standard hedder HTML-siden <filename
+>images.html</filename
+> og miniaturerne puttes i en ny <filename
+>thumbs</filename
+>-mappe. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Brugeragent-ændrer</term>
+<listitem
+><para
+>Vælg <menuchoice
+><guimenu
+>Værktøj</guimenu
+><guisubmenu
+>Ændr browser-identifikation</guisubmenu
+></menuchoice
+> for at få en menu der lader dig ændre Brugeragentstrengen uden at gå gennem proceduren i <guimenu
+>Opsætnings</guimenu
+>-dialogen. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Arkivér netside</term>
+<listitem
+><para
+>Startes med <menuchoice
+><guimenu
+>Værktøjer</guimenu
+><guisubmenu
+> Arkivér netside</guisubmenu
+></menuchoice
+>. Dette værktøj laver en arkivfil (<literal role="extension"
+>.war</literal
+> ) der indeholder netsiden der bliver set inklusive billederne. <mousebutton
+>Venstre</mousebutton
+>-klik på arkivfilens navn for at se den gemte side. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Navigeringspanelets mediespiller</term>
+<listitem
+><para
+>Dette er en simpel mediespiller, indlejret som en fanebladsside Navigationspanelet. Du kan trække sange eller videoer hen på denne side for at spille dem. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

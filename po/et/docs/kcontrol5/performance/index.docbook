@@ -1,0 +1,181 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Estonian  "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="performance" lang="&language;">
+<articleinfo>
+<title
+>Jõudlus</title>
+<authorgroup>
+<author
+>&Mike.McBride; &Mike.McBride.mail;</author>
+<othercredit role="translator"
+><firstname
+>Marek</firstname
+><surname
+>Laane</surname
+><affiliation
+><address
+><email
+>bald@starman.ee</email
+></address
+></affiliation
+><contrib
+>Tõlge eesti keelde</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2009-11-24</date>
+<releaseinfo
+>&kde; 4.4</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Süsteemi seadistused</keyword>
+<keyword
+>jõudlus</keyword>
+<keyword
+>eellaadimine</keyword>
+</keywordset>
+</articleinfo>
+
+<sect1 id="sys-performance">
+<title
+>Jõudlusseadistused</title>
+
+<para
+>&kde;-d kasutavad väga erinevad kasutajad väga erinevates arvutites. Kõigi nende huvide paremaks rahuldamiseks pakub see dialoog võimalust kohandada jõudlust, mis võib muuta &konqueror;i tegutsemise konkreetse kasutaja arvutis märksa etemaks. </para>
+
+<sect2
+><title
+>&konqueror;i protsessid</title>
+<para
+>Dialoogi esimene sektsioon on <guilabel
+>Mälukasutuse minimeerimine</guilabel
+> ja siin paikneb kolm valikut, mis määravad, mitu &konqueror;i protsessi võib korraga ühes masinas avatud olla.</para>
+
+<note
+><para
+>Ära aja &konqueror;i protsesse segamini &konqueror;i akende või kaartidega. &konqueror;i protsesside arvu määrab &kde;, mitte kasutaja. Protsesse võib pidada oma &konqueror;i akende ja kaartide varjatud andmeteks. Üks &konqueror;i protsess võib sisaldada mitme akna või kaardi andmeid. See, millise raadionupu sa siin valid, ei piira korraga avatavate akende arvu, vaid seda, mitu &konqueror;i protsessi võib korraga olla avatud. </para>
+<para
+>Põhjus, miks siinne valik nii tähtis on, avaldub siis, kui midagi läheb viltu ja &konqueror; on sunnitud protsessi sulgema. <emphasis
+>Kõik antud &konqueror;i protsessiga seotud &konqueror;i aknad suletakse siis otsekohe (ilma et sulle jääks aega andmeid või järjehoidjate asukohti või midagi muud salvestada).</emphasis
+> Seepärast tähendab see, mida rohkem protsesse on korraga avatud, aina väiksemat tõenäosust, et mõne protsessi probleem puudutab kogu sinu tööd. Iga protsess nõuab aga omajagu mälu, mis võib tekitada probleeme vähema mäluga arvutites. </para
+></note>
+
+<para
+>Valikud on järgmised:</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Mitte kunagi</guilabel
+></term>
+<listitem
+><para
+>Mingeid piiranguid ei ole, korraga võib avatud olla suvaline arv &konqueror;i protsesse. Selle eeliseks on asjaolu, et kui mõnda &konqueror;i protsessi tabab krahh, ei puuduta see teisi protsesse. Miinuseks on aga asjaolu, et iga &konqueror;i protsess nõuab omajagu mälu.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Ainult failisüsteemi lehitsemisel (soovitatav)</guilabel
+></term>
+<listitem
+><para
+>Selle valimisel võib veebilehitsemisel olla avatud suvaline arv &konqueror;i protsesse, kuid failihalduse jaoks ainult üks &konqueror;i protsess. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Alati (kasuta ettevaatlikult)</guilabel
+></term>
+<listitem
+><para
+>Selle valimisel tohib mis tahes hetkel avatud olla ainult üks &konqueror;i protsess. See säästab mälu, kuid kui &konqueror;i akent tabab krahh, suletakse kohe ilma hoiatusega kõik aknad. Seda tuleks kasutada ainult süsteemis, kus on tõesti väga vähe mälu.</para
+></listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+
+<sect2
+><title
+>Eellaadimine</title>
+<para
+>Ka sektsioonis <guilabel
+>Eellaadimine</guilabel
+> saab määrata sobiva kompromissi mälu ja jõudluse vahel.</para>
+
+<para
+><emphasis
+>Eellaadimine</emphasis
+> tähendab &konqueror;i protsessi laadimist mällu juba enne seda, kui kasutaja &konqueror;i käivitab. Selle eeliseks on asjaolu, et kui kasutaja esitab &kde;-le soovi käivitada &konqueror;, avatakse aken otsekohe, sest rakendus on sisuliselt juba avatud. Miinuseks on aga see, et eellaetud &konqueror;i protsess vajab samuti mälu, mida muidu võiksid kasutada teised rakendused. Kui kasutaja sulgeb &konqueror;i, siis vaikimisi jätab &kde; protsessi tööle. See tähendab, et kui kasutaja soovib uuesti &konqueror;i avada, käib ka see silmapilkselt.</para>
+<para
+>Kerimiskastiga <guilabel
+>Protsesside maksimum, mis hoitakse eellaadituna</guilabel
+> saab määrata, kui palju protsesse eellaaditakse. See ei mõjuta seda, millal need laaditakse. Samuti ei piira see protsesside arvu, mida saavad kasutada aktiivsed aknad. See mõjutab ainult eellaaditud protsesside arvu.</para>
+<para
+>Märkekast <guilabel
+>Eellaadimine pärast &kde; käivitamist</guilabel
+> teeb just seda, mida nimi ütleb. See annab &kde;-le korralduse laadida üks &konqueror;i protsess &kde; käivitamise ajal.</para>
+<note
+><para
+>See pikendab &kde; käivitamise aega.</para
+></note>
+<para
+>Märkekastiga <guilabel
+>Alati püütakse elus hoida vähemalt üks eellaaditud protsess</guilabel
+> saab anda &kde;-le tead, et soovid, et &kde; hoiaks alati käepärast ühe eellaaditud, kuid kasutusel mitteoleva &konqueror;i protsessi. Mõne masina korral kahandab see võimalus tegelikult jõudlust (eriti juhul, kui masinas napib mälu).</para>
+</sect2>
+<!-- not in kde4
+<sect2
+><title
+>&kde; system performance options</title>
+<para
+>Click on the tab labeled <guilabel
+>System</guilabel
+>.</para>
+<para
+>Currently there is only one option labeled <guilabel
+>Disable system configuration startup check</guilabel
+>.
+</para>
+<para
+>When &kde; starts, it checks several directories for changes to configuration.  Most of these changes relate to installation and uninstalling applications to the computer.  This scan extends the startup time for &kde;  and many times this scan is not needed as the configuration is current from the last time &kde; was started.  When the configuration has changed &kde; uses this scan to update various datafiles to ensure a smooth user experience.  </para>
+<warning
+><para
+>You are given the option to skip this initial scan during startup.  &kde; developers strongly suggest you do not disable this scan because of the potential to introduce instability into your system.</para>
+<para
+>If you do select this option:</para>
+<itemizedlist>
+<listitem
+><para
+>&kde; will wait to perform the scan until after &kde; has started.  This scan will be performed after the desktop is loaded.</para
+></listitem>
+<listitem
+><para
+>In the event of a crash, &kde; will not perform a backtrace because your problem may be related to the delayed scan.</para
+></listitem>
+<listitem
+><para
+>Switch this option off if any application is crashing as a delayed scan may be responsible for the crash.</para
+></listitem>
+</itemizedlist>
+</warning>
+</sect2>
+-->
+</sect1>
+
+</article>

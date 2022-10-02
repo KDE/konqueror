@@ -1,0 +1,142 @@
+# Translation of kfmclient.po to Brazilian Portuguese
+# Copyright (C) 2000, 2002, 2003, 2004, 2005, 2009, 2010, 2011, 2014, 2016, 2017, 2019 Free Software Foundation, Inc.
+#
+# Marcia Norie Nakaza <norie@conectiva.com.br>, 2000.
+# Lisiane Sztoltz <lisiane@conectiva.com.br>, 2002,2003.
+# Lisiane Sztoltz Teixeira <lisiane@conectiva.com.br>, 2004.
+# Lisiane Sztoltz Teixeira <lisiane@kdemail.net>, 2004, 2005.
+# Marcus Gama <marcus_gama@uol.com.br>, 2004.
+# André Marcelo Alvarenga <alvarenga@kde.org>, 2009, 2010, 2011, 2014, 2019.
+# Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2016, 2020.
+# Aracele Torres <aracele@kde.org>, 2017.
+msgid ""
+msgstr ""
+"Project-Id-Version: kfmclient\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"PO-Revision-Date: 2020-03-10 13:40-0300\n"
+"Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
+"Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 19.12.2\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Aracele Torres"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "aracele@kde.org"
+
+#: kfmclient.cpp:49
+#, kde-format
+msgid "kfmclient"
+msgstr "kfmclient"
+
+#: kfmclient.cpp:57
+#, kde-format
+msgid "KDE tool for opening URLs from the command line"
+msgstr "Ferramenta para abrir URLs a partir da linha de comando"
+
+#: kfmclient.cpp:65
+#, kde-format
+msgid "Non interactive use: no message boxes"
+msgstr "Uso não-interativo: sem caixas de mensagem"
+
+#: kfmclient.cpp:67
+#, kde-format
+msgid "Show available commands"
+msgstr "Mostrar os comandos disponíveis"
+
+#: kfmclient.cpp:69
+#, kde-format
+msgid "Command (see --commands)"
+msgstr "Comando (ver --commands)"
+
+#: kfmclient.cpp:71
+#, kde-format
+msgid "Arguments for command"
+msgstr "Parâmetros para o comando"
+
+#: kfmclient.cpp:73
+#, kde-format
+msgid "The files/URLs opened by the application will be deleted after use"
+msgstr "Os arquivos/URLs abertos pela aplicação serão deletados após o uso"
+
+#: kfmclient.cpp:81
+#, kde-format
+msgid ""
+"\n"
+"Syntax:\n"
+msgstr ""
+"\n"
+"Sintaxe:\n"
+
+#: kfmclient.cpp:82
+#, kde-format
+msgid ""
+"  kfmclient openURL 'url' ['mimetype']\n"
+"            # Opens a window showing 'url'.\n"
+"            #  'url' may be a relative path\n"
+"            #   or file name, such as . or subdir/\n"
+"            #   If 'url' is omitted, $HOME is used instead.\n"
+"\n"
+msgstr ""
+"  kfmclient openURL 'url' ['mimetype']\n"
+"            # Abre uma janela exibindo uma 'url'.\n"
+"            #  'url' pode ser um caminho relativo \n"
+"            #   ou nome de arquivo, como . ou subpasta/\n"
+"            #   Se a 'url' é omitida, usa-se $HOME.\n"
+"\n"
+
+#: kfmclient.cpp:87
+#, kde-format
+msgid ""
+"            # If 'mimetype' is specified, it will be used to determine the\n"
+"            #   component that Konqueror should use. For instance, set it "
+"to\n"
+"            #   text/html for a web page, to make it appear faster\n"
+"\n"
+msgstr ""
+"            # Se o 'mimetype' for especificado, ele será usado para "
+"determinar o\n"
+"            #   componente que o Konqueror deve usar. Por exemplo, configure-"
+"o para\n"
+"            #   text/html para um site, para que ele apareça mais depressa.\n"
+"\n"
+
+#: kfmclient.cpp:91
+#, kde-format
+msgid ""
+"  kfmclient newTab 'url' ['mimetype']\n"
+"            # Same as above but opens a new tab with 'url' in an existing "
+"Konqueror\n"
+"            #   window on the current active desktop if possible.\n"
+"\n"
+msgstr ""
+"  kfmclient newTab 'url' ['mimetype']\n"
+"            # O mesmo que acima, mas abre uma nova aba com a 'url' em uma "
+"janela do Konqueror existente \n"
+"            #   na área de trabalho atual ativa, se possível.\n"
+"\n"
+
+#: kfmclient.cpp:271
+#, kde-format
+msgid "Syntax error, not enough arguments\n"
+msgstr "Erro de sintaxe, parâmetros insuficientes\n"
+
+#: kfmclient.cpp:275
+#, kde-format
+msgid "Syntax error, too many arguments\n"
+msgstr "Erro de sintaxe, muitos parâmetros\n"
+
+#: kfmclient.cpp:324
+#, kde-format
+msgid "Syntax error, unknown command '%1'\n"
+msgstr "Erro de sintaxe, comando desconhecido '%1'\n"

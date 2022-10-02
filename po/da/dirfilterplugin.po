@@ -1,0 +1,98 @@
+# Danish translation of dirfilterplugin
+# Copyright (C).
+#
+# Erik Kjær Pedersen <erik@binghamton.edu>, 2001, 2002, 2003, 2005.
+# Martin Schlander <mschlander@opensuse.org>, 2008, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: dirfilterplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2012-11-17 14:39+0100\n"
+"Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
+"Language-Team: Danish <kde-i18n-doc@kde.org>\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: dirfilterplugin.cpp:120
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Hide Filter Bar"
+msgstr "Skjul filterlinje"
+
+#: dirfilterplugin.cpp:124
+#, kde-format
+msgctxt "@label:textbox"
+msgid "F&ilter:"
+msgstr "F&ilter:"
+
+#: dirfilterplugin.cpp:136
+#, kde-format
+msgctxt "@label:button"
+msgid "Filter by t&ype"
+msgstr "Filtrér efter t&ype"
+
+#: dirfilterplugin.cpp:137
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Filter items by file type."
+msgstr "Filtrér elementer efter type."
+
+#: dirfilterplugin.cpp:228
+#, kde-format
+msgctxt "@action:inmenu Tools"
+msgid "Show Filter Bar"
+msgstr "Vis filterlinje"
+
+#: dirfilterplugin.cpp:322
+#, kde-format
+msgid "Use Multiple Filters"
+msgstr "Brug flere filtre"
+
+#: dirfilterplugin.cpp:328
+#, kde-format
+msgid "Show Count"
+msgstr "Vis tæller"
+
+#: dirfilterplugin.cpp:333
+#, kde-format
+msgid "Reset"
+msgstr "Nulstil"
+
+#. i18n: ectx: Menu (tools)
+#: dirfilterplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "Værk&tøjer"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: dirfilterplugin.rc:8
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "Ekstra-værktøjslinje"
+
+#~ msgid "Allow to filter the currently displayed items by filetype."
+#~ msgstr "Tillad at filtrere de viste punkter efter filtype."
+
+#~ msgid "Only Show Items of Type"
+#~ msgstr "Vis kun punkter af type"
+
+#~ msgid "Filter Field"
+#~ msgstr "Filterfelt"
+
+#~ msgid "Clear Filter Field"
+#~ msgstr "Ryd filterfelt"
+
+#~ msgid "Clear filter field<p>Clears the content of the filter field.</p>"
+#~ msgstr "Ryd filterfelt<p>Rydder indholdet af filterfeltet.</p>"
+
+#~ msgid ""
+#~ "Enter here a text which an item in the view must contain anywhere to be "
+#~ "shown."
+#~ msgstr ""
+#~ "Indtast en tekst her som et punkt skal indeholde et eller andet sted for "
+#~ "at blive vist."

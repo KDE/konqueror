@@ -1,0 +1,309 @@
+# Malay translation.
+# FIRST AUTHOR MIMOS <opensource@mimos.my>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Mimos\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"PO-Revision-Date: 2005-09-23 10:30+0800\n"
+"Last-Translator: MIMOS <opensource@mimos.my>\n"
+"Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
+"Language: ms\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=1;\n"
+
+#: imgallerydialog.cpp:37
+#, fuzzy, kde-format
+#| msgid "Create Image Gallery"
+msgctxt "@title:window"
+msgid "Create Image Gallery"
+msgstr "Cipta Galeri Imej"
+
+#: imgallerydialog.cpp:38
+#, kde-format
+msgid "Create"
+msgstr "Cipta"
+
+#: imgallerydialog.cpp:48 imgallerydialog.cpp:84
+#, kde-format
+msgid "Image Gallery for %1"
+msgstr "Image Gallery for %1"
+
+#: imgallerydialog.cpp:76
+#, kde-format
+msgid "Look"
+msgstr "Rupa"
+
+#: imgallerydialog.cpp:77
+#, kde-format
+msgid "Page Look"
+msgstr "Rupa  Halaman"
+
+#: imgallerydialog.cpp:85
+#, kde-format
+msgid "&Page title:"
+msgstr "Tajuk &Halaman:"
+
+#: imgallerydialog.cpp:93
+#, kde-format
+msgid "I&mages per row:"
+msgstr "&Imej per baris:"
+
+#: imgallerydialog.cpp:95
+#, kde-format
+msgid "Show image file &name"
+msgstr "Tayang &nama fail imej"
+
+#: imgallerydialog.cpp:99
+#, kde-format
+msgid "Show image file &size"
+msgstr "Tayang &saiz fail imej"
+
+#: imgallerydialog.cpp:103
+#, kde-format
+msgid "Show image &dimensions"
+msgstr "Tayang &dimensi imej"
+
+#: imgallerydialog.cpp:114
+#, kde-format
+msgid "Fon&t name:"
+msgstr "Nama &fon:"
+
+#: imgallerydialog.cpp:122
+#, kde-format
+msgid "Font si&ze:"
+msgstr "&Saiz fon:"
+
+#: imgallerydialog.cpp:126
+#, kde-format
+msgid "&Foreground color:"
+msgstr "Warna &latar depan:"
+
+#: imgallerydialog.cpp:130
+#, kde-format
+msgid "&Background color:"
+msgstr "Warna &latar belakang:"
+
+#: imgallerydialog.cpp:136 imgallerydialog.cpp:137
+#, kde-format
+msgid "Folders"
+msgstr "Folder"
+
+#: imgallerydialog.cpp:145
+#, kde-format
+msgid "&Save to HTML file:"
+msgstr "&Simpan dalam fail HTML:"
+
+#: imgallerydialog.cpp:147
+#, fuzzy, kde-format
+#| msgid "<p>The name of the HTML file this gallery will be saved to."
+msgid "<p>The name of the HTML file this gallery will be saved to.</p>"
+msgstr "<p> Nama fail HTML galeri ini akan disimpan dalam."
+
+#: imgallerydialog.cpp:150
+#, kde-format
+msgid "&Recurse subfolders"
+msgstr "&Subfolder rekursi"
+
+#: imgallerydialog.cpp:152
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>Whether subfolders should be included for the image gallery creation "
+#| "or not."
+msgid ""
+"<p>Whether subfolders should be included for the image gallery creation or "
+"not.</p>"
+msgstr ""
+"<p>Sama ada subfolder perlu dimasukkan untuk penciptaan galeri imej atau "
+"tidak."
+
+#: imgallerydialog.cpp:163
+#, kde-format
+msgid "Endless"
+msgstr "Tidak henti-henti"
+
+#: imgallerydialog.cpp:165
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>You can limit the number of folders the image gallery creator will "
+#| "traverse to by setting an upper bound for the recursion depth."
+msgid ""
+"<p>You can limit the number of folders the image gallery creator will "
+"traverse to by setting an upper bound for the recursion depth.</p>"
+msgstr ""
+"<p>Anda boleh mengehadkan bilangan folder yang akan disusur oleh pencipta "
+"galeri imej dengan mengeset had atas bagi kedalaman rekursi."
+
+#: imgallerydialog.cpp:168
+#, kde-format
+msgid "Rec&ursion depth:"
+msgstr "Kedalaman &rekursi:"
+
+#: imgallerydialog.cpp:172
+#, kde-format
+msgid "Copy or&iginal files"
+msgstr "Salin fail &asal"
+
+#: imgallerydialog.cpp:174
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>This makes a copy of all images and the gallery will refer to these "
+#| "copies instead of the original images."
+msgid ""
+"<p>This makes a copy of all images and the gallery will refer to these "
+"copies instead of the original images.</p>"
+msgstr ""
+"<p>Ini akan membuat sesalinan bagi semua imej dan galeri akan merujuk "
+"salinan ini dan bukannya imej asal."
+
+#: imgallerydialog.cpp:179
+#, kde-format
+msgid "Use &comment file"
+msgstr "Guna fail &komen"
+
+#: imgallerydialog.cpp:181
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>If you enable this option you can specify a comment file which will be "
+#| "used for generating subtitles for the images.<p>For details about the "
+#| "file format please see the \"What's This?\" help below."
+msgid ""
+"<p>If you enable this option you can specify a comment file which will be "
+"used for generating subtitles for the images.</p><p>For details about the "
+"file format please see the \"What's This?\" help below.</p>"
+msgstr ""
+"<p>Jika anda aktifkan opsyen ini, anda boleh nyatakan fail komen yang akan "
+"digunakan untuk menghasilkan subtajuk bagi imej.<p>Untuk rincian tentang "
+"format fail, sila lihat bantuan \"Ini Apa?\" di bawah."
+
+#: imgallerydialog.cpp:190
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>You can specify the name of the comment file here. The comment file "
+#| "contains the subtitles for the images. The format of this file is:"
+#| "<p>FILENAME1:<br>Description<br><br>FILENAME2:<br>Description<br><br>and "
+#| "so on"
+msgid ""
+"<p>You can specify the name of the comment file here. The comment file "
+"contains the subtitles for the images. The format of this file is:</"
+"p><p>FILENAME1:<br />Description<br /><br />FILENAME2:<br />Description<br /"
+"><br />and so on</p>"
+msgstr ""
+"<p>Anda boleh nyatakan nama fail arahan di sini. Fail arahan mengandungi "
+"subtajuk untuk imej. Format fail ini ialah:<p>FILENAME1:"
+"<br>Huraian<br><br>FILENAME2:<br>Huraian<br><br>dan sebagainya"
+
+#: imgallerydialog.cpp:200
+#, kde-format
+msgid "Comments &file:"
+msgstr "&Fail komen:"
+
+#: imgallerydialog.cpp:210 imgallerydialog.cpp:211
+#, kde-format
+msgid "Thumbnails"
+msgstr "Thumbnails"
+
+#: imgallerydialog.cpp:224
+#, kde-format
+msgid "Image f&ormat:"
+msgstr ""
+
+#: imgallerydialog.cpp:232
+#, kde-format
+msgid "Thumbnail size:"
+msgstr "Saiz thumbnail:"
+
+#: imgallerydialog.cpp:235
+#, kde-format
+msgid "&Set different color depth:"
+msgstr "&Setkan kedalaman warna yang berbeza:"
+
+#: imgallerydialog.cpp:246
+#, kde-format
+msgid "Color depth:"
+msgstr ""
+
+#: imgalleryplugin.cpp:52
+#, kde-format
+msgid "&Create Image Gallery..."
+msgstr "&Cipta Galeri Imej..."
+
+#: imgalleryplugin.cpp:62
+#, kde-format
+msgid "Could not create the plugin, please report a bug."
+msgstr "Tidak dapat mencipta plugin, laporkan pepijat."
+
+#: imgalleryplugin.cpp:68
+#, kde-format
+msgid "Creating an image gallery works only on local folders."
+msgstr "Mencipta galeri imej yang berfungsi hanya terhadap folder setempat."
+
+#: imgalleryplugin.cpp:88
+#, kde-format
+msgid "Creating thumbnails"
+msgstr "Mencipta thumbnails"
+
+#: imgalleryplugin.cpp:111 imgalleryplugin.cpp:275
+#, fuzzy, kde-format
+#| msgid "Couldn't create folder: %1"
+msgid "Could not create folder: %1"
+msgstr "Tidak dapat mencipta folder: %1"
+
+#: imgalleryplugin.cpp:173
+#, kde-format
+msgid "<i>Number of images</i>: %1"
+msgstr "<i>Bilangan imej</i>: %1"
+
+#: imgalleryplugin.cpp:174
+#, kde-format
+msgid "<i>Created on</i>: %1"
+msgstr "<i>Dicipta dalam</i>: %1"
+
+#: imgalleryplugin.cpp:179
+#, kde-format
+msgid "<i>Subfolders</i>:"
+msgstr "<i>Subfolder</i>:"
+
+#: imgalleryplugin.cpp:212
+#, kde-format
+msgid ""
+"Created thumbnail for: \n"
+"%1"
+msgstr ""
+"Mencipta thumbnail untuk: \n"
+"%1"
+
+#: imgalleryplugin.cpp:215
+#, kde-format
+msgid ""
+"Creating thumbnail for: \n"
+"%1\n"
+" failed"
+msgstr ""
+"Mencipta thumbnail untuk: \n"
+"%1\n"
+"gagal"
+
+#: imgalleryplugin.cpp:230
+#, fuzzy, kde-format
+#| msgid "KB"
+msgid "KiB"
+msgstr "KB"
+
+#: imgalleryplugin.cpp:344 imgalleryplugin.cpp:439
+#, fuzzy, kde-format
+#| msgid "Couldn't open file: %1"
+msgid "Could not open file: %1"
+msgstr "Tidak dapat membuka: %1"
+
+#. i18n: ectx: Menu (tools)
+#: kimgallery.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr ""
+
+#~ msgid "Image format f&or the thumbnails:"
+#~ msgstr "Format imej &untuk thumbnails:"

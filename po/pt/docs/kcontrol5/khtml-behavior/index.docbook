@@ -1,0 +1,120 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Portuguese "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="khtml-behavior" lang="&language;">
+<articleinfo>
+<title
+>Navegação na Web</title>
+<authorgroup>
+<author
+>&Krishna.Tateneni; &Krishna.Tateneni.mail;</author>
+<othercredit role="translator"
+><firstname
+>José</firstname
+><surname
+>Pires</surname
+><affiliation
+><address
+><email
+>zepires@gmail.com</email
+></address
+></affiliation
+><contrib
+>Tradução</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2016-11-08</date>
+<releaseinfo
+>Aplicações 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Systemsettings</keyword>
+<keyword
+>konqueror</keyword>
+<keyword
+>navegação</keyword>
+</keywordset>
+
+</articleinfo>
+<sect1 id="konq-browsing">
+<title
+>Navegação na Web</title>
+
+<para
+>O módulo do Navegador &konqueror; do &systemsettings; permite-lhe seleccionar várias opções da aparência e comportamento do &konqueror;, o navegador Web integrado do &kde;.</para>
+
+<para
+>Se a opção <guilabel
+>Perguntar o nome e a pasta ao adicionar os favoritos</guilabel
+> estiver assinalada, o &konqueror; irá permitir que você altere o título do favorito e escolha uma pasta na qual o irá guardar, quando adicionar um novo favorito.</para>
+
+<para
+>Active a opção <guilabel
+>Mostrar apenas os favoritos marcados na barra de favoritos</guilabel
+> para que o &konqueror; mostre apenas os favoritos da barra de favoritos que tenha marcado para o efeito no editor de favoritos.</para>
+
+<para
+>A opção seguinte que poderá activar nesta página é a <guilabel
+>Completação de Formulários</guilabel
+>. Se seleccionar esta opção, o &konqueror; tentar-se-á lembrar do que você preencheu nos campos do formulário e preenchê-lo com os valores anteriormente utilizados por si.</para>
+
+<para
+>Poderá configurar o número de itens do formulário que o &konqueror; tentará recordar com a barra deslizante <guilabel
+>Máximo de completações</guilabel
+>.</para>
+
+<note
+><para
+>Claro que tudo o que o &konqueror; preenche num formulário pode ser editado por si antes de submeter o formulário!</para
+></note>
+
+<para
+>A próxima opção é <guilabel
+>Mudar o cursor sobre as ligações</guilabel
+>. Se esta opção estiver seleccionada, o aspecto do cursor irá mudar (normalmente para uma mão) quando passar por cima de uma hiperligação. Isto facilita a identificação de ligações, especialmente quando estas estão sob a forma de imagens.</para>
+
+<para
+>Se a opção <guilabel
+>O botão do meio abre o URL na selecção</guilabel
+> estiver assinalada, poderá abrir o &URL; na selecção, carregando para tal com o botão do meio do rato numa janela do &konqueror;.</para>
+
+<para
+>Como funcionalidade de conveniência, se você activar o <guilabel
+>Botão direito para histórico</guilabel
+>, então ao carregar numa área em branco (&ie; sem ser uma ligação) na janela do &konqueror;, este comportar-se-á como se tivesse carregado no botão <guiicon
+>Recuar</guiicon
+> da barra de ferramentas.</para>
+
+<para
+>Com a opção <guilabel
+>Permitir o recarregamento/redireccionamento automático retardado</guilabel
+>, irá permitir às páginas Web que o enviem para outra página sem a sua interacção. Em muitos dos casos, isto é muito útil. Por exemplo, se a página Web mudou para outro &URL;. Muitos administradores Web, nesta situação, irão pôr um página no local antigo, a indicar-lhe que a página mudou de local e que poderá querer alterar o seu favorito, mudando-o automaticamente para o novo sítio Web. Contudo, essa funcionalidade poderá ser confusa ou mesmo incómoda, pelo que poderá querer desactivá-la.</para>
+
+<para
+><guilabel
+>Activar a activação das Teclas de Acesso com a tecla &Ctrl;</guilabel
+>: Se carregar na tecla &Ctrl;, ao ver as páginas Web, irá activar as Teclas de Acesso. Se desligar esta opção, irá desactivar esta funcionalidade de acessibilidade. O &konqueror; precisa de ser reiniciado para que esta alteração faça efeito.</para>
+
+<para
+><guilabel
+>Enviar o cabeçalho DNT para indicar às páginas Web que não quer ser seguido</guilabel
+>. Assinale esta opção se quiser informar uma página Web de que não deseja ver os seus hábitos na Web registados. </para>
+
+<para
+><guilabel
+>Oferecer-se para gravar as senhas das páginas Web</guilabel
+>. Desligue esta opção para não ser perguntado se deseja gravar as senhas das páginas Web </para>
+</sect1>
+
+</article>

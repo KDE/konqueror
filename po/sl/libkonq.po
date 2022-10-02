@@ -1,0 +1,232 @@
+# translation of libkonq.po to Slovenian
+# Translation of libkonq.po to Slovenian
+# SLOVENIAN TRANSLATION OF LIBKONQ.
+# Copyright (C) 2001, 2003, 2004, 2005, 2007 Free Software Foundation, Inc.
+# $Id: libkonq.po 1631308 2022-08-15 01:30:44Z scripty $
+# $Source$
+#
+# Roman Maurer <roman.maurer@hermes.si>, 2000.
+# Gregor Rakar <gregor.rakar@kiss.si>, 2003, 2004, 2005.
+# Jure Repinc <jlp@holodeck1.com>, 2005, 2008, 2009, 2010, 2011.
+# Andrej Vernekar <andrej.vernekar@moj.net>, 2007, 2011.
+# Andrej Mernik <andrejm@ubuntu.si>, 2013.
+# Matjaž Jeran <matjaz.jeran@amis.net>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2020-12-05 08:54+0100\n"
+"Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
+"Language-Team: Slovenian <lugos-slo@lugos.si>\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 20.08.1\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "&Odpri"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "Ustvari mapo..."
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "Obnovi"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr "Prikaži izvorno mapo"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr "Prikaži izvorno datoteko"
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "Izprazni Smeti"
+
+#: src/konq_popupmenu.cpp:312
+#, kde-format
+msgid "&Configure Trash Bin"
+msgstr "Nastavi Smeti"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "Zaznamuj to stran"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "Zaznamuj to mesto"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "Zaznamuj to mapo"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "Zaznamuj to povezavo"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "Zaznamuj to datoteko"
+
+#: src/konq_popupmenu.cpp:379
+#, kde-format
+msgid "Preview In"
+msgstr "Predogled v"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr "Odpri terminal tukaj"
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "Lastnosti"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy To"
+#~ msgstr "Kopiraj v"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "Premakni v"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "Domača mapa"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "Korenska mapa"
+
+#~ msgctxt "@title:menu in Copy To or Move To submenu"
+#~ msgid "Browse..."
+#~ msgstr "Prebrskaj ..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "Kopiraj sem"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "Premakni sem"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "Mape ne morete spustiti same nase"
+
+#~ msgid "File name for dropped contents:"
+#~ msgstr "Ime datoteke za spuščeno vsebino:"
+
+#~ msgid "&Move Here"
+#~ msgstr "Pre&makni sem"
+
+#~ msgid "&Copy Here"
+#~ msgstr "&Kopiraj sem"
+
+#~ msgid "&Link Here"
+#~ msgstr "Po&veži sem"
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "Nastavi kot sliko &ozadja"
+
+#~ msgid "C&ancel"
+#~ msgstr "P&rekliči"
+
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "Ustvari mapo"
+
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "Vnesite drugačno ime"
+
+#~ msgid ""
+#~ "The name \"%1\" starts with a dot, so the directory will be hidden by "
+#~ "default."
+#~ msgstr "Ime »%1« se začne s piko, zato bo mapa privzeto skrita."
+
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "Ustvarim skrito mapo?"
+
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "Nova mapa"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "Nova mapa"
+
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "Vnesite ime mape:"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "Prilepi mapo"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One File"
+#~ msgstr "Prilepi datoteko"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Item"
+#~ msgid_plural "Paste %1 Items"
+#~ msgstr[0] "Prilepi %1 predmetov"
+#~ msgstr[1] "Prilepi %1 predmet"
+#~ msgstr[2] "Prilepi %1 predmeta"
+#~ msgstr[3] "Prilepi %1 predmete"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste Clipboard Contents..."
+#~ msgstr "Prilepi vsebino odložišča ..."
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste"
+#~ msgstr "Prilepi"
+
+#~ msgid ""
+#~ "Restores this file or directory, back to the location where it was "
+#~ "deleted from initially"
+#~ msgstr ""
+#~ "Obnovi to datoteko ali mapo nazaj na mesto, s katere je bila prvotno "
+#~ "izbrisana"
+
+#~ msgid ""
+#~ "Opens a new file manager window showing the target of this link, in its "
+#~ "parent directory."
+#~ msgstr ""
+#~ "Odpre novo okno upravljalnika datotek, kjer bo prikazan cilj te povezave, "
+#~ "v njegovi nadrejeni mapi."
+
+#~ msgid "Share"
+#~ msgstr "Souporaba"
+
+#~ msgctxt "@info"
+#~ msgid "Close"
+#~ msgstr "Zapri"
+
+#~ msgid "Close"
+#~ msgstr "Zapri"
+
+#~ msgid "Error: %1"
+#~ msgstr "Napaka: %1"

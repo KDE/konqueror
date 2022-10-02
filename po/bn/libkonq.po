@@ -1,0 +1,354 @@
+# translation of libkonq.po to Bengali
+# Deepayan Sarkar <deepayan@bengalinux.org>, 2004, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2006-01-04 13:13-0600\n"
+"Last-Translator: Deepayan Sarkar <deepayan@bengalinux.org>\n"
+"Language-Team: Bengali <kde-translation@bengalinux.org>\n"
+"Language: bn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9.1\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "খোলো (&খ)"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "ফোল্ডা&র তৈরী করো..."
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "পূর্বাবস্থা&য় ফেরাও"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "&আবর্জনার বাক্স ফাঁকা করো"
+
+#: src/konq_popupmenu.cpp:312
+#, fuzzy, kde-format
+#| msgid "&Empty Trash Bin"
+msgid "&Configure Trash Bin"
+msgstr "&আবর্জনার বাক্স ফাঁকা করো"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "&এই পাতাটি বুকমার্ক করো"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "&এই অবস্থানটি বুকমার্ক করো"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "&এই ফোল্ডারটি বুকমার্ক করো"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "&এই লিঙ্কটি বুকমার্ক করো"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "&এই ফাইলটি বুকমার্ক করো"
+
+#: src/konq_popupmenu.cpp:379
+#, fuzzy, kde-format
+msgid "Preview In"
+msgstr "প্রাক্‌দর্শন"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "বৈশিষ্ট্যা&বলী"
+
+#, fuzzy
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "আবর্জনা ফোল্ডারে সরাও"
+
+#, fuzzy
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "নতুন ফোল্ডার"
+
+#, fuzzy
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "নতুন ফোল্ডার"
+
+#, fuzzy
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "এখানে &কপি করো"
+
+#, fuzzy
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "এখানে &সরাও"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "আপনি একটি ফোল্ডারকে তার নিজের ওপর এনে ফেলতে পারেন না"
+
+#~ msgid "&Move Here"
+#~ msgstr "এখানে &সরাও"
+
+#~ msgid "&Copy Here"
+#~ msgstr "এখানে &কপি করো"
+
+#~ msgid "&Link Here"
+#~ msgstr "&এখানে লিঙ্ক করো"
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "&ওয়ালপেপার হিসেবে বেছে নাও "
+
+#~ msgid "C&ancel"
+#~ msgstr "বাতি&ল করো"
+
+#, fuzzy
+#~| msgid "Create New"
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "নতুন তৈরি করো"
+
+#, fuzzy
+#~| msgid "Enter folder name:"
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "ফোল্ডারের নাম লিখুন:"
+
+#, fuzzy
+#~| msgid "Create New"
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "নতুন তৈরি করো"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "নতুন ফোল্ডার"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "নতুন ফোল্ডার"
+
+#, fuzzy
+#~| msgid "Enter folder name:"
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "ফোল্ডারের নাম লিখুন:"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "নতুন ফোল্ডার"
+
+#~ msgid "Share"
+#~ msgstr "শেয়ার"
+
+#~ msgid "Create New"
+#~ msgstr "নতুন তৈরি করো"
+
+#~ msgid "Link to Device"
+#~ msgstr "ডিভাইস-এ লিঙ্ক"
+
+#~ msgid "<qt>The template file <b>%1</b> does not exist.</qt>"
+#~ msgstr "<qt>টেমপ্লেট ফাইল <b>%1</b>-এর কোন অস্তিত্ব নেই।</qt>"
+
+#~ msgid "File name:"
+#~ msgstr "ফাইলের নাম:"
+
+#, fuzzy
+#~ msgctxt "@title:menu"
+#~ msgid "&Actions"
+#~ msgstr "প্রণালী (&প)"
+
+#, fuzzy
+#~| msgid "&Open With"
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With"
+#~ msgstr "খু&লতে ব্যবহার করো"
+
+#, fuzzy
+#~| msgid "&Other..."
+#~ msgctxt "@action:inmenu Open With"
+#~ msgid "&Other..."
+#~ msgstr "&অন্যান্য..."
+
+#, fuzzy
+#~| msgid "&Open With..."
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With..."
+#~ msgstr "খু&লতে ব্যবহার করো..."
+
+#, fuzzy
+#~ msgid "Open &with %1"
+#~ msgstr "%1 ব্যবহার করে খোলো"
+
+#~ msgid "Open in New &Window"
+#~ msgstr "নতুন &উইণ্ডোয় খোলো"
+
+#~ msgid "Open the trash in a new window"
+#~ msgstr "আবর্জনার বাক্স একটি নতুন উইণ্ডোয় খোলো"
+
+#~ msgid "Open the medium in a new window"
+#~ msgstr "মিডিয়াম একটি নতুন উইণ্ডোয় খোলো"
+
+#~ msgid "Open the document in a new window"
+#~ msgstr "নথী নতুন একটি উইণ্ডোয় খোলো"
+
+#, fuzzy
+#~ msgid "Deleting"
+#~ msgstr "ফাইলগুলি মুছে ফেলো"
+
+#~ msgid "Und&o"
+#~ msgstr "বাতি&ল করো"
+
+#~ msgid "Und&o: Copy"
+#~ msgstr "বাতি&ল করো: কপি"
+
+#~ msgid "Und&o: Link"
+#~ msgstr "বাতি&ল করো: লিঙ্ক"
+
+#~ msgid "Und&o: Move"
+#~ msgstr "বাতি&ল করো: সরাও"
+
+#, fuzzy
+#~ msgid "Und&o: Rename"
+#~ msgstr "বাতি&ল করো: লিঙ্ক"
+
+#~ msgid "Und&o: Trash"
+#~ msgstr "বাতি&ল করো: আবর্জনায় পাঠানো"
+
+#~ msgid "Und&o: Create Folder"
+#~ msgstr "বাতি&ল করো: ফোল্ডার তৈরি করা"
+
+#, fuzzy
+#~ msgid "Do you really want to delete this item?"
+#~ msgid_plural "Do you really want to delete these %1 items?"
+#~ msgstr[0] "আপনি সত্যিই এই বস্তুটি মুছে ফেলতে চান?"
+#~ msgstr[1] "আপনি সত্যিই এই %1-টি বস্তু মুছে ফেলতে চান?"
+
+#~ msgid "Delete Files"
+#~ msgstr "ফাইলগুলি মুছে ফেলো"
+
+#, fuzzy
+#~ msgid "Do you really want to move this item to the trash?"
+#~ msgid_plural "Do you really want to move these %1 items to the trash?"
+#~ msgstr[0] "আপনি সত্যিই এই বস্তুটি আবর্জনার বাক্সে পাঠাতে চান?"
+#~ msgstr[1] "আপনি সত্যিই এই %1-টি বস্তু আবর্জনার বাক্সে পাঠাতে চান?"
+
+#~ msgid "Move to Trash"
+#~ msgstr "আবর্জনা ফোল্ডারে সরাও"
+
+#~ msgctxt "Verb"
+#~ msgid "&Trash"
+#~ msgstr "&বর্জন করো"
+
+#, fuzzy
+#~ msgid "Und&o: %1"
+#~ msgstr "বাতি&ল করো"
+
+#~ msgid "Background Settings"
+#~ msgstr "পটভূমি সেটিংস"
+
+#~ msgid "Background"
+#~ msgstr "পটভূমি"
+
+#~ msgid "Co&lor:"
+#~ msgstr "&রঙ:"
+
+#~ msgid "&Picture:"
+#~ msgstr "&ছবি"
+
+#~ msgid "Preview"
+#~ msgstr "প্রাক্‌দর্শন"
+
+#~ msgid "None"
+#~ msgstr "কিছু না"
+
+#~ msgid "Enlarge Icons"
+#~ msgstr "আইকন বড় করো"
+
+#~ msgid "Shrink Icons"
+#~ msgstr "আইকন ছোট করো"
+
+#~ msgid "&Default Size"
+#~ msgstr "ডিফল্ট মা&প"
+
+#~ msgid "&Huge"
+#~ msgstr "বিশা&ল"
+
+#~ msgid "&Very Large"
+#~ msgstr "&আরো বড়"
+
+#~ msgid "&Large"
+#~ msgstr "&বড়"
+
+#~ msgid "&Medium"
+#~ msgstr "[&ম]মাঝারি"
+
+#~ msgid "&Small"
+#~ msgstr "ছো&ট"
+
+#~ msgid "&Tiny"
+#~ msgstr "[&ক]ক্ষুদ্র"
+
+#~ msgid "Configure Background..."
+#~ msgstr "পটভূমি কনফিগার করো..."
+
+#~ msgid "Allows choosing of background settings for this view"
+#~ msgstr "এই ভিউ-এর পটভূমির পছন্দসমূহ বেছে নিতে দেয়"
+
+#~ msgid "<p>You do not have enough permissions to read <b>%1</b></p>"
+#~ msgstr "<p>আপনার <b>%1</b> পড়ার জন্য যথেষ্ট অনুমতি নেই।</p>"
+
+#~ msgid "<p><b>%1</b> does not seem to exist anymore</p>"
+#~ msgstr "<p><b>%1</b> আর আছে বলে মনে হচ্ছে না</p>"
+
+#~ msgid "Search result: %1"
+#~ msgstr "সন্ধান ফলাফল: %1"
+
+#~ msgid "Do you really want to shred this item?"
+#~ msgid_plural "Do you really want to shred these %1 items?"
+#~ msgstr[0] "আপনি সত্যিই এই বস্তুটি ধ্বংস করতে চান?"
+#~ msgstr[1] "আপনি সত্যিই এই %1-টি বস্তু ধ্বংস করতে চান?"
+
+#~ msgid "Shred Files"
+#~ msgstr "ফাইল ধ্বংস করো"
+
+#~ msgid "Shred"
+#~ msgstr "ধ্বংস"

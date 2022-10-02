@@ -1,0 +1,235 @@
+# translation of libkonq.po to Macedonian
+#
+# Copyright (C) 2000,2002,2003, 2004, 2005, 2006, 2007, 2009 Free Software Foundation, Inc.
+#
+# Danko Ilik <danko@mindless.com>, 2000,2002,2003.
+# Novica Nakov <novica@bagra.net.mk>, 2003.
+# Igor Popovski <igor@popovski.com.mk>, 2003.
+# Bozidar Proevski <bobibobi@freemail.com.mk>, 2004,2005, 2006, 2007, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2009-06-21 22:10+0200\n"
+"Last-Translator: Bozidar Proevski <bobibobi@freemail.com.mk>\n"
+"Language-Team: Macedonian <mkde-l10n@lists.sourceforge.net>\n"
+"Language: mk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: Plural-Forms: nplurals=3; plural=n%10==1 ? 0 : n%10==2 ? 1 : "
+"2;\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "&Отвори"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "Создај &папка..."
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "&Врати назад"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr "Прикажи ја оригиналната папка"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr "Прикажи ја оригиналната датотека"
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "Испразни ја &Корпата"
+
+#: src/konq_popupmenu.cpp:312
+#, fuzzy, kde-format
+#| msgid "&Empty Trash Bin"
+msgid "&Configure Trash Bin"
+msgstr "Испразни ја &Корпата"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "О&бележи ја страницава"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "О&бележи ја локацијава"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "О&бележи ја папкава"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "О&бележи ја врскава"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "О&бележи ја датотекава"
+
+#: src/konq_popupmenu.cpp:379
+#, kde-format
+msgid "Preview In"
+msgstr "Преглед во"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "Својс&тва"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy To"
+#~ msgstr "Копирај во"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "Премести во"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "Домашна папка"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "Коренска папка"
+
+#~ msgctxt "@title:menu in Copy To or Move To submenu"
+#~ msgid "Browse..."
+#~ msgstr "Прелистај..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "Копирај тука"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "Премести тука"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "Не може да ја пуштите папката самата врз себе си"
+
+#~ msgid "File name for dropped contents:"
+#~ msgstr "Име на датотека за пуштени содржини:"
+
+#~ msgid "&Move Here"
+#~ msgstr "&Премести тука"
+
+#~ msgid "&Copy Here"
+#~ msgstr "&Копирај тука"
+
+#~ msgid "&Link Here"
+#~ msgstr "&Врска тука"
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "Постави како та&пет"
+
+#~ msgid "C&ancel"
+#~ msgstr "О&ткажи"
+
+#, fuzzy
+#~| msgid "Create New"
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "Креирај ново"
+
+#, fuzzy
+#~| msgid "Enter folder name:"
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "Внесете име на папка:"
+
+#, fuzzy
+#~| msgid "Create New"
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "Креирај ново"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "Нова папка"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "Нова папка"
+
+#, fuzzy
+#~| msgid "Enter folder name:"
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "Внесете име на папка:"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "Вметни една папка"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One File"
+#~ msgstr "Вметни една датотека"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Item"
+#~ msgid_plural "Paste %1 Items"
+#~ msgstr[0] "Вметни %1 елемент"
+#~ msgstr[1] "Вметни %1 елементи"
+#~ msgstr[2] "Вметни %1 елементи"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste Clipboard Contents..."
+#~ msgstr "Вметни содржина на табла со исечоци..."
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste"
+#~ msgstr "Вметни"
+
+#~ msgid ""
+#~ "Restores this file or directory, back to the location where it was "
+#~ "deleted from initially"
+#~ msgstr ""
+#~ "Ја враќа датотеката или папката назад на местото од кај што била избришана"
+
+#~ msgid ""
+#~ "Opens a new file manager window showing the target of this link, in its "
+#~ "parent directory."
+#~ msgstr ""
+#~ "Отвора нов прозорец за менаџирање датотеки што ја покажува целта на "
+#~ "врската, во нејзината родителска папка"
+
+#~ msgid "Share"
+#~ msgstr "Дели"
+
+#~ msgid "Create New"
+#~ msgstr "Креирај ново"
+
+#~ msgid "Link to Device"
+#~ msgstr "Врска до уред"
+
+#~ msgid "<qt>The template file <b>%1</b> does not exist.</qt>"
+#~ msgstr "<qt>Датотеката со шаблони <b>%1</b> не постои.</qt>"
+
+#~ msgid "File name:"
+#~ msgstr "Име на датотека:"

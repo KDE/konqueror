@@ -1,0 +1,357 @@
+<chapter id="sidebar">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+&traducteurJoelleCornavin; &traducteurGerardDelafond;&traducteurLudovicGrossard; 
+</authorgroup>
+
+<date
+>22/11/2011</date>
+<releaseinfo
+>&kde; 4.8</releaseinfo>
+</chapterinfo>
+
+<title
+>La barre latérale</title>
+
+<para
+>La barre latérale apparaît comme une vue séparée à gauche de la fenêtre de &konqueror;. Il s'exécute depuis le menu <menuchoice
+><guimenu
+>Configuration</guimenu
+><guimenuitem
+>Afficher : Barre latérale</guimenuitem
+></menuchoice
+>. On peut également l'activer et la désactiver avec la touche <keycap
+>F9</keycap
+>.</para>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="dirtree.png"/></imageobject>
+<textobject>
+<phrase
+>Avec la barre latérale</phrase
+>  
+</textobject>
+</mediaobject>
+
+<para
+>Elle contient un certain nombre de pages à onglets. Cliquez avec le &BGS; sur l'icône d'un onglet pour afficher cette page. Un clic <mousebutton
+>gauche</mousebutton
+> sur l'icône de la page visible réduit la barre latérale de façon que seules les icônes d'onglets soient visibles.</para>
+<variablelist>
+
+<varlistentry>
+<term
+><guilabel
+>Signets</guilabel
+></term>
+<listitem
+><para
+>Cette page montre un affichage arborescent de vos signets. Cliquez avec le &BGS; sur un élément de menu pour l'ouvrir dans l'affichage principal.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Historique</guilabel
+></term>
+<listitem
+><para
+>Cette page montre un affichage arborescent de votre historique de navigation. Un clic <mousebutton
+>gauche</mousebutton
+> sur un élément l'ouvre dans une nouvelle fenêtre de &konqueror; en cliquant avec le &BDS; et en choisissant <guimenuitem
+>Ouvrir dans une nouvelle fenêtre</guimenuitem
+> dans le menu déroulant.</para>
+<para
+>Vous pouvez supprimer un élément de l'historique en cliquant avec le &BDS; dessus et en choisissant <guimenuitem
+>Supprimer l'entrée</guimenuitem
+>. Le fait de choisir <guimenuitem
+>Effacer l'historique</guimenuitem
+> efface la totalité de l'historique.</para>
+<para
+>Le menu contextuel obtenu lors d'un clic <mousebutton
+>droit</mousebutton
+> sur n'importe quelle saisie dans la page d'historique offre également la possibilité de choisir si l'historique entier est trié par nom ou par date. </para>
+<para
+>Le choix de <guimenuitem
+>Configuration...</guimenuitem
+> dans ce menu contextuel fait apparaître le module de configuration <guilabel
+>Historique de la barre latérale</guilabel
+>. Celui-ci permet de définir la taille maximale de votre historique et de fixer un délai au bout duquel les éléments seront automatiquement supprimés. Vous pouvez également définir différentes polices pour les nouvelles et les anciennes &URL;s. La case à cocher <guilabel
+>Bulles d'aide détaillées</guilabel
+> détermine la quantité d'informations est affichée lorsque vous faites passer le pointeur de la souris sur un élément de la page d'historique.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Dossier personnel</guilabel
+></term>
+<listitem
+><para
+>Cette page montre un affichage arborescent des sous-dossiers de votre dossier utilisateur. Notez que les dossiers <quote
+>cachés</quote
+> (ceux dont les noms commencent par un point) ne sont pas affichés. Cliquez avec le &BGS; sur un élément pour l'ouvrir dans la fenêtre principale, ou cliquez avec le &BDS; pour afficher un menu déroulant permettant d'ouvrir le sous-dossier dans une nouvelle fenêtre ou en tant que nouvelle page à onglet de la fenêtre principale. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Réseau</guilabel
+></term>
+<listitem
+><para
+>Cette page présente un affichage arborescent de vos connexions réseau importantes, bien que les dossiers locaux puissent également être inclus. Ici aussi, vous pouvez cliquer avec le &BGS; sur un élément pour l'ouvrir dans la fenêtre principale ou un clic <mousebutton
+>droit</mousebutton
+> pour faire apparaître un menu offrant une vaste palette de possibilités.</para>
+<para
+>Les dossiers affichés dans la page <guilabel
+>Réseau</guilabel
+> sont contenus dans le dossier <filename class="directory"
+> ~/.kde/share/apps/konqsidebartng/virtual_folders/remote/</filename
+>, et vous pouvez en créer de nouveaux comme vous le feriez pour n'importe quel autre sous-dossier. Les éléments placés au sein de ces dossiers sont contenus sous forme de fichiers <literal role="extension"
+>.desktop</literal
+> et peuvent être créés avec l'option <menuchoice
+><guisubmenu
+>Créer un nouveau</guisubmenu
+> <guimenuitem
+>Lien vers un URL...</guimenuitem
+></menuchoice
+> de &konqueror;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Dossier racine</guilabel
+></term>
+<listitem
+><para
+>L'arborescence <guilabel
+>Dossier racine</guilabel
+> comporte l'emplacement <filename class="directory"
+>/</filename
+> et correspond au dossier de base de tous les fichiers de votre système. Si vous développez le dossier <quote
+>Racine</quote
+>, vous trouverez un autre dossier appelé <filename class="directory"
+>root</filename
+>. Celui-ci appartient à l'administrateur système (le superutilisateur), et il s'agit de son dossier utilisateur. Vous trouverez aussi un dossier appelé <filename class="directory"
+>home</filename
+>, dans lequel vous devriez être en mesure de retrouver votre dossier utilisateur.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Services</guilabel
+></term>
+<listitem
+><para
+>Cette page fournit un accès rapide aux services suivants : </para>
+<para
+><guilabel
+>Applications</guilabel
+>, <guilabel
+>Navigateur de CD audio</guilabel
+> et <guilabel
+>Polices</guilabel
+>.</para>
+<!-- not in 4.4
+<para
+><guilabel
+>Devices</guilabel
+>. This shows your hard disc 
+partitions, floppy and &CD-ROM;. <mousebutton
+>Left</mousebutton
+> click on 
+a device or partition name to mount it and display its contents in the main 
+view.  A mounted device or partition can be unmounted by <mousebutton
+>right
+</mousebutton
+> clicking on the device name and selecting <guimenuitem
+>Unmount
+</guimenuitem
+> from the pop up menu.
+</para>
+<para
+>The <guilabel
+>LAN Browser</guilabel
+> allows you to browse other 
+machines connected to your Local Area Network.</para>
+<para
+>The <guilabel
+>Print System Browser</guilabel
+> tree gives you quick 
+access to &kde;'s print manager <application
+>Kprinter</application
+>.</para>
+-->
+</listitem>
+</varlistentry>
+<!-- begin copy from dolphin docbook-->
+<varlistentry>
+<term
+><guilabel
+>Emplacements</guilabel
+></term>
+<listitem
+><para
+>Le panneau <guilabel
+>Emplacements</guilabel
+> se situe à gauche de la fenêtre par défaut. Il affiche tous les emplacements que vous avez placés en signets. Il affiche également tous les disques ou supports attachés à l'ordinateur. </para>
+<para
+>Le moyen le plus simple pour ajouter un dossier au panneau <guilabel
+>Emplacements</guilabel
+> est de le glisser / déposer dans le panneau. De plus, vous pouvez cliquer dans le panneau avec le &BDS; et choisir <menuchoice
+><guimenuitem
+>Ajouter une entrée...</guimenuitem
+></menuchoice
+> depuis le menu contextuel. </para>
+</listitem>
+</varlistentry>
+<!-- end copy from dolphin docbook-->
+</variablelist>
+
+<para
+>Vous pouvez modifier la configuration de la barre latérale en cliquant avec le &BDS; sur la zone vide au-dessous de l'icône des onglets de la partie inférieure ou un clic <mousebutton
+>gauche</mousebutton
+> sur l'icône <guilabel
+>Bouton de configuration</guilabel
+>, celui-ci est activé depuis le menu contextuel. Cette action fait apparaître un menu comportant les options suivantes :</para>
+<variablelist>
+
+<varlistentry>
+<term
+><guisubmenu
+>Nouveau</guisubmenu
+></term>
+<listitem
+><para
+>Cette option vous permet d'ajouter de nouvelles pages à onglets à la barre latérale. La nouvelle page peut contenir différents modules de la barre latérale, ou une nouvelle vue arborescente d'un <guimenuitem
+>dossier</guimenuitem
+>. La dernière option dans ce sous-menu vous permet de retourner à la configuration par défaut du système.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Vues multiples</guimenuitem
+></term>
+<listitem
+><para
+>Le choix de cette option scinde la barre latérale de façon à afficher deux pages à onglets à la fois.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Afficher les onglets à gauche</guimenuitem
+>, <guimenuitem
+>Afficher les onglets à droite</guimenuitem
+></term>
+<listitem
+><para
+>Cette option permet de choisir si les icônes des onglets sont affichées à gauche ou à droite de la barre latérale.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Afficher le bouton de configuration</guimenuitem
+></term>
+<listitem
+><para
+>Utilisez cette option pour afficher ou masquer l'icône <guilabel
+>Bouton de configuration</guilabel
+>.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Un clic <mousebutton
+>droit</mousebutton
+> sur une icône d'onglet fait apparaître un menu comportant les options suivantes :</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guimenuitem
+>Modifier le nom</guimenuitem
+></term>
+<listitem
+><para
+>Cette option vous permet de changer le nom de cette page.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Modifier l'URL</guimenuitem
+></term>
+<listitem
+><para
+>Cette option vous permet de modifier l'&URL; (l'emplacement) du dossier affiché dans cette page.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Modifier l'icône</guimenuitem
+></term>
+<listitem
+><para
+>Pour modifier l'icône d'un onglet.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Supprimer</guimenuitem
+></term>
+<listitem
+><para
+>Pour supprimer la page à onglets de la barre latérale.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Configurer la barre latérale</guimenuitem
+></term>
+<listitem
+><para
+>Le dernier élément vous fournit un sous-menu de configuration de la barre latérale, comme décrit précédemment.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

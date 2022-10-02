@@ -1,0 +1,121 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY nsplugins-kcontrol SYSTEM "nsplugin.docbook">
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Estonian  "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="khtml-behavior" lang="&language;">
+<articleinfo>
+<title
+>Veebilehitsemine</title>
+<authorgroup>
+<author
+>&Krishna.Tateneni; &Krishna.Tateneni.mail;</author>
+<othercredit role="translator"
+><firstname
+>Marek</firstname
+><surname
+>Laane</surname
+><affiliation
+><address
+><email
+>bald@starman.ee</email
+></address
+></affiliation
+><contrib
+>Tõlge eesti keelde</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2011-11-11</date>
+<releaseinfo
+>&kde; 4.10</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Süsteemi seadistused</keyword>
+<keyword
+>konqueror</keyword>
+<keyword
+>lehitsemine</keyword>
+</keywordset>
+
+</articleinfo>
+<sect1 id="konq-browsing">
+<title
+>Veebilehitsemine</title>
+
+<para
+>Veebilehitseja &konqueror;i moodul võimaldab seadistada &kde; integreeritud veebilehitseja &konqueror; käitumist.</para>
+
+<para
+>Valiku <guilabel
+>Järjehoidja lisamisel küsitakse nime ja kataloogi</guilabel
+> sisselülitamisel lubab &konqueror; muuta järjehoidja nime ja valida kataloogi, kuhu lisatav järjehoidja salvestatakse.</para>
+
+<para
+>Valiku <guilabel
+>Järjehoidjaribal näidatakse ainult märgitud järjehoidjaid</guilabel
+> sisselülitamisel näitab &konqueror; järjehoidjaribal ainult neid järjehoidjaid, mille oled ära märkinud järjehoidjate redaktoris.</para>
+
+<para
+>Järgmist valikut kasutades on võimalik <guilabel
+>automaatse lõpetamise lubamine vormides</guilabel
+>. Kasti ära märkides püüab &konqueror; meeles pidada vormi küsimustele antud vastuseid ning täita sobivuste korral sinu eest ka muud vormid.</para>
+
+<para
+>Seda, kui palju elemente &konqueror; peaks meeles hoidma, saab määrata kerimiskastiga <guilabel
+>Maksimaalne soovituste arv</guilabel
+></para>
+
+<note
+><para
+>Loomulikult on ka juhul, kui lased &konqueror;il enda eest vormi täita, selles võimalik enne vormi saatmist muudatusi teha!</para
+></note>
+
+<para
+>Järgmine valik on <guilabel
+>Lingil olles muudetakse kursorit</guilabel
+>. Kui see on lubatud, muutub hiirekursori kuju (tavaliselt käeks), kui ta satub hüperlingi kohale. See muudab viitade tuvastamise hõlpsamaks, mis on eriti kasulik siis, kui nad esinevad näiteks pildina.</para>
+
+<para
+>Valiku <guilabel
+>Klõps keskmise nupuga avab valitud URL-i</guilabel
+> sisselülitamisel avab &konqueror; hiire keskmise nupu klõpsu peale aknas valitud &URL;-i.</para>
+
+<para
+>Väga mugav võimalus on <guilabel
+>Parem klõps viib lehitsemise ajaloos tagasi</guilabel
+>, mis tähendab seda, et klõps hiire parema nupuga tühjal alal (&ie; mitte viidal) &konqueror;i aknas toimib, nagu oleks klõpsatud tööriistariba nupul <guiicon
+>Tagasi</guiicon
+>.</para>
+
+<para
+>Märkekast <guilabel
+>Automaatse viivitusega uuestilaadimise/suunamise lubamine</guilabel
+> lubab veebilehekülgedel saata sind ilma sinupoolse sekkumiseta uuele leheküljele. Sageli on see kasulik võimalus, näiteks kui veebilehekülg on vahetanud oma &URL;-i. Paljud veebitegijad jätavad sellisel juhul vanale aadressile lehekülje, mis teatab, et lehekülg on mujale viidud, soovitavad sul järjehoidjat redigeerida ja suunavad seejärel automaatselt uuele veebileheküljele. Kuid see võimalus võib tekitada väärkasutuse korral segadust või arusaamatust, mistõttu on ka neid, kes eelistavad selle keelata.</para>
+
+<para
+><guilabel
+>Hõlbustusklahvide lubamine &Ctrl;-klahviga</guilabel
+>: veebilehtede vaatamise ajal klahvile &Ctrl; vajutamine aktiveerib hõlbustusklahvid. Märke eemaldamine kastist lülitab selle võimaluse välja. Muudatuse rakendamiseks tuleb &konqueror; taaskäivitada.</para>
+
+<para
+><guilabel
+>DNT-päise saatmine, et veebilehed teaksid, et sa ei soovi jälgimist</guilabel
+>. Märkimisel antakse veebilehtedele teada, et sa ei soovi oma veebilehitsemise harjumuste jälgimist. </para>
+
+<para
+><guilabel
+>Veebilehekülgede paroolide salvestamise pakkumine</guilabel
+>. Märkimata jätmisel ei küsita, kas salvestada veebilehekülgede paroole </para>
+</sect1>
+
+</article>

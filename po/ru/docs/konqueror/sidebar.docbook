@@ -1,0 +1,326 @@
+<chapter id="sidebar">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>Kernel</firstname
+><surname
+>Panic</surname
+><affiliation
+><address
+><email
+>rzhevskiy@mail.ru</email
+></address
+></affiliation
+><contrib
+> Перевод на русский</contrib
+></othercredit
+><othercredit role="reviewer"
+><firstname
+>Григорий</firstname
+><surname
+>Мохин</surname
+><affiliation
+><address
+><email
+>mok@kde.ru</email
+></address
+></affiliation
+><contrib
+> Редакция русского перевода</contrib
+></othercredit
+> 
+</authorgroup>
+<date
+>2002-09-22</date
+> <releaseinfo
+>3.1</releaseinfo
+> </chapterinfo>
+
+<title
+>Панель навигации</title>
+
+<para
+>Панель навигации находится в левой части окна &konqueror;. Включить её (или отключить, если она уже включена) можно с помощью пункта меню <menuchoice
+><guimenu
+>Окно</guimenu
+><guimenuitem
+>Показать панель навигации</guimenuitem
+></menuchoice
+> или клавиши <keycap
+>F9</keycap
+>.</para>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="dirtree.png"/></imageobject>
+<textobject>
+<phrase
+>&konqueror; с включённой панелью навигации</phrase
+>  
+</textobject>
+</mediaobject>
+
+<para
+>Данная панель содержит несколько вкладок; чтобы перейти к одной из них, щёлкните по её значку. Чтобы отключить панель навигации, оставив только значки вкладок, щёлкните по значку текущей вкладки.</para>
+<variablelist>
+
+<varlistentry>
+<term
+><guilabel
+>Закладки</guilabel
+></term>
+<listitem
+><para
+>В этой вкладке отображается список закладок; чтобы открыть одну из них в главном окне, щёлкните по ней <mousebutton
+>левой</mousebutton
+> кнопкой мыши.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Журнал</guilabel
+></term>
+<listitem
+><para
+>В этой владке отображается журнал вашей работы в Интернете. Чтобы открыть один из показанных адресов в главном окне, щёлкните по нему <mousebutton
+>левой</mousebutton
+> кнопкой мыши. Чтобы открыть его в новом окне, щёлкните по нему <mousebutton
+>правой</mousebutton
+> кнопкой мыши и в появившемся меню выберите пункт <guimenuitem
+>В новом окне</guimenuitem
+>.</para>
+<para
+>Чтобы удалить какой-либо адрес, щёлкните по нему <mousebutton
+>правой</mousebutton
+> кнопкой мыши и в появившемся меню выберите пункт <guimenuitem
+>Удалить элемент</guimenuitem
+>. Чтобы очистить журнал работы в Интернете, выберите пункт <guimenuitem
+>Очистить журнал</guimenuitem
+>.</para>
+<para
+>В этом же меню вы можете указать, в каком порядке следует отображать адреса в журнале: в алфавитном или по дате.</para>
+<para
+>Если в том же меню выбрать пункт <guimenuitem
+>Настройка...</guimenuitem
+>, появится окно, в котором вы сможете указать максимальный размер журнала, а также через какое время после последнего посещения адрес следует автоматически удалять. Также имеется возможность отображать новые и старые адреса различными шрифтами. Если включить режим <guilabel
+>Расширенные подсказки</guilabel
+>, то в подсказках к адресам журнала будут отображаться более подробные сведения.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Домашний каталог</guilabel
+></term>
+<listitem
+><para
+>В этой вкладке отображается ваш домашний каталог. Заметьте, что скрытые файлы (начинающиеся с точки) не отображаются. Чтобы открыть какой-либо файл в главном окне &konqueror; щёлкните по нему <mousebutton
+>левой</mousebutton
+> кнопкой мыши. Если вы щёлкнете <mousebutton
+>правой</mousebutton
+> кнопкой мыши по каталогу, то с помощью появившегося меню вы сможете открыть каталог в новом окне или в новой вкладке основного окна. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Сеть</guilabel
+></term>
+<listitem
+><para
+>В этой вкладке отображается список сетевых подключений (однако в нём также можно отображать и каталоги). Чтобы открыть объект в главном окне, щёлкните по нему <mousebutton
+>левой</mousebutton
+> кнопкой мыши. Щёлкнув по нему <mousebutton
+>правой</mousebutton
+> кнопкой мыши, вы вызовете меню, в котором вам будут предложены дополнительные возможности.</para>
+<para
+>Папки, отображаемые во вкладке <guilabel
+>Сеть</guilabel
+>, хранятся в каталоге <filename class="directory"
+>~/.kde/share/apps/konqsidebartng/virtual_folders/remote/</filename
+>. Создав в нём новый каталог, вы добавите во вкладку новую папку. Файлы, описывающие сетевые подключения, имеют расширение <literal role="extension"
+>.desktop</literal
+>; чтобы создать новый файл, воспользуйтесь пунктом меню <menuchoice
+><guisubmenu
+>Создать</guisubmenu
+> <guimenuitem
+>Ссылку на адрес Интернета...</guimenuitem
+></menuchoice
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Корневой каталог</guilabel
+></term>
+<listitem
+><para
+>Корневой каталог - это начальная точка файловой системы; в нём хранятся все остальные файлы и каталоги. Путь к корневому каталогу обозначается косой чертой: <filename class="directory"
+>/</filename
+>. Развернув его, вы увидите, в частности, каталог <filename class="directory"
+>root</filename
+>, где хранятся файлы системного администратора, и <filename class="directory"
+>home</filename
+>, в котором вы сможете найти свой домашний каталог.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Инструменты</guilabel
+></term>
+<listitem
+><para
+>Эта вкладка предоставляет доступ к следующим инструментам: </para>
+<para
+><guilabel
+>Обозреватель аудиокомпакт-диска</guilabel
+>.</para>
+<para
+><guilabel
+>Устройства</guilabel
+>. Здесь отображается список имеющихся у вас жёстких дисков (и их разделов), дисководов и устройств чтения компакт-дисков. Чтобы подключить устройство и отобразить его содержимое в главном окне, щёлкните по нему <mousebutton
+>левой</mousebutton
+> кнопкой мыши. Чтобы отключить устройство, щёлкните по нему <mousebutton
+>правой</mousebutton
+> кнопкой мыши и в появившемся меню выберите пункт <guimenuitem
+>Отключить</guimenuitem
+>. </para>
+<para
+><guilabel
+>Обозреватель сети</guilabel
+> позволяет просматривать диски других компьютеров в локальной сети.</para>
+<para
+><guilabel
+>Обозреватель системы печати</guilabel
+> предоставляет доступ к менеджеру печати &kde;, <application
+>Kprinter</application
+>.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Настроить внешний вид панели навигации можно следующим образом: щёлкните <mousebutton
+>правой</mousebutton
+> кнопкой мыши по свободному пространству под самой нижней вкладкой или щёлкните по значку <guilabel
+>Кнопка настройки</guilabel
+> (на рисунке выше - самая верхняя кнопка; в зависимости от конфигурации эта кнопка может отсутствовать). При этом появится меню, предлагающее вам следующие возможности:</para>
+<variablelist>
+
+<varlistentry>
+<term
+><guisubmenu
+>Добавить</guisubmenu
+></term>
+<listitem
+><para
+>Этот пункт позволяет добавить в панель навигации ещё одну вкладку. Это может быть <guimenuitem
+>Панель проигрывателя</guimenuitem
+> (один из <link linkend="konq-plugin"
+>дополнительных модулей</link
+> &konqueror;) или какой-либо каталог.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Несколько видов</guimenuitem
+></term>
+<listitem
+><para
+>Этот пункт позволяет разделить панель навигации таким образом, что вы сможете видеть две вкладки одновременно.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Показывать вкладки слева</guimenuitem
+></term>
+<listitem
+><para
+>Этот пункт позволяет указать, с какой стороны панели отображаютсязначки вкладок.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Показывать кнопку настройки</guimenuitem
+></term>
+<listitem
+><para
+>С помощью этого пункта вы можете указать, следует ли отображать <guilabel
+>Кнопку настройки</guilabel
+>.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Щёлкнув по значку какой-либо вкладки <mousebutton
+>правой</mousebutton
+> кнопкой мыши, вы вызовете меню, предлагающее следующие возможности:</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guimenuitem
+>Указать URL</guimenuitem
+></term>
+<listitem
+><para
+>Этот пункт позволяет изменить путь (URL) к каталогу, который отображается в этой вкладке.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Установить пиктограмму</guimenuitem
+></term>
+<listitem
+><para
+>Этот пункт позволяет сменить значок вкладки.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Удалить</guimenuitem
+></term>
+<listitem
+><para
+>Этот пункт позволяет удалить вкладку с панели навигации.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

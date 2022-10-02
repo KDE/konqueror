@@ -1,0 +1,1935 @@
+# translation of konqueror.po to Latvian
+# translation of konqueror.po to
+# Copyright (C) 2006, 2007, 2008, 2009 Free Software Foundation, Inc.
+#
+# Maris Nartiss <maris.nartiss@gmail.com>, 2006.
+# Maris Nartiss <maris.kde@gmail.com>, 2006, 2007, 2008, 2009.
+# Viesturs Zarins <viesturs.zarins@mii.lu.lv>, 2007, 2008, 2009.
+# Viesturs Zariņš <viesturs.zarins@mii.lu.lv>, 2009.
+# Rūdofls Mazurs <rudolfs.mazurs@gmail.com>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2011-07-08 11:53+0300\n"
+"Last-Translator: Rūdofls Mazurs <rudolfs.mazurs@gmail.com>\n"
+"Language-Team: Latvian <locale@laka.lv>\n"
+"Language: lv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.1\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2);\n"
+
+#. i18n: ectx: Menu (tools)
+#: konq_shellcmdplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "&Rīki"
+
+#: kshellcmdexecutor.cpp:106
+#, kde-format
+msgid "Input Required:"
+msgstr "Nepieciešama ievade:"
+
+#: kshellcmdplugin.cpp:32
+#, kde-format
+msgid "&Execute Shell Command..."
+msgstr "&Izpildīt čaulas komandu..."
+
+#: kshellcmdplugin.cpp:41
+#, kde-format
+msgid ""
+"KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a bug."
+msgstr ""
+"KShellCmdPlugin::slotExecuteShellCommand: Programmas kļūda. Lūdzu ziņojiet "
+"par to."
+
+#: kshellcmdplugin.cpp:51
+#, kde-format
+msgid "Executing shell commands works only on local directories."
+msgstr "Čaulas komandu izpildīšana darbojas tikai uz lokālajām direktorijām."
+
+#: kshellcmdplugin.cpp:73
+#, kde-format
+msgctxt "@title:window"
+msgid "Execute Shell Command"
+msgstr "Izpilda čaulas komandu"
+
+#: kshellcmdplugin.cpp:74
+#, kde-format
+msgid "Execute shell command in current directory:"
+msgstr "Izpildīt čaulas komandu pašreizējā mapē:"
+
+#: kshellcmdplugin.cpp:85
+#, kde-format
+msgid "Output from command: \"%1\""
+msgstr "Izvade no komandas: \"%1\""
+
+#~ msgid "no name"
+#~ msgstr "bez nosaukuma"
+
+#~ msgid "Configure"
+#~ msgstr "Konfigurēt"
+
+#~ msgid "Extensions"
+#~ msgstr "Paplašinājumi"
+
+#~ msgid ""
+#~ "There was an error loading the module %1.\n"
+#~ "The diagnostics is:\n"
+#~ "%2"
+#~ msgstr ""
+#~ "Kļūda ielādējot moduli %1\n"
+#~ "Diagnostika ir:\n"
+#~ "%2"
+
+#~ msgid "Konqueror"
+#~ msgstr "Konqueror"
+
+#~ msgid "Web browser, file manager and document viewer."
+#~ msgstr "Tīmekļa pārlūks, failu pārvaldnieks un dokumentu skatītājs."
+
+#~ msgid "(C) 1999-2008, The Konqueror developers"
+#~ msgstr "(c) 1999-2008, Konqueror izstrādātāji"
+
+#~ msgid "http://konqueror.kde.org"
+#~ msgstr "http://konqueror.kde.org"
+
+#~ msgid "David Faure"
+#~ msgstr "David Faure"
+
+#~ msgid "Developer (framework, parts, JavaScript, I/O library) and maintainer"
+#~ msgstr ""
+#~ "Izstrādātājs (ietvars, daļas, JavaScript, I/O bibliotēka) un izstrādātājs"
+
+#~ msgid "Simon Hausmann"
+#~ msgstr "Simon Hausmann"
+
+#~ msgid "Developer (framework, parts)"
+#~ msgstr "Izstrādātājs (ietvars,daļas)"
+
+#~ msgid "Michael Reiher"
+#~ msgstr "Michael Reiher"
+
+#~ msgid "Developer (framework)"
+#~ msgstr "Izstrādātājs (ietvars)"
+
+#~ msgid "Matthias Welk"
+#~ msgstr "Matthias Welk"
+
+#~ msgid "Developer"
+#~ msgstr "Izstrādātājs"
+
+#~ msgid "Alexander Neundorf"
+#~ msgstr "Alexander Neundorf"
+
+#~ msgid "Developer (List views)"
+#~ msgstr "Izstrādātājs (sarakstu skatījumi)"
+
+#~ msgid "Michael Brade"
+#~ msgstr "Michael Brade"
+
+#~ msgid "Developer (List views, I/O library)"
+#~ msgstr "Izstrādātājs (sarakstu skatījumi, I/O bibliotēka)"
+
+#~ msgid "Lars Knoll"
+#~ msgstr "Lars Knoll"
+
+#~ msgid "Developer (HTML rendering engine)"
+#~ msgstr "Izstrādātājs (HTML renderēšanas dzinējs)"
+
+#~ msgid "Dirk Mueller"
+#~ msgstr "Dirk Mueller"
+
+#~ msgid "Peter Kelly"
+#~ msgstr "Peter Kelly"
+
+#~ msgid "Waldo Bastian"
+#~ msgstr "Waldo Bastian"
+
+#~ msgid "Developer (HTML rendering engine, I/O library)"
+#~ msgstr "Izstrādātājs (HTML renderēšanas dzinējs, I/O bibliotēka)"
+
+#~ msgid "Germain Garand"
+#~ msgstr "Germain Garand"
+
+#~ msgid "Leo Savernik"
+#~ msgstr "Leo Savernik"
+
+#~ msgid "Stephan Kulow"
+#~ msgstr "Stephan Kulow"
+
+#~ msgid ""
+#~ "Developer (HTML rendering engine, I/O library, regression test framework)"
+#~ msgstr ""
+#~ "Izstrādātājs (HTML renderēšanas dzinējs, I/O bibliotēka, regresijas "
+#~ "testēšanas ietvars)"
+
+#~ msgid "Antti Koivisto"
+#~ msgstr "Antti Koivisto"
+
+#~ msgid "Zack Rusin"
+#~ msgstr "Zack Rusin"
+
+#~ msgid "Tobias Anton"
+#~ msgstr "Tobias Anton"
+
+#~ msgid "Lubos Lunak"
+#~ msgstr "Lubos Lunak"
+
+#~ msgid "Maks Orlovich"
+#~ msgstr "Maks Orlovich"
+
+#~ msgid "Developer (HTML rendering engine, JavaScript)"
+#~ msgstr "Izstrādātājs (HTML renderēšanas dzinējs, JavaScript)"
+
+#~ msgid "Allan Sandfeld Jensen"
+#~ msgstr "Allan Sandfeld Jensen"
+
+#~ msgid "Apple Safari Developers"
+#~ msgstr "Apple Safari izstrādātāji"
+
+#~ msgid "Harri Porten"
+#~ msgstr "Harri Porten"
+
+#~ msgid "Developer (JavaScript)"
+#~ msgstr "Izstrādātājs (JavaScript)"
+
+#~ msgid "Koos Vriezen"
+#~ msgstr "Koos Vriezen"
+
+#~ msgid "Developer (Java applets and other embedded objects)"
+#~ msgstr "Izstrādātājs (Java apletu un citu iegulto objektu uzturēšana)"
+
+#~ msgid "Matt Koss"
+#~ msgstr "Matt Koss"
+
+#~ msgid "Developer (I/O library)"
+#~ msgstr "Izstrādātājs (I/O bibliotēka)"
+
+#~ msgid "Alex Zepeda"
+#~ msgstr "Alex Zepeda"
+
+#~ msgid "Richard Moore"
+#~ msgstr "Richard Moore"
+
+#~ msgid "Developer (Java applet support)"
+#~ msgstr "Izstrādātājs (Java apletu uzturēšana)"
+
+#~ msgid "Dima Rogozin"
+#~ msgstr "Dima Rogozin"
+
+#~ msgid "Wynn Wilkes"
+#~ msgstr "Wynn Wilkes"
+
+#~ msgid ""
+#~ "Developer (Java 2 security manager support,\n"
+#~ " and other major improvements to applet support)"
+#~ msgstr ""
+#~ "Izstrādātājs (Java 2 drošības pārvaldnieka atbalsts\n"
+#~ " un citi svarīgi apletu atbalsta uzlabojumi)"
+
+#~ msgid "Stefan Schimanski"
+#~ msgstr "Stefan Schimanski"
+
+#~ msgid "Developer (Netscape plugin support)"
+#~ msgstr "Izstrādātājs (Netscape spraudņu uzturēšana)"
+
+#~ msgid "George Staikos"
+#~ msgstr "George Staikos"
+
+#~ msgid "Developer (SSL, Netscape plugins)"
+#~ msgstr "Izstrādātājs (SSL, Netscape spraudņi)"
+
+#~ msgid "Dawit Alemayehu"
+#~ msgstr "Dawit Alemayehu"
+
+#~ msgid "Developer (I/O library, Authentication support)"
+#~ msgstr "Izstrādātājs (I/O bibliotēka, autentifikācijas atbalsts)"
+
+#~ msgid "Carsten Pfeiffer"
+#~ msgstr "Carsten Pfeiffer"
+
+#~ msgid "Torsten Rahn"
+#~ msgstr "Torsten Rahn"
+
+#~ msgid "Graphics/icons"
+#~ msgstr "Grafika/ikonas"
+
+#~ msgid "Torben Weis"
+#~ msgstr "Torben Weis"
+
+#~ msgid "KFM author"
+#~ msgstr "KFM autors"
+
+#~ msgid "Joseph Wenninger"
+#~ msgstr "Joseph Wenninger"
+
+#~ msgid "Developer (navigation panel framework)"
+#~ msgstr "Izstrādātājs (navigācijas paneļa ietvars)"
+
+#~ msgid "Stephan Binner"
+#~ msgstr "Stephan Binner"
+
+#~ msgid "Developer (misc stuff)"
+#~ msgstr "Izstrādātājs (dažādi sīkumi)"
+
+#~ msgid "Ivor Hewitt"
+#~ msgstr "Ivor Hewitt"
+
+#~ msgid "Developer (AdBlock filter)"
+#~ msgstr "Izstrādātājs (reklāmu bloķētājs)"
+
+#~ msgid "Eduardo Robles Elvira"
+#~ msgstr "Eduardo Robles Elvira"
+
+#~ msgid ""
+#~ "Checking this box on at least two views sets those views as 'linked'. "
+#~ "Then, when you change directories in one view, the other views linked "
+#~ "with it will automatically update to show the current directory. This is "
+#~ "especially useful with different types of views, such as a directory tree "
+#~ "with an icon view or detailed view, and possibly a terminal emulator "
+#~ "window."
+#~ msgstr ""
+#~ "Iezīmējot šo rūtiņu vismaz divos skatījumos, uzstāda šos skatījumus kā "
+#~ "'saistītus'. Kad jūs maināt mapes vienā skatījumā, cits ar to saistītais "
+#~ "skatījums automātiski atjaunināsies, lai parādītu to pašu mapi. Tas ir "
+#~ "īpaši noderīgi dažādiem skatījumu tipiem, tādiem kā mapju koks ar ikonu "
+#~ "skatījumu vai detalizētu skatījumu, un, iespējams, termināla emulatora "
+#~ "logu."
+
+#~ msgid "Close View"
+#~ msgstr "Aizvērt skatu"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#~ msgid "Stalled"
+#~ msgstr "Apstājies"
+
+#~ msgid "Preview &in %1"
+#~ msgstr "Priekšapskatīt &iekš %1"
+
+#~ msgid "Show %1"
+#~ msgstr "Rādīt %1"
+
+#~ msgctxt "@title:window"
+#~ msgid "History"
+#~ msgstr "Vēsture"
+
+#~ msgctxt "@action:inmenu Parent of 'By Name' and 'By Date'"
+#~ msgid "Sort"
+#~ msgstr "Kārtot"
+
+#~ msgid ""
+#~ "<qt><center><b>%1</b></center><hr />Last visited: %2<br />First visited: "
+#~ "%3<br />Number of times visited: %4</qt>"
+#~ msgstr ""
+#~ "<qt><center><b>%1</b></center><hr />Pēdējais apmeklējums: %2<br />Pirmais "
+#~ "apmeklējums: %3<br /> Apmeklējumu skaits: %4</qt>"
+
+#~ msgid "Local"
+#~ msgstr "Lokāli"
+
+#~ msgid "Miscellaneous"
+#~ msgstr "Dažādi"
+
+#~ msgid "Open in New &Window"
+#~ msgstr "Atvērt jaunā &logā"
+
+#~ msgid "Open in New Tab"
+#~ msgstr "Atvērt jaunā cilnē"
+
+#~ msgid "&Copy Link Address"
+#~ msgstr "&Kopēt saiti"
+
+#~ msgid "&Remove Entry"
+#~ msgstr "&Izņemt ierakstu"
+
+#~ msgid "C&lear History"
+#~ msgstr "Tīrīt &vēsturi"
+
+#~ msgid "&Preferences..."
+#~ msgstr "&Preferences..."
+
+#~ msgid "By &Name"
+#~ msgstr "Pēc &vārda"
+
+#~ msgid "By &Date"
+#~ msgstr "Pēc &datuma"
+
+#~ msgid "Search in history"
+#~ msgstr "Meklēt vēsturē"
+
+#~ msgid "Do you really want to clear the entire history?"
+#~ msgstr "Vai jūs tiešām vēlaties iztīrīt visu vēsturi?"
+
+#~ msgid "Clear History?"
+#~ msgstr "Iztīrīt vēsturi?"
+
+#, fuzzy
+#~| msgid "Start without a default window"
+#~ msgid "Start without a default window, when called without URLs"
+#~ msgstr "Palaist bez noklusētā loga"
+
+#~ msgid "Profile to open"
+#~ msgstr "Atveramais profils"
+
+#~ msgid "List available profiles"
+#~ msgstr "Parādīt pieejamos profilus "
+
+#~ msgid "List available sessions"
+#~ msgstr "Parādīt pieejamās sesijas"
+
+#~ msgid "Session to open"
+#~ msgstr "Atveramā sesija"
+
+#~ msgid "Mimetype to use for this URL (e.g. text/html or inode/directory)"
+#~ msgstr ""
+#~ "Šim URL izmantojamais Mime tips, (t.i. teksts/html vai inode/direktorija)"
+
+#~ msgid ""
+#~ "For URLs that point to files, opens the directory and selects the file, "
+#~ "instead of opening the actual file"
+#~ msgstr ""
+#~ "Ja URL norāda uz failu, nevis atvērt pašu failu, bet.atvērt mapi un "
+#~ "iezīmēt failu."
+
+#~ msgid "Location to open"
+#~ msgstr "Atveramā vieta"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Loading..."
+#~ msgstr "Ielādē..."
+
+#~ msgid "Canceled."
+#~ msgstr "Atcelts."
+
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Reloading the page will discard these changes."
+#~ msgstr ""
+#~ "Šai lapā ir veiktas izmaiņas, kas nav nosūtītas. \n"
+#~ "Lapas pārlādēšana izmetīs šīs izmaiņas."
+
+#~ msgid "Discard Changes?"
+#~ msgstr "Izmest izmaiņas?"
+
+#~ msgid "&Discard Changes"
+#~ msgstr "&Izmest izmaiņas"
+
+#~ msgid "File Management"
+#~ msgstr "Failu pārvaldīšana"
+
+#~ msgid "Web Browsing"
+#~ msgstr "Tīmekļa pārlūkošana"
+
+#~ msgid "Home Folder"
+#~ msgstr "Mājas mape"
+
+#~ msgid "Home"
+#~ msgstr "Mājas"
+
+#~ msgid "Navigate to your 'Home Folder'"
+#~ msgstr "Iet uz Mājas mapi"
+
+#~ msgid "Navigate to your local 'Home Folder'"
+#~ msgstr "Iet uz lokālo Mājas mapi"
+
+#~ msgid "Home Page"
+#~ msgstr "Mājas lapa"
+
+#~ msgid "Navigate to your 'Home Page'"
+#~ msgstr "Iet uz Mājas lapu"
+
+#~ msgid ""
+#~ "<html>Navigate to your 'Home Page'<br /><br />You can configure the "
+#~ "location where this button takes you under <b>Settings -> Configure "
+#~ "Konqueror -> General</b>.</html>"
+#~ msgstr ""
+#~ "<html>Dodas uz jūsu \"Mājas lapu\"<br /><br />Jūs varat nokonfigurēt uz "
+#~ "kurieni nonāksiet ar šīs pogas palīdzību iekš <b>Iestatījumi -> "
+#~ "Konfigurēt Konqueror -> Pamata</b>.</html>"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Detaching the tab will discard these changes."
+#~ msgstr ""
+#~ "Šī cilne satur vēl nenosūtītas izmaiņas.\n"
+#~ "Cilnes atdalīšana izmetīs šīs izmaiņas."
+
+#~ msgid ""
+#~ "This view contains changes that have not been submitted.\n"
+#~ "Closing the view will discard these changes."
+#~ msgstr ""
+#~ "Šis skats satur izmaiņas, kas vēl nav nosūtītas. \n"
+#~ "Skata aizvēršana izmetīs izmaiņas."
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the tab will discard these changes."
+#~ msgstr ""
+#~ "Šī cilne satur izmaiņas, kas vēl nav nosūtītas. \n"
+#~ "Cilnes aizvēršana izmetīs izmaiņas."
+
+#~ msgid "Do you really want to close all other tabs?"
+#~ msgstr "Vai Jūs tiešām vēlaties aizvērt pārējās cilnes?"
+
+#~ msgid "Close Other Tabs Confirmation"
+#~ msgstr "Pārējo cilņu aizvēršanas apstiprināšana"
+
+#~ msgid "Close &Other Tabs"
+#~ msgstr "Aizvērt &pārējās cilnes"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing other tabs will discard these changes."
+#~ msgstr ""
+#~ "Šī cilne satur izmaiņas, kas vēl nav nosūtītas. \n"
+#~ "Pārējo ciļņu aizvēršana izmetīs šīs izmaiņas."
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Reloading all tabs will discard these changes."
+#~ msgstr ""
+#~ "Šī cilne satur izmaiņas, kas vēl nav nosūtītas. \n"
+#~ "Visu cilņu pārlādēšana izmetīs šīs izmaiņas."
+
+#~ msgid "Enter Target"
+#~ msgstr "Ievadiet mērķi"
+
+#~ msgid "<qt><b>%1</b> is not valid</qt>"
+#~ msgstr "<qt><b>%1</b> nav derīgs</qt>"
+
+#~ msgid "Copy selected files from %1 to:"
+#~ msgstr "Kopēt iezīmētos failus no %1 uz:"
+
+#~ msgid "Move selected files from %1 to:"
+#~ msgstr "Pārvietot iezīmētos failus no %1 uz:"
+
+#~ msgctxt "This menu entry empties the closed items history"
+#~ msgid "Empty Closed Items History"
+#~ msgstr "Iztukšot aizvērto lapu vēsturi"
+
+#~ msgid "Save As..."
+#~ msgstr "Saglabāt kā..."
+
+#~ msgid "Manage..."
+#~ msgstr "Pārvaldīt..."
+
+#~ msgid "New &Window"
+#~ msgstr "Jauns &logs"
+
+#~ msgid "&Duplicate Window"
+#~ msgstr "&Dublicēt logu"
+
+#~ msgid "Send &Link Address..."
+#~ msgstr "Sūtīt &saites adresi..."
+
+#~ msgid "S&end File..."
+#~ msgstr "Sūtīt &failu..."
+
+#~ msgid "&Open Location"
+#~ msgstr "&Atvērt vietu"
+
+#~ msgid "&Open File..."
+#~ msgstr "Sūtīt &failu..."
+
+#~ msgid "&Find File..."
+#~ msgstr "&Meklēt failu..."
+
+#~ msgid "&Use index.html"
+#~ msgstr "&Lietot index.html"
+
+#~ msgid "Lock to Current Location"
+#~ msgstr "Slēgt uz tekošo vietu"
+
+#~ msgctxt "This option links konqueror views"
+#~ msgid "Lin&k View"
+#~ msgstr "Saišu s&kats"
+
+#~ msgid "&Up"
+#~ msgstr "&Uz augšu"
+
+#~ msgid "Closed Items"
+#~ msgstr "Aizvērtie vienumi"
+
+#~ msgid "Sessions"
+#~ msgstr "Sesijas"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Most Often Visited"
+#~ msgstr "Visbiežāk apmeklētās"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Recently Visited"
+#~ msgstr "Nesen apmeklētās"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History"
+#~ msgstr "Rādīt vēsturi"
+
+#~ msgid "&Save View Profile As..."
+#~ msgstr "&Saglabāt skatījuma profilu kā..."
+
+#~ msgid "Configure Extensions..."
+#~ msgstr "Konfigurēt paplašinājumus..."
+
+#~ msgid "Configure Spell Checking..."
+#~ msgstr "Konfigurēt pareizrakstības pārbaudi..."
+
+#~ msgid "Split View &Left/Right"
+#~ msgstr "Dalīt skatījumu &kreisais/labais"
+
+#~ msgid "Split View &Top/Bottom"
+#~ msgstr "Dalīt skatījumu &augšējais/apakšējais"
+
+#~ msgid "&New Tab"
+#~ msgstr "&Jauna cilne"
+
+#~ msgid "&Duplicate Current Tab"
+#~ msgstr "&Dublicēt šo cilni"
+
+#~ msgid "Detach Current Tab"
+#~ msgstr "Atdalīt pašreizējo cilni"
+
+#~ msgid "&Close Active View"
+#~ msgstr "&Aizvērt aktīvo skatu"
+
+#~ msgid "Close Current Tab"
+#~ msgstr "Aizvērt šo cilni"
+
+#~ msgid "Activate Next Tab"
+#~ msgstr "Aktivizēt nākamo cilni"
+
+#~ msgid "Activate Previous Tab"
+#~ msgstr "Aktivizēt iepriekšējo cilni"
+
+#~ msgid "Activate Tab %1"
+#~ msgstr "Aktivizēt cilni %1"
+
+#~ msgid "Move Tab Left"
+#~ msgstr "Pārvietot cilni pa kreisi"
+
+#~ msgid "Move Tab Right"
+#~ msgstr "Pārvietot cilni pa labi"
+
+#~ msgid "Dump Debug Info"
+#~ msgstr "Izmest atkļūdošanas datus"
+
+#~ msgid "C&onfigure View Profiles..."
+#~ msgstr "&Konfigurēt skatījumu profilus..."
+
+#~ msgid "Load &View Profile"
+#~ msgstr "Ielādēt &skatījumu profilu"
+
+#~ msgid "&Reload"
+#~ msgstr "&Pārlādēt"
+
+#~ msgid "&Reload All Tabs"
+#~ msgstr "&Pārlādēt visas cilnes"
+
+#~ msgid "&Force Reload"
+#~ msgstr "Piespiest &pārlādēt"
+
+#~ msgid "&Stop"
+#~ msgstr "&Stop"
+
+#~ msgid "L&ocation: "
+#~ msgstr "V&ieta: "
+
+#~ msgid "Location Bar"
+#~ msgstr "Vietas josla"
+
+#~ msgid ""
+#~ "<html>Location Bar<br /><br />Enter a web address or search term.</html>"
+#~ msgstr ""
+#~ "<html>Vietas josla <br /><br /> Ievadiet tīkla vietas adresi vai "
+#~ "meklējamo lietu.</html>"
+
+#~ msgid "Clear Location Bar"
+#~ msgstr "Tīrīt vietas joslu"
+
+#~ msgid ""
+#~ "<html>Clear Location bar<br /><br />Clears the contents of the location "
+#~ "bar.</html>"
+#~ msgstr ""
+#~ "<html>Notīrīt Vietas joslu<br /><br />Notīra vietas joslas saturu.</html>"
+
+#~ msgid "&Bookmarks"
+#~ msgstr "&Grāmatzīmes"
+
+#~ msgid "Kon&queror Introduction"
+#~ msgstr "Kon&queror ievads"
+
+#~ msgid "Go"
+#~ msgstr "Aiziet"
+
+#~ msgid ""
+#~ "<html>Go<br /><br />Goes to the page that has been entered into the "
+#~ "location bar.</html>"
+#~ msgstr "<html>Iet<br /><br />Iet uz vietas joslā ievadīto lapu.</html>"
+
+#~ msgid ""
+#~ "<html>Enter the parent folder<br /><br />For instance, if the current "
+#~ "location is file:/home/%1 clicking this button will take you to file:/"
+#~ "home.</html>"
+#~ msgstr ""
+#~ "<html>Ieiet vecākmapē<br /><br />Piemēram, ja pašreizējā atrašanās vieta "
+#~ "ir file:/home/%1 , šīs pogas piespiešana jūs aizvedīs uz file:/home.</"
+#~ "html>"
+
+#~ msgid "Enter the parent folder"
+#~ msgstr "Ieiet vecākmapē"
+
+#~ msgid "Move backwards one step in the browsing history"
+#~ msgstr "Doties vienu soli atpakaļ pārlūkošanas vēsturē"
+
+#~ msgid "Move forward one step in the browsing history"
+#~ msgstr "Doties vienu soli uz priekšu pārlūkošanas vēsturē"
+
+#~ msgid "Move backwards one step in the closed tabs history"
+#~ msgstr "Doties vienu soli atpakaļ aizvērto ciļņu vēsturē"
+
+#~ msgid ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.</html>"
+#~ msgstr ""
+#~ "<html>Pārielādē pašlaik attēloto dokumentu<br /><br />Tas var būt "
+#~ "vajadzīgs, piemēram, lai atsvaidzinātu tīmekļa lapas, kas ir mainītas pēc "
+#~ "to ielādes.</html>"
+
+#~ msgid "Reload the currently displayed document"
+#~ msgstr "Pārlādēt šo dokumentu"
+
+#~ msgid ""
+#~ "<html>Reload all currently displayed documents in tabs<br /><br />This "
+#~ "may, for example, be needed to refresh web pages that have been modified "
+#~ "since they were loaded, in order to make the changes visible.</html>"
+#~ msgstr ""
+#~ "<html>Pārielādē visās cilnēs attēlotos dokumentus.<br /><br />Tas var būt "
+#~ "nepieciešams, lai ieraudzītu tīmekļa lapu jauno saturu.</html>"
+
+#~ msgid "Reload all currently displayed document in tabs"
+#~ msgstr "Pārlādēt visus pašlaik attēlotos dokumentus cilnēs"
+
+#~ msgid ""
+#~ "<html>Stop loading the document<br /><br />All network transfers will be "
+#~ "stopped and Konqueror will display the content that has been received so "
+#~ "far.</html>"
+#~ msgstr ""
+#~ "<html>Apturēt dokumenta ielādi<br /><br />Tīkla datu pārraide tiks "
+#~ "pārtraukta un Konqueror parādīs tos datus, kurus jau ir saņēmis.</html>"
+
+#~ msgid ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.  Any images on "
+#~ "the page are downloaded again, even if cached copies exist.</html>"
+#~ msgstr ""
+#~ "<html>Pārielādē pašlaik attēloto dokumentu<br /><br />Tas var būt "
+#~ "vajadzīgs, piemēram, lai atsvaidzinātu tīmekļa lapas, kas ir mainītas pēc "
+#~ "to ielādes. Visi attēli lapā tiks ielādēti no jauna, pat ja eksistē "
+#~ "lokālas to kopijas.</html>"
+
+#~ msgid ""
+#~ "Force a reload of the currently displayed document and any contained "
+#~ "images"
+#~ msgstr "Pārlādēt visus pašlaik attēlotos dokumentus un to attēlus"
+
+#~ msgid "Stop loading the document"
+#~ msgstr "Pārtraukt dokumenta ielādēšanu"
+
+#~ msgid ""
+#~ "<html>Cut the currently selected text or item(s) and move it to the "
+#~ "system clipboard<br /><br />This makes it available to the <b>Paste</b> "
+#~ "command in Konqueror and other KDE applications.</html>"
+#~ msgstr ""
+#~ "<html>Izgriezt pašreiz iezīmēto tekstu vai vienības un pārvietot tos uz "
+#~ "sistēmas starpliktuvi.<br /><br />Šī darbība ļaus izvēlēto saturu "
+#~ "<b>Ielīmēt</b> Konqueror vai citās KDE programmās.</html>"
+
+#~ msgid "Move the selected text or item(s) to the clipboard"
+#~ msgstr "Pārvieto izvēlēto tekstu vai elementus uz starpliktuvi"
+
+#~ msgid ""
+#~ "<html>Copy the currently selected text or item(s) to the system "
+#~ "clipboard<br /><br />This makes it available to the <b>Paste</b> command "
+#~ "in Konqueror and other KDE applications.</html>"
+#~ msgstr ""
+#~ "<html>Kopēt pašreiz iezīmēto tekstu vai vienības un pārvietot tos uz "
+#~ "sistēmas starpliktuvi.<br /><br />Šī darbība ļaus izvēlēto saturu "
+#~ "<b>Ielīmēt</b> Konqueror vai citās KDE programmās.</html>"
+
+#~ msgid "Copy the selected text or item(s) to the clipboard"
+#~ msgstr "Kopē izvēlēto tekstu vai elementus uz starpliktuvi"
+
+#~ msgid ""
+#~ "<html>Paste the previously cut or copied clipboard contents<br /><br /"
+#~ ">This also works for text copied or cut from other KDE applications.</"
+#~ "html>"
+#~ msgstr ""
+#~ "<html>Ielīmēt iepriekš izgriezto vai nokopēto saturu.<br /><br />Šī "
+#~ "opcija darbojas arī ar tekstu, kas ir izgriezts vai nokopēts citā KDE "
+#~ "programmā.</html>"
+
+#~ msgid "Paste the clipboard contents"
+#~ msgstr "Ievieto starpliktuves saturu"
+
+#~ msgid ""
+#~ "<html>Print the currently displayed document<br /><br />You will be "
+#~ "presented with a dialog where you can set various options, such as the "
+#~ "number of copies to print and which printer to use.<br /><br />This "
+#~ "dialog also provides access to special KDE printing services such as "
+#~ "creating a PDF file from the current document.</html>"
+#~ msgstr ""
+#~ "<html>Drukāt pašreiz redzamo dokumentu.<br /><br />Jums tiks parādīts "
+#~ "dialogs, kurā varēsiet norādīt dažādas opcijas, kā, piemēram, kuru "
+#~ "printeri izmantot, cik kopijas drukāt utml.<br /><br />Šis dialogs ļauj "
+#~ "piekļūt arī speciāliem KDE drukas servisiem, kā, piemēram, PDF dokumenta "
+#~ "veidošana.</html>"
+
+#~ msgid "Print the current document"
+#~ msgstr "Drukāt šo dokumentu"
+
+#~ msgid "If present, open index.html when entering a folder."
+#~ msgstr "Ieejot direktorijā atver index.html, ja tāds eksistē."
+
+#~ msgid ""
+#~ "A locked view cannot change folders. Use in combination with 'link view' "
+#~ "to explore many files from one folder"
+#~ msgstr ""
+#~ "Slēgts skatījums nevar mainīt direktorijus. Izmantojiet kombinācijā ar "
+#~ "'saites skatījums', lai pētītu daudzus failus no vienas mapes"
+
+#~ msgid ""
+#~ "Sets the view as 'linked'. A linked view follows folder changes made in "
+#~ "other linked views."
+#~ msgstr ""
+#~ "Uzstāda skatījumu kā 'saistītu'. Saistīts skatījums seko mapju izmaiņām "
+#~ "citos saistītos skatījumos."
+
+#~ msgid "Copy &Files..."
+#~ msgstr "Kopēt &failus..."
+
+#~ msgid "M&ove Files..."
+#~ msgstr "Pārviet&ot failus..."
+
+#~ msgid ""
+#~ "You have requested to open more than 20 bookmarks in tabs. This might "
+#~ "take a while. Continue?"
+#~ msgstr ""
+#~ "Jūs pieprasījāt atvērt cilnēs vairāk nekā 20 grāmatzīmes. Tas aizņems "
+#~ "kādu laiku. Vai turpināt?"
+
+#~ msgid "Open bookmarks folder in new tabs"
+#~ msgstr "Atvērt grāmatzīmju mapi cilnēs"
+
+#~ msgid "Open in T&his Window"
+#~ msgstr "Atvērt ša&jā logā"
+
+#~ msgid "Open the document in current window"
+#~ msgstr "Atver dokumentu tekošajā logā"
+
+#~ msgid "Open the document in a new window"
+#~ msgstr "Atver dokumentu jaunā logā"
+
+#~ msgid "Open in &New Tab"
+#~ msgstr "Atvērt jaunā &cilnē"
+
+#~ msgid "Open the document in a new tab"
+#~ msgstr "Atver dokumentu jaunā cilnē"
+
+#~ msgid "&Open With"
+#~ msgstr "&Atvērt ar"
+
+#~ msgid "Open with %1"
+#~ msgstr "Atvērt ar %1"
+
+#~ msgctxt "@action:inmenu View"
+#~ msgid "&View Mode"
+#~ msgstr "&Skata režīms"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window, are you sure you want to quit?"
+#~ msgstr ""
+#~ "Jums šajā logā ir atvērtas vairākas cilnes. Vai Jūs tiešām vēlaties iziet?"
+
+#~ msgid "Confirmation"
+#~ msgstr "Apstiprinājums"
+
+#~ msgid "C&lose Current Tab"
+#~ msgstr "Aizvērt šo ci&lni"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the window will discard these changes."
+#~ msgstr ""
+#~ "Šī cilne satur izmaiņas, kas vēl nav nosūtītas. \n"
+#~ "Loga aizvēršana izmetīs izmaiņas."
+
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Closing the window will discard these changes."
+#~ msgstr ""
+#~ "Šī lapa satur izmaiņas, kas vēl nav nosūtītas. \n"
+#~ "Loga aizvēršana izmetīs izmaiņas."
+
+#~ msgid ""
+#~ "Your sidebar is not functional or unavailable. A new entry cannot be "
+#~ "added."
+#~ msgstr ""
+#~ "Jūsu sānjosla nedarbojas vai nav pieejama. Jaunu ierakstu nevar pievienot."
+
+#~ msgid "Web Sidebar"
+#~ msgstr "Tīkla sānujosla"
+
+#~ msgid "Add new web extension \"%1\" to your sidebar?"
+#~ msgstr "Vai pievienot jaunu paplašinājumu \"%1\" jūsu sānjoslai?"
+
+#~ msgid "Add"
+#~ msgstr "Pievienot"
+
+#~ msgid "Do Not Add"
+#~ msgstr "Nepievienot"
+
+#~ msgid ""
+#~ "There appears to be a configuration error. You have associated Konqueror "
+#~ "with %1, but it cannot handle this file type."
+#~ msgstr ""
+#~ "Izskatās, ka ir kļūda konfigurācijā. Jums Konqueror ir piesaistīts %1, "
+#~ "bet tas nevar apstrādāt šo failu tipu."
+
+#~ msgid "Profile Management"
+#~ msgstr "Profilu pārvaldība"
+
+#~ msgid "&Rename Profile"
+#~ msgstr "&Pārdēvēt profilu"
+
+#~ msgid "&Delete Profile"
+#~ msgstr "&Dzēst profilu"
+
+#~ msgid "Manage Sessions"
+#~ msgstr "Pārvaldīt sesijas"
+
+#~ msgid "&Open"
+#~ msgstr "&Atvērt"
+
+#~ msgid "Rename Session"
+#~ msgstr "Pārdēvēt sesiju"
+
+#~ msgid "Save Session"
+#~ msgstr "Saglabāt sesiju"
+
+#~ msgid ""
+#~ "A session with the name '%1' already exists, do you want to overwrite it?"
+#~ msgstr "Sesija ar nosaukumu '%1' jau eksistē. Vai vēlaties to pārrakstīt?"
+
+#~ msgid "Session exists. Overwrite?"
+#~ msgstr "Sesija eksistē. Pārrakstīt?"
+
+#~ msgid ""
+#~ "Konqueror did not close correctly. Would you like to restore the previous "
+#~ "session?"
+#~ msgstr ""
+#~ "Konqueror netika korekti aizvērts. Vai vēlaties atjaunot iepriekšējo "
+#~ "darba sesiju?"
+
+#~ msgid "Restore Session?"
+#~ msgstr "Atjaunot sesiju?"
+
+#~ msgid "Restore Session"
+#~ msgstr "Atjaunot sesiju"
+
+#~ msgid "Do Not Restore"
+#~ msgstr "Neatjaunot"
+
+#~ msgid "Ask Me Later"
+#~ msgstr "Jautāt vēlāk"
+
+#~ msgid ""
+#~ "This bar contains the list of currently open tabs. Click on a tab to make "
+#~ "it active. You can also use keyboard shortcuts to navigate through tabs. "
+#~ "The text on the tab shows the content currently open in it; place your "
+#~ "mouse over the tab to see the full title, in case it has been shortened "
+#~ "to fit the tab width."
+#~ msgstr ""
+#~ "Šī josla satur pašlaik atvērto ciļņu sarakstu. Nospiediet uz cilnes, lai "
+#~ "to aktivizētu. Jūs varat izmantot arī tastatūras īsceļus, lai pārvietotos "
+#~ "starp cilnēm. Teksts uz cilnes rāda tajā atvērtā satura nosaukumu; "
+#~ "paturiet kursoru virs cilnes, lai redzētu pilno nosaukumu, ja tas ir "
+#~ "aprauts, lai tajā ietilptu."
+
+#~ msgid "Open a new tab"
+#~ msgstr "Atvērt jaunu cilni"
+
+#~ msgid "Close the current tab"
+#~ msgstr "Aizvērt šo cilni"
+
+#~ msgid "&Duplicate Tab"
+#~ msgstr "&Dublēt cilni"
+
+#~ msgid "&Reload Tab"
+#~ msgstr "&Pārlādēt cilni"
+
+#~ msgid "Other Tabs"
+#~ msgstr "Citas cilnes"
+
+#~ msgid "D&etach Tab"
+#~ msgstr "A&tvienot cilni"
+
+#~ msgid "&Close Tab"
+#~ msgstr "&Aizvērt cilni"
+
+#~ msgid "Und&o: Closed Tab"
+#~ msgstr "Ats&aukt: Cilnes aizvēršanu"
+
+#~ msgid "Und&o: Closed Window"
+#~ msgstr "Ats&aukt: Loga aizvēršanu"
+
+#~ msgid "Und&o"
+#~ msgstr "Atsa&ukt"
+
+#~ msgid ""
+#~ "The page you are trying to view is the result of posted form data. If you "
+#~ "resend the data, any action the form carried out (such as search or "
+#~ "online purchase) will be repeated. "
+#~ msgstr ""
+#~ "Lapa, ko mēģināt apskatīt, ir nosūtītu datu rezultāts. Ja jūs sūtīsiet "
+#~ "šos datus vēlreiz, jebkura formas veiktā darbība (piemēram, meklēšana vai "
+#~ "pirkuma apmaksa) tiks atkārtota."
+
+#~ msgid "Warning"
+#~ msgstr "Brīdinājums"
+
+#~ msgid "Resend"
+#~ msgstr "Sūtīt vēlreiz"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window.\n"
+#~ "Loading a view profile will close them."
+#~ msgstr ""
+#~ "Jums šajā logā ir atvērtas vairākas cilnes.\n"
+#~ "Skata profila ielādēšana aizvērs tās."
+
+#~ msgid "Load View Profile"
+#~ msgstr "Ielādēt skata profilu"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Loading a profile will discard these changes."
+#~ msgstr ""
+#~ "Šīs cilne satur nenosūtītas izmaiņas.\n"
+#~ "Ielādējot profilu, šīs izmaiņas tiks izmestas."
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "History Sidebar Module"
+#~ msgstr "Vēstures sānjoslas modulis"
+
+#~ msgctxt "@title:tab"
+#~ msgid "History"
+#~ msgstr "Vēsture"
+
+#~ msgid " day"
+#~ msgid_plural " days"
+#~ msgstr[0] " diena"
+#~ msgstr[1] " dienas"
+#~ msgstr[2] " dienu"
+
+#~ msgid "Minute"
+#~ msgid_plural "Minutes"
+#~ msgstr[0] "Minūte"
+#~ msgstr[1] "Minūtes"
+#~ msgstr[2] "Minūšu"
+
+#~ msgid "Day"
+#~ msgid_plural "Days"
+#~ msgstr[0] "Diena"
+#~ msgstr[1] "Dienas"
+#~ msgstr[2] "Dienu"
+
+#~ msgid "<h1>History Sidebar</h1> You can configure the history sidebar here."
+#~ msgstr "<h1>Vēstures sānjosla</h1> Šeit var konfigurēt vēstures sānjoslu."
+
+#, fuzzy
+#~| msgctxt "@action:inmenu Add"
+#~| msgid "Web Sidebar Module"
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Places Sidebar Module"
+#~ msgstr "Tīmekļa sānjoslas modulis"
+
+#~ msgid "Extended Sidebar"
+#~ msgstr "Paplašināta sānujosla"
+
+#~ msgid "Rollback to System Default"
+#~ msgstr "Atgriezt uz sistēmas noklusējumu"
+
+#~ msgid "Configure Sidebar"
+#~ msgstr "Konfigurēt sānujoslu"
+
+#~ msgid "Add New"
+#~ msgstr "Pievienot jaunu"
+
+#~ msgid "Multiple Views"
+#~ msgstr "Vairāki skatījumi"
+
+#~ msgid "Show Tabs Left"
+#~ msgstr "Rādīt atlikušās cilnes"
+
+#~ msgid "Show Configuration Button"
+#~ msgstr "Rādīt konfigurēšanas pogu"
+
+#~ msgid "Close Sidebar"
+#~ msgstr "Aizvērt sānujoslu"
+
+#~ msgid "This entry already exists."
+#~ msgstr "Šis ieraksts jau eksistē."
+
+#~ msgid ""
+#~ "<qt>This removes all your entries from the sidebar and adds the system "
+#~ "default ones.<br /><b>This procedure is irreversible</b><br />Do you want "
+#~ "to proceed?</qt>"
+#~ msgstr ""
+#~ "<qt>Šī darbība noņems visus jūsu sānjoslas elementus un aizstās tos ar "
+#~ "sistēmas noklusējuma elementiem.<br /><b>Šī darbība nav atgriežama</"
+#~ "b><br />Vai vēlaties turpināt?</qt>"
+
+#~ msgid "Show Tabs Right"
+#~ msgstr "Rādīt cilnes pa labi"
+
+#~ msgid "Set Name"
+#~ msgstr "Mainīt nosaukumu"
+
+#~ msgid "Enter the name:"
+#~ msgstr "Ievadiet nosaukumu:"
+
+#~ msgid "Enter a URL:"
+#~ msgstr "Ievadiet URL:"
+
+#~ msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
+#~ msgstr "<qt>Vai Jūs tiešām vēlaties dzēst <b>%1</b> cilni?</qt>"
+
+#, fuzzy
+#~| msgid ""
+#~| "You have hidden the navigation panel configuration button. To make it "
+#~| "visible again, click the right mouse button on any of the navigation "
+#~| "panel buttons and select \"Show Configuration Button\"."
+#~ msgid ""
+#~ "You have hidden the sidebar configuration button. To make it visible "
+#~ "again, click the right mouse button on any of the sidebar buttons and "
+#~ "select \"Show Configuration Button\"."
+#~ msgstr ""
+#~ "Jūs esat noslēpis navigācijas paneļa konfigurēšanas pogu. Lai to padarītu "
+#~ "atkal redzamu, uzklikšķiniet ar peles labo taustiņu uz navigācijas paneļa "
+#~ "un izvēlieties \"Rādīt konfigurācijas pogu\"."
+
+#~ msgid "Set Name..."
+#~ msgstr "Uzstādiet nosaukumu..."
+
+#~ msgid "Set URL..."
+#~ msgstr "Rādīt URL..."
+
+#~ msgid "Set Icon..."
+#~ msgstr "Mainīt ikonu..."
+
+#~ msgid "Remove"
+#~ msgstr "Noņemt"
+
+#~ msgid "Web module"
+#~ msgstr "Tīmekļa modulis"
+
+#~ msgid "&Create New Folder"
+#~ msgstr "&Veidot jaunu mapi"
+
+#~ msgid "Delete Folder"
+#~ msgstr "Dzēst mapi"
+
+#~ msgid "Delete Bookmark"
+#~ msgstr "Dzēst grāmatzīmi"
+
+#~ msgid "Properties"
+#~ msgstr "Īpašības"
+
+#~ msgid "Open in New Window"
+#~ msgstr "Atvērt jaunā logā"
+
+#~ msgid "Open Folder in Tabs"
+#~ msgstr "Atvērt mapi iekš cilnes"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "Kopēt saites adresi"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark folder\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "Va Jūs tiešām vēlaties noņemt grāmatzīmju mapi \n"
+#~ "\"%1\"?"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "Vai Jūs tiešām vēlaties noņemt grāmatzīmi \n"
+#~ "\"%1\"?"
+
+#~ msgid "Bookmark Folder Deletion"
+#~ msgstr "Grāmatzīmju mapes dzēšana"
+
+#~ msgid "Bookmark Deletion"
+#~ msgstr "Grāmatzīmes dzēšana"
+
+#~ msgid "Bookmark Properties"
+#~ msgstr "Grāmatzīmes īpašības"
+
+#~ msgid "&Update"
+#~ msgstr "&Atjaunināt"
+
+#~ msgid "Name:"
+#~ msgstr "Nosaukums:"
+
+#~ msgid "Location:"
+#~ msgstr "Vieta:"
+
+#~ msgid "Add Bookmark"
+#~ msgstr "Pievienot grāmatzīmi"
+
+#~ msgid "Cannot find parent item %1 in the tree. Internal error."
+#~ msgstr "Nevar atrast augstāku elementu %1 zarā. Iekšējā kļūda."
+
+#~ msgid "&Create New Folder..."
+#~ msgstr "&Veidot jaunu mapi..."
+
+#~ msgid "Move to Trash"
+#~ msgstr "Pārvietot uz miskasti"
+
+#~ msgid "Rename"
+#~ msgstr "Pārdēvēt"
+
+#~ msgid "Delete Link"
+#~ msgstr "Dzēst saiti"
+
+#~ msgid "New Folder"
+#~ msgstr "Jauna mape"
+
+#~ msgid "Create New Folder"
+#~ msgstr "Veidot jaunu mapi"
+
+#~ msgid "Enter folder name:"
+#~ msgstr "Ievadiet mapes nosaukumu:"
+
+#~ msgctxt "@label"
+#~ msgid "Name:"
+#~ msgstr "Nosaukums:"
+
+#~ msgctxt "@label"
+#~ msgid "Path or URL:"
+#~ msgstr "Ceļš vai URL:"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add folder sidebar module"
+#~ msgstr "Pievienot mapes sānjoslas moduli"
+
+#~ msgid "&Open Link"
+#~ msgstr "Atvērt &saiti "
+
+#~ msgid "Set &Automatic Reload"
+#~ msgstr "Norādīt &automātisku pārlādēšanu"
+
+#~ msgid "Set Refresh Timeout (0 disables)"
+#~ msgstr "Norādīt atsvaidzināšanas noildzi (0 atslēdz)"
+
+#~ msgid " min"
+#~ msgstr " min"
+
+#~ msgid " sec"
+#~ msgstr " sek"
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Web Sidebar Module"
+#~ msgstr "Tīmekļa sānjoslas modulis"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add web sidebar module"
+#~ msgstr "Pievienot tīmekļa sānjoslas moduli"
+
+#~ msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
+#~ msgid "Be free."
+#~ msgstr "Esiet brīvs."
+
+#~ msgid ""
+#~ "Konqueror is a web browser, file manager and universal document viewer."
+#~ msgstr ""
+#~ "Konqueror ir failu pārvaldnieks, tīmekļa pārlūks un unversāls dokumentu "
+#~ "skatītājs."
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "Starting Points"
+#~ msgstr "Sākšanas vietas"
+
+#~ msgid "Introduction"
+#~ msgstr "Ievads"
+
+#~ msgid "Tips"
+#~ msgstr "Padomi"
+
+#~ msgid "Specifications"
+#~ msgstr "Specifikācija"
+
+#~ msgid "Your personal files"
+#~ msgstr "Jūsu personīgie faili"
+
+#~ msgid "Trash"
+#~ msgstr "Miskaste"
+
+#~ msgid "Browse and restore the trash"
+#~ msgstr "Pārlūkot un atjaunot no miskastes"
+
+#~ msgid "Network Folders"
+#~ msgstr "Tīkla mapes"
+
+#~ msgid "Shared files and folders"
+#~ msgstr "Koplietošanas mapes un faili"
+
+#, fuzzy
+#~| msgid "&Bookmarks"
+#~ msgid "Bookmarks"
+#~ msgstr "&Grāmatzīmes"
+
+#~ msgid "Quick access to your bookmarks"
+#~ msgstr "Ātra piekļuve grāmatzīmēm"
+
+#~ msgid "Next: An Introduction to Konqueror"
+#~ msgstr "Nākamais: Ievads par Konqueror"
+
+#~ msgid "Search the Web"
+#~ msgstr "Meklēt tīklā"
+
+#~ msgid ""
+#~ "Konqueror makes working with and managing your files easy. You can browse "
+#~ "both local and networked folders while enjoying advanced features such as "
+#~ "the powerful sidebar and file previews."
+#~ msgstr ""
+#~ "Konqueror vienkāršo jūsu darbu ar failiem. Jūs varat pārlūkot gan "
+#~ "vietējās, gan tīkla mapes un izmantot dažādas papildus iespējas kā "
+#~ "spēcīgo sānjoslu un failu priekšskatījumus."
+
+#~ msgid ""
+#~ "Konqueror is also a full featured and easy to use web browser which you "
+#~ "can use to explore the Internet. Enter the address (e.g. <a href=\"http://"
+#~ "www.kde.org\">http://www.kde.org</a>) of a web page you would like to "
+#~ "visit in the location bar and press Enter, or choose an entry from the "
+#~ "Bookmarks menu."
+#~ msgstr ""
+#~ "Konqueror ir vienkārši lietojama un iespējām bagāta Interneta "
+#~ "pārlūkprogramma. Ievadiet apmeklējamās lapas adresi (piem. <a href="
+#~ "\"http://www.kde.org\">http://www.kde.org</a>) vietas joslā un nospiediet "
+#~ "Enter taustiņu. Tāpat jūs varat izvēlēties apmeklējamo lapu no "
+#~ "grāmatzīmju izvēlnes."
+
+#~ msgid ""
+#~ "To return to the previous location, press the back button <img width='16' "
+#~ "height='16' src=\"%1\"></img> in the toolbar. "
+#~ msgstr ""
+#~ "Ja vēlaties nokļūt atpakaļ uz iepriekšējo atrašanās vietu, nospiediet "
+#~ "rīkjoslā esošo atpakaļ pogu <img width='16' height='16' src=\"%1\"></img>"
+
+#~ msgid ""
+#~ "To quickly go to your Home folder press the  home button <img width='16' "
+#~ "height='16' src=\"%1\"></img>."
+#~ msgstr ""
+#~ "Lai ātri atgrieztos uz mājām, nospiediet mājas pogu <img width='16' "
+#~ "height='16' src=\"%1\"></img>"
+
+#~ msgid ""
+#~ "For more detailed documentation on Konqueror click <a href=\"%1\">here</"
+#~ "a>."
+#~ msgstr ""
+#~ "Detalizētāku Konqueror dokumentāciju jūs varat atrast <a href="
+#~ "\"%1\">šeit</a>."
+
+#~ msgid ""
+#~ "<em>Tuning Tip:</em> If you want the Konqueror web browser to start "
+#~ "faster, you can turn off this information screen by clicking <a href="
+#~ "\"%1\">here</a>. You can re-enable it by choosing the Help -> Konqueror "
+#~ "Introduction menu option, and then pressing Settings -> Save View Profile "
+#~ "As... -> \"Web Browsing\"."
+#~ msgstr ""
+#~ "<em>Pielāgošanas padoms:</em> Ja vēlaties, lai Konqueror tīmekļa pārlūks "
+#~ "tiktu ielādēts ātrāk, jūs varat atslēgt šo informācijas lapu, nospiežot "
+#~ "<a href=\"%1\">šeit</a>. Informācijas lapu pēcāk atkal var aktivizēt, no "
+#~ "\"Palīdzība\" izvēlnes izvēloties \"Konqueror ievads\" un tad saglabājot "
+#~ "profil (Iestatījumi -> Saglabāt skata profilu kā... -> \"Tīmekļa "
+#~ "pārlūkošana\")."
+
+#~ msgid "Next: Tips &amp; Tricks"
+#~ msgstr "Nākamais: Padomi un triki"
+
+#~ msgid ""
+#~ "Konqueror is designed to embrace and support Internet standards. The aim "
+#~ "is to fully implement the officially sanctioned standards from "
+#~ "organizations such as the W3 and OASIS, while also adding extra support "
+#~ "for other common usability features that arise as de facto standards "
+#~ "across the Internet. Along with this support, for such functions as "
+#~ "favicons, Web Shortcuts, and <A HREF=\"%1\">XBEL bookmarks</A>, Konqueror "
+#~ "also implements:"
+#~ msgstr ""
+#~ "Konqueror ir izveidots, lai pieņemtu un atbalstītu Interneta standartus. "
+#~ "Mērķis ir pilnībā realizēt oficiāli sankcionētos standartus no tādām "
+#~ "organizācijām kā W3 un OASIS, kā arī pievienot papildus atbalstu citām "
+#~ "vispārēji pielietotām iespējām, kuras ir Interneta de facto standarti. "
+#~ "Kopā papildus funkcijām, kā favicons, Tīmekļa īsceļi, un <A HREF="
+#~ "\"%1\">XBEL grāmatzīmes</A>, Konqueror ir realizēts:"
+
+#~ msgid "Supported standards"
+#~ msgstr "Atbalstītie standarti"
+
+#~ msgid "Additional requirements*"
+#~ msgstr "Papildus nepieciešams*"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">DOM</A> (Līmenis 1, daļēji Līmenis 2) bāzēts <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+
+#~ msgid "built-in"
+#~ msgstr "iebūvēts"
+
+#~ msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
+#~ msgstr "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, daļēji CSS 2)"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Edition 3 (aptuveni atbilst Javascript 1.5)"
+
+#~ msgid ""
+#~ "JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
+#~ msgstr ""
+#~ "JavaScript atslēgts (globāli). Ieslēgt JavaScript <A HREF=\"%1\">šeit</A>."
+
+#~ msgid ""
+#~ "JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\"
+#~ "\">here</A>."
+#~ msgstr ""
+#~ "Javascript atļauts (globāli). Konfigurēt Javascript <A HREF=\\\"%1\\"
+#~ "\">šeit</A>."
+
+#~ msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
+#~ msgstr "Drošs <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> atbalsts"
+
+#, fuzzy
+#~| msgid ""
+#~| "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">Blackdown</A>, <A HREF="
+#~| "\"%2\">IBM</A> or <A HREF=\"%3\">Sun</A>)"
+#~ msgid ""
+#~ "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">IBM</A> or <A HREF="
+#~ "\"%2\">Sun/Oracle</A>)"
+#~ msgstr ""
+#~ "JDK 1.2.0 (Java 2) savietojama VM (<A HREF=\"%1\">Blackdown</A>, <A HREF="
+#~ "\"%2\">IBM</A> vai <A HREF=\"%3\">Sun</A>)"
+
+#~ msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
+#~ msgstr "Ieslēgt Java (globāli) <A HREF=\"%1\">šeit</A>."
+
+#~ msgid ""
+#~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">plugins</A> (for "
+#~ "viewing <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
+#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Video, etc.)"
+#~ msgstr ""
+#~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">spraudņi</A> (<A "
+#~ "HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF=\"%2\">Real<SUP>&reg;</"
+#~ "SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</SUP></A>Video, utml. "
+#~ "apskatei)"
+
+#~ msgid "Secure Sockets Layer"
+#~ msgstr "Secure Sockets Layer"
+
+#~ msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
+#~ msgstr "(TLS/SSL v2/3) drošiem sakariem līdz 168bitiem"
+
+#~ msgid "OpenSSL"
+#~ msgstr "OpenSSL"
+
+#~ msgid "Bidirectional 16bit unicode support"
+#~ msgstr "Divvirzienu 16bitu unikoda atbalsts"
+
+#~ msgid "AutoCompletion for forms"
+#~ msgstr "AutoPabeigšana formām"
+
+#~ msgctxt "Title of an html 'group box' explaining konqueror features"
+#~ msgid "General"
+#~ msgstr "Pamata"
+
+#~ msgid "Feature"
+#~ msgstr "Īpašība"
+
+#~ msgid "Details"
+#~ msgstr "Detaļas"
+
+#~ msgid "Image formats"
+#~ msgstr "Attēlu formāti"
+
+#, fuzzy
+#~| msgid "PNG<br />MNG<br />JPG<br />GIF"
+#~ msgid "PNG<br />JPG<br />GIF"
+#~ msgstr "PNG<br />MNG<br />JPG<br />GIF"
+
+#~ msgid "Transfer protocols"
+#~ msgstr "Pārraides protokoli"
+
+#~ msgid "HTTP 1.1 (including gzip/bzip2 compression)"
+#~ msgstr "HTTP 1.1 (iekļaujot gzip/bzip2 kompresiju)"
+
+#~ msgid "FTP"
+#~ msgstr "FTP"
+
+#, fuzzy
+#~| msgid "and <A HREF=\"%1\">many more...</A>"
+#~ msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpcenter)...</A>"
+#~ msgstr "un <A HREF=\"%1\">daudz vairāk...</A>"
+
+#~ msgctxt "A feature of Konqueror"
+#~ msgid "URL-Completion"
+#~ msgstr "URL pabeigšana"
+
+#~ msgid "Manual"
+#~ msgstr "Manuāla"
+
+#~ msgid "Popup"
+#~ msgstr "Uznirstoša"
+
+#~ msgid "(Short-) Automatic"
+#~ msgstr "(Īsa) automātiska"
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "<a href=\"%1\">Return to Starting Points</a>"
+#~ msgstr "<a href=\"%1\">Atgriezties uz sākumu</a>"
+
+#~ msgid "Tips &amp; Tricks"
+#~ msgstr "Padomi un triki"
+
+#~ msgid ""
+#~ "Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, "
+#~ "using Google, for the search phrase \"KDE\". There are a lot of Web-"
+#~ "Shortcuts predefined to make searching for software or looking up certain "
+#~ "words in an encyclopedia a breeze. You can even <a href=\"%1\">create "
+#~ "your own</a> Web-Shortcuts."
+#~ msgstr ""
+#~ "Izmantojiet ātro meklēšanu tīmeklī! Piemēram, uzrakstot \"gg: KDE\", tiks "
+#~ "meklēta frāze \"KDE\" Google meklētājā. Ir definēti daudzi ātrās "
+#~ "meklēšanas īsceļi, kas padarīs programmatūras meklēšanu vai vārdu "
+#~ "meklēšanu enciklopēdijā ātru un vienkāršu. Un jūs vienmēr varat <A HREF="
+#~ "\"%1\">izveidot savus</A> ātrās meklēšanas īsceļus!"
+
+#, fuzzy
+#~| msgid ""
+#~| "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> "
+#~| "in the toolbar to increase the font size on your web page."
+#~ msgid ""
+#~ "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
+#~ "the HTML toolbar to increase the font size on your web page."
+#~ msgstr ""
+#~ "Izmantojiet rīkjoslā esošo palielināšanas pogu <img width='16' "
+#~ "height='16' src=\"%1\"></img>, lai palielinātu tīmekļa lapas fontu."
+
+#~ msgid ""
+#~ "When you want to paste a new address into the Location toolbar you might "
+#~ "want to clear the current entry by pressing the black arrow with the "
+#~ "white cross <img width='16' height='16' src=\"%1\"></img> in the toolbar."
+#~ msgstr ""
+#~ "Ja vēlaties vietas rīkjoslā ielīmēt jaunu adresi, tur jau esošo tekstu "
+#~ "var ātri nodzēst nospiežot melno bultu ar baltu krustu <img width='16' "
+#~ "height='16' src=\"%1\"></img>."
+
+#, fuzzy
+#~| msgid ""
+#~| "To create a link on your desktop pointing to the current page, simply "
+#~| "drag the \"Location\" label that is to the left of the Location toolbar, "
+#~| "drop it on to the desktop, and choose \"Link\"."
+#~ msgid ""
+#~ "To create a link on your desktop pointing to the current page, simply "
+#~ "drag the icon (favicon) that is to the left of the Location toolbar, drop "
+#~ "it on to the desktop, and choose \"Icon\"."
+#~ msgstr ""
+#~ "Lai izveidotu uz darbvirsmas saiti uz aktīvo lapu, vienkārši pārvelciet "
+#~ "\"Vieta\" iezīmi, kas ir pa kreisi no Vietas rīkjoslas, nometiet to uz "
+#~ "darbvirsmas, un izvēlieties \"Saite\"."
+
+#~ msgid ""
+#~ "You can also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen "
+#~ "Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
+#~ "sessions."
+#~ msgstr ""
+#~ "Tāpat iestatījumu izvēlnē varat atrast <img width='16' height='16' src="
+#~ "\"%1\" /> \"Pilnekrāna režīms\". Šī iespēja ir ļoti noderīga "
+#~ "prezentācijām."
+
+#~ msgid ""
+#~ "Divide et impera (lat. \"Divide and conquer\") - by splitting a window "
+#~ "into two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> "
+#~ "Split View Left/Right) you can make Konqueror appear the way you like. "
+#~ "You can even load some example view-profiles (e.g. Midnight Commander), "
+#~ "or create your own ones."
+#~ msgstr ""
+#~ "Divide et impera (lat. \"sadali un iekaro\") - sadalot logu divās daļās "
+#~ "(t.i. Logs -> <img width='16' height='16' src=\"%1\" /> Sadalīt skatījumu "
+#~ "kreisais/labais) jūs varat pielāgot Konqueror izskatu kā jums patīk. Jūs "
+#~ "varat arī ielādēt kādu piemēra skatījuma profilu (piem. Pusnakts "
+#~ "komandieris), vai izveidot savus."
+
+#~ msgid ""
+#~ "Use the <a href=\"%1\">user-agent</a> feature if the website you are "
+#~ "visiting asks you to use a different browser (and do not forget to send a "
+#~ "complaint to the webmaster!)"
+#~ msgstr ""
+#~ "Ja apmeklējamā tīmekļa vietne prasa izmantot citu pārlūku, lietojiet <a "
+#~ "href=\"%1\">lietotāja aģents</a> iespēju, (un neaizmirstat nosūtīt "
+#~ "pretenziju lapas īpašniekam!)"
+
+#, fuzzy
+#~| msgid ""
+#~| "The <img width='16' height='16' src=\"%1\"></img> History in your "
+#~| "SideBar ensures that you can keep track of the pages you have visited "
+#~| "recently."
+#~ msgid ""
+#~ "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
+#~ "ensures that you can keep track of the pages you have visited recently."
+#~ msgstr ""
+#~ "<img width='16' height='16' src=\"%1\"></img> Vēsture sānjoslā sniedz "
+#~ "jums iespēju redzēt nesen apmeklētās lapas."
+
+#~ msgid ""
+#~ "Use a caching <a href=\"%1\">proxy</a> to speed up your Internet "
+#~ "connection."
+#~ msgstr ""
+#~ "Izmantojiet kešojošu <a href=\"%1\">starpniekserveri</a>, lai paātrinātu "
+#~ "savu savienojumu ar Internetu."
+
+#~ msgid ""
+#~ "Advanced users will appreciate the Konsole which you can embed into "
+#~ "Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
+#~ "Terminal Emulator)."
+#~ msgstr ""
+#~ "Pieredzējuši lietotāji mācēs novērtēt Konqueror iegulto konsoli "
+#~ "(Iestatījumi -> <img width='16' height='16' src=\"%1\"></img> Rādīt "
+#~ "termināla emulatoru)."
+
+#~ msgid "Next: Specifications"
+#~ msgstr "Nākamais: Specifikācijas"
+
+#~ msgid "Installed Plugins"
+#~ msgstr "Instalētie spraudņi"
+
+#~ msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
+#~ msgstr "<td>Spraudnis</td><td>Apraksts</td><td>Fails</td><td>Tipi</td>"
+
+#~ msgid "Installed"
+#~ msgstr "Instalēts"
+
+#~ msgid ""
+#~ "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
+#~ msgstr ""
+#~ "<td>Mime tips</td><td>Apraksts</td><td>Paplašinājumi</td><td>Spraudnis</"
+#~ "td>"
+
+#~ msgid ""
+#~ "Do you want to disable showing the introduction in the webbrowsing "
+#~ "profile?"
+#~ msgstr ""
+#~ "Vai jūs vēlaties aizliegt Ievada parādīšanu webpārlūkošanas profilā?"
+
+#~ msgid "Faster Startup?"
+#~ msgstr "Ātrāka palaišana?"
+
+#~ msgid "Disable"
+#~ msgstr "Atslēgt"
+
+#~ msgid "Keep"
+#~ msgstr "Paturēt"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Andris Maziks, Māris Nartišs"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "andris.m@delfi.lv, maris.kde@gmail.com"
+
+#~ msgid "&File"
+#~ msgstr "&Fails"
+
+#~ msgid "&Edit"
+#~ msgstr "&Rediģēt"
+
+#~ msgid "&View"
+#~ msgstr "&Skats"
+
+#~ msgid "&Go"
+#~ msgstr "&Iet"
+
+#~ msgid "&Settings"
+#~ msgstr "&Iestatījumi"
+
+#~ msgid "&Window"
+#~ msgstr "&Logs"
+
+#~ msgid "&Help"
+#~ msgstr "&Palīdzība"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Galvenā rīkjosla"
+
+#~ msgid "Extra Toolbar"
+#~ msgstr "Ekstra rīkjosla"
+
+#~ msgid "Location Toolbar"
+#~ msgstr "Vietas rīkjosla"
+
+#~ msgid "Bookmark Toolbar"
+#~ msgstr "Grāmatzīmju rīkjosla"
+
+#~ msgid "Save open tabs and windows for easy retrieval"
+#~ msgstr ""
+#~ "Saglabā atvērtos logus un cilnes, lai vēlāk ērti varētu atsākt darbu"
+
+#~ msgid "&Session name:"
+#~ msgstr "&Sesijas nosaukums:"
+
+#~ msgid "&Profile name:"
+#~ msgstr "&Profila nosaukums:"
+
+#~ msgid "Save &URLs in profile"
+#~ msgstr "Saglabāt &URL profilā"
+
+#~ msgctxt "@action:button New session"
+#~ msgid "New..."
+#~ msgstr "Jauna"
+
+#~ msgctxt "@action:button Save current session"
+#~ msgid "Save Current"
+#~ msgstr "Saglabāt pašreizējo"
+
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename..."
+#~ msgstr "Pārdēvēt"
+
+#~ msgctxt "@action:button Delete session"
+#~ msgid "Delete"
+#~ msgstr "Dzēst"
+
+#~ msgid "Open tabs inside current window"
+#~ msgstr "Atver cilnes aktīvajā logā"
+
+#~ msgid "Limits"
+#~ msgstr "Limiti"
+
+#~ msgid "URLs e&xpire after"
+#~ msgstr "URL d&erīguma termiņš"
+
+#~ msgid "Maximum &number of URLs:"
+#~ msgstr "Maksimālais URL &skaits:"
+
+#~ msgid "Custom Fonts For"
+#~ msgstr "Pielāgots fonts priekš"
+
+#~ msgid "URLs newer than"
+#~ msgstr "Jaunāks URL par"
+
+#~ msgid "Choose Font..."
+#~ msgstr "Izvēlieties fontu..."
+
+#~ msgid "URLs older than"
+#~ msgstr "Vecāki URL par"
+
+#~ msgid ""
+#~ "Shows the number of times visited and the dates of the first and last "
+#~ "visits, in addition to the URL"
+#~ msgstr ""
+#~ "Papildus URL rāda pirmā un pēdējā apmeklējuma laiku, kā arī apmeklējumu "
+#~ "skaitu."
+
+#~ msgid "Detailed tooltips"
+#~ msgstr "Detalizētas paskaidres"
+
+#~ msgid "Clear History"
+#~ msgstr "Tīrīt vēsturi"
+
+#~ msgid ""
+#~ "This is the URL of the web page where Konqueror (as web browser) will "
+#~ "jump to when the \\\"Home\\\" button is pressed. When Konqueror is "
+#~ "started as a file manager, that button makes it jump to your local home "
+#~ "folder instead."
+#~ msgstr ""
+#~ "Šis ir tīmekļa lapas URL, kur Konqueror (kā tīmekļa pārlūks) dosies, kad "
+#~ "nospiesta \\\"Mājas\"\\ poga. Kad Konqueror ir palaists kā failu "
+#~ "pārvaldnieks, šī poga dodas uz lokālo mājas mapi."
+
+#~ msgid "Maximum number of Closed Items"
+#~ msgstr "Maksimālais aizvērto ciļņu skaits"
+
+#~ msgid ""
+#~ "This sets the maximum number of closed items that will be stored in "
+#~ "memory. This limit will not be surpassed."
+#~ msgstr ""
+#~ "Šis iestata maksimālo aivērto ciļņu skaitu, ko paturēt atmiņā. Šī robeža "
+#~ "netiks pārsniegta."
+
+#~ msgid "Open folders in separate windows"
+#~ msgstr "Atvērt mapes atsevišķos logos"
+
+#~ msgid ""
+#~ "If this option is checked, Konqueror will open a new window when you open "
+#~ "a folder, rather than showing that folder's contents in the current "
+#~ "window."
+#~ msgstr ""
+#~ "Ja šis ir atzīmēts, Konqueror atvērs katru mapi jaunā logā, nevis rādīs "
+#~ "tās saturu esošajā logā."
+
+#~ msgid "Show file tips"
+#~ msgstr "Rādīt failu paskaidres"
+
+#~ msgid ""
+#~ "Here you can control if, when moving the mouse over a file, you want to "
+#~ "see a small popup window with additional information about that file"
+#~ msgstr ""
+#~ "Šeit varat norādīt vai, uzkavējoties ar kursoru virs faila, rādīt nelielu "
+#~ "uznirstošu logu ar papildus informāciju par failu"
+
+#~ msgid "Show previews in file tips"
+#~ msgstr "Rādīt priekšapskates failu paskaidrēs"
+
+#~ msgid ""
+#~ "Here you can control if you want the popup window to contain a larger "
+#~ "preview for the file, when moving the mouse over it"
+#~ msgstr ""
+#~ "Šeit varat norādīt vai, uzkavējoties ar kursoru virs faila, uznirstošajā "
+#~ "logā rādīt lielāka izmēra faila priekšapskati"
+
+#~ msgid "Show 'Delete' menu entries which bypass the trashcan"
+#~ msgstr "Rādīt 'Dzēst' izvēlnes ierakstu, kas izlaiž miskasti"
+
+#, fuzzy
+#~| msgid ""
+#~| "Uncheck this if you do not want 'Delete' menu commands to be displayed "
+#~| "on the desktop and in the file manager's menus and context menus. You "
+#~| "can still delete files when hidden by holding the Shift key while "
+#~| "calling 'Move to Trash'."
+#~ msgid ""
+#~ "Check this if you want 'Delete' menu commands to be displayed on the "
+#~ "desktop and in the file manager's menus and context menus. You can always "
+#~ "delete files when hidden by holding the Shift key while calling 'Move to "
+#~ "Trash'."
+#~ msgstr ""
+#~ "Atslēdziet šo, ja nevēlaties ka izvēlnes komanda 'Dzēst' tiek rādīta "
+#~ "failu pārvaldnieka un darbvirsmas izvēlnēs. Jūs joprojām varēsiet izdzēst "
+#~ "failus, pieturot 'Shift' taustiņu, veicot 'Izmest miskastē' darbību."
+
+#~ msgid "Number of Open With items in the File menu"
+#~ msgstr "'Atvērt ar' ierakstu skaits faila izvēlnē"
+
+#~ msgid "Standard font"
+#~ msgstr "Standarta fonts"
+
+#~ msgid "This is the font used to display text in Konqueror windows."
+#~ msgstr "Šis ir fonts, ar kuru attēlo tekstu Konqueror logos."
+
+#~ msgid "Maximum number of history items per view"
+#~ msgstr "Maksimālais skata vēstures ierakstu skaits"
+
+#~ msgid "Ask confirmation for deleting a file."
+#~ msgstr "Vaicāt apstiprinājumu dzēšot failu"
+
+#~ msgid ""
+#~ "This option tells Konqueror whether to ask for a confirmation when you "
+#~ "delete a file without using the trash folder. Warning, deleted files can "
+#~ "not be recovered, so it is recommended to leave this confirmation enabled."
+#~ msgstr ""
+#~ "Šī opcija regulē vai Konqueror prasīt apstiprinājumu pie failu tiešas "
+#~ "izdzēšanas, apejot miskastes mapi. Brīdinājums, dzēstus failus nav "
+#~ "iespējams atjaunot, tāpēc labāk atstājiet šo ieslēgtu."
+
+#~ msgid "Ask confirmation for move to trash"
+#~ msgstr "Vaicāt apstiprinājumu izmetot miskastē"
+
+#~ msgid ""
+#~ "This option tells Konqueror whether to ask for a confirmation when you "
+#~ "move the file to your trash folder, from where it can be recovered very "
+#~ "easily."
+#~ msgstr ""
+#~ "Šī opcija regulē vai Konqueror prasīt apstiprinājumu pie failu "
+#~ "pārvietošnas uz miskastes mapi. No tās tos var viegli atkal atgūt."
+
+#~ msgid ""
+#~ "If true, when opening a session from within the sessions dialog the tabs "
+#~ "will be opened inside current window."
+#~ msgstr ""
+#~ "Ja patiess, atverot sesiju no sesiju loga, cilnes tiks atvērtas esošajā "
+#~ "logā."
+
+#~ msgid "Hide %1"
+#~ msgstr "Slēpt %1"
+
+#~ msgid ""
+#~ "Malformed URL\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Kļūdains URL\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Protocol not supported\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Protokols nav atbalstīts\n"
+#~ "%1"
+
+#~ msgid "Cannot create the find part, check your installation."
+#~ msgstr "Nevar izveidot meklēšanas daļu, pārbaudiet jūsu instalāciju."
+
+#~ msgid "Bookmark This Location"
+#~ msgstr "Pievienot šo vietu grāmatzīmēm"
+
+#~ msgid "SideBar Test Plugin"
+#~ msgstr "Sānjoslas testa spraudnis"
+
+#~ msgid "My Bookmarks"
+#~ msgstr "Manas grāmatzīmes"
+
+#~ msgid "Preload for later use"
+#~ msgstr "Priekšielādēt vēlākai izmantošanai"
+
+#~ msgid "&Save View Profile \"%1\"..."
+#~ msgstr "&Saglabāt skatījuma profilu \"%1\"..."
+
+#~ msgid "Configure Navigation Panel"
+#~ msgstr "Konfigurēt navigācijas paneli"
+
+#~ msgid "Close Navigation Panel"
+#~ msgstr "Aizvērt navigācijas paneli"
+
+#~ msgid "Select Type"
+#~ msgstr "Izvēlēties tipu"
+
+#~ msgid "Select type:"
+#~ msgstr "Izvēlēties tipu:"
+
+#~ msgid "Minutes"
+#~ msgstr "Minūtes"
+
+#~ msgid "Days"
+#~ msgstr "Dienas"
+
+#~ msgid "<qt><b>%1</b> does not exist</qt>"
+#~ msgstr "<qt><b>%1</b> neeksistē</qt>"

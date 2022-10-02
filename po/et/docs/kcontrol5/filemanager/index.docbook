@@ -1,0 +1,103 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Estonian  "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="filemanager" lang="&language;">
+<articleinfo>
+<title
+>Failihaldus</title>
+<authorgroup>
+<author
+>&Mike.McBride; &Mike.McBride.mail;</author>
+<othercredit role="translator"
+><firstname
+>Marek</firstname
+><surname
+>Laane</surname
+><affiliation
+><address
+><email
+>bald@starman.ee</email
+></address
+></affiliation
+><contrib
+>Tõlge eesti keelde</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2009-12-18</date>
+<releaseinfo
+>&kde; 4.4</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Süsteemi seadistused</keyword>
+<keyword
+>failihaldur</keyword>
+</keywordset>
+</articleinfo>
+
+<para
+>Neis moodulites saab seadistada mitmeid failihalduri &konqueror; tegutsemise aspekte. </para>
+
+<note
+><para
+>&konqueror;i kui veebilehitseja seadistamiseks on olemas <ulink url="help:/kcontrol/khtml-behavior/index.html"
+>omaette moodul</ulink
+>.</para
+></note>
+
+<variablelist>
+<title
+><guilabel
+>Muud seadistused</guilabel
+></title>
+<varlistentry>
+<term
+><guilabel
+>Kataloogid avatakse eraldi aknas</guilabel
+></term>
+<listitem
+> <para
+>Kui see on lubatud, avatakse kataloogi suundumisel uus aken, mitte ei näidata selle sisu samas aknas.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Faile lõplikult kustutava käsu "Kustuta" näitamine menüüdes</guilabel
+></term>
+<listitem>
+<para
+>Märkimisel näidatakse töölaua ja failihalduri kontekstimenüüs käsku <quote
+>Kustuta</quote
+>. Faile saab alati kustutada ka klahvi &Shift; vajutades ja samal ajal käsku <guimenuitem
+>Viska prügikasti</guimenuitem
+> valides.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>&konqueror;i failihalduri režiimi seadistusi <guilabel
+>vaaterežiimide</guilabel
+>, <guilabel
+>liikumise</guilabel
+>, <guilabel
+>teenuste</guilabel
+>, <guilabel
+>üldiste</guilabel
+> ja <guilabel
+>prügikasti</guilabel
+> valikute kohta kasutab ka &dolphin;. </para>
+
+</article>

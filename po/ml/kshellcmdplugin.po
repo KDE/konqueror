@@ -1,0 +1,1075 @@
+# translation of konqueror.po to
+# Copyright (C) 2008 This_file_is_part_of_KDE
+# This file is distributed under the same license as the konqueror package.
+#
+# ANI PETER|അനി പീറ്റര്‍ <apeter@redhat.com>, 2008.
+# Praveen Arimbrathodiyil <pravi.a@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2019-12-03 10:46+0000\n"
+"Last-Translator: Subin Siby <subins2000@gmail.com>\n"
+"Language-Team: SMC <smc.org.in>\n"
+"Language: ml\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. i18n: ectx: Menu (tools)
+#: konq_shellcmdplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "ഉപകരണങ്ങള്‍ (&T)"
+
+#: kshellcmdexecutor.cpp:106
+#, kde-format
+msgid "Input Required:"
+msgstr "ഇന്‍പുട്ട് ആവശ്യമുണ്ടു്:"
+
+#: kshellcmdplugin.cpp:32
+#, kde-format
+msgid "&Execute Shell Command..."
+msgstr ""
+
+#: kshellcmdplugin.cpp:41
+#, kde-format
+msgid ""
+"KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a bug."
+msgstr ""
+
+#: kshellcmdplugin.cpp:51
+#, kde-format
+msgid "Executing shell commands works only on local directories."
+msgstr ""
+
+#: kshellcmdplugin.cpp:73
+#, kde-format
+msgctxt "@title:window"
+msgid "Execute Shell Command"
+msgstr ""
+
+#: kshellcmdplugin.cpp:74
+#, kde-format
+msgid "Execute shell command in current directory:"
+msgstr ""
+
+#: kshellcmdplugin.cpp:85
+#, kde-format
+msgid "Output from command: \"%1\""
+msgstr ""
+
+#~ msgid "Configure"
+#~ msgstr "സജ്ജമാക്കുക"
+
+#~ msgid "Extensions"
+#~ msgstr "എക്സ്റ്റെന്‍ഷനുകള്‍"
+
+#~ msgid ""
+#~ "There was an error loading the module %1.\n"
+#~ "The diagnostics is:\n"
+#~ "%2"
+#~ msgstr ""
+#~ "%1 എന്ന ഭാഗം ചേര്‍ക്കുന്നതിലൊരു പിശകണ്ടായി.\n"
+#~ "പരിശോധനാ ഫലം:\n"
+#~ "%2"
+
+#~ msgid "Konqueror"
+#~ msgstr "കോണ്‍ക്വറര്‍"
+
+#~ msgid "Web browser, file manager and document viewer."
+#~ msgstr "വെബ് ബ്രൌസര്‍, ഫയലുകളുടെ നടത്തിപ്പുകാരന്‍, രചനകളുടെ ദര്‍ശിനി."
+
+#~ msgid "(C) 1999-2008, The Konqueror developers"
+#~ msgstr "(C) 1999-2008, കോണ്‍ക്വററിന്റെ രചയിതാക്കള്‍"
+
+#~ msgid "http://konqueror.kde.org"
+#~ msgstr "http://konqueror.kde.org"
+
+#~ msgid "David Faure"
+#~ msgstr "ഡേവിഡ് ഫൌര്‍"
+
+#~ msgid "Developer (framework, parts, JavaScript, I/O library) and maintainer"
+#~ msgstr "രചയിതാവും (ചട്ടക്കൂടു്, ഭാഗങ്ങള്‍, ജാവാസ്ക്രിപ്റ്റ്, ഐ/ഒ ലൈബ്രറി) പരിപാലകനും"
+
+#~ msgid "Simon Hausmann"
+#~ msgstr "സൈമണ്‍ ഹോസ്മാന്‍"
+
+#~ msgid "Developer (framework, parts)"
+#~ msgstr "രചയിതാവു് (ചട്ടക്കൂടു്, ഭാഗങ്ങള്‍)"
+
+#~ msgid "Michael Reiher"
+#~ msgstr "മിഖേല്‍ റീയര്‍"
+
+#~ msgid "Developer (framework)"
+#~ msgstr "രചയിതാവു് (ചട്ടക്കൂടു്)"
+
+#~ msgid "Matthias Welk"
+#~ msgstr "മത്തിയാസ് വെല്‍ക്ക്"
+
+#~ msgid "Developer"
+#~ msgstr "രചയിതാവു്"
+
+#~ msgid "Alexander Neundorf"
+#~ msgstr "അലക്സാണ്ടര്‍ ന്യൂണ്ടോര്‍ഫ്"
+
+#~ msgid "Developer (List views)"
+#~ msgstr "രചയിതാവു് (പട്ടികയായുള്ള പ്രദര്‍ശനരീതി)"
+
+#~ msgid "Michael Brade"
+#~ msgstr "മിഖേല്‍ ബ്രേഡ്"
+
+#~ msgid "Developer (List views, I/O library)"
+#~ msgstr "രചയിതാവു് (പട്ടികയായുള്ള പ്രദര്‍ശനരീതി,ഐ/ഒ ലൈബ്രറി)"
+
+#~ msgid "Lars Knoll"
+#~ msgstr "ലാര്‍സ് നോള്‍"
+
+#~ msgid "Developer (HTML rendering engine)"
+#~ msgstr "രചയിതാവു് (എച്ച്ടിഎംഎല്‍ ചിത്രീകരണ യന്ത്രം)"
+
+#~ msgid "Dirk Mueller"
+#~ msgstr "ഡിര്‍ക്ക് മുള്ളര്‍"
+
+#~ msgid "Peter Kelly"
+#~ msgstr "പീറ്റര്‍ കെല്ലി"
+
+#~ msgid "Waldo Bastian"
+#~ msgstr "വാല്‍ഡോ ബാസ്റ്റിയന്‍"
+
+#~ msgid "Developer (HTML rendering engine, I/O library)"
+#~ msgstr "രചയിതാവു് (എച്ച്ടിഎംഎല്‍ ചിത്രീകരണ യന്ത്രം, ഐ/ഒ ലൈബ്രറി)"
+
+#~ msgid "Germain Garand"
+#~ msgstr "ജെര്‍മൈന്‍ ഗരാണ്ട്"
+
+#~ msgid "Leo Savernik"
+#~ msgstr "ലിയോ സാവെര്‍ണിക്"
+
+#~ msgid "Stephan Kulow"
+#~ msgstr "സ്റ്റീഫന്‍ കുലോ"
+
+#~ msgid ""
+#~ "Developer (HTML rendering engine, I/O library, regression test framework)"
+#~ msgstr ""
+#~ "രചയിതാവു് (എച്ച്ടിഎംഎല്‍ ചിത്രീകരണ യന്ത്രം, ഐ/ഒ ലൈബ്രറി, റിഗ്രഷന്‍ പരിശോധനാ ചട്ടക്കൂടു്)"
+
+#~ msgid "Antti Koivisto"
+#~ msgstr "ആന്‍ട്ടി കൊയിവിസ്റ്റോ"
+
+#~ msgid "Zack Rusin"
+#~ msgstr "സാക്ക് റസിന്‍"
+
+#~ msgid "Tobias Anton"
+#~ msgstr "ടോബിയാസ് ആന്റണ്‍"
+
+#~ msgid "Lubos Lunak"
+#~ msgstr "ലുബോസ് ലുനാക്"
+
+#~ msgid "Developer (HTML rendering engine, JavaScript)"
+#~ msgstr "രചയിതാവു് (എച്ച്ടിഎംഎല്‍ ചിത്രീകരണ യന്ത്രം, ജാവാസ്ക്രിപ്റ്റ്)"
+
+#~ msgid "Allan Sandfeld Jensen"
+#~ msgstr "അലന്‍ സാന്‍ഡ്ഫെല്‍ഡ് ജെന്‍സണ്‍"
+
+#~ msgid "Apple Safari Developers"
+#~ msgstr "ആപ്പിള്‍ സഫാരിയുടെ രചയിതാക്കള്‍"
+
+#~ msgid "Harri Porten"
+#~ msgstr "ഹാരി പോര്‍ടെന്‍"
+
+#~ msgid "Developer (JavaScript)"
+#~ msgstr "രചയിതാവു് (ജാവാസ്ക്രിപ്റ്റ്)"
+
+#~ msgid "Koos Vriezen"
+#~ msgstr "കൂസ് വ്രീസെന്‍"
+
+#~ msgid "Developer (Java applets and other embedded objects)"
+#~ msgstr "രചയിതാവു് (ജാവാസ്ക്രിപ്റ്റും മറ്റു് കൂടെ ചേര്‍ത്തിട്ടുള്ള വസ്തുക്കളും)"
+
+#~ msgid "Matt Koss"
+#~ msgstr "മാറ്റ് കോസ്"
+
+#~ msgid "Developer (I/O library)"
+#~ msgstr "രചയിതാവു് (ഐ/ഒ ലൈബ്രറി)"
+
+#~ msgid "Alex Zepeda"
+#~ msgstr "അലക്സ് സെപേഡ"
+
+#~ msgid "Richard Moore"
+#~ msgstr "റിച്ചാര്‍ഡ് മൂര്‍"
+
+#~ msgid "Developer (Java applet support)"
+#~ msgstr "രചയിതാവു് (ജാവാ ലഘുപ്രയോഗ പിന്തുണ)"
+
+#~ msgid "Dima Rogozin"
+#~ msgstr "ഡിമാ റൊഗോസിന്‍"
+
+#~ msgid "Wynn Wilkes"
+#~ msgstr "വിന്‍ വില്‍ക്സ്"
+
+#~ msgid ""
+#~ "Developer (Java 2 security manager support,\n"
+#~ " and other major improvements to applet support)"
+#~ msgstr ""
+#~ "രചയിതാവു് (ജാവ 2 സുക്ഷാ നടത്തിപ്പിനുള്ള പിന്തുണയും,\n"
+#~ " ലഘുപ്രയോഗ പിന്തുണയ്ക്കുള്ള മറ്റു് പ്രധാന മുന്നേറ്റങ്ങളും)"
+
+#~ msgid "Stefan Schimanski"
+#~ msgstr "സ്റ്റീഫന്‍ ഷിമാന്‍സ്കി"
+
+#~ msgid "Developer (Netscape plugin support)"
+#~ msgstr "രചയിതാവു് (നെറ്റ്സ്കേപ് സംയോജക പിന്തുണ)"
+
+#~ msgid "George Staikos"
+#~ msgstr "ജോര്‍ജ്ജ് സ്റ്റൈക്കോസ്"
+
+#~ msgid "Developer (SSL, Netscape plugins)"
+#~ msgstr "രചയിതാവു് (എസ്എസ്എല്‍, നെറ്റ്സ്കേപ് സംയോജകങ്ങള്‍)"
+
+#~ msgid "Dawit Alemayehu"
+#~ msgstr "ഡാവിറ്റ് അലേമായേഹു"
+
+#~ msgid "Developer (I/O library, Authentication support)"
+#~ msgstr "രചയിതാവു് (ഐ/ഒ ലൈബ്രറി, തിരിച്ചറിയല്‍ പിന്തുണ)"
+
+#~ msgid "Carsten Pfeiffer"
+#~ msgstr "കാര്‍സ്റ്റണ്‍ ഫീഫര്‍"
+
+#~ msgid "Torsten Rahn"
+#~ msgstr "ടോര്‍സ്റ്റണ്‍ റാന്‍"
+
+#~ msgid "Graphics/icons"
+#~ msgstr "ഗ്രാഫിക്സ്/ചിഹ്നങ്ങള്‍"
+
+#~ msgid "Torben Weis"
+#~ msgstr "ടോര്‍ബന്‍ വീസ്"
+
+#~ msgid "KFM author"
+#~ msgstr "കെഎഫ്എം രചയിതാവു്"
+
+#~ msgid "Joseph Wenninger"
+#~ msgstr "ജോസഫ് വെന്നിംഗര്‍"
+
+#~ msgid "Developer (navigation panel framework)"
+#~ msgstr "രചയിതാവു് (നാവിഗേഷന്‍ പാളിയുടെ ചട്ടക്കൂടു്)"
+
+#~ msgid "Stephan Binner"
+#~ msgstr "സ്റ്റീഫന്‍ ബിന്നര്‍"
+
+#~ msgid "Developer (misc stuff)"
+#~ msgstr "രചയിതാവു് (അല്ലറചില്ലറ സാധനങ്ങള്‍)"
+
+#~ msgid "Ivor Hewitt"
+#~ msgstr "ഇവോര്‍ ഹെവിറ്റ്"
+
+#~ msgid "Developer (AdBlock filter)"
+#~ msgstr "രചയിതാവു് (പരസ്യംതടയുന്ന ഫില്‍ട്ടര്‍)"
+
+#~ msgid "Eduardo Robles Elvira"
+#~ msgstr "എഡ്വേര്‍ഡോ റോബിള്‍സ് എല്‍വിര"
+
+#~ msgid "Close View"
+#~ msgstr "കാഴ്ച അടയ്ക്കുക"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#~ msgid "Show %1"
+#~ msgstr "%1 കാണിക്കുക"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "History"
+#~ msgstr "ചരിത്രമുള്ള വശത്തെ പട്ട കാണിയ്ക്കുക"
+
+#~ msgctxt "@action:inmenu Parent of 'By Name' and 'By Date'"
+#~ msgid "Sort"
+#~ msgstr "തരംതിരിയ്ക്കുക"
+
+#~ msgid "Miscellaneous"
+#~ msgstr "പലവക"
+
+#~ msgid "Open in New &Window"
+#~ msgstr "പുതിയ &ജാലകത്തില്‍ തുറക്കുക"
+
+#~ msgid "Open in New Tab"
+#~ msgstr "പുതിയ ടാബില്‍ തുറക്കുക"
+
+#, fuzzy
+#~ msgid "&Copy Link Address"
+#~ msgstr "ലിങ്കിന്റെ വിലാസം പകര്‍ത്തുക"
+
+#~ msgid "&Remove Entry"
+#~ msgstr "എന്‍ട്രി &നീക്കം ചെയ്യുക"
+
+#~ msgid "&Preferences..."
+#~ msgstr "&മുന്‍ഗണനകള്‍..."
+
+#~ msgid "By &Name"
+#~ msgstr "&പേരു് ഉപയോഗിച്ചു്"
+
+#~ msgid "By &Date"
+#~ msgstr "&തീയതി ഉപയോഗിച്ചു്"
+
+#, fuzzy
+#~ msgid "Search in history"
+#~ msgstr "ചരിത്രമുള്ള വശത്തെ പട്ട കാണിയ്ക്കുക"
+
+#, fuzzy
+#~ msgid "Start without a default window, when called without URLs"
+#~ msgstr "സ്വതവേയുള്ള ജാലകമില്ലാതെ ആരംഭിക്കുക"
+
+#~ msgid "Profile to open"
+#~ msgstr "തുറക്കേണ്ട പ്രൊഫൈല്‍"
+
+#~ msgid "Session to open"
+#~ msgstr "തുറക്കേണ്ട പ്രവര്‍ത്തനവേള"
+
+#~ msgid "Location to open"
+#~ msgstr "തുറക്കേണ്ട സ്ഥലം"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Loading..."
+#~ msgstr "എടുത്തുകൊണ്ടിരിയ്ക്കുന്നു..."
+
+#~ msgid "Canceled."
+#~ msgstr "റദ്ദാക്കിയിരിക്കുന്നു."
+
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Reloading the page will discard these changes."
+#~ msgstr ""
+#~ "ഈ താളില്‍ സമര്‍പ്പിയ്ക്കാത്ത മാറ്റങ്ങളുണ്ടു്.\n"
+#~ "ഈ താള്‍ വീണ്ടുമെടുക്കുന്നതു് ഈ മാറ്റങ്ങളെ ഉപേക്ഷിയ്ക്കും."
+
+#~ msgid "Discard Changes?"
+#~ msgstr "മാറ്റങ്ങള്‍ സൂക്ഷിക്കണമോ?"
+
+#~ msgid "&Discard Changes"
+#~ msgstr "മാറ്റങ്ങള്‍ &സൂക്ഷിക്കുക"
+
+#~ msgid "File Management"
+#~ msgstr "ഫയലുകളുടെ നടത്തിപ്പു്"
+
+#~ msgid "Web Browsing"
+#~ msgstr "വെബ് ബ്രൌസിങ്ങ്"
+
+#~ msgid "Home Folder"
+#~ msgstr "ഹോം ഫോള്‍ഡര്‍"
+
+#, fuzzy
+#~ msgid "Home"
+#~ msgstr "പൂമുഖം"
+
+#~ msgid "Navigate to your 'Home Folder'"
+#~ msgstr "നിങ്ങളുടെ 'സ്വന്തം അറയിലേയ്ക്കു്' നീങ്ങുക"
+
+#~ msgid "Navigate to your local 'Home Folder'"
+#~ msgstr "നിങ്ങളുടെ പ്രാദേശികമായുള്ള 'സ്വന്തം അറയിലേയ്ക്കു്' നീങ്ങുക"
+
+#~ msgid "Home Page"
+#~ msgstr "പൂമുഖം"
+
+#~ msgid "Navigate to your 'Home Page'"
+#~ msgstr "നിങ്ങളുടെ 'പൂമുഖത്തേയ്ക്കു്' നിങ്ങുക"
+
+#~ msgid ""
+#~ "<html>Navigate to your 'Home Page'<br /><br />You can configure the "
+#~ "location where this button takes you under <b>Settings -> Configure "
+#~ "Konqueror -> General</b>.</html>"
+#~ msgstr ""
+#~ "<html>നിങ്ങളുടെ 'പൂമുഖത്തിലേയ്ക്കു്' പ്രവേശിയ്ക്കൂ<br /><br />ഈ ബട്ടണ്‍ നിങ്ങളെ എവിടെ "
+#~ "എത്തിയ്ക്കുമെന്നതു് <b>സജ്ജീകരണങ്ങള്‍ -> കോണ്‍ക്വററിന്റെ ക്രമീകരണങ്ങള്‍ -> പൊതുവായവ "
+#~ "എന്നയിടത്തില്‍ ക്രമീകരിയ്ക്കാം</b>.</html>"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Detaching the tab will discard these changes."
+#~ msgstr ""
+#~ "ഈ കിളിവാതിലില്‍ സമര്‍പ്പിയ്ക്കാത്ത മാറ്റങ്ങളുണ്ടു്.\n"
+#~ "ഈ കിളിവാതില്‍ എടുത്തു് മാറ്റുന്നതു് ഈ മാറ്റങ്ങളെ ഉപേക്ഷിയ്ക്കും."
+
+#~ msgid ""
+#~ "This view contains changes that have not been submitted.\n"
+#~ "Closing the view will discard these changes."
+#~ msgstr ""
+#~ "ഈ കാഴ്ചയില്‍ സമര്‍പ്പിയ്ക്കാത്ത മാറ്റങ്ങളുണ്ടു്.\n"
+#~ "ഈ കാഴ്ച അടയ്ക്കുന്നതു് ഈ മാറ്റങ്ങളെ ഉപേക്ഷിയ്ക്കും."
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the tab will discard these changes."
+#~ msgstr ""
+#~ "ഈ കിളിവാതിലില്‍ സമര്‍പ്പിയ്ക്കാത്ത മാറ്റങ്ങളുണ്ടു്.\n"
+#~ "ഈ കിളിവാതില്‍ അടയ്ക്കുന്നതു് ഈ മാറ്റങ്ങളെ ഉപേക്ഷിയ്ക്കും."
+
+#~ msgid "Do you really want to close all other tabs?"
+#~ msgstr "മറ്റെല്ലാ കിളിവാതിലുകളും അടയ്ക്കണമെന്നു് നിങ്ങള്‍ക്കുറപ്പാണോ?"
+
+#~ msgid "Close Other Tabs Confirmation"
+#~ msgstr "മറ്റു കിളിവാതിലുകളെ അടയ്ക്കുന്നതുറപ്പാക്കുന്നു"
+
+#~ msgid "Close &Other Tabs"
+#~ msgstr "&മറ്റ് ടാബുകള്‍ അടയ്ക്കുക"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing other tabs will discard these changes."
+#~ msgstr ""
+#~ "ഈ കിളിവാതിലില്‍ സമര്‍പ്പിയ്ക്കാത്ത മാറ്റങ്ങളുണ്ടു്.\n"
+#~ "മറ്റു് കിളിവാതിലുകള്‍ അടയ്ക്കുന്നതു് ഈ മാറ്റങ്ങളെ ഉപേക്ഷിയ്ക്കും."
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Reloading all tabs will discard these changes."
+#~ msgstr ""
+#~ "ഈ കിളിവാതിലില്‍ സമര്‍പ്പിയ്ക്കാത്ത മാറ്റങ്ങളുണ്ടു്.\n"
+#~ "എല്ലാ കിളിവാതിലുകളും വീണ്ടുമെടുക്കുന്നതു് ഈ മാറ്റങ്ങളെ ഉപേക്ഷിയ്ക്കും."
+
+#~ msgid "Enter Target"
+#~ msgstr "ലക്ഷ്യം നല്‍കുക"
+
+#~ msgid "<qt><b>%1</b> is not valid</qt>"
+#~ msgstr "<qt><b>%1</b> സാധുവല്ല</qt>"
+
+#~ msgid "Copy selected files from %1 to:"
+#~ msgstr "%1 ല്‍ നിന്നും തെരഞ്ഞെടുത്ത ഫയലുകളെ പകര്‍ത്തേണ്ടതു്:"
+
+#~ msgid "Move selected files from %1 to:"
+#~ msgstr "%1 ല്‍ നിന്നും തെരഞ്ഞെടുത്ത ഫയലുകളെ നീക്കേണ്ടതു്:"
+
+#, fuzzy
+#~ msgctxt "This menu entry empties the closed items history"
+#~ msgid "Empty Closed Items History"
+#~ msgstr "അടച്ചു പൂട്ടിയ വസ്തുക്കള്‍"
+
+#~ msgid "Save As..."
+#~ msgstr "പേരു് മാറ്റി സൂക്ഷിക്കുക..."
+
+#~ msgid "Manage..."
+#~ msgstr "കൈകാര്യം ചെയ്യുക.."
+
+#~ msgid "New &Window"
+#~ msgstr "പുതിയ &ജാലകം"
+
+#~ msgid "&Duplicate Window"
+#~ msgstr "ജാലകം &പകര്‍ത്തുക"
+
+#~ msgid "Send &Link Address..."
+#~ msgstr "&കണ്ണിയുടെ വിലാസം പകര്‍ത്തുക..."
+
+#~ msgid "S&end File..."
+#~ msgstr "ഫയര്‍ അ&യയ്ക്കുക.."
+
+#~ msgid "&Open Location"
+#~ msgstr "സ്ഥാനം &തുറക്കുക"
+
+#~ msgid "&Open File..."
+#~ msgstr "ഫയല്‍ &തുറക്കുക.."
+
+#~ msgid "&Find File..."
+#~ msgstr "&ഫയല്‍ കണ്ടുപിടിക്കുക..."
+
+#~ msgid "&Use index.html"
+#~ msgstr "index.html &ഉപയോഗിക്കുക"
+
+#~ msgid "Lock to Current Location"
+#~ msgstr "ഇപ്പോഴുള്ള സ്ഥാനത്തു് വച്ചു് പൂട്ടുക"
+
+#, fuzzy
+#~ msgctxt "This option links konqueror views"
+#~ msgid "Lin&k View"
+#~ msgstr "&കാഴ്ച"
+
+#~ msgid "&Up"
+#~ msgstr "&മുകളിലേക്ക്"
+
+#~ msgid "Closed Items"
+#~ msgstr "അടച്ചു പൂട്ടിയ വസ്തുക്കള്‍"
+
+#~ msgid "Sessions"
+#~ msgstr "പ്രവര്‍ത്തനവേളകള്‍"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Most Often Visited"
+#~ msgstr "ഏറ്റവും കൂടുതല്‍ സന്ദര്‍ശിച്ചതു്"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Recently Visited"
+#~ msgstr "അടുത്തിടെ സന്ദര്‍ശിച്ചതു്"
+
+#, fuzzy
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History"
+#~ msgstr "ചരിത്രമുള്ള വശത്തെ പട്ട കാണിയ്ക്കുക"
+
+#, fuzzy
+#~ msgid "&Save View Profile As..."
+#~ msgstr "കാഴ്ചാ പ്രൊഫൈല്‍ &സൂക്ഷിയ്ക്കുക..."
+
+#~ msgid "Configure Extensions..."
+#~ msgstr "എക്സ്റ്റന്‍ഷനുകള്‍ ക്രമീകരിയ്ക്കുക..."
+
+#~ msgid "Configure Spell Checking..."
+#~ msgstr "അക്ഷരത്തെറ്റു് പരിശോധന ക്രമീകരിയ്ക്കുക..."
+
+#~ msgid "Split View &Left/Right"
+#~ msgstr "&ഇടത്തും/വലത്തുമായി കാഴ്ച വിഭജിയ്ക്കുക"
+
+#~ msgid "Split View &Top/Bottom"
+#~ msgstr "&മുകളിലും/താഴെയുമായി കാഴ്ച വിഭജിയ്ക്കുക"
+
+#~ msgid "&New Tab"
+#~ msgstr "&പുതിയ ടാബ്"
+
+#~ msgid "&Duplicate Current Tab"
+#~ msgstr "ഇപ്പോഴത്തെ കിളിവാതില്‍ &പകര്‍ത്തുക"
+
+#~ msgid "Detach Current Tab"
+#~ msgstr "ഇപ്പോഴത്തെ കിളിവാതില്‍ വേര്‍പ്പെടുത്തുക"
+
+#~ msgid "&Close Active View"
+#~ msgstr "&സജീവമായ കാഴ്ച അടയ്ക്കുക"
+
+#~ msgid "Close Current Tab"
+#~ msgstr "ഇപ്പോഴത്തെ കിളിവാതില്‍ അടയ്ക്കുക"
+
+#~ msgid "Activate Next Tab"
+#~ msgstr "അടുത്ത കിളിവാതില്‍ സജീവമാക്കുക"
+
+#~ msgid "Activate Previous Tab"
+#~ msgstr "മുമ്പത്തെ കിളിവാതില്‍ സജീവമാക്കുക"
+
+#~ msgid "Activate Tab %1"
+#~ msgstr "കിളിവാതില്‍ %1 സജീവമാക്കുക"
+
+#~ msgid "Move Tab Left"
+#~ msgstr "കിളിവാതില്‍ ഇടത്തോട്ടു് നീക്കുക"
+
+#~ msgid "Move Tab Right"
+#~ msgstr "കിളിവാതില്‍ വലത്തോട്ടു് നീക്കുക"
+
+#~ msgid "Dump Debug Info"
+#~ msgstr "പിഴവു് തിരുത്താനുള്ള വിവരം തള്ളുക"
+
+#~ msgid "C&onfigure View Profiles..."
+#~ msgstr "കാഴ്ചാ പ്രൊഫൈലുകള്‍ &ക്രമീകരിയ്ക്കുക..."
+
+#~ msgid "Load &View Profile"
+#~ msgstr "കാഴ്ചാ പ്രൊഫൈല്‍ &എടുക്കുക"
+
+#~ msgid "&Reload"
+#~ msgstr "&വീണ്ടും ലഭ്യമാക്കുക"
+
+#~ msgid "&Reload All Tabs"
+#~ msgstr "എല്ലാ ടാബുകളും &വീണ്ടും ലഭ്യമാക്കുക"
+
+#~ msgid "&Force Reload"
+#~ msgstr "&നിര്‍ബന്ധമായും വീണ്ടും ലഭ്യമാക്കുക"
+
+#~ msgid "&Stop"
+#~ msgstr "&നിര്‍ത്തുക"
+
+#~ msgid "L&ocation: "
+#~ msgstr "&സ്ഥാനം: "
+
+#~ msgid "Location Bar"
+#~ msgstr "സ്ഥാനം കാണിയ്ക്കുന്ന പട്ട"
+
+#~ msgid ""
+#~ "<html>Location Bar<br /><br />Enter a web address or search term.</html>"
+#~ msgstr ""
+#~ "<html>സ്ഥാനം കാണിയ്ക്കുന്ന പട്ട<br /><br />വെബ് വിലാസമോ തെരയാനുള്ള വാചകമോ നല്‍കുക.</"
+#~ "html>"
+
+#~ msgid "Clear Location Bar"
+#~ msgstr "സ്ഥാനം കാണിയ്ക്കുന്ന പട്ട വൃത്തിയാക്കുക "
+
+#~ msgid ""
+#~ "<html>Clear Location bar<br /><br />Clears the contents of the location "
+#~ "bar.</html>"
+#~ msgstr ""
+#~ "<html>സ്ഥാനം കാണിയ്ക്കുന്ന പട്ട വൃത്തിയാക്കുക <br /><br />സ്ഥാനം കാണിയ്ക്കുന്ന പട്ടയിലെ "
+#~ "ഉള്ളടക്കം വൃത്തിയാക്കുന്നു.</html>"
+
+#~ msgid "&Bookmarks"
+#~ msgstr "&ഓര്‍മ്മക്കുറിപ്പുകള്‍"
+
+#~ msgid "Kon&queror Introduction"
+#~ msgstr "&കോണ്‍ക്വററിനൊരാമുഖം"
+
+#~ msgid "Go"
+#~ msgstr "ലഭ്യമാക്കുക"
+
+#~ msgid ""
+#~ "<html>Go<br /><br />Goes to the page that has been entered into the "
+#~ "location bar.</html>"
+#~ msgstr ""
+#~ "<html>പോകൂക<br /><br />സ്ഥാനം കാണിയ്ക്കുന്ന പട്ടയില്‍ നല്‍കിയ താളിലേയ്ക്കു് പോകുന്നു.</html>"
+
+#~ msgid "Enter the parent folder"
+#~ msgstr "മുകളിലുള്ള അറ നല്‍കുക"
+
+#~ msgid "Move backwards one step in the browsing history"
+#~ msgstr "ബ്രൌസിങ്ങ് ചരിത്രത്തില്‍ ഒരു പടി പിറകോട്ടു് പോകുക"
+
+#~ msgid "Move forward one step in the browsing history"
+#~ msgstr "ബ്രൌസിങ്ങ് ചരിത്രത്തില്‍ ഒരു പടി മുമ്പോട്ടു് പോകുക"
+
+#~ msgid "Move backwards one step in the closed tabs history"
+#~ msgstr "അടച്ച കിളിവാതിലുകളുടെ ചരിത്രത്തില്‍ ഒരു പടി പിറകോട്ടു് പോകുക"
+
+#~ msgid "Reload the currently displayed document"
+#~ msgstr "ഇപ്പോള്‍ കാണിച്ചിരിയ്ക്കുന്ന രചന വീണ്ടുമെടുക്കുക"
+
+#~ msgid "Reload all currently displayed document in tabs"
+#~ msgstr "കിളിവാതിലുകളില്‍ കാണിച്ചിരിയ്ക്കുന്ന എല്ലാ രചനകളും വീണ്ടുമെടുക്കുക"
+
+#~ msgid ""
+#~ "Force a reload of the currently displayed document and any contained "
+#~ "images"
+#~ msgstr "ഇപ്പോള്‍ കാണിച്ചിരിയ്ക്കുന്ന രചനയും അതിലുള്ള ചിത്രങ്ങളും വീണ്ടുമെടുക്കാന്‍ നിര്‍ബന്ധിയ്ക്കുക"
+
+#~ msgid "Stop loading the document"
+#~ msgstr "രചന എടുക്കുന്നതു് നിര്‍ത്തുക"
+
+#~ msgid "Move the selected text or item(s) to the clipboard"
+#~ msgstr "തെരഞ്ഞെടുത്ത പദാവലിയോ ഇനങ്ങളോ ഓര്‍മ്മച്ചെപ്പിലേയ്ക്കു് നീക്കുക"
+
+#~ msgid "Copy the selected text or item(s) to the clipboard"
+#~ msgstr "തെരഞ്ഞെടുത്ത പദാവലിയോ ഇനങ്ങളോ ഓര്‍മ്മച്ചെപ്പിലേയ്ക്കു് പകര്‍ത്തുക"
+
+#~ msgid "Paste the clipboard contents"
+#~ msgstr "ഓര്‍മ്മച്ചെപ്പിലെ വസ്തുക്കള്‍ ഒട്ടിയ്ക്കുക"
+
+#~ msgid "Print the current document"
+#~ msgstr "നിലവിലുള്ള രേഖ പ്രിന്റ് ചെയ്യുക"
+
+#~ msgid "If present, open index.html when entering a folder."
+#~ msgstr "ഒരു അറയില്‍ കയറുമ്പോള്‍ ഇന്‍ഡെക്സ്.എച്ച്ടിഎംഎല്‍ (index.html) നിലവിലുണ്ടെങ്കില്‍ തുറക്കുക."
+
+#~ msgid "Copy &Files..."
+#~ msgstr "&ഫയലുകള്‍ പകര്‍ത്തുക..."
+
+#~ msgid "M&ove Files..."
+#~ msgstr "ഫയലുകള്‍ &നീക്കുക..."
+
+#, fuzzy
+#~ msgid "Open bookmarks folder in new tabs"
+#~ msgstr "ഫോള്‍ഡര്‍ ടാബുകളില്‍ തുറക്കുക"
+
+#~ msgid "Open in T&his Window"
+#~ msgstr "&ഈ ജാലകത്തില്‍ തുറക്കുക"
+
+#~ msgid "Open the document in current window"
+#~ msgstr "നിലവിലുള്ള ജാലകത്തില്‍ രേഖ തുറക്കുക"
+
+#~ msgid "Open the document in a new window"
+#~ msgstr "പുതിയ ഒരു ജാലകത്തില്‍ രേഖ തുറക്കുക"
+
+#~ msgid "Open in &New Tab"
+#~ msgstr "&പുതിയ ടാബില്‍ തുറക്കുക"
+
+#~ msgid "Open the document in a new tab"
+#~ msgstr "പുതിയ ഒരു ടാബില്‍ രേഖ തുറക്കുക"
+
+#~ msgid "Open with %1"
+#~ msgstr "%1 ഉപയോഗിച്ചു് തുറക്കുക"
+
+#~ msgid "C&lose Current Tab"
+#~ msgstr "നിലവിലുള്ള ടാബ് അ&ടയ്ക്കുക"
+
+#~ msgid "Add"
+#~ msgstr "ചേര്‍ക്കുക"
+
+#~ msgid "Do Not Add"
+#~ msgstr "ചേര്‍ക്കേണ്ടതില്ല"
+
+#~ msgid "&Rename Profile"
+#~ msgstr "പ്രൊഫൈലിന്റെ പേരു് &മാറ്റുക"
+
+#~ msgid "&Delete Profile"
+#~ msgstr "പ്രൊഫൈല്‍ വെട്ടി &മാറ്റുക"
+
+#~ msgid "&Open"
+#~ msgstr "&തുറക്കുക"
+
+#, fuzzy
+#~ msgid "Rename Session"
+#~ msgstr "പ്രവര്‍ത്തനവേള വീണ്ടെടുക്കുക"
+
+#~ msgid "Session exists. Overwrite?"
+#~ msgstr "സെഷന്‍ നിലവിലുണ്ടു്. മാറ്റി എഴുതണമോ?"
+
+#, fuzzy
+#~ msgid ""
+#~ "Konqueror did not close correctly. Would you like to restore the previous "
+#~ "session?"
+#~ msgstr "കോണ്‍ക്വറര്‍ ശരിയായല്ല അടച്ചതു്. പ്രവര്‍ത്തന വേള തിരിച്ചെടുക്കണോ?"
+
+#~ msgid "Restore Session?"
+#~ msgstr "പ്രവര്‍ത്തനവേള വീണ്ടെടുക്കണമോ?"
+
+#~ msgid "Restore Session"
+#~ msgstr "പ്രവര്‍ത്തനവേള വീണ്ടെടുക്കുക"
+
+#~ msgid "Do Not Restore"
+#~ msgstr "വീണ്ടെടുക്കേണ്ട"
+
+#~ msgid "Ask Me Later"
+#~ msgstr "പിന്നീടു് ചോദിക്കുക"
+
+#~ msgid ""
+#~ "This bar contains the list of currently open tabs. Click on a tab to make "
+#~ "it active. You can also use keyboard shortcuts to navigate through tabs. "
+#~ "The text on the tab shows the content currently open in it; place your "
+#~ "mouse over the tab to see the full title, in case it has been shortened "
+#~ "to fit the tab width."
+#~ msgstr ""
+#~ "ഈ പട്ടയില്‍ ഇപ്പോള്‍ തുറന്നിരിയ്ക്കുന്ന കിളിവാതിലുകളുടെ പട്ടികയുള്‍ക്കൊള്ളുന്നു. ഒരു കിളിവാതില്‍ "
+#~ "സജീവമാക്കാന്‍ ആ കിളിവാതിലില്‍ ഞെക്കുക. കിളിവാതിലുകളിലൂടെ സഞ്ചരിയ്ക്കാന്‍ നിങ്ങള്‍ക്കു് കീബോര്‍"
+#~ "ഡിലെ കുറുക്കുവഴികളും ഉപയോഗിയ്ക്കാം. കിളിവാതിലിനു് മുകളിലെഴുതിയിരിയ്ക്കുന്ന പദാവലി ആ "
+#~ "കിളിവാതിലില്‍ ഇപ്പോള്‍ തുറന്നിരിയ്ക്കുന്ന ഉള്ളടക്കങ്ങള്‍ കാണിയ്ക്കുന്നു; കിളിവാതിലിന്റെ "
+#~ "വീതിയിലൊതുങ്ങാനായി തലക്കെട്ടു് ചുരുക്കിയിട്ടുണ്ടെങ്കില്‍ നിങ്ങളുടെ മൌസ് കിളിവാതിലിനു് മുകളില്‍ "
+#~ "കൊണ്ടുവന്നാല്‍ മതി."
+
+#~ msgid "Open a new tab"
+#~ msgstr "ഒരു പുതിയ ടാബ് തുറക്കുക"
+
+#~ msgid "Close the current tab"
+#~ msgstr "നിലവിലുള്ള ടാബ് അടയ്ക്കുക"
+
+#~ msgid "&Duplicate Tab"
+#~ msgstr "കിളിവാതില്‍ &പകര്‍ത്തുക"
+
+#~ msgid "&Reload Tab"
+#~ msgstr "ടാബ് &വീണ്ടും ലഭ്യമാക്കുക"
+
+#~ msgid "Other Tabs"
+#~ msgstr "മറ്റ് ടാബുകള്‍"
+
+#~ msgid "D&etach Tab"
+#~ msgstr "കിളിവാതില്‍ &പുറത്തേയ്ക്കെടുക്കുക"
+
+#~ msgid "&Close Tab"
+#~ msgstr "ടാബ് &അടയ്ക്കുക"
+
+#~ msgid "Warning"
+#~ msgstr "മുന്നറിയിപ്പ്"
+
+#~ msgid "Resend"
+#~ msgstr "വീണ്ടും അയയ്ക്കുക"
+
+#, fuzzy
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "History Sidebar Module"
+#~ msgstr "വശത്തുള്ള പട്ടയില്‍ ചരിത്രം കാണിയ്ക്കുക"
+
+#, fuzzy
+#~ msgctxt "@title:tab"
+#~ msgid "History"
+#~ msgstr "ചരിത്രമുള്ള വശത്തെ പട്ട കാണിയ്ക്കുക"
+
+#~ msgid " day"
+#~ msgid_plural " days"
+#~ msgstr[0] " ദിവസം"
+#~ msgstr[1] " ദിവസങ്ങള്‍"
+
+#~ msgid "Minute"
+#~ msgid_plural "Minutes"
+#~ msgstr[0] "മിനിറ്റ്"
+#~ msgstr[1] "മിനിറ്റുകള്‍"
+
+#~ msgid "Day"
+#~ msgid_plural "Days"
+#~ msgstr[0] "ദിവസം"
+#~ msgstr[1] "ദിവസങ്ങള്‍"
+
+#, fuzzy
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Places Sidebar Module"
+#~ msgstr "വശത്തുള്ള പട്ടയില്‍ ചരിത്രം കാണിയ്ക്കുക"
+
+#~ msgid "Add New"
+#~ msgstr "പുതിയത് ചേര്‍ക്കുക"
+
+#~ msgid "Show Configuration Button"
+#~ msgstr "ക്രമികരണങ്ങള്‍ക്കുള്ള ബട്ടണ്‍ കാണിക്കുക"
+
+#, fuzzy
+#~ msgid "Close Sidebar"
+#~ msgstr "കാഴ്ച അടയ്ക്കുക"
+
+#~ msgid "This entry already exists."
+#~ msgstr "ഇതു് നിലവിലുണ്ടു്."
+
+#~ msgid "Set Name"
+#~ msgstr "പേരു് സജ്ജമാക്കുക"
+
+#~ msgid "Enter the name:"
+#~ msgstr "പേരു് നല്‍കുക:"
+
+#~ msgid "Enter a URL:"
+#~ msgstr "ഒരു യുആര്‍എല്‍ നല്‍കുക:"
+
+#~ msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
+#~ msgstr "<qt>നിങ്ങള്‍ക്കു് <b>%1</b> ടാബ് നീക്കം ചെയ്യണമോ?</qt>"
+
+#~ msgid "Set Name..."
+#~ msgstr "പേര് സജ്ജമാക്കുക..."
+
+#~ msgid "Set Icon..."
+#~ msgstr "ചിഹ്നം സജ്ജമാക്കുക..."
+
+#~ msgid "Remove"
+#~ msgstr "നീക്കം ചെയ്യുക"
+
+#~ msgid "&Create New Folder"
+#~ msgstr "പുതിയ ഫോള്‍ഡര്‍ &ഉണ്ടാക്കുക"
+
+#~ msgid "Delete Folder"
+#~ msgstr "ഫോള്‍ഡര്‍ വെട്ടി മാറ്റുക"
+
+#~ msgid "Properties"
+#~ msgstr "ഗുണഗണങ്ങള്‍"
+
+#~ msgid "Open in New Window"
+#~ msgstr "പുതിയ ജാലകത്തില്‍ തുറക്കുക"
+
+#~ msgid "Open Folder in Tabs"
+#~ msgstr "ഫോള്‍ഡര്‍ ടാബുകളില്‍ തുറക്കുക"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "ലിങ്കിന്റെ വിലാസം പകര്‍ത്തുക"
+
+#~ msgid "&Update"
+#~ msgstr "&പരിഷ്കരിക്കുക"
+
+#~ msgid "Name:"
+#~ msgstr "പേര്:"
+
+#~ msgid "Location:"
+#~ msgstr "സ്ഥാനം:"
+
+#~ msgid "&Create New Folder..."
+#~ msgstr "പുതിയ ഫോള്‍ഡര്‍ &ഉണ്ടാക്കുക..."
+
+#~ msgid "Rename"
+#~ msgstr "പേര് മാറ്റുക"
+
+#~ msgid "Delete Link"
+#~ msgstr "ലിങ്ക് വെട്ടി മാറ്റുക"
+
+#~ msgid "New Folder"
+#~ msgstr "പുതിയ ഫോള്‍ഡര്‍"
+
+#~ msgid "Create New Folder"
+#~ msgstr "പുതിയ ഫോള്‍ഡര്‍ ഉണ്ടാക്കുക"
+
+#~ msgid "Enter folder name:"
+#~ msgstr "ഫോള്‍ഡറിന്റെ പേരു് നല്‍കുക:"
+
+#, fuzzy
+#~ msgctxt "@label"
+#~ msgid "Name:"
+#~ msgstr "പേര്:"
+
+#~ msgid "Introduction"
+#~ msgstr "ആമുഖം"
+
+#~ msgid "Tips"
+#~ msgstr "സൂചനകള്‍"
+
+#~ msgid "Specifications"
+#~ msgstr "പ്രത്യേകതകള്‍"
+
+#~ msgid "Your personal files"
+#~ msgstr "നിങ്ങളുടെ സ്വകാര്യ ഫയലുകള്‍"
+
+#~ msgid "Trash"
+#~ msgstr "ചവറ്റുകുട്ട"
+
+#~ msgid "Network Folders"
+#~ msgstr "നെറ്റ്‌വര്‍ക്ക് ഫോള്‍ഡറുകള്‍"
+
+#, fuzzy
+#~ msgid "Bookmarks"
+#~ msgstr "&ഓര്‍മ്മക്കുറിപ്പുകള്‍"
+
+#~ msgid "Search the Web"
+#~ msgstr "വെബില്‍ തിരയുക"
+
+#~ msgid "built-in"
+#~ msgstr "ബിള്‍ട്ടിന്‍"
+
+#~ msgid "OpenSSL"
+#~ msgstr "OpenSSL"
+
+#~ msgid "Feature"
+#~ msgstr "വിശേഷത"
+
+#~ msgid "Details"
+#~ msgstr "വിശദാംശങ്ങള്‍"
+
+#, fuzzy
+#~ msgid "PNG<br />JPG<br />GIF"
+#~ msgstr "PNG<br />MNG<br />JPG<br />GIF"
+
+#~ msgid "FTP"
+#~ msgstr "FTP"
+
+#~ msgid "Manual"
+#~ msgstr "മാനുവല്‍"
+
+#~ msgid "Popup"
+#~ msgstr "പോപ്പപ്പ്"
+
+#~ msgid "Installed Plugins"
+#~ msgstr "ഇന്‍സ്റ്റോള്‍ ചെയ്ത പ്ലഗ്ഗിനുകള്‍"
+
+#~ msgid "Installed"
+#~ msgstr "ഇന്‍സ്റ്റോള്‍ ചെയ്തിരിക്കുന്നു"
+
+#~ msgid "Disable"
+#~ msgstr "നിര്‍ജ്ജീവമാക്കുക"
+
+#~ msgid "Keep"
+#~ msgstr "സൂക്ഷിക്കുക"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "അനി പീറ്റര്‍, പ്രവീണ്‍ അരിമ്പ്രത്തൊടിയില്‍"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "apeter@redhat.com, pravi.a@gmail.com"
+
+#~ msgid "&File"
+#~ msgstr "&ഫയല്‍"
+
+#~ msgid "&Edit"
+#~ msgstr "&മാറ്റം വരുത്തുക"
+
+#~ msgid "&View"
+#~ msgstr "&കാഴ്ച"
+
+#~ msgid "&Go"
+#~ msgstr "&ലഭ്യമാക്കുക"
+
+#~ msgid "&Settings"
+#~ msgstr "&ക്രമികരണങ്ങള്‍"
+
+#~ msgid "&Window"
+#~ msgstr "&ജാലകം"
+
+#~ msgid "&Help"
+#~ msgstr "&സഹായം"
+
+#~ msgid "&Session name:"
+#~ msgstr "&സെഷന്റെ പേര്:"
+
+#~ msgctxt "@action:button New session"
+#~ msgid "New..."
+#~ msgstr "പുതിയ..."
+
+#~ msgctxt "@action:button Save current session"
+#~ msgid "Save Current"
+#~ msgstr "നിലവിലുള്ളതു് സൂക്ഷിക്കുക"
+
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename..."
+#~ msgstr "പേര് മാറ്റുക..."
+
+#~ msgctxt "@action:button Delete session"
+#~ msgid "Delete"
+#~ msgstr "വെട്ടി മാറ്റുക"
+
+#~ msgid "Open tabs inside current window"
+#~ msgstr "നിലവിലുള്ള ജാലകത്തില്‍ കിളിവാതിലുകള്‍ തുറക്കുക"
+
+#~ msgid "Choose Font..."
+#~ msgstr "ലിപി തിരഞ്ഞെടുക്കുക..."
+
+#, fuzzy
+#~ msgid "Open folders in separate windows"
+#~ msgstr "നിലവിലുള്ള ജാലകത്തില്‍ കിളിവാതിലുകള്‍ തുറക്കുക"
+
+#~ msgid "Hide %1"
+#~ msgstr "%1 അദൃശ്യമാക്കുക"
+
+#~ msgid "Bookmark This Location"
+#~ msgstr "ഈ സ്ഥാനം ഓര്‍മ്മക്കുറിപ്പിലേയ്ക്കു് ചേര്‍ക്കുക"
+
+#~ msgid ""
+#~ "Malformed URL\n"
+#~ "%1"
+#~ msgstr ""
+#~ "തെറ്റായ യുആര്‍എല്‍\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Protocol not supported\n"
+#~ "%1"
+#~ msgstr ""
+#~ "സമ്പ്രദായം പിന്തുണയ്ക്കുന്നില്ല\n"
+#~ "%1"
+
+#~ msgid "Cannot create the find part, check your installation."
+#~ msgstr ""
+#~ "കണ്ടുപിടിയ്ക്കുവാനുള്ള ഭാഗം സൃഷ്ടിയ്ക്കാന്‍ സാധിച്ചില്ല, നിങ്ങളുടെ ഇന്‍സ്റ്റലേഷന്‍ പരിശോധിയ്ക്കുക."
+
+#~ msgid "&Save View Profile \"%1\"..."
+#~ msgstr "കാഴ്ചാ പ്രൊഫൈല്‍ \"%1\" സൂക്ഷിയ്ക്കുക..."
+
+#~ msgid "Select Type"
+#~ msgstr "ഏതു് തരം എന്നു് തിരഞ്ഞെടുക്കുക"
+
+#~ msgid "Select type:"
+#~ msgstr "ഏതു് തരം എന്നു് തിരഞ്ഞെടുക്കുക:"
+
+#~ msgid "<qt><b>%1</b> does not exist</qt>"
+#~ msgstr "<qt><b>%1</b> നിലവിലില്ല</qt>"
+
+#~ msgid "Minutes"
+#~ msgstr "മിനിറ്റുകള്‍"
+
+#~ msgid "Days"
+#~ msgstr "ദിവസങ്ങള്‍"
+
+#~ msgid "Your sidebar is not functional or unavailable."
+#~ msgstr ""
+#~ "നിങ്ങളുടെ ഒരു വശത്തുള്ള പട്ട പ്രവര്‍ത്തനയോഗ്യമല്ലാതിരിയ്ക്കുകയോ ലഭ്യമല്ലാതിരിയ്ക്കുകയോ ആണു്."
+
+#~ msgid "Cannot find running history plugin in your sidebar."
+#~ msgstr "നിങ്ങളുടെ വശത്തുള്ള പട്ടയില്‍ ചരിത്രത്തിന്റെ സംയോജകം പ്രവര്‍ത്തിച്ചു് കാണുന്നില്ല."
+
+#~ msgid "Reload"
+#~ msgstr "വീണ്ടും ലഭ്യമാക്കുക"
+
+#~ msgid "Default"
+#~ msgstr "സ്വതവേയുള്ള"
+
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename"
+#~ msgstr "പേര് മാറ്റുക"
+
+#~ msgid "Joseph WENNINGER"
+#~ msgstr "ജോസഫ് വെന്നിങ്കര്‍"
+
+#~ msgid "G E N E R A L"
+#~ msgstr "സാധാരണ"
+
+#~ msgid "<img width='16' height='16' src=\"%1\"></img>"
+#~ msgstr "<img width='16' height='16' src=\"%1\"></img>"
+
+#~ msgid "Applications"
+#~ msgstr "പ്രയോഗങ്ങള്‍"
+
+#~ msgid "Installed programs"
+#~ msgstr "ഇന്‍സ്റ്റോള്‍ ചെയ്തിരിക്കുന്ന പ്രോഗ്രാമുകള്‍"
+
+#~ msgid "&Location"
+#~ msgstr "&സ്ഥാനം"

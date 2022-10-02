@@ -1,0 +1,166 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Swedish "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="bookmarks" lang="&language;">
+<articleinfo>
+
+<title
+>Bokmärken</title>
+<authorgroup>
+<author
+><personname
+><firstname
+>Xavier</firstname
+><surname
+>Vello</surname
+></personname
+> <email
+>xavier.vello@gmail.com</email
+> </author>
+<othercredit role="translator"
+> <firstname
+>Stefan</firstname
+> <surname
+>Asserhäll</surname
+> <affiliation
+><address
+><email
+>stefan.asserhall@bredband.net</email
+></address
+></affiliation
+> <contrib
+>Översättare</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2016-11-08</date>
+<releaseinfo
+>Program 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Systeminställningar</keyword>
+<keyword
+>bokmärken</keyword>
+<keyword
+>I/O-slav</keyword>
+</keywordset>
+</articleinfo>
+<sect1 id="conf">
+<title
+>Bokmärkenas hemsida</title>
+<para
+>Den här modulen låter dig anpassa bokmärkenas hemsida.</para>
+<para
+>Skriv in <userinput
+>bookmarks:/</userinput
+> i platsraden för att visa bokmärkenas hemsida.</para>
+<para
+>Inställningarna i den här modulen kan också kommas åt genom att skriva in <userinput
+>bookmarks:/config</userinput
+> i platsraden.</para>
+<sect2 id="conf-general">
+<title
+>Allmänna inställningar</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Antal kolumner att visa</guilabel
+></term>
+<listitem>
+<para
+>Kataloger fördelas automatiskt i flera kolumner. Det optimala antalet kolumner beror på bredden hos &konqueror;s fönster och antal bokmärken du har.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Visa katalogbakgrunder</guilabel
+></term>
+<listitem>
+<para
+>Inaktivera det på långsamma datorer för att inaktivera bakgrundsbilder.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="conf-bookmark">
+<title
+>Bokmärken</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Visa bokmärken utan katalog</guilabel
+></term>
+<listitem>
+<para
+>Om alternativet inte är markerat visas inte bokmärken i hierarkins rot (inte i en katalog). Om markerat, samlas de i en "rotkatalog".</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Platta ut bokmärkesträdet</guilabel
+></term>
+<listitem>
+<para
+>Underkataloger visas normalt inuti överliggande katalog. Om det här alternativet aktiveras, visas underkataloger för sig själva. Det ser inte så trevligt ut, men kan vara till hjälp om du har en mycket stor katalog som du vill dela i två kolumner.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Visa systemplatser</guilabel
+></term>
+<listitem>
+<para
+>Visa en ruta med KDE-platser (Hem, Nätverk, ...). Användbart om du använder &konqueror; som filhanterare.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="conf-cache">
+<title
+>Punktavbildningscache</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Cachestorlek på disk</guilabel
+></term>
+<listitem>
+<para
+>Ange hur mycket diskutrymme används för att lagra punktavbildningarna.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Töm cache</guilabel
+></term>
+<listitem>
+<para
+>Ta bort alla bilder lagrade i cachen. Det kan vara nödvändigt om vissa favoritikoner blir skadade och inte uppdateras automatiskt.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+</sect1>
+</article>

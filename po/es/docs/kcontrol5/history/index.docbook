@@ -1,0 +1,95 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Spanish "INCLUDE">
+]>
+<article id="history" lang="&language;">
+<title
+>Barra lateral de historial</title>
+<articleinfo>
+<authorgroup>
+<author
+>&Burkhard.Lueck;</author>
+<othercredit role="translator"
+><firstname
+>Cristina Yenyxe</firstname
+><surname
+>González García</surname
+><affiliation
+><address
+><email
+>the.blue.valkyrie@gmail.com</email
+></address
+></affiliation
+><contrib
+>Traductor</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2009-11-24</date>
+<releaseinfo
+>&kde; 4.4</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Preferencias del sistema</keyword>
+<keyword
+>historial</keyword>
+</keywordset>
+</articleinfo>
+
+<para
+>Este diálogo le permite configurar la barra lateral de historial. </para>
+
+<variablelist>
+<varlistentry
+><term
+><guilabel
+>Límites</guilabel
+></term>
+<listitem
+><para
+>Las opciones de esta sección le permiten establecer el tamaño máximo de su historial y el tiempo tras el que se eliminarán automáticamente los elementos. </para
+></listitem>
+</varlistentry>
+
+<varlistentry
+><term
+><guilabel
+>Tipo de letra personalizado</guilabel
+></term>
+<listitem
+><para
+>Aquí puede seleccionar distintos tipos de letra para &URL; viejas y nuevas presionando el botón <guibutton
+>Seleccionar tipo de letra</guibutton
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry
+><term
+><guilabel
+>Detalles</guilabel
+></term>
+<listitem
+><para
+>La casilla <guilabel
+>Consejos detallados</guilabel
+> controla cuánta información se mostrará al pasar el puntero del ratón sobre un elemento de la página de historial.</para>
+<para
+>Si está marcada, además del URL se mostrarán el número de visitas y la hora de la primera y la última de ellas.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Al seleccionar <guibutton
+>Borrar historial</guibutton
+> se eliminará todo el historial. </para>
+</article>

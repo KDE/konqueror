@@ -1,0 +1,106 @@
+# translation of uachangerplugin.po to Belarusian
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Darafei Praliaskouski <komzpa@licei2.com>, 2007.
+# Darafei Praliaskouski <komzpa@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: uachangerplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"PO-Revision-Date: 2009-04-19 17:36+0300\n"
+"Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
+"Language-Team: Belarusian <i18n@mova.org>\n"
+"Language: be\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || n%10>=5 && n%10<=9 || n"
+"%100>=11 && n%100<=14 ? 2 : 3);\n"
+
+#: uachangerplugin.cpp:43
+#, kde-format
+msgid "Change Browser Identification"
+msgstr "Ідэнтыфікацыя вандроўніка"
+
+#: uachangerplugin.cpp:108
+#, kde-format
+msgid "Other"
+msgstr "Іншы"
+
+#: uachangerplugin.cpp:136
+#, fuzzy, kde-format
+#| msgid "Version %1"
+msgctxt "%1 = browser version (e.g. 2.0)"
+msgid "Version %1"
+msgstr "Версія %1"
+
+#: uachangerplugin.cpp:139
+#, fuzzy, kde-format
+#| msgid "%1 %2 on %3"
+msgctxt "%1 = browser name, %2 = browser version (e.g. Firefox, 2.0)"
+msgid "%1 %2"
+msgstr "%1 %2 на %3"
+
+#: uachangerplugin.cpp:143
+#, fuzzy, kde-format
+#| msgid "Version %1 on %2"
+msgctxt "%1 = browser version, %2 = platform (e.g. 2.0, Windows XP)"
+msgid "Version %1 on %2"
+msgstr "Версія %1 на %2"
+
+#: uachangerplugin.cpp:146
+#, fuzzy, kde-format
+#| msgid "%1 %2 on %3"
+msgctxt ""
+"%1 = browser name, %2 = browser version, %3 = platform (e.g. Firefox, 2.0, "
+"Windows XP)"
+msgid "%1 %2 on %3"
+msgstr "%1 %2 на %3"
+
+#: uachangerplugin.cpp:199
+#, kde-format
+msgid "Default Identification"
+msgstr "Ідэнтыфікацыя па змаўчанні"
+
+#. i18n("Reload Identifications"), this,
+#. SLOT(slotReloadDescriptions()),
+#. 0, ++count );
+#: uachangerplugin.cpp:227
+#, kde-format
+msgid "Apply to Entire Site"
+msgstr "Ужыць да ўсяго сайту"
+
+#: uachangerplugin.cpp:233
+#, kde-format
+msgid "Configure..."
+msgstr "Наставіць..."
+
+#. i18n: ectx: Menu (tools)
+#: uachangerplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "Н&ачынне"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: uachangerplugin.rc:8
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "Дадатковая панель"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Дарафей Праляскоўскі, Конан Андрэй"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "komzpa@licei2.com, potlaty@gmail.com"
+
+#~ msgid "Change Browser &Identification"
+#~ msgstr "Змяніць ідэнтыфікацыю вандроўніка"
+
+#~ msgid "Identify As"
+#~ msgstr "Вызначыць як"

@@ -1,0 +1,94 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Dutch "INCLUDE"
+> <!-- change language only here -->
+]>
+<!-- extragear has another adblock ? -->
+<article lang="&language;" id="khtml-adblock">
+<articleinfo>
+<title
+>Reclamefilters</title>
+<authorgroup>
+<author
+>&Krishna.Tateneni; &Krishna.Tateneni.mail;</author>
+&Niels.Reedijk;&Sander.Koning;&Natalie.Koning; 
+</authorgroup>
+
+<date
+>2016-11-08</date>
+<releaseinfo
+>Applications 16.12</releaseinfo>
+</articleinfo>
+
+<para
+>&konqueror; reclamefilters kunnen ingesteld worden om afbeeldingen of frames, die met een reeks filters overeenkomen, van webpagina's te verwijderen.</para>
+
+<para
+>Met de optie <guilabel
+>Filters inschakelen</guilabel
+> wordt het gebruik van een lijst met URL-filters in- of uitgeschakeld.</para>
+<para
+>Als <guilabel
+>Gefilterde afbeeldingen verbergen</guilabel
+> ingeschakeld is, worden geblokkeerde afbeeldingen volledig van de pagina verwijderd en de ruimte die ze innamen wordt gebruikt. Als de optie uitgeschakeld is, worden de geblokkeerde afbeeldingen vervangen door een plaatshouder. </para>
+
+<variablelist>
+<varlistentry id="khtml-adblock-manual">
+<term
+><guilabel
+>Handmatig filter</guilabel
+></term>
+<listitem>
+<para
+>Het hoofdgedeelte van dit tabblad is een lijst van URL's die vergeleken worden met namen van afbeeldingen en frames om de filteracties te bepalen. Jokertekens kunnen (op eenzelfde manier als in bestandsnamen) gebruikt worden.</para>
+
+<para
+>Elk filter kan ofwel gemaakt worden door jokertekens te gebruiken, zoals in bestandsnamenen gebruikt wordt, (e.g. http://www.site.com/ads/*) of opgebouwd worden als een echte reguliere expressie door de tekenreeks in te sluiten in slashes (e.g. //(ads|dclk)\./).</para>
+
+<para
+>Elke filtertekenreeks kan worden voorafgegaan door <literal
+>@@</literal
+> om elke overeenkomende &URL; op de witte lijst te zetten (toegang te geven). Deze heeft prioriteit over elke filter op de zwarte lijst (blokkering).</para>
+
+<para
+><guilabel
+>Importeren</guilabel
+> en <guilabel
+>Exporteren</guilabel
+> leest in of slaat een filterlijst op uit/naar een tekstbestand. Het bestand begint met een kopregel <userinput
+>[AdBlock]</userinput
+> en daarna volgen alle filters elk op een eigen regel. Regels die beginnen met een uitroepteken (<userinput
+>!</userinput
+>) en de kopregel worden als commentaar behandeld en kunnen worden om filters te benoemen of informatie over de filters toe te voegen.</para>
+
+<para
+>Accentueer een item in de lijst om deze te wijzigen in het bewerkingsvak of verwijder dit item. Voer hier een nieuwe filtertekenreeks in en voeg deze toe aan de lijst met de knop <guibutton
+> Invoegent</guibutton
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry id="khtml-adblock-automatic">
+<term
+><guilabel
+>Automatisch filter</guilabel
+></term>
+<listitem>
+<para
+>Dit tabblad toont een lijst met namen en &URL;'s met voorgedefinieerde AdBlock filter-items. Om een item in te schakelen activeert u het keuzevakje maast de filternaam en past u het <guilabel
+>Automatische bijwerkinterval</guilabel
+> aan (standaard 7 dagen). </para>
+</listitem>
+</varlistentry>
+  
+</variablelist>
+
+<para
+>Als AdBlock filters zijn ingeschakeld zal er een pictogram aan de rechterkant van de statusbalk getoond worden. Gebruik een &RMB;-klik op dit pictogram om het contextmenu met acties te openen om alle blokkeerbare elementen op een webpagina te tonen, open deze module van &systemsettings; en blokkering voor een site of pagina tijdelijk uit te schakelen.</para>
+
+<para
+>Een klik met de &LMB; toont ook de dialoog met alle blokkeerbare elementen op de geopende webpagina. Vanuit deze dialoog kunt u nieuwe filters direct toevoegen zonder deze module van &systemsettings; te openen.</para>
+
+</article>

@@ -1,0 +1,165 @@
+<chapter id="path-complete">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>José</firstname
+><surname
+>Pires</surname
+><affiliation
+><address
+><email
+>zepires@gmail.com</email
+></address
+></affiliation
+><contrib
+>Tradução</contrib
+></othercredit
+> 
+</authorgroup
+> 
+
+<date
+>2010-10-26</date>
+<releaseinfo
+>&kde; 4.5</releaseinfo>
+</chapterinfo>
+
+
+<title
+>Completação de Texto Automática</title
+> 
+
+<para
+>Você poderá fazer com que o &konqueror; o ajude a introduzir uma localização ou &URL; na Barra de Localização ao activar uma das funcionalidades de <guimenuitem
+>Completação de Texto</guimenuitem
+>. Para o fazer carregue com o botão <mousebutton
+>direito</mousebutton
+> numa área em branco da Barra de Localização e seleccione a <guisubmenu
+>Completação de Texto</guisubmenu
+> no menu de contexto. Isto permitir-lhe-á escolher de entre as seguintes opções:</para>
+
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Nenhuma</guimenuitem
+></term>
+<listitem
+><para
+>O que obtiver é o que escreve.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Manual</guimenuitem
+></term>
+<!-- in 4.5 I see no diff to None -->
+<listitem
+><para
+>Quando você tiver escrito parte de uma localização ou &URL;, ao carregar em <keycombo action="simul"
+>&Ctrl;<keycap
+>E</keycap
+></keycombo
+> ou &Tab; irá completar o item se for possível fazê-lo sem ambiguidades.</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Automática</guimenuitem
+></term>
+<listitem
+><para
+>À medida que escrever na Barra de Localização, o &konqueror; irá tentar extender automaticamente o que você escrever para conseguir completar uma localização ou &URL; possível, realçando o caracteres que adicionou. Continue a escrever se não for o que pretende ou carregue em &Enter; para o aceitar.</para
+></listitem>
+ </varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Lista</guimenuitem
+></term>
+<listitem
+><para
+>Aparecer-lhe-á uma lista à medida que você escreve e que mostra as correspondências possíveis para o que escreveu até agora. Quando a localização ou &URL; que você quer aparecer na janela faça duplo-click nela com o &LMB;. Você poderá também usar as teclas de cursores <keysym
+>Baixo</keysym
+> ou &Tab; e <keysym
+>Cima</keysym
+> ou <keycombo action="simul"
+>&Shift; &Tab;</keycombo
+> para a seleccionar, seguido de &Enter;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Automática Curta</guimenuitem
+></term>
+<listitem
+><para
+>É como o modo Automático, se bem que que só extende o que você escreveu até agora até ao próximo símbolo de <keycap
+>/</keycap
+> na localização ou &URL;. Carregue em <keycombo action="simul"
+>&Ctrl;<keycap
+>E</keycap
+></keycombo
+> ou &Tab; para aceitar a sugestão ou em &Enter; quando for mostrada a localização ou &URL; completa.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Lista &amp; Automático</guimenuitem
+></term>
+<listitem
+><para
+>Esta é uma combinação de ambas as opções descritas acima.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Predefinição</guimenuitem
+></term>
+<listitem
+><para
+>Este item aparece no fundo do submenu e permite-lhe mudar para o comportamento por omissão em <guimenuitem
+>Lista</guimenuitem
+>.</para
+></listitem>
+</varlistentry>
+<!-- Del to end 
+substring completion F7 http://websvn.kde.org/?view=revision&revision=1096306-->
+</variablelist>
+<para
+>Você deverá tentar estes modos diferentes e escolher o que melhor se adequa a si.</para>
+<para
+>O histórico dos &URL;s visitados recentemente que o &konqueror; usa para a função de Completação de Texto podem ser vistos na página de <guilabel
+>Histórico</guilabel
+> da <link linkend="sidebar"
+>Barra Lateral</link
+>.</para>
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

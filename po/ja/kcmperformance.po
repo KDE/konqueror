@@ -1,0 +1,171 @@
+# Translation of kcmperformance into Japanese.
+# This file is distributed under the same license as the kdebase package.
+# Seiji Hoshiba <hoshiyan@mint.ocn.ne.jp>, 2004.
+# Taiki Komoda <kom@kde.gr.jp>, 2004.
+# Fumiaki Okushi <fumiaki@okushi.com>, 2005, 2006.
+# Yukiko Bando <ybando@k6.dion.ne.jp>, 2006, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmperformance\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-21 00:16+0000\n"
+"PO-Revision-Date: 2007-03-13 18:00+0900\n"
+"Last-Translator: Yukiko Bando <ybando@k6.dion.ne.jp>\n"
+"Language-Team: Japanese <kde-jp@kde.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.1\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#: kcmperformance.cpp:28
+#, kde-format
+msgid ""
+"<h1>KDE Performance</h1> You can configure settings that improve KDE "
+"performance here."
+msgstr ""
+"<h1>KDE パフォーマンス</h1>この設定により、KDE のパフォーマンスを改善すること"
+"ができます。"
+
+#: kcmperformance.cpp:35
+#, kde-format
+msgid "Konqueror"
+msgstr "Konqueror"
+
+#: kcmperformance.cpp:38
+#, kde-format
+msgid "System"
+msgstr "システム"
+
+#: kcmperformance.cpp:63
+#, kde-format
+msgid ""
+"<h1>Konqueror Performance</h1> You can configure several settings that "
+"improve Konqueror performance here. These include options for reusing "
+"already running instances and for keeping instances preloaded."
+msgstr ""
+"<h1>Konqueror パフォーマンス</h1>ここでいくつかの設定を変更することによって、"
+"Konqueror のパフォーマンスを改善することができます。これには、起動済みのイン"
+"スタンス (訳注: 実体、この場合、メモリにロードされたプログラムのコードのこ"
+"と) を再利用したり、プリロードしたインスタンスを保持するための設定も含まれて"
+"います。"
+
+#: konqueror.cpp:24
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>If enabled, an instance of Konqueror will be preloaded after the "
+#| "ordinary KDE startup sequence.</p><p>This will make the first Konqueror "
+#| "window open faster, but at the expense of longer KDE startup times (but "
+#| "you will be able to work while it is loading, so you may not even notice "
+#| "that it is taking longer).</p>"
+msgid ""
+"<p>If enabled, an instance of Konqueror will be preloaded after the ordinary "
+"Plasma startup sequence.</p><p>This will make the first Konqueror window "
+"open faster, but at the expense of longer Plasma startup times (but you will "
+"be able to work while it is loading, so you may not even notice that it is "
+"taking longer).</p>"
+msgstr ""
+"<p>このオプションを有効にすると、KDE を起動する処理の中で Konqueror のインス"
+"タンスがプリロードされるようになります。</p><p> これによって最初の Konqueror "
+"ウィンドウが開くまでの時間が短縮されます。ただし、KDE の起動にかかる時間はい"
+"くぶん長くなります。といっても、起動中も仕事はできるので、時間が長くなったと"
+"感じることもないかもしれません。</p>"
+
+#: konqueror.cpp:30
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>If enabled, KDE will always try to have one preloaded Konqueror "
+#| "instance ready; preloading a new instance in the background whenever "
+#| "there is not one available, so that windows will always open quickly.</"
+#| "p><p><b>Warning:</b> In some cases, it is actually possible that this "
+#| "will reduce perceived performance.</p>"
+msgid ""
+"<p>If enabled, Konqueror will always try to have one preloaded instance "
+"ready; preloading a new instance in the background whenever there is not one "
+"available, so that windows will always open quickly.</p><p><b>Warning:</b> "
+"In some cases, it is actually possible that this will reduce perceived "
+"performance.</p>"
+msgstr ""
+"<qt><p>このオプションを有効にすると、KDE は常に一つの Konqueror のインスタン"
+"スをプリロードして待機させておこうと試みます。つまり、利用できるインスタンス"
+"がなくなると、バックグラウンドでプリロードします。これによって、いつでも素早"
+"くウィンドウを開くことができます。</p><p><note>状況によっては、この設定によっ"
+"てパフォーマンスが悪くなったと感じることがあります。</note></p></qt>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
+#: konqueror_ui.ui:17
+#, kde-format
+msgid "Preloading"
+msgstr "プリローディング (常駐化) の設定"
+
+# ACCELERATOR added by translator
+#. i18n: ectx: property (text), widget (QCheckBox, cb_preload_on_startup)
+#: konqueror_ui.ui:23
+#, fuzzy, kde-format
+#| msgid "Preload an instance after KDE startup"
+msgid "Preload an instance after desktop startup"
+msgstr "KDE 起動時にインスタンスをプリロードする(&L)"
+
+# ACCELERATOR added by translator
+#. i18n: ectx: property (text), widget (QCheckBox, cb_always_have_preloaded)
+#: konqueror_ui.ui:30
+#, fuzzy, kde-format
+#| msgid "Always try to have at least one preloaded instance"
+msgid "Always try to have one preloaded instance"
+msgstr "常に一つのインスタンスを常駐待機させる(&T)"
+
+#: system.cpp:22
+#, kde-format
+msgid ""
+"<p>During startup KDE needs to perform a check of its system configuration "
+"(mimetypes, installed applications, etc.), and in case the configuration has "
+"changed since the last time, the system configuration cache (KSyCoCa) needs "
+"to be updated.</p><p>This option delays the check, which avoid scanning all "
+"directories containing files describing the system during KDE startup, thus "
+"making KDE startup faster. However, in the rare case the system "
+"configuration has changed since the last time, and the change is needed "
+"before this delayed check takes place, this option may lead to various "
+"problems (missing applications in the K Menu, reports from applications "
+"about missing required mimetypes, etc.).</p><p>Changes of system "
+"configuration mostly happen by (un)installing applications. It is therefore "
+"recommended to turn this option temporarily off while (un)installing "
+"applications.</p>"
+msgstr ""
+"<p>KDE は起動時にシステムの設定 (MIME、インストールされたアプリケーションな"
+"ど) をチェックし、前回と比べて変更されている場合、システム設定のキャッシュ "
+"(KSyCoCa) を更新します。</p><p>このオプションは、チェックを遅らせることで、"
+"KDE の起動時にシステム設定ファイルを含むすべてのディレクトリがスキャンされる"
+"のを回避し、結果として KDE の起動を速くします。ただまれに、システム設定が変更"
+"され、その変更が遅延されたチェックの前に必要な場合、さまざまな問題が起こり得"
+"ます。(K メニューにアプリケーションがないとか、アプリケーションに MIME タイプ"
+"がないとか)</p><p>システム設定への変更は、たいていアプリケーションのインス"
+"トールまたはアンインストール時に起きます。そのため、アプリケーションをインス"
+"トールしたりアンインストールするときは、このオプションを一時的に無効にするこ"
+"とをお勧めします。</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gb_)
+#: system_ui.ui:8
+#, kde-format
+msgid "System Configuration"
+msgstr "システム設定"
+
+# ACCELERATOR changed by translator
+#. i18n: ectx: property (text), widget (QCheckBox, cb_disable_kbuildsycoca)
+#: system_ui.ui:14
+#, kde-format
+msgid "Disable &system configuration startup check"
+msgstr "起動時のシステム設定チェックを無効にする(&M)"
+
+#. i18n: ectx: property (text), widget (QLabel, label_kbuildsycoca)
+#: system_ui.ui:21
+#, kde-format
+msgid ""
+"This option may in rare cases lead to various problems. Consult the What's "
+"This (Shift+F1) help for details."
+msgstr ""
+"<p>このオプションは、まれに多様な問題を引き起すことがあります。詳細については"
+"「これは何？」(Shift+F1) を参照してください。</p>"

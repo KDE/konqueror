@@ -1,0 +1,1918 @@
+# translation of konqueror.po to Belarusian Latin
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Ihar Hrachyshka <ihar.hrachyshka@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2008-10-04 16:18+0300\n"
+"Last-Translator: Ihar Hrachyshka <ihar.hrachyshka@gmail.com>\n"
+"Language-Team: Belarusian Latin <i18n@mova.org>\n"
+"Language: be@latin\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || n%10>=5 && n%10<=9 || n"
+"%100>=11 && n%100<=14 ? 2 : 3);\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#. i18n: ectx: Menu (tools)
+#: konq_shellcmdplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "&Pryładździe"
+
+#: kshellcmdexecutor.cpp:106
+#, kde-format
+msgid "Input Required:"
+msgstr "Vymahajecca ŭpisańnie:"
+
+#: kshellcmdplugin.cpp:32
+#, kde-format
+msgid "&Execute Shell Command..."
+msgstr "&Vykanaj zahad abałonki..."
+
+#: kshellcmdplugin.cpp:41
+#, kde-format
+msgid ""
+"KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a bug."
+msgstr ""
+"„KShellCmdPlugin::slotExecuteShellCommand”: prahramnaja pamyłka. Kali łaska, "
+"paviedam raspracoŭnikam pra hetuju chibu."
+
+#: kshellcmdplugin.cpp:51
+#, kde-format
+msgid "Executing shell commands works only on local directories."
+msgstr "Vykonvać zahady abałonki možna tolki ŭ miascovych katalohach."
+
+#: kshellcmdplugin.cpp:73
+#, fuzzy, kde-format
+#| msgid "Execute Shell Command"
+msgctxt "@title:window"
+msgid "Execute Shell Command"
+msgstr "Vykanaj zahad abałonki"
+
+#: kshellcmdplugin.cpp:74
+#, kde-format
+msgid "Execute shell command in current directory:"
+msgstr "Vykanaj zahad abałonki ŭ rabočym katalohu:"
+
+#: kshellcmdplugin.cpp:85
+#, kde-format
+msgid "Output from command: \"%1\""
+msgstr "Vyjście ad zahadu: „%1”"
+
+#~ msgid "no name"
+#~ msgstr "biaz nazvy"
+
+#~ msgid "Configure"
+#~ msgstr "Naładź"
+
+#~ msgid "Extensions"
+#~ msgstr "Pašyreńni"
+
+#~ msgid ""
+#~ "There was an error loading the module %1.\n"
+#~ "The diagnostics is:\n"
+#~ "%2"
+#~ msgstr ""
+#~ "Padčas źmiaščeńnia ŭ pamiać modula %1 uźnikła pamyłka.\n"
+#~ "Dyjahnastyčnyja paviedamleńni:\n"
+#~ "%2"
+
+#~ msgid "Konqueror"
+#~ msgstr "Konqueror"
+
+#~ msgid "Web browser, file manager and document viewer."
+#~ msgstr "Hartač sieciva, fajłavy kiraŭnik i prahladnik dakumentaŭ."
+
+#~ msgid "(C) 1999-2008, The Konqueror developers"
+#~ msgstr "© 1999-2008, raspracoŭniki prahramy „Konqueror”"
+
+#~ msgid "http://konqueror.kde.org"
+#~ msgstr "http://konqueror.kde.org"
+
+#~ msgid "David Faure"
+#~ msgstr "David Faure"
+
+#~ msgid "Developer (framework, parts, JavaScript, I/O library) and maintainer"
+#~ msgstr ""
+#~ "Raspracoŭnik (bazavaja systema, moduli, JavaScript, biblijateka "
+#~ "pierasyłańnia źviestak) i dahladnik"
+
+#~ msgid "Simon Hausmann"
+#~ msgstr "Simon Hausmann"
+
+#~ msgid "Developer (framework, parts)"
+#~ msgstr "Raspracoŭnik (bazavaja systema, moduli)"
+
+#~ msgid "Michael Reiher"
+#~ msgstr "Michael Reiher"
+
+#~ msgid "Developer (framework)"
+#~ msgstr "Raspracoŭnik (bazavaja systema)"
+
+#~ msgid "Matthias Welk"
+#~ msgstr "Matthias Welk"
+
+#~ msgid "Developer"
+#~ msgstr "Raspracoŭnik"
+
+#~ msgid "Alexander Neundorf"
+#~ msgstr "Alexander Neundorf"
+
+#~ msgid "Developer (List views)"
+#~ msgstr "Raspracoŭnik (prahlad śpisam)"
+
+#~ msgid "Michael Brade"
+#~ msgstr "Michael Brade"
+
+#~ msgid "Developer (List views, I/O library)"
+#~ msgstr "Raspracoŭnik (prahlad śpisam, biblijateka pierasyłańnia źviestak)"
+
+#~ msgid "Lars Knoll"
+#~ msgstr "Lars Knoll"
+
+#~ msgid "Developer (HTML rendering engine)"
+#~ msgstr "Raspracoŭnik (systema vyjaŭleńnia kodu „HTML”)"
+
+#~ msgid "Dirk Mueller"
+#~ msgstr "Dirk Mueller"
+
+#~ msgid "Peter Kelly"
+#~ msgstr "Peter Kelly"
+
+#~ msgid "Waldo Bastian"
+#~ msgstr "Waldo Bastian"
+
+#~ msgid "Developer (HTML rendering engine, I/O library)"
+#~ msgstr ""
+#~ "Raspracoŭnik (systema vyjaŭleńnia kodu „HTML”, biblijateka pierasyłańnia "
+#~ "źviestak)"
+
+#~ msgid "Germain Garand"
+#~ msgstr "Germain Garand"
+
+#~ msgid "Leo Savernik"
+#~ msgstr "Leo Savernik"
+
+#~ msgid "Stephan Kulow"
+#~ msgstr "Stephan Kulow"
+
+#~ msgid ""
+#~ "Developer (HTML rendering engine, I/O library, regression test framework)"
+#~ msgstr ""
+#~ "Raspracoŭnik (systema vyjaŭleńnia kodu „HTML”, biblijateka pierasyłańnia "
+#~ "źviestak, systema pošuku paharšeńniaŭ)"
+
+#~ msgid "Antti Koivisto"
+#~ msgstr "Antti Koivisto"
+
+#~ msgid "Zack Rusin"
+#~ msgstr "Zack Rusin"
+
+#~ msgid "Tobias Anton"
+#~ msgstr "Tobias Anton"
+
+#~ msgid "Lubos Lunak"
+#~ msgstr "Lubos Lunak"
+
+#~ msgid "Developer (HTML rendering engine, JavaScript)"
+#~ msgstr "Raspracoŭnik (systema vyjaŭleńnia kodu „HTML”, JavaScript)"
+
+#~ msgid "Allan Sandfeld Jensen"
+#~ msgstr "Allan Sandfeld Jensen"
+
+#~ msgid "Apple Safari Developers"
+#~ msgstr "Raspracoŭniki prahramy „Safari” ź firmy „Apple”"
+
+#~ msgid "Harri Porten"
+#~ msgstr "Harri Porten"
+
+#~ msgid "Developer (JavaScript)"
+#~ msgstr "Raspracoŭnik (JavaScript)"
+
+#~ msgid "Koos Vriezen"
+#~ msgstr "Koos Vriezen"
+
+#~ msgid "Developer (Java applets and other embedded objects)"
+#~ msgstr "Raspracoŭnik (aplety „Java” dy inšyja ŭnutranyja abjekty)"
+
+#~ msgid "Matt Koss"
+#~ msgstr "Matt Koss"
+
+#~ msgid "Developer (I/O library)"
+#~ msgstr "Raspracoŭnik (biblijateka pierasyłańnia źviestak)"
+
+#~ msgid "Alex Zepeda"
+#~ msgstr "Alex Zepeda"
+
+#~ msgid "Richard Moore"
+#~ msgstr "Richard Moore"
+
+#~ msgid "Developer (Java applet support)"
+#~ msgstr "Raspracoŭnik (absłuhoŭvańnie apletaŭ „Java”)"
+
+#~ msgid "Dima Rogozin"
+#~ msgstr "Dima Rogozin"
+
+#~ msgid "Wynn Wilkes"
+#~ msgstr "Wynn Wilkes"
+
+#~ msgid ""
+#~ "Developer (Java 2 security manager support,\n"
+#~ " and other major improvements to applet support)"
+#~ msgstr ""
+#~ "Raspracoŭnik (absłuhoŭvańnie kiraŭnika biaśpieki dla „Java 2”\n"
+#~ " dy inšyja važkija palapšeńni ŭ systemie apletaŭ)"
+
+#~ msgid "Stefan Schimanski"
+#~ msgstr "Stefan Schimanski"
+
+#~ msgid "Developer (Netscape plugin support)"
+#~ msgstr "Raspracoŭnik (absłuhoŭvańnie pluginaŭ „Netscape”)"
+
+#~ msgid "George Staikos"
+#~ msgstr "George Staikos"
+
+#~ msgid "Developer (SSL, Netscape plugins)"
+#~ msgstr "Raspracoŭnik (SSL, pluginy „Netscape”)"
+
+#~ msgid "Dawit Alemayehu"
+#~ msgstr "Dawit Alemayehu"
+
+#~ msgid "Developer (I/O library, Authentication support)"
+#~ msgstr ""
+#~ "Raspracoŭnik (biblijateka pierasyłańnia źviestak, absłuhoŭvańnie "
+#~ "spraŭdžvańnia tojesnaści)"
+
+#~ msgid "Carsten Pfeiffer"
+#~ msgstr "Carsten Pfeiffer"
+
+#~ msgid "Torsten Rahn"
+#~ msgstr "Torsten Rahn"
+
+#~ msgid "Graphics/icons"
+#~ msgstr "Azdoba, ikony"
+
+#~ msgid "Torben Weis"
+#~ msgstr "Torben Weis"
+
+#~ msgid "KFM author"
+#~ msgstr "Aŭtar prahramy „KFM”"
+
+#~ msgid "Joseph Wenninger"
+#~ msgstr "Joseph Wenninger"
+
+#~ msgid "Developer (navigation panel framework)"
+#~ msgstr "Raspracoŭnik (systema absłuhoŭvańnia paneli miescaŭ)"
+
+#~ msgid "Stephan Binner"
+#~ msgstr "Stephan Binner"
+
+#~ msgid "Developer (misc stuff)"
+#~ msgstr "Raspracoŭnik (roznaje)"
+
+#~ msgid "Ivor Hewitt"
+#~ msgstr "Ivor Hewitt"
+
+#~ msgid "Developer (AdBlock filter)"
+#~ msgstr "Raspracoŭnik (filter „AdBlock”)"
+
+#~ msgid "Eduardo Robles Elvira"
+#~ msgstr "Eduardo Robles Elvira"
+
+#~ msgid ""
+#~ "Checking this box on at least two views sets those views as 'linked'. "
+#~ "Then, when you change directories in one view, the other views linked "
+#~ "with it will automatically update to show the current directory. This is "
+#~ "especially useful with different types of views, such as a directory tree "
+#~ "with an icon view or detailed view, and possibly a terminal emulator "
+#~ "window."
+#~ msgstr ""
+#~ "Paznačyŭšy hetaj miecinaj chacia b dva prahlady, ty zrobiš ich "
+#~ "„spałučanymi”. Tady pry źmianieńni kataloha adnaho prahladu druhi budzie "
+#~ "taksama aŭtamatyčna pieraklučacca na pakaz rabočaha kataloha. Hetaja "
+#~ "mahčymaść vielmi zručnaja dla roznych sposabaŭ prahladu, naprykład, dla "
+#~ "hierarhičnaha vyjaŭleńnia z prahladam ikonaŭ ci detalaŭ, a taksama časam "
+#~ "dla akna z emulataram terminału."
+
+#~ msgid "Close View"
+#~ msgstr "Začyni prahlad"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#~ msgid "Stalled"
+#~ msgstr "Zahrazła"
+
+#~ msgid "Preview &in %1"
+#~ msgstr "Padlad &u „%1”"
+
+#~ msgid "Show %1"
+#~ msgstr "Pakažy %1"
+
+#, fuzzy
+#~| msgid "Clear History"
+#~ msgctxt "@title:window"
+#~ msgid "History"
+#~ msgstr "Vyčyści historyju"
+
+#~ msgctxt "@action:inmenu Parent of 'By Name' and 'By Date'"
+#~ msgid "Sort"
+#~ msgstr "Paradkuj"
+
+#~ msgid ""
+#~ "<qt><center><b>%1</b></center><hr />Last visited: %2<br />First visited: "
+#~ "%3<br />Number of times visited: %4</qt>"
+#~ msgstr ""
+#~ "<qt><center><b>%1</b></center><hr />Apošniaje naviedvańnie: %2<br /"
+#~ ">Pieršaje naviedvańnie: %3<br />Kolkaść naviedvańniaŭ: %4</qt>"
+
+#~ msgid "Miscellaneous"
+#~ msgstr "Roznaje"
+
+#~ msgid "Open in New &Window"
+#~ msgstr "Adčyni ŭ &novym aknie"
+
+#~ msgid "Open in New Tab"
+#~ msgstr "Adčyni ŭ novaj kartcy"
+
+#, fuzzy
+#~| msgid "Copy Link Address"
+#~ msgid "&Copy Link Address"
+#~ msgstr "Skapijuj adras łuča"
+
+#~ msgid "&Remove Entry"
+#~ msgstr "&Vydali"
+
+#~ msgid "C&lear History"
+#~ msgstr "&Vyčyści historyju"
+
+#~ msgid "&Preferences..."
+#~ msgstr "&Nałady..."
+
+#~ msgid "By &Name"
+#~ msgstr "Pavodle &nazvaŭ"
+
+#~ msgid "By &Date"
+#~ msgstr "Pavodle &dataŭ"
+
+#, fuzzy
+#~| msgid "Clear History"
+#~ msgid "Search in history"
+#~ msgstr "Vyčyści historyju"
+
+#~ msgid "Do you really want to clear the entire history?"
+#~ msgstr "Sapraŭdy chočaš vyčyścić usiu historyju?"
+
+#~ msgid "Clear History?"
+#~ msgstr "Vyčyścić historyju?"
+
+#, fuzzy
+#~| msgid "Start without a default window"
+#~ msgid "Start without a default window, when called without URLs"
+#~ msgstr "Uklučy biaz zmoŭčanaha akna"
+
+#~ msgid "Profile to open"
+#~ msgstr "Patrebny profil"
+
+#~ msgid "List available profiles"
+#~ msgstr "Śpis mahčymych profilaŭ"
+
+#~ msgid "List available sessions"
+#~ msgstr "Śpis mahčymych sesijaŭ"
+
+#~ msgid "Session to open"
+#~ msgstr "Patrebnaja sesija"
+
+#~ msgid "Mimetype to use for this URL (e.g. text/html or inode/directory)"
+#~ msgstr ""
+#~ "Typ „MIME” dla hetaha adrasu (naprykład, „text/html” ci „inode/directory”)"
+
+#~ msgid ""
+#~ "For URLs that point to files, opens the directory and selects the file, "
+#~ "instead of opening the actual file"
+#~ msgstr ""
+#~ "Dla adrasoŭ, jakija łučać z fajłami, adčyniaje kataloh i vyłučaje fajł, a "
+#~ "nie adčyniaje sam fajł."
+
+#~ msgid "Location to open"
+#~ msgstr "Patrebny adras"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Loading..."
+#~ msgstr "Čytańnie..."
+
+#~ msgid "Canceled."
+#~ msgstr "Anulavana."
+
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Reloading the page will discard these changes."
+#~ msgstr ""
+#~ "Hetaja staronka ŭtrymvaje niavysłanyja źmieny.\n"
+#~ "Pieračytaŭšy staronku, ty ich straciš."
+
+#~ msgid "Discard Changes?"
+#~ msgstr "Anulavać źmieny?"
+
+#~ msgid "&Discard Changes"
+#~ msgstr "&Anuluj źmieny"
+
+#~ msgid "File Management"
+#~ msgstr "Kiravańnie fajłami"
+
+#~ msgid "Web Browsing"
+#~ msgstr "Hartańnie sieciva"
+
+#~ msgid "Home Folder"
+#~ msgstr "Chatni kataloh"
+
+#, fuzzy
+#~| msgid "Home Page"
+#~ msgid "Home"
+#~ msgstr "Chatniaja staronka"
+
+#~ msgid "Navigate to your 'Home Folder'"
+#~ msgstr "Idzi ŭ svoj chatni kataloh"
+
+#~ msgid "Navigate to your local 'Home Folder'"
+#~ msgstr "Idzi ŭ svoj miascovy chatni kataloh"
+
+#~ msgid "Home Page"
+#~ msgstr "Chatniaja staronka"
+
+#~ msgid "Navigate to your 'Home Page'"
+#~ msgstr "Idzi ŭ svaju chatniuju staronku"
+
+#~ msgid ""
+#~ "<html>Navigate to your 'Home Page'<br /><br />You can configure the "
+#~ "location where this button takes you under <b>Settings -> Configure "
+#~ "Konqueror -> General</b>.</html>"
+#~ msgstr ""
+#~ "<html>Idzi ŭ svaju chatniuju staronku<br /><br />Ty možaš naładzić hety "
+#~ "adras u menu: <b>Nałady → Naładź prahramu „Konqueror” → Hałoŭnaje</b>.</"
+#~ "html>"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Detaching the tab will discard these changes."
+#~ msgstr ""
+#~ "Hetaja kartka ŭtrymvaje niavysłanyja źmieny.\n"
+#~ "Adčapiŭšy kartku, ty ich straciš."
+
+#~ msgid ""
+#~ "This view contains changes that have not been submitted.\n"
+#~ "Closing the view will discard these changes."
+#~ msgstr ""
+#~ "Hety prahlad utrymvaje niavysłanyja źmieny.\n"
+#~ "Začyniŭšy prahlad, ty ich straciš."
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the tab will discard these changes."
+#~ msgstr ""
+#~ "Hetaja kartka ŭtrymvaje niavysłanyja źmieny.\n"
+#~ "Začyniŭšy kartku, ty ich straciš."
+
+#~ msgid "Do you really want to close all other tabs?"
+#~ msgstr "Sapraŭdy začynić usie inšyja kartki?"
+
+#~ msgid "Close Other Tabs Confirmation"
+#~ msgstr "Paćviardžeńnie začynieńnia inšych kartak"
+
+#~ msgid "Close &Other Tabs"
+#~ msgstr "Začyni &inšyja kartki"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing other tabs will discard these changes."
+#~ msgstr ""
+#~ "Hetaja kartka ŭtrymvaje niavysłanyja źmieny.\n"
+#~ "Začyniŭšy inšyja kartki, ty ich straciš."
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Reloading all tabs will discard these changes."
+#~ msgstr ""
+#~ "Hetaja kartka ŭtrymvaje niavysłanyja źmieny.\n"
+#~ "Pieračytaŭšy ŭsie kartki, ty ich straciš."
+
+#~ msgid "Enter Target"
+#~ msgstr "Upišy metavaje miesca"
+
+#~ msgid "<qt><b>%1</b> is not valid</qt>"
+#~ msgstr "<qt><b>%1</b> niapravilny.</qt>"
+
+#~ msgid "Copy selected files from %1 to:"
+#~ msgstr "Skapijuj vyłučanyja fajły z „%1” u:"
+
+#~ msgid "Move selected files from %1 to:"
+#~ msgstr "Pieraniasi vyłučanyja fajły z „%1” u:"
+
+#~ msgctxt "This menu entry empties the closed items history"
+#~ msgid "Empty Closed Items History"
+#~ msgstr "Vyčyści historyju začynienych miescaŭ"
+
+#~ msgid "Save As..."
+#~ msgstr "Zapišy jak..."
+
+#~ msgid "Manage..."
+#~ msgstr "Kiruj..."
+
+#~ msgid "New &Window"
+#~ msgstr "Novaje &akno"
+
+#~ msgid "&Duplicate Window"
+#~ msgstr "&Skapijuj akno"
+
+#~ msgid "Send &Link Address..."
+#~ msgstr "Vyšli &adras łuča..."
+
+#~ msgid "S&end File..."
+#~ msgstr "&Vyšli fajł..."
+
+#~ msgid "&Open Location"
+#~ msgstr "&Adčyni adras"
+
+#~ msgid "&Open File..."
+#~ msgstr "&Adčyni fajł..."
+
+#~ msgid "&Find File..."
+#~ msgstr "&Znajdzi fajł..."
+
+#~ msgid "&Use index.html"
+#~ msgstr "&Karystajsia fajłam „index.html”"
+
+#~ msgid "Lock to Current Location"
+#~ msgstr "Pryviažy da hetaha miesca"
+
+#~ msgctxt "This option links konqueror views"
+#~ msgid "Lin&k View"
+#~ msgstr "&Złučy prahlad"
+
+#~ msgid "&Up"
+#~ msgstr "&Vyšej"
+
+#~ msgid "Closed Items"
+#~ msgstr "Začynienyja adrasy"
+
+#~ msgid "Sessions"
+#~ msgstr "Sesii"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Most Often Visited"
+#~ msgstr "Najčaściej naviedvanyja"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Recently Visited"
+#~ msgstr "Niadaŭna naviedanyja"
+
+#, fuzzy
+#~| msgid "Show History Sidebar"
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History"
+#~ msgstr "Pakažy panel historyi"
+
+#, fuzzy
+#~| msgid "&Save View Profile..."
+#~ msgid "&Save View Profile As..."
+#~ msgstr "&Zapišy profil prahladu..."
+
+#~ msgid "Configure Extensions..."
+#~ msgstr "Naładź pašyreńni..."
+
+#~ msgid "Configure Spell Checking..."
+#~ msgstr "Naładź spraŭdžvańnie pravapisu..."
+
+#~ msgid "Split View &Left/Right"
+#~ msgstr "Padziali prahlad &vertykalna"
+
+#~ msgid "Split View &Top/Bottom"
+#~ msgstr "Padziali prahlad &haryzantalna"
+
+#~ msgid "&New Tab"
+#~ msgstr "&Novaja kartka"
+
+#~ msgid "&Duplicate Current Tab"
+#~ msgstr "&Skapijuj hetuju kartku"
+
+#~ msgid "Detach Current Tab"
+#~ msgstr "Adčapi hetuju kartku"
+
+#~ msgid "&Close Active View"
+#~ msgstr "&Začyni dziejny prahlad"
+
+#~ msgid "Close Current Tab"
+#~ msgstr "Začyni hetuju kartku"
+
+#~ msgid "Activate Next Tab"
+#~ msgstr "Pieraklučy ŭ nastupnuju kartku"
+
+#~ msgid "Activate Previous Tab"
+#~ msgstr "Pieraklučy ŭ papiaredniuju kartku"
+
+#~ msgid "Activate Tab %1"
+#~ msgstr "Pieraklučy ŭ kartku „%1”"
+
+#~ msgid "Move Tab Left"
+#~ msgstr "Pasuń kartku ŭleva"
+
+#~ msgid "Move Tab Right"
+#~ msgstr "Pasuń kartku ŭprava"
+
+#~ msgid "Dump Debug Info"
+#~ msgstr "Pakažy źviestki dla adładžvańnia"
+
+#~ msgid "C&onfigure View Profiles..."
+#~ msgstr "&Naładź profili prahladu..."
+
+#~ msgid "Load &View Profile"
+#~ msgstr "&Adčytaj profil prahladu"
+
+#~ msgid "&Reload"
+#~ msgstr "&Pieračytaj"
+
+#~ msgid "&Reload All Tabs"
+#~ msgstr "&Pieračytaj usie kartki"
+
+#~ msgid "&Force Reload"
+#~ msgstr "&Musova pieračytaj"
+
+#~ msgid "&Stop"
+#~ msgstr "&Spyni"
+
+#~ msgid "L&ocation: "
+#~ msgstr "&Miesca: "
+
+#~ msgid "Location Bar"
+#~ msgstr "Panel adrasu"
+
+#~ msgid ""
+#~ "<html>Location Bar<br /><br />Enter a web address or search term.</html>"
+#~ msgstr ""
+#~ "<html>Panel adrasu<br /><br />Tut upišy sieciŭny adras albo šukany vyraz."
+#~ "</html>"
+
+#~ msgid "Clear Location Bar"
+#~ msgstr "Vyčyści panel adrasu"
+
+#~ msgid ""
+#~ "<html>Clear Location bar<br /><br />Clears the contents of the location "
+#~ "bar.</html>"
+#~ msgstr ""
+#~ "<html>Vyčyści panel adrasu<br /><br />Vyčyščaje źmieściva z paneli adrasu."
+#~ "</html>"
+
+#~ msgid "&Bookmarks"
+#~ msgstr "&Zakładki"
+
+#~ msgid "Kon&queror Introduction"
+#~ msgstr "&Znajomstva z prahramaj „Konqueror”"
+
+#~ msgid "Go"
+#~ msgstr "Idzi"
+
+#~ msgid ""
+#~ "<html>Go<br /><br />Goes to the page that has been entered into the "
+#~ "location bar.</html>"
+#~ msgstr ""
+#~ "<html>Idzi<br /><br />Pierachodzić da staronki z padadzienym u paneli "
+#~ "adrasam.</html>"
+
+#~ msgid ""
+#~ "<html>Enter the parent folder<br /><br />For instance, if the current "
+#~ "location is file:/home/%1 clicking this button will take you to file:/"
+#~ "home.</html>"
+#~ msgstr ""
+#~ "<html>Idzi ŭ vyšejšy kataloh<br /><br />Naprykład, kali ciapier ty ŭ "
+#~ "miescy z adrasam „file:/home/%1”, to kliknuŭšy ŭ hetuju knopku, ty "
+#~ "pierajdzieš u „file:/home”.</html>"
+
+#~ msgid "Enter the parent folder"
+#~ msgstr "Idzi ŭ vyšejšy kataloh"
+
+#~ msgid "Move backwards one step in the browsing history"
+#~ msgstr "Pierajdzi nazad na krok u historyi prahladu"
+
+#~ msgid "Move forward one step in the browsing history"
+#~ msgstr "Pierajdzi napierad na krok u historyi prahladu"
+
+#~ msgid "Move backwards one step in the closed tabs history"
+#~ msgstr "Pierajdzi nazad na krok u historyi začynienych kartak"
+
+#~ msgid ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.</html>"
+#~ msgstr ""
+#~ "<html>Pieračytaj hety dakument<br /><br />Heta moža spatrebicca, kab "
+#~ "aktualizavać źmieściva staronki, kali jano źmianiałasia paśla apošniaha "
+#~ "pračytańnia.</html>"
+
+#~ msgid "Reload the currently displayed document"
+#~ msgstr "Pieračytaj hety dakument"
+
+#~ msgid ""
+#~ "<html>Reload all currently displayed documents in tabs<br /><br />This "
+#~ "may, for example, be needed to refresh web pages that have been modified "
+#~ "since they were loaded, in order to make the changes visible.</html>"
+#~ msgstr ""
+#~ "<html>Pieračytaj dakumenty z usich kartak<br /><br />Heta moža "
+#~ "spatrebicca, kab aktualizavać źmieściva staronak, kali jano źmianiałasia "
+#~ "paśla apošniaha pračytańnia.</html>"
+
+#~ msgid "Reload all currently displayed document in tabs"
+#~ msgstr "Pieračytaj dakumenty z usich kartak"
+
+#~ msgid ""
+#~ "<html>Stop loading the document<br /><br />All network transfers will be "
+#~ "stopped and Konqueror will display the content that has been received so "
+#~ "far.</html>"
+#~ msgstr ""
+#~ "<html>Spyni pračytańnie dakumenta<br /><br />Usio pierasyłańnie źviestak "
+#~ "budzie spynienaje, a hartač „Konqueror” pakaža źmieściva, jakoje ŭžo było "
+#~ "atrymanaje.</html>"
+
+#~ msgid ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.  Any images on "
+#~ "the page are downloaded again, even if cached copies exist.</html>"
+#~ msgstr ""
+#~ "<html>Pieračytaj hety dakument<br /><br />Heta moža spatrebicca, kab "
+#~ "aktualizavać źmieściva staronki, kali jano źmianiałasia paśla apošniaha "
+#~ "pračytańnia. Usie vyjavy sa staronki buduć uziatyja ź sieciva nanoŭ, "
+#~ "navat kali jany ŭžo mieściacca ŭ padručnym schoviščy ŭ hetym kamputary.</"
+#~ "html>"
+
+#~ msgid ""
+#~ "Force a reload of the currently displayed document and any contained "
+#~ "images"
+#~ msgstr "Musova pieračytaj hety dakument z usimi vyjavami"
+
+#~ msgid "Stop loading the document"
+#~ msgstr "Spyni pračytańnie dakumenta"
+
+#~ msgid ""
+#~ "<html>Cut the currently selected text or item(s) and move it to the "
+#~ "system clipboard<br /><br />This makes it available to the <b>Paste</b> "
+#~ "command in Konqueror and other KDE applications.</html>"
+#~ msgstr ""
+#~ "<html>Vytni vyłučanaje i źmiaści jaho ŭ systemny abmienny bufer<br /><br /"
+#~ ">Vytnutaje budzie dastupnaje z „Konqueror” dy inšych prahramaŭ dla KDE "
+#~ "praz zahad <b>Uklej</b>.</html>"
+
+#~ msgid "Move the selected text or item(s) to the clipboard"
+#~ msgstr "Pieraniasi vyłučanaje ŭ abmienny bufer"
+
+#~ msgid ""
+#~ "<html>Copy the currently selected text or item(s) to the system "
+#~ "clipboard<br /><br />This makes it available to the <b>Paste</b> command "
+#~ "in Konqueror and other KDE applications.</html>"
+#~ msgstr ""
+#~ "<html>Skapijuj vyłučanaje ŭ systemny abmienny bufer<br /><br /"
+#~ ">Skapijavanaje budzie dastupnaje z „Konqueror” dy inšych prahramaŭ dla "
+#~ "KDE praz zahad <b>Uklej</b>.</html>"
+
+#~ msgid "Copy the selected text or item(s) to the clipboard"
+#~ msgstr "Skapijuj vyłučanaje ŭ abmienny bufer"
+
+#~ msgid ""
+#~ "<html>Paste the previously cut or copied clipboard contents<br /><br /"
+#~ ">This also works for text copied or cut from other KDE applications.</"
+#~ "html>"
+#~ msgstr ""
+#~ "<html>Uklej papiarednie vytnutaje ci skapijavanaje źmieściva abmiennaha "
+#~ "bufera<br /><br />Hetaja aperacyja dziejničaje i z tekstam, vytnutym ci "
+#~ "skapijavanym ź inšych aplikacyjaŭ dla KDE.</html>"
+
+#~ msgid "Paste the clipboard contents"
+#~ msgstr "Uklej źmieściva abmiennaha bufera"
+
+#~ msgid ""
+#~ "<html>Print the currently displayed document<br /><br />You will be "
+#~ "presented with a dialog where you can set various options, such as the "
+#~ "number of copies to print and which printer to use.<br /><br />This "
+#~ "dialog also provides access to special KDE printing services such as "
+#~ "creating a PDF file from the current document.</html>"
+#~ msgstr ""
+#~ "<html>Vydrukuj hety dakument<br /><br />Hetaja aperacyja adčyniaje "
+#~ "dyjalohavaje akno, dzie možna źmianić roznyja nałady, naprykład, kolkaść "
+#~ "patrebnych kopijaŭ dakumenta j vybrać drukarku.<br /><br />Praz hetaje "
+#~ "akno taksama možna vykarystać specyjalnyja słužby vydruku systemy „KDE”, "
+#~ "naprykład, stvaryć fajł „PDF” z dakumenta.</html>"
+
+#~ msgid "Print the current document"
+#~ msgstr "Vydrukuj hety dakument"
+
+#~ msgid "If present, open index.html when entering a folder."
+#~ msgstr "Kali jość, adčyniaj fajł „index.html” pry ŭvachodzie ŭ kataloh."
+
+#~ msgid ""
+#~ "A locked view cannot change folders. Use in combination with 'link view' "
+#~ "to explore many files from one folder"
+#~ msgstr ""
+#~ "Dla pryviazanaha prahladu nielha źmianiać kataloh. Karystajsia prahladam "
+#~ "łučoŭ, kab prahladać šmat fajłaŭ z adnaho kataloha."
+
+#~ msgid ""
+#~ "Sets the view as 'linked'. A linked view follows folder changes made in "
+#~ "other linked views."
+#~ msgstr ""
+#~ "Uklučaje spałučany prahlad. Taki prahlad pakazvaje źmieny, zroblenyja ŭ "
+#~ "inšych paviazanych ź im prahladach."
+
+#~ msgid "Copy &Files..."
+#~ msgstr "Skapijuj &fajły..."
+
+#~ msgid "M&ove Files..."
+#~ msgstr "&Pieraniasi fajły..."
+
+#~ msgid ""
+#~ "You have requested to open more than 20 bookmarks in tabs. This might "
+#~ "take a while. Continue?"
+#~ msgstr ""
+#~ "Ty zahadaŭ adčynić bolš za 20 zakładak u kartkach. Vykanańnie zahadu moža "
+#~ "być doŭhim. Praciahvać?"
+
+#~ msgid "Open bookmarks folder in new tabs"
+#~ msgstr "Adčyni kataloh zakładak u novych kartkach"
+
+#~ msgid "Open in T&his Window"
+#~ msgstr "Adčyni ŭ &hetym aknie"
+
+#~ msgid "Open the document in current window"
+#~ msgstr "Adčyni dakument u hetym aknie"
+
+#~ msgid "Open the document in a new window"
+#~ msgstr "Adčyni dakument u novym aknie"
+
+#~ msgid "Open in &New Tab"
+#~ msgstr "Adčyni ŭ novaj &kartcy"
+
+#~ msgid "Open the document in a new tab"
+#~ msgstr "Adčyni dakument u novaj kartcy"
+
+#~ msgid "&Open With"
+#~ msgstr "&Adčyni"
+
+#~ msgid "Open with %1"
+#~ msgstr "Adčyni ŭ „%1”"
+
+#~ msgctxt "@action:inmenu View"
+#~ msgid "&View Mode"
+#~ msgstr "&Sposab prahladu"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window, are you sure you want to quit?"
+#~ msgstr "U hetym aknie adčynienyja niekalki kartak. Sapraŭdy chočaš vyjści?"
+
+#~ msgid "Confirmation"
+#~ msgstr "Paćviardžeńnie"
+
+#~ msgid "C&lose Current Tab"
+#~ msgstr "&Začyni hetuju kartku"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the window will discard these changes."
+#~ msgstr ""
+#~ "Hetaja kartka ŭtrymvaje niavysłanyja źmieny.\n"
+#~ "Začyniŭšy akno, ty ich straciš."
+
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Closing the window will discard these changes."
+#~ msgstr ""
+#~ "Hetaja staronka ŭtrymvaje niavysłanyja źmieny.\n"
+#~ "Začyniŭšy akno, ty ich straciš."
+
+#~ msgid ""
+#~ "Your sidebar is not functional or unavailable. A new entry cannot be "
+#~ "added."
+#~ msgstr ""
+#~ "Bakavaja panel nie pracuje ci jaje niama. Nie ŭdałosia dadać novy element."
+
+#~ msgid "Web Sidebar"
+#~ msgstr "Sieciŭnaja bakavaja panel"
+
+#~ msgid "Add new web extension \"%1\" to your sidebar?"
+#~ msgstr "Dadać novaje sieciŭnaje pašyreńnie „%1” u bakavuju panel?"
+
+#~ msgid "Add"
+#~ msgstr "Dadaj"
+
+#~ msgid "Do Not Add"
+#~ msgstr "Nie dadavaj"
+
+#~ msgid ""
+#~ "There appears to be a configuration error. You have associated Konqueror "
+#~ "with %1, but it cannot handle this file type."
+#~ msgstr ""
+#~ "Uźnikła pamyłka ŭ naładžvańni. Ty pryviazaŭ prahramu „Konqueror” da „%1”, "
+#~ "ale jana nia ŭmieje absłuhoŭvać fajłaŭ takoha typu."
+
+#~ msgid "Profile Management"
+#~ msgstr "Kiravańnie profilami"
+
+#~ msgid "&Rename Profile"
+#~ msgstr "&Źmiani nazvu profilu"
+
+#~ msgid "&Delete Profile"
+#~ msgstr "&Vydali profil"
+
+#~ msgid "Manage Sessions"
+#~ msgstr "Kiruj sesijami"
+
+#~ msgid "&Open"
+#~ msgstr "&Adčyni"
+
+#, fuzzy
+#~| msgid "Rename session"
+#~ msgid "Rename Session"
+#~ msgstr "Źmiani nazvu sesii"
+
+#~ msgid "Save Session"
+#~ msgstr "Zapišy sesiju"
+
+#~ msgid ""
+#~ "A session with the name '%1' already exists, do you want to overwrite it?"
+#~ msgstr "Sesija z nazvaj „%1” užo isnuje. Chočaš jaje zamianić?"
+
+#~ msgid "Session exists. Overwrite?"
+#~ msgstr "Sesija isnuje. Zamianić?"
+
+#, fuzzy
+#~| msgid ""
+#~| "Konqueror didn't close correctly. Would you like to restore session?"
+#~ msgid ""
+#~ "Konqueror did not close correctly. Would you like to restore the previous "
+#~ "session?"
+#~ msgstr ""
+#~ "Prahrama „Konqueror” minuły raz kiepska skončyła pracu. Uznavić tuju "
+#~ "sesiju?"
+
+#~ msgid "Restore Session?"
+#~ msgstr "Uznavić sesiju?"
+
+#~ msgid "Restore Session"
+#~ msgstr "Uznavi sesiju"
+
+#~ msgid "Do Not Restore"
+#~ msgstr "Nie ŭznaŭlaj"
+
+#~ msgid "Ask Me Later"
+#~ msgstr "Spytaj paźniej"
+
+#~ msgid ""
+#~ "This bar contains the list of currently open tabs. Click on a tab to make "
+#~ "it active. You can also use keyboard shortcuts to navigate through tabs. "
+#~ "The text on the tab shows the content currently open in it; place your "
+#~ "mouse over the tab to see the full title, in case it has been shortened "
+#~ "to fit the tab width."
+#~ msgstr ""
+#~ "Hetaja panel źmiaščaje śpis adčynienych kartak. Kab pieraklučyć u peŭnuju "
+#~ "kartku, klikni ŭ jaje. Ty možaš pieraklučać kartki klavijaturnymi "
+#~ "skarotami. Tekst na kartcy aznačaje jejnaje źmieściva. Kab ubačyć poŭnuju "
+#~ "nazvu, źmiaści kursor myšy na patrebnaj kartcy."
+
+#~ msgid "Open a new tab"
+#~ msgstr "Adčyni novuju kartku"
+
+#~ msgid "Close the current tab"
+#~ msgstr "Začyni hetuju kartku"
+
+#~ msgid "&Duplicate Tab"
+#~ msgstr "&Skapijuj kartku"
+
+#~ msgid "&Reload Tab"
+#~ msgstr "&Pieračytaj kartku"
+
+#~ msgid "Other Tabs"
+#~ msgstr "Inšyja kartki"
+
+#~ msgid "D&etach Tab"
+#~ msgstr "&Adčapi kartku"
+
+#~ msgid "&Close Tab"
+#~ msgstr "&Začyni kartku"
+
+#~ msgid "Und&o: Closed Tab"
+#~ msgstr "&Anuluj: začynieńnie kartki"
+
+#~ msgid "Und&o: Closed Window"
+#~ msgstr "&Anuluj: začynieńnie akna"
+
+#~ msgid ""
+#~ "The page you are trying to view is the result of posted form data. If you "
+#~ "resend the data, any action the form carried out (such as search or "
+#~ "online purchase) will be repeated. "
+#~ msgstr ""
+#~ "Staronka, jakuju ty sprabuješ pahladzieć, jość vynikam vysłanym źviestak "
+#~ "formy. Kali ty pierašleš źviestki, to ŭsie aperacyi, vykananyja formaj "
+#~ "(naprykład, pošuk ci zamaŭleńnie tavaru), buduć paŭtoranyja."
+
+#~ msgid "Warning"
+#~ msgstr "Uvaha"
+
+#~ msgid "Resend"
+#~ msgstr "Pierašli"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window.\n"
+#~ "Loading a view profile will close them."
+#~ msgstr ""
+#~ "U hetym aknie adčynienyja niekalki kartak.\n"
+#~ "Adčytaŭšy profil prahladu, ty ich straciš."
+
+#~ msgid "Load View Profile"
+#~ msgstr "Adčytaj profil prahladu"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Loading a profile will discard these changes."
+#~ msgstr ""
+#~ "Hetaja kartka ŭtrymvaje niavysłanyja źviestki.\n"
+#~ "Adčytaŭšy profil, ty ich straciš."
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "History Sidebar Module"
+#~ msgstr "Sieciŭnaja bakavaja panel"
+
+#, fuzzy
+#~| msgid "Clear History"
+#~ msgctxt "@title:tab"
+#~ msgid "History"
+#~ msgstr "Vyčyści historyju"
+
+#, fuzzy
+#~ msgid " day"
+#~ msgid_plural " days"
+#~ msgstr[0] " dzień"
+#~ msgstr[1] " dni"
+#~ msgstr[2] " dzion"
+
+#, fuzzy
+#~ msgid "Minute"
+#~ msgid_plural "Minutes"
+#~ msgstr[0] "Chvilina"
+#~ msgstr[1] "Chviliny"
+#~ msgstr[2] "Chvilin"
+
+#, fuzzy
+#~ msgid "Day"
+#~ msgid_plural "Days"
+#~ msgstr[0] "Dzień"
+#~ msgstr[1] "Dni"
+#~ msgstr[2] "Dzion"
+
+#~ msgid "<h1>History Sidebar</h1> You can configure the history sidebar here."
+#~ msgstr "<h1>Panel historyi</h1> Tut možna naładzić bakavuju panel historyi."
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Places Sidebar Module"
+#~ msgstr "Sieciŭnaja bakavaja panel"
+
+#~ msgid "Extended Sidebar"
+#~ msgstr "Pašyranaja bakavaja panel"
+
+#~ msgid "Rollback to System Default"
+#~ msgstr "Viarni systemnyja nałady"
+
+#~ msgid "Configure Sidebar"
+#~ msgstr "Naładź bakavuju panel"
+
+#~ msgid "Add New"
+#~ msgstr "Dadaj novy"
+
+#~ msgid "Multiple Views"
+#~ msgstr "Niekalki prahladaŭ"
+
+#~ msgid "Show Tabs Left"
+#~ msgstr "Pakazvaj kartki źleva"
+
+#~ msgid "Show Configuration Button"
+#~ msgstr "Pakazvaj knopku naładaŭ"
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgid "Close Sidebar"
+#~ msgstr "Sieciŭnaja bakavaja panel"
+
+#~ msgid "This entry already exists."
+#~ msgstr "Hety element užo isnuje."
+
+#~ msgid ""
+#~ "<qt>This removes all your entries from the sidebar and adds the system "
+#~ "default ones.<br /><b>This procedure is irreversible</b><br />Do you want "
+#~ "to proceed?</qt>"
+#~ msgstr ""
+#~ "<qt>Hetaja aperacyja vydalaje ŭsio z bakavoj paneli j dadaje tolki "
+#~ "systemnyja elementy.<br /><b>Jaje niemahčyma paśla anulavać.</b><br /"
+#~ ">Praciahvać?</qt>"
+
+#~ msgid "Show Tabs Right"
+#~ msgstr "Pakazvaj kartki sprava"
+
+#~ msgid "Set Name"
+#~ msgstr "Aznač nazvu"
+
+#~ msgid "Enter the name:"
+#~ msgstr "Upišy nazvu:"
+
+#~ msgid "Enter a URL:"
+#~ msgstr "Upišy adras:"
+
+#~ msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
+#~ msgstr "<qt>Sapraŭdy chočaš vydalić kartku <b>%1</b>?</qt>"
+
+#, fuzzy
+#~| msgid ""
+#~| "You have hidden the navigation panel configuration button. To make it "
+#~| "visible again, click the right mouse button on any of the navigation "
+#~| "panel buttons and select \"Show Configuration Button\"."
+#~ msgid ""
+#~ "You have hidden the sidebar configuration button. To make it visible "
+#~ "again, click the right mouse button on any of the sidebar buttons and "
+#~ "select \"Show Configuration Button\"."
+#~ msgstr ""
+#~ "Ty schavaŭ knopku naładaŭ dla paneli miescaŭ. Kab znoŭ jaje ŭklučyć, "
+#~ "klikni pravaj knopkaj myšy ŭ lubuju knopku paneli miescaŭ i vybiery "
+#~ "„Pakazvaj panel miescaŭ”."
+
+#~ msgid "Set Name..."
+#~ msgstr "Aznač nazvu..."
+
+#~ msgid "Set URL..."
+#~ msgstr "Aznač adras..."
+
+#~ msgid "Set Icon..."
+#~ msgstr "Aznač ikonu..."
+
+#~ msgid "Remove"
+#~ msgstr "Vydali"
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgid "Web module"
+#~ msgstr "Sieciŭnaja bakavaja panel"
+
+#~ msgid "&Create New Folder"
+#~ msgstr "&Stvary novy kataloh"
+
+#~ msgid "Delete Folder"
+#~ msgstr "Vydali kataloh"
+
+#~ msgid "Delete Bookmark"
+#~ msgstr "Vydali zakładku"
+
+#~ msgid "Properties"
+#~ msgstr "Ułaścivaści"
+
+#~ msgid "Open in New Window"
+#~ msgstr "Adčyni ŭ novym aknie"
+
+#~ msgid "Open Folder in Tabs"
+#~ msgstr "Adčyni kataloh u kartkach"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "Skapijuj adras łuča"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark folder\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "Sapraŭdy chočaš vydalić kataloh z zakładkami\n"
+#~ "„%1”?"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "Sapraŭdy chočaš vydalić zakładku\n"
+#~ "„%1”?"
+
+#~ msgid "Bookmark Folder Deletion"
+#~ msgstr "Vydaleńnie kataloha z zakładkami"
+
+#~ msgid "Bookmark Deletion"
+#~ msgstr "Vydaleńnie zakładki"
+
+#~ msgid "Bookmark Properties"
+#~ msgstr "Ułaścivaści zakładki"
+
+#~ msgid "&Update"
+#~ msgstr "&Aktualizuj"
+
+#~ msgid "Name:"
+#~ msgstr "Nazva:"
+
+#~ msgid "Location:"
+#~ msgstr "Miesca:"
+
+#~ msgid "Add Bookmark"
+#~ msgstr "Dadaj zakładku"
+
+#~ msgid "Cannot find parent item %1 in the tree. Internal error."
+#~ msgstr ""
+#~ "Nie ŭdałosia znajści ŭ hierarchii vyšejšy element „%1”. Heta ŭnutranaja "
+#~ "pamyłka."
+
+#~ msgid "&Create New Folder..."
+#~ msgstr "&Stvary novy kataloh..."
+
+#~ msgid "Rename"
+#~ msgstr "Źmiani nazvu"
+
+#~ msgid "Delete Link"
+#~ msgstr "Vydali łuč"
+
+#~ msgid "New Folder"
+#~ msgstr "Novy kataloh"
+
+#~ msgid "Create New Folder"
+#~ msgstr "Stvary novy kataloh"
+
+#~ msgid "Enter folder name:"
+#~ msgstr "Upišy nazvu kataloha:"
+
+#, fuzzy
+#~| msgid "Name:"
+#~ msgctxt "@label"
+#~ msgid "Name:"
+#~ msgstr "Nazva:"
+
+#~ msgid "&Open Link"
+#~ msgstr "&Adčyni łuč"
+
+#~ msgid "Set &Automatic Reload"
+#~ msgstr "Uklučy &aŭtamatyčnaje pieračytvańnie"
+
+#~ msgid "Set Refresh Timeout (0 disables)"
+#~ msgstr "Aznač termin čakańnia aktualizacyi („0” vyklučaje)"
+
+#~ msgid " min"
+#~ msgstr " chvilin"
+
+#~ msgid " sec"
+#~ msgstr " sekund"
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Web Sidebar Module"
+#~ msgstr "Sieciŭnaja bakavaja panel"
+
+#~ msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
+#~ msgid "Be free."
+#~ msgstr "Budź svabodnym."
+
+#~ msgid ""
+#~ "Konqueror is a web browser, file manager and universal document viewer."
+#~ msgstr ""
+#~ "„Konqueror”: hartač sieciva, fajłavy kiraŭnik i ŭsiomahutny prahladnik "
+#~ "dakumentaŭ."
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "Starting Points"
+#~ msgstr "Pačatki"
+
+#~ msgid "Introduction"
+#~ msgstr "Uvodziny"
+
+#~ msgid "Tips"
+#~ msgstr "Parady"
+
+#~ msgid "Specifications"
+#~ msgstr "Specyfikacyi"
+
+#~ msgid "Your personal files"
+#~ msgstr "Ułasnyja fajły"
+
+#~ msgid "Trash"
+#~ msgstr "Śmietnica"
+
+#~ msgid "Browse and restore the trash"
+#~ msgstr "Prahladaj i ŭznaŭlaj fajły sa śmietnicy"
+
+#~ msgid "Network Folders"
+#~ msgstr "Sietkavyja katalohi"
+
+#~ msgid "Shared files and folders"
+#~ msgstr "Supolna dastupnyja fajły j katalohi"
+
+#, fuzzy
+#~| msgid "&Bookmarks"
+#~ msgid "Bookmarks"
+#~ msgstr "&Zakładki"
+
+#~ msgid "Quick access to your bookmarks"
+#~ msgstr "Chutki dostup da zakładak"
+
+#~ msgid "Next: An Introduction to Konqueror"
+#~ msgstr "Dalej: Uvodziny ŭ prahramu „Konqueror”"
+
+#~ msgid "Search the Web"
+#~ msgstr "Šukaj u siecivie"
+
+#~ msgid ""
+#~ "Konqueror makes working with and managing your files easy. You can browse "
+#~ "both local and networked folders while enjoying advanced features such as "
+#~ "the powerful sidebar and file previews."
+#~ msgstr ""
+#~ "Prahrama „Konqueror” robić kiravańnie fajłami prostaj spravaj. Ty možaš "
+#~ "prahladać miascovyja j sietkavyja katalohi. U prahramy šmat raznastajnych "
+#~ "zručnaściaŭ, naprykład, bakavaja panel i padhlady fajłaŭ."
+
+#~ msgid ""
+#~ "Konqueror is also a full featured and easy to use web browser which you "
+#~ "can use to explore the Internet. Enter the address (e.g. <a href=\"http://"
+#~ "www.kde.org\">http://www.kde.org</a>) of a web page you would like to "
+#~ "visit in the location bar and press Enter, or choose an entry from the "
+#~ "Bookmarks menu."
+#~ msgstr ""
+#~ "Prahrama „Konqueror” taksama jość zdolnym i zručnym hartačom sieciva, ź "
+#~ "jakim ty možaš prahladać sieciva. Prosta ŭpišy ŭ paneli adras (naprykład, "
+#~ "<a href=\"http://www.kde.org\">http://www.kde.org</a>) sieciŭnaj staronki "
+#~ "i naciśni klavišu „Enter”, albo vybiery jakuju-niebudź zakładku z "
+#~ "adpaviednaha menu."
+
+#~ msgid ""
+#~ "To return to the previous location, press the back button <img width='16' "
+#~ "height='16' src=\"%1\"></img> in the toolbar. "
+#~ msgstr ""
+#~ "Kab viarnucca na minułaje miesca, klikni ŭ knopku „Nazad” <img width='16' "
+#~ "height='16' src=\"%1\"></img> na paneli pryładździa. "
+
+#~ msgid ""
+#~ "To quickly go to your Home folder press the  home button <img width='16' "
+#~ "height='16' src=\"%1\"></img>."
+#~ msgstr ""
+#~ "Kab viarnucca ŭ chatni kataloh, klikni ŭ knopku „Dadomu” <img width='16' "
+#~ "height='16' src=\"%1\"></img>. "
+
+#~ msgid ""
+#~ "For more detailed documentation on Konqueror click <a href=\"%1\">here</"
+#~ "a>."
+#~ msgstr ""
+#~ "Kab pračytać padrabiaznuju dakumentacyju pra „Konqueror”, klikni <a href="
+#~ "\"%1\">siudy</a>."
+
+#, fuzzy
+#~| msgid ""
+#~| "<em>Tuning Tip:</em> If you want the Konqueror web browser to start "
+#~| "faster, you can turn off this information screen by clicking <a href="
+#~| "\"%1\">here</a>. You can re-enable it by choosing the Help -> Konqueror "
+#~| "Introduction menu option, and then pressing Settings -> Save View "
+#~| "Profile \"Web Browsing\"."
+#~ msgid ""
+#~ "<em>Tuning Tip:</em> If you want the Konqueror web browser to start "
+#~ "faster, you can turn off this information screen by clicking <a href="
+#~ "\"%1\">here</a>. You can re-enable it by choosing the Help -> Konqueror "
+#~ "Introduction menu option, and then pressing Settings -> Save View Profile "
+#~ "As... -> \"Web Browsing\"."
+#~ msgstr ""
+#~ "<em>Parada:</em> Kali ty chočaš, kab hartač sieciva „Konqueror” "
+#~ "uklučaŭsia chutčej, vyklučy hety infarmacyjny ekran, kliknuŭšy <a href="
+#~ "\"%1\">siudy</a>. Ty možaš jaho znoŭ uklučyć praz menu: Dapamoha → "
+#~ "Uvodziny ŭ prahramu „Konqueror”, i tam kliknuŭšy: Nałady → Zapišy profil "
+#~ "prahladu „Prahlad sieciva”."
+
+#~ msgid "Next: Tips &amp; Tricks"
+#~ msgstr "Dalej: Parady j padkazki"
+
+#, fuzzy
+#~| msgid ""
+#~| "Konqueror is designed to embrace and support Internet standards. The aim "
+#~| "is to fully implement the officially sanctioned standards from "
+#~| "organizations such as the W3 and OASIS, while also adding extra support "
+#~| "for other common usability features that arise as de facto standards "
+#~| "across the Internet. Along with this support, for such functions as "
+#~| "favicons, Internet Keywords, and <A HREF=\"%1\">XBEL bookmarks</A>, "
+#~| "Konqueror also implements:"
+#~ msgid ""
+#~ "Konqueror is designed to embrace and support Internet standards. The aim "
+#~ "is to fully implement the officially sanctioned standards from "
+#~ "organizations such as the W3 and OASIS, while also adding extra support "
+#~ "for other common usability features that arise as de facto standards "
+#~ "across the Internet. Along with this support, for such functions as "
+#~ "favicons, Web Shortcuts, and <A HREF=\"%1\">XBEL bookmarks</A>, Konqueror "
+#~ "also implements:"
+#~ msgstr ""
+#~ "Hartač „Konqueror” sprajektavany z dumkaj pra standarty sieciva. Našaj "
+#~ "metaju jość poŭnaja ŭzhodnienaść z aficyjna dazvolenymi standartami ad "
+#~ "pavažnych arhanizacyjaŭ, naprykład, ad „W3” i „OASIS”, a taksama "
+#~ "ŭsprymańnie inšych paŭsiudnych mahčymaściaŭ, jakija stali zvykłymi ŭ "
+#~ "siecivie. Akramia hetaha, hartač „Konqueror” absłuhoŭvaje ikony sajtaŭ, "
+#~ "klučavyja słovy, <A HREF=\"%1\">zakładki „XBEL”</A> dy inšyja funkcyi, "
+#~ "naprykład:"
+
+#~ msgid "Supported standards"
+#~ msgstr "Viadomyja standarty"
+
+#~ msgid "Additional requirements*"
+#~ msgstr "Dadatkovyja vymahańni*"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">DOM</A> (rovień 1, častkova rovień 2) dla <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+
+#~ msgid "built-in"
+#~ msgstr "unutrana"
+
+#~ msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">Kaskadnyja arkušy stylaŭ (CSS)</A> (CSS 1, častkova CSS 2)"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">ECMA-262</A>, treciaje vydańnie (padobna da „JavaScript "
+#~ "1.5”)"
+
+#~ msgid ""
+#~ "JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
+#~ msgstr ""
+#~ "„JavaScript” paŭsiul nie absłuhoŭvajecca. Uklučyć jaho možna <A HREF="
+#~ "\"%1\">tut</A>."
+
+#~ msgid ""
+#~ "JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\"
+#~ "\">here</A>."
+#~ msgstr ""
+#~ "„JavaScript” paŭsiul absłuhoŭvajecca. Naładzić jaho možna <A HREF=\\\"%1\\"
+#~ "\">tut</A>."
+
+#~ msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
+#~ msgstr ""
+#~ "Absłuhoŭvańnie biaśpiečnaj admieny „<A HREF=\"%1\">Java</A><SUP>&reg;</"
+#~ "SUP>”"
+
+#, fuzzy
+#~| msgid ""
+#~| "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">Blackdown</A>, <A HREF="
+#~| "\"%2\">IBM</A> or <A HREF=\"%3\">Sun</A>)"
+#~ msgid ""
+#~ "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">IBM</A> or <A HREF="
+#~ "\"%2\">Sun/Oracle</A>)"
+#~ msgstr ""
+#~ "Virtualnaja mašyna „JDK 1.2.0” („Java 2”) (<A HREF=\"%1\">„Blackdown”</"
+#~ "A>, <A HREF=\"%2\">„IBM”</A> albo <A HREF=\"%3\">„Sun”</A>)"
+
+#~ msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
+#~ msgstr "Paŭsiul uklučyć „Java” možna <A HREF=\"%1\">tut</A>."
+
+#~ msgid ""
+#~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">plugins</A> (for "
+#~ "viewing <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
+#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Video, etc.)"
+#~ msgstr ""
+#~ "<A HREF=\"%4\">Pluginy</A> „Netscape Communicator<SUP>&reg;</SUP>” (dla "
+#~ "prahladu <A HREF=\"%1\">„Flash<SUP>&reg;</SUP>”</A>, „<A HREF="
+#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio”, „<A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Video” dy inšych medyjaŭ)"
+
+#~ msgid "Secure Sockets Layer"
+#~ msgstr "Absłuhoŭvańnie biaśpiečnych sokietaŭ (SSL)"
+
+#~ msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
+#~ msgstr "(TLS/SSL v2/3) dla biaśpiečnaha kamunikavańnia, da 168 bitaŭ"
+
+#~ msgid "OpenSSL"
+#~ msgstr "OpenSSL"
+
+#~ msgid "Bidirectional 16bit unicode support"
+#~ msgstr ""
+#~ "Absłuhoŭvańnie tekstu z 16-bitavym kadavańniem „Unicode”, skiravanaha ŭ "
+#~ "roznyja kirunki"
+
+#~ msgid "AutoCompletion for forms"
+#~ msgstr "Aŭtamatyčnaje zapaŭnieńnie formaŭ"
+
+#~ msgctxt "Title of an html 'group box' explaining konqueror features"
+#~ msgid "General"
+#~ msgstr "Hałoŭnaje"
+
+#~ msgid "Feature"
+#~ msgstr "Mahčymaść"
+
+#~ msgid "Details"
+#~ msgstr "Detali"
+
+#~ msgid "Image formats"
+#~ msgstr "Farmaty vyjavaŭ"
+
+#, fuzzy
+#~| msgid "PNG<br />MNG<br />JPG<br />GIF"
+#~ msgid "PNG<br />JPG<br />GIF"
+#~ msgstr "PNG<br />MNG<br />JPG<br />GIF"
+
+#~ msgid "Transfer protocols"
+#~ msgstr "Pratakoły pierasyłańnia"
+
+#~ msgid "HTTP 1.1 (including gzip/bzip2 compression)"
+#~ msgstr "HTTP 1.1 (z kampresavańniem „gzip/bzip2”)"
+
+#~ msgid "FTP"
+#~ msgstr "FTP"
+
+#, fuzzy
+#~| msgid "and <A HREF=\"%1\">many more...</A>"
+#~ msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpcenter)...</A>"
+#~ msgstr "dy <A HREF=\"%1\">inšaje...</A>"
+
+#~ msgctxt "A feature of Konqueror"
+#~ msgid "URL-Completion"
+#~ msgstr "Zakančeńnie adrasoŭ"
+
+#~ msgid "Manual"
+#~ msgstr "Ručnoje"
+
+#~ msgid "Popup"
+#~ msgstr "Vypłyŭnoje"
+
+#~ msgid "(Short-) Automatic"
+#~ msgstr "(Karotkaje) aŭtamatyčnaje"
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "<a href=\"%1\">Return to Starting Points</a>"
+#~ msgstr "<a href=\"%1\">Viarnisia da pačatkaŭ</a>"
+
+#~ msgid "Tips &amp; Tricks"
+#~ msgstr "Parady j padkazki"
+
+#, fuzzy
+#~| msgid ""
+#~| "Use Internet-Keywords and Web-Shortcuts: by typing \"gg: KDE\" one can "
+#~| "search the Internet, using Google, for the search phrase \"KDE\". There "
+#~| "are a lot of Web-Shortcuts predefined to make searching for software or "
+#~| "looking up certain words in an encyclopedia a breeze. You can even <a "
+#~| "href=\"%1\">create your own</a> Web-Shortcuts."
+#~ msgid ""
+#~ "Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, "
+#~ "using Google, for the search phrase \"KDE\". There are a lot of Web-"
+#~ "Shortcuts predefined to make searching for software or looking up certain "
+#~ "words in an encyclopedia a breeze. You can even <a href=\"%1\">create "
+#~ "your own</a> Web-Shortcuts."
+#~ msgstr ""
+#~ "Karystajsia sieciŭnyja klučanyja słovy j web-skaroty: naprykład, upisaŭšy "
+#~ "„gg: KDE”, ty možaš pašukać z dapamohaju słužby „Google” vyraz „KDE”. "
+#~ "Jość mnostva web-skarotaŭ, jakija paskarajuć pošuk prahramaŭ ci "
+#~ "encyklapedyčnych artykułaŭ. Navat možna <a href=\"%1\">stvarać ułasnyja</"
+#~ "a> web-skaroty."
+
+#, fuzzy
+#~| msgid ""
+#~| "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> "
+#~| "in the toolbar to increase the font size on your web page."
+#~ msgid ""
+#~ "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
+#~ "the HTML toolbar to increase the font size on your web page."
+#~ msgstr ""
+#~ "Z dapamohaju knopki-lupy <img width='16' height='16' src=\"%1\"></img> u "
+#~ "paneli pryładździa ty možaš pavialičyć pamier šryfta ŭ svajoj sieciŭnaj "
+#~ "staroncy."
+
+#~ msgid ""
+#~ "When you want to paste a new address into the Location toolbar you might "
+#~ "want to clear the current entry by pressing the black arrow with the "
+#~ "white cross <img width='16' height='16' src=\"%1\"></img> in the toolbar."
+#~ msgstr ""
+#~ "Uklejvajučy novy adras u adpaviednuju panel, časam treba vyčyścić adtul "
+#~ "usio. Tady naciśni čornuju strełku ź biełym kryžam <img width='16' "
+#~ "height='16' src=\"%1\"></img>, što ŭ paneli pryładździa."
+
+#, fuzzy
+#~| msgid ""
+#~| "To create a link on your desktop pointing to the current page, simply "
+#~| "drag the \"Location\" label that is to the left of the Location toolbar, "
+#~| "drop it on to the desktop, and choose \"Link\"."
+#~ msgid ""
+#~ "To create a link on your desktop pointing to the current page, simply "
+#~ "drag the icon (favicon) that is to the left of the Location toolbar, drop "
+#~ "it on to the desktop, and choose \"Icon\"."
+#~ msgstr ""
+#~ "Kab stvaryć łuč na rabočym stale, jaki b viazaŭsia z hetaj staronkaju, "
+#~ "prosta pieraciahni nadpis „Miesca” źleva ad paneli adrasu na stoł i "
+#~ "vybiery punkt „Złučy”."
+
+#~ msgid ""
+#~ "You can also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen "
+#~ "Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
+#~ "sessions."
+#~ msgstr ""
+#~ "U menu naładaŭ jość sposab prahladu <img width='16' height='16' src="
+#~ "\"%1\" /> „Na ŭvieś ekran”. Hetaja mahčymaść vielmi zručnaja dla sesijaŭ-"
+#~ "razmovaŭ."
+
+#~ msgid ""
+#~ "Divide et impera (lat. \"Divide and conquer\") - by splitting a window "
+#~ "into two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> "
+#~ "Split View Left/Right) you can make Konqueror appear the way you like. "
+#~ "You can even load some example view-profiles (e.g. Midnight Commander), "
+#~ "or create your own ones."
+#~ msgstr ""
+#~ "Divide et impera (pa-łacinsku „Dziali j zvajoŭvaj”). Hetaja aperacyja "
+#~ "dzielić akno na dźvie častki (naprykład, „Akno → <img width='16' "
+#~ "height='16' src=\"%1\" /> Padziali vertykalna”). Takim čynam možna "
+#~ "źmianić prahramu „Konqueror”, jak upadabajecie. Navat možna adčytać "
+#~ "krychu ŭzornych profilaŭ prahladu (naprykład, „Midnight Commander”) albo "
+#~ "stvaryć ułasny."
+
+#~ msgid ""
+#~ "Use the <a href=\"%1\">user-agent</a> feature if the website you are "
+#~ "visiting asks you to use a different browser (and do not forget to send a "
+#~ "complaint to the webmaster!)"
+#~ msgstr ""
+#~ "Skarystaj mahčymaść padmieny <a href=\"%1\">identyfikacyi hartača</a>, "
+#~ "kali sajt prosić karystacca inšaj prahramaju (nie zabudźsia vysłać skarhu "
+#~ "aŭtaru sajta!)"
+
+#, fuzzy
+#~| msgid ""
+#~| "The <img width='16' height='16' src=\"%1\"></img> History in your "
+#~| "SideBar ensures that you can keep track of the pages you have visited "
+#~| "recently."
+#~ msgid ""
+#~ "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
+#~ "ensures that you can keep track of the pages you have visited recently."
+#~ msgstr ""
+#~ "<img width='16' height='16' src=\"%1\"></img> Historyja ŭ bakavoj paneli "
+#~ "zachoŭvaje śpis naviedanych niadaŭna sajtaŭ."
+
+#~ msgid ""
+#~ "Use a caching <a href=\"%1\">proxy</a> to speed up your Internet "
+#~ "connection."
+#~ msgstr ""
+#~ "Karystajsia <a href=\"%1\">proxy</a>-serveram z padmiennaj pamiaćciu, kab "
+#~ "paskoryć sieciŭnaje spałučeńnie."
+
+#, fuzzy
+#~| msgid ""
+#~| "Advanced users will appreciate the Konsole which you can embed into "
+#~| "Konqueror (Window -> <img width='16' height='16' SRC=\"%1\"></img> Show "
+#~| "Terminal Emulator)."
+#~ msgid ""
+#~ "Advanced users will appreciate the Konsole which you can embed into "
+#~ "Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
+#~ "Terminal Emulator)."
+#~ msgstr ""
+#~ "Admysłovym karystańnikam, mabyć, spadabajecca modul „Konsole”, unutrany ŭ "
+#~ "prahramu „Konqueror” („Akno → <img width='16' height='16' SRC=\"%1\"></"
+#~ "img> Pakažy emulatar terminału”.)"
+
+#~ msgid "Next: Specifications"
+#~ msgstr "Dalej: Specyfikacyi"
+
+#~ msgid "Installed Plugins"
+#~ msgstr "Zainstalavanyja pluginy"
+
+#~ msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
+#~ msgstr "<td>Plugin</td><td>Apisańnie</td><td>Fajł</td><td>Typy</td>"
+
+#~ msgid "Installed"
+#~ msgstr "Zainstalavany"
+
+#~ msgid ""
+#~ "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
+#~ msgstr ""
+#~ "<td>Typ „MIME”</td><td>Apisańnie</td><td>Sufiksy</td><td>Plugin</td>"
+
+#~ msgid ""
+#~ "Do you want to disable showing the introduction in the webbrowsing "
+#~ "profile?"
+#~ msgstr "Sapraŭdy pierastać pakazvać uvodziny dla profila hartańnia sieciva?"
+
+#~ msgid "Faster Startup?"
+#~ msgstr "Paskoryć uklučeńnie?"
+
+#~ msgid "Disable"
+#~ msgstr "Vyklučy"
+
+#~ msgid "Keep"
+#~ msgstr "Pakiń"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Ihar Hračyška"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "ihar.hrachyshka@gmail.com"
+
+#~ msgid "&File"
+#~ msgstr "&Fajł"
+
+#~ msgid "&Edit"
+#~ msgstr "&Redahuj"
+
+#~ msgid "&View"
+#~ msgstr "&Vyhlad"
+
+#~ msgid "&Go"
+#~ msgstr "&Idzi"
+
+#~ msgid "&Settings"
+#~ msgstr "&Nałady"
+
+#~ msgid "&Window"
+#~ msgstr "&Akno"
+
+#~ msgid "&Help"
+#~ msgstr "&Dapamoha"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Hałoŭnaje panel pryładździa"
+
+#~ msgid "Extra Toolbar"
+#~ msgstr "Dadatkovaja panel pryładździa"
+
+#~ msgid "Location Toolbar"
+#~ msgstr "Panel adrasu"
+
+#~ msgid "Bookmark Toolbar"
+#~ msgstr "Panel zakładak"
+
+#~ msgid "Save open tabs and windows for easy retrieval"
+#~ msgstr ""
+#~ "Zapišy śpis adčynienych kartak i voknaŭ, kab paźniej zmahčy ich uznavić"
+
+#~ msgid "&Session name:"
+#~ msgstr "Nazva &sesii:"
+
+#~ msgid "&Profile name:"
+#~ msgstr "&Nazva profila:"
+
+#~ msgid "Save &URLs in profile"
+#~ msgstr "Zachavaj &adrasy dla profila"
+
+#~ msgctxt "@action:button New session"
+#~ msgid "New..."
+#~ msgstr "Novaja..."
+
+#~ msgctxt "@action:button Save current session"
+#~ msgid "Save Current"
+#~ msgstr "Zapišy dziejnuju sesiju"
+
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename..."
+#~ msgstr "Źmiani nazvu..."
+
+#~ msgctxt "@action:button Delete session"
+#~ msgid "Delete"
+#~ msgstr "Vydali"
+
+#~ msgid "Open tabs inside current window"
+#~ msgstr "Adčyni kartki ŭ dziejnym aknie"
+
+#~ msgid "Limits"
+#~ msgstr "Limity"
+
+#~ msgid "URLs e&xpire after"
+#~ msgstr "Adrasy &zastarejuć praz"
+
+#~ msgid "Maximum &number of URLs:"
+#~ msgstr "Najbolšaja &kolkaść adrasoŭ:"
+
+#~ msgid "Custom Fonts For"
+#~ msgstr "Ułasnyja šryfty dla"
+
+#~ msgid "URLs newer than"
+#~ msgstr "Adrasy, naviejšyja za"
+
+#~ msgid "Choose Font..."
+#~ msgstr "Vybiery šryft..."
+
+#~ msgid "URLs older than"
+#~ msgstr "Adrasy, starejšyja za"
+
+#~ msgid ""
+#~ "Shows the number of times visited and the dates of the first and last "
+#~ "visits, in addition to the URL"
+#~ msgstr ""
+#~ "Pakazvaje razam z adrasam kolkaść naviedvańniaŭ i daty pieršaha j "
+#~ "apošniaha vizytaŭ"
+
+#~ msgid "Detailed tooltips"
+#~ msgstr "Detalnyja padkazki"
+
+#~ msgid "Clear History"
+#~ msgstr "Vyčyści historyju"
+
+#, fuzzy
+#~| msgid "Maximum &number of URLs:"
+#~ msgid "Maximum number of Closed Items"
+#~ msgstr "Najbolšaja &kolkaść adrasoŭ:"
+
+#, fuzzy
+#~| msgid "Open tabs inside current window"
+#~ msgid "Open folders in separate windows"
+#~ msgstr "Adčyni kartki ŭ dziejnym aknie"
+
+#~ msgid "Hide %1"
+#~ msgstr "Schavaj %1"
+
+#, fuzzy
+#~| msgid "Web SideBar Plugin"
+#~ msgid "SideBar Test Plugin"
+#~ msgstr "Plugin sieciŭnaj bakavoj paneli"
+
+#~ msgid "Bookmark This Location"
+#~ msgstr "Stvary zakładku dla hetaha adrasu"
+
+#~ msgid ""
+#~ "Malformed URL\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Kiepski adras\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Protocol not supported\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Pratakoł nie absłuhoŭvajecca\n"
+#~ "%1"
+
+#~ msgid "Cannot create the find part, check your installation."
+#~ msgstr "Nie ŭdałosia ŭklučyć modul pošuku. Spraŭdź pravilnaść instalacyi."
+
+#~ msgid "My Bookmarks"
+#~ msgstr "Maje zakładki"
+
+#~ msgid "Preload for later use"
+#~ msgstr "Pračytaj napierad dla budučyni"
+
+#~ msgid "&Save View Profile \"%1\"..."
+#~ msgstr "&Zapišy profil prahladu „%1”..."
+
+#~ msgid "Configure Navigation Panel"
+#~ msgstr "Naładź panel miescaŭ"
+
+#~ msgid "Close Navigation Panel"
+#~ msgstr "Začyni panel miescaŭ"
+
+#~ msgid "Select Type"
+#~ msgstr "Vybiery typ"
+
+#~ msgid "Select type:"
+#~ msgstr "Vybiery typ:"
+
+#~ msgid "Web SideBar Plugin"
+#~ msgstr "Plugin sieciŭnaj bakavoj paneli"
+
+#~ msgid "<qt><b>%1</b> does not exist</qt>"
+#~ msgstr "<qt><b>%1</b> nie isnuje.</qt>"
+
+#~ msgid "Minutes"
+#~ msgstr "Chviliny"
+
+#~ msgid "Days"
+#~ msgstr "Dni"
+
+#~ msgid "Your sidebar is not functional or unavailable."
+#~ msgstr "Bakavaja panel nie pracuje ci jaje niama."
+
+#~ msgid "Cannot find running history plugin in your sidebar."
+#~ msgstr "Nie ŭdałosia znajści ŭklučany plugin historyi ŭ bakavoj paneli."
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History in Sidebar"
+#~ msgstr "Pakažy historyju ŭ bakavoj paneli"
+
+#~ msgid "Select Remote Charset"
+#~ msgstr "Vybiery tamtejšaje kadavańnie"
+
+#~ msgid "Reload"
+#~ msgstr "Pieračytaj"
+
+#~ msgid "Default"
+#~ msgstr "Zmoŭčanaje"
+
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename"
+#~ msgstr "Źmiani nazvu"
+
+#~ msgid ""
+#~ "Konqueror is your file manager, web browser and universal document viewer."
+#~ msgstr ""
+#~ "„Konqueror”: tvoj fajłavy kiraŭnik, hartač sieciva i ŭsiomahutny "
+#~ "prahladnik dakumentaŭ."

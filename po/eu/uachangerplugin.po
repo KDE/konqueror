@@ -1,0 +1,102 @@
+# translation of uachangerplugin.po to Basque
+# Copyright (C) 2003, 2004, 2006 Free Software Foundation, Inc.
+#
+# Marcos  <marcos@euskalgnu.org>, 2003.
+# Juan Irigoien <juanirigoien@yahoo.es>, 2004.
+# marcos <marcos@euskalgnu.org>, 2006.
+# Iñigo Salvador Azurmendi <xalba@euskalnet.net>, 2011.
+# Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: uachangerplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"PO-Revision-Date: 2011-10-10 17:54+0200\n"
+"Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>\n"
+"Language-Team: Basque <itzulpena@euskalgnu.org>\n"
+"Language: eu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: uachangerplugin.cpp:43
+#, kde-format
+msgid "Change Browser Identification"
+msgstr "Aldatu arakatzailearen identifikazioa"
+
+#: uachangerplugin.cpp:108
+#, kde-format
+msgid "Other"
+msgstr "Bestelakoa"
+
+#: uachangerplugin.cpp:136
+#, kde-format
+msgctxt "%1 = browser version (e.g. 2.0)"
+msgid "Version %1"
+msgstr "%1 bertsioa"
+
+#: uachangerplugin.cpp:139
+#, kde-format
+msgctxt "%1 = browser name, %2 = browser version (e.g. Firefox, 2.0)"
+msgid "%1 %2"
+msgstr "%1 %2"
+
+#: uachangerplugin.cpp:143
+#, kde-format
+msgctxt "%1 = browser version, %2 = platform (e.g. 2.0, Windows XP)"
+msgid "Version %1 on %2"
+msgstr "%1 bertsioa (%2)"
+
+#: uachangerplugin.cpp:146
+#, kde-format
+msgctxt ""
+"%1 = browser name, %2 = browser version, %3 = platform (e.g. Firefox, 2.0, "
+"Windows XP)"
+msgid "%1 %2 on %3"
+msgstr "%1 %2 (%3)"
+
+#: uachangerplugin.cpp:199
+#, kde-format
+msgid "Default Identification"
+msgstr "Identifikazio lehenetsia"
+
+#. i18n("Reload Identifications"), this,
+#. SLOT(slotReloadDescriptions()),
+#. 0, ++count );
+#: uachangerplugin.cpp:227
+#, kde-format
+msgid "Apply to Entire Site"
+msgstr "Aplikatu gune osoari"
+
+#: uachangerplugin.cpp:233
+#, kde-format
+msgid "Configure..."
+msgstr "Konfiguratu..."
+
+#. i18n: ectx: Menu (tools)
+#: uachangerplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "&Tresnak"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: uachangerplugin.rc:8
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "Tresna-barra gehigarria"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Juan Irigoien,Iñigo Salvador Azurmendi, Iñaki Larrañaga Murgoitio"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "juanirigoien@gmail.com,xalba@euskalnet.net, dooteo@euskalgnu.org"
+
+#~ msgid "Change Browser &Identification"
+#~ msgstr "Aldatu arakatzailearen &identifikazioa"
+
+#~ msgid "Identify As"
+#~ msgstr "Identifikatu honela"

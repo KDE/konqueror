@@ -1,0 +1,245 @@
+# translation of babelfish.po to Nepali
+# Nabin Gautam <nabin@mpp.org.np>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: babelfish\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"PO-Revision-Date: 2007-08-19 15:13+0545\n"
+"Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
+"Language-Team: Nepali <info@mpp.org.np>\n"
+"Language: ne\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n !=1\n"
+"\n"
+"\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Nabin Gauam"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "nabin@mpp.org.np"
+
+#. i18n: ectx: Menu (tools)
+#: babelfishplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "उपकरण"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: babelfishplugin.rc:8
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "थप उपकरणपट्टी"
+
+#: plugin_babelfish.cpp:35
+#, kde-format
+msgid "Translate Web Page"
+msgstr "वेब पृष्ठ अनुवाद गर्नुहोस्"
+
+#: plugin_babelfish.cpp:43
+#, kde-format
+msgid "Translate Web &Page"
+msgstr "वेब पृष्ठ अनुवाद गर्नुहोस्"
+
+#: plugin_babelfish.cpp:80
+#, kde-format
+msgid "&English To"
+msgstr "अङ्ग्रेजीलाई"
+
+#: plugin_babelfish.cpp:83
+#, kde-format
+msgid "&French To"
+msgstr "फ्रेन्चलाई"
+
+#: plugin_babelfish.cpp:86
+#, kde-format
+msgid "&German To"
+msgstr "जर्मनलाई"
+
+#: plugin_babelfish.cpp:89
+#, fuzzy, kde-format
+#| msgid "&French To"
+msgid "&Greek To"
+msgstr "फ्रेन्चलाई"
+
+#: plugin_babelfish.cpp:92
+#, kde-format
+msgid "&Spanish To"
+msgstr "स्पेनिसलाई"
+
+#: plugin_babelfish.cpp:95
+#, kde-format
+msgid "&Portuguese To"
+msgstr "पोर्चुगालीलाई"
+
+#: plugin_babelfish.cpp:98
+#, kde-format
+msgid "&Italian To"
+msgstr "इटलिलाई"
+
+#: plugin_babelfish.cpp:101
+#, kde-format
+msgid "&Dutch To"
+msgstr "डचलाई"
+
+#: plugin_babelfish.cpp:104
+#, fuzzy, kde-format
+#| msgid "&Russian"
+msgid "&Russian To"
+msgstr "रसियन"
+
+#: plugin_babelfish.cpp:120
+#, kde-format
+msgid "&Chinese (Simplified)"
+msgstr "चिनीयाँ (सरलीकृत)"
+
+#: plugin_babelfish.cpp:121
+#, kde-format
+msgid "Chinese (&Traditional)"
+msgstr "चाइनिज (परम्परागत)"
+
+#: plugin_babelfish.cpp:122 plugin_babelfish.cpp:135
+#, kde-format
+msgid "&Dutch"
+msgstr "डच"
+
+#: plugin_babelfish.cpp:123 plugin_babelfish.cpp:144 plugin_babelfish.cpp:146
+#: plugin_babelfish.cpp:148 plugin_babelfish.cpp:150 plugin_babelfish.cpp:152
+#: plugin_babelfish.cpp:154 plugin_babelfish.cpp:156
+#, kde-format
+msgid "&French"
+msgstr "फ्रेन्च"
+
+#: plugin_babelfish.cpp:124 plugin_babelfish.cpp:137
+#, kde-format
+msgid "&German"
+msgstr "जर्मन"
+
+#: plugin_babelfish.cpp:125 plugin_babelfish.cpp:138
+#, kde-format
+msgid "&Greek"
+msgstr ""
+
+#: plugin_babelfish.cpp:126 plugin_babelfish.cpp:139
+#, kde-format
+msgid "&Italian"
+msgstr "इटली"
+
+#: plugin_babelfish.cpp:127
+#, kde-format
+msgid "&Japanese"
+msgstr "जापानी"
+
+#: plugin_babelfish.cpp:128
+#, kde-format
+msgid "&Korean"
+msgstr "कोरियन"
+
+#: plugin_babelfish.cpp:129
+#, kde-format
+msgid "&Norwegian"
+msgstr "नर्वेली"
+
+#: plugin_babelfish.cpp:130 plugin_babelfish.cpp:140
+#, kde-format
+msgid "&Portuguese"
+msgstr "पोर्चुगाली"
+
+#: plugin_babelfish.cpp:131 plugin_babelfish.cpp:142
+#, kde-format
+msgid "&Russian"
+msgstr "रसियन"
+
+#: plugin_babelfish.cpp:132 plugin_babelfish.cpp:141
+#, kde-format
+msgid "&Spanish"
+msgstr "स्पेनिस"
+
+#: plugin_babelfish.cpp:133
+#, kde-format
+msgid "T&hai"
+msgstr "थाई"
+
+#: plugin_babelfish.cpp:134
+#, kde-format
+msgid "&Arabic"
+msgstr ""
+
+#: plugin_babelfish.cpp:136 plugin_babelfish.cpp:143 plugin_babelfish.cpp:145
+#: plugin_babelfish.cpp:147 plugin_babelfish.cpp:149 plugin_babelfish.cpp:151
+#: plugin_babelfish.cpp:153 plugin_babelfish.cpp:155
+#, kde-format
+msgid "&English"
+msgstr "अङ्ग्रेजी"
+
+#: plugin_babelfish.cpp:178
+#, kde-format
+msgid "&Chinese (Simplified) to English"
+msgstr "चिनीयाँ (सरलीकृत) लाई अङ्ग्रेजीमा"
+
+#: plugin_babelfish.cpp:179
+#, kde-format
+msgid "Chinese (&Traditional) to English"
+msgstr "चिनीयाँ (परम्परागत) लाई अङ्ग्रेजीमा"
+
+#: plugin_babelfish.cpp:188
+#, kde-format
+msgid "&Japanese to English"
+msgstr "जापानीलाई अङ्ग्रेजीमा"
+
+#: plugin_babelfish.cpp:189
+#, kde-format
+msgid "&Korean to English"
+msgstr "कोरियनलाई अङ्ग्रेजीमा"
+
+#: plugin_babelfish.cpp:257
+#, fuzzy, kde-format
+#| msgid "Malformed URL"
+msgctxt "@title:window"
+msgid "Malformed URL"
+msgstr "विकृत यूआरएल"
+
+#: plugin_babelfish.cpp:258
+#, kde-format
+msgid "The URL you entered is not valid, please correct it and try again."
+msgstr ""
+"तपाईँले यहाँ प्रविष्टि गरेको यूआरएल बैध छैन, कृपया यसलाई सुधार गर्नुहोस् र पुन: प्रयास "
+"गर्नुहोस् ।"
+
+#: plugin_babelfish.cpp:268
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"You are viewing this page over a secure connection.<nl/><nl/>The URL of the "
+"page will sent to the online translation service,<nl/>which may fetch the "
+"insecure version of the page."
+msgstr ""
+
+#: plugin_babelfish.cpp:272
+#, kde-format
+msgctxt "@title:window"
+msgid "Security Warning"
+msgstr ""
+
+#~ msgid "&Russian to English"
+#~ msgstr "रसियनलाई अङ्ग्रेजीमा"
+
+#~ msgid "Cannot Translate Source"
+#~ msgstr "स्रोत अनुवाद गर्न सकिदैन"
+
+#~ msgid "Only web pages can be translated using this plugin."
+#~ msgstr "यो प्लगइन प्रयोग गरेर केवल वेब पृष्ठ मात्र अनुवाद गर्न सकिनेछ ।"
+
+#~ msgid "Only full webpages can be translated for this language pair."
+#~ msgstr "यो भाषा जोडीका लागि केवल पुरा वेबपृष्ठहरू मात्र अनुवाद गर्न सकिनेछ ।"
+
+#~ msgid "Translation Error"
+#~ msgstr "अनुवाद त्रुटि"

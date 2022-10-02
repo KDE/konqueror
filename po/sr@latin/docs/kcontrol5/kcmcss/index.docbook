@@ -1,0 +1,466 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Serbian-Latin "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="kcmcss" lang="&language;">
+<articleinfo>
+<title
+>Izgled</title>
+<authorgroup>
+<author
+><personname
+><firstname
+>Lori</firstname
+> <surname
+>Vots</surname
+></personname
+> &Lauri.Watts.mail;</author>
+<othercredit role="translator"
+><firstname
+>Dragan</firstname
+><surname
+>Pantelić</surname
+><affiliation
+><address
+><email
+>falcon-10@gmx.de</email
+></address
+></affiliation
+><contrib
+>prevod</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>8. 11. 2016.</date>
+<releaseinfo
+>Programi KDE‑a 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>CSS</keyword>
+<keyword
+>izgled</keyword>
+<keyword
+>font</keyword>
+<keyword
+>CSS</keyword>
+<keyword
+>opis stilova</keyword>
+<keyword
+>pristupačnost</keyword>
+</keywordset>
+
+</articleinfo>
+
+<sect1 id="appearance">
+<title
+>Izgled</title>
+<para
+>Ovaj modul se sastoji od tri jezička sa opcijama za podešavanje prikaza veb stranica.</para>
+
+<sect2 id="general">
+<title
+>Prilagođeno</title
+> <!-- modified copy from khtml/index.docbook <sect2 id="kbrowse-html"-->
+
+<para
+>Kućicom <guilabel
+>Automatski učitaj slike</guilabel
+> određujete da li će slike na veb stranicama biti podrazumevano učitavane. Osim ako nemate vrlo sporu vezu, verovatno ćete želeti da ostavite uključenu ovu opciju, pošto se mnoge veb stranice teško koriste bez slika. Ako isključite automatsko učitavanje slika, pri čitanju teksta možete učitati slike na zahtev ako vam zatrebaju.</para>
+
+<para
+>Ako je popunjeno <guilabel
+>Okvir oko nepotpuno učitanih slika</guilabel
+>, <application
+>K‑osvajač</application
+> će crtati okvir kao mestodržač za slike ugnežđene u veb stranicama koje još uvek nisu potpuno učitane. Ovo će vam verovatno poboljšati utisak pri pregledanju, posebno ako je mrežna veza spora.</para>
+
+<para
+>Mnoge veb stranice sadrže animirane GIF slike, koje mogu biti vrlo dosadne, a ponekad i crpiti resurse vašeg sistema. Opcijom <guilabel
+>Animacije:</guilabel
+> možete odrediti kako se animacije puštaju. Podrazumevano su uključene i poštuju postavke slike, a možete ih isključiti, ili zadati da se odvrte samo jednom čak i ako fajl sadrži instrukcije da se animacija vrti više puta ili bez prestanka.</para>
+
+<para
+>Sledeća postavka je <guilabel
+>Podvučene veze:</guilabel
+>. Ako izaberete <guilabel
+>uključeno</guilabel
+>, svaki tekst u službi veze na veb stranici biće prikazan podvučenim fontom. Iako mnoge veb stranice bojama izdvajaju veze, podvlačenje veoma olakšava da se one uoče.</para>
+
+<para
+>Ako ne volite podvučene veze, možete izabrati <guilabel
+>isključeno</guilabel
+> da se nikad ne podvlače. Ili, kao kompromis, <guilabel
+>samo pri lebdenju</guilabel
+>, što znači da se veza podvlači samo kad se pokazivač miša nadnese nad nju, a inače ne.</para>
+
+<note
+><para
+>CSS definicije sajta mogu potisnuti ovu vrednost.</para
+></note>
+
+<para
+><guilabel
+>Glatko klizanje:</guilabel
+> određuje da li <application
+>K‑osvajač</application
+> kliza HTML stranice glatko ili u postepenim koracima: <itemizedlist>
+<listitem
+><para
+><guilabel
+>Uvek</guilabel
+>: stranica uvek kliza glatko.</para
+></listitem>
+<listitem
+><para
+><guilabel
+>nikad</guilabel
+>: nikad se ne kliza glatko, već uvek u postepenim koracima.</para
+></listitem>
+<listitem
+><para
+><guilabel
+>kada je efikasno</guilabel
+>: glatko klizanje se primenjuje samo na stranice za koje neće dovesti do velikog trošenja sistemskih resursa.</para
+></listitem>
+</itemizedlist>
+</para>
+
+</sect2>
+
+<sect2 id="fonts"
+> <!-- modified copy from khtml/index.docbook <sect2 id="kbrowse-appearance"-->
+<title
+>Fontovi</title>
+<para
+>Pod ovim jezičkom možete izabrati razne opcije vezane za fontove. Mada su oblici i veličine fontova često deo dizajna veb stranice, možete zadati neke postavke koje će <application
+>K‑osvajač</application
+> podrazumevano koristiti.</para>
+
+<para
+>Prvo što možete podesiti je veličina fonta, kroz dve postavke koje sadejstvuju kako bi vam omogućile udoban osećaj pregledanja.</para>
+
+<para
+>Kao prvo, možete podesiti opciju <guilabel
+>Najmanja veličina fonta:</guilabel
+>. Ona čini da <application
+>K‑osvajač</application
+> ignoriše svaku manju veličinu fonta koju navodi stranica, odnosno nikad neće upotrebiti font manji nego što ovde zadate.</para>
+
+<para
+>Zatim, možete podesiti opciju <guilabel
+>Srednja veličina fonta:</guilabel
+>. Ovo nije samo podrazumevana veličina teksta kad stranica ne navodi veličinu, nego služi i kao osnovna veličina prema kojoj se izračunavaju relativne veličine fontova. Na primer, HTML instrukcija <literal
+>smaller</literal
+> označava veličinu manju od ovde zadate.</para>
+
+<para
+>Za obe opcije, tačnu veličinu fonta u tačkama možete zadati preko brojčanika (strelicama ili nesporednim upisivanjem) pokraj etikete opcije.</para>
+
+<para
+>Ove opcije su međusobno nezavisne. Stranice koje ne postavljaju veličinu fonta, ili traže podrazumevanu, biće u veličini koju ste postavili pod <guilabel
+>Srednja veličina fonta:</guilabel
+>. Stranice koje traže veličinu manju od postavke <guilabel
+>Najmanja veličina fonta:</guilabel
+>, umesto tražene dobiće ovu veličinu. Jedno ne utiče na drugo.</para>
+
+<para
+>Preostale opcije su za fontove pridružene raznim tipovima obeležavanja koji se javljaju na HTML stranicama. Imajte na umu da mnoge veb stranice umeju da potisnu ove postavke. Za svaki tip fonta (standardni, fiksni, serifni, itd.) možete izabrati neki drugi font po želji.</para>
+
+<para
+>Ispod ovoga, možete podesiti <guilabel
+>Korekcija veličine fonta za ovo kodiranje:</guilabel
+>. Ponekad su fontovi koje želite da koristite za neko kodiranje ili jezik mnogo veći ili manji od proseka, i ovom postavkom ih možete dovesti u red.</para>
+
+<para
+>Možete podesiti podrazumevano kodiranje koje <application
+>K‑osvajač</application
+> pretpostavlja pri renderovanju stranica. Podrazumevana postavka je <guilabel
+>kodiranje jezika</guilabel
+>, ali je možete zameniti bilo kojim kodiranjem na spisku.</para>
+
+</sect2>
+
+<sect2 id="stylesheets">
+
+<title
+>Opisi stilova</title>
+
+<sect3>
+<title
+>Uvod</title>
+
+<para
+>CSS opisi stilova utiču na izgled veb stranica (CSS je engl. skr. od „kaskadni opisi stilova“).</para>
+
+<para
+>KDE može da koristi svoj opis stila, zasnovan na jednostavnim podrazumevanjima i šemi boja površi. KDE takođe može da koristi opise stilova koje sami sastavite. U ovom modulu možete zadati jedan od njih. Predstavljene opcije podređene su obzirima pristupačnosti, posebno za ljude sa slabijim vidom.</para>
+
+<para
+>Izbori koje načinite ovde utiču na svaki KDE program koji renderuje HTML pomoću KDE‑ovog sopstvenog renderera, KHTML‑a. U njih spadaju <application
+>K‑pošta</application
+>, <application
+>K‑centar-pomoći</application
+>, i, naravno, <application
+>K‑osvajač</application
+>. Izbori ne utiču na druge pregledače, kao što je <application
+>Firefox</application
+>.</para>
+
+</sect3>
+
+<sect3 id="css-general">
+<title
+>Opisi stilova</title>
+
+<para
+>Ovaj odeljak sadrži sledeće opcije:</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Podrazumevani opis stila</guilabel
+></term>
+<listitem>
+<para
+>KDE će koristiti podrazumevani opis stila. Neke od boja biće određene trenutnom šemom boja. Većinu ovih postavki obično potisne stranica koju pregledate.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Korisnički definisan opis stila</guilabel
+></term>
+<listitem>
+<para
+>KDE će koristiti opis stila koji ste sami napisali. Za pronalaženje opisa na sistemu upotrebite dugme za pregledanje. CSS fajlovi tradicionalno imaju nastavak <literal role="extension"
+>.css</literal
+>, ali se ne zahteva.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Opis stila poboljšane pristupačnosti</guilabel
+></term>
+<listitem>
+<para
+>Uključenjem ove opcije koristiće se postavke opisa stilova definisane u dijalogu <guilabel
+>Prilagođeno</guilabel
+>.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect3>
+
+<sect3 id="css-customize">
+<title
+>Prilagođeno</title>
+
+<para
+>U ovom dijalogu možete postaviti korisnički opis stila. Date opcije su samo podskup instrukcija koje se mogu naći u opisu stila, takve da omogućavaju stvaranje opisa stila koji će veb stranice i fajlove KDE pomoći učiniti čitljivijim osobama slabijeg vida.</para>
+
+<para
+>Opcije u ovom dijalogu isključene su dok ne izaberete <guilabel
+>Opis stila poboljšane pristupačnosti</guilabel
+>.</para>
+
+<sect4>
+<title
+><guilabel
+>Porodica fontova</guilabel
+></title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Osnovna porodica:</guilabel
+></term>
+<listitem>
+<para
+>Izaberite porodicu fontova za telo teksta.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Ista porodica za sav tekst</guilabel
+></term>
+<listitem>
+<para
+>Ako uključite ovo, onda će za sav tekst biti korišćena ista porodica fontova, bez obzira na postavke prikazane stranice. Korisno za stranice koje koriste dekorativne ili teško čitljive fontove za naslove.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect4>
+
+<sect4>
+<title
+>Veličina fonta</title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Osnovna veličina fonta:</guilabel
+></term>
+<listitem>
+<para
+>Podrazumevana veličina teksta na stranicama. Mnogi veb sajtovi postavljaju svoje veličine fontova relativno prema ovoj, koristeći <literal
+>larger</literal
+> ili <literal
+>+1</literal
+> za povećanje, i <literal
+>smaller</literal
+> ili <literal
+>-1</literal
+> za smanjenje teksta.</para>
+<para
+>Mnogi dizajniraju veb stranice na platformama gde je uobičajena podrazumevana veličina teksta prevelika za čitanje prosečnom korisniku, pa se često nailazi na veb stranice koje na ovaj način nameću manji font.</para>
+<para
+>Ova postavka dopustiće vam da postavite podrazumevani font na udobnu veličinu, tako da su i relativne veličine uvećane dovoljno da budu udobne.</para>
+<para
+>Ne zaboravite da možete podesiti i da <application
+>K‑osvajač</application
+> nametne minimalnu veličinu, tako da tekst <emphasis
+>nikada</emphasis
+> ne bude presitan za čitanje. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Ista veličina za sve elemente</guilabel
+></term>
+<listitem>
+<para
+>Ako je uključeno, sav tekst se renderuje zadatom veličinom fonta, bez obzira na instrukcije koja sadrži stranica. Prethodno pomenute relativne veličine fontova, pa čak i instrukcije koje zadaju tačno određenu veličinu teksta, ovim će biti potisnute.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect4>
+
+<sect4>
+<title
+>Slike</title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Suzbij slike</guilabel
+></term>
+<listitem>
+<para
+>Ako ne želite da vidite slike, možete ih isključiti ovde.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Suzbij pozadinske slike</guilabel
+></term>
+<listitem>
+<para
+>Jedan veliki problem korisnicima slabijeg vida jesu pozadinske slike koje ne daju dovoljno kontrasta za laku uočljivost teksta. Ovde možete isključiti pozadinske slike, nezavisno od prethodnog izbora koji se tiče svih slika.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect4>
+
+<sect4>
+<title
+>Boje</title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Crna na beloj</guilabel
+></term>
+<listitem>
+<para
+>Mnoge osobe sa slabijim vidom nalaze da crni tekst na belom ekranu daje najviše kontrasta, tj. da se najlakše čita. Ako se i vama tako čini, to možete ovde zadati.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Bela na crnoj</guilabel
+></term>
+<listitem>
+<para
+>Međutim, mnogim drugim osobama slabijeg vida čini se upravo suprotno, da je lakše čitati beo tekst na crnom ekranu.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Posebna</guilabel
+></term>
+<listitem>
+<para
+>Neki opet nalaze da su čista crna i bela, u bilo kojoj kombinaciji, teške za čitanje. Ovde možete postaviti posebne boje poljima <guilabel
+>Pozadina:</guilabel
+> i <guilabel
+>Boja ispisa:</guilabel
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Ista boja za sav tekst</guilabel
+></term>
+<listitem>
+<para
+>Veb sajtovi umeju da koriste različitu, često kontrastnu boju za zaglavlja i druge izdvojenosti. Ako vam ovo umanjuje čitljivost sadržaja, možete popuniti ovu kućicu da bi se za sav tekst koristile gore podešene boje.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect4>
+
+<sect4>
+<title
+>Pregled</title>
+
+<para
+>U odeljku <guilabel
+>Pregled</guilabel
+> možete videti dejstvo učinjenih izmena. Prikazano je nekoliko tipova zaglavlja, sa zadatim opisom stila i rečenicom u podrazumevanom stilu tela teksta.</para>
+
+<para
+>Ovo treba da vam omogući fino podešavanje opisa stila, do postizanja nečega što možete udobno čitati.</para>
+
+<para
+>Prijatno surfovanje!</para>
+
+</sect4>
+
+</sect3>
+
+</sect2>
+
+</sect1>
+
+</article>

@@ -1,0 +1,217 @@
+# translation of kcmperformance.po to icelandic
+# Icelandic translation of kcmperformance
+# Copyright (C) 2004, 2005, 2008, 2011, 2015 Free Software Foundation, Inc.
+#
+# Richard Allen <ra@ra.is>, 2004.
+# Svanur Palsson <svanur@tern.is>, 2004.
+# Arnar Leosson <leosson@frisurf.no>, 2004, 2005.
+# Sveinn í Felli <sveinki@nett.is>, 2008, 2011.
+# Sveinn í Felli <sv1@fellsnet.is>, 2015, 2019.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmperformance\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-21 00:16+0000\n"
+"PO-Revision-Date: 2019-11-05 18:25+0000\n"
+"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
+"Language-Team: Icelandic <translation-team-is@lists.sourceforge.net>\n"
+"Language: is\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 2.0\n"
+"Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
+"\n"
+"\n"
+"\n"
+
+#: kcmperformance.cpp:28
+#, kde-format
+msgid ""
+"<h1>KDE Performance</h1> You can configure settings that improve KDE "
+"performance here."
+msgstr ""
+"<h1>KDE Afköst</h1> Þú getur breytt stillingum sem auka afköst KDE hér."
+
+#: kcmperformance.cpp:35
+#, kde-format
+msgid "Konqueror"
+msgstr "Konqueror"
+
+#: kcmperformance.cpp:38
+#, kde-format
+msgid "System"
+msgstr "Kerfi"
+
+#: kcmperformance.cpp:63
+#, kde-format
+msgid ""
+"<h1>Konqueror Performance</h1> You can configure several settings that "
+"improve Konqueror performance here. These include options for reusing "
+"already running instances and for keeping instances preloaded."
+msgstr ""
+"<h1>Afköst Konqueror</h1> Hér geturðu breytt stillingum sem auka afköst "
+"Konqueror.  Þar á meðal val um að endurnýta keyrandi tilvik og að halda "
+"tilvikum forhlöðnum."
+
+#: konqueror.cpp:24
+#, kde-format
+msgid ""
+"<p>If enabled, an instance of Konqueror will be preloaded after the ordinary "
+"Plasma startup sequence.</p><p>This will make the first Konqueror window "
+"open faster, but at the expense of longer Plasma startup times (but you will "
+"be able to work while it is loading, so you may not even notice that it is "
+"taking longer).</p>"
+msgstr ""
+"<p>Ef þetta er virkt er eitt tilvik af Konqueror forhlaðið eftir venjulegt "
+"ræsiferli Plasma.</p><p>Þetta lætur fyrsta Konqueror gluggann opnast hraðar, "
+"en á kostnað meiri tíma í ræsiferli Plasma (en þú getur samt unnið meðan það "
+"hleðst inn, svo að líklega tekurðu ekki eftir því að það taki lengri tíma).</"
+"p>"
+
+#: konqueror.cpp:30
+#, kde-format
+msgid ""
+"<p>If enabled, Konqueror will always try to have one preloaded instance "
+"ready; preloading a new instance in the background whenever there is not one "
+"available, so that windows will always open quickly.</p><p><b>Warning:</b> "
+"In some cases, it is actually possible that this will reduce perceived "
+"performance.</p>"
+msgstr ""
+"<p>Ef þetta er virkt mun Konqueror alltaf reyna að hafa eitt forhlaðið "
+"tilvik af Konqueror tilbúið, og forhlaða nýju tilviki í bakgrunni alltaf "
+"þegar ekkert er tiltækt, svo að gluggar opnist alltaf sem hraðast.</"
+"p><p><b>Aðvörun:</b> Í sumum tilvikum getur þetta í raun dregið úr "
+"sjáanlegum afköstum.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
+#: konqueror_ui.ui:17
+#, kde-format
+msgid "Preloading"
+msgstr "Forhleðsla"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_preload_on_startup)
+#: konqueror_ui.ui:23
+#, kde-format
+msgid "Preload an instance after desktop startup"
+msgstr "Forhlaða tilvik eftir ræsingu skjáborðs"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_always_have_preloaded)
+#: konqueror_ui.ui:30
+#, kde-format
+msgid "Always try to have one preloaded instance"
+msgstr "Reyna alltaf að hafa a.m.k. eitt forhlaðið tilvik"
+
+#: system.cpp:22
+#, kde-format
+msgid ""
+"<p>During startup KDE needs to perform a check of its system configuration "
+"(mimetypes, installed applications, etc.), and in case the configuration has "
+"changed since the last time, the system configuration cache (KSyCoCa) needs "
+"to be updated.</p><p>This option delays the check, which avoid scanning all "
+"directories containing files describing the system during KDE startup, thus "
+"making KDE startup faster. However, in the rare case the system "
+"configuration has changed since the last time, and the change is needed "
+"before this delayed check takes place, this option may lead to various "
+"problems (missing applications in the K Menu, reports from applications "
+"about missing required mimetypes, etc.).</p><p>Changes of system "
+"configuration mostly happen by (un)installing applications. It is therefore "
+"recommended to turn this option temporarily off while (un)installing "
+"applications.</p>"
+msgstr ""
+"<p>KDE þarf að athuga kerfisstillingar sínar við ræsingu (Mime tegundir, "
+"uppsett forrit, o.s.frv.) og í tilfellum þar sem stillingar hafa breyst frá "
+"síðustu ræsingu, uppfæra kerfisstillingaskyndiminnið (KSyCoCa).</p><p>Þessi "
+"valkostur frestar athuguninni, sem kemur þá í veg fyrir skoðun af skrám við "
+"ræsingu KDE, sem gerir að kerfið ræsist hraðar. Hinsvegar í þeim sjaldgæfu "
+"tilfellum þar sem breytingar hafa átt sér stað, og þær eru nauðsynlegar áður "
+"en þessi frestaða athugun á sér stað, gæti þessi valkostur valdið ýmsum "
+"vandamálum (forrit sem vantar í K valmyndina, villuskilaboð frá forritum um "
+"að það vanti skrár, o.s.frv.)</p><p>Breytingar á kerfisstillingum eiga sér "
+"helst stað þegar forrit eru sett inn/fjarlægð. Það er því ráðlagt að slökkva "
+"tímabundið á þessum valkosti meðan forrit eru sett inn/fjarlægð.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gb_)
+#: system_ui.ui:8
+#, kde-format
+msgid "System Configuration"
+msgstr "Stillingar kerfis"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_disable_kbuildsycoca)
+#: system_ui.ui:14
+#, kde-format
+msgid "Disable &system configuration startup check"
+msgstr "Slökkva á ræsi&skoðun kerfisstillinga"
+
+#. i18n: ectx: property (text), widget (QLabel, label_kbuildsycoca)
+#: system_ui.ui:21
+#, kde-format
+msgid ""
+"This option may in rare cases lead to various problems. Consult the What's "
+"This (Shift+F1) help for details."
+msgstr ""
+"Þessi valkostur gæti í sjalgæfum tilvikum leitt til ýmissa vandamála. "
+"Skoðaðu \"Hvað er þetta\" hjálpina (Shift+F1) fyrir nánari upplýsingar."
+
+#~ msgid ""
+#~ "<p>If non-zero, this option allows keeping Konqueror instances in memory "
+#~ "after all their windows have been closed, up to the number specified in "
+#~ "this option.</p><p>When a new Konqueror instance is needed, one of these "
+#~ "preloaded instances will be reused instead, improving responsiveness at "
+#~ "the expense of the memory required by the preloaded instances.</p>"
+#~ msgstr ""
+#~ "<p>Ef þetta er meira en núll, leyfir þetta tilvikum af Konqueror að lifa "
+#~ "áfram í minni eftir að öllum gluggum þeirra er lokað, upp að þeirri tölu "
+#~ "sem tilgreind er hér.</p><p>Þegar þörf er á nýju tilviki af Konqueror er "
+#~ "eitt af þessum forhlöðnu tilvikum notað, og minnkar þar með viðbragðstíma "
+#~ "á kostnað þess minnis sem þarf til að geyma forhlöðnu tilvikin.</p>"
+
+#, fuzzy
+#~| msgid "Maximum number of instances kept &preloaded:"
+#~ msgid "&Maximum number of instances kept preloaded:"
+#~ msgstr "Hámarks fjöldi f&orhlaðina tilvika:"
+
+#~ msgid ""
+#~ "Disables the minimization of memory usage and allows you to make each "
+#~ "browsing activity independent from the others"
+#~ msgstr ""
+#~ "Slekkur á lágmörkun minnisnotkunar og leyfir þér að láta hverja vafra "
+#~ "aðgerð vera aðskilda frá hvor frá annari."
+
+#~ msgid ""
+#~ "<p>With this option activated, only one instance of Konqueror used for "
+#~ "file browsing will exist in the memory of your computer at any moment, no "
+#~ "matter how many file browsing windows you open, thus reducing resource "
+#~ "requirements.</p><p>Be aware that this also means that, if something goes "
+#~ "wrong, all your file browsing windows will be closed simultaneously</p>"
+#~ msgstr ""
+#~ "<p>Þegar þessi valmöguleiki er virkur, er aðeins eitt tilvik af Konqueror "
+#~ "til að vafra um skráakerfið í minni tölvunnar, sama hversu margir "
+#~ "skráakerfisgluggar eru opnir, og minnkar þar með auðlindakröfur. </"
+#~ "p><p>Hafðu í huga að þetta þýðir líka að ef eitthvað fer úrskeiðis, "
+#~ "lokast allir skráakerfisgluggarnir samtímis</p>"
+
+#~ msgid ""
+#~ "<p>With this option activated, only one instance of Konqueror will exist "
+#~ "in the memory of your computer at any moment, no matter how many browsing "
+#~ "windows you open, thus reducing resource requirements.</p><p>Be aware "
+#~ "that this also means that, if something goes wrong, all your browsing "
+#~ "windows will be closed simultaneously.</p>"
+#~ msgstr ""
+#~ "<p>Þegar þessi valmöguleiki er virkur, er aðeins eitt tilvik af Konqueror "
+#~ "til að vafra um skráakerfið í minni tölvunnar, sama hversu margir "
+#~ "skráakerfisgluggar eru opnir, og minnkar þar með auðlindakröfur.</"
+#~ "p><p>Hafðu í huga að þetta þýðir líka að ef eitthvað fer úrskeiðis, "
+#~ "lokast allir skráakerfisgluggarnir samtímis.</p>"
+
+#~ msgid "Minimize Memory Usage"
+#~ msgstr "Lágmarka minnisnotkun"
+
+#~ msgid "&Never"
+#~ msgstr "&Aldrei"
+
+#~ msgid "For &file browsing only (recommended)"
+#~ msgstr "Aðeins fyrir &vafr um skráakerfi (mælt með)"
+
+#~ msgid "Alwa&ys (use with care)"
+#~ msgstr "A&lltaf (notist með varúð)"

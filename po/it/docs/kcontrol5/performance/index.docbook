@@ -1,0 +1,85 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Italian "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="performance" lang="&language;">
+<articleinfo>
+<title
+>Prestazioni</title>
+<authorgroup>
+<author
+>&Mike.McBride; &Mike.McBride.mail;</author>
+<othercredit role="translator"
+><firstname
+>Riccardo</firstname
+><surname
+>Iaconelli</surname
+><contrib
+>Traduzione della documentazione</contrib
+></othercredit
+><othercredit role="translator"
+><firstname
+>Federico</firstname
+><surname
+>Zenith</surname
+><affiliation
+><address
+><email
+>federico.zenith@member.fsf.org</email
+></address
+></affiliation
+><contrib
+>Manutenzione della traduzione</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>08/11/2016</date>
+<releaseinfo
+>Applications 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Impostazioni di sistema</keyword>
+<keyword
+>prestazioni</keyword>
+<keyword
+>precaricamento</keyword>
+</keywordset>
+</articleinfo>
+
+<sect1 id="sys-performance">
+<title
+>Impostazioni delle prestazioni</title>
+
+<para
+>&konqueror; è usato su molti tipi di computer da molti tipi di utenti. Per quanto riguarda le prestazioni, questa finestra permette ad ogni utente di regolare le opzioni che possono rendere il computer sul quale è installato &konqueror; più reattivo e veloce. </para>
+
+<sect2
+><title
+>Precaricamento</title>
+<para
+>La sottosezione chiamata <guilabel
+>Precaricamento</guilabel
+> permette di fare un compromesso tra memoria e prestazioni.</para>
+
+<para
+><emphasis
+>Precaricamento</emphasis
+> si riferisce al caricamento di un'istanza di &konqueror; nella memoria, prima che un utente lo avvii. Il lato positivo è che quando un'utente chiede di avviare &konqueror; la finestra appare subito, perché la maggior parte dell'applicazione è già stata caricata. Il lato negativo è però che l'istanza precaricata di &konqueror; usa della memoria, che potrebbe essere usata da altri programmi. Normalmente, quando un utente chiude &konqueror;, l'istanza non viene chiusa; questo significa che la prossima volta che l'utente vorrà lanciare &konqueror;, esso apparirà nuovamente in maniera istantanea.</para>
+
+<para
+>L'ultima casella, indicata con <guilabel
+>Mantieni sempre almeno una istanza precaricata</guilabel
+>, segnala che vuoi avere sempre precaricata, ma non usata, un'istanza disponibile di &konqueror;. Quest'opzione potrebbe ridurre le prestazioni su alcune macchine (specialmente quelle con poca memoria fisica).</para>
+</sect2>
+</sect1>
+
+</article>

@@ -1,0 +1,75 @@
+# translation of kshellcmdplugin.po to icelandic
+# Íslenskun á Konqueror, ofurvafranum úr kde 2 og 3
+# Copyright (C) 2000,2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2015 Free Software Foundation, Inc.
+#
+# Logi Ragnarsson <logir@logi.org>, 2000.
+# Richard Allen <ra@ra.is>, 2000.
+# Pjetur G. Hjaltason <pjetur@pjetur.net>, 2003.
+# Arnar Leósson <leosson@frisurf.no>, 2003.
+# Svanur Palsson <svanur@tern.is>, 2004.
+# Arnar Leosson <leosson@frisurf.no>, 2004, 2005.
+# Sveinn í Felli <sveinki@nett.is>, 2008, 2009, 2010, 2011.
+# Sveinn í Felli <sv1@fellsnet.is>, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: kshellcmdplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2015-03-16 09:43+0000\n"
+"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
+"Language-Team: icelandic <translation-team-is@lists.sourceforge.net>\n"
+"Language: is\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
+"\n"
+"\n"
+"\n"
+"\n"
+
+#. i18n: ectx: Menu (tools)
+#: konq_shellcmdplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "&Tól"
+
+#: kshellcmdexecutor.cpp:106
+#, kde-format
+msgid "Input Required:"
+msgstr "Inntaks krafist:"
+
+#: kshellcmdplugin.cpp:32
+#, kde-format
+msgid "&Execute Shell Command..."
+msgstr "&Keyra skeljarskipun..."
+
+#: kshellcmdplugin.cpp:41
+#, kde-format
+msgid ""
+"KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a bug."
+msgstr ""
+"KShellCmdPlugin::slotExecuteShellCommand: Forritsvilla, endilega tilkynntu "
+"um hana."
+
+#: kshellcmdplugin.cpp:51
+#, kde-format
+msgid "Executing shell commands works only on local directories."
+msgstr "Skeljarskipanir er aðeins hægt að keyra á staðværar möppur."
+
+#: kshellcmdplugin.cpp:73
+#, kde-format
+msgctxt "@title:window"
+msgid "Execute Shell Command"
+msgstr "Keyra skeljarskipun"
+
+#: kshellcmdplugin.cpp:74
+#, kde-format
+msgid "Execute shell command in current directory:"
+msgstr "Keyra skeljarskipun í þessari möppu:"
+
+#: kshellcmdplugin.cpp:85
+#, kde-format
+msgid "Output from command: \"%1\""
+msgstr "Úttak frá skipun: \"%1\""

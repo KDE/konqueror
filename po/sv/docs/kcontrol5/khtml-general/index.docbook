@@ -1,0 +1,196 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Swedish "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article lang="&language;" id="konq-general-behavior">
+<title
+>Allmänt beteende hos &konqueror;</title>
+<articleinfo>
+
+<authorgroup>
+<author
+>&Burkhard.Lueck;</author>
+<othercredit role="translator"
+> <firstname
+>Stefan</firstname
+> <surname
+>Asserhäll</surname
+> <affiliation
+><address
+><email
+>stefan.asserhall@bredband.net</email
+></address
+></affiliation
+> <contrib
+>Översättare</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2016-11-08</date>
+<releaseinfo
+>Program 16.12</releaseinfo>
+
+</articleinfo>
+<para
+>På den här sidan hittar du inställningar av hemsida och startsida, och beteende vid användning av flikar både för &konqueror;s filhanteringsläge och webbläsningsläge.</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>När Konqueror startar:</guilabel
+></term>
+<listitem>
+<para
+>Det här alternativet bestämmer vilken sida som visas när &konqueror; startar: introduktionssidan, din hemsida, en tom sida eller dina bokmärken. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Hemsida</guilabel
+></term>
+<listitem
+><para
+>Det här är webbadressen (t.ex. en katalog eller webbsida) dit &konqueror; går till i webbläsarläge när knappen <guibutton
+>Hemsida</guibutton
+> i verktygsraden klickas. Du kan ställa in en sökväg som är din <guilabel
+>Hemsida</guilabel
+> genom att skriva in en i textfältet eller använda ikonen <guiicon
+>Bläddra</guiicon
+> för att välja en lokal katalog. &konqueror; behöver startas om för att ändringarna ska få effekt.</para>
+<para
+>När &konqueror; används i filhanteringsläge, ersätts knappen <guilabel
+>Hemsida</guilabel
+> i verktygsraden med knappen <guilabel
+>Hemkatalog</guilabel
+> som gör att den går till din lokala hemkatalog istället.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Öppna länkar under ny flik istället för i nytt fönster</guilabel
+></term>
+<listitem
+><para
+>&konqueror; använder normalt ett enda fönster per sida, men har möjlighet att öppna flera <firstterm
+>flikar</firstterm
+> inne i ett enda fönster. &konqueror; har också normalt en genväg med mittenknappen för att öppna en länk i ett nytt fönster. Om du aktiverar <guilabel
+>Öppna länkar med ny flik istället för nytt fönster</guilabel
+>, kan du klicka med mittenknappen på en länk för att öppna den i en ny flik.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Öppna fönster med ny flik istället för nytt fönster</guilabel
+></term>
+<listitem
+><para
+>Om Javascript-fönster ska öppnas med en ny flik eller ett nytt fönster, när de är tillåtna.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Öppna som flik i befintlig Konqueror när webbadressen anropas externt</guilabel
+></term>
+<listitem
+><para
+>När du klickar på en webbadress i ett annat &kde;-program, eller anropar kfmclient för att öppna en webbadress, kontrolleras om ett &konqueror;-fönster som inte är minimerat finns på aktuellt skrivbord. Om det finns, öppnas webbadressen som en ny flik i det. Annars öppnas ett nytt &konqueror;-fönster med den önskade webbadressen.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Öppna nya flikar i bakgrunden</guilabel
+></term>
+<listitem
+><para
+>Om du använder webbläsning med flikar, kan du välja om en nyöppnad flik blir den aktiva (<quote
+>översta</quote
+>) fliken, eller hamnar längst bak Med en långsam Internetanslutning, eller medan en sida som har en lista med rubriker eller andra länkar i en lista, kan du vilja att de nya flikarna laddas i bakgrunden medan du fortsätter att läsa. I detta fall, aktivera det här alternativet. Om du föredrar att direkt gå till den nya sidan, och lämna den gamla i bakgrunden för att komma tillbaka till den senare, inaktivera det.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Öppna ny flik efter aktuell flik</guilabel
+></term>
+<listitem
+><para
+>Det här öppnar en ny flik på en sida efter den aktuella fliken, istället för efter den sista fliken.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Dölj flikraden när bara en flik är öppen</guilabel
+></term>
+<listitem
+><para
+>Det här visar bara flikraden om det finns två eller flera flikar, annars visas den alltid.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Visa stängningsknappar på flikar</guilabel
+></term>
+<listitem
+><para
+>Det här visar stängningsknappar inne i varje flik, istället för webbplatsernas ikoner.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Mittenklick på en flik för att stänga den</guilabel
+></term>
+<listitem
+><para
+>När du klickar på en flik med musens mittenknapp eller mushjulet, stängs den fliken. (&konqueror; måste startas om för att ändringen ska få någon effekt).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Bekräfta när fönster med flera flikar stängs</guilabel
+></term>
+<listitem
+><para
+>Om du stänger ett fönster i &konqueror; som har flera flikar öppna, frågar &konqueror; om du är säker på att du vill stänga det. Du kan aktivera eller stänga av beteendet med kryssrutan.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Aktivera föregående använd flik när aktuell flik stängs</guilabel
+></term>
+<listitem
+><para
+>När det här markeras aktiveras den senast använda eller öppnade fliken när du stänger aktuell aktiv flik istället för den till höger om aktuell flik.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</article>

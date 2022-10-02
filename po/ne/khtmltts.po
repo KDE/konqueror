@@ -1,0 +1,72 @@
+# translation of khtmlkttsd.po to Nepali
+# Nabin Gautam <nabin@mpp.org.np>, 2006, 2007.
+# Ishwor sharma <sharmabeeshwar@gmail.com>, 2006.
+# Mahesh Subedi <submanesh@gmail.com>, 2007.
+# shyam krishna bal <shyamkrishna_bal@yahoo.com>, 2007.
+# Shyam Krishna Bal <shyamkrishna_bal@yahoo.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: khtmlkttsd\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2007-11-01 18:42+0545\n"
+"Last-Translator: Shyam Krishna Bal <shyamkrishna_bal@yahoo.com>\n"
+"Language-Team: Nepali <info@mpp.org.np>\n"
+"Language: ne\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n !=1\n"
+"\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: khtmltts.cpp:33
+#, kde-format
+msgid "&Speak Text"
+msgstr "पाठ उच्चारण गर्नुहोस्"
+
+#. i18n: ectx: Menu (tools)
+#: khtmlttsplugin.rc:5
+#, kde-format
+msgid "&Tools"
+msgstr "उपकरण"
+
+#. i18n: ectx: ToolBar (speechToolbar)
+#: khtmlttsplugin.rc:10
+#, kde-format
+msgid "Speech Toolbar"
+msgstr "बोल्ने उपकरणपट्टी"
+
+#, fuzzy
+#~| msgid "The D-Bus call startText failed."
+#~ msgid "The D-Bus call say() failed."
+#~ msgstr "D-Bus बोलावट सुरुआत पाठ असफल भयो ।"
+
+#, fuzzy
+#~| msgid "D-Bus Call Failed"
+#~ msgctxt "@title:window"
+#~ msgid "D-Bus Call Failed"
+#~ msgstr "D-Bus बोलावट असफल भयो"
+
+#~ msgid "Starting KTTSD Failed"
+#~ msgstr "KTTSD सुरुआत गर्दा असफल"
+
+#, fuzzy
+#~| msgid ""
+#~| "You cannot read anything except web pages with\n"
+#~| "this plugin, sorry."
+#~ msgid "You cannot read anything except web pages with this plugin."
+#~ msgstr ""
+#~ "माफ गर्नुहोस्, तपाईँ यो प्लगइनसँगको वेब पृष्ठबाहेक\n"
+#~ "कुनै पनि पढ्न सक्नुहुन्न ।"
+
+#, fuzzy
+#~| msgid "Cannot Read source"
+#~ msgid "Cannot Read Source"
+#~ msgstr "स्रोत पढ्न सकिँदैन"
+
+#~ msgid "The D-Bus call supportsMarkup failed."
+#~ msgstr "D-Bus बोलावट समर्थनको मार्कअप असफल भयो ।"
+
+#~ msgid "The D-Bus call setText failed."
+#~ msgstr "D-Bus बोलावट सेट पाठ असफल भयो ।"

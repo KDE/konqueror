@@ -1,0 +1,2396 @@
+# translation of kcmkonqhtml.po to Lithuanian
+# Ričardas Čepas <rch@richard.eu.org>, 2003.
+# Donatas Glodenis <dgvirtual@akl.lt>, 2004-2009.
+# Tomas Straupis <tomasstraupis@gmail.com>, 2011.
+# Remigijus Jarmalavičius <remigijus@jarmalavicius.lt>, 2011.
+# Liudas Alisauskas <liudas@akmc.lt>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkonqhtml\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-24 00:46+0000\n"
+"PO-Revision-Date: 2013-04-23 07:39+0300\n"
+"Last-Translator: Liudas Alisauskas <liudas@akmc.lt>\n"
+"Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
+"%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
+"X-Generator: Lokalize 1.5\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Ričardas Čepas"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "rch@richard.eu.org"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pShowMMBInTabs)
+#: advancedTabOptions.ui:21
+#, kde-format
+msgid ""
+"This will open a new tab instead of a new window in various situations, such "
+"as choosing a link or a folder with the middle mouse button."
+msgstr ""
+"Tai atvers naują kortelę vietoje naujo lango įvairiose situacijose, tokiose "
+"kaip nuorodos ar aplanko pasirinkimas naudojant vidurinįjį pelės mygtuką."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pShowMMBInTabs)
+#: advancedTabOptions.ui:24
+#, kde-format
+msgid "Open &links in new tab instead of in new window"
+msgstr "Atverti &nuorodas naujoje kortelėje vietoj naujo lango"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPopupsWithinTabs)
+#: advancedTabOptions.ui:31
+#, kde-format
+msgid ""
+"Whether or not JavaScript popups if allowed shall open in a new tab or in a "
+"new window."
+msgstr ""
+"Nustato ar JavaScript scenarijų iššaukiami langai pasirodys najame lange, ar "
+"naujoje kortelėje."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pPopupsWithinTabs)
+#: advancedTabOptions.ui:34
+#, kde-format
+msgid "Open pop&ups in new tab instead of in new window"
+msgstr "Atverti iškylančius lang&us naujoje kortelėje, o ne naujame lange"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pKonquerorTabforExternalURL)
+#: advancedTabOptions.ui:41
+#, kde-format
+msgid ""
+"When you click a URL in another KDE program or call kfmclient to open a URL, "
+"the current desktop will be searched for a non-minimized Konqueror and, if "
+"found, the URL opened as a new tab within it. Otherwise a new Konqueror "
+"window will be opened with the required URL."
+msgstr ""
+"Spustelėjus  URL kitoje KDE programoje ar nurodžius kfmclient atverti URL, "
+"aktyviame darbastalyje bus atlikta paieška ieškant nesumažinto Konqueror "
+"lango, ir, jei toks langas bus surastas, URL bus atvertas jame kaip nauja "
+"kortelė. Kitu atveju su nurodytu URL bus atvertas naujas Konqueror langas."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pKonquerorTabforExternalURL)
+#: advancedTabOptions.ui:44
+#, kde-format
+msgid "Open as tab in existing Konqueror when URL is called externally"
+msgstr ""
+"Atverti kaip kortelę veikiančiame Konqueror lange iš išorės iššaukiamus URL"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pNewTabsInBackground)
+#: advancedTabOptions.ui:51
+#, kde-format
+msgid ""
+"This will open a new tab in the background, instead of in the foreground."
+msgstr ""
+"Bus atverta nauja kortelė fone, priešingu atveju ji bus atverta priekiniame "
+"plane."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
+#: advancedTabOptions.ui:54
+#, kde-format
+msgid "O&pen new tabs in the background"
+msgstr "At&verti naujas korteles foniniu režimu"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pOpenAfterCurrentPage)
+#: advancedTabOptions.ui:61
+#, kde-format
+msgid ""
+"This will open a new tab opened from a page after the current tab, instead "
+"of after the last tab."
+msgstr ""
+"Bus atverta nauja kortelė iškart po dabartinės kortelės, o ne už visų "
+"kortelių."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pOpenAfterCurrentPage)
+#: advancedTabOptions.ui:64
+#, kde-format
+msgid "Open &new tab after current tab"
+msgstr "Atverti &naują kortelę už dabartinės"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pDynamicTabbarHide)
+#: advancedTabOptions.ui:71
+#, kde-format
+msgid ""
+"This will display the tab bar only if there are two or more tabs. Otherwise "
+"it will always be displayed."
+msgstr ""
+"Kortelių juosta bus rodoma tik tuo atveju, jei yra atvertos dvi kortelės ar "
+"daugiau. Kitu atveju juosta bus rodoma visą laiką."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pDynamicTabbarHide)
+#: advancedTabOptions.ui:74
+#, kde-format
+msgid "Hide the tab bar when only one tab is open"
+msgstr "Slėpti kortelių juostą jei atverta tik viena kortelė"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
+#: advancedTabOptions.ui:81
+#, kde-format
+msgid "This will display close buttons inside each tab."
+msgstr "Kiekvienoje kortelėje bus rodomas uždarymo mygtukas."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pPermanentCloseButton)
+#: advancedTabOptions.ui:84
+#, kde-format
+msgid "&Show close button on tabs"
+msgstr "&Rodyti užvėrimo mygtuką ant kortelių"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pMiddleClickClose)
+#: advancedTabOptions.ui:91
+#, kde-format
+msgid ""
+"When you click on a tab using the middle mouse button or mouse wheel, it "
+"will close that tab."
+msgstr ""
+"Spragtelėjus kortelę viduriniu pelės klavišu arba ratuku kortelė bus užverta."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pMiddleClickClose)
+#: advancedTabOptions.ui:94
+#, kde-format
+msgid "Middle-click on a tab to close it"
+msgstr "Vidurinio klavišo spragtelėjimas užveria kortelę"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabConfirm)
+#: advancedTabOptions.ui:101
+#, kde-format
+msgid ""
+"This will ask you whether you are sure you want to close a window when it "
+"has multiple tabs opened in it."
+msgstr ""
+"Tai paklaus Jūsų ar Jūs tikrai norite užverti langą, jei lange yra kelios "
+"atvertos kortelės."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pTabConfirm)
+#: advancedTabOptions.ui:104
+#, kde-format
+msgid "Confirm &when closing windows with multiple tabs"
+msgstr "Patvirtinti &uždarant langus su keliomis kortelėmis"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabCloseActivatePrevious)
+#: advancedTabOptions.ui:111
+#, kde-format
+msgid ""
+"When checking this the previous used or opened tab will be activated when "
+"you close the current active tab instead of the one right to the current tab."
+msgstr ""
+"Pažymėjus šį laukelį anksčiau naudota ar atidaryta kortelė bus aktyvuota ir "
+"rodoma tuo atveju, jei uždarysite šiuo metu aktyvią kortelę."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pTabCloseActivatePrevious)
+#: advancedTabOptions.ui:114
+#, kde-format
+msgid "Activate previously used tab when closing the current tab"
+msgstr "Aktyvuoti anksčiau naudotą kortelę užveriant dabartinę kortelę"
+
+#: appearance.cpp:39
+#, kde-format
+msgctxt "@title:tab"
+msgid "General"
+msgstr "Bendri"
+
+#: appearance.cpp:40
+#, kde-format
+msgctxt "@title:tab"
+msgid "Fonts"
+msgstr "Šriftai"
+
+#: appearance.cpp:41
+#, kde-format
+msgctxt "@title:tab"
+msgid "Stylesheets"
+msgstr "Stiliaus lentelės"
+
+#. i18n: ectx: property (title), widget (QGroupBox, GroupBox3_2)
+#: appearance.cpp:48 css/csscustom.ui:296
+#, kde-format
+msgid "Images"
+msgstr "Paveikslėliai"
+
+#: appearance.cpp:52
+#, kde-format
+msgid "A&utomatically load images"
+msgstr "A&utomatiškai įkelti paveikslėlius"
+
+#: appearance.cpp:53
+#, kde-format
+msgid ""
+"<html>If this box is checked, Konqueror will automatically load any images "
+"that are embedded in a web page. Otherwise, it will display placeholders for "
+"the images, and you can then manually load the images by clicking on the "
+"image button.<br />Unless you have a very slow network connection, you will "
+"probably want to check this box to enhance your browsing experience.</html>"
+msgstr ""
+"<html>Jeigu yra pažymėtas šis langelis, Konqueror automatiškai įkels visus "
+"žiniatinklio puslapio paveikslėlius. Priešingu atveju jis rodys paveikslėlių "
+"vietas, o paveikslus galėsite įkelti rankiniu būdu, paspausdami jų mygtuką. "
+"<br /> Tikriausiai norėsite pažymėti šį langelį ir tuo pagerinti savo "
+"naršymą, nebent Jūsų prisijungimas prie tinklo yra labai lėtas.</html>"
+
+#: appearance.cpp:63
+#, kde-format
+msgid "Dra&w frame around not completely loaded images"
+msgstr "Pieš&ti rėmelius apie iki galo neįkeltus paveikslėlius"
+
+#: appearance.cpp:64
+#, kde-format
+msgid ""
+"<html>If this box is checked, Konqueror will draw a frame as a placeholder "
+"around images embedded in a web page that are not yet fully loaded.<br />You "
+"will probably want to check this box to enhance your browsing experience, "
+"especially if have a slow network connection.</html>"
+msgstr ""
+"<html>Jeigu yra pažymėtas šis langelis, Konqueror automatiškai įkels visus "
+"žiniatinklio puslapio paveikslus. Priešingu atveju jis rodys paveikslų "
+"vietas, o paveikslus galėsite įkelti rankiniu būdu, paspausdami jų mygtuką. "
+"<br /> Tikriausiai norėsite pažymėti šį langelį ir tuo pagerinti savo "
+"naršymą, nebent Jūsų prisijungimas prie tinklo yra labai lėtas.</html>"
+
+#: appearance.cpp:74
+#, kde-format
+msgctxt "animations"
+msgid "Enabled"
+msgstr "Pilnai"
+
+#: appearance.cpp:75
+#, kde-format
+msgctxt "animations"
+msgid "Disabled"
+msgstr "Niekada"
+
+#: appearance.cpp:76
+#, kde-format
+msgid "Show Only Once"
+msgstr "Tik vieną kartą"
+
+#: appearance.cpp:77
+#, kde-format
+msgid ""
+"<html>Controls how Konqueror shows animated images:<br /><ul><li><b>Enabled</"
+"b>: Show all animations completely.</li><li><b>Disabled</b>: Never show "
+"animations, show the starting image only.</li><li><b>Show only once</b>: "
+"Show all animations completely but do not repeat them.</li></ul></html>"
+msgstr ""
+"<html>Kontroliuoja kaip Konqueror rodo animuotus paveikslėlius: <br /> <ul> "
+"<li><b>Įjungti</b>: Pilnai rodyti visas animacijas.</li><li><b>Uždrausti</"
+"b>: Niekada nerodyti animacijų, tik pirminį paveikslėlį </li><li><b>Tik "
+"vieną kartą</b>: Rodyti animacijas, bet nekartoti jų.</li></ul></html>"
+
+#: appearance.cpp:82
+#, kde-format
+msgid "A&nimations:"
+msgstr "A&nimacijų rodymas:"
+
+#: appearance.cpp:85 htmlopts.cpp:110
+#, kde-format
+msgctxt "@title:group"
+msgid "Miscellaneous"
+msgstr "Įvairūs"
+
+#: appearance.cpp:90
+#, kde-format
+msgctxt "underline"
+msgid "Enabled"
+msgstr "Įjungtas"
+
+#: appearance.cpp:91
+#, kde-format
+msgctxt "underline"
+msgid "Disabled"
+msgstr "Išjungtas"
+
+#: appearance.cpp:92
+#, kde-format
+msgid "Only on Hover"
+msgstr "Tik po pelės žymekliu"
+
+#: appearance.cpp:93
+#, kde-format
+msgid "Und&erline links:"
+msgstr "Pa&braukti jungtis:"
+
+#: appearance.cpp:96
+#, kde-format
+msgid ""
+"<html>Controls how Konqueror handles underlining hyperlinks:<br /"
+"><ul><li><b>Enabled</b>: Always underline links</li><li><b>Disabled</b>: "
+"Never underline links</li><li><b>Only on Hover</b>: Underline when the mouse "
+"is moved over the link</li></ul><br /><i>Note: The site's CSS definitions "
+"can override this value.</i></html>"
+msgstr ""
+"<html>Kontroliuoja Konqueror jungčių pabraukimą:<br /><ul><li><b>Visada</b>: "
+"Visada pabraukti jungtis</li><li><b>Niekada</b>: Niekada nepabraukti "
+"jungčių</li><li><b>Po žymekliu</b>Pabraukti, kai pelės žymeklis yra virš "
+"jungties</li></ul><br /> <i>Pastaba: srities CSS apibėžimai turi pirmenybę "
+"prieš šią reikšmę</i></html>"
+
+#: appearance.cpp:105
+#, kde-format
+msgid "When Efficient"
+msgstr "Kai tai efektyvu"
+
+#: appearance.cpp:106
+#, kde-format
+msgctxt "smooth scrolling"
+msgid "Always"
+msgstr "Visada"
+
+#: appearance.cpp:107
+#, kde-format
+msgctxt "soft scrolling"
+msgid "Never"
+msgstr "Niekada"
+
+#: appearance.cpp:108
+#, kde-format
+msgid "S&mooth scrolling:"
+msgstr "&Tolygus slinkimas:"
+
+#: appearance.cpp:110
+#, kde-format
+msgid ""
+"<html>Determines whether Konqueror should use smooth steps to scroll HTML "
+"pages, or whole steps:<br /><ul><li><b>Always</b>: Always use smooth steps "
+"when scrolling.</li><li><b>Never</b>: Never use smooth scrolling, scroll "
+"with whole steps instead.</li><li><b>When Efficient</b>: Only use smooth "
+"scrolling on pages where it can be achieved with moderate usage of system "
+"resources.</li></ul></html>"
+msgstr ""
+"<html>Apsprendžia, ar Konqueror turi naudoti tolygų HTML slinkimą, ar "
+"žingsnį:<br /><ul><li><b>Visuomet</b>: visuomet naudoti nuoseklų slinkimą.</"
+"li><li><b>Niekada</b>: niekuomet nenaudoti nuoseklaus slinkimo, pereiti "
+"ištisais žingsniais.</li><li><b>Kai tai efektyvu</b>: nuoseklų slinkimą "
+"naudoti tik tada, kai to galima pasiekti pernelyg neapkraunant sistemos.</"
+"li></ul></html>"
+
+#: appearance.cpp:119
+#, kde-format
+msgid ""
+"<h1>Konqueror Fonts</h1>On this page, you can configure which fonts "
+"Konqueror should use to display the web pages you view."
+msgstr ""
+"<h1>Konqueror šriftai</h1>Šiame puslapyje Jūs galite konfigūruoti, kokius "
+"šriftus Konqueror turėtų naudoti rodomus žiniatinklio puslapius."
+
+#: appearance.cpp:131
+#, kde-format
+msgid "Font Si&ze"
+msgstr "&Šrifto dydis"
+
+#: appearance.cpp:134 appearance.cpp:152
+#, kde-format
+msgid "This is the relative font size Konqueror uses to display web sites."
+msgstr ""
+"Tai reliatyvus Konqueror naudojamas šrifto dydis žiniatinklio puslapiams "
+"rodyti."
+
+#: appearance.cpp:138
+#, kde-format
+msgid "M&inimum font size:"
+msgstr "Minima&lus šrifto dydis:"
+
+#: appearance.cpp:142
+#, kde-format
+msgid ""
+"Konqueror will never display text smaller than this size,<br />overriding "
+"any other settings."
+msgstr ""
+"Konqueror niekada nerodys teksto mažesniu negu šis dydžiu,<br /> "
+"nepriklausomai nuo jokių kitų nustatymų"
+
+#: appearance.cpp:147
+#, kde-format
+msgid "&Medium font size:"
+msgstr "&Vidutinis šrifto dydis:"
+
+#: appearance.cpp:160
+#, kde-format
+msgid "S&tandard font:"
+msgstr "S&tandartinis šriftas:"
+
+#: appearance.cpp:161
+#, kde-format
+msgid "This is the font used to display normal text in a web page."
+msgstr ""
+"Tai šriftas, naudojamas rodyti normaliam žiniatinklio puslapio tekstui."
+
+#: appearance.cpp:165
+#, kde-format
+msgid "&Fixed font:"
+msgstr "Past&ovaus pločio:"
+
+#: appearance.cpp:166
+#, kde-format
+msgid ""
+"This is the font used to display fixed-width (i.e. non-proportional) text."
+msgstr ""
+"Tai šriftas, naudojamas parodyti pastovaus simbolio pločio (t.y. "
+"neproporciniam) tekstui."
+
+#: appearance.cpp:170
+#, kde-format
+msgid "S&erif font:"
+msgstr "S&erifinis šriftas:"
+
+#: appearance.cpp:171
+#, kde-format
+msgid "This is the font used to display text that is marked up as serif."
+msgstr ""
+"Šis šriftas naudojamas parodyti tekstui, pažymėtam serif (su uodegytėm)."
+
+#: appearance.cpp:175
+#, kde-format
+msgid "Sa&ns serif font:"
+msgstr "&Ne serifinis šriftas:"
+
+#: appearance.cpp:176
+#, kde-format
+msgid "This is the font used to display text that is marked up as sans-serif."
+msgstr ""
+"Šis šriftas naudojamas parodyti tekstui, pažymėtam sans-serif (be uodegyčių)."
+
+#: appearance.cpp:180
+#, kde-format
+msgid "C&ursive font:"
+msgstr "&Kursyvinis šriftas:"
+
+#: appearance.cpp:181
+#, kde-format
+msgid "This is the font used to display text that is marked up as italic."
+msgstr "Šis šriftas naudojamas parodyti tekstui, pažymėtam kursyvu."
+
+#: appearance.cpp:185
+#, kde-format
+msgid "Fantas&y font:"
+msgstr "I&šmoningas šriftas:"
+
+#: appearance.cpp:186
+#, kde-format
+msgid ""
+"This is the font used to display text that is marked up as a fantasy font."
+msgstr ""
+"Šis šriftas naudojamas parodyti tekstui, pažymėtam išmoningu (fantasy)."
+
+#: appearance.cpp:195
+#, kde-format
+msgid "Font &size adjustment for this encoding:"
+msgstr "Šrifto dydžio &pataisa šiai koduotei:"
+
+#: appearance.cpp:203 appearance.cpp:401
+#, kde-format
+msgid "Use Language Encoding"
+msgstr "Naudoti nurodytą kalbai koduotę"
+
+#: appearance.cpp:205
+#, kde-format
+msgid "Default encoding:"
+msgstr "Koduotė, naudojama kitaip nenurodžius:"
+
+#: appearance.cpp:207
+#, kde-format
+msgid ""
+"Select the default encoding to be used; normally, you will be fine with 'Use "
+"language encoding' and should not have to change this."
+msgstr ""
+"Pažymėkite numatytą koduotę. Paprastai tinka parinktis „Naudoti nurodytą "
+"kalbai koduotę“ ir Jūs neturėtumėte šito keisti."
+
+#. i18n: ectx: property (whatsThis), widget (QWidget, CSSConfigWidget)
+#. i18n: ectx: property (whatsThis), widget (QWidget, CSSCustomDialog)
+#: css/cssconfig.ui:5 css/csscustom.ui:13
+#, kde-format
+msgid ""
+"<b>Stylesheets</b><p>See http://www.w3.org/Style/CSS for further information "
+"on cascading style sheets.</p>"
+msgstr ""
+"<b>Stilių lentelės</b><p>Papildomai informacijai apie kaskadines stilių "
+"lenteles skaitykite http://www.w3.org/Style/CSS</p>"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, ButtonGroup1)
+#: css/cssconfig.ui:17
+#, kde-format
+msgid ""
+"<b>Stylesheets</b><p>Use this groupbox to determine how Konqueror will "
+"render style sheets.</p>"
+msgstr ""
+"<b>Stilių lentelės</b><p>Kaip Konqueror turi apdoroti stilių lenteles, "
+"nustatykite pasinaudodami šita kortele.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, ButtonGroup1)
+#: css/cssconfig.ui:20
+#, kde-format
+msgid "Stylesheets"
+msgstr "Stilių lentelės"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, useDefault)
+#: css/cssconfig.ui:26
+#, kde-format
+msgid ""
+"<b>Use default stylesheet</b><p>Select this option to use the default "
+"stylesheet.</p>"
+msgstr ""
+"<b>Naudoti numatytąją stilių lentelę</b><p>Naudotis numatytąja stilių "
+"lentele, pažymėkite šitą parinktį.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useDefault)
+#: css/cssconfig.ui:29
+#, kde-format
+msgid "Us&e default stylesheet"
+msgstr "&Naudoti numatytąją stilių lentelę"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, useUser)
+#: css/cssconfig.ui:39
+#, kde-format
+msgid ""
+"<b>Use user-defined stylesheet</b><p>If this box is checked, Konqueror will "
+"try to load a user-defined style sheet as specified in the location below. "
+"The style sheet allows you to completely override the way web pages are "
+"rendered in your browser. The file specified should contain a valid style "
+"sheet (see http://www.w3.org/Style/CSS for further information on cascading "
+"style sheets).</p>"
+msgstr ""
+"<b>Naudoti naudotojo parinktą stilių lentelę</b><p>Jeigu yra pažymėta šita "
+"parinktis, Konqueror bandys įkelti naudotojo pasirinktą stilių lentelę,"
+"nurodytą žemiau. Stilių lentelė leidžia visiškai anuliuoti žiniatinklio "
+"puslapių pateikimo būdą Jūsų naršyklėje. Nurodytas failas turi turėti "
+"teisingą stilių lentelę (detalesnei informacijai apie kaskadines stilių "
+"lenteles žiūrėk http://www.w3.org/Style/CSS).</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useUser)
+#: css/cssconfig.ui:42
+#, kde-format
+msgid "Use &user-defined stylesheet"
+msgstr "&Naudotojo parinkta stilių lentelė"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, useAccess)
+#: css/cssconfig.ui:94
+#, kde-format
+msgid ""
+"<b>Use accessibility stylesheet</b><p>Selecting this option will allow you "
+"to define a default font, font size, and font color with a few simple clicks "
+"of the mouse. Simply wander over to the Customize... dialog and pick out "
+"your desired options.</p>"
+msgstr ""
+"<b>Naudoti prieinamumo stilių lentelę</b><p>Pažymėjus šią parinktį galėsite "
+"apibūdinti numatytąjį šriftą, jo dydį ir spalvą keliais pelės mygtuko "
+"paspaudimais. Tiesiog keliaukite į „Pritaikyti... dialogą ir pasirinkite "
+"reikiamas reikšmes.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useAccess)
+#: css/cssconfig.ui:97
+#, kde-format
+msgid "U&se accessibility stylesheet"
+msgstr "&Naudoti prieinamumą pagerinančią stilių lentelę"
+
+#. i18n: ectx: property (text), widget (QPushButton, customize)
+#: css/cssconfig.ui:137
+#, kde-format
+msgid "Custom&ize..."
+msgstr "Prita&ikyti sau..."
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox7)
+#: css/csscustom.ui:21
+#, kde-format
+msgid ""
+"<b>Font family</b><p>A font family is a group of fonts that resemble one "
+"another, with family members that are e.g. bold, italic, or any number of "
+"the above.</p>"
+msgstr ""
+"<b>Šrifto šeima</b><p>Šrifto šeima yra šriftų, panašių vienas į kitą, grupė. "
+"Šeimos nariai yra, pavyzdžiui, pusjuodis, kursyvas, arba bet kuris iš žemiau "
+"išvardintų.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, GroupBox7)
+#: css/csscustom.ui:24
+#, kde-format
+msgid "Font Family"
+msgstr "Šrifto šeima"
+
+#. i18n: ectx: property (text), widget (QLabel, txtBaseFontFamily)
+#: css/csscustom.ui:30
+#, kde-format
+msgid "Base family:"
+msgstr "Pagrindinė šeima:"
+
+#. i18n: ectx: property (whatsThis), widget (QFontComboBox, fontFamily)
+#: css/csscustom.ui:37
+#, kde-format
+msgid "<p>This is the currently selected font family</p>"
+msgstr "<p>Čia yra dabar pasirinkta šriftų šeima</p>"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, sameFamily)
+#: css/csscustom.ui:44
+#, kde-format
+msgid ""
+"<b>Use same family for all text</b><p>Select this option to override custom "
+"fonts everywhere in favor of the base font.</p>"
+msgstr ""
+"<b>Naudoti tą pačią šeimą visiems tekstams</b><p>Pažymėkite šitą parinktį, "
+"jeigu norite visur pakeisti bendrus šriftus.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, sameFamily)
+#: css/csscustom.ui:47
+#, kde-format
+msgid "Use same family for all text"
+msgstr "Naudoti tą pačią šeimą visiems tekstams"
+
+#. i18n: ectx: property (title), widget (QGroupBox, GroupBox3)
+#: css/csscustom.ui:57
+#, kde-format
+msgid "Font Size"
+msgstr "Šrifto dydis"
+
+#. i18n: ectx: property (text), widget (QLabel, txtFontsize)
+#: css/csscustom.ui:63
+#, kde-format
+msgid "Base font si&ze:"
+msgstr "Pagrindinis šrifto &dydis:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:80
+#, kde-format
+msgid "7"
+msgstr "7"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:85
+#, kde-format
+msgid "8"
+msgstr "8"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:90
+#, kde-format
+msgid "9"
+msgstr "9"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:95
+#, kde-format
+msgid "10"
+msgstr "10"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:100
+#, kde-format
+msgid "11"
+msgstr "11"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:105
+#, kde-format
+msgid "12"
+msgstr "12"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:110
+#, kde-format
+msgid "14"
+msgstr "14"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:115
+#, kde-format
+msgid "16"
+msgstr "16"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:120
+#, kde-format
+msgid "20"
+msgstr "20"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:125
+#, kde-format
+msgid "24"
+msgstr "24"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:130
+#, kde-format
+msgid "32"
+msgstr "32"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:135
+#, kde-format
+msgid "48"
+msgstr "48"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
+#: css/csscustom.ui:140
+#, kde-format
+msgid "64"
+msgstr "64"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, dontScale)
+#: css/csscustom.ui:148
+#, kde-format
+msgid ""
+"<b>Use same size for all elements</b><p>Select this option to override "
+"custom font sizes in favor of the base font size. All fonts will be "
+"displayed in the same size.</p>"
+msgstr ""
+"<b>Naudoti tą patį dydį visiems elementams</b><p>Pažymėkite šitą parinktį "
+"pakeisti skirtingo dydžio šriftams bazinio dydžio šriftais.  Visi šriftai "
+"bus parodomi tokio paties dydžio.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, dontScale)
+#: css/csscustom.ui:151
+#, kde-format
+msgid "&Use same size for all elements"
+msgstr "Na&udoti tą patį dydį visiems elementams"
+
+#. i18n: ectx: property (title), widget (QGroupBox, ButtonGroup2)
+#: css/csscustom.ui:161
+#, kde-format
+msgid "Colors"
+msgstr "Spalvos"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, blackOnWhite)
+#: css/csscustom.ui:183
+#, kde-format
+msgid "<b>Black on White</b><p>This is what you normally see.</p>"
+msgstr "<b>Juoda baltame</b><p>Tai yra tas, ką Jūs paprastai matote.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, blackOnWhite)
+#: css/csscustom.ui:186
+#, kde-format
+msgid "&Black on white"
+msgstr "&Juoda baltame"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, whiteOnBlack)
+#: css/csscustom.ui:196
+#, kde-format
+msgid "<b>White on Black</b><p>This is your classic inverse color scheme.</p>"
+msgstr "<b>Balta juodame</b><p>Tai klasikinė invertuota spalvų schema.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, whiteOnBlack)
+#: css/csscustom.ui:199
+#, kde-format
+msgid "&White on black"
+msgstr "&Balta juodame"
+
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, customColor)
+#: css/csscustom.ui:206
+#, kde-format
+msgid ""
+"<b>Custom</b><p>Select this option to define a custom color for the default "
+"font.</p>"
+msgstr ""
+"<b>Derinta</b><p>Nustatyti pagrindinio šrifto derintai spalvai, pažymėkite "
+"šią parinktį.</p>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, customColor)
+#: css/csscustom.ui:209
+#, kde-format
+msgid "Cus&tom"
+msgstr "De&rinta"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, txtBackground)
+#: css/csscustom.ui:219
+#, kde-format
+msgid ""
+"<b>Background</b><p>This background color is the one displayed behind the "
+"text by default. A background image will override this.</p>"
+msgstr ""
+"<b>Fonas</b><p>Nutylint, šita fono spalva yra parodoma šrifto fone. Fono "
+"paveikslas ją gali uždengti.</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, txtBackground)
+#: css/csscustom.ui:222
+#, kde-format
+msgid "Bac&kground:"
+msgstr "F&onas:"
+
+#. i18n: ectx: property (whatsThis), widget (KColorButton, backgroundColorButton)
+#: css/csscustom.ui:238
+#, kde-format
+msgid ""
+"<b>Background</b><p>Behind this door lays the ability to choose a custom "
+"default background.</p>"
+msgstr "<b>Fonas</b><p>Čia Jūs galite nurodyti pagrindinį derintą foną.</p>"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, sameColor)
+#: css/csscustom.ui:248
+#, kde-format
+msgid ""
+"<b>Use same color for all text</b><p>Select this option to apply your chosen "
+"color to the default font as well as any custom fonts as specified in a "
+"stylesheet.</p>"
+msgstr ""
+"<b>Ta pati spalva visiems tekstams</b><p>Pažymėkite šitą parinktį, "
+"pritaikyti Jūsų pasirinktą spalvą pagrindiniam, o taip pat ir kiekvienam "
+"derintam ir nurodytam stilių lentelėje, šriftui.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, sameColor)
+#: css/csscustom.ui:251
+#, kde-format
+msgid "Use same color for all text"
+msgstr "Ta pati spalva visiems tekstams"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, txtForeground)
+#. i18n: ectx: property (whatsThis), widget (KColorButton, foregroundColorButton)
+#: css/csscustom.ui:261 css/csscustom.ui:280
+#, kde-format
+msgid ""
+"<b>Foreground color</b><p>The foreground color is the color that the text is "
+"drawn in.</p>"
+msgstr ""
+"<b>Priekinio plano spalva</b><p>Priekinio plano spalva, yra spalva, kuria "
+"yra nudažomas tekstas.</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, txtForeground)
+#: css/csscustom.ui:264
+#, kde-format
+msgid "&Foreground:"
+msgstr "P&riekinis planas:"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox3_2)
+#: css/csscustom.ui:293
+#, kde-format
+msgid "<b>Images</b>"
+msgstr "<b>Paveikslėliai</b>"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, hideImages)
+#: css/csscustom.ui:302
+#, kde-format
+msgid ""
+"<b>Suppress images</b><p>Selecting this will prevent Konqueror from loading "
+"images.</p>"
+msgstr ""
+"<b>Slėpti paveikslus</b><p>Tai pažymėjus, Konqueror'ui bus neleidžiama "
+"įkelti paveikslų.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, hideImages)
+#: css/csscustom.ui:305
+#, kde-format
+msgid "&Suppress images"
+msgstr "&Slėpti paveikslus"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, hideBackground)
+#: css/csscustom.ui:312
+#, kde-format
+msgid ""
+"<b>Suppress background images</b><p>Selecting this option will prevent "
+"Konqueror from loading background images.</p>"
+msgstr ""
+"<b>Slėpti fono paveikslus</b><p>Tai pažymėjus, Konqueror'ui bus neleidžiama "
+"įkelti fono paveikslų.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, hideBackground)
+#: css/csscustom.ui:315
+#, kde-format
+msgid "Suppress background images"
+msgstr "Slėpti fono paveikslus"
+
+#. i18n: ectx: property (title), widget (QGroupBox, previewBox)
+#: css/csscustom.ui:347
+#, kde-format
+msgid "Preview"
+msgstr "Peržiūra"
+
+#: css/kcmcss.cpp:51
+#, kde-format
+msgid ""
+"<h1>Konqueror Stylesheets</h1> This module allows you to apply your own "
+"color and font settings to Konqueror by using stylesheets (CSS). You can "
+"either specify options or apply your own self-written stylesheet by pointing "
+"to its location.<br /> Note that these settings will always have precedence "
+"before all other settings made by the site author. This can be useful to "
+"visually impaired people or for web pages that are unreadable due to bad "
+"design."
+msgstr ""
+"<h1>Konqueror stilių lentelės</h1>Su šiuo moduliu galima Konqueror'ui "
+"pritaikyti savus spalvų ir šriftų nustatymus, pasinaudojant stilių "
+"lentelėmis (CSS). Galite tiesiog nurodyti parinktis, arba pritaikyti savo "
+"paties parašytą stilių lentelę, nurodant į jos vietą.<br /> Atminkite, kad "
+"šie nustatymai visada turės pirmenybę prieš kitus, srities autoriaus "
+"padarytus nustatymus. Tai gali būti patogu žmonėms su regėjimo sutrikimais "
+"arba žiniatinklio puslapiams, kurių neįmanoma perskaityti dėl jo blogo "
+"dizaino."
+
+#: css/kcmcss.cpp:336
+#, kde-format
+msgid ""
+"<html>\n"
+"<head>\n"
+"<style>\n"
+"<!--\n"
+"%1\n"
+"-->\n"
+"</style>\n"
+"</head>\n"
+"<body>\n"
+"<h1>Heading 1</h1>\n"
+"<h2>Heading 2</h2>\n"
+"<h3>Heading 3</h3>\n"
+"\n"
+"<p>User-defined stylesheets allow increased\n"
+"accessibility for visually handicapped\n"
+"people.</p>\n"
+"\n"
+"</body>\n"
+"</html>\n"
+msgstr ""
+"<html>\n"
+"<head>\n"
+"<style>\n"
+"<!--\n"
+"%1\n"
+"-->\n"
+"</style>\n"
+"</head>\n"
+"<body>\n"
+"<h1>Antraštė 1</h1>\n"
+"<h2>Antraštė 2</h2>\n"
+"<h3>Antraštė 3</h3>\n"
+"\n"
+"<p>Naudotojo parinktos stilių lentelės\n"
+"padidina žiniatinklio prieinamumą sutrikusio regėjimo\n"
+"žmonėms.</p>\n"
+"\n"
+"</body>\n"
+"</html>\n"
+
+#: domainlistview.cpp:37
+#, kde-format
+msgid "Host/Domain"
+msgstr "Mazgas/Domenas"
+
+#: domainlistview.cpp:37
+#, kde-format
+msgid "Policy"
+msgstr "Taisyklė"
+
+#: domainlistview.cpp:45
+#, kde-format
+msgid "&New..."
+msgstr "&Nauja..."
+
+#: domainlistview.cpp:49
+#, kde-format
+msgid "Chan&ge..."
+msgstr "&Keisti..."
+
+#: domainlistview.cpp:53
+#, kde-format
+msgid "De&lete"
+msgstr "&Ištrinti"
+
+#: domainlistview.cpp:57
+#, kde-format
+msgid "&Import..."
+msgstr "&Importuoti..."
+
+#: domainlistview.cpp:63
+#, kde-format
+msgid "&Export..."
+msgstr "&Eksportuoti..."
+
+#: domainlistview.cpp:71
+#, kde-format
+msgid "Click on this button to manually add a host or domain specific policy."
+msgstr ""
+"Spauskite šitą mygtuką norėdami rankomis pridėti mazgui arba domenui "
+"specifinę taisyklę."
+
+#: domainlistview.cpp:73
+#, kde-format
+msgid ""
+"Click on this button to change the policy for the host or domain selected in "
+"the list box."
+msgstr ""
+"Paspauskite šitą mygtuką norėdami pakeisti mazgo ar domeno taisyklę, "
+"pažymėtą sąrašo lange."
+
+#: domainlistview.cpp:75
+#, kde-format
+msgid ""
+"Click on this button to delete the policy for the host or domain selected in "
+"the list box."
+msgstr ""
+"Paspauskite šitą mygtuką norėdami ištrinti mazgo ar domeno taisyklę, "
+"pažymėtą sąrašo lange."
+
+#: domainlistview.cpp:122
+#, kde-format
+msgid "You must first select a policy to be changed."
+msgstr "Pirmiau reikia pažymėti keičiamą taisyklę."
+
+#: domainlistview.cpp:149
+#, kde-format
+msgid "You must first select a policy to delete."
+msgstr "Pirmiau reikia pažymėti pašalinamą taisyklę."
+
+#: domainlistview.cpp:187 policydlg.cpp:63
+#, kde-format
+msgid "Use Global"
+msgstr "Naudoti globalius nustatymus"
+
+#: domainlistview.cpp:189 policydlg.cpp:63
+#, kde-format
+msgid "Accept"
+msgstr "Leisti"
+
+#: domainlistview.cpp:191 policydlg.cpp:63
+#, kde-format
+msgid "Reject"
+msgstr "Neleisti"
+
+#: filteropts.cpp:48
+#, kde-format
+msgid "Enable filters"
+msgstr "Įgalinti filtrus"
+
+#: filteropts.cpp:51
+#, kde-format
+msgid "Hide filtered images"
+msgstr "Slėpti filtruotus paveikslėlius"
+
+#: filteropts.cpp:58
+#, kde-format
+msgid "Manual Filter"
+msgstr "Rankinis filtras"
+
+#: filteropts.cpp:76
+#, kde-format
+msgid "Search:"
+msgstr "ieškoti:"
+
+#: filteropts.cpp:84
+#, kde-format
+msgid ""
+"<qt>Filter expression (e.g. <tt>http://www.example.com/ad/*</tt>, <a href="
+"\"filterhelp\">more information</a>):"
+msgstr ""
+"<qt>Filtro išraiška (pavyzdžiui <tt>http://www.example.com/ad/*</tt>, <a "
+"href=\"filterhelp\">daugiau informacijos</a>):"
+
+#: filteropts.cpp:100
+#, kde-format
+msgid "Automatic Filter"
+msgstr "Automatinis filtras"
+
+#: filteropts.cpp:109
+#, kde-format
+msgid "Automatic update interval:"
+msgstr "Automatinio atnaujinimo intervalas:"
+
+#: filteropts.cpp:114
+#, kde-format
+msgid " day"
+msgid_plural " days"
+msgstr[0] " diena"
+msgstr[1] " dienos"
+msgstr[2] " dienų"
+msgstr[3] " diena"
+
+#: filteropts.cpp:120
+#, kde-format
+msgid "Insert"
+msgstr "Įterpti"
+
+#: filteropts.cpp:123
+#, kde-format
+msgid "Update"
+msgstr "Atnaujinti"
+
+#: filteropts.cpp:126
+#, kde-format
+msgid "Remove"
+msgstr "Pašalinti"
+
+#: filteropts.cpp:130
+#, kde-format
+msgid "Import..."
+msgstr "Importuoti..."
+
+#: filteropts.cpp:133
+#, kde-format
+msgid "Export..."
+msgstr "Eksportuoti..."
+
+#: filteropts.cpp:140
+#, kde-format
+msgid ""
+"<qt>More information on <a href=\"importhelp\">import format</a>, <a href="
+"\"exporthelp\">export format</a>"
+msgstr ""
+"<qt>Daugiau informacijos apie <a href=\"importhelp\">importo formatą</a>, <a "
+"href=\"exporthelp\">eksporto formatą</a>"
+
+#: filteropts.cpp:154
+#, kde-format
+msgid ""
+"Enable or disable AdBlocK filters. When enabled, a set of URL expressions "
+"should be defined in the filter list for blocking to take effect."
+msgstr ""
+"Įgalinti arba išjungti AdBlocK filtrus. Įgalinus filtrus būtina nurodyti "
+"išraiškas, pagal kurias apibūdinti filtrai blokuos paveikslėlius ar kadrus."
+
+#: filteropts.cpp:156
+#, kde-format
+msgid ""
+"When enabled blocked images will be removed from the page completely, "
+"otherwise a placeholder 'blocked' image will be used."
+msgstr ""
+"Įgalinus, blokuojami paveikslėliai bus arba visiškai pašalinami iš puslapio, "
+"priešingu atveju bus įdėtas imituojantis paveikslėlis „blokuojamas“."
+
+#: filteropts.cpp:163
+#, kde-format
+msgid ""
+"This is the list of URL filters that will be applied to all embedded images "
+"and media objects."
+msgstr ""
+"Tai yra sąrašas URL filtrų, kurie bus pritaikomi visiems susietiems "
+"paveikslėliams ir objektams."
+
+#: filteropts.cpp:167
+#, kde-format
+msgid ""
+"<qt><p>Enter an expression to filter. Filters can be defined as either:"
+"<ul><li>a shell-style wildcard, e.g. <tt>http://www.example.com/ads*</tt>, "
+"the wildcards <tt>*?[]</tt> may be used</li><li>a full regular expression by "
+"surrounding the string with '<tt>/</tt>', e.g. <tt>/\\/(ad|banner)\\./</tt></"
+"li></ul><p>Any filter string can be preceded by '<tt>@@</tt>' to whitelist "
+"(allow) any matching URL, which takes priority over any blacklist (blocking) "
+"filter."
+msgstr ""
+"<qt><p>Įveskite filtro išraišką. Filtrus galima aprašyti kaip:"
+"<ul><li>apvalkalo šablonus, pavyzdžiui <tt>http://www.example.com/ads*</tt>, "
+"gali būti naudojami šablonai <tt>*?[]</tt></li><li>pilnas reguliarus "
+"reiškinys, apgaubtas simboliais '<tt>/</tt>', pavyzdžiui <tt>/\\/(ad|"
+"banner)\\./</tt></li></ul><p>Prieš kiekvieną filtro eilutę galima rašyti "
+"'<tt>@@</tt>', norite leisti rodyti atitinkantį URL ir tai yra aukštesnio "
+"prioriteto nurodymas nei draudimas."
+
+#: filteropts.cpp:183
+#, kde-format
+msgid ""
+"<qt><p>The filter import format is a plain text file. Blank lines, comment "
+"lines starting with '<tt>!</tt>' and the header line <tt>[AdBlock]</tt> are "
+"ignored. Any other line is added as a filter expression."
+msgstr ""
+"<qt><p>Filtro importo failo formatas yra paprastas teksto failas. "
+"Ignoruojamos tuščios eilutės, komentarų eilutės, prasidedančios simboliu "
+"'<tt>!</tt>' bei viršutinė eilutė <tt>[AdBlock]</tt>. Visos kitos eilutės "
+"pridedamos kaip filtrai."
+
+#: filteropts.cpp:188
+#, kde-format
+msgid ""
+"<qt><p>The filter export format is a plain text file. The file begins with a "
+"header line <tt>[AdBlock]</tt>, then all of the filters follow each on a "
+"separate line."
+msgstr ""
+"<qt><p>Filtro eksporto formatas yra paprastas tekstinis failas. Failas "
+"prasideda eilute <tt>[AdBlock]</tt>, tada į atskiras eilutes surašomi visi "
+"filtrai."
+
+#: filteropts.cpp:256
+#, fuzzy, kde-format
+#| msgid "Automatic Filter"
+msgid "Import Filters"
+msgstr "Automatinis filtras"
+
+#: filteropts.cpp:301
+#, fuzzy, kde-format
+#| msgid "Automatic Filter"
+msgid "Export Filters"
+msgstr "Automatinis filtras"
+
+#: filteropts.cpp:436
+#, kde-format
+msgid ""
+"<h1>Konqueror AdBlocK</h1> Konqueror AdBlocK allows you to create a list of "
+"filters that are checked against linked images and frames. URL's that match "
+"are either discarded or replaced with a placeholder image. "
+msgstr ""
+"<h1>Konqueror AdBlocK</h1> Konqueror AdBlocK leidžia sukurti filtrus, pagal "
+"kuriuos bus tikrinami susieti paveikslėliai ir kadrai. URL kurie atitiks "
+"filtrus bus arba ignoruojami arba pakeisti imituojančiu paveikslėliu. "
+
+#: filteropts.cpp:558
+#, kde-format
+msgid "Name"
+msgstr "Pavadinimas"
+
+#: filteropts.cpp:559
+#, kde-format
+msgid "URL"
+msgstr "URL"
+
+#: generalopts.cpp:53
+#, kde-format
+msgid "Tabbed Browsing"
+msgstr "Naršymas kortelėse"
+
+#: generalopts.cpp:79
+#, kde-format
+msgctxt ""
+"The user chose to use a custom start page but left the corresponding field "
+"empty"
+msgid "Please, insert the custom start page"
+msgstr ""
+
+#: generalopts.cpp:85
+#, kde-format
+msgctxt "@label:listbox"
+msgid "When &Konqueror starts:"
+msgstr "Kai &Konqueror paleidžiamas:"
+
+#: generalopts.cpp:94
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Show Introduction Page"
+msgstr "Rodyti įvadinį puslapį"
+
+#: generalopts.cpp:95
+#, fuzzy, kde-format
+#| msgctxt "@item:inlistbox"
+#| msgid "Show My Home Page"
+msgctxt "@item:inlistbox"
+msgid "Show My Start Page"
+msgstr "Rodyti namų puslapį"
+
+#: generalopts.cpp:96
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Show Blank Page"
+msgstr "Rodyti tuščią puslapį"
+
+#: generalopts.cpp:97
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Show My Bookmarks"
+msgstr "Rodyti žymeles"
+
+#: generalopts.cpp:103
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Select Home Page"
+msgctxt "@title:window"
+msgid "Select Start Page"
+msgstr "Pasirinkite namų puslapį"
+
+#: generalopts.cpp:107
+#, kde-format
+msgid "This is the URL of the web page Konqueror will show when starting."
+msgstr ""
+
+#: generalopts.cpp:118
+#, kde-format
+msgid "Home page:"
+msgstr "Namų puslapis:"
+
+#: generalopts.cpp:121
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Home Page"
+msgstr "Pasirinkite namų puslapį"
+
+#: generalopts.cpp:126
+#, fuzzy, kde-format
+#| msgid ""
+#| "This is the URL of the web page where Konqueror (as web browser) will "
+#| "jump to when the \"Home\" button is pressed. When Konqueror is started as "
+#| "a file manager, that button makes it jump to your local home folder "
+#| "instead."
+msgid ""
+"This is the URL of the web page where Konqueror will jump to when the \"Home"
+"\" button is pressed."
+msgstr ""
+"Tai yra žiniatinklio puslapis, į kurį Konqueror (veikdamas kaip žiniatinklio "
+"naršyklė) pereis paspaudus mygtuką „Namai“. Jei Konqueror paleistas kaip "
+"failų tvarkytuvė, šio mygtuko paspaudimas ves į namų aplanką."
+
+#: generalopts.cpp:134
+#, kde-format
+msgid "Default web browser engine:"
+msgstr "Numatytas naršyklės varikliukas:"
+
+#: generalopts.cpp:143
+#, kde-format
+msgid "When splitting a view"
+msgstr ""
+
+#: generalopts.cpp:147
+#, kde-format
+msgid "Always duplicate current view"
+msgstr ""
+
+#: generalopts.cpp:148
+#, kde-format
+msgid "Duplicate current view only for local files"
+msgstr ""
+
+#: htmlopts.cpp:36
+#, kde-format
+msgid ""
+"<h1>Konqueror Browser</h1> Here you can configure Konqueror's browser "
+"functionality. Please note that the file manager functionality has to be "
+"configured using the \"File Manager\" configuration module. You can make "
+"some settings how Konqueror should handle the HTML code in the web pages it "
+"loads. It is usually not necessary to change anything here."
+msgstr ""
+"<h1>Konqueror naršyklė</h1> Čia Jūs galite konfigūruoti Konqueror naršyklės "
+"funkcionalumą. Prašome pastebėti, kad failų tvarkyklės funkcionalumas turi "
+"būti konfigūruojamas naudojant „Failų tvarkyklės“ konfigūravimo modulį.  Jūs "
+"galite padaryti kai kuriuos nustatymus, kaip Konqueror turėtų tvarkytis su "
+"HTML kodu įkeliamuose žiniatinklio puslapiuose. Paprastai nėra būtina ką "
+"nors čia pakeisti."
+
+#: htmlopts.cpp:44
+#, kde-format
+msgid "Boo&kmarks"
+msgstr "Žy&melės"
+
+#: htmlopts.cpp:47
+#, kde-format
+msgid "Ask for name and folder when adding bookmarks"
+msgstr "Klausti vardo ir aplanko pridedant žymeles"
+
+#: htmlopts.cpp:50
+#, kde-format
+msgid ""
+"If this box is checked, Konqueror will allow you to change the title of the "
+"bookmark and choose a folder in which to store it when you add a new "
+"bookmark."
+msgstr ""
+"Jei šis laukas pažymėtas, pridedant naują žymelę Konqueror leis pakeisti "
+"žymelės pavadinimą ir pasirinkti aplanką, kuriame ją išsaugoti."
+
+#: htmlopts.cpp:56
+#, kde-format
+msgid "Show only marked bookmarks in bookmark toolbar"
+msgstr "Rodyti tik pažymėtas žymeles žymelių įrankinėje"
+
+#: htmlopts.cpp:58
+#, kde-format
+msgid ""
+"If this box is checked, Konqueror will show only those bookmarks in the "
+"bookmark toolbar which you have marked to do so in the bookmark editor."
+msgstr ""
+"Jei šis laukas pažymėtas, Konqueror rodys tik tas žymeles žymelių "
+"įrankinėje, kurias pažymėjimu išrinkote žymelių redaktoriuje."
+
+#: htmlopts.cpp:65
+#, kde-format
+msgid "Form Com&pletion"
+msgstr "F&ormos užbaigimas"
+
+#: htmlopts.cpp:69
+#, kde-format
+msgid ""
+"If this box is checked, Konqueror will remember the data you enter in web "
+"forms and suggest it in similar fields for all forms."
+msgstr ""
+"Esant pažymėtam langeliui, Konqueror įsimins Jūsų įrašomus žiniatinklio "
+"formose duomenis ir juos pasiūlys panašiuose visų formų laukeliuose."
+
+#: htmlopts.cpp:75
+#, kde-format
+msgid "&Maximum completions:"
+msgstr "&Daugiausia užbaigimų:"
+
+#: htmlopts.cpp:77
+#, kde-format
+msgid ""
+"Here you can select how many values Konqueror will remember for a form field."
+msgstr "Čia galite nurodyti kiek reikšmių formos laukui Konqueror įsimins."
+
+#: htmlopts.cpp:84
+#, kde-format
+msgid "Mouse Beha&vior"
+msgstr "Pelės elge&sys"
+
+#: htmlopts.cpp:87
+#, kde-format
+msgid "Chan&ge cursor over links"
+msgstr "&Keisti žymeklį virš nuorodų"
+
+#: htmlopts.cpp:89
+#, kde-format
+msgid ""
+"If this option is set, the shape of the cursor will change (usually to a "
+"hand) if it is moved over a hyperlink."
+msgstr ""
+"Jeigu nustatyta šita parinktis, žymeklio forma pasikeis (dažniausiai į "
+"ranką), kai jis atsidurs virš nuorodos."
+
+#: htmlopts.cpp:93
+#, kde-format
+msgid "M&iddle click opens URL in selection"
+msgstr "Spragtelėji&mas viduriniuoju klavišu atveria pažymėtą URL"
+
+#: htmlopts.cpp:96
+#, kde-format
+msgid ""
+"If this box is checked, you can open the URL in the selection by middle "
+"clicking on a Konqueror view."
+msgstr ""
+"Jei šis laukelis pažymėtas, galėsite atverti URL pažymėtame plote spausdami "
+"viduriniuoju pelės klavišu Konqueror vaizde."
+
+#: htmlopts.cpp:100
+#, kde-format
+msgid "Right click goes &back in history"
+msgstr "Dešinys spragtelėjimas veda &atgal žurnalo įrašuose"
+
+#: htmlopts.cpp:103
+#, kde-format
+msgid ""
+"If this box is checked, you can go back in history by right clicking on a "
+"Konqueror view. To access the context menu, press the right mouse button and "
+"move."
+msgstr ""
+"Pažymėjus tai Jūs galite grįžti atgal istorijoje spragtelėje dešinį pelės "
+"klavišą ties Konqueror vaizdu.  Norėdami pasiekti konteksto meniu, "
+"paspauskite dešinį pelės klavišą ir pajudinkite pelę."
+
+#: htmlopts.cpp:113
+#, kde-format
+msgid "Allow automatic delayed &reloading/redirecting"
+msgstr "Leisti automatinį uždelstą &perkrovimą / nukreipimą"
+
+#: htmlopts.cpp:114
+#, kde-format
+msgid ""
+"Some web pages request an automatic reload or redirection after a certain "
+"period of time. By unchecking this box Konqueror will ignore these requests."
+msgstr ""
+"Kai kurie žiniatinklio puslapiai paprašo automatinio perkrovimo ar "
+"nukreipimo po tam tikro laiko tarpo.  Nepažymėjus šios parinkties Konqueror "
+"ignoruos tokius paklausimus."
+
+#: htmlopts.cpp:120
+#, kde-format
+msgid "Enable Access Ke&y activation with Ctrl key"
+msgstr "Įgalinti Prieigos kla&višo aktyvavimą su Vald(Ctrl) klavišu"
+
+#: htmlopts.cpp:121
+#, kde-format
+msgid ""
+"Pressing the Ctrl key when viewing webpages activates Access Keys. "
+"Unchecking this box will disable this accessibility feature. (Konqueror "
+"needs to be restarted for this change to take effect.)"
+msgstr ""
+"Naršant žiniatinklio puslapius ir nuspaudus Vald(Ctrl) klavišą bus aktyvuoti "
+"KDE prieigos klavišai. Panaikinus pažymėjimą ši pritaikymo neįgaliesiems "
+"galimybė bus išjungta. (Pakeitimas įsigalios paleidus Konqueror iš naujo)."
+
+#: htmlopts.cpp:125
+#, kde-format
+msgid "Send the DNT header to tell web sites you do not want to be tracked"
+msgstr ""
+"Siųsti DNT antraštę, kad svetainės žinotų, jog jūs nenorite būti sekamas"
+
+#: htmlopts.cpp:126
+#, kde-format
+msgid ""
+"Check this box if you want to inform a web site that you do not want your "
+"web browsing habits tracked."
+msgstr ""
+"Įjunkite šią parinktį, jei norite pranešti svetainėms, kad nenorite, jog "
+"jūsų naršymo įpročiai būtų sekami."
+
+#: htmlopts.cpp:130
+#, kde-format
+msgid "Offer to save website passwords"
+msgstr "Siūlyti išsaugoti svetainių slaptažodžius"
+
+#: htmlopts.cpp:131
+#, kde-format
+msgid "Uncheck this box to prevent being prompted to save website passwords"
+msgstr ""
+"Nuimkite varnelę, kad neleisti siūlyti išsaugoti svetainių slaptažodžius"
+
+#: htmlopts.cpp:136
+#, kde-format
+msgid "Display online PDF files using WebEngine"
+msgstr ""
+
+#: htmlopts.cpp:137
+#, kde-format
+msgid ""
+"Uncheck this box to display online PDF files as configured in System Settings"
+msgstr ""
+
+#: javaopts.cpp:78
+#, kde-format
+msgid "Enable Ja&va globally"
+msgstr "Globaliai leidžiama &Java"
+
+#: javaopts.cpp:93
+#, kde-format
+msgid "Java Runtime Settings"
+msgstr "Java vykdymo nuostatos"
+
+#: javaopts.cpp:97
+#, kde-format
+msgid "&Use security manager"
+msgstr "N&audoti saugumo tvarkyklę"
+
+#: javaopts.cpp:101
+#, kde-format
+msgid "Use &KIO"
+msgstr "Naudoti &KIO"
+
+#: javaopts.cpp:105
+#, kde-format
+msgid "Shu&tdown applet server when inactive for more than"
+msgstr "Iš&jungti Įskiepių serverį neesant aktyvumo daugiau nei"
+
+#: javaopts.cpp:117
+#, kde-format
+msgid " second"
+msgid_plural " seconds"
+msgstr[0] " sekundė"
+msgstr[1] " sekundės"
+msgstr[2] " sekundžių"
+msgstr[3] " sekundė"
+
+#: javaopts.cpp:123
+#, kde-format
+msgid "&Path to Java executable, or 'java':"
+msgstr "&Java vykdomojo failo, arba „java“, kelias:"
+
+#: javaopts.cpp:127
+#, kde-format
+msgid "Additional Java a&rguments:"
+msgstr "Papildomi Java a&rgumentai:"
+
+#: javaopts.cpp:132
+#, kde-format
+msgid ""
+"Enables the execution of scripts written in Java that can be contained in "
+"HTML pages. Note that, as with any browser, enabling active contents can be "
+"a security problem."
+msgstr ""
+"Leis paleisti Java kalba parašytus scenarijus, kurie gali būti HTML "
+"puslapiuose. Atminkite, kad, kaip ir kiekvienoje naršyklėje, aktyvių "
+"komponentų leidimas gali sukelti saugumo problemų."
+
+#: javaopts.cpp:135
+#, kde-format
+msgid ""
+"<p>This box contains the domains and hosts you have set a specific Java "
+"policy for. This policy will be used instead of the default policy for "
+"enabling or disabling Java applets on pages sent by these domains or hosts.</"
+"p><p>Select a policy and use the controls on the right to modify it.</p>"
+msgstr ""
+"<p>Šiame langelyje yra domenai ir mazgai, kuriems esate nustatę specifines "
+"Java taisykles. Šios taisyklės bus naudojamos vietoje pagrindinių taisyklių, "
+"leidžiant arba uždraudžiant šių domenų arba mazgų puslapių siunčiamus Java "
+"įskiepius.</p><p>Pažymėkite taisyklę ir, norėdami ją modifikuoti, naudokite "
+"dešinėje esančius mygtukus.</p>"
+
+#: javaopts.cpp:142
+#, kde-format
+msgid ""
+"Click this button to choose the file that contains the Java policies. These "
+"policies will be merged with the existing ones. Duplicate entries are "
+"ignored."
+msgstr ""
+"Paspauskite šį mygtuką norėdami pasirinkti failą, turintį Java taisykles. "
+"Šios taisyklės bus sujungtos su jau esančiomis.  Sutampantys įrašai bus "
+"ignoruojami."
+
+#: javaopts.cpp:145
+#, kde-format
+msgid ""
+"Click this button to save the Java policy to a zipped file. The file, named "
+"<b>java_policy.tgz</b>, will be saved to a location of your choice."
+msgstr ""
+"Paspauskite šitą mygtuką norėdami išsaugoti Java taisyklę supakuotame faile. "
+"Failas, pavadintas <b>java_policy.tgz</b>, bus išsaugota Jūsų pasirinktoje "
+"vietoje."
+
+#: javaopts.cpp:149
+#, kde-format
+msgid ""
+"Here you can set specific Java policies for any particular host or domain. "
+"To add a new policy, simply click the <i>New...</i> button and supply the "
+"necessary information requested by the dialog box. To change an existing "
+"policy, click on the <i>Change...</i> button and choose the new policy from "
+"the policy dialog box. Clicking on the <i>Delete</i> button will remove the "
+"selected policy, causing the default policy setting to be used for that "
+"domain."
+msgstr ""
+"Čia galite nustatyti specifines Java taisykles bet kuriam mazgui ar domenui. "
+"Norėdami įdėti naują taisyklę, paprasčiausiai paspauskite <i>Pridėti...</i> "
+"mygtuką ir įrašykite reikalingą informaciją į dialogo langą.  Norėdami "
+"pakeisti jau esančią taisyklę, spauskite <i>Keisti...</i> mygtuką ir "
+"pasirinkite pageidaujamą taisyklę iš taisyklių dialogo lango.  Paspaudus "
+"mygtuką <i>Pašalinti</i>, pažymėta taisyklė bus pašalinta, ir tam domenui "
+"bus naudojamos bendrosios taisyklės."
+
+#: javaopts.cpp:162
+#, kde-format
+msgid ""
+"Enabling the security manager will cause the jvm to run with a Security "
+"Manager in place. This will keep applets from being able to read and write "
+"to your file system, creating arbitrary sockets, and other actions which "
+"could be used to compromise your system. Disable this option at your own "
+"risk. You can modify your $HOME/.java.policy file with the Java policytool "
+"utility to give code downloaded from certain sites more permissions."
+msgstr ""
+"Saugumo tvarkyklės įjungimas privers jvm veikti kartu su Saugumo Tvarkykle. "
+"Tai neleis įskiepiams skaityti ir rašyti į Jūsų failų sistemą, kurti bet "
+"kokius socket'us, ir vykdyti kitus veiksmus, galinčius pakenkti Jūsų "
+"sistemos saugumui.  Išjunkite šią parinktį savo rizika.  Jūs galite pakeist "
+"HOME/.java.policy failą su Java policytool pagalbine programa jei norite "
+"suteikti daugiau leidimų kodui, atsisiųstam iš tam tikrų sričių."
+
+#: javaopts.cpp:170
+#, kde-format
+msgid "Enabling this will cause the jvm to use KIO for network transport "
+msgstr "Čia galima nustatyti, kad jvm naudotų KIO tinklo transportui"
+
+#: javaopts.cpp:172
+#, kde-format
+msgid ""
+"Enter the path to the java executable. If you want to use the jre in your "
+"path, simply leave it as 'java'. If you need to use a different jre, enter "
+"the path to the java executable (e.g. /usr/lib/jdk/bin/java), or the path to "
+"the directory that contains 'bin/java' (e.g. /opt/IBMJava2-13)."
+msgstr ""
+"Įrašykite java vykdomojo failo kelią. Jeigu pageidaujate naudoti jre savo "
+"kelyje, paprasčiausiai palikite jį „java“.  Jeigu norite naudoti kitą jre, "
+"įrašykite vykdomojo failo kelią (pavyzdžiui, /usr/lib/jdk/bin/java), arba "
+"aplanko kelią, kur yra „bin/java“ (pavyzdžiui, /opt/IBMJava2-13)."
+
+#: javaopts.cpp:177
+#, kde-format
+msgid ""
+"If you want special arguments to be passed to the virtual machine, enter "
+"them here."
+msgstr ""
+"Jeigu norite pateikti specialius argumentus virtualiai mašinai, įrašykite "
+"juos čia."
+
+#: javaopts.cpp:179
+#, kde-format
+msgid ""
+"When all the applets have been destroyed, the applet server should shut "
+"down. However, starting the jvm takes a lot of time. If you would like to "
+"keep the java process running while you are browsing, you can set the "
+"timeout value to whatever you like. To keep the java process running for the "
+"whole time that the konqueror process is, leave the Shutdown Applet Server "
+"checkbox unchecked."
+msgstr ""
+"Kai visi įskiepiai būna sunaikinti, įskiepių serveris išsijungia. Vienok, "
+"jvm paleidimas užima šiek tiek laiko. Jeigu savo naršymo metu norite palikti "
+"java procesą veikiantį, galite nustatyti jums reikalingą laiko reikšmę.  "
+"Norėdami palikti java procesą veikiantį visą konqueror darbo laiką, "
+"nepažymėkite langelio „Išjungti įskiepių serverį“."
+
+#: javaopts.cpp:288
+#, kde-format
+msgctxt "@title:group"
+msgid "Doma&in-Specific"
+msgstr "Nuo domeno &priklausančios"
+
+#: javaopts.cpp:323
+#, kde-format
+msgctxt "@title:window"
+msgid "New Java Policy"
+msgstr "Nauja Java taisyklė"
+
+#: javaopts.cpp:326
+#, kde-format
+msgctxt "@title:window"
+msgid "Change Java Policy"
+msgstr "Keisti Java taisyklę"
+
+#: javaopts.cpp:330
+#, kde-format
+msgid "&Java policy:"
+msgstr "&Java taisyklė:"
+
+#: javaopts.cpp:331
+#, kde-format
+msgid "Select a Java policy for the above host or domain."
+msgstr "Nurodykite Java taisyklę esamam mazgui arba domenui."
+
+#: jsopts.cpp:50
+#, kde-format
+msgid "Ena&ble JavaScript globally"
+msgstr "Globaliai leidžiamas Java&Script "
+
+#: jsopts.cpp:51
+#, kde-format
+msgid ""
+"Enables the execution of scripts written in ECMA-Script (also known as "
+"JavaScript) that can be contained in HTML pages. Note that, as with any "
+"browser, enabling scripting languages can be a security problem."
+msgstr ""
+"Leis vykdyti scenarijus, parašytus su ECMA-Script (taip pat žinomas kaip "
+"JavaScript), kuriuos gali turėti HTML puslapiai. Atminkite, kad kaip ir "
+"kiekvienoje naršyklėje, scenarijų leidimas gali sukelti saugumo problemų."
+
+#: jsopts.cpp:59
+#, kde-format
+msgid "Debugging"
+msgstr "Išriktavimas"
+
+#: jsopts.cpp:63
+#, kde-format
+msgid "Enable debu&gger"
+msgstr "Įjungti išri&ktuotoją"
+
+#: jsopts.cpp:64
+#, kde-format
+msgid "Enables builtin JavaScript debugger."
+msgstr "Įgalina JavaScript išriktuotoją."
+
+#: jsopts.cpp:68
+#, kde-format
+msgid "Report &errors"
+msgstr "Pranešti &klaidas"
+
+#: jsopts.cpp:69
+#, kde-format
+msgid ""
+"Enables the reporting of errors that occur when JavaScript code is executed."
+msgstr "Įjungia klaidų, kurios įvyksta vykdant JavaScript kodą, pranešimus."
+
+#: jsopts.cpp:79
+#, kde-format
+msgid ""
+"Here you can set specific JavaScript policies for any particular host or "
+"domain. To add a new policy, simply click the <i>New...</i> button and "
+"supply the necessary information requested by the dialog box. To change an "
+"existing policy, click on the <i>Change...</i> button and choose the new "
+"policy from the policy dialog box. Clicking on the <i>Delete</i> button will "
+"remove the selected policy causing the default policy setting to be used for "
+"that domain. The <i>Import</i> and <i>Export</i> button allows you to easily "
+"share your policies with other people by allowing you to save and retrieve "
+"them from a zipped file."
+msgstr ""
+"Čia galite nustatyti specifines JavaScript taisykles bet kuriam mazgui ar "
+"domenui.  Norėdami įdėti naują taisyklę, paprasčiausiai paspauskite "
+"<i>Pridėti..</i> mygtuką ir įrašykite reikalingą informaciją į dialogo "
+"langą.  Norėdami pakeisti jau esančią taisyklę, spauskite <i>Keisti...</i> "
+"mygtuką ir pasirinkite pageidaujamą taisyklę iš taisyklių dialogo lango.  "
+"Paspaudus mygtuką <i>Pašalinti</i>, pažymėta taisyklė bus pašalinta, ir tam "
+"domenui bus naudojamos bendrosios taisyklės. Mygtukai <i>Importuoti</i> ir "
+"<i>Eksportuoti</i> leis nesunkiai pasidalinti taisyklėmis su kitais - "
+"išsaugoti jas archyvuotame faile, ar pasiimi iš tokio."
+
+#: jsopts.cpp:89
+#, kde-format
+msgid ""
+"<p>This box contains the domains and hosts you have set a specific "
+"JavaScript policy for. This policy will be used instead of the default "
+"policy for enabling or disabling JavaScript on pages sent by these domains "
+"or hosts.</p><p>Select a policy and use the controls on the right to modify "
+"it.</p>"
+msgstr ""
+"<p>Šiame lange yra domenai ir mazgai, kuriems esate nustatę specifines "
+"JavaScript taisykles. Šios taisyklės bus naudojamos vietoje pagrindinių "
+"taisyklių, leidžiant arba uždraudžiant šių domenų arba mazgų siunčiamų "
+"puslapių JavaScript scenarijus. </p><p>Pažymėkite taisyklę, ir, norėdami ją "
+"modifikuoti, naudokite dešinėje esančius mygtukus.</p>"
+
+#: jsopts.cpp:96
+#, kde-format
+msgid ""
+"Click this button to choose the file that contains the JavaScript policies. "
+"These policies will be merged with the existing ones. Duplicate entries are "
+"ignored."
+msgstr ""
+"Paspauskite šitą mygtuką pasirinkti failui, turinčiam JavaScript taisykles. "
+"Šios taisyklės bus sujungtos su jau esančiomis.  Sutampantys įrašai bus "
+"ignoruojami."
+
+#: jsopts.cpp:99
+#, kde-format
+msgid ""
+"Click this button to save the JavaScript policy to a zipped file. The file, "
+"named <b>javascript_policy.tgz</b>, will be saved to a location of your "
+"choice."
+msgstr ""
+"Paspauskite šitą mygtuką išsaugoti JavaScript taisyklę supakuotame faile. "
+"Failas, pavadintas <b>javascript_policy.tgz</b>, bus išsaugotas Jūsų "
+"pasirinktoje vietoje."
+
+#: jsopts.cpp:105
+#, kde-format
+msgid "Global JavaScript Policies"
+msgstr "Globalios JavaScript taisyklės"
+
+#: jsopts.cpp:173
+#, kde-format
+msgctxt "@title:group"
+msgid "Do&main-Specific"
+msgstr "&Nuo domeno priklausančios"
+
+#: jsopts.cpp:212
+#, kde-format
+msgctxt "@title:window"
+msgid "New JavaScript Policy"
+msgstr "Nauja JavaScript taisyklė"
+
+#: jsopts.cpp:215
+#, kde-format
+msgctxt "@title:window"
+msgid "Change JavaScript Policy"
+msgstr "Keisti JavaScript taisyklę"
+
+#: jsopts.cpp:219
+#, kde-format
+msgid "JavaScript policy:"
+msgstr "JavaScript taisyklė:"
+
+#: jsopts.cpp:220
+#, kde-format
+msgid "Select a JavaScript policy for the above host or domain."
+msgstr "Nurodykite JavaScript taisyklę duotam mazgui arba domenui."
+
+#: jsopts.cpp:222
+#, kde-format
+msgid "Domain-Specific JavaScript Policies"
+msgstr "Nuo domeno priklausančios JavaScript taisyklės"
+
+#: jspolicies.cpp:132
+#, kde-format
+msgid "Open new windows:"
+msgstr "Atverti naujus langus:"
+
+#: jspolicies.cpp:140 jspolicies.cpp:194 jspolicies.cpp:231 jspolicies.cpp:268
+#: jspolicies.cpp:308
+#, kde-format
+msgid "Use global"
+msgstr "Naudoti bendruosius nustatymus"
+
+#: jspolicies.cpp:141 jspolicies.cpp:195 jspolicies.cpp:232 jspolicies.cpp:269
+#: jspolicies.cpp:309
+#, kde-format
+msgid "Use setting from global policy."
+msgstr "Naudoti nustatymus iš bendrosios taisyklės."
+
+#: jspolicies.cpp:147 jspolicies.cpp:201 jspolicies.cpp:238 jspolicies.cpp:275
+#: jspolicies.cpp:315
+#, kde-format
+msgid "Allow"
+msgstr "Leisti"
+
+#: jspolicies.cpp:148
+#, kde-format
+msgid "Accept all popup window requests."
+msgstr "Priimti visus pasirodančių langų kūrimo paklausimus."
+
+#: jspolicies.cpp:153
+#, kde-format
+msgid "Ask"
+msgstr "Klausti"
+
+#: jspolicies.cpp:154
+#, kde-format
+msgid "Prompt every time a popup window is requested."
+msgstr "Klausti kas kart, kai paprašoma sukurti pasirodantį langą."
+
+#: jspolicies.cpp:159
+#, kde-format
+msgid "Deny"
+msgstr "Neleisti"
+
+#: jspolicies.cpp:160
+#, kde-format
+msgid "Reject all popup window requests."
+msgstr "Atmesti visus pasirodančių langų paklausimus."
+
+#: jspolicies.cpp:165
+#, kde-format
+msgid "Smart"
+msgstr "Tik po veiksmo"
+
+#: jspolicies.cpp:166
+#, kde-format
+msgid ""
+"Accept popup window requests only when links are activated through an "
+"explicit mouse click or keyboard operation."
+msgstr ""
+"Pasirodantys langai bus kuriami tik tada, kai langas atidaromas spragtelėjus "
+"pele ar su klaviatūra."
+
+#: jspolicies.cpp:173
+#, kde-format
+msgid ""
+"If you disable this, Konqueror will stop interpreting the <i>window.open()</"
+"i> JavaScript command. This is useful if you regularly visit sites that make "
+"extensive use of this command to pop up ad banners.<br /><br /><b>Note:</b> "
+"Disabling this option might also break certain sites that require <i>window."
+"open()</i> for proper operation. Use this feature carefully."
+msgstr ""
+"Jeigu išjungsite šitą parinktį, Konqueror nebeinterpretuos <i>window.open()</"
+"i> Javascript komandos. Tai yra naudinga, jeigu dažnai lankote sritis, "
+"kurios plačiai naudoja šią komandą parodyti reklaminiams skydeliams.<br /"
+"><br /><b>Pastaba:</b> Blokuojant šitą parinktį galima sugadinti kai kurias "
+"sritis, kurioms būtinas <i>window.open()</i> normaliam funkcionalumui. "
+"Naudokite šitą savybę atsargiai!"
+
+#: jspolicies.cpp:187
+#, kde-format
+msgid "Resize window:"
+msgstr "Keisti lango dydį:"
+
+#: jspolicies.cpp:202
+#, kde-format
+msgid "Allow scripts to change the window size."
+msgstr "Leisti scenarijams keisti lango dydį."
+
+#: jspolicies.cpp:207 jspolicies.cpp:244 jspolicies.cpp:281 jspolicies.cpp:321
+#, kde-format
+msgid "Ignore"
+msgstr "Ignoruoti"
+
+#: jspolicies.cpp:208
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to change the window size. The web page will "
+"<i>think</i> it changed the size but the actual window is not affected."
+msgstr ""
+"Ignoruoti scenarijų bandymus keisti lango dydį. Interneto puslapis "
+"<i>galvos</i> kad pakeitė dydį, tačiau iš tiesų niekaip jo neįtakos. "
+
+#: jspolicies.cpp:215
+#, kde-format
+msgid ""
+"Some websites change the window size on their own by using <i>window."
+"resizeBy()</i> or <i>window.resizeTo()</i>. This option specifies the "
+"treatment of such attempts."
+msgstr ""
+"Kai kurios Interneto svetainės pačios pakeičia lango dydį naudodamos "
+"<i>window.resizeBy()</i> ar <i>window.resizeTo()</i> komandas. Ši parinktis "
+"nurodo, kaip bus reaguojama į tokius bandymus. "
+
+#: jspolicies.cpp:224
+#, kde-format
+msgid "Move window:"
+msgstr "Perkelti langą:"
+
+#: jspolicies.cpp:239
+#, kde-format
+msgid "Allow scripts to change the window position."
+msgstr "Leisti scenarijams keisti lango vietą."
+
+#: jspolicies.cpp:245
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to change the window position. The web page will "
+"<i>think</i> it moved the window but the actual position is not affected."
+msgstr ""
+"Ignoruoti scenarijų bandymus keisti lango vietą. Interneto puslapis "
+"<i>galvos</i> kad perkėlė langą, tačiau iš tiesų niekaip jo neįtakos. "
+
+#: jspolicies.cpp:252
+#, kde-format
+msgid ""
+"Some websites change the window position on their own by using <i>window."
+"moveBy()</i> or <i>window.moveTo()</i>. This option specifies the treatment "
+"of such attempts."
+msgstr ""
+"Kai kurios Interneto svetainės pačios pakeičia lango vietą naudodamos "
+"<i>window.moveBy()</i> ar <i>window.moveTo()</i> komandas. Ši parinktis "
+"nurodo, kaip bus reaguojama į tokius bandymus. "
+
+#: jspolicies.cpp:261
+#, kde-format
+msgid "Focus window:"
+msgstr "Iškelti langą:"
+
+#: jspolicies.cpp:276
+#, kde-format
+msgid "Allow scripts to focus the window."
+msgstr "Leisti scenarijams iškelti langą į pirmąjį planą."
+
+#: jspolicies.cpp:282
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to focus the window. The web page will <i>think</"
+"i> it brought the focus to the window but the actual focus will remain "
+"unchanged."
+msgstr ""
+"Ignoruoti scenarijų bandymus iškelti langą į pirmąjį planą. Interneto "
+"puslapis <i>galvos</i> kad iškėlė langą į pirmąjį planą, tačiau iš tiesų "
+"niekaip jo neįtakos. "
+
+#: jspolicies.cpp:290
+#, kde-format
+msgid ""
+"Some websites set the focus to their browser window on their own by using "
+"<i>window.focus()</i>. This usually leads to the window being moved to the "
+"front interrupting whatever action the user was dedicated to at that time. "
+"This option specifies the treatment of such attempts."
+msgstr ""
+"Kai kurios Interneto svetainės pačios iškelia langą į pirmąjį planą "
+"naudodamos <i>window.focus()</i> komandą. Papratai dėl to langas iškyla į "
+"pirmąjį planą nutraukdamas tai, ką naudotojas tuo metu daro. Ši parinktis "
+"nurodo, kaip bus reaguojama į tokius bandymus. "
+
+#: jspolicies.cpp:301
+#, kde-format
+msgid "Modify status bar text:"
+msgstr "Pakeisti būsenos juostos tekstą:"
+
+#: jspolicies.cpp:316
+#, kde-format
+msgid "Allow scripts to change the text of the status bar."
+msgstr "Leisti scenarijams pakeisti būsenos juostos tekstą."
+
+#: jspolicies.cpp:322
+#, kde-format
+msgid ""
+"Ignore attempts of scripts to change the status bar text. The web page will "
+"<i>think</i> it changed the text but the actual text will remain unchanged."
+msgstr ""
+"Ignoruoti scenarijų bandymus pakeisti būsenos juostos tekstą. Interneto "
+"puslapis <i>galvos</i> kad pakeitė tekstą, tačiau iš tiesų niekaip jo "
+"neįtakos. "
+
+#: jspolicies.cpp:330
+#, kde-format
+msgid ""
+"Some websites change the status bar text by setting <i>window.status</i> or "
+"<i>window.defaultStatus</i>, thus sometimes preventing displaying the real "
+"URLs of hyperlinks. This option specifies the treatment of such attempts."
+msgstr ""
+"Kai kurios Interneto svetainės pačios pakeičia būsenos juostos tekstą "
+"naudodamos <i>window.status</i> ar <i>window.status</i> komandas, tokiu būdu "
+"kartais paslėpdamos tikruosius hipernuorodų URL adresus. Ši parinktis "
+"nurodo, kaip bus reaguojama į tokius bandymus. "
+
+#: main.cpp:43
+#, kde-format
+msgid "Konqueror Browsing Control Module"
+msgstr "Konqueror naršymo valdymo modulis"
+
+#: main.cpp:45
+#, kde-format
+msgid "(c) 1999 - 2001 The Konqueror Developers"
+msgstr "© 1999 - 2001 Konqueror programuotojai"
+
+#: main.cpp:47
+#, kde-format
+msgid "Waldo Bastian"
+msgstr "Waldo Bastian"
+
+#: main.cpp:48
+#, kde-format
+msgid "David Faure"
+msgstr "David Faure"
+
+#: main.cpp:49
+#, kde-format
+msgid "Matthias Kalle Dalheimer"
+msgstr "Matthias Kalle Dalheimer"
+
+#: main.cpp:50
+#, kde-format
+msgid "Lars Knoll"
+msgstr "Lars Knoll"
+
+#: main.cpp:51
+#, kde-format
+msgid "Dirk Mueller"
+msgstr "Dirk Mueller"
+
+#: main.cpp:52
+#, kde-format
+msgid "Daniel Molkentin"
+msgstr "Daniel Molkentin"
+
+#: main.cpp:53
+#, kde-format
+msgid "Wynn Wilkes"
+msgstr "Wynn Wilkes"
+
+#: main.cpp:55
+#, kde-format
+msgid "Leo Savernik"
+msgstr "Leo Savernik"
+
+#: main.cpp:55
+#, kde-format
+msgid ""
+"JavaScript access controls\n"
+"Per-domain policies extensions"
+msgstr ""
+"JavaScript priėjimo valdikliai\n"
+"Nuo domeno priklausantys taisyklių pakeitimai"
+
+#: main.cpp:67
+#, kde-format
+msgid "&Java"
+msgstr "&Java"
+
+#: main.cpp:71
+#, kde-format
+msgid "Java&Script"
+msgstr "Java&Script"
+
+#: main.cpp:111
+#, kde-format
+msgid ""
+"<h2>JavaScript</h2>On this page, you can configure whether JavaScript "
+"programs embedded in web pages should be allowed to be executed by Konqueror."
+"<h2>Java</h2>On this page, you can configure whether Java applets embedded "
+"in web pages should be allowed to be executed by Konqueror.<br /><br /"
+"><b>Note:</b> Active content is always a security risk, which is why "
+"Konqueror allows you to specify very fine-grained from which hosts you want "
+"to execute Java and/or JavaScript programs."
+msgstr ""
+"<h2>JavaScript</h2>Šiame puslapyje Jūs galite konfigūruoti ar Konqueror'ui "
+"leidžiama vykdyti įdėtas puslapyje JavaScript programėles.<h2>Java</h2>Šiame "
+"puslapyje Jūs galite konfigūruoti ar  Konqueror'ui leidžiama vykdyti "
+"žiniatinklio puslapyje įdėtus Java įskiepius.<br /><br /><b>Pastaba:</b> "
+"Aktyvūs komponentai visada didina saugumo riziką, todėl Konqueror leidžia "
+"labai tiksliai nustatyti, iš kurių mazgų Jūs norite vykdyti Java ir/ar "
+"JavaScript programas."
+
+#: policydlg.cpp:30
+#, kde-format
+msgctxt "@title:window"
+msgid "Domain-Specific Policies"
+msgstr "Taisyklės, susietos su domenu"
+
+#: policydlg.cpp:47
+#, kde-format
+msgid "&Host or domain name:"
+msgstr "&Mazgo ar domeno vardas:"
+
+#: policydlg.cpp:55
+#, kde-format
+msgid ""
+"Enter the name of a host (like www.kde.org) or a domain, starting with a dot "
+"(like .kde.org or .org)"
+msgstr ""
+"Įrašykite mazgo vardą (panašiai kaip www.kde.org) ar domeną, pradedant tašku "
+"(panašiai kaip .kde.org ar .org)"
+
+#: policydlg.cpp:139
+#, kde-format
+msgid "You must first enter a domain name."
+msgstr "Visų pirma turite įrašyti domeno vardą."
+
+#~ msgid "Accept languages:"
+#~ msgstr "Priimtinos kalbos:"
+
+#~ msgid "Accept character sets:"
+#~ msgstr "Priimtinos koduotės:"
+
+#~ msgid "Plugins"
+#~ msgstr "Priedai"
+
+#~ msgid "Folders"
+#~ msgstr "Aplankai"
+
+#~ msgid "&Remove"
+#~ msgstr "&Pašalinti"
+
+#~ msgid "&New"
+#~ msgstr "&Nauja"
+
+#~ msgid "Do&wn"
+#~ msgstr "Ž&emyn"
+
+#~ msgid "&Up"
+#~ msgstr "&Aukštyn"
+
+#~ msgid "Click here to scan for newly installed Netscape plugins now."
+#~ msgstr ""
+#~ "Norėdami dabar ieškoti naujai įdiegtų Netscape priedų, spragtelėkite čia."
+
+#~ msgid "&Scan for Plugins"
+#~ msgstr "&Ieškoti priedų"
+
+#~ msgid "Here you can see a list of the Netscape plugins KDE has found."
+#~ msgstr "Čia Jūs galite pamatyti KDE rastų Netscape priedų sąrašą."
+
+#~ msgid "Information"
+#~ msgstr "Informacija"
+
+#~ msgid "Value"
+#~ msgstr "Reikšmė"
+
+#~ msgid "Global Settings"
+#~ msgstr "Bendrosios nuostatos"
+
+#~ msgid "&Enable plugins globally"
+#~ msgstr "Į&galinti priedus globaliai"
+
+#~ msgid "Only allow &HTTP and HTTPS URLs for plugins"
+#~ msgstr "Leisti tik &HTTP ir HTTPS URL kaip priedus"
+
+#~ msgid "&Load plugins on demand only"
+#~ msgstr "Įkelti &priedus tik taip nurodžius"
+
+#~ msgid "CPU priority for plugins: %1"
+#~ msgstr "CPU prioritetas priedams: %1"
+
+#~ msgid "Domain-Specific Settin&gs"
+#~ msgstr "Nustatymai, susie&ti su domenu"
+
+#~ msgid ""
+#~ "Enables the execution of plugins that can be contained in HTML pages, e."
+#~ "g. Macromedia Flash. Note that, as with any browser, enabling active "
+#~ "contents can be a security problem."
+#~ msgstr ""
+#~ "Leis vykdyti priedus, kuriuos gali turėti HTML puslapiai, pvz., "
+#~ "Macromedia Flash. Atminkite, kad kaip ir visose naršyklėse, aktyvių "
+#~ "komponentų leidimas didina saugumo riziką."
+
+#~ msgid ""
+#~ "<p>This box contains the domains and hosts you have set a specific plugin "
+#~ "policy for. This policy will be used instead of the default policy for "
+#~ "enabling or disabling plugins on pages sent by these domains or hosts.</"
+#~ "p><p>Select a policy and use the controls on the right to modify it.</p>"
+#~ msgstr ""
+#~ "<p>Šiame lange yra domenai ir mazgai, kuriems esate nustatę specifines "
+#~ "taisykles. Šios taisyklės bus naudojamos vietoje pagrindinių taisyklių, "
+#~ "leidžiant arba uždraudžiant šių domenų arba mazgų puslapių siunčiamus "
+#~ "priedus. </p><p>Pažymėkite taisyklę ir norėdami ją modifikuoti naudokite "
+#~ "dešinėje esančius mygtukus.</p>"
+
+#~ msgid ""
+#~ "Click this button to choose the file that contains the plugin policies. "
+#~ "These policies will be merged with the existing ones. Duplicate entries "
+#~ "are ignored."
+#~ msgstr ""
+#~ "Paspauskite šį mygtuką norėdami pasirinkti failą, kuriame yra taisyklės. "
+#~ "Šios taisyklės bus sujungtos su jau esančiomis.  Sutampantys įrašai bus "
+#~ "ignoruojami."
+
+#~ msgid ""
+#~ "Click this button to save the plugin policy to a zipped file. The file, "
+#~ "named <b>plugin_policy.tgz</b>, will be saved to a location of your "
+#~ "choice."
+#~ msgstr ""
+#~ "Paspauskite šį mygtuką norėdami išsaugoti priedų taisyklę supakuotame "
+#~ "faile. Failas, pavadintas <b>plugin_policy.tgz</b>, bus išsaugotas Jūsų "
+#~ "pasirinktoje vietoje."
+
+#~ msgid ""
+#~ "Here you can set specific plugin policies for any particular host or "
+#~ "domain. To add a new policy, simply click the <i>New...</i> button and "
+#~ "supply the necessary information requested by the dialog box. To change "
+#~ "an existing policy, click on the <i>Change...</i> button and choose the "
+#~ "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
+#~ "button will remove the selected policy causing the default policy setting "
+#~ "to be used for that domain."
+#~ msgstr ""
+#~ "Čia galite nustatyti specifines priedų taisykles bet kuriam mazgui ar "
+#~ "domenui.  Norėdami įdėti naują taisyklę, paprasčiausiai paspauskite "
+#~ "<i>Pridėti..</i> mygtuką ir įrašykite reikalingą informaciją į dialogo "
+#~ "langą.  Norėdami pakeisti jau esančią taisyklę, spauskite <i>Keisti...</"
+#~ "i> mygtuką ir pasirinkite pageidaujamą taisyklę iš taisyklių dialogo "
+#~ "lango.  Paspaudus mygtuką <i>Pašalinti</i>, pažymėta taisyklė bus "
+#~ "pašalinta, ir tam domenui bus naudojamos bendrosios taisyklės."
+
+#~ msgctxt "lowest priority"
+#~ msgid "lowest"
+#~ msgstr "žemiausias"
+
+#~ msgctxt "low priority"
+#~ msgid "low"
+#~ msgstr "žemas"
+
+#~ msgctxt "medium priority"
+#~ msgid "medium"
+#~ msgstr "vidutinis"
+
+#~ msgctxt "high priority"
+#~ msgid "high"
+#~ msgstr "aukštas"
+
+#~ msgctxt "highest priority"
+#~ msgid "highest"
+#~ msgstr "aukščiausias"
+
+#~ msgid ""
+#~ "<h1>Konqueror Plugins</h1> The Konqueror web browser can use Netscape "
+#~ "plugins to show special content, just like the Navigator does. Please "
+#~ "note that the way you have to install Netscape plugins may depend on your "
+#~ "distribution. A typical place to install them is, for example, '/opt/"
+#~ "netscape/plugins'."
+#~ msgstr ""
+#~ "<h1>Konqueror priedai</h1> Konqueror naršyklė gali naudoti Netscape "
+#~ "priedus specialiam turiniui rodyti, taip kaip ir Navigator.  Netscape "
+#~ "priedų diegimo būdas priklauso nuo Jūsų distribucijos.  Tipinė diegimo "
+#~ "vieta yra, pavyzdžiui, „/opt/netscape/plugins“."
+
+#~ msgid ""
+#~ "Do you want to apply your changes before the scan? Otherwise the changes "
+#~ "will be lost."
+#~ msgstr ""
+#~ "Ar norite pritaikyti pakeitimus prieš priedų paiešką?  Priešingu atveju "
+#~ "pakeitimai bus prarasti."
+
+#~ msgid ""
+#~ "The nspluginscan executable cannot be found. Netscape plugins will not be "
+#~ "scanned."
+#~ msgstr ""
+#~ "nspluginscan vykdomasis failas nerasta.  Netscape priedų nebus ieškoma."
+
+#~ msgid "Scanning for plugins"
+#~ msgstr "Ieškoma priedų"
+
+#~ msgctxt "@title:window"
+#~ msgid "Select Plugin Scan Folder"
+#~ msgstr "Pasirinkite priedų paieškos aplanką"
+
+#~ msgid "Netscape Plugins"
+#~ msgstr "Netscape priedai"
+
+#~ msgid "Plugin"
+#~ msgstr "Priedas"
+
+#~ msgid "MIME type"
+#~ msgstr "MIME tipas"
+
+#~ msgid "Description"
+#~ msgstr "Aprašymas"
+
+#~ msgid "Suffixes"
+#~ msgstr "Priesagos"
+
+#~ msgid "Doma&in-Specific"
+#~ msgstr "Nuo domeno &priklausančios"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Plugin Policy"
+#~ msgstr "Nauja priedų taisyklė"
+
+#~ msgctxt "@title:window"
+#~ msgid "Change Plugin Policy"
+#~ msgstr "Keisti priedų taisyklę"
+
+#~ msgid "&Plugin policy:"
+#~ msgstr "Į&skiepių taisyklė:"
+
+#~ msgid "Select a plugin policy for the above host or domain."
+#~ msgstr "Nurodykite Java taisyklę esamam mazgui arba domenui."
+
+#, fuzzy
+#~| msgid "Sa&ns serif font:"
+#~ msgid "Sans Serif"
+#~ msgstr "&Ne serifinis šriftas:"
+
+#, fuzzy
+#~| msgid "S&tandard font:"
+#~ msgid "Standard Symbols L"
+#~ msgstr "S&tandartinis šriftas:"
+
+#~ msgid "kcmkonqhtml"
+#~ msgstr "kcmkonqhtml"

@@ -1,0 +1,1962 @@
+# translation of konqueror.po to Polish
+# translation of konqueror.po to
+# Version: $Revision: 1616848 $
+# Tłumaczenie autorstwa Artura Skury, marzec 2000
+# Aktualne tłumaczenie Norbert Popiołek <norbert@kde.com.pl>, czerwiec 2001
+# Norbert Popiołek <norbert@kde.com.pl>
+# Michał Rudolf <mrudolf@kdewebdev.org>, 2002.
+# Michal Rudolf <mrudolf@kdewebdev.org>, 2002, 2003, 2004, 2005, 2007, 2008, 2009, 2010.
+# Krzysztof Lichota <lichota@mimuw.edu.pl>, 2005, 2006.
+# Robert Gomulka <rgom@o2.pl>, 2006.
+# Marta Rybczyńska <kde-i18n@rybczynska.net>, 2007, 2008.
+# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2011-06-16 13:55+0200\n"
+"Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
+"Language-Team: Polish <kde-i18n-doc@kde.org>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+
+#. i18n: ectx: Menu (tools)
+#: konq_shellcmdplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "&Narzędzia"
+
+#: kshellcmdexecutor.cpp:106
+#, kde-format
+msgid "Input Required:"
+msgstr "Wymagane wejście:"
+
+#: kshellcmdplugin.cpp:32
+#, kde-format
+msgid "&Execute Shell Command..."
+msgstr "&Wykonaj polecenie powłoki..."
+
+#: kshellcmdplugin.cpp:41
+#, kde-format
+msgid ""
+"KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a bug."
+msgstr ""
+"KShellCmdPlugin::slotExecuteShellCommand: błąd w programie, proszę zgłosić "
+"błąd."
+
+#: kshellcmdplugin.cpp:51
+#, kde-format
+msgid "Executing shell commands works only on local directories."
+msgstr "Polecenie powłoki może zostać wykonane tylko w lokalnym katalogu."
+
+#: kshellcmdplugin.cpp:73
+#, kde-format
+msgctxt "@title:window"
+msgid "Execute Shell Command"
+msgstr "Wykonaj polecenie powłoki"
+
+#: kshellcmdplugin.cpp:74
+#, kde-format
+msgid "Execute shell command in current directory:"
+msgstr "Wykonaj polecenie w bieżącym katalogu:"
+
+#: kshellcmdplugin.cpp:85
+#, kde-format
+msgid "Output from command: \"%1\""
+msgstr "Wynik polecenia: \"%1\""
+
+#~ msgid "no name"
+#~ msgstr "bez nazwy"
+
+#~ msgid "Configure"
+#~ msgstr "Konfiguracja"
+
+#~ msgid "Extensions"
+#~ msgstr "Rozszerzenia"
+
+#~ msgid ""
+#~ "There was an error loading the module %1.\n"
+#~ "The diagnostics is:\n"
+#~ "%2"
+#~ msgstr ""
+#~ "Wystąpił błąd podczas odczytu modułu %1.\n"
+#~ "Komunikat o błędzie:\n"
+#~ "%2"
+
+#~ msgid "Konqueror"
+#~ msgstr "Konqueror"
+
+#~ msgid "Web browser, file manager and document viewer."
+#~ msgstr ""
+#~ "Przeglądarka internetowa, menedżer plików i przeglądarka dokumentów."
+
+#~ msgid "(C) 1999-2008, The Konqueror developers"
+#~ msgstr "(c) 1999-2008, Autorzy Konquerora"
+
+#~ msgid "http://konqueror.kde.org"
+#~ msgstr "http://konqueror.kde.org"
+
+#~ msgid "David Faure"
+#~ msgstr "David Faure"
+
+#~ msgid "Developer (framework, parts, JavaScript, I/O library) and maintainer"
+#~ msgstr ""
+#~ "programista (szkielet, części, JavaScript, biblioteka we/wy) i opiekun"
+
+#~ msgid "Simon Hausmann"
+#~ msgstr "Simon Hausmann"
+
+#~ msgid "Developer (framework, parts)"
+#~ msgstr "programista (szkielet, części)"
+
+#~ msgid "Michael Reiher"
+#~ msgstr "Michael Reiher"
+
+#~ msgid "Developer (framework)"
+#~ msgstr "programista (szkielet)"
+
+#~ msgid "Matthias Welk"
+#~ msgstr "Matthias Welk"
+
+#~ msgid "Developer"
+#~ msgstr "programista"
+
+#~ msgid "Alexander Neundorf"
+#~ msgstr "Alexander Neundorf"
+
+#~ msgid "Developer (List views)"
+#~ msgstr "programista (widoki listy)"
+
+#~ msgid "Michael Brade"
+#~ msgstr "Michael Brade"
+
+#~ msgid "Developer (List views, I/O library)"
+#~ msgstr "programista (widoki listy, biblioteka we/wy)"
+
+#~ msgid "Lars Knoll"
+#~ msgstr "Lars Knoll"
+
+#~ msgid "Developer (HTML rendering engine)"
+#~ msgstr "programista (wyświetlanie HTML)"
+
+#~ msgid "Dirk Mueller"
+#~ msgstr "Dirk Mueller"
+
+#~ msgid "Peter Kelly"
+#~ msgstr "Peter Kelly"
+
+#~ msgid "Waldo Bastian"
+#~ msgstr "Waldo Bastian"
+
+#~ msgid "Developer (HTML rendering engine, I/O library)"
+#~ msgstr "programista (wyświetlanie HTML, biblioteka we/wy)"
+
+#~ msgid "Germain Garand"
+#~ msgstr "Germain Garand"
+
+#~ msgid "Leo Savernik"
+#~ msgstr "Leo Savernik"
+
+#~ msgid "Stephan Kulow"
+#~ msgstr "Stephan Kulow"
+
+#~ msgid ""
+#~ "Developer (HTML rendering engine, I/O library, regression test framework)"
+#~ msgstr ""
+#~ "programista (wyświetlanie HTML, biblioteka we/wy, system testowania)"
+
+#~ msgid "Antti Koivisto"
+#~ msgstr "Antti Koivisto"
+
+#~ msgid "Zack Rusin"
+#~ msgstr "Zack Rusin"
+
+#~ msgid "Tobias Anton"
+#~ msgstr "Tobias Anton"
+
+#~ msgid "Lubos Lunak"
+#~ msgstr "Lubos Lunak"
+
+#~ msgid "Maks Orlovich"
+#~ msgstr "Maks Orlovich"
+
+#~ msgid "Developer (HTML rendering engine, JavaScript)"
+#~ msgstr "programista (wyświetlanie HTML, JavaScript)"
+
+#~ msgid "Allan Sandfeld Jensen"
+#~ msgstr "Allan Sandfeld Jensen"
+
+#~ msgid "Apple Safari Developers"
+#~ msgstr "Autorzy Apple Safari"
+
+#~ msgid "Harri Porten"
+#~ msgstr "Harri Porten"
+
+#~ msgid "Developer (JavaScript)"
+#~ msgstr "programista (JavaScript)"
+
+#~ msgid "Koos Vriezen"
+#~ msgstr "Koos Vriezen"
+
+#~ msgid "Developer (Java applets and other embedded objects)"
+#~ msgstr ""
+#~ "programista (wsparcie dla apletów Javy i innych osadzonych obiektów)"
+
+#~ msgid "Matt Koss"
+#~ msgstr "Matt Koss"
+
+#~ msgid "Developer (I/O library)"
+#~ msgstr "programista (biblioteka we/wy)"
+
+#~ msgid "Alex Zepeda"
+#~ msgstr "Alex Zepeda"
+
+#~ msgid "Richard Moore"
+#~ msgstr "Richard Moore"
+
+#~ msgid "Developer (Java applet support)"
+#~ msgstr "programista (wsparcie dla apletów Javy)"
+
+#~ msgid "Dima Rogozin"
+#~ msgstr "Dima Rogozin"
+
+#~ msgid "Wynn Wilkes"
+#~ msgstr "Wynn Wilkes"
+
+#~ msgid ""
+#~ "Developer (Java 2 security manager support,\n"
+#~ " and other major improvements to applet support)"
+#~ msgstr ""
+#~ "programista (menedżer zabezpieczeń dla Javy 2,\n"
+#~ " inne usprawnienia obsługi apletów)"
+
+#~ msgid "Stefan Schimanski"
+#~ msgstr "Stefan Schimanski"
+
+#~ msgid "Developer (Netscape plugin support)"
+#~ msgstr "programista (wsparcie dla wtyczek Netscape)"
+
+#~ msgid "George Staikos"
+#~ msgstr "George Staikos"
+
+#~ msgid "Developer (SSL, Netscape plugins)"
+#~ msgstr "programista (SSL, wtyczki Netscape)"
+
+#~ msgid "Dawit Alemayehu"
+#~ msgstr "Dawit Alemayehu"
+
+#~ msgid "Developer (I/O library, Authentication support)"
+#~ msgstr "programista (biblioteka we/wy, uwierzytelnianie)"
+
+#~ msgid "Carsten Pfeiffer"
+#~ msgstr "Carsten Pfeiffer"
+
+#~ msgid "Torsten Rahn"
+#~ msgstr "Torsten Rahn"
+
+#~ msgid "Graphics/icons"
+#~ msgstr "grafika/ikony"
+
+#~ msgid "Torben Weis"
+#~ msgstr "Torben Weis"
+
+#~ msgid "KFM author"
+#~ msgstr "autor kfm"
+
+#~ msgid "Joseph Wenninger"
+#~ msgstr "Joseph Wenninger"
+
+#~ msgid "Developer (navigation panel framework)"
+#~ msgstr "programista (panel nawigacji)"
+
+#~ msgid "Stephan Binner"
+#~ msgstr "Stephan Binner"
+
+#~ msgid "Developer (misc stuff)"
+#~ msgstr "programista (różne)"
+
+#~ msgid "Ivor Hewitt"
+#~ msgstr "Ivor Hewitt"
+
+#~ msgid "Developer (AdBlock filter)"
+#~ msgstr "programista (filtr AdBlock)"
+
+#~ msgid "Eduardo Robles Elvira"
+#~ msgstr "Eduardo Robles Elvira"
+
+#~ msgid ""
+#~ "Checking this box on at least two views sets those views as 'linked'. "
+#~ "Then, when you change directories in one view, the other views linked "
+#~ "with it will automatically update to show the current directory. This is "
+#~ "especially useful with different types of views, such as a directory tree "
+#~ "with an icon view or detailed view, and possibly a terminal emulator "
+#~ "window."
+#~ msgstr ""
+#~ "Wybór tej opcji w co najmniej dwóch widokach spowoduje ich połączenie. "
+#~ "Wówczas zmiana katalogu w jednym widoku spowoduje automatyczne "
+#~ "wyświetlenie bieżącego katalogu w drugim. Jest to użyteczne zwłaszcza dla "
+#~ "różnych widoków, np. widoku drzewa i widoku ikon/szczegółowego oraz "
+#~ "ewentualnie emulacji terminala."
+
+#~ msgid "Close View"
+#~ msgstr "Zamknij widok"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#~ msgid "Stalled"
+#~ msgstr "Zatrzymane"
+
+#~ msgid "Preview &in %1"
+#~ msgstr "Podgląd w %1"
+
+#~ msgid "Show %1"
+#~ msgstr "Pokaż %1"
+
+#~ msgctxt "@title:window"
+#~ msgid "History"
+#~ msgstr "Historia"
+
+#~ msgctxt "@action:inmenu Parent of 'By Name' and 'By Date'"
+#~ msgid "Sort"
+#~ msgstr "Sortuj"
+
+#~ msgid ""
+#~ "<qt><center><b>%1</b></center><hr />Last visited: %2<br />First visited: "
+#~ "%3<br />Number of times visited: %4</qt>"
+#~ msgstr ""
+#~ "<qt><center><b>%1</b></center><hr />Ostatnio odwiedzone: %2<br />Pierwszy "
+#~ "raz odwiedzone: %3<br />Liczba odwiedzin: %4</qt>"
+
+#~ msgid "Local"
+#~ msgstr "Lokalne"
+
+#~ msgid "Miscellaneous"
+#~ msgstr "Inne"
+
+#~ msgid "Open in New &Window"
+#~ msgstr "Otwórz w &nowym oknie"
+
+#~ msgid "Open in New Tab"
+#~ msgstr "Otwórz w nowej karcie"
+
+#~ msgid "&Copy Link Address"
+#~ msgstr "Skopiuj &adres odnośnika"
+
+#~ msgid "&Remove Entry"
+#~ msgstr "&Usuń pozycję"
+
+#~ msgid "C&lear History"
+#~ msgstr "&Wyczyść historię"
+
+#~ msgid "&Preferences..."
+#~ msgstr "&Ustawienia..."
+
+#~ msgid "By &Name"
+#~ msgstr "według &nazwy"
+
+#~ msgid "By &Date"
+#~ msgstr "według &daty"
+
+#~ msgid "Search in history"
+#~ msgstr "Znajdź w historii"
+
+#~ msgid "Do you really want to clear the entire history?"
+#~ msgstr "Na pewno chcesz wyczyścić całą historię?"
+
+#~ msgid "Clear History?"
+#~ msgstr "Wyczyścić historię?"
+
+#, fuzzy
+#~| msgid "Start without a default window"
+#~ msgid "Start without a default window, when called without URLs"
+#~ msgstr "Rozpocznij bez domyślnego okna"
+
+#~ msgid "Profile to open"
+#~ msgstr "Profil do otwarcia"
+
+#~ msgid "List available profiles"
+#~ msgstr "Pokaż dostępne profile"
+
+#~ msgid "List available sessions"
+#~ msgstr "Pokaż dostępne sesje"
+
+#~ msgid "Session to open"
+#~ msgstr "Sesja do otwarcia"
+
+#~ msgid "Mimetype to use for this URL (e.g. text/html or inode/directory)"
+#~ msgstr "Typ MIME dla tego URL (np. text/html lub inode/directory)"
+
+#~ msgid ""
+#~ "For URLs that point to files, opens the directory and selects the file, "
+#~ "instead of opening the actual file"
+#~ msgstr ""
+#~ "Dla URL będących plikami, otwiera katalog i wybiera podany plik, zamiast "
+#~ "po prostu otworzyć plik"
+
+#~ msgid "Location to open"
+#~ msgstr "Adres do otwarcia"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Loading..."
+#~ msgstr "Wczytywanie..."
+
+#~ msgid "Canceled."
+#~ msgstr "Anulowane."
+
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Reloading the page will discard these changes."
+#~ msgstr ""
+#~ "Ta strona zawiera niewysłane zmiany.\n"
+#~ "Ponowne wczytanie strony anuluje te zmiany."
+
+#~ msgid "Discard Changes?"
+#~ msgstr "Porzucić zmiany?"
+
+#~ msgid "&Discard Changes"
+#~ msgstr "&Porzuć zmiany"
+
+#~ msgid "File Management"
+#~ msgstr "Zarządzanie plikami"
+
+#~ msgid "Web Browsing"
+#~ msgstr "Przeglądanie sieci"
+
+#~ msgid "Home Folder"
+#~ msgstr "Katalog domowy"
+
+#~ msgid "Home"
+#~ msgstr "Katalog domowy"
+
+#~ msgid "Navigate to your 'Home Folder'"
+#~ msgstr "Przejdź do strony domowej"
+
+#~ msgid "Navigate to your local 'Home Folder'"
+#~ msgstr "Przejdź do lokalnego katalogu domowego"
+
+#~ msgid "Home Page"
+#~ msgstr "Strona domowa"
+
+#~ msgid "Navigate to your 'Home Page'"
+#~ msgstr "Przejdź do strony domowej"
+
+#~ msgid ""
+#~ "<html>Navigate to your 'Home Page'<br /><br />You can configure the "
+#~ "location where this button takes you under <b>Settings -> Configure "
+#~ "Konqueror -> General</b>.</html>"
+#~ msgstr ""
+#~ "<html>Przejdź do strony domowej.<br/><br/>Można skonfigurować działanie "
+#~ "tego przycisku na karcie <b>Ustawienian -> Konfiguruj Konquerora -> "
+#~ "Ogólne</b>.</html>"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Detaching the tab will discard these changes."
+#~ msgstr ""
+#~ "Ta karta zawiera niewysłane zmiany.\n"
+#~ "Odłączenie karty anuluje te zmiany."
+
+#~ msgid ""
+#~ "This view contains changes that have not been submitted.\n"
+#~ "Closing the view will discard these changes."
+#~ msgstr ""
+#~ "Ten widok zawiera niewysłane zmiany.\n"
+#~ "Zamknięcie widoku anuluje te zmiany."
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the tab will discard these changes."
+#~ msgstr ""
+#~ "Ta karta zawiera niewysłane zmiany.\n"
+#~ "Zamknięcie karty anuluje te zmiany."
+
+#~ msgid "Do you really want to close all other tabs?"
+#~ msgstr "Na pewno zamknąć wszystkie pozostałe karty?"
+
+#~ msgid "Close Other Tabs Confirmation"
+#~ msgstr "Potwierdzenie zamknięcia kart"
+
+#~ msgid "Close &Other Tabs"
+#~ msgstr "Zamknij p&ozostałe karty"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing other tabs will discard these changes."
+#~ msgstr ""
+#~ "Ta karta zawiera niewysłane zmiany.\n"
+#~ "Zamknięcie pozostałych kart anuluje te zmiany."
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Reloading all tabs will discard these changes."
+#~ msgstr ""
+#~ "Ta karta zawiera niewysłane zmiany.\n"
+#~ "Odświeżenie wszystkich kart anuluje te zmiany."
+
+#~ msgid "Enter Target"
+#~ msgstr "Podaj cel"
+
+#~ msgid "<qt><b>%1</b> is not valid</qt>"
+#~ msgstr "<qt><b>%1</b> nie jest poprawny</qt>"
+
+#~ msgid "Copy selected files from %1 to:"
+#~ msgstr "Kopiuj wybrane pliki z %1 do:"
+
+#~ msgid "Move selected files from %1 to:"
+#~ msgstr "Przenieś wybrane pliki z %1 do:"
+
+#~ msgctxt "This menu entry empties the closed items history"
+#~ msgid "Empty Closed Items History"
+#~ msgstr "Wyczyść historię zamkniętych kart"
+
+#~ msgid "Save As..."
+#~ msgstr "Zapisz jako..."
+
+#~ msgid "Manage..."
+#~ msgstr "Zarządzaj..."
+
+#~ msgid "New &Window"
+#~ msgstr "Nowe o&kno"
+
+#~ msgid "&Duplicate Window"
+#~ msgstr "Po&wiel okno"
+
+#~ msgid "Send &Link Address..."
+#~ msgstr "Wyślij adres o&dnośnika..."
+
+#~ msgid "S&end File..."
+#~ msgstr "Wyślij p&lik..."
+
+#~ msgid "&Open Location"
+#~ msgstr "Otwórz &adres"
+
+#~ msgid "&Open File..."
+#~ msgstr "Otwórz p&lik..."
+
+#~ msgid "&Find File..."
+#~ msgstr "&Znajdź plik..."
+
+#~ msgid "&Use index.html"
+#~ msgstr "Użyj &index.html"
+
+#~ msgid "Lock to Current Location"
+#~ msgstr "Zablokuj bieżący adres"
+
+#~ msgctxt "This option links konqueror views"
+#~ msgid "Lin&k View"
+#~ msgstr " &Dołącz widok"
+
+#~ msgid "&Up"
+#~ msgstr "Do &góry"
+
+#~ msgid "Closed Items"
+#~ msgstr "Zamknięte karty"
+
+#~ msgid "Sessions"
+#~ msgstr "Sesje"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Most Often Visited"
+#~ msgstr "Najczęściej odwiedzane"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Recently Visited"
+#~ msgstr "Ostatnio odwiedzane"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History"
+#~ msgstr "Pokaż historię"
+
+#~ msgid "&Save View Profile As..."
+#~ msgstr "&Zapisz profil widoku jako..."
+
+#~ msgid "Configure Extensions..."
+#~ msgstr "Konfiguracja rozszerzeń..."
+
+#~ msgid "Configure Spell Checking..."
+#~ msgstr "Konfiguracja sprawdzania pisowni..."
+
+#~ msgid "Split View &Left/Right"
+#~ msgstr "Podziel widok w pio&nie"
+
+#~ msgid "Split View &Top/Bottom"
+#~ msgstr "Podziel widok w po&ziomie"
+
+#~ msgid "&New Tab"
+#~ msgstr "Nowa &karta"
+
+#~ msgid "&Duplicate Current Tab"
+#~ msgstr "Po&wiel bieżącą kartę"
+
+#~ msgid "Detach Current Tab"
+#~ msgstr "Odłącz bieżącą kartę"
+
+#~ msgid "&Close Active View"
+#~ msgstr "&Zamknij aktywny widok"
+
+#~ msgid "Close Current Tab"
+#~ msgstr "Zamknij bieżącą kartę"
+
+#~ msgid "Activate Next Tab"
+#~ msgstr "Uaktywnij następną kartę"
+
+#~ msgid "Activate Previous Tab"
+#~ msgstr "Uaktywnij poprzednią kartę"
+
+#~ msgid "Activate Tab %1"
+#~ msgstr "Uaktywnij kartę %1"
+
+#~ msgid "Move Tab Left"
+#~ msgstr "Przesuń kartę w lewo"
+
+#~ msgid "Move Tab Right"
+#~ msgstr "Przesuń kartę w prawo"
+
+#~ msgid "Dump Debug Info"
+#~ msgstr "Wypisz informacje do debugowania"
+
+#~ msgid "C&onfigure View Profiles..."
+#~ msgstr "&Konfiguracja profili widoków..."
+
+#~ msgid "Load &View Profile"
+#~ msgstr "&Wczytaj profil widoku"
+
+#~ msgid "&Reload"
+#~ msgstr "O&dśwież"
+
+#~ msgid "&Reload All Tabs"
+#~ msgstr "&Odśwież wszystkie karty"
+
+#~ msgid "&Force Reload"
+#~ msgstr "O&dśwież"
+
+#~ msgid "&Stop"
+#~ msgstr "&Zatrzymaj"
+
+#~ msgid "L&ocation: "
+#~ msgstr "&Adres: "
+
+#~ msgid "Location Bar"
+#~ msgstr "Pasek adresu"
+
+#~ msgid ""
+#~ "<html>Location Bar<br /><br />Enter a web address or search term.</html>"
+#~ msgstr ""
+#~ "<html>Pasek adresu<br/><br/>Wpisz adres sieciowy lub szukany termin.</"
+#~ "html>"
+
+#~ msgid "Clear Location Bar"
+#~ msgstr "Wyczyść pasek adresu"
+
+#~ msgid ""
+#~ "<html>Clear Location bar<br /><br />Clears the contents of the location "
+#~ "bar.</html>"
+#~ msgstr ""
+#~ "<html>Wyczyść pasek adresu<br/><br/>Usuwa zawartość paska adresu.</html>"
+
+#~ msgid "&Bookmarks"
+#~ msgstr "&Zakładki"
+
+#~ msgid "Kon&queror Introduction"
+#~ msgstr "Wprowadzenie do Kon&querora"
+
+#~ msgid "Go"
+#~ msgstr "Idź"
+
+#~ msgid ""
+#~ "<html>Go<br /><br />Goes to the page that has been entered into the "
+#~ "location bar.</html>"
+#~ msgstr ""
+#~ "<html>Idź<br/><br/>Przechodzi do strony, której adres został wpisany w "
+#~ "pasku adresu.</html>"
+
+#~ msgid ""
+#~ "<html>Enter the parent folder<br /><br />For instance, if the current "
+#~ "location is file:/home/%1 clicking this button will take you to file:/"
+#~ "home.</html>"
+#~ msgstr ""
+#~ "<html>Przejdź do katalogu wyżej<br/><br/>Na przykład, jeśli bieżący "
+#~ "katalog to file:/home/%1, kliknięcie tego przycisku przeniesie Cię do "
+#~ "file:/home.</html>"
+
+#~ msgid "Enter the parent folder"
+#~ msgstr "Przejdź do katalogu wyżej"
+
+#~ msgid "Move backwards one step in the browsing history"
+#~ msgstr "Przejdź jeden krok wstecz w przeglądaniu historii"
+
+#~ msgid "Move forward one step in the browsing history"
+#~ msgstr "Przejdź jeden krok w przód w przeglądaniu historii"
+
+#~ msgid "Move backwards one step in the closed tabs history"
+#~ msgstr "Przejdź jeden krok wstecz w historii zamkniętych kart"
+
+#~ msgid ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.</html>"
+#~ msgstr ""
+#~ "<html>Odśwież bieżący dokument<br/><br/>Może to być potrzebne do "
+#~ "uwzględnienia zmian, np. jeśli strona została zmodyfikowana po jej "
+#~ "wyświetleniu.</html>"
+
+#~ msgid "Reload the currently displayed document"
+#~ msgstr "Odśwież bieżący dokument"
+
+#~ msgid ""
+#~ "<html>Reload all currently displayed documents in tabs<br /><br />This "
+#~ "may, for example, be needed to refresh web pages that have been modified "
+#~ "since they were loaded, in order to make the changes visible.</html>"
+#~ msgstr ""
+#~ "<html>Odśwież wszystkie dokumenty w kartach<br/><br/>Może to być "
+#~ "potrzebne do uwzględnienia zmian, wprowadzonych już po wyświetleniu stron."
+#~ "</html>"
+
+#~ msgid "Reload all currently displayed document in tabs"
+#~ msgstr "Odśwież wszystkie dokumenty w kartach"
+
+#~ msgid ""
+#~ "<html>Stop loading the document<br /><br />All network transfers will be "
+#~ "stopped and Konqueror will display the content that has been received so "
+#~ "far.</html>"
+#~ msgstr ""
+#~ "<html>Zatrzymaj wczytywanie dokumentu<br/><br/>Wszystkie transmisje "
+#~ "sieciowe zostaną zatrzymane, a Konqueror wyświetli zawartość, pobraną do "
+#~ "tej pory.</html>"
+
+#~ msgid ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.  Any images on "
+#~ "the page are downloaded again, even if cached copies exist.</html>"
+#~ msgstr ""
+#~ "<html>Odśwież bieżący dokument<br/><br/>Może to być potrzebne do "
+#~ "uwzględnienia zmian, np. jeśli strona została zmodyfikowana po jej "
+#~ "wyświetleniu. Wszystkie obrazki na stronie zostaną wczytane ponownie, "
+#~ "nawet jeśli istnieją ich kopie w buforze.</html>"
+
+#~ msgid ""
+#~ "Force a reload of the currently displayed document and any contained "
+#~ "images"
+#~ msgstr ""
+#~ "Wymuś odświeżenie wyświetlanego dokumentu i wszystkich znajdujących się w "
+#~ "nim obrazków"
+
+#~ msgid "Stop loading the document"
+#~ msgstr "Zatrzymaj wczytywanie dokumentu"
+
+#~ msgid ""
+#~ "<html>Cut the currently selected text or item(s) and move it to the "
+#~ "system clipboard<br /><br />This makes it available to the <b>Paste</b> "
+#~ "command in Konqueror and other KDE applications.</html>"
+#~ msgstr ""
+#~ "<html>Wytnij zaznaczony tekst lub element(y) do systemowego schowka<br/"
+#~ "><br/>Wyciętą zawartość można następnie wstawić poleceniem <b>Wklej</b> w "
+#~ "Konquerorze i innych programach KDE.</html>"
+
+#~ msgid "Move the selected text or item(s) to the clipboard"
+#~ msgstr "Przenieś zaznaczony tekst/element(y) do schowka"
+
+#~ msgid ""
+#~ "<html>Copy the currently selected text or item(s) to the system "
+#~ "clipboard<br /><br />This makes it available to the <b>Paste</b> command "
+#~ "in Konqueror and other KDE applications.</html>"
+#~ msgstr ""
+#~ "<html>Skopiuj zaznaczony tekst lub element(y) do systemowego schowka<br/"
+#~ "><br/>Skopiowaną zawartość można następnie wstawić poleceniem <b>Wklej</"
+#~ "b> w Konquerorze i innych programach KDE.</html>"
+
+#~ msgid "Copy the selected text or item(s) to the clipboard"
+#~ msgstr "Skopiuj zaznaczony tekst/element(y) do schowka"
+
+#~ msgid ""
+#~ "<html>Paste the previously cut or copied clipboard contents<br /><br /"
+#~ ">This also works for text copied or cut from other KDE applications.</"
+#~ "html>"
+#~ msgstr ""
+#~ "<html>Wstaw poprzednio wyciętą lub skopiowaną zawartość schowka<br/><br/> "
+#~ "Działa także dla tekstu wyciętego lub skopiowanego w innym programie KDE."
+#~ "</html>"
+
+#~ msgid "Paste the clipboard contents"
+#~ msgstr "Wklej zawartość schowka"
+
+#~ msgid ""
+#~ "<html>Print the currently displayed document<br /><br />You will be "
+#~ "presented with a dialog where you can set various options, such as the "
+#~ "number of copies to print and which printer to use.<br /><br />This "
+#~ "dialog also provides access to special KDE printing services such as "
+#~ "creating a PDF file from the current document.</html>"
+#~ msgstr ""
+#~ "<html>Drukuj bieżący dokument<br/><br/>Pojawi się okno, w którym można "
+#~ "będzie zmienić różne ustawienia wydruku, np. liczbę kopii albo używaną "
+#~ "drukarkę.<br/><br/> Możliwe będzie także wykorzystanie specjalnych usług "
+#~ "drukowania KDE, takich jak stworzenie pliku PDF z bieżącego dokumentu.</"
+#~ "html>"
+
+#~ msgid "Print the current document"
+#~ msgstr "Drukuj bieżący dokument"
+
+#~ msgid "If present, open index.html when entering a folder."
+#~ msgstr "Otwórz plik index.html, jeżeli jest w katalogu."
+
+#~ msgid ""
+#~ "A locked view cannot change folders. Use in combination with 'link view' "
+#~ "to explore many files from one folder"
+#~ msgstr ""
+#~ "W zablokowanym widoku nie można zmieniać katalogów. Użyj tego w "
+#~ "kombinacji z 'łączeniem widoków' , by przeglądać wiele plików z jednego "
+#~ "katalogu."
+
+#~ msgid ""
+#~ "Sets the view as 'linked'. A linked view follows folder changes made in "
+#~ "other linked views."
+#~ msgstr ""
+#~ "Ustawia widok jako 'połączony'. Połączony widok uwzględnia zmianę "
+#~ "katalogu w innych połączonych widokach."
+
+#~ msgid "Copy &Files..."
+#~ msgstr "&Kopiuj pliki..."
+
+#~ msgid "M&ove Files..."
+#~ msgstr "&Przenieś pliki..."
+
+#~ msgid ""
+#~ "You have requested to open more than 20 bookmarks in tabs. This might "
+#~ "take a while. Continue?"
+#~ msgstr ""
+#~ "Wykonanie polecenia spowoduje otwarcie ponad 20 zakładek w kartach. To "
+#~ "może zająć trochę czasu. Kontyunuować?"
+
+#~ msgid "Open bookmarks folder in new tabs"
+#~ msgstr "Otwórz folder zakładek w kartach"
+
+#~ msgid "Open in T&his Window"
+#~ msgstr "Otwórz w &tym oknie"
+
+#~ msgid "Open the document in current window"
+#~ msgstr "Otwórz dokument w tym oknie"
+
+#~ msgid "Open the document in a new window"
+#~ msgstr "Otwórz dokument w nowym oknie"
+
+#~ msgid "Open in &New Tab"
+#~ msgstr "Otwórz w nowej &karcie"
+
+#~ msgid "Open the document in a new tab"
+#~ msgstr "Otwórz dokument w nowej karcie"
+
+#~ msgid "&Open With"
+#~ msgstr "Otwórz &w"
+
+#~ msgid "Open with %1"
+#~ msgstr "Otwórz w programie %1"
+
+#~ msgctxt "@action:inmenu View"
+#~ msgid "&View Mode"
+#~ msgstr "&Tryb widoku"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window, are you sure you want to quit?"
+#~ msgstr "W tym oknie otwartych jest wiele kart. Na pewno zakończyć?"
+
+#~ msgid "Confirmation"
+#~ msgstr "Potwierdzenie"
+
+#~ msgid "C&lose Current Tab"
+#~ msgstr "Zamknij &bieżącą kartę"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the window will discard these changes."
+#~ msgstr ""
+#~ "Ta karta zawiera niewysłane zmiany.\n"
+#~ "Zamknięcie okna anuluje te zmiany."
+
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Closing the window will discard these changes."
+#~ msgstr ""
+#~ "Ta strona zawiera niewysłane zmiany.\n"
+#~ "Zamknięcie okna anuluje te zmiany."
+
+#~ msgid ""
+#~ "Your sidebar is not functional or unavailable. A new entry cannot be "
+#~ "added."
+#~ msgstr ""
+#~ "Twój pasek boczny nie działa lub jest niedostępny. Nie można dodać "
+#~ "pozycji."
+
+#~ msgid "Web Sidebar"
+#~ msgstr "Sieciowy pasek boczny"
+
+#~ msgid "Add new web extension \"%1\" to your sidebar?"
+#~ msgstr "Dodać nowe rozszerzenie sieciowe \"%1\" do Twojego paska bocznego?"
+
+#~ msgid "Add"
+#~ msgstr "Dodaj"
+
+#~ msgid "Do Not Add"
+#~ msgstr "Nie dodawaj"
+
+#~ msgid ""
+#~ "There appears to be a configuration error. You have associated Konqueror "
+#~ "with %1, but it cannot handle this file type."
+#~ msgstr ""
+#~ "Najprawdopodobniej wystąpił błąd konfiguracji. Konqueror został "
+#~ "skojarzony z typem %1, którego nie umie obsłużyć."
+
+#~ msgid "Profile Management"
+#~ msgstr "Zarządzanie profilami"
+
+#~ msgid "&Rename Profile"
+#~ msgstr "&Zmień nazwę profilu"
+
+#~ msgid "&Delete Profile"
+#~ msgstr "&Usuń profil"
+
+#~ msgid "Manage Sessions"
+#~ msgstr "Zarządzanie sesjami"
+
+#~ msgid "&Open"
+#~ msgstr "&Otwórz"
+
+#~ msgid "Rename Session"
+#~ msgstr "Zmień nazwę sesji"
+
+#~ msgid "Save Session"
+#~ msgstr "Zapisz sesję"
+
+#~ msgid ""
+#~ "A session with the name '%1' already exists, do you want to overwrite it?"
+#~ msgstr "Sesja o nazwie '%1' już istnieje. Zastąpić ją?"
+
+#~ msgid "Session exists. Overwrite?"
+#~ msgstr "Sesja istnieje. Zastąpić ją?"
+
+#~ msgid ""
+#~ "Konqueror did not close correctly. Would you like to restore the previous "
+#~ "session?"
+#~ msgstr "Poprzednia sesja Konquerora została przerwana. Przywrócić ją?"
+
+#~ msgid "Restore Session?"
+#~ msgstr "Przywrócić sesję?"
+
+#~ msgid "Restore Session"
+#~ msgstr "Przywróć sesję"
+
+#~ msgid "Do Not Restore"
+#~ msgstr "Nie przywracaj"
+
+#~ msgid "Ask Me Later"
+#~ msgstr "Spytaj później"
+
+#~ msgid ""
+#~ "This bar contains the list of currently open tabs. Click on a tab to make "
+#~ "it active. You can also use keyboard shortcuts to navigate through tabs. "
+#~ "The text on the tab shows the content currently open in it; place your "
+#~ "mouse over the tab to see the full title, in case it has been shortened "
+#~ "to fit the tab width."
+#~ msgstr ""
+#~ "Ten pasek zawiera listę aktualnie otwartych kart. Kliknij na karcie, by "
+#~ "ją uaktywnić. Można także używać skrótów klawiszowych. Tekst na karcie "
+#~ "jest tytułem aktualnie wyświetlanej strony. Jeśli tytuł został obcięty, "
+#~ "pełny tytuł można zobaczyć po umieszczeniu kursora myszy nad kartą."
+
+#~ msgid "Open a new tab"
+#~ msgstr "Otwórz nową kartę"
+
+#~ msgid "Close the current tab"
+#~ msgstr "Zamknij bieżącą kartę"
+
+#~ msgid "&Duplicate Tab"
+#~ msgstr "&Powiel kartę"
+
+#~ msgid "&Reload Tab"
+#~ msgstr "&Odśwież kartę"
+
+#~ msgid "Other Tabs"
+#~ msgstr "Inne karty"
+
+#~ msgid "D&etach Tab"
+#~ msgstr "&Odłącz kartę"
+
+#~ msgid "&Close Tab"
+#~ msgstr "&Zamknij kartę"
+
+#~ msgid "Und&o: Closed Tab"
+#~ msgstr "&Cofnij: zamknięta karta"
+
+#~ msgid "Und&o: Closed Window"
+#~ msgstr "&Cofnij: zamknięte okno"
+
+#~ msgid "Und&o"
+#~ msgstr "&Cofnij"
+
+#~ msgid ""
+#~ "The page you are trying to view is the result of posted form data. If you "
+#~ "resend the data, any action the form carried out (such as search or "
+#~ "online purchase) will be repeated. "
+#~ msgstr ""
+#~ "Strona, którą próbujesz obejrzeć, jest wynikiem wysłanych danych "
+#~ "formularza. Jeśli wyślesz dane ponownie, wszystkie działania, będące "
+#~ "skutkiem wysłania formularza (np. wysłanie zamówienia lub rozpoczęcie "
+#~ "wyszukiwania), zostaną powtórzone."
+
+#~ msgid "Warning"
+#~ msgstr "Ostrzeżenie"
+
+#~ msgid "Resend"
+#~ msgstr "Wyślij ponownie"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window.\n"
+#~ "Loading a view profile will close them."
+#~ msgstr ""
+#~ "W tym oknie otwartych jest wiele kart.\n"
+#~ "Wczytanie profilu spowoduje ich zamknięcie."
+
+#~ msgid "Load View Profile"
+#~ msgstr "Wczytaj profil widoku"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Loading a profile will discard these changes."
+#~ msgstr ""
+#~ "Ta karta zawiera niewysłane zmiany.\n"
+#~ "Wczytanie profilu anuluje te zmiany."
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "History Sidebar Module"
+#~ msgstr "Moduł paska bocznego z historią"
+
+#~ msgctxt "@title:tab"
+#~ msgid "History"
+#~ msgstr "Historia"
+
+#~ msgid " day"
+#~ msgid_plural " days"
+#~ msgstr[0] " dzień"
+#~ msgstr[1] " dni"
+#~ msgstr[2] " dni"
+
+#~ msgid "Minute"
+#~ msgid_plural "Minutes"
+#~ msgstr[0] "Minuta"
+#~ msgstr[1] "Minuty"
+#~ msgstr[2] "Minut"
+
+#~ msgid "Day"
+#~ msgid_plural "Days"
+#~ msgstr[0] "Dzień"
+#~ msgstr[1] "Dni"
+#~ msgstr[2] "Dni"
+
+#~ msgid "<h1>History Sidebar</h1> You can configure the history sidebar here."
+#~ msgstr ""
+#~ "<h1>Pasek boczny historii</h1>Tu można skonfigurować boczny pasek "
+#~ "historii."
+
+#, fuzzy
+#~| msgctxt "@action:inmenu Add"
+#~| msgid "Web Sidebar Module"
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Places Sidebar Module"
+#~ msgstr "Moduł sieciowego paska bocznego"
+
+#~ msgid "Extended Sidebar"
+#~ msgstr "Rozbudowany pasek boczny"
+
+#~ msgid "Rollback to System Default"
+#~ msgstr "Przywróć domyślne ustawienia systemowe"
+
+#~ msgid "Configure Sidebar"
+#~ msgstr "Konfiguracja paska bocznego"
+
+#~ msgid "Add New"
+#~ msgstr "Dodaj nowy"
+
+#~ msgid "Multiple Views"
+#~ msgstr "Wiele widoków"
+
+#~ msgid "Show Tabs Left"
+#~ msgstr "Pokaż karty po lewej stronie"
+
+#~ msgid "Show Configuration Button"
+#~ msgstr "Pokaż przycisk konfiguracji"
+
+#~ msgid "Close Sidebar"
+#~ msgstr "Zamknij pasek boczny"
+
+#~ msgid "This entry already exists."
+#~ msgstr "Ta pozycja już istnieje."
+
+#~ msgid ""
+#~ "<qt>This removes all your entries from the sidebar and adds the system "
+#~ "default ones.<br /><b>This procedure is irreversible</b><br />Do you want "
+#~ "to proceed?</qt>"
+#~ msgstr ""
+#~ "<qt>To usunie wszystkie Twoje pozycje w pasku bocznym i doda tam domyślne."
+#~ "<br/><b>Operacji tej nie będzie można cofnąć.</b> <br/>Kontynuować?</qt>"
+
+#~ msgid "Show Tabs Right"
+#~ msgstr "Pokaż karty po prawej"
+
+#~ msgid "Set Name"
+#~ msgstr "Ustaw nazwę"
+
+#~ msgid "Enter the name:"
+#~ msgstr "Nazwa:"
+
+#~ msgid "Enter a URL:"
+#~ msgstr "Wpisz adres:"
+
+#~ msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
+#~ msgstr "<qt>Na pewno usunąć kartę <b>\"%1\"</b>?</qt>"
+
+#, fuzzy
+#~| msgid ""
+#~| "You have hidden the navigation panel configuration button. To make it "
+#~| "visible again, click the right mouse button on any of the navigation "
+#~| "panel buttons and select \"Show Configuration Button\"."
+#~ msgid ""
+#~ "You have hidden the sidebar configuration button. To make it visible "
+#~ "again, click the right mouse button on any of the sidebar buttons and "
+#~ "select \"Show Configuration Button\"."
+#~ msgstr ""
+#~ "Przycisk konfiguracji panelu nawigacji został ukryty. By go pokazać, "
+#~ "kliknij prawym przyciskiem myszy na którymś przycisku panelu nawigacji i "
+#~ "wybierz \"Pokaż przycisk konfiguracji\"."
+
+#~ msgid "Set Name..."
+#~ msgstr "Ustaw nazwę..."
+
+#~ msgid "Set URL..."
+#~ msgstr "Ustaw adres..."
+
+#~ msgid "Set Icon..."
+#~ msgstr "Ustaw ikonę..."
+
+#~ msgid "Remove"
+#~ msgstr "Usuń"
+
+#~ msgid "Web module"
+#~ msgstr "Moduł sieciowy"
+
+#~ msgid "&Create New Folder"
+#~ msgstr "Utwórz nowy &katalog"
+
+#~ msgid "Delete Folder"
+#~ msgstr "Usuń katalog"
+
+#~ msgid "Delete Bookmark"
+#~ msgstr "Usuń zakładkę"
+
+#~ msgid "Properties"
+#~ msgstr "Właściwości"
+
+#~ msgid "Open in New Window"
+#~ msgstr "Otwórz w nowym oknie"
+
+#~ msgid "Open Folder in Tabs"
+#~ msgstr "Otwórz katalog w kartach"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "Skopiuj adres odnośnika"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark folder\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "Na pewno usunąć folder zakładek\n"
+#~ "\"%1\"?"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "Na pewno usunąć zakładkę\n"
+#~ "\"%1\"?"
+
+#~ msgid "Bookmark Folder Deletion"
+#~ msgstr "Usunięcie foldera zakładek"
+
+#~ msgid "Bookmark Deletion"
+#~ msgstr "Usunięcie zakładki"
+
+#~ msgid "Bookmark Properties"
+#~ msgstr "Właściwości zakładki"
+
+#~ msgid "&Update"
+#~ msgstr "&Uaktualnij"
+
+#~ msgid "Name:"
+#~ msgstr "Nazwa:"
+
+#~ msgid "Location:"
+#~ msgstr "Adres:"
+
+#~ msgid "Add Bookmark"
+#~ msgstr "Dodaj zakładkę"
+
+#~ msgid "Cannot find parent item %1 in the tree. Internal error."
+#~ msgstr ""
+#~ "Nie można znaleźć nadrzędnego elementu %1 w drzewie. Błąd wewnętrzny."
+
+#~ msgid "&Create New Folder..."
+#~ msgstr "Nowy &katalog..."
+
+#~ msgid "Move to Trash"
+#~ msgstr "Przenieś do kosza"
+
+#~ msgid "Rename"
+#~ msgstr "Zmień nazwę"
+
+#~ msgid "Delete Link"
+#~ msgstr "Usuń odnośnik"
+
+#~ msgid "New Folder"
+#~ msgstr "Nowy katalog"
+
+#~ msgid "Create New Folder"
+#~ msgstr "Utwórz nowy katalog"
+
+#~ msgid "Enter folder name:"
+#~ msgstr "Nazwa katalogu:"
+
+#~ msgctxt "@label"
+#~ msgid "Name:"
+#~ msgstr "Nazwa:"
+
+#~ msgctxt "@label"
+#~ msgid "Path or URL:"
+#~ msgstr "Ścieżka lub URL:"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add folder sidebar module"
+#~ msgstr "Dodaj moduł paska bocznego"
+
+#~ msgid "&Open Link"
+#~ msgstr "Otwórz o&dnośnik"
+
+#~ msgid "Set &Automatic Reload"
+#~ msgstr "Włącz &automatyczne odświeżanie"
+
+#~ msgid "Set Refresh Timeout (0 disables)"
+#~ msgstr "Ustaw czas odświeżania (0 wyłącza)"
+
+#~ msgid " min"
+#~ msgstr " min."
+
+#~ msgid " sec"
+#~ msgstr " sek."
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Web Sidebar Module"
+#~ msgstr "Moduł sieciowego paska bocznego"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add web sidebar module"
+#~ msgstr "Dodaj moduł sieciowego paska bocznego"
+
+#~ msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
+#~ msgid "Be free."
+#~ msgstr "Bądź wolny."
+
+#~ msgid ""
+#~ "Konqueror is a web browser, file manager and universal document viewer."
+#~ msgstr ""
+#~ "Konqueror to przeglądarka WWW, menedżer plików, i uniwersalna "
+#~ "przeglądarka dokumentów."
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "Starting Points"
+#~ msgstr "Punkty startowe"
+
+#~ msgid "Introduction"
+#~ msgstr "Wprowadzenie"
+
+#~ msgid "Tips"
+#~ msgstr "Podpowiedzi"
+
+#~ msgid "Specifications"
+#~ msgstr "Specyfikacja"
+
+#~ msgid "Your personal files"
+#~ msgstr "Twoje osobiste pliki"
+
+#~ msgid "Trash"
+#~ msgstr "Kosz"
+
+#~ msgid "Browse and restore the trash"
+#~ msgstr "Przeglądanie i przywracanie zawartości kosza"
+
+#~ msgid "Network Folders"
+#~ msgstr "Katalogi sieciowe"
+
+#~ msgid "Shared files and folders"
+#~ msgstr "Współdzielone pliki i katalogi"
+
+#, fuzzy
+#~| msgid "&Bookmarks"
+#~ msgid "Bookmarks"
+#~ msgstr "&Zakładki"
+
+#~ msgid "Quick access to your bookmarks"
+#~ msgstr "Szybki dostęp do zakładek"
+
+#~ msgid "Next: An Introduction to Konqueror"
+#~ msgstr "Dalej: Wprowadzenie do Konquerora"
+
+#~ msgid "Search the Web"
+#~ msgstr "Przeszukaj sieć"
+
+#~ msgid ""
+#~ "Konqueror makes working with and managing your files easy. You can browse "
+#~ "both local and networked folders while enjoying advanced features such as "
+#~ "the powerful sidebar and file previews."
+#~ msgstr ""
+#~ "Konqueror ułatwia zarządzanie plikami. Można przeglądać zarówno katalogi "
+#~ "lokalne, jak i sieciowe, korzystając przy tym z zaawansowanych funkcji, "
+#~ "takich jak paski boczne i podglądy plików."
+
+#~ msgid ""
+#~ "Konqueror is also a full featured and easy to use web browser which you "
+#~ "can use to explore the Internet. Enter the address (e.g. <a href=\"http://"
+#~ "www.kde.org\">http://www.kde.org</a>) of a web page you would like to "
+#~ "visit in the location bar and press Enter, or choose an entry from the "
+#~ "Bookmarks menu."
+#~ msgstr ""
+#~ "Konqueror jest w pełni funkcjonalną przeglądarką WWW, której można użyć "
+#~ "do przeglądania sieci. Wpisz adres strony (np. <a href=\"http://www.kde."
+#~ "org\">http://www.kde.org</a>), którą chcesz odwiedzić i naciśnij Enter. "
+#~ "Możesz też wybrać jedną z pozycji w menu Zakładki."
+
+#~ msgid ""
+#~ "To return to the previous location, press the back button <img width='16' "
+#~ "height='16' src=\"%1\"></img> in the toolbar. "
+#~ msgstr ""
+#~ "Aby powrócić do poprzedniej strony, kliknij przycisk <img width='16' "
+#~ "height='16' src=\"%1\"></img> na pasku narzędzi. "
+
+#~ msgid ""
+#~ "To quickly go to your Home folder press the  home button <img width='16' "
+#~ "height='16' src=\"%1\"></img>."
+#~ msgstr ""
+#~ "Aby szybko przejść do katalogu domowego, kliknij przycisk <img width='16' "
+#~ "height='16' src=\"%1\"></img>."
+
+#~ msgid ""
+#~ "For more detailed documentation on Konqueror click <a href=\"%1\">here</"
+#~ "a>."
+#~ msgstr ""
+#~ "Szczegółowa dokumentacja Konquerora jest dostępna <a href=\"%1\">tutaj</"
+#~ "a>."
+
+#~ msgid ""
+#~ "<em>Tuning Tip:</em> If you want the Konqueror web browser to start "
+#~ "faster, you can turn off this information screen by clicking <a href="
+#~ "\"%1\">here</a>. You can re-enable it by choosing the Help -> Konqueror "
+#~ "Introduction menu option, and then pressing Settings -> Save View Profile "
+#~ "As... -> \"Web Browsing\"."
+#~ msgstr ""
+#~ "<em>Dostrajanie:</em> Jeżeli chcesz przyspieszyć uruchamianie Konquerora, "
+#~ "możesz wyłączyć tę informację, klikając <a href=\"%1\">tutaj</a>. By ją "
+#~ "przywrócić, wybierz z menu Pomoc ->Wprowadzenie do Konquerora, następnie "
+#~ "Ustawienia -> Zapisz profil widoku jako...->\"Przeglądanie sieci\"."
+
+#~ msgid "Next: Tips &amp; Tricks"
+#~ msgstr "Dalej: podpowiedzi"
+
+#~ msgid ""
+#~ "Konqueror is designed to embrace and support Internet standards. The aim "
+#~ "is to fully implement the officially sanctioned standards from "
+#~ "organizations such as the W3 and OASIS, while also adding extra support "
+#~ "for other common usability features that arise as de facto standards "
+#~ "across the Internet. Along with this support, for such functions as "
+#~ "favicons, Web Shortcuts, and <A HREF=\"%1\">XBEL bookmarks</A>, Konqueror "
+#~ "also implements:"
+#~ msgstr ""
+#~ "Konqueror wspiera wiele standardów Internetowych. Celem jest pełna "
+#~ "implementacja oficjalnego standardu takich organizacji jak W3 i OASIS, "
+#~ "jak również dodawanie innych cech poprawiających użyteczność, "
+#~ "powstających jako nieformalne standardy w Internecie. Są to między innymi "
+#~ "takie funkcje jak favicons, skróty sieciowe oraz <A HREF=\"%1\">zakładki "
+#~ "XBEL</A>, Konqueror obsługuje także:"
+
+#~ msgid "Supported standards"
+#~ msgstr "Wspierane standardy"
+
+#~ msgid "Additional requirements*"
+#~ msgstr "Dodatkowe wymagania*"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">DOM</A> (Level 1, częściowo Level 2) oparty na <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+
+#~ msgid "built-in"
+#~ msgstr "wbudowany"
+
+#~ msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
+#~ msgstr "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, częściowo CSS 2)"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
+#~ msgstr "<A HREF=\"%1\">ECMA-262</A> Edition 3 (mniej więcej Javascript 1.5)"
+
+#~ msgid ""
+#~ "JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
+#~ msgstr ""
+#~ "JavaScript wyłączony (globalnie). Włącz JavaScript <A HREF=\"%1\">tutaj</"
+#~ "A>."
+
+#~ msgid ""
+#~ "JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\"
+#~ "\">here</A>."
+#~ msgstr ""
+#~ "JavaScript włączony (globalnie). Skonfiguruj Javascript <A HREF=\\\"%1\\"
+#~ "\">tutaj</A>."
+
+#~ msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
+#~ msgstr "Bezpieczna <A HREF=\"%1\">Java</A><SUP>&reg;</SUP>."
+
+#, fuzzy
+#~| msgid ""
+#~| "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">Blackdown</A>, <A HREF="
+#~| "\"%2\">IBM</A> or <A HREF=\"%3\">Sun</A>)"
+#~ msgid ""
+#~ "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">IBM</A> or <A HREF="
+#~ "\"%2\">Sun/Oracle</A>)"
+#~ msgstr ""
+#~ "JDK 1.2.0 (Java 2) kompatybilna z VM (<A HREF=\"%1\">Blackdown</A>, <A "
+#~ "HREF=\"%2\">IBM</A> lub <A HREF=\"%3\">Sun</A>)"
+
+#~ msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
+#~ msgstr "Włącz Javę (globalnie) <A HREF=\"%1\">tutaj</A>."
+
+#~ msgid ""
+#~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">plugins</A> (for "
+#~ "viewing <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
+#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Video, etc.)"
+#~ msgstr ""
+#~ "<A HREF=\"%4\">Wtyczki</A> Netscape Communicatora<SUP>&reg;</SUP> (do "
+#~ "odtwarzania plików <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
+#~ "\"%2\">Real</A>Audio<SUP>&reg;</SUP>, <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Video, itd.)"
+
+#~ msgid "Secure Sockets Layer"
+#~ msgstr "Secure Sockets Layer (SSL)"
+
+#~ msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
+#~ msgstr "(TLS/SSL v2/3) dla bezpiecznych połączeń do 168bit"
+
+#~ msgid "OpenSSL"
+#~ msgstr "OpenSSL"
+
+#~ msgid "Bidirectional 16bit unicode support"
+#~ msgstr "Obsługa dwukierunkowego, 16-bitowego Unicode"
+
+#~ msgid "AutoCompletion for forms"
+#~ msgstr "Autouzupełnianie formularzy"
+
+#~ msgctxt "Title of an html 'group box' explaining konqueror features"
+#~ msgid "General"
+#~ msgstr "Ogólne"
+
+#~ msgid "Feature"
+#~ msgstr "Funkcja"
+
+#~ msgid "Details"
+#~ msgstr "Szczegóły"
+
+#~ msgid "Image formats"
+#~ msgstr "Formaty graficzne"
+
+#, fuzzy
+#~| msgid "PNG<br />MNG<br />JPG<br />GIF"
+#~ msgid "PNG<br />JPG<br />GIF"
+#~ msgstr "PNG<br />MNG<br />JPG<br />GIF"
+
+#~ msgid "Transfer protocols"
+#~ msgstr "Protokoły transportowe"
+
+#~ msgid "HTTP 1.1 (including gzip/bzip2 compression)"
+#~ msgstr "HTTP 1.1 (z kompresją gzip/bzip2)"
+
+#~ msgid "FTP"
+#~ msgstr "FTP"
+
+#, fuzzy
+#~| msgid "and <A HREF=\"%1\">many more...</A>"
+#~ msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpcenter)...</A>"
+#~ msgstr "i <A HREF=\"%1\">wiele innych...</A>"
+
+#~ msgctxt "A feature of Konqueror"
+#~ msgid "URL-Completion"
+#~ msgstr "Dopełnianie adresów URL"
+
+#~ msgid "Manual"
+#~ msgstr "Ręczne"
+
+#~ msgid "Popup"
+#~ msgstr "Wybór"
+
+#~ msgid "(Short-) Automatic"
+#~ msgstr "(Pół)automatyczne"
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "<a href=\"%1\">Return to Starting Points</a>"
+#~ msgstr "<a href=\"%1\">Powrót do punktów startowych</a>"
+
+#~ msgid "Tips &amp; Tricks"
+#~ msgstr "Podpowiedzi"
+
+#~ msgid ""
+#~ "Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, "
+#~ "using Google, for the search phrase \"KDE\". There are a lot of Web-"
+#~ "Shortcuts predefined to make searching for software or looking up certain "
+#~ "words in an encyclopedia a breeze. You can even <a href=\"%1\">create "
+#~ "your own</a> Web-Shortcuts."
+#~ msgstr ""
+#~ "Używaj skrótów sieciowych: wpisując \"gg:Polskie KDE\", możesz użyć "
+#~ "Google do znalezienia w Internecie wyrażenia \"Polskie KDE\". "
+#~ "Zdefiniowano wiele skrótów internetowych, umożliwiających wyszukiwanie "
+#~ "oprogramowania lub słów w encyklopedii. Można nawet <a href="
+#~ "\"%1\">tworzyć własne</a> skróty internetowe."
+
+#, fuzzy
+#~| msgid ""
+#~| "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> "
+#~| "in the toolbar to increase the font size on your web page."
+#~ msgid ""
+#~ "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
+#~ "the HTML toolbar to increase the font size on your web page."
+#~ msgstr ""
+#~ "Użyj przycisku lupy <img width='16' height='16' src=\"%1\"></img> do "
+#~ "powiększenia rozmiaru czcionek na stronie WWW."
+
+#~ msgid ""
+#~ "When you want to paste a new address into the Location toolbar you might "
+#~ "want to clear the current entry by pressing the black arrow with the "
+#~ "white cross <img width='16' height='16' src=\"%1\"></img> in the toolbar."
+#~ msgstr ""
+#~ "Jeśli będziesz chciał wkleić nowy adres w pasku adresu, możesz usunąć "
+#~ "bieżący wpis przez naciśnięcie białego krzyżyka <img width='16' "
+#~ "height='16' src=\"%1\"></img> na pasku adresu."
+
+#, fuzzy
+#~| msgid ""
+#~| "To create a link on your desktop pointing to the current page, simply "
+#~| "drag the \"Location\" label that is to the left of the Location toolbar, "
+#~| "drop it on to the desktop, and choose \"Link\"."
+#~ msgid ""
+#~ "To create a link on your desktop pointing to the current page, simply "
+#~ "drag the icon (favicon) that is to the left of the Location toolbar, drop "
+#~ "it on to the desktop, and choose \"Icon\"."
+#~ msgstr ""
+#~ "Aby utworzyć na pulpicie odnośnik do aktualnej strony, po prostu "
+#~ "przeciągnij etykietę \"Adres\" po lewej stronie paska adresu, upuść ją na "
+#~ "pulpit i wybierz \"Dowiąż tutaj\"."
+
+#~ msgid ""
+#~ "You can also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen "
+#~ "Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
+#~ "sessions."
+#~ msgstr ""
+#~ "W menu Ustawienia znajduje się pozycja <img width='16' height='16' src="
+#~ "\"%1\" /> \"Tryb pełnoekranowy\". Jest to bardzo przydatne dla sesji "
+#~ "\"Talk\"."
+
+#~ msgid ""
+#~ "Divide et impera (lat. \"Divide and conquer\") - by splitting a window "
+#~ "into two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> "
+#~ "Split View Left/Right) you can make Konqueror appear the way you like. "
+#~ "You can even load some example view-profiles (e.g. Midnight Commander), "
+#~ "or create your own ones."
+#~ msgstr ""
+#~ "Dziel i rządź (łac. \"Divide et impera\") - poprzez podzielenie okna na "
+#~ "dwie części (np. Okno -> <img width='16' height='16' src=\"%1\" /> "
+#~ "Podziel widok w pionie) możesz dostosować wygląd Konquerora do własnych "
+#~ "potrzeb. Możesz również wybrać z kilku przykładowych profilów widoku (np. "
+#~ "Midnight Commander) lub utworzyć własne."
+
+#~ msgid ""
+#~ "Use the <a href=\"%1\">user-agent</a> feature if the website you are "
+#~ "visiting asks you to use a different browser (and do not forget to send a "
+#~ "complaint to the webmaster!)"
+#~ msgstr ""
+#~ "Użyj funkcji <A HREF=\"%1\">user-agent</A>, jeżeli strona, którą "
+#~ "odwiedzasz, zmusza Cię do wyboru innej przeglądarki (i nie zapomnij "
+#~ "wysłać skargi do webmastera!)"
+
+#, fuzzy
+#~| msgid ""
+#~| "The <img width='16' height='16' src=\"%1\"></img> History in your "
+#~| "SideBar ensures that you can keep track of the pages you have visited "
+#~| "recently."
+#~ msgid ""
+#~ "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
+#~ "ensures that you can keep track of the pages you have visited recently."
+#~ msgstr ""
+#~ "W <img width='16' height='16' src=\"%1\"></img> historii na pasku bocznym "
+#~ "znajduje się lista ostatnio odwiedzonych stron."
+
+#~ msgid ""
+#~ "Use a caching <a href=\"%1\">proxy</a> to speed up your Internet "
+#~ "connection."
+#~ msgstr ""
+#~ "Użyj <A HREF=\"%1\">pośrednika</A>, by przyspieszyć połączenie z "
+#~ "Internetem."
+
+#~ msgid ""
+#~ "Advanced users will appreciate the Konsole which you can embed into "
+#~ "Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
+#~ "Terminal Emulator)."
+#~ msgstr ""
+#~ "Zaawansowani użytkownicy na pewno docenią konsolę, wbudowaną w Konquerora "
+#~ "(Okno -> <img width='16' height='16' src=\"%1\"></img> Pokaż emulator "
+#~ "terminala)."
+
+#~ msgid "Next: Specifications"
+#~ msgstr "Dalej: specyfikacja"
+
+#~ msgid "Installed Plugins"
+#~ msgstr "Zainstalowane wtyczki"
+
+#~ msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
+#~ msgstr "<td>Wtyczka</td><td>Opis</td><td>Plik</td><td>Typy</td>"
+
+#~ msgid "Installed"
+#~ msgstr "Zainstalowana"
+
+#~ msgid ""
+#~ "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
+#~ msgstr "<td>Typ MIME</td><td>Opis</td><td>Rozszerzenia</td><td>Wtyczka</td>"
+
+#~ msgid ""
+#~ "Do you want to disable showing the introduction in the webbrowsing "
+#~ "profile?"
+#~ msgstr "Wyłączyć pokazywanie Wprowadzenia w profilu Przeglądarki WWW?"
+
+#~ msgid "Faster Startup?"
+#~ msgstr "Szybsze uruchamianie?"
+
+#~ msgid "Disable"
+#~ msgstr "Wyłącz"
+
+#~ msgid "Keep"
+#~ msgstr "Zachowaj"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Michał Rudolf (aktualny tłumacz), Norbert Popiołek"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "mrudolf@kdewebdev.org, norbert@kde.com.pl"
+
+#~ msgid "&File"
+#~ msgstr "&Plik"
+
+#~ msgid "&Edit"
+#~ msgstr "&Edycja"
+
+#~ msgid "&View"
+#~ msgstr "&Widok"
+
+#~ msgid "&Go"
+#~ msgstr "&Idź"
+
+#~ msgid "&Settings"
+#~ msgstr "&Ustawienia"
+
+#~ msgid "&Window"
+#~ msgstr "&Okno"
+
+#~ msgid "&Help"
+#~ msgstr "Pomo&c"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Główny pasek narzędzi"
+
+#~ msgid "Extra Toolbar"
+#~ msgstr "Dodatkowy pasek"
+
+#~ msgid "Location Toolbar"
+#~ msgstr "Pasek adresu"
+
+#~ msgid "Bookmark Toolbar"
+#~ msgstr "Pasek zakładek"
+
+#~ msgid "Save open tabs and windows for easy retrieval"
+#~ msgstr "Zapisz otwarte karty i okna"
+
+#~ msgid "&Session name:"
+#~ msgstr "&Nazwa sesji:"
+
+#~ msgid "&Profile name:"
+#~ msgstr "&Nazwa profilu:"
+
+#~ msgid "Save &URLs in profile"
+#~ msgstr "Zapisz &adresy w profilu"
+
+#~ msgctxt "@action:button New session"
+#~ msgid "New..."
+#~ msgstr "Nowy..."
+
+#~ msgctxt "@action:button Save current session"
+#~ msgid "Save Current"
+#~ msgstr "Zapisz aktualną"
+
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename..."
+#~ msgstr "Zmień nazwę..."
+
+#~ msgctxt "@action:button Delete session"
+#~ msgid "Delete"
+#~ msgstr "Usuń"
+
+#~ msgid "Open tabs inside current window"
+#~ msgstr "Otwieraj karty w aktualnym oknie"
+
+#~ msgid "Limits"
+#~ msgstr "Ograniczenia"
+
+#~ msgid "URLs e&xpire after"
+#~ msgstr "Adresy wy&gasają po"
+
+#~ msgid "Maximum &number of URLs:"
+#~ msgstr "&Maksymalna liczba adresów:"
+
+#~ msgid "Custom Fonts For"
+#~ msgstr "Własne czcionki dla"
+
+#~ msgid "URLs newer than"
+#~ msgstr "Adresy nowsze niż"
+
+#~ msgid "Choose Font..."
+#~ msgstr "Wybierz czcionkę..."
+
+#~ msgid "URLs older than"
+#~ msgstr "Adresy starsze niż"
+
+#~ msgid ""
+#~ "Shows the number of times visited and the dates of the first and last "
+#~ "visits, in addition to the URL"
+#~ msgstr ""
+#~ "Pokazuje oprócz adresu URL także liczbę odwiedzin oraz datę pierwszej i "
+#~ "ostatniej wizyty"
+
+#~ msgid "Detailed tooltips"
+#~ msgstr "Szczegółowe podpowiedzi"
+
+#~ msgid "Clear History"
+#~ msgstr "Wyczyść historię"
+
+#~ msgid ""
+#~ "This is the URL of the web page where Konqueror (as web browser) will "
+#~ "jump to when the \\\"Home\\\" button is pressed. When Konqueror is "
+#~ "started as a file manager, that button makes it jump to your local home "
+#~ "folder instead."
+#~ msgstr ""
+#~ "To jest adres strony, do której Konqueror (jako przeglądarka WWW) "
+#~ "przeniesie się po wciśnięciu przycisku \"Strona domowa\". Kiedy konqueror "
+#~ "jest uruchomiony jako menedżer plików, przycisk ten przenosi do katalogu "
+#~ "domowego."
+
+#~ msgid "Maximum number of Closed Items"
+#~ msgstr "Maksymalna liczba zamkniętych stron"
+
+#~ msgid ""
+#~ "This sets the maximum number of closed items that will be stored in "
+#~ "memory. This limit will not be surpassed."
+#~ msgstr "Maksymalna liczba zamkniętych stron przechowywanych w pamięci."
+
+#~ msgid "Open folders in separate windows"
+#~ msgstr "Otwieraj foldery w osobnych oknach"
+
+#~ msgid ""
+#~ "If this option is checked, Konqueror will open a new window when you open "
+#~ "a folder, rather than showing that folder's contents in the current "
+#~ "window."
+#~ msgstr ""
+#~ "Jeśli ta opcja jest włączona, Konqueror będzie otwierał foldery w "
+#~ "osobnych oknach, a nie wyświetlał zawartość foldera w bieżących oknie."
+
+#~ msgid "Show file tips"
+#~ msgstr "Pokaż podpowiedzi plików"
+
+#~ msgid ""
+#~ "Here you can control if, when moving the mouse over a file, you want to "
+#~ "see a small popup window with additional information about that file"
+#~ msgstr ""
+#~ "Jeśli włączysz tę opcję, po przytrzymaniu kursora myszy nad plikiem "
+#~ "zobaczysz niewielkie okno z dodatkowymi informacjami o pliku."
+
+#~ msgid "Show previews in file tips"
+#~ msgstr "Pokaż podglądy w podpowiedziach"
+
+#~ msgid ""
+#~ "Here you can control if you want the popup window to contain a larger "
+#~ "preview for the file, when moving the mouse over it"
+#~ msgstr ""
+#~ "Jeśli ta opcja jest włączona, okienko podpowiedzi będzie zawierało "
+#~ "większy podgląd zawartości pliku."
+
+#~ msgid "Show 'Delete' menu entries which bypass the trashcan"
+#~ msgstr "Pokaż pozycję menu 'Usuń', pomijającą kosz"
+
+#, fuzzy
+#~| msgid ""
+#~| "Uncheck this if you do not want 'Delete' menu commands to be displayed "
+#~| "on the desktop and in the file manager's menus and context menus. You "
+#~| "can still delete files when hidden by holding the Shift key while "
+#~| "calling 'Move to Trash'."
+#~ msgid ""
+#~ "Check this if you want 'Delete' menu commands to be displayed on the "
+#~ "desktop and in the file manager's menus and context menus. You can always "
+#~ "delete files when hidden by holding the Shift key while calling 'Move to "
+#~ "Trash'."
+#~ msgstr ""
+#~ "Jeśli ta opcja jest wyłączona, w menu pulpitu, menedżera plików i w menu "
+#~ "kontekstowych nie będzie wyświetlane polecenie 'Usuń'. Nadal można będzie "
+#~ "usunąć pliki, wciskając Shift i wybierając 'Przenieś do kosza'."
+
+#~ msgid "Number of Open With items in the File menu"
+#~ msgstr "Liczba pozycji 'Otwórz za pomocą' w menu Plik"
+
+#~ msgid "Standard font"
+#~ msgstr "Czcionka standardowa"
+
+#~ msgid "This is the font used to display text in Konqueror windows."
+#~ msgstr "To jest czcionka używana do pokazywania tekstu w oknach Konquerora."
+
+#~ msgid "Maximum number of history items per view"
+#~ msgstr "Maksymalna liczba elementów historii w pojedynczym widoku"
+
+#~ msgid "Ask confirmation for deleting a file."
+#~ msgstr "Potwierdź usunięcie pliku."
+
+#~ msgid ""
+#~ "This option tells Konqueror whether to ask for a confirmation when you "
+#~ "delete a file without using the trash folder. Warning, deleted files can "
+#~ "not be recovered, so it is recommended to leave this confirmation enabled."
+#~ msgstr ""
+#~ "Jeśli ta opcja jest włączona, Konqueror będzie wymagał potwierdzenia przy "
+#~ "usuwaniu plików pomijającym kosz. Uwaga: usuniętych w ten sposób plików "
+#~ "nie można odzyskać, dlatego zalecane jest pozostawienie tej opcji "
+#~ "włączonej."
+
+#~ msgid "Ask confirmation for move to trash"
+#~ msgstr "Potwierdź przeniesienie do kosza"
+
+#~ msgid ""
+#~ "This option tells Konqueror whether to ask for a confirmation when you "
+#~ "move the file to your trash folder, from where it can be recovered very "
+#~ "easily."
+#~ msgstr ""
+#~ "Ta opcja określa, czy Konqueror ma prosić o potwierdzenie przeniesienia "
+#~ "pliku do kosza. Odzyskanie pliku z kosza jest bardzo łatwe."
+
+#~ msgid ""
+#~ "If true, when opening a session from within the sessions dialog the tabs "
+#~ "will be opened inside current window."
+#~ msgstr ""
+#~ "Jeśli ta opcja jest włączona, sesje otwierane z okienka sesji będą "
+#~ "wyświetlane wewnątrz aktualnego okna."
+
+#~ msgid ""
+#~ "Malformed URL\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Błędny URL\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Protocol not supported\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Niewspierany protokół\n"
+#~ "%1"
+
+#~ msgid "Cannot create the find part, check your installation."
+#~ msgstr "Nie można utworzyć modułu wyszukiwania, sprawdź swoją instalację."
+
+#~ msgid "Bookmark This Location"
+#~ msgstr "Dodaj zakładkę do tego adresu"
+
+#~ msgid "Hide %1"
+#~ msgstr "Ukryj %1"
+
+#~ msgid "SideBar Test Plugin"
+#~ msgstr "Wtyczka testowa paska bocznego"
+
+#~ msgid "My Bookmarks"
+#~ msgstr "Moje zakładki"
+
+#~ msgid "Preload for later use"
+#~ msgstr "Wczytaj do późniejszego użycia"
+
+#~ msgid "&Save View Profile \"%1\"..."
+#~ msgstr "&Zapisz profil widoku \"%1\"..."
+
+#~ msgid "Configure Navigation Panel"
+#~ msgstr "Konfiguracja panelu nawigacji"
+
+#~ msgid "Close Navigation Panel"
+#~ msgstr "Zamknij panel nawigacyjny"
+
+#~ msgid "Select Type"
+#~ msgstr "Wybierz typ"
+
+#~ msgid "Select type:"
+#~ msgstr "Wybierz typ:"
+
+#~ msgid "Minutes"
+#~ msgstr "minuty"
+
+#~ msgid "Days"
+#~ msgstr "dni"
+
+#~ msgid "<qt><b>%1</b> does not exist</qt>"
+#~ msgstr "<qt><b>%1</b> nie istnieje</qt>"

@@ -1,0 +1,166 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Dutch "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="bookmarks" lang="&language;">
+<articleinfo>
+
+<title
+>Bladwijzers</title>
+<authorgroup>
+<author
+><personname
+><firstname
+>Xavier</firstname
+><surname
+>Vello</surname
+></personname
+> <email
+>xavier.vello@gmail.com</email
+> </author>
+<othercredit role="translator"
+><firstname
+>Freek</firstname
+><surname
+>de Kruijf</surname
+><affiliation
+><address
+><email
+>freekdekruijf@kde.nl</email
+></address
+></affiliation
+><contrib
+></contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2016-11-08</date>
+<releaseinfo
+>Applications 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Systeeminstellingen</keyword>
+<keyword
+>bladwijzers</keyword>
+<keyword
+>KIO</keyword>
+</keywordset>
+</articleinfo>
+<sect1 id="conf">
+<title
+>Homepagina van bladwijzers</title>
+<para
+>Deze module laat u de homepagina voor bladwijzers instellen.</para>
+<para
+>Om de homepagina van bladwijzers te bekijken voert u <userinput
+>bookmarks:/</userinput
+> in in de locatiebalk.</para>
+<para
+>De instellingen in deze module zijn ook toegankelijk door <userinput
+>bookmarks:/config</userinput
+> in te voeren in de locatiebalk.</para>
+<sect2 id="conf-general">
+<title
+>Algemene instellingen</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Aantal te tonen kolommen</guilabel
+></term>
+<listitem>
+<para
+>Mappen worden automatisch verspreid over meerdere kolommen. Het optimale aantal kolommen is afhankelijk van de breedte van het &konqueror;-venster en het aantal bladwijzers dat u hebt.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Mapachtergronden weergeven</guilabel
+></term>
+<listitem>
+<para
+>Schakel dit uit op een traag systeem om het gebruik van achtergrondafbeeldingen te deactiveren.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="conf-bookmark">
+<title
+>Bladwijzers</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Bladwijzers zonder map tonen</guilabel
+></term>
+<listitem>
+<para
+>Als deze optie niet is ingeschakeld, dan worden bladwijzers in het hoogste niveau van de boomstructuur (dus niet in een submap) niet weergegeven. Indien ingeschakeld worden ze verzameld in een hoofdmap.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Bladwijzerstructuur vlak maken</guilabel
+></term>
+<listitem>
+<para
+>Standaard worden submappen binnen hun bovenliggende map weergegeven. Als u deze optie inschakelt worden submappen op zichzelf staand weergegeven. Dit ziet er minder fraai uit maar kan u helpen als u een zeer grote map hebt die u over twee kolommen wilt spreiden.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Systeemlocaties tonen</guilabel
+></term>
+<listitem>
+<para
+>Toon een vak met algemene locaties (Persoonlijke map, Netwerk, ...). Handig voor als u &konqueror; als bestandsbeheerder gebruikt.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="conf-cache">
+<title
+>Afbeeldingenbuffer</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Cachegrootte op schijf</guilabel
+></term>
+<listitem>
+<para
+>De hoeveelheid schijfruimte die er gebruikt wordt om afbeeldingen te bufferen instellen.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Cache wissen</guilabel
+></term>
+<listitem>
+<para
+>Verwijder alle gebufferde afbeeldingen. Dit kan nodig zijn als sommige favicons corrupt raken en zich niet meer automatisch verversen.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+</sect1>
+</article>

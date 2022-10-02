@@ -1,0 +1,886 @@
+<chapter id="browser">
+
+<chapterinfo>
+<authorgroup>
+<author
+><personname
+><firstname
+>Памела</firstname
+> <surname
+>Робертс</surname
+></personname
+></author>
+<othercredit role="translator"
+><firstname
+>Драган</firstname
+><surname
+>Пантелић</surname
+><affiliation
+><address
+><email
+>falcon-10@gmx.de</email
+></address
+></affiliation
+><contrib
+>превод</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>25. 10. 2010.</date>
+<releaseinfo
+>КДЕ 4.5</releaseinfo>
+</chapterinfo>
+
+
+<title
+><application
+>К‑освајач</application
+>, веб прегледач</title>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="konqorg.png"/></imageobject>
+<textobject>
+<phrase
+>Прегледање www.konqueror.org </phrase>
+</textobject>
+</mediaobject>
+
+<sect1 id="conn-inet">
+<title
+>Повезивање на Интернет</title>
+
+<para
+>Пошто се повежете на Интернет, <application
+>К‑освајачем</application
+> можете прегледати Веб једнако лако као што управљате локалним фајловима. Просто упишете УРЛ у траку локације, притиснете <keycap
+>Enter</keycap
+>, и кренули сте!</para>
+
+<itemizedlist>
+<listitem
+><para
+>Ако се повезујете модемом преко телефона, за остваривање везе користићете <application
+>КППП</application
+> или сличан позивачки програм.</para
+></listitem>
+
+<listitem
+><para
+>Ако вам је рачунар повезан на локалну мрежу (ЛАН) која на Интернет пропушта преко проксија, мораћете да подесите <application
+>К‑освајач</application
+> да користи прокси. То се може урадити на страници <menuchoice
+><guimenu
+>Прегледање Веба</guimenu
+> <guimenuitem
+>Прокси</guimenuitem
+></menuchoice
+> дијалога <menuchoice
+><guimenu
+>Подешавање</guimenu
+><guimenuitem
+>Подеси К‑освајач......</guimenuitem
+> </menuchoice
+>.</para
+></listitem>
+
+<listitem
+><para
+>Ако се башкарите у високопропусној кабловској вези, провајдер вам је вероватно дао спољашњи кабловски модем који са рачунаром остварује етернетску везу. Нажалост, детаљи начина успостављања везе зависе од провајдера и, донекле, од уникс/линукс дистрибуције коју користите. Неки провајдери повезују кориснике на Интернет преко прокси сервера, у ком случају ћете морати да подесите <application
+>К‑освајач</application
+> да га користи. За помоћ, може бити корисно да претражите архиву поштанске листе корисника̂ ваше дистрибуције.</para>
+</listitem>
+</itemizedlist>
+
+<note
+><para
+>Порука о грешци, попут „непознат домаћин“, обично значи да <application
+>К‑освајач</application
+> не може да нађе везу ка Интернету или да сте унели неисправан УРЛ.</para
+></note>
+
+</sect1>
+
+<sect1 id="surf">
+<title
+>Сурфовање и тражење</title>
+
+<para
+>Кад једном остварите везу са Интернетом, можете сурфовати <application
+>К‑освајачем</application
+> или било којим другим прегледачем.</para>
+
+<para
+>Унесите УРЛ у траку локације, притисните <keycap
+>Enter</keycap
+> или кликните <mousebutton
+>левим</mousebutton
+> на дугме <guibutton
+>Кретање</guibutton
+>, и <application
+>К‑освајач</application
+> ће преузети и приказати дату страницу. Ако сте је раније посећивали, <application
+>К‑освајачева</application
+> могућност <link linkend="path-complete"
+>самодопуне текста</link
+> може убрзати поновно уношење УРЛ‑а, а могли бисте и да потражите страницу у <emphasis
+>историјату</emphasis
+> у <link linkend="sidebar"
+>бочној траци</link
+>. Ту је и могућност <link linkend="enhanced-browsing"
+>веб пречица</link
+>, за лакшу употребу претраживача Веба.</para>
+
+<para
+>Кликните <mousebutton
+>левим</mousebutton
+> на везу на страници да је испратите.</para>
+
+<para
+>Да везу отворите у новом примерку <application
+>К‑освајача</application
+> тако да тренутна страница остане видљива, на везу кликните <mousebutton
+>десним</mousebutton
+> дугметом миша и изаберите ставку <guimenuitem
+>Отвори у новом прозору</guimenuitem
+>. Алтернативно, можда ће вам више одговарати <guimenuitem
+>Отвори у новом језичку</guimenuitem
+>: <link linkend="tabbrowse"
+>прегледање с језичцима</link
+> омогућава да држите известан број страница у истом <application
+>К‑освајачевом</application
+> прозору, и брзо се пребацујете између њих једним кликом миша.</para>
+
+<para
+>Ако желите да посматрате више страница истовремено, можете активирати режим вишеструког приказа избором <menuchoice
+><guimenu
+>Прозор</guimenu
+> <guimenuitem
+>Подели приказ лево/десно</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>Shift</keycap
+><keycap
+>L</keycap
+></keycombo
+>) или <menuchoice
+><guimenu
+>Прозор</guimenu
+> <guimenuitem
+>Подели приказ горе/доле</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>Shift</keycap
+><keycap
+>T</keycap
+></keycombo
+>). Ово може бити корисно при прегледању запетљаног скупа ХТМЛ страница, али пазите да мали оквир везе у доњем десном углу буде празан док ово чините.</para>
+<para
+>На претходну страницу можете се вратити пречицом <keycombo action="simul"
+><keycap
+>Alt</keycap
+><keysym
+>стрелица лево</keysym
+></keycombo
+>, дугметом траке алатки <guibutton
+>Назад</guibutton
+>, или кроз мени <menuchoice
+><guimenu
+>Кретање</guimenu
+><guimenuitem
+>Назад</guimenuitem
+></menuchoice
+>.</para>
+<para
+>Слично, кад сте се једном вратили назад, можете поново отићи напред пречицом <keycombo action="simul"
+><keycap
+>Alt</keycap
+><keysym
+>стрелица десно</keysym
+></keycombo
+>, дугметом <guibutton
+>Напред</guibutton
+>, или кроз мени <menuchoice
+><guimenu
+>Кретање</guimenu
+> <guimenuitem
+>Напред</guimenuitem
+></menuchoice
+>.</para>
+
+<!-- copy from okular Navigating -->
+<para
+>Зона приказа може се клизати на неколико начина: тастерима стрелица <keycap
+>горе</keycap
+> и <keycap
+>доле</keycap
+>, преко клизачке траке, точкићем миша или тастерима <keycap
+>PageUp</keycap
+> и <keycap
+>PageDown</keycap
+>.</para>
+<para
+>Када читате дугачку веб страницу, можете употребити <application
+>К‑освајачеву</application
+> могућност аутоматског клизања. Покрећете га притиском <keycombo action="simul"
+><keycap
+>Shift</keycap
+><keycap
+>доле</keycap
+></keycombo
+> или <keycombo action="simul"
+><keycap
+>Shift</keycap
+><keycap
+>горе</keycap
+></keycombo
+>; накнадним притиском ових тастера успоравате или убрзавате клизање. Притиском тастера <keycap
+>Shift</keycap
+> клизање привремено паузирате или настављате, а притиском било ког другог тастера укидате клизање. </para>
+<para
+>Аутоматско клизање ради само у режиму приказа <guimenuitem
+>КХТМЛ</guimenuitem
+>. </para>
+<para
+>Ако из било ког разлога желите да зауставите преузимање, притисните тастер <keycap
+>Esc</keycap
+>, дугме траке алатки <guibutton
+>Заустави</guibutton
+> или ставку менија <menuchoice
+><guimenu
+>Приказ</guimenu
+> <guimenuitem
+>Заустави</guimenuitem
+></menuchoice
+>.</para>
+
+<para
+>Ако посматрате веб страницу док је укључена трака ХТМЛ‑а, требало би да видите две нове иконе на њој: <guiicon
+><inlinemediaobject
+><imageobject
+> <imagedata fileref="format-font-size-less.png" format="PNG"/> </imageobject
+></inlinemediaobject
+></guiicon
+> и <guiicon
+><inlinemediaobject
+><imageobject
+> <imagedata fileref="format-font-size-more.png" format="PNG"/> </imageobject
+></inlinemediaobject
+></guiicon
+>. Користите их да прилагодите величину текста на сајту, ако вам је подразумевана тешка за читање. Колико ће добро ово радити, зависи од тога колико је добро састављена веб страница.</para>
+</sect1>
+
+<sect1 id="tabbrowse">
+<title
+>Прегледање с језичцима</title>
+<para
+>Коришћењем ове могућности можете учинити да <application
+>К‑освајач</application
+> учитава веб странице у истом прозору, и пребацивати се између њих путем језичака. На овај начин можете предучитати страницу „у позадини“, док настављате да читате тренутну.</para>
+
+<para
+>Да бисте користили прегледање са језичцима, кликните <mousebutton
+>десним</mousebutton
+> на везу и из падајућег менија изаберите <guimenuitem
+>Отвори у новом језичку</guimenuitem
+>, или кликните <mousebutton
+>средњим</mousebutton
+> на њу. Страница ће, као и обично, бити преузета и приказана, али с језичцима дуж врха приказа, по језичак за сваку страницу. Кликните <mousebutton
+>левим</mousebutton
+> на језичак да прикажете страницу под њим, или користите пречице <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>,</keycap
+></keycombo
+> и <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>.</keycap
+></keycombo
+> за кружење кроз језичке. Такође можете клизати кроз језичке <mousebutton
+>точкићем</mousebutton
+> миша, док је показивач миша изнад траке језичака (под претпоставком миш има точкић). Двоклик на празан простор траке језичка отвара нови језичак.</para>
+
+<para
+>Ако је укључена опција <guilabel
+>Отвори нови језичак у позадини</guilabel
+> на страници <guilabel
+>Опште</guilabel
+> у дијалогу за подешавање, кликом на везу страница се преузима и ставља под нови језичак, али неће бити приказана док не кликнете <mousebutton
+>левим</mousebutton
+> на језичак.</para>
+
+<para
+>Ако попуните кућицу <guilabel
+>Отвори везу у новом језичку уместо у новом прозору</guilabel
+> на страници <guimenuitem
+>Опште</guimenuitem
+> у дијалогу <menuchoice
+><guimenu
+>Подешавање</guimenu
+><guimenuitem
+>Подеси К‑освајач......</guimenuitem
+></menuchoice
+>, <mousebutton
+>средњи</mousebutton
+> клик на везу отвориће страницу под новим језичком, а ако притом још држите притиснут тастер <keycap
+>Shift</keycap
+>, страница ће бити отворена у позадини.</para>
+
+<para
+><mousebutton
+>Десни</mousebutton
+> клик на језичак дозива мени са следећим опцијама:</para>
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Нови језичак</guimenuitem
+> (<keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>T</keycap
+></keycombo
+>)</term>
+<listitem
+><para
+>Отвара нов, празан приказ странице под језичком. Затим у њега можете преузети веб страницу уносом УРЛ‑а у траку локације, одабиром из траке обележивача, или из историјата у <link linkend="sidebar"
+>бочној траци</link
+>.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guimenuitem
+>Удвостручи језичак</guimenuitem
+> (<keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>D</keycap
+></keycombo
+>)</term>
+<listitem
+><para
+>Удвостручите језичак, односно отворите исту страницу под другим језичком.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guimenuitem
+>Учитај поново језичак</guimenuitem
+> (<keycap
+>F5</keycap
+>)</term>
+<listitem
+><para
+>Поново учитава садржај тренутног језичка.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guisubmenu
+>Други језичци</guisubmenu
+></term>
+<listitem
+><para
+>Приказује подмени са свим другим језичцима. Са овог списка можете активирати неки језичак.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><guisubmenu
+>Други језичци</guisubmenu
+><guimenuitem
+>Учитај поново све језичке</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+><keycap
+>Shift</keycap
+><keycap
+>F5</keycap
+></keycombo
+>)</term>
+<listitem
+><para
+>Поново учитава садржај сваког језичка.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><guisubmenu
+>Други језичци</guisubmenu
+><guimenuitem
+>Затвори остале језичке</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Затворите све осим изабраног језичка.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guimenuitem
+>Откачи језичак</guimenuitem
+> (<keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>Shift</keycap
+><keycap
+>B</keycap
+></keycombo
+>)</term>
+<listitem
+><para
+>Уклања страницу под језичком из тренутног прозора <application
+>К‑освајача</application
+> и отвара је у новом примерку <application
+>К‑освајача</application
+>.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guimenuitem
+>Затвори језичак</guimenuitem
+> (<keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>W</keycap
+></keycombo
+>)</term>
+<listitem
+><para
+>Затворите изабрану страницу под језичком.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect1>
+
+<sect1 id="enhanced-browsing">
+<title
+>Веб пречице</title
+> 
+
+<para
+><application
+>К‑освајач</application
+> поседује могућност <emphasis
+>веб пречица</emphasis
+>, којима ако су укључене, можете прослеђивати упити директно претраживачу или сличном веб сајту, без потребе да претходно одете на сајт.</para
+> <para
+>На пример, уписом <userinput
+>gg:konqueror</userinput
+> у траку локације и притиском на <keycap
+>Enter</keycap
+> затражићете Гуглу да потражи странице у вези с <application
+>К‑освајачем</application
+>.</para>
+<para
+>Да бисте погледали расположиве веб пречице, и можда додали своје, идите на <menuchoice
+><guimenu
+>Подешавање</guimenu
+><guimenuitem
+>Подеси К‑освајач......</guimenuitem
+></menuchoice
+>, па на страницу <guiicon
+>Веб пречице</guiicon
+>.</para>
+
+<para
+>Кад стигнете тамо, за стварање нове веб пречице кликните на <guibutton
+>Нова...</guibutton
+>, и добићете дијалог који захтева опције и одреднице за нову веб пречицу. Прво поље је за људски-читљиво име добављача претраге, нпр. „Гугл“.</para>
+
+<para
+>У следећем пољу треба да унесете УРИ који се користи за упитивање претраживача. Цео текст за тражење може се задати као <userinput
+>\{@}</userinput
+> или <userinput
+>\{0}</userinput
+>. Препоручљиво је <userinput
+>\{@}</userinput
+>, пошто уклања све упитне променљиве (<replaceable
+>ime</replaceable
+>=<replaceable
+>vrednost</replaceable
+>) из резултујуће ниске, док <userinput
+>\{0}</userinput
+> бива замењено неизмењеном ниском упита. </para>
+
+<para
+>Можете користити <userinput
+>\{1}</userinput
+> до <userinput
+>\{n}</userinput
+> да задате извесне речи из упита и <userinput
+>\{<varname
+><replaceable
+>ime</replaceable
+>}</varname
+></userinput
+> да задате вредност дату као <userinput
+><varname
+><replaceable
+>ime</replaceable
+></varname
+>=<replaceable
+>vrednost</replaceable
+></userinput
+> у корисничком упиту. Додатно, могуће је одједном задати вишеструка упућивања (имена, бројеве и ниске), попут <userinput
+>(\{<varname
+><replaceable
+>ime1</replaceable
+></varname
+>,<varname
+><replaceable
+>ime2</replaceable
+></varname
+>,..., "<replaceable
+>niska</replaceable
+>"})</userinput
+>. Прва поклапајућа вредност (с лева) користиће се као вредност замене за резултујући УРИ. Цитирана ниска може се користити као подразумевана вредност, ако се не ништа не поклопи с лева у списку упућивача.</para>
+
+<para
+>Међутим, за стварање основне веб пречице, неопходно је само задати УРИ за слање упита претраживачу. Сле́дећи претходни пример са Гуглом, уписали бисте <userinput
+>http://www.google.com/search?q=\{@}&amp;ie=UTF-8&amp;oe=UTF-8</userinput
+>. Често лако можете наћи где да ставите <userinput
+>\{@}</userinput
+> упутивши пробни упит претраживачу, а затим анализирајући настали УРЛ. На пример, потражите ли „К‑освајач“ Гуглом, добићете УРЛ попут <ulink url="http://www.google.com/search?q=konqueror&amp;ie=UTF-8&amp;oe=UTF-8"
+>http://www.google.com/search?q=К‑освајач&amp;ie=UTF-8&amp;oe=UTF-8</ulink
+>. Сад само треба да замените „К‑освајач“ са <userinput
+>\{@}</userinput
+> да бисте добили одговарајући УРИ.</para>
+
+<para
+>У трећем пољу треба да унесете пречицу УРИ‑ја. Као што је нпр. <userinput
+>gg</userinput
+> у <userinput
+>gg:К‑освајач</userinput
+>. Затим, у падајућем менију, можете изабрати кодирање текста за упите претраге. Пошто сте унели све опције по жељи, притисните <keycap
+>Enter</keycap
+> и нова <application
+>К‑освајачева</application
+> веб пречица би требало би да вам је на располагању.</para>
+
+</sect1>
+
+<sect1 id="accesskeys">
+
+<title
+>Приступни тастери</title>
+
+<para
+><application
+>К‑освајач</application
+> пружа пуну подршку за ХТМЛ атрибут <sgmltag class="attribute"
+>accesskey</sgmltag
+> у формуларима и везама. Приступни тастери допуштају вам да користите тастатуру за функције које би се нормално изводиле мишем, као што је праћење веза. Предност овога је, сасвим просто, што корисници могу саобраћати са страницом уређајима без показивача.</para>
+<para
+>Ова могућност мора да се укључи попуњавањем кућице <guilabel
+>Активација приступних тастера тастером Ctrl</guilabel
+> на страници поставки <guilabel
+>Прегледање Веба</guilabel
+>.</para>
+<para
+>Да активирате приступне тастере у <application
+>К‑освајачу</application
+>, притисните и пустите <keycap
+>Ctrl</keycap
+>. Кад се ово учини, ако дата веза на веб сајту садржи атрибут <sgmltag class="attribute"
+>accesskey</sgmltag
+>, изнад ње би требало да се појаве знакови који указују шта треба притиснути да се испрати. Тада можете откуцати наведене знакове уместо кликтања мишем на везу. Да искључите једном активиране приступне тастере, опет притисните <keycap
+>Ctrl</keycap
+>.</para>
+
+<note
+><para
+>Правилно коришћење ове могућности изискује да је дизајнер веб странице, користећи атрибут <sgmltag class="attribute"
+>accesskey</sgmltag
+>, доделио приступни тастер одређеној вези. Многи веб дизајнери не укључују <sgmltag class="attribute"
+>accesskey</sgmltag
+> у своје везе и формуларе, те ће, последично, за такву веб страницу ова могућност бити неупотребљива.</para
+></note>
+
+</sect1>
+
+<sect1 id="useragent">
+<title
+>Идентификација прегледача</title>
+<para
+>Кад се <application
+>К‑освајач</application
+> повезује на веб сајт, шаље нешто сажетих података за идентификацију прегледача, познатих као ниска „корисничког агента“. Многи веб сајтови користе ове податке за прилагођавање страница које шаљу назад, већ према врлинама и манама разних прегледача.</para>
+<para
+>Нажалост, неки лоше дизајнирани сајтови одбијају сарадњу ако користите прегледач који сајт не препознаје као „добар“, без обзира на то што <application
+>К‑освајач</application
+>, кад му се пружи прилика, ради задовољавајуће са великом већином веб страница.</para>
+<para
+>Овај проблем можете решити тако што измените податке за идентификацију прегледача које <application
+>К‑освајач</application
+> шаље одређеним сајтовима или доменима, под <menuchoice
+><guimenu
+>Прегледање Веба</guimenu
+><guimenuitem
+>Идентификација прегледача</guimenuitem
+></menuchoice
+> у дијалогу за подешавање.</para>
+<note
+><para
+>До проблема с радом веб странице такође може доћи због употребе јаве или јаваскрипта на њима. Ако сумњате да би то могао бити случај, проверите да ли су укључени у одељку <guilabel
+>Јава и јаваскрипт</guilabel
+> дијалога за подешавање.</para
+></note>
+<note
+><para
+>Инсталирајте проширење „Измењивач корисничког агента“ из <application
+>К‑освајачевих</application
+> прикључака, па га активирајте преко <menuchoice
+><guimenu
+>Подешавање</guimenu
+> <guimenuitem
+>Подеси проширења...</guimenuitem
+></menuchoice
+>. Овим ћете добити ставку <guimenuitem
+>Промени идентификацију прегледача</guimenuitem
+> у менију <guimenu
+>Алатке</guimenu
+>, којом можете лако пребацивати између различитих ниски „корисничког агента“.</para
+></note>
+
+</sect1>
+
+<sect1 id="save-print-web">
+<title
+>Уписивање и штампање ставки са Веба</title>
+
+<para
+>Кад гледате веб страницу, можете је сачувати (или барем њен основни ХТМЛ или други изворни текст) на локални диск помоћу <menuchoice
+><guimenu
+>Фајл</guimenu
+><guimenuitem
+>Сачувај као...</guimenuitem
+></menuchoice
+>. Ако страница садржи оквире, биће доступна и ставка <menuchoice
+><guimenu
+>Фајл</guimenu
+><guimenuitem
+>Сачувај оквир као...</guimenuitem
+></menuchoice
+>. Кликните <mousebutton
+>левим</mousebutton
+> у оквир који прво желите да сачувате.</para>
+
+<para
+>Ако страница користи позадинску слику, можете је захватити и сачувати ставком <menuchoice
+><guimenu
+>Фајл</guimenu
+><guimenuitem
+>Сачувај позадинску слику као...</guimenuitem
+></menuchoice
+>.</para>
+
+<para
+>Али ако желите само ту углађену слику најновијег „ферарија“, онда ће вам <mousebutton
+>десни</mousebutton
+> клик на њу дати мени са ставком <guimenuitem
+>Сачувај слику као...</guimenuitem
+>. Припазите да овиме не кршите ауторска права аутора, и затражите дозволу пре него што овако сачуване слике употребите за било шта друго до да их са задовољством гледате.</para>
+
+<para
+>Ако кликнете <mousebutton
+>десним</mousebutton
+> на везу (која може бити и слика) и одаберете <guimenuitem
+>Сачувај везу као...</guimenuitem
+> из искачућег менија, основни ХТМЛ, или сличан изворни текст, биће преузет и сачуван на локални диск.</para>
+
+<para
+><mousebutton
+>Десни</mousebutton
+> клик на везу (која може бити и слика) и одабир <guimenuitem
+>Копирај адресу везе</guimenuitem
+> копираће УРЛ везе у клипборд, тако да га можете налепити, рецимо, у е‑пошту пријатељици, да је обавестите о том новом, дивном сајту.</para>
+
+<para
+><mousebutton
+>Десни</mousebutton
+> клик на слику и одабир <guimenuitem
+>Копирај локацију слике</guimenuitem
+> копира УРЛ слике у клипборд.</para>
+
+<para
+>Да сачувате веб страницу у целости, са свим сликама, изаберите <guimenuitem
+>Архивирај веб страницу...</guimenuitem
+> из менија <guimenu
+>Алатке</guimenu
+>. Имајте у виду да ову могућност обезбеђује <link linkend="konq-plugin"
+>прикључак</link
+>, који можда није инсталиран на вашем систему. Страница ће бити сачувана као један фајл, са наставком <literal role="extension"
+>.war</literal
+>, и може се отворити <mousebutton
+>левим</mousebutton
+> кликом на име фајла док <application
+>К‑освајач</application
+> ради у режиму менаџера фајлова.</para>
+
+<para
+>Копију странице коју гледате лако можете одштампати помоћу ставке менија <menuchoice
+><guimenu
+>Фајл</guimenu
+> <guimenuitem
+>Штампа...</guimenuitem
+></menuchoice
+> (или <guimenuitem
+>Штампај оквир...</guimenuitem
+>), или дугметом <guiicon
+>Штампај</guiicon
+> на траци алатки.</para>
+
+</sect1>
+
+<sect1 id="ftp">
+<title
+>ФТП</title>
+
+<para
+>ФТП (протокол за пренос фајлова) један је од најранијих, и можда још увек и најбољи начин преноса фајлова између рачунара на Интернету.</para>
+
+<para
+>Преко ФТП‑а можете гледати фајлове и фасцикле на удаљеним рачунарима баш као да су на вашем сопственом систему, преузимати их на свој рачунар уобичајеним превлачењем или копирањем и налепљивањем у <application
+>К‑освајачу</application
+>, и, ако је дозвољено, отпремати фајлове са свог рачунара на фајл системе других рачунара. Да ово испробате, унесите УРЛ</para>
+
+<screen
+><userinput
+>ftp://ftp.kde.org/pub/kde</userinput
+>
+</screen>
+
+<para
+>у траку локације и притисните <keycap
+>Enter</keycap
+>. Ако сте повезани на Интернет, и ако <acronym
+>КДЕ‑ов</acronym
+> ФТП сајт није превише заузет, требало би да добијете приказ фасцикле <filename class="directory"
+>/pub/kde</filename
+>.</para>
+
+<note
+><para
+>Мада би, строго говорећи, ФТП УРЛ‑ови требало да се уносе са <userinput
+>ftp://</userinput
+> на почетку,  а веб УРЛ‑ова са <userinput
+>http://</userinput
+>, <application
+>К‑освајач</application
+> обично и без тога може да погоди на шта се мислило, те умеће ове префиксе уместо вас када их испустите.</para
+></note>
+
+<para
+>Кад приступате ФТП сајту, често ће тражити од вас неки вид корисничког имена и лозинка. Да би поједноставили ствари, многи ФТП сајтови који нуде фајлове за слободно преузимање, прихватиће као корисничко име ниску <systemitem class="username"
+>anonymous</systemitem
+> и вашу адресу е‑поште као лозинку; да би вам још више олакшао живот, <application
+>К‑освајач</application
+> ће их аутоматски попунити за вас. </para>
+
+<note
+><para
+>Ако покушате да приступите ФТП сајту који не тражи корисничко име и лозинку, али који је сувише заузет да би прихватио додатна повезивања, <application
+>К‑освајач</application
+> често протумачи поруку о заузећу као захтев за име и лозинку, па вам избаци дијалог тражећи да их попуните.</para
+></note>
+
+<para
+>Сајтови који више брину о безбедности захтеваће исправно корисничко име и лозинку, у ком случају ће вам их <application
+>К‑освајач</application
+> затражити. Корисничко име такође можете укључити у УРЛ, док га уписујете у траку локације, нпр.</para>
+
+<screen
+><userinput
+>ftp://<replaceable
+>korisnik</replaceable
+>@ftp.kgb.ru</userinput
+>
+</screen>
+
+<para
+><application
+>К‑освајач</application
+> ће вам потом затражити само лозинку.</para>
+
+<para
+><application
+>К‑освајач</application
+> такође подржава аутоматска пријављивања, задата у фајлу <filename
+>.netrc</filename
+>. Детаљи о томе како да укључите ову могућност дати су на <ulink url="http://www.konqueror.org/faq.html#netrc"
+>http://www.konqueror.org/faq.html</ulink
+></para>
+
+</sect1>
+
+
+<sect1 id="portnumbers">
+<title
+>УРЛ‑ови са бројевима порта</title>
+<para
+>Ако у УРЛ‑у задате број порта, на пример <userinput
+>http://intranet.firma.co.rs:1080</userinput
+>, можете добити поруку о грешци попут <foreignphrase
+>Access to restricted port in POST denied</foreignphrase
+>. До овога долази из безбедносних разлога. Ако ипак морате да приступите серверу на овом порту, просто додајте ред <screen
+><userinput>
+OverridenPorts=CommaSeparatedListOfAllowedPorts
+</userinput
+></screen
+> у <filename
+>$KDEDIR/share/config/kio_httprc </filename
+> или <filename
+>~/.kde/share/config/kio_httprc</filename
+>.</para>
+<para
+>На пример <screen
+><userinput
+>OverridenPorts=23,15
+</userinput
+></screen
+> (не треба да садржи ниједан размак).</para>
+<para
+><application
+>К‑освајач</application
+> ће одбити следеће портове (списак је фиксно кодиран у <filename
+>kdelibs/kio/kio/job.cpp</filename
+>): </para>
+<para
+>1, 7, 9, 11, 13, 15, 17, 19, 20, 21, 22, 23, 25, 37, 42, 43, 53, 77, 79, 87, 95, 101, 102, 103, 104, 109, 110, 111, 113, 115, 117, 119, 123, 135, 139, 143, 179, 389, 512, 513, 514, 515, 526, 530, 531, 532, 540, 556, 587, 601, 989, 990, 992, 993, 995, 1080, 2049, 4045, 6000, 6667  </para>
+</sect1>
+
+
+</chapter>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

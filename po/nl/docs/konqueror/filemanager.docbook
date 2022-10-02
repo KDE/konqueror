@@ -1,0 +1,1441 @@
+<chapter id="filemanager">
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+&Bram.Schoenmakers;&Freek.de.Kruijf; 
+</authorgroup
+> 
+
+<date
+>2012-07-02</date>
+<releaseinfo
+>&kde; 4.9</releaseinfo>
+</chapterinfo>
+
+<title
+>&konqueror; de bestandsbeheerder</title>
+
+<sect1 id="dirfolders">
+<title
+>Mappen en paden</title>
+<para
+>In &UNIX; en &Linux; zijn alle mappen gerangschikt volgens een omgekeerde boomstructuur, startend bij een hoofdmap, die steeds verder vertakt naarmate u verder afdaalt. U kunt dus van iedere map naar iedere andere map door eerst <quote
+>naar boven</quote
+> te gaan tot het gemeenschappelijke punt (de Root) om daarna weer <quote
+>naar beneden</quote
+> te gaan naar de map die u zoekt.</para>
+
+<para
+>De positie van iedere map of bestand kan omschreven worden door zijn <quote
+>pad</quote
+>, dat een eenvoudige lijst bevat van alle mappen die u moet afdalen totdat u bij dat bestand komt. Bijvoorbeeld<filename class="directory"
+>/home/pam</filename
+> is de submap <filename class="directory"
+>pam</filename
+> van de submap <filename class="directory"
+>home</filename
+> van de hoofdmap, en <filename
+> /home/pam/tekst.txt</filename
+> is het bestand <filename
+>tekst.txt</filename
+> in die submap. De <quote
+>/</quote
+> aan het begin staat voor de hoofdmap, helemaal bovenaan de boomstructuur.</para>
+
+<para
+>Iedere map op uw systeem &mdash; inclusief die op andere harde schijfpartities, een USB-apparaat of &CD-ROM;s &mdash; verschijnen in de boomstructuur afdalend vanaf /. De exacte paden hangen af van hoe uw systeem is ingesteld (zie ook de sectie <link linkend="removable-devices"
+>Verwijderbare apparaten</link
+>). </para>
+<para
+>Iedere gebruiker op een &UNIX; / &Linux;-systeem heeft zijn eigen persoonlijke map, waarin bestanden en instellingen van deze gebruiker worden opgeslagen. Bijvoorbeeld <filename class="directory"
+>/home/john</filename
+> en <filename class="directory"
+>/home/mary</filename
+>. Het symbool <keycap
+>~</keycap
+> wordt vaak gebruikt om de persoonlijke map aan te duiden. Zo verwijst <filename
+>~/letter.txt</filename
+> naar het bestand <filename
+>letter.txt</filename
+> in uw persoonlijke map.</para>
+<para
+>Opmerking: vaak wordt het woord <quote
+>directory</quote
+> gebruikt in plaats van <quote
+>map</quote
+>.</para>
+</sect1>
+
+<sect1 id="viewmode">
+<title
+>Weergavemodi</title>
+<para
+>In Bestandsbeheermodus laat &konqueror; zien welke bestanden en submappen een bepaalde map bevat. Het <quote
+>pad</quote
+> van de map is weergegeven in de Locatiebalk. De manier waarop &konqueror; de bestanden en mappen weergeeft hangt af van de gekozen weergavemodus. Deze kunt u selecteren via het menu <menuchoice
+> <guimenu
+>Beeld</guimenu
+><guisubmenu
+>Weergavemodus</guisubmenu
+></menuchoice
+>, waar u uit de volgende opties kunt kiezen: </para>
+
+<note
+><para
+>&konqueror; gebruikt in bestandsbeheerdermodus een ingebedde &dolphin;-component.</para
+></note>
+<!-- begin copy from dolphin docbook synced for 4.10--> 
+<itemizedlist>
+
+<listitem
+><para
+>In de weergave <guibutton
+>Pictogrammen</guibutton
+>, als standaard ingesteld, worden bestanden weergegeven door een pictogram dat het bestandstype voorstelt, terwijl submappen getoond worden middels een mappictogram. De namen van mappen en bestanden worden onder de pictogrammen getoond. </para
+></listitem>
+
+<listitem
+><para
+>De weergave <guilabel
+>Compact</guilabel
+> toont de mapinhoud als pictogrammen met de naam ernaast gegroepeerd in kolommen overeenkomstig de <guilabel
+>Korte weergave</guilabel
+> in de bestandsdialoog van &kde;. </para
+></listitem>
+
+<listitem
+><para
+>In de <guibutton
+>Details</guibutton
+>-weergave ziet u de inhoud van de map in de vorm van een gedetailleerde lijst met, voor elk bestand, de naam, grootte en tijdstip van de laatste wijziging. Meer kolommen kunnen worden toegevoegd door op een kolomkop te klikken met de &RMB;. </para>
+<para
+>In het contextmenu van de kopregel kunt u kiezen tussen aangepast of automatische kolombreedte. Automatische breedte past de breedte van alle kolommen een keer aan om het langste item volledig in de kolom te laten passen, behalve voor de <guilabel
+>Naam</guilabel
+>-kolom waar de extensie is vervangen door "..." </para>
+<para
+>De volgorde van kolommen kan gewijzigd worden door slepen en laten vallen van kolomkoppen. </para>
+<para
+>De details-weergave stelt u in staat een map in een boomstructuur weer te geven, als de optie <guilabel
+>Uitvouwbare mappen</guilabel
+> is ingeschakeld. Elke submap van de huidige map kan worden <quote
+>uitgevouwen</quote
+> of <quote
+>ingevouwen</quote
+> door op het <guiicon
+>&lt;</guiicon
+>-teken of de <guiicon
+>v</guiicon
+> naast het pictogram te klikken. </para>
+</listitem>
+</itemizedlist>
+
+<screenshot>
+<screeninfo
+>Gegroepeerde weergave</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="grouping-view.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Gegroepeerde weergave</phrase>
+</textobject>
+<caption
+><para
+>Alle weergavemodi ondersteunen groepering per sorteertype geselecteerd in <menuchoice
+><guimenu
+>Beeld</guimenu
+><guisubmenu
+>Sorteren met</guisubmenu
+></menuchoice
+></para
+></caption>
+</mediaobject>
+</screenshot>
+<!-- end copy from dolphin docbook --> 
+
+<sect2 id="filetipinfo">
+<title
+>Bestandsinfo tonen</title>
+<para
+>Wanneer u <guilabel
+>Tekstballonnen tonen</guilabel
+> heeft aangevinkt in de pagina <menuchoice
+> <guimenu
+>Bestandsbeheer</guimenu
+><guimenuitem
+>Algemeen</guimenuitem
+></menuchoice
+> van de instellingendialoog dan komt er, wanneer u de muiscursor boven een pictogram van een bestand of map plaatst, een tekstballon met informatie tevoorschijn.  </para>
+</sect2>
+
+<sect2 id="previews">
+<title
+>Bestandsvoorbeelden</title>
+<para
+>Het tabblad <guilabel
+>Voorbeelden</guilabel
+> van de instellingenpagina van <menuchoice
+><guimenu
+>Bestandsbeheer</guimenu
+> <guimenuitem
+>Algemeen</guimenuitem
+></menuchoice
+> laat u bestandenvoorbeelden inschakelen voor bepaalde typen bestanden.</para>
+<para
+>Dit betekent dat het standaard pictogram vervangen zal worden door een kleine afbeelding met de bestandsinhoud.</para>
+<para
+>Omdat &konqueror; bij het maken van een voorbeeld veel meer gegevens moet inlezen dan alleen de bestandsnaam is deze functie minder geschikt voor het bekijken van bestanden op een externe computer. In het tabblad <guilabel
+>Voorbeelden</guilabel
+> onderaan kunt u een limiet voor de bestandsgrootte instellen als het ophalen van extra gegevens te lang zou duren.</para>
+</sect2>
+</sect1>
+
+<!-- begin copy from dolphin docbook synced for 4.10--> 
+<sect1 id="view-properties">
+<title
+>Weergave-eigenschappen</title>
+
+<para
+>Met de volgende instellingen bepaalt u hoe de inhoud van een map getoond wordt in de &kappname;-weergave. Standaard worden deze instellingen per map bewaard.<itemizedlist
+> <listitem
+><para
+> De weergavemodus (Pictogrammen, Compact, Details) </para
+></listitem
+> <listitem
+><para
+> De sortering van items, bepaald door de sorteervolgorde (oplopend, aflopend) en het kenmerk (zoals naam, grootte,...) waarop de items gesorteerd worden </para
+></listitem
+> <listitem
+><para
+> Sortering van mappen en bestanden &ndash; worden mappen het eerst getoond of niet? </para
+></listitem
+> <listitem
+><para
+> Voorbeelden &ndash; worden ze getoond in plaats van pictogrammen (gebaseerd op de instellingen gekozen in het tabblad <link linkend="previews"
+><guilabel
+>Voorbeelden</guilabel
+> van de algemene instellingen van &kappname; </link
+>) of niet? </para
+></listitem
+> <listitem
+><para
+> Worden items getoond in groepen in de weergave? </para
+></listitem
+> <listitem
+><para
+> Worden verborgen bestanden getoond? </para
+></listitem
+> <listitem
+><para
+> Welke verdere informatie (naast de naam) wordt er getoond in de Pictogrammen- of Detailsweergave? </para
+></listitem
+> </itemizedlist
+> De weergave-eigenschappen kunnen worden ingesteld in het menu <menuchoice
+><guimenu
+>Beeld</guimenu
+></menuchoice
+>, sommige (zoals de weergavemodus) kunnen ook worden aangepast via knoppen op de werkbalk. </para>
+
+<sect2 id="view-properties-dialog">
+<title
+>Het dialoogvenster Weergave-eigenschappen</title>
+
+<para>
+
+<screenshot>
+<screeninfo
+>Schermafdruk van het dialoogvenster Weergave-eigenschappen</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="viewproperties-dialog.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Het dialoogvenster Weergave-eigenschappen.</phrase>
+</textobject>
+<caption
+><para
+>Het dialoogvenster Weergave-eigenschappen.</para
+></caption>
+</mediaobject>
+</screenshot>
+Het dialoogvenster <guilabel
+>Weergave-eigenschappen</guilabel
+> kan worden gebruikt om snel verschillende weergave-eigenschappen in één keer te wijzigen. Dit doet u voor de huidige map, de huidige map inclusief alle submappen, of zelfs voor alle mappen, afhankelijk van de keuze die gemaakt is in de sectie <guilabel
+>Weergave-eigenschappen toepassen op</guilabel
+>. </para>
+
+<para
+>Wanneer <guilabel
+>Deze weergave-eigenschappen als standaard gebruiken</guilabel
+> is ingeschakeld, zullen de gekozen weergave-eigenschappen ook gebruikt worden voor alle mappen die nog geen aangepaste weergave-eigenschappen hebben. </para>
+
+</sect2>
+
+</sect1>
+<!-- end copy from dolphin docbook -->
+
+<sect1 id="navigation">
+<title
+>Navigatie</title>
+<para
+>Om bij een bestand te komen met &konqueror; dient u eerst door de mappenstructuur te bladeren om de map te vinden waarin het betreffende bestand zich bevindt.</para>
+
+<para
+>Om door de mappen te navigeren hoeft u alleen maar omhoog of omlaag te stappen in de boomstructuur:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Om af te dalen in een submap, klikt u met de <mousebutton
+>linker</mousebutton
+>muisknop op de naam of het pictogram. Wanneer de map al is <quote
+>geselecteerd</quote
+> (zie hieronder) drukt u gewoon op &Enter;.</para
+></listitem
+> 
+<listitem
+><para
+>Om omhoog te gaan in de boomstructuur, klikt u of op de knop <guiicon
+>Omhoog</guiicon
+> in de werkbalk, gebruikt u de sneltoets <keycombo action="simul"
+>&Alt;<keysym
+>Omhoog</keysym
+></keycombo
+> of gebruikt u de optie <menuchoice
+><guimenu
+>Ga naar</guimenu
+><guimenuitem
+>Omhoog</guimenuitem
+></menuchoice
+> in de menubalk.</para
+></listitem>
+</itemizedlist>
+
+<para
+>Om een bestand of map te <quote
+>selecteren</quote
+> in de geopende map zonder het te openen, gebruikt u de pijltjestoetsen <keysym
+>Boven</keysym
+> en <keysym
+>Beneden</keysym
+> om door de items te navigeren. Het geselecteerde item wordt opgelicht en er wordt wat informatie getoond over het bestand in de statusbalk.</para>
+
+<para
+>Door de <link linkend="viewmode"
+>Weergavemodus</link
+> met de optie <guimenuitem
+>Details</guimenuitem
+> op Details te zetten kan het makkelijker zijn om mappen te vinden die zich <quote
+>onder</quote
+> de huidige map bevinden. In deze weergave heeft iedere map een <keycap
+>&gt;</keycap
+> teken. Door er met de <mousebutton
+>linker</mousebutton
+>muisknop op te klikken (dus niet op de mapnaam of het bijbehorende pictogram) klapt de map open en wordt de inhoud weergegeven. Het kleine vakje zal een <keycap
+>v</keycap
+>teken tonen. De map klapt in wanneer u weer met de <mousebutton
+>linker</mousebutton
+>muisknop op het vakje klikt. Wanneer u de gewenste map gevonden hebt, klik er dan met de <mousebutton
+>linker</mousebutton
+>muisknop op om de map te openen.</para>
+
+<para
+>De <link linkend="sidebar"
+>zijbalk</link
+> kan ook handig zijn om uw bestandssysteem te verkennen.</para>
+
+<para
+>U kunt in één keer naar iedere map gaan wanneer u het pad van die map in de locatiebalk te typt. U kunt ook een pad opgeven in het dialoogvenster dat u krijgt wanneer u naar <menuchoice
+><guimenu
+>Bestand</guimenu
+><guimenuitem
+>Adres openen...</guimenuitem
+></menuchoice
+> gaat (<keycombo action="simul"
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+>). De functie <link linkend="path-complete"
+>Tekst aanvullen</link
+> kan dan handig zijn. Vergeet niet dat map- en bestandsnamen hoofdlettergevoelig zijn in &Linux; en &UNIX;.</para>
+
+<para
+>Wanneer u een nieuwe map bent binnengegaan kunt u teruggaan naar de vorige getoonde map door in de werkbalk <guiicon
+>Terug</guiicon
+> te kiezen. U kunt ook uit het menu <menuchoice
+><guimenu
+>Ga naar</guimenu
+> <guimenuitem
+>Terug</guimenuitem
+></menuchoice
+> kiezen, of de sneltoets <keycombo action="simul"
+>&Alt;<keysym
+>Links</keysym
+></keycombo
+> gebruiken. Nadat u terug bent gegaan kunt u vooruit gaan. gebruik de knop <guiicon
+>Vooruit</guiicon
+> in de werkbalk, het menubalkitem <menuchoice
+><guimenu
+>Ga naar</guimenu
+> <guimenuitem
+>Vooruit</guimenuitem
+></menuchoice
+> of <keycombo action="simul"
+>&Alt;<keysym
+>Rechts</keysym
+></keycombo
+>.</para>
+
+<para
+>U kunt ook teruggaan naar de bovenliggende map  door in de werkbalk <guiicon
+>Boven</guiicon
+> te kiezen. U kunt ook uit het menu <menuchoice
+><guimenu
+>Ga naar</guimenu
+> <guimenuitem
+>Boven</guimenuitem
+></menuchoice
+> kiezen, of de sneltoets <keycombo action="simul"
+>&Alt;<keysym
+>Omhoog</keysym
+></keycombo
+> gebruiken.</para>
+
+<tip
+><para
+>Klik op het markeringsvakje rechts van de werkbalk op één van de menuknoppen <guiicon
+>Omhoog</guiicon
+>, <guiicon
+>Terug</guiicon
+> of <guiicon
+>Verder</guiicon
+> dan zal er een lijst getoond worden met de recent bezochte locaties.</para>
+</tip>
+<!-- 4.5 -->
+<sect2 id="file-find">
+<title
+>Bestanden en mappen zoeken</title>
+
+<para
+>Wanneer u niet meer weet waar een bestand of map zich op uw systeem bevindt, kunt u op de knop <guiicon
+>Bestand zoeken</guiicon
+> in de werkbalk klikken of uit het menu <menuchoice
+><guimenu
+>Hulpmiddelen</guimenu
+><guimenuitem
+>Bestand zoeken...</guimenuitem
+></menuchoice
+> selecteren. Dit zal het zoekprogramma &kfind; starten. Zie het <ulink url="help:/kfind/index.html"
+>Handboek van &kfind;</ulink
+> voor meer hulp bij het gebruik van &kfind;. </para>
+
+<note
+><para
+>Wanneer een bestands- of mapnaam begint met een punt dan is dit een verborgen bestand of map. &konqueror; toont deze items normaal gesproken niet. Om deze bestanden toch met &konqueror; zichtbaar maken gebruikt u de optie <menuchoice
+><guimenu
+>Beeld</guimenu
+><guimenuitem
+>Verborgen bestanden tonen</guimenuitem
+></menuchoice
+>.</para>
+
+<para
+>Een andere reden waarom &konqueror; bepaalde bestanden of mappen niet weergeeft kan zijn dat u de plugin <link linkend="konq-plugin"
+><guisubmenu
+>Filters tonen</guisubmenu
+></link
+> aan hebt staan.</para>
+</note>
+
+</sect2>
+
+<sect2 id="removable-devices">
+<title
+>Verwijderbare apparaten</title>
+
+<para
+>Iedere verwijderbaar apparaat (USB-stick, diskette, &CD; of andere partitie op de harde schijf, die u in uw systeem hebt) zal normaal gesproken ergens in de map <filename class="directory"
+>/ </filename
+>, <filename class="directory"
+>/media</filename
+>, <filename class="directory"
+>/mnt</filename
+>, of <filename class="directory"
+>/auto</filename
+> te vinden zijn, zodat ze een pad kunnen hebben als <filename class="directory"
+>/mnt/floppy</filename
+> of <filename class="directory"
+>/cdrom</filename
+>. De details hangen af van de manier waarop uw systeem geïnstalleerd is.</para>
+
+<para
+>In &UNIX; / &Linux; is het vereist dat, wanneer u een verwijderbaar apparaat verbonden hebt met uw systeem dat het wordt aangekoppeld aan het bestandssysteem en evenzo andere harde schijf partities wanneer u die wilt gaan gebruiken. Het commando hiervoor is <command
+>mount</command
+>. Wanneer u ze wilt verwijderen moeten deze ook weer afgekoppeld worden, (<command
+>umount</command
+>), om het systeem te vertellen dat deze niet meer beschikbaar zijn.</para>
+
+<para
+>Hoe u dit doet zal afhangen van hoe u uw systeem hebt ingesteld:</para>
+
+<itemizedlist>
+
+<listitem
+><para
+>Met de <guilabel
+>Apparaatmelder</guilabel
+></para>
+<para
+>In een &kde;-sessie zal het venster van de <ulink url="help:/plasma-desktop/index.html#device-notifier"
+>Apparaatmelder</ulink
+> verschijnen, wanneer u een verwijderbaar apparaat inplugt en stelt u in staat om een toepasselijke toepassing voor dit medium te selecteren of het apparaat alleen aan te koppelen.</para>
+</listitem>
+
+<listitem
+><para
+>Het kan zijn dat u pictogrammen van verwijderbare apparaten op uw bureaublad hebt staan. U kunt daar dan met de <mousebutton
+>linker</mousebutton
+>muisknop op klikken om het betreffende station aan te koppelen. Vervolgens zal de inhoud van het apparaat getoond worden in &konqueror;. Om het station weer af te koppelen, klik met de <mousebutton
+>rechter</mousebutton
+>muisknop op het pictogram en kies voor <guimenuitem
+>Afkoppelen (unmount)</guimenuitem
+>. Lees hier meer over in de sectie <link linkend="making"
+>Nieuw aanmaken...</link
+> in dit handboek.</para
+></listitem>
+
+<listitem
+><para
+>Of u kunt het op de traditionele wijze doen in een console:</para>
+<para
+><userinput
+><command
+>mount /mnt/floppy</command
+></userinput
+></para>
+<para
+>om bijvoorbeeld een diskettestation aan te koppelen, en</para>
+<para
+><userinput
+><command
+>umount /mnt/floppy</command
+></userinput
+></para>
+<para
+>om het weer af te koppelen (<command
+>umount</command
+> en niet <command
+>unmount</command
+>). </para>
+<note
+><para
+>In plaats van het openen van een console om de commando's <command
+>mount</command
+> en <command
+>umount</command
+> te typen, is het eenvoudiger om in &konqueror;s menu <menuchoice
+><guimenu
+>Hulpmiddelen</guimenu
+><guimenuitem
+>Shellcommando uitvoeren...</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+>&Ctrl;<keycap
+>E</keycap
+></keycombo
+>) te kiezen. </para
+></note>
+
+</listitem>
+
+</itemizedlist>
+</sect2>
+
+</sect1>
+<!-- 4.5-->
+<sect1 id="deleting">
+<title
+>Bestanden en mappen verwijderen</title>
+
+<para
+>&konqueror; biedt twee mogelijkheden waarop een bestand of map verwijderd kan worden:</para>
+
+<itemizedlist>
+<listitem
+><para
+>U kunt het verplaatsen naar de <filename
+>Prullenbak</filename
+>. Dit is de veiligste manier, aangezien u de items weer terug kunt halen wanneer u er achter komt dat u een verkeerd bestand of map hebt weggegooid.</para
+></listitem
+> 
+
+<listitem
+><para
+>U kunt het ook meteen verwijderen, dit verwijdert het item uit de huidige map en stelt de vrijgekomen schijfruimte ter beschikking, net zoals bij het commando <command
+>rm</command
+>.</para>
+<para
+>Als u deze functie wilt gebruiken activeer dan de optie <guilabel
+>'Verwijdermenuitems' tonen die de prullenbak overslaan</guilabel
+> op de instellingenpagina <guilabel
+>Bestandsbeheer</guilabel
+>.</para
+></listitem>
+</itemizedlist>
+
+<para
+>De gemakkelijkste manier om een bestand of map te verwijderen is door er met de <mousebutton
+>rechter</mousebutton
+>muisknop op te klikken. Dit zal een menu openen met de opties <guimenuitem
+>Naar prullenbak verplaatsen</guimenuitem
+> en <guimenuitem
+>Verwijderen</guimenuitem
+>.</para>
+
+<para
+>Of wanneer u het item al <quote
+>geselecteerd</quote
+> hebt, kunt u in het menu <guimenu
+>Bewerken</guimenu
+> de opties <quote
+><guimenuitem
+>Naar prullenbak verplaatsen</guimenuitem
+></quote
+> of <quote
+><guimenuitem
+>Verwijderen</guimenuitem
+></quote
+> kiezen.</para>
+
+<para
+><keycap
+>Del</keycap
+> verplaatst het geselecteerde item of items naar de prullenbak.</para>
+
+<para
+><keycombo action="simul"
+>&Shift;<keycap
+>Del</keycap
+></keycombo
+> zal de geselecteerde items direct verwijderen, deze actie is ook niet meer terug te draaien.</para>
+
+<note
+><para
+>U kunt geen bestanden en mappen verwijderen wanneer u niet de nodige rechten hebt.</para
+></note>
+
+</sect1>
+<!-- 4.5-->
+<sect1 id="moving">
+<title
+>Verplaatsen en kopiëren</title>
+
+<para
+>Om een bestand of submap naar een andere map te kopiëren kunt u:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Met de <mousebutton
+>rechter</mousebutton
+>muisknop klikken op het item dat u wilt kopiëren en in het menu <guimenuitem
+>Kopiëren</guimenuitem
+> kiezen.</para>
+
+<para
+>Wanneer het item al <quote
+>geselecteerd</quote
+> is kunt u op de knop <guiicon
+>Kopiëren</guiicon
+> klikken in de werkbalk, kiest u <menuchoice
+><guimenu
+>Bewerken</guimenu
+> <guimenuitem
+>Kopiëren</guimenuitem
+></menuchoice
+> uit het menu, of gebruikt u de sneltoets <keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+>. U kunt <link linkend="selection"
+>meerdere</link
+> bestanden of mappen selecteren om deze tegelijkertijd te kopiëren.</para
+></listitem>
+
+<listitem
+><para
+>Navigeer naar de map waar u het item naar toe wilt kopiëren en klik dan op de knop <guiicon
+>Plakken</guiicon
+> in de werkbalk, of in het menu <menuchoice
+><guimenu
+>Bewerken</guimenu
+><guimenuitem
+>Plakken</guimenuitem
+></menuchoice
+> of als laatste de sneltoets <keycombo action="simul"
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+>. Ook kunt u plakken door met de <mousebutton
+>rechter</mousebutton
+>muisknop op een leeg stuk te klikken en vervolgens <guimenuitem
+>Plakken</guimenuitem
+> te selecteren. </para
+></listitem>
+</itemizedlist>
+
+<para
+>Het verplaatsen van een bestand wordt op dezelfde manier gedaan als kopiëren, maar u kiest dan <guimenuitem
+>Knippen</guimenuitem
+> of u drukt op de sneltoets <keycombo action="simul"
+>&Ctrl;<keycap
+>X</keycap
+></keycombo
+> in plaats van <guimenuitem
+>Kopiëren</guimenuitem
+>. Het item dat u geknipt hebt zal verwijderd worden uit de oorspronkelijke map nadat u het item op een andere locatie heeft geplakt.</para>
+
+<para
+>U kunt geselecteerde items ook kopiëren of verplaatsen naar een ander map door <guimenuitem
+>Kopiëren naar</guimenuitem
+> of <guimenuitem
+>Verplaatsen naar</guimenuitem
+> te kiezen uit het context-menu, dat u krijgt wanneer u met de <mousebutton
+>rechter</mousebutton
+>muisknop op een bestand of map klikt in het venster van de bestandsbeheerder.</para>
+<para
+>Om deze functie in te schakelen selecteert u <guilabel
+>Opdrachten 'Kopiëren naar' en 'Verplaatsen naar' tonen</guilabel
+> op de pagina <menuchoice
+><guimenu
+>Bestandsbeheer</guimenu
+> <guimenuitem
+>Services</guimenuitem
+></menuchoice
+> van instellingen.</para>
+<note
+><para
+>U kunt geen bestanden kopiëren of verplaatsen wanneer u niet de nodige toegangsrechten hebt. </para
+></note>
+<!-- 4.5-->
+<sect2 id="dnd">
+<title
+>Slepen en laten vallen gebruiken</title>
+
+<para
+>&konqueror; ondersteunt ook het kopiëren en verplaatsen van items door middel van slepen en loslaten.</para>
+
+<para
+>Dit kunt u doen door twee exemplaren van &konqueror; te openen, waarvan één de bronmap is en de ander de doelmap. Plaats de muisaanwijzer boven het item dat u wenst te kopiëren of te verplaatsen en houd de <mousebutton
+>linker</mousebutton
+>muisknop ingedrukt. Sleep het bestand nu naar een lege plaats in de doelmap. Laat de muisknop los en u krijgt een menu te zien met de keuzes <guimenuitem
+>Hierheen kopiëren</guimenuitem
+>, <guimenuitem
+>Hierheen verplaatsen</guimenuitem
+> of <guimenuitem
+>Hierheen verbinden</guimenuitem
+>. Zorg ervoor dat u de items op een lege plaats <quote
+>loslaat</quote
+>, want loslaten op een submap zal het item naar die map kopiëren of verplaatsen.</para>
+
+<para
+>U kunt &konqueror; ook meerdere mappen tegelijkertijd laten tonen in zijn venster, zodat u items tussen twee mappen kunt slepen en laten vallen.</para>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="dragdrop.png"/></imageobject>
+<textobject>
+<phrase
+>Venster splitsen om te kunnen slepen en laten vallen</phrase>
+</textobject>
+</mediaobject>
+
+<para
+>Deze schermafbeelding laat zien hoe u met de menubalk er voor zorgt dat &konqueror; meerdere deelvensters toont in één venster, die elk de inhoud van een andere map laten zien. U vindt deze optie in <menuchoice
+><guimenu
+>Venster</guimenu
+><guimenuitem
+>Venster verticaal opsplitsen</guimenuitem
+></menuchoice
+> of u maakt gebruik van de sneltoets <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>L</keycap
+></keycombo
+>.</para>
+
+<para
+>Om verschillende mappen tegelijkertijd te tonen mogen de twee deelvensters niet aan elkaar gekoppeld zijn. De twee vierkantjes rechtsonder moeten daarom leeg zijn. </para>
+
+<para
+>Het <quote
+>actieve</quote
+> deelvenster, dus de vensterdeel waarvan het pad getoond wordt in de locatiebalk, kunt u herkennen aan het groene lampje linksonderin het deelvenster. Om een deelvenster actief te maken klikt u met de <mousebutton
+>linker</mousebutton
+>muisknop op een leeg stuk of op de bijbehorende statusbalk.</para>
+
+<para
+>Om een actief deelvenster te verwijderen uit het hoofdvenster van &konqueror; drukt u op <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>W</keycap
+></keycombo
+>, of u kiest in het menu <menuchoice
+><guimenu
+>Venster</guimenu
+><guimenuitem
+>Actief deelvenster sluiten</guimenuitem
+></menuchoice
+>, of u klikt met de &RMB; op de bijbehorende statusbalk en kies uit het menu <guimenuitem
+>Deelvenster sluiten</guimenuitem
+>.</para>
+
+<para
+>U kunt in &konqueror; items kopiëren of verplaatsen tussen tabbladen door een item naar het betreffende tabblad te slepen. Laat de muis niet los, maar wacht tot het tabblad in beeld springt. Zo kunt u het item in een leeg stuk van het tabblad laten vallen.</para>
+
+</sect2>
+<!-- 4.5-->
+<sect2 id="dups">
+<title
+>Dubbele bestands- of mapnamen</title>
+<para
+>Wanneer u een bestand of map plakt in een map waarin al een item bestaat met dezelfde naam, zal &konqueror; een dialoogvenster openen met een waarschuwing dat het item al bestaat. U kunt dan kiezen uit: </para>
+<itemizedlist>
+<listitem
+><para
+>Het plakken afbreken door op de knop <guibutton
+>Annuleren</guibutton
+> te klikken.</para
+></listitem>
+<listitem
+><para
+>Het gekopieerde item een andere naam geven. U kunt dit doen door een nieuwe naam te typen in het tekstvak of u laat &konqueror; een <guibutton
+>Nieuwe naam voorstellen</guibutton
+>. Klik daarna op de knop <guibutton
+>Doorgaan</guibutton
+>.</para
+></listitem>
+<listitem
+><para
+>Als u meerdere items hebt gekopieerd, laat <guibutton
+>Overslaan</guibutton
+> het huidige item met rust. </para
+></listitem>
+</itemizedlist>
+<para
+>De knop <guibutton
+>Op alles toepassen</guibutton
+> kunt u gebruiken wanneer u meerdere items gekopieerd hebt.</para>
+</sect2>
+</sect1>
+<!-- begin copy from dolphin docbook synced for 4.10-->
+<sect1 id="selection">
+<title
+>Items selecteren in de weergave</title>
+
+<para
+>Er zijn verschillende manieren om items in de weergave te selecteren. Als er een groep items is geselecteerd, worden alle handelingen, zoals <menuchoice
+><guimenuitem
+>Knippen</guimenuitem
+></menuchoice
+>, <menuchoice
+><guimenuitem
+>Kopiëren</guimenuitem
+></menuchoice
+>, <menuchoice
+><guimenuitem
+>Naar prullenbak</guimenuitem
+></menuchoice
+> en slepen en neerzetten, toegepast op alle geselecteerde items. </para>
+
+<sect2 id="selection-mouse">
+<title
+>Items selecteren met de muis</title>
+
+<itemizedlist>
+
+<listitem
+><para
+>Klik met de &LMB; ergens in de weergave en trek, voordat u de knop loslaat, een rechthoek rond de groep items. Hiermee selecteert u alle items in de rechthoek en heft u de vorige selectie op. Als u tijdens de selectieprocedure de &Shift;-toets ingedrukt houdt, wordt de vorige selectie behouden. </para
+></listitem>
+
+<listitem
+><para
+>Als u bij het klikken op een item met de &LMB; de &Ctrl;-toets ingedrukt houdt, wordt de selectie van dat item omgekeerd. Drukt u op de &Ctrl;-toets terwijl u een rechthoek trekt rond een groep items zoals hierboven beschreven, dan wordt de selectie van alle items in de rechthoek omgekeerd.  </para
+></listitem>
+
+<listitem
+><para
+>Door de &Shift;-toets in te drukken terwijl u met de &LMB; op een item klikt, selecteert u alle items tussen dit item en het hiervoor geselecteerde item. </para
+></listitem>
+
+<listitem
+><para
+>Als in het tabblad <guilabel
+>Gedrag</guilabel
+> van de sectie <menuchoice
+><guimenu
+>Bestandsbeheer</guimenu
+> <guimenuitem
+>Algemeen</guimenuitem
+></menuchoice
+> in instellingen <guilabel
+>Selectiemarkeerder tonen</guilabel
+> is ingeschakeld, verschijnt er een klein <guiicon
+>+</guiicon
+> of <guiicon
+>-</guiicon
+>-teken in de linkerbovenhoek van het item onder de muisaanwijzer. Door op dit teken te klikken wordt het item respectievelijk geselecteerd of wordt de selectie ongedaan gemaakt. </para
+></listitem>
+
+</itemizedlist>
+
+</sect2>
+
+<sect2 id="selection-keyboard">
+<title
+>Items selecteren met het toetsenbord</title>
+
+<itemizedlist>
+
+<listitem
+><para
+>Bij het indrukken van een pijltjestoets, <keycap
+>Page Up</keycap
+>, <keycap
+>Page Down</keycap
+>, <keycap
+>Home</keycap
+>, of <keycap
+>End</keycap
+> wordt het nieuwe item geselecteerd en de vorige selectie opgeheven.  </para
+></listitem>
+
+<listitem
+><para
+>Als u op één van bovengenoemde toetsen drukt terwijl u de &Ctrl;-toets vasthoudt, blijft de selectie onveranderd. </para
+></listitem>
+
+<listitem
+><para
+>Als u op één van bovengenoemde toetsen drukt terwijl u de &Shift;-toets vasthoudt, worden alle items tussen het vorige geselecteerde item en het nieuw geselecteerde item geselecteerd. </para
+></listitem>
+
+<listitem
+><para
+> Als u tegelijk op <keycombo action="simul"
+>&Ctrl;<keysym
+>Spatiebalk</keysym
+></keycombo
+> drukt, wordt de selectie van het huidige item omgekeerd. </para
+></listitem>
+
+<listitem
+><para
+>Met <keycombo action="simul"
+>&Ctrl;<keycap
+>A</keycap
+></keycombo
+> selecteert u alle items in de weergave. </para
+></listitem>
+
+<listitem
+><para
+>Met <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>A</keycap
+></keycombo
+> wisselt de selectiestatus van alle items in de weergave. </para
+></listitem>
+
+<listitem
+><para
+>Selecteer een bestand of map door de eerste paar letters van zijn naam in te voeren en het eerste overeenkomende item wordt geselecteerd. Om de selectie te wissen en te annuleren druk op de toets &Esc; of wacht langer dan de timeout van 1 seconde. </para
+></listitem>
+</itemizedlist>
+
+</sect2>
+<!-- end copy from dolphin docbook-->
+
+<!-- selection-menu applies to dolphin as well copy over?-->
+<sect2 id="selection-menu">
+<title
+>Items selecteren met de het menu</title>
+
+<para
+>Het kan voorkomen dat u meerdere bestanden tegelijkertijd wilt verplaatsen, kopiëren of verwijderen. U wilt bijvoorbeeld alle .png-bestanden van de ene map naar de andere verplaatsen. &konqueror; maakt het u gemakkelijk doordat u bestanden kunt selecteren die een bepaalde overeenkomst in hun naam hebben.</para>
+
+<para
+>Kies in het menu <menuchoice
+><guimenu
+>Bewerken</guimenu
+><guisubmenu
+>Selectie</guisubmenu
+><guimenuitem
+>Overeenkomende items selecteren...</guimenuitem
+></menuchoice
+> of gebruik de sneltoets <keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+>. Er komt een klein dialoogvenster in beeld waar u de bestandsnamen kunt opgeven, gebruikmakend van de jokertekens <keycap
+>*</keycap
+> (staat voor een willekeurig aantal tekens) en <keycap
+>?</keycap
+> (staat voor één willekeurig teken). Klik daarna op <guibutton
+>OK</guibutton
+> en &konqueror; zal alle overeenkomende bestandsnamen selecteren. Bijvoorbeeld:</para>
+      
+<itemizedlist>
+<listitem
+><para
+><userinput
+><filename
+>vlag*.png</filename
+></userinput
+> zal alle bestandsnamen selecteren die beginnen met de letters <quote
+>vlag</quote
+> en eindigen met <quote
+><literal role="extension"
+>.png</literal
+></quote
+>.</para
+></listitem>
+<listitem
+><para
+><userinput
+><filename
+>memo?.txt</filename
+></userinput
+> zal <filename
+>memo1.txt</filename
+> en <filename
+>memo9.txt</filename
+> selecteren maar niet <filename
+>memo99.txt</filename
+>.</para
+></listitem>
+</itemizedlist>
+
+<para
+>Wanneer u een reeks bestanden hebt geselecteerd, kunt u de selectie aanpassen door in de menubalk de optie <menuchoice
+><guimenu
+>Bewerken</guimenu
+> <guisubmenu
+>Selectie</guisubmenu
+> <guimenuitem
+>Overeenkomende items deselecteren...</guimenuitem
+></menuchoice
+> te kiezen om op te geven welke bestanden uit de selectie gehaald moeten worden.</para>
+
+<para
+>Gebruik de menubalk-optie <menuchoice
+><guimenu
+>Bewerken</guimenu
+><guisubmenu
+>Selectie</guisubmenu
+> <guimenuitem
+>Alles deselecteren</guimenuitem
+></menuchoice
+> of klik gewoon met &LMB; op een lege plaats binnen het venster om de selectie te annuleren.</para>
+
+<para
+>U kunt zelfs een selectie omkeren. Dit houdt in dat geselecteerde items gedeselecteerd worden en dat items zonder selectie wel geselecteerd worden. U keert een selectie om door naar <menuchoice
+><guimenu
+>Bewerken</guimenu
+><guisubmenu
+>Selectie</guisubmenu
+><guimenuitem
+>Selectie omkeren</guimenuitem
+></menuchoice
+> te gaan of gebruik de sneltoets <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>A</keycap
+></keycombo
+>.</para>
+</sect2>
+
+</sect1>
+
+<!-- 4.5 -->
+<sect1 id="making">
+<title
+>Nieuw aanmaken</title>
+
+<para
+>Wanneer &konqueror; zich in bestandsbeheerdermodus bevindt, kunt u <guisubmenu
+>Nieuw aanmaken</guisubmenu
+> selecteren in het menu <guimenu
+>Bewerken</guimenu
+>, of uit het menu dat in beeld komt wanneer u met de <mousebutton
+>rechter</mousebutton
+>muisknop op een lege plaats klikt in een mapweergave:</para>
+
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Map...</guimenuitem
+></term>
+<listitem
+><para
+>Een eenvoudige manier om een nieuwe (sub)map aan te maken.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Tekstbestand...</guimenuitem
+></term>
+<listitem
+><para
+>Gebruik dit om een normaal, leeg, tekstbestand aan te maken. Een dialoogvenster zal u vragen om de naam op te geven voor het nieuwe bestand.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>HTML-bestand...</guimenuitem
+></term>
+<listitem
+><para
+>Maakt een basis <acronym
+>HTML</acronym
+>-bestand aan. Wanneer u de bestandsnaam op moet geven is het het beste wanneer u het de <literal role="extension"
+>.html</literal
+>-extensie geeft om verwarring te voorkomen.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+><replaceable
+>Type document</replaceable
+> Document...</guimenuitem
+></term>
+<listitem
+><para
+>Afhankelijk van de geïnstalleerde toepassingen en bestandsassociaties worden verschillende menu-items voor verschillende typen documenten getoond en stellen u in staat om sjabloondocumenten van het geselecteerde type aan te maken.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Koppeling naar locatie...</guimenuitem
+></term>
+<listitem
+><para
+>Hiermee kunt u een pictogram aanmaken dat een bepaalde map of website in &konqueror; opent. Net zoals met <guimenuitem
+>Koppeling naar toepassing...</guimenuitem
+> kunt u het pictogram op uw bureaublad plaatsen door de koppeling in de map <filename
+>~/Desktop</filename
+> te plaatsen. U kunt ook op een lege plaats van uw bureaublad klikken om vervolgens in het context-menu voor <guisubmenu
+>Nieuw aanmaken</guisubmenu
+> te kiezen.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Basis koppeling naar bestand of map...</guimenuitem
+></term>
+<listitem
+><para
+>Een symbolische koppeling malen voor locale bestanden of map.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Koppeling naar programma...</guimenuitem
+></term>
+<listitem
+><para
+>Deze optie is het meest zinvol wanneer u een pictogram wilt maken dat een bepaalde toepassing zal starten. Een dialoogvenster met verschillende tabbladen wordt geopend. In het eerste tabblad, <guilabel
+>Algemeen</guilabel
+>, kunt u een pictogram met bijbehorende tekst opgeven. In het tweede tabblad, <guilabel
+>Toegangsrechten</guilabel
+>, kunt u bepalen wie het pictogram mag gebruiken of veranderen. In het laatste tabblad, <guilabel
+>Toepassing</guilabel
+>, kunt u het uit te voeren <guilabel
+>Commando</guilabel
+> opgeven. Bijvoorbeeld, <userinput
+>kwrite</userinput
+> om de teksteditor &kwrite; te starten. <userinput
+>kwrite /home/pam/todo.txt</userinput
+> zal het bestand <filename
+>/home/pam/todo.txt</filename
+> openen in &kwrite;. Op dit tabblad vind u ook de opties waar u kunt opgeven welke bestandstypes het programma kan openen.</para>
+
+<para
+>Om een toepassingspictogram op uw bureaublad te maken kunt u een koppeling maken in de map <filename class="directory"
+>~/Desktop</filename
+> (deze map kan ook anders heten, hangt af van de installatie van &kde;). Maar makkelijker is het om gewoon met de <mousebutton
+>rechter</mousebutton
+> muisknop op een leeg gedeelte van het bureaublad te klikken.</para>
+
+<para
+>Wanneer u niet wilt dat uw bureaublad vol komt te staan met toepassingen kunt u ze ook in de map Toepassingen plaatsen. U kunt deze map openen door in &konqueror; naar <menuchoice
+><guimenu
+>Ga naar</guimenu
+><guimenuitem
+>Toepassingen</guimenuitem
+></menuchoice
+> te gaan. Vervolgens maakt u de koppeling aan in de map van uw keuze. Vervolgens maakt u een pictogram aan op uw bureaublad waarmee u de map Toepassingen kunt openen, deze bevindt zich normaal gesproken in <filename class="directory"
+>~/.local/share/applications</filename
+>.</para>
+<para
+>Om een koppeling naar een toepassing in uw paneel te plaatsen, maakt u eerst een koppeling aan de map Toepassingen. Sleep de koppeling vervolgens naar een lege plaats in uw paneel.</para>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guisubmenu
+>Koppeling naar apparaat</guisubmenu
+></term>
+<listitem
+><para
+>Gebruik deze opties in submenu wanneer u een pictogram wilt aanmaken dat een een apparaat aankoppelt en vervolgens zal openen met &konqueror;, waardoor de inhoud getoond zal worden. Om het apparaat weer af te koppelen dient u met de <mousebutton
+>rechter</mousebutton
+>muisknop op het pictogram te klikken en vervolgens <guimenuitem
+>Afkoppelen</guimenuitem
+> te kiezen. In veel gevallen is het handig om zo'n pictogram op uw bureaublad aan te maken. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+<!-- 4.5 -->
+<sect1 id="newname">
+<title
+>Bestandsnamen en toegangsrechten veranderen</title>
+
+<para
+>De gemakkelijkste manier om een bestand te hernoemen is door er met de <mousebutton
+>rechter</mousebutton
+>muisknop op te klikken en dan vervolgens voor <guimenuitem
+>Hernoemen</guimenuitem
+> kiezen. U kunt ook het bestand of de map selecteren en dan op de toetst <keycap
+>F2</keycap
+> drukken.</para>
+
+<para
+>Om de naam of toegangsrechten van een bestand of map te veranderen klikt u met de <mousebutton
+>rechter</mousebutton
+>muisknop op het item en kiest u voor <guimenuitem
+>Eigenschappen</guimenuitem
+>. U kunt het bestand of de map ook <quote
+>selecteren</quote
+> en vervolgens de optie <menuchoice
+><guimenu
+>Bewerken</guimenu
+><guimenuitem
+>Eigenschappen</guimenuitem
+></menuchoice
+> gebruiken (<keycombo action="simul"
+>&Alt;<keycap
+>Return</keycap
+></keycombo
+>).</para>
+
+<para
+>Dit zal het dialoogvenster Eigenschappen openen met verschillende tabbladen:</para>
+
+<itemizedlist>
+<listitem
+><para
+><guilabel
+>Algemeen</guilabel
+> geeft u wat informatie over het item en geeft u de mogelijkheid om de naam te veranderen. Als het om een map gaat kunt u ook het bijbehorende pictogram veranderen.</para
+></listitem>
+<listitem
+><para
+>Het tabblad <guilabel
+>Toegangsrechten</guilabel
+> toont u de eigenaar- en toegangsrechten en kunt u eventueel de toegangsrechten veranderen. </para
+></listitem>
+</itemizedlist>
+<!-- 4.5 -->
+<sect2 id="copyrename">
+<title
+>Kopiëren en Hernoemen</title>
+<para
+>Wanneer u een kopie wilt maken van een bestand met een nieuwe naam, bijvoorbeeld als reservekopie, klikt u op <guimenuitem
+>Kopiëren</guimenuitem
+> en meteen daarna op <guimenuitem
+>Plakken</guimenuitem
+>. Dit zal een dialoogvenster openen met de melding dat het bestand al bestaat. Typ de nieuwe naam in het tekstvak en klik op de knop <guibutton
+>Doorgaan</guibutton
+> (u kunt ook op <guibutton
+>Nieuwe naam voorstellen</guibutton
+> klikken, &konqueror; zal dan automatisch een nieuwe naam aanmaken).</para>
+</sect2>
+
+<!--sect2 id="super-user"
+> this is obsolete!
+<title
+>Super User Mode</title>
+
+<para
+>If you are running as a normal user and try to access files outside of
+your own home folder you will often be prevented from doing so and get an
+error message such as <errorname
+>Access Denied</errorname
+>. </para>
+
+<para
+>To access these files you need to be logged in as the system
+administrator, often known as the Super User or <systemitem class="username"
+>root</systemitem
+>. </para>
+
+<para
+>Rather than logging out then in again, you can launch &konqueror; from
+the
+<guimenu
+>K</guimenu
+> Menu in Super User mode by selecting
+<menuchoice
+><guisubmenu
+>System</guisubmenu
+><guimenuitem
+>File Manager - Super
+ User Mode
+</guimenuitem
+></menuchoice
+>. You will be asked for the <systemitem class="username"
+>root</systemitem>
+login password but as long as you can provide that &konqueror; will be started
+up with full access privileges to all files on your system.</para>
+
+<warning
+><para
+>Take care.  As Super User (<systemitem class="username"
+>root</systemitem
+>), you have complete control of
+your system, and a wrong command can easily do irrevocable damage.</para>
+<para
+>Also, connecting to the internet as <systemitem class="username"
+>root</systemitem
+> is an extremely bad idea, as it
+seriously increases your vulnerability to malicious hacking.</para
+></warning>
+
+</sect2-->
+</sect1>
+<!-- 4.5 -->
+<sect1 id="file-associations">
+<title
+>Bestandassociaties instellen</title>
+
+<!-- TODO: The content should probably be here too, but this'll do for -->
+<!-- now. -->
+<para
+>&kde; levert een groot aantal toepassingen die vele soorten bestanden kunnen openen. Meestal werkt de standaardinstelling zonder problemen. Maar &konqueror; heeft ook een systeem dat u de mogelijkheid geeft om de toepassing of toepassingen waarmee een bestandstype wordt geopend kan worden aangepast naar uw eigen voorkeur. Voor meer informatie kiest u <menuchoice
+><guimenu
+>Instellingen</guimenu
+><guimenuitem
+>Konqueror instellen...</guimenuitem
+></menuchoice
+> in de menubalk en vervolgens <guilabel
+>Bestandsassociaties</guilabel
+> in het configuratie venster, en klik daarna op <guibutton
+>Help</guibutton
+>.</para>
+
+</sect1>
+
+<!-- 4.5 -->
+<sect1 id="commandline">
+<title
+>Op de commandoregel</title>
+
+<para
+>Hoewel &konqueror; een erg krachtige grafische bestandsbeheerder is, kan het voorkomen dat een gevorderde &Linux;- / &UNIX;-gebruiker even een stap terug wil doen door op de commandoregel te werken.</para>
+
+<para
+>U kunt dan, uiteraard, een &konsole;-sessie starten met de optie uit de menubalk van &konqueror; <menuchoice
+><guimenu
+>Hulpmiddelen</guimenu
+><guimenuitem
+>Terminal openen</guimenuitem
+></menuchoice
+> te kiezen of met <keycombo action="simul"
+>&Ctrl;<keycap
+>F4</keycap
+></keycombo
+>.</para>
+<para
+>Wanneer u alleen een toepassing wilt starten of een URL-adres wilt openen, is het gemakkelijker om voor <menuchoice
+><guimenu
+>Hulpmiddelen</guimenu
+><guimenuitem
+>Shellcommando uitvoeren...</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+>&Ctrl;<keycap
+>E</keycap
+></keycombo
+>) te kiezen.</para>
+
+<para
+><menuchoice
+><guimenu
+>Hulpmiddelen</guimenu
+><guimenuitem
+>Shellcommando uitvoeren...</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+>&Ctrl;<keycap
+>E</keycap
+></keycombo
+>) opent een klein dialoogvenster met een commandoregel waar u een shellcommando kunt invoeren zoals <userinput
+>ps -ax | grep kdeinit</userinput
+>. Houd er rekening mee dat de stuurtekens van de terminal niet volledig ondersteund worden, dus programma's als <userinput
+>top</userinput
+> en <userinput
+>less</userinput
+> zullen niet goed werken. Voordeel is dat u deze commando's gelijk kunt uitvoeren zonder dat u &konsole; hoeft te starten. </para>
+
+<para
+>&konqueror; kan ook een terminal openen in zijn venster wanneer u naar het menu <menuchoice
+><guimenu
+>Instellingen</guimenu
+><guimenuitem
+>Terminal tonen</guimenuitem
+></menuchoice
+> gaat. Zolang het koppelpictogram rechtsonder zichtbaar is zal de terminal iedere mapwijziging volgen die u in de grafische weergave maakt.</para>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="cmndline.png"/></imageobject>
+<textobject>
+<phrase
+>Inclusief de terminal-sessie</phrase>
+</textobject>
+</mediaobject>
+
+</sect1>
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

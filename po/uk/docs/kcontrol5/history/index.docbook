@@ -1,0 +1,95 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Ukrainian "INCLUDE">
+]>
+<article id="history" lang="&language;">
+<title
+>Бічна панель журналу</title>
+<articleinfo>
+<authorgroup>
+<author
+>&Burkhard.Lueck;</author>
+<othercredit role="translator"
+><firstname
+>Юрій</firstname
+><surname
+>Чорноіван</surname
+><affiliation
+><address
+><email
+>yurchor@ukr.net</email
+></address
+></affiliation
+><contrib
+>Переклад українською</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>24 листопада 2009 року</date>
+<releaseinfo
+>&kde; 4.4</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Системні параметри</keyword>
+<keyword
+>Журнал</keyword>
+</keywordset>
+</articleinfo>
+
+<para
+>За допомогою цього модуля ви зможете налаштувати бічну панель журналу. </para>
+
+<variablelist>
+<varlistentry
+><term
+><guilabel
+>Обмеження</guilabel
+></term>
+<listitem
+><para
+>За допомогою пунктів цього розділу ви зможете встановити максимальний розмір журналу та час зберігання записів журналу. </para
+></listitem>
+</varlistentry>
+
+<varlistentry
+><term
+><guilabel
+>Нетиповий шрифт</guilabel
+></term>
+<listitem
+><para
+>Крім того, тут ви можете визначити різні шрифти для нових та старих адрес. Для цього достатньо натиснути кнопку <guibutton
+>Вибрати шрифт</guibutton
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry
+><term
+><guilabel
+>Подробиці</guilabel
+></term>
+<listitem
+><para
+>За допомогою пункту <guilabel
+>Докладні підказки</guilabel
+> можна керувати обсягом даних, які буде показано на контекстній панелі підказки після наведення вказівника миші на пункт сторінки журналу.</para>
+<para
+>Якщо пункт буде позначено, окрім адреси буде показано кількість відвідувань та дати першого та останнього відвідувань.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Натискання кнопки <guibutton
+>Спорожнити журнал</guibutton
+> призведе до вилучення всіх записів журналу. </para>
+</article>

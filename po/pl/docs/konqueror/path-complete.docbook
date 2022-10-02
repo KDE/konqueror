@@ -1,0 +1,136 @@
+<chapter id="path-complete">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>(c) 2005 Mandriva</firstname
+><surname
+>Poland</surname
+><affiliation
+><address
+><email
+>biuro@mandriva.pl</email
+></address
+></affiliation
+><contrib
+>Polskie tłumaczenie</contrib
+></othercredit
+> 
+</authorgroup
+> <date
+>2003-11-05</date
+> <releaseinfo
+>3.2</releaseinfo
+> </chapterinfo>
+
+
+<title
+>Automatyczne uzupełnianie tekstu</title
+> 
+
+<para
+>Możesz ustawić, aby &konqueror; pomagał Ci wpisywać ścieżkę lub adres do paska adresu poprzez włączenie funkcji <guimenuitem
+>Dopełnianie tekstu</guimenuitem
+>. Aby to zrobić, kliknij <mousebutton
+>prawym</mousebutton
+> przyciskiem myszy na wolnym obszarze w pasku adresu, a następnie wybierz <guisubmenu
+>Dopełnianie tekstu</guisubmenu
+> z podręcznego menu. Będziesz miał możliwość wyboru jednej z następujących opcji:</para>
+
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Brak</guimenuitem
+></term>
+<listitem
+><para
+>Pojawia się tylko to co wpiszesz.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Ręczne</guimenuitem
+></term>
+<listitem
+><para
+>Jeżeli wpiszesz część ścieżki lub adresu i wciśniesz kombinację klawiszy <keycombo action="simul"
+>&Ctrl;<keycap
+>E</keycap
+></keycombo
+>, to program uzupełni ją, o ile będzie to jednoznaczne uzupełnienie.</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Automatyczne</guimenuitem
+></term>
+<listitem
+><para
+>Podczas wprowadzania tekstu do paska adresu, będzie on automatycznie uzupełniany ścieżką lub adresem &URL;, z podświetleniem dodawanych znaków. Jeżeli dopełnienie jest nieodpowiednie, należy kontynuować wpisywanie, w przeciwnym razie wystarczy wcisnąć klawisz &Enter;.</para
+></listitem>
+ </varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Lista rozwijana</guimenuitem
+></term>
+<listitem
+><para
+>Zostanie wyświetlona lista rozwijana w miarę wpisywania tekstu, pokazując pasujące do wpisu adresy i ścieżki. Jeżeli pojawi się nazwa, która Ci odpowiada, kliknij na nią dwukrotnie lewym przyciskiem myszy. Możesz także wykorzystać klawisze <keysym
+>strzałka w dół</keysym
+> oraz <keysym
+>strzałka w dół</keysym
+> i potem wcisnąć klawisz &Enter;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Półautomatycznie</guimenuitem
+></term>
+<listitem
+><para
+>Jest to tryb podobny do automatycznego, tylko że rozszerza on wpisany tekst do kolejnego symbolu <keycap
+>/</keycap
+> w ścieżce lub adresie &URL;. Wciśnij <keycombo action="simul"
+>&Ctrl;<keycap
+>E</keycap
+></keycombo
+>, aby zaakceptować dopasowanie, a &Enter; kiedy pokazany jest cały adres &URL; lub ścieżka.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+<para
+>Można wypróbować wszystkie z wymienionych trybów i wybrać ten, który Ci najbardziej odpowiada.</para>
+<para
+>Historia ostatnio odwiedzonych adresów &URL;, które &konqueror; wykorzystuje do funkcji dopełniania tekstu, może być przeglądana i zmieniana w karcie <guilabel
+>Historii</guilabel
+> w <link linkend="sidebar"
+>Panelu nawigacyjnym</link
+>.</para>
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

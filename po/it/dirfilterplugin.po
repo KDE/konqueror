@@ -1,0 +1,100 @@
+# translation of dirfilterplugin.po to Italian
+# Copyright (C) 2003, 2005, 2009, 2012 Free Software Foundation, Inc.
+#
+# Daniele Medri <madrid@linuxmeeting.net>, 2003, 2005.
+# Pino Toscano <toscano.pino@tiscali.it>, 2009, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: dirfilterplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2012-12-01 09:55+0100\n"
+"Last-Translator: Pino Toscano <toscano.pino@tiscali.it>\n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: dirfilterplugin.cpp:120
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Hide Filter Bar"
+msgstr "Nascondi la barra del filtro"
+
+#: dirfilterplugin.cpp:124
+#, kde-format
+msgctxt "@label:textbox"
+msgid "F&ilter:"
+msgstr "F&iltro:"
+
+#: dirfilterplugin.cpp:136
+#, kde-format
+msgctxt "@label:button"
+msgid "Filter by t&ype"
+msgstr "Filtra per &tipo"
+
+#: dirfilterplugin.cpp:137
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Filter items by file type."
+msgstr "Filtra gli elementi secondo il tipo di file."
+
+#: dirfilterplugin.cpp:228
+#, kde-format
+msgctxt "@action:inmenu Tools"
+msgid "Show Filter Bar"
+msgstr "Mostra la barra del filtro"
+
+#: dirfilterplugin.cpp:322
+#, kde-format
+msgid "Use Multiple Filters"
+msgstr "Usa filtri multipli"
+
+#: dirfilterplugin.cpp:328
+#, kde-format
+msgid "Show Count"
+msgstr "Mostra numero"
+
+#: dirfilterplugin.cpp:333
+#, kde-format
+msgid "Reset"
+msgstr "Azzera"
+
+#. i18n: ectx: Menu (tools)
+#: dirfilterplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "S&trumenti"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: dirfilterplugin.rc:8
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "Barra degli strumenti extra"
+
+#~ msgid "Allow to filter the currently displayed items by filetype."
+#~ msgstr "Permette di filtrare per tipo di file gli oggetti mostrati."
+
+#~ msgid "Only Show Items of Type"
+#~ msgstr "Mostra solo elementi di tipo"
+
+#~ msgid "Filter Field"
+#~ msgstr "Campo di filtro"
+
+#~ msgid "Clear Filter Field"
+#~ msgstr "Pulisci il campo di filtro"
+
+#, fuzzy
+#~| msgid "Clear filter field<p>Clears the content of the filter field."
+#~ msgid "Clear filter field<p>Clears the content of the filter field.</p>"
+#~ msgstr ""
+#~ "Pulisci il campo di filtro<p>Svuota il contenuto del campo di filtro."
+
+#~ msgid ""
+#~ "Enter here a text which an item in the view must contain anywhere to be "
+#~ "shown."
+#~ msgstr ""
+#~ "Inserisci qui il testo che un oggetto presente nella vista deve contenere "
+#~ "per essere visualizzato."

@@ -1,0 +1,568 @@
+<chapter id="basics">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+&Niels.Reedijk;&Bram.Schoenmakers;&Rinse.Devries; 
+</authorgroup>
+
+<date
+>2010-02-08</date>
+<releaseinfo
+>4.4.0</releaseinfo>
+</chapterinfo>
+
+<title
+>&konqueror; beginselen</title>
+
+<important
+><para
+>Zoals alle &kde;-toepassingen is &konqueror; volledig instelbaar. Dit document beschrijft hoe &konqueror; zich gedraagt met de normale, standaard instellingen.</para>
+<para
+>Een muis met drie knoppen kan handig zijn bij &konqueror; of ieder ander &kde;-programma. Wanneer uw muis maar twee knoppen heeft dient u uw systeem zo in te stellen dat u een &MMB; kunt nabootsen door beide knoppen tegelijkertijd in te drukken.</para>
+<para
+>U kunt meer over het gebruik van de muis lezen in <xref linkend="lmb-mmb"/></para>
+<para
+>Wanneer u gewend bent om bepaalde acties uit te voeren met een dubbelklik een kleine waarschuwing; &konqueror; is, net als de rest van &kde; standaard ingesteld op het gebruik van een enkele muisklik.</para
+></important>
+
+<sect1 id="konq-start">
+<title
+>&konqueror; starten</title>
+
+<para
+>Omdat &konqueror; zowel een bestandsbeheerder als een webbrowser is, zal &konqueror; automatisch tussen deze twee standen schakelen. Het is makkelijker om al bij het opstarten de gewenste modus te kiezen.</para>
+
+<itemizedlist>
+<!--
+<listitem
+><para
+>If you have a <guiicon
+>house</guiicon
+> shaped icon on the panel 
+or desktop, then <mousebutton
+>left</mousebutton
+> click on it to open 
+&konqueror; as a file manager.</para
+></listitem>
+
+<listitem
+><para
+>Or <mousebutton
+>left</mousebutton
+> click on <guiicon
+>world
+</guiicon
+> shaped icon on the panel or desktop to open &konqueror; in browser 
+mode.</para
+></listitem>
+-->
+<listitem
+><para
+>Vanuit het menu voor het starten van programma's, selecteer <menuchoice
+><guisubmenu
+>Internet</guisubmenu
+><guimenuitem
+>Konqueror (Webbrowser)</guimenuitem
+></menuchoice
+> om het als een browser te starten. </para
+></listitem>
+
+<listitem
+><para
+>Met <keycombo action="simul"
+>&Alt;<keycap
+>F2</keycap
+></keycombo
+> opent u &krunner;, voer een pad naar een map in en druk op &Enter; om in bestandbeheerdermodus op te starten. Om &konqueror; als webbrowser te starten typt u gewoon een &URL; in, zoals <userinput
+>http://www.konqueror.org</userinput
+>.</para
+></listitem>
+
+</itemizedlist>
+
+<note
+><para
+>Klik op de zwarte pijl rechts van het <guiicon
+>Homepage</guiicon
+>-pictogram om naar uw <guiicon
+>Thuismap</guiicon
+> om te schakelen in de bestandsbeheerdermodus en omgekeerd. </para
+></note>
+
+<para
+>Als &konqueror; uw standaard bestandsbeheerder is, wordt deze ook automatisch gestart wanneer u met de <mousebutton
+>linker</mousebutton
+> op een pictogram klikt die een map op het bureaublad representeert, zoals een harde schijf of het pictogram van de <guiicon
+>Prullenbak</guiicon
+>. </para>
+
+
+</sect1>
+
+<sect1 id="parts">
+<title
+>De onderdelen van &konqueror;</title>
+
+<para
+>Een overzicht van de belangrijkste onderdelen van &konqueror;'s venster:</para>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="parts.png"/></imageobject>
+<textobject>
+<phrase
+>Dit is een schermafbeelding van &konqueror;</phrase>
+</textobject>
+</mediaobject>
+
+<para
+>De <interface
+>titelbalk</interface
+> is de balk helemaal bovenaan het venster van &konqueror; en werkt hetzelfde als bij andere &kde;-toepassingen. Klik met de <mousebutton
+>rechter</mousebutton
+>muisknop op deze balk om het titelbalkmenu tevoorschijn te halen.</para>
+
+<para
+>De <interface
+>menubalk</interface
+> is de balk die alle namen bevat van de menu's. Klik met de <mousebutton
+>linker</mousebutton
+>muisknop op een naam om het menu zichtbaar of onzichtbaar te maken, of gebruik als sneltoets <keycombo action="simul"
+>&Alt;<keycap
+> de onderstreepte letter </keycap
+></keycombo
+> in de naam. Bijvoorbeeld <keycombo action="simul"
+>&Alt;<keycap
+>w</keycap
+></keycombo
+> zal het menu <guimenu
+>Bewerken</guimenu
+>. De verschillende menu's worden behandeld in de <link linkend="menubar"
+>Menubalk</link
+>-sectie van dit document.</para>
+
+<para
+>De <interface
+>werkbalk</interface
+> bevat pictogrammen (knoppen) van een aantal vaak gebruikte handelingen. U activeert ze door er met de <mousebutton
+>linker</mousebutton
+> op te klikken. Een korte beschrijving van wat het prictogram doet zal verschijnen wanneer u met de muisaanwijzer er overheen gaat.</para>
+
+<para
+>Sommige pictogrammen, bijvoorbeeld de Omhoog- en Terugpictogrammen in de vorige schermafdruk, bevatten rechts dit type pictogram. Wanneer u de &LMB; ingedrukt houdt met de cursor op dit type pictogram dan zal er een afrolmenu verschijnen.</para
+> <para
+>Wanneer u met de <mousebutton
+>rechter</mousebutton
+>muisknop op de werkbalk klikt, komt het menu <link linkend="rmb-menus"
+><guilabel
+>Werkbalkinstellingen</guilabel
+></link
+> in beeld. Hiermee kunt u het uiterlijk en de positie van de werkbalk aanpassen.</para>
+
+<para
+>De <interface
+>Locatiebalk</interface
+> toont het pad van de map, &URL; of bestand dat op dat moment in beeld is. U kunt in de locatiebalk ook een pad of &URL; typen. Druk daarna op &Enter; of op het pictogram <guiicon
+>Ga naar</guiicon
+> rechts van de locatiebalk. Het zwarte pictogram aan de rechterkant van de <interface
+>Locatiebalk</interface
+> wist de inhoud van het invoerveld.</para>
+
+<para
+>De <interface
+>Bladwijzerbalk</interface
+> is de balk onder de <interface
+>Locatiebalk</interface
+>. Hier kunt u vaak gebruikte bladwijzers toevoegen. Zie voor meer informatie de sectie <link linkend="orgbmark"
+>Bladwijzers organiseren</link
+>.</para>
+
+<para
+>Het <interface
+>venster</interface
+> in het midden is het belangrijkste gedeelte van &konqueror; dit gedeelte laat de inhoud van een map, een webpagina, een document of afbeeldingen zien. Met het menu <link linkend="menu-window"
+><guimenu
+>Venster</guimenu
+></link
+> kunt u het scherm splitsen, zodat u gemakkelijk bestanden heen en weer kunt slepen. Ook kunt u &konqueror; meerdere tabladen laten openen. </para>
+
+<para
+>De <interface
+>Statusbalk</interface
+> bevindt zich onderaan het venster en geeft meestal wat algemene informatie over datgene waarboven de muiscursor zich bevindt. Wanneer u het venster gesplitst hebt krijgt ieder deelvenster zijn eigen statusbalk. Daarin vindt u een klein groen lampje dat aangeeft welk deelvenster <quote
+>actief</quote
+> is. Wanneer u met de <mousebutton
+>rechter</mousebutton
+>muisknop op de statusbalk klikt komt het <link linkend="rmb-menus"
+>statusbalk menu</link
+> tevoorschijn.</para>
+
+<note
+><para
+>Uw versie van &konqueror; ziet er waarschijnlijk niet zo uit als in de schermafdruk. U kunt een hoop instellen in &konqueror;. Zoals:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Met het menu <link linkend="menu-settings"
+><guimenu
+>Instellingen</guimenu
+></link
+> kunt u de menubalk, werkbalken of bladwijzerbalk in- of uitschakelen. U kunt zelfs een extra werkbalk toevoegen.</para
+></listitem>
+<listitem
+><para
+>Als de werkbalken niet zijn vergrendeld, dan kunt U ze ook naar een nieuwe locatie slepen door helemaal links op de handel van de werkbalk met de <mousebutton
+>linker</mousebutton
+> te klikken of verplaatsten door de &LMB; ingedrukt te houden en daarna deze te verslepen. </para
+></listitem>
+<listitem
+><para
+>Op deze schermafbeelding is de optionele <link linkend="sidebar"
+>Zijbalk</link
+> niet te zien.</para
+></listitem>
+</itemizedlist>
+
+<para
+>In de sectie <link linkend="config"
+>&konqueror; configureren</link
+> vindt u meer informatie over hoe u het uiterlijk van &konqueror; kunt veranderen</para
+></note>
+
+</sect1>
+
+<sect1 id="bubble">
+<title
+>Knopinfo en Wat is dit?</title>
+
+<para
+>U kunt al een hoop te weten komen over &konqueror; zonder dit hele document door te lezen, simpel door gebruik te maken van de <guilabel
+>Knopinfo</guilabel
+> en de optie <guimenuitem
+>Wat is dit?</guimenuitem
+> in het menu <guimenu
+>Help</guimenu
+>.</para>
+
+<para
+>U krijgt een korte beschrijving te zien van wat de knop doet als u de muisaanwijzer over een knop in de werkbalk of zijbalk beweegt.</para>
+
+<para
+>U kunt <guimenuitem
+>Wat is dit?</guimenuitem
+> opvragen via het menu <guimenu
+>Help</guimenu
+> of door <keycombo action="simul"
+>&Shift;<keycap
+>F1</keycap
+></keycombo
+> in te drukken. Er zal dan een vraagteken afgebeeld worden naast het pijltje van de cursor.</para>
+
+<para
+>Wanneer dit vraagteken eenmaal zichtbaar is zal een klik met de <mousebutton
+>linker</mousebutton
+>muisknop niks uithalen tenzij u op een object drukt (of de tekst die daar bij hoort) dat <guimenuitem
+>Wat is dit?</guimenuitem
+> ondersteunt. Dit zal een korte beschrijving geven van de functie van dit object. Bijna alle vensters van &konqueror; ondersteunen deze mogelijkheid.</para>
+
+</sect1>
+
+<sect1 id="lmb-mmb">
+<title
+>Acties met de <mousebutton
+>linker</mousebutton
+>- en <mousebutton
+>middelste</mousebutton
+> muisknop</title>
+
+<para
+>U <quote
+>activeert</quote
+> een object in &konqueror; door er met de <mousebutton
+>linker</mousebutton
+>muisknop op te klikken. Dus</para>
+
+<itemizedlist>
+
+<listitem
+><para
+>Klik met de <mousebutton
+>linker</mousebutton
+>muisknop op een pictogram in de werkbalk om de bijbehorende actie uit te voeren. </para
+></listitem>
+<listitem
+><para
+>Klik met de <mousebutton
+>linker</mousebutton
+>muisknop op een item in de menubalk om dat menu te openen.</para
+></listitem>
+<listitem
+><para
+>Klik met de <mousebutton
+>linker</mousebutton
+>muisknop op een menu-item om de bijbehorende actie uit te voeren.</para
+></listitem
+> 
+<listitem
+><para
+>Klik met de <mousebutton
+>linker</mousebutton
+>muisknop op een bladwijzer in de bladwijzerwerkbalk om de betreffende &URL; te openen.</para
+></listitem>
+<listitem
+><para
+>Klik met de <mousebutton
+>linker</mousebutton
+> muisknop op een koppeling in een webpagina om die te volgen.</para
+></listitem>
+<listitem
+><para
+>Klik met de <mousebutton
+>linker</mousebutton
+>muisknop op een map-pictogram of -naam &konqueror; zal dan de inhoud van deze map weergeven. </para
+></listitem>
+<listitem
+><para
+>Door met de <mousebutton
+>linker</mousebutton
+>muisknop op een bestand te klikken zal &konqueror; proberen de juiste actie te ondernemen, uitgaande van het bestandstype. In het algemeen betekent dit het openen van een vooruitblik voor <acronym
+>HTML</acronym
+>-pagina's of het tonen van teksten, afbeeldingen, multimediabestanden of documenten in het venster van Konqueror zelf. (<quote
+>Voorbeeld</quote
+> betekent dat u de inhoud van het bestand kunt zien of horen, maar niet kunt wijzigen).</para
+> 
+
+<para
+>&konqueror; bepaalt het bestandstype door de extensie te vergelijken met een lijst van bekende bestandsextensies. Als dat niet lukt probeert &konqueror; de bestandsextensie te bepalen aan de hand van de inhoud van het bestand. U kunt de lijst van bekende bestandstypes aanpassen in de sectie <guilabel
+>Bestandsassociaties</guilabel
+> van het venster <menuchoice
+><guimenu
+>Instellingen</guimenu
+><guimenuitem
+>Konqueror instellen... </guimenuitem
+></menuchoice
+>.</para
+></listitem>
+
+</itemizedlist>
+
+<para
+>Met de &MMB; op een pictogram of naam van een bestand of map te klikken doet in principe hetzelfde als klikken met de <mousebutton
+>linker</mousebutton
+>, behalve dat de actie gewoonlijk uitgevoerd wordt in een nieuw venster, tenzij de optie <guilabel
+>Koppelingen openen in nieuw tabblad in plaats van nieuw venster</guilabel
+> is geactiveerd in het onderdeel <guimenuitem
+>Algemeen</guimenuitem
+> van de dialoog <menuchoice
+><guimenu
+>Instellingen</guimenu
+><guimenuitem
+>Konqueror instellen...</guimenuitem
+></menuchoice
+>. &konqueror; kan koppelingen in pagina's openen en <menuchoice
+><guimenu
+>Snelkoppelingen</guimenu
+></menuchoice
+> alsook de <guibutton
+>Home</guibutton
+>, <guibutton
+>Omhoog</guibutton
+>, <guibutton
+>Terug</guibutton
+> en <guibutton
+>Vooruit</guibutton
+> in een nieuw tabblad of venster.</para>
+
+<para
+>Door de &Shift; toets ingedrukt te houden bij het klikken met de <mousebutton
+>middelste</mousebutton
+> muisknop wordt de koppeling in de achtergrond geopend.</para>
+<!-- not in 4.4.0
+<important
+><para
+>If you click the &MMB; when the mouse cursor is over a blank 
+part of the main view (not over a link or file name or icon) &konqueror; will 
+copy the contents of the clipboard into the Location Toolbar and try to use 
+that as a &URL;.</para
+></important>
+-->
+</sect1>
+
+<sect1 id="rmb-menus">
+<title
+><mousebutton
+>Rechter</mousebutton
+>muisknopmenu's</title>
+
+<para
+>Door met de <mousebutton
+>rechter</mousebutton
+> muisknop te klikken op vrijwel ieder onderdeel van &konqueror;s venster zal een bijbehorend contextmenu worden geopend.</para>
+
+<note
+><para
+>Wanneer de optie <guilabel
+>Rechter muisklik gaat terug in de geschiedenis</guilabel
+> is ingeschakeld zal een enkele <mousebutton
+>rechter</mousebutton
+> muisklik volstaan om een stap terug te doen. Dit is hetzelfde als op de knop <guibutton
+>Vorige</guibutton
+> te drukken. Wanneer dit aanstaat kunt u het context-menu opvragen door de muis te slepen tijdens het indrukken van de <mousebutton
+>rechter</mousebutton
+> muisknop.</para
+></note>
+
+<variablelist>
+
+<varlistentry>
+<term
+>Op de titelbalk</term>
+<listitem
+><para
+>Bij het klikken met de <mousebutton
+>rechter</mousebutton
+>muisknop in een leeg gedeelte van de titelbalk komt er een menu tevoorschijn waarmee u de positie en grootte van het venster kunt veranderen. U kunt via dit menu ook het venstergedrag wijzigen. Dit is dan van toepassing op alle vensters binnen &kde;. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Op de hoofdwerkbalk</term>
+<listitem
+><para
+>Klik met de <mousebutton
+>rechter</mousebutton
+>muisknop op een leeg gedeelte van de hoofdwerkbalk om het werkbalkmenu op te vragen. Hier kunt u bijvoorbeeld instellen of u de werkbalk links, rechts, boven- of onderin het venster van &konqueror; wilt hebben. U kunt hier ook instellen welke knoppen u op de werkbalk hebt en bepalen of er enkel tekst, enkel pictogrammen of beide weergegeven moeten worden.</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+>Op de Locatiebalk</term>
+<listitem
+><para
+>Klik met de <mousebutton
+>rechter</mousebutton
+>muisknop in het &URL;-veld om te knippen, kopiÃ«ren en plakken, of verander de instellingen om <link linkend="path-complete"
+>automatisch tekst aan te vullen</link
+>.</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+>Binnenin een deelvenster</term>
+<listitem
+><para
+>Wanneer u met de <mousebutton
+>rechter</mousebutton
+>muisknop op een leeg gedeelte van een deelvenster klikt krijgt u een menu met, naast andere dingen, opties als <guiicon
+>Naar boven</guiicon
+>, <guiicon
+>Terug</guiicon
+>, <guiicon
+>Verder</guiicon
+> en <guiicon
+>Herladen</guiicon
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Op een bestand op map</term>
+<listitem
+><para
+>Dit is de meest nuttige functie. Klikken met de <mousebutton
+>rechter</mousebutton
+> op de naam of pictogram van elke bestand of map zal niet alleen het item <quote
+>selecteren</quote
+>, maar er komt ook een menu tevoorschijn met opties voor <guimenuitem
+>Knippen</guimenuitem
+>, <guimenuitem
+>Verplaats</guimenuitem
+>, <guimenuitem
+>Kopiëren</guimenuitem
+> of <guimenuitem
+>Verwijderen</guimenuitem
+> van het item op verschillende manieren, het openen met het programma van uw keuze of een voorbeeld tonen, het hernoemen, of het bestandstype of eigenschappen bewerken.</para
+></listitem
+> </varlistentry>
+
+<varlistentry>
+<term
+>Op de statusbalk</term>
+<listitem
+><para
+>Klik met de <mousebutton
+>rechter</mousebutton
+>muisknop op de statusbalk om een deelvenster toe te voegen of te verwijderen binnenin het venster van &konqueror;.</para
+></listitem
+> 
+</varlistentry>
+</variablelist>
+
+</sect1>
+
+<sect1 id="man-info">
+<title
+>Help bekijken, man- en info-pagina's</title>
+
+<para
+>U kunt &kde;-documentatie, &UNIX; Man- en Info-pagina's direct lezen in &konqueror; zonder dat u <application
+>KHelpCenter</application
+> dient te starten. </para>
+
+<para
+>Om de documentatie van een &kde;-programma te openen, typ <userinput
+>help:/<replaceable
+>naam van de toepassing</replaceable
+></userinput
+> in het locatieveld. Voer bijvoorbeeld <userinput
+>help:/kmail</userinput
+> in om de documentatie van &kmail; te lezen. </para>
+
+<para
+>&konqueror; maakt het u ook veel gemakkelijker om &UNIX; man-pagina's te lezen. Typ bijvoorbeeld in het locatieveld: <userinput
+>man:/touch</userinput
+> of <userinput
+>#touch</userinput
+> om de man-pagina van het commando <command
+>touch</command
+> te bekijken.</para
+> 
+
+<para
+>Om door &UNIX; Info-pagina's te bladeren, typt u <userinput
+>info:/dir</userinput
+> in het locatieveld. Dit brengt u naar de hoofdmap van Info. Het is daarna een kwestie van op de juiste koppelingen klikken om de pagina te vinden die u wilt lezen. U kunt ook <userinput
+>info:/<replaceable
+>naam van de toepassing</replaceable
+></userinput
+> gebruiken om meteen naar de betreffende Info-pagina te gaan.</para>
+
+<note
+><para
+>Helaas is de documentatie van &kde; zodanig opgeslagen dat ze niet met een andere browsers bekeken kan worden. Als u de documentatie liever vanuit een andere browser bekijkt kunt u terecht op <ulink url="http://docs.kde.org"
+> http://docs.kde.org</ulink
+>.</para
+></note>
+</sect1>
+
+</chapter>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

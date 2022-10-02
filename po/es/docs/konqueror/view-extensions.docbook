@@ -1,0 +1,177 @@
+<chapter id="view-extensions">
+
+<title
+>Extensiones del modo de vista</title>
+
+<!--filemanager mode:
+default Icons/Details/Columns (Dolphin), File Size View (konq-plugins)
+additional Terminal Emulator (Konsole), File Replace View (kdewebdev), Cervisia (kdesdk), Radial Map (Filelight-kdeutils) and more
+browser mode:
+default KHTML, WebKit, Embedded Advanced Text Editor
+additional KImageMapEditor+KLinkStatusPart (kdewebdev) and more
+  -->
+<para
+>&konqueror; ofrece más vistas en <menuchoice
+><guimenu
+>Ver</guimenu
+> <guisubmenu
+>Modo de visualización</guisubmenu
+></menuchoice
+> en el modo de gestor de archivos y en el de navegador, si están instaladas las correspondientes aplicaciones y complementos .</para>
+<para
+>El gestor de archivos tiene las vistas adicionales <guimenuitem
+>Mapa radial</guimenuitem
+> de la aplicación <application
+>Filelight</application
+> y el complemento de &konqueror; <guimenuitem
+>Vista de tamaño de archivo</guimenuitem
+>.</para>
+
+<sect1 id="fsview">
+<sect1info>
+<authorgroup>
+<author
+><personname
+><firstname
+>Josef</firstname
+> <surname
+>Weidendorfer</surname
+></personname
+> <address
+><email
+>Josef.Weidendorfer@gmx.de</email
+></address
+> </author>
+
+</authorgroup>
+<date
+>2011-05-16</date>
+<releaseinfo
+>&kde; 4.7</releaseinfo>
+</sect1info>
+
+<title
+>&fsview; - la vista del sistema de archivos</title>
+<sect2>
+<title
+>Introducción</title>
+
+<para
+>La extensión &fsview; para &konqueror; es otro modo de vista para objetos de tipo MIME <literal
+>inode/directory</literal
+> para archivos locales. Se puede considerar una alternativa a las diferentes vistas de iconos y de listas para navegar por el contenido de su sistema local de archivos.</para>
+
+<para
+>La única propiedad de &fsview; es su posibilidad de mostrar toda la jerarquía anidada de carpetas usando un mapa de árbol como visualización gráfica. El mapa de árbol permite mostrar la métrica de objetos en estructuras anidadas: cada objeto se representa con un rectángulo cuyo área es proporcional a su métrica. La suma de las métricas de los hijos de un objeto debe ser igual o inferior a la métrica del objeto.</para>
+
+<para
+>For &fsview;, sizes of files and folders are chosen as the metric, where the size of a folder is defined to be the sum of the sizes of its subitems. This way, big files even deep down in the folder hierarchy can be spotted easily be looking for large rectangles. So &fsview; can be looked at as a graphical and interactive version of the &UNIX; <command
+>du</command
+> command.</para>
+
+<para
+>The integration of &fsview; as part of Konqueror allows it to use the standard features such as context file menus, and mime type sensitive actions. But it was chosen not to implement automatic update by watching file system changes: if you delete a file shown in &fsview; outside of &konqueror;, you have to update manually by &eg; pressing <keycap
+>F5</keycap
+> to see the change. The reason for this decision is the potentially huge number of files which would have to be watched for changes, and thus, could put an unreasonable pressure on system resources for a small feature.</para>
+
+</sect2>
+
+<sect2>
+<title
+>Propiedades de visualización</title>
+
+<para
+>Esta sección explica la visualización gráfica de &fsview; en detalle.</para>
+
+<sect3>
+<title
+>Opciones de diseño de elementos</title>
+
+<para
+>In &fsview;, an item of the tree map visualization is a rectangle representing a file or folder of your file system. For easier navigation, rectangles have meaningful coloring and labeling options.</para>
+
+<para
+>The color of a rectangle, switchable via menu item <menuchoice
+><guimenu
+>View</guimenu
+><guisubmenu
+>Color Mode</guisubmenu
+></menuchoice
+> can be either representative of <guimenuitem
+>Depth</guimenuitem
+>, for easy detection of nesting, or a color mapping of different file attributes such as name, owner, group, or mime type.</para>
+
+<para
+>A rectangle can be labeled with the various attributes of the corresponding file or folder. For each attribute, you can choose whether it should be shown at all, only if space is available, or if space should be taken from children (thus introducing errors to pure tree map drawing constraints). Additionally, you can choose the relative location of the label in the rectangle.</para>
+
+</sect3>
+
+<sect3>
+<title
+>Algoritmos de diseño de árboles</title>
+
+<para
+>For drawing algorithms in tree maps, the rule that the area is proportional to the metric of an item should hold true. With the tree map in &fsview;, this goal isn't always met: we draw borders to show the nesting of items, and this border takes space for an item which is possibly lost for the areas of child items. Note that less space is lost for the border if the rectangle is quadratic.</para>
+
+<para
+>Similarly, it is better for a good overview to let each rectangle at least have its name as a label. It is an option to always force space for labels, or only to draw labels when empty space is available. In the latter case, the tool tips appearing when the mouse is held over an item can help a lot. They show information for the item the mouse is currently over, together with its parent folders up to the root item of the tree map.</para>
+
+<para
+>El cómo se divide el espacio de un elemento en subáreas para los hijos es algo que se deja a la implementación. Siempre es mejor intentar dividir las áreas de manera que los rectángulos queden lo más cuadrados posibles, tanto por el etiquetado como por la pérdida producida por los bordes. El mejor método, de esta manera, sería <guilabel
+>Filas</guilabel
+>, <guilabel
+>Columnas</guilabel
+>, o <guilabel
+>Bisección recursiva</guilabel
+>.</para>
+
+<para
+>You can choose the minimal area of items to be drawn via the menu item <menuchoice
+><guimenu
+>View</guimenu
+><guimenuitem
+>Stop at Area</guimenuitem
+></menuchoice
+>. Instead, a hash pattern will be drawn over the parents area to signal that this space is in fact occupied by a child or children.</para>
+
+</sect3>
+
+</sect2>
+
+<sect2>
+<title
+>Interfaz de usuario</title>
+
+<para
+>&fsview; admite la selección múltiple de elementos, de manera similar a la vista de iconos o la vista en forma de lista. Esto permite llevar a cabo acciones de manera simultánea en un conjunto de archivos. Una sola pulsación del ratón selecciona un único elemento bajo el puntero del ratón. Una pulsación del ratón en combinación con la tecla &Shift;, selecciona un intervalo y en combinación con la tecla &Ctrl;, conmutar una selección. Tenga en cuenta que si selecciona un elemento, ya no podrá seleccionar los subelementos. Así, seleccionando un elemento se borrará la selección de todos sus elementos padre anteriores.</para>
+
+<para
+>Keyboard navigation is available in tree maps: use <keycap
+>Left Arrow</keycap
+> and <keycap
+>Right Arrow</keycap
+> keys to move the current item between siblings, and the <keycap
+>Up Arrow</keycap
+> and <keycap
+>Down Arrow</keycap
+> keys to go up and down the nesting hierarchy. <keycap
+>Space</keycap
+> selects the item; in conjunction with &Shift; does range selection; and with the &Ctrl; key held down simultaneously, toggles selection of the current item. Press <keycap
+>Return</keycap
+> to run the open action on the current item.</para>
+
+</sect2>
+
+<sect2>
+<title
+>Créditos y licencia</title>
+<para
+>Inicialmente, &fsview; era una pequeña aplicación de pruebas y un tutorial del elemento gráfico TreeMap desarrollado dentro de <application
+>KCachegrind</application
+>.</para>
+<para
+>Derechos de autor. Josef Weidendorfer. Bajo licencia GPL V2.</para>
+</sect2>
+
+</sect1>
+</chapter>

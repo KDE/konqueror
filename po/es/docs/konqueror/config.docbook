@@ -1,0 +1,348 @@
+<chapter id="config">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+> <firstname
+>Rocío</firstname
+> <surname
+>Gallego</surname
+> <affiliation
+><address
+><email
+>traducciones@rociogallego.com</email
+></address
+></affiliation
+> <contrib
+>Traductor</contrib
+> </othercredit
+><othercredit role="translator"
+> <firstname
+>Pablo</firstname
+> <surname
+>de Vicente</surname
+> <affiliation
+><address
+><email
+>pablo.devicente@gmail.com</email
+></address
+></affiliation
+> <contrib
+>Traductor</contrib
+> </othercredit
+> <othercredit role="translator"
+> <firstname
+>Marcos</firstname
+> <surname
+>Fouces Lago</surname
+> <affiliation
+><address
+><email
+>mfouces@yahoo.es</email
+></address
+></affiliation
+> <contrib
+>Traductor</contrib
+> </othercredit
+> 
+</authorgroup>
+
+<date
+>2010-02-07</date>
+<releaseinfo
+>4.4.0</releaseinfo>
+</chapterinfo>
+
+
+<title
+>Configurar &konqueror;</title>
+
+<para
+>Al igual que el resto de &kde;, &konqueror; es muy configurable, de modo que usted puede seleccionar el aspecto que mejor se adecúe a sus necesidades y deseos.</para>
+
+<sect1 id="configure-bars">
+<title
+>Barras de herramientas</title>
+
+<para
+>Cuando &kde; se instala por primera vez, la ventana de &konqueror; contiene una barra de menú, barras de herramientas principal y de dirección y posiblemente una barra de marcadores.</para>
+
+<para
+>Maybe you don't need all these toolbars. To hide one of them, go into the <menuchoice
+><guimenu
+>Settings</guimenu
+><guisubmenu
+>Toolbars Shown</guisubmenu
+> </menuchoice
+> menu and uncheck its box. To show a hidden toolbar, just check the box.</para
+> 
+
+<para
+>La propia barra de menú se puede activar/desactivar con la combinación de teclas de accesos rápidos <keycombo action="simul"
+>&Ctrl;<keycap
+>M</keycap
+></keycombo
+>. </para>
+
+<para
+>Si presiona el botón <mousebutton
+>derecho</mousebutton
+> del ratón sobre una barra de herramientas, verá un menú para configurarla. Puede bloquear o desbloquear su posición y seleccionar la del texto, el tamaño de los iconos y la orientación de las barras desbloqueadas.</para>
+
+<para
+>Si las barras de herramientas están desbloqueadas, a la izquierda de cada barra verá un manejador. Al hacer clic con el &LMB; sobre ellos, podrá arrastrar una barra a una nueva posición e incluso desempotrarla de la ventana y colocarla en otro lugar de su pantalla.</para>
+
+<para
+>Los iconos que se muestran en las diferentes barras se pueden modificar seleccionando la opción <menuchoice
+><guimenu
+>Preferencias</guimenu
+><guimenuitem
+>Configurar barras de herramientas...</guimenuitem
+></menuchoice
+>, lo que mostrará el cuadro de diálogo <guilabel
+>Configurar barras de herramientas</guilabel
+>. El número y tipo de estas barras de herramientas dependerá de si &konqueror; está en modo navegador web o en modo administrador de archivos y de si dispone de complementos de &konqueror; instaladas.</para>
+
+</sect1>
+
+<sect1 id="configshort">
+<title
+>Accesos rápidos</title>
+<para
+>Para cambiar los accesos rápidos definidos en &konqueror; seleccione <menuchoice
+><guimenu
+>Preferencias</guimenu
+><guimenuitem
+>Configurar accesos rápidos...</guimenuitem
+></menuchoice
+> Esto iniciará un cuadro de diálogo como se muestra abajo. </para>
+<mediaobject>
+<imageobject>
+<imagedata fileref="shortcut1.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Captura de pantalla 1 de configuración de acceso rápido</phrase>
+</textobject>
+</mediaobject>
+<para
+>Utilice el cuadro de búsqueda para encontrar la acción para la que desea añadir o cambiar las teclas de acceso rápido y selecciónela haciendo clic con el botón <mousebutton
+>izquierdo</mousebutton
+> sobre su nombre. </para>
+
+<para
+>Después de seleccionar una acción de la lista verá que este elemento se resalta y que hay dos casillas adicionales debajo de él en la lista. Aquí podrá configurar una o ninguna combinación de teclas para la acción seleccionada. </para>
+
+<mediaobject>
+<imageobject>
+<imagedata fileref="shortcut2.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Captura de pantalla 2 de configuración de acceso rápido</phrase>
+</textobject>
+</mediaobject>
+
+<itemizedlist>
+<listitem
+><para
+><guilabel
+>Predeterminado</guilabel
+>: la selección seleccionada se asociará con el valor predeterminado de &kde;. Es una buena elección para la mayoría de las acciones, ya que &kde; viene con asociaciones de teclas razonables. </para
+></listitem>
+<listitem
+><para
+><guilabel
+>Personalizado</guilabel
+>: si esta opción está activada, puede crear una combinación de teclas para la acción seleccionada. Haga clic en el botón que tiene la etiqueta<guibutton
+>Ninguna</guibutton
+> o la etiqueta del acceso rápido personalizado seleccionado previamente. Ahora, la etiqueta del botón cambia a <guibutton
+>Entrada</guibutton
+>. Después, pulse alguna tecla modificadora (&ie; &Shift;, &Ctrl;, o &Alt;) y después una tecla normal o una tecla de función (&eg; <keycap
+>F11</keycap
+>) a la que quiera asignar esta combinación de teclas.</para
+></listitem>
+<listitem
+><para
+>Puede restablecer el acceso rápido a <guilabel
+>Ninguno</guilabel
+> mediante el botón: <inlinemediaobject
+><imageobject
+> <imagedata fileref="reset.png" format="PNG"/></imageobject
+></inlinemediaobject
+>. </para>
+<para
+>Al hacer clic en la columna <guilabel
+>Alternativo</guilabel
+> de una fila de la lista, se puede editar el segundo acceso rápido para la acción.</para
+></listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="othersettings">
+<title
+>Otras preferencias</title>
+<para
+>Si selecciona <menuchoice
+><guimenu
+>Preferencias</guimenu
+><guimenuitem
+> Configurar Konqueror...</guimenuitem
+></menuchoice
+> se abrirá un cuadro de diálogo que puede utilizar para controlar la mayoría del comportamiento de &konqueror;.</para
+> 
+<para
+>Este contiene varias secciones que se seleccionan presionando el botón <mousebutton
+>izquierdo</mousebutton
+> del ratón sobre uno de los iconos a la izquierda del cuadro de diálogo:</para>
+<itemizedlist>
+<listitem
+><para
+><ulink url="help:/kcontrol/khtml-general/index.html"
+>General</ulink
+>: Configurar el comportamiento general de &konqueror;</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/performance/index.html"
+>Performance</ulink
+>: Configure settings that can improve &konqueror;'s performance</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/bookmarks/index.html"
+>Marcadores</ulink
+>: Configurar la página de inicio de los marcadores</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/filemanager/index.html"
+>Administración de archivos</ulink
+>: Aquí puede configurar como se comportará Konqueror como administrador de archivos</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/dolphin/configuring-dolphin.html#preferences-dialog-viewmodes"
+>Modos de vista</ulink
+>: Configurar los modos de vista del administrador de archivos</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/dolphin/configuring-dolphin.html#preferences-dialog-navigation"
+>Navegación</ulink
+>: Configurar la navegación del administrador de archivos</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/dolphin/configuring-dolphin.html#preferences-dialog-services"
+>Servicios</ulink
+>: Configurar los servicios del administrador de archivos</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/dolphin/configuring-dolphin.html#preferences-dialog-general"
+>General</ulink
+>: Configurar las preferencias generales del administrador de archivos</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/filetypes/index.html"
+>Asociaciones de archivos</ulink
+>: Configurar las asociaciones de archivos</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/trash/index.html"
+>Papelera</ulink
+>: Configurar las preferencias de la papelera</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/khtml-behavior/index.html"
+>Navegación web</ulink
+>: Configurar el comportamiento del navegador</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/proxy/index.html"
+>Proxy</ulink
+>: Configurar los servidores proxy utilizados</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/kcmcss/index.html"
+>Apariencia</ulink
+>: Configurar cómo se mostrarán las páginas web</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/khtml-adblock/index.html"
+>Filtros de AdBlocK</ulink
+>: Configurar los filtros de AdBlocK de &konqueror;</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/ebrowsing/index.html"
+>Accesos rápidos para web</ulink
+>: Configurar la navegación mejorada</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/cache/index.html"
+>Caché</ulink
+>: Configurar preferencias de la caché web</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/history/index.html"
+>Historial</ulink
+>: Configurar el panel lateral del historial</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/cookies/index.html"
+>Cookies</ulink
+>: Configurar el funcionamiento de las cookies</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/useragent/index.html"
+>Identificación del navegador</ulink
+>: Configurar la forma en la que Konqueror se identifica</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/khtml-java-js/index.html"
+>Java y JavaScript</ulink
+>: Configurar el comportamiento de Java y JavaScript</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/khtml-plugins/index.html"
+>Complementos</ulink
+>: Configurar los complementos del navegador</para
+></listitem>
+</itemizedlist>
+<para
+>Si pulsa el botón <guibutton
+>Ayuda</guibutton
+> se le ofrecerán instrucciones detalladas de como usar cada una de estas secciones, o también puede utilizar la ayuda <link linkend="bubble"
+>¿Qué es esto?</link
+>.</para>
+</sect1>
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

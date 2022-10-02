@@ -1,0 +1,570 @@
+# Malayalam translation of kcmkonq.
+# Copyright (C) 2008 This_file_is_part_of_KDE
+# This file is distributed under the same license as the kcmkonq package.
+#
+# Manu S Madhav <manusmad@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkonq trunk\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2008-12-07 17:24-0800\n"
+"Last-Translator: Manu S Madhav <manusmad@gmail.com>\n"
+"Language-Team: SMC <smc.org.in>\n"
+"Language: ml\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: behaviour.cpp:36
+#, kde-format
+msgid ""
+"<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "
+"file manager here."
+msgstr ""
+"<h1>കോണ്‍ക്വററിന്റെ പെരുമാറ്റം</h1> കോണ്‍ക്വറര്‍ ഒരു ഫയലുകളുടെ നടത്തിപ്പുകാരനായി എങ്ങിനെ പ്രവര്‍"
+"ത്തിക്കുന്നുവെന്നതു് ഇവിടെ ക്രമീകരിക്കാം."
+
+#: behaviour.cpp:40
+#, kde-format
+msgid "Misc Options"
+msgstr "ഇതര ഐച്ഛികങ്ങള്‍"
+
+#: behaviour.cpp:49
+#, kde-format
+msgid "Open folders in separate &windows"
+msgstr "അറകള്‍ വെവ്വേറെ &ജാലകങ്ങളില്‍ തുറക്കുക"
+
+#: behaviour.cpp:50
+#, kde-format
+msgid ""
+"If this option is checked, Konqueror will open a new window when you open a "
+"folder, rather than showing that folder's contents in the current window."
+msgstr ""
+"ഈ ഐച്ഛികം തെരഞ്ഞെടുത്തിട്ടുണ്ടെങ്കില്‍, നിങ്ങള്‍ പുതിയ അറ തുറക്കുമ്പോള്‍, ആ ജാലകത്തില്‍ത്തന്നെ "
+"അറയിലുള്ളവ കാണിക്കുന്നതിനുപകരം കോണ്‍ക്വറര്‍ ഒരു പുതിയ ജാലകം തുറക്കുന്നു."
+
+#: behaviour.cpp:73
+#, fuzzy, kde-format
+msgid "Show 'Delete' me&nu entries which bypass the trashcan"
+msgstr "ചവറ്റുകുട്ട മറികടക്കാന്‍ 'നീക്കം ചെയ്യുക' എന്നതു് &വിഭവസൂചികകളില്‍ കാണിക്കുക. "
+
+#: behaviour.cpp:77
+#, fuzzy, kde-format
+msgid ""
+"Check this if you want 'Delete' menu commands to be displayed on the desktop "
+"and in the file manager's menus and context menus. You can always delete "
+"files by holding the Shift key while calling 'Move to Trash'."
+msgstr ""
+"പണിയിടത്തിന്റെയും ഫയല്‍ കാര്യസ്ഥന്റെയും വിഭവസൂചികകളില്‍ 'നീക്കം ചെയ്യുക' എന്ന ആജ്ഞ കാണണമെങ്കില്‍ "
+"ഇതു് തെരഞ്ഞെടുക്കുക. 'ചവറ്റുകുട്ടയിലേക്കു് നീക്കുക' എന്നതു് പ്രയോഗിക്കുമ്പോള്‍ Shift കീ അമര്‍"
+"ത്തിപ്പിടിച്ചാല്‍ ഫയലുകള്‍ എപ്പോഴും നീക്കം ചെയ്യാവുന്നതാണു്."
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Menu Editor"
+#~ msgstr "വിഭവസൂചിക ചിട്ടപ്പെടുത്തല്‍"
+
+#~ msgid "Menu"
+#~ msgstr "വിഭവസൂചിക"
+
+#~ msgid "New..."
+#~ msgstr "പുതിയ..."
+
+#~ msgid "Remove"
+#~ msgstr "തുടച്ചുനീക്കുക"
+
+#~ msgid "Move Up"
+#~ msgstr "മുകളിലേക്കു് നീക്കുക"
+
+#~ msgid "Move Down"
+#~ msgstr "താഴേക്കു് നീക്കുക"
+
+#~ msgid ""
+#~ "<h1>Paths</h1>\n"
+#~ "This module allows you to choose where in the filesystem the files on "
+#~ "your desktop should be stored.\n"
+#~ "Use the \"Whats This?\" (Shift+F1) to get help on specific options."
+#~ msgstr ""
+#~ "<h1>പാതകള്‍</h1>\n"
+#~ "നിങ്ങളുടെ പണിയിടത്തിലെ ഫയലുകള്‍ ഫയല്‍സിസ്റ്റത്തില്‍ എവിടെ സൂക്ഷിക്കണമെന്നു തീരുമാനിക്കാന്‍ ഈ "
+#~ "മൊഡ്യൂള്‍ നിങ്ങളെ അനുവദിക്കുന്നു.\n"
+#~ "പ്രത്യേക ഐച്ഛികങ്ങളെക്കുറിച്ചുള്ള സഹായത്തിനായി \"എന്താണിതു്?\" (Shift+F1) ഉപയോഗിക്കുക."
+
+#, fuzzy
+#~ msgid "Desktop path:"
+#~ msgstr "പണിയിട പാത:"
+
+#~ msgid ""
+#~ "This folder contains all the files which you see on your desktop. You can "
+#~ "change the location of this folder if you want to, and the contents will "
+#~ "move automatically to the new location as well."
+#~ msgstr ""
+#~ "പണിയിടത്തില്‍ കാ​ണുന്ന എല്ലാ ഫയലുകളും ഈ അറയിലാണുള്ളതു്. നിങ്ങള്‍ക്കു് ഈ അറയുടെ സ്ഥാനം മാറ്റാം, "
+#~ "അതിലുള്ളവയും പുതിയ സ്ഥാനത്തേക്കു് സ്വയം മാറും."
+
+#, fuzzy
+#~ msgid "Autostart path:"
+#~ msgstr "സ്വയാരംഭ പാത:"
+
+#~ msgid ""
+#~ "This folder contains applications or links to applications (shortcuts) "
+#~ "that you want to have started automatically whenever KDE starts. You can "
+#~ "change the location of this folder if you want to, and the contents will "
+#~ "move automatically to the new location as well."
+#~ msgstr ""
+#~ "കെഡിഇ തുടങ്ങുമ്പോള്‍ സ്വയം തുടങ്ങേണ്ട പ്രയോഗങ്ങളോ അവയിലേക്കുള്ള കണ്ണികളോ (കുറുക്കുവഴികള്‍) ഈ "
+#~ "അറയില്‍ അടങ്ങിയിരിക്കുന്നു. ഈ അറയുടെ സ്ഥാനം യഥേഷ്ടം മാറ്റാം, ഉള്ളടക്കങ്ങളുടെ സഥാനവും "
+#~ "അതനുസരിച്ചു് മാറും."
+
+#, fuzzy
+#~ msgid "Documents path:"
+#~ msgstr "രചനകളുടെ പാത:"
+
+#~ msgid ""
+#~ "This folder will be used by default to load or save documents from or to."
+#~ msgstr "രചനകള്‍ സൂക്ഷിക്കാനും തിരിച്ചെടുക്കാനും ഈ അറ തനതായി ഉപയോഗിക്കപ്പെടും."
+
+#, fuzzy
+#~ msgid "Downloads path:"
+#~ msgstr "രചനകളുടെ പാത:"
+
+#, fuzzy
+#~ msgid "This folder will be used by default to save your downloaded items."
+#~ msgstr "രചനകള്‍ സൂക്ഷിക്കാനും തിരിച്ചെടുക്കാനും ഈ അറ തനതായി ഉപയോഗിക്കപ്പെടും."
+
+#, fuzzy
+#~ msgid "Movies path:"
+#~ msgstr "രചനകളുടെ പാത:"
+
+#, fuzzy
+#~ msgid ""
+#~ "This folder will be used by default to load or save movies from or to."
+#~ msgstr "രചനകള്‍ സൂക്ഷിക്കാനും തിരിച്ചെടുക്കാനും ഈ അറ തനതായി ഉപയോഗിക്കപ്പെടും."
+
+#, fuzzy
+#~ msgid "Pictures path:"
+#~ msgstr "രചനകളുടെ പാത:"
+
+#, fuzzy
+#~ msgid ""
+#~ "This folder will be used by default to load or save pictures from or to."
+#~ msgstr "രചനകള്‍ സൂക്ഷിക്കാനും തിരിച്ചെടുക്കാനും ഈ അറ തനതായി ഉപയോഗിക്കപ്പെടും."
+
+#, fuzzy
+#~ msgid ""
+#~ "This folder will be used by default to load or save music from or to."
+#~ msgstr "രചനകള്‍ സൂക്ഷിക്കാനും തിരിച്ചെടുക്കാനും ഈ അറ തനതായി ഉപയോഗിക്കപ്പെടും."
+
+#~ msgid "Autostart"
+#~ msgstr "സ്വയാരംഭം"
+
+#~ msgid "Desktop"
+#~ msgstr "പണിയിടം"
+
+#, fuzzy
+#~ msgid "Documents"
+#~ msgstr "രചനകളുടെ പാത:"
+
+#, fuzzy
+#~ msgid "Movies"
+#~ msgstr "നീക്കുക"
+
+#~ msgid ""
+#~ "The path for '%1' has been changed.\n"
+#~ "Do you want the files to be moved from '%2' to '%3'?"
+#~ msgstr ""
+#~ "'%1' എന്നതിന്റെ പാത മാറിയിരിക്കുന്നു;\n"
+#~ "'%2'-ല്‍ നിന്നും '%3'-ലേക്കു് ഫയലുകള്‍ മാറ്റണോ?"
+
+#, fuzzy
+#~ msgctxt "Move files from old to new place"
+#~ msgid "Move"
+#~ msgstr "നീക്കുക"
+
+#, fuzzy
+#~ msgid ""
+#~ "The path for '%1' has been changed.\n"
+#~ "Do you want to move the directory '%2' to '%3'?"
+#~ msgstr ""
+#~ "'%1' എന്നതിന്റെ പാത മാറിയിരിക്കുന്നു;\n"
+#~ "'%2'-ല്‍ നിന്നും '%3'-ലേക്കു് ഫയലുകള്‍ മാറ്റണോ?"
+
+#, fuzzy
+#~ msgctxt "Move the directory"
+#~ msgid "Move"
+#~ msgstr "നീക്കുക"
+
+#~ msgid "Confirmation Required"
+#~ msgstr "ഉറപ്പാക്കല്‍ ആവശ്യമാണു്"
+
+#~ msgctxt "@title:group what to do when a file is deleted"
+#~ msgid "Ask Confirmation For"
+#~ msgstr "ഉറപ്പാക്കല്‍ ചോദിക്കേണ്ടതു്"
+
+#~ msgid ""
+#~ "This option tells Konqueror whether to ask for a confirmation when you "
+#~ "\"delete\" a file. <ul><li><em>Move To Trash:</em> moves the file to your "
+#~ "trash folder, from where it can be recovered very easily.</li> "
+#~ "<li><em>Delete:</em> simply deletes the file.</li> </ul>"
+#~ msgstr ""
+#~ "നിങ്ങള്‍ ഒരു ഫയല്‍ \"നീക്കം ചെയ്യുമ്പോള്‍\" ഉറപ്പാക്കല്‍ ചോദിക്കണോ വേണ്ടയോ എന്നു് ഈ ഐച്ഛികം കോണ്‍"
+#~ "ക്വററിനോടു് പറയും. <ul><li><em>ചവറ്റുകുട്ടയിലേക്കു് മാറ്റുക:</em> ഫയലിനെ ചവര്‍ അറയിലേക്കു് "
+#~ "മാറ്റുന്നു, അവിടെനിന്നു് അതിനെ എളുപ്പം തിരികെ കൊണ്ടുവരാന്‍ സാധിക്കും.</li> <li><em>നീക്കം "
+#~ "ചെയ്യുക:</em> ഫയലിനെ പൂര്‍ണ്ണമായി നീക്കം ചെയ്യുന്നു.</li> </ul>"
+
+#~ msgctxt "@option:check Ask for confirmation when moving to trash"
+#~ msgid "&Move to trash"
+#~ msgstr "ചവറ്റുകുട്ടയിലേയ്ക്കു് &മാറ്റുക"
+
+#~ msgctxt "@option:check Ask for confirmation when deleting"
+#~ msgid "D&elete"
+#~ msgstr "&നീക്കം ചെയ്യുക"
+
+#~ msgid "&Behavior"
+#~ msgstr "&പെരുമാറ്റം"
+
+#~ msgid "&Previews && Meta-Data"
+#~ msgstr "&കണ്ടുനോക്കല്‍ && മെറ്റാ-ഡാറ്റ"
+
+#~ msgid ""
+#~ "<p>Allow previews, \"Folder Icons Reflect Contents\", and retrieval of "
+#~ "meta-data on protocols:</p>"
+#~ msgstr ""
+#~ "<p>മുന്‍കാഴ്ചകള്‍, \"അറ ചിഹ്നങ്ങള്‍ ഉള്ളടക്കങ്ങളെ പ്രതിഫലിപ്പിക്കുന്നു\", നിയമാവലികളുടെ മെറ്റാ-"
+#~ "ഡാറ്റ എടുക്കല്‍ എന്നിവ അനുവദിക്കുക:</p>"
+
+#~ msgid ""
+#~ "<h1>Preview Options</h1> Here you can modify the behavior of Konqueror "
+#~ "when it shows the files in a folder.<h2>The list of protocols:</h2> check "
+#~ "the protocols over which previews should be shown; uncheck those over "
+#~ "which they should not. For instance, you might want to show previews over "
+#~ "SMB if the local network is fast enough, but you might disable it for FTP "
+#~ "if you often visit very slow FTP sites with large images.<h2>Maximum File "
+#~ "Size:</h2> select the maximum file size for which previews should be "
+#~ "generated. For instance, if set to 1 MB (the default), no preview will be "
+#~ "generated for files bigger than 1 MB, for speed reasons."
+#~ msgstr ""
+#~ "<h1>മുന്‍കാഴ്ച ഐച്ഛികങ്ങള്‍</h1> ഒരു അറയിലെ ഫയലുകള്‍ കാണിക്കുമ്പോള്‍ കോണ്‍ക്വററിന്റെ സ്വഭാവം "
+#~ "ഇവിടെ നിങ്ങള്‍ക്കു് മാറ്റം വരുത്താം.<h2>നിയമാവലികളുടെ പട്ടിക:</h2> മുന്‍കാഴ്ചകള്‍ "
+#~ "കാണിക്കേണ്ട നിയമാവലികള്‍ തെരഞ്ഞെടുക്കുക; കാണിക്കേണ്ടാത്തവ തെരഞ്ഞെടുക്കാതിരിക്കുക. "
+#~ "ഉദാഹരണത്തിനു്, പ്രാദേശിക ശൃംഖല വേഗമുള്ളതാണെങ്കില്‍, നിങ്ങള്‍ SMB മുഖേന മുന്‍കാഴ്ചകള്‍ "
+#~ "കാണിക്കുമായിരിക്കാം, പക്ഷേ നിങ്ങള്‍ വേഗം കുറഞ്ഞ, ചിത്രങ്ങള്‍ നിറഞ്ഞ FTP സൈറ്റുകളില്‍ "
+#~ "പോകാറുണ്ടെങ്കില്‍ ഇതു് FTP-യ്ക്കായി പ്രവര്‍ത്തനരഹിതമാക്കുമായിരിക്കാം.<h2>കൂടിയ ഫയല്‍ വലിപ്പം:"
+#~ "</h2> മുന്‍കാഴ്ചകള്‍ ഉല്‍പാദിപ്പിക്കേണ്ട ഏറ്റവും കൂടിയ ഫയല്‍ വലിപ്പം തെരഞ്ഞെടുക്കുക. "
+#~ "ഉദാഹരണത്തിനു്, 1 MB (തനതു്) ആണു് സജ്ജീകരിച്ചിരിക്കുന്നതെങ്കില്‍, വേഗമില്ലായ്മ കാരണം, 1 MB-"
+#~ "യില്‍ കൂടിയ ഫയലുകള്‍ക്കു് മുന്‍കാഴ്ചകള്‍ ഉല്‍പാദിപ്പിക്കപ്പെടില്ല."
+
+#~ msgctxt ""
+#~ "@title:column Header of a column where the user has to select in which "
+#~ "protocols he wants to see file previews"
+#~ msgid "Select Protocols"
+#~ msgstr "സമ്പ്രദായങ്ങള്‍ തെരഞ്ഞെടുക്കുക"
+
+#~ msgid "Local Protocols"
+#~ msgstr "തദ്ദേശ നിയമാവലികള്‍"
+
+#~ msgid "Internet Protocols"
+#~ msgstr "ഇന്റര്‍നെറ്റ് നിയമാവലികള്‍"
+
+#~ msgid ""
+#~ "This option makes it possible to choose when the file previews, smart "
+#~ "folder icons, and meta-data in the File Manager should be activated.\n"
+#~ "In the list of protocols that appear, select which ones are fast enough "
+#~ "for you to allow previews to be generated."
+#~ msgstr ""
+#~ "ഫയല്‍ കാര്യസ്ഥനില്‍ ഫയല്‍ മുന്‍കാഴ്ചകള്‍, മിടുക്കന്‍ ഫോള്‍ഡര്‍ ചിഹ്നങ്ങള്‍, മെറ്റ-ഡാറ്റ എന്നിവ എപ്പോഴാണു് "
+#~ "പ്രാവര്‍ത്തികമാക്കേണ്ടതെന്നു് തെരഞ്ഞെടുക്കാന്‍ ഈ ഐച്ഛികം കൊണ്ടു സാധിക്കുന്നു.\n"
+#~ "കാണപ്പെടുന്ന നിയമാവലികളില്‍നിന്നു്, മുന്‍കാഴ്ചകള്‍ സൃഷ്ടിക്കാന്‍പാകത്തിനു് വേഗതയുള്ളവ തെരഞ്ഞെടുക്കുക."
+
+#~ msgid "&Maximum file size:"
+#~ msgstr "കൂടിയ ഫയല്‍ വലിപ്പം"
+
+#~ msgid " MB"
+#~ msgstr " MB"
+
+#~ msgid "&Increase size of previews relative to icons"
+#~ msgstr "ചിഹ്നങ്ങളോടപേക്ഷിച്ചു് മുന്‍കാഴ്ചകളുടെ വലിപ്പം കൂട്ടുക"
+
+#~ msgid "&Use thumbnails embedded in files"
+#~ msgstr "ഫയലുകളില്‍ ഉള്‍പ്പെടുത്തിയിട്ടുള്ള നഖചിത്രങ്ങള്‍ ഉപയോഗിക്കുക"
+
+#~ msgid ""
+#~ "Select this to use thumbnails that are found inside some file types (e.g. "
+#~ "JPEG). This will increase speed and reduce disk usage. Deselect it if you "
+#~ "have files that have been processed by programs which create inaccurate "
+#~ "thumbnails, such as ImageMagick."
+#~ msgstr ""
+#~ "ചില ഫയലുകള്‍ക്കുള്ളിലുള്ള നഖചിത്രങ്ങള്‍ ഉപയോഗിക്കാനായി ഇതു് തെരഞ്ഞെടുക്കുക. (ഉദാ. JPEG). ഇതു് "
+#~ "വേഗത കൂട്ടുകയും ഡിസ്ക് ഉപയോഗം കുറയ്ക്കുകയും ചെയ്യും. ImageMagick പോലുള്ള, കൃത്യതയില്ലാത്ത "
+#~ "നഖചിത്രങ്ങള്‍ ഉണ്ടാക്കുന്ന പ്രയോഗങ്ങള്‍ വഴിയുണ്ടാക്കിയ ഫയലുകള്‍ നിങ്ങളുടെ കൈവശമുണ്ടെങ്കില്‍, ഇതു് "
+#~ "തെരഞ്ഞെടുക്കാതിരിക്കുക."
+
+#~ msgid "Sound Files"
+#~ msgstr "ശബ്ദ ഫയലുകള്‍"
+
+#~ msgid "&Left button:"
+#~ msgstr "&ഇടതു ബട്ടണ്‍:"
+
+#~ msgid ""
+#~ "You can choose what happens when you click the left button of your "
+#~ "pointing device on the desktop:"
+#~ msgstr ""
+#~ "നിങ്ങളുടെ ചൂണ്ടല്‍ ഉപകരണത്തിന്റെ ഇടതു് ബട്ടണ്‍ പണിയിടത്തില്‍ ക്ലിക്ക് ചെയ്യുമ്പോള്‍ എന്തു "
+#~ "സംഭവിക്കുമെന്നു് ഇവിടെ നിശ്ചയിക്കാം:"
+
+#~ msgid "Right b&utton:"
+#~ msgstr "വലതു ബ&ട്ടണ്‍:"
+
+#~ msgid ""
+#~ "You can choose what happens when you click the right button of your "
+#~ "pointing device on the desktop:"
+#~ msgstr ""
+#~ "നിങ്ങളുടെ ചൂണ്ടല്‍ ഉപകരണത്തിന്റെ വലതു് ബട്ടണ്‍ പണിയിടത്തില്‍ ക്ലിക്ക് ചെയ്യുമ്പോള്‍ എന്തു "
+#~ "സംഭവിക്കുമെന്നു് ഇവിടെ നിശ്ചയിക്കാം:"
+
+#~ msgid ""
+#~ " <ul><li><em>No action</em></li> <li><em>Window list menu:</em> a menu "
+#~ "showing all windows on all virtual desktops pops up. You can click on the "
+#~ "desktop name to switch to that desktop, or on a window name to shift "
+#~ "focus to that window, switching desktops if necessary, and restoring the "
+#~ "window if it is hidden. Hidden or minimized windows are represented with "
+#~ "their names in parentheses.</li> <li><em>Desktop menu:</em> a context "
+#~ "menu for the desktop pops up. Among other things, this menu has options "
+#~ "for configuring the display, locking the screen, and logging out of KDE.</"
+#~ "li> <li><em>Application menu:</em> the \"K\" menu pops up. This might be "
+#~ "useful for quickly accessing applications if you like to keep the panel "
+#~ "hidden from view.</li></ul>"
+#~ msgstr ""
+#~ " <ul><li><em>നടപടിയില്ല</em></li> <li><em>ജാലകപ്പട്ടിക വിഭവസൂചിക:</em> എല്ലാ "
+#~ "മായാപണിയിടങ്ങളിലെയും എല്ലാ ജാലകങ്ങളും കാണിക്കുന്ന ഒരു വിഭവസൂചിക പൊങ്ങിവരും. "
+#~ "പണിയിടനാമത്തില്‍ ക്ലിക്കു് ചെയ്താല്‍ ആ പണിയിടത്തിലേക്കു് പോകാം. ജാലകനാമത്തില്‍ ക്ലിക്കു് "
+#~ "ചെയ്താല്‍ ആ ജാലകത്തിലേക്കു് നോക്കാം. പണിയിടം മാറിയെന്നും, ജാലകം മറഞ്ഞിരിക്കുകയാണെങ്കില്‍ "
+#~ "അല്ലാതായെന്നും വരാം. മറഞ്ഞ അഥവാ ചെറുതാക്കിയ ജാലകങ്ങളുടെ പേരുകള്‍ ബ്രാക്കറ്റില്‍ "
+#~ "കാണിക്കപ്പെടുന്നു.</li> <li><em>പണിയിട വിഭവസൂചിക:</em> പണിയിടത്തിനായിട്ടുള്ള ഒരു "
+#~ "വിഭവസൂചിക പൊങ്ങിവരുന്നു. ഈ സൂചികയില്‍ പ്രദര്‍ശനക്രമീകരണം, സ്ക്രീന്‍ പൂട്ടല്‍, കെഡിഇ-യില്‍ നിന്നു് "
+#~ "ലോഗ്ഔട്ട് ചെയ്യല്‍ മുതലായ ഐച്ഛികങ്ങളുണ്ടു്.</li> <li><em>പ്രയോഗ വിഭവസൂചിക:</em> \"K\" "
+#~ "സൂചിക പൊങ്ങിവരും. പാനല്‍ മറച്ചുവയ്ക്കണമെങ്കില്‍ പ്രയോഗങ്ങളിലേക്കു് വെവ്വേഗം എത്താന്‍ ഇതു് "
+#~ "സഹായപ്രദമായേക്കാം.</li></ul>"
+
+#~ msgid ""
+#~ "You can choose what happens when you click on the desktop using your "
+#~ "pointing device's middle button: <ul><li><em>No action</em></li> "
+#~ "<li><em>Window list menu:</em> a menu showing all windows on all virtual "
+#~ "desktops pops up. You can click on the desktop name to switch to that "
+#~ "desktop, or on a window name to shift focus to that window, switching "
+#~ "desktops if necessary, and restoring the window if it is hidden. Hidden "
+#~ "or minimized windows are represented with their names in parentheses.</"
+#~ "li> <li><em>Desktop menu:</em> a context menu for the desktop pops up. "
+#~ "Among other things, this menu has options for configuring the display, "
+#~ "locking the screen, and logging out of KDE.</li> <li><em>Application menu:"
+#~ "</em> the \"K\" menu pops up. This might be useful for quickly accessing "
+#~ "applications if you like to keep the panel hidden from view.</li></ul>"
+#~ msgstr ""
+#~ "നിങ്ങളുടെ ചൂണ്ടല്‍ ഉപകരണത്തിന്റെ മദ്ധ്യ ബട്ടണ്‍ പണിയിടത്തില്‍ ക്ലിക്ക് ചെയ്യുമ്പോള്‍ എന്തു "
+#~ "സംഭവിക്കുമെന്നു് ഇവിടെ നിശ്ചയിക്കാം.: <ul><li><em>നടപടിയില്ല</em></li> "
+#~ "<li><em>ഉപകര​​ണപ്പട്ടിക വിഭവസൂചിക:</em> എല്ലാ മായാപണിയിടങ്ങളിലെയും എല്ലാ ജാലകങ്ങളും "
+#~ "കാണിക്കുന്ന ഒരു വിഭവസൂചിക പൊങ്ങിവരും. പണിയിടനാമത്തില്‍ ക്ലിക്കു് ചെയ്താല്‍ ആ പണിയിടത്തിലേക്കു് "
+#~ "പോകാം. ജാലകനാമത്തില്‍ ക്ലിക്കു് ചെയ്താല്‍ ആ ജാലകത്തിലേക്കു് നോക്കാം. പണിയിടം മാറിയെന്നും, "
+#~ "ജാലകം മറഞ്ഞിരിക്കുകയാണെങ്കില്‍ അല്ലാതായെന്നും വരാം. മറഞ്ഞ അഥവാ ചെറുതാക്കിയ ജാലകങ്ങളുടെ "
+#~ "പേരുകള്‍ ബ്രാക്കറ്റില്‍ കാണിക്കപ്പെടുന്നു.</li> <li><em>പണിയിട വിഭവസൂചിക:</em> "
+#~ "പണിയിടത്തിനായിട്ടുള്ള ഒരു വിഭവസൂചിക പൊങ്ങിവരുന്നു. ഈ സൂചികയില്‍ പ്രദര്‍ശനക്രമീകരണം, സ്ക്രീന്‍ "
+#~ "പൂട്ടല്‍, കെഡിഇ-യില്‍ നിന്നു് ലോഗ്ഔട്ട് ചെയ്യല്‍ മുതലായ ഐച്ഛികങ്ങളുണ്ടു്.</li> <li><em>പ്രയോഗ "
+#~ "വിഭവസൂചിക:</em> \"K\" സൂചിക പൊങ്ങിവരും. പാനല്‍ മറച്ചുവയ്ക്കണമെങ്കില്‍ പ്രയോഗങ്ങളിലേക്കു് "
+#~ "വെവ്വേഗം എത്താന്‍ ഇതു് സഹായപ്രദമായേക്കാം.</li></ul>"
+
+#~ msgid ""
+#~ " <ul><li><em>No action:</em> as you might guess, nothing happens!</li> "
+#~ "<li><em>Window list menu:</em> a menu showing all windows on all virtual "
+#~ "desktops pops up. You can click on the desktop name to switch to that "
+#~ "desktop, or on a window name to shift focus to that window, switching "
+#~ "desktops if necessary, and restoring the window if it is hidden. Hidden "
+#~ "or minimized windows are represented with their names in parentheses.</"
+#~ "li> <li><em>Desktop menu:</em> a context menu for the desktop pops up. "
+#~ "Among other things, this menu has options for configuring the display, "
+#~ "locking the screen, and logging out of KDE.</li> <li><em>Application menu:"
+#~ "</em> the \"K\" menu pops up. This might be useful for quickly accessing "
+#~ "applications if you like to keep the panel (also known as \"Kicker\") "
+#~ "hidden from view.</li></ul>"
+#~ msgstr ""
+#~ " <ul><li><em>നടപടിയില്ല:</em> നിങ്ങള്‍ ഊഹിച്ചതുപോലെ, ഒന്നും സംഭവിക്കില്ല!</li> "
+#~ "<li><em>ജാലകപ്പട്ടിക വിഭവസൂചിക:</em> എല്ലാ മായാപണിയിടങ്ങളിലെയും എല്ലാ ജാലകങ്ങളും "
+#~ "കാണിക്കുന്ന ഒരു വിഭവസൂചിക പൊങ്ങിവരും. പണിയിടനാമത്തില്‍ ക്ലിക്കു് ചെയ്താല്‍ ആ പണിയിടത്തിലേക്കു് "
+#~ "പോകാം. ജാലകനാമത്തില്‍ ക്ലിക്കു് ചെയ്താല്‍ ആ ജാലകത്തിലേക്കു് നോക്കാം. പണിയിടം മാറിയെന്നും, "
+#~ "ജാലകം മറഞ്ഞിരിക്കുകയാണെങ്കില്‍ അല്ലാതായെന്നും വരാം. മറഞ്ഞ അഥവാ ചെറുതാക്കിയ ജാലകങ്ങളുടെ "
+#~ "പേരുകള്‍ ബ്രാക്കറ്റില്‍ കാണിക്കപ്പെടുന്നു.</li> <li><em>പണിയിട വിഭവസൂചിക:</em> "
+#~ "പണിയിടത്തിനായിട്ടുള്ള ഒരു വിഭവസൂചിക പൊങ്ങിവരുന്നു. ഈ സൂചികയില്‍ പ്രദര്‍ശനക്രമീകരണം, സ്ക്രീന്‍ "
+#~ "പൂട്ടല്‍, കെഡിഇ-യില്‍ നിന്നു് ലോഗ്ഔട്ട് ചെയ്യല്‍ മുതലായ ഐച്ഛികങ്ങളുണ്ടു്.</li> <li><em>പ്രയോഗ "
+#~ "വിഭവസൂചിക:</em> \"K\" സൂചിക പൊങ്ങിവരും. പാനല്‍ മറച്ചുവയ്ക്കണമെങ്കില്‍ പ്രയോഗങ്ങളിലേക്കു് "
+#~ "വെവ്വേഗം എത്താന്‍ ഇതു് സഹായപ്രദമായേക്കാം.</li></ul>"
+
+#~ msgid "No Action"
+#~ msgstr "നടപടിയില്ല"
+
+#~ msgid "Window List Menu"
+#~ msgstr "ജാലകപ്പട്ടിക വിഭവസൂചിക"
+
+#~ msgid "Desktop Menu"
+#~ msgstr "പണിയിട സൂചിക"
+
+#~ msgid "Application Menu"
+#~ msgstr "പ്രയോഗ സൂചിക"
+
+#~ msgid "Bookmarks Menu"
+#~ msgstr "ഓര്‍മ്മക്കുറിപ്പു് സൂചിക"
+
+#~ msgid "Custom Menu 1"
+#~ msgstr "ഇച്ഛാനുശൃത സൂചിക 1"
+
+#~ msgid "Custom Menu 2"
+#~ msgstr "ഇച്ഛാനുശൃത സൂചിക 2"
+
+#~ msgid ""
+#~ "<h1>Behavior</h1>\n"
+#~ "This module allows you to choose various options\n"
+#~ "for your desktop, including the way in which icons are arranged and\n"
+#~ "the pop-up menus associated when clicking on the desktop using the middle "
+#~ "and right mouse\n"
+#~ "buttons.\n"
+#~ "Use the \"What's This?\" (Shift+F1) to get help on specific options."
+#~ msgstr ""
+#~ "<h1>സ്വഭാവം</h1>\n"
+#~ "ഈ മൊഡ്യൂള്‍ നിങ്ങളുടെ പണിയിടത്തിനായി പലതരം ഐച്ഛികങ്ങള്‍\n"
+#~ "തെരഞ്ഞെടുക്കാന്‍ അനുവദിക്കുന്നു, ചിഹ്നങ്ങളുടെ ക്രമീകരണവും പണിയിടത്തില്‍ മദ്ധ്യ,\n"
+#~ "വലതു് മൌസ് ബട്ടണുകള്‍ ക്ലിക്കു് ചെയ്താലുണ്ടാവുന്ന പോപ്പ്-അപ്പ് മെനുകളും\n"
+#~ "ഉള്‍പ്പെടെ.\n"
+#~ "പ്രത്യേക ഐച്ഛികങ്ങളില്‍ സഹായത്തിനായി \"എന്തായിതു്?\" (Shift+F1) ഉപയോഗിക്കുക."
+
+#~ msgid "General"
+#~ msgstr "പൊതുവായതു്"
+
+#~ msgid ""
+#~ "Uncheck this option if you do not want to have icons on the desktop. "
+#~ "Without icons the desktop will be somewhat faster but you will no longer "
+#~ "be able to drag files to the desktop."
+#~ msgstr ""
+#~ "പണിയിടത്തില്‍ ചിഹ്നങ്ങള്‍ വേണ്ടന്നുണ്ടെങ്കില്‍ ഈ ഐച്ഛികം തെരഞ്ഞെടുക്കാതിരിക്കുക. ചിഹ്നങ്ങള്‍ "
+#~ "ഇല്ലെങ്കില്‍ പണിയിടത്തിന്റെ വേഗത കൂടും, പക്ഷേ ഫയലുകള്‍ പണിയിടത്തിലേക്കു് വലിച്ചിടാന്‍ "
+#~ "സാധിക്കുന്നതല്ല."
+
+#~ msgid "&Show icons on desktop"
+#~ msgstr "പണിയിടത്തില്‍ ചിഹ്നങ്ങള്‍ കാണിക്കുക"
+
+#~ msgid ""
+#~ "Check this option if you want to run X11 programs that draw into the "
+#~ "desktop such as xsnow, xpenguin or xmountain. If you have problems with "
+#~ "applications like netscape that check the root window for running "
+#~ "instances, disable this option."
+#~ msgstr ""
+#~ "xസ്നോ, xപെന്‍ഗ്വിന്‍ or xമൌണ്ടന്‍ മുതലായ, പണിയിടത്തില്‍ വരയ്ക്കുന്ന X11 പ്രയോഗങ്ങള്‍ പ്രവര്‍"
+#~ "ത്തിപ്പിക്കണമെങ്കില്‍, ഈ ഐച്ഛികം തെരഞ്ഞെടുക്കുക. പ്രവര്‍ത്തിക്കുന്നവയുടെ റൂട്ട് ജാലകം "
+#~ "പരിശോധിക്കുന്ന നെറ്റ്സ്കേപ്പ് പോലുള്ള പ്രയോഗങ്ങള്‍ പ്രശ്നമുണ്ടാക്കുന്നുണ്ടെങ്കില്‍, ഈ ഐച്ഛികം പ്രവര്‍"
+#~ "ത്തനരഹിതമാക്കുക."
+
+#~ msgid "Allow pro&grams in desktop window"
+#~ msgstr "പണിയിടജാലകത്തില്‍ പ്രയോഗങ്ങള്‍ അനുവദിക്കുക"
+
+#~ msgid "Show &tooltips"
+#~ msgstr "ചെറുസഹായകങ്ങള്‍ കാ​ണിക്കുക"
+
+#~ msgid "Menu Bar at top of Screen"
+#~ msgstr "വിഭവസൂചിക പട്ട സ്ക്രീനിന്റെ മുകളില്‍"
+
+#~ msgid ""
+#~ "If this option is selected, there is no menu bar at the top of the screen."
+#~ msgstr ""
+#~ "ഈ ഐച്ഛികം തെരഞ്ഞെടുക്കുകയാണെങ്കില്‍, സ്ക്രീനിന്റെ മുകളില്‍  വിഭവ പട്ടികകള്‍ ഉണ്ടാവില്ല."
+
+#~ msgid "&None"
+#~ msgstr "&ഒന്നുമില്ല"
+
+#~ msgid ""
+#~ "If this option is selected, there is one menu bar at the top of the "
+#~ "screen which shows the desktop menus."
+#~ msgstr ""
+#~ "ഈ ഐച്ഛികം തെരഞ്ഞെടുക്കുകയാണെങ്കില്‍, പണിയിട വിഭവസൂചികകള്‍ കാ​ണിക്കുന്ന ഒരു വിഭവ പട്ടിക "
+#~ "സ്ക്രീനിന്റെ മുകളിലുണ്ടാകും."
+
+#~ msgid "&Desktop menu bar"
+#~ msgstr "പണിയിട വിഭവസൂചിക പട്ട"
+
+#~ msgid ""
+#~ "If this option is selected, applications will not have their menu bar "
+#~ "attached to their own window anymore. Instead, there is one menu bar at "
+#~ "the top of the screen which shows the menus of the currently active "
+#~ "application. You might recognize this behavior from Mac OS."
+#~ msgstr ""
+#~ "ഈ ഐച്ഛികം തെരഞ്ഞെടുക്കുകയാണെങ്കില്‍, പ്രയോഗങ്ങള്‍ക്കു് അവയുടെ ജാലകത്തോടു ചേര്‍ന്നു് വിഭവ പട്ടിക "
+#~ "ഉണ്ടാവില്ല. പകരം, സജീവ പ്രയോഗത്തിന്റെ വിഭവസൂചികകള്‍ കാ​ണിക്കുന്ന ഒരു വിഭവ പട്ടിക "
+#~ "സ്ക്രീനിന്റെ മുകളിലുണ്ടാകും. മാക് OS-ല്‍ നിന്നും ഈ സ്വഭാവം നിങ്ങള്‍ക്കു് സുപരിചിതമാവാം."
+
+#~ msgid "&Current application's menu bar (Mac OS-style)"
+#~ msgstr "സജീവ പ്രയോഗത്തിന്റെ വിഭവ പട്ടിക (മാക് OS-രീതി)"
+
+#~ msgid "Mouse Button Actions"
+#~ msgstr "മൌസ് ബട്ടണ്‍ നടപടികള്‍"
+
+#~ msgid "Middle button:"
+#~ msgstr "നടു ബട്ടണ്‍"
+
+#~ msgid "Left button:"
+#~ msgstr "ഇടതു് ബട്ടണ്‍:"
+
+#~ msgid "Right button:"
+#~ msgstr "വലതു് ബട്ടണ്‍:"
+
+#~ msgid "Edit..."
+#~ msgstr "ചിട്ടപ്പെടുത്തുക..."
+
+#~ msgid "File Icons"
+#~ msgstr "ഫയല്‍ ചിഹ്നങ്ങള്‍"
+
+#~ msgid ""
+#~ "Check this option if you want to see your icons automatically aligned to "
+#~ "the grid when you move them."
+#~ msgstr "ചിഹ്നങ്ങള്‍ നീക്കുമ്പോള്‍ ഗ്രിഡില്‍ സ്വയം ക്രമപ്പെടുത്തുവാനായി ഈ ഐച്ഛികം തെരഞ്ഞെടുക്കുക."
+
+#~ msgid "Automatically &line up icons"
+#~ msgstr "ചിഹ്നങ്ങള്‍ സ്വയം രേഖാനുശൃതമാക്കുക"
+
+#~ msgid ""
+#~ "<p>If you check this option, any files in your desktop directory that "
+#~ "begin with a period (.) will be shown. Usually, such files contain "
+#~ "configuration information, and remain hidden from view.</p>\n"
+#~ "<p>For example, files which are named \".directory\" are plain text files "
+#~ "which contain information for Konqueror, such as the icon to use in "
+#~ "displaying a directory, the order in which files should be sorted, etc. "
+#~ "You should not change or delete these files unless you know what you are "
+#~ "doing.</p>"
+#~ msgstr ""
+#~ "<p>ഈ ഐച്ഛികം തെരഞ്ഞെടുക്കുകയാണെങ്കില്‍, പണിയിട അറയില്‍ കുത്തു് (.) ഉപയോഗിച്ചു തുടങ്ങുന്ന "
+#~ "ഫയലുകള്‍ കാണിക്കപ്പെടും. സാധാരണയായി, ഇത്തരം ഫയലുകളില്‍ ക്രമീകരണവിവരങ്ങളാണുള്ളതു്, അവ "
+#~ "മറച്ചുവയ്ക്കപ്പെടുകയും ചെയ്യുന്നു.</p>\n"
+#~ "<p>ഉദാഹരണത്തിനു്, \".directory\" എന്ന പേരുള്ള ഫയലുകള്‍ കോണ്‍ക്വററിനായുള്ള വിവരങ്ങളടങ്ങിയ "
+#~ "സാദാ ടെക്സ്റ്റ് ഫയലുകളാണു് - അറ പ്രദര്‍ശിപ്പിക്കാന്‍ ഉപയോഗിക്കേണ്ട ചിഹ്നം, ഫയല്‍ ക്രമീകരണരീതി "
+#~ "മുതലായവ. എന്താണു് ചെയ്യുന്നതെന്നറിയില്ലെങ്കില്‍ ഈ ഫയലുകള്‍ മാറ്റുകയോ നീക്കം ചെയ്യുകയോ ചെയ്യരുതു്."
+#~ "</p>"
+
+#~ msgid "Show &hidden files"
+#~ msgstr "മറച്ചുവച്ച ഫയലുകള്‍ കാണിക്കുക"
+
+#~ msgid "Select for which types of files you want to enable preview images."
+#~ msgstr ""
+#~ "ഏതൊക്കെ തരം ഫയലുകള്‍ക്കാണു് മുന്‍കാഴ്ചാചിത്രങ്ങള്‍ പ്രാവര്‍ത്തികമാക്കേണ്ടതെന്നു് തെരഞ്ഞെടുക്കുക."
+
+#~ msgid "Show Icon Previews For"
+#~ msgstr "ഇവയ്ക്കായി ചിഹ്നമുന്‍കാഴ്ചകള്‍ കാണിക്കുക"
+
+#~ msgid "Device Icons"
+#~ msgstr "ഉപകരണചിഹ്നങ്ങള്‍"
+
+#~ msgid "&Show device icons:"
+#~ msgstr "ഉപകരണചിഹ്നങ്ങള്‍ കാണിക്കുക:"
+
+#~ msgid ""
+#~ "Deselect the device types which you do not want to see on the desktop."
+#~ msgstr "പണിയിടത്തില്‍ കാണേണ്ടാത്ത ഉപകരണതരങ്ങള്‍ തെരഞ്ഞെടുക്കാതിരിക്കുക."
+
+#~ msgid "Device Types to Display"
+#~ msgstr "കാണിക്കേണ്ട ഉപകരണതരങ്ങള്‍"

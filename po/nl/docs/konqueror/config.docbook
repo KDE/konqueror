@@ -1,0 +1,306 @@
+<chapter id="config">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+&Bram.Schoenmakers;&Rinse.Devries; 
+</authorgroup>
+
+<date
+>2010-02-07</date>
+<releaseinfo
+>4.4.0</releaseinfo>
+</chapterinfo>
+
+
+<title
+>&konqueror; instellen</title>
+
+<para
+>Net als de rest van &kde;, is &konqueror; op zeer veel gebieden in te stellen. Op deze manier kunt u het uiterlijk en gedrag precies zo instellen zoals u dat wilt.</para>
+
+<sect1 id="configure-bars">
+<title
+>Werkbalken</title>
+
+<para
+>Bij een nieuwe installatie van &kde; bevat het venster van &konqueror; standaard de menubalk, de hoofdwerkbalk en de locatiebalk, en wellicht ook de bladwijzerbalk.</para>
+
+<para
+>Het kan zijn dat u al deze werkbalken niet nodig heeft. Om zo'n balk te verbergen, gaat u in het menu <menuchoice
+><guimenu
+>Instellingen</guimenu
+><guisubmenu
+>Getoonde werkbalken</guisubmenu
+> </menuchoice
+> en deactiveer hun vakje. Om de verborgen werkbalk weer tevoorschijn te halen activeert u deze eenvoudigweg weer in het menu.</para
+> 
+
+<para
+>De menubalk zelf kan ook aan- of uitgezet worden met de sneltoets <keycombo action="simul"
+>&Ctrl;<keycap
+>M</keycap
+></keycombo
+>. </para>
+
+<para
+>Wanneer u met de <mousebutton
+>rechter</mousebutton
+> op een werkbalk klikt, krijgt u een menu te zien waarmee u de werkbalk kunt instellen. U kunt de positie vergrendelen of ontgrendelen en de tekstpositie, pictogramgrootte en oriëntatie van ontgrendelde balken instellen</para>
+
+<para
+>Als de werkbalk ontgrendeld is, kunt u aan de linkerkant handels zien. Door klikken met de &LMB; kunt u een werkbalk naar een nieuwe positie slepen en het zelfs van het venster losmaken en overal op uw scherm plaatsen.</para>
+
+<para
+>De pictogrammen in de verschillende balken kunnen veranderd worden door het menu <menuchoice
+><guimenu
+>Instellingen</guimenu
+> <guimenuitem
+>Werkbalken instellen...</guimenuitem
+></menuchoice
+> te kiezen. U komt dan in het dialoogvenster <guilabel
+>Werkbalken instellen</guilabel
+>. Het aantal en type hangt af van of &konqueror; zich in webbrowser- of bestandsbeheermodus bevindt en of u plugins geïnstalleerd heeft.</para>
+
+</sect1>
+
+<sect1 id="configshort">
+<title
+>Sneltoetsen</title>
+<para
+>Om de sneltoetsen in te stellen gaat u naar <menuchoice
+><guimenu
+>Instellingen</guimenu
+><guimenuitem
+>Sneltoetsen instellen...</guimenuitem
+></menuchoice
+>. Dit brengt het onderstaande dialoogvenster in beeld. </para>
+<mediaobject>
+<imageobject>
+<imagedata fileref="shortcut1.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Sneltoetsenconfiguratie schermafdruk 1</phrase>
+</textobject>
+</mediaobject>
+<para
+>Gebruik het zoekvak om de actie behorende bij een sneltoets te vinden die u wilt toevoegen of wijzigen en selecteer deze met <mousebutton
+>links</mousebutton
+> klikken op de naam. </para>
+
+<para
+>Na een actie uit de lijst te hebben geselecteerd, zult u zien dat dit item oplicht en u ziet twee extra keuzevakjes onder dit item in de lijst. U kunt daar een combinatie van toetsen instellen of misschien helemaal geen toetsbinding voor de geselecteerde actie. </para>
+
+<mediaobject>
+<imageobject>
+<imagedata fileref="shortcut2.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Sneltoetsenconfiguratie schermafbeelding 2</phrase>
+</textobject>
+</mediaobject>
+
+<itemizedlist>
+<listitem
+><para
+><guilabel
+>Standaard</guilabel
+>: de geselecteerde actie zal geassocieerd worden met de standaard waarde van &kde;. Dit is een goede keuze voor de meeste acties, omdat &kde; komt met redelijke toetsbindingen waarover is nagedacht. </para
+></listitem>
+<listitem
+><para
+><guilabel
+>Aangepast</guilabel
+>: als deze optie is ingeschakeld, kunt u een toetscombinatie voor de geselecteerd actie aanmaken. Klik op de knop met ofwel het label <guibutton
+>Geen</guibutton
+> of het label dat de eerder geselecteerde aangepaste sneltoets droeg. Nu verandert het label op de knop naar <guibutton
+>Invoer</guibutton
+>. Druk daarna op een modificatie toets (&ie; &Shift;, &Ctrl;, of &Alt;) en dan een normale toets of een functietoets (&eg; <keycap
+>F11</keycap
+>) waaraan u deze toetscombinatie wilt toekennen.</para
+></listitem>
+<listitem
+><para
+>U kunt de sneltoets herstellen tot <guilabel
+>Geen</guilabel
+> door deze knop: <inlinemediaobject
+><imageobject
+> <imagedata fileref="reset.png" format="PNG"/></imageobject
+></inlinemediaobject
+> te gebruiken. </para>
+<para
+>Klikken op de <guilabel
+>Alternatief</guilabel
+> kolom van een rij in de lijst stelt u in staat de tweede sneltoets voor de actie te bewerken.</para
+></listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="othersettings">
+<title
+>Overige instellingen</title>
+<para
+>Door naar <menuchoice
+><guimenu
+>Instellingen</guimenu
+><guimenuitem
+> &konqueror; instellen...</guimenuitem
+></menuchoice
+> te gaan komt er een dialoogvenster in beeld waar u de meeste aspecten van het gedrag van &konqueror; in kunt instellen.</para
+> 
+<para
+>Het bevat deze secties die zijn te selecteren door <mousebutton
+>links</mousebutton
+> te klikken op een van de pictogrammen links in het dialoogvak:</para>
+<itemizedlist>
+<listitem
+><para
+><ulink url="help:/kcontrol/khtml-general/index.html"
+>Algemeen</ulink
+>: Algemeen gedrag van &konqueror; instellen</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/performance/index.html"
+>Prestatie</ulink
+>: Hier kunt u instellingen kiezen die de prestaties van &konqueror; verbeteren</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/bookmarks/index.html"
+>Bladwijzers</ulink
+>: De webpagina's voor bladwijzers instellen</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/filemanager/index.html"
+>Bestandsbeheer</ulink
+>: Hier kunt u het uiterlijk van Konqueror als bestandsbeheerder instellen</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/dolphin/configuring-dolphin.html#preferences-dialog-viewmodes"
+>Weergavemodussen</ulink
+>: Bestandsbeheerderweergavemodussen configureren</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/dolphin/configuring-dolphin.html#preferences-dialog-navigation"
+>Navigatie</ulink
+>: Bestandsbeheerdernavigatie configureren</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/dolphin/configuring-dolphin.html#preferences-dialog-services"
+>Services</ulink
+>: Bestandsbeheerderservices configureren</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/dolphin/configuring-dolphin.html#preferences-dialog-general"
+>Algemeen</ulink
+>: Algemene bestandsbeheerderinstellingen configureren</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/filetypes/index.html"
+>Bestandsassociaties</ulink
+>: Hier kunt u de bestandsassociaties instellen</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/trash/index.html"
+>Prullenbak</ulink
+>: Prullenbakconfiguratie instellen</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/khtml-behavior/index.html"
+>Webbrowsen</ulink
+>: Hier kunt u het gedrag van de webbrowser instellen</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/proxy/index.html"
+>Proxy</ulink
+>: Hier kunt u de Proxy-servers instellen</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/kcmcss/index.html"
+>Uiterlijk</ulink
+>: Hier kunt u instellen hoe webpagina's te tonen</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/khtml-adblock/index.html"
+>AdBlocK Filters</ulink
+>: Filters voor blokkeren van advertenties in &konqueror; instellen</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/ebrowsing/index.html"
+>Webkoppelingen</ulink
+>: Hier kunt u het geavanceerd browsen instellen</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/cache/index.html"
+>Cache</ulink
+>: Hier kunt u de webcache instellen</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/history/index.html"
+>Geschiedenis</ulink
+>: Hier kunt u de geschiedeniszijbalk instellen.</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/cookies/index.html"
+>Cookies</ulink
+>: Hier kunt u het cookiesbeleid instellen</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/useragent/index.html"
+>Browseridentificatie</ulink
+>: Hier kunt u bepalen hoe Konqueror zich bij webservers identificeert</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/khtml-java-js/index.html"
+>Java &amp; JavaScript</ulink
+>: Hier kunt u het gedrag van Java en JavaScript instellen</para
+></listitem>
+<listitem
+><para
+><ulink url="help:/kcontrol/khtml-plugins/index.html"
+>Plugins</ulink
+>: Hier kunt u de browser-plugins instellen</para
+></listitem>
+</itemizedlist>
+<para
+>De knop <guibutton
+>Help</guibutton
+> geeft een uitvoerige omschrijving over hoe u de verschillende onderdelen moet gebruiken, of u maakt gebruik van de functie <link linkend="bubble"
+>Wat is dit?</link
+>.</para>
+</sect1>
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

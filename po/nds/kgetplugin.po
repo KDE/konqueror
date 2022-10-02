@@ -1,0 +1,3645 @@
+# Translation of kget.po to Low Saxon
+#
+# Sönke Dibbern <s_dibbern@web.de>, 2006, 2007, 2008, 2009.
+# Manfred Wiese <m.j.wiese@web.de>, 2008, 2009, 2010, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: kget\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2011-06-05 06:19+0200\n"
+"Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
+"Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
+"Language: nds\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: kget_plugin.cpp:56
+#, kde-format
+msgid "Download Manager"
+msgstr "Daalladenpleger"
+
+#: kget_plugin.cpp:62
+#, kde-format
+msgid "Show Drop Target"
+msgstr "Treckteel wiesen"
+
+#: kget_plugin.cpp:69
+#, kde-format
+msgid "List All Links"
+msgstr "All Links oplisten"
+
+#: kget_plugin.cpp:74
+#, kde-format
+msgid "List Selected Links"
+msgstr "Utsöcht Links oplisten"
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No downloadable links were found."
+msgstr "Keen daallaadbor Links funnen."
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No Links"
+msgstr "Keen Links"
+
+#. i18n: ectx: Menu (tools)
+#: konqueror_kget_browser_integration.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "&Warktüüch"
+
+#~ msgid "Unable to communicate with the KGet download manager."
+#~ msgstr "Keen Kommunikatschoon mit KGet-Daallaadpleger mööglich."
+
+#~ msgid "Communication Error"
+#~ msgstr "Kommunikatschoonfehler"
+
+#~ msgid "Plugins"
+#~ msgstr "Modulen"
+
+#~ msgid "New Group"
+#~ msgstr "Nieg Koppel"
+
+#~ msgid "Xml"
+#~ msgstr "XML"
+
+#~ msgid "Sqlite"
+#~ msgstr "SQLite"
+
+#~ msgid "Nepomuk"
+#~ msgstr "Nepomuk"
+
+#~ msgid "Turn Off Computer"
+#~ msgstr "Den Reekner utmaken"
+
+#~ msgid "Hibernate Computer"
+#~ msgstr "Den Reekner infreren"
+
+#~ msgid "Suspend Computer"
+#~ msgstr "Den Reekner anhollen"
+
+#~ msgid "Appearance"
+#~ msgstr "Utsehn"
+
+#~ msgid "Change appearance settings"
+#~ msgstr "De Instellen för't Utsehn topassen"
+
+#~ msgid "Groups"
+#~ msgstr "Koppeln"
+
+#~ msgid "Manage the groups"
+#~ msgstr "De Koppeln plegen"
+
+#~ msgid "Network"
+#~ msgstr "Nettwark"
+
+#~ msgid "Network and Downloads"
+#~ msgstr "Nettwark un Daalladen"
+
+#~ msgid "Web Interface"
+#~ msgstr "Nettböversiet"
+
+#~ msgid "Control KGet over a Network or the Internet"
+#~ msgstr "KGet över Nettwark oder Internet stüern"
+
+#~ msgid "Verification"
+#~ msgstr "Prööv"
+
+#~ msgctxt "integration of KGet with other applications"
+#~ msgid "Integration"
+#~ msgstr "Inbinnen"
+
+#~ msgctxt "Advanced Options"
+#~ msgid "Advanced"
+#~ msgstr "Verwiedert"
+
+#~ msgid "Advanced Options"
+#~ msgstr "Verwiedert Optschonen"
+
+#~ msgid "Transfer Plugins"
+#~ msgstr "Överdreegmodulen"
+
+#~ msgid "Include"
+#~ msgstr "Insluten"
+
+#~ msgid "Exclude"
+#~ msgstr "Utsluten"
+
+#~ msgid "Escape sequences"
+#~ msgstr "Schuul-Sequenzen"
+
+#~ msgid "Regular expression"
+#~ msgstr "Reguleer Utdruck"
+
+#~ msgid "Pattern"
+#~ msgstr "Muster"
+
+#~ msgid "Syntax"
+#~ msgstr "Schriefwies"
+
+#~ msgid "KGet"
+#~ msgstr "KGet"
+
+#~ msgid "1 Item"
+#~ msgid_plural "%1 Items"
+#~ msgstr[0] "1 Indrag"
+#~ msgstr[1] "%1 Indrääg"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#~ msgctxt "start transfergroup downloads"
+#~ msgid "Start"
+#~ msgstr "Anfangen"
+
+#~ msgctxt "stop transfergroup downloads"
+#~ msgid "Stop"
+#~ msgstr "Anhollen"
+
+#~ msgid "KGet is downloading %1 file"
+#~ msgid_plural "KGet is downloading %1 files"
+#~ msgstr[0] "KGet laadt %1 Datei daal"
+#~ msgstr[1] "KGet laadt %1 Dateien daal"
+
+#~ msgid "Error trying to get %1"
+#~ msgstr "Fehler bi't Halen vun %1"
+
+#~ msgid "Are you sure that you want to remove the group named %1?"
+#~ msgstr "Wullt Du dissen Koppel redig wegdoon? \"%1\""
+
+#~ msgid "Remove Group"
+#~ msgstr "Koppel wegdoon"
+
+#~ msgid "Are you sure that you want to remove the following groups?"
+#~ msgstr "Wullt Du disse Koppeln redig wegdoon?"
+
+#~ msgid "Remove groups"
+#~ msgstr "Koppeln wegdoon"
+
+#~ msgid ""
+#~ "<p>The following transfer has been added to the download list:</p><p "
+#~ "style=\"font-size: small;\">\\%1</p>"
+#~ msgstr ""
+#~ "<p>Disse Överdregen wöör de Daalladen-List toföögt:</p><p style=\"font-"
+#~ "size: small;\">\\%1</p>"
+
+#~ msgid "Download added"
+#~ msgstr "Daalladen toföögt"
+
+#~ msgid "<p>The following transfer has been added to the download list:</p>"
+#~ msgstr "<p>Disse Överdregen wöör de Daalladen-List toföögt:</p>"
+
+#~ msgid "<p>The following transfers have been added to the download list:</p>"
+#~ msgstr "<p>Disse Överdregen wöörn de Daalladen-List toföögt:</p>"
+
+#~ msgid ""
+#~ "The file %1 already exists.\n"
+#~ "Overwrite?"
+#~ msgstr ""
+#~ "Dat gifft de Datei \"%1\" al.\n"
+#~ "Wullt Du ehr överschrieven?"
+
+#~ msgid "Overwrite existing file?"
+#~ msgstr "Vörhannen Datei överschrieven?"
+
+#~ msgid "Unable to save to: %1"
+#~ msgstr "\"%1\" lett sik nich sekern"
+
+#~ msgid "My Downloads"
+#~ msgstr "De Daalladen"
+
+#~ msgid ""
+#~ "<p>The following URL cannot be downloaded, its protocol is not supported "
+#~ "by KGet:</p>"
+#~ msgid_plural ""
+#~ "<p>The following URLs cannot be downloaded, their protocols are not "
+#~ "supported by KGet:</p>"
+#~ msgstr[0] ""
+#~ "<p>Disse URL lett sik nich daalladen. - KGet ünnerstütt dat Protokoll "
+#~ "nich:</p>"
+#~ msgstr[1] ""
+#~ "<p>Disse URL laat sik nich daalladen. - KGet ünnerstütt de Protokollen "
+#~ "nich:</p>"
+
+#~ msgid "Protocol unsupported"
+#~ msgstr "Protokoll warrt nich ünnerstütt"
+
+#~ msgid "New Download"
+#~ msgstr "Nieg Daalladen"
+
+#~ msgid "Enter URL:"
+#~ msgstr "Bitte URL ingeven:"
+
+#~ msgid "Save As"
+#~ msgstr "Sekern as"
+
+#~ msgid ""
+#~ "Malformed URL:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Leeg URL:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Malformed URL, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Leeg URL, Protokoll fehlt:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "You have already completed a download from the location: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Download it again?"
+#~ msgstr ""
+#~ "Du hest vun disse Steed al en Daalladen afslaten:\n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Wullt Du em nochmaal daalladen?"
+
+#~ msgid "Download it again?"
+#~ msgstr "Nochmaal daalladen?"
+
+#~ msgid ""
+#~ "You have a download in progress from the location: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Delete it and download again?"
+#~ msgstr ""
+#~ "Du hest noch en Daalladen vun disse Steed lopen:\n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Wegdoon un nochmaal daalladen?"
+
+#~ msgid "Delete it and download again?"
+#~ msgstr "Wegdoon und nochmaal daalladen?"
+
+#~ msgid "Directory is not writable"
+#~ msgstr "Schrieven na Orner nich mööglich"
+
+#~ msgid ""
+#~ "You have already downloaded that file from another location.\n"
+#~ "\n"
+#~ "Download and delete the previous one?"
+#~ msgstr ""
+#~ "Du hest disse Datei al vun en anner Steed daallaadt.\n"
+#~ "\n"
+#~ "Wullt Du disse daalladen un de annere wegdoon?"
+
+#~ msgid "File already downloaded. Download anyway?"
+#~ msgstr "Datei al daallaadt. Liekers daalladen?"
+
+#~ msgid "You are already downloading the same file"
+#~ msgstr "Du laadst de sülve Datei al daal"
+
+#~ msgid "File already exists"
+#~ msgstr "Gifft de Datei al"
+
+#~ msgid "Plugin loader could not load the plugin: %1."
+#~ msgstr "Dat Moduul lett sik nich laden: %1"
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is a directory."
+#~ msgstr ""
+#~ "%1\n"
+#~ "warrt nich wegdaan.\n"
+#~ "Dat is en Orner."
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is not a local file."
+#~ msgstr ""
+#~ "%1\n"
+#~ "warrt nich wegdaan.\n"
+#~ "Dat is keen lokaal Datei."
+
+#~ msgid ""
+#~ "<p>The following file has finished downloading:</p><p style=\"font-size: "
+#~ "small;\">\\%1</p>"
+#~ msgstr ""
+#~ "<p>Disse Datei is nu daallaadt:</p><p style=\"font-size: small;\">\\%1</p>"
+
+#~ msgid "Download completed"
+#~ msgstr "Daalladen afslaten"
+
+#~ msgid ""
+#~ "<p>The following transfer has been started:</p><p style=\"font-size: "
+#~ "small;\">\\%1</p>"
+#~ msgstr ""
+#~ "<p>Disse Överdregen hett anfungen:</p><p style=\"font-size: small;\">\\"
+#~ "%1</p>"
+
+#~ msgid "Download started"
+#~ msgstr "Daalladen anfungen"
+
+#~ msgid "Error"
+#~ msgstr "Fehler"
+
+#~ msgid ""
+#~ "<p>There has been an error in the following transfer:</p><p style=\"font-"
+#~ "size: small;\">\\%1</p><p>The error message is:</p><p style=\"font-size: "
+#~ "small;\">\\%2</p>"
+#~ msgstr ""
+#~ "<p>Bi disse Överdregen hett dat en Fehler geven:</p><p style=\"font-size: "
+#~ "small;\">\\%1</p><p>De Fehlermellen is:</p><p style=\"font-size: small;\">"
+#~ "\\%2</p>"
+
+#~ msgid "Resolve"
+#~ msgstr "Oplösen"
+
+#~ msgid "KGet is now closing, as all downloads have completed."
+#~ msgstr "All Daalladen sünd afslaten, KGet maakt sik nu ut."
+
+#~ msgid "The computer will now turn off, as all downloads have completed."
+#~ msgstr "De Reekner maakt sik nu ut, all Daalladen sünd afslaten."
+
+#~ msgctxt "Shutting down computer"
+#~ msgid "Shutdown"
+#~ msgstr "Utmaken"
+
+#~ msgid ""
+#~ "The computer will now suspend to disk, as all downloads have completed."
+#~ msgstr ""
+#~ "De Reekner warrt op Fastplaat infroren, all Daalladen sünd afslaten."
+
+#~ msgctxt "Hibernating computer"
+#~ msgid "Hibernating"
+#~ msgstr "An't Infreren"
+
+#~ msgid ""
+#~ "The computer will now suspend to RAM, as all downloads have completed."
+#~ msgstr ""
+#~ "De Reekner warrt nu infroren (in't RAM), all Daalladen sünd afslaten."
+
+#~ msgctxt "Suspending computer"
+#~ msgid "Suspending"
+#~ msgstr "An't Inslapen/Infreren"
+
+#~ msgctxt "abort the proposed action"
+#~ msgid "Abort"
+#~ msgstr "Afbreken"
+
+#~ msgid "<p>All transfers have been finished.</p>"
+#~ msgstr "<p>All Överdregen sünd afslaten.</p>"
+
+#~ msgid "Downloads completed"
+#~ msgstr "Daalladen afslaten"
+
+#~ msgctxt "file in a filesystem"
+#~ msgid "File"
+#~ msgstr "Datei"
+
+#~ msgctxt "status of the download"
+#~ msgid "Status"
+#~ msgstr "Status"
+
+#~ msgctxt "size of the download"
+#~ msgid "Size"
+#~ msgstr "Grött"
+
+#~ msgctxt "checksum of a file"
+#~ msgid "Checksum"
+#~ msgstr "Pröövsumm"
+
+#~ msgctxt "signature of a file"
+#~ msgid "Signature"
+#~ msgstr "Ünnerschrift"
+
+#~ msgid "KGet Transfer"
+#~ msgstr "KGet-Överdregen"
+
+#~ msgctxt "the type of the hash, e.g. MD5"
+#~ msgid "Type"
+#~ msgstr "Typ"
+
+#~ msgctxt "the used hash for verification"
+#~ msgid "Hash"
+#~ msgstr "Pröövsumm"
+
+#~ msgctxt "verification-result of a file, can be true/false"
+#~ msgid "Verified"
+#~ msgstr "Pröövt"
+
+#~ msgid ""
+#~ "The key to verify the signature is missing, do you want to download it?"
+#~ msgstr ""
+#~ "Slötel för't Pröven vun de Ünnerschrift fehlt. Wullt Du em daalladen?"
+
+#~ msgid ""
+#~ "The signature could not be verified for %1. See transfer settings for "
+#~ "more information."
+#~ msgstr ""
+#~ "De Ünnerschrift för %1 lett sik nich pröven. Kiek na de "
+#~ "Överdregeninstellen, wenn Du mehr weten wullt."
+
+#~ msgid "Signature not verified"
+#~ msgstr "Ünnerschrift nich pröövt"
+
+#~ msgid ""
+#~ "No server for downloading keys is specified in settings. Downloading "
+#~ "aborted."
+#~ msgstr ""
+#~ "Instellen bargt keen Server för't Daalladen vun Slötels. Daalladen wöör "
+#~ "afbraken."
+
+#~ msgid "No key server"
+#~ msgstr "Keen Slötelserver"
+
+#~ msgid ""
+#~ "No useful key server found, key not downloaded. Add more servers to the "
+#~ "settings or restart KGet and retry downloading."
+#~ msgstr ""
+#~ "Keen bruukbor Slötelserver funnen, keen Slötel daallaadt. Föög de "
+#~ "Instellen mehr Slötelservers to, oder start KGet nieg un versöök dat "
+#~ "nochmaal."
+
+#~ msgid "Filesize is larger than maximum file size supported by VFAT."
+#~ msgstr "De Datei is grötter as de tohööchst vun VFAT ünnerstütt Dateigrött."
+
+#~ msgctxt "A mirror is removed when the file has the wrong download size"
+#~ msgid "%1 removed as it did report a wrong file size."
+#~ msgstr "\"%1\" wegdaan, dor weer en leeg Dateigrött angeven."
+
+#~ msgctxt "not available"
+#~ msgid "n/a"
+#~ msgstr "n.v."
+
+#~ msgid "Stalled"
+#~ msgstr "Töövt"
+
+#~ msgid "Downloading...."
+#~ msgstr "Bi to daalladen..."
+
+#~ msgctxt "transfer state: delayed"
+#~ msgid "Delayed"
+#~ msgstr "Töövt"
+
+#~ msgctxt "transfer state: stopped"
+#~ msgid "Stopped"
+#~ msgstr "Anhollen"
+
+#~ msgctxt "transfer state: aborted"
+#~ msgid "Aborted"
+#~ msgstr "Afbraken"
+
+#~ msgctxt "transfer state: finished"
+#~ msgid "Finished"
+#~ msgstr "Afslaten"
+
+#~ msgctxt "changing the destination of the file"
+#~ msgid "Changing destination"
+#~ msgstr "Teel ännern"
+
+#~ msgctxt "name of download"
+#~ msgid "Name"
+#~ msgstr "Naam"
+
+#~ msgctxt "status of download"
+#~ msgid "Status"
+#~ msgstr "Status"
+
+#~ msgctxt "size of download"
+#~ msgid "Size"
+#~ msgstr "Grött"
+
+#~ msgctxt "progress of download"
+#~ msgid "Progress"
+#~ msgstr "Vörankamen"
+
+#~ msgctxt "speed of download"
+#~ msgid "Speed"
+#~ msgstr "Gauigkeit"
+
+#~ msgctxt "remaining time of download"
+#~ msgid "Remaining Time"
+#~ msgstr "Nablieven Tiet"
+
+#~ msgid "No download directory specified."
+#~ msgstr "Keen Daalladenorner angeven"
+
+#~ msgid "Invalid download directory specified."
+#~ msgstr "Leeg Daalladenorner angeven"
+
+#~ msgid "Download directory is not writeable."
+#~ msgstr "Schrieven na Daalladenorner nich mööglich"
+
+#~ msgid "No download destination specified."
+#~ msgstr "Keen Daalladenteel angeven"
+
+#~ msgid "Invalid download destination specified."
+#~ msgstr "Leeg Daalladenteel angeven"
+
+#~ msgid "Download destination is not writeable."
+#~ msgstr "Schrieven na Daalladenteel nich mööglich"
+
+#~ msgid "No URL specified."
+#~ msgstr "Keen Adress angeven"
+
+#~ msgid "Malformed URL."
+#~ msgstr "Leeg Adress"
+
+#~ msgid "Malformed URL, protocol missing."
+#~ msgstr "Leeg Adress, Protokoll fehlt"
+
+#~ msgid "Malformed URL, host missing."
+#~ msgstr "Leeg Adress, Reekner fehlt"
+
+#~ msgid ""
+#~ "Invalid download directory specified:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Leeg Daalladenorner angeven:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Download directory is not writeable:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Schrieven na Daalladenorner nich mööglich:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Invalid download destination specified:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Leeg Daalladenteel angeven:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Download destination is not writeable:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Schrieven na Daalladenteel nich mööglich:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Malformed URL, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Leeg Adress, Reekner fehlt:\n"
+#~ "%1"
+
+#~ msgid "File already exists. Overwrite it?"
+#~ msgstr "Dat gifft de Datei al. Wullt Du ehr överschrieven?"
+
+#~ msgid ""
+#~ "You have already downloaded that file from another location.\n"
+#~ "Download and delete the previous one?"
+#~ msgstr ""
+#~ "Du hest disse Datei al vun en anner Steed daallaadt.\n"
+#~ "Wullt Du disse daalladen un de annere wegdoon?"
+
+#~ msgid ""
+#~ "You are already downloading that file from another location.\n"
+#~ "Download and delete the previous one?"
+#~ msgstr ""
+#~ "Du hest disse Datei al vun en anner Steed daallaadt.\n"
+#~ "Wullt Du disse daalladen un de annere wegdoon?"
+
+#~ msgid ""
+#~ "You have already completed a download from that location. Download it "
+#~ "again?"
+#~ msgstr ""
+#~ "Du hest vun disse Steed al en Daalladen afslaten: Wullt Du em nochmaal "
+#~ "daalladen?"
+
+#~ msgid ""
+#~ "You have a download in progress from that location.\n"
+#~ "Delete it and download again?"
+#~ msgstr ""
+#~ "Du hest noch en Daalladen vun disse Steed lopen:\n"
+#~ "Wegdoon un nochmaal daalladen?"
+
+#~ msgid ""
+#~ "File already exists:\n"
+#~ "%1\n"
+#~ "Overwrite it?"
+#~ msgstr ""
+#~ "Dat gifft de Datei al:\n"
+#~ "%1\n"
+#~ "Överschrieven?"
+
+#~ msgid "Malformed URLs."
+#~ msgstr "Leeg Adressen"
+
+#~ msgid "Malformed URLs, protocol missing."
+#~ msgstr "Leeg Adressen, Protokoll fehlt"
+
+#~ msgid "Malformed URLs, host missing."
+#~ msgstr "Leeg Adressen, Reekner fehlt"
+
+#~ msgid ""
+#~ "Malformed URLs:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Leeg Adressen:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Malformed URLs, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Leeg Adressen, Protokoll fehlt:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Malformed URLs, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Leeg Adressen, Reekner fehlt:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Destinations are not writable:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Teeldateien laat sik nich schrieven:\n"
+#~ "%1"
+
+#~ msgid "Files exist already. Overwrite them?"
+#~ msgstr "Dat gifft de Dateien al. Överschrieven?"
+
+#~ msgid ""
+#~ "You have already completed downloads at those destinations. Download them "
+#~ "again?"
+#~ msgstr ""
+#~ "Du hest na disse Steden al verscheden Daalladen afslaten. Nochmaal "
+#~ "daalladen?"
+
+#~ msgid ""
+#~ "You have downloads in progress to these destinations.\n"
+#~ "Delete them and download again?"
+#~ msgstr ""
+#~ "Du hest noch verscheden Daalladen na disse Steden lopen.\n"
+#~ "Wegdoon un nochmaal daalladen?"
+
+#~ msgid ""
+#~ "You have already completed downloads from these locations. Download them "
+#~ "again?"
+#~ msgstr ""
+#~ "Du hest vun disse Steden al verscheden Daalladen afslaten. Nochmaal "
+#~ "daalladen?"
+
+#~ msgid ""
+#~ "You have downloads in progress from these locations.\n"
+#~ "Delete them and download again?"
+#~ msgstr ""
+#~ "Du hest noch verscheden Daalladen vun disse Steden lopen.\n"
+#~ "Wegdoon un nochmaal daalladen?"
+
+#~ msgid ""
+#~ "Files exist already:\n"
+#~ "%1\n"
+#~ "Overwrite them?"
+#~ msgstr ""
+#~ "Dat gifft de Dateien al:\n"
+#~ "%1\n"
+#~ "Överschrieven?"
+
+#~ msgid ""
+#~ "You have already completed downloads at those destinations: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ " Download them again?"
+#~ msgstr ""
+#~ "Du hest na disse Steden al verscheden Daalladen afslaten: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ " Nochmaal daalladen?"
+
+#~ msgid ""
+#~ "You have downloads in progress to these destinations: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Delete them and download again?"
+#~ msgstr ""
+#~ "Du hest noch verscheden Daalladen na disse Steden lopen: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Wegdoon un nochmaal daalladen?"
+
+#~ msgid ""
+#~ "You have already completed downloads from these locations: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Download them again?"
+#~ msgstr ""
+#~ "Du hest vun disse Steden al verscheden Daalladen afslaten: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Nochmaal daalladen?"
+
+#~ msgid ""
+#~ "You have downloads in progress from these locations: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Delete them and download again?"
+#~ msgstr ""
+#~ "Du hest noch verscheden Daalladen vun disse Steden lopen:\n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Wegdoon un nochmaal daalladen?"
+
+#~ msgid "Question"
+#~ msgstr "Fraag"
+
+#~ msgctxt "on a question"
+#~ msgid "Yes all"
+#~ msgstr "Jo, all"
+
+#~ msgctxt "on a question"
+#~ msgid "No all"
+#~ msgstr "Nee, all"
+
+#~ msgid "Insert Engine"
+#~ msgstr "Söökmaschien tofögen"
+
+#~ msgid "Engine name:"
+#~ msgstr "Naam vun de Söökmaschien:"
+
+#~ msgid "URL:"
+#~ msgstr "URL:"
+
+#~ msgid "The download (%1) could not be verified. Do you want to repair it?"
+#~ msgstr "De Daalladen (%1) lett sik nich pröven. Wullt Du em richten?"
+
+#~ msgid ""
+#~ "The download (%1) could not be verified. Do you want to redownload it?"
+#~ msgstr "De Daalladen (%1) lett sik nich pröven. Wullt Du em nieg daalladen?"
+
+#~ msgid "Verification failed."
+#~ msgstr "Prööv fehlslaan"
+
+#~ msgctxt "transfer state: connecting"
+#~ msgid "Connecting...."
+#~ msgstr "Bi to tokoppeln..."
+
+#~ msgid "Add New Script"
+#~ msgstr "Nieg Skript tofögen"
+
+#~ msgid "Edit Script"
+#~ msgstr "Skript bewerken"
+
+#~ msgid "Set Script File"
+#~ msgstr "Skriptdatei fastleggen"
+
+#~ msgctxt "Configure script"
+#~ msgid "Configure script"
+#~ msgstr "Skript instellen"
+
+#~ msgctxt "Transfer state: processing script"
+#~ msgid "Processing script...."
+#~ msgstr "Skript warrt afarbeidt..."
+
+#~ msgctxt "Transfer State: Finished"
+#~ msgid "Finished"
+#~ msgstr "Afslaten"
+
+#~ msgctxt "Transfer State: Aborted"
+#~ msgid "Aborted"
+#~ msgstr "Afbraken"
+
+#~ msgid "Downloading Metalink File...."
+#~ msgstr "Metalink-Datei warrt daallaadt..."
+
+#~ msgid ""
+#~ "A newer version of this Metalink might exist, do you want to download it?"
+#~ msgstr "Villicht wöör disse Metalink opfrischt. Wullt Du em daalladen?"
+
+#~ msgid "Redownload Metalink"
+#~ msgstr "Metalink nieg daalladen"
+
+#~ msgid "Download failed, no working URLs were found."
+#~ msgstr "Daalladen fehlslaan, keen funkscheneren URLs funnen."
+
+#~ msgid ""
+#~ "The download could not be verified, do you want to repair (if repairing "
+#~ "does not work the download would be restarted) it?"
+#~ msgstr ""
+#~ "De Daalladen lett sik nich pröven. Wullt Du em richten? (Sleit dat "
+#~ "Richten fehl, warrt de Datei nieg daallaadt.)"
+
+#~ msgid "File Selection"
+#~ msgstr "Dateiköör"
+
+#~ msgid "Add item"
+#~ msgstr "Indrag tofögen"
+
+#~ msgid "%1 would become %2"
+#~ msgstr "%1 wöör %2 warrn"
+
+#~ msgctxt "the string that is used to modify an url"
+#~ msgid "Change string"
+#~ msgstr "Tekenkeed ännern"
+
+#~ msgctxt "the mode defines how the url should be changed"
+#~ msgid "Change mode"
+#~ msgstr "Metood ännern"
+
+#~ msgctxt "the type of the checksum e.g. md5"
+#~ msgid "Checksum type"
+#~ msgstr "Pröövsummtyp"
+
+#~ msgid "Append"
+#~ msgstr "Anhangen"
+
+#~ msgid "Replace file"
+#~ msgstr "Datei utwesseln"
+
+#~ msgid "Replace file-ending"
+#~ msgstr "Dateiverwiedern utwesseln"
+
+#~ msgctxt "transfer state: running"
+#~ msgid "Running...."
+#~ msgstr "An't Lopen..."
+
+#~ msgctxt "Choked"
+#~ msgid "Yes"
+#~ msgstr "Jo"
+
+#~ msgctxt "Not choked"
+#~ msgid "No"
+#~ msgstr "Nee"
+
+#~ msgctxt "Snubbed"
+#~ msgid "Yes"
+#~ msgstr "Jo"
+
+#~ msgctxt "Not snubbed"
+#~ msgid "No"
+#~ msgstr "Nee"
+
+#~ msgctxt "Interested"
+#~ msgid "Yes"
+#~ msgstr "Jo"
+
+#~ msgctxt "Not Interested"
+#~ msgid "No"
+#~ msgstr "Nee"
+
+#~ msgctxt "Interesting"
+#~ msgid "Yes"
+#~ msgstr "Jo"
+
+#~ msgctxt "Not Interesting"
+#~ msgid "No"
+#~ msgstr "Nee"
+
+#~ msgid "IP Address"
+#~ msgstr "IP-Adress"
+
+#~ msgid "Client"
+#~ msgstr "Client"
+
+#~ msgid "Down Speed"
+#~ msgstr "Daalaad-Gauheit"
+
+#~ msgid "Up Speed"
+#~ msgstr "Hoochlaad-Gauheit"
+
+#~ msgid "Choked"
+#~ msgstr "Afdrusselt"
+
+#~ msgid "Snubbed"
+#~ msgstr "Afwiest"
+
+#~ msgid "Availability"
+#~ msgstr "Verföögborkeit"
+
+#~ msgid "DHT"
+#~ msgstr "VPT"
+
+#~ msgid "Score"
+#~ msgstr "Pünkt"
+
+#~ msgid "Upload Slot"
+#~ msgstr "Hoochlaad-Platz"
+
+#~ msgid "Requests"
+#~ msgstr "Anfragen"
+
+#~ msgid "Downloaded"
+#~ msgstr "Daallaadt"
+
+#~ msgid "Uploaded"
+#~ msgstr "Hoochlaadt"
+
+#~ msgid "Interested"
+#~ msgstr "Mit Vermaak"
+
+#~ msgid "Interesting"
+#~ msgstr "Vermaaklich"
+
+#~ msgid "IP address of the peer"
+#~ msgstr "IP-Adress vun den Partner"
+
+#~ msgid "Which client the peer is using"
+#~ msgstr "Dat Programm, dat de Partner bruukt"
+
+#~ msgid "Download speed"
+#~ msgstr "Daallaad-Gauigkeit"
+
+#~ msgid "Upload speed"
+#~ msgstr "Hoochlaad-Gauigkeit"
+
+#~ msgid ""
+#~ "Whether or not the peer has choked us.  If we are choked, the peer will "
+#~ "not send us any data."
+#~ msgstr ""
+#~ "Gifft an, wat de Partner Di afdrusselt hett. Hett he dat, stüert he Di "
+#~ "keen Daten to."
+
+#~ msgid ""
+#~ "Snubbed means the peer has not sent us any data in the last 2 minutes"
+#~ msgstr ""
+#~ "\"Afwiest\" bedüüdt, de Partner hett Di binnen de verleden 2 Minuten keen "
+#~ "Daten tostüert."
+
+#~ msgid "How much of the torrent's data the peer has"
+#~ msgstr "Gifft an, wo veel vun den Torrent de Partner hett"
+
+#~ msgid "Whether or not the peer has DHT enabled"
+#~ msgstr "Gifft an, wat de Partner VPT anmaakt hett"
+
+#~ msgid ""
+#~ "The score of the peer. KTorrent uses this to determine who to upload to."
+#~ msgstr ""
+#~ "Den Partner sien Pünkt. Dor klamüüstert KTorrent mit ut, wokeen wat "
+#~ "tostüert warrt"
+
+#~ msgid "Only peers which have an upload slot will get data from us"
+#~ msgstr "Bloots Partners, de en Hoochlaad-Platz hebbt, kriegt Daten vun Di"
+
+#~ msgid "The number of download and upload requests"
+#~ msgstr "De Tall vun Daal- un Hoochlaad-Anfragen"
+
+#~ msgid "How much data we have downloaded from this peer"
+#~ msgstr "Gifft an, woveel Daten Du vun dissen Partner daallaadt hest"
+
+#~ msgid "How much data we have uploaded to this peer"
+#~ msgstr "Gifft an, woveel Daten Du dissen Partner tostüert hest"
+
+#~ msgid "Whether the peer is interested in downloading data from us"
+#~ msgstr "Gifft an, wat disse Partner Daten vun Di daalladen will"
+
+#~ msgid "Whether we are interested in downloading from this peer"
+#~ msgstr "Gifft an, wat Du Daten vun dissen Partner daalladen wullt"
+
+#~ msgid "Chunk"
+#~ msgstr "Block"
+
+#~ msgid "Progress"
+#~ msgstr "Vörankamen"
+
+#~ msgid "Peer"
+#~ msgstr "Partner"
+
+#~ msgid "Files"
+#~ msgstr "Dateien"
+
+#~ msgid "Number of the chunk"
+#~ msgstr "Blocknummer:"
+
+#~ msgid "Download progress of the chunk"
+#~ msgstr "Daallaad-Vörankamen vun den Block"
+
+#~ msgid "Which peer we are downloading it from"
+#~ msgstr "De Partner, vun den Du den Block daallaadst"
+
+#~ msgid "Download speed of the chunk"
+#~ msgstr "Daallaad-Gauigkeit vun den Block"
+
+#~ msgid "Which files the chunk is located in"
+#~ msgstr "De Dateien, binnen de de Block liggt"
+
+#~ msgid "URL"
+#~ msgstr "URL"
+
+#~ msgid "Speed"
+#~ msgstr "Gauigkeit"
+
+#~ msgid "Status"
+#~ msgstr "Status"
+
+#~ msgid "Kick Peer"
+#~ msgstr "Partner rutsmieten"
+
+#~ msgid "Ban Peer"
+#~ msgstr "Partner utsluten"
+
+#~ msgid ""
+#~ "Cannot add the webseed %1, it is already part of the list of webseeds."
+#~ msgstr ""
+#~ "De Verdeler \"%1\" lett sik nich tofögen, he steiht al op de Verdelerlist."
+
+#~ msgid "Cannot remove webseed %1, it is part of the torrent."
+#~ msgstr ""
+#~ "De Verdelder \"%1\" lett sik nich wegmaken, he is keen Deel vun den "
+#~ "Torrent."
+
+#~ msgid "File"
+#~ msgstr "Datei"
+
+#~ msgid "Size"
+#~ msgstr "Grött"
+
+#~ msgid "Advanced Details for %1"
+#~ msgstr "Verwiedert Enkelheiten för \"%1\""
+
+#~ msgid "Trackers"
+#~ msgstr "Trackers"
+
+#~ msgid "Webseeds"
+#~ msgstr "Verdelers"
+
+#~ msgctxt "Open file"
+#~ msgid "Open"
+#~ msgstr "Opmaken"
+
+#~ msgid "Download first"
+#~ msgstr "Toeerst daalladen"
+
+#~ msgid "Download normally"
+#~ msgstr "Normaal daalladen"
+
+#~ msgid "Download last"
+#~ msgstr "Tolest daalladen"
+
+#~ msgid "Do Not Download"
+#~ msgstr "Nich daalladen"
+
+#~ msgid "Delete File(s)"
+#~ msgstr "Datei(en) wegdoon"
+
+#~ msgid "Move File"
+#~ msgstr "Datei verschuven"
+
+#~ msgid "Collapse Folder Tree"
+#~ msgstr "Ornerboom tosamenfoolden"
+
+#~ msgid "Expand Folder Tree"
+#~ msgstr "Ornerboom utfoolden"
+
+#~ msgid ""
+#~ "You will lose all data in this file, are you sure you want to do this?"
+#~ msgid_plural ""
+#~ "You will lose all data in these files, are you sure you want to do this?"
+#~ msgstr[0] ""
+#~ "Di kaamt all Daten binnen disse Datei weg. Wullt Du dat redig doon?"
+#~ msgstr[1] ""
+#~ "Di kaamt all Daten binnen disse Dateien weg. Wullt Du dat redig doon?"
+
+#~ msgid "Select a directory to move the data to."
+#~ msgstr "En Orner utsöken, na den Du de Daten verschuven wullt"
+
+#~ msgid "Url"
+#~ msgstr "URL"
+
+#~ msgid "Seeders"
+#~ msgstr "Verdelers:"
+
+#~ msgid "Leechers"
+#~ msgstr "Sugers"
+
+#~ msgid "Times Downloaded"
+#~ msgstr "Tall Daallaaden:"
+
+#~ msgid "Next Update"
+#~ msgstr "Nakamen Opfrischen"
+
+#~ msgid "Priority"
+#~ msgstr "Prioriteet"
+
+#~ msgid "Preview"
+#~ msgstr "Vöransicht"
+
+#~ msgctxt "Percent of File Downloaded"
+#~ msgid "% Complete"
+#~ msgstr "% afslaten"
+
+#~ msgctxt "Download first"
+#~ msgid "First"
+#~ msgstr "Eerst"
+
+#~ msgctxt "Download last"
+#~ msgid "Last"
+#~ msgstr "Lest"
+
+#~ msgctxt "Download normally(not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "Normaal"
+
+#~ msgctxt "preview available"
+#~ msgid "Available"
+#~ msgstr "Verföögbor"
+
+#~ msgctxt "Preview pending"
+#~ msgid "Pending"
+#~ msgstr "Steiht ut"
+
+#~ msgctxt "No preview available"
+#~ msgid "No"
+#~ msgstr "Keen"
+
+#~ msgid "%1 %"
+#~ msgstr "%1 %"
+
+#~ msgctxt "Preview available"
+#~ msgid "Available"
+#~ msgstr "Verföögbor"
+
+#~ msgid "Add Tracker"
+#~ msgstr "Tracker tofögen"
+
+#~ msgid "Enter the URL of the tracker:"
+#~ msgstr "Giff den Tracker sien Adress in:"
+
+#~ msgid "There already is a tracker named <b>%1</b>."
+#~ msgstr "Dat gifft al en Tracker mit den Naam <b>%1</b>."
+
+#~ msgctxt "Download Normal (not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "Normaal"
+
+#~ msgid "Cannot initialize libktorrent. Torrent support might not work."
+#~ msgstr ""
+#~ "Torechtmaken vun \"libktorrent\" nich mööglich. Villicht funkscheneert de "
+#~ "Torrent-Ünnerstütten nich."
+
+#~ msgid "&Advanced Details"
+#~ msgstr "&Verwiedert Enkelheiten"
+
+#~ msgid "&Scan Files"
+#~ msgstr "&Dateien dörkieken"
+
+#~ msgid "Downloading Torrent File...."
+#~ msgstr "Torrent-Datei warrt daallaadt..."
+
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading...."
+#~ msgstr "Bi to daalladen..."
+
+#~ msgid "Cannot add a tracker to a private torrent."
+#~ msgstr "Na en privaat Torrent lett sik keen Tracker tofögen."
+
+#~ msgid "Torrent file does not exist"
+#~ msgstr "De Torrent-Datei gifft dat nich."
+
+#~ msgid "Analyzing torrent...."
+#~ msgstr "Torrent warrt ünnersöcht..."
+
+#~ msgid "Cannot initialize port..."
+#~ msgstr "Port lett sik nich torechtmaken..."
+
+#~ msgctxt "Transfer status: seeding"
+#~ msgid "Seeding...."
+#~ msgstr "Bi to verdelen..."
+
+#~ msgid "Error scanning data: %1"
+#~ msgstr "Fehler bi't Daten-Inlesen: %1"
+
+#~ msgid "Scanning data of <b>%1</b> :"
+#~ msgstr "Daten vun <b>%1</b> warrt dörkeken:"
+
+#~ msgid "Select a default torrent folder"
+#~ msgstr "En Standard-Torrentorner utsöken"
+
+#~ msgid "Select a default temporary folder"
+#~ msgstr "En Standard-Temporeerorner utsöken"
+
+#~ msgid "Import dropped files"
+#~ msgstr "Rintrocken Dateien importeren"
+
+#~ msgctxt "comma, to seperate members of a list"
+#~ msgid ","
+#~ msgstr ","
+
+#~ msgid "File Properties"
+#~ msgstr "Datei-Egenschappen"
+
+#~ msgid "Enter a filename."
+#~ msgstr "En Dateinaam ingeven"
+
+#~ msgid "The filename exists already, choose a different one."
+#~ msgstr "Dat gifft den Dateinaam al, söök bitte en annern ut."
+
+#~ msgid "Enter at least one URL."
+#~ msgstr "Tominnst een URL ingeven"
+
+#~ msgid ""
+#~ "Required data entered; also consider entering additional information."
+#~ msgstr ""
+#~ "Du hest de nödigen Daten ingeven. Nu kannst Du noch Informatschonen bito "
+#~ "ingeven."
+
+#~ msgid "Create a Metalink"
+#~ msgstr "En Metalink opstellen"
+
+#~ msgid "General optional information for the metalink."
+#~ msgstr "Köörwies allmeen Informatschonen för den Metalink"
+
+#~ msgid "Unable to load: %1"
+#~ msgstr "Lett sik nich laden: %1"
+
+#~ msgid "Metalink Version 4.0 file (*.meta4)"
+#~ msgstr "Metalink-Datei, Verschoon 4.0 (*.meta4)"
+
+#~ msgid "Metalink Version 3.0 file (*.metalink)"
+#~ msgstr "Metalink-Datei, Verschoon 3.0 (*.metalink)"
+
+#~ msgid "Define the saving location."
+#~ msgstr "De Spiekersteed fastleggen"
+
+#~ msgctxt "file as in file on hard drive"
+#~ msgid "Enter at least one file."
+#~ msgstr "Tominnst een Datei angeven"
+
+#~ msgid "Import Links"
+#~ msgstr "Links importeren"
+
+#~ msgctxt "Download the items which have been selected"
+#~ msgid "&Download Checked"
+#~ msgstr "Utsöchte &daalladen"
+
+#~ msgid "Auxiliary header"
+#~ msgstr "Hülp-Koppreeg"
+
+#~ msgid "File Name"
+#~ msgstr "Dateinaam"
+
+#~ msgid "Description"
+#~ msgstr "Beschrieven"
+
+#~ msgctxt "list header: type of file"
+#~ msgid "File Type"
+#~ msgstr "Dateityp"
+
+#~ msgid "Location (URL)"
+#~ msgstr "Oort (URL)"
+
+#~ msgid "Links in: %1 - KGet"
+#~ msgstr "Links in: %1 - KGet"
+
+#~ msgid "&Select All Filtered"
+#~ msgstr "All Filterte &utsöken"
+
+#~ msgid "&Select All"
+#~ msgstr "All &kören"
+
+#~ msgid "D&eselect All Filtered"
+#~ msgstr "All filterte &afkören"
+
+#~ msgid "D&eselect All"
+#~ msgstr "All &afkören"
+
+#~ msgid "not specified"
+#~ msgstr "nich angeven"
+
+#~ msgctxt "Mirror as in server, in url"
+#~ msgid "Mirror"
+#~ msgstr "Spegelserver"
+
+#~ msgctxt "The priority of the mirror"
+#~ msgid "Priority"
+#~ msgstr "Prioriteet"
+
+#~ msgctxt "Number of paralell connections to the mirror"
+#~ msgid "Connections"
+#~ msgstr "Verbinnen"
+
+#~ msgctxt "Location = country"
+#~ msgid "Location"
+#~ msgstr "Steed"
+
+#~ msgid "Add mirror"
+#~ msgstr "Spegelserver tofögen"
+
+#~ msgctxt "Adds the item and reopens the dialog to add a further item"
+#~ msgid "Add more"
+#~ msgstr "Mehr tofögen"
+
+#~ msgid "%1 has been successfully added."
+#~ msgstr "\"%1\" wöör mit Spood toföögt."
+
+#~ msgid "Modify the used mirrors."
+#~ msgstr "De bruukten Spegelservers ännern"
+
+#~ msgid "Download again"
+#~ msgstr "Nochmaal daalladen"
+
+#~ msgctxt "Delete selected history-item"
+#~ msgid "Delete selected"
+#~ msgstr "Utsöchte wegdoon"
+
+#~ msgid "Open file"
+#~ msgstr "Datei opmaken"
+
+#~ msgid "Today"
+#~ msgstr "Vundaag"
+
+#~ msgid "Last week"
+#~ msgstr "Verleden Week"
+
+#~ msgid "Last Month"
+#~ msgstr "Verleden Maand"
+
+#~ msgid "A long time ago"
+#~ msgstr "Vör en lang Tiet"
+
+#~ msgid "Under 10MiB"
+#~ msgstr "Lütter as 10 MiB"
+
+#~ msgid "Between 10MiB and 50MiB"
+#~ msgstr "Twischen 10 un 50 MiB"
+
+#~ msgid "Between 50MiB and 100MiB"
+#~ msgstr "Twischen 50 un 100 MiB"
+
+#~ msgid "More than 100MiB"
+#~ msgstr "Mehr as 100 MiB"
+
+#~ msgid "Transfer History"
+#~ msgstr "Överdregen-Vörgeschicht"
+
+#~ msgid "&Open File"
+#~ msgstr "Datei &opmaken"
+
+#~ msgctxt "The transfer is running"
+#~ msgid "Running"
+#~ msgstr "Löppt"
+
+#~ msgctxt "The transfer is stopped"
+#~ msgid "Stopped"
+#~ msgstr "Anhollen"
+
+#~ msgctxt "The transfer is aborted"
+#~ msgid "Aborted"
+#~ msgstr "Afbraken"
+
+#~ msgctxt "The transfer is finished"
+#~ msgid "Finished"
+#~ msgstr "Afslaten"
+
+#~ msgid "Source File"
+#~ msgstr "Borndatei"
+
+#~ msgid "Destination"
+#~ msgstr "Teel"
+
+#~ msgid "Time"
+#~ msgstr "Tiet"
+
+#~ msgid "File Size"
+#~ msgstr "Dateigrött"
+
+#~ msgid "Less than 1MiB"
+#~ msgstr "Weniger as 1 MB"
+
+#~ msgid "Between 1MiB-10MiB"
+#~ msgstr "Twischen 1 MB un 10 MB"
+
+#~ msgid "Between 10MiB-100MiB"
+#~ msgstr "Twischen 10 MB un 100 MB"
+
+#~ msgid "Between 100MiB-1GiB"
+#~ msgstr "Twischen 100 MB un 1 GB"
+
+#~ msgid "More than 1GiB"
+#~ msgstr "Mehr as 1 GB"
+
+#~ msgid "Last month"
+#~ msgstr "Verleden Maand"
+
+#~ msgctxt "the transfer has been finished"
+#~ msgid "Finished"
+#~ msgstr "Afslaten"
+
+#~ msgid "You have no source URLs selected."
+#~ msgstr "Du hest keen Bornadressen utsöcht."
+
+#~ msgid "Files that exist already in the current folder have been marked."
+#~ msgstr "Al binnen den aktuellen Orner vörhannen Dateien wöörn markeert."
+
+#~ msgctxt "an error happened in connection with the user input"
+#~ msgid "Error:"
+#~ msgstr "Fehler:"
+
+#~ msgctxt "a warning happened in connection with the user input"
+#~ msgid "Warning:"
+#~ msgstr "Wohrschoen:"
+
+#~ msgctxt "trust level"
+#~ msgid "Unknown"
+#~ msgstr "Nich begäng"
+
+#~ msgctxt "trust level"
+#~ msgid "Undefined"
+#~ msgstr "Nich fastleggt"
+
+#~ msgctxt "trust level"
+#~ msgid "Never"
+#~ msgstr "Nienich"
+
+#~ msgctxt "trust level"
+#~ msgid "Marginal"
+#~ msgstr "Deelwies"
+
+#~ msgctxt "trust level"
+#~ msgid "Full"
+#~ msgstr "Vull"
+
+#~ msgctxt "trust level"
+#~ msgid "Ultimate"
+#~ msgstr "Büterst"
+
+#~ msgctxt ""
+#~ "Signature here is meant in cryptographic terms, so the signature of a "
+#~ "file."
+#~ msgid "Signature of %1."
+#~ msgstr "Ünnerschrift vun %1"
+
+#~ msgid "This option is not supported for the current transfer."
+#~ msgstr "De lopen Överdregen ünnerstütt disse Optschoon nich."
+
+#~ msgid "You need to define a signature."
+#~ msgstr "En Ünnerschrift deit noot."
+
+#~ msgid ""
+#~ "No fingerprint could be found, check if the signature is correct or "
+#~ "verify the download."
+#~ msgstr ""
+#~ "Fingerafdruck lett sik nich finnen. Prööv, wat de Ünnerschrift oder de "
+#~ "Daalladen nich leeg is."
+
+#~ msgid "The key has been revoked."
+#~ msgstr "De Slötel wöör torüchropen."
+
+#~ msgid "The key is disabled."
+#~ msgstr "De Slötel is utmaakt."
+
+#~ msgid "The key is invalid."
+#~ msgstr "De Slötel is leeg."
+
+#~ msgid "The key is expired."
+#~ msgstr "De Slötel is aflopen."
+
+#~ msgid "The key is not to be trusted."
+#~ msgstr "Den Slötel warrt nich troot."
+
+#~ msgid "The key is to be trusted marginally."
+#~ msgstr "Den Slötel warrt deelwies troot."
+
+#~ msgid "The key is to be trusted fully."
+#~ msgstr "Den Slötel warrt vull troot."
+
+#~ msgid "The key is to be trusted ultimately."
+#~ msgstr "Den Slötel warrt büterst troot."
+
+#~ msgid "Trust level of the key is unclear."
+#~ msgstr "Den Slötel sien Totroenstoop is twiefelhaftig."
+
+#~ msgid "Unlimited"
+#~ msgstr "Keen Grenz"
+
+#~ msgctxt "pgp signature is verified"
+#~ msgid "Verified"
+#~ msgstr "Pröövt"
+
+#~ msgid "The signature has been verified successfully."
+#~ msgstr "De Ünnerschrift wöör mit Spood pröövt."
+
+#~ msgid "The signature has been verified successfully:"
+#~ msgstr "De Ünnerschrift wöör mit Spood pröövt."
+
+#~ msgctxt "pgp signature is not verified"
+#~ msgid "Failed"
+#~ msgstr "Fehlslaan"
+
+#~ msgid ""
+#~ "Caution: Verification failed. Either you entered the wrong signature, or "
+#~ "the data has been modified."
+#~ msgstr ""
+#~ "Wohrschoen: Prööv fehlslaan. Du hest en verkehrt Slötel ingeven, oder de "
+#~ "Daten wöörn ännert."
+
+#~ msgid ""
+#~ "Verification not possible. Check the entered data, whether gpg-agent is "
+#~ "running, or whether you have an Internet connection (for retrieving keys.)"
+#~ msgstr ""
+#~ "Keen Prööv mööglich. Prööv de ingeven Daten, wat de GPG-Hölper löppt, "
+#~ "oder wat Dien Internetverbinnen (för't Halen vun Slötels) steiht."
+
+#~ msgid ""
+#~ "Feature is not supported, as KGet is not compiled with QPGME support."
+#~ msgstr ""
+#~ "De Funkschoon warrt nich ünnerstütt, wiel KGet ahn Ünnerstütten för QPGME "
+#~ "kompileert wöör."
+
+#~ msgid "Error:"
+#~ msgstr "Fehler:"
+
+#~ msgid "Problems:"
+#~ msgstr "Problemen:"
+
+#~ msgid "Information:"
+#~ msgstr "Informatschonen:"
+
+#~ msgid "Select columns"
+#~ msgstr "Striepen utsöken"
+
+#~ msgid "Transfer Details"
+#~ msgstr "Överdregen-Enkelheiten"
+
+#~ msgid "Add checksum"
+#~ msgstr "Pröövsumm tofögen"
+
+#~ msgid "%1 %2 has been successfully added."
+#~ msgstr "%1 %2 wöör mit Spood toföögt."
+
+#~ msgid "Transfer Verification for %1"
+#~ msgstr "Överdregenprööv för %1"
+
+#~ msgid "%1 was successfully verified."
+#~ msgstr "\"%1\" wöör mit Spood pröövt."
+
+#~ msgid "Verification successful"
+#~ msgstr "Prööv mit Spood afslaten"
+
+#~ msgid "Rename File"
+#~ msgstr "Datei ümnömen"
+
+#~ msgid "Rename %1 to:"
+#~ msgstr "Datei \"%1\" ümnömen to:"
+
+#~ msgid "&Rename"
+#~ msgstr "Ü&mnömen"
+
+#~ msgid "Semantic Desktop"
+#~ msgstr "Schriefdischbeslöteln"
+
+#~ msgid "Delete Group"
+#~ msgid_plural "Delete Groups"
+#~ msgstr[0] "Koppel wegdoon"
+#~ msgstr[1] "Koppeln wegdoon"
+
+#~ msgid "Rename Group..."
+#~ msgid_plural "Rename Groups..."
+#~ msgstr[0] "Koppel ümnömen..."
+#~ msgstr[1] "Koppeln ümnömen..."
+
+#~ msgctxt "fix position for droptarget"
+#~ msgid "Sticky"
+#~ msgstr "Backig"
+
+#~ msgid "Quit KGet"
+#~ msgstr "KGet utmaken"
+
+#~ msgid "The dropped file is a KGet Transfer List"
+#~ msgstr "De afleggt Datei is en KGet-Överdregenlist"
+
+#~ msgid "&Download"
+#~ msgstr "&Daalladen"
+
+#~ msgid "&Load transfer list"
+#~ msgstr "Överdregenlist &laden"
+
+#~ msgid "Show Main Window"
+#~ msgstr "Hööftfinster wiesen"
+
+#~ msgid "Hide Main Window"
+#~ msgstr "Hööftfinster versteken"
+
+#~ msgid "Drop Target"
+#~ msgstr "Treckteel"
+
+#~ msgid "You can drag download links into the drop target."
+#~ msgstr "Du kannst Daallaadlinks na't Treckteel trecken"
+
+#~ msgctxt "%1 filename, %2 total size, %3 status"
+#~ msgid "%1(%2) %3"
+#~ msgstr "%1(%2) %3"
+
+#~ msgctxt ""
+#~ "%1 filename, %2 percent complete, %3 downloaded out of %4 total size"
+#~ msgid "%1(%2% %3/%4) Speed:%5/s"
+#~ msgstr "%1(%2% %3/%4) Gauigkeit:%5/s"
+
+#~ msgctxt ""
+#~ "%1 filename, %2 percent complete, %3 downloaded out of %4 total size, %5 "
+#~ "status"
+#~ msgid "%1(%2% %3/%4) %5"
+#~ msgstr "%1(%2% %3/%4) %5"
+
+#~ msgid "Ready"
+#~ msgstr "Praat."
+
+#~ msgid ""
+#~ "Drop target has been hidden. If you want to show it again, go to Settings-"
+#~ ">Configure KGet->Look & Feel."
+#~ msgstr ""
+#~ "Du hest dat Treckteel versteken. Wenn Du dat wedder wiesen wullt, kiek bi "
+#~ "\"Instellen\" -> \"KGet instellen\" -> \"Utsehn\""
+
+#~ msgid "Hiding drop target"
+#~ msgstr "Treckteel versteken"
+
+#~ msgid "Transfer Settings for %1"
+#~ msgstr "Överdreeginstellen för %1"
+
+#~ msgid ""
+#~ "Changing the destination did not work, the destination stays unmodified."
+#~ msgstr "Dat Ännern vun't Teel funkscheneert nich, dat Teel blifft, as't is."
+
+#~ msgid "Destination unmodified"
+#~ msgstr "Teel nich ännert"
+
+#~ msgid "Average speed: %1/s"
+#~ msgstr "Dörsnittlich Gauigkeit: %1/s"
+
+#~ msgid "%1 of %2"
+#~ msgstr "%1 vun %2"
+
+#~ msgid "Group Settings for %1"
+#~ msgstr "Koppelinstellen för %1"
+
+#~ msgctxt "@info"
+#~ msgid "Unable to start the server: %1."
+#~ msgstr "De Server \"%1\" lett sik nich opropen."
+
+#~ msgctxt "@item speed of transfer per seconds"
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#~ msgctxt "@label"
+#~ msgid "KGet Web Interface"
+#~ msgstr "KGet-Nettböversiet"
+
+#~ msgctxt "@label number"
+#~ msgid "Nr"
+#~ msgstr "Nr."
+
+#~ msgctxt "@label"
+#~ msgid "File name"
+#~ msgstr "Dateinaam"
+
+#~ msgctxt "@label Progress of transfer"
+#~ msgid "Finished"
+#~ msgstr "Afslaten"
+
+#~ msgctxt "@label Speed of transfer"
+#~ msgid "Speed"
+#~ msgstr "Gauigkeit"
+
+#~ msgctxt "@label Status of transfer"
+#~ msgid "Status"
+#~ msgstr "Status"
+
+#~ msgctxt "@action:button start a transfer"
+#~ msgid "Start"
+#~ msgstr "Anfangen"
+
+#~ msgctxt "@action:button"
+#~ msgid "Stop"
+#~ msgstr "Anhollen"
+
+#~ msgctxt "@action:button"
+#~ msgid "Remove"
+#~ msgstr "Wegmaken"
+
+#~ msgctxt "@label Download from"
+#~ msgid "Source:"
+#~ msgstr "Born:"
+
+#~ msgctxt "@label Save download to"
+#~ msgid "Saving to:"
+#~ msgstr "Sekern as:"
+
+#~ msgctxt "@label Title in header"
+#~ msgid "Web Interface"
+#~ msgstr "Nettböversiet"
+
+#~ msgctxt "@action"
+#~ msgid "Settings"
+#~ msgstr "Instellen"
+
+#~ msgctxt "@action"
+#~ msgid "Refresh"
+#~ msgstr "Opfrischen"
+
+#~ msgctxt "@action"
+#~ msgid "Enter URL: "
+#~ msgstr "Bitte URL ingeven: "
+
+#~ msgctxt "@action:button"
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#~ msgctxt "@action Refresh download list every x (seconds)"
+#~ msgid "Refresh download list every"
+#~ msgstr "Daalladen-List elk"
+
+#~ msgctxt "@action (Refresh very x )seconds"
+#~ msgid "seconds"
+#~ msgstr "s opfrischen"
+
+#~ msgctxt "@action:button"
+#~ msgid "Save Settings"
+#~ msgstr "Instellen sekern"
+
+#~ msgctxt "@title"
+#~ msgid "Downloads"
+#~ msgstr "Daalladen"
+
+#~ msgctxt "@label text in footer"
+#~ msgid "KGet Web Interface | Valid XHTML 1.0 Strict &amp; CSS"
+#~ msgstr "KGet-Nettböversiet | Valid XHTML 1.0 Strict &amp; CSS"
+
+#~ msgid "An advanced download manager for KDE"
+#~ msgstr "En verbetert Daallaad-Pleger för KDE"
+
+#~ msgid ""
+#~ "(C) 2005 - 2009, The KGet developers\n"
+#~ "(C) 2001 - 2002, Patrick Charbonnier\n"
+#~ "(C) 2002, Carsten Pfeiffer\n"
+#~ "(C) 1998 - 2000, Matej Koss"
+#~ msgstr ""
+#~ "© 2005 - 2009, de KGet-Schrievers\n"
+#~ "© 2001 - 2002, Patrick Charbonnier\n"
+#~ "© 2002, Carsten Pfeiffer\n"
+#~ "© 1998 - 2000, Matej Koss"
+
+#~ msgid "<a href=\"mailto:kget@kde.org\">kget@kde.org</a>"
+#~ msgstr "<a href=\"mailto:kget@kde.org\">kget@kde.org</a>"
+
+#~ msgid "Lukas Appelhans"
+#~ msgstr "Lukas Appelhans"
+
+#~ msgid "Maintainer, Core Developer, Torrent Plugin Author"
+#~ msgstr "Pleger, Schrieverbaas, Autor vun't Torrent-Moduul"
+
+#~ msgid "Dario Massarin"
+#~ msgstr "Dario Massarin"
+
+#~ msgid "Core Developer"
+#~ msgstr "Hööftschriever"
+
+#~ msgid "Urs Wolfer"
+#~ msgstr "Urs Wolfer"
+
+#~ msgid "Manolo Valdes"
+#~ msgstr "Manolo Valdes"
+
+#~ msgid "Core Developer, Multithreaded Plugin Author"
+#~ msgstr "Hööftschriever, Autor vun't Utföhrsträng-Moduul"
+
+#~ msgid "Matthias Fuchs"
+#~ msgstr "Matthias Fuchs"
+
+#~ msgid "Javier Goday"
+#~ msgstr "Javier Goday"
+
+#~ msgid "Developer"
+#~ msgstr "Schriever"
+
+#~ msgid "Patrick Charbonnier"
+#~ msgstr "Patrick Charbonnier"
+
+#~ msgid "Former Developer"
+#~ msgstr "Verleden Schriever"
+
+#~ msgid "Carsten Pfeiffer"
+#~ msgstr "Carsten Pfeiffer"
+
+#~ msgid "Matej Koss"
+#~ msgstr "Matej Koss"
+
+#~ msgid "Joris Guisson"
+#~ msgstr "Joris Guisson"
+
+#~ msgid "BTCore (KTorrent) Developer"
+#~ msgstr "Schriever vun BTCore (KTorrent)"
+
+#~ msgid "Mensur Zahirovic (Nookie)"
+#~ msgstr "Mensur Zahirovic (Nookie)"
+
+#~ msgid "Design of Web Interface"
+#~ msgstr "Utsehn vun de Nettböversiet"
+
+#~ msgid "Start KGet with drop target"
+#~ msgstr "KGet mit Treckteel starten"
+
+#~ msgid "Start KGet with hidden main window"
+#~ msgstr "KGet mit versteken Hööftfinster starten"
+
+#~ msgid "Start KGet without drop target animation"
+#~ msgstr "KGet ahn Treckteel-Animeren starten"
+
+#~ msgid "Execute Unit Testing"
+#~ msgstr "Eenheitentest utföhren"
+
+#~ msgid "URL(s) to download"
+#~ msgstr "URL(s), de Du daalladen wullt"
+
+#~ msgid "KGet Transfer List"
+#~ msgstr "KGet-Överdregenlist:"
+
+#~ msgid "Export Transfers"
+#~ msgstr "Överdregen exporteren"
+
+#~ msgid "&New Download..."
+#~ msgstr "&Nieg Daalladen..."
+
+#~ msgid "&Import Transfers..."
+#~ msgstr "Överdregen &importeren..."
+
+#~ msgid "&Export Transfers List..."
+#~ msgstr "Överdregen-List &exporteren..."
+
+#~ msgid "&Export Transfers as Plain Text..."
+#~ msgstr "Överdregen as eenfach Text &exporteren..."
+
+#~ msgid "&Create a Metalink"
+#~ msgstr "En Metalink &opstellen"
+
+#~ msgid "Top Priority"
+#~ msgstr "Hööchst Prioriteet"
+
+#~ msgid "Least Priority"
+#~ msgstr "Siet Prioriteet"
+
+#~ msgid "Increase Priority"
+#~ msgstr "Högere Prioriteet"
+
+#~ msgid "Decrease Priority"
+#~ msgstr "Sietere Prioriteet"
+
+#~ msgid "Set Icon..."
+#~ msgstr "Lüttbild fastleggen..."
+
+#~ msgid "Auto-Paste Mode"
+#~ msgstr "Automaatsch infögen"
+
+#~ msgid ""
+#~ "<b>Auto paste</b> button toggles the auto-paste mode on and off.\n"
+#~ "When set, KGet will periodically scan the clipboard for URLs and paste "
+#~ "them automatically."
+#~ msgstr ""
+#~ "De Knoop <b>Automaatsch infögen</b> maakt den \"Automaatsch Infögen\"-"
+#~ "Bedrief an un ut.\n"
+#~ "Wenn anmaakt, kiekt KGet jümmers wedder na URLs binnen de Twischenaflaag "
+#~ "un föögt ehr automaatsch in, wenn dat een finnen deit."
+
+#~ msgid "Use KGet as Konqueror Download Manager"
+#~ msgstr "KGet as Daallaad-Pleger för Konqueror bruken"
+
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Remove Selected"
+#~ msgstr "Utsöchte wegdoon"
+
+#~ msgctxt "delete all finished transfers"
+#~ msgid "Remove All Finished"
+#~ msgstr "All Afslaten wegdoon"
+
+#~ msgctxt "redownload selected transfer item"
+#~ msgid "Redownload Selected"
+#~ msgstr "Utsöcht Indrag nieg daalladen"
+
+#~ msgid "Start / Resume All"
+#~ msgstr "All anfangen / wiedermaken"
+
+#~ msgid "Start / Resume Selected"
+#~ msgstr "Utsöchte anfangen / wiedermaken"
+
+#~ msgid "Stop All"
+#~ msgstr "All anhollen"
+
+#~ msgid "Stop Selected"
+#~ msgstr "Utsöchte anhollen"
+
+#~ msgid "Start / Resume"
+#~ msgstr "Anfangen / Wiedermaken"
+
+#~ msgid "Stop"
+#~ msgstr "Anhollen"
+
+#~ msgid "Remove"
+#~ msgstr "Wegmaken"
+
+#~ msgid "Open Destination"
+#~ msgstr "Teel opmaken"
+
+#~ msgid "Open File"
+#~ msgstr "Datei opmaken"
+
+#~ msgid "Show Details"
+#~ msgstr "Enkelheiten wiesen"
+
+#~ msgid "Copy URL to Clipboard"
+#~ msgstr "URL na Twischenaflaag koperen"
+
+#~ msgid "&Transfer History"
+#~ msgstr "Ö&verdregen-Vörgeschicht"
+
+#~ msgid "&Group Settings"
+#~ msgstr "&Koppelinstellen"
+
+#~ msgid "&Transfer Settings"
+#~ msgstr "Ö&verdregen-Instellen"
+
+#~ msgid "Import &Links..."
+#~ msgstr "&Links importeren..."
+
+#~ msgid ""
+#~ "This is the first time you have run KGet.\n"
+#~ "Would you like to enable KGet as the download manager for Konqueror?"
+#~ msgstr ""
+#~ "Dit is dat eerst Maal, wat Du KGet utföhrst.\n"
+#~ "Wullt Du KGet as Daallaad-Pleger för Konqueror bruken?"
+
+#~ msgid "Konqueror Integration"
+#~ msgstr "Inbinnen na Konqueror"
+
+#~ msgid "Enable"
+#~ msgstr "Inbinnen"
+
+#~ msgid "Do Not Enable"
+#~ msgstr "Nich inbinnen"
+
+#~ msgid "All Openable Files"
+#~ msgstr "All Dateien, de sik opmaken laat"
+
+#~ msgctxt "window title including overall download progress in percent"
+#~ msgid "KGet - %1%"
+#~ msgstr "KGet - %1%"
+
+#~ msgid ""
+#~ "Some transfers are still running.\n"
+#~ "Are you sure you want to close KGet?"
+#~ msgstr ""
+#~ "En Reeg Överdregen sünd noch bi to lopen.\n"
+#~ "Wullt Du KGet redig utmaken?"
+
+#~ msgid "Confirm Quit"
+#~ msgstr "Utmaken beglöven"
+
+#~ msgid "Enter Group Name"
+#~ msgstr "Koppelnaam ingeven"
+
+#~ msgid "Group name:"
+#~ msgstr "Koppelnaam:"
+
+#~ msgid "Are you sure you want to delete the selected transfer?"
+#~ msgid_plural "Are you sure you want to delete the selected transfers?"
+#~ msgstr[0] "Wullt Du de utsöchte Överdregen redig wegdoon?"
+#~ msgstr[1] "Wullt Du de utsöchten Överdregen redig wegdoon?"
+
+#~ msgid "Confirm transfer delete"
+#~ msgstr "Wegdoon vun Överdregen beglöven"
+
+#~ msgid ""
+#~ "KGet has been temporarily disabled as download manager for Konqueror. If "
+#~ "you want to disable it forever, go to Settings->Advanced and disable "
+#~ "\"Use as download manager for Konqueror\"."
+#~ msgstr ""
+#~ "Du hest KGet för en Tiet as Konqueror sien Daallaadpleger utmaakt. Wenn "
+#~ "Du dat heel utmaken wullt, kiek binnen \"Instellen\" -> \"Verwiedert\" un "
+#~ "maak \"As Daallaadpleger för Konqueror bruken\" ut."
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Sönke Dibbern, Manfred Wiese"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "s_dibbern@web.de, m.j.wiese@web.de"
+
+#~ msgid "Checksums"
+#~ msgstr "Pröövsummen"
+
+#~ msgid "Automatic verification:"
+#~ msgstr "Automaatsch Prööv:"
+
+#~ msgid "Weak (fastest)"
+#~ msgstr "Swach (gauest)"
+
+#~ msgid "Strong (recommended)"
+#~ msgstr "Dannig (anraadt)"
+
+#~ msgid "Strongest (slowest)"
+#~ msgstr "Bannig dannig (bannig langsam)"
+
+#~ msgid "Used checksum:"
+#~ msgstr "Bruukt Pröövsumm:"
+
+#~ msgid "Signature"
+#~ msgstr "Ünnerschrift"
+
+#~ msgid "Automatic verification"
+#~ msgstr "Automaatsch Prööv"
+
+#~ msgid "Automatic downloading of missing keys"
+#~ msgstr "Fehlen Slötels automaatsch daalladen"
+
+#~ msgid "Keyservers:"
+#~ msgstr "Slötelservers:"
+
+#~ msgid "Move &Up"
+#~ msgstr "Na &baven"
+
+#~ msgid "Move &Down"
+#~ msgstr "Na &nerrn"
+
+#~ msgid "Use default folders for groups as suggestion"
+#~ msgstr "Standardornern för Koppeln as Vörslag bruken"
+
+#~ msgid "Rename"
+#~ msgstr "Ümnömen"
+
+#~ msgid "Select Icon..."
+#~ msgstr "Lüttbild utsöken..."
+
+#~ msgid "Limit Maximum Downloads Per Group"
+#~ msgstr "Hööchstgrenz för Daalladen per Koppel"
+
+#~ msgid "Number of downloads:"
+#~ msgstr "Daalladentall:"
+
+#~ msgid "Downloads from the same server:"
+#~ msgstr "Daalladen för een Server:"
+
+#~ msgid "Speed Limit"
+#~ msgstr "Gauheitgrenz"
+
+#~ msgid "Global download limit:"
+#~ msgstr "Globaal Daallaad-Grenz:"
+
+#~ msgid " KiB/s"
+#~ msgstr " KiB/s"
+
+#~ msgid "Global upload limit:"
+#~ msgstr "Globaal Hoochlaad-Grenz:"
+
+#~ msgid "Per transfer:"
+#~ msgstr "Per Överdregen:"
+
+#~ msgid "Reconnect on Error or Broken Connection"
+#~ msgstr "Bi afreten Verbinnen oder Fehler nieg tokoppeln"
+
+#~ msgid "Number of retries:"
+#~ msgstr "Tall vun Versöök:"
+
+#~ msgid "Retry after:"
+#~ msgstr "Wedder tokoppeln na:"
+
+#~ msgid " sec"
+#~ msgstr " s"
+
+#~ msgid "After Completing Downloads"
+#~ msgstr "Na't Afsluten vun Överdregen"
+
+#~ msgid "Auto shutdown"
+#~ msgstr "Automaatsch utmaken"
+
+#~ msgid "Auto disconnect"
+#~ msgstr "Automaatsch afkoppeln"
+
+#~ msgid "Enable Web Interface"
+#~ msgstr "Nettböversiet anmaken"
+
+#~ msgid "Port:"
+#~ msgstr "Port:"
+
+#~ msgid "User:"
+#~ msgstr "Bruker:"
+
+#~ msgid "Password:"
+#~ msgstr "Passwoort:"
+
+#~ msgid "Startup"
+#~ msgstr "Starten"
+
+#~ msgid "Show splashscreen"
+#~ msgstr "Startschirm wiesen"
+
+#~ msgid "Enable animations"
+#~ msgstr "Animeren anmaken"
+
+#~ msgid "Enable popup tooltip"
+#~ msgstr "Opduker-Kortinfo anmaken"
+
+#~ msgid "Show drop target"
+#~ msgstr "Treckteel wiesen"
+
+#~ msgid "Disable confirmation dialogs (less verbosity)"
+#~ msgstr "Beglöövdialogen utmaken (nich so snackhaftig)"
+
+#~ msgid "Enable system tray icon"
+#~ msgstr "Systeemafsnitt-Lüttbild anmaken"
+
+#~ msgid "Execute action after all downloads have been finished:"
+#~ msgstr "Akschoon utföhren, wenn all Överdregen afslaten sünd:"
+
+#~ msgid "At startup:"
+#~ msgstr "Bi't Starten:"
+
+#~ msgid "Restore Download State"
+#~ msgstr "Daallaaden-Tostand wedderherstellen"
+
+#~ msgid "Start All Downloads"
+#~ msgstr "All Daalladen anfangen"
+
+#~ msgid "Stop All Downloads"
+#~ msgstr "All Daalladen anhollen"
+
+#~ msgid "History"
+#~ msgstr "Vörgeschicht"
+
+#~ msgid "History backend:"
+#~ msgstr "Vörgeschicht-Hülpprogramm:"
+
+#~ msgid "Enable KDE global progress tracking"
+#~ msgstr "KDE sien Vörankamen-Beluern bruken"
+
+#~ msgid "Show every single download "
+#~ msgstr "All Daalladen enkelt wiesen"
+
+#~ msgid "Show overall progress"
+#~ msgstr "Heel Vörankamen wiesen"
+
+#~ msgid "Use as download manager for Konqueror:"
+#~ msgstr "As Daallaadpleger för Konqueror bruken:"
+
+#~ msgid "Monitor clipboard for files to download"
+#~ msgstr "Binnen Twischenaflaag na Daallaad-Dateien söken"
+
+#~ msgid "Case insensitive:"
+#~ msgstr "Op Groot- un Lüttschrieven kieken:"
+
+#~ msgid "Search Engines"
+#~ msgstr "Söökmaschinen"
+
+#~ msgid "Engine Name"
+#~ msgstr "Naam vun de Söökmaschien"
+
+#~ msgid "New Engine..."
+#~ msgstr "Nieg Söökmaschien..."
+
+#~ msgid "Number of connections per URL:"
+#~ msgstr "Tall vun Verbinnen per URL:"
+
+#~ msgid "Use search engines"
+#~ msgstr "Söökmaschienen bruken"
+
+#~ msgid "Search for verification information"
+#~ msgstr "Na Pröövinformatschonen söken"
+
+#~ msgid "File Settings"
+#~ msgstr "Datei-Instellen"
+
+#~ msgid "Filename:"
+#~ msgstr "Dateinaam:"
+
+#~ msgid "Use Normalized Name"
+#~ msgstr "Normaliseert Naam bruken"
+
+#~ msgid "Use Literal Name"
+#~ msgstr "Orginaalnaam bruken"
+
+#~ msgid "Quality:"
+#~ msgstr "Gööd:"
+
+#~ msgid "Best Quality (.mp4)"
+#~ msgstr "Best Gööd (.mp4)"
+
+#~ msgid "Normal Quality (.flv)"
+#~ msgstr "Normaal Gööd (.flv)"
+
+#~ msgid ""
+#~ "Provide login info of your YouTube account in order to access restricted "
+#~ "media."
+#~ msgstr ""
+#~ "Giff Dien Anmelldaten vun Dien YouTube-Togang an, wenn Du op schuult "
+#~ "Daten togriepen wullt."
+
+#~ msgid "Login Info"
+#~ msgstr "Anmelldaten"
+
+#~ msgid "Username:"
+#~ msgstr "Brukernaam:"
+
+#~ msgid ".netrc must have a hostname called 'youtube'."
+#~ msgstr ""
+#~ "Binnen \".netrc\" mutt dat en Reekner mit den Naam \"youtube\" geven."
+
+#~ msgid "User .netrc file"
+#~ msgstr "Bruker-.netrc-Datei"
+
+#~ msgid "User Scripts"
+#~ msgstr "Bruker-Skripten"
+
+#~ msgid "Path"
+#~ msgstr "Padd"
+
+#~ msgid "RegExp"
+#~ msgstr "RegUtdr"
+
+#~ msgid "New Script...."
+#~ msgstr "Nieg Skript..."
+
+#~ msgid "Edit...."
+#~ msgstr "Bewerken..."
+
+#~ msgid "Configure...."
+#~ msgstr "Instellen..."
+
+#~ msgid "Regexp:"
+#~ msgstr "Reguleer Utdruck:"
+
+#~ msgid "Path:"
+#~ msgstr "Padd:"
+
+#~ msgid "Description:"
+#~ msgstr "Beschrieven:"
+
+#~ msgid "Select the files you want to be downloaded."
+#~ msgstr "De Dateien utsöken, de Du daalladen wullt"
+
+#~ msgid "Number of simultaneous file downloads:"
+#~ msgstr "Tall vun op eenmaal daallaadt Dateien:"
+
+#~ msgid "Number of mirrors per file:"
+#~ msgstr "Tall vun Spegelservers per Datei:"
+
+#~ msgid "Change string:"
+#~ msgstr "Tekenkeed ännern:"
+
+#~ msgid "Mode:"
+#~ msgstr "Metood:"
+
+#~ msgid "Checksum type:"
+#~ msgstr "Pröövsummtyp:"
+
+#~ msgid "Result:"
+#~ msgstr "Resultaat:"
+
+#~ msgid "label"
+#~ msgstr "Beteker"
+
+#~ msgid "Remove Tracker"
+#~ msgstr "Tracker wegmaken"
+
+#~ msgid "Change Tracker"
+#~ msgstr "Tracker wesseln"
+
+#~ msgid "Update Trackers"
+#~ msgstr "Trackers opfrischen"
+
+#~ msgid "Restore Defaults"
+#~ msgstr "Standardweerten wedderherstellen"
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Webseed to add to the "
+#~ "torrent.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">Note: </span>Only http webseeds are supported.</p></body></"
+#~ "html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Verdeler, den Du na den "
+#~ "Torrent tofögen wullt.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">Beacht: </span>Bloots HTTP-Verdelers warrt ünnerstütt.</p></"
+#~ "body></html>"
+
+#~ msgid "Add Webseed"
+#~ msgstr "Verdelers"
+
+#~ msgid "Remove Webseed"
+#~ msgstr "Verdeler wegmaken"
+
+#~ msgid "Chunks"
+#~ msgstr "Blöck"
+
+#~ msgid "Total:"
+#~ msgstr "Tosamen:"
+
+#~ msgid "Currently downloading:"
+#~ msgstr "Opstunns bi to daalladen:"
+
+#~ msgid "Downloaded:"
+#~ msgstr "Daallaadt:"
+
+#~ msgid "Excluded:"
+#~ msgstr "Utslaten:"
+
+#~ msgid "Left:"
+#~ msgstr "Över:"
+
+#~ msgid "Size:"
+#~ msgstr "Grött:"
+
+#~ msgid "Scanning data of torrent:"
+#~ msgstr "Torrent-Daten warrt dörkeken:"
+
+#~ msgid "Number of chunks found:"
+#~ msgstr "Tall vun funnen Blöck:"
+
+#~ msgid "Number of chunks failed:"
+#~ msgstr "Tall vun fehlslaan Blöck:"
+
+#~ msgid "Number of chunks not downloaded:"
+#~ msgstr "Tall vun nich daallaadt Blöck:"
+
+#~ msgid "Number of chunks downloaded:"
+#~ msgstr "Tall vun daallaadt Blöck:"
+
+#~ msgid "0"
+#~ msgstr "0"
+
+#~ msgid "Cancel"
+#~ msgstr "Afbreken"
+
+#~ msgid "Stats"
+#~ msgstr "Statistik"
+
+#~ msgid "Seeders:"
+#~ msgstr "Verdelers:"
+
+#~ msgid "<n>"
+#~ msgstr "<n>"
+
+#~ msgid "Download speed:"
+#~ msgstr "Daallaad-Gauigkeit:"
+
+#~ msgid "Leechers:"
+#~ msgstr "Sugers:"
+
+#~ msgid "Upload speed:"
+#~ msgstr "Hoochlaad-Gauigkeit:"
+
+#~ msgctxt "chunks left"
+#~ msgid "Left:"
+#~ msgstr "Över:"
+
+#~ msgctxt "all chunks"
+#~ msgid "All:"
+#~ msgstr "All:"
+
+#~ msgctxt "source-file"
+#~ msgid "Source:"
+#~ msgstr "Born:"
+
+#~ msgid "Saving to:"
+#~ msgstr "Sekern as:"
+
+#~ msgid "Upload limit per transfer:"
+#~ msgstr "Hoochlaad-Grenz per Överdregen:"
+
+#~ msgid "No Limit"
+#~ msgstr "Keen Grenz"
+
+#~ msgid "KiB"
+#~ msgstr "KiB"
+
+#~ msgid "Download limit per transfer:"
+#~ msgstr "Daallaad-Grenz per Överdregen:"
+
+#~ msgid "Enable UTP protocol"
+#~ msgstr "UTP-Protokoll anmaken"
+
+#~ msgid "Folders"
+#~ msgstr "Ornern"
+
+#~ msgid "Default torrent folder:"
+#~ msgstr "Standard-Torrentorner:"
+
+#~ msgid "Default temporary folder"
+#~ msgstr "Standard-Temporeerorner"
+
+#~ msgid "Pre-allocate disk space"
+#~ msgstr "Plaatspieker vörweg towiesen"
+
+#~ msgctxt "General options."
+#~ msgid "General"
+#~ msgstr "Allmeen"
+
+#~ msgid "Create partial checksums"
+#~ msgstr "Deel-Pröövsummen opstellen"
+
+#~ msgid "General URL:"
+#~ msgstr "Allmeen URL:"
+
+#~ msgid ""
+#~ "Automatically create checksums for the selected types. Keep in mind that "
+#~ "this might take a while."
+#~ msgstr ""
+#~ "Bi de utsöchten Typen automaatsch Pröövsummen opstellen. Man dat mag so "
+#~ "sien Tiet bruken."
+
+#~ msgid ""
+#~ "Enter URLs here if all the dropped files are on that server and in the "
+#~ "same directory. For each dropped file the URL would consist of the "
+#~ "entered part and the filename."
+#~ msgstr ""
+#~ "Giff hier URLs in, wenn all rintrocken Dateien op dissen Server un binnen "
+#~ "den sülven Orner liggt. För elkeen rintrocken Datei besteiht de URL ut "
+#~ "den ingeven Part un den Dateinaam."
+
+#~ msgid "Types of the checksums:"
+#~ msgstr "Typen vun de Pröövsummen:"
+
+#~ msgid "Create checksums:"
+#~ msgstr "Pröövsummen opstellen:"
+
+#~ msgctxt "These entries are optional."
+#~ msgid "Optional"
+#~ msgstr "Köörwies"
+
+#~ msgid "Optional data:"
+#~ msgstr "Köörfree Angaven:"
+
+#~ msgid "Enter information that all chosen files share."
+#~ msgstr ""
+#~ "Hier bitte Informatschonen ingeven, de för all utsöchte Dateien gellt"
+
+#~ msgid "Required"
+#~ msgstr "Nödig"
+
+#~ msgid "Used Mirrors:"
+#~ msgstr "Bruukt Spegelservers:"
+
+#~ msgid "Recommended"
+#~ msgstr "Anraadt"
+
+#~ msgid "File size (in bytes):"
+#~ msgstr "Dateigrött (in Bytes):"
+
+#~ msgid "0123456789"
+#~ msgstr "0123456789"
+
+#~ msgid "Verification:"
+#~ msgstr "Prööv:"
+
+#~ msgid "Optional"
+#~ msgstr "Köörwies"
+
+#~ msgid ""
+#~ "This assistant allows you to create metalinks from scratch or base them "
+#~ "on existing metalinks. A lot of the fields are optional or recommended, "
+#~ "so enter them if desired. The minimum is a save location, at least one "
+#~ "file and one URL."
+#~ msgstr ""
+#~ "Mit dissen Hölper kannst Du Metalinks nieg opstellen oder op al vörhannen "
+#~ "Metalinks opbuen. En Barg vun de Feller sünd köörwies oder bloots "
+#~ "anraadt, Du bruukst dor also nix ingeven. Angeven muttst Du man tominnst "
+#~ "en Spiekersteed, een Datei un een URL."
+
+#~ msgid "Save created Metalink at:"
+#~ msgstr "Opstellt Metalink sekern as:"
+
+#~ msgid "Create new Metalink"
+#~ msgstr "Nieg Metalink opstellen"
+
+#~ msgid "Load existing Metalink:"
+#~ msgstr "Vörhannen Metalink laden:"
+
+#~ msgid "*.metalink *.meta4|Metalink file (*.metalink *.meta4)"
+#~ msgstr "*.metalink *.meta4|Metalink-Datei (*.metalink *.meta4)"
+
+#~ msgid "General information:"
+#~ msgstr "Allmeen Informatschonen:"
+
+#~ msgid "Here you can enter optional general information on the metalink."
+#~ msgstr ""
+#~ "Hier kannst Du köörwies allmeen Informatschonen för den Metalink ingeven"
+
+#~ msgid "Origin:"
+#~ msgstr "Born:"
+
+#~ msgid "Web URL to the metalink"
+#~ msgstr "Nettadress na den Metalink"
+
+#~ msgid "Dynamic means that updated metalinks can be found at \"Origin\"."
+#~ msgstr "Dünaamsch bedüüdt, opfrischt Metalinks laat sik bi \"Born\" finnen."
+
+#~ msgid "Dynamic:"
+#~ msgstr "Dünaamsch:"
+
+#~ msgid "Metalink published"
+#~ msgstr "Metalink apenmaakt:"
+
+#~ msgid "Date and time:"
+#~ msgstr "Datum un Tiet:"
+
+#~ msgid "Timezone offset:"
+#~ msgstr "Tietrebeet-Verscheel:"
+
+#~ msgid "Negative offset:"
+#~ msgstr "Negatiev Verscheel:"
+
+#~ msgid "Metalink updated"
+#~ msgstr "Metalink opfrischt:"
+
+#~ msgid "Identity"
+#~ msgstr "Identiteet"
+
+#~ msgid "Version:"
+#~ msgstr "Verschoon:"
+
+#~ msgid "Logo:"
+#~ msgstr "Kennbild:"
+
+#~ msgid "URL to the logo"
+#~ msgstr "URL vun't Kennbild"
+
+#~ msgid "The language of the file"
+#~ msgstr "De Datei ehr Spraak"
+
+#~ msgid "Language:"
+#~ msgstr "Spraak:"
+
+#~ msgid "Operating systems:"
+#~ msgstr "Bedriefsystemen:"
+
+#~ msgid "Supported OSes, separated with commas"
+#~ msgstr "Ünnerstütt Bedriefsystemen, mit Kommas scheedt"
+
+#~ msgid "Copyright:"
+#~ msgstr "Copyright:"
+
+#~ msgid "Publisher:"
+#~ msgstr "Apenmaker:"
+
+#~ msgid "Name:"
+#~ msgstr "Naam:"
+
+#~ msgid "publisher"
+#~ msgstr "Apenmaker"
+
+#~ msgid "Name of the publisher"
+#~ msgstr "Naam vun den Apenmaker"
+
+#~ msgid "URL to the publisher"
+#~ msgstr "URL na den Apenmaker"
+
+#~ msgctxt "Files as in files on a server"
+#~ msgid "Files:"
+#~ msgstr "Dateien:"
+
+#~ msgid "Add local files"
+#~ msgstr "Lokaal Dateien tofögen"
+
+#~ msgid ""
+#~ "Add at least one file. Adding local files adds a lot of information "
+#~ "automatically."
+#~ msgstr ""
+#~ "Föög tominnst een Datei to. En Barg Informatschonen warrt automaatsch "
+#~ "inföögt, wenn Du lokaal Dateien toföögst."
+
+#~ msgid "Adding local files..."
+#~ msgstr "Lokaal Dateien warrt toföögt..."
+
+#~ msgid "You need to set mirrors for the entries with an icon."
+#~ msgstr "De de Indrääg mit en Lüttbild muttst Du Spegelservers fastleggen."
+
+#~ msgid "&File with links to import:"
+#~ msgstr "&Datei mit Links, de Du importeren wullt:"
+
+#~ msgid "&Import Links"
+#~ msgstr "Links &importeren"
+
+#~ msgid "Show:"
+#~ msgstr "Wiesen:"
+
+#~ msgctxt "filter: show all file types"
+#~ msgid "&All"
+#~ msgstr "&All"
+
+#~ msgid "&Videos"
+#~ msgstr "&Videos"
+
+#~ msgid "Ima&ges"
+#~ msgstr "&Biller"
+
+#~ msgid "A&udio"
+#~ msgstr "&Klang"
+
+#~ msgid "A&rchives"
+#~ msgstr "&Archiven"
+
+#~ msgid "You can use wildcards for filtering."
+#~ msgstr "Platzhollers sünd för't Filtern verlööft."
+
+#~ msgid "Filter files here...."
+#~ msgstr "Dateifilter hier ingeven..."
+
+#~ msgid "Contains"
+#~ msgstr "Bargt"
+
+#~ msgid "Does Not Contain"
+#~ msgstr "Bargt nich"
+
+#~ msgid "Inver&t Selection"
+#~ msgstr "Köör üm&dreihen"
+
+#~ msgctxt "Check as in mark, not as in verify"
+#~ msgid "Chec&k Selected"
+#~ msgstr "Utsöchte &markeren"
+
+#~ msgid "Show &web content"
+#~ msgstr "&Nettinholt wiesen"
+
+#~ msgid "Mirror:"
+#~ msgstr "Spegelserver:"
+
+#~ msgid "Number of connections:"
+#~ msgstr "Tall vun Verbinnen:"
+
+#~ msgid "Enter a URL"
+#~ msgstr "Bitte URL ingeven:"
+
+#~ msgid "Priority:"
+#~ msgstr "Prioriteet:"
+
+#~ msgid "Optional: The priority of the mirror, 1 highest 999999 lowest."
+#~ msgstr ""
+#~ "Köörwies de Gööd vun den Spegelserver, 1 is sietst un 999999 hööchst."
+
+#~ msgid "Location:"
+#~ msgstr "Steed:"
+
+#~ msgid "Clear History"
+#~ msgstr "Vörgeschicht leddig maken"
+
+#~ msgctxt "View modes"
+#~ msgid "View Modes"
+#~ msgstr "Ansichten"
+
+#~ msgid "Select Ranges"
+#~ msgstr "Rebeden utsöken"
+
+#~ msgid "Date"
+#~ msgstr "Datum"
+
+#~ msgid "Host"
+#~ msgstr "Reekner"
+
+#~ msgid "Filter History"
+#~ msgstr "Vörgeschicht filtern"
+
+#~ msgctxt "delete selected transfer"
+#~ msgid "Delete Selected"
+#~ msgstr "Utsöchte wegdoon"
+
+#~ msgid "Download"
+#~ msgstr "Daalladen"
+
+#~ msgid "TextLabel"
+#~ msgstr "TextBeteker"
+
+#~ msgctxt "hash type as in md5t, sha1 etc."
+#~ msgid "Hash type:"
+#~ msgstr "Pröövsummtyp:"
+
+#~ msgctxt "hash as a hash of type md5, sha1 etc."
+#~ msgid "Hash:"
+#~ msgstr "Pröövsumm:"
+
+#~ msgid "Enter a hash key"
+#~ msgstr "En Hash-Slötel ingeven"
+
+#~ msgid "Status:"
+#~ msgstr "Status:"
+
+#~ msgid "Remaining Time:"
+#~ msgstr "Nablieven Tiet:"
+
+#~ msgid "Transfer Settings"
+#~ msgstr "Överdreeg-Instellen"
+
+#~ msgid "Download Destination:"
+#~ msgstr "Daallaadteel:"
+
+#~ msgctxt "No value has been set"
+#~ msgid "Not set"
+#~ msgstr "Nich fastleggt"
+
+#~ msgid " KiB"
+#~ msgstr " KiB"
+
+#~ msgid "Upload Limit:"
+#~ msgstr "Hoochlaad-Grenz:"
+
+#~ msgid "Download Limit:"
+#~ msgstr "Daallaad-Grenz:"
+
+#~ msgid "Maximum Share Ratio:"
+#~ msgstr "Hööchst deelt Andeel:"
+
+#~ msgid "Modify the mirrors used for downloading."
+#~ msgstr "De bi't Daalladen bruukten Spegelservers ännern"
+
+#~ msgctxt "The available mirrors (servers) for downloading"
+#~ msgid "Mirrors"
+#~ msgstr "Spegelservers"
+
+#~ msgctxt "verification of the download (e.g. by using MD5)"
+#~ msgid "Verification"
+#~ msgstr "Prööv"
+
+#~ msgid "PGP signature:"
+#~ msgstr "PGP-Ünnerschrift"
+
+#~ msgid "Key"
+#~ msgstr "Slötel"
+
+#~ msgid "Issuer:"
+#~ msgstr "Rutgever:"
+
+#~ msgid "E-Mail:"
+#~ msgstr "Nettpost:"
+
+#~ msgid "Comment:"
+#~ msgstr "Kommentar:"
+
+#~ msgid "Creation:"
+#~ msgstr "Opstellt:"
+
+#~ msgid "Expiration:"
+#~ msgstr "Löppt af:"
+
+#~ msgid "Trust:"
+#~ msgstr "Vertroen:"
+
+#~ msgid "Fingerprint:"
+#~ msgstr "Fingerafdruck:"
+
+#~ msgid "Verify"
+#~ msgstr "Pröven"
+
+#~ msgid "Group Settings"
+#~ msgstr "Koppelinstellen"
+
+#~ msgid "Default folder:"
+#~ msgstr "Standardorner:"
+
+#~ msgid "Moves all transfers with the regular expression to this group"
+#~ msgstr "All Överdregen mit reguleer Utdrück na dissen Koppel verschuven"
+
+#~ msgid "Regular expression:"
+#~ msgstr "Reguleer Utdruck:"
+
+#~ msgid "*movies*"
+#~ msgstr "*Filmen*"
+
+#~ msgid "Maximum download speed:"
+#~ msgstr "Hööchst Daallaad-Gauigkeit:"
+
+#~ msgid "Maximum upload speed:"
+#~ msgstr "Hööchst Hoochlaad-Gauigkeit:"
+
+#~ msgid "Destination:"
+#~ msgstr "Teel:"
+
+#~ msgid "Transfer group:"
+#~ msgstr "Överdregenkoppel:"
+
+#~ msgid "Verify the finished download with the selected checksum."
+#~ msgstr "De afslaten Daalladen mit de utsöchte Pröövsumm pröven"
+
+#~ msgid "&Verify"
+#~ msgstr "&Pröven"
+
+#~ msgid "Verifying:"
+#~ msgstr "Bi to pröven:"
+
+#~ msgid "&File"
+#~ msgstr "&Datei"
+
+#~ msgid "&Downloads"
+#~ msgstr "&Daalladen"
+
+#~ msgid "&Settings"
+#~ msgstr "&Instellen"
+
+#~ msgid "&Help"
+#~ msgstr "&Hülp"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Hööft-Warktüüchbalken"
+
+#~ msgid "Sets to show the splashscreen while KGet is loading"
+#~ msgstr "Leggt fast, de Startschirm warrt wiest bides KGet laadt warrt"
+
+#~ msgid "The width of the columns in the history view"
+#~ msgstr "De Breed vun de Vörgeschichtansicht ehr Striepen"
+
+#~ msgid "List of the available search engines"
+#~ msgstr "List mit verföögbor Söökmaschienen"
+
+#~ msgid "List of the available search engine URLs"
+#~ msgstr "List mit verföögbor Söökmaschienadressen"
+
+#~ msgid "List of the Regexp to match input URL"
+#~ msgstr "Reguleer Utdrück för Ingaav-URL"
+
+#~ msgid "List of descriptions for user scripts"
+#~ msgstr "List mit Beschrieven vun de Bruker-Skripten"
+
+#~ msgid "List of whether the script is enabled"
+#~ msgstr "List, de angifft, wat en Skript anmaakt is"
+
+#~ msgid "There are no links in the active frame of the current HTML page."
+#~ msgstr ""
+#~ "Binnen den aktiven Rahmen vun de aktuelle HTML-Siet gifft dat keen Links."
+
+#~ msgid "Form"
+#~ msgstr "Formulor"
+
+#~ msgid "An error occurred...."
+#~ msgstr "Dat geev en Fehler..."
+
+#~ msgid ""
+#~ "<p>The following urls cannot be downloaded, their protocols are not "
+#~ "supported by KGet:</p>"
+#~ msgstr ""
+#~ "<p>Disse URLs laat sik nich daalladen. - KGet ünnerstütt de Protokollen "
+#~ "nich:</p>"
+
+#~ msgid "Remove Tag"
+#~ msgstr "Beteker wegmaken"
+
+#~ msgid "Add Tag"
+#~ msgstr "Beteker tofögen"
+
+#~ msgid "Tag Settings for the groups"
+#~ msgstr "Slötelwöör för de Koppeln instellen"
+
+#~ msgid "Tag Settings"
+#~ msgstr "Slötelwoort-Instellen"
+
+#~ msgid "Available tags:"
+#~ msgstr "Verföögbor Slötelwöör:"
+
+#~ msgid "Used tags:"
+#~ msgstr "Bruukt Slötelwöör::"
+
+#~ msgid "Enter a new Tag"
+#~ msgstr "En nieg Slötelwoort ingeven"
+
+#~ msgid "Enter a new tag"
+#~ msgstr "Nieg Slötelwoort ingeven"
+
+#~ msgid "Modify Tags..."
+#~ msgstr "Sötelwöör ännern..."
+
+#~ msgid "Unable to continue: KGet cannot download using this protocol."
+#~ msgstr ""
+#~ "Wiedermaken nich mööglich: KGet kann leider nich mit dit Protokoll "
+#~ "daalladen"
+
+#~ msgid "The width of the columns in the main view"
+#~ msgstr "De Breed vun de Hööftansicht ehr Striepen"
+
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#~ msgid "Announcing"
+#~ msgstr "Künnig maken"
+
+#~ msgid "Error: %1"
+#~ msgstr "Fehler: %1"
+
+#~ msgid "Unknown client"
+#~ msgstr "Nich begäng Client"
+
+#~ msgid "1 day "
+#~ msgid_plural "%1 days "
+#~ msgstr[0] "1 Dag "
+#~ msgstr[1] "%1 Daag "
+
+#~ msgid "Cannot open log file %1 : %2"
+#~ msgstr "Logbookdatei \"%1\" lett sik nich opmaken: %2"
+
+#~ msgid "Cannot write to %1 : %2"
+#~ msgstr "Datei \"%1\" lett sik nich schrieven: %2"
+
+#~ msgid "Cannot read from %1"
+#~ msgstr "Datei \"%1\" lett sik nich lesen"
+
+#~ msgid "Cannot create directory %1"
+#~ msgstr "Orner \"%1\" lett sik nich opstellen"
+
+#~ msgid "Cannot symlink %1 to %2: %3"
+#~ msgstr "Symlink vun %1 na %2 lett sik nich opstellen: %3"
+
+#~ msgid "Cannot move %1 to %2: %3"
+#~ msgstr "\"%1\" lett sik nich na %2 verschuven: %3"
+
+#~ msgid "Cannot copy %1 to %2: %3"
+#~ msgstr "\"%1\" lett sik nich na %2 koperen: %3"
+
+#~ msgid "Cannot delete %1: %2"
+#~ msgstr "\"%1\" lett sik nich wegdoon: %2"
+
+#~ msgid "Cannot create %1: %2"
+#~ msgstr "\"%1\" lett sik nich opstellen: %2"
+
+#~ msgid "Cannot calculate the filesize of %1: %2"
+#~ msgstr "Dateigrött vun \"%1\" lett sik nich utreken : %2"
+
+#~ msgid "Cannot calculate the filesize : %1"
+#~ msgstr "Dateigrött lett sik nich utreken : %1"
+
+#~ msgid "Cannot open %1 : %2"
+#~ msgstr "\"%1\" lett sik nich opmaken: %2"
+
+#~ msgid "Cannot expand file: %1"
+#~ msgstr "Datei \"%1\" lett sik nich ruttrecken"
+
+#~ msgid "Cannot seek in file : %1"
+#~ msgstr "Binnen Datei \"%1\" lett sik nich söken"
+
+#~ msgid "General"
+#~ msgstr "Allmeen"
+
+#~ msgid "Connections"
+#~ msgstr "Verbinnen"
+
+#~ msgid "Tracker"
+#~ msgstr "Tracker"
+
+#~ msgid "Disk Input/Output"
+#~ msgstr "Fastplaat-In-/Utgaav"
+
+#~ msgid "Not connected"
+#~ msgstr "Nich tokoppelt"
+
+#~ msgid "Not in use"
+#~ msgstr "Nich in Bruuk"
+
+#~ msgid "Connection closed"
+#~ msgstr "Verbinnen tomaakt"
+
+#~ msgid "Resolving proxy %1:%2"
+#~ msgstr "Proxy \"%1\" warrt nakeken: %2"
+
+#~ msgid "Resolving hostname %1"
+#~ msgstr "Reeknernaam \"%1\" warrt nakeken"
+
+#~ msgid "Error: request failed: %1"
+#~ msgstr "Fehler: Anfraag fehlslaan: %1"
+
+#~ msgid "Connected"
+#~ msgstr "Tokoppelt"
+
+#~ msgid "Error: Failed to connect to webseed"
+#~ msgstr "Fehler: Tokoppeln na Verdeler fehlslaan"
+
+#~ msgid "Connecting"
+#~ msgstr "Bi un koppelt sik to"
+
+#~ msgid "Failed to connect to webseed"
+#~ msgstr "Tokoppeln na Verdeler fehlslaan"
+
+#~ msgid "Failed to resolve hostname of webseed"
+#~ msgstr "Nakieken vun den Verdeler sien Reekner fehlslaan"
+
+#~ msgid "Error: failed to connect, server not responding"
+#~ msgstr "Fehler: Tokoppeln fehlslaan, Server antert nich"
+
+#~ msgid "Error: request timed out"
+#~ msgstr "Fehler: Anfraagtiet aflopen"
+
+#~ msgid "Redirected without a new location."
+#~ msgstr "Ahn nieg Teel wiederleddt."
+
+#~ msgid "1 peer"
+#~ msgid_plural "%1 peers"
+#~ msgstr[0] "1 Partner"
+#~ msgstr[1] "%1 Partners"
+
+#~ msgid "Illegal token: %1"
+#~ msgstr "Leeg Beteker: %1"
+
+#~ msgid "Decode error"
+#~ msgstr "Dekodeer-Fehler"
+
+#~ msgid "Unexpected end of input"
+#~ msgstr "Nich verwacht Ingaav-Enn"
+
+#~ msgid "Cannot convert %1 to an int"
+#~ msgstr "\"%1\" lett sik nich na en Heeltall ümwanneln"
+
+#~ msgid "Torrent is incomplete."
+#~ msgstr "Torrent is nich komplett."
+
+#~ msgid "Failed to open %1 : %2"
+#~ msgstr "\"%1\" lett sik nich opmaken: %2"
+
+#~ msgid "Failed to create %1 : %2"
+#~ msgstr "\"%1\" lett sik nich opstellen: %2"
+
+#~ msgid "Cannot open index file %1 : %2"
+#~ msgstr "Index-Datei \"%1\" lett sik nich opmaken: %2"
+
+#~ msgid "Cannot create file %1 : %2"
+#~ msgstr "Datei \"%1\" lett sik nich opstellen: %2"
+
+#~ msgid "Failed to write first chunk to DND file : %1"
+#~ msgstr "Eerst Block lett sik nich na DND-Datei schrieven: %1"
+
+#~ msgid "Failed to write last chunk to DND file : %1"
+#~ msgstr "Lest Block lett sik nich na DND-Datei schrieven: %1"
+
+#~ msgid "Cannot open %1 for writing : readonly filesystem"
+#~ msgstr "\"%1\" lett sik nich schrieven: Bloots leesbor Dateisysteem"
+
+#~ msgid "Cannot expand file %1 : %2"
+#~ msgstr "Datei \"%1\" lett sik nich utpacken: %2"
+
+#~ msgid "Error : Reading past the end of the file %1"
+#~ msgstr "Fehler: Achter dat Enn vun Datei \"%1\" lett sik nix lesen"
+
+#~ msgid "Failed to seek file %1 : %2"
+#~ msgstr "Datei \"%1\" lett sik nich finnen: %2"
+
+#~ msgid "Error reading from %1"
+#~ msgstr "Fehler bi't Lesen ut \"%1\""
+
+#~ msgid "Failed to write to file %1 : %2"
+#~ msgstr "\"%1\" lett sik nich schrieven: %2"
+
+#~ msgid "Cannot preallocate diskspace : %1"
+#~ msgstr "Plaatspieker lett sik nuich vörweg towiesen: %1"
+
+#~ msgid "Cannot open file %1 : %2"
+#~ msgstr "Datei \"%1\" lett sik nich opmaken: %2"
+
+#~ msgid "Corrupted torrent."
+#~ msgstr "Torrent is schaadhaftig."
+
+#~ msgid " Unable to open torrent file %1 : %2"
+#~ msgstr " Torrent-Datei \"%1\" lett sik nich opmaken: %2"
+
+#~ msgid "Parse Error"
+#~ msgstr "Inleesfehler"
+
+#~ msgid ""
+#~ "An error occurred while loading the torrent <b>%1</b>:<br/><b>%2</b><br/"
+#~ ">The torrent is probably corrupt or is not a valid torrent file."
+#~ msgstr ""
+#~ "Bi't Laden vun den Torrent <b>%1</b> hett dat en Fehler geven.<br/><b>%2</"
+#~ "b><br/>De Torrent is wull schaadhaftig, oder keen Torrent-Datei."
+
+#~ msgid ""
+#~ "An error occurred while loading the torrent:<br/><b>%1</b><br/>The "
+#~ "torrent is probably corrupt or is not a valid torrent file."
+#~ msgstr ""
+#~ "Bi't Laden vun dissen Torrent hett dat en Fehler geven:<br/><b>%1</b><br/"
+#~ ">De Torrent is wull schaadhaftig, oder keen Torrent-Datei."
+
+#~ msgid "Unable to create %1 : %2"
+#~ msgstr "\"%1\" lett sik nich opstellen: %2"
+
+#~ msgid ""
+#~ "You are already downloading this torrent %1, the list of trackers of both "
+#~ "torrents has been merged."
+#~ msgstr ""
+#~ "Du laadst den Torrent \"%1\" al daal; de Listen vun Trackers wöörn "
+#~ "tosamenföhrt."
+
+#~ msgid "You are already downloading the torrent %1"
+#~ msgstr "Du laadst den Torrent \"%1\" al daal"
+
+#~ msgid "Not started"
+#~ msgstr "Nich opropen"
+
+#~ msgid "Seeding completed"
+#~ msgstr "Verdelen afslaten"
+
+#~ msgctxt "Status of a torrent file"
+#~ msgid "Seeding"
+#~ msgstr "Verdelen"
+
+#~ msgid "Downloading"
+#~ msgstr "Daalladen"
+
+#~ msgid "Stopped"
+#~ msgstr "Anhollen"
+
+#~ msgid "Allocating diskspace"
+#~ msgstr "Plaatspieker warrt towiest"
+
+#~ msgid "Queued for seeding"
+#~ msgstr "För't Verdelen inreegt"
+
+#~ msgid "Queued for downloading"
+#~ msgstr "För't Daalladen inreegt"
+
+#~ msgid "Checking data"
+#~ msgstr "Daten warrt pröövt"
+
+#~ msgid "Stopped. No space left on device."
+#~ msgstr "Anhollen. Keen Platz mehr op Reedschap na."
+
+#~ msgid "Cannot open file %1: %2"
+#~ msgstr "Datei \"%1\" lett sik nich opmaken: %2"
+
+#~ msgid "Cannot create index file: %1"
+#~ msgstr "Indexdatei \"%1\" lett sik nich opstellen"
+
+#~ msgid "Redirect without a redirect location"
+#~ msgstr "Ahn nieg Teel wiederleddt"
+
+#~ msgid "Timeout contacting tracker %1"
+#~ msgstr "Tiet för't Ansnacken vun Tracker aflopen %1"
+
+#~ msgid "Unable to resolve hostname %1"
+#~ msgstr "Reeknernaam \"%1\" lett sik nich oplösen"
+
+#~ msgid "Cannot bind to udp port %1 or the 10 following ports."
+#~ msgstr "UDP-Port %1 un de 10 nakamen Porten laat sik nich bruken."
+
+#~ msgid "Invalid response from tracker"
+#~ msgstr "Leeg Antwoort vun Tracker"
+
+#~ msgid "Invalid data from tracker"
+#~ msgstr "Leeg Daten vun Tracker"
+
+#~ msgid "Invalid tracker URL"
+#~ msgstr "Leeg Tracker-Adress"
+
+#~ msgid "Cannot open file : %1 : %2"
+#~ msgstr "Datei \"%1\" lett sik nich opmaken: %2"
+
+#~ msgid ""
+#~ "Another group with this name already exists. Please select a different "
+#~ "name."
+#~ msgstr "Dat gifft al en Koppel mit dissen Naam. Söök bitte en annern ut."
+
+#~ msgid "Group Name Already in Use"
+#~ msgstr "Koppelnaam al in Bruuk"
+
+#~ msgid "Add"
+#~ msgstr "Tofögen"
+
+#~ msgid "Delete"
+#~ msgstr "Wegdoon"
+
+#~ msgid "Configure..."
+#~ msgstr "Instellen..."
+
+#~ msgid "Details for: %1"
+#~ msgstr "Enkelheiten för: %1"
+
+#~ msgid "All downloads"
+#~ msgstr "All Daalladen"
+
+#~ msgid "Finished downloads"
+#~ msgstr "Afslaten Daalladen"
+
+#~ msgid "Transfers:"
+#~ msgstr "Överdregen:"
+
+#~ msgid "Downloads"
+#~ msgstr "Daalladen"
+
+#~ msgid "Transfer details:"
+#~ msgstr "Överdregen-Enkelheiten:"
+
+#~ msgid "Transfer List"
+#~ msgstr "Överdregenlist"
+
+#~ msgid "Expandable transfer details instead of separate tabs"
+#~ msgstr "Överdregenenkelheiten laat sik utfoolden, keen enkelte Paneels"
+
+#~ msgid "Threads"
+#~ msgstr "Utföhrsträng"
+
+#~ msgid "Number of threads:"
+#~ msgstr "Tall vun Sträng:"
+
+#~ msgid "Preference:"
+#~ msgstr "Gööd:"
+
+#~ msgid "License:"
+#~ msgstr "Verlööfnis:"
+
+#~ msgid "Name of the license"
+#~ msgstr "Verlööfnisnaam"
+
+#, fuzzy
+#~| msgid "Url to the license"
+#~ msgid "URL to the license"
+#~ msgstr "URL vun de Verlööfnis"
+
+#~ msgctxt "The transfer is delayed"
+#~ msgid "Delayed"
+#~ msgstr "Töövt"
+
+#~ msgid ""
+#~ "Destination file \n"
+#~ "%1\n"
+#~ "already exists.\n"
+#~ "Do you want to overwrite it?"
+#~ msgstr ""
+#~ "Dat gifft de Teeldatei\n"
+#~ "%1\n"
+#~ "al. Wullt Du ehr överschrieven?"
+
+#~ msgid "Overwrite destination"
+#~ msgstr "Teel överschrieven"
+
+#~ msgid "The download could not be verified, try to repair it?"
+#~ msgstr "De Daalladen lett sik nich pröven Wullt Du em richten?"
+
+#~ msgctxt "The preference of the mirror"
+#~ msgid "Preference"
+#~ msgstr "Gööd"
+
+#~ msgid "Cannot remove torrent default tracker."
+#~ msgstr "Torrent-Standardtracker lett sik nich wegdoon."
+
+#~ msgid "You cannot add trackers to a private torrent"
+#~ msgstr "Du kannst en privaat Torrent keen Tracker tofögen"
+
+#~ msgid "Cannot migrate %1 : %2"
+#~ msgstr "\"%1\" lett sik nich verlagern: %2"
+
+#~ msgid ""
+#~ "The torrent %1 was started with a previous version of KTorrent. To make "
+#~ "sure this torrent still works with this version of KTorrent, we will "
+#~ "migrate this torrent. You will be asked for a location to save the "
+#~ "torrent to. If you press cancel, we will select your home directory."
+#~ msgstr ""
+#~ "De Torrent \"%1\" wöör mit en verleden Verschoon vun KTorrent opropen. "
+#~ "Wullt Du besekern, dat de Torrent ok mit disse Verschoon vun KTorrent "
+#~ "funkscheneert, muttst Du em na en anner Steed verschuven. Du warrst na en "
+#~ "nieg Spiekersteed fraagt. Klickst Du op \"Afbreken\", warrt Dien "
+#~ "Tohuusorner bruukt."
+
+#~ msgid "Select Folder to Save To"
+#~ msgstr "Teelorner för't Sekern utsöken"
+
+#~ msgid "Queued"
+#~ msgstr "Inreegt"
+
+#~ msgid "Current Tracker"
+#~ msgstr "Aktuell Tracker"
+
+#~ msgid "Manual Announce"
+#~ msgstr "Vun Hand mellen"
+
+#~ msgid "Scrape"
+#~ msgstr "Raken"
+
+#~ msgid "Available Trackers"
+#~ msgstr "Verföögbor Trackers"
+
+#~ msgid "Url:"
+#~ msgstr "URL:"
+
+#~ msgid "Enter an url"
+#~ msgstr "En URL angeven"
+
+#~ msgid "Urls list of the available search engines"
+#~ msgstr "URL-List vun de verföögboren Söökmaschienen"
+
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Delete Selected"
+#~ msgstr "Utsöchte wegdoon"
+
+#, fuzzy
+#~| msgid "Clear History"
+#~ msgid "We are sorry"
+#~ msgstr "Vörgeschicht leddig maken"
+
+#~ msgctxt "the basic identity of the metalink-file, e.g. KDE"
+#~ msgid "The identity of the file"
+#~ msgstr "De Datei ehr Identiteet"
+
+#~ msgctxt "the version of the file e.g. 4.3 for KDE"
+#~ msgid "The version of the file"
+#~ msgstr "De Datei ehr Verschoon"
+
+#~ msgid "Identity e.g. \"KDE\""
+#~ msgstr "Identiteet, a.B. \"KDE\""
+
+#~ msgid ""
+#~ "Here you can enter optional general information on the metalink. What you "
+#~ "set here applies to all files, if an option is set here and later on a "
+#~ "specific file then the later is preferred."
+#~ msgstr ""
+#~ "Hier kannst Du köörwies allmeen Informatschonen över den Metalink "
+#~ "ingeven. Wat Du hier angiffst, gellt för all Dateien. Giffst Du hier för "
+#~ "en Feld wat an un later bi en Datei wat anners, warrt dat leste nahmen."
+
+#~ msgid "Rename transfer"
+#~ msgstr "Överdregen ümnömen"
+
+#~ msgid "Download URL again?"
+#~ msgstr "URL nochmaal daalladen?"
+
+#~ msgctxt "file in a filsystem"
+#~ msgid "File"
+#~ msgstr "Datei"
+
+#~ msgid "Are you sure that you want to remove all selected groups?"
+#~ msgstr "Wullt Du redig all utsöcht Koppeln wegdoon?"
+
+#~ msgid "Name"
+#~ msgstr "Naam"
+
+#~ msgid "Remaining Time"
+#~ msgstr "Nablieven Tiet"
+
+#~ msgid "KGet - Download Manager"
+#~ msgstr "KGet - Daallaad-Pleger"
+
+#~ msgid "Adding dropped files."
+#~ msgstr "Rintrocken Dateien warrt toföögt."
+
+#~ msgctxt "@label transfer source"
+#~ msgid "Source:"
+#~ msgstr "Born:"
+
+#~ msgid "Minimal segment size:"
+#~ msgstr "Lüttst Deel:"
+
+#~ msgid "kBi"
+#~ msgstr "KiB"
+
+#~ msgid "Save data every:"
+#~ msgstr "Daten jümmers sekern na:"
+
+#~ msgid ""
+#~ "You will lose all data in these files, are you sure you want to do this?"
+#~ msgstr ""
+#~ "Di kaamt all Daten binnen disse Dateien weg. Wullt Du dat redig doon?"
+
+#~ msgid "Maintainer, Core Developer"
+#~ msgstr "Pleger, Hööftschriever"
+
+#~ msgid "Cannot expand file : %1"
+#~ msgstr "Datei \"%1\" lett sik nich ruttrecken"
+
+#~ msgid "filterButtonGroup"
+#~ msgstr "filterButtonGroup"
+
+#~ msgid "Peers"
+#~ msgstr "Partners"
+
+#~ msgid "Torrent has no announce or nodes field"
+#~ msgstr "Torrent hett keen Künnigmaak- oder Knüttenfeld"
+
+#~ msgid ""
+#~ "An error occurred while loading the torrent.\n"
+#~ "The torrent is probably corrupt or is not a torrent file."
+#~ msgstr ""
+#~ "Bi't Laden vun den Torrent hett dat en Fehler geven.\n"
+#~ "De Torrent is wull schaadhaftig, oder keen Torrent-Datei."
+
+#, fuzzy
+#~| msgid "Select all"
+#~ msgid "&Select all"
+#~ msgstr "All utsöken"
+
+#~ msgid "&Transfer History..."
+#~ msgstr "Ö&verdregen-Vörgeschicht..."
+
+#~ msgid "&Group Settings..."
+#~ msgstr "&Koppelinstellen..."
+
+#~ msgid "&Transfer Settings..."
+#~ msgstr "Ö&verdregen-Instellen..."
+
+#~ msgid "Speed limit"
+#~ msgstr "Gauheitgrenz"
+
+#~ msgid "Download Speed:"
+#~ msgstr "Daallaad-Gauheit:"
+
+#~ msgid "Upload Speed:"
+#~ msgstr "Hoochlaad-Gauheit:"
+
+#, fuzzy
+#~| msgid "Import links"
+#~ msgid "&Import links"
+#~ msgstr "Links importeren"
+
+#~ msgid "The group name is empty"
+#~ msgstr "De Koppelnaam is leddig"
+
+#~ msgid ""
+#~ "A group can not have an empty name.\n"
+#~ "Please select a new one."
+#~ msgstr ""
+#~ "En Koppelnaam mutt nich leddig wesen.\n"
+#~ "Söök bitte en niegen ut."
+
+#~ msgid "You can not delete this group."
+#~ msgstr "Du kannst dissen Koppel nich wegdoon."
+
+#, fuzzy
+#~| msgid "Delete"
+#~ msgid "&Delete"
+#~ msgstr "Wegdoon"
+
+#, fuzzy
+#~| msgid "Cancel"
+#~ msgid "&Cancel"
+#~ msgstr "Afbreken"
+
+#~ msgid "Default Download Folders"
+#~ msgstr "Standard-Daallaadornern"
+
+#~ msgid "Folder and extension can not be empty."
+#~ msgstr "Orner un Verwiedern mööt nich leddig wesen."
+
+#~ msgid "Ask save location for every new download"
+#~ msgstr "För elk Daalladen na Steed för't Sekern fragen"
+
+#~ msgid "Place new downloads inside default folder:"
+#~ msgstr "Nieg Daalladen na Standardorner sekern:"
+
+#~ msgid "Except for specific file types"
+#~ msgstr "Utbenahmen för fastleggt Dateitypen"
+
+#~ msgid "Specify extension and target folder:"
+#~ msgstr "Verwiedern un Teelorner angeven:"
+
+#~ msgid "File Extension"
+#~ msgstr "Dateiverwiedern"
+
+#~ msgid "Default Folder"
+#~ msgstr "Standardorner"
+
+#~ msgid "Edit"
+#~ msgstr "Bewerken"
+
+#~ msgid ""
+#~ "Use a regular expression for the extension. \n"
+#~ "Examples: *.tar.gz or *movies*.zip"
+#~ msgstr ""
+#~ "En reguleer Utdruck för de Verwiedern bruken: \n"
+#~ "Bispelen: \"*.tar.gz\" oder \"*movies*.zip\""
+
+#~ msgid "Set as default folder"
+#~ msgstr "As Standardorner bruken"
+
+#~ msgid "extRegExp, defaultFolder"
+#~ msgstr "extRegExp, Standardorner"
+
+#~ msgid "Downloading.."
+#~ msgstr "Bi to daalladen..."
+
+#~ msgid "Advanced-Details for %1"
+#~ msgstr "Verwiedert Enkelheiten för \"%1\""
+
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading.."
+#~ msgstr "Bi to daalladen..."
+
+#~ msgctxt "@label Title in header"
+#~ msgid "Webinterface"
+#~ msgstr "Nettböversiet"
+
+#~ msgid "Downloads number:"
+#~ msgstr "Daalladentall:"
+
+#~ msgid "Assigned Peers"
+#~ msgstr "Towiest Partners"
+
+#~ msgid "%1 GB"
+#~ msgstr "%1 GB"
+
+#~ msgid "%1 MB"
+#~ msgstr "%1 MB"
+
+#~ msgid "%1 KB"
+#~ msgstr "%1 kB"
+
+#~ msgid "%1 B"
+#~ msgstr "%1 B"
+
+#~ msgid "%1 KB/s"
+#~ msgstr "%1 kB/s"
+
+#~ msgid "kBi/s"
+#~ msgstr "KiB/s"
+
+#~ msgid "Maximum Shared Ration: (0 if no limit)"
+#~ msgstr "Gröttst deelt Andeel: (0 för \"keen Grenz\")"
+
+#~ msgid "Start downloading files immediately after startup"
+#~ msgstr "Dateien direktemang na't Starten daalladen"
+
+#~ msgid "Not Deleted"
+#~ msgstr "Nich wegdaan"
+
+#~ msgid "Konqueror Integration disabled"
+#~ msgstr "Inbinnen na Konqueror utmaakt"
+
+#~ msgid "Show main window at startup"
+#~ msgstr "Hööftfinster bi't Starten wiesen"
+
+#~ msgid "More than 50MiB and 100MiB"
+#~ msgstr "Twischen 50 un 100 MiB"
+
+#~ msgid "<done> MiB of <todo> MiB"
+#~ msgstr "<afslaten> MiB vun <tosamen> MiB"
+
+#~ msgid "<icon>"
+#~ msgstr "<Lüttbild>"
+
+#~ msgid "<status>"
+#~ msgstr "<Status>"
+
+#~ msgid "<speed>"
+#~ msgstr "<Gauheit>"
+
+#, fuzzy
+#~| msgid "Error scanning data: %1"
+#~ msgid "Error writing to %1"
+#~ msgstr "Fehler bi't Daten-Inlesen: %1"
+
+#~ msgid "Tracker-Url:"
+#~ msgstr "Tracker-URL:"
+
+#, fuzzy
+#~| msgid "List All Links"
+#~ msgid "&List Links"
+#~ msgstr "All Links oplisten"
+
+#~ msgctxt "Download normally(not as first or last"
+#~ msgid "Normal"
+#~ msgstr "Normaal"
+
+#~ msgctxt "the transfer has been aborted"
+#~ msgid "Aborted"
+#~ msgstr "Afbraken"
+
+#~ msgid "History-File cannot be opened correctly!"
+#~ msgstr "De Vörgeschicht-Datei lett sik nich propper opmaken!"
+
+#~ msgid "Bittorrent-Speedlimits"
+#~ msgstr "Bittorrent-Gauheitgrenzen"
+
+#~ msgid "Speed-Limits"
+#~ msgstr "Gauheitgrenzen"
+
+#~ msgid "ScanDlgBase"
+#~ msgstr "ScanDlgBase"
+
+#~ msgid "Change Password..."
+#~ msgstr "Passwoort ännern..."
+
+#~ msgid " of "
+#~ msgstr " vun "
+
+#~ msgid "Download Folder"
+#~ msgstr "Daallaadorner"
+
+#~ msgid "Hide Drop Target"
+#~ msgstr "Treckteel versteken"

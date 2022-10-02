@@ -1,0 +1,454 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Italian "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="kcmcss" lang="&language;">
+<articleinfo>
+<title
+>Aspetto</title>
+<authorgroup>
+<author
+>&Lauri.Watts; &Lauri.Watts.mail;</author>
+<othercredit role="translator"
+><firstname
+>Pino</firstname
+><surname
+>Toscano</surname
+><affiliation
+><address
+><email
+>toscano.pino@tiscali.it</email
+></address
+></affiliation
+><contrib
+>Traduzione italiana</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>08/11/2016</date>
+<releaseinfo
+>Applications 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>CSS</keyword>
+<keyword
+>Aspetto</keyword>
+<keyword
+>Carattere</keyword>
+<keyword
+>CSS</keyword>
+<keyword
+>Fogli di stile</keyword>
+<keyword
+>Accessibilità</keyword>
+</keywordset>
+
+</articleinfo>
+
+<sect1 id="appearance">
+<title
+>Aspetto</title>
+<para
+>In questo modulo ci sono tre schede con le opzioni di configurazione della visualizzazione di pagine web.</para>
+
+<sect2 id="general">
+<title
+>Generale</title
+> <!-- modified copy from khtml/index.docbook <sect2 id="kbrowse-html"-->
+
+<para
+>La casella <guilabel
+>Carica automaticamente le immagini</guilabel
+> ti permette di controllare se le immagini nelle pagine web sono caricate automaticamente. A meno che tu abbia una connessione molto lenta, molto probabilmente vorrai lasciare questa opzione attivata, dato che molte pagine web sono difficili da usare senza le immagini. Se non attivi l'opzione puoi sempre leggere il testo delle pagine, e caricare le immagini su richiesta.</para>
+
+<para
+>Se <guilabel
+>Disegna una cornice intorno alle immagini non completamente caricate</guilabel
+> è attivata, &konqueror; disegnerà una cornice come segnaposto intorno alle immagini non ancora completamente caricate che trova nelle pagine web. Se hai una connessione di rete lenta ti consigliamo di marcare questa casella per migliorare la navigazione.</para>
+
+<para
+>Molte pagine web usano le gif animate, e queste possono essere piuttosto fastidiose, dato che in alcuni casi possono consumare troppe risorse per il tuo sistema. L'opzione <guilabel
+>Animazioni</guilabel
+> permette di scegliere quando abilitare le animazioni. Normalmente sono abilitate, ma puoi scegliere se disabilitarle, o di eseguirle una volta sola, anche se il file stesso contiene istruzioni per ripetere il ciclo di animazione più di una volta, o in modo continuo.</para>
+
+<para
+>L'impostazione successiva è <guilabel
+>Sottolinea i collegamenti:</guilabel
+>. Puoi scegliere se sottolineare i collegamenti (<guilabel
+>Abilitata</guilabel
+>). Se questa opzione è selezionata, qualsiasi testo nelle pagine web che funziona come collegamento sarà mostrato sottolineato. Anche se la maggior parte delle pagine web usano i colori per distinguere il testo dei collegamenti, la sottolineatura semplifica molto l'individuazione dei collegamenti.</para>
+
+<para
+>Se non ti piacciono i collegamenti sottolineati, puoi scegliere <guilabel
+>Disabilitata</guilabel
+>, così nessun collegamento è sottolineato. Oppure, puoi scegliere una via di mezzo, <guilabel
+>Solo al passaggio del mouse</guilabel
+>, in modo che i collegamenti sono sottolineati solo quando il mouse vi si trova sopra, e non sottolineati altrimenti.</para>
+
+<note
+><para
+>Le definizioni CSS dei siti possono avere effetto al posto di questo valore.</para
+></note>
+
+<para
+><guilabel
+>Scorrimento fluido</guilabel
+> determina se &konqueror; deve usare movimenti fluidi o a blocchi quando scorre le pagine &HTML;: <itemizedlist>
+<listitem
+><para
+><guilabel
+>Sempre</guilabel
+>: Usa sempre movimenti fluidi in scorrimento.</para
+></listitem>
+<listitem
+><para
+><guilabel
+>Mai</guilabel
+>: Non usare mai movimenti fluidi ma solo a blocchi.</para
+></listitem>
+<listitem
+><para
+><guilabel
+>Quando possibile</guilabel
+>: Usa movimenti fluidi solo quando ciò comporta un consumo modesto delle risorse di sistema.</para
+></listitem>
+</itemizedlist>
+</para>
+
+</sect2>
+
+<sect2 id="fonts"
+> <!-- modified copy from khtml/index.docbook <sect2 id="kbrowse-appearance"-->
+<title
+>Caratteri</title>
+<para
+>Sotto questa scheda si possono cambiare varie opzioni collegate all'uso dei caratteri. Sebbene le forme e le dimensioni dei caratteri siano spesso parte del progetto di una pagina web, puoi scegliere delle impostazioni che &konqueror; può usare in mancanza di controindicazioni.</para>
+
+<para
+>La prima cosa che puoi configurare da qui è la dimensione dei caratteri. Ci sono due impostazioni che, usate assieme, ti permettono di rendere più piacevole la navigazione.</para>
+
+<para
+>Per prima cosa puoi impostare una <guilabel
+>Dimensione minima caratteri</guilabel
+>. Ciò significa che anche se nella pagina web che stai vedendo è impostata la dimensione dei caratteri, &konqueror; la ignorerà, e non mostrerà mai caratteri più piccoli della dimensione impostata qui.</para>
+
+<para
+>Quindi, puoi impostare una <guilabel
+>Dimensione media caratteri</guilabel
+>. Questa non è solo la dimensione predefinita del testo, usata quando la pagina non specifica alcuna dimensione, ma è usata anche come dimensione base rispetto a cui calcolare dimensioni relative di caratteri. In pratica, con l'istruzione &HTML; <quote
+>smaller</quote
+> (più piccolo) si avrà una dimensione dei caratteri più piccola rispetto a quella impostata per questa opzione.</para>
+
+<para
+>Per entrambe le opzioni puoi selezionare la dimensione esatta dei caratteri in punti tipografici usando i controlli su/giù (o semplicemente scrivendo nel campo testuale).</para>
+
+<para
+>Queste opzioni sono indipendente l'una dall'altra. Pagina che non impostano una dimensione per i caratteri, o che ne usano una predefinita, saranno mostrate con la dimensione impostata come <guilabel
+>Dimensione media caratteri</guilabel
+>; pagine che chiedono una dimensione di caratteri più piccola del valore impostato come <guilabel
+>Dimensione minima caratteri</guilabel
+> saranno mostrate con questa dimensione. L'una non ha effetto sull'altra.</para>
+
+<para
+>Le opzioni rimanenti sono per caratteri associati con diversi tipi di formato usati nelle pagine &HTML;. Nota che molte pagine web possono sovrascrivere queste impostazioni. Puoi scegliere un diverso carattere per ognuno dei tipi disponibili (standard, a spaziatura fissa, serif, &etc;).</para>
+
+<para
+>Sotto l'elenco dei tipi di carattere, puoi impostare la <guilabel
+>Sistemazione dimensione di caratteri per questa codifica</guilabel
+>. A volte i caratteri che vuoi usare per una codifica o una lingua particolare sono molto più grandi o più piccolo della media, quindi puoi usare questa impostazione per riallinearli.</para>
+
+<para
+>Puoi impostare la codifica predefinita che &konqueror; dovrebbe assumere per le pagine quando le visualizza. L'impostazione predefinita è <guilabel
+>Usa la codifica della lingua</guilabel
+>, ma puoi cambiarla scegliendo qualunque delle codifiche disponibili nella lista.</para>
+
+</sect2>
+
+<sect2 id="stylesheets">
+
+<title
+>Fogli di stile</title>
+
+<sect3>
+<title
+>Introduzione</title>
+
+<para
+>I fogli di stile <acronym
+>CSS</acronym
+> influiscono sul modo in cui appaiono le pagine web. <acronym
+>CSS</acronym
+> sta per <emphasis
+>C</emphasis
+>ascading <emphasis
+>S</emphasis
+>tyle <emphasis
+>S</emphasis
+>heets (fogli di stile a cascata).</para>
+
+<para
+>&kde; può usare il proprio foglio di stile, basato sui semplici valori predefiniti e sullo schema di colori impostati per il desktop, ma può anche usare un foglio di stile scritto da te. Infine, puoi specificare un foglio di stile in questo modulo. Le opzioni presentate in questo modulo sono orientate all'accessibilità, specialmente a persone con la vista ridotta.</para>
+
+<para
+>Le scelte fatte qui hanno effetto in tutte le applicazione &kde; che visualizzano l'HTML con il visualizzatore di &kde;, chiamato khtml. Tra queste ricordiamo &kmail;, &khelpcenter; e ovviamente &konqueror;. Le scelte fatte qui non hanno effetto sugli altri browser, come &firefox;.</para>
+
+</sect3>
+
+<sect3 id="css-general">
+<title
+>Fogli di stile</title>
+
+<para
+>Questa sezione contiene le seguenti opzioni:</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Usa il foglio di stile predefinito</guilabel
+></term>
+<listitem>
+<para
+>&kde; userà il foglio di stile predefinito. Per alcuni dei colori saranno usati quelli definiti nello schema di colori scelto. La maggior parte delle impostazioni sono facilmente sovrascritte dalla pagina che stai vedendo.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Usa foglio di stile definito dall'utente</guilabel
+></term>
+<listitem>
+<para
+>&kde; userà un foglio di stile scritto da te. Puoi usare il pulsante di selezione file per trovare il foglio di stile sul sistema. I file <acronym
+>CSS</acronym
+> normalmente hanno un'estensione <literal role="extension"
+>.css</literal
+>, ma ciò non è richiesto.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Usa foglio di stile per accessibilità</guilabel
+></term>
+<listitem>
+<para
+>Usa le opzioni definite nella finestra di dialogo <guilabel
+>Personalizza</guilabel
+>. Abilitando questa opzione sarà abilitato il pulsante <guilabel
+>Personalizza</guilabel
+>, che aprirà una finestra di dialogo dove impostare le proprietà del foglio di stile.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect3>
+
+<sect3 id="css-customize">
+<title
+>Personalizza</title>
+
+<para
+>In questa finestra di dialogo puoi impostare un foglio di stile tuo. Le opzioni disponibili rappresentano una piccola parte delle istruzioni che possono essere inserite in un foglio di stile, e sono orientare alle persone con una vista ridotta, per permettere agli utenti di creare un foglio di stile che renda più leggibili le pagine web e i file della guida di &kde;.</para>
+
+<para
+>Le opzioni in questa finestra di dialogo sono disabilitate a meno che tu non scelga <guilabel
+>Usa foglio di stile per accessibilità</guilabel
+>.</para>
+
+<sect4>
+<title
+><guilabel
+>Famiglia del carattere</guilabel
+></title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Famiglia base</guilabel
+></term>
+<listitem>
+<para
+>Scegli una famiglia di caratteri per il testo nel corpo.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Usa la stessa famiglia per tutto il testo</guilabel
+></term>
+<listitem>
+<para
+>Se abiliti questa opzione, la stessa famiglia di caratteri sarà usata per tutto il testo, senza considerare le impostazioni della pagine che stai vedendo. Ciò è utile per le pagine che usano un tipo di carattere decorativo o difficile da leggere per i titoli.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect4>
+
+<sect4>
+<title
+>Dimensione carattere</title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Dimensione carattere base</guilabel
+></term>
+<listitem>
+<para
+>Questa è la dimensione predefinita per il testo nella pagina. Molti siti web impostano le dimensioni dei caratteri relativamente a questo valore, usando <quote
+>larger</quote
+> o <quote
+>+1</quote
+> per ingrandire il testo, e <quote
+>smaller</quote
+> o <quote
+>-1</quote
+> per rimpicciolirlo.</para>
+<para
+>Molte persone creano le loro pagine web su piattaforme dove la dimensione predefinita del testo è troppo grande da leggere per l'utente medio, così, in questo modo, è molto comune venire incontro alle pagine web che forzano caratteri più piccoli.</para>
+<para
+>Questa impostazione ti permette di impostare una dimensione confortevole per il tipo di carattere predefinito, così anche le dimensioni relative sono aumentate per risultare confortevoli.</para>
+<para
+>Non dimenticare che &konqueror; può applicare una dimensione minima, così il testo non è <emphasis
+>mai</emphasis
+> troppo piccolo da leggere. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Stessa dimensione per tutti gli elementi</guilabel
+></term>
+<listitem>
+<para
+>Se abiliti questa opzione, tutto il testo avrà la dimensione dei caratteri specificata, senza tener conto delle istruzioni contenute nella pagina. Qui saranno ignorate le dimensioni relative dei caratteri, delle quali si è parlato prima, e anche le istruzioni specifiche secondo cui il testo dovrebbe avere una certa dimensione.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect4>
+
+<sect4>
+<title
+>Immagini</title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Ignora le immagini</guilabel
+></term>
+<listitem>
+<para
+>Se non vuoi vedere le immagini, puoi disattivare questa opzione.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Ignora le immagini di sfondo</guilabel
+></term>
+<listitem>
+<para
+>Uno dei maggiori problemi per le persone con la vista ridotta è che le immagini di sfondo non danno contrasto sufficiente per permettere di leggere il testo. Puoi disabilitare qui le immagini di sfondo, indipendentemente dalla scelta sopra di visualizzare tutte le immagini.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect4>
+
+<sect4>
+<title
+>Colori</title>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Nero su bianco</guilabel
+></term>
+<listitem>
+<para
+>Molte persone con una vista ridotta trovano che il testo nero su uno schermo bianco dà maggior contrasto, e che è più semplice da leggere. Se ciò vale per te, puoi impostarlo qui.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Bianco su nero</guilabel
+></term>
+<listitem>
+<para
+>Molte altre persone con la vista ridotta si trovano meglio con l'opposto, cioè che il testo bianco su schermo nero è più semplice da leggere.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Personalizzato</guilabel
+></term>
+<listitem>
+<para
+>Ancora altre persone trovano l'abbinamento di bianco e nero, in qualsiasi ordine, difficile da leggere. Qui puoi impostare colori personalizzati sia per lo <guilabel
+>Sfondo</guilabel
+> che per il <guilabel
+>Primo piano</guilabel
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Usa lo stesso colore per tutto il testo</guilabel
+></term>
+<listitem>
+<para
+>Molti siti web usano un colore differente, spesso contrastante, per le intestazioni, o altri testi variamente decorati. Se ciò interferisce con la tua abilità a leggere i contenuti, puoi marcare questa casella per far sì che &kde; usi i colori impostati sopra per tutto il testo.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect4>
+
+<sect4>
+<title
+>Anteprima</title>
+
+<para
+>La sezione <guilabel
+>Anteprima</guilabel
+> ti permette di vedere gli effetti dei cambiamenti. Sono mostrati vari tipi di intestazioni e una frase come testo predefinito del corpo.</para>
+
+<para
+>Ciò ti permette di regolare in maniera precisa il foglio di stile fino a quando non hai qualcosa che riesci a leggere senza problemi.</para>
+
+<para
+>Buona navigazione!</para>
+
+</sect4>
+
+</sect3>
+
+</sect2>
+
+</sect1>
+
+</article>

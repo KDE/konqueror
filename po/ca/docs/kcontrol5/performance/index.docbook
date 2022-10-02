@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Catalan  "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="performance" lang="&language;">
+<articleinfo>
+<title
+>Rendiment</title>
+<authorgroup>
+<author
+>&Mike.McBride; &Mike.McBride.mail;</author>
+&traductor.Antoni.Bella; 
+</authorgroup>
+
+<date
+>8 de novembre de 2016</date>
+<releaseinfo
+>Aplicacions 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Arranjament del sistema</keyword>
+<keyword
+>rendiment</keyword>
+<keyword
+>càrrega prèvia</keyword>
+</keywordset>
+</articleinfo>
+
+<sect1 id="sys-performance">
+<title
+>Configuració del rendiment</title>
+
+<para
+>El &konqueror; s'utilitza en una àmplia varietat d'ordinadors per a una àmplia diversitat d'usuaris. Sota la categoria de rendiment, aquest diàleg permetrà que cada usuari ajusti les opcions per a fer que l'ordinador a on està instal·lat el &konqueror; obtingui una millor resposta. </para>
+
+<sect2
+><title
+>Precàrrega</title>
+<para
+>La subsecció anomenada <guilabel
+>Precàrrega</guilabel
+> equilibra la relació entre memòria i rendiment.</para>
+
+<para
+><emphasis
+>Precàrrega</emphasis
+> es refereix a la càrrega en memòria d'una instància del &konqueror; abans que un usuari intenti iniciar-lo. L'efecte positiu d'això és que quan un usuari demana que carregui el &konqueror;, la finestra apareixerà instantàniament atès que la major part de l'aplicació ja ha estat precarregada. L'efecte negatiu és que aquesta sessió del &konqueror; utilitza memòria que podria ser emprada per altres programes. Per omissió, quan un usuari tanca el &konqueror;, no es tancarà la instància. Això vol dir que la pròxima vegada que un usuari desitgi carregar el &konqueror;, la càrrega serà gairebé instantània.</para>
+
+<para
+>La casella de selecció final anomenada <guilabel
+>Prova sempre de tenir una instància precarregada com a mínim</guilabel
+> indica que voleu tenir sempre disponible una instància del &konqueror; precarregada, però sense utilitzar. Aquesta opció disminuirà el rendiment d'algunes màquines (en especial aquelles limitades per la memòria física).</para>
+</sect2>
+</sect1>
+
+</article>

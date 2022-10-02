@@ -1,0 +1,2454 @@
+<chapter id="commands">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+&Bram.Schoenmakers;&Rinse.Devries;&Freek.de.Kruijf; 
+</authorgroup>
+
+<date
+>2010-10-25</date>
+<releaseinfo
+>&kde; 4.5</releaseinfo>
+</chapterinfo>
+
+<title
+>Overzicht opdrachten</title>
+
+<note
+><para
+>De genoemde sneltoetsen in dit hoofdstuk zijn de standaardtoetsen. Natuurlijk kunnen deze <link linkend="configshort"
+>veranderd</link
+> worden. </para
+></note>
+
+<sect1 id="specshort">
+<title
+>Speciale sneltoetsen</title>
+<para
+>Er zijn een aantal sneltoetsen die niet zijn terug te vinden in de menu's:</para>
+<variablelist>
+
+<varlistentry>
+<term
+><keycap
+>F6</keycap
+></term>
+<listitem>
+<para
+>Zet de cursor op het invoerveld van de locatiebalk.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><keycombo action="simul"
+>&Ctrl;<keycap
+>.</keycap
+></keycombo
+></term>
+<listitem>
+<para
+>Activeert het volgende tabblad.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><keycombo action="simul"
+>&Ctrl;<keycap
+>,</keycap
+></keycombo
+></term>
+<listitem>
+<para
+>Activeert het vorige tabblad.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+
+</sect1>
+
+<sect1 id="menubar">
+<title
+>De menubalk</title
+> <para
+>Sommige menu items worden alleen actief wanneer ze van toepassing zijn op een bestand dat u op dat moment geopend hebt met &konqueror;. Bijvoorbeeld, het menu item <menuchoice
+><guimenu
+>Bewerken</guimenu
+><guimenuitem
+>Zoeken...</guimenuitem
+> </menuchoice
+> zal niet beschikbaar zijn wanneer u de inhoud van een map aan het bekijken bent.</para>
+
+<para
+>&konqueror; heeft verschillende menu-items in bestandsbeheerder- en browsermodus. Alleen de items voor deze twee modi worden in dit hoofdstuk beschreven. </para>
+
+<para
+>Als <emphasis
+>&konqueror;</emphasis
+> ingebedde componenten gebruikt (&kde;-parts) zoals <application
+>Gwenview</application
+> voor het bekijken van afbeeldingen, &okular; voor <acronym
+>PDF</acronym
+> en &PostScript; documenten &etc; dan worden de menu-items van deze toepassingen gemengd in het menu van &konqueror;. Hulp voor deze additionele menu-items kunt u vinden in het handbook van de ingebedde toepassing.</para>
+
+<sect2 id="menu-location">
+<title
+>Het menu <guimenu
+>Bestand</guimenu
+></title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bestand</guimenu
+> <guimenuitem
+>Nieuw venster</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Opent een nieuw &konqueror;-venster.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>T</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bestand</guimenu
+> <guimenuitem
+>Nieuw tabblad</guimenuitem
+> </menuchoice
+></term
+> 
+<listitem
+><para
+>Opent een nieuw tabbad in &konqueror; met een lege pagina.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Alt;<keycap
+>O</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bestand</guimenu
+> <guimenuitem
+>Locatie openen...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Zet de cursor op het invoerveld van de locatiebalk.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bestand</guimenu
+> <guimenuitem
+>Bestand openen...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Een bestand openen met de &kde;-bestandsdialoog.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Bestand</guimenu
+> <guimenuitem
+>Sessies</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Open een submenu om de huidige sessie (open tabbladen en vensters) voor gemakkelijk ophalen, sessies beheren en naar vorige opgeslagen sessies om te schakelen.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Bestand</guimenu
+> <guimenuitem
+>Koppelingsadres verzenden...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Verzendt een e-mail met een koppeling naar de huidige locatie.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Bestand</guimenu
+> <guimenuitem
+>Bestand verzenden...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Verzendt een e-mail met als bijlage het geselecteerde bestand.</para
+></listitem>
+</varlistentry>
+
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Bestand</guimenu
+> <guimenuitem
+>Achtergrondafbeelding opslaan als...</guimenuitem
+></menuchoice
+> (Browsermodus)</term>
+<listitem>
+<para
+>Dit is alleen van toepassing wanneer u een pagina bekijkt met een achtergrondafbeelding. Opent de dialoog <guilabel
+>opslaan als</guilabel
+> waarmee u de afbeelding kunt opslaan op uw eigen computer.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Bestand</guimenu
+> <guimenuitem
+>Opslaan als...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Dit is alleen van toepassing wanneer u een webpagina bekijkt. Dit opent een dialoogvenster waarmee u een kopie van de pagina kunt opslaan op uw computer (alleen de HTML-code).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Bestand</guimenu
+> <guimenuitem
+>Frame opslaan als...</guimenuitem
+></menuchoice
+> (Browsermodus)</term>
+<listitem
+><para
+>Gelijk aan <guimenuitem
+>Opslaan als...</guimenuitem
+>, maar dan voor een website dat frames gebruikt.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>P</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bestand</guimenu
+> <guimenuitem
+>Afdrukken...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Afdrukken.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Bestand</guimenu
+> <guimenuitem
+>Frame afdrukken</guimenuitem
+></menuchoice
+> (Browsermodus)</term>
+<listitem
+><para
+>Drukt het geselecteerde frame van een webpagina af.</para
+></listitem>
+</varlistentry>
+<!--FIXME
+<varlistentry>
+<term
+><menuchoice>
+<guimenu
+>File</guimenu>
+<guimenuitem
+>Open With</guimenuitem>
+</menuchoice
+></term>
+<listitem
+><para
+>???</para
+></listitem
+> 
+</varlistentry>
+browser 2 items + submenu with apps
+filemanager dophin/gwenview + submenu with apps
+is this hardcoded? detected at runtime?
+
+DF: The list of applications is entirely dynamic, it is the list of
+   apps associated with the mimetype (of the current URL).
+ Compare with "Edit File Associations"  (kcmshell filetypes), you'll see that
+  it's the same list of apps, so it entirely depends on which apps are installed
+  on the system.
+
+-->
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bestand</guimenu
+> <guimenuitem
+>Afsluiten</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Sluit dit venster van &konqueror;.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-edit">
+<title
+>Het menu <guimenu
+>Bewerken</guimenu
+></title>
+
+<!-- not in kde4
+note
+><para
+>Most items in the Menubar <guimenu
+>Edit</guimenu
+> menu can also be
+found by &RMB; clicking on a free area of a view.</para
+></note-->
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bewerken</guimenu
+> <guimenuitem
+>Ongedaan maken: <replaceable
+>Actie</replaceable
+> </guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Laat u in sommige gevallen een bepaalde actie ongedaan maken.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>X</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bewerken</guimenu
+> <guimenuitem
+>Knippen</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Zet geselecteerde items op het klembord. Wanneer u vervolgens Plakken gebruikt dan worden deze items naar de nieuwe locatie verplaatst.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bewerken</guimenu
+> <guimenuitem
+>Kopiëren</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Kopieert de geselecteerde items naar het klembord.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bewerken</guimenu
+> <guimenuitem
+>Plakken</guimenuitem
+></menuchoice
+> (Browsermodus)</term>
+<listitem
+><para
+>Plak de inhoud van het klembord in de locatiebalk.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bewerken</guimenu
+> <guimenuitem
+>Inhoud klembord plakken</guimenuitem
+></menuchoice
+> (Bestandsbeheerdermodus)</term>
+<listitem
+><para
+>Plak de huidig gekopieerde/geknipte item(s) in de huidige map. Als het klembord geen bestanden of mappen bevat, wordt de klembordinhoud (zoals tekst of afbeeldingen) in een nieuw bestand geplakt.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>A</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Bewerken</guimenu
+> <guimenuitem
+>Alles selecteren</guimenuitem
+></menuchoice
+> (Browsermodus)</term>
+<listitem
+><para
+>Selecteert alle tekst op een &HTML; pagina of op tekstpagina. U kunt dan <guimenuitem
+>Kopiëren</guimenuitem
+> en in een ander programma <guimenuitem
+>Plakken</guimenuitem
+>.</para
+></listitem
+> </varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+><keycap
+>F2</keycap
+> </shortcut
+><guimenu
+>Bewerken</guimenu
+> <guimenuitem
+>Hernoemen</guimenuitem
+></menuchoice
+> (Bestandsbeheerdermodus)</term>
+<listitem
+><para
+>Hiermee kunt u een bestand of map een nieuwe naam geven zonder dat u het dialoogvenster <guimenuitem
+>Eigenschappen...</guimenuitem
+> hoeft te openen. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Bewerken</guimenu
+> <guisubmenu
+>Nieuwe aanmaken</guisubmenu
+></menuchoice
+> (Bestandsbeheerdermodus)</term>
+<listitem
+><para
+>Maakt een nieuwe object aan (zoiets als een map of een tekstbestand) in de huidige map. Kijk voor meer details bij de sectie <link linkend="making"
+>Nieuw aanmaken...</link
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+><keycap
+>Del</keycap
+></shortcut
+> <guimenu
+>Bewerken</guimenu
+> <guimenuitem
+>Naar prullenbak verplaatsen</guimenuitem
+></menuchoice
+> (Bestandsbeheerdermodus)</term>
+<listitem
+><para
+>Verplaatst de geselecteerde items naar de prullenbak.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Shift;<keycap
+>Del</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bewerken</guimenu
+> <guimenuitem
+>Verwijderen</guimenuitem
+></menuchoice
+> (Bestandsbeheerdermodus)</term>
+<listitem
+><para
+>Verwijdert de geselecteerde items.</para
+></listitem>
+</varlistentry>
+
+<!-- not in kde4
+varlistentry>
+<term
+><menuchoice>
+<shortcut
+><keycap
+>F7</keycap
+></shortcut>
+<guimenu
+>Edit</guimenu>
+<guimenuitem
+>Copy Files</guimenuitem>
+</menuchoice
+></term>
+<listitem
+><para
+>Copy the selected item(s) to another
+folder.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice>
+<guimenu
+>Edit</guimenu>
+<guimenuitem
+>Move Files</guimenuitem>
+</menuchoice
+></term>
+<listitem
+><para
+>Move the selected item(s) to another
+folder.</para
+></listitem>
+</varlistentry-->
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Bewerken</guimenu
+> <guimenuitem
+>Bestandstype bewerken...</guimenuitem
+></menuchoice
+> (Bestandsbeheerdermodus)</term>
+<listitem
+><para
+>Opent het dialoogvenster <guilabel
+>Bestandstype bewerken</guilabel
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Alt;<keycap
+>Return</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bewerken</guimenu
+> <guimenuitem
+>Eigenschappen...</guimenuitem
+></menuchoice
+> (Bestandsbeheerdermodus)</term>
+<listitem
+><para
+>Toont de eigenschappendialoog van het/de nu geselecteerde item(s).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bewerken</guimenu
+> <guisubmenu
+>Selectie</guisubmenu
+> <guimenuitem
+>Overeenkomende items selecteren...</guimenuitem
+></menuchoice
+> (Bestandsbeheerdermodus)</term>
+<listitem
+><para
+>Samen met de items <guimenuitem
+>Overeenkomende items deselecteren...</guimenuitem
+>, <guimenuitem
+>Alles deselecteren</guimenuitem
+> en <guimenuitem
+>Selectie omkeren</guimenuitem
+> vormen deze commando's een gemakkelijke en krachtige manier om meerdere bestanden te selecteren.</para>
+<para
+>Hiermee verschijnt een eenvoudig dialoogvenster waar u een bestandsnaam kunt opgeven, gebruikmakend van de jokertekens * en ?. Zo zal <literal role="extension"
+>*.html</literal
+> alle bestanden die eindigen met <literal role="extension"
+>.html</literal
+> selecteren en met <filename
+>?a*</filename
+> selecteert u alle bestanden die als tweede teken een a bevatten in de bestandsnaam.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Bewerken</guimenu
+> <guisubmenu
+>Selectie</guisubmenu
+> <guimenuitem
+>Overeenkomende items deselecteren...</guimenuitem
+></menuchoice
+> (Bestandsbeheerdermodus)</term>
+<listitem
+><para
+>Deselecteert bestanden op dezelfde manier als bij <guimenuitem
+>Selecteren...</guimenuitem
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>A</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Bewerken</guimenu
+> <guisubmenu
+>Selectie</guisubmenu
+> <guimenuitem
+>Alles selecteren</guimenuitem
+></menuchoice
+> (Bestandsbeheerdermodus)</term>
+<listitem
+><para
+>Selecteert alle items in een map. U kunt ze dan <guimenuitem
+>Kopiëren</guimenuitem
+> of <guimenuitem
+>Knippen</guimenuitem
+> en in een andere map <guimenuitem
+>Plakken</guimenuitem
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Bewerken</guimenu
+> <guisubmenu
+>Selectie</guisubmenu
+> <guimenuitem
+>Alles deselecteren</guimenuitem
+></menuchoice
+> (Bestandsbeheerdermodus)</term>
+<listitem
+><para
+>Deselecteert alle geselecteerde bestanden en mappen.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>A</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Bewerken</guimenu
+> <guisubmenu
+>Selectie</guisubmenu
+> <guimenuitem
+>Selectie omkeren</guimenuitem
+></menuchoice
+> (Bestandsbeheerdermodus)</term>
+<listitem
+><para
+>Keert de huidige selectie om.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>F</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Bewerken</guimenu
+> <guimenuitem
+>Zoeken...</guimenuitem
+></menuchoice
+> of <keycombo action="simul"
+>&Shift;<keycap
+>/</keycap
+></keycombo
+> (Browsermodus)</term>
+<listitem
+><para
+>Toon de zoekbalk onderaan het huidige venster. Begin met typen om een tekenreeks te vinden in een tekstpagina die u aan het bekijken bent of in een &HTML;-pagina.</para
+></listitem>
+</varlistentry>
+<!--FIXME no menu item in WebKit view mode 
+WebKit+KHTML mode find bar with 
+Next F3, Previous Shift F3 + Options 
+WebKit Match Case/Highlight All Matches/Search As You Type
+KHTML Case sensitive/Whole words only/From cursor/Selected Text/Regular expression/Find links only
+-->
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+><keycap
+>F3</keycap
+></shortcut
+> <guimenu
+>Bewerken</guimenu
+> <guimenuitem
+>Volgende zoeken</guimenuitem
+></menuchoice
+> (Browsermodus)</term>
+<listitem
+><para
+>Zoekt naar de volgende overeenkomst van een tekenreeks op een tekst- of &HTML;-pagina.</para
+></listitem
+> 
+</varlistentry>
+<!--FIXME no menu item in WebKit view mode -->
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Shift;<keycap
+>F3</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bewerken</guimenu
+> <guimenuitem
+>Vorige zoeken</guimenuitem
+></menuchoice
+> (Browsermodus)</term>
+<listitem
+><para
+>Zoek naar de vorige overeenkomst van een tekenreeks op een tekst- of &HTML;-pagina.</para
+></listitem
+> 
+</varlistentry>
+<!--
+<varlistentry>
+<term
+><menuchoice>
+<shortcut
+><keycombo action="simul"
+>&Shift;<keycap
+>F3</keycap
+></keycombo
+></shortcut>
+<guimenu
+>Edit</guimenu>
+<guimenuitem
+>Find Text as You Type</guimenuitem
+></menuchoice
+> (Browser mode)</term>
+<listitem
+><para
+>???</para
+></listitem
+> 
+</varlistentry>
+
+DF: No the initial shortcut is "/"  (forward slash). This matches VI, for instance.
+F3 is "find again", after 
+
+<varlistentry>
+<term
+><menuchoice>
+<shortcut
+><keycap
+>'</keycap
+></shortcut>
+<guimenu
+>Edit</guimenu>
+<guimenuitem
+>Find Links as You Type</guimenuitem
+></menuchoice
+> (Browser mode)</term>
+<listitem
+><para
+>???</para
+></listitem
+> 
+</varlistentry>
+
+> BL: both disabled in menu
+
+DF: bug in khtml. enableFindAheadActions(false) called by focusOutEvent.
+   How about we just get rid of this shortcut, and let people use Ctrl+F instead?
+
+DF: We still have to do something about "find text in links", ideally integrating that functionality
+ into the find bar; as a short term fix we could just give it a better (Ctrl+something) shortcut
+ and get rid of the "focusin/focusout enables/disables the action" logic.
+
+
+> BL: but shortcut works then typing -> to the first match, then stops
+
+> BL: how to find next match? why does it stop?
+
+DF: Not sure what you mean, '/' + search string + F3 F3 F3 works here.
+
+-->
+<!-- not in kde4 from editor view
+varlistentry>
+<term
+><menuchoice>
+<guimenu
+>Edit</guimenu>
+<guimenuitem
+>Go to Line...</guimenuitem>
+</menuchoice
+></term>
+<listitem
+><para
+>Go to a particular line number in a text
+page you are previewing.</para
+></listitem>
+</varlistentry-->
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-view">
+
+<title
+>Het menu <guimenu
+>Beeld</guimenu
+></title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Beeld</guimenu
+> <guisubmenu
+>Weergavemodus</guisubmenu
+> </menuchoice
+></term>
+<listitem
+><para
+>In browsermodus bevat dit submenu items om ingebedde weergaven zoals <guimenuitem
+>KHTML</guimenuitem
+>, <guimenuitem
+>Ingebedde geavanceerde tekstbewerker</guimenuitem
+> te selecteren en meer ingebedde weergaven.</para>
+<para
+>In bestandsbeheerdermodus bevat dit submenu te selecteren items <guimenuitem
+>Pictogrammen</guimenuitem
+>, <guimenuitem
+>Details</guimenuitem
+>, <guimenuitem
+>Compact</guimenuitem
+>, <guimenuitem
+>Terminalemulator</guimenuitem
+> en meer weergavemodi.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Beeld</guimenu
+> <guimenuitem
+>index.html gebruiken</guimenuitem
+></menuchoice
+> (Bestandsbeheerdermodus)</term>
+<listitem
+><para
+>Wanneer een map het bestand <filename
+>index.html</filename
+> bevat, zal &konqueror; de map als een webpagina openen in plaats van de mapinhoud te laten zien.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Beeld</guimenu
+> <guimenuitem
+>Op huidige locatie vergrendelen</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Een vergrendeld deelvenster kan niet van map veranderen. Gebruik deze in combinatie met <guimenuitem
+>Deelvenster koppelen</guimenuitem
+> om veel bestanden in één map te verkennen.</para
+></listitem>
+</varlistentry>
+  
+<!-- not in kde4
+varlistentry>
+<term
+><menuchoice>
+<guimenu
+>View</guimenu>
+<guimenuitem
+>Unlock all views</guimenuitem>
+</menuchoice
+></term>
+<listitem
+><para
+>Unlock all views.
+</para
+></listitem>
+</varlistentry-->
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Beeld</guimenu
+> <guimenuitem
+>Deelvenster koppelen</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Koppel de huidige weergave aan anderen in een venster met meervoudige weergave. Een gekoppelde weergave volgt wijzigingen in de map die zijn gemaakt in andere gekoppelde weergaven. Dit speciaal bruikbaar met verschillende typen weergaven, zoals een mapboomstructuur met een pictogramweergave of een gedetailleerde weergave en mogelijk een terminalvenster.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>F5</keycap
+></shortcut
+> <guimenu
+>Beeld</guimenu
+> <guimenuitem
+>Herladen</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Herladen.</para
+></listitem>
+</varlistentry>
+	  
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+>&Esc;</shortcut
+> <guimenu
+>Beeld</guimenu
+> <guimenuitem
+>Stoppen</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Laden stoppen (is handig bij het websurfen).</para
+></listitem>
+</varlistentry>
+<!--FIXME Browser mode WebKit
+  Zoom In, Zoom Out, Actual Size, Zoom Text Only-->
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>+</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Beeld</guimenu
+> <guimenuitem
+>Tekens vergroten</guimenuitem
+></menuchoice
+> / <menuchoice
+> <shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>-</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Beeld</guimenu
+> <guimenuitem
+>Tekens verkleinen</guimenuitem
+></menuchoice
+> (Browsermodus)</term>
+<listitem
+><para
+>Gebruik deze om de tekengrootte van de tekst op de pagina te veranderen wanneer het lastig te lezen is. Het hangt helaas af van de opbouw van de webpagina hoe goed deze optie werkt.</para
+></listitem
+> 
+</varlistentry>
+
+<!--  not in kde4
+<varlistentry>
+<term
+><menuchoice>
+<guimenu
+>View</guimenu>
+<guimenuitem
+>Icon Size</guimenuitem>
+</menuchoice
+></term>
+<listitem
+><para
+>Select size of icons used when
+viewing a folder in Icon Mode.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice>
+<guimenu
+>View</guimenu>
+<guisubmenu
+>Sort</guisubmenu>
+</menuchoice
+></term>
+<listitem
+><para
+>Choose order in which items are presented in the
+window when in Icon or MultiColumn View mode.</para
+></listitem>
+</varlistentry>
+  
+<varlistentry>
+<term
+><menuchoice>
+<guimenu
+>View</guimenu>
+<guimenuitem
+>Case Insensitive Sort</guimenuitem>
+</menuchoice
+></term>
+<listitem
+><para
+>Choose whether the sort order in Tree, Detailed List
+or Text View modes is case sensitive.</para
+></listitem>
+</varlistentry>
+-->
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>U</keycap
+> </keycombo
+> </shortcut
+> <guimenu
+>Beeld</guimenu
+> <guimenuitem
+>Documentbron tonen</guimenuitem
+></menuchoice
+> (Browsermodus - KHTML weergave)</term>
+<listitem
+><para
+>Opent de broncode van het document.</para>
+<para
+>Deze optie is alleen beschikbaar wanneer u een <acronym
+>&HTML;</acronym
+>-pagina bekijkt.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Beeld</guimenu
+> <guimenuitem
+>Framebron tonen</guimenuitem
+></menuchoice
+> (Browsermodus)</term>
+<listitem
+><para
+>Opent de broncode van het actieve frame</para>
+<para
+>Dit is alleen van toepassingen op websites die frames gebruiken. Soortgelijk aan <guimenuitem
+>Documentbron tonen</guimenuitem
+>. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>I</keycap
+> </keycombo
+> </shortcut
+> <guimenu
+>Beeld</guimenu
+> <guimenuitem
+>Documentinformatie tonen</guimenuitem
+></menuchoice
+> (Browsermodus - KHTML weergave)</term>
+<listitem
+><para
+>Toont informatie over het document, zoals de titel, &URL; en &HTTP;-koppen die gebruikt werden bij het ophalen van het document.</para>
+<para
+>Deze optie is alleen beschikbaar wanneer u een <acronym
+>&HTML;</acronym
+>-pagina bekijkt.</para>
+</listitem>
+</varlistentry>
+<!-- not in kde4
+<varlistentry>
+<term
+><menuchoice>
+<guimenu
+>View</guimenu>
+<guimenuitem
+>Security...</guimenuitem>
+</menuchoice
+></term>
+<listitem
+><para
+>Tells you whether the current browser connection is
+secured with <acronym
+>SSL</acronym
+> and lets you bring up the
+<guilabel
+>Cryptography Configuration...</guilabel
+> dialog
+box. <mousebutton
+>Left</mousebutton
+> clicking on the Menubar padlock icon does
+the same thing.</para
+></listitem
+> </varlistentry>
+-->
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Beeld</guimenu
+> <guimenuitem
+>Codering instellen</guimenuitem
+></menuchoice
+> (Browsermodus)</term>
+<listitem
+><para
+>Maakt het mogelijk om een tekenset te kiezen bij het bekijken van &HTML;-pagina's. <guimenuitem
+>Standaard</guimenuitem
+> wordt hierbij aanbevolen.</para
+></listitem>
+</varlistentry>
+<!-- what is this?
+<varlistentry>
+<term
+><menuchoice>
+<guimenu
+>View</guimenu>
+<guimenuitem
+>Use Stylesheet</guimenuitem
+></menuchoice
+> (Browser mode)</term>
+<listitem
+><para
+>???Automatic Detection Basic Page Style KDE Stylesheet</para
+></listitem>
+</varlistentry>
+http://websvn.kde.org/?view=revision&revision=269436
+-->
+  <!--FIXME sync with Dolphin -->
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Bewerken</guimenu
+> <guisubmenu
+>Sorteren op</guisubmenu
+></menuchoice
+> (Bestandsbeheerdermodus)</term>
+<listitem
+><para
+><action
+>Items kunnen worden gesorteerd op <guimenuitem
+>Naam</guimenuitem
+>, <guimenuitem
+>Grootte</guimenuitem
+>, <guimenuitem
+>Datum</guimenuitem
+>, <guimenuitem
+>Toegangsrechten</guimenuitem
+>, <guimenuitem
+>Eigenaar</guimenuitem
+>, <guimenuitem
+>Groep</guimenuitem
+>, <guimenuitem
+>Type</guimenuitem
+>, <guimenuitem
+>Koppelingsbestemming</guimenuitem
+> of <guimenuitem
+>Pad</guimenuitem
+>. <guimenuitem
+>Aflopend</guimenuitem
+> keert de sorteervolgorde om. <guimenuitem
+>Mappen eerst</guimenuitem
+> sorteert eerst mappen, daarna bestanden. </action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Beeld</guimenu
+> <guisubmenu
+>Aanvullende Informatie</guisubmenu
+></menuchoice
+> (Bestandsbeheerdermodus)</term>
+<listitem
+><para
+><action
+>Toont aanvullende informatie</action
+> zoals <guimenuitem
+>Grootte</guimenuitem
+>, <guimenuitem
+>Datum</guimenuitem
+>, <guimenuitem
+>Toegangsrechten</guimenuitem
+>, <guimenuitem
+>Eigenaar</guimenuitem
+>, <guimenuitem
+>Groep</guimenuitem
+>, <guimenuitem
+>Type</guimenuitem
+>, <guimenuitem
+>Koppelingsbestemming</guimenuitem
+> of <guimenuitem
+>Pad</guimenuitem
+> in de verschillende weergaven.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Beeld</guimenu
+> <guimenuitem
+>Voorbeeld</guimenuitem
+></menuchoice
+> (Bestandsbeheerdermodus)</term>
+<listitem
+><para
+><action
+>Toont een symbolisch voorbeeld van de inhoud van een bestand </action
+> in de verschillende weergavemodi.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Beeld</guimenu
+> <guimenuitem
+>In groepen tonen</guimenuitem
+></menuchoice
+> (Bestandsbeheerdermodus)</term>
+<listitem
+><para
+><action
+>Toont</action
+> de inhoud van de huidige map, gegroepeerd per geselecteerde optie in <guimenuitem
+>Gesorteerd volgens</guimenuitem
+> (alleen in de pictogrammen-weergavemodus).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Alt;<keycap
+>.</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Beeld</guimenu
+> <guimenuitem
+>Verborgen bestanden tonen</guimenuitem
+></menuchoice
+> (Bestandsbeheerdermodus)</term>
+<listitem
+><para
+><action
+>Toont alle verborgen bestanden en submappen in de huidige map.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Beeld</guimenu
+> <guimenuitem
+>Weergave-eigenschappen aanpassen...</guimenuitem
+></menuchoice
+> (Bestandsbeheerdermodus)</term>
+<listitem
+><para
+><action
+>Opent het <link linkend="view-properties-dialog"
+>dialoogvenster Weergave-eigenschappen</link
+>.</action
+></para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-go">
+<title
+>Het menu <guimenu
+>Ga naar</guimenu
+></title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Alt;<keysym
+>Omhoog</keysym
+></keycombo
+> </shortcut
+><guimenu
+>Ga naar</guimenu
+> <guimenuitem
+>Omhoog</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Ga een niveau naar boven in de mappenstructuur.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Alt;<keysym
+>Links</keysym
+></keycombo
+> </shortcut
+><guimenu
+>Ga naar</guimenu
+> <guimenuitem
+>Terug</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Gaat terug naar de vorige weergave of pagina.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Alt;<keysym
+>Rechts</keysym
+></keycombo
+> </shortcut
+><guimenu
+>Ga naar</guimenu
+> <guimenuitem
+>Vooruit</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>U kunt alleen een stap verder doen wanneer u eerder een stap terug hebt gedaan.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Alt;<keycap
+>Home</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Ga naar</guimenu
+> <guimenuitem
+>Homepagina</guimenuitem
+></menuchoice
+> (Browsermodus)</term>
+<listitem
+><para
+>Ga naar uw homepagina zoals gedefineerd op de pagina <guilabel
+>Algemeen</guilabel
+> van de instellingendialoog.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Alt;<keycap
+>Home</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Ga naar</guimenu
+> <guimenuitem
+>Persoonlijke map</guimenuitem
+></menuchoice
+> (Bestandsbeheerdermodus)</term>
+<listitem
+><para
+><action
+>Gaat naar</action
+> de persoonlijke map van de gebruiker, &eg;, /home/Peter/.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Ga naar</guimenu
+> <guimenuitem
+>Toepassingen</guimenuitem
+></menuchoice
+> (Bestandsbeheerdermodus)</term>
+<listitem
+><para
+>Opent de map die alle snelkoppelingen naar uw toepassingen bevat.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Ga naar</guimenu
+> <guimenuitem
+>Netwerkmap</guimenuitem
+></menuchoice
+> (Bestandsbeheerdermodus)</term>
+<listitem
+><para
+>Netwerkmappen worden getoond in een speciale locatie van &konqueror; en &dolphin; een virtuele map genaamd. Meer informatie over hoe deze map te gebruiken vindt u in het <ulink url="help:/knetattach/index.html"
+>Het handbook van KNetAttach</ulink
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Ga naar</guimenu
+> <guimenuitem
+>Instellingen</guimenuitem
+></menuchoice
+> (Bestandsbeheerdermodus)</term>
+<listitem
+><para
+>Een virtuele map openen met alle modules in &systemsettings; <guimenuitem
+>Pictogrammen</guimenuitem
+>, <guimenuitem
+>Details</guimenuitem
+> of weergave in <guimenuitem
+>Kolommen</guimenuitem
+>. Selecteer een te tonen item in demodule voor instellingen in apart dialoogvenster.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Ga naar</guimenu
+> <guimenuitem
+>Prullenbak</guimenuitem
+></menuchoice
+> (Bestandsbeheerdermodus)</term>
+<listitem
+><para
+>Opent uw map <filename class="directory"
+>Prullenbak</filename
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Ga naar</guimenu
+> <guimenuitem
+>Autostart</guimenuitem
+></menuchoice
+> (Bestandsbeheerdermodus)</term>
+<listitem
+><para
+>Opent uw map <filename class="directory"
+>Autostart</filename
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>H</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Ga naar</guimenu
+> <guimenuitem
+>Geschiedenis tonen</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>toont een boomstructuur van uw browsinggeschiedenis in een apart venster. Zie <link linkend="sidebar"
+>Zijbalk</link
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ga naar</guimenu
+> <guisubmenu
+>Meest bezocht</guisubmenu
+> </menuchoice
+></term>
+<listitem>
+<para
+>Weergeeft een submenu met URL-adressen die u het meest bezocht hebt. Door er één te selecteren opent &konqueror; dit &URL;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ga naar</guimenu
+> <guisubmenu
+>Recent bezocht</guisubmenu
+> </menuchoice
+></term>
+<listitem>
+<para
+>Geeft een submenu weer met &URL;'s die u recent hebt bezocht. Door er één te selecteren opent &konqueror; die &URL;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ga naar</guimenu
+> <guisubmenu
+>Gesloten items</guisubmenu
+> </menuchoice
+></term>
+<listitem>
+<para
+>Geeft een submenu weer met gesloten &URL;'s die u hebt bezocht. Door er één te selecteren opent &konqueror; die &URL;. Door <guimenuitem
+>Geschiedenis van gesloten items wissen</guimenuitem
+> te gebruiken wist u het submenu.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-bookmarks">
+<title
+>Het menu <guimenu
+>Bladwijzers</guimenu
+></title>
+
+<note
+><para
+>Zie voor een uitgebreidere uitleg het hoofdstuk <link linkend="bookmarks"
+>Bladwijzers gebruiken</link
+> van dit handboek. </para
+></note>
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>B</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bladwijzers</guimenu
+> <guimenuitem
+>Bladwijzer toevoegen</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Voegt de huidige selectie toe aan uw bladwijzers.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Bladwijzers</guimenu
+> <guimenuitem
+>Tabs bewaren als bladwijzermap...</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Maakt een bladwijzermap aan met alle URL-adressen die geopend zijn in de verschillende tabbladen van &konqueror;. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Bladwijzers</guimenu
+> <guimenuitem
+>Nieuwe bladwijzermap...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Maakt een nieuw map aan in de bladwijzerstructuur.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Bladwijzers</guimenu
+> <guimenuitem
+>Bladwijzers bewerken...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Opent de <link linkend="bookmarks"
+>Bladwijzerbewerker</link
+>. </para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-tools">
+<title
+>Het menu <guimenu
+>Hulpmiddelen</guimenu
+></title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+><keycap
+>F4</keycap
+></shortcut
+> <guimenu
+>Hulpmiddelen</guimenu
+> <guimenuitem
+>Terminal openen</guimenuitem
+></menuchoice
+> (Bestandsbeheerdermodus)</term>
+<listitem
+><para
+>Opent een &konsole;-venster.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>F</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Hulpmiddelen</guimenu
+> <guimenuitem
+>Bestand zoeken...</guimenuitem
+></menuchoice
+> (Bestandsbeheerdermodus)</term>
+<listitem
+><para
+>Opent de toepassing &kfind;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Hulpmiddelen</guimenu
+> <guisubmenu
+>Externe tekenset selecteren</guisubmenu
+></menuchoice
+> (Bestandsbeheerdermodus)</term>
+<listitem
+><para
+><action
+>Hiermee kunt u handmatig de tekenset kiezen die gebruikt wordt bij een externe verbinding.</action
+></para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Wanneer u plugins geïnstalleerd hebt voor &konqueror; zullen er meerdere items staan in het menu <guimenu
+>Hulpmiddelen</guimenu
+>. Zie het hoofdstuk <link linkend="konq-plugin"
+>&konqueror; Plugins</link
+> voor meer informatie.</para>
+</sect2>
+
+<sect2 id="menu-settings">
+<title
+>Het menu <guimenu
+>Instellingen</guimenu
+></title>
+
+<note
+><para
+>Zie ook het hoofdstuk <link linkend="save-settings"
+>Instellingen en profielen opslaan</link
+>.</para
+></note>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Instellingen</guimenu
+> <guisubmenu
+>Getoonde werkbalken</guisubmenu
+> </menuchoice
+></term>
+<listitem
+><para
+>Opent een submenu waarin u kunt kiezen welke werkbalken u wilt tonen of verbergen.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>M</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Instellingen</guimenu
+> <guimenuitem
+>Menubalk tonen</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Toont/verbergt de menubalk.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Instellingen</guimenu
+> <guimenuitem
+>Terminal tonen</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Opent een klein terminalvenster onderaan de hoofdweergave.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>F9</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Instellingen</guimenu
+> <guimenuitem
+>Zijbalk tonen</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Toont/verbergt de weergave van &konqueror;'s zijbalk. Zie <xref linkend="sidebar"/>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift; <keycap
+>F</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Instellingen</guimenu
+> <guimenuitem
+>Volledig scherm</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Weergeeft &konqueror; schermvullend, het venster bevat dan niet de normale vensterdecoraties. Om deze modus weer te verlaten dient u op <guiicon
+>Volledig scherm verlaten</guiicon
+> te drukken op de werkbalk, of u drukt op <keycombo action="simul"
+>&Ctrl;&Shift; <keycap
+>F</keycap
+></keycombo
+>.</para>
+</listitem>
+</varlistentry>
+<!-- not in kde4
+<varlistentry>
+<term
+><menuchoice>
+<guimenu
+>Settings</guimenu>
+<guimenuitem
+>View Properties Saved in Folder</guimenuitem>
+</menuchoice
+></term>
+<listitem
+><para
+>Save View properties to current
+ folder. If this is selected, a <filename
+>.directory</filename
+> file will be
+written in the current directory storing the settings you last used to view the
+directory. These settings are then loaded when you open the directory in &konqueror;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice>
+<guimenu
+>Settings</guimenu>
+<guimenuitem
+>Remove Folder Properties</guimenuitem>
+</menuchoice
+></term>
+<listitem
+><para
+>Remove settings stored in folder by <guimenuitem
+>View
+Properties Saved in Folder</guimenuitem
+>.</para
+></listitem>
+</varlistentry>
+-->
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Instellingen</guimenu
+> <guisubmenu
+>Weergaveprofiel laden</guisubmenu
+> </menuchoice
+></term>
+<listitem
+><para
+>Laadt de instellingen die bij een bepaald weergaveprofiel horen.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Instellingen</guimenu
+> <guimenuitem
+>Weergaveprofielen opslaan als...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Bewaart de huidige instellingen in het huidige weergaveprofiel.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Instellingen</guimenu
+> <guimenuitem
+>Weergaveprofielen instellen...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Maakt het mogelijk om weergaveprofielen te veranderen of toe te voegen.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Instellingen</guimenu
+> <guimenuitem
+>Extensies instellen...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Opent een dialoog met alle geïnstalleerde plug-ins (&eg; van de KDE module extragear) en stelt u in staat diegene te selecteren die u nodig hebt. Alle plug-ins zijn toegankelijk in het menu <guimenu
+>Hulpmiddelen</guimenu
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Instellingen</guimenu
+> <guimenuitem
+>Spellingcontrole instellen...</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Weergeeft het dialoogvenster om de spellingcontrole in te stellen binnen &konqueror;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Instellingen</guimenu
+> <guimenuitem
+>Sneltoetsen instellen...</guimenuitem
+> </menuchoice
+></term
+> <listitem
+><para
+>Hiermee kunt u &konqueror;'s sneltoetsen bekijken en wijzigen, &ie; de relatie tussen acties zoals <guimenuitem
+>Kopiëren</guimenuitem
+> en toetsen of toetscombinaties zoals <keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+>. Kijk uit dat u geen dubbele sneltoets instelt.</para>
+</listitem
+></varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Instellingen</guimenu
+> <guimenuitem
+>Werkbalken instellen...</guimenuitem
+> </menuchoice
+></term
+> <listitem
+><para
+>Hiermee kunt u de Hoofd-, Extra-werkbalk en Locatiebalk instellen. Zie voor meer informatie het hoofdstuk <link linkend="configure-bars"
+>Werkbalken veranderen</link
+>. </para
+></listitem
+> </varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Instellingen</guimenu
+> <guimenuitem
+>&konqueror; instellen...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Stelt u in staat het gedrag van &konqueror; in te stellen in bestandsbeheerder- en browsermodus. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-window">
+<title
+>Het menu <guimenu
+>Venster</guimenu
+></title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>L</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Venster</guimenu
+> <guimenuitem
+>Venster verticaal opsplitsen</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Venster splitsen in linker/rechter.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>T</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Venster</guimenu
+> <guimenuitem
+>Venster horizontaal opsplitsen</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Splitst het venster in twee delen: één aan de bovenzijde en één aan de onderzijde.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>W</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Venster</guimenu
+> <guimenuitem
+>Actief deelvenster sluiten</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Verwijdert het actieve deelventer.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Venster</guimenu
+> <guimenuitem
+>Nieuw venster</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Opent een nieuw &konqueror;-venster.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>D</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Venster</guimenu
+> <guimenuitem
+>Venster dupliceren</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Maakt een kopie van het huidige venster in een nieuw &konqueror;-venster.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>T</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Venster</guimenu
+> <guimenuitem
+>Nieuw tabblad</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Opent een nieuw, leeg tabblad.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>D</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Venster</guimenu
+> <guimenuitem
+>Huidig tabblad dupliceren</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Opent een kopie van het huidige tabblad in een nieuw tabblad.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>B</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Venster</guimenu
+> <guimenuitem
+>Huidig tabblad losmaken</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Opent het huidige tabblad in een nieuw venster van &konqueror;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>W</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Venster</guimenu
+> <guimenuitem
+>Huidig tabblad sluiten</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Sluit het huidige tabblad.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>Pijl naar links</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Venster</guimenu
+> <guimenuitem
+>Tabblad naar links verplaatsen</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Verplaatst het huidige tabblad één plaats naar links ten opzichte van de andere tabbladen.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>Rechts</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Venster</guimenu
+> <guimenuitem
+>Tabblad naar rechts verplaatsen</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Verplaatst het huidige tabblad één plaats naar rechts ten opzichte van de andere tabbladen.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-help">
+<title
+>Het menu <guimenu
+>Help</guimenu
+></title>
+<para
+>Naast de standaard &kde;-menuitems in <guimenu
+>Help</guimenu
+>, die in de sectie <ulink url="help:/fundamentals/ui.html#menus-help"
+>Menu Help</ulink
+> worden beschreven, is er het menuitem <guimenuitem
+>Introductie in &konqueror;</guimenuitem
+> om de introductiepagina's te bezoeken die u in beeld kreeg toen u &konqueror; voor het eerst startte.</para>
+
+</sect2>
+</sect1>
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

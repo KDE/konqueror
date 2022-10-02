@@ -1,0 +1,49 @@
+# translation of khtmlkttsd.po to Slovenian
+# Translation of khtmlkttsd.po to Slovenian
+#
+# Gregor Rakar <gregor.rakar@kiss.si>, 2005.
+# Jure Repinc <jlp@holodeck1.com>, 2006, 2007, 2008, 2010, 2011.
+# Andrej Mernik <andrejm@ubuntu.si>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: khtmlkttsd\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2020-08-21 10:02+0200\n"
+"Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
+"Language-Team: Slovenian <lugos-slo@lugos.si>\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.1\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
+
+#: khtmltts.cpp:33
+#, kde-format
+msgid "&Speak Text"
+msgstr "Izgovori besedilo"
+
+#. i18n: ectx: Menu (tools)
+#: khtmlttsplugin.rc:5
+#, kde-format
+msgid "&Tools"
+msgstr "Orodja"
+
+#. i18n: ectx: ToolBar (speechToolbar)
+#: khtmlttsplugin.rc:10
+#, kde-format
+msgid "Speech Toolbar"
+msgstr "Orodna vrstica za govor"
+
+#~ msgctxt "@title:window"
+#~ msgid "Starting Jovie Text-to-Speech Service Failed"
+#~ msgstr "Zagon storitve besedilo-v-govor Jovie ni uspel"
+
+#~ msgid "The D-Bus call say() failed."
+#~ msgstr "Klic D-Bus »say()« ni uspel."
+
+#~ msgctxt "@title:window"
+#~ msgid "D-Bus Call Failed"
+#~ msgstr "Klic D-Bus ni uspel"

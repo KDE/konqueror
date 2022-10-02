@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % French "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="performance" lang="&language;">
+<articleinfo>
+<title
+>Performance</title>
+<authorgroup>
+<author
+>&Mike.McBride; &Mike.McBride.mail;</author>
+&traducteurYvesDessertine; 
+</authorgroup>
+
+<date
+>08-11-2016</date>
+<releaseinfo
+>Applications 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Configuration du système</keyword>
+<keyword
+>performance</keyword>
+<keyword
+>préchargement</keyword>
+</keywordset>
+</articleinfo>
+
+<sect1 id="sys-performance">
+<title
+>Paramètres de performance</title>
+
+<para
+>&kde; est utilisé sur un large gamme d'ordinateurs par des utilisateurs très variés. Dans la catégorie « Performance », cette boîte de dialogue permet à chaque utilisateur d'ajuster des options permettant de donner l'impression que l'ordinateur sur lequel est installé &konqueror; répond plus vite. </para>
+
+<sect2
+><title
+>Préchargement</title>
+<para
+>La section intitulée <guilabel
+>Préchargement</guilabel
+> réalise un compromis entre mémoire et performance.</para>
+
+<para
+>Le <emphasis
+>préchargement</emphasis
+> permet de charger une instance de &konqueror; en mémoire avant que l'utilisateur demande de lancer &konqueror;. L'avantage de ceci est que lorsque l'utilisateur demande de lancer &konqueror;, la fenêtre apparaît instantanément, puisqu'une grande partie du programme est déjà chargée. L'inconvénient est que cette instance de &konqueror; utilise de la mémoire qui pourrait servir à d'autres applications. Par défaut, lorsqu'un utilisateur ferme &konqueror;, l'instance n'est pas fermée. Cela signifie que la prochaine fois que l'utilisateur voudra lancer &konqueror;, il apparaîtra presque instantanément.</para>
+
+<para
+>La dernière case à cocher, intitulée <guilabel
+>Toujours essayer de conserver au moins une instance préchargée</guilabel
+> indique que vous voulez toujours une instance de &konqueror; préchargée et disponible mais pas utilisée. Cette option diminuera la performance sur certaines machines (tout particulièrement celles avec une mémoire physique limitée).</para>
+</sect2>
+</sect1>
+
+</article>

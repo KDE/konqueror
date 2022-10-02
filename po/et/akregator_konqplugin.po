@@ -1,0 +1,64 @@
+# translation of akregator_konqplugin.po to Estonian
+# Copyright (C) 2004 Free Software Foundation, Inc.
+#
+# Marek Laane <bald@starman.ee>, 2004-2005,2007.
+# Marek Laane <bald@smail.ee>, 2009, 2011, 2019.
+msgid ""
+msgstr ""
+"Project-Id-Version: akregator_konqplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2019-10-29 19:51+0200\n"
+"Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
+"Language-Team: Estonian <kde-i18n-doc@kde.org>\n"
+"Language: et\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 19.08.1\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: akregatorplugin.cpp:63
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Add Feed to Akregator"
+msgstr "Lisa uudistevoog Akregatorile"
+
+#: konqfeedicon.cpp:127
+#, kde-format
+msgid "Add Feed to Akregator"
+msgstr "Lisa uudistevoog Akregatorile"
+
+#: konqfeedicon.cpp:129
+#, kde-format
+msgid "Add Feeds to Akregator"
+msgstr "Lisa uudistevood Akregatorile"
+
+#: konqfeedicon.cpp:138
+#, kde-format
+msgid "Add All Found Feeds to Akregator"
+msgstr "Lisa kõik leitud uudistevood Akregatorile"
+
+#: konqfeedicon.cpp:162
+#, kde-format
+msgid "Subscribe to site updates (using news feed)"
+msgstr "Telli saidi uuendused (uudistevoo vahendusel)"
+
+#: pluginutil.cpp:36 pluginutil.cpp:46
+#, kde-format
+msgid "Imported Feeds"
+msgstr "Imporditud uudistevood"
+
+#: pluginutil.cpp:38
+#, kde-format
+msgid "Unable to contact Akregator via D-Bus"
+msgstr "Akregatoriga ühendumine D-Busi kaudu nurjus"
+
+#: pluginutil.cpp:39
+#, kde-format
+msgctxt "@title:window"
+msgid "D-Bus call failed"
+msgstr "D-Busi väljakutse nurjus"
+
+#~ msgid "Akregator feed icon - DBus Call failed"
+#~ msgstr "Akregatori uudistevoo ikoon - D-Busi väljakutse nurjus"

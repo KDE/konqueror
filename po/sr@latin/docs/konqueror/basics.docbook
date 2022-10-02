@@ -1,0 +1,668 @@
+<chapter id="basics">
+
+<chapterinfo>
+<authorgroup>
+<author
+><personname
+><firstname
+>Pamela</firstname
+> <surname
+>Roberts</surname
+></personname
+></author>
+<othercredit role="translator"
+><firstname
+>Dragan</firstname
+><surname
+>Pantelić</surname
+><affiliation
+><address
+><email
+>falcon-10@gmx.de</email
+></address
+></affiliation
+><contrib
+>prevod</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>8. 2. 2010.</date>
+<releaseinfo
+>4.4.0</releaseinfo>
+</chapterinfo>
+
+<title
+>Osnove <application
+>K‑osvajača</application
+></title>
+
+<important
+><para
+>Kao i svi <acronym
+>KDE</acronym
+> programi, <application
+>K‑osvajač</application
+> je izuzetno prilagodljiv. Ovaj dokument opisuje kako se <application
+>K‑osvajač</application
+> ponaša pod normalnim, podrazumevanim postavkama.</para>
+<para
+>Miš sa tri dugmeta može biti koristan kako u <application
+>K‑osvajaču</application
+>, tako u bilo kom drugom <acronym
+>KDE</acronym
+> programu. Ako imate miš sa samo dva dugmeta, trebalo bi da možete da podesite sistem tako da istovremeni pritisak oba dugmeta simulira treće dugme.</para>
+<para
+>O korišćenju miša možete pročitati više u odeljku <link linkend="lmb-mmb"
+>o funkciji dugmadi miša</link
+>.</para>
+<para
+>Ako ste navikli da dvoklik izvodi radnje, onda imajte na umu da <application
+>K‑osvajač</application
+> podrazumevano reaguje na jedan klik, kao što je i običaj u <acronym
+>KDE‑u</acronym
+>.</para
+></important>
+
+<sect1 id="konq-start">
+<title
+>Pokretanje <application
+>K‑osvajača</application
+></title>
+
+<para
+>Budući kombinovani menadžer fajlova i pregledač, <application
+>K‑osvajač</application
+> će u radu automatski prebacivati između ova dva režima, ali je zgodno i moći odabrati režim pri pokretanju <application
+>K‑osvajača</application
+>.</para>
+
+<itemizedlist>
+<!--
+<listitem
+><para
+>If you have a <guiicon
+>house</guiicon
+> shaped icon on the panel 
+or desktop, then <mousebutton
+>left</mousebutton
+> click on it to open 
+&konqueror; as a file manager.</para
+></listitem>
+
+<listitem
+><para
+>Or <mousebutton
+>left</mousebutton
+> click on <guiicon
+>world
+</guiicon
+> shaped icon on the panel or desktop to open &konqueror; in browser 
+mode.</para
+></listitem>
+-->
+<listitem
+><para
+>Iz menija pokretača programa izaberite <menuchoice
+><guisubmenu
+>Internet</guisubmenu
+><guimenuitem
+>K‑osvajač, (veb pregledač)</guimenuitem
+></menuchoice
+> da ga pokrenete kao pregledač. </para
+></listitem>
+
+<listitem
+><para
+><keycombo action="simul"
+><keycap
+>Alt</keycap
+><keycap
+>F2</keycap
+></keycombo
+> otvoriće <application
+>K‑izvođač</application
+>; tu unesite putanju fascikle i pritisnite <keycap
+>Enter</keycap
+> da pokrenete <application
+>K‑osvajač</application
+> u režimu menadžera fajlova, ili prosto unesite neki URL (npr. <userinput
+>http://www.konqueror.org</userinput
+>) da ga pokrenete kao pregledač.</para
+></listitem>
+
+</itemizedlist>
+
+<note
+><para
+>Kliknite na crnu strelicu desno od ikone domaće stranice da se prebacite na svoju domaću fasciklu u režimu menadžera fajlova, i obratno. </para
+></note>
+
+<para
+>Ako je <application
+>K‑osvajač</application
+> podrazumevani menadžer fajlova, takođe se automatski pokreće kad kliknete <mousebutton
+>levim</mousebutton
+> na ikonu površi koja predstavlja fasciklu, kao što je hard‑disk ili ikona <guiicon
+>Smeće</guiicon
+>. </para>
+
+
+</sect1>
+
+<sect1 id="parts">
+<title
+>Delovi <application
+>K‑osvajača</application
+></title>
+
+<para
+>Kratak pogled na glavne delove <application
+>K‑osvajačevog</application
+> prozora:</para>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="parts.png"/></imageobject>
+<textobject>
+<phrase
+>Snimak ekrana <application
+>K‑osvajača</application
+></phrase>
+</textobject>
+</mediaobject>
+
+<para
+><emphasis
+>Naslovna traka</emphasis
+> je traka preko vrha <application
+>K‑osvajačevog</application
+> prozora i funkcioniše isto kao i u drugim <acronym
+>KDE</acronym
+> programima. Kliknite <mousebutton
+>desnim</mousebutton
+> na središnji deo da dozovete meni naslovne trake.</para>
+
+<para
+><emphasis
+>Traka menija</emphasis
+> je traka koja sadrži imena padajućih menija. Kliknite <mousebutton
+>levim</mousebutton
+> na ime menija da ga, alternativno, prikažete ili sakrijete, ili upotrebite <keycombo action="simul"
+><keycap
+>Alt</keycap
+><keycap
+>podvučeno slovo</keycap
+></keycombo
+> kao prečicu, na primer <keycombo action="simul"
+><keycap
+>Alt</keycap
+><keycap
+>U</keycap
+></keycombo
+> za meni <guimenu
+>Uređivanje</guimenu
+>. Razni meniji opisani su u sekciji ovog dokumenta <link linkend="menubar"
+>o traci menija</link
+>.</para>
+
+<para
+><emphasis
+>Traka alatki</emphasis
+> sadrži ikone za često korišćene radnje. <mousebutton
+>Levi</mousebutton
+> klik na ikonu će je aktivirati. Kad lebdite pokazivačem iznad ikone pojaviće se kratak opis onoga što ta ikona radi.</para>
+
+<para
+>Neke ikone, na primer „gore“ i „nazad“ na prethodnom snimku ekrana, imaju malu crnu strelicu na desnoj strani. Ako kliknete levim dugmetom na ovu strelicu, pojaviće se mali padajući meni.</para
+> <para
+><mousebutton
+>Desni</mousebutton
+> klik na traku alatki dozvaće <link linkend="rmb-menus"
+>meni <guilabel
+>Postavke trake alatki</guilabel
+></link
+>, koji možete koristiti za promenu njenog izgleda i položaja.</para>
+
+<para
+><emphasis
+>Traka lokacije</emphasis
+> prikazuje putanju ka fascikli, URL‑u ili fajlu. Ovde možete upisati putanju ili URL, pa pritisnuti <keycap
+>Enter</keycap
+> ili kliknuti levim na ikonu <guiicon
+>Kretanje</guiicon
+> skroz desno na traci lokacije, da odete na upisani URL. Crna ikona na desnom kraju trake briše polje unosa.</para>
+
+<para
+><emphasis
+>Traka obeleživača</emphasis
+> je oblast ispod trake lokacije na prethodnom snimku ekrana. Ovde možete dodavati često korišćene obeleživače. Pogledajte sekciju <link linkend="orgbmark"
+>o organizovanju obeleživača</link
+>.</para>
+
+<para
+><emphasis
+>Prozor</emphasis
+> je glavna oblast <application
+>K‑osvajača</application
+>, koja prikazuje sadržaje fascikli, veb stranica, dokumenata ili slika. Korišćenjem menija <link linkend="menu-window"
+><guimenu
+>Prozor</guimenu
+></link
+> možete podeliti glavni <application
+>K‑osvajačev</application
+> prozor na jedan ili više odvojenih prikaza (korisno za radnje prevlačenja), ili uspostaviti dva ili više prikaza sa jezičcima. </para>
+
+<para
+><emphasis
+>Traka stanja</emphasis
+> proteže se preko dna <application
+>K‑osvajačevog</application
+> prozora i prikazuje opšte informacije o onome iznad čega lebdi pokazivač miša. Ako ste podelili glavni prozor na više prikaza, svaki od njih će imati traku stanja, sa malim zelenim svetlom na levom kraju da pokaže koji je prikaz aktivan. <mousebutton
+>Desni</mousebutton
+> klik na traku stanja doziva njen <link linkend="rmb-menus"
+>kontekstni meni</link
+>.</para>
+
+<note
+><para
+>Ne brinite ako <application
+>K‑osvajač</application
+> ne izgleda tačno kao na ovom snimku ekrana, jer je izuzetno podesiv. Osobito:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Možete koristiti meni <link linkend="menu-settings"
+><guimenu
+>Podešavanje</guimenu
+></link
+> da prikažete ili sakrijete traku menija, glavnu traku, traku lokacije i traku obeleživača, ili čak da dodate dopunsku traku.</para
+></listitem>
+<listitem
+><para
+>Ako su trake alatki otključane, takođe ih možete prevući na drugo mesto tako što kliknete <mousebutton
+>levim</mousebutton
+> na ručku na levom kraju trake i pomerate miš dok je levo dugme i dalje pritisnuto. </para
+></listitem>
+<listitem
+><para
+>Snimak ekrana ne prikazuje opcionu <link linkend="sidebar"
+>bočnu traku</link
+>.</para
+></listitem>
+</itemizedlist>
+
+<para
+>Za više informacija o načinu izmene <application
+>K‑osvajačevog</application
+> izgleda, pogledajte sekciju <link linkend="config"
+>o podešavanju <application
+>K‑osvajača</application
+></link
+>.</para
+></note>
+
+</sect1>
+
+<sect1 id="bubble">
+<title
+>Oblačići i „Šta je ovo“ </title>
+
+<para
+>Mnogo o načinu rada <application
+>K‑osvajača</application
+> možete saznati i bez čitanja celog ovog dokumenta, ako se oslonite na <emphasis
+>oblačiće</emphasis
+> i <emphasis
+>šta‑je‑ovo</emphasis
+>.</para>
+
+<para
+>Lebdenjem pokazivačem miša iznad dugmeta trake alatki ili bočne trake dobićete kraći opis onoga što to dugme radi.</para>
+
+<para
+><emphasis
+>Šta‑je‑ovo</emphasis
+> se poziva preko trake menija, stavkom <menuchoice
+><guimenu
+>Pomoć</guimenu
+><guimenuitem
+>Šta je ovo?</guimenuitem
+></menuchoice
+> ili prečicom <keycombo action="simul"
+><keycap
+>Shift</keycap
+><keycap
+>F1</keycap
+></keycombo
+>. Pokazivač će promeniti oblik u znak pitanja uzduž strelice.</para>
+
+<para
+>Ako je taj znak pitanja vidljiv, levi klik zapravo neće uraditi ništa dok ne kliknete na vidžet (ili njegov tekst) za koji je definisano šta‑je‑ovo. Ako ga ima, dobićete relativno opširno objašnjenje čemu je vidžet namenjen. Većina dijaloga koje izdaje <application
+>K‑osvajač</application
+> podržava podržava šta‑je‑ovo.</para>
+
+</sect1>
+
+<sect1 id="lmb-mmb">
+<title
+>Radnje <mousebutton
+>levim</mousebutton
+> i <mousebutton
+>srednjim</mousebutton
+> dugmetom miša</title>
+
+<para
+>Ako kliknete levim na neku stavku u <application
+>K‑osvajačevom</application
+> prozoru, ona će biti „aktivirana“. To znači:</para>
+
+<itemizedlist>
+
+<listitem
+><para
+>Kliknite <mousebutton
+>levim</mousebutton
+> na ikonu u traci alatki da izvršite radnju predstavljenu tom ikonom. </para
+></listitem>
+<listitem
+><para
+>Kliknite <mousebutton
+>levim</mousebutton
+> na stavku u traci menija da razvijete taj meni.</para
+></listitem>
+<listitem
+><para
+>Kliknite <mousebutton
+>levim</mousebutton
+> na stavku menija da to uradite.</para
+></listitem
+> 
+<listitem
+><para
+>Kliknite <mousebutton
+>levim</mousebutton
+> na ikonu u traci obeleživača da otvorite dotični URL.</para
+></listitem>
+<listitem
+><para
+>Kliknite <mousebutton
+>levim</mousebutton
+> na vezu na veb stranici da bi je ispratili <application
+>K‑osvajačem</application
+>.</para
+></listitem>
+<listitem
+><para
+>Kliknite <mousebutton
+>levim</mousebutton
+> na ikonu ili ime fascikle, i <application
+>K‑osvajač</application
+> će ući u tu fasciklu (tj. prikazati njen sadržaj). </para
+></listitem>
+<listitem
+><para
+>Po <mousebutton
+>levom</mousebutton
+> kliku na ime fajla ili ikonu, <application
+>K‑osvajač</application
+> će uraditi ono što misli da je prigodno, na osnovu tipa fajla. Obično to znači otvaranje HTML stranica, pregledanje teksta, slika, <application
+>Okularovih</application
+> dokumenata, koji će svi biti prikazani unutar <application
+>K‑osvajačevog</application
+> prozora („pregledanje“ znači da možete da vidite fajl, ali ne i da ga menjate).</para
+> 
+
+<para
+><application
+>K‑osvajač</application
+> razlučuje tip fajla poklapajući nastavak imena fajla sa spiskom poznatih tipova. Ako ovo omaši, pokušava da pogodi tip prema sadržaju fajla. Spisak poznatih tipova i pridruženih radnji možete menjati na stranici <guilabel
+>Pridruženja fajlovima</guilabel
+> u dijalogu <menuchoice
+><guimenu
+>Podešavanje</guimenu
+><guimenuitem
+>Podesi K‑osvajač...</guimenuitem
+></menuchoice
+>.</para
+></listitem>
+
+</itemizedlist>
+
+<para
+>Klik srednjim dugmetom miša na ime fajla ili fascikle, ili ikonu, u suštini čini isto što i <mousebutton
+>levi</mousebutton
+> klik, samo što obično otvara novi prozor <application
+>K‑osvajača</application
+>, osim ako nije popunjena kućica <guilabel
+>Otvori vezu u novom jezičku umesto u novom prozoru</guilabel
+> na stranici <guimenuitem
+>Opšte</guimenuitem
+>, u dijalogu <menuchoice
+><guimenu
+>Podešavanje</guimenu
+><guimenuitem
+>Podesi K‑osvajač...</guimenuitem
+></menuchoice
+>. <application
+>K‑osvajač</application
+> ume da otvara veze na stranicama i obeleživače, kao i stavke <guibutton
+>Domaća</guibutton
+>, <guibutton
+>Gore</guibutton
+>, <guibutton
+>Nazad</guibutton
+> i <guibutton
+>Napred</guibutton
+> u novom jezičku ili prozoru.</para>
+
+<para
+>Držanjem pritisnutog tastera <keycap
+>Shift</keycap
+> pri kliku srednjim dugmetom miša, otvorićete vezu u pozadini.</para>
+<!-- not in 4.4.0
+<important
+><para
+>If you click the &MMB; when the mouse cursor is over a blank 
+part of the main view (not over a link or file name or icon) &konqueror; will 
+copy the contents of the clipboard into the Location Toolbar and try to use 
+that as a &URL;.</para
+></important>
+-->
+</sect1>
+
+<sect1 id="rmb-menus">
+<title
+>Meniji na <mousebutton
+>desno</mousebutton
+> dugme miša</title>
+
+<para
+>Klik desnim dugmetom na skoro bilo koji deo <application
+>K‑osvajačevog</application
+> prozora dozvaće odgovarajući <emphasis
+>kontekstni meni</emphasis
+>.</para>
+
+<note
+><para
+>Ako je u <application
+>K‑osvajačevim</application
+> <link linkend="othersettings"
+>postavkama</link
+> uključena opcija <guilabel
+>Desnim klikom unazad kroz istorijat</guilabel
+>, prost <mousebutton
+>desni</mousebutton
+> klik radi isto što i dugme <guibutton
+>Nazad</guibutton
+>. U ovom slučaju kontekstnom meniju možete pristupiti pomeranjem miša dok držite pritisnuto <mousebutton
+>desno</mousebutton
+> dugme.</para
+></note>
+
+<variablelist>
+
+<varlistentry>
+<term
+>Na naslovnoj traci</term>
+<listitem
+><para
+><mousebutton
+>Desni</mousebutton
+> klik bilo gde na slobodnu oblast na naslovnoj traci doziva meni naslovne trake, dopuštajući vam kako da upravljate položajem <application
+>K‑osvajačevog</application
+> prozora, tako i dekoracijama primenjenim na sve prozore <acronym
+>KDE</acronym
+> programâ. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Na glavnoj traci alatki</term>
+<listitem
+><para
+><mousebutton
+>Desni</mousebutton
+> klik bilo gde na slobodnu oblast na glavnoj traci izdaće njen meni. Možete ga koristiti da postavite traku na vrh, dno, levo ili desno u prozoru <application
+>K‑osvajača</application
+>. Takođe možete odrediti veličinu dugmadi na traci, i da li da budu prikazana kao ikone, tekst, ili oboje.</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+>Na traci lokacije</term>
+<listitem
+><para
+>Kliknite <mousebutton
+>desnim</mousebutton
+> u polje za unos URL‑ova da izvedete radnje isecanja, kopiranja, nalepljivanja ili čišćenja, ili da izmenite mogućnosti automatske <link linkend="path-complete"
+>dopune teksta</link
+>.</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+>Unutar prikaza</term>
+<listitem
+><para
+>Ako kliknete <mousebutton
+>desnim</mousebutton
+> bilo gde na slobodnu oblast unutar prikaza, dobićete meni koji, između ostalih opcija, sadrži navigacione naredbe <guiicon
+>Gore</guiicon
+>, <guiicon
+>Nazad</guiicon
+>, <guiicon
+>Napred</guiicon
+> i <guiicon
+>Učitaj ponovo</guiicon
+>.  </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Na fajlu ili fascikli</term>
+<listitem
+><para
+>Ovo je sasvim zgodna mogućnost. <mousebutton
+>Desni</mousebutton
+> klik na ime ili ikonu bilo kojeg fajla ili fascikle ne samo da „izabira“ tu stavku, nego doziva i meni koji pruža radnje isecanja, premeštanja, kopiranja ili uklanjanja (na razne načine), otvaranje ili pregledanje u programu po izboru, preimenovanje stavke, te uređivanje tipa fajla ili svojstava.</para
+></listitem
+> </varlistentry>
+
+<varlistentry>
+<term
+>Na traci stanja</term>
+<listitem
+><para
+>Kliknite <mousebutton
+>desnim</mousebutton
+> na traku stanja na dnu prozora ili prikaza da dodate ili uklonite taj prikaz iz <application
+>K‑osvajačevog</application
+> prozora.</para
+></listitem
+> 
+</varlistentry>
+</variablelist>
+
+</sect1>
+
+<sect1 id="man-info">
+<title
+>Pregledanje pomoći, uputnih i info stranica</title>
+
+<para
+><acronym
+>KDE</acronym
+> stranice pomoći i Unix uputne i info stranice možete pogledati direktno u <application
+>K‑osvajaču</application
+>, bez potrebe za pokretanjem <application
+>K‑centra-pomoći</application
+>. </para>
+
+<para
+>Da pogledate neku <acronym
+>KDE</acronym
+> stranicu pomoći, unesite <userinput
+>help:/<replaceable
+>naredba_programa</replaceable
+></userinput
+> (na primer, <userinput
+>help:/kmail</userinput
+> poziva dokumentaciju <application
+>K‑pošte</application
+>) u traku lokacije <application
+>K‑osvajača</application
+>. </para>
+
+<para
+><application
+>K‑osvajač</application
+> olakšava i čitanje Unix uputnih stranice. Na primer, upišete <userinput
+>man:/touch</userinput
+> ili <userinput
+>#touch</userinput
+> u traku lokacije da biste pogledali stranicu za naredbu <command
+>touch</command
+>.</para
+> 
+
+<para
+>Za pregledanje Unix info stranica, unošenje <userinput
+>info:/dir</userinput
+> odvodi vas na fasciklu na vrhu info sadržaja. Do željene stranice odatle dolazite prosto kliktanjem na veze. Za direktan odlazak na željenu stranicu, možete upisati <userinput
+>info:/<replaceable
+>naredba</replaceable
+></userinput
+>.</para>
+
+<note
+><para
+>Nažalost, <acronym
+>KDE</acronym
+> stranice pomoći skladištene su tako da se ne mogu gledati u drugim pregledačima. Ako to zaista želite, jedino što možete je da pređete na vezu i posetite <ulink url="http://docs.kde.org"
+>http://docs.kde.org</ulink
+>.</para
+></note>
+</sect1>
+
+</chapter>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

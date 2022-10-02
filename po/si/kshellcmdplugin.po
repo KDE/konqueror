@@ -1,0 +1,1812 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Danishka Navin <danishka@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2009-11-10 23:56+0530\n"
+"Last-Translator: Danishka Navin <danishka@gmail.com>\n"
+"Language-Team: Sinhala <danishka@gmail.com>\n"
+"Language: si\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.0\n"
+
+#. i18n: ectx: Menu (tools)
+#: konq_shellcmdplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "මෙවලම් (&T)"
+
+#: kshellcmdexecutor.cpp:106
+#, kde-format
+msgid "Input Required:"
+msgstr "ප්‍රධානය අවශ්‍ය වේ:"
+
+#: kshellcmdplugin.cpp:32
+#, kde-format
+msgid "&Execute Shell Command..."
+msgstr "&Execute Shell Command..."
+
+#: kshellcmdplugin.cpp:41
+#, kde-format
+msgid ""
+"KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a bug."
+msgstr ""
+"KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a bug."
+
+#: kshellcmdplugin.cpp:51
+#, kde-format
+msgid "Executing shell commands works only on local directories."
+msgstr "Executing shell commands works only on local directories."
+
+#: kshellcmdplugin.cpp:73
+#, fuzzy, kde-format
+#| msgid "Execute Shell Command"
+msgctxt "@title:window"
+msgid "Execute Shell Command"
+msgstr "Execute Shell Command"
+
+#: kshellcmdplugin.cpp:74
+#, kde-format
+msgid "Execute shell command in current directory:"
+msgstr "Execute shell command in current directory:"
+
+#: kshellcmdplugin.cpp:85
+#, kde-format
+msgid "Output from command: \"%1\""
+msgstr "විධානයේ ප්‍රථිදානය: \"%1\""
+
+#~ msgid "no name"
+#~ msgstr "නමක් නැත"
+
+#~ msgid "Configure"
+#~ msgstr "සකසන්න"
+
+#~ msgid "Extensions"
+#~ msgstr "දිගු"
+
+#~ msgid ""
+#~ "There was an error loading the module %1.\n"
+#~ "The diagnostics is:\n"
+#~ "%2"
+#~ msgstr ""
+#~ "%1 මොඩියුලය පූරණයෙහි දෝෂයක් හට ගැනිණී.\n"
+#~ "දෝෂනිර්ණය:\n"
+#~ "%2"
+
+#~ msgid "Konqueror"
+#~ msgstr "කොන්කරර්"
+
+#~ msgid "Web browser, file manager and document viewer."
+#~ msgstr "වෙබ් ගවේශකය, ගොනු කළමණාකරු සහ ලේඛන දසුන."
+
+#~ msgid "(C) 1999-2008, The Konqueror developers"
+#~ msgstr "(C) 1999-2008, Konqueror සංවර්‍ධකයින්"
+
+#~ msgid "http://konqueror.kde.org"
+#~ msgstr "http://konqueror.kde.org"
+
+#~ msgid "David Faure"
+#~ msgstr "David Faure"
+
+#~ msgid "Developer (framework, parts, JavaScript, I/O library) and maintainer"
+#~ msgstr "සංවර්‍ධක (රාමුව, කොටස්, JavaScript, I/O පුස්තකාලය) සහ නඩත්තුකරු"
+
+#~ msgid "Simon Hausmann"
+#~ msgstr "Simon Hausmann"
+
+#~ msgid "Developer (framework, parts)"
+#~ msgstr "සංවර්‍ධක (රාමුව, කොටස්)"
+
+#~ msgid "Michael Reiher"
+#~ msgstr "Michael Reiher"
+
+#~ msgid "Developer (framework)"
+#~ msgstr "සංවර්‍ධක (රාමුව)"
+
+#~ msgid "Matthias Welk"
+#~ msgstr "Matthias Welk"
+
+#~ msgid "Developer"
+#~ msgstr "සංවර්‍ධක"
+
+#~ msgid "Alexander Neundorf"
+#~ msgstr "Alexander Neundorf"
+
+#~ msgid "Developer (List views)"
+#~ msgstr "සංවර්‍ධක (ලැයිස්තු දසුන්)"
+
+#~ msgid "Michael Brade"
+#~ msgstr "Michael Brade"
+
+#~ msgid "Developer (List views, I/O library)"
+#~ msgstr "සංවර්‍ධක (ලැයිස්තු දසුන්, I/O පුස්තකාලය)"
+
+#~ msgid "Lars Knoll"
+#~ msgstr "Lars Knoll"
+
+#~ msgid "Developer (HTML rendering engine)"
+#~ msgstr "සංවර්‍ධක (HTML දර්ශන ඇන්ජිම)"
+
+#~ msgid "Dirk Mueller"
+#~ msgstr "Dirk Mueller"
+
+#~ msgid "Peter Kelly"
+#~ msgstr "Peter Kelly"
+
+#~ msgid "Waldo Bastian"
+#~ msgstr "Waldo Bastian"
+
+#~ msgid "Developer (HTML rendering engine, I/O library)"
+#~ msgstr "සංවර්‍ධක (HTML දර්ශන ඇන්ජිම, I/O පුස්තකාලය)"
+
+#~ msgid "Germain Garand"
+#~ msgstr "Germain Garand"
+
+#~ msgid "Leo Savernik"
+#~ msgstr "Leo Savernik"
+
+#~ msgid "Stephan Kulow"
+#~ msgstr "Stephan Kulow"
+
+#~ msgid ""
+#~ "Developer (HTML rendering engine, I/O library, regression test framework)"
+#~ msgstr "සංවර්‍ධක (HTML දර්ශන ඇන්ජිම, I/O පුස්තකාලය, ප්‍රතිගමන පරීක්ෂණ රාමුව)"
+
+#~ msgid "Antti Koivisto"
+#~ msgstr "Antti Koivisto"
+
+#~ msgid "Zack Rusin"
+#~ msgstr "Zack Rusin"
+
+#~ msgid "Tobias Anton"
+#~ msgstr "Tobias Anton"
+
+#~ msgid "Lubos Lunak"
+#~ msgstr "Lubos Lunak"
+
+#~ msgid "Maks Orlovich"
+#~ msgstr "Maks Orlovich"
+
+#~ msgid "Developer (HTML rendering engine, JavaScript)"
+#~ msgstr "සංවර්‍ධක (HTML දර්ශන ඇන්ජිම, JavaScript)"
+
+#~ msgid "Allan Sandfeld Jensen"
+#~ msgstr "Allan Sandfeld Jensen"
+
+#~ msgid "Apple Safari Developers"
+#~ msgstr "Apple Safari සංවර්‍ධකයින්"
+
+#~ msgid "Harri Porten"
+#~ msgstr "Harri Porten"
+
+#~ msgid "Developer (JavaScript)"
+#~ msgstr "සංවර්‍ධක (JavaScript)"
+
+#~ msgid "Koos Vriezen"
+#~ msgstr "Koos Vriezen"
+
+#~ msgid "Developer (Java applets and other embedded objects)"
+#~ msgstr "Developer (Java යෙදුම්පත් සහ වෙනත් එබ්බූ වස්තු)"
+
+#~ msgid "Matt Koss"
+#~ msgstr "Matt Koss"
+
+#~ msgid "Developer (I/O library)"
+#~ msgstr "සංවර්‍ධක (I/O පුස්තකාලය)"
+
+#~ msgid "Alex Zepeda"
+#~ msgstr "Alex Zepeda"
+
+#~ msgid "Richard Moore"
+#~ msgstr "Richard Moore"
+
+#~ msgid "Developer (Java applet support)"
+#~ msgstr "සංවර්‍ධක (Java යෙදුම්පත් සහාය)"
+
+#~ msgid "Dima Rogozin"
+#~ msgstr "Dima Rogozin"
+
+#~ msgid "Wynn Wilkes"
+#~ msgstr "Wynn Wilkes"
+
+#~ msgid ""
+#~ "Developer (Java 2 security manager support,\n"
+#~ " and other major improvements to applet support)"
+#~ msgstr ""
+#~ "සංවර්‍ධක (Java 2 ආරක්‍ෂක කළමණාකරු සහාය,\n"
+#~ " සහ යෙදුම්පත් සහාය සඳහා වෙනත් ඉහළ දියුණු කිරීම්)"
+
+#~ msgid "Stefan Schimanski"
+#~ msgstr "Stefan Schimanski"
+
+#~ msgid "Developer (Netscape plugin support)"
+#~ msgstr "සංවර්‍ධක (Netscape ප්ලගීන සහාය)"
+
+#~ msgid "George Staikos"
+#~ msgstr "George Staikos"
+
+#~ msgid "Developer (SSL, Netscape plugins)"
+#~ msgstr "සංවර්‍ධක (SSL, Netscape ප්ලගීන සහාය)"
+
+#~ msgid "Dawit Alemayehu"
+#~ msgstr "Dawit Alemayehu"
+
+#~ msgid "Developer (I/O library, Authentication support)"
+#~ msgstr "සංවර්‍ධක (I/O පුස්තකාලය, සත්‍යාපන සහාය)"
+
+#~ msgid "Carsten Pfeiffer"
+#~ msgstr "Carsten Pfeiffer"
+
+#~ msgid "Torsten Rahn"
+#~ msgstr "Torsten Rahn"
+
+#~ msgid "Graphics/icons"
+#~ msgstr "චිත්‍රක/අයිකන"
+
+#~ msgid "Torben Weis"
+#~ msgstr "Torben Weis"
+
+#~ msgid "KFM author"
+#~ msgstr "KFM කේත රචක"
+
+#~ msgid "Joseph Wenninger"
+#~ msgstr "Joseph Wenninger"
+
+#~ msgid "Developer (navigation panel framework)"
+#~ msgstr "සංවර්‍ධක (යාන්ත්‍රණ පුවරු රාමුව)"
+
+#~ msgid "Stephan Binner"
+#~ msgstr "Stephan Binner"
+
+#~ msgid "Developer (misc stuff)"
+#~ msgstr "සංවර්‍ධක (විවිධ)"
+
+#~ msgid "Ivor Hewitt"
+#~ msgstr "Ivor Hewitt"
+
+#~ msgid "Developer (AdBlock filter)"
+#~ msgstr "සංවර්‍ධක (AdBlock පෙරහණ)"
+
+#~ msgid "Eduardo Robles Elvira"
+#~ msgstr "Eduardo Robles Elvira"
+
+#~ msgid ""
+#~ "Checking this box on at least two views sets those views as 'linked'. "
+#~ "Then, when you change directories in one view, the other views linked "
+#~ "with it will automatically update to show the current directory. This is "
+#~ "especially useful with different types of views, such as a directory tree "
+#~ "with an icon view or detailed view, and possibly a terminal emulator "
+#~ "window."
+#~ msgstr ""
+#~ "Checking this box on at least two views sets those views as 'linked'. "
+#~ "Then, when you change directories in one view, the other views linked "
+#~ "with it will automatically update to show the current directory. This is "
+#~ "especially useful with different types of views, such as a directory tree "
+#~ "with an icon view or detailed view, and possibly a terminal emulator "
+#~ "window."
+
+#~ msgid "Close View"
+#~ msgstr "දසුන වසන්න"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#~ msgid "Show %1"
+#~ msgstr "%1 පෙන්වන්න"
+
+#~ msgctxt "@title:window"
+#~ msgid "History"
+#~ msgstr "අතීතය"
+
+#~ msgctxt "@action:inmenu Parent of 'By Name' and 'By Date'"
+#~ msgid "Sort"
+#~ msgstr "පිළිවෙළ"
+
+#~ msgid ""
+#~ "<qt><center><b>%1</b></center><hr />Last visited: %2<br />First visited: "
+#~ "%3<br />Number of times visited: %4</qt>"
+#~ msgstr ""
+#~ "<qt><center><b>%1</b></center><hr />Last visited: %2<br />First visited: "
+#~ "%3<br />Number of times visited: %4</qt>"
+
+#~ msgid "Miscellaneous"
+#~ msgstr "විවිධ"
+
+#~ msgid "Open in New &Window"
+#~ msgstr "නව කවුළුවක විවෘත කරන්න (&W)"
+
+#~ msgid "Open in New Tab"
+#~ msgstr "නව ටැබයක විවෘත කරන්න"
+
+#, fuzzy
+#~| msgid "Copy Link Address"
+#~ msgid "&Copy Link Address"
+#~ msgstr "සබැඳි ලිපිනය පිටපත් කරන්න"
+
+#~ msgid "&Remove Entry"
+#~ msgstr "ඇතුළත් කිරීම ඉවත් කරන්න (&R)"
+
+#~ msgid "C&lear History"
+#~ msgstr "අතීතය මකන්න (&l)"
+
+#~ msgid "&Preferences..."
+#~ msgstr "අභිමත සැකසුම්... (&P)"
+
+#~ msgid "By &Name"
+#~ msgstr "නමින් (&N)"
+
+#~ msgid "By &Date"
+#~ msgstr "දිනයෙන් (&D)"
+
+#~ msgid "Search in history"
+#~ msgstr "අතීතය තුළ මකන්න"
+
+#~ msgid "Do you really want to clear the entire history?"
+#~ msgstr "Do you really want to clear the entire history?"
+
+#~ msgid "Clear History?"
+#~ msgstr "අතීතය මකනවා ද?"
+
+#, fuzzy
+#~| msgid "Start without a default window"
+#~ msgid "Start without a default window, when called without URLs"
+#~ msgstr "පෙරනිමි කවුලුවක් නොමැතිව විවෘත කරන්න"
+
+#~ msgid "Profile to open"
+#~ msgstr "විවෘත කළයුතු පැතිකඩ"
+
+#~ msgid "List available profiles"
+#~ msgstr "භාවිතයට ඇති පැතිකඩ ලැයිස්තුව"
+
+#~ msgid "List available sessions"
+#~ msgstr "භාවිතයට ඇති සැසි ලැයිස්තුව"
+
+#~ msgid "Session to open"
+#~ msgstr "විවෘත කළයුතු සැසිය"
+
+#~ msgid "Mimetype to use for this URL (e.g. text/html or inode/directory)"
+#~ msgstr "Mimetype to use for this URL (e.g. text/html or inode/directory)"
+
+#~ msgid ""
+#~ "For URLs that point to files, opens the directory and selects the file, "
+#~ "instead of opening the actual file"
+#~ msgstr ""
+#~ "For URLs that point to files, opens the directory and selects the file, "
+#~ "instead of opening the actual file"
+
+#~ msgid "Location to open"
+#~ msgstr "විවෘත කළයුතු පිහිටුම"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Loading..."
+#~ msgstr "පුරණය වෙමින්..."
+
+#~ msgid "Canceled."
+#~ msgstr "අහෝසි කළා."
+
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Reloading the page will discard these changes."
+#~ msgstr ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Reloading the page will discard these changes."
+
+#~ msgid "Discard Changes?"
+#~ msgstr "වෙනස්කම් ඉවත දමන්නද?"
+
+#~ msgid "&Discard Changes"
+#~ msgstr "වෙනස්කම් ඉවත දමන්න (&D)"
+
+#~ msgid "File Management"
+#~ msgstr "ගුනු කළමණාකරු"
+
+#~ msgid "Web Browsing"
+#~ msgstr "වෙබ් ගවේශනය"
+
+#~ msgid "Home Folder"
+#~ msgstr "නිවාස බහලුම"
+
+#~ msgid "Home"
+#~ msgstr "නිවාස පිටුව"
+
+#~ msgid "Navigate to your 'Home Folder'"
+#~ msgstr "ඔබේ 'නිවාස බහලුමට' ගමන් කරන්න"
+
+#~ msgid "Navigate to your local 'Home Folder'"
+#~ msgstr "ඔබේ ප්‍රාදේශිය 'නිවාස බහලුමට' ගමන් කරන්න"
+
+#~ msgid "Home Page"
+#~ msgstr "නිවාස පිටුව"
+
+#~ msgid "Navigate to your 'Home Page'"
+#~ msgstr "Navigate to your 'Home Page'"
+
+#~ msgid ""
+#~ "<html>Navigate to your 'Home Page'<br /><br />You can configure the "
+#~ "location where this button takes you under <b>Settings -> Configure "
+#~ "Konqueror -> General</b>.</html>"
+#~ msgstr ""
+#~ "<html>Navigate to your 'Home Page'<br /><br />You can configure the "
+#~ "location where this button takes you under <b>Settings -> Configure "
+#~ "Konqueror -> General</b>.</html>"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Detaching the tab will discard these changes."
+#~ msgstr ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Detaching the tab will discard these changes."
+
+#~ msgid ""
+#~ "This view contains changes that have not been submitted.\n"
+#~ "Closing the view will discard these changes."
+#~ msgstr ""
+#~ "This view contains changes that have not been submitted.\n"
+#~ "Closing the view will discard these changes."
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the tab will discard these changes."
+#~ msgstr ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the tab will discard these changes."
+
+#~ msgid "Do you really want to close all other tabs?"
+#~ msgstr "ඔබට අනෙකුත් සියලු ටැබ වැසීමට අවශ්‍ය ද?"
+
+#~ msgid "Close Other Tabs Confirmation"
+#~ msgstr "අනෙකුත් ටැබ වැසීම ස්ථිරයි"
+
+#~ msgid "Close &Other Tabs"
+#~ msgstr "අනෙකුත් ටැබ වසන්න (&O)"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing other tabs will discard these changes."
+#~ msgstr ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing other tabs will discard these changes."
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Reloading all tabs will discard these changes."
+#~ msgstr ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Reloading all tabs will discard these changes."
+
+#~ msgid "Enter Target"
+#~ msgstr "ඉලක්කය ඇතුළත් කරන්න"
+
+#~ msgid "<qt><b>%1</b> is not valid</qt>"
+#~ msgstr "<qt><b>%1</b> සාවද්‍ය වේ</qt>"
+
+#~ msgid "Copy selected files from %1 to:"
+#~ msgstr "තෝරාගත් ගොනුව %1 වෙතට පිටපත් කරමින්:"
+
+#~ msgid "Move selected files from %1 to:"
+#~ msgstr "තෝරාගත් ගොනුව %1 වෙතට ගෙනයමින්:"
+
+#~ msgctxt "This menu entry empties the closed items history"
+#~ msgid "Empty Closed Items History"
+#~ msgstr "වැසූ අයිතම අතීතය මකන්න"
+
+#~ msgid "Save As..."
+#~ msgstr "සුරකින අයුර..."
+
+#~ msgid "Manage..."
+#~ msgstr "කළමණාකරනය..."
+
+#~ msgid "New &Window"
+#~ msgstr "නව කවුළුව (&W)"
+
+#~ msgid "&Duplicate Window"
+#~ msgstr "ද්විතියික කවුළුව (&D)"
+
+#~ msgid "Send &Link Address..."
+#~ msgstr "සබැඳි ලිපිනය යවන්න... (&L)"
+
+#~ msgid "S&end File..."
+#~ msgstr "ගොනුව යවන්න... (&e)"
+
+#~ msgid "&Open Location"
+#~ msgstr "ස්ථානය විවෘත කරන්න (&O)"
+
+#~ msgid "&Open File..."
+#~ msgstr "ගොනුව විවෘතකරන්න... (&O)"
+
+#~ msgid "&Find File..."
+#~ msgstr "ගොනුව සොයන්න... (&F)"
+
+#~ msgid "&Use index.html"
+#~ msgstr "index.html භාවිත කරන්න (&U)"
+
+#~ msgid "Lock to Current Location"
+#~ msgstr "දැනට ඇති පිහිටුම අගුලු දමන්න"
+
+#~ msgctxt "This option links konqueror views"
+#~ msgid "Lin&k View"
+#~ msgstr "සබැඳි දසුන (&k)"
+
+#~ msgid "&Up"
+#~ msgstr "ඉහළ (&U)"
+
+#~ msgid "Closed Items"
+#~ msgstr "වැසූ අයිතම"
+
+#~ msgid "Sessions"
+#~ msgstr "සැසි"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Most Often Visited"
+#~ msgstr "නිතරම පිවිසි"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Recently Visited"
+#~ msgstr "මැතකදි පිවිසි"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History"
+#~ msgstr "අතීතය පෙන්වන්න"
+
+#, fuzzy
+#~| msgid "&Save View Profile..."
+#~ msgid "&Save View Profile As..."
+#~ msgstr "දසුන් පැතිකඩ සුරකින්න... (&S)"
+
+#~ msgid "Configure Extensions..."
+#~ msgstr "දිගු සැකසීම..."
+
+#~ msgid "Configure Spell Checking..."
+#~ msgstr "අක්‍ෂර වින්‍යාස පරික්‍ෂාව සකසන්න..."
+
+#~ msgid "Split View &Left/Right"
+#~ msgstr "දසුන බෙදීම වම/දකුණ (&L)"
+
+#~ msgid "Split View &Top/Bottom"
+#~ msgstr "දසුන බෙදීම (ඉහළ/පහළ) (&T)"
+
+#~ msgid "&New Tab"
+#~ msgstr "නව ටැබය (&N)"
+
+#~ msgid "&Duplicate Current Tab"
+#~ msgstr "දැනට ඇති ටැබයට අමතර ටැබයක් සාදන්න (&D)"
+
+#~ msgid "Detach Current Tab"
+#~ msgstr "දැනට ඇති ටැබය වෙන් කරන්න"
+
+#~ msgid "&Close Active View"
+#~ msgstr "සක්‍රීය දසුන වසන්න (&C)"
+
+#~ msgid "Close Current Tab"
+#~ msgstr "දැනටඇති ටැබය වසන්න"
+
+#~ msgid "Activate Next Tab"
+#~ msgstr "මීළඟ ටැබය සක්‍රීය කරන්න"
+
+#~ msgid "Activate Previous Tab"
+#~ msgstr "පෙර ටැබය සක්‍රීය කරන්න"
+
+#~ msgid "Activate Tab %1"
+#~ msgstr "සක්‍රීය ටැබය %1"
+
+#~ msgid "Move Tab Left"
+#~ msgstr "ටැබය වමට ගෙන යන්න"
+
+#~ msgid "Move Tab Right"
+#~ msgstr "ටැබය දකුණට ගෙන යන්න"
+
+#~ msgid "Dump Debug Info"
+#~ msgstr "Dump Debug Info"
+
+#~ msgid "C&onfigure View Profiles..."
+#~ msgstr "දසුන් පැතිකඩ සකසන්න... (&o)"
+
+#~ msgid "Load &View Profile"
+#~ msgstr "දසුන් පැතිකඩ පූරණය (&V)"
+
+#~ msgid "&Reload"
+#~ msgstr "යළි පූරණය (&R)"
+
+#~ msgid "&Reload All Tabs"
+#~ msgstr "සියලු ටැබ යළිපූරණය (&R)"
+
+#~ msgid "&Force Reload"
+#~ msgstr "බලපැමෙන් යළි පූරණය (&F)"
+
+#~ msgid "&Stop"
+#~ msgstr "නවත්නන (&S)"
+
+#~ msgid "L&ocation: "
+#~ msgstr "පිහිටුම (&o): "
+
+#~ msgid "Location Bar"
+#~ msgstr "පිහිටුම තීරුව"
+
+#~ msgid ""
+#~ "<html>Location Bar<br /><br />Enter a web address or search term.</html>"
+#~ msgstr ""
+#~ "<html>Location Bar<br /><br />Enter a web address or search term.</html>"
+
+#~ msgid "Clear Location Bar"
+#~ msgstr "පිහිටුම තීරුව මකන්න"
+
+#~ msgid ""
+#~ "<html>Clear Location bar<br /><br />Clears the contents of the location "
+#~ "bar.</html>"
+#~ msgstr ""
+#~ "<html>Clear Location bar<br /><br />Clears the contents of the location "
+#~ "bar.</html>"
+
+#~ msgid "&Bookmarks"
+#~ msgstr "පිටු සලකුණු (&B)"
+
+#~ msgid "Kon&queror Introduction"
+#~ msgstr "Kon&queror හදුන්වාදීම"
+
+#~ msgid "Go"
+#~ msgstr "යන්න"
+
+#~ msgid ""
+#~ "<html>Go<br /><br />Goes to the page that has been entered into the "
+#~ "location bar.</html>"
+#~ msgstr ""
+#~ "<html>Go<br /><br />Goes to the page that has been entered into the "
+#~ "location bar.</html>"
+
+#~ msgid ""
+#~ "<html>Enter the parent folder<br /><br />For instance, if the current "
+#~ "location is file:/home/%1 clicking this button will take you to file:/"
+#~ "home.</html>"
+#~ msgstr ""
+#~ "<html>Enter the parent folder<br /><br />For instance, if the current "
+#~ "location is file:/home/%1 clicking this button will take you to file:/"
+#~ "home.</html>"
+
+#~ msgid "Enter the parent folder"
+#~ msgstr "ඔව් බහලුම ඇතුළත් කරන්න"
+
+#~ msgid "Move backwards one step in the browsing history"
+#~ msgstr "Move backwards one step in the browsing history"
+
+#~ msgid "Move forward one step in the browsing history"
+#~ msgstr "Move forward one step in the browsing history"
+
+#~ msgid "Move backwards one step in the closed tabs history"
+#~ msgstr "Move backwards one step in the closed tabs history"
+
+#~ msgid ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.</html>"
+#~ msgstr ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.</html>"
+
+#~ msgid "Reload the currently displayed document"
+#~ msgstr "Reload the currently displayed document"
+
+#~ msgid ""
+#~ "<html>Reload all currently displayed documents in tabs<br /><br />This "
+#~ "may, for example, be needed to refresh web pages that have been modified "
+#~ "since they were loaded, in order to make the changes visible.</html>"
+#~ msgstr ""
+#~ "<html>Reload all currently displayed documents in tabs<br /><br />This "
+#~ "may, for example, be needed to refresh web pages that have been modified "
+#~ "since they were loaded, in order to make the changes visible.</html>"
+
+#~ msgid "Reload all currently displayed document in tabs"
+#~ msgstr "Reload all currently displayed document in tabs"
+
+#~ msgid ""
+#~ "<html>Stop loading the document<br /><br />All network transfers will be "
+#~ "stopped and Konqueror will display the content that has been received so "
+#~ "far.</html>"
+#~ msgstr ""
+#~ "<html>Stop loading the document<br /><br />All network transfers will be "
+#~ "stopped and Konqueror will display the content that has been received so "
+#~ "far.</html>"
+
+#~ msgid ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.  Any images on "
+#~ "the page are downloaded again, even if cached copies exist.</html>"
+#~ msgstr ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.  Any images on "
+#~ "the page are downloaded again, even if cached copies exist.</html>"
+
+#~ msgid ""
+#~ "Force a reload of the currently displayed document and any contained "
+#~ "images"
+#~ msgstr ""
+#~ "Force a reload of the currently displayed document and any contained "
+#~ "images"
+
+#~ msgid "Stop loading the document"
+#~ msgstr "ලේඛනය පූරණය නවතන්න"
+
+#~ msgid ""
+#~ "<html>Cut the currently selected text or item(s) and move it to the "
+#~ "system clipboard<br /><br />This makes it available to the <b>Paste</b> "
+#~ "command in Konqueror and other KDE applications.</html>"
+#~ msgstr ""
+#~ "<html>Cut the currently selected text or item(s) and move it to the "
+#~ "system clipboard<br /><br />This makes it available to the <b>Paste</b> "
+#~ "command in Konqueror and other KDE applications.</html>"
+
+#~ msgid "Move the selected text or item(s) to the clipboard"
+#~ msgstr "Move the selected text or item(s) to the clipboard"
+
+#~ msgid ""
+#~ "<html>Copy the currently selected text or item(s) to the system "
+#~ "clipboard<br /><br />This makes it available to the <b>Paste</b> command "
+#~ "in Konqueror and other KDE applications.</html>"
+#~ msgstr ""
+#~ "<html>Copy the currently selected text or item(s) to the system "
+#~ "clipboard<br /><br />This makes it available to the <b>Paste</b> command "
+#~ "in Konqueror and other KDE applications.</html>"
+
+#~ msgid "Copy the selected text or item(s) to the clipboard"
+#~ msgstr "Copy the selected text or item(s) to the clipboard"
+
+#~ msgid ""
+#~ "<html>Paste the previously cut or copied clipboard contents<br /><br /"
+#~ ">This also works for text copied or cut from other KDE applications.</"
+#~ "html>"
+#~ msgstr ""
+#~ "<html>Paste the previously cut or copied clipboard contents<br /><br /"
+#~ ">This also works for text copied or cut from other KDE applications.</"
+#~ "html>"
+
+#~ msgid "Paste the clipboard contents"
+#~ msgstr "Paste the clipboard contents"
+
+#~ msgid ""
+#~ "<html>Print the currently displayed document<br /><br />You will be "
+#~ "presented with a dialog where you can set various options, such as the "
+#~ "number of copies to print and which printer to use.<br /><br />This "
+#~ "dialog also provides access to special KDE printing services such as "
+#~ "creating a PDF file from the current document.</html>"
+#~ msgstr ""
+#~ "<html>Print the currently displayed document<br /><br />You will be "
+#~ "presented with a dialog where you can set various options, such as the "
+#~ "number of copies to print and which printer to use.<br /><br />This "
+#~ "dialog also provides access to special KDE printing services such as "
+#~ "creating a PDF file from the current document.</html>"
+
+#~ msgid "Print the current document"
+#~ msgstr "දැනට ඇති ලේඛනය මුද්‍රණය කරන්න"
+
+#~ msgid "If present, open index.html when entering a folder."
+#~ msgstr "If present, open index.html when entering a folder."
+
+#~ msgid ""
+#~ "A locked view cannot change folders. Use in combination with 'link view' "
+#~ "to explore many files from one folder"
+#~ msgstr ""
+#~ "A locked view cannot change folders. Use in combination with 'link view' "
+#~ "to explore many files from one folder"
+
+#~ msgid ""
+#~ "Sets the view as 'linked'. A linked view follows folder changes made in "
+#~ "other linked views."
+#~ msgstr ""
+#~ "Sets the view as 'linked'. A linked view follows folder changes made in "
+#~ "other linked views."
+
+#~ msgid "Copy &Files..."
+#~ msgstr "ගොනු පිටපත් කරන්න... (&F)"
+
+#~ msgid "M&ove Files..."
+#~ msgstr "ගොනු ගෙනයන්න (&o)"
+
+#~ msgid ""
+#~ "You have requested to open more than 20 bookmarks in tabs. This might "
+#~ "take a while. Continue?"
+#~ msgstr ""
+#~ "You have requested to open more than 20 bookmarks in tabs. This might "
+#~ "take a while. Continue?"
+
+#~ msgid "Open bookmarks folder in new tabs"
+#~ msgstr "Open bookmarks folder in new tabs"
+
+#~ msgid "Open in T&his Window"
+#~ msgstr "මෙම කවුළුව විවෘත කරන්න (&h)"
+
+#~ msgid "Open the document in current window"
+#~ msgstr "Open the document in current window"
+
+#~ msgid "Open the document in a new window"
+#~ msgstr "ලේඛනය නව කවුළුවක විවෘත කරන්න"
+
+#~ msgid "Open in &New Tab"
+#~ msgstr "නව ටැබයක විවෘත කරන්න (&N)"
+
+#~ msgid "Open the document in a new tab"
+#~ msgstr "ලේඛනය නව ටැබයක විවෘත කරන්න"
+
+#~ msgid "&Open With"
+#~ msgstr "සමඟ විවෘත කරන්න (&O)"
+
+#~ msgid "Open with %1"
+#~ msgstr "%1 සමඟ විවෘත කරන්න"
+
+#~ msgctxt "@action:inmenu View"
+#~ msgid "&View Mode"
+#~ msgstr "දිස්වන ආකාරය (&V)"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window, are you sure you want to quit?"
+#~ msgstr ""
+#~ "You have multiple tabs open in this window, are you sure you want to quit?"
+
+#~ msgid "Confirmation"
+#~ msgstr "ස්ථිර කිරීම"
+
+#~ msgid "C&lose Current Tab"
+#~ msgstr "දැනට ඇති ටැබය වසන්න (&l)"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the window will discard these changes."
+#~ msgstr ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the window will discard these changes."
+
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Closing the window will discard these changes."
+#~ msgstr ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Closing the window will discard these changes."
+
+#~ msgid ""
+#~ "Your sidebar is not functional or unavailable. A new entry cannot be "
+#~ "added."
+#~ msgstr ""
+#~ "Your sidebar is not functional or unavailable. A new entry cannot be "
+#~ "added."
+
+#~ msgid "Web Sidebar"
+#~ msgstr "වෙබ් පැති පුවරුව"
+
+#~ msgid "Add new web extension \"%1\" to your sidebar?"
+#~ msgstr "Add new web extension \"%1\" to your sidebar?"
+
+#~ msgid "Add"
+#~ msgstr "එක් කරන්න"
+
+#~ msgid "Do Not Add"
+#~ msgstr "එක් නොකරන්න"
+
+#~ msgid ""
+#~ "There appears to be a configuration error. You have associated Konqueror "
+#~ "with %1, but it cannot handle this file type."
+#~ msgstr ""
+#~ "There appears to be a configuration error. You have associated Konqueror "
+#~ "with %1, but it cannot handle this file type."
+
+#~ msgid "Profile Management"
+#~ msgstr "පැතිකඩ කළමණාකරු"
+
+#~ msgid "&Rename Profile"
+#~ msgstr "පැතිකඩ නාමය වෙනස් කිරීම (&R)"
+
+#~ msgid "&Delete Profile"
+#~ msgstr "පැතිකඩ මකන්න (&D)"
+
+#~ msgid "Manage Sessions"
+#~ msgstr "සැසි කළමණාකරනය"
+
+#~ msgid "&Open"
+#~ msgstr "විවෘත කරන්න (&O)"
+
+#~ msgid "Rename Session"
+#~ msgstr "සැසියේ නම වෙනස් කරන්න"
+
+#~ msgid "Save Session"
+#~ msgstr "සැසිය සුරකීම"
+
+#~ msgid ""
+#~ "A session with the name '%1' already exists, do you want to overwrite it?"
+#~ msgstr ""
+#~ "A session with the name '%1' already exists, do you want to overwrite it?"
+
+#~ msgid "Session exists. Overwrite?"
+#~ msgstr "සැසිය ඇත. එය මත ලියන්න ද?"
+
+#~ msgid ""
+#~ "Konqueror did not close correctly. Would you like to restore the previous "
+#~ "session?"
+#~ msgstr "කොන්කරර් නිසියාකාරව නොවැසුණි. ඔබ පෙර සැසිය යළි පිහිටුවීමට කැමති ද?"
+
+#~ msgid "Restore Session?"
+#~ msgstr "සැසිය යළි පිහිටුවන්න ද?"
+
+#~ msgid "Restore Session"
+#~ msgstr "සැසිය යළි පිහිටුවන්න"
+
+#~ msgid "Do Not Restore"
+#~ msgstr "යළි පිහිටුවන්න එපා"
+
+#~ msgid "Ask Me Later"
+#~ msgstr "මගෙන් පසුව විමසන්න"
+
+#~ msgid "Open a new tab"
+#~ msgstr "නව ටැගයක් අරින්න"
+
+#~ msgid "Close the current tab"
+#~ msgstr "දැනට ඇති ටැබය වසන්න"
+
+#~ msgid "&Duplicate Tab"
+#~ msgstr "අමතර ටැබය (&D)"
+
+#~ msgid "&Reload Tab"
+#~ msgstr "ටැබය යළිපූරණය (&R)"
+
+#~ msgid "Other Tabs"
+#~ msgstr "වෙනත් ටැබ්"
+
+#~ msgid "D&etach Tab"
+#~ msgstr "වෙන් කරන්න (&e)"
+
+#~ msgid "&Close Tab"
+#~ msgstr "ටැබය වසන්න (&C)"
+
+#~ msgid ""
+#~ "The page you are trying to view is the result of posted form data. If you "
+#~ "resend the data, any action the form carried out (such as search or "
+#~ "online purchase) will be repeated. "
+#~ msgstr ""
+#~ "The page you are trying to view is the result of posted form data. If you "
+#~ "resend the data, any action the form carried out (such as search or "
+#~ "online purchase) will be repeated. "
+
+#~ msgid "Warning"
+#~ msgstr "අවවාදයයි"
+
+#~ msgid "Resend"
+#~ msgstr "යළි යවන්න"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window.\n"
+#~ "Loading a view profile will close them."
+#~ msgstr ""
+#~ "You have multiple tabs open in this window.\n"
+#~ "Loading a view profile will close them."
+
+#~ msgid "Load View Profile"
+#~ msgstr "දසුන් පැතිකඩ පූරණය"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Loading a profile will discard these changes."
+#~ msgstr ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Loading a profile will discard these changes."
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "History Sidebar Module"
+#~ msgstr "අතීත පැතිතීරු මොඩියුලය"
+
+#~ msgctxt "@title:tab"
+#~ msgid "History"
+#~ msgstr "අතීතය"
+
+#~ msgid " day"
+#~ msgid_plural " days"
+#~ msgstr[0] " දිනය"
+#~ msgstr[1] ""
+
+#~ msgid "Minute"
+#~ msgid_plural "Minutes"
+#~ msgstr[0] "මිනිත්තුව"
+#~ msgstr[1] ""
+
+#~ msgid "Day"
+#~ msgid_plural "Days"
+#~ msgstr[0] "දිනය"
+#~ msgstr[1] ""
+
+#~ msgid "<h1>History Sidebar</h1> You can configure the history sidebar here."
+#~ msgstr ""
+#~ "<h1>History Sidebar</h1> You can configure the history sidebar here."
+
+#, fuzzy
+#~| msgctxt "@action:inmenu Add"
+#~| msgid "Web Sidebar Module"
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Places Sidebar Module"
+#~ msgstr "වෙබ් පැති පුවරු මොඩියුලය"
+
+#~ msgid "Extended Sidebar"
+#~ msgstr "දීර්ඝ පැති පුවරුව"
+
+#~ msgid "Rollback to System Default"
+#~ msgstr "පද්ධති පෙරනිමියට පිහිටු වන්න"
+
+#~ msgid "Configure Sidebar"
+#~ msgstr "පැතිතීරුව සකසන්න"
+
+#~ msgid "Add New"
+#~ msgstr "නව එක් කිරීම"
+
+#~ msgid "Multiple Views"
+#~ msgstr "බහු දසුන්"
+
+#~ msgid "Show Tabs Left"
+#~ msgstr "ටැබ් වම්පසින් පෙන්වන්න"
+
+#~ msgid "Show Configuration Button"
+#~ msgstr "සැකසුම් බොත්තම පෙන්වන්න"
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgid "Close Sidebar"
+#~ msgstr "වෙබ් පැති පුවරුව"
+
+#~ msgid ""
+#~ "<qt>This removes all your entries from the sidebar and adds the system "
+#~ "default ones.<br /><b>This procedure is irreversible</b><br />Do you want "
+#~ "to proceed?</qt>"
+#~ msgstr ""
+#~ "<qt>This removes all your entries from the sidebar and adds the system "
+#~ "default ones.<br /><b>This procedure is irreversible</b><br />Do you want "
+#~ "to proceed?</qt>"
+
+#~ msgid "Show Tabs Right"
+#~ msgstr "ටැබ් දකුණුපසින් පෙන්වන්න"
+
+#~ msgid "Set Name"
+#~ msgstr "නම සකසන්න"
+
+#~ msgid "Enter the name:"
+#~ msgstr "නම ඇතුළත් කරන්න:"
+
+#~ msgid "Enter a URL:"
+#~ msgstr "URL එක් කරන්න:"
+
+#~ msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
+#~ msgstr "<qt>ඔබට <b>%1</b> ටැබය ඉවත් කිරීමට අවශ්‍යමද?</qt>"
+
+#, fuzzy
+#~| msgid ""
+#~| "You have hidden the navigation panel configuration button. To make it "
+#~| "visible again, click the right mouse button on any of the navigation "
+#~| "panel buttons and select \"Show Configuration Button\"."
+#~ msgid ""
+#~ "You have hidden the sidebar configuration button. To make it visible "
+#~ "again, click the right mouse button on any of the sidebar buttons and "
+#~ "select \"Show Configuration Button\"."
+#~ msgstr ""
+#~ "You have hidden the navigation panel configuration button. To make it "
+#~ "visible again, click the right mouse button on any of the navigation "
+#~ "panel buttons and select \"Show Configuration Button\"."
+
+#~ msgid "Set Name..."
+#~ msgstr "නම සකසන්න..."
+
+#~ msgid "Set URL..."
+#~ msgstr "URL සකසන්න..."
+
+#~ msgid "Set Icon..."
+#~ msgstr "අයිකනය සකසන්න..."
+
+#~ msgid "Remove"
+#~ msgstr "ඉවත් කරන්න"
+
+#, fuzzy
+#~| msgctxt "@action:inmenu Add"
+#~| msgid "Web Sidebar Module"
+#~ msgid "Web module"
+#~ msgstr "වෙබ් පැති පුවරු මොඩියුලය"
+
+#~ msgid "&Create New Folder"
+#~ msgstr "නව බහලුමක් නිර්මාණය (&C)"
+
+#~ msgid "Delete Folder"
+#~ msgstr "බහලුම මකන්න"
+
+#~ msgid "Delete Bookmark"
+#~ msgstr "පිටු සලකුණු මකන්න"
+
+#~ msgid "Properties"
+#~ msgstr "වත්කම්"
+
+#~ msgid "Open in New Window"
+#~ msgstr "නව කවුළුවක විවෘත කරන්න"
+
+#~ msgid "Open Folder in Tabs"
+#~ msgstr "බහලුම ටැබ් තුළ විවෘත කරන්න"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "සබැඳි ලිපිනය පිටපත් කරන්න"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark folder\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "Are you sure you wish to remove the bookmark folder\n"
+#~ "\"%1\"?"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "Are you sure you wish to remove the bookmark\n"
+#~ "\"%1\"?"
+
+#~ msgid "Bookmark Folder Deletion"
+#~ msgstr "Bookmark Folder Deletion"
+
+#~ msgid "Bookmark Deletion"
+#~ msgstr "පිටු සලකුණු මකන්න"
+
+#~ msgid "Bookmark Properties"
+#~ msgstr "පිටු සලකුණු වත්කම්"
+
+#~ msgid "&Update"
+#~ msgstr "යාවත් කරන්න (&U)"
+
+#~ msgid "Name:"
+#~ msgstr "නම:"
+
+#~ msgid "Location:"
+#~ msgstr "පිහිටුම"
+
+#~ msgid "Add Bookmark"
+#~ msgstr "සලකුණු කරන්න"
+
+#~ msgid "Cannot find parent item %1 in the tree. Internal error."
+#~ msgstr "Cannot find parent item %1 in the tree. Internal error."
+
+#~ msgid "&Create New Folder..."
+#~ msgstr "නව බහලුමක් නිර්මාණය (&C)"
+
+#~ msgid "Move to Trash"
+#~ msgstr "මකන්න"
+
+#~ msgid "Rename"
+#~ msgstr "නම වෙනස් කරන්න"
+
+#~ msgid "Delete Link"
+#~ msgstr "සබැඳිය මකන්න"
+
+#~ msgid "New Folder"
+#~ msgstr "නව බහලුම"
+
+#~ msgid "Create New Folder"
+#~ msgstr "නව බහලුමක් නිර්මාණය කරන්න"
+
+#~ msgid "Enter folder name:"
+#~ msgstr "බහලුම් නාමය ඇතුළත් කරන්න:"
+
+#~ msgctxt "@label"
+#~ msgid "Name:"
+#~ msgstr "නම:"
+
+#~ msgctxt "@label"
+#~ msgid "Path or URL:"
+#~ msgstr "පෙත හෝ URL:"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add folder sidebar module"
+#~ msgstr "බහලුම් පැති පුවරු මොඩියුලය එක් කරන්න"
+
+#~ msgid "&Open Link"
+#~ msgstr "සබැඳිය විවෘත කරන්න (&O)"
+
+#~ msgid "Set &Automatic Reload"
+#~ msgstr "ස්වයංක්‍රීය පූරණය සකසන්න (&A)"
+
+#~ msgid "Set Refresh Timeout (0 disables)"
+#~ msgstr "Set Refresh Timeout (0 disables)"
+
+#~ msgid " min"
+#~ msgstr " මිනි"
+
+#~ msgid " sec"
+#~ msgstr " තත්"
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Web Sidebar Module"
+#~ msgstr "වෙබ් පැති පුවරු මොඩියුලය"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add web sidebar module"
+#~ msgstr "වෙබ් පැති පුවරුව එක් කරන්න"
+
+#~ msgid ""
+#~ "Konqueror is a web browser, file manager and universal document viewer."
+#~ msgstr ""
+#~ "Konqueror is a web browser, file manager and universal document viewer."
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "Starting Points"
+#~ msgstr "ඇරඹම් ස්තානය"
+
+#~ msgid "Introduction"
+#~ msgstr "හදුන්වාදීම"
+
+#~ msgid "Tips"
+#~ msgstr "ඉඟි"
+
+#~ msgid "Specifications"
+#~ msgstr "පිරිවිතර"
+
+#~ msgid "Your personal files"
+#~ msgstr "ඔබේ පුද්ගලික ගොනු"
+
+#~ msgid "Trash"
+#~ msgstr "ඉවතලන බහලුම"
+
+#~ msgid "Network Folders"
+#~ msgstr "ජාල බහලුම්"
+
+#~ msgid "Shared files and folders"
+#~ msgstr "හවුල් ගොනු සහ බහලුම්"
+
+#, fuzzy
+#~| msgid "&Bookmarks"
+#~ msgid "Bookmarks"
+#~ msgstr "පිටු සලකුණු (&B)"
+
+#~ msgid "Quick access to your bookmarks"
+#~ msgstr "Quick access to your bookmarks"
+
+#~ msgid "Next: An Introduction to Konqueror"
+#~ msgstr "Next: An Introduction to Konqueror"
+
+#~ msgid "Search the Web"
+#~ msgstr "අන්තර්ජාලයේ සොයන්න"
+
+#~ msgid ""
+#~ "Konqueror makes working with and managing your files easy. You can browse "
+#~ "both local and networked folders while enjoying advanced features such as "
+#~ "the powerful sidebar and file previews."
+#~ msgstr ""
+#~ "Konqueror makes working with and managing your files easy. You can browse "
+#~ "both local and networked folders while enjoying advanced features such as "
+#~ "the powerful sidebar and file previews."
+
+#~ msgid ""
+#~ "Konqueror is also a full featured and easy to use web browser which you "
+#~ "can use to explore the Internet. Enter the address (e.g. <a href=\"http://"
+#~ "www.kde.org\">http://www.kde.org</a>) of a web page you would like to "
+#~ "visit in the location bar and press Enter, or choose an entry from the "
+#~ "Bookmarks menu."
+#~ msgstr ""
+#~ "Konqueror is also a full featured and easy to use web browser which you "
+#~ "can use to explore the Internet. Enter the address (e.g. <a href=\"http://"
+#~ "www.kde.org\">http://www.kde.org</a>) of a web page you would like to "
+#~ "visit in the location bar and press Enter, or choose an entry from the "
+#~ "Bookmarks menu."
+
+#~ msgid ""
+#~ "To return to the previous location, press the back button <img width='16' "
+#~ "height='16' src=\"%1\"></img> in the toolbar. "
+#~ msgstr ""
+#~ "To return to the previous location, press the back button <img width='16' "
+#~ "height='16' src=\"%1\"></img> in the toolbar. "
+
+#~ msgid ""
+#~ "To quickly go to your Home folder press the  home button <img width='16' "
+#~ "height='16' src=\"%1\"></img>."
+#~ msgstr ""
+#~ "To quickly go to your Home folder press the  home button <img width='16' "
+#~ "height='16' src=\"%1\"></img>."
+
+#~ msgid ""
+#~ "For more detailed documentation on Konqueror click <a href=\"%1\">here</"
+#~ "a>."
+#~ msgstr ""
+#~ "For more detailed documentation on Konqueror click <a href=\"%1\">here</"
+#~ "a>."
+
+#, fuzzy
+#~| msgid ""
+#~| "<em>Tuning Tip:</em> If you want the Konqueror web browser to start "
+#~| "faster, you can turn off this information screen by clicking <a href="
+#~| "\"%1\">here</a>. You can re-enable it by choosing the Help -> Konqueror "
+#~| "Introduction menu option, and then pressing Settings -> Save View "
+#~| "Profile \"Web Browsing\"."
+#~ msgid ""
+#~ "<em>Tuning Tip:</em> If you want the Konqueror web browser to start "
+#~ "faster, you can turn off this information screen by clicking <a href="
+#~ "\"%1\">here</a>. You can re-enable it by choosing the Help -> Konqueror "
+#~ "Introduction menu option, and then pressing Settings -> Save View Profile "
+#~ "As... -> \"Web Browsing\"."
+#~ msgstr ""
+#~ "<em>Tuning Tip:</em> If you want the Konqueror web browser to start "
+#~ "faster, you can turn off this information screen by clicking <a href="
+#~ "\"%1\">here</a>. You can re-enable it by choosing the Help -> Konqueror "
+#~ "Introduction menu option, and then pressing Settings -> Save View Profile "
+#~ "\"Web Browsing\"."
+
+#~ msgid "Next: Tips &amp; Tricks"
+#~ msgstr "මීළඟNext: ක්‍රම සහ විදි"
+
+#, fuzzy
+#~| msgid ""
+#~| "Konqueror is designed to embrace and support Internet standards. The aim "
+#~| "is to fully implement the officially sanctioned standards from "
+#~| "organizations such as the W3 and OASIS, while also adding extra support "
+#~| "for other common usability features that arise as de facto standards "
+#~| "across the Internet. Along with this support, for such functions as "
+#~| "favicons, Internet Keywords, and <A HREF=\"%1\">XBEL bookmarks</A>, "
+#~| "Konqueror also implements:"
+#~ msgid ""
+#~ "Konqueror is designed to embrace and support Internet standards. The aim "
+#~ "is to fully implement the officially sanctioned standards from "
+#~ "organizations such as the W3 and OASIS, while also adding extra support "
+#~ "for other common usability features that arise as de facto standards "
+#~ "across the Internet. Along with this support, for such functions as "
+#~ "favicons, Web Shortcuts, and <A HREF=\"%1\">XBEL bookmarks</A>, Konqueror "
+#~ "also implements:"
+#~ msgstr ""
+#~ "Konqueror is designed to embrace and support Internet standards. The aim "
+#~ "is to fully implement the officially sanctioned standards from "
+#~ "organizations such as the W3 and OASIS, while also adding extra support "
+#~ "for other common usability features that arise as de facto standards "
+#~ "across the Internet. Along with this support, for such functions as "
+#~ "favicons, Internet Keywords, and <A HREF=\"%1\">XBEL bookmarks</A>, "
+#~ "Konqueror also implements:"
+
+#~ msgid "Supported standards"
+#~ msgstr "සහාය දක්වන සම්මත"
+
+#~ msgid "Additional requirements*"
+#~ msgstr "අමතර අවශ්‍යතා*"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+
+#~ msgid "built-in"
+#~ msgstr "එකටම සෑදූ"
+
+#~ msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
+#~ msgstr "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
+
+#~ msgid ""
+#~ "JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
+#~ msgstr ""
+#~ "JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
+
+#~ msgid ""
+#~ "JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\"
+#~ "\">here</A>."
+#~ msgstr ""
+#~ "JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\"
+#~ "\">here</A>."
+
+#~ msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
+#~ msgstr "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
+
+#, fuzzy
+#~| msgid ""
+#~| "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">Blackdown</A>, <A HREF="
+#~| "\"%2\">IBM</A> or <A HREF=\"%3\">Sun</A>)"
+#~ msgid ""
+#~ "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">IBM</A> or <A HREF="
+#~ "\"%2\">Sun/Oracle</A>)"
+#~ msgstr ""
+#~ "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">Blackdown</A>, <A HREF="
+#~ "\"%2\">IBM</A> or <A HREF=\"%3\">Sun</A>)"
+
+#~ msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
+#~ msgstr "Enable Java (globally) <A HREF=\"%1\">here</A>."
+
+#~ msgid ""
+#~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">plugins</A> (for "
+#~ "viewing <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
+#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Video, etc.)"
+#~ msgstr ""
+#~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">plugins</A> (for "
+#~ "viewing <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
+#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Video, etc.)"
+
+#~ msgid "Secure Sockets Layer"
+#~ msgstr "Secure Sockets Layer"
+
+#~ msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
+#~ msgstr "(TLS/SSL v2/3) for secure communications up to 168bit"
+
+#~ msgid "OpenSSL"
+#~ msgstr "OpenSSL"
+
+#~ msgid "Bidirectional 16bit unicode support"
+#~ msgstr "Bidirectional 16bit unicode support"
+
+#~ msgid "AutoCompletion for forms"
+#~ msgstr "පෝරම සඳහා ස්වයංක්‍රීය නිමාව"
+
+#~ msgctxt "Title of an html 'group box' explaining konqueror features"
+#~ msgid "General"
+#~ msgstr "සාමාන්‍ය"
+
+#~ msgid "Feature"
+#~ msgstr "ගුණාංග"
+
+#~ msgid "Details"
+#~ msgstr "විස්තර"
+
+#~ msgid "Image formats"
+#~ msgstr "පිංතූර සංයුති"
+
+#, fuzzy
+#~| msgid "PNG<br />MNG<br />JPG<br />GIF"
+#~ msgid "PNG<br />JPG<br />GIF"
+#~ msgstr "PNG<br />MNG<br />JPG<br />GIF"
+
+#~ msgid "Transfer protocols"
+#~ msgstr "හුවමාරු ප්‍රොටොකෝලය"
+
+#~ msgid "HTTP 1.1 (including gzip/bzip2 compression)"
+#~ msgstr "HTTP 1.1 (including gzip/bzip2 compression)"
+
+#~ msgid "FTP"
+#~ msgstr "FTP"
+
+#, fuzzy
+#~| msgid "and <A HREF=\"%1\">many more...</A>"
+#~ msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpcenter)...</A>"
+#~ msgstr "සහ <A HREF=\"%1\">තවත් බොහෝ...</A>"
+
+#~ msgctxt "A feature of Konqueror"
+#~ msgid "URL-Completion"
+#~ msgstr "URL-Completion"
+
+#~ msgid "Manual"
+#~ msgstr "ක්‍රමික"
+
+#~ msgid "Popup"
+#~ msgstr "පොප්-අප්"
+
+#~ msgid "(Short-) Automatic"
+#~ msgstr "(Short-) ස්වයංක්‍රීය"
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "<a href=\"%1\">Return to Starting Points</a>"
+#~ msgstr "<a href=\"%1\">Return to Starting Points</a>"
+
+#~ msgid "Tips &amp; Tricks"
+#~ msgstr "ක්‍රම සහ විදි"
+
+#, fuzzy
+#~| msgid ""
+#~| "Use Internet-Keywords and Web-Shortcuts: by typing \"gg: KDE\" one can "
+#~| "search the Internet, using Google, for the search phrase \"KDE\". There "
+#~| "are a lot of Web-Shortcuts predefined to make searching for software or "
+#~| "looking up certain words in an encyclopedia a breeze. You can even <a "
+#~| "href=\"%1\">create your own</a> Web-Shortcuts."
+#~ msgid ""
+#~ "Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, "
+#~ "using Google, for the search phrase \"KDE\". There are a lot of Web-"
+#~ "Shortcuts predefined to make searching for software or looking up certain "
+#~ "words in an encyclopedia a breeze. You can even <a href=\"%1\">create "
+#~ "your own</a> Web-Shortcuts."
+#~ msgstr ""
+#~ "Use Internet-Keywords and Web-Shortcuts: by typing \"gg: KDE\" one can "
+#~ "search the Internet, using Google, for the search phrase \"KDE\". There "
+#~ "are a lot of Web-Shortcuts predefined to make searching for software or "
+#~ "looking up certain words in an encyclopedia a breeze. You can even <a "
+#~ "href=\"%1\">create your own</a> Web-Shortcuts."
+
+#, fuzzy
+#~| msgid ""
+#~| "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> "
+#~| "in the toolbar to increase the font size on your web page."
+#~ msgid ""
+#~ "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
+#~ "the HTML toolbar to increase the font size on your web page."
+#~ msgstr ""
+#~ "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
+#~ "the toolbar to increase the font size on your web page."
+
+#~ msgid ""
+#~ "When you want to paste a new address into the Location toolbar you might "
+#~ "want to clear the current entry by pressing the black arrow with the "
+#~ "white cross <img width='16' height='16' src=\"%1\"></img> in the toolbar."
+#~ msgstr ""
+#~ "When you want to paste a new address into the Location toolbar you might "
+#~ "want to clear the current entry by pressing the black arrow with the "
+#~ "white cross <img width='16' height='16' src=\"%1\"></img> in the toolbar."
+
+#, fuzzy
+#~| msgid ""
+#~| "To create a link on your desktop pointing to the current page, simply "
+#~| "drag the \"Location\" label that is to the left of the Location toolbar, "
+#~| "drop it on to the desktop, and choose \"Link\"."
+#~ msgid ""
+#~ "To create a link on your desktop pointing to the current page, simply "
+#~ "drag the icon (favicon) that is to the left of the Location toolbar, drop "
+#~ "it on to the desktop, and choose \"Icon\"."
+#~ msgstr ""
+#~ "To create a link on your desktop pointing to the current page, simply "
+#~ "drag the \"Location\" label that is to the left of the Location toolbar, "
+#~ "drop it on to the desktop, and choose \"Link\"."
+
+#~ msgid ""
+#~ "You can also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen "
+#~ "Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
+#~ "sessions."
+#~ msgstr ""
+#~ "You can also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen "
+#~ "Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
+#~ "sessions."
+
+#~ msgid ""
+#~ "Divide et impera (lat. \"Divide and conquer\") - by splitting a window "
+#~ "into two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> "
+#~ "Split View Left/Right) you can make Konqueror appear the way you like. "
+#~ "You can even load some example view-profiles (e.g. Midnight Commander), "
+#~ "or create your own ones."
+#~ msgstr ""
+#~ "Divide et impera (lat. \"Divide and conquer\") - by splitting a window "
+#~ "into two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> "
+#~ "Split View Left/Right) you can make Konqueror appear the way you like. "
+#~ "You can even load some example view-profiles (e.g. Midnight Commander), "
+#~ "or create your own ones."
+
+#~ msgid ""
+#~ "Use the <a href=\"%1\">user-agent</a> feature if the website you are "
+#~ "visiting asks you to use a different browser (and do not forget to send a "
+#~ "complaint to the webmaster!)"
+#~ msgstr ""
+#~ "Use the <a href=\"%1\">user-agent</a> feature if the website you are "
+#~ "visiting asks you to use a different browser (and do not forget to send a "
+#~ "complaint to the webmaster!)"
+
+#, fuzzy
+#~| msgid ""
+#~| "The <img width='16' height='16' src=\"%1\"></img> History in your "
+#~| "SideBar ensures that you can keep track of the pages you have visited "
+#~| "recently."
+#~ msgid ""
+#~ "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
+#~ "ensures that you can keep track of the pages you have visited recently."
+#~ msgstr ""
+#~ "The <img width='16' height='16' src=\"%1\"></img> History in your SideBar "
+#~ "ensures that you can keep track of the pages you have visited recently."
+
+#~ msgid ""
+#~ "Use a caching <a href=\"%1\">proxy</a> to speed up your Internet "
+#~ "connection."
+#~ msgstr ""
+#~ "Use a caching <a href=\"%1\">proxy</a> to speed up your Internet "
+#~ "connection."
+
+#~ msgid "Next: Specifications"
+#~ msgstr "මීළඟ: පිරිවිතර"
+
+#~ msgid "Installed Plugins"
+#~ msgstr "ස්ථාපිත ප්ලගීන"
+
+#~ msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
+#~ msgstr "<td>ප්ලගීනය</td><td>විස්තරය</td><td>ගොනුව</td><td>වර්‍ග</td>"
+
+#~ msgid "Installed"
+#~ msgstr "ස්ථාපිත"
+
+#~ msgid ""
+#~ "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
+#~ msgstr ""
+#~ "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
+
+#~ msgid ""
+#~ "Do you want to disable showing the introduction in the webbrowsing "
+#~ "profile?"
+#~ msgstr ""
+#~ "Do you want to disable showing the introduction in the webbrowsing "
+#~ "profile?"
+
+#~ msgid "Faster Startup?"
+#~ msgstr "ක්‍ෂණික ඇරඹුම"
+
+#~ msgid "Disable"
+#~ msgstr "අක්‍රීය"
+
+#~ msgid "Keep"
+#~ msgstr "තබාගන්න"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "ඩනිෂ්ක නවින්"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "danishka@gmail.com"
+
+#~ msgid "&File"
+#~ msgstr "ගොනු (&F)"
+
+#~ msgid "&Edit"
+#~ msgstr "සැකසුම් (&E)"
+
+#~ msgid "&View"
+#~ msgstr "දසුන් (&V)"
+
+#~ msgid "&Go"
+#~ msgstr "යන්න (&G)"
+
+#~ msgid "&Settings"
+#~ msgstr "සැකසුම් (&S)"
+
+#~ msgid "&Window"
+#~ msgstr "කවුළු (&W)"
+
+#~ msgid "&Help"
+#~ msgstr "උදව් (&H)"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "ප්‍රධාන මෙවලම් තීරුව"
+
+#~ msgid "Extra Toolbar"
+#~ msgstr "අමතර මෙවලම්තීරු"
+
+#~ msgid "Location Toolbar"
+#~ msgstr "පිහිටුම් මෙවලම්තීරුව"
+
+#~ msgid "Bookmark Toolbar"
+#~ msgstr "පිටු සලකුණු මෙවලම්තීරුව"
+
+#~ msgid "Save open tabs and windows for easy retrieval"
+#~ msgstr "Save open tabs and windows for easy retrieval"
+
+#~ msgid "&Session name:"
+#~ msgstr "සැසි නාමය (&S):"
+
+#~ msgid "&Profile name:"
+#~ msgstr "පැතිකඩ නාමය (&P):"
+
+#~ msgid "Save &URLs in profile"
+#~ msgstr "පැතිකඩෙහි URL සුරකින්න (&U)"
+
+#~ msgctxt "@action:button New session"
+#~ msgid "New..."
+#~ msgstr "නව..."
+
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename..."
+#~ msgstr "නම වෙනස් කරන්න..."
+
+#~ msgctxt "@action:button Delete session"
+#~ msgid "Delete"
+#~ msgstr "මකන්න"
+
+#~ msgid "Open tabs inside current window"
+#~ msgstr "Open tabs inside current window"
+
+#~ msgid "Limits"
+#~ msgstr "සීමා"
+
+#~ msgid "Maximum &number of URLs:"
+#~ msgstr "Maximum &number of URLs:"
+
+#~ msgid "Custom Fonts For"
+#~ msgstr "රිසිකළ අකුරු"
+
+#~ msgid "Choose Font..."
+#~ msgstr "අකුරු තෝරන්න..."
+
+#~ msgid ""
+#~ "Shows the number of times visited and the dates of the first and last "
+#~ "visits, in addition to the URL"
+#~ msgstr ""
+#~ "Shows the number of times visited and the dates of the first and last "
+#~ "visits, in addition to the URL"
+
+#~ msgid "Detailed tooltips"
+#~ msgstr "සවිස්තරාත්මක මෙවලම්ඉඟිය"
+
+#~ msgid "Clear History"
+#~ msgstr "අතීතය මකන්න"
+
+#~ msgid "Maximum number of Closed Items"
+#~ msgstr "උපරිම URL ගණන (&n):"
+
+#~ msgid "Open folders in separate windows"
+#~ msgstr "වෙනස් කවුළු තුළ බහලුම් විවෘත කරන්"
+
+#~ msgid "Show file tips"
+#~ msgstr "ගොනු ඉඟි පෙන්වන්න"
+
+#~ msgid "Standard font"
+#~ msgstr "සම්මත අකුරු"
+
+#~ msgid "Maximum number of history items per view"
+#~ msgstr "දසුනකට උපරිම අතීත අයිතන ගණන"
+
+#~ msgid "Hide %1"
+#~ msgstr "%1 සඟවන්න"
+
+#~ msgid "Bookmark This Location"
+#~ msgstr "මෙම පිහිටුම සලකුණු කරන්න"
+
+#~ msgid ""
+#~ "Malformed URL\n"
+#~ "%1"
+#~ msgstr ""
+#~ "අසම්පූරණ URL\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Protocol not supported\n"
+#~ "%1"
+#~ msgstr ""
+#~ "ප්‍රොටොකොලය සහාය නොදක්වයි\n"
+#~ "%1"
+
+#~ msgid "Cannot create the find part, check your installation."
+#~ msgstr "Cannot create the find part, check your installation."
+
+#~ msgid "My Bookmarks"
+#~ msgstr "මගේ පිටු සලකුණු"
+
+#~ msgid "Preload for later use"
+#~ msgstr "පසුභාවිතයට පූර්‍ව පූරණය"
+
+#~ msgid "&Save View Profile \"%1\"..."
+#~ msgstr "\"%1\" දසුන් පැතිකඩ සුරකින්න... (&S)"
+
+#~ msgid "Configure Navigation Panel"
+#~ msgstr "සැරිසැරුම් පුවරු සකසන්න"
+
+#~ msgid "Close Navigation Panel"
+#~ msgstr "සැරිසැරුම් පුවරුව වසන්න"
+
+#~ msgid "Select Type"
+#~ msgstr "වර්‍ගය තෝරන්න"
+
+#~ msgid "Select type:"
+#~ msgstr "වර්‍ගය තෝරන්න:"
+
+#~ msgid "<qt><b>%1</b> does not exist</qt>"
+#~ msgstr "<qt><b>%1</b> නොමැත</qt>"
+
+#~ msgid "Minutes"
+#~ msgstr "මිනිත්තු"
+
+#~ msgid "Days"
+#~ msgstr "දින"
+
+#~ msgid "Your sidebar is not functional or unavailable."
+#~ msgstr "පැතිපුවරුව ක්‍රියාත්මක නොවේ හෝ එය භැවිතයට නැත."
+
+#~ msgid "Cannot find running history plugin in your sidebar."
+#~ msgstr "Cannot find running history plugin in your sidebar."
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History in Sidebar"
+#~ msgstr "පැති පුවරුවේ අතීතය පෙන්වන්න"
+
+#~ msgid "Reload"
+#~ msgstr "යළි පූරණය"
+
+#~ msgid "Default"
+#~ msgstr "පෙරනිමිය"

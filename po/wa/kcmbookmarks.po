@@ -1,0 +1,1224 @@
+# translation of kcmkio.po to Walloon
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Jean Cayron <jean.cayron@tele2allin.be>, 2007.
+# Jean Cayron <jean.cayron@gmail.com>, 2007, 2008, 2009, 2011.
+# Jean Cayron <jean.cayron|gmail.com>, 2008, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkio\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2012-07-04 22:08+0200\n"
+"Last-Translator: Jean Cayron <jean.cayron@base.be>\n"
+"Language-Team: Walloon <linux-wa@walon.org>\n"
+"Language: wa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: bookmarks.cpp:92
+#, kde-format
+msgid ""
+"<h1>My Bookmarks</h1><p>This module lets you configure the bookmarks home "
+"page.</p><p>The bookmarks home page is accessible at <a href=\"bookmarks:/"
+"\">bookmarks:/</a>.</p>"
+msgstr ""
+"<h1>Mes Rimarkes</h1><p>Çou module vos leye apontyî li waibe måjhon des "
+"rmarkes.</p><p>On sait arinner l' waibe måjhon avou <a href=\"bookmarks:/"
+"\">bookmarks:/</a>.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: bookmarks.ui:16
+#, kde-format
+msgid "Bookmarks"
+msgstr "Rimarkes"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowRoot)
+#: bookmarks.ui:23
+#, kde-format
+msgid ""
+"If this option is unchecked, bookmarks at the root of the hierarchy (not in "
+"a folder) are not displayed.\n"
+"If checked, they are gathered in a \"root\" folder."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowRoot)
+#: bookmarks.ui:26
+#, kde-format
+msgid "&Show bookmarks without folder"
+msgstr "&Mostrer rimarkes sins ridants"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbFlattenTree)
+#: bookmarks.ui:37
+#, kde-format
+msgid ""
+"Sub-folders are shown within their parent by default. If you activate this "
+"option, sub-folders are displayed on their own.\n"
+"It looks less nice but it may help if you have a very big folder you want to "
+"spread in two columns."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbFlattenTree)
+#: bookmarks.ui:40
+#, kde-format
+msgid "&Flatten bookmarks tree"
+msgstr "&Asplati coxhlaedje des rmarkes"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowPlaces)
+#: bookmarks.ui:47
+#, kde-format
+msgid ""
+"Show a box with KDE places (Home, Network, ...). Useful if you use konqueror "
+"as a file manager."
+msgstr ""
+"Mostrer ene boesse avou les plaeces di KDE (Måjhon, Rantoele...). Ahessåve "
+"si vs eployî konqueror come manaedjeu des fitchîs."
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowPlaces)
+#: bookmarks.ui:50
+#, kde-format
+msgid "Show system &places"
+msgstr "Mostrer les &plaeces do sistinme"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: bookmarks.ui:63
+#, kde-format
+msgid "General Settings"
+msgstr "Tchuzes djeneråles"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, label)
+#: bookmarks.ui:71
+#, kde-format
+msgid ""
+"Folders are automatically distributed in several columns. The optimal number "
+"of columns depends on the width of the konqueror window and the number of "
+"bookmarks you have."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: bookmarks.ui:74
+#, kde-format
+msgid "Number of columns to show:"
+msgstr "Nombe di colones a mostrer:"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cbShowBackgrounds)
+#: bookmarks.ui:109
+#, kde-format
+msgid "Disable it on slow system to disable background images."
+msgstr "L' essocter so les londjins sistinmes po dismete les imådjes do fond."
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowBackgrounds)
+#: bookmarks.ui:112
+#, kde-format
+msgid "Show folder &backgrounds"
+msgstr "Mostrer les &fonds des ridants"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, groupBox_3)
+#: bookmarks.ui:138
+#, kde-format
+msgid "How much disk space is used to cache the pixmaps"
+msgstr ""
+"Cwante di plaece sol plake est eployeye po mete el muchete les mapes des "
+"picsels (pixmaps)"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: bookmarks.ui:141
+#, kde-format
+msgid "Pixmap Cache"
+msgstr "Muchete del mape des picsels (pixmap)"
+
+#. i18n: ectx: property (text), widget (QLabel, lbMaxCacheSize)
+#: bookmarks.ui:150
+#, kde-format
+msgid "Disk cache size:"
+msgstr "Grandeu del muchete del plake :"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, sbCacheSize)
+#: bookmarks.ui:163
+#, kde-format
+msgid " kB"
+msgstr " ko"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, clearCacheButton)
+#: bookmarks.ui:173
+#, kde-format
+msgid "Clear the pixmap cache"
+msgstr "Netyî l' muchete del mape des picsels (pixmap)"
+
+#. i18n: ectx: property (text), widget (QPushButton, clearCacheButton)
+#: bookmarks.ui:176
+#, kde-format
+msgid "&Clear Cache"
+msgstr "&Netyî muchete"
+
+#~ msgid "&Use cache"
+#~ msgstr "Eployî m&uchete"
+
+#~ msgid "Policy"
+#~ msgstr "Politike"
+
+#~ msgid ""
+#~ "Verify whether the cached web page is valid before attempting to fetch "
+#~ "the web page again."
+#~ msgstr ""
+#~ "Verifyî sel pådje waibe el muchete est valåbe divant d' sayî d' cweri l' "
+#~ "pådje waibe eco on côp."
+
+#~ msgid "&Keep cache in sync"
+#~ msgstr "&Wårder muchete divins sync"
+
+#~ msgid ""
+#~ "Always use documents from the cache when available. You can still use the "
+#~ "reload button to synchronize the cache with the remote host."
+#~ msgstr ""
+#~ "Tofer si siervi d' documints del muchete cwand i sont disponibes. Vos vs "
+#~ "savoz co siervi do boton ritcherdjî po sincronijhî l' muchete avou l' "
+#~ "lodjoe då lon."
+
+#~ msgid "Use cache whenever &possible"
+#~ msgstr "Eployî muchete cwand &possibe"
+
+#~ msgid "O&ffline browsing mode"
+#~ msgstr "Môde betchtaedje &foû-fyis"
+
+#~ msgid "Disk cache &size:"
+#~ msgstr "G&randeu muchete del plakete:"
+
+#~ msgid "C&lear Cache"
+#~ msgstr "&Netyî muchete"
+
+#~ msgid ""
+#~ "Unable to start the cookie handler service.\n"
+#~ "You will not be able to manage the cookies that are stored on your "
+#~ "computer."
+#~ msgstr ""
+#~ "Nén capåbe d' enonder l' siervice d' apougnaedje des coûkes.\n"
+#~ "Vos såroz nén manaedjî les coûkes ki sont wårdés so vosse copiutrece."
+
+#~ msgid "&Policy"
+#~ msgstr "&Politike"
+
+#~ msgid "&Management"
+#~ msgstr "&Manaedjmint"
+
+#~ msgid "D-Bus Communication Error"
+#~ msgstr "Aroke di comunicåcion D-Bus"
+
+#~ msgid "Unable to delete all the cookies as requested."
+#~ msgstr "Dji n' a sepou disfacer totes les coûkes come dimandé."
+
+#~ msgid "Unable to delete cookies as requested."
+#~ msgstr "Dji n' a sepou disfacer les coûkes come dimandé."
+
+#~ msgid "<h1>Cookie Management Quick Help</h1>"
+#~ msgstr "<h1>Fele aidance di manaedjmint des coûkes</h1>"
+
+#~ msgid "Information Lookup Failure"
+#~ msgstr "Li léjhaedje d' informåcion a fwait berwete"
+
+#~ msgid ""
+#~ "Unable to retrieve information about the cookies stored on your computer."
+#~ msgstr ""
+#~ "Dji n' a sepou prinde l' informåcion so les coûkes wårdêye so vosse "
+#~ "copiutrece."
+
+#~ msgid "End of session"
+#~ msgstr "Difén del session"
+
+#~ msgid "Yes"
+#~ msgstr "Oyi"
+
+#~ msgid "Search"
+#~ msgstr "Trover"
+
+#~ msgid "Search interactively for domains and hosts"
+#~ msgstr "Cweri d' ene façon interactive après les dominnes et les lodjoes"
+
+#, fuzzy
+#~| msgid "Site Name"
+#~ msgid "Site"
+#~ msgstr "No d' site"
+
+#, fuzzy
+#~| msgid "Site Name"
+#~ msgid "Cookie Name"
+#~ msgstr "No d' site"
+
+#~ msgid "D&elete"
+#~ msgstr "Disfac&er"
+
+#~ msgid "Delete A&ll"
+#~ msgstr "Totaf&wait disfacer"
+
+#, fuzzy
+#~| msgid "Change &Policy..."
+#~ msgid "Configure &Policy..."
+#~ msgstr "Candjî &politike"
+
+#~ msgid "&Reload List"
+#~ msgstr "&Ritcherdjî djivêye"
+
+#~ msgid "Details"
+#~ msgstr "Detays"
+
+#~ msgid "Name:"
+#~ msgstr "No:"
+
+#~ msgid "Value:"
+#~ msgstr "Valixhance:"
+
+#~ msgid "Domain:"
+#~ msgstr "Dominne:"
+
+#~ msgid "Path:"
+#~ msgstr "Tchimin:"
+
+#~ msgid "Expires:"
+#~ msgstr "Fini:"
+
+#~ msgid "Secure:"
+#~ msgstr "Såve:"
+
+#~ msgctxt "@title:window"
+#~ msgid "Change Cookie Policy"
+#~ msgstr "Candjî politike des coûkes"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Cookie Policy"
+#~ msgstr "Novele politike des coûkes"
+
+#~ msgid ""
+#~ "<qt>A policy already exists for<center><b>%1</b></center>Do you want to "
+#~ "replace it?</qt>"
+#~ msgstr ""
+#~ "<qt>Ene politike egzistêye dedja po<center><b>%1</b></center>El voloz "
+#~ "replaecî?</qt>"
+
+#, fuzzy
+#~| msgid "Duplicate Policy"
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Policy"
+#~ msgstr "Dobler politike"
+
+#~ msgid "Replace"
+#~ msgstr "Replaecî"
+
+#~ msgid ""
+#~ "Unable to communicate with the cookie handler service.\n"
+#~ "Any changes you made will not take effect until the service is restarted."
+#~ msgstr ""
+#~ "Dji n' a sepou pårler avou l' siervice d' apougnaedje des coûkes.\n"
+#~ "Tot candjmint k' vos froz n' prinrè efet k' après aveur renondé l' "
+#~ "siervice."
+
+#~ msgid "Enable coo&kies"
+#~ msgstr "Mete en alaedje &coûkes"
+
+#~ msgid "Only acce&pt cookies from originating server"
+#~ msgstr "Acce&pter coûkes do mwaisse sierveu"
+
+#~ msgid "Automaticall&y accept session cookies"
+#~ msgstr "Accepter otomaticmin&t les coûkes des sessions"
+
+#~ msgid "Default Policy"
+#~ msgstr "Prémetowe politike"
+
+#~ msgid "Accep&t all cookies"
+#~ msgstr "Accep&ter totes les coûkes"
+
+#, fuzzy
+#~| msgid "End of session"
+#~ msgid "Accept &until end of session"
+#~ msgstr "Difén del session"
+
+#~ msgid "Ask &for confirmation"
+#~ msgstr "Dimander &acertinaedje"
+
+#~ msgid "Re&ject all cookies"
+#~ msgstr "Ri&bôrer totes les coûkes"
+
+#~ msgid "Site Policy"
+#~ msgstr "Politike del waibe"
+
+#~ msgid "Search interactively for domains"
+#~ msgstr "Cweri d' ene façon interactive après les dominnes"
+
+#~ msgid "Domain"
+#~ msgstr "Dominne"
+
+#~ msgid "&New..."
+#~ msgstr "&Novea..."
+
+#~ msgid "Chan&ge..."
+#~ msgstr "Cand&jî..."
+
+#, fuzzy
+#~| msgid "Site Name"
+#~ msgid "Site name:"
+#~ msgstr "No d' site"
+
+#, fuzzy
+#~| msgid "&Policy:"
+#~ msgid "Policy:"
+#~ msgstr "&Politike:"
+
+#~ msgid "Accept"
+#~ msgstr "Accepter"
+
+#, fuzzy
+#~| msgid "End of session"
+#~ msgid "Accept until end of session"
+#~ msgstr "Difén del session"
+
+#~ msgid "Reject"
+#~ msgstr "Ribôrer"
+
+#~ msgid "Ask"
+#~ msgstr "Dimander"
+
+#~ msgid "Disable Passive FTP"
+#~ msgstr "Essocter passif FTP"
+
+#~ msgid "Mark partially uploaded files"
+#~ msgstr "Marker les fitchîs eberweté po ene pårteye"
+
+#~ msgid "Connect to the Internet directly."
+#~ msgstr "Raloyî direk al daegntoele."
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "No Proxy"
+#~ msgstr "&Procsi"
+
+#, fuzzy
+#~| msgid "U&se proxy configuration URL:"
+#~ msgid "Detect proxy configuration automatically"
+#~ msgstr "Eplo&yî l' URL po l' apontiaedje procsi :"
+
+#, fuzzy
+#~| msgid "Use the specified proxy script URL to configure the proxy settings."
+#~ msgid "Use the specified proxy script to configure the proxy settings."
+#~ msgstr ""
+#~ "Si siervi di l' URL do scripe procsi specifyî po apontyî les tchuzes do "
+#~ "procsi."
+
+#, fuzzy
+#~| msgid "U&se proxy configuration URL:"
+#~ msgid "Use proxy auto configuration URL:"
+#~ msgstr "Eplo&yî l' URL po l' apontiaedje procsi :"
+
+#~ msgid "Enter the address for the proxy configuration script."
+#~ msgstr "Intrer l' adresse do sripe d' apontiaedje procsi."
+
+#, fuzzy
+#~| msgid "U&se proxy configuration URL:"
+#~ msgid "Use system proxy configuration:"
+#~ msgstr "Eplo&yî l' URL po l' apontiaedje procsi :"
+
+#, fuzzy
+#~| msgid "Auto &Detect"
+#~ msgid "Auto D&etect"
+#~ msgstr "Tr&over tot seu"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Enter the name of the environment variable, e.g. <b>HTTP_PROXY</b>, used "
+#~| "to store the address of the HTTP proxy server.<p>\n"
+#~| "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~| "attempt automatic discovery of this variable.\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the name of the environment variable, e.g. <b>HTTP_PROXY</b>, used "
+#~ "to store the address of the HTTP proxy server.<p>\n"
+#~ "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~ "attempt automatic discovery of this variable.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "Intrez l' no del variåve d' evironmint, metans <b>HTTP_PROXY</b>, "
+#~ "eployeye po wårder l' adresse do sierveu procsi HTTP.<p>\n"
+#~ "Ôtrumint, vos ploz clitchî sol boton <b>« Detection otomatike »</b> po "
+#~ "sayî d' discovri otomaticmint cisse variåve.\n"
+#~ "</qt>"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "HTTP Proxy:"
+#~ msgstr "&Procsi"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Enter the name of the environment variable, e.g. <b>HTTP_PROXY</b>, used "
+#~| "to store the address of the HTTP proxy server.<p>\n"
+#~| "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~| "attempt automatic discovery of this variable.\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the name of the environment variable, e.g. <b>HTTPS_PROXY</b>, used "
+#~ "to store the address of the HTTPS proxy server.<p>\n"
+#~ "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~ "attempt an automatic discovery of this variable.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "Intrez l' no del variåve d' evironmint, metans <b>HTTP_PROXY</b>, "
+#~ "eployeye po wårder l' adresse do sierveu procsi HTTP.<p>\n"
+#~ "Ôtrumint, vos ploz clitchî sol boton <b>« Detection otomatike »</b> po "
+#~ "sayî d' discovri otomaticmint cisse variåve.\n"
+#~ "</qt>"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "SSL Proxy:"
+#~ msgstr "&Procsi"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Enter the name of the environment variable, e.g. <b>HTTP_PROXY</b>, used "
+#~| "to store the address of the HTTP proxy server.<p>\n"
+#~| "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~| "attempt automatic discovery of this variable.\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the name of the environment variable, e.g. <b>FTP_PROXY</b>, used "
+#~ "to store the address of the FTP proxy server.<p>\n"
+#~ "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~ "attempt an automatic discovery of this variable.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "Intrez l' no del variåve d' evironmint, metans <b>HTTP_PROXY</b>, "
+#~ "eployeye po wårder l' adresse do sierveu procsi HTTP.<p>\n"
+#~ "Ôtrumint, vos ploz clitchî sol boton <b>« Detection otomatike »</b> po "
+#~ "sayî d' discovri otomaticmint cisse variåve.\n"
+#~ "</qt>"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "FTP Proxy:"
+#~ msgstr "&Procsi"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Enter the name of the environment variable, e.g. <b>HTTP_PROXY</b>, used "
+#~| "to store the address of the HTTP proxy server.<p>\n"
+#~| "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~| "attempt automatic discovery of this variable.\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the name of the environment variable, e.g. <b>SOCKS_PROXY</b>, used "
+#~ "to store the address of the SOCKS proxy server.<p>\n"
+#~ "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~ "attempt an automatic discovery of this variable.</p>\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "Intrez l' no del variåve d' evironmint, metans <b>HTTP_PROXY</b>, "
+#~ "eployeye po wårder l' adresse do sierveu procsi HTTP.<p>\n"
+#~ "Ôtrumint, vos ploz clitchî sol boton <b>« Detection otomatike »</b> po "
+#~ "sayî d' discovri otomaticmint cisse variåve.\n"
+#~ "</qt>"
+
+#, fuzzy
+#~| msgid "&Proxy"
+#~ msgid "SOCKS Proxy:"
+#~ msgstr "&Procsi"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Enter the name of the environment variable, e.g. <b>HTTP_PROXY</b>, used "
+#~| "to store the address of the HTTP proxy server.<p>\n"
+#~| "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~| "attempt automatic discovery of this variable.\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>Enter the name of the environment variable, e.g. <b>SOCKS_PROXY</b>, "
+#~ "used to store the address of the SOCKS proxy server.<p>Alternatively, you "
+#~ "can click on the <b>\"Auto Detect\"</b> button to attempt an automatic "
+#~ "discovery of this variable.</p></qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "Intrez l' no del variåve d' evironmint, metans <b>HTTP_PROXY</b>, "
+#~ "eployeye po wårder l' adresse do sierveu procsi HTTP.<p>\n"
+#~ "Ôtrumint, vos ploz clitchî sol boton <b>« Detection otomatike »</b> po "
+#~ "sayî d' discovri otomaticmint cisse variåve.\n"
+#~ "</qt>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Enter the name of the environment variable, e.g. <b>HTTP_PROXY</b>, used "
+#~| "to store the address of the HTTP proxy server.<p>\n"
+#~| "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~| "attempt automatic discovery of this variable.\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Enter the environment variable, e.g. <b>NO_PROXY</b>, used to store the "
+#~ "addresses of sites for which the proxy server should not be used.<p>\n"
+#~ "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~ "attempt an automatic discovery of this variable.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "Intrez l' no del variåve d' evironmint, metans <b>HTTP_PROXY</b>, "
+#~ "eployeye po wårder l' adresse do sierveu procsi HTTP.<p>\n"
+#~ "Ôtrumint, vos ploz clitchî sol boton <b>« Detection otomatike »</b> po "
+#~ "sayî d' discovri otomaticmint cisse variåve.\n"
+#~ "</qt>"
+
+#, fuzzy
+#~| msgid "E&xceptions"
+#~ msgid "Exceptions:"
+#~ msgstr "Foû-rîle"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>\n"
+#~| "Enter the name of the environment variable, e.g. <b>HTTP_PROXY</b>, used "
+#~| "to store the address of the HTTP proxy server.<p>\n"
+#~| "Alternatively, you can click on the <b>\"Auto Detect\"</b> button to "
+#~| "attempt automatic discovery of this variable.\n"
+#~| "</qt>"
+#~ msgid ""
+#~ "<qt>Enter the environment variable, e.g. <b>NO_PROXY</b>, used to store "
+#~ "the addresses of sites for which the above proxy settings should not be "
+#~ "used.<p>Alternatively, you can click on the <b>\"Auto Detect\"</b> button "
+#~ "to attempt an automatic discovery of this variable.</p></qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "Intrez l' no del variåve d' evironmint, metans <b>HTTP_PROXY</b>, "
+#~ "eployeye po wårder l' adresse do sierveu procsi HTTP.<p>\n"
+#~ "Ôtrumint, vos ploz clitchî sol boton <b>« Detection otomatike »</b> po "
+#~ "sayî d' discovri otomaticmint cisse variåve.\n"
+#~ "</qt>"
+
+#~ msgid "Show the &value of the environment variables"
+#~ msgstr "Mostrer l' &valixhance des variåves d' evironmint"
+
+#, fuzzy
+#~| msgid "A&utomatically detect proxy configuration"
+#~ msgid "Manually enter proxy server configuration information."
+#~ msgstr "Tr&over tot seu l' apontiaedje procsi"
+
+#, fuzzy
+#~| msgid "A&utomatically detect proxy configuration"
+#~ msgid "Use manually specified proxy configuration:"
+#~ msgstr "Tr&over tot seu l' apontiaedje procsi"
+
+#~ msgid "Enter the address of the HTTP proxy server."
+#~ msgstr "Intrer l' adressse do sierveu procsi HTTP."
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTP proxy server."
+#~ msgid "Enter the port number of the HTTP proxy server."
+#~ msgstr "Intrer l' adressse do sierveu procsi HTTP."
+
+#, fuzzy
+#~| msgid "&Use the same proxy server for all protocols"
+#~ msgid "Use this proxy server for a&ll protocols"
+#~ msgstr "&Eployî minme sierveu procsi po tos les protocoles"
+
+#~ msgid "Enter the address of the HTTPS proxy server."
+#~ msgstr "Intrer l' adressse do sierveu procsi HTTPS."
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTPS proxy server."
+#~ msgid "Enter the port number of the HTTPS proxy server."
+#~ msgstr "Intrer l' adressse do sierveu procsi HTTPS."
+
+#~ msgid "Enter the address of the FTP proxy server."
+#~ msgstr "Intrer l' adressse do sierveu procsi FTP."
+
+#, fuzzy
+#~| msgid "Enter the address of the FTP proxy server."
+#~ msgid "Enter the port number of the FTP proxy server."
+#~ msgstr "Intrer l' adressse do sierveu procsi FTP."
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTPS proxy server."
+#~ msgid "Enter the address of the SOCKS proxy server."
+#~ msgstr "Intrer l' adressse do sierveu procsi HTTPS."
+
+#, fuzzy
+#~| msgid "Enter the address of the HTTPS proxy server."
+#~ msgid "Enter the port number of the SOCKS proxy server."
+#~ msgstr "Intrer l' adressse do sierveu procsi HTTPS."
+
+#, fuzzy
+#~| msgid "Use proxy only for entries in this list"
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Check this box if you want the above proxy settings to apply only to the "
+#~ "addresses listed in the <i>Exceptions</i> list.</qt>"
+#~ msgstr "N' eployî l' procsi ki po ls intrêyes di cisse djivêye"
+
+#, fuzzy
+#~| msgid "Use proxy only for entries in this list"
+#~ msgid "Use proxy settings only for addresses in the Exceptions list"
+#~ msgstr "N' eployî l' procsi ki po ls intrêyes di cisse djivêye"
+
+#~ msgid ""
+#~ "You have to restart the running applications for these changes to take "
+#~ "effect."
+#~ msgstr ""
+#~ "Vos dvoz renonder les programes enondêyes po k' ces candjmints åyexhe di "
+#~ "l' efet."
+
+#, fuzzy
+#~| msgid "Update Failed"
+#~ msgctxt "@title:window"
+#~ msgid "Update Failed"
+#~ msgstr "Li metaedje a djoû a fwait berwete"
+
+#~ msgid "You have to restart KDE for these changes to take effect."
+#~ msgstr "Vos dvoz renonder KDE po k' ces candjmints åyexhe di l' efet."
+
+#~ msgid "Timeout Values"
+#~ msgstr "Valixhances d' astådje"
+
+#~ msgid ""
+#~ "Here you can set timeout values. You might want to tweak them if your "
+#~ "connection is very slow. The maximum allowed value is 1 second."
+#~ msgid_plural ""
+#~ "Here you can set timeout values. You might want to tweak them if your "
+#~ "connection is very slow. The maximum allowed value is %1 seconds."
+#~ msgstr[0] ""
+#~ "Vos ploz chal defini les valixhances d' astådje. Vos pôrîz voleur les "
+#~ "candjî si vosse raloyaedje est foirt londjin. Li macsimom valixhance "
+#~ "permetowe est 1 segonde."
+#~ msgstr[1] ""
+#~ "Vos ploz chal defini les valixhances d' astådje. Vos pôrîz voleur les "
+#~ "candjî si vosse raloyaedje est foirt londjin. Li macsimom valixhance "
+#~ "permetowe est %1 segondes."
+
+#, fuzzy
+#~| msgid " sec"
+#~ msgid " second"
+#~ msgid_plural " seconds"
+#~ msgstr[0] " seg"
+#~ msgstr[1] " seg"
+
+#~ msgid "Soc&ket read:"
+#~ msgstr "So&ket léjhou:"
+
+#~ msgid "Pro&xy connect:"
+#~ msgstr "Raloyaedje pro&csi:"
+
+#~ msgid "Server co&nnect:"
+#~ msgstr "Raloyaedje sier&veu:"
+
+#~ msgid "&Server response:"
+#~ msgstr "Response &sierveu:"
+
+#~ msgid "FTP Options"
+#~ msgstr "Tchuzes FTP:"
+
+#~ msgid "Enable passive &mode (PASV)"
+#~ msgstr "Mete en alaedje &môde passif (PASV)"
+
+#~ msgid ""
+#~ "Enables FTP's \"passive\" mode. This is required to allow FTP to work "
+#~ "from behind firewalls."
+#~ msgstr ""
+#~ "Permete li môde « passif » do FTP. Ça dmande di permete å FTP d' ovrer pa "
+#~ "drî les côpes-feu."
+
+#~ msgid "Mark &partially uploaded files"
+#~ msgstr "Marker les fitchîs eberwetés po ene &pårteye"
+
+#~ msgid ""
+#~ "<p>Marks partially uploaded FTP files.</p><p>When this option is enabled, "
+#~ "partially uploaded files will have a \".part\" extension. This extension "
+#~ "will be removed once the transfer is complete.</p>"
+#~ msgstr ""
+#~ "<p>Marke les fitchîs FTP nén ttafwait eberweté.</p><p>Cwand cisse tchuze "
+#~ "est en alaedje, les fitchîs nén ttafwait eberwetés åront ene cawete «."
+#~ "part». Cisse cawete serè oistêye on côp kel berwetaedje serè fini.</p>"
+
+#~ msgid "These settings apply to network browsing only."
+#~ msgstr "Ces tchuzes ni s' metèt en ouve ki pol naiviaedje dins l' rantoele."
+
+#~ msgid "Default user name:"
+#~ msgstr "Prémetou no d' uzeu:"
+
+#~ msgid "Default password:"
+#~ msgstr "Prémetou sicret:"
+
+#, fuzzy
+#~| msgid "Add Identification"
+#~ msgctxt "@title:window"
+#~ msgid "Add Identification"
+#~ msgstr "Radjouter idintifiaedje"
+
+#, fuzzy
+#~| msgid "Modify Identification"
+#~ msgctxt "@title:window"
+#~ msgid "Modify Identification"
+#~ msgstr "Candjî idintifiaedje"
+
+#~ msgid ""
+#~ "<qt><center>Found an existing identification for<br/><b>%1</b><br/>Do you "
+#~ "want to replace it?</center></qt>"
+#~ msgstr ""
+#~ "<qt><center>Dj a trové en idintifiaedje egzistant po<br/><b>%1</b><br/>El "
+#~ "voloz vs replaecî?</center></qt>"
+
+#, fuzzy
+#~| msgid "Duplicate Identification"
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Identification"
+#~ msgstr "Idintifiaedje fwait deus côps"
+
+#~ msgid "&Send identification"
+#~ msgstr "E&voyî idintifiaedje"
+
+#~ msgid "Default Identification"
+#~ msgstr "Prémetou idintifiaedje"
+
+#~ msgid "Add operating s&ystem name"
+#~ msgstr "Radjouter no d' s&istinme d' operance"
+
+#~ msgid "Add operating system &version"
+#~ msgstr "Radjouter &modêye di sistinme d' operance"
+
+#~ msgid "Add &machine (processor) type"
+#~ msgstr "Radjouter sôre d' éndjin (processeu)"
+
+#~ msgid "Add lang&uage information"
+#~ msgstr "Radjouter informåcions d' lingaedje"
+
+#~ msgid "Site Specific Identification"
+#~ msgstr "Idintifiaedje sipecifike å site"
+
+#~ msgid "Site Name"
+#~ msgstr "No d' site"
+
+#~ msgid "Identification"
+#~ msgstr "Idintifiaedje"
+
+#~ msgid "User Agent"
+#~ msgstr "Iditifiaedje do betchteu"
+
+#~ msgid "Add new identification text for a site."
+#~ msgstr "Radjouter novea tecse idintifieu po on site."
+
+#~ msgid "Change the selected identifier text."
+#~ msgstr "Candjî l' tecse idintifieu di tchoezi."
+
+#~ msgid "Delete the selected identifier text."
+#~ msgstr "Disfacer l' tecse idintifieu di tchoezi."
+
+#~ msgid "Delete all identifiers."
+#~ msgstr "Disfacer tos les idintifieus."
+
+#~ msgid "&When browsing the following site:"
+#~ msgstr "C&wand nos betchtans l' site shuvant:"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "Select the browser identification to use whenever contacting the site you "
+#~ "specified above.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "Tchoezixhoz l' idintifiaedje do betchteu a eployî cwand vs purdoz contak "
+#~ "avou l' site sipecifyî chal pa dzeu.\n"
+#~ "</qt>"
+
+#~ msgid "&Use the following identification:"
+#~ msgstr "Eployî l' iditifiaedje sh&uvant:"
+
+#~ msgid ""
+#~ "<qt>\n"
+#~ "The actual browser identification text that will be sent to the remote "
+#~ "machine.\n"
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>\n"
+#~ "Li vraiy tecse d' idintifiaedje do betchteu ki serè evoyî a l' éndjin då "
+#~ "lon.\n"
+#~ "</qt>"
+
+#~ msgid "Real identification:"
+#~ msgstr "Vraiy idintifiaedje:"
+
+#~ msgid "Treat &all cookies as session cookies"
+#~ msgstr "Prinde &tos les coûkes come des coûkes d' session"
+
+#, fuzzy
+#~| msgid "Variable Proxy Configuration"
+#~ msgctxt "@title:window"
+#~ msgid "Variable Proxy Configuration"
+#~ msgstr "Apontiaedje do procsi variåve"
+
+#~ msgid "You must specify at least one valid proxy environment variable."
+#~ msgstr "Vos dvoz specifyî minimom ene variåve d' evironmint procsi ki va."
+
+#~ msgid ""
+#~ "<qt>Make sure you entered the actual environment variable name rather "
+#~ "than its value. For example, if the environment variable is <br /"
+#~ "><b>HTTP_PROXY=http://localhost:3128</b><br /> you need to enter "
+#~ "<b>HTTP_PROXY</b> here instead of the actual value http://localhost:3128."
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>Soeyoz seur ki vs intrez l' vraiy no del variåve d' evironmint al "
+#~ "paece di cisse valixhance. Metans, sel variåve d' evironmint est <br /"
+#~ "><b>HTTP_PROXY=http://localhost:3128</b><br /> vos dvoz intrer "
+#~ "<b>HTTP_PROXY</b> chal al plaece del vraiy valixhance http://"
+#~ "localhost:3128.</qt>"
+
+#, fuzzy
+#~| msgid "Invalid Proxy Setup"
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Proxy Setup"
+#~ msgstr "Apontiaedje procsi nén valide"
+
+#~ msgid "Successfully verified."
+#~ msgstr "Verifyî comifåt."
+
+#, fuzzy
+#~| msgid "Proxy Setup"
+#~ msgctxt "@title:window"
+#~ msgid "Proxy Setup"
+#~ msgstr "Apontiaedje procsi"
+
+#~ msgid ""
+#~ "Did not detect any environment variables commonly used to set system wide "
+#~ "proxy information."
+#~ msgstr ""
+#~ "Dji n' a nén trové d' variåve d' evironmint eployeye po défini les "
+#~ "informåcions sol procsi di tot l' sistinme."
+
+#, fuzzy
+#~| msgid "Automatic Proxy Variable Detection"
+#~ msgctxt "@title:window"
+#~ msgid "Automatic Proxy Variable Detection"
+#~ msgstr "Deteccion otomatike di variåve procsi"
+
+#, fuzzy
+#~| msgid "Manual Proxy Configuration"
+#~ msgctxt "@title:window"
+#~ msgid "Manual Proxy Configuration"
+#~ msgstr "Apontiaedje procsi al mwin"
+
+#, fuzzy
+#~| msgid "Invalid Proxy Setting"
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Proxy Setting"
+#~ msgstr "Tchuze procsi ki n' va nén"
+
+#~ msgid ""
+#~ "One or more of the specified proxy settings are invalid. The incorrect "
+#~ "entries are highlighted."
+#~ msgstr ""
+#~ "Onk oudonbén pus des tchuzes procsi specifieyes n' nén valides. Les "
+#~ "mwaijhès intrêyes sont e sorbriyance."
+
+#~ msgid "You entered a duplicate address. Please try again."
+#~ msgstr "Vos avoz intré ene adresse e dobe. Sayîz co on côp, s' i vs plait."
+
+#~ msgid "<qt><center><b>%1</b></center> is already in the list.</qt>"
+#~ msgstr "<qt><center><b>%1</b></center>est ddja dins l' djivêye.</qt>"
+
+#, fuzzy
+#~| msgid "Duplicate Entry"
+#~ msgctxt "@title:window"
+#~ msgid "Duplicate Entry"
+#~ msgstr "Minme intrêye deus côps"
+
+#, fuzzy
+#~| msgid "New Exception"
+#~ msgctxt "@title:window"
+#~ msgid "New Exception"
+#~ msgstr "Novele foû-rîle"
+
+#, fuzzy
+#~| msgid "Change Exception"
+#~ msgctxt "@title:window"
+#~ msgid "Change Exception"
+#~ msgstr "Candjî foû-rîle"
+
+#, fuzzy
+#~| msgid "Invalid Entry"
+#~ msgctxt "@title:window"
+#~ msgid "Invalid Entry"
+#~ msgstr "Intréye ki n' va nén"
+
+#~ msgid "The address you have entered is not valid."
+#~ msgstr "L' adresse ki vs avoz intré n' va nén."
+
+#~ msgid ""
+#~ "<qt>Make sure none of the addresses or URLs you specified contain invalid "
+#~ "or wildcard characters such as spaces, asterisks (*), or question "
+#~ "marks(?).<br /><br /><u>Examples of VALID entries:</u><br /><code>http://"
+#~ "mycompany.com, 192.168.10.1, mycompany.com, localhost, http://localhost</"
+#~ "code><br /><br /><u>Examples of INVALID entries:</u><br /><code>http://my "
+#~ "company.com, http:/mycompany,com file:/localhost</code></qt>"
+#~ msgstr ""
+#~ "<qt>Soeyoz seur ki nole des adresses ou URL sipecifieyes n' ont des "
+#~ "caractères nén valide oudonbén des caractères djokers come les espåces, "
+#~ "sitoeletes (*) ou des ponts a kesse (?)<br /><br /><u>Egzimpes di validès "
+#~ "intrêyes:</u><br /><code>http://mycompany.com, 192.168.10.1, mycompany."
+#~ "com, localhost, http://localhost</code><br /><br /><u>Egzimpes di nén "
+#~ "validès intrêyes:</u><br /><code>http://my company.com, http:/mycompany,"
+#~ "com file:/localhost</code></qt>"
+
+#~ msgid "Enter the URL or address that should use the above proxy settings:"
+#~ msgstr ""
+#~ "Intrez l' URL oudonbén l' adresse ki dvreut eployî les tchuzes procsi "
+#~ "chal pa dzeu:"
+
+#~ msgid ""
+#~ "Enter the address or URL that should be excluded from using the above "
+#~ "proxy settings:"
+#~ msgstr ""
+#~ "Intrez l' URL oudonbén l' adresse ki dvreut esse metou a pårt di l' "
+#~ "eployaedje des tchuzes procsi chal pa dzeu:"
+
+#~ msgid ""
+#~ "<qt>Enter a valid address or URL.<br /><br /><b><u>NOTE:</u></b> Wildcard "
+#~ "matching such as <code>*.kde.org</code> is not supported. If you want to "
+#~ "match any host in the <code>.kde.org</code> domain, e.g. <code>printing."
+#~ "kde.org</code>, then simply enter <code>.kde.org</code>.</qt>"
+#~ msgstr ""
+#~ "<qt>Intrez ene valide adresse ou URL<br /><br /><b><u>NOTEZ:</u></b> Des "
+#~ "djokers ki sont come <code>*.kde.org</code> ni sont nén sopoirtêyes. Si "
+#~ "vs voloz djonde tolminme ké lodjoe divins l' dominne <code>.kde.org</"
+#~ "code>, metans <code>printing.kde.org</code>, adon, n' intrez ki <code>."
+#~ "kde.org</code>.</qt>"
+
+#~ msgid ""
+#~ "The address of the automatic proxy configuration script is invalid. "
+#~ "Please correct this problem before proceeding. Otherwise, your changes "
+#~ "will be ignored."
+#~ msgstr ""
+#~ "L' adresse do scripe d' apontiaedje otomatike do procsi n' est nén "
+#~ "valide. Coridjîz c' problinme, s' i vs plait, divant d' aler. Ôtrumint, "
+#~ "dji pasrè houte di vos candjmints."
+
+#~ msgid ""
+#~ "<qt>The proxy settings you specified are invalid.<br /><br />Please click "
+#~ "on the <b>Setup...</b> button and correct the problem before proceeding; "
+#~ "otherwise your changes will be ignored.</qt>"
+#~ msgstr ""
+#~ "<qt>Les tchuzes do procsi ki vs avoz specifyî n' sont nén valide.<br /"
+#~ ">Clitchîz s' i vs plait sol boton <b>Apontiaedje...</b> eyet coridjîz l' "
+#~ "problinme divant d' aler; ôtrumint dji pasrè houte di vos candjmints.</qt>"
+
+#~ msgid "H&TTP:"
+#~ msgstr "H&TTP:"
+
+#~ msgid "HTTP&S:"
+#~ msgstr "HTTP&S:"
+
+#~ msgid "&FTP:"
+#~ msgstr "&FTP:"
+
+#~ msgid "NO &PROXY:"
+#~ msgstr "PONT D' &PROCSI:"
+
+#~ msgid "&Verify"
+#~ msgstr "&Verifyî"
+
+#~ msgid "Connect to the &Internet directly"
+#~ msgstr "Raloyî d&irek al daegntoele"
+
+#~ msgid "Use preset proxy environment &variables"
+#~ msgstr "Eployî prédefineyes &variåves d' evironmint procsi"
+
+#~ msgid "Setup..."
+#~ msgstr "Apontiaedje..."
+
+#~ msgid "&Manually specify the proxy settings"
+#~ msgstr "Sipecifyî les tchuzes procsi al mwin"
+
+#~ msgid "Authori&zation"
+#~ msgstr "Otori&zåcion"
+
+#~ msgid "Prompt for login information whenever it is required."
+#~ msgstr ""
+#~ "Arinnaedje po les pondants et djondants di l' elodjaedje cwand c' est "
+#~ "dmandé."
+
+#~ msgid "Prompt as &needed"
+#~ msgstr "Prompt si &dandjî"
+
+#~ msgid "Use this login information."
+#~ msgstr "Eployî ciste informåcion d' elodjaedje."
+
+#~ msgid "Username:"
+#~ msgstr "No d' uzeu:"
+
+#~ msgid "Login name."
+#~ msgstr "No d' elodjaedje."
+
+#~ msgid "Login password."
+#~ msgstr "Sicret d' elodjaedje."
+
+#~ msgid "Password:"
+#~ msgstr "Sicret:"
+
+#~ msgid "O&ptions"
+#~ msgstr "Tc&huzes"
+
+#~ msgid "Use persistent connections to proxy"
+#~ msgstr "Si siervi di raloyaedjes ås procsis ki dmorèt"
+
+#~ msgid "Ser&vers"
+#~ msgstr "Sier&veus"
+
+#~ msgid "D&elete All"
+#~ msgstr "Disfac&er totafwait"
+
+#~ msgid "De&lete"
+#~ msgstr "Dis&facer"
+
+#~ msgid "C&hange..."
+#~ msgstr "Cand&jî..."
+
+#~ msgid "&Domain name:"
+#~ msgstr "No do &dominne:"
+
+#~ msgid "Add &platform name"
+#~ msgstr "Rajouter no del &platfôme"
+
+#~ msgid "Domain [Group]"
+#~ msgstr "Dominne [Groupe]"
+
+#~ msgid "Host [Set By]"
+#~ msgstr "Lodjoe [Défini pa]"
+
+#~ msgid "&Windows Shares"
+#~ msgstr "Pårtaedjes di &purneas"
+
+#~ msgid "&LISa Daemon"
+#~ msgstr "Démon &LISa"
+
+#~ msgid "lan:/ Iosla&ve"
+#~ msgstr "lan:/ Iosla&ve"
+
+#~ msgctxt "just a placeholder; do not translate"
+#~ msgid "KSqueezedTextLabel"
+#~ msgstr "EtiketeTecseKSqueezed"
+
+#~ msgid "&Search:"
+#~ msgstr "&Trover:"
+
+#~ msgid "&SOCKS"
+#~ msgstr "&SOCKS"
+
+#~ msgid "SOCKS"
+#~ msgstr "SOCKS"
+
+#~ msgid ""
+#~ "Check this to enable SOCKS4 and SOCKS5 support in KDE applications and I/"
+#~ "O subsystems."
+#~ msgstr ""
+#~ "Clitchîz çouci po mete en alaedje li sopoirt po SOCKS4 eyet SOCKS5 dins "
+#~ "les programes di KDE eyet les sorsistinmes I/R."
+
+#~ msgid "&Enable SOCKS support"
+#~ msgstr "M&ete en alaedje sopoirt SOCKS"
+
+#~ msgid "Click here to test SOCKS support."
+#~ msgstr "Clitchîz chal po sayî l' sopoirt SOCKS."
+
+#~ msgid "&Test"
+#~ msgstr "&Sayî"
+
+#~ msgid "SOCKS Implementation"
+#~ msgstr "Implemintaejde di SOCKS"
+
+#~ msgid "Use &custom library"
+#~ msgstr "Eployî livreye da &vosse"
+
+#~ msgid "Enter the path to an unsupported SOCKS library."
+#~ msgstr "Intrez l' tchimin viè ene livreye nén sopoirtêye di SOCKS."
+
+#~ msgid ""
+#~ "If you select Autodetect, then KDE will automatically search for an "
+#~ "implementation of SOCKS on your computer."
+#~ msgstr ""
+#~ "Si vs tchoezixhoz Deteccion otomatike, KDE cwerrè otomaticmint ene "
+#~ "implemintåcion d' SOCKS so vosse copiutrece."
+
+#~ msgid "A&uto detect"
+#~ msgstr "Trover tot se&u"
+
+#~ msgid "This will force KDE to use NEC SOCKS if it can be found."
+#~ msgstr "Çouci foicrè KDE a eployî NEC SOCKS s' i l' trove."
+
+#~ msgid "&NEC SOCKS"
+#~ msgstr "&NEC SOCKS"
+
+#~ msgid "This will force KDE to use Dante if it can be found."
+#~ msgstr "Çouci foicrè KDE a eployî Dante s' i l' trove."
+
+#~ msgid "&Dante"
+#~ msgstr "&Dante"
+
+#~ msgid "Additional Library Search Paths"
+#~ msgstr "Tchimins d' cweraedje des ôtès livreyes"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Djan Cayron"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "jean.cayron@gmail.com"
+
+#~ msgid "kcmsocks"
+#~ msgstr "kcmsocks"
+
+#~ msgid "KDE SOCKS Control Module"
+#~ msgstr "Module di contrôle SOCKS da KDE"
+
+#~ msgid "(c) 2001 George Staikos"
+#~ msgstr "© 2001 George Staikos"
+
+#~ msgid "George Staikos"
+#~ msgstr "George Staikos"
+
+#~ msgid "These changes will only apply to newly started applications."
+#~ msgstr ""
+#~ "Ces candjmints n' seront metous en ouve k' ås noveas programes d' enondés."
+
+#~ msgid "SOCKS Support"
+#~ msgstr "Sopoirt SOCKS"
+
+#~ msgid "Success: SOCKS was found and initialized."
+#~ msgstr "Totafwait comifåt: SOCKS a stî trové eyet inicialijhî."
+
+#~ msgid "SOCKS could not be loaded."
+#~ msgstr "SOCKS n' a nén sepou esse tcherdjî."
+
+#~ msgid "&Path:"
+#~ msgstr "&Tchimin:"
+
+#~ msgid "Path"
+#~ msgstr "Tchimin"
+
+#~ msgid "&Add"
+#~ msgstr "&Radjouter"
+
+#~ msgid "&Remove"
+#~ msgstr "&Oister"
+
+#~ msgid "This is the configuration for the samba client only, not the server."
+#~ msgstr ""
+#~ "Çouci n' est l' apontiaedje ki po l' cliyint samba, nén pol sierveu."

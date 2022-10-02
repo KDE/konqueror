@@ -1,0 +1,240 @@
+# translation of libkonq.po to Walloon
+# Ratournaedje e walon des messaedjes di KDE.
+#
+# Lorint Hendschel <laurent.hendschel@skynet.be>, 2001-2002.
+# Pablo Saratxaga <pablo@walon.org>, 2003, 2004.
+# Jean Cayron <jean.cayron@base.be>, 2007, 2008, 2010, 2011.
+# Jean Cayron <jean.cayron@base.be>, 2007, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2012-11-02 23:28+0100\n"
+"Last-Translator: Jean Cayron <jean.cayron@base.be>\n"
+"Language-Team: Walloon <linux-wa@walon.org>\n"
+"Language: wa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "&Drovi"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "Fé on r&idant..."
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "&Rapexhî"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr "Mostrer l' ridant d' oridjinne"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr "Mostrer l' fitchî d' oridjinne"
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "&Vudî l' batch"
+
+#: src/konq_popupmenu.cpp:312
+#, kde-format
+msgid "&Configure Trash Bin"
+msgstr "&Apontyî l' batch ås mannestés"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "Fé ene &rimåke po ci pådje ci"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "Fé ene &rimåke po ci eplaeçmint ci"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "Fé ene &rimåke po ç' ridant ci"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "Fé ene &rimåke po ç' hårdêye ci"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "Fé ene &rimåke po ç' fitchî ci"
+
+#: src/konq_popupmenu.cpp:379
+#, kde-format
+msgid "Preview In"
+msgstr "Prévey divins"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "&Prôpietés"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy To"
+#~ msgstr "Copyî viè"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "Bodjî viè"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "Ridant måjhon"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "Ridant raecene"
+
+#~ msgctxt "@title:menu in Copy To or Move To submenu"
+#~ msgid "Browse..."
+#~ msgstr "Foyter..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "Copyî chal"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "Bodjî chal"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "Vos n' poloz nén bodjî on ridant so lu minme"
+
+#~ msgid "File name for dropped contents:"
+#~ msgstr "No d' fitchî po çou k' est bodjî:"
+
+#~ msgid "&Move Here"
+#~ msgstr "&Bodjî Chal"
+
+#~ msgid "&Copy Here"
+#~ msgstr "&Copyî Chal"
+
+#~ msgid "&Link Here"
+#~ msgstr "&Loyî Chal"
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "Prinde come I&mådje di Fond"
+
+#~ msgid "C&ancel"
+#~ msgstr "&Rinoncî"
+
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "Ahiver on ridant"
+
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "Dinez èn ôte no"
+
+#~ msgid ""
+#~ "The name \"%1\" starts with a dot, so the directory will be hidden by "
+#~ "default."
+#~ msgstr ""
+#~ "Li no \"%1\" atake avou on pont, d' abôrd li ridant srè prémetou catchî."
+
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "Ahiver on ridant catchî ?"
+
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "Novea ridant"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "Novea ridant"
+
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "Tapez li no do ridant :"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "Aclaper on ridant"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One File"
+#~ msgstr "Aclaper on fitchî"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Item"
+#~ msgid_plural "Paste %1 Items"
+#~ msgstr[0] "Aclaper on cayet"
+#~ msgstr[1] "Aclaper %1 cayets"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste Clipboard Contents..."
+#~ msgstr "Aclaper çki gn a e presse-papî..."
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste"
+#~ msgstr "Aclaper"
+
+#~ msgid ""
+#~ "Restores this file or directory, back to the location where it was "
+#~ "deleted from initially"
+#~ msgstr ""
+#~ "Rapexhe ci fitchî ou c' ridant, e l' rimetant al plaece k' il esteut "
+#~ "dvant d' esse disfacé"
+
+#~ msgid ""
+#~ "Opens a new file manager window showing the target of this link, in its "
+#~ "parent directory."
+#~ msgstr ""
+#~ "Drove ene novele finiesse do manaedjeu des fitchîs mostrant l' såme di c' "
+#~ "loyén ci, dins s' ridant parint."
+
+#~ msgid "Share"
+#~ msgstr "Pårtaedjî"
+
+#~ msgctxt "@info"
+#~ msgid "Close"
+#~ msgstr "Clôre"
+
+#~ msgid "Close"
+#~ msgstr "Clôre"
+
+#~ msgid "Error: %1"
+#~ msgstr "Aroke : %1"
+
+#~ msgid "Create New"
+#~ msgstr "Ahiver novea"
+
+#~ msgid "Link to Device"
+#~ msgstr "Loyén viè èn éndjin"
+
+#~ msgid "<qt>The template file <b>%1</b> does not exist.</qt>"
+#~ msgstr "<qt>Li fitchî modele <b>%1</b> n' egzistêye nén.</qt>"
+
+#~ msgid "File name:"
+#~ msgstr "No do fitchî:"
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Actions"
+#~ msgstr "&Accions"

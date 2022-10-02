@@ -1,0 +1,889 @@
+<chapter id="plugins">
+
+<chapterinfo>
+<authorgroup>
+<author
+><personname
+><firstname
+>Памела</firstname
+> <surname
+>Робертс</surname
+></personname
+></author>
+<othercredit role="translator"
+><firstname
+>Драган</firstname
+><surname
+>Пантелић</surname
+><affiliation
+><address
+><email
+>falcon-10@gmx.de</email
+></address
+></affiliation
+><contrib
+>превод</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>22. 11. 2011.</date>
+<releaseinfo
+>КДЕ 4.8</releaseinfo>
+</chapterinfo>
+
+
+<title
+>Прикључци</title>
+
+<sect1 id="netscape-plugin">
+<title
+>Нетскејпови прикључци</title>
+
+<para
+><application
+>К‑освајач</application
+> тренутно подржава прикључке за Нетскејп.</para>
+
+<para
+>Избором <menuchoice
+><guimenu
+>Подешавање</guimenu
+><guimenuitem
+>Подеси К‑освајач...</guimenuitem
+> </menuchoice
+> добијате дијалог за подешавање. Идите на страницу <guilabel
+>Прикључци</guilabel
+>, која садржи два језичка: под <guilabel
+>Глобалне поставке</guilabel
+> прикључци се активирају и подешава се њихово понашање у <application
+>К‑освајачу</application
+>, а под <guilabel
+>Прикључци</guilabel
+> набројани су пронађени Нетскејпови прикључци и понуђено скенирање за другима.</para>
+
+<para
+>За више информација погледајте страницу помоћи за <ulink url="help:/kcontrol/khtml-plugins/index.html"
+>прикључке прегледача</ulink
+>.</para>
+
+</sect1>
+
+<!-- 
+missing from extragear base:
+minitools (Bookmarklets - Enables the use of bookmarklets)
+This plugin adds implementation for so-called bookmarklets. Bookmarklets are little
+Javascript programs which can be saved and used like normal web page bookmarks. Therefore,
+they are simple "one-click" tools that can add substantial functionality to the browser.
+http://blog.ssokolow.com/archives/2007/01/30/konqueror-with-bookmarklets/
+
+autorefresh
+This works on any readonly part (though currently it only plugs into
+khtmlpart). It lets you tell konqueror to refresh a page automatically
+after a specific period. This is useful for things like news pages,
+and should be very nice for people using kiosk mode
+
+rellinks
+Name=Document Relations
+Comment=Displays the document relations of a document
+
+adblock from baseapps+extragear
+Show all blockable html elements
+
+akregator
+This works on KHTMLPart and allows you to add feeds to Akregator directly from Konqueror.
+
+not ported to kde4 yet
+sidebar
+microformat
+mediarealfolder
+<listitem>
+<para
+><ulink url="help:/konq-plugins/mediaplayer/index.html"
+>The Embedded Media
+Player</ulink
+></para>
+
+konq plugins in other modules
+kdeutils 
+  filelight
+  ark?
+
+kdebase apps
+  kttsdplugin (browser mode ?)
+  shellcmdplugin (file manager mode)
+  
+kdenetwork
+  kget (browser mode)
+-->
+
+<sect1 id="konq-plugin">
+<title
+><application
+>К‑освајачеви</application
+> прикључци</title>
+
+<para
+>Издања <acronym
+>КДЕ‑а</acronym
+> садрже неке корисне прикључке који се уклапају у <application
+>К‑освајач</application
+> на различите начине. Укратко су представљени у наредном.</para>
+
+<para
+>Употребите <menuchoice
+><guimenu
+>Подешавање</guimenu
+><guimenuitem
+>Подеси проширења...</guimenuitem
+></menuchoice
+> да отворите дијалог са свим инсталираним прикључцима и изаберете оне које желите. Свим прикључцима може се приступити кроз мени <guimenu
+>Алатке</guimenu
+>.</para>
+
+<para
+>У дијалогу ће бити набројани само прикључци који одговарају тренутном режиму (менаџер фајлова или прегледач).</para>
+
+<variablelist>
+<title
+>Режим прегледача</title>
+
+ <!--FIXME does not work any more, see also https://github.com/nltk/nltk/issues/265-->
+<varlistentry>
+<term
+>превод веб странице</term>
+<listitem
+><para
+>Користи сервис машинског превођења са <ulink url="http://babelfish.yahoo.com/"
+>Јахуовог сајта Бабелфиш</ulink
+> да преведе текућу ХТМЛ страницу на било који од понуђених језика. Може се покренути помоћу <menuchoice
+><guimenu
+>Алатке</guimenu
+><guisubmenu
+>Преведи веб страницу</guisubmenu
+></menuchoice
+>.</para>
+<para
+>Ако изаберете део текста на страници, биће преведен само тај део уместо целог УРЛ‑а.</para>
+
+<para
+>Сервис Бабелфиш подржава само ограничен број језика.</para>
+
+<important>
+<para
+>Машинско превођење није савршено! Бабелфиш ће у најбољем случају дати груб превод, а у најгорем нешто потпуно смешно. Немојте доносити важне одлуке према ономе што сте прочитали са странице преведене Бабелфишом, већ претходно обавезно потврдите тачност превода.</para>
+</important>
+
+<note
+> 
+<para
+>Целе веб странице се могу преводити само када су доступне преко Веба. За било шта друго, идите директно на сајт Бабелфиша и тамо налепите текст који желите да преведете.</para>
+</note>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>приказивач ДОМ стабла</term>
+<listitem>
+<para
+>Приказивач ДОМ стабла омогућава програмеру да прикаже стилове, атрибуте и елементе веб документа.</para>
+<para
+>Избор <menuchoice
+><guimenu
+>Алатке</guimenu
+><guisubmenu
+>Прикажи ДОМ стабло</guisubmenu
+></menuchoice
+> отвара нови прозор са објектним моделом документа (ДОМ‑ом) текуће ХТМЛ странице.</para>
+<para
+>Подразумевано приказ почиње од кореног чвора документа, на пример <literal
+>documentElement</literal
+>. Сви остали видљиви чворови или су деца или потомци кореног.</para>
+<para
+>Ако желите да измените ДОМ стабло, мораћете за то да употребите неку спољашњу скрипту.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>оверивач веб странице</term>
+<listitem>
+<para
+>Овај прикључак користи В3Ц‑ов оверивач ХТМЛ‑а да овери текућу страницу, што је врло корисно при изради веб страница.</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guimenuitem
+>Овери ХТМЛ (преко УРИ‑ја)</guimenuitem
+> и <guimenuitem
+>Овери ХТМЛ (отпремањем)</guimenuitem
+></term>
+<listitem
+><para
+>Опција овере ХТМЛ‑а омогућава вам да упоредите свој ХТМЛ документ са прописаном синтаксом ХТМЛ‑а и добијете извештај о евентуалним грешкама. Овером обезбеђујете да се ваше веб странице правилно виде у свим прегледачима.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Овери ЦСС (преко УРИ‑ја)</guimenuitem
+></term>
+<listitem
+><para
+>Омогућава вам да оверите ЦСС опис стила угнежђен у ХТМЛ или ИксХТМЛ документу. Правилан ЦСС је кључан за одржавање усаглашеног изгледа вашег веб сајта без обзира на прегледач којим му се приступа.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Овери везе</guimenuitem
+></term>
+<listitem
+><para
+>Потврдите да међу везама на вашем сајту нема преусмеравања нити прекинутих веза. Ова алатка рекурзивно проверава све везе на сајту.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Овери страницу</guimenuitem
+></term>
+<listitem
+><para
+>Оверава текућу страницу али без приказа резултата у другом прозору или језичку, као што то чине претходне радње. Употребом ове ставке активирате радњу <guimenuitem
+>Прикажи извештај оверивача</guimenuitem
+> која даје сажетак оверавања.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Подеси оверивач...</guimenuitem
+></term>
+<listitem
+><para
+>Овом ставком можете погледати и подесити претподешене овериваче којим оверавате свој ХТМЛ и ЦСС</para
+></listitem>
+</varlistentry>
+</variablelist>
+</listitem>
+<!-- icon W3 right in statusbar
+&LBM; click context menu with items above but no Configure Validator
+ -->
+</varlistentry>
+
+<varlistentry>
+<term
+>поставке ХТМЛ‑а</term>
+<listitem
+><para
+>Изаберите <menuchoice
+><guimenu
+>Алатке</guimenu
+><guisubmenu
+>ХТМЛ поставке</guisubmenu
+></menuchoice
+> да укључите и искључите разне поставке ХТМЛ‑а без посезања у дијалог за подешавање. </para>
+<variablelist>
+<varlistentry>
+<term
+><guimenuitem
+>Јаваскрипт</guimenuitem
+></term>
+<listitem
+><para
+>Укључите или искључите употребу јаваскрипта у <application
+>К‑освајачу</application
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Јава</guimenuitem
+></term>
+<listitem
+><para
+>Укључите или искључите употребу јаваскрипта у <application
+>К‑освајачу</application
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Колачићи</guimenuitem
+></term>
+<listitem
+><para
+>Укључите или искључите употребу колачића у <application
+>К‑освајачу</application
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Прикључци</guimenuitem
+></term>
+<listitem
+><para
+>Укључите или искључите употребу инсталираних прикључака у <application
+>К‑освајачу</application
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Самоучитавање слика</guimenuitem
+></term>
+<listitem
+><para
+>Укључите или искључите учитавање слика на веб страницама.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Укључи прокси</guimenuitem
+></term>
+<listitem
+><para
+>Активирајте или деактивирајте употребу проксија у <application
+>К‑освајачу</application
+> као прегледачу.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Укључи кеш</guimenuitem
+></term>
+<listitem
+><para
+>Активирајте или деактивирајте употребу кеша у <application
+>К‑освајачу</application
+> као прегледачу.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Понашање кеша</guimenuitem
+></term>
+<listitem>
+<para
+>Подмени <guimenu
+>Понашање кеша</guimenu
+> омогућава вам да подесите како <application
+>К‑освајач</application
+> користи кеш. Могућности су:</para>
+<itemizedlist>
+<listitem
+><para
+><guimenuitem
+>Одржавај кеш синхронизованим</guimenuitem
+></para
+></listitem>
+<listitem
+><para
+><guimenuitem
+>Користи кеш ако је могуће</guimenuitem
+></para
+></listitem>
+<listitem
+><para
+><guimenuitem
+>Режим претраживања ван везе</guimenuitem
+></para
+></listitem>
+</itemizedlist>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>измењивач корисничког агента</term>
+<listitem
+><para
+>Изаберите <menuchoice
+><guimenu
+>Алатке</guimenu
+><guisubmenu
+>Промени идентификацију прегледача</guisubmenu
+></menuchoice
+> за мени из којег можете променити ниску корисничког агента без посезања у дијалог за подешавање. </para>
+<para
+>Кроз овај прикључак можете задати идентификацију прегледача и оперативног система према домену. Ово је корисно ако прегледате сајтове који дозвољавају приступ само одређеним веб прегледачима.</para>
+<variablelist>
+<varlistentry>
+<term
+><guimenuitem
+>Подразумевана идентификација</guimenuitem
+></term>
+<listitem
+><para
+>Подразумевано заглавље „кориснички агент“ за <application
+>К‑освајач</application
+> гласи <literal
+>Mozilla/5.0 (compatible; Konqueror/4.7) (KHTML/4.7, like Gecko)</literal
+>. Ако наиђете на сајт који одбија приступ оваквом прегледачу, промените кориснички агент на једно од доле наведеног.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>подмени прегледача</term>
+<listitem
+><para
+>Наредне ставке менија чине списак популарних прегледача, као што су Фајерфокс, Интернет експлорер, Нетскејпов Навигатор, Опера и Сафари. Можете и ручно задати неки други. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Примени на цео сајт</guimenuitem
+></term>
+<listitem
+><para
+>Овом опцијом задајете да се дефинисани кориснички агент примењује на свакој страници сајта који тренутно посећујете.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Подешавање</guimenuitem
+></term>
+<listitem
+><para
+>Избором <guimenuitem
+>Подешавање</guimenuitem
+> отварате дијалог за подешавање, у коме можете фино подесити све податке о прегледачу и оперативном систему који се шаљу.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>архивирање веб странице</term>
+<listitem
+><para
+>Позвана помоћу <menuchoice
+><guimenu
+>Алатке</guimenu
+><guisubmenu
+>Архивирај веб страницу...</guisubmenu
+></menuchoice
+>, ова алатка ствара архивски фајл (<literal role="extension"
+>.war</literal
+>) за тренутно приказану веб страницу, укључујући и све слике. Кликните <mousebutton
+>левим</mousebutton
+> на име архивског фајла да прикажете сачувану страну. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<variablelist>
+<title
+>Режим менаџера фајлова</title>
+
+<varlistentry>
+<term
+>филтер приказа фасцикле</term>
+<listitem
+><para
+>Овим управљате преко <menuchoice
+><shortcut
+><keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>Shift</keycap
+><keycap
+>I</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Алатке</guimenu
+><guisubmenu
+>Прикажи филтерску траку</guisubmenu
+></menuchoice
+>, где можете изабрати по типу ставке које се приказују у фасцикли.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>галерија слика</term>
+<listitem
+><para
+>У режиму менаџера фајлова, можете одабрати <menuchoice
+><guimenu
+>Алатке</guimenu
+><guisubmenu
+>Направи галерију слика...</guisubmenu
+></menuchoice
+> (или притиснути <keycombo
+><keycap
+>Ctrl</keycap
+><keycap
+>I</keycap
+></keycombo
+>) да створите ХТМЛ страницу са сличицама за све слике у текућој фасцикли. Подразумевано име ХТМЛ странице је <filename
+>images.html</filename
+>, а сличице се стављају у нову фасциклу <filename
+>images</filename
+>.</para>
+<para
+>Када покренете прикључак за галерију слика, појавиће се дијалог у коме подешавате начин стварања галерије.</para>
+
+<variablelist id="page_look_dialog">
+<title
+>Изглед странице</title>
+<varlistentry>
+<term
+>Овај дијалог служи за подешавање изгледа странице галерије.</term>
+<listitem>
+  
+<screenshot>
+<screeninfo
+>Снимак екрана дијалога за изглед.</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="look.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Снимак екрана.</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Наслов странице:</guimenuitem
+></term>
+<listitem
+><para
+>Ова опција даје поље у које уносите жељени наслов странице са галеријом слика.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Сликâ по врсти:</guimenuitem
+></term>
+<listitem
+><para
+>Ову опцију чини клизач и бројчаник којим подешавате број сличица по једној врсти у галерији.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Прикажи име фајла слике</guimenuitem
+></term>
+<listitem
+><para
+>Овом кућицом одређујете да ли се виде имена фајлова испод сличица у галерији.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Прикажи величину фајла слике</guimenuitem
+></term>
+<listitem
+><para
+>Овом кућицом одређујете да ли се виде величине фајлова испод сличица у галерији.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Прикажи димензије слике</guimenuitem
+></term>
+<listitem
+><para
+>Овом кућицом одређујете да ли се виде димензије слика испод сличица у галерији.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Име фонта:</guimenuitem
+></term>
+<listitem
+><para
+>Овај падајући списак омогућава бирање фонта који се користи за испис текст у галерији.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Величина фонта:</guimenuitem
+></term>
+<listitem
+><para
+>Овим бројчаником мењате величину изабраног фонта.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Боја исписа:</guimenuitem
+></term>
+<listitem
+><para
+>Ова опција даје бирач боје исписа у галерији, под коју спадају све зоне са текстом.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Боја позадине:</guimenuitem
+></term>
+<listitem
+><para
+>Ова опција даје бирач боје позадине у галерији.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<variablelist id="folders_dialog">
+<title
+>Фасцикле</title>
+<varlistentry>
+<term
+>Кроз дијалог фасцикли бирате где ће галерија бити сачувана. Овде такође можете подесити које се фасцикле користе.</term>
+<listitem>
+  
+<screenshot>
+<screeninfo
+>Снима дијалога фасцикли.</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="folders.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Снимак екрана.</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Сачувај у ХТМЛ фајл:</guimenuitem
+></term>
+<listitem
+><para
+>Бирач фајлова у коме одређујете где ћете сачувати ХТМЛ страницу начињене галерије.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Рекурзивно кроз потфасцикле</guimenuitem
+></term>
+<listitem
+><para
+>Овом кућицом активирате рекурзију кроз потфасцикле. Ако је кућица попуњена, активирају се клизач и бројчаник за избор дубине рекурзије.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Копирај изворне фајлове</guimenuitem
+></term>
+<listitem
+><para
+>Овом кућицом задаје се стварање фасцикле у коју треба копирати изворне слике садржане у галерији.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Употреби фајл са коментарима</guimenuitem
+></term>
+<listitem
+><para
+>Ова кућица позива бирач фајлова ради задавања фајл са коментарима за галерију. Фајл са коментарима садржи поднаслове слике.</para>
+<para
+>Формат овог фајла је:</para>
+<programlisting
+># ово је коментар, редови који почињу са '#' игноришу се
+ИМЕФАЈЛА1:
+Опис
+
+ИМЕФАЈЛА2:
+Опис
+</programlisting>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+<variablelist id="thumbnails_dialog">
+<title
+>Сличице</title>
+<varlistentry>
+<term
+>У дијалогу сличица подешавају се својства сличица у галерији.</term>
+<listitem>
+  
+<screenshot>
+<screeninfo
+>Сниме екрана са дијалогом сличица.</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="thumbnails.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Снимак екрана.</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Формат сличица:</guimenuitem
+></term>
+<listitem
+><para
+>Из овог падајућег списка бирате формат у коме ће сличице бити записане.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Величина сличица:</guimenuitem
+></term>
+<listitem
+><para
+>Ова опција даје клизач и бројчаник за подешавање величине сличица у галерији.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Различита дубина боја:</guimenuitem
+></term>
+<listitem
+><para
+>Ова кућица активира падајући списак за промену дубине боја за сличице, ако желите да буде различита од оне за изворну слику.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>претраживачка трака</term>
+<listitem
+><para
+>Даје текстуално поље за лак приступ претраживачима попут Гугла. Кликните на икону лево од поља да отворите мени из којег можете бирати различите претраживаче и подешавати њихове <ulink url="help:/kcontrol/ebrowsing/index.html"
+>веб пречице</ulink
+>. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>прикључак за наредбе шкољке</term>
+<listitem
+><para
+>Овај прикључак омогућава извршавање наредби шкољке у текућој фасцикли, уз приказ излаза у засебном прозору. </para
+></listitem>
+</varlistentry>
+
+<!--FIXME
+imagerotation context menu Actions -> Convert to -> JPEG,PNG,GIF,TIFF 
+(rotation disabled) always installed
+
+Additional Download Manager from KGet
+-->
+</variablelist>
+
+</sect1>
+
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

@@ -1,0 +1,215 @@
+<chapter id="bookmarks">
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+&traducteurJoelleCornavin; &traducteurGerardDelafond;&traducteurLudovicGrossard; 
+</authorgroup>
+
+<date
+>24/09/2010</date>
+<releaseinfo
+>&kde; 4.5</releaseinfo>
+</chapterinfo>
+
+<title
+>Utilisation des signets</title>
+
+<para
+>Bien qu'il soit possible d'utiliser les signets de &konqueror; pour enregistrer les emplacements de vos propres fichiers et dossiers, ils sont surtout utiles lorsque vous surfez sur le web, pour vous constituer une liste de sites utiles.</para>
+
+<para
+>Pour ouvrir le menu des <guimenu
+>signets</guimenu
+>, vous pouvez cliquer avec le &BGS; sur l'élément de menu <guimenu
+>Signets</guimenu
+>. Une fois la liste visible, vous pouvez l'explorer avec les touches fléchées ou votre souris, et appuyer sur &Enter; ou visiter l'emplacement choisi après un clic <mousebutton
+>gauche</mousebutton
+>.</para>
+
+<para
+>Pour ajouter un nouvel élément à la liste, utilisez <menuchoice
+><guimenu
+>Signets</guimenu
+><guimenuitem
+>Ajouter un signet</guimenuitem
+></menuchoice
+> ou <keycombo action="simul"
+>&Ctrl;<keycap
+>B</keycap
+></keycombo
+>, ou cliquer avec le &BDS; sur une zone vide de la page web ou l'affichage du dossier, et choisissez <guimenuitem
+>Ajouter cette page aux signets</guimenuitem
+> /  <guimenuitem
+>Ajouter cet emplacement aux signets</guimenuitem
+> dans le menu déroulant.</para>
+
+<para
+>La liste <guimenu
+>Signets</guimenu
+> peut comporter des sous-dossiers contenant d'autres signets que vous pouvez créer avec <menuchoice
+><guimenu
+>Signets </guimenu
+><guimenuitem
+>Nouveau dossier de signets...</guimenuitem
+></menuchoice
+>. Pour ajouter un signet dans un sous-dossier plutôt que dans la liste principale des signets, choisissez le dossier au sein de la liste <guimenu
+>Signets</guimenu
+> et utilisez l'élément <guimenuitem
+>Ajouter un signet</guimenuitem
+> dans ce dossier.</para>
+
+<para
+>Vous pouvez également accéder à vos signets à partir de la <link linkend="sidebar"
+> <guilabel
+>barre latérale</guilabel
+></link
+> ou depuis la <guilabel
+>barre des signets</guilabel
+>.</para>
+
+<para
+>Si vous saisissez <userinput
+>bookmarks:/</userinput
+> dans la barre d'emplacements, la page d'accueil des signets contenant un aperçu de tous les signets et dossiers est affichée.</para
+> 
+
+<sect1 id="orgbmark">
+<title
+>L'éditeur de signets</title>
+
+<para
+>L'option <menuchoice
+><guimenu
+>Signets</guimenu
+> <guimenuitem
+>Modifier les signets</guimenuitem
+> </menuchoice
+> ouvre l'<guilabel
+>Éditeur de signets</guilabel
+>.</para>
+<para
+>Celle-ci montre un affichage arborescent de vos signets et de vos sous-dossiers de signets. Comme d'habitude avec les arborescences de &kde;, les sous-dossiers sont affichés avec un petit carré placé à gauche du nom de dossier. Si le carré contient un signe <keycap
+>+</keycap
+>, un clic <mousebutton
+>gauche</mousebutton
+> dessus développe l'arborescence pour afficher le contenu de ce sous-dossier et le signe <keycap
+>+</keycap
+> se transforme en <keycap
+>-</keycap
+>, <mousebutton
+>gauche</mousebutton
+> un clic sur le signe <keycap
+>-</keycap
+> réduit l'affichage du sous-dossier.</para>
+
+<para
+>Pour sélectionner un élément dans la liste, vous pouvez cliquer avec le &BGS; dessus ou explorer la liste à l'aide des touches <keysym
+>Flèche haut</keysym
+> et <keysym
+>Flèche bas</keysym
+> pour vous déplacer, <keysym
+>Flèche droite</keysym
+> pour développer un sous-dossier et <keysym
+>Flèche gauche</keysym
+> pour le réduire.</para>
+
+<para
+>Vous pouvez déplacer un élément vers un autre endroit de la liste à l'aide du glisser-déposer normal ou des méthodes <guimenuitem
+>Couper</guimenuitem
+> et <guimenuitem
+>Coller</guimenuitem
+>. L'ordre dans lequel les éléments apparaissent dans l'<guilabel
+>Éditeur de signets</guilabel
+> est celui dans lequel ils apparaîtront dans la liste déroulante <guimenu
+>Signets</guimenu
+>. L'option <menuchoice
+><guimenu
+>Insertion</guimenu
+><guimenu
+>Dossier</guimenu
+><guimenuitem
+>insérer un séparateur</guimenuitem
+></menuchoice
+> peut servir à insérer des lignes de séparation dans la liste à n'importe quel endroit de votre choix.</para>
+
+<para
+>Un nouveau sous-dossier peut être créé à l'endroit choisi de la liste à l'aide de l'option <guimenuitem
+>Nouveau dossier...</guimenuitem
+> dans le menu <guimenu
+>Dossier</guimenu
+> dans le menu déroulant que vous obtenez lors d'un clic <mousebutton
+>droit</mousebutton
+> sur un élément dans la partie principale de la fenêtre, ou avec <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </para>
+
+<para
+>Pour changer le nom d'un dossier, d'un signet ou d'un dossier, sélectionnez-le en appuyant sur <keycap
+>F2</keycap
+> ou choisissez l'élément <guimenuitem
+>Renommer</guimenuitem
+> dans le menu <guimenu
+>Édition</guimenu
+> ou le menu déroulant qui apparaît lors d'un clic <mousebutton
+>droit</mousebutton
+> sur l'élément. De la même manière, vous pouvez modifier l'&URL; en appuyant sur <keycap
+>F3</keycap
+> ou en choisissant l'élément de menu <guimenuitem
+>Modifier l'emplacement</guimenuitem
+>.</para>
+
+<para
+>L'<guilabel
+>Éditeur de signets</guilabel
+> permet d'importer des signets à partir d'une palette de navigateurs dans la liste de signets de &konqueror;, en les plaçant dans un nouveau dossiers ou en remplaçant tous les signets actuels. Pour ce faire, choisissez <guisubmenu
+>Importer</guisubmenu
+> dans le menu <guimenu
+>Fichier</guimenu
+>. L'option <menuchoice
+><guimenu
+>Fichier</guimenu
+><guisubmenu
+>Exporter</guisubmenu
+> </menuchoice
+> peut être utilisée pour exporter les signets de &konqueror; vers un navigateur &Netscape; ou Mozilla.</para>
+
+<para
+>Pour choisir le sous-dossier de signets qui servira à contenir les éléments de la barre de signets, sélectionnez le sous-dossier, puis choisissez <guimenuitem
+>Définir comme dossier de barre d'outils</guimenuitem
+> dans le menu <guimenu
+>Dossier</guimenu
+>.</para>
+
+<para
+>Lorsque vous mettez de l'ordre dans vos signets et que vous avez oublié de quelle page web il s'agit, vous pouvez aisément l'ouvrir dans l'<guilabel
+>Éditeur de signets</guilabel
+> en cliquant avec le &BDS; sur l'élément et en choisissant <guimenuitem
+>Ouvrir dans Konqueror</guimenuitem
+> dans le menu déroulant. Si vous désirez simplement vérifier si l'&URL; est encore valable, choisissez plutôt <guimenuitem
+>Vérifier l'état</guimenuitem
+>.</para>
+
+<note
+><para
+>Tous vos changements sont automatiquement enregistrés si vous fermez l'<guilabel
+>éditeur de signet</guilabel
+>. </para
+></note>
+</sect1
+> 
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

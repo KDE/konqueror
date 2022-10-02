@@ -1,0 +1,121 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY nsplugins-kcontrol SYSTEM "nsplugin.docbook">
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Brazilian-Portuguese "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="khtml-behavior" lang="&language;">
+<articleinfo>
+<title
+>Navegação Web</title>
+<authorgroup>
+<author
+>&Krishna.Tateneni; &Krishna.Tateneni.mail;</author>
+<othercredit role="translator"
+><firstname
+>Lisiane</firstname
+> <surname
+>Sztoltz</surname
+><affiliation
+><address
+> <email
+>lisiane@conectiva.com.br</email
+></address
+></affiliation
+><contrib
+>Tradução</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>11/11/2011</date>
+<releaseinfo
+>&kde; 4.10</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Configurações do Sistema</keyword>
+<keyword
+>konqueror</keyword>
+<keyword
+>navegação</keyword>
+</keywordset>
+
+</articleinfo>
+<sect1 id="konq-browsing">
+<title
+>Navegação Web</title>
+
+<para
+>O módulo de navegação do &konqueror; das &systemsettings; permite a você selecionar várias opções para configurar o comportamento do &konqueror;, o navegador Web do &kde;.</para>
+
+<para
+>Se a opção <guilabel
+>Perguntar pelo nome e pasta ao adicionar favoritos</guilabel
+> estiver habilitada, o &konqueror; permitirá que você mude o título do favorito e selecione a pasta na qual ele será guardado quando você o adicionar aos seus favoritos.</para>
+
+<para
+>Habilitar a opção <guilabel
+>Mostrar somente os favoritos marcados na barra de favoritos</guilabel
+> fará com que o &konqueror; somente mostre na barra de favoritos os favoritos que você marcou para exibição usando o seu editor de favoritos.</para>
+
+<para
+>A próxima opção desta página é <guilabel
+>Complementação de formulários</guilabel
+>. Se você marcar esta opção, o &konqueror; tentará lembrar o que você deve responder em questões de um formulário, e tentará preencher os campos para você, com respostas que você usou anteriormente.</para>
+
+<para
+>Você pode configurar o número de itens que serão lembrados em um formulário no &konqueror; com a caixa de numeração chamada <guilabel
+>Número máximo de complementações</guilabel
+>.</para>
+
+<note
+><para
+>Quaisquer campos preenchidos pelo &konqueror; poderão ser editados por você, antes de submeter o formulário!</para
+></note>
+
+<para
+>A próxima opção é chamada <guilabel
+>Alterar cursor ao passar sobre os links</guilabel
+>. Se estiver selecionada, o ponteiro do cursor mudará (geralmente para uma mão) se ele se move sobre um link. Isto faz com que se torne fácil identificar links, especialmente quando eles estão na forma de imagens.</para>
+
+<para
+>Se a opção <guilabel
+>Clicar com o botão do meio abre a URL selecionada</guilabel
+> estiver habilitada, você poderá abrir a &URL; na seleção usando o clique do botão do meio em uma janela do &konqueror;.</para>
+
+<para
+>Se você habilitar a opção <guilabel
+>Clicar com o botão direito volta no histórico</guilabel
+>, então o clique com o botão direito em uma área vazia (isto é, não em um link) na janela do &konqueror; terá como efeito o mesmo que obteria se tivesse pressionado o botão de <guiicon
+>Voltar</guiicon
+> na barra de ferramentas.</para>
+
+<para
+>A opção <guilabel
+>Permitir recarga/redirecionamento automáticos</guilabel
+> permite que sites lhe enviem outra página sem sua interação. Em muitos casos, isto é conveniente; por exemplo, se o site foi movido para uma nova &URL;. Muitos webmasters nesta situação colocarão uma página do site antigo, dizendo a você que o site está sendo movido e para que você mude seus Favoritos, para daí mover você para o novo site. No entanto, este recurso pode aborrecer, confundir ou mesmo ser abusivo e, assim, você pode desejar desabilitá-lo.</para>
+
+<para
+><guilabel
+>Habilitar as teclas de acesso com a tecla &Ctrl;</guilabel
+>: Pressionar a tecla &Ctrl; quando estiver visualizando páginas Web ativa as teclas de acesso. Desativar esta caixa desabilitará o recurso de acessibilidade. O &konqueror; precisa ser reiniciado para que esta mudança seja efetivada.</para>
+
+<para
+><guilabel
+>Enviar o cabeçalho DNT para indicar às páginas Web que não querem ser rastreadas</guilabel
+>. Assinale esta opção se quiser informar a uma página Web que deseja que os seus hábitos de navegação Web não sejam rastreados. </para>
+
+<para
+><guilabel
+>Oferecer-se para salvar as senhas das páginas Web</guilabel
+>. Desative esta opção para não ser questionado se deseja salvar as senhas das páginas Web </para>
+</sect1>
+
+</article>

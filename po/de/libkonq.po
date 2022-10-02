@@ -1,0 +1,369 @@
+# Thomas Diehl <thd@kde.org>, 2002, 2003, 2004.
+# Stephan Johach <hunsum@gmx.de>, 2005.
+# Thomas Reitelbach <tr@erdfunkstelle.de>, 2005, 2006, 2007, 2008, 2009.
+# Burkhard Lück <lueck@hube-lueck.de>, 2009, 2011, 2013, 2014, 2021.
+# Johannes Obermayr <johannesobermayr@gmx.de>, 2010.
+# Frederik Schwarzer <schwarzer@kde.org>, 2010, 2011, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2021-03-07 14:05+0100\n"
+"Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "Öff&nen"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "&Ordner erstellen ..."
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "&Wiederherstellen"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr "Tatsächlichen Ordner anzeigen"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr "Tatsächliche Datei anzeigen"
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "Papierkorb &leeren"
+
+#: src/konq_popupmenu.cpp:312
+#, kde-format
+msgid "&Configure Trash Bin"
+msgstr "Papierkorb &einrichten"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "Lesezeichen für diese &Seite"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "Lesezeichen für diese &Adresse"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "Lesezeichen für diesen &Ordner"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "Lesezeichen für diese &Verknüpfung"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "Lesezeichen für diese &Datei"
+
+#: src/konq_popupmenu.cpp:379
+#, kde-format
+msgid "Preview In"
+msgstr "Vorschau in"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr "Terminal hier öffnen"
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "&Eigenschaften"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy To"
+#~ msgstr "Kopieren nach"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "Verschieben nach"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "Persönlicher Ordner"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "Basisordner"
+
+#~ msgctxt "@title:menu in Copy To or Move To submenu"
+#~ msgid "Browse..."
+#~ msgstr "Durchsuchen ..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "Hierher kopieren"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "Hierher verschieben"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "Sie können Ordner nicht auf sich selbst verschieben."
+
+#~ msgid "File name for dropped contents:"
+#~ msgstr "Dateiname für abgelegte Inhalte:"
+
+#~ msgid "&Move Here"
+#~ msgstr "Hierher &verschieben"
+
+#~ msgid "&Copy Here"
+#~ msgstr "Hierher &kopieren"
+
+#~ msgid "&Link Here"
+#~ msgstr "Hiermit &verknüpfen"
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "Als &Hintergrundbild verwenden"
+
+#~ msgid "C&ancel"
+#~ msgstr "&Abbrechen"
+
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "Ordner erstellen"
+
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "Einen anderen Namen eingeben"
+
+#~ msgid ""
+#~ "The name \"%1\" starts with a dot, so the directory will be hidden by "
+#~ "default."
+#~ msgstr ""
+#~ "Der Name „%1“ beginnt mit einem Punkt, daher wird der Ordner versteckt "
+#~ "sein."
+
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "Versteckten Ordner erstellen?"
+
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "Neuer Ordner"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "Neuer Ordner"
+
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "Ordnernamen eingeben:"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "Einen Ordner einfügen"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One File"
+#~ msgstr "Eine Datei einfügen"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Item"
+#~ msgid_plural "Paste %1 Items"
+#~ msgstr[0] "Ein Element einfügen"
+#~ msgstr[1] "%1 Elemente einfügen"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste Clipboard Contents..."
+#~ msgstr "Inhalt der Zwischenablage einfügen ..."
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste"
+#~ msgstr "Einfügen"
+
+#~ msgid ""
+#~ "Restores this file or directory, back to the location where it was "
+#~ "deleted from initially"
+#~ msgstr ""
+#~ "Verschiebt dieses Element zurück an den Ort, von dem es ursprünglich "
+#~ "gelöscht wurde."
+
+#~ msgid ""
+#~ "Opens a new file manager window showing the target of this link, in its "
+#~ "parent directory."
+#~ msgstr ""
+#~ "Öffnet ein neues Dateiverwaltungs-Fenster und zeigt darin das Ziel dieser "
+#~ "Verknüpfung an."
+
+#~ msgid "Share"
+#~ msgstr "Freigeben"
+
+#~ msgctxt "@info"
+#~ msgid "Close"
+#~ msgstr "Schließen"
+
+#~ msgid "Close"
+#~ msgstr "Schließen"
+
+#~ msgid "Error: %1"
+#~ msgstr "Fehler: %1"
+
+#~ msgid "Create New"
+#~ msgstr "Neu erstellen"
+
+#~ msgid "Link to Device"
+#~ msgstr "Verknüpfung zu Gerät"
+
+#~ msgid "<qt>The template file <b>%1</b> does not exist.</qt>"
+#~ msgstr "<qt>Die Vorlagen-Datei <b>%1</b> existiert nicht.</qt>"
+
+#~ msgid "File name:"
+#~ msgstr "Dateiname:"
+
+#~ msgid ""
+#~ "Basic links can only point to local files or directories.\n"
+#~ "Please use \"Link to Location\" for remote URLs."
+#~ msgstr ""
+#~ "Einfache Verknüpfungen können nur auf lokale Dateien oder Ordner "
+#~ "verweisen.\n"
+#~ "Für entfernte URLs verwenden Sie bitte eine „Verknüpfung zu Adresse“."
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Actions"
+#~ msgstr "&Aktionen"
+
+#~ msgid "&Open With"
+#~ msgstr "Ö&ffnen mit"
+
+#~ msgid "Open &with %1"
+#~ msgstr "Ö&ffnen mit %1"
+
+#~ msgid "&Other..."
+#~ msgstr "&Sonstige ..."
+
+#~ msgid "&Open With..."
+#~ msgstr "Öffnen &mit ..."
+
+#~ msgid "Open in New &Window"
+#~ msgstr "In &neuem Fenster öffnen"
+
+#~ msgid "Open the trash in a new window"
+#~ msgstr "Papierkorb-Ordner in neuem Fenster öffnen"
+
+#~ msgid "Open the medium in a new window"
+#~ msgstr "Medium in neuem Fenster öffnen"
+
+#~ msgid "Open the document in a new window"
+#~ msgstr "Dokument in neuem Fenster öffnen"
+
+#~ msgid "Directory"
+#~ msgstr "Ordner"
+
+#~ msgid "Moving"
+#~ msgstr "Verschieben ..."
+
+#~ msgid "Source"
+#~ msgstr "Quelle"
+
+#~ msgid "Destination"
+#~ msgstr "Ziel"
+
+#~ msgid "Deleting"
+#~ msgstr "Löschen ..."
+
+#~ msgid "File"
+#~ msgstr "Datei"
+
+#~ msgid "Und&o"
+#~ msgstr "&Rückgängig"
+
+#~ msgid "Und&o: Copy"
+#~ msgstr "Rückgängig: &kopieren"
+
+#~ msgid "Und&o: Link"
+#~ msgstr "Rückgängig: &verknüpfen"
+
+#~ msgid "Und&o: Move"
+#~ msgstr "Rückgängig: versch&ieben"
+
+#~ msgid "Und&o: Rename"
+#~ msgstr "Rückgängig: &Umbenennen"
+
+#~ msgid "Und&o: Trash"
+#~ msgstr "Rückgängig: in den Papierkorb &werfen"
+
+#~ msgid "Und&o: Create Folder"
+#~ msgstr "&Rückgängig: Ordner erstellen"
+
+#~ msgid ""
+#~ "The file %1 was copied from %2, but since then it has apparently been "
+#~ "modified at %3.\n"
+#~ "Undoing the copy will delete the file, and all modifications will be "
+#~ "lost.\n"
+#~ "Are you sure you want to delete %4?"
+#~ msgstr ""
+#~ "Die Datei %1 wurde von %2 kopiert, wurde aber zwischenzeitlich unter %3 "
+#~ "geändert.\n"
+#~ "Durch das Rückgängigmachen des Kopiervorgangs wird die Datei gelöscht und "
+#~ "alle Änderungen gehen verloren.\n"
+#~ "Sind Sie sicher, dass Sie %4 löschen möchten?"
+
+#~ msgid "Undo File Copy Confirmation"
+#~ msgstr "Rückgängigmachen des Kopiervorgangs bestätigen"
+
+#~ msgid "Do you really want to delete this item?"
+#~ msgid_plural "Do you really want to delete these %1 items?"
+#~ msgstr[0] "Möchten Sie dieses Element wirklich löschen?"
+#~ msgstr[1] "Möchten Sie diese %1 Elemente wirklich löschen?"
+
+#~ msgid "Delete Files"
+#~ msgstr "Dateien löschen"
+
+#~ msgid "Do you really want to move this item to the trash?"
+#~ msgid_plural "Do you really want to move these %1 items to the trash?"
+#~ msgstr[0] "Möchten Sie dieses Element wirklich in den Papierkorb werfen?"
+#~ msgstr[1] "Möchten Sie diese %1 Elemente wirklich in den Papierkorb werfen?"
+
+#~ msgid "Move to Trash"
+#~ msgstr "In den Papierkorb werfen"
+
+#~ msgctxt "Verb"
+#~ msgid "&Trash"
+#~ msgstr "In den Papierkorb &werfen"
+
+#, fuzzy
+#~| msgid "Und&o"
+#~ msgid "Und&o: %1"
+#~ msgstr "&Rückgängig"
+
+#~ msgid "Background Settings"
+#~ msgstr "Hintergrund-Einstellungen"
+
+#~ msgid "Background"
+#~ msgstr "Hintergrund"
+
+#~ msgid "Co&lor:"
+#~ msgstr "&Farbe:"
+
+#~ msgid "&Picture:"
+#~ msgstr "Bil&d:"
+
+#~ msgid "Preview"
+#~ msgstr "Vorschau"
+
+#~ msgid "None"
+#~ msgstr "Kein Hintergrund"

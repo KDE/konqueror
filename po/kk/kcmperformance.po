@@ -1,0 +1,227 @@
+# translation of kcmperformance.po to Kazakh
+#
+# Sairan Kikkarin <sairan@computer.org>, 2005, 2006, 2007.
+# Sairan Kikkarin <sairan@computer.org>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmperformance\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-21 00:16+0000\n"
+"PO-Revision-Date: 2010-09-13 06:26+0600\n"
+"Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
+"Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
+"Language: kk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"\n"
+
+#: kcmperformance.cpp:28
+#, kde-format
+msgid ""
+"<h1>KDE Performance</h1> You can configure settings that improve KDE "
+"performance here."
+msgstr ""
+"<h1>KDE жылдамдығы</h1> Бұнда KDE жұмысын жылдамдату параметрлерін баптай "
+"аласыз."
+
+#: kcmperformance.cpp:35
+#, kde-format
+msgid "Konqueror"
+msgstr "Konqueror"
+
+#: kcmperformance.cpp:38
+#, kde-format
+msgid "System"
+msgstr "Жүйе"
+
+#: kcmperformance.cpp:63
+#, kde-format
+msgid ""
+"<h1>Konqueror Performance</h1> You can configure several settings that "
+"improve Konqueror performance here. These include options for reusing "
+"already running instances and for keeping instances preloaded."
+msgstr ""
+"<h1>Konqueror жылдамдығы</h1> Бұнда Konqueror жылдамдығын арттыратын бірнеше "
+"параметрлерді баптай аласыз. Бұл қатарда, шолғыштың орындалып жатқан данасын "
+"қолдану және оның данасын жүктелген түрде қалдыру әдістері."
+
+#: konqueror.cpp:24
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>If enabled, an instance of Konqueror will be preloaded after the "
+#| "ordinary KDE startup sequence.</p><p>This will make the first Konqueror "
+#| "window open faster, but at the expense of longer KDE startup times (but "
+#| "you will be able to work while it is loading, so you may not even notice "
+#| "that it is taking longer).</p>"
+msgid ""
+"<p>If enabled, an instance of Konqueror will be preloaded after the ordinary "
+"Plasma startup sequence.</p><p>This will make the first Konqueror window "
+"open faster, but at the expense of longer Plasma startup times (but you will "
+"be able to work while it is loading, so you may not even notice that it is "
+"taking longer).</p>"
+msgstr ""
+"<p>Белгісі қойылса, кәдімгі KDE сеансын бастау кезінде, Konquerorалдын ала "
+"жадыға жүктеледі.</p><p> Бұл Konqueror терезесін бірінші рет ашқаннан "
+"тездетеді, бірақ KDE жүктеу уақтын ұзартады (жүктеліп жатқанда жұмыс істеп, "
+"оны байқамауыңыз да мүмкін).</p>"
+
+#: konqueror.cpp:30
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>If enabled, KDE will always try to have one preloaded Konqueror "
+#| "instance ready; preloading a new instance in the background whenever "
+#| "there is not one available, so that windows will always open quickly.</"
+#| "p><p><b>Warning:</b> In some cases, it is actually possible that this "
+#| "will reduce perceived performance.</p>"
+msgid ""
+"<p>If enabled, Konqueror will always try to have one preloaded instance "
+"ready; preloading a new instance in the background whenever there is not one "
+"available, so that windows will always open quickly.</p><p><b>Warning:</b> "
+"In some cases, it is actually possible that this will reduce perceived "
+"performance.</p>"
+msgstr ""
+"<p>Белгісі қойылса, KDE әрқашан да алдын ала жүктелінген бір Konqueror "
+"данасын дайын ұстауға тырысады, бары іске қосылса, ая режімінде жаңа бір "
+"данасын жүктеп қойып. Сонда жаңа терезелер әрқашан да тез ашылады.</p><p> "
+"<b>Ескерту:</b> Кейбірде, бұл жыдамдылығын арттыралмай, керісінше сәл "
+"төмендетеді.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
+#: konqueror_ui.ui:17
+#, kde-format
+msgid "Preloading"
+msgstr "Алдын ала жүктеу"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_preload_on_startup)
+#: konqueror_ui.ui:23
+#, fuzzy, kde-format
+#| msgid "Preload an instance after KDE startup"
+msgid "Preload an instance after desktop startup"
+msgstr "KDE бастау кезінде алдын ала жүктелсін"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_always_have_preloaded)
+#: konqueror_ui.ui:30
+#, fuzzy, kde-format
+#| msgid "Always try to have at least one preloaded instance"
+msgid "Always try to have one preloaded instance"
+msgstr "Әрқашанда жадында бір дайын дана болсын"
+
+#: system.cpp:22
+#, kde-format
+msgid ""
+"<p>During startup KDE needs to perform a check of its system configuration "
+"(mimetypes, installed applications, etc.), and in case the configuration has "
+"changed since the last time, the system configuration cache (KSyCoCa) needs "
+"to be updated.</p><p>This option delays the check, which avoid scanning all "
+"directories containing files describing the system during KDE startup, thus "
+"making KDE startup faster. However, in the rare case the system "
+"configuration has changed since the last time, and the change is needed "
+"before this delayed check takes place, this option may lead to various "
+"problems (missing applications in the K Menu, reports from applications "
+"about missing required mimetypes, etc.).</p><p>Changes of system "
+"configuration mostly happen by (un)installing applications. It is therefore "
+"recommended to turn this option temporarily off while (un)installing "
+"applications.</p>"
+msgstr ""
+"<p>Бастау кезінде KDE жүйе конфигурациясын (MIME түрлерін, орнатылған "
+"қолданбадаларды т.б) тексеруді қажет етелі, сонда соңғы жегілген кезден "
+"кейінгі өзгертулер табылса, жүйе конфигурацияның кэшін (KSyCoCa) жаңартуы "
+"керек болады.</p> <p>Бұл белгіні қойғанда, аталған тексеру кідіртіліп, жүйе "
+"кофигурациясы жазылған файлдарды сақтайтын каталогтарды қарауға уақыт "
+"жұмсамай, KDE-нің бастауы тездетіледі. Алайда,сирек жағдайларда жүйе "
+"конфигурациясы соңғы жегілген кезден кейін өзгертілген болса, бұл параметрді "
+"таңдау әр түрлі қиындықтарға әкеледі (қолданбалардың K-мәзірінде жоқтығы, "
+"қажетті MIME түрлері жоқ деген хабарламалар т.б.) </p><p>Жүйенің "
+"конфигурациясының өзгерістері, көбінде қолданбаны орнату немесе өшіру "
+"кезінде  болады. Сондықтан, қолданбаны орнату немесе өшіру кезінде бұл "
+"белгіні уақытша алып тастағаны жөн.</p> <p>Осы себептен бұл белгіні қою онша "
+"ұсынылмайды. Егер белгісі қойылып тұрса, KDE қирау талдағышы жаңылыс "
+"хаттамасын бермейді (Оны алу үшін, белгіні алып тастап, немесе қирау "
+"талдағышын жетілдірушісі режіміне ауыстырып жаңылысты қайталап көру керек).</"
+"p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gb_)
+#: system_ui.ui:8
+#, kde-format
+msgid "System Configuration"
+msgstr "Жүйенің конфигурациясы"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_disable_kbuildsycoca)
+#: system_ui.ui:14
+#, kde-format
+msgid "Disable &system configuration startup check"
+msgstr "Бастау кезінде &жүйенің конфигурациясы тексерілмесін"
+
+#. i18n: ectx: property (text), widget (QLabel, label_kbuildsycoca)
+#: system_ui.ui:21
+#, kde-format
+msgid ""
+"This option may in rare cases lead to various problems. Consult the What's "
+"This (Shift+F1) help for details."
+msgstr ""
+"Сирек бір жағдайларда бұл параметр әр түрлі қиыншылық туғызады. Егжей-"
+"тегжейін \"Бұл не?\" (Shift+F1) анықтамасынан оқыңыз."
+
+#~ msgid ""
+#~ "<p>If non-zero, this option allows keeping Konqueror instances in memory "
+#~ "after all their windows have been closed, up to the number specified in "
+#~ "this option.</p><p>When a new Konqueror instance is needed, one of these "
+#~ "preloaded instances will be reused instead, improving responsiveness at "
+#~ "the expense of the memory required by the preloaded instances.</p>"
+#~ msgstr ""
+#~ "<p>Бұл параметр нөл болмаса, барлық терезелері жабылғаннансоң да, осында "
+#~ "келтірілген санға дейін Konqueror шолғыштың даналары компьютердің жадында "
+#~ "қалады.</p><p> Konqueror керек болғанда осы жадыда сақталғандардың біреуі "
+#~ "қолданылады. Осылай, қосымша жадын жұмсап, жылдамдығын арттыруға болады.</"
+#~ "p>"
+
+#, fuzzy
+#~| msgid "Maximum number of instances kept &preloaded:"
+#~ msgid "&Maximum number of instances kept preloaded:"
+#~ msgstr "Алдын ала жүктелетін даналар санының жоғарғы шегі:"
+
+#~ msgid ""
+#~ "Disables the minimization of memory usage and allows you to make each "
+#~ "browsing activity independent from the others"
+#~ msgstr ""
+#~ "Жады үнемдеуді болдырмай, бірнеше бірінен бірі тәуелсіз шолғыш даналарын "
+#~ "жегуге мүмкіндік беру"
+
+#~ msgid ""
+#~ "<p>With this option activated, only one instance of Konqueror used for "
+#~ "file browsing will exist in the memory of your computer at any moment, no "
+#~ "matter how many file browsing windows you open, thus reducing resource "
+#~ "requirements.</p><p>Be aware that this also means that, if something goes "
+#~ "wrong, all your file browsing windows will be closed simultaneously</p>"
+#~ msgstr ""
+#~ "<p>Белгісі қойылса, қанша терезелері ашық болса да, компьютердің жадында "
+#~ "Konqueror шолғыштың тек бір ғана данасы болады. Бұл компьютердің "
+#~ "ресурстарын үнемдеу жолы.</p><p>Байқаңыз, бұндайда, егер қандай да бір "
+#~ "қате пайда болса, шолғыштың барлық терезелері бірден жабылады</p>"
+
+#~ msgid ""
+#~ "<p>With this option activated, only one instance of Konqueror will exist "
+#~ "in the memory of your computer at any moment, no matter how many browsing "
+#~ "windows you open, thus reducing resource requirements.</p><p>Be aware "
+#~ "that this also means that, if something goes wrong, all your browsing "
+#~ "windows will be closed simultaneously.</p>"
+#~ msgstr ""
+#~ "<p>Белгісі қойылса, қанша терезелері ашық болса да, компьютердің жадында "
+#~ "Konqueror шолғыштың тек бір ғана данасы болады. Бұл компьютердің "
+#~ "ресурстарын үнемдеу жолы.</p><p> Байқаңыз, бұндайда, егер қандай да бір "
+#~ "қате пайда болса, шолғыштың барлық терезелері бірден жабылады.</p>"
+
+#~ msgid "Minimize Memory Usage"
+#~ msgstr "Жадын үнемдеу"
+
+#~ msgid "&Never"
+#~ msgstr "&Ешқашанда"
+
+#~ msgid "For &file browsing only (recommended)"
+#~ msgstr "Тек &файлдарды шолу үшін (көбінесе жарайды)"
+
+#~ msgid "Alwa&ys (use with care)"
+#~ msgstr "&Әрқашанда (байқап қолданыңыз)"

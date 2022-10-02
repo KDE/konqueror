@@ -1,0 +1,146 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Serbian-Latin "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="khtml-behavior" lang="&language;">
+<articleinfo>
+<title
+>Pregledanje Weba</title>
+<authorgroup>
+<author
+><personname
+><firstname
+>Krišna</firstname
+> <surname
+>Tateneni</surname
+></personname
+> &Krishna.Tateneni.mail;</author>
+<othercredit role="translator"
+><firstname
+>Dragan</firstname
+><surname
+>Pantelić</surname
+><affiliation
+><address
+><email
+>falcon-10@gmx.de</email
+></address
+></affiliation
+><contrib
+>prevod</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>8. 11. 2016.</date>
+<releaseinfo
+>Programi KDE‑a 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Sistemske postavke</keyword>
+<keyword
+>K‑osvajač</keyword>
+<keyword
+>pregledanje</keyword>
+</keywordset>
+
+</articleinfo>
+<sect1 id="konq-browsing">
+<title
+>Pregledanje Weba</title>
+
+<para
+>U ovom modulu Sistemskih postavki možete izabrati razne opcije ponašanja <application
+>K‑osvajača</application
+> kao KDE‑ovog integrisanog veb pregledača.</para>
+
+<para
+>Ako je popunjeno <guilabel
+>Pitaj za ime i fasciklu kada se obeleživač dodaje</guilabel
+>, <application
+>K‑osvajač</application
+> će vam pri dodavanju novog obeleživača omogućiti da promenite naslov obeleživača i izaberete fasciklu u koju će biti smešten.</para>
+
+<para
+>Popunite <guilabel
+>Prikaži samo obeležene obeleživače u traci obeleživača</guilabel
+> i <application
+>K‑osvajač</application
+> će u traci obeleživača prikazivati samo one obeleživače za koje ste to odredili u uređivaču obeleživača.</para>
+
+<para
+>Sledeća opcija koju možete uključiti na ovoj stranici je <guilabel
+>Dopuna formulara</guilabel
+>. Ako popunite ovu kućicu, <application
+>K‑osvajač</application
+> pamtiti kako popunjavate pitanja iz formulara, te pokušavati da ih kasnije popuni odgovorima koje ste ranije unosili.</para>
+
+<para
+>Broj stavki formulara koje <application
+>K‑osvajač</application
+> pamti možete podesiti ispod, preko brojčanika <guilabel
+>Najveći broj dopuna:</guilabel
+>.</para>
+
+<note
+><para
+>Naravno, sve čime <application
+>K‑osvajač</application
+> ispuni formular možete urediti pre predavanja formulara.</para
+></note>
+
+<para
+>Sledeća opcija je <guilabel
+>Promeni pokazivač nad vezom</guilabel
+>. Ako je izabrana, oblik pokazivača promeniće se (obično u šaku) kad god se nadnese nad hipervezu. Ovo olakšava uočavanje veza, naročito kada su u vidu slika.</para>
+
+<para
+>Ako je popunjeno <guilabel
+>Srednji klik otvara URL u izboru</guilabel
+>, desnim klikom u prikazu <application
+>K‑osvajača</application
+> možete otvoriti URL trenutno u izboru.</para>
+
+<para
+>Jedna mogućnost zarad udobnosti je da ako uključite <guilabel
+>Desnim klikom unazad kroz istorijat</guilabel
+>, klik na praznu oblast (tj. ne na vezu) u <application
+>K‑osvajačevom</application
+> prozoru imaće isto dejstvo kao i dugme <guiicon
+>Nazad</guiicon
+> na traci alatki.</para>
+
+<para
+>Uključenje <guilabel
+>Automatsko odgođeno osvežavanje/preusmeravanje</guilabel
+> dopušta veb sajtovima da vas pošalju na drugu stranicu bez vašeg zahteva. U mnogim slučajevima ovo je pogodnost. Na primer, veb sajt je premešten na novi URL; mnogi vebmasteri ostaviće na staroj adresi stranicu koja vam saopštava da je sajt premešten, te da biste možda hteli da promenite obeleživač, a zatim vas automatski sprovodi do novog veb sajta. Ova mogućnost pak može zbunjivati ili nervirati, ili se zloupotrebiti, stoga možete odlučiti da je isključite.</para>
+
+<para
+><guilabel
+>Aktivacija pristupnih tastera tasterom Ctrl</guilabel
+>: pritiskom tastera <keycap
+>Ctrl</keycap
+> pri gledanju veb stranice aktivirate pristupne tastere. Pražnjenjem kućice isključujete ovu mogućnost pristupačnosti. <application
+>K‑osvajač</application
+> mora biti ponovo pokrenut da bi izmena stupila na snagu.</para>
+
+<para
+><guilabel
+>Šalji DNT zaglavlje veb sajtovima (koje kaže da ne želim da me prate)</guilabel
+>: popunite ovu kućicu ako želite da stavite do znanja veb sajtovima da ne želite praćenje svojih navika u pregledanju Weba. </para>
+
+<para
+><guilabel
+>Nudi upisivanje lozinke veb sajta</guilabel
+>: ispraznite ovu kućicu da više ne biste bili pitani o upisivanju lozinki veb sajtova. </para>
+</sect1>
+
+</article>

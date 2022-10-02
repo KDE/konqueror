@@ -1,0 +1,126 @@
+# translation of khtmlsettingsplugin.po to Frysk
+# Rinse de Vries <Rinse@kde.nl>, 2001.
+# Rinse de Vries <rinse@kde.nl>, 2003.
+# Rinse de Vries <rinsedevries@kde.nl>, 2004, 2007.
+# Nederlandse vertaling van khtmlsettingsplugin
+# Copyright (C) 2001-2002 KDE e.v..
+# KDE-vertaalgroep Nederlands <www.kde.nl>
+# Proefgelezen 23-01-2002 Marcel Koonen <m.e.e.j.koonen@tue.nl>
+msgid ""
+msgstr ""
+"Project-Id-Version: khtmlsettingsplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"PO-Revision-Date: 2008-07-02 14:01+0100\n"
+"Last-Translator: Berend Ytsma <berendy@gmail.com>\n"
+"Language-Team: Frysk <kde-i18n-fry@kde.org>\n"
+"Language: fy\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. i18n: ectx: Menu (tools)
+#: khtmlsettingsplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "H&elpmiddels"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: khtmlsettingsplugin.rc:8
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "Ekstra arkbalke"
+
+#: settingsplugin.cpp:41
+#, kde-format
+msgid "HTML Settings"
+msgstr "HTML-ynstellings"
+
+#: settingsplugin.cpp:46
+#, kde-format
+msgid "Java&Script"
+msgstr "Java&Skript"
+
+#: settingsplugin.cpp:51
+#, kde-format
+msgid "&Java"
+msgstr "&Java"
+
+#: settingsplugin.cpp:56
+#, kde-format
+msgid "&Cookies"
+msgstr "&Koekjes"
+
+#: settingsplugin.cpp:61
+#, kde-format
+msgid "&Plugins"
+msgstr "&Plugins"
+
+#: settingsplugin.cpp:66
+#, kde-format
+msgid "Autoload &Images"
+msgstr "Ofbyl&den automatysk lade"
+
+#: settingsplugin.cpp:73
+#, kde-format
+msgid "Enable Pro&xy"
+msgstr "Pro&ksy aktivearje"
+
+#: settingsplugin.cpp:78
+#, kde-format
+msgid "Enable Cac&he"
+msgstr "Lyts ûnt&hâld aktivearje"
+
+#: settingsplugin.cpp:83
+#, kde-format
+msgid "Cache Po&licy"
+msgstr "Lyts ûnthâld be&lied"
+
+#: settingsplugin.cpp:85
+#, kde-format
+msgid "&Keep Cache in Sync"
+msgstr "Lyts ûnthâld syngroan &hâlde"
+
+#: settingsplugin.cpp:86
+#, kde-format
+msgid "&Use Cache if Possible"
+msgstr "Lyts ûnthâld  br&ûke, as mooglik"
+
+#: settingsplugin.cpp:87
+#, kde-format
+msgid "&Offline Browsing Mode"
+msgstr "Sûnder ferbining sneuperm&odus"
+
+#: settingsplugin.cpp:180
+#, fuzzy, kde-format
+#| msgid ""
+#| "I can not enable cookies, because the cookie daemon could not be started."
+msgid ""
+"The cookie setting could not be changed, because the cookie daemon could not "
+"be contacted."
+msgstr ""
+"Koekjes koenen net aktivearre wurde, omdat de koekje daemon net start wurde "
+"koe."
+
+#: settingsplugin.cpp:182
+#, fuzzy, kde-format
+#| msgid "Cookies Disabled"
+msgctxt "@title:window"
+msgid "Cookie Settings Unavailable"
+msgstr "Koekjes útsetten"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Douwe"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr " "
+
+#~ msgid "Disable Pro&xy"
+#~ msgstr "Pro&ksy útsette"
+
+#~ msgid "Disable Cac&he"
+#~ msgstr "Ca&che útsette"

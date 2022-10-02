@@ -1,0 +1,84 @@
+# translation of searchbarplugin.po to Cymraeg
+# KD at KGyfieithu <kyfieithu@dotmon.com>, 2004.
+msgid ""
+msgstr ""
+"Project-Id-Version: searchbarplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-25 00:45+0000\n"
+"PO-Revision-Date: 2004-02-27 11:31+0000\n"
+"Last-Translator: KD at KGyfieithu <kyfieithu@dotmon.com>\n"
+"Language-Team: Cymraeg <cy@li.org>\n"
+"Language: cy\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: searchbar.cpp:65
+#, kde-format
+msgid ""
+"Search Bar<p>Enter a search term. Click on the icon to change search mode or "
+"provider.</p>"
+msgstr ""
+
+#: searchbar.cpp:70
+#, kde-format
+msgid "Search Bar"
+msgstr "Bar Chwiliad"
+
+#: searchbar.cpp:75
+#, fuzzy, kde-format
+msgid "Focus Searchbar"
+msgstr "Bar Chwiliad"
+
+#: searchbar.cpp:267
+#, fuzzy, kde-format
+msgid "Find in Page..."
+msgstr "Canfod ar y dudalen hon"
+
+#: searchbar.cpp:287
+#, fuzzy, kde-format
+msgid "Find in This Page"
+msgstr "Canfod ar y dudalen hon"
+
+#: searchbar.cpp:299
+#, fuzzy, kde-format
+msgid "Select Search Engines..."
+msgstr "Dewis peiriant chwilio..."
+
+#: searchbar.cpp:318
+#, kde-format
+msgid "Add %1..."
+msgstr ""
+
+#. i18n: ectx: ToolBar (locationToolBar)
+#: searchbarplugin.rc:3
+#, kde-format
+msgid "Search Toolbar"
+msgstr "Bar Offer Chwilio"
+
+#: WebShortcutWidget.cpp:33
+#, kde-format
+msgid "Set Uri Shortcuts"
+msgstr ""
+
+#: WebShortcutWidget.cpp:47
+#, kde-format
+msgid "Name:"
+msgstr ""
+
+#: WebShortcutWidget.cpp:51
+#, kde-format
+msgid "Shortcuts:"
+msgstr ""
+
+#, fuzzy
+#~ msgid "%1 Search"
+#~ msgstr "Bar Chwiliad"
+
+#~ msgid "Search Bar<p>Enter a search term."
+#~ msgstr "Bar Chwiliad<p>Rhowch term chwilio."
+
+#~ msgid "Location Toolbar"
+#~ msgstr "Bar Offer Lleoliad"

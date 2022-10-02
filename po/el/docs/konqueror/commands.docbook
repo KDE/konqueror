@@ -1,0 +1,2466 @@
+<chapter id="commands">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>Δημήτριος</firstname
+><surname
+>Γλενταδάκης</surname
+><affiliation
+><address
+><email
+>dglent@gmail.com</email
+></address
+></affiliation
+><contrib
+>Μεταφραστής</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2010-10-25</date>
+<releaseinfo
+>&kde; 4.5</releaseinfo>
+</chapterinfo>
+
+<title
+>Αναφορά εντολών</title>
+
+<note
+><para
+>Οι συνδυασμοί πλήκτρων συντόμευσης που εμφανίζονται σε αυτό το κεφάλαιο είναι οι προκαθορισμένοι. Μπορούν φυσικά να <link linkend="configshort"
+>αλλάξουν</link
+>. </para
+></note>
+
+<sect1 id="specshort">
+<title
+>Ειδικές συντομεύσεις</title>
+<para
+>Υπάρχουν μερικές χρήσιμες συντομεύσεις που δεν εμφανίζονται σε κανένα από τα μενού:</para>
+<variablelist>
+
+<varlistentry>
+<term
+><keycap
+>F6</keycap
+></term>
+<listitem>
+<para
+>Ορίζει την εστίαση στο πλαίσιο εισαγωγής κειμένου στη γραμμή εργαλείων τοποθεσίας.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><keycombo action="simul"
+>&Ctrl;<keycap
+>.</keycap
+></keycombo
+></term>
+<listitem>
+<para
+>Ενεργοποιεί τη σελίδα της επόμενης καρτέλας.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><keycombo action="simul"
+>&Ctrl;<keycap
+>,</keycap
+></keycombo
+></term>
+<listitem>
+<para
+>Ενεργοποιεί τη σελίδα της προηγούμενης καρτέλας.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+
+</sect1>
+
+<sect1 id="menubar">
+<title
+>Η γραμμή μενού</title
+> <para
+>Σημειώστε ότι μερικές επιλογές των μενού εμφανίζονται μόνο όταν όταν μπορούν να εφαρμοστούν στο αρχείο που έχετε ανοίξει στον &konqueror;. Για παράδειγμα, το αντικείμενο <menuchoice
+><guimenu
+>Επεξεργασία</guimenu
+><guimenuitem
+>Αναζήτηση</guimenuitem
+> </menuchoice
+> δεν εμφανίζεται κατά την προβολή του περιεχομένου ενός καταλόγου.</para>
+
+<para
+>Ο &konqueror; έχει διαφορετικά αντικείμενα στο μενού στη λειτουργία διαχειριστή αρχείων και περιηγητή. Μόνο τα αντικείμενα των δύο αυτών λειτουργιών περιγράφονται σ' αυτό το κεφάλαιο. </para>
+
+<para
+>Αν ο <emphasis
+>&konqueror;</emphasis
+> χρησιμοποιεί ενσωματωμένα συστατικά (&kde; Parts) όπως το <application
+>Gwenview</application
+> για την προβολή εικόνων, το &okular; για έγγραφα <acronym
+>PDF</acronym
+> και &PostScript; &etc; τα αντικείμενα των μενού των εφαρμογών αυτών συγχωνεύονται στο μενού του &konqueror;. Βοήθεια σχετικά με αυτά τα επιπλέον μενού μπορείτε να βρείτε στο εγχειρίδιο της ενσωματωμένης εφαρμογής.</para>
+
+<sect2 id="menu-location">
+<title
+>Το μενού <guimenu
+>Αρχείο</guimenu
+></title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Αρχείο</guimenu
+> <guimenuitem
+>Νέο παράθυρο</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Ανοίγει ένα άλλο παράθυρο του &konqueror;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>T</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Αρχείο</guimenu
+> <guimenuitem
+>Νέα καρτέλα</guimenuitem
+> </menuchoice
+></term
+> 
+<listitem
+><para
+>Ανοίγει μια άλλη καρτέλα του &konqueror;, που περιέχει μια κενή σελίδα.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Alt;<keycap
+>O</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Αρχείο</guimenu
+> <guimenuitem
+>Άνοιγμα τοποθεσίας...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Ορίζει την εστίαση στο πλαίσιο εισαγωγής κειμένου στη γραμμή εργαλείων τοποθεσίας.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Αρχείο</guimenu
+> <guimenuitem
+>Άνοιγμα αρχείου...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Ανοίγει ένα αρχείο χρησιμοποιώντας το διάλογο αρχείων του &kde;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Αρχείο</guimenu
+> <guimenuitem
+>Συνεδρίες</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Ανοίγει ένα υπομενού για την αποθήκευση της τρέχουσας συνεδρίας (ανοιχτές καρτέλες και παράθυρα) για εύκολη ανάκτηση, για τη διαχείριση συνεδριών και εναλλαγή σε προηγούμενες αποθηκευμένες συνεδρίες.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Αρχείο</guimenu
+> <guimenuitem
+>Αποστολή δεσμού...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Στέλνει ένα μήνυμα ηλ. ταχυδρομείου που περιέχει ένα δεσμό στην τρέχουσα τοποθεσία.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Αρχείο</guimenu
+> <guimenuitem
+>Αποστολή αρχείου...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Στέλνει ένα μήνυμα ηλ. ταχυδρομείου με το επιλεγμένο αρχείο ως συνημμένο.</para
+></listitem>
+</varlistentry>
+
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Αρχείο</guimenu
+> <guimenuitem
+>Αποθήκευση εικόνας φόντου ως...</guimenuitem
+></menuchoice
+>(Λειτουργία περιηγητή)</term>
+<listitem>
+<para
+>Ισχύει μόνο εάν βλέπετε μια ιστοσελίδα με μια εικόνα φόντου. Ανοίγει το διάλογο <guilabel
+>Αποθήκευση ως</guilabel
+> για να αποθηκεύσετε το αρχείο με την εικόνα του φόντου στον υπολογιστή σας.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Αρχείο</guimenu
+> <guimenuitem
+>Αποθήκευση ως...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Ισχύει μόνο κατά την προβολή ενός εγγράφου ή ιστοσελίδας, χρησιμοποιεί το διάλογο <guilabel
+>Αποθήκευση ως...</guilabel
+> για να αποθηκεύσετε ένα αντίγραφο στον υπολογιστή σας.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Αρχείο</guimenu
+> <guimenuitem
+>Αποθήκευση πλαισίου ως...</guimenuitem
+></menuchoice
+> (Λειτουργία περιηγητή)</term>
+<listitem
+><para
+>Παρόμοιο με το <guimenuitem
+>Αποθήκευση ως...</guimenuitem
+> αλλά για μια ιστοσελίδα που χρησιμοποιεί πλαίσια.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>P</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Αρχείο</guimenu
+> <guimenuitem
+>Εκτύπωση...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Εκτύπωση.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Αρχείο</guimenu
+> <guimenuitem
+>Εκτύπωση πλαισίου</guimenuitem
+></menuchoice
+> (Λειτουργία περιηγητή)</term>
+<listitem
+><para
+>Εκτυπώνει το επιλεγμένο πλαίσιο μιας ιστοσελίδας.</para
+></listitem>
+</varlistentry>
+<!--FIXME
+<varlistentry>
+<term
+><menuchoice>
+<guimenu
+>File</guimenu>
+<guimenuitem
+>Open With</guimenuitem>
+</menuchoice
+></term>
+<listitem
+><para
+>???</para
+></listitem
+> 
+</varlistentry>
+browser 2 items + submenu with apps
+filemanager dophin/gwenview + submenu with apps
+is this hardcoded? detected at runtime?
+
+DF: The list of applications is entirely dynamic, it is the list of
+   apps associated with the mimetype (of the current URL).
+ Compare with "Edit File Associations"  (kcmshell filetypes), you'll see that
+  it's the same list of apps, so it entirely depends on which apps are installed
+  on the system.
+
+-->
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Αρχείο</guimenu
+> <guimenuitem
+>Τερματισμός</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Κλείνει το τρέχον παράθυρο του &konqueror;.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-edit">
+<title
+>Το μενού <guimenu
+>Επεξεργασία</guimenu
+></title>
+
+<!-- not in kde4
+note
+><para
+>Most items in the Menubar <guimenu
+>Edit</guimenu
+> menu can also be
+found by &RMB; clicking on a free area of a view.</para
+></note-->
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Επεξεργασία</guimenu
+> <guimenuitem
+>Αναίρεση: <replaceable
+>Ενέργεια</replaceable
+></guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Μερικές φορές σας επιτρέπει να αντιστρέψετε μια λανθασμένη ενέργεια.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>X</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Επεξεργασία</guimenu
+> <guimenuitem
+>Αποκοπή</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Τοποθετεί το(α) επιλεγμένο(α) αντικείμενο(α) στο πρόχειρο. Αν έπειτα κάνετε επικόλληση των αντικειμένων θα μετακινηθούν από την αρχική τους τοποθεσία στη νέα.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Επεξεργασία</guimenu
+> <guimenuitem
+>Αντιγραφή</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Αντιγράφει το(α) επιλεγμένο(α) αντικείμενο(α) στο πρόχειρο.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Επεξεργασία</guimenu
+> <guimenuitem
+>Επικόλληση</guimenuitem
+></menuchoice
+> (Λειτουργία περιηγητή)</term>
+<listitem
+><para
+>Επικόλληση των περιεχομένων του πρόχειρου στη γραμμή τοποθεσίας.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Επεξεργασία</guimenu
+> <guimenuitem
+>Επικόλληση περιεχομένων του πρόχειρου...</guimenuitem
+></menuchoice
+> (Λειτουργία διαχειριστή αρχείων)</term>
+<listitem
+><para
+>Επικόλληση των τρεχόντων αντικειμένων μετά από αντιγραφή/αποκοπή στον τρέχοντα φάκελο. Αν το πρόχειρο δεν περιέχει αρχεία ή φακέλους, το περιεχόμενο του πρόχειρου (όπως δεδομένα κειμένου ή εικόνας) θα επικολληθούν σε ένα νέο αρχείο.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>A</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Επεξεργασία</guimenu
+> <guimenuitem
+>Επιλογή όλων</guimenuitem
+></menuchoice
+> (Λειτουργία περιηγητή)</term>
+<listitem
+><para
+>Επιλέγει όλο το κείμενο μιας σελίδας &HTML; ή μιας σελίδας κειμένου σε προεπισκόπηση, ώστε να μπορέσετε να κάνετε <guimenuitem
+>Αντιγραφή</guimenuitem
+> και <guimenuitem
+>Επικόλληση</guimenuitem
+> σε έναν επεξεργαστή κειμένου.</para
+></listitem
+> </varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+><keycap
+>F2</keycap
+> </shortcut
+><guimenu
+>Επεξεργασία</guimenu
+> <guimenuitem
+>Μετονομασία</guimenuitem
+></menuchoice
+> (Λειτουργία διαχειριστή αρχείων)</term>
+<listitem
+><para
+>Σας επιτρέπει να μετονομάσετε ένα αρχείο ή φάκελο χωρίς να χρειάζεται να ανοίξετε το διάλογο <guimenuitem
+>Ιδιότητες...</guimenuitem
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Επεξεργασία</guimenu
+> <guisubmenu
+>Δημιουργία νέου</guisubmenu
+></menuchoice
+> (Λειτουργία διαχειριστή αρχείων)</term>
+<listitem
+><para
+>Δημιουργεί ένα νέο αντικείμενο (όπως ένα αρχείο ή φάκελο) στον τρέχοντα φάκελο. Δείτε στην ενότητα <link linkend="making"
+>Δημιουργία νέου...</link
+> για περισσότερες πληροφορίες.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+><keycap
+>Del</keycap
+></shortcut
+> <guimenu
+>Επεξεργασία</guimenu
+> <guimenuitem
+>Μετακίνηση στα απορρίμματα</guimenuitem
+></menuchoice
+> (Λειτουργία διαχειριστή αρχείων)</term>
+<listitem
+><para
+>Μετακινεί το(α) επιλεγμένο(α) αντικείμενο(α) στο φάκελο απορριμμάτων.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Shift;<keycap
+>Del</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Επεξεργασία</guimenu
+> <guimenuitem
+>Διαγραφή</guimenuitem
+></menuchoice
+> (Λειτουργία διαχειριστή αρχείων)</term>
+<listitem
+><para
+>Διαγράφει το(α) επιλεγμένο(α) αντικείμενο(α).</para
+></listitem>
+</varlistentry>
+
+<!-- not in kde4
+varlistentry>
+<term
+><menuchoice>
+<shortcut
+><keycap
+>F7</keycap
+></shortcut>
+<guimenu
+>Edit</guimenu>
+<guimenuitem
+>Copy Files</guimenuitem>
+</menuchoice
+></term>
+<listitem
+><para
+>Copy the selected item(s) to another
+folder.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice>
+<guimenu
+>Edit</guimenu>
+<guimenuitem
+>Move Files</guimenuitem>
+</menuchoice
+></term>
+<listitem
+><para
+>Move the selected item(s) to another
+folder.</para
+></listitem>
+</varlistentry-->
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Επεξεργασία</guimenu
+> <guimenuitem
+>Επεξεργασία τύπου αρχείου...</guimenuitem
+></menuchoice
+> (Λειτουργία διαχειριστή αρχείων)</term>
+<listitem
+><para
+>Ανοίγει το διάλογο <guilabel
+>Επεξεργασία τύπου αρχείου</guilabel
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Alt;<keycap
+>Return</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Επεξεργασία</guimenu
+> <guimenuitem
+>Ιδιότητες...</guimenuitem
+></menuchoice
+> (Λειτουργία διαχειριστή αρχείων)</term>
+<listitem
+><para
+>Εμφανίζει το διάλογο ιδιοτήτων για το τρέχον επιλεγμένο αντικείμενο(α).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Edit</guimenu
+> <guisubmenu
+>Επιλογή</guisubmenu
+> <guimenuitem
+>Επιλογή αντικειμένων που ταιριάζουν...</guimenuitem
+></menuchoice
+> (Λειτουργία διαχειριστή αρχείων)</term>
+<listitem
+><para
+>Μαζί με τις εντολές <guimenuitem
+>Αποεπιλογή αντικειμένων που ταιριάζουν...</guimenuitem
+>, <guimenuitem
+>Αποεπιλογή όλων</guimenuitem
+> και <guimenuitem
+>Αντιστροφή επιλογής</guimenuitem
+>, παρέχει έναν εύκολο και πανίσχυρο τρόπο επιλογής πολλαπλών αρχείων.</para>
+<para
+>Εμφανίζει ένα απλό πλαίσιο διαλόγου όπου μπορείτε να εισάγετε ένα όνομα αρχείου χρησιμοποιώντας τους χαρακτήρες μπαλαντέρ * και ?, για παράδειγμα εισάγοντας <literal role="extension"
+>*.html</literal
+> θα επιλέξει όλα τα αρχεία που τελειώνουν σε <literal role="extension"
+>.html</literal
+> όταν <filename
+>?α*</filename
+> θα επιλέξει όλα τα αρχεία που περιέχουν το γράμμα α ως το δεύτερο χαρακτήρα στο όνομα αρχείου τους.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Επεξεργασία</guimenu
+> <guisubmenu
+>Επιλογή</guisubmenu
+> <guimenuitem
+>Αποεπιλογή αντικειμένων που ταιριάζουν...</guimenuitem
+></menuchoice
+> (Λειτουργία διαχειριστή αρχείων)</term>
+<listitem
+><para
+>Αποεπιλογή αρχείων ή φακέλων μέσω ενός διαλόγου παρόμοιο με εκείνον που χρησιμοποιείται στο μενού <guimenuitem
+>Επιλογή...</guimenuitem
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>A</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Επεξεργασία</guimenu
+> <guisubmenu
+>Επιλογή</guisubmenu
+> <guimenuitem
+>Επιλογή όλων</guimenuitem
+></menuchoice
+> (Λειτουργία διαχειριστή αρχείων)</term>
+<listitem
+><para
+>Επιλέγει όλα τα αντικείμενα σε έναν φάκελο. Στη συνέχεια μπορείτε να κάνετε <guimenuitem
+>Αντιγραφή</guimenuitem
+> ή <guimenuitem
+>Αποκοπή</guimenuitem
+> και να τα κάνετε <guimenuitem
+>Επικόλληση</guimenuitem
+> σε έναν διαφορετικό φάκελο.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Επεξεργασία</guimenu
+> <guisubmenu
+>Επιλογή</guisubmenu
+> <guimenuitem
+>Αποεπιλογή όλων</guimenuitem
+></menuchoice
+> (Λειτουργία διαχειριστή αρχείων)</term>
+<listitem
+><para
+>Αποεπιλογή όλων των επιλεγμένων αρχείων ή φακέλων.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>A</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Επεξεργασία</guimenu
+> <guisubmenu
+>Επιλογή</guisubmenu
+> <guimenuitem
+>Αντιστροφή επιλογής</guimenuitem
+></menuchoice
+> (Λειτουργία διαχειριστή αρχείων)</term>
+<listitem
+><para
+>Αντιστροφή της τρέχουσας επιλογής.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>F</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Επεξεργασία</guimenu
+> <guimenuitem
+>Αναζήτηση...</guimenuitem
+></menuchoice
+> ή <keycombo action="simul"
+>&Shift;<keycap
+></keycap
+></keycombo
+> (Λειτουργία περιηγητή)</term>
+<listitem
+><para
+>Εμφανίζει τη γραμμή αναζήτησης στο κάτω μέρος του παραθύρου. Ξεκινήστε να πληκτρολογείτε για να αναζητήσετε μια συμβολοσειρά κατά την προβολή μιας σελίδας κειμένου ή σε μια σελίδα &HTML;.</para
+></listitem>
+</varlistentry>
+<!--FIXME no menu item in WebKit view mode 
+WebKit+KHTML mode find bar with 
+Next F3, Previous Shift F3 + Options 
+WebKit Match Case/Highlight All Matches/Search As You Type
+KHTML Case sensitive/Whole words only/From cursor/Selected Text/Regular expression/Find links only
+-->
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+><keycap
+>F3</keycap
+></shortcut
+> <guimenu
+>Επεξεργασία</guimenu
+> <guimenuitem
+>Αναζήτηση επόμενου</guimenuitem
+></menuchoice
+> (Λειτουργία περιηγητή)</term>
+<listitem
+><para
+>Βρίσκει την επόμενη εμφάνιση της συμβολοσειράς κειμένου στο κείμενο ή την σελίδα &HTML;.</para
+></listitem
+> 
+</varlistentry>
+<!--FIXME no menu item in WebKit view mode -->
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Shift;<keycap
+>F3</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Επεξεργασία</guimenu
+> <guimenuitem
+>Αναζήτηση...</guimenuitem
+></menuchoice
+> (Λειτουργία περιηγητή)</term>
+<listitem
+><para
+>Βρίσκει την προηγούμενη εμφάνιση της συμβολοσειράς κειμένου στο κείμενο ή τη σελίδα &HTML;.</para
+></listitem
+> 
+</varlistentry>
+<!--
+<varlistentry>
+<term
+><menuchoice>
+<shortcut
+><keycombo action="simul"
+>&Shift;<keycap
+>F3</keycap
+></keycombo
+></shortcut>
+<guimenu
+>Edit</guimenu>
+<guimenuitem
+>Find Text as You Type</guimenuitem
+></menuchoice
+> (Browser mode)</term>
+<listitem
+><para
+>???</para
+></listitem
+> 
+</varlistentry>
+
+DF: No the initial shortcut is "/"  (forward slash). This matches VI, for instance.
+F3 is "find again", after 
+
+<varlistentry>
+<term
+><menuchoice>
+<shortcut
+><keycap
+>'</keycap
+></shortcut>
+<guimenu
+>Edit</guimenu>
+<guimenuitem
+>Find Links as You Type</guimenuitem
+></menuchoice
+> (Browser mode)</term>
+<listitem
+><para
+>???</para
+></listitem
+> 
+</varlistentry>
+
+> BL: both disabled in menu
+
+DF: bug in khtml. enableFindAheadActions(false) called by focusOutEvent.
+   How about we just get rid of this shortcut, and let people use Ctrl+F instead?
+
+DF: We still have to do something about "find text in links", ideally integrating that functionality
+ into the find bar; as a short term fix we could just give it a better (Ctrl+something) shortcut
+ and get rid of the "focusin/focusout enables/disables the action" logic.
+
+
+> BL: but shortcut works then typing -> to the first match, then stops
+
+> BL: how to find next match? why does it stop?
+
+DF: Not sure what you mean, '/' + search string + F3 F3 F3 works here.
+
+-->
+<!-- not in kde4 from editor view
+varlistentry>
+<term
+><menuchoice>
+<guimenu
+>Edit</guimenu>
+<guimenuitem
+>Go to Line...</guimenuitem>
+</menuchoice
+></term>
+<listitem
+><para
+>Go to a particular line number in a text
+page you are previewing.</para
+></listitem>
+</varlistentry-->
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-view">
+
+<title
+>Το μενού <guimenu
+>Προβολή</guimenu
+></title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Προβολή</guimenu
+> <guisubmenu
+>Κατάσταση προβολής</guisubmenu
+> </menuchoice
+></term>
+<listitem
+><para
+>Στη λειτουργία περιηγητή αυτό το υπομενού περιέχει αντικείμενα για την επιλογή ενσωματωμένων προβολών όπως <guimenuitem
+>KHTML</guimenuitem
+>, <guimenuitem
+>Ενσωματωμένος προχωρημένος επεξεργαστής κειμένου</guimenuitem
+> και περισσότερες ενσωματωμένες προβολές.</para>
+<para
+>Στη λειτουργία διαχειριστή αρχείων αυτό το υπομενού περιέχει αντικείμενα για την επιλογή προβολής <guimenuitem
+>Εικονίδια</guimenuitem
+>, <guimenuitem
+>Λεπτομέρειες</guimenuitem
+>, <guimenuitem
+>Συμπαγής</guimenuitem
+>, <guimenuitem
+>Προσομοιωτής τερματικού</guimenuitem
+> και ακόμα περισσότερες λειτουργίες προβολής.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Προβολή</guimenu
+> <guimenuitem
+>Χρήση του index.html</guimenuitem
+> </menuchoice
+> (Λειτουργία διαχειριστή αρχείων)</term>
+<listitem
+><para
+>Αν ένας επιλεγμένος φάκελος περιέχει ένα αρχείο <filename
+>index.html</filename
+>, θα ανοιχτεί ως ιστοσελίδα αντί να εμφανίσει το φάκελο ως λίστα αρχείων.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Προβολή</guimenu
+> <guimenuitem
+>Κλείδωμα στην τρέχουσα τοποθεσία</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Σε μια κλειδωμένη προβολή δεν μπορεί να γίνει αλλαγή φακέλου. Χρησιμοποιήστε το σε συνδυασμό με το <guimenuitem
+>Σύνδεση προβολής</guimenuitem
+> για να εξερευνήσετε πολλά αρχεία ενός φακέλου.</para
+></listitem>
+</varlistentry>
+  
+<!-- not in kde4
+varlistentry>
+<term
+><menuchoice>
+<guimenu
+>View</guimenu>
+<guimenuitem
+>Unlock all views</guimenuitem>
+</menuchoice
+></term>
+<listitem
+><para
+>Unlock all views.
+</para
+></listitem>
+</varlistentry-->
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Προβολή</guimenu
+> <guimenuitem
+>Σύνδεση προβολής</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Συνδέει την τρέχουσα προβολή σε άλλες σε ένα παράθυρο πολλαπλών προβολών. Μια συνδεδεμένη προβολή ακολουθεί τις αλλαγές του φακέλου σε άλλες συνδεδεμένες προβολές. Αυτό είναι αρκετά χρήσιμο με διαφορετικούς τύπους προβολής, όπως ένα δέντρο φακέλων με προβολή εικονιδίων ή προβολή λεπτομερειών, και πιθανώς έναν προσομοιωτή τερματικού.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>F5</keycap
+></shortcut
+> <guimenu
+>Προβολή</guimenu
+> <guimenuitem
+>Επαναφόρτωση</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Επαναφόρτωση.</para
+></listitem>
+</varlistentry>
+	  
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+>&Esc;</shortcut
+> <guimenu
+>Προβολή</guimenu
+> <guimenuitem
+>Διακοπή</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Διακοπή φόρτωσης (ειδικά χρήσιμο κατά την περιήγηση στον ιστό).</para
+></listitem>
+</varlistentry>
+<!--FIXME Browser mode WebKit
+  Zoom In, Zoom Out, Actual Size, Zoom Text Only-->
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>+</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Προβολή</guimenu
+> <guimenuitem
+>Μεγέθυνση γραμματοσειράς</guimenuitem
+></menuchoice
+> / <menuchoice
+> <shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>-</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Προβολή</guimenu
+> <guimenuitem
+>Σμίκρυνση γραμματοσειράς</guimenuitem
+></menuchoice
+> (Λειτουργία περιηγητή)</term>
+<listitem
+><para
+>Χρησιμοποιήστε τα για τη ρύθμιση του μεγέθους της γραμματοσειράς στη σελίδα αν δυσκολεύεστε να τη διαβάσετε. Το αποτέλεσμα εξαρτάται από τον τρόπο σχεδίασης της ιστοσελίδας.</para
+></listitem
+> 
+</varlistentry>
+
+<!--  not in kde4
+<varlistentry>
+<term
+><menuchoice>
+<guimenu
+>View</guimenu>
+<guimenuitem
+>Icon Size</guimenuitem>
+</menuchoice
+></term>
+<listitem
+><para
+>Select size of icons used when
+viewing a folder in Icon Mode.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice>
+<guimenu
+>View</guimenu>
+<guisubmenu
+>Sort</guisubmenu>
+</menuchoice
+></term>
+<listitem
+><para
+>Choose order in which items are presented in the
+window when in Icon or MultiColumn View mode.</para
+></listitem>
+</varlistentry>
+  
+<varlistentry>
+<term
+><menuchoice>
+<guimenu
+>View</guimenu>
+<guimenuitem
+>Case Insensitive Sort</guimenuitem>
+</menuchoice
+></term>
+<listitem
+><para
+>Choose whether the sort order in Tree, Detailed List
+or Text View modes is case sensitive.</para
+></listitem>
+</varlistentry>
+-->
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>U</keycap
+> </keycombo
+> </shortcut
+> <guimenu
+>Προβολή</guimenu
+> <guimenuitem
+>Προβολή πηγαίου κώδικα εγγράφου</guimenuitem
+></menuchoice
+> (Λειτουργία περιηγητή - Προβολή KHTML)</term>
+<listitem
+><para
+>Προβολή του πηγαίου κώδικα του εγγράφου.</para>
+<para
+>Διαθέσιμο μόνο κατά την προβολή ενός εγγράφου ή μιας σελίδας &HTML;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Προβολή</guimenu
+> <guimenuitem
+>View Frame Source</guimenuitem
+></menuchoice
+> (Browser mode)</term>
+<listitem
+><para
+>Προβολή πηγαίου κώδικα πλαισίου</para>
+<para
+>Εφαρμόζεται μόνο κατά την προβολή μιας ιστοσελίδας που χρησιμοποιεί πλαίσια. Παρόμοιο με το <guimenuitem
+>Προβολή πηγαίου κώδικα εγγράφου</guimenuitem
+>. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>I</keycap
+> </keycombo
+> </shortcut
+> <guimenu
+>Προβολή</guimenu
+> <guimenuitem
+>Προβολή πληροφοριών εγγράφου</guimenuitem
+></menuchoice
+> (Λειτουργία περιηγητή - Προβολή KHTML)</term>
+<listitem
+><para
+>Προβολή πληροφοριών εγγράφου, όπως τίτλων &URL;, και επικεφαλίδων &HTTP; που χρησιμοποιούνται κατά την ανάκτηση του εγγράφου</para>
+<para
+>Διαθέσιμο μόνο κατά την προβολή μιας σελίδας &HTML;.</para>
+</listitem>
+</varlistentry>
+<!-- not in kde4
+<varlistentry>
+<term
+><menuchoice>
+<guimenu
+>View</guimenu>
+<guimenuitem
+>Security...</guimenuitem>
+</menuchoice
+></term>
+<listitem
+><para
+>Tells you whether the current browser connection is
+secured with <acronym
+>SSL</acronym
+> and lets you bring up the
+<guilabel
+>Cryptography Configuration...</guilabel
+> dialog
+box. <mousebutton
+>Left</mousebutton
+> clicking on the Menubar padlock icon does
+the same thing.</para
+></listitem
+> </varlistentry>
+-->
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Προβολή</guimenu
+> <guimenuitem
+>Ορισμός κωδικοποίησης</guimenuitem
+></menuchoice
+> (Λειτουργία περιηγητή)</term>
+<listitem
+><para
+>Σας επιτρέπει την επιλογή της κωδικοποίησης χαρακτήρων που χρησιμοποιούνται για την εμφάνιση των σελίδων &HTML;. Το <guimenuitem
+>Προκαθορισμένο</guimenuitem
+> είναι συνήθως η καλύτερη επιλογή.</para
+></listitem>
+</varlistentry>
+<!-- what is this?
+<varlistentry>
+<term
+><menuchoice>
+<guimenu
+>View</guimenu>
+<guimenuitem
+>Use Stylesheet</guimenuitem
+></menuchoice
+> (Browser mode)</term>
+<listitem
+><para
+>???Automatic Detection Basic Page Style KDE Stylesheet</para
+></listitem>
+</varlistentry>
+http://websvn.kde.org/?view=revision&revision=269436
+-->
+  <!--FIXME sync with Dolphin -->
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Προβολή</guimenu
+> <guisubmenu
+>Ταξινόμηση κατά</guisubmenu
+></menuchoice
+> (Λειτουργία διαχειριστή αρχείων)</term>
+<listitem
+><para
+><action
+>Αλλάζει την ταξινόμηση των αντικειμένων κατά <guimenuitem
+>Όνομα</guimenuitem
+>, <guimenuitem
+>Μέγεθος</guimenuitem
+>, <guimenuitem
+>Ημερομηνία</guimenuitem
+>, <guimenuitem
+>Άδειες</guimenuitem
+>, <guimenuitem
+>Ιδιοκτήτης</guimenuitem
+>, <guimenuitem
+>Ομάδα</guimenuitem
+>, <guimenuitem
+>Τύπος</guimenuitem
+>, <guimenuitem
+>Προορισμός δεσμού</guimenuitem
+> ή <guimenuitem
+>Διαδρομή</guimenuitem
+>. <guimenuitem
+>Φθίνουσα</guimenuitem
+> αντιστρέφει τη σειρά ταξινόμησης. Το<guimenuitem
+>Πρώτα οι φάκελοι</guimenuitem
+> ταξινομεί τους φακέλους πριν από τα αρχεία. </action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Προβολή</guimenu
+> <guisubmenu
+>Πρόσθετες πληροφορίες</guisubmenu
+></menuchoice
+> (Λειτουργία διαχειριστή αρχείων)</term>
+<listitem
+><para
+><action
+>Εμφανίζει πρόσθετες πληροφορίες</action
+> όπως <guimenuitem
+>Μέγεθος</guimenuitem
+>, <guimenuitem
+>Ημερομηνία</guimenuitem
+>, <guimenuitem
+>Άδειες</guimenuitem
+>, <guimenuitem
+>Ιδιοκτήτης</guimenuitem
+>, <guimenuitem
+>Ομάδα</guimenuitem
+>, <guimenuitem
+>Τύπος</guimenuitem
+>, <guimenuitem
+>Προορισμός δεσμού</guimenuitem
+> ή <guimenuitem
+>Διαδρομή</guimenuitem
+> στις διάφορες προβολές.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Προβολή</guimenu
+> <guimenuitem
+>Προεπισκόπηση</guimenuitem
+></menuchoice
+> (Λειτουργία διαχειριστή αρχείων)</term>
+<listitem
+><para
+><action
+>Εμφανίζει μια συμβολική προεπισκόπηση του περιεχομένου του αρχείου</action
+> στις διάφορες καταστάσεις προβολής.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Προβολή</guimenu
+> <guimenuitem
+>Εμφάνιση σε ομάδες</guimenuitem
+></menuchoice
+> (Λειτουργία διαχειριστή αρχείων)</term>
+<listitem
+><para
+><action
+>Εμφανίζει</action
+> το περιεχόμενο του τρέχοντος φακέλου σε ομάδες από την επιλογή <guimenuitem
+>Ταξινόμηση κατά</guimenuitem
+> (Διαθέσιμο μόνο στην κατάσταση προβολής εικονιδίων).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Alt;<keycap
+>.</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Προβολή</guimenu
+> <guimenuitem
+>Εμφάνιση κρυφών αρχείων</guimenuitem
+></menuchoice
+> (Λειτουργία διαχειριστή αρχείων)</term>
+<listitem
+><para
+><action
+>Εμφανίζει όλα τα κρυφά αρχεία και υποφακέλους στον τρέχοντα φάκελο.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Προβολή</guimenu
+> <guimenuitem
+>Ρύθμιση ιδιοτήτων προβολής...</guimenuitem
+></menuchoice
+> (Λειτουργία διαχειριστή αρχείων)</term>
+<listitem
+><para
+><action
+>Ανοίγει το διάλογο <link linkend="view-properties-dialog"
+>Ιδιότητες προβολής</link
+>.</action
+></para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-go">
+<title
+>Το μενού <guimenu
+>Μετάβαση</guimenu
+></title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Alt;<keysym
+>Πάνω</keysym
+></keycombo
+> </shortcut
+><guimenu
+>Μετάβαση</guimenu
+> <guimenuitem
+>Πάνω</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Μετάβαση ένα επίπεδο πάνω στην ιεραρχία του φακέλου.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Alt;<keysym
+>Αριστερά</keysym
+></keycombo
+> </shortcut
+><guimenu
+>Μετάβαση</guimenu
+> <guimenuitem
+>Πίσω</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Μετάβαση πίσω στην προηγούμενη προβολή.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Alt;<keysym
+>Δεξιά</keysym
+></keycombo
+> </shortcut
+><guimenu
+>Μετάβαση</guimenu
+> <guimenuitem
+>Μπροστά</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Μπορείτε να πάτε μπροστά μόνο αν έχετε ήδη μεταβεί προς τα πίσω.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Alt;<keycap
+>Home</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Μετάβαση</guimenu
+> <guimenuitem
+>Αρχική σελίδα</guimenuitem
+></menuchoice
+> (Λειτουργία περιηγητή)</term>
+<listitem
+><para
+>Μετάβαση στην αρχική σας σελίδα όπως έχει οριστεί από τη σελίδα <guilabel
+>Γενικά</guilabel
+> στο διάλογο ρυθμίσεων.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Alt;<keycap
+>Home</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Μετάβαση</guimenu
+> <guimenuitem
+>Προσωπικός φάκελος</guimenuitem
+></menuchoice
+> (Λειτουργία διαχειριστή αρχείων)</term>
+<listitem
+><para
+><action
+>Εναλλαγή</action
+> στον προσωπικό φάκελο του χρήστη, &eg;, /home/Peter/.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Μετάβαση</guimenu
+> <guimenuitem
+>Εφαρμογές</guimenuitem
+></menuchoice
+> (Λειτουργία διαχειριστή αρχείων)</term>
+<listitem
+><para
+>Ανοίγει το φάκελο που περιέχει τις εφαρμογές σας.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Μετάβαση</guimenu
+> <guimenuitem
+>Φάκελοι δικτύου</guimenuitem
+></menuchoice
+> (File Manager mode)</term>
+<listitem
+><para
+>Οι φάκελοι δικτύου εμφανίζονται σε μια ειδική τοποθεσία του &konqueror; και &dolphin; κάνοντας χρήση ενός εικονικού φακέλου. Περισσότερες πληροφορίες σχετικά με τη χρήση του φακέλου αυτού θα βρείτε στο <ulink url="help:/knetattach/index.html"
+>Το εγχειρίδιο του KNetAttach</ulink
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Μετάβαση</guimenu
+> <guimenuitem
+>Ρυθμίσεις</guimenuitem
+></menuchoice
+> (Λειτουργία διαχειριστή αρχείων)</term>
+<listitem
+><para
+>Ανοίγει έναν εικονικό φάκελο με όλα τα αρθρώματα του &systemsettings; σε προβολή <guimenuitem
+>Εικονίδια</guimenuitem
+>, <guimenuitem
+>Λεπτομέρειες</guimenuitem
+> ή <guimenuitem
+>Στήλες</guimenuitem
+>. Επιλέξτε ένα αντικείμενο για να εμφανίσετε το άρθρωμα ρυθμίσεων σε ένα ξεχωριστό παράθυρο.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Μετάβαση</guimenu
+> <guimenuitem
+>Κάδος απορριμμάτων</guimenuitem
+></menuchoice
+> (Λειτουργία διαχειριστή αρχείων)</term>
+<listitem
+><para
+>Ανοίγει το φάκελο <filename class="directory"
+>Κάδος απορριμμάτων</filename
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Μετάβαση</guimenu
+> <guimenuitem
+>Αυτόματη εκκίνηση</guimenuitem
+></menuchoice
+> (Λειτουργία διαχειριστή αρχείων)</term>
+<listitem
+><para
+>Ανοίγει το φάκελο <filename class="directory"
+>Autostart</filename
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>H</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Μετάβαση</guimenu
+> <guimenuitem
+>Εμφάνιση ιστορικού</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>εμφανίζει μια προβολή δέντρου του ιστορικού περιήγησης σας σε ένα ξεχωριστό παράθυρο. Δείτε <link linkend="sidebar"
+>Πλευρική μπάρα</link
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Μετάβαση</guimenu
+> <guisubmenu
+>Πιο συχνές επισκέψεις</guisubmenu
+> </menuchoice
+></term>
+<listitem>
+<para
+>Εμφανίζει ένα υπομενού με τα &URL; που επισκέπτεστε πιο συχνά. Επιλέξτε ένα από αυτά τα &URL; για να το ανοίξετε με τον &konqueror;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Μετάβαση</guimenu
+> <guisubmenu
+>Πρόσφατες επισκέψεις</guisubmenu
+> </menuchoice
+></term>
+<listitem>
+<para
+>Εμφανίζει ένα υπομενού με τα &URL; που επισκεφτήκατε πρόσφατα. Επιλέξτε ένα από αυτά τα &URL; για να το ανοίξετε με τον &konqueror;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Μετάβαση</guimenu
+> <guisubmenu
+>Κλειστά αντικείμενα</guisubmenu
+> </menuchoice
+></term>
+<listitem>
+<para
+>Εμφανίζει ένα υπομενού με τα &URL; που επισκέπτεστε πιο συχνά. Επιλέξτε ένα από αυτά τα &URL; για να το ανοίξετε με τον &konqueror;. Χρησιμοποιήστε το  <guimenuitem
+>Καθάρισμα ιστορικού κλεισμένων αντικειμένων</guimenuitem
+> για να καθαρίσετε το υπομενού.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-bookmarks">
+<title
+>Το μενού <guimenu
+>Σελιδοδείκτες</guimenu
+></title>
+
+<note
+><para
+>Δείτε την ενότητα <link linkend="bookmarks"
+>Χρησιμοποιώντας τους σελιδοδείκτες</link
+> σε αυτό το εγχειρίδιο για μια πιο πλήρη περιγραφή του μενού αυτού.. </para
+></note>
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>B</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Σελιδοδείκτες</guimenu
+> <guimenuitem
+>Προσθήκη σελιδοδείκτη</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Προσθέτει την τρέχουσα επιλογή στους σελιδοδείκτες.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Σελιδοδείκτες</guimenu
+> <guimenuitem
+>Σελιδοδείκτες των καρτελών σαν φάκελος...</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Δημιουργεί ένα φάκελο σελιδοδεικτών που περιέχει δεσμούς σε όλα τα ανοιχτά &URL; στις καρτέλες του &konqueror;. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Σελιδοδείκτες</guimenu
+> <guimenuitem
+>Νέος φάκελος σελιδοδεικτών...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Δημιουργεί ένα νέο φάκελο στο φάκελο με τους σελιδοδείκτες σας.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Σελιδοδείκτες</guimenu
+> <guimenuitem
+>Επεξεργασία σελιδοδεικτών...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Ανοίγει το παράθυρο <link linkend="bookmarks"
+>Επεξεργαστής σελιδοδεικτών</link
+>. </para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-tools">
+<title
+>Το μενού <guimenu
+>Εργαλεία</guimenu
+></title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+><keycap
+>F4</keycap
+></shortcut
+> <guimenu
+>Εργαλεία</guimenu
+> <guimenuitem
+>Άνοιγμα τερματικού</guimenuitem
+></menuchoice
+> (Λειτουργία διαχειριστή αρχείων)</term>
+<listitem
+><para
+>Ανοίγει ένα παράθυρο τερματικού της εφαρμογής &konsole;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>F</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Εργαλεία</guimenu
+> <guimenuitem
+>Αναζήτηση αρχείου...</guimenuitem
+></menuchoice
+> (Λειτουργία διαχειριστή αρχείων)</term>
+<listitem
+><para
+>Ανοίγει την εφαρμογή &kfind;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Εργαλεία</guimenu
+> <guisubmenu
+>Επιλογή απομακρυσμένου συνόλου χαρακτήρων</guisubmenu
+></menuchoice
+> (Λειτουργία διαχειριστή αρχείων)</term>
+<listitem
+><para
+><action
+>Σας δίνει τη δυνατότητα να επιλέξετε χειροκίνητα το σύνολο χαρακτήρων που χρησιμοποιείται από μια απομακρυσμένη σύνδεση.</action
+></para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Αν έχετε εγκαταστήσει το πακέτο &konqueror; plugins θα υπάρχουν επιπλέον καταχωρήσεις στο μενού <guimenu
+>Εργαλεία</guimenu
+>. Δείτε το κεφάλαιο <link linkend="konq-plugin"
+>Πρόσθετα του &konqueror;</link
+> για περισσότερες λεπτομέρειες.</para>
+</sect2>
+
+<sect2 id="menu-settings">
+<title
+>Το μενού <guimenu
+>Ρυθμίσεις</guimenu
+></title>
+
+<note
+><para
+>Δείτε επίσης την ενότητα <link linkend="save-settings"
+>Αποθήκευση ρυθμίσεων και προφίλ</link
+>.</para
+></note>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ρυθμίσεις</guimenu
+> <guisubmenu
+>Εμφάνιση γραμμών εργαλείων</guisubmenu
+> </menuchoice
+></term>
+<listitem
+><para
+>Ανοίγει ένα υπομενού όπου μπορείτε να επιλέξετε την εμφάνιση ή απόκρυψη διαφόρων γραμμών εργαλείων.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>M</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Ρυθμίσεις</guimenu
+> <guimenuitem
+>Εμφάνιση γραμμής μενού</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Εμφάνιση/απόκρυψη της γραμμής μενού.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ρυθμίσεις</guimenu
+> <guimenuitem
+>Εμφάνιση Προσομοιωτής τερματικού</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Ανοίγει μια μικρή προβολή τερματικού στο κάτω μέρος του βασικού παραθύρου.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>F9</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Ρυθμίσεις</guimenu
+> <guimenuitem
+>Εμφάνιση Πλευρική μπάρα</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Εμφάνιση/απόκρυψη της πλευρικής μπάρας του &konqueror;. Δείτε <xref linkend="sidebar"/>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift; <keycap
+>F</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Ρυθμίσεις</guimenu
+> <guimenuitem
+>Λειτουργία πλήρους οθόνης</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Αλλάζει την προβολή του &konqueror; σε λειτουργία πλήρους οθόνης, στην οποία το παράθυρο του &konqueror; καλύπτει ολόκληρη την οθόνη, και δεν έχει τις συνηθισμένες διακοσμήσεις παραθύρου. Για έξοδο από τη λειτουργία πλήρους οθόνης, πατήστε στο εικονίδιο <guiicon
+>Έξοδος από λειτουργία πλήρους οθόνης</guiicon
+> στη γραμμή εργαλείων, ή πατήστε <keycombo action="simul"
+>&Ctrl;&Shift; <keycap
+>F</keycap
+></keycombo
+>.</para>
+</listitem>
+</varlistentry>
+<!-- not in kde4
+<varlistentry>
+<term
+><menuchoice>
+<guimenu
+>Settings</guimenu>
+<guimenuitem
+>View Properties Saved in Folder</guimenuitem>
+</menuchoice
+></term>
+<listitem
+><para
+>Save View properties to current
+ folder. If this is selected, a <filename
+>.directory</filename
+> file will be
+written in the current directory storing the settings you last used to view the
+directory. These settings are then loaded when you open the directory in &konqueror;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice>
+<guimenu
+>Settings</guimenu>
+<guimenuitem
+>Remove Folder Properties</guimenuitem>
+</menuchoice
+></term>
+<listitem
+><para
+>Remove settings stored in folder by <guimenuitem
+>View
+Properties Saved in Folder</guimenuitem
+>.</para
+></listitem>
+</varlistentry>
+-->
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ρυθμίσεις</guimenu
+> <guisubmenu
+>Φόρτωση προφίλ προβολής</guisubmenu
+> </menuchoice
+></term>
+<listitem
+><para
+>Φορτώνει τις ρυθμίσεις που σχετίζονται με ένα προφίλ προβολής.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ρυθμίσεις</guimenu
+> <guimenuitem
+>Αποθήκευση προφίλ προβολής ως...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Αποθηκεύει τις τρέχουσες ρυθμίσεις στο τρέχον προφίλ προβολής.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ρυθμίσεις</guimenu
+> <guimenuitem
+>Ρύθμιση προφίλ προβολής...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Σας επιτρέπει να αλλάξετε ένα υπάρχον προφίλ ή να δημιουργήσετε ένα νέο.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ρυθμίσεις</guimenu
+> <guimenuitem
+>Ρύθμιση προσθέτων...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Ανοίγει έναν διάλογο με όλα τα εγκατεστημένα πρόσθετα (&eg; από το άρθρωμα του KDE extragear) και σας επιτρέπει να επιλέξετε αυτά που χρειάζεστε. Όλα τα πρόσθετα είναι προσβάσιμα από το μενού <guimenu
+>Εργαλεία</guimenu
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ρυθμίσεις</guimenu
+> <guimenuitem
+>Ρύθμιση του ορθογραφικού ελέγχου...</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Εμφανίσει το παράθυρο ρυθμίσεων του ορθογραφικού ελέγχου, όπου μπορείτε να αλλάξετε τις ρυθμίσεις που σχετίζονται με τον ορθογραφικό έλεγχο στον &konqueror;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ρυθμίσεις</guimenu
+> <guimenuitem
+>Ρύθμιση συντομεύσεων...</guimenuitem
+> </menuchoice
+></term
+> <listitem
+><para
+>Σας επιτρέπει να δείτε και να αλλάξετε τις συντομεύσεις πλήκτρων του &konqueror; &ie; τους συνδυασμούς μεταξύ ενεργειών όπως <guimenuitem
+>Αντιγραφή</guimenuitem
+> και πλήκτρων ή συνδυασμών πλήκτρων όπως <keycombo action="simul"
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+>. Αν το κάνετε αυτό προσέξτε να μην χρησιμοποιήσετε μια υπάρχουσα συντόμευση.</para>
+</listitem
+></varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ρυθμίσεις</guimenu
+> <guimenuitem
+>Ρύθμιση γραμμών εργαλείων...</guimenuitem
+> </menuchoice
+></term
+> <listitem
+><para
+>Σας επιτρέπει τη ρύθμιση της κύριας, της επιπρόσθετης και της γραμμής εργαλείων τοποθεσίας. Δείτε την ενότητα <link linkend="configure-bars"
+>Αλλάζοντας γραμμές εργαλείων</link
+> </para
+></listitem
+> </varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ρυθμίσεις</guimenu
+> <guimenuitem
+>Ρύθμιση του &konqueror;...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Σας επιτρέπει τη ρύθμιση της συμπεριφοράς του &konqueror; στις λειτουργίες διαχειριστή αρχείων και περιηγητή. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-window">
+<title
+>Το μενού <guimenu
+>Παράθυρο</guimenu
+></title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>L</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Παράθυρο</guimenu
+> <guimenuitem
+>Διαίρεση προβολής σε αριστερό/δεξί</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Διαιρεί την προβολή αριστερά/δεξιά</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>T</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Παράθυρο</guimenu
+> <guimenuitem
+>Διαίρεση προβολής σε πάνω/κάτω</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Διαιρεί την προβολή πάνω/κάτω.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>W</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Παράθυρο</guimenu
+> <guimenuitem
+>Αφαίρεση ενεργού προβολής</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Αφαιρεί την ενεργή προβολή.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Παράθυρο</guimenu
+> <guimenuitem
+>Νέο παράθυρο</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Ανοίγει ένα άλλο παράθυρο του &konqueror;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>D</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Παράθυρο</guimenu
+> <guimenuitem
+>Αντίγραφο παραθύρου</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Ανοίγει ένα άλλο παράθυρο του &konqueror;, αντίγραφο του υπάρχοντος.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>T</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Παράθυρο</guimenu
+> <guimenuitem
+>Νέα καρτέλα</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Ανοίγει μια νέα, κενή, σελίδα καρτέλας.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>D</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Παράθυρο</guimenu
+> <guimenuitem
+>Αντίγραφο τρέχουσας καρτέλας</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Ανοίγει ένα αντίγραφο σε σελίδα καρτέλας.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>B</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Παράθυρο</guimenu
+> <guimenuitem
+>Αποσύνδεση τρέχουσας καρτέλας</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Εμφανίζει την τρέχουσα σελίδα καρτέλας σε ένα νέο παράθυρο του &konqueror;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>W</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Παράθυρο</guimenu
+> <guimenuitem
+>Κλείσιμο τρέχουσας καρτέλας</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Κλείνει την τρέχουσα σελίδα καρτέλας</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>Left</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Παράθυρο</guimenu
+> <guimenuitem
+>Μετακίνηση καρτέλας αριστερά</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Μετακινεί την τρέχουσα καρτέλα μια θέση αριστερά στη λίστα των καρτελών.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>Right</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Παράθυρο</guimenu
+> <guimenuitem
+>Μετακίνηση καρτέλας δεξιά</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Μετακινεί την τρέχουσα καρτέλα μια θέση δεξιά στη λίστα των καρτελών.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-help">
+<title
+>Το μενού <guimenu
+>Βοήθεια</guimenu
+></title>
+<para
+>Εκτός από το τυπικό μενού <guimenu
+>Βοήθεια</guimenu
+> του &kde; που περιγράφεται στην ενότητα <ulink url="help:/fundamentals/ui.html#menus-help"
+>Μενού Βοήθεια</ulink
+> στις Βασικές αρχές του &kde; θα έχετε την καταχώρηση <guimenuitem
+>Εισαγωγή στον &konqueror;</guimenuitem
+> για να επισκεφτείτε την εισαγωγική σελίδα που βλέπετε κατά την εκκίνηση του &konqueror;.</para>
+
+</sect2>
+</sect1>
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

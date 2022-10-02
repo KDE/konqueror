@@ -1,0 +1,176 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY nsplugins-kcontrol SYSTEM "nsplugin.docbook">
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Brazilian-Portuguese "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="khtml-java-js" lang="&language;">
+<articleinfo>
+<title
+>Java e JavaScript</title>
+<authorgroup>
+<author
+>&Krishna.Tateneni; &Krishna.Tateneni.mail;</author>
+<othercredit role="translator"
+><firstname
+>Lisiane</firstname
+> <surname
+>Sztoltz</surname
+><affiliation
+><address
+> <email
+>lisiane@conectiva.com.br</email
+></address
+></affiliation
+><contrib
+>Tradução</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>24/11/2009</date>
+<releaseinfo
+>&kde; 4.4</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Configurações do sistema</keyword>
+<keyword
+>konqueror</keyword>
+<keyword
+>navegação</keyword>
+<keyword
+>Java</keyword>
+<keyword
+>JavaScript</keyword>
+</keywordset>
+
+</articleinfo>
+<sect1 id="konq-browsing">
+<title
+>&Java; e JavaScript</title>
+
+<sect2 id="kbrowse-java">
+<title
+>&Java;</title>
+
+<para
+>&Java; permite que aplicativos sejam carregados e executados através de um navegador, estando disponível o software necessário em sua máquina. Muitos sites fazem uso de &Java; (por exemplo, serviços de bancos on-line e sites interativos de jogos). Você deve estar ciente de que executar programas de fontes desconhecidas podem trazer problemas de segurança, podendo até mesmo danificar o seu computador.</para>
+
+<para
+>A opção <guilabel
+>Habilitar Java globalmente</guilabel
+> permite que você habilite o suporte ao &Java; para todos os sites web, por padrão. Você pode também habilitar o &Java; somente para hosts específicos. Para adicionar uma política para um host específico, clique em <guibutton
+>Novo...</guibutton
+> e uma janela será aberta, na qual você pode digitar o nome do host e então escolher a política de aceitar ou rejeitar o código &Java;, de um host particular. O domínio será adicionado, na lista do lado esquerdo da página.</para>
+
+<para
+>Você pode selecionar um host da lista e clicar no botão <guibutton
+>Alterar...</guibutton
+> para modificar a política daquele host. Clicando no botão <guibutton
+>Apagar</guibutton
+> você remove a política do host selecionado; depois da remoção, as configurações globais serão aplicadas para aquele host.</para>
+
+<para
+>Finalmente, o grupo de controles chamado <guilabel
+>Configurações de Tempo de Execução Java</guilabel
+> permite a você configurar algumas opções para o modo como o &Java; deve executar.</para>
+
+<para
+><guilabel
+>Usar gerenciador de segurança</guilabel
+> é normalmente habilitado por padrão. Esta configuração fará com que a <acronym
+>JVM</acronym
+> se execute com um Gerenciador de Segurança ativo. Isto evitará que miniaplicativos sejam capazes de ler e escrever no seu sistema de arquivos, criando soquetes arbitrários, e outras ações que podem ser usadas para comprometer seu sistema. Desabilite esta opção por sua própria conta e risco. Você pode modificar seu arquivo <filename
+>$<envar
+>HOME</envar
+>/.java.policy</filename
+> com o utilitário de ferramenta de política do &Java; para fornecer ao código baixado de determinados sites mais permissões.</para>
+
+<para
+><guilabel
+>Usar KIO</guilabel
+> fará com que a <acronym
+>JVM</acronym
+> use o próprio <acronym
+>KIO</acronym
+> do &kde; para transporte em conexões de rede.</para>
+
+<para
+>A caixa de verificação <guilabel
+>Desligar servidor de miniaplicativos quando inativo por mais de</guilabel
+> permite a você salvar recursos ao fechar o Servidor de miniaplicativos &Java; quando não estiver em uso, ao invés de deixá-lo executando em segundo plano. Deixar esta opção desabilitada pode fazer com que miniaplicativos &Java; iniciem mais rápido, mas usará mais recursos do sistema quando você não estiver usando um miniaplicativo &Java;. Se você habilitar esta opção, você pode configurar também o tempo máximo (timeout).</para>
+
+<para
+>Você pode optar por fazer com que o &konqueror; detecte automaticamente a instalação &Java; em seu sistema, ou especificar o caminho para a instalação, selecionando a opção <guilabel
+>Caminho para o executável do Java ou 'java'</guilabel
+>. Você pode escolher o último método, se você possui múltiplas instalações &Java; em seu sistema, por exemplo, e deseja especificar qual usar. Se a Máquina Virtual &Java; que você está usando requer opções especiais de inicialização, você pode digitá-las na caixa de texto chamada <guilabel
+>Parâmetros Java adicionais</guilabel
+>.</para>
+
+</sect2>
+
+<sect2 id="kbrowse-javascript">
+<title
+>JavaScript</title>
+
+<para
+>Apesar do nome, JavaScript não está totalmente relacionado com &Java;.</para>
+
+<para
+>A primeira parte desta página funciona do mesmo modo que a página de configurações do &Java;.</para>
+
+<para
+>A opção <guilabel
+>Habilitar JavaScript globalmente</guilabel
+> permite que você habilite o suporte a JavaScript para todos os sites, por padrão. Você pode também habilitar para sites específicos. Para adicionar uma política para um host específico, clique em <guibutton
+>Novo...</guibutton
+> para abrir uma janela, na qual você pode digitar o nome do host e em seguida escolher aceitar ou rejeitar o código JavaScript de um host em particular. Ele será adicionado à lista, no lado esquerdo da página.</para>
+
+<para
+>Você pode selecionar um host da lista e clicar no botão <guibutton
+>Alterar...</guibutton
+> para modificar a política daquele host. Clicando no botão <guibutton
+>Apagar</guibutton
+> você remove a política do host selecionado; depois da remoção, as configurações globais serão aplicadas para aquele host.</para>
+<!-- missing section Debugging
+Enable debugger Enables builtin JavaScript debugger.
+Report errors Enables the reporting of errors that occur when JavaScript code is executed.
+How are errors reported? popup window? icon in status bar?
+-->
+<para
+>O conjunto final de opções, na seção <guilabel
+>Políticas Globais de JavaScript</guilabel
+>, determina o que acontece quando uma página usa o JavaScript para algumas ações específicas.</para>
+
+<para
+>Você pode habilitar ou desabilitar individualmente a capacidade do JavaScript de manipular suas janelas movendo-as, redimensionando-as ou mudando foco. Você pode também impedir que o JavaScript mude o texto da barra de estado, de modo que você possa sempre ver os links que serão seguidos quando você clicar num deles. As alternativas para estas opções são <guilabel
+>Permitir</guilabel
+> e <guilabel
+>Ignorar</guilabel
+>.</para>
+
+<para
+>Para abrir uma nova janela, há ainda mais controle.Você pode configurar o &konqueror; para <guilabel
+>Permitir</guilabel
+> tais requisições, <guilabel
+>Perguntar</guilabel
+> cada vez que uma requisição é feita, ou <guilabel
+>Proibir</guilabel
+> todas as requisições de nova janela.</para>
+
+<para
+>A configuração <guilabel
+>Esperto</guilabel
+> somente permitirá janelas de contexto do JavaScript, quando você escolheu explicitamente um link que cria esta janela.</para>
+</sect2>
+
+</sect1>
+
+</article>

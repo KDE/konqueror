@@ -1,0 +1,2521 @@
+<chapter id="commands">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+> <firstname
+>Rocío</firstname
+> <surname
+>Gallego</surname
+> <affiliation
+><address
+><email
+>traducciones@rociogallego.com</email
+></address
+></affiliation
+> <contrib
+>Traductor</contrib
+> </othercredit
+><othercredit role="translator"
+> <firstname
+>Pablo</firstname
+> <surname
+>de Vicente</surname
+> <affiliation
+><address
+><email
+>pablo.devicente@gmail.com</email
+></address
+></affiliation
+> <contrib
+>Traductor</contrib
+> </othercredit
+> <othercredit role="translator"
+> <firstname
+>Marcos</firstname
+> <surname
+>Fouces Lago</surname
+> <affiliation
+><address
+><email
+>mfouces@yahoo.es</email
+></address
+></affiliation
+> <contrib
+>Traductor</contrib
+> </othercredit
+> <othercredit role="translator"
+> <firstname
+>Santiago</firstname
+> <surname
+>Fernández Sancho</surname
+> <affiliation
+><address
+><email
+>santi@kde-es.org</email
+></address
+></affiliation
+> <contrib
+>Traductor</contrib
+> </othercredit
+> 
+</authorgroup>
+
+<date
+>2010-10-25</date>
+<releaseinfo
+>&kde; 4.5</releaseinfo>
+</chapterinfo>
+
+<title
+>Referencia de órdenes</title>
+
+<note
+><para
+>Las combinaciones de teclas de acceso directo mostradas en este capítulo son las predeterminadas. Pero se pueden, por supuesto, <link linkend="configshort"
+>cambiar</link
+>. </para
+></note>
+
+<sect1 id="specshort">
+<title
+>Accesos rápidos especiales</title>
+<para
+>Hay algunos accesos rápidos que no se muestran en ninguno de los menús:</para>
+<variablelist>
+
+<varlistentry>
+<term
+><keycap
+>F6</keycap
+></term>
+<listitem>
+<para
+>Establece el foco al siguiente cuadro de entrada de texto en la barra de dirección.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><keycombo action="simul"
+>&Ctrl;<keycap
+>.</keycap
+></keycombo
+></term>
+<listitem>
+<para
+>Activa la siguiente página con pestaña.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><keycombo action="simul"
+>&Ctrl;<keycap
+>,</keycap
+></keycombo
+></term>
+<listitem>
+<para
+>Activa la página anterior con pestaña.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+
+</sect1>
+
+<sect1 id="menubar">
+<title
+>La barra de menús</title
+> <para
+>Piense que algunas entradas del menú solo aparecen cuando son coherentes con el archivo que &konqueror; está mostrando en cada momento. Por ejemplo, no aparecerá <menuchoice
+><guimenu
+>Editar</guimenu
+><guimenuitem
+>Buscar</guimenuitem
+></menuchoice
+> cuando esté viendo el contenido de un directorio.</para>
+
+<para
+>&konqueror; tiene diferentes opciones de menú en los modos de administrador de archivos y navegador. En este capítulo, solo se describen las opciones de menú para esos dos modos. </para>
+
+<para
+>Si <emphasis
+>&konqueror;</emphasis
+> está utilizando componentes incrustados (partes de &kde;) como <application
+>Gwenview</application
+> para la visualización de imágenes, &okular; para <acronym
+>PDF</acronym
+> y documentos &PostScript;, &etc;, las opciones de menú para dichas aplicaciones se fusionan con el menú de &konqueror;. Puede encontrar más información sobre dichas opciones de menú adicionales en el manual de la aplicación incrustada.</para>
+
+<sect2 id="menu-location">
+<title
+>El menú <guimenu
+>Archivo</guimenu
+></title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Archivo</guimenu
+> <guimenuitem
+>Nueva ventana</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Abre otra ventana de &konqueror;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>T</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Archivo</guimenu
+> <guimenuitem
+>Nueva pestaña</guimenuitem
+> </menuchoice
+></term
+> 
+<listitem
+><para
+>Abre otra pestaña de &konqueror; en blanco.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Alt;<keycap
+>O</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Archivo</guimenu
+> <guimenuitem
+>Abrir dirección...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Establece el foco al siguiente cuadro de entrada de texto en la barra de dirección.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Archivo</guimenu
+> <guimenuitem
+>Abrir archivo...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Abrir un archivo utilizando el diálogo de archivos de &kde;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Archivo</guimenu
+> <guimenuitem
+>Sesiones</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Abre un submenú para guardar la sesión actual (abre pestañas y ventanas) de manera que sea fácil recuperarla, gestionar las sesiones y alternar a sesiones guardadas previamente.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Archivo</guimenu
+> <guimenuitem
+>Enviar dirección de enlace...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Enviar un mensaje de correo electrónico conteniendo un enlace a la dirección actual.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Archivo</guimenu
+> <guimenuitem
+>Enviar archivo...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Envia un mensaje electrónico adjuntando el archivo seleccionado.</para
+></listitem>
+</varlistentry>
+
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Archivo</guimenu
+> <guimenuitem
+>Guardar imagen de fondo como...</guimenuitem
+></menuchoice
+> (modo navegador)</term>
+<listitem>
+<para
+>Solo aplicable si está viendo una página web con una imagen de fondo. Abre el cuadro de diálogo <guilabel
+>Guardar como</guilabel
+> para permitirle guardar la imagen de fondo en su propio equipo.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Archivo</guimenu
+> <guimenuitem
+>Guardar como...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Sólo aplicable si está viendo un documento o página web, utiliza el cuadro de diálogo <guilabel
+>Guardar como...</guilabel
+> para permitirle guardar una copia en su propia computadora.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Archivo</guimenu
+> <guimenuitem
+>Guardar marco como...</guimenuitem
+></menuchoice
+> (modo navegador)</term>
+<listitem
+><para
+>Similar a <guimenuitem
+>Guardar como...</guimenuitem
+> pero para utilizarlo con un sitio web que utiliza marcos.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+></keycap
+></keycombo
+> </shortcut
+><guimenu
+>Archivo</guimenu
+> <guimenuitem
+>Imprimir...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Imprime.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Archivo</guimenu
+> <guimenuitem
+>Imprimir marco</guimenuitem
+></menuchoice
+> (modo navegador)</term>
+<listitem
+><para
+>Imprime el marco seleccionado de una página web.</para
+></listitem>
+</varlistentry>
+<!--
+<varlistentry>
+<term
+><menuchoice>
+<guimenu
+>File</guimenu>
+<guimenuitem
+>Open With</guimenuitem>
+</menuchoice
+></term>
+<listitem
+><para
+>???</para
+></listitem
+> 
+</varlistentry>
+browser 2 items + submenu with apps
+filemanager dophin/gwenview + submenu with apps
+is this hardcoded? detected at runtime?
+
+DF: The list of applications is entirely dynamic, it is the list of
+   apps associated with the mimetype (of the current URL).
+ Compare with "Edit File Associations"  (kcmshell filetypes), you'll see that
+  it's the same list of apps, so it entirely depends on which apps are installed
+  on the system.
+
+-->
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Archivo</guimenu
+> <guimenuitem
+>Salir</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Cierra esta copia de &konqueror;.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-edit">
+<title
+>El menú <guimenu
+>Editar</guimenu
+></title>
+
+<!-- not in kde4
+note
+><para
+>Most items in the Menubar <guimenu
+>Edit</guimenu
+> menu can also be
+found by &RMB; clicking on a free area of a view.</para
+></note-->
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Editar</guimenu
+> <guimenuitem
+>Deshacer: <replaceable
+>Acción</replaceable
+></guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Algunas veces le permite revertir una operación errónea.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>t</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Editar</guimenu
+> <guimenuitem
+>Cortar</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Pone los elementos seleccionados en el portapapeles. Si después los pega, se moverán de su ubicación original a la nueva.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Editar</guimenu
+> <guimenuitem
+>Copiar</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Copia los elementos seleccionados al portapapeles.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Editar</guimenu
+> <guimenuitem
+>Pegar</guimenuitem
+></menuchoice
+> (modo navegador)</term>
+<listitem
+><para
+>Pega el contenido del portapapeles en la barra de ubicación.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Editar</guimenu
+> <guimenuitem
+>Pegar contenido del portapapeles...</guimenuitem
+></menuchoice
+> (modo administración de archivos)</term>
+<listitem
+><para
+>Pega los elementos copiados o cortados actuales a la carpeta actual. Si el portapapeles no contiene archivos no carpetas, se copiará el contenido del portapapeles (por ejemplo, texto o datos de imagen) en un nuevo archivo.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>A</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Editar</guimenu
+> <guimenuitem
+>Seleccionar todo</guimenuitem
+></menuchoice
+> (modo navegador)</term>
+<listitem
+><para
+>Selecciona todo el texto en una página &HTML; o en un texto de una página que se está previsualizando, de modo que después puede <guimenuitem
+>Copiar</guimenuitem
+> y <guimenuitem
+>Pegar</guimenuitem
+> dicho texto en un editor de texto.</para
+></listitem
+> </varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+><keycap
+>F2</keycap
+> </shortcut
+><guimenu
+>Editar</guimenu
+> <guimenuitem
+>Cambiar nombre</guimenuitem
+></menuchoice
+> (modo administrador de archivos)</term>
+<listitem
+><para
+>Le permite renombrar un archivo o carpeta sin tener que abrir el cuadro de diálogo <guimenuitem
+>Propiedades...</guimenuitem
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Editar</guimenu
+> <guisubmenu
+>Crear nuevo</guisubmenu
+></menuchoice
+> (modo administrador de archivos)</term>
+<listitem
+><para
+>Crea un nuevo objeto (como una carpeta o un archivo) en la carpeta actual.  Consulte la sección <link linkend="making"
+>Crear nuevo...</link
+> para obtener más información.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+><keycap
+>Supr</keycap
+></shortcut
+> <guimenu
+>Editar</guimenu
+> <guimenuitem
+>Mover a la papelera</guimenuitem
+></menuchoice
+> (modo administrador de archivos)</term>
+<listitem
+><para
+>Mueve los elementos seleccionados a la papelera.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Shift;<keycap
+>Supr</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Editar</guimenu
+> <guimenuitem
+>Borrar</guimenuitem
+></menuchoice
+> (modo administrador de archivos)</term>
+<listitem
+><para
+>Borra los elementos seleccionados.</para
+></listitem>
+</varlistentry>
+
+<!-- not in kde4
+varlistentry>
+<term
+><menuchoice>
+<shortcut
+><keycap
+>F7</keycap
+></shortcut>
+<guimenu
+>Edit</guimenu>
+<guimenuitem
+>Copy Files</guimenuitem>
+</menuchoice
+></term>
+<listitem
+><para
+>Copy the selected item(s) to another
+folder.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice>
+<guimenu
+>Edit</guimenu>
+<guimenuitem
+>Move Files</guimenuitem>
+</menuchoice
+></term>
+<listitem
+><para
+>Move the selected item(s) to another
+folder.</para
+></listitem>
+</varlistentry-->
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Editar</guimenu
+> <guimenuitem
+>Editar tipo de archivo...</guimenuitem
+></menuchoice
+> (modo administrador de archivos)</term>
+<listitem
+><para
+>Abre el cuadro de diálogo de <guilabel
+>Editar tipo de archivo</guilabel
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Alt;<keycap
+>Intro</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Editar</guimenu
+> <guimenuitem
+>Propiedades...</guimenuitem
+></menuchoice
+> (modo administrador de archivos)</term>
+<listitem
+><para
+>Muestra el diálogo de propiedades para los elementos seleccionados actualmente.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Editar</guimenu
+> <guisubmenu
+>Selección</guisubmenu
+> <guimenuitem
+>Seleccionar elementos que coincidan...</guimenuitem
+></menuchoice
+> (modo administrador de archivos)</term>
+<listitem
+><para
+>Junto con las órdenes de <guimenuitem
+>Eliminar la selección de los elementos coincidentes...</guimenuitem
+>, <guimenuitem
+>Eliminar toda la selección</guimenuitem
+> e <guimenuitem
+>Invertir selección</guimenuitem
+>, proporciona un método fácil y sencillo de seleccionar varios archivos.</para>
+<para
+>Muestra un diálogo sencillo donde puede introducir un nombre de archivo utilizando los caracteres comodines * y ?, por ejemplo, introduciendo <literal role="extension"
+>*.html</literal
+> seleccionará todos los archivos que acaban en <literal role="extension"
+>.html</literal
+> mientras <filename
+>?a*</filename
+> seleccionará todos los archivos que tengan la letra a como segundo carácter en su nombre.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Editar</guimenu
+> <guisubmenu
+>Selección</guisubmenu
+> <guimenuitem
+>Eliminar la selección de los elementos coincidentes...</guimenuitem
+></menuchoice
+> (modo administrador de archivos)</term>
+<listitem
+><para
+>Deselecciona los archivos o las carpetas a través de un diálogo similar al utilizado con <guimenuitem
+>Seleccionar...</guimenuitem
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>A</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Editar</guimenu
+> <guisubmenu
+>Selección</guisubmenu
+> <guimenuitem
+>Seleccionar todo</guimenuitem
+></menuchoice
+> (modo administrador de archivos)</term>
+<listitem
+><para
+>Selecciona todo el texto en una página &HTML; o en un texto de una página que se está previsualizando, de modo que después puede <guimenuitem
+>Copiar</guimenuitem
+> y <guimenuitem
+>Pegar</guimenuitem
+> dicho texto en un editor de texto.</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Editar</guimenu
+> <guisubmenu
+>Selección</guisubmenu
+> <guimenuitem
+>Eliminar toda la selección</guimenuitem
+></menuchoice
+> (modo administrador de archivos)</term>
+<listitem
+><para
+>Deselecciona todos los archivos o carpetas seleccionados.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>A</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Editar</guimenu
+> <guisubmenu
+>Seleccionar</guisubmenu
+> <guimenuitem
+>Invertir selección</guimenuitem
+></menuchoice
+> (modo administrador de archivos)</term>
+<listitem
+><para
+>Invierte la selección actual.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>F</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Editar</guimenu
+> <guimenuitem
+>Buscar...</guimenuitem
+></menuchoice
+> (modo navegador)</term>
+<listitem
+><para
+>Muestra a barra de búsqueda en la parte inferior de la ventana actual. Empiece a escribir para encontrar una cadena de texto en una página de texto o en una página &HTML;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+><keycap
+>F3</keycap
+></shortcut
+> <guimenu
+>Editar</guimenu
+> <guimenuitem
+>Buscar siguiente</guimenuitem
+></menuchoice
+> (modo navegador)</term>
+<listitem
+><para
+>Busca la siguiente aparición de la cadena de texto en el texto o en la página <acronym
+>HTML</acronym
+>.</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+><keycombo action="simul"
+>&Shift;<keycap
+>F3</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Editar</guimenu
+> <guimenuitem
+>Buscar anterior</guimenuitem
+></menuchoice
+> (modo navegador)</term>
+<listitem
+><para
+>Busca la aparición anterior de la cadena de texto en el texto o en la página &HTML;.</para
+></listitem
+> 
+</varlistentry>
+<!--
+<varlistentry>
+<term
+><menuchoice>
+<shortcut
+><keycombo action="simul"
+>&Shift;<keycap
+>F3</keycap
+></keycombo
+></shortcut>
+<guimenu
+>Edit</guimenu>
+<guimenuitem
+>Find Text as You Type</guimenuitem
+></menuchoice
+> (Browser mode)</term>
+<listitem
+><para
+>???</para
+></listitem
+> 
+</varlistentry>
+
+DF: No the initial shortcut is "/"  (forward slash). This matches VI, for instance.
+F3 is "find again", after 
+
+<varlistentry>
+<term
+><menuchoice>
+<shortcut
+><keycap
+>'</keycap
+></shortcut>
+<guimenu
+>Edit</guimenu>
+<guimenuitem
+>Find Links as You Type</guimenuitem
+></menuchoice
+> (Browser mode)</term>
+<listitem
+><para
+>???</para
+></listitem
+> 
+</varlistentry>
+
+> BL: both disabled in menu
+
+DF: bug in khtml. enableFindAheadActions(false) called by focusOutEvent.
+   How about we just get rid of this shortcut, and let people use Ctrl+F instead?
+
+DF: We still have to do something about "find text in links", ideally integrating that functionality
+ into the find bar; as a short term fix we could just give it a better (Ctrl+something) shortcut
+ and get rid of the "focusin/focusout enables/disables the action" logic.
+
+
+> BL: but shortcut works then typing -> to the first match, then stops
+
+> BL: how to find next match? why does it stop?
+
+DF: Not sure what you mean, '/' + search string + F3 F3 F3 works here.
+
+-->
+<!-- not in kde4
+varlistentry>
+<term
+><menuchoice>
+<guimenu
+>Edit</guimenu>
+<guimenuitem
+>Go to Line...</guimenuitem>
+</menuchoice
+></term>
+<listitem
+><para
+>Go to a particular line number in a text
+page you are previewing.</para
+></listitem>
+</varlistentry-->
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-view">
+
+<title
+>El menú <guimenu
+>Ver</guimenu
+></title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ver</guimenu
+> <guisubmenu
+>Modo de vista</guisubmenu
+> </menuchoice
+></term>
+<listitem
+><para
+>En modo navegador, este submenú contiene opciones que permiten seleccionar vistas incrustadas como <guimenuitem
+>KHTML</guimenuitem
+>, <guimenuitem
+>Editor de texto avanzado incrustado</guimenuitem
+>, entre otras.</para>
+<para
+>En modo administrador de archivos, este submenú contiene elementos para seleccionar <guimenuitem
+>Iconos</guimenuitem
+>, <guimenuitem
+>Detalles</guimenuitem
+>, <guimenuitem
+>Compacta</guimenuitem
+>, <guimenuitem
+>Emulador de terminal</guimenuitem
+> y más modos de vista.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Ver</guimenu
+> <guimenuitem
+>Usar index.html</guimenuitem
+> </menuchoice
+> (modo administrador de archivos)</term>
+<listitem
+><para
+>Si una carpeta seleccionada contiene un archivo <filename
+>index.html</filename
+>, se abrirá como página web en lugar de mostrar el directorio como una lista de archivos.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ver</guimenu
+> <guimenuitem
+>Fijar la dirección actual</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>En una vista bloqueada no se pueden cambiar las carpetas. Úsela en combinación con<guimenuitem
+>Vista de enlace</guimenuitem
+> para explorar muchos archivos de una carpeta.</para
+></listitem>
+</varlistentry>
+  
+<!-- not in kde4
+varlistentry>
+<term
+><menuchoice>
+<guimenu
+>View</guimenu>
+<guimenuitem
+>Unlock all views</guimenuitem>
+</menuchoice
+></term>
+<listitem
+><para
+>Unlock all views.
+</para
+></listitem>
+</varlistentry-->
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ver</guimenu
+> <guimenuitem
+>Enlazar vista</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Enlaza la vista actual a otras en una ventana de varias vistas. Una carpeta enlazada sigue los cambios realizados en otras vistas enlazadas. Esto resulta especialmente útil con diferentes tipos de vistas, tales como un árbol de carpetas con una vista de iconos o una vista detallada y una ventana de emulador de terminal.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>F5</keycap
+></shortcut
+> <guimenu
+>Ver</guimenu
+> <guimenuitem
+>Recargar</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Recarga.</para
+></listitem>
+</varlistentry>
+	  
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>&Esc;</keycap
+></shortcut
+> <guimenu
+>Ver</guimenu
+> <guimenuitem
+>Parar</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Detiene la carga (particularmente útil cuando se navega por la web).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>+</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Ver</guimenu
+> <guimenuitem
+>Aumentar tamaño de letra</guimenuitem
+></menuchoice
+> / <menuchoice
+> <shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>-</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Ver</guimenu
+> <guimenuitem
+>Reducir tamaño de letra</guimenuitem
+></menuchoice
+> (modo navegador)</term>
+<listitem
+><para
+>Utilice esta opción para ajustar el tamaño de la letra en la página si le resulta difícil leer el texto. Funcionará mejor o peor según como se haya construido la página web.</para
+></listitem
+> 
+</varlistentry>
+
+<!--  not in kde4
+<varlistentry>
+<term
+><menuchoice>
+<guimenu
+>View</guimenu>
+<guimenuitem
+>Icon Size</guimenuitem>
+</menuchoice
+></term>
+<listitem
+><para
+>Select size of icons used when
+viewing a folder in Icon Mode.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice>
+<guimenu
+>View</guimenu>
+<guisubmenu
+>Sort</guisubmenu>
+</menuchoice
+></term>
+<listitem
+><para
+>Choose order in which items are presented in the
+window when in Icon or MultiColumn View mode.</para
+></listitem>
+</varlistentry>
+  
+<varlistentry>
+<term
+><menuchoice>
+<guimenu
+>View</guimenu>
+<guimenuitem
+>Case Insensitive Sort</guimenuitem>
+</menuchoice
+></term>
+<listitem
+><para
+>Choose whether the sort order in Tree, Detailed List
+or Text View modes is case sensitive.</para
+></listitem>
+</varlistentry>
+-->
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>U</keycap
+> </keycombo
+> </shortcut
+> <guimenu
+>Ver</guimenu
+> <guimenuitem
+>Ver origen del documento</guimenuitem
+></menuchoice
+> (modo navegador)</term>
+<listitem
+><para
+>Permite ver el texto fuente del documento.</para>
+<para
+>Solo disponible si está visualizando un documento o página &HTML;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Ver</guimenu
+> <guimenuitem
+>Ver origen del marco</guimenuitem
+></menuchoice
+> (modo navegador)</term>
+<listitem
+><para
+>Ver texto de la fuente del marco.</para>
+<para
+>Sólo aplicable si está visualizando un sitio web que utiliza marcos. Similar a <guimenuitem
+>Ver fuente del documento</guimenuitem
+>. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>I</keycap
+> </keycombo
+> </shortcut
+> <guimenu
+>Ver</guimenu
+> <guimenuitem
+>VVer información del documento</guimenuitem
+></menuchoice
+> (modo navegador)</term>
+<listitem
+><para
+>Muestra información sobre el documento, tal como el título, &URL; y cabeceras &HTTP; utilizadas en la descarga del documento.</para>
+<para
+>Sólo disponible si está visualizando una página &HTML;.</para>
+</listitem>
+</varlistentry>
+<!-- not in kde4
+<varlistentry>
+<term
+><menuchoice>
+<guimenu
+>View</guimenu>
+<guimenuitem
+>Security...</guimenuitem>
+</menuchoice
+></term>
+<listitem
+><para
+>Tells you whether the current browser connection is
+secured with <acronym
+>SSL</acronym
+> and lets you bring up the
+<guilabel
+>Cryptography Configuration...</guilabel
+> dialog
+box. <mousebutton
+>Left</mousebutton
+> clicking on the Menubar padlock icon does
+the same thing.</para
+></listitem
+> </varlistentry>
+-->
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Ver</guimenu
+> <guimenuitem
+>Configurar codificación</guimenuitem
+></menuchoice
+> (modo navegador)</term>
+<listitem
+><para
+>Le permite elegir la codificación de caracteres utilizada para mostrar páginas &HTML;. Normalmente, <guimenuitem
+>Predeterminado</guimenuitem
+> es la mejor opción.</para
+></listitem>
+</varlistentry>
+<!-- what is this?
+<varlistentry>
+<term
+><menuchoice>
+<guimenu
+>View</guimenu>
+<guimenuitem
+>Use Stylesheet</guimenuitem
+></menuchoice
+> (Browser mode)</term>
+<listitem
+><para
+>???Automatic Detection Basic Page Style KDE Stylesheet</para
+></listitem>
+</varlistentry>
+http://websvn.kde.org/?view=revision&revision=269436
+-->
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Ver</guimenu
+> <guisubmenu
+>Ordenar por</guisubmenu
+></menuchoice
+> (modo administrador de archivos)</term>
+<listitem
+><para
+><action
+>Especifica si los elementos se ordenan por <guimenuitem
+>Nombre</guimenuitem
+>, <guimenuitem
+>Tamaño</guimenuitem
+>, <guimenuitem
+>Fecha</guimenuitem
+>, <guimenuitem
+>Permisos</guimenuitem
+>, <guimenuitem
+>Propietario</guimenuitem
+>, <guimenuitem
+>Grupo</guimenuitem
+>, <guimenuitem
+>Tipo</guimenuitem
+>, <guimenuitem
+>Destino del enlace</guimenuitem
+> o <guimenuitem
+>Ruta</guimenuitem
+>. <guimenuitem
+>Descendente</guimenuitem
+> invierte el orden. <guimenuitem
+>Carpetas primero</guimenuitem
+> ordena las carpetas antes que los archivos. </action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Ver</guimenu
+> <guisubmenu
+>Información adicional</guisubmenu
+></menuchoice
+> (modo administrador de archivos)</term>
+<listitem
+><para
+><action
+>Muestra información adicional</action
+> como <guimenuitem
+>Tamaño</guimenuitem
+>, <guimenuitem
+>Fecha</guimenuitem
+>, <guimenuitem
+>Permisos</guimenuitem
+>, <guimenuitem
+>Propietario</guimenuitem
+>, <guimenuitem
+>Grupo</guimenuitem
+>, <guimenuitem
+>Tipo</guimenuitem
+>, <guimenuitem
+>Destino del enlace</guimenuitem
+> o <guimenuitem
+>Ruta</guimenuitem
+> en las diferentes vistas.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Ver</guimenu
+> <guimenuitem
+>Vista previa</guimenuitem
+></menuchoice
+> (modo administrador de archivos)</term>
+<listitem
+><para
+><action
+>Muestra una vista previa simbólica del contenido del archivo </action
+> en los diferentes modos de vista.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Ver</guimenu
+> <guimenuitem
+>Mostrar en grupos</guimenuitem
+></menuchoice
+> (modo administrador de archivos)</term>
+<listitem
+><para
+><action
+>Muestra</action
+> el contenido de la carpeta actual agrupada por la opción seleccionada en  <guimenuitem
+>Ordenar por</guimenuitem
+> (disponible solo en la vista de iconos).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Alt;<keycap
+>.</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Ver</guimenu
+> <guimenuitem
+>Mostrar archivos ocultos</guimenuitem
+></menuchoice
+> (modo administrador de archivos)</term>
+<listitem
+><para
+><action
+>Muestra todos los archivos y subcarpetas ocultos de la carpeta actual.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Ver</guimenu
+> <guimenuitem
+>Ajustar propiedades de vista...</guimenuitem
+></menuchoice
+> (modo administrador de archivos)</term>
+<listitem
+><para
+><action
+>Abre el <link linkend="view-properties-dialog"
+>Diálogo de propiedades de vista</link
+>.</action
+></para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-go">
+<title
+>El menú <guimenu
+>Ir</guimenu
+></title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Alt;<keysym
+>Flecha arriba</keysym
+></keycombo
+> </shortcut
+><guimenu
+>Ir</guimenu
+> <guimenuitem
+>Arriba</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Subir un nivel en la jerarquía de carpetas.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Alt;<keysym
+>Flecha izquierda</keysym
+></keycombo
+> </shortcut
+><guimenu
+>Ir</guimenu
+> <guimenuitem
+>Atrás</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Volver a la vista previa.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Alt;<keysym
+>Flecha derecha</keysym
+></keycombo
+> </shortcut
+><guimenu
+>Ir</guimenu
+> <guimenuitem
+>Adelante</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Sólo puede ir adelante si acaba de ir atrás.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Alt;<keycap
+>Inicio</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Ir</guimenu
+> <guimenuitem
+>Página de inicio</guimenuitem
+></menuchoice
+> (modo navegador)</term>
+<listitem
+><para
+>Acceda a su página de inicio tal como se haya definido en la página <guilabel
+>General</guilabel
+> del diálogo de preferencias.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Alt;<keycap
+>Inicio</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Ir</guimenu
+> <guimenuitem
+>Carpeta personal</guimenuitem
+></menuchoice
+> (modo administrador de archivos)</term>
+<listitem
+><para
+><action
+>Cambia</action
+> a la carpeta personal del usuario, &eg;, /home/Pedro/.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Ir</guimenu
+> <guimenuitem
+>Aplicaciones</guimenuitem
+></menuchoice
+> (modo administrador de archivos)</term>
+<listitem
+><para
+>Abre la carpeta que contiene sus aplicaciones.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Ir</guimenu
+> <guimenuitem
+>Carpeta de red</guimenuitem
+></menuchoice
+> (modo administrador de archivos)</term>
+<listitem
+><para
+>Las carpetas de red aparecen en una ubicación especial de &konqueror; y &dolphin; llamada carpeta virtual. Para obtener más información sobre cómo usar esta carpeta, consulte el <ulink url="help:/knetattach/index.html"
+>Manual de KNetAttach</ulink
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Ir</guimenu
+> <guimenuitem
+>Preferencias</guimenuitem
+></menuchoice
+> (modo administrador de archivos)</term>
+<listitem
+><para
+>Abre una carpeta virtual con todos los módulos de &systemsettings; de las vistas <guimenuitem
+>Iconos</guimenuitem
+>, <guimenuitem
+>Detalles</guimenuitem
+> o<guimenuitem
+>Columnas</guimenuitem
+>. Seleccione un elemento para mostrar las preferencias del módulo en una ventana de diálogo diferente.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Ir</guimenu
+> <guimenuitem
+>Papelera</guimenuitem
+></menuchoice
+> (modo administrador de archivos)</term>
+<listitem
+><para
+>Abre la carpeta de la <filename class="directory"
+>Papelera</filename
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Ir</guimenu
+> <guimenuitem
+>Inicio automático</guimenuitem
+></menuchoice
+> (modo administrador de archivos)</term>
+<listitem
+><para
+>Abre la carpeta de <filename class="directory"
+>Inicio automático</filename
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>H</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Ir</guimenu
+> <guimenuitem
+>Mostrar historial</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>muestra una vista de árbol con el historial de navegación en una ventana diferente. Consulte <link linkend="sidebar"
+>Panel lateral</link
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ir</guimenu
+> <guisubmenu
+>Más frecuentemente visitados</guisubmenu
+> </menuchoice
+></term>
+<listitem>
+<para
+>Hace aparecer un menú con las &URL;s más frecuentemente visitadas. Seleccionando una de ellas &konqueror; abrirá esta &URL;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ir</guimenu
+> <guisubmenu
+>Visitados recientemente</guisubmenu
+> </menuchoice
+></term>
+<listitem>
+<para
+>Muestra un menú con las &URL;s que ha visitado recientemente. Al seleccionar una de ellas, &konqueror; la abrirá.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ir</guimenu
+> <guisubmenu
+>Elementos cerrados</guisubmenu
+> </menuchoice
+></term>
+<listitem>
+<para
+>Muestra un submenú con las &URL; cerradas que haya visitado. Al seleccionar una,  &konqueror; la abrirá. Seleccione <guimenuitem
+>Borrar historial de elementos cerrados</guimenuitem
+> para borrar el submenú.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-bookmarks">
+<title
+>El menú <guimenu
+>Marcadores</guimenu
+></title>
+
+<note
+><para
+>Consulte la sección <link linkend="bookmarks"
+>Utilizando los marcadores</link
+> en este manual para una descripción más completa de estos elementos de menú. </para
+></note>
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>B</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Marcadores</guimenu
+> <guimenuitem
+>Añadir marcador</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Añade la selección actual a sus marcadores.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Marcadores</guimenu
+> <guimenuitem
+> Crear una pestaña de marcadores con las pestañas abiertas...</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Crea una carpeta de marcadores que enlacen a todas las &URL; actualmente abiertas en las pestañas de &konqueror;. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Marcadores</guimenu
+> <guimenuitem
+>Nueva carpeta de marcadores</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Crea una nueva carpeta en su carpeta de marcadores.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Marcadores</guimenu
+> <guimenuitem
+>Editar marcadores...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Abre el <link linkend="bookmarks"
+>Editor de marcadores</link
+>. </para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-tools">
+<title
+>El menú <guimenu
+>Herramientas</guimenu
+></title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+><keycap
+>F4</keycap
+></shortcut
+> <guimenu
+>Herramientas</guimenu
+> <guimenuitem
+>Abrir terminal</guimenuitem
+></menuchoice
+> (modo administrador de archivos)</term>
+<listitem
+><para
+>Abre una ventana de terminal de &konsole;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>F</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Herramientas</guimenu
+> <guimenuitem
+>Buscar archivo...</guimenuitem
+></menuchoice
+> (modo administrador de archivos)</term>
+<listitem
+><para
+>Abre la aplicación &kfind;</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <guimenu
+>Herramientas</guimenu
+> <guisubmenu
+>Seleccionar juego de caracteres remoto</guisubmenu
+></menuchoice
+> (modo administrador de archivos)</term>
+<listitem
+><para
+><action
+>Ofrece seleccionar manualmente el juego de caracteres utilizado por una conexión remota.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+> <shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>E</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Herramientas</guimenu
+> <guimenuitem
+>Ejecutar orden en el terminal...</guimenuitem
+></menuchoice
+> (modo administrador de archivos)</term>
+<listitem
+><para
+>Ejecuta un programa en la carpeta actual introduciendo su nombre en un cuadro de diálogo. El resultado de la orden se muestra en una ventana.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Si tiene instalados las extensiones de &konqueror; habrá entradas adicionales en el menú <guimenu
+>Herramientas</guimenu
+>. Vea el capítulo <link linkend="konq-plugin"
+>Extensiones de &konqueror;</link
+> para obtener más detalles.</para>
+</sect2>
+
+<sect2 id="menu-settings">
+<title
+>El menú <guimenu
+>Opciones</guimenu
+></title>
+
+<note
+><para
+>Consulte también la sección <link linkend="save-settings"
+>Guardar configuración y perfiles</link
+>.</para
+></note>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Preferencias</guimenu
+> <guisubmenu
+>Barras de herramientas mostradas</guisubmenu
+> </menuchoice
+></term>
+<listitem
+><para
+>Abre un submenú donde puede elegir si mostrar u ocultar las diferentes barras de herramientas.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>m</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Preferencias</guimenu
+> <guimenuitem
+>Mostrar barra de menú</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Muestra/oculta la barra de menú.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Preferencias</guimenu
+> <guimenuitem
+>Mostrar emulador de terminal</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Abre una vista pequeña de terminal de texto al fondo de la ventana principal.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+><keycap
+>F9</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Preferencias</guimenu
+> <guimenuitem
+>Mostrar panel lateral</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Conmuta la visualización de la barra lateral &konqueror;. Véase <xref linkend="sidebar"/>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift; <keycap
+>F</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Preferencias</guimenu
+> <guimenuitem
+>Modo de pantalla completa</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Cambia a &konqueror; al modo de pantalla completa, en el que la ventana de &konqueror; ocupará toda la pantalla, y no tiene las decoraciones habituales de las ventanas. Para salir del modo de pantalla completa, pulse en el icono de la barra de herramientas <guiicon
+>Salir del modo de pantalla completa</guiicon
+>, o pulse <keycombo action="simul"
+>&Ctrl;&Shift; <keycap
+>F</keycap
+></keycombo
+>.</para>
+</listitem>
+</varlistentry>
+<!-- not in kde4
+<varlistentry>
+<term
+><menuchoice>
+<guimenu
+>Settings</guimenu>
+<guimenuitem
+>View Properties Saved in Folder</guimenuitem>
+</menuchoice
+></term>
+<listitem
+><para
+>Save View properties to current
+ folder. If this is selected, a <filename
+>.directory</filename
+> file will be
+written in the current directory storing the settings you last used to view the
+directory. These settings are then loaded when you open the directory in &konqueror;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice>
+<guimenu
+>Settings</guimenu>
+<guimenuitem
+>Remove Folder Properties</guimenuitem>
+</menuchoice
+></term>
+<listitem
+><para
+>Remove settings stored in folder by <guimenuitem
+>View
+Properties Saved in Folder</guimenuitem
+>.</para
+></listitem>
+</varlistentry>
+-->
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Preferencias</guimenu
+> <guimenuitem
+>Cargar perfil de vista</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Carga las configuraciones asociadas con un perfil de vista particular.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Preferencias</guimenu
+> <guimenuitem
+>Guardar perfil de vista como...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Guarda las configuraciones del perfil de vista actual.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Preferencias</guimenu
+> <guimenuitem
+>Configurar perfiles de vista...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Le permite cambiar un perfil existente o crear uno nuevo.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Preferencias</guimenu
+> <guimenuitem
+>Configurar extensiones...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Abre un diálogo con todos los complementos instalados &eg;, del modulo extragear de KDE y permite seleccionar aquéllos que necesite. Se puede acceder a todos los complementos desde el menú <guimenu
+>Herramientas</guimenu
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Preferencias</guimenu
+> <guimenuitem
+>Configurar la comprobación de ortografía...</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Muestra el diálogo de configuración para la comprobación de la ortografía, en el que puede cambiar las preferencias asociadas a la comprobación de la ortografía en &konqueror;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Opciones</guimenu
+> <guimenuitem
+>Configurar accesos rápidos...</guimenuitem
+> </menuchoice
+></term
+> <listitem
+><para
+>Le permite ver y cambiar las asociaciones de teclas de &konqueror;, es decir, las asociaciones entre operaciones como <guimenuitem
+>Copiar</guimenuitem
+> y teclas o combinaciones de teclas tales como <keycombo action="simul"
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+>. Si hace esto preste atención a no duplicar accesos rápidos existentes.</para>
+</listitem
+></varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Opciones</guimenu
+> <guimenuitem
+>Configurar barras de herramientas...</guimenuitem
+> </menuchoice
+></term
+> <listitem
+><para
+>Le permite configurar las barras de herramientas principal, extra y de dirección. Consulte la sección <link linkend="configure-bars"
+>Cambiando barras</link
+>. </para
+></listitem
+> </varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Opciones</guimenu
+> <guimenuitem
+>Configurar &konqueror;...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Vamos a configurar el comportamiento de &konqueror; en los modos de administrador de archivos y de navegador. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-window">
+<title
+>El menú <guimenu
+>Ventana</guimenu
+></title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>L</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Ventana</guimenu
+> <guimenuitem
+>Dividir vista izquierda/derecha</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Dividir vista izquierda/derecha.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>T</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Ventana</guimenu
+> <guimenuitem
+>Dividir vista superior/inferior</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Dividir vista superior/inferior.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>W</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Ventana</guimenu
+> <guimenuitem
+>Cerrar vista activa</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Elimina la vista activa.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Ventana</guimenu
+> <guimenuitem
+>Nueva ventana</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Abre otra ventana de &konqueror;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>D</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Ventana</guimenu
+> <guimenuitem
+>Duplicar ventana</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Abre otra ventana de &konqueror;, duplicando la actual.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>T</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Ventana</guimenu
+> <guimenuitem
+>Nueva pestaña</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Abre una nueva página con una pestaña vacía.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>D</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Ventana</guimenu
+> <guimenuitem
+>Duplicar pestaña actual</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Abre una página con duplicando la pestaña.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>B</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Ventana</guimenu
+> <guimenuitem
+>Desprender pestaña actual</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Muestra la pestaña actual en una nueva instancia de &konqueror;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>W</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Ventana</guimenu
+> <guimenuitem
+>Cerrar la pestaña actual</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Cierra la pestaña actual.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>Izquierda</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Ventana</guimenu
+> <guimenuitem
+>Mover pestaña a la izquierda</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Muestra la pestaña actual un lugar a la izquierda en la lista de pestañas.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>Derecha</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Ventana</guimenu
+> <guimenuitem
+>Mover pestaña a la derecha</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Muestra la pestaña actual un lugar a la derecha en la lista de pestañas.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-help">
+<title
+>El menú de <guimenu
+>Ayuda</guimenu
+></title>
+<para
+>Aparte de las opciones estándar del menú <guimenu
+>Ayuda</guimenu
+> de &kde; descritos en la sección <ulink url="help:/fundamentals/ui.html#menus-help"
+>Menú Ayuda</ulink
+> de Fundamentos de &kde;, tendrá la opción de menú <guimenuitem
+>Introducción a &konqueror;</guimenuitem
+> para volver a consultar las páginas de introducción que obtuvo la primera vez que inició &konqueror;.</para>
+
+</sect2>
+</sect1>
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

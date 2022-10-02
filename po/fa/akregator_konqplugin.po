@@ -1,0 +1,68 @@
+# translation of akregator_konqplugin.po to Persian
+# Nazanin Kazemi <kazemi@itland.ir>, 2006, 2007.
+# MaryamSadat Razavi <razavi@itland.ir>, 2006.
+# Tahereh Dadkhahfar <dadkhahfar@itland.ir>, 2006.
+# Nasim Daniarzadeh <daniarzadeh@itland.ir>, 2006.
+# Mohamad Reza Mirdamadi <mohi@ubuntu.ir>, 2010, 2011, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: akregator_konqplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2014-06-17 12:25+0430\n"
+"Last-Translator: Mohi Mirdamadi <mohi@ubuntu.ir>\n"
+"Language-Team: Farsi (Persian) <kde-i18n-doc@kde.org>\n"
+"Language: fa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: akregatorplugin.cpp:63
+#, fuzzy, kde-format
+#| msgid "Add Feed to Akregator"
+msgctxt "@action:inmenu"
+msgid "Add Feed to Akregator"
+msgstr "افزودن خوراندن به Akregator"
+
+#: konqfeedicon.cpp:127
+#, kde-format
+msgid "Add Feed to Akregator"
+msgstr "افزودن خوراندن به Akregator"
+
+#: konqfeedicon.cpp:129
+#, kde-format
+msgid "Add Feeds to Akregator"
+msgstr "افزودن خوراندنها به Akregator"
+
+#: konqfeedicon.cpp:138
+#, kde-format
+msgid "Add All Found Feeds to Akregator"
+msgstr "افزودن همه خوراندنهای یافته‌شده به Akregator"
+
+#: konqfeedicon.cpp:162
+#, kde-format
+msgid "Subscribe to site updates (using news feed)"
+msgstr "تایید به‌روزرسانیهای پایگاه (استفاده از خوراندن خبر)"
+
+#: pluginutil.cpp:36 pluginutil.cpp:46
+#, kde-format
+msgid "Imported Feeds"
+msgstr "خوراندنهای واردشده"
+
+#: pluginutil.cpp:38
+#, kde-format
+msgid "Unable to contact Akregator via D-Bus"
+msgstr ""
+
+#: pluginutil.cpp:39
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "The DBus call addFeedToGroup failed"
+msgctxt "@title:window"
+msgid "D-Bus call failed"
+msgstr "فراخوابی DBus برای addFeedToGroup شکست خورد"
+
+#~ msgid "Akregator feed icon - DBus Call failed"
+#~ msgstr "شمایل فید Akregator - فراخوانی DBus شکست خورد"

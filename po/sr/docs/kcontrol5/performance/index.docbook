@@ -1,0 +1,99 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Serbian "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="performance" lang="&language;">
+<articleinfo>
+<title
+>Перформансе</title>
+<authorgroup>
+<author
+><personname
+><firstname
+>Мајк</firstname
+> <surname
+>Мекбрајд</surname
+></personname
+> &Mike.McBride.mail;</author>
+<othercredit role="translator"
+><firstname
+>Драган</firstname
+><surname
+>Пантелић</surname
+><affiliation
+><address
+><email
+>falcon-10@gmx.de</email
+></address
+></affiliation
+><contrib
+>превод</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>8. 11. 2016.</date>
+<releaseinfo
+>Програми КДЕ‑а 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>КДЕ</keyword>
+<keyword
+>Системске поставке</keyword>
+<keyword
+>перформансе</keyword>
+<keyword
+>предучитавање</keyword>
+</keywordset>
+</articleinfo>
+
+<sect1 id="sys-performance">
+<title
+>Поставке перформанси</title>
+
+<para
+><application
+>К‑освајач</application
+> користе разнолики корисници на разноврсним рачунарима. Под плаштом перформанси, овај дијалог омогућава кориснику да подеси опције које могу учинити да се рачунар са инсталираним <application
+>К‑освајачем</application
+> одзива живахније. </para>
+
+<sect2
+><title
+>Предучитавање</title>
+<para
+>у подсекцији <guilabel
+>Предучитавање</guilabel
+> вага се између меморије и перформанси.</para>
+
+<para
+><emphasis
+>Предучитавањем</emphasis
+> се назива учитавање примерка <application
+>К‑освајача</application
+> у меморију пре него што га корисник заиста покрене. Позитиван ефекат је у томе што кад корисник затражи да се учита <application
+>К‑освајач</application
+>, прозор се тренутачно појављује, пошто је већи део програма предучитан. Негативно је то што овај примерак <application
+>К‑освајача</application
+> троши меморију која би могла послужити другим програмима. Подразумевано, кад корисник затвори <application
+>К‑освајач</application
+>, примерак се заправо не затвара. Тако ће наредно покретање <application
+>К‑освајача</application
+> поново бити тренутачно.</para>
+
+<para
+>Последња кућица, <guilabel
+>Увек одржавај један учитан примерак</guilabel
+>, говори да желите да увек буде спреман један предучитан, али неискоришћен примерак <application
+>К‑освајача</application
+>. Ова опција ће заправо умањити перформансе на неким системима (нарочито онима са ограниченом физичком меморијом).</para>
+</sect2>
+</sect1>
+
+</article>

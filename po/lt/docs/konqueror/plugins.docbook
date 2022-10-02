@@ -1,0 +1,298 @@
+<chapter id="plugins">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>Tomas</firstname
+><surname
+>Straupis</surname
+><affiliation
+><address
+><email
+>tomasstraupis@gmail.com</email
+></address
+></affiliation
+><contrib
+>Vertė</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2010-05-16</date>
+<releaseinfo
+>&kde; 4.5</releaseinfo>
+</chapterinfo>
+
+
+<title
+>Priedai</title>
+
+<sect1 id="netscape-plugin">
+<title
+>&Netscape; priedai</title>
+
+<para
+>Šiuo metu &konqueror; palaiko &Netscape; priedus.</para>
+
+<para
+>Parinkus <menuchoice
+><guimenu
+>Nustatymai</guimenu
+><guimenuitem
+>Konfigūtuoti Konqueror...</guimenuitem
+> </menuchoice
+>, atidaromas konfigūracijos dialogas. Parinkite <guilabel
+>Priedai</guilabel
+> puslapį, kuriame rasite dvi skiltis. <guilabel
+>Bendų nustatymų</guilabel
+> skiltyje galite įjungti priedus ir konfigūruoti, kaip jie naudojami naršyklėje &konqueror;. <guilabel
+>Priedų</guilabel
+> skiltyje matysite rastus &Netscape; priedus, kuriuos &kde; rado. Ten pat galėsite ieškoti naujų priedų.</para>
+
+<para
+>Daugiau informacijos rasite <ulink url="help:/kcontrol/khtml-plugins/index.html"
+>Naršyklės priedų</ulink
+> pagalbos puslapyje.</para>
+
+</sect1>
+
+<sect1 id="konq-plugin">
+<title
+>&konqueror; priedai</title>
+
+<para
+>&kde; modulyje „extragear“ yra keletas naudingų priedų, kurie įvairiais būdais sąveikauja su &konqueror;. Toliau pateikiamas trumpas jų aprašymas.</para>
+<!--NO ENTRY KONQ PLUGINS IN HELPCENTER NAVIGATION TREE IN KDE4
+, more detailed information may be obtained by looking through the <guimenuitem
+>Konqueror 
+Plugins</guimenuitem
+> section in the &kde; Help Center
+How to access the doc in extragear/base/doc/konq-plugins???
+-->
+<para
+>Parinkę <menuchoice
+><guimenu
+>Nustatymai</guimenu
+><guimenuitem
+>Konfigūruoti išplėtimus...</guimenuitem
+></menuchoice
+>, atversite dialogą, kuriam rasite visus įdiegtus išplėtimus. Čia galėsite pasirinkti, kuriuos iš jų norite naudoti. Visi priedai prieinami per <guilabel
+>Įrankių</guilabel
+> meniu.</para>
+
+<variablelist>
+<title
+>Naršymo režimas</title>
+<varlistentry>
+<term
+>Puslapių vertimas</term>
+<listitem
+><para
+>Šis išplėtimas naudoja AltaVistos BabelFish svetainę šiuo metu atverto <acronym
+>HTML</acronym
+> puslapio vertimui į praktiškai bet kokią kalbą. Vertimą galima paleisti naudojant meniu <menuchoice
+><guimenu
+>Įrankiai</guimenu
+><guisubmenu
+>Versti tinklapį</guisubmenu
+></menuchoice
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>DOM medžio žiūryklė</term>
+<listitem
+><para
+>Parinkus <menuchoice
+><guimenu
+>Įrankiai</guimenu
+><guisubmenu
+>Rodyti DOM medį</guisubmenu
+></menuchoice
+>, bus atvertas naujas langas, kuriame matysite šiuo metu atverto <acronym
+>HTML</acronym
+> dokumento objektinį modelį (DOM).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>HTML tikrinimas</term>
+<listitem
+><para
+>Paleidžiamas parinkus <menuchoice
+><guimenu
+>Įrankiai</guimenu
+><guisubmenu
+>Patikrinti tinklapį</guisubmenu
+><guimenuitem
+>Tikrinti HTML</guimenuitem
+></menuchoice
+>. Jis naudoja W3C HTML tikrintimą, šiuo metu atverto puslapio klaidų suradimui. Tai labai naudingas funkcionalumas, kuriant interneto puslapius.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>CSS tikrinimas</term>
+<listitem
+><para
+>Paleidžiamas parinkus <menuchoice
+><guimenu
+>Įrankiai</guimenu
+><guisubmenu
+>Patikrinti tinklapį</guisubmenu
+><guimenuitem
+>Tikrinti CSS</guimenuitem
+></menuchoice
+>. Naudoja W3C CSS tikrinimą, klaidų paieškai dabartinio puslapio CSS failuose.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>HTML nustatymai</term>
+<listitem
+><para
+>Parinkite <menuchoice
+><guimenu
+>Įrankiai</guimenu
+><guisubmenu
+>HTML nustatymai</guisubmenu
+></menuchoice
+>, kad įjungtumėte ar išjungtumėte eilę HTML nustatymų, neatidarinėjant <guimenu
+>Nustatymų</guimenu
+> dialogo. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Keisti naršyklės tapatybę</term>
+<listitem
+><para
+>Parinkite <menuchoice
+><guimenu
+>Įrankiai</guimenu
+><guisubmenu
+>Keisti naršyklės tapatybę</guisubmenu
+></menuchoice
+> ir gausite meniu, kuriame galėsite neidamį į <guimenu
+>Nustatymų</guimenu
+> dialog pasirinkti, kuo turėtų prisistatyti Konqueror. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Tinklapio archyvavimas</term>
+<listitem
+><para
+>Šis įrankis paleidžiamas per <menuchoice
+><guimenu
+>Įrankiai</guimenu
+><guisubmenu
+>Archyvuoti tinklapį</guisubmenu
+></menuchoice
+>. Jis sukurs archyvo (<literal role="extension"
+>.war</literal
+>) failą, kuriame bus visas tinklapio turinys, įskaitant ir piešinukus. Paspaudę <mousebutton
+>kairįjį</mousebutton
+> pelės klavišą ant archyvo failo galėsite iš naujo atverti išsaugotą puslapį. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<variablelist>
+<title
+>Failų tvarkyklės režimas</title>
+<varlistentry>
+<term
+>Aplankų peržiūros filtras</term>
+<listitem
+><para
+>Tai kontroliuojama per <menuchoice
+><guimenu
+>Įrankiai</guimenu
+><guisubmenu
+>Rodymo filtras</guisubmenu
+></menuchoice
+> ir leidžia jums nurodyti, kokio tipo elementai rodomi aplanke.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Paveikslėlių galerija</term>
+<listitem
+><para
+>Failų tvarkyklės režime jūs galite pasirinkti <menuchoice
+><guimenu
+>Įrankiai</guimenu
+><guisubmenu
+>Sukurti nuotraukų galeriją</guisubmenu
+></menuchoice
+>, kad sukurtumėte HTML puslapį su visų dabartiniame aplanke esančių nuotraukų sumažintomis versijomis. Pagal nutylėjimą HTML puslapio pavadinimas bus <filename
+>images.html</filename
+>, o visos sumažintos nuotraukų versijos bus išsaugotos poaplankyje <filename
+>thumbs</filename
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Paieškos juosta</term>
+<listitem
+><para
+>Rodo teksto įvedimo elementą, kurio pagalba galima greitai naudoti paieškos varikliukus, tokius kaip Google. Paspaudus ant dešinėje pusėje esančio ženkliuko bus atvertas meniu, kuriame galėsite pasirinkti kitą paieškos sistemą bei susikonfigūruoti jų <ulink url="help:/kcontrol/ebrowsing/index.html"
+>Tinklo trumpinius</ulink
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Apvalkalo komandos priedas</term>
+<listitem
+><para
+>Šio priedo pagalba galite dabartiniame aplanke vykdyti apvalkalo komandas ir atskirame lange matyti jų vykdymo rezultatą. </para
+></listitem>
+</varlistentry>
+
+<!--not build in 4.4
+<varlistentry>
+<term
+>Sidebar Media Player</term>
+<listitem
+><para
+>This is a simple media player, embedded as a tab page in the
+Sidebar. You can drag songs or videos onto this page to play them.
+</para
+></listitem>
+</varlistentry>
+-->
+</variablelist>
+
+</sect1>
+
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

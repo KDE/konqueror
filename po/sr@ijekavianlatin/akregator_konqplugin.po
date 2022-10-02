@@ -1,0 +1,69 @@
+# Translation of akregator_konqplugin.po into Serbian.
+# Chusslove Illich <caslav.ilic@gmx.net>, 2004, 2005, 2011, 2012, 2016, 2017.
+# Slobodan Simic <slsimic@gmail.com>, 2005, 2008, 2009.
+# Dalibor Djuric <daliborddjuric@gmail.com>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: akregator_konqplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2019-11-29 02:33+0100\n"
+"PO-Revision-Date: 2017-09-28 17:56+0200\n"
+"Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
+"Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
+"Language: sr@ijekavianlatin\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+"X-Environment: kde\n"
+
+#: akregatorplugin.cpp:74
+#, fuzzy, kde-format
+#| msgid "Add Feed to Akregator"
+msgctxt "@action:inmenu"
+msgid "Add Feed to Akregator"
+msgstr "Dodaj dovod u Akregator"
+
+#: konqfeedicon.cpp:144
+#, kde-format
+msgid "Add Feed to Akregator"
+msgstr "Dodaj dovod u Akregator"
+
+# >> @title:window
+#: konqfeedicon.cpp:146
+#, kde-format
+msgid "Add Feeds to Akregator"
+msgstr "Dodavanje dovoda u Akregator"
+
+#: konqfeedicon.cpp:155
+#, kde-format
+msgid "Add All Found Feeds to Akregator"
+msgstr "Dodaj sve nađene dovode u Akregator"
+
+# rewrite-msgid: /Subscribe/Follow/
+#: konqfeedicon.cpp:179
+#, kde-format
+msgid "Subscribe to site updates (using news feed)"
+msgstr "Prati dopune na sajtu (preko dovoda vijesti)"
+
+#: pluginutil.cpp:52 pluginutil.cpp:62
+#, kde-format
+msgid "Imported Feeds"
+msgstr "Uvezeni dovodi"
+
+#: pluginutil.cpp:54
+#, kde-format
+msgid "Unable to contact Akregator via D-Bus"
+msgstr ""
+
+#: pluginutil.cpp:55
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "The DBus call addFeedToGroup failed"
+msgctxt "@title:window"
+msgid "D-Bus call failed"
+msgstr "D‑Bus poziv addFeedToGroup nije uspio"

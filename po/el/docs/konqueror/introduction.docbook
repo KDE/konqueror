@@ -1,0 +1,95 @@
+<chapter id="introduction">
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>Δημήτριος</firstname
+><surname
+>Γλενταδάκης</surname
+><affiliation
+><address
+><email
+>dglent@gmail.com</email
+></address
+></affiliation
+><contrib
+>Μεταφραστής</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2010-02-08</date>
+<releaseinfo
+>4.4</releaseinfo>
+</chapterinfo>
+
+<title
+>Επισκόπηση</title>
+
+<para
+>Ο <emphasis
+>&konqueror;</emphasis
+> είναι ένας προχωρημένος <link linkend="filemanager"
+>διαχειριστής αρχείων</link
+> για το &kde;, ο οποίος παρέχει ένα εύρος λειτουργιών από απλή αντιγραφή/επικόλληση ως προχωρημένη περιήγηση αρχείων τοπικά και σε απομακρυσμένα δίκτυα. Τα περιεχόμενα των φακέλων μπορούν να προβληθούν με διάφορους <link linkend="viewmode"
+>τύπους προβολής</link
+> εικόνων και κειμένου, οι οποίοι μπορούν να περιέχουν εικόνες επισκόπησης με το περιεχόμενο των αρχείων. Οι ιδιότητες των αρχείων και των φακέλων μπορούν να εξεταστούν και να τροποποιηθούν εύκολα και μπορεί να γίνει εκκίνηση των εφαρμογών με ένα απλό &LMB;.</para>
+
+<para
+>Στο &kde; SC4 το &dolphin; είναι ο προκαθορισμένος διαχειριστής αρχείων. Για να αλλάξετε το προκαθορισμένο πρόγραμμα περιήγησης φακέλων, ανοίξτε το <guimenu
+>Προκαθορισμένες εφαρμογές</guimenu
+> στις &systemsettings; και επιλέξτε τον &konqueror; ως διαχειριστή αρχείων.</para>
+
+<para
+>Ο <emphasis
+>&konqueror;</emphasis
+> είναι ένας συμβατός <acronym
+>HTML</acronym
+> 4.01 <link linkend="browser"
+>περιηγητής ιστού</link
+> με ενσωματωμένη την υποστήριξη JavaScript (ECMA+262), <acronym
+>CSS</acronym
+> (διαδοχικών φύλλων στυλ) και κειμένου διπλής κατεύθυνσης (όπως αραβικά και εβραϊκά). Παρέχει υποστήριξη για ασφαλή εκτέλεση εφαρμογών &Java;, πρόσθετα &Netscape; για την προβολή &Flash;, &RealAudio; και &RealVideo;, και <acronym
+>SSL</acronym
+> για ασφαλή επικοινωνία. Παρέχει επίσης προχωρημένα χαρακτηριστικά όπως αυτόματη συμπλήρωση φορμών και &URL;, την ικανότητα εισαγωγής σελιδοδεικτών από άλλους περιηγητές και περιήγηση με καρτέλες. </para>
+
+<para
+>Ο <emphasis
+>&konqueror;</emphasis
+> είναι επίσης ένας εξαιρετικός και πλήρης χαρακτηριστικών πελάτης <link linkend="ftp"
+>FTP</link
+>.</para>
+
+<para
+>Ο <emphasis
+>&konqueror;</emphasis
+> είναι ένας καθολικός προβολέας, ικανός να εμφανίζει εικόνες και έγγραφα χωρίς να απαιτείται η εκτέλεση άλλης εφαρμογής. Αυτό επιτυγχάνεται με την ενσωμάτωση συστατικών (&kde;Parts) που παρέχονται από άλλες εφαρμογές. Από το <application
+>Gwenview</application
+> για την προβολή εικόνων, το &okular; για <acronym
+>PDF</acronym
+>, &PostScript; και άλλα έγγραφα. </para>
+
+<para
+>Ο <emphasis
+>&konqueror;</emphasis
+> είναι μια πλήρως παραμετροποιήσιμη εφαρμογή όπου ο καθένας μπορεί να τη <link linkend="config"
+>διαμορφώσει</link
+> έτσι ώστε να καλύπτει τις ανάγκες του, από το καθολικό στυλ και το μέγεθος του κειμένου και των εικονιδίων, μέχρι ποια αντικείμενα θα εμφανίζονται στη γραμμή του μενού, αλλάζοντας τον αριθμό και τη θέση των γραμμών εργαλείων και ακόμα ορίζοντας νέα πλήκτρα συντομεύσεων. Μπορούν επίσης να αποθηκεύονται διαφορετικά <link linkend="save-settings"
+>προφίλ</link
+> ρυθμίσεων για εύκολη ανάκτηση όταν χρειαστεί. </para>
+
+</chapter>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

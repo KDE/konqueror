@@ -1,0 +1,2753 @@
+# translation of konqueror.po to Uzbek
+# translation of konqueror.po to
+# Copyright (C) 2003, 2004, 2005, 2006, 2008 Free Software Foundation, Inc.
+#
+# Mashrab Kuvatov <kmashrab@uni-bremen.de>, 2003, 2004, 2005, 2006, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2008-06-08 22:24+0200\n"
+"Last-Translator: Mashrab Kuvatov <kmashrab@uni-bremen.de>\n"
+"Language-Team: Uzbek <floss-uz-l10n@googlegroups.com>\n"
+"Language: uz@cyrillic\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. i18n: ectx: Menu (tools)
+#: konq_shellcmdplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "&Воситалар"
+
+#: kshellcmdexecutor.cpp:106
+#, kde-format
+msgid "Input Required:"
+msgstr ""
+
+#: kshellcmdplugin.cpp:32
+#, kde-format
+msgid "&Execute Shell Command..."
+msgstr "Ше&лл буйруғини бажариш"
+
+#: kshellcmdplugin.cpp:41
+#, kde-format
+msgid ""
+"KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a bug."
+msgstr ""
+
+#: kshellcmdplugin.cpp:51
+#, kde-format
+msgid "Executing shell commands works only on local directories."
+msgstr ""
+
+#: kshellcmdplugin.cpp:73
+#, fuzzy, kde-format
+#| msgid "Execute Shell Command"
+msgctxt "@title:window"
+msgid "Execute Shell Command"
+msgstr "Шелл буйруғини бажариш"
+
+#: kshellcmdplugin.cpp:74
+#, kde-format
+msgid "Execute shell command in current directory:"
+msgstr "Жорий жилдда шелл буйруғини бажариш:"
+
+#: kshellcmdplugin.cpp:85
+#, kde-format
+msgid "Output from command: \"%1\""
+msgstr "Буйруқнинг натижаси: \"%1\""
+
+#~ msgid "Configure"
+#~ msgstr "Мослаш"
+
+#~ msgid "Extensions"
+#~ msgstr "Кенгайтмалар"
+
+#~ msgid ""
+#~ "There was an error loading the module %1.\n"
+#~ "The diagnostics is:\n"
+#~ "%2"
+#~ msgstr ""
+#~ "Модулни (%1) юклашда хато рўй берди.\n"
+#~ "Сабаб:\n"
+#~ "%2"
+
+#~ msgid "Konqueror"
+#~ msgstr "Konqueror"
+
+#~ msgid "Web browser, file manager and document viewer."
+#~ msgstr "Веб-браузер, файл бошқарувчи ва ҳужжат кўрувчи."
+
+#, fuzzy
+#~| msgid "(C) 1999-2007, The Konqueror developers"
+#~ msgid "(C) 1999-2008, The Konqueror developers"
+#~ msgstr "(C) 1999-2007, Konqueror тузувчилари"
+
+#~ msgid "http://konqueror.kde.org"
+#~ msgstr "http://konqueror.kde.org"
+
+#~ msgid "Developer (framework, parts, JavaScript, I/O library) and maintainer"
+#~ msgstr ""
+#~ "Тузувчи (фреймворк, қисмлар, JavaScript, К/Ч кутубхонаси) ва таъминловчи"
+
+#~ msgid "Developer (framework, parts)"
+#~ msgstr "Тузувчи (фреймворк, қисмлар)"
+
+#~ msgid "Developer (framework)"
+#~ msgstr "Тузувчи (фреймворк)"
+
+#~ msgid "Developer"
+#~ msgstr "Тузувчи"
+
+#~ msgid "Developer (List views)"
+#~ msgstr "Тузувчи (рўйхат сифатида кўриш)"
+
+#~ msgid "Developer (List views, I/O library)"
+#~ msgstr "Тузувчи (рўйхат сифатида кўриш, К/Ч кутубхонаси)"
+
+#~ msgid "Developer (HTML rendering engine)"
+#~ msgstr "Тузувчи (HTML қисми)"
+
+#~ msgid "Developer (HTML rendering engine, I/O library)"
+#~ msgstr "Тузувчи (HTML қисми, К/Ч кутубхонаси)"
+
+#~ msgid ""
+#~ "Developer (HTML rendering engine, I/O library, regression test framework)"
+#~ msgstr "Тузувчи (HTML қисми, К/Ч кутубхонаси, синов фреймворк)"
+
+#~ msgid "Developer (HTML rendering engine, JavaScript)"
+#~ msgstr "Тузувчи (HTML қисми, К/Ч кутубхонаси, JavaScript)"
+
+#~ msgid "Developer (JavaScript)"
+#~ msgstr "Тузувчи (JavaScript)"
+
+#~ msgid "Developer (Java applets and other embedded objects)"
+#~ msgstr "Тузувчи (JavaScript ва бошқа объектлар)"
+
+#~ msgid "Developer (I/O library)"
+#~ msgstr "Тузувчи (К/Ч кутубхонаси)"
+
+#~ msgid "Developer (Java applet support)"
+#~ msgstr "Тузувчи (Java апплет имконияти)"
+
+#~ msgid ""
+#~ "Developer (Java 2 security manager support,\n"
+#~ " and other major improvements to applet support)"
+#~ msgstr ""
+#~ "Тузувчи (Java 2 хавфсизлик бошқарувчи имконияти ва бошқа апплетга доир "
+#~ "имкониятлар)"
+
+#~ msgid "Developer (Netscape plugin support)"
+#~ msgstr "Тузувчи (Netscape плагин имконияти)"
+
+#~ msgid "Developer (SSL, Netscape plugins)"
+#~ msgstr "Тузувчи (SSL, Netscape плагинлар)"
+
+#~ msgid "Developer (I/O library, Authentication support)"
+#~ msgstr "Тузувчи (К/Ч кутубхонаси, тасдиқлаш имконияти)"
+
+#~ msgid "Graphics/icons"
+#~ msgstr "Графика ва нишончалар"
+
+#~ msgid "KFM author"
+#~ msgstr "KFM муаллифи"
+
+#~ msgid "Developer (navigation panel framework)"
+#~ msgstr "Тузувчи (ўтиш панели)"
+
+#~ msgid "Developer (misc stuff)"
+#~ msgstr "Тузувчи (ҳар хил нарса)"
+
+#~ msgid "Developer (AdBlock filter)"
+#~ msgstr "Тузувчи (AdBlock филтери)"
+
+#~ msgid "Close View"
+#~ msgstr "Кўринишни ёпиш"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/с"
+
+#~ msgid "Stalled"
+#~ msgstr "Тўхтаб қолди"
+
+#, fuzzy
+#~| msgid "Preview in %1"
+#~ msgid "Preview &in %1"
+#~ msgstr "%1 билан кўриш"
+
+#~ msgid "Show %1"
+#~ msgstr "%1"
+
+#, fuzzy
+#~| msgid "History"
+#~ msgctxt "@title:window"
+#~ msgid "History"
+#~ msgstr "Тарих"
+
+#, fuzzy
+#~| msgid "Sort"
+#~ msgctxt "@action:inmenu Parent of 'By Name' and 'By Date'"
+#~ msgid "Sort"
+#~ msgstr "Саралаш"
+
+#~ msgid ""
+#~ "<qt><center><b>%1</b></center><hr />Last visited: %2<br />First visited: "
+#~ "%3<br />Number of times visited: %4</qt>"
+#~ msgstr ""
+#~ "<qt><center><b>%1</b></center><hr />Охирги марта кўрилган: %2<br /"
+#~ ">Биринчи марта кўрилган: %3<br />Неча марта кўрилган: %4</qt>"
+
+#, fuzzy
+#~| msgid "Local file"
+#~ msgid "Local"
+#~ msgstr "Локал файл"
+
+#~ msgid "Miscellaneous"
+#~ msgstr "Ҳар хил"
+
+#~ msgid "Open in New &Window"
+#~ msgstr "&Янги ойнада очиш"
+
+#~ msgid "Open in New Tab"
+#~ msgstr "Янги табда очиш"
+
+#, fuzzy
+#~| msgid "Copy Link Address"
+#~ msgid "&Copy Link Address"
+#~ msgstr "Боғ манзилидан нусха олиш"
+
+#~ msgid "&Remove Entry"
+#~ msgstr "Бандни &олиб ташлаш"
+
+#~ msgid "C&lear History"
+#~ msgstr "Тарихни &бўшатиш"
+
+#~ msgid "&Preferences..."
+#~ msgstr "&Мослаш..."
+
+#~ msgid "By &Name"
+#~ msgstr "&Номи бўйича"
+
+#~ msgid "By &Date"
+#~ msgstr "&Сана бўйича"
+
+#, fuzzy
+#~| msgid "Clear History"
+#~ msgid "Search in history"
+#~ msgstr "Тарихни бўшатиш"
+
+#~ msgid "Do you really want to clear the entire history?"
+#~ msgstr "Ростдан бутун тарихни бўшатмоқчимисиз?"
+
+#~ msgid "Clear History?"
+#~ msgstr "Тарихни бўшатайми?"
+
+#, fuzzy
+#~| msgid "Start without a default window"
+#~ msgid "Start without a default window, when called without URLs"
+#~ msgstr "Андоза ойнасиз бошлаш"
+
+#~ msgid "Profile to open"
+#~ msgstr "Очиш учун профил"
+
+#~ msgid "List available profiles"
+#~ msgstr "Мавжуд бўлган профилларни кўрсатиш"
+
+#, fuzzy
+#~| msgid "List available profiles"
+#~ msgid "List available sessions"
+#~ msgstr "Мавжуд бўлган профилларни кўрсатиш"
+
+#, fuzzy
+#~| msgid "Location to open"
+#~ msgid "Session to open"
+#~ msgstr "Кўриш учун манзил"
+
+#~ msgid "Mimetype to use for this URL (e.g. text/html or inode/directory)"
+#~ msgstr "Бу URL учун MIME тури (м-н text/html ёки inode/directory)"
+
+#~ msgid "Location to open"
+#~ msgstr "Кўриш учун манзил"
+
+#~ msgid "Canceled."
+#~ msgstr "Бекор қилинди."
+
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Reloading the page will discard these changes."
+#~ msgstr ""
+#~ "Ушбу саҳифада жўнатилмаган маълумот мавжуд.\n"
+#~ "Уни қайтадан юклаш натижасида маълумот йўқолади."
+
+#~ msgid "Discard Changes?"
+#~ msgstr "Ўзгаришлардан воз кечиш"
+
+#~ msgid "&Discard Changes"
+#~ msgstr "Ўзгариш&лардан воз кечиш"
+
+#~ msgid "File Management"
+#~ msgstr "Файл бошқаруви"
+
+#~ msgid "Web Browsing"
+#~ msgstr "Интернетни кўриш"
+
+#~ msgid "Home Folder"
+#~ msgstr "Уй жилди"
+
+#, fuzzy
+#~| msgid "Home"
+#~ msgid "Home"
+#~ msgstr "Уй"
+
+#, fuzzy
+#~| msgid "Navigate to your 'Home Location'"
+#~ msgid "Navigate to your 'Home Folder'"
+#~ msgstr "Уй манзилингизга ўтиш"
+
+#, fuzzy
+#~| msgid "Navigate to your 'Home Location'"
+#~ msgid "Navigate to your local 'Home Folder'"
+#~ msgstr "Уй манзилингизга ўтиш"
+
+#, fuzzy
+#~| msgid "Home"
+#~ msgid "Home Page"
+#~ msgstr "Уй"
+
+#, fuzzy
+#~| msgid "Navigate to your 'Home Location'"
+#~ msgid "Navigate to your 'Home Page'"
+#~ msgstr "Уй манзилингизга ўтиш"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Detaching the tab will discard these changes."
+#~ msgstr ""
+#~ "Ушбу табда жўнатилмаган маълумот мавжуд.\n"
+#~ "Табни ажратиш натижасида маълумот йўқолади."
+
+#~ msgid ""
+#~ "This view contains changes that have not been submitted.\n"
+#~ "Closing the view will discard these changes."
+#~ msgstr ""
+#~ "Ушбу кўринишда жўнатилмаган маълумот мавжуд.\n"
+#~ "Кўринишни ёпиш натижасида маълумот йўқолади."
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the tab will discard these changes."
+#~ msgstr ""
+#~ "Ушбу табда жўнатилмаган маълумот мавжуд.\n"
+#~ "Табни ёпиш натижасида маълумот йўқолади."
+
+#~ msgid "Do you really want to close all other tabs?"
+#~ msgstr "Ростдан бошқа табларни ёпмоқчимисиз?"
+
+#~ msgid "Close Other Tabs Confirmation"
+#~ msgstr "Бошқа табларни ёпиш"
+
+#~ msgid "Close &Other Tabs"
+#~ msgstr "&Бошқа табларни ёпиш"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing other tabs will discard these changes."
+#~ msgstr ""
+#~ "Ушбу табда жўнатилмаган маълумот мавжуд.\n"
+#~ "Бошқа табларни ёпиш натижасида маълумот йўқолади."
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Reloading all tabs will discard these changes."
+#~ msgstr ""
+#~ "Ушбу табда жўнатилмаган маълумот мавжуд.\n"
+#~ "Ҳамма табларни қайтадан юклаш натижасида маълумот йўқолади."
+
+#~ msgid "Enter Target"
+#~ msgstr "Мўлжални киритинг"
+
+#~ msgid "<qt><b>%1</b> is not valid</qt>"
+#~ msgstr "<qt><b>%1</b> нотўғри</qt>"
+
+#~ msgid "Copy selected files from %1 to:"
+#~ msgstr "Танланган файллардан (%1) нусха олиш:"
+
+#~ msgid "Move selected files from %1 to:"
+#~ msgstr "Танланган файлларни (%1) кўчириш:"
+
+#, fuzzy
+#~| msgid "Empty Closed Items History"
+#~ msgctxt "This menu entry empties the closed items history"
+#~ msgid "Empty Closed Items History"
+#~ msgstr "Ёпилган бандлар тарихни бўшатиш"
+
+#, fuzzy
+#~| msgid "Save as.."
+#~ msgid "Save As..."
+#~ msgstr "...сифатида сақлаш"
+
+#, fuzzy
+#~| msgid "Manage.."
+#~ msgid "Manage..."
+#~ msgstr "Бошқариш..."
+
+#~ msgid "New &Window"
+#~ msgstr "&Янги ойна"
+
+#~ msgid "&Duplicate Window"
+#~ msgstr "&Ойнани нусхасини яратиш"
+
+#~ msgid "Send &Link Address..."
+#~ msgstr "&Боғ манзилини жўнатиш"
+
+#~ msgid "S&end File..."
+#~ msgstr "&Файлни жўнатиш"
+
+#~ msgid "&Open Location"
+#~ msgstr "&Манзилни кўриш"
+
+#~ msgid "&Open File..."
+#~ msgstr "&Файлни очиш..."
+
+#~ msgid "&Find File..."
+#~ msgstr "Файлни &қидириш..."
+
+#~ msgid "&Use index.html"
+#~ msgstr "index.html'дан ф&ойдаланиш"
+
+#~ msgid "Lock to Current Location"
+#~ msgstr "Жорий манзилга қулфлаш"
+
+#, fuzzy
+#~| msgid "Lin&k View"
+#~ msgctxt "This option links konqueror views"
+#~ msgid "Lin&k View"
+#~ msgstr "Кўринишни &боғлаш"
+
+#~ msgid "&Up"
+#~ msgstr "&Юқорига"
+
+#~ msgid "Closed Items"
+#~ msgstr "Ёпилган бандлар"
+
+#~ msgid "Sessions"
+#~ msgstr "Сеанслар"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Most Often Visited"
+#~ msgstr "Энг кўп кўрилган"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Recently Visited"
+#~ msgstr "Яқинда кўрилган"
+
+#, fuzzy
+#~| msgid "Show History Sidebar"
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History"
+#~ msgstr "Тарих ён панелини кўрсатиш"
+
+#, fuzzy
+#~| msgid "&Save View Profile..."
+#~ msgid "&Save View Profile As..."
+#~ msgstr "&Кўриш профилини сақлаш"
+
+#~ msgid "Configure Extensions..."
+#~ msgstr "Кенгайтмаларни мослаш"
+
+#~ msgid "Configure Spell Checking..."
+#~ msgstr "Имлони текширишни мослаш"
+
+#~ msgid "Split View &Left/Right"
+#~ msgstr "&Вертикал бўйича бўлиш"
+
+#~ msgid "Split View &Top/Bottom"
+#~ msgstr "&Горизонтал бўйича бўлиш"
+
+#~ msgid "&New Tab"
+#~ msgstr "Янги &таб"
+
+#~ msgid "&Duplicate Current Tab"
+#~ msgstr "Табнинг &нусхасини яратиш"
+
+#~ msgid "Detach Current Tab"
+#~ msgstr "Табни ажратиш"
+
+#~ msgid "&Close Active View"
+#~ msgstr "&Ҳамма актив кўринишларни ёпиш"
+
+#~ msgid "Close Current Tab"
+#~ msgstr "Жорий табни ёпиш"
+
+#~ msgid "Activate Next Tab"
+#~ msgstr "Кейинги табни активлаштириш"
+
+#~ msgid "Activate Previous Tab"
+#~ msgstr "Олдинги табни активлаштириш"
+
+#~ msgid "Activate Tab %1"
+#~ msgstr "%1 табни активлаштириш"
+
+#~ msgid "Move Tab Left"
+#~ msgstr "Табни чапга суриш"
+
+#~ msgid "Move Tab Right"
+#~ msgstr "Табни ўнгга суриш"
+
+#~ msgid "C&onfigure View Profiles..."
+#~ msgstr "Кўриш профилларни м&ослаш"
+
+#~ msgid "Load &View Profile"
+#~ msgstr "Кўриш про&филини юклаш"
+
+#~ msgid "&Reload"
+#~ msgstr "Қайтадан &юклаш"
+
+#~ msgid "&Reload All Tabs"
+#~ msgstr "Ҳамма табларни қайтадан &юклаш"
+
+#, fuzzy
+#~| msgid "&Reload"
+#~ msgid "&Force Reload"
+#~ msgstr "Қайтадан &юклаш"
+
+#~ msgid "&Stop"
+#~ msgstr "&Тўхтатиш"
+
+#~ msgid "L&ocation: "
+#~ msgstr "&Манзил: "
+
+#~ msgid "Location Bar"
+#~ msgstr "Манзил панели"
+
+#~ msgid ""
+#~ "<html>Location Bar<br /><br />Enter a web address or search term.</html>"
+#~ msgstr ""
+#~ "<html>Манзил панели<br /><br />Веб-саҳифанинг манзилини ёки қидириш учун "
+#~ "сўзни киритинг.</html>"
+
+#~ msgid "Clear Location Bar"
+#~ msgstr "Манзил панелини тозалаш"
+
+#~ msgid ""
+#~ "<html>Clear Location bar<br /><br />Clears the contents of the location "
+#~ "bar.</html>"
+#~ msgstr ""
+#~ "<html>Манзил панелини тозалаш<br /><br />Манзил панелидаги ёзувни ўчириш."
+#~ "</html>"
+
+#~ msgid "&Bookmarks"
+#~ msgstr "&Хатчўплар"
+
+#~ msgid "Kon&queror Introduction"
+#~ msgstr "Konqueror'га &кириш"
+
+#~ msgid "Go"
+#~ msgstr "Ўтиш"
+
+#~ msgid ""
+#~ "<html>Go<br /><br />Goes to the page that has been entered into the "
+#~ "location bar.</html>"
+#~ msgstr ""
+#~ "<html>Ўтиш<br /><br />Манзил панелида кўрсатилган саҳифага ўтади.</html>"
+
+#~ msgid ""
+#~ "<html>Enter the parent folder<br /><br />For instance, if the current "
+#~ "location is file:/home/%1 clicking this button will take you to file:/"
+#~ "home.</html>"
+#~ msgstr ""
+#~ "<html>Юқори жилдга ўтиш<br /><br />Масалан, агар жорий жилд file:/home/%1 "
+#~ "бўлса, шу тугмани боссангиз file:/home жилдига ўтасиз.</html>"
+
+#~ msgid "Enter the parent folder"
+#~ msgstr "Юқори жилдга ўтиш"
+
+#~ msgid "Move backwards one step in the browsing history"
+#~ msgstr "Кўриш тарихида бир қадам орқага ўтиш"
+
+#~ msgid "Move forward one step in the browsing history"
+#~ msgstr "Кўриш тарихида бир қадам олдинга ўтиш"
+
+#~ msgid "Move backwards one step in the closed tabs history"
+#~ msgstr "Ёпилган таблар тарихида бир қадам орқага ўтиш"
+
+#~ msgid ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.</html>"
+#~ msgstr ""
+#~ "<html>Жорий ҳужжатни қайтадан юклаш<br /><br />Бу, масалан, веб-"
+#~ "саҳифаларга юклангандан сўнг киритилган ўзгаришларни кўриш учун керак "
+#~ "бўлиши мумкин.</html>"
+
+#~ msgid "Reload the currently displayed document"
+#~ msgstr "Жорий ҳужжатни қайта юклаш"
+
+#~ msgid ""
+#~ "<html>Reload all currently displayed documents in tabs<br /><br />This "
+#~ "may, for example, be needed to refresh web pages that have been modified "
+#~ "since they were loaded, in order to make the changes visible.</html>"
+#~ msgstr ""
+#~ "<html>Ҳамма таблардаги ҳужжатларни қайтадан юклаш<br /><br />Бу, масалан, "
+#~ "веб-саҳифаларга юклангандан сўнг киритилган ўзгаришларни кўриш учун керак "
+#~ "бўлиши мумкин.</html>"
+
+#~ msgid "Reload all currently displayed document in tabs"
+#~ msgstr "Ҳамма таблардаги ҳужжатларни қайтадан юклаш"
+
+#~ msgid ""
+#~ "<html>Stop loading the document<br /><br />All network transfers will be "
+#~ "stopped and Konqueror will display the content that has been received so "
+#~ "far.</html>"
+#~ msgstr ""
+#~ "<html>Ҳужжатни юклашни тўхтатиш<br /><br />Юклаш жараёни тўхтатилади, "
+#~ "ҳужжатнинг фақат юкланган қисми кўринади.</html>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<html>Reload the currently displayed document<br /><br />This may, for "
+#~| "example, be needed to refresh web pages that have been modified since "
+#~| "they were loaded, in order to make the changes visible.</html>"
+#~ msgid ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.  Any images on "
+#~ "the page are downloaded again, even if cached copies exist.</html>"
+#~ msgstr ""
+#~ "<html>Жорий ҳужжатни қайтадан юклаш<br /><br />Бу, масалан, веб-"
+#~ "саҳифаларга юклангандан сўнг киритилган ўзгаришларни кўриш учун керак "
+#~ "бўлиши мумкин.</html>"
+
+#, fuzzy
+#~| msgid "Reload all currently displayed document in tabs"
+#~ msgid ""
+#~ "Force a reload of the currently displayed document and any contained "
+#~ "images"
+#~ msgstr "Ҳамма таблардаги ҳужжатларни қайтадан юклаш"
+
+#~ msgid "Stop loading the document"
+#~ msgstr "Ҳужжатни юклашни тўхтатиш"
+
+#~ msgid ""
+#~ "<html>Cut the currently selected text or item(s) and move it to the "
+#~ "system clipboard<br /><br />This makes it available to the <b>Paste</b> "
+#~ "command in Konqueror and other KDE applications.</html>"
+#~ msgstr ""
+#~ "<html>Белгиланган матн ёки бандларни тизимнинг клипбордига кесиш<br /"
+#~ "><br />Бундан кейин уларни Konqueror ва бошқа KDE дастурларига <b>Қўйиш</"
+#~ "b> буйруғи билан қўйиш мумкин.</html>"
+
+#~ msgid "Move the selected text or item(s) to the clipboard"
+#~ msgstr "Белгиланган матн ёки бандларни тизимнинг клипбордига кесиш"
+
+#~ msgid ""
+#~ "<html>Copy the currently selected text or item(s) to the system "
+#~ "clipboard<br /><br />This makes it available to the <b>Paste</b> command "
+#~ "in Konqueror and other KDE applications.</html>"
+#~ msgstr ""
+#~ "<html>Белгиланган матн ёки бандлардан тизимнинг клипбордига нусха "
+#~ "олиш<br /><br />Бундан кейин уларни Konqueror ва бошқа KDE дастурларига "
+#~ "<b>Қўйиш</b> буйруғи билан қўйиш мумкин.</html>"
+
+#~ msgid "Copy the selected text or item(s) to the clipboard"
+#~ msgstr "Белгиланган матн ёки бандлардан тизимнинг клипбордига нусха олиш"
+
+#~ msgid ""
+#~ "<html>Paste the previously cut or copied clipboard contents<br /><br /"
+#~ ">This also works for text copied or cut from other KDE applications.</"
+#~ "html>"
+#~ msgstr ""
+#~ "<html>Клипборддаги нарсаларни қўйиш<br /><br />Бу билан бошқа KDE "
+#~ "дастуридан кесилган ёки нусха олинган матнни қўйиш мумкин.</html>"
+
+#~ msgid "Paste the clipboard contents"
+#~ msgstr "Клипборддаги нарсаларни қўйиш"
+
+#~ msgid ""
+#~ "<html>Print the currently displayed document<br /><br />You will be "
+#~ "presented with a dialog where you can set various options, such as the "
+#~ "number of copies to print and which printer to use.<br /><br />This "
+#~ "dialog also provides access to special KDE printing services such as "
+#~ "creating a PDF file from the current document.</html>"
+#~ msgstr ""
+#~ "<html>Жорий ҳужжатни босиб чиқариш<br /><br />Нечта нусха ва қайси "
+#~ "принтер билан босиб чиқариш каби параметрларни танлаш мумкин бўлган "
+#~ "диалог пайдо бўлади.<br /><br />Бу диалог PDF файлига босиб чиқариш каби "
+#~ "KDE'нинг махсус хизматларидан фойдаланиш имкониятини яратади.</html>"
+
+#~ msgid "Print the current document"
+#~ msgstr "Жорий ҳужжатни босиб чиқариш"
+
+#~ msgid "If present, open index.html when entering a folder."
+#~ msgstr "Жилдга ўтишда, агар у ерда index.html файли мавжуд бўлса, уни очиш."
+
+#~ msgid "Copy &Files..."
+#~ msgstr "Файллардан &нусха олиш"
+
+#~ msgid "M&ove Files..."
+#~ msgstr "Файлларни &жойидан кўчириш"
+
+#, fuzzy
+#~| msgid "Open Folder in Tabs"
+#~ msgid "Open bookmarks folder in new tabs"
+#~ msgstr "Жилдни табда очиш"
+
+#~ msgid "Open in T&his Window"
+#~ msgstr "&Жорий ойнада очиш"
+
+#~ msgid "Open the document in current window"
+#~ msgstr "Ҳужжатни жорий ойнада очиш"
+
+#~ msgid "Open the document in a new window"
+#~ msgstr "Ҳужжатни янги ойнада очиш"
+
+#~ msgid "Open in &New Tab"
+#~ msgstr "&Янги табда очиш"
+
+#~ msgid "Open the document in a new tab"
+#~ msgstr "Ҳужжатни янги табда очиш"
+
+#~ msgid "&Open With"
+#~ msgstr "&Билан очиш"
+
+#~ msgid "Open with %1"
+#~ msgstr "%1 билан очиш"
+
+#~ msgctxt "@action:inmenu View"
+#~ msgid "&View Mode"
+#~ msgstr "Кўриш &усули"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window, are you sure you want to quit?"
+#~ msgstr "Ушбу ойнада бир нечта таб очилган. Чиқишга ишончингиз комилми?"
+
+#~ msgid "Confirmation"
+#~ msgstr "Тасдиқлаш"
+
+#~ msgid "C&lose Current Tab"
+#~ msgstr "Ж&орий табни ёпиш"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the window will discard these changes."
+#~ msgstr ""
+#~ "Ушбу табда жўнатилмаган маълумот мавжуд.\n"
+#~ "Ойнани ёпиш натижасида маълумот йўқолади."
+
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Closing the window will discard these changes."
+#~ msgstr ""
+#~ "Ушбу саҳифада жўнатилмаган маълумот мавжуд.\n"
+#~ "Ойнани ёпиш натижасида маълумот йўқолади."
+
+#~ msgid ""
+#~ "Your sidebar is not functional or unavailable. A new entry cannot be "
+#~ "added."
+#~ msgstr "Ён панели тўғри ишламаяпти. Янги бандни қўшиб бўлмайди."
+
+#~ msgid "Web Sidebar"
+#~ msgstr "Веб ён панели"
+
+#~ msgid "Add new web extension \"%1\" to your sidebar?"
+#~ msgstr "Веб-кенгайтмани '%1' ён панелига қўшишни истайсизми?"
+
+#~ msgid "Add"
+#~ msgstr "Қўшиш"
+
+#~ msgid "Do Not Add"
+#~ msgstr "Қўшилмасин"
+
+#~ msgid ""
+#~ "There appears to be a configuration error. You have associated Konqueror "
+#~ "with %1, but it cannot handle this file type."
+#~ msgstr ""
+#~ "Мошлаш хатоси рўй берганга ўхшайди. Konqueror %1 файлини очишга "
+#~ "мосланган, аммо у бундай файл турлари билан ишлаёлмайди."
+
+#~ msgid "Profile Management"
+#~ msgstr "Профил бошқаруви"
+
+#~ msgid "&Rename Profile"
+#~ msgstr "Профилни номини ў&згартириш"
+
+#~ msgid "&Delete Profile"
+#~ msgstr "Профилни ўчи&риш"
+
+#~ msgid "Manage Sessions"
+#~ msgstr "Сеансларни бошқариш"
+
+#~ msgid "&Open"
+#~ msgstr "&Очиш"
+
+#, fuzzy
+#~| msgid "Rename session"
+#~ msgid "Rename Session"
+#~ msgstr "Сеанс номини ўзгартириш"
+
+#~ msgid "Save Session"
+#~ msgstr "Сеансни сақлаш"
+
+#~ msgid "Session exists. Overwrite?"
+#~ msgstr "Сеанс аллақачон мавжуд. Уни алмаштиришни истайсизми?"
+
+#, fuzzy
+#~| msgid ""
+#~| "Konqueror didn't close correctly. Would you like to restore session?"
+#~ msgid ""
+#~ "Konqueror did not close correctly. Would you like to restore the previous "
+#~ "session?"
+#~ msgstr ""
+#~ "Konqueror хато билан ишини тугатган. Охирги сеансни тиклашни истайсизми?"
+
+#, fuzzy
+#~| msgid "Restore session?"
+#~ msgid "Restore Session?"
+#~ msgstr "Охирги сеансни тиклаш"
+
+#, fuzzy
+#~| msgid "Restore session"
+#~ msgid "Restore Session"
+#~ msgstr "Ҳа"
+
+#, fuzzy
+#~| msgid "Do not restore"
+#~ msgid "Do Not Restore"
+#~ msgstr "Йўқ"
+
+#, fuzzy
+#~| msgid "Ask me later"
+#~ msgid "Ask Me Later"
+#~ msgstr "Кейинроқ сўранг"
+
+#~ msgid "Open a new tab"
+#~ msgstr "Янги табни очиш"
+
+#~ msgid "Close the current tab"
+#~ msgstr "Жорий табни ёпиш"
+
+#~ msgid "&Duplicate Tab"
+#~ msgstr "Табнинг нусхасини &яратиш"
+
+#~ msgid "&Reload Tab"
+#~ msgstr "Табни қайтадан &юклаш"
+
+#~ msgid "Other Tabs"
+#~ msgstr "Бошқа таблар"
+
+#~ msgid "D&etach Tab"
+#~ msgstr "Табни &ажратиш"
+
+#~ msgid "&Close Tab"
+#~ msgstr "Табни &ёпиш"
+
+#~ msgid "Und&o: Closed Tab"
+#~ msgstr "&Бекор қилиш: Табни ёпиш"
+
+#~ msgid "Und&o: Closed Window"
+#~ msgstr "&Бекор қилиш: Ойнани ёпиш"
+
+#~ msgid "Warning"
+#~ msgstr "Огоҳнома"
+
+#~ msgid "Resend"
+#~ msgstr "Қайтадан жўнатиш"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window.\n"
+#~ "Loading a view profile will close them."
+#~ msgstr ""
+#~ "Ушбу ойнада бир нечта таб очилган.\n"
+#~ "Кўриш профилини юклаш уларни ёпади."
+
+#~ msgid "Load View Profile"
+#~ msgstr "Кўриш профилини юклаш"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Loading a profile will discard these changes."
+#~ msgstr ""
+#~ "Ушбу табда жўнатилмаган маълумот мавжуд.\n"
+#~ "Профилни юклаш натижасида маълумот йўқолади."
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "History Sidebar Module"
+#~ msgstr "Веб ён панели"
+
+#, fuzzy
+#~| msgid "History"
+#~ msgctxt "@title:tab"
+#~ msgid "History"
+#~ msgstr "Тарих"
+
+#~ msgid " day"
+#~ msgid_plural " days"
+#~ msgstr[0] " кун"
+
+#~ msgid "Minute"
+#~ msgid_plural "Minutes"
+#~ msgstr[0] "Дақиқа"
+
+#~ msgid "Day"
+#~ msgid_plural "Days"
+#~ msgstr[0] "Кун"
+
+#~ msgid "<h1>History Sidebar</h1> You can configure the history sidebar here."
+#~ msgstr "<h1>Тарих панели</h1> Тарих панелини бу ерда мослашингиз мумкин."
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Places Sidebar Module"
+#~ msgstr "Веб ён панели"
+
+#, fuzzy
+#~ msgctxt "@title:tab"
+#~ msgid "Places"
+#~ msgstr "Номини ўзгартириш"
+
+#~ msgid "Extended Sidebar"
+#~ msgstr "Кенгайтирилган ён панели"
+
+#~ msgid "Rollback to System Default"
+#~ msgstr "Тизимнинг андозаларига қайтиш"
+
+#~ msgid "Configure Sidebar"
+#~ msgstr "Ён панелини мослаш"
+
+#~ msgid "Add New"
+#~ msgstr "Янгини қўшиш"
+
+#~ msgid "Multiple Views"
+#~ msgstr "Бир нечта кўриниш"
+
+#~ msgid "Show Tabs Left"
+#~ msgstr "Табларни чапда кўрсатиш"
+
+#~ msgid "Show Configuration Button"
+#~ msgstr "Мослаш тугмасини кўрсатиш"
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgid "Close Sidebar"
+#~ msgstr "Веб ён панели"
+
+#~ msgid "This entry already exists."
+#~ msgstr "Бу элемент аллақачон мавжуд."
+
+#~ msgid ""
+#~ "<qt>This removes all your entries from the sidebar and adds the system "
+#~ "default ones.<br /><b>This procedure is irreversible</b><br />Do you want "
+#~ "to proceed?</qt>"
+#~ msgstr ""
+#~ "<qt>Ушбу амал ён панелидан фойдаланувчининг ҳамма бандларини олиб ташлаб "
+#~ "тизимнинг андоза бандларини қўшади.<br /><b>Бундан кейин орқага қайтиб "
+#~ "бўлмайди.</b><br />Давом этишни истайсизми?</qt>"
+
+#~ msgid "Show Tabs Right"
+#~ msgstr "Табларни ўнгда кўрсатиш"
+
+#~ msgid "Set Name"
+#~ msgstr "Номини кўрсатиш"
+
+#~ msgid "Enter the name:"
+#~ msgstr "Номини киритинг:"
+
+#~ msgid "Enter a URL:"
+#~ msgstr "URL'ни киритинг:"
+
+#~ msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
+#~ msgstr "<qt><b>%1</b> табини ростдан олиб ташлашни истайсизми?</qt>"
+
+#, fuzzy
+#~| msgid ""
+#~| "You have hidden the navigation panel configuration button. To make it "
+#~| "visible again, click the right mouse button on any of the navigation "
+#~| "panel buttons and select \"Show Configuration Button\"."
+#~ msgid ""
+#~ "You have hidden the sidebar configuration button. To make it visible "
+#~ "again, click the right mouse button on any of the sidebar buttons and "
+#~ "select \"Show Configuration Button\"."
+#~ msgstr ""
+#~ "Йўлчи панелини мошлаш тугмаси бекитилди. Уни яна кўринадиган қилиш учун "
+#~ "йўлчи панелининг истаган тугмасини ўнг сичқонча билан босиб \"Мослаш "
+#~ "тугмасини кўрсатиш\" бандини танланг."
+
+#~ msgid "Set Name..."
+#~ msgstr "Номини кўрсатиш"
+
+#~ msgid "Set URL..."
+#~ msgstr "URL'ни мослаш"
+
+#~ msgid "Set Icon..."
+#~ msgstr "Нишончани мослаш"
+
+#~ msgid "Remove"
+#~ msgstr "Олиб ташлаш"
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgid "Web module"
+#~ msgstr "Веб ён панели"
+
+#~ msgid "&Create New Folder"
+#~ msgstr "&Янги жилдни яратиш"
+
+#~ msgid "Delete Folder"
+#~ msgstr "Жилдни ўчириш"
+
+#~ msgid "Delete Bookmark"
+#~ msgstr "Хатчўпни ўчириш"
+
+#~ msgid "Properties"
+#~ msgstr "Хоссалари"
+
+#~ msgid "Open in New Window"
+#~ msgstr "Янги ойнада очиш"
+
+#~ msgid "Open Folder in Tabs"
+#~ msgstr "Жилдни табда очиш"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "Боғ манзилидан нусха олиш"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark folder\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "Хатчўп жилдини '%1'\n"
+#~ "ўчиришга ишончингиз комилми?"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "Хатчўпни '%1'\n"
+#~ "ўчиришга ишончингиз комилми?"
+
+#~ msgid "Bookmark Folder Deletion"
+#~ msgstr "Хатчўп жилдини ўчириш"
+
+#~ msgid "Bookmark Deletion"
+#~ msgstr "Хатчўпни ўчириш"
+
+#~ msgid "Bookmark Properties"
+#~ msgstr "Хатчўпнинг хоссалари"
+
+#~ msgid "&Update"
+#~ msgstr "Я&нгилаш"
+
+#~ msgid "Name:"
+#~ msgstr "Номи:"
+
+#~ msgid "Location:"
+#~ msgstr "Манзил:"
+
+#~ msgid "Add Bookmark"
+#~ msgstr "Хатчўпларга қўшиш"
+
+#~ msgid "&Create New Folder..."
+#~ msgstr "&Янги жилдни яратиш"
+
+#, fuzzy
+#~| msgid "&Move to Trash"
+#~ msgid "Move to Trash"
+#~ msgstr "&Чиқиндилар қутисига олиб ташлаш"
+
+#~ msgid "Rename"
+#~ msgstr "Номини ўзгартириш"
+
+#~ msgid "Delete Link"
+#~ msgstr "Боғни ўчириш"
+
+#~ msgid "New Folder"
+#~ msgstr "Янги жилд"
+
+#~ msgid "Create New Folder"
+#~ msgstr "Янги жилдни яратиш"
+
+#~ msgid "Enter folder name:"
+#~ msgstr "Жилднинг номини киритинг:"
+
+#, fuzzy
+#~| msgid "Name:"
+#~ msgctxt "@label"
+#~ msgid "Name:"
+#~ msgstr "Номи:"
+
+#, fuzzy
+#~| msgid "Show URL"
+#~ msgctxt "@label"
+#~ msgid "Path or URL:"
+#~ msgstr "URL'ни кўрсатиш"
+
+#~ msgid "&Open Link"
+#~ msgstr "&Боғни очиш"
+
+#~ msgid "Set &Automatic Reload"
+#~ msgstr "Авто-я&нгилашни ёқиш"
+
+#~ msgid " min"
+#~ msgstr " дақиқа"
+
+#~ msgid " sec"
+#~ msgstr " сония"
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Web Sidebar Module"
+#~ msgstr "Веб ён панели"
+
+#~ msgid ""
+#~ "Konqueror is a web browser, file manager and universal document viewer."
+#~ msgstr ""
+#~ "Konqueror - файл бошқарувчи, веб-браузер ва ҳартомонлама ҳужжат кўрувчи."
+
+#, fuzzy
+#~| msgid "Starting Points"
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "Starting Points"
+#~ msgstr "Бошланғич маълумот"
+
+#~ msgid "Introduction"
+#~ msgstr "Кириш"
+
+#~ msgid "Tips"
+#~ msgstr "Маслаҳатлар"
+
+#~ msgid "Specifications"
+#~ msgstr "Хусусиятлар"
+
+#~ msgid "Your personal files"
+#~ msgstr "Шахсий файлларингиз"
+
+#~ msgid "Trash"
+#~ msgstr "Чиқиндилар қутиси"
+
+#~ msgid "Browse and restore the trash"
+#~ msgstr "Чиқиндилар қутисидаги нарсалар билан амаллар"
+
+#~ msgid "Network Folders"
+#~ msgstr "Тармоқ жилдлари"
+
+#~ msgid "Shared files and folders"
+#~ msgstr "Бошқалар билан бўлишилган файл ва жилдлар"
+
+#, fuzzy
+#~| msgid "&Bookmarks"
+#~ msgid "Bookmarks"
+#~ msgstr "&Хатчўплар"
+
+#~ msgid "Next: An Introduction to Konqueror"
+#~ msgstr "Кейинги: Konqueror дастурига кириш"
+
+#~ msgid "Search the Web"
+#~ msgstr "Интернетда қидириш"
+
+#~ msgid ""
+#~ "Konqueror is also a full featured and easy to use web browser which you "
+#~ "can use to explore the Internet. Enter the address (e.g. <a href=\"http://"
+#~ "www.kde.org\">http://www.kde.org</a>) of a web page you would like to "
+#~ "visit in the location bar and press Enter, or choose an entry from the "
+#~ "Bookmarks menu."
+#~ msgstr ""
+#~ "Konqueror имкониятга бой ва ишлатишда қулай веб-браузер ҳам. Ундан "
+#~ "Интернетда сайир қилиш учун фойдаланса бўлади.Истаган веб-саҳифанинг "
+#~ "Интернет манзилини (м-н <A HREF=\"http://www.kde.org\">http://www.kde."
+#~ "org</A>) киритинг ва ENTER тугмасини босинг, ёки Хатчўплар менюсидан "
+#~ "бирон бандни танланг."
+
+#~ msgid ""
+#~ "To return to the previous location, press the back button <img width='16' "
+#~ "height='16' src=\"%1\"></img> in the toolbar. "
+#~ msgstr ""
+#~ "Агар олдинги веб-саҳифага ўтмоқчи бўлсангиз, асбоблар панелида \"Орқага\" "
+#~ "<img width='16' height='16' src=\"%1\"></img> тугмасини босинг."
+
+#~ msgid ""
+#~ "To quickly go to your Home folder press the  home button <img width='16' "
+#~ "height='16' src=\"%1\"></img>."
+#~ msgstr ""
+#~ "Агар уй жилдига тез ўтмоқчи бўлсангиз, асбоблар панелида <img width='16' "
+#~ "height='16' src=\"%1\"></img> \"Уй\" тугмасини босинг."
+
+#~ msgid ""
+#~ "For more detailed documentation on Konqueror click <a href=\"%1\">here</"
+#~ "a>."
+#~ msgstr "Konqueror учун батафсилроқ кўлланма <A HREF=\"%1\">бу ерда</A>."
+
+#~ msgid "Next: Tips &amp; Tricks"
+#~ msgstr "Кейинги: Маслаҳатлар"
+
+#~ msgid "Supported standards"
+#~ msgstr "Кўлланган андозалар"
+
+#~ msgid "Additional requirements*"
+#~ msgstr "Қўшимча талаблар*"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">DOM</A> (Level 1, қисман Level 2) асосидаги <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+
+#~ msgid "built-in"
+#~ msgstr "ичига қурилган"
+
+#~ msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
+#~ msgstr "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, қисман CSS 2)"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">ECMA-262</A> 3чи таҳрир (тахминан JavaScript 1.5'га тенг)"
+
+#~ msgid ""
+#~ "JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
+#~ msgstr ""
+#~ "JavaScript ўчирилган (умумий). JavaScript'ни <A HREF=\"%1\">бу ерда</A> "
+#~ "ёқишингиз мумкин."
+
+#~ msgid ""
+#~ "JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\"
+#~ "\">here</A>."
+#~ msgstr ""
+#~ "JavaScript ёқилган (умумий). JavaScript'ни <A HREF=\"%1\">бу ерда</A> "
+#~ "мослашингиз мумкин."
+
+#~ msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
+#~ msgstr "Хавфсиз <A HREF=\"%1\">Java</A><SUP>&reg;</SUP>"
+
+#, fuzzy
+#~| msgid ""
+#~| "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">Blackdown</A>, <A HREF="
+#~| "\"%2\">IBM</A> or <A HREF=\"%3\">Sun</A>)"
+#~ msgid ""
+#~ "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">IBM</A> or <A HREF="
+#~ "\"%2\">Sun/Oracle</A>)"
+#~ msgstr ""
+#~ "JDK 1.2.0 (Java 2) билан мос келадиган VM (<A HREF=\"%1\">Blackdown</A>, "
+#~ "<A HREF=\"%2\">IBM</A> ёки <A HREF=\"%3\">Sun</A>)"
+
+#~ msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
+#~ msgstr "Java'ни (умумий) <A HREF=\"%1\">бу ерда</A> ёқишингиз мумкин."
+
+#~ msgid ""
+#~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">plugins</A> (for "
+#~ "viewing <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
+#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Video, etc.)"
+#~ msgstr ""
+#~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">плагинлар</A> (<A "
+#~ "HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF=\"%2\">Real<SUP>&reg;</"
+#~ "SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</SUP></A>Video, ва ҳоказони "
+#~ "кўриш учун.)"
+
+#~ msgid "Secure Sockets Layer"
+#~ msgstr "Secure Sockets Layer"
+
+#~ msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
+#~ msgstr "хавфсиз алоқалар учун то 168 битгача (TLS/SSL v2/3)"
+
+#~ msgid "OpenSSL"
+#~ msgstr "OpenSSL"
+
+#~ msgid "AutoCompletion for forms"
+#~ msgstr "Шакилларни авто-тўлдириш"
+
+#~ msgid "Feature"
+#~ msgstr "Ҳусусиятлар"
+
+#~ msgid "Details"
+#~ msgstr "Тафсилотлар"
+
+#~ msgid "Image formats"
+#~ msgstr "Расм форматлари"
+
+#, fuzzy
+#~| msgid "PNG<br />MNG<br />JPG<br />GIF"
+#~ msgid "PNG<br />JPG<br />GIF"
+#~ msgstr "PNG<br />MNG<br />JPG<br />GIF"
+
+#~ msgid "Transfer protocols"
+#~ msgstr "Узатиш протоколлари"
+
+#~ msgid "HTTP 1.1 (including gzip/bzip2 compression)"
+#~ msgstr "HTTP 1.1 (gzip/bzip2 қисиш билан)"
+
+#~ msgid "FTP"
+#~ msgstr "FTP"
+
+#, fuzzy
+#~| msgid "and <A HREF=\"%1\">many more...</A>"
+#~ msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpcenter)...</A>"
+#~ msgstr "ва <A HREF=\"%1\">ҳоказо...</A>"
+
+#, fuzzy
+#~| msgid "URL-Completion"
+#~ msgctxt "A feature of Konqueror"
+#~ msgid "URL-Completion"
+#~ msgstr "URL-тўлдириш"
+
+#~ msgid "Manual"
+#~ msgstr "Қўлбола"
+
+#~ msgid "Popup"
+#~ msgstr "Попап"
+
+#~ msgid "(Short-) Automatic"
+#~ msgstr "(Қисқа-) Автоматик"
+
+#, fuzzy
+#~| msgid "<a href=\"%1\">Return to Starting Points</a>"
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "<a href=\"%1\">Return to Starting Points</a>"
+#~ msgstr "<a href=\"%1\">Бошига қайтиш</a>"
+
+#~ msgid "Tips &amp; Tricks"
+#~ msgstr "Маслаҳатлар"
+
+#, fuzzy
+#~| msgid ""
+#~| "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> "
+#~| "in the toolbar to increase the font size on your web page."
+#~ msgid ""
+#~ "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
+#~ "the HTML toolbar to increase the font size on your web page."
+#~ msgstr ""
+#~ "Веб-саҳифанинг шрифтини катталаштириш учун асбоблар панелидаги <img "
+#~ "width='16' height='16' src=\"%1\"></img> катталаштириш тугмасидан "
+#~ "фойдаланинг."
+
+#, fuzzy
+#~| msgid ""
+#~| "To create a link on your desktop pointing to the current page, simply "
+#~| "drag the \"Location\" label that is to the left of the Location toolbar, "
+#~| "drop it on to the desktop, and choose \"Link\"."
+#~ msgid ""
+#~ "To create a link on your desktop pointing to the current page, simply "
+#~ "drag the icon (favicon) that is to the left of the Location toolbar, drop "
+#~ "it on to the desktop, and choose \"Icon\"."
+#~ msgstr ""
+#~ "Иш столида жорий саҳифага боғ яратиш учун \"Манзил\" белгисини сичқонча "
+#~ "билан иш столига олиб қўйинг ва \"Шу ерга боғлаш\" бандини танланг холос."
+
+#, fuzzy
+#~| msgid ""
+#~| "The <img width='16' height='16' src=\"%1\"></img> History in your "
+#~| "SideBar ensures that you can keep track of the pages you have visited "
+#~| "recently."
+#~ msgid ""
+#~ "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
+#~ "ensures that you can keep track of the pages you have visited recently."
+#~ msgstr ""
+#~ "Ён панелидаги \"Тарихда\" <img width='16' height='16' src=\"%1\"></img> "
+#~ "яқинда кўрилган саҳифалар ҳақида маълумот сақланади."
+
+#~ msgid ""
+#~ "Use a caching <a href=\"%1\">proxy</a> to speed up your Internet "
+#~ "connection."
+#~ msgstr ""
+#~ "Интернет алоқасини тезлаштириш учун <A HREF=\"%1\">проксидан</A> "
+#~ "фойдаланинг."
+
+#, fuzzy
+#~| msgid ""
+#~| "Advanced users will appreciate the Konsole which you can embed into "
+#~| "Konqueror (Window -> <img width='16' height='16' SRC=\"%1\"></img> Show "
+#~| "Terminal Emulator)."
+#~ msgid ""
+#~ "Advanced users will appreciate the Konsole which you can embed into "
+#~ "Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
+#~ "Terminal Emulator)."
+#~ msgstr ""
+#~ "Тажрибали фойдаланувчилар Konqueror ойнасига қуриб бўладиган терминални "
+#~ "ишлатиши мумкин (Ойна -> <img width='16' height='16' src=\"%1\"></img> "
+#~ "Терминал эмулятори)."
+
+#~ msgid "Next: Specifications"
+#~ msgstr "Кейинги: Хусусиятлар"
+
+#~ msgid "Installed Plugins"
+#~ msgstr "Ўрнатилган плагинлар"
+
+#~ msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
+#~ msgstr "<td>Плагин</td><td>Таърифи</td><td>Файл</td><td>Турлар</td>"
+
+#~ msgid "Installed"
+#~ msgstr "Ўрнатилган"
+
+#~ msgid ""
+#~ "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
+#~ msgstr ""
+#~ "<td>MIME тури</td><td>Таърифи</td><td>Суффикслар</td><td>Плагин</td>"
+
+#~ msgid "Disable"
+#~ msgstr "Ўчириш"
+
+#~ msgid "Keep"
+#~ msgstr "Қолдириш"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Машраб Қуватов"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "kmashrab@uni-bremen.de"
+
+#~ msgid "&File"
+#~ msgstr "&Файл"
+
+#~ msgid "&Edit"
+#~ msgstr "&Таҳрирлаш"
+
+#~ msgid "&View"
+#~ msgstr "&Кўриниш"
+
+#~ msgid "&Go"
+#~ msgstr "Ў&тиш"
+
+#~ msgid "&Settings"
+#~ msgstr "&Мосламалар"
+
+#~ msgid "&Window"
+#~ msgstr "&Ойна"
+
+#~ msgid "&Help"
+#~ msgstr "&Ёрдам"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Асосий асбоблар панели"
+
+#~ msgid "Extra Toolbar"
+#~ msgstr "Қўшимча асбоблар панели"
+
+#~ msgid "Location Toolbar"
+#~ msgstr "Манзил панели"
+
+#~ msgid "Bookmark Toolbar"
+#~ msgstr "Хатчўплар панели"
+
+#~ msgid "&Session name:"
+#~ msgstr "Сеанснинг н&оми:"
+
+#~ msgid "&Profile name:"
+#~ msgstr "&Профилнинг номи:"
+
+#~ msgid "Save &URLs in profile"
+#~ msgstr "Профилда URLларни сақ&лаш"
+
+#, fuzzy
+#~ msgctxt "@action:button New session"
+#~ msgid "New..."
+#~ msgstr "Янги &жилд"
+
+#, fuzzy
+#~| msgctxt "@action:button Save current session"
+#~| msgid "Save current"
+#~ msgctxt "@action:button Save current session"
+#~ msgid "Save Current"
+#~ msgstr "Жорийни сақлаш"
+
+#, fuzzy
+#~| msgid "Rename"
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename..."
+#~ msgstr "Номини ўзгартириш"
+
+#~ msgctxt "@action:button Delete session"
+#~ msgid "Delete"
+#~ msgstr "Ўчириш"
+
+#, fuzzy
+#~| msgid "Open the document in current window"
+#~ msgid "Open tabs inside current window"
+#~ msgstr "Ҳужжатни жорий ойнада очиш"
+
+#~ msgid "Limits"
+#~ msgstr "Чегаралар"
+
+#~ msgid "URLs e&xpire after"
+#~ msgstr "URL &муддати тугаш вақт"
+
+#~ msgid "Maximum &number of URLs:"
+#~ msgstr "URL с&они:"
+
+#~ msgid "Custom Fonts For"
+#~ msgstr "Бошқа шрифтлар"
+
+#~ msgid "URLs newer than"
+#~ msgstr "Янги URL"
+
+#~ msgid "Choose Font..."
+#~ msgstr "Шрифтни танлаш"
+
+#~ msgid "URLs older than"
+#~ msgstr "Эски URL"
+
+#~ msgid ""
+#~ "Shows the number of times visited and the dates of the first and last "
+#~ "visits, in addition to the URL"
+#~ msgstr ""
+#~ "URL'дан ташқари, неча марта кўрилган ва биринчи ва охирги марта кўрилган "
+#~ "санани кўрсатади."
+
+#~ msgid "Detailed tooltips"
+#~ msgstr "Батафсил эслатмалар"
+
+#~ msgid "Clear History"
+#~ msgstr "Тарихни бўшатиш"
+
+#, fuzzy
+#~| msgid ""
+#~| "This is the URL (e.g. a folder or a web page) where Konqueror will jump "
+#~| "to when the \\\"Home\\\" button is pressed. This is usually your home "
+#~| "folder, symbolized by a 'tilde' (~)."
+#~ msgid ""
+#~ "This is the URL of the web page where Konqueror (as web browser) will "
+#~ "jump to when the \\\"Home\\\" button is pressed. When Konqueror is "
+#~ "started as a file manager, that button makes it jump to your local home "
+#~ "folder instead."
+#~ msgstr ""
+#~ "Уй тугмаси босилганида пайдо бўладиган манзил (м-н жилд ёки веб-саҳифа). "
+#~ "Одатда, бунинг қиймати уй жилдига (~) ўрнатилган бўлади."
+
+#, fuzzy
+#~| msgid "Maximum &number of URLs:"
+#~ msgid "Maximum number of Closed Items"
+#~ msgstr "URL с&они:"
+
+#~ msgid "Open folders in separate windows"
+#~ msgstr "Жилдларни алоҳида ойнада очиш"
+
+#~ msgid ""
+#~ "If this option is checked, Konqueror will open a new window when you open "
+#~ "a folder, rather than showing that folder's contents in the current "
+#~ "window."
+#~ msgstr "Агар белгиланса, жилд жорий ойнада эмас янги ойнада очилади."
+
+#~ msgid "Show file tips"
+#~ msgstr "Файл эслатмаларини кўрсатиш"
+
+#~ msgid ""
+#~ "Here you can control if, when moving the mouse over a file, you want to "
+#~ "see a small popup window with additional information about that file"
+#~ msgstr ""
+#~ "Агар белгиланса, сичқонча файл нишончасининг устида бўлганда файл ҳақида "
+#~ "қўшимча маълумот кўрсатилади."
+
+#, fuzzy
+#~ msgid "Show previews in file tips"
+#~ msgstr "Файл эслатмаларини кўрсатиш"
+
+#~ msgid "Show 'Delete' menu entries which bypass the trashcan"
+#~ msgstr "Менюда ўчириш бандини кўрсатиш"
+
+#, fuzzy
+#~| msgid ""
+#~| "Uncheck this if you do not want 'Delete' menu commands to be displayed "
+#~| "on the desktop and in the file manager's menus and context menus. You "
+#~| "can still delete files when hidden by holding the Shift key while "
+#~| "calling 'Move to Trash'."
+#~ msgid ""
+#~ "Check this if you want 'Delete' menu commands to be displayed on the "
+#~ "desktop and in the file manager's menus and context menus. You can always "
+#~ "delete files when hidden by holding the Shift key while calling 'Move to "
+#~ "Trash'."
+#~ msgstr ""
+#~ "Агар белгиланса, иш столини ва файл браузерининг контекст менюсида "
+#~ "\"Ўчириш\" банди кўрсатилади. Ўчириш банди мавжуд бўлмаса ҳам Shift "
+#~ "тугмасини босиб \"Чиқиндилар қутисига олиб ташлаш\" бандини танлаш файлни "
+#~ "ўчиради. "
+
+#~ msgid "Standard font"
+#~ msgstr "Андоза шрифт"
+
+#~ msgid "This is the font used to display text in Konqueror windows."
+#~ msgstr "Konqueror ойнасида матнни кўрсатиш учун ишлатиладиган шрифт."
+
+#~ msgid "Ask confirmation for deleting a file."
+#~ msgstr "Ўчиришда тасдиқлашни сўраш"
+
+#, fuzzy
+#~| msgid ""
+#~| "This option tells Konqueror whether to ask for a confirmation when you "
+#~| "move the file to your trash folder, from where it can be recovered very "
+#~| "easily."
+#~ msgid ""
+#~ "This option tells Konqueror whether to ask for a confirmation when you "
+#~ "delete a file without using the trash folder. Warning, deleted files can "
+#~ "not be recovered, so it is recommended to leave this confirmation enabled."
+#~ msgstr ""
+#~ "Агар белгиланса, файлни чиқиндилар қутисига жўнатиш учун тасдиқлаш керак "
+#~ "бўлади."
+
+#~ msgid "Ask confirmation for move to trash"
+#~ msgstr "Чиқиндилар қутисига жўнатишда тасдиқлашни сўраш"
+
+#~ msgid ""
+#~ "This option tells Konqueror whether to ask for a confirmation when you "
+#~ "move the file to your trash folder, from where it can be recovered very "
+#~ "easily."
+#~ msgstr ""
+#~ "Агар белгиланса, файлни чиқиндилар қутисига жўнатиш учун тасдиқлаш керак "
+#~ "бўлади."
+
+#~ msgid "Hide %1"
+#~ msgstr "%1'ни бекитиш"
+
+#, fuzzy
+#~| msgid "Web SideBar Plugin"
+#~ msgid "SideBar Test Plugin"
+#~ msgstr "Веб ён панели учун плагин"
+
+#~ msgid "Bookmark This Location"
+#~ msgstr "Бу манзилни хатчўпларга қўшиш"
+
+#~ msgid ""
+#~ "Malformed URL\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Нотўгри URL\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Protocol not supported\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Протокол қўлланмаган\n"
+#~ "%1"
+
+#~ msgid "Cannot create the find part, check your installation."
+#~ msgstr ""
+#~ "Қидириш қисмини яратиб бўлмади. KDE тўғри ўрнатилганлигини текширинг."
+
+#~ msgid "My Bookmarks"
+#~ msgstr "Менинг хатчўпларим"
+
+#~ msgid "Preload for later use"
+#~ msgstr "Кейинроқ ишлатиш учун олдиндан юклаш"
+
+#~ msgid "&Save View Profile \"%1\"..."
+#~ msgstr "\"%1\" кўриш профилини &сақлаш"
+
+#~ msgid "Configure Navigation Panel"
+#~ msgstr "Йўлчи панелини мослаш"
+
+#~ msgid "Close Navigation Panel"
+#~ msgstr "Йўлчи панелини ёпиш"
+
+#~ msgid "Select Type"
+#~ msgstr "Белгилаш тури"
+
+#~ msgid "Select type:"
+#~ msgstr "Турини танланг:"
+
+#~ msgid "Web SideBar Plugin"
+#~ msgstr "Веб ён панели учун плагин"
+
+#~ msgid "<qt><b>%1</b> does not exist</qt>"
+#~ msgstr "<qt><b>%1</b> мавжуд эмас</qt>"
+
+#~ msgid "Minutes"
+#~ msgstr "Дақиқа"
+
+#~ msgid "Days"
+#~ msgstr "Кун"
+
+#~ msgid "Your sidebar is not functional or unavailable."
+#~ msgstr "Ён панели тўғри ишламаяпти."
+
+#~ msgid "Cannot find running history plugin in your sidebar."
+#~ msgstr "Ён панел учун ишга тушган тарих плагинини топиб бўлмади."
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History in Sidebar"
+#~ msgstr "Тарих ён панелини кўрсатиш"
+
+#~ msgid "Reload"
+#~ msgstr "Қайтадан юклаш"
+
+#~ msgid "Default"
+#~ msgstr "Андоза"
+
+#~ msgctxt "@action:button New session"
+#~ msgid "New"
+#~ msgstr "Янги"
+
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename"
+#~ msgstr "Номини ўзгартириш"
+
+#~ msgid ""
+#~ "Konqueror is your file manager, web browser and universal document viewer."
+#~ msgstr ""
+#~ "Konqueror - файл бошқарувчи, веб-браузер ва ҳартомонлама ҳужжат кўрувчи."
+
+#~ msgid "G E N E R A L"
+#~ msgstr "У М У М И Й"
+
+#~ msgid "<img width='16' height='16' src=\"%1\"></img>"
+#~ msgstr "<img width='16' height='16' src=\"%1\"></img>"
+
+#~ msgid "Applications"
+#~ msgstr "Дастурлар"
+
+#~ msgid "Installed programs"
+#~ msgstr "Ўрнатилган дастурлар"
+
+#~ msgid "&Location"
+#~ msgstr "&Манзил"
+
+#~ msgid "Open &Terminal"
+#~ msgstr "&Терминални очиш"
+
+#, fuzzy
+#~| msgid "&Close Tab"
+#~ msgid "Closed Tabs"
+#~ msgstr "Табни &ёпиш"
+
+#~ msgid "Unknown"
+#~ msgstr "Номаълум"
+
+#~ msgid "Save &window size in profile"
+#~ msgstr "Профилда &ойнанинг ўлчамини сақлаш"
+
+#, fuzzy
+#~ msgid "Speech Toolbar"
+#~ msgstr "Ас&боблар панелида кўрсатиш"
+
+#~ msgid "Conquer your Desktop!"
+#~ msgstr "Иш столингизни мосланг!"
+
+#~ msgid "Storage Media"
+#~ msgstr "Сақлаш ускуналари"
+
+#~ msgid "Disks and removable media"
+#~ msgstr "Дисклар ва олинадиган ускуналар"
+
+#~ msgid "Settings"
+#~ msgstr "Мосламалар"
+
+#~ msgid "Desktop configuration"
+#~ msgstr "Иш столини мослаш"
+
+#~ msgid "&Edit File Type..."
+#~ msgstr "Файл т&урини таҳрирлаш"
+
+#~ msgid "S&ystem"
+#~ msgstr "&Тизим"
+
+#~ msgid "App&lications"
+#~ msgstr "&Дастурлар"
+
+#~ msgid "&Storage Media"
+#~ msgstr "&Сақлаш ускуналари"
+
+#~ msgid "&Network Folders"
+#~ msgstr "&Тармоқ жилдлари"
+
+#~ msgid "Sett&ings"
+#~ msgstr "Мос&ламалар"
+
+#~ msgid "Autostart"
+#~ msgstr "Авто-бошлаш"
+
+#, fuzzy
+#~ msgid "Profile %1 not found\n"
+#~ msgstr "Очиш учун профил"
+
+#, fuzzy
+#~ msgid "<qt><center><b>%1</b></center> is already in the list.</qt>"
+#~ msgstr "<qt><b>%1</b> нотўғри</qt>"
+
+#, fuzzy
+#~ msgid "Duplicate Entry"
+#~ msgstr "Табнинг нусхасини &яратиш"
+
+#, fuzzy
+#~ msgid "Change Exception"
+#~ msgstr "Нишончани ў&згартириш"
+
+#, fuzzy
+#~ msgid "Default user name:"
+#~ msgstr "Жилднинг номини киритинг:"
+
+#, fuzzy
+#~ msgid "Reject"
+#~ msgstr "&Тиклаш"
+
+#, fuzzy
+#~ msgid "D-Bus Communication Error"
+#~ msgstr "Тасдиқлаш"
+
+#, fuzzy
+#~ msgid "&Windows Shares"
+#~ msgstr "&Ойна"
+
+#, fuzzy
+#~ msgid "Add Identification"
+#~ msgstr "Хусусиятлар"
+
+#, fuzzy
+#~ msgid "Duplicate Identification"
+#~ msgstr "Табнинг &нусхасини яратиш"
+
+#, fuzzy
+#~ msgid "Variable Proxy Configuration"
+#~ msgstr "Иш столини мослаш"
+
+#, fuzzy
+#~ msgid "Update Failed"
+#~ msgstr "Favicon'ни янгилаш"
+
+#, fuzzy
+#~ msgid "Duplicate Policy"
+#~ msgstr "&Ойнани нусхасини яратиш"
+
+#, fuzzy
+#~| msgid "Manual"
+#~ msgid "Menu"
+#~ msgstr "Қўлбола"
+
+#, fuzzy
+#~ msgid "Move Up"
+#~ msgstr "%1'ни кўчириш"
+
+#, fuzzy
+#~ msgid "Move Down"
+#~ msgstr "&Янги ойна"
+
+#, fuzzy
+#~ msgid ""
+#~ "<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a "
+#~ "file manager here."
+#~ msgstr "<h1>Тарих панели</h1> Тарих панелини бу ерда мослашингиз мумкин."
+
+#, fuzzy
+#~ msgid "Open folders in separate &windows"
+#~ msgstr "Жилдларни алоҳида ойнада очиш"
+
+#, fuzzy
+#~ msgid "Show file &tips"
+#~ msgstr "Файл эслатмаларини кўрсатиш"
+
+#, fuzzy
+#~ msgid "Ask Confirmation For"
+#~ msgstr "Тасдиқлаш"
+
+#, fuzzy
+#~ msgid ""
+#~ "This option tells Konqueror whether to ask for a confirmation when you "
+#~ "\"delete\" a file. <ul><li><em>Move To Trash:</em> moves the file to your "
+#~ "trash folder, from where it can be recovered very easily.</li> "
+#~ "<li><em>Delete:</em> simply deletes the file.</li> </ul>"
+#~ msgstr ""
+#~ "Агар белгиланса, файлни чиқиндилар қутисига жўнатиш учун тасдиқлаш керак "
+#~ "бўлади."
+
+#, fuzzy
+#~ msgid "&Move to trash"
+#~ msgstr "&Чиқиндилар қутисига олиб ташлаш"
+
+#, fuzzy
+#~ msgid "Show 'Delete' context me&nu entries which bypass the trashcan"
+#~ msgstr "Менюда ўчириш бандини кўрсатиш"
+
+#, fuzzy
+#~ msgid ""
+#~ "Check this if you want 'Delete' menu commands to be displayed on the "
+#~ "desktop and in the file manager's context menus. You can always delete "
+#~ "files by holding the Shift key while calling 'Move to Trash'."
+#~ msgstr ""
+#~ "Агар белгиланса, иш столини ва файл браузерининг контекст менюсида "
+#~ "\"Ўчириш\" банди кўрсатилади. Ўчириш банди мавжуд бўлмаса ҳам Shift "
+#~ "тугмасини босиб \"Чиқиндилар қутисига олиб ташлаш\" бандини танлаш файлни "
+#~ "ўчиради. "
+
+#~ msgid "Sound Files"
+#~ msgstr "Товуш файллари"
+
+#, fuzzy
+#~ msgid "No Action"
+#~ msgstr "&Манзил"
+
+#, fuzzy
+#~ msgid "Desktop Menu"
+#~ msgstr "Иш столини мослаш"
+
+#, fuzzy
+#~ msgid "Application Menu"
+#~ msgstr "Дастурлар"
+
+#, fuzzy
+#~ msgid "Bookmarks Menu"
+#~ msgstr "Хатчўп"
+
+#, fuzzy
+#~ msgid "Custom Menu 1"
+#~ msgstr "Бошқа шрифтлар"
+
+#, fuzzy
+#~ msgid "Custom Menu 2"
+#~ msgstr "Бошқа шрифтлар"
+
+#, fuzzy
+#~ msgid "Select Protocols"
+#~ msgstr "Файлларни танлаш:"
+
+#, fuzzy
+#~ msgid "Local Protocols"
+#~ msgstr "Узатиш протоколлари"
+
+#, fuzzy
+#~ msgid "Internet Protocols"
+#~ msgstr "Узатиш протоколлари"
+
+#, fuzzy
+#~ msgid "A&utostart path:"
+#~ msgstr "Авто-бошлаш"
+
+#, fuzzy
+#~ msgid "Confirmation Required"
+#~ msgstr "Тасдиқлаш"
+
+#, fuzzy
+#~ msgid "Move"
+#~ msgstr "%1'ни кўчириш"
+
+#, fuzzy
+#~ msgid "KEditFileType"
+#~ msgstr "Файл т&урини таҳрирлаш"
+
+#, fuzzy
+#~ msgid "(c) 2000, KDE developers"
+#~ msgstr "(С) 2000-2003, KDE тузувчилари"
+
+#, fuzzy
+#~ msgid "Edit File Type %1"
+#~ msgstr "Файл т&урини таҳрирлаш"
+
+#, fuzzy
+#~ msgid "Create New File Type %1"
+#~ msgstr "Янги жилдни яратиш"
+
+#, fuzzy
+#~ msgid "Create New File Type"
+#~ msgstr "Янги жилдни яратиш"
+
+#, fuzzy
+#~ msgid "Group:"
+#~ msgstr "Гуруҳ"
+
+#, fuzzy
+#~ msgid "Type name:"
+#~ msgstr "Номини ўзгартириш"
+
+#, fuzzy
+#~ msgid "Show file in separate viewer"
+#~ msgstr "Жилдларни алоҳида ойнада очиш"
+
+#, fuzzy
+#~ msgid "Select service:"
+#~ msgstr "Файлларни танлаш:"
+
+#, fuzzy
+#~ msgid "&Remove"
+#~ msgstr "&Номини ўзгартириш"
+
+#, fuzzy
+#~ msgid "Filename Patterns"
+#~ msgstr "Файлнинг номи"
+
+#, fuzzy
+#~ msgid "Description"
+#~ msgstr "Танлаш"
+
+#, fuzzy
+#~ msgid "Add New Extension"
+#~ msgstr "Кенгайтмалар"
+
+#, fuzzy
+#~ msgid "Extension:"
+#~ msgstr "Кенгайтмалар"
+
+#, fuzzy
+#~ msgid "Move &Up"
+#~ msgstr "%1'ни кўчириш"
+
+#, fuzzy
+#~ msgid "Global Settings"
+#~ msgstr "Мосламалар"
+
+#, fuzzy
+#~ msgid "Domain-Specific Settin&gs"
+#~ msgstr "Хусусиятлар"
+
+#, fuzzy
+#~ msgid "Netscape Plugins"
+#~ msgstr "Ўрнатилган плагинлар"
+
+#, fuzzy
+#~ msgid "Cancel"
+#~ msgstr "Бекор қилинди."
+
+#, fuzzy
+#~ msgid "De&lete"
+#~ msgstr "Боғни ўчириш"
+
+#, fuzzy
+#~ msgid "&Import..."
+#~ msgstr "&Импорт қилиш"
+
+#, fuzzy
+#~ msgid "&Export..."
+#~ msgstr "&Экспорт қилиш"
+
+#, fuzzy
+#~ msgid "Select Home Folder"
+#~ msgstr "Жилдни ўчириш"
+
+#, fuzzy
+#~ msgid ""
+#~ "This is the URL (e.g. a folder or a web page) where Konqueror will jump "
+#~ "to when the \"Home\" button is pressed. This is usually your home folder, "
+#~ "symbolized by a 'tilde' (~)."
+#~ msgstr ""
+#~ "Уй тугмаси босилганида пайдо бўладиган манзил (м-н жилд ёки веб-саҳифа). "
+#~ "Одатда, бунинг қиймати уй жилдига (~) ўрнатилган бўлади."
+
+#, fuzzy
+#~ msgid "Tabbed Browsing"
+#~ msgstr "Интернетни кўриш"
+
+#, fuzzy
+#~ msgid "Open new windows:"
+#~ msgstr "Янги ойнада очиш"
+
+#, fuzzy
+#~ msgid "Smart"
+#~ msgstr "Саралаш"
+
+#, fuzzy
+#~ msgid "Resize window:"
+#~ msgstr "Қайтадан жўнатиш"
+
+#, fuzzy
+#~ msgid "Move window:"
+#~ msgstr "&Янги ойна"
+
+#, fuzzy
+#~ msgid "(c) 1999 - 2001 The Konqueror Developers"
+#~ msgstr "(C) 1999-2005, Konqueror тузувчилари"
+
+#, fuzzy
+#~ msgid "Java&Script"
+#~ msgstr "Тузувчи (JavaScript)"
+
+#, fuzzy
+#~ msgid "Enable filters"
+#~ msgstr "Кўриб чиқишни ёқиш"
+
+#, fuzzy
+#~ msgid "Hide filtered images"
+#~ msgstr "Файлнинг ҳажмини бекитиш"
+
+#, fuzzy
+#~ msgid "Update"
+#~ msgstr "Favicon'ни янгилаш"
+
+#, fuzzy
+#~ msgid "Import..."
+#~ msgstr "&Импорт қилиш"
+
+#, fuzzy
+#~ msgid "Export..."
+#~ msgstr "&Экспорт қилиш"
+
+#, fuzzy
+#~ msgid "Font Si&ze"
+#~ msgstr "Нишончанинг ўлчами"
+
+#, fuzzy
+#~ msgid "This is the relative font size Konqueror uses to display web sites."
+#~ msgstr "Konqueror ойнасида матнни кўрсатиш учун ишлатиладиган шрифт."
+
+#, fuzzy
+#~ msgid "S&tandard font:"
+#~ msgstr "Андоза шрифт"
+
+#, fuzzy
+#~ msgid "This is the font used to display normal text in a web page."
+#~ msgstr "Konqueror ойнасида матнни кўрсатиш учун ишлатиладиган шрифт."
+
+#, fuzzy
+#~ msgid ""
+#~ "This is the font used to display fixed-width (i.e. non-proportional) text."
+#~ msgstr "Konqueror ойнасида матнни кўрсатиш учун ишлатиладиган шрифт."
+
+#, fuzzy
+#~ msgid "This is the font used to display text that is marked up as serif."
+#~ msgstr "Konqueror ойнасида матнни кўрсатиш учун ишлатиладиган шрифт."
+
+#, fuzzy
+#~ msgid "Sa&ns serif font:"
+#~ msgstr "Андоза шрифт"
+
+#, fuzzy
+#~ msgid ""
+#~ "This is the font used to display text that is marked up as sans-serif."
+#~ msgstr "Konqueror ойнасида матнни кўрсатиш учун ишлатиладиган шрифт."
+
+#, fuzzy
+#~ msgid "C&ursive font:"
+#~ msgstr "Рекурсив саралаш"
+
+#, fuzzy
+#~ msgid "This is the font used to display text that is marked up as italic."
+#~ msgstr "Konqueror ойнасида матнни кўрсатиш учун ишлатиладиган шрифт."
+
+#, fuzzy
+#~ msgid ""
+#~ "This is the font used to display text that is marked up as a fantasy font."
+#~ msgstr "Konqueror ойнасида матнни кўрсатиш учун ишлатиладиган шрифт."
+
+#, fuzzy
+#~ msgid "Boo&kmarks"
+#~ msgstr "Хатчўп"
+
+#, fuzzy
+#~ msgid "Form Com&pletion"
+#~ msgstr "URL-тўлдириш"
+
+#, fuzzy
+#~ msgid "Enable completion of &forms"
+#~ msgstr "Шакилларни авто-тўлдириш"
+
+#, fuzzy
+#~ msgctxt "underline"
+#~ msgid "Enabled"
+#~ msgstr "Ўрнатилган"
+
+#, fuzzy
+#~ msgctxt "underline"
+#~ msgid "Disabled"
+#~ msgstr "Ўчириш"
+
+#, fuzzy
+#~ msgid "A&nimations:"
+#~ msgstr "&Дастурлар"
+
+#, fuzzy
+#~ msgctxt "animations"
+#~ msgid "Enabled"
+#~ msgstr "Ўрнатилган"
+
+#, fuzzy
+#~ msgctxt "animations"
+#~ msgid "Disabled"
+#~ msgstr "Ўчириш"
+
+#, fuzzy
+#~ msgid "Show Only Once"
+#~ msgstr "Эгасини кўрсатиш"
+
+#, fuzzy
+#~ msgid "Enable Ja&va globally"
+#~ msgstr "Java'ни (умумий) <A HREF=\"%1\">бу ерда</A> ёқишингиз мумкин."
+
+#, fuzzy
+#~ msgid "Additional Java a&rguments:"
+#~ msgstr "Қўшимча талаблар*"
+
+#, fuzzy
+#~ msgid "&Filters"
+#~ msgstr "&Жилд"
+
+#, fuzzy
+#~ msgid "System"
+#~ msgstr "&Тизим"
+
+#~ msgid "No permissions to write to %1"
+#~ msgstr "%1'га ёзиш учун рухсат йўқ."
+
+#~ msgid "Remove Folder Properties"
+#~ msgstr "Жилднинг хоссаларини олиб ташлаш"
+
+#~ msgid "Create Folder..."
+#~ msgstr "Жилдни яратиш"
+
+#, fuzzy
+#~ msgid "&Delete"
+#~ msgstr "Боғни ўчириш"
+
+#~ msgid "&Rename"
+#~ msgstr "&Номини ўзгартириш"
+
+#, fuzzy
+#~ msgid "Desktop &Names"
+#~ msgstr "Номини кўрсатиш"
+
+#, fuzzy
+#~| msgid "Move backwards one step in the browsing history<p>"
+#~ msgid "Move backwards one step in the browsing history<br /><br />"
+#~ msgstr "Кўриш тарихида бир қадам орқага ўтиш<p>"
+
+#, fuzzy
+#~| msgid "Move forward one step in the browsing history<p>"
+#~ msgid "Move forward one step in the browsing history<br /><br />"
+#~ msgstr "Кўриш тарихида бир қадам олдинга ўтиш<p>"
+
+#, fuzzy
+#~ msgid "Rename icons in&line"
+#~ msgstr "Нишончаларнинг номини жойида ўзгартириш"
+
+#, fuzzy
+#~ msgid ""
+#~ "Checking this option will allow files to be renamed by clicking directly "
+#~ "on the icon name. "
+#~ msgstr ""
+#~ "Агар белгиланса, нишончанинг номини бир марта босиб файлнинг номини "
+#~ "ўзгартирса бўлади."
+
+#, fuzzy
+#~ msgid "&Standard font:"
+#~ msgstr "Андоза шрифт"
+
+#, fuzzy
+#~ msgid "Font si&ze:"
+#~ msgstr "Нишончанинг ўлчами"
+
+#, fuzzy
+#~ msgid "This is the font size used to display text in Konqueror windows."
+#~ msgstr "Konqueror ойнасида матнни кўрсатиш учун ишлатиладиган шрифт."
+
+#, fuzzy
+#~ msgid "This is the color used to display text in Konqueror windows."
+#~ msgstr "Konqueror ойнасида матнни кўрсатиш учун ишлатиладиган шрифт."
+
+#, fuzzy
+#~ msgid "&Underline filenames"
+#~ msgstr "Файлларни танлашни бекор қилиш:"
+
+#, fuzzy
+#~ msgid " line"
+#~ msgid_plural " lines"
+#~ msgstr[0] " дақиқа"
+
+#, fuzzy
+#~ msgid ""
+#~ "<h1>Appearance</h1> You can configure how Konqueror looks as a file "
+#~ "manager here."
+#~ msgstr "<h1>Тарих панели</h1> Тарих панелини бу ерда мослашингиз мумкин."
+
+#~ msgid ""
+#~ "Thanks to <a href=\"%1\">DCOP</a> you can have full control over "
+#~ "Konqueror using a script."
+#~ msgstr ""
+#~ "Скрипт ва <A HREF=\"%1\">DCOP</A> ёрдамида Konqueror'ни тўлиқ бошқарса "
+#~ "бўлади."
+
+#~ msgid "Preview In"
+#~ msgstr "...да кўриб чиқиш"
+
+#~ msgid "&Open Location..."
+#~ msgstr "&Манзилни кўриш..."
+
+#~ msgid "Animated Logo"
+#~ msgstr "Анимацияли лого"
+
+#~ msgid "Selection"
+#~ msgstr "Танлаш"
+
+#~ msgid "Icon Size"
+#~ msgstr "Нишончанинг ўлчами"
+
+#~ msgid "Show Details"
+#~ msgstr "Тафсилотларни кўрсатиш"
+
+#~ msgid "MimeType"
+#~ msgstr "MIME тури"
+
+#~ msgid "Size"
+#~ msgstr "Ҳажми"
+
+#~ msgid "Modified"
+#~ msgstr "Ўзгарган"
+
+#~ msgid "Accessed"
+#~ msgstr "Фойдаланилган"
+
+#~ msgid "Created"
+#~ msgstr "Яратилган"
+
+#~ msgid "Owner"
+#~ msgstr "Эгаси"
+
+#~ msgid "Group"
+#~ msgstr "Гуруҳ"
+
+#~ msgid "Link"
+#~ msgstr "Боғ"
+
+#~ msgid "URL"
+#~ msgstr "URL"
+
+#~ msgid "File Type"
+#~ msgstr "Файл тури"
+
+#~ msgid "Select files:"
+#~ msgstr "Файлларни танлаш:"
+
+#~ msgid "Unselect files:"
+#~ msgstr "Файлларни танлашни бекор қилиш:"
+
+#~ msgid "Show &Modification Time"
+#~ msgstr "Ўз&гарган вақтни кўрсатиш"
+
+#~ msgid "Hide &Modification Time"
+#~ msgstr "Ўзгарга&н вақтни бекитиш"
+
+#~ msgid "Show &File Type"
+#~ msgstr "Файл турини &кўрсатиш"
+
+#~ msgid "Hide &File Type"
+#~ msgstr "Файл турини бе&китиш"
+
+#~ msgid "Show MimeType"
+#~ msgstr "MIME турини кўрсатиш"
+
+#~ msgid "Hide MimeType"
+#~ msgstr "MIME турини бекитиш"
+
+#~ msgid "Show &Access Time"
+#~ msgstr "&Фойдаланилган вақтни кўрсатиш"
+
+#~ msgid "Hide &Access Time"
+#~ msgstr "Фойдаланилга&н вақтни бекитиш"
+
+#~ msgid "Show &Creation Time"
+#~ msgstr "Яратилган &вақтни кўрсатиш"
+
+#~ msgid "Hide &Creation Time"
+#~ msgstr "Ярати&лган вақтни бекитиш"
+
+#~ msgid "Show &Link Destination"
+#~ msgstr "Боғнинг манзилини &кўрсатиш"
+
+#~ msgid "Hide &Link Destination"
+#~ msgstr "Боғнинг манзилини &бекитиш"
+
+#~ msgid "Show Filesize"
+#~ msgstr "Файлнинг ҳажмини кўрсатиш"
+
+#~ msgid "Hide Filesize"
+#~ msgstr "Файлнинг ҳажмини бекитиш"
+
+#~ msgid "Show Owner"
+#~ msgstr "Эгасини кўрсатиш"
+
+#~ msgid "Hide Owner"
+#~ msgstr "Эгасини бекитиш"
+
+#~ msgid "Show Group"
+#~ msgstr "Гуруҳни кўрсатиш"
+
+#~ msgid "Hide Group"
+#~ msgstr "Гуруҳни бекитиш"
+
+#~ msgid "Show Permissions"
+#~ msgstr "Ҳуқуқларни кўрсатиш"
+
+#~ msgid "Hide Permissions"
+#~ msgstr "Ҳуқуқларни бекитиш"
+
+#~ msgid "Se&lect..."
+#~ msgstr "&Белгилаш"
+
+#~ msgid "Unselect..."
+#~ msgstr "Белгилашни бекор қилиш"
+
+#~ msgid "Unselect All"
+#~ msgstr "Ҳаммасини танлашни бекор қилиш"
+
+#~ msgid "&Invert Selection"
+#~ msgstr "&Тескарисини танлаш"
+
+#~ msgid "Show &Hidden Files"
+#~ msgstr "Яширилган файлларни &кўрсатиш"
+
+#~ msgid "Case Insensitive Sort"
+#~ msgstr "Катта-кичик ҳарфни фарқламай саралаш"
+
+#~ msgid "Name"
+#~ msgstr "Номи"
+
+#~ msgid "You must take the file out of the trash before being able to use it."
+#~ msgstr ""
+#~ "Фални ишлатишдан олдин уни чиқиндилар қутисидан ташқарига кўчиришингиз "
+#~ "керак."
+
+#~ msgid "View &As"
+#~ msgstr "Сифа&тида кўриш"
+
+#~ msgid "Filename"
+#~ msgstr "Файлнинг номи"
+
+#~ msgid "Toggle displaying of hidden dot files"
+#~ msgstr "Яширилган, номи нуқта билан бошланган, файлларни кўрсатиш/бекитиш"
+
+#~ msgid "&Folder Icons Reflect Contents"
+#~ msgstr "&Жилднинг нишончаси ичидагига мос"
+
+#~ msgid "&Preview"
+#~ msgstr "Кўриб &чиқиш"
+
+#~ msgid "Enable Previews"
+#~ msgstr "Кўриб чиқишни ёқиш"
+
+#~ msgid "Disable Previews"
+#~ msgstr "Кўриб чиқишни ўчириш"
+
+#~ msgid "By Name (Case Sensitive)"
+#~ msgstr "Номи бўйича (Катта-кичик ҳарфни фарқлаш)"
+
+#~ msgid "By Name (Case Insensitive)"
+#~ msgstr "Номи бўйича (Катта-кичик ҳарф фарқланмасин)"
+
+#~ msgid "By Size"
+#~ msgstr "Ўлчами бўйича"
+
+#~ msgid "By Type"
+#~ msgstr "Тури бўйича"
+
+#~ msgid "By Date"
+#~ msgstr "Сана бўйича"
+
+#~ msgid "Folders First"
+#~ msgstr "Олдин жилдлар"
+
+#~ msgid "Descending"
+#~ msgstr "Камайиш бўйича"
+
+#~ msgid "Selects all items"
+#~ msgstr "Ҳамма элементларни белгилайди"
+
+#~ msgid "Unselects all selected items"
+#~ msgstr "Ҳамма элементларни танлашни бекор қилади"
+
+#~ msgid "Inverts the current selection of items"
+#~ msgstr "Белгиланган элементларни тескарисини белгилайди"
+
+#~ msgid "&Icon Size"
+#~ msgstr "&Нишончанинг ўлчами"
+
+#~ msgid "S&ort"
+#~ msgstr "С&аралаш"
+
+#~ msgid "Rename icons inline"
+#~ msgstr "Нишончаларнинг номини жойида ўзгартириш"
+
+#~ msgid ""
+#~ "Checking this option will allow files to be renamed by clicking directly "
+#~ "on the icon name."
+#~ msgstr ""
+#~ "Агар белгиланса, нишончанинг номини бир марта босиб файлнинг номини "
+#~ "ўзгартирса бўлади."
+
+#~ msgid ""
+#~ "This option tells Konqueror whether to ask for a confirmation when you "
+#~ "simply delete the file."
+#~ msgstr "Агар белгиланса, файлни ўчириш учун тасдиқлаш керак бўлади."
+
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Loading a profile will discard these changes."
+#~ msgstr ""
+#~ "Ушбу саҳифада жўнатилмаган маълумот мавжуд.\n"
+#~ "Профилни юклаш натижасида маълумот йўқолади."
+
+#~ msgid "Tools"
+#~ msgstr "Воситалар"
+
+#~ msgid "Statusbar"
+#~ msgstr "Ҳолат панели"
+
+#~ msgid "&Show Netscape Bookmarks in Konqueror"
+#~ msgstr "Konqueror'да Netscape ха&тчўпларини кўрсатиш"
+
+#~ msgid "C&hange URL"
+#~ msgstr "URL'ни ў&згартириш"
+
+#~ msgid "&New Bookmark"
+#~ msgstr "&Янги хатчўп"
+
+#~ msgid "&Insert Separator"
+#~ msgstr "Ажратувчини қўй&иш"
+
+#~ msgid "&Sort Alphabetically"
+#~ msgstr "&Алифбо бўйича саралаш"
+
+#~ msgid "Set as T&oolbar Folder"
+#~ msgstr "Асбоблар панелига &қўшиш"
+
+#~ msgid "Hide in T&oolbar"
+#~ msgstr "Асбоблар панелида &бекитиш"
+
+#~ msgid "&Expand All Folders"
+#~ msgstr "Ҳ&амма жилдларни ёйиш"
+
+#~ msgid "Collapse &All Folders"
+#~ msgstr "Ҳамма &жилдларни йиғиш"
+
+#~ msgid "&Open in Konqueror"
+#~ msgstr "&Konqueror билан очиш"
+
+#~ msgid "Check &Status"
+#~ msgstr "Ҳолатини &текшириш"
+
+#~ msgid "Check Status: &All"
+#~ msgstr "Ҳаммасини ҳ&олатини текшириш"
+
+#~ msgid "Update All &Favicons"
+#~ msgstr "Ҳамма favicon'ларни я&нгилаш"
+
+#~ msgid "Cancel &Checks"
+#~ msgstr "Те&кширувни бекор қилиш"
+
+#~ msgid "Cancel &Favicon Updates"
+#~ msgstr "Favicon'ни янгилашни &бекор қилиш"
+
+#~ msgid "Import &Netscape Bookmarks..."
+#~ msgstr "&Netscape хатчўпларини импорт қилиш"
+
+#~ msgid "Import &Opera Bookmarks..."
+#~ msgstr "&Opera хатчўпларини импорт қилиш"
+
+#~ msgid "Import &Galeon Bookmarks..."
+#~ msgstr "&Galeon хатчўпларини импорт қилиш"
+
+#~ msgid "Import &KDE2/KDE3 Bookmarks..."
+#~ msgstr "KDE2/KDE3 хатчўп&ларини импорт қилиш"
+
+#~ msgid "Import &IE Bookmarks..."
+#~ msgstr "&IE хатчўпларини импорт қилиш"
+
+#~ msgid "Import &Mozilla Bookmarks..."
+#~ msgstr "&Mozilla хатчўпларини импорт қилиш"
+
+#~ msgid "Export to &Netscape Bookmarks"
+#~ msgstr "Netscape хатчўпларига &экспорт қилиш"
+
+#~ msgid "Export to &Opera Bookmarks..."
+#~ msgstr "&Opera хатчўпларига экспорт қилиш"
+
+#~ msgid "Export to &HTML Bookmarks..."
+#~ msgstr "HTML хатчўп&ларига экспорт қилиш"
+
+#~ msgid "Export to &IE Bookmarks..."
+#~ msgstr "&IE хатчўпларига экспорт қилиш"
+
+#~ msgid "Export to &Mozilla Bookmarks..."
+#~ msgstr "Mozilla хатчўп&ларига экспорт қилиш"
+
+#~ msgid "*.html|HTML Bookmark Listing"
+#~ msgstr "*.html|HTML хатчўплар рўйхати"
+
+#~ msgid "Cut Items"
+#~ msgstr "Элементларни кесиш"
+
+#~ msgid "Create New Bookmark Folder"
+#~ msgstr "Янги хатчўп жилдини яратиш"
+
+#~ msgid "New folder:"
+#~ msgstr "Янги жилд:"
+
+#~ msgid "Sort Alphabetically"
+#~ msgstr "Алифбо бўйича саралаш"
+
+#~ msgid "Delete Items"
+#~ msgstr "Элементларни ўчириш"
+
+#~ msgid "Icon"
+#~ msgstr "Нишонча"
+
+#~ msgid "Comment:"
+#~ msgstr "Изоҳ:"
+
+#~ msgid "First viewed:"
+#~ msgstr "Биринчи марта кўрилган:"
+
+#~ msgid "Viewed last:"
+#~ msgstr "Охирги марта кўрилган:"
+
+#~ msgid "Times visited:"
+#~ msgstr "Неча марта кўрилган сони:"
+
+#~ msgid "Insert Separator"
+#~ msgstr "Ажратувчини қўйиш"
+
+#~ msgid "Create Folder"
+#~ msgstr "Жилдни яратиш"
+
+#~ msgid "Copy %1"
+#~ msgstr "%1'дан нусха олиш"
+
+#~ msgid "Create Bookmark"
+#~ msgstr "Хатчўп яратиш"
+
+#~ msgid "Set as Bookmark Toolbar"
+#~ msgstr "Асбоблар панелига қўшиш"
+
+#~ msgid "Show"
+#~ msgstr "Кўрсатиш"
+
+#~ msgid "Hide"
+#~ msgstr "Бекитиш"
+
+#~ msgid "Move Items"
+#~ msgstr "Элементларни кўчириш"
+
+#~ msgid "No favicon found"
+#~ msgstr "Favicon топилмади"
+
+#~ msgid "Updating favicon..."
+#~ msgstr "Favicon янгиланмоқда..."
+
+#~ msgid "Import %1 Bookmarks"
+#~ msgstr "%1 хатчўпларини импорт қилиш"
+
+#~ msgid "%1 Bookmarks"
+#~ msgstr "%1 хатчўплари"
+
+#~ msgid "%1 Import"
+#~ msgstr "%1 импорт қилиш"
+
+#~ msgid "*.xbel|Galeon Bookmark Files (*.xbel)"
+#~ msgstr "*.xbel|Galeon хатчўп файллари (*.xbel)"
+
+#~ msgid "*.xml|KDE Bookmark Files (*.xml)"
+#~ msgstr "*.xml|KDE хатчўп файллари (*.xml)"
+
+#~ msgid "Directory to scan for extra bookmarks"
+#~ msgstr "Қўшимча хатчўпларни қидириш учун жилд"
+
+#~ msgid "KBookmarkMerger"
+#~ msgstr "KBookmarkMerger"
+
+#~ msgid "Copyright © 2005 Frerich Raabe"
+#~ msgstr "Copyright © 2005, Фрериҳ Раабе (Frerich Raabe)"
+
+#~ msgid "Original author"
+#~ msgstr "Биринчи муаллиф"
+
+#~ msgid "Drop Items"
+#~ msgstr "Элементларни ўчириш"
+
+#~ msgid "Comment"
+#~ msgstr "Изоҳ"
+
+#~ msgid "Status"
+#~ msgstr "Ҳолати"
+
+#~ msgid "Folder"
+#~ msgstr "Жилд"
+
+#~ msgid "Empty Folder"
+#~ msgstr "Бўш жилд"
+
+#~ msgid "Import bookmarks from a file in Mozilla format"
+#~ msgstr "Mozilla форматидаги файлдан хатчўпларни импорт қилиш"
+
+#~ msgid "Import bookmarks from a file in Netscape (4.x and earlier) format"
+#~ msgstr ""
+#~ "Netscape (4.x ва эскилари) форматидаги файлдан хатчўпларни импорт қилиш"
+
+#~ msgid "Import bookmarks from a file in Internet Explorer's Favorites format"
+#~ msgstr "Internet Explorer форматидаги файлдан хатчўпларни импорт қилиш"
+
+#~ msgid "Import bookmarks from a file in Opera format"
+#~ msgstr "Opera форматидаги файлдан хатчўпларни импорт қилиш"
+
+#~ msgid "Export bookmarks to a file in Mozilla format"
+#~ msgstr "Хатчўпларни Mozilla форматидаги файлга экспорт қилиш"
+
+#~ msgid "Export bookmarks to a file in Netscape (4.x and earlier) format"
+#~ msgstr ""
+#~ "Хатчўпларни Netscape (4.x ва эскилари) форматидаги файлга экспорт қилиш"
+
+#~ msgid "Export bookmarks to a file in a printable HTML format"
+#~ msgstr ""
+#~ "Хатчўпларни босиб чиқариб бўладиган HTML форматидаги файлга экспорт қилиш"
+
+#~ msgid "Export bookmarks to a file in Internet Explorer's Favorites format"
+#~ msgstr "Хатчўпларни Internet Explorer форматидаги файлга экспорт қилиш"
+
+#~ msgid "Export bookmarks to a file in Opera format"
+#~ msgstr "Хатчўпларни Opera форматидаги файлга экспорт қилиш"
+
+#~ msgid "Set the user readable caption for example \"Konsole\""
+#~ msgstr ""
+#~ "Фойдаланиш учун қулай бўлган сарлавҳани кўрсатиш. Масалан, \"Konsole\""
+
+#~ msgid "Hide all browser related functions"
+#~ msgstr "Браузерга оид ҳамма функцияларни бекитиш"
+
+#~ msgid "File to edit"
+#~ msgstr "Таҳрирлаш учун файл"
+
+#~ msgid "Run Another"
+#~ msgstr "Бошқасини ишга тушириш"
+
+#~ msgid "Continue in Same"
+#~ msgstr "Ўзида давом этиш"
+
+#~ msgid "Bookmark Editor"
+#~ msgstr "Хатчўп таҳрирчи"
+
+#~ msgid "Konqueror Bookmarks Editor"
+#~ msgstr "Konqueror хатчўплар таҳрирчи"
+
+#~ msgid "Initial author"
+#~ msgstr "Биринчи муаллиф"
+
+#~ msgid "Author"
+#~ msgstr "Муаллиф"
+
+#~ msgid "You may only specify a single --export option."
+#~ msgstr "Фақат битта --export параметрини кўрсатиш мумкин."
+
+#~ msgid "You may only specify a single --import option."
+#~ msgstr "Фақат битта --import параметрини кўрсатиш мумкин."
+
+#~ msgid "Checking..."
+#~ msgstr "Текширилмоқда..."
+
+#~ msgid "Error "
+#~ msgstr "Хато "
+
+#~ msgid "Ok"
+#~ msgstr "Ок"
+
+#~ msgid "Reset Quick Search"
+#~ msgstr "Қидириш панелини тозалаш"
+
+#~ msgid "Se&arch:"
+#~ msgstr "Қ&идириш:"
+
+#~ msgid "Clear Search"
+#~ msgstr "Қидирувни тозалаш"

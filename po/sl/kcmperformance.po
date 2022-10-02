@@ -1,0 +1,211 @@
+# translation of kcmperformance.po to Slovenian
+# Translation of kcmperformance.po to Slovenian
+# Copyright (C) 2003, 2004, 2005, 2006 Free Software Foundation, Inc.
+#
+# Gregor Rakar <gregor.rakar@kiss.uni-lj.si>, 2003.
+# Gregor Rakar <gregor.rakar@kiss.si>, 2003, 2004, 2005.
+# Jure Repinc <jlp@holodeck1.com>, 2006, 2007.
+# Andrej Mernik <andrejm@ubuntu.si>, 2013, 2016, 2017.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmperformance\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-21 00:16+0000\n"
+"PO-Revision-Date: 2017-03-24 21:03+0100\n"
+"Last-Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
+"Language-Team: Slovenian <lugos-slo@lugos.si>\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 2.0\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
+
+#: kcmperformance.cpp:28
+#, kde-format
+msgid ""
+"<h1>KDE Performance</h1> You can configure settings that improve KDE "
+"performance here."
+msgstr ""
+"<h1>Hitrost delovanja KDE</h1> Tu lahko nastavite KDE, da deluje hitreje."
+
+#: kcmperformance.cpp:35
+#, kde-format
+msgid "Konqueror"
+msgstr "Konqueror"
+
+#: kcmperformance.cpp:38
+#, kde-format
+msgid "System"
+msgstr "Sistem"
+
+#: kcmperformance.cpp:63
+#, kde-format
+msgid ""
+"<h1>Konqueror Performance</h1> You can configure several settings that "
+"improve Konqueror performance here. These include options for reusing "
+"already running instances and for keeping instances preloaded."
+msgstr ""
+"<h1>Hitrost delovanja Konquerorja</h1> Tu lahko nastavite različne možnosti, "
+"ki izboljšajo hitrost delovanja Konquerorja. Med drugim je to tudi vnovična "
+"uporaba že zagnanih primerkov programa in ohranjanje prednaloženih primerkov."
+
+#: konqueror.cpp:24
+#, kde-format
+msgid ""
+"<p>If enabled, an instance of Konqueror will be preloaded after the ordinary "
+"Plasma startup sequence.</p><p>This will make the first Konqueror window "
+"open faster, but at the expense of longer Plasma startup times (but you will "
+"be able to work while it is loading, so you may not even notice that it is "
+"taking longer).</p>"
+msgstr ""
+"<p>Če je omogočeno, bo primerek Konquerorja prednaložen v pomnilnik po "
+"običajnem zagonu Plasme.</p> <p> To bo hitreje odprlo prvo okno Konquerorja, "
+"se pa bo zato Plasma zaganjala dlje časa (vendar boste lahko med nalaganjem "
+"delali, zato mogoče tega ne boste niti opazili).</p>"
+
+#: konqueror.cpp:30
+#, kde-format
+msgid ""
+"<p>If enabled, Konqueror will always try to have one preloaded instance "
+"ready; preloading a new instance in the background whenever there is not one "
+"available, so that windows will always open quickly.</p><p><b>Warning:</b> "
+"In some cases, it is actually possible that this will reduce perceived "
+"performance.</p>"
+msgstr ""
+"<p>Če je omogočeno, bo Konqueror vedno poskušal imeti pripravljen en "
+"prednaložen primerek. Ta primerek se bo naložil v ozadju takrat, ko ni noben "
+"na voljo, zato se bodo okna vedno hitro odpirala.</p><p><b>Opozorilo:</b> v "
+"nekaterih primerih je mogoče, da to celo upočasni občuteno hitrost.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
+#: konqueror_ui.ui:17
+#, kde-format
+msgid "Preloading"
+msgstr "Prednalaganje"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_preload_on_startup)
+#: konqueror_ui.ui:23
+#, kde-format
+msgid "Preload an instance after desktop startup"
+msgstr "Prednaloži primerek po zagonu namizja"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_always_have_preloaded)
+#: konqueror_ui.ui:30
+#, kde-format
+msgid "Always try to have one preloaded instance"
+msgstr "Vedno poskušaj imeti en prednaložen primerek"
+
+#: system.cpp:22
+#, kde-format
+msgid ""
+"<p>During startup KDE needs to perform a check of its system configuration "
+"(mimetypes, installed applications, etc.), and in case the configuration has "
+"changed since the last time, the system configuration cache (KSyCoCa) needs "
+"to be updated.</p><p>This option delays the check, which avoid scanning all "
+"directories containing files describing the system during KDE startup, thus "
+"making KDE startup faster. However, in the rare case the system "
+"configuration has changed since the last time, and the change is needed "
+"before this delayed check takes place, this option may lead to various "
+"problems (missing applications in the K Menu, reports from applications "
+"about missing required mimetypes, etc.).</p><p>Changes of system "
+"configuration mostly happen by (un)installing applications. It is therefore "
+"recommended to turn this option temporarily off while (un)installing "
+"applications.</p>"
+msgstr ""
+"<p>Med zagonom mora KDE preveriti sistemske nastavitve (vrste datotek, "
+"nameščeni programi ipd.) in če so se nastavitve spremenile, mora biti "
+"posodobljen sistemski nastavitveni predpomnilnik (KSyCoCa) .</p> <p>Ta "
+"možnost preloži preverjanje, s čemer se med zagonom KDE izogne pregledovanju "
+"vseh map, ki vsebujejo datoteke, ki opisujejo sistem, zato pa je zagon KDE "
+"hitrejši. Vendar pa lahko v redkih primerih, ko se nastavitve KDE spremenijo "
+"od zadnjega zagona, sprememba pa je potrebna pred preloženim preverjanjem, "
+"ta možnost vodi do različnih težav (manjkajoči programi v zagonskem meniju, "
+"poročanje programov o manjkajočih vrstah datotek ipd.)</p> <p>Spremembe "
+"sistemskih nastavitev se najpogosteje storijo z namestitvijo ali "
+"odstranitvijo programov. Zato je priporočeno, da začasno izklopite to "
+"možnost pred nameščanjem ali odstranjevanjem programov.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gb_)
+#: system_ui.ui:8
+#, kde-format
+msgid "System Configuration"
+msgstr "Sistemske nastavitve"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_disable_kbuildsycoca)
+#: system_ui.ui:14
+#, kde-format
+msgid "Disable &system configuration startup check"
+msgstr "Onemogoči zagonsko preverjanje &sistemskih nastavitev"
+
+#. i18n: ectx: property (text), widget (QLabel, label_kbuildsycoca)
+#: system_ui.ui:21
+#, kde-format
+msgid ""
+"This option may in rare cases lead to various problems. Consult the What's "
+"This (Shift+F1) help for details."
+msgstr ""
+"Ta možnost lahko v redkih primerih povzroči različne težave. Za več "
+"podrobnosti si oglejte pomoč Kaj je to (Shift+F1)."
+
+#~ msgid ""
+#~ "<p>If non-zero, this option allows keeping Konqueror instances in memory "
+#~ "after all their windows have been closed, up to the number specified in "
+#~ "this option.</p><p>When a new Konqueror instance is needed, one of these "
+#~ "preloaded instances will be reused instead, improving responsiveness at "
+#~ "the expense of the memory required by the preloaded instances.</p>"
+#~ msgstr ""
+#~ "<p>Če ni ničelna, vam ta možnost dovoljuje ohranjanje primerkov "
+#~ "Konquerorja v pomnilniku tudi po tem, ko so zaprta vsa okna, do števila, "
+#~ "ki je navedeno v tem polju.</p> <p> Ko se potrebuje nov primerek "
+#~ "Konquerorja, se eden od teh prednaloženih primerkov uporabi znova, kar "
+#~ "izboljša odzivnost, vendar na račun večje porabe pomnilnika.</p>"
+
+#~ msgid "&Maximum number of instances kept preloaded:"
+#~ msgstr "&Največje število ohranjenih prednaloženih primerkov:"
+
+#~ msgid ""
+#~ "Disables the minimization of memory usage and allows you to make each "
+#~ "browsing activity independent from the others"
+#~ msgstr ""
+#~ "Onemogoči zmanjšanje uporabe pomnilnika in vsako brskanje naredi "
+#~ "neodvisno od drugega"
+
+#~ msgid ""
+#~ "<p>With this option activated, only one instance of Konqueror used for "
+#~ "file browsing will exist in the memory of your computer at any moment, no "
+#~ "matter how many file browsing windows you open, thus reducing resource "
+#~ "requirements.</p><p>Be aware that this also means that, if something goes "
+#~ "wrong, all your file browsing windows will be closed simultaneously</p>"
+#~ msgstr ""
+#~ "<p>Če je omogočena ta možnost, bo v pomnilniku v danem trenutku obstajal "
+#~ "le en primerek Konquerorja za brskanje po datotekah, ne glede na to "
+#~ "koliko oken za brskanje po datotekah odprete; na ta način boste zmanjšali "
+#~ "zahteve po sredstvih.</p><p>Pozor, to pomeni tudi, da se bodo, če bo šlo "
+#~ "karkoli narobe, zaprla vsa okna za brskanje po datotekah hkrati.</p>"
+
+#~ msgid ""
+#~ "<p>With this option activated, only one instance of Konqueror will exist "
+#~ "in the memory of your computer at any moment, no matter how many browsing "
+#~ "windows you open, thus reducing resource requirements.</p><p>Be aware "
+#~ "that this also means that, if something goes wrong, all your browsing "
+#~ "windows will be closed simultaneously.</p>"
+#~ msgstr ""
+#~ "<p>Če je omogočena ta možnost, bo v pomnilniku v danem trenutku obstajal "
+#~ "le en primerek Konquerorja, ne glede na to koliko oken za brskanje "
+#~ "odprete; na ta način boste zmanjšali zahteve po sredstvih.</p><p>Pozor, "
+#~ "to pomeni tudi, da se bodo, če bo šlo karkoli narobe, zaprla vsa okna za "
+#~ "brskanje po datotekah hkrati.</p>"
+
+#~ msgid "Minimize Memory Usage"
+#~ msgstr "Zmanjšaj uporabo pomnilnika"
+
+#~ msgid "&Never"
+#~ msgstr "&Nikoli"
+
+#~ msgid "For &file browsing only (recommended)"
+#~ msgstr "Samo za brskanje po &datotekah (priporočeno)"
+
+#~ msgid "Alwa&ys (use with care)"
+#~ msgstr "&Vedno (uporabljajte previdno)"

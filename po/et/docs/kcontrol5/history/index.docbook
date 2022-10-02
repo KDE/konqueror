@@ -1,0 +1,95 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Estonian  "INCLUDE">
+]>
+<article id="history" lang="&language;">
+<title
+>Ajaloo külgriba</title>
+<articleinfo>
+<authorgroup>
+<author
+>&Burkhard.Lueck;</author>
+<othercredit role="translator"
+><firstname
+>Marek</firstname
+><surname
+>Laane</surname
+><affiliation
+><address
+><email
+>bald@smail.ee</email
+></address
+></affiliation
+><contrib
+>Tõlge eesti keelde</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2009-11-24</date>
+<releaseinfo
+>&kde; 4.4</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Süsteemi seadistused</keyword>
+<keyword
+>ajalugu</keyword>
+</keywordset>
+</articleinfo>
+
+<para
+>See dialoog võimaldab seadistada ajaloo külgriba. </para>
+
+<variablelist>
+<varlistentry
+><term
+><guilabel
+>Piirangud</guilabel
+></term>
+<listitem
+><para
+>Selle sektsiooni valikutega saab paika panna ajaloo maksimaalse suuruse ning aja, mille möödudes elemendid automaatselt eemaldatakse. </para
+></listitem>
+</varlistentry>
+
+<varlistentry
+><term
+><guilabel
+>Kohandatud font</guilabel
+></term>
+<listitem
+><para
+>Siin saab valida nuppu <guibutton
+>Vali font</guibutton
+> kasutades uutele ja vanadele &URL;-idele erineva fondi. </para
+></listitem>
+</varlistentry>
+
+<varlistentry
+><term
+><guilabel
+>Üksikasjad</guilabel
+></term>
+<listitem
+><para
+>Märkekastiga <guilabel
+>Üksikasjalikud kohtspikrid</guilabel
+> saab määrata, kui palju teavet näidatakse, kui viid hiirekursori ajalooleheküljel mõne elemendi kohale.</para>
+<para
+>Märkimise korral näidatakse lisaks URL-ile külastuste arvu ning esimese ja viimase külastuse kuupäeva.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Klõps nupule <guibutton
+>Puhasta ajalugu</guibutton
+> kustutab kogu ajaloo. </para>
+</article>

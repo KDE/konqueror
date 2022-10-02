@@ -1,0 +1,1541 @@
+<chapter id="filemanager">
+<chapterinfo>
+<authorgroup>
+<author
+><personname
+><firstname
+>Памела</firstname
+> <surname
+>Робертс</surname
+></personname
+></author>
+<othercredit role="translator"
+><firstname
+>Драган</firstname
+><surname
+>Пантелић</surname
+><affiliation
+><address
+><email
+>falcon-10@gmx.de</email
+></address
+></affiliation
+><contrib
+>превод</contrib
+></othercredit
+> 
+</authorgroup
+> 
+
+<date
+>7. 2. 2012.</date>
+<releaseinfo
+>КДЕ 4.9</releaseinfo>
+</chapterinfo>
+
+<title
+><application
+>К‑освајач</application
+> менаџер фајлова</title>
+
+<sect1 id="dirfolders">
+<title
+>Фасцикле и путање</title>
+<para
+>Под Униксом и Линуксом, све фасцикле су уређене у просту хијерархију. Почињући од фасцикле на врху (знане и као <emphasis
+>корена фасцикла</emphasis
+>), структура се спушта и грана у потфасцикле и фајлове. То значи да из било које фасцикле можете доспети у било коју другу тако што идете „нагоре“ док не достигнете заједничку тачку, затим „надоле“ кроз одговарајуће потфасцикле, док не стигнете до циљне.</para>
+
+<para
+>Положај било којег фајла или фасцикле у структури (знаној и као <emphasis
+>стабло фасцикли</emphasis
+>) може се описати „путањом“, уређеним списком фасцикли кроз које се треба спустити до циљне фасцикле или фајла. На пример, <filename class="directory"
+>/home/pera</filename
+> је потфасцикла <filename class="directory"
+>pera</filename
+> у потфасцикли <filename class="directory"
+>home</filename
+> у фасцикли највишег нивоа, а <filename
+>/home/pera/razno.txt</filename
+> је фајл <filename
+>razno.txt </filename
+> у тој потфасцикли. Водеће <filename class="directory"
+>/</filename
+> у овим путањама представља фасциклу на врху.</para>
+
+<para
+>Свака фасцикла доступна на систему — укључујући оне на другим партицијама хард‑диска, УСБ уређају или ЦД‑РОМ‑у — појавиће се у стаблу испод /. Њихове тачне путање зависиће од подешености система (погледајте и секцију <link linkend="removable-devices"
+>уклоњивим уређајима</link
+>). </para>
+<para
+>Сваки корисник на уникс систему има своју „домаћу“ фасциклу, за држање личних фајлова и поставки. На пример, <filename class="directory"
+>/home/pera</filename
+> и <filename class="directory"
+>/home/vanja</filename
+>. Симбол <filename
+>~</filename
+> често се користи да представи корисникову домаћу фасциклу, тако да <filename
+>~/pismo.txt</filename
+> упућује на фајл <filename
+>pismo.txt</filename
+> вашој домаћој фасцикли.</para>
+<para
+>Уместо ‘фасцикла’ често се користи и израз ‘директоријум’.</para>
+</sect1>
+
+<sect1 id="viewmode">
+<title
+>Режими приказа</title>
+<para
+>У режиму менаџера фајлова, <application
+>К‑освајач</application
+> набраја фајлове и потфасцикле које су садржане унутар дате фасцикле, и може да вас снабде неким подацима о њима. Путања текуће фасцикле приказана је у траци локације. Начин на који <application
+>К‑освајач</application
+> приказује фајлове и фасцикле углавном зависи од режима приказа, који можете одабрати из подменија <menuchoice
+><guimenu
+>Приказ</guimenu
+><guisubmenu
+>Начин приказа</guisubmenu
+></menuchoice
+>. Доступни режими приказа представљени су у наредном. </para>
+
+<note
+><para
+>За режим менаџера фајлова <application
+>К‑освајач</application
+> користи угнежђену компоненту <application
+>Делфина</application
+>.</para
+></note>
+<!-- begin copy from dolphin docbook synced for 4.10--> 
+<itemizedlist>
+
+<listitem
+><para
+>У приказу икона, који је подразумеван, фајлови су представљени иконом која указује на тип фајла, а потфасцикле иконом фасцикле. Њихова имена дата су подно иконе. </para
+></listitem>
+
+<listitem
+><para
+>Сажети приказ представља садржај фасцикле као иконе са именом са стране, груписане у колоне налик на сажети приказ у <acronym
+>КДЕ</acronym
+> фајл дијалогу. </para
+></listitem>
+
+<listitem
+><para
+>У приказу детаља садржај фасцикле даје се као списак ставки, где је за сваку наведено име, величина и датум последње измене. Још неке колоне могу се укључити десним кликом на заглавље колона. </para>
+<para
+>У контекстном менију реда заглавља можете изабрати између посебне и аутоматске ширине колона. Аутоматска ширина значи да ће свака колона бити широка колико најдужа ставка у њој, осим колона <guilabel
+>име</guilabel
+> код које се наставак замењује са „...“. </para>
+<para
+>Редослед колона може се изменити превлачењем заглавља колона. </para>
+<para
+>Приказ са детаљима ставља текућу фасциклу у стаблолики режим (ако је укључено <guilabel
+>Прошириве фасцикле</guilabel
+>). Свака потфасцикла се може „раширити“ или „сажети“ кликом на икону <guiicon
+>&gt;</guiicon
+> или <guiicon
+>v</guiicon
+> крај ње. </para>
+</listitem>
+</itemizedlist>
+
+<screenshot>
+<screeninfo
+>Груписани приказ</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="grouping-view.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Груписани приказ</phrase>
+</textobject>
+<caption
+><para
+>Сви режими приказа подржавају груписање по типу ређања изабраном под <menuchoice
+><guimenu
+>Приказ</guimenu
+><guisubmenu
+>Поређај по</guisubmenu
+></menuchoice
+>.</para
+></caption>
+</mediaobject>
+</screenshot>
+<!-- end copy from dolphin docbook --> 
+
+<sect2 id="filetipinfo">
+<title
+>Облачић фајла</title>
+<para
+>Ако попуните кућицу <guilabel
+>Облачићи</guilabel
+> на страници <menuchoice
+> <guimenu
+>Управљање фајловима</guimenu
+><guimenuitem
+>Опште</guimenuitem
+></menuchoice
+> <application
+>К‑освајачевог</application
+> дијалога за подешавање, добијаћете мали, искачући информациони прозор док лебдите показивачем миша изнад имена или иконе фајла или фасцикле. </para>
+</sect2>
+
+<sect2 id="previews">
+<title
+>Прегледи фајлова</title>
+<para
+>Под језичком <guilabel
+>Прегледи</guilabel
+> на страници поставки <menuchoice
+><guimenu
+>Управљање фајловима</guimenu
+> <guimenuitem
+>Опште</guimenuitem
+></menuchoice
+> можете укључити прегледе за одређене типове фајлова.</para>
+<para
+>Ово генерално значи да ће икона фајла бити замењена малом сликом која приказује његов садржај.</para>
+<para
+>Пошто <application
+>К‑освајач</application
+> за стварање прегледа мора да прочита много других података поред самог имена фајла, прегледи можда нису погодни кад се приказују фајлови са удаљеног система. Ако читање допунских података са удаљених система одузима превише времена, при дну језичка <guilabel
+>Прегледи</guilabel
+> можете задати величину фајла изнад које ће преглед бити искључен.</para>
+</sect2>
+</sect1>
+
+<!-- begin copy from dolphin docbook synced for 4.10--> 
+<sect1 id="view-properties">
+<title
+>Својства приказа фасцикле</title>
+
+<para
+>Следеће поставке одређују како се садржај фасцикле приказује у <application
+>К‑освајачу</application
+>, и подразумевано се складиште за сваку фасциклу засебно:<itemizedlist
+> <listitem
+><para
+>Режим приказа (иконе, сажето, детаљи).</para
+></listitem
+><listitem
+><para
+>Ређање ставки, које чини атрибут по коме се ређа (име, величина...) и смер ређања (растуће, опадајуће).</para
+></listitem
+><listitem
+><para
+>Међусобно ређање фајлова и фасцикли — да ли све фасцикле сместити пре свих фајлова?</para
+></listitem
+><listitem
+><para
+>Прегледи — да ли их користити место икона (на основу поставки <link linkend="previews"
+>под језичком <guilabel
+>Прегледи</guilabel
+> у општим поставкама <application
+>К‑освајача</application
+></link
+>)?</para
+></listitem
+><listitem
+><para
+>Да ли су ставке груписане у приказима?</para
+></listitem
+><listitem
+><para
+>Да ли приказивати скривене фајлове?</para
+></listitem
+><listitem
+><para
+>Које још податке (поред имена) треба приказати у приказима икона и детаља?</para
+></listitem
+></itemizedlist
+>Својства приказа се могу подесити кроз мени <menuchoice
+><guimenu
+>Приказ</guimenu
+></menuchoice
+>, а нека (попут режима приказа) и преко дугмади на траци алатки. </para>
+
+<sect2 id="view-properties-dialog">
+<title
+>Дијалог својстава приказа</title>
+
+<para>
+
+<screenshot>
+<screeninfo
+>Снимак екрана са дијалогом својстава приказа.</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="viewproperties-dialog.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Дијалог својстава приказа.</phrase>
+</textobject>
+<caption
+><para
+>Дијалог својстава приказа.</para
+></caption>
+</mediaobject>
+</screenshot>
+Дијалог <guilabel
+>Својства приказа</guilabel
+> може послужити за брзо мењање неколико својстава одједном. Измене могу важити за текућу фасциклу, за текућу фасциклу и све потфасцикле, или чак за све фасцикле, у зависности од избора начињених у одељку <guilabel
+>Примени својства приказа на</guilabel
+>. </para>
+
+<para
+>Ако је укључено <guilabel
+>Ова својства приказа су подразумевана</guilabel
+>, изабрана својства приказа биће коришћена за све фасцикле које још увек немају сопствена прилагођена својства. </para>
+
+</sect2>
+
+</sect1>
+<!-- end copy from dolphin docbook -->
+
+<sect1 id="navigation">
+<title
+>Навигација</title>
+<para
+>Да бисте <application
+>К‑освајачем</application
+> дошли до неког фајла, прво треба да се прошетате кроз стабло фасцикли до фасцикле која га садржи.</para>
+
+<para
+>За кретање између фасцикли, просто идите нагоре и надоле, уз и низ стабло:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Да сиђете у потфасциклу, кликните <mousebutton
+>левим</mousebutton
+> на њено име или икону. Или, ако сте је већ „изабрали“ (в. испод), само притисните <keycap
+>Enter</keycap
+>.</para
+></listitem
+> 
+<listitem
+><para
+>За кретање уз стабло фасцикли, можете кликнути на дугме <guiicon
+>Горе</guiicon
+> на траци алатки, притиснути <keycombo action="simul"
+><keycap
+>Alt</keycap
+><keysym
+>стрелицу нагоре</keysym
+></keycombo
+>, или употребити ставку менија <menuchoice
+><guimenu
+>Кретање</guimenu
+><guimenuitem
+>Горе</guimenuitem
+></menuchoice
+>.</para
+></listitem>
+</itemizedlist>
+
+<para
+>Да „изаберете“ фајл или фасциклу у приказаној фасцикли, а да је притом не отворите, користите тастере стрелица <keysym
+>горе</keysym
+> и <keysym
+>доле</keysym
+> за кретање кроз ставке. Изабрана ставка биће истакнута, а неки подаци о њој приказани у траци стања.</para>
+
+<para
+>Постављање <link linkend="viewmode"
+>режима приказа</link
+> на приказ детаља може вам помоћи да уочите фасцикле у стаблу испод тренутне; у овом режиму свака фасцикла приказана је квадратићем слева. Ако квадратић садржи знак &lt;, <mousebutton
+>леви</mousebutton
+> клик на квадратић (не на име или икону фасцикле) приказаће подстабло фајлова и потфасцикли садржаних у тој фасцикли. Квадратић ће се затим променити у знак v. Кликните <mousebutton
+>левим</mousebutton
+> на њега да сажмете подстабло. Пошто сте нашли тражену фасциклу, кликните <mousebutton
+>левим</mousebutton
+> на њено име или икону да је отворите.</para>
+
+<para
+><link linkend="sidebar"
+>Бочна трака</link
+> такође вам може помоћи у кретању кроз фајл систем.</para>
+
+<para
+>На било коју фасциклу директно можете отићи уписом њене путање у траку локације, или у поље дијалога позваног ставком менија <menuchoice
+><guimenu
+>Фајл</guimenu
+><guimenuitem
+>Отвори локацију</guimenuitem
+></menuchoice
+> или пречицом <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>O</keycap
+></keycombo
+>. Док куцате, може вам помоћи <application
+>К‑освајачева</application
+> могућност <link linkend="path-complete"
+>допуне текста</link
+>. Не заборавите да имена фајлова и фасцикли под Униксом разликују величину слова.</para>
+
+<para
+>Пошто сте отишли на нову фасциклу, на претходну се можете вратити дугметом <guiicon
+>Назад</guiicon
+> на траци алатки, ставком менија <menuchoice
+><guimenu
+>Кретање</guimenu
+> <guimenuitem
+>Назад</guimenuitem
+></menuchoice
+>, или пречицом <keycombo action="simul"
+><keycap
+>Alt</keycap
+><keysym
+>стрелица лево</keysym
+></keycombo
+>. Кад се једном вратите уназад, можете опет напред дугметом <guiicon
+>Напред</guiicon
+> на траци алатки, ставком менија <menuchoice
+><guimenu
+>Кретање</guimenu
+> <guimenuitem
+>Напред</guimenuitem
+></menuchoice
+>, или пречицом <keycombo action="simul"
+><keycap
+>Alt</keycap
+><keysym
+>стрелица десно</keysym
+></keycombo
+>.</para>
+
+<para
+>Алтернативно, можете отићи у родитељску фасциклу кликом на <guiicon
+>Горе</guiicon
+> на траци алатки, ставком менија <menuchoice
+><guimenu
+>Кретање</guimenu
+> <guimenuitem
+>Горе</guimenuitem
+></menuchoice
+>, или пречицом <keycombo action="simul"
+><keycap
+>Alt</keycap
+><keysym
+>стрелица горе</keysym
+></keycombo
+>.</para>
+
+<tip
+><para
+>Кликом на квачку десно од дугмета за нагоре, назад или напред на траци алатки, или избором ових ставки из менија <guimenu
+>Кретање</guimenu
+>, добија се подмени недавно посећених локација.</para>
+</tip>
+<!-- 4.5 -->
+<sect2 id="file-find">
+<title
+>Налажење фајлова и фасцикли</title>
+
+<para
+>Ако не знате или не можете да се сетите где се на систему налази неки фајл или фасцикла, кликните на дугме <guiicon
+>Нађи фајл...</guiicon
+> на траци алатки, или позовите ставку менија <menuchoice
+><guimenu
+>Алатке</guimenu
+><guimenuitem
+>Нађи фајл...</guimenuitem
+></menuchoice
+>. Овим покрећете програм за тражење фајлова <application
+>К‑налазач</application
+>. Помоћ за употребу потражите у <ulink url="help:/kfind/index.html"
+>приручнику <application
+>К‑налазача</application
+></ulink
+>. </para>
+
+<note
+><para
+>Ако име фајла или фасцикле почиње тачком, онда је то „скривени“ фајл или фасцикла, и <application
+>К‑освајач</application
+> их нормално неће приказивати. Да бисте видели и скривене фајлове или фасцикле, употребите ставку менија <menuchoice
+><guimenu
+>Приказ</guimenu
+><guimenuitem
+>Скривени фајлови</guimenuitem
+></menuchoice
+>.</para>
+
+<para
+>Други разлог што <application
+>К‑освајач</application
+> можда не приказује фајл или фасциклу коју тражите, јесте што вам је прикључак <link linkend="konq-plugin"
+>филтера приказа</link
+> подешен да приказује само извесне типове фајлова.</para>
+</note>
+
+</sect2>
+
+<sect2 id="removable-devices">
+<title
+>Уклоњиви уређаји</title>
+
+<para
+>Сваки уклоњиви уређај (УСБ штапић, флопи и ЦД‑РОМ јединица, друге партиције хард‑диска на систему) обично ће се појавити под једном од фасцикла <filename class="directory"
+>/</filename
+>, <filename class="directory"
+>/media</filename
+>, <filename class="directory"
+>/mnt</filename
+>, <filename class="directory"
+>/auto</filename
+>, отприлике са оваквом путањом: <filename class="directory"
+>/mnt/floppy</filename
+> или <filename class="directory"
+>/cdrom</filename
+>. Детаљи ће зависити од подешености система.</para>
+
+<para
+>Под Униксом, уклоњиви уређај се мора „монтирати“ (наредба <command
+>mount</command
+>) пошто га убаците у јединицу, исто као и друга партиција хард‑диска кад желите да јој приступите. Такође, уклоњиви уређај морате „демонтирати“ пре него што га физички уклоните, како би систем регистровао да више није доступан.</para>
+
+<para
+>Како ћете ово урадити зависи од поставе система:</para>
+
+<itemizedlist>
+
+<listitem
+><para
+>Преко извештавача о уређајима.</para>
+<para
+>У <acronym
+>КДЕ</acronym
+> сесији, када убаците уклоњиви уређај искочиће ће прозор <ulink url="help:/plasma-desktop/index.html#device-notifier"
+>извештавача о уређајима</ulink
+>. У њему можете изабрати одговарајући програм за дати медијум, или само монтирати уређај.</para>
+</listitem>
+
+<listitem
+><para
+>Можда вам на површи стоје иконе неких уклоњивих уређаја, у ком случају кликнете <mousebutton
+>левим</mousebutton
+> на икону да монтирате медијум. Тиме ћете такође дозвати прозор <application
+>К‑освајача</application
+> са приказом садржаја тог медијума. Да медијум демонтирате, кликните <mousebutton
+>десним</mousebutton
+> на икону и одаберите ставку <guimenuitem
+>Демонтирај</guimenuitem
+>. Ако желите сами да припремите једну овакву икону, посетите секцију <link linkend="making"
+>„Направи“</link
+> овог приручника.</para
+></listitem>
+
+<listitem
+><para
+>Монтирати можете и на традиционалан начин, уношењем у терминалском прозору:</para>
+<para
+><userinput
+><command
+>mount /mnt/floppy</command
+></userinput
+></para>
+<para
+>да монтирате, на пример, флопи јединицу, и</para>
+<para
+><userinput
+><command
+>umount /mnt/floppy</command
+></userinput
+></para>
+<para
+>да је демонтирате (пазите: <command
+>umount</command
+>, не <command
+>unmount</command
+>). </para>
+<note
+><para
+>Пре него да отварате терминал да бисте извршили <command
+>mount</command
+> или <command
+>umount</command
+>, можда ће вам згодније доћи <application
+>К‑освајачева</application
+> могућност извршавања наредби шкољке, <menuchoice
+><guimenu
+>Алатке</guimenu
+><guimenuitem
+>Извршавање наредбе шкољке</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>E</keycap
+></keycombo
+>). </para
+></note>
+
+</listitem>
+
+</itemizedlist>
+</sect2>
+
+</sect1>
+<!-- 4.5-->
+<sect1 id="deleting">
+<title
+>Брисање фајлова и фасцикли</title>
+
+<para
+><application
+>К‑освајач</application
+> пружа два начина да се отарасите нежељеног фајла или фасцикле:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Можете ставку преместити у фасциклу <filename
+>Trash</filename
+> (смеће), што је сигурнији метод, пошто је можете повратити ако схватите да сте направили грешку.</para
+></listitem
+> 
+
+<listitem
+><para
+>Можете ставку просто обрисати, што уклања унос из фасцикле и враћа систему простор на диску њоме заузет као слободан, исто као наредба <command
+>rm</command
+>.</para>
+<para
+>Ако желите да користите ову могућност попуните кућицу <guilabel
+>Брисање у менијима заобилази смеће</guilabel
+> на страници поставки <guilabel
+>Управљање фајловима</guilabel
+>.</para
+></listitem>
+</itemizedlist>
+
+<para
+>Најједноставнији начин да уклоните фајл или фасциклу јесте да ставите показивач миша изнад имена или иконе и кликнете <mousebutton
+>десним</mousebutton
+>, чиме ћете дозвати мени са ставкама <guimenuitem
+>Премести у смеће</guimenuitem
+> и <guimenuitem
+>Обриши</guimenuitem
+>.</para>
+
+<para
+>Или, ако сте „изабрали“ унос, мени <guimenu
+>Уређивање</guimenu
+> пружа вам исте те ставке (<guimenuitem
+>Премести у смеће</guimenuitem
+> и <guimenuitem
+>Обриши</guimenuitem
+>).</para>
+
+<para
+>Тастер <keycap
+>Delete</keycap
+> премешта одабране ставке у смеће.</para>
+
+<para
+><keycombo action="simul"
+><keycap
+>Shift</keycap
+><keycap
+>Delete</keycap
+></keycombo
+> непосредно и неопозиво брише изабране ставке.</para>
+
+<note
+><para
+>Ако немате потребне дозволе, фајл или фасциклу нећете моћи да преместите или обришете.</para
+></note>
+
+</sect1>
+<!-- 4.5-->
+<sect1 id="moving">
+<title
+>Премештање и копирање</title>
+
+<para
+>За копирање фајла или потфасцикле између фасцикли, можете:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Поставити показивач миша изнад имена или иконе и кликнути <mousebutton
+>десним</mousebutton
+>, што ће дозвати мени са ставком <guimenuitem
+>Копирај</guimenuitem
+>. Изаберите је.</para>
+
+<para
+>Или, ако је фајл или фасцикла „изабрана“, можете кликнути на дугме <guiicon
+>Копирај</guiicon
+> на траци алатки, изабрати ставку менија <menuchoice
+><guimenu
+>Уређивање</guimenu
+> <guimenuitem
+>Копирај</guimenuitem
+></menuchoice
+>, или притиснути пречицу <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>C</keycap
+></keycombo
+>. Можете изабрати и <link linkend="selection"
+>више</link
+> фајлова и фасцикли, да бисте их истовремено копирали или преместили.</para
+></listitem>
+
+<listitem
+><para
+>Отидите на фасциклу у коју хоћете да копирате ставку, затим је налепите дугметом <guiicon
+>Налепи</guiicon
+> на траци алатки, ставком менија <menuchoice
+><guimenu
+>Уређивање</guimenu
+> <guimenuitem
+>Налепи</guimenuitem
+></menuchoice
+>, пречицом <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>V</keycap
+></keycombo
+>, или померањем показивача миша на празан простор у прозору и притиском <mousebutton
+>десног</mousebutton
+> дугмета миша, када ћете добити мени са ставком <guimenuitem
+>Налепи</guimenuitem
+>. </para
+></listitem>
+</itemizedlist>
+
+<para
+>Премештање фајла или потфасцикле између фасцикли може се обавити на исти начин као копирање, осим што бирате <guimenuitem
+>Исеци</guimenuitem
+> или <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>X</keycap
+></keycombo
+> уместо <guimenuitem
+>Копирај</guimenuitem
+>. Ставка коју сте исекли биће уклоњена из првобитне фасцикле чим извршите <guimenuitem
+>Налепи</guimenuitem
+> у новој.</para>
+
+<para
+>Да копирате и премештате изабране ставке међу фасциклама такође можете бирањем <guimenuitem
+>Копирај у</guimenuitem
+> или <guimenuitem
+>Премести у</guimenuitem
+> из контекстног менија на <mousebutton
+>десни</mousebutton
+> клик на име фајла или фасцикле у прозору менаџера фајлова.</para>
+<para
+>Ову могућност активирате избором <guilabel
+>Наредбе копирања и премештања</guilabel
+> на страници поставки <menuchoice
+><guimenu
+>Управљање фајловима</guimenu
+> <guimenuitem
+>Сервиси</guimenuitem
+></menuchoice
+>.</para>
+<note
+><para
+>Можда нећете моћи да копирате или преместите фајл или фасциклу ако немате потребне дозволе. </para
+></note>
+<!-- 4.5-->
+<sect2 id="dnd">
+<title
+>Коришћење превлачења</title>
+
+<para
+><application
+>К‑освајач</application
+> такође подржава копирање и премештање фајлова и фасцикли превлачењем.</para>
+
+<para
+>Превлачењем се можете послужити ако су отворена два примерка <application
+>К‑освајача</application
+>, један с фасциклом из које хоћете да копирате или преместите, а са циљном фасциклом. Ставите показивач миша изнад жељене ставке, а затим, држећи притиснуто <mousebutton
+>лево</mousebutton
+> дугме мише, <emphasis
+>превуците</emphasis
+> је на празан простор у циљној фасцикли. Пустите дугме и добићете мени са избором <guimenuitem
+>Копирај овде</guimenuitem
+>, <guimenuitem
+>Премести овде</guimenuitem
+> или <guimenuitem
+>Повежи овде</guimenuitem
+>. Пазите да ставку испустите над празним простором у циљној фасцикли — ако је испустите над потфасциклом, биће копирана или премештена у ту фасциклу.</para>
+
+<para
+>Такође можете подесити <application
+>К‑освајач</application
+> да приказује више од једне фасцикле унутар истог прозора, па превлачити између њих.</para>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="dragdrop.png"/></imageobject>
+<textobject>
+<phrase
+>Превлачење с подељеним приказом</phrase>
+</textobject>
+</mediaobject>
+
+<para
+>Овај снимак екрана илуструје коришћење ставке менија <menuchoice
+><guimenu
+>Прозор</guimenu
+> <guimenuitem
+>Подели приказ лево/десно</guimenuitem
+></menuchoice
+>, доступне и пречицом <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>Shift</keycap
+><keycap
+>L</keycap
+></keycombo
+>, за поделу главног прозора <application
+>К‑освајача</application
+> на два приказа, који приказују садржај различитих фасцикли.</para>
+
+<para
+>Да би се могле приказати различите фасцикле по приказу, не треба да буду повезане: квадратићи здесна на дну сваког приказа треба да буду празни. </para>
+
+<para
+>„Активни“ приказ, онај чија је путања приказана у траци локације и који реагује на наредбе за кретање и из менија, означен је малим зеленим светлом у левом доњем углу. Кликните <mousebutton
+>левим</mousebutton
+> на празан простор приказа или његову траку стања да га активирате.</para>
+
+<para
+>Да уклоните активни приказ из прозора <application
+>К‑освајача</application
+>, користите пречицу <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>Shift</keycap
+><keycap
+>W</keycap
+></keycombo
+>, ставку менија <menuchoice
+><guimenu
+>Прозор</guimenu
+> <guimenuitem
+>Затвори активни приказ</guimenuitem
+></menuchoice
+>, или <mousebutton
+>десни</mousebutton
+> клик на траку стања па из менија који се појави истоимену ставку.</para>
+
+<para
+>Ако користите <application
+>К‑освајачеве</application
+> језичке, можете превлачити између њих тако што фајл превучете на етикету језичка, али га не испуштајући одмах. Одредишни језичак искочиће у први план, допуштајући вам да наставите превлачење и коначно да испустите фајл.</para>
+
+</sect2>
+<!-- 4.5-->
+<sect2 id="dups">
+<title
+>Дупла имена фајлова и фасцикли</title>
+<para
+>Ако покушате да налепите фајл или фасциклу у фасциклу која већ садржи истоимену ставку, искочиће дијалог који вас опомиње да ставка већ постоји. Тада можете учинити једно од: </para>
+<itemizedlist>
+<listitem
+><para
+>Поништите налепљивање кликом на дугме <guibutton
+>Одустани</guibutton
+>.</para
+></listitem>
+<listitem
+><para
+>Дајте ставки која се копира друго име. Ово можете уписивањем новог имена у поље уноса у истом дијалогу, или дугметом <guibutton
+>Предложи ново име</guibutton
+> рећи <application
+>К‑освајачу</application
+> да предложи име, па кликнути на <guibutton
+>Настави</guibutton
+>.</para
+></listitem>
+<listitem
+><para
+>Ако копирате више ставки, можете и кликнути на <guibutton
+>Прескочи</guibutton
+> да прескочите текућу. </para
+></listitem>
+</itemizedlist>
+<para
+>Дугме <guibutton
+>Примени на све</guibutton
+> можете употребити када копирате више ставки.</para>
+</sect2>
+</sect1>
+<!-- begin copy from dolphin docbook synced for 4.10-->
+<sect1 id="selection">
+<title
+>Бирање ставки у приказу</title>
+
+<para
+>Ставке у приказу могу се изабрати на неколико начина. Пошто се избор начини, све радње, као што су исецање, копирање, бацање у смеће или превлачење, односе се на све изабране ставке. </para>
+
+<sect2 id="selection-mouse">
+<title
+>Бирање ставки мишем</title>
+
+<itemizedlist>
+
+<listitem
+><para
+>Можете кликнути левим негде у приказу па развући правоугаоник око групе ставки пре отпуштања дугмета миша. Тако ћете изабрати све ставке унутар правоугаоника, а претходни избор биће поништен. Ако током овога држите притиснут тастер <keycap
+>Shift</keycap
+>, претходни избор се задржава. </para
+></listitem>
+
+<listitem
+><para
+>Ако држите притиснут тастер <keycap
+>Ctrl</keycap
+> када на ставку кликнете левим, обрће се стање изабраности те ставке. Ако је <keycap
+>Ctrl</keycap
+> притиснут при развлачењу правоугаоника око групе ставки (како је претходно објашњено), обрће се стање изабраности свих ставки у тој групи. </para
+></listitem>
+
+<listitem
+><para
+>Држањем тастера <keycap
+>Shift</keycap
+> када кликнете левим на одређену ставку изабраћете све ставке између претходне и ове на коју сте сада кликнули. </para
+></listitem>
+
+<listitem
+><para
+>Ако је укључено <guilabel
+>Обележивач избора</guilabel
+> под језичком <guilabel
+>Понашање</guilabel
+> у одељку поставки <menuchoice
+><guimenu
+>Управљање фајловима</guimenu
+> <guimenuitem
+>Опште</guimenuitem
+></menuchoice
+>, појављује се мали + или – у горњем левом углу ставке над којом лебди миш. Кликом на овај знак ставку бирате или изостављате. </para
+></listitem>
+
+</itemizedlist>
+
+</sect2>
+
+<sect2 id="selection-keyboard">
+<title
+>Бирање ставки тастатуром</title>
+
+<itemizedlist>
+
+<listitem
+><para
+>Ако притиснете тастер стрелице, <keycap
+>PageUp</keycap
+>, <keycap
+>PageDown</keycap
+>, <keycap
+>Home</keycap
+> или <keycap
+>End</keycap
+>, биће изабрана нова текућа ставка а претходни избор поништен. </para
+></listitem>
+
+<listitem
+><para
+>Ако држите тастер <keycap
+>Ctrl</keycap
+> док притискате један од претходно поменутих, избор остаје неизмењен. </para
+></listitem>
+
+<listitem
+><para
+>Ако пак држите тастер <keycap
+>Shift</keycap
+> док притискате неки од претходних, биће изабране све ставке између претходне и нове текуће ставке. </para
+></listitem>
+
+<listitem
+><para
+>Притиском <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>Space</keycap
+></keycombo
+> обрће се стање изабраности текуће ставке. </para
+></listitem>
+
+<listitem
+><para
+><keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>A</keycap
+></keycombo
+> изабира све ставке у приказу. </para
+></listitem>
+
+<listitem
+><para
+><keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>Shift</keycap
+><keycap
+>A</keycap
+></keycombo
+> обрће стање изабраности свих ставки у приказу. </para
+></listitem>
+
+<listitem
+><para
+>Почните да куцате првих неколико слова имена фајла или фасцикле, и поклопљена ставка ће бити изабрана. Избор чистите притиском на <keycap
+>Esc</keycap
+> да откажете претрагу тастатуром, или сачекавши прековреме од 1 секунде. </para
+></listitem>
+</itemizedlist>
+
+</sect2>
+<!-- end copy from dolphin docbook-->
+
+<!-- selection-menu applies to dolphin as well copy over?-->
+<sect2 id="selection-menu">
+<title
+>Бирање ставки кроз мени</title>
+
+<para
+>Понекад хоћете да обришете, копирате или преместите неколико у извесном смислу сличних фајлова. На пример, можда желите да све ПНГ слике преместите из једне фасцикле у другу. <application
+>К‑освајач</application
+> ово олакшава допуштајући вам да изаберете више фајлова на основу сличности у њиховим именима.</para>
+
+<para
+>Употребите ставку менија <menuchoice
+><guimenu
+>Уређивање</guimenu
+><guisubmenu
+>Избор</guisubmenu
+> <guimenuitem
+>Изабери поклапањем...</guimenuitem
+></menuchoice
+> или пречицу <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>S</keycap
+></keycombo
+>. Добићете мали дијалог у који можете унети образац имена фајла, са џокерским знаковима <keycap
+>*</keycap
+> (поклапа било који број знакова) и <keycap
+>?</keycap
+> (поклапа један знак). Кликните на <guibutton
+>У реду</guibutton
+> и <application
+>К‑освајач</application
+> ће истаћи све фајлове чија се имена поклапају. На пример:</para>
+      
+<itemizedlist>
+<listitem
+><para
+><userinput
+><filename
+>zastava*.png</filename
+></userinput
+> изабраће све фајлове чија имена почињу са <literal
+>zastava</literal
+> и завршавају се са <literal role="extension"
+>.png</literal
+>.</para
+></listitem>
+<listitem
+><para
+><userinput
+><filename
+>poruka?.txt</filename
+></userinput
+> изабраће <filename
+>poruka1.txt</filename
+> и <filename
+>poruka9.txt</filename
+>, али неће <filename
+>poruka99.txt</filename
+>.</para
+></listitem>
+</itemizedlist>
+
+<para
+>Пошто сте изабрали фајлове, можете сузити избор ставком менија <menuchoice
+><guimenu
+>Уређивање</guimenu
+><guisubmenu
+>Избор</guisubmenu
+> <guimenuitem
+>Поништи избор поклапањем...</guimenuitem
+></menuchoice
+> тако што задате које од фајлова треба уклонити из избора.</para>
+
+<para
+>Да поништите избор, употребите ставку менија <menuchoice
+><guimenu
+>Уређивање</guimenu
+><guisubmenu
+>Избор</guisubmenu
+> <guimenuitem
+>Поништи сав избор</guimenuitem
+></menuchoice
+> или просто кликните <mousebutton
+>левим</mousebutton
+> на празан простор у приказу.</para>
+
+<para
+>Можете и „обрнути“ избор — то јест, из избора уклонити све тренутно изабране фајлове, а додати све који нису били изабрани. Ово чините ставком менија <menuchoice
+><guimenu
+>Уређивање</guimenu
+><guisubmenu
+>Избор</guisubmenu
+><guimenuitem
+>Изврни избор</guimenuitem
+></menuchoice
+> или пречицом <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>Shift</keycap
+><keycap
+>A</keycap
+></keycombo
+>.</para>
+</sect2>
+
+</sect1>
+
+<!-- 4.5 -->
+<sect1 id="making">
+<title
+>Направи ново</title>
+
+<para
+>Кад је <application
+>К‑освајач</application
+> у режиму менаџера фајлова, одабир <guisubmenu
+>Направи</guisubmenu
+> из менија <guimenu
+>Уређивање</guimenu
+>, или из контекстног менија који добијате <mousebutton
+>десним</mousebutton
+> кликом на празан простор у приказу фасцикле, даје вам подмени којим у текућој фасцикли можете створити једно од следећег:</para>
+
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Фасцикла...</guimenuitem
+></term>
+<listitem
+><para
+>Лак начин стварања нових фасцикли.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Текстуални фајл...</guimenuitem
+></term>
+<listitem
+><para
+>За стварање празног обичног текстуалног фајла. Добићете дијалог за унос имена фајла.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>ХТМЛ фајл...</guimenuitem
+></term>
+<listitem
+><para
+>Ствара основу ХТМЛ изворног фајла. Име фајла које задате у дијалогу најбоље је да има наставак <literal role="extension"
+>.html </literal
+>, да касније не би дошло до забуне.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>||<replaceable
+>Документ одређеног типа</replaceable
+>...</guimenuitem
+></term>
+<listitem
+><para
+>Према томе који су програми инсталирани и придружењима фајловима, приказано је више ставки менија за стварање оквирних докумената разних типова.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Веза до локације (УРЛ)...</guimenuitem
+></term>
+<listitem
+><para
+>Направите икону за отварање <application
+>К‑освајача</application
+> над задатом фасциклом или веб страницом. Као и код <guimenuitem
+>Веза до програма...</guimenuitem
+>, да би се икона појавила на површи направите је у фасцикли <filename
+>~/Desktop</filename
+>, или кроз подмени <guisubmenu
+>Направи</guisubmenu
+> на десни клик на празан простор површи.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Основна веза до фајла или фасцикле...</guimenuitem
+></term>
+<listitem
+><para
+>Ствара симболичку везу ка локалном фајлу или фасцикли.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Веза до програма...</guimenuitem
+></term>
+<listitem
+><para
+>Опција врло корисна када желите да направите икону за покретање одређеног програма. Отвара дијалог са неколико страница под језичцима. На првој, <guilabel
+>Опште</guilabel
+>, бирате икону и текст који ће ићи са њом. Друга страница, <guilabel
+>Дозволе</guilabel
+>, омогућава да одредите ко све може да користи или мења икону. На страници <guilabel
+>Програм</guilabel
+> уносите наредбу која ће покренути програм, на пример, <userinput
+>kwrite</userinput
+> да покренете уређивач текста <application
+>К‑писање</application
+>. <userinput
+>kwrite /home/pera/obaveze.txt</userinput
+> отворило би фајл <filename
+>/home/pera/obaveze.txt</filename
+> у <application
+>К‑писању</application
+>. Напредне поставке, као што су типови фајлова које програм може да отвара, такође су расположиве на овој страници.</para>
+
+<para
+>Да би се икона појавила на површи, направите везу у фасцикли <filename class="directory"
+>~/Desktop</filename
+> (може се и другачије звати, у зависности од тога како је <acronym
+>КДЕ</acronym
+> инсталиран и подешен), или позовите подмени <guisubmenu
+>Направи</guisubmenu
+> <mousebutton
+>десним</mousebutton
+> кликом на празан простор површи, уместо унутар <application
+>К‑освајачевог</application
+> прозора.</para>
+
+<para
+>Ако имате много специјализованих веза ка програмима, а не желите да закрчите површ, можете их направити у <emphasis
+>фасцикли програма</emphasis
+>. У <application
+>К‑освајачу</application
+>, изаберите <menuchoice
+><guimenu
+>Кретање</guimenu
+> <guimenuitem
+>Програми</guimenuitem
+></menuchoice
+>, затим направите једну икону на површи која ће отварати фасциклу програма, што је обично <filename class="directory"
+>~/.local/share/applications</filename
+>.</para>
+<para
+>Да поставите везу ка програму на панел, прво је направите у фасцикли програма, а затим превуците икону на празан простор панела.</para>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guisubmenu
+>везу ка уређају</guisubmenu
+></term>
+<listitem
+><para
+>Ставкама у овом подменију можете правити иконе за монтирање уређаја и отварање <application
+>К‑освајача</application
+> са приказом њиховог садржаја. За демонтирање уређаја, пошто сте обавили шта сте желели, кликните <mousebutton
+>десним</mousebutton
+> на икону и одаберите <guimenuitem
+>Демонтирај</guimenuitem
+>. Међутим, у већини случајева желећете да оваква икона стоји на површи. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+<!-- 4.5 -->
+<sect1 id="newname">
+<title
+>Мењање имена и дозвола</title>
+
+<para
+>Два најлакша начина за измену имена фајла или фасцикле јесу или да кликнете <mousebutton
+>десним</mousebutton
+> на њу и одаберете <guimenuitem
+>Преименуј</guimenuitem
+>, или да је изаберете и притиснете тастер <keycap
+>F2</keycap
+>.</para>
+
+<para
+>Да измените име или дозволе фајла или фасцикле, кликните <mousebutton
+>десним</mousebutton
+> на име или икону, па изаберите ставку <guimenuitem
+>Својства</guimenuitem
+>; или, ако сте изабрали фајл или фасциклу, можете употребити ставку менија <menuchoice
+><guimenu
+>Уређивање</guimenu
+> <guimenuitem
+>Својства</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+><keycap
+>Alt</keycap
+><keycap
+>Return</keycap
+></keycombo
+>).</para>
+
+<para
+>Ово ће отворити дијалог својстава са неколико страница под језичцима:</para>
+
+<itemizedlist>
+<listitem
+><para
+><guilabel
+>Опште</guilabel
+> даје неке опште податке о ставци и допушта вам измену њеног имена, и, ако се ради о фасцикли, придружене иконе.</para
+></listitem>
+<listitem
+><para
+><guilabel
+>Дозволе</guilabel
+> приказује власништво ставке и дозволе приступа, које можете ту и изменити. </para
+></listitem>
+</itemizedlist>
+<!-- 4.5 -->
+<sect2 id="copyrename">
+<title
+>Копирање и преименовање</title>
+<para
+>Ако желите да направите копију постојећег фајла под другим именом (можда као резерву) у истој фасцикли као изворни фајл, копирајте га и налепите као и обично, и искочиће дијалог који се жали да фајл већ постоји. Само упишите ново име у дијалога и притисните дугме <guibutton
+>Настави</guibutton
+> (или, ако вас мрзи, дугме <guibutton
+>Предложи ново име</guibutton
+> саставиће ново име место вас).</para>
+</sect2>
+
+<!--sect2 id="super-user"
+> this is obsolete!
+<title
+>Super User Mode</title>
+
+<para
+>If you are running as a normal user and try to access files outside of
+your own home folder you will often be prevented from doing so and get an
+error message such as <errorname
+>Access Denied</errorname
+>. </para>
+
+<para
+>To access these files you need to be logged in as the system
+administrator, often known as the Super User or <systemitem class="username"
+>root</systemitem
+>. </para>
+
+<para
+>Rather than logging out then in again, you can launch &konqueror; from
+the
+<guimenu
+>K</guimenu
+> Menu in Super User mode by selecting
+<menuchoice
+><guisubmenu
+>System</guisubmenu
+><guimenuitem
+>File Manager - Super
+ User Mode
+</guimenuitem
+></menuchoice
+>. You will be asked for the <systemitem class="username"
+>root</systemitem>
+login password but as long as you can provide that &konqueror; will be started
+up with full access privileges to all files on your system.</para>
+
+<warning
+><para
+>Take care.  As Super User (<systemitem class="username"
+>root</systemitem
+>), you have complete control of
+your system, and a wrong command can easily do irrevocable damage.</para>
+<para
+>Also, connecting to the internet as <systemitem class="username"
+>root</systemitem
+> is an extremely bad idea, as it
+seriously increases your vulnerability to malicious hacking.</para
+></warning>
+
+</sect2-->
+</sect1>
+<!-- 4.5 -->
+<sect1 id="file-associations">
+<title
+>Подешавање придружења фајловима </title>
+
+<!-- TODO: The content should probably be here too, but this'll do for -->
+<!-- now. -->
+<para
+>С <acronym
+>КДЕ‑ом</acronym
+> стижу многи програми, који отварају разне типове фајлова. Најчешће ће подразумеване поставке радити баш како треба, али <application
+>К‑освајач</application
+> вам пружа и моћан систем за одређивање који ће програм отварати који тип фајлова. За више детаља употребите ставку менија <menuchoice
+><guimenu
+>Подешавање</guimenu
+><guimenuitem
+>Подеси К‑освајач...</guimenuitem
+></menuchoice
+>, па у дијалогу за подешавање <guilabel
+>Придружења фајловима</guilabel
+>, и кликните на дугме <guibutton
+>Помоћ</guibutton
+>.</para>
+
+</sect1>
+
+<!-- 4.5 -->
+<sect1 id="commandline">
+<title
+>У командној линији</title>
+
+<para
+>Мада је <application
+>К‑освајач</application
+> моћан и прилагодљив графички менаџер фајлова, искусан корисник Уникса повремено пожели да сиђе коренима, да ради на нивоу текстуалне командне линије.</para>
+
+<para
+>Можете, наравно, отворити примерак <application
+>Конзоле</application
+>, нпр. кроз <application
+>К‑освајачев</application
+> ставку менија <menuchoice
+><guimenu
+>Алатке</guimenu
+><guimenuitem
+>Отвори терминал</guimenuitem
+></menuchoice
+>, или притиском <keycap
+>F4</keycap
+>.</para>
+<para
+>Ако само желите да покренете програм или прикажете УРЛ, можда је лакше употребити <menuchoice
+> <guimenu
+>Алатке</guimenu
+><guimenuitem
+>Изврши наредбу шкољке...</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>E</keycap
+></keycombo
+>).</para>
+
+<para
+><menuchoice
+><guimenu
+>Алатке</guimenu
+><guimenuitem
+>Изврши наредбу шкољке...</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+><keycap
+>Ctrl</keycap
+> <keycap
+>E</keycap
+></keycombo
+>) отвара мали дијалог командне линије где можете унети наредбу шкољке, попут <userinput
+>ps -ax | grep kdeinit</userinput
+>. Имајте у виду да овде нису подржани сви терминалски контролни знакови, па наредбе попут <userinput
+>top</userinput
+> и <userinput
+>less</userinput
+> неће правилно радити. Али је зато сасвим при руци, без застоја који узрокује покретање <application
+>Конзоле</application
+>. </para>
+
+<para
+>За сложеније поступке, <application
+>К‑освајач</application
+> има још једну фину могућност: ставку менија <menuchoice
+><guimenu
+>Подешавање</guimenu
+><guimenuitem
+>Прикажи емулатор терминала</guimenuitem
+></menuchoice
+>, која отвара терминалски прозор као приказ унутар <application
+>К‑освајача</application
+>. Ако је икона везе видљива у доњем десном углу приказа, терминал ће у терминалу испратити сва кретања кроз фасцикле које начините у нормалном приказу менаџера фајлова </para>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="cmndline.png"/></imageobject>
+<textobject>
+<phrase
+>Са емулатором терминала</phrase>
+</textobject>
+</mediaobject>
+
+</sect1>
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

@@ -1,0 +1,197 @@
+<chapter id="path-complete">
+
+<chapterinfo>
+<authorgroup>
+<author
+><personname
+><firstname
+>Памела</firstname
+> <surname
+>Робертс</surname
+></personname
+></author>
+<othercredit role="translator"
+><firstname
+>Драган</firstname
+><surname
+>Пантелић</surname
+><affiliation
+><address
+><email
+>falcon-10@gmx.de</email
+></address
+></affiliation
+><contrib
+>превод</contrib
+></othercredit
+> 
+</authorgroup
+> 
+
+<date
+>26. 10. 2010.</date>
+<releaseinfo
+>КДЕ 4.5</releaseinfo>
+</chapterinfo>
+
+
+<title
+>Самодопуна текста</title
+> 
+
+<para
+>Можете подесити <application
+>К‑освајач</application
+> да помаже док уносите УРЛ у траку локације, укључивањем могућности <emphasis
+>самодопуне</emphasis
+> текста. Кликните <mousebutton
+>десним</mousebutton
+> на празан део поља за унос траке локације, па одаберите из искачућег менија <guisubmenu
+>Допуна текста</guisubmenu
+>. Биће вам понуђен избор следеће две опције:</para>
+
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>(без допуне)</guimenuitem
+></term>
+<listitem
+><para
+>Добијате оно што уписујете.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>ручно</guimenuitem
+></term>
+<!-- in 4.5 I see no diff to None -->
+<listitem
+><para
+>Кад сте уписали део путање или УРЛ‑а, притисак на <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>E</keycap
+></keycombo
+> или <keycap
+>Tab</keycap
+> допуниће унос ако је то могуће учинити недвосмислено.</para
+></listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>аутоматски</guimenuitem
+></term>
+<listitem
+><para
+>Док пишете у пољу траке локације, <application
+>К‑освајач</application
+> ће аутоматски проширити дотле написано на једну могућу целу путању или УРЛ, истичући додате знакове. Наставите с уносом ако то није оно што желите, или притисните <keycap
+>Enter</keycap
+> да прихватите понуђену допуну.</para
+></listitem>
+ </varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>падајући списак</guimenuitem
+></term>
+<listitem
+><para
+>Док куцате, појавиће се падајући списак с могућим погоцима за дотле уписано. Кад се жељена путања или УРЛ појаве на списку, кликните <mousebutton
+>левим</mousebutton
+> на ставку. Ставку можете одабрати и тастером <keysym
+>стрелице нагоре</keysym
+> или <keycap
+>Tab</keycap
+>, и <keysym
+>стрелице надоле</keysym
+> или <keycombo action="simul"
+><keycap
+>Shift</keycap
+><keycap
+>Tab</keycap
+></keycombo
+>, па онда притисните <keycap
+>Enter</keycap
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>кратко аутоматски</guimenuitem
+></term>
+<listitem
+><para
+>Попут аутоматског режима, осим што дотле уписано проширује до првог следећег знака <keycap
+>/</keycap
+> у путањи или УРЛ‑у. Притисните <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>E</keycap
+></keycombo
+> или <keycap
+>Tab</keycap
+> да прихватите предлог, а <keycap
+>Enter</keycap
+> кад је довршена цела путања или УРЛ.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>падајући списак и аутоматски</guimenuitem
+></term>
+<listitem
+><para
+>Ово је комбинација обе претходно описане опције.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>подразумевано</guimenuitem
+></term>
+<listitem
+><para
+>Ова ставка је дата на дну подменија, и омогућава вам да вратите подразумевано понашање падајућег списка.</para
+></listitem>
+</varlistentry>
+<!-- Del to end 
+substring completion F7 http://websvn.kde.org/?view=revision&revision=1096306-->
+</variablelist>
+<para
+>Најбоље је да испробате све ове режиме, да утврдите који вам најбоље лежи.</para>
+<para
+>Историјат недавно посећених УРЛ‑ова који <application
+>К‑освајач</application
+> користи за допуну текста може се прегледати и уређивати на страници <guilabel
+>Историјат</guilabel
+> <link linkend="sidebar"
+>бочне траке</link
+>.</para>
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

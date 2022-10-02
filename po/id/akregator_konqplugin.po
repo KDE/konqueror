@@ -1,0 +1,64 @@
+# Indonesian translations for akregator_konqplugin package.
+# Copyright (C) 2014 This_file_is_part_of_KDE
+# This file is distributed under the same license as the akregator_konqplugin package.
+# Andhika Padmawan <andhika.padmawan@gmail.com>, 2014.
+# Wantoyo <wantoyek@gmail.com>, 2018, 2019, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: akregator_konqplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2019-08-16 20:50+0700\n"
+"Last-Translator: Wantoyo <wantoyek@gmail.com>\n"
+"Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
+"Language: id\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: akregatorplugin.cpp:63
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Add Feed to Akregator"
+msgstr "Tambahkan Feed ke Akregator"
+
+#: konqfeedicon.cpp:127
+#, kde-format
+msgid "Add Feed to Akregator"
+msgstr "Tambahkan Feed ke Akregator"
+
+#: konqfeedicon.cpp:129
+#, kde-format
+msgid "Add Feeds to Akregator"
+msgstr "Tambahkan Feed-feed ke Akregator"
+
+#: konqfeedicon.cpp:138
+#, kde-format
+msgid "Add All Found Feeds to Akregator"
+msgstr "Tambahkan Semua Feed yang Ditemukan ke Akregator"
+
+#: konqfeedicon.cpp:162
+#, kde-format
+msgid "Subscribe to site updates (using news feed)"
+msgstr "Berabonemen ke situs terbarukan (menggunakan news feed)"
+
+#: pluginutil.cpp:36 pluginutil.cpp:46
+#, kde-format
+msgid "Imported Feeds"
+msgstr "Feed yang Diimpor"
+
+#: pluginutil.cpp:38
+#, kde-format
+msgid "Unable to contact Akregator via D-Bus"
+msgstr "Tak bisa mengontak Akregator via D-Bus"
+
+#: pluginutil.cpp:39
+#, kde-format
+msgctxt "@title:window"
+msgid "D-Bus call failed"
+msgstr "Panggilan D-Bus, gagal"
+
+#~ msgid "Akregator feed icon - DBus Call failed"
+#~ msgstr "Ikon umpan Akregator - Panggilan DBus gagal"

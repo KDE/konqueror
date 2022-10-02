@@ -1,0 +1,106 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Portuguese "INCLUDE"
+> <!-- change language only here -->
+]>
+<!-- extragear has another adblock ? -->
+<article lang="&language;" id="khtml-adblock">
+<articleinfo>
+<title
+>Filtros do AdBlocK</title>
+<authorgroup>
+<author
+>&Krishna.Tateneni; &Krishna.Tateneni.mail;</author>
+<othercredit role="translator"
+><firstname
+>José</firstname
+><surname
+>Pires</surname
+><affiliation
+><address
+><email
+>zepires@gmail.com</email
+></address
+></affiliation
+><contrib
+>Tradução</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2016-11-08</date>
+<releaseinfo
+>Aplicações 16.12</releaseinfo>
+</articleinfo>
+
+<para
+>O AdBlocK do &konqueror; pode ser configurado para substituir ou remover imagens ou molduras ('frames') das páginas Web que correspondam a uma série de filtros.</para>
+
+<para
+>A opção <guilabel
+>Activar os filtros</guilabel
+> activa ou desactiva a utilização da lista de filtros de URLs.</para>
+<para
+>Se a opção <guilabel
+>Esconder as imagens filtradas</guilabel
+> estiver activa, então as imagens bloqueadas são removidas por completo da página e o espaço ocupado por elas é reclamado de volta. Se a opção estiver desactivada, então será usada uma imagem de substituição no local das imagens filtradas.</para>
+
+<variablelist>
+<varlistentry id="khtml-adblock-manual">
+<term
+><guilabel
+>Filtro Manual</guilabel
+></term>
+<listitem>
+<para
+>A parte principal desta página é uma lista com os URL's que serão comparados em relação aos nomes das imagens e molduras, para decidir as acções de filtragem. Podem ser usados caracteres especiais (?, *), assim como expressões regulares, para os nomes dos ficheiros.</para>
+
+<para
+>Cada filtro poderá ser expresso como um texto de caracteres especiais para ficheiros (p.ex., http://www.site.com/ads/*) ou como uma expressão regular completa, rodeando o filtro com barras normais (p.ex., //(ads|dclk)\./).</para>
+
+<para
+>Todo o texto de filtragem poderá ser antecedido de <literal
+>@@</literal
+> para permitir qualquer &URL; correspondente, o que terá maior prioridade sobre qualquer filtro de bloqueio.</para>
+
+<para
+>A <guilabel
+>Importação</guilabel
+> e a <guilabel
+>Exportação</guilabel
+> irão gravar ou ler a lista de filtros actual para um ficheiro de texto normal. O ficheiro começa com um cabeçalho <userinput
+>[AdBlock]</userinput
+>, seguido de todos os filtros em linhas separadas. As linhas antecedidas de um ponto de exclamação (!) serão tratadas como comentários e poderão ser usadas para clarificar ou legendar um conjunto de filtros.</para>
+
+<para
+>Seleccione um item na lista para o alterar no campo de edição ou para o remover. Indique aqui um novo texto de filtragem e adicione-o à lista com o botão <guibutton
+>Inserir</guibutton
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry id="khtml-adblock-automatic">
+<term
+><guilabel
+>Filtro Automático</guilabel
+></term>
+<listitem>
+<para
+>Esta página mostra uma lista com os nomes e &URL;'s com itens de filtragem predefinidos do AdBlock. Para activar um item, assinale a opção ao lado do nome do filtro e ajuste a definição do <guilabel
+>Intervalo de actualização automática</guilabel
+> (por omissão, 7 dias). </para>
+</listitem>
+</varlistentry>
+  
+</variablelist>
+
+<para
+>Se os filtros do AdBlock estiverem activo, irá aparecer um ícone do lado direito da barra de estado. Carregue com o &RMB; sobre este ícone para abrir o menu de contexto com acções para mostrar todos os elementos bloqueáveis numa página Web, abrir este módulo no &systemsettings; e desactivar temporariamente o bloqueio de um servidor ou página.</para>
+
+<para
+>Se carregar com o &LMB;, irá mostrar a janela com todos os elementos bloqueáveis na página Web aberta. Nesta janela, poderá adicionar directamente filtros novos sem abrir este módulo do &systemsettings;.</para>
+
+</article>

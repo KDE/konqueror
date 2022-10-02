@@ -1,0 +1,223 @@
+<chapter id="bookmarks">
+<chapterinfo>
+<authorgroup>
+<author
+><personname
+><firstname
+>Pamela</firstname
+> <surname
+>Roberts</surname
+></personname
+></author>
+<othercredit role="translator"
+><firstname
+>Dragan</firstname
+><surname
+>Pantelić</surname
+><affiliation
+><address
+><email
+>falcon-10@gmx.de</email
+></address
+></affiliation
+><contrib
+>prevod</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>24. 9. 2010.</date>
+<releaseinfo
+>KDE 4.5</releaseinfo>
+</chapterinfo>
+
+<title
+>Korišćenje obeleživača</title>
+
+<para
+>Mada <application
+>K‑osvajačeve</application
+> obeleživače možete koristiti za pamćenje lokacija ličnih fajlova i fascikli, najkorisniji su kad pretražujete Web, za sastavljanje spiska korisnih sajtova.</para>
+
+<para
+>Meni <guimenu
+>Obeleživači</guimenu
+> otvarate <mousebutton
+>levim</mousebutton
+> klikom na naslov menija. Pošto se spisak razvije, kroz njega se možete kretati strelicama ili mišem, pa pritisnuti <keycap
+>Enter</keycap
+> ili kliknuti <mousebutton
+>levim</mousebutton
+> da posetite izabranu lokaciju.</para>
+
+<para
+>Za dodavanje nove stavke spisku, koristite <menuchoice
+><guimenu
+>Obeleživači</guimenu
+><guimenuitem
+>Dodavanje obeleživača</guimenuitem
+></menuchoice
+>, ili <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>B</keycap
+></keycombo
+>, ili kliknite <mousebutton
+>desnim</mousebutton
+> na prazan prostor na veb stranici (ili u prikazu fascikle) i iz iskačućeg menija odaberite <guimenuitem
+>Obeleži ovu lokaciju</guimenuitem
+>.</para>
+
+<para
+>Spisak obeleživača može sadržati potfascikle sa drugim obeleživačima, a njih možete napraviti pomoću <menuchoice
+><guimenu
+>Obeleživači</guimenu
+><guimenuitem
+>Nova fascikla obeleživača...</guimenuitem
+></menuchoice
+>. Za dodavanje obeleživača u potfasciklu radije nego u glavni spisak, izaberite fasciklu sa spiska, pa upotrebite stavku <guimenuitem
+>Dodavanje obeleživača</guimenuitem
+> u toj fascikli.</para>
+
+<para
+>Obeleživačima možete pristupiti i iz <link linkend="sidebar"
+>bočne trake</link
+>, ili preko trake obeleživača.</para>
+
+<para
+>Ako unesete <userinput
+>bookmarks:/</userinput
+> u traku lokacije, pojaviće se domaća stranica obeleživača sa pregledom svih obeleživača po fasciklama.</para
+> 
+
+<sect1 id="orgbmark">
+<title
+>Uređivač obeleživača</title>
+
+<para
+>Stavka <menuchoice
+><guimenu
+>Obeleživači</guimenu
+><guimenuitem
+>Uredi obeleživače</guimenuitem
+></menuchoice
+> otvara <emphasis
+>uređivač obeleživača</emphasis
+>.</para>
+<para
+>U njemu je dat stablolik prikaz obeleživača i potfascikli s obeleživačima. Kao što je uobičajeno u <acronym
+>KDE‑u</acronym
+>, potfascikle se prikazuju malom strelicom <keycap
+>&gt;</keycap
+> levo od imena fascikle; <mousebutton
+>levim</mousebutton
+> klikom na strelicu proširujete prikaz tako da obuhvati sadržaj potfascikle, pri čemu će se <keycap
+>&gt;</keycap
+> promeniti u <keycap
+>v</keycap
+>. <mousebutton
+>Levim</mousebutton
+> klikom na <keycap
+>v</keycap
+> sažimate prikaz potfascikle.</para>
+
+<para
+>Za izbor stavke sa spiska možete kliknuti <mousebutton
+>levim</mousebutton
+> na nju, ili šetati kroz spisak koristeći strelice gore i dole, strelicu desno da proširite potfasciklu, te strelicu levo da je sažmete.</para>
+
+<para
+>Stavku možete premestiti drugde na spisku uobičajenim prevlačenjem, ili isecanjem i nalepljivanjem. Redosled stavki u uređivaču obeleživača isti je kao redosled u padajućem spisku menija <guimenu
+>Obeleživači</guimenu
+>. Stavka <menuchoice
+><guimenu
+>Fascikla</guimenu
+><guimenuitem
+>Umetni razdvajač</guimenuitem
+></menuchoice
+> može se upotrebiti za umetanje razdvajačkih redova u spisku gde god poželite.</para>
+
+<para
+>Nova potfascikla može se stvoriti na izabranoj tački u spisku korišćenjem stavke <guimenuitem
+>Nova fascikla...</guimenuitem
+> u meniju <guimenu
+>Fascikla</guimenu
+>, ili iz padajućeg menija koji dobijate kad kliknete <mousebutton
+>desnim</mousebutton
+> na stavku u glavnom delu prozora, ili prečicom <keycombo action="simul"
+><keycap
+>Ctrl</keycap
+><keycap
+>N</keycap
+></keycombo
+>. </para>
+
+<para
+>Za izmenu imena obeleživača (ili fascikle), odaberite ga pa pritisnite <keycap
+>F2</keycap
+>, ili izaberite stavku <guimenuitem
+>Preimenuj</guimenuitem
+> iz menija <guimenu
+>Uređivanje</guimenu
+> ili iskačućeg menija koji dobijete pošto kliknete <mousebutton
+>desnim</mousebutton
+> na stavku. Slično možete urediti URL, pritiskom <keycap
+>F3</keycap
+> ili izborom stavke menija <guimenuitem
+>Izmeni lokaciju</guimenuitem
+>.</para>
+
+<para
+>Uređivačem obeleživača možete uvoziti obeleživače iz mnoštva drugih pregledača u <application
+>K‑osvajačev</application
+> spisak obeleživača, pritom ih stavivši u novu fasciklu ili zameniti sve trenutne obeleživače. Ovo izvodite stavkom <guisubmenu
+>Uvoz</guisubmenu
+> iz menija <guimenu
+>Fajl</guimenu
+>. Stavka <menuchoice
+><guimenu
+>Fajl</guimenu
+><guisubmenu
+>Izvoz</guisubmenu
+> </menuchoice
+> može se koristiti za izvoz <application
+>K‑osvajačevih</application
+> obeleživača u Netscapeov ili Mozillin pregledač.</para>
+
+<para
+>Za izbor potfascikle obeleživača koja će sadržati stavke za traku obeleživača, odaberite potfasciklu pa <guimenuitem
+>Postavi kao traku fascikli</guimenuitem
+> iz menija <guimenu
+>Fascikla</guimenu
+>.</para>
+
+<para
+>Dok pospremate obeleživače, ako ste zaboravili šta je data veb stranica, lako je možete otvoriti iz uređivača obeleživača <mousebutton
+>desnim</mousebutton
+> klikom na stavku i izborom <guimenuitem
+>Otvori u K‑osvajaču</guimenuitem
+> iz padajućeg menija. Ako samo želite da proverite da li je URL još uvek važeći, umesto toga odaberite <guimenuitem
+>Proveri stanje</guimenuitem
+>.</para>
+
+<note
+><para
+>Sve izmene koje načinite automatski će biti sačuvane čim zatvorite uređivač obeleživača. </para
+></note>
+</sect1
+> 
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

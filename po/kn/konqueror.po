@@ -1,0 +1,2835 @@
+# translation of konqueror.po to Kannada
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Umesh Rudrapatna <umeshrs@gmail.com>, 2007.
+# Shankar Prasad <svenkate@redhat.com>, 2008, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-22 00:44+0000\n"
+"PO-Revision-Date: 2011-07-11 12:34+0530\n"
+"Last-Translator: Shankar Prasad <svenkate@redhat.com>\n"
+"Language-Team: Kannada <en@li.org>\n"
+"Language: kn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.2\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "ಉಮೇಶ್ ರುದ್ರಪಟ್ಣ, ಶಂಕರ ಪ್ರಸಾದ್ ಎಂ ವಿ"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "umeshrs@gmail.com, svenkate@redhat.com"
+
+#: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4881
+#: src/konqmainwindow.cpp:4927
+#, kde-format
+msgid "no name"
+msgstr "ಯಾವುದೆ ಹೆಸರುಗಳಿಲ್ಲ"
+
+#: src/konqextensionmanager.cpp:50
+#, fuzzy, kde-format
+#| msgid "Configure Extensions..."
+msgctxt "@title:window"
+msgid "Configure Extensions"
+msgstr "ವಿಸ್ತರಣೆಗಳನ್ನು ಸಂರಚಿಸು..."
+
+#: src/konqextensionmanager.cpp:70
+#, kde-format
+msgid "Extensions"
+msgstr "ವಿಸ್ತರಣೆಗಳು"
+
+#: src/konqfactory.cpp:67
+#, kde-format
+msgid ""
+"There was an error loading the module %1.\n"
+"The diagnostics is:\n"
+"%2"
+msgstr ""
+"ಫಟಕ %1 ಅನ್ನು ಆರಂಭಿಸುವಾಗ ದೋಷ ಕಂಡುಬಂದಿತು.\n"
+"ಅದರ ಪರಿಹಾರ:\n"
+"%2"
+
+#: src/konqframestatusbar.cpp:108
+#, kde-format
+msgid ""
+"Checking this box on at least two views sets those views as 'linked'. Then, "
+"when you change directories in one view, the other views linked with it will "
+"automatically update to show the current directory. This is especially "
+"useful with different types of views, such as a directory tree with an icon "
+"view or detailed view, and possibly a terminal emulator window."
+msgstr ""
+"ಕನಿಷ್ಟ ಎರಡು ನೋಟಗಳಲ್ಲಿ ಈ ಚೌಕವನ್ನು ಗುರುತು ಹಾಕುವುದರಿಂದ ನೋಟಗಳನ್ನು 'ಕೊಂಡಿ ಜೋಡಿಸಲಾಗಿದೆ' "
+"ಎಂದು ಗುರುತಿಸಲ್ಪಡುತ್ತದೆ. ನಂತರ ನೀವು ಒಂದು ನೋಟದಲ್ಲಿ ಕೋಶವನ್ನು ಬದಲಾಯಿಸಿದಲ್ಲಿ, ಅದಕ್ಕೆ "
+"ಜೋಡಿಸಲಾದ ಬೇರೆ ನೋಟಗಳು ಪ್ರಸಕ್ತ ಕೋಶವನ್ನು ತೋರಿಸುವ ಸಲುವಾಗಿ ತಾವಾಗಿಯೆ ಅಪ್‌ಡೇಟ್ "
+"ಮಾಡಲ್ಪಡುತ್ತವೆ. ಇದು ವಿಶೇಷವಾಗಿ, ಚಿಹ್ನೆ ನೋಟ ಅಥವ ವಿವರವಾದ ನೋಟ, ಹಾಗು ಸಾಧ್ಯವಿದ್ದಲ್ಲಿ "
+"ಟರ್ಮಿನಲ್ ಎಮ್ಯುಲೇಟರ್ ಕಿಟಕಿಯೊಂದಿಗಿನ ಕೋಶ ವೃಕ್ಷದಂತಹ ಅನೇಕ ಬಗೆಯ ನೋಟಗಳಲ್ಲಿ ಸಹಕಾರಿಯಾಗುತ್ತದೆ."
+
+#: src/konqframestatusbar.cpp:154
+#, kde-format
+msgid "Close View"
+msgstr "ನೋಟವನ್ನು ಮುಚ್ಚು"
+
+#: src/konqframestatusbar.cpp:232
+#, kde-format
+msgid "%1/s"
+msgstr "%1 ಪ್ರತಿ ಸೆಕೆಂಡಿಗೆ"
+
+#: src/konqframestatusbar.cpp:234
+#, kde-format
+msgid "Stalled"
+msgstr "ಸ್ಥಗಿತವಾಗಿದೆ"
+
+#: src/konqguiclients.cpp:51
+#, kde-format
+msgid "Preview &in %1"
+msgstr "ಮುನ್ನೋಟ %1 ರಲ್ಲಿ(&i)"
+
+#: src/konqguiclients.cpp:118
+#, kde-format
+msgid "Show %1"
+msgstr "%1ನ್ನು ತೋರಿಸು"
+
+#: src/konqhistorydialog.cpp:39
+#, kde-format
+msgctxt "@title:window"
+msgid "History"
+msgstr "ಇತಿಹಾಸ"
+
+#: src/konqhistorydialog.cpp:55 src/konqhistoryview.cpp:140
+#, kde-format
+msgctxt "@action:inmenu Parent of 'By Name' and 'By Date'"
+msgid "Sort"
+msgstr "ವಿಂಗಡಿಸು"
+
+#: src/konqhistorymodel.cpp:119
+#, kde-format
+msgid ""
+"<qt><center><b>%1</b></center><hr />Last visited: %2<br />First visited: "
+"%3<br />Number of times visited: %4</qt>"
+msgstr ""
+"<qt><center><b>%1</b></center><hr />ಕೊನೆಯ ಬಾರಿಗೆ ಭೇಟಿ ನೀಡಿದ್ದು: %2<br />ಮೊದಲ "
+"ಬಾರಿಗೆ ಭೇಟಿ ನೀಡಿದ್ದು: %3<br />ಒಟ್ಟು ಭೇಟಿ ನೀಡಿದ್ದು: %4</qt>"
+
+#: src/konqhistorymodel.cpp:213
+#, kde-format
+msgid "Local"
+msgstr "ಸ್ಥಳೀಯ"
+
+#: src/konqhistorymodel.cpp:216
+#, kde-format
+msgid "Miscellaneous"
+msgstr "ಇತರೆ"
+
+#: src/konqhistoryview.cpp:53 src/konqmainwindow.cpp:4412
+#, kde-format
+msgid "Open in New &Window"
+msgstr "ಹೊಸ ಕಿಟಕಿಯಲ್ಲಿ ತೆರೆ(&W)"
+
+#: src/konqhistoryview.cpp:58
+#, kde-format
+msgid "Open in New Tab"
+msgstr "ಹೊಸ ಹಾಳೆಯಲ್ಲಿ ತೆರೆ"
+
+#: src/konqhistoryview.cpp:63
+#, fuzzy, kde-format
+#| msgid "Open in New Tab"
+msgid "Open in Current Tab"
+msgstr "ಹೊಸ ಹಾಳೆಯಲ್ಲಿ ತೆರೆ"
+
+#: src/konqhistoryview.cpp:67
+#, kde-format
+msgid "&Copy Link Address"
+msgstr "ಕೊಂಡಿಯ ವಿಳಾಸ ಕಾಪಿ ಮಾಡು(&C)"
+
+#: src/konqhistoryview.cpp:72
+#, kde-format
+msgid "&Remove Entry"
+msgstr "ನಮೂದನ್ನು ತೆಗೆದುಹಾಕು(&R)"
+
+#: src/konqhistoryview.cpp:79
+#, kde-format
+msgid "C&lear History"
+msgstr "ಇತಿಹಾಸವನ್ನು ಅಳಿಸು(&l)"
+
+#: src/konqhistoryview.cpp:84
+#, kde-format
+msgid "&Preferences..."
+msgstr "ಆದ್ಯತೆಗಳು(&R)..."
+
+#: src/konqhistoryview.cpp:91
+#, kde-format
+msgid "By &Name"
+msgstr "ಹೆಸರಿನಿಂದ(&N)"
+
+#: src/konqhistoryview.cpp:97
+#, kde-format
+msgid "By &Date"
+msgstr "ದಿನಾಂಕದಿಂದ(&D)"
+
+#: src/konqhistoryview.cpp:107
+#, kde-format
+msgid "Search in history"
+msgstr "ಇತಿಹಾಸದಲ್ಲಿ ಶೋಧಿಸು"
+
+#: src/konqhistoryview.cpp:168
+#, kde-format
+msgid "Do you really want to clear the entire history?"
+msgstr "ಸಂಪೂರ್ಣ ಇತಿಹಾಸವನ್ನು ಅಳಿಸಹಾಕಲು ನೀವು ನಿಜವಾಗಿಯೂ ಬಯಸುತ್ತೀರೆ?"
+
+#: src/konqhistoryview.cpp:169
+#, kde-format
+msgctxt "@title:window"
+msgid "Clear History?"
+msgstr "ಇತಿಹಾಸವನ್ನು ಅಳಿಸಲೇ?"
+
+#: src/konqmain.cpp:170
+#, kde-format
+msgid "Konqueror"
+msgstr "ಕಾಂಕರರ್"
+
+#: src/konqmain.cpp:171
+#, kde-format
+msgid "Web browser, file manager and document viewer."
+msgstr "ಜಾಲ ಪ್ರದರ್ಶಕ, ಕಡತ ವ್ಯವಸ್ಥಾಪಕ ಮತ್ತು ದಸ್ತಾವೇಜು ವೀಕ್ಷಕ."
+
+#: src/konqmain.cpp:173
+#, fuzzy, kde-format
+#| msgid "(C) 1999-2008, The Konqueror developers"
+msgid "(C) 1999-2016, The Konqueror developers"
+msgstr "(c) ೧೯೯೯-೨೦೦೮, ಕಾಂಕರರ್ ವಿಕಾಸಕರು"
+
+#: src/konqmain.cpp:176
+#, kde-format
+msgid "Stefano Crocco"
+msgstr ""
+
+#: src/konqmain.cpp:176
+#, kde-format
+msgid "Current maintainer"
+msgstr ""
+
+#: src/konqmain.cpp:177
+#, kde-format
+msgid "David Faure"
+msgstr "ಡೇವಿಡ್ ಫೌರ್"
+
+#: src/konqmain.cpp:177
+#, fuzzy, kde-format
+#| msgid "Developer (framework, parts, JavaScript, I/O library) and maintainer"
+msgid ""
+"Developer (framework, parts, JavaScript, I/O library) and former maintainer"
+msgstr "ವಿಕಾಸಕ (ಚೌಕಟ್ಟು, ಭಾಗಗಳು, ಜಾವಾ ವಿಧಿಗುಚ್ಛ, I/O lib) ಮತ್ತು ಪಾಲಕ"
+
+#: src/konqmain.cpp:178
+#, kde-format
+msgid "Simon Hausmann"
+msgstr "ಸೈಮನ್ ಹೌಸ್‍ಮನ್"
+
+#: src/konqmain.cpp:178
+#, kde-format
+msgid "Developer (framework, parts)"
+msgstr "ವಿಕಾಸಕ (ಚೌಕಟ್ಟು, ಭಾಗಗಳು)"
+
+#: src/konqmain.cpp:179
+#, kde-format
+msgid "Michael Reiher"
+msgstr "ಮೈಕೆಲ್ ರಿಹೆರ್"
+
+#: src/konqmain.cpp:179 src/konqmain.cpp:207 src/konqmain.cpp:213
+#, kde-format
+msgid "Developer (framework)"
+msgstr "ವಿಕಾಸಕ (ಚೌಕಟ್ಟು)"
+
+#: src/konqmain.cpp:180
+#, kde-format
+msgid "Matthias Welk"
+msgstr "ಮಾಥಿಯಾಸ್ ವೆಲ್ಕ್"
+
+#: src/konqmain.cpp:180
+#, kde-format
+msgid "Developer"
+msgstr "ವಿಕಾಸಕ"
+
+#: src/konqmain.cpp:181
+#, kde-format
+msgid "Alexander Neundorf"
+msgstr "ಅಲೆಕ್ಸಾಂಡರ್ ನ್ಯೂಂಡಾರ್ಫ್"
+
+#: src/konqmain.cpp:181
+#, kde-format
+msgid "Developer (List views)"
+msgstr "ವಿಕಾಸಕ (ಪಟ್ಟಿ ನೋಟಗಳು)"
+
+#: src/konqmain.cpp:182
+#, kde-format
+msgid "Michael Brade"
+msgstr "ಮೈಕೆಲ್ ಬ್ರೇಡ್"
+
+#: src/konqmain.cpp:182
+#, kde-format
+msgid "Developer (List views, I/O library)"
+msgstr "ವಿಕಾಸಕ (ಪಟ್ಟಿ ನೋಟಗಳು, I/O lib)"
+
+#: src/konqmain.cpp:183
+#, kde-format
+msgid "Lars Knoll"
+msgstr "ಲಾರ್ಸ್ ಕ್ನಾಲ್"
+
+#: src/konqmain.cpp:183 src/konqmain.cpp:184 src/konqmain.cpp:185
+#: src/konqmain.cpp:187 src/konqmain.cpp:188 src/konqmain.cpp:190
+#: src/konqmain.cpp:191 src/konqmain.cpp:192 src/konqmain.cpp:193
+#: src/konqmain.cpp:195
+#, kde-format
+msgid "Developer (HTML rendering engine)"
+msgstr "ವಿಕಾಸಕ (HTML ನಿರೂಪಣಾ ಎಂಜಿನ್)"
+
+#: src/konqmain.cpp:184
+#, kde-format
+msgid "Dirk Mueller"
+msgstr "ಡಿರ್ಕ್ ಮ್ಯುಲ್ಲೆರ್"
+
+#: src/konqmain.cpp:185
+#, kde-format
+msgid "Peter Kelly"
+msgstr "ಪೀಟೆರ್ ಕೆಲ್ಲಿ"
+
+#: src/konqmain.cpp:186
+#, kde-format
+msgid "Waldo Bastian"
+msgstr "ವಾಲ್ಡೋ ಬಾಸ್ಟಿಯನ್"
+
+#: src/konqmain.cpp:186
+#, kde-format
+msgid "Developer (HTML rendering engine, I/O library)"
+msgstr "ವಿಕಾಸಕ (HTML ನಿರೂಪಣಾ ಎಂಜಿನ್, I/O ಲೈಬ್ರರಿ)"
+
+#: src/konqmain.cpp:187
+#, kde-format
+msgid "Germain Garand"
+msgstr "ಜೆರ್ಮೈನ್ ಗರಾಂಡ್"
+
+#: src/konqmain.cpp:188
+#, kde-format
+msgid "Leo Savernik"
+msgstr "ಲಿಯೋ ಸಾವೆರ್ನಿಕ್"
+
+#: src/konqmain.cpp:189
+#, kde-format
+msgid "Stephan Kulow"
+msgstr "ಸ್ಟೀಫನ್ ಕುಲೋವ್"
+
+#: src/konqmain.cpp:189
+#, kde-format
+msgid ""
+"Developer (HTML rendering engine, I/O library, regression test framework)"
+msgstr "ವಿಕಾಸಕ (HTML ನಿರೂಪಣಾ ಎಂಜಿನ್, I/O lib, ಅಪಸರ್ಪಣ(ರಿಗ್ರೆಶನ್) ಪರೀಕ್ಷಾ ಚೌಕಟ್ಟು)"
+
+#: src/konqmain.cpp:190
+#, kde-format
+msgid "Antti Koivisto"
+msgstr "ಅಂಟಿ ಕೋಯ್ವಿಸ್ಟೋ"
+
+#: src/konqmain.cpp:191
+#, kde-format
+msgid "Zack Rusin"
+msgstr "ಜಾಕ್ ರಸಿನ್"
+
+#: src/konqmain.cpp:192
+#, kde-format
+msgid "Tobias Anton"
+msgstr "ಟೋಬಿಯಾಸ್ ಆಂಟನ್"
+
+#: src/konqmain.cpp:193
+#, kde-format
+msgid "Lubos Lunak"
+msgstr "ಲುಬೋಸ್ ಲುನಾಕ್"
+
+#: src/konqmain.cpp:194
+#, kde-format
+msgid "Maks Orlovich"
+msgstr "ಮಾರ್ಕ್ಸ್ ಒರ್ಲೋವಿಚ್"
+
+#: src/konqmain.cpp:194 src/konqmain.cpp:196
+#, kde-format
+msgid "Developer (HTML rendering engine, JavaScript)"
+msgstr "ವಿಕಾಸಕ (HTML ನಿರೂಪಣಾ ಎಂಜಿನ್,  JavaScript)"
+
+#: src/konqmain.cpp:195
+#, kde-format
+msgid "Allan Sandfeld Jensen"
+msgstr "ಆಲನ್ ಸ್ಯಾಂಡ್ಫೆಲ್ಡ್ ಜೆನ್ಸನ್"
+
+#: src/konqmain.cpp:196
+#, kde-format
+msgid "Apple Safari Developers"
+msgstr "ಆಪಲ್ ಸಫಾರಿ ವಿಕಾಸಕರು"
+
+#: src/konqmain.cpp:197
+#, kde-format
+msgid "Harri Porten"
+msgstr "ಹ್ಯಾರಿ ಪೋರ್ಟೆನ್"
+
+#: src/konqmain.cpp:197
+#, kde-format
+msgid "Developer (JavaScript)"
+msgstr "ವಿಕಾಸಕ (JavaScript)"
+
+#: src/konqmain.cpp:198
+#, kde-format
+msgid "Koos Vriezen"
+msgstr "ಕೂಸ್ ವ್ರೆಜೆನ್"
+
+#: src/konqmain.cpp:198
+#, kde-format
+msgid "Developer (Java applets and other embedded objects)"
+msgstr ""
+"ವಿಕಾಸಕ (ಜಾವಾ ಅನಿಕ್ರಮಗಳು(applets) ಹಾಗೂ ಇತರ ಅಂತರ್ಗತ ವಸ್ತುಗಳು(embedded objects))"
+
+#: src/konqmain.cpp:199
+#, kde-format
+msgid "Matt Koss"
+msgstr "ಮಟ್ ಕಾಸ್"
+
+#: src/konqmain.cpp:199 src/konqmain.cpp:200
+#, kde-format
+msgid "Developer (I/O library)"
+msgstr "ವಿಕಾಸಕ (I/O ಲೈಬ್ರರಿ)"
+
+#: src/konqmain.cpp:200
+#, kde-format
+msgid "Alex Zepeda"
+msgstr "ಅಲೆಕ್ಸ್ ಜಪೇಡ"
+
+#: src/konqmain.cpp:201
+#, kde-format
+msgid "Richard Moore"
+msgstr "ರಿಚಾರ್ಡ್ ಮೂರ್"
+
+#: src/konqmain.cpp:201 src/konqmain.cpp:202
+#, kde-format
+msgid "Developer (Java applet support)"
+msgstr "ವಿಕಾಸಕ (ಜಾವಾ ಅನಿಕ್ರಮ(applet) ಸಹಾಯ)"
+
+#: src/konqmain.cpp:202
+#, kde-format
+msgid "Dima Rogozin"
+msgstr "ಡಿಮ ರೋಗೋಜಿನ್"
+
+#: src/konqmain.cpp:203
+#, kde-format
+msgid "Wynn Wilkes"
+msgstr "ವ್ಯಾನ್ ವಿಲ್ಕೀಸ್"
+
+#: src/konqmain.cpp:203
+#, kde-format
+msgid ""
+"Developer (Java 2 security manager support,\n"
+" and other major improvements to applet support)"
+msgstr ""
+"ವಿಕಾಸಕ (ಜಾವಾ ೨ ಭದ್ರತಾ ನಿರ್ವಾಹಕ ಬೆಂಬಲ,\n"
+" ಮತ್ತು ಅನಿಕ್ರಮ(applet) ಬೆಂಬಲಕ್ಕೆ ಮಾಡಲಾದ ಮುಖ್ಯ ಪರಿಷ್ಕರಣೆಗಳು)"
+
+#: src/konqmain.cpp:204
+#, kde-format
+msgid "Stefan Schimanski"
+msgstr "ಸ್ಟೆಫಾನ್ ಸ್ಕಿಮಾಂಸ್ಕಿ"
+
+#: src/konqmain.cpp:204
+#, kde-format
+msgid "Developer (Netscape plugin support)"
+msgstr "ವಿಕಾಸಕ (ನೆಟ್ಸ್ಕೇಪ್ ಮಿಳಿತಾನ್ವಯ(plugin) ಸಹಾಯ)"
+
+#: src/konqmain.cpp:205
+#, kde-format
+msgid "George Staikos"
+msgstr "ಜಾರ್ಜ ಸ್ಟೈಕೊಸ್"
+
+#: src/konqmain.cpp:205
+#, kde-format
+msgid "Developer (SSL, Netscape plugins)"
+msgstr "ವಿಕಾಸಕ (ಎಸ್ ಎಸ್ ಎಲ್, ನೆಟ್ಸ್ಕೇಪ್ ಮಿಳಿತಾನ್ವಯಗಳು(plugins))"
+
+#: src/konqmain.cpp:206
+#, kde-format
+msgid "Dawit Alemayehu"
+msgstr "ದಾವಿತ್ ಅಲೆಮಾಯೆಹು"
+
+#: src/konqmain.cpp:206
+#, kde-format
+msgid "Developer (I/O library, Authentication support)"
+msgstr "ವಿಕಾಸಕ (I/O ಲೈಬ್ರರಿ, ಧೃಡೀಕರಣ ಸಹಾಯ)"
+
+#: src/konqmain.cpp:207
+#, kde-format
+msgid "Carsten Pfeiffer"
+msgstr "ಕಾರ್ಸ್ಟೆನ್ ಪ್ಫ್ಹೀಫೆರ್"
+
+#: src/konqmain.cpp:208
+#, kde-format
+msgid "Torsten Rahn"
+msgstr "ಟಾರ್ಸ್ಟೆನ್ ರಾಹ್ನ್"
+
+#: src/konqmain.cpp:208
+#, kde-format
+msgid "Graphics/icons"
+msgstr "ಚಿತ್ರಗಳು/ಚಿಹ್ನೆಗಳು"
+
+#: src/konqmain.cpp:209
+#, kde-format
+msgid "Torben Weis"
+msgstr "ಟಾರ್ಬನ್ ವೆಸ್"
+
+#: src/konqmain.cpp:209
+#, kde-format
+msgid "KFM author"
+msgstr "ಕೆಎಫ್ಎಮ್ ಕರ್ತೃ"
+
+#: src/konqmain.cpp:210
+#, kde-format
+msgid "Joseph Wenninger"
+msgstr "ಜೋಸೆಫ್ ವೆನ್ನಿಂಗೆರ್"
+
+#: src/konqmain.cpp:210
+#, kde-format
+msgid "Developer (navigation panel framework)"
+msgstr "ವಿಕಾಸಕ (ನ್ಯಾವಿಗೇಶನ್ ಪಟ್ಟಿಕೆ ಚೌಕಟ್ಟು)"
+
+#: src/konqmain.cpp:211
+#, kde-format
+msgid "Stephan Binner"
+msgstr "ಸ್ಟೀಫನ್ ಬಿನ್ನೆರ್"
+
+#: src/konqmain.cpp:211
+#, kde-format
+msgid "Developer (misc stuff)"
+msgstr "ವಿಕಾಸಕ (ಇತರೆ ವಿಷಯಗಳು)"
+
+#: src/konqmain.cpp:212
+#, kde-format
+msgid "Ivor Hewitt"
+msgstr "ಐವರ್ ಹೆವಿಟ್"
+
+#: src/konqmain.cpp:212
+#, kde-format
+msgid "Developer (AdBlock filter)"
+msgstr "ವಿಕಾಸಕ (AdBlock ಶೋಧಕ)"
+
+#: src/konqmain.cpp:213
+#, kde-format
+msgid "Eduardo Robles Elvira"
+msgstr "Eduardo Robles Elvira"
+
+#: src/konqmain.cpp:223
+#, kde-format
+msgid "Start without a default window, when called without URLs"
+msgstr "ಯುಆರ್ಎಲ್ ಇಲ್ಲದೇ ಕರೆದಾಗ, ಪೂರ್ವನಿಯೋಜಿತ ಕಿಟಕಿ ಇಲ್ಲದೆ ಪ್ರಾರಂಭಿಸು"
+
+#: src/konqmain.cpp:224
+#, kde-format
+msgid ""
+"Preload for later use. This mode does not support URLs on the command line"
+msgstr ""
+"ನಂತರದ ಬಳಕೆಗಾಗಿ ಮುಂದಾಗಿ ತುಂಬು. ಕಮಾಂಡ್ ಲೈನಿನ ಯುಆರೆಲ್‌ಗಳಿಗೆ ಈ ಕ್ರಮವು ಬೆಂಬಲಿಸುವುದಿಲ್ಲ."
+
+#: src/konqmain.cpp:225
+#, kde-format
+msgid "Profile to open (DEPRECATED, IGNORED)"
+msgstr ""
+
+#: src/konqmain.cpp:225
+#, kde-format
+msgid "profile"
+msgstr ""
+
+#: src/konqmain.cpp:226
+#, kde-format
+msgid "List available sessions"
+msgstr "ಲಭ್ಯವಿರುವ ಅಧಿವೇಶನಗಳನ್ನು ಪಟ್ಟಿಮಾಡಿ"
+
+#: src/konqmain.cpp:227
+#, kde-format
+msgid "Session to open"
+msgstr "ತೆರೆಯಬೇಕಾದ ಅಧಿವೇಶನ"
+
+#: src/konqmain.cpp:227
+#, fuzzy, kde-format
+#| msgid "Sessions"
+msgid "session"
+msgstr "ಅಧಿವೇಶನಗಳು"
+
+#: src/konqmain.cpp:228
+#, kde-format
+msgid "Mimetype to use for this URL (e.g. text/html or inode/directory)"
+msgstr "ಈ ತಾಣಸೂಚಿಗೆ ಬಳಸಬೇಕಾದ ಮೈಮ್‌ಬಗೆ (ಉದಾ: ಪಠ್ಯ/html ಅಥವಾ ಕಡತಾಂಕಿ(inode)/ಕೋಶ)"
+
+#: src/konqmain.cpp:228
+#, kde-format
+msgid "mimetype"
+msgstr ""
+
+#: src/konqmain.cpp:229
+#, kde-format
+msgid "Part to use (e.g. khtml or kwebkitpart)"
+msgstr "ಭಾಗಶ: ಬಳಕೆಗೆ (ಉದಾ:ಕೆ ಎಚ್‌ಟಿಎಂಎಲ್ ಅಥವಾ ಕೆವೆಬ್ಕಿಟ್ಪಾರ್ಟ್)"
+
+#: src/konqmain.cpp:229
+#, kde-format
+msgid "service"
+msgstr ""
+
+#: src/konqmain.cpp:230
+#, kde-format
+msgid ""
+"For URLs that point to files, opens the directory and selects the file, "
+"instead of opening the actual file"
+msgstr ""
+"ಕಡತಗಳತ್ತ ಸೂಚಿಸಲ್ಪಡುವ ತಾಣ ಸೂಚಿಗಳು, ನಿಜವಾದ ಕಡತವನ್ನು ತೆರೆಯುವ ಬದಲು ಕೋಶಗಳನ್ನು ತೆರೆದು "
+"ನಂತರ ಕಡತಗಳನ್ನು ಆಯ್ಕೆ ಮಾಡುತ್ತವೆ"
+
+#: src/konqmain.cpp:231
+#, kde-format
+msgid "The files/URLs opened by the application will be deleted after use"
+msgstr ""
+
+#: src/konqmain.cpp:233
+#, kde-format
+msgid "Location to open"
+msgstr "ತೆರೆಯಬೇಕಾದ ತಾಣ"
+
+#: src/konqmainwindow.cpp:658
+#, kde-format
+msgctxt "@title:tab"
+msgid "Loading..."
+msgstr "ತೋರಿಸಲಾಗುತ್ತಿದೆ..."
+
+#: src/konqmainwindow.cpp:690
+#, kde-format
+msgid "Access denied"
+msgstr ""
+
+#: src/konqmainwindow.cpp:1465
+#, fuzzy, kde-format
+#| msgid "&Open File..."
+msgid "Open File"
+msgstr "ಕಡತವನ್ನು ತೆರೆ(&O)..."
+
+#: src/konqmainwindow.cpp:1548
+#, kde-format
+msgid "Canceled."
+msgstr "ರದ್ದುಮಾಡಿದೆ."
+
+#: src/konqmainwindow.cpp:1584
+#, kde-format
+msgid ""
+"This page contains changes that have not been submitted.\n"
+"Reloading the page will discard these changes."
+msgstr ""
+"ಈ ಪುಟವು ಇನ್ನೂ ಸಮರ್ಪಿಸಲ್ಪಡದ ಬದಲಾವಣೆಗಳನ್ನು ಹೊಂದಿದೆ. \n"
+"ಪುಟದ ಪುನಶ್ಚೇತನಗೊಳಿಸುವಿಕೆ ಈ ಬದಲಾವಣೆಗಳನ್ನು ತ್ಯಜಿಸುತ್ತದೆ."
+
+#: src/konqmainwindow.cpp:1585 src/konqmainwindow.cpp:2282
+#: src/konqmainwindow.cpp:2375 src/konqmainwindow.cpp:2407
+#: src/konqmainwindow.cpp:2450 src/konqmainwindow.cpp:2472
+#: src/konqmainwindow.cpp:4849
+#, kde-format
+msgctxt "@title:window"
+msgid "Discard Changes?"
+msgstr "ಬದಲಾವಣೆಗಳನ್ನು ತ್ಯಜಿಸಬೇಕೇ?"
+
+#: src/konqmainwindow.cpp:1585 src/konqmainwindow.cpp:2282
+#: src/konqmainwindow.cpp:2375 src/konqmainwindow.cpp:2407
+#: src/konqmainwindow.cpp:2450 src/konqmainwindow.cpp:2473
+#: src/konqmainwindow.cpp:4849
+#, kde-format
+msgid "&Discard Changes"
+msgstr "ಬದಲಾವಣೆಗಳನ್ನು ತ್ಯಜಿಸು(&D)"
+
+#: src/konqmainwindow.cpp:1952 src/konqmainwindow.cpp:1958
+#, kde-format
+msgid "Home Folder"
+msgstr "ನೆಲೆ ಕಡತಕೋಶ"
+
+#: src/konqmainwindow.cpp:1953 src/konqmainwindow.cpp:3424
+#, kde-format
+msgid "Home"
+msgstr "ನೆಲೆ ಪುಟ"
+
+#: src/konqmainwindow.cpp:1959
+#, kde-format
+msgid "Navigate to your 'Home Folder'"
+msgstr "ನಿಮ್ಮ 'ನೆಲೆ ಕಡತಕೋಶ'ಕ್ಕೆ ತೆರಳು"
+
+#: src/konqmainwindow.cpp:1960
+#, kde-format
+msgid "Navigate to your local 'Home Folder'"
+msgstr "ನಿಮ್ಮ ಸ್ಥಳೀಯ 'ನೆಲೆ ಕಡತಕೋಶಕ್ಕೆ' ತೆರಳಿ"
+
+#. i18n: ectx: label, entry, group (UserSettings)
+#: src/konqmainwindow.cpp:1963 src/konqueror.kcfg:16
+#, kde-format
+msgid "Home Page"
+msgstr "ನೆಲೆ ಪುಟ"
+
+#: src/konqmainwindow.cpp:1965
+#, kde-format
+msgid "Navigate to your 'Home Page'"
+msgstr "ನಿಮ್ಮ 'ನೆಲೆ ಪುಟಕ್' ನಾವಯಿಸಿ"
+
+#: src/konqmainwindow.cpp:1966
+#, kde-format
+msgid ""
+"<html>Navigate to your 'Home Page'<br /><br />You can configure the location "
+"where this button takes you under <b>Settings -> Configure Konqueror -> "
+"General</b>.</html>"
+msgstr ""
+"<html>ನಿಮ್ಮ 'ನೆಲೆ ಪುಟ'ಕ್ಕೆ ನ್ಯಾವಿಗೇಟ್ ಮಾಡಿ<br /><br /><b>ಸಂಯೋಜನೆಗಳು -> ಕಾಂಕರರ್ "
+"ಅನ್ನು ಸಂರಚಿಸು -> ಸಾಮಾನ್ಯ</b> ದಲ್ಲಿನ ಗುಂಡಿಯನ್ನು ಬಳಸಿಕೊಂಡು ಇದನ್ನು ಸಂರಚಿಸಬಹುದು.</"
+"html>"
+
+#: src/konqmainwindow.cpp:2281
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Detaching the tab will discard these changes."
+msgstr ""
+"ಈ ಹಾಳೆಯು ಇನ್ನೂ ಸಮರ್ಪಿಸಲ್ಪಡದ ಬದಲಾವಣೆಗಳನ್ನು ಹೊಂದಿದೆ. \n"
+"ಹಾಳೆಯ ಬೇರ್ಪಡಿಸುವಿಕೆಯು ಈ ಬದಲಾವಣೆಗಳನ್ನು ತ್ಯಜಿಸುತ್ತದೆ."
+
+#: src/konqmainwindow.cpp:2374
+#, kde-format
+msgid ""
+"This view contains changes that have not been submitted.\n"
+"Closing the view will discard these changes."
+msgstr ""
+"ಈ ನೋಟವು ಇನ್ನೂ ಸಮರ್ಪಿಸಲ್ಪಡದ ಬದಲಾವಣೆಗಳನ್ನು ಹೊಂದಿದೆ. \n"
+"ನೋಟದ ಮುಚ್ಚುವಿಕೆಯು ಈ ಬದಲಾವಣೆಗಳನ್ನು ತ್ಯಜಿಸುತ್ತದೆ."
+
+#: src/konqmainwindow.cpp:2406
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Closing the tab will discard these changes."
+msgstr ""
+"ಈ ಹಾಳೆಯು ಇನ್ನೂ ಸಮರ್ಪಿಸಲ್ಪಡದ ಬದಲಾವಣೆಗಳನ್ನು ಹೊಂದಿದೆ. \n"
+"ಹಾಳೆಯ ಮುಚ್ಚುವಿಕೆಯು ಈ ಬದಲಾವಣೆಗಳನ್ನು ತ್ಯಜಿಸುತ್ತದೆ."
+
+#: src/konqmainwindow.cpp:2432
+#, kde-format
+msgid "Do you really want to close all other tabs?"
+msgstr "ಇತರೆ ಎಲ್ಲಾ ಹಾಳೆಗಳನ್ನೂ ಮುಚ್ಚಲು ನಿರ್ಧರಿಸಿದ್ದೀರೇನು?"
+
+#: src/konqmainwindow.cpp:2433 src/konqmainwindow.cpp:3505 src/konqtabs.cpp:335
+#, kde-format
+msgid "Close &Other Tabs"
+msgstr "ಇತರೆ ಹಾಳೆಗಳನ್ನು ಮುಚ್ಚು(&O)"
+
+#: src/konqmainwindow.cpp:2433
+#, kde-format
+msgctxt "@title:window"
+msgid "Close Other Tabs Confirmation"
+msgstr "ಇತರೆ ಹಾಳೆಗಳನ್ನು ಮುಚ್ಚಲು ಖಚಿತಪಡಿಕೆ"
+
+#: src/konqmainwindow.cpp:2449
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Closing other tabs will discard these changes."
+msgstr ""
+"ಈ ಹಾಳೆಯು ಇನ್ನೂ ಸಮರ್ಪಿಸಲ್ಪಡದ ಬದಲಾವಣೆಗಳನ್ನು ಹೊಂದಿದೆ. \n"
+"ಇತರ ಹಾಳೆಗಳ ಮುಚ್ಚುವಿಕೆಯು ಈ ಬದಲಾವಣೆಗಳನ್ನು ತ್ಯಜಿಸುತ್ತದೆ."
+
+#: src/konqmainwindow.cpp:2471
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Reloading all tabs will discard these changes."
+msgstr ""
+"ಈ ಹಾಳೆಯು ಇನ್ನೂ ಸಮರ್ಪಿಸಲ್ಪಡದ ಬದಲಾವಣೆಗಳನ್ನು ಹೊಂದಿದೆ. \n"
+"ಎಲ್ಲಾ ಹಾಳೆಗಳ ಪುನಶ್ಚೇತನಗೊಳಿಸುವಿಕೆಯು ಈ ಬದಲಾವಣೆಗಳನ್ನು ತ್ಯಜಿಸುತ್ತದೆ."
+
+#: src/konqmainwindow.cpp:2513
+#, kde-format
+msgctxt "@title:window"
+msgid "Enter Target"
+msgstr "ಗುರಿಯನ್ನು ನಮೂದಿಸಿ"
+
+#: src/konqmainwindow.cpp:2520
+#, kde-format
+msgid "<qt><b>%1</b> is not valid</qt>"
+msgstr "<qt><b>%1</b>ಊರ್ಜಿತವಲ್ಲ</qt>"
+
+#: src/konqmainwindow.cpp:2530
+#, kde-format
+msgid "Copy selected files from %1 to:"
+msgstr "ಆಯ್ದ ಕಡತಗಳನ್ನು %1ನಿಂದ ಇಲ್ಲಿಗೆ ಕಾಪಿ ಮಾಡು:"
+
+#: src/konqmainwindow.cpp:2543
+#, kde-format
+msgid "Move selected files from %1 to:"
+msgstr "ಆಯ್ದ ಕಡತಗಳನ್ನು %1 ರಿಂಿಂದ ಇಲ್ಲಿಗೆ ದೂಡು:"
+
+#: src/konqmainwindow.cpp:2717
+#, kde-format
+msgctxt "This menu entry empties the closed items history"
+msgid "Empty Closed Items History"
+msgstr "ಮುಚ್ಚಲಾದ ಅಂಶಗಳ ಇತಿಹಾಸವನ್ನು ತೆರವುಗೊಳಿಸು"
+
+#: src/konqmainwindow.cpp:2740
+#, kde-format
+msgid "Save As..."
+msgstr "ಹೀಗೆ ಉಳಿಸು..."
+
+#: src/konqmainwindow.cpp:2742
+#, kde-format
+msgid "Manage..."
+msgstr "ನಿರ್ವಹಿಸಿ..."
+
+#: src/konqmainwindow.cpp:3333
+#, kde-format
+msgid "New &Window"
+msgstr "ಹೊಸ ಕಿಟಕಿ(&W)"
+
+#: src/konqmainwindow.cpp:3338
+#, kde-format
+msgid "&Duplicate Window"
+msgstr "ತದ್ರೂಪು ಕಿಟಕಿ(&D)"
+
+#: src/konqmainwindow.cpp:3343
+#, kde-format
+msgid "Send &Link Address..."
+msgstr "ತಾಣ ವಿಳಾಸವನ್ನು ಕಳಿಸು(&L)..."
+
+#: src/konqmainwindow.cpp:3347
+#, kde-format
+msgid "S&end File..."
+msgstr "ಕಡತವನ್ನು ಕಳಿಸು(&e)..."
+
+#: src/konqmainwindow.cpp:3351
+#, kde-format
+msgid "&Open Location"
+msgstr "ತಾಣವನ್ನು ತೆರೆ(&O)"
+
+#: src/konqmainwindow.cpp:3357
+#, kde-format
+msgid "&Open File..."
+msgstr "ಕಡತವನ್ನು ತೆರೆ(&O)..."
+
+#: src/konqmainwindow.cpp:3362
+#, kde-format
+msgid "&Find File..."
+msgstr "ಕಡತವನ್ನು ಹುಡುಕು(&F)..."
+
+#: src/konqmainwindow.cpp:3371
+#, kde-format
+msgid "Lock to Current Location"
+msgstr "ಪ್ರಸ್ತುತ ಸ್ಥಾನಕ್ಕೆ ಬಂಧಿಸು"
+
+#: src/konqmainwindow.cpp:3374
+#, kde-format
+msgctxt "This option links konqueror views"
+msgid "Lin&k View"
+msgstr "ಕೊಂಡಿ ನೋಟ(&k)"
+
+#: src/konqmainwindow.cpp:3379
+#, kde-format
+msgid "&Up"
+msgstr "ಮೇಲೆ(&U)"
+
+#: src/konqmainwindow.cpp:3389
+#, kde-format
+msgid "Closed Items"
+msgstr "ಮುಚ್ಚಲಾದ ಅಂಶಗಳು"
+
+#: src/konqmainwindow.cpp:3402
+#, kde-format
+msgid "Sessions"
+msgstr "ಅಧಿವೇಶನಗಳು"
+
+#: src/konqmainwindow.cpp:3429
+#, kde-format
+msgctxt "@action:inmenu Go"
+msgid "Most Often Visited"
+msgstr "ಬಹು ಸಂದರ್ಶಿತ"
+
+#: src/konqmainwindow.cpp:3433
+#, kde-format
+msgctxt "@action:inmenu Go"
+msgid "Recently Visited"
+msgstr "ಇತ್ತೀಚೆಗೆ ಭೇಟಿ ನೀಡಲಾದ"
+
+#: src/konqmainwindow.cpp:3442
+#, kde-format
+msgctxt "@action:inmenu Go"
+msgid "Show History"
+msgstr "ಇತಿಹಾಸವನ್ನು ತೋರಿಸು"
+
+#: src/konqmainwindow.cpp:3455
+#, kde-format
+msgid "Configure Extensions..."
+msgstr "ವಿಸ್ತರಣೆಗಳನ್ನು ಸಂರಚಿಸು..."
+
+#: src/konqmainwindow.cpp:3459
+#, kde-format
+msgid "Configure Spell Checking..."
+msgstr "ಕಾಗುಣಿತ ಪರಿಶೀಲನೆಯನ್ನು ಸಂರಚಿಸು..."
+
+#: src/konqmainwindow.cpp:3465
+#, kde-format
+msgid "Split View &Left/Right"
+msgstr "ನೋಟವನ್ನು ಎಡ/ಬಲವಾಗಿ ಇಬ್ಭಾಗಿಸು(&L)"
+
+#: src/konqmainwindow.cpp:3470
+#, kde-format
+msgid "Split View &Top/Bottom"
+msgstr "ನೋಟವನ್ನು ಮೇಲೆ/ಕೆಳಗಾಗಿ ಇಬ್ಭಾಗಿಸು(&T)"
+
+#: src/konqmainwindow.cpp:3475 src/konqtabs.cpp:456
+#, kde-format
+msgid "&New Tab"
+msgstr "ಹೊಸ ಹಾಳೆ(&N)"
+
+#: src/konqmainwindow.cpp:3484
+#, kde-format
+msgid "&Duplicate Current Tab"
+msgstr "ಪ್ರಸ್ತುತ ಹಾಳೆಯನ್ನು ತದ್ರೂಪಿಸು(&D)"
+
+#: src/konqmainwindow.cpp:3489
+#, kde-format
+msgid "Detach Current Tab"
+msgstr "ಪ್ರಸ್ತುತ ಹಾಳೆಯನ್ನು ಬೇರ್ಪಡಿಸು"
+
+#: src/konqmainwindow.cpp:3494
+#, kde-format
+msgid "&Close Active View"
+msgstr "ಸಕ್ರಿಯ ನೋಟವನ್ನು ಮುಚ್ಚು(&C)"
+
+#: src/konqmainwindow.cpp:3499
+#, kde-format
+msgid "Close Current Tab"
+msgstr "ಈಗಿನ ಹಾಳೆಯನ್ನು ಮುಚ್ಚು"
+
+#: src/konqmainwindow.cpp:3509
+#, kde-format
+msgid "Activate Next Tab"
+msgstr "ಮುಂದಿನ ಹಾಳೆಯನ್ನು ಸಕ್ರಯಗೊಳಿಸು"
+
+#: src/konqmainwindow.cpp:3513
+#, kde-format
+msgid "Activate Previous Tab"
+msgstr "ಹಿಂದಿನ ಹಾಳೆಯನ್ನು ಸಕ್ರಯಗೊಳಿಸು"
+
+#: src/konqmainwindow.cpp:3520
+#, kde-format
+msgid "Activate Tab %1"
+msgstr "ಹಾಳೆ %1 ಅನ್ನು ಸಕ್ರಿಯಗೊಳಿಸು"
+
+#: src/konqmainwindow.cpp:3525
+#, kde-format
+msgid "Move Tab Left"
+msgstr "ಹಾಳೆಯನ್ನು ಎಡಕ್ಕೆ ಸರಿಸು"
+
+#: src/konqmainwindow.cpp:3530
+#, kde-format
+msgid "Move Tab Right"
+msgstr "ಹಾಳೆಯನ್ನು ಬಲಕ್ಕೆ ಸರಿಸು"
+
+#: src/konqmainwindow.cpp:3538
+#, kde-format
+msgid "Dump Debug Info"
+msgstr "ದೋಷಮಾಹಿತಿಯನ್ನು ಒಟ್ಟಲುಗೊಳಿಸು"
+
+#: src/konqmainwindow.cpp:3556
+#, kde-format
+msgid "&Reload"
+msgstr "ಪುನಶ್ಚೇತನಗೊಳಿಸು(&R)"
+
+#: src/konqmainwindow.cpp:3561 src/konqtabs.cpp:313
+#, kde-format
+msgid "&Reload All Tabs"
+msgstr "ಎಲ್ಲಾ ಹಾಳೆಗಳನ್ನೂ ಮರುತೋರಿಸು(&R)"
+
+#: src/konqmainwindow.cpp:3569
+#, kde-format
+msgid "&Force Reload"
+msgstr "ಒತ್ತಾಯಪೂರ್ವಕ ಪುನಶ್ಚೇನಗೊಳಿಸು(&F)"
+
+#: src/konqmainwindow.cpp:3595
+#, kde-format
+msgid "&Stop"
+msgstr "ನಿಲ್ಲಿಸು(&S)"
+
+#: src/konqmainwindow.cpp:3604
+#, kde-format
+msgid "Throbber"
+msgstr "ಸ್ಪಂದಿಸುವವ"
+
+#: src/konqmainwindow.cpp:3608 src/konqmainwindow.cpp:3611
+#, kde-format
+msgid "L&ocation: "
+msgstr "ತಾಣ(&o): "
+
+#: src/konqmainwindow.cpp:3618
+#, kde-format
+msgid "Location Bar"
+msgstr "ತಾಣ ಪಟ್ಟಿಕೆ"
+
+#: src/konqmainwindow.cpp:3624
+#, kde-format
+msgid ""
+"<html>Location Bar<br /><br />Enter a web address or search term.</html>"
+msgstr ""
+"<html>ತಾಣ ಪಟ್ಟಿಕೆ<br /><br />ಒಂದು ಜಾಲತಾಣವನ್ನು ಅಥವಾ ಹುಡುಕಬೇಕಾದ ಪದವನ್ನು ನಮೂದಿಸಿ.</"
+"html>"
+
+#: src/konqmainwindow.cpp:3628
+#, kde-format
+msgid "Clear Location Bar"
+msgstr "ತಾಣ ಪಟ್ಟಿಕೆಯನ್ನು ತೆರವುಗೊಳಿಸು"
+
+#: src/konqmainwindow.cpp:3632
+#, kde-format
+msgid ""
+"<html>Clear Location bar<br /><br />Clears the contents of the location bar."
+"</html>"
+msgstr ""
+"<html>ತಾಣಪಟ್ಟಿಕೆಯನ್ನು ತೆರವುಗೊಳಿಸು<br /><br />ತಾಣಪಟ್ಟಿಕೆಯಲ್ಲಿನ ವಿಷಯಗಳನ್ನು "
+"ತೆರೆವುಗೊಳಿಸುತ್ತದೆ.</html>"
+
+#: src/konqmainwindow.cpp:3637
+#, kde-format
+msgid "&Bookmarks"
+msgstr "ಪುಟ ಗುರುತುಗಳು(&B)"
+
+#: src/konqmainwindow.cpp:3665
+#, kde-format
+msgid "Kon&queror Introduction"
+msgstr "ಕಾಂಕರರ್ ಪರಿಚಯ(&q)"
+
+#: src/konqmainwindow.cpp:3670
+#, kde-format
+msgid "Go"
+msgstr "ಹೋಗು"
+
+#: src/konqmainwindow.cpp:3672
+#, kde-format
+msgid ""
+"<html>Go<br /><br />Goes to the page that has been entered into the location "
+"bar.</html>"
+msgstr "<html>ಹೋಗು<br /><br />ತಾಣಪಟ್ಟಿಕೆಯಲ್ಲಿ ನಮೂದಿಸಿದ ಪುಟಕ್ಕೆ ಹೋಗುತ್ತದೆ.</html>"
+
+#: src/konqmainwindow.cpp:3678
+#, kde-format
+msgid ""
+"<html>Enter the parent folder<br /><br />For instance, if the current "
+"location is file:/home/%1 clicking this button will take you to file:/home.</"
+"html>"
+msgstr ""
+"<html>ಮಾತೃ ಕಡತಕೋಶವನ್ನು ನಮೂದಿಸಿ<br /><br />ಉದಾಹಣೆಗೆ ಪ್ರಸ್ತುತ ತಾಣವು file:/home/%1 "
+"ಆಗಿದ್ದಲ್ಲಿ ಈ ಗುಂಡಿಯ ಒತ್ತುವಿಕೆಯು ನಿಮ್ಮನ್ನು file:/home ಗೆ ಕರೆದೊಯ್ಯುತ್ತದೆ.</html>"
+
+#: src/konqmainwindow.cpp:3681
+#, kde-format
+msgid "Enter the parent folder"
+msgstr "ಮಾತೃಕಡತಕೋಶವನ್ನು ನಮೂದಿಸಿ"
+
+#: src/konqmainwindow.cpp:3683 src/konqmainwindow.cpp:3684
+#, kde-format
+msgid "Move backwards one step in the browsing history"
+msgstr "ವೀಕ್ಷಣ ಚರಿತ್ರೆಯಲ್ಲಿ ಒಂದು ಹೆಜ್ಜೆ ಹಿಂದೆ ಸರಿ"
+
+#: src/konqmainwindow.cpp:3686 src/konqmainwindow.cpp:3687
+#, kde-format
+msgid "Move forward one step in the browsing history"
+msgstr "ವೀಕ್ಷಣ ಚರಿತ್ರೆಯಲ್ಲಿ ಒಂದು ಹೆಜ್ಜೆ ಮುಂದೆ ಸರಿ"
+
+#: src/konqmainwindow.cpp:3689 src/konqmainwindow.cpp:3690
+#, kde-format
+msgid "Move backwards one step in the closed tabs history"
+msgstr "ಮುಚ್ಚಲಾದ ಹಾಳೆಗಳ ಚರಿತ್ರೆಯಲ್ಲಿ ಒಂದು ಹೆಜ್ಜೆ ಹಿಂದೆ ಸರಿ"
+
+#: src/konqmainwindow.cpp:3692
+#, kde-format
+msgid ""
+"<html>Reload the currently displayed document<br /><br />This may, for "
+"example, be needed to refresh web pages that have been modified since they "
+"were loaded, in order to make the changes visible.</html>"
+msgstr ""
+"<html>ಈಗ ಪ್ರದರ್ಶಿಸುತ್ತಿರುವ ದಸ್ತಾವೇಜನ್ನು ಪುನಶ್ಚೇತನಗೊಳಿಸು<br /><br />ಉದಾಹರಣೆಗೆ, "
+"ಬದಲಾವಣೆಗಳು ಕಾಣಿಸಿಕೊಳ್ಳಲು, ಲೋಡ್ ಮಾಡಿದ ನಂತರ ಮಾರ್ಪಡಿಸಲಾದ ಜಾಲ ಪುಟಗಳನ್ನು "
+"ಪುನಶ್ಚೇತನಗೊಳಿಸಬೇಕಾಗಬಹುದು.</html>"
+
+#: src/konqmainwindow.cpp:3695
+#, kde-format
+msgid "Reload the currently displayed document"
+msgstr "ಪ್ರಸ್ತುತ ಪ್ರದರ್ಶಿಸುತ್ತಿರುವ ದಸ್ತಾವೇಜನ್ನು ಪುನಶ್ಚೇತನಗೊಳಿಸು"
+
+#: src/konqmainwindow.cpp:3697
+#, kde-format
+msgid ""
+"<html>Reload all currently displayed documents in tabs<br /><br />This may, "
+"for example, be needed to refresh web pages that have been modified since "
+"they were loaded, in order to make the changes visible.</html>"
+msgstr ""
+"<html>ಈಗ ಪ್ರದರ್ಶಿಸುತ್ತಿರುವ ಹಾಳೆಯಲ್ಲಿನ ಎಲ್ಲಾ ದಸ್ತಾವೇಜನ್ನು ಪುನಶ್ಚೇತನಗೊಳಿಸು<br /><br /"
+">ಉದಾಹರಣೆಗೆ, ಬದಲಾವಣೆಗಳು ಕಾಣಿಸಿಕೊಳ್ಳಲು, ಲೋಡ್ ಮಾಡಿದ ನಂತರ ಮಾರ್ಪಡಿಸಲಾದ ಜಾಲ ಪುಟಗಳನ್ನು "
+"ಪುನಶ್ಚೇತನಗೊಳಿಸಬೇಕಾಗಬಹುದು.</html>"
+
+#: src/konqmainwindow.cpp:3700
+#, kde-format
+msgid "Reload all currently displayed document in tabs"
+msgstr "ಪ್ರಸ್ತುತ ಹಾಳೆಯಲ್ಲಿ ಪ್ರದರ್ಶಿತಗೊಳ್ಳುತ್ತಿರುವ ಎಲ್ಲಾ ದಸ್ತಾವೇಜುಗಳನ್ನು ಪುನಶ್ಚೇತನಗೊಳಿಸು"
+
+#: src/konqmainwindow.cpp:3702
+#, kde-format
+msgid ""
+"<html>Stop loading the document<br /><br />All network transfers will be "
+"stopped and Konqueror will display the content that has been received so far."
+"</html>"
+msgstr ""
+"<html>ದಸ್ತಾವೇಜನ್ನು ಲೋಡ್‌ ಮಾಡುವುದನ್ನು ನಿಲ್ಲಿಸು<br /><br />ಎಲ್ಲಾ ಜಾಲಬಂಧ ವರ್ಗಾವಣೆಗಳನ್ನು "
+"ನಿಲ್ಲಿಸಲಾಗುವುದು ಹಾಗು ಕಾಂಕರರ್ ಈವರೆಗೆ ಏನನ್ನು ಪಡೆದುಕೊಂಡಿದೆಯೊ ಅದನ್ನು ತೋರಿಸುತ್ತದೆ.</"
+"html>"
+
+#: src/konqmainwindow.cpp:3706
+#, fuzzy, kde-format
+#| msgid ""
+#| "<html>Reload the currently displayed document<br /><br />This may, for "
+#| "example, be needed to refresh web pages that have been modified since "
+#| "they were loaded, in order to make the changes visible.  Any images on "
+#| "the page are downloaded again, even if cached copies exist.</html>"
+msgid ""
+"<html>Reload the currently displayed document<br /><br />This may, for "
+"example, be needed to refresh web pages that have been modified since they "
+"were loaded, in order to make the changes visible. Any images on the page "
+"are downloaded again, even if cached copies exist.</html>"
+msgstr ""
+"<html>ಈಗ ಪ್ರದರ್ಶಿಸುತ್ತಿರುವ ದಸ್ತಾವೇಜನ್ನು ಪುನಶ್ಚೇತನಗೊಳಿಸು<br /><br />ಉದಾಹರಣೆಗೆ, "
+"ಬದಲಾವಣೆಗಳು ಕಾಣಿಸಿಕೊಳ್ಳಲು, ಲೋಡ್ ಮಾಡಿದ ನಂತರ ಮಾರ್ಪಡಿಸಲಾದ ಜಾಲ ಪುಟಗಳನ್ನು "
+"ಪುನಶ್ಚೇತನಗೊಳಿಸಬೇಕಾಗಬಹುದು. ಪುಟದಲ್ಲಿ ಬೇರಾವುದೆ ಬದಲಾವಣೆಗಳಿದ್ದಲ್ಲಿ, ಶೇಖರಿಸಡಲಾದ ಒಂದು "
+"ಪ್ರತಿ ಇದ್ದರೂ ಸಹ ಬದಲಾವಣೆಗಳನ್ನು ಮತ್ತೆ ಪಡೆದುಕೊಳ್ಳಲಾಗುವುದು.</html>"
+
+#: src/konqmainwindow.cpp:3710
+#, kde-format
+msgid ""
+"Force a reload of the currently displayed document and any contained images"
+msgstr ""
+"ಪ್ರಸ್ತುತ ತೋರಿಸಲಾಗುತ್ತಿರುವ ಎಲ್ಲಾ ದಸ್ತಾವೇಜುಗಳನ್ನು ಹಾಗು ಅದರಲ್ಲಿ ಇರಬಹುದಾದ ಚಿತ್ರಗಳನ್ನು "
+"ಒತ್ತಾಯಪೂರ್ವಕವಾಗಿ ಪುನಶ್ಚೇತನಗೊಳಿಸು"
+
+#: src/konqmainwindow.cpp:3712
+#, kde-format
+msgid "Stop loading the document"
+msgstr "ದಸ್ತಾವೇಜಿನ ಉತ್ಥಾಪನೆಯನ್ನು ನಿಲ್ಲಿಸು"
+
+#: src/konqmainwindow.cpp:3714
+#, kde-format
+msgid ""
+"<html>Cut the currently selected text or item(s) and move it to the system "
+"clipboard<br /><br />This makes it available to the <b>Paste</b> command in "
+"Konqueror and other KDE applications.</html>"
+msgstr ""
+"<html>ಪ್ರಸಕ್ತ ಆಯ್ಕೆ ಮಾಡಲಾದ ಪಠ್ಯ ಅಥವ ಅಂಶವನ್ನು(ಗಳನ್ನು) ಕತ್ತರಿಸಿ ಹಾಗು ಗಣಕದ "
+"ಹಿಡಿಕೆಕಟ್ಟಿಗೆ(ಕ್ಲಿಪ್‌ಬೋರ್ಡಿಗೆ) ವರ್ಗಾಯಿಸಿ<br /><br />ಹೀಗೆ ಮಾಡುವುದರಿಂದ ಇದು ಕಾಂಕರರ್ "
+"ಹಾಗು KDE ಅನ್ವಯಗಳ <b>ಅಂಟಿಸು</b> ಆದೇಶಕ್ಕೆ ದೊರಕಿದಂತಾಗುತ್ತದೆ.</html>"
+
+#: src/konqmainwindow.cpp:3718
+#, kde-format
+msgid "Move the selected text or item(s) to the clipboard"
+msgstr "ಆಯ್ಕೆ ಮಾಡಿದ ಪಠ್ಯ ಅಥವಾ ವಸ್ತುಗಳನ್ನು ಹಿಡಿಕೆಕಟ್ಟಿಗೆ (ಕ್ಲಿಪ್‌ಬೋರ್ಡ್) ಸರಿಸು"
+
+#: src/konqmainwindow.cpp:3720
+#, kde-format
+msgid ""
+"<html>Copy the currently selected text or item(s) to the system "
+"clipboard<br /><br />This makes it available to the <b>Paste</b> command in "
+"Konqueror and other KDE applications.</html>"
+msgstr ""
+"<html>ಪ್ರಸಕ್ತ ಆಯ್ಕೆ ಮಾಡಲಾದ ಪಠ್ಯ ಅಥವ ಅಂಶವನ್ನು(ಗಳನ್ನು) ಗಣಕದ "
+"ಹಿಡಿಕೆಕಟ್ಟಿಗೆ(ಕ್ಲಿಪ್‌ಬೋರ್ಡಿಗೆ) ಕಾಪಿ ಮಾಡಿ<br /><br />ಹೀಗೆ ಮಾಡುವುದರಿಂದ ಇದು ಕಾಂಕರರ್ "
+"ಹಾಗು KDE ಅನ್ವಯಗಳ <b>ಅಂಟಿಸು</b> ಆದೇಶಕ್ಕೆ ದೊರಕಿದಂತಾಗುತ್ತದೆ.</html>"
+
+#: src/konqmainwindow.cpp:3724
+#, kde-format
+msgid "Copy the selected text or item(s) to the clipboard"
+msgstr "ಆಯ್ಕೆ ಮಾಡಿದ ಪಠ್ಯ ಅಥವಾ ವಸ್ತುಗಳನ್ನು ಹಿಡಿಕೆಕಟ್ಟಿಗೆ(ಕ್ಲಿಪ್‌ಬೋರ್ಡ್) ಕಾಪಿ ಮಾಡು"
+
+#: src/konqmainwindow.cpp:3726
+#, kde-format
+msgid ""
+"<html>Paste the previously cut or copied clipboard contents<br /><br />This "
+"also works for text copied or cut from other KDE applications.</html>"
+msgstr ""
+"<html>ಈ ಮೊದಲು ಹಿಡಿಕೆಕಟ್ಟಿಗೆ(ಕ್ಲಿಪ್‌ಬೋರ್ಡಿಗೆ) ಕತ್ತರಿಸಲಾದ ಅಥವ ಕಾಪಿ ಮಾಡಲಾದ ಅಂಶಗಳನ್ನು "
+"ಕತ್ತರಿಸಿ ಅಂಟಿಸಿ<br /><br />ಇದು ಇತರೆ KDE ಅನ್ವಯಗಳಿಂದ ಕಾಪಿ ಮಾಡಲಾದ ಅಥವ ಕತ್ತರಿಸಲಾದ "
+"ಪಠ್ಯಗಳಿಗೂ ಅನ್ವಯಿಸುತ್ತದೆ.</html>"
+
+#: src/konqmainwindow.cpp:3729
+#, kde-format
+msgid "Paste the clipboard contents"
+msgstr "ಹಿಡಿಕೆಕಟ್ಟಿನ(ಕ್ಲಿಪ್‌ಬೋರ್ಡ್) ಒಳಪಿಡಿಯನ್ನು(contents) ಅಂಟಿಸು"
+
+#: src/konqmainwindow.cpp:3731
+#, kde-format
+msgid ""
+"<html>Print the currently displayed document<br /><br />You will be "
+"presented with a dialog where you can set various options, such as the "
+"number of copies to print and which printer to use.<br /><br />This dialog "
+"also provides access to special KDE printing services such as creating a PDF "
+"file from the current document.</html>"
+msgstr ""
+"<html>ಪ್ರಸಕ್ತ ತೋರಿಸಲಾಗುತ್ತಿರುವ ದಸ್ತಾವೇಜನ್ನು ಮುದ್ರಿಸು<br /><br />ಮುದ್ರಿಸಬೇಕಿರುವ "
+"ಪ್ರತಿಗಳ ಸಂಖ್ಯೆ ಹಾಗು ಯಾವ ಮುದ್ರಕವನ್ನು ಬಳಸಬೇಕು ಮುಂತಾದ ಹಲವಾರು ಆಯ್ಕೆಗಳನ್ನು "
+"ಸೂಚಿಸಬಹುದಾದಂತಹ ಒಂದು ಸಂವಾದವನ್ನು ನಿಮಗೆ ಒದಗಿಸಲಾಗುತ್ತದೆ.<br /><br />ಈ ಸಂವಾದವು "
+"ಪ್ರಸಕ್ತ ದಸ್ತಾವೇಜನ್ನು ಒಂದು PDF ಕಡತವಾಗಿ ಮಾರ್ಪಡಿಸುವಂತಹ ವಿಶೇಷವಾದ KDE ಮುದ್ರಣ ಸೇವೆಗಳನ್ನೂ "
+"ಸಹ ಒದಗಿಸುತ್ತವೆ.</html>"
+
+#: src/konqmainwindow.cpp:3737
+#, kde-format
+msgid "Print the current document"
+msgstr "ಪ್ರಸ್ತುತ ದಸ್ತಾವೇಜನ್ನು ಮುದ್ರಿಸು"
+
+#: src/konqmainwindow.cpp:3739
+#, kde-format
+msgid ""
+"A locked view cannot change folders. Use in combination with 'link view' to "
+"explore many files from one folder"
+msgstr ""
+"ಒಂದು ಬಂಧಿಸಲಾದ ನೋಟವು ಕಡತಕೋಶಗಳನ್ನು ಬದಲಾಯಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ. ಒಂದು ಕಡತಕೋಶದಿಂದ ಹಲವಾರು "
+"ಕಡತಗಳನ್ನು ಹುಡುಕಲು 'ಕೊಂಡಿ ನೋಟ'ದೊಂದಿಗೆ ಬಳಸಿ"
+
+#: src/konqmainwindow.cpp:3740
+#, kde-format
+msgid ""
+"Sets the view as 'linked'. A linked view follows folder changes made in "
+"other linked views."
+msgstr ""
+"ನೋಟವನ್ನು 'ಕೊಂಡಿ ಜೋಡಿಸಲಾಗಿದೆ' ಎಂದು ಬದಲಾಯಿಸಿ. ಕೊಂಡಿ ಜೋಡಿಸಲಾದ ನೋಟವು ಬೇರೆ ಕೊಂಡಿ "
+"ಮಾಡಲಾದ ನೋಟಗಳಲ್ಲಿನ ಕಡತಕೋಶ ಬದಲಾವಣೆಗಳನ್ನು ಅನುಸರಿಸುತ್ತದೆ."
+
+#: src/konqmainwindow.cpp:3744
+#, fuzzy, kde-format
+#| msgid "C&lose Current Tab"
+msgid "&Inspect Current Page"
+msgstr "ಪ್ರಸ್ತುತ ಹಾಳೆಯನ್ನು ಮುಚ್ಚು(&l)"
+
+#: src/konqmainwindow.cpp:3745
+#, kde-format
+msgid ""
+"<html>Shows the developer tools for the current page<br/><br/>The current "
+"view is split in two and the developer tools are displayed in the second half"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3746
+#, kde-format
+msgid "Shows the developer tools for the current page"
+msgstr ""
+
+#: src/konqmainwindow.cpp:3912
+#, kde-format
+msgid "Copy &Files..."
+msgstr "ಕಡತಗಳನ್ನು ಕಾಪಿ ಮಾಡು(&F)..."
+
+#: src/konqmainwindow.cpp:3916
+#, kde-format
+msgid "M&ove Files..."
+msgstr "ಕಡತಗಳನ್ನು ಸ್ಥಳಾಂತರಿಸು(&o)..."
+
+#: src/konqmainwindow.cpp:4245
+#, kde-format
+msgid ""
+"You have requested to open more than 20 bookmarks in tabs. This might take a "
+"while. Continue?"
+msgstr ""
+"ನೀವು ೨೦ ಕ್ಕೂ ಹೆಚ್ಚಿನ ಪುಟ ಗುರುತುಗಳನ್ನು ಹಾಳೆಯಲ್ಲಿ ತೆರೆಯಲು ಮನವಿ ಸಲ್ಲಿಸಿದ್ದೀರಿ. ಇದಕ್ಕೆ "
+"ಒಂದಿಷ್ಟು ಸಮಯ ಹಿಡಿಯುತ್ತದೆ. ಮುಂದುವರೆಯಬೇಕೆ?"
+
+#: src/konqmainwindow.cpp:4247
+#, kde-format
+msgctxt "@title:window"
+msgid "Open bookmarks folder in new tabs"
+msgstr "ಹಾಳೆಗಳಲ್ಲಿ ಹೊಸ ಟ್ಯಾಬ್‌ಗಳು ಕಡತಕೋಶವನ್ನು ತೆರೆ"
+
+#: src/konqmainwindow.cpp:4405
+#, kde-format
+msgid "Open in T&his Window"
+msgstr "ಈ ಕಿಟಕಿಯಲ್ಲಿ ತೆರೆ(&h)"
+
+#: src/konqmainwindow.cpp:4406
+#, kde-format
+msgid "Open the document in current window"
+msgstr "ದಸ್ತಾವೇಜನ್ನು ಪ್ರಸ್ತುತ ಕಿಟಕಿಯಲ್ಲಿ ತೆರೆ"
+
+#: src/konqmainwindow.cpp:4413
+#, kde-format
+msgid "Open the document in a new window"
+msgstr "ದಸ್ತಾವೇಜನ್ನು ಹೊಸ ಕಿಟಕಿಯಲ್ಲಿ ತೆರೆ"
+
+#: src/konqmainwindow.cpp:4419
+#, kde-format
+msgid "Open in &New Tab"
+msgstr "ಹೊಸ ಹಾಳೆಯಲ್ಲಿ ತೆರೆ(&N)"
+
+#: src/konqmainwindow.cpp:4421
+#, kde-format
+msgid "Open the document in a new tab"
+msgstr "ದಸ್ತಾವೇಜನ್ನು ಹೊಸ ಹಾಳೆಯಲ್ಲಿ ತೆರೆ"
+
+#: src/konqmainwindow.cpp:4637
+#, kde-format
+msgid "&Open With"
+msgstr "ಇದರಲ್ಲಿ ತೆರೆ(&O)"
+
+#: src/konqmainwindow.cpp:4650
+#, kde-format
+msgid "Open with %1"
+msgstr "ಇದರಲ್ಲಿ ತೆರೆ %1"
+
+#: src/konqmainwindow.cpp:4698
+#, kde-format
+msgctxt "@action:inmenu View"
+msgid "&View Mode"
+msgstr "ವೀಕ್ಷಣ ಸ್ಥಿತಿ(&V)"
+
+#: src/konqmainwindow.cpp:4815
+#, kde-format
+msgid ""
+"You have multiple tabs open in this window, are you sure you want to quit?"
+msgstr ""
+"ಈ ವಿಂಡೋದಲ್ಲಿ ನೀವು ಅನೇಕ ಹಾಳೆಗಳನ್ನು ತೆರೆದಿದ್ದೀರಿ, ನಿರ್ಗಮಿಸಬೇಕೆಂಬ ನಿಮ್ಮ ನಿರ್ಣಯವು "
+"ಖಚಿತವೆ?"
+
+#: src/konqmainwindow.cpp:4817
+#, kde-format
+msgctxt "@title:window"
+msgid "Confirmation"
+msgstr "ಖಚಿತಪಡಿಸುವಿಕೆ"
+
+#: src/konqmainwindow.cpp:4819
+#, kde-format
+msgid "C&lose Current Tab"
+msgstr "ಪ್ರಸ್ತುತ ಹಾಳೆಯನ್ನು ಮುಚ್ಚು(&l)"
+
+#: src/konqmainwindow.cpp:4845
+#, kde-format
+msgid ""
+"This tab contains changes that have not been submitted.\n"
+"Closing the window will discard these changes."
+msgstr ""
+"ಈ ಹಾಳೆಯು ಇನ್ನೂ ಸಲ್ಲಿಸದೆ ಇರುವ ಬದಲಾವಣೆಗಳನ್ನು ಹೊಂದಿದೆ. \n"
+"ಕಿಟಕಿಯನ್ನು ಮುಚ್ಚುವುದರಿಂದ ಈ ಬದಲಾವಣೆಗಳನ್ನು ತ್ಯಜಿಸುತ್ತದೆ."
+
+#: src/konqmainwindow.cpp:4846
+#, kde-format
+msgid ""
+"This page contains changes that have not been submitted.\n"
+"Closing the window will discard these changes."
+msgstr ""
+"ಈ ಪುಟವು ಇನ್ನೂ ಸಲ್ಲಿಸದೆ ಇರುವ ಬದಲಾವಣೆಗಳನ್ನು ಹೊಂದಿದೆ. \n"
+"ಕಿಟಕಿಯನ್ನು ಮುಚ್ಚುವುದರಿಂದ ಈ ಬದಲಾವಣೆಗಳನ್ನು ತ್ಯಜಿಸುತ್ತದೆ."
+
+#: src/konqmainwindow.cpp:5003
+#, kde-format
+msgid ""
+"Your sidebar is not functional or unavailable. A new entry cannot be added."
+msgstr ""
+"ನಿಮ್ಮ ಬದಿ ಪಟ್ಟಿಕೆಯು ಕೆಲಸ ಮಾಡುತ್ತಿಲ್ಲ ಅಥವ ಲಭ್ಯವಿಲ್ಲ. ಒಂದು ಹೊಸ ನಮೂದನ್ನು ಸೇರಿಸಲು "
+"ಸಾಧ್ಯವಿಲ್ಲ."
+
+#: src/konqmainwindow.cpp:5003 src/konqmainwindow.cpp:5010
+#, kde-format
+msgctxt "@title:window"
+msgid "Web Sidebar"
+msgstr "ಜಾಲ ಬದಿಪಟ್ಟಿ"
+
+#: src/konqmainwindow.cpp:5008
+#, kde-format
+msgid "Add new web extension \"%1\" to your sidebar?"
+msgstr "ಹೊಸ ಜಾಲವಿಸ್ತರಣೆ \"%1\"ಯನ್ನು ನಿಮ್ಮ ಬದಿಪಟ್ಟಿಗೆ ಸೇರಿಸುವುದೇ?"
+
+#: src/konqmainwindow.cpp:5010
+#, kde-format
+msgid "Add"
+msgstr "ಸೇರಿಸು"
+
+#: src/konqmainwindow.cpp:5010
+#, kde-format
+msgid "Do Not Add"
+msgstr "ಸೇರಿಸಬೇಡ"
+
+#: src/konqmainwindow.cpp:5358
+#, kde-format
+msgid ""
+"There appears to be a configuration error. You have associated Konqueror "
+"with %1, but it cannot handle this file type."
+msgstr ""
+"ಸಂರಚನಾ ದೋಷವಿದ್ದಂತಿದೆ. ನೀವು ಕಾಂಕರರ್ ಅನ್ನು %1 ಜೊತೆಗೂಡಿಸಿದ್ದೀರಿ, ಆದರೆ ಇದು ಈ ಕಡತ "
+"ಪ್ರಕಾರವನ್ನು ನಿರ್ವಹಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ."
+
+#: src/konqmainwindow.cpp:5439
+#, kde-format
+msgid ""
+"Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
+"proxy will be used\n"
+"\n"
+" QtWebEngine only support a fixed proxy, so proxy auto-configuration (PAC) "
+"and Web Proxy Auto-Discovery protocol can't be used with QtWebEngine. If you "
+"need a proxy, please select the system proxy configuration or specify a "
+"proxy URL manually in the settings dialog. Do you want to change proxy "
+"settings now?"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5444
+#, kde-format
+msgid "Unsupported proxy configuration"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5444
+#, kde-format
+msgid "Don't use a proxy"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5445 src/konqmainwindow.cpp:5463
+#, fuzzy, kde-format
+#| msgid "Show Configuration Button"
+msgid "Show proxy configuration dialog"
+msgstr "ಸಂರಚನಾ ಗುಂಡಿಯನ್ನು ತೋರಿಸು"
+
+#: src/konqmainwindow.cpp:5459
+#, kde-format
+msgid ""
+"Your proxy configuration can't be used with the QtWebEngine HTML engine "
+"because it doesn't support having different proxies for the HTTP and HTTPS "
+"protocols. Your current settings are:<p><b>HTTP proxy:</b> <tt>%1</tt></"
+"p><p><b>HTTPS proxy: </b><tt>%2</tt></p>What do you want to do?"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5462
+#, kde-format
+msgid "Conflicting proxy configuration"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5463
+#, kde-format
+msgid "Use HTTP proxy (only this time)"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5463
+#, kde-format
+msgid "Use HTTPS proxy (only this time)"
+msgstr ""
+
+#: src/konqmainwindow.cpp:5540
+#, kde-format
+msgid ""
+"You have entered Complete Full Screen mode (the user interface is completely "
+"hidden). You can exit it by pressing the keyboard shortcut for Full Screen "
+"Mode (%1)"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: src/konqnewsessiondlg_base.ui:28
+#, fuzzy, kde-format
+#| msgid "Save open tabs and windows for easy retrieval"
+msgid "Save open &tabs and windows for easy retrieval"
+msgstr "ಸುಲಭವಾಗಿ ಮರಳಿ ಪಡೆಯಲು ತೆರೆಯಲಾದ ಹಾಳೆಗಳನ್ನು ಹಾಗು ಕಿಟಕಿಗಳನ್ನು ಉಳಿಸಿ"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_pAllWindows)
+#: src/konqnewsessiondlg_base.ui:34
+#, kde-format
+msgid "A&ll open windows"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_pCurrentWindow)
+#: src/konqnewsessiondlg_base.ui:44
+#, fuzzy, kde-format
+#| msgid "Open tabs inside current window"
+msgid "Onl&y current window"
+msgstr "ಹಾಳೆಗಳನ್ನು ಪ್ರಸ್ತುತ ಕಿಟಕಿಯಲ್ಲಿ ತೆರೆ"
+
+#. i18n: ectx: property (text), widget (QLabel, lblSessionName)
+#: src/konqnewsessiondlg_base.ui:56
+#, fuzzy, kde-format
+#| msgid "&Session name:"
+msgid "Session n&ame:"
+msgstr "ಅಧಿವೇಶನದ ಹೆಸರು(&S):"
+
+#: src/konqsessiondlg.cpp:60
+#, kde-format
+msgctxt "@title:window"
+msgid "Manage Sessions"
+msgstr "ಅಧಿವೇಶನಗಳನ್ನು ವ್ಯವಸ್ಥಾಪಿಸು"
+
+#: src/konqsessiondlg.cpp:168
+#, kde-format
+msgctxt "@title:window"
+msgid "Rename Session"
+msgstr "ಅಧಿವೇಶನದ ಹೆಸರನ್ನು ಬದಲಾಯಿಸಿ"
+
+#: src/konqsessiondlg.cpp:215
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Session"
+msgstr "ಅಧಿವೇಶನವನ್ನು ಉಳಿಸು"
+
+#: src/konqsessiondlg.cpp:251
+#, kde-format
+msgid ""
+"A session with the name '%1' already exists, do you want to overwrite it?"
+msgstr ""
+"'%1' ಎಂಬ ಹೆಸರಿನ ಒಂದು ಅಧಿವೇಶನ ಈಗಾಗಲೆ ಅಸ್ತಿತ್ವದಲ್ಲಿದೆ, ನೀವದನ್ನು ತಿದ್ದಿಬರೆಯಲು "
+"ಬಯಸುತ್ತೀರೆ?"
+
+#: src/konqsessiondlg.cpp:252
+#, kde-format
+msgctxt "@title:window"
+msgid "Session exists. Overwrite?"
+msgstr "ಅಧೀವೇಶನ ಅಸ್ತಿತ್ವದಲ್ಲಿದೆ. ತಿದ್ದಿ ಬರೆಯಬೇಕೆ?"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pNewButton)
+#: src/konqsessiondlg_base.ui:26
+#, kde-format
+msgctxt "@action:button New session"
+msgid "New..."
+msgstr "ಹೊಸ..."
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pSaveCurrentButton)
+#: src/konqsessiondlg_base.ui:33
+#, fuzzy, kde-format
+#| msgctxt "@action:button Save current session"
+#| msgid "Save Current"
+msgctxt "@action:button Save current session"
+msgid "Save Current..."
+msgstr "ಈಗಿನದನ್ನು ಉಳಿಸು"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pRenameButton)
+#: src/konqsessiondlg_base.ui:40
+#, kde-format
+msgctxt "@action:button Rename session"
+msgid "Rename..."
+msgstr "ಹೆಸರನ್ನು ಬದಲಾಯಿಸು..."
+
+#. i18n: ectx: property (text), widget (QPushButton, m_pDeleteButton)
+#: src/konqsessiondlg_base.ui:47
+#, kde-format
+msgctxt "@action:button Delete session"
+msgid "Delete"
+msgstr "ಅಳಿಸು"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_pOpenTabsInsideCurrentWindow)
+#. i18n: ectx: label, entry, group (Trash)
+#: src/konqsessiondlg_base.ui:73 src/konqueror.kcfg:517
+#, kde-format
+msgid "Open tabs inside current window"
+msgstr "ಹಾಳೆಗಳನ್ನು ಪ್ರಸ್ತುತ ಕಿಟಕಿಯಲ್ಲಿ ತೆರೆ"
+
+#: src/konqsessionmanager.cpp:86
+#, kde-format
+msgctxt "@title:window"
+msgid "Restore Session?"
+msgstr "ಅಧಿವೇಶನವನ್ನು ಮರಳಿ ಸ್ಥಾಪಿಸಬೇಕೆ?"
+
+#: src/konqsessionmanager.cpp:107
+#, fuzzy, kde-format
+#| msgid ""
+#| "Konqueror did not close correctly. Would you like to restore the previous "
+#| "session?"
+msgid ""
+"Konqueror did not close correctly. Would you like to restore these previous "
+"sessions?"
+msgstr ""
+"ಕಾಂಕರರ್ ಸರಿಯಾವಾಗಿ ಮುಚ್ಚಲ್ಪಟ್ಟಿಲ್ಲ. ಅಧಿವೇಶನವನ್ನು ಮರಳಿ ಸ್ಥಾಪಿಸಲು ನೀವು ಬಯಸುತ್ತೀರೆ?"
+
+#: src/konqsessionmanager.cpp:119
+#, kde-format
+msgctxt "@tooltip:session list"
+msgid "Uncheck the sessions you do not want to be restored"
+msgstr ""
+
+#: src/konqsessionmanager.cpp:152
+#, fuzzy, kde-format
+#| msgid "&Window"
+msgctxt "@item:treewidget"
+msgid "Window %1"
+msgstr "ಕಿಟಕಿ(&W)"
+
+#: src/konqsessionmanager.cpp:190
+#, kde-format
+msgid "Do not ask again"
+msgstr ""
+
+#: src/konqsessionmanager.cpp:204
+#, fuzzy, kde-format
+#| msgid "Restore Session"
+msgctxt "@action:button yes"
+msgid "Restore Session"
+msgstr "ಅಧಿವೇಶನವನ್ನು ಮರಳಿ ಸ್ಥಾಪಿಸು"
+
+#: src/konqsessionmanager.cpp:205
+#, fuzzy, kde-format
+#| msgid "Do Not Restore"
+msgctxt "@action:button no"
+msgid "Do Not Restore"
+msgstr "ಮರಳಿ ಸ್ಥಾಪಿಸಬೇಡ"
+
+#: src/konqsessionmanager.cpp:206
+#, fuzzy, kde-format
+#| msgid "Ask Me Later"
+msgctxt "@action:button ask later"
+msgid "Ask Me Later"
+msgstr "ನನ್ನನ್ನು ಆಮೇಲೆ ಕೇಳು"
+
+#: src/konqstatusbarmessagelabel.cpp:67
+#, fuzzy, kde-format
+#| msgid "Close View"
+msgctxt "@info"
+msgid "Close"
+msgstr "ನೋಟವನ್ನು ಮುಚ್ಚು"
+
+#: src/konqstatusbarmessagelabel.cpp:68
+#, fuzzy, kde-format
+#| msgid "Close View"
+msgid "Close"
+msgstr "ನೋಟವನ್ನು ಮುಚ್ಚು"
+
+#: src/konqstatusbarmessagelabel.cpp:147
+#, kde-format
+msgid "Error: %1"
+msgstr ""
+
+#: src/konqtabs.cpp:51
+#, kde-format
+msgid ""
+"This bar contains the list of currently open tabs. Click on a tab to make it "
+"active. You can also use keyboard shortcuts to navigate through tabs. The "
+"text on the tab shows the content currently open in it; place your mouse "
+"over the tab to see the full title, in case it has been shortened to fit the "
+"tab width."
+msgstr ""
+"ಈ ಪಟ್ಟಿಯು ಈಗ ತೆರೆಯಲ್ಪಟ್ಟಿರುವ ಹಾಳೆಗಳನ್ನೊಳಗೊಂಡಿರುತ್ತದೆ. ಒಂದು ಹಾಳೆಯನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಲು "
+"ಅದರ ಮೇಲೆ ಕ್ಲಿಕ್ಕಿಸಿ. ನೀವು ಹಾಳೆಯಲ್ಲಿ ನ್ಯಾವಿಗೇಟ್ ಮಾಡಲು ಕೀಲಿಮಣೆ ಸಮೀಪ ಮಾರ್ಗಗಳನ್ನು "
+"ಉಪಯೋಗಿಸಬಹುದು. ಹಾಳೆಯ ಹಿಡಿಕೆಯ ಮೇಲಿರುವ ಪಠ್ಯವು ಹಾಲಿ ಜಾಲತಾಣವು ಹೊಂದಿರುವುದನ್ನು "
+"ತೋರಿಸುತ್ತದೆ; ಹಿಡಿಕೆಯ ಗಾತ್ರಕ್ಕೆ ಸರಿಹೊಂದಿಸಲು ಶೀರ್ಷಿಕೆ ಕತ್ತರಿಸಲ್ಪಟ್ಟಿದ್ದ ಪಕ್ಷದಲ್ಲಿ "
+"ಶೀರ್ಷಿಕೆಯನ್ನು ಪೂರ್ಣವಾಗಿ ನೋಡಲು ನಿಮ್ಮ ಮೌಸನ್ನು ಹಾಳೆಯ ಹಿಡಿಕೆಯ ಮೇಲಿಡಿ."
+
+#: src/konqtabs.cpp:86
+#, kde-format
+msgid "Open a new tab"
+msgstr "ಹೊಸ ಹಾಳೆಯನ್ನು ತೆರೆ"
+
+#: src/konqtabs.cpp:95
+#, kde-format
+msgid "Close the current tab"
+msgstr "ಪ್ರಸ್ತುತ ಹಾಳೆಯನ್ನು ಮುಚ್ಚು"
+
+#: src/konqtabs.cpp:461
+#, kde-format
+msgid "&Duplicate Tab"
+msgstr "ತದ್ರೂಪು ಹಾಳೆ(&D)"
+
+#: src/konqtabs.cpp:466
+#, kde-format
+msgid "&Reload Tab"
+msgstr "ಹಾಳೆಯನ್ನು ಮರುತೋರಿಸು(&R)"
+
+#: src/konqtabs.cpp:473
+#, kde-format
+msgid "Other Tabs"
+msgstr "ಇತರ ಹಾಳೆಗಳು"
+
+#: src/konqtabs.cpp:478
+#, kde-format
+msgid "D&etach Tab"
+msgstr "ಹಾಳೆಗಳನ್ನು ಬೇರ್ಪಡಿಸು(&e)"
+
+#: src/konqtabs.cpp:484
+#, kde-format
+msgid "&Close Tab"
+msgstr "ಹಾಳೆಯನ್ನು ಮುಚ್ಚು(&C)"
+
+#. i18n: ectx: label, entry, group (UserSettings)
+#: src/konqueror.kcfg:11
+#, kde-format
+msgid "Start Page"
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry, group (UserSettings)
+#: src/konqueror.kcfg:12
+#, kde-format
+msgid "This is the URL of the web page where Konqueror will start from."
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry, group (UserSettings)
+#: src/konqueror.kcfg:17
+#, fuzzy, kde-format
+#| msgid ""
+#| "This is the URL of the web page where Konqueror (as web browser) will "
+#| "jump to when the \\\"Home\\\" button is pressed. When Konqueror is "
+#| "started as a file manager, that button makes it jump to your local home "
+#| "folder instead."
+msgid ""
+"This is the URL of the web page where Konqueror will jump to when the \\"
+"\"Home\\\" button is pressed."
+msgstr ""
+"ಇದು, \"ನೆಲೆ\" ಗುಂಡಿಯನ್ನು ಒತ್ತಿದಾಗ Konqueror (ಜಾಲ ವೀಕ್ಷಕವಾಗಿ) ತೆರಳುವ ಜಾಲಪುಟದ URL "
+"ಆಗಿದೆ. ಅದೆ Konqueror ಅನ್ನು ಒಂದು ಕಡತ ವ್ಯವಸ್ಥಾಪಕವಾಗಿ ಆರಂಭಗೊಳಿಸಿದಾಗ ಈ ಗುಂಡಿಯನ್ನು "
+"ಒತ್ತಿದಾಗ ಸ್ಥಳೀಯ ನೆಲೆ ಕಡತಕೋಶಕ್ಕೆ ನಿಮ್ಮನ್ನು ಕೊಂಡೊಯ್ಯುತ್ತದೆ."
+
+#. i18n: ectx: label, entry, group (UndoManagerSettings)
+#: src/konqueror.kcfg:26
+#, kde-format
+msgid "Maximum number of Closed Items"
+msgstr "ಮುಚ್ಚಿದ ಅಂಶಗಳ ಗರಿಷ್ಠ ಸಂಖ್ಯೆ"
+
+#. i18n: ectx: whatsthis, entry, group (UndoManagerSettings)
+#: src/konqueror.kcfg:27
+#, kde-format
+msgid ""
+"This sets the maximum number of closed items that will be stored in memory. "
+"This limit will not be surpassed."
+msgstr ""
+"ಸ್ಮರಣಕೋಶದಲ್ಲಿ ಹಿಡಿಸುವ ಗರಿಷ್ಠ ಮುಚ್ಚಿದ ಅಂಶಗಳನ್ನಿದು ನಿಗದಿ ಪಡಿಸುತ್ತದೆ. ಈ ಮಿತಿಯನ್ನು "
+"ಮೀರಲಾಗದು."
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:36
+#, kde-format
+msgid "Open folders in separate windows"
+msgstr "ಹಾಳೆಗಳನ್ನು ಪ್ರತ್ಯೇಕ ಕಿಟಕಿಗಳಲ್ಲಿ ತೆರೆ"
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:37
+#, kde-format
+msgid ""
+"If this option is checked, Konqueror will open a new window when you open a "
+"folder, rather than showing that folder's contents in the current window."
+msgstr ""
+"ಈ ಆಯ್ಕೆಯನ್ನು ಆರಿಸಿದಲ್ಲಿ, ನೀವು ಒಂದು ಫೋಲ್ಡರನ್ನು ತೆರೆದಾಗ, ಅದು ಪ್ರಸ್ತುತ ಇರುವ ವಿಂಡೋದಲ್ಲಿ "
+"ತೆರೆದುಕೊಳ್ಳುವ ಬದಲು Konqueror ಒಂದು ಹೊಸ ವಿಂಡೋವನ್ನು ತೆರೆಯುತ್ತದೆ."
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:42
+#, kde-format
+msgid "Show file tips"
+msgstr "ಕಡತದ ಅಂಶವನ್ನು ತೋರಿಸು"
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:43
+#, kde-format
+msgid ""
+"Here you can control if, when moving the mouse over a file, you want to see "
+"a small popup window with additional information about that file"
+msgstr ""
+"ಕಡತವೊಂದರ ಮೇಲೆ ಮೌಸನ್ನು ಚಲಿಸಿದಾಗ,ಕಡತದ ಬಗ್ಗೆ ಹೆಚ್ಚಿನ ವಿವರಗಳನ್ನು ತೋರಿಸುವ ಪುಟಿಕೆ ಕಿಟಕಿ "
+"ತೆರೆಯಲು ಬಯಸುವಿರಾದರೆ, ಅದರ ನಿಯಂತ್ರಣ ಇಲ್ಲಿ ಲಭ್ಯವಿದೆ."
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:54
+#, kde-format
+msgid "Show previews in file tips"
+msgstr "ಕಡತದ ಭಾಗಗಳನ್ನು ತೋರಿಸು "
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:55
+#, kde-format
+msgid ""
+"Here you can control if you want the popup window to contain a larger "
+"preview for the file, when moving the mouse over it"
+msgstr ""
+"ಮೌಸನ್ನು ಕಡತದ ಮೇಲೆ ಚಲಿಸಿದಾಗ,ಅದರ ಮುನ್ನೋಟವು ದೊಡ್ಡ ಪುಟಿಕೆ ಕಿಟಕಿಯಲ್ಲಿ ಮೂಡಲು "
+"ಬಯಸುವಿರಾದರೆ,ಅದರ ನಿಯಂತ್ರಣ ಇಲ್ಲಿಂದ ಮಾಡಬಹುದು."
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#: src/konqueror.kcfg:60
+#, kde-format
+msgid "Show 'Delete' menu entries which bypass the trashcan"
+msgstr "ಕಸಬುಟ್ಟಿಯನ್ನು ಮೀರಿದ ಅಳಿಸಿದ ಕಡತಗಳ ಪರಿವಿಡಿ ನಮೂದುಗಳನ್ನು ತೋರಿಸು"
+
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:61
+#, kde-format
+msgid ""
+"Check this if you want 'Delete' menu commands to be displayed on the desktop "
+"and in the file manager's menus and context menus. You can always delete "
+"files when hidden by holding the Shift key while calling 'Move to Trash'."
+msgstr ""
+"ಡೆಸ್ಕ್ ಟಾಪ್, ಕಡತ ನಿರ್ವಾಹಕ ಮತ್ತು ಸಾಂದರ್ಭಿಕ ಪರಿವಿಡಿಗಳಲ್ಲಿ \"ಅಳಿಸು\" ಪರಿವಿಡಿಯನ್ನು "
+"ತೋರಿಸಲು ಈ ಆಯ್ಕೆಯನ್ನು ಗುರುತಿಸಿ. ಅಡಗಿಸಲಾದ ಕಡತಗಳನ್ನು ಅಳಿಸಲು ತಾವು \"ಕಸದ ಬುಟ್ಟಿಗೆ "
+"ಸ್ಥಳಾಂತರಿಸು\"ನ್ನು ಕರೆಯುವಾಗ, ಶಿಫ್ಟ್ ಕೀಲಿಯನ್ನು ಒತ್ತಿ ಹಿಡಿಯಿರಿ."
+
+#. i18n: ectx: label, entry, group (FMSettings)
+#. i18n: ectx: whatsthis, entry, group (FMSettings)
+#: src/konqueror.kcfg:153 src/konqueror.kcfg:154
+#, kde-format
+msgid "Number of Open With items in the File menu"
+msgstr "ಕಡತ ಪರಿವಿಡಿಯಲ್ಲಿ ತೆರೆದಿರಬೇಕಾದ ವಸ್ತುಗಳ ಸಂಖ್ಯೆ"
+
+#. i18n: ectx: label, entry, group (HTML Settings)
+#: src/konqueror.kcfg:163
+#, kde-format
+msgid "Standard font"
+msgstr "ಶಿಷ್ಟ ಲಿಪಿ"
+
+#. i18n: ectx: whatsthis, entry, group (HTML Settings)
+#: src/konqueror.kcfg:164
+#, kde-format
+msgid "This is the font used to display text in Konqueror windows."
+msgstr "ಕಾಂಕರರ್ ಕಿಟಕಿಯಲ್ಲಿ ಪಠ್ಯವನ್ನು ತೋರಿಸಲು ಬಳಸಬೇಕಾದ ಲಿಪಿಶೈಲಿ"
+
+#. i18n: ectx: label, entry, group (HistorySettings)
+#: src/konqueror.kcfg:314
+#, kde-format
+msgid "Maximum number of history items per view"
+msgstr "ಹಿಂದಿನ ಬಳಕೆಯ ಬಗ್ಗೆ ಲಭ್ಯವಿರಬೇಕಾದ ಗರಿಷ್ಠ ಸಂಖ್ಯೆ"
+
+#. i18n: ectx: label, entry, group (Trash)
+#: src/konqueror.kcfg:504
+#, kde-format
+msgid "Ask confirmation for deleting a file."
+msgstr "ಕಡತವನ್ನು ಅಳಿಸಲು ಅನುಮತಿಯನ್ನು ಖಚಿತ ಪಡಿಸಿಕೊಳ್ಳು."
+
+#. i18n: ectx: whatsthis, entry, group (Trash)
+#: src/konqueror.kcfg:505
+#, kde-format
+msgid ""
+"This option tells Konqueror whether to ask for a confirmation when you "
+"delete a file without using the trash folder. Warning, deleted files can not "
+"be recovered, so it is recommended to leave this confirmation enabled."
+msgstr ""
+"ಕಸದ ಬುಟ್ಟಿ ಕಡತಕೋಶವನ್ನು ಬಳಸಿದಾಗ, ಅಳಿಸಿದ ಕಡತಗಳನ್ನು ಮರುಪಡೆಯಲಾಗುವುದಿಲ್ಲ. ಈ ಆಯ್ಕೆಯು "
+"ಕಾಂಕರರ್ ಗೆ ಈ ಬಗ್ಗೆ ದೃಡೀಕರಣ ಬೇಕೇ ಎನ್ನುವುದನ್ನು ತಿಳಿಸುತ್ತದೆ. ಹಾಗಾಗಿ ಇದನ್ನು ಈ "
+"ದೃಡೀಕರಣವನ್ನು ಸಶಕ್ತಗೊಳಿಸುವುದು ಒಳಿತು."
+
+#. i18n: ectx: label, entry, group (Trash)
+#: src/konqueror.kcfg:510
+#, kde-format
+msgid "Ask confirmation for move to trash"
+msgstr "ಕಸದ ಬುಟ್ಟಿಗೆ ಸ್ಥಳಾಂತರಿಸಲು ಅನುಮತಿ ಕೇಳು"
+
+#. i18n: ectx: whatsthis, entry, group (Trash)
+#: src/konqueror.kcfg:511
+#, kde-format
+msgid ""
+"This option tells Konqueror whether to ask for a confirmation when you move "
+"the file to your trash folder, from where it can be recovered very easily."
+msgstr ""
+"ಈ ಆಯ್ಕೆಯು ಕಾಂಕರರಿಗೆ ಕಡತವನ್ನು ಸ್ಥಳಾಂತರಿಸಿದಾಗ ಕಸದ ಬುಟ್ಟಿಗೆ ಹಾಕಲೇ ಎನ್ನುವುದನ್ನು "
+"ದೃಡೀಕರಿಸಲು ಹೇಳುತ್ತದೆ. ಕಸದ ಬುಟ್ಟಿಯಿಂದ ಕಡತವನ್ನು ಹಿಂಪಡೆಯುವುದು ಸುಲಭ."
+
+#. i18n: ectx: whatsthis, entry, group (Trash)
+#: src/konqueror.kcfg:518
+#, kde-format
+msgid ""
+"If true, when opening a session from within the sessions dialog the tabs "
+"will be opened inside current window."
+msgstr ""
+"ಈ ಆಯ್ಕೆಯು ,ಒಂದು ಅವಧಿಯನ್ನು ಆರಂಭಿಸುವಾಗ,ಅವಧಿ ಸಂವಾದ ಚೌಕದಿಂದ ಶುರು ಮಾಡಿದರೆ, ಟ್ಯಾಬನ್ನು "
+"ಸದ್ಯದ ಕಿಟಕಿಯ ಒಳಗೆಯೆ ತೆರೆಯುತ್ತದೆ."
+
+#. i18n: ectx: Menu (file)
+#: src/konqueror.rc:5
+#, kde-format
+msgid "&File"
+msgstr "ಕಡತ(&F)"
+
+#. i18n: ectx: Menu (edit)
+#: src/konqueror.rc:24
+#, kde-format
+msgid "&Edit"
+msgstr "ಸಂಪಾದನೆ(&E)"
+
+#. i18n: ectx: Menu (view)
+#: src/konqueror.rc:33
+#, kde-format
+msgid "&View"
+msgstr "ನೋಟ(&V)"
+
+#. i18n: ectx: Menu (go)
+#: src/konqueror.rc:44
+#, kde-format
+msgid "&Go"
+msgstr "ಹೋಗು(&G)"
+
+#. i18n: ectx: Menu (tools)
+#: src/konqueror.rc:54
+#, kde-format
+msgid "&Tools"
+msgstr "ಉಪಕರಣಗಳು(&T)"
+
+#. i18n: ectx: Menu (settings)
+#: src/konqueror.rc:59
+#, kde-format
+msgid "&Settings"
+msgstr "ಸಂಯೋಜನೆಗಳು(&S)"
+
+#. i18n: ectx: Menu (window)
+#: src/konqueror.rc:77
+#, kde-format
+msgid "&Window"
+msgstr "ಕಿಟಕಿ(&W)"
+
+#. i18n: ectx: Menu (help)
+#: src/konqueror.rc:93
+#, kde-format
+msgid "&Help"
+msgstr "ಸಹಾಯ(&H)"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: src/konqueror.rc:98
+#, kde-format
+msgid "Main Toolbar"
+msgstr "ಮುಖ್ಯ ಉಪಕರಣಪಟ್ಟಿಕೆ"
+
+#. i18n: ectx: ToolBar (extraToolBar)
+#: src/konqueror.rc:109
+#, kde-format
+msgid "Extra Toolbar"
+msgstr "ಹೆಚ್ಚುವರಿ ಉಪಕರಣಪಟ್ಟಿಕೆ"
+
+#. i18n: ectx: ToolBar (locationToolBar)
+#: src/konqueror.rc:116
+#, kde-format
+msgid "Location Toolbar"
+msgstr "ತಾಣ ಉಪಕರಣಪಟ್ಟಿಕೆ"
+
+#. i18n: ectx: ToolBar (bookmarkToolBar)
+#: src/konqueror.rc:122
+#, kde-format
+msgid "Bookmark Toolbar"
+msgstr "ಪುಟಗುರುತು ಉಪಕರಣಪಟ್ಟಿಕೆ"
+
+#: src/konqundomanager.cpp:90 src/konqundomanager.cpp:252
+#, kde-format
+msgid "Und&o: Closed Tab"
+msgstr "ರದ್ದು ಮಾಡು(&o): ಮುಚ್ಚಲಾದ ಹಾಳೆ"
+
+#: src/konqundomanager.cpp:92 src/konqundomanager.cpp:103
+#: src/konqundomanager.cpp:147
+#, kde-format
+msgid "Und&o: Closed Window"
+msgstr "ರದ್ದು ಮಾಡು(&o): ಮುಚ್ಚಲಾದ ಕಿಟಕಿ"
+
+#: src/konqundomanager.cpp:105
+#, kde-format
+msgid "Und&o"
+msgstr "ರದ್ದುಗೊಳಿಸು(&o)"
+
+#: src/konqview.cpp:1162
+#, kde-format
+msgid ""
+"The page you are trying to view is the result of posted form data. If you "
+"resend the data, any action the form carried out (such as search or online "
+"purchase) will be repeated. "
+msgstr ""
+"ನೀವು ನೋಡಲು ಪ್ರಯತ್ನಿಸಲಾಗುತ್ತಿರುವ ಪುಟವು ಬರೆಯಲಾದ ದತ್ತಾಂಶ ಫಾರ್ಮಿನ ಕಾರಣದಿಂದಾಗಿ "
+"ಉಂಟಾಗಿದೆ. ನೀವು ದತ್ತಾಂಶವನ್ನು ಮರಳಿ ಕಳುಹಿಸಿದಲ್ಲಿ, ಫಾರ್ಮ್ ಈ ಮೊದಲು ಮಾಡಲಾಗಿದ್ದ ಯಾವುದೆ "
+"ಕೆಲಸವನ್ನು (ಹುಡುಕಾಟ ಅಥವ ಆನ್‌ಲೈನ್ ಕೊಳ್ಳುವಿಕೆ) ಮರಳಿ ಮಾಡಲ್ಪಡುತ್ತದೆ. "
+
+#: src/konqview.cpp:1164
+#, kde-format
+msgctxt "@title:window"
+msgid "Warning"
+msgstr "ಎಚ್ಚರಿಕೆ"
+
+#: src/konqview.cpp:1164
+#, kde-format
+msgid "Resend"
+msgstr "ಮರುಕಳುಹಿಸು"
+
+#: src/urlloader.cpp:253
+#, kde-format
+msgctxt "Execute an executable file"
+msgid "Execute it"
+msgstr ""
+
+#: src/urlloader.cpp:258
+#, kde-format
+msgctxt ""
+"The user has to decide whether to execute an executable file or display it"
+msgid ""
+"<tt>%1</tt> can be executed. Do you want to execute it or to display it?"
+msgstr ""
+
+#: src/urlloader.cpp:259
+#, kde-format
+msgctxt "Display an executable file"
+msgid "Display it"
+msgstr ""
+
+#: src/urlloader.cpp:263
+#, kde-format
+msgctxt "The user has to decide whether to execute an executable file or not"
+msgid "<tt>%1</tt> can be executed. Do you want to execute it?"
+msgstr ""
+
+#: src/urlloader.cpp:438
+#, fuzzy, kde-format
+#| msgid "Save As..."
+msgid "Save As"
+msgstr "ಹೀಗೆ ಉಳಿಸು..."
+
+#~ msgid ""
+#~ "Malformed URL\n"
+#~ "%1"
+#~ msgstr ""
+#~ "ತಪ್ಪಾಗಿ ರಚಿತವಾಗಿರುವ URL\n"
+#~ "%1"
+
+#~ msgid "File Management"
+#~ msgstr "ಕಡತ ನಿರ್ವಹಣೆ"
+
+#~ msgid "Web Browsing"
+#~ msgstr "ಅಂತರ್ಜಾಲ ವೀಕ್ಷಣೆ"
+
+#~ msgctxt "@title:window"
+#~ msgid "Configure"
+#~ msgstr "ಸಂರಚಿಸು"
+
+#~ msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
+#~ msgid "Be free."
+#~ msgstr "ಮುಕ್ತವಾಗಿ."
+
+#~ msgid ""
+#~ "Konqueror is a web browser, file manager and universal document viewer."
+#~ msgstr "ಕಾಂಕರರ್ ಒಂದು ಜಾಲ ಪ್ರದರ್ಶಕ, ಕಡತ ನಿರ್ವಾಹಕ ಮತ್ತು ಸಾರ್ವತ್ರಿಕ ದಸ್ತಾವೇಜು ಪ್ರದರ್ಶಕ."
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "Starting Points"
+#~ msgstr "ಪ್ರಾರಂಭಿಕ ವಿಷಯಗಳು"
+
+#~ msgid "Introduction"
+#~ msgstr "ಪರಿಚಯ"
+
+#~ msgid "Tips"
+#~ msgstr "ಸುಳಿವುಗಳು"
+
+#~ msgid "Specifications"
+#~ msgstr "ವಿನಿರ್ದೇಶನಗಳು"
+
+#~ msgid "Your personal files"
+#~ msgstr "ನಿಮ್ಮ ವೈಯಕ್ತಿಕ ಕಡತಗಳು"
+
+#~ msgid "Trash"
+#~ msgstr "ಕಸದಬುಟ್ಟಿ"
+
+#~ msgid "Browse and restore the trash"
+#~ msgstr "ಕಸದಬುಟ್ಟಿಯನ್ನು ವೀಕ್ಷಿಸಿ ಮತ್ತು ಮರುಸ್ಥಾಪಿಸಿ"
+
+#~ msgid "Network Folders"
+#~ msgstr "ಜಾಲ ಕಡತಕೋಶಗಳು"
+
+#~ msgid "Shared files and folders"
+#~ msgstr "ಹಂಚಿಕೊಂಡಿರುವ ಕಡತಗಳು ಹಾಗೂ ಕಡತಕೋಶಗಳು"
+
+#~ msgid "Bookmarks"
+#~ msgstr "ಪುಟ ಗುರುತುಗಳು"
+
+#~ msgid "Quick access to your bookmarks"
+#~ msgstr "ನಿಮ್ಮ ಪುಟದ ಗುರುತಗಳನ್ನು ತಕ್ಷಣ ನಿಲುಕಿಸಿಕೊಳ್ಳುವುದು"
+
+#~ msgid "Next: An Introduction to Konqueror"
+#~ msgstr "ಮುಂದೆ: ಕಾಂಕರರ್ ನ ಪರಿಚಯ"
+
+#~ msgid "Search the Web"
+#~ msgstr "ಅಂತರ್ಜಾಲದಲ್ಲಿ ಹುಡುಕಿ"
+
+#~ msgid ""
+#~ "Konqueror makes working with and managing your files easy. You can browse "
+#~ "both local and networked folders while enjoying advanced features such as "
+#~ "the powerful sidebar and file previews."
+#~ msgstr ""
+#~ "ಕಡತಗಳೊಂದಿಗೆ ಕೆಲಸ ಮಾಡುವುದು ಹಾಗು ಅವನ್ನು ನಿರ್ವಹಿಸುವ ಕಾರ್ಯವನ್ನು ಕಾಂಕರರ್ "
+#~ "ಸರಳಗೊಳಿಸುತ್ತದೆ. ಇದರ ಮೂಲಕ ನೀವು ಸ್ಥಳೀಯ ಹಾಗು ಜಾಲಬಂಧದಲ್ಲಿನ ಕಡತಕೋಶಗಳನ್ನು "
+#~ "ವೀಕ್ಷಿಸುವುದರ ಜೊತೆಗೆ ಶಕ್ತಿಯುತ ಬದಿಯಪಟ್ಟಿಕೆ ಹಾಗು ಕಡತ ಮುನ್ನೋಟಗಳಂತಹ ಮುಂದುವರೆದ "
+#~ "ಸವಲತ್ತಗಳ ಪ್ರಯೋಜನವನ್ನೂ ಸಹ ಪಡೆಯಬಹುದಾಗಿದೆ."
+
+#~ msgid ""
+#~ "Konqueror is also a full featured and easy to use web browser which you "
+#~ "can use to explore the Internet. Enter the address (e.g. <a href=\"http://"
+#~ "www.kde.org\">http://www.kde.org</a>) of a web page you would like to "
+#~ "visit in the location bar and press Enter, or choose an entry from the "
+#~ "Bookmarks menu."
+#~ msgstr ""
+#~ "ಅಂತರ್ಜಾಲವನ್ನು ವೀಕ್ಷಿಸಲು ಕಾಂಕರರ್ ಸಹ ಎಲ್ಲಾ ಅಗತ್ಯ ಸವಲತ್ತನ್ನು ಹೊಂದಿರುವ ಹಾಗು ಬಳಸಲು "
+#~ "ಸರಳವಾದಂತಹ ಒಂದು ಜಾಲ ವೀಕ್ಷಕವಾಗಿದೆ. ತಾಣ ಪಟ್ಟಿಕೆಯಲ್ಲಿ ನೀವು ನೋಡ ಬೇಕಿರುವ ಜಾಲ ತಾಣದ "
+#~ "ವಿಳಾಸವನ್ನು (e.g. <a href=\"http://www.kde.org\">http://www.kde.org</a>) "
+#~ "ನಮೂದಿಸಿ ನಂತರ ಎಂಟರ್ ಅನ್ನು ಒತ್ತಿ, ಅಥವ ಪುಟದ ಗುರುತುಗಳ ಪರಿವಿಡಿಯಿಂದ ಒಂದು ನಮೂದನ್ನು "
+#~ "ಆಯ್ಕೆ ಮಾಡಿ."
+
+#~ msgid ""
+#~ "To return to the previous location, press the back button <img width='16' "
+#~ "height='16' src=\"%1\"></img> in the toolbar. "
+#~ msgstr ""
+#~ "ಹಿಂದಿನ ತಾಣಕ್ಕೆ ಮರಳಲು, ಉಪಕರಣ ಪಟ್ಟಿಯಲ್ಲಿ ಹಿಂದಕ್ಕೆ ಗುಂಡಿಯನ್ನು <img width='16' "
+#~ "height='16' src=\"%1\"></img> ಅನ್ನು ಒತ್ತಿ. "
+
+#, fuzzy
+#~| msgid ""
+#~| "To quickly go to your Home folder press the  home button <img width='16' "
+#~| "height='16' src=\"%1\"></img>."
+#~ msgid ""
+#~ "To quickly go to your Home folder press the home button <img width='16' "
+#~ "height='16' src=\"%1\"></img>."
+#~ msgstr ""
+#~ "ನಿಮ್ಮ ನೆಲೆ ಕಡತಕೋಶಕ್ಕೆ ತಕ್ಷಣ ತೆರಳಲು ನೆಲೆ ಗುಂಡಿಯನ್ನು <img width='16' "
+#~ "height='16' src=\"%1\"></img> ಕ್ಲಿಕ್ಕಿಸಿ."
+
+#~ msgid ""
+#~ "For more detailed documentation on Konqueror click <a href=\"%1\">here</"
+#~ "a>."
+#~ msgstr "ಕಾಂಕರರ್ ಬಗ್ಗೆ ಹೆಚ್ಚಿನ ಮಾಹಿತಿಗಾಗಿ <a href=\"%1\">ಇಲ್ಲಿ</a> ಒತ್ತಿರಿ."
+
+#, fuzzy
+#~| msgid "Next: Tips &amp; Tricks"
+#~ msgid "Next: Tips & Tricks"
+#~ msgstr "ಮುಂದೆ: ಸುಳಿವುಗಳು ಮತ್ತು ಉಪಾಯಗಳು"
+
+#~ msgid ""
+#~ "Konqueror is designed to embrace and support Internet standards. The aim "
+#~ "is to fully implement the officially sanctioned standards from "
+#~ "organizations such as the W3 and OASIS, while also adding extra support "
+#~ "for other common usability features that arise as de facto standards "
+#~ "across the Internet. Along with this support, for such functions as "
+#~ "favicons, Web Shortcuts, and <A HREF=\"%1\">XBEL bookmarks</A>, Konqueror "
+#~ "also implements:"
+#~ msgstr ""
+#~ "ಅಂತರ್ಜಾಲ ಮಾನಕಗಳೊಂದಿಗೆ ಹೊಂದಿಕೊಳ್ಳಲು ಹಾಗು ಬೆಂಬಲಿಸಲು ಕಾಂಕರರ್ ವಿನ್ಯಸಿಸಲಾಗಿದೆ. W3 "
+#~ "ಹಾಗು OASIS ನಂತಹ ಸಂಸ್ಥೆಗಳಿಂದ ಅಧೀಕೃತವಾಗಿ ಅನುಮೋದಿಸಲಾದಂತಹ ಮಾನಕಗಳನ್ನು ಸಂಪೂರ್ಣವಾಗಿ "
+#~ "ಅನ್ವಯಿಸುವುದನ್ನು ಗುರಿಯಾಗಿರಿಸಿಕೊಳ್ಳಲಾಗಿದೆ, ಅಷ್ಟೆ ಅಲ್ಲದೆ ಅಂತರ್ಜಾಲದಾದ್ಯಂತದ ಇತರೆ "
+#~ "ಸಾಮಾನ್ಯ ಬಳಕೆಯ ಸವಲತ್ತುಗಳನ್ನು ನಿಜವಾದ ಮಾನಕಗಳಾಗಿ ಪರಿಗಣಿಸಿ ಬೆಂಬಲವನ್ನೂ ಸಹ "
+#~ "ನೀಡಲಾಗುತ್ತದೆ. ಈ ಬೆಂಬಲದೊಂದಿಗೆ, ಫೆವಿಕಾನ್ಸ್‍, ಅಂತರ್ಜಾಲ ಸಮೀಪಮಾರ್ಗಗಳು, ಹಾಗು <A HREF="
+#~ "\"%1\">XBEL ಪುಟಗುರುತುಗಳು</A>, ಕಾಂಕರರ್ ಈ ಕೆಳಗಿನವುಗಳನ್ನೂ ಸಹ ಬೆಂಬಲಿಸುತ್ತದೆ:"
+
+#~ msgid "Supported standards"
+#~ msgstr "ಸಮರ್ಥಿತ ಮಾನಕಗಳು (Supported standards)"
+
+#~ msgid "Additional requirements*"
+#~ msgstr "ಹೆಚ್ಚುವರಿ ಆವಶ್ಯಕತೆಗಳು*"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">DOM</A> (ಹಂತ 1, ಆಂಶಿಕ ಹಂತ 2) ಆಧರಿತ <A HREF=\"%2\">HTML "
+#~ "4.01</A>"
+
+#~ msgid "built-in"
+#~ msgstr "ಅಂತರ್ಸ್ಥಾಪಿತ"
+
+#~ msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">ಅನುಕ್ರಮಿತ ಶೈಲಿ ಹಾಳೆಗಳು (Cascading Style Sheets)</A> (CSS 1, "
+#~ "ಭಾಗಶಃ CSS 2)"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">ECMA-262</A> ಆವೃತ್ತಿ ೩ (ಬಹು ಮಟ್ಟಿಗೆ JavaScript 1.5 ಅನ್ನು "
+#~ "ಹೋಲುವ)"
+
+#~ msgid ""
+#~ "JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
+#~ msgstr ""
+#~ "JavaScript ಅಶಕ್ತಗೊಂಡ (ಜಾಗತಿಕವಾಗಿ). JavaScript ಅನ್ನು <A HREF=\"%1\">ಇಲ್ಲಿ</A> "
+#~ "ಶಕ್ತಗೊಳಿಸಿ."
+
+#~ msgid ""
+#~ "JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\"
+#~ "\">here</A>."
+#~ msgstr ""
+#~ "JavaScript ಶಕ್ತಗೊಂಡ (ಜಾಗತಿಕವಾಗಿ). JavaScript ಅನ್ನು <A HREF=\\\"%1\\\">ಇಲ್ಲಿ</"
+#~ "A> ಸಂರಚಿಸಿ."
+
+#~ msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
+#~ msgstr "ಸುರಕ್ಷಿತ <A HREF=\"%1\">ಜಾವ</A><SUP>&reg;</SUP> ಬೆಂಬಲ"
+
+#, fuzzy
+#~| msgid ""
+#~| "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">IBM</A> or <A HREF="
+#~| "\"%2\">Sun/Oracle</A>)"
+#~ msgid ""
+#~ "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">OpenJDK</A> or <A HREF="
+#~ "\"%2\">Sun/Oracle</A>)"
+#~ msgstr ""
+#~ "JDK 1.2.0 ಗೆ (ಜಾವ ೨) ಹೊಂದುವ VM (<A HREF=\"%1\">IBM</A> ಅಥವ <A HREF="
+#~ "\"%2\">Sun/Oracle</A>)"
+
+#~ msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
+#~ msgstr "ಜಾವಾ (ಜಾಗತಿಕವಾಗಿ) ಅನ್ನು <A HREF=\"%1\">ಇಲ್ಲಿ</A> ಶಕ್ತಗೊಳಿಸಿ."
+
+#~ msgid "Secure Sockets Layer"
+#~ msgstr "ಸುರಕ್ಷಿತ Sockets Layer"
+
+#~ msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
+#~ msgstr "(TLS/SSL v2/3) ೧೬೮ಬಿಟ್‌ ವರೆಗಿನ ಸುರಕ್ಷಿತ ಸಂಪರ್ಕಗಳಿಗಾಗಿ"
+
+#~ msgid "OpenSSL"
+#~ msgstr "OpenSSL"
+
+#~ msgid "Bidirectional 16bit unicode support"
+#~ msgstr "ದ್ವಿದಿಶಾನಿರ್ದೇಶಕ ೧೬ ದ್ವಯಾಂಕ (bit) ಯೂನಿಕೋಡ್ ಸಮರ್ಥನೆ"
+
+#~ msgid "AutoCompletion for forms"
+#~ msgstr "ಅರ್ಜಿಗಳಿಗೆ ಸ್ವಯಂಪೂರಣ"
+
+#~ msgctxt "Title of an html 'group box' explaining konqueror features"
+#~ msgid "General"
+#~ msgstr "ಸಾಮಾನ್ಯ"
+
+#~ msgid "Feature"
+#~ msgstr "ವೈಶಿಷ್ಟ್ಯ"
+
+#~ msgid "Details"
+#~ msgstr "ವಿವರಗಳು"
+
+#~ msgid "Image formats"
+#~ msgstr "ಚಿತ್ರ ವಿನ್ಯಾಸಗಳು"
+
+#~ msgid "PNG<br />JPG<br />GIF"
+#~ msgstr "PNG<br />JPG<br />GIF"
+
+#~ msgid "Transfer protocols"
+#~ msgstr "ವಿನಿಮಯಕ್ರಮಗಳು"
+
+#~ msgid "HTTP 1.1 (including gzip/bzip2 compression)"
+#~ msgstr "HTTP ೧.೧ (gzip/bzip2 ಸಂಕೋಚನ ಕ್ರಮಗಳನ್ನೊಳಗೊಂಡು)"
+
+#~ msgid "FTP"
+#~ msgstr "FTP"
+
+#, fuzzy
+#~| msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpcenter)...</A>"
+#~ msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpCenter)...</A>"
+#~ msgstr ""
+#~ "ಹಾಗು <A HREF=\"%1\">ಬಹಳಷ್ಟು (KHelpcenter ನಲ್ಲಿನ Kioslaves ಅನ್ನು ನೋಡಿ)...</A>"
+
+#~ msgctxt "A feature of Konqueror"
+#~ msgid "URL-Completion"
+#~ msgstr "ತಾಣಸೂಚಿ ಪೂರಣ"
+
+#~ msgid "Manual"
+#~ msgstr "ಕೈಪಿಡಿ"
+
+#~ msgid "Popup"
+#~ msgstr "ಪುಟಿಕೆ"
+
+#~ msgid "(Short-) Automatic"
+#~ msgstr "(ಚಿಕ್ಕ-) ಸ್ವಯಂಚಾಲಿತ"
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "<a href=\"%1\">Return to Starting Points</a>"
+#~ msgstr "<a href=\"%1\">ಆರಂಭದ ವಿಷಯಗಳಿಗೆ ತೆರಳು</a>"
+
+#, fuzzy
+#~| msgid "Tips &amp; Tricks"
+#~ msgid "Tips & Tricks"
+#~ msgstr "ಸುಳಿವುಗಳು ಮತ್ತು ಚಮತ್ಕಾರಗಳುಗಳು"
+
+#~ msgid ""
+#~ "Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, "
+#~ "using Google, for the search phrase \"KDE\". There are a lot of Web-"
+#~ "Shortcuts predefined to make searching for software or looking up certain "
+#~ "words in an encyclopedia a breeze. You can even <a href=\"%1\">create "
+#~ "your own</a> Web-Shortcuts."
+#~ msgstr ""
+#~ "ಜಾಲ ಸಮೀಪ ಮಾರ್ಗಗಳನ್ನು ಬಳಸಿ: \"KDE\" ಗಾಗಿ ಅಂತರ್ಜಾದಲ್ಲಿ ಹುಡುಕಲು, ಗೂಗಲ್ ಬಳಸಿಕೊಂಡು "
+#~ "\"gg: KDE\" ಎಂದು ನಮೂದಿಸುವ ಮೂಲಕ ಹುಡುಕಬಹುದಾಗಿದೆ. ಒಂದು ವಿಶ್ವಕೋಶದಲ್ಲಿ "
+#~ "(ಎನ್‌ಸೈಕ್ಲೋಪಿಡಿಯಾ) ತಂತ್ರಾಂಶಗಳನ್ನು ಹುಡುಕಲು ಅಥವ ನಿಗದಿತ ಪದವನ್ನು ನೋಡಲು "
+#~ "ಪೂರ್ವನಿಶ್ಚಿತವಾದ ಹಲವಾರು ಜಾಲ-ಸಮೀಪಮಾರ್ಗಗಳಿವೆ. ನೀವು ಬಯಸಿದಲ್ಲಿ <a href=\"%1\">ನಿಮ್ಮ "
+#~ "ಇಚ್ಛೆಯ</a> ಜಾಲ-ಸಮೀಪಮಾರ್ಗಗಳನ್ನು ರಚಿಸಬಹುದಾಗಿದೆ."
+
+#~ msgid ""
+#~ "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
+#~ "the HTML toolbar to increase the font size on your web page."
+#~ msgstr ""
+#~ "ನಿಮ್ಮ ಜಾಲ ಪುಟಗಳಲ್ಲಿ ಅಕ್ಷರದ ಗಾತ್ರವನ್ನು ಹೆಚ್ಚಿಸಲು HTML ಉಪಕರಣಪಟ್ಟಿಕೆಯಲ್ಲಿನ ಹಿಗ್ಗಿಸುವ "
+#~ "ಗುಂಡಿಯನ್ನು <img width='16' height='16' src=\"%1\"></img> ಬಳಸಿ."
+
+#~ msgid ""
+#~ "When you want to paste a new address into the Location toolbar you might "
+#~ "want to clear the current entry by pressing the black arrow with the "
+#~ "white cross <img width='16' height='16' src=\"%1\"></img> in the toolbar."
+#~ msgstr ""
+#~ "ತಾಣ ಉಪಕರಣ ಪಟ್ಟಿಕೆಯಲ್ಲಿ ಒಂದು ಹೊಸ ವಿಳಾಸವನ್ನು ಅಂಟಿಸಲು ನೀವು ಬಯಸಿದಾಗ, "
+#~ "ಉಪಕರಣಪಟ್ಟಿಕೆಯಲ್ಲಿನ ಬಿಳಿ ಅಡ್ಡಗೆರೆಯನ್ನು ಹೊಂದಿರುವ ಕಪ್ಪು ಬಾಣದ ಗುರುತನ್ನು <img "
+#~ "width='16' height='16' src=\"%1\"></img> ಒತ್ತುವ ಮೂಲಕ ಈಗಿರುವ ನಮೂದನ್ನು "
+#~ "ಅಳಿಸಬೇಕಾಗುತ್ತದೆ."
+
+#~ msgid ""
+#~ "To create a link on your desktop pointing to the current page, simply "
+#~ "drag the icon (favicon) that is to the left of the Location toolbar, drop "
+#~ "it on to the desktop, and choose \"Icon\"."
+#~ msgstr ""
+#~ "ಈಗಿನ ಪುಟದ ಒಂದು ಕೊಂಡಿಯನ್ನು ನಿಮ್ಮ ಗಣಕತೆರೆಯಲ್ಲಿ ಇರಿಸಲು, ತಾಣ ಉಪಕರಣ ಪಟ್ಟಿಕೆಯ "
+#~ "ಎಡಭಾಗದಲ್ಲಿನ ಐಕಾನನ್ನು ಎಳೆದುತಂದು ಗಣಕತೆರೆಯ ಮೇಲೆ ಇರಿಸಿ ಹಾಗು \"ಐಕಾನ್\" ಅನ್ನು ಆಯ್ಕೆ "
+#~ "ಮಾಡಿ.ನ್"
+
+#~ msgid ""
+#~ "You can also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen "
+#~ "Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
+#~ "sessions."
+#~ msgstr ""
+#~ "ಸಂಯೋಜನೆಗಳ ಪರಿವಿಡಿಯಲ್ಲಿ <img width='16' height='16' src=\"%1\" /> \"ಪೂರ್ಣ-"
+#~ "ತೆರೆ ಕ್ರಮ\" ಅನ್ನೂ ಸಹ ಕಾಣಬಹುದಾಗಿದೆ. ಈ ಸೌಕರ್ಯವು \"ಮಾತನಾಡುವ\" ಅಧಿವೇಶನಗಳಲ್ಲಿ ಬಹಳ "
+#~ "ಸಹಕಾರಿಯಾಗುತ್ತದೆ."
+
+#, fuzzy
+#~| msgid ""
+#~| "Divide et impera (lat. \"Divide and conquer\") - by splitting a window "
+#~| "into two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> "
+#~| "Split View Left/Right) you can make Konqueror appear the way you like. "
+#~| "You can even load some example view-profiles (e.g. Midnight Commander), "
+#~| "or create your own ones."
+#~ msgid ""
+#~ "Divide et impera (lat. \"Divide and conquer\") - by splitting a window "
+#~ "into two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> "
+#~ "Split View Left/Right) you can make Konqueror appear the way you like."
+#~ msgstr ""
+#~ "Divide et impera (lat. \"ಒಡೆ ಹಾಗು ಗೆಲ್ಲು\") - ಕಿಟಕಿಯನ್ನು ಎರಡು ಭಾಗವಾಗಿ "
+#~ "ಇಬ್ಬಾಗಿಸುವುದರಿಂದ (ಉದಾ. ಕಿಟಕಿ -> <img width='16' height='16' src=\"%1\" /> "
+#~ "ವಿಭಾಗಿಸದ ನೋಟಎಡ/ಬಲ) ನೀವು ಇಚ್ಛಿಸುವಂತೆ ಕಾಂಕರರ್ ಕಾಣಿಸುವಂತೆ ಮಾಡಿ. ಅಷ್ಟೆ ಅಲ್ಲದೆ "
+#~ "ನೀವು ಕೆಲವೊಂದು ನೋಟ-ಪ್ರೊಫೈಲುಗಳ ಉದಾಹರಣೆಗಳನ್ನೂ ಸಹ ಲೋಡ್ ಮಾಡಬಹುದಾಗಿದೆ (ಉದಾ. "
+#~ "Midnight Commander), ಅಥವ ನಿಮಗೆ ಇಷ್ಟವಾಗುವುದನ್ನು ರಚಿಸಿಕೊಳ್ಳಬಹುದಾಗಿದೆ."
+
+#~ msgid ""
+#~ "Use the <a href=\"%1\">user-agent</a> feature if the website you are "
+#~ "visiting asks you to use a different browser (and do not forget to send a "
+#~ "complaint to the webmaster!)"
+#~ msgstr ""
+#~ "ನೀವು ಭೇಟಿಕೊಡುತ್ತಿರುವ ತಾಣವು ಬೇರೊಂದು ಜಾಲ ವೀಕ್ಷಕವನ್ನು ಬಳಸುವಂತೆ ಆಗ್ರಹಿಸಿದಲ್ಲಿ "
+#~ "(ಹಾಗು ಜಾಲತಾಣದ ಮಾಲಿಕರಿಗೆ ಇದರ ಬಗ್ಗೆ ದೂರು ನೀಡಲು ಮರೆಯದಿರಿ!) <a href="
+#~ "\"%1\">ಬಳಕೆದಾರ-ಮಧ್ಯವರ್ತಿ</a> ಸೌಕರ್ಯವನ್ನು ಬಳಸಿ"
+
+#~ msgid ""
+#~ "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
+#~ "ensures that you can keep track of the pages you have visited recently."
+#~ msgstr ""
+#~ "<img width='16' height='16' src=\"%1\"></img> ನಿಮ್ಮ ಬದಿಪಟ್ಟಿಕೆಯಲ್ಲಿನ "
+#~ "ಇತಿಹಾಸವು ನೀವು ಇತ್ತೀಚೆಗೆ ಭೇಟಿ ನೀಡಲಾದ ಪುಟಗಳ ಜಾಡನ್ನು ಇರಿಸಿಕೊಳ್ಳುವುದನ್ನು "
+#~ "ಖಚಿತಪಡಿಸುತ್ತದೆ."
+
+#~ msgid ""
+#~ "Use a caching <a href=\"%1\">proxy</a> to speed up your Internet "
+#~ "connection."
+#~ msgstr ""
+#~ "ನಿಮ್ಮ ಅಂತರ್ಜಾಲದ ಸಂಪರ್ಕದ ವೇಗವನ್ನು ಹೆಚ್ಚಿಸಲು <a href=\"%1\">ಪ್ರಾಕ್ಸಿ</a> ಶೇಖರಣೆ "
+#~ "ಅನ್ನು ಬಳಸಿ."
+
+#~ msgid ""
+#~ "Advanced users will appreciate the Konsole which you can embed into "
+#~ "Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
+#~ "Terminal Emulator)."
+#~ msgstr ""
+#~ "ಮುಂದುವರೆದ ಬಳಕೆದಾರರಿಗೆ ಕಾಂಕರರಿನಲ್ಲಿ ಕನ್ಸೋಲ್ ಇದ್ದರೆ ಸಂತೋಷವಾಗುತ್ತದೆ  (ಸಂಯೋಜನೆಗಳು -"
+#~ "> <img width='16' height='16' SRC=\"%1\"></img> ಟರ್ಮಿನಲ್ ಎಮ್ಯುಲೇಟರನ್ನು "
+#~ "ತೋರಿಸು)."
+
+#~ msgid "Next: Specifications"
+#~ msgstr "ಮುಂದೆ: ವಿನಿರ್ದೇಶನಗಳು"
+
+#~ msgid "Installed Plugins"
+#~ msgstr "ಸ್ಥಾಪಿತ ಮಿಲಿತಾನ್ವಯಗಳು"
+
+#~ msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
+#~ msgstr "<td>ಮಿಲಿತಾನ್ವಯ</td><td>ವಿವರಣೆ</td><td>ಕಡತ</td><td>ಪ್ರಕಾರಗಳು</td>"
+
+#~ msgid "Installed"
+#~ msgstr "ಸ್ಥಾಪಿತ"
+
+#~ msgid ""
+#~ "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
+#~ msgstr ""
+#~ "<td>ಪತ್ರಕ್ರಮ (MIME) ಬಗೆ</td><td>ವಿವರಣೆ</td><td>ಪ್ರತ್ಯಯಗಳು</td><td>ಮಿಲಿತಾನ್ವಯ</"
+#~ "td>"
+
+#~ msgid "&Open"
+#~ msgstr "ತೆರೆ(&O)"
+
+#~ msgid ""
+#~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">plugins</A> (for "
+#~ "viewing <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
+#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Video, etc.)"
+#~ msgstr ""
+#~ "ನೆಟ್‌ಸ್ಕೇಪ್ ಕಮ್ಯೂನಿಕೇಟರ್<SUP>&reg;</SUP> <A HREF=\"%4\">ಪ್ಲಗ್‌ಇನ್‌ಗಳು</A> (<A HREF="
+#~ "\"%1\">ಫ್ಲಾಶ್<SUP>&reg;</SUP></A>, <A HREF=\"%2\">ರಿಯಲ್<SUP>&reg;</SUP></"
+#~ "A>ಆಡಿಯೊ, <A HREF=\"%3\">ರಿಯಲ್<SUP>&reg;</SUP></A>ವಿಡಿಯೊ, ಮುಂತಾದುವುಗಳನ್ನು "
+#~ "ನೋಡಲು)"
+
+#~ msgid "http://konqueror.kde.org"
+#~ msgstr "http://konqueror.kde.org"
+
+#~ msgid "Limits"
+#~ msgstr "ಮಿತಿಗಳು"
+
+#~ msgid "URLs e&xpire after"
+#~ msgstr "ತಾಣಸೂಚಿಗಳು ಈ ಸಮಯದನಂತರ ಕೊನೆಯಾಗುತ್ತದೆ(&x)"
+
+#~ msgid "Maximum &number of URLs:"
+#~ msgstr "ಗರಿಷ್ಠ ತಾಣಸೂಚಿಗಳ ಸಂಖ್ಯೆ(&n):"
+
+#~ msgid "Custom Fonts For"
+#~ msgstr "ಗ್ರಾಹಕೀಯ ಲಿಪಿಶೈಲಿಗಳು"
+
+#~ msgid "URLs newer than"
+#~ msgstr "ಇದಕ್ಕಿಂತ ಹೊಸದಾದ ತಾಣಸೂಚಿಗಳು"
+
+#~ msgid "Choose Font..."
+#~ msgstr "ಲಿಪಿಶೈಲಿ ಆರಿಸಿ..."
+
+#~ msgid "URLs older than"
+#~ msgstr "ಇದಕ್ಕಿಂತ ಹಳೆಯದಾದ ತಾಣಸೂಚಿಗಳು"
+
+#~ msgid ""
+#~ "Shows the number of times visited and the dates of the first and last "
+#~ "visits, in addition to the URL"
+#~ msgstr ""
+#~ "ತಾಣಸೂಚಿಗಳನ್ನು ತೋರಿಸುವುದಲ್ಲದೆ, ಎಷ್ಟು ಬಾರಿ ಭೇಟಿ ಮಾಡಲಾಗಿದೆ ಹಾಗು ಮೊದಲ ಬಾರಿ ಮತ್ತು "
+#~ "ಕೊನೆಯ ಬಾರಿ ಭೇಟಿ ಮಾಡಿದ ದಿನಾಂಕವನ್ನು ತೋರಿಸುತ್ತದೆ"
+
+#~ msgid "Detailed tooltips"
+#~ msgstr "ಸವಿವರ ಉಪಕರಣಸುಳಿವುಗಳು"
+
+#~ msgid "Clear History"
+#~ msgstr "ಇತಿಹಾಸ ತೆರವುಗೊಳಿಸು"
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "History Sidebar Module"
+#~ msgstr "ಇತಿಹಾಸ ಬದಿಪಟ್ಟಿ ಘಟಕ"
+
+#~ msgctxt "@title:tab"
+#~ msgid "History"
+#~ msgstr "ಇತಿಹಾಸ"
+
+#~ msgid "Minute"
+#~ msgid_plural "Minutes"
+#~ msgstr[0] "ನಿಮಿಷ"
+#~ msgstr[1] "ನಿಮಿಷಗಳು"
+
+#~ msgid "Day"
+#~ msgid_plural "Days"
+#~ msgstr[0] "ದಿನ"
+#~ msgstr[1] "ದಿನಗಳು"
+
+#~ msgid "<h1>History Sidebar</h1> You can configure the history sidebar here."
+#~ msgstr ""
+#~ "<h1>ಇತಿಹಾಸ ಬದಿ ಪಟ್ಟಿಕೆ</h1> ಇಲ್ಲಿ ನೀವು ಇತಿಹಾಸ ಬದಿ ಪಟ್ಟಿಕೆಯನ್ನು "
+#~ "ಸಂರಚಿಸಬಹುದಾಗಿದೆ."
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Places Sidebar Module"
+#~ msgstr "ಸ್ಥಳಗಳ ಬದಿಪಟ್ಟಿ ಮಾಡ್ಯೂಲ್"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Places"
+#~ msgstr "ಸ್ಥಳಗಳು"
+
+#~ msgid "Extended Sidebar"
+#~ msgstr "ವಿಸ್ತರಿತ ಬದಿಪಟ್ಟಿ"
+
+#~ msgid "Rollback to System Default"
+#~ msgstr "ಪೂರ್ವನಿಯೋಜಿತ ಸ್ಥಿತಿಗೆ ಹಿಮ್ಮೆಟ್ಟು"
+
+#~ msgid "Configure Sidebar"
+#~ msgstr "ಬದಿಪಟ್ಟಿಯನ್ನು ಸಂರಚಿಸಿ"
+
+#~ msgid "Add New"
+#~ msgstr "ಹೊಸದನ್ನು ಸೇರಿಸಿ"
+
+#~ msgid "Multiple Views"
+#~ msgstr "ಬಹುವಿಧ ನೋಟಗಳು"
+
+#~ msgid "Show Tabs Left"
+#~ msgstr "ಹಾಳೆಗಳನ್ನು ಎಡಕ್ಕೆ ತೋರಿಸು"
+
+#~ msgid "Close Sidebar"
+#~ msgstr "ಜಾಲ ಬದಿಪಟ್ಟಿಯನ್ನು ಮುಚ್ಚು"
+
+#~ msgid "This entry already exists."
+#~ msgstr "ಈ ನಮೂದು ಈಗಾಗಲೇ ಚಾಲ್ತಿಯಲ್ಲಿದೆ."
+
+#~ msgid ""
+#~ "<qt>This removes all your entries from the sidebar and adds the system "
+#~ "default ones.<br /><b>This procedure is irreversible</b><br />Do you want "
+#~ "to proceed?</qt>"
+#~ msgstr ""
+#~ "<qt>ಇದು ನಿಮ್ಮ ಬದಿಯ ಪಟ್ಟಿಯಲ್ಲಿನ ಎಲ್ಲಾ ನಮೂದುಗಳನ್ನು ತೆಗೆದು ಹಾಕುತ್ತದೆ ಹಾಗು ಗಣಕದ "
+#~ "ಪೂರ್ವನಿಯೋಜಿತವನ್ನು ಸೇರಿಸುತ್ತದೆ.<br /><b>ಈ ಪ್ರಕ್ರಿಯೆಯನ್ನು ಹಿಂದಕ್ಕೆ ತರಲಾಗುವುದಿಲ್ಲ</"
+#~ "b><br />ಮುಂದಿವರೆಯಲು ಬಯಸುತ್ತೀರೆ?</qt>"
+
+#~ msgid "Show Tabs Right"
+#~ msgstr "ಬಲಬದಿಯ ಹಾಳೆಗಳನ್ನು ತೋರಿಸು"
+
+#~ msgctxt "@title:window"
+#~ msgid "Set Name"
+#~ msgstr "ಹೆಸರನ್ನು ನಿಗದಿಪಡಿಸಿ"
+
+#~ msgid "Enter the name:"
+#~ msgstr "ಹೆಸರನ್ನು ನಮೂದಿಸಿ:"
+
+#~ msgid "Enter a URL:"
+#~ msgstr "ತಾಣಸೂಚಿಯನ್ನು ನಮೂದಿಸಿ:"
+
+#~ msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
+#~ msgstr "<qt>ನಿಜವಾಗಿಯೂ<b>%1</b>ಹಾಳೆಯನ್ನು ತೆಗೆಯಬೇಕೆಂದಿದ್ದೀರೇನು?</qt>"
+
+#~ msgid ""
+#~ "You have hidden the sidebar configuration button. To make it visible "
+#~ "again, click the right mouse button on any of the sidebar buttons and "
+#~ "select \"Show Configuration Button\"."
+#~ msgstr ""
+#~ "ನೀವು ನ್ಯಾವಿಗೇಶನ್ ಫಲಕ ಸಂರಚನಾ ಗುಂಡಿಯನ್ನು ಅಡಗಿಸಿದ್ದೀರಿ. ಅದನ್ನು ಮರಳಿ ಗೋಚರಿಸುವಂತೆ "
+#~ "ಮಾಡಲು, ಯಾವುದೆ ನ್ಯಾವಿಗೇಶನ್ ಪಟ್ಟಿಕೆಯ ಗುಂಡಿಗಳ ಮೇಲೆ ಮೌಸ್‌ನ ಬಲಗುಂಡಿಯನ್ನು ಕ್ಲಿಕ್ಕಿಸಿ "
+#~ "ನಂತರ \"ಸಂರಚನಾ ಗುಂಡಿಯನ್ನು ತೋರಿಸು\" ಅನ್ನು ಕ್ಲಿಕ್ಕಿಸಿ."
+
+#~ msgid "Set Name..."
+#~ msgstr "ಹೆಸರನ್ನು ನಿಗದಿಪಡಿಸಿ..."
+
+#~ msgid "Set URL..."
+#~ msgstr "ತಾಣಸೂಚಿಯನ್ನು ನಿಗದಿಪಡಿಸಿ..."
+
+#~ msgid "Set Icon..."
+#~ msgstr "ಚಿಹ್ನೆಯನ್ನು ನಿಗದಿಪಡಿಸಿ..."
+
+#~ msgid "Remove"
+#~ msgstr "ತೆಗೆ"
+
+#~ msgid "Web module"
+#~ msgstr "ಜಾಲ ಘಟಕ"
+
+#~ msgid "&Create New Folder"
+#~ msgstr "ಹೊಸ ಕಡತಕೋಶವನ್ನು ಸೃಷ್ಟಿಸು(&C)"
+
+#~ msgid "Delete Folder"
+#~ msgstr "ಕಡತಕೋಶವನ್ನು ಅಳಿಸು"
+
+#~ msgid "Delete Bookmark"
+#~ msgstr "ಪುಟಗುರುತುಗಳನ್ನು ಅಳಿಸು"
+
+#~ msgid "Properties"
+#~ msgstr "ಲಕ್ಷಣಗಳು"
+
+#~ msgid "Open in New Window"
+#~ msgstr "ಹೊಸ ಕಿಟಕಿಯಲ್ಲಿ ತೆರೆ"
+
+#~ msgid "Open Folder in Tabs"
+#~ msgstr "ಹಾಳೆಗಳಲ್ಲಿ ಕಡತಕೋಶವನ್ನು ತೆರೆ"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "ಕೊಂಡಿಯ ವಿಳಾಸ ಕಾಪಿ ಮಾಡು"
+
+#, fuzzy
+#~| msgctxt "@title:window"
+#~| msgid "Create New Folder"
+#~ msgctxt "@title:window"
+#~ msgid "Create New Bookmark Folder"
+#~ msgstr "ಹೊಸ ಕಡತಕೋಶವನ್ನು ಸೃಷ್ಟಿಸು"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgid "New folder:"
+#~ msgstr "ಹೊಸ ಕಡತಕೋಶ"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark folder\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "ಪುಟದ ಗುರುತಿನ ಕಡತಕೋಶ \"%1\" ಅನ್ನು ನೀವು ಖಚಿತವಾಗಿಯೂ ತೆಗೆದು ಹಾಕಲು\n"
+#~ "ಬಯಸುತ್ತೀರೆ?"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "ಪುಟದ ಗುರುತು \"%1\" ಅನ್ನು ನೀವು ಖಚಿತವಾಗಿಯೂ ತೆಗೆದು ಹಾಕಲು\n"
+#~ "ಬಯಸುತ್ತೀರೆ?"
+
+#~ msgctxt "@title:window"
+#~ msgid "Bookmark Folder Deletion"
+#~ msgstr "ಪುಟಗುರುತು ಕಡತಕೋಶ ಗುರುತಿಸುವಿಕೆ"
+
+#~ msgctxt "@title:window"
+#~ msgid "Bookmark Deletion"
+#~ msgstr "ಪುಟಗುರುತು ಗುರುತಿಸುವಿಕೆ"
+
+#~ msgctxt "@title:window"
+#~ msgid "Bookmark Properties"
+#~ msgstr "ಪುಟಗುರುತು ಗುಣಲಕ್ಷಣಗಳು"
+
+#~ msgid "&Update"
+#~ msgstr "ಅಪ್‌ಡೇಟ್‌ ಮಾಡು(&U)"
+
+#~ msgid "Name:"
+#~ msgstr "ಹೆಸರು:"
+
+#~ msgid "Location:"
+#~ msgstr "ತಾಣ:"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add Bookmark"
+#~ msgstr "ಪುಟ ಗುರುತನ್ನು ಸೇರಿಸು"
+
+#~ msgid "Cannot find parent item %1 in the tree. Internal error."
+#~ msgstr "ವೃಕ್ಷದಲ್ಲಿ ಮಾತೃ ಅಂಶ %1 ಕಂಡು ಬಂದಿಲ್ಲ. ಆಂತರಿಕ ದೋಷ."
+
+#~ msgid "&Create New Folder..."
+#~ msgstr "ಹೊಸ ಕಡತಕೋಶವನ್ನು ಸೃಷ್ಟಿಸು(&C)..."
+
+#~ msgid "Move to Trash"
+#~ msgstr "ಕಸದಬುಟ್ಟಿಗೆ ಸ್ಥಳಾಂತರಿಸು"
+
+#~ msgid "Rename"
+#~ msgstr "ಹೆಸರು ಬದಲಾಯಿಸು"
+
+#~ msgid "Delete Link"
+#~ msgstr "ಕೊಂಡಿ ಅಳಿಸು"
+
+#~ msgid "New Folder"
+#~ msgstr "ಹೊಸ ಕಡತಕೋಶ"
+
+#~ msgctxt "@title:window"
+#~ msgid "Create New Folder"
+#~ msgstr "ಹೊಸ ಕಡತಕೋಶವನ್ನು ಸೃಷ್ಟಿಸು"
+
+#~ msgid "Enter folder name:"
+#~ msgstr "ಕಡತಕೋಶದ ಹೆಸರನ್ನು ನಮೂದಿಸಿ:"
+
+#~ msgctxt "@label"
+#~ msgid "Name:"
+#~ msgstr "ಹೆಸರು:"
+
+#~ msgctxt "@label"
+#~ msgid "Path or URL:"
+#~ msgstr "ಮಾರ್ಗ ಅಥವ ಯುಆರೆಲ್:"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add folder sidebar module"
+#~ msgstr "ಕಡತಕೋಶ ಬದಿಯ ಪಟ್ಟಿಯ ಘಟಕವನ್ನು ಸೇರಿಸು "
+
+#~ msgid "&Open Link"
+#~ msgstr "ಕೊಂಡಿಯನ್ನು ತೆರೆ(&O)"
+
+#~ msgid "Set &Automatic Reload"
+#~ msgstr "ಸ್ವಯಂಚಾಲಿತ ಪುನರುತ್ಥಾಪನೆಯನ್ನು ನಿಗದಿಪಡಿಸಿ(&A)"
+
+#~ msgctxt "@title:window"
+#~ msgid "Set Refresh Timeout (0 disables)"
+#~ msgstr "ಪುನಶ್ಚೇತನ ವಿರಾಮವನ್ನು ನಿಗದಿಪಡಿಸಿ (೦ ಯು ಅಶಕ್ತಗೊಳಿಸುತ್ತದೆ)"
+
+#~ msgid " minute"
+#~ msgid_plural " minutes"
+#~ msgstr[0] " ನಿಮಿಷ"
+#~ msgstr[1] " ನಿಮಿಷಗಳು"
+
+#~ msgid " second"
+#~ msgid_plural " seconds"
+#~ msgstr[0] " ಸೆಕೆಂಡು"
+#~ msgstr[1] " ಸೆಕೆಂಡುಗಳು"
+
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Web Sidebar Module"
+#~ msgstr "ಜಾಲ ಬದಿಪಟ್ಟಿ ಘಟಕ"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add web sidebar module"
+#~ msgstr "ಜಾಲ ಬದಿಪಟ್ಟಿಯ ಘಟಕವನ್ನು ಸೇರಿಸು"
+
+#~ msgid "&Use index.html"
+#~ msgstr "index.html ಬಳಸು(&U)"
+
+#~ msgid "If present, open index.html when entering a folder."
+#~ msgstr "ಕಡತಕೋಶವನ್ನು ಪ್ರವೇಶಿಸುವಾಗ index.html ಇದ್ದರೆ ಅದನ್ನು ತೆರೆ."
+
+#~ msgid ""
+#~ "<em>Tuning Tip:</em> If you want the Konqueror web browser to start "
+#~ "faster, you can turn off this information screen by clicking <a href="
+#~ "\"%1\">here</a>. You can re-enable it by choosing the Help -> Konqueror "
+#~ "Introduction menu option, and then pressing Settings -> Save View Profile "
+#~ "As... -> \"Web Browsing\"."
+#~ msgstr ""
+#~ "<em>ಸರಿಪಡಿಸುವಿಕೆಯ ಸಲಹೆ:</em> ಕಾಂಕರರ್ ಬೇಗನೆ ಆರಂಭಗೊಳ್ಳಬೇಕೆಂದು ನೀವು "
+#~ "ಬಯಸುವುದಾದರೆ, <a href=\"%1\">ಇಲ್ಲಿ</a> ಕ್ಲಿಕ್ ಮಾಡುವ ಮೂಲಕ ನೀವು ಈ ಮಾಹಿತಿಯನ್ನು ಆಫ್ "
+#~ "ಮಾಡಬಹುದಾಗಿದೆ. ಇದನ್ನು ಮರಳಿ ಶಕ್ತಗೊಳಿಸಲು, ಸಹಾಯ -> ಕಾಂಕರರ್ ಪರಿಚಯ ಪರಿವಿಡಿ "
+#~ "ಆಯ್ಕೆಯನ್ನು ಆರಿಸಿ, ನಂತರ ಸಂಯೋಜನೆಗಳು -> ನೋಟ ಪ್ರೊಫೈಲನ್ನು ಹೀಗೆ ಉಳಿಸು... -> \"ಜಾಲ "
+#~ "ವೀಕ್ಷಣೆ\" ಅನ್ನು ಕ್ಲಿಕ್ಕಿಸಿ."
+
+#~ msgid ""
+#~ "Do you want to disable showing the introduction in the webbrowsing "
+#~ "profile?"
+#~ msgstr "ಜಾಲ ವೀಕ್ಷಣೆ ಪ್ರೊಫೈಲಿನಲ್ಲಿ ಪರಿಚಯವನ್ನು ತೋರಿಸಲು ನೀವು ಬಯಸುತ್ತೀರೆ?"
+
+#~ msgctxt "@title:window"
+#~ msgid "Faster Startup?"
+#~ msgstr "ಶೀಘ್ರ ಪ್ರಾರಂಭಿಸಬೇಕೆ?"
+
+#~ msgid "Disable"
+#~ msgstr "ನಿಷ್ಕ್ರಿಯಗೊಳಿಸು"
+
+#~ msgid "Keep"
+#~ msgstr "ಉಳಿಸು"
+
+#~ msgid "Profile to open"
+#~ msgstr "ತೆರೆಯಬೇಕಾದ ಪ್ರೊಫೈಲ್"
+
+#~ msgid "List available profiles"
+#~ msgstr "ಲಭ್ಯವಿರುವ ಪ್ರೊಫೈಲುಗಳನ್ನು ಪಟ್ಟಿಮಾಡಿ"
+
+#~ msgid "&Save View Profile As..."
+#~ msgstr "ನೋಟ ಪ್ರೊಫೈಲನ್ನು ಉಳಿಸು(&S)..."
+
+#~ msgid "C&onfigure View Profiles..."
+#~ msgstr "ನೋಟ ಪ್ರೊಫೈಲಗಳನ್ನು ಸಂರಚಿಸು(&o)..."
+
+#~ msgid "Load &View Profile"
+#~ msgstr "ನೋಟ ಪ್ರೊಫೈಲನ್ನು ಲೋಡ್ ಮಾಡು(&V)"
+
+#~ msgctxt "@title:window"
+#~ msgid "Profile Management"
+#~ msgstr "ಪ್ರೊಫೈಲ್ ನಿರ್ವಹಣೆ"
+
+#~ msgid "&Rename Profile"
+#~ msgstr "ಪ್ರೊಫೈಲನ ಹೆಸರನ್ನು ಬದಲಾಯಿಸು(&R)"
+
+#~ msgid "&Delete Profile"
+#~ msgstr "ಪ್ರೊಫೈಲನ್ನು ಅಳಿಸು(&D)"
+
+#~ msgid "&Profile name:"
+#~ msgstr "ಪ್ರೊಫೈಲಿನ ಹೆಸರು(&P):"
+
+#~ msgid "Save &URLs in profile"
+#~ msgstr "ಪ್ರೊಫೈಲಿನಲ್ಲಿ ತಾಣಸೂಚಿಗಳನ್ನು ಉಳಿಸು(&U)"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window.\n"
+#~ "Loading a view profile will close them."
+#~ msgstr ""
+#~ "ಈ ಕಿಟಕಿಯಲ್ಲಿ ಹಲವಾರು ಹಾಳೆಗಳು ತೆರೆದುಕೊಂಡಿವೆ.\n"
+#~ "ನೋಟ ಪ್ರೊಫೈಲನ್ನು ಲೋಡ್‌ ಮಾಡಿದರೆ ಅವುಗಳು ಮುಚ್ಚಲ್ಪಡುತ್ತವೆ."
+
+#~ msgid "Load View Profile"
+#~ msgstr "ನೋಟ ಪ್ರೊಫೈಲನ್ನು ಲೋಡ್ ಮಾಡು"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Loading a profile will discard these changes."
+#~ msgstr ""
+#~ "ಈ ಹಾಳೆಯು ಇನ್ನೂ ಸಮರ್ಪಿಸಲ್ಪಡದ ಬದಲಾವಣೆಗಳನ್ನು ಹೊಂದಿದೆ. \n"
+#~ "ಪ್ರೊಫೈಲನ್ನು ಲೋಡ್ ಮಾಡುವುದರಿಂದ ಈ ಬದಲಾವಣೆಗಳು ತ್ಯಜಿಸಲ್ಪಡುತ್ತವೆ."
+
+#~ msgid " day"
+#~ msgid_plural " days"
+#~ msgstr[0] " ದಿನ"
+#~ msgstr[1] " ದಿನಗಳು"
+
+#~ msgid " min"
+#~ msgstr "ನಿಮಿಷ"
+
+#~ msgid "Input Required:"
+#~ msgstr "ಆದಾನ ಬೇಕಾಗಿದೆ:"
+
+#~ msgid "&Execute Shell Command..."
+#~ msgstr "ಷೆಲ್ ಆದೇಶವನ್ನು ನಿರ್ವಹಿಸು(&E)..."
+
+#~ msgid ""
+#~ "KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a "
+#~ "bug."
+#~ msgstr ""
+#~ "KShellCmdPlugin::slotExecuteShellCommand: ಪ್ರೊಗ್ರಾಂನಲ್ಲಿ ದೋಷ, ದಯವಿಟ್ಟು ಒಂದು "
+#~ "ದೋಷ ವರದಿಯನ್ನು ಸಲ್ಲಿಸಿ."
+
+#~ msgid "Executing shell commands works only on local directories."
+#~ msgstr "ಶೆಲ್ ಆದೇಶಗಳನ್ನು ನಿರ್ವಹಿಸುವುದು ಕೇವಲ ಸ್ಥಳೀಯ ಕೋಶಗಳಿಗೆ ಮಾತ್ರ ಅನ್ವಯಿಸುತ್ತವೆ."
+
+#~ msgid "Execute Shell Command"
+#~ msgstr "ಷೆಲ್ ಆದೇಶವನ್ನು ನಿರ್ವಹಿಸು"
+
+#~ msgid "Execute shell command in current directory:"
+#~ msgstr "ಷೆಲ್ ಆದೇಶವನ್ನು ಪ್ರಸ್ತುತ ಕೋಶದಲ್ಲಿ ನಿರ್ವಹಿಸು:"
+
+#~ msgid "Output from command: \"%1\""
+#~ msgstr "ಆದೇಶದ ಪ್ರದಾನ: \"%1\" "
+
+#~ msgid "Hide %1"
+#~ msgstr "%1 ಅಡಗಿಸು"
+
+#, fuzzy
+#~| msgid "Web SideBar Plugin"
+#~ msgid "SideBar Test Plugin"
+#~ msgstr "ಅಂತರ್ಜಾಲ ಬದಿಪಟ್ಟಿ ಮಿಲಿತಾನ್ವಯ"
+
+#~ msgid "Bookmark This Location"
+#~ msgstr "ಈ ತಾಣವನ್ನು ಪುಟಗುರುತಿಸಿಕೊಳ್ಳಿ"
+
+#~ msgid ""
+#~ "Protocol not supported\n"
+#~ "%1"
+#~ msgstr ""
+#~ "ವಿನಿಮಯಕ್ರಮಕ್ಕೆ (protocol) ಬೆಂಬಲವಿಲ್ಲ\n"
+#~ "%1"
+
+#~ msgid "Cannot create the find part, check your installation."
+#~ msgstr "ಶೋಧನಾ ವಿಭಾಗವನ್ನು ರಚಿಸಲಾಗಲಿಲ್ಲ, ಅನುಸ್ಥಾಪನೆಯನ್ನೊಮ್ಮೆ ಪರಿಶೀಲಿಸಿ."
+
+#~ msgid "My Bookmarks"
+#~ msgstr "ನನ್ನ ಪುಟಗುರುತುಗಳು"
+
+#~ msgid "Preload for later use"
+#~ msgstr "ನಂತರದ ಬಳಕೆಗಾಗಿ ಪೂರ್ವೋತ್ಥಾಪಿಸು"
+
+#~ msgid "&Save View Profile \"%1\"..."
+#~ msgstr "\"%1\" ನೋಟ ಪ್ರೊಫೈಲನ್ನು ಉಳಿಸು(&S)..."
+
+#~ msgid "Configure Navigation Panel"
+#~ msgstr "ನ್ಯಾವಿಗೇಶನ್ ಪಟ್ಟಿಕೆಯನ್ನು ಸಂರಚಿಸಿ"
+
+#~ msgid "Close Navigation Panel"
+#~ msgstr "ನ್ಯಾವಿಗೇಶನ್ ಪಟ್ಟಿಕೆಯನ್ನು ಮುಚ್ಚು"
+
+#~ msgid "Select Type"
+#~ msgstr "ಪ್ರಕಾರವನ್ನು ಆರಿಸಿ"
+
+#~ msgid "Select type:"
+#~ msgstr "ಪ್ರಕಾರವನ್ನು ಆರಿಸಿ:"
+
+#~ msgid "Web SideBar Plugin"
+#~ msgstr "ಅಂತರ್ಜಾಲ ಬದಿಪಟ್ಟಿ ಮಿಲಿತಾನ್ವಯ"
+
+#~ msgid "<qt><b>%1</b> does not exist</qt>"
+#~ msgstr "<qt><b>%1</b>ಅಸ್ತಿತ್ವದಲಿಲ್ಲ</qt>"
+
+#~ msgid "Minutes"
+#~ msgstr "ನಿಮಿಷಗಳು"
+
+#~ msgid "Days"
+#~ msgstr "ದಿನಗಳು"
+
+#~ msgid "Your sidebar is not functional or unavailable."
+#~ msgstr "ನಿಮ್ಮ ಬದಿಪಟ್ಟಿ ನಿಷ್ಕ್ರಿಯವಾಗಿದೆ ಇಲ್ಲವೇ ಅಲಭ್ಯವಾಗಿದೆ."
+
+#~ msgid "Cannot find running history plugin in your sidebar."
+#~ msgstr "ಚಾಲ್ತಿಯಲ್ಲಿರುವ ಇತಿಹಾಸ ಮಿಲಿತಾನ್ವಯವನ್ನು ನಿಮ್ಮ ಬದಿಪಟ್ಟಿಯಲ್ಲಿ ಕಾಣಲಾಗುತ್ತಿಲ್ಲ."
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History in Sidebar"
+#~ msgstr "ಬದಿಪಟ್ಟಿಯಲ್ಲಿ ಇತಿಹಾಸವನ್ನು ತೋರಿಸು"
+
+#~ msgid "Select Remote Charset"
+#~ msgstr "ಪರೋಕ್ಷ ಅಕ್ಷರಗಣವನ್ನು ಆರಿಸಿ"
+
+#~ msgid "Reload"
+#~ msgstr "ಮತ್ತೆ ತುಂಬಿಸು"
+
+#~ msgid "Default"
+#~ msgstr "ಪೂರ್ವನಿಯೋಜಿತ"

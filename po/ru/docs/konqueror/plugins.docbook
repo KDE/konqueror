@@ -1,0 +1,292 @@
+<chapter id="plugins">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>Kernel</firstname
+><surname
+>Panic</surname
+><affiliation
+><address
+><email
+>rzhevskiy@mail.ru</email
+></address
+></affiliation
+><contrib
+> Перевод на русский</contrib
+></othercredit
+><othercredit role="reviewer"
+><firstname
+>Григорий</firstname
+><surname
+>Мохин</surname
+><affiliation
+><address
+><email
+>mok@kde.ru</email
+></address
+></affiliation
+><contrib
+> Редакция русского перевода</contrib
+></othercredit
+> 
+</authorgroup>
+<date
+>2002-09-22</date
+> <releaseinfo
+>3.1</releaseinfo
+> </chapterinfo>
+
+
+<title
+>Модули</title>
+
+<sect1 id="netscape-plugin">
+<title
+>Дополнительные модули &Netscape;</title>
+
+<para
+>&konqueror; поддерживает дополнительные модули &Netscape;.</para>
+
+<para
+>Выбрав пункт меню <menuchoice
+><guimenu
+>Настройка</guimenu
+><guisubmenu
+> Настройка Konqueror...</guisubmenu
+><guimenuitem
+>Модули</guimenuitem
+> </menuchoice
+>, вы вызовете окно с двумя вкладками: <guilabel
+>Поиск</guilabel
+> и <guilabel
+>Плагины</guilabel
+>.</para>
+
+<para
+>Во вкладке <guilabel
+>Поиск</guilabel
+> вы можете указать, как &konqueror; должен искать новые модули: автоматически при запуске &kde; или только тогда, когда вы дадите команду, нажав кнопку <guibutton
+>Искать новые плагины</guibutton
+>.</para>
+	
+<para
+>При поиске новых модулей &konqueror; ищет во всех каталогах, перечисленных в списке <guilabel
+>Сканировать каталоги</guilabel
+>, файлы с расширением <literal role="extension"
+>.so</literal
+>. При этом он определяет, какой тип <acronym
+>MIME</acronym
+> данный модуль поддерживает. После этого он добавляет определение этого типа <acronym
+>MIME</acronym
+> в каталог <filename class="directory"
+> ~/.kde/share/mimelnk</filename
+>, таким образом делая его доступным для другим приложений.</para>
+
+<para
+>Во вкладке <guilabel
+>Плагины</guilabel
+> перечислены все найденные модули &Netscape;, а также соответствующие каждому из них типы <acronym
+>MIME</acronym
+> и расширения файлов.</para>
+
+<para
+>Установив режим <guilabel
+>Включить плагины глобально</guilabel
+>, вы сможете также использовать модули, содержащиеся в страницах <acronym
+>HTML</acronym
+> (это может быть небезопасно).</para>
+
+</sect1>
+
+<sect1 id="konq-plugin">
+<title
+>Модули &konqueror;</title>
+
+<para
+>В пакете kdeaddons содержатся дополнительные модули, которые расширяют возможности &konqueror;. Ниже приведено их краткое описание. Более подробные сведения вы можете найти в разделе <guimenuitem
+>Дополнительные модули Konqueror</guimenuitem
+> Справочного центра &kde;.</para>
+
+<variablelist>
+
+<varlistentry>
+<term
+>Перевод веб-страниц</term>
+<listitem
+><para
+>Этот модуль позволяет перевести веб-страницу с одного языка на другой с помощью сервиса AltaVista BabelFish. Чтобы воспользоваться этой возможностью, выберите пункт меню <menuchoice
+><guimenu
+>Сервис</guimenu
+><guisubmenu
+>Перевод веб-страницы</guisubmenu
+></menuchoice
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Фильтр файлов</term>
+<listitem
+><para
+>Этот модуль позволяет вам указать, файлы какого типа следует отображать при просмотре каталогов. Для настройки этого модуля выберите пункт меню <menuchoice
+><guimenu
+>Сервис</guimenu
+><guisubmenu
+>Фильтр файов</guisubmenu
+></menuchoice
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Просмотр дерева DOM</term>
+<listitem
+><para
+>Этот модуль позволяет вам просмотреть список объектов текущей веб-страницы (в форме дерева). Чтобы воспользоваться этой возможностью, выберите пункт меню <menuchoice
+><guimenu
+>Сервис</guimenu
+><guisubmenu
+>Показать дерево DOM</guisubmenu
+></menuchoice
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Проверка HTML</term>
+<listitem
+><para
+>Этот модуль позволяет проверить текущую страницу на соответствие стандартам HTML. Чтобы воспользоваться этой возможностью, выберите пункт меню <menuchoice
+><guimenu
+>Сервис</guimenu
+><guisubmenu
+>Проверка веб-страницы</guisubmenu
+><guimenuitem
+>Проверка HTML</guimenuitem
+></menuchoice
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Проверка CSS</term>
+<listitem
+><para
+>Этот модуль позволяет проверить, соответствует ли стандартам описание стилей (CSS) данной страницы. Чтобы воспользоваться этой возможностью, выберите пункт меню <menuchoice
+><guimenu
+>Сервис</guimenu
+><guisubmenu
+>Проверка веб-страницы</guisubmenu
+><guimenuitem
+>Проверка CSS</guimenuitem
+></menuchoice
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Параметры HTML</term>
+<listitem
+><para
+>Этот модуль позволяет изменить некоторые параметры отображения HTML, не используя окно <guimenu
+>Настройка</guimenu
+>. Чтобы воспользоваться этой возможностью, выберите пункт меню <menuchoice
+><guimenu
+>Сервис</guimenu
+><guisubmenu
+>Параметры HTML</guisubmenu
+></menuchoice
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Галерея рисунков</term>
+<listitem
+><para
+>Этот модуль позволяет создать веб-страницу, содержащую миниатюры всех рисунков в текущем каталоге. По умолчанию страница называется <filename
+>images.html</filename
+>, а миниатюры располагаются в каталоге <filename
+>thumbs</filename
+>. Чтобы воспользоваться этой возможностью, выберите пункт меню <menuchoice
+><guimenu
+>Сервис</guimenu
+><guisubmenu
+>Создать галерею рисунков</guisubmenu
+></menuchoice
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Изменение идентификации обозревателя</term>
+<listitem
+><para
+>Этот модуль позволяет изменять идентификацию обозревателя, не используя окно <guimenu
+>Настройка</guimenu
+>. Чтобы воспользоваться этой возможностью, выберите пункт меню <menuchoice
+><guimenu
+>Сервис</guimenu
+><guisubmenu
+>Изменить идентификацию обозревателя</guisubmenu
+></menuchoice
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Сохранение страницы вместе с рисунками</term>
+<listitem
+><para
+>Этот модуль позволяет сохранить на ваш компьютер страницу со всеми рисунки, которые на ней имеются. Страница будет сохранена в архив, имеющий расширение <literal role="extension"
+>.war</literal
+>. После этого открыть её можно, щёлкнув по архиву <mousebutton
+>левой</mousebutton
+> кнопкой мыши. Чтобы воспользоваться этой возможностью, выберите пункт меню <menuchoice
+><guimenu
+>Сервис</guimenu
+><guisubmenu
+> Сохранить в архив</guisubmenu
+></menuchoice
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Панель проигрывателя</term>
+<listitem
+><para
+>Этот модуль позволяет проигрывать аудио- и видеофайлы во вкладке на панели навигации. Чтобы проиграть файл, перетащите его мышью на вкладку проигрывателя. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

@@ -1,0 +1,291 @@
+# translation of imgalleryplugin.po to Panjabi
+#
+# Amanpreet Singh Alam <aalam@redhat.com>, 2005.
+# Amanpreet Singh Brar <aalam@redhat.com>, 2005.
+# A S Alam <aalam@users.sf.net>, 2007, 2011, 2012, 2019.
+msgid ""
+msgstr ""
+"Project-Id-Version: imgalleryplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"PO-Revision-Date: 2019-02-10 09:27-0800\n"
+"Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
+"Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
+"Language: pa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 2.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: imgallerydialog.cpp:37
+#, kde-format
+msgctxt "@title:window"
+msgid "Create Image Gallery"
+msgstr "ਚਿੱਤਰ ਗੈਲਰੀ ਬਣਾਓ"
+
+#: imgallerydialog.cpp:38
+#, kde-format
+msgid "Create"
+msgstr "ਬਣਾਓ"
+
+#: imgallerydialog.cpp:48 imgallerydialog.cpp:84
+#, kde-format
+msgid "Image Gallery for %1"
+msgstr "%1 ਲਈ ਚਿੱਤਰ ਗੈਲਰੀ"
+
+#: imgallerydialog.cpp:76
+#, kde-format
+msgid "Look"
+msgstr "ਦਿੱਖ"
+
+#: imgallerydialog.cpp:77
+#, kde-format
+msgid "Page Look"
+msgstr "ਸਫ਼ਾ ਦਿੱਖ"
+
+#: imgallerydialog.cpp:85
+#, kde-format
+msgid "&Page title:"
+msgstr "ਸਫ਼ਾ ਟਾਇਟਲ(&P):"
+
+#: imgallerydialog.cpp:93
+#, kde-format
+msgid "I&mages per row:"
+msgstr "ਹਰੇਕ ਕਤਾਰ 'ਚ ਚਿੱਤਰ(&m):"
+
+#: imgallerydialog.cpp:95
+#, kde-format
+msgid "Show image file &name"
+msgstr "ਚਿੱਤਰ ਫਾਇਲ ਨਾਂ ਵੇਖਾਓ(&n)"
+
+#: imgallerydialog.cpp:99
+#, kde-format
+msgid "Show image file &size"
+msgstr "ਚਿੱਤਰ ਫਾਇਲ ਅਕਾਰ ਵੇਖਾਓ(&s)"
+
+#: imgallerydialog.cpp:103
+#, kde-format
+msgid "Show image &dimensions"
+msgstr "ਚਿੱਤਰ ਮਾਪ ਵੇਖਾਓ(&d)"
+
+#: imgallerydialog.cpp:114
+#, kde-format
+msgid "Fon&t name:"
+msgstr "ਫੋਂਟ ਨਾਂ(&t):"
+
+#: imgallerydialog.cpp:122
+#, kde-format
+msgid "Font si&ze:"
+msgstr "ਫੋਂਟ ਆਕਾਰ(&z):"
+
+#: imgallerydialog.cpp:126
+#, kde-format
+msgid "&Foreground color:"
+msgstr "ਫਾਰਗਰਾਊਂਡ ਰੰਗ(&F):"
+
+#: imgallerydialog.cpp:130
+#, kde-format
+msgid "&Background color:"
+msgstr "ਬੈਕਗਰਾਊਂਡ ਰੰਗ(&B):"
+
+#: imgallerydialog.cpp:136 imgallerydialog.cpp:137
+#, kde-format
+msgid "Folders"
+msgstr "ਫੋਲਡਰ"
+
+#: imgallerydialog.cpp:145
+#, kde-format
+msgid "&Save to HTML file:"
+msgstr "HTML ਫਾਇਲ ਦੇ ਤੌਰ 'ਤੇ ਸੰਭਾਲੋ(&S):"
+
+#: imgallerydialog.cpp:147
+#, kde-format
+msgid "<p>The name of the HTML file this gallery will be saved to.</p>"
+msgstr "<p>HTML ਫਾਇਲ ਦੇ ਨਾਂ, ਜਿਸ ਨਾਲ ਇਸ ਗੈਲਰੀ ਨੂੰ ਸੰਭਾਲਿਆ ਜਾਵੇਗਾ।</p>"
+
+#: imgallerydialog.cpp:150
+#, kde-format
+msgid "&Recurse subfolders"
+msgstr "ਅੰਦਰੂਨੀ ਸਬ-ਫੋਲਡਰ(&R)"
+
+#: imgallerydialog.cpp:152
+#, kde-format
+msgid ""
+"<p>Whether subfolders should be included for the image gallery creation or "
+"not.</p>"
+msgstr "<p>ਕੀ ਚਿੱਤਰ ਗੈਲਰੀ ਬਣਾਉਣ ਲਈ ਅਧੀਨ-ਫੋਲਡਰਾਂ ਨੂੰ ਸ਼ਾਮਲ ਕੀਤਾ ਜਾਵੇ ਜਾਂ ਨਾ।</p>"
+
+#: imgallerydialog.cpp:163
+#, kde-format
+msgid "Endless"
+msgstr "ਬੇਅੰਤ"
+
+#: imgallerydialog.cpp:165
+#, kde-format
+msgid ""
+"<p>You can limit the number of folders the image gallery creator will "
+"traverse to by setting an upper bound for the recursion depth.</p>"
+msgstr ""
+"<p>ਤੁਸੀਂ ਚਿੱਤਰ ਗੈਲਰੀ ਵਿੱਚ ਫੋਲਡਰਾਂ ਦੀ ਗਿਣਤੀ ਸੀਮਿਤ ਕਰ ਸਕਦੇ ਹੋ, ਜਿਸ ਨਾਲ ਡੂੰਘਾਈ ਮਾਰਗ ਲਈ ਉੱਚ "
+"ਸੀਮਾ ਤਹਿ ਕਰ ਸਕਦੇ ਹੋ।</p>"
+
+#: imgallerydialog.cpp:168
+#, kde-format
+msgid "Rec&ursion depth:"
+msgstr "ਲਗਾਤਾਰ ਡੂੰਘਾਈ(&u):"
+
+#: imgallerydialog.cpp:172
+#, kde-format
+msgid "Copy or&iginal files"
+msgstr "ਅਸਲੀ ਫਾਇਲਾਂ ਕਾਪੀ ਕਰੋ(&i)"
+
+#: imgallerydialog.cpp:174
+#, kde-format
+msgid ""
+"<p>This makes a copy of all images and the gallery will refer to these "
+"copies instead of the original images.</p>"
+msgstr ""
+"<p>ਇਹ ਸਭ ਚਿੱਤਰਾਂ ਦੀ ਕਾਪੀਆਂ ਬਣਾਏਗਾ ਅਤੇ ਗੈਲਰੀ ਅਸਲੀ ਚਿੱਤਰਾਂ ਦੀ ਬਜਾਏ ਇਹਨਾਂ ਕਾਪੀਆਂ ਨੂੰ ਹੀ "
+"ਵੇਖਾਏਗੀ।</p>"
+
+#: imgallerydialog.cpp:179
+#, kde-format
+msgid "Use &comment file"
+msgstr "ਟਿੱਪਣੀ ਫਾਇਲ ਵਰਤੋਂ(&c)"
+
+#: imgallerydialog.cpp:181
+#, kde-format
+msgid ""
+"<p>If you enable this option you can specify a comment file which will be "
+"used for generating subtitles for the images.</p><p>For details about the "
+"file format please see the \"What's This?\" help below.</p>"
+msgstr ""
+"<p>ਜੇਕਰ ਇਹ ਚੋਣ ਯੋਗ ਕੀਤੀ ਗਈ ਤਾਂ ਤੁਸੀਂ ਇੱਕ ਟਿੱਪਣੀ ਫਾਇਲ ਦੇ ਸਕਦੇ ਹੋ, ਜੋ ਕਿ ਚਿੱਤਰਾਂ ਦੇ ਅਧੀਨ-"
+"ਟਾਇਟਲ ਬਣਾਉਣ ਲਈ ਵਰਤੀ ਜਾ ਸਕਦੀ ਹੈ।</p><p>ਫਾਇਲ ਫਾਰਮੈਟ ਬਾਰੇ ਵਧੇਰੇ ਜਾਣਕਾਰੀ ਲਈ, \"ਇਹ ਕੀ "
+"ਹੈ?\" ਮਦਦ ਹੇਠਾਂ ਵੇਖੋ।</p>"
+
+#: imgallerydialog.cpp:190
+#, kde-format
+msgid ""
+"<p>You can specify the name of the comment file here. The comment file "
+"contains the subtitles for the images. The format of this file is:</"
+"p><p>FILENAME1:<br />Description<br /><br />FILENAME2:<br />Description<br /"
+"><br />and so on</p>"
+msgstr ""
+"<p>ਤੁਸੀਂ ਟਿੱਪਣੀ ਫਾਇਲ ਦਾ ਨਾਂ ਇੱਥੇ ਦੇ ਸਕਦੇ ਹੋ। ਟਿੱਪਣੀ  ਵਿੱਚ ਚਿੱਤਰਾਂ ਦੇ ਅਧੀਨ-ਟਾਇਟਲ ਹੁੰਦੇ ਹਨ। ਇਸ "
+"ਫਾਇਲ ਦਾ ਫਾਰਮੈਟ ਹੈ:</p><p>ਫਾਇਲ ਨਾਂ1:<br />ਵੇਰਵਾ<br />ਫਾਇਲ ਨਾਂ2:<br />ਵੇਰਵਾ<br /"
+"><br />ਅਤੇ ਇੰਞ ਹੀ<br /></p>"
+
+#: imgallerydialog.cpp:200
+#, kde-format
+msgid "Comments &file:"
+msgstr "ਟਿੱਪਣੀ ਫਾਇਲ(&f):"
+
+#: imgallerydialog.cpp:210 imgallerydialog.cpp:211
+#, kde-format
+msgid "Thumbnails"
+msgstr "ਥੰਮਨੇਲ"
+
+#: imgallerydialog.cpp:224
+#, kde-format
+msgid "Image f&ormat:"
+msgstr ""
+
+#: imgallerydialog.cpp:232
+#, kde-format
+msgid "Thumbnail size:"
+msgstr "ਥੰਮਨੇਲ ਅਕਾਰ:"
+
+#: imgallerydialog.cpp:235
+#, kde-format
+msgid "&Set different color depth:"
+msgstr "ਵੱਖਰੀ ਰੰਗ ਡੂੰਘਾਈ ਸੈੱਟ ਕਰੋ(&S):"
+
+#: imgallerydialog.cpp:246
+#, kde-format
+msgid "Color depth:"
+msgstr ""
+
+#: imgalleryplugin.cpp:52
+#, kde-format
+msgid "&Create Image Gallery..."
+msgstr "ਚਿੱਤਰ ਗੈਲਰੀ ਬਣਾਓ(&C)..."
+
+#: imgalleryplugin.cpp:62
+#, kde-format
+msgid "Could not create the plugin, please report a bug."
+msgstr "ਪਲੱਗਇਨ ਬਣਾਈ ਨਹੀਂ ਜਾ ਸਕੀ ਹੈ, ਬੱਗ ਬਾਰੇ ਜਾਣਕਾਰੀ ਦਿਓ ਜੀ।"
+
+#: imgalleryplugin.cpp:68
+#, kde-format
+msgid "Creating an image gallery works only on local folders."
+msgstr "ਚਿੱਤਰ ਗੈਲਰੀ ਬਣਾਉਣਾ ਸਿਰਫ਼ ਲੋਕਲ ਫੋਲਡਰਾਂ ਲਈ ਹੀ ਕੰਮ ਕਰਦਾ ਹੈ।"
+
+#: imgalleryplugin.cpp:88
+#, kde-format
+msgid "Creating thumbnails"
+msgstr "ਥੰਮਨੇਲ ਬਣਾਏ ਜਾ ਰਹੇ ਹਨ"
+
+#: imgalleryplugin.cpp:111 imgalleryplugin.cpp:275
+#, kde-format
+msgid "Could not create folder: %1"
+msgstr "ਫੋਲਡਰ ਬਣ ਨਹੀਂ ਸਕਿਆ: %1"
+
+#: imgalleryplugin.cpp:173
+#, kde-format
+msgid "<i>Number of images</i>: %1"
+msgstr "<i>ਚਿੱਤਰਾਂ ਦੀ ਗਿਣਤੀ</i>: %1"
+
+#: imgalleryplugin.cpp:174
+#, kde-format
+msgid "<i>Created on</i>: %1"
+msgstr "<i>ਬਣਾਇਆ</i>: %1"
+
+#: imgalleryplugin.cpp:179
+#, kde-format
+msgid "<i>Subfolders</i>:"
+msgstr "<i>ਸਬ-ਫੋਲਡਰ</i>:"
+
+#: imgalleryplugin.cpp:212
+#, kde-format
+msgid ""
+"Created thumbnail for: \n"
+"%1"
+msgstr ""
+"ਥੰਮਨੇਲ ਬਣਾਓ: \n"
+"%1"
+
+#: imgalleryplugin.cpp:215
+#, kde-format
+msgid ""
+"Creating thumbnail for: \n"
+"%1\n"
+" failed"
+msgstr ""
+"%1 \n"
+"ਥੰਮਨੇਲ ਬਣਾਉਣ ਲਈ\n"
+" ਅਸਫ਼ਲ"
+
+#: imgalleryplugin.cpp:230
+#, kde-format
+msgid "KiB"
+msgstr "KiB"
+
+#: imgalleryplugin.cpp:344 imgalleryplugin.cpp:439
+#, kde-format
+msgid "Could not open file: %1"
+msgstr "ਫਾਇਲ ਖੋਲ੍ਹੀ ਨਹੀਂ ਜਾ ਸਕੀ: %1"
+
+#. i18n: ectx: Menu (tools)
+#: kimgallery.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "ਟੂਲ(&T)"
+
+#~ msgid "Image format f&or the thumbnails:"
+#~ msgstr "ਥੰਮਨੇਲ ਲਈ ਚਿੱਤਰ ਫਾਰਮੈਟ(&o):"
+
+#~ msgctxt "@title:window"
+#~ msgid "Configure"
+#~ msgstr "ਸੰਰਚਨਾ"

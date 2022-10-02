@@ -1,0 +1,70 @@
+# translation of akregator_konqplugin.po to
+# translation of akregator_konqplugin.po to Français
+# Nicolas Ternisien <nicolast@libertysurf.fr>, 2004, 2005.
+# Nicolas Ternisien <nicolas.ternisien@gmail.com>, 2005, 2008, 2010.
+# Matthieu Robin <matthieu@macolu.org>, 2005, 2011.
+# xavier <ktranslator31@yahoo.fr>, 2013.
+# Simon Depiets <sdepiets@gmail.com>, 2018, 2019.
+msgid ""
+msgstr ""
+"Project-Id-Version: akregator_konqplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2019-07-21 17:56+0800\n"
+"Last-Translator: Simon Depiets <sdepiets@gmail.com>\n"
+"Language-Team: French <kde-francophone@kde.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 19.07.70\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#: akregatorplugin.cpp:63
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Add Feed to Akregator"
+msgstr "Ajouter ce flux à Akregator"
+
+#: konqfeedicon.cpp:127
+#, kde-format
+msgid "Add Feed to Akregator"
+msgstr "Ajouter ce flux à Akregator"
+
+#: konqfeedicon.cpp:129
+#, kde-format
+msgid "Add Feeds to Akregator"
+msgstr "Ajouter ces flux à Akregator"
+
+#: konqfeedicon.cpp:138
+#, kde-format
+msgid "Add All Found Feeds to Akregator"
+msgstr "Ajouter la totalité des flux trouvés à Akregator"
+
+#: konqfeedicon.cpp:162
+#, kde-format
+msgid "Subscribe to site updates (using news feed)"
+msgstr ""
+"S'inscrire aux mises à jour de ce site (en utilisant le flux de nouvelles)"
+
+#: pluginutil.cpp:36 pluginutil.cpp:46
+#, kde-format
+msgid "Imported Feeds"
+msgstr "Flux importés"
+
+#: pluginutil.cpp:38
+#, kde-format
+msgid "Unable to contact Akregator via D-Bus"
+msgstr "Impossible de contacter Akregator via D-Bus."
+
+#: pluginutil.cpp:39
+#, kde-format
+msgctxt "@title:window"
+msgid "D-Bus call failed"
+msgstr "L'appel D-Bus a échoué"
+
+#~ msgid "Akregator feed icon - DBus Call failed"
+#~ msgstr "Icône de flux Akregator - Échec de l'appel D-Bus"

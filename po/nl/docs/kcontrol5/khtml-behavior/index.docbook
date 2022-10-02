@@ -1,0 +1,114 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Dutch "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="khtml-behavior" lang="&language;">
+<articleinfo>
+<title
+>Webbrowsen</title>
+<authorgroup>
+<author
+>&Krishna.Tateneni; &Krishna.Tateneni.mail;</author>
+&Niels.Reedijk;&Sander.Koning;&Natalie.Koning;&Freek.de.Kruijf; 
+</authorgroup>
+
+<date
+>2019-11-04</date>
+<releaseinfo
+>Applications 19.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Systeeminstellingen</keyword>
+<keyword
+>konqueror</keyword>
+<keyword
+>browsen</keyword>
+</keywordset>
+
+</articleinfo>
+<sect1 id="konq-browsing">
+<title
+>Webbrowsen</title>
+
+<para
+>Met de &konqueror;-browsermodule van &systemsettings; kunt u verschillende opties instellen omtrent het gedrag van &konqueror;, de geïntegreerde webbrowser van &kde;. </para>
+
+<para
+>Als <guilabel
+>Vraag om een naam en map bij het toevoegen van bladwijzers</guilabel
+> is geactiveerd, zal &konqueror; het wijzigen van de titel van de bladwijzer en het kiezen van een map toestaan waarin deze op te slaan bij het toevoegen van een nieuwe bladwijzer.</para>
+
+<para
+>Schakel <guilabel
+>Alleen gemarkeerde bladwijzers tonen in de bladwijzerwerkbalk</guilabel
+> in en &konqueror; zal alleen die bladwijzers tonen in de bladwijzerwerkbalk die u hebt gemarkeerd in de bladwijzerbewerker.</para>
+
+<para
+>De volgende optie op deze pagina die ingeschakeld kan worden is <guilabel
+>Aanvullen van formulieren</guilabel
+>. Als u deze optie activeert, zal &konqueror; zich proberen te herinneren wat u antwoordt op formulier-vragen en zal op basis daarvan de formulieren voor u proberen in te vullen met antwoorden die u al eens eerder gebruikte.</para>
+
+<para
+>U kunt het aantal formulier-items die &konqueror; zich herinnert instellen met de spinbox genaamd <guilabel
+>Maximum aantal aanvullingen</guilabel
+></para>
+
+<note
+><para
+>Natuurlijk kunt u alles wat &konqueror; in een formulier invult nog aanpassen voordat u het formulier verzendt!</para
+></note>
+
+<para
+>De volgende optie is <guilabel
+>Cursor veranderen boven koppelingen</guilabel
+>. Als deze optie geselecteerd is, zal de vorm van de muisaanwijzer veranderen (gewoonlijk naar een hand) wanneer die over een koppeling zweeft. Dit maakt het gemakkelijk om koppelingen te identificeren, zeker als die koppelingen afbeeldingen zijn.</para>
+
+<para
+>Als <guilabel
+>Middenklik opent URL in selectie</guilabel
+> is geactiveerd, dan kunt u de &URL; openen in de selectie door middenklikken op een &konqueror; weergave.</para>
+
+<para
+>Als gemaksmogelijkheid is er de optie <guilabel
+>Rechterklik gaat terug in de geschiedenis</guilabel
+>. Wanneer u op een leeg gebied klikt (dat wil zeggen niet op een koppeling) in het &konqueror;venster dan zal dezelfde actie worden uitgevoerd alsof u op de knop <guiicon
+>Terug</guiicon
+> in de werkbalk hebt geklikt.</para>
+
+<para
+>Met <guilabel
+>Automatich vertraagde herlading/omleiding toestaan</guilabel
+> staat u toe dat websites u automatisch naar een andere pagina sturen. In veel gevallen is dit gemakkelijk, bijvoorbeeld als een website een nieuw &URL;-adres heeft. Veel webbeheerders plaatsen in dat geval een pagina op de oude website, die u vertelt dat deze verplaatst is en dat u uw bladwijzers dient aan te passen, en u vervolgens automatisch omleidt naar de nieuwe website. Dit kan echter verwarrend of ergerlijk zijn als deze opties misbruikt worden, en u kunt het daarom uitschakelen.</para>
+
+<para
+><guilabel
+>Toegangstoetsenactivatie inschakelen met de &Ctrl;-toets</guilabel
+>: op de &Ctrl;-toets drukken bij het bekijken van webpagina's activeert toegangstoetsen. Dit keuzevak deactiveren zal deze toegangsfunctie uitschakelen. &konqueror; moet herstart worden om deze wijziging effectief te maken.</para>
+
+<para
+><guilabel
+>Stuur de 'DNT-header' om websites te vertellen dat u u niet gevolgd wilt worden</guilabel
+>. Activeer dit vakje als u een website wilt informeren dat u niet wilt dat uw webbrowsinggewoonten gevolgd worden. </para>
+
+<para
+><guilabel
+>Biedt aan om wachtwoorden van de website op te slaan</guilabel
+>. Deactiveer dit vakje om te worden gevraagd om wachtwoorden van de website op te slaan </para>
+
+<para
+><guilabel
+>Online &PDF;-bestanden tonen met WebEngine</guilabel
+>. Dit vakje deactiveren om online &PDF;-bestanden te tonen zoals geconfigureerd in de module <guilabel
+>Bestandsassociaties</guilabel
+> van &systemsettings;. </para>
+
+</sect1>
+
+</article>

@@ -1,0 +1,226 @@
+# translation of kcmperformance.po to Kannada
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Shankar Prasad <svenkate@redhat.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmperformance\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-21 00:16+0000\n"
+"PO-Revision-Date: 2008-12-29 11:41+0530\n"
+"Last-Translator: Shankar Prasad <svenkate@redhat.com>\n"
+"Language-Team: Kannada <en@li.org>\n"
+"Language: kn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: kcmperformance.cpp:28
+#, kde-format
+msgid ""
+"<h1>KDE Performance</h1> You can configure settings that improve KDE "
+"performance here."
+msgstr ""
+"<h1>KDE ಕಾರ್ಯಕ್ಷಮತೆ</h1> KDE ಯ ಕಾರ್ಯಕ್ಷಮತೆಯನ್ನು ಹೆಚ್ಚಿಸುವ ಬದಲಾವಣೆಗಳನ್ನು ಇಲ್ಲಿ ನೀವು "
+"ಸಂರಚಿಸಬಹುದು."
+
+#: kcmperformance.cpp:35
+#, kde-format
+msgid "Konqueror"
+msgstr "Konqueror"
+
+#: kcmperformance.cpp:38
+#, kde-format
+msgid "System"
+msgstr "ಗಣಕ"
+
+#: kcmperformance.cpp:63
+#, kde-format
+msgid ""
+"<h1>Konqueror Performance</h1> You can configure several settings that "
+"improve Konqueror performance here. These include options for reusing "
+"already running instances and for keeping instances preloaded."
+msgstr ""
+"<h1>Konqueror ಕಾರ್ಯಕ್ಷಮತೆ</h1> Konqueror ನ ಕಾರ್ಯಕ್ಷಮತೆಯನ್ನು ಹೆಚ್ಚಿಸುವ ಹಲವಾರು "
+"ಬದಲಾವಣೆಗಳನ್ನು ಇಲ್ಲಿ ನೀವು ಸಂರಚಿಸಬಹುದು. ಇದು ಈಗಾಗಲೆ ಚಾಲನೆಯಲ್ಲಿರುವ ಪ್ರತಿಗಳನ್ನು ಮರಳಿ "
+"ಬಳಸುವ ಹಾಗು ಪ್ರತಿಗಳನ್ನು ಮೊದಲೆ ಲೋಡ್‌ ಮಾಡುವಂತಹ ಆಯ್ಕೆಗಳನ್ನೂ ಸಹ ಒಳಗೊಂಡಿದೆ."
+
+#: konqueror.cpp:24
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>If enabled, an instance of Konqueror will be preloaded after the "
+#| "ordinary KDE startup sequence.</p><p>This will make the first Konqueror "
+#| "window open faster, but at the expense of longer KDE startup times (but "
+#| "you will be able to work while it is loading, so you may not even notice "
+#| "that it is taking longer).</p>"
+msgid ""
+"<p>If enabled, an instance of Konqueror will be preloaded after the ordinary "
+"Plasma startup sequence.</p><p>This will make the first Konqueror window "
+"open faster, but at the expense of longer Plasma startup times (but you will "
+"be able to work while it is loading, so you may not even notice that it is "
+"taking longer).</p>"
+msgstr ""
+"<p>ಶಕ್ತಗೊಳಿಸಲಾಗಿದ್ದಲ್ಲಿ, KDE ಯ ಸಾಮಾನ್ಯ ಅನುಕ್ರಮದ ನಂತರ Konqueror ನ ಒಂದು ಪ್ರತಿಯನ್ನು "
+"ಮುಂಚಿತವಾಗಿ ಲೋಡ್ ಮಾಡಲಾಗುತ್ತದೆ.</p><p>ಇದರಿಂದಾಗಿ ಮೊದಲನೆ Konqueror ವಿಂಡೊ ಅನ್ನು ಬಹಳ "
+"ಬೇಗನೆ ತೆಗೆಯುತ್ತದೆ, ಆದರೆ KDE ಆರಂಭಗೊಳ್ಳಲು ಹೆಚ್ಚಿನ ಹಿಡಿಯು ಸಮಯ ಹಿಡಿಯುತ್ತದೆ (ಆದರೆ ಅದು "
+"ಲೋಡ್ ಆಗುವಾಗ ನೀವು ಕೆಲಸ ಮಾಡಲು ಸಾಧ್ಯವಾಗುತ್ತದೆ, ಆದ್ದರಿಂದ ಇದಕ್ಕೆ ಹೆಚ್ಚು ಹೊತ್ತು "
+"ಹಿಡಿಯುತ್ತಿದೆ ಎಂದು ನಿಮ್ಮ ಅರಿವಿಗೆ ಬರುವುದೆ ಇಲ್ಲ).</p>"
+
+#: konqueror.cpp:30
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>If enabled, KDE will always try to have one preloaded Konqueror "
+#| "instance ready; preloading a new instance in the background whenever "
+#| "there is not one available, so that windows will always open quickly.</"
+#| "p><p><b>Warning:</b> In some cases, it is actually possible that this "
+#| "will reduce perceived performance.</p>"
+msgid ""
+"<p>If enabled, Konqueror will always try to have one preloaded instance "
+"ready; preloading a new instance in the background whenever there is not one "
+"available, so that windows will always open quickly.</p><p><b>Warning:</b> "
+"In some cases, it is actually possible that this will reduce perceived "
+"performance.</p>"
+msgstr ""
+"<p>ಶಕ್ತಗೊಂಡಿದ್ದಲ್ಲಿ, KDE ಯಲ್ಲಿ ಯಾವಾಗಲೂ ಒಂದು ಮುಂಚಿತವಾಗಿ ಲೋಡ್ ಮಾಡಲಾದ Konqueror ನ "
+"ಪ್ರತಿಯು ಸಿದ್ಧಗೊಂಡಿರುತ್ತದೆ; ವಿಂಡೋಗಳು ಯಾವಾಗಲೂ ತಕ್ಷಣ ತೆರೆಯುವಂತೆ, ಮುಂಚಿತವಾಗಿ ಲೋಡ್ "
+"ಮಾಡಲಾದ ಹೊಸ ಪ್ರತಿಯು ಹಿನ್ನಲೆಯಲ್ಲಿ ಲಭ್ಯವಿರುತ್ತದೆ.</p><p><b>ಎಚ್ಚರಿಕೆ:</b> ಕೆಲವೊಂದು "
+"ಸಂದರ್ಭದಲ್ಲಿ, ಇದರಿಂದಾಗಿ ಗ್ರಹಿಸುವ ಕಾರ್ಯಕ್ಷಮತೆಯು ಕಡಿಮೆಯಾಗಬಹುದು.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
+#: konqueror_ui.ui:17
+#, kde-format
+msgid "Preloading"
+msgstr "ಮೊದಲೆ ಲೋಡ್‌ ಮಾಡುವಿಕೆ"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_preload_on_startup)
+#: konqueror_ui.ui:23
+#, fuzzy, kde-format
+#| msgid "Preload an instance after KDE startup"
+msgid "Preload an instance after desktop startup"
+msgstr "KDE ಆರಂಭಗೊಂಡ ನಂತರ ಒಂದು ಸನ್ನಿವೇಶವನ್ನು ಮೊದಲೆ ಲೋಡ್ ಮಾಡು"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_always_have_preloaded)
+#: konqueror_ui.ui:30
+#, fuzzy, kde-format
+#| msgid "Always try to have at least one preloaded instance"
+msgid "Always try to have one preloaded instance"
+msgstr "ಯಾವಾಗಲೂ ಕನಿಷ್ಟ ಒಂದು ಮೊದಲೆ ಲೋಡ್ ಮಾಡಲಾದ ಸನ್ನಿವೇಶವನ್ನು ಹೊಂದಿರಲು ಪ್ರಯತ್ನಿಸಿ"
+
+#: system.cpp:22
+#, kde-format
+msgid ""
+"<p>During startup KDE needs to perform a check of its system configuration "
+"(mimetypes, installed applications, etc.), and in case the configuration has "
+"changed since the last time, the system configuration cache (KSyCoCa) needs "
+"to be updated.</p><p>This option delays the check, which avoid scanning all "
+"directories containing files describing the system during KDE startup, thus "
+"making KDE startup faster. However, in the rare case the system "
+"configuration has changed since the last time, and the change is needed "
+"before this delayed check takes place, this option may lead to various "
+"problems (missing applications in the K Menu, reports from applications "
+"about missing required mimetypes, etc.).</p><p>Changes of system "
+"configuration mostly happen by (un)installing applications. It is therefore "
+"recommended to turn this option temporarily off while (un)installing "
+"applications.</p>"
+msgstr ""
+"<p>ಆರಂಭಗೊಳ್ಳುವಾಗ KDE ಯು ತನ್ನ ವ್ಯವಸ್ಥೆಯ ಸಂರಚನೆಯನ್ನು ಪರಿಶೀಲಿಸುವ ಅಗತ್ಯವಿರುತ್ತದೆ "
+"(mimetypes, ಅನುಸ್ಥಾಪಿತ ಅನ್ವಯಗಳು, ಇತರೆ), ಹಾಗು ಕೊನೆಯ ಬಾರಿಯ ನಂತರ ಸಂರಚನೆಯನ್ನು "
+"ಬದಲಾಯಿಸಲಾಗಿದ್ದಲ್ಲಿ, ಗಣಕ ಸಂರಚನೆಗೆ ಕ್ಯಾಶೆಯನ್ನು (KSyCoCa) ಅಪ್‌ಡೇಟ್ ಮಾಡುವ ಅಗತ್ಯವಿರುತ್ತದೆ."
+"</p><p>ಈ ಅಯ್ಕೆಯಿಂದಾಗಿ ಪರಿಶೀಲನೆಯು ವಿಳಂಬಗೊಳ್ಳಲಿದ್ದು, ಇದರಿಂದಾಗಿ KDE ಆರಂಭಗೊಳ್ಳುವಾಗ "
+"ವ್ಯವಸ್ಥೆಯನ್ನು ವಿವರಿಸುವ ಕಡತಗಳನ್ನು ಹೊಂದಿರುವ ಎಲ್ಲಾ ಕಡತಕೋಶಗಳನ್ನು ಶೋಧಿಸುವುದು ತಪ್ಪುತ್ತದೆ "
+"ಹಾಗು ಆ ಮೂಲಕ KDE ಬಹಳ ಬೇಗನೆ ಆರಂಭಗೊಳ್ಳುತ್ತದೆ. ಆದರೆ, ಕೆಲವೊಂದು ಸಂದರ್ಭಗಳಲ್ಲಿ ಕೊನೆಯ "
+"ಬಾರಿಯ ನಂತರ ಸಂರಚನೆಯನ್ನು ಬದಲಾಯಿಸಲಾಗಿದ್ದಲ್ಲಿ, ಹಾಗು ಈ ವಿಳಂಬವು ಜರುಗುವ ಮೊದಲು ಈ "
+"ಬದಲಾವಣೆಯ ಅಗತ್ಯವಿದ್ದಲ್ಲಿ, ಈ ಆಯ್ಕೆಯು ಹಲವಾರು ತೊಂದರೆಗಳಿಗೆ ಕಾರಣವಾಗುತ್ತದೆ (K ಮೆನುವಿನಿಂದ "
+"ಅನ್ವಯಗಳು ಕಾಣೆಯಾಗುವುದು, ಅಗತ್ಯ mimetypes ಕಾಣೆಯಾಗಿದೆ ಎಂದು ಅನ್ವಯಗಳಿಂದ ವರದಿ "
+"ಮಾಡಲ್ಪಡುವುದು, ಇತರೆ.).</p><p>ಗಣಕದ ಸಂರಚನೆಯ ಬದಲಾವಣೆಗಳು ಹೆಚ್ಚಾಗಿ ಅನ್ವಯಗಳನ್ನು "
+"ಅನುಸ್ಥಾಪಿಸುವಾಗ ಅಥವ ಅನುಸ್ಥಾಪಿಸಿದ್ದನ್ನು ತೆಗೆದು ಹಾಕುವಾಗ ಜರುಗುತ್ತವೆ. ಅದ್ದರಿಂದ "
+"ಅನ್ವಯಗಳನ್ನು ಅನುಸ್ಥಾಪಿಸುವಾಗ ಅಥವ ಅನುಸ್ಥಾಪಿಸಿದ್ದನ್ನು ತೆಗೆದು ಹಾಕುವಾಗ ಈ ಆಯ್ಕೆಯನ್ನು "
+"ತಾತ್ಕಾಲಿಕವಾಗಿ ಆಫ್‌ ಮಾಡಲು ಸಲಹೆ ಮಾಡಲಾಗುತ್ತದೆ.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gb_)
+#: system_ui.ui:8
+#, kde-format
+msgid "System Configuration"
+msgstr "ಗಣಕ ಸಂರಚನೆ"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_disable_kbuildsycoca)
+#: system_ui.ui:14
+#, kde-format
+msgid "Disable &system configuration startup check"
+msgstr "ಗಣಕ ಸಂರಚನೆಯ ಆರಂಭಿಕ ಪರಿಶೀಲನೆಯನ್ನು ಅಶಕ್ತಗೊಳಿಸು(&s)"
+
+#. i18n: ectx: property (text), widget (QLabel, label_kbuildsycoca)
+#: system_ui.ui:21
+#, kde-format
+msgid ""
+"This option may in rare cases lead to various problems. Consult the What's "
+"This (Shift+F1) help for details."
+msgstr ""
+"ಕೆಲವೇ ಕೆಲವು ಸಂದರ್ಭಗಳಲ್ಲಿ ಇದು ಹಲವಾರು ತೊಂದರೆಗಳಿಗೆ ಕಾರಣವಾಗಬಹುದು. ವಿವರಗಳಿಗಾಗಿ "
+"'ಏನಿದು' (Shift+F1) ನೆರವನ್ನು ನೋಡಿ."
+
+#~ msgid ""
+#~ "<p>If non-zero, this option allows keeping Konqueror instances in memory "
+#~ "after all their windows have been closed, up to the number specified in "
+#~ "this option.</p><p>When a new Konqueror instance is needed, one of these "
+#~ "preloaded instances will be reused instead, improving responsiveness at "
+#~ "the expense of the memory required by the preloaded instances.</p>"
+#~ msgstr ""
+#~ "<p>ಸೊನ್ನೆಯಾಗಿರದೆ ಹೋದಲ್ಲಿ, ಎಲ್ಲಾ ವಿಂಡೋಗಳನ್ನು ಮುಚ್ಚಿದ ಮೇಲೆ ಈ ಆಯ್ಕೆಯಲ್ಲಿ ಸೂಚಿಸಲಾದ "
+#~ "ಸಂಖ್ಯೆಗಳಷ್ಟು Konqueror ನ ಪ್ರತಿಯನ್ನು ಮೆಮೊರಿಯಲ್ಲಿ ಇರುವಂತೆ ಈ ಅಯ್ಕೆಯು ಮಾಡುತ್ತದೆ.</"
+#~ "p><p>ಹೊಸದಾಗಿ ಒಂದು Konqueror ನ ಪ್ರತಿಯ ಅಗತ್ಯವಿದ್ದಲ್ಲಿ, ಈ ಮೊದಲು ಲೋಡ್ ಮಾಡಲಾಗಿರುವ "
+#~ "ಪ್ರತಿಗಳಲ್ಲಿ ಒಂದನ್ನು ಬಳಸಲಾಗುವುದು ಹಾಗು ಇದರಿಂದ ಮೊದಲೆ ಲೋಡ್ ಮಾಡಲಾದ ಪ್ರತಿಗಳಿಗಾಗಿ "
+#~ "ಖರ್ಚಾಗುವ ಮೆಮೊರಿಯನ್ನು ಉಳಿಸುವ ಮೂಲಕ ಜವಾಬ್ದಾರಿಯನ್ನು ತೋರಿಸುತ್ತದೆ.</p>"
+
+#, fuzzy
+#~| msgid "Maximum number of instances kept &preloaded:"
+#~ msgid "&Maximum number of instances kept preloaded:"
+#~ msgstr "ಮೊದಲೆ ಲೋಡ್ ಮಾಡಿ ಇರಿಸಲಾದಂತಹ ಸನ್ನಿವೇಶಗಳ ಗರಿಷ್ಟ ಸಂಖ್ಯೆ(&p):"
+
+#~ msgid ""
+#~ "Disables the minimization of memory usage and allows you to make each "
+#~ "browsing activity independent from the others"
+#~ msgstr ""
+#~ "ಮೆಮೊರಿ ಬಳಕೆಯನ್ನು ಕಡಿಮೆಗೊಳಿಸುವಿಕೆಯನ್ನು ಅಶಕ್ತಗೊಳಿಸುತ್ತದೆ ಹಾಗು ಪ್ರತಿಯೊಂದು ವೀಕ್ಷಣಾ "
+#~ "ಕ್ರಿಯೆಯನ್ನು ಬೇರಯವುಗಳಿಂದ ಪ್ರತ್ಯೇಕಿಸಲು ನಿಮಗೆ ಅನುವು ಮಾಡಿಕೊಡುತ್ತದೆ."
+
+#~ msgid ""
+#~ "<p>With this option activated, only one instance of Konqueror used for "
+#~ "file browsing will exist in the memory of your computer at any moment, no "
+#~ "matter how many file browsing windows you open, thus reducing resource "
+#~ "requirements.</p><p>Be aware that this also means that, if something goes "
+#~ "wrong, all your file browsing windows will be closed simultaneously</p>"
+#~ msgstr ""
+#~ "<p>ಈ ಆಯ್ಕೆಯನ್ನು ಶಕ್ತಗೊಳಿಸುವುದರಿಂದ, ಕಡತ ವೀಕ್ಷಣೆಗೆ ನೀವು ಎಷ್ಟೇ ವಿಂಡೋಗಳನ್ನು "
+#~ "ತೆರೆದಿದ್ದರೂ ಸಹ, ಕೇವಲ ಕಡತ ವೀಕ್ಷಣೆಗೆ ಬಳಸಲಾದ Konqueror ನ ಒಂದು ಪ್ರತಿಯನ್ನು ಮಾತ್ರ "
+#~ "ಎಲ್ಲಾ ಸಂದರ್ಭದಲ್ಲಿಯೂ ಮೆಮೊರಿಯಲ್ಲಿ ಇರುತ್ತದೆ, ಹಾಗು ಆ ಮೂಲಕ ಸಂಪನ್ಮೂಲಗಳ ಅಗತ್ಯವನ್ನು ಕಡಿಮೆ "
+#~ "ಮಾಡುತ್ತದೆ.</p><p>ಏನಾದರೂ ತೊಂದರೆಯಾದಲ್ಲಿ ನೀವು ತೆರೆದಿರುವ ಎಲ್ಲಾ ವೀಕ್ಷಕ ವಿಂಡೋಗಳನ್ನು "
+#~ "ಒಮ್ಮೆಲೆ ಮುಚ್ಚಲ್ಪಡುತ್ತವೆ ಎನ್ನುವುದನ್ನು ಮಾತ್ರ ನೆನಪಿಡಿ</p>"
+
+#~ msgid ""
+#~ "<p>With this option activated, only one instance of Konqueror will exist "
+#~ "in the memory of your computer at any moment, no matter how many browsing "
+#~ "windows you open, thus reducing resource requirements.</p><p>Be aware "
+#~ "that this also means that, if something goes wrong, all your browsing "
+#~ "windows will be closed simultaneously.</p>"
+#~ msgstr ""
+#~ "<p>ಈ ಆಯ್ಕೆಯನ್ನು ಶಕ್ತಗೊಳಿಸುವುದರಿಂದ, ವೀಕ್ಷಣೆಗೆ ನೀವು ಎಷ್ಟೇ ವಿಂಡೋಗಳನ್ನು ತೆರೆದಿದ್ದರೂ "
+#~ "ಸಹ, ಕೇವಲ ಒಂದು Konqueror ನ ಪ್ರತಿ ಮಾತ್ರ ಎಲ್ಲಾ ಸಂದರ್ಭದಲ್ಲಿಯೂ ಮೆಮೊರಿಯಲ್ಲಿ ಇರುತ್ತದೆ, "
+#~ "ಹಾಗು ಆ ಮೂಲಕ ಸಂಪನ್ಮೂಲಗಳ ಅಗತ್ಯವನ್ನು ಕಡಿಮೆ ಮಾಡುತ್ತದೆ.</p><p>ಏನಾದರೂ ತೊಂದರೆಯಾದಲ್ಲಿ "
+#~ "ನೀವು ತೆರೆದಿರುವ ಎಲ್ಲಾ ವೀಕ್ಷಕ ವಿಂಡೋಗಳನ್ನು ಒಮ್ಮೆಲೆ ಮುಚ್ಚಲ್ಪಡುತ್ತವೆ ಎನ್ನುವುದನ್ನು ಮಾತ್ರ "
+#~ "ನೆನಪಿಡಿ</p>"
+
+#~ msgid "Minimize Memory Usage"
+#~ msgstr "ಮೆಮೊರಿ ಬಳಕೆಯನ್ನು ಕಡಿಮೆಗೊಳಿಸಿ"
+
+#~ msgid "&Never"
+#~ msgstr "ಎಂದಿಗೂ ಬೇಡ(&N)"
+
+#~ msgid "For &file browsing only (recommended)"
+#~ msgstr "ಕೇವಲ ಕಡತ ವೀಕ್ಷಣೆಗಾಗಿ ಮಾತ್ರ (ಇದನ್ನು ಸಲಹೆ ಮಾಡಲಾಗುವುದು)(&f)"
+
+#~ msgid "Alwa&ys (use with care)"
+#~ msgstr "ಯಾವಾಗಲೂ (ಎಚ್ಚರಿಕೆಯಿಂದ ಬಳಸು)(&y)"

@@ -1,0 +1,3411 @@
+# translation of kget.po to Estonian
+# Translation of kget.po to Estonian.
+# Copyright (C) 2003, 2005, 2009 Free Software Foundation, Inc.
+#
+# Marek Laane <bald@starman.ee>, 2002-2009.
+# Hasso Tepper <hasso@kde.org>, 2005.
+# Marek Laane <bald@smail.ee>, 2009, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: kget\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2010-12-13 19:31+0200\n"
+"Last-Translator: Marek Laane <bald@smail.ee>\n"
+"Language-Team: Estonian <kde-et@linux.ee>\n"
+"Language: et\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.1\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: kget_plugin.cpp:56
+#, kde-format
+msgid "Download Manager"
+msgstr "Allalaadimiste haldur"
+
+#: kget_plugin.cpp:62
+#, kde-format
+msgid "Show Drop Target"
+msgstr "Näita kukutamise märklauda"
+
+#: kget_plugin.cpp:69
+#, kde-format
+msgid "List All Links"
+msgstr "Näita kõiki linke"
+
+#: kget_plugin.cpp:74
+#, kde-format
+msgid "List Selected Links"
+msgstr "Näita valitud linke"
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No downloadable links were found."
+msgstr "Allalaaditavaid linke ei leitud."
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No Links"
+msgstr "Lingid puuduvad"
+
+#. i18n: ectx: Menu (tools)
+#: konqueror_kget_browser_integration.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "&Tööriistad"
+
+#~ msgid "Unable to communicate with the KGet download manager."
+#~ msgstr "Suhtlemine KGeti allalaadimishalduriga nurjus."
+
+#~ msgid "Communication Error"
+#~ msgstr "Kommunikatsiooniviga"
+
+#~ msgid "Plugins"
+#~ msgstr "Pluginad"
+
+#~ msgid "New Group"
+#~ msgstr "Uus grupp"
+
+#~ msgid "Xml"
+#~ msgstr "Xml"
+
+#~ msgid "Sqlite"
+#~ msgstr "Sqlite"
+
+#~ msgid "Nepomuk"
+#~ msgstr "Nepomuk"
+
+#~ msgid "Turn Off Computer"
+#~ msgstr "Arvuti väljalülitamine"
+
+#~ msgid "Hibernate Computer"
+#~ msgstr "Arvuti talveunne"
+
+#~ msgid "Suspend Computer"
+#~ msgstr "Arvuti passiivsesse seisundisse"
+
+#~ msgid "Appearance"
+#~ msgstr "Välimus"
+
+#~ msgid "Change appearance settings"
+#~ msgstr "Välimusseadistuste muutmine"
+
+#~ msgid "Groups"
+#~ msgstr "Grupid"
+
+#~ msgid "Manage the groups"
+#~ msgstr "Gruppide haldamine"
+
+#~ msgid "Network"
+#~ msgstr "Võrk"
+
+#~ msgid "Network and Downloads"
+#~ msgstr "Võrk ja allalaadimised"
+
+#~ msgid "Web Interface"
+#~ msgstr "Veebiliides"
+
+#~ msgid "Control KGet over a Network or the Internet"
+#~ msgstr "KGeti juhtimine üle võrgu või interneti"
+
+#~ msgid "Verification"
+#~ msgstr "Kontrollimine"
+
+#~ msgctxt "integration of KGet with other applications"
+#~ msgid "Integration"
+#~ msgstr "Põimimine"
+
+#~ msgctxt "Advanced Options"
+#~ msgid "Advanced"
+#~ msgstr "Muud"
+
+#~ msgid "Advanced Options"
+#~ msgstr "Täpsem häälestus"
+
+#~ msgid "Transfer Plugins"
+#~ msgstr "Allalaadimispluginad"
+
+#~ msgid "Include"
+#~ msgstr "Kaasamine"
+
+#~ msgid "Exclude"
+#~ msgstr "Väljajätmine"
+
+#~ msgid "Escape sequences"
+#~ msgstr "Paojadad"
+
+#~ msgid "Regular expression"
+#~ msgstr "Regulaaravaldis"
+
+#~ msgid "Pattern"
+#~ msgstr "Muster"
+
+#~ msgid "Syntax"
+#~ msgstr "Süntaks"
+
+#~ msgid "KGet"
+#~ msgstr "KGet"
+
+#~ msgid "1 Item"
+#~ msgid_plural "%1 Items"
+#~ msgstr[0] "1 element"
+#~ msgstr[1] "%1 elementi"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#~ msgctxt "start transfergroup downloads"
+#~ msgid "Start"
+#~ msgstr "Alusta"
+
+#~ msgctxt "stop transfergroup downloads"
+#~ msgid "Stop"
+#~ msgstr "Peata"
+
+#~ msgid "KGet is downloading %1 file"
+#~ msgid_plural "KGet is downloading %1 files"
+#~ msgstr[0] "KGet laadib alla %1 faili"
+#~ msgstr[1] "KGet laadib alla %1 faili"
+
+#~ msgid "Error trying to get %1"
+#~ msgstr "Viga %1 hankimisel"
+
+#~ msgid "Are you sure that you want to remove the group named %1?"
+#~ msgstr "Kas tõesti eemaldada grupp %1?"
+
+#~ msgid "Remove Group"
+#~ msgstr "Eemalda grupp"
+
+#~ msgid "Are you sure that you want to remove the following groups?"
+#~ msgstr "Kas tõesti eemaldada järgmised grupid?"
+
+#~ msgid "Remove groups"
+#~ msgstr "Eemalda grupid"
+
+#~ msgid ""
+#~ "<p>The following transfer has been added to the download list:</p><p "
+#~ "style=\"font-size: small;\">\\%1</p>"
+#~ msgstr ""
+#~ "<p>Järgmine ülekanne on lisatud allalaadimiste nimekirja:</p><p style="
+#~ "\"font-size: small;\">\\%1</p>"
+
+#~ msgid "Download added"
+#~ msgstr "Allalaadimine lisatud"
+
+#~ msgid "<p>The following transfer has been added to the download list:</p>"
+#~ msgstr "<p>Järgmine ülekanne on lisatud allalaadimiste nimekirja:</p>"
+
+#~ msgid "<p>The following transfers have been added to the download list:</p>"
+#~ msgstr "<p>Järgmised ülekanded on lisatud allalaadimiste nimekirja:</p>"
+
+#~ msgid ""
+#~ "The file %1 already exists.\n"
+#~ "Overwrite?"
+#~ msgstr ""
+#~ "Fail %1 on juba olemas.\n"
+#~ "Kas kirjutada see üle?"
+
+#~ msgid "Overwrite existing file?"
+#~ msgstr "Kas kirjutada olemasolev fail üle?"
+
+#~ msgid "Unable to save to: %1"
+#~ msgstr "Ei õnnestunud salvestada asukohta: %1"
+
+#~ msgid "My Downloads"
+#~ msgstr "Minu allalaadimised"
+
+#~ msgid ""
+#~ "<p>The following URL cannot be downloaded, its protocol is not supported "
+#~ "by KGet:</p>"
+#~ msgid_plural ""
+#~ "<p>The following URLs cannot be downloaded, their protocols are not "
+#~ "supported by KGet:</p>"
+#~ msgstr[0] ""
+#~ "<p>Järgmist URL-i ei saa alla laadida, KGet ei toeta selle protokolli:</p>"
+#~ msgstr[1] ""
+#~ "<p>Järgmisi URL-e ei saa alla laadida, KGet ei toeta nende protokolle:</p>"
+
+#~ msgid "Protocol unsupported"
+#~ msgstr "Protokoll ei ole toetatud"
+
+#~ msgid "New Download"
+#~ msgstr "Uus allalaadimine"
+
+#~ msgid "Enter URL:"
+#~ msgstr "URL:"
+
+#~ msgid "Save As"
+#~ msgstr "Salvesta kui"
+
+#~ msgid ""
+#~ "Malformed URL:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Vigane URL:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Malformed URL, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Vigane URL, protokoll puudub:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "You have already completed a download from the location: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Download it again?"
+#~ msgstr ""
+#~ "Oled juba lõpetanud allalaadimise asukohast: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Kas laadida see uuesti alla?"
+
+#~ msgid "Download it again?"
+#~ msgstr "Kas laadida uuesti alla?"
+
+#~ msgid ""
+#~ "You have a download in progress from the location: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Delete it and download again?"
+#~ msgstr ""
+#~ "Sul käib juba allalaadimine asukohast: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Kas kustutada see ja laadida uuesti alla?"
+
+#~ msgid "Delete it and download again?"
+#~ msgstr "Kas kustutada ja laadida uuesti alla?"
+
+#~ msgid "Directory is not writable"
+#~ msgstr "Kataloogi ei saa kirjutada"
+
+#~ msgid ""
+#~ "You have already downloaded that file from another location.\n"
+#~ "\n"
+#~ "Download and delete the previous one?"
+#~ msgstr ""
+#~ "Oled selle faili laadinud juba alla teisest asukohast.\n"
+#~ "\n"
+#~ "Kas laadida see alla ja kustutada eelmine?"
+
+#~ msgid "File already downloaded. Download anyway?"
+#~ msgstr "Fail on juba alla laaditud. Kas laadida see ikkagi alla?"
+
+#~ msgid "You are already downloading the same file"
+#~ msgstr "Sa juba laadid sama faili alla"
+
+#~ msgid "File already exists"
+#~ msgstr "Fail on juba olemas"
+
+#~ msgid "Plugin loader could not load the plugin: %1."
+#~ msgstr "Pluginalaadija ei suutnud laadida pluginat: %1."
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is a directory."
+#~ msgstr ""
+#~ "%1\n"
+#~ "jäetakse kustutamata,\n"
+#~ "sest see on kataloog."
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is not a local file."
+#~ msgstr ""
+#~ "%1\n"
+#~ "jäetakse kustutamata,\n"
+#~ "sest see ei ole kohalik fail."
+
+#~ msgid ""
+#~ "<p>The following file has finished downloading:</p><p style=\"font-size: "
+#~ "small;\">\\%1</p>"
+#~ msgstr ""
+#~ "<p>Järgmise faili allalaadimine on lõpetatud:</p><p style=\"font-size: "
+#~ "small;\">\\%1</p>"
+
+#~ msgid "Download completed"
+#~ msgstr "Allalaadimine valmis"
+
+#~ msgid ""
+#~ "<p>The following transfer has been started:</p><p style=\"font-size: "
+#~ "small;\">\\%1</p>"
+#~ msgstr ""
+#~ "<p>Järgmise faili allalaadimist on alustatud:</p><p style=\"font-size: "
+#~ "small;\">\\%1</p>"
+
+#~ msgid "Download started"
+#~ msgstr "Allalaadimine alustatud"
+
+#~ msgid "Error"
+#~ msgstr "Viga"
+
+#~ msgid ""
+#~ "<p>There has been an error in the following transfer:</p><p style=\"font-"
+#~ "size: small;\">\\%1</p><p>The error message is:</p><p style=\"font-size: "
+#~ "small;\">\\%2</p>"
+#~ msgstr ""
+#~ "<p>Järgmise ülekande puhul tekkis viga:</p><p style=\"font-size: small;\">"
+#~ "\\%1</p><p>Veateade oli:</p><p style=\"font-size: small;\">\\%2</p>"
+
+#~ msgid "Resolve"
+#~ msgstr "Lahenda"
+
+#~ msgid "KGet is now closing, as all downloads have completed."
+#~ msgstr "KGet lõpetab nüüd töö. sest kõik allalaadimised on lõpetatud."
+
+#~ msgid "The computer will now turn off, as all downloads have completed."
+#~ msgstr "Arvuti lõpetab nüüd töö. sest kõik allalaadimised on lõpetatud."
+
+#~ msgctxt "Shutting down computer"
+#~ msgid "Shutdown"
+#~ msgstr "Seiskamine"
+
+#~ msgid ""
+#~ "The computer will now suspend to disk, as all downloads have completed."
+#~ msgstr ""
+#~ "Arvuti viiakse nüüd passiivsesse seisundisse kettal, sest kõik "
+#~ "allalaadimised on lõpetatud."
+
+#~ msgctxt "Hibernating computer"
+#~ msgid "Hibernating"
+#~ msgstr "Talveunes"
+
+#~ msgid ""
+#~ "The computer will now suspend to RAM, as all downloads have completed."
+#~ msgstr ""
+#~ "Arvuti viiakse nüüd passiivsesse seisundisse mälus, sest kõik "
+#~ "allalaadimised on lõpetatud."
+
+#~ msgctxt "Suspending computer"
+#~ msgid "Suspending"
+#~ msgstr "Passiivseisundisse"
+
+#~ msgctxt "abort the proposed action"
+#~ msgid "Abort"
+#~ msgstr "Katkesta"
+
+#~ msgid "<p>All transfers have been finished.</p>"
+#~ msgstr "<p>Kõik ülekanded on lõpetatud.</p>"
+
+#~ msgid "Downloads completed"
+#~ msgstr "Allalaadimised valmis"
+
+#~ msgctxt "file in a filesystem"
+#~ msgid "File"
+#~ msgstr "Fail"
+
+#~ msgctxt "status of the download"
+#~ msgid "Status"
+#~ msgstr "Olek"
+
+#~ msgctxt "size of the download"
+#~ msgid "Size"
+#~ msgstr "Suurus"
+
+#~ msgctxt "checksum of a file"
+#~ msgid "Checksum"
+#~ msgstr "Kontrollsumma"
+
+#~ msgctxt "signature of a file"
+#~ msgid "Signature"
+#~ msgstr "Allkiri"
+
+#~ msgid "KGet Transfer"
+#~ msgstr "KGeti allalaadimine"
+
+#~ msgctxt "the type of the hash, e.g. MD5"
+#~ msgid "Type"
+#~ msgstr "Tüüp"
+
+#~ msgctxt "the used hash for verification"
+#~ msgid "Hash"
+#~ msgstr "Kontrollsumma"
+
+#~ msgctxt "verification-result of a file, can be true/false"
+#~ msgid "Verified"
+#~ msgstr "Verifitseeritud"
+
+#~ msgid ""
+#~ "The key to verify the signature is missing, do you want to download it?"
+#~ msgstr ""
+#~ "Signatuuri õigsuse kontrollimiseks puudub võti. Kas soovid selle alla "
+#~ "laadida?"
+
+#~ msgid ""
+#~ "The signature could not be verified for %1. See transfer settings for "
+#~ "more information."
+#~ msgstr ""
+#~ "%1 allkirja kontrollimine nurjus. Vaata täpsemat teavet ülekande "
+#~ "seadistustest."
+
+#~ msgid "Signature not verified"
+#~ msgstr "Allkiri pole kontrollitud"
+
+#~ msgid ""
+#~ "No server for downloading keys is specified in settings. Downloading "
+#~ "aborted."
+#~ msgstr ""
+#~ "Seadistustes pole määratud serverit võtmete allalaadimiseks. "
+#~ "Allalaadimisest loobuti."
+
+#~ msgid "No key server"
+#~ msgstr "Võtmeserver puudub"
+
+#~ msgid ""
+#~ "No useful key server found, key not downloaded. Add more servers to the "
+#~ "settings or restart KGet and retry downloading."
+#~ msgstr ""
+#~ "Kasulikku võtmeserverit ei leitud, võtit ei laaditud alla. Lisa "
+#~ "seadistustes veel servereid või käivita KGet uuesti ja püüa taas alla "
+#~ "laadida."
+
+#~ msgid "Filesize is larger than maximum file size supported by VFAT."
+#~ msgstr "Failisuurus on suurem kui maksimaalne VFAT-i toetatud suurus."
+
+#~ msgctxt "A mirror is removed when the file has the wrong download size"
+#~ msgid "%1 removed as it did report a wrong file size."
+#~ msgstr "%1 eemaldati, sest see teatas vale failisuuruse."
+
+#~ msgctxt "not available"
+#~ msgid "n/a"
+#~ msgstr "-"
+
+#~ msgid "Stalled"
+#~ msgstr "Seiskunud"
+
+#~ msgid "Downloading...."
+#~ msgstr "Allalaadimine..."
+
+#~ msgctxt "transfer state: delayed"
+#~ msgid "Delayed"
+#~ msgstr "Edasi lükatud"
+
+#~ msgctxt "transfer state: stopped"
+#~ msgid "Stopped"
+#~ msgstr "Peatatud"
+
+#~ msgctxt "transfer state: aborted"
+#~ msgid "Aborted"
+#~ msgstr "Katkestatud"
+
+#~ msgctxt "transfer state: finished"
+#~ msgid "Finished"
+#~ msgstr "Lõpetatud"
+
+#~ msgctxt "changing the destination of the file"
+#~ msgid "Changing destination"
+#~ msgstr "Sihtkoha muutmine"
+
+#~ msgctxt "name of download"
+#~ msgid "Name"
+#~ msgstr "Nimi"
+
+#~ msgctxt "status of download"
+#~ msgid "Status"
+#~ msgstr "Olek"
+
+#~ msgctxt "size of download"
+#~ msgid "Size"
+#~ msgstr "Suurus"
+
+#~ msgctxt "progress of download"
+#~ msgid "Progress"
+#~ msgstr "Edenemine"
+
+#~ msgctxt "speed of download"
+#~ msgid "Speed"
+#~ msgstr "Kiirus"
+
+#~ msgctxt "remaining time of download"
+#~ msgid "Remaining Time"
+#~ msgstr "Aega jäänud"
+
+#~ msgid "No download directory specified."
+#~ msgstr "Allalaadimiste kataloogi pole määratud."
+
+#~ msgid "Invalid download directory specified."
+#~ msgstr "Määratud on vigane allalaadimiste kataloog."
+
+#~ msgid "Download directory is not writeable."
+#~ msgstr "Allalaadimiste kataloogi ei saa kirjutada"
+
+#~ msgid "No download destination specified."
+#~ msgstr "Allalaadimiste sihtkohta pole määratud."
+
+#~ msgid "Invalid download destination specified."
+#~ msgstr "Määratud on vigane allalaadimiste sihtkoht."
+
+#~ msgid "Download destination is not writeable."
+#~ msgstr "Allalaadimiste sihtkohta ei saa kirjutada"
+
+#~ msgid "No URL specified."
+#~ msgstr "URL on määramata."
+
+#~ msgid "Malformed URL."
+#~ msgstr "Vigane URL."
+
+#~ msgid "Malformed URL, protocol missing."
+#~ msgstr "Vigane URL, protokoll puudub."
+
+#~ msgid "Malformed URL, host missing."
+#~ msgstr "Vigane URL, masin puudub."
+
+#~ msgid ""
+#~ "Invalid download directory specified:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Määratud on vigane allalaadimiste kataloog:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Download directory is not writeable:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Allalaadimiste kataloogi ei saa kirjutada:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Invalid download destination specified:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Määratud on vigane allalaadimiste sihtkoht:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Download destination is not writeable:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Allalaadimiste sihtkohta ei saa kirjutada:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Malformed URL, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Vigane URL, masin puudub:\n"
+#~ "%1"
+
+#~ msgid "File already exists. Overwrite it?"
+#~ msgstr "Fail on juba olemas. Kas kirjutada see üle?"
+
+#~ msgid ""
+#~ "You have already downloaded that file from another location.\n"
+#~ "Download and delete the previous one?"
+#~ msgstr ""
+#~ "Oled selle faili laadinud juba alla teisest asukohast.\n"
+#~ "Kas laadida see alla ja kustutada eelmine?"
+
+#~ msgid ""
+#~ "You are already downloading that file from another location.\n"
+#~ "Download and delete the previous one?"
+#~ msgstr ""
+#~ "Laadid seda faili juba alla teisest asukohast.\n"
+#~ "Kas laadida see alla ja kustutada eelmine?"
+
+#~ msgid ""
+#~ "You have already completed a download from that location. Download it "
+#~ "again?"
+#~ msgstr ""
+#~ "Oled juba lõpetanud allalaadimise sellest asukohast. Kas laadida uuesti "
+#~ "alla?"
+
+#~ msgid ""
+#~ "You have a download in progress from that location.\n"
+#~ "Delete it and download again?"
+#~ msgstr ""
+#~ "Sul käib juba allalaadimine sellest asukohast.\n"
+#~ "Kas kustutada see ja laadida uuesti alla?"
+
+#~ msgid ""
+#~ "File already exists:\n"
+#~ "%1\n"
+#~ "Overwrite it?"
+#~ msgstr ""
+#~ "Fail on juba olemas:\n"
+#~ "%1\n"
+#~ "Kas kirjutada see üle?"
+
+#~ msgid "Malformed URLs."
+#~ msgstr "Vigased URL-id."
+
+#~ msgid "Malformed URLs, protocol missing."
+#~ msgstr "Vigased URL-id, protokoll puudub."
+
+#~ msgid "Malformed URLs, host missing."
+#~ msgstr "Vigased URL-id, masin puudub."
+
+#~ msgid ""
+#~ "Malformed URLs:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Vigased URL-id:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Malformed URLs, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Vigased URL-id, protokoll puudub:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Malformed URLs, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Vigased URL-id, masin puudub:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Destinations are not writable:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Sihtkohtadesse ei saa kirjutada:\n"
+#~ "%1"
+
+#~ msgid "Files exist already. Overwrite them?"
+#~ msgstr "Failid on juba olemas. Kas kirjutada need üle?"
+
+#~ msgid ""
+#~ "You have already completed downloads at those destinations. Download them "
+#~ "again?"
+#~ msgstr ""
+#~ "Oled juba lõpetanud allalaadimised neisse sihtkohtadesse. Kas laadida "
+#~ "need uuesti alla?"
+
+#~ msgid ""
+#~ "You have downloads in progress to these destinations.\n"
+#~ "Delete them and download again?"
+#~ msgstr ""
+#~ "Sul käivad juba allalaadimised neisse sihtkohtadesse.\n"
+#~ "Kas kustutada need ja laadida uuesti alla?"
+
+#~ msgid ""
+#~ "You have already completed downloads from these locations. Download them "
+#~ "again?"
+#~ msgstr ""
+#~ "Oled juba lõpetanud allalaadimised neist asukohtadest. Kas laadida need "
+#~ "uuesti alla?"
+
+#~ msgid ""
+#~ "You have downloads in progress from these locations.\n"
+#~ "Delete them and download again?"
+#~ msgstr ""
+#~ "Sul käivad juba allalaadimised neist asukohtadest.\n"
+#~ "Kas kustutada need ja laadida uuesti alla?"
+
+#~ msgid ""
+#~ "Files exist already:\n"
+#~ "%1\n"
+#~ "Overwrite them?"
+#~ msgstr ""
+#~ "Failid on juba olemas:\n"
+#~ "%1\n"
+#~ "Kas kirjutada need üle?"
+
+#~ msgid ""
+#~ "You have already completed downloads at those destinations: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ " Download them again?"
+#~ msgstr ""
+#~ "Oled juba lõpetanud allalaadimised neisse asukohtadesse: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ " Kas laadida need uuesti alla?"
+
+#~ msgid ""
+#~ "You have downloads in progress to these destinations: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Delete them and download again?"
+#~ msgstr ""
+#~ "Sul käivad juba allalaadimised neisse sihtkohtadesse: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Kas kustutada need ja laadida uuesti alla?"
+
+#~ msgid ""
+#~ "You have already completed downloads from these locations: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Download them again?"
+#~ msgstr ""
+#~ "Oled juba lõpetanud allalaadimised neist asukohtadest: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Kas laadida need uuesti alla?"
+
+#~ msgid ""
+#~ "You have downloads in progress from these locations: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Delete them and download again?"
+#~ msgstr ""
+#~ "Sul käivad juba allalaadimised neist asukohtadest: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Kas kustutada need ja laadida uuesti alla?"
+
+#~ msgid "Question"
+#~ msgstr "Küsimus"
+
+#~ msgctxt "on a question"
+#~ msgid "Yes all"
+#~ msgstr "Jah kõigile"
+
+#~ msgctxt "on a question"
+#~ msgid "No all"
+#~ msgstr "Ei kõigile"
+
+#~ msgid "Insert Engine"
+#~ msgstr "Mootori lisamine"
+
+#~ msgid "Engine name:"
+#~ msgstr "Mootori nimi:"
+
+#~ msgid "URL:"
+#~ msgstr "URL:"
+
+#~ msgid "The download (%1) could not be verified. Do you want to repair it?"
+#~ msgstr "Allalaadimise (%1) kontrollimine nurjus: Kas parandada seda?"
+
+#~ msgid ""
+#~ "The download (%1) could not be verified. Do you want to redownload it?"
+#~ msgstr ""
+#~ "Allalaadimise (%1) kontrollimine nurjus: Kas laadida see uuesti alla?"
+
+#~ msgid "Verification failed."
+#~ msgstr "Kontrollimine nurjus."
+
+#~ msgctxt "transfer state: connecting"
+#~ msgid "Connecting...."
+#~ msgstr "Ühendumine..."
+
+#~ msgid "Add New Script"
+#~ msgstr "Lisa uus skript"
+
+#~ msgid "Edit Script"
+#~ msgstr "Muuda skripti"
+
+#~ msgid "Set Script File"
+#~ msgstr "Määra skriptifail"
+
+#~ msgctxt "Configure script"
+#~ msgid "Configure script"
+#~ msgstr "Seadista skripti"
+
+#~ msgctxt "Transfer state: processing script"
+#~ msgid "Processing script...."
+#~ msgstr "Skripti töötlemine..."
+
+#~ msgctxt "Transfer State: Finished"
+#~ msgid "Finished"
+#~ msgstr "Lõpetatud"
+
+#~ msgctxt "Transfer State: Aborted"
+#~ msgid "Aborted"
+#~ msgstr "Katkestatud"
+
+#~ msgid "Downloading Metalink File...."
+#~ msgstr "Metalink-faili allalaadimine..."
+
+#~ msgid ""
+#~ "A newer version of this Metalink might exist, do you want to download it?"
+#~ msgstr "Sellest Metalinkist võib olla uuem versioon, kas laadida see alla?"
+
+#~ msgid "Redownload Metalink"
+#~ msgstr "Laadi Metalink uuesti alla"
+
+#~ msgid "Download failed, no working URLs were found."
+#~ msgstr "Allalaadimine nurjus, toimivat URL-i ei leitud."
+
+#~ msgid ""
+#~ "The download could not be verified, do you want to repair (if repairing "
+#~ "does not work the download would be restarted) it?"
+#~ msgstr ""
+#~ "Allalaadimise (%1) kontrollimine nurjus: Kas parandada seda (kui see ei "
+#~ "aita, alustatakse allalaadimist uuesti)?"
+
+#~ msgid "File Selection"
+#~ msgstr "Faili valimine"
+
+#~ msgid "Add item"
+#~ msgstr "Lisa element"
+
+#~ msgid "%1 would become %2"
+#~ msgstr "%1 asemele tuleb %2"
+
+#~ msgctxt "the string that is used to modify an url"
+#~ msgid "Change string"
+#~ msgstr "Muutmisstring"
+
+#~ msgctxt "the mode defines how the url should be changed"
+#~ msgid "Change mode"
+#~ msgstr "Muutmisrežiim"
+
+#~ msgctxt "the type of the checksum e.g. md5"
+#~ msgid "Checksum type"
+#~ msgstr "Kontrollsumma tüüp"
+
+#~ msgid "Append"
+#~ msgstr "Lisamine"
+
+#~ msgid "Replace file"
+#~ msgstr "Faili asendamine"
+
+#~ msgid "Replace file-ending"
+#~ msgstr "Faililõpu asendamine"
+
+#~ msgctxt "transfer state: running"
+#~ msgid "Running...."
+#~ msgstr "Töös..."
+
+#~ msgctxt "Choked"
+#~ msgid "Yes"
+#~ msgstr "Jah"
+
+#~ msgctxt "Not choked"
+#~ msgid "No"
+#~ msgstr "Ei"
+
+#~ msgctxt "Snubbed"
+#~ msgid "Yes"
+#~ msgstr "Jah"
+
+#~ msgctxt "Not snubbed"
+#~ msgid "No"
+#~ msgstr "Ei"
+
+#~ msgctxt "Interested"
+#~ msgid "Yes"
+#~ msgstr "Jah"
+
+#~ msgctxt "Not Interested"
+#~ msgid "No"
+#~ msgstr "Ei"
+
+#~ msgctxt "Interesting"
+#~ msgid "Yes"
+#~ msgstr "Jah"
+
+#~ msgctxt "Not Interesting"
+#~ msgid "No"
+#~ msgstr "Ei"
+
+#~ msgid "IP Address"
+#~ msgstr "IP aadress"
+
+#~ msgid "Client"
+#~ msgstr "Klient"
+
+#~ msgid "Down Speed"
+#~ msgstr "Kiirus alla"
+
+#~ msgid "Up Speed"
+#~ msgstr "Kiirus üles"
+
+#~ msgid "Choked"
+#~ msgstr "Ummistunud"
+
+#~ msgid "Snubbed"
+#~ msgstr "Kinni kiilunud"
+
+#~ msgid "Availability"
+#~ msgstr "Saadavus"
+
+#~ msgid "DHT"
+#~ msgstr "DHT"
+
+#~ msgid "Score"
+#~ msgstr "Skoor"
+
+#~ msgid "Upload Slot"
+#~ msgstr "Üleslaadimise pesa"
+
+#~ msgid "Requests"
+#~ msgstr "Soovid"
+
+#~ msgid "Downloaded"
+#~ msgstr "Alla laaditud"
+
+#~ msgid "Uploaded"
+#~ msgstr "Üles laaditud"
+
+#~ msgid "Interested"
+#~ msgstr "Huvitatud"
+
+#~ msgid "Interesting"
+#~ msgstr "Huvitav"
+
+#~ msgid "IP address of the peer"
+#~ msgstr "Partneri IP-aadress"
+
+#~ msgid "Which client the peer is using"
+#~ msgstr "Millist klienti partner kasutab"
+
+#~ msgid "Download speed"
+#~ msgstr "Allalaadimise kiirus"
+
+#~ msgid "Upload speed"
+#~ msgstr "Üleslaadimise kiirus"
+
+#~ msgid ""
+#~ "Whether or not the peer has choked us.  If we are choked, the peer will "
+#~ "not send us any data."
+#~ msgstr ""
+#~ "Kas partner on meid ummistanud, millisel juhul ta ei saada enam andmeid"
+
+#~ msgid ""
+#~ "Snubbed means the peer has not sent us any data in the last 2 minutes"
+#~ msgstr ""
+#~ "Kinni kiilunud tähendab, et partner ei ole saatnud andmeid 2 minuti "
+#~ "jooksul"
+
+#~ msgid "How much of the torrent's data the peer has"
+#~ msgstr "Kui palju torrenti andmeid partneril on"
+
+#~ msgid "Whether or not the peer has DHT enabled"
+#~ msgstr "Kas partneril on DHT lubatud"
+
+#~ msgid ""
+#~ "The score of the peer. KTorrent uses this to determine who to upload to."
+#~ msgstr ""
+#~ "Partneri hinnang, mida KTorrent kasutab otsustamiseks, kellele üles "
+#~ "laadida."
+
+#~ msgid "Only peers which have an upload slot will get data from us"
+#~ msgstr "Ainult üleslaadimispesaga partnerid saavad meilt andmeid"
+
+#~ msgid "The number of download and upload requests"
+#~ msgstr "Alla- ja üleslaadimissoovide arv"
+
+#~ msgid "How much data we have downloaded from this peer"
+#~ msgstr "Kui palju andmeid oleme sellelt partnerilt alla laadinud"
+
+#~ msgid "How much data we have uploaded to this peer"
+#~ msgstr "Kui palju andmeid oleme sellele partnerile üles laadinud"
+
+#~ msgid "Whether the peer is interested in downloading data from us"
+#~ msgstr "Kas partner on huvitatud andmete allalaadimisest meie käest"
+
+#~ msgid "Whether we are interested in downloading from this peer"
+#~ msgstr "Kas meie oleme huvitatud andmete allalaadimisest sellelt partnerilt"
+
+#~ msgid "Chunk"
+#~ msgstr "Tükk"
+
+#~ msgid "Progress"
+#~ msgstr "Edenemine"
+
+#~ msgid "Peer"
+#~ msgstr "Masin"
+
+#~ msgid "Files"
+#~ msgstr "Failid"
+
+#~ msgid "Number of the chunk"
+#~ msgstr "Tüki number"
+
+#~ msgid "Download progress of the chunk"
+#~ msgstr "Tüki allalaadimise edenemine"
+
+#~ msgid "Which peer we are downloading it from"
+#~ msgstr "Milliselt partnerilt seda alla laaditakse"
+
+#~ msgid "Download speed of the chunk"
+#~ msgstr "Tüki allalaadimise kiirus"
+
+#~ msgid "Which files the chunk is located in"
+#~ msgstr "Millistes failides tükk asub"
+
+#~ msgid "URL"
+#~ msgstr "URL"
+
+#~ msgid "Speed"
+#~ msgstr "Kiirus"
+
+#~ msgid "Status"
+#~ msgstr "Olek"
+
+#~ msgid "Kick Peer"
+#~ msgstr "Löö masin välja"
+
+#~ msgid "Ban Peer"
+#~ msgstr "Keela masin"
+
+#~ msgid ""
+#~ "Cannot add the webseed %1, it is already part of the list of webseeds."
+#~ msgstr ""
+#~ "Veebilevitust %1 ei saa lisada, see kuulub juba veebilevituste nimekirja."
+
+#~ msgid "Cannot remove webseed %1, it is part of the torrent."
+#~ msgstr "Veebilevitust %1 ei saa eemaldada, see on osa torrentist."
+
+#~ msgid "File"
+#~ msgstr "Fail"
+
+#~ msgid "Size"
+#~ msgstr "Suurus"
+
+#~ msgid "Advanced Details for %1"
+#~ msgstr "%1 üksikasjad"
+
+#~ msgid "Trackers"
+#~ msgstr "Tracker'id"
+
+#~ msgid "Webseeds"
+#~ msgstr "Veebilevitused"
+
+#~ msgctxt "Open file"
+#~ msgid "Open"
+#~ msgstr "Ava"
+
+#~ msgid "Download first"
+#~ msgstr "Laadi esimesena alla"
+
+#~ msgid "Download normally"
+#~ msgstr "Laadi normaalselt alla"
+
+#~ msgid "Download last"
+#~ msgstr "Laadi viimasena alla"
+
+#~ msgid "Do Not Download"
+#~ msgstr "Ära laadi alla"
+
+#~ msgid "Delete File(s)"
+#~ msgstr "Kustuta fail(id)"
+
+#~ msgid "Move File"
+#~ msgstr "Liiguta fail"
+
+#~ msgid "Collapse Folder Tree"
+#~ msgstr "Keri kataloogipuu kokku"
+
+#~ msgid "Expand Folder Tree"
+#~ msgstr "Keri kataloogipuu lahti"
+
+#~ msgid ""
+#~ "You will lose all data in this file, are you sure you want to do this?"
+#~ msgid_plural ""
+#~ "You will lose all data in these files, are you sure you want to do this?"
+#~ msgstr[0] "Kaotad kõik selle faili andmed. Kas tõesti soovid seda?"
+#~ msgstr[1] "Kaotad kõik nende failide andmed. Kas tõesti soovid seda?"
+
+#~ msgid "Select a directory to move the data to."
+#~ msgstr "Vali kataloog, kuhu andmed liigutada."
+
+#~ msgid "Url"
+#~ msgstr "URL"
+
+#~ msgid "Seeders"
+#~ msgstr "Levitajad"
+
+#~ msgid "Leechers"
+#~ msgstr "Tõmbajad"
+
+#~ msgid "Times Downloaded"
+#~ msgstr "Allalaadimiste kordi"
+
+#~ msgid "Next Update"
+#~ msgstr "Järgmine uuendus"
+
+#~ msgid "Priority"
+#~ msgstr "Prioriteet"
+
+#~ msgid "Preview"
+#~ msgstr "Eelvaatlus"
+
+#~ msgctxt "Percent of File Downloaded"
+#~ msgid "% Complete"
+#~ msgstr "% valmis"
+
+#~ msgctxt "Download first"
+#~ msgid "First"
+#~ msgstr "Esimesena"
+
+#~ msgctxt "Download last"
+#~ msgid "Last"
+#~ msgstr "Viimasena"
+
+#~ msgctxt "Download normally(not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "Tavaliselt"
+
+#~ msgctxt "preview available"
+#~ msgid "Available"
+#~ msgstr "Saadaval"
+
+#~ msgctxt "Preview pending"
+#~ msgid "Pending"
+#~ msgstr "Ootel"
+
+#~ msgctxt "No preview available"
+#~ msgid "No"
+#~ msgstr "Ei"
+
+#~ msgid "%1 %"
+#~ msgstr " %1%"
+
+#~ msgctxt "Preview available"
+#~ msgid "Available"
+#~ msgstr "Saadaval"
+
+#~ msgid "Add Tracker"
+#~ msgstr "Lisa tracker"
+
+#~ msgid "Enter the URL of the tracker:"
+#~ msgstr "Tracker'i URL:"
+
+#~ msgid "There already is a tracker named <b>%1</b>."
+#~ msgstr "Tracker nimega <b>%1</b> on juba olemas."
+
+#~ msgctxt "Download Normal (not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "Tavaliselt"
+
+#~ msgid "Cannot initialize libktorrent. Torrent support might not work."
+#~ msgstr ""
+#~ "Libktorrenti initsialiseerimine nurjus. Torrentite toetus ei pruugi "
+#~ "töötada."
+
+#~ msgid "&Advanced Details"
+#~ msgstr "Muud üksik&asjad"
+
+#~ msgid "&Scan Files"
+#~ msgstr "&Uuri faile"
+
+#~ msgid "Downloading Torrent File...."
+#~ msgstr "Torrent-faili allalaadimine..."
+
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading...."
+#~ msgstr "Allalaadimine..."
+
+#~ msgid "Cannot add a tracker to a private torrent."
+#~ msgstr "Privaattorrentile ei saa tracker'it lisada."
+
+#~ msgid "Torrent file does not exist"
+#~ msgstr "Torrentifaili ei ole olemas"
+
+#~ msgid "Analyzing torrent...."
+#~ msgstr "Torrenti analüüsimine..."
+
+#~ msgid "Cannot initialize port..."
+#~ msgstr "Pordi initsialiseerimine nurjus..."
+
+#~ msgctxt "Transfer status: seeding"
+#~ msgid "Seeding...."
+#~ msgstr "Levitamine..."
+
+#~ msgid "Error scanning data: %1"
+#~ msgstr "Viga andmete uurimisel: %1"
+
+#~ msgid "Scanning data of <b>%1</b> :"
+#~ msgstr "<b>%1</b> andmete uurimine:"
+
+#~ msgid "Select a default torrent folder"
+#~ msgstr "Vaikimisi torrentide kataloogi valik"
+
+#~ msgid "Select a default temporary folder"
+#~ msgstr "Vaikimisi ajutise kataloogi valik"
+
+#~ msgid "Import dropped files"
+#~ msgstr "Impordi lohistatud failid"
+
+#~ msgctxt "comma, to seperate members of a list"
+#~ msgid ","
+#~ msgstr ","
+
+#~ msgid "File Properties"
+#~ msgstr "Faili omadused"
+
+#~ msgid "Enter a filename."
+#~ msgstr "Sisesta failinimi."
+
+#~ msgid "The filename exists already, choose a different one."
+#~ msgstr "Failinimi on juba olemas, vali mõni muu."
+
+#~ msgid "Enter at least one URL."
+#~ msgstr "Määra vähemalt üks URL."
+
+#~ msgid ""
+#~ "Required data entered; also consider entering additional information."
+#~ msgstr ""
+#~ "Vajalikud andmed on sisestatud; soovi korral võib lisada ka muud teavet."
+
+#~ msgid "Create a Metalink"
+#~ msgstr "Metalinki loomine"
+
+#~ msgid "General optional information for the metalink."
+#~ msgstr "Metalinki üldine lisateave."
+
+#~ msgid "Unable to load: %1"
+#~ msgstr "Laadimine nurjus: %1"
+
+#~ msgid "Metalink Version 4.0 file (*.meta4)"
+#~ msgstr "Metalink Version 4.0 fail (*.meta4)"
+
+#~ msgid "Metalink Version 3.0 file (*.metalink)"
+#~ msgstr "Metalink Version 3.0 fail (*.metalink)"
+
+#~ msgid "Define the saving location."
+#~ msgstr "Salvestuskoha määramine."
+
+#~ msgctxt "file as in file on hard drive"
+#~ msgid "Enter at least one file."
+#~ msgstr "Määra vähemalt üks fail."
+
+#~ msgid "Import Links"
+#~ msgstr "Impordi lingid"
+
+#~ msgctxt "Download the items which have been selected"
+#~ msgid "&Download Checked"
+#~ msgstr "Mär&gitute allalaadimine"
+
+#~ msgid "Auxiliary header"
+#~ msgstr "Lisapäis"
+
+#~ msgid "File Name"
+#~ msgstr "Failinimi"
+
+#~ msgid "Description"
+#~ msgstr "Kirjeldus"
+
+#~ msgctxt "list header: type of file"
+#~ msgid "File Type"
+#~ msgstr "Failitüüp"
+
+#~ msgid "Location (URL)"
+#~ msgstr "Asukoht (URL)"
+
+#~ msgid "Links in: %1 - KGet"
+#~ msgstr "Viidad asukohas %1 - KGet"
+
+#~ msgid "&Select All Filtered"
+#~ msgstr "&Vali kõik filtreeritud"
+
+#~ msgid "&Select All"
+#~ msgstr "&Vali kõik"
+
+#~ msgid "D&eselect All Filtered"
+#~ msgstr "&Tühista kõigi filtreeritute valimine"
+
+#~ msgid "D&eselect All"
+#~ msgstr "&Tühista kõigi valik"
+
+#~ msgid "not specified"
+#~ msgstr "määramata"
+
+#~ msgctxt "Mirror as in server, in url"
+#~ msgid "Mirror"
+#~ msgstr "Peegel"
+
+#~ msgctxt "The priority of the mirror"
+#~ msgid "Priority"
+#~ msgstr "Prioriteet"
+
+#~ msgctxt "Number of paralell connections to the mirror"
+#~ msgid "Connections"
+#~ msgstr "Ühendused"
+
+#~ msgctxt "Location = country"
+#~ msgid "Location"
+#~ msgstr "Asukoht"
+
+#~ msgid "Add mirror"
+#~ msgstr "Lisa peegel"
+
+#~ msgctxt "Adds the item and reopens the dialog to add a further item"
+#~ msgid "Add more"
+#~ msgstr "Lisa rohkem"
+
+#~ msgid "%1 has been successfully added."
+#~ msgstr "%1 on edukalt lisatud."
+
+#~ msgid "Modify the used mirrors."
+#~ msgstr "Kasutatud peeglite muutmine."
+
+#~ msgid "Download again"
+#~ msgstr "Laadi uuesti alla"
+
+#~ msgctxt "Delete selected history-item"
+#~ msgid "Delete selected"
+#~ msgstr "Kustuta valitud"
+
+#~ msgid "Open file"
+#~ msgstr "Ava fail"
+
+#~ msgid "Today"
+#~ msgstr "Täna"
+
+#~ msgid "Last week"
+#~ msgstr "Viimane nädal"
+
+#~ msgid "Last Month"
+#~ msgstr "Viimane kuu"
+
+#~ msgid "A long time ago"
+#~ msgstr "Ammu"
+
+#~ msgid "Under 10MiB"
+#~ msgstr "Alla 10 MiB"
+
+#~ msgid "Between 10MiB and 50MiB"
+#~ msgstr "Üle 10 MiB ja alla 50 MiB"
+
+#~ msgid "Between 50MiB and 100MiB"
+#~ msgstr "Üle 50 MiB ja alla 100 MiB"
+
+#~ msgid "More than 100MiB"
+#~ msgstr "Üle 100 MiB"
+
+#~ msgid "Transfer History"
+#~ msgstr "Ülekannete ajalugu"
+
+#~ msgid "&Open File"
+#~ msgstr "&Ava fail"
+
+#~ msgctxt "The transfer is running"
+#~ msgid "Running"
+#~ msgstr "Töös"
+
+#~ msgctxt "The transfer is stopped"
+#~ msgid "Stopped"
+#~ msgstr "Peatatud"
+
+#~ msgctxt "The transfer is aborted"
+#~ msgid "Aborted"
+#~ msgstr "Katkestatud"
+
+#~ msgctxt "The transfer is finished"
+#~ msgid "Finished"
+#~ msgstr "Lõpetatud"
+
+#~ msgid "Source File"
+#~ msgstr "Lähtefail"
+
+#~ msgid "Destination"
+#~ msgstr "Sihtkoht"
+
+#~ msgid "Time"
+#~ msgstr "Aeg"
+
+#~ msgid "File Size"
+#~ msgstr "Failisuurus"
+
+#~ msgid "Less than 1MiB"
+#~ msgstr "Alla 1 MiB"
+
+#~ msgid "Between 1MiB-10MiB"
+#~ msgstr "1 MiB kuni 10 MiB"
+
+#~ msgid "Between 10MiB-100MiB"
+#~ msgstr "10 MiB kuni 100 MiB"
+
+#~ msgid "Between 100MiB-1GiB"
+#~ msgstr "100 MiB kuni 1 GiB"
+
+#~ msgid "More than 1GiB"
+#~ msgstr "Üle 1 GiB"
+
+#~ msgid "Last month"
+#~ msgstr "Viimane kuu"
+
+#~ msgctxt "the transfer has been finished"
+#~ msgid "Finished"
+#~ msgstr "Lõpetatud"
+
+#~ msgid "You have no source URLs selected."
+#~ msgstr "Lähte-URL-e pole valitud."
+
+#~ msgid "Files that exist already in the current folder have been marked."
+#~ msgstr "Aktiivses kataloogis juba olemasolevad failid on märgitud."
+
+#~ msgctxt "an error happened in connection with the user input"
+#~ msgid "Error:"
+#~ msgstr "Tõrge:"
+
+#~ msgctxt "a warning happened in connection with the user input"
+#~ msgid "Warning:"
+#~ msgstr "Hoiatus:"
+
+#~ msgctxt "trust level"
+#~ msgid "Unknown"
+#~ msgstr "Tundmatu"
+
+#~ msgctxt "trust level"
+#~ msgid "Undefined"
+#~ msgstr "Määramata"
+
+#~ msgctxt "trust level"
+#~ msgid "Never"
+#~ msgstr "Mitte kunagi"
+
+#~ msgctxt "trust level"
+#~ msgid "Marginal"
+#~ msgstr "Kesine"
+
+#~ msgctxt "trust level"
+#~ msgid "Full"
+#~ msgstr "Täielik"
+
+#~ msgctxt "trust level"
+#~ msgid "Ultimate"
+#~ msgstr "Ülim"
+
+#~ msgctxt ""
+#~ "Signature here is meant in cryptographic terms, so the signature of a "
+#~ "file."
+#~ msgid "Signature of %1."
+#~ msgstr "%1 allkiri."
+
+#~ msgid "This option is not supported for the current transfer."
+#~ msgstr "Aktiivse ülekande puhul pole see valik ei toetatud."
+
+#~ msgid "You need to define a signature."
+#~ msgstr "Tuleb määrata allkiri."
+
+#~ msgid ""
+#~ "No fingerprint could be found, check if the signature is correct or "
+#~ "verify the download."
+#~ msgstr ""
+#~ "Sõrmejälge ei leitud. Kontrolli, kas allkiri on korrektne, või kontrolli "
+#~ "allalaadimise korrektsust."
+
+#~ msgid "The key has been revoked."
+#~ msgstr "Võti on tühistatud."
+
+#~ msgid "The key is disabled."
+#~ msgstr "Võti on keelatud."
+
+#~ msgid "The key is invalid."
+#~ msgstr "Võti on vigane."
+
+#~ msgid "The key is expired."
+#~ msgstr "Võti on aegunud."
+
+#~ msgid "The key is not to be trusted."
+#~ msgstr "Võtit ei saa usaldada."
+
+#~ msgid "The key is to be trusted marginally."
+#~ msgstr "Võti on kesise usaldusväärsusega."
+
+#~ msgid "The key is to be trusted fully."
+#~ msgstr "Võti on täielikult usaldusväärne."
+
+#~ msgid "The key is to be trusted ultimately."
+#~ msgstr "Võti on ülimalt usaldusväärne."
+
+#~ msgid "Trust level of the key is unclear."
+#~ msgstr "Võtme usaldusväärsus pole selge."
+
+#~ msgid "Unlimited"
+#~ msgstr "Piiramatu"
+
+#~ msgctxt "pgp signature is verified"
+#~ msgid "Verified"
+#~ msgstr "Verifitseeritud"
+
+#~ msgid "The signature has been verified successfully."
+#~ msgstr "Allkiri on edukalt kontrollitud."
+
+#~ msgid "The signature has been verified successfully:"
+#~ msgstr "Allkiri on edukalt kontrollitud:"
+
+#~ msgctxt "pgp signature is not verified"
+#~ msgid "Failed"
+#~ msgstr "Nurjus"
+
+#~ msgid ""
+#~ "Caution: Verification failed. Either you entered the wrong signature, or "
+#~ "the data has been modified."
+#~ msgstr ""
+#~ "Hoiatus: kontrollimine nurjus. Sisestasid kas vale allkirja või on "
+#~ "andmeid muudetud."
+
+#~ msgid ""
+#~ "Verification not possible. Check the entered data, whether gpg-agent is "
+#~ "running, or whether you have an Internet connection (for retrieving keys.)"
+#~ msgstr ""
+#~ "Kontrollimine ei ole võimalik. Kontrolli sisestatud andmeid ning seda, "
+#~ "kas gpg-agent töötab ja kas sul on üldse internetiühendus (võtmete "
+#~ "hankimiseks)."
+
+#~ msgid ""
+#~ "Feature is not supported, as KGet is not compiled with QPGME support."
+#~ msgstr ""
+#~ "Omadus ei ole toetatud, sest KGet ei ole kompileeritud QPGPME toetusega."
+
+#~ msgid "Error:"
+#~ msgstr "Viga:"
+
+#~ msgid "Problems:"
+#~ msgstr "Probleemid:"
+
+#~ msgid "Information:"
+#~ msgstr "Teave:"
+
+#~ msgid "Select columns"
+#~ msgstr "Vali veerud"
+
+#~ msgid "Transfer Details"
+#~ msgstr "Allalaadimise üksikasjad"
+
+#~ msgid "Add checksum"
+#~ msgstr "Lisa kontrollsumma"
+
+#~ msgid "%1 %2 has been successfully added."
+#~ msgstr "%1 %2 on edukalt lisatud."
+
+#~ msgid "Transfer Verification for %1"
+#~ msgstr "%1 ülekande kontrollimine"
+
+#~ msgid "%1 was successfully verified."
+#~ msgstr "%1 on edukalt kontrollitud."
+
+#~ msgid "Verification successful"
+#~ msgstr "Kontrollimine oli edukas"
+
+#~ msgid "Rename File"
+#~ msgstr "Faili nime muutmine"
+
+#~ msgid "Rename %1 to:"
+#~ msgstr "%1 saab nimeks:"
+
+#~ msgid "&Rename"
+#~ msgstr "&Nimeta ümber"
+
+#~ msgid "Semantic Desktop"
+#~ msgstr "Semantiline töölaud"
+
+#~ msgid "Delete Group"
+#~ msgid_plural "Delete Groups"
+#~ msgstr[0] "Kustuta grupp"
+#~ msgstr[1] "Kustuta grupid"
+
+#~ msgid "Rename Group..."
+#~ msgid_plural "Rename Groups..."
+#~ msgstr[0] "Nimeta grupp ümber..."
+#~ msgstr[1] "Nimeta grupid ümber..."
+
+#~ msgctxt "fix position for droptarget"
+#~ msgid "Sticky"
+#~ msgstr "Kleepuv"
+
+#~ msgid "Quit KGet"
+#~ msgstr "Välju KGetist"
+
+#~ msgid "The dropped file is a KGet Transfer List"
+#~ msgstr "Lohistatud fail on KGeti ülekannete nimekiri"
+
+#~ msgid "&Download"
+#~ msgstr "Laa&di alla"
+
+#~ msgid "&Load transfer list"
+#~ msgstr "&Laadi ülekannete nimekiri"
+
+#~ msgid "Show Main Window"
+#~ msgstr "Näita peaakent"
+
+#~ msgid "Hide Main Window"
+#~ msgstr "Peida peaaken"
+
+#~ msgid "Drop Target"
+#~ msgstr "Kukutamise märklaud"
+
+#~ msgid "You can drag download links into the drop target."
+#~ msgstr "Allalaadimiste linke võib lohistada kukutamise märklauale."
+
+#~ msgctxt "%1 filename, %2 total size, %3 status"
+#~ msgid "%1(%2) %3"
+#~ msgstr "%1 (%2) %3"
+
+#~ msgctxt ""
+#~ "%1 filename, %2 percent complete, %3 downloaded out of %4 total size"
+#~ msgid "%1(%2% %3/%4) Speed:%5/s"
+#~ msgstr "%1 (%2% %3/%4) Kiirus:%5/s"
+
+#~ msgctxt ""
+#~ "%1 filename, %2 percent complete, %3 downloaded out of %4 total size, %5 "
+#~ "status"
+#~ msgid "%1(%2% %3/%4) %5"
+#~ msgstr "%1 (%2% %3/%4) %5"
+
+#~ msgid "Ready"
+#~ msgstr "Valmis"
+
+#~ msgid ""
+#~ "Drop target has been hidden. If you want to show it again, go to Settings-"
+#~ ">Configure KGet->Look & Feel."
+#~ msgstr ""
+#~ "Kukutamise märklaud on peidetud. Kui soovid seda taas näha, vali "
+#~ "Seadistused->KGeti seadistamine->Välimus."
+
+#~ msgid "Hiding drop target"
+#~ msgstr "Kukutamise märklaua peitmine"
+
+#~ msgid "Transfer Settings for %1"
+#~ msgstr "%1 ülekande seadistused"
+
+#~ msgid ""
+#~ "Changing the destination did not work, the destination stays unmodified."
+#~ msgstr "Sihtkoha muutmine ei toiminud, see jääb muutmata."
+
+#~ msgid "Destination unmodified"
+#~ msgstr "Sihtkoht muutmata"
+
+#~ msgid "Average speed: %1/s"
+#~ msgstr "Keskmine kiirus: %1/s"
+
+#~ msgid "%1 of %2"
+#~ msgstr "%1 / %2"
+
+#~ msgid "Group Settings for %1"
+#~ msgstr "%1 grupi seadistused"
+
+#~ msgctxt "@info"
+#~ msgid "Unable to start the server: %1."
+#~ msgstr "Serveri käivitamine nurjus: %1."
+
+#~ msgctxt "@item speed of transfer per seconds"
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#~ msgctxt "@label"
+#~ msgid "KGet Web Interface"
+#~ msgstr "KGeti veebiliides"
+
+#~ msgctxt "@label number"
+#~ msgid "Nr"
+#~ msgstr "Nr"
+
+#~ msgctxt "@label"
+#~ msgid "File name"
+#~ msgstr "Failinimi"
+
+#~ msgctxt "@label Progress of transfer"
+#~ msgid "Finished"
+#~ msgstr "Lõpetatud"
+
+#~ msgctxt "@label Speed of transfer"
+#~ msgid "Speed"
+#~ msgstr "Kiirus"
+
+#~ msgctxt "@label Status of transfer"
+#~ msgid "Status"
+#~ msgstr "Olek"
+
+#~ msgctxt "@action:button start a transfer"
+#~ msgid "Start"
+#~ msgstr "Alusta"
+
+#~ msgctxt "@action:button"
+#~ msgid "Stop"
+#~ msgstr "Peata"
+
+#~ msgctxt "@action:button"
+#~ msgid "Remove"
+#~ msgstr "Eemalda"
+
+#~ msgctxt "@label Download from"
+#~ msgid "Source:"
+#~ msgstr "Lähtekoht:"
+
+#~ msgctxt "@label Save download to"
+#~ msgid "Saving to:"
+#~ msgstr "Salvestamise asukoht:"
+
+#~ msgctxt "@label Title in header"
+#~ msgid "Web Interface"
+#~ msgstr "Veebiliides"
+
+#~ msgctxt "@action"
+#~ msgid "Settings"
+#~ msgstr "Seadistused"
+
+#~ msgctxt "@action"
+#~ msgid "Refresh"
+#~ msgstr "Värskenda"
+
+#~ msgctxt "@action"
+#~ msgid "Enter URL: "
+#~ msgstr "URL:"
+
+#~ msgctxt "@action:button"
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#~ msgctxt "@action Refresh download list every x (seconds)"
+#~ msgid "Refresh download list every"
+#~ msgstr "Allalaadimiste nimekirja värskendamine iga"
+
+#~ msgctxt "@action (Refresh very x )seconds"
+#~ msgid "seconds"
+#~ msgstr "sekundi järel"
+
+#~ msgctxt "@action:button"
+#~ msgid "Save Settings"
+#~ msgstr "Salvesta seadistused"
+
+#~ msgctxt "@title"
+#~ msgid "Downloads"
+#~ msgstr "Allalaadimised"
+
+#~ msgctxt "@label text in footer"
+#~ msgid "KGet Web Interface | Valid XHTML 1.0 Strict &amp; CSS"
+#~ msgstr "KGeti veebiliides | Kehtiv XHTML 1.0 Strict &amp; CSS"
+
+#~ msgid "An advanced download manager for KDE"
+#~ msgstr "KDE võimas failide allalaadija"
+
+#~ msgid ""
+#~ "(C) 2005 - 2009, The KGet developers\n"
+#~ "(C) 2001 - 2002, Patrick Charbonnier\n"
+#~ "(C) 2002, Carsten Pfeiffer\n"
+#~ "(C) 1998 - 2000, Matej Koss"
+#~ msgstr ""
+#~ "(C) 2005 - 2009: KGeti arendajad\n"
+#~ "(C) 2001 - 2002: Patrick Charbonnier\n"
+#~ "(C) 2002: Carsten Pfeiffer\n"
+#~ "(C) 1998 - 2000: Matej Koss"
+
+#~ msgid "<a href=\"mailto:kget@kde.org\">kget@kde.org</a>"
+#~ msgstr "<a href=\"mailto:kget@kde.org\">kget@kde.org</a>"
+
+#~ msgid "Lukas Appelhans"
+#~ msgstr "Lukas Appelhans"
+
+#~ msgid "Maintainer, Core Developer, Torrent Plugin Author"
+#~ msgstr "Hooldaja, põhiarendaja, torrenti plugina autor"
+
+#~ msgid "Dario Massarin"
+#~ msgstr "Dario Massarin"
+
+#~ msgid "Core Developer"
+#~ msgstr "Põhiarendaja"
+
+#~ msgid "Urs Wolfer"
+#~ msgstr "Urs Wolfer"
+
+#~ msgid "Manolo Valdes"
+#~ msgstr "Manolo Valdes"
+
+#~ msgid "Core Developer, Multithreaded Plugin Author"
+#~ msgstr "Põhiarendaja, mitmelõimelise plugina autor"
+
+#~ msgid "Matthias Fuchs"
+#~ msgstr "Matthias Fuchs"
+
+#~ msgid "Javier Goday"
+#~ msgstr "Javier Goday"
+
+#~ msgid "Developer"
+#~ msgstr "Arendaja"
+
+#~ msgid "Patrick Charbonnier"
+#~ msgstr "Patrick Charbonnier"
+
+#~ msgid "Former Developer"
+#~ msgstr "Endine arendaja"
+
+#~ msgid "Carsten Pfeiffer"
+#~ msgstr "Carsten Pfeiffer"
+
+#~ msgid "Matej Koss"
+#~ msgstr "Matej Koss"
+
+#~ msgid "Joris Guisson"
+#~ msgstr "Joris Guisson"
+
+#~ msgid "BTCore (KTorrent) Developer"
+#~ msgstr "BTCore (KTorrent) arendaja"
+
+#~ msgid "Mensur Zahirovic (Nookie)"
+#~ msgstr "Mensur Zahirovic (Nookie)"
+
+#~ msgid "Design of Web Interface"
+#~ msgstr "Veebiliidese kujundus"
+
+#~ msgid "Start KGet with drop target"
+#~ msgstr "KGeti käivitamine kukutamise märklauaga"
+
+#~ msgid "Start KGet with hidden main window"
+#~ msgstr "KGeti käivitamine peidetud peaaknaga"
+
+#~ msgid "Start KGet without drop target animation"
+#~ msgstr "KGeti käivitamine kukutamise märklaua animatsioonita"
+
+#~ msgid "Execute Unit Testing"
+#~ msgstr "Unit testide käivitamine"
+
+#~ msgid "URL(s) to download"
+#~ msgstr "Allalaaditavad URL-id"
+
+#~ msgid "KGet Transfer List"
+#~ msgstr "KGeti allalaadimiste nimekiri"
+
+#~ msgid "Export Transfers"
+#~ msgstr "Allalaadimiste eksport"
+
+#~ msgid "&New Download..."
+#~ msgstr "&Uus allalaadimine..."
+
+#~ msgid "&Import Transfers..."
+#~ msgstr "&Impordi allalaadimised..."
+
+#~ msgid "&Export Transfers List..."
+#~ msgstr "&Ekspordi allalaadimiste nimekiri..."
+
+#~ msgid "&Export Transfers as Plain Text..."
+#~ msgstr "&Ekspordi allalaadimiste nimekiri lihttekstina..."
+
+#~ msgid "&Create a Metalink"
+#~ msgstr "Loo Metalin&k"
+
+#~ msgid "Top Priority"
+#~ msgstr "Esmaprioriteet"
+
+#~ msgid "Least Priority"
+#~ msgstr "Väikseim prioriteet"
+
+#~ msgid "Increase Priority"
+#~ msgstr "Suurenda prioriteeti"
+
+#~ msgid "Decrease Priority"
+#~ msgstr "Vähenda prioriteeti"
+
+#~ msgid "Set Icon..."
+#~ msgstr "Määra ikoon..."
+
+#~ msgid "Auto-Paste Mode"
+#~ msgstr "Automaatse asetamise režiim"
+
+#~ msgid ""
+#~ "<b>Auto paste</b> button toggles the auto-paste mode on and off.\n"
+#~ "When set, KGet will periodically scan the clipboard for URLs and paste "
+#~ "them automatically."
+#~ msgstr ""
+#~ "Nupp <b>Automaatne asetamine</b> lülitab automaatse\n"
+#~ "asetamise režiimi sisse ja välja.\n"
+#~ "Kui see on sees, otsib KGet perioodiliselt lõikepuhvrist\n"
+#~ "URLe ja asetab need automaatselt nimekirja."
+
+#~ msgid "Use KGet as Konqueror Download Manager"
+#~ msgstr "KGeti kasutamine Konquerori allalaadimishaldurina"
+
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Remove Selected"
+#~ msgstr "Eemalda valitud"
+
+#~ msgctxt "delete all finished transfers"
+#~ msgid "Remove All Finished"
+#~ msgstr "Eemalda kõik lõpetatud"
+
+#~ msgctxt "redownload selected transfer item"
+#~ msgid "Redownload Selected"
+#~ msgstr "Laadi valitud uuesti alla"
+
+#~ msgid "Start / Resume All"
+#~ msgstr "Käivita / taasalusta kõiki"
+
+#~ msgid "Start / Resume Selected"
+#~ msgstr "Käivita / taasalusta valituid"
+
+#~ msgid "Stop All"
+#~ msgstr "Peata kõik"
+
+#~ msgid "Stop Selected"
+#~ msgstr "Peata valitud"
+
+#~ msgid "Start / Resume"
+#~ msgstr "Käivita / taasalusta"
+
+#~ msgid "Stop"
+#~ msgstr "Peata"
+
+#~ msgid "Remove"
+#~ msgstr "Eemalda"
+
+#~ msgid "Open Destination"
+#~ msgstr "Ava sihtkoht"
+
+#~ msgid "Open File"
+#~ msgstr "Faili avamine"
+
+#~ msgid "Show Details"
+#~ msgstr "Näita üksikasju"
+
+#~ msgid "Copy URL to Clipboard"
+#~ msgstr "Kopeeri URL lõikepuhvrisse"
+
+#~ msgid "&Transfer History"
+#~ msgstr "Ülekanne&te ajalugu"
+
+#~ msgid "&Group Settings"
+#~ msgstr "&Grupi seadistused"
+
+#~ msgid "&Transfer Settings"
+#~ msgstr "Ülekanne&te seadistused"
+
+#~ msgid "Import &Links..."
+#~ msgstr "Impordi &lingid..."
+
+#~ msgid ""
+#~ "This is the first time you have run KGet.\n"
+#~ "Would you like to enable KGet as the download manager for Konqueror?"
+#~ msgstr ""
+#~ "KGet käivitatakse esimest korda.\n"
+#~ "Kas soovid seda kasutada Konquerori allalaadimishaldurina?"
+
+#~ msgid "Konqueror Integration"
+#~ msgstr "Põimimine Konqueroriga"
+
+#~ msgid "Enable"
+#~ msgstr "Põimi"
+
+#~ msgid "Do Not Enable"
+#~ msgstr "Ära põimi"
+
+#~ msgid "All Openable Files"
+#~ msgstr "Kõik avatavad failid"
+
+#~ msgctxt "window title including overall download progress in percent"
+#~ msgid "KGet - %1%"
+#~ msgstr "KGet - %1%"
+
+#~ msgid ""
+#~ "Some transfers are still running.\n"
+#~ "Are you sure you want to close KGet?"
+#~ msgstr ""
+#~ "Mõned allalaadimised käivad veel.\n"
+#~ "Kas tõesti sulgeda KGet?"
+
+#~ msgid "Confirm Quit"
+#~ msgstr "Väljumise kinnitamine"
+
+#~ msgid "Enter Group Name"
+#~ msgstr "Grupi nime määramine"
+
+#~ msgid "Group name:"
+#~ msgstr "Grupi nimi:"
+
+#~ msgid "Are you sure you want to delete the selected transfer?"
+#~ msgid_plural "Are you sure you want to delete the selected transfers?"
+#~ msgstr[0] "Kas tõesti valitud allalaadimine kustutada?"
+#~ msgstr[1] "Kas tõesti valitud allalaadimised kustutada?"
+
+#~ msgid "Confirm transfer delete"
+#~ msgstr "Ülekande kustutamise kinnitus"
+
+#~ msgid ""
+#~ "KGet has been temporarily disabled as download manager for Konqueror. If "
+#~ "you want to disable it forever, go to Settings->Advanced and disable "
+#~ "\"Use as download manager for Konqueror\"."
+#~ msgstr ""
+#~ "KGeti kasutamine Konquerori allalaadimishaldurina on ajutiselt keelatud. "
+#~ "Kui soovid seda alatiseks keelata, vali Seadistused->Muud ja lülita välja "
+#~ "valik \"Kasutamine Konquerori allalaadimishaldurina\"."
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Marek Laane"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "bald@smail.ee"
+
+#~ msgid "Checksums"
+#~ msgstr "Kontrollsummad"
+
+#~ msgid "Automatic verification:"
+#~ msgstr "Automaatne kontrollimine:"
+
+#~ msgid "Weak (fastest)"
+#~ msgstr "Nõrk (kiireim)"
+
+#~ msgid "Strong (recommended)"
+#~ msgstr "Tugev (soovitatav)"
+
+#~ msgid "Strongest (slowest)"
+#~ msgstr "Tugevaim (aeglaseim)"
+
+#~ msgid "Used checksum:"
+#~ msgstr "Kasutatud kontrollsumma:"
+
+#~ msgid "Signature"
+#~ msgstr "Allkiri"
+
+#~ msgid "Automatic verification"
+#~ msgstr "Automaatne kontrollimine"
+
+#~ msgid "Automatic downloading of missing keys"
+#~ msgstr "Puuduvate võtmete automaatne allalaadimine"
+
+#~ msgid "Keyservers:"
+#~ msgstr "Võtmeserverid:"
+
+#~ msgid "Move &Up"
+#~ msgstr "Lii&guta üles"
+
+#~ msgid "Move &Down"
+#~ msgstr "L&iiguta alla"
+
+#~ msgid "Use default folders for groups as suggestion"
+#~ msgstr "Rühmadele pakutakse vaikimisi katalooge"
+
+#~ msgid "Rename"
+#~ msgstr "Nimeta ümber"
+
+#~ msgid "Select Icon..."
+#~ msgstr "Vali ikoon..."
+
+#~ msgid "Limit Maximum Downloads Per Group"
+#~ msgstr "Allalaadimise limiteerimine grupiti"
+
+#~ msgid "Number of downloads:"
+#~ msgstr "Allalaadimiste arv:"
+
+#~ msgid "Downloads from the same server:"
+#~ msgstr "Allalaadimised ühest serverist:"
+
+#~ msgid "Speed Limit"
+#~ msgstr "Kiirusepiirang"
+
+#~ msgid "Global download limit:"
+#~ msgstr "Globaalne allalaadimise piirang:"
+
+#~ msgid " KiB/s"
+#~ msgstr " KiB/s"
+
+#~ msgid "Global upload limit:"
+#~ msgstr "Globaalne üleslaadimise piirang:"
+
+#~ msgid "Per transfer:"
+#~ msgstr "Ühe allalaadimise kohta:"
+
+#~ msgid "Reconnect on Error or Broken Connection"
+#~ msgstr "Taasühendumine vea või katkenud ühenduse korral"
+
+#~ msgid "Number of retries:"
+#~ msgstr "Uuestiproovimiste arv:"
+
+#~ msgid "Retry after:"
+#~ msgstr "Uuestiproovimise intervall:"
+
+#~ msgid " sec"
+#~ msgstr " sek"
+
+#~ msgid "After Completing Downloads"
+#~ msgstr "Toiming pärast allalaadimiste lõpetamist"
+
+#~ msgid "Auto shutdown"
+#~ msgstr "Autmaatne väljumine"
+
+#~ msgid "Auto disconnect"
+#~ msgstr "Automaatne ühenduse katkestamine"
+
+#~ msgid "Enable Web Interface"
+#~ msgstr "Veebiliidese lubamine"
+
+#~ msgid "Port:"
+#~ msgstr "Port:"
+
+#~ msgid "User:"
+#~ msgstr "Kasutaja:"
+
+#~ msgid "Password:"
+#~ msgstr "Parool:"
+
+#~ msgid "Startup"
+#~ msgstr "Käivitamine"
+
+#~ msgid "Show splashscreen"
+#~ msgstr "Tiitelkuva näitamine"
+
+#~ msgid "Enable animations"
+#~ msgstr "Animatsioonide lubamine"
+
+#~ msgid "Enable popup tooltip"
+#~ msgstr "Hüpikkohtspikrite lubamine"
+
+#~ msgid "Show drop target"
+#~ msgstr "Kukutamise märklaua näitamine"
+
+#~ msgid "Disable confirmation dialogs (less verbosity)"
+#~ msgstr "Kinnitusdialoogide keelamine"
+
+#~ msgid "Enable system tray icon"
+#~ msgstr "Paneeliikooni lubamine"
+
+#~ msgid "Execute action after all downloads have been finished:"
+#~ msgstr "Toimingu käivitamine pärast kõigi allalaadimiste lõpetamist:"
+
+#~ msgid "At startup:"
+#~ msgstr "Käivitamisel:"
+
+#~ msgid "Restore Download State"
+#~ msgstr "Taastatakse allalaadimisolek"
+
+#~ msgid "Start All Downloads"
+#~ msgstr "Käivitatakse kõik allalaadimised"
+
+#~ msgid "Stop All Downloads"
+#~ msgstr "Peatatakse kõik allalaadimised"
+
+#~ msgid "History"
+#~ msgstr "Ajalugu"
+
+#~ msgid "History backend:"
+#~ msgstr "Ajaloo taustaprogramm:"
+
+#~ msgid "Enable KDE global progress tracking"
+#~ msgstr "KDE globaalse edenemise jälgimise lubamine"
+
+#~ msgid "Show every single download "
+#~ msgstr "Iga allalaadimise näitamine"
+
+#~ msgid "Show overall progress"
+#~ msgstr "Üldise edenemise näitamine"
+
+#~ msgid "Use as download manager for Konqueror:"
+#~ msgstr "Kasutamine Konquerori allalaadimishaldurina:"
+
+#~ msgid "Monitor clipboard for files to download"
+#~ msgstr "Lõikepuhvri jälgimine allalaaditavate failide tuvastamiseks"
+
+#~ msgid "Case insensitive:"
+#~ msgstr "Tõstutundetu:"
+
+#~ msgid "Search Engines"
+#~ msgstr "Otsingumootorid"
+
+#~ msgid "Engine Name"
+#~ msgstr "Mootori nimi"
+
+#~ msgid "New Engine..."
+#~ msgstr "Uus mootor..."
+
+#~ msgid "Number of connections per URL:"
+#~ msgstr "Ühenduste arv URL-i kohta:"
+
+#~ msgid "Use search engines"
+#~ msgstr "Otsingumootorite kasutamine"
+
+#~ msgid "Search for verification information"
+#~ msgstr "Kontrollimisteabe otsimine"
+
+#~ msgid "File Settings"
+#~ msgstr "Failiseadistused"
+
+#~ msgid "Filename:"
+#~ msgstr "Failinimi:"
+
+#~ msgid "Use Normalized Name"
+#~ msgstr "Normaliseeritud nime kasutamine"
+
+#~ msgid "Use Literal Name"
+#~ msgstr "Otsese nime kasutamine"
+
+#~ msgid "Quality:"
+#~ msgstr "Kvaliteet"
+
+#~ msgid "Best Quality (.mp4)"
+#~ msgstr "Parim kvaliteet (.mp4)"
+
+#~ msgid "Normal Quality (.flv)"
+#~ msgstr "Tavaline kvaliteet (.flv)"
+
+#~ msgid ""
+#~ "Provide login info of your YouTube account in order to access restricted "
+#~ "media."
+#~ msgstr ""
+#~ "Youtube'i konto sisselogimise teave piiratud ligipääsuga infokandja "
+#~ "kasutamiseks."
+
+#~ msgid "Login Info"
+#~ msgstr "Sisselogimise teave"
+
+#~ msgid "Username:"
+#~ msgstr "Kasutajanimi:"
+
+#~ msgid ".netrc must have a hostname called 'youtube'."
+#~ msgstr ".netrc peab sisaldama masinanime 'youtube'."
+
+#~ msgid "User .netrc file"
+#~ msgstr "Kasutaja .netrc fail"
+
+#~ msgid "User Scripts"
+#~ msgstr "Kasutaja skriptid"
+
+#~ msgid "Path"
+#~ msgstr "Asukoht"
+
+#~ msgid "RegExp"
+#~ msgstr "Regulaaravaldis"
+
+#~ msgid "New Script...."
+#~ msgstr "Uus skript..."
+
+#~ msgid "Edit...."
+#~ msgstr "Muuda..."
+
+#~ msgid "Configure...."
+#~ msgstr "Seadista..."
+
+#~ msgid "Regexp:"
+#~ msgstr "Regulaaravaldis"
+
+#~ msgid "Path:"
+#~ msgstr "Asukoht:"
+
+#~ msgid "Description:"
+#~ msgstr "Kirjeldus:"
+
+#~ msgid "Select the files you want to be downloaded."
+#~ msgstr "Vali failid, mida soovid alla laadida."
+
+#~ msgid "Number of simultaneous file downloads:"
+#~ msgstr "Üheaegsete allalaadimiste arv:"
+
+#~ msgid "Number of mirrors per file:"
+#~ msgstr "Peeglite arv faili kohta:"
+
+#~ msgid "Change string:"
+#~ msgstr "Muutmisstring:"
+
+#~ msgid "Mode:"
+#~ msgstr "Režiim:"
+
+#~ msgid "Checksum type:"
+#~ msgstr "Kontrollsumma tüüp:"
+
+#~ msgid "Result:"
+#~ msgstr "Tulemus:"
+
+#~ msgid "label"
+#~ msgstr "pealdis"
+
+#~ msgid "Remove Tracker"
+#~ msgstr "Eemalda tracker"
+
+#~ msgid "Change Tracker"
+#~ msgstr "Muuda tracker'it"
+
+#~ msgid "Update Trackers"
+#~ msgstr "Uuenda tracker'eid"
+
+#~ msgid "Restore Defaults"
+#~ msgstr "Lähtesta"
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Webseed to add to the "
+#~ "torrent.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">Note: </span>Only http webseeds are supported.</p></body></"
+#~ "html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Torrentile lisatav "
+#~ "veebilevitus.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">Märkus: </span>toetatud on ainult HTTP-veebilevitused.</p></"
+#~ "body></html>"
+
+#~ msgid "Add Webseed"
+#~ msgstr "Lisa veebilevitus"
+
+#~ msgid "Remove Webseed"
+#~ msgstr "Eemalda veebilevitus"
+
+#~ msgid "Chunks"
+#~ msgstr "Tükid"
+
+#~ msgid "Total:"
+#~ msgstr "Kokku:"
+
+#~ msgid "Currently downloading:"
+#~ msgstr "Praegu allalaadimisel:"
+
+#~ msgid "Downloaded:"
+#~ msgstr "Alla laaditud:"
+
+#~ msgid "Excluded:"
+#~ msgstr "Välja jäetud:"
+
+#~ msgid "Left:"
+#~ msgstr "Jäänud:"
+
+#~ msgid "Size:"
+#~ msgstr "Suurus:"
+
+#~ msgid "Scanning data of torrent:"
+#~ msgstr "Torrenti andmete uurimine: "
+
+#~ msgid "Number of chunks found:"
+#~ msgstr "Leitud tükkide arv: "
+
+#~ msgid "Number of chunks failed:"
+#~ msgstr "Vigaste tükkide arv:"
+
+#~ msgid "Number of chunks not downloaded:"
+#~ msgstr "Allalaadimata tükkide arv:"
+
+#~ msgid "Number of chunks downloaded:"
+#~ msgstr "Allalaaditud tükkide arv:"
+
+#~ msgid "0"
+#~ msgstr "0"
+
+#~ msgid "Cancel"
+#~ msgstr "Loobu"
+
+#~ msgid "Stats"
+#~ msgstr "Statistika"
+
+#~ msgid "Seeders:"
+#~ msgstr "Levitajad:"
+
+#~ msgid "<n>"
+#~ msgstr "<n>"
+
+#~ msgid "Download speed:"
+#~ msgstr "Allalaadimise kiirus:"
+
+#~ msgid "Leechers:"
+#~ msgstr "Tõmbajad:"
+
+#~ msgid "Upload speed:"
+#~ msgstr "Üleslaadimise kiirus:"
+
+#~ msgctxt "chunks left"
+#~ msgid "Left:"
+#~ msgstr "Jäänud:"
+
+#~ msgctxt "all chunks"
+#~ msgid "All:"
+#~ msgstr "Kõik:"
+
+#~ msgctxt "source-file"
+#~ msgid "Source:"
+#~ msgstr "Lähtefail:"
+
+#~ msgid "Saving to:"
+#~ msgstr "Salvestamise asukoht:"
+
+#~ msgid "Upload limit per transfer:"
+#~ msgstr "Üleslaadimise piirang ülekande kohta:"
+
+#~ msgid "No Limit"
+#~ msgstr "Piirang puudub"
+
+#~ msgid "KiB"
+#~ msgstr "KiB"
+
+#~ msgid "Download limit per transfer:"
+#~ msgstr "Allalaadimise piirang ülekande kohta:"
+
+#~ msgid "Enable UTP protocol"
+#~ msgstr "UTP protokolli lubamine"
+
+#~ msgid "Folders"
+#~ msgstr "Kataloogid"
+
+#~ msgid "Default torrent folder:"
+#~ msgstr "Vaikimisi torrentite kataloog:"
+
+#~ msgid "Default temporary folder"
+#~ msgstr "Vaikimisi ajutine kataloog"
+
+#~ msgid "Pre-allocate disk space"
+#~ msgstr "Kettaruumi eelnev eraldamine"
+
+#~ msgctxt "General options."
+#~ msgid "General"
+#~ msgstr "Üldine"
+
+#~ msgid "Create partial checksums"
+#~ msgstr "Osalise kontrollsumma loomine"
+
+#~ msgid "General URL:"
+#~ msgstr "Üldine URL:"
+
+#~ msgid ""
+#~ "Automatically create checksums for the selected types. Keep in mind that "
+#~ "this might take a while."
+#~ msgstr ""
+#~ "Valitud tüüpidele luuakse automaatselt kontrollsumma. Pane tähele, et see "
+#~ "võib võtta aega."
+
+#~ msgid ""
+#~ "Enter URLs here if all the dropped files are on that server and in the "
+#~ "same directory. For each dropped file the URL would consist of the "
+#~ "entered part and the filename."
+#~ msgstr ""
+#~ "Sisesta siia URL-id, kui kõik lohistatud failid asuvad selles serveris ja "
+#~ "samas kataloogis. Iga lohistatud faili URL koosneb sisestatud osast ja "
+#~ "failinimest."
+
+#~ msgid "Types of the checksums:"
+#~ msgstr "Kontrollsummade tüübid:"
+
+#~ msgid "Create checksums:"
+#~ msgstr "Kontrollsummade loomine:"
+
+#~ msgctxt "These entries are optional."
+#~ msgid "Optional"
+#~ msgstr "Lisavõimalus"
+
+#~ msgid "Optional data:"
+#~ msgstr "Lisaandmed:"
+
+#~ msgid "Enter information that all chosen files share."
+#~ msgstr "Sisesta kõigile valitud failidele ühine teave."
+
+#~ msgid "Required"
+#~ msgstr "Nõutav"
+
+#~ msgid "Used Mirrors:"
+#~ msgstr "Kasutatud peeglid:"
+
+#~ msgid "Recommended"
+#~ msgstr "Soovitatav"
+
+#~ msgid "File size (in bytes):"
+#~ msgstr "Failisuurus (baitides):"
+
+#~ msgid "0123456789"
+#~ msgstr "0123456789"
+
+#~ msgid "Verification:"
+#~ msgstr "Kontrollimine:"
+
+#~ msgid "Optional"
+#~ msgstr "Lisavõimalus"
+
+#~ msgid ""
+#~ "This assistant allows you to create metalinks from scratch or base them "
+#~ "on existing metalinks. A lot of the fields are optional or recommended, "
+#~ "so enter them if desired. The minimum is a save location, at least one "
+#~ "file and one URL."
+#~ msgstr ""
+#~ "See nõustaja võimaldab luua metalinke täiesti iseseisvalt või "
+#~ "olemasolevate metalinkide baasil. Mitmed väljad on soovitatavad ehk "
+#~ "lisavõimalised, mida võib, aga ei pruugi täita. Kindlasti on vaja määrata "
+#~ "kindlaks salvestamise asukoht ning vähemalt üks fail ja üks URL."
+
+#~ msgid "Save created Metalink at:"
+#~ msgstr "Loodud Metalinki salvestamise asukoht:"
+
+#~ msgid "Create new Metalink"
+#~ msgstr "Uue Metalinki loomine"
+
+#~ msgid "Load existing Metalink:"
+#~ msgstr "Olemasoleva Metalinki laadimine:"
+
+#~ msgid "*.metalink *.meta4|Metalink file (*.metalink *.meta4)"
+#~ msgstr "*.metalink *.meta4|Metalinki fail (*.metalink *.meta4)"
+
+#~ msgid "General information:"
+#~ msgstr "Üldine teave:"
+
+#~ msgid "Here you can enter optional general information on the metalink."
+#~ msgstr "Siin saab sisestada metalingi üldine lisateabe."
+
+#~ msgid "Origin:"
+#~ msgstr "Päritolu:"
+
+#~ msgid "Web URL to the metalink"
+#~ msgstr "Metalinki URL"
+
+#~ msgid "Dynamic means that updated metalinks can be found at \"Origin\"."
+#~ msgstr ""
+#~ "Dünaamiline tähendab, et uuendatud metalingid leiab \"Päritolu\" alt."
+
+#~ msgid "Dynamic:"
+#~ msgstr "Dünaamiline:"
+
+#~ msgid "Metalink published"
+#~ msgstr "Avaldatud Metalink"
+
+#~ msgid "Date and time:"
+#~ msgstr "Kuupäev ja kellaaeg:"
+
+#~ msgid "Timezone offset:"
+#~ msgstr "Ajavööndi erinevus:"
+
+#~ msgid "Negative offset:"
+#~ msgstr "Negatiivne vahe:"
+
+#~ msgid "Metalink updated"
+#~ msgstr "Uuendatud Metalink"
+
+#~ msgid "Identity"
+#~ msgstr "Identiteet"
+
+#~ msgid "Version:"
+#~ msgstr "Versioon:"
+
+#~ msgid "Logo:"
+#~ msgstr "Logo:"
+
+#~ msgid "URL to the logo"
+#~ msgstr "Logo URL"
+
+#~ msgid "The language of the file"
+#~ msgstr "Faili keel"
+
+#~ msgid "Language:"
+#~ msgstr "Keel:"
+
+#~ msgid "Operating systems:"
+#~ msgstr "Operatsioonisüsteemid:"
+
+#~ msgid "Supported OSes, separated with commas"
+#~ msgstr "Toetatud operatsioonisüsteemid komaga eraldatult"
+
+#~ msgid "Copyright:"
+#~ msgstr "Autoriõigus:"
+
+#~ msgid "Publisher:"
+#~ msgstr "Avaldaja:"
+
+#~ msgid "Name:"
+#~ msgstr "Nimi:"
+
+#~ msgid "publisher"
+#~ msgstr "avaldaja"
+
+#~ msgid "Name of the publisher"
+#~ msgstr "Avaldaja nimi"
+
+#~ msgid "URL to the publisher"
+#~ msgstr "Avaldaja URL"
+
+#~ msgctxt "Files as in files on a server"
+#~ msgid "Files:"
+#~ msgstr "Failid:"
+
+#~ msgid "Add local files"
+#~ msgstr "Lisa kohalikke faile"
+
+#~ msgid ""
+#~ "Add at least one file. Adding local files adds a lot of information "
+#~ "automatically."
+#~ msgstr ""
+#~ "Lisa vähemalt üks fail. Kohalike failide lisamine täiendab automaatselt "
+#~ "oluliselt teavet."
+
+#~ msgid "Adding local files..."
+#~ msgstr "Kohalike failide lisamine..."
+
+#~ msgid "You need to set mirrors for the entries with an icon."
+#~ msgstr "Ikooniga kirjete jaoks tuleb määrata peeglid."
+
+#~ msgid "&File with links to import:"
+#~ msgstr "Imporditav &fail linkidega:"
+
+#~ msgid "&Import Links"
+#~ msgstr "&Impordi lingid"
+
+#~ msgid "Show:"
+#~ msgstr "Näidatakse:"
+
+#~ msgctxt "filter: show all file types"
+#~ msgid "&All"
+#~ msgstr "&Kõik"
+
+#~ msgid "&Videos"
+#~ msgstr "&Videod"
+
+#~ msgid "Ima&ges"
+#~ msgstr "P&ildid"
+
+#~ msgid "A&udio"
+#~ msgstr "&Heli"
+
+#~ msgid "A&rchives"
+#~ msgstr "A&rhiivid"
+
+#~ msgid "You can use wildcards for filtering."
+#~ msgstr "Filtreerimiseks saab kasutada metamärke."
+
+#~ msgid "Filter files here...."
+#~ msgstr "Siin saab faile filtreerida..."
+
+#~ msgid "Contains"
+#~ msgstr "Sisaldab"
+
+#~ msgid "Does Not Contain"
+#~ msgstr "Ei sisalda"
+
+#~ msgid "Inver&t Selection"
+#~ msgstr "Valik &teistpidi"
+
+#~ msgctxt "Check as in mark, not as in verify"
+#~ msgid "Chec&k Selected"
+#~ msgstr "&Märgi valitud"
+
+#~ msgid "Show &web content"
+#~ msgstr "&Veebisisu näitamine"
+
+#~ msgid "Mirror:"
+#~ msgstr "Peegel: "
+
+#~ msgid "Number of connections:"
+#~ msgstr "Ühenduste arv:"
+
+#~ msgid "Enter a URL"
+#~ msgstr "Sisesta URL"
+
+#~ msgid "Priority:"
+#~ msgstr "Prioriteet:"
+
+#~ msgid "Optional: The priority of the mirror, 1 highest 999999 lowest."
+#~ msgstr ""
+#~ "Lisavõimalus: peegli eelistus vahemikus 1 (kõrgeim) kuni 999999 "
+#~ "(madalaim)."
+
+#~ msgid "Location:"
+#~ msgstr "Asukoht:"
+
+#~ msgid "Clear History"
+#~ msgstr "Puhasta ajalugu"
+
+#~ msgctxt "View modes"
+#~ msgid "View Modes"
+#~ msgstr "Vaaterežiimid"
+
+#~ msgid "Select Ranges"
+#~ msgstr "Vahemiku valimine"
+
+#~ msgid "Date"
+#~ msgstr "Kuupäev"
+
+#~ msgid "Host"
+#~ msgstr "Masin"
+
+#~ msgid "Filter History"
+#~ msgstr "Filtreeri ajalugu"
+
+#~ msgctxt "delete selected transfer"
+#~ msgid "Delete Selected"
+#~ msgstr "Kustuta valitud"
+
+#~ msgid "Download"
+#~ msgstr "Allalaadimine"
+
+#~ msgid "TextLabel"
+#~ msgstr "Tekstipealdis"
+
+#~ msgctxt "hash type as in md5t, sha1 etc."
+#~ msgid "Hash type:"
+#~ msgstr "Kontrollsumma tüüp:"
+
+#~ msgctxt "hash as a hash of type md5, sha1 etc."
+#~ msgid "Hash:"
+#~ msgstr "Kontrollsumma:"
+
+#~ msgid "Enter a hash key"
+#~ msgstr "Sisesta kontrollsumma võti"
+
+#~ msgid "Status:"
+#~ msgstr "Olek:"
+
+#~ msgid "Remaining Time:"
+#~ msgstr "Aega jäänud:"
+
+#~ msgid "Transfer Settings"
+#~ msgstr "Ülekande seadistused"
+
+#~ msgid "Download Destination:"
+#~ msgstr "Allalaadimise sihtkoht:"
+
+#~ msgctxt "No value has been set"
+#~ msgid "Not set"
+#~ msgstr "Pole määratud"
+
+#~ msgid " KiB"
+#~ msgstr " KiB"
+
+#~ msgid "Upload Limit:"
+#~ msgstr "Üleslaadimise piirang:"
+
+#~ msgid "Download Limit:"
+#~ msgstr "Allalaadimise piirang:"
+
+#~ msgid "Maximum Share Ratio:"
+#~ msgstr "Maks. üles- ja allalaadimise suhe:"
+
+#~ msgid "Modify the mirrors used for downloading."
+#~ msgstr "Allalaadimiseks kasutatavate peeglite muutmine."
+
+#~ msgctxt "The available mirrors (servers) for downloading"
+#~ msgid "Mirrors"
+#~ msgstr "Peeglid"
+
+#~ msgctxt "verification of the download (e.g. by using MD5)"
+#~ msgid "Verification"
+#~ msgstr "Kontrollimine"
+
+#~ msgid "PGP signature:"
+#~ msgstr "PGP allkiri:"
+
+#~ msgid "Key"
+#~ msgstr "Võti"
+
+#~ msgid "Issuer:"
+#~ msgstr "Väljaandja:"
+
+#~ msgid "E-Mail:"
+#~ msgstr "E-post:"
+
+#~ msgid "Comment:"
+#~ msgstr "Kommentaar:"
+
+#~ msgid "Creation:"
+#~ msgstr "Loomisaeg:"
+
+#~ msgid "Expiration:"
+#~ msgstr "Aegumine:"
+
+#~ msgid "Trust:"
+#~ msgstr "Usaldusväärsus:"
+
+#~ msgid "Fingerprint:"
+#~ msgstr "Sõrmejälg:"
+
+#~ msgid "Verify"
+#~ msgstr "Kontrolli"
+
+#~ msgid "Group Settings"
+#~ msgstr "Grupi seadistused"
+
+#~ msgid "Default folder:"
+#~ msgstr "Vaikekataloog:"
+
+#~ msgid "Moves all transfers with the regular expression to this group"
+#~ msgstr ""
+#~ "Kõigi regulaaravaldistele vastavate edastuste liigutamine sellesse rühma"
+
+#~ msgid "Regular expression:"
+#~ msgstr "Regulaaravaldis:"
+
+#~ msgid "*movies*"
+#~ msgstr "*filmid*"
+
+#~ msgid "Maximum download speed:"
+#~ msgstr "Maks. allalaadimise kiirus:"
+
+#~ msgid "Maximum upload speed:"
+#~ msgstr "Maks. üleslaadimise kiirus:"
+
+#~ msgid "Destination:"
+#~ msgstr "Sihtkoht:"
+
+#~ msgid "Transfer group:"
+#~ msgstr "Allalaadimiste grupp:"
+
+#~ msgid "Verify the finished download with the selected checksum."
+#~ msgstr "Kontrolli lõpetatud allalaadimist valitud kontrollsummaga."
+
+#~ msgid "&Verify"
+#~ msgstr "&Kontrolli"
+
+#~ msgid "Verifying:"
+#~ msgstr "Kontrollimine:"
+
+#~ msgid "&File"
+#~ msgstr "&Fail"
+
+#~ msgid "&Downloads"
+#~ msgstr "A&llalaadimised"
+
+#~ msgid "&Settings"
+#~ msgstr "&Seadistused"
+
+#~ msgid "&Help"
+#~ msgstr "&Abi"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Peamine tööriistariba"
+
+#~ msgid "Sets to show the splashscreen while KGet is loading"
+#~ msgstr "Sisselülitamisel näidatakse KGeti avamisel tiitelkuva"
+
+#~ msgid "The width of the columns in the history view"
+#~ msgstr "Ajaloovaate veergude laius"
+
+#~ msgid "List of the available search engines"
+#~ msgstr "Saadaolevate otsingumootorite nimekiri"
+
+#~ msgid "List of the available search engine URLs"
+#~ msgstr "Saadaolevate otsingumootorite URL-ide loend"
+
+#~ msgid "List of the Regexp to match input URL"
+#~ msgstr "Sisendi URL-ile vastavate regulaaravaldiste nimekiri"
+
+#~ msgid "List of descriptions for user scripts"
+#~ msgstr "Kasutajaskriptide kirjelduste nimekiri"
+
+#~ msgid "List of whether the script is enabled"
+#~ msgstr "Näitamine, kas skript on lubatud"
+
+#~ msgid "There are no links in the active frame of the current HTML page."
+#~ msgstr "Käesoleva HTML-lehekülje aktiivses raamis ei ole linke."
+
+#~ msgid "Form"
+#~ msgstr "Vorm"
+
+#~ msgid "An error occurred...."
+#~ msgstr "Tekkis viga..."
+
+#~ msgid "Remove Tag"
+#~ msgstr "Eemalda silt"
+
+#~ msgid "Add Tag"
+#~ msgstr "Lisa silt"
+
+#~ msgid "Tag Settings for the groups"
+#~ msgstr "Gruppide siltide seadistused"
+
+#~ msgid "Tag Settings"
+#~ msgstr "Siltide seadistused"
+
+#~ msgid "Available tags:"
+#~ msgstr "Saadaolevad sildid:"
+
+#~ msgid "Used tags:"
+#~ msgstr "Kasutatud sildid:"
+
+#~ msgid "Enter a new Tag"
+#~ msgstr "Sisesta uus silt"
+
+#~ msgid "Enter a new tag"
+#~ msgstr "Sisesta uus silt"
+
+#~ msgid "Modify Tags..."
+#~ msgstr "Muuda silte..."
+
+#~ msgid "Unable to continue: KGet cannot download using this protocol."
+#~ msgstr ""
+#~ "Jätkamine ei ole võimalik: KGet ei suuda selle protokolli abil alla "
+#~ "laadida."
+
+#~ msgid "The width of the columns in the main view"
+#~ msgstr "Peavaate veergude laius"
+
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#~ msgid "Announcing"
+#~ msgstr "Teatamine"
+
+#~ msgid "Error: %1"
+#~ msgstr "Viga: %1"
+
+#~ msgid "Unknown client"
+#~ msgstr "Tundmatu klient"
+
+#~ msgid "1 day "
+#~ msgid_plural "%1 days "
+#~ msgstr[0] "1 päev"
+#~ msgstr[1] "%1 päeva"
+
+#~ msgid "Cannot open log file %1 : %2"
+#~ msgstr "Ei suudetud avada logifaili %1: %2"
+
+#~ msgid "Cannot write to %1 : %2"
+#~ msgstr "Ei suudetud kirjutada faili %1: %2"
+
+#~ msgid "Cannot read from %1"
+#~ msgstr "Ei suudetud lugeda faili %1"
+
+#~ msgid "Cannot create directory %1"
+#~ msgstr "Kataloogi %1 loomine nurjus"
+
+#~ msgid "Cannot symlink %1 to %2: %3"
+#~ msgstr "Nimeviida %1 -> %2 loomine nurjus: %3"
+
+#~ msgid "Cannot move %1 to %2: %3"
+#~ msgstr "Faili %1 liigutamine asukohta %2 nurjus: %3"
+
+#~ msgid "Cannot copy %1 to %2: %3"
+#~ msgstr "Faili %1 kopeerimine asukohta %2 nurjus: %3"
+
+#~ msgid "Cannot delete %1: %2"
+#~ msgstr "Faili %1 kustutamine nurjus: %2"
+
+#~ msgid "Cannot create %1: %2"
+#~ msgstr "Faili %1 loomine nurjus: %2"
+
+#~ msgid "Cannot calculate the filesize of %1: %2"
+#~ msgstr "%1 failisuuruse arvutamine nurjus: %2"
+
+#~ msgid "Cannot calculate the filesize : %1"
+#~ msgstr "Failisuuruse arvutamine nurjus: %1"
+
+#~ msgid "Cannot open %1 : %2"
+#~ msgstr "Faili %1 avamine nurjus: %2"
+
+#~ msgid "Cannot expand file: %1"
+#~ msgstr "Faili laiendamine nurjus: %1"
+
+#~ msgid "Cannot seek in file : %1"
+#~ msgstr "Failis otsimine nurjus: %1"
+
+#~ msgid "General"
+#~ msgstr "Üldine"
+
+#~ msgid "Connections"
+#~ msgstr "Ühendused"
+
+#~ msgid "Tracker"
+#~ msgstr "Tracker"
+
+#~ msgid "Disk Input/Output"
+#~ msgstr "Ketta sisend/väljund"
+
+#~ msgid "Not connected"
+#~ msgstr "Pole ühendatud"
+
+#~ msgid "Not in use"
+#~ msgstr "Pole kasutusel"
+
+#~ msgid "Connection closed"
+#~ msgstr "Ühendus suletud"
+
+#~ msgid "Resolving proxy %1:%2"
+#~ msgstr "Puhverserveri %1 lahendamine: %2"
+
+#~ msgid "Resolving hostname %1"
+#~ msgstr "Masinanime %1 lahendamine"
+
+#~ msgid "Error: request failed: %1"
+#~ msgstr "Viga: päring nurjus: %1"
+
+#~ msgid "Connected"
+#~ msgstr "Ühendatud"
+
+#~ msgid "Error: Failed to connect to webseed"
+#~ msgstr "Viga: ühendumine veebilevitusega nurjus"
+
+#~ msgid "Connecting"
+#~ msgstr "Ühendumine"
+
+#~ msgid "Failed to connect to webseed"
+#~ msgstr "Ühendumine veebilevitusega nurjus"
+
+#~ msgid "Failed to resolve hostname of webseed"
+#~ msgstr "Veebilevituse masinanime lahendamine nurjus"
+
+#~ msgid "Error: failed to connect, server not responding"
+#~ msgstr "Viga: ühendumine nurjus, server ei vasta"
+
+#~ msgid "Error: request timed out"
+#~ msgstr "Viga: päring aegus"
+
+#~ msgid "Redirected without a new location."
+#~ msgstr "Ümbersuunamine ilma uue asukohata."
+
+#~ msgid "1 peer"
+#~ msgid_plural "%1 peers"
+#~ msgstr[0] "1 partner"
+#~ msgstr[1] "%1 partnerit"
+
+#~ msgid "Illegal token: %1"
+#~ msgstr "Vigane tähis: %1"
+
+#~ msgid "Decode error"
+#~ msgstr "Dekodeerimisviga"
+
+#~ msgid "Unexpected end of input"
+#~ msgstr "Sisendi ootamatu lõpp"
+
+#~ msgid "Cannot convert %1 to an int"
+#~ msgstr "%1 teisendamine int'iks nurjus"
+
+#~ msgid "Torrent is incomplete."
+#~ msgstr "Torrent pole täielik."
+
+#~ msgid "Failed to open %1 : %2"
+#~ msgstr "Faili %1 avamine nurjus: %2"
+
+#~ msgid "Failed to create %1 : %2"
+#~ msgstr "Faili %1 loomine nurjus: %2"
+
+#~ msgid "Cannot open index file %1 : %2"
+#~ msgstr "Indeksifaili %1 avamine nurjus: %2"
+
+#~ msgid "Cannot create file %1 : %2"
+#~ msgstr "Faili %1 loomine nurjus: %2"
+
+#~ msgid "Failed to write first chunk to DND file : %1"
+#~ msgstr "Esimese tüki kirjutamine DND-faili nurjus: %1"
+
+#~ msgid "Failed to write last chunk to DND file : %1"
+#~ msgstr "Viimase tüki kirjutamine DND-faili nurjus: %1"
+
+#~ msgid "Cannot open %1 for writing : readonly filesystem"
+#~ msgstr ""
+#~ "%1 avamine kirjutamiseks nurjus: ainult lugemisõigusega failisüsteem"
+
+#~ msgid "Cannot expand file %1 : %2"
+#~ msgstr "Faili %1 laiendamine nurjus: %2"
+
+#~ msgid "Error : Reading past the end of the file %1"
+#~ msgstr "Viga: lugemine üle faili %1 lõpu"
+
+#~ msgid "Failed to seek file %1 : %2"
+#~ msgstr "Otsimine failis %1 nurjus: %2"
+
+#~ msgid "Error reading from %1"
+#~ msgstr "Viga lugemisel asukohast %1"
+
+#~ msgid "Failed to write to file %1 : %2"
+#~ msgstr "Ei suudetud kirjutada faili %1: %2"
+
+#~ msgid "Cannot preallocate diskspace : %1"
+#~ msgstr "Kettaruumi eelnev eraldamine nurjus: %1"
+
+#~ msgid "Cannot open file %1 : %2"
+#~ msgstr "Ei suudetud avada faili %1: %2"
+
+#~ msgid "Corrupted torrent."
+#~ msgstr "Vigane torrent."
+
+#~ msgid " Unable to open torrent file %1 : %2"
+#~ msgstr "Torrentifaili %1 avamine nurjus: %2"
+
+#~ msgid "Parse Error"
+#~ msgstr "Parsimise viga"
+
+#~ msgid ""
+#~ "An error occurred while loading the torrent <b>%1</b>:<br/><b>%2</b><br/"
+#~ ">The torrent is probably corrupt or is not a valid torrent file."
+#~ msgstr ""
+#~ "Torrenti <b>%1</b> laadimisel tekkis viga:<br/><b>%2</b><br/> Arvatavasti "
+#~ "on torrent vigane või pole see üldse torrenti fail."
+
+#~ msgid ""
+#~ "An error occurred while loading the torrent:<br/><b>%1</b><br/>The "
+#~ "torrent is probably corrupt or is not a valid torrent file."
+#~ msgstr ""
+#~ "Torrenti <b>%1</b><br/>laadimisel tekkis viga.<br/> Arvatavasti on "
+#~ "torrent vigane või pole see üldse torrenti fail."
+
+#~ msgid "Unable to create %1 : %2"
+#~ msgstr "%1 loomine nurjus: %2"
+
+#~ msgid ""
+#~ "You are already downloading this torrent %1, the list of trackers of both "
+#~ "torrents has been merged."
+#~ msgstr ""
+#~ "Sa laadid juba torrentit %1 alla, mõlema torrenti tracker'ite nimekiri on "
+#~ "ühendatud."
+
+#~ msgid "You are already downloading the torrent %1"
+#~ msgstr "Sa laadid juba torrentit %1 alla"
+
+#~ msgid "Not started"
+#~ msgstr "Pole alustatud"
+
+#~ msgid "Seeding completed"
+#~ msgstr "Levitamine valmis"
+
+#~ msgctxt "Status of a torrent file"
+#~ msgid "Seeding"
+#~ msgstr "Levitamine"
+
+#~ msgid "Downloading"
+#~ msgstr "Allalaadimine"
+
+#~ msgid "Stopped"
+#~ msgstr "Peatatud"
+
+#~ msgid "Allocating diskspace"
+#~ msgstr "Kettaruumi eraldamine"
+
+#~ msgid "Queued for seeding"
+#~ msgstr "Järjekorras levitamiseks"
+
+#~ msgid "Queued for downloading"
+#~ msgstr "Järjekorras allalaadimiseks"
+
+#~ msgid "Checking data"
+#~ msgstr "Andmete kontroll"
+
+#~ msgid "Stopped. No space left on device."
+#~ msgstr "Peatatud. Seadmel pole enam ruumi"
+
+#~ msgid "Cannot open file %1: %2"
+#~ msgstr "Faili %1 avamine nurjus: %2"
+
+#~ msgid "Cannot create index file: %1"
+#~ msgstr "Indeksifaili loomine nurjus: %1"
+
+#~ msgid "Redirect without a redirect location"
+#~ msgstr "Ümbersuunamine ilma uue asukohata"
+
+#~ msgid "Timeout contacting tracker %1"
+#~ msgstr "Ajaületus ühendumisel tracker'iga %1"
+
+#~ msgid "Unable to resolve hostname %1"
+#~ msgstr "Masinanime %1 lahendamine nurjus"
+
+#~ msgid "Cannot bind to udp port %1 or the 10 following ports."
+#~ msgstr "UDP pordi %1 või 10 järgmise pordi seondamine nurjus."
+
+#~ msgid "Invalid response from tracker"
+#~ msgstr "Vigane vastus tracker'ist"
+
+#~ msgid "Invalid data from tracker"
+#~ msgstr "Vigased andmed tracker'ist"
+
+#~ msgid "Invalid tracker URL"
+#~ msgstr "Vigane tracker'i URL"
+
+#~ msgid "Cannot open file : %1 : %2"
+#~ msgstr "Faili avamine nurjus: %1: %2"
+
+#~ msgid ""
+#~ "Another group with this name already exists. Please select a different "
+#~ "name."
+#~ msgstr "Sama nimega grupp on juba olemas. Palun vali mõni muu nimi."
+
+#~ msgid "Group Name Already in Use"
+#~ msgstr "Grupi nimi on juba kasutusel"
+
+#~ msgid "Add"
+#~ msgstr "Lisa"
+
+#~ msgid "Delete"
+#~ msgstr "Kustuta"
+
+#~ msgid "Configure..."
+#~ msgstr "Seadista..."
+
+#~ msgid "Details for: %1"
+#~ msgstr "%1 üksikasjad"
+
+#~ msgid "All downloads"
+#~ msgstr "Kõik allalaadimised"
+
+#~ msgid "Finished downloads"
+#~ msgstr "Lõpetatud allalaadimised"
+
+#~ msgid "Transfers:"
+#~ msgstr "Allalaadimised:"
+
+#~ msgid "Downloads"
+#~ msgstr "Allalaadimised"
+
+#~ msgid "Transfer details:"
+#~ msgstr "Allalaadimise üksikasjad:"
+
+#~ msgid "Transfer List"
+#~ msgstr "Allalaadimiste nimekiri"
+
+#~ msgid "Expandable transfer details instead of separate tabs"
+#~ msgstr "Laiendatavad allalaadimiste üksikasjad eraldi kaartide asemel"
+
+#~ msgid "Threads"
+#~ msgstr "Lõimed"
+
+#~ msgid "Number of threads:"
+#~ msgstr "Lõimede arv:"
+
+#~ msgid "Preference:"
+#~ msgstr "Eelistus:"
+
+#~ msgid "License:"
+#~ msgstr "Litsents:"
+
+#~ msgid "Name of the license"
+#~ msgstr "Litsentsi nimi"
+
+#~ msgid "URL to the license"
+#~ msgstr "Litsentsi URL"
+
+#~ msgctxt "The transfer is delayed"
+#~ msgid "Delayed"
+#~ msgstr "Edasi lükatud"
+
+#~ msgid ""
+#~ "Destination file \n"
+#~ "%1\n"
+#~ "already exists.\n"
+#~ "Do you want to overwrite it?"
+#~ msgstr ""
+#~ "Sihtfail\n"
+#~ "%1\n"
+#~ "on juba olemas.\n"
+#~ "Kas kirjutada see üle?"
+
+#~ msgid "Overwrite destination"
+#~ msgstr "Kirjuta sihtfail üle"
+
+#~ msgid "The download could not be verified, try to repair it?"
+#~ msgstr "Allalaadimise kontrollimine nurjus. Kas parandada seda?"
+
+#~ msgctxt "The preference of the mirror"
+#~ msgid "Preference"
+#~ msgstr "Eelistus"
+
+#~ msgid "Enter an URL to a keyserver."
+#~ msgstr "Sisesta võtmeserveri URL"
+
+#~ msgid "Key Server"
+#~ msgstr "Võtmeserver"
+
+#~ msgid "The key is marginally to be trusted!"
+#~ msgstr "Võti on kesise usaldusväärsusega."
+
+#~ msgid "The key is fully to be trusted!"
+#~ msgstr "Võti on täielikult usaldusväärne."
+
+#~ msgid "The key is ultimately to be trusted!"
+#~ msgstr "Võti on ülimalt usaldusväärne."
+
+#~ msgid "Cannot remove torrent default tracker."
+#~ msgstr "Torrenti vaikimisi tracker'it ei saa eemaldada."
+
+#~ msgid "You cannot add trackers to a private torrent"
+#~ msgstr "Privaattorrentile ei saa tracker'eid lisada"
+
+#~ msgid "Cannot migrate %1 : %2"
+#~ msgstr "%1 migreerimine ei ole võimalik: %2"
+
+#~ msgid ""
+#~ "The torrent %1 was started with a previous version of KTorrent. To make "
+#~ "sure this torrent still works with this version of KTorrent, we will "
+#~ "migrate this torrent. You will be asked for a location to save the "
+#~ "torrent to. If you press cancel, we will select your home directory."
+#~ msgstr ""
+#~ "Torrentit %1 alustati KTorrenti eelmise versiooniga. Tagamaks, et torrent "
+#~ "töötab ka KTorrenti praeguse versiooniga, migreeritakse see. Sinu käest "
+#~ "päritakse asukohta, kuhu torrent salvestada. Kui vajutad nupule Loobu, "
+#~ "valitakse asukohaks sinu kodukataloog."
+
+#~ msgid "Select Folder to Save To"
+#~ msgstr "Salvestamiskataloogi valik"
+
+#~ msgid "Queued"
+#~ msgstr "Järjekorda pandud"
+
+#~ msgid "Current Tracker"
+#~ msgstr "Aktiivne tracker"
+
+#~ msgid "Manual Announce"
+#~ msgstr "Käsitsi teatamine"
+
+#~ msgid "Scrape"
+#~ msgstr "Päring"
+
+#~ msgid "Available Trackers"
+#~ msgstr "Saadaolevad tracker'id"
+
+#, fuzzy
+#~| msgid "Enter a new Tag"
+#~ msgid "Enter an url"
+#~ msgstr "Sisesta uus silt"
+
+#~ msgid "Urls list of the available search engines"
+#~ msgstr "Saadaolevate otsingumootorite URL-ide nimekiri"
+
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Delete Selected"
+#~ msgstr "Kustuta valitud"
+
+#, fuzzy
+#~| msgid "Clear History"
+#~ msgid "We are sorry"
+#~ msgstr "Puhasta ajalugu"
+
+#, fuzzy
+#~ msgctxt "the basic identity of the metalink-file, e.g. KDE"
+#~ msgid "The identity of the file"
+#~ msgstr " /  fail"
+
+#, fuzzy
+#~ msgctxt "the version of the file e.g. 4.3 for KDE"
+#~ msgid "The version of the file"
+#~ msgstr "versioon  /  fail"
+
+#, fuzzy
+#~ msgid "Identity e.g. \"KDE\""
+#~ msgstr "Identiteet g KDE"
+
+#, fuzzy
+#~ msgid ""
+#~ "Here you can enter optional general information on the metalink. What you "
+#~ "set here applies to all files, if an option is set here and later on a "
+#~ "specific file then the later is preferred."
+#~ msgstr ""
+#~ "mittekohustuslik üldine info sees Mis kuni kõik failid kui on ja sees a "
+#~ "fail on eelistatud."
+
+#~ msgid "Rename transfer"
+#~ msgstr "Allalaadimise ümbernimetamine"
+
+#~ msgid "Download URL again?"
+#~ msgstr "Kas laadida URL uuesti alla?"
+
+#, fuzzy
+#~| msgid "File"
+#~ msgctxt "file in a filsystem"
+#~ msgid "File"
+#~ msgstr "Fail"
+
+#~ msgid "Are you sure that you want to remove all selected groups?"
+#~ msgstr "Kas tõesti eemaldada kõik valitud grupid?"
+
+#~ msgid "Name"
+#~ msgstr "Nimi"
+
+#~ msgid "Remaining Time"
+#~ msgstr "Aega jäänud"
+
+#~ msgid "KGet - Download Manager"
+#~ msgstr "KGet - allalaadimiste haldur"
+
+#, fuzzy
+#~ msgid "Adding dropped files."
+#~ msgstr "failid."

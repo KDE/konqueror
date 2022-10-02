@@ -1,0 +1,3454 @@
+# translation of kget.po to
+# Danish translation of kget
+# Copyright (C)
+#
+# Erik Kjær Pedersen <erik@binghamton.edu>, 2002, 2003, 2004, 2005, 2006.
+# Martin Schlander <suse@linuxin.dk>, 2008.
+# Martin Schlander <mschlander@opensuse.org>, 2008, 2009, 2010, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: kget\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2011-01-09 13:00+0100\n"
+"Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
+"Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: kget_plugin.cpp:56
+#, kde-format
+msgid "Download Manager"
+msgstr "Downloadhåndtering"
+
+#: kget_plugin.cpp:62
+#, kde-format
+msgid "Show Drop Target"
+msgstr "Vis dropmål"
+
+#: kget_plugin.cpp:69
+#, kde-format
+msgid "List All Links"
+msgstr "Liste over alle links"
+
+#: kget_plugin.cpp:74
+#, kde-format
+msgid "List Selected Links"
+msgstr "Liste over markerede links"
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No downloadable links were found."
+msgstr "Ingen links som kunne downloades blev fundet."
+
+#: kget_plugin.cpp:170
+#, kde-format
+msgid "No Links"
+msgstr "Ingen link"
+
+#. i18n: ectx: Menu (tools)
+#: konqueror_kget_browser_integration.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "Værk&tøjer"
+
+#~ msgid "Unable to communicate with the KGet download manager."
+#~ msgstr "Kan ikke kommunikere med KGet downloadhåndtering."
+
+#~ msgid "Communication Error"
+#~ msgstr "Kommunikationsfejl"
+
+#~ msgid "Plugins"
+#~ msgstr "Plugins"
+
+#~ msgid "New Group"
+#~ msgstr "Ny gruppe"
+
+#~ msgid "Xml"
+#~ msgstr "Xml"
+
+#~ msgid "Sqlite"
+#~ msgstr "Sqlite"
+
+#~ msgid "Nepomuk"
+#~ msgstr "Nepomuk"
+
+#~ msgid "Turn Off Computer"
+#~ msgstr "Sluk computeren"
+
+#~ msgid "Hibernate Computer"
+#~ msgstr "Sæt computeren i dvale"
+
+#~ msgid "Suspend Computer"
+#~ msgstr "Suspendér computeren"
+
+#~ msgid "Appearance"
+#~ msgstr "Udseende"
+
+#~ msgid "Change appearance settings"
+#~ msgstr "Ændr indstillinger for udseende"
+
+#~ msgid "Groups"
+#~ msgstr "Grupper"
+
+#~ msgid "Manage the groups"
+#~ msgstr "Håndtér grupperne"
+
+#~ msgid "Network"
+#~ msgstr "Netværk"
+
+#~ msgid "Network and Downloads"
+#~ msgstr "Netværk og downloads"
+
+#~ msgid "Web Interface"
+#~ msgstr "Webgrænseflade"
+
+#~ msgid "Control KGet over a Network or the Internet"
+#~ msgstr "Betjen KGet via netværk eller internettet"
+
+#~ msgid "Verification"
+#~ msgstr "Verificering"
+
+#~ msgctxt "integration of KGet with other applications"
+#~ msgid "Integration"
+#~ msgstr "Integration"
+
+#~ msgctxt "Advanced Options"
+#~ msgid "Advanced"
+#~ msgstr "Avanceret"
+
+#~ msgid "Advanced Options"
+#~ msgstr "Avancerede tilvalg"
+
+#~ msgid "Transfer Plugins"
+#~ msgstr "Overførselsplugins"
+
+#~ msgid "Include"
+#~ msgstr "Inkludér"
+
+#~ msgid "Exclude"
+#~ msgstr "Ekskludér"
+
+#~ msgid "Escape sequences"
+#~ msgstr "Undvigesekvenser"
+
+#~ msgid "Regular expression"
+#~ msgstr "Regulært udtryk"
+
+#~ msgid "Pattern"
+#~ msgstr "Mønster"
+
+#~ msgid "Syntax"
+#~ msgstr "Syntaks"
+
+#~ msgid "KGet"
+#~ msgstr "KGet"
+
+#~ msgid "1 Item"
+#~ msgid_plural "%1 Items"
+#~ msgstr[0] "1 element"
+#~ msgstr[1] "%1 elementer"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#~ msgctxt "start transfergroup downloads"
+#~ msgid "Start"
+#~ msgstr "Start"
+
+#~ msgctxt "stop transfergroup downloads"
+#~ msgid "Stop"
+#~ msgstr "Stop"
+
+#~ msgid "KGet is downloading %1 file"
+#~ msgid_plural "KGet is downloading %1 files"
+#~ msgstr[0] "KGet downloader %1 fil"
+#~ msgstr[1] "KGet downloader %1 filer"
+
+#~ msgid "Error trying to get %1"
+#~ msgstr "Fejl under forsøg på at hente %1"
+
+#~ msgid "Are you sure that you want to remove the group named %1?"
+#~ msgstr "Vil du virkelig fjerne gruppen med navnet %1?"
+
+#~ msgid "Remove Group"
+#~ msgstr "Fjern gruppe"
+
+#~ msgid "Are you sure that you want to remove the following groups?"
+#~ msgstr "Vil du virkelig fjerne følgende grupper?"
+
+#~ msgid "Remove groups"
+#~ msgstr "Fjern grupper"
+
+#~ msgid ""
+#~ "<p>The following transfer has been added to the download list:</p><p "
+#~ "style=\"font-size: small;\">\\%1</p>"
+#~ msgstr ""
+#~ "<p>Følgende overførsel er blevet føjet til downloadlisten:</p><p style="
+#~ "\"font-size: small;\">\\%1</p>"
+
+#~ msgid "Download added"
+#~ msgstr "Download tilføjet"
+
+#~ msgid "<p>The following transfer has been added to the download list:</p>"
+#~ msgstr "<p>Følgende overførsel er blevet føjet til downloadlisten:</p>"
+
+#~ msgid "<p>The following transfers have been added to the download list:</p>"
+#~ msgstr "<p>Følgende overførsler er blevet føjet til downloadlisten:</p>"
+
+#~ msgid ""
+#~ "The file %1 already exists.\n"
+#~ "Overwrite?"
+#~ msgstr ""
+#~ "Filen %1 findes allerede.\n"
+#~ "Overskriv?"
+
+#~ msgid "Overwrite existing file?"
+#~ msgstr "Overskriv eksisterende fil?"
+
+#~ msgid "Unable to save to: %1"
+#~ msgstr "Kan ikke gemme til: %1"
+
+#~ msgid "My Downloads"
+#~ msgstr "Mine downloads"
+
+#~ msgid ""
+#~ "<p>The following URL cannot be downloaded, its protocol is not supported "
+#~ "by KGet:</p>"
+#~ msgid_plural ""
+#~ "<p>The following URLs cannot be downloaded, their protocols are not "
+#~ "supported by KGet:</p>"
+#~ msgstr[0] ""
+#~ "<p>Følgende URL kan ikke downloades, da dens protokol er ikke "
+#~ "understøttet af KGet:</p>"
+#~ msgstr[1] ""
+#~ "<p>Følgende URL'er kan ikke downloades, da deres protokoller er ikke "
+#~ "understøttet af KGet:</p>"
+
+#~ msgid "Protocol unsupported"
+#~ msgstr "Ikke-understøttet protokol"
+
+#~ msgid "New Download"
+#~ msgstr "Nyt download"
+
+#~ msgid "Enter URL:"
+#~ msgstr "Indtast URL:"
+
+#~ msgid "Save As"
+#~ msgstr "Gem som"
+
+#~ msgid ""
+#~ "Malformed URL:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Misdannet URL:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Malformed URL, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Misdannet URL, manglende protokol:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "You have already completed a download from the location: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Download it again?"
+#~ msgstr ""
+#~ "Du har allerede gennemført et download fra den placering: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Vil du downloade den igen?"
+
+#~ msgid "Download it again?"
+#~ msgstr "Download den igen?"
+
+#~ msgid ""
+#~ "You have a download in progress from the location: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Delete it and download again?"
+#~ msgstr ""
+#~ "Du har et download i gang fra den placering: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Vil du slette det og downloade igen?"
+
+#~ msgid "Delete it and download again?"
+#~ msgstr "Slet det og download igen?"
+
+#~ msgid "Directory is not writable"
+#~ msgstr "Der kan ikke skrives til mappen"
+
+#~ msgid ""
+#~ "You have already downloaded that file from another location.\n"
+#~ "\n"
+#~ "Download and delete the previous one?"
+#~ msgstr ""
+#~ "Du har allerede downloadet den fil fra en anden placering.\n"
+#~ "\n"
+#~ "Vil du downloade den og slette den forrige?"
+
+#~ msgid "File already downloaded. Download anyway?"
+#~ msgstr "Filen er allerede downloadet. Vil du downloade alligevel?"
+
+#~ msgid "You are already downloading the same file"
+#~ msgstr "Du downloader allerede den samme fil"
+
+#~ msgid "File already exists"
+#~ msgstr "Filen findes allerede"
+
+#~ msgid "Plugin loader could not load the plugin: %1."
+#~ msgstr "Plugin-indlæseren kunne ikke indlæse pluginet: %1."
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is a directory."
+#~ msgstr ""
+#~ "Sletter ikke\n"
+#~ "%1\n"
+#~ "da det er en mappe."
+
+#~ msgid ""
+#~ "Not deleting\n"
+#~ "%1\n"
+#~ "as it is not a local file."
+#~ msgstr ""
+#~ "Sletter ikke\n"
+#~ "%1\n"
+#~ "da det ikke er en lokal fil."
+
+#~ msgid ""
+#~ "<p>The following file has finished downloading:</p><p style=\"font-size: "
+#~ "small;\">\\%1</p>"
+#~ msgstr ""
+#~ "<p>Følgende fil er blevet downloadet:</p><p style=\"font-size: small;\">\\"
+#~ "%1</p>"
+
+#~ msgid "Download completed"
+#~ msgstr "Download gennemført"
+
+#~ msgid ""
+#~ "<p>The following transfer has been started:</p><p style=\"font-size: "
+#~ "small;\">\\%1</p>"
+#~ msgstr ""
+#~ "<p>Følgende overførsel er blevet startet:</p><p style=\"font-size: small;"
+#~ "\">\\%1</p>"
+
+#~ msgid "Download started"
+#~ msgstr "Download startet"
+
+#~ msgid "Error"
+#~ msgstr "Fejl"
+
+#~ msgid ""
+#~ "<p>There has been an error in the following transfer:</p><p style=\"font-"
+#~ "size: small;\">\\%1</p><p>The error message is:</p><p style=\"font-size: "
+#~ "small;\">\\%2</p>"
+#~ msgstr ""
+#~ "<p>Der har været en fejl i følgende overførsel:</p><p style=\"font-size: "
+#~ "small;\">\\%1</p><p>Fejlmeddelelsen er:</p><p style=\"font-size: small;\">"
+#~ "\\%2</p>"
+
+#~ msgid "Resolve"
+#~ msgstr "Løs"
+
+#~ msgid "KGet is now closing, as all downloads have completed."
+#~ msgstr "KGet lukker nu, da alle downloads er gennemført."
+
+#~ msgid "The computer will now turn off, as all downloads have completed."
+#~ msgstr "Computeren vil slukke nu, da alle downloads er gennemført."
+
+#~ msgctxt "Shutting down computer"
+#~ msgid "Shutdown"
+#~ msgstr "Nedlukning"
+
+#~ msgid ""
+#~ "The computer will now suspend to disk, as all downloads have completed."
+#~ msgstr ""
+#~ "Computeren vil suspendere til disk nu, da alle downloads er gennemført."
+
+#~ msgctxt "Hibernating computer"
+#~ msgid "Hibernating"
+#~ msgstr "Dvale"
+
+#~ msgid ""
+#~ "The computer will now suspend to RAM, as all downloads have completed."
+#~ msgstr ""
+#~ "Computeren vil suspendere til ram nu, da alle downloads er gennemført."
+
+#~ msgctxt "Suspending computer"
+#~ msgid "Suspending"
+#~ msgstr "Suspendering"
+
+#~ msgctxt "abort the proposed action"
+#~ msgid "Abort"
+#~ msgstr "Afbryd"
+
+#~ msgid "<p>All transfers have been finished.</p>"
+#~ msgstr "<p>Alle overførsler er blevet gennemført.</p>"
+
+#~ msgid "Downloads completed"
+#~ msgstr "Download gennemført"
+
+#~ msgctxt "file in a filesystem"
+#~ msgid "File"
+#~ msgstr "Fil"
+
+#~ msgctxt "status of the download"
+#~ msgid "Status"
+#~ msgstr "Status"
+
+#~ msgctxt "size of the download"
+#~ msgid "Size"
+#~ msgstr "Størrelse"
+
+#~ msgctxt "checksum of a file"
+#~ msgid "Checksum"
+#~ msgstr "Tjeksum"
+
+#~ msgctxt "signature of a file"
+#~ msgid "Signature"
+#~ msgstr "Signatur"
+
+#~ msgid "KGet Transfer"
+#~ msgstr "KGet-overførsel"
+
+#~ msgctxt "the type of the hash, e.g. MD5"
+#~ msgid "Type"
+#~ msgstr "Type"
+
+#~ msgctxt "the used hash for verification"
+#~ msgid "Hash"
+#~ msgstr "Hash"
+
+#~ msgctxt "verification-result of a file, can be true/false"
+#~ msgid "Verified"
+#~ msgstr "Verificeret"
+
+#~ msgid ""
+#~ "The key to verify the signature is missing, do you want to download it?"
+#~ msgstr ""
+#~ "Nøglen til verificering af signaturen mangler, vil du downloade den?"
+
+#~ msgid ""
+#~ "The signature could not be verified for %1. See transfer settings for "
+#~ "more information."
+#~ msgstr ""
+#~ "Signaturen kunne ikke verificeres for %1. Se overførselsindstillingerne "
+#~ "for mere information."
+
+#~ msgid "Signature not verified"
+#~ msgstr "Signatur ikke verificeret"
+
+#~ msgid ""
+#~ "No server for downloading keys is specified in settings. Downloading "
+#~ "aborted."
+#~ msgstr ""
+#~ "Ingen server angivet til download af nøgler i indstillingerne. Download "
+#~ "afbrudt."
+
+#~ msgid "No key server"
+#~ msgstr "Ingen nøgleserver"
+
+#~ msgid ""
+#~ "No useful key server found, key not downloaded. Add more servers to the "
+#~ "settings or restart KGet and retry downloading."
+#~ msgstr ""
+#~ "Ingen brugbar nøgleserver fundet, nøgle ikke downloadet. Føj flere "
+#~ "servere til indstillingerne eller genstart KGet og prøv at downloade igen."
+
+#~ msgid "Filesize is larger than maximum file size supported by VFAT."
+#~ msgstr ""
+#~ "Filstørrelsen er større end den maksimale filstørrelse der understøttes "
+#~ "af VFAT."
+
+#~ msgctxt "A mirror is removed when the file has the wrong download size"
+#~ msgid "%1 removed as it did report a wrong file size."
+#~ msgstr "%1 fjernet da den rapporterede forkert filstørrelse."
+
+#~ msgctxt "not available"
+#~ msgid "n/a"
+#~ msgstr "utilg."
+
+#~ msgid "Stalled"
+#~ msgstr "Hænger"
+
+#~ msgid "Downloading...."
+#~ msgstr "Downloader..."
+
+#~ msgctxt "transfer state: delayed"
+#~ msgid "Delayed"
+#~ msgstr "Forsinket"
+
+#~ msgctxt "transfer state: stopped"
+#~ msgid "Stopped"
+#~ msgstr "Stoppet"
+
+#~ msgctxt "transfer state: aborted"
+#~ msgid "Aborted"
+#~ msgstr "Afbrudt"
+
+#~ msgctxt "transfer state: finished"
+#~ msgid "Finished"
+#~ msgstr "Færdig"
+
+#~ msgctxt "changing the destination of the file"
+#~ msgid "Changing destination"
+#~ msgstr "Ændring af destination"
+
+#~ msgctxt "name of download"
+#~ msgid "Name"
+#~ msgstr "Navn"
+
+#~ msgctxt "status of download"
+#~ msgid "Status"
+#~ msgstr "Status"
+
+#~ msgctxt "size of download"
+#~ msgid "Size"
+#~ msgstr "Størrelse"
+
+#~ msgctxt "progress of download"
+#~ msgid "Progress"
+#~ msgstr "Fremgang"
+
+#~ msgctxt "speed of download"
+#~ msgid "Speed"
+#~ msgstr "Hastighed"
+
+#~ msgctxt "remaining time of download"
+#~ msgid "Remaining Time"
+#~ msgstr "Tid tilbage"
+
+#~ msgid "No download directory specified."
+#~ msgstr "Ingen downloadmappe angivet."
+
+#~ msgid "Invalid download directory specified."
+#~ msgstr "Ugyldig downloadmappe angivet."
+
+#~ msgid "Download directory is not writeable."
+#~ msgstr "Downloadmappen er skrivebeskyttet."
+
+#~ msgid "No download destination specified."
+#~ msgstr "Ingen downloaddestination angivet:"
+
+#~ msgid "Invalid download destination specified."
+#~ msgstr "Ugyldig downloaddestination angivet."
+
+#~ msgid "Download destination is not writeable."
+#~ msgstr "Downloaddestinationen er skrivebeskyttet."
+
+#~ msgid "No URL specified."
+#~ msgstr "Ingen URL angivet."
+
+#~ msgid "Malformed URL."
+#~ msgstr "Ugyldig URL."
+
+#~ msgid "Malformed URL, protocol missing."
+#~ msgstr "Ugyldig URL, protokol mangler."
+
+#~ msgid "Malformed URL, host missing."
+#~ msgstr "Ugyldig URL, værtsnavn mangler."
+
+#~ msgid ""
+#~ "Invalid download directory specified:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Ugyldig downloadmappe angivet:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Download directory is not writeable:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Downloadmappen er skrivebeskyttet:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Invalid download destination specified:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Ugyldig downloaddestination angivet:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Download destination is not writeable:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Downloaddestinationen er skrivebeskyttet:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Malformed URL, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Ugyldig URL, værtsnavn mangler:\n"
+#~ "%1"
+
+#~ msgid "File already exists. Overwrite it?"
+#~ msgstr "Filen findes allerede. Vil du overskrive den?"
+
+#~ msgid ""
+#~ "You have already downloaded that file from another location.\n"
+#~ "Download and delete the previous one?"
+#~ msgstr ""
+#~ "Du har allerede downloadet den fil fra en anden placering.\n"
+#~ "Vil du downloade den og slette den forrige?"
+
+#~ msgid ""
+#~ "You are already downloading that file from another location.\n"
+#~ "Download and delete the previous one?"
+#~ msgstr ""
+#~ "Du er allerede ved at downloade den fil fra en anden placering.\n"
+#~ "Vil du downloade den og slette den forrige?"
+
+#~ msgid ""
+#~ "You have already completed a download from that location. Download it "
+#~ "again?"
+#~ msgstr ""
+#~ "Du har allerede gennemført et download fra den placering. Vil du "
+#~ "downloade den igen?"
+
+#~ msgid ""
+#~ "You have a download in progress from that location.\n"
+#~ "Delete it and download again?"
+#~ msgstr ""
+#~ "Du har et download i gang fra den placering.\n"
+#~ "Vil du slette det og downloade igen?"
+
+#~ msgid ""
+#~ "File already exists:\n"
+#~ "%1\n"
+#~ "Overwrite it?"
+#~ msgstr ""
+#~ "Filen findes allerede.\n"
+#~ "%1\n"
+#~ "Vil du overskrive den?"
+
+#~ msgid "Malformed URLs."
+#~ msgstr "Ugyldige URL'er."
+
+#~ msgid "Malformed URLs, protocol missing."
+#~ msgstr "Ugyldige URL'er, protokol mangler."
+
+#~ msgid "Malformed URLs, host missing."
+#~ msgstr "Ugyldige URL'er, værtsnavn mangler."
+
+#~ msgid ""
+#~ "Malformed URLs:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Ugyldige URL'er:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Malformed URLs, protocol missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Ugyldige URL'er, protokol mangler:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Malformed URLs, host missing:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Ugyldige URL'er, værtsnavn mangler:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Destinations are not writable:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Destinationerne er skrivebeskyttede:\n"
+#~ "%1"
+
+#~ msgid "Files exist already. Overwrite them?"
+#~ msgstr "Filerne findes allerede. Vil du overskrive dem?"
+
+#~ msgid ""
+#~ "You have already completed downloads at those destinations. Download them "
+#~ "again?"
+#~ msgstr ""
+#~ "Du har allerede gennemført downloads til disse destinationer. Vil du "
+#~ "downloade dem igen?"
+
+#~ msgid ""
+#~ "You have downloads in progress to these destinations.\n"
+#~ "Delete them and download again?"
+#~ msgstr ""
+#~ "Du har downloads i gang til disse destinationer.\n"
+#~ "Vil du slette dem og downloade igen?"
+
+#~ msgid ""
+#~ "You have already completed downloads from these locations. Download them "
+#~ "again?"
+#~ msgstr ""
+#~ "Du har allerede gennemført download fra disse placeringer. Vil du "
+#~ "downloade dem igen?"
+
+#~ msgid ""
+#~ "You have downloads in progress from these locations.\n"
+#~ "Delete them and download again?"
+#~ msgstr ""
+#~ "Du har downloads i gang fra disse placeringer.\n"
+#~ "Vil du slette dem og downloade igen?"
+
+#~ msgid ""
+#~ "Files exist already:\n"
+#~ "%1\n"
+#~ "Overwrite them?"
+#~ msgstr ""
+#~ "Filerne findes allerede:\n"
+#~ "%1\n"
+#~ "Vil du overskrive dem?"
+
+#~ msgid ""
+#~ "You have already completed downloads at those destinations: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ " Download them again?"
+#~ msgstr ""
+#~ "Du har allerede gennemført downloads til disse destinationer: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Vil du downloade dem igen?"
+
+#~ msgid ""
+#~ "You have downloads in progress to these destinations: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Delete them and download again?"
+#~ msgstr ""
+#~ "Du har downloads i gang til disse destinationer: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Vil du slette dem og downloade igen?"
+
+#~ msgid ""
+#~ "You have already completed downloads from these locations: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Download them again?"
+#~ msgstr ""
+#~ "Du har allerede gennemført downloads fra disse placeringer: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Vil du downloade dem igen?"
+
+#~ msgid ""
+#~ "You have downloads in progress from these locations: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Delete them and download again?"
+#~ msgstr ""
+#~ "Du har downloads i gang fra disse placeringer: \n"
+#~ "\n"
+#~ "%1\n"
+#~ "\n"
+#~ "Vil du slette dem og downloade igen?"
+
+#~ msgid "Question"
+#~ msgstr "Spørgsmål"
+
+#~ msgctxt "on a question"
+#~ msgid "Yes all"
+#~ msgstr "Ja til alle"
+
+#~ msgctxt "on a question"
+#~ msgid "No all"
+#~ msgstr "Nej til alle"
+
+#~ msgid "Insert Engine"
+#~ msgstr "Indsæt maskine"
+
+#~ msgid "Engine name:"
+#~ msgstr "Maskinenavn:"
+
+#~ msgid "URL:"
+#~ msgstr "URL:"
+
+#~ msgid "The download (%1) could not be verified. Do you want to repair it?"
+#~ msgstr "Downloadet (%1) kunne ikke verificeres. Vil du reparere det?"
+
+#~ msgid ""
+#~ "The download (%1) could not be verified. Do you want to redownload it?"
+#~ msgstr "Downloadet (%1) kunne ikke verificeres. Vil du downloade det igen?"
+
+#~ msgid "Verification failed."
+#~ msgstr "Verificering mislykkedes."
+
+#~ msgctxt "transfer state: connecting"
+#~ msgid "Connecting...."
+#~ msgstr "Forbinder..."
+
+#~ msgid "Add New Script"
+#~ msgstr "Tilføj nyt script"
+
+#~ msgid "Edit Script"
+#~ msgstr "Redigér script"
+
+#~ msgid "Set Script File"
+#~ msgstr "Angiv script-fil"
+
+#~ msgctxt "Configure script"
+#~ msgid "Configure script"
+#~ msgstr "Indstil script"
+
+#~ msgctxt "Transfer state: processing script"
+#~ msgid "Processing script...."
+#~ msgstr "Behandler script..."
+
+#~ msgctxt "Transfer State: Finished"
+#~ msgid "Finished"
+#~ msgstr "Færdig"
+
+#~ msgctxt "Transfer State: Aborted"
+#~ msgid "Aborted"
+#~ msgstr "Afbrudt"
+
+#~ msgid "Downloading Metalink File...."
+#~ msgstr "Downloader metalink-fil..."
+
+#~ msgid ""
+#~ "A newer version of this Metalink might exist, do you want to download it?"
+#~ msgstr ""
+#~ "Der findes måske en nyere version af dette metalink. Vil du downloade det?"
+
+#~ msgid "Redownload Metalink"
+#~ msgstr "Download metalink igen"
+
+#~ msgid "Download failed, no working URLs were found."
+#~ msgstr "Download mislykkedes, ingen fungerende URL'er blev fundet."
+
+#~ msgid ""
+#~ "The download could not be verified, do you want to repair (if repairing "
+#~ "does not work the download would be restarted) it?"
+#~ msgstr ""
+#~ "Downloadet kunne ikke verificeres, vil du reparere (hvis reparation ikke "
+#~ "virker vil downloadet blive genstartet) det?"
+
+#~ msgid "File Selection"
+#~ msgstr "Filvalg"
+
+#~ msgid "Add item"
+#~ msgstr "Tilføj element"
+
+#~ msgid "%1 would become %2"
+#~ msgstr "%1 ville blive til %2"
+
+#~ msgctxt "the string that is used to modify an url"
+#~ msgid "Change string"
+#~ msgstr "Ændr streng"
+
+#~ msgctxt "the mode defines how the url should be changed"
+#~ msgid "Change mode"
+#~ msgstr "Ændr tilstand"
+
+#~ msgctxt "the type of the checksum e.g. md5"
+#~ msgid "Checksum type"
+#~ msgstr "Type af tjeksum"
+
+#~ msgid "Append"
+#~ msgstr "Tilføj"
+
+#~ msgid "Replace file"
+#~ msgstr "Erstat fil"
+
+#~ msgid "Replace file-ending"
+#~ msgstr "Erstat filendelse"
+
+#~ msgctxt "transfer state: running"
+#~ msgid "Running...."
+#~ msgstr "Kører..."
+
+#~ msgctxt "Choked"
+#~ msgid "Yes"
+#~ msgstr "Ja"
+
+#~ msgctxt "Not choked"
+#~ msgid "No"
+#~ msgstr "Nej"
+
+#~ msgctxt "Snubbed"
+#~ msgid "Yes"
+#~ msgstr "Ja"
+
+#~ msgctxt "Not snubbed"
+#~ msgid "No"
+#~ msgstr "Nej"
+
+#~ msgctxt "Interested"
+#~ msgid "Yes"
+#~ msgstr "Ja"
+
+#~ msgctxt "Not Interested"
+#~ msgid "No"
+#~ msgstr "Nej"
+
+#~ msgctxt "Interesting"
+#~ msgid "Yes"
+#~ msgstr "Ja"
+
+#~ msgctxt "Not Interesting"
+#~ msgid "No"
+#~ msgstr "Nej"
+
+#~ msgid "IP Address"
+#~ msgstr "IP-adresse"
+
+#~ msgid "Client"
+#~ msgstr "Klient"
+
+#~ msgid "Down Speed"
+#~ msgstr "Downloadhastighed"
+
+#~ msgid "Up Speed"
+#~ msgstr "Uploadhastighed"
+
+#~ msgid "Choked"
+#~ msgstr "Kvalt"
+
+#~ msgid "Snubbed"
+#~ msgstr "Afvist"
+
+#~ msgid "Availability"
+#~ msgstr "Tilgængelighed"
+
+#~ msgid "DHT"
+#~ msgstr "DHT"
+
+#~ msgid "Score"
+#~ msgstr "Score"
+
+#~ msgid "Upload Slot"
+#~ msgstr "Uploadplads"
+
+#~ msgid "Requests"
+#~ msgstr "Anmodninger"
+
+#~ msgid "Downloaded"
+#~ msgstr "Downloadet"
+
+#~ msgid "Uploaded"
+#~ msgstr "Uploadet"
+
+#~ msgid "Interested"
+#~ msgstr "Interesseret"
+
+#~ msgid "Interesting"
+#~ msgstr "Interessant"
+
+#~ msgid "IP address of the peer"
+#~ msgstr "IP-adresse for peer"
+
+#~ msgid "Which client the peer is using"
+#~ msgstr "Hvilken klient der bruges af peer"
+
+#~ msgid "Download speed"
+#~ msgstr "Downloadhastighed"
+
+#~ msgid "Upload speed"
+#~ msgstr "Uploadhastighed"
+
+#~ msgid ""
+#~ "Whether or not the peer has choked us.  If we are choked, the peer will "
+#~ "not send us any data."
+#~ msgstr ""
+#~ "Om peer har kvalt os eller ej. Hvis vi er kvalt, vil peer ikke sende os "
+#~ "nogen data."
+
+#~ msgid ""
+#~ "Snubbed means the peer has not sent us any data in the last 2 minutes"
+#~ msgstr ""
+#~ "Afvist betyder at peer ikke har sendt os nogen data i de sidste 2 minutter"
+
+#~ msgid "How much of the torrent's data the peer has"
+#~ msgstr "Hvor meget af torrentens data som peer har"
+
+#~ msgid "Whether or not the peer has DHT enabled"
+#~ msgstr "Om peer har DHT aktiveret eller ej"
+
+#~ msgid ""
+#~ "The score of the peer. KTorrent uses this to determine who to upload to."
+#~ msgstr ""
+#~ "Score for peer. KTorrent bruger dette til at bestemme hvem der skal "
+#~ "uploades til."
+
+#~ msgid "Only peers which have an upload slot will get data from us"
+#~ msgstr "Kun peers som har en uploadplads vil få data fra os"
+
+#~ msgid "The number of download and upload requests"
+#~ msgstr "Antallet af download- og uploadforespørgsler"
+
+#~ msgid "How much data we have downloaded from this peer"
+#~ msgstr "Hvor meget data vi har downloadet fra denne peer"
+
+#~ msgid "How much data we have uploaded to this peer"
+#~ msgstr "Hvor meget data vi har uploadet til denne peer"
+
+#~ msgid "Whether the peer is interested in downloading data from us"
+#~ msgstr "Om peer er interesseret i at downloade data fra os"
+
+#~ msgid "Whether we are interested in downloading from this peer"
+#~ msgstr "Om vi er interesserede i at downloade fra denne peer"
+
+#~ msgid "Chunk"
+#~ msgstr "Stykke"
+
+#~ msgid "Progress"
+#~ msgstr "Fremgang"
+
+#~ msgid "Peer"
+#~ msgstr "Peer"
+
+#~ msgid "Files"
+#~ msgstr "Filer"
+
+#~ msgid "Number of the chunk"
+#~ msgstr "Stykkets nummer"
+
+#~ msgid "Download progress of the chunk"
+#~ msgstr "Downloadfremgang for stykket"
+
+#~ msgid "Which peer we are downloading it from"
+#~ msgstr "Hvilken peer vi downloader fra"
+
+#~ msgid "Download speed of the chunk"
+#~ msgstr "Downloadhastighed for stykket"
+
+#~ msgid "Which files the chunk is located in"
+#~ msgstr "Hvilke filer stykket hører til i"
+
+#~ msgid "URL"
+#~ msgstr "URL"
+
+#~ msgid "Speed"
+#~ msgstr "Hastighed"
+
+#~ msgid "Status"
+#~ msgstr "Status"
+
+#~ msgid "Kick Peer"
+#~ msgstr "Afbryd peer"
+
+#~ msgid "Ban Peer"
+#~ msgstr "Bandlys peer"
+
+#~ msgid ""
+#~ "Cannot add the webseed %1, it is already part of the list of webseeds."
+#~ msgstr ""
+#~ "Kan ikke tilføje webseed'en %1, den er allerede en del af listen over "
+#~ "webseeds."
+
+#~ msgid "Cannot remove webseed %1, it is part of the torrent."
+#~ msgstr "Kan ikke fjerne webseed'en %1, den er en del af torrenten."
+
+#~ msgid "File"
+#~ msgstr "Fil"
+
+#~ msgid "Size"
+#~ msgstr "Størrelse"
+
+#~ msgid "Advanced Details for %1"
+#~ msgstr "Avancerede detaljer for %1"
+
+#~ msgid "Trackers"
+#~ msgstr "Trackers"
+
+#~ msgid "Webseeds"
+#~ msgstr "Seedere"
+
+#~ msgctxt "Open file"
+#~ msgid "Open"
+#~ msgstr "Åbn"
+
+#~ msgid "Download first"
+#~ msgstr "Download først"
+
+#~ msgid "Download normally"
+#~ msgstr "Download normalt"
+
+#~ msgid "Download last"
+#~ msgstr "Download sidst"
+
+#~ msgid "Do Not Download"
+#~ msgstr "Download ikke"
+
+#~ msgid "Delete File(s)"
+#~ msgstr "Slet fil(er)"
+
+#~ msgid "Move File"
+#~ msgstr "Flyt fil"
+
+#~ msgid "Collapse Folder Tree"
+#~ msgstr "Fold mappetræ sammen"
+
+#~ msgid "Expand Folder Tree"
+#~ msgstr "Fold mappetræ ud"
+
+#~ msgid ""
+#~ "You will lose all data in this file, are you sure you want to do this?"
+#~ msgid_plural ""
+#~ "You will lose all data in these files, are you sure you want to do this?"
+#~ msgstr[0] "Du vil miste al data i denne fil. Vil du virkelig gøre dette?"
+#~ msgstr[1] "Du vil miste al data i disse filer. Vil du virkelig gøre dette?"
+
+#~ msgid "Select a directory to move the data to."
+#~ msgstr "Vælg en mappe at flytte data til."
+
+#~ msgid "Url"
+#~ msgstr "URL"
+
+#~ msgid "Seeders"
+#~ msgstr "Seeders"
+
+#~ msgid "Leechers"
+#~ msgstr "Leechers:"
+
+#~ msgid "Times Downloaded"
+#~ msgstr "Antal gange downloadet"
+
+#~ msgid "Next Update"
+#~ msgstr "Næste opdatering"
+
+#~ msgid "Priority"
+#~ msgstr "Prioritet"
+
+#~ msgid "Preview"
+#~ msgstr "Forhåndsvisning"
+
+#~ msgctxt "Percent of File Downloaded"
+#~ msgid "% Complete"
+#~ msgstr "% færdig"
+
+#~ msgctxt "Download first"
+#~ msgid "First"
+#~ msgstr "Først "
+
+#~ msgctxt "Download last"
+#~ msgid "Last"
+#~ msgstr "Sidst "
+
+#~ msgctxt "Download normally(not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "Normalt"
+
+#~ msgctxt "preview available"
+#~ msgid "Available"
+#~ msgstr "Tilgængelig"
+
+#~ msgctxt "Preview pending"
+#~ msgid "Pending"
+#~ msgstr "Undervejs"
+
+#~ msgctxt "No preview available"
+#~ msgid "No"
+#~ msgstr "Nej"
+
+#~ msgid "%1 %"
+#~ msgstr "%1 %"
+
+#~ msgctxt "Preview available"
+#~ msgid "Available"
+#~ msgstr "Tilgængelig"
+
+#~ msgid "Add Tracker"
+#~ msgstr "Tilføj tracker"
+
+#~ msgid "Enter the URL of the tracker:"
+#~ msgstr "Angiv URL for trackeren:"
+
+#~ msgid "There already is a tracker named <b>%1</b>."
+#~ msgstr "Der er allerede en tracker kaldet <b>%1</b>."
+
+#~ msgctxt "Download Normal (not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "Normalt"
+
+#~ msgid "Cannot initialize libktorrent. Torrent support might not work."
+#~ msgstr ""
+#~ "Kan ikke initialisere libktorrent. Torrent-understøttelsen vil måske ikke "
+#~ "virke."
+
+#~ msgid "&Advanced Details"
+#~ msgstr "&Avancerede detaljer"
+
+#~ msgid "&Scan Files"
+#~ msgstr "&Scan filer"
+
+#~ msgid "Downloading Torrent File...."
+#~ msgstr "Downloader torrentfil..."
+
+#~ msgctxt "transfer state: downloading"
+#~ msgid "Downloading...."
+#~ msgstr "Downloader..."
+
+#~ msgid "Cannot add a tracker to a private torrent."
+#~ msgstr "Kan ikke tilføje tracker til en privat torrent."
+
+#~ msgid "Torrent file does not exist"
+#~ msgstr "Torrent-filen findes ikke"
+
+#~ msgid "Analyzing torrent...."
+#~ msgstr "Analyserer torrent..."
+
+#~ msgid "Cannot initialize port..."
+#~ msgstr "Kan ikke initialisere port..."
+
+#~ msgctxt "Transfer status: seeding"
+#~ msgid "Seeding...."
+#~ msgstr "Seeder..."
+
+#~ msgid "Error scanning data: %1"
+#~ msgstr "Fejl under scanning af data: %1"
+
+#~ msgid "Scanning data of <b>%1</b> :"
+#~ msgstr "Scanner data for <b>%1</b> :"
+
+#~ msgid "Select a default torrent folder"
+#~ msgstr "Vælg standardmappe til torrents"
+
+#~ msgid "Select a default temporary folder"
+#~ msgstr "Vælg standardmappe til midlertidige filer"
+
+#~ msgid "Import dropped files"
+#~ msgstr "Importér droppede filer"
+
+#~ msgctxt "comma, to seperate members of a list"
+#~ msgid ","
+#~ msgstr ","
+
+#~ msgid "File Properties"
+#~ msgstr "Filegenskaber"
+
+#~ msgid "Enter a filename."
+#~ msgstr "Angiv et filnavn."
+
+#~ msgid "The filename exists already, choose a different one."
+#~ msgstr "Filnavnet findes allerede. Vælg et andet."
+
+#~ msgid "Enter at least one URL."
+#~ msgstr "Angiv mindst én URL."
+
+#~ msgid ""
+#~ "Required data entered; also consider entering additional information."
+#~ msgstr ""
+#~ "Påkrævet data angivet, overvej også at angive yderligere information."
+
+#~ msgid "Create a Metalink"
+#~ msgstr "Opret et metalink"
+
+#~ msgid "General optional information for the metalink."
+#~ msgstr "Generel valgfri information til metalinket."
+
+#~ msgid "Unable to load: %1"
+#~ msgstr "Kan ikke indlæse: %1"
+
+#~ msgid "Metalink Version 4.0 file (*.meta4)"
+#~ msgstr "Metalink version 4.0-fil (*.meta4)"
+
+#~ msgid "Metalink Version 3.0 file (*.metalink)"
+#~ msgstr "Metalink version 3.0-fil (*.metalink)"
+
+#~ msgid "Define the saving location."
+#~ msgstr "Angiv gemmeplacering."
+
+#~ msgctxt "file as in file on hard drive"
+#~ msgid "Enter at least one file."
+#~ msgstr "Angiv mindst én fil."
+
+#~ msgid "Import Links"
+#~ msgstr "Importér links"
+
+#~ msgctxt "Download the items which have been selected"
+#~ msgid "&Download Checked"
+#~ msgstr "&Download tjekket"
+
+#~ msgid "Auxiliary header"
+#~ msgstr "Auxiliar-header"
+
+#~ msgid "File Name"
+#~ msgstr "Filnavn"
+
+#~ msgid "Description"
+#~ msgstr "Beskrivelse"
+
+#~ msgctxt "list header: type of file"
+#~ msgid "File Type"
+#~ msgstr "Filtype"
+
+#~ msgid "Location (URL)"
+#~ msgstr "Sted (URL)"
+
+#~ msgid "Links in: %1 - KGet"
+#~ msgstr "Link i: %1 - Kget"
+
+#~ msgid "&Select All Filtered"
+#~ msgstr "&Markér alle filtrerede"
+
+#~ msgid "&Select All"
+#~ msgstr "&Markér alle"
+
+#~ msgid "D&eselect All Filtered"
+#~ msgstr "A&fmarkér alle filtrerede"
+
+#~ msgid "D&eselect All"
+#~ msgstr "A&fmarkér alle"
+
+#~ msgid "not specified"
+#~ msgstr "ikke angivet"
+
+#~ msgctxt "Mirror as in server, in url"
+#~ msgid "Mirror"
+#~ msgstr "Mirror"
+
+#~ msgctxt "The priority of the mirror"
+#~ msgid "Priority"
+#~ msgstr "Prioritet"
+
+#~ msgctxt "Number of paralell connections to the mirror"
+#~ msgid "Connections"
+#~ msgstr "Forbindelser"
+
+#~ msgctxt "Location = country"
+#~ msgid "Location"
+#~ msgstr "Placering"
+
+#~ msgid "Add mirror"
+#~ msgstr "Tilføj mirror"
+
+#~ msgctxt "Adds the item and reopens the dialog to add a further item"
+#~ msgid "Add more"
+#~ msgstr "Tilføj flere"
+
+#~ msgid "%1 has been successfully added."
+#~ msgstr "%1 er blevet tilføjet."
+
+#~ msgid "Modify the used mirrors."
+#~ msgstr "Ændr de anvendte mirrors."
+
+#~ msgid "Download again"
+#~ msgstr "Download igen"
+
+#~ msgctxt "Delete selected history-item"
+#~ msgid "Delete selected"
+#~ msgstr "Slet markerede"
+
+#~ msgid "Open file"
+#~ msgstr "Åbn fil"
+
+#~ msgid "Today"
+#~ msgstr "I dag"
+
+#~ msgid "Last week"
+#~ msgstr "Sidste uge"
+
+#~ msgid "Last Month"
+#~ msgstr "Sidste måned"
+
+#~ msgid "A long time ago"
+#~ msgstr "Lang tid siden"
+
+#~ msgid "Under 10MiB"
+#~ msgstr "Under 10MiB"
+
+#~ msgid "Between 10MiB and 50MiB"
+#~ msgstr "Mellem 10MiB og 50MiB"
+
+#~ msgid "Between 50MiB and 100MiB"
+#~ msgstr "Mellem 50MiB og 100MiB"
+
+#~ msgid "More than 100MiB"
+#~ msgstr "Mere end 100MiB"
+
+#~ msgid "Transfer History"
+#~ msgstr "Overførselshistorik"
+
+#~ msgid "&Open File"
+#~ msgstr "Å&bn fil"
+
+#~ msgctxt "The transfer is running"
+#~ msgid "Running"
+#~ msgstr "Kører"
+
+#~ msgctxt "The transfer is stopped"
+#~ msgid "Stopped"
+#~ msgstr "Stoppet"
+
+#~ msgctxt "The transfer is aborted"
+#~ msgid "Aborted"
+#~ msgstr "Afbrudt"
+
+#~ msgctxt "The transfer is finished"
+#~ msgid "Finished"
+#~ msgstr "Færdig"
+
+#~ msgid "Source File"
+#~ msgstr "Kildefil"
+
+#~ msgid "Destination"
+#~ msgstr "Destination"
+
+#~ msgid "Time"
+#~ msgstr "Tid"
+
+#~ msgid "File Size"
+#~ msgstr "Filstørrelse"
+
+#~ msgid "Less than 1MiB"
+#~ msgstr "Mindre end 1 MiB"
+
+#~ msgid "Between 1MiB-10MiB"
+#~ msgstr "Mellem 1MiB-10MiB"
+
+#~ msgid "Between 10MiB-100MiB"
+#~ msgstr "Mellem 10MiB-100MiB"
+
+#~ msgid "Between 100MiB-1GiB"
+#~ msgstr "Mellem 100MiB-1GiB"
+
+#~ msgid "More than 1GiB"
+#~ msgstr "Mere end 1GiB"
+
+#~ msgid "Last month"
+#~ msgstr "Sidste måned"
+
+#~ msgctxt "the transfer has been finished"
+#~ msgid "Finished"
+#~ msgstr "Færdig"
+
+#~ msgid "You have no source URLs selected."
+#~ msgstr "Du har ikke valgt nogen kilde-URL'er."
+
+#~ msgid "Files that exist already in the current folder have been marked."
+#~ msgstr "Filer som allerede findes i den aktuelle mappe er blevet markeret."
+
+#~ msgctxt "an error happened in connection with the user input"
+#~ msgid "Error:"
+#~ msgstr "Fejl:"
+
+#~ msgctxt "a warning happened in connection with the user input"
+#~ msgid "Warning:"
+#~ msgstr "Advarsel:"
+
+#~ msgctxt "trust level"
+#~ msgid "Unknown"
+#~ msgstr "Ukendt"
+
+#~ msgctxt "trust level"
+#~ msgid "Undefined"
+#~ msgstr "Udefineret"
+
+#~ msgctxt "trust level"
+#~ msgid "Never"
+#~ msgstr "Aldrig"
+
+#~ msgctxt "trust level"
+#~ msgid "Marginal"
+#~ msgstr "Marginalt"
+
+#~ msgctxt "trust level"
+#~ msgid "Full"
+#~ msgstr "Fuldt"
+
+#~ msgctxt "trust level"
+#~ msgid "Ultimate"
+#~ msgstr "Ultimativt"
+
+#~ msgctxt ""
+#~ "Signature here is meant in cryptographic terms, so the signature of a "
+#~ "file."
+#~ msgid "Signature of %1."
+#~ msgstr "Signatur for %1."
+
+#~ msgid "This option is not supported for the current transfer."
+#~ msgstr "Denne indstilling er ikke understøttet for den aktuelle overførsel."
+
+#~ msgid "You need to define a signature."
+#~ msgstr "Du skal definere en signatur."
+
+#~ msgid ""
+#~ "No fingerprint could be found, check if the signature is correct or "
+#~ "verify the download."
+#~ msgstr ""
+#~ "Intet fingeraftryk kunne findes, tjek om signaturen er korrekt eller "
+#~ "verificér downloadet."
+
+#~ msgid "The key has been revoked."
+#~ msgstr "Nøglen er blevet trukket tilbage."
+
+#~ msgid "The key is disabled."
+#~ msgstr "Nøglen er deaktiveret."
+
+#~ msgid "The key is invalid."
+#~ msgstr "Nøglen er ugyldig."
+
+#~ msgid "The key is expired."
+#~ msgstr "Nøglen er udløbet."
+
+#~ msgid "The key is not to be trusted."
+#~ msgstr "Nøglen er ikke troværdig."
+
+#~ msgid "The key is to be trusted marginally."
+#~ msgstr "Nøglen er marginalt betroet."
+
+#~ msgid "The key is to be trusted fully."
+#~ msgstr "Nøglen er fuldt betroet."
+
+#~ msgid "The key is to be trusted ultimately."
+#~ msgstr "Nøglen er ultimativt betroet."
+
+#~ msgid "Trust level of the key is unclear."
+#~ msgstr "Nøglens niveau af betroethed er uklart."
+
+#~ msgid "Unlimited"
+#~ msgstr "Ubegrænset"
+
+#~ msgctxt "pgp signature is verified"
+#~ msgid "Verified"
+#~ msgstr "Verificeret"
+
+#~ msgid "The signature has been verified successfully."
+#~ msgstr "Signaturen er blevet verificeret."
+
+#~ msgid "The signature has been verified successfully:"
+#~ msgstr "Signaturen er blevet verificeret:"
+
+#~ msgctxt "pgp signature is not verified"
+#~ msgid "Failed"
+#~ msgstr "Mislykkedes"
+
+#~ msgid ""
+#~ "Caution: Verification failed. Either you entered the wrong signature, or "
+#~ "the data has been modified."
+#~ msgstr ""
+#~ "Advarsel: Verificering mislykkedes. Enten angav du den forkeret signatur "
+#~ "ellers er data blevet ændret."
+
+#~ msgid ""
+#~ "Verification not possible. Check the entered data, whether gpg-agent is "
+#~ "running, or whether you have an Internet connection (for retrieving keys.)"
+#~ msgstr ""
+#~ "Verificering ikke mulig. Tjek de angivne data, om gpg-agent kører eller "
+#~ "om du har internetforbindelse (til at hente nøgler.)"
+
+#~ msgid ""
+#~ "Feature is not supported, as KGet is not compiled with QPGME support."
+#~ msgstr ""
+#~ "Funktionen er ikke understøttet, da KGet ikke er oversat med QPGME-"
+#~ "understøttelse."
+
+#~ msgid "Error:"
+#~ msgstr "Fejl:"
+
+#~ msgid "Problems:"
+#~ msgstr "Problemer:"
+
+#~ msgid "Information:"
+#~ msgstr "Information:"
+
+#~ msgid "Select columns"
+#~ msgstr "Vælg kolonner"
+
+#~ msgid "Transfer Details"
+#~ msgstr "Overførselsdetaljer"
+
+#~ msgid "Add checksum"
+#~ msgstr "Tilføj tjeksum"
+
+#~ msgid "%1 %2 has been successfully added."
+#~ msgstr "%1 %2 er blevet tilføjet."
+
+#~ msgid "Transfer Verification for %1"
+#~ msgstr "Overførselsverificering for %1"
+
+#~ msgid "%1 was successfully verified."
+#~ msgstr "%1 blev korrekt verificeret."
+
+#~ msgid "Verification successful"
+#~ msgstr "Verificering gennemført"
+
+#~ msgid "Rename File"
+#~ msgstr "Omdøb fil"
+
+#~ msgid "Rename %1 to:"
+#~ msgstr "Omdøb %1 til:"
+
+#~ msgid "&Rename"
+#~ msgstr "&Omdøb"
+
+#~ msgid "Semantic Desktop"
+#~ msgstr "Semantisk skrivebordsmiljø"
+
+#~ msgid "Delete Group"
+#~ msgid_plural "Delete Groups"
+#~ msgstr[0] "Slet gruppe"
+#~ msgstr[1] "Slet grupper"
+
+#~ msgid "Rename Group..."
+#~ msgid_plural "Rename Groups..."
+#~ msgstr[0] "Omdøb gruppe..."
+#~ msgstr[1] "Omdøb grupper..."
+
+#~ msgctxt "fix position for droptarget"
+#~ msgid "Sticky"
+#~ msgstr "Klæbrig"
+
+#~ msgid "Quit KGet"
+#~ msgstr "Afslut KGet"
+
+#~ msgid "The dropped file is a KGet Transfer List"
+#~ msgstr "Den slupne fil er en KGet-overførselsliste"
+
+#~ msgid "&Download"
+#~ msgstr "&Download"
+
+#~ msgid "&Load transfer list"
+#~ msgstr "Ind&læs overførselsliste"
+
+#~ msgid "Show Main Window"
+#~ msgstr "Vis hovedvindue"
+
+#~ msgid "Hide Main Window"
+#~ msgstr "Skjul hovedvindue"
+
+#~ msgid "Drop Target"
+#~ msgstr "Dropmål"
+
+#~ msgid "You can drag download links into the drop target."
+#~ msgstr "Du kan trække downloadlinks ind i dropmålet."
+
+#~ msgctxt "%1 filename, %2 total size, %3 status"
+#~ msgid "%1(%2) %3"
+#~ msgstr "%1(%2) %3"
+
+#~ msgctxt ""
+#~ "%1 filename, %2 percent complete, %3 downloaded out of %4 total size"
+#~ msgid "%1(%2% %3/%4) Speed:%5/s"
+#~ msgstr "%1(%2% %3/%4) Hastighed:%5/s"
+
+#~ msgctxt ""
+#~ "%1 filename, %2 percent complete, %3 downloaded out of %4 total size, %5 "
+#~ "status"
+#~ msgid "%1(%2% %3/%4) %5"
+#~ msgstr "%1(%2% %3/%4) %5"
+
+#~ msgid "Ready"
+#~ msgstr "Klar"
+
+#~ msgid ""
+#~ "Drop target has been hidden. If you want to show it again, go to Settings-"
+#~ ">Configure KGet->Look & Feel."
+#~ msgstr ""
+#~ "Dropmål er blevet skjult. Hvis du ønsker at vise det igen, gå da til "
+#~ "Indstillinger->Indstil KGet->Look & Feel."
+
+#~ msgid "Hiding drop target"
+#~ msgstr "Skjul dropmål"
+
+#~ msgid "Transfer Settings for %1"
+#~ msgstr "Overførselsindstillinger for %1"
+
+#~ msgid ""
+#~ "Changing the destination did not work, the destination stays unmodified."
+#~ msgstr ""
+#~ "Ændring af destinationen fungerede ikke. Destinationen forbliver uændret."
+
+#~ msgid "Destination unmodified"
+#~ msgstr "Destination uændret"
+
+#~ msgid "Average speed: %1/s"
+#~ msgstr "Gennemsnitshastighed: %1/s"
+
+#~ msgid "%1 of %2"
+#~ msgstr "%1 af %2"
+
+#~ msgid "Group Settings for %1"
+#~ msgstr "Gruppeindstillinger for %1"
+
+#~ msgctxt "@info"
+#~ msgid "Unable to start the server: %1."
+#~ msgstr "Kan ikke starte serveren: %1."
+
+#~ msgctxt "@item speed of transfer per seconds"
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#~ msgctxt "@label"
+#~ msgid "KGet Web Interface"
+#~ msgstr "Webgrænseflade til KGet"
+
+#~ msgctxt "@label number"
+#~ msgid "Nr"
+#~ msgstr "Nr."
+
+#~ msgctxt "@label"
+#~ msgid "File name"
+#~ msgstr "Filnavn"
+
+#~ msgctxt "@label Progress of transfer"
+#~ msgid "Finished"
+#~ msgstr "Færdig"
+
+#~ msgctxt "@label Speed of transfer"
+#~ msgid "Speed"
+#~ msgstr "Hastighed"
+
+#~ msgctxt "@label Status of transfer"
+#~ msgid "Status"
+#~ msgstr "Status"
+
+#~ msgctxt "@action:button start a transfer"
+#~ msgid "Start"
+#~ msgstr "Start"
+
+#~ msgctxt "@action:button"
+#~ msgid "Stop"
+#~ msgstr "Stop"
+
+#~ msgctxt "@action:button"
+#~ msgid "Remove"
+#~ msgstr "Fjern"
+
+#~ msgctxt "@label Download from"
+#~ msgid "Source:"
+#~ msgstr "Kilde:"
+
+#~ msgctxt "@label Save download to"
+#~ msgid "Saving to:"
+#~ msgstr "Gemmer til:"
+
+#~ msgctxt "@label Title in header"
+#~ msgid "Web Interface"
+#~ msgstr "Webgrænseflade"
+
+#~ msgctxt "@action"
+#~ msgid "Settings"
+#~ msgstr "Indstillinger"
+
+#~ msgctxt "@action"
+#~ msgid "Refresh"
+#~ msgstr "Genopfrisk"
+
+#~ msgctxt "@action"
+#~ msgid "Enter URL: "
+#~ msgstr "Indtast URL:"
+
+#~ msgctxt "@action:button"
+#~ msgid "OK"
+#~ msgstr "O.k."
+
+#~ msgctxt "@action Refresh download list every x (seconds)"
+#~ msgid "Refresh download list every"
+#~ msgstr "Genopfrisk downloadliste hver"
+
+#~ msgctxt "@action (Refresh very x )seconds"
+#~ msgid "seconds"
+#~ msgstr "sekunder"
+
+#~ msgctxt "@action:button"
+#~ msgid "Save Settings"
+#~ msgstr "Gem indstillinger"
+
+#~ msgctxt "@title"
+#~ msgid "Downloads"
+#~ msgstr "Downloads"
+
+#~ msgctxt "@label text in footer"
+#~ msgid "KGet Web Interface | Valid XHTML 1.0 Strict &amp; CSS"
+#~ msgstr "Webgrænseflade til KGet | Valid XHTML 1.0 Strict &amp; CSS"
+
+#~ msgid "An advanced download manager for KDE"
+#~ msgstr "Avanceret download-håndtering for KDE"
+
+#~ msgid ""
+#~ "(C) 2005 - 2009, The KGet developers\n"
+#~ "(C) 2001 - 2002, Patrick Charbonnier\n"
+#~ "(C) 2002, Carsten Pfeiffer\n"
+#~ "(C) 1998 - 2000, Matej Koss"
+#~ msgstr ""
+#~ "(C) 2005 - 2009, KGet-udviklerne\n"
+#~ "(C) 2001 - 2002, Patrick Charbonnier\n"
+#~ "(C) 2002, Carsten Pfeiffer\n"
+#~ "(C) 1998 - 2000, Matej Koss"
+
+#~ msgid "<a href=\"mailto:kget@kde.org\">kget@kde.org</a>"
+#~ msgstr "<a href=\"mailto:kget@kde.org\">kget@kde.org</a>"
+
+#~ msgid "Lukas Appelhans"
+#~ msgstr "Lukas Appelhans"
+
+#~ msgid "Maintainer, Core Developer, Torrent Plugin Author"
+#~ msgstr "Vedligeholder, hovedudvikler, ophavsmand til torrent-plugin"
+
+#~ msgid "Dario Massarin"
+#~ msgstr "Dario Massarin"
+
+#~ msgid "Core Developer"
+#~ msgstr "Hovedudvikler"
+
+#~ msgid "Urs Wolfer"
+#~ msgstr "Urs Wolfer"
+
+#~ msgid "Manolo Valdes"
+#~ msgstr "Manolo Valdes"
+
+#~ msgid "Core Developer, Multithreaded Plugin Author"
+#~ msgstr "Hovedudvikler, udikler af plugin til flere tråde"
+
+#~ msgid "Matthias Fuchs"
+#~ msgstr "Matthias Fuchs"
+
+#~ msgid "Javier Goday"
+#~ msgstr "Javier Goday"
+
+#~ msgid "Developer"
+#~ msgstr "Udvikler"
+
+#~ msgid "Patrick Charbonnier"
+#~ msgstr "Patrick Charbonnier"
+
+#~ msgid "Former Developer"
+#~ msgstr "Tidligere udvikler"
+
+#~ msgid "Carsten Pfeiffer"
+#~ msgstr "Carsten Pfeiffer"
+
+#~ msgid "Matej Koss"
+#~ msgstr "Matej Koss"
+
+#~ msgid "Joris Guisson"
+#~ msgstr "Joris Guisson"
+
+#~ msgid "BTCore (KTorrent) Developer"
+#~ msgstr "BTCore-udvikler (KTorrrent)"
+
+#~ msgid "Mensur Zahirovic (Nookie)"
+#~ msgstr "Mensur Zahirovic (Nookie)"
+
+#~ msgid "Design of Web Interface"
+#~ msgstr "Design af webgrænseflade"
+
+#~ msgid "Start KGet with drop target"
+#~ msgstr "Start kget med drop-mål"
+
+#~ msgid "Start KGet with hidden main window"
+#~ msgstr "Start KGet med skjult hovedvindue"
+
+#~ msgid "Start KGet without drop target animation"
+#~ msgstr "Start KGet uden dropmål-animation"
+
+#~ msgid "Execute Unit Testing"
+#~ msgstr "Kør enhedstest"
+
+#~ msgid "URL(s) to download"
+#~ msgstr "URL'er at downloade"
+
+#~ msgid "KGet Transfer List"
+#~ msgstr "KGets overførselsliste"
+
+#~ msgid "Export Transfers"
+#~ msgstr "Eksportér overførsler"
+
+#~ msgid "&New Download..."
+#~ msgstr "&Nyt download..."
+
+#~ msgid "&Import Transfers..."
+#~ msgstr "&Importér overførsler..."
+
+#~ msgid "&Export Transfers List..."
+#~ msgstr "&Eksportér overførselsliste..."
+
+#~ msgid "&Export Transfers as Plain Text..."
+#~ msgstr "&Eksportér overførsler som klartekst..."
+
+#~ msgid "&Create a Metalink"
+#~ msgstr "&Opret et metalink"
+
+#~ msgid "Top Priority"
+#~ msgstr "Højeste prioritet"
+
+#~ msgid "Least Priority"
+#~ msgstr "Laveste prioritet"
+
+#~ msgid "Increase Priority"
+#~ msgstr "Hæv prioritet"
+
+#~ msgid "Decrease Priority"
+#~ msgstr "Sænk prioritet"
+
+#~ msgid "Set Icon..."
+#~ msgstr "Vælg ikon..."
+
+#~ msgid "Auto-Paste Mode"
+#~ msgstr "'Indsæt automatisk'-tilstand"
+
+#~ msgid ""
+#~ "<b>Auto paste</b> button toggles the auto-paste mode on and off.\n"
+#~ "When set, KGet will periodically scan the clipboard for URLs and paste "
+#~ "them automatically."
+#~ msgstr ""
+#~ "<b>Indsæt automatisk</b>-knappen slår 'indsæt automatisk'-tilstand til og "
+#~ "fra.\n"
+#~ "Når den er sat, vil KGet periodisk scanne udklipsholderen efter URL'er og "
+#~ "indsætte dem automatisk."
+
+#~ msgid "Use KGet as Konqueror Download Manager"
+#~ msgstr "Brug KGet til downloadhåndtering i Konqueror"
+
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Remove Selected"
+#~ msgstr "Fjern markerede"
+
+#~ msgctxt "delete all finished transfers"
+#~ msgid "Remove All Finished"
+#~ msgstr "Fjern alle færdige"
+
+#~ msgctxt "redownload selected transfer item"
+#~ msgid "Redownload Selected"
+#~ msgstr "Download markerede igen"
+
+#~ msgid "Start / Resume All"
+#~ msgstr "Start / genoptag alle"
+
+#~ msgid "Start / Resume Selected"
+#~ msgstr "Start / genoptag markerede"
+
+#~ msgid "Stop All"
+#~ msgstr "Stop alle"
+
+#~ msgid "Stop Selected"
+#~ msgstr "Stop markerede"
+
+#~ msgid "Start / Resume"
+#~ msgstr "Start / genoptag"
+
+#~ msgid "Stop"
+#~ msgstr "Stop"
+
+#~ msgid "Remove"
+#~ msgstr "Fjern"
+
+#~ msgid "Open Destination"
+#~ msgstr "Åbn destination"
+
+#~ msgid "Open File"
+#~ msgstr "Åbn fil"
+
+#~ msgid "Show Details"
+#~ msgstr "Vis detaljer"
+
+#~ msgid "Copy URL to Clipboard"
+#~ msgstr "Kopiér URL til udklipsholderen"
+
+#~ msgid "&Transfer History"
+#~ msgstr "&Overførselshistorik"
+
+#~ msgid "&Group Settings"
+#~ msgstr "&Gruppeindstillinger"
+
+#~ msgid "&Transfer Settings"
+#~ msgstr "&Overførselsindstillinger"
+
+#~ msgid "Import &Links..."
+#~ msgstr "Importér &links..."
+
+#~ msgid ""
+#~ "This is the first time you have run KGet.\n"
+#~ "Would you like to enable KGet as the download manager for Konqueror?"
+#~ msgstr ""
+#~ "Dette er første gang du kører KGet.\n"
+#~ "Vil du aktivere KGet som downloadhåndtering i Konqueror?"
+
+#~ msgid "Konqueror Integration"
+#~ msgstr "Integration med Konqueror"
+
+#~ msgid "Enable"
+#~ msgstr "Aktivér"
+
+#~ msgid "Do Not Enable"
+#~ msgstr "Aktivér ikke"
+
+#~ msgid "All Openable Files"
+#~ msgstr "Alle filer som kan åbnes"
+
+#~ msgctxt "window title including overall download progress in percent"
+#~ msgid "KGet - %1%"
+#~ msgstr "KGet - %1%"
+
+#~ msgid ""
+#~ "Some transfers are still running.\n"
+#~ "Are you sure you want to close KGet?"
+#~ msgstr ""
+#~ "Nogle overførsler kører stadigvæk.\n"
+#~ "Ønsker du at afslutte KGet alligevel?"
+
+#~ msgid "Confirm Quit"
+#~ msgstr "Bekræft afslutning"
+
+#~ msgid "Enter Group Name"
+#~ msgstr "Indtast gruppenavn"
+
+#~ msgid "Group name:"
+#~ msgstr "Gruppenavn:"
+
+#~ msgid "Are you sure you want to delete the selected transfer?"
+#~ msgid_plural "Are you sure you want to delete the selected transfers?"
+#~ msgstr[0] "Vil du virkelig slette den markerede overførsel?"
+#~ msgstr[1] "Vil du virkelig slette de markerede overførsler?"
+
+#~ msgid "Confirm transfer delete"
+#~ msgstr "Bekræft sletning af overførsel"
+
+#~ msgid ""
+#~ "KGet has been temporarily disabled as download manager for Konqueror. If "
+#~ "you want to disable it forever, go to Settings->Advanced and disable "
+#~ "\"Use as download manager for Konqueror\"."
+#~ msgstr ""
+#~ "KGet er midlertidigt blevet deaktiveret som downloadhåndtering i "
+#~ "Konqueror. Hvis du ønsker at deaktivere det permanent, gå da til "
+#~ "Indstillinger->Avanceret og deaktivér \"Brug til downloadhåndtering i "
+#~ "Konqueror\"."
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Erik Kjær Pedersen,Martin Schlander"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "erik@binghamton.edu,mschlander@opensuse.org"
+
+#~ msgid "Checksums"
+#~ msgstr "Tjeksummer"
+
+#~ msgid "Automatic verification:"
+#~ msgstr "Automatisk verificering:"
+
+#~ msgid "Weak (fastest)"
+#~ msgstr "Svag (hurtigt)"
+
+#~ msgid "Strong (recommended)"
+#~ msgstr "Stærk (anbefales)"
+
+#~ msgid "Strongest (slowest)"
+#~ msgstr "Stærkest (langsommest)"
+
+#~ msgid "Used checksum:"
+#~ msgstr "Anvendt tjeksum:"
+
+#~ msgid "Signature"
+#~ msgstr "Signatur"
+
+#~ msgid "Automatic verification"
+#~ msgstr "Automatisk verificering"
+
+#~ msgid "Automatic downloading of missing keys"
+#~ msgstr "Automatisk download af manglende nøgler"
+
+#~ msgid "Keyservers:"
+#~ msgstr "Nøgleservere:"
+
+#~ msgid "Move &Up"
+#~ msgstr "Flyt &op"
+
+#~ msgid "Move &Down"
+#~ msgstr "Flyt &ned"
+
+#~ msgid "Use default folders for groups as suggestion"
+#~ msgstr "Brug standardmapper for grupper som foreslag"
+
+#~ msgid "Rename"
+#~ msgstr "Omdøb"
+
+#~ msgid "Select Icon..."
+#~ msgstr "Vælg ikon..."
+
+#~ msgid "Limit Maximum Downloads Per Group"
+#~ msgstr "Begræns maksimalt antal downloads per gruppe"
+
+#~ msgid "Number of downloads:"
+#~ msgstr "Antal downloads:"
+
+#~ msgid "Downloads from the same server:"
+#~ msgstr "Download fra samme server:"
+
+#~ msgid "Speed Limit"
+#~ msgstr "Hastighedsgrænse"
+
+#~ msgid "Global download limit:"
+#~ msgstr "Global downloadgrænse:"
+
+#~ msgid " KiB/s"
+#~ msgstr " KiB/s"
+
+#~ msgid "Global upload limit:"
+#~ msgstr "Global uploadgrænse:"
+
+#~ msgid "Per transfer:"
+#~ msgstr "Pr. overførsel:"
+
+#~ msgid "Reconnect on Error or Broken Connection"
+#~ msgstr "Forbind igen ved fejl eller afbrudt forbindelse"
+
+#~ msgid "Number of retries:"
+#~ msgstr "Antal gentagne forsøg:"
+
+#~ msgid "Retry after:"
+#~ msgstr "Forsøg igen efter:"
+
+#~ msgid " sec"
+#~ msgstr " sek."
+
+#~ msgid "After Completing Downloads"
+#~ msgstr "Efter afslutning af downloads"
+
+#~ msgid "Auto shutdown"
+#~ msgstr "Automatisk nedlukning"
+
+#~ msgid "Auto disconnect"
+#~ msgstr "Automatisk afbrydelse"
+
+#~ msgid "Enable Web Interface"
+#~ msgstr "Aktivér webgrænseflade"
+
+#~ msgid "Port:"
+#~ msgstr "Port:"
+
+#~ msgid "User:"
+#~ msgstr "Bruger:"
+
+#~ msgid "Password:"
+#~ msgstr "Adgangskode:"
+
+#~ msgid "Startup"
+#~ msgstr "Opstart"
+
+#~ msgid "Show splashscreen"
+#~ msgstr "Vis splashskærm"
+
+#~ msgid "Enable animations"
+#~ msgstr "Aktivér animationer"
+
+#~ msgid "Enable popup tooltip"
+#~ msgstr "Aktivér pop-op med værktøjstip"
+
+#~ msgid "Show drop target"
+#~ msgstr "Vis dropmål"
+
+#~ msgid "Disable confirmation dialogs (less verbosity)"
+#~ msgstr "Deaktivér bekræftelsesdialoger (mindre uddybende)"
+
+#~ msgid "Enable system tray icon"
+#~ msgstr "Aktivér statusikon"
+
+#~ msgid "Execute action after all downloads have been finished:"
+#~ msgstr "Udfør handling når alle downloads er færdige:"
+
+#~ msgid "At startup:"
+#~ msgstr "Ved opstart:"
+
+#~ msgid "Restore Download State"
+#~ msgstr "Gendan download-tilstand"
+
+#~ msgid "Start All Downloads"
+#~ msgstr "Start alle downloads"
+
+#~ msgid "Stop All Downloads"
+#~ msgstr "Stop alle downloads"
+
+#~ msgid "History"
+#~ msgstr "Historik"
+
+#~ msgid "History backend:"
+#~ msgstr "Historikmotor:"
+
+#~ msgid "Enable KDE global progress tracking"
+#~ msgstr "Aktivér KDE's globale fremgangsovervågning"
+
+#~ msgid "Show every single download "
+#~ msgstr "Vis hvert enkelt download "
+
+#~ msgid "Show overall progress"
+#~ msgstr "Vis samlet fremgang"
+
+#~ msgid "Use as download manager for Konqueror:"
+#~ msgstr "Brug til downloadhåndtering i Konqueror:"
+
+#~ msgid "Monitor clipboard for files to download"
+#~ msgstr "Overvåg udklipsholderen for filer at downloade"
+
+#~ msgid "Case insensitive:"
+#~ msgstr "Ikke-versalfølsom:"
+
+#~ msgid "Search Engines"
+#~ msgstr "Søgemaskiner"
+
+#~ msgid "Engine Name"
+#~ msgstr "Maskinenavn"
+
+#~ msgid "New Engine..."
+#~ msgstr "Ny maskine..."
+
+#~ msgid "Number of connections per URL:"
+#~ msgstr "Antal forbindelser pr. URL:"
+
+#~ msgid "Use search engines"
+#~ msgstr "Brug søgemaskiner"
+
+#~ msgid "Search for verification information"
+#~ msgstr "Søg efter verificeringsinformation"
+
+#~ msgid "File Settings"
+#~ msgstr "Filindstillinger"
+
+#~ msgid "Filename:"
+#~ msgstr "Filnavn:"
+
+#~ msgid "Use Normalized Name"
+#~ msgstr "Brug normaliseret navn"
+
+#~ msgid "Use Literal Name"
+#~ msgstr "Brug bogstaveligt navn"
+
+#~ msgid "Quality:"
+#~ msgstr "Kvalitet:"
+
+#~ msgid "Best Quality (.mp4)"
+#~ msgstr "Bedste kvalitet (.mp4)"
+
+#~ msgid "Normal Quality (.flv)"
+#~ msgstr "Normal kvalitet (.flv)"
+
+#~ msgid ""
+#~ "Provide login info of your YouTube account in order to access restricted "
+#~ "media."
+#~ msgstr ""
+#~ "Oplys login-information til din YouTube-konto for at kunne tilgå indhold "
+#~ "med begrænset adgang."
+
+#~ msgid "Login Info"
+#~ msgstr "Login-info"
+
+#~ msgid "Username:"
+#~ msgstr "Brugernavn:"
+
+#~ msgid ".netrc must have a hostname called 'youtube'."
+#~ msgstr ".netrc skal have et værtsnavn kaldet \"youtube\"."
+
+#~ msgid "User .netrc file"
+#~ msgstr ".netrc-fil for bruger"
+
+#~ msgid "User Scripts"
+#~ msgstr "Bruger-scripts"
+
+#~ msgid "Path"
+#~ msgstr "Sti"
+
+#~ msgid "RegExp"
+#~ msgstr "Reg. udtr."
+
+#~ msgid "New Script...."
+#~ msgstr "Nyt script..."
+
+#~ msgid "Edit...."
+#~ msgstr "Redigér..."
+
+#~ msgid "Configure...."
+#~ msgstr "Indstil..."
+
+#~ msgid "Regexp:"
+#~ msgstr "Reg. udtr.:"
+
+#~ msgid "Path:"
+#~ msgstr "Sti:"
+
+#~ msgid "Description:"
+#~ msgstr "Beskrivelse:"
+
+#~ msgid "Select the files you want to be downloaded."
+#~ msgstr "Vælg de filer du vil downloade."
+
+#~ msgid "Number of simultaneous file downloads:"
+#~ msgstr "Antal samtidige fildownloads:"
+
+#~ msgid "Number of mirrors per file:"
+#~ msgstr "Antal mirrors pr. fil:"
+
+#~ msgid "Change string:"
+#~ msgstr "Ændr streng:"
+
+#~ msgid "Mode:"
+#~ msgstr "Tilstand:"
+
+#~ msgid "Checksum type:"
+#~ msgstr "Type af tjeksum:"
+
+#~ msgid "Result:"
+#~ msgstr "Resultat:"
+
+#~ msgid "label"
+#~ msgstr "etiket"
+
+#~ msgid "Remove Tracker"
+#~ msgstr "Fjern tracker"
+
+#~ msgid "Change Tracker"
+#~ msgstr "Skift tracker"
+
+#~ msgid "Update Trackers"
+#~ msgstr "Opdatér trackers"
+
+#~ msgid "Restore Defaults"
+#~ msgstr "Gendan standardindstillinger"
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Webseed to add to the "
+#~ "torrent.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">Note: </span>Only http webseeds are supported.</p></body></"
+#~ "html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Webseed der skal "
+#~ "tilføjestil torrenten.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">Bemærk: </span>Kun http-webseeds er understøttet.</p></"
+#~ "body></html>"
+
+#~ msgid "Add Webseed"
+#~ msgstr "Tilføj webseed"
+
+#~ msgid "Remove Webseed"
+#~ msgstr "Fjern webseed"
+
+#~ msgid "Chunks"
+#~ msgstr "Stykker"
+
+#~ msgid "Total:"
+#~ msgstr "I alt:"
+
+#~ msgid "Currently downloading:"
+#~ msgstr "Downloader nu:"
+
+#~ msgid "Downloaded:"
+#~ msgstr "Downloadet:"
+
+#~ msgid "Excluded:"
+#~ msgstr "Undtaget:"
+
+#~ msgid "Left:"
+#~ msgstr "Tilbage:"
+
+#~ msgid "Size:"
+#~ msgstr "Størrelse:"
+
+#~ msgid "Scanning data of torrent:"
+#~ msgstr "Scanner torrents data:"
+
+#~ msgid "Number of chunks found:"
+#~ msgstr "Antal stykker fundet:"
+
+#~ msgid "Number of chunks failed:"
+#~ msgstr "Antal mislykkede stykker:"
+
+#~ msgid "Number of chunks not downloaded:"
+#~ msgstr "Antal stykker som ikke er downloadet:"
+
+#~ msgid "Number of chunks downloaded:"
+#~ msgstr "Antal stykker downloadet:"
+
+#~ msgid "0"
+#~ msgstr "0"
+
+#~ msgid "Cancel"
+#~ msgstr "Annullér"
+
+#~ msgid "Stats"
+#~ msgstr "Statistik"
+
+#~ msgid "Seeders:"
+#~ msgstr "Seedere:"
+
+#~ msgid "<n>"
+#~ msgstr "<n>"
+
+#~ msgid "Download speed:"
+#~ msgstr "Downloadhast.:"
+
+#~ msgid "Leechers:"
+#~ msgstr "Leechers:"
+
+#~ msgid "Upload speed:"
+#~ msgstr "Uploadhast.:"
+
+#~ msgctxt "chunks left"
+#~ msgid "Left:"
+#~ msgstr "Tilbage:"
+
+#~ msgctxt "all chunks"
+#~ msgid "All:"
+#~ msgstr "Alle:"
+
+#~ msgctxt "source-file"
+#~ msgid "Source:"
+#~ msgstr "Kilde:"
+
+#~ msgid "Saving to:"
+#~ msgstr "Gemmer til:"
+
+#~ msgid "Upload limit per transfer:"
+#~ msgstr "Uploadgrænse pr. overførsel:"
+
+#~ msgid "No Limit"
+#~ msgstr "Ingen grænse"
+
+#~ msgid "KiB"
+#~ msgstr "KiB"
+
+#~ msgid "Download limit per transfer:"
+#~ msgstr "Downloadgrænse pr. overførsel:"
+
+#~ msgid "Enable UTP protocol"
+#~ msgstr "Aktivér UTP-protokol"
+
+#~ msgid "Folders"
+#~ msgstr "Mapper"
+
+#~ msgid "Default torrent folder:"
+#~ msgstr "Standardmappe til torrents:"
+
+#~ msgid "Default temporary folder"
+#~ msgstr "Standardmappe til midlertidige filer"
+
+#~ msgid "Pre-allocate disk space"
+#~ msgstr "Præallokering af diskplads"
+
+#~ msgctxt "General options."
+#~ msgid "General"
+#~ msgstr "Generelt"
+
+#~ msgid "Create partial checksums"
+#~ msgstr "Opret delvise tjeksummer"
+
+#~ msgid "General URL:"
+#~ msgstr "Generel URL:"
+
+#~ msgid ""
+#~ "Automatically create checksums for the selected types. Keep in mind that "
+#~ "this might take a while."
+#~ msgstr ""
+#~ "Opret automatisk tjeksummer for de valgte typer. Vær opmærksom på at "
+#~ "dette kan tage noget tid."
+
+#~ msgid ""
+#~ "Enter URLs here if all the dropped files are on that server and in the "
+#~ "same directory. For each dropped file the URL would consist of the "
+#~ "entered part and the filename."
+#~ msgstr ""
+#~ "Angiv URL'er her hvis alle droppede filer er på den server og i den samme "
+#~ "mappe. For hver droppet fil vil URL'en bestå af den angivne del og "
+#~ "filnavnet."
+
+#~ msgid "Types of the checksums:"
+#~ msgstr "Typer af tjeksummer:"
+
+#~ msgid "Create checksums:"
+#~ msgstr "Opret tjeksummer:"
+
+#~ msgctxt "These entries are optional."
+#~ msgid "Optional"
+#~ msgstr "Valgfrit"
+
+#~ msgid "Optional data:"
+#~ msgstr "Valgfri data:"
+
+#~ msgid "Enter information that all chosen files share."
+#~ msgstr "Angiv information som alle valgte filer deler."
+
+#~ msgid "Required"
+#~ msgstr "Påkrævet"
+
+#~ msgid "Used Mirrors:"
+#~ msgstr "Anvendte mirrors:"
+
+#~ msgid "Recommended"
+#~ msgstr "Anbefalet"
+
+#~ msgid "File size (in bytes):"
+#~ msgstr "Filstørrelse (i bytes):"
+
+#~ msgid "0123456789"
+#~ msgstr "0123456789"
+
+#~ msgid "Verification:"
+#~ msgstr "Verificering:"
+
+#~ msgid "Optional"
+#~ msgstr "Valgfrit"
+
+#~ msgid ""
+#~ "This assistant allows you to create metalinks from scratch or base them "
+#~ "on existing metalinks. A lot of the fields are optional or recommended, "
+#~ "so enter them if desired. The minimum is a save location, at least one "
+#~ "file and one URL."
+#~ msgstr ""
+#~ "Assistenten lader dig oprette metalinks fra bunden eller basere dem på "
+#~ "eksisterende metalinks. Mange felter er valgfri eller anbefalede, så "
+#~ "udfyld dem hvis du ønsker. Minimum er en gemmeplacering, mindst én fil og "
+#~ "én URL."
+
+#~ msgid "Save created Metalink at:"
+#~ msgstr "Gem oprettet metalink på:"
+
+#~ msgid "Create new Metalink"
+#~ msgstr "Opret nyt metalink"
+
+#~ msgid "Load existing Metalink:"
+#~ msgstr "Indlæs eksisterende metalink:"
+
+#~ msgid "*.metalink *.meta4|Metalink file (*.metalink *.meta4)"
+#~ msgstr "*.metalink *.meta4|Metalink-fil (*.metalink *.meta4)"
+
+#~ msgid "General information:"
+#~ msgstr "Generel information:"
+
+#~ msgid "Here you can enter optional general information on the metalink."
+#~ msgstr "Her kan du angive valgfri generel information om metalinket."
+
+#~ msgid "Origin:"
+#~ msgstr "Oprindelse:"
+
+#~ msgid "Web URL to the metalink"
+#~ msgstr "Webadresse til metalinket"
+
+#~ msgid "Dynamic means that updated metalinks can be found at \"Origin\"."
+#~ msgstr ""
+#~ "Dynamisk betyder at opdaterede metalinks kan findes på \"Oprindelsen\"."
+
+#~ msgid "Dynamic:"
+#~ msgstr "Dynamisk:"
+
+#~ msgid "Metalink published"
+#~ msgstr "Metalink publiceret"
+
+#~ msgid "Date and time:"
+#~ msgstr "Dato og tid:"
+
+#~ msgid "Timezone offset:"
+#~ msgstr "Forskydning af tidszone:"
+
+#~ msgid "Negative offset:"
+#~ msgstr "Negativ forskydning:"
+
+#~ msgid "Metalink updated"
+#~ msgstr "Metalink opdateret"
+
+#~ msgid "Identity"
+#~ msgstr "Identitet"
+
+#~ msgid "Version:"
+#~ msgstr "Version:"
+
+#~ msgid "Logo:"
+#~ msgstr "Logo:"
+
+#~ msgid "URL to the logo"
+#~ msgstr "URL til logoet"
+
+#~ msgid "The language of the file"
+#~ msgstr "Filens sprog"
+
+#~ msgid "Language:"
+#~ msgstr "Sprog:"
+
+#~ msgid "Operating systems:"
+#~ msgstr "Operativsystemer:"
+
+#~ msgid "Supported OSes, separated with commas"
+#~ msgstr "Understøttede OS'er, adskilt med kommaer"
+
+#~ msgid "Copyright:"
+#~ msgstr "Ophavsret:"
+
+#~ msgid "Publisher:"
+#~ msgstr "Udgiver:"
+
+#~ msgid "Name:"
+#~ msgstr "Navn:"
+
+#~ msgid "publisher"
+#~ msgstr "udgiver"
+
+#~ msgid "Name of the publisher"
+#~ msgstr "Navnet på udgiveren"
+
+#~ msgid "URL to the publisher"
+#~ msgstr "URL til udgiveren"
+
+#~ msgctxt "Files as in files on a server"
+#~ msgid "Files:"
+#~ msgstr "Filer:"
+
+#~ msgid "Add local files"
+#~ msgstr "Tilføj lokale filer"
+
+#~ msgid ""
+#~ "Add at least one file. Adding local files adds a lot of information "
+#~ "automatically."
+#~ msgstr ""
+#~ "Tilføj mindst én fil. Tilføjelse af lokale filer tilføjer meget "
+#~ "information automatisk."
+
+#~ msgid "Adding local files..."
+#~ msgstr "Tilføjelse af lokale filer..."
+
+#~ msgid "You need to set mirrors for the entries with an icon."
+#~ msgstr "Du skal angive mirrors for indgangene med et ikon."
+
+#~ msgid "&File with links to import:"
+#~ msgstr "&Fil med links der skal importeres:"
+
+#~ msgid "&Import Links"
+#~ msgstr "&Importér links"
+
+#~ msgid "Show:"
+#~ msgstr "Vis:"
+
+#~ msgctxt "filter: show all file types"
+#~ msgid "&All"
+#~ msgstr "&Alle"
+
+#~ msgid "&Videos"
+#~ msgstr "&Videoer"
+
+#~ msgid "Ima&ges"
+#~ msgstr "&Billeder"
+
+#~ msgid "A&udio"
+#~ msgstr "&Lyd"
+
+#~ msgid "A&rchives"
+#~ msgstr "A&rkiver"
+
+#~ msgid "You can use wildcards for filtering."
+#~ msgstr "Du kan bruge jokertegn til filtrering."
+
+#~ msgid "Filter files here...."
+#~ msgstr "Filtrér filer her..."
+
+#~ msgid "Contains"
+#~ msgstr "Indeholder"
+
+#~ msgid "Does Not Contain"
+#~ msgstr "Indeholder ikke"
+
+#~ msgid "Inver&t Selection"
+#~ msgstr "Inver&tér markering"
+
+#~ msgctxt "Check as in mark, not as in verify"
+#~ msgid "Chec&k Selected"
+#~ msgstr "Tje&k markerede"
+
+#~ msgid "Show &web content"
+#~ msgstr "Vis &webindhold"
+
+#~ msgid "Mirror:"
+#~ msgstr "Mirror:"
+
+#~ msgid "Number of connections:"
+#~ msgstr "Antal forbindelser:"
+
+#~ msgid "Enter a URL"
+#~ msgstr "Angiv en URL"
+
+#~ msgid "Priority:"
+#~ msgstr "Prioritet:"
+
+#~ msgid "Optional: The priority of the mirror, 1 highest 999999 lowest."
+#~ msgstr "Valgfrit: Prioritet for mirror, 1 højest og 999999 lavest."
+
+#~ msgid "Location:"
+#~ msgstr "Placering:"
+
+#~ msgid "Clear History"
+#~ msgstr "Ryd historik"
+
+#~ msgctxt "View modes"
+#~ msgid "View Modes"
+#~ msgstr "Visningstilstande"
+
+#~ msgid "Select Ranges"
+#~ msgstr "Vælg områder"
+
+#~ msgid "Date"
+#~ msgstr "Dato"
+
+#~ msgid "Host"
+#~ msgstr "Vært"
+
+#~ msgid "Filter History"
+#~ msgstr "Filtrér historik"
+
+#~ msgctxt "delete selected transfer"
+#~ msgid "Delete Selected"
+#~ msgstr "Slet markerede"
+
+#~ msgid "Download"
+#~ msgstr "Download"
+
+#~ msgid "TextLabel"
+#~ msgstr "TextLabel"
+
+#~ msgctxt "hash type as in md5t, sha1 etc."
+#~ msgid "Hash type:"
+#~ msgstr "Hash-type:"
+
+#~ msgctxt "hash as a hash of type md5, sha1 etc."
+#~ msgid "Hash:"
+#~ msgstr "Hash:"
+
+#~ msgid "Enter a hash key"
+#~ msgstr "Angiv en hash-nøgle"
+
+#~ msgid "Status:"
+#~ msgstr "Status:"
+
+#~ msgid "Remaining Time:"
+#~ msgstr "Tid tilbage:"
+
+#~ msgid "Transfer Settings"
+#~ msgstr "Overførselsindstillinger"
+
+#~ msgid "Download Destination:"
+#~ msgstr "Downloaddestination:"
+
+#~ msgctxt "No value has been set"
+#~ msgid "Not set"
+#~ msgstr "Ikke angivet"
+
+#~ msgid " KiB"
+#~ msgstr " KiB"
+
+#~ msgid "Upload Limit:"
+#~ msgstr "Uploadgrænse:"
+
+#~ msgid "Download Limit:"
+#~ msgstr "Downloadgrænse:"
+
+#~ msgid "Maximum Share Ratio:"
+#~ msgstr "Maksimalt delingsforhold:"
+
+#~ msgid "Modify the mirrors used for downloading."
+#~ msgstr "Ændr de mirrors der bruges til download."
+
+#~ msgctxt "The available mirrors (servers) for downloading"
+#~ msgid "Mirrors"
+#~ msgstr "Mirrors"
+
+#~ msgctxt "verification of the download (e.g. by using MD5)"
+#~ msgid "Verification"
+#~ msgstr "Verificering"
+
+#~ msgid "PGP signature:"
+#~ msgstr "PGP-signatur:"
+
+#~ msgid "Key"
+#~ msgstr "Nøgle"
+
+#~ msgid "Issuer:"
+#~ msgstr "Udsteder:"
+
+#~ msgid "E-Mail:"
+#~ msgstr "E-mail:"
+
+#~ msgid "Comment:"
+#~ msgstr "Kommentar:"
+
+#~ msgid "Creation:"
+#~ msgstr "Oprettelse:"
+
+#~ msgid "Expiration:"
+#~ msgstr "Udløb:"
+
+#~ msgid "Trust:"
+#~ msgstr "Betroethed:"
+
+#~ msgid "Fingerprint:"
+#~ msgstr "Fingeraftryk:"
+
+#~ msgid "Verify"
+#~ msgstr "Verificér"
+
+#~ msgid "Group Settings"
+#~ msgstr "Gruppeindstilinger"
+
+#~ msgid "Default folder:"
+#~ msgstr "Standardmappe:"
+
+#~ msgid "Moves all transfers with the regular expression to this group"
+#~ msgstr "Flytter alle overførsler med det regulære udtryk til denne gruppe"
+
+#~ msgid "Regular expression:"
+#~ msgstr "Regulært udtryk:"
+
+#~ msgid "*movies*"
+#~ msgstr "*movies*"
+
+#~ msgid "Maximum download speed:"
+#~ msgstr "Maksimal downloadhastighed:"
+
+#~ msgid "Maximum upload speed:"
+#~ msgstr "Maksimal uploadhastighed:"
+
+#~ msgid "Destination:"
+#~ msgstr "Destination:"
+
+#~ msgid "Transfer group:"
+#~ msgstr "Overførselsgruppe:"
+
+#~ msgid "Verify the finished download with the selected checksum."
+#~ msgstr "Verificér det færdige download med den valgte tjeksum."
+
+#~ msgid "&Verify"
+#~ msgstr "&Verificér"
+
+#~ msgid "Verifying:"
+#~ msgstr "Verificerer:"
+
+#~ msgid "&File"
+#~ msgstr "&Fil"
+
+#~ msgid "&Downloads"
+#~ msgstr "&Downloads"
+
+#~ msgid "&Settings"
+#~ msgstr "&Indstillinger"
+
+#~ msgid "&Help"
+#~ msgstr "&Hjælp"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Hovedværktøjslinje"
+
+#~ msgid "Sets to show the splashscreen while KGet is loading"
+#~ msgstr "Sætter opstartsbilledet til at blive vist når KGet indlæses"
+
+#~ msgid "The width of the columns in the history view"
+#~ msgstr "Bredden på kolonnerne i historikvisningen"
+
+#~ msgid "List of the available search engines"
+#~ msgstr "Liste over tilgænglige søgemaskiner"
+
+#~ msgid "List of the available search engine URLs"
+#~ msgstr "Liste over tilgænglige URL'er til søgemaskiner"
+
+#~ msgid "List of the Regexp to match input URL"
+#~ msgstr "Liste over de reg. udtr. der skal matche input-URL"
+
+#~ msgid "List of descriptions for user scripts"
+#~ msgstr "Liste over beskrivelser for bruger-scripts"
+
+#~ msgid "List of whether the script is enabled"
+#~ msgstr "Liste over om scriptet er aktiveret"
+
+#~ msgid "There are no links in the active frame of the current HTML page."
+#~ msgstr "Der er ingen link i den aktive ramme for denne HTML-side."
+
+#~ msgid "Form"
+#~ msgstr "Formular"
+
+#~ msgid "An error occurred...."
+#~ msgstr "En fejl opstod..."
+
+#~ msgid "Remove Tag"
+#~ msgstr "Fjern tag"
+
+#~ msgid "Add Tag"
+#~ msgstr "Tilføj mærke"
+
+#~ msgid "Tag Settings for the groups"
+#~ msgstr "Mærkeindstillinger for grupperne"
+
+#~ msgid "Tag Settings"
+#~ msgstr "Mærkeindstillinger"
+
+#~ msgid "Available tags:"
+#~ msgstr "Tilgængelige mærker:"
+
+#~ msgid "Used tags:"
+#~ msgstr "Brugte mærker:"
+
+#~ msgid "Enter a new Tag"
+#~ msgstr "Angiv et nyt mærke"
+
+#~ msgid "Enter a new tag"
+#~ msgstr "Angiv et nyt mærke"
+
+#~ msgid "Modify Tags..."
+#~ msgstr "Ændr mærker..."
+
+#~ msgid "Unable to continue: KGet cannot download using this protocol."
+#~ msgstr "Kan ikke fortsætte: KGet kan ikke downloade via denne protokol."
+
+#~ msgid "The width of the columns in the main view"
+#~ msgstr "Bredden på kolonnerne i hovedvisningen"
+
+#~ msgid "OK"
+#~ msgstr "O.k."
+
+#~ msgid "Announcing"
+#~ msgstr "Annoncerer"
+
+#~ msgid "Error: %1"
+#~ msgstr "Fejl: %1"
+
+#~ msgid "Unknown client"
+#~ msgstr "Ukendt klient"
+
+#~ msgid "1 day "
+#~ msgid_plural "%1 days "
+#~ msgstr[0] "1 dag"
+#~ msgstr[1] "%1 dage"
+
+#~ msgid "Cannot open log file %1 : %2"
+#~ msgstr "Kan ikke åbne logfilen %1 : %2"
+
+#~ msgid "Cannot write to %1 : %2"
+#~ msgstr "Kan ikke skrive til %1 : %2"
+
+#~ msgid "Cannot read from %1"
+#~ msgstr "Kan ikke læse fra %1"
+
+#~ msgid "Cannot create directory %1"
+#~ msgstr "Kan ikke oprette mappen %1"
+
+#~ msgid "Cannot symlink %1 to %2: %3"
+#~ msgstr "Kan ikke oprette symbolsk link fra %1 til %2: %3"
+
+#~ msgid "Cannot move %1 to %2: %3"
+#~ msgstr "Kan ikke flytte %1 til %2: %3"
+
+#~ msgid "Cannot copy %1 to %2: %3"
+#~ msgstr "Kan ikke kopiere %1 til %2: %3"
+
+#~ msgid "Cannot delete %1: %2"
+#~ msgstr "Kan ikke slette %1: %2"
+
+#~ msgid "Cannot create %1: %2"
+#~ msgstr "Kan ikke oprette %1: %2"
+
+#~ msgid "Cannot calculate the filesize of %1: %2"
+#~ msgstr "Kan ikke beregne filstørrelse for %1: %2"
+
+#~ msgid "Cannot calculate the filesize : %1"
+#~ msgstr "Kan ikke beregne filstørrelsen: %1"
+
+#~ msgid "Cannot open %1 : %2"
+#~ msgstr "Kan ikke åbne %1 : %2"
+
+#~ msgid "Cannot expand file: %1"
+#~ msgstr "Kan ikke ekspandere fil : %1"
+
+#~ msgid "Cannot seek in file : %1"
+#~ msgstr "Kan ikke søge i indeksfil: %1"
+
+#~ msgid "General"
+#~ msgstr "Generelt"
+
+#~ msgid "Connections"
+#~ msgstr "Forbindelser"
+
+#~ msgid "Tracker"
+#~ msgstr "Tracker"
+
+#~ msgid "Disk Input/Output"
+#~ msgstr "Disk input/output"
+
+#~ msgid "Not connected"
+#~ msgstr "Ikke forbundet"
+
+#~ msgid "Not in use"
+#~ msgstr "Ikke i brug"
+
+#~ msgid "Connection closed"
+#~ msgstr "Forbindelse lukket"
+
+#~ msgid "Resolving proxy %1:%2"
+#~ msgstr "Slår proxy'en %1:%2 op"
+
+#~ msgid "Resolving hostname %1"
+#~ msgstr "Slår værtsnavnet %1 op"
+
+#~ msgid "Error: request failed: %1"
+#~ msgstr "Fejl: Forespørgsel fejlede: %1"
+
+#~ msgid "Connected"
+#~ msgstr "Forbundet"
+
+#~ msgid "Error: Failed to connect to webseed"
+#~ msgstr "Fejl: Kunne ikke forbinde til webseed"
+
+#~ msgid "Connecting"
+#~ msgstr "Forbinder"
+
+#~ msgid "Failed to connect to webseed"
+#~ msgstr "Kunne ikke forbinde til webseed"
+
+#~ msgid "Failed to resolve hostname of webseed"
+#~ msgstr "Kunne ikke slå værtsnavnet for webseed op"
+
+#~ msgid "Error: failed to connect, server not responding"
+#~ msgstr "Fejl: Kunne ikke forbinde, serveren svarer ikke"
+
+#~ msgid "Error: request timed out"
+#~ msgstr "Fejl: Tidsudløb af forespørgsel"
+
+#~ msgid "Redirected without a new location."
+#~ msgstr "Omdirigeret uden en ny placering."
+
+#~ msgid "1 peer"
+#~ msgid_plural "%1 peers"
+#~ msgstr[0] "1 peer"
+#~ msgstr[1] "%1 peers"
+
+#~ msgid "Illegal token: %1"
+#~ msgstr "Ulovligt symbol: %1"
+
+#~ msgid "Decode error"
+#~ msgstr "Afkodningsfejl"
+
+#~ msgid "Unexpected end of input"
+#~ msgstr "Uventet slut på inddata"
+
+#~ msgid "Cannot convert %1 to an int"
+#~ msgstr "Kan ikke konvertere %1 til et heltal"
+
+#~ msgid "Torrent is incomplete."
+#~ msgstr "Torrent er ukomplet."
+
+#~ msgid "Failed to open %1 : %2"
+#~ msgstr "Kunne ikke åbne %1 : %2"
+
+#~ msgid "Failed to create %1 : %2"
+#~ msgstr "Fejl under oprettelse af %1 : %2"
+
+#~ msgid "Cannot open index file %1 : %2"
+#~ msgstr "Kan ikke åbne indeksfilen %1 : %2"
+
+#~ msgid "Cannot create file %1 : %2"
+#~ msgstr "Kan ikke oprette filen %1: %2"
+
+#~ msgid "Failed to write first chunk to DND file : %1"
+#~ msgstr "Mislykkedes at skrive første stykke til DND-filen: %1"
+
+#~ msgid "Failed to write last chunk to DND file : %1"
+#~ msgstr "Mislykkedes at skrive sidste stykke til DND-filen: %1"
+
+#~ msgid "Cannot open %1 for writing : readonly filesystem"
+#~ msgstr "Kan ikke åbne %1 til skrivning : skrivebeskyttet filsystem"
+
+#~ msgid "Cannot expand file %1 : %2"
+#~ msgstr "Kan ikke udvide filen %1 : %2"
+
+#~ msgid "Error : Reading past the end of the file %1"
+#~ msgstr "Fejl: Læsning forbi filslutning for filen %1"
+
+#~ msgid "Failed to seek file %1 : %2"
+#~ msgstr "Kunne ikke søge i filen %1 : %2"
+
+#~ msgid "Error reading from %1"
+#~ msgstr "Fejl under læsning fra %1"
+
+#~ msgid "Failed to write to file %1 : %2"
+#~ msgstr "Kunne ikke skrive til filen %1 : %2"
+
+#~ msgid "Cannot preallocate diskspace : %1"
+#~ msgstr "Kan ikke præallokere diskplads : %1"
+
+#~ msgid "Cannot open file %1 : %2"
+#~ msgstr "Kan ikke åbne filen %1 : %2"
+
+#~ msgid "Corrupted torrent."
+#~ msgstr "Defekt torrent."
+
+#~ msgid " Unable to open torrent file %1 : %2"
+#~ msgstr "Kan ikke åbne torrent-filen %1: %2"
+
+#~ msgid "Parse Error"
+#~ msgstr "Fortolkningsfejl"
+
+#~ msgid ""
+#~ "An error occurred while loading the torrent <b>%1</b>:<br/><b>%2</b><br/"
+#~ ">The torrent is probably corrupt or is not a valid torrent file."
+#~ msgstr ""
+#~ "En fejl opstod under indlæsning af torrenten <b>%1</b>:<br/><b>%2</b><br/"
+#~ ">Torrenten er sandsynligvis defekt, eller er ikke en gyldig torrent-fil."
+
+#~ msgid ""
+#~ "An error occurred while loading the torrent:<br/><b>%1</b><br/>The "
+#~ "torrent is probably corrupt or is not a valid torrent file."
+#~ msgstr ""
+#~ "En fejl opstod under indlæsning af torrenten <br/><b>%1</b><br/>Torrenten "
+#~ "er sandsynligvis defekt, eller er ikke en gyldig torrent-fil."
+
+#~ msgid "Unable to create %1 : %2"
+#~ msgstr "Kan ikke oprette %1 : %2"
+
+#~ msgid ""
+#~ "You are already downloading this torrent %1, the list of trackers of both "
+#~ "torrents has been merged."
+#~ msgstr ""
+#~ "Du downloader allerede torrenten %1, listen over trackere for begge "
+#~ "torrenter er blevet sammenflettet."
+
+#~ msgid "You are already downloading the torrent %1"
+#~ msgstr "Du downloader allerede torrenten %1"
+
+#~ msgid "Not started"
+#~ msgstr "Ikke startet"
+
+#~ msgid "Seeding completed"
+#~ msgstr "Klar til at tilbyde torrent"
+
+#~ msgctxt "Status of a torrent file"
+#~ msgid "Seeding"
+#~ msgstr "Seeder"
+
+#~ msgid "Downloading"
+#~ msgstr "Downloader"
+
+#~ msgid "Stopped"
+#~ msgstr "Stoppet"
+
+#~ msgid "Allocating diskspace"
+#~ msgstr "Allokerer diskplads"
+
+#~ msgid "Queued for seeding"
+#~ msgstr "I kø til seedning"
+
+#~ msgid "Queued for downloading"
+#~ msgstr "I kø til download"
+
+#~ msgid "Checking data"
+#~ msgstr "Kontrollerer data"
+
+#~ msgid "Stopped. No space left on device."
+#~ msgstr "Stoppet. Ingen plads tilbage på enheden."
+
+#~ msgid "Cannot open file %1: %2"
+#~ msgstr "Kan ikke åbne filen %1: %2"
+
+#~ msgid "Cannot create index file: %1"
+#~ msgstr "Kan ikke oprette indeksfil: %1"
+
+#~ msgid "Redirect without a redirect location"
+#~ msgstr "Omdirigering uden en omdirigeringsplacering"
+
+#~ msgid "Timeout contacting tracker %1"
+#~ msgstr "Tidsudløb under kontakt til trackeren %1"
+
+#~ msgid "Unable to resolve hostname %1"
+#~ msgstr "Kunne ikke slå værtsnavnet %1 op"
+
+#~ msgid "Cannot bind to udp port %1 or the 10 following ports."
+#~ msgstr "Kan ikke binde til UDP-port %1 eller de 10 følgende porte."
+
+#~ msgid "Invalid response from tracker"
+#~ msgstr "Ugyldigt svar fra tracker"
+
+#~ msgid "Invalid data from tracker"
+#~ msgstr "Ugyldige data fra tracker"
+
+#~ msgid "Invalid tracker URL"
+#~ msgstr "Ugyldig URL for tracker"
+
+#~ msgid "Cannot open file : %1 : %2"
+#~ msgstr "Kan ikke åbne filen :%1 : %2"
+
+#~ msgid ""
+#~ "Another group with this name already exists. Please select a different "
+#~ "name."
+#~ msgstr "En anden gruppe med dette navn findes allerede. Vælg et andet navn."
+
+#~ msgid "Group Name Already in Use"
+#~ msgstr "Gruppenavn allerede i brug"
+
+#~ msgid "Add"
+#~ msgstr "Tilføj"
+
+#~ msgid "Delete"
+#~ msgstr "Slet"
+
+#~ msgid "Configure..."
+#~ msgstr "Indstil..."
+
+#~ msgid "Details for: %1"
+#~ msgstr "Detaljer for: %1"
+
+#~ msgid "All downloads"
+#~ msgstr "Alle downloads"
+
+#~ msgid "Finished downloads"
+#~ msgstr "Færdige downloads"
+
+#~ msgid "Transfers:"
+#~ msgstr "Overførsler:"
+
+#~ msgid "Downloads"
+#~ msgstr "Downloads"
+
+#~ msgid "Transfer details:"
+#~ msgstr "Overførselsdetaljer:"
+
+#~ msgid "Transfer List"
+#~ msgstr "Overførselsliste"
+
+#~ msgid "Expandable transfer details instead of separate tabs"
+#~ msgstr "Overførselsdetaljer som kan udvides i stedet for seperate faneblade"
+
+#~ msgid "Threads"
+#~ msgstr "Tråde"
+
+#~ msgid "Number of threads:"
+#~ msgstr "Antal tråde:"
+
+#~ msgid "Preference:"
+#~ msgstr "Præference:"
+
+#~ msgid "License:"
+#~ msgstr "Licens:"
+
+#~ msgid "Name of the license"
+#~ msgstr "Licensens navn"
+
+#~ msgid "URL to the license"
+#~ msgstr "URL til licensen"
+
+#~ msgctxt "The transfer is delayed"
+#~ msgid "Delayed"
+#~ msgstr "Udsat"
+
+#~ msgid ""
+#~ "Destination file \n"
+#~ "%1\n"
+#~ "already exists.\n"
+#~ "Do you want to overwrite it?"
+#~ msgstr ""
+#~ "Destinationsfilen\n"
+#~ "%1\n"
+#~ "findes allerede.\n"
+#~ "Vil du overskrive den?"
+
+#~ msgid "Overwrite destination"
+#~ msgstr "Overskriv destinationen?"
+
+#~ msgid "Cannot remove torrent default tracker."
+#~ msgstr "Kan ikke fjerne torrentens standardtracker."
+
+#~ msgid "You cannot add trackers to a private torrent"
+#~ msgstr "Du kan ikke tilføje trackers til en privat torrent."
+
+#~ msgid "Cannot migrate %1 : %2"
+#~ msgstr "Kan ikke konvertere %1: %2"
+
+#~ msgid ""
+#~ "The torrent %1 was started with a previous version of KTorrent. To make "
+#~ "sure this torrent still works with this version of KTorrent, we will "
+#~ "migrate this torrent. You will be asked for a location to save the "
+#~ "torrent to. If you press cancel, we will select your home directory."
+#~ msgstr ""
+#~ "Torrenten %1 blev startet med en tidligere version af KTorrent. For at "
+#~ "sikre at denne torrent stadig virker med denne version af KTorrent, vil "
+#~ "vi migrere denne torrent. Du vil blive spurgt om at sted at gemme "
+#~ "torrenten på. Hvis du trykker annullér, vil vi vælge din hjemmemappe."
+
+#~ msgid "Select Folder to Save To"
+#~ msgstr "Vælg mappe der skal gemmes til"
+
+#~ msgid "Queued"
+#~ msgstr "I kø"
+
+#~ msgid "Current Tracker"
+#~ msgstr "Nuværende tracker"
+
+#~ msgid "Manual Announce"
+#~ msgstr "Manuel annoncering"
+
+#~ msgid "Scrape"
+#~ msgstr "Scrape"
+
+#~ msgid "Available Trackers"
+#~ msgstr "Tilgængelige trackers"
+
+#~ msgid "Url:"
+#~ msgstr "Url:"
+
+#, fuzzy
+#~| msgid "Enter a new Tag"
+#~ msgid "Enter an url"
+#~ msgstr "Angiv et nyt mærke"
+
+#~ msgid "Urls list of the available search engines"
+#~ msgstr "Liste over URL'er for de tilgænglige søgemaskiner"
+
+#~ msgctxt "delete selected transfer item"
+#~ msgid "Delete Selected"
+#~ msgstr "Slet markerede"
+
+#, fuzzy
+#~| msgid "Clear History"
+#~ msgid "We are sorry"
+#~ msgstr "Ryd historik"
+
+#~ msgid "Rename transfer"
+#~ msgstr "Omdøb overførsel"
+
+#~ msgid "Download URL again?"
+#~ msgstr "Download URL igen?"
+
+#, fuzzy
+#~| msgid "File"
+#~ msgctxt "file in a filsystem"
+#~ msgid "File"
+#~ msgstr "Fil"
+
+#~ msgid "Are you sure that you want to remove all selected groups?"
+#~ msgstr "Vil du virkelig fjerne alle markerede grupper?"
+
+#~ msgid "Name"
+#~ msgstr "Navn"
+
+#~ msgid "Remaining Time"
+#~ msgstr "Tid tilbage"
+
+#~ msgid "KGet - Download Manager"
+#~ msgstr "KGet - downloadhåndtering"
+
+#~ msgctxt "@label transfer source"
+#~ msgid "Source:"
+#~ msgstr "Kilde:"
+
+#~ msgid "Minimal segment size:"
+#~ msgstr "Minimal segmentstørrelse:"
+
+#~ msgid "kBi"
+#~ msgstr "kBi"
+
+#~ msgid "Save data every:"
+#~ msgstr "Gem data hver:"
+
+#~ msgid ""
+#~ "You will lose all data in these files, are you sure you want to do this?"
+#~ msgstr "Du vil miste al data i disse filer. Vil du virkeig gøre dette?"
+
+#~ msgid "Maintainer, Core Developer"
+#~ msgstr "Vedligeholder, hovedudvikler"
+
+#~ msgid "Cannot expand file : %1"
+#~ msgstr "Kan ikke ekspandere fil : %1"
+
+#~ msgid "filterButtonGroup"
+#~ msgstr "filterButtonGroup"
+
+#~ msgid "Peers"
+#~ msgstr "Peers"
+
+#~ msgid "Torrent has no announce or nodes field"
+#~ msgstr "Torrenten har ingen meddelelse- eller knudefelt"
+
+#~ msgid ""
+#~ "An error occurred while loading the torrent.\n"
+#~ "The torrent is probably corrupt or is not a torrent file."
+#~ msgstr ""
+#~ "En fejl opstod under indlæsning af torrenten.\n"
+#~ "Torrenten er sandsynligvis defekt, eller er ikke en torrent-fil."
+
+#~ msgid "&Transfer History..."
+#~ msgstr "&Overførselshistorik..."
+
+#~ msgid "&Group Settings..."
+#~ msgstr "&Gruppeindstillinger..."
+
+#~ msgid "&Transfer Settings..."
+#~ msgstr "&Overførselsindstillinger..."
+
+#, fuzzy
+#~| msgid "Download-Speed:"
+#~ msgid "Download Speed:"
+#~ msgstr "Downloadhastighed:"
+
+#, fuzzy
+#~| msgid "Upload-Speed:"
+#~ msgid "Upload Speed:"
+#~ msgstr "Uploadhastighed:"
+
+#, fuzzy
+#~| msgid "Import links"
+#~ msgid "&Import links"
+#~ msgstr "Importér links"
+
+#~ msgid "The group name is empty"
+#~ msgstr "Gruppenavnet er tomt"
+
+#, fuzzy
+#~| msgid ""
+#~| "A group can not have an empty name\n"
+#~| "Please select a new one"
+#~ msgid ""
+#~ "A group can not have an empty name.\n"
+#~ "Please select a new one."
+#~ msgstr ""
+#~ "En gruppe må ikke have et tomt navn\n"
+#~ "Vælg venligst et nyt et"
+
+#, fuzzy
+#~| msgid "You can not delete this group!"
+#~ msgid "You can not delete this group."
+#~ msgstr "Du kan ikke slette denne gruppe!"
+
+#, fuzzy
+#~| msgid "Delete"
+#~ msgid "&Delete"
+#~ msgstr "Slet"
+
+#, fuzzy
+#~| msgid "Cancel"
+#~ msgid "&Cancel"
+#~ msgstr "Annullér"

@@ -1,0 +1,1907 @@
+# translation of konqueror.po to Kurdish
+# Kurdish translation for kdebase
+# Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
+# This file is distributed under the same license as the kdebase package.
+#
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2006.
+# Erdal Ronahi <erdal.ronahi@nospam.gmail.com>, 2007, 2008, 2009.
+# Amed Çeko Jiyan <amedcj@gmail.com>, 2008.
+# Erdal Ronahi <erdal.ronahi@nospam.gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: konqueror\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2009-01-06 14:18+0200\n"
+"Last-Translator: Erdal Ronahi <erdal.ronahi@nospam.gmail.com>\n"
+"Language-Team: American English <kde-i18n-doc@lists.kde.org>\n"
+"Language: ku\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Launchpad-Export-Date: 2007-11-26 10:24+0000\n"
+"X-Generator: Lokalize 0.2\n"
+
+#. i18n: ectx: Menu (tools)
+#: konq_shellcmdplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "&Amûr"
+
+#: kshellcmdexecutor.cpp:106
+#, kde-format
+msgid "Input Required:"
+msgstr "Têketin divê:"
+
+#: kshellcmdplugin.cpp:32
+#, kde-format
+msgid "&Execute Shell Command..."
+msgstr "Fermanên &Qalik Bixebitîne..."
+
+#: kshellcmdplugin.cpp:41
+#, kde-format
+msgid ""
+"KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a bug."
+msgstr ""
+"KShellCmdPlugin::slotExecuteShellCommand: Çewtiya bernameyê, ji kerema xwe "
+"re bugekê rapor bike."
+
+#: kshellcmdplugin.cpp:51
+#, kde-format
+msgid "Executing shell commands works only on local directories."
+msgstr "Tu tenê dikarî li ser peldankên herêmî fermanên qalikan bixebitîne."
+
+#: kshellcmdplugin.cpp:73
+#, fuzzy, kde-format
+#| msgid "Execute Shell Command"
+msgctxt "@title:window"
+msgid "Execute Shell Command"
+msgstr "Fermana Qalikan Bixebitîne"
+
+#: kshellcmdplugin.cpp:74
+#, kde-format
+msgid "Execute shell command in current directory:"
+msgstr "Fermana qalik li ser vê peldankê bixebitîne:"
+
+#: kshellcmdplugin.cpp:85
+#, kde-format
+msgid "Output from command: \"%1\""
+msgstr "Derana Fermanê: \"%1\""
+
+#~ msgid "no name"
+#~ msgstr "bênav"
+
+#~ msgid "Configure"
+#~ msgstr "Veavakirin"
+
+#~ msgid "Extensions"
+#~ msgstr "Pêvek"
+
+#~ msgid ""
+#~ "There was an error loading the module %1.\n"
+#~ "The diagnostics is:\n"
+#~ "%2"
+#~ msgstr ""
+#~ "Modula %1 nehate lêbarkirin.\n"
+#~ "Sedema çewtiyê:\n"
+#~ "%2"
+
+#~ msgid "Konqueror"
+#~ msgstr "Konqueror"
+
+#~ msgid "Web browser, file manager and document viewer."
+#~ msgstr "Geroka torê, gerînendeyê pelan û temaşekerê belgeyan."
+
+#~ msgid "(C) 1999-2008, The Konqueror developers"
+#~ msgstr "(c) 1999-2008, Pêşvebirên Konqueror"
+
+#~ msgid "http://konqueror.kde.org"
+#~ msgstr "http://konqueror.kde.org"
+
+#~ msgid "David Faure"
+#~ msgstr "David Faure"
+
+#~ msgid "Developer (framework, parts, JavaScript, I/O library) and maintainer"
+#~ msgstr ""
+#~ "Pêşvebir (çarçove, parçe, JavaScript, pirtûkxaneya I/O) û kesê mîqet"
+
+#~ msgid "Simon Hausmann"
+#~ msgstr "Simon Hausmann"
+
+#~ msgid "Developer (framework, parts)"
+#~ msgstr "Pêşvebir (çarçove, parçe)"
+
+#~ msgid "Michael Reiher"
+#~ msgstr "Michael Reiher"
+
+#~ msgid "Developer (framework)"
+#~ msgstr "pêşvebir (çarçove giştî)"
+
+#~ msgid "Matthias Welk"
+#~ msgstr "Matthias Welk"
+
+#~ msgid "Developer"
+#~ msgstr "Pêşvebir"
+
+#~ msgid "Alexander Neundorf"
+#~ msgstr "Alexander Neundorf"
+
+#~ msgid "Developer (List views)"
+#~ msgstr "Pêşvebir (Dîtina lîsteyan)"
+
+#~ msgid "Michael Brade"
+#~ msgstr "Michael Brade"
+
+#~ msgid "Developer (List views, I/O library)"
+#~ msgstr "Pêşvebir (dîtina lîsteyan, nivîsgeha I/O )"
+
+#~ msgid "Lars Knoll"
+#~ msgstr "Lars Knoll"
+
+#~ msgid "Developer (HTML rendering engine)"
+#~ msgstr "Pêşvebir (motora şîroveyan a HTML)"
+
+#~ msgid "Dirk Mueller"
+#~ msgstr "Dirk Mueller"
+
+#~ msgid "Peter Kelly"
+#~ msgstr "Peter Kelly"
+
+#~ msgid "Waldo Bastian"
+#~ msgstr "Waldo Bastian"
+
+#~ msgid "Developer (HTML rendering engine, I/O library)"
+#~ msgstr "Pêşvebir (motorê şîrovekirina HTML, nivîsgeha I/O )"
+
+#~ msgid "Germain Garand"
+#~ msgstr "Germain Garand"
+
+#~ msgid "Leo Savernik"
+#~ msgstr "Leo Savernik"
+
+#~ msgid "Stephan Kulow"
+#~ msgstr "Stephan Kulow"
+
+#~ msgid ""
+#~ "Developer (HTML rendering engine, I/O library, regression test framework)"
+#~ msgstr ""
+#~ "Pêşvebir (motorê şîrovekirina HTML, nivîsgeha I/O, nivîsgeha ketin û "
+#~ "derketinê )"
+
+#~ msgid "Antti Koivisto"
+#~ msgstr "Antti Koivisto"
+
+#~ msgid "Zack Rusin"
+#~ msgstr "Zack Rusin"
+
+#~ msgid "Tobias Anton"
+#~ msgstr "Tobias Anton"
+
+#~ msgid "Lubos Lunak"
+#~ msgstr "Lubos Lunak"
+
+#~ msgid "Developer (HTML rendering engine, JavaScript)"
+#~ msgstr "Pêşvebir (motorê şîrovekirina HTML,  JavaScript)"
+
+#~ msgid "Allan Sandfeld Jensen"
+#~ msgstr "Allan Sandfeld Jensen"
+
+#~ msgid "Apple Safari Developers"
+#~ msgstr "Pêşvebirên Apple Safari"
+
+#~ msgid "Harri Porten"
+#~ msgstr "Harri Porten"
+
+#~ msgid "Developer (JavaScript)"
+#~ msgstr "Pêşvebir (JavaScript)"
+
+#~ msgid "Koos Vriezen"
+#~ msgstr "Koos Vriezen"
+
+#~ msgid "Developer (Java applets and other embedded objects)"
+#~ msgstr "Pêşvebir (sepanokên Java û hêmanên hundirkirî)"
+
+#~ msgid "Matt Koss"
+#~ msgstr "Matt Koss"
+
+#~ msgid "Developer (I/O library)"
+#~ msgstr "Pêşvebir (I/O lib)"
+
+#~ msgid "Alex Zepeda"
+#~ msgstr "Alex Zepeda"
+
+#~ msgid "Richard Moore"
+#~ msgstr "Richard Moore"
+
+#~ msgid "Developer (Java applet support)"
+#~ msgstr "Pêşvebir (desteka sepanoka Java)"
+
+#~ msgid "Dima Rogozin"
+#~ msgstr "Dima Rogozin"
+
+#~ msgid "Wynn Wilkes"
+#~ msgstr "Wynn Wilkes"
+
+#~ msgid ""
+#~ "Developer (Java 2 security manager support,\n"
+#~ " and other major improvements to applet support)"
+#~ msgstr ""
+#~ "Pêşvebir (piştgirya gerînendeyê ewlekariyê yê Java 2,\n"
+#~ " û destekên hêja ji bo sepanokan)"
+
+#~ msgid "Stefan Schimanski"
+#~ msgstr "Stefan Schimanski"
+
+#~ msgid "Developer (Netscape plugin support)"
+#~ msgstr "Pêşvebir (desteka pêveka Netscape)"
+
+#~ msgid "George Staikos"
+#~ msgstr "George Staikos"
+
+#~ msgid "Developer (SSL, Netscape plugins)"
+#~ msgstr "Pêşvebir (SSL, piştgiriya pêveka Netscape)"
+
+#~ msgid "Dawit Alemayehu"
+#~ msgstr "Dawit Alemayehu"
+
+#~ msgid "Developer (I/O library, Authentication support)"
+#~ msgstr "Pêşvebir (pirtûkxaneya I/O, desteka piştrastkirina nasnameyê)"
+
+#~ msgid "Carsten Pfeiffer"
+#~ msgstr "Carsten Pfeiffer"
+
+#~ msgid "Torsten Rahn"
+#~ msgstr "Torsten Rahn"
+
+#~ msgid "Graphics/icons"
+#~ msgstr "Grafîk/dawêr"
+
+#~ msgid "Torben Weis"
+#~ msgstr "Torben Weis"
+
+#~ msgid "KFM author"
+#~ msgstr "Nivîskarê KFM"
+
+#~ msgid "Joseph Wenninger"
+#~ msgstr "Joseph Wenninger"
+
+#~ msgid "Developer (navigation panel framework)"
+#~ msgstr "Pêşvebir (çarçoveya panela navîgasiyonê)"
+
+#~ msgid "Stephan Binner"
+#~ msgstr "Stephan Binner"
+
+#~ msgid "Developer (misc stuff)"
+#~ msgstr "Pêşvebir (tiştên curbecur)"
+
+#~ msgid "Ivor Hewitt"
+#~ msgstr "Ivor Hewitt"
+
+#~ msgid "Developer (AdBlock filter)"
+#~ msgstr "Pêşvebir (Parzûnê AdBlock)"
+
+#~ msgid "Eduardo Robles Elvira"
+#~ msgstr "Eduardo Robles Elvira"
+
+#~ msgid ""
+#~ "Checking this box on at least two views sets those views as 'linked'. "
+#~ "Then, when you change directories in one view, the other views linked "
+#~ "with it will automatically update to show the current directory. This is "
+#~ "especially useful with different types of views, such as a directory tree "
+#~ "with an icon view or detailed view, and possibly a terminal emulator "
+#~ "window."
+#~ msgstr ""
+#~ "Bi kêmanî heke tu didu awayan de vê qutiyê nîşan bikî, dê dîtinên navborî "
+#~ "bi hev re bên girêdan. Bi vî rengî dema te di dîtinekê de pêrist guhart "
+#~ "dê dîtinên din ên têkildar jî bixweber bêne rojanekirin ji bo pêristê "
+#~ "nîşan bidin. Ev vebijêrk, bi taybetî di bikaranîna cureyên cuda yên "
+#~ "dîtinê, mînak dara pêristeke bi dîtina dawêrî an jî dîtina bi kîtekît, "
+#~ "bikêr tê."
+
+#~ msgid "Close View"
+#~ msgstr "Dîtinê Bigire"
+
+#~ msgid "%1/s"
+#~ msgstr "%1/s"
+
+#~ msgid "Stalled"
+#~ msgstr "Tê rawestandin"
+
+#~ msgid "Preview &in %1"
+#~ msgstr "Pêşdîtina &li %1"
+
+#~ msgid "Show %1"
+#~ msgstr "%1 nîşan bide"
+
+#, fuzzy
+#~| msgid "Clear History"
+#~ msgctxt "@title:window"
+#~ msgid "History"
+#~ msgstr "Dîrokê jê bibe"
+
+#~ msgctxt "@action:inmenu Parent of 'By Name' and 'By Date'"
+#~ msgid "Sort"
+#~ msgstr "Rêz bike"
+
+#~ msgid ""
+#~ "<qt><center><b>%1</b></center><hr />Last visited: %2<br />First visited: "
+#~ "%3<br />Number of times visited: %4</qt>"
+#~ msgstr ""
+#~ "<qt><center><b>%1</b></center><hr />Serdana dawîn: %2<br />Serdana pêşîn: "
+#~ "%3<br />Hejmara serdanan: %4</qt>"
+
+#~ msgid "Miscellaneous"
+#~ msgstr "Cur be Cur"
+
+#~ msgid "Open in New &Window"
+#~ msgstr "Di &Paceyeke Nû de Veke"
+
+#~ msgid "Open in New Tab"
+#~ msgstr "Di Hilfirîna Nû de Veke"
+
+#, fuzzy
+#~| msgid "Copy Link Address"
+#~ msgid "&Copy Link Address"
+#~ msgstr "Girêdana Navnîşanê Ji Ber Bigire"
+
+#~ msgid "&Remove Entry"
+#~ msgstr "Ketanê %Jê Bibî"
+
+#~ msgid "C&lear History"
+#~ msgstr "Rabirdûyê P&aqij Bike"
+
+#~ msgid "&Preferences..."
+#~ msgstr "&Vebijêrk..."
+
+#~ msgid "By &Name"
+#~ msgstr "Bi &Nav"
+
+#~ msgid "By &Date"
+#~ msgstr "Bi &Dîrokê"
+
+#, fuzzy
+#~| msgid "Clear History"
+#~ msgid "Search in history"
+#~ msgstr "Dîrokê jê bibe"
+
+#~ msgid "Do you really want to clear the entire history?"
+#~ msgstr "Bi rastî jî tu dixwazî hemû rabirdûyê jê bibî?"
+
+#~ msgid "Clear History?"
+#~ msgstr "Rabirdûyê Jê Bibî?"
+
+#, fuzzy
+#~| msgid "Start without a default window"
+#~ msgid "Start without a default window, when called without URLs"
+#~ msgstr "Destpêka bi paceya belîkirî"
+
+#~ msgid "Profile to open"
+#~ msgstr "Profîla ku dê vebe"
+
+#~ msgid "List available profiles"
+#~ msgstr "Profîlên ku dikarin bên xebitandin rêz bike"
+
+#~ msgid "List available sessions"
+#~ msgstr "Danişînên heyî rêz bike"
+
+#~ msgid "Session to open"
+#~ msgstr "Danişîna ku dê vebe"
+
+#~ msgid "Mimetype to use for this URL (e.g. text/html or inode/directory)"
+#~ msgstr ""
+#~ "Cureyên Mime yên dê ji bo vê URL'yê bên bikaranîn (mînak. text/html an jî "
+#~ "inode/directory)"
+
+#~ msgid ""
+#~ "For URLs that point to files, opens the directory and selects the file, "
+#~ "instead of opening the actual file"
+#~ msgstr ""
+#~ "Di URL'yên ku pelan diyar dike de, li şûna ku pelê veke pêristê vedike û "
+#~ "pelê hildibijêre."
+
+#~ msgid "Location to open"
+#~ msgstr "Cihê ku dê lê vebe"
+
+#~ msgid "Canceled."
+#~ msgstr "Hate betalkirin."
+
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Reloading the page will discard these changes."
+#~ msgstr ""
+#~ "Di vê rûpelê de guherînên ku nehatine şandin hene.\n"
+#~ "Girtina rûpelê dê hemû guhartinan piştguh bike."
+
+#~ msgid "Discard Changes?"
+#~ msgstr "Bila Guhartin Jê Bên Birin?"
+
+#~ msgid "&Discard Changes"
+#~ msgstr "Guhartinan &Jê Bibe"
+
+#~ msgid "File Management"
+#~ msgstr "Gerînendetiya Pelan"
+
+#~ msgid "Web Browsing"
+#~ msgstr "Lêgerîna Webê"
+
+#~ msgid "Home Folder"
+#~ msgstr "Peldanka Malê"
+
+#, fuzzy
+#~| msgid "Home Page"
+#~ msgid "Home"
+#~ msgstr "Malper"
+
+#~ msgid "Navigate to your 'Home Folder'"
+#~ msgstr "Here 'Peldanka Malê' ya xwe"
+
+#~ msgid "Navigate to your local 'Home Folder'"
+#~ msgstr "Here 'Peldanka Malê' ya herêmî"
+
+#~ msgid "Home Page"
+#~ msgstr "Malper"
+
+#~ msgid "Navigate to your 'Home Page'"
+#~ msgstr "Here malpera xwe ya taybet"
+
+#, fuzzy
+#~ msgid ""
+#~ "<html>Navigate to your 'Home Page'<br /><br />You can configure the "
+#~ "location where this button takes you under <b>Settings -> Configure "
+#~ "Konqueror -> General</b>.</html>"
+#~ msgstr ""
+#~ "<html>Here 'Rûpela Destpêkê'<br /><br />Tu dikarî cihê vê bişkokê di "
+#~ "<b>Navenda Kontrola KDE -> Konqueror Veava Bike -> Giştî</b> de "
+#~ "bimînehgînî.</html>"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Detaching the tab will discard these changes."
+#~ msgstr ""
+#~ "Di vê pekanê de guhartinên ku nehatine şandin hene.\n"
+#~ "Heke pekan ji hev were veqetandin hemû guhartin dê piştguh bibin."
+
+#~ msgid ""
+#~ "This view contains changes that have not been submitted.\n"
+#~ "Closing the view will discard these changes."
+#~ msgstr ""
+#~ "Di vê dîtinê de guhartinên ku nehatine şandin hene.\n"
+#~ "Heke dîtin were girtin dê hemû guhartin piştguh bibin."
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the tab will discard these changes."
+#~ msgstr ""
+#~ "Di vê pekanê de guherînên ku nehatine şandin heye.\n"
+#~ "Heke pekan were girtin dê hemû guhartin piştguh bibin."
+
+#~ msgid "Do you really want to close all other tabs?"
+#~ msgstr "Bi rastî jî tu dixwazî hemû pekanan bigirî?"
+
+#~ msgid "Close Other Tabs Confirmation"
+#~ msgstr "Erêkirina Ji bo Girtina Pekanên Din"
+
+#~ msgid "Close &Other Tabs"
+#~ msgstr "Pekanên &Din Bigire"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing other tabs will discard these changes."
+#~ msgstr ""
+#~ "Di vê pekanê de guhartinên ku nehatine şandin hene.\n"
+#~ "Heke hemû pekan ji nû ve bên lêbarkirin dê hemû guhartin piştguh bibin."
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Reloading all tabs will discard these changes."
+#~ msgstr ""
+#~ "Di vê rûpelê de guhartinên ku nehatine şandin hene.\n"
+#~ "Heke hemû pekan ji nû ve bên barkirin dê hemû guhartin piştguh bibin."
+
+#~ msgid "Enter Target"
+#~ msgstr "Armancê binivîse"
+
+#~ msgid "<qt><b>%1</b> is not valid</qt>"
+#~ msgstr "<qt><b>%1</b> ne derbasdar e</qt>"
+
+#~ msgid "Copy selected files from %1 to:"
+#~ msgstr "Pelên ku ji %1 hatine hilbijartin ji ber bigire:"
+
+#~ msgid "Move selected files from %1 to:"
+#~ msgstr "Pelên ku ji %1ê hatine hilbijartin veguhêze:"
+
+#, fuzzy
+#~ msgctxt "This menu entry empties the closed items history"
+#~ msgid "Empty Closed Items History"
+#~ msgstr "Dîroka hilpekînên girtî vala bike"
+
+#~ msgid "Save As..."
+#~ msgstr "Cuda Tomar Bike..."
+
+#~ msgid "Manage..."
+#~ msgstr "Bi rê ve bibe..."
+
+#~ msgid "New &Window"
+#~ msgstr "Paceyeke &Nû"
+
+#~ msgid "&Duplicate Window"
+#~ msgstr "&Paceyê bike cot"
+
+#~ msgid "Send &Link Address..."
+#~ msgstr "Navnîşana &Girêdanê Bişîne..."
+
+#~ msgid "S&end File..."
+#~ msgstr "Pelî Bi&şîne..."
+
+#~ msgid "&Open Location"
+#~ msgstr "&Cih Veke"
+
+#~ msgid "&Open File..."
+#~ msgstr "Pel &Veke"
+
+#~ msgid "&Find File..."
+#~ msgstr "Pelan &Bibîne..."
+
+#~ msgid "&Use index.html"
+#~ msgstr "&Bikaranîna index.html"
+
+#~ msgid "Lock to Current Location"
+#~ msgstr "Mifteyî cihê heyî bibe"
+
+#~ msgctxt "This option links konqueror views"
+#~ msgid "Lin&k View"
+#~ msgstr "Di&tina Girêdanê"
+
+#~ msgid "&Up"
+#~ msgstr "&Jor"
+
+#~ msgid "Closed Items"
+#~ msgstr "Hemanên Girtî"
+
+#~ msgid "Sessions"
+#~ msgstr "Danişîn"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Most Often Visited"
+#~ msgstr "Yên Herî Zêde Hatine Sêrîlêdan"
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Recently Visited"
+#~ msgstr "Yên di nêz de vebûne"
+
+#, fuzzy
+#~| msgid "Show History Sidebar"
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History"
+#~ msgstr "Darikê Kêlekê yê Dîrokê Nîşan Bide"
+
+#, fuzzy
+#~| msgid "&Save View Profile..."
+#~ msgid "&Save View Profile As..."
+#~ msgstr "Profîla Dîtinê &Tomar Bike..."
+
+#~ msgid "Configure Extensions..."
+#~ msgstr "Pêvekan ava bike..."
+
+#~ msgid "Configure Spell Checking..."
+#~ msgstr "Kontrola Rastnivîsê veava bike..."
+
+#~ msgid "Split View &Left/Right"
+#~ msgstr "Dîtên wekî &çep/rast par bike"
+
+#~ msgid "Split View &Top/Bottom"
+#~ msgstr "Dîtinê wekî &jor/jêr par bike"
+
+#~ msgid "&New Tab"
+#~ msgstr "Pekana &Nû"
+
+#~ msgid "&Duplicate Current Tab"
+#~ msgstr "Pekana &Rojane Ji ber bigire"
+
+#~ msgid "Detach Current Tab"
+#~ msgstr "Pekane rojane ji hev veqetîne"
+
+#~ msgid "&Close Active View"
+#~ msgstr "&Dîtina çalak rake"
+
+#~ msgid "Close Current Tab"
+#~ msgstr "Pekana Rojane Bigire"
+
+#~ msgid "Activate Next Tab"
+#~ msgstr "Pekana Nû Çalak Bike"
+
+#~ msgid "Activate Previous Tab"
+#~ msgstr "Pekana Berê Çalak Bike"
+
+#~ msgid "Activate Tab %1"
+#~ msgstr "Pekana %1. çalak bike"
+
+#~ msgid "Move Tab Left"
+#~ msgstr "Pekanê Bibe Aliyê Çepê"
+
+#~ msgid "Move Tab Right"
+#~ msgstr "Pekanê Bibe Aliyê Rastê"
+
+#~ msgid "Dump Debug Info"
+#~ msgstr "Agahiya Çewtiyan Nîşan Bide"
+
+#~ msgid "C&onfigure View Profiles..."
+#~ msgstr "Profîlên Dîtinê &Ava Bike..."
+
+#~ msgid "Load &View Profile"
+#~ msgstr "Profîlên Dîtinê &Bar Bike"
+
+#~ msgid "&Reload"
+#~ msgstr "Ji &Nû Ve Bar Bike"
+
+#~ msgid "&Reload All Tabs"
+#~ msgstr "Hemû Tabloyan Ji nû ve Bar Bike"
+
+#~ msgid "&Force Reload"
+#~ msgstr "Bi Zorê Ji &Nû Ve Bar Bike"
+
+#~ msgid "&Stop"
+#~ msgstr "&Rawestîne"
+
+#~ msgid "L&ocation: "
+#~ msgstr "C&ih: "
+
+#~ msgid "Location Bar"
+#~ msgstr "Darikê Cih"
+
+#~ msgid ""
+#~ "<html>Location Bar<br /><br />Enter a web address or search term.</html>"
+#~ msgstr ""
+#~ "<html>Darikê Cihî<br /><br />Navnîşana web an nivîsa lêgerînê binvîse.</"
+#~ "html>"
+
+#~ msgid "Clear Location Bar"
+#~ msgstr "Darikê Cih Paqij Bike"
+
+#~ msgid ""
+#~ "<html>Clear Location bar<br /><br />Clears the contents of the location "
+#~ "bar.</html>"
+#~ msgstr ""
+#~ "<html>Darikê Cihan vala bike<br /><br />Naveroka darikê cihan vala dike.</"
+#~ "html>"
+
+#~ msgid "&Bookmarks"
+#~ msgstr "&Bijare"
+
+#~ msgid "Kon&queror Introduction"
+#~ msgstr "Destpêka Kon&queror"
+
+#~ msgid "Go"
+#~ msgstr "Biçe"
+
+#~ msgid ""
+#~ "<html>Go<br /><br />Goes to the page that has been entered into the "
+#~ "location bar.</html>"
+#~ msgstr ""
+#~ "<html>Here<br /><br />Diçe ser rûpelê ku di panela cihan de hatiye "
+#~ "bicihkirin.</html>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<html>Enter the parent folder<br /><br />For instance, if the current "
+#~ "location is file:/home/%1 clicking this button will take you to file:/"
+#~ "home.</html>"
+#~ msgstr ""
+#~ "<html>Biçe ser peldanka jor <br /><br /> Wekî mînak, heke cihê derbasdar "
+#~ "file://home/%1 be dema were tikandin ev bişkok wê te bibe file://home.</"
+#~ "html>"
+
+#~ msgid "Enter the parent folder"
+#~ msgstr "Pelrêça jor binivîse"
+
+#~ msgid "Move backwards one step in the browsing history"
+#~ msgstr "Gavekê bi paş ve vegere di dîroka lêgerînê de"
+
+#~ msgid "Move forward one step in the browsing history"
+#~ msgstr "Gavekê bi pêş ve here di dîroka lêgerînê de"
+
+#~ msgid "Move backwards one step in the closed tabs history"
+#~ msgstr "Di dîroka hilpekînên girtî de gavekê bi paş ve vegere"
+
+#, fuzzy
+#~ msgid ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.</html>"
+#~ msgstr ""
+#~ "<html>Belgeyê dîsa bar bike <br /><br /> Ji bo çavdêriya guherînên ku li "
+#~ "ser ew rûpelên tu lê geriyabû bike, dibe ku tu dîsa bar bike.</html>"
+
+#~ msgid "Reload the currently displayed document"
+#~ msgstr "Pelgeya niha ji nû ve bar bike"
+
+#, fuzzy
+#~ msgid ""
+#~ "<html>Reload all currently displayed documents in tabs<br /><br />This "
+#~ "may, for example, be needed to refresh web pages that have been modified "
+#~ "since they were loaded, in order to make the changes visible.</html>"
+#~ msgstr ""
+#~ "<html>Çi pelgeyên di hilpekînan de dixuye ji nû ve bar bike<br /><br />Ji "
+#~ "bo çavdêriya guherînên rûpelên ku te lê nihêrtiye dibe ku tu dîsa bar "
+#~ "bike.<html>"
+
+#~ msgid "Reload all currently displayed document in tabs"
+#~ msgstr "Çi pelgeyên ku di hilfirînan de dixuya ji nû ve bar bike"
+
+#~ msgid ""
+#~ "<html>Stop loading the document<br /><br />All network transfers will be "
+#~ "stopped and Konqueror will display the content that has been received so "
+#~ "far.</html>"
+#~ msgstr ""
+#~ "<html>Barkirina pelgeyê rawestîne. <br /><br /> Wê hemû transfer raweste. "
+#~ "Yên heta wê demê hatine barkirin wê ji aliyê Konqueror were xuyanî.</html>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<html>Reload the currently displayed document<br /><br />This may, for "
+#~ "example, be needed to refresh web pages that have been modified since "
+#~ "they were loaded, in order to make the changes visible.  Any images on "
+#~ "the page are downloaded again, even if cached copies exist.</html>"
+#~ msgstr ""
+#~ "<html>Belgeyê dîsa bar bike <br /><br /> Ji bo çavdêriya guherînên ku li "
+#~ "ser ew rûpelên tu lê geriyabû bike, dibe ku tu dîsa bar bike.</html>"
+
+#~ msgid ""
+#~ "Force a reload of the currently displayed document and any contained "
+#~ "images"
+#~ msgstr ""
+#~ "Çi belge û wêneyên ku di hilfirînan de dixuya bi zorê ji nû ve bar bike"
+
+#~ msgid "Stop loading the document"
+#~ msgstr "Barkirina pelgeyê rawestîne"
+
+#~ msgid ""
+#~ "<html>Cut the currently selected text or item(s) and move it to the "
+#~ "system clipboard<br /><br />This makes it available to the <b>Paste</b> "
+#~ "command in Konqueror and other KDE applications.</html>"
+#~ msgstr ""
+#~ "<html>Ji bo ku tu karibî nivîsa hatiye hilbijartin yan jî hêmanan jê bike "
+#~ "û wan bibe panoya pergalê pêl vê bişkokê bike. <br /><br /> Tu dikarî ji "
+#~ "pêşeka  sererast bike de fermana <b>Jê Bike </b> jî hilbijêre.</html>"
+
+#~ msgid "Move the selected text or item(s) to the clipboard"
+#~ msgstr "Nivîs/hêmanên hatine hilbijartin bibe panoyê"
+
+#~ msgid ""
+#~ "<html>Copy the currently selected text or item(s) to the system "
+#~ "clipboard<br /><br />This makes it available to the <b>Paste</b> command "
+#~ "in Konqueror and other KDE applications.</html>"
+#~ msgstr ""
+#~ "<html>Ji bo ku tu karibî nivîsa hatiye hilbijartin yan jî hêmanan ji ber "
+#~ "bigire û wan bibe panoya pergalê pêl vê bişkokê bike.<br /><br /> Ji "
+#~ "xeynî vê tu dikarî ji pêşeka sererast bike fermana <b>Ji Ber Bigire </b> "
+#~ "jî hilbijêre.</html>"
+
+#~ msgid "Copy the selected text or item(s) to the clipboard"
+#~ msgstr "Nivîs/hêmanên hatine hilbijartin kopî panoyê dike"
+
+#~ msgid ""
+#~ "<html>Paste the previously cut or copied clipboard contents<br /><br /"
+#~ ">This also works for text copied or cut from other KDE applications.</"
+#~ "html>"
+#~ msgstr ""
+#~ "<html>Pêve vekirina naveroka bîrê ya ku ji alî <br /><br /> hatibû birîn "
+#~ "an jibergirtin Ev ferman bi nivîsa KDE ya ku hatiye jibergirtin an birîn "
+#~ "re jî dixebite.</html>"
+
+#~ msgid "Paste the clipboard contents"
+#~ msgstr "Naveroka panoyê pê ve bike"
+
+#~ msgid ""
+#~ "<html>Print the currently displayed document<br /><br />You will be "
+#~ "presented with a dialog where you can set various options, such as the "
+#~ "number of copies to print and which printer to use.<br /><br />This "
+#~ "dialog also provides access to special KDE printing services such as "
+#~ "creating a PDF file from the current document.</html>"
+#~ msgstr ""
+#~ "<html>Belgeya ku hîn tê nivîsandin nîşan dide <br /><br />Hejmara "
+#~ "jibergirtiyan û vebijêrkên der barê çapera tu dixwazî hilbijêrî de li "
+#~ "beşa vebijêrkên curbicur heye. <br /><br /> Bi servîsên taybet ên "
+#~ "nivîsandinê yên KDE û wekî din jî tu dikarî pêwendiyê temîn bikî û ji "
+#~ "pelgeya rojane PDF biafirînî.</html>"
+
+#~ msgid "Print the current document"
+#~ msgstr "Çapkirina pelgeya heyî"
+
+#~ msgid "If present, open index.html when entering a folder."
+#~ msgstr "Heke hebe, dema têketina pêristê,  index.html veke."
+
+#~ msgid ""
+#~ "A locked view cannot change folders. Use in combination with 'link view' "
+#~ "to explore many files from one folder"
+#~ msgstr ""
+#~ "Dîtina kilîtkirî nikare peldankan biguherîne. Ji ku tu bikaribî di "
+#~ "peldankekê de gelek pelan bibînî bi 'Dîtina girêdanê' re bikar bîne."
+
+#~ msgid ""
+#~ "Sets the view as 'linked'. A linked view follows folder changes made in "
+#~ "other linked views."
+#~ msgstr ""
+#~ "Dîtinê wekî 'girêdayî' mîheng dike. Dîtina girêdayî dide pey guhertinên "
+#~ "din ên di peldankên din ên girêdayî de."
+
+#~ msgid "Copy &Files..."
+#~ msgstr "Pelan &Jiber bigire..."
+
+#~ msgid "M&ove Files..."
+#~ msgstr "Pelan bi&guhêze..."
+
+#~ msgid "Open bookmarks folder in new tabs"
+#~ msgstr "Peldanka bijareyan di hilpekînên nû de veke"
+
+#~ msgid "Open in T&his Window"
+#~ msgstr "Di &Vê Paceyê de Veke"
+
+#~ msgid "Open the document in current window"
+#~ msgstr "Pelgeyê di hilfirîna hatiye hilbijartin de veke"
+
+#~ msgid "Open the document in a new window"
+#~ msgstr "Pelgeyê di paceyeke nû de veke"
+
+#~ msgid "Open in &New Tab"
+#~ msgstr "Di Hilfirîna &Nû de Veke"
+
+#~ msgid "Open the document in a new tab"
+#~ msgstr "Pelgeyê di hundirê hilfirîneke nû ya rûerd de veke"
+
+#~ msgid "&Open With"
+#~ msgstr "Ve&ke Bi"
+
+#~ msgid "Open with %1"
+#~ msgstr "Bi %1 Veke"
+
+#~ msgctxt "@action:inmenu View"
+#~ msgid "&View Mode"
+#~ msgstr "&Moda Dîtine"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window, are you sure you want to quit?"
+#~ msgstr "Bêtir ji paceyekê vekiriye, Tu bawerî ku dixwazî derkevî?"
+
+#~ msgid "Confirmation"
+#~ msgstr "Erêkirin"
+
+#~ msgid "C&lose Current Tab"
+#~ msgstr "&Paceya heyî bigire"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Closing the window will discard these changes."
+#~ msgstr ""
+#~ "Di vê hilfirînê de guherînên ku nehatine şandin heye.\n"
+#~ "Heke tu paceyê bigire wê hemû guherînan winda bike."
+
+#~ msgid ""
+#~ "This page contains changes that have not been submitted.\n"
+#~ "Closing the window will discard these changes."
+#~ msgstr ""
+#~ "Di vê rûpelê de guherînên ku nehatine şandin heye.\n"
+#~ "Heke tu paceyê bigire wê hemû guherînan winda bike."
+
+#~ msgid ""
+#~ "Your sidebar is not functional or unavailable. A new entry cannot be "
+#~ "added."
+#~ msgstr ""
+#~ "Darikê te yê kêlekê ne kêrhatî ye yan jî nayê gihiştin. Tu nikarî "
+#~ "ketaneke nû lê zêde bike"
+
+#~ msgid "Web Sidebar"
+#~ msgstr "Darikê Kêlekê yê Webê"
+
+#~ msgid "Add new web extension \"%1\" to your sidebar?"
+#~ msgstr "Bila dirêjeka webê ya \"%1\" li darikê kêlekê were zêdekirin?"
+
+#~ msgid "Add"
+#~ msgstr "Lêzêdekirin"
+
+#~ msgid "Do Not Add"
+#~ msgstr "Lê zêde neke"
+
+#~ msgid ""
+#~ "There appears to be a configuration error. You have associated Konqueror "
+#~ "with %1, but it cannot handle this file type."
+#~ msgstr ""
+#~ "Çewtiyeke avakirinê dixuye. Te Konqueror bi peleke cureyê %1 re têkildar "
+#~ "kiriye, lê Konqueror nikare van pelan veke."
+
+#~ msgid "Profile Management"
+#~ msgstr "Gerînendetiya Profîlan"
+
+#~ msgid "&Rename Profile"
+#~ msgstr "Profîlê Ji Nû Ve &Binavîne"
+
+#~ msgid "&Delete Profile"
+#~ msgstr "Profîlê &Jê Bibe"
+
+#~ msgid "Manage Sessions"
+#~ msgstr "Danişênan bi rê ve bibe"
+
+#~ msgid "&Open"
+#~ msgstr "&Vekirin"
+
+#, fuzzy
+#~| msgid "Rename session"
+#~ msgid "Rename Session"
+#~ msgstr "Navê Danişînê Biguherîne"
+
+#~ msgid "Save Session"
+#~ msgstr "Danişînê tomar bike"
+
+#~ msgid ""
+#~ "A session with the name '%1' already exists, do you want to overwrite it?"
+#~ msgstr "Danişîneke bi navê '%1' jixwe heye, dixwazî li serê binivîsî?"
+
+#~ msgid "Session exists. Overwrite?"
+#~ msgstr "Danişîn heye. Li serê binivîsî?"
+
+#, fuzzy
+#~| msgid ""
+#~| "Konqueror didn't close correctly. Would you like to restore session?"
+#~ msgid ""
+#~ "Konqueror did not close correctly. Would you like to restore the previous "
+#~ "session?"
+#~ msgstr "Konqueror başebaş nehate girtin. Dixwazî danişînê şûnde bînî?"
+
+#~ msgid "Restore Session?"
+#~ msgstr "Danişînê şûnde bînî?"
+
+#~ msgid "Restore Session"
+#~ msgstr "Danişînê şûnde bîne"
+
+#~ msgid "Do Not Restore"
+#~ msgstr "Şûnde neyne"
+
+#~ msgid "Ask Me Later"
+#~ msgstr "Paşê bipirse"
+
+#, fuzzy
+#~ msgid ""
+#~ "This bar contains the list of currently open tabs. Click on a tab to make "
+#~ "it active. You can also use keyboard shortcuts to navigate through tabs. "
+#~ "The text on the tab shows the content currently open in it; place your "
+#~ "mouse over the tab to see the full title, in case it has been shortened "
+#~ "to fit the tab width."
+#~ msgstr ""
+#~ "Ev darik lîsteya hemû pekanên niha vekirî ne nîşan dide. Ji bo çalakirina "
+#~ "pekanekê wê pekanê bitikîne. Tu dikarî di pekanê de li şûna logoya "
+#~ "malperê bişkojka girtinê jî bidî xuyakirin. Tu dikarî bi kineriyên "
+#~ "klavyeyê jî ji pekanekê herî ya din. Nivîsa li ser pekanê sernivîsa "
+#~ "malpera vekirî ye. Ji bo tu hemû sernivîsa wê bibînî bi mişk here ser "
+#~ "sepanê û hinekî li ser bimîne."
+
+#~ msgid "Open a new tab"
+#~ msgstr "Hilfirîneke nû veke"
+
+#~ msgid "Close the current tab"
+#~ msgstr "Hilfirîna derbasdar bigire"
+
+#~ msgid "&Duplicate Tab"
+#~ msgstr "&Paceyê 2qat bike"
+
+#~ msgid "&Reload Tab"
+#~ msgstr "Hilfirînê Ji Nû Ve Bar Bike"
+
+#~ msgid "Other Tabs"
+#~ msgstr "Hilfirînên Din"
+
+#~ msgid "D&etach Tab"
+#~ msgstr "Hilfirînê Ji Hev V&eçirîne"
+
+#~ msgid "&Close Tab"
+#~ msgstr "Hilfirînê &Bigire"
+
+#~ msgid "Und&o: Closed Tab"
+#~ msgstr "&Vegerîne: Hilfirînê Girtî"
+
+#~ msgid "Und&o: Closed Window"
+#~ msgstr "&Vegerîne: Paceya Girtî"
+
+#~ msgid ""
+#~ "The page you are trying to view is the result of posted form data. If you "
+#~ "resend the data, any action the form carried out (such as search or "
+#~ "online purchase) will be repeated. "
+#~ msgstr ""
+#~ "Rûpelê ku tu ber çav derbas dikî encama daneya ku bi formê re hatiye "
+#~ "şandin e. Daneya ku dîsa were şandin, wê agahiyên di formê de dîsa "
+#~ "bibîne. (Wekî encamên lêgerînê yan jî wekî encamê danûstendinên "
+#~ "girêdayînê) "
+
+#~ msgid "Warning"
+#~ msgstr "Hişyarî"
+
+#~ msgid "Resend"
+#~ msgstr "Ji nû ve bişîne"
+
+#~ msgid ""
+#~ "You have multiple tabs open in this window.\n"
+#~ "Loading a view profile will close them."
+#~ msgstr ""
+#~ "Di vê paceyê de gelek hilfirîn vekirî ye.\n"
+#~ "Heke tu profîleke nû ya bergehan bar bike wê van hilfirînan bigire."
+
+#~ msgid "Load View Profile"
+#~ msgstr "Profîla Xuyanekê Bar Bike"
+
+#~ msgid ""
+#~ "This tab contains changes that have not been submitted.\n"
+#~ "Loading a profile will discard these changes."
+#~ msgstr ""
+#~ "Di vê hilfirînê de guherînên ku nehatine şandin heye.\n"
+#~ "Heke tu profîleke nû bar bike wê hemû guherînan pişt guh re biavêjî."
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "History Sidebar Module"
+#~ msgstr "Darikê Kêlekê yê Webê"
+
+#, fuzzy
+#~| msgid "Clear History"
+#~ msgctxt "@title:tab"
+#~ msgid "History"
+#~ msgstr "Dîrokê jê bibe"
+
+#~ msgid " day"
+#~ msgid_plural " days"
+#~ msgstr[0] " roj"
+#~ msgstr[1] " roj"
+
+#~ msgid "Minute"
+#~ msgid_plural "Minutes"
+#~ msgstr[0] "Xulek"
+#~ msgstr[1] "Xulek"
+
+#~ msgid "Day"
+#~ msgid_plural "Days"
+#~ msgstr[0] "Roj"
+#~ msgstr[1] "Roj"
+
+#~ msgid "<h1>History Sidebar</h1> You can configure the history sidebar here."
+#~ msgstr ""
+#~ "<h1>Darikê Kêlekê yê Dîrokê</h1> Tu dikarî darikê kêlekê yê dîrokê li vir "
+#~ "veava bike."
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Places Sidebar Module"
+#~ msgstr "Darikê Kêlekê yê Webê"
+
+#~ msgid "Extended Sidebar"
+#~ msgstr "Darikê Kêlekê Veava Bike"
+
+#~ msgid "Rollback to System Default"
+#~ msgstr "Vegerînê Mîhengên Standard ên Pergalê"
+
+#~ msgid "Configure Sidebar"
+#~ msgstr "Darikê Kêlekê Veava Bike"
+
+#~ msgid "Add New"
+#~ msgstr "Nû Têxe"
+
+#~ msgid "Multiple Views"
+#~ msgstr "Gelek Dîmen"
+
+#~ msgid "Show Tabs Left"
+#~ msgstr "Hilpekînên Aliyê Çepê Nîşan Bide"
+
+#~ msgid "Show Configuration Button"
+#~ msgstr "Bişkokê Mîhengan Nîşan Bide"
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgid "Close Sidebar"
+#~ msgstr "Darikê Kêlekê yê Webê"
+
+#~ msgid "This entry already exists."
+#~ msgstr "Ev ketan jixwe heye."
+
+#~ msgid ""
+#~ "<qt>This removes all your entries from the sidebar and adds the system "
+#~ "default ones.<br /><b>This procedure is irreversible</b><br />Do you want "
+#~ "to proceed?</qt>"
+#~ msgstr ""
+#~ "<qt>Pê re hemû ketanên te ji darikê kelekê tên rakirin û yên standard "
+#~ "dikevin şûna wan.<br /><b>Jê nayê vegerandin</b><br />Tu dixwazî bidomînî?"
+#~ "></qt>"
+
+#~ msgid "Show Tabs Right"
+#~ msgstr "Hilpekînên Aliyê Rastê Nîşan Bide"
+
+#~ msgid "Set Name"
+#~ msgstr "Nav Hilbijêre"
+
+#~ msgid "Enter the name:"
+#~ msgstr "Navî binivîse:"
+
+#~ msgid "Enter a URL:"
+#~ msgstr "URL'ekê binivîse:"
+
+#~ msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
+#~ msgstr "<qt>Bi rastî jî tu dixwazî hilfirîna <b>%1</b> rakî?</qt>"
+
+#, fuzzy
+#~| msgid ""
+#~| "You have hidden the navigation panel configuration button. To make it "
+#~| "visible again, click the right mouse button on any of the navigation "
+#~| "panel buttons and select \"Show Configuration Button\"."
+#~ msgid ""
+#~ "You have hidden the sidebar configuration button. To make it visible "
+#~ "again, click the right mouse button on any of the sidebar buttons and "
+#~ "select \"Show Configuration Button\"."
+#~ msgstr ""
+#~ "Te bişkojka veavakirina panela gerê girtiye. Ji bo wê careke din xuya "
+#~ "bikî, mişkî li ciyeke ji rêzê a boşkojkên panela gerê rast bitikîne û "
+#~ "\"Bişkojka Vevakirinê Nîşan Bide\" hilbijêre."
+
+#~ msgid "Set Name..."
+#~ msgstr "Nav Hilbijêre..."
+
+#~ msgid "Set URL..."
+#~ msgstr "URL Hilbijêre..."
+
+#~ msgid "Set Icon..."
+#~ msgstr "Îkonê Hilbijêre..."
+
+#~ msgid "Remove"
+#~ msgstr "Rakirin"
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgid "Web module"
+#~ msgstr "Darikê Kêlekê yê Webê"
+
+#~ msgid "&Create New Folder"
+#~ msgstr "&Peldaneke nû biafirîne"
+
+#~ msgid "Delete Folder"
+#~ msgstr "Peldankê jê bibe"
+
+#~ msgid "Delete Bookmark"
+#~ msgstr "Bijareyê Jê Bibe"
+
+#~ msgid "Properties"
+#~ msgstr "Taybetmendî"
+
+#~ msgid "Open in New Window"
+#~ msgstr "Di Paceyeke nû de Veke"
+
+#~ msgid "Open Folder in Tabs"
+#~ msgstr "Di paceyekê nû de veke"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "Girêdana Navnîşanê Ji Ber Bigire"
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark folder\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "Bi rastî jî tu dixwazî vê peldanka bijareyê jê bibî\n"
+#~ "\"%1\""
+
+#~ msgid ""
+#~ "Are you sure you wish to remove the bookmark\n"
+#~ "\"%1\"?"
+#~ msgstr ""
+#~ "Bi rastî jî tu dixwazî vê bijareyê jê bibî\n"
+#~ "\"%1\""
+
+#~ msgid "Bookmark Folder Deletion"
+#~ msgstr "Jêbirina Peldankên Bijareyan"
+
+#~ msgid "Bookmark Deletion"
+#~ msgstr "Jêbirina Bijareyan"
+
+#~ msgid "Bookmark Properties"
+#~ msgstr "Taybetmendiyên Bijareyan"
+
+#~ msgid "&Update"
+#~ msgstr "&Rojanekirin"
+
+#~ msgid "Name:"
+#~ msgstr "Nav:"
+
+#~ msgid "Location:"
+#~ msgstr "Herêm:"
+
+#~ msgid "Add Bookmark"
+#~ msgstr "Bijareyekê lê zêde bike"
+
+#~ msgid "Cannot find parent item %1 in the tree. Internal error."
+#~ msgstr "Hêmana mak %1, li ser darê nayê dîtin. Çewtiya hundurîn."
+
+#~ msgid "&Create New Folder..."
+#~ msgstr "&Peldaneke nû biafirîne..."
+
+#~ msgid "Rename"
+#~ msgstr "Nav biguherîne"
+
+#~ msgid "Delete Link"
+#~ msgstr "Girêdanê Jê Bibe"
+
+#~ msgid "New Folder"
+#~ msgstr "Peldanka Nû"
+
+#~ msgid "Create New Folder"
+#~ msgstr "Afirandina Peldanka Nû"
+
+#~ msgid "Enter folder name:"
+#~ msgstr "Navê peldankê binivîse:"
+
+#, fuzzy
+#~| msgid "Name:"
+#~ msgctxt "@label"
+#~ msgid "Name:"
+#~ msgstr "Nav:"
+
+#~ msgid "&Open Link"
+#~ msgstr "Lînk &Veke"
+
+#~ msgid "Set &Automatic Reload"
+#~ msgstr "Barkirina &Bixweber Mîheng Bike"
+
+#~ msgid "Set Refresh Timeout (0 disables)"
+#~ msgstr "Maweya Nûkirinê Mîheng Bide (0 digire)"
+
+#~ msgid " min"
+#~ msgstr " xulek"
+
+#~ msgid " sec"
+#~ msgstr " çirke"
+
+#, fuzzy
+#~| msgid "Web Sidebar"
+#~ msgctxt "@action:inmenu Add"
+#~ msgid "Web Sidebar Module"
+#~ msgstr "Darikê Kêlekê yê Webê"
+
+#~ msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
+#~ msgid "Be free."
+#~ msgstr "Azad bibe."
+
+#~ msgid ""
+#~ "Konqueror is a web browser, file manager and universal document viewer."
+#~ msgstr ""
+#~ "Konqueror geroka torê, gerînendeyê pelan û nîşanderê gerdûnî yê belgeyan "
+#~ "e."
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "Starting Points"
+#~ msgstr "Xalên Destpêkê"
+
+#~ msgid "Introduction"
+#~ msgstr "Destpêk"
+
+#~ msgid "Tips"
+#~ msgstr "Pêşinyar"
+
+#~ msgid "Specifications"
+#~ msgstr "Taybetmendî"
+
+#~ msgid "Your personal files"
+#~ msgstr "Pelên te yên Şexsî"
+
+#~ msgid "Trash"
+#~ msgstr "Çop"
+
+#~ msgid "Browse and restore the trash"
+#~ msgstr "Li qutiya çopê binihêre û wan xelas bike"
+
+#~ msgid "Network Folders"
+#~ msgstr "Peldankên Torê"
+
+#~ msgid "Shared files and folders"
+#~ msgstr "Pel û peldankên hevpar"
+
+#, fuzzy
+#~| msgid "&Bookmarks"
+#~ msgid "Bookmarks"
+#~ msgstr "&Bijare"
+
+#~ msgid "Next: An Introduction to Konqueror"
+#~ msgstr "Ya pişt re: Têketina Konquerorê"
+
+#~ msgid "Search the Web"
+#~ msgstr "Di webê de lê bigere"
+
+#~ msgid ""
+#~ "Konqueror makes working with and managing your files easy. You can browse "
+#~ "both local and networked folders while enjoying advanced features such as "
+#~ "the powerful sidebar and file previews."
+#~ msgstr ""
+#~ "Koqueror rêvebirin û xebitandina pelên te gelekî hesan dike. Bi darikê "
+#~ "kêlekê yê bi hêz û pêşdîtina pelgeyê tu dikarî hem li girêdanên herêmî "
+#~ "hem jî li girêdanên peldankan bigerî."
+
+#~ msgid ""
+#~ "Konqueror is also a full featured and easy to use web browser which you "
+#~ "can use to explore the Internet. Enter the address (e.g. <a href=\"http://"
+#~ "www.kde.org\">http://www.kde.org</a>) of a web page you would like to "
+#~ "visit in the location bar and press Enter, or choose an entry from the "
+#~ "Bookmarks menu."
+#~ msgstr ""
+#~ "Konqueror ji bo gera te ya înternetê hem hêsanî ye hem jî gelek "
+#~ "taybetiyên wê hene. Navnîşana malpereke tu dixwazî têkevê li darikê jorîn "
+#~ "binivîse (mînak <a href=\"http://www.kde.org\">http://www.kde.org.tr</a>) "
+#~ "û pê li bişkojka Enter bike an jî ji pêşeka Bijareyan navnîşanekê "
+#~ "bitikîne."
+
+#~ msgid ""
+#~ "To return to the previous location, press the back button <img width='16' "
+#~ "height='16' src=\"%1\"></img> in the toolbar. "
+#~ msgstr ""
+#~ "Ji bo ku tu vegerî rûpelê berê, pêl bişkoka vegere ya di darikê amûran de "
+#~ "ye <img width='16' height='16' src=\"%1\"></img> bike. "
+
+#~ msgid ""
+#~ "To quickly go to your Home folder press the  home button <img width='16' "
+#~ "height='16' src=\"%1\"></img>."
+#~ msgstr ""
+#~ "Heke tu bixwazî biçî ser peldanka mala xwe, bişkoka malê ya di darikê "
+#~ "amûran de bitikîne <img width='16' height='16' src=\"%1\"></img>."
+
+#~ msgid ""
+#~ "For more detailed documentation on Konqueror click <a href=\"%1\">here</"
+#~ "a>."
+#~ msgstr ""
+#~ "Derbarê Konqueror de ji bo agahiyên zêde pêl <a href=\"%1\">vira</a> bike."
+
+#, fuzzy
+#~| msgid ""
+#~| "<em>Tuning Tip:</em> If you want the Konqueror web browser to start "
+#~| "faster, you can turn off this information screen by clicking <a href="
+#~| "\"%1\">here</a>. You can re-enable it by choosing the Help -> Konqueror "
+#~| "Introduction menu option, and then pressing Settings -> Save View "
+#~| "Profile \"Web Browsing\"."
+#~ msgid ""
+#~ "<em>Tuning Tip:</em> If you want the Konqueror web browser to start "
+#~ "faster, you can turn off this information screen by clicking <a href="
+#~ "\"%1\">here</a>. You can re-enable it by choosing the Help -> Konqueror "
+#~ "Introduction menu option, and then pressing Settings -> Save View Profile "
+#~ "As... -> \"Web Browsing\"."
+#~ msgstr ""
+#~ "<em>Liberxistina hûrmîhengan:</em> Heke te divê Konqueror zûtir vebe, ji "
+#~ "bo girtina dîmendera agahiyên ya destpêkê vê <A HREF=\"%1\">bişkojk</A>ê "
+#~ "bitikîne. Ji bo tu dîsa çalak bikî Alîkarî -> ji pêşeka destpêka "
+#~ "Konqueror'ê Mîheng -> Profîla Dîtinê Tomar Bike \"Gera Webê\" bitikîne."
+
+#~ msgid "Next: Tips &amp; Tricks"
+#~ msgstr "Piştre: Liberxistin"
+
+#, fuzzy
+#~| msgid ""
+#~| "Konqueror is designed to embrace and support Internet standards. The aim "
+#~| "is to fully implement the officially sanctioned standards from "
+#~| "organizations such as the W3 and OASIS, while also adding extra support "
+#~| "for other common usability features that arise as de facto standards "
+#~| "across the Internet. Along with this support, for such functions as "
+#~| "favicons, Internet Keywords, and <A HREF=\"%1\">XBEL bookmarks</A>, "
+#~| "Konqueror also implements:"
+#~ msgid ""
+#~ "Konqueror is designed to embrace and support Internet standards. The aim "
+#~ "is to fully implement the officially sanctioned standards from "
+#~ "organizations such as the W3 and OASIS, while also adding extra support "
+#~ "for other common usability features that arise as de facto standards "
+#~ "across the Internet. Along with this support, for such functions as "
+#~ "favicons, Web Shortcuts, and <A HREF=\"%1\">XBEL bookmarks</A>, Konqueror "
+#~ "also implements:"
+#~ msgstr ""
+#~ "Konqueror, ji bo xwedîlêderketina standartên Internetê û destekirina wê "
+#~ "hatiye afirandin. Armanc pêkanîna standardên ji aliyê W3 û OASIS ve "
+#~ "hatine belîkirin bên bicihanîn, her wisa destekirina hinek hêmanên ku li "
+#~ "ser Internetê bikêrhatî ye. Pê re jî, favicons, gotinên miftehî yên "
+#~ "Internetê û <A HREF=\"%1\"> bijareyên XBEL </A> jî tên destekirin. Her "
+#~ "wisa taybetiyên jêrîn ên Konqueror jî hene:"
+
+#~ msgid "Supported standards"
+#~ msgstr "Standartên têne destekkirin"
+
+#~ msgid "Additional requirements*"
+#~ msgstr "Pêwistiyên pêvek*"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
+#~ "\"%2\">HTML 4.01</A>"
+#~ msgstr ""
+#~ "<a href=\"%1\">DOM</a> bi bingeha (1. Ast, asta demdemî 2) <a href="
+#~ "\"%2\">HTML 4.01</a>"
+
+#~ msgid "built-in"
+#~ msgstr "hate avakirin"
+
+#~ msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">Kaxizên Şêwazan yên Hatine Raxistin</A> (CSS 1, derbasdar "
+#~ "CSS 2)"
+
+#~ msgid ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
+#~ msgstr ""
+#~ "<A HREF=\"%1\">ECMA-262</A> Guherto 3 (hema hema wekî Javaskrîpt 1.5 e)"
+
+#~ msgid ""
+#~ "JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
+#~ msgstr ""
+#~ "Javaskrîpt ne çalak e. Javaskrîptê <A HREF=\"%1\">ji vir</A> çalak bike."
+
+#~ msgid ""
+#~ "JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\"
+#~ "\">here</A>."
+#~ msgstr ""
+#~ "Javaskrîpt ne çalak e. Javaskrîptê <a href=\\\"%1\\\">ji vir</a> çalak "
+#~ "bike."
+
+#~ msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
+#~ msgstr "Desteka <A HREF=\"%1\">Javaya</A><SUP>&reg;</SUP> Ewle"
+
+#, fuzzy
+#~| msgid ""
+#~| "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">Blackdown</A>, <A HREF="
+#~| "\"%2\">IBM</A> or <A HREF=\"%3\">Sun</A>)"
+#~ msgid ""
+#~ "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">IBM</A> or <A HREF="
+#~ "\"%2\">Sun/Oracle</A>)"
+#~ msgstr ""
+#~ "Bi desteka JDK 1.2.0 (Java 2) ev VM (<A HREF=\"%1\">Blackdown</A>,<A HREF="
+#~ "\"%2\">IBM</A> an jî <A HREF=\"%3\">Sun</A>)"
+
+#~ msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
+#~ msgstr "<A HREF=\"%1\">ji vir</A> Javayê çalak bike."
+
+#~ msgid ""
+#~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">plugins</A> (for "
+#~ "viewing <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
+#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>Video, etc.)"
+#~ msgstr ""
+#~ "Pêvekên Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\"> û </A> (for "
+#~ "viewing <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
+#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
+#~ "SUP></A>ji bo temaşeya videoyê)"
+
+#~ msgid "Secure Sockets Layer"
+#~ msgstr "Asta Ketoka Ewle"
+
+#~ msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
+#~ msgstr "(TLS/SSL v2/3) ji bo heta 168 bitan têkildariya ewle"
+
+#~ msgid "OpenSSL"
+#~ msgstr "SSL Veke"
+
+#~ msgid "Bidirectional 16bit unicode support"
+#~ msgstr "Piştgiriya unîkoda 16 bit ya dualî"
+
+#~ msgid "AutoCompletion for forms"
+#~ msgstr "Ji bo forman temamkirina bixweber"
+
+#~ msgid "Feature"
+#~ msgstr "Taybetmendî"
+
+#~ msgid "Details"
+#~ msgstr "Kîtekît"
+
+#~ msgid "Image formats"
+#~ msgstr "Şêwazê wêne"
+
+#, fuzzy
+#~| msgid "PNG<br />MNG<br />JPG<br />GIF"
+#~ msgid "PNG<br />JPG<br />GIF"
+#~ msgstr "PNG<br />MNG<br />JPG<br />GIF"
+
+#~ msgid "Transfer protocols"
+#~ msgstr "Protokolên Veguheztinê"
+
+#~ msgid "HTTP 1.1 (including gzip/bzip2 compression)"
+#~ msgstr "HTTP 1.1 (pêçavên bzip2/gzip dihindurîne)"
+
+#~ msgid "FTP"
+#~ msgstr "FTP"
+
+#, fuzzy
+#~| msgid "and <A HREF=\"%1\">many more...</A>"
+#~ msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpcenter)...</A>"
+#~ msgstr "û <A HREF=\"%1\">hîn zêde...</A>"
+
+#~ msgctxt "A feature of Konqueror"
+#~ msgid "URL-Completion"
+#~ msgstr "URL-Temamkirin"
+
+#~ msgid "Manual"
+#~ msgstr "Rêber"
+
+#~ msgid "Popup"
+#~ msgstr "Agahî"
+
+#~ msgid "(Short-) Automatic"
+#~ msgstr "(Nîv) Bixweber"
+
+#~ msgctxt ""
+#~ "Link that points to the first page of the Konqueror 'about page', "
+#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
+#~ msgid "<a href=\"%1\">Return to Starting Points</a>"
+#~ msgstr "<a href=\"%1\">Vegere Xalên Destpêkê</a>"
+
+#~ msgid "Tips &amp; Tricks"
+#~ msgstr "Liberxistin"
+
+#, fuzzy
+#~| msgid ""
+#~| "Use Internet-Keywords and Web-Shortcuts: by typing \"gg: KDE\" one can "
+#~| "search the Internet, using Google, for the search phrase \"KDE\". There "
+#~| "are a lot of Web-Shortcuts predefined to make searching for software or "
+#~| "looking up certain words in an encyclopedia a breeze. You can even <a "
+#~| "href=\"%1\">create your own</a> Web-Shortcuts."
+#~ msgid ""
+#~ "Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, "
+#~ "using Google, for the search phrase \"KDE\". There are a lot of Web-"
+#~ "Shortcuts predefined to make searching for software or looking up certain "
+#~ "words in an encyclopedia a breeze. You can even <a href=\"%1\">create "
+#~ "your own</a> Web-Shortcuts."
+#~ msgstr ""
+#~ "Bêjeyên miftehî yên Internetê û kineriyên Webê bi kar bîne: \"gg: KDE\" "
+#~ "binivîse, tu dikarî gotina \"KDE\" motora lêgerînê ya Google bi kar bînî "
+#~ "û lê bigerî. Ji bo lêgerîna nivîsbariyê û lêkolîna di ensîklopediyan de "
+#~ "gelek kineriyên Webê hene. Pê re jî tu dikarî <a href=\"%1\">kineriyên "
+#~ "xwe</a> çêkî."
+
+#, fuzzy
+#~| msgid ""
+#~| "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> "
+#~| "in the toolbar to increase the font size on your web page."
+#~ msgid ""
+#~ "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
+#~ "the HTML toolbar to increase the font size on your web page."
+#~ msgstr ""
+#~ "Ji bo mezinkirina curetîpên rûpela Webê, bişkojka pertavê ya li ser "
+#~ "darikê amûran <img width='16' height='16' src=\"%1\"></img> bi kar bîne."
+
+#~ msgid ""
+#~ "When you want to paste a new address into the Location toolbar you might "
+#~ "want to clear the current entry by pressing the black arrow with the "
+#~ "white cross <img width='16' height='16' src=\"%1\"></img> in the toolbar."
+#~ msgstr ""
+#~ "Berî tu navnîşaneke nû li darikê navnîşanê danî, ji bo tu ya kevin jê "
+#~ "bibî tîra reş ku X li ser heye ya li ser darikê amûran<img width='16' "
+#~ "height='16' src=\"%1\"></img> bi kar bîne."
+
+#, fuzzy
+#~| msgid ""
+#~| "To create a link on your desktop pointing to the current page, simply "
+#~| "drag the \"Location\" label that is to the left of the Location toolbar, "
+#~| "drop it on to the desktop, and choose \"Link\"."
+#~ msgid ""
+#~ "To create a link on your desktop pointing to the current page, simply "
+#~ "drag the icon (favicon) that is to the left of the Location toolbar, drop "
+#~ "it on to the desktop, and choose \"Icon\"."
+#~ msgstr ""
+#~ "Heke tu bixwazî girêdanekê li ser maseya xwe çêkî, ji bo vê rûpela tu "
+#~ "niha lê digerî, bi tenê li ser darikê amûrên Cihan etîketa \"Cih\" bi xwê "
+#~ "re bikişîne û bibe sermaseya xwe û berde û vebijêrka \"Girêdan\"ê "
+#~ "hilbijêre."
+
+#~ msgid ""
+#~ "You can also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen "
+#~ "Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
+#~ "sessions."
+#~ msgstr ""
+#~ "Ji pêşeka paceyê tu dikarî<img width='16' height='16' src=\"%1\" /> "
+#~ "\"Moda Dimendertijî\" bibînî. Ev taybetî ji bo danişînên \"Axaftin\" ê "
+#~ "girîng e."
+
+#~ msgid ""
+#~ "Divide et impera (lat. \"Divide and conquer\") - by splitting a window "
+#~ "into two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> "
+#~ "Split View Left/Right) you can make Konqueror appear the way you like. "
+#~ "You can even load some example view-profiles (e.g. Midnight Commander), "
+#~ "or create your own ones."
+#~ msgstr ""
+#~ "Divide et impera (latînî: \"Parve bike û hikm bike\") - paceyê dike du "
+#~ "parçe (mînak. Pace -> <img width='16' height='16' src=\"%1\" /> Dîmenê "
+#~ "Çep/Rast Parve bike) tu dikarî Konqueror'ê wekî tu hez dikî nîşan bikî. "
+#~ "Her wisa tu dikarî hinek profîlên dîtinê yên mînak lê bar bikî (mînak. "
+#~ "Midnight-Commander), an jî tu dikarî profîla xwe çêkî."
+
+#~ msgid ""
+#~ "Use the <a href=\"%1\">user-agent</a> feature if the website you are "
+#~ "visiting asks you to use a different browser (and do not forget to send a "
+#~ "complaint to the webmaster!)"
+#~ msgstr ""
+#~ "Rûpela tu serîlêdana wê dikî here ji aliyê geroka te ve nayê destekirin, "
+#~ "taybetiya <a href=\"%1\">ajanê bikarhêner</a> bi kar bîne (ji bîr neke û "
+#~ "giliyê xwe jî ji rêveberê wê malperê re bişîne)"
+
+#, fuzzy
+#~| msgid ""
+#~| "The <img width='16' height='16' src=\"%1\"></img> History in your "
+#~| "SideBar ensures that you can keep track of the pages you have visited "
+#~| "recently."
+#~ msgid ""
+#~ "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
+#~ "ensures that you can keep track of the pages you have visited recently."
+#~ msgstr ""
+#~ "Ev a ku li darikê kêlekê xuya dike <img width='16' height='16' src="
+#~ "\"%1\"></img> ji bo bikaranîna dîroka te û şopa rûpelên tu lê geriyayî ye."
+
+#~ msgid ""
+#~ "Use a caching <a href=\"%1\">proxy</a> to speed up your Internet "
+#~ "connection."
+#~ msgstr ""
+#~ "Tu dikarî pêşkêşkereke hilanîna bîrê <a href=\"%1\"></a> bi kar bînî û "
+#~ "xeta xwe ya înternetê xurtir bikî."
+
+#, fuzzy
+#~| msgid ""
+#~| "Advanced users will appreciate the Konsole which you can embed into "
+#~| "Konqueror (Window -> <img width='16' height='16' SRC=\"%1\"></img> Show "
+#~| "Terminal Emulator)."
+#~ msgid ""
+#~ "Advanced users will appreciate the Konsole which you can embed into "
+#~ "Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
+#~ "Terminal Emulator)."
+#~ msgstr ""
+#~ "Bikarhênerên pispor konsola ku tu dikarî di Konqueror de hilînî çalak "
+#~ "dikin (Pace -> <img width='16' height='16' src=\"%1\"></img> Emulatora "
+#~ "Termînalê Nîşan Bide) û dikarin bi kar bînin."
+
+#~ msgid "Next: Specifications"
+#~ msgstr "Ya dû re: Şert"
+
+#~ msgid "Installed Plugins"
+#~ msgstr "Pêvekên Sazkirî"
+
+#~ msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
+#~ msgstr "<td>Pêvek</td><td>Daxuyanî</td><td>Pel</td><td>Cure</td>"
+
+#~ msgid "Installed"
+#~ msgstr "Sazkirî"
+
+#~ msgid ""
+#~ "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
+#~ msgstr "<td>Cureyê Mime</td><td>Daxuyanî</td><td>Paşgir</td><td>Pêvek</td>"
+
+#~ msgid ""
+#~ "Do you want to disable showing the introduction in the webbrowsing "
+#~ "profile?"
+#~ msgstr "Tu dixwazî ku destpêkirin di geroka internetê de neyê xuyakirin?"
+
+#~ msgid "Faster Startup?"
+#~ msgstr "Destpêkirina Hîn Zû?"
+
+#~ msgid "Disable"
+#~ msgstr "çalak neke"
+
+#~ msgid "Keep"
+#~ msgstr "Hilîne"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Erdal Ronahi"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "erdal.ronahi@nospam.gmail.com"
+
+#~ msgid "&File"
+#~ msgstr "&Pel"
+
+#~ msgid "&Edit"
+#~ msgstr "&Sererastkirin"
+
+#~ msgid "&View"
+#~ msgstr "&Dîmen"
+
+#~ msgid "&Go"
+#~ msgstr "&Here"
+
+#~ msgid "&Settings"
+#~ msgstr "&Mîheng"
+
+#~ msgid "&Window"
+#~ msgstr "&Pace"
+
+#~ msgid "&Help"
+#~ msgstr "&Alîkarî"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Darikê Mak"
+
+#~ msgid "Extra Toolbar"
+#~ msgstr "Darikê Amûran ê Bêhtir"
+
+#~ msgid "Location Toolbar"
+#~ msgstr "Darikê Amûran ê Cih"
+
+#~ msgid "Bookmark Toolbar"
+#~ msgstr "Darikê Amûran ê Bijareyan"
+
+#~ msgid "Save open tabs and windows for easy retrieval"
+#~ msgstr "Ji bo hêsaniyê pace û hilpekînên vekirî tomar bike"
+
+#~ msgid "&Session name:"
+#~ msgstr "Navê &Danişînê:"
+
+#~ msgid "&Profile name:"
+#~ msgstr "Navê &Profîlê:"
+
+#~ msgid "Save &URLs in profile"
+#~ msgstr "&URLyan li profîlê tomar bike"
+
+#~ msgctxt "@action:button New session"
+#~ msgid "New..."
+#~ msgstr "Nû..."
+
+#~ msgctxt "@action:button Save current session"
+#~ msgid "Save Current"
+#~ msgstr "Yê heyî tomar bike"
+
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename..."
+#~ msgstr "Nav biguherîne..."
+
+#~ msgctxt "@action:button Delete session"
+#~ msgid "Delete"
+#~ msgstr "Jêbirin"
+
+#~ msgid "Open tabs inside current window"
+#~ msgstr "Hilpekînan di paceya heyî de veke"
+
+#~ msgid "Limits"
+#~ msgstr "Sînor"
+
+#~ msgid "URLs e&xpire after"
+#~ msgstr "Bidawîbûna URL'yan"
+
+#~ msgid "Maximum &number of URLs:"
+#~ msgstr "&Hejmara herî zêde ya URL'yan:"
+
+#~ msgid "Custom Fonts For"
+#~ msgstr "Curenivîsa Taybet:"
+
+#~ msgid "URLs newer than"
+#~ msgstr "URL'yên ji vê dîrokê nûtir"
+
+#~ msgid "Choose Font..."
+#~ msgstr "Curenivîsê Hilbijêre..."
+
+#~ msgid "URLs older than"
+#~ msgstr "URL'yên kevintir ji"
+
+#~ msgid ""
+#~ "Shows the number of times visited and the dates of the first and last "
+#~ "visits, in addition to the URL"
+#~ msgstr ""
+#~ "Hejmara serîlêdanan nîşan dide. Di heman demê de jî demên serîlêdana pêşî "
+#~ "û dawî jî nîşan dide."
+
+#~ msgid "Detailed tooltips"
+#~ msgstr "Kîtekîtên alavan"
+
+#~ msgid "Clear History"
+#~ msgstr "Dîrokê jê bibe"
+
+#, fuzzy
+#~| msgid "Maximum &number of URLs:"
+#~ msgid "Maximum number of Closed Items"
+#~ msgstr "&Hejmara herî zêde ya URL'yan:"
+
+#, fuzzy
+#~| msgid "Open tabs inside current window"
+#~ msgid "Open folders in separate windows"
+#~ msgstr "Hilpekînan di paceya heyî de veke"
+
+#~ msgid "Hide %1"
+#~ msgstr "%1 veşêre"
+
+#, fuzzy
+#~| msgid "Web SideBar Plugin"
+#~ msgid "SideBar Test Plugin"
+#~ msgstr "Pêveka Darikê Kêlekê yê Webê"
+
+#~ msgid "Bookmark This Location"
+#~ msgstr "Vî Cihî Têxe Nav Bijareyan"
+
+#~ msgid ""
+#~ "Malformed URL\n"
+#~ "%1"
+#~ msgstr ""
+#~ "URL'ya nerast\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Protocol not supported\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Protokol nayê destekirin\n"
+#~ "%1"
+
+#~ msgid "Cannot create the find part, check your installation."
+#~ msgstr "Parçeyê lêgerînê çênabe, sazkirina xwe kontrol bike."
+
+#~ msgid "My Bookmarks"
+#~ msgstr "Bijareyên Min"
+
+#~ msgid "Preload for later use"
+#~ msgstr "Ji bo bikaranîna piştre ji berê ve lê bar bike"
+
+#~ msgid "&Save View Profile \"%1\"..."
+#~ msgstr "Profîla Bergehê &Tomar Bike \"%1\"..."
+
+#~ msgid "Configure Navigation Panel"
+#~ msgstr "Panela Navîgasiyonê Veava bike"
+
+#~ msgid "Close Navigation Panel"
+#~ msgstr "Panela Navîgasiyonê Bigire"
+
+#~ msgid "Select Type"
+#~ msgstr "Cure Hilbijêre"
+
+#~ msgid "Select type:"
+#~ msgstr "Cure Hilbijêre:"
+
+#~ msgid "Web SideBar Plugin"
+#~ msgstr "Pêveka Darikê Kêlekê yê Webê"
+
+#~ msgid "<qt><b>%1</b> does not exist</qt>"
+#~ msgstr "<qt><b>%1</b> tune</qt>"
+
+#~ msgid "Minutes"
+#~ msgstr "Xulek"
+
+#~ msgid "Days"
+#~ msgstr "Roj"
+
+#~ msgid "Your sidebar is not functional or unavailable."
+#~ msgstr "Darikê te yê kêlekê ne bikêrhatî ye an jî pêwendî pê re çênabe."
+
+#~ msgid "Cannot find running history plugin in your sidebar."
+#~ msgstr "Pêveka dîrokê ya di darikê kêlekê de dixebitî nehate dîtin."
+
+#~ msgctxt "@action:inmenu Go"
+#~ msgid "Show History in Sidebar"
+#~ msgstr "Dîrokê di Darikê Kêlekê dê Nîşan Bide"
+
+#~ msgid "Select Remote Charset"
+#~ msgstr "Koma tîpan a dûr hilbijêre"
+
+#~ msgid "Reload"
+#~ msgstr "Nûbarkirin"
+
+#~ msgid "Default"
+#~ msgstr "Standard"
+
+#, fuzzy
+#~ msgctxt "@action:button Rename session"
+#~ msgid "Rename"
+#~ msgstr "Nav biguherîne"
+
+#~ msgid ""
+#~ "Konqueror is your file manager, web browser and universal document viewer."
+#~ msgstr ""
+#~ "Konqueror rêveberê te yê pelgehan, geroka te ya webê û nîşanderê pelgeyên "
+#~ "te yên hevpar e."
+
+#~ msgid "Joseph WENNINGER"
+#~ msgstr "Joseph WENNINGER"
+
+#~ msgid "G E N E R A L"
+#~ msgstr "G I Ş T Î"
+
+#~ msgid "<img width='16' height='16' src=\"%1\"></img>"
+#~ msgstr "<img width='16' height='16' src=\"%1\"></img>"
+
+#~ msgid "Applications"
+#~ msgstr "Sepan"
+
+#~ msgid "Installed programs"
+#~ msgstr "Bernameyên sazkirî"
+
+#~ msgid "&Location"
+#~ msgstr "&Cih"

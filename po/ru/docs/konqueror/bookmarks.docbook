@@ -1,0 +1,245 @@
+<chapter id="bookmarks">
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>Kernel</firstname
+><surname
+>Panic</surname
+><affiliation
+><address
+><email
+>rzhevskiy@mail.ru</email
+></address
+></affiliation
+><contrib
+>Перевод на русский</contrib
+></othercredit
+><othercredit role="reviewer"
+><firstname
+>Григорий</firstname
+><surname
+>Мохин</surname
+><affiliation
+><address
+><email
+>mok@kde.ru</email
+></address
+></affiliation
+><contrib
+>Редакция русского перевода</contrib
+></othercredit
+> 
+</authorgroup>
+<date
+>2003-11-05</date
+> <releaseinfo
+>3.2</releaseinfo
+> </chapterinfo>
+
+<title
+>Работа с закладками</title>
+
+<para
+>Закладки помогут вам сохранить адреса часто посещаемых страниц в Интернете, а также файлов и каталогов.</para>
+
+<para
+>Чтобы открыть список закладок, выберите пункт меню <guimenu
+>Закладки</guimenu
+> или нажмите <keycombo action="simul"
+>&Alt;<keycap
+>З</keycap
+></keycombo
+>. После того, как появится список, выделите нужный вам пункт с помощью клавиш со стрелками и нажмите &Enter;.</para>
+
+<para
+>Чтобы создать новую закладку, выберите пункт меню <menuchoice
+><guimenu
+>Закладки</guimenu
+> <guimenuitem
+>Добавить закладку</guimenuitem
+></menuchoice
+>, нажмите сочетание клавиш <keycombo action="simul"
+>&Ctrl;<keycap
+>B</keycap
+></keycombo
+> или щёлкните по свободной части страницы <mousebutton
+>правой</mousebutton
+> кнопкой мыши и в появившемся меню выберите пункт <guimenuitem
+>Добавить в закладки</guimenuitem
+>.</para>
+
+<para
+>Список закладок может содержать папки, в которых находятся другие закладки. Чтобы создать папку, выберите пункт меню <menuchoice
+><guimenu
+>Закладки</guimenu
+><guimenuitem
+>Создать папку...</guimenuitem
+></menuchoice
+>. После этого, если вы захотите добавить какую-либо закладку не в основной список, а в папку, выберите папку в меню <guimenu
+>Закладки</guimenu
+> и воспользуйтесь пунктом <guimenuitem
+>Добавить закладку</guimenuitem
+>.</para>
+
+<para
+>Закладки также доступны с <link linkend="sidebar"
+> <guilabel
+>панели навигации</guilabel
+></link
+>.</para>
+
+<sect1 id="orgbmark">
+<title
+>Редактор закладок</title>
+
+<para
+>Если вы выберете пункт меню <menuchoice
+><guimenu
+>Закладки</guimenu
+> <guimenuitem
+>Редактор закладок</guimenuitem
+> </menuchoice
+>, появится окно <guilabel
+>Редактора закладок</guilabel
+>.</para>
+<para
+>В окне будут показаны закладки и папки в виде дерева. Слева от каждой папки будет находиться квадратик со знаком <keycap
+>+</keycap
+>, при щелчке по которому папка развернётся, и будут показаны содержащиеся в ней подкаталоги. При этом знак в квадратике сменится на <keycap
+>-</keycap
+>; если щёлкнуть по нему ещё раз, папка будет свёрнута.</para>
+
+<para
+>Чтобы выбрать нужную папку, щёлкните по ней мышью или воспользуйтесь клавишами <keysym
+>Стрелка вниз</keysym
+> и <keysym
+>Стрелка вверх</keysym
+>. Клавиша <keysym
+>Стрелка вправо</keysym
+> позволяет развернуть папку, а <keysym
+>Стрелка влево</keysym
+> - свернуть.</para>
+
+<para
+>Закладки и папки можно перетаскивать мышью, а также перемещать с помощью команд <guimenuitem
+>Вырезать</guimenuitem
+> и <guimenuitem
+>Вставить</guimenuitem
+>. В главном меню закладки будут располагаться точно в таком же порядке, как и в данном окне. Чтобы вставить в меню разделительную черту, воспользуйтесь пунктом меню <menuchoice
+><guimenu
+>Вставка</guimenu
+><guimenuitem
+>Вставить разделитель</guimenuitem
+></menuchoice
+>.</para>
+
+<para
+>Чтобы создать новую папку, выберите пункт меню <menuchoice
+><guimenu
+>Вставка</guimenu
+><guimenuitem
+>Создать новую папку</guimenuitem
+></menuchoice
+>, щёлкните <mousebutton
+>правой</mousebutton
+> кнопкой мыши по любому объекту главного окна редактора и в появившемся окне выберите пункт <guimenuitem
+>Создать новую папку</guimenuitem
+> или воспользуйтесь сочетанием клавиш <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+>. </para>
+
+<para
+>Чтобы дать закладке или папке новое имя, выделите её, а затем нажмите клавишу <keycap
+>F2</keycap
+> или выберите пункт меню <menuchoice
+><guimenu
+>Правка</guimenu
+><guimenuitem
+>Переименовать</guimenuitem
+></menuchoice
+>. Вы также можете щёлкнуть по закладке <mousebutton
+>правой</mousebutton
+> кнопкой мыши и в появившемся меню выбрать пункт <guimenuitem
+>Переименовать</guimenuitem
+>. Чтобы изменить адрес страницы, на которую указывает закладка, нажмите <keycap
+>F3</keycap
+> или выберите пункт меню <guimenuitem
+>Изменить адрес</guimenuitem
+>.</para>
+
+<para
+><guilabel
+>Редактор закладок</guilabel
+> позволяет вам импортировать закладки из других обозревателей, добавляя их в новую папку или замещая ими уже существующие. Чтобы воспользоваться этой возможностью, выберите пункт меню <menuchoice
+><guimenu
+>Файл</guimenu
+><guisubmenu
+>Импорт</guisubmenu
+></menuchoice
+>. С помощью пункта меню <menuchoice
+><guimenu
+>Файл</guimenu
+><guisubmenu
+>Экспорт</guisubmenu
+></menuchoice
+> закладки можно экспортировать в обозреватель &Netscape; или Mozilla.</para>
+
+<para
+>Если вы наряду с &konqueror; часто используете обозреватель &Netscape;, может оказаться удобнее включить режим <guimenuitem
+>Показывать закладки Netscape в окнах Konqueror</guimenuitem
+> в меню <guimenu
+>Настройка</guimenu
+>. В этом случае если вы добавите или удалите закладку в &Netscape;, она также будет добавлена или удалена в &konqueror;.</para>
+
+<para
+>Чтобы указать, какая папка отображается как панель закладок, выделите её, а затем выберите пункт меню <menuchoice
+><guimenu
+>Правка</guimenu
+><guisubmenu
+>Сделать папку панелью закладок</guisubmenu
+></menuchoice
+>.</para>
+
+<para
+>Если вам требуется узнать, куда ссылается определённая закладка, щёлкните по ней <mousebutton
+>правой</mousebutton
+> кнопкой мыши и в появившемся меню выберите пункт <guimenuitem
+>Открыть в Konqueror</guimenuitem
+>. Если вы лишь хотите убедиться, что адрес всё ещё доступен, выберите пункт <guimenuitem
+>Проверить статус</guimenuitem
+>.</para>
+
+<important
+><para
+>Перед тем, как завершить работу с редактором закладок, следует сохранить внесённые изменения. Для этого выберите пункт меню <menuchoice
+><guimenu
+>Файл</guimenu
+><guimenuitem
+>Сохранить</guimenuitem
+></menuchoice
+> или воспользуйтесь сочетанием клавиш <keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+>. </para
+></important>
+</sect1
+> 
+
+
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

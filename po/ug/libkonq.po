@@ -1,0 +1,220 @@
+# Uyghur translation for libkonq.
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Sahran <sahran.ug@gmail.com>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2013-09-08 07:04+0900\n"
+"Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
+"Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
+"Language: ug\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "ئاچ(&O)"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "قىسقۇچ قۇر(&F)…"
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "ئەسلىگە كەلتۈر(&R)"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr "ئەسلى مۇندەرىجىنى كۆرسەت"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr "ئەسلى ھۆججەتنى كۆرسەت"
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "ئەخلەتخانىنى تازىلا(&E)"
+
+#: src/konq_popupmenu.cpp:312
+#, kde-format
+msgid "&Configure Trash Bin"
+msgstr "ئەخلەتخانىنى سەپلە(&C)"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "بۇ بەتنى  خەتكۈچلە(&B)"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "بۇ ئورۇننى  خەتكۈچلە(&B)"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "بۇ قىسقۇچنى خەتكۈچلە(&B)"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "بۇ ئۇلانمىدى خەتكۈچلە(&B)"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "بۇ ھۆججەتنى خەتكۈچلە(&B)"
+
+#: src/konq_popupmenu.cpp:379
+#, kde-format
+msgid "Preview In"
+msgstr "ئالدىن كۆزىتىش ئۇسۇلى"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "خاسلىق(&P)"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy To"
+#~ msgstr "كۆچۈر"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "يۆتكە"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "ماكان مۇندەرىجە"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "غول مۇندەرىجە"
+
+#~ msgctxt "@title:menu in Copy To or Move To submenu"
+#~ msgid "Browse..."
+#~ msgstr "كۆز يۈگۈرت…"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "بۇ جايغا كۆچۈر"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "نۆۋەتتىكى ئورۇنغا يۆتكە"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "قىسقۇچنى ئۆزىگە تاشلىيالمايسىز"
+
+#~ msgid "File name for dropped contents:"
+#~ msgstr "تاشلانغان مەزمۇننىڭ ھۆججەت ئاتى:"
+
+#~ msgid "&Move Here"
+#~ msgstr "بۇ جايغا يۆتكە(&M)"
+
+#~ msgid "&Copy Here"
+#~ msgstr "بۇ جايغا كۆچۈر(&C)"
+
+#~ msgid "&Link Here"
+#~ msgstr "بۇ يەرگە ئۇلا(&L)"
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "تام قەغىزى قىلىپ بەلگىلە"
+
+#~ msgid "C&ancel"
+#~ msgstr "ۋاز كەچ(&A)"
+
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "مۇندەرىجە قۇر"
+
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "باشقا ئات كىرگۈزۈڭ"
+
+#~ msgid ""
+#~ "The name \"%1\" starts with a dot, so the directory will be hidden by "
+#~ "default."
+#~ msgstr ""
+#~ "\"%1\" ئات چېكىت بىلەن باشلانغان بۇ مۇندەرىجە كۆڭۈلدىكى ئەھۋالدا "
+#~ "يوشۇرۇلىدۇ."
+
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "يوشۇرۇن مۇندەرىجە قۇرامدۇ؟"
+
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "يېڭى قىسقۇچ"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "يېڭى قىسقۇچ"
+
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "قىسقۇچ ئاتىنى كىرگۈزۈڭ:"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "بىر قىسقۇچ چاپلا"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One File"
+#~ msgstr "بىر ھۆججەت چاپلا"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Item"
+#~ msgid_plural "Paste %1 Items"
+#~ msgstr[0] "%1 تۈر چاپلا"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste Clipboard Contents..."
+#~ msgstr "چاپلاش تاختىسىدىكى مەزمۇنلارنى چاپلا…"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste"
+#~ msgstr "چاپلا"
+
+#~ msgid ""
+#~ "Restores this file or directory, back to the location where it was "
+#~ "deleted from initially"
+#~ msgstr ""
+#~ "ھۆججەت ياكى مۇندەرىجىنى ئۆچۈرۈشتىن بۇرۇنقى ئورنىغا ئەسلىگە كەلتۈرىدۇ"
+
+#~ msgid ""
+#~ "Opens a new file manager window showing the target of this link, in its "
+#~ "parent directory."
+#~ msgstr ""
+#~ "يېڭى بىر ھۆججەت باشقۇرغۇچ كۆزنەك ئېچىپ بۇ ئۇلانما كۆرسەتكەن نىشاننىڭ ئاتا "
+#~ "مۇندەرىجىسىنى كۆرسىتىدۇ."
+
+#~ msgid "Share"
+#~ msgstr "ھەمبەھىر"
+
+#~ msgctxt "@info"
+#~ msgid "Close"
+#~ msgstr "ياپ"
+
+#~ msgid "Close"
+#~ msgstr "ياپ"
+
+#~ msgid "Error: %1"
+#~ msgstr "خاتالىق: %1"

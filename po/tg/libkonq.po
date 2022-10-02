@@ -1,0 +1,359 @@
+# translation of libkonq.po to Тоҷикӣ
+# translation of libkonq.po to Tajik
+# Copyright (C) 2004 Free Software Foundation, Inc.
+# 2004, infoDev, a World Bank organization
+# 2004, Khujand Computer Technologies, Inc.
+# 2004, KCT1, NGO
+#
+# Dilshod Marupov <kct_tj@yahoo.co.uk>, 2004.
+# Victor Ibragimov <victor.ibragimov@gmail.com>, 2019.
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-15 00:44+0000\n"
+"PO-Revision-Date: 2019-10-01 11:08+0500\n"
+"Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
+"Language-Team: English <kde-i18n-doc@kde.org>\n"
+"Language: tg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 19.04.3\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: src/konq_popupmenu.cpp:219
+#, kde-format
+msgid "&Open"
+msgstr "&Кушодан"
+
+#: src/konq_popupmenu.cpp:242
+#, kde-format
+msgid "Create &Folder..."
+msgstr "Эҷод кардани &ҷузвдон..."
+
+#: src/konq_popupmenu.cpp:253
+#, kde-format
+msgid "&Restore"
+msgstr "&Барқарорсозӣ"
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original Directory"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:265
+#, kde-format
+msgid "Show Original File"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:300
+#, kde-format
+msgid "&Empty Trash Bin"
+msgstr "&Сабадро холӣ кунед"
+
+#: src/konq_popupmenu.cpp:312
+#, fuzzy, kde-format
+#| msgid "&Empty Trash Bin"
+msgid "&Configure Trash Bin"
+msgstr "&Сабадро холӣ кунед"
+
+#: src/konq_popupmenu.cpp:336
+#, kde-format
+msgid "&Bookmark This Page"
+msgstr "&Хатчӯби ин саҳифа"
+
+#: src/konq_popupmenu.cpp:338
+#, kde-format
+msgid "&Bookmark This Location"
+msgstr "&Хатчӯби ин макон"
+
+#: src/konq_popupmenu.cpp:341
+#, kde-format
+msgid "&Bookmark This Folder"
+msgstr "&Хатчӯби ин ҷузвадон"
+
+#: src/konq_popupmenu.cpp:343
+#, kde-format
+msgid "&Bookmark This Link"
+msgstr "&Хатчӯби ин алоқа"
+
+#: src/konq_popupmenu.cpp:345
+#, kde-format
+msgid "&Bookmark This File"
+msgstr "&Хатчӯби ин Файл"
+
+#: src/konq_popupmenu.cpp:379
+#, kde-format
+msgid "Preview In"
+msgstr "Пешнамоиш дар"
+
+#: src/konq_popupmenu.cpp:390
+#, kde-format
+msgid "Open Terminal Here"
+msgstr ""
+
+#: src/konq_popupmenu.cpp:426
+#, kde-format
+msgid "&Properties"
+msgstr "&Хусусиятҳо"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy To"
+#~ msgstr "Нусхабардорӣ ба"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move To"
+#~ msgstr "Таҳвил ба"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Home Folder"
+#~ msgstr "Ҷузвдони ходагӣ"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Root Folder"
+#~ msgstr "Ҷузвдони Root"
+
+#~ msgctxt "@title:menu in Copy To or Move To submenu"
+#~ msgid "Browse..."
+#~ msgstr "Кушодан..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "Copy Here"
+#~ msgstr "&Ба ин ҷо нусха монед"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Move Here"
+#~ msgstr "&Ба ин ҷо таҳвил кунед"
+
+#~ msgid "You cannot drop a folder on to itself"
+#~ msgstr "Шумо фаҳристро ба худаш партофта наметавонед"
+
+#~ msgid "File name for dropped contents:"
+#~ msgstr "Номи файл барои контенти гирифташуда:"
+
+#~ msgid "&Move Here"
+#~ msgstr "&Ба ин ҷо ҷой иваз кунед"
+
+#~ msgid "&Copy Here"
+#~ msgstr "&Ба ин ҷо нусха партоед"
+
+#~ msgid "&Link Here"
+#~ msgstr "&Ба ин ҷо пайванд кунед"
+
+#~ msgid "Set as &Wallpaper"
+#~ msgstr "Ҳамчун &тасвири экран насб кунед"
+
+#~ msgid "C&ancel"
+#~ msgstr "Бекор &кардан"
+
+#, fuzzy
+#~| msgid "Create New"
+#~ msgctxt "@action:button"
+#~ msgid "Create directory"
+#~ msgstr "Эҷоди нав"
+
+#, fuzzy
+#~| msgid "Enter folder name:"
+#~ msgctxt "@action:button"
+#~ msgid "Enter a different name"
+#~ msgstr "Номи ҷузвдонро ворид кунед:"
+
+#, fuzzy
+#~| msgid "Create New"
+#~ msgctxt "@title:window"
+#~ msgid "Create hidden directory?"
+#~ msgstr "Эҷоди нав"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@label Default name when creating a folder"
+#~ msgid "New Folder"
+#~ msgstr "Ҷузвдони нав"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@title:window"
+#~ msgid "New Folder"
+#~ msgstr "Ҷузвдони нав"
+
+#, fuzzy
+#~| msgid "Enter folder name:"
+#~ msgctxt "@label:textbox"
+#~ msgid "Enter folder name:"
+#~ msgstr "Номи ҷузвдонро ворид кунед:"
+
+#, fuzzy
+#~| msgid "New Folder"
+#~ msgctxt "@action:inmenu"
+#~ msgid "Paste One Folder"
+#~ msgstr "Ҷузвдони нав"
+
+#~ msgid "Share"
+#~ msgstr "Тақсим кардан"
+
+#~ msgid "Create New"
+#~ msgstr "Эҷоди нав"
+
+#~ msgid "Link to Device"
+#~ msgstr "Алоқаи дастгоҳ"
+
+#~ msgid "<qt>The template file <b>%1</b> does not exist.</qt>"
+#~ msgstr "<qt>Файли қолаби <b>%1</b> мавҷуд нест.</qt>"
+
+#~ msgid "File name:"
+#~ msgstr "Номи файл:"
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Actions"
+#~ msgstr "&Амалҳо"
+
+#, fuzzy
+#~| msgid "&Open With"
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With"
+#~ msgstr "&Кушодан Бо"
+
+#, fuzzy
+#~| msgid "&Other..."
+#~ msgctxt "@action:inmenu Open With"
+#~ msgid "&Other..."
+#~ msgstr "&Дигар..."
+
+#, fuzzy
+#~| msgid "&Open With..."
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With..."
+#~ msgstr "&Кушодан Бо..."
+
+#~ msgid "Open &with %1"
+#~ msgstr "&Кушодан бо %1"
+
+#~ msgid "Open in New &Window"
+#~ msgstr "Кушодан дар &Тирезаи Нав"
+
+#~ msgid "Open the trash in a new window"
+#~ msgstr "Кушодани сабад дар тирезаи нав"
+
+#, fuzzy
+#~ msgid "Open the medium in a new window"
+#~ msgstr "Кушодани санад дар тирезаи нав"
+
+#~ msgid "Open the document in a new window"
+#~ msgstr "Кушодани санад дар тирезаи нав"
+
+#~| msgid "Delete Files"
+#~ msgid "Deleting"
+#~ msgstr "Нобуд кардани Файлҳо"
+
+#~ msgid "Und&o"
+#~ msgstr "&Бекор кардан"
+
+#~ msgid "Und&o: Copy"
+#~ msgstr "&Бекор кардани: Нусхабардорӣ"
+
+#~ msgid "Und&o: Link"
+#~ msgstr "&Бекор кардани: Пайваст"
+
+#~ msgid "Und&o: Move"
+#~ msgstr "&Бекор кардани: Ҷойивазкунӣ"
+
+#, fuzzy
+#~ msgid "Und&o: Rename"
+#~ msgstr "&Бекор кардани: Пайваст"
+
+#, fuzzy
+#~ msgid "Und&o: Trash"
+#~ msgstr "&Бекор кардани: Нусхабардорӣ"
+
+#~ msgid "Und&o: Create Folder"
+#~ msgstr "&Бекор кардани: Офариниши Фаҳрест"
+
+#, fuzzy
+#~ msgid "Do you really want to delete this item?"
+#~ msgid_plural "Do you really want to delete these %1 items?"
+#~ msgstr[0] "Do you really want to delete this item?"
+#~ msgstr[1] "Do you really want to delete these %1 items?"
+
+#~ msgid "Delete Files"
+#~ msgstr "Нобуд кардани Файлҳо"
+
+#, fuzzy
+#~ msgid "Do you really want to move this item to the trash?"
+#~ msgid_plural "Do you really want to move these %1 items to the trash?"
+#~ msgstr[0] "Do you really want to move this item to the trash?"
+#~ msgstr[1] "Do you really want to move these %1 items to the trash?"
+
+#~ msgid "Move to Trash"
+#~ msgstr "Ба Сабад ҷойгир кардан"
+
+#, fuzzy
+#~ msgctxt "Verb"
+#~ msgid "&Trash"
+#~ msgstr "Сабад"
+
+#~| msgid "Und&o"
+#~ msgid "Und&o: %1"
+#~ msgstr "&Бекор кардан"
+
+#, fuzzy
+#~ msgid "Background Settings"
+#~ msgstr "Паснамо"
+
+#~ msgid "Background"
+#~ msgstr "Паснамо"
+
+#, fuzzy
+#~ msgid "Preview"
+#~ msgstr "Дастгоҳ"
+
+#~ msgid "None"
+#~ msgstr "Нест"
+
+#~ msgid "&Default Size"
+#~ msgstr "&Андоза бо Нобаёнӣ"
+
+#~ msgid "&Huge"
+#~ msgstr "&Азим"
+
+#, fuzzy
+#~ msgid "&Very Large"
+#~ msgstr "&Калон"
+
+#~ msgid "&Large"
+#~ msgstr "&Калон"
+
+#~ msgid "&Medium"
+#~ msgstr "&Миёна"
+
+#~ msgid "&Small"
+#~ msgstr "&Хурд"
+
+#, fuzzy
+#~ msgid "Configure Background..."
+#~ msgstr "Ранги Паснамо..."
+
+#, fuzzy
+#~ msgid "Allows choosing of background settings for this view"
+#~ msgstr "Интихоби симои паснаморо барои ин назар иҷозат медиҳад"
+
+#~ msgid "<p>You do not have enough permissions to read <b>%1</b></p>"
+#~ msgstr "<p>Шумо иҷозати кофи барои барои хондани <b>%1</b></p>надоред"
+
+#, fuzzy
+#~ msgid "<p><b>%1</b> does not seem to exist anymore</p>"
+#~ msgstr "<p><b>%1</b> мавҷуд нест</p>"
+
+#~ msgid "Search result: %1"
+#~ msgstr "Натиҷаи бозёбӣ: %1"
+
+#~ msgid "Do you really want to shred this item?"
+#~ msgid_plural "Do you really want to shred these %1 items?"
+#~ msgstr[0] "Do you really want to shred this item?"
+#~ msgstr[1] "Do you really want to shred these %1 items?"
+
+#~ msgid "Shred Files"
+#~ msgstr "Пок кардани Файлҳо"
+
+#~ msgid "Shred"
+#~ msgstr "Пок кардан"

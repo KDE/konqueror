@@ -1,0 +1,169 @@
+# Translation of kfmclient.po to Low Saxon
+# Copyright (C) 2004, 2005, 2006, 2007, 2008 Free Software Foundation, Inc.
+# Heiko Evermann <heiko@evermann.de>, 2004.
+# Sönke Dibbern <s_dibbern@web.de>, 2005, 2006, 2007, 2008.
+# Manfred Wiese <m.j.wiese@web.de>, 2010, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kfmclient\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"PO-Revision-Date: 2011-02-24 14:19+0100\n"
+"Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
+"Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
+"Language: nds\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: kfmclient.cpp:49
+#, kde-format
+msgid "kfmclient"
+msgstr "kfmclient"
+
+#: kfmclient.cpp:57
+#, kde-format
+msgid "KDE tool for opening URLs from the command line"
+msgstr "Konsool-Warktüüch vun KDE för dat Opmaken vun URLs"
+
+#: kfmclient.cpp:65
+#, kde-format
+msgid "Non interactive use: no message boxes"
+msgstr "Stummbedrief: keen Narichtenopdukers"
+
+#: kfmclient.cpp:67
+#, kde-format
+msgid "Show available commands"
+msgstr "Verföögbor Befehlen wiesen"
+
+#: kfmclient.cpp:69
+#, kde-format
+msgid "Command (see --commands)"
+msgstr "Befehl (kiek bi --commands)"
+
+#: kfmclient.cpp:71
+#, kde-format
+msgid "Arguments for command"
+msgstr "Argumenten för Befehl"
+
+#: kfmclient.cpp:73
+#, kde-format
+msgid "The files/URLs opened by the application will be deleted after use"
+msgstr ""
+
+#: kfmclient.cpp:81
+#, kde-format
+msgid ""
+"\n"
+"Syntax:\n"
+msgstr ""
+"\n"
+"Syntax:\n"
+
+#: kfmclient.cpp:82
+#, kde-format
+msgid ""
+"  kfmclient openURL 'url' ['mimetype']\n"
+"            # Opens a window showing 'url'.\n"
+"            #  'url' may be a relative path\n"
+"            #   or file name, such as . or subdir/\n"
+"            #   If 'url' is omitted, $HOME is used instead.\n"
+"\n"
+msgstr ""
+"  kfmclient openURL \"URL\" [\"MIME-Typ\"]\n"
+"            # Maakt en Finster op, dat \"URL\" wiest.\n"
+"            #  \"URL\" kann en relative Padd wesen,\n"
+"            #   oder en Dateinaam, as \".\" oder \"ünnerorner/\"\n"
+"            #   Wenn \"URL\" nich angeven is, warrt $HOME bruukt.\n"
+"\n"
+
+#: kfmclient.cpp:87
+#, kde-format
+msgid ""
+"            # If 'mimetype' is specified, it will be used to determine the\n"
+"            #   component that Konqueror should use. For instance, set it "
+"to\n"
+"            #   text/html for a web page, to make it appear faster\n"
+"\n"
+msgstr ""
+"            # Wenn \"MIME-Typ\" angeven is, warrt dor de Komponent mit\n"
+"            #   fastleggt, de Konqueror bruken schall. Wenn Du t.B. för\n"
+"            #   en Nettsiet \"text/html\" angiffst, warrt de Siet gauer "
+"wiest.\n"
+"\n"
+
+#: kfmclient.cpp:91
+#, kde-format
+msgid ""
+"  kfmclient newTab 'url' ['mimetype']\n"
+"            # Same as above but opens a new tab with 'url' in an existing "
+"Konqueror\n"
+"            #   window on the current active desktop if possible.\n"
+"\n"
+msgstr ""
+"  kfmclient newTab \"URL\" [\"MIME-Typ\"]\n"
+"            # Dat sülve as baven, man maakt en nieg Tab för \"URL\" binnen "
+"en\n"
+"            #   lopen Konqueror op, wenn mööglich op den aktuellen "
+"Schriefdisch.\n"
+"\n"
+
+#: kfmclient.cpp:271
+#, fuzzy, kde-format
+#| msgid "Syntax Error: Not enough arguments\n"
+msgid "Syntax error, not enough arguments\n"
+msgstr "Syntax-Fehler: Nich noog Argumenten\n"
+
+#: kfmclient.cpp:275
+#, fuzzy, kde-format
+#| msgid "Syntax Error: Too many arguments\n"
+msgid "Syntax error, too many arguments\n"
+msgstr "Syntax-Fehler: To vele Argumenten\n"
+
+#: kfmclient.cpp:324
+#, fuzzy, kde-format
+#| msgid "Syntax Error: Unknown command '%1'\n"
+msgid "Syntax error, unknown command '%1'\n"
+msgstr "Syntax-Fehler: Befehl \"%1\" nich begäng.\n"
+
+#~ msgid ""
+#~ "  kfmclient exec is deprecated and kept for compatibility with KDE 3. \n"
+#~ "            # See kioclient exec for more information.\n"
+#~ msgstr ""
+#~ "  \"kfmclient exec\" is överhaalt un warrt bloots ut Kompatibiliteetgrünn "
+#~ "för KDE 3 wohrt. \n"
+#~ "            # Kiek Di man \"kioclient exec\" an, wenn Du mehr weten "
+#~ "wullt.\n"
+
+#~ msgid ""
+#~ "  kfmclient openProfile 'profile' ['url']\n"
+#~ "            # Opens a window using the given profile.\n"
+#~ "            #   'profile' is a file under ~/.kde/share/apps/konqueror/"
+#~ "profiles.\n"
+#~ "            #   'url' is an optional URL to open.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kfmclient openProfile \"Profil\" [\"URL\"]\n"
+#~ "            # Maakt en Finster mit dat angeven Profil op.\n"
+#~ "            #   \"Profil\" is en Datei in ~/.kde/share/apps/konqueror/"
+#~ "profiles.\n"
+#~ "            #   \"URL\" warrt opmaakt, wenn angeven.\n"
+#~ "\n"
+
+#, fuzzy
+#~| msgid "Profile %1 not found\n"
+#~ msgid "Profile '%1' not found\n"
+#~ msgstr "Profil \"%1\" lett sik nich finnen\n"

@@ -1,0 +1,75 @@
+# translation of konqueror.po to hebrew
+# translation of konqueror.po to
+# KDE Hebrew Localization Project
+#
+# In addition to the copyright owners of the program
+# which this translation accompanies, this translation is
+# Copyright (C) 1999-2003 Meni Livne <livne@kde.org>
+#
+# This translation is subject to the same Open Source
+# license as the program which it accompanies.
+#
+# Dror Levin <spatz@012.net.il>, 2003.
+# Shlomi Loubaton <shlomil@hotmail.com>, 2003.
+# Diego Iastrubni <elcuco@kdemai.net>, 2004.
+# Diego Iastrubni <elcuco@kde.org>, 2005, 2006, 2008, 2009.
+# דיאגו יסטרובני <elcuco@kde.org>, 2005.
+# tahmar1900 <tahmar1900@gmail.com>, 2008.
+# Elkana Bardugo <ttv200@gmail.com>, 2017. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: kshellcmdplugin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:45+0000\n"
+"PO-Revision-Date: 2017-05-24 07:38-0400\n"
+"Last-Translator: Elkana Bardugo <ttv200@gmail.com>\n"
+"Language-Team: Hebrew <kde-l10n-he@kde.org>\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Zanata 3.9.6\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. i18n: ectx: Menu (tools)
+#: konq_shellcmdplugin.rc:4
+#, kde-format
+msgid "&Tools"
+msgstr "&כלים"
+
+#: kshellcmdexecutor.cpp:106
+#, kde-format
+msgid "Input Required:"
+msgstr "יש צורך בקלט:"
+
+#: kshellcmdplugin.cpp:32
+#, kde-format
+msgid "&Execute Shell Command..."
+msgstr "הרץ פקודה..."
+
+#: kshellcmdplugin.cpp:41
+#, kde-format
+msgid ""
+"KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a bug."
+msgstr "KShellCmdPlugin::slotExecuteShellCommand: בעיה בתוכנה, נא דווח על באג."
+
+#: kshellcmdplugin.cpp:51
+#, kde-format
+msgid "Executing shell commands works only on local directories."
+msgstr "הרצת פקודות עובדת רק בספריות מקומיות."
+
+#: kshellcmdplugin.cpp:73
+#, kde-format
+msgctxt "@title:window"
+msgid "Execute Shell Command"
+msgstr "הרצת פקודה"
+
+#: kshellcmdplugin.cpp:74
+#, kde-format
+msgid "Execute shell command in current directory:"
+msgstr "הרץ פקודה בספריה הנוכחית:"
+
+#: kshellcmdplugin.cpp:85
+#, kde-format
+msgid "Output from command: \"%1\""
+msgstr "פלט הפקודה: \"%1\""

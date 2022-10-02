@@ -1,0 +1,77 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Portuguese "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="performance" lang="&language;">
+<articleinfo>
+<title
+>Performance</title>
+<authorgroup>
+<author
+>&Mike.McBride; &Mike.McBride.mail;</author>
+<othercredit role="translator"
+><firstname
+>José</firstname
+><surname
+>Pires</surname
+><affiliation
+><address
+><email
+>zepires@gmail.com</email
+></address
+></affiliation
+><contrib
+>Tradução</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2016-11-08</date>
+<releaseinfo
+>Aplicações 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Systemsettings</keyword>
+<keyword
+>performance</keyword>
+<keyword
+>pré-carregamento</keyword>
+</keywordset>
+</articleinfo>
+
+<sect1 id="sys-performance">
+<title
+>Configuração da Performance</title>
+
+<para
+>O &konqueror; é usado numa grande variedade de computadores por uma grande diversidade de utilizadores. Sob a categoria da performance, esta janela permite a cada utilizador ajustar as opções que fazem com que o computador onde o &konqueror; está instalado se torne mais eficiente. </para>
+
+<sect2
+><title
+>Pré-carregamento</title>
+<para
+>A sub-secção chamada <guilabel
+>Pré-carregamento</guilabel
+> faz um compromisso entre a memória e a performance.</para>
+
+<para
+>O <emphasis
+>Pré-carregamento</emphasis
+> diz respeito ao carregamento de uma instância do &konqueror; para memória, antes de um utilizador pedir para iniciar o &konqueror;. O efeito positivo disto é que, quando um utilizador pedir para carregar o &konqueror;, a janela aparece instantaneamente, devido ao facto de a aplicação ter sido pré-carregada. O efeito negativo é que esta instância do &konqueror; usa memória que poderia ser usada por outras aplicações. Por omissão, quando um utilizador fecha o &konqueror;, a instância não é fechada. Isto significa que, da próxima vez que um utilizador quiser carregar o &konqueror;, ele abre de novo de forma quase instantânea.</para>
+
+<para
+>A última opção chamada <guilabel
+>Tentar ter sempre pelo menos uma instância pré-carregada</guilabel
+> indica que você deseja ter uma instância do &konqueror; pré-carregada, mas não usada. Esta opção irá de facto diminuir a performance em algumas máquinas (especialmente as que tenham memória física limitada).</para>
+</sect2>
+</sect1>
+
+</article>

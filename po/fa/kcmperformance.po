@@ -1,0 +1,226 @@
+# translation of kcmperformance.po to Persian
+# Nazanin Kazemi <kazemi@itland.ir>, 2006, 2007.
+# Mahdi Foladgar <foladgar@itland.ir>, 2006.
+# Tahereh Dadkhahfar <dadkhahfar@itland.ir>, 2006.
+# MaryamSadat Razavi <razavi@itland.ir>, 2006.
+# Nasim Daniarzadeh <daniarzadeh@itland.ir>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmperformance\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-21 00:16+0000\n"
+"PO-Revision-Date: 2007-09-02 15:02+0330\n"
+"Last-Translator: Nazanin Kazemi <kazemi@itland.ir>\n"
+"Language-Team: Persian <kde-i18n-fa@kde.org>\n"
+"Language: fa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: kcmperformance.cpp:28
+#, kde-format
+msgid ""
+"<h1>KDE Performance</h1> You can configure settings that improve KDE "
+"performance here."
+msgstr ""
+"<h1>کارایی KDE</h1> شما می‌توانید تنظیماتی که کارایی KDE را بهبود می‌بخشد، در "
+"اینجا پیکربندی کنید."
+
+#: kcmperformance.cpp:35
+#, kde-format
+msgid "Konqueror"
+msgstr "Konqueror"
+
+#: kcmperformance.cpp:38
+#, kde-format
+msgid "System"
+msgstr "سیستم"
+
+#: kcmperformance.cpp:63
+#, kde-format
+msgid ""
+"<h1>Konqueror Performance</h1> You can configure several settings that "
+"improve Konqueror performance here. These include options for reusing "
+"already running instances and for keeping instances preloaded."
+msgstr ""
+"<h1>کارایی Konqueror</h1> می‌توانید برخی تنظیماتی که کارایی Konqueror را "
+"بهبود می‌بخشد، در اینجا تنظیم کنید. شامل گزینه‌هایی برای استفاده مجدد نمونه‌های "
+"در حال اجرا و نگهداری نمونه‌های بارگذاری‌شده قبلی است."
+
+#: konqueror.cpp:24
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>If enabled, an instance of Konqueror will be preloaded after the "
+#| "ordinary KDE startup sequence.</p><p>This will make the first Konqueror "
+#| "window open faster, but at the expense of longer KDE startup times (but "
+#| "you will be able to work while it is loading, so you may not even notice "
+#| "that it is taking longer).</p>"
+msgid ""
+"<p>If enabled, an instance of Konqueror will be preloaded after the ordinary "
+"Plasma startup sequence.</p><p>This will make the first Konqueror window "
+"open faster, but at the expense of longer Plasma startup times (but you will "
+"be able to work while it is loading, so you may not even notice that it is "
+"taking longer).</p>"
+msgstr ""
+"<p>اگر فعال شود، یک نمونه از Konqueror بعد از دنباله معمولی برپایی KDE  "
+"پیش‌بارگذاری می‌شود.</p><p>این، باز کردن اولین پنجره Konqueror را سریع‌تر "
+"می‌سازد، اما به قیمت طولانی‌تر شدن زمان برپایی  KDE )ولی شما هنگام بارگذاری آن "
+"قادر به کار کردن می‌باشید، بنابراین ممکن است حتی متوجه طولانی‌تر شدن زمان "
+"نشوید(.</p>"
+
+#: konqueror.cpp:30
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>If enabled, KDE will always try to have one preloaded Konqueror "
+#| "instance ready; preloading a new instance in the background whenever "
+#| "there is not one available, so that windows will always open quickly.</"
+#| "p><p><b>Warning:</b> In some cases, it is actually possible that this "
+#| "will reduce perceived performance.</p>"
+msgid ""
+"<p>If enabled, Konqueror will always try to have one preloaded instance "
+"ready; preloading a new instance in the background whenever there is not one "
+"available, so that windows will always open quickly.</p><p><b>Warning:</b> "
+"In some cases, it is actually possible that this will reduce perceived "
+"performance.</p>"
+msgstr ""
+"<p>اگر فعال شود، KDEهمواره سعی می‌کند یک نمونه  Konqueror از پیش بارگذاری‌شده "
+"آماده داشته باشید؛ پیش‌بارگذاری یک نمونه جدید در زمینه، هرگاه هیچ موردی موجود "
+"نباشد، به طوری که پنجره‌ها همیشه سریع باز شوند.</p><p><b>اخطار:</b> در برخی "
+"موارد،‌ واقعاً ممکن است کارایی مشاهده‌شده را کاهش دهد.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
+#: konqueror_ui.ui:17
+#, kde-format
+msgid "Preloading"
+msgstr "پیش‌بارگذاری"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_preload_on_startup)
+#: konqueror_ui.ui:23
+#, fuzzy, kde-format
+#| msgid "Preload an instance after KDE startup"
+msgid "Preload an instance after desktop startup"
+msgstr "پیش‌بارگذاری یک نمونه پس از برپایی KDE"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_always_have_preloaded)
+#: konqueror_ui.ui:30
+#, fuzzy, kde-format
+#| msgid "Always try to have at least one preloaded instance"
+msgid "Always try to have one preloaded instance"
+msgstr "سعی کنید همیشه حداقل یک نمونه از پیش بارگذاری‌شده داشته باشید"
+
+#: system.cpp:22
+#, kde-format
+msgid ""
+"<p>During startup KDE needs to perform a check of its system configuration "
+"(mimetypes, installed applications, etc.), and in case the configuration has "
+"changed since the last time, the system configuration cache (KSyCoCa) needs "
+"to be updated.</p><p>This option delays the check, which avoid scanning all "
+"directories containing files describing the system during KDE startup, thus "
+"making KDE startup faster. However, in the rare case the system "
+"configuration has changed since the last time, and the change is needed "
+"before this delayed check takes place, this option may lead to various "
+"problems (missing applications in the K Menu, reports from applications "
+"about missing required mimetypes, etc.).</p><p>Changes of system "
+"configuration mostly happen by (un)installing applications. It is therefore "
+"recommended to turn this option temporarily off while (un)installing "
+"applications.</p>"
+msgstr ""
+"<p>KDE هنگام برپایی، نیاز به انجام یک بررسی برای پیکربندی سیستم خود "
+"دارد. )انواع مایم، کاربردهای نصب‌شده و غیره(، در صورتی که پیکربندی پس از "
+"آخرین بار تغییر کرده باشد، نهانگاه پیکربندی سیستم )KSyCoCa( نیاز دارد "
+"به‌روزرسانی شود. </p><p>این گزینه بررسی را، که از پویش همه فهرستهای شامل "
+"پرونده‌های توصیف سیستم در طی برپایی KDE  پیشگیری می‌کند، تأخیر می‌دهد، در نتیجه "
+"برپایی KDE  را سریع‌تر می‌سازد. به هر حال، در موارد نادری پیکربندی سیستم از "
+"آخرین زمان تغییر کرده است، و  پیش از اینکه این بررسی همراه با تأخیر رخ دهد، "
+"تغییر لازم است. این گزینه ممکن است منجر به مسائل گوناگونی شود )از دست رفتن "
+"کاربردها در گزینگان K، گزارش کاربردها در مورد از دست دادن انواع مایم "
+"درخواست‌شده و غیره (</p><p>تغییرات پیکربندی سیستم اغلب توسط "
+"نصب )عزل( کاربردها اتفاق می‌افتد. بنابراین، پیشنهاد می‌شود این گزینه را هنگام "
+"نصب )عزل( کاربردها خاموش کنید.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gb_)
+#: system_ui.ui:8
+#, kde-format
+msgid "System Configuration"
+msgstr "پیکربندی سیستم"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_disable_kbuildsycoca)
+#: system_ui.ui:14
+#, kde-format
+msgid "Disable &system configuration startup check"
+msgstr "غیرفعال کردن بررسی برپایی پیکربندی &سیستم‌"
+
+#. i18n: ectx: property (text), widget (QLabel, label_kbuildsycoca)
+#: system_ui.ui:21
+#, kde-format
+msgid ""
+"This option may in rare cases lead to various problems. Consult the What's "
+"This (Shift+F1) help for details."
+msgstr ""
+"این گزینه ممکن است در موارد نادری منجر به مسائل گوناگونی شود. برای جزئیات به "
+"کمک این چیست؟ )کلید تبدیل+F1( مراجعه شود."
+
+#~ msgid ""
+#~ "<p>If non-zero, this option allows keeping Konqueror instances in memory "
+#~ "after all their windows have been closed, up to the number specified in "
+#~ "this option.</p><p>When a new Konqueror instance is needed, one of these "
+#~ "preloaded instances will be reused instead, improving responsiveness at "
+#~ "the expense of the memory required by the preloaded instances.</p>"
+#~ msgstr ""
+#~ "<p>اگر غیر صفر باشد، این گزینه اجازه می‌دهد نمونه‌های Konqueror بعد از "
+#~ "اینکه همه پنجره‌هایشان بسته شد، به مدت مشخص‌شده در این گزینه در حافظه "
+#~ "نگهداری شوند.</p><p>وقتی نمونه جدید Konqueror نیاز است، در عوض یکی از این "
+#~ "نمونه‌های از پیش بارگذاری‌شده استفاده می‌شود، بهبود حساسیت متقابل به قیمت "
+#~ "حافظه مورد نیاز توسط نمونه‌های از پیش بارگذاری شده.</p>"
+
+#, fuzzy
+#~| msgid "Maximum number of instances kept &preloaded:"
+#~ msgid "&Maximum number of instances kept preloaded:"
+#~ msgstr "تعداد بیشینه نمونه‌های از &پیش بارگذاری‌شده حفظ‌شده:‌"
+
+#~ msgid ""
+#~ "Disables the minimization of memory usage and allows you to make each "
+#~ "browsing activity independent from the others"
+#~ msgstr ""
+#~ "کمینه‌سازی کاربرد حافظه را فعال کرده و اجازه می‌دهد هر مرورگر را مستقل از "
+#~ "دیگران فعال سازید."
+
+#~ msgid ""
+#~ "<p>With this option activated, only one instance of Konqueror used for "
+#~ "file browsing will exist in the memory of your computer at any moment, no "
+#~ "matter how many file browsing windows you open, thus reducing resource "
+#~ "requirements.</p><p>Be aware that this also means that, if something goes "
+#~ "wrong, all your file browsing windows will be closed simultaneously</p>"
+#~ msgstr ""
+#~ "<p>با فعال کردن این گزینه، در هر لحظه فقط یک نمونه از Konqueror "
+#~ "استفاده‌شده برای مرور پرونده، در حافظه رایانه شما موجود است؛ مهم نیست که "
+#~ "شما چند پنجره مرور پرونده را باز می‌کنید، چون فقط تجهیزات منبع کاهش می‌یابد."
+#~ "</p><p>آگاه باشید که این به این معناست، که اگر چیزی نادرست باشد، همه "
+#~ "پنجره‌های مرور پرونده هم زمان بسته خواهند شد</p>"
+
+#~ msgid ""
+#~ "<p>With this option activated, only one instance of Konqueror will exist "
+#~ "in the memory of your computer at any moment, no matter how many browsing "
+#~ "windows you open, thus reducing resource requirements.</p><p>Be aware "
+#~ "that this also means that, if something goes wrong, all your browsing "
+#~ "windows will be closed simultaneously.</p>"
+#~ msgstr ""
+#~ "<p>با فعال کردن این گزینه، در هر لحظه فقط یک نمونه ازKonqueror در حافظه "
+#~ "رایانه شما موجود است؛ مهم نیست که شما چند پنجره مرور پرونده را باز "
+#~ "می‌کنید، چون فقط تجهیزات منبع کاهش می‌یابد.</p><p>آگاه باشید که این همچنین "
+#~ "به این معناست که، اگر چیزی نادرست باشد، همه پنجره‌های مرور پرونده هم زمان "
+#~ "بسته خواهند شد.</p>"
+
+#~ msgid "Minimize Memory Usage"
+#~ msgstr "کمینه‌سازی کاربرد حافظه"
+
+#~ msgid "&Never"
+#~ msgstr "&هرگز‌"
+
+#~ msgid "For &file browsing only (recommended)"
+#~ msgstr "فقط برای مرور &پرونده )پیشنهادشده(‌"
+
+#~ msgid "Alwa&ys (use with care)"
+#~ msgstr "&همیشه )با احتیاط استفاده شود(‌"

@@ -1,0 +1,96 @@
+# translation of autorefresh.po to Punjabi
+#
+# Amanpreet Singh Alam <aalam@redhat.com>, 2004.
+# A S Alam <aalam@users.sf.net>, 2007, 2010, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: autorefresh\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-01 00:18+0000\n"
+"PO-Revision-Date: 2011-06-28 19:52+0530\n"
+"Last-Translator: A S Alam <aalam@users.sf.net>\n"
+"Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
+"Language: pa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"\n"
+
+#: autorefresh.cpp:28
+#, kde-format
+msgid "&Auto Refresh"
+msgstr "ਆਟੋ ਤਾਜ਼ਾ ਕਰੋ(&A)"
+
+#: autorefresh.cpp:32
+#, kde-format
+msgid "None"
+msgstr "ਕੋਈ ਨਹੀਂ"
+
+#: autorefresh.cpp:33
+#, kde-format
+msgid "Every 15 Seconds"
+msgstr "ਹਰ 15 ਸਕਿੰਟ"
+
+#: autorefresh.cpp:34
+#, kde-format
+msgid "Every 30 Seconds"
+msgstr "ਹਰ 30 ਸਕਿੰਟ"
+
+#: autorefresh.cpp:35
+#, kde-format
+msgid "Every Minute"
+msgstr "ਹਰ ਮਿੰਟ"
+
+#: autorefresh.cpp:36
+#, kde-format
+msgid "Every 5 Minutes"
+msgstr "ਹਰ 5 ਮਿੰਟ"
+
+#: autorefresh.cpp:37
+#, kde-format
+msgid "Every 10 Minutes"
+msgstr "ਹਰ 10 ਮਿੰਟ"
+
+#: autorefresh.cpp:38
+#, kde-format
+msgid "Every 15 Minutes"
+msgstr "ਹਰ 15 ਮਿੰਟ"
+
+#: autorefresh.cpp:39
+#, kde-format
+msgid "Every 30 Minutes"
+msgstr "ਹਰ 30 ਮਿੰਟ"
+
+#: autorefresh.cpp:40
+#, kde-format
+msgid "Every 60 Minutes"
+msgstr "ਹਰ 60 ਮਿੰਟ"
+
+#: autorefresh.cpp:41
+#, kde-format
+msgid "Every 2 Hours"
+msgstr "ਹਰ ੨ ਘੰਟੇ"
+
+#: autorefresh.cpp:42
+#, kde-format
+msgid "Every 6 Hours"
+msgstr "ਹਰ ੬ ਘੰਟੇ"
+
+#: autorefresh.cpp:100
+#, kde-format
+msgctxt "@title:window"
+msgid "Cannot Refresh Source"
+msgstr "ਸਰੋਤ ਤਾਜ਼ਾ ਨਾ ਕਰੋ"
+
+#: autorefresh.cpp:101
+#, kde-format
+msgid "<qt>This plugin cannot auto-refresh the current part.</qt>"
+msgstr "<qt>ਇਹ ਪਲੱਗਇਨ ਮੌਜੂਦਾ ਭਾਗ ਨੂੰ ਕਦੇ ਤਾਜ਼ਾ ਨਹੀਂ ਕਰ ਸਕਦੀ ਹੈ।</qt>"
+
+#. i18n: ectx: Menu (tools)
+#: autorefresh.rc:5
+#, kde-format
+msgid "&Tools"
+msgstr "ਟੂਲ(&T)"

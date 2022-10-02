@@ -1,0 +1,191 @@
+<chapter id="save-settings">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+> <firstname
+>Rocío</firstname
+> <surname
+>Gallego</surname
+> <affiliation
+><address
+><email
+>traducciones@rociogallego.com</email
+></address
+></affiliation
+> <contrib
+>Traducción</contrib
+> </othercredit
+><othercredit role="translator"
+> <firstname
+>Pablo</firstname
+> <surname
+>de Vicente</surname
+> <affiliation
+><address
+><email
+>pablo.devicente@gmail.com</email
+></address
+></affiliation
+> <contrib
+>Traductor</contrib
+> </othercredit
+><othercredit role="translator"
+> <firstname
+>Marcos</firstname
+><surname
+>Fouces Lago</surname
+> <affiliation
+><address
+><email
+>mfouces@yahoo.es</email
+></address
+></affiliation
+> <contrib
+>Traductor</contrib
+> </othercredit
+> 
+</authorgroup>
+
+<date
+>2010-02-26</date>
+<releaseinfo
+>&kde; 4.4</releaseinfo>
+</chapterinfo>
+
+<title
+>Guardando la configuración y los perfiles</title>
+<sect1 id="save-settings-general">
+<title
+>Preferencias generales</title>
+<para
+>Al cerrar &konqueror;, las preferencias actuales de su menú <guimenu
+>Ver</guimenu
+> (como el <guimenuitem
+>Modo de vista</guimenuitem
+>, <guimenuitem
+>Usar index.html</guimenuitem
+> y <guimenuitem
+>Mostrar archivos ocultos</guimenuitem
+>) no se guardan automáticamente como opciones predeterminadas. Sin embargo, puede hacer que &konqueror; recuerde estas preferencias seleccionando <menuchoice
+><guimenu
+>Preferencias</guimenu
+><guimenuitem
+>Guardar perfil de vista «Navegador web»...</guimenuitem
+></menuchoice
+> y la configuración actual se convertirá en la opción predeterminada la siguiente vez que inicie &konqueror;.</para>
+
+<para
+>Pero también puede especificar diferentes preferencias en el menú <guimenu
+>Ver</guimenu
+> para una carpeta en particular. Para ello, seleccione <menuchoice
+><guimenu
+>Ver</guimenu
+><guimenuitem
+>Ajustar propiedades de vista...</guimenuitem
+></menuchoice
+> y en el diálogo, cambie las preferencias de <guimenu
+>Ver</guimenu
+> que desee. Después, aplique las propiedades de vista a la <guilabel
+>Carpeta actual</guilabel
+>. Al hacer esto, se crea un archivo <filename
+>.directory</filename
+> en esa carpeta para las preferencias de <guimenu
+>Ver</guimenu
+>. Use de nuevo ese diálogo para eliminar las preferencias específicas para esa carpeta (o simplemente, borre el archivo<filename
+>.directory</filename
+>).</para>
+<note
+><para
+>Esta característica le puede resultar muy útil, por ejemplo, si tiene una carpeta llena de fotografías. Puede configurar esa carpeta en particular para que le muestre las fotografías en miniatura (seleccionando <menuchoice
+><guisubmenu
+>Modo de vista</guisubmenu
+> <guimenuitem
+>Iconos</guimenuitem
+></menuchoice
+> y <guimenuitem
+>Vista previa</guimenuitem
+> desde el menú <guimenu
+>Ver</guimenu
+>) cuando la abra y que las demás carpetas no lo hagan.</para
+></note>
+</sect1>
+
+<sect1 id="save-settings-view-profiles">
+<title
+>Ver perfiles</title>
+<para
+>&konqueror; puede guardar un conjunto completo de opciones como un «Perfil de vista». Algunos perfiles de vista forman parte de la instalación estándar de &konqueror;, tales como <property
+>Navegación web</property
+>, <property
+>Administrador de archivos</property
+>, <property
+>Desarrollo KDE</property
+>, <property
+>Midnight Commander</property
+> y <property
+>Navegación con pestañas</property
+>, pero también puede añadir los suyos.</para>
+
+<para
+>Para modificar un perfil de vista (por ejemplo, el perfil <property
+>Navegación web</property
+>), cargue el perfil con <menuchoice
+><guimenu
+>Preferencias</guimenu
+><guisubmenu
+>Cargar perfil de vista</guisubmenu
+><guimenuitem
+>Navegación web</guimenuitem
+> </menuchoice
+> y cambie las preferencias de &konqueror; por aquellas otras que desee. Ahora, seleccione <menuchoice
+><guimenu
+>Preferencias</guimenu
+><guimenuitem
+>Guardar perfil de vista como...</guimenuitem
+></menuchoice
+> En el diálogo que aparece, puede cambiar el nombre del perfil, lo que creará un nuevo perfil con ese nombre, o puede dejar el nombre tal cual para modificar el perfil actual. Si selecciona <guilabel
+>Guardar las URL en el perfil</guilabel
+>, la &URL; actual se cargará cuando cargue el perfil de vista. Esto funciona de forma similar a la «Página personal» de muchos navegadores web. Si desea que &konqueror; se inicie con una ventana vacía, introduzca <userinput
+>about:blank</userinput
+> en la barra de dirección antes de guardar el perfil.</para>
+
+<note
+><para
+>Puede crear un icono en el escritorio para iniciar &konqueror; con el nuevo perfil. Primero, cree un icono de escritorio pulsando con el &RMB; en la entrada de &konqueror; en el menú de lanzador de aplicaciones. Después, seleccione <guimenuitem
+>Añadir al escritorio</guimenuitem
+> en el menú de contexto. Abra el diálogo de preferencias del nuevo icono de su escritorio pulsando el icono <guiicon
+>Herramientas</guiicon
+>. Cambie la<guilabel
+> Orden</guilabel
+> de la página de la pestaña <guilabel
+>Aplicación</guilabel
+> a <userinput
+><command
+>kfmclient</command
+> <option
+>openProfile <replaceable
+>MiNuevoPerfil</replaceable
+></option
+></userinput
+>, siendo<replaceable
+>MiNuevoPerfil</replaceable
+> el nombre que le puso al nuevo perfil. Después, cambie el nombre a algo como <filename
+>MiNuevoPerfil</filename
+>.</para
+></note>
+
+</sect1>
+</chapter>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

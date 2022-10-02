@@ -1,0 +1,790 @@
+<chapter id="browser">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+<othercredit role="translator"
+><firstname
+>José</firstname
+><surname
+>Pires</surname
+><affiliation
+><address
+><email
+>zepires@gmail.com</email
+></address
+></affiliation
+><contrib
+>Tradução</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2010-10-25</date>
+<releaseinfo
+>&kde; 4.5</releaseinfo>
+</chapterinfo>
+
+
+<title
+>&konqueror; o Navegador Web</title>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="konqorg.png"/></imageobject>
+<textobject>
+<phrase
+>Navegar no www.konqueror.org</phrase>
+</textobject>
+</mediaobject>
+
+<sect1 id="conn-inet">
+<title
+>Ligar-se à Internet</title>
+
+<para
+>Uma vez ligado à Internet, você poderá usar o &konqueror; para navegar na Web de forma tão simples como você faz para navegar pelos seus ficheiros locais. Basta escrever um &URL; no campo de <guilabel
+>Localização</guilabel
+> da barra correspondente, carregar em &Enter;, e você está pronto a navegar!</para>
+
+<itemizedlist>
+<listitem
+><para
+>Se você usar uma ligação telefónica à Internet, então você terá de usar o &kppp; ou algum programa semelhante para estabelecer a ligação.</para
+></listitem>
+
+<listitem
+><para
+>Se a sua máquina estiver ligada a uma rede local (<acronym
+>LAN</acronym
+>) que lhe dê uma ligação por 'proxy' à Internet então terá de configurar o &konqueror; para usar essa mesma ligação. Isto poderá ser feito com a página de <menuchoice
+><guimenu
+>Navegação Web</guimenu
+><guimenuitem
+>'Proxy'</guimenuitem
+></menuchoice
+> na janela <menuchoice
+><guimenu
+> Configuração</guimenu
+><guimenuitem
+>Configurar o Konqueror...</guimenuitem
+> </menuchoice
+>.</para
+></listitem>
+
+<listitem
+><para
+>Se você tiver sorte suficiente para ter uma ligação de banda larga, então o fornecedor do serviço de Internet deverá dar-lhe uma ligação por modem por cabo que precisa de uma ligação Ethernet à sua máquina. Infelizmente, os detalhes sobre como estabelecer a ligação dependem do fornecedor do serviço e, de alguma forma, com a distribuição do Linux/&UNIX; que você está a usar. Alguns <acronym
+>ISP</acronym
+>s ligam os seus clientes através de um servidor 'proxy', onde nesse caso você terá de configurar o &konqueror; para o usar. Você podê-lo-á achar útil para procurar nos arquivos da sua lista de correio do grupo de utilizadores da distribuição para obter mais ajuda.</para>
+</listitem>
+</itemizedlist>
+
+<note
+><para
+>Se for mostrada uma mensagem de erro do tipo <errorname
+>Máquina Desconhecida</errorname
+> significa normalmente que o &konqueror; não consegue encontrar nenhuma ligação à Internet ou então é porque o utilizador introduziu um &URL; incorrecto.</para
+></note>
+
+</sect1>
+
+<sect1 id="surf">
+<title
+>'Surfar' e Procurar</title>
+
+<para
+>Uma vez que você tenha uma ligação à Internet, você poderá navegar com o &konqueror; da mesma forma que é feito em qualquer outro navegador.</para>
+
+<para
+>Indique um &URL; na Barra de Localização, carregue em &Enter; ou com o botão <mousebutton
+>esquerdo</mousebutton
+> no botão <guibutton
+>Ir</guibutton
+> do lado direito da Barra de Localização, para que o &konqueror; vá obter e mostre essa página. Se você já visitou esta página anteriormente, a funcionalidade do &konqueror; de <link linkend="path-complete"
+>Completação Automática de Texto</link
+> ajudá-lo-á a escrever o &URL; numa segunda vez, ou então você poderá consultar a página de <guilabel
+>Histórico</guilabel
+> da <link linkend="sidebar"
+>Barra Lateral</link
+>. Se você quiser usar um dos motores de busca da Web, a funcionalidade do &konqueror; de <link linkend="enhanced-browsing"
+> Atalhos da Web</link
+> poderá facilitar esse acesso.</para>
+
+<para
+>Carregue com o botão <mousebutton
+>esquerdo</mousebutton
+> numa ligação para ir para ela.</para>
+
+<para
+>Para abrir uma ligação numa nova instância do &konqueror;, deixando à mesma a página antiga ainda visível, carregue nela com o &RMB; e seleccione a opção <guimenuitem
+>Abrir numa Nova Janela</guimenuitem
+>. Em alternativa, você poderá querer <guimenuitem
+>Abrir numa Nova Página</guimenuitem
+>. A <link linkend="tabbrowse"
+>Navegação com Páginas</link
+> permitir-lhe-á manter um conjunto de página numa única janela do &konqueror; e mudar rapidamente entre elas com um único 'click' do rato.</para>
+
+<para
+>Você pode também seleccionar o modo de janelas múltiplas com a opção do menu <menuchoice
+><guimenu
+>Janela</guimenu
+> <guimenuitem
+>Dividir a Janela em Esquerda/Direita</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>L</keycap
+> </keycombo
+>) / <menuchoice
+><guimenu
+>Janela</guimenu
+> <guimenuitem
+>Dividir a Janela em Cima/Baixo</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>T</keycap
+> </keycombo
+>) a qual lhe permitirá ver várias páginas ao mesmo tempo. Isso poderá ser útil se você estiver a ver um conjunto complicado de páginas em <acronym
+>HTML</acronym
+>, mas certifique-se que a caixa com o elo pequeno, no canto inferior direito, está em branco quando fizer isto.</para>
+<para
+>Para voltar à página Web anterior carregue nas teclas <keycombo action="simul"
+>&Alt;<keysym
+>Esquerda</keysym
+></keycombo
+>, no botão <guibutton
+>Recuar</guibutton
+> da barra de ferramentas ou na opção do menu <menuchoice
+><guimenu
+>Ir</guimenu
+> <guimenuitem
+>Recuar</guimenuitem
+></menuchoice
+>.</para>
+<para
+>De forma semelhante, logo que você tenha recuado uma ou mais vezes, você poderá avançar ao usar o atalho de teclado <keycombo action="simul"
+>&Alt;<keysym
+>Direita</keysym
+></keycombo
+>, o botão <guibutton
+>Avançar</guibutton
+> ou a opção do menu <menuchoice
+><guimenu
+>Ir</guimenu
+> <guimenuitem
+>Avançar</guimenuitem
+></menuchoice
+>.</para>
+
+<!-- copy from okular Navigating -->
+<para
+>Poderá deslocar-se para cima e para baixo na área de visualização com as teclas de cursores <keycap
+>Cima</keycap
+> e <keycap
+>Baixo</keycap
+>, usando a roda do rato, carregando em &LMB; e arrastando o rato, enquanto está no modo normal, ou usando as teclas <keycap
+>Page Up</keycap
+> e <keycap
+>Page Down</keycap
+>.</para>
+<para
+>Se quiser ler uma página Web extensa, use a funcionalidade de deslocamento automático do &konqueror;. Inicie o deslocamento automático com as combinações de teclas <keycombo action="simul"
+>&Shift;<keysym
+>Baixo</keysym
+></keycombo
+> ou <keycombo action="simul"
+>&Shift;<keysym
+>Cima</keysym
+></keycombo
+>. Depois, use estas teclas para aumentar ou diminuir a velocidade do deslocamento. Poderá iniciar ou interromper o deslocamento automático temporariamente, carregando na tecla &Shift; ao mesmo tempo que carrega noutra tecla. </para>
+<para
+>O deslocamento automático só funciona no modo de visualização do <guimenuitem
+>KHTML</guimenuitem
+>. </para>
+<para
+>Se você quiser interromper a transferência por alguma razão, então carregue na tecla &Esc;, no botão <guibutton
+>Parar</guibutton
+> da barra de ferramentas ou na opção do menu <menuchoice
+><guimenu
+>Ver</guimenu
+> <guimenuitem
+>Parar</guimenuitem
+></menuchoice
+>.</para>
+
+<para
+>Quando você estiver a ver uma página Web com a <guilabel
+>Barra de HTML</guilabel
+>, deverá passar a ver dois novos ícones na barra de ferramentas <guiicon
+><inlinemediaobject
+><imageobject
+> <imagedata fileref="format-font-size-less.png" format="PNG"/> </imageobject
+></inlinemediaobject
+></guiicon
+> e <guiicon
+><inlinemediaobject
+><imageobject
+> <imagedata fileref="format-font-size-more.png" format="PNG"/> </imageobject
+></inlinemediaobject
+></guiicon
+>. Use estes botões para ajustar o tamanho do texto da página se achar que está difícil de o ler. A forma como isso funcionará dependerá da forma como a página Web foi construída.</para>
+</sect1>
+
+<sect1 id="tabbrowse">
+<title
+>Navegação com Páginas</title>
+<para
+>Ao usar esta funcionalidade, você poderá fazer com que o &konqueror; carregue várias páginas Web na mesma janela e mude facilmente entre elas através do conceito de páginas ou 'tabs'. Desta forma, poderá pré-carregar uma página <quote
+>em segundo plano</quote
+> enquanto você continuar a ler outra.</para>
+
+<para
+>Para usar a navegação com páginas, carregue com o botão <mousebutton
+>direito</mousebutton
+> numa ligação e escolha a opção <guimenuitem
+>Abrir numa Nova Página</guimenuitem
+> do menu de contexto. A página será então transferida e mostrada de forma normal, mas recorrendo a páginas seleccionadas no topo da janela, uma para cada página transferida da mesma forma. Carregue com o &LMB; numa página para ver a página Web correspondente, ou utilize os atalhos de teclado <keycombo action="simul"
+>&Ctrl;<keycap
+>,</keycap
+></keycombo
+> e <keycombo action="simul"
+>&Ctrl;<keycap
+>.</keycap
+></keycombo
+> para circular pelas páginas. Em alternativa, poder-se-á deslocar pelas páginas com a <mousebutton
+>roda</mousebutton
+> do rato, enquanto o cursor do rato se encontra sobre a barra de páginas (assumindo que o seu rato tem uma roda). Do mesmo modo, se fizer duplo-click sobre um espaço em branco da barra de páginas, irá abrir uma página nova.</para>
+
+<para
+>Se usar a opção <guimenuitem
+>Abrir as páginas novas em segundo plano</guimenuitem
+> da página <guilabel
+>Geral</guilabel
+> da janela de <guimenu
+>Configuração</guimenu
+>, ao carregar numa ligação, irá transferir a página e mostrar uma nova página para ela, mas a nova página não ficará visível até que você carregue com o botão <mousebutton
+>esquerdo</mousebutton
+> no seu nome.</para>
+
+<para
+>Se você assinalar a opção <guilabel
+>Abrir as ligações numa nova página em vez de uma nova janela</guilabel
+> na página <guimenuitem
+>Geral</guimenuitem
+> da janela <menuchoice
+><guimenu
+>Configuração</guimenu
+><guimenuitem
+>Configurar o Konqueror... </guimenuitem
+></menuchoice
+>, ao carregar com o &MMB; numa ligação, irá abri-la numa nova página e se você mantiver a tecla &Shift; carregada enquanto carrega no &MMB; a ligação será aberta numa nova página em segundo plano.</para>
+
+<para
+>Se carregar com o botão <mousebutton
+>direito</mousebutton
+> numa página, fará aparecer um menu com as seguintes opções:</para>
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Nova Página</guimenuitem
+> (<keycombo action="simul"
+>&Ctrl;<keycap
+>T</keycap
+></keycombo
+>)</term>
+<listitem
+><para
+>Isto abre uma nova página em branco. Você poderá então transferir uma página Web para essa página escrevendo o seu &URL; na Barra de Localização ou fazendo uma selecção na Barra de Favoritos ou na página de histórico da <link linkend="sidebar"
+>Barra Lateral</link
+>.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guimenuitem
+>Duplicar a Página</guimenuitem
+> (<keycombo action="simul"
+>&Ctrl;<keycap
+>D</keycap
+></keycombo
+>)</term>
+<listitem
+><para
+>Para criar uma nova página cujo conteúdo é duplicado a partir da actual.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guimenuitem
+>Recarregar a Página</guimenuitem
+> (<keycap
+>F5</keycap
+>)</term>
+<listitem
+><para
+>Relê o conteúdo da página actual.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guisubmenu
+>Outras Páginas</guisubmenu
+></term>
+<listitem
+><para
+>Mostra um sub-menu que contém todas as outras páginas. Se escolher uma página desta lista, torna-a a activa.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><guisubmenu
+>Outras Páginas</guisubmenu
+><guimenuitem
+>Recarregar Todas as Páginas</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+>&Shift;<keycap
+>F5</keycap
+></keycombo
+>)</term>
+<listitem
+><para
+>Relê o conteúdo de todas as páginas da janela do &konqueror;.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><guisubmenu
+>Outras Páginas</guisubmenu
+><guimenuitem
+>Fechar as Outras Páginas</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Para fechar todas as páginas menos a seleccionada de momento.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guimenuitem
+>Dissociar a Página</guimenuitem
+> (<keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>B</keycap
+></keycombo
+>)</term>
+<listitem
+><para
+>Esta opção remove a página seleccionada da janela seleccionada do &konqueror; e abre-a numa nova instância do &konqueror;.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guimenuitem
+>Fechar a Página</guimenuitem
+> (<keycombo action="simul"
+>&Ctrl;<keycap
+>W</keycap
+></keycombo
+>)</term>
+<listitem
+><para
+>Para fechar a página seleccionada no momento.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect1>
+
+<sect1 id="enhanced-browsing">
+<title
+>Atalhos da Web</title
+> 
+
+<para
+>Se estiverem activos, os Atalhos da Web do &konqueror; permitem-lhe enviar uma pesquisa directamente para um motor de busca ou algum 'site' Web do género sem ter de visitar o 'site' primeiro.</para
+> <para
+>Por exemplo, se escrever <userinput
+>gg:konqueror</userinput
+> na Barra de Localização e carregar em &Enter; irá perguntar ao <trademark
+>Google</trademark
+> para procurar por itens relacionados com o &konqueror;.</para
+> <para
+>Para ver quais os Atalhos da Web que estão disponíveis, e possivelmente adicionar os seus próprios use a opção do menu <menuchoice
+><guimenu
+>Configuração</guimenu
+><guimenuitem
+>Configurar o Konqueror...</guimenuitem
+></menuchoice
+> e abra os <guiicon
+>Atalhos da Web</guiicon
+>.</para>
+
+<para
+>Logo que esteja aí, para criar um novo Atalho da Web, seleccione a opção <guibutton
+>Novo...</guibutton
+> para que apareça agora uma janela nova que peça as opções e especificações do seu novo Atalho da Web. O primeiro campo é o nome legível do motor de busca; isto é, corresponde apenas ao nome do motor de busca, como por exemplo, o <trademark
+>Google</trademark
+>.</para>
+
+<para
+>No próximo campo, deverá indicar o &URI; que é usado para efectuar uma procura no motor de busca. O texto inteiro a ser procurado poderá ser indicado como <userinput
+>\{@}</userinput
+> ou <userinput
+>\{0}</userinput
+>. A versão recomendada é a <userinput
+>\{@}</userinput
+>, dado que remove todas as variáveis de pesquisa (<replaceable
+>nome</replaceable
+>=<replaceable
+>valor</replaceable
+>) do texto resultante, enquanto o <userinput
+>\{0}</userinput
+> será substituído pelo texto da pesquisa sem modificações. </para>
+
+<para
+>Poderá usar o <userinput
+>\{1}</userinput
+> ... <userinput
+>\{n}</userinput
+> para indicar certas palavras da pesquisa e o <userinput
+>\{<varname
+><replaceable
+>nome</replaceable
+></varname
+>}</userinput
+> para definir um valor indicado como <userinput
+><varname
+><replaceable
+>nome</replaceable
+></varname
+>=<replaceable
+>valor</replaceable
+></userinput
+> na pesquisa do utilizador. Para além disso, é possível indicar várias referências (nomes, números e sequências de texto) de uma vez, como por exemplo em <userinput
+>(\{<varname
+><replaceable
+>nome1</replaceable
+></varname
+>,<varname
+><replaceable
+>nome2</replaceable
+></varname
+>,...,"<replaceable
+>texto</replaceable
+>"})</userinput
+>. O primeiro valor correspondente (à esquerda) será usado como valor de substituição para o &URI; resultante. Um texto entre aspas poderá ser usado como valor por omissão, se mais nada corresponder à esquerda da lista de referências.</para>
+
+<para
+>Para criar aqui um Atalho Web básico, todavia, tudo o que é necessário é o &URI; que é usado para fazer uma pesquisa no motor de busca. A seguir ao nosso exemplo anterior com o <trademark
+>Google</trademark
+>, seria indicado algo do género <userinput
+>http://www.google.com/search?q=\{@}&amp;ie=UTF-8&amp;oe=UTF-8</userinput
+>. Poderá encontrar com frequência o local onde colocar o <userinput
+>\{@}</userinput
+> se fizer uma pesquisa no motor de busca em questão, analisando depois o endereço do &URL;. Por exemplo, se fizer uma pesquisa no <trademark
+>Google</trademark
+> pelo &konqueror;, irá produzir o &URL;: <ulink url="http://www.google.com/search?q=konqueror&amp;ie=UTF-8&amp;oe=UTF-8"
+>http://www.google.com/search?q=konqueror&amp;ie=UTF-8&amp;oe=UTF-8</ulink
+>. Agora, tudo o que necessita é substituir o &konqueror; por <userinput
+>\{@}</userinput
+> neste exemplo para descobrir o &URI; correcto a introduzir.</para>
+
+<para
+>No terceiro campo, necessita de indicar o atalho do &URI;. Por exemplo, o <userinput
+>gg</userinput
+> no <userinput
+>gg:konqueror</userinput
+>. Na próxima opção &mdash; a lista &mdash; terá a opção para seleccionar a codificação de caracteres que será usada para codificar o texto da pesquisa. Logo que tenha introduzido todas as opções correctamente, carregue em &Enter;, para que o seu novo Atalho Web fique agora disponível no &konqueror;.</para>
+
+</sect1>
+
+<sect1 id="accesskeys">
+
+<title
+>Teclas de Acesso</title>
+
+<para
+>O &konqueror; tem o suporte completo para o atributo de &HTML; <sgmltag class="attribute"
+>accesskey</sgmltag
+> nos formulários e ligações. As teclas de acesso permitem-lhe atribuir teclas às funções que seriam normalmente feitas com o rato, como o seguimento de ligações. A vantagem disto é, simplesmente, a possibilidade de os utilizadores interagirem com uma página com outros dispositivos que não um rato.</para>
+<para
+>Esta funcionalidade terá de ser activada, assinalando a opção <guilabel
+>Permitir a activação da Tecla de Acesso com a tecla &Ctrl;</guilabel
+> na página de configuração <guilabel
+>Navegação Web</guilabel
+>.</para>
+<para
+>Para activar as teclas de acesso no &konqueror;, carregue e largue a tecla  &Ctrl;. Logo que esta seja pressionada, se uma dada ligação da página Web tiver o atributo <sgmltag class="attribute"
+>accesskey</sgmltag
+> na ligação indicada, então os caracteres deverão aparecer sobre a ligação, identificando as teclas que deverão ser carregadas. Depois, poderá indicar as teclas associadas com a ligação, como alternativa de seguimento da ligação com o rato. Para desactivar as teclas de acesso, quando estiverem activadas, poderá voltar a carregar no &Ctrl; de novo.</para>
+
+<note
+><para
+>A utilização conveniente desta funcionalidade obriga a que o desenhador da página tenha atribuído especificamente, com o atributo <sgmltag class="attribute"
+>accesskey</sgmltag
+>, uma tecla de acesso para a ligação. Muitos dos desenhadores Web poderão não incluir o <sgmltag class="attribute"
+>accesskey</sgmltag
+> nas suas ligações e formulários o que, por consequência, tornará inútil esta funcionalidade na página Web indicada.</para
+></note>
+
+</sect1>
+
+<sect1 id="useragent">
+<title
+>Identificação do Navegador</title>
+<para
+>Quando o &konqueror; se liga a um 'site' Web, ele envia alguma informação de identificação resumida, conhecida como o texto de <quote
+>Agente do Utilizador</quote
+>. Muitos dos 'sites' Web utilizam esta informação para personalizar as páginas que são enviadas de volta, baseado nas potencialidades e fraquezas dos diferentes navegadores.</para>
+<para
+>Infelizmente, alguns 'sites' mal desenhados recusam-se a trabalhar convenientemente a menos que você utilize um navegador que o 'site' reconheça como <quote
+>válido</quote
+>, mesmo que, se lhe derem uma oportunidade, o &konqueror; trabalhe de forma satisfatória com a maioria das páginas Web.</para>
+<para
+>Para resolver este problema, você pode alterar a informação de identificação do navegador que o &konqueror; envia para os 'sites' específicos ou para os seus domínios ao seleccionar a opção <menuchoice
+><guimenu
+>Navegação Web</guimenu
+><guimenuitem
+>Identificação do Navegador</guimenuitem
+></menuchoice
+> da janela de configuração.</para>
+<note
+><para
+>Os problemas ao pôr uma página Web a funcionar correctamente poderá ter a ver com o seu uso do &Java; ou do JavaScript. Se você suspeitar que este possa ser o caso, verifique se o mesmo suporte está activo na secção de <guiicon
+>Java &amp; JavaScript </guiicon
+> da janela de configuração.</para
+></note>
+<note
+><para
+>Instale o <guilabel
+>Selector do Agente do Utilizador</guilabel
+> dos 'Plugins' do &konqueror; e active-o na opção do menu <menuchoice
+><guimenu
+>Configuração</guimenu
+><guimenuitem
+> Configurar as Extensões</guimenuitem
+></menuchoice
+>. Esta extensão adiciona um item <guimenuitem
+>Mudar a Identificação do Navegador</guimenuitem
+> no menu <guimenu
+>Ferramentas</guimenu
+>. Se usar este item, poderá mudar rapidamente os diferentes textos de <quote
+>Agente do Utilizador</quote
+>.</para
+></note>
+
+</sect1>
+
+<sect1 id="save-print-web">
+<title
+>Gravar e Imprimir os Itens Web</title>
+
+<para
+>Quando você está a ver uma página Web, podê-la-á gravar (ou pelo menos o seu &HTML; básico ou algum texto semelhante) para o seu disco local com a opção <menuchoice
+><guimenu
+>Ficheiro</guimenu
+><guimenuitem
+>Gravar Como...</guimenuitem
+></menuchoice
+>. Se a página que está a ver utiliza molduras ou 'frames', então também terá a possibilidade de escolher a opção <menuchoice
+><guimenu
+>Ficheiro</guimenu
+><guimenuitem
+>Gravar a Moldura ('Frame') Como...</guimenuitem
+></menuchoice
+>. Carregue primeiro com o botão <mousebutton
+>esquerdo</mousebutton
+> na moldura que deseja gravar.</para>
+
+<para
+>Se a página utilizar uma imagem de fundo, você poderá obtê-la e gravá-la com a opção <menuchoice
+><guimenu
+>Ficheiro</guimenu
+><guimenuitem
+>Gravar a Imagem de Fundo Como...</guimenuitem
+></menuchoice
+>.</para>
+
+<para
+>Mas se o que você quer mesmo é aquela imagem gloriosa do último Ferrari, então ao carregar com o botão <mousebutton
+>direito</mousebutton
+> numa imagem fará aparecer um menu com a opção <guimenuitem
+>Gravar a Imagem Como...</guimenuitem
+>. Certifique-se que você respeita o direito de cópia do dono, e peça a autorização antes de usar quaisquer imagens guardadas desta forma para algo que não seja o seu prazer de observação.</para>
+
+<para
+>Se você carregar com o botão <mousebutton
+>direito</mousebutton
+> numa ligação (a qual poderá ser uma imagem) e seleccionar a opção <guimenuitem
+>Gravar a Ligação Como...</guimenuitem
+> no menu de contexto, o código básico de &HTML; ou o texto básico semelhante a esse será obtido e gravado no seu disco local.</para>
+
+<para
+>Se carregar com o botão <mousebutton
+>direito</mousebutton
+> numa ligação (a qual poderá ser uma imagem) e escolher a opção <guimenuitem
+>Copiar a Localização da Ligação</guimenuitem
+> irá copiar o &URL; da ligação para a área de transferência de modo a que a possa colar, por exemplo, numa mensagem de e-mail para um amigo, a mostrar-lhe esse novo 'site' impecável.</para>
+
+<para
+>Se carregar com o botão <mousebutton
+>direito</mousebutton
+> numa imagem e escolher a opção <guimenuitem
+>Copiar a Imagem</guimenuitem
+>, esta irá copiar o &URL; da imagem para a área de transferência.</para>
+
+<para
+>Para gravar uma página Web completa, incluindo as suas imagens, seleccione a opção <guimenuitem
+> Arquivar a Página Web...</guimenuitem
+> no menu <guimenu
+>Ferramentas</guimenu
+>. Repare que esta funcionalidade é oferecida através de um <link linkend="konq-plugin"
+>'plugin' </link
+> e pode não ter sido instalada no seu sistema. A página Web será gravada como um único ficheiro com a extensão <literal role="extension"
+>.war</literal
+> e pode ser aberto ao carregar com o botão <mousebutton
+>esquerdo</mousebutton
+> no nome do ficheiro no &konqueror; a correr no modo de Gestão de Ficheiros.</para>
+
+<para
+>A impressão de uma cópia da página que você está a ver de momento é fácil com a opção do menu <menuchoice
+><guimenu
+>Ficheiro</guimenu
+> <guimenuitem
+>Imprimir...</guimenuitem
+></menuchoice
+> ou <guimenuitem
+>Imprimir a Moldura ('Frame')</guimenuitem
+> ou ainda com o botão da barra de ferramentas <guiicon
+>Imprimir</guiicon
+>.</para>
+
+</sect1>
+
+<sect1 id="ftp">
+<title
+>&FTP;</title>
+
+<para
+>O &FTP;, ou File Transfer Protocol, é uma das primeiras e talvez ainda um das melhores formas de transferir os ficheiros entre computadores na Internet.</para>
+
+<para
+>Com o &FTP; você poderá ver os ficheiros e as pastas do computador distante tal como se estivessem no seu próprio sistema, obtê-los para o seu computador usando os métodos normais do &konqueror; de <guimenuitem
+>Copiar</guimenuitem
+> e <guimenuitem
+>Colar</guimenuitem
+> ou Drag 'n Drop e, se for permitido, de enviar os ficheiros da sua máquina para o sistema de ficheiros do outro computador. Para o tentar, escreva o &URL;</para>
+
+<screen
+><userinput
+>ftp://ftp.kde.org/pub/kde</userinput
+>
+</screen>
+
+<para
+>na Barra de Localização e carregue em &Enter;. Assim que você esteja ligado à Internet, e desde que o 'site' de &FTP; do &kde; não esteja muito ocupado, você deverá acabar por conseguir ver a pasta <filename class="directory"
+>/pub/kde</filename
+> em &kde-ftp;</para>
+
+<note
+><para
+>Ainda que, de uma forma estrita, os &URL;s de &FTP; devam ser precedidos de <userinput
+>ftp://</userinput
+> e os &URL;s de <acronym
+>WWW </acronym
+> devam também começar por <userinput
+>http://</userinput
+>, o &konqueror; é normalmente esperto o suficiente para adivinhar o que é pretendido e inserir esses caracteres para si, se os omitir.</para
+></note>
+
+<para
+>Quando você acede a um 'site' de &FTP; ele irá necessitar normalmente de alguma espécie de utilizador e senha de si. Para simplificar as coisas, a maioria dos 'sites' de &FTP; que oferecem os ficheiros para serem transferidos aceitam a palavra <systemitem class="username"
+> anonymous</systemitem
+> (anónimo) como nome de utilizador e o seu endereço de e-mail como senha e, por isso e para tornar a sua vida ainda mais fácil, o &konqueror; irá fornecer esses dados automaticamente sem o incomodar. </para>
+
+<note
+><para
+>Se você tentar aceder a um 'site' de &FTP; que não necessite de um utilizador ou senha convenientes mas que esteja muito ocupado para aceitar mais ligações, o &konqueror; normalmente interpreta a mensagem de <quote
+>ocupado</quote
+> como um pedido para um nome e uma senha e, deste modo, fará aparecer uma janela a pedi-los a si, o utilizador.</para
+></note>
+
+<para
+>Os 'sites' que se preocupam mais com a segurança irão necessitar de um utilizador e uma senha válidos, onde neste caso o &konqueror; pedirá esses dados a si; ou então, em alternativa, você poderá incluir o utilizador no &URL; que você escrever na Barra de Localização, como por exemplo</para>
+
+<screen
+><userinput
+>ftp://<replaceable
+>utilizador</replaceable
+>@ftp.cia.org</userinput
+>
+</screen>
+
+<para
+>O &konqueror; irá então pedir-lhe a senha.</para>
+
+<para
+>O &konqueror; também pode suportar as autenticações automáticas tal como indicado no ficheiro <filename
+>.netrc</filename
+>. Os detalhes sobre como activar esta funcionalidade estão indicados em <ulink url="http://www.konqueror.org/faq.html#netrc"
+> http://www.konqueror.org/faq.html#netrc</ulink
+></para>
+
+</sect1>
+
+
+<sect1 id="portnumbers">
+<title
+>&URL;s com Números de Portos</title>
+<para
+>Se você indicar um número de porto no seu &URL;, como por exemplo <userinput
+>http://intranet.corp.com:1080</userinput
+>, você poderá obter a mensagem de erro <quote
+>Access to restricted port in POST denied</quote
+> (Acesso negado a um porto restrito no POST). Isto é feito por razões de segurança. Se você, de facto, precisar de aceder a um servidor nesse porto, basta adicionar uma linha <screen
+><userinput>
+OverridePorts=ListaSeparadaPorVirgulasDosPortosPermitidos
+</userinput
+></screen
+> no ficheiro <filename
+>$KDEDIR/share/config/kio_httprc </filename
+> ou no <filename
+>~/.kde/share/config/kio_httprc</filename
+>.</para>
+<para
+>Por exemplo, <screen
+><userinput
+>OverridenPorts=23,15
+</userinput
+></screen
+> (não deverá conter nenhuns espaços incorporados).</para>
+<para
+>O &konqueror; irá rejeitar os seguintes portos (a lista está embutida no ficheiro <filename
+>kdelibs/kio/kio/job.cpp</filename
+>):</para>
+<para
+>1, 7, 9, 11, 13, 15, 17, 19, 20, 21, 22, 23, 25, 37, 42, 43, 53, 77, 79, 87, 95, 101, 102, 103, 104, 109, 110, 111, 113, 115, 117, 119, 123, 135, 139, 143, 179, 389, 512, 513, 514, 515, 526, 530, 531, 532, 540, 556, 587, 601, 989, 990, 992, 993, 995, 1080, 2049, 4045, 6000, 6667 </para>
+</sect1>
+
+
+</chapter>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->

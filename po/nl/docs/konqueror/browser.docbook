@@ -1,0 +1,776 @@
+<chapter id="browser">
+
+<chapterinfo>
+<authorgroup>
+<author
+>&Pamela.Roberts;</author>
+&Niels.Reedijk;&Bram.Schoenmakers;&Freek.de.Kruijf; 
+</authorgroup>
+
+<date
+>2010-10-25</date>
+<releaseinfo
+>&kde; 4.5</releaseinfo>
+</chapterinfo>
+
+
+<title
+>&konqueror; de webbrowser</title>
+
+<mediaobject>
+<imageobject
+><imagedata format="PNG" fileref="konqorg.png"/></imageobject>
+<textobject>
+<phrase
+>Surfen naar www.konqueror.org</phrase>
+</textobject>
+</mediaobject>
+
+<sect1 id="conn-inet">
+<title
+>Verbinding maken met het internet</title>
+
+<para
+>Wanneer u eenmaal verbonden bent met het internet kunt u met &konqueror; net zo makkelijk het web doorbladeren als met een gewone browser. Typ gewoon een &URL; in de <guilabel
+>locatiebalk</guilabel
+> gevolgd door &Enter; en u bent al onderweg!</para>
+
+<itemizedlist>
+<listitem
+><para
+>Wanneer u gebruik maakt van een inbelverbinding, kunt u gebruik maken van &kppp; of een soortgelijk programma om een verbinding te maken.</para
+></listitem>
+
+<listitem
+><para
+>Indien uw computer verbonden is met een Local Area Network (<acronym
+>LAN</acronym
+>) dat via een proxy-server verbonden is met het internet, dan dient u &konqueror; daarop in te stellen. Deze instelling kunt u doen in de pagina <menuchoice
+><guimenu
+>Webbrowsen</guimenu
+> <guimenuitem
+>Proxy</guimenuitem
+> </menuchoice
+> van de dialoog <menuchoice
+><guimenu
+> Instellingen</guimenu
+><guimenuitem
+>Konqueror instellen...</guimenuitem
+></menuchoice
+>.</para
+></listitem>
+
+<listitem
+><para
+>Wanneer u een breedbandverbinding hebt zal uw internetprovider waarschijnlijk een externe modem geleverd hebben. Dit hebt u nodig om een ethernet-verbinding op te zetten met uw computer. Helaas hangt het instellen van uw modem af van uw internetprovider en uw Linux-distributie. Sommige providers verbinden hun klanten door middel van een proxy-server. In dit geval moet u &konqueror; daarop instellen om hier gebruik van te maken. Het kan handig zijn om de archieven van de mailing lijsten van uw Linux te doorzoeken voor meer hulp en informatie.</para>
+</listitem>
+</itemizedlist>
+
+<note
+><para
+>Een foutmelding zoals <errorname
+>Onbekende host</errorname
+> betekent meestal dat &konqueror; geen verbinding kon maken met het internet of dat u geen geldig &URL; heeft ingevoerd.</para
+></note>
+
+</sect1>
+
+<sect1 id="surf">
+<title
+>Surfen en zoeken</title>
+
+<para
+>Is uw verbinding eenmaal actief, dan kunt u &konqueror; gebruiken zoals iedere andere browser.</para>
+
+<para
+>Typ een &URL; in de locatiebalk gevolgd door een &Enter;, of klik met de <mousebutton
+>linker</mousebutton
+>muisknop op <guibutton
+>Ga naar</guibutton
+> aan de rechterzijde van de locatiebalk. &konqueror; zal de pagina laden en weergeven. Wanneer u een pagina al eerder bezocht heeft, kan &konqueror; automatisch de tekst aanvullen om het &URL; sneller in te voeren, of u gebruikt de <guilabel
+>Geschiedenis</guilabel
+> in het <link linkend="sidebar"
+>Zijbalk</link
+>. &konqueror; maakt het zoeken met zoekmachines gemakkelijker door <link linkend="enhanced-browsing"
+> Webkoppelingen</link
+> te gebruiken.</para>
+
+<para
+>Klik met de <mousebutton
+>linker</mousebutton
+>muisknop op een koppeling om die koppeling te openen.</para>
+
+<para
+>Om een koppeling te openen in een nieuw &konqueror;-venster, zodat de oorspronkelijke pagina in beeld blijft, klikt u met &RMB; op de koppeling en kiest u de optie <guimenuitem
+>Openen in nieuw venster</guimenuitem
+>. Ook kunt u <guimenuitem
+>Open in nieuw tablad</guimenuitem
+> kiezen. <link linkend="tabbrowse"
+>Browsen met tabbladen</link
+> geeft u de mogelijkheid om in één &konqueror; venster meerdere browser-pagina's te openen en snel heen en terug te schakelen met een enkele muisklik.</para>
+
+<para
+>U kunt ook meerdere deelvensters tegelijk selecteren met <menuchoice
+><guimenu
+>Venster</guimenu
+> <guimenuitem
+>Venster verticaal splitsen</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>L</keycap
+> </keycombo
+>) / <menuchoice
+><guimenu
+>Venster</guimenu
+> <guimenuitem
+>Venster horizontaal splitsen</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+>&Ctrl; &Shift;<keycap
+>T</keycap
+></keycombo
+>). Dit is handig wanneer u meerdere <acronym
+>HTML</acronym
+>-pagina's tegelijkertijd wilt bekijken.</para>
+<para
+>Om terug te gaan naar de vorige pagina gebruikt u de sneltoets <keycombo action="simul"
+>&Alt;<keysym
+>Links</keysym
+></keycombo
+>, of klikt u op <guibutton
+>Terug</guibutton
+> in de werkbalk of de menubalkoptie <menuchoice
+><guimenu
+>Ga</guimenu
+> <guimenuitem
+>Terug</guimenuitem
+></menuchoice
+>.</para>
+<para
+>U kunt ook een pagina vooruit gaan wanneer u daarvoor een stap terug hebt gedaan met de sneltoets <keycombo action="simul"
+>&Alt;<keysym
+>Rechts</keysym
+></keycombo
+> of de knop <guibutton
+>Verder</guibutton
+> of de menubalkoptie <menuchoice
+><guimenu
+>Ga</guimenu
+> <guimenuitem
+>Verder</guimenuitem
+></menuchoice
+>.</para>
+
+<!-- copy from okular Navigating -->
+<para
+>Er zijn verschillende manieren om door het document te navigeren. Eén ervan is het gebruiken van de toetsen <keycap
+>Pijl omhoog</keycap
+> en <keycap
+>Pijl omlaag</keycap
+>. U kunt ook de schuifbalk, uw muiswiel of de toetsen <keycap
+>Page Up</keycap
+> en <keycap
+>Page Down</keycap
+> gebruiken.</para>
+<para
+>Als u een webpagina wilt lezen gebruik dan de automatische mogelijkheid van doorschuiven van &konqueror;. Start het automatisch doorschuiven met <keycombo action="simul"
+>&Shift;<keysym
+>Pijl naar beneden</keysym
+></keycombo
+> of <keycombo action="simul"
+>&Shift;<keysym
+>Pijl omhoog</keysym
+></keycombo
+>. Gebruik daarna deze toetsen om de schuifsnelheid te vergroten of te verkleinen. U kunt automatisch schuiven tijdelijk starten of stoppen door de &Shift;-toets in te drukken; elke andere knop indrukken schakelt deze functie uit. </para>
+<para
+>Automatisch schuiven werkt alleen in de weergavemodus <guimenuitem
+>KHTML</guimenuitem
+>. </para>
+<para
+>Wanneer u het laden van een pagina wilt stoppen drukt u op &Esc;, gebruikt u de werkbalkknop <guibutton
+>Stoppen</guibutton
+>, of u kiest het menu-item <menuchoice
+><guimenu
+>Beeld</guimenu
+> <guimenuitem
+>Stoppen</guimenuitem
+></menuchoice
+>.</para>
+
+<para
+>Bij het bekijken van een webpagina met de <guilabel
+>HTML-werkbalk</guilabel
+> ingeschakeld, dan ziet u twee nieuwe pictogrammen in de werkbalk <guiicon
+><inlinemediaobject
+><imageobject
+> <imagedata fileref="format-font-size-less.png" format="PNG"/> </imageobject
+></inlinemediaobject
+></guiicon
+> en <guiicon
+><inlinemediaobject
+><imageobject
+> <imagedata fileref="format-font-size-more.png" format="PNG"/> </imageobject
+></inlinemediaobject
+></guiicon
+>. Gebruik deze om de tekengrootte van de tekst op de pagina te veranderen wanneer het lastig te lezen is. Het hangt helaas af van de opbouw van de webpagina hoe goed deze optie werkt.</para>
+</sect1>
+
+<sect1 id="tabbrowse">
+<title
+>Browsen met tabbladen</title>
+<para
+>Hiermee kunt u meerdere pagina's tegelijkertijd openen in één venster van &konqueror;. U wisselt van pagina door op het betreffende tabblad te klikken. Op deze manier kunt u een pagina <quote
+>op de achtergrond</quote
+> laden terwijl u nog doorgaat met lezen op een andere pagina.</para>
+
+<para
+>Om gebruik te maken van tabbladen, klik met de <mousebutton
+>rechter</mousebutton
+>muisknop op een koppeling en kies <guimenuitem
+>Openen in nieuw tabblad</guimenuitem
+> uit het afrolmenu of klik met &MMB;. De pagina zal gewoon geladen worden, alleen wordt er voor iedere pagina een tabblad toegevoegd aan de bovenzijde. Klik met de &LMB; op een tabblad om die pagina te bekijken of gebruik de sneltoetsen <keycombo action="simul"
+>&Ctrl;<keycap
+>[</keycap
+></keycombo
+> en <keycombo action="simul"
+>&Ctrl;<keycap
+>]</keycap
+></keycombo
+> om langs tabbladen te bladeren. Ook kunt u gebruik maken van uw muis. Met behulp van het muis<mousebutton
+>wiel</mousebutton
+> kunt u, wanneer de muisaanwijzer zich boven de tabbladen bevindt, door de tabbladen bladeren. Wanneer u dubbelklikt in een lege ruimte van de tabbalk opent een nieuw tabblad.</para>
+
+<para
+>Bij gebruik van de optie <guimenuitem
+>Nieuwe tabbladen op de achtergrond openen</guimenuitem
+> in de pagina <guilabel
+>Algemeen</guilabel
+> van de dialoog <guimenu
+>Instellingen</guimenu
+>, laadt klikken op een koppeling een nieuw tabblad, maar die wordt pas weergegeven op het moment dat u met de <mousebutton
+>linker</mousebutton
+>muisknop op het betreffende tabblad klikt.</para>
+
+<para
+>Wanneer u de optie <guilabel
+>Koppelingen openen in nieuw tabblad in plaats van nieuw venster</guilabel
+> aanzet in het onderdeel <guimenuitem
+>Algemeen</guimenuitem
+> van het venster <menuchoice
+><guimenu
+>Instellingen</guimenu
+><guimenuitem
+>Konqueror instellen...</guimenuitem
+></menuchoice
+>, zullen koppelingen geopend worden in een nieuw tabblad indien ze met de middelste muisknop zijn aangeklikt. Wanneer u &Shift; ingedrukt houdt bij het klikken met de middelste muisknop zal het tabblad op de achtergrond geopend worden.</para>
+
+<para
+>Klikken met de <mousebutton
+>rechter</mousebutton
+>muisknop op een tabblad zal een menu openen met de volgende opties:</para>
+<variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Nieuw tabblad</guimenuitem
+> (<keycombo action="simul"
+>&Ctrl;<keycap
+>T</keycap
+></keycombo
+>)</term>
+<listitem
+><para
+>Dit opent een nieuw leeg tabblad. U kunt hierin een pagina laden door een &URL; te typen in de locatiebalk, of door een item in de bladwijzerbalk of <link linkend="sidebar"
+>Zijbalk</link
+> aan te klikken.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guimenuitem
+>Dupliceer tabblad</guimenuitem
+> (<keycombo action="simul"
+>&Ctrl;<keycap
+>D</keycap
+></keycombo
+>)</term>
+<listitem
+><para
+>Hiermee kunt u een tabblad dupliceren.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guimenuitem
+>Tabblad herladen</guimenuitem
+> (<keycap
+>F5</keycap
+>)</term>
+<listitem
+><para
+>Herlaadt de inhoud van het geselecteerde tabblad.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guisubmenu
+>Andere tabbladen</guisubmenu
+></term>
+<listitem
+><para
+>Toont een submenu met alle andere tabbladen. Wanneer u uit deze lijst een tabblad te selecteert dan wordt dat tabblad op de voorgrond geplaatst.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><guisubmenu
+>Andere tabbladen</guisubmenu
+><guimenuitem
+>Herlaadt alle tabbladen</guimenuitem
+></menuchoice
+> (<keycombo action="simul"
+>&Shift;<keycap
+>F5</keycap
+></keycombo
+>)</term>
+<listitem
+><para
+>Herlaadt de inhoud van alle tabbladen.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><guisubmenu
+>Andere tabs</guisubmenu
+><guimenuitem
+>Sluit andere tabs</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Sluit alle andere tabbladen behalve het geselecteerde tabblad.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guimenuitem
+>Tabblad losmaken</guimenuitem
+> (<keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>B</keycap
+></keycombo
+>)</term>
+<listitem
+><para
+>Deze optie verwijdert het geselecteerde tabblad uit het huidige &konqueror;-venster en opent het in een nieuw venster.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guimenuitem
+>Tabblad sluiten</guimenuitem
+> (<keycombo action="simul"
+>&Ctrl;<keycap
+>W</keycap
+></keycombo
+>)</term>
+<listitem
+><para
+>Sluit het geselecteerde tabblad.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect1>
+
+<sect1 id="enhanced-browsing">
+<title
+>Webkoppelingen</title
+> 
+
+<para
+>Wanneer &konqueror;s webkoppelingen aanstaan, kunt u onmiddellijk zoeken bij een zoekmachine zonder eerst naar die site te bezoeken.</para
+> <para
+>U kunt bijvoorbeeld <userinput
+>gg:konqueror</userinput
+> typen in de locatiebalk, gevolgd door een &Enter;. <trademark
+>Google</trademark
+> gaat dan zoeken naar webpagina's die het woord &konqueror; bevatten.</para>
+<para
+>Om te zien welke webkoppelingen er allemaal zijn of om webkoppelingen toe te voegen, gaat u naar <menuchoice
+><guimenu
+>Instellingen</guimenu
+><guimenuitem
+>Konqueror instellen...</guimenuitem
+></menuchoice
+> en opent u de pagina <guilabel
+>Webkoppelingen</guilabel
+>.</para>
+
+<para
+>Daar aangekomen selecteert u <guibutton
+>Nieuw...</guibutton
+> om een nieuwe webkoppeling te maken. Wanneer u op <guibutton
+>Nieuw...</guibutton
+> heeft geklikt verschijnt er een venster met een aantal omschrijvingen en opties voor uw nieuwe webkoppeling. Het eerste veld is een normaal leesbare omschrijving van de zoekmachine. Bijvoorbeeld, <trademark
+>Google</trademark
+>.</para>
+
+<para
+>In het volgende veld dient u de &URI; in te vullen die nodig is voor een zoekopdracht in de zoekmachine. De tekst die gezocht moet worden kan worden opgegeven als <userinput
+>\{@}</userinput
+> of <userinput
+>\{0}</userinput
+>. De geadviseerde versie is <userinput
+>\{@}</userinput
+> omdat deze zoektermen (<replaceable
+>naam</replaceable
+>=<replaceable
+>waarde</replaceable
+>) wist uit het resultaat terwijl <userinput
+>\{0}</userinput
+> wordt vervangen door de niet aangepaste zoekterm. </para>
+
+<para
+>U kunt <userinput
+>\{1}</userinput
+> ... <userinput
+>\{n}</userinput
+> gebruiken om bepaalde worden te specificeren in de zoekterm en <userinput
+>\{<varname
+><replaceable
+>naam</replaceable
+></varname
+>}</userinput
+> om een waarde te specificeren ingegeven met <userinput
+><varname
+><replaceable
+>naam</replaceable
+></varname
+>=<replaceable
+>waarde</replaceable
+></userinput
+> in de zoekterm van de gebruiker. Bovendien is het mogelijk om meedere termen te specificeren zoals namen, getallen en tekenreeksen als in <userinput
+>(\{<varname
+><replaceable
+>naam1</replaceable
+></varname
+>,<varname
+><replaceable
+>naam2</replaceable
+></varname
+>,...,"<replaceable
+>tekenreeks</replaceable
+>"})</userinput
+>. De eerste, overeenkomede waarde, (van af links) wordt gebruikt als een vervangende waarde voor de rest van de &URI;. Een tekenreeks tussen aanhalingstekens kan worden gebruikt als standaardwaarde wanneer geen overeenkomstige waarde aanwezig is in het linkergedeelte van de lijst.</para>
+
+<para
+>Om een basis webkoppeling te maken is gelukkig alleen maar de &URI; nodig die wordt gebruikt voor een zoekopdracht bij de betreffende zoekmachine. Wanneer wordt uitgegaan van het voorbeeld met <trademark
+>Google</trademark
+> voeren we in <userinput
+>http://www.google.nl/search?q=\{@}&amp;ie=UTF-8&amp;oe=UTF-8</userinput
+>. Het is vrij eenvoudig waar u de <userinput
+>\{@}</userinput
+> moet plaatsen door eenvoudigweg een zoekopdracht te doen in die zoekmachine en dan de resulterende &URL; proberen te doorgronden. Een zoekopdracht bij bijvoorbeeld <trademark
+>Google</trademark
+> naar &konqueror; geeft de &URL;: <ulink url="http://www.google.nl/search?hl=nl&amp;ie=ISO-8859-1&amp;q=konqueror&amp;btnG=Google+zoeken&amp;meta="
+>http://www.google.nl/search?hl=nl&amp;ie=ISO-8859-1&amp;q=konqueror&amp;btnG=Google+zoeken&amp;meta=</ulink
+> U hoeft nu alleen maar &konqueror; te vervangen door <userinput
+>\{@}</userinput
+> om de juiste &URI; te vinden.</para>
+
+<para
+>In het derde veld dient u de &URI; shortcut in te geven. bijvoorbeeld <userinput
+>gg</userinput
+>. <userinput
+>gg:konqueror</userinput
+> in de adresbalk laat Google zoeken naar konqueror. De laatste optie, het &mdash; dropdown menu &mdash;kunt u nog het karakterset kiezen waarmee u zoekterm wordt gecodeerd. Wanneer u alle opties naar uw zin en juist hebt ingevoerd kunt u op &Enter; drukken en is uw webkoppeling beschikbaar in &konqueror;.</para>
+
+</sect1>
+
+<sect1 id="accesskeys">
+
+<title
+>Toegangstoetsen</title>
+
+<para
+>&konqueror; biedt volledige ondersteuning voor het  &HTML;-attribuut <sgmltag class="attribute"
+>accesskey</sgmltag
+> voor formuliervelden en koppelingen. Toegangstoetsen geven u de mogelijkheid om het toetsenbord te gebruiken voor functies waar u normaal gesproken de muis voor gebruikt, zoals het klikken op koppelingen. Dankzij deze functionaliteit heeft u niet per sé uw muis nodig om door webpagina's te navigeren.</para>
+<para
+>Deze functie moet ingeschakeld zijn door activering van de optie <guilabel
+>Toegankelijkheidstoetsen met de &Ctrl;-toets inschakelen</guilabel
+> op de instellingenpagina <guilabel
+>Webbrowsen</guilabel
+>.</para>
+<para
+>Om toegangstoetsen in &konqueror; aan te zetten drukt u kort &Ctrl; in.  Wanneer dit is is gedaan, en een aantal of alle koppelingen hebben het <sgmltag class="attribute"
+>accesskey</sgmltag
+> &HTML; attribuut, zullen bepaalde tekens oplichten bij de koppeling. U kunt nu de betreffende teken(s) intoetsen in plaats van deze met de muis aan te klikken. Om de toeganstoetsen weer uit te zetten drukt u wederom op &Ctrl;.</para>
+
+<note
+><para
+>De juiste werking van deze mogelijkheid hangt af van het feit of de ontwerper van de website het <sgmltag class="attribute"
+>accesskey</sgmltag
+> &HTML; attribuut wel of niet heeft toegepast. Toegangstoetsen zal derhalve niet op iedere website werken.</para
+></note>
+
+</sect1>
+
+<sect1 id="useragent">
+<title
+>Browseridentificatie</title>
+<para
+>&konqueror; verzendt bij het bezoeken van een website altijd wat informatie over uw browser. Dit staat bekend als de term <quote
+>User Agent</quote
+>. Veel websites gebruiken deze informatie om pagina's aan te passen, zodat er rekening gehouden kan worden met enkele zwakke of sterke punten van de verschillende browsers.</para>
+<para
+>Helaas weigeren sommige slecht ontworpen websites te werken wanneer u een browser gebruikt die als <quote
+>ongeschikt</quote
+> wordt gezien, terwijl &konqueror; in bijna alle gevallen goed kan omgaan met dergelijke sites.</para>
+<para
+>Om dit te probleem op te lossen kunt u de browseridentificatie die door &konqueror; wordt verzonden veranderen. U kunt dit instellen per website of domein. Ga naar pagina <menuchoice
+><guimenu
+>Webbrowsen</guimenu
+><guimenuitem
+> Browseridentificatie</guimenuitem
+></menuchoice
+> van de instellingendialoog.</para>
+<note
+><para
+>Dat websites soms niet werken kan ook te maken hebben omdat ze &Java; of Javascript gebruiken. Wanneer u denkt dat dit het geval is, ga dan na of dat deze zijn ingeschakeld in het onderdeel <guilabel
+>Java &amp; Javascript</guilabel
+> van de instellingendialoog.</para
+></note>
+<note
+><para
+>Installeer de extensie <guilabel
+>Wijziger van gebruikersagent</guilabel
+> van de plugins van &konqueror; en schakel het in in <menuchoice
+><guimenu
+>Instellingen</guimenu
+><guimenuitem
+> Extensies instellen</guimenuitem
+></menuchoice
+>. Deze extensie voegt een item toe <guimenuitem
+>Browseridentificatie wijzigen</guimenuitem
+> aan het menu <guimenu
+>Hulpmiddelen</guimenu
+>. Met dit item kunt u snel schakelen tussen verschillende tekenreeksen van <quote
+>Gebruikersagents</quote
+>.</para
+></note>
+
+</sect1>
+
+<sect1 id="save-print-web">
+<title
+>Webpagina's opslaan en afdrukken</title>
+
+<para
+>Wanneer u een pagina bekijkt kunt u deze opslaan op uw lokale harde schijf (of in ieder geval de basis <acronym
+>HTML</acronym
+>-code of vergelijkbare brontekst). Ga naar <menuchoice
+><guimenu
+>Bestand</guimenu
+><guimenuitem
+>Opslaan als...</guimenuitem
+></menuchoice
+> om dat te doen. Wanneer de pagina frames bevat, wordt de optie <menuchoice
+><guimenu
+>Bestand</guimenu
+><guimenuitem
+>Frame opslaan als...</guimenuitem
+></menuchoice
+> actief. U moet wel eerst met de <mousebutton
+>linker</mousebutton
+>muisknop op het frame klikken dat u wilt opslaan.</para>
+
+<para
+>Wanneer de pagina een achtergrondafbeelding bevat, dan kunt u die opslaan met de menu-optie <menuchoice
+><guimenu
+>Bestand</guimenu
+><guimenuitem
+>Achtergrondafbeelding opslaan als...</guimenuitem
+></menuchoice
+>.</para>
+
+<para
+>Maar als u alleen dat geweldige plaatje wilt opslaan van de allerlaatste Ferrari, klik er dan met de <mousebutton
+>rechter</mousebutton
+>muisknop op en kies in het context-menu <guimenuitem
+>Afbeelding opslaan als...</guimenuitem
+>. Houd rekening met de auteursrechten van de eigenaar, vraag toestemming voordat u afbeeldingen gaat gebruiken voor andere doeleinden dan het bekijken ervan op uw eigen computer.</para>
+
+<para
+>Om een bestand (bijvoorbeeld een plaatje) achter een koppeling op uw computer op te kunnen slaan klikt u met de <mousebutton
+>rechter</mousebutton
+>muisknop op die koppeling en klikt u op <guimenuitem
+>Koppeling opslaan als...</guimenuitem
+>. Alleen de basis <acronym
+>HTML</acronym
+>-code of vergelijkbare bestanden (het plaatje) zal worden opgeslagen.</para>
+
+<para
+>Klik met de <mousebutton
+>rechter</mousebutton
+>muisknop op een koppeling (dat kan ook een afbeelding zijn) en klik op <guimenuitem
+>Koppelingsadres kopiëren</guimenuitem
+> om het &URL; naar het klembord te kopiëren. Dit kunt u bijvoorbeeld gebruiken om de &URL; in een e-mailbericht te plaatsen.</para>
+
+<para
+>Door met de <mousebutton
+>rechter</mousebutton
+>muisknop te klikken op een afbeelding en dan vervolgens op <guimenuitem
+>Afbeelding kopiëren</guimenuitem
+> te klikken kopieert u het &URL; van die afbeelding naar het klembord.</para>
+
+<para
+>Om de gehele pagina op te slaan met alle afbeeldingen erbij gaat u naar <guimenuitem
+>Webpagina archiveren...</guimenuitem
+> in het menu <guimenu
+>Hulpmiddelen</guimenu
+>. Deze mogelijkheid wordt geleverd door een <link linkend="konq-plugin"
+>plug-in</link
+> en het kan zijn dat deze niet geïnstalleerd is op uw systeem. De gearchiveerde webpagina wordt opgeslagen in één bestand met de extensie <literal role="extension"
+>.war</literal
+>, en kan geopend worden wanneer u in de bestandsbeheerder met de <mousebutton
+>linker</mousebutton
+>muisknop erop klikt.</para>
+
+<para
+>U kunt gemakkelijk een pagina afdrukken met de menu-optie <menuchoice
+><guimenu
+>Bestand</guimenu
+> <guimenuitem
+>Afdrukken...</guimenuitem
+></menuchoice
+>, <guimenuitem
+>Frame afdrukken</guimenuitem
+> of met de werkbalkknop <guiicon
+>Afdrukken...</guiicon
+>.</para>
+
+</sect1>
+
+<sect1 id="ftp">
+<title
+>&FTP;</title>
+
+<para
+>&FTP; oftewel File Transfer Protocol, is de eerste, en misschien ook nog wel de beste, manier om bestanden over te dragen tussen twee computers die via het internet met elkaar zijn verbonden.</para>
+
+<para
+>Met &FTP; kunt u bestanden en mappen bekijken alsof ze gewoon op uw eigen computer staan. U kunt ze ook downloaden naar uw computer door het bestand te <guimenuitem
+>Kopiëren</guimenuitem
+> en <guimenuitem
+>Plakken</guimenuitem
+>. U kunt de bestanden ook naar een lokale map slepen. Wanneer u de noodzakelijke rechten hebt om bestanden te uploaden kunt u dat op dezelfde manier doen. Om dit eens uit te proberen, typ dan de volgende &URL; in</para>
+
+<screen
+><userinput
+>ftp://ftp.kde.org/pub/kde</userinput
+>
+</screen>
+
+<para
+>in de locatiebalk en druk op &Enter;. Wanneer u verbonden bent met het internet en de FTP-locatie niet al te druk is, ziet u na enige tijd de inhoud zien van de map <filename class="directory"
+>/pub/kde</filename
+> op &kde-ftp;</para>
+
+<note
+><para
+>Hoewel strikt genomen &FTP;-&URL;s dienen te beginnen met de lettertekens <userinput
+>ftp://</userinput
+> aan het begin en <acronym
+>WWW</acronym
+>-&URL;s moeten beginnen met <userinput
+>http://</userinput
+> is &konqueror; slim genoeg om zelf uit te zoeken wat er bedoeld wordt en zal deze lettertekens zelf toevoegen wanneer u ze weglaat.</para
+></note>
+
+<para
+>Wanneer u een &FTP;-locatie binnen wilt gaan is vaak een gebruikersnaam en wachtwoord noodzakelijk. Om het eenvoudig te houden hebben de meeste &FTP;-locaties die gratis bestanden aanbieden daarvoor de gebruikersnaam <systemitem class="username"
+> anonymous</systemitem
+> nodig en uw e-mail-adres als wachtwoord. Om het u nóg makkelijker te maken zal &konqueror; dit allemaal zelf invullen zodat u zich daarover geen zorgen hoeft te maken. </para>
+
+<note
+><para
+>Wanneer u een &FTP;-locatie probeert te bezoeken waarvoor geen gebruikersnaam of wachtwoord nodig is, maar te druk bezocht wordt om nog meer verbindingen aan te gaan, zal &konqueror; het signaal <quote
+>bezig</quote
+> interpreteren als een vraag naar naam en wachtwoord. Daarom zal er een dialoogvenster in beeld komen om deze gegevens in te vullen.</para
+></note>
+
+<para
+>Sites waar strengere beveiligingsregels gelden vereisen wel een echte gebruikersnaam en wachtwoord, in dit geval zal &konqueror; daar om vragen. U kunt uw gebruikersnaam ook meteen in het &URL; invoeren, zoals</para>
+
+<screen
+><userinput
+>ftp://<replaceable
+>gebruikersnaam</replaceable
+>@ftp.cia.org</userinput
+>
+</screen>
+
+<para
+>&konqueror; zal dan vragen om een wachtwoord.</para>
+
+<para
+>&konqueror; ondersteunt ook automatische aanmeldingen die vermeld staan in een <filename
+>.netrc</filename
+>-bestand. Meer informatie hierover kunt u vinden op <ulink url="http://www.konqueror.org/faq.html#netrc"
+> http://www.konqueror.org/faq.html#netrc</ulink
+></para>
+
+</sect1>
+
+
+<sect1 id="portnumbers">
+<title
+>&URL;s met poortnummers</title>
+<para
+>Wanneer u een poortnummer opgeeft in een &URL;, zoals in <userinput
+>http://intranet.corp.com:1080</userinput
+> kunt u in verband met de beveiliging een foutmelding krijgen met de tekst <quote
+>Toegang tot beperkte poort in POST geweigerd</quote
+>. Wanneer u toch toegang nodig hebt voor deze locatie, voeg dan de regel <screen
+><userinput>
+OverridenPorts=LijstVanToegestanePoortenMetKommas
+</userinput
+></screen
+> toe aan het bestand <filename
+>$KDEDIR/share/config/kio_httprc </filename
+> of aan <filename
+>~/.kde/share/config/kio_httprc</filename
+>.</para>
+<para
+>Bijvoorbeeld <screen
+><userinput
+>OverridenPorts=23,15
+</userinput
+></screen
+> (tussen de lettertekens mogen geen spaties zitten).</para>
+<para
+>&konqueror; zal de volgende poorten blokkeren (deze lijst staat vastgelegd in het bronbestand <filename
+>kdelibs/kio/kio/job.cpp</filename
+>):</para>
+<para
+>1, 7, 9, 11, 13, 15, 17, 19, 20, 21, 22, 23, 25, 37, 42, 43, 53, 77, 79, 87, 95, 101, 102, 103, 104, 109, 110, 111, 113, 115, 117, 119, 123, 135, 139, 143, 179, 389, 512, 513, 514, 515, 526, 530, 531, 532, 540, 556, 587, 601, 989, 990, 992, 993, 995, 1080, 2049, 4045, 6000, 6667 </para>
+</sect1>
+
+
+</chapter>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-parent-document:("index.docbook" "book" "chapter")
+End:
+-->
