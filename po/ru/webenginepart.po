@@ -6,13 +6,13 @@
 # Yuri Efremov <yur.arh@gmail.com>, 2013.
 # Alexander Lakhin <exclusion@gmail.com>, 2013.
 # Alexander Yavorsky <kekcuha@gmail.com>, 2018, 2019, 2020, 2021.
-# Olesya Gerasimenko <translation-team@basealt.ru>, 2021.
+# Olesya Gerasimenko <translation-team@basealt.ru>, 2021, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-08-24 00:46+0000\n"
-"PO-Revision-Date: 2021-12-27 18:17+0300\n"
+"PO-Revision-Date: 2022-10-05 09:27+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
 "Language: ru\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 21.08.3\n"
+"X-Generator: Lokalize 22.04.3\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -1204,19 +1204,19 @@ msgid "Yes, &forever"
 msgstr "Да, &всегда"
 
 #: src/webenginepartcertificateerrordlg.cpp:49
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "<p>The server <tt>%1</tt> failed the authenticity check. The error is:</"
 "p><p><tt>%2</tt></p>Do you want to ignore this error?"
 msgstr ""
-"<p>Сервера не прошёл проверку подлинности (%1). Сообщение об ошибке:</"
+"<p>Сервер <tt>%1</tt> не прошёл проверку подлинности. Сообщение об ошибке:</"
 "p><p><tt>%2</tt></p>Игнорировать эту ошибку?"
 
 #: src/webenginepartcertificateerrordlg.cpp:55
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "title of a dialog asking what to do about a SSL certificate error"
 msgid "Certificate error"
-msgstr "Сведения о сертификате"
+msgstr "Ошибка сертификата"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEnginePartCertificateErrorDlg)
 #: src/webenginepartcertificateerrordlg.ui:14

@@ -12,20 +12,20 @@
 # Alexander Potashev <aspotashev@gmail.com>, 2010, 2011, 2019.
 # Yuri Efremov <yur.arh@gmail.com>, 2012, 2013.
 # Alexander Lakhin <exclusion@gmail.com>, 2013.
-# Olesya Gerasimenko <translation-team@basealt.ru>, 2021.
+# Olesya Gerasimenko <translation-team@basealt.ru>, 2021, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-09-22 00:44+0000\n"
-"PO-Revision-Date: 2021-12-27 17:46+0300\n"
+"PO-Revision-Date: 2022-10-05 09:27+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.08.3\n"
+"X-Generator: Lokalize 22.04.3\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Environment: kde\n"
@@ -1960,7 +1960,7 @@ msgstr "Переслать"
 #, kde-format
 msgctxt "Execute an executable file"
 msgid "Execute it"
-msgstr ""
+msgstr "Выполнить"
 
 #: src/urlloader.cpp:258
 #, kde-format
@@ -1969,24 +1969,25 @@ msgctxt ""
 msgid ""
 "<tt>%1</tt> can be executed. Do you want to execute it or to display it?"
 msgstr ""
+"<tt>%1</tt> возможно выполнить. Что следует сделать, выполнить или "
+"отобразить?"
 
 #: src/urlloader.cpp:259
 #, kde-format
 msgctxt "Display an executable file"
 msgid "Display it"
-msgstr ""
+msgstr "Отобразить"
 
 #: src/urlloader.cpp:263
 #, kde-format
 msgctxt "The user has to decide whether to execute an executable file or not"
 msgid "<tt>%1</tt> can be executed. Do you want to execute it?"
-msgstr ""
+msgstr "<tt>%1</tt> возможно выполнить. Сделать это?"
 
 #: src/urlloader.cpp:438
-#, fuzzy, kde-format
-#| msgid "Save As..."
+#, kde-format
 msgid "Save As"
-msgstr "Сохранить как..."
+msgstr "Сохранить как"
 
 #~ msgid ""
 #~ "Malformed URL\n"
