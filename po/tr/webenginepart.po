@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: extragear-base-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-08-24 00:46+0000\n"
-"PO-Revision-Date: 2022-04-15 14:26+0300\n"
+"PO-Revision-Date: 2022-10-18 06:35+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -21,17 +21,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Serdar Soytetir"
+msgstr "Serdar Soytetir, Emir SARI"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "tulliana@gmail.com"
+msgstr "tulliana@gmail.com, emir_sari@icloud.com"
 
 #: src/about/konq_aboutpage.cpp:72 src/about/konq_aboutpage.cpp:74
 #: src/about/konq_aboutpage.cpp:132 src/about/konq_aboutpage.cpp:134
@@ -53,18 +53,17 @@ msgstr "Konqueror"
 #, kde-format
 msgid "Konqueror is a web browser, file manager and universal document viewer."
 msgstr ""
-"Konqueror, bir web tarayıcısı, dosya yöneticisi ve genel belge "
+"Konqueror; bir web tarayıcı, dosya yöneticisi ve genel bir belge "
 "görüntüleyicidir."
 
 #: src/about/konq_aboutpage.cpp:76 src/about/konq_aboutpage.cpp:136
 #: src/about/konq_aboutpage.cpp:188 src/about/konq_aboutpage.cpp:288
-#, fuzzy, kde-format
-#| msgid "Start Plugin"
+#, kde-format
 msgctxt ""
 "Link that points to the first page of the Konqueror 'about page', Starting "
 "Points contains links to Home, Network Folders, Trash, etc."
 msgid "Starting Points"
-msgstr "Eklentiyi Başlat"
+msgstr "Başlangıç Noktaları"
 
 #: src/about/konq_aboutpage.cpp:77 src/about/konq_aboutpage.cpp:137
 #: src/about/konq_aboutpage.cpp:189 src/about/konq_aboutpage.cpp:289
@@ -91,11 +90,9 @@ msgid "Home Folder"
 msgstr "Ana Klasör"
 
 #: src/about/konq_aboutpage.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "EMAIL OF TRANSLATORS"
-#| msgid "Your emails"
+#, kde-format
 msgid "Your personal files"
-msgstr "tulliana@gmail.com"
+msgstr "Kişisel dosyalarınız"
 
 #: src/about/konq_aboutpage.cpp:88
 #, kde-format
@@ -105,7 +102,7 @@ msgstr "Çöp Kutusu"
 #: src/about/konq_aboutpage.cpp:89
 #, kde-format
 msgid "Browse and restore the trash"
-msgstr "Çöp Kutusuna bakın ve geri yükleyin"
+msgstr "Çöp Kutusuna göz atın ve geri yükleyin"
 
 #: src/about/konq_aboutpage.cpp:92
 #, kde-format
@@ -135,7 +132,7 @@ msgstr "Sonrası: Konqueror'a yakından bakış"
 #: src/about/konq_aboutpage.cpp:102
 #, kde-format
 msgid "Search the Web"
-msgstr "Web'i Arayın"
+msgstr "Web'de Arayın"
 
 #: src/about/konq_aboutpage.cpp:140
 #, kde-format
@@ -202,21 +199,27 @@ msgid ""
 "Along with this support, for such functions as favicons, Web Shortcuts, and "
 "<A HREF=\"%1\">XBEL bookmarks</A>, Konqueror also implements:"
 msgstr ""
+"Konqueror, internet standartlarına uyması ve desteklemesi için "
+"tasarlanmıştır. Amacımız, W3 veya OASIS gibi organizasyonların onay verdiği "
+"tüm standartları tümüyle eklemektir. Bunun yanında, diğer yaygın kullanılan "
+"standartlar için de destek eklenebilir. Bu desteğin yanında, site küçük "
+"simgeleri, web kısayolları ve <A HREF=\"%1\">XBEL yer imleri</A> gibi "
+"standartlar da Konqueror tarafından desteklenir. Ek desteklenen özellikler:"
 
 #: src/about/konq_aboutpage.cpp:200
 #, kde-format
 msgid "Web Browsing"
-msgstr ""
+msgstr "Web Tarama"
 
 #: src/about/konq_aboutpage.cpp:201
 #, kde-format
 msgid "Supported standards"
-msgstr ""
+msgstr "Desteklenen standartlar"
 
 #: src/about/konq_aboutpage.cpp:202
 #, kde-format
 msgid "Additional requirements*"
-msgstr ""
+msgstr "Ek gereksinimler*"
 
 #: src/about/konq_aboutpage.cpp:203
 #, kde-format
@@ -224,29 +227,34 @@ msgid ""
 "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
 "\"%2\">HTML 4.01</A>"
 msgstr ""
+"<A HREF=\"%1\">DOM</A> (Düzey 1, kısmi olarak Düzey 2) <A HREF=\"%2\">HTML "
+"4.01</A> temelli"
 
 #: src/about/konq_aboutpage.cpp:205 src/about/konq_aboutpage.cpp:207
 #: src/about/konq_aboutpage.cpp:219 src/about/konq_aboutpage.cpp:224
 #: src/about/konq_aboutpage.cpp:226
 #, kde-format
 msgid "built-in"
-msgstr ""
+msgstr "yerleşik"
 
 #: src/about/konq_aboutpage.cpp:206
 #, kde-format
 msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
-msgstr ""
+msgstr "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, kısmi olarak CSS 2)"
 
 #: src/about/konq_aboutpage.cpp:208
 #, kde-format
 msgid "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
 msgstr ""
+"<A HREF=\"%1\">ECMA-262</A> Edisyon 3 (JavaScript 1.5 ile eşdeğer gibi)"
 
 #: src/about/konq_aboutpage.cpp:210
 #, kde-format
 msgid ""
 "JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
 msgstr ""
+"JavaScript devre dışı (global olarak). JavaScript'i <A HREF=\"%1\">buradan</"
+"A> etkinleştirin."
 
 #: src/about/konq_aboutpage.cpp:211
 #, kde-format
@@ -254,11 +262,13 @@ msgid ""
 "JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\\">here</"
 "A>."
 msgstr ""
+"JavaScript etkin (global olarak). JavaScript'i <A HREF=\\\"%1\\\">buradan</"
+"A> yapılandırın."
 
 #: src/about/konq_aboutpage.cpp:212
 #, kde-format
 msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
-msgstr ""
+msgstr "Güvenli <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> desteği"
 
 #: src/about/konq_aboutpage.cpp:213
 #, kde-format
@@ -266,11 +276,14 @@ msgid ""
 "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">OpenJDK</A> or <A HREF="
 "\"%2\">Sun/Oracle</A>)"
 msgstr ""
+"JDK 1.2.0 (Java 2) uyumlu VM (<A HREF=\"%1\">OpenJDK</A> veya <A HREF="
+"\"%2\">Sun/Oracle</A>)"
 
 #: src/about/konq_aboutpage.cpp:215
 #, kde-format
 msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
 msgstr ""
+"Java'yı buradan global olarak <A HREF=\"%1\">etkinleştirebilirsiniz</A>."
 
 #: src/about/konq_aboutpage.cpp:216
 #, kde-format
@@ -278,98 +291,101 @@ msgid ""
 "NPAPI <A HREF=\"%2\">plugins</A> (for viewing <A HREF=\"%1\">Flash<SUP>&reg;"
 "</SUP></A>, etc.)"
 msgstr ""
+"NPAPI <A HREF=\"%2\">eklentileri</A> (<A HREF=\"%1\">Flash<SUP>&reg;</SUP></"
+"A> vb. görüntülemek için)"
 
 #: src/about/konq_aboutpage.cpp:220
 #, kde-format
 msgid "Secure Sockets Layer"
-msgstr ""
+msgstr "Secure Sockets Layer"
 
 #: src/about/konq_aboutpage.cpp:221
 #, kde-format
 msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
-msgstr ""
+msgstr "168bit'e kadar güvenli iletişim için (TLS/SSL v2/3)"
 
 #: src/about/konq_aboutpage.cpp:222
 #, kde-format
 msgid "OpenSSL"
-msgstr ""
+msgstr "OpenSSL"
 
 #: src/about/konq_aboutpage.cpp:223
 #, kde-format
 msgid "Bidirectional 16bit unicode support"
-msgstr ""
+msgstr "İki yönlü 16 bit Unicode desteği"
 
 #: src/about/konq_aboutpage.cpp:225
 #, kde-format
 msgid "AutoCompletion for forms"
-msgstr ""
+msgstr "Formlar için otomatik tamamlama"
 
 #: src/about/konq_aboutpage.cpp:227
 #, kde-format
 msgctxt "Title of an html 'group box' explaining konqueror features"
 msgid "General"
-msgstr ""
+msgstr "Genel"
 
 #: src/about/konq_aboutpage.cpp:228
 #, kde-format
 msgid "Feature"
-msgstr ""
+msgstr "Özellik"
 
 #: src/about/konq_aboutpage.cpp:229
 #, kde-format
 msgid "Details"
-msgstr ""
+msgstr "Ayrıntılar"
 
 #: src/about/konq_aboutpage.cpp:230
 #, kde-format
 msgid "Image formats"
-msgstr ""
+msgstr "Görsel biçimleri"
 
 #: src/about/konq_aboutpage.cpp:231
 #, kde-format
 msgid "PNG<br />JPG<br />GIF"
-msgstr ""
+msgstr "PNG<br />JPG<br />GIF"
 
 #: src/about/konq_aboutpage.cpp:232
 #, kde-format
 msgid "Transfer protocols"
-msgstr ""
+msgstr "Aktarım protokolleri"
 
 #: src/about/konq_aboutpage.cpp:233
 #, kde-format
 msgid "HTTP 1.1 (including gzip/bzip2 compression)"
-msgstr ""
+msgstr "HTTP 1.1 (gzip/bzip2 sıkıştırması dahil)"
 
 #: src/about/konq_aboutpage.cpp:234
 #, kde-format
 msgid "FTP"
-msgstr ""
+msgstr "FTP"
 
 #: src/about/konq_aboutpage.cpp:235
 #, kde-format
 msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpCenter)...</A>"
 msgstr ""
+"ve <A HREF=\"%1\">çok daha fazlası (KHelpCenter'da Kioslaves'e bakın)...</A>"
 
 #: src/about/konq_aboutpage.cpp:236
 #, kde-format
 msgctxt "A feature of Konqueror"
 msgid "URL-Completion"
-msgstr ""
+msgstr "URL Tamamlama"
 
 #: src/about/konq_aboutpage.cpp:237
 #, kde-format
 msgid "Manual"
-msgstr ""
+msgstr "Elle"
 
 #: src/about/konq_aboutpage.cpp:238
 #, kde-format
 msgid "Popup"
-msgstr ""
+msgstr "Açılır Pencere"
 
 #: src/about/konq_aboutpage.cpp:239
 #, kde-format
 msgid "(Short-) Automatic"
-msgstr ""
+msgstr "(Kısa) Otomatik"
 
 #: src/about/konq_aboutpage.cpp:241
 #, kde-format
@@ -377,12 +393,12 @@ msgctxt ""
 "Link that points to the first page of the Konqueror 'about page', Starting "
 "Points contains links to Home, Network Folders, Trash, etc."
 msgid "<a href=\"%1\">Return to Starting Points</a>"
-msgstr ""
+msgstr "<a href=\"%1\">Başlangıç Noktalarına Dön</a>"
 
 #: src/about/konq_aboutpage.cpp:292
 #, kde-format
 msgid "Tips & Tricks"
-msgstr ""
+msgstr "İpuçları"
 
 #: src/about/konq_aboutpage.cpp:293
 #, kde-format
@@ -393,6 +409,11 @@ msgid ""
 "encyclopedia a breeze. You can even <a href=\"%1\">create your own</a> Web-"
 "Shortcuts."
 msgstr ""
+"Web kısayollarını kullanın: \"gg: KDE\" yazarak internette Google kullanarak "
+"\"KDE\" terimi için arama yapabilirsiniz. Örneğin bir yazılım aramak veya "
+"çeşitli sözcüklere bakmak için işinizi kolaylaştıracak bir sürü web "
+"kısayolları vardır. İsterseniz <a href=\"%1\">kendi kısayolunuzu</a> da "
+"yaratabilirsiniz."
 
 #: src/about/konq_aboutpage.cpp:298
 #, kde-format
@@ -400,6 +421,8 @@ msgid ""
 "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
 "the HTML toolbar to increase the font size on your web page."
 msgstr ""
+"Web sayfanızdaki yazıtipi boyutunu artırmak için HTML araç çubuğundaki "
+"büyüteç düğmesini <img width='16' height='16' src=\"%1\"></img> kullanın."
 
 #: src/about/konq_aboutpage.cpp:300
 #, kde-format
@@ -408,6 +431,9 @@ msgid ""
 "want to clear the current entry by pressing the black arrow with the white "
 "cross <img width='16' height='16' src=\"%1\"></img> in the toolbar."
 msgstr ""
+"Konum araç çubuğuna yeni bir adres yapıştırmak istediğinizde geçerli girdiyi "
+"temizlemek için siyah oka araç çubuğundaki beyaz artı ile <img width='16' "
+"height='16' src=\"%1\"></img> basmak isteyebilirsiniz."
 
 #: src/about/konq_aboutpage.cpp:304
 #, kde-format
@@ -416,6 +442,9 @@ msgid ""
 "the icon (favicon) that is to the left of the Location toolbar, drop it on "
 "to the desktop, and choose \"Icon\"."
 msgstr ""
+"Masaüstünüzde geçerli sayfayı gösteren bir bağlantı oluşturmak isterseniz "
+"Konum araç çubuğunun sol tarafındaki küçük simgeyi sürükleyip Masaüstü'ne "
+"bırakın ve \"Simge\"yi seçin."
 
 #: src/about/konq_aboutpage.cpp:307
 #, kde-format
@@ -424,6 +453,9 @@ msgid ""
 "Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
 "sessions."
 msgstr ""
+"Aynı zamanda <img width='16' height='16' src=\"%1\" /> \"Tam Ekran Kipi\"ni "
+"Ayarlar menüsünde bulabilirsiniz. Bu özellik, \"Konuşma\" oturumları için "
+"pek yararlıdır."
 
 #: src/about/konq_aboutpage.cpp:310
 #, kde-format
@@ -432,6 +464,9 @@ msgid ""
 "two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> Split "
 "View Left/Right) you can make Konqueror appear the way you like."
 msgstr ""
+"Bir pencereyi iki parçaya bölerek divide et impera (lat. \"Böl ve Fethet\") "
+"yapabilirsiniz (örn. Pencere -> <img width='16' height='16' src=\"%1\" /> "
+"Görünümü Sol/Sağ Şeklinde Böl). Konqueror'u istediğiniz şekilde kullanın."
 
 #: src/about/konq_aboutpage.cpp:313
 #, kde-format
@@ -468,10 +503,9 @@ msgid "Next: Specifications"
 msgstr ""
 
 #: src/about/konq_aboutpage.cpp:338
-#, fuzzy, kde-format
-#| msgid "Start Plugin"
+#, kde-format
 msgid "Installed Plugins"
-msgstr "Eklentiyi Başlat"
+msgstr "Kurulu Eklentiler"
 
 #: src/about/konq_aboutpage.cpp:339
 #, kde-format
@@ -491,13 +525,12 @@ msgstr ""
 #: src/settings/webenginesettings.cpp:909
 #, kde-format
 msgid "Filter error"
-msgstr "Filtre hatası"
+msgstr "Süzgeç hatası"
 
 #: src/spellcheckermanager.cpp:79
-#, fuzzy, kde-format
-#| msgid "Check Spelling..."
+#, kde-format
 msgid "Spelling"
-msgstr "Yazım Denetimi Yap..."
+msgstr "Yazım Denetimi"
 
 #: src/spellcheckermanager.cpp:83
 #, kde-format
@@ -517,108 +550,69 @@ msgid "&Show passwords"
 msgstr ""
 
 #: src/ui/featurepermissionbar.cpp:22
-#, fuzzy, kde-format
-#| msgctxt "@action:deny access"
-#| msgid "&Deny access"
+#, kde-format
 msgctxt "@action:deny permission"
 msgid "&Deny permission"
 msgstr "&İzin verme"
 
 #: src/ui/featurepermissionbar.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "@action:grant access"
-#| msgid "&Grant access"
+#, kde-format
 msgctxt "@action:grant permission"
 msgid "&Grant permission"
 msgstr "&İzin ver"
 
 #: src/ui/featurepermissionbar.cpp:57
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>Do you want to grant the site access to information about your "
-#| "current physical location?"
+#, kde-format
 msgid "<html><b>%1</b> would like to send you notifications"
-msgstr ""
-"<html>Siteye geçerli fiziksel konumunuz hakkındaki bilgiye erişmesine izin "
-"vermek istiyor musunuz?"
+msgstr "<html><b>%1</b>, size bildirimler göndermek istiyor"
 
 #: src/ui/featurepermissionbar.cpp:59
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>Do you want to grant the site access to information about your "
-#| "current physical location?"
+#, kde-format
 msgid ""
 "<html><b>%1</b> would like to access information about your current physical "
 "location"
-msgstr ""
-"<html>Siteye geçerli fiziksel konumunuz hakkındaki bilgiye erişmesine izin "
-"vermek istiyor musunuz?"
+msgstr "<html><b>%1</b>, fiziksel konum bilgilerinize erişmek istiyor"
 
 #: src/ui/featurepermissionbar.cpp:61
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>Do you want to grant the site access to information about your "
-#| "current physical location?"
+#, kde-format
 msgid ""
 "<html><b>%1</b> would like to access your microphone and other audio capture "
 "devices"
 msgstr ""
-"<html>Siteye geçerli fiziksel konumunuz hakkındaki bilgiye erişmesine izin "
-"vermek istiyor musunuz?"
+"<html><b>%1</b>, mikrofon ve diğer ses yakalama aygıtlarınıza erişmek istiyor"
 
 #: src/ui/featurepermissionbar.cpp:63
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>Do you want to grant the site access to information about your "
-#| "current physical location?"
+#, kde-format
 msgid ""
 "<html><b>%1</b> would like to access your camera and other video capture "
 "devices"
 msgstr ""
-"<html>Siteye geçerli fiziksel konumunuz hakkındaki bilgiye erişmesine izin "
-"vermek istiyor musunuz?"
+"<html><b>%1</b>, kamera ve diğer video yakalama aygıtlarınıza erişmek istiyor"
 
 #: src/ui/featurepermissionbar.cpp:65
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>Do you want to grant the site access to information about your "
-#| "current physical location?"
+#, kde-format
 msgid ""
 "<html><b>%1</b> would like to access to your microphone, camera and other "
 "audio and video capture devices"
 msgstr ""
-"<html>Siteye geçerli fiziksel konumunuz hakkındaki bilgiye erişmesine izin "
-"vermek istiyor musunuz?"
+"<html><b>%1</b>, mikrofon, kamera ve diğer ses/video yakalama aygıtlarınıza "
+"erişmek istiyor"
 
 #: src/ui/featurepermissionbar.cpp:67
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Do you want to allow this site to attach the following files to the "
-#| "email message?</qt>"
+#, kde-format
 msgid "<html><b>%1</b> would like to lock your mouse inside the web page"
 msgstr ""
-"<qt>Bu sitedeki dosyaları e-posta iletisine eklemek istediğinizden emin "
-"misiniz?</qt>"
+"<html><b>%1</b>, fare imlecini web sayfasının içinde kilitlemek istiyor"
 
 #: src/ui/featurepermissionbar.cpp:69
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>Do you want to grant the site access to information about your "
-#| "current physical location?"
+#, kde-format
 msgid "<html><b>%1</b> would like to record your screen"
-msgstr ""
-"<html>Siteye geçerli fiziksel konumunuz hakkındaki bilgiye erişmesine izin "
-"vermek istiyor musunuz?"
+msgstr "<html><b>%1</b>, ekranınızı kaydetmek istiyor"
 
 #: src/ui/featurepermissionbar.cpp:71
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>Do you want to grant the site access to information about your "
-#| "current physical location?"
+#, kde-format
 msgid "<html><b>%1</b> would like to record your screen and your audio"
-msgstr ""
-"<html>Siteye geçerli fiziksel konumunuz hakkındaki bilgiye erişmesine izin "
-"vermek istiyor musunuz?"
+msgstr "<html><b>%1</b>, ekranınızı ve sesinizi kaydetmek istiyor"
 
 #: src/ui/passwordbar.cpp:29
 #, kde-format
@@ -651,10 +645,9 @@ msgid "&Hide details"
 msgstr ""
 
 #: src/ui/searchbar.cpp:38
-#, fuzzy, kde-format
-#| msgid "&Find:"
+#, kde-format
 msgid "Find..."
-msgstr "&Bul:"
+msgstr "&Bul..."
 
 #. i18n: ectx: property (toolTip), widget (QToolButton, closeButton)
 #: src/ui/searchbar.ui:23
@@ -697,32 +690,31 @@ msgstr "&Seçenekler"
 #: src/ui/searchbar.ui:116
 #, kde-format
 msgid "&Match Case"
-msgstr "&Büyük/Küçük Eşleştir"
+msgstr "&BÜYÜK/Küçük Harf Eşleştir"
 
 #. i18n: ectx: property (text), item, widget (QPushButton, optionsButton)
 #: src/ui/searchbar.ui:127
 #, kde-format
 msgid "&Search As You Type"
-msgstr "&Yazıldığı Gibi Ara"
+msgstr "&Yazarken Ara"
 
 #. i18n: ectx: property (text), item, widget (QPushButton, optionsButton)
 #: src/ui/searchbar.ui:135
 #, kde-format
 msgid "&Highlight All Matches"
-msgstr "&Tüm eşlenenleri vurgula"
+msgstr "&Tüm Eşleşenleri Vurgula"
 
 #. i18n: ectx: property (toolTip), item, widget (QPushButton, optionsButton)
 #: src/ui/searchbar.ui:138
 #, kde-format
 msgid "Highlight Matches"
-msgstr "Eşlenenleri Vurgula"
+msgstr "Eşleşenler Vurgula"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEngineCustomizeCacheableFieldsDlg)
 #: src/webenginecustomizecacheablefieldsdlg.ui:14
-#, fuzzy, kde-format
-#| msgid "Choose files to upload"
+#, kde-format
 msgid "Choose fields to remember"
-msgstr "Gönderilecek dosyaları seç"
+msgstr "Anımsanacak alanları seç"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showPasswords)
 #: src/webenginecustomizecacheablefieldsdlg.ui:41
@@ -764,7 +756,7 @@ msgstr ""
 #: src/webenginepage.cpp:125
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
-msgstr "Sisteminizde %1 İndirme Yöneticisi bulunamadı."
+msgstr "Kurulumunuzda, indirme yöneticisi (%1) bulunamadı."
 
 #: src/webenginepage.cpp:126
 #, kde-format
@@ -773,9 +765,10 @@ msgid ""
 "\n"
 "The integration will be disabled."
 msgstr ""
-"Yeniden kurmayı deneyin ve $PATH içindeki yollardan birinde \n"
+"Yeniden kurmayı deneyin ve $PATH içindeki yollardan birinde olduğundan emin "
+"olun. \n"
 "\n"
-"olduğuna emin olun. Entegrasyon şimdilik iptal edilecek."
+"Tümleştirme şimdilik iptal edilecek."
 
 #: src/webenginepage.cpp:268
 #, kde-format
@@ -785,11 +778,11 @@ msgid ""
 "and made a purchase, click the Cancel button to prevent a duplicate purchase."
 "Otherwise, click the Continue button to display the webpage again.</p>"
 msgstr ""
-"<qt><p>İstenen web sayfasını tekrar görüntülemek için tarayıcı daha önceden "
-"gönderilen bilgiyi yeniden göndermesi gerekiyor.</p><p>Eğer çevrimiçi "
-"alışverişi yapıyor ve bir satın alma işlemi gerçekleştirmişseniz, yeniden "
-"satın almayı önlemek için İptal düğmesine basın. Aksi takdirde, web "
-"sayfasını tekrar görüntülemek için Devam Et düğmesine basın.</p>"
+"<qt><p>İstenen web sayfasını yeniden görüntülemek için tarayıcının daha "
+"önceden gönderilen bilgiyi yeniden göndermesi gerekiyor.</p><p>Eğer "
+"çevrimiçi alışverişi yapıyor ve bir satın alma işlemi gerçekleştirmişseniz "
+"yeniden satın almayı önlemek için İptal düğmesine basın. Aksi takdirde, web "
+"sayfasını yeniden görüntülemek için Sürdür düğmesine basın.</p>"
 
 #: src/webenginepage.cpp:275
 #, kde-format
@@ -809,7 +802,7 @@ msgstr ""
 #: src/webenginepage.cpp:639
 #, kde-format
 msgid "Network Transmission"
-msgstr "Ağ Aktarımı"
+msgstr "Ağ İletimi"
 
 #: src/webenginepage.cpp:512
 #, kde-format
@@ -822,7 +815,7 @@ msgid ""
 "<qt>This untrusted page links to<br/><b>%1</b>.<br/>Do you want to follow "
 "the link?</qt>"
 msgstr ""
-"<qt>Bu güvensiz sayfa<br /><b>%1</b> sayfasına bağlantı içeriyor.<br />Bu "
+"<qt>Bu güvensiz sayfa,<br /><b>%1</b> sayfasına bağlantı içeriyor.<br />Bu "
 "bağlantıyı izlemek istiyor musunuz?</qt>"
 
 #: src/webenginepage.cpp:589
@@ -834,7 +827,7 @@ msgstr "Güvenlik Uyarısı"
 #, kde-format
 msgctxt "follow link despite of security warning"
 msgid "Follow"
-msgstr "Takip Et"
+msgstr "İzle"
 
 #: src/webenginepage.cpp:592
 #, kde-format
@@ -856,15 +849,15 @@ msgid ""
 "A third party may be able to intercept and view this information.\n"
 "Are you sure you want to send the data unencrypted?"
 msgstr ""
-"Uyarı - Bu güvenli bir form, ancak size ait olan veriyi şifrelenmemiş olarak "
+"Uyarı - Bu güvenli bir form; ancak size ait olan veriyi şifrelenmemiş olarak "
 "geri göndermek istiyor.\n"
 "Başkaları bu bilgiyi yakalayabilir ve bilgileri görüntüleyebilir.\n"
-"Bu işleme devam etmek istiyor musunuz?"
+"Bu işlemi sürdürmek istiyor musunuz?"
 
 #: src/webenginepage.cpp:629
 #, kde-format
 msgid "&Send Unencrypted"
-msgstr "Ş&ifrelenmemiş Gönder"
+msgstr "Ş&ifrelenmemiş Olarak Gönder"
 
 #: src/webenginepage.cpp:636
 #, kde-format
@@ -872,8 +865,8 @@ msgid ""
 "This site is attempting to submit form data via email.\n"
 "Do you want to continue?"
 msgstr ""
-"Bu site e-posta üzerinden bir form göndermeye çalışıyor.\n"
-"Devam etmek istiyor musunuz?"
+"Bu site, e-posta üzerinden bir form göndermeye çalışıyor.\n"
+"Sürdürmek istiyor musunuz?"
 
 #: src/webenginepage.cpp:640
 #, kde-format
@@ -965,13 +958,13 @@ msgstr "Yazdırma Önizlemesi"
 #, kde-format
 msgctxt "zoom in action"
 msgid "Zoom In"
-msgstr "Yakınlaş"
+msgstr "Yakınlaştır"
 
 #: src/webenginepart.cpp:237
 #, kde-format
 msgctxt "zoom out action"
 msgid "Zoom Out"
-msgstr "Uzaklaş"
+msgstr "Uzaklaştır"
 
 #: src/webenginepart.cpp:242
 #, kde-format
@@ -982,7 +975,7 @@ msgstr "Özgün Boyut"
 #: src/webenginepart.cpp:247
 #, kde-format
 msgid "Zoom Text Only"
-msgstr "Sadece Metni Büyüt"
+msgstr "Yalnızca Metni Büyüt"
 
 #: src/webenginepart.cpp:255
 #, kde-format
@@ -1034,7 +1027,7 @@ msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
 "CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
 msgid " - CC: "
-msgstr " - CC: "
+msgstr " - Kopya: "
 
 #: src/webenginepart.cpp:684
 #, kde-format
@@ -1042,7 +1035,7 @@ msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
 "CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
 msgid " - BCC: "
-msgstr " - BCC: "
+msgstr " - Gizli Kopya: "
 
 #: src/webenginepart.cpp:686
 #, kde-format
@@ -1065,7 +1058,7 @@ msgstr " (Ana çerçevede)"
 #: src/webenginepart.cpp:763
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
-msgstr "<qt><b>%1</b> ögesini Internet'te aramak istiyor musunuz?</qt>"
+msgstr "<qt><b>%1</b> ögesini aramak istiyor musunuz?</qt>"
 
 #: src/webenginepart.cpp:764
 #, kde-format
@@ -1085,15 +1078,15 @@ msgstr "Pencere kapatılsın mı?"
 #: src/webenginepart.cpp:875
 #, kde-format
 msgid "Confirmation Required"
-msgstr "Doğrulama Gerekiyor"
+msgstr "Onay Gerekiyor"
 
 #: src/webenginepart.cpp:949
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
 msgstr ""
-"<html>%1'in <b>%2</b> için giriş bilgilerini saklamasını istiyor musunuz?</"
-"html>"
+"<html>%1 uygulamasının <b>%2</b> için olan giriş bilgilerini saklamasını "
+"istiyor musunuz?</html>"
 
 #: src/webenginepart.cpp:1020
 #, kde-format
@@ -1102,10 +1095,9 @@ msgid "&Fill forms now"
 msgstr ""
 
 #: src/webenginepart.cpp:1025
-#, fuzzy, kde-format
-#| msgid "Remove all cached passwords for this site"
+#, kde-format
 msgid "&Memorize Passwords in This Page Now"
-msgstr "Bu site için saklanan tüm parolaları temizle"
+msgstr "&Bu Sitedeki Parolaları Anımsa"
 
 #: src/webenginepart.cpp:1029
 #, kde-format
@@ -1118,16 +1110,14 @@ msgid "Remove Customized Memorization Settings for This Page"
 msgstr ""
 
 #: src/webenginepart.cpp:1037
-#, fuzzy, kde-format
-#| msgid "&Allow password caching for this site"
+#, kde-format
 msgid "&Allow Password Caching for This Site"
-msgstr "Bu site için &parola saklamayı etkinleştir"
+msgstr "B&u Site için Parola Tutmaya İzin Ver"
 
 #: src/webenginepart.cpp:1041
-#, fuzzy, kde-format
-#| msgid "Remove all cached passwords for this site"
+#, kde-format
 msgid "Remove All Memorized Passwords for This Site"
-msgstr "Bu site için saklanan tüm parolaları temizle"
+msgstr "Bu Site için Anımsanan Tüm Parolaları Kaldır"
 
 #: src/webenginepart.cpp:1045
 #, kde-format
@@ -1183,7 +1173,7 @@ msgstr "Belgeyi Yazdır"
 #: src/webenginepart_ext.cpp:464
 #, kde-format
 msgid "Add URL to Filter"
-msgstr "Filtrelenecek Adres Ekle"
+msgstr "Süzgece URL Ekle"
 
 #: src/webenginepart_ext.cpp:465
 #, kde-format
@@ -1210,11 +1200,10 @@ msgid ""
 msgstr ""
 
 #: src/webenginepartcertificateerrordlg.cpp:55
-#, fuzzy, kde-format
-#| msgid "Filter error"
+#, kde-format
 msgctxt "title of a dialog asking what to do about a SSL certificate error"
 msgid "Certificate error"
-msgstr "Filtre hatası"
+msgstr "Sertifika hatası"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEnginePartCertificateErrorDlg)
 #: src/webenginepartcertificateerrordlg.ui:14
@@ -1236,13 +1225,9 @@ msgstr ""
 
 #. i18n: ectx: attribute (title), widget (QWidget, subjectTab)
 #: src/webenginepartcertificateerrordlg.ui:63
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "status bar text when hovering email links; looks like \"Email: xy@kde.org "
-#| "- CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
-#| msgid " - Subject: "
+#, kde-format
 msgid "&Subject"
-msgstr "- Konu: "
+msgstr "&Konu"
 
 #. i18n: ectx: attribute (title), widget (QWidget, issuerTab)
 #: src/webenginepartcertificateerrordlg.ui:73
@@ -1268,11 +1253,10 @@ msgid "Source"
 msgstr ""
 
 #: src/webenginepartdownloadmanager.cpp:249
-#, fuzzy, kde-format
-#| msgid "Description:"
+#, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
-msgstr "Açıklama:"
+msgstr "Hedef"
 
 #: src/webenginepartdownloadmanager.cpp:266
 #, kde-format
@@ -1302,13 +1286,13 @@ msgstr "Teknik Neden:  %1"
 #: src/webengineparterrorschemehandler.cpp:117
 #, kde-format
 msgid "Details of the Request:"
-msgstr "İsteğin Detayları:"
+msgstr "İsteğin Ayrıntıları:"
 
 #. i18n, and once for HTML.
 #: src/webengineparterrorschemehandler.cpp:120
 #, kde-format
 msgid "URL: %1"
-msgstr "Adres: %1"
+msgstr "URL: %1"
 
 #. i18n, and once for HTML.
 #: src/webengineparterrorschemehandler.cpp:126
@@ -1350,37 +1334,37 @@ msgstr "Hata: %1"
 #: src/webengineview.cpp:349
 #, kde-format
 msgid "Save Image As..."
-msgstr "Resmi Farklı Kaydet..."
+msgstr "Görseli Farklı Kaydet..."
 
 #: src/webengineview.cpp:354
 #, kde-format
 msgid "Send Image..."
-msgstr "Resmi Gönder..."
+msgstr "Görseli Gönder..."
 
 #: src/webengineview.cpp:359
 #, kde-format
 msgid "Copy Image URL"
-msgstr "Resim Adresini Kopyala"
+msgstr "Görsel URL'sini Kopyala"
 
 #: src/webengineview.cpp:365
 #, kde-format
 msgid "Copy Image"
-msgstr "Resmi Kopyala"
+msgstr "Görseli Kopyala"
 
 #: src/webengineview.cpp:372
 #, kde-format
 msgid "View Image (%1)"
-msgstr "Resmi Görüntüle (%1)"
+msgstr "Görseli Görüntüle (%1)"
 
 #: src/webengineview.cpp:378
 #, kde-format
 msgid "Block Image..."
-msgstr "Resmi Engelle..."
+msgstr "Görseli Engelle..."
 
 #: src/webengineview.cpp:386
 #, kde-format
 msgid "Block Images From %1"
-msgstr "%1 Adresinden Gelen Resimleri Engelle"
+msgstr "%1 Adresinden Gelen Görselleri Engelle"
 
 #: src/webengineview.cpp:416 src/webengineview.cpp:453
 #, kde-format
@@ -1391,7 +1375,7 @@ msgstr "&Metni Kopyala"
 #, kde-format
 msgctxt "open selected url"
 msgid "Open '%1'"
-msgstr "'%1' adresini aç"
+msgstr "Aç: '%1'"
 
 #: src/webengineview.cpp:459
 #, kde-format
@@ -1421,7 +1405,7 @@ msgstr "&Oynat/Duraklat"
 #: src/webengineview.cpp:501
 #, kde-format
 msgid "Un&mute/&Mute"
-msgstr "&Sesi aç/kapat"
+msgstr "&Sesi Aç/Kapat"
 
 #: src/webengineview.cpp:506
 #, kde-format
@@ -1431,7 +1415,7 @@ msgstr "&Döngüyü Aç/Kapat"
 #: src/webengineview.cpp:511
 #, kde-format
 msgid "Toggle &Controls"
-msgstr "&Kontrolleri Aç/Kapat"
+msgstr "&Denetimleri Aç/Kapat"
 
 #: src/webengineview.cpp:522
 #, kde-format
@@ -1451,7 +1435,7 @@ msgstr "&Sesi Farklı Kaydet..."
 #: src/webengineview.cpp:526
 #, kde-format
 msgid "C&opy Audio URL"
-msgstr "&Ses Adresini Kopyala"
+msgstr "&Ses URL'sini Kopyala"
 
 #: src/webengineview.cpp:528
 #, kde-format
@@ -1467,7 +1451,7 @@ msgstr "O&rtam Adresini Kopyala"
 #, kde-format
 msgctxt "Search \"search provider\" for \"text\""
 msgid "Search %1 for '%2'"
-msgstr "'%2' için '%1' ifadesini ara"
+msgstr "'%2' için '%1' konumunu ara"
 
 #: src/webengineview.cpp:593
 #, kde-format
@@ -1493,14 +1477,10 @@ msgid "password"
 msgstr ""
 
 #: src/webenginewallet.cpp:106
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "status bar text when hovering email links; looks like \"Email: xy@kde.org "
-#| "- CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
-#| msgid "Email: "
+#, kde-format
 msgctxt "Web field with type 'e-mail'"
 msgid "e-mail"
-msgstr "E-posta: "
+msgstr "e-posta"
 
 #: src/webenginewallet.cpp:107
 #, kde-format
@@ -1512,7 +1492,7 @@ msgstr ""
 #, kde-format
 msgctxt "Label of a web field"
 msgid "Field name"
-msgstr ""
+msgstr "Alan adı"
 
 #: src/webfieldsdataview.cpp:62
 #, kde-format
@@ -1524,7 +1504,7 @@ msgstr ""
 #, kde-format
 msgctxt "Name attribute of a web field"
 msgid "Internal field name"
-msgstr ""
+msgstr "İç alan adı"
 
 #: src/webfieldsdataview.cpp:64
 #, kde-format
@@ -1557,11 +1537,10 @@ msgid "auto-completion off"
 msgstr ""
 
 #: src/webfieldsdataview.cpp:131
-#, fuzzy, kde-format
-#| msgid "Set Editable"
+#, kde-format
 msgctxt "web field is disabled"
 msgid "disabled"
-msgstr "Düzenlenebilir Olarak Ayarla"
+msgstr "devre dışı"
 
 #: src/webfieldsdataview.cpp:159
 #, kde-format
@@ -1583,158 +1562,6 @@ msgid ""
 "li><li><b>Field is enabled: </b>%5</li><li><b>Autocompletion is enabled: </b>"
 "%6</li></ul>"
 msgstr ""
-
-#~ msgctxt "Program Name"
-#~ msgid "WebEnginePart"
-#~ msgstr "WebEnginePart"
-
-#~ msgctxt "Short Description"
-#~ msgid "QtWebEngine Browser Engine Component"
-#~ msgstr "QtWebKit Tarayıcı Motoru Bileşeni"
-
-#~ msgid ""
-#~ "(C) 2009-2010 Dawit Alemayehu\n"
-#~ "(C) 2008-2010 Urs Wolfer\n"
-#~ "(C) 2007 Trolltech ASA"
-#~ msgstr ""
-#~ "(C) 2009-2010 Dawit Alemayehu\n"
-#~ "(C) 2008-2010 Urs Wolfer\n"
-#~ "(C) 2007 Trolltech ASA"
-
-#~ msgid "Sune Vuorela"
-#~ msgstr "Sune Vuorela"
-
-#~ msgid "Maintainer, Developer"
-#~ msgstr "Yürütücü, Geliştirici"
-
-#~ msgid "Dawit Alemayehu"
-#~ msgstr "Dawit Alemayehu"
-
-#~ msgid "Developer"
-#~ msgstr "Geliştirici"
-
-#~ msgid "Urs Wolfer"
-#~ msgstr "Urs Wolfer"
-
-#~ msgid "Michael Howell"
-#~ msgstr "Michael Howell"
-
-#~ msgid "Laurent Montel"
-#~ msgstr "Laurent Montel"
-
-#~ msgid "Dirk Mueller"
-#~ msgstr "Dirk Mueller"
-
-#, fuzzy
-#~| msgid "Save Image As..."
-#~ msgid "Save As"
-#~ msgstr "Resmi Farklı Kaydet..."
-
-#~ msgctxt "label for input line to find text"
-#~ msgid "&Find:"
-#~ msgstr "&Bul:"
-
-#~ msgctxt "input dialog window title for selecting html elements"
-#~ msgid "Select elements"
-#~ msgstr "Ögeleri seç"
-
-#~ msgctxt "input dialog text for selecting html elements"
-#~ msgid "Choose elements"
-#~ msgstr "Ögeleri seç"
-
-#~ msgid "New Window"
-#~ msgstr "Yeni Pencere"
-
-#~ msgid "Print"
-#~ msgstr "Yazdır"
-
-#~ msgid "Close"
-#~ msgstr "Kapat"
-
-#~ msgid "Zoom &In"
-#~ msgstr "Bü&yüt"
-
-#~ msgid "Zoom &Out"
-#~ msgstr "&Küçült"
-
-#~ msgid "Reset Zoom"
-#~ msgstr "Büyütmeyi Sıfırla"
-
-#~ msgid "Dump HTML"
-#~ msgstr "HTML İndir"
-
-#~ msgid "F&ormat"
-#~ msgstr "B&içim"
-
-#~ msgid "Writing Direction"
-#~ msgstr "Yazma Yönü"
-
-#~ msgid "Select elements..."
-#~ msgstr "Ögeleri seç..."
-
-#~ msgid "KDELauncher"
-#~ msgstr "KDELauncher"
-
-#~ msgid "%1 element selected"
-#~ msgid_plural "%1 elements selected"
-#~ msgstr[0] "%1 öge seçildi"
-#~ msgstr[1] "%1 öge seçildi"
-
-#~ msgid "Toggle Caret Mode"
-#~ msgstr "Düzeltme İşaretçisi Kipine Geç"
-
-#~ msgid "Blocked by ad filter"
-#~ msgstr "Reklam filtresi tarafından engellendi"
-
-#~ msgid "Access keys activated"
-#~ msgstr "Erişim tuşları etkinleştirildi"
-
-#~ msgctxt "Text direction"
-#~ msgid "Direction"
-#~ msgstr "Yönelim"
-
-#~ msgid "Default"
-#~ msgstr "Öntanımlı"
-
-#~ msgid "Left to right"
-#~ msgstr "Soldan sağa"
-
-#~ msgid "Right to left"
-#~ msgstr "Sağdan sola"
-
-#~ msgid "Spellcheck selection..."
-#~ msgstr "Yazım denetimi seçimi..."
-
-#~ msgctxt "@title:menu HTML frame/iframe"
-#~ msgid "Frame"
-#~ msgstr "Çerçeve"
-
-#~ msgid "Open in New &Window"
-#~ msgstr "&Yeni Pencerede Aç"
-
-#~ msgid "Open in &This Window"
-#~ msgstr "&Bu Pencerede Aç"
-
-#~ msgid "Open in &New Tab"
-#~ msgstr "Yeni &Sekmede Aç"
-
-#~ msgid "Reload Frame"
-#~ msgstr "Çerçeveyi Yeniden Yükle"
-
-#~ msgid "Print Frame..."
-#~ msgstr "Çerçeveyi Yazdır..."
-
-#~ msgid "View Frame Source"
-#~ msgstr "Çerçeve Kaynağını Göster"
-
-#~ msgid "Block IFrame..."
-#~ msgstr "IFrame Engelle...."
-
-#~ msgid "&Play"
-#~ msgstr "&Oynat"
-
-#~ msgid "&Mute"
-#~ msgstr "&Sesi Kapat"
-
-#~ msgid "&Loop"
-#~ msgstr "&Döngü"
+"<ul><li><b>Alan iç adı: </b>%1</li><li><b>Alan türü: </b>%2</li><li><b>Alan "
+"kimliği: </b>%3</li><li><b>Alan saltokunur: </b>%4</li><li><b>Alan etkin: </"
+"b>%5</li><li><b>Otomatik tamamlama etkin: </b>%6</li></ul>"
