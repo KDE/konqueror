@@ -554,7 +554,7 @@ msgstr ""
 #: css/cssconfig.ui:29
 #, kde-format
 msgid "Us&e default stylesheet"
-msgstr "Öntanımlı &biçem sayfasını kullan "
+msgstr "Öntanımlı &biçem sayfasını kullan"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, useUser)
 #: css/cssconfig.ui:39
@@ -785,7 +785,7 @@ msgstr "<b>Siyah üzerine Beyaz</b><p>Bu sizin klasik ters renk şemanızdır.</
 #: css/csscustom.ui:199
 #, kde-format
 msgid "&White on black"
-msgstr "&Siyah üzerine beyaz "
+msgstr "&Siyah üzerine beyaz"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, customColor)
 #: css/csscustom.ui:206
@@ -1218,7 +1218,7 @@ msgstr ""
 "<h1>Konqueror AdBlocK</h1> Konqueror AdBlocK, dış bağlantılı görseller ve "
 "çerçeveler içerip içermediğini denetlemek istediğiniz bir adres listesi "
 "oluşturmanıza izin verir. Bu tür bağlantılar içeren adresler yok sayılır ya "
-"da bir yer tutucu görseli ile değiştirilir."
+"da bir yer tutucu görseli ile değiştirilir. "
 
 #: filteropts.cpp:558
 #, kde-format
@@ -1644,7 +1644,7 @@ msgstr ""
 #: javaopts.cpp:170
 #, kde-format
 msgid "Enabling this will cause the jvm to use KIO for network transport "
-msgstr "Etkinleştirmek jvm'nin ağ trafiğinde KIO'yu kullanmasına neden olur"
+msgstr "Etkinleştirmek jvm'nin ağ trafiğinde KIO'yu kullanmasına neden olur "
 
 #: javaopts.cpp:172
 #, kde-format
@@ -2179,216 +2179,3 @@ msgstr ""
 #, kde-format
 msgid "You must first enter a domain name."
 msgstr "Önce bir etki alanı adı girmelisiniz."
-
-#~ msgid "Accept languages:"
-#~ msgstr "Kabul edilen diller:"
-
-#~ msgid "Accept character sets:"
-#~ msgstr "Kabul edilen karakter kümeleri:"
-
-#~ msgid "Plugins"
-#~ msgstr "Eklentiler"
-
-#~ msgid "Folders"
-#~ msgstr "Dizinler"
-
-#~ msgid "&Remove"
-#~ msgstr "&Kaldır"
-
-#~ msgid "&New"
-#~ msgstr "&Yeni"
-
-#~ msgid "Do&wn"
-#~ msgstr "Aş&ağı"
-
-#~ msgid "&Up"
-#~ msgstr "&Yukarı"
-
-#~ msgid "Click here to scan for newly installed Netscape plugins now."
-#~ msgstr "Yeni kurulu Netscape eklentilerini taramak için buraya tıklayın."
-
-#~ msgid "&Scan for Plugins"
-#~ msgstr "&Eklentileri Tara"
-
-#~ msgid "Here you can see a list of the Netscape plugins KDE has found."
-#~ msgstr ""
-#~ "KDE'nin bulduğu Netscape eklentilerinin bir listesini buradan "
-#~ "bulabilirsiniz."
-
-#~ msgid "Information"
-#~ msgstr "Bilgiler"
-
-#~ msgid "Value"
-#~ msgstr "Değer"
-
-#~ msgid "Global Settings"
-#~ msgstr "Genel Ayarlar"
-
-#~ msgid "&Enable plugins globally"
-#~ msgstr "&Eklentileri genel olarak etkinleştir"
-
-#~ msgid "Only allow &HTTP and HTTPS URLs for plugins"
-#~ msgstr "Eklentiler için sadece &HTTP ve HTTPS adreslerini kabul et"
-
-#~ msgid "&Load plugins on demand only"
-#~ msgstr "Sadece istenen ek&lentileri yükle"
-
-#~ msgid "CPU priority for plugins: %1"
-#~ msgstr "Eklentiler için CPU öncelikleri: %1"
-
-#~ msgid "Domain-Specific Settin&gs"
-#~ msgstr "&Etki Alanına Özel Ayarlar"
-
-#~ msgid ""
-#~ "Enables the execution of plugins that can be contained in HTML pages, e."
-#~ "g. Macromedia Flash. Note that, as with any browser, enabling active "
-#~ "contents can be a security problem."
-#~ msgstr ""
-#~ "HTML sayfalarında bulunması muhtemel olan eklentilerin örn, Macromedia "
-#~ "Flash çalıştırılmasını sağlar. Unutmayın, her tarayıcıda olduğu gibi "
-#~ "aktif içeriğin ve eklentilerin etkin kılınması güvenlik sorunlarına yol "
-#~ "açabilir."
-
-#~ msgid ""
-#~ "<p>This box contains the domains and hosts you have set a specific plugin "
-#~ "policy for. This policy will be used instead of the default policy for "
-#~ "enabling or disabling plugins on pages sent by these domains or hosts.</"
-#~ "p><p>Select a policy and use the controls on the right to modify it.</p>"
-#~ msgstr ""
-#~ "<p>Bu kutu Java politikası belirlediğiniz etki alanlarını ve makineleri "
-#~ "içerir. Bu politika bu etki alanı ve makinelerden gönderilen sayfalardaki "
-#~ "Javaları çalıştırıp çalıştırmamada öntanımlı politika yerine "
-#~ "kullanılacaktır.</p><p>Bir politika seçin ve sağdaki kontrolleri "
-#~ "kullanarak düzenleyin.</p>"
-
-#~ msgid ""
-#~ "Click this button to choose the file that contains the plugin policies. "
-#~ "These policies will be merged with the existing ones. Duplicate entries "
-#~ "are ignored."
-#~ msgstr ""
-#~ "Java politikalarını içeren dosyayı seçmek için bu düğmeye tıklayın. Bu "
-#~ "politikalar var olanlar ile birleştirilecektir. Tekrarlanan girişler göz "
-#~ "ardı edilecektir."
-
-#~ msgid ""
-#~ "Click this button to save the plugin policy to a zipped file. The file, "
-#~ "named <b>plugin_policy.tgz</b>, will be saved to a location of your "
-#~ "choice."
-#~ msgstr ""
-#~ "Java politikasını ziplenmiş bir dosyaya kaydetmek için bu düğmeye "
-#~ "tıklayın. <b>javascript_policy.tgz</b> ismindeki dosya seçtiğiniz konuma "
-#~ "kaydedilecektir."
-
-#~ msgid ""
-#~ "Here you can set specific plugin policies for any particular host or "
-#~ "domain. To add a new policy, simply click the <i>New...</i> button and "
-#~ "supply the necessary information requested by the dialog box. To change "
-#~ "an existing policy, click on the <i>Change...</i> button and choose the "
-#~ "new policy from the policy dialog box. Clicking on the <i>Delete</i> "
-#~ "button will remove the selected policy causing the default policy setting "
-#~ "to be used for that domain."
-#~ msgstr ""
-#~ "Buradan belirli makineler veya etki alanları için özel Java politikaları "
-#~ "tanımlayabilirsiniz. Yeni bir politika eklemek için, <i>Ekle...</i> "
-#~ "düğmesine basıp gerekli bilgileri çıkan diyalog kutusuna girin. Var olan "
-#~ "bir politikayı değiştirmek için, <i>Değiştir...</i> düğmesine basın ve "
-#~ "diyalog kutusundan yeni politikayı seçin. <i>Sil</i> düğmesine basmak "
-#~ "seçili politikanın silinmesini ve o etki alanı için öntanımlı politikanın "
-#~ "kullanılmasını sağlar."
-
-#~ msgctxt "lowest priority"
-#~ msgid "lowest"
-#~ msgstr "en düşük"
-
-#~ msgctxt "low priority"
-#~ msgid "low"
-#~ msgstr "düşük"
-
-#~ msgctxt "medium priority"
-#~ msgid "medium"
-#~ msgstr "orta"
-
-#~ msgctxt "high priority"
-#~ msgid "high"
-#~ msgstr "yüksek"
-
-#~ msgctxt "highest priority"
-#~ msgid "highest"
-#~ msgstr "en yüksek"
-
-#~ msgid ""
-#~ "<h1>Konqueror Plugins</h1> The Konqueror web browser can use Netscape "
-#~ "plugins to show special content, just like the Navigator does. Please "
-#~ "note that the way you have to install Netscape plugins may depend on your "
-#~ "distribution. A typical place to install them is, for example, '/opt/"
-#~ "netscape/plugins'."
-#~ msgstr ""
-#~ "<h1>Konqueror Eklentileri</h1> Konqueror, Netscape eklentilerini "
-#~ "kullanabilir. Lütfen dağıtımınıza bağlı olarak Netscape eklentilerini "
-#~ "kurmanız gerektiğini unutmayın. Bu eklentiler  genellikle '/opt/netscape/"
-#~ "plugins' dizinine kurulurlar."
-
-#~ msgid ""
-#~ "Do you want to apply your changes before the scan? Otherwise the changes "
-#~ "will be lost."
-#~ msgstr ""
-#~ "Taramadan önce değişiklikleri uygulamak istiyor musunuz? Aksi takdirde "
-#~ "tüm değişiklikler silinecektir."
-
-#~ msgid ""
-#~ "The nspluginscan executable cannot be found. Netscape plugins will not be "
-#~ "scanned."
-#~ msgstr ""
-#~ "nsplugin çalıştırılabilir bulunamadı. Netscape eklentileri taranamayacak."
-
-#~ msgid "Scanning for plugins"
-#~ msgstr "Eklentiler taranıyor"
-
-#~ msgctxt "@title:window"
-#~ msgid "Select Plugin Scan Folder"
-#~ msgstr "Eklenti Arama Dizinini Seçin"
-
-#~ msgid "Netscape Plugins"
-#~ msgstr "Netscape Eklentileri"
-
-#~ msgid "Plugin"
-#~ msgstr "Eklenti"
-
-#~ msgid "MIME type"
-#~ msgstr "MIME türü"
-
-#~ msgid "Description"
-#~ msgstr "Açıklama"
-
-#~ msgid "Suffixes"
-#~ msgstr "Sonekler"
-
-#~ msgid "Doma&in-Specific"
-#~ msgstr "&Etki Alanına Özel"
-
-#~ msgctxt "@title:window"
-#~ msgid "New Plugin Policy"
-#~ msgstr "Yeni Eklenti Politikası"
-
-#~ msgctxt "@title:window"
-#~ msgid "Change Plugin Policy"
-#~ msgstr "Eklenti Politikasını Değiştir"
-
-#~ msgid "&Plugin policy:"
-#~ msgstr "&Eklenti politikası:"
-
-#~ msgid "Select a plugin policy for the above host or domain."
-#~ msgstr "Yukarıdaki makine veya etki alanı için bir Java politikası seçin."
-
-#, fuzzy
-#~| msgid "Sa&ns serif font:"
-#~ msgid "Sans Serif"
-#~ msgstr "S&ans serif yazı tipi:"
-
-#, fuzzy
-#~| msgid "S&tandard font:"
-#~ msgid "Standard Symbols L"
-#~ msgstr "S&tandart yazı tipi:"
-
-#~ msgid "kcmkonqhtml"
-#~ msgstr "kcmkonqhtml"

@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: extragear-base-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-08-24 00:46+0000\n"
-"PO-Revision-Date: 2022-10-18 06:35+0300\n"
+"PO-Revision-Date: 2022-10-19 13:10+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -475,6 +475,9 @@ msgid ""
 "visiting asks you to use a different browser (and do not forget to send a "
 "complaint to the webmaster!)"
 msgstr ""
+"Ziyaret ettiğiniz web sayfası, sizden başka bir tarayıcı kullanmanızı "
+"istiyorsa <a href=\"%1\">user-agent</a> özelliğini kullanın (ve sayfayı "
+"yapana bir şikayet yazmayı unutmayın!)"
 
 #: src/about/konq_aboutpage.cpp:316
 #, kde-format
@@ -482,12 +485,17 @@ msgid ""
 "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
 "ensures that you can keep track of the pages you have visited recently."
 msgstr ""
+"Kenar Çubuğu'nuzdaki <img width='16' height='16' src=\"%1\"></img> Geçmiş "
+"özelliği, son zamanlarda ziyaret ettiğiniz sayfaların çetelesini tutmanıza "
+"yardımcı olur."
 
 #: src/about/konq_aboutpage.cpp:318
 #, kde-format
 msgid ""
 "Use a caching <a href=\"%1\">proxy</a> to speed up your Internet connection."
 msgstr ""
+"İnternet bağlantınızı hızlandırmak için bir önbellek <a href=\"%1\">vekili</"
+"a> kullanın."
 
 #: src/about/konq_aboutpage.cpp:320
 #, kde-format
@@ -496,11 +504,14 @@ msgid ""
 "Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
 "Terminal Emulator)."
 msgstr ""
+"Gelişmiş kullanıcılar, Konqueror'a gömebileceğiniz Konsole özelliğini çok "
+"seveceklerdir (Ayarlar -> <img width='16' height='16' SRC=\"%1\"></img> "
+"Uçbirim Öykünücüsünü Göster)."
 
 #: src/about/konq_aboutpage.cpp:324
 #, kde-format
 msgid "Next: Specifications"
-msgstr ""
+msgstr "Sonrası: Belirtimler"
 
 #: src/about/konq_aboutpage.cpp:338
 #, kde-format
@@ -510,17 +521,17 @@ msgstr "Kurulu Eklentiler"
 #: src/about/konq_aboutpage.cpp:339
 #, kde-format
 msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
-msgstr ""
+msgstr "<td>Eklenti</td><td>Açıklama</td><td>Dosya</td><td>Türler</td>"
 
 #: src/about/konq_aboutpage.cpp:340
 #, kde-format
 msgid "Installed"
-msgstr ""
+msgstr "Kurulu"
 
 #: src/about/konq_aboutpage.cpp:341
 #, kde-format
 msgid "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
-msgstr ""
+msgstr "<td>MIME Türü</td><td>Açıklama</td><td>Sonekler</td><td>Eklenti</td>"
 
 #: src/settings/webenginesettings.cpp:909
 #, kde-format
@@ -535,19 +546,19 @@ msgstr "Yazım Denetimi"
 #: src/spellcheckermanager.cpp:83
 #, kde-format
 msgid "Spell Checking Enabled"
-msgstr ""
+msgstr "Yazım Denetimi Etkin"
 
 #: src/spellcheckermanager.cpp:101
 #, kde-format
 msgid "&Languages"
-msgstr ""
+msgstr "&Diller"
 
 #. i18n: ectx: property (text), widget (QCheckBox, showPasswords)
 #: src/ui/credentialsdetailswidget.ui:34
 #: src/webenginecustomizecacheablefieldsdlg.ui:44
 #, kde-format
 msgid "&Show passwords"
-msgstr ""
+msgstr "&Parolaları göster"
 
 #: src/ui/featurepermissionbar.cpp:22
 #, kde-format
@@ -636,13 +647,13 @@ msgstr "Ş&imdi değil"
 #, kde-format
 msgctxt "@action:display details about credentials to store"
 msgid "&Show details"
-msgstr ""
+msgstr "&Ayrıntıları göster"
 
 #: src/ui/passwordbar.cpp:123
 #, kde-format
 msgctxt "@action:hide details about credentials to store"
 msgid "&Hide details"
-msgstr ""
+msgstr "A&yrıntıları gizle"
 
 #: src/ui/searchbar.cpp:38
 #, kde-format
@@ -720,38 +731,38 @@ msgstr "Anımsanacak alanları seç"
 #: src/webenginecustomizecacheablefieldsdlg.ui:41
 #, kde-format
 msgid "Switch between displaying passwords or placeholders"
-msgstr ""
+msgstr "Parola ve yer tutucu gösterimi arasında geçiş yap"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showDetails)
 #: src/webenginecustomizecacheablefieldsdlg.ui:64
 #, kde-format
 msgid "Show advanced information about the fields"
-msgstr ""
+msgstr "Alanlar hakkında gelişmiş bilgi göster"
 
 #. i18n: ectx: property (text), widget (QCheckBox, showDetails)
 #: src/webenginecustomizecacheablefieldsdlg.ui:67
 #: src/webenginepartcertificateerrordlg.ui:30
 #, kde-format
 msgid "&Show details"
-msgstr ""
+msgstr "&Ayrıntıları göster"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: src/webenginecustomizecacheablefieldsdlg.ui:89
 #, kde-format
 msgid "Available &fields"
-msgstr ""
+msgstr "&Kullanılabilir alanlar"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, immediatelyCacheData)
 #: src/webenginecustomizecacheablefieldsdlg.ui:101
 #, kde-format
 msgid "Store form data in KWallet when closing the dialog"
-msgstr ""
+msgstr "Pencereyi kapatırken form verisini KCüzdan'da depola"
 
 #. i18n: ectx: property (text), widget (QCheckBox, immediatelyCacheData)
 #: src/webenginecustomizecacheablefieldsdlg.ui:104
 #, kde-format
 msgid "&Immediately memorize form data"
-msgstr ""
+msgstr "&Form verisini anında belle"
 
 #: src/webenginepage.cpp:125
 #, kde-format
@@ -1092,7 +1103,7 @@ msgstr ""
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill forms now"
-msgstr ""
+msgstr "F&ormları şimdi doldur"
 
 #: src/webenginepart.cpp:1025
 #, kde-format
@@ -1102,12 +1113,12 @@ msgstr "&Bu Sitedeki Parolaları Anımsa"
 #: src/webenginepart.cpp:1029
 #, kde-format
 msgid "&Customize Fields to Memorize for This Page..."
-msgstr ""
+msgstr "Bu &Sayfa için Bellenecek Alanları Özelleştir..."
 
 #: src/webenginepart.cpp:1033
 #, kde-format
 msgid "Remove Customized Memorization Settings for This Page"
-msgstr ""
+msgstr "Bu Sayfa için Bellenecek Alanlar Ayarlarını Kaldır"
 
 #: src/webenginepart.cpp:1037
 #, kde-format
@@ -1122,7 +1133,7 @@ msgstr "Bu Site için Anımsanan Tüm Parolaları Kaldır"
 #: src/webenginepart.cpp:1045
 #, kde-format
 msgid "&Launch Wallet Manager"
-msgstr ""
+msgstr "&Cüzdan Yöneticisini Başlat"
 
 #: src/webenginepart.cpp:1049
 #, kde-format
@@ -1157,7 +1168,7 @@ msgstr "&Araçlar"
 #: src/webenginepart.rc:32
 #, kde-format
 msgid "&Credential management"
-msgstr ""
+msgstr "K&imlik bilgileri yönetimi"
 
 #. i18n: ectx: ToolBar (htmlToolBar)
 #: src/webenginepart.rc:47
@@ -1184,13 +1195,13 @@ msgstr "Adresi girin:"
 #, kde-format
 msgctxt "Ignore the certificate error for this URL only for now"
 msgid "Yes, &once"
-msgstr ""
+msgstr "Evet, &bir kez"
 
 #: src/webenginepartcertificateerrordlg.cpp:45
 #, kde-format
 msgctxt "Ignore the certificate error for this URL now and in the future"
 msgid "Yes, &forever"
-msgstr ""
+msgstr "Evet, &her zaman"
 
 #: src/webenginepartcertificateerrordlg.cpp:49
 #, kde-format
@@ -1198,6 +1209,8 @@ msgid ""
 "<p>The server <tt>%1</tt> failed the authenticity check. The error is:</"
 "p><p><tt>%2</tt></p>Do you want to ignore this error?"
 msgstr ""
+"<p><tt>%1</tt> sunucusu, doğruluk denetimini geçemedi. Hata:</p><p><tt>%2</"
+"tt></p>Bu hatayı yok saymak istiyor musunuz?"
 
 #: src/webenginepartcertificateerrordlg.cpp:55
 #, kde-format
@@ -1209,19 +1222,19 @@ msgstr "Sertifika hatası"
 #: src/webenginepartcertificateerrordlg.ui:14
 #, kde-format
 msgid "Dialog"
-msgstr ""
+msgstr "Pencere"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: src/webenginepartcertificateerrordlg.ui:23
 #, kde-format
 msgid "TextLabel"
-msgstr ""
+msgstr "MetinEtiketi"
 
 #. i18n: ectx: property (title), widget (QGroupBox, details)
 #: src/webenginepartcertificateerrordlg.ui:50
 #, kde-format
 msgid "Certificate details"
-msgstr ""
+msgstr "Sertifika ayarları"
 
 #. i18n: ectx: attribute (title), widget (QWidget, subjectTab)
 #: src/webenginepartcertificateerrordlg.ui:63
@@ -1233,24 +1246,24 @@ msgstr "&Konu"
 #: src/webenginepartcertificateerrordlg.ui:73
 #, kde-format
 msgid "&Issuer"
-msgstr ""
+msgstr "&Veren"
 
 #: src/webenginepartdownloadmanager.cpp:235
 #, kde-format
 msgid "An error occurred while saving the file: %1"
-msgstr ""
+msgstr "Dosyayı kaydederken bir hata oluştu: %1"
 
 #: src/webenginepartdownloadmanager.cpp:247
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
-msgstr ""
+msgstr "İndiriliyor"
 
 #: src/webenginepartdownloadmanager.cpp:248
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
-msgstr ""
+msgstr "Kaynak"
 
 #: src/webenginepartdownloadmanager.cpp:249
 #, kde-format
@@ -1262,7 +1275,7 @@ msgstr "Hedef"
 #, kde-format
 msgctxt "Finished saving BLOB URL"
 msgid "Finished saving %1 as %2"
-msgstr ""
+msgstr "%1, %2 olarak kaydedildi"
 
 #: src/webengineparterrorschemehandler.cpp:96
 #, kde-format
@@ -1468,13 +1481,13 @@ msgstr "Web Kısayollarını Yapılandır..."
 #, kde-format
 msgctxt "Web field with type 'text'"
 msgid "text"
-msgstr ""
+msgstr "metin"
 
 #: src/webenginewallet.cpp:105
 #, kde-format
 msgctxt "Web field with type 'password'"
 msgid "password"
-msgstr ""
+msgstr "parola"
 
 #: src/webenginewallet.cpp:106
 #, kde-format
@@ -1486,7 +1499,7 @@ msgstr "e-posta"
 #, kde-format
 msgctxt "Web field with type different from 'text', 'password' or 'e-mail'"
 msgid "other"
-msgstr ""
+msgstr "diğer"
 
 #: src/webfieldsdataview.cpp:61
 #, kde-format
@@ -1498,7 +1511,7 @@ msgstr "Alan adı"
 #, kde-format
 msgctxt "Value of a web field"
 msgid "Field value"
-msgstr ""
+msgstr "Alan değeri"
 
 #: src/webfieldsdataview.cpp:63
 #, kde-format
@@ -1510,31 +1523,31 @@ msgstr "İç alan adı"
 #, kde-format
 msgctxt "Type of a web field"
 msgid "Field type"
-msgstr ""
+msgstr "Alan türü"
 
 #: src/webfieldsdataview.cpp:65
 #, kde-format
 msgctxt "The id of a web field"
 msgid "Field id"
-msgstr ""
+msgstr "Alan kimliği"
 
 #: src/webfieldsdataview.cpp:66
 #, kde-format
 msgctxt "Other details about a web field"
 msgid "Details"
-msgstr ""
+msgstr "Ayrıntılar"
 
 #: src/webfieldsdataview.cpp:125
 #, kde-format
 msgctxt "web field has the readonly attribute"
 msgid "read only"
-msgstr ""
+msgstr "saltokunur"
 
 #: src/webfieldsdataview.cpp:128
 #, kde-format
 msgctxt "web field has the autocomplete attribute set to off"
 msgid "auto-completion off"
-msgstr ""
+msgstr "otomatik tamamlama kapalı"
 
 #: src/webfieldsdataview.cpp:131
 #, kde-format
@@ -1546,13 +1559,13 @@ msgstr "devre dışı"
 #, kde-format
 msgctxt "A statement about a field is true"
 msgid "yes"
-msgstr ""
+msgstr "evet"
 
 #: src/webfieldsdataview.cpp:160
 #, kde-format
 msgctxt "A statement about a field is false"
 msgid "no"
-msgstr ""
+msgstr "hayır"
 
 #: src/webfieldsdataview.cpp:163
 #, kde-format
