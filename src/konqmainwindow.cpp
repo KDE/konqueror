@@ -4244,7 +4244,9 @@ void KonqExtendedBookmarkOwner::openFolderinTabs(const KBookmarkGroup &grp)
         if (KMessageBox::questionYesNo(m_pKonqMainWindow,
                                        i18n("You have requested to open more than 20 bookmarks in tabs. "
                                             "This might take a while. Continue?"),
-                                       i18nc("@title:window", "Open bookmarks folder in new tabs")) != KMessageBox::Yes) {
+                                       i18nc("@title:window", "Open bookmarks folder in new tabs"),
+                                       KGuiItem(i18nc("@action:button", "Open"), QStringLiteral("tab-new")),
+                                       KStandardGuiItem::cancel()) != KMessageBox::Yes) {
             return;
         }
     }
