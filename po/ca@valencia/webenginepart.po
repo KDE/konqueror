@@ -363,7 +363,7 @@ msgstr "FTP"
 #: src/about/konq_aboutpage.cpp:235
 #, kde-format
 msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpCenter)...</A>"
-msgstr "i <A HREF=\"%1\">molts més (vegeu els Kioslaves a KHelpCenter)...</A>"
+msgstr "i <A HREF=\"%1\">molts més (vegeu els Kioslaves en KHelpCenter)...</A>"
 
 #: src/about/konq_aboutpage.cpp:236
 #, kde-format
@@ -503,9 +503,9 @@ msgid ""
 "Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
 "Terminal Emulator)."
 msgstr ""
-"Els usuaris avançats apreciaran Konsole que podeu incrustar a Konqueror "
-"(Configuració -> <img width='16' height='16' SRC=\"%1\"></img> Mostra "
-"l'emulador de terminal)."
+"Els usuaris avançats apreciaran Konsole que podeu incrustar a dins de "
+"Konqueror (Configuració -> <img width='16' height='16' SRC=\"%1\"></img> "
+"Mostra l'emulador de terminal)."
 
 #: src/about/konq_aboutpage.cpp:324
 #, kde-format
@@ -729,7 +729,7 @@ msgstr "Ressaltat de les coincidències"
 #: src/webenginecustomizecacheablefieldsdlg.ui:14
 #, kde-format
 msgid "Choose fields to remember"
-msgstr "Escolliu els camps a recordar"
+msgstr "Escolliu els camps que s'han de recordar"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showPasswords)
 #: src/webenginecustomizecacheablefieldsdlg.ui:41
@@ -760,7 +760,7 @@ msgstr "&Camps disponibles"
 #: src/webenginecustomizecacheablefieldsdlg.ui:101
 #, kde-format
 msgid "Store form data in KWallet when closing the dialog"
-msgstr "Emmagatzema les dades del formulari a KWallet en tancar el diàleg"
+msgstr "Emmagatzema les dades del formulari en KWallet en tancar el diàleg"
 
 #. i18n: ectx: property (text), widget (QCheckBox, immediatelyCacheData)
 #: src/webenginecustomizecacheablefieldsdlg.ui:104
@@ -795,9 +795,9 @@ msgid ""
 msgstr ""
 "<qt><p>Per a tornar a mostrar la pàgina web sol·licitada, el navegador "
 "necessita tornar a enviar informació que ja s'ha tramés anteriorment.</"
-"p><p>Si esteu en una botiga en línia i heu fet una compra, cliqueu el botó "
-"Cancel·la per a evitar duplicar la compra. En cas contrari, cliqueu el botó "
-"Continua per a tornar a mostrar la pàgina web.</p>"
+"p><p>Si esteu en una botiga en línia i heu fet una compra, cliqueu en el "
+"botó Cancel·la per a evitar duplicar la compra. En cas contrari, cliqueu en "
+"el botó Continua per a tornar a mostrar la pàgina web.</p>"
 
 #: src/webenginepage.cpp:275
 #, kde-format
@@ -1115,7 +1115,7 @@ msgstr "&Memoritza ara les contrasenyes d'esta pàgina"
 #: src/webenginepart.cpp:1029
 #, kde-format
 msgid "&Customize Fields to Memorize for This Page..."
-msgstr "&Personalitza els camps a memoritzar d'esta pàgina..."
+msgstr "&Personalitza els camps que s'han de memoritzar d'esta pàgina..."
 
 #: src/webenginepart.cpp:1033
 #, kde-format
