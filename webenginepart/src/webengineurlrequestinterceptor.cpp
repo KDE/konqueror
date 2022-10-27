@@ -17,6 +17,10 @@ WebEngineUrlRequestInterceptor::WebEngineUrlRequestInterceptor(QObject* parent) 
 void WebEngineUrlRequestInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
 {
     if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeImage) {
+        if (info.requestUrl().scheme() == QLatin1String("http") && info.firstPartyUrl().scheme() == QLatin1String("https")) {
+            info.block(true);
+            return;
+        }
         info.block(WebEngineSettings::self()->isAdFiltered(info.requestUrl().url()));
     }
 }
