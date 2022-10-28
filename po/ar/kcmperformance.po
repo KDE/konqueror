@@ -5,23 +5,23 @@
 # محمد سعد  Mohamed SAAD <metehyi@free.fr>, 2006.
 # AbdulAziz AlSharif <a.a-a.s@hotmail.com>, 2007.
 # Youssef Chahibi <chahibi@gmail.com>, 2007.
-# zayed <zayed.alsaidi@gmail.com>, 2008.
+# zayed <zayed.alsaidi@gmail.com>, 2008, 2022.
 # Safa Alfulaij <safa1996alfulaij@gmail.com>, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmperformance\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-10-21 00:16+0000\n"
-"PO-Revision-Date: 2014-09-09 10:20+0300\n"
-"Last-Translator: Safa Alfulaij <safa1996alfulaij@gmail.com>\n"
-"Language-Team: Arabic <doc@arabeyes.org>\n"
+"PO-Revision-Date: 2022-10-27 11:32+0400\n"
+"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
+"Language-Team: ar\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-"X-Generator: Lokalize 1.5\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #: kcmperformance.cpp:28
 #, kde-format
@@ -52,13 +52,7 @@ msgstr ""
 "المحمّلة مسبقًا."
 
 #: konqueror.cpp:24
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>If enabled, an instance of Konqueror will be preloaded after the "
-#| "ordinary KDE startup sequence.</p><p>This will make the first Konqueror "
-#| "window open faster, but at the expense of longer KDE startup times (but "
-#| "you will be able to work while it is loading, so you may not even notice "
-#| "that it is taking longer).</p>"
+#, kde-format
 msgid ""
 "<p>If enabled, an instance of Konqueror will be preloaded after the ordinary "
 "Plasma startup sequence.</p><p>This will make the first Konqueror window "
@@ -66,19 +60,13 @@ msgid ""
 "be able to work while it is loading, so you may not even notice that it is "
 "taking longer).</p>"
 msgstr ""
-"<p>إن مُكِّن، أيّة سيرورة من كنكر ستُحمَّل مسبقًا بعد تسلسل بدء كدي الاعتيادي.</"
+"<p>إن مُكِّن، أيّة سيرورة من كنكر ستُحمَّل مسبقًا بعد تسلسل بدء بلازما الاعتيادي.</"
 "p><p>هذا يجعل أول نافذة من كنكر تفتح بسرعة، لكن على حساب زيادة عدد مرات بدء "
-"كدي (ولكن يمكنك العمل أثناء تحميلها، لذا فقد لا تلاحظ حتّى أنّه يستغرق وقتًا "
+"بلازما (ولكن يمكنك العمل أثناء تحميلها، لذا فقد لا تلاحظ حتّى أنّه يستغرق وقتًا "
 "أطول).</p>"
 
 #: konqueror.cpp:30
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>If enabled, KDE will always try to have one preloaded Konqueror "
-#| "instance ready; preloading a new instance in the background whenever "
-#| "there is not one available, so that windows will always open quickly.</"
-#| "p><p><b>Warning:</b> In some cases, it is actually possible that this "
-#| "will reduce perceived performance.</p>"
+#, kde-format
 msgid ""
 "<p>If enabled, Konqueror will always try to have one preloaded instance "
 "ready; preloading a new instance in the background whenever there is not one "
@@ -86,9 +74,9 @@ msgid ""
 "In some cases, it is actually possible that this will reduce perceived "
 "performance.</p>"
 msgstr ""
-"<p>إن مُكِّن، ستحاول كدي دائمًا امتلاك سيرورة كنكر مُحمَّلة مسبقًا جاهزة، وأيضًا "
-"تحميل سيرورة جديدة مسبقًا في الخلفيّة متى ما لم تتوفّر واحدة، لتبقى النوافذ "
-"تفتح بسرعة دائمًا.</p><p><b>تحذير:</b> في بعض الحالات، قد يُنقِص هذا في الواقع "
+"<p>إن مُكِّن، سيحاول كنكر دائمًا امتلاك سيرورة مُحمَّلة مسبقًا جاهزة، وأيضًا تحميل "
+"سيرورة جديدة مسبقًا في الخلفيّة متى ما لم تتوفّر واحدة، لتبقى النوافذ تفتح "
+"بسرعة دائمًا.</p><p><b>تحذير:</b> في بعض الحالات، قد يُنقِص هذا في الواقع "
 "الأداء المنتظر.</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
@@ -99,17 +87,15 @@ msgstr "التحميل المسبق"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_preload_on_startup)
 #: konqueror_ui.ui:23
-#, fuzzy, kde-format
-#| msgid "Preload an instance after KDE startup"
+#, kde-format
 msgid "Preload an instance after desktop startup"
-msgstr "حمّل مسبقًا سيرورة واحدة بعد بدء كدي"
+msgstr "حمّل مسبقًا سيرورة واحدة بعد بدء بلازما"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_always_have_preloaded)
 #: konqueror_ui.ui:30
-#, fuzzy, kde-format
-#| msgid "Always try to have at least one preloaded instance"
+#, kde-format
 msgid "Always try to have one preloaded instance"
-msgstr "حاول دائمًا امتلاك سيرورة واحدة على الأقل مُحمَّلة مسبقًا"
+msgstr "حاول دائمًا امتلاك سيرورة واحدة مُحمَّلة مسبقًا"
 
 #: system.cpp:22
 #, kde-format
