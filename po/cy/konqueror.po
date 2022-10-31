@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-22 00:44+0000\n"
+"POT-Creation-Date: 2022-10-31 00:45+0000\n"
 "PO-Revision-Date: 2003-12-27 14:40+0000\n"
 "Last-Translator: KD at KGyfieithu <kyfieithu@dotmon.com>\n"
 "Language-Team: Cymraeg <cy@li.org>\n"
@@ -33,8 +33,8 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "owaing@oceanfree.net,kyfieithu@dotmon.com"
 
-#: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4881
-#: src/konqmainwindow.cpp:4927
+#: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4883
+#: src/konqmainwindow.cpp:4929
 #, fuzzy, kde-format
 #| msgctxt "NAME OF TRANSLATORS"
 #| msgid "Your names"
@@ -139,7 +139,7 @@ msgstr "Ffeil Lleol"
 msgid "Miscellaneous"
 msgstr ""
 
-#: src/konqhistoryview.cpp:53 src/konqmainwindow.cpp:4412
+#: src/konqhistoryview.cpp:53 src/konqmainwindow.cpp:4414
 #, kde-format
 msgid "Open in New &Window"
 msgstr "Agor mewn Ffenestr &Newydd"
@@ -666,7 +666,7 @@ msgstr ""
 #: src/konqmainwindow.cpp:1585 src/konqmainwindow.cpp:2282
 #: src/konqmainwindow.cpp:2375 src/konqmainwindow.cpp:2407
 #: src/konqmainwindow.cpp:2450 src/konqmainwindow.cpp:2472
-#: src/konqmainwindow.cpp:4849
+#: src/konqmainwindow.cpp:4851
 #, fuzzy, kde-format
 #| msgid "Discard Changes?"
 msgctxt "@title:window"
@@ -676,7 +676,7 @@ msgstr "Taflu Newidiadau?"
 #: src/konqmainwindow.cpp:1585 src/konqmainwindow.cpp:2282
 #: src/konqmainwindow.cpp:2375 src/konqmainwindow.cpp:2407
 #: src/konqmainwindow.cpp:2450 src/konqmainwindow.cpp:2473
-#: src/konqmainwindow.cpp:4849
+#: src/konqmainwindow.cpp:4851
 #, kde-format
 msgid "&Discard Changes"
 msgstr "&Taflu Newidiadau"
@@ -1306,50 +1306,57 @@ msgctxt "@title:window"
 msgid "Open bookmarks folder in new tabs"
 msgstr "Agor Plygell mewn Tabiau"
 
-#: src/konqmainwindow.cpp:4405
+#: src/konqmainwindow.cpp:4248
+#, fuzzy, kde-format
+#| msgid "&Open Link"
+msgctxt "@action:button"
+msgid "Open"
+msgstr "&Agor Cyswllt"
+
+#: src/konqmainwindow.cpp:4407
 #, kde-format
 msgid "Open in T&his Window"
 msgstr "Agor yn y Ffenest &Hon"
 
-#: src/konqmainwindow.cpp:4406
+#: src/konqmainwindow.cpp:4408
 #, fuzzy, kde-format
 msgid "Open the document in current window"
 msgstr "Agor y ddogfen mewn ffenestr newydd"
 
-#: src/konqmainwindow.cpp:4413
+#: src/konqmainwindow.cpp:4415
 #, kde-format
 msgid "Open the document in a new window"
 msgstr "Agor y ddogfen mewn ffenestr newydd"
 
-#: src/konqmainwindow.cpp:4419
+#: src/konqmainwindow.cpp:4421
 #, kde-format
 msgid "Open in &New Tab"
 msgstr "Agor mewn Tab &Newydd"
 
-#: src/konqmainwindow.cpp:4421
+#: src/konqmainwindow.cpp:4423
 #, kde-format
 msgid "Open the document in a new tab"
 msgstr "Agor y ddogfen mewn tab newydd"
 
-#: src/konqmainwindow.cpp:4637
+#: src/konqmainwindow.cpp:4639
 #, fuzzy, kde-format
 #| msgid "Open with %1"
 msgid "&Open With"
 msgstr "Agor gyda %1"
 
-#: src/konqmainwindow.cpp:4650
+#: src/konqmainwindow.cpp:4652
 #, kde-format
 msgid "Open with %1"
 msgstr "Agor gyda %1"
 
-#: src/konqmainwindow.cpp:4698
+#: src/konqmainwindow.cpp:4700
 #, fuzzy, kde-format
 #| msgid "&View Mode"
 msgctxt "@action:inmenu View"
 msgid "&View Mode"
 msgstr "Modd &Golwg"
 
-#: src/konqmainwindow.cpp:4815
+#: src/konqmainwindow.cpp:4817
 #, fuzzy, kde-format
 msgid ""
 "You have multiple tabs open in this window, are you sure you want to quit?"
@@ -1357,33 +1364,33 @@ msgstr ""
 "Mae gennych amryw dabiau ar agor yn y ffenestr hon; a ydych yn sicr eich bod "
 "am ei chau?"
 
-#: src/konqmainwindow.cpp:4817
+#: src/konqmainwindow.cpp:4819
 #, fuzzy, kde-format
 #| msgid "Confirmation"
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "Cadarnhâd"
 
-#: src/konqmainwindow.cpp:4819
+#: src/konqmainwindow.cpp:4821
 #, kde-format
 msgid "C&lose Current Tab"
 msgstr "C&au'r Tab Cyfredol"
 
-#: src/konqmainwindow.cpp:4845
+#: src/konqmainwindow.cpp:4847
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
 "Closing the window will discard these changes."
 msgstr ""
 
-#: src/konqmainwindow.cpp:4846
+#: src/konqmainwindow.cpp:4848
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
 "Closing the window will discard these changes."
 msgstr ""
 
-#: src/konqmainwindow.cpp:5003
+#: src/konqmainwindow.cpp:5005
 #, kde-format
 msgid ""
 "Your sidebar is not functional or unavailable. A new entry cannot be added."
@@ -1391,29 +1398,29 @@ msgstr ""
 "Nid yw'ch bar ochr yn gweithio, neu nid yw ar gael. Nid oes modd ychwanegu "
 "cofnod newydd."
 
-#: src/konqmainwindow.cpp:5003 src/konqmainwindow.cpp:5010
+#: src/konqmainwindow.cpp:5005 src/konqmainwindow.cpp:5012
 #, fuzzy, kde-format
 #| msgid "Web Sidebar"
 msgctxt "@title:window"
 msgid "Web Sidebar"
 msgstr "Bar Ochr Gwê"
 
-#: src/konqmainwindow.cpp:5008
+#: src/konqmainwindow.cpp:5010
 #, kde-format
 msgid "Add new web extension \"%1\" to your sidebar?"
 msgstr "Ychwanegu estyniad gwê newydd \"%1\" i'ch bar ochr?"
 
-#: src/konqmainwindow.cpp:5010
+#: src/konqmainwindow.cpp:5012
 #, fuzzy, kde-format
 msgid "Add"
 msgstr "Cyfeiriad"
 
-#: src/konqmainwindow.cpp:5010
+#: src/konqmainwindow.cpp:5012
 #, kde-format
 msgid "Do Not Add"
 msgstr "Na Ychwaneger"
 
-#: src/konqmainwindow.cpp:5358
+#: src/konqmainwindow.cpp:5360
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1422,7 +1429,7 @@ msgstr ""
 "Ymddengys bod gwall ffurfweddu.  Rydych wedi cysylltu Konqueror efo %1, ond "
 "ni all drin y math yma o ffeil."
 
-#: src/konqmainwindow.cpp:5439
+#: src/konqmainwindow.cpp:5441
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
@@ -1435,23 +1442,23 @@ msgid ""
 "settings now?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5444
+#: src/konqmainwindow.cpp:5446
 #, fuzzy, kde-format
 msgid "Unsupported proxy configuration"
 msgstr "Dangos Botwm Ffurfweddu"
 
-#: src/konqmainwindow.cpp:5444
+#: src/konqmainwindow.cpp:5446
 #, kde-format
 msgid "Don't use a proxy"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5445 src/konqmainwindow.cpp:5463
+#: src/konqmainwindow.cpp:5447 src/konqmainwindow.cpp:5465
 #, fuzzy, kde-format
 #| msgid "Show Configuration Button"
 msgid "Show proxy configuration dialog"
 msgstr "Dangos Botwm Ffurfweddu"
 
-#: src/konqmainwindow.cpp:5459
+#: src/konqmainwindow.cpp:5461
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine "
@@ -1460,22 +1467,22 @@ msgid ""
 "p><p><b>HTTPS proxy: </b><tt>%2</tt></p>What do you want to do?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5462
+#: src/konqmainwindow.cpp:5464
 #, fuzzy, kde-format
 msgid "Conflicting proxy configuration"
 msgstr "Dangos Botwm Ffurfweddu"
 
-#: src/konqmainwindow.cpp:5463
+#: src/konqmainwindow.cpp:5465
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5463
+#: src/konqmainwindow.cpp:5465
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5540
+#: src/konqmainwindow.cpp:5542
 #, kde-format
 msgid ""
 "You have entered Complete Full Screen mode (the user interface is completely "
@@ -2338,11 +2345,6 @@ msgstr "Gosod URL..."
 #~ "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
 #~ msgstr ""
 #~ "<td>Math Mime</td><td>Disgrifiad</td><td>Ôlddodiadau</td><td>Ategyn</td>"
-
-#, fuzzy
-#~| msgid "&Open Link"
-#~ msgid "&Open"
-#~ msgstr "&Agor Cyswllt"
 
 #~ msgid ""
 #~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">plugins</A> (for "

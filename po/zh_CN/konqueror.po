@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-22 00:44+0000\n"
-"PO-Revision-Date: 2022-10-22 05:28\n"
+"POT-Creation-Date: 2022-10-31 00:45+0000\n"
+"PO-Revision-Date: 2022-10-30 07:48\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -27,8 +27,8 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde-china@kde.org"
 
-#: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4881
-#: src/konqmainwindow.cpp:4927
+#: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4883
+#: src/konqmainwindow.cpp:4929
 #, kde-format
 msgid "no name"
 msgstr "未命名"
@@ -124,7 +124,7 @@ msgstr "本地"
 msgid "Miscellaneous"
 msgstr "杂项"
 
-#: src/konqhistoryview.cpp:53 src/konqmainwindow.cpp:4412
+#: src/konqhistoryview.cpp:53 src/konqmainwindow.cpp:4414
 #, kde-format
 msgid "Open in New &Window"
 msgstr "在新窗口中打开(&W)"
@@ -625,7 +625,7 @@ msgstr ""
 #: src/konqmainwindow.cpp:1585 src/konqmainwindow.cpp:2282
 #: src/konqmainwindow.cpp:2375 src/konqmainwindow.cpp:2407
 #: src/konqmainwindow.cpp:2450 src/konqmainwindow.cpp:2472
-#: src/konqmainwindow.cpp:4849
+#: src/konqmainwindow.cpp:4851
 #, kde-format
 msgctxt "@title:window"
 msgid "Discard Changes?"
@@ -634,7 +634,7 @@ msgstr "丢弃更改？"
 #: src/konqmainwindow.cpp:1585 src/konqmainwindow.cpp:2282
 #: src/konqmainwindow.cpp:2375 src/konqmainwindow.cpp:2407
 #: src/konqmainwindow.cpp:2450 src/konqmainwindow.cpp:2473
-#: src/konqmainwindow.cpp:4849
+#: src/konqmainwindow.cpp:4851
 #, kde-format
 msgid "&Discard Changes"
 msgstr "丢弃更改(&D)"
@@ -1222,65 +1222,72 @@ msgctxt "@title:window"
 msgid "Open bookmarks folder in new tabs"
 msgstr "在新标签中打开书签文件夹"
 
-#: src/konqmainwindow.cpp:4405
+#: src/konqmainwindow.cpp:4248
+#, fuzzy, kde-format
+#| msgid "Open File"
+msgctxt "@action:button"
+msgid "Open"
+msgstr "打开文件"
+
+#: src/konqmainwindow.cpp:4407
 #, kde-format
 msgid "Open in T&his Window"
 msgstr "在此窗口中打开(&H)"
 
-#: src/konqmainwindow.cpp:4406
+#: src/konqmainwindow.cpp:4408
 #, kde-format
 msgid "Open the document in current window"
 msgstr "在当前窗口中打开文档"
 
-#: src/konqmainwindow.cpp:4413
+#: src/konqmainwindow.cpp:4415
 #, kde-format
 msgid "Open the document in a new window"
 msgstr "在新窗口中打开文档"
 
-#: src/konqmainwindow.cpp:4419
+#: src/konqmainwindow.cpp:4421
 #, kde-format
 msgid "Open in &New Tab"
 msgstr "在新建标签中打开(&N)"
 
-#: src/konqmainwindow.cpp:4421
+#: src/konqmainwindow.cpp:4423
 #, kde-format
 msgid "Open the document in a new tab"
 msgstr "在新标签中打开文档"
 
-#: src/konqmainwindow.cpp:4637
+#: src/konqmainwindow.cpp:4639
 #, kde-format
 msgid "&Open With"
 msgstr "打开方式(&O)"
 
-#: src/konqmainwindow.cpp:4650
+#: src/konqmainwindow.cpp:4652
 #, kde-format
 msgid "Open with %1"
 msgstr "用 %1 打开"
 
-#: src/konqmainwindow.cpp:4698
+#: src/konqmainwindow.cpp:4700
 #, kde-format
 msgctxt "@action:inmenu View"
 msgid "&View Mode"
 msgstr "视图模式(&V)"
 
-#: src/konqmainwindow.cpp:4815
+#: src/konqmainwindow.cpp:4817
 #, kde-format
 msgid ""
 "You have multiple tabs open in this window, are you sure you want to quit?"
 msgstr "您在此窗口内有多个标签，您确定要关闭窗口吗？"
 
-#: src/konqmainwindow.cpp:4817
+#: src/konqmainwindow.cpp:4819
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "确认"
 
-#: src/konqmainwindow.cpp:4819
+#: src/konqmainwindow.cpp:4821
 #, kde-format
 msgid "C&lose Current Tab"
 msgstr "关闭当前标签(&L)"
 
-#: src/konqmainwindow.cpp:4845
+#: src/konqmainwindow.cpp:4847
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -1289,7 +1296,7 @@ msgstr ""
 "此标签包含尚未提交的更改。\n"
 "关闭窗口将会丢弃这些更改。"
 
-#: src/konqmainwindow.cpp:4846
+#: src/konqmainwindow.cpp:4848
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
@@ -1298,34 +1305,34 @@ msgstr ""
 "此页面包含尚未提交的更改。\n"
 "关闭窗口将会丢弃这些更改。"
 
-#: src/konqmainwindow.cpp:5003
+#: src/konqmainwindow.cpp:5005
 #, kde-format
 msgid ""
 "Your sidebar is not functional or unavailable. A new entry cannot be added."
 msgstr "您的侧边栏没有功能或不可用。新的项目无法被添加。"
 
-#: src/konqmainwindow.cpp:5003 src/konqmainwindow.cpp:5010
+#: src/konqmainwindow.cpp:5005 src/konqmainwindow.cpp:5012
 #, kde-format
 msgctxt "@title:window"
 msgid "Web Sidebar"
 msgstr "Web 侧边栏"
 
-#: src/konqmainwindow.cpp:5008
+#: src/konqmainwindow.cpp:5010
 #, kde-format
 msgid "Add new web extension \"%1\" to your sidebar?"
 msgstr "要给您的侧边栏添加新的 Web 扩展“%1”吗？"
 
-#: src/konqmainwindow.cpp:5010
+#: src/konqmainwindow.cpp:5012
 #, kde-format
 msgid "Add"
 msgstr "添加"
 
-#: src/konqmainwindow.cpp:5010
+#: src/konqmainwindow.cpp:5012
 #, kde-format
 msgid "Do Not Add"
 msgstr "不添加"
 
-#: src/konqmainwindow.cpp:5358
+#: src/konqmainwindow.cpp:5360
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1333,7 +1340,7 @@ msgid ""
 msgstr ""
 "看起来有配置错误。您将 Konqueror 和 %1 相关联，但它无法处理该文件类型。"
 
-#: src/konqmainwindow.cpp:5439
+#: src/konqmainwindow.cpp:5441
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
@@ -1351,22 +1358,22 @@ msgstr ""
 "现协议。如果您需要使用代理，请选择系统代理配置，或在设置对话框中手动指定代理 "
 "URL。您确定要立刻更改代理设置吗？"
 
-#: src/konqmainwindow.cpp:5444
+#: src/konqmainwindow.cpp:5446
 #, kde-format
 msgid "Unsupported proxy configuration"
 msgstr "不支持的代理配置"
 
-#: src/konqmainwindow.cpp:5444
+#: src/konqmainwindow.cpp:5446
 #, kde-format
 msgid "Don't use a proxy"
 msgstr "不使用代理"
 
-#: src/konqmainwindow.cpp:5445 src/konqmainwindow.cpp:5463
+#: src/konqmainwindow.cpp:5447 src/konqmainwindow.cpp:5465
 #, kde-format
 msgid "Show proxy configuration dialog"
 msgstr "显示代理配置对话框"
 
-#: src/konqmainwindow.cpp:5459
+#: src/konqmainwindow.cpp:5461
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine "
@@ -1378,22 +1385,22 @@ msgstr ""
 "协议以外的代理。当前的设置为：<p><b>HTTP 代理：</b><tt>%1</tt></"
 "p><p><b>HTTPS 代理：</b><tt>%2</tt></p>接下来怎么做？"
 
-#: src/konqmainwindow.cpp:5462
+#: src/konqmainwindow.cpp:5464
 #, kde-format
 msgid "Conflicting proxy configuration"
 msgstr "代理配置冲突"
 
-#: src/konqmainwindow.cpp:5463
+#: src/konqmainwindow.cpp:5465
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
 msgstr "使用 HTTP 代理 (仅限本次)"
 
-#: src/konqmainwindow.cpp:5463
+#: src/konqmainwindow.cpp:5465
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
 msgstr "使用 HTTPS 代理 (仅限本次)"
 
-#: src/konqmainwindow.cpp:5540
+#: src/konqmainwindow.cpp:5542
 #, kde-format
 msgid ""
 "You have entered Complete Full Screen mode (the user interface is completely "

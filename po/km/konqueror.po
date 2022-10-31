@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-22 00:44+0000\n"
+"POT-Creation-Date: 2022-10-31 00:45+0000\n"
 "PO-Revision-Date: 2012-06-11 14:26+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer\n"
@@ -29,8 +29,8 @@ msgstr ""
 "khoemsokhem@open.org.kh,​​mornmet@khmeros.info,sutha@open.org.kh,"
 "ratanak@khmeros.info,sophea@open.org.kh"
 
-#: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4881
-#: src/konqmainwindow.cpp:4927
+#: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4883
+#: src/konqmainwindow.cpp:4929
 #, kde-format
 msgid "no name"
 msgstr "គ្មាន​ឈ្មោះ"
@@ -130,7 +130,7 @@ msgstr "មូលដ្ឋាន"
 msgid "Miscellaneous"
 msgstr "ផ្សេងៗ"
 
-#: src/konqhistoryview.cpp:53 src/konqmainwindow.cpp:4412
+#: src/konqhistoryview.cpp:53 src/konqmainwindow.cpp:4414
 #, kde-format
 msgid "Open in New &Window"
 msgstr "បើក​ក្នុង​បង្អួច​ថ្មី"
@@ -637,7 +637,7 @@ msgstr ""
 #: src/konqmainwindow.cpp:1585 src/konqmainwindow.cpp:2282
 #: src/konqmainwindow.cpp:2375 src/konqmainwindow.cpp:2407
 #: src/konqmainwindow.cpp:2450 src/konqmainwindow.cpp:2472
-#: src/konqmainwindow.cpp:4849
+#: src/konqmainwindow.cpp:4851
 #, kde-format
 msgctxt "@title:window"
 msgid "Discard Changes?"
@@ -646,7 +646,7 @@ msgstr "បោះបង់​ករ​ផ្លាស់ប្ដូរ​ឬ ?"
 #: src/konqmainwindow.cpp:1585 src/konqmainwindow.cpp:2282
 #: src/konqmainwindow.cpp:2375 src/konqmainwindow.cpp:2407
 #: src/konqmainwindow.cpp:2450 src/konqmainwindow.cpp:2473
-#: src/konqmainwindow.cpp:4849
+#: src/konqmainwindow.cpp:4851
 #, kde-format
 msgid "&Discard Changes"
 msgstr "មិន​រក្សាទុក​ការ​ផ្លាស់ប្ដូរ"
@@ -1247,65 +1247,72 @@ msgctxt "@title:window"
 msgid "Open bookmarks folder in new tabs"
 msgstr "បើក​ថត​ចំណាំ​នៅ​ក្នុង​ផ្ទាំង​ថ្មី"
 
-#: src/konqmainwindow.cpp:4405
+#: src/konqmainwindow.cpp:4248
+#, fuzzy, kde-format
+#| msgid "&Open"
+msgctxt "@action:button"
+msgid "Open"
+msgstr "បើក"
+
+#: src/konqmainwindow.cpp:4407
 #, kde-format
 msgid "Open in T&his Window"
 msgstr "បើក​ក្នុង​បង្អួច​នេះ"
 
-#: src/konqmainwindow.cpp:4406
+#: src/konqmainwindow.cpp:4408
 #, kde-format
 msgid "Open the document in current window"
 msgstr "បើក​ឯកសារ​ក្នុង​បង្អួច​បច្ចុប្បន្ន"
 
-#: src/konqmainwindow.cpp:4413
+#: src/konqmainwindow.cpp:4415
 #, kde-format
 msgid "Open the document in a new window"
 msgstr "បើក​ឯកសារ​ក្នុង​បង្អួច​ថ្មី"
 
-#: src/konqmainwindow.cpp:4419
+#: src/konqmainwindow.cpp:4421
 #, kde-format
 msgid "Open in &New Tab"
 msgstr "បើក​ក្នុង​ផ្ទាំង​ថ្មី"
 
-#: src/konqmainwindow.cpp:4421
+#: src/konqmainwindow.cpp:4423
 #, kde-format
 msgid "Open the document in a new tab"
 msgstr "បើក​ឯកសារ​ក្នុង​ផ្ទាំង​ថ្មី"
 
-#: src/konqmainwindow.cpp:4637
+#: src/konqmainwindow.cpp:4639
 #, kde-format
 msgid "&Open With"
 msgstr "បើក​ជាមួយ"
 
-#: src/konqmainwindow.cpp:4650
+#: src/konqmainwindow.cpp:4652
 #, kde-format
 msgid "Open with %1"
 msgstr "បើក​ជាមួយ %1"
 
-#: src/konqmainwindow.cpp:4698
+#: src/konqmainwindow.cpp:4700
 #, kde-format
 msgctxt "@action:inmenu View"
 msgid "&View Mode"
 msgstr "របៀប​មើល"
 
-#: src/konqmainwindow.cpp:4815
+#: src/konqmainwindow.cpp:4817
 #, kde-format
 msgid ""
 "You have multiple tabs open in this window, are you sure you want to quit?"
 msgstr "អ្នក​មាន​ផ្ទាំង​ច្រើន​បើក​ក្នុង​បង្អួច​នេះ តើ​អ្នក​ពិត​ជា​ចង់​ចេញ​ឬ ?"
 
-#: src/konqmainwindow.cpp:4817
+#: src/konqmainwindow.cpp:4819
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "ការ​អះអាង"
 
-#: src/konqmainwindow.cpp:4819
+#: src/konqmainwindow.cpp:4821
 #, kde-format
 msgid "C&lose Current Tab"
 msgstr "បិទ​ផ្ទាំង​បច្ចុប្បន្ន"
 
-#: src/konqmainwindow.cpp:4845
+#: src/konqmainwindow.cpp:4847
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -1314,7 +1321,7 @@ msgstr ""
 "ផ្ទាំង​នេះ​មាន​ការ​ផ្លាស់ប្ដូរ ដែល​មិនបាន​ដាក់​ស្នើ ។\n"
 "បិទ​បង្អួច​នឹង​មិន​រក្សា​ទុក​ការ​ផ្លាស់ប្ដូរ​ទាំងនេះ​ឡើយ ។"
 
-#: src/konqmainwindow.cpp:4846
+#: src/konqmainwindow.cpp:4848
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
@@ -1323,34 +1330,34 @@ msgstr ""
 "ទំព័រ​នេះ​មាន​កា​រផ្លាស់ប្ដូរ​ដែល​មិន​ត្រូវ​បានដាក់ស្នើ ។\n"
 "កា​របិទ​បង្អួច​នឹង​បោះបង់​កា​រផ្លាស់ប្ដូរ​ទាំង​នេះ ។"
 
-#: src/konqmainwindow.cpp:5003
+#: src/konqmainwindow.cpp:5005
 #, kde-format
 msgid ""
 "Your sidebar is not functional or unavailable. A new entry cannot be added."
 msgstr "របារ​ចំហៀង​របស់​អ្នក​មិន​ធ្វើ​ការ ឬ​មិន​មាន ។ ធាតុ​ថ្មី​មិន​អាច​បន្ថែម​បាន​ទេ ។"
 
-#: src/konqmainwindow.cpp:5003 src/konqmainwindow.cpp:5010
+#: src/konqmainwindow.cpp:5005 src/konqmainwindow.cpp:5012
 #, kde-format
 msgctxt "@title:window"
 msgid "Web Sidebar"
 msgstr "របារ​ចំហៀង​បណ្ដាញ"
 
-#: src/konqmainwindow.cpp:5008
+#: src/konqmainwindow.cpp:5010
 #, kde-format
 msgid "Add new web extension \"%1\" to your sidebar?"
 msgstr "បន្ថែម ផ្នែក​បន្ថែម​បណ្ដាញ​ថ្មី \"%1\" ទៅ​របារ​ចំហៀង​របស់​អ្នក?"
 
-#: src/konqmainwindow.cpp:5010
+#: src/konqmainwindow.cpp:5012
 #, kde-format
 msgid "Add"
 msgstr "បន្ថែម"
 
-#: src/konqmainwindow.cpp:5010
+#: src/konqmainwindow.cpp:5012
 #, kde-format
 msgid "Do Not Add"
 msgstr "កុំ​បន្ថែម"
 
-#: src/konqmainwindow.cpp:5358
+#: src/konqmainwindow.cpp:5360
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1359,7 +1366,7 @@ msgstr ""
 "វា​ទំនង​ជា​មាន​កំហុស​កំណត់​រចនា​សម្ព័ន្ធ ។ អ្នក​បាន​ភ្ជាប់​ទំនាក់ទំនង Konqueror ជា​មួយ​នឹង %1 ប៉ុន្តែ​វា​មិន​អាច​"
 "ដោះ​ស្រាយ​ប្រភេទ​ឯកសារ​នេះ​បាន​ទេ ។"
 
-#: src/konqmainwindow.cpp:5439
+#: src/konqmainwindow.cpp:5441
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
@@ -1372,23 +1379,23 @@ msgid ""
 "settings now?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5444
+#: src/konqmainwindow.cpp:5446
 #, kde-format
 msgid "Unsupported proxy configuration"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5444
+#: src/konqmainwindow.cpp:5446
 #, kde-format
 msgid "Don't use a proxy"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5445 src/konqmainwindow.cpp:5463
+#: src/konqmainwindow.cpp:5447 src/konqmainwindow.cpp:5465
 #, fuzzy, kde-format
 #| msgid "Show Configuration Button"
 msgid "Show proxy configuration dialog"
 msgstr "បង្ហាញ​ប៊ូតុង​កំណត់​រចនា​សម្ព័ន្ធ"
 
-#: src/konqmainwindow.cpp:5459
+#: src/konqmainwindow.cpp:5461
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine "
@@ -1397,22 +1404,22 @@ msgid ""
 "p><p><b>HTTPS proxy: </b><tt>%2</tt></p>What do you want to do?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5462
+#: src/konqmainwindow.cpp:5464
 #, kde-format
 msgid "Conflicting proxy configuration"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5463
+#: src/konqmainwindow.cpp:5465
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5463
+#: src/konqmainwindow.cpp:5465
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5540
+#: src/konqmainwindow.cpp:5542
 #, kde-format
 msgid ""
 "You have entered Complete Full Screen mode (the user interface is completely "
@@ -2306,9 +2313,6 @@ msgstr "រក្សាទុក​ជា..."
 #~ msgid ""
 #~ "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
 #~ msgstr "<td>ប្រភេទ Mime</td><td>ការ​ពិពណ៌នា</td><td>បច្ច័យ</td><td>កម្មវិធី​ជំនួយ</td>"
-
-#~ msgid "&Open"
-#~ msgstr "បើក"
 
 #~ msgid ""
 #~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">plugins</A> (for "
