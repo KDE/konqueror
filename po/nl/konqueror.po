@@ -22,14 +22,14 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-31 00:45+0000\n"
-"PO-Revision-Date: 2022-04-04 14:34+0200\n"
+"PO-Revision-Date: 2022-10-31 11:38+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.08.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -1276,11 +1276,10 @@ msgid "Open bookmarks folder in new tabs"
 msgstr "Bladwijzermap in nieuw tabblad openen"
 
 #: src/konqmainwindow.cpp:4248
-#, fuzzy, kde-format
-#| msgid "&Open"
+#, kde-format
 msgctxt "@action:button"
 msgid "Open"
-msgstr "&Openen"
+msgstr "Openen"
 
 #: src/konqmainwindow.cpp:4407
 #, kde-format
