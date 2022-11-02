@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-31 00:45+0000\n"
-"PO-Revision-Date: 2022-04-05 10:43+0200\n"
+"PO-Revision-Date: 2022-11-01 09:14+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
-"X-Generator: Lokalize 21.12.2\n"
+"X-Generator: Lokalize 22.08.1\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 
@@ -1266,11 +1266,10 @@ msgid "Open bookmarks folder in new tabs"
 msgstr "Odpri mapo z zaznamki v novih zavihkih"
 
 #: src/konqmainwindow.cpp:4248
-#, fuzzy, kde-format
-#| msgid "Open File"
+#, kde-format
 msgctxt "@action:button"
 msgid "Open"
-msgstr "Odpri datoteko"
+msgstr "Odpri"
 
 #: src/konqmainwindow.cpp:4407
 #, kde-format

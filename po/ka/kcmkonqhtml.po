@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-08-24 00:46+0000\n"
-"PO-Revision-Date: 2022-09-12 19:58+0200\n"
+"PO-Revision-Date: 2022-11-01 06:25+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -838,7 +838,7 @@ msgstr ""
 #: domainlistview.cpp:37
 #, kde-format
 msgid "Host/Domain"
-msgstr ""
+msgstr "ჰოსტი/დომენი"
 
 #: domainlistview.cpp:37
 #, kde-format
@@ -902,7 +902,7 @@ msgstr ""
 #: domainlistview.cpp:187 policydlg.cpp:63
 #, kde-format
 msgid "Use Global"
-msgstr ""
+msgstr "გლობალურის გამოყენება"
 
 #: domainlistview.cpp:189 policydlg.cpp:63
 #, kde-format
@@ -917,22 +917,22 @@ msgstr "უარყოფა"
 #: filteropts.cpp:48
 #, kde-format
 msgid "Enable filters"
-msgstr ""
+msgstr "ფილტრების ჩართვა"
 
 #: filteropts.cpp:51
 #, kde-format
 msgid "Hide filtered images"
-msgstr ""
+msgstr "გაფილტრული გამოსახულებების დამალვა"
 
 #: filteropts.cpp:58
 #, kde-format
 msgid "Manual Filter"
-msgstr ""
+msgstr "მორგებული ფილტრი"
 
 #: filteropts.cpp:76
 #, kde-format
 msgid "Search:"
-msgstr ""
+msgstr "ძებნა:"
 
 #: filteropts.cpp:84
 #, kde-format
@@ -940,16 +940,18 @@ msgid ""
 "<qt>Filter expression (e.g. <tt>http://www.example.com/ad/*</tt>, <a href="
 "\"filterhelp\">more information</a>):"
 msgstr ""
+"<qt>ფილტრის გამოსახულება (მაგ: <tt>http://www.example.com/ad/*</tt>, <a href="
+"\"filterhelp\">მეტი ინფორმაცია</a>):"
 
 #: filteropts.cpp:100
 #, kde-format
 msgid "Automatic Filter"
-msgstr ""
+msgstr "ავტომატური ფილტრი"
 
 #: filteropts.cpp:109
 #, kde-format
 msgid "Automatic update interval:"
-msgstr ""
+msgstr "ავტომატური განახლების ინტერვალი:"
 
 #: filteropts.cpp:114
 #, kde-format
@@ -1084,37 +1086,37 @@ msgstr ""
 #, kde-format
 msgctxt "@label:listbox"
 msgid "When &Konqueror starts:"
-msgstr ""
+msgstr "&Konqueror -ის გაშვებისას:"
 
 #: generalopts.cpp:94
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Introduction Page"
-msgstr ""
+msgstr "საწყისი გვერდის ჩვენება"
 
 #: generalopts.cpp:95
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Start Page"
-msgstr ""
+msgstr "ჩემი საწყისი გვერდის ჩვენება"
 
 #: generalopts.cpp:96
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show Blank Page"
-msgstr ""
+msgstr "სუფთა გვერდის ჩვენება"
 
 #: generalopts.cpp:97
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Show My Bookmarks"
-msgstr ""
+msgstr "ჩემი სანიშნების ჩვენება"
 
 #: generalopts.cpp:103
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Start Page"
-msgstr ""
+msgstr "აირჩიეთ საწყისი გვერდი"
 
 #: generalopts.cpp:107
 #, kde-format
@@ -1130,7 +1132,7 @@ msgstr "პირადი ვებგვერდი:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Home Page"
-msgstr ""
+msgstr "აირჩიეთ  საწყისი გვერდი"
 
 #: generalopts.cpp:126
 #, kde-format
@@ -1142,7 +1144,7 @@ msgstr ""
 #: generalopts.cpp:134
 #, kde-format
 msgid "Default web browser engine:"
-msgstr ""
+msgstr "ვებ ბრაუზერის ნაგულისხმები ძრავა:"
 
 #: generalopts.cpp:143
 #, kde-format
@@ -1172,7 +1174,7 @@ msgstr ""
 #: htmlopts.cpp:44
 #, kde-format
 msgid "Boo&kmarks"
-msgstr ""
+msgstr "&სანიშნები"
 
 #: htmlopts.cpp:47
 #, kde-format
@@ -1202,7 +1204,7 @@ msgstr ""
 #: htmlopts.cpp:65
 #, kde-format
 msgid "Form Com&pletion"
-msgstr ""
+msgstr "ფორმის &დასრულება"
 
 #: htmlopts.cpp:69
 #, kde-format
@@ -1225,7 +1227,7 @@ msgstr ""
 #: htmlopts.cpp:84
 #, kde-format
 msgid "Mouse Beha&vior"
-msgstr ""
+msgstr "თაგუნას &ქცევა"
 
 #: htmlopts.cpp:87
 #, kde-format
@@ -1455,24 +1457,24 @@ msgstr ""
 #, kde-format
 msgctxt "@title:group"
 msgid "Doma&in-Specific"
-msgstr ""
+msgstr "მხოლოდ მითითებულ &დომენზე"
 
 #: javaopts.cpp:323
 #, kde-format
 msgctxt "@title:window"
 msgid "New Java Policy"
-msgstr ""
+msgstr "Java-ის ახალი პოლიტიკა"
 
 #: javaopts.cpp:326
 #, kde-format
 msgctxt "@title:window"
 msgid "Change Java Policy"
-msgstr ""
+msgstr "Java-ის პოლიტიკის შეცვლა"
 
 #: javaopts.cpp:330
 #, kde-format
 msgid "&Java policy:"
-msgstr ""
+msgstr "&Java-ის პოლიტიკა:"
 
 #: javaopts.cpp:331
 #, kde-format
@@ -1605,7 +1607,7 @@ msgstr ""
 #: jspolicies.cpp:308
 #, kde-format
 msgid "Use global"
-msgstr ""
+msgstr "გლობალურის გამოყენება"
 
 #: jspolicies.cpp:141 jspolicies.cpp:195 jspolicies.cpp:232 jspolicies.cpp:269
 #: jspolicies.cpp:309
@@ -1647,7 +1649,7 @@ msgstr ""
 #: jspolicies.cpp:165
 #, kde-format
 msgid "Smart"
-msgstr ""
+msgstr "ჭკვიანი"
 
 #: jspolicies.cpp:166
 #, kde-format

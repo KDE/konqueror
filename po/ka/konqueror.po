@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-31 00:45+0000\n"
-"PO-Revision-Date: 2022-08-19 06:25+0200\n"
+"PO-Revision-Date: 2022-11-01 06:29+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -473,7 +473,7 @@ msgstr "Torben Weis"
 #: src/konqmain.cpp:209
 #, kde-format
 msgid "KFM author"
-msgstr ""
+msgstr "KFM -ის ავტორი"
 
 #: src/konqmain.cpp:210
 #, kde-format
@@ -602,7 +602,7 @@ msgstr "ფაილის გახსნა"
 #: src/konqmainwindow.cpp:1548
 #, kde-format
 msgid "Canceled."
-msgstr ""
+msgstr "გაუქმებულია."
 
 #: src/konqmainwindow.cpp:1584
 #, kde-format
@@ -626,7 +626,7 @@ msgstr ""
 #: src/konqmainwindow.cpp:4851
 #, kde-format
 msgid "&Discard Changes"
-msgstr ""
+msgstr "ცვლილებების &გაუქმება"
 
 #: src/konqmainwindow.cpp:1952 src/konqmainwindow.cpp:1958
 #, kde-format
@@ -696,7 +696,7 @@ msgstr ""
 #: src/konqmainwindow.cpp:2433 src/konqmainwindow.cpp:3505 src/konqtabs.cpp:335
 #, kde-format
 msgid "Close &Other Tabs"
-msgstr ""
+msgstr "&სხვა ჩანართების დახურვა"
 
 #: src/konqmainwindow.cpp:2433
 #, kde-format
@@ -799,7 +799,7 @@ msgstr ""
 #, kde-format
 msgctxt "This option links konqueror views"
 msgid "Lin&k View"
-msgstr ""
+msgstr "&ბმულის ნახვა"
 
 #: src/konqmainwindow.cpp:3379
 #, kde-format
@@ -1174,11 +1174,10 @@ msgid "Open bookmarks folder in new tabs"
 msgstr ""
 
 #: src/konqmainwindow.cpp:4248
-#, fuzzy, kde-format
-#| msgid "Open File"
+#, kde-format
 msgctxt "@action:button"
 msgid "Open"
-msgstr "ფაილის გახსნა"
+msgstr "გახსნა"
 
 #: src/konqmainwindow.cpp:4407
 #, kde-format
@@ -1226,6 +1225,8 @@ msgstr "&ხედის რეჟიმი"
 msgid ""
 "You have multiple tabs open in this window, are you sure you want to quit?"
 msgstr ""
+"ამ ფანჯარაში ერთზე მეტი ჩანართია ღია. დარწმუნებული ბრძანდებით, რომ გნებავთ, "
+"გახვიდეთ?"
 
 #: src/konqmainwindow.cpp:4819
 #, kde-format
@@ -1542,7 +1543,7 @@ msgstr "ჩანართის &მოხსნა"
 #: src/konqtabs.cpp:484
 #, kde-format
 msgid "&Close Tab"
-msgstr ""
+msgstr "&ჩანართის დახურვა"
 
 #. i18n: ectx: label, entry, group (UserSettings)
 #: src/konqueror.kcfg:11
@@ -1701,7 +1702,7 @@ msgstr ""
 #: src/konqueror.rc:5
 #, kde-format
 msgid "&File"
-msgstr ""
+msgstr "&ფაილი"
 
 #. i18n: ectx: Menu (edit)
 #: src/konqueror.rc:24
@@ -1743,7 +1744,7 @@ msgstr "&ფანჯარა"
 #: src/konqueror.rc:93
 #, kde-format
 msgid "&Help"
-msgstr ""
+msgstr "&დახმარება"
 
 #. i18n: ectx: ToolBar (mainToolBar)
 #: src/konqueror.rc:98
@@ -1761,7 +1762,7 @@ msgstr "დამატებით პანელი"
 #: src/konqueror.rc:116
 #, kde-format
 msgid "Location Toolbar"
-msgstr ""
+msgstr "მდებარეობის ხელსაწყოების ზოლი"
 
 #. i18n: ectx: ToolBar (bookmarkToolBar)
 #: src/konqueror.rc:122
@@ -1772,13 +1773,13 @@ msgstr "სანიშნების პანელი"
 #: src/konqundomanager.cpp:90 src/konqundomanager.cpp:252
 #, kde-format
 msgid "Und&o: Closed Tab"
-msgstr ""
+msgstr "&გაუქმება: დახურული ჩანართი"
 
 #: src/konqundomanager.cpp:92 src/konqundomanager.cpp:103
 #: src/konqundomanager.cpp:147
 #, kde-format
 msgid "Und&o: Closed Window"
-msgstr ""
+msgstr "&გაუქმება: დახურული ფანჯარა"
 
 #: src/konqundomanager.cpp:105
 #, kde-format
@@ -1808,7 +1809,7 @@ msgstr "თავიდან გაგზავნა"
 #, kde-format
 msgctxt "Execute an executable file"
 msgid "Execute it"
-msgstr ""
+msgstr "გაშვება"
 
 #: src/urlloader.cpp:258
 #, kde-format
@@ -1822,7 +1823,7 @@ msgstr ""
 #, kde-format
 msgctxt "Display an executable file"
 msgid "Display it"
-msgstr ""
+msgstr "ჩვენება"
 
 #: src/urlloader.cpp:263
 #, kde-format

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-07-14 00:45+0000\n"
-"PO-Revision-Date: 2022-08-19 05:46+0200\n"
+"PO-Revision-Date: 2022-11-01 06:21+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2\n"
 
 #: imgallerydialog.cpp:37
 #, kde-format
@@ -190,7 +190,7 @@ msgstr "მინიატურის ზომა:"
 #: imgallerydialog.cpp:235
 #, kde-format
 msgid "&Set different color depth:"
-msgstr ""
+msgstr "ფერის სხვა სიღრმის &დაყენება:"
 
 #: imgallerydialog.cpp:246
 #, kde-format
@@ -200,17 +200,17 @@ msgstr "ფერის სიღრმე:"
 #: imgalleryplugin.cpp:52
 #, kde-format
 msgid "&Create Image Gallery..."
-msgstr ""
+msgstr "სურათების გალერეის &შექმნა..."
 
 #: imgalleryplugin.cpp:62
 #, kde-format
 msgid "Could not create the plugin, please report a bug."
-msgstr ""
+msgstr "დამატების შექმნის შეცდომა. გამოგვიგზავნეთ შეცდომის ანგარიში."
 
 #: imgalleryplugin.cpp:68
 #, kde-format
 msgid "Creating an image gallery works only on local folders."
-msgstr ""
+msgstr "გამოსახულებების გალერეის შექმნა მხოლოდ ლოკალურ საქაღალდეებზე მუშაობს."
 
 #: imgalleryplugin.cpp:88
 #, kde-format
@@ -243,6 +243,8 @@ msgid ""
 "Created thumbnail for: \n"
 "%1"
 msgstr ""
+"მინიატურა შეიქმნა:\n"
+"%1"
 
 #: imgalleryplugin.cpp:215
 #, kde-format
