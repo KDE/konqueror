@@ -24,6 +24,7 @@
 #include <QMenu>
 #include <kmessagebox.h>
 #include <KLocalizedString>
+#include <KLazyLocalizedString>
 #include <kconfig.h>
 #include <kpluginfactory.h>
 #include <kaboutdata.h>
@@ -116,56 +117,58 @@ void PluginBabelFish::slotAboutToShow()
     // Here we would just have the i18n texts for each lang code,
     // and we would make up the menus on the fly.
 
-    static const char *const translations[] = {
-        I18N_NOOP("&Chinese (Simplified)"), "en_zh",
-        I18N_NOOP("Chinese (&Traditional)"), "en_zt",
-        I18N_NOOP("&Dutch"), "en_nl",
-        I18N_NOOP("&French"), "en_fr",
-        I18N_NOOP("&German"), "en_de",
-        I18N_NOOP("&Greek"), "en_el",
-        I18N_NOOP("&Italian"), "en_it",
-        I18N_NOOP("&Japanese"), "en_ja",
-        I18N_NOOP("&Korean"), "en_ko",
-        I18N_NOOP("&Norwegian"), "en_no",
-        I18N_NOOP("&Portuguese"), "en_pt",
-        I18N_NOOP("&Russian"), "en_ru",
-        I18N_NOOP("&Spanish"), "en_es",
-        I18N_NOOP("T&hai"), "en_th", // only on parsit
-        I18N_NOOP("&Arabic"), "fr_ar", // google
-        I18N_NOOP("&Dutch"), "fr_nl",
-        I18N_NOOP("&English"), "fr_en",
-        I18N_NOOP("&German"), "fr_de",
-        I18N_NOOP("&Greek"), "fr_el",
-        I18N_NOOP("&Italian"), "fr_it",
-        I18N_NOOP("&Portuguese"), "fr_pt",
-        I18N_NOOP("&Spanish"), "fr_es",
-        I18N_NOOP("&Russian"), "fr_ru", // only on voila
-        I18N_NOOP("&English"), "de_en",
-        I18N_NOOP("&French"), "de_fr",
-        I18N_NOOP("&English"), "el_en",
-        I18N_NOOP("&French"), "el_fr",
-        I18N_NOOP("&English"), "es_en",
-        I18N_NOOP("&French"), "es_fr",
-        I18N_NOOP("&English"), "pt_en",
-        I18N_NOOP("&French"), "pt_fr",
-        I18N_NOOP("&English"), "it_en",
-        I18N_NOOP("&French"), "it_fr",
-        I18N_NOOP("&English"), "nl_en",
-        I18N_NOOP("&French"), "nl_fr",
-        I18N_NOOP("&English"), "ru_en",
-        I18N_NOOP("&French"), "ru_fr", // only on voila
-        nullptr, nullptr
+    struct {
+        KLazyLocalizedString name;
+        const char *language;
+    } static constexpr const translations[] = {
+        { kli18n("&Chinese (Simplified)"), "en_zh" },
+        { kli18n("Chinese (&Traditional)"), "en_zt" },
+        { kli18n("&Dutch"), "en_nl" },
+        { kli18n("&French"), "en_fr" },
+        { kli18n("&German"), "en_de" },
+        { kli18n("&Greek"), "en_el" },
+        { kli18n("&Italian"), "en_it" },
+        { kli18n("&Japanese"), "en_ja" },
+        { kli18n("&Korean"), "en_ko" },
+        { kli18n("&Norwegian"), "en_no" },
+        { kli18n("&Portuguese"), "en_pt" },
+        { kli18n("&Russian"), "en_ru" },
+        { kli18n("&Spanish"), "en_es" },
+        { kli18n("T&hai"), "en_th" }, // only on parsit
+        { kli18n("&Arabic"), "fr_ar" }, // google
+        { kli18n("&Dutch"), "fr_nl" },
+        { kli18n("&English"), "fr_en" },
+        { kli18n("&German"), "fr_de" },
+        { kli18n("&Greek"), "fr_el" },
+        { kli18n("&Italian"), "fr_it" },
+        { kli18n("&Portuguese"), "fr_pt" },
+        { kli18n("&Spanish"), "fr_es" },
+        { kli18n("&Russian"), "fr_ru" }, // only on voila
+        { kli18n("&English"), "de_en" },
+        { kli18n("&French"), "de_fr" },
+        { kli18n("&English"), "el_en" },
+        { kli18n("&French"), "el_fr" },
+        { kli18n("&English"), "es_en" },
+        { kli18n("&French"), "es_fr" },
+        { kli18n("&English"), "pt_en" },
+        { kli18n("&French"), "pt_fr" },
+        { kli18n("&English"), "it_en" },
+        { kli18n("&French"), "it_fr" },
+        { kli18n("&English"), "nl_en" },
+        { kli18n("&French"), "nl_fr" },
+        { kli18n("&English"), "ru_en" },
+        { kli18n("&French"), "ru_fr" }, // only on voila
     };
 
-    for (int i = 0; translations[i]; i += 2) {
-        const QString translation = QString::fromLatin1(translations[i + 1]);
+    for (const auto &entry : translations) {
+        const QString translation = QString::fromLatin1(entry.language);
         const int underScorePos = translation.indexOf(QLatin1Char('_'));
         const QString srcLang = translation.left(underScorePos);
         QAction *srcAction = actionCollection()->action(QLatin1String("translatewebpage_") + srcLang);
         if (KActionMenu *actionMenu = qobject_cast<KActionMenu *>(srcAction)) {
             QAction *a = actionCollection()->addAction(translation);
             m_actionGroup.addAction(a);
-            a->setText(i18n(translations[i]));
+            a->setText(entry.name.toString());
             actionMenu->addAction(a);
         } else {
             qWarning() << "No menu found for" << srcLang;

@@ -46,14 +46,13 @@
 #include "kfmclient_debug.h"
 
 static const char appName[] = "kfmclient";
-static const char programName[] = I18N_NOOP("kfmclient");
 static const char version[] = "2.0";
 
 extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
 {
     QApplication app(argc, argv);
 
-    KAboutData aboutData(appName, i18n(programName), QLatin1String(version));
+    KAboutData aboutData(appName, i18n("kfmclient"), QLatin1String(version));
     aboutData.setShortDescription(i18n("KDE tool for opening URLs from the command line"));
     KAboutData::setApplicationData(aboutData);
 
@@ -268,11 +267,11 @@ void ClientApp::delayedQuit()
 static void checkArgumentCount(int count, int min, int max)
 {
     if (count < min) {
-        fprintf(stderr, "%s: %s",  programName, i18n("Syntax error, not enough arguments\n").toLocal8Bit().data());
+        fprintf(stderr, "%s: %s",  appName, i18n("Syntax error, not enough arguments\n").toLocal8Bit().data());
         ::exit(1);
     }
     if (max && (count > max)) {
-        fprintf(stderr, "%s: %s", programName, i18n("Syntax error, too many arguments\n").toLocal8Bit().data());
+        fprintf(stderr, "%s: %s", appName, i18n("Syntax error, too many arguments\n").toLocal8Bit().data());
         ::exit(1);
     }
 }
@@ -321,7 +320,7 @@ bool ClientApp::doIt(const QCommandLineParser &parser)
         int ret = KProcess::execute(QStringLiteral("kioclient5"), kioclientArgs);
         return ret == 0;
     } else {
-        fprintf(stderr, "%s: %s", programName, i18n("Syntax error, unknown command '%1'\n", command).toLocal8Bit().data());
+        fprintf(stderr, "%s: %s", appName, i18n("Syntax error, unknown command '%1'\n", command).toLocal8Bit().data());
         return false;
     }
     return true;
