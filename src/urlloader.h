@@ -25,6 +25,7 @@ class KJob;
 namespace KIO {
     class OpenUrlJob;
     class ApplicationLauncherJob;
+    class MimeTypeFinderJob;
 }
 
 class KonqMainWindow;
@@ -129,7 +130,7 @@ public:
     bool isAsync() const {return m_isAsync;}
     void setOldLocationBarUrl(const QString &old);
     QString oldLocationBarUrl() const {return m_oldLocationBarUrl;}
-    bool hasError() const {return m_jobHadError;}
+    bool hasError() const {return m_jobErrorCode;}
     void setNewTab(bool newTab);
     static bool isExecutable(const QString &mimeType);
     QString suggestedFileName() const {return m_request.suggestedFileName;}
@@ -148,7 +149,7 @@ signals:
 
 private slots:
 
-    void mimetypeDeterminedByJob(const QString &mimeType);
+    void mimetypeDeterminedByJob();
     void jobFinished(KJob* job);
     void done(KJob *job=nullptr);
 
@@ -163,7 +164,7 @@ private:
     void saveUrlUsingKIO(const QUrl &orig, const QUrl &dest);
     void detectSettingsForLocalFiles();
     void detectSettingsForRemoteFiles();
-    void launchOpenUrlJob(bool pauseOnMimeTypeDetermined);
+    void launchMimeTypeFinderJob();
     static bool isTextExecutable(const QString &mimeType);
     void openExternally();
     void killOpenUrlJob();
@@ -197,9 +198,11 @@ private:
     KService::Ptr m_service;
     QPointer<KIO::OpenUrlJob> m_openUrlJob;
     QPointer<KIO::ApplicationLauncherJob> m_applicationLauncherJob;
+    QPointer<KIO::MimeTypeFinderJob> m_mimeTypeFinderJob;
     QString m_oldLocationBarUrl;
-    bool m_jobHadError;
+    int m_jobErrorCode;
     bool m_dontPassToWebEnginePart;
+    bool m_protocolAllowsReading;
 };
 
 QDebug operator<<(QDebug dbg, UrlLoader::OpenUrlAction action);
