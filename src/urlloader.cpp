@@ -20,6 +20,7 @@
 #include <KParts/BrowserExtension>
 #include <KParts/PartLoader>
 #include <KIO/FileCopyJob>
+#include <KIO/MimeTypeFinderJob>
 #include <KJobWidgets>
 #include <KProtocolManager>
 #include <KDesktopFile>
@@ -55,7 +56,8 @@ bool UrlLoader::isExecutable(const QString& mimeType)
 }
 
 UrlLoader::UrlLoader(KonqMainWindow *mainWindow, KonqView *view, const QUrl &url, const QString &mimeType, const KonqOpenURLRequest &req, bool trustedSource, bool dontEmbed):
-    QObject(mainWindow), m_mainWindow(mainWindow), m_url(url), m_mimeType(mimeType), m_request(req), m_view(view), m_trustedSource(trustedSource), m_dontEmbed(dontEmbed)
+    QObject(mainWindow), m_mainWindow(mainWindow), m_url(url), m_mimeType(mimeType), m_request(req), m_view(view), m_trustedSource(trustedSource), m_dontEmbed(dontEmbed),
+    m_jobErrorCode(0), m_protocolAllowsReading(KProtocolManager::supportsReading(m_url))
 {
     m_dontPassToWebEnginePart = m_request.args.metaData().contains("DontSendToDefaultHTMLPart");
 }
@@ -104,7 +106,7 @@ void UrlLoader::start()
         }
     }
 
-    m_isAsync = !isMimeTypeKnown(m_mimeType);
+    m_isAsync = m_protocolAllowsReading && !isMimeTypeKnown(m_mimeType);
 }
 
 bool UrlLoader::isViewLocked() const
@@ -123,7 +125,13 @@ void UrlLoader::decideAction()
             m_ready = true;
             return;
         default:
-            if (isViewLocked() || shouldEmbedThis()) {
+            if (m_mimeType.isEmpty() && !m_protocolAllowsReading) {
+                //If the protocol doesn't allow reading and we don't have a mimetype associated with it,
+                //use the Open action, as we most likely won't be able to find out the mimetype. This is
+                //what happens, for example, for mailto URLs
+                m_action = OpenUrlAction::Open;
+                return;
+            } else if (isViewLocked() || shouldEmbedThis()) {
                 bool success = decideEmbedOrSave();
                 if (success) {
                     return;
@@ -148,7 +156,7 @@ void UrlLoader::abort()
 void UrlLoader::goOn()
 {
     if (m_isAsync) {
-        launchOpenUrlJob(true);
+        launchMimeTypeFinderJob();
     } else {
         decideAction();
         m_ready = true;
@@ -188,6 +196,11 @@ bool UrlLoader::decideEmbedOrSave()
      * call again this. To avoid this, if the preferred service is webenginepart and m_dontPassToWebEnginePart
      * is true, use the second preferred service (if any); otherwise return false. This will offer the user
      * the option to open or save, instead.
+     *
+     * This can also happen if the URL was opened from a link with the "download" attribute or with a
+     * "CONTENT-DISPOSITION: attachment" header. In these cases, WebEnginePart will always refuse to open
+     * the URL and will ask Konqueror to download it. However, if the preferred part for the URL mimetype is
+     * WebEnginePart itself, this would lead to an endless loop. This check avoids it
      */
     if (m_dontPassToWebEnginePart && m_part.pluginId() == webEngineName) {
         QVector<KPluginMetaData> parts = KParts::PartLoader::partsForMimeType(m_mimeType);
@@ -315,29 +328,25 @@ bool UrlLoader::serviceIsKonqueror(KService::Ptr service)
     return service && (service->desktopEntryName() == QLatin1String("konqueror") || service->exec().trimmed().startsWith(QLatin1String("kfmclient")));
 }
 
-void UrlLoader::launchOpenUrlJob(bool pauseOnMimeTypeDetermined)
+void UrlLoader::launchMimeTypeFinderJob()
 {
-    QString mimeType = isMimeTypeKnown(m_mimeType) ? m_mimeType : QString();
-    m_openUrlJob = new KIO::OpenUrlJob(m_url, mimeType, this);
-    m_openUrlJob->setEnableExternalBrowser(false);
-    m_openUrlJob->setRunExecutables(true);
-    m_openUrlJob->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, m_mainWindow));
-    m_openUrlJob->setSuggestedFileName(m_request.suggestedFileName);
-    m_openUrlJob->setDeleteTemporaryFile(m_request.tempFile);
-    if (pauseOnMimeTypeDetermined) {
-        connect(m_openUrlJob, &KIO::OpenUrlJob::mimeTypeFound, this, &UrlLoader::mimetypeDeterminedByJob);
-    }
-    connect(m_openUrlJob, &KJob::finished, this, &UrlLoader::jobFinished);
-    m_openUrlJob->start();
+    m_mimeTypeFinderJob = new KIO::MimeTypeFinderJob(m_url, this);
+    m_mimeTypeFinderJob->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, m_mainWindow));
+    m_mimeTypeFinderJob->setSuggestedFileName(m_request.suggestedFileName);
+    connect(m_mimeTypeFinderJob, &KIO::MimeTypeFinderJob::result, this, [this](KJob*){mimetypeDeterminedByJob();});
+    m_mimeTypeFinderJob->start();
 }
 
-void UrlLoader::mimetypeDeterminedByJob(const QString &mimeType)
+void UrlLoader::mimetypeDeterminedByJob()
 {
-    m_mimeType=mimeType;
-    m_openUrlJob->suspend();
-    decideAction();
-    if (m_action != OpenUrlAction::Execute) {
-        m_openUrlJob->kill();
+    if (!m_mimeTypeFinderJob->error()) {
+        m_mimeType=m_mimeTypeFinderJob->mimeType();
+        decideAction();
+    } else {
+        m_jobErrorCode = m_mimeTypeFinderJob->error();
+        m_url = KParts::BrowserRun::makeErrorUrl(m_jobErrorCode, m_mimeTypeFinderJob->errorString(), m_url);
+        m_mimeType = QStringLiteral("text/html");
+        m_action = OpenUrlAction::Embed;
     }
     performAction();
 }
@@ -409,8 +418,13 @@ void UrlLoader::detectSettingsForLocalFiles()
             }
         }
     } else {
-        QMimeDatabase db;
-        m_mimeType = db.mimeTypeForFile(m_url.path()).name();
+        if (QFile::exists(m_url.path())) {
+            QMimeDatabase db;
+            m_mimeType = db.mimeTypeForFile(m_url.path()).name();
+        } else {
+            //Treat the nonexisting file as a directory
+            m_mimeType = QStringLiteral("inode/directory");
+        }
     }
 }
 
@@ -422,6 +436,11 @@ bool UrlLoader::shouldEmbedThis() const
 
 void UrlLoader::embed()
 {
+    if (m_jobErrorCode) {
+        m_url = KParts::BrowserRun::makeErrorUrl(m_jobErrorCode, m_url.scheme(), m_url);
+        m_mimeType = QStringLiteral("text/html");
+        m_part = findPartById(QStringLiteral("webenginepart"));
+    }
     bool embedded = m_mainWindow->openView(m_mimeType, m_url, m_view, m_request);
     if (embedded) {
         done();
@@ -467,11 +486,20 @@ void UrlLoader::open()
     if (m_service && serviceIsKonqueror(m_service) && m_mainWindow->refuseExecutingKonqueror(m_mimeType)) {
         return;
     }
-    KIO::ApplicationLauncherJob *job = new KIO::ApplicationLauncherJob(m_service);
-    job->setUrls({m_url});
-    job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, m_mainWindow));
-    if (m_request.tempFile) {
-        job->setRunFlags(KIO::ApplicationLauncherJob::DeleteTemporaryFiles);
+
+    KJob *job = nullptr;
+    if (m_service) {
+        KIO::ApplicationLauncherJob *j = new KIO::ApplicationLauncherJob(m_service);
+        j->setUrls({m_url});
+        j->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, m_mainWindow));
+        if (m_request.tempFile) {
+            j->setRunFlags(KIO::ApplicationLauncherJob::DeleteTemporaryFiles);
+        }
+        job = j;
+    } else {
+        KIO::OpenUrlJob *j = new KIO::OpenUrlJob(m_url);
+        j->setDeleteTemporaryFile(m_request.tempFile);
+        job = j;
     }
     connect(job, &KJob::finished, this, [this, job](){done(job);});
     job->start();
@@ -479,15 +507,14 @@ void UrlLoader::open()
 
 void UrlLoader::execute()
 {
-    //Since only local files can be executed, m_openUrlJob should always be nullptr. However, keep this check, just in case
-    if (!m_openUrlJob) {
-        launchOpenUrlJob(false);
-        connect(m_openUrlJob, &KJob::finished, this, [this](){done(m_openUrlJob);});
-    } else {
-        disconnect(m_openUrlJob, &KJob::finished, this, nullptr); //Otherwise, jobFinished will be called twice
-        connect(m_openUrlJob, &KJob::finished, this, [this](){done(m_openUrlJob);});
-        m_openUrlJob->resume();
-    }
+    m_openUrlJob = new KIO::OpenUrlJob(m_url, m_mimeType, this);
+    m_openUrlJob->setEnableExternalBrowser(false);
+    m_openUrlJob->setRunExecutables(true);
+    m_openUrlJob->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, m_mainWindow));
+    m_openUrlJob->setSuggestedFileName(m_request.suggestedFileName);
+    m_openUrlJob->setDeleteTemporaryFile(m_request.tempFile);
+    connect(m_openUrlJob, &KJob::finished, this, [this]{done(m_openUrlJob);});
+    m_openUrlJob->start();
 }
 
 //Copied from KParts::BrowserRun::isTextExecutable
@@ -544,7 +571,7 @@ UrlLoader::ViewToUse UrlLoader::viewToUse() const
 
 void UrlLoader::jobFinished(KJob* job)
 {
-    m_jobHadError = job->error();
+    m_jobErrorCode = job->error();
 }
 
 QDebug operator<<(QDebug dbg, UrlLoader::OpenUrlAction action)
