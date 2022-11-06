@@ -50,11 +50,37 @@ protected:
      */
     void contextMenuEvent(QContextMenuEvent*) override;
 
+    /**
+     * @brief Improve drag and drop functionality provided by `QWebEngineView`
+     *
+     * Before Qt 5.15.5, `QWebEngineView` didn't allow to open remote URLs by drag and drop. This function, together with
+     * dragEnterEvent(), dragMoveEvent() and m_dragAndDropHandledBySuperclass allow that.
+     *
+     * In Qt 5.15.5, `QWebEngineView` allows opening remote URLs by drag and drop, but forces doing so in a new tab.
+     * This reimplemented method, instead, opens it in the current view.
+     *
+     * @note Implementing this function with the behavior of `QWebEngineView` from Qt 5.15.5 is impossible without resorting
+     * to an ugly hack. The problem is that we can't know whether the dropped URL should actually be opened or not because there
+     * can be pages (or part of them) where dropping an URL has a special meaning (for example, uploading a file). In this case,
+     * this function shouldn't interfere with the base class implementation. Unfortunately, `QWebEngineView` doesn't provide any
+     * way to find out whether the URL should be opened or if the drop had
+     * another effect, so we always should rely only on the base class implementation, which isn't configurable. To trick it,
+     * we use WebEnginePage::setDropOperationStarted() to tell the page that a drop operation has started: this changes the way
+     * WebEnginePage::createWindow() works so that it returns the page itself rather than creating a new page. The main problem,
+     * however, is that there's no way to find out when the drop operation has ended, so we have to resort to a crude heuristic
+     * to decide when this happens (as described in WebEnginePage::setDropOperationStarted())
+     *
+     * @see m_dragAndDropHandledBySuperclass
+     * @see acceptDragMoveEventIfPossible()
+     * @see WebEnginePage::setDropOperationStarted():
+     */
     void dropEvent(QDropEvent *e) override;
 
+#ifdef REMOTE_DND_NOT_HANDLED_BY_WEBENGINE
     void dragEnterEvent(QDragEnterEvent *e) override;
 
     void dragMoveEvent(QDragMoveEvent *e) override;
+#endif
 
     /**
      * Reimplemented for internal reasons, the API is not affected.
@@ -108,6 +134,18 @@ private:
     void multimediaActionPopupMenu(KParts::BrowserExtension::ActionGroupMap&);
     void addSearchActions(QList<QAction*>& selectActions, QWebEngineView*);
 
+    KActionCollection* m_actionCollection;
+    QWebEngineContextMenuData m_result;
+    QPointer<WebEnginePart> m_part;
+
+    qint32 m_autoScrollTimerId;
+    qint32 m_verticalAutoScrollSpeed;
+    qint32 m_horizontalAutoScrollSpeed;
+
+    QHash<QString, QChar> m_duplicateLinkElements;
+    QMenu *m_spellCheckMenu;
+
+#ifdef REMOTE_DND_NOT_HANDLED_BY_WEBENGINE
     /**
      * @brief Whether a drop enter or move event should be accepted even if the superclass wants to reject it
      *
@@ -121,17 +159,6 @@ private:
      */
     void acceptDragMoveEventIfPossible(QDragMoveEvent *e);
 
-    KActionCollection* m_actionCollection;
-    QWebEngineContextMenuData m_result;
-    QPointer<WebEnginePart> m_part;
-
-    qint32 m_autoScrollTimerId;
-    qint32 m_verticalAutoScrollSpeed;
-    qint32 m_horizontalAutoScrollSpeed;
-
-    QHash<QString, QChar> m_duplicateLinkElements;
-    QMenu *m_spellCheckMenu;
-
     /**
      * @brief Whether a drop action should be handled by `QWebEngineView` or not
      *
@@ -142,6 +169,7 @@ private:
      * acceptDragMoveEventIfPossible, this variable is set to @c false; otherwise it's set to @c true.
      */
     bool m_dragAndDropHandledBySuperclass = true;
+#endif
 };
 
 #endif // WEBENGINEVIEW_H

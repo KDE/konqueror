@@ -72,6 +72,26 @@ public:
      */
     void setPart(WebEnginePart *part);
 
+#ifndef REMOTE_DND_NOT_HANDLED_BY_WEBENGINE
+    /**
+     * @brief Informs the page that a drop operation has been started
+     *
+     * Calling this method changes the behavior of createWindow()
+     * @note Since `QWebEngineView` doesn't provide a way to tell when a drop operation actually end,
+     * there's no function to inform that the drop operation has ended. The page considers the
+     * drop operation to have ended when one the following happens:
+     * - createWindow() is called
+     * - the `loadStarted` signal is emitted
+     * - 100ms have elapsed since the last call to this method (this time interval has been chosen arbitrary: it should
+     *   be enough for the drop operation to have actually ended but short enough to make it unlikely that
+     *   the user has started another action)
+     * @see m_dropOperationTimer
+     * @see createWindow()
+     * @see WebEngineView::dropEvent
+     */
+    void setDropOperationStarted();
+#endif
+
 Q_SIGNALS:
     /**
      * This signal is emitted whenever a user cancels/aborts a load resource
@@ -89,8 +109,16 @@ protected:
     WebEnginePart* part() const;
 
     /**
+     * @brief Override of `QWebEnginePage::createWindow`
+     *
      * Reimplemented for internal reasons, the API is not affected.
-     * @internal
+     *
+     * By default, a new NewWindowPage will be returned; however, calling setDropOperationStarted changes
+     * this behavior: in this case, no pages will be created and the function returns `this`. The default
+     * behavior is restored when the drop operation ends (see setDropOperationStarted()).
+     * @param type the window type to create. This is ignored if setDropOperationStarted has been called with `true`
+     * @return a new NewWindowPage or `this` if within a drop operation
+     * @see setDropOperationStarted
      */
     QWebEnginePage* createWindow(WebWindowType type) override;
 
@@ -172,6 +200,16 @@ private:
     QPointer<WebEnginePart> m_part;
 
     QScopedPointer<KPasswdServerClient> m_passwdServerClient;
+
+#ifndef REMOTE_DND_NOT_HANDLED_BY_WEBENGINE
+    /**
+     * @brief Timer used to decide whether a drop operation is happening
+     *
+     * A drop operation is happening if this timer is active
+     * @see setDropOperationStarted for more details
+     */
+    QTimer *m_dropOperationTimer;
+#endif
 };
 
 

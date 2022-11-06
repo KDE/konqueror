@@ -8,6 +8,12 @@ if(BUILD_TESTING)
   add_definitions(-DBUILD_TESTING)
 endif(BUILD_TESTING)
 
+#Before Qt 5.15.5 QtWebEngineView didn't allow opening a remote URL by dropping it
+#on the view itself, so WebEngineView needed to handle that itself.
+if(Qt5WebEngineWidgets_VERSION VERSION_LESS "5.15.5")
+  add_definitions(-DREMOTE_DND_NOT_HANDLED_BY_WEBENGINE)
+endif()
+
 include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_BINARY_DIR})
 
 set(kwebenginepartlib_LIB_SRCS

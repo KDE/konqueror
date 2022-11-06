@@ -614,16 +614,17 @@ void WebEngineView::addSearchActions(QList<QAction*>& selectActions, QWebEngineV
     }
 }
 
-void WebEngineView::acceptDragMoveEventIfPossible(QDragMoveEvent* e)
+#ifndef REMOTE_DND_NOT_HANDLED_BY_WEBENGINE
+void WebEngineView::dropEvent(QDropEvent* e)
 {
-    if (!e->isAccepted() && e->mimeData()->hasUrls()) {
-        e->acceptProposedAction();
-        m_dragAndDropHandledBySuperclass = false;
-    } else {
-        m_dragAndDropHandledBySuperclass = true;
+    WebEnginePage *pg = qobject_cast<WebEnginePage*>(page());
+    if (pg) {
+        pg->setDropOperationStarted();
     }
+    QWebEngineView::dropEvent(e);
 }
 
+#else
 void WebEngineView::dropEvent(QDropEvent* e)
 {
     QWebEngineView::dropEvent(e);
@@ -634,6 +635,16 @@ void WebEngineView::dropEvent(QDropEvent* e)
         m_dragAndDropHandledBySuperclass = true;
         emit m_part->browserExtension()->openUrlRequest(e->mimeData()->urls().first());
         e->acceptProposedAction();
+    }
+}
+
+void WebEngineView::acceptDragMoveEventIfPossible(QDragMoveEvent* e)
+{
+    if (!e->isAccepted() && e->mimeData()->hasUrls()) {
+        e->acceptProposedAction();
+        m_dragAndDropHandledBySuperclass = false;
+    } else {
+        m_dragAndDropHandledBySuperclass = true;
     }
 }
 
@@ -648,3 +659,4 @@ void WebEngineView::dragMoveEvent(QDragMoveEvent* e)
     QWebEngineView::dragMoveEvent(e);
     acceptDragMoveEventIfPossible(e);
 }
+#endif

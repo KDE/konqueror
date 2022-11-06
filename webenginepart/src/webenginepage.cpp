@@ -66,6 +66,9 @@ WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
          m_ignoreError(false),
          m_part(part),
          m_passwdServerClient(new KPasswdServerClient)
+#ifndef REMOTE_DND_NOT_HANDLED_BY_WEBENGINE
+         , m_dropOperationTimer(new QTimer(this))
+#endif
 {
     if (view())
         WebEngineSettings::self()->computeFontSizes(view()->logicalDpiY());
@@ -83,6 +86,11 @@ WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
     connect(this, &QWebEnginePage::authenticationRequired,
             this, &WebEnginePage::slotAuthenticationRequired);
     connect(this, &QWebEnginePage::fullScreenRequested, this, &WebEnginePage::changeFullScreenMode);
+
+#ifndef REMOTE_DND_NOT_HANDLED_BY_WEBENGINE
+    connect(this, &QWebEnginePage::loadStarted, this, [this](){m_dropOperationTimer->stop();});
+    m_dropOperationTimer->setSingleShot(true);
+#endif
 
     //If this part is displaying the developer tools for another part, inform the other page it's not displaying the developer tools anymore.
     //I'm not sure this is needed, but I think it's better to do it, just to be on the safe side
@@ -164,8 +172,23 @@ void WebEnginePage::requestOpenFileAsTemporary(const QUrl& url, const QString &m
     emit part()->browserExtension()->openUrlRequest(url, oArgs, bArgs);
 }
 
+# ifndef REMOTE_DND_NOT_HANDLED_BY_WEBENGINE
+void WebEnginePage::setDropOperationStarted()
+{
+    m_dropOperationTimer->start(100);
+}
+#endif
+
+
 QWebEnginePage *WebEnginePage::createWindow(WebWindowType type)
 {
+#ifndef REMOTE_DND_NOT_HANDLED_BY_WEBENGINE
+    if (m_dropOperationTimer->isActive()) {
+        m_dropOperationTimer->stop();
+        return this;
+    }
+#endif
+
     //qCDebug(WEBENGINEPART_LOG) << "window type:" << type;
     // Crete an instance of NewWindowPage class to capture all the
     // information we need to create a new window. See documentation of
