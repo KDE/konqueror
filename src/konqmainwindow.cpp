@@ -303,7 +303,6 @@ KonqMainWindow::KonqMainWindow(const QUrl &initialURL)
 
     //qCDebug(KONQUEROR_LOG) << this << "created";
 
-    KonqSessionManager::self();
     m_fullyConstructed = true;
 }
 

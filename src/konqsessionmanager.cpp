@@ -363,8 +363,7 @@ KonqSessionManager::KonqSessionManager()
     const int interval = KonqSettings::autoSaveInterval();
     if (interval > 0) {
         m_autoSaveTimer.setInterval(interval * 1000);
-        connect(&m_autoSaveTimer, SIGNAL(timeout()), this,
-                SLOT(autoSaveSession()));
+        connect(&m_autoSaveTimer, &QTimer::timeout, this, &KonqSessionManager::autoSaveSession);
     }
     enableAutosave();
 

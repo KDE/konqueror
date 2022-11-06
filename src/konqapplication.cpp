@@ -186,6 +186,9 @@ int KonquerorApplication::startFirstInstance()
 
     QString programName = QApplication::applicationFilePath();
 
+    //Ensure a session manager is created
+    KonqSessionManager::self();
+
     const int ret = exec();
 
     bool alwaysPreload = KonqSettings::alwaysHavePreloaded();
