@@ -52,6 +52,7 @@ static const char version[] = "2.0";
 extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
 {
     QApplication app(argc, argv);
+    KLocalizedString::setApplicationDomain("kfmclient");
 
     KAboutData aboutData(appName, i18n(programName), QLatin1String(version));
     aboutData.setShortDescription(i18n("KDE tool for opening URLs from the command line"));
