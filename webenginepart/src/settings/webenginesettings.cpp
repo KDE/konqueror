@@ -718,9 +718,7 @@ void WebEngineSettings::init( KConfig * config, bool reset )
 
   QWebEngineSettings::defaultSettings()->setAttribute(QWebEngineSettings::ScrollAnimatorEnabled, smoothScrolling() != KSmoothScrollingDisabled);
 
-#ifdef WEBENGINE_PDF_VIEWER
   QWebEngineSettings::defaultSettings()->setAttribute(QWebEngineSettings::PdfViewerEnabled, internalPdfViewer());
-#endif
 
   QWebEngineSettings::defaultSettings()->setAttribute(QWebEngineSettings::FullScreenSupportEnabled, true);
 

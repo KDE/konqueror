@@ -49,9 +49,7 @@ private:
     QCheckBox *m_pDoNotTrack;
     QCheckBox *m_pOfferToSaveWebsitePassword;
     QSpinBox *m_pMaxFormCompletionItems;
-#ifdef WEBENGINE_PDF_VIEWER
     QCheckBox *m_pdfViewer;
-#endif
 };
 
 #endif // HTMLOPTS_H

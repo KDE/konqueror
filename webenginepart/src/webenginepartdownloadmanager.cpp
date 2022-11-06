@@ -110,12 +110,8 @@ void WebEnginePartDownloadManager::saveBlob(QWebEngineDownloadItem* it)
     }
     QString file = dlg.selectedFiles().at(0);
     QFileInfo info(file);
-#ifdef WEBENGINEDOWNLOADITEM_USE_PATH
-    it->setPath(info.filePath());
-#else
     it->setDownloadDirectory(info.path());
     it->setDownloadFileName(info.fileName());
-#endif
     it->accept();
     it->pause();
     WebEngineBlobDownloadJob *j = new WebEngineBlobDownloadJob(it, this);
@@ -130,18 +126,10 @@ void WebEnginePartDownloadManager::openBlob(QWebEngineDownloadItem* it, WebEngin
 {
     QMimeDatabase db;
     QMimeType type = db.mimeTypeForName(it->mimeType());
-#ifdef WEBENGINEDOWNLOADITEM_USE_PATH
-    QString suggestedName = it->path();
-#else
     QString suggestedName = it->suggestedFileName();
-#endif
     QString fileName = generateBlobTempFileName(suggestedName, type.preferredSuffix());
-#ifdef WEBENGINEDOWNLOADITEM_USE_PATH
-    it->setPath(m_tempDownloadDir.filePath(fileName));
-#else
     it->setDownloadDirectory(m_tempDownloadDir.path());
     it->setDownloadFileName(fileName);
-#endif
     connect(it, &QWebEngineDownloadItem::finished, this, [this, it, page](){blobDownloadedToFile(it, page);});
     it->accept();
 }
@@ -165,11 +153,7 @@ QString WebEnginePartDownloadManager::generateBlobTempFileName(const QString& su
 
 void WebEnginePartDownloadManager::blobDownloadedToFile(QWebEngineDownloadItem *it, WebEnginePage *page)
 {
-#ifdef WEBENGINEDOWNLOADITEM_USE_PATH
-    QString file = it->path();
-#else
     QString file = QDir(it->downloadDirectory()).filePath(it->downloadFileName());
-#endif
     if (page) {
         page->requestOpenFileAsTemporary(QUrl::fromLocalFile(file), it->mimeType());
     } else {
@@ -239,11 +223,7 @@ void WebEngineBlobDownloadJob::startDownloading()
 {
     if (m_downloadItem) {
         m_startTime = QDateTime::currentDateTime();
-#ifdef WEBENGINEDOWNLOADITEM_USE_PATH
-        QString name = QFileInfo(m_downloadItem->path()).filePath();
-#else
         QString name = m_downloadItem->downloadFileName();
-#endif
         emit description(this, i18nc("Notification about downloading a file", "Downloading"),
                         QPair<QString, QString>(i18nc("Source of a file being downloaded", "Source"), m_downloadItem->url().toString()),
                         QPair<QString, QString>(i18nc("Destination of a file download", "Destination"), name));
@@ -258,11 +238,7 @@ void WebEngineBlobDownloadJob::downloadFinished()
     if (m_startTime.msecsTo(now) < 500) {
         if (m_downloadItem && m_downloadItem->page()) {
             WebEnginePage *page = qobject_cast<WebEnginePage*>(m_downloadItem->page());
-#ifdef WEBENGINEDOWNLOADITEM_USE_PATH
-            QString filePath = m_downloadItem->path();
-#else
             QString filePath = QDir(m_downloadItem->downloadDirectory()).filePath(m_downloadItem->downloadFileName());
-#endif
             emit page->setStatusBarText(i18nc("Finished saving BLOB URL", "Finished saving %1 as %2", m_downloadItem->url().toString(), filePath));
         }
     }

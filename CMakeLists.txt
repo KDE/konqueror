@@ -39,14 +39,6 @@ find_package(KF5 ${KF5_MIN_VERSION} COMPONENTS Activities DocTools) # Optional
 
 find_package(Hunspell)
 
-if(NOT Qt5WebEngineWidgets_VERSION VERSION_LESS "5.13.0")
-  add_definitions(-DWEBENGINE_PDF_VIEWER)
-endif()
-
-if(Qt5WebEngineWidgets_VERSION VERSION_LESS "5.14.0")
-  add_definitions(-DWEBENGINEDOWNLOADITEM_USE_PATH)
-endif()
-
 option(WITHOUT_X11 "Build without X11 integration (skips finding Qt5X11Extras)" OFF)
 if(NOT WITHOUT_X11)
     find_package(Qt5X11Extras)
