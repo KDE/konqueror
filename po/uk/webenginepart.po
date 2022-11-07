@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webenginepart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-24 00:46+0000\n"
+"POT-Creation-Date: 2022-11-07 00:44+0000\n"
 "PO-Revision-Date: 2022-01-03 10:42+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -527,7 +527,7 @@ msgstr "Встановлено"
 msgid "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
 msgstr "<td>Тип MIME</td><td>Опис</td><td>Суфікси</td><td>Додаток</td>"
 
-#: src/settings/webenginesettings.cpp:909
+#: src/settings/webenginesettings.cpp:907
 #, kde-format
 msgid "Filter error"
 msgstr "Помилка фільтра"
@@ -761,14 +761,14 @@ msgstr "Зберегти дані форми у KWallet під час закри
 msgid "&Immediately memorize form data"
 msgstr "&Негайно запам'ятати дані форми"
 
-#: src/webenginepage.cpp:125
+#: src/webenginepage.cpp:133
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr ""
 "Інструмент керування отриманнями (%1) не було знайдено серед встановлених "
 "компонентів."
 
-#: src/webenginepage.cpp:126
+#: src/webenginepage.cpp:134
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -780,7 +780,7 @@ msgstr ""
 "\n"
 "Інтеграцію поки що буде вимкнено."
 
-#: src/webenginepage.cpp:268
+#: src/webenginepage.cpp:291
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -794,12 +794,12 @@ msgstr ""
 "сплати. Якщо ж це не так, натисніть кнопку «Продовжити», щоб надати програмі "
 "змогу знову показати сторінку.</p>"
 
-#: src/webenginepage.cpp:275
+#: src/webenginepage.cpp:298
 #, kde-format
 msgid "Resubmit Information"
 msgstr "Інформація щодо повторного надсилання даних"
 
-#: src/webenginepage.cpp:507
+#: src/webenginepage.cpp:530
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -809,18 +809,18 @@ msgstr ""
 "перебування.\n"
 "Надати доступ до цих даних?"
 
-#: src/webenginepage.cpp:511 src/webenginepage.cpp:628
-#: src/webenginepage.cpp:639
+#: src/webenginepage.cpp:534 src/webenginepage.cpp:651
+#: src/webenginepage.cpp:662
 #, kde-format
 msgid "Network Transmission"
 msgstr "Перенесення мережею"
 
-#: src/webenginepage.cpp:512
+#: src/webenginepage.cpp:535
 #, kde-format
 msgid "Allow access"
 msgstr "Дозволити доступ"
 
-#: src/webenginepage.cpp:587
+#: src/webenginepage.cpp:610
 #, kde-format
 msgid ""
 "<qt>This untrusted page links to<br/><b>%1</b>.<br/>Do you want to follow "
@@ -829,29 +829,29 @@ msgstr ""
 "<qt>Ця ненадійна сторінка посилається на <br /><b>%1</b>.<br />Хочете "
 "перейти за цим посиланням?</qt>"
 
-#: src/webenginepage.cpp:589
+#: src/webenginepage.cpp:612
 #, kde-format
 msgid "Security Warning"
 msgstr "Попередження безпеки"
 
-#: src/webenginepage.cpp:590
+#: src/webenginepage.cpp:613
 #, kde-format
 msgctxt "follow link despite of security warning"
 msgid "Follow"
 msgstr "Перейти за посиланням"
 
-#: src/webenginepage.cpp:592
+#: src/webenginepage.cpp:615
 #, kde-format
 msgid "Security Alert"
 msgstr "Попередження безпеки"
 
-#: src/webenginepage.cpp:593
+#: src/webenginepage.cpp:616
 #, kde-format
 msgid "<qt>Access by untrusted page to<br/><b>%1</b><br/> denied.</qt>"
 msgstr ""
 "<qt>Доступ для ненадійної сторінки до <br /><b>%1</b><br /> заборонено.</qt>"
 
-#: src/webenginepage.cpp:621
+#: src/webenginepage.cpp:644
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -864,12 +864,12 @@ msgstr ""
 "Третя сторона може перехопити та переглянути цю інформацію.\n"
 "Ви впевнені, що бажаєте надіслати незашифровані дані?"
 
-#: src/webenginepage.cpp:629
+#: src/webenginepage.cpp:652
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&Надіслати незашифрованим"
 
-#: src/webenginepage.cpp:636
+#: src/webenginepage.cpp:659
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -878,12 +878,12 @@ msgstr ""
 "Цей сайт намагається надіслати дані форми електронною поштою.\n"
 "Продовжити?"
 
-#: src/webenginepage.cpp:640
+#: src/webenginepage.cpp:663
 #, kde-format
 msgid "&Send Email"
 msgstr "Надіслати &лист"
 
-#: src/webenginepage.cpp:689
+#: src/webenginepage.cpp:712
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -892,22 +892,22 @@ msgstr ""
 "<qt>Бажаєте дозволити долучення наведених нижче файлів до повідомлення "
 "електронної пошти на цьому сайті?</qt>"
 
-#: src/webenginepage.cpp:691
+#: src/webenginepage.cpp:714
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Підтвердження долучення"
 
-#: src/webenginepage.cpp:692
+#: src/webenginepage.cpp:715
 #, kde-format
 msgid "&Allow attachments"
 msgstr "&Дозволити долучення"
 
-#: src/webenginepage.cpp:693
+#: src/webenginepage.cpp:716
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&Ігнорувати долучення"
 
-#: src/webenginepage.cpp:707
+#: src/webenginepage.cpp:730
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -916,12 +916,12 @@ msgstr ""
 "Цей сайт спробував долучити файл з вашого комп'ютера при надсиланні даних "
 "форми. Долучення було вилучено з метою забезпечення вашої безпеки."
 
-#: src/webenginepage.cpp:710
+#: src/webenginepage.cpp:733
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Вилучено долучення"
 
-#: src/webenginepage.cpp:840
+#: src/webenginepage.cpp:863
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -930,7 +930,7 @@ msgstr ""
 "Ця сторінка надіслала запит щодо відкриття нового контекстного вікна.\n"
 "Дозволити такий перехід?"
 
-#: src/webenginepage.cpp:842
+#: src/webenginepage.cpp:865
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -939,17 +939,17 @@ msgstr ""
 "<qt>Ця сторінка надіслала запит щодо відкриття контекстного вікна зі "
 "сторінкою<p>%1</p><br/>Дозволити такий перехід?</qt>"
 
-#: src/webenginepage.cpp:846
+#: src/webenginepage.cpp:869
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Контекстне підтвердження Javascript"
 
-#: src/webenginepage.cpp:847
+#: src/webenginepage.cpp:870
 #, kde-format
 msgid "Allow"
 msgstr "Дозволити"
 
-#: src/webenginepage.cpp:848
+#: src/webenginepage.cpp:871
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Не дозволяти"
@@ -1247,30 +1247,30 @@ msgstr "&Призначення"
 msgid "&Issuer"
 msgstr "&Видавець"
 
-#: src/webenginepartdownloadmanager.cpp:235
+#: src/webenginepartdownloadmanager.cpp:219
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr "Під час спроби зберегти файл сталася помилка: %1"
 
-#: src/webenginepartdownloadmanager.cpp:247
+#: src/webenginepartdownloadmanager.cpp:227
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr "Отримання"
 
-#: src/webenginepartdownloadmanager.cpp:248
+#: src/webenginepartdownloadmanager.cpp:228
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr "Джерело"
 
-#: src/webenginepartdownloadmanager.cpp:249
+#: src/webenginepartdownloadmanager.cpp:229
 #, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "Призначення"
 
-#: src/webenginepartdownloadmanager.cpp:266
+#: src/webenginepartdownloadmanager.cpp:242
 #, kde-format
 msgctxt "Finished saving BLOB URL"
 msgid "Finished saving %1 as %2"

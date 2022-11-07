@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfmclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"POT-Creation-Date: 2022-11-07 00:44+0000\n"
 "PO-Revision-Date: 2007-12-03 09:13-0600\n"
 "Last-Translator: Cindy McKee <cfmckee@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -30,42 +30,42 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 
-#: kfmclient.cpp:49
+#: kfmclient.cpp:55
 #, kde-format
 msgid "kfmclient"
 msgstr "kfmclient"
 
-#: kfmclient.cpp:57
+#: kfmclient.cpp:56
 #, kde-format
 msgid "KDE tool for opening URLs from the command line"
 msgstr "KDE-programo por malfermi URLojn de la komandlinio"
 
-#: kfmclient.cpp:65
+#: kfmclient.cpp:64
 #, kde-format
 msgid "Non interactive use: no message boxes"
 msgstr "Neinteraga uzo: neniuj mesaĝaj dialogujoj"
 
-#: kfmclient.cpp:67
+#: kfmclient.cpp:66
 #, kde-format
 msgid "Show available commands"
 msgstr "Montras uzeblajn komandojn"
 
-#: kfmclient.cpp:69
+#: kfmclient.cpp:68
 #, kde-format
 msgid "Command (see --commands)"
 msgstr "Komando (vd. --commands)"
 
-#: kfmclient.cpp:71
+#: kfmclient.cpp:70
 #, kde-format
 msgid "Arguments for command"
 msgstr "Argumentoj por komando"
 
-#: kfmclient.cpp:73
+#: kfmclient.cpp:72
 #, kde-format
 msgid "The files/URLs opened by the application will be deleted after use"
 msgstr ""
 
-#: kfmclient.cpp:81
+#: kfmclient.cpp:80
 #, kde-format
 msgid ""
 "\n"
@@ -74,7 +74,7 @@ msgstr ""
 "\n"
 "Sintakso:\n"
 
-#: kfmclient.cpp:82
+#: kfmclient.cpp:81
 #, kde-format
 msgid ""
 "  kfmclient openURL 'url' ['mimetype']\n"
@@ -91,7 +91,7 @@ msgstr ""
 "            # Se 'url' estas forlasata, HOME estas uzata.\n"
 "\n"
 
-#: kfmclient.cpp:87
+#: kfmclient.cpp:86
 #, kde-format
 msgid ""
 "            # If 'mimetype' is specified, it will be used to determine the\n"
@@ -106,7 +106,7 @@ msgstr ""
 "            #   text/html por TTT-paĝo, por aperigi ĝin pli rapide\n"
 "\n"
 
-#: kfmclient.cpp:91
+#: kfmclient.cpp:90
 #, kde-format
 msgid ""
 "  kfmclient newTab 'url' ['mimetype']\n"
@@ -121,19 +121,19 @@ msgstr ""
 "            #   Konkeranto sur la aktiva labortablo, se tio estas ebla.\n"
 "\n"
 
-#: kfmclient.cpp:271
+#: kfmclient.cpp:270
 #, fuzzy, kde-format
 #| msgid "Syntax Error: Not enough arguments\n"
 msgid "Syntax error, not enough arguments\n"
 msgstr "Sintakseraro: Mankas argumento(j)\n"
 
-#: kfmclient.cpp:275
+#: kfmclient.cpp:274
 #, fuzzy, kde-format
 #| msgid "Syntax Error: Too many arguments\n"
 msgid "Syntax error, too many arguments\n"
 msgstr "Sintakseraro: Tro multaj argumentoj\n"
 
-#: kfmclient.cpp:324
+#: kfmclient.cpp:323
 #, fuzzy, kde-format
 #| msgid "Syntax Error: Unknown command '%1'\n"
 msgid "Syntax error, unknown command '%1'\n"

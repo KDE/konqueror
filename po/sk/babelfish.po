@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: babelfish\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"POT-Creation-Date: 2022-11-07 00:44+0000\n"
 "PO-Revision-Date: 2022-04-09 15:17+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -40,177 +40,161 @@ msgstr "&Nástroje"
 msgid "Extra Toolbar"
 msgstr "Extra panel nástrojov"
 
-#: plugin_babelfish.cpp:35
+#: plugin_babelfish.cpp:36
 #, kde-format
 msgid "Translate Web Page"
 msgstr "Preložiť stránku WWW"
 
-#: plugin_babelfish.cpp:43
+#: plugin_babelfish.cpp:44
 #, kde-format
 msgid "Translate Web &Page"
 msgstr "&Preložiť stránku WWW"
 
-#: plugin_babelfish.cpp:80
+#: plugin_babelfish.cpp:81
 #, kde-format
 msgid "&English To"
 msgstr "&Angličtina do"
 
-#: plugin_babelfish.cpp:83
+#: plugin_babelfish.cpp:84
 #, kde-format
 msgid "&French To"
 msgstr "&Francúzština do"
 
-#: plugin_babelfish.cpp:86
+#: plugin_babelfish.cpp:87
 #, kde-format
 msgid "&German To"
 msgstr "&Nemčina do"
 
-#: plugin_babelfish.cpp:89
+#: plugin_babelfish.cpp:90
 #, kde-format
 msgid "&Greek To"
 msgstr "Gréčtina do"
 
-#: plugin_babelfish.cpp:92
+#: plugin_babelfish.cpp:93
 #, kde-format
 msgid "&Spanish To"
 msgstr "Šp&anielština do"
 
-#: plugin_babelfish.cpp:95
+#: plugin_babelfish.cpp:96
 #, kde-format
 msgid "&Portuguese To"
 msgstr "&Portugalština do"
 
-#: plugin_babelfish.cpp:98
+#: plugin_babelfish.cpp:99
 #, kde-format
 msgid "&Italian To"
 msgstr "&Taliančina do"
 
-#: plugin_babelfish.cpp:101
+#: plugin_babelfish.cpp:102
 #, kde-format
 msgid "&Dutch To"
 msgstr "&Holandština do"
 
-#: plugin_babelfish.cpp:104
+#: plugin_babelfish.cpp:105
 #, kde-format
 msgid "&Russian To"
 msgstr "Ruština do"
 
-#: plugin_babelfish.cpp:120
-#, kde-format
+#: plugin_babelfish.cpp:124
 msgid "&Chinese (Simplified)"
 msgstr "Čí&ština (zjednodušená)"
 
-#: plugin_babelfish.cpp:121
-#, kde-format
+#: plugin_babelfish.cpp:125
 msgid "Chinese (&Traditional)"
 msgstr "Číština (t&radičná)"
 
-#: plugin_babelfish.cpp:122 plugin_babelfish.cpp:135
-#, kde-format
+#: plugin_babelfish.cpp:126 plugin_babelfish.cpp:139
 msgid "&Dutch"
 msgstr "&Holandština"
 
-#: plugin_babelfish.cpp:123 plugin_babelfish.cpp:144 plugin_babelfish.cpp:146
-#: plugin_babelfish.cpp:148 plugin_babelfish.cpp:150 plugin_babelfish.cpp:152
-#: plugin_babelfish.cpp:154 plugin_babelfish.cpp:156
-#, kde-format
+#: plugin_babelfish.cpp:127 plugin_babelfish.cpp:148 plugin_babelfish.cpp:150
+#: plugin_babelfish.cpp:152 plugin_babelfish.cpp:154 plugin_babelfish.cpp:156
+#: plugin_babelfish.cpp:158 plugin_babelfish.cpp:160
 msgid "&French"
 msgstr "&Francúzština"
 
-#: plugin_babelfish.cpp:124 plugin_babelfish.cpp:137
-#, kde-format
+#: plugin_babelfish.cpp:128 plugin_babelfish.cpp:141
 msgid "&German"
 msgstr "&Nemčina"
 
-#: plugin_babelfish.cpp:125 plugin_babelfish.cpp:138
-#, kde-format
+#: plugin_babelfish.cpp:129 plugin_babelfish.cpp:142
 msgid "&Greek"
 msgstr "Gréčtina"
 
-#: plugin_babelfish.cpp:126 plugin_babelfish.cpp:139
-#, kde-format
+#: plugin_babelfish.cpp:130 plugin_babelfish.cpp:143
 msgid "&Italian"
 msgstr "&Taliančina"
 
-#: plugin_babelfish.cpp:127
-#, kde-format
+#: plugin_babelfish.cpp:131
 msgid "&Japanese"
 msgstr "&Japonština"
 
-#: plugin_babelfish.cpp:128
-#, kde-format
+#: plugin_babelfish.cpp:132
 msgid "&Korean"
 msgstr "&Kórejština"
 
-#: plugin_babelfish.cpp:129
-#, kde-format
+#: plugin_babelfish.cpp:133
 msgid "&Norwegian"
 msgstr "&Nórština"
 
-#: plugin_babelfish.cpp:130 plugin_babelfish.cpp:140
-#, kde-format
+#: plugin_babelfish.cpp:134 plugin_babelfish.cpp:144
 msgid "&Portuguese"
 msgstr "&Portugalština"
 
-#: plugin_babelfish.cpp:131 plugin_babelfish.cpp:142
-#, kde-format
+#: plugin_babelfish.cpp:135 plugin_babelfish.cpp:146
 msgid "&Russian"
 msgstr "&Ruština"
 
-#: plugin_babelfish.cpp:132 plugin_babelfish.cpp:141
-#, kde-format
+#: plugin_babelfish.cpp:136 plugin_babelfish.cpp:145
 msgid "&Spanish"
 msgstr "Š&panielština"
 
-#: plugin_babelfish.cpp:133
-#, kde-format
+#: plugin_babelfish.cpp:137
 msgid "T&hai"
 msgstr "&Thajština"
 
-#: plugin_babelfish.cpp:134
-#, kde-format
+#: plugin_babelfish.cpp:138
 msgid "&Arabic"
 msgstr "Arabčina"
 
-#: plugin_babelfish.cpp:136 plugin_babelfish.cpp:143 plugin_babelfish.cpp:145
-#: plugin_babelfish.cpp:147 plugin_babelfish.cpp:149 plugin_babelfish.cpp:151
-#: plugin_babelfish.cpp:153 plugin_babelfish.cpp:155
-#, kde-format
+#: plugin_babelfish.cpp:140 plugin_babelfish.cpp:147 plugin_babelfish.cpp:149
+#: plugin_babelfish.cpp:151 plugin_babelfish.cpp:153 plugin_babelfish.cpp:155
+#: plugin_babelfish.cpp:157 plugin_babelfish.cpp:159
 msgid "&English"
 msgstr "&Angličtina"
 
-#: plugin_babelfish.cpp:178
+#: plugin_babelfish.cpp:181
 #, kde-format
 msgid "&Chinese (Simplified) to English"
 msgstr "Čí&nština (zjednodušená) do angličtiny"
 
-#: plugin_babelfish.cpp:179
+#: plugin_babelfish.cpp:182
 #, kde-format
 msgid "Chinese (&Traditional) to English"
 msgstr "Čínština (&tradičná) do angličtiny"
 
-#: plugin_babelfish.cpp:188
+#: plugin_babelfish.cpp:191
 #, kde-format
 msgid "&Japanese to English"
 msgstr "&Japončina do angličtiny"
 
-#: plugin_babelfish.cpp:189
+#: plugin_babelfish.cpp:192
 #, kde-format
 msgid "&Korean to English"
 msgstr "&Kórejčina do angličtiny"
 
-#: plugin_babelfish.cpp:257
+#: plugin_babelfish.cpp:260
 #, kde-format
 msgctxt "@title:window"
 msgid "Malformed URL"
 msgstr "Neplatné URL"
 
-#: plugin_babelfish.cpp:258
+#: plugin_babelfish.cpp:261
 #, kde-format
 msgid "The URL you entered is not valid, please correct it and try again."
 msgstr "Zadané URL nie je platné, prosím, opravte ho a skúste to znovu."
 
-#: plugin_babelfish.cpp:268
+#: plugin_babelfish.cpp:271
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -222,7 +206,7 @@ msgstr ""
 "do online prekladovej služby, ktorá môže stiahnuť nezabezpečenú verziu "
 "stránky."
 
-#: plugin_babelfish.cpp:272
+#: plugin_babelfish.cpp:275
 #, kde-format
 msgctxt "@title:window"
 msgid "Security Warning"

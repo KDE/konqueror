@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-07-14 00:45+0000\n"
-"PO-Revision-Date: 2022-10-30 07:48\n"
+"POT-Creation-Date: 2022-11-07 00:44+0000\n"
+"PO-Revision-Date: 2022-11-06 01:06\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -27,42 +27,42 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde-china@kde.org"
 
-#: kfmclient.cpp:49
+#: kfmclient.cpp:55
 #, kde-format
 msgid "kfmclient"
 msgstr "kfmclient"
 
-#: kfmclient.cpp:57
+#: kfmclient.cpp:56
 #, kde-format
 msgid "KDE tool for opening URLs from the command line"
 msgstr "在命令行打开 URL 的 KDE 工具"
 
-#: kfmclient.cpp:65
+#: kfmclient.cpp:64
 #, kde-format
 msgid "Non interactive use: no message boxes"
 msgstr "非交互用途：无消息框"
 
-#: kfmclient.cpp:67
+#: kfmclient.cpp:66
 #, kde-format
 msgid "Show available commands"
 msgstr "显示可用的命令"
 
-#: kfmclient.cpp:69
+#: kfmclient.cpp:68
 #, kde-format
 msgid "Command (see --commands)"
 msgstr "命令(参见 --commands)"
 
-#: kfmclient.cpp:71
+#: kfmclient.cpp:70
 #, kde-format
 msgid "Arguments for command"
 msgstr "命令参数"
 
-#: kfmclient.cpp:73
+#: kfmclient.cpp:72
 #, kde-format
 msgid "The files/URLs opened by the application will be deleted after use"
 msgstr "由此程序打开的文件/URL 将会在使用后删除"
 
-#: kfmclient.cpp:81
+#: kfmclient.cpp:80
 #, kde-format
 msgid ""
 "\n"
@@ -71,7 +71,7 @@ msgstr ""
 "\n"
 "语法：\n"
 
-#: kfmclient.cpp:82
+#: kfmclient.cpp:81
 #, kde-format
 msgid ""
 "  kfmclient openURL 'url' ['mimetype']\n"
@@ -88,7 +88,7 @@ msgstr ""
 "            #   如果省略“url”，则使用 $HOME 替代。\n"
 "\n"
 
-#: kfmclient.cpp:87
+#: kfmclient.cpp:86
 #, kde-format
 msgid ""
 "            # If 'mimetype' is specified, it will be used to determine the\n"
@@ -102,7 +102,7 @@ msgstr ""
 "            #   设置成 text/html，使其处理得更快\n"
 "\n"
 
-#: kfmclient.cpp:91
+#: kfmclient.cpp:90
 #, kde-format
 msgid ""
 "  kfmclient newTab 'url' ['mimetype']\n"
@@ -116,17 +116,17 @@ msgstr ""
 "            #   打开“url”标签。\n"
 "\n"
 
-#: kfmclient.cpp:271
+#: kfmclient.cpp:270
 #, kde-format
 msgid "Syntax error, not enough arguments\n"
 msgstr "语法错误，参数不足\n"
 
-#: kfmclient.cpp:275
+#: kfmclient.cpp:274
 #, kde-format
 msgid "Syntax error, too many arguments\n"
 msgstr "语法错误，参数过多\n"
 
-#: kfmclient.cpp:324
+#: kfmclient.cpp:323
 #, kde-format
 msgid "Syntax error, unknown command '%1'\n"
 msgstr "语法错误，未知命令“%1”\n"

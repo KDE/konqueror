@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfmclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-07-14 00:45+0000\n"
+"POT-Creation-Date: 2022-11-07 00:44+0000\n"
 "PO-Revision-Date: 2016-11-26 20:50+0100\n"
 "Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -29,45 +29,45 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "lueck@hube-lueck.de"
 
-#: kfmclient.cpp:49
+#: kfmclient.cpp:55
 #, kde-format
 msgid "kfmclient"
 msgstr "kfmclient"
 
-#: kfmclient.cpp:57
+#: kfmclient.cpp:56
 #, kde-format
 msgid "KDE tool for opening URLs from the command line"
 msgstr "KDE-Programm zum Öffnen von URLs/Adressen über die Befehlszeile"
 
-#: kfmclient.cpp:65
+#: kfmclient.cpp:64
 #, kde-format
 msgid "Non interactive use: no message boxes"
 msgstr ""
 "Nicht interaktive Verwendung: es werden keine Dialogfenster mit Rückfragen "
 "angezeigt"
 
-#: kfmclient.cpp:67
+#: kfmclient.cpp:66
 #, kde-format
 msgid "Show available commands"
 msgstr "Verfügbare Befehle anzeigen"
 
-#: kfmclient.cpp:69
+#: kfmclient.cpp:68
 #, kde-format
 msgid "Command (see --commands)"
 msgstr "Befehl (siehe --commands)"
 
-#: kfmclient.cpp:71
+#: kfmclient.cpp:70
 #, kde-format
 msgid "Arguments for command"
 msgstr "Argumente für den Befehl"
 
-#: kfmclient.cpp:73
+#: kfmclient.cpp:72
 #, kde-format
 msgid "The files/URLs opened by the application will be deleted after use"
 msgstr ""
 "Die von der Anwendung geöffneten Dateien/URLs werden nach Gebrauch gelöscht."
 
-#: kfmclient.cpp:81
+#: kfmclient.cpp:80
 #, kde-format
 msgid ""
 "\n"
@@ -76,7 +76,7 @@ msgstr ""
 "\n"
 "Syntax:\n"
 
-#: kfmclient.cpp:82
+#: kfmclient.cpp:81
 #, kde-format
 msgid ""
 "  kfmclient openURL 'url' ['mimetype']\n"
@@ -93,7 +93,7 @@ msgstr ""
 "            #   Bei Weglassung von „url“ wird $HOME verwendet.\n"
 "\n"
 
-#: kfmclient.cpp:87
+#: kfmclient.cpp:86
 #, kde-format
 msgid ""
 "            # If 'mimetype' is specified, it will be used to determine the\n"
@@ -109,7 +109,7 @@ msgstr ""
 "            # text/html, um eine Webseite schneller anzeigen zu lassen.\n"
 "\n"
 
-#: kfmclient.cpp:91
+#: kfmclient.cpp:90
 #, kde-format
 msgid ""
 "  kfmclient newTab 'url' ['mimetype']\n"
@@ -125,17 +125,17 @@ msgstr ""
 "Arbeitsfläche geöffnet wird.\n"
 "\n"
 
-#: kfmclient.cpp:271
+#: kfmclient.cpp:270
 #, kde-format
 msgid "Syntax error, not enough arguments\n"
 msgstr "Syntaxfehler: Zuwenig Argumente\n"
 
-#: kfmclient.cpp:275
+#: kfmclient.cpp:274
 #, kde-format
 msgid "Syntax error, too many arguments\n"
 msgstr "Syntaxfehler: Zu viele Argumente\n"
 
-#: kfmclient.cpp:324
+#: kfmclient.cpp:323
 #, kde-format
 msgid "Syntax error, unknown command '%1'\n"
 msgstr "Syntaxfehler: Unbekannter Befehl „%1“\n"

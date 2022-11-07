@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwebkitpart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-24 00:46+0000\n"
+"POT-Creation-Date: 2022-11-07 00:44+0000\n"
 "PO-Revision-Date: 2022-01-03 11:44+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -531,7 +531,7 @@ msgid "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
 msgstr ""
 "<td>Bestandstype</td><td>Omschrijving</td><td>Extensies</td><td>Plugin</td>"
 
-#: src/settings/webenginesettings.cpp:909
+#: src/settings/webenginesettings.cpp:907
 #, kde-format
 msgid "Filter error"
 msgstr "Filterfout"
@@ -766,12 +766,12 @@ msgstr "Formuliergegevens in KWallet opslaan bij sluiten van de dialoog"
 msgid "&Immediately memorize form data"
 msgstr "Formuliergegevens onm&iddellijk onthouden"
 
-#: src/webenginepage.cpp:125
+#: src/webenginepage.cpp:133
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr "De downloadbeheerder (%1) kon niet gevonden worden in uw installatie."
 
-#: src/webenginepage.cpp:126
+#: src/webenginepage.cpp:134
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -783,7 +783,7 @@ msgstr ""
 "\n"
 "De integratie zal worden uitgeschakeld."
 
-#: src/webenginepage.cpp:268
+#: src/webenginepage.cpp:291
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -797,12 +797,12 @@ msgstr ""
 "een dubbele aanakoop te voorkomen. Klik anders op de knop Doorgaan om de "
 "webpagina opnieuw te tonen.</p>"
 
-#: src/webenginepage.cpp:275
+#: src/webenginepage.cpp:298
 #, kde-format
 msgid "Resubmit Information"
 msgstr "Informatie opnieuw verzenden"
 
-#: src/webenginepage.cpp:507
+#: src/webenginepage.cpp:530
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -812,18 +812,18 @@ msgstr ""
 "locatie.\n"
 "Wilt u deze toegang toestaan?"
 
-#: src/webenginepage.cpp:511 src/webenginepage.cpp:628
-#: src/webenginepage.cpp:639
+#: src/webenginepage.cpp:534 src/webenginepage.cpp:651
+#: src/webenginepage.cpp:662
 #, kde-format
 msgid "Network Transmission"
 msgstr "Netwerkverkeer"
 
-#: src/webenginepage.cpp:512
+#: src/webenginepage.cpp:535
 #, kde-format
 msgid "Allow access"
 msgstr "Toegang toestaan"
 
-#: src/webenginepage.cpp:587
+#: src/webenginepage.cpp:610
 #, kde-format
 msgid ""
 "<qt>This untrusted page links to<br/><b>%1</b>.<br/>Do you want to follow "
@@ -832,30 +832,30 @@ msgstr ""
 "<qt>Deze onveilige paginakoppeling naar<br/><b>%1</b>.<br />Wilt u deze "
 "koppeling volgen?</qt>"
 
-#: src/webenginepage.cpp:589
+#: src/webenginepage.cpp:612
 #, kde-format
 msgid "Security Warning"
 msgstr "Beveiligingswaarschuwing"
 
-#: src/webenginepage.cpp:590
+#: src/webenginepage.cpp:613
 #, kde-format
 msgctxt "follow link despite of security warning"
 msgid "Follow"
 msgstr "Volgen"
 
-#: src/webenginepage.cpp:592
+#: src/webenginepage.cpp:615
 #, kde-format
 msgid "Security Alert"
 msgstr "Beveiligingsalarm"
 
-#: src/webenginepage.cpp:593
+#: src/webenginepage.cpp:616
 #, kde-format
 msgid "<qt>Access by untrusted page to<br/><b>%1</b><br/> denied.</qt>"
 msgstr ""
 "<qt>De toegang tot de niet vertrouwde pagina<br/><b>%1</b><br/> is geweigerd."
 "</qt>"
 
-#: src/webenginepage.cpp:621
+#: src/webenginepage.cpp:644
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -869,12 +869,12 @@ msgstr ""
 "en te bekijken.\n"
 "Wilt u doorgaan?"
 
-#: src/webenginepage.cpp:629
+#: src/webenginepage.cpp:652
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "Zonder ver&sleuteling verzenden"
 
-#: src/webenginepage.cpp:636
+#: src/webenginepage.cpp:659
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -883,12 +883,12 @@ msgstr ""
 "Deze website tracht formuliergegevens te verzenden via e-mail.\n"
 "Wilt u doorgaan?"
 
-#: src/webenginepage.cpp:640
+#: src/webenginepage.cpp:663
 #, kde-format
 msgid "&Send Email"
 msgstr "E-mail ver&zenden"
 
-#: src/webenginepage.cpp:689
+#: src/webenginepage.cpp:712
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -897,22 +897,22 @@ msgstr ""
 "<qt>Wilt u deze site toestaan om de volgende bestanden als bijlagen aan het "
 "e-mailbericht te hangen?</qt>"
 
-#: src/webenginepage.cpp:691
+#: src/webenginepage.cpp:714
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Bevestiging van bijlagen aan e-mailbericht"
 
-#: src/webenginepage.cpp:692
+#: src/webenginepage.cpp:715
 #, kde-format
 msgid "&Allow attachments"
 msgstr "&Bijlagen toestaan"
 
-#: src/webenginepage.cpp:693
+#: src/webenginepage.cpp:716
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "Bijl&agen negeren"
 
-#: src/webenginepage.cpp:707
+#: src/webenginepage.cpp:730
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -921,12 +921,12 @@ msgstr ""
 "Deze website trachtte een bestand van uw computer in te voegen in de "
 "verzending van een formulier. Deze bijlage is verwijderd om u te beschermen."
 
-#: src/webenginepage.cpp:710
+#: src/webenginepage.cpp:733
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Bijlage verwijderd"
 
-#: src/webenginepage.cpp:840
+#: src/webenginepage.cpp:863
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -935,7 +935,7 @@ msgstr ""
 "Deze website probeert een nieuw pop-up-venster te openen.\n"
 "Wilt u dit toestaan?"
 
-#: src/webenginepage.cpp:842
+#: src/webenginepage.cpp:865
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -944,17 +944,17 @@ msgstr ""
 "<qt>Deze website probeert een pop-up-venster te openen naar <p>%1</p><br/"
 ">Wilt u dit toestaan?</qt>"
 
-#: src/webenginepage.cpp:846
+#: src/webenginepage.cpp:869
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Bevestiging van Javascript-pop-up"
 
-#: src/webenginepage.cpp:847
+#: src/webenginepage.cpp:870
 #, kde-format
 msgid "Allow"
 msgstr "Toestaan"
 
-#: src/webenginepage.cpp:848
+#: src/webenginepage.cpp:871
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Niet toestaan"
@@ -1251,30 +1251,30 @@ msgstr "&Onderwerp"
 msgid "&Issuer"
 msgstr "&Uitgever"
 
-#: src/webenginepartdownloadmanager.cpp:235
+#: src/webenginepartdownloadmanager.cpp:219
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr "Er is een fout opgetreden tijdens het opslaan van het bestand: %1"
 
-#: src/webenginepartdownloadmanager.cpp:247
+#: src/webenginepartdownloadmanager.cpp:227
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr "Wordt gedownload"
 
-#: src/webenginepartdownloadmanager.cpp:248
+#: src/webenginepartdownloadmanager.cpp:228
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr "Bron"
 
-#: src/webenginepartdownloadmanager.cpp:249
+#: src/webenginepartdownloadmanager.cpp:229
 #, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "Bestemming"
 
-#: src/webenginepartdownloadmanager.cpp:266
+#: src/webenginepartdownloadmanager.cpp:242
 #, kde-format
 msgctxt "Finished saving BLOB URL"
 msgid "Finished saving %1 as %2"

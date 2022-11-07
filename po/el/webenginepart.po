@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webkitkde\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-24 00:46+0000\n"
+"POT-Creation-Date: 2022-11-07 00:44+0000\n"
 "PO-Revision-Date: 2021-11-06 10:47+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -541,7 +541,7 @@ msgid "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
 msgstr ""
 "<td>Τύποι Mime</td><td>Περιγραφή</td><td>Καταλήξεις</td><td>Πρόσθετο</td>"
 
-#: src/settings/webenginesettings.cpp:909
+#: src/settings/webenginesettings.cpp:907
 #, kde-format
 msgid "Filter error"
 msgstr "Σφάλμα φίλτρου"
@@ -776,12 +776,12 @@ msgstr ""
 msgid "&Immediately memorize form data"
 msgstr "Άμεση απομνημόνευση δεδομένων φόρμας"
 
-#: src/webenginepage.cpp:125
+#: src/webenginepage.cpp:133
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr "Ο διαχειριστής λήψεων (%1) δεν βρέθηκε στην εγκατάστασή σας."
 
-#: src/webenginepage.cpp:126
+#: src/webenginepage.cpp:134
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -793,7 +793,7 @@ msgstr ""
 "\n"
 "Η ενοποίηση θα απενεργοποιηθεί."
 
-#: src/webenginepage.cpp:268
+#: src/webenginepage.cpp:291
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -807,12 +807,12 @@ msgstr ""
 "για να μη γίνει διπλή αγορά. Διαφορετικά, με κλικ στο κουμπί Συνέχεια "
 "εμφανίζεται ξανά η ιστοσελίδα.</p>"
 
-#: src/webenginepage.cpp:275
+#: src/webenginepage.cpp:298
 #, kde-format
 msgid "Resubmit Information"
 msgstr "Επανυποβολή πληροφορίας"
 
-#: src/webenginepage.cpp:507
+#: src/webenginepage.cpp:530
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -822,18 +822,18 @@ msgstr ""
 "τη φυσική σας θέση.\n"
 "Θα επιτρέψετε την πρόσβαση;"
 
-#: src/webenginepage.cpp:511 src/webenginepage.cpp:628
-#: src/webenginepage.cpp:639
+#: src/webenginepage.cpp:534 src/webenginepage.cpp:651
+#: src/webenginepage.cpp:662
 #, kde-format
 msgid "Network Transmission"
 msgstr "Μετάδοση δικτύου"
 
-#: src/webenginepage.cpp:512
+#: src/webenginepage.cpp:535
 #, kde-format
 msgid "Allow access"
 msgstr "Να επιτρέπεται η πρόσβαση"
 
-#: src/webenginepage.cpp:587
+#: src/webenginepage.cpp:610
 #, kde-format
 msgid ""
 "<qt>This untrusted page links to<br/><b>%1</b>.<br/>Do you want to follow "
@@ -842,30 +842,30 @@ msgstr ""
 "<qt>Αυτή η μη έμπιστη σελίδα περιέχει έναν σύνδεσμο προς<br/><b>%1</b>.<br/"
 ">Επιθυμείτε να ακολουθήσετε το σύνδεσμο;</qt>"
 
-#: src/webenginepage.cpp:589
+#: src/webenginepage.cpp:612
 #, kde-format
 msgid "Security Warning"
 msgstr "Προειδοποίηση ασφαλείας"
 
-#: src/webenginepage.cpp:590
+#: src/webenginepage.cpp:613
 #, kde-format
 msgctxt "follow link despite of security warning"
 msgid "Follow"
 msgstr "Ακολούθησε"
 
-#: src/webenginepage.cpp:592
+#: src/webenginepage.cpp:615
 #, kde-format
 msgid "Security Alert"
 msgstr "Συναγερμός ασφαλείας"
 
-#: src/webenginepage.cpp:593
+#: src/webenginepage.cpp:616
 #, kde-format
 msgid "<qt>Access by untrusted page to<br/><b>%1</b><br/> denied.</qt>"
 msgstr ""
 "<qt>Η πρόσβαση από τη μη έμπιστη σελίδα προς <br/><b>%1</b><br/> "
 "απαγορεύθηκε.</qt>"
 
-#: src/webenginepage.cpp:621
+#: src/webenginepage.cpp:644
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -878,12 +878,12 @@ msgstr ""
 "Τρίτοι μπορούν να παρεμβληθούν και να δουν αυτές τις πληροφορίες.\n"
 "Σίγουρα θέλετε να στείλει πίσω τα δεδομένα σας ακρυπτογράφητα;"
 
-#: src/webenginepage.cpp:629
+#: src/webenginepage.cpp:652
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&Αποστολή μη κρυπτογραφημένου"
 
-#: src/webenginepage.cpp:636
+#: src/webenginepage.cpp:659
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -893,12 +893,12 @@ msgstr ""
 "ταχυδρομείου.\n"
 "Θέλετε να συνεχίσετε;"
 
-#: src/webenginepage.cpp:640
+#: src/webenginepage.cpp:663
 #, kde-format
 msgid "&Send Email"
 msgstr "&Αποστολή ηλ. αλληλογραφίας"
 
-#: src/webenginepage.cpp:689
+#: src/webenginepage.cpp:712
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -907,22 +907,22 @@ msgstr ""
 "<qt>Θέλετε να επιτρέψετε στον ιστότοπο να επισυνάψει τα ακόλουθα αρχεία στο "
 "μήνυμα ηλ αλληλογραφίας;</qt>"
 
-#: src/webenginepage.cpp:691
+#: src/webenginepage.cpp:714
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Επιβεβαίωση συνημμένων ηλ.αλληλογραφίας"
 
-#: src/webenginepage.cpp:692
+#: src/webenginepage.cpp:715
 #, kde-format
 msgid "&Allow attachments"
 msgstr "Να επιτρέπονται συνημμέν&α"
 
-#: src/webenginepage.cpp:693
+#: src/webenginepage.cpp:716
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "Αγνόηση &συνημμένων"
 
-#: src/webenginepage.cpp:707
+#: src/webenginepage.cpp:730
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -931,12 +931,12 @@ msgstr ""
 "Αυτός ο ιστότοπος επιχείρησε να επισυνάψει ένα αρχείο από τον υπολογιστή σας "
 "κατά την υποβολή της φόρμας. Το συνημμένο αφαιρέθηκε για δική σας προστασία."
 
-#: src/webenginepage.cpp:710
+#: src/webenginepage.cpp:733
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Το συνημμένο αφαιρέθηκε"
 
-#: src/webenginepage.cpp:840
+#: src/webenginepage.cpp:863
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -945,7 +945,7 @@ msgstr ""
 "Αυτός ο ιστότοπος ζητάει να ανοίξει ένα νέο αναδυόμενο παράθυρο.\n"
 "Θα το επιτρέψετε αυτό;"
 
-#: src/webenginepage.cpp:842
+#: src/webenginepage.cpp:865
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -954,17 +954,17 @@ msgstr ""
 "<qt>Αυτός ο ιστότοπος ζητάει να ανοίξει ένα αναδυόμενο παράθυρο στο<p>%1</"
 "p><br/>Θα το επιτρέψετε αυτό;</qt>"
 
-#: src/webenginepage.cpp:846
+#: src/webenginepage.cpp:869
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Επιβεβαίωση ανάδυσης Javascript"
 
-#: src/webenginepage.cpp:847
+#: src/webenginepage.cpp:870
 #, kde-format
 msgid "Allow"
 msgstr "Να επιτρέπεται"
 
-#: src/webenginepage.cpp:848
+#: src/webenginepage.cpp:871
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Να μην επιτρέπεται"
@@ -1266,30 +1266,30 @@ msgstr "&Θέμα"
 msgid "&Issuer"
 msgstr "Α&ρχή έκδοσης"
 
-#: src/webenginepartdownloadmanager.cpp:235
+#: src/webenginepartdownloadmanager.cpp:219
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr "Παρουσιάστηκε σφάλμα κατά την αποθήκευση του αρχείου: %1"
 
-#: src/webenginepartdownloadmanager.cpp:247
+#: src/webenginepartdownloadmanager.cpp:227
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr "Λήψη"
 
-#: src/webenginepartdownloadmanager.cpp:248
+#: src/webenginepartdownloadmanager.cpp:228
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr "Πηγή"
 
-#: src/webenginepartdownloadmanager.cpp:249
+#: src/webenginepartdownloadmanager.cpp:229
 #, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "Προορισμός"
 
-#: src/webenginepartdownloadmanager.cpp:266
+#: src/webenginepartdownloadmanager.cpp:242
 #, kde-format
 msgctxt "Finished saving BLOB URL"
 msgid "Finished saving %1 as %2"
