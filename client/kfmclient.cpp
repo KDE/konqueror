@@ -7,7 +7,6 @@
 #include "kfmclient.h"
 
 #include <kio/job.h>
-#include <kio/jobuidelegate.h>
 
 #include <KLocalizedString>
 #include <kprocess.h>
@@ -144,10 +143,7 @@ static QUrl filteredUrl(const QString &url)
     data.setAbsolutePath(QDir::currentPath());
     data.setCheckForExecutables(false);
 
-    if (KUriFilter::self()->filterUri(data) && data.uriType() != KUriFilterData::Error) {
-        return data.uri();
-    }
-    return QUrl();
+    return data.uri();
 }
 
 ClientApp::ClientApp()
@@ -291,15 +287,18 @@ bool ClientApp::doIt(const QCommandLineParser &parser)
     if (command == QLatin1String("openURL") || command == QLatin1String("newTab")) {
         checkArgumentCount(argc, 1, 3);
         const bool tempFile = parser.isSet(QStringLiteral("tempfile"));
-        if (argc == 1) {
-            return createNewWindow(QUrl::fromLocalFile(QDir::homePath()), command == QLatin1String("newTab"), tempFile);
+
+        QUrl url = argc > 1 ? filteredUrl(args.at(1)) : QUrl();
+
+        //If the given URL is empty an "Undocumented error" error page would be displayed.
+        //To avoid this, default to the user's home directory, as if no URL had been given
+        if (url.isEmpty()) {
+            url = QUrl::fromLocalFile(QDir::homePath());
         }
-        if (argc == 2) {
-            return createNewWindow(filteredUrl(args.at(1)), command == QLatin1String("newTab"), tempFile);
-        }
-        if (argc == 3) {
-            return createNewWindow(filteredUrl(args.at(1)), command == QLatin1String("newTab"), tempFile, args.at(2));
-        }
+
+        QString mimetype = argc == 3 ? args.at(2) : QString();
+
+        return createNewWindow(url, command == QLatin1String("newTab"), tempFile, mimetype);
     } else if (command == QLatin1String("openProfile")) { // deprecated command, kept for compat
         checkArgumentCount(argc, 2, 3);
         QUrl url;
