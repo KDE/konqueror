@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-24 00:46+0000\n"
+"POT-Creation-Date: 2022-11-07 00:44+0000\n"
 "PO-Revision-Date: 2013-08-09 12:30+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -199,8 +199,8 @@ msgstr ""
 #: src/about/konq_aboutpage.cpp:203
 #, kde-format
 msgid ""
-"<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
-"\"%2\">HTML 4.01</A>"
+"<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A "
+"HREF=\"%2\">HTML 4.01</A>"
 msgstr ""
 
 #: src/about/konq_aboutpage.cpp:205 src/about/konq_aboutpage.cpp:207
@@ -241,8 +241,8 @@ msgstr ""
 #: src/about/konq_aboutpage.cpp:213
 #, kde-format
 msgid ""
-"JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">OpenJDK</A> or <A HREF="
-"\"%2\">Sun/Oracle</A>)"
+"JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">OpenJDK</A> or <A "
+"HREF=\"%2\">Sun/Oracle</A>)"
 msgstr ""
 
 #: src/about/konq_aboutpage.cpp:215
@@ -465,7 +465,7 @@ msgstr ""
 msgid "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
 msgstr ""
 
-#: src/settings/webenginesettings.cpp:909
+#: src/settings/webenginesettings.cpp:907
 #, kde-format
 msgid "Filter error"
 msgstr "Filterfeil"
@@ -691,12 +691,12 @@ msgstr ""
 msgid "&Immediately memorize form data"
 msgstr ""
 
-#: src/webenginepage.cpp:125
+#: src/webenginepage.cpp:133
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr "Fant ikke nedlastingsbehandleren (%1) i din installasjon."
 
-#: src/webenginepage.cpp:126
+#: src/webenginepage.cpp:134
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -707,7 +707,7 @@ msgstr ""
 "\n"
 "Integreringen blir slått av."
 
-#: src/webenginepage.cpp:268
+#: src/webenginepage.cpp:291
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -720,12 +720,12 @@ msgstr ""
 "gjorde et innkjøp over nettet, så trykk Avbryt for å hindre dobbeltkjøp, "
 "ellers trykk Fortsett-knappen for å vise nettsida igjen.</p>"
 
-#: src/webenginepage.cpp:275
+#: src/webenginepage.cpp:298
 #, kde-format
 msgid "Resubmit Information"
 msgstr "Send informasjon på nytt"
 
-#: src/webenginepage.cpp:507
+#: src/webenginepage.cpp:530
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -734,18 +734,18 @@ msgstr ""
 "Dette nettstedet forsøker å hente opplysninger om hvor du befinner deg..\n"
 "Vil du gi nettstedet tillatelse?"
 
-#: src/webenginepage.cpp:511 src/webenginepage.cpp:628
-#: src/webenginepage.cpp:639
+#: src/webenginepage.cpp:534 src/webenginepage.cpp:651
+#: src/webenginepage.cpp:662
 #, kde-format
 msgid "Network Transmission"
 msgstr "Nettverksoverføring"
 
-#: src/webenginepage.cpp:512
+#: src/webenginepage.cpp:535
 #, kde-format
 msgid "Allow access"
 msgstr "Tillat tilgang"
 
-#: src/webenginepage.cpp:587
+#: src/webenginepage.cpp:610
 #, kde-format
 msgid ""
 "<qt>This untrusted page links to<br/><b>%1</b>.<br/>Do you want to follow "
@@ -754,28 +754,28 @@ msgstr ""
 "<qt>Denne sida er ikke sikret, men den har en lenke til <br /><b>%1</b>.<br /"
 "> Vil du følge lenka?</qt>"
 
-#: src/webenginepage.cpp:589
+#: src/webenginepage.cpp:612
 #, kde-format
 msgid "Security Warning"
 msgstr "Sikkerhetsadvarsel"
 
-#: src/webenginepage.cpp:590
+#: src/webenginepage.cpp:613
 #, kde-format
 msgctxt "follow link despite of security warning"
 msgid "Follow"
 msgstr "Følg"
 
-#: src/webenginepage.cpp:592
+#: src/webenginepage.cpp:615
 #, kde-format
 msgid "Security Alert"
 msgstr "Sikkerhetsadvarsel"
 
-#: src/webenginepage.cpp:593
+#: src/webenginepage.cpp:616
 #, kde-format
 msgid "<qt>Access by untrusted page to<br/><b>%1</b><br/> denied.</qt>"
 msgstr "<qt>Tilgang fra usikret side til <br /><b>%1</b><br/> nektet.</qt>"
 
-#: src/webenginepage.cpp:621
+#: src/webenginepage.cpp:644
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -788,12 +788,12 @@ msgstr ""
 "En tredjepart kan ha mulighet til å gå i mellom og se denne informasjonen.\n"
 "Er du sikker på at du vil sende data ukryptert?"
 
-#: src/webenginepage.cpp:629
+#: src/webenginepage.cpp:652
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&Send ukryptert"
 
-#: src/webenginepage.cpp:636
+#: src/webenginepage.cpp:659
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -802,12 +802,12 @@ msgstr ""
 "Dette nettstedet forsøker å sende skjemadata via e-post.\n"
 "Vil du fortsette?"
 
-#: src/webenginepage.cpp:640
+#: src/webenginepage.cpp:663
 #, kde-format
 msgid "&Send Email"
 msgstr "&Send e-post"
 
-#: src/webenginepage.cpp:689
+#: src/webenginepage.cpp:712
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -816,22 +816,22 @@ msgstr ""
 "<qt>Vil du tillate dette nettstedet å legge ved følgende filer til e-"
 "postmeldinga?</qt>"
 
-#: src/webenginepage.cpp:691
+#: src/webenginepage.cpp:714
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Bekreftelse på e-postvedlegg"
 
-#: src/webenginepage.cpp:692
+#: src/webenginepage.cpp:715
 #, kde-format
 msgid "&Allow attachments"
 msgstr "Till&at vedlegg"
 
-#: src/webenginepage.cpp:693
+#: src/webenginepage.cpp:716
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&Ignorer vedlegg"
 
-#: src/webenginepage.cpp:707
+#: src/webenginepage.cpp:730
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -840,12 +840,12 @@ msgstr ""
 "Dette nettstedet prøvde å legge ved en fil fra datamaskinen din under "
 "innsendingen av skjemaet. Vedlegget ble fjernet for å beskytte dine data."
 
-#: src/webenginepage.cpp:710
+#: src/webenginepage.cpp:733
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Vedlegg fjernet"
 
-#: src/webenginepage.cpp:840
+#: src/webenginepage.cpp:863
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -854,7 +854,7 @@ msgstr ""
 "Dette nettstedet forsøker å åpne et nytt oppsprettvindu.\n"
 "Vil du tillate dette?"
 
-#: src/webenginepage.cpp:842
+#: src/webenginepage.cpp:865
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -863,17 +863,17 @@ msgstr ""
 "<qt>Dette nettstedet forsøker å åpne et oppsprettvindu til <p>%1</p> <br/"
 ">Vil du tillate dette?</qt>"
 
-#: src/webenginepage.cpp:846
+#: src/webenginepage.cpp:869
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Bekreft JavaScript oppsprett"
 
-#: src/webenginepage.cpp:847
+#: src/webenginepage.cpp:870
 #, kde-format
 msgid "Allow"
 msgstr "Tillat"
 
-#: src/webenginepage.cpp:848
+#: src/webenginepage.cpp:871
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Ikke tillat"
@@ -1168,30 +1168,30 @@ msgstr ""
 msgid "&Issuer"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:235
+#: src/webenginepartdownloadmanager.cpp:219
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:247
+#: src/webenginepartdownloadmanager.cpp:227
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:248
+#: src/webenginepartdownloadmanager.cpp:228
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:249
+#: src/webenginepartdownloadmanager.cpp:229
 #, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:266
+#: src/webenginepartdownloadmanager.cpp:242
 #, kde-format
 msgctxt "Finished saving BLOB URL"
 msgid "Finished saving %1 as %2"
@@ -1492,6 +1492,6 @@ msgstr ""
 msgid ""
 "<ul><li><b>Field internal name: </b>%1</li><li><b>Field type: </b>%2</"
 "li><li><b>Field id: </b>%3</li><li><b>Field is read only: </b>%4</"
-"li><li><b>Field is enabled: </b>%5</li><li><b>Autocompletion is enabled: </b>"
-"%6</li></ul>"
+"li><li><b>Field is enabled: </b>%5</li><li><b>Autocompletion is enabled: </"
+"b>%6</li></ul>"
 msgstr ""
