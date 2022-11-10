@@ -56,9 +56,10 @@ KonquerorApplication::KonquerorApplication(int &argc, char **argv)
                  SLOT(slotRemoveFromCombo(QString,QDBusMessage)));
     dbus.connect(QString(), KONQ_MAIN_PATH, dbusInterface, QStringLiteral("comboCleared"), this, SLOT(slotComboCleared(QDBusMessage)));
 
-#ifdef WEBENGINEPART_DICTIONARY_DIR
+#ifdef WEBENGINEPART_OWN_DICTIONARY_DIR
+    //If the user alredy set QTWEBENGINE_DICTIONARIES_PATH, don't override it
     if (!qEnvironmentVariableIsSet("QTWEBENGINE_DICTIONARIES_PATH")) {
-        qputenv("QTWEBENGINE_DICTIONARIES_PATH", WEBENGINEPART_DICTIONARY_DIR);
+        qputenv("QTWEBENGINE_DICTIONARIES_PATH", WEBENGINEPART_OWN_DICTIONARY_DIR);
     }
 #endif
 

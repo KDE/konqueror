@@ -2,6 +2,8 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Wallet)
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Notifications )
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Sonnet)
 
+find_package(Hunspell)
+
 add_definitions(-DTRANSLATION_DOMAIN=\"webenginepart\")
 
 if(BUILD_TESTING)
@@ -105,8 +107,12 @@ install(FILES error.html DESTINATION ${KDE_INSTALL_DATADIR}/webenginepart)
 
 install(FILES settings/kconf_update/webenginepart.upd DESTINATION ${KDE_INSTALL_KCONFUPDATEDIR})
 
-#COMPILE HUNSPELL DICTIONARIES AS BDIC FILES
-if(${Hunspell_FOUND})
+set(USE_SYSTEM_DICTIONARIES 0 CACHE BOOL "Don't build QtWebEngine dictionaries but use the system ones")
+if((NOT ${USE_SYSTEM_DICTIONARIES}) AND ${Hunspell_FOUND})
+  set(WEBENGINEPART_OWN_DICTIONARY_DIR ${CMAKE_INSTALL_PREFIX}/share/konqueror/webengine_dictionaries CACHE PATH "The directory where dictionary files built for WebEnginePart will be installed")
+  add_compile_definitions(WEBENGINEPART_OWN_DICTIONARY_DIR="${WEBENGINEPART_OWN_DICTIONARY_DIR}")
+
+  #COMPILE HUNSPELL DICTIONARIES AS BDIC FILES
   find_package(WebEngineDictConverter)
   if (WebEngineDictConverter_FOUND)
     #Iterate on all dictionaries
@@ -123,7 +129,7 @@ if(${Hunspell_FOUND})
           COMMAND ${WebEngineDictConverter_EXECUTABLE} ${D} ${BDIC_name}
         )
         #Install the bdic file
-        install(FILES ${BDIC_name} DESTINATION ${WEBENGINEPART_DICTIONARY_DIR})
+        install(FILES ${BDIC_name} DESTINATION ${WEBENGINEPART_OWN_DICTIONARY_DIR})
         #Create a new target which depends on the file
         add_custom_target(${BDIC_target_name} DEPENDS ${BDIC_name})
         #Add the new target as dependency to kwebenginepartlib, otherwise the dictionaries won't be built
