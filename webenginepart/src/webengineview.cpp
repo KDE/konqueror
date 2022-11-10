@@ -72,7 +72,7 @@ WebEngineView::~WebEngineView()
     //qCDebug(WEBENGINEPART_LOG);
 }
 
-void WebEngineView::loadUrl(const QUrl& url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& bargs, bool force)
+void WebEngineView::loadUrl(const QUrl& url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& bargs)
 {
     WebEnginePage *pg = qobject_cast<WebEnginePage*>(page());
     if (!pg) {

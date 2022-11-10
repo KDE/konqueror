@@ -37,7 +37,7 @@ public:
      * @param args    reference to a OpenUrlArguments object.
      * @param bargs   reference to a BrowserArguments object.
      */
-    void loadUrl(const QUrl& url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& bargs, bool force = false);
+    void loadUrl(const QUrl& url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& bargs);
 
     QWebEngineContextMenuData contextMenuResult() const;
 
