@@ -166,6 +166,12 @@ void WebEngineWallet::WebEngineWalletPrivate::detectFormsInPage(WebEnginePage* p
     }
     QUrl url = page->url();
     auto realCallBack = [callback, url](const QVariant &jsForms) {
+        //If the page is deleted while the javascript code is still running, the callback will be called
+        //but the page will be invalid, which will cause a crash. According to the documentation, when this
+        //happens, the parameter passed to the callback is invalid: in that case, we do nothing.
+        if (!jsForms.isValid()) {
+            return;
+        }
         WebFormList forms = parseFormDetectionResult(jsForms, url);
         callback(forms);
     };
