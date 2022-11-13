@@ -111,6 +111,7 @@ set(USE_SYSTEM_DICTIONARIES 0 CACHE BOOL "Don't build QtWebEngine dictionaries b
 if((NOT ${USE_SYSTEM_DICTIONARIES}) AND ${Hunspell_FOUND})
   set(WEBENGINEPART_OWN_DICTIONARY_DIR ${CMAKE_INSTALL_PREFIX}/share/konqueror/webengine_dictionaries CACHE PATH "The directory where dictionary files built for WebEnginePart will be installed")
   add_compile_definitions(WEBENGINEPART_OWN_DICTIONARY_DIR="${WEBENGINEPART_OWN_DICTIONARY_DIR}")
+  target_compile_definitions(kdeinit_konqueror PUBLIC WEBENGINEPART_OWN_DICTIONARY_DIR="${WEBENGINEPART_OWN_DICTIONARY_DIR}")
 
   #COMPILE HUNSPELL DICTIONARIES AS BDIC FILES
   find_package(WebEngineDictConverter)
