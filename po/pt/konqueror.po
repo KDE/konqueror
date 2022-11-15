@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-11 00:45+0000\n"
-"PO-Revision-Date: 2022-04-20 18:17+0100\n"
+"PO-Revision-Date: 2022-11-14 02:00+0000\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -52,7 +52,7 @@ msgstr ""
 "X-POFile-SpellExtra: slotExecuteShellCommand KShellCmdPlugin Orlovich Maks\n"
 "X-POFile-SpellExtra: Throbber Oracle Kioslaves KHelpCenter favicon khtml\n"
 "X-POFile-SpellExtra: kwebkitpart index OpenJDK NPAPI Crocco QtWebEngine\n"
-"X-POFile-SpellExtra: Discovery\n"
+"X-POFile-SpellExtra: Discovery preload\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -491,6 +491,8 @@ msgid ""
 "You can't pass URLs when using the --preload switch. The URLs will be "
 "ignored\n"
 msgstr ""
+"Não é possível passar URL's ao usar a opção --preload. Os URL's serão "
+"ignorados\n"
 
 #: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4882
 #: src/konqmainwindow.cpp:4928
