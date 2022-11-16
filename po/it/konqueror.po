@@ -11,13 +11,13 @@
 # Luigi Toscano <luigi.toscano@tiscali.it>, 2008.
 # Dario Panico <Dareus_Persarumrex@fastwebnet.it>, 2008.
 # Paolo Zamponi <zapaolo@email.it>, 2016, 2017, 2019, 2020, 2021, 2022.
-# Vincenzo Reale <smart2128vr@gmail.com>, 2020.
+# Vincenzo Reale <smart2128vr@gmail.com>, 2020, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-11 00:45+0000\n"
-"PO-Revision-Date: 2022-04-05 15:07+0200\n"
+"PO-Revision-Date: 2022-11-11 18:02+0100\n"
 "Last-Translator: Paolo Zamponi <zapaolo@email.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -387,8 +387,8 @@ msgstr "Avvia senza finestra predefinita, quando richiamato senza URL"
 msgid ""
 "Preload for later use. This mode does not support URLs on the command line"
 msgstr ""
-"Precarica per usarlo in seguito. Questa modalità non supporta URL dalla riga "
-"di comando"
+"Pre-carica per usarlo in seguito. Questa modalità non supporta URL dalla "
+"riga di comando"
 
 #: src/konqapplication.cpp:158
 #, kde-format
@@ -460,6 +460,7 @@ msgid ""
 "You can't pass URLs when using the --preload switch. The URLs will be "
 "ignored\n"
 msgstr ""
+"Non puoi passare gli URL quando viene usato --preload: verranno ignorati\n"
 
 #: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4882
 #: src/konqmainwindow.cpp:4928
@@ -1278,11 +1279,10 @@ msgid "Open bookmarks folder in new tabs"
 msgstr "Apri cartella di segnalibri in nuove schede"
 
 #: src/konqmainwindow.cpp:4247
-#, fuzzy, kde-format
-#| msgid "&Open"
+#, kde-format
 msgctxt "@action:button"
 msgid "Open"
-msgstr "&Apri"
+msgstr "Apri"
 
 #: src/konqmainwindow.cpp:4406
 #, kde-format
@@ -1445,9 +1445,9 @@ msgid ""
 "p><p><b>HTTPS proxy: </b><tt>%2</tt></p>What do you want to do?"
 msgstr ""
 "La configurazione del proxy non può essere utilizzata con il motore HTML "
-"QtWebEngineperché non supporta la presenza di proxy diversi per i protocolli "
-"HTTP e HTTPS. Le tue impostazioni attuali sono:<p><b>Proxy HTTP:</b> <tt>%1</"
-"tt></p><p><b>Proxy HTTPS:</b><tt>%2</tt></p>Cosa vuoi fare?"
+"QtWebEngine perché non supporta la presenza di proxy diversi per i "
+"protocolli HTTP e HTTPS. Le tue impostazioni attuali sono:<p><b>Proxy HTTP:</"
+"b> <tt>%1</tt></p><p><b>Proxy HTTPS:</b><tt>%2</tt></p>Cosa vuoi fare?"
 
 #: src/konqmainwindow.cpp:5463
 #, kde-format
