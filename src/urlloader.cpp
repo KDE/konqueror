@@ -325,7 +325,7 @@ void UrlLoader::done(KJob *job)
 
 bool UrlLoader::serviceIsKonqueror(KService::Ptr service)
 {
-    return service && (service->desktopEntryName() == QLatin1String("konqueror") || service->exec().trimmed().startsWith(QLatin1String("kfmclient")));
+    return service && (service->desktopEntryName() == QLatin1String("konqueror") || service->exec().trimmed() == QLatin1String("konqueror") || service->exec().trimmed().startsWith(QLatin1String("kfmclient")));
 }
 
 void UrlLoader::launchMimeTypeFinderJob()
