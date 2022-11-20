@@ -104,7 +104,7 @@ void KonquerorApplication::setupAboutData()
     m_aboutData.setShortDescription(i18n("Web browser, file manager and document viewer."));
     m_aboutData.addLicense(KAboutLicense::GPL_V2);
     m_aboutData.setCopyrightStatement(i18n("(C) 1999-2016, The Konqueror developers"));
-    m_aboutData.setHomepage("https://konqueror.org/");
+    m_aboutData.setHomepage("https://apps.kde.org/konqueror");
 
     m_aboutData.addAuthor(i18n("Stefano Crocco"), i18n("Current maintainer"), "stefano.crocco@alice.it");
     m_aboutData.addAuthor(i18n("David Faure"), i18n("Developer (framework, parts, JavaScript, I/O library) and former maintainer"), "faure@kde.org");
