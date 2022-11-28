@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-10 02:29+0000\n"
-"PO-Revision-Date: 2022-04-05 20:04+0200\n"
+"PO-Revision-Date: 2022-11-27 11:40+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -456,6 +456,8 @@ msgid ""
 "You can't pass URLs when using the --preload switch. The URLs will be "
 "ignored\n"
 msgstr ""
+"Du kan inte skicka med webbadresser när väljaren --preload används. "
+"Webbadresserna kommer att ignoreras\n"
 
 #: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4882
 #: src/konqmainwindow.cpp:4928
@@ -1264,11 +1266,10 @@ msgid "Open bookmarks folder in new tabs"
 msgstr "Öppna bokmärkeskatalog under nya flikar"
 
 #: src/konqmainwindow.cpp:4247
-#, fuzzy, kde-format
-#| msgid "&Open"
+#, kde-format
 msgctxt "@action:button"
 msgid "Open"
-msgstr "Ö&ppna"
+msgstr "Öppna"
 
 #: src/konqmainwindow.cpp:4406
 #, kde-format
