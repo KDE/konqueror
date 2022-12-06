@@ -23,7 +23,6 @@
 // KDE
 #include <KLocalizedString>
 #include <KParts/ReadOnlyPart>
-#include <KPluginInfo>
 #include <KMessageBox>
 #include <KApplicationTrader>
 #include <KParts/PartLoader>
