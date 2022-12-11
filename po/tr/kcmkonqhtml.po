@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: applications-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-08-24 00:46+0000\n"
-"PO-Revision-Date: 2022-11-10 21:20+0300\n"
+"PO-Revision-Date: 2022-12-10 18:45+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -531,7 +531,9 @@ msgstr ""
 msgid ""
 "<b>Stylesheets</b><p>Use this groupbox to determine how Konqueror will "
 "render style sheets.</p>"
-msgstr "<b>Biçem sayfaları</b>"
+msgstr ""
+"<b>Biçem sayfaları</b><p>Konqueror'un biçem sayfalarını nice sunacağını "
+"belirlemek için bu grup kutusunu kullanın.</p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, ButtonGroup1)
 #: css/cssconfig.ui:20
@@ -566,11 +568,11 @@ msgid ""
 "sheet (see http://www.w3.org/Style/CSS for further information on cascading "
 "style sheets).</p>"
 msgstr ""
-"<b>Kullanıcı tanımlı biçem sayfası kullanın</b> <p>Eğer bu seçenek seçilirse "
+"<b>Kullanıcı tanımlı biçem sayfası kullan</b> <p>Eğer bu seçenek seçiliyse "
 "Konqueror bu CSS ile kullanılacak. CSS sayesinde web sayfalarının "
-"tarayıcınızda nasıl görüntüleneceğini belirleyebilirsiniz. Verilen dosya "
-"geçerli bir CSS olmak zorundadır. (geniş bilgi için bkz: http://www.w3.org/"
-"Style/CSS )</p>"
+"tarayıcınızda nasıl sunulacağını belirleyebilirsiniz. Verilen dosya geçerli "
+"bir CSS olmak zorundadır. (geniş bilgi için bkz: http://www.w3.org/Style/"
+"CSS )</p>"
 
 #. i18n: ectx: property (text), widget (QRadioButton, useUser)
 #: css/cssconfig.ui:42
@@ -857,7 +859,7 @@ msgstr "<b>Ön alan rengi</b><p>Ön alan rengi, metnin gösterildiği renktir.</
 #: css/csscustom.ui:264
 #, kde-format
 msgid "&Foreground:"
-msgstr "Ö&nplan:"
+msgstr "Ö&n plan:"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox3_2)
 #: css/csscustom.ui:293
