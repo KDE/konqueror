@@ -16,6 +16,9 @@
 #include "webenginepage.h"
 #include "settings/webenginesettings.h"
 #include <webenginepart_debug.h>
+#include "webenginepage.h"
+#include "webenginepartcontrols.h"
+#include "webenginepartdownloadmanager.h"
 
 #include <QWebEngineSettings>
 
@@ -105,6 +108,16 @@ WebEngineView* WebEngineBrowserExtension::view()
     }
 
     return m_view;
+}
+
+WebEnginePage* WebEngineBrowserExtension::page()
+{
+    WebEngineView *v = view();
+    if (v) {
+        return qobject_cast<WebEnginePage*>(v->page());
+    } else {
+        return nullptr;
+    }
 }
 
 int WebEngineBrowserExtension::xOffset()
@@ -228,14 +241,19 @@ void WebEngineBrowserExtension::paste()
 
 void WebEngineBrowserExtension::slotSaveDocument()
 {
-    if (view())
-        emit saveUrl(view()->url());
+    WebEnginePage *pg = page();
+    if (pg) {
+        WebEnginePartControls::self()->downloadManager()->setForceDownload(pg->url(), pg);
+        pg->download(pg->url());
+    }
 }
 
-void WebEngineBrowserExtension::slotSaveFrame()
+void WebEngineBrowserExtension::slotSaveFullHTMLPage()
 {
-    if (view())
-        emit saveUrl(view()->page()->url()); // TODO lol
+    WebEnginePage *p = page();
+    if (p) {
+        p->triggerAction(QWebEnginePage::SavePage);
+    }
 }
 
 void WebEngineBrowserExtension::print()
@@ -261,7 +279,6 @@ void WebEngineBrowserExtension::slotHandlePagePrinted(bool result)
     mCurrentPrinter = nullptr;
 }
 
-
 void WebEngineBrowserExtension::updateEditActions()
 {
     if (!view())
@@ -275,7 +292,7 @@ void WebEngineBrowserExtension::updateEditActions()
 void WebEngineBrowserExtension::updateActions()
 {
     const QString protocol (m_part->url().scheme());
-    const bool isValidDocument = (protocol != QL1S("about") && protocol != QL1S("error"));
+    const bool isValidDocument = (protocol != QL1S("about") && protocol != QL1S("error") && protocol != QL1S("konq"));
     emit enableAction("print", isValidDocument);
 }
 
@@ -367,7 +384,7 @@ void WebEngineBrowserExtension::toogleZoomToDPI()
     
     if (zoomToDPI)
         view()->setZoomFactor(view()->zoomFactor() * view()->logicalDpiY() / 96.0f);
-    else 
+    else
         view()->setZoomFactor(view()->zoomFactor() * 96.0f / view()->logicalDpiY());
     
     // Recompute default font-sizes since they are only DPI dependent when zoomToDPI is false.
@@ -622,14 +639,17 @@ static QUrl mediaUrlFrom(QWebElement& element)
 
 void WebEngineBrowserExtension::slotSaveMedia()
 {
-    if (!view()) {
+    WebEnginePage *pg = page();
+    QWebEngineContextMenuData data =  view()->contextMenuResult();
+    if (!isMultimediaElement( data.mediaType())) {
         return;
     }
-
-    QWebEngineContextMenuData data =  view()->contextMenuResult();
-    if (!isMultimediaElement( data.mediaType()))
-        return;
-    emit saveUrl(data.mediaUrl());
+    if (pg) {
+        if (data.mediaUrl().isValid()) {
+            WebEnginePartControls::self()->downloadManager()->setForceDownload(data.mediaUrl(), pg);
+        }
+        pg->triggerAction(QWebEnginePage::DownloadMediaToDisk);
+    }
 }
 
 void WebEngineBrowserExtension::slotCopyMedia()

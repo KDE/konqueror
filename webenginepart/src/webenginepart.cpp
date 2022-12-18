@@ -218,12 +218,11 @@ SpellCheckerManager * WebEnginePart::spellCheckerManager()
 
 void WebEnginePart::initActions()
 {
-    KStandardAction::create(KStandardAction::SaveAs, m_browserExtension, &WebEngineBrowserExtension::slotSaveDocument,
-                            actionCollection());
+    QAction *action = actionCollection()->addAction(KStandardAction::SaveAs, QLatin1String("saveDocument"), m_browserExtension, &WebEngineBrowserExtension::slotSaveDocument);
 
-    QAction* action = new QAction(i18n("Save &Frame As..."), this);
-    actionCollection()->addAction(QStringLiteral("saveFrame"), action);
-    connect(action, &QAction::triggered, m_browserExtension, &WebEngineBrowserExtension::slotSaveFrame);
+    action = new QAction(QIcon::fromTheme(QStringLiteral("document-save-as")), i18n("Save Full HTML Page As..."), this);
+    actionCollection()->addAction(QStringLiteral("saveFullHtmlPage"), action);
+    connect(action, &QAction::triggered, m_browserExtension, &WebEngineBrowserExtension::slotSaveFullHTMLPage);
 
     action = new QAction(QIcon::fromTheme(QStringLiteral("document-print-preview")), i18n("Print Preview"), this);
     actionCollection()->addAction(QStringLiteral("printPreview"), action);
@@ -289,17 +288,19 @@ void WebEnginePart::updateActions()
 {
     m_browserExtension->updateActions();
 
-    QAction* action = actionCollection()->action(QL1S("saveDocument"));
-    if (action) {
-        const QString protocol (url().scheme());
-        action->setEnabled(protocol != QL1S("about") && protocol != QL1S("error"));
-    }
+    auto enableActionIf = [this](const QString &name, bool enable) {
+        QAction* action = actionCollection()->action(name);
+        if (action) {
+            action->setEnabled(enable);
+        }
+    };
 
-    action = actionCollection()->action(QL1S("printPreview"));
-    if (action) {
-        action->setEnabled(m_browserExtension->isActionEnabled("print"));
-    }
+    const QString protocol (url().scheme());
+    bool saveEnabled = protocol != QL1S("about") && protocol != QL1S("error") && protocol != QL1S("konq");
 
+    enableActionIf(QL1S("saveDocument"), saveEnabled);
+    enableActionIf(QL1S("saveFullHtmlPage"), saveEnabled);
+    enableActionIf(QL1S("printPreview"), m_browserExtension->isActionEnabled("print"));
 }
 
 void WebEnginePart::connectWebEnginePageSignals(WebEnginePage* page)

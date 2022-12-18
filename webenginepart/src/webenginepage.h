@@ -50,7 +50,7 @@ public:
      */
     void setSslInfo (const WebSslInfo &other);
 
-    void download(QWebEngineDownloadItem *it, bool newWindow = false);
+    void downloadItem(QWebEngineDownloadItem *it, bool newWindow = false);
 
     void requestOpenFileAsTemporary(const QUrl &url, const QString &mimeType = "", bool newWindow = false, bool newTab = false);
 

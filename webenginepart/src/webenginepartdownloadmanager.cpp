@@ -12,6 +12,7 @@
 #include <webenginepart_debug.h>
 #include "webenginepartcontrols.h"
 #include "navigationrecorder.h"
+#include "choosepagesaveformatdlg.h"
 
 #include <QWebEngineView>
 #include <QWebEngineProfile>
@@ -21,6 +22,7 @@
 #include <QMimeDatabase>
 #include <QMimeType>
 #include <QTimer>
+#include <QDialog>
 
 #include <KLocalizedString>
 #include <KNotificationJobUiDelegate>
@@ -40,6 +42,29 @@ WebEnginePartDownloadManager::~WebEnginePartDownloadManager()
 {
 }
 
+void WebEnginePartDownloadManager::setForceDownload(const QUrl& url, WebEnginePage *page)
+{
+    m_forcedDownloads.insert(url, page);
+}
+
+bool WebEnginePartDownloadManager::checkForceDownload(const QUrl& url, WebEnginePage *page)
+{
+    if (!page) {
+        return false;
+    }
+    bool force = m_forcedDownloads.remove(url, page) != 0;
+
+    // Bookkeeping: remove any entry with an invalid page. Note that in most cases, m_forcedDownloads
+    // will be empty, since entries are usually added just before this is called indirectly from
+    // WebEnginePage::download. The line before this removes one entry from m_forcedDownloads, which
+    // usually will be the one just added, meaning m_forcedDownloads will be empty.
+    for (const QUrl &k : m_forcedDownloads.uniqueKeys()) {
+        m_forcedDownloads.remove(k, nullptr);
+    }
+
+    return force;
+}
+
 void WebEnginePartDownloadManager::addPage(WebEnginePage* page)
 {
     if (!m_pages.contains(page)) {
@@ -55,24 +80,32 @@ void WebEnginePartDownloadManager::removePage(QObject* page)
 
 void WebEnginePartDownloadManager::performDownload(QWebEngineDownloadItem* it)
 {
+    QUrl url = it->url();
     WebEnginePage *page = qobject_cast<WebEnginePage*>(it->page());
+    if (it->isSavePageDownload()) {
+        saveHtmlPage(it, page);
+        return;
+    }
     bool forceNew = false;
     //According to the documentation, QWebEngineDownloadItem::page() can return nullptr "if the download was not triggered by content in a page"
     if (!page && !m_pages.isEmpty()) {
-        qCDebug(WEBENGINEPART_LOG) << "downloading" << it->url() << "in new window or tab";
+        qCDebug(WEBENGINEPART_LOG) << "downloading" << url << "in new window or tab";
         page = m_pages.first();
         forceNew = true;
     } else if (!page) {
-        qCDebug(WEBENGINEPART_LOG) << "Couldn't find a part wanting to download" << it->url();
+        qCDebug(WEBENGINEPART_LOG) << "Couldn't find a part wanting to download" << url;
         return;
     }
+
     if (WebEnginePartControls::self()->navigationRecorder()->isPostRequest(it->url(), page)) {
-        WebEnginePartControls::self()->navigationRecorder()->recordNavigationFinished(page, it->url());
+        WebEnginePartControls::self()->navigationRecorder()->recordNavigationFinished(page, url);
         downloadFile(it, KParts::BrowserOpenOrSaveQuestion::InlineDisposition, true);
         return;
     }
-    if (it->url().scheme() != "blob") {
-        page->download(it, forceNew);
+
+    bool forceDownload = checkForceDownload(url, page);
+    if (!forceDownload && it->url().scheme() != "blob") {
+        page->downloadItem(it, forceNew);
     } else {
         downloadFile(it, KParts::BrowserOpenOrSaveQuestion::AttachmentDisposition);
     }
@@ -98,6 +131,7 @@ void WebEnginePartDownloadManager::downloadFile(QWebEngineDownloadItem* it, KPar
     }
 }
 
+
 void WebEnginePartDownloadManager::saveFile(QWebEngineDownloadItem* it)
 {
     QWidget *w = it->page() ? it->page()->view() : nullptr;
@@ -107,24 +141,13 @@ void WebEnginePartDownloadManager::saveFile(QWebEngineDownloadItem* it)
     QFileDialog dlg(w, QString(), downloadDir);
     dlg.setAcceptMode(QFileDialog::AcceptSave);
     dlg.setMimeTypeFilters(QStringList{type.name(), "application/octet-stream"});
-    dlg.setSupportedSchemes(QStringList{"file"});
     QDialog::DialogCode exitCode = static_cast<QDialog::DialogCode>(dlg.exec());
     if (exitCode == QDialog::Rejected) {
         it->cancel();
         return;
     }
     QString file = dlg.selectedFiles().at(0);
-    QFileInfo info(file);
-    it->setDownloadDirectory(info.path());
-    it->setDownloadFileName(info.fileName());
-    it->accept();
-    it->pause();
-    WebEngineDownloadJob *j = new WebEngineDownloadJob(it, this);
-    KJobTrackerInterface *t = KIO::getJobTracker();
-    if (t) {
-        t->registerJob(j);
-    }
-    j->start();
+    startDownloadJob(file, it);
 }
 
 void WebEnginePartDownloadManager::openFile(QWebEngineDownloadItem* it, WebEnginePage *page, bool forceNewTab)
@@ -168,6 +191,62 @@ void WebEnginePartDownloadManager::downloadToFileCompleted(QWebEngineDownloadIte
         j->start();
     }
 }
+
+void WebEnginePartDownloadManager::saveHtmlPage(QWebEngineDownloadItem* it, WebEnginePage *page)
+{
+    QWidget *parent = page ? page->view() : nullptr;
+
+    ChoosePageSaveFormatDlg *formatDlg = new ChoosePageSaveFormatDlg(parent);
+    if (formatDlg->exec() == QDialog::Rejected) {
+        return;
+    }
+    it->setSavePageFormat(formatDlg->choosenFormat());
+
+    QString downloadDir = QStandardPaths::writableLocation(QStandardPaths::DownloadLocation);
+    QFileDialog dlg(parent, QString(), downloadDir);
+    dlg.setAcceptMode(QFileDialog::AcceptSave);
+
+    QString mimeType;
+    if (it->savePageFormat() == QWebEngineDownloadItem::SingleHtmlSaveFormat) {
+        mimeType = QStringLiteral("text/html");
+    } else if (it->savePageFormat() == QWebEngineDownloadItem::MimeHtmlSaveFormat) {
+        mimeType = QStringLiteral("application/x-mimearchive");
+    } else if (it->savePageFormat() == QWebEngineDownloadItem::CompleteHtmlSaveFormat) {
+        dlg.setFileMode(QFileDialog::Directory);
+        dlg.setOption(QFileDialog::ShowDirsOnly);
+    }
+
+    dlg.setMimeTypeFilters(QStringList{mimeType, "application/octet-stream"});
+
+    QDialog::DialogCode exitCode = static_cast<QDialog::DialogCode>(dlg.exec());
+    if (exitCode == QDialog::Rejected) {
+        it->cancel();
+        return;
+    }
+
+    QString file = dlg.selectedFiles().at(0);
+    startDownloadJob(file, it);
+}
+
+void WebEnginePartDownloadManager::startDownloadJob(const QString &file, QWebEngineDownloadItem *it)
+{
+    QFileInfo info(file);
+    if (info.isDir()) {
+        it->setDownloadDirectory(file);
+    } else {
+        it->setDownloadDirectory(info.dir().path());
+        it->setDownloadFileName(info.fileName());
+    }
+    it->accept();
+    it->pause();
+    WebEngineDownloadJob *j = new WebEngineDownloadJob(it, this);
+    KJobTrackerInterface *t = KIO::getJobTracker();
+    if (t) {
+        t->registerJob(j);
+    }
+    j->start();
+}
+
 
 WebEngineDownloadJob::WebEngineDownloadJob(QWebEngineDownloadItem* it, QObject* parent) : KJob(parent), m_downloadItem(it)
 {

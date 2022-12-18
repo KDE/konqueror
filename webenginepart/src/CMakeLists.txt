@@ -45,9 +45,10 @@ set(kwebenginepartlib_LIB_SRCS
     webenginepartcertificateerrordlg.cpp
     certificateerrordialogmanager.cpp
     navigationrecorder.cpp
+    choosepagesaveformatdlg.cpp
 )
 
-ki18n_wrap_ui(kwebenginepartlib_LIB_SRCS webenginecustomizecacheablefieldsdlg.ui ui/credentialsdetailswidget.ui webenginepartcertificateerrordlg.ui)
+ki18n_wrap_ui(kwebenginepartlib_LIB_SRCS webenginecustomizecacheablefieldsdlg.ui ui/credentialsdetailswidget.ui webenginepartcertificateerrordlg.ui choosepagesaveformatdlg.ui)
 
 qt5_add_resources(kwebenginepartlib_LIB_SRCS webenginepart.qrc)
 
