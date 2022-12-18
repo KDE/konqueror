@@ -142,7 +142,7 @@ static void checkForDownloadManager(QWidget* widget, QString& cmd)
     cmd = exeName;
 }
 
-void WebEnginePage::download(QWebEngineDownloadItem *it, bool newWindow)
+void WebEnginePage::downloadItem(QWebEngineDownloadItem *it, bool newWindow)
 {
     QUrl url = it->url();
     // Integration with a download manager...
