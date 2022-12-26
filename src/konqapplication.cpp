@@ -29,6 +29,7 @@
 #include <QProcess>
 #include <QDirIterator>
 #include <QTextStream>
+#include <QX11Info>
 
 #include <KCrash>
 #include <KLocalizedString>
@@ -268,12 +269,8 @@ int KonquerorApplication::performStart(const QString& workingDirectory, bool fir
 
     KonqMainWindow *mw = result.first;
     if (!firstInstance && mw) {
-#if KWINDOWSYSTEM_VERSION >= QT_VERSION_CHECK(5,62,0)
         mw ->setAttribute(Qt::WA_NativeWindow, true);
-        KStartupInfo::setNewStartupId(mw->windowHandle(), KStartupInfo::startupId());
-#else
-        KStartupInfo::setNewStartupId(mw, KStartupInfo::startupId());
-#endif
+        KStartupInfo::setNewStartupId(mw->windowHandle(), QX11Info::nextStartupId());
         KWindowSystem::forceActiveWindow(mw->winId());
     }
 
