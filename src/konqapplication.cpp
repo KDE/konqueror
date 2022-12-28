@@ -38,6 +38,7 @@
 #include <KStartupInfo>
 #include <KWindowSystem>
 #include <kwindowsystem_version.h>
+#include <KMessageBox>
 
 #include <iostream>
 
@@ -244,7 +245,19 @@ int KonquerorApplication::performStart(const QString& workingDirectory, bool fir
         listSessions();
         return 0;
     } else if (m_parser.isSet("open-session")) {
-        return openSession(m_parser.value("open-session"));
+        //If the given session can't be opened for any reason, inform the user
+        QString sessionName = m_parser.value("open-session");
+        int result = openSession(sessionName);
+        if (result != 0) {
+            KMessageBox::sorry(nullptr, i18nc("The session asked by the user doesn't exist or can't be opened",
+                                              "Session %1 couldn't be opened", sessionName));
+        }
+        //If there was an error opening the session and this is the first instance, don't return immediately
+        //as this would lead to the application being run but with no windows open. Instead, open an empty
+        //window
+        if (result != 0 && firstInstance) {
+            return result;
+        }
     }
 
     //We check for the --preload switch before attempting recovering session because we shouldn't
