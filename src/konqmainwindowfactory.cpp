@@ -10,6 +10,7 @@
 #include "konqsettingsxt.h"
 #include "konqdebug.h"
 #include "konqurl.h"
+#include "konqmisc.h"
 
 #include <KWindowInfo>
 #include <KStartupInfo>
@@ -80,7 +81,7 @@ KonqMainWindow *KonqMainWindowFactory::createNewWindow(const QUrl &url,
         mainWindow->openUrl(nullptr, url, QString(), req);
         mainWindow->setInitialFrameName(req.browserArgs.frameName);
     } else {
-        mainWindow->openUrl(nullptr, QUrl(KonqSettings::startURL()));
+        mainWindow->openUrl(nullptr, KonqMisc::konqFilteredURL(mainWindow, KonqSettings::startURL()));
         mainWindow->focusLocationBar();
     }
     return mainWindow;
