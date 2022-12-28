@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-27 00:48+0000\n"
-"PO-Revision-Date: 2022-11-01 06:29+0100\n"
+"PO-Revision-Date: 2022-12-27 07:58+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -627,7 +627,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Discard Changes?"
-msgstr ""
+msgstr "გავაუქმო ცვლილებები?"
 
 #: src/konqmainwindow.cpp:1584 src/konqmainwindow.cpp:2281
 #: src/konqmainwindow.cpp:2374 src/konqmainwindow.cpp:2406
@@ -650,12 +650,12 @@ msgstr "სახლი"
 #: src/konqmainwindow.cpp:1958
 #, kde-format
 msgid "Navigate to your 'Home Folder'"
-msgstr ""
+msgstr "საწყის საქაღალდეზე გადასვლა"
 
 #: src/konqmainwindow.cpp:1959
 #, kde-format
 msgid "Navigate to your local 'Home Folder'"
-msgstr ""
+msgstr "ლოკალურ საწყის საქაღალდეზე გადასვლა"
 
 #. i18n: ectx: label, entry, group (UserSettings)
 #: src/konqmainwindow.cpp:1962 src/konqueror.kcfg:16
@@ -736,7 +736,7 @@ msgstr ""
 #: src/konqmainwindow.cpp:2519
 #, kde-format
 msgid "<qt><b>%1</b> is not valid</qt>"
-msgstr ""
+msgstr "<qt><b>%1</b> არასწორია</qt>"
 
 #: src/konqmainwindow.cpp:2529
 #, kde-format
