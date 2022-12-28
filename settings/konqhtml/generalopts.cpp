@@ -103,6 +103,7 @@ void KKonqGeneralOptions::addHomeUrlWidgets(QVBoxLayout *lay)
     startURL->setWindowTitle(i18nc("@title:window", "Select Start Page"));
     hboxLayout->addWidget(startURL);
     connect(startURL, &QLineEdit::textChanged, this, &KKonqGeneralOptions::displayEmpytStartPageWarningIfNeeded);
+    connect(startURL, &QLineEdit::textChanged, this, &KKonqGeneralOptions::slotChanged);
 
     QString startstr = i18n("This is the URL of the web page "
                            "Konqueror will show when starting.");
