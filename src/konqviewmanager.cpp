@@ -132,9 +132,10 @@ KonqView *KonqViewManager::splitView(KonqView *currentView,
     }
 
     Q_ASSERT(newContainer->count() == 2);
-    QList<int> newSplitterSizes;
-    newSplitterSizes << 50 << 50;
-    newContainer->setSizes(newSplitterSizes);
+
+    int width = std::max(newContainer->widget(0)->minimumSizeHint().width(), newContainer->widget(1)->minimumSizeHint().width());
+    newContainer->setSizes(QList<int>{width, width});
+
     splitFrame->show();
     newContainer->show();
 
