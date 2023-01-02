@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-29 00:52+0000\n"
-"PO-Revision-Date: 2022-12-30 07:18+0100\n"
+"PO-Revision-Date: 2023-01-01 08:07+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -123,7 +123,7 @@ msgstr ""
 #: advancedTabOptions.ui:84
 #, kde-format
 msgid "&Show close button on tabs"
-msgstr ""
+msgstr "ჩანართებზე დახურვის ღილაკის &ჩვენება"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pMiddleClickClose)
 #: advancedTabOptions.ui:91
@@ -137,7 +137,7 @@ msgstr ""
 #: advancedTabOptions.ui:94
 #, kde-format
 msgid "Middle-click on a tab to close it"
-msgstr ""
+msgstr "თაგუნას შუა ღილაკით ჩანართის დახურვა"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabConfirm)
 #: advancedTabOptions.ui:101
@@ -180,10 +180,10 @@ msgid "Fonts"
 msgstr "შრიფტები"
 
 #: appearance.cpp:41
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@title:tab"
 msgid "Stylesheets"
-msgstr ""
+msgstr "სტილის ფურცლები"
 
 #. i18n: ectx: property (title), widget (QGroupBox, GroupBox3_2)
 #: appearance.cpp:48 css/csscustom.ui:296
@@ -194,7 +194,7 @@ msgstr "გამოსახულებები"
 #: appearance.cpp:52
 #, kde-format
 msgid "A&utomatically load images"
-msgstr ""
+msgstr "გამოსახულებების &ავტომატური ჩატვირთვა"
 
 #: appearance.cpp:53
 #, kde-format
@@ -235,7 +235,7 @@ msgstr "გამორთულია"
 #: appearance.cpp:76
 #, kde-format
 msgid "Show Only Once"
-msgstr ""
+msgstr "მხოლოდ ერთხელ ჩვენება"
 
 #: appearance.cpp:77
 #, kde-format
@@ -249,7 +249,7 @@ msgstr ""
 #: appearance.cpp:82
 #, kde-format
 msgid "A&nimations:"
-msgstr ""
+msgstr "&ანიმაციები:"
 
 #: appearance.cpp:85 htmlopts.cpp:110
 #, kde-format
@@ -272,12 +272,12 @@ msgstr "გამორთულია"
 #: appearance.cpp:92
 #, kde-format
 msgid "Only on Hover"
-msgstr ""
+msgstr "მხოლოდ გადატარებისას"
 
 #: appearance.cpp:93
 #, kde-format
 msgid "Und&erline links:"
-msgstr ""
+msgstr "ბმულების ხაზის გასმა:"
 
 #: appearance.cpp:96
 #, kde-format
@@ -292,7 +292,7 @@ msgstr ""
 #: appearance.cpp:105
 #, kde-format
 msgid "When Efficient"
-msgstr ""
+msgstr "როცა ეფექტურია"
 
 #: appearance.cpp:106
 #, kde-format
@@ -309,7 +309,7 @@ msgstr "არასდროს"
 #: appearance.cpp:108
 #, kde-format
 msgid "S&mooth scrolling:"
-msgstr ""
+msgstr "&გლუვი აწევა/დაწევა:"
 
 #: appearance.cpp:110
 #, kde-format
@@ -1502,7 +1502,7 @@ msgstr "შეცდომები"
 #: jsopts.cpp:63
 #, kde-format
 msgid "Enable debu&gger"
-msgstr ""
+msgstr "&გამმართავის ჩართვა"
 
 #: jsopts.cpp:64
 #, kde-format
@@ -1512,7 +1512,7 @@ msgstr ""
 #: jsopts.cpp:68
 #, kde-format
 msgid "Report &errors"
-msgstr ""
+msgstr "&შეცდომების გადაცემა"
 
 #: jsopts.cpp:69
 #, kde-format
@@ -1575,18 +1575,18 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "New JavaScript Policy"
-msgstr ""
+msgstr "JavaScript -ის ახალი პოლიტიკა"
 
 #: jsopts.cpp:215
 #, kde-format
 msgctxt "@title:window"
 msgid "Change JavaScript Policy"
-msgstr ""
+msgstr "JavaScript -ის პოლიტიკის შეცვლა"
 
 #: jsopts.cpp:219
 #, kde-format
 msgid "JavaScript policy:"
-msgstr ""
+msgstr "JavaScript -ის პოლიტიკა:"
 
 #: jsopts.cpp:220
 #, kde-format
@@ -1601,7 +1601,7 @@ msgstr ""
 #: jspolicies.cpp:132
 #, kde-format
 msgid "Open new windows:"
-msgstr ""
+msgstr "ახალი ფანჯრების გახსნა:"
 
 #: jspolicies.cpp:140 jspolicies.cpp:194 jspolicies.cpp:231 jspolicies.cpp:268
 #: jspolicies.cpp:308
@@ -1671,7 +1671,7 @@ msgstr ""
 #: jspolicies.cpp:187
 #, kde-format
 msgid "Resize window:"
-msgstr ""
+msgstr "ფანჯრის ზომის შეცვლა:"
 
 #: jspolicies.cpp:202
 #, kde-format
@@ -1701,7 +1701,7 @@ msgstr ""
 #: jspolicies.cpp:224
 #, kde-format
 msgid "Move window:"
-msgstr ""
+msgstr "ფანჯრის გადაადგილება:"
 
 #: jspolicies.cpp:239
 #, kde-format
