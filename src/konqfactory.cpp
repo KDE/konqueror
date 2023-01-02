@@ -178,7 +178,7 @@ void KonqFactory::getOffers(const QString &serviceType, QVector<KPluginMetaData>
 #endif
     if (partServiceOffers && serviceType.length() > 0 && serviceType[0].isUpper()) {
         //TODO port away from query: check whether it's still necessary to exclude kfmclient* from this vector (they aren't parts, so I think they shouldn't be included here)
-        *partServiceOffers = KPluginMetaData::findPlugins(QString(), [serviceType](const KPluginMetaData &md){return md.serviceTypes().contains(serviceType);});
+        *partServiceOffers = KPluginMetaData::findPlugins(QStringLiteral("kf5/parts"), [serviceType](const KPluginMetaData &md){return md.serviceTypes().contains(serviceType);});
         return;
     }
 
