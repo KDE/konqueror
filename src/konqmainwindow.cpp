@@ -3115,8 +3115,10 @@ bool KonqMainWindow::eventFilter(QObject *obj, QEvent *ev)
 void KonqMainWindow::slotClipboardDataChanged()
 {
     const QMimeData *data = QApplication::clipboard()->mimeData();
-    m_paPaste->setEnabled(data->hasText());
-    slotCheckComboSelection();
+    if (data) {
+        m_paPaste->setEnabled(data->hasText());
+        slotCheckComboSelection();
+    }
 }
 
 void KonqMainWindow::slotCheckComboSelection()
