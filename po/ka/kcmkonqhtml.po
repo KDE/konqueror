@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-29 00:52+0000\n"
-"PO-Revision-Date: 2023-01-01 08:07+0100\n"
+"PO-Revision-Date: 2023-01-02 05:44+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -40,7 +40,7 @@ msgstr ""
 #: advancedTabOptions.ui:24
 #, kde-format
 msgid "Open &links in new tab instead of in new window"
-msgstr ""
+msgstr "&ბმულების ახალი ფანჯრების მაგიერ ახალ ჩანართებში გახსნა"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPopupsWithinTabs)
 #: advancedTabOptions.ui:31
@@ -54,7 +54,7 @@ msgstr ""
 #: advancedTabOptions.ui:34
 #, kde-format
 msgid "Open pop&ups in new tab instead of in new window"
-msgstr ""
+msgstr "&მხტუნარების ახალი ფანჯრის მაგიერ ახალ ჩანართებში გახსნა"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pKonquerorTabforExternalURL)
 #: advancedTabOptions.ui:41
@@ -77,13 +77,13 @@ msgstr ""
 #, kde-format
 msgid ""
 "This will open a new tab in the background, instead of in the foreground."
-msgstr ""
+msgstr "ახალი ჩანართის წინა პლანის მაგიერ ფონზე გახსნა."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
 #: advancedTabOptions.ui:54
 #, kde-format
 msgid "O&pen new tabs in the background"
-msgstr ""
+msgstr "&ახალი ჩანართების ფონურად გახსნა"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pOpenAfterCurrentPage)
 #: advancedTabOptions.ui:61
@@ -97,7 +97,7 @@ msgstr ""
 #: advancedTabOptions.ui:64
 #, kde-format
 msgid "Open &new tab after current tab"
-msgstr ""
+msgstr "&ახალი ჩანართის მიმდინარე ჩანართის შემდეგ გახსნა"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pDynamicTabbarHide)
 #: advancedTabOptions.ui:71
@@ -117,7 +117,7 @@ msgstr ""
 #: advancedTabOptions.ui:81
 #, kde-format
 msgid "This will display close buttons inside each tab."
-msgstr ""
+msgstr "თითოეული ჩანართისთვის დახურვის ღილაკის ჩვენება."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pPermanentCloseButton)
 #: advancedTabOptions.ui:84
@@ -152,6 +152,8 @@ msgstr ""
 #, kde-format
 msgid "Confirm &when closing windows with multiple tabs"
 msgstr ""
+"ფანჯრების, რომელსაც ერთზე მეტი ჩანართი გააჩნია, დახურვის დადასტურების "
+"მოთხოვნა"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabCloseActivatePrevious)
 #: advancedTabOptions.ui:111
@@ -165,7 +167,7 @@ msgstr ""
 #: advancedTabOptions.ui:114
 #, kde-format
 msgid "Activate previously used tab when closing the current tab"
-msgstr ""
+msgstr "მიმდინარე ჩანართის დახურვისას წინა გამოყენებულ ჩანართზე გადართვა"
 
 #: appearance.cpp:39
 #, kde-format
@@ -180,7 +182,7 @@ msgid "Fonts"
 msgstr "შრიფტები"
 
 #: appearance.cpp:41
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:tab"
 msgid "Stylesheets"
 msgstr "სტილის ფურცლები"
@@ -364,7 +366,7 @@ msgstr "&სტანდარტული ფონტი:"
 #: appearance.cpp:161
 #, kde-format
 msgid "This is the font used to display normal text in a web page."
-msgstr ""
+msgstr "ვებგვერდის ნორმალური ტექსტის საჩვენებელი ფონტი."
 
 #: appearance.cpp:165
 #, kde-format
@@ -375,7 +377,7 @@ msgstr "&ფიქსირებული ფონტი:"
 #, kde-format
 msgid ""
 "This is the font used to display fixed-width (i.e. non-proportional) text."
-msgstr ""
+msgstr "ფიქსირებული-ზომის მქონედ მონიშნული ტექსტის საჩვენებელი ფონტი."
 
 #: appearance.cpp:170
 #, kde-format
@@ -385,7 +387,7 @@ msgstr "S&erif ფონტი:"
 #: appearance.cpp:171
 #, kde-format
 msgid "This is the font used to display text that is marked up as serif."
-msgstr ""
+msgstr "Serif-ად მონიშნული ტექსტის საჩვენებელი ფონტი."
 
 #: appearance.cpp:175
 #, kde-format
@@ -395,7 +397,7 @@ msgstr "Sa&ns serif ფონტი:"
 #: appearance.cpp:176
 #, kde-format
 msgid "This is the font used to display text that is marked up as sans-serif."
-msgstr ""
+msgstr "Sans-serif-ად მონიშნული ტექსტის საჩვენებელი ფონტი."
 
 #: appearance.cpp:180
 #, kde-format
@@ -405,7 +407,7 @@ msgstr "&კურსივის ფონტი:"
 #: appearance.cpp:181
 #, kde-format
 msgid "This is the font used to display text that is marked up as italic."
-msgstr ""
+msgstr "Italic-ად მონიშნული ტექსტის საჩვენებელი ფონტი."
 
 #: appearance.cpp:185
 #, kde-format
@@ -416,7 +418,7 @@ msgstr "&ფანტაზიის ფონტი:"
 #, kde-format
 msgid ""
 "This is the font used to display text that is marked up as a fantasy font."
-msgstr ""
+msgstr "Fantasy font-ად მონიშნული ტექსტის საჩვენებელი ფონტი."
 
 #: appearance.cpp:195
 #, kde-format
@@ -475,7 +477,7 @@ msgstr ""
 #: css/cssconfig.ui:29
 #, kde-format
 msgid "Us&e default stylesheet"
-msgstr ""
+msgstr "ნაგულისხმები სტილების ცხრილის გამოყენება"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, useUser)
 #: css/cssconfig.ui:39
@@ -542,7 +544,7 @@ msgstr "საბაზისო ოჯახი:"
 #: css/csscustom.ui:37
 #, kde-format
 msgid "<p>This is the currently selected font family</p>"
-msgstr ""
+msgstr "<p>ეს ამჟამად მონიშნული ფონტის ოჯახია</p>"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, sameFamily)
 #: css/csscustom.ui:44
