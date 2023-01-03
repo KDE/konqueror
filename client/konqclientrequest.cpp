@@ -42,8 +42,11 @@ public:
 KonqClientRequest::KonqClientRequest()
     : d(new KonqClientRequestPrivate)
 {
-    // read ASN env. variable
-    d->startup_id_str = KStartupInfo::currentStartupIdEnv().id();
+#if KONQ_HAVE_X11
+    if (KWindowSystem::isPlatformX11()) {
+        d->startup_id_str = QX11Info::nextStartupId();
+    }
+#endif
 }
 
 KonqClientRequest::~KonqClientRequest()
