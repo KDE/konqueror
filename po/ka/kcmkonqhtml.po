@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-29 00:52+0000\n"
-"PO-Revision-Date: 2023-01-02 05:44+0100\n"
+"PO-Revision-Date: 2023-01-03 07:14+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -558,7 +558,7 @@ msgstr ""
 #: css/csscustom.ui:47
 #, kde-format
 msgid "Use same family for all text"
-msgstr ""
+msgstr "ყველა ტექსტისთვის ფონტის იგივე ოჯახის გამოყენება"
 
 #. i18n: ectx: property (title), widget (QGroupBox, GroupBox3)
 #: css/csscustom.ui:57
@@ -570,7 +570,7 @@ msgstr "ფონტის ზომა"
 #: css/csscustom.ui:63
 #, kde-format
 msgid "Base font si&ze:"
-msgstr ""
+msgstr "საბაზისო ფონტის &ზომა:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
 #: css/csscustom.ui:80
@@ -663,7 +663,7 @@ msgstr ""
 #: css/csscustom.ui:151
 #, kde-format
 msgid "&Use same size for all elements"
-msgstr ""
+msgstr "&ყველა ელემენტისთვის იგივე ზომის გამოყენება"
 
 #. i18n: ectx: property (title), widget (QGroupBox, ButtonGroup2)
 #: css/csscustom.ui:161
@@ -744,7 +744,7 @@ msgstr ""
 #: css/csscustom.ui:251
 #, kde-format
 msgid "Use same color for all text"
-msgstr ""
+msgstr "ყველა ტექსტისთვის იგივე ფერის გამოყენება"
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, txtForeground)
 #. i18n: ectx: property (whatsThis), widget (KColorButton, foregroundColorButton)
@@ -779,7 +779,7 @@ msgstr ""
 #: css/csscustom.ui:305
 #, kde-format
 msgid "&Suppress images"
-msgstr ""
+msgstr "&გამოსახულებების აკრძალვა"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, hideBackground)
 #: css/csscustom.ui:312
@@ -793,7 +793,7 @@ msgstr ""
 #: css/csscustom.ui:315
 #, kde-format
 msgid "Suppress background images"
-msgstr ""
+msgstr "ფონის სურათების აკრძალვა"
 
 #. i18n: ectx: property (title), widget (QGroupBox, previewBox)
 #: css/csscustom.ui:347
@@ -894,12 +894,12 @@ msgstr ""
 #: domainlistview.cpp:122
 #, kde-format
 msgid "You must first select a policy to be changed."
-msgstr ""
+msgstr "შესაცვლელად ჯერ პოლიტიკა უნდა აირჩიოთ."
 
 #: domainlistview.cpp:149
 #, kde-format
 msgid "You must first select a policy to delete."
-msgstr ""
+msgstr "წასაშლელად ჯერ საჭიროა, აირჩიოთ პოლიტიკა."
 
 #: domainlistview.cpp:187 policydlg.cpp:63
 #, kde-format
@@ -993,6 +993,8 @@ msgid ""
 "<qt>More information on <a href=\"importhelp\">import format</a>, <a href="
 "\"exporthelp\">export format</a>"
 msgstr ""
+"<qt>მეტი ინფორმაცია <a href=\"importhelp\">შემოტანის ფორმატისა</a> და <a "
+"href=\"exporthelp\">გატანის ფორმატის</a> შესახებ"
 
 #: filteropts.cpp:154
 #, kde-format
@@ -1156,12 +1158,12 @@ msgstr "ხედის გაყოფისას"
 #: generalopts.cpp:148
 #, kde-format
 msgid "Always duplicate current view"
-msgstr ""
+msgstr "მიმდინარე ხედი ყოველთვის დადაუბლირდება"
 
 #: generalopts.cpp:149
 #, kde-format
 msgid "Duplicate current view only for local files"
-msgstr ""
+msgstr "მიმდინარე ხედი ყოველთვის დადუბლირდება მხოლოდ ლოკალური ფაილებისთვის"
 
 #: htmlopts.cpp:36
 #, kde-format
@@ -1181,7 +1183,7 @@ msgstr "&სანიშნები"
 #: htmlopts.cpp:47
 #, kde-format
 msgid "Ask for name and folder when adding bookmarks"
-msgstr ""
+msgstr "სანიშნის დამატებისას სახელისა და საქაღალდის კითხვა"
 
 #: htmlopts.cpp:50
 #, kde-format
@@ -1194,7 +1196,7 @@ msgstr ""
 #: htmlopts.cpp:56
 #, kde-format
 msgid "Show only marked bookmarks in bookmark toolbar"
-msgstr ""
+msgstr "სანიშნების პანელზე მხოლოდ დანიშნული სანიშნების ჩვენება"
 
 #: htmlopts.cpp:58
 #, kde-format
@@ -1218,7 +1220,7 @@ msgstr ""
 #: htmlopts.cpp:75
 #, kde-format
 msgid "&Maximum completions:"
-msgstr ""
+msgstr "&მაქსიმალური დასრულება:"
 
 #: htmlopts.cpp:77
 #, kde-format
@@ -1234,7 +1236,7 @@ msgstr "თაგუნას &ქცევა"
 #: htmlopts.cpp:87
 #, kde-format
 msgid "Chan&ge cursor over links"
-msgstr ""
+msgstr "ბმულზე გადატარებისას &კურსორის ცვლილება"
 
 #: htmlopts.cpp:89
 #, kde-format
@@ -1308,7 +1310,7 @@ msgstr ""
 #: htmlopts.cpp:130
 #, kde-format
 msgid "Offer to save website passwords"
-msgstr ""
+msgstr "ვებგვერდის პაროლის დამახსოვრების შეთავაზება"
 
 #: htmlopts.cpp:131
 #, kde-format
@@ -1361,7 +1363,7 @@ msgstr[1] " წამი"
 #: javaopts.cpp:123
 #, kde-format
 msgid "&Path to Java executable, or 'java':"
-msgstr ""
+msgstr "ბილიკი Java-ის გამშვებ ფაილამდე ('java'):"
 
 #: javaopts.cpp:127
 #, kde-format
@@ -1486,7 +1488,7 @@ msgstr ""
 #: jsopts.cpp:50
 #, kde-format
 msgid "Ena&ble JavaScript globally"
-msgstr ""
+msgstr "JavaScript -ის გლობალურად &ჩართვა"
 
 #: jsopts.cpp:51
 #, kde-format
@@ -1565,7 +1567,7 @@ msgstr ""
 #: jsopts.cpp:105
 #, kde-format
 msgid "Global JavaScript Policies"
-msgstr ""
+msgstr "JavaScript-ის გლობალური პოლიტიკა"
 
 #: jsopts.cpp:173
 #, kde-format
@@ -1598,7 +1600,7 @@ msgstr ""
 #: jsopts.cpp:222
 #, kde-format
 msgid "Domain-Specific JavaScript Policies"
-msgstr ""
+msgstr "JavaScript-ის დომენისთვის სპეციფიკური პოლიტიკები"
 
 #: jspolicies.cpp:132
 #, kde-format
@@ -1615,7 +1617,7 @@ msgstr "გლობალურის გამოყენება"
 #: jspolicies.cpp:309
 #, kde-format
 msgid "Use setting from global policy."
-msgstr ""
+msgstr "პარამეტრის გლობალური პოლიტიკიდან აღება."
 
 #: jspolicies.cpp:147 jspolicies.cpp:201 jspolicies.cpp:238 jspolicies.cpp:275
 #: jspolicies.cpp:315
@@ -1626,7 +1628,7 @@ msgstr "დაშვება"
 #: jspolicies.cpp:148
 #, kde-format
 msgid "Accept all popup window requests."
-msgstr ""
+msgstr "ყველა მხტუნარა ფანჯრის მოთხოვნის მიღება."
 
 #: jspolicies.cpp:153
 #, kde-format
@@ -1646,7 +1648,7 @@ msgstr "უარყოფა"
 #: jspolicies.cpp:160
 #, kde-format
 msgid "Reject all popup window requests."
-msgstr ""
+msgstr "ყველა მხტუნარა ფანჯრის მოთხოვნის უარყოფა."
 
 #: jspolicies.cpp:165
 #, kde-format
@@ -1678,7 +1680,7 @@ msgstr "ფანჯრის ზომის შეცვლა:"
 #: jspolicies.cpp:202
 #, kde-format
 msgid "Allow scripts to change the window size."
-msgstr ""
+msgstr "სკრიპტებისთვის ფანჯრის ზომის შეცვლის ნების დართვა."
 
 #: jspolicies.cpp:207 jspolicies.cpp:244 jspolicies.cpp:281 jspolicies.cpp:321
 #, kde-format
@@ -1877,4 +1879,4 @@ msgstr ""
 #: policydlg.cpp:139
 #, kde-format
 msgid "You must first enter a domain name."
-msgstr ""
+msgstr "ჯერ დომენის სახელი უნდა შეიყვანო."
