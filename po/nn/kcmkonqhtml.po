@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-24 00:46+0000\n"
+"POT-Creation-Date: 2022-12-29 02:51+0000\n"
 "PO-Revision-Date: 2022-06-17 18:09+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -1057,8 +1057,8 @@ msgstr "Søk:"
 #: filteropts.cpp:84
 #, kde-format
 msgid ""
-"<qt>Filter expression (e.g. <tt>http://www.example.com/ad/*</tt>, <a href="
-"\"filterhelp\">more information</a>):"
+"<qt>Filter expression (e.g. <tt>http://www.example.com/ad/*</tt>, <a "
+"href=\"filterhelp\">more information</a>):"
 msgstr ""
 "<qt>Filteruttrykk (for eksempel <tt>http://www.eksempel.no/reklame/*</tt>, "
 "<a href=\"filterhelp\">meir informasjon</a>):"
@@ -1108,8 +1108,8 @@ msgstr "Eksporter …"
 #: filteropts.cpp:140
 #, kde-format
 msgid ""
-"<qt>More information on <a href=\"importhelp\">import format</a>, <a href="
-"\"exporthelp\">export format</a>"
+"<qt>More information on <a href=\"importhelp\">import format</a>, <a "
+"href=\"exporthelp\">export format</a>"
 msgstr ""
 "<qt>Meir informasjon om <a href=\"importhelp\">importeringsformatet</a>, <a "
 "href=\"exporthelp\">eksporteringsformatet</a>"
@@ -1263,47 +1263,47 @@ msgctxt "@title:window"
 msgid "Select Start Page"
 msgstr "Vel startside"
 
-#: generalopts.cpp:107
+#: generalopts.cpp:108
 #, kde-format
 msgid "This is the URL of the web page Konqueror will show when starting."
 msgstr "Dette er adressa til nettsida som Konqueror vil visa ved oppstart."
 
-#: generalopts.cpp:118
+#: generalopts.cpp:119
 #, kde-format
 msgid "Home page:"
 msgstr "Heimeside:"
 
-#: generalopts.cpp:121
+#: generalopts.cpp:122
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Home Page"
 msgstr "Vel heimeside"
 
-#: generalopts.cpp:126
+#: generalopts.cpp:127
 #, kde-format
 msgid ""
-"This is the URL of the web page where Konqueror will jump to when the \"Home"
-"\" button is pressed."
+"This is the URL of the web page where Konqueror will jump to when the "
+"\"Home\" button is pressed."
 msgstr ""
 "Dette er adressa til nettsida som Konqueror går til når du trykkjer på "
 "«Heim»-knappen."
 
-#: generalopts.cpp:134
+#: generalopts.cpp:135
 #, kde-format
 msgid "Default web browser engine:"
 msgstr "Standard nettlesarmotor:"
 
-#: generalopts.cpp:143
+#: generalopts.cpp:144
 #, kde-format
 msgid "When splitting a view"
 msgstr "Ved oppdeling av ei vising"
 
-#: generalopts.cpp:147
+#: generalopts.cpp:148
 #, kde-format
 msgid "Always duplicate current view"
 msgstr "Dupliser alltid gjeldande vising"
 
-#: generalopts.cpp:148
+#: generalopts.cpp:149
 #, kde-format
 msgid "Duplicate current view only for local files"
 msgstr "Dupliser gjeldande vising berre for lokale filer"
