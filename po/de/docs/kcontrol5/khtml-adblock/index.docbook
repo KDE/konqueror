@@ -2,121 +2,85 @@
 <!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
 "dtd/kdedbx45.dtd" [
 <!ENTITY % addindex "IGNORE">
-<!ENTITY % German "INCLUDE"
-> <!-- change language only here -->
+<!ENTITY % English "INCLUDE" > <!-- change language only here -->
 ]>
 <!-- extragear has another adblock ? -->
 <article lang="&language;" id="khtml-adblock">
 <articleinfo>
-<title
->Werbefilter</title>
+<title>AdBlocK Filters</title>
 <authorgroup>
-<author
->&Krishna.Tateneni; &Krishna.Tateneni.mail;</author>
-<othercredit role="translator"
-><firstname
->Jürgen</firstname
-><surname
->Nagel</surname
-><affiliation
-><address
-><email
->JuergenNagel@web.de</email
-></address
-></affiliation
-><contrib
->Deutsche Übersetzung</contrib
-></othercredit
-> <othercredit role="translator"
-><firstname
->Frank</firstname
-><surname
->Brücker</surname
-><affiliation
-><address
-><email
->f.bruecker@gmx.de</email
-></address
-></affiliation
-><contrib
->Überarbeitung der deutschen Übersetzung</contrib
-></othercredit
-> 
+<author>&Krishna.Tateneni; &Krishna.Tateneni.mail;</author>
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date
->2016-11-08</date>
-<releaseinfo
->Anwendungen 16.12</releaseinfo>
+<date>2016-11-08</date>
+<releaseinfo>Applications 16.12</releaseinfo>
 </articleinfo>
 
-<para
->Der Werbefilter von &konqueror; kann so eingerichtet werden, dass Bilder oder Rahmen von Webseiten entfernt oder ersetzt werden. Dazu wird ein Satz an Filterregeln herangezogen.</para>
+<para>&konqueror; AdBlocK can be configured to replace or remove
+images or frames from web pages that match a series of filters.</para>
 
-<para
->Das Häkchen bei <guilabel
->Filter aktivieren</guilabel
-> aktiviert bzw. deaktiviert den Werbefilter.</para>
-<para
->Wenn <guilabel
->Gefilterte Bilder ausblenden</guilabel
-> markiert ist, werden geblockte Bilder vollständig von der Webseite entfernt und der freigegebene Platz kann anderweitig verwendet werden. Wenn die Einstellung nicht markiert ist, werden geblockte Bilder mit einem Platzhalter ersetzt.</para>
+<para>The setting <guilabel>Enable filters</guilabel> enables or
+disables the use of list of URL filters.</para>
+<para>If <guilabel>Hide filtered images</guilabel> is enabled then
+blocked images are completely removed from the page and the space they
+occupied is reclaimed. If the option is disabled then a placeholder
+image is used in place of filtered images.</para>
 
 <variablelist>
 <varlistentry id="khtml-adblock-manual">
-<term
-><guilabel
->Manueller Filter</guilabel
-></term>
+<term><guilabel>Manual Filter</guilabel></term>
 <listitem>
-<para
->Der Hauptteil dieser Karteikarte zeigt eine Liste der Adressen, die zum Filtern von Bildern und Rahmen herangezogen wird. Sie können Platzhalter in der Syntax regulärer Ausdrücke benutzen.</para>
+<para>The main part of this tab is a list of
+URLs that will be compared against image and frame names to decide
+on fitlering actions. The wildcards can be given as filename style
+regular expressions.</para>
 
-<para
->Jeder Eintrag kann die üblichen Datei-Platzhalter enthalten (&eg; http://www.seite.com/ads/*) oder als regulärer Ausdruck zwischen rechtsgerichteten Schrägstrichen angegeben werden (&eg; //(ads|dclk)\./).</para>
+<para>Each filter can either be expressed as a file style wildcard
+string (e.g. http://www.site.com/ads/*) or as a full regular expression
+by enclosing the filter with forward slashes (e.g. //(ads|dclk)\./).</para>
 
-<para
->Jeder Filter-Zeichenfolge können die Zeichen <literal
->@@</literal
-> vorangestellt werden, um diese in die Positivliste der erlaubten Adressen aufzunehmen. Die Positivliste hat grundsätzlich Vorrang vor blockierenden Filtern.</para>
+<para>Any filter string can be preceded by <literal>@@</literal> to whitelist 
+(allow) any matching &URL;, which takes priority over any blacklist (blocking) 
+filter.</para>
 
-<para
->Mit <guilabel
->Exportieren ...</guilabel
-> und <guilabel
->Importieren ...</guilabel
-> können Sie die Filterliste in eine Datei speichern und wieder einlesen. Die Datei hat als erste Zeile den Vorspann <userinput
->[AdBlock]</userinput
->, dann alle Filter auf einer einzelnen Zeile. Zeilen, die mit einem Ausruf-Zeichen beginnen (<userinput
->!</userinput
->) werden als Kommentar behandelt. Sie können solche Zeilen &eg; zur Erklärung der nachfolgenden Filter verwenden.</para>
+<para><guilabel>Import</guilabel> and <guilabel>Export</guilabel> will 
+save or read the current filter list to a plain text file. The file begins with a 
+header line <userinput>[AdBlock]</userinput>, then all of the filters follow each 
+on a  separate line. Lines prefixed with an exclamation mark (<userinput>!</userinput>) 
+and the header line are treated as comments and can be used 
+to clarify or label a set of filters.</para>
 
-<para
->Klicken Sie auf einen Eintrag in der Liste, um ihn im Textfeld zu ändern oder ihn zu entfernen. Um einen neuen Filterausdruck zu erstellen, geben Sie ihn in das Textfeld ein und klicken dann auf <guibutton
->Einfügen</guibutton
->.</para>
+<para>Highlight an entry from the list to change it in the edit box or remove this item.
+Enter a new filter string here and add it to the list using the <guibutton>
+Insert</guibutton> button.</para>
 </listitem>
 </varlistentry>
 
 <varlistentry id="khtml-adblock-automatic">
-<term
-><guilabel
->Automatischer Filter</guilabel
-></term>
+<term><guilabel>Automatic Filter</guilabel></term>
 <listitem>
-<para
->Diese Karteikarte zeigt eine Liste von Namen und Adressen von vordefinierten Filtereinträgen. Klicken Sie auf das Ankreuzfeld neben dem Namen des Filters und passen Sie das <guilabel
->Automatische Aktualisierungsintervall</guilabel
-> an. Die Voreinstellung für die Aktualisierung beträgt 7 Tage. </para>
+<para>
+This tab shows a list of names and &URL;'s with predefined AdBlock filter entries. 
+To enable an entry tick the checkbox beside the filter name and adjust the
+<guilabel>Automatic update interval</guilabel> (default 7 days).
+<!-- how goes it work? After 7 days eachtime going online with konqui the selected 
+entries are updated in the background?
+User notification about that?
+-->
+</para>
 </listitem>
 </varlistentry>
   
 </variablelist>
 
-<para
->Wenn Werbefilter aktiviert sind, wird rechts in der Statusleiste ein Symbol angezeigt. Kicken Sie mit der &RMBn; auf dieses Symbol, um ein Kontextmenü mit Aktionen, um alle blockierbaren Element einer Webseite anzuzeigen, dieses &systemsettings;-Modul zu öffnen und vorübergehend den Filter für eine Webseite auszuschalten.</para>
+<para>If AdBlock filters are enabled, an icon at the right side of status bar is shown.
+Use a &RMB; click on this icon to open the context menu with actions to show all blockable 
+elements on a web page, open this &systemsettings; module and disable blocking for a site 
+or page temporarily.</para>
 
-<para
->Ein Klick mit der &LMBn; zeigt ebenfalls einen Dialog mit allen blockierbaren Elementen auf einer Webseite. In diesem Dialog können Sie direkt neue Filter hinzufügen, ohne dieses &systemsettings;-Modul öffnen zu müssen.</para>
+<para>A click with the &LMB; shows the dialog with all blockable elements on the opened web page
+as well. From this dialog you can add new filters directly without opening this &systemsettings; 
+module.</para>
 
 </article>

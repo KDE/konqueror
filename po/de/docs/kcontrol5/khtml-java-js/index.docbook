@@ -2,188 +2,141 @@
 <!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
 "dtd/kdedbx45.dtd" [
 <!ENTITY % addindex "IGNORE">
-<!ENTITY % German "INCLUDE"
-> <!-- change language only here -->
+<!ENTITY % English "INCLUDE" > <!-- change language only here -->
 ]>
 
 <article id="khtml-java-js" lang="&language;">
 <articleinfo>
-<title
->Java und JavaScript</title>
+<title>Java and JavaScript</title>
 <authorgroup>
-<author
->&Krishna.Tateneni; &Krishna.Tateneni.mail;</author>
-<othercredit role="translator"
-><firstname
->Jürgen</firstname
-><surname
->Nagel</surname
-><affiliation
-><address
-><email
->JuergenNagel@web.de</email
-></address
-></affiliation
-><contrib
->Deutsche Übersetzung</contrib
-></othercredit
-> <othercredit role="translator"
-><firstname
->Frank</firstname
-><surname
->Brücker</surname
-><affiliation
-><address
-><email
->f.bruecker@gmx.de</email
-></address
-></affiliation
-><contrib
->Überarbeitung der deutschen Übersetzung</contrib
-></othercredit
-> 
+<author>&Krishna.Tateneni; &Krishna.Tateneni.mail;</author>
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date
->2016-11-08</date>
-<releaseinfo
->Anwendungen 16.12</releaseinfo>
+<date>2016-11-08</date>
+<releaseinfo>Applications 16.12</releaseinfo>
 
 <keywordset>
-<keyword
->KDE</keyword>
-<keyword
->Systemeinstellungen</keyword>
-<keyword
->Konqueror</keyword>
-<keyword
->durchsuchen</keyword>
-<keyword
->Java</keyword>
-<keyword
->JavaScript</keyword>
+<keyword>KDE</keyword>
+<keyword>Systemsettings</keyword>
+<keyword>konqueror</keyword>
+<keyword>browsing</keyword>
+<keyword>Java</keyword>
+<keyword>JavaScript</keyword>
 </keywordset>
 
 </articleinfo>
 <sect1 id="konq-browsing">
-<title
->&Java; und JavaScript</title>
+<title>&Java; and JavaScript</title>
 
 <sect2 id="kbrowse-java">
-<title
->&Java;</title>
+<title>&Java;</title>
 
-<para
->&Java; erlaubt es, Anwendungen herunterzuladen und durch den Webbrowser auszuführen, vorausgesetzt, Sie haben die notwendige Software auf Ihrem Computer installiert. Viele Webseiten verwenden Java (zum Beispiel, Dienste für Online-Banking oder interaktive Spiele-Seiten). Sie sollten sich darüber bewusst sein, dass die Ausführung von Anwendungen aus unbekannten Quellen eine Bedrohung für die Sicherheit Ihres Computers darstellen können, auch wenn das Ausmaß des Schadens nicht groß ist.</para>
+<para>&Java; allows applications to be downloaded and run by a web
+browser, provided you have the necessary software installed on your
+machine. Many web sites make use of &Java; (for example, online
+banking services or interactive gaming sites). You should be aware
+that running programs from unknown sources could pose a threat to the
+security of your computer, even if the potential extent of the damage
+is not great.</para>
 
-<para
->Das Ankreuzfeld <guilabel
->Java global aktivieren</guilabel
-> schaltet die Unterstützung für &Java; standardmäßig für alle Webseiten ein. Sie können aber auch &Java; für bestimmte Domains ein- oder ausschalten. Um eine Regelung für eine bestimmte Domain hinzuzufügen, wählen Sie den Knopf <guilabel
->New ...</guilabel
->. Hierdurch wird ein Dialog geöffnet, in dem Sie einen Rechner- oder Domainnamen angeben können, sowie festlegen, ob Javacode von diesem Rechner angenommen oder abgelehnt wird. Der Rechner bzw. die Domain werden zu der Liste <guilabel
->Domain-spezifisch</guilabel
-> hinzugefügt.</para>
+<para>The check box <guilabel>Enable Java globally</guilabel> allows
+you to turn &Java; support on for all web sites by default. You can
+also select to turn &Java; on or off for specific hosts. To add a
+policy for a specific host, click the <guibutton>New...</guibutton>
+button to bring up a dialog in which you can type the host name and
+then choose to accept or reject &Java; code from that particular host,
+which will add the domain to the list on the left of the page.</para>
 
-<para
->Um die Regelung für einen Rechner in der Liste zu ändern, wählen Sie den Eintrag in der Liste und drücken den Knopf <guibutton
->Ändern ...</guibutton
->. Drücken Sie auf den Knopf <guibutton
->Löschen</guibutton
->, so wird der Eintrag für den ausgewählten Rechner gelöscht; anschließend gelten für diesen Rechner wieder die globalen Einstellungen.</para>
+<para>You can select a host in the list, and click the
+<guibutton>Change...</guibutton> button to choose a different policy for
+that host. Clicking the <guibutton>Delete</guibutton> button removes the
+policy for the selected host; after deletion, the global settings will
+then apply to that host.</para>
 
-<para
->Abschließend können Sie über die Kontrollelemente im Bereich <guilabel
->&Java; Laufzeit-Einstellungen</guilabel
-> einige Einstellungen für die Ausführung von &Java; festlegen.</para>
+<para>Finally, the group of controls labeled <guilabel>Java Runtime
+Settings</guilabel> allows you to set some options for the way in
+which &Java; should run.</para>
 
-<para
-><guilabel
->Sicherheitsverwaltung verwenden</guilabel
-> ist normalerweise die Voreinstellung. Diese Einstellung bewirkt, dass die JVM mit einer vorhandenen Sicherheitsverwaltung ausgeführt wird. Hierdurch wird verhindert, dass Miniprogramme auf Ihr Dateisystem zugreifen, beliebige Sockets anlegen oder andere Dinge ausführen, die Ihr System kompromittieren könnten. Wenn Sie diese Einstellung deaktivieren, geschieht das auf eigenes Risiko. Sie können die Datei <filename
->$<envar
->HOME</envar
->/.java.policy</filename
-> mit dem &Java;-Hilfsprogramm policytool bearbeiten, wenn Sie Miniprogrammen, die Sie von bestimmten Seiten heruntergeladen haben, weitergehende Rechte einräumen wollen.</para>
+<para><guilabel>Use security
+manager</guilabel> is normally enabled by default.  This setting will
+cause the <acronym>JVM</acronym> to run with a Security Manager in place. This will keep
+applets from being able to read and write to your file system, creating
+arbitrary sockets, and other actions which could be used to compromise
+your system. Disable this option at your own risk. You can modify your 
+<filename>$<envar>HOME</envar>/.java.policy</filename> file with the
+&Java; policytool utility to give code downloaded from certain sites
+more permissions.</para>
 
-<para
-><guilabel
->KIO verwenden</guilabel
-> bewirkt, dass die <acronym
->JVM</acronym
-> die &kde;-eigene Schnittstelle <acronym
->KIO</acronym
-> für Netzwerkübertragungen verwendet.</para>
+<para><guilabel>Use KIO</guilabel> will cause the
+<acronym>JVM</acronym>to use &kde;'s own <acronym>KIO</acronym>
+transports for network connections.</para>
 
-<para
->Das Ankreuzfeld <guilabel
->Server für Miniprogramme beenden bei Inaktivität länger als</guilabel
-> ermöglicht es Ihnen, Ressourcen einzusparen, indem der Server für Miniprogramme (Applets) bei Inaktivität beendet wird, anstatt im Hintergrund weiter zu laufen. Ist diese Option ausgeschaltet, starten &Java;-Miniprogramme (Applets) schneller. Es werden jedoch Systemressourcen benötigt, auch wenn Sie keine &Java;-Applets verwenden. Schalten Sie diese Option an, so können Sie ein Zeitlimit für den Server vorgeben.</para>
+<para>The <guilabel>Shutdown applet server when inactive for more than</guilabel>
+check box allows you to save resources by closing the &Java; Applet
+Server when it is not in use, rather than leaving it running in the
+background.  Leaving this disabled may make &Java; applets start up
+faster, but it will use system resources when you are not using a
+&Java; applet.  If you enable this, you can set a timeout.</para>
 
-<para
->Sie können es entweder &konqueror; überlassen, die &Java;-Installation auf Ihrem System festzustellen, oder Sie geben selber den Installationspfad im Eingabefeld <guilabel
->Pfad zur ausführbaren &Java;-Datei oder „java“</guilabel
-> an. Haben Sie mehrere &Java;-Installationen auf Ihrem Rechner, so möchten Sie sich vielleicht für die letztere Methode entscheiden, um anzugeben, welche Installation verwendet werden soll. Benötigt die virtuelle &Java;-Maschine spezielle Startoptionen, so können Sie diese im Eingabefeld <guilabel
->Zusätzlich &Java;-Argumente</guilabel
-> festlegen.</para>
+<para>You can either opt to have &konqueror; automatically detect the
+&Java; installation on your system, or specify the path to the
+installation yourself by selecting <guilabel>Path to Java
+executable or 'java'</guilabel>. You may want to choose the latter method, for
+instance, if you have multiple &Java; installations on your system,
+and want to specify which one to use. If the &Java; Virtual Machine
+you are using requires any special startup options, you can type them
+in the text box labeled <guilabel>Additional Java
+arguments</guilabel>.</para>
 
 </sect2>
 
 <sect2 id="kbrowse-javascript">
-<title
->JavaScript</title>
+<title>JavaScript</title>
 
-<para
->Trotz seines Namens ist JavaScript keinesfalls verwandt mit &Java;.</para>
+<para>Despite the name, JavaScript is not related at all to
+&Java;.</para>
 
-<para
->Der erste Teil dieser Karteikarte entspricht den Einstellungen auf der Karteikarte &Java;.</para>
+<para>The first part of this tab works the same as the &Java; settings.</para>
 
-<para
->Das Ankreuzfeld <guilabel
->JavaScript globale aktivieren</guilabel
-> schaltet die Unterstützung für JavaScript standardmäßig für alle Webseiten ein. Sie können aber auch JavaScript für bestimmte Domains ein- oder ausschalten. Um eine Regelung für eine bestimmte Domain hinzuzufügen, wählen Sie den Knopf <guibutton
->Neu ...</guibutton
->. Hierdurch wird ein Dialog geöffnet, in dem Sie einen Rechner- oder Domainnamen angeben können, sowie festlegen, ob JavaScript-Code von diesem Rechner angenommen oder abgelehnt wird. Der Rechner bzw. die Domain werden zu der Liste <guilabel
->Domain-spezifisch</guilabel
-> hinzugefügt.</para>
+<para>The checkbox <guilabel>Enable JavaScript globally</guilabel> allows
+you to turn JavaScript support on for all web sites by default. You
+can also select to turn JavaScript on or off for specific hosts. To
+add a policy for a specific host, click the
+<guibutton>New...</guibutton> button to bring up a dialog in which you
+can type the host name and then choose to accept or reject JavaScript
+code from that particular host, which will add the domain to the list
+on the left of the page.</para>
 
-<para
->Um die Regelung für einen Rechner in der Liste zu ändern, wählen Sie den Eintrag in der Liste und drücken den Knopf <guibutton
->Ändern ...</guibutton
->. Drücken Sie auf den Knopf <guibutton
->Löschen</guibutton
->, so wird der Eintrag für den ausgewählten Rechner gelöscht; anschließend gelten für diesen Rechner wieder die globalen Einstellungen.</para>
+<para>You can select a host in the list, and click the
+<guibutton>Change...</guibutton> button to choose a different policy for
+that host. Clicking the <guibutton>Delete</guibutton> button removes the
+policy for the selected host; after deletion, the global settings will
+then apply to that host.</para>
 <!-- missing section Debugging
 Enable debugger Enables builtin JavaScript debugger.
 Report errors Enables the reporting of errors that occur when JavaScript code is executed.
 How are errors reported? popup window? icon in status bar?
 -->
-<para
->Die letzten Einstellungen im Abschnitt <guilabel
->Globale JavaScript-Regelungen</guilabel
-> auf dieser Seite legen fest, was passiert, wenn bestimmte JavaScript-Aktionen auf einer Seite ausgeführt werden.</para>
+<para>The final set of options in the section <guilabel>Global JavaScript 
+Policies</guilabel> determine what happens
+when a page uses JavaScript for specific actions.</para>
 
-<para
->Sie können festlegen, ob JavaScript Fenster durch Verschieben, ändern der Größe oder Wechsel des Fokus manipulieren darf. Außerdem können Sie die Fähigkeit von JavaScript, den Text in der Statusleiste zu überschreiben, abschalten. Dadurch können Sie immer sehen, wohin eine Verknüpfung verweist, bevor Sie diese anklicken. Bei allen Einstellungen haben Sie die Auswahl zwischen <guilabel
->Zulassen</guilabel
-> und <guilabel
->Ignorieren</guilabel
->.</para>
+<para>You can individually enable or disable the ability of JavaScript
+to manipulate your windows by moving, resizing or changing focus.  You
+can also disable JavaScript from changing the status bar text, so that
+for instance, you can always see where links will take you when
+clicked. The choices for these options are <guilabel>Allow</guilabel> and
+<guilabel>Ignore</guilabel>.</para>
 
-<para
->Für das Öffnen neuer Fenster stehen sogar weitere Möglichkeiten zur Auswahl. &konqueror; kann solche Aktionen ohne Rückfrage <guilabel
->zulassen</guilabel
->,vor dem Öffnen beim Anwender <guilabel
->nachfragen</guilabel
-> oder alle diese Aktionen ohne Rückfrage <guilabel
->ablehnen</guilabel
->.</para>
+<para>For opening a new window, there is even more control.  You can
+set &konqueror; to <guilabel>Allow</guilabel> all such requests,
+<guilabel>Ask</guilabel> each time a request is made, or
+<guilabel>Deny</guilabel> all popup requests.</para>
 
-<para
->Die Einstellung <guilabel
->Intelligent</guilabel
-> erlaubt das Öffnen von neuen Fenstern nur, wenn Sie auf eine Verknüpfung geklickt haben, die dieses Fenster erstellt.</para>
+<para>The <guilabel>Smart</guilabel> setting will only allow
+JavaScript popup windows when you have explicitly chosen a link that
+creates one.</para>
 </sect2>
 
 </sect1>

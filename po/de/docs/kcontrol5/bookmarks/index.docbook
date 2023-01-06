@@ -2,162 +2,97 @@
 <!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
 "dtd/kdedbx45.dtd" [
 <!ENTITY % addindex "IGNORE">
-<!ENTITY % German "INCLUDE"
-> <!-- change language only here -->
+<!ENTITY % English "INCLUDE" > <!-- change language only here -->
 ]>
 
 <article id="bookmarks" lang="&language;">
 <articleinfo>
 
-<title
->Lesezeichen</title>
+<title>Bookmarks</title>
 <authorgroup>
-<author
-><personname
-><firstname
->Xavier</firstname
-><surname
->Vello</surname
-></personname
-> <email
->xavier.vello@gmail.com</email
-> </author>
-<othercredit role="translator"
-><firstname
->Thomas</firstname
-><surname
->Reitelbach</surname
-><affiliation
-><address
-><email
->tr@erdfunkstelle.de</email
-></address
-></affiliation
-><contrib
->Deutsche Übersetzung</contrib
-></othercredit
-> 
+<author>
+<personname><firstname>Xavier</firstname><surname>Vello</surname></personname>
+<email>xavier.vello@gmail.com</email>
+</author>
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date
->2016-11-08</date>
-<releaseinfo
->Anwendungen 16.12</releaseinfo>
+<date>2016-11-08</date>
+<releaseinfo>Applications 16.12</releaseinfo>
 
 <keywordset>
-<keyword
->KDE</keyword>
-<keyword
->Systemeinstellungen</keyword>
-<keyword
->Lesezeichen</keyword>
-<keyword
->KIO</keyword>
+<keyword>KDE</keyword>
+<keyword>Systemsettings</keyword>
+<keyword>bookmarks</keyword>
+<keyword>KIO</keyword>
 </keywordset>
 </articleinfo>
 <sect1 id="conf">
-<title
->Lesezeichen-Startseite</title>
-<para
->In diesem Modul können Sie die Lesezeichen-Startseite einrichten.</para>
-<para
->Um die Lesezeichen-Startseite anzuzeigen, geben Sie <userinput
->bookmarks:/</userinput
-> in der Adressleiste von &konqueror; ein.</para>
-<para
->Die Einstellungen in diesem Modul können Sie auch über die Eingabe von <userinput
->bookmarks:/config</userinput
-> in der Adressleiste von &konqueror;.</para>
+<title>Bookmarks home page</title>
+<para>This module lets you configure the bookmarks home page.</para>
+<para>To view the bookmarks home page enter <userinput>bookmarks:/</userinput> in 
+the location bar.</para>
+<para>The settings in this module are also accessible by entering 
+<userinput>bookmarks:/config</userinput> in the location bar.</para>
 <sect2 id="conf-general">
-<title
->Allgemeine Einstellungen</title>
+<title>General settings</title>
 <variablelist>
 <varlistentry>
-<term
-><guilabel
->Anzahl anzuzeigender Spalten</guilabel
-></term>
+<term><guilabel>Number of columns to show</guilabel></term>
 <listitem>
-<para
->Ordner werden normalerweise über mehrere Spalten verteilt dargestellt. Die optimale Anzahl der Spalten ist abhängig von der Größe des &konqueror;-Fensters und der Anzahl vorhandener Lesezeichen.</para>
+<para>Folders are automatically distributed in several columns. The optimal number of columns depends on the width of the &konqueror; window and the number of bookmarks you have.</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
-<term
-><guilabel
->Ordner-Hintergrundbilder anzeigen</guilabel
-></term>
+<term><guilabel>Show folder backgrounds</guilabel></term>
 <listitem>
-<para
->Deaktivieren Sie diese Einstellung auf langsamen Rechnern.</para>
+<para>Disable it on slow system to disable background images.</para>
 </listitem>
 </varlistentry>
 </variablelist>
 </sect2>
 
 <sect2 id="conf-bookmark">
-<title
->Lesezeichen</title>
+<title>Bookmarks</title>
 <variablelist>
 <varlistentry>
-<term
-><guilabel
->Lesezeichen ohne Ordner anzeigen</guilabel
-></term>
+<term><guilabel>Show bookmarks without folder</guilabel></term>
 <listitem>
-<para
->Wenn diese Einstellung deaktiviert ist, werden Haupt-Lesezeichen (das sind die, die nicht in einem Unterordner einsortiert sind) nicht angezeigt. Ist diese Einstellung aktiviert, so werden die Haupt-Lesezeichen in einem „Haupt“-Ordner gesammelt.</para>
+<para>If this option is unchecked, bookmarks at the root of the hierarchy (not in a folder) are not displayed. If checked, they are gathered in a "root" folder.</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
-<term
-><guilabel
->Lesezeichen-Ordner „flach“ anzeigen</guilabel
-></term>
+<term><guilabel>Flatten bookmarks tree</guilabel></term>
 <listitem>
-<para
->Unterordner werden normalerweise innerhalb der Eltern-Ordner angezeigt. Wenn Sie diese Einstellung aktivieren, werden Unterordner separat angezeigt. Dies sieht nicht so gut aus, aber kann hilfreich sein, wenn Sie einen sehr großen Ordner in zwei Spalten aufteilen möchten.</para>
+<para>Sub-folders are shown within their parent by default. If you activate this option, sub-folders are displayed on their own. It looks less nice but it may help if you have a very big folder you want to spread in two columns.</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
-<term
-><guilabel
->Systemorte anzeigen</guilabel
-></term>
+<term><guilabel>Show system places</guilabel></term>
 <listitem>
-<para
->Zeigt einen Bereich mit Systemorten an (Persönlicher Ordner, Netzwerk, usw.). Dies ist nützlich, wenn Sie &konqueror; als Dateiverwaltung verwenden.</para>
+<para>Show a box with common places (Home, Network, ...). Useful if you use &konqueror; as a file manager.</para>
 </listitem>
 </varlistentry>
 </variablelist>
 </sect2>
 
 <sect2 id="conf-cache">
-<title
->Pixmap-Zwischenspeicher</title>
+<title>Pixmap cache</title>
 <variablelist>
 <varlistentry>
-<term
-><guilabel
->Zwischenspeicher auf Festplatte</guilabel
-></term>
+<term><guilabel>Disk cache size</guilabel></term>
 <listitem>
-<para
->Legt fest, wieviel Speicher zum Zwischenspeichern von Pixmaps verwendet werden darf.</para>
+<para>Specify how much disk space is used to cache the pixmaps.</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
-<term
-><guilabel
->Zwischenspeicher leeren</guilabel
-></term>
+<term><guilabel>Clear Cache</guilabel></term>
 <listitem>
-<para
->Löscht alle zwischengespeicherten Bilder. Dies könnte nötig sein, falls Webseitensymbole korrupieren sollten und nicht automatisch aktualisiert werden.</para>
+<para>Remove all cached images. This may be necessary if some favicons become corrupt and don't refresh automatically.</para>
 </listitem>
 </varlistentry>
 </variablelist>
