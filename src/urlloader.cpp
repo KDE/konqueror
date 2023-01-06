@@ -34,6 +34,7 @@
 #include <QMimeDatabase>
 #include <QWebEngineProfile>
 #include <QFileDialog>
+#include <QFileInfo>
 
 bool UrlLoader::embedWithoutAskingToSave(const QString &mimeType)
 {
@@ -100,6 +101,9 @@ void UrlLoader::start()
         detectSettingsForRemoteFiles();
     }
 
+    if (hasError()) {
+        m_mimeType = QStringLiteral("text/html");
+    }
     if (isMimeTypeKnown(m_mimeType)) {
         KService::Ptr preferredService = KApplicationTrader::preferredService(m_mimeType);
         if (serviceIsKonqueror(preferredService)) {
@@ -117,6 +121,10 @@ bool UrlLoader::isViewLocked() const
 
 void UrlLoader::decideAction()
 {
+    if (hasError()) {
+        m_action = OpenUrlAction::Embed;
+        return;
+    }
     m_action = decideExecute();
     switch (m_action) {
         case OpenUrlAction::Execute:
@@ -378,11 +386,31 @@ void UrlLoader::detectSettingsForRemoteFiles()
     }
 }
 
+int UrlLoader::checkAccessToLocalFile(const QString& path)
+{
+    QFileInfo info(path);
+    bool fileExists = info.exists();
+    if (!info.isReadable()) {
+        QFileInfo parentInfo(info.dir().path());
+        if (parentInfo.isExecutable() && !fileExists) {
+            return KIO::ERR_DOES_NOT_EXIST;
+        } else {
+            return KIO::ERR_CANNOT_OPEN_FOR_READING;
+        }
+    } else if (info.isDir() && !info.isExecutable()) {
+        return KIO::ERR_CANNOT_ENTER_DIRECTORY;
+    } else {
+        return 0;
+    }
+}
+
 void UrlLoader::detectSettingsForLocalFiles()
 {
     if (!m_url.isLocalFile()) {
         return;
     }
+
+    m_jobErrorCode = checkAccessToLocalFile(m_url.path());
 
     if (!m_mimeType.isEmpty()) {
         // Generic mechanism for redirecting to tar:/<path>/ when clicking on a tar file,
@@ -438,6 +466,7 @@ bool UrlLoader::shouldEmbedThis() const
 void UrlLoader::embed()
 {
     if (m_jobErrorCode) {
+        QUrl url = m_url;
         m_url = KParts::BrowserRun::makeErrorUrl(m_jobErrorCode, m_url.scheme(), m_url);
         m_mimeType = QStringLiteral("text/html");
         m_part = findPartById(QStringLiteral("webenginepart"));

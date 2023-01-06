@@ -177,6 +177,23 @@ private:
     void decideAction();
     bool isViewLocked() const;
 
+    /**
+     * @brief Checks whether the given file can be read and, in case of a directory, entered into
+     *
+     * If the @p path can't be read, according to `QFileInfo::isReadable()`, it attempts to determine the reason:
+     * - if the parent directory can be entered (according to `QFileInfo::isExecutable()`) and `QFileInfo::exists() returns `false`,
+     *   it assumes the file actually doesn't exist
+     * - if the parent directory can't be entered (according to `QFileInfo::isExecutable()`), it assumes that the permissions don't
+     *   allow reading for the user.
+     *
+     * @return a `KIO::Error` value if @p can't be read or 0 if it can be read and, in case it's a directory, entered. In particular,
+     *   it returns
+     *      - `KIO::ERR_DOES_NOT_EXIST` if @p path doesn't exist
+     *      - `KIO::ERR_CANNOT_OPEN_FOR_READING` if @p path exists but can't be read
+     *      - `ERR_CANNOT_ENTER_DIRECTORY` if @p path is a directory which can't be entered
+     */
+    static int checkAccessToLocalFile(const QString &path);
+
     typedef QPair<OpenUrlAction, KService::Ptr> OpenSaveAnswer;
 
     enum class OpenEmbedMode{Open, Embed};
