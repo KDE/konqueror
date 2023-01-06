@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-29 02:51+0000\n"
-"PO-Revision-Date: 2022-11-01 06:25+0100\n"
+"PO-Revision-Date: 2023-01-05 07:16+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -40,7 +40,7 @@ msgstr ""
 #: advancedTabOptions.ui:24
 #, kde-format
 msgid "Open &links in new tab instead of in new window"
-msgstr ""
+msgstr "&ბმულების ახალი ფანჯრების მაგიერ ახალ ჩანართებში გახსნა"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPopupsWithinTabs)
 #: advancedTabOptions.ui:31
@@ -54,7 +54,7 @@ msgstr ""
 #: advancedTabOptions.ui:34
 #, kde-format
 msgid "Open pop&ups in new tab instead of in new window"
-msgstr ""
+msgstr "&მხტუნარების ახალი ფანჯრის მაგიერ ახალ ჩანართებში გახსნა"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pKonquerorTabforExternalURL)
 #: advancedTabOptions.ui:41
@@ -77,13 +77,13 @@ msgstr ""
 #, kde-format
 msgid ""
 "This will open a new tab in the background, instead of in the foreground."
-msgstr ""
+msgstr "ახალი ჩანართის წინა პლანის მაგიერ ფონზე გახსნა."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pNewTabsInBackground)
 #: advancedTabOptions.ui:54
 #, kde-format
 msgid "O&pen new tabs in the background"
-msgstr ""
+msgstr "&ახალი ჩანართების ფონურად გახსნა"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pOpenAfterCurrentPage)
 #: advancedTabOptions.ui:61
@@ -97,7 +97,7 @@ msgstr ""
 #: advancedTabOptions.ui:64
 #, kde-format
 msgid "Open &new tab after current tab"
-msgstr ""
+msgstr "&ახალი ჩანართის მიმდინარე ჩანართის შემდეგ გახსნა"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pDynamicTabbarHide)
 #: advancedTabOptions.ui:71
@@ -117,13 +117,13 @@ msgstr ""
 #: advancedTabOptions.ui:81
 #, kde-format
 msgid "This will display close buttons inside each tab."
-msgstr ""
+msgstr "თითოეული ჩანართისთვის დახურვის ღილაკის ჩვენება."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pPermanentCloseButton)
 #: advancedTabOptions.ui:84
 #, kde-format
 msgid "&Show close button on tabs"
-msgstr ""
+msgstr "ჩანართებზე დახურვის ღილაკის &ჩვენება"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pMiddleClickClose)
 #: advancedTabOptions.ui:91
@@ -137,7 +137,7 @@ msgstr ""
 #: advancedTabOptions.ui:94
 #, kde-format
 msgid "Middle-click on a tab to close it"
-msgstr ""
+msgstr "თაგუნას შუა ღილაკით ჩანართის დახურვა"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabConfirm)
 #: advancedTabOptions.ui:101
@@ -152,6 +152,8 @@ msgstr ""
 #, kde-format
 msgid "Confirm &when closing windows with multiple tabs"
 msgstr ""
+"ფანჯრების, რომელსაც ერთზე მეტი ჩანართი გააჩნია, დახურვის დადასტურების "
+"მოთხოვნა"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pTabCloseActivatePrevious)
 #: advancedTabOptions.ui:111
@@ -165,7 +167,7 @@ msgstr ""
 #: advancedTabOptions.ui:114
 #, kde-format
 msgid "Activate previously used tab when closing the current tab"
-msgstr ""
+msgstr "მიმდინარე ჩანართის დახურვისას წინა გამოყენებულ ჩანართზე გადართვა"
 
 #: appearance.cpp:39
 #, kde-format
@@ -183,7 +185,7 @@ msgstr "შრიფტები"
 #, kde-format
 msgctxt "@title:tab"
 msgid "Stylesheets"
-msgstr ""
+msgstr "სტილის ფურცლები"
 
 #. i18n: ectx: property (title), widget (QGroupBox, GroupBox3_2)
 #: appearance.cpp:48 css/csscustom.ui:296
@@ -194,7 +196,7 @@ msgstr "გამოსახულებები"
 #: appearance.cpp:52
 #, kde-format
 msgid "A&utomatically load images"
-msgstr ""
+msgstr "გამოსახულებების &ავტომატური ჩატვირთვა"
 
 #: appearance.cpp:53
 #, kde-format
@@ -235,7 +237,7 @@ msgstr "გამორთულია"
 #: appearance.cpp:76
 #, kde-format
 msgid "Show Only Once"
-msgstr ""
+msgstr "მხოლოდ ერთხელ ჩვენება"
 
 #: appearance.cpp:77
 #, kde-format
@@ -249,7 +251,7 @@ msgstr ""
 #: appearance.cpp:82
 #, kde-format
 msgid "A&nimations:"
-msgstr ""
+msgstr "&ანიმაციები:"
 
 #: appearance.cpp:85 htmlopts.cpp:110
 #, kde-format
@@ -272,12 +274,12 @@ msgstr "გამორთულია"
 #: appearance.cpp:92
 #, kde-format
 msgid "Only on Hover"
-msgstr ""
+msgstr "მხოლოდ გადატარებისას"
 
 #: appearance.cpp:93
 #, kde-format
 msgid "Und&erline links:"
-msgstr ""
+msgstr "ბმულების ხაზის გასმა:"
 
 #: appearance.cpp:96
 #, kde-format
@@ -292,7 +294,7 @@ msgstr ""
 #: appearance.cpp:105
 #, kde-format
 msgid "When Efficient"
-msgstr ""
+msgstr "როცა ეფექტურია"
 
 #: appearance.cpp:106
 #, kde-format
@@ -309,7 +311,7 @@ msgstr "არასდროს"
 #: appearance.cpp:108
 #, kde-format
 msgid "S&mooth scrolling:"
-msgstr ""
+msgstr "&გლუვი აწევა/დაწევა:"
 
 #: appearance.cpp:110
 #, kde-format
@@ -364,7 +366,7 @@ msgstr "&სტანდარტული ფონტი:"
 #: appearance.cpp:161
 #, kde-format
 msgid "This is the font used to display normal text in a web page."
-msgstr ""
+msgstr "ვებგვერდის ნორმალური ტექსტის საჩვენებელი ფონტი."
 
 #: appearance.cpp:165
 #, kde-format
@@ -375,7 +377,7 @@ msgstr "&ფიქსირებული ფონტი:"
 #, kde-format
 msgid ""
 "This is the font used to display fixed-width (i.e. non-proportional) text."
-msgstr ""
+msgstr "ფიქსირებული-ზომის მქონედ მონიშნული ტექსტის საჩვენებელი ფონტი."
 
 #: appearance.cpp:170
 #, kde-format
@@ -385,7 +387,7 @@ msgstr "S&erif ფონტი:"
 #: appearance.cpp:171
 #, kde-format
 msgid "This is the font used to display text that is marked up as serif."
-msgstr ""
+msgstr "Serif-ად მონიშნული ტექსტის საჩვენებელი ფონტი."
 
 #: appearance.cpp:175
 #, kde-format
@@ -395,33 +397,33 @@ msgstr "Sa&ns serif ფონტი:"
 #: appearance.cpp:176
 #, kde-format
 msgid "This is the font used to display text that is marked up as sans-serif."
-msgstr ""
+msgstr "Sans-serif-ად მონიშნული ტექსტის საჩვენებელი ფონტი."
 
 #: appearance.cpp:180
 #, kde-format
 msgid "C&ursive font:"
-msgstr ""
+msgstr "&კურსივის ფონტი:"
 
 #: appearance.cpp:181
 #, kde-format
 msgid "This is the font used to display text that is marked up as italic."
-msgstr ""
+msgstr "Italic-ად მონიშნული ტექსტის საჩვენებელი ფონტი."
 
 #: appearance.cpp:185
 #, kde-format
 msgid "Fantas&y font:"
-msgstr ""
+msgstr "&ფანტაზიის ფონტი:"
 
 #: appearance.cpp:186
 #, kde-format
 msgid ""
 "This is the font used to display text that is marked up as a fantasy font."
-msgstr ""
+msgstr "Fantasy font-ად მონიშნული ტექსტის საჩვენებელი ფონტი."
 
 #: appearance.cpp:195
 #, kde-format
 msgid "Font &size adjustment for this encoding:"
-msgstr ""
+msgstr "&ფონტის ზომის მორგება ამ კოდირებისთვის:"
 
 #: appearance.cpp:203 appearance.cpp:401
 #, kde-format
@@ -461,7 +463,7 @@ msgstr ""
 #: css/cssconfig.ui:20
 #, kde-format
 msgid "Stylesheets"
-msgstr ""
+msgstr "სტილის ფურცლები"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, useDefault)
 #: css/cssconfig.ui:26
@@ -475,7 +477,7 @@ msgstr ""
 #: css/cssconfig.ui:29
 #, kde-format
 msgid "Us&e default stylesheet"
-msgstr ""
+msgstr "ნაგულისხმები სტილების ცხრილის გამოყენება"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, useUser)
 #: css/cssconfig.ui:39
@@ -515,7 +517,7 @@ msgstr ""
 #: css/cssconfig.ui:137
 #, kde-format
 msgid "Custom&ize..."
-msgstr ""
+msgstr "&მორგება..."
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox7)
 #: css/csscustom.ui:21
@@ -536,13 +538,13 @@ msgstr "ფონტების ოჯახი"
 #: css/csscustom.ui:30
 #, kde-format
 msgid "Base family:"
-msgstr ""
+msgstr "საბაზისო ოჯახი:"
 
 #. i18n: ectx: property (whatsThis), widget (QFontComboBox, fontFamily)
 #: css/csscustom.ui:37
-#, kde-format
+#, fuzzy, kde-format
 msgid "<p>This is the currently selected font family</p>"
-msgstr ""
+msgstr "<p>ეს ამჟამად მონიშნული ფონტის ოჯახია</p>"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, sameFamily)
 #: css/csscustom.ui:44
@@ -556,7 +558,7 @@ msgstr ""
 #: css/csscustom.ui:47
 #, kde-format
 msgid "Use same family for all text"
-msgstr ""
+msgstr "ყველა ტექსტისთვის ფონტის იგივე ოჯახის გამოყენება"
 
 #. i18n: ectx: property (title), widget (QGroupBox, GroupBox3)
 #: css/csscustom.ui:57
@@ -568,7 +570,7 @@ msgstr "ფონტის ზომა"
 #: css/csscustom.ui:63
 #, kde-format
 msgid "Base font si&ze:"
-msgstr ""
+msgstr "საბაზისო ფონტის &ზომა:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, basefontsize)
 #: css/csscustom.ui:80
@@ -661,7 +663,7 @@ msgstr ""
 #: css/csscustom.ui:151
 #, kde-format
 msgid "&Use same size for all elements"
-msgstr ""
+msgstr "&ყველა ელემენტისთვის იგივე ზომის გამოყენება"
 
 #. i18n: ectx: property (title), widget (QGroupBox, ButtonGroup2)
 #: css/csscustom.ui:161
@@ -679,7 +681,7 @@ msgstr ""
 #: css/csscustom.ui:186
 #, kde-format
 msgid "&Black on white"
-msgstr ""
+msgstr "&შავი თეთრზე"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, whiteOnBlack)
 #: css/csscustom.ui:196
@@ -691,7 +693,7 @@ msgstr ""
 #: css/csscustom.ui:199
 #, kde-format
 msgid "&White on black"
-msgstr ""
+msgstr "&თეთრი შავზე"
 
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, customColor)
 #: css/csscustom.ui:206
@@ -705,7 +707,7 @@ msgstr ""
 #: css/csscustom.ui:209
 #, kde-format
 msgid "Cus&tom"
-msgstr ""
+msgstr "&ხელით"
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, txtBackground)
 #: css/csscustom.ui:219
@@ -719,7 +721,7 @@ msgstr ""
 #: css/csscustom.ui:222
 #, kde-format
 msgid "Bac&kground:"
-msgstr ""
+msgstr "&ფონი:"
 
 #. i18n: ectx: property (whatsThis), widget (KColorButton, backgroundColorButton)
 #: css/csscustom.ui:238
@@ -742,7 +744,7 @@ msgstr ""
 #: css/csscustom.ui:251
 #, kde-format
 msgid "Use same color for all text"
-msgstr ""
+msgstr "ყველა ტექსტისთვის იგივე ფერის გამოყენება"
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, txtForeground)
 #. i18n: ectx: property (whatsThis), widget (KColorButton, foregroundColorButton)
@@ -761,9 +763,9 @@ msgstr "წინა პლანი:"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, GroupBox3_2)
 #: css/csscustom.ui:293
-#, kde-format
+#, fuzzy, kde-format
 msgid "<b>Images</b>"
-msgstr ""
+msgstr "<b>გამოსახულებები</b>"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, hideImages)
 #: css/csscustom.ui:302
@@ -777,7 +779,7 @@ msgstr ""
 #: css/csscustom.ui:305
 #, kde-format
 msgid "&Suppress images"
-msgstr ""
+msgstr "&გამოსახულებების აკრძალვა"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, hideBackground)
 #: css/csscustom.ui:312
@@ -791,7 +793,7 @@ msgstr ""
 #: css/csscustom.ui:315
 #, kde-format
 msgid "Suppress background images"
-msgstr ""
+msgstr "ფონის სურათების აკრძალვა"
 
 #. i18n: ectx: property (title), widget (QGroupBox, previewBox)
 #: css/csscustom.ui:347
@@ -892,12 +894,12 @@ msgstr ""
 #: domainlistview.cpp:122
 #, kde-format
 msgid "You must first select a policy to be changed."
-msgstr ""
+msgstr "შესაცვლელად ჯერ პოლიტიკა უნდა აირჩიოთ."
 
 #: domainlistview.cpp:149
 #, kde-format
 msgid "You must first select a policy to delete."
-msgstr ""
+msgstr "წასაშლელად ჯერ საჭიროა, აირჩიოთ პოლიტიკა."
 
 #: domainlistview.cpp:187 policydlg.cpp:63
 #, kde-format
@@ -986,11 +988,13 @@ msgid "Export..."
 msgstr "გატანა..."
 
 #: filteropts.cpp:140
-#, kde-format
+#, fuzzy, kde-format
 msgid ""
 "<qt>More information on <a href=\"importhelp\">import format</a>, <a href="
 "\"exporthelp\">export format</a>"
 msgstr ""
+"<qt>მეტი ინფორმაცია <a href=\"importhelp\">შემოტანის ფორმატისა</a> და <a "
+"href=\"exporthelp\">გატანის ფორმატის</a> შესახებ"
 
 #: filteropts.cpp:154
 #, kde-format
@@ -1072,7 +1076,7 @@ msgstr "URL"
 #: generalopts.cpp:53
 #, kde-format
 msgid "Tabbed Browsing"
-msgstr ""
+msgstr "ჩანართებიანი ბრაუზერი"
 
 #: generalopts.cpp:79
 #, kde-format
@@ -1080,7 +1084,7 @@ msgctxt ""
 "The user chose to use a custom start page but left the corresponding field "
 "empty"
 msgid "Please, insert the custom start page"
-msgstr ""
+msgstr "შეიყვანეთ სასურველი საწყისი გვერდი"
 
 #: generalopts.cpp:85
 #, kde-format
@@ -1154,12 +1158,12 @@ msgstr "ხედის გაყოფისას"
 #: generalopts.cpp:148
 #, kde-format
 msgid "Always duplicate current view"
-msgstr ""
+msgstr "მიმდინარე ხედი ყოველთვის დადაუბლირდება"
 
 #: generalopts.cpp:149
 #, kde-format
 msgid "Duplicate current view only for local files"
-msgstr ""
+msgstr "მიმდინარე ხედი ყოველთვის დადუბლირდება მხოლოდ ლოკალური ფაილებისთვის"
 
 #: htmlopts.cpp:36
 #, kde-format
@@ -1179,7 +1183,7 @@ msgstr "&სანიშნები"
 #: htmlopts.cpp:47
 #, kde-format
 msgid "Ask for name and folder when adding bookmarks"
-msgstr ""
+msgstr "სანიშნის დამატებისას სახელისა და საქაღალდის კითხვა"
 
 #: htmlopts.cpp:50
 #, kde-format
@@ -1192,7 +1196,7 @@ msgstr ""
 #: htmlopts.cpp:56
 #, kde-format
 msgid "Show only marked bookmarks in bookmark toolbar"
-msgstr ""
+msgstr "სანიშნების პანელზე მხოლოდ დანიშნული სანიშნების ჩვენება"
 
 #: htmlopts.cpp:58
 #, kde-format
@@ -1216,7 +1220,7 @@ msgstr ""
 #: htmlopts.cpp:75
 #, kde-format
 msgid "&Maximum completions:"
-msgstr ""
+msgstr "&მაქსიმალური დასრულება:"
 
 #: htmlopts.cpp:77
 #, kde-format
@@ -1232,7 +1236,7 @@ msgstr "თაგუნას &ქცევა"
 #: htmlopts.cpp:87
 #, kde-format
 msgid "Chan&ge cursor over links"
-msgstr ""
+msgstr "ბმულზე გადატარებისას &კურსორის ცვლილება"
 
 #: htmlopts.cpp:89
 #, kde-format
@@ -1244,7 +1248,7 @@ msgstr ""
 #: htmlopts.cpp:93
 #, kde-format
 msgid "M&iddle click opens URL in selection"
-msgstr ""
+msgstr "&შუა წკაპი მონიშნულში ბმულს გახსნის"
 
 #: htmlopts.cpp:96
 #, kde-format
@@ -1256,7 +1260,7 @@ msgstr ""
 #: htmlopts.cpp:100
 #, kde-format
 msgid "Right click goes &back in history"
-msgstr ""
+msgstr "მარჯვენა &წკაპი ისტორიაში უკან გადადის"
 
 #: htmlopts.cpp:103
 #, kde-format
@@ -1306,7 +1310,7 @@ msgstr ""
 #: htmlopts.cpp:130
 #, kde-format
 msgid "Offer to save website passwords"
-msgstr ""
+msgstr "ვებგვერდის პაროლის დამახსოვრების შეთავაზება"
 
 #: htmlopts.cpp:131
 #, kde-format
@@ -1316,7 +1320,7 @@ msgstr ""
 #: htmlopts.cpp:136
 #, kde-format
 msgid "Display online PDF files using WebEngine"
-msgstr ""
+msgstr "ონლაინ PDF ფაილების WebEngine-ით გახსნა"
 
 #: htmlopts.cpp:137
 #, kde-format
@@ -1327,17 +1331,17 @@ msgstr ""
 #: javaopts.cpp:78
 #, kde-format
 msgid "Enable Ja&va globally"
-msgstr ""
+msgstr "&Java-ის გლობალურად ჩართვა"
 
 #: javaopts.cpp:93
 #, kde-format
 msgid "Java Runtime Settings"
-msgstr ""
+msgstr "Java-ის მორგება"
 
 #: javaopts.cpp:97
 #, kde-format
 msgid "&Use security manager"
-msgstr ""
+msgstr "&უსაფრთხოების მმართველის გამოყენება"
 
 #: javaopts.cpp:101
 #, kde-format
@@ -1359,12 +1363,12 @@ msgstr[1] " წამი"
 #: javaopts.cpp:123
 #, kde-format
 msgid "&Path to Java executable, or 'java':"
-msgstr ""
+msgstr "ბილიკი Java-ის გამშვებ ფაილამდე ('java'):"
 
 #: javaopts.cpp:127
 #, kde-format
 msgid "Additional Java a&rguments:"
-msgstr ""
+msgstr "Java-ის დამატებითი &არგუმენტები:"
 
 #: javaopts.cpp:132
 #, kde-format
@@ -1484,7 +1488,7 @@ msgstr ""
 #: jsopts.cpp:50
 #, kde-format
 msgid "Ena&ble JavaScript globally"
-msgstr ""
+msgstr "JavaScript -ის გლობალურად &ჩართვა"
 
 #: jsopts.cpp:51
 #, kde-format
@@ -1502,17 +1506,17 @@ msgstr "შეცდომები"
 #: jsopts.cpp:63
 #, kde-format
 msgid "Enable debu&gger"
-msgstr ""
+msgstr "&გამმართავის ჩართვა"
 
 #: jsopts.cpp:64
 #, kde-format
 msgid "Enables builtin JavaScript debugger."
-msgstr ""
+msgstr "JavaScript-ის ჩაშენებული გამმართველის ჩართვა."
 
 #: jsopts.cpp:68
 #, kde-format
 msgid "Report &errors"
-msgstr ""
+msgstr "&შეცდომების გადაცემა"
 
 #: jsopts.cpp:69
 #, kde-format
@@ -1563,30 +1567,30 @@ msgstr ""
 #: jsopts.cpp:105
 #, kde-format
 msgid "Global JavaScript Policies"
-msgstr ""
+msgstr "JavaScript-ის გლობალური პოლიტიკა"
 
 #: jsopts.cpp:173
 #, kde-format
 msgctxt "@title:group"
 msgid "Do&main-Specific"
-msgstr ""
+msgstr "&დომენის"
 
 #: jsopts.cpp:212
 #, kde-format
 msgctxt "@title:window"
 msgid "New JavaScript Policy"
-msgstr ""
+msgstr "JavaScript -ის ახალი პოლიტიკა"
 
 #: jsopts.cpp:215
 #, kde-format
 msgctxt "@title:window"
 msgid "Change JavaScript Policy"
-msgstr ""
+msgstr "JavaScript -ის პოლიტიკის შეცვლა"
 
 #: jsopts.cpp:219
 #, kde-format
 msgid "JavaScript policy:"
-msgstr ""
+msgstr "JavaScript -ის პოლიტიკა:"
 
 #: jsopts.cpp:220
 #, kde-format
@@ -1596,12 +1600,12 @@ msgstr ""
 #: jsopts.cpp:222
 #, kde-format
 msgid "Domain-Specific JavaScript Policies"
-msgstr ""
+msgstr "JavaScript-ის დომენისთვის სპეციფიკური პოლიტიკები"
 
 #: jspolicies.cpp:132
 #, kde-format
 msgid "Open new windows:"
-msgstr ""
+msgstr "ახალი ფანჯრების გახსნა:"
 
 #: jspolicies.cpp:140 jspolicies.cpp:194 jspolicies.cpp:231 jspolicies.cpp:268
 #: jspolicies.cpp:308
@@ -1613,7 +1617,7 @@ msgstr "გლობალურის გამოყენება"
 #: jspolicies.cpp:309
 #, kde-format
 msgid "Use setting from global policy."
-msgstr ""
+msgstr "პარამეტრის გლობალური პოლიტიკიდან აღება."
 
 #: jspolicies.cpp:147 jspolicies.cpp:201 jspolicies.cpp:238 jspolicies.cpp:275
 #: jspolicies.cpp:315
@@ -1624,7 +1628,7 @@ msgstr "დაშვება"
 #: jspolicies.cpp:148
 #, kde-format
 msgid "Accept all popup window requests."
-msgstr ""
+msgstr "ყველა მხტუნარა ფანჯრის მოთხოვნის მიღება."
 
 #: jspolicies.cpp:153
 #, kde-format
@@ -1644,7 +1648,7 @@ msgstr "უარყოფა"
 #: jspolicies.cpp:160
 #, kde-format
 msgid "Reject all popup window requests."
-msgstr ""
+msgstr "ყველა მხტუნარა ფანჯრის მოთხოვნის უარყოფა."
 
 #: jspolicies.cpp:165
 #, kde-format
@@ -1671,12 +1675,12 @@ msgstr ""
 #: jspolicies.cpp:187
 #, kde-format
 msgid "Resize window:"
-msgstr ""
+msgstr "ფანჯრის ზომის შეცვლა:"
 
 #: jspolicies.cpp:202
 #, kde-format
 msgid "Allow scripts to change the window size."
-msgstr ""
+msgstr "სკრიპტებისთვის ფანჯრის ზომის შეცვლის ნების დართვა."
 
 #: jspolicies.cpp:207 jspolicies.cpp:244 jspolicies.cpp:281 jspolicies.cpp:321
 #, kde-format
@@ -1701,12 +1705,12 @@ msgstr ""
 #: jspolicies.cpp:224
 #, kde-format
 msgid "Move window:"
-msgstr ""
+msgstr "ფანჯრის გადაადგილება:"
 
 #: jspolicies.cpp:239
 #, kde-format
 msgid "Allow scripts to change the window position."
-msgstr ""
+msgstr "სკრიპტებისთვის ფანჯრის მდებარეობის შეცვლის ნების დართვა."
 
 #: jspolicies.cpp:245
 #, kde-format
@@ -1726,12 +1730,12 @@ msgstr ""
 #: jspolicies.cpp:261
 #, kde-format
 msgid "Focus window:"
-msgstr ""
+msgstr "ფანჯრის ფოკუსი:"
 
 #: jspolicies.cpp:276
 #, kde-format
 msgid "Allow scripts to focus the window."
-msgstr ""
+msgstr "სკრიპტებისთვის ფანჯრის ფოკუსის ნების დართვა."
 
 #: jspolicies.cpp:282
 #, kde-format
@@ -1753,12 +1757,12 @@ msgstr ""
 #: jspolicies.cpp:301
 #, kde-format
 msgid "Modify status bar text:"
-msgstr ""
+msgstr "მდგომარეობის ზოლის ტექსტის შეცვლა:"
 
 #: jspolicies.cpp:316
 #, kde-format
 msgid "Allow scripts to change the text of the status bar."
-msgstr ""
+msgstr "სკრიპტებისთვის სტატუსის ზოლის ტექსტის შეცვლის უფლების მიცემა."
 
 #: jspolicies.cpp:322
 #, kde-format
@@ -1778,12 +1782,12 @@ msgstr ""
 #: main.cpp:43
 #, kde-format
 msgid "Konqueror Browsing Control Module"
-msgstr ""
+msgstr "Konqueror -ის ბრაუზერის კონტროლის მოდული"
 
 #: main.cpp:45
-#, kde-format
+#, fuzzy, kde-format
 msgid "(c) 1999 - 2001 The Konqueror Developers"
-msgstr ""
+msgstr "(c) 1999 - 2001 Konqueror -ის პროგრამისტები"
 
 #: main.cpp:47
 #, kde-format
@@ -1858,7 +1862,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Domain-Specific Policies"
-msgstr ""
+msgstr "დომენისთვის სპეციფიკური პოლიტიკები"
 
 #: policydlg.cpp:47
 #, kde-format
@@ -1875,4 +1879,4 @@ msgstr ""
 #: policydlg.cpp:139
 #, kde-format
 msgid "You must first enter a domain name."
-msgstr ""
+msgstr "ჯერ დომენის სახელი უნდა შეიყვანო."
