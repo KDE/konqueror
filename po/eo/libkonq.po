@@ -1,19 +1,19 @@
 # translation of libkonq.po to esperanto
-# Esperantaj mesaĝoj por "kfm"
+# Esperantaj mesaĝoj por "konqueror"
 # Copyright (C) 1998, 2004, 2007 Free Software Foundation, Inc.
 # Wolfram Diestel <wolfram@steloj.de>, 1998.
 # Matthias Peick <matthias@peick.de>, 2004.
 # Stéphane Fillod <f8cfe@free.fr>, 2007.
 # Pierre-Marie Pédrot <pedrotpmx@wanadoo.fr>, 2007.
-#
+# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: libkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-08-15 00:44+0000\n"
-"PO-Revision-Date: 2007-12-16 13:22+0100\n"
-"Last-Translator: Pierre-Marie Pédrot <pedrotpmx@wanadoo.fr>\n"
+"PO-Revision-Date: 2023-01-06 22:00+0100\n"
+"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -41,12 +41,12 @@ msgstr "&Restaŭri"
 #: src/konq_popupmenu.cpp:265
 #, kde-format
 msgid "Show Original Directory"
-msgstr ""
+msgstr "Montri originan dosierujon"
 
 #: src/konq_popupmenu.cpp:265
 #, kde-format
 msgid "Show Original File"
-msgstr ""
+msgstr "Montri originan dosieron"
 
 #: src/konq_popupmenu.cpp:300
 #, kde-format
@@ -54,10 +54,9 @@ msgid "&Empty Trash Bin"
 msgstr "Malpl&enigi la rubujon"
 
 #: src/konq_popupmenu.cpp:312
-#, fuzzy, kde-format
-#| msgid "&Empty Trash Bin"
+#, kde-format
 msgid "&Configure Trash Bin"
-msgstr "Malpl&enigi la rubujon"
+msgstr "A&gordi la rubujon"
 
 #: src/konq_popupmenu.cpp:336
 #, kde-format
@@ -92,238 +91,9 @@ msgstr "Antaŭrigardo per"
 #: src/konq_popupmenu.cpp:390
 #, kde-format
 msgid "Open Terminal Here"
-msgstr ""
+msgstr "Malfermi terminalon ĉi tie"
 
 #: src/konq_popupmenu.cpp:426
 #, kde-format
 msgid "&Properties"
 msgstr "&Ecoj"
-
-#, fuzzy
-#~| msgid "Move to Trash"
-#~ msgctxt "@title:menu"
-#~ msgid "Move To"
-#~ msgstr "Movi al la rubujo"
-
-#, fuzzy
-#~| msgid "New Folder"
-#~ msgctxt "@title:menu"
-#~ msgid "Home Folder"
-#~ msgstr "Nova dosierujo:"
-
-#~ msgctxt "@title:menu"
-#~ msgid "Root Folder"
-#~ msgstr "Radika dosierujo"
-
-#~ msgctxt "@title:menu in Copy To or Move To submenu"
-#~ msgid "Browse..."
-#~ msgstr "Foliumi..."
-
-#~ msgctxt "@title:menu"
-#~ msgid "Copy Here"
-#~ msgstr "Kopii tien ĉi"
-
-#~ msgctxt "@title:menu"
-#~ msgid "Move Here"
-#~ msgstr "Movi tien ĉi"
-
-#~ msgid "You cannot drop a folder on to itself"
-#~ msgstr "Vi ne povas treni kaj faligi dosierujon al si mem"
-
-#~ msgid "File name for dropped contents:"
-#~ msgstr "Dosiernomo por faligitaj enhavoj"
-
-#~ msgid "&Move Here"
-#~ msgstr "&Movi tien ĉi"
-
-#~ msgid "&Copy Here"
-#~ msgstr "&Kopii tien ĉi"
-
-#~ msgid "&Link Here"
-#~ msgstr "&Ligi tien ĉi"
-
-#~ msgid "Set as &Wallpaper"
-#~ msgstr "Uzi kiel &ekranfonon"
-
-#~ msgid "C&ancel"
-#~ msgstr "&Rezigni"
-
-#, fuzzy
-#~| msgid "Creating directory"
-#~ msgctxt "@action:button"
-#~ msgid "Create directory"
-#~ msgstr "Kreas dosierujon"
-
-#, fuzzy
-#~| msgid "Enter folder name:"
-#~ msgctxt "@action:button"
-#~ msgid "Enter a different name"
-#~ msgstr "Enmetu dosierujonomon:"
-
-#, fuzzy
-#~| msgid "Creating directory"
-#~ msgctxt "@title:window"
-#~ msgid "Create hidden directory?"
-#~ msgstr "Kreas dosierujon"
-
-#~ msgctxt "@label Default name when creating a folder"
-#~ msgid "New Folder"
-#~ msgstr "Nova dosierujo:"
-
-#~ msgctxt "@title:window"
-#~ msgid "New Folder"
-#~ msgstr "Nova dosierujo:"
-
-#~ msgctxt "@label:textbox"
-#~ msgid "Enter folder name:"
-#~ msgstr "Enmetu dosierujonomon:"
-
-#, fuzzy
-#~| msgid "New Folder"
-#~ msgctxt "@action:inmenu"
-#~ msgid "Paste One Folder"
-#~ msgstr "Nova dosierujo:"
-
-#~ msgctxt "@action:inmenu"
-#~ msgid "Paste"
-#~ msgstr "Alglui"
-
-#~ msgid "Share"
-#~ msgstr "Komunigi"
-
-#~ msgctxt "@info"
-#~ msgid "Close"
-#~ msgstr "Fermi"
-
-#~ msgid "Close"
-#~ msgstr "Fermi"
-
-#~ msgid "Error: %1"
-#~ msgstr "Eraro: %1"
-
-#~ msgid "Create New"
-#~ msgstr "Krei novan"
-
-#~ msgid "Link to Device"
-#~ msgstr "Ligo al aparato"
-
-#~ msgid "<qt>The template file <b>%1</b> does not exist.</qt>"
-#~ msgstr "<qt>La ŝablonodosiero %1 ne ekzistas!</qt>"
-
-#~ msgid "File name:"
-#~ msgstr "Dosiernomo:"
-
-#, fuzzy
-#~| msgctxt "@title:menu"
-#~| msgid "Actions"
-#~ msgctxt "@title:menu"
-#~ msgid "&Actions"
-#~ msgstr "Agoj"
-
-#~ msgctxt "@title:menu"
-#~ msgid "&Open With"
-#~ msgstr "Malfermi &per"
-
-#~ msgctxt "@action:inmenu Open With"
-#~ msgid "&Other..."
-#~ msgstr "&Aliaj..."
-
-#~ msgctxt "@title:menu"
-#~ msgid "&Open With..."
-#~ msgstr "Malfermi &per..."
-
-#, fuzzy
-#~| msgid "Open with %1"
-#~ msgid "Open &with %1"
-#~ msgstr "Malfermi per %1"
-
-#~ msgid "Open in New &Window"
-#~ msgstr "Malfermi en &nova fenestro"
-
-#~ msgid "Open the trash in a new window"
-#~ msgstr "Malfermi la rubujon en nova fenestro"
-
-#~ msgid "Open the medium in a new window"
-#~ msgstr "Malfermi en nova fenestro"
-
-#~ msgid "Open the document in a new window"
-#~ msgstr "Malfermi la dokumenton en nova fenestro"
-
-#~ msgid "Directory"
-#~ msgstr "Dosierujo"
-
-#~ msgid "Moving"
-#~ msgstr "Movas"
-
-#~ msgid "Source"
-#~ msgstr "Fonto"
-
-#~ msgid "Destination"
-#~ msgstr "Celo"
-
-#~ msgid "Deleting"
-#~ msgstr "Forigas"
-
-#~ msgid "File"
-#~ msgstr "Dosiero"
-
-#~ msgid "Und&o"
-#~ msgstr "&Malfari"
-
-#~ msgid "Und&o: Copy"
-#~ msgstr "&Malfari: Kopii"
-
-#~ msgid "Und&o: Link"
-#~ msgstr "&Malfari: Ligi"
-
-#~ msgid "Und&o: Move"
-#~ msgstr "&Malfari: Movi"
-
-#~ msgid "Und&o: Rename"
-#~ msgstr "&Malfari: Renomi"
-
-#~ msgid "Und&o: Trash"
-#~ msgstr "&Malfari: Rubujen"
-
-#~ msgid "Und&o: Create Folder"
-#~ msgstr "&Malfari: Krei dosierujon"
-
-#~ msgid ""
-#~ "The file %1 was copied from %2, but since then it has apparently been "
-#~ "modified at %3.\n"
-#~ "Undoing the copy will delete the file, and all modifications will be "
-#~ "lost.\n"
-#~ "Are you sure you want to delete %4?"
-#~ msgstr ""
-#~ "La dosiero %1 estis kopiita el %2, sed ekde tiam ĝi ŝajne ŝanĝiĝis al "
-#~ "%3.\n"
-#~ "Malfari la kopiado forigos la dosieron, kaj ĉiuj informoj perdiĝos.\n"
-#~ "Ĉu vi vere volas forigi %4?"
-
-#~ msgid "Undo File Copy Confirmation"
-#~ msgstr "Konfirmo por malfari la kopiado de dosiero"
-
-#~ msgid "Do you really want to delete this item?"
-#~ msgid_plural "Do you really want to delete these %1 items?"
-#~ msgstr[0] "Ĉu vi vere volas forigi tiun eron?"
-#~ msgstr[1] "Ĉu vi vere volas forigi tiujn %1 erojn?"
-
-#~ msgid "Delete Files"
-#~ msgstr "Forigi dosierojn"
-
-#~ msgid "Do you really want to move this item to the trash?"
-#~ msgid_plural "Do you really want to move these %1 items to the trash?"
-#~ msgstr[0] "Ĉu vi vere volas meti tiun eron en la rubujo?"
-#~ msgstr[1] "Ĉu vi vere volas meti tiujn %1 erojn en la rubujo?"
-
-#~ msgid "Move to Trash"
-#~ msgstr "Movi al la rubujo"
-
-#~ msgctxt "Verb"
-#~ msgid "&Trash"
-#~ msgstr "&Rubujen"
-
-#, fuzzy
-#~| msgid "Und&o"
-#~ msgid "Und&o: %1"
-#~ msgstr "&Malfari"

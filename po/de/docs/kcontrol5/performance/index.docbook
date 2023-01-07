@@ -2,44 +2,75 @@
 <!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
 "dtd/kdedbx45.dtd" [
 <!ENTITY % addindex "IGNORE">
-<!ENTITY % English "INCLUDE" > <!-- change language only here -->
+<!ENTITY % German "INCLUDE"
+> <!-- change language only here -->
 ]>
 
 <article id="performance" lang="&language;">
 <articleinfo>
-<title>Performance</title>
+<title
+>Leistung</title>
 <authorgroup>
-<author>&Mike.McBride; &Mike.McBride.mail;</author>
-<!-- TRANS:ROLES_OF_TRANSLATORS -->
+<author
+>&Mike.McBride; &Mike.McBride.mail;</author>
+<othercredit role="translator"
+><firstname
+>Stephan</firstname
+><surname
+>Johach</surname
+><affiliation
+><address
+><email
+>hunsum@gmx.de</email
+></address
+></affiliation
+><contrib
+>Deutsche Übersetzung</contrib
+></othercredit
+> 
 </authorgroup>
 
-<date>2016-11-08</date>
-<releaseinfo>Applications 16.12</releaseinfo>
+<date
+>2016-11-08</date>
+<releaseinfo
+>Anwendungen 16.12</releaseinfo>
 
 <keywordset>
-<keyword>KDE</keyword>
-<keyword>Systemsettings</keyword>
-<keyword>performance</keyword>
-<keyword>preload</keyword>
+<keyword
+>KDE</keyword>
+<keyword
+>Systemeinstellungen</keyword>
+<keyword
+>Leistung</keyword>
+<keyword
+>Im Hintergrund laden</keyword>
 </keywordset>
 </articleinfo>
 
 <sect1 id="sys-performance">
-<title>Performance Settings</title>
+<title
+>Einstellungen zur Leistung</title>
 
-<para>&konqueror;, is used on a wide variety of computers by a wide variety of users.  Under the category of 
-performance, this dialog allows each user to adjust options which may make the computer that &konqueror; is 
-installed on feel more responsive. </para>
+<para
+>&konqueror; wird auf einer Vielzahl unterschiedlicher Rechner von unterschiedlichen Anwendern benutzt. Unter dem Begriff Leistung können in diesem Dialog Einstellungen vorgenommen werden, die auf dem Rechner, auf dem &konqueror; installiert wurde, zu einem besseren Antwortverhalten führen. </para>
 
-<sect2><title>Preloading</title>
-<para>The subsection labeled <guilabel>Preloading</guilabel> makes a tradeoff between memory and performance.</para>
+<sect2
+><title
+>Im Hintergrund laden</title>
+<para
+>Der mit <guilabel
+>Im Hintergrund laden</guilabel
+> bezeichnete Abschnitt ermöglicht einen Kompromiss zwischen Speicherverbrauch und Geschwindigkeit.</para>
 
-<para><emphasis>Preloading</emphasis> refers to loading an instance of &konqueror; into memory before a user asks to start &konqueror;.  The positive effect of this is that when a user asks to load &konqueror; the window appears instantly
- because most of the application has been preloaded.  The negative effect is that this instance of &konqueror; uses memory that 
-could be used by other programs. By default, when a user closes &konqueror;, the instance is not closed.
-This means that the next time a user wants &konqueror; loaded, it is nearly instantaneous again.</para>
+<para
+><emphasis
+>Im Hintergrund laden</emphasis
+> bezieht sich auf das Laden einer Ausgabe von &konqueror; in den Arbeitsspeicher bevor der Anwender &konqueror; tatsächlich aufruft. Die positive Auswirkung dabei ist, dass im Falle des Aufrufs durch den Anwender, das Fenster nahezu sofort erscheint, da die Programm sich bereits weitgehend im Arbeitsspeicher befindet. Die negative Auswirkung besteht darin, dass diese Ausgabe von &konqueror; Speicher belegt, der ansonsten von anderen Programm zur Verfügung stehen würde. In der Voreinstellung wird &konqueror; nicht aus dem Arbeitsspeicher entfernt, wenn der Benutzer die Anwendung schließt. Das bedeutet, beim nächsten Aufruf von &konqueror; erscheint die Anwendung nahezu ohne Verzögerung wieder auf dem Bildschirm.</para>
 
-<para>The final check box labeled <guilabel>Always try to have at least one preloaded instance</guilabel> signals that you always want to have one preloaded, but not used, instance of &konqueror; available.  This option will actually decrease performance on some machines (especially those with limited physical memory).</para>
+<para
+>Mit dem letzten Ankreuzfeld <guilabel
+>Stets versuchen mindestens eine Ausgabe im Hintergrund geladen zu halten</guilabel
+> geben sie an, dass Sie immer eine ungenutzte Ausgabe von &konqueror; im Hintergrund haben möchten. Diese Einstellung bewirkt auf manchen Systemen (insbesondere solchen mit eingeschränktem Arbeitsspeicher) eher eine Leistungsminderung.</para>
 </sect2>
 </sect1>
 

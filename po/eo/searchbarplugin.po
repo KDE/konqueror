@@ -1,5 +1,6 @@
 # Translation of searchbarplugin into esperanto.
-#
+# Esperantaj mesaĝoj por "konqueror"
+# Copyright (C) 2009 Free Software Foundation, Inc.
 # Axel Rousseau <axel@esperanto-jeunes.org>, 2009.
 # Michael Moroni <michael.moroni@mailoo.org>, 2012.
 msgid ""
@@ -7,8 +8,8 @@ msgstr ""
 "Project-Id-Version: searchbarplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-07-25 00:45+0000\n"
-"PO-Revision-Date: 2012-05-23 11:43+0200\n"
-"Last-Translator: Michael Moroni <michael.moroni@mailoo.org>\n"
+"PO-Revision-Date: 2023-01-06 22:00+0100\n"
+"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-doc@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -38,10 +39,9 @@ msgid "Focus Searchbar"
 msgstr "Enfokusigi serĉbreton"
 
 #: searchbar.cpp:267
-#, fuzzy, kde-format
-#| msgid "Find in This Page"
+#, kde-format
 msgid "Find in Page..."
-msgstr "Trovi en ĉi tiu paĝo"
+msgstr "Trovi en paĝo..."
 
 #: searchbar.cpp:287
 #, kde-format
@@ -78,15 +78,3 @@ msgstr "Nomo:"
 #, kde-format
 msgid "Shortcuts:"
 msgstr "Fulmoklavoj:"
-
-#~ msgid "Enable Suggestion"
-#~ msgstr "Enŝalti sugeston"
-
-#~ msgid "Cancel"
-#~ msgstr "Nuligi"
-
-#~ msgid "OK"
-#~ msgstr "Bone"
-
-#~ msgid "Ok"
-#~ msgstr "Bone"

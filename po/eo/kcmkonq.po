@@ -1,18 +1,18 @@
-# translation of kcmkonq.po to Esperanto
-# e-aj mesaĝoj por kcmkonq
+# translation of kcmkonq.pot to Esperanto
+# e-aj mesaĝoj por konqueror
 # Copyright (C) 1999, 2007 Free Software Foundation, Inc.
 # Wolfram Diestel <wofram@steloj.de>, 1999.
 # Cindy McKee <cfmckee@gmail.com>, 2007.
 # Axel Rousseau <axel@esperanto-jeunes.org>, 2009.
-#
+# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonq\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-10-01 00:18+0000\n"
-"PO-Revision-Date: 2009-12-11 15:41+0100\n"
-"Last-Translator: Axel Rousseau <axel@esperanto-jeunes.org>\n"
+"PO-Revision-Date: 2023-01-06 22:00+0100\n"
+"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-doc@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -50,8 +50,7 @@ msgstr ""
 "vi malfermas dosierujon, anstataŭ montri la dosierujon en la nuna fenestro."
 
 #: behaviour.cpp:73
-#, fuzzy, kde-format
-#| msgid "Show 'Delete' context me&nu entries which bypass the trashcan"
+#, kde-format
 msgid "Show 'Delete' me&nu entries which bypass the trashcan"
 msgstr ""
 "Montri 'Forigi' erojn en kuntekstaj &menuoj kiuj NE sendos la erojn rubujen"
@@ -67,158 +66,3 @@ msgstr ""
 "kaj en la kuntekstaj menuoj kaj en la menuoj de la dosiera administrilo. "
 "Notu ke vi povas forigi dosierojn per premo de la majuskla klavo dum vi uzas "
 "la 'Rubujen' opcion."
-
-#~ msgctxt "@title:window"
-#~ msgid "Menu Editor"
-#~ msgstr "Menua redaktilo"
-
-#~ msgid "Menu"
-#~ msgstr "Menuo"
-
-#~ msgid "New..."
-#~ msgstr "Nova..."
-
-#~ msgid "Remove"
-#~ msgstr "Forpreni"
-
-#~ msgid "Move Up"
-#~ msgstr "Supren"
-
-#~ msgid "Move Down"
-#~ msgstr "Malsupren"
-
-#~ msgid ""
-#~ "<h1>Paths</h1>\n"
-#~ "This module allows you to choose where in the filesystem the files on "
-#~ "your desktop should be stored.\n"
-#~ "Use the \"Whats This?\" (Shift+F1) to get help on specific options."
-#~ msgstr ""
-#~ "<h1>Vojoj</h1>\n"
-#~ "Tiu modulo permesas al vi elekti la lokon kie la dosieroj sur via "
-#~ "labortablo \n"
-#~ "estas konservataj.\n"
-#~ "Uzu la funkcion \"Kio estas tio?\" (Majuskl+F1) por informiĝi\n"
-#~ "pri apartaj opcioj."
-
-#~ msgid "Desktop path:"
-#~ msgstr "Labortabla vojo:"
-
-#~ msgid ""
-#~ "This folder contains all the files which you see on your desktop. You can "
-#~ "change the location of this folder if you want to, and the contents will "
-#~ "move automatically to the new location as well."
-#~ msgstr ""
-#~ "Tiu dosierujo enhavas ĉiujn dosierojn, kiujn vi vidas sur via labortablo. "
-#~ "Vi povas ŝanĝi la lokon de tiu dosierujo se vi volas. La enhavo moviĝos "
-#~ "aŭtomate al la nova loko."
-
-#~ msgid "Autostart path:"
-#~ msgstr "Aŭtolanĉa vojo:"
-
-#~ msgid ""
-#~ "This folder contains applications or links to applications (shortcuts) "
-#~ "that you want to have started automatically whenever KDE starts. You can "
-#~ "change the location of this folder if you want to, and the contents will "
-#~ "move automatically to the new location as well."
-#~ msgstr ""
-#~ "Tiu dosierujo enhavas aplikaĵojn aŭ ligilojn al aplikaĵoj kiuj aŭtomate "
-#~ "lanĉiĝu ĉe la KDE-lanĉo. Vi povas ŝanĝi la lokon de tiu dosierujo se vi "
-#~ "volas, kaj la enhavo moviĝos aŭtomate al la nova loko."
-
-#~ msgid "Documents path:"
-#~ msgstr "Dokumenta vojo:"
-
-#~ msgid ""
-#~ "This folder will be used by default to load or save documents from or to."
-#~ msgstr ""
-#~ "Tiu dosierujo estos la defaŭlta por la ŝargado kaj la konservado de "
-#~ "dokumentoj."
-
-#~ msgid "Downloads path:"
-#~ msgstr "Elŝuta vojo:"
-
-#~ msgid "This folder will be used by default to save your downloaded items."
-#~ msgstr ""
-#~ "Tiu dosierujo estos la defaŭlta por la ŝargado kaj la konservado de "
-#~ "elŝutaĵoj."
-
-#~ msgid "Movies path:"
-#~ msgstr "Filma vojo:"
-
-#~ msgid ""
-#~ "This folder will be used by default to load or save movies from or to."
-#~ msgstr ""
-#~ "Tiu dosierujo estos la defaŭlta por la ŝargado kaj la konservado de "
-#~ "filmoj."
-
-#~ msgid "Pictures path:"
-#~ msgstr "Bilda vojo:"
-
-#~ msgid ""
-#~ "This folder will be used by default to load or save pictures from or to."
-#~ msgstr ""
-#~ "Tiu dosierujo estos la defaŭlta por la ŝargado kaj la konservado de "
-#~ "bildoj."
-
-#~ msgid "Music path:"
-#~ msgstr "Muzika vojo:"
-
-#~ msgid ""
-#~ "This folder will be used by default to load or save music from or to."
-#~ msgstr ""
-#~ "Tiu dosierujo estos la defaŭlta por la ŝargado kaj la konservado de "
-#~ "muzikoj."
-
-#~ msgid "Autostart"
-#~ msgstr "Aŭtolanĉo"
-
-#~ msgid "Desktop"
-#~ msgstr "Labortablo"
-
-#~ msgid "Documents"
-#~ msgstr "Dokumentoj"
-
-#~ msgid "Downloads"
-#~ msgstr "Elŝutaĵoj"
-
-#~ msgid "Movies"
-#~ msgstr "Filmoj"
-
-#~ msgid "Pictures"
-#~ msgstr "Bildoj"
-
-#~ msgid "Music"
-#~ msgstr "Muziko"
-
-#~ msgid ""
-#~ "The path for '%1' has been changed.\n"
-#~ "Do you want the files to be moved from '%2' to '%3'?"
-#~ msgstr ""
-#~ "La vojo por '%1' estas ŝanĝita.\n"
-#~ "Ĉu vi volas movi la dosierojn de '%2' al '%3'?"
-
-#~ msgctxt "Move files from old to new place"
-#~ msgid "Move"
-#~ msgstr "Movi"
-
-#~ msgctxt "Use the new directory but do not move files"
-#~ msgid "Do not Move"
-#~ msgstr "Ne movi"
-
-#~ msgid ""
-#~ "The path for '%1' has been changed.\n"
-#~ "Do you want to move the directory '%2' to '%3'?"
-#~ msgstr ""
-#~ "La vojo por '%1' estas ŝanĝita.\n"
-#~ "Ĉu vi volas movi la dosierojn de '%2' al '%3'?"
-
-#~ msgctxt "Move the directory"
-#~ msgid "Move"
-#~ msgstr "Movi"
-
-#~ msgctxt "Use the new directory but do not move anything"
-#~ msgid "Do not Move"
-#~ msgstr "Ne movi"
-
-#~ msgid "Confirmation Required"
-#~ msgstr "Bezonas konfirmon"

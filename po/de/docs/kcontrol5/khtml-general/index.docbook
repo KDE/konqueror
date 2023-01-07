@@ -2,122 +2,197 @@
 <!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
 "dtd/kdedbx45.dtd" [
 <!ENTITY % addindex "IGNORE">
-<!ENTITY % English "INCLUDE" > <!-- change language only here -->
+<!ENTITY % German "INCLUDE"
+> <!-- change language only here -->
 ]>
 
 <article lang="&language;" id="konq-general-behavior">
-<title>General &konqueror; Behavior</title>
+<title
+>Allgemeines Verhalten von &konqueror;</title>
 <articleinfo>
 
 <authorgroup>
-<author>&Burkhard.Lueck;</author>
-<!-- TRANS:ROLES_OF_TRANSLATORS -->
+<author
+>&Burkhard.Lueck;</author>
+<othercredit role="translator"
+><firstname
+>Burkhard</firstname
+><surname
+>Lück</surname
+><affiliation
+><address
+><email
+>lueck@hube-lueck.de</email
+></address
+></affiliation
+><contrib
+>Übersetzung</contrib
+></othercredit
+> 
 </authorgroup>
 
-<date>2016-11-08</date>
-<releaseinfo>Applications 16.12</releaseinfo>
+<date
+>2016-11-08</date>
+<releaseinfo
+>Anwendungen 16.12</releaseinfo>
 
 </articleinfo>
-<para>On this page you find settings for home and start page and the behavior 
-of tabbed browsing both for &konqueror;'s file manager and browser mode.</para>
+<para
+>Auf dieser Seite befinden sich Einstellungen for die Startseite und das Verhalten von &konqueror; beim Browsen mit Unterfenstern sowohl für den Dateiverwaltungs- als auch den Browsermodus.</para>
 
 <variablelist>
 <varlistentry>
-<term><guilabel>When Konqueror starts</guilabel></term>
+<term
+><guilabel
+>Beim Start von Konqueror</guilabel
+></term>
 <listitem>
-<para>This option determines which page is displayed when &konqueror; starts, 
-the introduction page, your home page, a blank page or your bookmarks page.
-</para></listitem>
+<para
+>Diese Einstellung legt fest, welche Seite &konqueror; beim Start anzeigt, die Willkommensseite, die Startseite, eine leere Seite oder Ihre Lesezeichenseite. </para
+></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><guilabel>Home page</guilabel></term>
-<listitem><para>This is the &URL; (&eg; a
-folder or a web page) where &konqueror; in browser mode will jump to
-when the <guibutton>Home Page</guibutton> button in the toolbar is pressed. 
-You can set a path that is your <guilabel>Home page</guilabel> by
-typing into the text field, or using the <guiicon>browse</guiicon>
-icon to select a local folder. &konqueror; needs to be restarted for 
-changes to take effect.</para>
-<para>When &konqueror; is used in file manager mode, the <guilabel>Home Page</guilabel> 
-button in the toolbar is replaced by a <guilabel>Home Folder</guilabel> button 
-which makes it jump to your local home folder instead.</para>
+<term
+><guilabel
+>Startseite</guilabel
+></term>
+<listitem
+><para
+>Dies ist die Adresse oder &URL; (&eg; ein Ordner oder eine Webseite), zu der &konqueror; im Browsermodus springt, wenn der Knopf <guibutton
+>Startseite</guibutton
+> in der Werkzeugleiste angeklickt wird. Den Pfad zur <guilabel
+>Startseite</guilabel
+> können Sie entweder in das Text eingeben oder auf das Symbol <guiicon
+>Dateiauswahl</guiicon
+> klicken und dann im Dialog einen lokalen Ordner auswählen. &konqueror; muss neu gestartet werden, damit die Änderung wirksam wird.</para>
+<para
+>Wird &konqueror; als Dateimanger benutzt, dann wird der Knopf <guilabel
+>Startseite</guilabel
+> in der Werkzeugleiste durch den Knopf <guilabel
+>Persönlicher Ordner</guilabel
+> ersetzt und dann wird stattdessen Ihr persönlicher Ordner angezeigt.</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
-<term><guilabel>Open links in
-new tab instead of in new window</guilabel></term>
-<listitem><para>&konqueror; defaults to a single window per page, but has the
-capability to open multiple <firstterm>tabs</firstterm> inside a
-single window. &konqueror; also, by default, has a &MMB; shortcut to
-open any link in a new window.  If you enable <guilabel>Open links in
-new tab instead of in new window</guilabel> you can &MMB; click on a
-link to have it open in a new tab.</para></listitem>
+<term
+><guilabel
+>Verknüpfungen in Unterfenstern anzeigen statt in eigenen Fenstern</guilabel
+></term>
+<listitem
+><para
+>&konqueror; verwendet gewöhnlich ein Fenster für jede Seite, besitzt aber auch die Möglichkeit, mehrere <firstterm
+>Karteikarten</firstterm
+> innerhalb eines Fensters zu öffnen. Mit einem Klick mit der <mousebutton
+>mittleren</mousebutton
+> Maustaste können Sie standardmäßig jede Verknüpfung in einem neuen Fenster öffnen. Falls Sie die Einstellung <guilabel
+>Verknüpfungen in Unterfenstern anzeigen statt in extra Fenstern</guilabel
+> aktivieren, können Sie mit einem Klick mit der <mousebutton
+>mittleren</mousebutton
+> Maustaste eine Verknüpfung in einer neuen Karteikarte öffnen.</para
+></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><guilabel>Open popups in new tab instead of in new window</guilabel></term>
-<listitem><para>Whether or not JavaScript popups if allowed shall open in a new tab or in a 
-new window.</para></listitem>
+<term
+><guilabel
+>Aufklappfenster („Popups“) in Unterfenstern anzeigen</guilabel
+></term>
+<listitem
+><para
+>Legt fest, ob durch JavaScript gesteuerte Aufklappfenster in einem neuen Fenster oder Unterfenster geöffnet werden sollen, falls die entsprechende JavaScript-Funktion zugelassen ist.</para
+></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><guilabel>Open as tab in existing Konqueror when URL is called externally</guilabel></term>
-<listitem><para>When you click a &URL; in another &kde; program or call kfmclient to open a &URL;, 
-the current desktop will be searched for a non-minimized &konqueror; and, if 
-found, the &URL; opened as a new tab within it. Otherwise a new &konqueror; 
-window will be opened with the required &URL;.</para></listitem>
+<term
+><guilabel
+>Als Unterfenster in bereits geöffnetem Konqueror anzeigen, falls die Adresse von außerhalb aufgerufen wird</guilabel
+></term>
+<listitem
+><para
+>Sobald Sie in einem anderen &kde;-Programm auf eine Adresse (&URL;) klicken oder kfmclient zum Aufruf einer solchen Adresse verwenden, wird überprüft, ob auf der aktuellen Arbeitsfläche bereits ein nicht-minimierter &konqueror; vorhanden ist. Ist diese Einstellung aktiv und ein solches Konquerorfenster vorhanden, wird die Adresse darin als Unterfenster geöffnet. Anderenfalls wird ein neues Konquerorfenster geöffnet;.</para
+></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><guilabel>Open new tabs in the background</guilabel></term>
-<listitem><para>If you are using tabbed browsing, you can choose if a newly
-opened tab becomes the active (<quote>front</quote>) tab, or goes to
-the back.  On a slow Internet connection, or while browsing a page
-that has a list of headlines or other links in a list, you may like to
-have the new tabs load in the background while you continue reading.
-In this case, enable this setting.  If you prefer to go
-straight to the new page, leaving the old one in the background to
-return to later, disable it.</para></listitem>
+<term
+><guilabel
+>Neue Unterfenster im Hintergrund öffnen</guilabel
+></term>
+<listitem
+><para
+>Falls Sie Browsen mit Unterfenstern verwenden, können Sie auswählen, ob eine neu geöffnete Karteikarte die aktive (<quote
+>vordere</quote
+>) Karteikarte wird oder in den Hintergrund geht. Bei einer langsamen Internetverbindung, oder wenn Sie sich auf einer Seite mit vielen Links befinden, kann es gewünscht sein, dass diese Seite im Hintergrund geladen werden, während Sie noch mit dem Lesen fortfahren. Lassen Sie in diesem Fall die Einstellung aktiviert. Falls Sie die neue Seite sofort im Vordergrund geladen haben möchten, sollten Sie die Einstellung deaktivieren.</para
+></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><guilabel>Open new tab after current tab</guilabel></term>
-<listitem><para>This will open a new tab opened from a page after the current tab, instead 
-of after the last tab.</para></listitem>
+<term
+><guilabel
+>Neues Unterfenster neben aktuellem öffnen</guilabel
+></term>
+<listitem
+><para
+>Dadurch wird ein Unterfenster neben dem gerade aktuellen geöffnet. Sonst neben dem letzten in der Reihe.</para
+></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><guilabel>Hide the tab bar when only one tab is open</guilabel></term>
-<listitem><para>This will display the tab bar only if there are two or more tabs. Otherwise 
-it will always be displayed.</para></listitem>
+<term
+><guilabel
+>Leiste ausblenden, wenn nur ein Unterfenster geöffnet ist</guilabel
+></term>
+<listitem
+><para
+>Hierdurch wird die Unterfensterleiste nur angezeigt, wenn mindestens zwei Unterfenster vorhanden sind. Anderenfalls wird die Leiste immer angezeigt.</para
+></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><guilabel>Show close button on tabs</guilabel></term>
-<listitem><para>This will display close buttons inside each tab instead of websites' icons.</para></listitem>
+<term
+><guilabel
+>„Schließen“-Knopf auf Unterfenster-Reitern anzeigen</guilabel
+></term>
+<listitem
+><para
+>Hierdurch wird in jedem Unterfenster anstelle des Webseiten-Symbols ein Symbol zum Schließen angezeigt.</para
+></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><guilabel>Middle-click on a tab to close it</guilabel></term>
-<listitem><para>When you click on a tab using the middle mouse button or mouse wheel, it 
-will close that tab. &konqueror; needs to be restarted for changes to take 
-effect.</para></listitem>
+<term
+><guilabel
+>Mittelklick auf Unterfenster-Reiter schließt das Unterfenster</guilabel
+></term>
+<listitem
+><para
+>Durch Drücken der mittleren Maustaste oder des Mausrades auf einem Unterfenster-Reiter, wird das Unterfenster geschlossen (Sie müssen Konqueror neu starten, damit die Änderung wirksam wird).</para
+></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><guilabel>Confirm when closing windows with multiple tabs</guilabel></term>
-<listitem><para>If you close a window in &konqueror; that has multiple tabs
-open, &konqueror; will ask you if you're sure that you meant to close
-it.  You can toggle on and off this behavior with this
-check box.</para></listitem>
+<term
+><guilabel
+>Beim Schließen von Fenstern mit mehreren Unterfenstern Bestätigung verlangen</guilabel
+></term>
+<listitem
+><para
+>Wenn Sie ein &konqueror;-Fenster schließen, das mehrere Karteikarten offen hat, fragt &konqueror; nach, ob das Fenster wirklich geschlossen werden soll. Sie können dieses Verhalten mit diesem Ankreuzfeld an- und ausschalten.</para
+></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><guilabel>Activate previously used tab when closing the current tab</guilabel></term>
-<listitem><para>When checking this the previous used or opened tab will be activated when 
-you close the current active tab instead of the one right to the current tab.</para></listitem>
+<term
+><guilabel
+>Nach Schließen eines Unterfensters das zuletzt benutzte aktivieren</guilabel
+></term>
+<listitem
+><para
+>Nach dem Ankreuzen dieses Felds wird das zuletzt geöffnete oder benutzte Unterfenster aktiviert, sobald Sie ein anderes schließen. Ansonsten wird automatisch das Unterfenster rechts davon aktiv.</para
+></listitem>
 </varlistentry>
 
 </variablelist>

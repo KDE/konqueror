@@ -2,98 +2,140 @@
 <!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
 "dtd/kdedbx45.dtd" [
 <!ENTITY % addindex "IGNORE">
-<!ENTITY % English "INCLUDE" > <!-- change language only here -->
+<!ENTITY % German "INCLUDE"
+> <!-- change language only here -->
 ]>
 
 <article id="khtml-behavior" lang="&language;">
 <articleinfo>
-<title>Web Browsing</title>
+<title
+>Surfen im Internet</title>
 <authorgroup>
-<author>&Krishna.Tateneni; &Krishna.Tateneni.mail;</author>
-<!-- TRANS:ROLES_OF_TRANSLATORS -->
+<author
+>&Krishna.Tateneni; &Krishna.Tateneni.mail;</author>
+<othercredit role="translator"
+><firstname
+>Jürgen</firstname
+><surname
+>Nagel</surname
+><affiliation
+><address
+><email
+>JuergenNagel@web.de</email
+></address
+></affiliation
+><contrib
+>Deutsche Übersetzung</contrib
+></othercredit
+> <othercredit role="translator"
+><firstname
+>Frank</firstname
+><surname
+>Brücker</surname
+><affiliation
+><address
+><email
+>f.bruecker@gmx.de</email
+></address
+></affiliation
+><contrib
+>Überarbeitung der deutschen Übersetzung</contrib
+></othercredit
+> 
 </authorgroup>
 
-<date>2019-11-04</date>
-<releaseinfo>Applications 19.12</releaseinfo>
+<date
+>2019-11-04</date>
+<releaseinfo
+>Anwendungen 19.12</releaseinfo>
 
 <keywordset>
-<keyword>KDE</keyword>
-<keyword>Systemsettings</keyword>
-<keyword>konqueror</keyword>
-<keyword>browsing</keyword>
+<keyword
+>KDE</keyword>
+<keyword
+>Systemeinstellungen</keyword>
+<keyword
+>Konqueror</keyword>
+<keyword
+>durchsuchen</keyword>
 </keywordset>
 
 </articleinfo>
 <sect1 id="konq-browsing">
-<title>Web Browsing</title>
+<title
+>Surfen im Internet</title>
 
-<para>The &konqueror; Browser module of &systemsettings; allows you to select
-various options for the behavior of &konqueror;, the
-integrated web browser of &kde;.</para>
+<para
+>Das &konqueror;-Browser-Modul der &systemsettings; erlaubt Ihnen, verschiedene Optionen für das Verhalten des &konqueror; einzustellen (&konqueror; ist der &kde; integrierte Webbrowser).</para>
 
-<para>If <guilabel>Ask for name and folder when adding bookmarks</guilabel> 
-is checked, &konqueror; will allow you to change the title of the 
-bookmark and choose a folder in which to store it when you add a new 
-bookmark.</para>
+<para
+>Ist das Ankreuzfeld <guilabel
+>Beim Hinzufügen von Lesezeichen nach Namen und Ordner fragen</guilabel
+> markiert, fragt &konqueror; beim Hinzufügen eines Lesezeichens nach dem Titel und dem Ordner, in dem es gespeichert werden soll.</para>
 
-<para>Enable <guilabel>Show only marked bookmarks in bookmark toolbar</guilabel>
-and &konqueror; will show only those bookmarks in the 
-bookmark toolbar which you have marked to do so in the bookmark editor.</para>
+<para
+>Ist das Ankreuzfeld <guilabel
+>Nur markierte Lesezeichen in Lesezeichenleiste anzeigen</guilabel
+> markiert, zeigt &konqueror; nur die Lesezeichen in der Lesezeichenleiste an, die Sie im Lesezeichen-Editor zur Anzeige markiert haben.</para>
 
-<para>The next option you can enable on this page is <guilabel>Form 
-Completion</guilabel>.  If you check this box, &konqueror; will
-try to remember what you answer to form questions, and will try to fill
-in forms for you with the answers you previously used.</para>
+<para
+>Die nächste Option, die auf dieser Karteikarte aktiviert werden kann, ist <guilabel
+>Ausfüllhilfe für Formulare</guilabel
+>. Aktivieren Sie diese Option, versucht sich &konqueror; Ihre Antworten in Eingabefeldern zu merken und Formulare automatisch mit Eingaben auszufüllen, die Sie vorher verwendet haben.</para>
 
-<para>You can configure the number of form items &konqueror; remembers
-with the spin box labelled <guilabel>Maximum
-completions</guilabel></para>
+<para
+>Mit dem Drehfeld <guilabel
+>Maximale Anzahl gespeicherter Werte</guilabel
+> können Sie einstellen, wie viele Formularelemente sich &konqueror; merken soll.</para>
 
-<note><para>Of course, anything &konqueror; fills in a form with, you
-can still edit before submitting the form!</para></note>
+<note
+><para
+>Natürlich können Sie in jedem Formular, ein von &konqueror; automatisch ausgefülltes Feld bearbeiten, bevor Sie das Formular absenden.</para
+></note>
 
-<para>The next option is <guilabel>Change cursor over
-links</guilabel>. If this option is selected, the shape of the cursor
-will change (usually to a hand) whenever it moves over a
-hyperlink. This makes it easy to identify links, especially when they
-are in the form of images.</para>
+<para
+>Schließlich gibt es noch drei Ankreuzfelder. Das erste lautet <guilabel
+>Mauszeigerform über Verknüpfungen verändern</guilabel
+>. Ist diese Option ausgewählt, verändert sich die Form des Mauszeigers (üblicherweise zu einer Hand), sobald Sie die Maus über eine Verknüpfung bewegen. Dies macht es einfach, Verknüpfungen zu identifizieren, besonders, wenn sie die Form eines Bildes haben.</para>
 
-<para>If <guilabel>Middle click opens URL in selection</guilabel>
-is checked, you can open the &URL; in the selection by middle 
-clicking on a &konqueror; view.</para>
+<para
+>Nach dem Ankreuzen <guilabel
+>Mittelklick öffnet ausgewählte Adresse</guilabel
+> können Sie eine ausgewählte Adresse (&URL;) aufrufen, indem Sie mit der mittleren Maustaste in eine &konqueror;-Ansicht hineinklicken.</para>
 
-<para>As a convenience feature, if you enable <guilabel>Right click
-goes back in history</guilabel>, then clicking an empty area (&ie; not
-a link) in the &konqueror; window will act as if you pressed the
-<guiicon>Back</guiicon> button on the toolbar.</para>
+<para
+>Zur Bequemlichkeit dient das Ankreuzfeld <guilabel
+>Rechtsklick geht im Verlaufsspeicher eine Stufe zurück</guilabel
+>. Klickt man mit der rechten Maustaste in einen leeren Bereich von &konqueror;(also nicht auf eine Verknüpfung), so hat das den gleichen Effekt als hätte man in der Werkzeugleiste auf den Knopf <guiicon
+>Zurück</guiicon
+> geklickt.</para>
 
-<para>Enabling <guilabel>Allow automatic delayed
-reloading/redirecting</guilabel> allows websites to send you to
-another page without your interaction.  In many cases, this is a
-convenience.  For example, the website has moved to a new
-&URL;.  Many webmasters in this situation will put up
-a page on the old site, telling you that it has moved and you may like
-to change your bookmark, and then automatically move you along to the
-new website.  However, such features can be confusing, or annoying,
-when misused, and so you may wish to disable it.</para>
+<para
+>Mit <guilabel
+>Automatisches Neuladen oder Umleiten zulassen</guilabel
+> können Sie von Webseiten an eine andere Adresse umgeleitet werden. In vielen Fällen ist diese eine Bequemlichkeit, &eg; wenn sich die &URL; einer Webseite geändert hat. In dieser Situation werden viele Systemverwalter eine Seite an der alten Adresse erstellen, die Ihnen mitteilt, dass sich die Adresse geändert hat und Sie Ihre Lesezeichen aktualisieren sollten. Danach wird die Webseite Sie automatisch zur neuen Adresse umleiten. Solche Funktionen können jedoch auch verwirrend sein oder missbraucht werden, sodass Sie diese Funktion vielleicht ausschalten möchten.</para>
 
-<para><guilabel>Enable Access Key activation with &Ctrl; key</guilabel>: 
-Pressing the &Ctrl; key when viewing web pages activates Access Keys. 
-Unchecking this box will disable this accessibility feature. &konqueror; 
-needs to be restarted for this change to take effect.</para>
+<para
+><guilabel
+>Zugriffstasten durch Drücken der &Ctrl;-Taste aktivieren</guilabel
+>: Durch Drücken der &Ctrl;-Taste beim Betrachten einer Webseite werden die Zugriffstasten eingeschaltet. Wenn Sie diese Einstellung deaktivieren, werden keine Zugriffstasten angezeigt. Sie müssen &konqueror; neu starten, damit die Änderung wirksam wird.</para>
 
-<para><guilabel>Send the DNT header to tell web sites you do not want
-to be tracked</guilabel>. Check this box if you want to inform a web site 
-that you do not want to your web browsing habits tracked.
-</para>
+<para
+><guilabel
+>„Do Not Track“-Header senden, um Webseiten mitzuteilen, dass Sie nicht aufgespürt werden möchten (tracking)</guilabel
+>. Markieren Sie dieses Ankreuzfeld, wenn Sie Webseiten mitteilen möchten, dass Ihre Internetgewohnheiten nicht ausgelesen werden sollen. </para>
 
-<para><guilabel>Offer to save website passwords</guilabel>.
-Uncheck this box from being prompted to save website passwords
-</para>
+<para
+><guilabel
+>Anbieten, Passwörter von Webseiten zu speichern</guilabel
+>. Deaktivieren Sie diese Einstellung, wenn Sie nicht zum Speichern von Passwörtern aufgefordert werden möchten </para>
 
-<para><guilabel>Display online &PDF; files using WebEngine</guilabel>.
-Uncheck this box to display online &PDF; files as configured in the <guilabel>File Associations</guilabel> module of &systemsettings;.
-</para>
+<para
+><guilabel
+>Online-&PDF;-Dateien mit WebEngine anzeigen</guilabel
+>. Schalten Sie diese Einstellung ab, um Online-&PDF;-Dateien mit dem im Modul <guilabel
+>Dateizuordnungen</guilabel
+> der &systemsettings; eingestellten Programm anzuzeigen. </para>
 
 </sect1>
 
