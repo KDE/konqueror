@@ -87,6 +87,7 @@ WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
     connect(this, &QWebEnginePage::authenticationRequired,
             this, &WebEnginePage::slotAuthenticationRequired);
     connect(this, &QWebEnginePage::fullScreenRequested, this, &WebEnginePage::changeFullScreenMode);
+    connect(this, &QWebEnginePage::recommendedStateChanged, this, &WebEnginePage::changeLifecycleState);
 
 #ifndef REMOTE_DND_NOT_HANDLED_BY_WEBENGINE
     connect(this, &QWebEnginePage::loadStarted, this, [this](){m_dropOperationTimer->stop();});
@@ -801,6 +802,11 @@ void WebEnginePage::setStatusBarText(const QString& text)
     if (m_part) {
         emit m_part->setStatusBarText(text);
     }
+}
+
+void WebEnginePage::changeLifecycleState(QWebEnginePage::LifecycleState recommendedState)
+{
+    setLifecycleState(recommendedState == LifecycleState::Discarded ? LifecycleState::Frozen : recommendedState);
 }
 
 /************************************* Begin NewWindowPage ******************************************/

@@ -155,6 +155,7 @@ protected Q_SLOTS:
     void slotFeaturePermissionRequested(const QUrl& url, QWebEnginePage::Feature feature);
     void slotAuthenticationRequired(const QUrl &requestUrl, QAuthenticator *auth);
     void changeFullScreenMode(QWebEngineFullScreenRequest req);
+    void changeLifecycleState(QWebEnginePage::LifecycleState recommendedState);
 
 private:
     bool checkLinkSecurity(const QNetworkRequest& req, NavigationType type) const;
