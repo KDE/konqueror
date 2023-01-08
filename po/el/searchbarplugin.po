@@ -5,19 +5,20 @@
 # Toussis Manolis <manolis@koppermind.homelinux.org>, 2007.
 # Petros Vidalis <p_vidalis@hotmail.com>, 2009.
 # Dimitrios Glentadakis <dglent@gmail.com>, 2010.
+# Stelios <sstavra@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: searchbarplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-07-25 00:45+0000\n"
-"PO-Revision-Date: 2010-11-18 16:39+0100\n"
+"PO-Revision-Date: 2023-01-07 10:30+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
-"Language-Team: Greek <i18ngr@lists.hellug.gr>\n"
+"Language-Team: Greek <kde-i18n-el@kde.org>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.1\n"
+"X-Generator: Lokalize 21.12.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: searchbar.cpp:65
@@ -40,10 +41,9 @@ msgid "Focus Searchbar"
 msgstr "Εστίαση στη μπάρα Αναζήτησης"
 
 #: searchbar.cpp:267
-#, fuzzy, kde-format
-#| msgid "Find in This Page"
+#, kde-format
 msgid "Find in Page..."
-msgstr "Αναζήτηση σε αυτήν τη σελίδα"
+msgstr "Αναζήτηση στη σελίδα..."
 
 #: searchbar.cpp:287
 #, kde-format
