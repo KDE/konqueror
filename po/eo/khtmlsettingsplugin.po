@@ -1,14 +1,17 @@
+# Translation of khtmlsettingsplugin.pot into esperanto.
 # Copyright (C) 2010 Free Software Foundation, Inc.
-#
+# This file is distributed under the same license as the konqueror package.
 # Axel Rousseau <axel@esperanto-jeunes.org>, 2010.
 # Michael Moroni <michael.moroni@mailoo.org>, 2012.
+# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: khtmlsettingsplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-07-14 00:45+0000\n"
-"PO-Revision-Date: 2012-05-23 12:10+0200\n"
-"Last-Translator: Michael Moroni <michael.moroni@mailoo.org>\n"
+"PO-Revision-Date: 2023-01-08 21:45+0100\n"
+"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-doc@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -90,35 +93,14 @@ msgid "&Offline Browsing Mode"
 msgstr "Senk&onekta retumado"
 
 #: settingsplugin.cpp:180
-#, fuzzy, kde-format
-#| msgid ""
-#| "Cookies could not be enabled, because the cookie daemon could not be "
-#| "started."
+#, kde-format
 msgid ""
 "The cookie setting could not be changed, because the cookie daemon could not "
 "be contacted."
-msgstr "Kuketoj ne enŝalteblaj, ĉar la demono por kuketoj ne startigeblas."
+msgstr "Kuketagordo ne ŝanĝebla, ĉar ne eblas kontakti la demonon por kuketoj."
 
 #: settingsplugin.cpp:182
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Cookies Disabled"
+#, kde-format
 msgctxt "@title:window"
 msgid "Cookie Settings Unavailable"
-msgstr "Kuketoj malŝaltitaj"
-
-#~ msgctxt "NAME OF TRANSLATORS"
-#~ msgid "Your names"
-#~ msgstr "Axel Rousseau, Michael Moroni"
-
-#~ msgctxt "EMAIL OF TRANSLATORS"
-#~ msgid "Your emails"
-#~ msgstr "axel@esperanto-jeunes.org, michael.moroni@mailoo.org"
-
-#, fuzzy
-#~ msgid "Disable Pro&xy"
-#~ msgstr "Enŝaltu pro&kurilon"
-
-#, fuzzy
-#~ msgid "Disable Cac&he"
-#~ msgstr "Aktivigu &tenejon"
+msgstr "Kuketaj Agordoj Nedisponeblaj"

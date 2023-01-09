@@ -1,13 +1,16 @@
+# Translation of dirfilterplugin.pot to esperanto.
 # Copyright (C) 2012 Free Software Foundation, Inc.
-#
+# This file is distributed under the same license as the konqueror package.
 # Michael Moroni <michael.moroni@mailoo.org>, 2012.
+# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: dirfilterplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-10-01 00:18+0000\n"
-"PO-Revision-Date: 2012-05-23 11:10+0200\n"
-"Last-Translator: Michael Moroni <michael.moroni@mailoo.org>\n"
+"PO-Revision-Date: 2023-01-08 12:30+0100\n"
+"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-doc@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -17,46 +20,44 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: dirfilterplugin.cpp:120
-#, fuzzy, kde-format
-#| msgid "View F&ilter"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Hide Filter Bar"
-msgstr "Montr&i filtrilon"
+msgstr "Kaŝi Filtrilbreton"
 
 #: dirfilterplugin.cpp:124
-#, fuzzy, kde-format
-#| msgid "View F&ilter"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "F&ilter:"
-msgstr "Montr&i filtrilon"
+msgstr "F&iltrilo:"
 
 #: dirfilterplugin.cpp:136
 #, kde-format
 msgctxt "@label:button"
 msgid "Filter by t&ype"
-msgstr ""
+msgstr "Filtri laŭ &tipo"
 
 #: dirfilterplugin.cpp:137
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Filter items by file type."
-msgstr ""
+msgstr "Filtri erojn laŭ dosiertipo."
 
 #: dirfilterplugin.cpp:228
 #, kde-format
 msgctxt "@action:inmenu Tools"
 msgid "Show Filter Bar"
-msgstr ""
+msgstr "Montri Filtrilbreton"
 
 #: dirfilterplugin.cpp:322
 #, kde-format
 msgid "Use Multiple Filters"
-msgstr "Uzi plurajn filtrilojn"
+msgstr "Uzi Plurajn Filtrilojn"
 
 #: dirfilterplugin.cpp:328
 #, kde-format
 msgid "Show Count"
-msgstr "Montri nombron"
+msgstr "Montri Nombron"
 
 #: dirfilterplugin.cpp:333
 #, kde-format
@@ -74,12 +75,3 @@ msgstr "&Iloj"
 #, kde-format
 msgid "Extra Toolbar"
 msgstr "Kroma ilobreto"
-
-#~ msgid "Allow to filter the currently displayed items by filetype."
-#~ msgstr "Permesi filtrigi la aktuale montratajn erojn laŭ dosierspeco."
-
-#~ msgid "Only Show Items of Type"
-#~ msgstr "Nur montri erojn de speco"
-
-#~ msgid "Hide Count"
-#~ msgstr "Kovru sumon"
