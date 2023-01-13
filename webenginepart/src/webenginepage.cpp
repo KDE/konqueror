@@ -33,7 +33,6 @@
 #include <KIO/AuthInfo>
 #include <KIO/Job>
 #include <KIO/AccessManager>
-#include <KIO/Scheduler>
 #include <KIO/CommandLauncherJob>
 #include <KParts/HtmlExtension>
 #include <KUserTimestamp>
@@ -51,6 +50,7 @@
 #include <QAuthenticator>
 #include <QApplication>
 #include <QNetworkReply>
+#include <QTimer>
 #include <QWebEngineHistory>
 #include <QWebEngineHistoryItem>
 #include <QWebEngineDownloadItem>

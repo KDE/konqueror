@@ -119,7 +119,6 @@
 #include <kiconloader.h>
 #include <QMenu>
 #include <kprocess.h>
-#include <kio/scheduler.h>
 #include <KIO/JobUiDelegate>
 #include <KIO/CopyJob>
 #include <KIO/Job>
