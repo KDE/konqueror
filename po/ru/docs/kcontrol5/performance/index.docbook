@@ -1,0 +1,91 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Russian "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="performance" lang="&language;">
+<articleinfo>
+<title
+>Быстродействие</title>
+<authorgroup>
+<author
+>&Mike.McBride; &Mike.McBride.mail;</author>
+<othercredit role="translator"
+><firstname
+>Иван</firstname
+><surname
+>Петров</surname
+><affiliation
+><address
+><email
+>pis00593@udmglzs.udmene.ru</email
+></address
+></affiliation
+><contrib
+>Перевод на русский язык</contrib
+></othercredit
+><othercredit role="translator"
+><firstname
+>Олеся</firstname
+><surname
+>Герасименко</surname
+><affiliation
+><address
+><email
+>translation-team@basealt.ru</email
+></address
+></affiliation
+><contrib
+>Обновление перевода</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>8 ноября 2016 г.</date>
+<releaseinfo
+>Приложения KDE 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Параметры системы</keyword>
+<keyword
+>производительность</keyword>
+<keyword
+>предварительная загрузка</keyword>
+</keywordset>
+</articleinfo>
+
+<sect1 id="sys-performance">
+<title
+>Настройки быстродействия</title>
+
+<para
+>&konqueror; используется на широком спектре компьютеров широким кругом пользователей. Этот диалог позволяет каждому из них настроить параметры быстродействия так, чтобы компьютер, на котором установлена &konqueror;, обеспечивал наименьшие задержки. </para>
+
+<sect2
+><title
+>Предварительная загрузка</title>
+<para
+>Подраздел под названием <guilabel
+>Предварительная загрузка</guilabel
+> предлагает компромисс между памятью и производительностью.</para>
+
+<para
+><emphasis
+>Предварительная загрузка</emphasis
+> обозначает загрузку экземпляра &konqueror; в память до того, как пользователь запустит &konqueror;. Положительный эффект заключается в том, что при вызове &konqueror; окно появляется немедленно, потому что большая часть программы уже предварительно загружена. Отрицательный эффект заключается в том, что экземпляр &konqueror; использует память, которая могла бы быть использована другими программами. По умолчанию экземпляр остаётся открытым, когда пользователь закрывает &konqueror;. Это означает, что окно &konqueror; почти мгновенно появится, когда пользователь снова вызовет программу.</para>
+
+<para
+>Последний флажок, <guilabel
+>Стараться всегда держать хотя бы один предварительно загруженный экземпляр</guilabel
+>, сигнализирует о том, что в системе должен постоянно иметься один предварительно загруженный, но не используемый экземпляр &konqueror;. На некоторых компьютерах это может заметно снизить производительность (особенно на тех, у которых мало физической памяти).</para>
+</sect2>
+</sect1>
+
+</article>

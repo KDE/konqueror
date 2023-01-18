@@ -1,0 +1,183 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Russian "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="khtml-java-js" lang="&language;">
+<articleinfo>
+<title
+>Java и JavaScript</title>
+<authorgroup>
+<author
+>&Krishna.Tateneni; &Krishna.Tateneni.mail;</author>
+<othercredit role="translator"
+><firstname
+>Екатерина</firstname
+> <surname
+>Пыжова</surname
+> <affiliation
+><address
+><email
+>haleth@yandex.ru</email
+></address
+></affiliation
+> <contrib
+>Перевод на русский язык</contrib
+></othercredit
+><othercredit role="translator"
+><firstname
+>Олеся</firstname
+><surname
+>Герасименко</surname
+><affiliation
+><address
+><email
+>translation-team@basealt.ru</email
+></address
+></affiliation
+><contrib
+>Обновление перевода</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>8 ноября 2016 г.</date>
+<releaseinfo
+>Приложения KDE 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Параметры системы</keyword>
+<keyword
+>konqueror</keyword>
+<keyword
+>просмотр</keyword>
+<keyword
+>Java</keyword>
+<keyword
+>JavaScript</keyword>
+</keywordset>
+
+</articleinfo>
+<sect1 id="konq-browsing">
+<title
+>&Java; и JavaScript</title>
+
+<sect2 id="kbrowse-java">
+<title
+>&Java;</title>
+
+<para
+>&Java; позволяет приложениям загружаться и работать внутри веб-обозревателя, если на компьютере установлено необходимое программное обеспечение. Многие сайты используют &Java; (например, банковские услуги онлайн или интерактивные игровые сайты). Следует учитывать, что запуск программ из неизвестного источника может представлять собой угрозу для компьютера, пусть и небольшую.</para>
+
+<para
+>Флажок <guilabel
+>Включить Java глобально</guilabel
+> позволяет включить поддержку &Java; по умолчанию для всех сайтов. Также можно включить или выключить &Java; для определённых доменов. Чтобы настроить политику для отдельного домена, нажмите кнопку <guibutton
+>Добавить...</guibutton
+>. В появившемся окне введите название домена и выберите, следует ли включить &Java; для этого домена, после чего домен добавится в список слева.</para>
+
+<para
+>Можно выбрать домен в списке и нажать кнопку <guibutton
+>Изменить...</guibutton
+>, чтобы выбрать другую политику для этого домена. Нажатие кнопки <guibutton
+>Удалить</guibutton
+> позволяет удалить политику для выбранного домена из списка, после чего для него будут применяться глобальные установки.</para>
+
+<para
+>Наконец, группа параметров под названием <guilabel
+>Настройка Java</guilabel
+> позволяет настроить работу &Java;.</para>
+
+<para
+><guilabel
+>Использовать диспетчер безопасности</guilabel
+> — включено по умолчанию. Этот параметр запрещает аплетам доступ к файловой системе, создание произвольных сокетов и другие действия, связанные с риском потери конфиденциальности. Также можно изменить файл <filename
+>$<envar
+>HOME</envar
+>/.java.policy</filename
+> с помощью утилиты &Java; policytool, чтобы настроить правила для определённых аплетов.</para>
+
+<para
+><guilabel
+>Использовать KIO</guilabel
+> — <acronym
+>JVM</acronym
+> будет использовать <acronym
+>KIO</acronym
+> для сетевых соединений.</para>
+
+<para
+>Флажок <guilabel
+>Закрывать сервер аплетов при простое</guilabel
+> позволяет экономить ресурсы, закрывая сервер аплетов &Java;, когда он не используется (а не оставлять его работать в фоновом режиме). Это может замедлить запуск некоторых &Java;-аплетов, но позволит освобождать ресурсы, когда аплеты не используются. Установив этот флажок, можно ввести время, по истечении которого будет выполнено закрытие сервера.</para>
+
+<para
+>Можно либо разрешить &konqueror; автоматически найти &Java; в системе, либо указать путь самостоятельно в поле <guilabel
+>Путь к программе Java, или «java»</guilabel
+>. Последнее полезно, например, когда в системе есть несколько установок &Java; и необходимо уточнить, какую из них использовать. Если используемая виртуальная &Java;-машина требует особых параметров запуска, эти параметры можно указать в поле ввода <guilabel
+>Дополнительные аргументы Java</guilabel
+>.</para>
+
+</sect2>
+
+<sect2 id="kbrowse-javascript">
+<title
+>JavaScript</title>
+
+<para
+>Несмотря на название, JavaScript не имеет никакого отношения к &Java;.</para>
+
+<para
+>Первая часть вкладки содержит параметры, аналогичные параметрам &Java;.</para>
+
+<para
+>Флажок <guilabel
+>Включить JavaScript глобально</guilabel
+> позволяет включить поддержку JavaScript по умолчанию для всех сайтов. Также можно включить или отключить JavaScript для определённых доменов. Чтобы настроить политику для отдельного домена, нажмите кнопку <guibutton
+>Добавить...</guibutton
+>. В появившемся диалоге введите название домена и выберите, следует ли включить JavaScript для этого домена, после чего домен добавится в список слева.</para>
+
+<para
+>Можно выбрать домен в списке и нажать кнопку <guibutton
+>Изменить...</guibutton
+>, чтобы выбрать другую политику для этого домена. Нажатие кнопки <guibutton
+>Удалить</guibutton
+> позволяет удалить политику для выбранного домена из списка, после чего для него будут применяться глобальные установки.</para>
+<!-- missing section Debugging
+Enable debugger Enables builtin JavaScript debugger.
+Report errors Enables the reporting of errors that occur when JavaScript code is executed.
+How are errors reported? popup window? icon in status bar?
+-->
+<para
+>Завершающий набор параметров в разделе <guilabel
+>Глобальные правила JavaScript</guilabel
+> определяет, что происходит в том случае, когда страница использует JavaScript для определённых действий.</para>
+
+<para
+>Возможно запретить запретить сценариям JavaScript перемещать, изменять размер и сменять фокус окон, изменять текст в строке состояния.</para>
+
+<para
+>Набор параметров внизу страницы определяет, что произойдет при попытке страницы, использующей JavaScript, открыть новое окно. Доступны следующие варианты: <guilabel
+>Разрешить</guilabel
+> открытие новых окон, <guilabel
+>Спрашивать</guilabel
+> каждый раз подтверждение или <guilabel
+>Запретить</guilabel
+> открытие новых окон.</para>
+
+<para
+>Параметр <guilabel
+>Интеллектуально</guilabel
+> разрешит всплывающие окна JavaScript только в том случае, если пользователь явно выбрал ссылку, создающую такое окно.</para>
+</sect2>
+
+</sect1>
+
+</article>

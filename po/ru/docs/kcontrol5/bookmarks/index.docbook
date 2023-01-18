@@ -1,0 +1,166 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Russian "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="bookmarks" lang="&language;">
+<articleinfo>
+
+<title
+>Закладки</title>
+<authorgroup>
+<author
+><personname
+><firstname
+>Xavier</firstname
+><surname
+>Vello</surname
+></personname
+> <email
+>xavier.vello@gmail.com</email
+> </author>
+<othercredit role="translator"
+><firstname
+>Олеся</firstname
+><surname
+>Герасименко</surname
+><affiliation
+><address
+><email
+>translation-team@basealt.ru</email
+></address
+></affiliation
+><contrib
+>Перевод на русский язык</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>8 ноября 2016 г.</date>
+<releaseinfo
+>Приложения KDE 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Параметры системы</keyword>
+<keyword
+>закладки</keyword>
+<keyword
+>KIO</keyword>
+</keywordset>
+</articleinfo>
+<sect1 id="conf">
+<title
+>Страница закладок</title>
+<para
+>Этот модуль позволяет настроить страницу закладок.</para>
+<para
+>Для просмотра страницы закладок введите <userinput
+>bookmarks:/</userinput
+> в строке адреса.</para>
+<para
+>Доступ к параметрам этого модуля также можно получить путём ввода <userinput
+>bookmarks:/config</userinput
+> в строке адреса.</para>
+<sect2 id="conf-general">
+<title
+>Основные параметры</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Количество столбцов</guilabel
+></term>
+<listitem>
+<para
+>Папки могут показываться в несколько столбцов. Количество столбцов зависит от ширины окна &konqueror; и количества закладок.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Показывать фоновые изображения в папках</guilabel
+></term>
+<listitem>
+<para
+>Отключите этот параметр, если показ фоновых изображений замедляет работу системы.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="conf-bookmark">
+<title
+>Закладки</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Показывать все закладки</guilabel
+></term>
+<listitem>
+<para
+>При включении этого параметра показываются закладки из указанной папки, а не все закладки.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Разворачивающееся дерево закладок</guilabel
+></term>
+<listitem>
+<para
+>При включении этого параметра папки закладок не разворачиваются по месту.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Показывать точки входа</guilabel
+></term>
+<listitem>
+<para
+>Показывать точки входа (домашняя папка, сеть и так далее). Полезно в случае использования &konqueror; как диспетчера файлов.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="conf-cache">
+<title
+>Кэширование изображений</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Размер дискового кэша</guilabel
+></term>
+<listitem>
+<para
+>Размер кэша изображений.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Очистить кэш</guilabel
+></term>
+<listitem>
+<para
+>Удалить все кэшированные изображения. Это может потребоваться в том случае, если некоторые значки сайтов будут повреждены и не будут обновляться автоматически.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+</sect1>
+</article>

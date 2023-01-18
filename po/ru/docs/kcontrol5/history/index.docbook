@@ -1,0 +1,95 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Russian "INCLUDE">
+]>
+<article id="history" lang="&language;">
+<title
+>Боковая панель журнала</title>
+<articleinfo>
+<authorgroup>
+<author
+>&Burkhard.Lueck;</author>
+<othercredit role="translator"
+><firstname
+>Олеся</firstname
+><surname
+>Герасименко</surname
+><affiliation
+><address
+><email
+>translation-team@basealt.ru</email
+></address
+></affiliation
+><contrib
+>Перевод на русский язык</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>24 ноября 2009 г.</date>
+<releaseinfo
+>&kde; 4.4</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Параметры системы</keyword>
+<keyword
+>журнал</keyword>
+</keywordset>
+</articleinfo>
+
+<para
+>Этот диалог позволяет настроить боковую панель журнала. </para>
+
+<variablelist>
+<varlistentry
+><term
+><guilabel
+>Ограничения</guilabel
+></term>
+<listitem
+><para
+>Параметры в этом разделе позволяют указать максимальный размер журнала и задать время, по истечении которого записи автоматически удаляются. </para
+></listitem>
+</varlistentry>
+
+<varlistentry
+><term
+><guilabel
+>Другой шрифт</guilabel
+></term>
+<listitem
+><para
+>Здесь возможно задать разные шрифты для новых и старых &URL;-адресов с помощью кнопки <guibutton
+>Выбрать шрифт</guibutton
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry
+><term
+><guilabel
+>Дополнительно</guilabel
+></term>
+<listitem
+><para
+>Флажок <guilabel
+>Расширенные подсказки</guilabel
+> позволяет управлять объёмом информации, отображаемой при наведении указателя мыши на запись в журнале.</para>
+<para
+>Если флажок установлен, помимо URL-адреса будут показаны количество посещений и даты первого и последнего из них.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>При нажатии кнопки <guibutton
+>Очистить журнал</guibutton
+> будут удалены все записи журнала. </para>
+</article>
