@@ -1,0 +1,196 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Russian "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article lang="&language;" id="konq-general-behavior">
+<title
+>Общее поведение &konqueror;</title>
+<articleinfo>
+
+<authorgroup>
+<author
+>&Burkhard.Lueck;</author>
+<othercredit role="translator"
+><firstname
+>Олеся</firstname
+><surname
+>Герасименко</surname
+><affiliation
+><address
+><email
+>translation-team@basealt.ru</email
+></address
+></affiliation
+><contrib
+>Перевод на русский язык</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>8 ноября 2016 г.</date>
+<releaseinfo
+>Приложения KDE 16.12</releaseinfo>
+
+</articleinfo>
+<para
+>В этом разделе настройки можно указать стартовую и домашнюю страницы, а также настроить поведение вкладок сразу и для диспетчера файлов, и для браузера.</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>При запуске Konqueror</guilabel
+></term>
+<listitem>
+<para
+>Этот параметр определяет, какая страница отображается при запуске &konqueror;: вводная страница, домашняя страница, пустая страница или страница закладок. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Домашняя страница</guilabel
+></term>
+<listitem
+><para
+>Это &URL;-адрес (например, папка или веб-страница), по которому работающая в режиме браузера программа &konqueror; выполнит переход при нажатии кнопки <guibutton
+>Домашняя страница</guibutton
+> на панели задач. Для указания пути к <guilabel
+>Домашней странице</guilabel
+> можно воспользоваться текстовым полем или выбрать локальную папку с помощью значка <guiicon
+>обзора</guiicon
+>. Чтобы изменения вступили в силу, &konqueror; необходимо перезапустить.</para>
+<para
+>Когда &konqueror; работает в режиме диспетчера файлов, кнопка <guilabel
+>Домашняя страница</guilabel
+> на панели задач заменяется кнопкой <guilabel
+>Домашняя папка</guilabel
+>, позволяющей перейти в домашнюю папку пользователя.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Открывать ссылки в новой вкладке, а не в новом окне</guilabel
+></term>
+<listitem
+><para
+>&konqueror; по умолчанию открывает одно окно для каждой страницы, но поддерживает возможность открыть в окне несколько <firstterm
+>вкладок</firstterm
+>. Кроме того, &konqueror; по умолчанию открывает любую ссылку в новом окне по щелчку средней кнопкой мыши. Если параметр <guilabel
+>Открывать ссылки в новой вкладке, а не в новом окне</guilabel
+> включён, щелчок по ссылке средней кнопкой мыши приведёт к её открытию в новой вкладке.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Открывать всплывающие окна в новой вкладке, а не в новом окне</guilabel
+></term>
+<listitem
+><para
+>Должны ли всплывающие окна JavaScript, если разрешены, открываться в новом окне или в новой вкладке.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Открывать вкладку в существующем окне Konqueror при внешнем вызове URL</guilabel
+></term>
+<listitem
+><para
+>Если щёлкнуть по &URL;-адресу в другом приложении &kde; или вызвать kfmclient, чтобы открыть &URL;-адрес, на текущем рабочем столе будет выполнен поиск несвёрнутого окна &konqueror;. Если оно будет найдено, в нём откроется новая вкладка. Если же такого окна нет, будет открыто новое окно &konqueror;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Открывать новые вкладки неактивными</guilabel
+></term>
+<listitem
+><para
+>Когда используются вкладки, можно выбрать, будет ли новая открытая вкладка становиться активной (<quote
+>вкладкой переднего плана</quote
+>) или же оставаться неактивной. При медленном подключении к Интернету или просмотре страницы со списком заголовков или других ссылок может быть удобно загружать новые вкладки, оставляя их неактивными, чтобы не прерывать чтение. Если же пользователь предпочитает сразу переходить к новой странице (при этом старая становится неактивной), этот параметр следует отключить.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Открывать новую вкладку после текущей вкладки</guilabel
+></term>
+<listitem
+><para
+>Новая вкладка будет открыта после текущей вкладки, а не после последней вкладки.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Скрывать панель вкладок, когда открыта только одна вкладка</guilabel
+></term>
+<listitem
+><para
+>Если установлен этот параметр, панель вкладок будет показываться только тогда, когда открыты две или более вкладок.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Отображать кнопки закрытия вкладок</guilabel
+></term>
+<listitem
+><para
+>Показ кнопок закрытия на каждой вкладке.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Нажатие на вкладке средней кнопкой закрывает её</guilabel
+></term>
+<listitem
+><para
+>Нажатие по вкладке средней кнопкой мыши или колесом закроют её. Чтобы изменения вступили в силу, &konqueror; необходимо перезапустить.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Запрос при закрытии окна с несколькими вкладками</guilabel
+></term>
+<listitem
+><para
+>При попытке закрыть окно с несколькими вкладками программа &konqueror; предложит подтвердить закрытие. С помощью этого флажка можно включить или отключить такие запросы.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Активировать последнюю использовавшуюся вкладку при закрытии вкладки</guilabel
+></term>
+<listitem
+><para
+>При закрытии текущей вкладки будет активирована последняя использовавшаяся вкладка, а не вкладка, расположенная справа от текущей.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</article>

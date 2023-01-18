@@ -1,0 +1,117 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Russian "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="filemanager" lang="&language;">
+<articleinfo>
+<title
+>Управление файлами</title>
+<authorgroup>
+<author
+>&Mike.McBride; &Mike.McBride.mail;</author>
+<othercredit role="translator"
+><firstname
+>Вера</firstname
+><surname
+>Пономарёва</surname
+><affiliation
+><address
+><email
+>verun10249@mail.ru</email
+></address
+></affiliation
+><contrib
+>Перевод на русский язык</contrib
+></othercredit
+> <othercredit role="translator"
+><firstname
+>Олеся</firstname
+><surname
+>Герасименко</surname
+><affiliation
+><address
+><email
+>translation-team@basealt.ru</email
+></address
+></affiliation
+><contrib
+>Обновление перевода</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>8 ноября 2016 г.</date>
+<releaseinfo
+>Приложения KDE 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Параметры системы</keyword>
+<keyword
+>диспетчер файлов</keyword>
+</keywordset>
+</articleinfo>
+
+<para
+>В этих модулях возможно настроить различные свойства &konqueror; как диспетчера файлов. </para>
+
+<note
+><para
+>Для свойств браузера &konqueror; существуют <ulink url="help:/kcontrol/khtml-behavior/index.html"
+>свои модули настройки</ulink
+>.</para
+></note>
+
+<variablelist>
+<title
+><guilabel
+>Другие параметры</guilabel
+></title>
+<varlistentry>
+<term
+><guilabel
+>Открывать каталоги в новом окне</guilabel
+></term>
+<listitem
+> <para
+>Если этот флажок установлен, то при открытии каталога его содержимое показывается не в текущем, а в новом окне &konqueror;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Добавить пункт «Удалить», не перемещающий файлы в корзину</guilabel
+></term>
+<listitem>
+<para
+>Включите этот параметр, если в меню и контекстных меню диспетчера файлов и рабочего стола нужна команда <quote
+>Удалить</quote
+>. Файлы также всегда можно удалить с помощью нажатия кнопки &Shift; при использовании пункта меню <guimenuitem
+>Удалить в корзину</guimenuitem
+>.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Настройка для &konqueror; в режиме диспетчера файлов на страницах <guilabel
+>Режимы просмотра</guilabel
+>, <guilabel
+>Навигация</guilabel
+>, <guilabel
+>Действия</guilabel
+>, <guilabel
+>Основное</guilabel
+> и <guilabel
+>Корзина</guilabel
+> используется также и &dolphin;. </para>
+
+</article>
