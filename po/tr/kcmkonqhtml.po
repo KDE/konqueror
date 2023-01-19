@@ -12,13 +12,13 @@
 # obsoleteman <tulliana@gmail.com>, 2008-2010.
 # obsoleteman <tulliana@gmail.com>, 2010,2012.
 # Volkan Gezer <volkangezer@gmail.com>, 2013-2014.
-# Emir SARI <emir_sari@icloud.com>, 2022.
+# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: applications-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-29 00:52+0000\n"
-"PO-Revision-Date: 2022-12-17 18:50+0300\n"
+"PO-Revision-Date: 2023-01-18 22:31+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.0\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -137,7 +137,7 @@ msgstr ""
 #: advancedTabOptions.ui:74
 #, kde-format
 msgid "Hide the tab bar when only one tab is open"
-msgstr "Sadece bir sekme açıkken sekme çubuğunu gizle"
+msgstr "Yalnızca bir sekme açıkken sekme çubuğunu gizle"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_pPermanentCloseButton)
 #: advancedTabOptions.ui:81
@@ -276,7 +276,7 @@ msgstr "Kapalı"
 #: appearance.cpp:76
 #, kde-format
 msgid "Show Only Once"
-msgstr "Sadece Bir Kez Göster"
+msgstr "Yalnızca Bir Kez Göster"
 
 #: appearance.cpp:77
 #, kde-format
@@ -337,9 +337,9 @@ msgstr ""
 "<html>Konqueror uygulamasının altı çizili bağlantıları nasıl kullanacağını "
 "belirler:<br /><ul><li><b>Açık</b>: Her zaman bağlantıların altını çiz</"
 "li><li><b>Kapalı</b>: Hiçbir zaman bağlantıların altını çizme</"
-"li><li><b>Sadece Üzerine Gelindiğinde</b>: Fare bağlantının üzerine gelince "
-"altını çiz</li></ul> <br /><i>Not: Sayfanın CSS tanımları bu özelliğin "
-"üzerine yazabilir</i></html>"
+"li><li><b>Yalnızca Üzerine Gelindiğinde</b>: Fare bağlantının üzerine "
+"gelince altını çiz</li></ul> <br /><i>Not: Sayfanın CSS tanımları bu "
+"özelliğin üzerine yazabilir</i></html>"
 
 #: appearance.cpp:105
 #, kde-format
@@ -1363,7 +1363,7 @@ msgstr ""
 #: htmlopts.cpp:56
 #, kde-format
 msgid "Show only marked bookmarks in bookmark toolbar"
-msgstr "Yer imleri araç çubuğunda sadece işaretli olanları göster"
+msgstr "Yer imleri araç çubuğunda yalnızca işaretli olanları göster"
 
 #: htmlopts.cpp:58
 #, kde-format
@@ -1656,7 +1656,7 @@ msgid ""
 "the directory that contains 'bin/java' (e.g. /opt/IBMJava2-13)."
 msgstr ""
 "Buraya Java yürütülebilirinin yolunu girin. Eğer klasik JRE kullanacaksanız "
-"buraya sadece 'java' yazın. Eğer farklı bir JRE kullanacaksanız Java "
+"buraya yalnızca 'java' yazın. Eğer farklı bir JRE kullanacaksanız Java "
 "çalıştırıcısının tam yolunu (örn, '/usr/lib/jdk/bin/java) veya 'bin/java'nın "
 "bulunduğu dizine ait tam yolunu (örn. /opt/IBMJava2-13) girin."
 
@@ -1917,8 +1917,8 @@ msgid ""
 "Accept popup window requests only when links are activated through an "
 "explicit mouse click or keyboard operation."
 msgstr ""
-"Sadece fare tarafından tıklandığında veya klavye işlemi yapıldığında açılan "
-"popup pencerelerine izin ver."
+"Yalnızca fare tarafından tıklandığında veya klavye işlemi yapıldığında "
+"açılan popup pencerelerine izin ver."
 
 #: jspolicies.cpp:173
 #, kde-format
