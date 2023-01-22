@@ -38,6 +38,7 @@ private:
     void removeLanguage(const QString &lang);
     void addLanguage(const QString &lang);
     void detectDictionaries();
+    static QString dictionaryDir();
 
 private slots:
     void spellCheckingToggled(bool on);

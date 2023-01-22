@@ -101,29 +101,31 @@ install(FILES settings/kconf_update/webenginepart.upd DESTINATION ${KDE_INSTALL_
 
 #COMPILE HUNSPELL DICTIONARIES AS BDIC FILES
 if(${Hunspell_FOUND})
-  find_package(WebEngineDictConverter)
-  if (WebEngineDictConverter_FOUND)
-    #Iterate on all dictionaries
-    foreach(D ${Hunspell_UNIQUE_DICTIONARIES})
-      get_filename_component(base_name ${D} NAME)
-      #Full name of the file to create
-      set(BDIC_name ${CMAKE_CURRENT_BINARY_DIR}/${base_name}.bdic)
-      #Name of the target to create
-      set(BDIC_target_name ${base_name}.bdic_target)
-      #Check that both .dic and .aff files exist for the given dictionary, otherwise the conversion tool will fail
-      if (EXISTS ${D}.dic AND EXISTS ${D}.aff)
-        add_custom_command(
-          OUTPUT ${BDIC_name}
-          COMMAND ${WebEngineDictConverter_EXECUTABLE} ${D} ${BDIC_name}
-        )
-        #Install the bdic file
-        install(FILES ${BDIC_name} DESTINATION ${WEBENGINEPART_DICTIONARY_DIR})
-        #Create a new target which depends on the file
-        add_custom_target(${BDIC_target_name} DEPENDS ${BDIC_name})
-        #Add the new target as dependency to kwebenginepartlib, otherwise the dictionaries won't be built
-        add_dependencies(kwebenginepartlib ${BDIC_target_name})
-      endif()
-    endforeach()
+  if(NOT ${WEBENGINEPART_DICTIONARY_DIR} STREQUAL "")
+    find_package(WebEngineDictConverter)
+    if (WebEngineDictConverter_FOUND)
+      #Iterate on all dictionaries
+      foreach(D ${Hunspell_UNIQUE_DICTIONARIES})
+        get_filename_component(base_name ${D} NAME)
+        #Full name of the file to create
+        set(BDIC_name ${CMAKE_CURRENT_BINARY_DIR}/${base_name}.bdic)
+        #Name of the target to create
+        set(BDIC_target_name ${base_name}.bdic_target)
+        #Check that both .dic and .aff files exist for the given dictionary, otherwise the conversion tool will fail
+        if (EXISTS ${D}.dic AND EXISTS ${D}.aff)
+          add_custom_command(
+            OUTPUT ${BDIC_name}
+            COMMAND ${WebEngineDictConverter_EXECUTABLE} ${D} ${BDIC_name}
+          )
+          #Install the bdic file
+          install(FILES ${BDIC_name} DESTINATION ${WEBENGINEPART_DICTIONARY_DIR})
+          #Create a new target which depends on the file
+          add_custom_target(${BDIC_target_name} DEPENDS ${BDIC_name})
+          #Add the new target as dependency to kwebenginepartlib, otherwise the dictionaries won't be built
+          add_dependencies(kwebenginepartlib ${BDIC_target_name})
+        endif()
+      endforeach()
+    endif()
   endif()
 endif()
 

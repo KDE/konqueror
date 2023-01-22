@@ -15,6 +15,8 @@
 #include <QWebEngineProfile>
 #include <QMenu>
 #include <QAction>
+#include <QLibraryInfo>
+#include <QApplication>
 
 #include <KActionCollection>
 #include <KLocalizedString>
@@ -23,14 +25,27 @@
 
 #include <konq_spellcheckingconfigurationdispatcher.h>
 
-#ifndef WEBENGINEPART_DICTIONARY_DIR
-#define WEBENGINEPART_DICTIONARY_DIR ""
-#endif
-
+QString SpellCheckerManager::dictionaryDir()
+{
+    static const char *varName = "QTWEBENGINE_DICTIONARIES_PATH";
+    static QString s_dir;
+    if (s_dir.isNull()) {
+        if (!qEnvironmentVariableIsEmpty(varName)) {
+            s_dir = qEnvironmentVariable(varName);
+        } else {
+            QLatin1String suffix("/qtwebengine_dictionaries");
+            s_dir = QApplication::applicationDirPath() + suffix;
+            if (!QDir(s_dir).exists()) {
+                s_dir = QLibraryInfo::location(QLibraryInfo::DataPath) + suffix;
+            }
+        }
+    }
+    return s_dir;
+}
 
 SpellCheckerManager::SpellCheckerManager(QWebEngineProfile *profile, QObject *parent): QObject(parent), m_profile(profile)
 {
-    m_dictionaryDir = QString(WEBENGINEPART_DICTIONARY_DIR);
+    m_dictionaryDir = dictionaryDir();
     connect(KonqSpellCheckingConfigurationDispatcher::self(), &KonqSpellCheckingConfigurationDispatcher::spellCheckingConfigurationChanged,
             this, &SpellCheckerManager::updateConfiguration);
     KSharedConfigPtr cfg = KSharedConfig::openConfig();
@@ -49,7 +64,7 @@ void SpellCheckerManager::detectDictionaries()
         m_enabledDicts.clear();
         return;
     }
-    QStringList files = QDir(WEBENGINEPART_DICTIONARY_DIR).entryList({"*.bdic"});
+    QStringList files = QDir(m_dictionaryDir).entryList({"*.bdic"});
     QStringList languages;
     std::transform(files.constBegin(), files.constEnd(), std::back_inserter(languages), [](const QString &f){return f.chopped(5);});
     QMap<QString, QString> dicts = m_speller.availableDictionaries();
