@@ -4380,7 +4380,7 @@ void KonqMainWindow::slotPopupMenu(const QPoint &global, const KFileItemList &it
         // List of services for the "Preview In" submenu.
         QVector<KPluginMetaData> allEmbeddingServices = KParts::PartLoader::partsForMimeType(m_popupMimeType);
         auto filter = [currentServiceName](const KPluginMetaData &md) {
-            return md.value(QLatin1String("X-KDE-BrowserView-HideFromMenus"),false) && md.pluginId() != currentServiceName;
+            return !md.value(QLatin1String("X-KDE-BrowserView-HideFromMenus"),false) && md.pluginId() != currentServiceName;
         };
         std::copy_if(allEmbeddingServices.begin(), allEmbeddingServices.end(), std::back_inserter(embeddingServices), filter);
     }
