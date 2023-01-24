@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-24 00:46+0000\n"
+"POT-Creation-Date: 2023-01-23 02:32+0000\n"
 "PO-Revision-Date: 2021-01-16 15:33+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -168,8 +168,8 @@ msgid ""
 "To quickly go to your Home folder press the home button <img width='16' "
 "height='16' src=\"%1\"></img>."
 msgstr ""
-"Viss du vil gå til heimemappa, trykk knappen <img width='16' height='16' src="
-"\"%1\"></img>."
+"Viss du vil gå til heimemappa, trykk knappen <img width='16' height='16' "
+"src=\"%1\"></img>."
 
 #: src/about/konq_aboutpage.cpp:154
 #, kde-format
@@ -197,8 +197,8 @@ msgstr ""
 "Konqueror er laga for å støtta Internett-standardane. Målet er å oppfylla "
 "dei offisielt vedtekne standardane frå organisasjonar som W3 og OASIS, saman "
 "med andre nyttige funksjonar som er de facto-standardar på Internett. "
-"Konqueror støttar funksjonar som «favicon», vevsnarvegar og <a href="
-"\"%1\">XBEL-bokmerke</a>, i tillegg til:"
+"Konqueror støttar funksjonar som «favicon», vevsnarvegar og <a "
+"href=\"%1\">XBEL-bokmerke</a>, i tillegg til:"
 
 #: src/about/konq_aboutpage.cpp:200
 #, kde-format
@@ -218,8 +218,8 @@ msgstr "Andre krav*"
 #: src/about/konq_aboutpage.cpp:203
 #, kde-format
 msgid ""
-"<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
-"\"%2\">HTML 4.01</A>"
+"<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A "
+"HREF=\"%2\">HTML 4.01</A>"
 msgstr ""
 "<A HREF=\"%1\">DOM</A>-basert <A HREF=\"%2\">HTML 4.01</A> (nivå 1, delvis "
 "nivå 2) "
@@ -266,11 +266,11 @@ msgstr "Sikker <A HREF=\"%1\">Java</A><SUP>&reg;</SUP>-støtte"
 #: src/about/konq_aboutpage.cpp:213
 #, kde-format
 msgid ""
-"JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">OpenJDK</A> or <A HREF="
-"\"%2\">Sun/Oracle</A>)"
+"JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">OpenJDK</A> or <A "
+"HREF=\"%2\">Sun/Oracle</A>)"
 msgstr ""
-"JDK 1.2.0 (Java 2)-kompatibel VM (<A HREF=\"%1\">OpenJDK</A> eller <A HREF="
-"\"%2\">Sun/Oracle</A>)"
+"JDK 1.2.0 (Java 2)-kompatibel VM (<A HREF=\"%1\">OpenJDK</A> eller <A "
+"HREF=\"%2\">Sun/Oracle</A>)"
 
 #: src/about/konq_aboutpage.cpp:215
 #, kde-format
@@ -283,8 +283,8 @@ msgid ""
 "NPAPI <A HREF=\"%2\">plugins</A> (for viewing <A HREF=\"%1\">Flash<SUP>&reg;"
 "</SUP></A>, etc.)"
 msgstr ""
-"NPAPI-<A HREF=\"%2\">tillegg</A> (for vising av <A HREF="
-"\"%1\">Flash<SUP>&reg;</SUP></A> o.l.)"
+"NPAPI-<A HREF=\"%2\">tillegg</A> (for vising av <A "
+"HREF=\"%1\">Flash<SUP>&reg;</SUP></A> o.l.)"
 
 #: src/about/konq_aboutpage.cpp:220
 #, kde-format
@@ -531,17 +531,17 @@ msgstr ""
 msgid "Filter error"
 msgstr "Filterfeil"
 
-#: src/spellcheckermanager.cpp:79
+#: src/spellcheckermanager.cpp:94
 #, kde-format
 msgid "Spelling"
 msgstr ""
 
-#: src/spellcheckermanager.cpp:83
+#: src/spellcheckermanager.cpp:98
 #, kde-format
 msgid "Spell Checking Enabled"
 msgstr ""
 
-#: src/spellcheckermanager.cpp:101
+#: src/spellcheckermanager.cpp:116
 #, kde-format
 msgid "&Languages"
 msgstr ""
@@ -1554,8 +1554,8 @@ msgstr "nei"
 msgid ""
 "<ul><li><b>Field internal name: </b>%1</li><li><b>Field type: </b>%2</"
 "li><li><b>Field id: </b>%3</li><li><b>Field is read only: </b>%4</"
-"li><li><b>Field is enabled: </b>%5</li><li><b>Autocompletion is enabled: </b>"
-"%6</li></ul>"
+"li><li><b>Field is enabled: </b>%5</li><li><b>Autocompletion is enabled: </"
+"b>%6</li></ul>"
 msgstr ""
 "<ul><li><b>Internt feltnamn: </b>%1</li><li><b>Felttype: </b>%2</"
 "li><li><b>Felt-ID: </b>%3</li><li><b>Feltet er skriveverna: </b>%4</"
