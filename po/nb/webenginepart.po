@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-24 00:46+0000\n"
+"POT-Creation-Date: 2023-01-23 02:32+0000\n"
 "PO-Revision-Date: 2013-08-09 12:30+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -199,8 +199,8 @@ msgstr ""
 #: src/about/konq_aboutpage.cpp:203
 #, kde-format
 msgid ""
-"<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
-"\"%2\">HTML 4.01</A>"
+"<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A "
+"HREF=\"%2\">HTML 4.01</A>"
 msgstr ""
 
 #: src/about/konq_aboutpage.cpp:205 src/about/konq_aboutpage.cpp:207
@@ -241,8 +241,8 @@ msgstr ""
 #: src/about/konq_aboutpage.cpp:213
 #, kde-format
 msgid ""
-"JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">OpenJDK</A> or <A HREF="
-"\"%2\">Sun/Oracle</A>)"
+"JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">OpenJDK</A> or <A "
+"HREF=\"%2\">Sun/Oracle</A>)"
 msgstr ""
 
 #: src/about/konq_aboutpage.cpp:215
@@ -470,17 +470,17 @@ msgstr ""
 msgid "Filter error"
 msgstr "Filterfeil"
 
-#: src/spellcheckermanager.cpp:79
+#: src/spellcheckermanager.cpp:94
 #, kde-format
 msgid "Spelling"
 msgstr ""
 
-#: src/spellcheckermanager.cpp:83
+#: src/spellcheckermanager.cpp:98
 #, kde-format
 msgid "Spell Checking Enabled"
 msgstr ""
 
-#: src/spellcheckermanager.cpp:101
+#: src/spellcheckermanager.cpp:116
 #, kde-format
 msgid "&Languages"
 msgstr ""
@@ -1492,6 +1492,6 @@ msgstr ""
 msgid ""
 "<ul><li><b>Field internal name: </b>%1</li><li><b>Field type: </b>%2</"
 "li><li><b>Field id: </b>%3</li><li><b>Field is read only: </b>%4</"
-"li><li><b>Field is enabled: </b>%5</li><li><b>Autocompletion is enabled: </b>"
-"%6</li></ul>"
+"li><li><b>Field is enabled: </b>%5</li><li><b>Autocompletion is enabled: </"
+"b>%6</li></ul>"
 msgstr ""
