@@ -26,6 +26,7 @@
 #include <KDesktopFile>
 #include <KApplicationTrader>
 #include <KParts/PartLoader>
+#include <KLocalizedString>
 
 #include <QDebug>
 #include <QArgument>
