@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-23 02:32+0000\n"
-"PO-Revision-Date: 2023-01-23 08:44+0100\n"
+"PO-Revision-Date: 2023-01-25 07:25+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -259,7 +259,7 @@ msgstr ""
 #: src/about/konq_aboutpage.cpp:220
 #, kde-format
 msgid "Secure Sockets Layer"
-msgstr ""
+msgstr "SSL"
 
 #: src/about/konq_aboutpage.cpp:221
 #, kde-format
@@ -331,7 +331,7 @@ msgstr ""
 #, kde-format
 msgctxt "A feature of Konqueror"
 msgid "URL-Completion"
-msgstr ""
+msgstr "URL-ის დასრულება"
 
 #: src/about/konq_aboutpage.cpp:237
 #, kde-format
@@ -892,7 +892,7 @@ msgstr "დასაბეჭდის გადახედვა"
 #, kde-format
 msgctxt "zoom in action"
 msgid "Zoom In"
-msgstr ""
+msgstr "გადიდება"
 
 #: src/webenginepart.cpp:237
 #, kde-format
@@ -1118,13 +1118,13 @@ msgstr "შეიყვანეთ URL:"
 #, kde-format
 msgctxt "Ignore the certificate error for this URL only for now"
 msgid "Yes, &once"
-msgstr ""
+msgstr "დიახ, &ერთხელ"
 
 #: src/webenginepartcertificateerrordlg.cpp:45
 #, kde-format
 msgctxt "Ignore the certificate error for this URL now and in the future"
 msgid "Yes, &forever"
-msgstr ""
+msgstr "დიახ, &სამუდამოდ"
 
 #: src/webenginepartcertificateerrordlg.cpp:49
 #, kde-format
@@ -1137,7 +1137,7 @@ msgstr ""
 #, kde-format
 msgctxt "title of a dialog asking what to do about a SSL certificate error"
 msgid "Certificate error"
-msgstr ""
+msgstr "სერტიფიკატის შეცდომა"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEnginePartCertificateErrorDlg)
 #: src/webenginepartcertificateerrordlg.ui:14
@@ -1432,31 +1432,31 @@ msgstr "ველის სახელი"
 #, kde-format
 msgctxt "Value of a web field"
 msgid "Field value"
-msgstr ""
+msgstr "ველის მნიშვნელობა"
 
 #: src/webfieldsdataview.cpp:63
 #, kde-format
 msgctxt "Name attribute of a web field"
 msgid "Internal field name"
-msgstr ""
+msgstr "შიდა ველის სახელი"
 
 #: src/webfieldsdataview.cpp:64
 #, kde-format
 msgctxt "Type of a web field"
 msgid "Field type"
-msgstr ""
+msgstr "ველის ტიპი"
 
 #: src/webfieldsdataview.cpp:65
 #, kde-format
 msgctxt "The id of a web field"
 msgid "Field id"
-msgstr ""
+msgstr "ველის ID"
 
 #: src/webfieldsdataview.cpp:66
 #, kde-format
 msgctxt "Other details about a web field"
 msgid "Details"
-msgstr ""
+msgstr "დეტალები"
 
 #: src/webfieldsdataview.cpp:125
 #, kde-format
@@ -1468,7 +1468,7 @@ msgstr "მხოლოდ კითხვისთვის"
 #, kde-format
 msgctxt "web field has the autocomplete attribute set to off"
 msgid "auto-completion off"
-msgstr ""
+msgstr "ავტომატური დასრულება გამორთულია"
 
 #: src/webfieldsdataview.cpp:131
 #, kde-format
@@ -1486,7 +1486,7 @@ msgstr "yes"
 #, kde-format
 msgctxt "A statement about a field is false"
 msgid "no"
-msgstr ""
+msgstr "არა"
 
 #: src/webfieldsdataview.cpp:163
 #, kde-format
