@@ -3806,7 +3806,7 @@ void KonqMainWindow::updateHistoryActions()
 
 bool KonqMainWindow::isPreloaded() const
 {
-    return !isVisible() && m_mapViews.count() == 1 && KonqUrl::isKonqBlank(m_currentView->url().toString());
+    return !isVisible() && m_mapViews.count() == 1 && m_currentView && KonqUrl::isKonqBlank(m_currentView->url().toString());
 }
 
 void KonqMainWindow::updateToolBarActions(bool pendingAction /*=false*/)
