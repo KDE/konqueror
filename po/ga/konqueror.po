@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-14 00:56+0000\n"
+"POT-Creation-Date: 2023-01-27 00:57+0000\n"
 "PO-Revision-Date: 2004-12-03 14:52-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -460,8 +460,8 @@ msgid ""
 "ignored\n"
 msgstr ""
 
-#: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4881
-#: src/konqmainwindow.cpp:4927
+#: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4883
+#: src/konqmainwindow.cpp:4929
 #, kde-format
 msgid "no name"
 msgstr "gan ainm"
@@ -562,7 +562,7 @@ msgstr "Logánta"
 msgid "Miscellaneous"
 msgstr "Rudaí éagsúla"
 
-#: src/konqhistoryview.cpp:53 src/konqmainwindow.cpp:4412
+#: src/konqhistoryview.cpp:53 src/konqmainwindow.cpp:4414
 #, kde-format
 msgid "Open in New &Window"
 msgstr "Oscail i bhFuinneog &Nua"
@@ -659,7 +659,7 @@ msgstr ""
 #: src/konqmainwindow.cpp:1583 src/konqmainwindow.cpp:2280
 #: src/konqmainwindow.cpp:2373 src/konqmainwindow.cpp:2405
 #: src/konqmainwindow.cpp:2448 src/konqmainwindow.cpp:2470
-#: src/konqmainwindow.cpp:4849
+#: src/konqmainwindow.cpp:4851
 #, kde-format
 msgctxt "@title:window"
 msgid "Discard Changes?"
@@ -668,7 +668,7 @@ msgstr "Ná Sábháil na hAthruithe?"
 #: src/konqmainwindow.cpp:1583 src/konqmainwindow.cpp:2280
 #: src/konqmainwindow.cpp:2373 src/konqmainwindow.cpp:2405
 #: src/konqmainwindow.cpp:2448 src/konqmainwindow.cpp:2471
-#: src/konqmainwindow.cpp:4849
+#: src/konqmainwindow.cpp:4851
 #, kde-format
 msgid "&Discard Changes"
 msgstr "&Ná Sábháil na hAthruithe"
@@ -678,7 +678,7 @@ msgstr "&Ná Sábháil na hAthruithe"
 msgid "Home Folder"
 msgstr "Fillteán Baile"
 
-#: src/konqmainwindow.cpp:1951 src/konqmainwindow.cpp:3422
+#: src/konqmainwindow.cpp:1951 src/konqmainwindow.cpp:3424
 #, kde-format
 msgid "Home"
 msgstr "Baile"
@@ -747,7 +747,7 @@ msgstr ""
 msgid "Do you really want to close all other tabs?"
 msgstr "An bhfuil tú cinnte gur mian leat gach cluaisín eile a dhúnadh?"
 
-#: src/konqmainwindow.cpp:2431 src/konqmainwindow.cpp:3503 src/konqtabs.cpp:335
+#: src/konqmainwindow.cpp:2431 src/konqmainwindow.cpp:3505 src/konqtabs.cpp:335
 #, kde-format
 msgid "Close &Other Tabs"
 msgstr "Dún na Cluaisíní &Eile"
@@ -813,197 +813,197 @@ msgstr "Sábháil Mar..."
 msgid "Manage..."
 msgstr "Bainistigh..."
 
-#: src/konqmainwindow.cpp:3331
+#: src/konqmainwindow.cpp:3333
 #, kde-format
 msgid "New &Window"
 msgstr "&Fuinneog Nua"
 
-#: src/konqmainwindow.cpp:3336
+#: src/konqmainwindow.cpp:3338
 #, kde-format
 msgid "&Duplicate Window"
 msgstr "&Dúbail an Fhuinneog"
 
-#: src/konqmainwindow.cpp:3341
+#: src/konqmainwindow.cpp:3343
 #, kde-format
 msgid "Send &Link Address..."
 msgstr "Seol Seoladh an &Naisc..."
 
-#: src/konqmainwindow.cpp:3345
+#: src/konqmainwindow.cpp:3347
 #, kde-format
 msgid "S&end File..."
 msgstr "S&eol Comhad..."
 
-#: src/konqmainwindow.cpp:3349
+#: src/konqmainwindow.cpp:3351
 #, kde-format
 msgid "&Open Location"
 msgstr "&Oscail Suíomh"
 
-#: src/konqmainwindow.cpp:3355
+#: src/konqmainwindow.cpp:3357
 #, kde-format
 msgid "&Open File..."
 msgstr "&Oscail Comhad..."
 
-#: src/konqmainwindow.cpp:3360
+#: src/konqmainwindow.cpp:3362
 #, kde-format
 msgid "&Find File..."
 msgstr "&Aimsigh Comhad..."
 
-#: src/konqmainwindow.cpp:3369
+#: src/konqmainwindow.cpp:3371
 #, kde-format
 msgid "Lock to Current Location"
 msgstr "Ceangail leis an Suíomh Reatha"
 
 # definitely a verb
-#: src/konqmainwindow.cpp:3372
+#: src/konqmainwindow.cpp:3374
 #, kde-format
 msgctxt "This option links konqueror views"
 msgid "Lin&k View"
 msgstr "&Nasc an tAmharc"
 
-#: src/konqmainwindow.cpp:3377
+#: src/konqmainwindow.cpp:3379
 #, kde-format
 msgid "&Up"
 msgstr "S&uas"
 
-#: src/konqmainwindow.cpp:3387
+#: src/konqmainwindow.cpp:3389
 #, kde-format
 msgid "Closed Items"
 msgstr "Míreanna Dúnta"
 
-#: src/konqmainwindow.cpp:3400
+#: src/konqmainwindow.cpp:3402
 #, kde-format
 msgid "Sessions"
 msgstr "Seisiúin"
 
-#: src/konqmainwindow.cpp:3427
+#: src/konqmainwindow.cpp:3429
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Most Often Visited"
 msgstr "Suímh is mó cuairt orthu"
 
-#: src/konqmainwindow.cpp:3431
+#: src/konqmainwindow.cpp:3433
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Recently Visited"
 msgstr "Rinneadh Cuairt Orthu le Déanaí"
 
-#: src/konqmainwindow.cpp:3440
+#: src/konqmainwindow.cpp:3442
 #, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Show History"
 msgstr "Taispeáin an Stair"
 
-#: src/konqmainwindow.cpp:3453
+#: src/konqmainwindow.cpp:3455
 #, kde-format
 msgid "Configure Extensions..."
 msgstr "Cumraigh Eisínteachtaí..."
 
-#: src/konqmainwindow.cpp:3457
+#: src/konqmainwindow.cpp:3459
 #, kde-format
 msgid "Configure Spell Checking..."
 msgstr "Cumraigh an litreoir..."
 
-#: src/konqmainwindow.cpp:3463
+#: src/konqmainwindow.cpp:3465
 #, kde-format
 msgid "Split View &Left/Right"
 msgstr "Scoilt an tAmharc C&lé/Deas"
 
-#: src/konqmainwindow.cpp:3468
+#: src/konqmainwindow.cpp:3470
 #, kde-format
 msgid "Split View &Top/Bottom"
 msgstr "Scoilt an tAmharc &Barr/Bun"
 
-#: src/konqmainwindow.cpp:3473 src/konqtabs.cpp:456
+#: src/konqmainwindow.cpp:3475 src/konqtabs.cpp:456
 #, kde-format
 msgid "&New Tab"
 msgstr "Cluaisín &Nua"
 
-#: src/konqmainwindow.cpp:3482
+#: src/konqmainwindow.cpp:3484
 #, kde-format
 msgid "&Duplicate Current Tab"
 msgstr "&Déan Cóip den Chluaisín Reatha"
 
-#: src/konqmainwindow.cpp:3487
+#: src/konqmainwindow.cpp:3489
 #, kde-format
 msgid "Detach Current Tab"
 msgstr "Dícheangail an Cluaisín Reatha"
 
-#: src/konqmainwindow.cpp:3492
+#: src/konqmainwindow.cpp:3494
 #, kde-format
 msgid "&Close Active View"
 msgstr "&Dún an tAmharc Reatha"
 
-#: src/konqmainwindow.cpp:3497
+#: src/konqmainwindow.cpp:3499
 #, kde-format
 msgid "Close Current Tab"
 msgstr "Dún an Cluaisín Reatha"
 
-#: src/konqmainwindow.cpp:3507
+#: src/konqmainwindow.cpp:3509
 #, kde-format
 msgid "Activate Next Tab"
 msgstr "Gníomhachtaigh an Chéad Chluaisín Eile"
 
-#: src/konqmainwindow.cpp:3511
+#: src/konqmainwindow.cpp:3513
 #, kde-format
 msgid "Activate Previous Tab"
 msgstr "Gníomhachtaigh an Cluaisín Roimhe Seo"
 
-#: src/konqmainwindow.cpp:3518
+#: src/konqmainwindow.cpp:3520
 #, kde-format
 msgid "Activate Tab %1"
 msgstr "Gníomhachtaigh Cluaisín %1"
 
-#: src/konqmainwindow.cpp:3523
+#: src/konqmainwindow.cpp:3525
 #, kde-format
 msgid "Move Tab Left"
 msgstr "Bog Cluaisín Faoi Chlé"
 
-#: src/konqmainwindow.cpp:3528
+#: src/konqmainwindow.cpp:3530
 #, kde-format
 msgid "Move Tab Right"
 msgstr "Bog Cluaisín Faoi Dheis"
 
-#: src/konqmainwindow.cpp:3536
+#: src/konqmainwindow.cpp:3538
 #, kde-format
 msgid "Dump Debug Info"
 msgstr "Dumpáil Faisnéis Dhífhabhtaithe"
 
-#: src/konqmainwindow.cpp:3554
+#: src/konqmainwindow.cpp:3556
 #, kde-format
 msgid "&Reload"
 msgstr "&Athluchtaigh"
 
-#: src/konqmainwindow.cpp:3559 src/konqtabs.cpp:313
+#: src/konqmainwindow.cpp:3561 src/konqtabs.cpp:313
 #, kde-format
 msgid "&Reload All Tabs"
 msgstr "&Athluchtaigh Gach Cluaisín"
 
-#: src/konqmainwindow.cpp:3567
+#: src/konqmainwindow.cpp:3569
 #, kde-format
 msgid "&Force Reload"
 msgstr "&Fórsáil Athluchtú"
 
-#: src/konqmainwindow.cpp:3593
+#: src/konqmainwindow.cpp:3595
 #, kde-format
 msgid "&Stop"
 msgstr "&Stad"
 
-#: src/konqmainwindow.cpp:3602
+#: src/konqmainwindow.cpp:3604
 #, kde-format
 msgid "Throbber"
 msgstr "Preabóir"
 
-#: src/konqmainwindow.cpp:3606 src/konqmainwindow.cpp:3609
+#: src/konqmainwindow.cpp:3608 src/konqmainwindow.cpp:3611
 #, kde-format
 msgid "L&ocation: "
 msgstr "Suí&omh: "
 
-#: src/konqmainwindow.cpp:3616
+#: src/konqmainwindow.cpp:3618
 #, kde-format
 msgid "Location Bar"
 msgstr "Barra Suímh"
 
-#: src/konqmainwindow.cpp:3622
+#: src/konqmainwindow.cpp:3624
 #, kde-format
 msgid ""
 "<html>Location Bar<br /><br />Enter a web address or search term.</html>"
@@ -1011,12 +1011,12 @@ msgstr ""
 "<html>Barra Suímh<br /><br />Cuir isteach seoladh Gréasáin nó téarma "
 "cuardaigh.</html>"
 
-#: src/konqmainwindow.cpp:3626
+#: src/konqmainwindow.cpp:3628
 #, kde-format
 msgid "Clear Location Bar"
 msgstr "Glan an Barra Suímh"
 
-#: src/konqmainwindow.cpp:3630
+#: src/konqmainwindow.cpp:3632
 #, kde-format
 msgid ""
 "<html>Clear Location bar<br /><br />Clears the contents of the location bar."
@@ -1025,22 +1025,22 @@ msgstr ""
 "<html>Glan an Barra Suímh<br /><br />Glanann inneachar an bharra suímh.</"
 "html>"
 
-#: src/konqmainwindow.cpp:3635
+#: src/konqmainwindow.cpp:3637
 #, kde-format
 msgid "&Bookmarks"
 msgstr "Lea&bharmharcanna"
 
-#: src/konqmainwindow.cpp:3663
+#: src/konqmainwindow.cpp:3665
 #, kde-format
 msgid "Kon&queror Introduction"
 msgstr "Tús Eolais ar Kon&queror"
 
-#: src/konqmainwindow.cpp:3668
+#: src/konqmainwindow.cpp:3670
 #, kde-format
 msgid "Go"
 msgstr "Téigh"
 
-#: src/konqmainwindow.cpp:3670
+#: src/konqmainwindow.cpp:3672
 #, kde-format
 msgid ""
 "<html>Go<br /><br />Goes to the page that has been entered into the location "
@@ -1048,7 +1048,7 @@ msgid ""
 msgstr ""
 "<html>Téigh<br /><br />Téann go dtí an leathanach atá sa bharra suímh.</html>"
 
-#: src/konqmainwindow.cpp:3676
+#: src/konqmainwindow.cpp:3678
 #, kde-format
 msgid ""
 "<html>Enter the parent folder<br /><br />For instance, if the current "
@@ -1059,27 +1059,27 @@ msgstr ""
 "home/%1 an suíomh reatha, rachaidh tú go file:/home nuair a chliceálfaidh tú "
 "an cnaipe seo.</html>"
 
-#: src/konqmainwindow.cpp:3679
+#: src/konqmainwindow.cpp:3681
 #, kde-format
 msgid "Enter the parent folder"
 msgstr "Téigh isteach sa mháthairfhillteán"
 
-#: src/konqmainwindow.cpp:3681 src/konqmainwindow.cpp:3682
+#: src/konqmainwindow.cpp:3683 src/konqmainwindow.cpp:3684
 #, kde-format
 msgid "Move backwards one step in the browsing history"
 msgstr "Téigh siar céim amháin sa stair brabhsálaithe"
 
-#: src/konqmainwindow.cpp:3684 src/konqmainwindow.cpp:3685
+#: src/konqmainwindow.cpp:3686 src/konqmainwindow.cpp:3687
 #, kde-format
 msgid "Move forward one step in the browsing history"
 msgstr "Téigh ar aghaidh céim amháin sa stair brabhsálaithe"
 
-#: src/konqmainwindow.cpp:3687 src/konqmainwindow.cpp:3688
+#: src/konqmainwindow.cpp:3689 src/konqmainwindow.cpp:3690
 #, kde-format
 msgid "Move backwards one step in the closed tabs history"
 msgstr "Téigh siar céim amháin i stair na gcluaisíní dúnta"
 
-#: src/konqmainwindow.cpp:3690
+#: src/konqmainwindow.cpp:3692
 #, kde-format
 msgid ""
 "<html>Reload the currently displayed document<br /><br />This may, for "
@@ -1090,12 +1090,12 @@ msgstr ""
 "úsáid, mar shampla, nuair a athraítear leathanach Gréasáin ó luchtaíodh é "
 "agus ba mhaith leat na hathruithe a fheiceáil.</html>"
 
-#: src/konqmainwindow.cpp:3693
+#: src/konqmainwindow.cpp:3695
 #, kde-format
 msgid "Reload the currently displayed document"
 msgstr "Athluchtaigh an cháipéis reatha"
 
-#: src/konqmainwindow.cpp:3695
+#: src/konqmainwindow.cpp:3697
 #, kde-format
 msgid ""
 "<html>Reload all currently displayed documents in tabs<br /><br />This may, "
@@ -1106,12 +1106,12 @@ msgstr ""
 "an rogha seo a úsáid, mar shampla, nuair a athraítear leathanaigh Ghréasáin "
 "ó luchtaíodh iad, chun na hathruithe atá iontu a fheiceáil.</html>"
 
-#: src/konqmainwindow.cpp:3698
+#: src/konqmainwindow.cpp:3700
 #, kde-format
 msgid "Reload all currently displayed document in tabs"
 msgstr "Athluchtaigh na cáipéisí taispeánta i gcluaisíní"
 
-#: src/konqmainwindow.cpp:3700
+#: src/konqmainwindow.cpp:3702
 #, kde-format
 msgid ""
 "<html>Stop loading the document<br /><br />All network transfers will be "
@@ -1122,7 +1122,7 @@ msgstr ""
 "taispeánfaidh Konqueror an t-ábhar atá luchtaithe go dtí an pointe sin.</"
 "html>"
 
-#: src/konqmainwindow.cpp:3704
+#: src/konqmainwindow.cpp:3706
 #, fuzzy, kde-format
 #| msgid ""
 #| "<html>Reload the currently displayed document<br /><br />This may, for "
@@ -1140,18 +1140,18 @@ msgstr ""
 "iad, chun na hathruithe atá iontu a fheiceáil. Íosluchtófar aon íomhánna ar "
 "an leathanach arís, fiú má tá cóipeanna sa taisce.</html>"
 
-#: src/konqmainwindow.cpp:3708
+#: src/konqmainwindow.cpp:3710
 #, kde-format
 msgid ""
 "Force a reload of the currently displayed document and any contained images"
 msgstr "Fórsáil athluchtú na cáipéise reatha agus aon íomhánna atá inti"
 
-#: src/konqmainwindow.cpp:3710
+#: src/konqmainwindow.cpp:3712
 #, kde-format
 msgid "Stop loading the document"
 msgstr "Éirigh as an cháipéis a luchtú"
 
-#: src/konqmainwindow.cpp:3712
+#: src/konqmainwindow.cpp:3714
 #, kde-format
 msgid ""
 "<html>Cut the currently selected text or item(s) and move it to the system "
@@ -1162,12 +1162,12 @@ msgstr ""
 "ngearrthaisce an chórais<br /><br />Cuirfidh sé seo an roghnúchán ar fáil "
 "don ordú <b>Greamaigh</b> i Konqueror agus feidhmchláir KDE eile.</html>"
 
-#: src/konqmainwindow.cpp:3716
+#: src/konqmainwindow.cpp:3718
 #, kde-format
 msgid "Move the selected text or item(s) to the clipboard"
 msgstr "Bog an téacs nó mír(eanna) roghnaithe go dtí an ghearrthaisce"
 
-#: src/konqmainwindow.cpp:3718
+#: src/konqmainwindow.cpp:3720
 #, kde-format
 msgid ""
 "<html>Copy the currently selected text or item(s) to the system "
@@ -1178,12 +1178,12 @@ msgstr ""
 "é i ngearrthaisce an chórais<br /><br />Cuirfidh sé seo an roghnúchán ar "
 "fáil don ordú <b>Greamaigh</b> i Konqueror agus feidhmchláir KDE eile.</html>"
 
-#: src/konqmainwindow.cpp:3722
+#: src/konqmainwindow.cpp:3724
 #, kde-format
 msgid "Copy the selected text or item(s) to the clipboard"
 msgstr "Déan cóip den téacs nó mír(eanna) roghnaithe sa ghearrthaisce"
 
-#: src/konqmainwindow.cpp:3724
+#: src/konqmainwindow.cpp:3726
 #, kde-format
 msgid ""
 "<html>Paste the previously cut or copied clipboard contents<br /><br />This "
@@ -1193,12 +1193,12 @@ msgstr ""
 "roimhe seo<br /><br />Oibríonn sé seo nuair a bhí téacs cóipeáilte nó "
 "gearrtha ó fheidhmchláir KDE eile freisin.</html>"
 
-#: src/konqmainwindow.cpp:3727
+#: src/konqmainwindow.cpp:3729
 #, kde-format
 msgid "Paste the clipboard contents"
 msgstr "Greamaigh inneachar an ghearrthaisce"
 
-#: src/konqmainwindow.cpp:3729
+#: src/konqmainwindow.cpp:3731
 #, kde-format
 msgid ""
 "<html>Print the currently displayed document<br /><br />You will be "
@@ -1213,12 +1213,12 @@ msgstr ""
 "rochtain ar sheirbhísí speisialta priontála KDE, mar shampla seirbhís a "
 "chruthaíonn comhad PDF ón cháipéis reatha.</html>"
 
-#: src/konqmainwindow.cpp:3735
+#: src/konqmainwindow.cpp:3737
 #, kde-format
 msgid "Print the current document"
 msgstr "Priontáil an cháipéis reatha"
 
-#: src/konqmainwindow.cpp:3737
+#: src/konqmainwindow.cpp:3739
 #, kde-format
 msgid ""
 "A locked view cannot change folders. Use in combination with 'link view' to "
@@ -1227,7 +1227,7 @@ msgstr ""
 "Má tá an t-amharc faoi ghlas, ní féidir an fillteán a athrú.  Úsáid é seo in "
 "éineacht le 'Nasc an tAmharc' chun go leor comhad a scrúdú ó fhillteán amháin"
 
-#: src/konqmainwindow.cpp:3738
+#: src/konqmainwindow.cpp:3740
 #, kde-format
 msgid ""
 "Sets the view as 'linked'. A linked view follows folder changes made in "
@@ -1236,35 +1236,35 @@ msgstr ""
 "Socraíonn an t-amharc mar 'nasctha'. Leanann amharc nasctha athruithe "
 "fillteáin a dhéantar in amhairc nasctha eile."
 
-#: src/konqmainwindow.cpp:3742
+#: src/konqmainwindow.cpp:3744
 #, fuzzy, kde-format
 #| msgid "C&lose Current Tab"
 msgid "&Inspect Current Page"
 msgstr "Dún an C&luaisín Reatha"
 
-#: src/konqmainwindow.cpp:3743
+#: src/konqmainwindow.cpp:3745
 #, kde-format
 msgid ""
 "<html>Shows the developer tools for the current page<br/><br/>The current "
 "view is split in two and the developer tools are displayed in the second half"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3744
+#: src/konqmainwindow.cpp:3746
 #, kde-format
 msgid "Shows the developer tools for the current page"
 msgstr ""
 
-#: src/konqmainwindow.cpp:3910
+#: src/konqmainwindow.cpp:3912
 #, kde-format
 msgid "Copy &Files..."
 msgstr "Cói&peáil Comhaid..."
 
-#: src/konqmainwindow.cpp:3914
+#: src/konqmainwindow.cpp:3916
 #, kde-format
 msgid "M&ove Files..."
 msgstr "Bog C&omhaid..."
 
-#: src/konqmainwindow.cpp:4243
+#: src/konqmainwindow.cpp:4245
 #, kde-format
 msgid ""
 "You have requested to open more than 20 bookmarks in tabs. This might take a "
@@ -1274,62 +1274,62 @@ msgstr ""
 "D'fhéadfadh do Konqueror éirí mall agus na leathanaigh á luchtú. An bhfuil "
 "tú cinnte go dteastaíonn leanúint ar aghaidh?"
 
-#: src/konqmainwindow.cpp:4245
+#: src/konqmainwindow.cpp:4247
 #, kde-format
 msgctxt "@title:window"
 msgid "Open bookmarks folder in new tabs"
 msgstr "Oscail fillteán na leabharmharcanna i gcluaisíní nua"
 
-#: src/konqmainwindow.cpp:4246
+#: src/konqmainwindow.cpp:4248
 #, fuzzy, kde-format
 #| msgid "&Open"
 msgctxt "@action:button"
 msgid "Open"
 msgstr "&Oscail"
 
-#: src/konqmainwindow.cpp:4405
+#: src/konqmainwindow.cpp:4407
 #, kde-format
 msgid "Open in T&his Window"
 msgstr "Oscail san F&huinneog Seo"
 
-#: src/konqmainwindow.cpp:4406
+#: src/konqmainwindow.cpp:4408
 #, kde-format
 msgid "Open the document in current window"
 msgstr "Oscail an cháipéis san fhuinneog reatha"
 
-#: src/konqmainwindow.cpp:4413
+#: src/konqmainwindow.cpp:4415
 #, kde-format
 msgid "Open the document in a new window"
 msgstr "Oscail an cháipéis i bhfuinneog nua"
 
-#: src/konqmainwindow.cpp:4419
+#: src/konqmainwindow.cpp:4421
 #, kde-format
 msgid "Open in &New Tab"
 msgstr "Oscail i gCluaisín &Nua"
 
-#: src/konqmainwindow.cpp:4421
+#: src/konqmainwindow.cpp:4423
 #, kde-format
 msgid "Open the document in a new tab"
 msgstr "Oscail an cháipéis i gcluaisín nua"
 
-#: src/konqmainwindow.cpp:4637
+#: src/konqmainwindow.cpp:4639
 #, kde-format
 msgid "&Open With"
 msgstr "&Oscail Le"
 
-#: src/konqmainwindow.cpp:4650
+#: src/konqmainwindow.cpp:4652
 #, kde-format
 msgid "Open with %1"
 msgstr "Oscail le %1"
 
 # OK
-#: src/konqmainwindow.cpp:4698
+#: src/konqmainwindow.cpp:4700
 #, kde-format
 msgctxt "@action:inmenu View"
 msgid "&View Mode"
 msgstr "Mód &Amhairc"
 
-#: src/konqmainwindow.cpp:4815
+#: src/konqmainwindow.cpp:4817
 #, kde-format
 msgid ""
 "You have multiple tabs open in this window, are you sure you want to quit?"
@@ -1337,18 +1337,18 @@ msgstr ""
 "Tá cluaisíní iomadúla oscailte san fhuinneog seo; an bhfuil tú cinnte gur "
 "mian leat scor?"
 
-#: src/konqmainwindow.cpp:4817
+#: src/konqmainwindow.cpp:4819
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "Deimhniú"
 
-#: src/konqmainwindow.cpp:4819
+#: src/konqmainwindow.cpp:4821
 #, kde-format
 msgid "C&lose Current Tab"
 msgstr "Dún an C&luaisín Reatha"
 
-#: src/konqmainwindow.cpp:4845
+#: src/konqmainwindow.cpp:4847
 #, kde-format
 msgid ""
 "This tab contains changes that have not been submitted.\n"
@@ -1357,7 +1357,7 @@ msgstr ""
 "Tá athruithe gan seoladh sa chluaisín seo.\n"
 "Caillfidh tú na hathruithe seo má dhúnann tú an fhuinneog."
 
-#: src/konqmainwindow.cpp:4846
+#: src/konqmainwindow.cpp:4848
 #, kde-format
 msgid ""
 "This page contains changes that have not been submitted.\n"
@@ -1366,7 +1366,7 @@ msgstr ""
 "Tá athruithe gan seoladh ar an leathanach seo.\n"
 "Caillfidh tú na hathruithe seo má dhúnann tú an fhuinneog."
 
-#: src/konqmainwindow.cpp:5003
+#: src/konqmainwindow.cpp:5005
 #, kde-format
 msgid ""
 "Your sidebar is not functional or unavailable. A new entry cannot be added."
@@ -1374,28 +1374,28 @@ msgstr ""
 "Níl do bharra taoibh ag obair, nó níl sé ar fáil. Ní féidir iontráil nua a "
 "chur leis."
 
-#: src/konqmainwindow.cpp:5003 src/konqmainwindow.cpp:5010
+#: src/konqmainwindow.cpp:5005 src/konqmainwindow.cpp:5012
 #, kde-format
 msgctxt "@title:window"
 msgid "Web Sidebar"
 msgstr "Barra Taoibh Gréasáin"
 
-#: src/konqmainwindow.cpp:5008
+#: src/konqmainwindow.cpp:5010
 #, kde-format
 msgid "Add new web extension \"%1\" to your sidebar?"
 msgstr "Cuir eisínteacht nua ghréasáin \"%1\" le do bharra taoibh?"
 
-#: src/konqmainwindow.cpp:5010
+#: src/konqmainwindow.cpp:5012
 #, kde-format
 msgid "Add"
 msgstr "Cuir Leis"
 
-#: src/konqmainwindow.cpp:5010
+#: src/konqmainwindow.cpp:5012
 #, kde-format
 msgid "Do Not Add"
 msgstr "Ná Cuir Leis"
 
-#: src/konqmainwindow.cpp:5358
+#: src/konqmainwindow.cpp:5360
 #, kde-format
 msgid ""
 "There appears to be a configuration error. You have associated Konqueror "
@@ -1404,7 +1404,7 @@ msgstr ""
 "Is cosúil go bhfuil earráid cumraíochta. Tá ceangal déanta agat idir "
 "Konqueror agus %1, ach ní féidir leis déileáil le comhad den chineál seo."
 
-#: src/konqmainwindow.cpp:5439
+#: src/konqmainwindow.cpp:5441
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine. No "
@@ -1417,24 +1417,24 @@ msgid ""
 "settings now?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5444
+#: src/konqmainwindow.cpp:5446
 #, fuzzy, kde-format
 #| msgid "Manual Proxy Configuration"
 msgid "Unsupported proxy configuration"
 msgstr "Lámhchumraíocht Seachfhreastalaí"
 
-#: src/konqmainwindow.cpp:5444
+#: src/konqmainwindow.cpp:5446
 #, kde-format
 msgid "Don't use a proxy"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5445 src/konqmainwindow.cpp:5463
+#: src/konqmainwindow.cpp:5447 src/konqmainwindow.cpp:5465
 #, fuzzy, kde-format
 #| msgid "Show Configuration Button"
 msgid "Show proxy configuration dialog"
 msgstr "Taispeáin Cnaipe Cumraíochta"
 
-#: src/konqmainwindow.cpp:5459
+#: src/konqmainwindow.cpp:5461
 #, kde-format
 msgid ""
 "Your proxy configuration can't be used with the QtWebEngine HTML engine "
@@ -1443,23 +1443,23 @@ msgid ""
 "p><p><b>HTTPS proxy: </b><tt>%2</tt></p>What do you want to do?"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5462
+#: src/konqmainwindow.cpp:5464
 #, fuzzy, kde-format
 #| msgid "Manual Proxy Configuration"
 msgid "Conflicting proxy configuration"
 msgstr "Lámhchumraíocht Seachfhreastalaí"
 
-#: src/konqmainwindow.cpp:5463
+#: src/konqmainwindow.cpp:5465
 #, kde-format
 msgid "Use HTTP proxy (only this time)"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5463
+#: src/konqmainwindow.cpp:5465
 #, kde-format
 msgid "Use HTTPS proxy (only this time)"
 msgstr ""
 
-#: src/konqmainwindow.cpp:5540
+#: src/konqmainwindow.cpp:5542
 #, kde-format
 msgid ""
 "You have entered Complete Full Screen mode (the user interface is completely "
@@ -1966,13 +1966,13 @@ msgstr "Rabhadh"
 msgid "Resend"
 msgstr "Seol Arís"
 
-#: src/urlloader.cpp:266
+#: src/urlloader.cpp:267
 #, kde-format
 msgctxt "Execute an executable file"
 msgid "Execute it"
 msgstr ""
 
-#: src/urlloader.cpp:271
+#: src/urlloader.cpp:272
 #, kde-format
 msgctxt ""
 "The user has to decide whether to execute an executable file or display it"
@@ -1980,19 +1980,19 @@ msgid ""
 "<tt>%1</tt> can be executed. Do you want to execute it or to display it?"
 msgstr ""
 
-#: src/urlloader.cpp:272
+#: src/urlloader.cpp:273
 #, kde-format
 msgctxt "Display an executable file"
 msgid "Display it"
 msgstr ""
 
-#: src/urlloader.cpp:276
+#: src/urlloader.cpp:277
 #, kde-format
 msgctxt "The user has to decide whether to execute an executable file or not"
 msgid "<tt>%1</tt> can be executed. Do you want to execute it?"
 msgstr ""
 
-#: src/urlloader.cpp:457
+#: src/urlloader.cpp:458
 #, fuzzy, kde-format
 #| msgid "Save As..."
 msgid "Save As"
