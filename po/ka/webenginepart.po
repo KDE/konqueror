@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-11 00:45+0000\n"
-"PO-Revision-Date: 2022-08-19 06:50+0200\n"
+"PO-Revision-Date: 2023-02-03 16:40+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -207,7 +207,7 @@ msgstr ""
 #: src/about/konq_aboutpage.cpp:226
 #, kde-format
 msgid "built-in"
-msgstr ""
+msgstr "ჩაშენებული"
 
 #: src/about/konq_aboutpage.cpp:206
 #, kde-format
@@ -259,7 +259,7 @@ msgstr ""
 #: src/about/konq_aboutpage.cpp:220
 #, kde-format
 msgid "Secure Sockets Layer"
-msgstr ""
+msgstr "SSL"
 
 #: src/about/konq_aboutpage.cpp:221
 #, kde-format
@@ -331,7 +331,7 @@ msgstr ""
 #, kde-format
 msgctxt "A feature of Konqueror"
 msgid "URL-Completion"
-msgstr ""
+msgstr "URL-ის დასრულება"
 
 #: src/about/konq_aboutpage.cpp:237
 #, kde-format
@@ -596,7 +596,7 @@ msgstr "ძებნის პანელის დახურვა"
 #: src/ui/searchbar.ui:49
 #, kde-format
 msgid "Find the next match for the current search phrase"
-msgstr ""
+msgstr "მიმდინარე ძებნის ფრაზის შემდეგი დამთხვევის მოძებნა"
 
 #. i18n: ectx: property (text), widget (QToolButton, nextButton)
 #: src/ui/searchbar.ui:52
@@ -609,7 +609,7 @@ msgstr "&შემდეგი"
 #: src/ui/searchbar.ui:68 src/ui/searchbar.ui:84
 #, kde-format
 msgid "Find the previous match for the current search phrase"
-msgstr ""
+msgstr "მიმდინარე ძებნის ფრაზის წინა დამთხვევის მოძებნა"
 
 #. i18n: ectx: property (text), widget (QToolButton, previousButton)
 #: src/ui/searchbar.ui:71
@@ -633,7 +633,7 @@ msgstr "&დიდი და პატარა ასოების სხვ�
 #: src/ui/searchbar.ui:127
 #, kde-format
 msgid "&Search As You Type"
-msgstr ""
+msgstr "&ძებნა აკრეფის მიმდინარეობისას"
 
 #. i18n: ectx: property (text), item, widget (QPushButton, optionsButton)
 #: src/ui/searchbar.ui:135
@@ -693,7 +693,7 @@ msgstr ""
 #: src/webenginepage.cpp:133
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
-msgstr ""
+msgstr "გადმოწერების მმართველი (%1) თქვენს დაყენებულ პროგრამებში ვერ ვიპოვე."
 
 #: src/webenginepage.cpp:134
 #, kde-format
@@ -702,6 +702,9 @@ msgid ""
 "\n"
 "The integration will be disabled."
 msgstr ""
+"სცადეთ, თავიდან დააყენოთ ის და გახადოთ ხელმისაწვდომი $PATH-ში.\n"
+"\n"
+"ინტეგრაცია გაითიშება."
 
 #: src/webenginepage.cpp:291
 #, kde-format
@@ -711,11 +714,16 @@ msgid ""
 "and made a purchase, click the Cancel button to prevent a duplicate purchase."
 "Otherwise, click the Continue button to display the webpage again.</p>"
 msgstr ""
+"<qt><p>მოთხოვნილი ვებგვერდის თავიდან საჩვენებლად ბრაუზერს ინფორმაციის, "
+"რომელიც უკვე გადაგზავნილია, თავიდან გაგზავნა ესაჭიროება.</p><p>თუ საყიდლებით "
+"იყავით დაკავებული და რამე შეიძინეთ, დააჭირეთ გაუქმებას, რათა ორჯერ შეძენა "
+"თავიდან აიცილოთ. სხვა შემთხვევაში დააჭირეთ გაგრძელების ღილაკს და ვებგვერდი "
+"თავიდან ჩაიტვირთება.</p>"
 
 #: src/webenginepage.cpp:298
 #, kde-format
 msgid "Resubmit Information"
-msgstr ""
+msgstr "ინფორმაციის თავიდან გადაცემა"
 
 #: src/webenginepage.cpp:530
 #, kde-format
@@ -723,6 +731,9 @@ msgid ""
 "This site is attempting to access information about your physical location.\n"
 "Do you want to allow it access?"
 msgstr ""
+"ეს ვებგვერდი ცდილობს მოიპოვოს ინფორმაცია თქვენი ფიზიკური მდებარეობის "
+"შესახებ.\n"
+"გნებავთ, მისცეთ მას ეს წვდომა?"
 
 #: src/webenginepage.cpp:534 src/webenginepage.cpp:651
 #: src/webenginepage.cpp:662
@@ -733,7 +744,7 @@ msgstr "ქელით გადაცემა"
 #: src/webenginepage.cpp:535
 #, kde-format
 msgid "Allow access"
-msgstr ""
+msgstr "წვდომის დაშვება"
 
 #: src/webenginepage.cpp:610
 #, kde-format
@@ -741,6 +752,8 @@ msgid ""
 "<qt>This untrusted page links to<br/><b>%1</b>.<br/>Do you want to follow "
 "the link?</qt>"
 msgstr ""
+"<qt>ეს არასანდო ვებგვერდი მიბმულია<br/><b>%1</b>.<br/>გნებავთ, მიჰყვეთ ბმულს?"
+"</qt>"
 
 #: src/webenginepage.cpp:612
 #, kde-format
@@ -761,7 +774,7 @@ msgstr "უსაფრთხოების გაფრთხილება"
 #: src/webenginepage.cpp:616
 #, kde-format
 msgid "<qt>Access by untrusted page to<br/><b>%1</b><br/> denied.</qt>"
-msgstr ""
+msgstr "<qt>წვდომა არასანდო გვერდადე<br/><b>%1</b><br/> აკრძალულია.</qt>"
 
 #: src/webenginepage.cpp:644
 #, kde-format
@@ -771,6 +784,10 @@ msgid ""
 "A third party may be able to intercept and view this information.\n"
 "Are you sure you want to send the data unencrypted?"
 msgstr ""
+"ყურადღება: ეს დაცული ფორმაა, მაგრამ თქვენი მონაცემების დაუშიფრავის სახით "
+"გაგზავნას ცდილობს.\n"
+"მესამე მხარეს ამ მონაცემთა გადაჭერა და ნახვა შეუძლია.\n"
+"დარწმუნებული ბრძანდებით, რომ გნებავთ, ეს მონაცემები დაუშიფრავად გააგზავნოთ?"
 
 #: src/webenginepage.cpp:652
 #, kde-format
@@ -797,21 +814,22 @@ msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
 "email message?</qt>"
 msgstr ""
+"<qt>გნებავთ, მისცეთ ამ ვებგვერდს უფლება, ელფოსტებს ფაილები მიამაგროს?</qt>"
 
 #: src/webenginepage.cpp:714
 #, kde-format
 msgid "Email Attachment Confirmation"
-msgstr ""
+msgstr "ელფოსტაზე მიმაგრების დადასტურება"
 
 #: src/webenginepage.cpp:715
 #, kde-format
 msgid "&Allow attachments"
-msgstr ""
+msgstr "&მიმაგრებული ფაილების დაშვება"
 
 #: src/webenginepage.cpp:716
 #, kde-format
 msgid "&Ignore attachments"
-msgstr ""
+msgstr "&მიმაგრებული ფაილების იგნორი"
 
 #: src/webenginepage.cpp:730
 #, kde-format
@@ -825,7 +843,7 @@ msgstr ""
 #: src/webenginepage.cpp:733
 #, kde-format
 msgid "Attachment Removed"
-msgstr ""
+msgstr "მიმაგრებული ფაილი წაშლილია"
 
 #: src/webenginepage.cpp:863
 #, kde-format
@@ -833,6 +851,8 @@ msgid ""
 "This site is requesting to open a new popup window.\n"
 "Do you want to allow this?"
 msgstr ""
+"ეს საიტი ახალი მხტუნარა ფანჯრის გახსნას ცდილობს.\n"
+"დავუშვათ ეს?"
 
 #: src/webenginepage.cpp:865
 #, kde-format
@@ -840,11 +860,13 @@ msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
 "want to allow this?</qt>"
 msgstr ""
+"<qt>ეს ვებგვერდი ითხოვს მხტუნარა ფანჯრის გახსნას <p>%1</p><br/>დავუშვათ ეს?</"
+"qt>"
 
 #: src/webenginepage.cpp:869
 #, kde-format
 msgid "Javascript Popup Confirmation"
-msgstr ""
+msgstr "Javascript -ის მხტუნარის დადასტურება"
 
 #: src/webenginepage.cpp:870
 #, kde-format
@@ -876,7 +898,7 @@ msgstr ""
 #, kde-format
 msgctxt "zoom out action"
 msgid "Zoom Out"
-msgstr "და_პატარავება"
+msgstr "გადიდება"
 
 #: src/webenginepart.cpp:242
 #, kde-format
@@ -887,12 +909,12 @@ msgstr "რეალური ზომა"
 #: src/webenginepart.cpp:247
 #, kde-format
 msgid "Zoom Text Only"
-msgstr ""
+msgstr "მხოლოდ ტექსტის გადიდება"
 
 #: src/webenginepart.cpp:255
 #, kde-format
 msgid "Zoom To DPI"
-msgstr ""
+msgstr "გადიდება DPI-მდე"
 
 #: src/webenginepart.cpp:268
 #, kde-format
@@ -917,6 +939,8 @@ msgid ""
 "<h3>Find text</h3>Shows a dialog that allows you to find text on the "
 "displayed page."
 msgstr ""
+"<h3>ტექსტის ძებნა</h3>გაჩვენებთ ფანჯარას, რომელითაც ნაჩვენებ გვერდზე ტექსტის "
+"მოძებნა შეგიძლიათ."
 
 #: src/webenginepart.cpp:572
 #, kde-format
@@ -963,12 +987,12 @@ msgstr " (ახალ ფანჯარაში)"
 #: src/webenginepart.cpp:699
 #, kde-format
 msgid " (In parent frame)"
-msgstr ""
+msgstr " (მშობელ კადრში)"
 
 #: src/webenginepart.cpp:763
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
-msgstr ""
+msgstr "<qt>გნებავთ, მოძებნოთ <b>%1</b>?</qt>"
 
 #: src/webenginepart.cpp:764
 #, kde-format
@@ -995,6 +1019,8 @@ msgstr "საჭიროა თანხმობა"
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
 msgstr ""
+"<html>გნებავთ, %1 -მა დაიმახსოვროს თქვენი ავტორიზაციის დეტალები <b>%2</b>-"
+"სთვის?</html>"
 
 #: src/webenginepart.cpp:1020
 #, kde-format
@@ -1030,7 +1056,7 @@ msgstr ""
 #: src/webenginepart.cpp:1045
 #, kde-format
 msgid "&Launch Wallet Manager"
-msgstr ""
+msgstr "&საფულეების მმართველის გაშვება"
 
 #: src/webenginepart.cpp:1049
 #, kde-format
@@ -1071,7 +1097,7 @@ msgstr ""
 #: src/webenginepart.rc:47
 #, kde-format
 msgid "HTML Toolbar"
-msgstr ""
+msgstr "HTML -ის პანელი"
 
 #: src/webenginepart_ext.cpp:246
 #, kde-format
@@ -1092,13 +1118,13 @@ msgstr "შეიყვანეთ URL:"
 #, kde-format
 msgctxt "Ignore the certificate error for this URL only for now"
 msgid "Yes, &once"
-msgstr ""
+msgstr "დიახ, &ერთხელ"
 
 #: src/webenginepartcertificateerrordlg.cpp:45
 #, kde-format
 msgctxt "Ignore the certificate error for this URL now and in the future"
 msgid "Yes, &forever"
-msgstr ""
+msgstr "დიახ, &სამუდამოდ"
 
 #: src/webenginepartcertificateerrordlg.cpp:49
 #, kde-format
@@ -1111,7 +1137,7 @@ msgstr ""
 #, kde-format
 msgctxt "title of a dialog asking what to do about a SSL certificate error"
 msgid "Certificate error"
-msgstr ""
+msgstr "სერტიფიკატის შეცდომა"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEnginePartCertificateErrorDlg)
 #: src/webenginepartcertificateerrordlg.ui:14
@@ -1129,7 +1155,7 @@ msgstr "ტექსტური ჭდე"
 #: src/webenginepartcertificateerrordlg.ui:50
 #, kde-format
 msgid "Certificate details"
-msgstr ""
+msgstr "სერტიფიკატიs detalebi"
 
 #. i18n: ectx: attribute (title), widget (QWidget, subjectTab)
 #: src/webenginepartcertificateerrordlg.ui:63
@@ -1141,7 +1167,7 @@ msgstr "&სათაური"
 #: src/webenginepartcertificateerrordlg.ui:73
 #, kde-format
 msgid "&Issuer"
-msgstr ""
+msgstr "&გამომცემელი"
 
 #: src/webenginepartdownloadmanager.cpp:219
 #, kde-format
@@ -1178,6 +1204,8 @@ msgid ""
 "<html><body><h3>Unable to display error message</h3><p>The error template "
 "file <em>error.html</em> could not be found.</p></body></html>"
 msgstr ""
+"<html><body><h3>შეცდომის შეტყობინების გამოტანის შეცდომა</h3><p>შეცდომის "
+"ნიმუშის ფაილი <em>error.html</em> ვერ ვიპოვე.</p></body></html>"
 
 #: src/webengineparterrorschemehandler.cpp:105
 #, kde-format
@@ -1326,44 +1354,44 @@ msgstr ""
 #: src/webengineview.cpp:522
 #, kde-format
 msgid "Sa&ve Video As..."
-msgstr ""
+msgstr "&ვიდეოს შენახვა, როგორც..."
 
 #: src/webengineview.cpp:523
 #, kde-format
 msgid "C&opy Video URL"
-msgstr ""
+msgstr "&ვიდეოს ბმულის კოპირება"
 
 #: src/webengineview.cpp:525
 #, kde-format
 msgid "Sa&ve Audio As..."
-msgstr ""
+msgstr "&აუდიოს შენახვა, როგორც..."
 
 #: src/webengineview.cpp:526
 #, kde-format
 msgid "C&opy Audio URL"
-msgstr ""
+msgstr "აუდიოს ბმულის &კოპირება"
 
 #: src/webengineview.cpp:528
 #, kde-format
 msgid "Sa&ve Media As..."
-msgstr ""
+msgstr "მედიის შენახვა, როგორც..."
 
 #: src/webengineview.cpp:529
 #, kde-format
 msgid "C&opy Media URL"
-msgstr ""
+msgstr "მედიის ბმულის &კოპირება"
 
 #: src/webengineview.cpp:582
 #, kde-format
 msgctxt "Search \"search provider\" for \"text\""
 msgid "Search %1 for '%2'"
-msgstr ""
+msgstr "%1-ში %2-ის მოძებნა"
 
 #: src/webengineview.cpp:593
 #, kde-format
 msgctxt "Search for \"text\" with"
 msgid "Search for '%1' with"
-msgstr ""
+msgstr "'%1'-ის მოძებნა მოხდება"
 
 #: src/webengineview.cpp:606
 #, kde-format
@@ -1386,7 +1414,7 @@ msgstr "password"
 #, kde-format
 msgctxt "Web field with type 'e-mail'"
 msgid "e-mail"
-msgstr ""
+msgstr "ელფოსტა"
 
 #: src/webenginewallet.cpp:107
 #, kde-format
@@ -1404,31 +1432,31 @@ msgstr "ველის სახელი"
 #, kde-format
 msgctxt "Value of a web field"
 msgid "Field value"
-msgstr ""
+msgstr "ველის მნიშვნელობა"
 
 #: src/webfieldsdataview.cpp:63
 #, kde-format
 msgctxt "Name attribute of a web field"
 msgid "Internal field name"
-msgstr ""
+msgstr "შიდა ველის სახელი"
 
 #: src/webfieldsdataview.cpp:64
 #, kde-format
 msgctxt "Type of a web field"
 msgid "Field type"
-msgstr ""
+msgstr "ველის ტიპი"
 
 #: src/webfieldsdataview.cpp:65
 #, kde-format
 msgctxt "The id of a web field"
 msgid "Field id"
-msgstr ""
+msgstr "ველის ID"
 
 #: src/webfieldsdataview.cpp:66
 #, kde-format
 msgctxt "Other details about a web field"
 msgid "Details"
-msgstr ""
+msgstr "დეტალები"
 
 #: src/webfieldsdataview.cpp:125
 #, kde-format
@@ -1440,7 +1468,7 @@ msgstr "მხოლოდ კითხვისთვის"
 #, kde-format
 msgctxt "web field has the autocomplete attribute set to off"
 msgid "auto-completion off"
-msgstr ""
+msgstr "ავტომატური დასრულება გამორთულია"
 
 #: src/webfieldsdataview.cpp:131
 #, kde-format
@@ -1458,7 +1486,7 @@ msgstr "yes"
 #, kde-format
 msgctxt "A statement about a field is false"
 msgid "no"
-msgstr ""
+msgstr "არა"
 
 #: src/webfieldsdataview.cpp:163
 #, kde-format
