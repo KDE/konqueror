@@ -26,8 +26,8 @@ void NavigationRecorder::registerPage(WebEnginePage* page)
 
 void NavigationRecorder::removePage(QObject*)
 {
-    //NOTE: we can't use QMultiHash::remove because this is connected to the QObject::destroyed signal,
-    //which is emitted *after* the WebEnginePage destructor has been called, so it can't be casted.
+    //NOTE: we cannot use QMultiHash::remove because this is connected to the QObject::destroyed signal,
+    //which is emitted *after* the WebEnginePage destructor has been called, so it cannot be cast.
     //The workaround is to remove all nullptr entries, since the destroyed signal is emitted after
     //all instances of QPointer have been notified
     for (const QUrl &url : m_pendingNavigations.keys()) {
