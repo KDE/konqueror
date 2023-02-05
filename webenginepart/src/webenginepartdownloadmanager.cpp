@@ -1,7 +1,7 @@
 /*
     This file is part of the KDE project.
 
-    SPDX-FileCopyrightText: 2017 Stefano Crocco <posta@stefanocrocco.it>
+    SPDX-FileCopyrightText: 2017 Stefano Crocco <stefano.crocco@alice.it>
 
     SPDX-License-Identifier: LGPL-2.1-or-later
 */
@@ -10,6 +10,8 @@
 
 #include "webenginepage.h"
 #include <webenginepart_debug.h>
+#include "webenginepartcontrols.h"
+#include "navigationrecorder.h"
 
 #include <QWebEngineView>
 #include <QWebEngineProfile>
@@ -22,7 +24,6 @@
 
 #include <KLocalizedString>
 #include <KNotificationJobUiDelegate>
-#include <KParts/BrowserOpenOrSaveQuestion>
 #include <KJobTrackerInterface>
 #include <KIO/JobTracker>
 #include <KIO/OpenUrlJob>
@@ -65,35 +66,39 @@ void WebEnginePartDownloadManager::performDownload(QWebEngineDownloadItem* it)
         qCDebug(WEBENGINEPART_LOG) << "Couldn't find a part wanting to download" << it->url();
         return;
     }
+    if (WebEnginePartControls::self()->navigationRecorder()->isPostRequest(it->url(), page)) {
+        WebEnginePartControls::self()->navigationRecorder()->recordNavigationFinished(page, it->url());
+        downloadFile(it, KParts::BrowserOpenOrSaveQuestion::InlineDisposition, true);
+        return;
+    }
     if (it->url().scheme() != "blob") {
         page->download(it, forceNew);
-//         page->download(it->url(), it->mimeType(), forceNew);
     } else {
-        downloadBlob(it);
+        downloadFile(it, KParts::BrowserOpenOrSaveQuestion::AttachmentDisposition);
     }
 }
 
-void WebEnginePartDownloadManager::downloadBlob(QWebEngineDownloadItem* it)
+void WebEnginePartDownloadManager::downloadFile(QWebEngineDownloadItem* it, KParts::BrowserOpenOrSaveQuestion::AskEmbedOrSaveFlags disposition, bool forceNewTab)
 {
     WebEnginePage *p = qobject_cast<WebEnginePage*>(it->page());
     QWidget *w = p ? p->view() : nullptr;
     KParts::BrowserOpenOrSaveQuestion askDlg(w, it->url(), it->mimeType());
-    KParts::BrowserOpenOrSaveQuestion::Result ans = askDlg.askEmbedOrSave(KParts::BrowserOpenOrSaveQuestion::AttachmentDisposition);
+    KParts::BrowserOpenOrSaveQuestion::Result ans = askDlg.askEmbedOrSave(disposition);
     switch (ans) { 
         case KParts::BrowserOpenOrSaveQuestion::Cancel:
             it->cancel();
             return;
         case KParts::BrowserOpenOrSaveQuestion::Save:
-            saveBlob(it);
+            saveFile(it);
             break;
         case KParts::BrowserOpenOrSaveQuestion::Embed:
         case KParts::BrowserOpenOrSaveQuestion::Open:
-            openBlob(it, p);
+            openFile(it, p, forceNewTab);
             break;
     }
 }
 
-void WebEnginePartDownloadManager::saveBlob(QWebEngineDownloadItem* it)
+void WebEnginePartDownloadManager::saveFile(QWebEngineDownloadItem* it)
 {
     QWidget *w = it->page() ? it->page()->view() : nullptr;
     QString downloadDir = QStandardPaths::writableLocation(QStandardPaths::DownloadLocation);
@@ -114,7 +119,7 @@ void WebEnginePartDownloadManager::saveBlob(QWebEngineDownloadItem* it)
     it->setDownloadFileName(info.fileName());
     it->accept();
     it->pause();
-    WebEngineBlobDownloadJob *j = new WebEngineBlobDownloadJob(it, this);
+    WebEngineDownloadJob *j = new WebEngineDownloadJob(it, this);
     KJobTrackerInterface *t = KIO::getJobTracker();
     if (t) {
         t->registerJob(j);
@@ -122,19 +127,20 @@ void WebEnginePartDownloadManager::saveBlob(QWebEngineDownloadItem* it)
     j->start();
 }
 
-void WebEnginePartDownloadManager::openBlob(QWebEngineDownloadItem* it, WebEnginePage *page)
+void WebEnginePartDownloadManager::openFile(QWebEngineDownloadItem* it, WebEnginePage *page, bool forceNewTab)
 {
     QMimeDatabase db;
     QMimeType type = db.mimeTypeForName(it->mimeType());
     QString suggestedName = it->suggestedFileName();
-    QString fileName = generateBlobTempFileName(suggestedName, type.preferredSuffix());
+    QString fileName = generateDownloadTempFileName(suggestedName, type.preferredSuffix());
     it->setDownloadDirectory(m_tempDownloadDir.path());
     it->setDownloadFileName(fileName);
-    connect(it, &QWebEngineDownloadItem::finished, this, [this, it, page](){blobDownloadedToFile(it, page);});
+    connect(it, &QWebEngineDownloadItem::finished, this, [this, it, page, forceNewTab](){
+        downloadToFileCompleted(it, page, forceNewTab);});
     it->accept();
 }
 
-QString WebEnginePartDownloadManager::generateBlobTempFileName(const QString& suggestedName, const QString& ext) const
+QString WebEnginePartDownloadManager::generateDownloadTempFileName(const QString& suggestedName, const QString& ext) const
 {
     QString baseName(suggestedName);
     if (baseName.isEmpty()) {
@@ -151,11 +157,11 @@ QString WebEnginePartDownloadManager::generateBlobTempFileName(const QString& su
 }
 
 
-void WebEnginePartDownloadManager::blobDownloadedToFile(QWebEngineDownloadItem *it, WebEnginePage *page)
+void WebEnginePartDownloadManager::downloadToFileCompleted(QWebEngineDownloadItem *it, WebEnginePage *page, bool forceNewTab)
 {
     QString file = QDir(it->downloadDirectory()).filePath(it->downloadFileName());
     if (page) {
-        page->requestOpenFileAsTemporary(QUrl::fromLocalFile(file), it->mimeType());
+        page->requestOpenFileAsTemporary(QUrl::fromLocalFile(file), it->mimeType(), false, true);
     } else {
         KIO::OpenUrlJob *j = new KIO::OpenUrlJob(QUrl::fromLocalFile(file), it->mimeType(), this);
         j->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, nullptr));
@@ -163,28 +169,28 @@ void WebEnginePartDownloadManager::blobDownloadedToFile(QWebEngineDownloadItem *
     }
 }
 
-WebEngineBlobDownloadJob::WebEngineBlobDownloadJob(QWebEngineDownloadItem* it, QObject* parent) : KJob(parent), m_downloadItem(it)
+WebEngineDownloadJob::WebEngineDownloadJob(QWebEngineDownloadItem* it, QObject* parent) : KJob(parent), m_downloadItem(it)
 {
     setCapabilities(KJob::Killable|KJob::Suspendable);
     setTotalAmount(KJob::Bytes, m_downloadItem->totalBytes());
-    connect(m_downloadItem, &QWebEngineDownloadItem::downloadProgress, this, &WebEngineBlobDownloadJob::downloadProgressed);
-    connect(m_downloadItem, &QWebEngineDownloadItem::finished, this, &WebEngineBlobDownloadJob::downloadFinished);
-    connect(m_downloadItem, &QWebEngineDownloadItem::stateChanged, this, &WebEngineBlobDownloadJob::stateChanged);
+    connect(m_downloadItem, &QWebEngineDownloadItem::downloadProgress, this, &WebEngineDownloadJob::downloadProgressed);
+    connect(m_downloadItem, &QWebEngineDownloadItem::finished, this, &WebEngineDownloadJob::downloadFinished);
+    connect(m_downloadItem, &QWebEngineDownloadItem::stateChanged, this, &WebEngineDownloadJob::stateChanged);
 }
 
-void WebEngineBlobDownloadJob::start()
+void WebEngineDownloadJob::start()
 {
-    QTimer::singleShot(0, this, &WebEngineBlobDownloadJob::startDownloading);
+    QTimer::singleShot(0, this, &WebEngineDownloadJob::startDownloading);
 }
 
-bool WebEngineBlobDownloadJob::doKill()
+bool WebEngineDownloadJob::doKill()
 {
     delete m_downloadItem;
     m_downloadItem = nullptr;
     return true;
 }
 
-bool WebEngineBlobDownloadJob::doResume()
+bool WebEngineDownloadJob::doResume()
 {
     if (m_downloadItem) {
         m_downloadItem->resume();
@@ -192,7 +198,7 @@ bool WebEngineBlobDownloadJob::doResume()
     return true;
 }
 
-bool WebEngineBlobDownloadJob::doSuspend()
+bool WebEngineDownloadJob::doSuspend()
 {
     if (m_downloadItem) {
         m_downloadItem->pause();
@@ -200,12 +206,12 @@ bool WebEngineBlobDownloadJob::doSuspend()
     return true;
 }
 
-void WebEngineBlobDownloadJob::downloadProgressed(quint64 received, quint64 total)
+void WebEngineDownloadJob::downloadProgressed(quint64 received, quint64 total)
 {
     setPercent(received*100.0/total);
 }
 
-void WebEngineBlobDownloadJob::stateChanged(QWebEngineDownloadItem::DownloadState state)
+void WebEngineDownloadJob::stateChanged(QWebEngineDownloadItem::DownloadState state)
 {
     if (state != QWebEngineDownloadItem::DownloadInterrupted) {
         return;
@@ -214,12 +220,12 @@ void WebEngineBlobDownloadJob::stateChanged(QWebEngineDownloadItem::DownloadStat
     setErrorText(m_downloadItem->interruptReasonString());
 }
 
-QString WebEngineBlobDownloadJob::errorString() const
+QString WebEngineDownloadJob::errorString() const
 {
     return i18n("An error occurred while saving the file: %1", errorText());
 }
 
-void WebEngineBlobDownloadJob::startDownloading()
+void WebEngineDownloadJob::startDownloading()
 {
     if (m_downloadItem) {
         m_startTime = QDateTime::currentDateTime();
@@ -231,7 +237,7 @@ void WebEngineBlobDownloadJob::startDownloading()
     }
 }
 
-void WebEngineBlobDownloadJob::downloadFinished()
+void WebEngineDownloadJob::downloadFinished()
 {
     emitResult();
     QDateTime now = QDateTime::currentDateTime();

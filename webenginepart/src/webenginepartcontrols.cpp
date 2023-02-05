@@ -1,7 +1,7 @@
 /*
     This file is part of the KDE project.
 
-    SPDX-FileCopyrightText: 2021 Stefano Crocco <posta@stefanocrocco.it>
+    SPDX-FileCopyrightText: 2021 Stefano Crocco <stefano.crocco@alice.it>
 
     SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
@@ -18,6 +18,8 @@
 #include "certificateerrordialogmanager.h"
 #include "webenginewallet.h"
 #include "webenginepart.h"
+#include "webenginepage.h"
+#include "navigationrecorder.h"
 
 #include <KProtocolInfo>
 
@@ -28,7 +30,8 @@
 
 WebEnginePartControls::WebEnginePartControls(): QObject(),
     m_profile(nullptr), m_cookieJar(nullptr), m_spellCheckerManager(nullptr), m_downloadManager(nullptr),
-    m_certificateErrorDialogManager(new KonqWebEnginePart::CertificateErrorDialogManager(this))
+    m_certificateErrorDialogManager(new KonqWebEnginePart::CertificateErrorDialogManager(this)),
+    m_navigationRecorder(new NavigationRecorder(this))
 {
         QVector<QByteArray> localSchemes = {"error", "konq", "tar"};
         const QStringList protocols = KProtocolInfo::protocols();
@@ -95,4 +98,9 @@ SpellCheckerManager* WebEnginePartControls::spellCheckerManager() const
 bool WebEnginePartControls::handleCertificateError(const QWebEngineCertificateError& ce, WebEnginePage* page)
 {
     return m_certificateErrorDialogManager->handleCertificateError(ce, page);
+}
+
+NavigationRecorder * WebEnginePartControls::navigationRecorder() const
+{
+    return m_navigationRecorder;
 }

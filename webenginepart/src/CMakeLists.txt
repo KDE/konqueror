@@ -44,6 +44,7 @@ set(kwebenginepartlib_LIB_SRCS
     webenginepartcontrols.cpp
     webenginepartcertificateerrordlg.cpp
     certificateerrordialogmanager.cpp
+    navigationrecorder.cpp
 )
 
 ki18n_wrap_ui(kwebenginepartlib_LIB_SRCS webenginecustomizecacheablefieldsdlg.ui ui/credentialsdetailswidget.ui webenginepartcertificateerrordlg.ui)

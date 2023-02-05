@@ -1,7 +1,7 @@
 /*
     This file is part of the KDE project.
 
-    SPDX-FileCopyrightText: 2017 Stefano Crocco <posta@stefanocrocco.it>
+    SPDX-FileCopyrightText: 2017 Stefano Crocco <stefano.crocco@alice.it>
 
     SPDX-License-Identifier: LGPL-2.1-or-later
 */
@@ -16,6 +16,7 @@
 #include <QDateTime>
 
 #include <KJob>
+#include <KParts/BrowserOpenOrSaveQuestion>
 
 class WebEnginePage;
 class QWebEngineProfile;
@@ -30,8 +31,24 @@ public:
     WebEnginePartDownloadManager(QWebEngineProfile *profile, QObject *parent = nullptr);
 
 private:
-    void downloadBlob(QWebEngineDownloadItem *it);
-    QString generateBlobTempFileName(QString const &suggestedName, const QString &ext) const;
+
+    /**
+     * Makes WebEnginePart itself download a file, rather than letting the application do it
+     *
+     * This is needed in two situations:
+     * - when downloading an URL with the `blob` scheme
+     * - when the file is the response to a POST request
+     *
+     * In both cases, this is needed because the application can't repeat the request (in particular,
+     * in the case of POST requests, `QtWebEngine` doesn't provide access to the POST data itself).
+     *
+     * This function uses `KParts::BrowserOpenOrSaveQuestion` to ask the user what to do, then
+     * calls saveFile() or openFile() to perform the chosen action.
+     * @param it the download item representing the download request
+     * @param disposition the argument to pass to `KParts::BrowserOpenOrSaveQuestion::askEmebedOrSave`
+     */
+    void downloadFile(QWebEngineDownloadItem *it, KParts::BrowserOpenOrSaveQuestion::AskEmbedOrSaveFlags disposition, bool forceNewTab = false);
+    QString generateDownloadTempFileName(QString const &suggestedName, const QString &ext) const;
 
 public Q_SLOTS:
     void addPage(WebEnginePage *page);
@@ -39,22 +56,22 @@ public Q_SLOTS:
 
 private Q_SLOTS:
     void performDownload(QWebEngineDownloadItem *it);
-    void saveBlob(QWebEngineDownloadItem *it);
-    void openBlob(QWebEngineDownloadItem *it, WebEnginePage *page);
-    void blobDownloadedToFile(QWebEngineDownloadItem *it, WebEnginePage *page);
+    void saveFile(QWebEngineDownloadItem *it);
+    void openFile(QWebEngineDownloadItem *it, WebEnginePage *page, bool forceNewTab = false);
+    void downloadToFileCompleted(QWebEngineDownloadItem *it, WebEnginePage *page, bool forceNewTab = false);
 
 private:
     QVector<WebEnginePage*> m_pages;
     QTemporaryDir m_tempDownloadDir;
 };
 
-class WebEngineBlobDownloadJob : public KJob
+class WebEngineDownloadJob : public KJob
 {
     Q_OBJECT
 
 public:
-    WebEngineBlobDownloadJob(QWebEngineDownloadItem *it, QObject *parent = nullptr);
-    ~WebEngineBlobDownloadJob() override{}
+    WebEngineDownloadJob(QWebEngineDownloadItem *it, QObject *parent = nullptr);
+    ~WebEngineDownloadJob() override{}
 
     void start() override;
 

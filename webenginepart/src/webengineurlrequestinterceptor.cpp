@@ -8,6 +8,8 @@
 
 #include "settings/webenginesettings.h"
 #include "webengineurlrequestinterceptor.h"
+#include "webenginepartcontrols.h"
+#include "navigationrecorder.h"
 
 WebEngineUrlRequestInterceptor::WebEngineUrlRequestInterceptor(QObject* parent) :
     QWebEngineUrlRequestInterceptor(parent)
@@ -22,5 +24,8 @@ void WebEngineUrlRequestInterceptor::interceptRequest(QWebEngineUrlRequestInfo &
             return;
         }
         info.block(WebEngineSettings::self()->isAdFiltered(info.requestUrl().url()));
+    }
+    if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeMainFrame) {
+        WebEnginePartControls::self()->navigationRecorder()->recordRequestDetails(info);
     }
 }

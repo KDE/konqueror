@@ -1,7 +1,7 @@
 /*
     This file is part of the KDE project.
 
-    SPDX-FileCopyrightText: 2021 Stefano Crocco <posta@stefanocrocco.it>
+    SPDX-FileCopyrightText: 2021 Stefano Crocco <stefano.crocco@alice.it>
 
     SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
@@ -17,6 +17,7 @@ class WebEnginePartCookieJar;
 class SpellCheckerManager;
 class WebEnginePartDownloadManager;
 class WebEnginePage;
+class NavigationRecorder;
 
 namespace KonqWebEnginePart {
     class CertificateErrorDialogManager;
@@ -40,6 +41,8 @@ public:
 
     WebEnginePartDownloadManager* downloadManager() const;
 
+    NavigationRecorder* navigationRecorder() const;
+
     bool handleCertificateError(const QWebEngineCertificateError &ce, WebEnginePage *page);
 
 private:
@@ -51,6 +54,7 @@ private:
     SpellCheckerManager *m_spellCheckerManager;
     WebEnginePartDownloadManager *m_downloadManager;
     KonqWebEnginePart::CertificateErrorDialogManager *m_certificateErrorDialogManager;
+    NavigationRecorder *m_navigationRecorder;
 };
 
 #endif // WEBENGINEPARTCONTROLS_H

@@ -51,7 +51,7 @@ public:
 
     void download(QWebEngineDownloadItem *it, bool newWindow = false);
 
-    void requestOpenFileAsTemporary(const QUrl &url, const QString &mimeType = "", bool newWindow = false);
+    void requestOpenFileAsTemporary(const QUrl &url, const QString &mimeType = "", bool newWindow = false, bool newTab = false);
 
     void setStatusBarText(const QString &text);
 
@@ -99,7 +99,7 @@ Q_SIGNALS:
      */
     void loadAborted(const QUrl &url);
 
-    void leavingPage(QWebEnginePage::NavigationType type);
+    void mainFrameNavigationRequested(WebEnginePage *page, const QUrl);
 
 protected:
     /**

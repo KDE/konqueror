@@ -17,6 +17,7 @@
 #include "webenginewallet.h"
 #include <webenginepart_debug.h>
 #include "webenginepartcontrols.h"
+#include "navigationrecorder.h"
 
 #include <QWebEngineCertificateError>
 #include <QWebEngineSettings>
@@ -101,6 +102,7 @@ WebEnginePage::WebEnginePage(WebEnginePart *part, QWidget *parent)
     };
     connect(this, &QWebEnginePage::loadFinished, this, unsetInspectedPageIfNeeded);
 
+    WebEnginePartControls::self()->navigationRecorder()->registerPage(this);
     m_part->downloadManager()->addPage(this);
 }
 
@@ -162,10 +164,11 @@ void WebEnginePage::download(QWebEngineDownloadItem *it, bool newWindow)
     askBrowserToOpenUrl(url, it->mimeType(), urlArgs, bArgs);
 }
 
-void WebEnginePage::requestOpenFileAsTemporary(const QUrl& url, const QString &mimeType, bool newWindow)
+void WebEnginePage::requestOpenFileAsTemporary(const QUrl& url, const QString &mimeType, bool newWindow, bool newTab)
 {
     KParts::BrowserArguments bArgs;
     bArgs.setForcesNewWindow(newWindow);
+    bArgs.setNewTab(newTab);
     KParts::OpenUrlArguments oArgs;
     oArgs.setMimeType(mimeType);
     oArgs.metaData().insert("konq-temp-file", "1");
@@ -335,6 +338,9 @@ bool WebEnginePage::acceptNavigationRequest(const QUrl& url, NavigationType type
     // Honor the enabling/disabling of plugins per host.
     settings()->setAttribute(QWebEngineSettings::PluginsEnabled, WebEngineSettings::self()->isPluginsEnabled(reqUrl.host()));
 
+    if (isMainFrame) {
+        emit mainFrameNavigationRequested(this, url);
+    }
     return QWebEnginePage::acceptNavigationRequest(url, type, isMainFrame);
 }
 
