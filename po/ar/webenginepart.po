@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-11 00:45+0000\n"
+"POT-Creation-Date: 2023-02-06 01:00+0000\n"
 "PO-Revision-Date: 2012-01-19 13:25+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: Arabic <kde-i18n-doc@kde.org>\n"
@@ -728,12 +728,12 @@ msgstr ""
 msgid "&Immediately memorize form data"
 msgstr ""
 
-#: src/webenginepage.cpp:133
+#: src/webenginepage.cpp:135
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr "مدبر تنزيل  (%1) لا يمكن إيجاده في نظامك."
 
-#: src/webenginepage.cpp:134
+#: src/webenginepage.cpp:136
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -744,7 +744,7 @@ msgstr ""
 "\n"
 "سيتم تعطيل التكامل."
 
-#: src/webenginepage.cpp:291
+#: src/webenginepage.cpp:294
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -753,12 +753,12 @@ msgid ""
 "Otherwise, click the Continue button to display the webpage again.</p>"
 msgstr ""
 
-#: src/webenginepage.cpp:298
+#: src/webenginepage.cpp:301
 #, fuzzy, kde-format
 msgid "Resubmit Information"
 msgstr "معلومات إضافية: %1"
 
-#: src/webenginepage.cpp:530
+#: src/webenginepage.cpp:536
 #, fuzzy, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -767,18 +767,18 @@ msgstr ""
 "هذا الموقع يحاول إرسال بيانات النموذج عبر البريد الإلكتروني.\n"
 "هل تريد المتابعة؟"
 
-#: src/webenginepage.cpp:534 src/webenginepage.cpp:651
-#: src/webenginepage.cpp:662
+#: src/webenginepage.cpp:540 src/webenginepage.cpp:657
+#: src/webenginepage.cpp:668
 #, kde-format
 msgid "Network Transmission"
 msgstr "نقل عبر الشبكة"
 
-#: src/webenginepage.cpp:535
+#: src/webenginepage.cpp:541
 #, fuzzy, kde-format
 msgid "Allow access"
 msgstr "ا&سمح بالمرفقات"
 
-#: src/webenginepage.cpp:610
+#: src/webenginepage.cpp:616
 #, kde-format
 msgid ""
 "<qt>This untrusted page links to<br/><b>%1</b>.<br/>Do you want to follow "
@@ -787,28 +787,28 @@ msgstr ""
 "<qt>هذه الصفحة غير الموثقة تربط إلى<br/><b>%1</b>.<br/>هل ترغب في اتباع "
 "الوصلة؟</qt>"
 
-#: src/webenginepage.cpp:612
+#: src/webenginepage.cpp:618
 #, kde-format
 msgid "Security Warning"
 msgstr "تحذير أمني"
 
-#: src/webenginepage.cpp:613
+#: src/webenginepage.cpp:619
 #, kde-format
 msgctxt "follow link despite of security warning"
 msgid "Follow"
 msgstr "اتبع"
 
-#: src/webenginepage.cpp:615
+#: src/webenginepage.cpp:621
 #, kde-format
 msgid "Security Alert"
 msgstr "إنذار أمني"
 
-#: src/webenginepage.cpp:616
+#: src/webenginepage.cpp:622
 #, kde-format
 msgid "<qt>Access by untrusted page to<br/><b>%1</b><br/> denied.</qt>"
 msgstr "<qt>رفض النفاذ إلى<br/><b>%1</b><br/>بواسطة صفحة غير موثوقة.</qt>"
 
-#: src/webenginepage.cpp:644
+#: src/webenginepage.cpp:650
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -820,12 +820,12 @@ msgstr ""
 "من الممكن أن يقوم طرف ثالث باعتراض الإرسال، و رؤية هذه المعلومات.\n"
 "هل أنت متأكد أنك تريد إرسال البيانات بدون تشفير؟"
 
-#: src/webenginepage.cpp:652
+#: src/webenginepage.cpp:658
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "ا&رسل غير مشفّرة"
 
-#: src/webenginepage.cpp:659
+#: src/webenginepage.cpp:665
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -834,12 +834,12 @@ msgstr ""
 "هذا الموقع يحاول إرسال بيانات النموذج عبر البريد الإلكتروني.\n"
 "هل تريد المتابعة؟"
 
-#: src/webenginepage.cpp:663
+#: src/webenginepage.cpp:669
 #, kde-format
 msgid "&Send Email"
 msgstr "ارسل &بريد إلكتروني"
 
-#: src/webenginepage.cpp:712
+#: src/webenginepage.cpp:718
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -848,22 +848,22 @@ msgstr ""
 "<qt>هل تريد أن تسمح لهذا الموقع أن يرفق الملفات التالية بالبريد الإلكتروني؟</"
 "qt>"
 
-#: src/webenginepage.cpp:714
+#: src/webenginepage.cpp:720
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "تأكيد مرفقات البريد الإلكتروني"
 
-#: src/webenginepage.cpp:715
+#: src/webenginepage.cpp:721
 #, kde-format
 msgid "&Allow attachments"
 msgstr "ا&سمح بالمرفقات"
 
-#: src/webenginepage.cpp:716
+#: src/webenginepage.cpp:722
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&تجاهل المرفقات"
 
-#: src/webenginepage.cpp:730
+#: src/webenginepage.cpp:736
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -872,12 +872,12 @@ msgstr ""
 "هذا الموقع يريد ارفاق ملف من جهازك في النموذج المرسل. تم إزالة الملف المرفق "
 "لحمايتك."
 
-#: src/webenginepage.cpp:733
+#: src/webenginepage.cpp:739
 #, kde-format
 msgid "Attachment Removed"
 msgstr "تمت إزالة المرفقات"
 
-#: src/webenginepage.cpp:863
+#: src/webenginepage.cpp:869
 #, fuzzy, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -886,7 +886,7 @@ msgstr ""
 "يطلب هذا الموقع أن يفتح نافذة منبثقة.\n"
 "هل تريد السماح بذلك؟"
 
-#: src/webenginepage.cpp:865
+#: src/webenginepage.cpp:871
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -895,17 +895,17 @@ msgstr ""
 "<qt> لـ<p>%1</p><br/> يطلب هذا الموقع أن يفتح نافذة منبثقة\n"
 "هل تريد السماح بذلك؟</qt>"
 
-#: src/webenginepage.cpp:869
+#: src/webenginepage.cpp:875
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "تأكيد نافذة منبثقة من نوع جافاسكربت"
 
-#: src/webenginepage.cpp:870
+#: src/webenginepage.cpp:876
 #, kde-format
 msgid "Allow"
 msgstr "اسمح"
 
-#: src/webenginepage.cpp:871
+#: src/webenginepage.cpp:877
 #, kde-format
 msgid "Do Not Allow"
 msgstr "لا تسمح"
@@ -1206,31 +1206,31 @@ msgstr " - الموضوع: "
 msgid "&Issuer"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:219
+#: src/webenginepartdownloadmanager.cpp:225
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:227
+#: src/webenginepartdownloadmanager.cpp:233
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:228
+#: src/webenginepartdownloadmanager.cpp:234
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:229
+#: src/webenginepartdownloadmanager.cpp:235
 #, fuzzy, kde-format
 #| msgid "Description:"
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "الوصف:"
 
-#: src/webenginepartdownloadmanager.cpp:242
+#: src/webenginepartdownloadmanager.cpp:248
 #, kde-format
 msgctxt "Finished saving BLOB URL"
 msgid "Finished saving %1 as %2"

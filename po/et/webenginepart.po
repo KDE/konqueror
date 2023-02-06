@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webkitkde\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-11 00:45+0000\n"
+"POT-Creation-Date: 2023-02-06 01:00+0000\n"
 "PO-Revision-Date: 2021-05-01 21:52+0200\n"
 "Last-Translator: Mihkel Tõnnov <mihhkel@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -800,12 +800,12 @@ msgstr ""
 msgid "&Immediately memorize form data"
 msgstr ""
 
-#: src/webenginepage.cpp:133
+#: src/webenginepage.cpp:135
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr "Sinu paigaldusest ei leitud allalaadimishaldurit (%1)."
 
-#: src/webenginepage.cpp:134
+#: src/webenginepage.cpp:136
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -817,7 +817,7 @@ msgstr ""
 "\n"
 "Põimimine on seni välja lülitatud."
 
-#: src/webenginepage.cpp:291
+#: src/webenginepage.cpp:294
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -830,12 +830,12 @@ msgstr ""
 "juba ostu, siis klõpsa nupule Loobu, et mitte ostu teist korda sooritada. "
 "Muul juhul võid klõpsata nupule Jätka, et lasta veebilehte uuesti kuvada.</p>"
 
-#: src/webenginepage.cpp:298
+#: src/webenginepage.cpp:301
 #, kde-format
 msgid "Resubmit Information"
 msgstr "Teabe uuesti saatmine"
 
-#: src/webenginepage.cpp:530
+#: src/webenginepage.cpp:536
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -844,18 +844,18 @@ msgstr ""
 "See lehekülg üritab saata teavet sinu füüsilise asukoha kohta.\n"
 "Kas lubada selline ligipääs?"
 
-#: src/webenginepage.cpp:534 src/webenginepage.cpp:651
-#: src/webenginepage.cpp:662
+#: src/webenginepage.cpp:540 src/webenginepage.cpp:657
+#: src/webenginepage.cpp:668
 #, kde-format
 msgid "Network Transmission"
 msgstr "Võrguedastus"
 
-#: src/webenginepage.cpp:535
+#: src/webenginepage.cpp:541
 #, kde-format
 msgid "Allow access"
 msgstr "Luba ligipääs"
 
-#: src/webenginepage.cpp:610
+#: src/webenginepage.cpp:616
 #, kde-format
 msgid ""
 "<qt>This untrusted page links to<br/><b>%1</b>.<br/>Do you want to follow "
@@ -864,30 +864,30 @@ msgstr ""
 "<qt>See ebausaldusväärne lehekülg sisaldab viita<br /><b>%1</b>.<br />Kas "
 "soovid seda järgida?</qt>"
 
-#: src/webenginepage.cpp:612
+#: src/webenginepage.cpp:618
 #, kde-format
 msgid "Security Warning"
 msgstr "Turvahoiatus"
 
-#: src/webenginepage.cpp:613
+#: src/webenginepage.cpp:619
 #, kde-format
 msgctxt "follow link despite of security warning"
 msgid "Follow"
 msgstr "Järgi"
 
-#: src/webenginepage.cpp:615
+#: src/webenginepage.cpp:621
 #, kde-format
 msgid "Security Alert"
 msgstr "Turvahoiatus"
 
-#: src/webenginepage.cpp:616
+#: src/webenginepage.cpp:622
 #, kde-format
 msgid "<qt>Access by untrusted page to<br/><b>%1</b><br/> denied.</qt>"
 msgstr ""
 "<qt>Ebausaldusväärsele leheküljele<br /><b>%1</b><br />  keelati ligipääs.</"
 "qt>"
 
-#: src/webenginepage.cpp:644
+#: src/webenginepage.cpp:650
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -899,12 +899,12 @@ msgstr ""
 "Kõrvalised isikud võivad selle info kinni püüda ning seda vaadata.\n"
 "Kas soovid kindlasti saata andmed krüptimata?"
 
-#: src/webenginepage.cpp:652
+#: src/webenginepage.cpp:658
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&Saada krüptimata"
 
-#: src/webenginepage.cpp:659
+#: src/webenginepage.cpp:665
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -913,34 +913,34 @@ msgstr ""
 "See lehekülg üritab saata vormi andmeid e-postiga.\n"
 "Kas soovid jätkata?"
 
-#: src/webenginepage.cpp:663
+#: src/webenginepage.cpp:669
 #, kde-format
 msgid "&Send Email"
 msgstr "&Saada kiri"
 
-#: src/webenginepage.cpp:712
+#: src/webenginepage.cpp:718
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
 "email message?</qt>"
 msgstr "<qt>Kas lubada leheküljel lisada e-kirjale järgmised failid?</qt>"
 
-#: src/webenginepage.cpp:714
+#: src/webenginepage.cpp:720
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "E-kirjale manuse lisamise kinnitus"
 
-#: src/webenginepage.cpp:715
+#: src/webenginepage.cpp:721
 #, kde-format
 msgid "&Allow attachments"
 msgstr "Lub&a manuste lisamine"
 
-#: src/webenginepage.cpp:716
+#: src/webenginepage.cpp:722
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "E&ira manuseid"
 
-#: src/webenginepage.cpp:730
+#: src/webenginepage.cpp:736
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -949,12 +949,12 @@ msgstr ""
 "See lehekülg üritas vormi andmetega panna kaasa ka faili sinu arvutist. Fail "
 "eemaldati sinu kaitseks."
 
-#: src/webenginepage.cpp:733
+#: src/webenginepage.cpp:739
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Kaasatud fail eemaldati"
 
-#: src/webenginepage.cpp:863
+#: src/webenginepage.cpp:869
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -963,7 +963,7 @@ msgstr ""
 "See lehekülg tahab avada hüpikakna.\n"
 "Kas soovid seda lubada?"
 
-#: src/webenginepage.cpp:865
+#: src/webenginepage.cpp:871
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -972,17 +972,17 @@ msgstr ""
 "<qt>See lehekülg tahab avada hüpikakna<p>%1</p><br/>Kas soovid seda lubada?</"
 "qt>"
 
-#: src/webenginepage.cpp:869
+#: src/webenginepage.cpp:875
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "JavaScripti hüpikakna kinnitus"
 
-#: src/webenginepage.cpp:870
+#: src/webenginepage.cpp:876
 #, kde-format
 msgid "Allow"
 msgstr "Luba"
 
-#: src/webenginepage.cpp:871
+#: src/webenginepage.cpp:877
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Ära luba"
@@ -1290,31 +1290,31 @@ msgstr " - Teema: "
 msgid "&Issuer"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:219
+#: src/webenginepartdownloadmanager.cpp:225
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:227
+#: src/webenginepartdownloadmanager.cpp:233
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:228
+#: src/webenginepartdownloadmanager.cpp:234
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:229
+#: src/webenginepartdownloadmanager.cpp:235
 #, fuzzy, kde-format
 #| msgid "Description:"
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "Kirjeldus:"
 
-#: src/webenginepartdownloadmanager.cpp:242
+#: src/webenginepartdownloadmanager.cpp:248
 #, kde-format
 msgctxt "Finished saving BLOB URL"
 msgid "Finished saving %1 as %2"

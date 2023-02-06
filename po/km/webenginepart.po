@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwebkitpart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-11 00:45+0000\n"
+"POT-Creation-Date: 2023-02-06 01:00+0000\n"
 "PO-Revision-Date: 2012-07-09 11:08+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -723,12 +723,12 @@ msgstr ""
 msgid "&Immediately memorize form data"
 msgstr ""
 
-#: src/webenginepage.cpp:133
+#: src/webenginepage.cpp:135
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr "រក​មិន​ឃើញ​​កម្មវិធី​គ្រប់គ្រង​ការ​ទាញ​យក (%1) នៅ​ក្នុង​ការ​ដំឡើង​របស់​អ្នក​ទេ ។"
 
-#: src/webenginepage.cpp:134
+#: src/webenginepage.cpp:136
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -739,7 +739,7 @@ msgstr ""
 "\n"
 "ការ​រួម​បញ្ចូល​នឹង​ត្រូវ​បានបិទ ។"
 
-#: src/webenginepage.cpp:291
+#: src/webenginepage.cpp:294
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -748,13 +748,13 @@ msgid ""
 "Otherwise, click the Continue button to display the webpage again.</p>"
 msgstr ""
 
-#: src/webenginepage.cpp:298
+#: src/webenginepage.cpp:301
 #, fuzzy, kde-format
 #| msgid "Additional Information: %1"
 msgid "Resubmit Information"
 msgstr "ព័ត៌មាន​បន្ថែម ៖ %1"
 
-#: src/webenginepage.cpp:530
+#: src/webenginepage.cpp:536
 #, fuzzy, kde-format
 #| msgid ""
 #| "This site is attempting to submit form data via email.\n"
@@ -766,19 +766,19 @@ msgstr ""
 "តំបន់បណ្ដាញ​​កំពុង​ប៉ុនប៉ង​ដាក់​ស្នើ​ពី​ទិន្នន័យ​តាម​រយៈ​អ៊ីមែល ។\n"
 "តើ​អ្នក​ចង់​បន្ត​ដែរ​ឬទេ ?"
 
-#: src/webenginepage.cpp:534 src/webenginepage.cpp:651
-#: src/webenginepage.cpp:662
+#: src/webenginepage.cpp:540 src/webenginepage.cpp:657
+#: src/webenginepage.cpp:668
 #, kde-format
 msgid "Network Transmission"
 msgstr "ការ​បញ្ជូន​បណ្ដាញ"
 
-#: src/webenginepage.cpp:535
+#: src/webenginepage.cpp:541
 #, fuzzy, kde-format
 #| msgid "&Allow attachments"
 msgid "Allow access"
 msgstr "អនុញ្ញាត​ឲ្យ​មាន​ឯកសារ​ភ្ជាប់"
 
-#: src/webenginepage.cpp:610
+#: src/webenginepage.cpp:616
 #, kde-format
 msgid ""
 "<qt>This untrusted page links to<br/><b>%1</b>.<br/>Do you want to follow "
@@ -787,29 +787,29 @@ msgstr ""
 "<qt>ទំព័រ​ដែល​មិន​គួរ​ទុកចិត្ត​នេះ​តភ្ជាប់​ទៅ​កាន់<br/><b>%1</b> ។<br/>តើ​អ្នក​ចង់​តាម​តំណ​នេះ​ដែរ​ឬទេ ?"
 "</qt>​"
 
-#: src/webenginepage.cpp:612
+#: src/webenginepage.cpp:618
 #, kde-format
 msgid "Security Warning"
 msgstr "ការ​ព្រមាន​សុវត្ថិភាព"
 
-#: src/webenginepage.cpp:613
+#: src/webenginepage.cpp:619
 #, kde-format
 msgctxt "follow link despite of security warning"
 msgid "Follow"
 msgstr "អនុវត្ត​តាម"
 
-#: src/webenginepage.cpp:615
+#: src/webenginepage.cpp:621
 #, kde-format
 msgid "Security Alert"
 msgstr "ការ​ព្រមាន​អំពី​សុវត្ថិភាព"
 
-#: src/webenginepage.cpp:616
+#: src/webenginepage.cpp:622
 #, kde-format
 msgid "<qt>Access by untrusted page to<br/><b>%1</b><br/> denied.</qt>"
 msgstr ""
 "<qt>បាន​បដិសេធ​ការ​ចូល​ដំណើរការ​ដោយ​ទំព័រ​ដែល​មិន​ទុកចិត្ត​ទៅកាន់<br/><b>%1</b><br/> ។</qt>"
 
-#: src/webenginepage.cpp:644
+#: src/webenginepage.cpp:650
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -821,12 +821,12 @@ msgstr ""
 "ភាគី​ទីបី អាច​ទប់​ស្កាត់​ និង​មើល​ព័ត៌មាន​នេះ ។\n"
 "តើ​អ្នក​ប្រាកដ​ជា​ចង់​ផ្ញើ​ទិន្នន័យ​ដែល​មិន​បាន​អ៊ិនគ្រីប​ដែរ​ឬទេ ?"
 
-#: src/webenginepage.cpp:652
+#: src/webenginepage.cpp:658
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "ផ្ញើ​អ្វី​ដែល​មិនបាន​អ៊ិនគ្រីប"
 
-#: src/webenginepage.cpp:659
+#: src/webenginepage.cpp:665
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -835,12 +835,12 @@ msgstr ""
 "តំបន់បណ្ដាញ​​កំពុង​ប៉ុនប៉ង​ដាក់​ស្នើ​ពី​ទិន្នន័យ​តាម​រយៈ​អ៊ីមែល ។\n"
 "តើ​អ្នក​ចង់​បន្ត​ដែរ​ឬទេ ?"
 
-#: src/webenginepage.cpp:663
+#: src/webenginepage.cpp:669
 #, kde-format
 msgid "&Send Email"
 msgstr "ផ្ញើ​អ៊ីមែល"
 
-#: src/webenginepage.cpp:712
+#: src/webenginepage.cpp:718
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -848,22 +848,22 @@ msgid ""
 msgstr ""
 "<qt>តើ​អ្នក​ចង់​អនុញ្ញាត​ឲ្យ​តំបន់​បណ្ដាញ​នេះ​ភ្ជាប់​ឯកសារ​ដូច​ខាងក្រោម​ទៅ​កាន់​សារ​អ៊ីមែល​ដែរឬទេ ?</qt>"
 
-#: src/webenginepage.cpp:714
+#: src/webenginepage.cpp:720
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "ការ​អះអាង​ឯកសារ​ភ្ជាប់​តាម​អ៊ីមែល"
 
-#: src/webenginepage.cpp:715
+#: src/webenginepage.cpp:721
 #, kde-format
 msgid "&Allow attachments"
 msgstr "អនុញ្ញាត​ឲ្យ​មាន​ឯកសារ​ភ្ជាប់"
 
-#: src/webenginepage.cpp:716
+#: src/webenginepage.cpp:722
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "មិន​អើពើ​នឹង​ឯកសារ​ភ្ជាប់"
 
-#: src/webenginepage.cpp:730
+#: src/webenginepage.cpp:736
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -872,12 +872,12 @@ msgstr ""
 "តំបន់បណ្ដាញ​បាន​ប៉ុនប៉ង​ភ្ជាប់​ឯកសារ​ពី​កុំព្យូទ័រ​របស់​អ្នក​នៅ​ក្នុង​ការ​ដាក់​ស្នើ​សំណុំ​បែបបទ ។ ឯកសារ​ភ្ជាប់​ត្រូវ​​បាន​យក​"
 "ចេញ​​ដើម្បី​ជា​ការ​ការពារ​របស់​អ្នក ។"
 
-#: src/webenginepage.cpp:733
+#: src/webenginepage.cpp:739
 #, kde-format
 msgid "Attachment Removed"
 msgstr "បាន​យក​ឯកសារ​ភ្ជាប់​ចេញ"
 
-#: src/webenginepage.cpp:863
+#: src/webenginepage.cpp:869
 #, fuzzy, kde-format
 #| msgid ""
 #| "This site is requesting to open up a popup window.\n"
@@ -889,7 +889,7 @@ msgstr ""
 "តំបន់បណ្ដាញ​​កំពុង​ស្នើ​ឲ្យ​បើក​បង្អួច​លេចឡើង ។\n"
 "តើ​អ្នក​អនុញ្ញាត​ដែរ​ឬទេ ?"
 
-#: src/webenginepage.cpp:865
+#: src/webenginepage.cpp:871
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -897,17 +897,17 @@ msgid ""
 msgstr ""
 "<qt>តំបន់បណ្ដាញ​​កំពុង​ស្នើ​ឲ្យ​បើក​បង្អួច​លេចឡើង​ទៅកាន់<p>%1</p><br/>តើ​អ្នក​អនុញ្ញាត​ដែរ​ឬទេ ?</qt>"
 
-#: src/webenginepage.cpp:869
+#: src/webenginepage.cpp:875
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "ការ​អះអាង​ការ​លេចឡើង​របស់ Javascript"
 
-#: src/webenginepage.cpp:870
+#: src/webenginepage.cpp:876
 #, kde-format
 msgid "Allow"
 msgstr "អនុញ្ញាត"
 
-#: src/webenginepage.cpp:871
+#: src/webenginepage.cpp:877
 #, kde-format
 msgid "Do Not Allow"
 msgstr "កុំ​អនុញ្ញាត"
@@ -1209,31 +1209,31 @@ msgstr " - ប្រធាន​បទ ៖"
 msgid "&Issuer"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:219
+#: src/webenginepartdownloadmanager.cpp:225
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:227
+#: src/webenginepartdownloadmanager.cpp:233
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:228
+#: src/webenginepartdownloadmanager.cpp:234
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:229
+#: src/webenginepartdownloadmanager.cpp:235
 #, fuzzy, kde-format
 #| msgid "Description:"
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "សេចក្ដីពិពណ៌នា ៖"
 
-#: src/webenginepartdownloadmanager.cpp:242
+#: src/webenginepartdownloadmanager.cpp:248
 #, kde-format
 msgctxt "Finished saving BLOB URL"
 msgid "Finished saving %1 as %2"
