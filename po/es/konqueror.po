@@ -10,7 +10,7 @@
 # Jaime Robles <jaime@robles.nu>, 2005.
 # Santiago Fernandez Sancho <santi@kde-es.org>, 2005.
 # Pablo de Vicente <pablo.devicente@gmail.com>, 2005, 2006.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2005, 2010, 2012, 2013, 2016, 2017, 2019, 2020, 2021, 2022.
+# Eloy Cuadra <ecuadra@eloihr.net>, 2005, 2010, 2012, 2013, 2016, 2017, 2019, 2020, 2021, 2022, 2023.
 # Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>, 2007.
 # Cristina Yenyxe González García <the.blue.valkyrie@gmail.com>, 2010, 2011, 2012.
 # Javier Vinal <fjvinal@gmail.com>, 2011.
@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-06 01:00+0000\n"
-"PO-Revision-Date: 2022-11-10 03:34+0100\n"
+"PO-Revision-Date: 2023-02-06 15:19+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -31,7 +31,7 @@ msgstr ""
 "com>\n"
 "com>\n"
 "First-Translator: Boris Wesslowski <Boris@Wesslowski.com>\n"
-"X-Generator: Lokalize 22.08.2\n"
+"X-Generator: Lokalize 22.12.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -466,11 +466,10 @@ msgid "Location to open"
 msgstr "Ubicación a abrir"
 
 #: src/konqapplication.cpp:253
-#, fuzzy, kde-format
-#| msgid "Session to open"
+#, kde-format
 msgctxt "The session asked by the user doesn't exist or can't be opened"
 msgid "Session %1 couldn't be opened"
-msgstr "Sesión a abrir"
+msgstr "No se puede abrir la sesión %1"
 
 #: src/konqapplication.cpp:356
 #, kde-format

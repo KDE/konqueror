@@ -1,17 +1,17 @@
 # Translation of konqueror.po to Catalan
-# Copyright (C) 1999-2022 This_file_is_part_of_KDE
+# Copyright (C) 1999-2023 This_file_is_part_of_KDE
 #
 # Sebastià Pla i Sanz <sps@sastia.com>, 1999, 2000, 2001, 2002, 2004, 2005, 2006.
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2003, 2011, 2014, 2016, 2017, 2019, 2020, 2022.
 # Albert Astals Cid <aacid@kde.org>, 2004, 2005.
-# Josep M. Ferrer <txemaq@gmail.com>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
+# Josep M. Ferrer <txemaq@gmail.com>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 # Orestes Mas Casals <orestes@tsc.upc.edu>, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-06 01:00+0000\n"
-"PO-Revision-Date: 2022-11-10 08:17+0100\n"
+"PO-Revision-Date: 2023-02-06 13:15+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -456,11 +456,10 @@ msgid "Location to open"
 msgstr "Localització a obrir"
 
 #: src/konqapplication.cpp:253
-#, fuzzy, kde-format
-#| msgid "Session to open"
+#, kde-format
 msgctxt "The session asked by the user doesn't exist or can't be opened"
 msgid "Session %1 couldn't be opened"
-msgstr "Sessió a obrir"
+msgstr "No s'ha pogut obrir la sessió %1"
 
 #: src/konqapplication.cpp:356
 #, kde-format
