@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-27 02:40+0000\n"
-"PO-Revision-Date: 2023-01-23 08:44+0100\n"
+"PO-Revision-Date: 2023-02-07 08:36+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -36,12 +36,12 @@ msgstr "Konqueror"
 #: src/konqapplication.cpp:103
 #, kde-format
 msgid "Web browser, file manager and document viewer."
-msgstr ""
+msgstr "ბრაუზერი, ფაილების მმართველი და დოკუმენტების დამთვალიერებელი."
 
 #: src/konqapplication.cpp:105
 #, kde-format
 msgid "(C) 1999-2016, The Konqueror developers"
-msgstr ""
+msgstr "(C) 1999-2016, Konqueror-ის პროგრამისტები"
 
 #: src/konqapplication.cpp:108
 #, kde-format
@@ -208,7 +208,7 @@ msgstr "Allan Sandfeld Jensen"
 #: src/konqapplication.cpp:128
 #, kde-format
 msgid "Apple Safari Developers"
-msgstr ""
+msgstr "Apple Safari-ის პროგრამისტები"
 
 #: src/konqapplication.cpp:129
 #, kde-format
@@ -218,7 +218,7 @@ msgstr "Harri Porten"
 #: src/konqapplication.cpp:129
 #, kde-format
 msgid "Developer (JavaScript)"
-msgstr ""
+msgstr "პროგრამისტი (JavaScript)"
 
 #: src/konqapplication.cpp:130
 #, kde-format
@@ -238,7 +238,7 @@ msgstr "Matt Koss"
 #: src/konqapplication.cpp:131 src/konqapplication.cpp:132
 #, kde-format
 msgid "Developer (I/O library)"
-msgstr ""
+msgstr "პროგრამისტი (I/O ბიბლიოთეკა)"
 
 #: src/konqapplication.cpp:132
 #, kde-format
@@ -290,7 +290,7 @@ msgstr "George Staikos"
 #: src/konqapplication.cpp:137
 #, kde-format
 msgid "Developer (SSL, Netscape plugins)"
-msgstr ""
+msgstr "პროგრამისტი (SSL, Netscape-ის დამატებები)"
 
 #: src/konqapplication.cpp:138
 #, kde-format
@@ -315,7 +315,7 @@ msgstr "Torsten Rahn"
 #: src/konqapplication.cpp:140
 #, kde-format
 msgid "Graphics/icons"
-msgstr ""
+msgstr "გრაფიკა/ხატულები"
 
 #: src/konqapplication.cpp:141
 #, kde-format
@@ -335,7 +335,7 @@ msgstr "Joseph Wenninger"
 #: src/konqapplication.cpp:142
 #, kde-format
 msgid "Developer (navigation panel framework)"
-msgstr ""
+msgstr "პროგრამისტი (ნავიგაციის პანელი)"
 
 #: src/konqapplication.cpp:143
 #, kde-format
@@ -345,7 +345,7 @@ msgstr "Stephan Binner"
 #: src/konqapplication.cpp:143
 #, kde-format
 msgid "Developer (misc stuff)"
-msgstr ""
+msgstr "პროგრამისტი (დანარჩენი რამები)"
 
 #: src/konqapplication.cpp:144
 #, kde-format
@@ -355,7 +355,7 @@ msgstr "Ivor Hewitt"
 #: src/konqapplication.cpp:144
 #, kde-format
 msgid "Developer (AdBlock filter)"
-msgstr ""
+msgstr "პროგრამისტი (რეკლამების ფილტრი)"
 
 #: src/konqapplication.cpp:145
 #, kde-format
@@ -962,7 +962,7 @@ msgstr ""
 #: src/konqmainwindow.cpp:3629
 #, kde-format
 msgid "Clear Location Bar"
-msgstr ""
+msgstr "მდებარეობის ზოლის გასუფთავება"
 
 #: src/konqmainwindow.cpp:3633
 #, kde-format
@@ -1004,7 +1004,7 @@ msgstr ""
 #: src/konqmainwindow.cpp:3682
 #, kde-format
 msgid "Enter the parent folder"
-msgstr ""
+msgstr "მშობელ საქაღალდეში გადასვლა"
 
 #: src/konqmainwindow.cpp:3684 src/konqmainwindow.cpp:3685
 #, kde-format
@@ -1073,7 +1073,7 @@ msgstr ""
 #: src/konqmainwindow.cpp:3713
 #, kde-format
 msgid "Stop loading the document"
-msgstr ""
+msgstr "დოკუმენტის ჩატვირთვის გაჩერება"
 
 #: src/konqmainwindow.cpp:3715
 #, kde-format
@@ -1145,7 +1145,7 @@ msgstr ""
 #: src/konqmainwindow.cpp:3745
 #, kde-format
 msgid "&Inspect Current Page"
-msgstr ""
+msgstr "&მიმდინარე გვერდის ინსპექტირება"
 
 #: src/konqmainwindow.cpp:3746
 #, kde-format
@@ -1180,7 +1180,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Open bookmarks folder in new tabs"
-msgstr ""
+msgstr "სანიშნების საქაღალდის ახალ ჩანართებში გახსნა"
 
 #: src/konqmainwindow.cpp:4249
 #, kde-format
@@ -1211,7 +1211,7 @@ msgstr "&ახალ ჩანართში გახსნა"
 #: src/konqmainwindow.cpp:4424
 #, kde-format
 msgid "Open the document in a new tab"
-msgstr ""
+msgstr "დოკუმენტის ახალ ჩანართში გახსნა"
 
 #: src/konqmainwindow.cpp:4640
 #, kde-format
@@ -1485,7 +1485,7 @@ msgstr "სესიის აღდგენა"
 #, kde-format
 msgctxt "@action:button no"
 msgid "Do Not Restore"
-msgstr ""
+msgstr "არ აღადგინო"
 
 #: src/konqsessionmanager.cpp:206
 #, kde-format
@@ -1578,7 +1578,7 @@ msgstr ""
 #: src/konqueror.kcfg:26
 #, kde-format
 msgid "Maximum number of Closed Items"
-msgstr ""
+msgstr "დახურული ჩანაწერების მაქსიმალური რაოდენობა"
 
 #. i18n: ectx: whatsthis, entry, group (UndoManagerSettings)
 #: src/konqueror.kcfg:27
@@ -1606,7 +1606,7 @@ msgstr ""
 #: src/konqueror.kcfg:42
 #, kde-format
 msgid "Show file tips"
-msgstr ""
+msgstr "ფაილის მინიშნებების ჩვენება"
 
 #. i18n: ectx: whatsthis, entry, group (FMSettings)
 #: src/konqueror.kcfg:43
@@ -1620,7 +1620,7 @@ msgstr ""
 #: src/konqueror.kcfg:54
 #, kde-format
 msgid "Show previews in file tips"
-msgstr ""
+msgstr "ფაილის მინიშნებებში მინიატურების ჩვენება"
 
 #. i18n: ectx: whatsthis, entry, group (FMSettings)
 #: src/konqueror.kcfg:55
@@ -1674,7 +1674,7 @@ msgstr ""
 #: src/konqueror.kcfg:504
 #, kde-format
 msgid "Ask confirmation for deleting a file."
-msgstr ""
+msgstr "დადასტურების მოთხოვნა ფაილის წაშლამდე."
 
 #. i18n: ectx: whatsthis, entry, group (Trash)
 #: src/konqueror.kcfg:505
@@ -1689,7 +1689,7 @@ msgstr ""
 #: src/konqueror.kcfg:510
 #, kde-format
 msgid "Ask confirmation for move to trash"
-msgstr ""
+msgstr "დადასტურების მოთხოვნა სანაგვე ყუთში გადატანამდე"
 
 #. i18n: ectx: whatsthis, entry, group (Trash)
 #: src/konqueror.kcfg:511
