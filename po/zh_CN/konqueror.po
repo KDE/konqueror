@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-06 01:00+0000\n"
-"PO-Revision-Date: 2023-01-12 10:30\n"
+"PO-Revision-Date: 2023-02-07 11:02\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -437,18 +437,17 @@ msgid "Location to open"
 msgstr "要打开的位置"
 
 #: src/konqapplication.cpp:253
-#, fuzzy, kde-format
-#| msgid "Session to open"
+#, kde-format
 msgctxt "The session asked by the user doesn't exist or can't be opened"
 msgid "Session %1 couldn't be opened"
-msgstr "要打开的会话"
+msgstr ""
 
 #: src/konqapplication.cpp:356
 #, kde-format
 msgid ""
 "You can't pass URLs when using the --preload switch. The URLs will be "
 "ignored\n"
-msgstr ""
+msgstr "您不能在使用 --preload 参数时传递 URL。该 URL 将被忽略\n"
 
 #: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4883
 #: src/konqmainwindow.cpp:4929
@@ -1242,7 +1241,7 @@ msgstr "在新标签中打开书签文件夹"
 #, kde-format
 msgctxt "@action:button"
 msgid "Open"
-msgstr ""
+msgstr "打开"
 
 #: src/konqmainwindow.cpp:4407
 #, kde-format

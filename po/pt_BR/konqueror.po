@@ -10,7 +10,7 @@
 # Diniz Bortolotto <diniz.bortolotto@gmail.com>, 2007, 2008.
 # doutor.zero <doutor.zero@gmail.com>, 2007.
 # André Marcelo Alvarenga <alvarenga@kde.org>, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2019.
-# Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2008, 2009, 2010, 2016, 2017, 2019, 2020, 2021, 2022.
+# Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2008, 2009, 2010, 2016, 2017, 2019, 2020, 2021, 2022, 2023.
 # Marcus Vinícius de Andrade Gama <marcus.gama@gmail.com>, 2010, 2012.
 # Aracele Torres <araceletorres@gmail.com>, 2011, 2017.
 # Camila Moura <camila.moura@kde.org>, 2017.
@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-06 01:00+0000\n"
-"PO-Revision-Date: 2022-12-20 09:38-0300\n"
+"PO-Revision-Date: 2023-02-07 10:46-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -458,11 +458,10 @@ msgid "Location to open"
 msgstr "Localização a ser aberta"
 
 #: src/konqapplication.cpp:253
-#, fuzzy, kde-format
-#| msgid "Session to open"
+#, kde-format
 msgctxt "The session asked by the user doesn't exist or can't be opened"
 msgid "Session %1 couldn't be opened"
-msgstr "Seção a ser aberta"
+msgstr "A seção %1 não pode ser aberta"
 
 #: src/konqapplication.cpp:356
 #, kde-format

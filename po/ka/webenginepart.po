@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-06 01:00+0000\n"
-"PO-Revision-Date: 2023-02-03 16:40+0100\n"
+"PO-Revision-Date: 2023-02-07 07:45+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -48,6 +48,7 @@ msgstr "Konqueror"
 #, kde-format
 msgid "Konqueror is a web browser, file manager and universal document viewer."
 msgstr ""
+"Konqueror- ბრაუზერი, ფაილების მმართველი და დოკუმენტების დამთვალიერებელია."
 
 #: src/about/konq_aboutpage.cpp:76 src/about/konq_aboutpage.cpp:136
 #: src/about/konq_aboutpage.cpp:188 src/about/konq_aboutpage.cpp:288
@@ -167,7 +168,7 @@ msgstr ""
 #: src/about/konq_aboutpage.cpp:157
 #, kde-format
 msgid "Next: Tips & Tricks"
-msgstr ""
+msgstr "შემდეგი: შენიშვნები და მინიშნებები"
 
 #: src/about/konq_aboutpage.cpp:193
 #, kde-format
@@ -193,7 +194,7 @@ msgstr "მხარდაჭერილი სტანდარტები"
 #: src/about/konq_aboutpage.cpp:202
 #, kde-format
 msgid "Additional requirements*"
-msgstr ""
+msgstr "დამატებითი მოთხოვნები*"
 
 #: src/about/konq_aboutpage.cpp:203
 #, kde-format
@@ -279,7 +280,7 @@ msgstr ""
 #: src/about/konq_aboutpage.cpp:225
 #, kde-format
 msgid "AutoCompletion for forms"
-msgstr ""
+msgstr "ფორმების ავტომატური შევსება"
 
 #: src/about/konq_aboutpage.cpp:227
 #, kde-format
@@ -315,7 +316,7 @@ msgstr "გადაცემის პროტოკოლები"
 #: src/about/konq_aboutpage.cpp:233
 #, kde-format
 msgid "HTTP 1.1 (including gzip/bzip2 compression)"
-msgstr ""
+msgstr "HTTP 1.1 (gzip/bzip2 შეკუმშვის ჩათვლით)"
 
 #: src/about/konq_aboutpage.cpp:234
 #, kde-format
@@ -346,7 +347,7 @@ msgstr "მხტუნარა"
 #: src/about/konq_aboutpage.cpp:239
 #, kde-format
 msgid "(Short-) Automatic"
-msgstr ""
+msgstr "(მოკლე-) ავტომატური"
 
 #: src/about/konq_aboutpage.cpp:241
 #, kde-format
@@ -354,12 +355,12 @@ msgctxt ""
 "Link that points to the first page of the Konqueror 'about page', Starting "
 "Points contains links to Home, Network Folders, Trash, etc."
 msgid "<a href=\"%1\">Return to Starting Points</a>"
-msgstr ""
+msgstr "<a href=\"%1\">საწყის წერტილებზე დაბრუნება</a>"
 
 #: src/about/konq_aboutpage.cpp:292
 #, kde-format
 msgid "Tips & Tricks"
-msgstr ""
+msgstr "შენიშვნები და მინიშნებები"
 
 #: src/about/konq_aboutpage.cpp:293
 #, kde-format
@@ -892,7 +893,7 @@ msgstr "დასაბეჭდის გადახედვა"
 #, kde-format
 msgctxt "zoom in action"
 msgid "Zoom In"
-msgstr ""
+msgstr "გადიდება"
 
 #: src/webenginepart.cpp:237
 #, kde-format
@@ -953,7 +954,7 @@ msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
 "CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
 msgid "Email: "
-msgstr ""
+msgstr "ელფოსტა: "
 
 #: src/webenginepart.cpp:682
 #, kde-format
@@ -1026,7 +1027,7 @@ msgstr ""
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill forms now"
-msgstr ""
+msgstr "&ფორმების ახლავე შევსება"
 
 #: src/webenginepart.cpp:1025
 #, kde-format
@@ -1091,7 +1092,7 @@ msgstr "&ხელსაწყოები"
 #: src/webenginepart.rc:32
 #, kde-format
 msgid "&Credential management"
-msgstr ""
+msgstr "&ავტორიზაციის დეტალების მართვა"
 
 #. i18n: ectx: ToolBar (htmlToolBar)
 #: src/webenginepart.rc:47
@@ -1334,12 +1335,12 @@ msgstr "ბმის &შენახვა როგორც..."
 #: src/webengineview.cpp:496
 #, kde-format
 msgid "&Play/Pause"
-msgstr ""
+msgstr "&დაკვრა/პაუზა"
 
 #: src/webengineview.cpp:501
 #, kde-format
 msgid "Un&mute/&Mute"
-msgstr ""
+msgstr "&დადუმება/დადუმების მოხსნა"
 
 #: src/webengineview.cpp:506
 #, kde-format
