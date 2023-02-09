@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-06 01:00+0000\n"
-"PO-Revision-Date: 2023-02-07 07:45+0100\n"
+"PO-Revision-Date: 2023-02-08 06:20+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -248,7 +248,7 @@ msgstr ""
 #: src/about/konq_aboutpage.cpp:215
 #, kde-format
 msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
-msgstr ""
+msgstr "Java-ის ჩართვა (გლობალურად) <A HREF=\"%1\">აქ</A>."
 
 #: src/about/konq_aboutpage.cpp:216
 #, kde-format
@@ -275,7 +275,7 @@ msgstr "OpenSSL"
 #: src/about/konq_aboutpage.cpp:223
 #, kde-format
 msgid "Bidirectional 16bit unicode support"
-msgstr ""
+msgstr "ორმხრივი 16-ბიტიანი უნიკოდის მხარდაჭერა"
 
 #: src/about/konq_aboutpage.cpp:225
 #, kde-format
@@ -658,13 +658,13 @@ msgstr "აირჩიეთ დასამახსოვრებელი �
 #: src/webenginecustomizecacheablefieldsdlg.ui:41
 #, kde-format
 msgid "Switch between displaying passwords or placeholders"
-msgstr ""
+msgstr "პაროლებსა და ადგილმჭერებს შორის გადართვა"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showDetails)
 #: src/webenginecustomizecacheablefieldsdlg.ui:64
 #, kde-format
 msgid "Show advanced information about the fields"
-msgstr ""
+msgstr "ველების შესახებ დამატებითი ინფორმაციის ჩვენება"
 
 #. i18n: ectx: property (text), widget (QCheckBox, showDetails)
 #: src/webenginecustomizecacheablefieldsdlg.ui:67
@@ -683,13 +683,13 @@ msgstr "ხელმისაწვდომი &ველები"
 #: src/webenginecustomizecacheablefieldsdlg.ui:101
 #, kde-format
 msgid "Store form data in KWallet when closing the dialog"
-msgstr ""
+msgstr "ფანჯრის დახურვისას ფორმის მონაცემების KWallet-ში შენახვა"
 
 #. i18n: ectx: property (text), widget (QCheckBox, immediatelyCacheData)
 #: src/webenginecustomizecacheablefieldsdlg.ui:104
 #, kde-format
 msgid "&Immediately memorize form data"
-msgstr ""
+msgstr "&ფორმის მონაცემების დაუყოვნებლივი დამახსოვრება"
 
 #: src/webenginepage.cpp:135
 #, kde-format
@@ -946,7 +946,7 @@ msgstr ""
 #: src/webenginepart.cpp:572
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
-msgstr ""
+msgstr "როგორც ჩანს, SSL ინფორმაცია ამ საიტისთვის დაზიანებულია."
 
 #: src/webenginepart.cpp:653
 #, kde-format
@@ -1032,12 +1032,12 @@ msgstr "&ფორმების ახლავე შევსება"
 #: src/webenginepart.cpp:1025
 #, kde-format
 msgid "&Memorize Passwords in This Page Now"
-msgstr ""
+msgstr "&ამ გვერდისთვის პაროლების ახლავე დამახსოვრება"
 
 #: src/webenginepart.cpp:1029
 #, kde-format
 msgid "&Customize Fields to Memorize for This Page..."
-msgstr ""
+msgstr "&ამ გვერდისთვის დასამახსოვრებელი ველების მორგება..."
 
 #: src/webenginepart.cpp:1033
 #, kde-format
@@ -1047,12 +1047,12 @@ msgstr ""
 #: src/webenginepart.cpp:1037
 #, kde-format
 msgid "&Allow Password Caching for This Site"
-msgstr ""
+msgstr "&ამ საიტისთვის პაროლების დამახსოვრების დაშვება"
 
 #: src/webenginepart.cpp:1041
 #, kde-format
 msgid "Remove All Memorized Passwords for This Site"
-msgstr ""
+msgstr "ამ საიტისთვის ყველა დამახსოვრებული პაროლის წაშლა"
 
 #: src/webenginepart.cpp:1045
 #, kde-format
@@ -1173,7 +1173,7 @@ msgstr "&გამომცემელი"
 #: src/webenginepartdownloadmanager.cpp:225
 #, kde-format
 msgid "An error occurred while saving the file: %1"
-msgstr ""
+msgstr "შეცდომა ფაილის შენახვისას: %1"
 
 #: src/webenginepartdownloadmanager.cpp:233
 #, kde-format
@@ -1197,7 +1197,7 @@ msgstr "დანიშნულება"
 #, kde-format
 msgctxt "Finished saving BLOB URL"
 msgid "Finished saving %1 as %2"
-msgstr ""
+msgstr "%1-ის %2-ის სახით შენახვა დასრულდა"
 
 #: src/webengineparterrorschemehandler.cpp:96
 #, kde-format
@@ -1345,12 +1345,12 @@ msgstr "&დადუმება/დადუმების მოხსნა
 #: src/webengineview.cpp:506
 #, kde-format
 msgid "Toggle &Loop"
-msgstr ""
+msgstr "მარყუჟის &გადართვა"
 
 #: src/webengineview.cpp:511
 #, kde-format
 msgid "Toggle &Controls"
-msgstr ""
+msgstr "საკონტროლო &ღილაკების გადართვა"
 
 #: src/webengineview.cpp:522
 #, kde-format
