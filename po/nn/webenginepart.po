@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-11 00:45+0000\n"
+"POT-Creation-Date: 2023-02-06 01:00+0000\n"
 "PO-Revision-Date: 2021-01-16 15:33+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -752,12 +752,12 @@ msgstr "Lagra skjemadata i KWallet ved lukking av vindauget"
 msgid "&Immediately memorize form data"
 msgstr "&Hugs skjemadata med ein gong"
 
-#: src/webenginepage.cpp:133
+#: src/webenginepage.cpp:135
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr "Fann ikkje nedlastingshandsamaren (%1) installert."
 
-#: src/webenginepage.cpp:134
+#: src/webenginepage.cpp:136
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -769,7 +769,7 @@ msgstr ""
 "\n"
 "Integreringa vert slått av."
 
-#: src/webenginepage.cpp:291
+#: src/webenginepage.cpp:294
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -782,12 +782,12 @@ msgstr ""
 "trykk «Avbryt» for å unngå at ordren vert gjord på nytt. Elles kan du "
 "trykkja på «Hald fram» for å visa nettsida på nytt.</p>"
 
-#: src/webenginepage.cpp:298
+#: src/webenginepage.cpp:301
 #, kde-format
 msgid "Resubmit Information"
 msgstr "Send informasjon på nytt"
 
-#: src/webenginepage.cpp:530
+#: src/webenginepage.cpp:536
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -796,18 +796,18 @@ msgstr ""
 "Denne nettstaden ønskjer å henta informasjon om kor du fysisk er.\n"
 "Vil du gje tilgang til denne informasjonen?"
 
-#: src/webenginepage.cpp:534 src/webenginepage.cpp:651
-#: src/webenginepage.cpp:662
+#: src/webenginepage.cpp:540 src/webenginepage.cpp:657
+#: src/webenginepage.cpp:668
 #, kde-format
 msgid "Network Transmission"
 msgstr "Nettverksoverføring"
 
-#: src/webenginepage.cpp:535
+#: src/webenginepage.cpp:541
 #, kde-format
 msgid "Allow access"
 msgstr "Gje tilgang"
 
-#: src/webenginepage.cpp:610
+#: src/webenginepage.cpp:616
 #, kde-format
 msgid ""
 "<qt>This untrusted page links to<br/><b>%1</b>.<br/>Do you want to follow "
@@ -816,28 +816,28 @@ msgstr ""
 "<qt>Denne sida er ikkje tiltrudd, men ho inneheld ei lenkje til<br /><b>%1</"
 "b>.<br/>Vil du følgja denne lenkja?</qt>"
 
-#: src/webenginepage.cpp:612
+#: src/webenginepage.cpp:618
 #, kde-format
 msgid "Security Warning"
 msgstr "Tryggleiksåtvaring"
 
-#: src/webenginepage.cpp:613
+#: src/webenginepage.cpp:619
 #, kde-format
 msgctxt "follow link despite of security warning"
 msgid "Follow"
 msgstr "Følg"
 
-#: src/webenginepage.cpp:615
+#: src/webenginepage.cpp:621
 #, kde-format
 msgid "Security Alert"
 msgstr "Tryggleiksåtvaring"
 
-#: src/webenginepage.cpp:616
+#: src/webenginepage.cpp:622
 #, kde-format
 msgid "<qt>Access by untrusted page to<br/><b>%1</b><br/> denied.</qt>"
 msgstr "<qt>Tilgang nekta frå den ikkje tiltrudde sida til<br/><b>%1</b>.</qt>"
 
-#: src/webenginepage.cpp:644
+#: src/webenginepage.cpp:650
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -850,12 +850,12 @@ msgstr ""
 "Uvedkommande kan kanskje då få tilgang til informasjonen.\n"
 "Er du sikker på at du vil senda informasjonen ukryptert?"
 
-#: src/webenginepage.cpp:652
+#: src/webenginepage.cpp:658
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&Send ukryptert"
 
-#: src/webenginepage.cpp:659
+#: src/webenginepage.cpp:665
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -864,12 +864,12 @@ msgstr ""
 "Denne nettstaden prøver å senda skjemadata med e-post.\n"
 "Vil du halda fram?"
 
-#: src/webenginepage.cpp:663
+#: src/webenginepage.cpp:669
 #, kde-format
 msgid "&Send Email"
 msgstr "&Send e-post"
 
-#: src/webenginepage.cpp:712
+#: src/webenginepage.cpp:718
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -877,22 +877,22 @@ msgid ""
 msgstr ""
 "<qt>Vil du tillata nettsida å leggja desse filene ved e-postmeldinga?</qt>"
 
-#: src/webenginepage.cpp:714
+#: src/webenginepage.cpp:720
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Stadfesting for e-postvedlegg"
 
-#: src/webenginepage.cpp:715
+#: src/webenginepage.cpp:721
 #, kde-format
 msgid "&Allow attachments"
 msgstr "&Tillat vedlegg"
 
-#: src/webenginepage.cpp:716
+#: src/webenginepage.cpp:722
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&Ignorer vedlegg"
 
-#: src/webenginepage.cpp:730
+#: src/webenginepage.cpp:736
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -901,12 +901,12 @@ msgstr ""
 "Nettsida prøvde å senda ei fil frå datamaskina di ved innsending av "
 "skjemaet. For å verna deg vart vedlegget fjerna."
 
-#: src/webenginepage.cpp:733
+#: src/webenginepage.cpp:739
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Vedlegg fjerna"
 
-#: src/webenginepage.cpp:863
+#: src/webenginepage.cpp:869
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -915,7 +915,7 @@ msgstr ""
 "Nettsida ønskjer å opna eit sprettoppvindauge.\n"
 "Vil du tillata dette?"
 
-#: src/webenginepage.cpp:865
+#: src/webenginepage.cpp:871
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -924,17 +924,17 @@ msgstr ""
 "<qt>Nettsida ønskjer å visa eit sprettoppvindauge til<p>%1</p><br/>Vil du "
 "tillata dette?</qt>"
 
-#: src/webenginepage.cpp:869
+#: src/webenginepage.cpp:875
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Stadfesting av sprettoppvindauge"
 
-#: src/webenginepage.cpp:870
+#: src/webenginepage.cpp:876
 #, kde-format
 msgid "Allow"
 msgstr "Tillat"
 
-#: src/webenginepage.cpp:871
+#: src/webenginepage.cpp:877
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Ikkje tillat"
@@ -1230,30 +1230,30 @@ msgstr ""
 msgid "&Issuer"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:219
+#: src/webenginepartdownloadmanager.cpp:225
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr "Det oppstod ein feil ved lagring av fila: %1"
 
-#: src/webenginepartdownloadmanager.cpp:227
+#: src/webenginepartdownloadmanager.cpp:233
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr "Lastar ned"
 
-#: src/webenginepartdownloadmanager.cpp:228
+#: src/webenginepartdownloadmanager.cpp:234
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr "Kjelde"
 
-#: src/webenginepartdownloadmanager.cpp:229
+#: src/webenginepartdownloadmanager.cpp:235
 #, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "Mål"
 
-#: src/webenginepartdownloadmanager.cpp:242
+#: src/webenginepartdownloadmanager.cpp:248
 #, kde-format
 msgctxt "Finished saving BLOB URL"
 msgid "Finished saving %1 as %2"
