@@ -53,7 +53,7 @@ KonqSideBarTreeModule::KonqSideBarTreeModule(QWidget *parent,
     sorted_model->setSortFoldersFirst(true);
     sorted_model->setSourceModel(model); 
     model->dirLister()->setDirOnlyMode(true);
-    model->dirLister()->setShowingDotFiles(configGroup.readEntry("ShowHiddenFolders", false));
+    model->dirLister()->setShowHiddenFiles(configGroup.readEntry("ShowHiddenFolders", false));
 
     model->openUrl(m_initURL, KDirModel::ShowRoot);
 

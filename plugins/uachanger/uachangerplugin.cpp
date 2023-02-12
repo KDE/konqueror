@@ -50,7 +50,7 @@ UAChangerPlugin::UAChangerPlugin(QObject *parent,
         m_part = qobject_cast<KParts::ReadOnlyPart *>(parent);
         connect(m_part, &KParts::ReadOnlyPart::started, this, &UAChangerPlugin::slotEnableMenu);
         connect(m_part, QOverload<>::of(&KParts::ReadOnlyPart::completed), this, &UAChangerPlugin::slotEnableMenu);
-        connect(m_part, QOverload<bool>::of(&KParts::ReadOnlyPart::completed), this, &UAChangerPlugin::slotEnableMenu);
+        connect(m_part, &KParts::ReadOnlyPart::completedWithPendingAction, this, &UAChangerPlugin::slotEnableMenu);
     }
 }
 

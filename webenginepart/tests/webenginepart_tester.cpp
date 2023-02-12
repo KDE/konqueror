@@ -319,7 +319,7 @@ public slots:
         if (getUrl(qstr)) {
             QUrl url(qstr, QUrl::StrictMode);
             if (url.isValid()) {
-                m_stdOut << "Loading " << qstr << " ......" << endl;
+                m_stdOut << "Loading " << qstr << " ......" << Qt::endl;
                 m_view->load(url);
             } else
                 loadNext();

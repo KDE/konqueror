@@ -247,11 +247,11 @@ void KonqNewSessionDlg::slotAddSession()
     QDir dir(dirpath);
     if (dir.exists()) {
         if ((d->m_mode == ReplaceFile) ||
-            KMessageBox::questionYesNo(this,
+            KMessageBox::questionTwoActions(this,
                                        i18n("A session with the name '%1' already exists, do you want to overwrite it?", d->m_pSessionName->text()),
                                        i18nc("@title:window", "Session exists. Overwrite?"),
                                        KStandardGuiItem::overwrite(),
-                                       KStandardGuiItem::cancel()) == KMessageBox::Yes) {
+                                       KStandardGuiItem::cancel()) == KMessageBox::PrimaryAction) {
             QDir(dirpath).removeRecursively();
         } else {
             return;

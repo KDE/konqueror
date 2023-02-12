@@ -61,6 +61,6 @@ void CSSTemplate::doExpand(QTextStream &is, QTextStream &os, const QMap<QString,
                 line.replace(start, end - start + 1, res);
             }
         }
-        os << line << endl;
+        os << line << Qt::endl;
     }
 }

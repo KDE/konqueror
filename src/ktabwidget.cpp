@@ -367,7 +367,7 @@ void KTabWidget::dropEvent(QDropEvent *event)
 #ifndef QT_NO_WHEELEVENT
 void KTabWidget::wheelEvent(QWheelEvent *event)
 {
-    if (d->isEmptyTabbarSpace(event->pos())) {
+    if (d->isEmptyTabbarSpace(event->position().toPoint())) {
         QCoreApplication::sendEvent(tabBar(), event);
     } else {
         QTabWidget::wheelEvent(event);

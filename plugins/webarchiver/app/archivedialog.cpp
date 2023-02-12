@@ -569,9 +569,9 @@ void ArchiveDialog::slotProcessFinished(int exitCode, QProcess::ExitStatus exitS
     if (!message.isEmpty())
     {
         message += xi18nc("@info", "<para>Retain the partial web archive?</para>");
-        if (KMessageBox::questionYesNo(this, message, i18n("Retain Archive?"),
+        if (KMessageBox::questionTwoActions(this, message, i18n("Retain Archive?"),
                                        KGuiItem(i18n("Retain"), KStandardGuiItem::save().icon()),
-                                       KStandardGuiItem::discard())==KMessageBox::No)
+                                       KStandardGuiItem::discard())==KMessageBox::SecondaryAction)
         {
             showMessageAndCleanup(xi18nc("@info",
                                          "Creating the web archive failed."),

@@ -61,7 +61,7 @@ private Q_SLOTS:
         if (needsUpdate) {
             profile->sync();
             // kbuildsycoca is the one reading mimeapps.list, so we need to run it now
-            QProcess::execute(QStandardPaths::findExecutable(KBUILDSYCOCA_EXENAME));
+            QProcess::execute(QStandardPaths::findExecutable(KBUILDSYCOCA_EXENAME), {});
         }
     }
     void cleanupTestCase()

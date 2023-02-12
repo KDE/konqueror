@@ -305,11 +305,11 @@ void KCMFilter::exportFilters()
         if (f.open(QIODevice::WriteOnly)) {
             QTextStream ts(&f);
             ts.setCodec("UTF-8");
-            ts << "[AdBlock]" << endl;
+            ts << "[AdBlock]" << Qt::endl;
 
             int nbLine =  mListBox->count();
             for (int i = 0; i < nbLine; ++i) {
-                ts << mListBox->item(i)->text() << endl;
+                ts << mListBox->item(i)->text() << Qt::endl;
             }
 
             f.close();

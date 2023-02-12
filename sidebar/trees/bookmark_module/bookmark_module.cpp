@@ -330,14 +330,14 @@ void KonqSidebarBookmarkModule::slotDelete()
     KBookmark bookmark = bi->bookmark();
     bool folder = bookmark.isGroup();
 
-    if (KMessageBox::warningYesNo(
+    if (KMessageBox::warningTwoActions(
                 tree(),
                 folder ? i18n("Are you sure you wish to remove the bookmark folder\n\"%1\"?", bookmark.text())
                 : i18n("Are you sure you wish to remove the bookmark\n\"%1\"?", bookmark.text()),
                 folder ? i18nc("@title:window", "Bookmark Folder Deletion")
                 : i18nc("@title:window", "Bookmark Deletion"),
                 KStandardGuiItem::del(), KStandardGuiItem::cancel())
-            != KMessageBox::Yes
+            != KMessageBox::PrimaryAction
        ) {
         return;
     }

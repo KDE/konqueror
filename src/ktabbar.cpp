@@ -172,7 +172,7 @@ void KTabBar::dropEvent(QDropEvent *event)
 #ifndef QT_NO_WHEELEVENT
 void KTabBar::wheelEvent(QWheelEvent *event)
 {
-    if (!(event->orientation() == Qt::Horizontal)) {
+    if (event->angleDelta().y() != 0) {
         if (receivers(SIGNAL(wheelDelta(int)))) {
             emit(wheelDelta(event->angleDelta().y()));
             return;

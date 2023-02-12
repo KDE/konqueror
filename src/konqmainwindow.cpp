@@ -147,6 +147,7 @@
 #include <KProtocolManager>
 #include <KParts/PartLoader>
 #include <KApplicationTrader>
+#include <KX11Extras>
 
 #include <QMetaObject>
 #include <QMetaMethod>
@@ -170,7 +171,7 @@ static void raiseWindow(KonqMainWindow *window)
     }
 
     if (window->isMinimized()) {
-        KWindowSystem::unminimizeWindow(window->winId());
+        KX11Extras::unminimizeWindow(window->winId());
     }
     window->activateWindow();
     window->raise();
@@ -1320,7 +1321,6 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url,
                 // Avoid Qt's support for user time by setting it to 0, and
                 // set the property ourselves.
                 QX11Info::setAppUserTime(0);
-                KWindowSystem::setUserTime(mainWindow->winId(), 0);
             }
             // Put below the current window before showing, in case that actually works with the WM.
             // First do complete lower(), then stackUnder(), because the latter may not work with many WMs.
@@ -4241,12 +4241,12 @@ void KonqExtendedBookmarkOwner::openFolderinTabs(const KBookmarkGroup &grp)
     }
 
     if (list.size() > 20) {
-        if (KMessageBox::questionYesNo(m_pKonqMainWindow,
+        if (KMessageBox::questionTwoActions(m_pKonqMainWindow,
                                        i18n("You have requested to open more than 20 bookmarks in tabs. "
                                             "This might take a while. Continue?"),
                                        i18nc("@title:window", "Open bookmarks folder in new tabs"),
                                        KGuiItem(i18nc("@action:button", "Open"), QStringLiteral("tab-new")),
-                                       KStandardGuiItem::cancel()) != KMessageBox::Yes) {
+                                       KStandardGuiItem::cancel()) != KMessageBox::PrimaryAction) {
             return;
         }
     }
@@ -4812,7 +4812,7 @@ void KonqMainWindow::closeEvent(QCloseEvent *e)
 
             if (!cs.hasKey("MultipleTabConfirm")) {
                 switch (
-                    KMessageBox::warningYesNoCancel(
+                    KMessageBox::warningTwoActionsCancel(
                         this,
                         i18n("You have multiple tabs open in this window, "
                              "are you sure you want to quit?"),
@@ -4823,9 +4823,9 @@ void KonqMainWindow::closeEvent(QCloseEvent *e)
                         QStringLiteral("MultipleTabConfirm")
                     )
                 ) {
-                case KMessageBox::Yes :
+                case KMessageBox::PrimaryAction :
                     break;
-                case KMessageBox::No :
+                case KMessageBox::SecondaryAction :
                     e->ignore();
                     slotRemoveTab();
                     return;
@@ -5006,12 +5006,12 @@ void KonqMainWindow::slotAddWebSideBar(const QUrl &url, const QString &name)
         return;
     }
 
-    int rc = KMessageBox::questionYesNo(nullptr,
+    int rc = KMessageBox::questionTwoActions(nullptr,
                                         i18n("Add new web extension \"%1\" to your sidebar?",
                                                 name.isEmpty() ? name : url.toDisplayString()),
                                         i18nc("@title:window", "Web Sidebar"), KGuiItem(i18n("Add")), KGuiItem(i18n("Do Not Add")));
 
-    if (rc == KMessageBox::Yes) {
+    if (rc == KMessageBox::PrimaryAction) {
         // Show the sidebar
         if (!static_cast<KToggleAction *>(a)->isChecked()) {
             a->trigger();
@@ -5443,10 +5443,10 @@ void KonqMainWindow::updateProxyForWebEngine(bool updateProtocolManager)
                            "and Web Proxy Auto-Discovery protocol can't be used with QtWebEngine. If you need a proxy, please select "
                            "the system proxy configuration or specify a proxy URL manually in the settings dialog. Do you want to "
                            "change proxy settings now?");
-        KMessageBox::ButtonCode ans = KMessageBox::warningYesNo(this, msg, i18n("Unsupported proxy configuration"), KGuiItem(i18n("Don't use a proxy")),
+        KMessageBox::ButtonCode ans = KMessageBox::warningTwoActions(this, msg, i18n("Unsupported proxy configuration"), KGuiItem(i18n("Don't use a proxy")),
                                                                 KGuiItem(i18n("Show proxy configuration dialog")), "WebEngineUnsupportedProxyType");
         QNetworkProxy::setApplicationProxy(QNetworkProxy(QNetworkProxy::NoProxy));
-        if (ans == KMessageBox::No) {
+        if (ans == KMessageBox::SecondaryAction) {
             slotConfigure("proxy");
             return;
         }
@@ -5461,9 +5461,9 @@ void KonqMainWindow::updateProxyForWebEngine(bool updateProtocolManager)
             QString msg =  i18n("Your proxy configuration can't be used with the QtWebEngine HTML engine because it doesn't support having different proxies for the HTTP and HTTPS protocols. Your current settings are:"
             "<p><b>HTTP proxy:</b> <tt>%1</tt></p><p><b>HTTPS proxy: </b><tt>%2</tt></p>"
             "What do you want to do?", httpProxy, httpsProxy);
-            KMessageBox::ButtonCode ans = KMessageBox::questionYesNoCancel(this, msg, i18n("Conflicting proxy configuration"),
+            KMessageBox::ButtonCode ans = KMessageBox::questionTwoActionsCancel(this, msg, i18n("Conflicting proxy configuration"),
                 KGuiItem(i18n("Use HTTP proxy (only this time)")), KGuiItem(i18n("Use HTTPS proxy (only this time)")), KGuiItem(i18n("Show proxy configuration dialog")), "WebEngineConflictingProxy");
-            if (ans == KMessageBox::Yes) {
+            if (ans == KMessageBox::PrimaryAction) {
                 url = QUrl(httpProxy);
             } else if (ans == KMessageBox::Cancel) {
                 slotConfigure("proxy");

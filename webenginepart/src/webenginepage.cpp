@@ -871,10 +871,10 @@ bool NewWindowPage::acceptNavigationRequest(const QUrl &url, NavigationType type
                                           i18n("<qt>This site is requesting to open a popup window to"
                                                "<p>%1</p><br/>Do you want to allow this?</qt>",
                                                KStringHandler::rsqueeze(reqUrl.toDisplayString().toHtmlEscaped(), 100)));
-                if (KMessageBox::questionYesNo(view(), message,
+                if (KMessageBox::questionTwoActions(view(), message,
                                                i18n("Javascript Popup Confirmation"),
                                                KGuiItem(i18n("Allow")),
-                                               KGuiItem(i18n("Do Not Allow"))) == KMessageBox::No) {
+                                               KGuiItem(i18n("Do Not Allow"))) == KMessageBox::SecondaryAction) {
                     // TODO: Implement support for dealing with blocked pop up windows.
                     this->deleteLater();
                     return false;

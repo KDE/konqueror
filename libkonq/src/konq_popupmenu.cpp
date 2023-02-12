@@ -369,7 +369,12 @@ void KonqPopupMenuPrivate::populate()
     m_menuActions.setItemListProperties(m_popupItemProperties);
 
     if (sReading) {
-        m_menuActions.addOpenWithActionsTo(q, QStringLiteral("DesktopEntryName != 'kfmclient' and DesktopEntryName != 'kfmclient_dir' and DesktopEntryName != 'kfmclient_html'"));
+        const QStringList excludedEntries = {
+            QStringLiteral("kfmclient"),
+            QStringLiteral("kfmclient_dir"),
+            QStringLiteral("kfmclient_html")
+        };
+        m_menuActions.insertOpenWithActionsTo(nullptr, q, excludedEntries);
 
         QList<QAction *> previewActions = m_actionGroups.value(KonqPopupMenu::PreviewActions);
         if (!previewActions.isEmpty()) {
@@ -415,9 +420,8 @@ void KonqPopupMenuPrivate::populate()
         q->addSeparator();
     }
 
-    if (!isCurrentTrash && !isIntoTrash && sReading &&
-            (m_popupFlags & KonqPopupMenu::NoPlugins) == 0) {
-        m_menuActions.addPluginActionsTo(q);
+    if (!isCurrentTrash && !isIntoTrash && sReading && (m_popupFlags & KonqPopupMenu::NoPlugins) == 0) {
+        m_menuActions.addActionsTo(q, KFileItemActions::MenuActionSource::Plugins);
     }
 
     if ((m_popupFlags & KonqPopupMenu::ShowProperties) && KPropertiesDialog::canDisplay(lstItems)) {

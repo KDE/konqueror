@@ -38,6 +38,7 @@
 #include <KStartupInfo>
 #include <KWindowSystem>
 #include <kwindowsystem_version.h>
+#include <KX11Extras>
 #include <KMessageBox>
 
 #include <iostream>
@@ -284,7 +285,7 @@ int KonquerorApplication::performStart(const QString& workingDirectory, bool fir
     if (!firstInstance && mw) {
         mw ->setAttribute(Qt::WA_NativeWindow, true);
         KStartupInfo::setNewStartupId(mw->windowHandle(), QX11Info::nextStartupId());
-        KWindowSystem::forceActiveWindow(mw->winId());
+        KX11Extras::forceActiveWindow(mw->winId());
     }
 
     return result.second;

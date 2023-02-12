@@ -180,7 +180,7 @@ JSPoliciesFrame::JSPoliciesFrame(JSPolicies *policies, const QString &title,
                  "window.open()</i> for proper operation. Use "
                  "this feature carefully.");
     label->setToolTip(wtstr);
-    connect(js_popup, QOverload<int>::of(&QButtonGroup::buttonClicked), this, &JSPoliciesFrame::setWindowOpenPolicy);
+    connect(js_popup, &QButtonGroup::idClicked, this, &JSPoliciesFrame::setWindowOpenPolicy);
 
     // === window.resizeBy/resizeTo ================================
     colIdx = 0;
@@ -217,7 +217,7 @@ JSPoliciesFrame::JSPoliciesFrame(JSPolicies *policies, const QString &title,
                  "This option specifies the treatment of such "
                  "attempts.");
     label->setToolTip(wtstr);
-    connect(js_resize, QOverload<int>::of(&QButtonGroup::buttonClicked), this, &JSPoliciesFrame::setWindowResizePolicy);
+    connect(js_resize, &QButtonGroup::idClicked, this, &JSPoliciesFrame::setWindowResizePolicy);
 
     // === window.moveBy/moveTo ================================
     colIdx = 0;
@@ -254,7 +254,7 @@ JSPoliciesFrame::JSPoliciesFrame(JSPolicies *policies, const QString &title,
                  "This option specifies the treatment of such "
                  "attempts.");
     label->setToolTip(wtstr);
-    connect(js_move, QOverload<int>::of(&QButtonGroup::buttonClicked), this, &JSPoliciesFrame::setWindowMovePolicy);
+    connect(js_move, &QButtonGroup::idClicked, this, &JSPoliciesFrame::setWindowMovePolicy);
 
     // === window.focus ================================
     colIdx = 0;
@@ -294,7 +294,7 @@ JSPoliciesFrame::JSPoliciesFrame(JSPolicies *policies, const QString &title,
                  "This option specifies the treatment of such "
                  "attempts.");
     label->setToolTip(wtstr);
-    connect(js_focus, QOverload<int>::of(&QButtonGroup::buttonClicked), this, &JSPoliciesFrame::setWindowFocusPolicy);
+    connect(js_focus, &QButtonGroup::idClicked, this, &JSPoliciesFrame::setWindowFocusPolicy);
 
     // === window.status ================================
     colIdx = 0;
@@ -333,7 +333,7 @@ JSPoliciesFrame::JSPoliciesFrame(JSPolicies *policies, const QString &title,
                  "This option specifies the treatment of such "
                  "attempts.");
     label->setToolTip(wtstr);
-    connect(js_statusbar, QOverload<int>::of(&QButtonGroup::buttonClicked), this, &JSPoliciesFrame::setWindowStatusPolicy);
+    connect(js_statusbar, &QButtonGroup::idClicked, this, &JSPoliciesFrame::setWindowStatusPolicy);
 }
 
 void JSPoliciesFrame::refresh()

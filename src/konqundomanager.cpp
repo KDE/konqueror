@@ -75,7 +75,7 @@ bool KonqUndoManager::undoAvailable() const
     if (!m_closedItemList.isEmpty() || m_cwManager->undoAvailable()) {
         return true;
     } else {
-        return (m_supportsFileUndo && KIO::FileUndoManager::self()->undoAvailable());
+        return (m_supportsFileUndo && KIO::FileUndoManager::self()->isUndoAvailable());
     }
 }
 
@@ -83,7 +83,7 @@ QString KonqUndoManager::undoText() const
 {
     if (!m_closedItemList.isEmpty()) {
         const KonqClosedItem *closedItem = m_closedItemList.first();
-        if (!m_supportsFileUndo || !KIO::FileUndoManager::self()->undoAvailable() || closedItem->serialNumber() > KIO::FileUndoManager::self()->currentCommandSerialNumber()) {
+        if (!m_supportsFileUndo || !KIO::FileUndoManager::self()->isUndoAvailable() || closedItem->serialNumber() > KIO::FileUndoManager::self()->currentCommandSerialNumber()) {
             const KonqClosedTabItem *closedTabItem =
                 dynamic_cast<const KonqClosedTabItem *>(closedItem);
             if (closedTabItem) {
@@ -95,7 +95,7 @@ QString KonqUndoManager::undoText() const
             return KIO::FileUndoManager::self()->undoText();
         }
 
-    } else if (m_supportsFileUndo && KIO::FileUndoManager::self()->undoAvailable()) {
+    } else if (m_supportsFileUndo && KIO::FileUndoManager::self()->isUndoAvailable()) {
         return KIO::FileUndoManager::self()->undoText();
     }
 
@@ -114,7 +114,7 @@ void KonqUndoManager::undo()
         KonqClosedItem *closedItem = m_closedItemList.first();
 
         // Check what to undo
-        if (!m_supportsFileUndo || !fileUndoManager->undoAvailable() || closedItem->serialNumber() > fileUndoManager->currentCommandSerialNumber()) {
+        if (!m_supportsFileUndo || !fileUndoManager->isUndoAvailable() || closedItem->serialNumber() > fileUndoManager->currentCommandSerialNumber()) {
             undoClosedItem(0);
             return;
         }

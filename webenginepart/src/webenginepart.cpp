@@ -759,10 +759,10 @@ void WebEnginePart::slotSelectionClipboardUrlPasted(const QUrl& selectedUrl, con
         return;
 
     if (!searchText.isEmpty() &&
-        KMessageBox::questionYesNo(m_webView,
+        KMessageBox::questionTwoActions(m_webView,
                                    i18n("<qt>Do you want to search for <b>%1</b>?</qt>", searchText),
                                    i18n("Internet Search"), KGuiItem(i18n("&Search"), QStringLiteral("edit-find")),
-                                   KStandardGuiItem::cancel(), QStringLiteral("MiddleClickSearch")) != KMessageBox::Yes)
+                                   KStandardGuiItem::cancel(), QStringLiteral("MiddleClickSearch")) != KMessageBox::PrimaryAction)
         return;
 
     emit m_browserExtension->openUrlRequest(selectedUrl);

@@ -60,7 +60,7 @@ KonqFeedIcon::KonqFeedIcon(QObject *parent, const QVariantList &args)
         if (selectorInterface) {
             m_part = part;
             connect(m_part, QOverload<>::of(&KParts::ReadOnlyPart::completed), this, &KonqFeedIcon::addFeedIcon);
-            connect(m_part, QOverload<bool>::of(&KParts::ReadOnlyPart::completed), this, &KonqFeedIcon::addFeedIcon);
+            connect(m_part, &KParts::ReadOnlyPart::completedWithPendingAction, this, &KonqFeedIcon::addFeedIcon);
             connect(m_part, &KParts::ReadOnlyPart::started, this, &KonqFeedIcon::removeFeedIcon);
         }
     }

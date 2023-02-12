@@ -276,21 +276,21 @@ UrlLoader::OpenUrlAction UrlLoader::decideExecute() const {
     QString dontShowAgainId(QLatin1String("AskExecuting")+m_mimeType);
 
     if (canDisplay) {
-        code = KMessageBox::questionYesNoCancel(m_mainWindow, i18nc("The user has to decide whether to execute an executable file or display it",
+        code = KMessageBox::questionTwoActionsCancel(m_mainWindow, i18nc("The user has to decide whether to execute an executable file or display it",
                                                                                         "<tt>%1</tt> can be executed. Do you want to execute it or to display it?", m_url.path()),
                                                                     QString(), executeGuiItem, KGuiItem(i18nc("Display an executable file", "Display it")),
                                                                     KStandardGuiItem::cancel(), dontShowAgainId, KMessageBox::Dangerous);
     } else {
-        code = KMessageBox::questionYesNo(m_mainWindow, i18nc("The user has to decide whether to execute an executable file or not",
+        code = KMessageBox::questionTwoActions(m_mainWindow, i18nc("The user has to decide whether to execute an executable file or not",
                                                                                         "<tt>%1</tt> can be executed. Do you want to execute it?", m_url.path()),
                                                                     QString(), executeGuiItem, KStandardGuiItem::cancel(),
                                                                     dontShowAgainId, KMessageBox::Dangerous);}
     switch (code) {
-        case KMessageBox::Yes:
+        case KMessageBox::PrimaryAction:
             return OpenUrlAction::Execute;
         case KMessageBox::Cancel:
             return OpenUrlAction::DoNothing;
-        case KMessageBox::No:
+        case KMessageBox::SecondaryAction:
             //The "No" button actually corresponds to the "Cancel" action if the file can't be displayed
             return canDisplay ? OpenUrlAction::UnknwonAction : OpenUrlAction::DoNothing;
         default: //This is here only to avoid a compiler warning

@@ -56,7 +56,7 @@ KGetPlugin::KGetPlugin(QObject *parent, const QVariantList &)
     auto *menu = new KActionMenu(QIcon::fromTheme("kget"), i18n("Download Manager"), actionCollection());
     actionCollection()->addAction("kget_menu", menu);
 
-    menu->setDelayed(false);
+    menu->setPopupMode(QToolButton::InstantPopup);
     connect(menu->menu(), &QMenu::aboutToShow, this, &KGetPlugin::showPopup);
 
     m_dropTargetAction = new KToggleAction(i18n("Show Drop Target"), actionCollection());

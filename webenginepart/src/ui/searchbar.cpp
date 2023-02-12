@@ -42,7 +42,7 @@ SearchBar::SearchBar(QWidget *parent)
     
     connect(m_ui.nextButton, &QAbstractButton::clicked, this, &SearchBar::findNext);
     connect(m_ui.previousButton, &QAbstractButton::clicked, this, &SearchBar::findPrevious);
-    connect(m_ui.searchComboBox, QOverload<>::of(&KComboBox::returnPressed), this, &SearchBar::findNext);
+    connect(m_ui.searchComboBox, QOverload<const QString&>::of(&KComboBox::returnPressed), this, [this](const QString &){findNext();});
     connect(m_ui.searchComboBox, &QComboBox::editTextChanged, this, &SearchBar::textChanged);
 
     // Start off hidden by default...
