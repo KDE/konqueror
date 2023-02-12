@@ -388,6 +388,7 @@ void KonqPopupMenuPrivate::populate()
     QList<QAction *> additionalActions;
     if (isDirectory && m_popupItemProperties.items().count() == 1) {
         QAction *openTerminalHere = new QAction(QIcon::fromTheme("utilities-terminal"), i18n("Open Terminal Here"), m_parentWidget);
+        openTerminalHere->setObjectName("open-terminal-here");
         QObject::connect(openTerminalHere, &QAction::triggered, q, [this]() {
                 const QString localPath = m_popupItemProperties.urlList().constFirst().toLocalFile();
                 // 5.84 because the header wasn't usable in 5.83

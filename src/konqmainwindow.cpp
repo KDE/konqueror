@@ -532,7 +532,7 @@ void KonqMainWindow::openUrl(KonqView *_view, const QUrl &_url,
         // (e.g. HTML link), the url is empty here, not invalid.
         // But just to be safe, let's keep this code path
         url = KParts::BrowserRun::makeErrorUrl(KIO::ERR_MALFORMED_URL, url.url(), url);
-    } else if (!KProtocolInfo::isKnownProtocol(url) && url.scheme() != QLatin1String("error") && !KonqUrl::hasKonqScheme(url) && url.scheme() != QLatin1String("mailto")) {
+    } else if (!KProtocolInfo::isKnownProtocol(url) && url.scheme() != QLatin1String("error") && !KonqUrl::hasKonqScheme(url) && url.scheme() != QLatin1String("mailto") && url.scheme() != QLatin1String("data")) {
         url = KParts::BrowserRun::makeErrorUrl(KIO::ERR_UNSUPPORTED_PROTOCOL, url.scheme(), url);
     }
 
@@ -1174,7 +1174,7 @@ void KonqMainWindow::slotCreateNewWindow(const QUrl &url,
     if (args.mimeType().isEmpty()) {
         mainWindow->openUrl(nullptr, url, QString(), req);
     } else {
-        if (!mainWindow->openView(args.mimeType(), url, nullptr, req)) {
+        if (!mainWindow->openView(args.mimeType(), url, mainWindow->currentView(), req)) {
             // we have problems. abort.
             delete mainWindow;
 

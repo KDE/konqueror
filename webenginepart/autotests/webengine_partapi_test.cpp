@@ -37,6 +37,7 @@ private Q_SLOTS:
     void initTestCase();
     void shouldHaveBrowserExtension();
     void shouldEmitStartedAndCompleted();
+    void shouldEmitStartAndCompleteWithPendingAction();
     void shouldEmitSetWindowCaption();
     void shouldEmitOpenUrlNotifyOnClick();
 
@@ -64,7 +65,7 @@ void WebEnginePartApiTest::shouldEmitStartedAndCompleted()
     // GIVEN
     WebEnginePart part(nullptr, nullptr, dummyMetaData());
     QSignalSpy spyStarted(&part, &KParts::ReadOnlyPart::started);
-    QSignalSpy spyCompleted(&part, SIGNAL(completed(bool)));
+    QSignalSpy spyCompleted(&part, SIGNAL(completed()));
     QSignalSpy spySetWindowCaption(&part, &KParts::ReadOnlyPart::setWindowCaption);
     KParts::BrowserExtension *ext = KParts::BrowserExtension::childObject(&part);
     QSignalSpy spyOpenUrlNotify(ext, &KParts::BrowserExtension::openUrlNotify);
@@ -78,16 +79,38 @@ void WebEnginePartApiTest::shouldEmitStartedAndCompleted()
     QVERIFY(spySetWindowCaption.wait());
     QCOMPARE(spySetWindowCaption.at(0).at(0).toUrl().toString(), url.toString());
     QVERIFY(spyCompleted.wait());
-    QVERIFY(!spyCompleted.at(0).at(0).toBool());
     QVERIFY(spyOpenUrlNotify.isEmpty());
 }
+
+void WebEnginePartApiTest::shouldEmitStartAndCompleteWithPendingAction()
+{
+    // GIVEN
+    WebEnginePart part(nullptr, nullptr, dummyMetaData());
+    QSignalSpy spyStarted(&part, &KParts::ReadOnlyPart::started);
+    QSignalSpy spyCompleted(&part, SIGNAL(completedWithPendingAction()));
+    QSignalSpy spySetWindowCaption(&part, &KParts::ReadOnlyPart::setWindowCaption);
+    KParts::BrowserExtension *ext = KParts::BrowserExtension::childObject(&part);
+    QSignalSpy spyOpenUrlNotify(ext, &KParts::BrowserExtension::openUrlNotify);
+    const QUrl url(QStringLiteral("data:text/html, <html><head><meta http-equiv=\"refresh\"><body><p>Hello World</p></body></html>"));
+
+    // WHEN
+    part.openUrl(url);
+
+    // THEN
+    QVERIFY(spyStarted.wait());
+    QVERIFY(spySetWindowCaption.wait());
+    QCOMPARE(spySetWindowCaption.at(0).at(0).toUrl().toString(), url.toString());
+    QVERIFY(spyCompleted.wait());
+    QVERIFY(spyOpenUrlNotify.isEmpty());
+}
+
 
 void WebEnginePartApiTest::shouldEmitSetWindowCaption()
 {
     // GIVEN
     WebEnginePart part(nullptr, nullptr, dummyMetaData());
     QSignalSpy spyStarted(&part, &KParts::ReadOnlyPart::started);
-    QSignalSpy spyCompleted(&part, SIGNAL(completed(bool)));
+    QSignalSpy spyCompleted(&part, SIGNAL(completed()));
     QSignalSpy spySetWindowCaption(&part, &KParts::ReadOnlyPart::setWindowCaption);
 
     // WHEN opening a URL with a title tag
@@ -96,7 +119,6 @@ void WebEnginePartApiTest::shouldEmitSetWindowCaption()
     // THEN
     QVERIFY(spyStarted.wait());
     QVERIFY(spyCompleted.wait());
-    QVERIFY(!spyCompleted.at(0).at(0).toBool());
     QCOMPARE(spySetWindowCaption.count(), 2);
     QCOMPARE(spySetWindowCaption.at(1).at(0).toUrl().toString(), QStringLiteral("Custom Title"));
 }
@@ -106,7 +128,7 @@ void WebEnginePartApiTest::shouldEmitOpenUrlNotifyOnClick()
     // GIVEN
     WebEnginePart part(nullptr, nullptr, dummyMetaData());
     QSignalSpy spyStarted(&part, &KParts::ReadOnlyPart::started);
-    QSignalSpy spyCompleted(&part, SIGNAL(completed(bool)));
+    QSignalSpy spyCompleted(&part, SIGNAL(completed()));
     QSignalSpy spySetWindowCaption(&part, &KParts::ReadOnlyPart::setWindowCaption);
     KParts::BrowserExtension *ext = KParts::BrowserExtension::childObject(&part);
     QSignalSpy spyOpenUrlNotify(ext, &KParts::BrowserExtension::openUrlNotify);

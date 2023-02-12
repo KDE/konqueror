@@ -12,6 +12,7 @@
 #define WEBENGINEPAGE_H
 
 #include "websslinfo.h"
+#include "kwebenginepartlib_export.h"
 
 #include <KParts/BrowserExtension>
 #include <QWebEnginePage>
@@ -121,6 +122,7 @@ protected:
      * @see setDropOperationStarted
      */
     QWebEnginePage* createWindow(WebWindowType type) override;
+protected:
 
     /**
      * Reimplemented for internal reasons, the API is not affected.

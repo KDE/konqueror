@@ -21,6 +21,7 @@ public:
 
 private Q_SLOTS:
     void initTestCase();
+    void cleanupTestCase();
     void testFile();
     void testFileInReadOnlyDirectory();
     void testFilePreviewSubMenu();
@@ -57,6 +58,9 @@ private:
     QActionGroup *m_partActions;
     KNewFileMenu *m_newMenu;
     KActionCollection m_actionCollection;
+
+    QString m_makefilePath;
+    bool m_deleteMakefileDir;
 };
 
 #endif

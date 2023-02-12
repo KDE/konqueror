@@ -25,6 +25,7 @@
 #include <kconfiggroup.h>
 #include <kio/job.h>
 #include <ksycoca.h>
+#include <KLocalizedString>
 
 //#define TEST_KHTML 1
 
@@ -173,8 +174,16 @@ private:
 
 void ViewMgrTest::initTestCase()
 {
+    KLocalizedString::setApplicationDomain("konqviewmgrtest");
+
     QStandardPaths::setTestModeEnabled(true);
     QDir(KonqSessionManager::self()->autosaveDirectory()).removeRecursively();
+    QString configLocationDir = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation);
+    const QLatin1String expConfigDir(".qttest/config");
+    QString msg = QString("Can't remove the config file because it isn't in the %1 directory but in %2").arg(expConfigDir).arg(configLocationDir);
+    QVERIFY2(configLocationDir.endsWith(expConfigDir), msg.toLatin1());
+    QDir(configLocationDir).remove("konquerorrc");
+
     KonqSessionManager::self()->disableAutosave();
     QCOMPARE(KonqSettings::mmbOpensTab(), true);
     QCOMPARE(KonqSettings::popupsWithinTabs(), false);
@@ -185,13 +194,9 @@ void ViewMgrTest::initTestCase()
     KSharedConfig::Ptr profile = KSharedConfig::openConfig(QStringLiteral("mimeapps.list"), KConfig::NoGlobals, QStandardPaths::ApplicationsLocation);
     KConfigGroup addedServices(profile, "Added KDE Service Associations");
     bool needsUpdate = false;
-    Q_FOREACH (const QString &mimeType, QStringList() << "text/html" << "application/xhtml+xml" << "application/xml") {
+    for (const QString &mimeType : QStringList{"text/html", "application/xhtml+xml", "application/xml"}) {
         QStringList services = addedServices.readXdgListEntry(mimeType);
-#ifdef TEST_KHTML
-        const QString wanted = "khtml.desktop";
-#else
         const QString wanted = QStringLiteral("webenginepart.desktop");
-#endif
         if (services.isEmpty() || services.at(0) != wanted) {
             services.removeAll(wanted);
             services.prepend(wanted); // make it the preferred one
@@ -202,7 +207,7 @@ void ViewMgrTest::initTestCase()
     if (needsUpdate) {
         profile->sync();
         // kbuildsycoca is the one reading mimeapps.list, so we need to run it now
-        QProcess::execute(QStandardPaths::findExecutable(KBUILDSYCOCA_EXENAME));
+        QProcess::execute(QStandardPaths::findExecutable(KBUILDSYCOCA_EXENAME), {});
     }
 }
 
@@ -218,7 +223,7 @@ void ViewMgrTest::testCreateFirstView()
 {
     MyKonqMainWindow mainWindow;
     KonqViewManager *viewManager = mainWindow.viewManager();
-    KonqView *view = viewManager->createFirstView(QStringLiteral("KonqAboutPage"), QStringLiteral("konq_aboutpage"));
+    KonqView *view = viewManager->createFirstView(QStringLiteral("text/html"), QStringLiteral("webenginepart"));
     QVERIFY(view);
     QVERIFY(viewManager->tabContainer());
 
@@ -273,7 +278,7 @@ void ViewMgrTest::testRemoveFirstView()
 {
     MyKonqMainWindow mainWindow;
     KonqViewManager *viewManager = mainWindow.viewManager();
-    KonqView *view = viewManager->createFirstView(QStringLiteral("KonqAboutPage"), QStringLiteral("konq_aboutpage"));
+    KonqView *view = viewManager->createFirstView(QStringLiteral("text/html"), QStringLiteral("webenginepart"));
     QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[F]."));   // mainWindow, tab widget, one frame
     viewManager->removeView(view);
     QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[F]."));   // removing not allowed
@@ -284,9 +289,11 @@ void ViewMgrTest::testSplitView()
 {
     MyKonqMainWindow mainWindow;
     KonqViewManager *viewManager = mainWindow.viewManager();
-    KonqView *view = viewManager->createFirstView(QStringLiteral("KonqAboutPage"), QStringLiteral("konq_aboutpage"));
+    KonqView *view = viewManager->createFirstView(QStringLiteral("text/html"), QStringLiteral("webenginepart"));
 
     QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[F]."));   // mainWindow, tab widget, one frame
+    // mainWindow.show();
+    // qApp->processEvents();
     KonqView *view2 = viewManager->splitView(view, Qt::Horizontal);
     QVERIFY(view2);
     QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)]."));   // mainWindow, tab widget, one splitter, two frames
@@ -318,6 +325,8 @@ void ViewMgrTest::testSplitView()
     QCOMPARE(container->widget(0), view->frame()->asQWidget());
     QCOMPARE(container->widget(1), view2->frame()->asQWidget());
 
+    // mainWindow.show();
+    // qApp->processEvents();
     // Check frame geometries
     sendAllPendingResizeEvents(&mainWindow);
     //for ( QWidget* w = partWidget; w; w = w->parentWidget() )
@@ -331,6 +340,8 @@ void ViewMgrTest::testSplitView()
     QVERIFY(frame2->height() > 240);   // usually 325, but can be 256 with oxygen when three toolbars are shown
     // Both frames should have the same size; well, if the width was odd then there can be an off-by-one...
     QCOMPARE(frame->height(), frame2->height());
+    // qDebug() << "FRAME WIDTH" << frame->width() << "FRAME2 WIDTH" << frame2->width();
+    // qDebug() << "FRAME MINIMUM WIDTH" << frame->minimumSizeHint() << "FRAME2 MINIMIUM WIDTH" << frame2->minimumSizeHint();
     QVERIFY(qAbs(frame->width() - frame2->width()) <= 1);   // e.g. 173 and 172 are "close enough"
     //qDebug() << "partWidget geom:" << partWidget->geometry();
     QVERIFY(partWidget->width() > 300 && partWidget->width() < 400);   // horiz split, so half the mainWindow width
@@ -368,10 +379,10 @@ void ViewMgrTest::testSplitMainContainer()
 {
     MyKonqMainWindow mainWindow;
     KonqViewManager *viewManager = mainWindow.viewManager();
-    KonqView *view = viewManager->createFirstView(QStringLiteral("KonqAboutPage"), QStringLiteral("konq_aboutpage"));
+    KonqView *view = viewManager->createFirstView(QStringLiteral("text/html"), QStringLiteral("webenginepage"));
     QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[F]."));   // mainWindow, tab widget, one frame
     KonqFrameContainerBase *tabContainer = view->frame()->parentContainer();
-    KonqView *view2 = viewManager->splitMainContainer(view, Qt::Horizontal, QStringLiteral("KonqAboutPage"), QStringLiteral("konq_aboutpage"), true);
+    KonqView *view2 = viewManager->splitMainContainer(view, Qt::Horizontal, QStringLiteral("text/html"), QStringLiteral("webenginepart"), true);
     QVERIFY(view2);
     QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MC(FT[F])."));   // mainWindow, splitter, frame, tab widget, one frame
 
@@ -497,12 +508,6 @@ static void checkSecondWindowHasOneTab(bool fromPopup) // and delete it.
     QVERIFY(tabWidget);
     // The location bar shouldn't get focus (#208821)
     QTRY_VERIFY(newWindow->focusWidget());
-    qDebug() << newWindow->focusWidget();
-#ifndef TEST_KHTML
-    if (!fromPopup) {
-        QEXPECT_FAIL("", "This fails because it doesn't go through KRun and KonqView::setLoading yet", Abort);
-    }
-#endif
     QTRY_VERIFY_WITH_TIMEOUT(tabWidget->focusWidget(), 200);
     QCOMPARE(newWindow->focusWidget()->metaObject()->className(), tabWidget->focusWidget()->metaObject()->className());
 }
@@ -601,7 +606,7 @@ void ViewMgrTest::testAddTabs()
     MyKonqMainWindow mainWindow;
     KonqViewManager *viewManager = mainWindow.viewManager();
 
-    KonqView *view = viewManager->createFirstView(QStringLiteral("KonqAboutPage"), QStringLiteral("konq_aboutpage"));
+    KonqView *view = viewManager->createFirstView(QStringLiteral("text/html"), QStringLiteral("webenginepart"));
     QVERIFY(view);
     // The testcase was "konqueror www.kde.org www.google.fr bugs.kde.org www.cuil.com www.davidfaure.fr"
     const QStringList titles {
@@ -655,7 +660,7 @@ void ViewMgrTest::testDuplicateTab()
 {
     MyKonqMainWindow mainWindow;
     KonqViewManager *viewManager = mainWindow.viewManager();
-    /*KonqView* view =*/ viewManager->createFirstView(QStringLiteral("KonqAboutPage"), QStringLiteral("konq_aboutpage"));
+    /*KonqView* view =*/ viewManager->createFirstView(QStringLiteral("text/html"), QStringLiteral("webenginepart"));
     viewManager->duplicateTab(0); // should return a KonqFrameBase?
 
     QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[FF]."));   // mainWindow, tab widget, two tabs
@@ -666,7 +671,7 @@ void ViewMgrTest::testDuplicateSplittedTab()
 {
     MyKonqMainWindow mainWindow;
     KonqViewManager *viewManager = mainWindow.viewManager();
-    KonqView *view = viewManager->createFirstView(QStringLiteral("KonqAboutPage"), QStringLiteral("konq_aboutpage"));
+    KonqView *view = viewManager->createFirstView(QStringLiteral("text/html"), QStringLiteral("webenginepart"));
     KonqView *view2 = viewManager->splitView(view, Qt::Vertical);
     QVERIFY(view2);
     QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)]."));   // mainWindow, tab widget, one splitter, two frames
@@ -723,7 +728,7 @@ void ViewMgrTest::testDeletePartInTab()
     QPointer<MyKonqMainWindow> mainWindow = new MyKonqMainWindow;
     QVERIFY(mainWindow->testAttribute(Qt::WA_DeleteOnClose));
     KonqViewManager *viewManager = mainWindow->viewManager();
-    QPointer<KonqView> view = viewManager->createFirstView(QStringLiteral("KonqAboutPage"), QStringLiteral("konq_aboutpage"));
+    QPointer<KonqView> view = viewManager->createFirstView(QStringLiteral("text/html"), QStringLiteral("webenginepart"));
     QVERIFY(!view.isNull());
     QPointer<QWidget> partWidget = view->part()->widget();
 
@@ -819,6 +824,7 @@ void ViewMgrTest::testCloseOtherTabs()
     tabWidget->setCurrentIndex(3);
     QCOMPARE(mainWindow.linkableViewsCount(), 1);
     // Switching to an empty tab -> focus goes to location bar (#84867)
+    QEXPECT_FAIL("", "Known bug with unknown causes. Worked around it with commit 78f47b4d4ce97f7ff0278b16c04182e7d80c8dba", Continue);
     QCOMPARE(mainWindow.focusWidget()->metaObject()->className(), "KonqCombo");
 
     // Check that removeOtherTabs deals with split views correctly
@@ -867,7 +873,7 @@ void ViewMgrTest::testBreakOffTab()
 {
     MyKonqMainWindow mainWindow;
     KonqViewManager *viewManager = mainWindow.viewManager();
-    /*KonqView* firstView =*/ viewManager->createFirstView(QStringLiteral("KonqAboutPage"), QStringLiteral("konq_aboutpage"));
+    /*KonqView* firstView =*/ viewManager->createFirstView(QStringLiteral("text/html"), QStringLiteral("webenginepart"));
 
     //KonqFrameBase* tab = firstView->frame();
     viewManager->duplicateTab(0);

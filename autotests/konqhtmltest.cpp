@@ -6,6 +6,7 @@
 
 #include <konqmainwindowfactory.h>
 #include "../src/konqsettingsxt.h"
+#include <KLocalizedString>
 
 #include <konqmainwindow.h>
 #include <konqviewmanager.h>
@@ -14,6 +15,9 @@
 
 #include <webenginepart.h>
 #include <webengineview.h>
+#include <webenginepage.h>
+#include <QWebEngineProfile>
+#include <QWebEngineSettings>
 
 #include <KSharedConfig>
 #include <ktoolbar.h>
@@ -33,6 +37,7 @@ class KonqHtmlTest : public QObject
 private Q_SLOTS:
     void initTestCase()
     {
+        KLocalizedString::setApplicationDomain("konqhtmltest");
         QStandardPaths::setTestModeEnabled(true);
 
         KonqSessionManager::self()->disableAutosave();
@@ -125,6 +130,7 @@ private Q_SLOTS:
 
         // Want a window, not a tab (historical test)
         KonqSettings::setMmbOpensTab(false);
+        KonqSettings::setAlwaysHavePreloaded(false);
 
         // We have to use the same protocol for both the orig and dest urls.
         // KAuthorized would forbid a data: URL to redirect to a file: URL for instance.
@@ -138,7 +144,7 @@ private Q_SLOTS:
             "<html><script>"
             "function openWindow() { window.open('" + QUrl::fromLocalFile(tempFile.fileName()).url().toUtf8() + "'); } "
             "document.onmousedown = openWindow; "
-            "</script>"
+            "</script></html>"
         );
         tempFile.close();
         const QString origFile = origTempFile.fileName();
@@ -151,13 +157,19 @@ private Q_SLOTS:
         QSignalSpy spyCompleted(view, SIGNAL(viewCompleted(KonqView*)));
         QVERIFY(spyCompleted.wait(20000));
         qApp->processEvents();
+        WebEnginePart *htmlPart = qobject_cast<WebEnginePart *>(view->part());
+        htmlPart->view()->page()->profile()->settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
+        htmlPart->view()->page()->profile()->settings()->setAttribute(QWebEngineSettings::AllowRunningInsecureContent, true);
+        htmlPart->view()->page()->profile()->settings()->setAttribute(QWebEngineSettings::LocalContentCanAccessFileUrls	, true);
+        htmlPart->view()->page()->profile()->settings()->setAttribute(QWebEngineSettings::JavascriptCanOpenWindows, true);
+        htmlPart->view()->page()->profile()->settings()->setAttribute(QWebEngineSettings::AllowWindowActivationFromJavaScript, true);
         QWidget *widget = partWidget(view);
         QVERIFY(widget);
         qDebug() << "Clicking on the khtmlview";
         QTest::mousePress(widget, Qt::LeftButton);
         qApp->processEvents(); // openurlrequestdelayed
         qApp->processEvents(); // browserrun
-        hideAllMainWindows(); // TODO: why does it appear nonetheless? hiding too early? hiding too late?
+        hideAllMainWindows(); // TODO: why does it appear nonetheless? hiding too early? hiding too late
         // Did it open a window?
         QTRY_COMPARE(KMainWindow::memberList().count(), 2);
         KonqMainWindow *newWindow = qobject_cast<KonqMainWindow *>(KMainWindow::memberList().last());
@@ -171,7 +183,7 @@ private Q_SLOTS:
         QVERIFY(!frame->childView()->isLoading());
         WebEnginePart *part = qobject_cast<WebEnginePart *>(frame->part());
         QVERIFY(part);
-        QTRY_VERIFY(!part->view()->url().isEmpty()); // hack to wait for webengine to load the page
+        QTRY_VERIFY(!part->view()->url().isEmpty() && part->view()->url().scheme() != QStringLiteral("konq")); // hack to wait for webengine to load the page
         QTRY_COMPARE(part->view()->title(), QString("Opener=[object Window]"));
         deleteAllMainWindows();
     }
