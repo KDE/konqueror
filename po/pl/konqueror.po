@@ -1,6 +1,6 @@
 # translation of konqueror.po to Polish
 # translation of konqueror.po to
-# Version: $Revision: 1643986 $
+# Version: $Revision: 1644360 $
 # Tłumaczenie autorstwa Artura Skury, marzec 2000
 # Aktualne tłumaczenie Norbert Popiołek <norbert@kde.com.pl>, czerwiec 2001
 # Norbert Popiołek <norbert@kde.com.pl>
@@ -9,13 +9,13 @@
 # Krzysztof Lichota <lichota@mimuw.edu.pl>, 2005, 2006.
 # Robert Gomulka <rgom@o2.pl>, 2006.
 # Marta Rybczyńska <kde-i18n@rybczynska.net>, 2007, 2008, 2011.
-# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2011, 2012, 2013, 2014, 2016, 2017, 2019, 2020, 2021, 2022.
+# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2011, 2012, 2013, 2014, 2016, 2017, 2019, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-06 01:00+0000\n"
-"PO-Revision-Date: 2022-11-23 20:35+0100\n"
+"PO-Revision-Date: 2023-02-11 08:46+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -47,7 +47,7 @@ msgstr ""
 ">\n"
 ">\n"
 ">\n"
-"X-Generator: Lokalize 22.08.2\n"
+"X-Generator: Lokalize 22.12.2\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 
@@ -428,17 +428,17 @@ msgstr "profil"
 #: src/konqapplication.cpp:161
 #, kde-format
 msgid "List available sessions"
-msgstr "Pokaż dostępne sesje"
+msgstr "Pokaż dostępne posiedzenia"
 
 #: src/konqapplication.cpp:162
 #, kde-format
 msgid "Session to open"
-msgstr "Sesja do otwarcia"
+msgstr "Posiedzenie do otwarcia"
 
 #: src/konqapplication.cpp:162
 #, kde-format
 msgid "session"
-msgstr "sesja"
+msgstr "posiedzenie"
 
 #: src/konqapplication.cpp:163
 #, kde-format
@@ -480,11 +480,10 @@ msgid "Location to open"
 msgstr "Adres do otwarcia"
 
 #: src/konqapplication.cpp:253
-#, fuzzy, kde-format
-#| msgid "Session to open"
+#, kde-format
 msgctxt "The session asked by the user doesn't exist or can't be opened"
 msgid "Session %1 couldn't be opened"
-msgstr "Sesja do otwarcia"
+msgstr "Nie udało się otworzyć posiedzenia %1"
 
 #: src/konqapplication.cpp:356
 #, kde-format
@@ -901,7 +900,7 @@ msgstr "Zamknięte karty"
 #: src/konqmainwindow.cpp:3402
 #, kde-format
 msgid "Sessions"
-msgstr "Sesje"
+msgstr "Posiedzenia"
 
 #: src/konqmainwindow.cpp:3429
 #, kde-format
@@ -1519,37 +1518,37 @@ msgstr "T&ylko bieżące okno"
 #: src/konqnewsessiondlg_base.ui:56
 #, kde-format
 msgid "Session n&ame:"
-msgstr "N&azwa sesji:"
+msgstr "N&azwa posiedzenia:"
 
 #: src/konqsessiondlg.cpp:60
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Sessions"
-msgstr "Zarządzanie sesjami"
+msgstr "Zarządzanie posiedzeniami"
 
 #: src/konqsessiondlg.cpp:168
 #, kde-format
 msgctxt "@title:window"
 msgid "Rename Session"
-msgstr "Zmiana nazwy sesji"
+msgstr "Zmiana nazwy posiedzenia"
 
 #: src/konqsessiondlg.cpp:215
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Session"
-msgstr "Zapisywanie sesji"
+msgstr "Zapisywanie posiedzenia"
 
 #: src/konqsessiondlg.cpp:251
 #, kde-format
 msgid ""
 "A session with the name '%1' already exists, do you want to overwrite it?"
-msgstr "Sesja o nazwie '%1' już istnieje. Zastąpić ją?"
+msgstr "Posiedzenie o nazwie '%1' już istnieje. Zastąpić ją?"
 
 #: src/konqsessiondlg.cpp:252
 #, kde-format
 msgctxt "@title:window"
 msgid "Session exists. Overwrite?"
-msgstr "Sesja wychodzi. Zastąpić ją?"
+msgstr "Posiedzenie wychodzi. Zastąpić ją?"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_pNewButton)
 #: src/konqsessiondlg_base.ui:26
@@ -1590,7 +1589,7 @@ msgstr "Otwieraj karty w aktualnym oknie"
 #, kde-format
 msgctxt "@title:window"
 msgid "Restore Session?"
-msgstr "Czy przywrócić sesję?"
+msgstr "Czy przywrócić posiedzenie?"
 
 #: src/konqsessionmanager.cpp:107
 #, kde-format
@@ -1599,13 +1598,13 @@ msgid ""
 "sessions?"
 msgstr ""
 "Konqueror nie został poprawnie zamknięty. Czy chcesz przywrócić poprzednie "
-"sesje?"
+"posiedzenia?"
 
 #: src/konqsessionmanager.cpp:119
 #, kde-format
 msgctxt "@tooltip:session list"
 msgid "Uncheck the sessions you do not want to be restored"
-msgstr "Usuń odhaczenie sesji, których nie chcesz przywrócić."
+msgstr "Usuń odhaczenie posiedzenia, których nie chcesz przywrócić."
 
 #: src/konqsessionmanager.cpp:152
 #, kde-format
@@ -1622,7 +1621,7 @@ msgstr "Nie pytaj ponownie"
 #, kde-format
 msgctxt "@action:button yes"
 msgid "Restore Session"
-msgstr "Przywróć sesję"
+msgstr "Przywróć posiedzenie"
 
 #: src/konqsessionmanager.cpp:205
 #, kde-format
@@ -1871,8 +1870,8 @@ msgid ""
 "If true, when opening a session from within the sessions dialog the tabs "
 "will be opened inside current window."
 msgstr ""
-"Jeśli ta opcja jest włączona, sesje otwierane z okienka sesji będą "
-"wyświetlane wewnątrz aktualnego okna."
+"Jeśli ta opcja jest włączona, posiedzenia otwierane z okienka posiedzenia "
+"będą wyświetlane wewnątrz bieżącego okna."
 
 #. i18n: ectx: Menu (file)
 #: src/konqueror.rc:5
