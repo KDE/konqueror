@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-13 00:56+0000\n"
-"PO-Revision-Date: 2022-11-14 02:00+0000\n"
+"PO-Revision-Date: 2023-02-15 12:54+0000\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -486,11 +486,10 @@ msgid "Location to open"
 msgstr "A localização a abrir"
 
 #: src/konqapplication.cpp:254
-#, fuzzy, kde-format
-#| msgid "Session to open"
+#, kde-format
 msgctxt "The session asked by the user doesn't exist or can't be opened"
 msgid "Session %1 couldn't be opened"
-msgstr "A sessão a abrir"
+msgstr "Não foi possível abrir a sessão %1"
 
 #: src/konqapplication.cpp:357
 #, kde-format
