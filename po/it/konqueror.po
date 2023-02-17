@@ -10,14 +10,14 @@
 # Luciano Montanaro <mikelima@cirulla.net>, 2007, 2008.
 # Luigi Toscano <luigi.toscano@tiscali.it>, 2008.
 # Dario Panico <Dareus_Persarumrex@fastwebnet.it>, 2008.
-# Paolo Zamponi <zapaolo@email.it>, 2016, 2017, 2019, 2020, 2021, 2022.
+# Paolo Zamponi <zapaolo@email.it>, 2016, 2017, 2019, 2020, 2021, 2022, 2023.
 # Vincenzo Reale <smart2128vr@gmail.com>, 2020, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-13 00:56+0000\n"
-"PO-Revision-Date: 2022-11-11 18:02+0100\n"
+"PO-Revision-Date: 2023-02-08 08:30+0100\n"
 "Last-Translator: Paolo Zamponi <zapaolo@email.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.08.3\n"
+"X-Generator: Lokalize 22.12.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -455,11 +455,10 @@ msgid "Location to open"
 msgstr "Indirizzo da aprire"
 
 #: src/konqapplication.cpp:254
-#, fuzzy, kde-format
-#| msgid "Session to open"
+#, kde-format
 msgctxt "The session asked by the user doesn't exist or can't be opened"
 msgid "Session %1 couldn't be opened"
-msgstr "Sessione da aprire"
+msgstr "La sessione %1 non può essere aperta"
 
 #: src/konqapplication.cpp:357
 #, kde-format
