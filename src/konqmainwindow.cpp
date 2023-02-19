@@ -3672,6 +3672,8 @@ void KonqMainWindow::initActions()
     goUrl->setWhatsThis(i18n("<html>Go<br /><br />"
                              "Goes to the page that has been entered into the location bar.</html>"));
 
+    KStandardAction::switchApplicationLanguage(nullptr, nullptr, this);
+
     enableAllActions(false);
 
     // help stuff

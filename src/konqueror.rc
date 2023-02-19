@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE gui SYSTEM "kpartgui.dtd">
-<gui name="Konqueror" version="72">
+<gui name="Konqueror" version="73">
 <MenuBar>
  <Menu name="file" noMerge="1"><text>&amp;File</text>
   <Action name="new_window"/>
@@ -68,6 +68,7 @@
   <Action name="saveviewprofile"/>
   <Action name="saveremoveviewprofile"/>
   <Separator/>
+  <Action name="switch_application_language"/>
   <Action name="options_configure_extensions"/>
   <Action name="configurespellcheck"/>
   <Action name="options_configure_keybinding"/>

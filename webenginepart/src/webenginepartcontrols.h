@@ -49,6 +49,20 @@ private:
 
     WebEnginePartControls();
 
+    /**
+     * @brief Constructs an `Accept-Language` http header from the language settings
+     *
+     * The accepted languages are determined according to the following sources:
+     * - the language settings in the application itself (using the `Application Language...` menu entry)
+     * - the language settings in `SystemSettings`
+     * - the locale returned by `QLocale::system()`
+     *
+     * These sources are tried in order: the first to return a valid value is used. If all return an invalid
+     * value (which shouldn't happen), an empty string is returned.
+     * @return a suitable `AcceptLanguage` header according to the user preferences
+     */
+    QString determineHttpAcceptLanguageHeader() const;
+
     QWebEngineProfile *m_profile;
     WebEnginePartCookieJar *m_cookieJar;
     SpellCheckerManager *m_spellCheckerManager;

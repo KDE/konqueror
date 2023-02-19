@@ -22,11 +22,16 @@
 #include "navigationrecorder.h"
 
 #include <KProtocolInfo>
+#include <KSharedConfig>
+#include <KConfigGroup>
 
 #include <QWebEngineProfile>
 #include <QWebEngineUrlScheme>
 #include <QWebEngineSettings>
 #include <QWebEngineScriptCollection>
+#include <QApplication>
+#include <QLocale>
+#include <QSettings>
 
 WebEnginePartControls::WebEnginePartControls(): QObject(),
     m_profile(nullptr), m_cookieJar(nullptr), m_spellCheckerManager(nullptr), m_downloadManager(nullptr),
@@ -83,6 +88,10 @@ void WebEnginePartControls::setup(QWebEngineProfile* profile)
     m_spellCheckerManager = new SpellCheckerManager(profile, this);
     m_downloadManager= new WebEnginePartDownloadManager(profile, this);
     m_profile->settings()->setAttribute(QWebEngineSettings::ScreenCaptureEnabled, true);
+    QString langHeader = determineHttpAcceptLanguageHeader();
+    if (!langHeader.isEmpty()) {
+        m_profile->setHttpAcceptLanguage(langHeader);
+    }
 }
 
 WebEnginePartDownloadManager* WebEnginePartControls::downloadManager() const
@@ -98,6 +107,34 @@ SpellCheckerManager* WebEnginePartControls::spellCheckerManager() const
 bool WebEnginePartControls::handleCertificateError(const QWebEngineCertificateError& ce, WebEnginePage* page)
 {
     return m_certificateErrorDialogManager->handleCertificateError(ce, page);
+}
+
+QString WebEnginePartControls::determineHttpAcceptLanguageHeader() const
+{
+    //According to comments in KSwitchLanguageDialog, the settings are stored in an INI format using QSettings,
+    //rather than using KConfig
+    QSettings appLangSettings(QStandardPaths::locate(QStandardPaths::GenericConfigLocation, "klanguageoverridesrc"), QSettings::IniFormat);
+    appLangSettings.beginGroup(QStringLiteral("Language"));
+    QString lang(appLangSettings.value(QApplication::instance()->applicationName()).toByteArray());
+    if (lang.isEmpty()) {
+        KSharedConfig::Ptr cfg;
+        cfg = KSharedConfig::openConfig(QStringLiteral("plasma-localerc"));
+        lang = cfg->group(QStringLiteral("Translations")).readEntry(QStringLiteral("LANGUAGE"));
+        if (lang.isEmpty()) {
+            lang = QLocale::system().name();
+        }
+        if (lang.isEmpty()) {
+            return QString();
+        }
+    }
+    QStringList languages = lang.split(':');
+    QString header = languages.at(0);
+    int max = std::min(languages.length(), 10);
+    //The counter starts from 1 because the first entry has already been inserted above
+    for (int i = 1; i < max; ++i) {
+        header.append(QString(", %1;q=0.%2").arg(languages.at(i)).arg(10-i));
+    }
+    return header;
 }
 
 NavigationRecorder * WebEnginePartControls::navigationRecorder() const
