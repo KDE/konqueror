@@ -47,10 +47,27 @@ private:
     void preloadWindow(const QStringList &args);
     WindowCreationResult createWindowsForUrlArguments(const QStringList &args, const QString &workingDirectory);
 
+    /**
+     * @brief What to do when running Konqueror as root
+     */
+    enum KonquerorAsRootBehavior {
+        NotRoot, //!< Konqueror is not being run as root
+        PreventRunningAsRoot, //!< The user tried to run Konqueror as root but answered to exit when asked
+        RunInDangerousMode //!< The user decided to run Konqueror as user enabling the `--no-sandbox` chromium flag
+    };
+
+    /**
+     * @brief Checks whether Konqueror is being run as root and, if so, asks the user what to do
+     * @return NotRoot if Konqueror isn't being run as root or PreventRunningAsRoot or RunInDangerousMode, according
+     * to the user's choice, otherwise
+     */
+    static KonquerorAsRootBehavior checkRootBehavior();
+
 private:
     KAboutData m_aboutData;
     QCommandLineParser m_parser;
     bool m_sessionRecoveryAttempted = false;
+    KonquerorAsRootBehavior m_runningAsRootBehavior = NotRoot;
 
 };
 

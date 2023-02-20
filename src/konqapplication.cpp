@@ -42,6 +42,7 @@
 #include <KMessageBox>
 
 #include <iostream>
+#include <unistd.h>
 
 KonquerorApplication::KonquerorApplication(int &argc, char **argv)
     : QApplication(argc, argv)
@@ -66,11 +67,30 @@ KonquerorApplication::KonquerorApplication(int &argc, char **argv)
     }
 #endif
 
+    m_runningAsRootBehavior = checkRootBehavior();
+
     QByteArray flags = qgetenv("QTWEBENGINE_CHROMIUM_FLAGS");
     flags.append(" --enable-features=WebRTCPipeWireCapturer");
-    qputenv("QTWEBENGINE_CHROMIUM_FLAGS", flags);
+    if (m_runningAsRootBehavior == RunInDangerousMode) {
+        flags.append (" --no-sandbox");
+    }
 
+    qputenv("QTWEBENGINE_CHROMIUM_FLAGS", flags);
     KLocalizedString::setApplicationDomain("konqueror");
+}
+
+KonquerorApplication::KonquerorAsRootBehavior KonquerorApplication::checkRootBehavior()
+{
+    uid_t uid = geteuid();
+    if (uid == 0) {
+        QString msg = i18n("<p>You're running Konqueror as root. This requires enabling a highly insecure mode in the browser component.</p><p>What do you want do do?</p>");
+        KGuiItem enableInsecureMode(QLatin1String("Enable the insecure mode")); //Continue
+        KGuiItem exitKonq(QLatin1String("Exit Konqueror")); //Cancel
+        KMessageBox::ButtonCode ans = KMessageBox::warningContinueCancel(nullptr, msg, QString(), enableInsecureMode, exitKonq);
+        return ans == KMessageBox::Continue ? RunInDangerousMode : PreventRunningAsRoot;
+    } else {
+        return NotRoot;
+    }
 }
 
 void KonquerorApplication::slotReparseConfiguration()
@@ -195,7 +215,8 @@ int KonquerorApplication::startFirstInstance()
 
     const int ret = exec();
 
-    bool alwaysPreload = KonqSettings::alwaysHavePreloaded();
+    //Don't preload if Konqueror is run as root
+    bool alwaysPreload = m_runningAsRootBehavior == NotRoot && KonqSettings::alwaysHavePreloaded();
 
     // Delete all KonqMainWindows, so that we don't have
     // any parts loaded when KLibLoader::cleanUp is called.
@@ -220,6 +241,10 @@ int KonquerorApplication::startFirstInstance()
 
 int KonquerorApplication::start()
 {
+    if (m_runningAsRootBehavior == PreventRunningAsRoot) {
+        return 0;
+    }
+
     setupAboutData();
     setupParser();
 
@@ -228,12 +253,20 @@ int KonquerorApplication::start()
     m_parser.process(*this);
     m_aboutData.processCommandLine(&m_parser);
 
-    KDBusService dbusService(KDBusService::Unique);
-    auto activateApp = [this](const QStringList &arguments, const QString &workingDirectory) {
-        m_parser.parse(arguments);
-        performStart(workingDirectory, false);
-    };
-    QObject::connect(&dbusService, &KDBusService::activateRequested, activateApp);
+    //Explicitly disable reusing existing instances if running as root. The behavior is not clear
+    //and could be dangerous if new windows are unknowingly launched as root.
+    //I thought that creating the KDBusService instance inside the if block should do it; however, doing
+    //so prevents the new window to be created because the new instance produces a critical failure with message:
+    //Couldn't register name 'org.kde.konqueror' with DBUS - another process owns it already!
+    //Moving the service creation outside the if block seems to solve the issue.
+    KDBusService dbusService(m_runningAsRootBehavior == NotRoot ? KDBusService::Unique : KDBusService::Multiple | KDBusService::NoExitOnFailure);
+    if (m_runningAsRootBehavior == NotRoot) {
+        auto activateApp = [this](const QStringList &arguments, const QString &workingDirectory) {
+            m_parser.parse(arguments);
+            performStart(workingDirectory, false);
+        };
+        QObject::connect(&dbusService, &KDBusService::activateRequested, activateApp);
+    }
 
     return startFirstInstance();
 }
@@ -268,7 +301,8 @@ int KonquerorApplication::performStart(const QString& workingDirectory, bool fir
         return 0;
     }
 
-    if (!m_sessionRecoveryAttempted) {
+    //Don't attempt to restore session when running as root
+    if (!m_sessionRecoveryAttempted && m_runningAsRootBehavior == NotRoot) {
         // Ask the user to recover session if applicable
         KonqSessionManager::self()->askUserToRestoreAutosavedAbandonedSessions();
         m_sessionRecoveryAttempted = true;
