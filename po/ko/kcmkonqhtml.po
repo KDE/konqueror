@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-29 00:52+0000\n"
+"POT-Creation-Date: 2023-02-21 00:59+0000\n"
 "PO-Revision-Date: 2022-04-16 23:00+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -482,6 +482,83 @@ msgid ""
 msgstr ""
 "기본으로 사용할 인코딩을 선택하십시오. 일반적으로 '언어 인코딩 사용'을 선택하"
 "는 것이 좋으며 굳이 변경할 필요는 없습니다."
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, Cache)
+#: cache/cache.ui:14
+#, kde-format
+msgid "Form"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, cacheEnabled)
+#: cache/cache.ui:20
+#, kde-format
+msgid "&Enable cache"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, memoryCache)
+#: cache/cache.ui:32
+#, kde-format
+msgid ""
+"<html><head/><body><p>Don't store the cache on disk but only in memory.</"
+"p><p>Turning this on means means that the cache will be cleared when exiting "
+"Konqueror</p></body></html>"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, memoryCache)
+#: cache/cache.ui:35
+#, kde-format
+msgid "Keep cache in &memory"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: cache/cache.ui:44
+#, kde-format
+msgid "&Cache size"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, cacheSize)
+#: cache/cache.ui:54
+#, kde-format
+msgid ""
+"The maximum space on disk or memory the cache can use. When this threshold "
+"is reached, old pages will be removed to make space for new ones"
+msgstr ""
+
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, cacheSize)
+#: cache/cache.ui:57
+#, kde-format
+msgid "Auto"
+msgstr ""
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, cacheSize)
+#: cache/cache.ui:60
+#, kde-format
+msgid " MB"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QGroupBox, useCustomCacheDir)
+#: cache/cache.ui:88
+#, kde-format
+msgid "Use a custom directory to keep the cache"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, useCustomCacheDir)
+#: cache/cache.ui:91
+#, kde-format
+msgid "&Custom cache directory"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, customCachePathLabel)
+#: cache/cache.ui:103
+#, kde-format
+msgid "Cache &Directory"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (KUrlRequester, customCacheDir)
+#: cache/cache.ui:116
+#, kde-format
+msgid "The custom directory to store cache"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QWidget, CSSConfigWidget)
 #. i18n: ectx: property (whatsThis), widget (QWidget, CSSCustomDialog)
