@@ -83,7 +83,7 @@ KonquerorApplication::KonquerorAsRootBehavior KonquerorApplication::checkRootBeh
 {
     uid_t uid = geteuid();
     if (uid == 0) {
-        QString msg = i18n("<p>You're running Konqueror as root. This requires enabling a highly insecure mode in the browser component.</p><p>What do you want do do?</p>");
+        QString msg = i18n("<p>You're running Konqueror as root. This requires enabling a highly insecure mode in the browser component.</p><p>What do you want to do?</p>");
         KGuiItem enableInsecureMode(QLatin1String("Enable the insecure mode")); //Continue
         KGuiItem exitKonq(QLatin1String("Exit Konqueror")); //Cancel
         KMessageBox::ButtonCode ans = KMessageBox::warningContinueCancel(nullptr, msg, QString(), enableInsecureMode, exitKonq);
