@@ -7,13 +7,13 @@
 # Eugene Onischenko <oneugene@ukr.net>, 2002, 2003, 2004, 2005.
 # Andriy Rysin <arysin@bcsii.com>, 2002, 2003, 2006, 2007.
 # Ivan Petrouchtchak <fr.ivan@ukrainian-orthodox.org>, 2005, 2006, 2007, 2008.
-# Yuri Chornoivan <yurchor@ukr.net>, 2008, 2009, 2010, 2011, 2012, 2013, 2016, 2019, 2020, 2022.
+# Yuri Chornoivan <yurchor@ukr.net>, 2008, 2009, 2010, 2011, 2012, 2013, 2016, 2019, 2020, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-21 00:59+0000\n"
-"PO-Revision-Date: 2022-03-11 08:36+0200\n"
+"POT-Creation-Date: 2023-02-22 00:58+0000\n"
+"PO-Revision-Date: 2023-02-21 07:48+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -512,82 +512,86 @@ msgstr ""
 "Виберіть типове кодування. Здебільшого нормальним буде вибір «Користуватися "
 "кодуванням мови», вам не слід його змінювати."
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, Cache)
-#: cache/cache.ui:14
-#, kde-format
-msgid "Form"
-msgstr ""
-
 #. i18n: ectx: property (title), widget (QGroupBox, cacheEnabled)
-#: cache/cache.ui:20
+#: cache/cache.ui:17
 #, kde-format
 msgid "&Enable cache"
-msgstr ""
+msgstr "&Увімкнути кеш"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, memoryCache)
-#: cache/cache.ui:32
-#, kde-format
+#: cache/cache.ui:29
+#, fuzzy, kde-format
+#| msgid ""
+#| "<html><head/><body><p>Don't store the cache on disk but only in memory.</"
+#| "p><p>Turning this on means means that the cache will be cleared when "
+#| "exiting Konqueror</p></body></html>"
 msgid ""
 "<html><head/><body><p>Don't store the cache on disk but only in memory.</"
-"p><p>Turning this on means means that the cache will be cleared when exiting "
+"p><p>Turning this on means that the cache will be cleared when exiting "
 "Konqueror</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Не зберігати кеш на диску, лише у пам'яті.</"
+"p><p>Позначення цього пункту означає, що кеш буде спорожнено після виходу з "
+"Konqueror</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, memoryCache)
-#: cache/cache.ui:35
+#: cache/cache.ui:32
 #, kde-format
 msgid "Keep cache in &memory"
-msgstr ""
+msgstr "Зберігати кеш у &пам'яті"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: cache/cache.ui:44
+#: cache/cache.ui:41
 #, kde-format
 msgid "&Cache size"
-msgstr ""
+msgstr "&Розмір кешу"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cacheSize)
-#: cache/cache.ui:54
+#: cache/cache.ui:51
 #, kde-format
 msgid ""
 "The maximum space on disk or memory the cache can use. When this threshold "
 "is reached, old pages will be removed to make space for new ones"
 msgstr ""
+"Максимальне місце на диску або у пам'яті, яке можна використати для кешу. "
+"Якщо буде досягнуто цього порогового значення, система вилучатиме старі "
+"сторінки для того, щоб звільнити місце для нових"
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, cacheSize)
-#: cache/cache.ui:57
+#: cache/cache.ui:54
 #, kde-format
 msgid "Auto"
-msgstr ""
+msgstr "Авто"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, cacheSize)
-#: cache/cache.ui:60
+#: cache/cache.ui:57
 #, kde-format
 msgid " MB"
-msgstr ""
+msgstr " МБ"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, useCustomCacheDir)
-#: cache/cache.ui:88
+#: cache/cache.ui:85
 #, kde-format
 msgid "Use a custom directory to keep the cache"
-msgstr ""
+msgstr "Використовувати нетиповий каталог для зберігання кешу"
 
 #. i18n: ectx: property (title), widget (QGroupBox, useCustomCacheDir)
-#: cache/cache.ui:91
+#: cache/cache.ui:88
 #, kde-format
 msgid "&Custom cache directory"
-msgstr ""
+msgstr "&Нетиповий каталог кешу"
 
 #. i18n: ectx: property (text), widget (QLabel, customCachePathLabel)
-#: cache/cache.ui:103
+#: cache/cache.ui:100
 #, kde-format
 msgid "Cache &Directory"
-msgstr ""
+msgstr "&Каталог кешу"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, customCacheDir)
-#: cache/cache.ui:116
+#: cache/cache.ui:113
 #, kde-format
 msgid "The custom directory to store cache"
-msgstr ""
+msgstr "Нетиповий каталог для зберігання кешу"
 
 #. i18n: ectx: property (whatsThis), widget (QWidget, CSSConfigWidget)
 #. i18n: ectx: property (whatsThis), widget (QWidget, CSSCustomDialog)
@@ -2268,6 +2272,9 @@ msgstr ""
 #, kde-format
 msgid "You must first enter a domain name."
 msgstr "Ви повинні спочатку вказати домен."
+
+#~ msgid "Form"
+#~ msgstr "Форма"
 
 #~ msgid "Accept languages:"
 #~ msgstr "Сприймати мови:"

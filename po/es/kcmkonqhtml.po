@@ -9,7 +9,7 @@
 # Juan Manuel Garcia Molina <juanma@superiodico.net>, 2005.
 # Jaime Robles <jaime@robles.nu>, 2005.
 # Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>, 2007.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2010, 2012, 2016, 2019, 2020, 2022.
+# Eloy Cuadra <ecuadra@eloihr.net>, 2010, 2012, 2016, 2019, 2020, 2022, 2023.
 # Cristina Yenyxe González García <the.blue.valkyrie@gmail.com>, 2010, 2011.
 # Javier Vinal <fjvinal@gmail.com>, 2011.
 # arklad, 2011.
@@ -18,8 +18,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-21 00:59+0000\n"
-"PO-Revision-Date: 2022-03-11 22:26+0100\n"
+"POT-Creation-Date: 2023-02-22 00:58+0000\n"
+"PO-Revision-Date: 2023-02-21 14:17+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -28,7 +28,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "com>\n"
 "First-Translator: Boris Wesslowski <Boris@Wesslowski.com>\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.12.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -526,82 +526,86 @@ msgstr ""
 "Seleccione el mapa predeterminado de caracteres. Normalmente, lo correcto es "
 "utilizar «Usar codificación del lenguaje» y no debería tener que modificarlo."
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, Cache)
-#: cache/cache.ui:14
-#, kde-format
-msgid "Form"
-msgstr ""
-
 #. i18n: ectx: property (title), widget (QGroupBox, cacheEnabled)
-#: cache/cache.ui:20
+#: cache/cache.ui:17
 #, kde-format
 msgid "&Enable cache"
-msgstr ""
+msgstr "Acti&var la caché"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, memoryCache)
-#: cache/cache.ui:32
-#, kde-format
+#: cache/cache.ui:29
+#, fuzzy, kde-format
+#| msgid ""
+#| "<html><head/><body><p>Don't store the cache on disk but only in memory.</"
+#| "p><p>Turning this on means means that the cache will be cleared when "
+#| "exiting Konqueror</p></body></html>"
 msgid ""
 "<html><head/><body><p>Don't store the cache on disk but only in memory.</"
-"p><p>Turning this on means means that the cache will be cleared when exiting "
+"p><p>Turning this on means that the cache will be cleared when exiting "
 "Konqueror</p></body></html>"
 msgstr ""
+"<html><head/><body><p>No almacenar la caché en disco, sino solo en memoria.</"
+"p><p>Si se activa esta opción, la caché se borrará al salir de Konqueror</"
+"p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, memoryCache)
-#: cache/cache.ui:35
+#: cache/cache.ui:32
 #, kde-format
 msgid "Keep cache in &memory"
-msgstr ""
+msgstr "Conservar la caché en &memoria"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: cache/cache.ui:44
+#: cache/cache.ui:41
 #, kde-format
 msgid "&Cache size"
-msgstr ""
+msgstr "Tamaño de la &caché"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cacheSize)
-#: cache/cache.ui:54
+#: cache/cache.ui:51
 #, kde-format
 msgid ""
 "The maximum space on disk or memory the cache can use. When this threshold "
 "is reached, old pages will be removed to make space for new ones"
 msgstr ""
+"El espacio máximo en disco o en memoria que puede usar la caché. Cuando se "
+"alcanza este umbral, las páginas más antiguas se eliminan para hacer espacio "
+"para las nuevas."
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, cacheSize)
-#: cache/cache.ui:57
+#: cache/cache.ui:54
 #, kde-format
 msgid "Auto"
-msgstr ""
+msgstr "Automático"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, cacheSize)
-#: cache/cache.ui:60
+#: cache/cache.ui:57
 #, kde-format
 msgid " MB"
-msgstr ""
+msgstr " MB"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, useCustomCacheDir)
-#: cache/cache.ui:88
+#: cache/cache.ui:85
 #, kde-format
 msgid "Use a custom directory to keep the cache"
-msgstr ""
+msgstr "Usar un directorio personalizado para conservar la caché"
 
 #. i18n: ectx: property (title), widget (QGroupBox, useCustomCacheDir)
-#: cache/cache.ui:91
+#: cache/cache.ui:88
 #, kde-format
 msgid "&Custom cache directory"
-msgstr ""
+msgstr "Directorio personalizado de &caché"
 
 #. i18n: ectx: property (text), widget (QLabel, customCachePathLabel)
-#: cache/cache.ui:103
+#: cache/cache.ui:100
 #, kde-format
 msgid "Cache &Directory"
-msgstr ""
+msgstr "&Directorio de caché"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, customCacheDir)
-#: cache/cache.ui:116
+#: cache/cache.ui:113
 #, kde-format
 msgid "The custom directory to store cache"
-msgstr ""
+msgstr "El directorio personalizado para almacenar la caché"
 
 #. i18n: ectx: property (whatsThis), widget (QWidget, CSSConfigWidget)
 #. i18n: ectx: property (whatsThis), widget (QWidget, CSSCustomDialog)
@@ -2298,6 +2302,9 @@ msgstr ""
 #, kde-format
 msgid "You must first enter a domain name."
 msgstr "Debe introducir primero un nombre de dominio."
+
+#~ msgid "Form"
+#~ msgstr "Formulario"
 
 #~ msgid "Accept languages:"
 #~ msgstr "Aceptar idiomas:"

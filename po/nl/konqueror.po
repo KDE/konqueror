@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-21 00:59+0000\n"
-"PO-Revision-Date: 2023-02-06 11:19+0100\n"
+"POT-Creation-Date: 2023-02-22 00:58+0000\n"
+"PO-Revision-Date: 2023-02-21 17:08+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -43,11 +43,16 @@ msgid "Your emails"
 msgstr "rinsedevries@kde.nl,,,freekdekruijf@kde.nl"
 
 #: src/konqapplication.cpp:86
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>You're running Konqueror as root. This requires enabling a highly "
+#| "insecure mode in the browser component.</p><p>What do you want do do?</p>"
 msgid ""
 "<p>You're running Konqueror as root. This requires enabling a highly "
-"insecure mode in the browser component.</p><p>What do you want do do?</p>"
+"insecure mode in the browser component.</p><p>What do you want to do?</p>"
 msgstr ""
+"<p>U voert Konqueror uit als root. Dit vereist inschakelen van een hoge "
+"onveilige modus in de browsercomponent.</p><p>Wat wilt u doen?</p>"
 
 #: src/konqapplication.cpp:127
 #, kde-format
