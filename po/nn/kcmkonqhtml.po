@@ -1,22 +1,22 @@
 # Translation of kcmkonqhtml to Norwegian Nynorsk
 #
 # Gaute Hvoslef Kvalnes <gaute@verdsveven.com>, 1999, 2000, 2002, 2003, 2004, 2005.
-# Karl Ove Hufthammer <karl@huftis.org>, 2004, 2007, 2008, 2010, 2011, 2013, 2015, 2016, 2018, 2020, 2021, 2022.
+# Karl Ove Hufthammer <karl@huftis.org>, 2004, 2007, 2008, 2010, 2011, 2013, 2015, 2016, 2018, 2020, 2021, 2022, 2023.
 # Eirik U. Birkeland <eirbir@gmail.com>, 2008, 2009, 2010.
 # Håvard Korsvoll <korsvoll@skulelinux.no>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-21 00:59+0000\n"
-"PO-Revision-Date: 2022-06-17 18:09+0200\n"
+"POT-Creation-Date: 2023-02-22 00:58+0000\n"
+"PO-Revision-Date: 2023-02-22 20:51+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 22.04.2\n"
+"X-Generator: Lokalize 22.12.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
@@ -495,82 +495,81 @@ msgstr ""
 "Vel kva for teiknsett som skal brukast som standard. Vanlegvis går det bra "
 "med «Bruk språkteiknsett», så du bør truleg ikkje endra det."
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, Cache)
-#: cache/cache.ui:14
-#, kde-format
-msgid "Form"
-msgstr ""
-
 #. i18n: ectx: property (title), widget (QGroupBox, cacheEnabled)
-#: cache/cache.ui:20
+#: cache/cache.ui:17
 #, kde-format
 msgid "&Enable cache"
-msgstr ""
+msgstr "&Bruk mellomlager"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, memoryCache)
-#: cache/cache.ui:32
+#: cache/cache.ui:29
 #, kde-format
 msgid ""
 "<html><head/><body><p>Don't store the cache on disk but only in memory.</"
-"p><p>Turning this on means means that the cache will be cleared when exiting "
+"p><p>Turning this on means that the cache will be cleared when exiting "
 "Konqueror</p></body></html>"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, memoryCache)
-#: cache/cache.ui:35
+#: cache/cache.ui:32
 #, kde-format
 msgid "Keep cache in &memory"
-msgstr ""
+msgstr "Lagra mellomlageret berre i &minnet"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: cache/cache.ui:44
+#: cache/cache.ui:41
 #, kde-format
 msgid "&Cache size"
-msgstr ""
+msgstr "&Mellomlagerstorleik"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cacheSize)
-#: cache/cache.ui:54
+#: cache/cache.ui:51
 #, kde-format
 msgid ""
 "The maximum space on disk or memory the cache can use. When this threshold "
 "is reached, old pages will be removed to make space for new ones"
 msgstr ""
+"Maksstorleiken mellomlageret får ta opp i minnet eller på disken. Når grensa "
+"er nådd, vert eldre sider fjerna for å gjera plass til nye."
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, cacheSize)
-#: cache/cache.ui:57
+#: cache/cache.ui:54
 #, kde-format
 msgid "Auto"
-msgstr ""
+msgstr "Automatisk"
 
+# Ifølgje kjeldekoden delar ein på 1000, så då skulle det eigentleg vera kB her. Har meldt frå om feilen:
+# https://bugs.kde.org/show_bug.cgi?id=466257
+# Lar det førebels stå som MB, så er det iallfall i samsvar med den engelske teksten.
 #. i18n: ectx: property (suffix), widget (QSpinBox, cacheSize)
-#: cache/cache.ui:60
+#: cache/cache.ui:57
 #, kde-format
 msgid " MB"
-msgstr ""
+msgstr " MB"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, useCustomCacheDir)
-#: cache/cache.ui:88
+#: cache/cache.ui:85
 #, kde-format
 msgid "Use a custom directory to keep the cache"
-msgstr ""
+msgstr "Lagra mellomlageret i sjølvvald mappe"
 
 #. i18n: ectx: property (title), widget (QGroupBox, useCustomCacheDir)
-#: cache/cache.ui:91
+#: cache/cache.ui:88
 #, kde-format
 msgid "&Custom cache directory"
-msgstr ""
+msgstr "&Sjølvvald mappe for mellomlager"
 
 #. i18n: ectx: property (text), widget (QLabel, customCachePathLabel)
-#: cache/cache.ui:103
+#: cache/cache.ui:100
 #, kde-format
 msgid "Cache &Directory"
-msgstr ""
+msgstr "Mellomlager&mappe"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, customCacheDir)
-#: cache/cache.ui:116
+#: cache/cache.ui:113
 #, kde-format
 msgid "The custom directory to store cache"
-msgstr ""
+msgstr "Den sjølvvalde mappa mellomlageret skal lagrast i"
 
 #. i18n: ectx: property (whatsThis), widget (QWidget, CSSConfigWidget)
 #. i18n: ectx: property (whatsThis), widget (QWidget, CSSCustomDialog)

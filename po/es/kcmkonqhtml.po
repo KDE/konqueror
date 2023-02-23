@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-22 00:58+0000\n"
-"PO-Revision-Date: 2023-02-21 14:17+0100\n"
+"PO-Revision-Date: 2023-02-22 20:40+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -534,11 +534,7 @@ msgstr "Acti&var la caché"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, memoryCache)
 #: cache/cache.ui:29
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html><head/><body><p>Don't store the cache on disk but only in memory.</"
-#| "p><p>Turning this on means means that the cache will be cleared when "
-#| "exiting Konqueror</p></body></html>"
+#, kde-format
 msgid ""
 "<html><head/><body><p>Don't store the cache on disk but only in memory.</"
 "p><p>Turning this on means that the cache will be cleared when exiting "
