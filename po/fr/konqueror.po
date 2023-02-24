@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-22 00:58+0000\n"
-"PO-Revision-Date: 2023-02-07 20:13+0100\n"
+"PO-Revision-Date: 2023-02-22 21:18+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -57,6 +57,9 @@ msgid ""
 "<p>You're running Konqueror as root. This requires enabling a highly "
 "insecure mode in the browser component.</p><p>What do you want to do?</p>"
 msgstr ""
+"<p>Vous avez lancé Konqueror en tant qu'administrateur. Ceci conduit à "
+"l'activation d'un mode hautement non sécurisé d'un composant du navigateur.</"
+"p><p>Voulez-vous vraiment continuer ?</p>"
 
 #: src/konqapplication.cpp:127
 #, kde-format
