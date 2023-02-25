@@ -31,9 +31,9 @@
 </authorgroup>
 
 <date
->24/11/2009</date>
+>08/11/2016</date>
 <releaseinfo
->&kde; 4.4</releaseinfo>
+>Applications 16.12</releaseinfo>
 
 <keywordset>
 <keyword
@@ -52,63 +52,7 @@
 >Configurações da desempenho</title>
 
 <para
->O &kde; é usado numa enorme variedade de computadores por diversos usuários. Na categoria de desempenho, esta janela permite a cada usuário ajustar as opções que poderão fazer com que o computador onde está instalado o &konqueror; responda melhor. </para>
-
-<sect2
-><title
->Instâncias do &konqueror;</title>
-<para
->A primeira seção desta janela chama-se <guilabel
->Minimizar o uso da memória</guilabel
-> e tem três opções que determinam o número máximo de instâncias do &konqueror; que poderão ser abertas numa máquina a qualquer momento.</para>
-
-<note
-><para
->Não confunda as instâncias do &konqueror; com as janelas ou páginas do &konqueror;. O número de instâncias do &konqueror; é determinado pelo &kde;, não pelo usuário. Você poderá pensar nas instâncias como os dados ocultos das suas janelas e páginas do &konqueror;. Uma instância do &konqueror; poderá conter os dados de várias páginas e janelas. A sua escolha das opções exclusivas a seguir não limita o número de janelas que você pode abrir em determinada momento, mas sim quantas instâncias do &konqueror; poderá abrir no total. </para>
-<para
->A razão para que as opções que faça nesta janela serem importantes é evidente quando algo corre mal e o &konqueror; é obrigado a fechar uma instância. <emphasis
->Todas as janelas do &konqueror; associadas a uma instância do &konqueror; devem ser fechadas imediatamente (sem ter tempo para salvar os dados ou as localizações dos favoritos).</emphasis
-> Assim, quanto mais instâncias puder abrir ao mesmo tempo, menos um problema em uma instância o afetará no seu trabalho. Cada instância necessita de mais memória, o que poderá ser um problema nos sistemas que tenham pouca memória. </para
-></note>
-
-<para
->As suas opções são:</para>
-
-<variablelist>
-<varlistentry>
-<term
-><guilabel
->Nunca</guilabel
-></term>
-<listitem
-><para
->Não existem restrições. Você poderá abrir em qualquer momento um número arbitrário de instâncias do &konqueror;. A vantagem desta opção é que, se qualquer instância do &konqueror; travar, as outras não irão sofrer nada. A desvantagem é que cada instância do &konqueror; irá ocupar mais memória.</para
-></listitem>
-</varlistentry>
-
-<varlistentry>
-<term
-><guilabel
->Somente para navegação de arquivos (recomendado)</guilabel
-></term>
-<listitem
-><para
->Se esta opção estiver selecionada, você poderá ter tantas instâncias do &konqueror; abertas quantas desejar na navegação pela Web, mas só terá uma instância do &konqueror; para o gerenciamento de arquivos. </para
-></listitem>
-</varlistentry>
-
-<varlistentry>
-<term
-><guilabel
->Sempre (use com cuidado)</guilabel
-></term>
-<listitem
-><para
->Se esta opção for selecionada, você só poderá ter uma instância do &konqueror; rodando em qualquer momento. Isto poupa memória ao sistema, mas se a sua janela do &konqueror; travar, todas as suas janelas de navegação fecham imediatamente sem aviso prévio. Isto só deverá ser usado em sistemas extremamente limitados em memória.</para
-></listitem>
-</varlistentry>
-</variablelist>
-</sect2>
+>O &konqueror; é usado numa enorme variedade de computadores por diversos usuários. Na categoria de desempenho, esta janela permite a cada usuário ajustar as opções que poderão fazer com que o computador onde está instalado o &konqueror; responda melhor. </para>
 
 <sect2
 ><title
@@ -116,66 +60,18 @@
 <para
 >A subseção chamada <guilabel
 >Pré-carregamento</guilabel
-> também tem um compromisso entre a memória e o desempenho.</para>
+> tem um compromisso entre a memória e o desempenho.</para>
 
 <para
 >O <emphasis
 >Pré-carregamento</emphasis
-> diz respeito ao carregamento de uma instância do &konqueror; para a memória, antes de um usuário pedir para iniciar o &konqueror;. O efeito positivo disto é que, se um usuário pedir ao &kde; para carregar o &konqueror;, a janela aparece instantaneamente, porque a maior parte do aplicativo já foi carregado previamente. O efeito negativo é que essa instância do &konqueror; está usando memória que poderia ser usada por outros programas. Por padrão, quando um usuário fecha o &konqueror;, o &kde; não fecha a instância. Isto significa que, da próxima vez que um usuário quiser carregar o &konqueror;, o carregamento é quase instantâneo novamente.</para>
-<para
->O campo incremental <guilabel
->Número máximo de instâncias a manter pré-carregadas:</guilabel
-> pode ser usado para ajustar o número máximo de instâncias pré-carregadas. Esta opção não afeta o momento temporal em que estas são carregadas. Também não limita o número de instâncias que podem ser usadas pelas janelas ativas. Só afeta o número de instâncias carregadas previamente.</para>
-<para
->A opção <guilabel
->Pré-carregar uma instância após a inicialização do &kde;</guilabel
-> faz exatamente isso. Ela diz ao &kde; para carregar previamente uma instância do &konqueror; na inicialização do &kde;.</para>
-<note
-><para
->Isto aumenta um pouco o tempo de inicialização do &kde;.</para
-></note>
+> diz respeito ao carregamento de uma instância do &konqueror; para a memória, antes de um usuário pedir para iniciar o &konqueror;. O efeito positivo disto é que, se um usuário pedir para carregar o &konqueror;, a janela aparece instantaneamente, porque a maior parte do aplicativo já foi carregado previamente. O efeito negativo é que essa instância do &konqueror; está usando memória que poderia ser usada por outros programas. Por padrão, quando um usuário fecha o &konqueror;, a instância não é fechada. Isto significa que, da próxima vez que um usuário quiser carregar o &konqueror;, o carregamento é quase instantâneo novamente.</para>
+
 <para
 >A opção final <guilabel
 >Sempre tentar ter pelo menos uma instância pré-carregada</guilabel
-> diz ao &kde; que você deseja ter sempre o &kde; com uma instância pré-carregada do &konqueror; disponível, mesmo que não seja usada. Esta opção irá de fato diminuir o desempenho em algumas máquinas (especialmente as que tiverem memória física limitada).</para>
+> sinaliza que você deseja ter sempre uma instância pré-carregada do &konqueror; disponível, mesmo que não seja usada. Esta opção irá de fato diminuir o desempenho em algumas máquinas (especialmente as que tiverem memória física limitada).</para>
 </sect2>
-<!-- not in kde4
-<sect2
-><title
->&kde; system performance options</title>
-<para
->Click on the tab labeled <guilabel
->System</guilabel
->.</para>
-<para
->Currently there is only one option labeled <guilabel
->Disable system configuration startup check</guilabel
->.
-</para>
-<para
->When &kde; starts, it checks several directories for changes to configuration.  Most of these changes relate to installation and uninstalling applications to the computer.  This scan extends the startup time for &kde;  and many times this scan is not needed as the configuration is current from the last time &kde; was started.  When the configuration has changed &kde; uses this scan to update various datafiles to ensure a smooth user experience.  </para>
-<warning
-><para
->You are given the option to skip this initial scan during startup.  &kde; developers strongly suggest you do not disable this scan because of the potential to introduce instability into your system.</para>
-<para
->If you do select this option:</para>
-<itemizedlist>
-<listitem
-><para
->&kde; will wait to perform the scan until after &kde; has started.  This scan will be performed after the desktop is loaded.</para
-></listitem>
-<listitem
-><para
->In the event of a crash, &kde; will not perform a backtrace because your problem may be related to the delayed scan.</para
-></listitem>
-<listitem
-><para
->Switch this option off if any application is crashing as a delayed scan may be responsible for the crash.</para
-></listitem>
-</itemizedlist>
-</warning>
-</sect2>
--->
 </sect1>
 
 </article>

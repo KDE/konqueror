@@ -1,7 +1,6 @@
 <?xml version="1.0" ?>
 <!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
 "dtd/kdedbx45.dtd" [
-<!ENTITY nsplugins-kcontrol SYSTEM "nsplugin.docbook">
 <!ENTITY % addindex "IGNORE">
 <!ENTITY % Brazilian-Portuguese "INCLUDE"
 > <!-- change language only here -->
@@ -32,9 +31,9 @@
 </authorgroup>
 
 <date
->11/11/2011</date>
+>04/11/2019</date>
 <releaseinfo
->&kde; 4.10</releaseinfo>
+>Applications 19.12</releaseinfo>
 
 <keywordset>
 <keyword
@@ -67,12 +66,12 @@
 
 <para
 >A próxima opção desta página é <guilabel
->Complementação de formulários</guilabel
+>Completamento de formulários</guilabel
 >. Se você marcar esta opção, o &konqueror; tentará lembrar o que você deve responder em questões de um formulário, e tentará preencher os campos para você, com respostas que você usou anteriormente.</para>
 
 <para
 >Você pode configurar o número de itens que serão lembrados em um formulário no &konqueror; com a caixa de numeração chamada <guilabel
->Número máximo de complementações</guilabel
+>Número máximo de completamentos</guilabel
 >.</para>
 
 <note
@@ -105,17 +104,25 @@
 <para
 ><guilabel
 >Habilitar as teclas de acesso com a tecla &Ctrl;</guilabel
->: Pressionar a tecla &Ctrl; quando estiver visualizando páginas Web ativa as teclas de acesso. Desativar esta caixa desabilitará o recurso de acessibilidade. O &konqueror; precisa ser reiniciado para que esta mudança seja efetivada.</para>
+>: Pressionar a tecla &Ctrl; quando estiver visualizando sites ativa as teclas de acesso. Desativar esta caixa desabilitará o recurso de acessibilidade. O &konqueror; precisa ser reiniciado para que esta mudança seja efetivada.</para>
 
 <para
 ><guilabel
->Enviar o cabeçalho DNT para indicar às páginas Web que não querem ser rastreadas</guilabel
->. Assinale esta opção se quiser informar a uma página Web que deseja que os seus hábitos de navegação Web não sejam rastreados. </para>
+>Enviar o cabeçalho DNT para indicar aos sites que não querem ser rastreadas</guilabel
+>. Assinale esta opção se quiser informar a um site que deseja que os seus hábitos de navegação Web não sejam rastreados. </para>
 
 <para
 ><guilabel
->Oferecer-se para salvar as senhas das páginas Web</guilabel
->. Desative esta opção para não ser questionado se deseja salvar as senhas das páginas Web </para>
+>Oferecer-se para salvar as senhas dos sites</guilabel
+>. Desative esta opção para não ser questionado se deseja salvar as senhas dos sites </para>
+
+<para
+><guilabel
+>Mostrar os arquivos &PDF; online com o WebEngine</guilabel
+>. Desmarque esta opção para mostrar os arquivos &PDF; online como configurado no módulo <guilabel
+>Associações de arquivos</guilabel
+> das &systemsettings;. </para>
+
 </sect1>
 
 </article>

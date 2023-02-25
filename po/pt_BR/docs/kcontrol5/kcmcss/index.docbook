@@ -31,9 +31,9 @@
 </authorgroup>
 
 <date
->01/12/2009</date>
+>08/11/2016</date>
 <releaseinfo
->&kde; 4.4</releaseinfo>
+>Applications 16.12</releaseinfo>
 
 <keywordset>
 <keyword
@@ -58,7 +58,7 @@
 <title
 >Aparência</title>
 <para
->Este módulo contém três páginas com opções de configuração sobre como exibir páginas Web.</para>
+>Este módulo contém três páginas com opções de configuração sobre como exibir sites.</para>
 
 <sect2 id="general">
 <title
@@ -68,15 +68,15 @@
 <para
 >A opção <guilabel
 >Carregar imagens automaticamente</guilabel
-> permite-lhe controlar se as imagens das páginas Web são carregadas por padrão. A menos que você tenha uma conexão muito lenta, irá querer deixar esta opção selecionada, uma vez que existem muitas páginas Web que são difíceis de usar sem imagens. Se você não selecionar a opção de carregamento automático das imagens, você ainda poderá ver o texto da página, e então carregar as imagens se precisar delas.</para>
+> permite-lhe controlar se as imagens dos sites são carregadas por padrão. A menos que você tenha uma conexão muito lenta, irá querer deixar esta opção selecionada, uma vez que existem muitos sites que são difíceis de usar sem imagens. Se você não selecionar a opção de carregamento automático das imagens, você ainda poderá ver o texto da página, e então carregar as imagens se precisar delas.</para>
 
 <para
 >Se a opção <guilabel
 >Desenhar quadro ao redor de imagens não completamente carregadas</guilabel
-> estiver habilitada, o &konqueror; irá desenhar um quadro como um reservador de espaço no lugar das imagens embutidas em uma página Web que não foram completamente carregadas. Você provavelmente desejará habilitar esta opção para aprimorar sua experiência de navegação, especialmente se você tiver uma conexão lenta.</para>
+> estiver habilitada, o &konqueror; irá desenhar um quadro como um reservador de espaço no lugar das imagens embutidas em um site que não foram completamente carregadas. Você provavelmente desejará habilitar esta opção para aprimorar sua experiência de navegação, especialmente se você tiver uma conexão lenta.</para>
 
 <para
->Muitas páginas Web usam imagens no formato GIF animado, e isto pode ser muito irritante e, em alguns casos, ocupar muito os recursos de seu sistema. A opção <guilabel
+>Muitos sites usam imagens no formato GIF animado, e isto pode ser muito irritante e, em alguns casos, ocupar muito os recursos de seu sistema. A opção <guilabel
 >Animações</guilabel
 > deixa você escolher quando as animações serão habilitadas. O padrão é estar habilitado, mas você pode desabilitar ou executar a animação somente uma vez, mesmo se o arquivo contém instruções dizendo que a animação deve ser executada mais vezes ou continuamente.</para>
 
@@ -85,7 +85,7 @@
 >Sublinhar links:</guilabel
 >. Você poderá optar para que o sublinhado dos links esteja <guilabel
 >Habilitado</guilabel
->. Se esta opção estiver selecionada, todo o texto das páginas Web que funcione como um link será mostrado sublinhado. Embora muitas páginas usem cores para distinguir o texto dos links, os sublinhados facilitam bastante a sua localização.</para>
+>. Se esta opção estiver selecionada, todo o texto dos sites que funcione como um link será mostrado sublinhado. Embora muitas páginas usem cores para distinguir o texto dos links, os sublinhados facilitam bastante a sua localização.</para>
 
 <para
 >Se você não gostar dos links sublinhados, poderá deixar este recurso <guilabel
@@ -96,7 +96,7 @@
 
 <note
 ><para
->As definições CSS da página Web podem sobrepor este valor.</para
+>As definições CSS do site podem sobrepor este valor.</para
 ></note>
 
 <para
@@ -131,7 +131,7 @@
 <title
 >Fontes</title>
 <para
->Neste aba você pode selecionar várias opções relacionadas ao uso de fontes. Embora as formas e tamanhos de fontes frequentemente fazem parte do projeto de uma página Web, você pode selecionar algumas configurações padrão para o uso com o &konqueror;.</para>
+>Neste aba você pode selecionar várias opções relacionadas ao uso de fontes. Embora as formas e tamanhos de fontes frequentemente fazem parte do projeto de um site, você pode selecionar algumas configurações padrão para o uso com o &konqueror;.</para>
 
 <para
 >A primeira configuração possível é o tamanho da fonte. Existe duas opções que trabalham juntas para permitir a você uma navegação mais confortável.</para>
@@ -159,7 +159,7 @@
 > serão, nesse caso, mostradas com esse tamanho. Uma opção não afeta a outra.</para>
 
 <para
->As opções restantes são para as fontes a serem associadas com os diferentes tipos de marcação usadas em páginas &HTML;. Observe que muitas páginas Web podem sobrepor estas configurações. Para qualquer tipo de fonte (padrão, fixa, com serifa, &etc;), você pode selecionar uma fonte diferente se você desejar.</para>
+>As opções restantes são para as fontes a serem associadas com os diferentes tipos de marcação usadas em páginas &HTML;. Observe que muitos sites podem sobrepor estas configurações. Para qualquer tipo de fonte (padrão, fixa, com serifa, &etc;), você pode selecionar uma fonte diferente se você desejar.</para>
 
 <para
 >Abaixo destas opções, você pode configurar o <guilabel
@@ -185,7 +185,7 @@
 <para
 >Folhas de estilo <acronym
 >CSS</acronym
-> afetam o modo como as páginas Web aparecem. O <acronym
+> afetam o modo como os sites aparecem. O <acronym
 >CSS</acronym
 > é o acrônimo para <emphasis
 >C</emphasis
@@ -199,7 +199,7 @@
 >O &kde; pode usar sua própria folha de estilo, baseado em padrões simples e no esquema de cor que você está usando em seu ambiente de trabalho. O &kde; também pode usar uma folha de estilo que você mesmo escreveu: basta você especificar uma folha de estilo neste módulo. As opções apresentadas estão sintonizadas com outro módulo, especialmente para pessoas com visão reduzida.</para>
 
 <para
->Suas escolhas feitas aqui afetam todo aplicativo do &kde; que renderiza páginas em HTML com o renderizador do &kde; que é chamado khtml. Entre estes aplicativos incluem-se o &kmail;, o &khelpcenter; e, é claro, o &konqueror;. As escolhas aqui não afetam outros navegadores, tais como o &Netscape;.</para>
+>Suas escolhas feitas aqui afetam todo aplicativo do &kde; que renderiza páginas em HTML com o renderizador do &kde; que é chamado khtml. Entre estes aplicativos incluem-se o &kmail;, o &khelpcenter; e, é claro, o &konqueror;. As escolhas aqui não afetam outros navegadores, tais como o &firefox;.</para>
 
 </sect3>
 
@@ -260,7 +260,7 @@
 >Personalizar</title>
 
 <para
->Nesta janela você pode configurar uma folha de estilo do usuário. As opções disponíveis estão somente em um subconjunto das instruções que você pode adicionar em uma folha de estilo. Elas são feitas para pessoas com problemas de visão para permitir que usuários possam criar folhas de estilo que tornam as páginas Web e os arquivos de ajuda do &kde; mais fáceis de ler.</para>
+>Nesta janela você pode configurar uma folha de estilo do usuário. As opções disponíveis estão somente em um subconjunto das instruções que você pode adicionar em uma folha de estilo. Elas são feitas para pessoas com problemas de visão para permitir que usuários possam criar folhas de estilo que tornam os sites e os arquivos de ajuda do &kde; mais fáceis de ler.</para>
 
 <para
 >As opções desta página estão desabilitadas, a menos que você escolha a opção <guilabel
@@ -320,7 +320,7 @@
 >-1</quote
 > para tornar o texto menor.</para>
 <para
->Muitas pessoas projetam suas páginas Web em plataformas onde o tamanho padrão do texto é muito grande para leitura do usuário médio. Assim, é muito comum aparecerem páginas que "forçam" fontes menores.</para>
+>Muitas pessoas projetam seus sites em plataformas onde o tamanho padrão do texto é muito grande para leitura do usuário médio. Assim, é muito comum aparecerem páginas que "forçam" fontes menores.</para>
 <para
 >Esta opção permitirá configurar a fonte padrão para um bom tamanho, pois os tamanhos relativos são também aumentados o bastante para que sejam confortáveis de se ler.</para>
 <para
