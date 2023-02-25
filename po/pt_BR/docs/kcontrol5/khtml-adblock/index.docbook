@@ -1,7 +1,6 @@
 <?xml version="1.0" ?>
 <!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
 "dtd/kdedbx45.dtd" [
-<!ENTITY nsplugins-kcontrol SYSTEM "nsplugin.docbook">
 <!ENTITY % addindex "IGNORE">
 <!ENTITY % Brazilian-Portuguese "INCLUDE"
 > <!-- change language only here -->
@@ -32,13 +31,13 @@
 </authorgroup>
 
 <date
->22/11/2011</date>
+>08/11/2016</date>
 <releaseinfo
->&kde; 4.8</releaseinfo>
+>Applications 16.12</releaseinfo>
 </articleinfo>
 
 <para
->O AdBlocK do &konqueror; pode ser configurado para substituir ou remover imagens ou quadros ('frames') das páginas Web que correspondam a uma série de filtros.</para>
+>O AdBlocK do &konqueror; pode ser configurado para substituir ou remover imagens ou quadros ('frames') dos sites que correspondam a uma série de filtros.</para>
 
 <para
 >A opção <guilabel
@@ -58,11 +57,6 @@
 <listitem>
 <para
 >A parte principal desta aba é uma lista de URLs que serão comparados em relação aos nomes das imagens e quadros para decidir as ações de filtragem. Podem ser usados caracteres coringas com expressões regulares para os nomes dos arquivos.</para>
-
-<para
->Use o campo de texto <guilabel
->Pesquisar</guilabel
->, acima da lista, para filtrar os itens correspondentes em tempo real.</para>
 
 <para
 >Cada filtro poderá ser expresso como um texto de caracteres especiais para arquivos (por exemplo, http://www.site.com/ads/*) ou como uma expressão regular completa, envolvendo o filtro com barras normais (por exemplo, //(ads|dclk)\./).</para>
@@ -106,9 +100,9 @@
 </variablelist>
 
 <para
->Se os filtros AdBlock estiverem ativos, um ícone à direita da barra de status é mostrado. Use um clique do &RMB; neste ícone para abrir um menu de contexto com ações para exibir todos os elementos bloqueáveis na página Web, abrir este módulo do &systemsettings; e desativar o bloqueio para um site ou página temporariamente.</para>
+>Se os filtros AdBlock estiverem ativos, um ícone à direita da barra de status é mostrado. Use um clique do &RMB; neste ícone para abrir um menu de contexto com ações para exibir todos os elementos bloqueáveis o site, abrir este módulo do &systemsettings; e desativar o bloqueio para um site ou página temporariamente.</para>
 
 <para
->Um clique com o &LMB; mostra a janela com todos os elementos bloqueáveis na página Web aberta. A partir desta janela, você pode adicionar novos filtros diretamente sem abrir este módulo das &systemsettings;.</para>
+>Um clique com o &LMB; mostra a janela com todos os elementos bloqueáveis no site aberto. A partir desta janela, você pode adicionar novos filtros diretamente sem abrir este módulo das &systemsettings;.</para>
 
 </article>
