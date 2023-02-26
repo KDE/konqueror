@@ -14,6 +14,8 @@
 #include <QDBusMessage>
 #include <QDBusConnection>
 
+int constexpr conversionFactor = 1000000;
+
 Cache::Cache(QWidget* parent, const QVariantList& ): KCModule(parent),
     m_ui(new Ui::Cache),
     m_config(KSharedConfig::openConfig(QString(), KConfig::NoGlobals))
@@ -49,7 +51,7 @@ void Cache::load()
     m_ui->memoryCache->setChecked(grp.readEntry("MemoryCache", false));
     int maxSizeInBytes = grp.readEntry("MaximumCacheSize", 0);
     //Ensure that maxSizeInMB is greater than 0 if maxSizeInBytes is not 0
-    int maxSizeInMB = maxSizeInBytes == 0 ? 0 : std::max(1, maxSizeInBytes / 1000);
+    int maxSizeInMB = maxSizeInBytes == 0 ? 0 : std::max(1, maxSizeInBytes / conversionFactor);
     m_ui->cacheSize->setValue(maxSizeInMB);
     QString path = grp.readEntry("CustomCacheDir", QString());
     m_ui->useCustomCacheDir->setChecked(!path.isEmpty());
@@ -64,7 +66,7 @@ void Cache::save()
     grp.writeEntry("CacheEnabled", cacheEnabled);
     grp.writeEntry("MemoryCache", m_ui->memoryCache->isChecked());
     //We store the size in bytes, not in MB
-    grp.writeEntry("MaximumCacheSize", m_ui->cacheSize->value()*1000);
+    grp.writeEntry("MaximumCacheSize", m_ui->cacheSize->value()*conversionFactor);
     QString path = m_ui->customCacheDir->isEnabled() ? m_ui->customCacheDir->url().path() : QString();
     grp.writeEntry("CustomCacheDir", path);
     m_config->sync();
