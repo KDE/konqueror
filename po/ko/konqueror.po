@@ -2,14 +2,14 @@
 # Copyright (C) 2001-2004, 2007-2008 Free Software Foundation, Inc.
 # KIM KyungHeon <tody@kde.or.kr>, 2001, 2002, 2003, 2004.
 # Lee Seok <ddoman@kde.or.kr>, 2004.
-# Shinjo Park <kde@peremen.name>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2015, 2016, 2017, 2020, 2021, 2022.
+# Shinjo Park <kde@peremen.name>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2015, 2016, 2017, 2020, 2021, 2022, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-27 02:40+0000\n"
-"PO-Revision-Date: 2022-05-15 22:34+0200\n"
+"PO-Revision-Date: 2023-03-01 01:57+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -448,7 +448,7 @@ msgstr "열려는 위치."
 msgid ""
 "You can't pass URLs when using the --preload switch. The URLs will be "
 "ignored\n"
-msgstr ""
+msgstr "--preload 스위치에는 URL을 지정할 수 없습니다. URL을 무시합니다\n"
 
 #: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4884
 #: src/konqmainwindow.cpp:4930
@@ -1245,11 +1245,10 @@ msgid "Open bookmarks folder in new tabs"
 msgstr "책갈피 폴더를 새 탭에 열기"
 
 #: src/konqmainwindow.cpp:4249
-#, fuzzy, kde-format
-#| msgid "&Open"
+#, kde-format
 msgctxt "@action:button"
 msgid "Open"
-msgstr "열기(&O)"
+msgstr "열기"
 
 #: src/konqmainwindow.cpp:4408
 #, kde-format
