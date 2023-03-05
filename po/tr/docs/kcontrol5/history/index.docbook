@@ -1,0 +1,95 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Turkish "INCLUDE">
+]>
+<article id="history" lang="&language;">
+<title
+>Geçmiş Yan Çubuğu</title>
+<articleinfo>
+<authorgroup>
+<author
+>&Burkhard.Lueck;</author>
+<othercredit role="translator"
+><firstname
+>Kaan</firstname
+><surname
+>Özdinçer</surname
+><affiliation
+><address
+><email
+>kaanozdincer@gmail.com</email
+></address
+></affiliation
+><contrib
+>Çeviri</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2009-11-24</date>
+<releaseinfo
+>&kde; 4.4</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Sistem ayarları</keyword>
+<keyword
+>geçmiş</keyword>
+</keywordset>
+</articleinfo>
+
+<para
+>Bu pencere, geçmiş yan çubuğunu yapılandırmanıza izin verir. </para>
+
+<variablelist>
+<varlistentry
+><term
+><guilabel
+>Sınırlar</guilabel
+></term>
+<listitem
+><para
+>Bu bölümdeki seçenekler, geçmişinizin azami boyutunu belirlemek ve hangi ögelerin otomatik olarak kaldırılmasını sağlayacak bir zaman belirlemek için kullanılabilir. </para
+></listitem>
+</varlistentry>
+
+<varlistentry
+><term
+><guilabel
+>Özel Yazı Tipi</guilabel
+></term>
+<listitem
+><para
+>Burada, <guibutton
+>Yazı Tipi Seç</guibutton
+> düğmesini kullanarak yeni ve eski &URL;ler için farklı yazı tipleri de ayarlayabilirsiniz. </para
+></listitem>
+</varlistentry>
+
+<varlistentry
+><term
+><guilabel
+>Ayrıntılar</guilabel
+></term>
+<listitem
+><para
+><guilabel
+>Ayrıntılı ipuçları </guilabel
+> onay kutusu, fare işaretçisini geçmiş sayfasındaki bir ögenin üzerine getirdiğinizde, ne kadar bilgi görüntüleneceğini kontrol eder.</para>
+<para
+>İşaretlendiğinde, URL'ye ek olarak, ziyaret edilen ziyaret sayısı ve ilk ve son ziyaretlerin tarihlerini de gösterir.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+><guibutton
+>Geçimişi Temizle</guibutton
+> seçeneği, tüm geçmişi temizleyecektir. </para>
+</article>

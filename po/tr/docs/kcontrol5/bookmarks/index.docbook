@@ -1,0 +1,166 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Turkish "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="bookmarks" lang="&language;">
+<articleinfo>
+
+<title
+>Yer İmleri</title>
+<authorgroup>
+<author
+><personname
+><firstname
+>Xavier</firstname
+><surname
+>Vello</surname
+></personname
+> <email
+>xavier.vello@gmail.com</email
+> </author>
+<othercredit role="translator"
+><firstname
+>Kaan</firstname
+><surname
+>Özdinçer</surname
+><affiliation
+><address
+><email
+>kaanozdincer@gmail.com</email
+></address
+></affiliation
+><contrib
+>Çeviri</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2016-11-08</date>
+<releaseinfo
+>Uygulamalar 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Sistem ayarları</keyword>
+<keyword
+>yer imleri</keyword>
+<keyword
+>KIO</keyword>
+</keywordset>
+</articleinfo>
+<sect1 id="conf">
+<title
+>Yer imleri ana sayfası</title>
+<para
+>Bu modül, yer imleri ana sayfasını yapılandırmanıza izin verir.</para>
+<para
+>Yer imleri ana sayfasını görüntülemek için, konum çubuğuna <userinput
+>bookmarks:/</userinput
+> yazın.</para>
+<para
+>Bu modüldeki ayarlara, konum çubuğuna <userinput
+>bookmarks:/config</userinput
+> yazılarak ta ulaşılabilirdir.</para>
+<sect2 id="conf-general">
+<title
+>Genel ayarlar</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Gösterilecek sütunların sayısı</guilabel
+></term>
+<listitem>
+<para
+>Dizinler otomatik olarak birkaç sütuna dağıtılmıştır. En uygun sütun sayısı, &konqueror; penceresinin genişliğine ve kaç tane yer iminiz olduğuna göre değişir.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Klasör arkaplanlarını göster</guilabel
+></term>
+<listitem>
+<para
+>Bu seçeneği yavaş sistemlerde arkaplan resimlerini pasifleştirmek için etkisizleştirin.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="conf-bookmark">
+<title
+>Yer İmleri</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Yer imlerini klasör olmadan göster</guilabel
+></term>
+<listitem>
+<para
+>Eğer bu seçenek seçilmezse sıralamanın kökünde bulunan (bir dizinde olmayan) yer imleri gösterilmeyecek. Eğer seçilirse bu yer imleri bir "kök" dizinde toplanacak.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Düz yer imleri ağacı</guilabel
+></term>
+<listitem>
+<para
+>Alt dizinler öntanımlı olarak kendi üst dizinleri içerisinde gösterilir. Eğer bu seçeneği etkinleştirirseniz alt-dizinler ayrı gösterilir. Bu kötü görünür ancak eğer iki sütunda gösterilmesini istediğiniz çok büyük bir dizininiz varsa kullanışlıdır.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Sistem konumlarını göster</guilabel
+></term>
+<listitem>
+<para
+>Yaygın konumları içeren bir kutucuk göster (Ev Dizini, Ağ, ...). Dosya yöneticisi olarak &konqueror; kullanıyorsanız kullanışlıdır.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="conf-cache">
+<title
+>Resim önbelleği</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Disk önbellek boyutu</guilabel
+></term>
+<listitem>
+<para
+>Resimler için kullanılacak disk alanı belirt.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Önbelleği Temizle</guilabel
+></term>
+<listitem>
+<para
+>Ön belleğe alınmış tüm resimleri kaldır. Bazı simgeler bozulursa ve otomatik olarak yenilenmezlerse bu gerekli olabilir.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+</sect1>
+</article>
