@@ -1,0 +1,108 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Turkish "INCLUDE"
+> <!-- change language only here -->
+]>
+<!-- extragear has another adblock ? -->
+<article lang="&language;" id="khtml-adblock">
+<articleinfo>
+<title
+>AdBlocK Filtreleri</title>
+<authorgroup>
+<author
+>&Krishna.Tateneni; &Krishna.Tateneni.mail;</author>
+<othercredit role="translator"
+><firstname
+>Turgay</firstname
+><surname
+>GULMEZ</surname
+><affiliation
+><address
+><email
+>turgaygulmez@windowslive.com</email
+></address
+></affiliation
+><contrib
+>Çeviri</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2016-11-08</date>
+<releaseinfo
+>Uygulamalar 16.12</releaseinfo>
+</articleinfo>
+
+<para
+>&konqueror; AdBlocK görüntüleri ve çerçeveleri web sayfalarındaki bir dizi filtrelerden değiştirmek ve kaldırmak için yapılandırılabilir.</para>
+
+<para
+><guilabel
+>Filtreleri Etkinleştir</guilabel
+> ayarı URL filtre listesinin kullanımınıetkinleştirir ve devre dışı bırakır.</para>
+<para
+><guilabel
+>Filtrelenmiş görüntüleri gizle</guilabel
+> etkinleştirilirse, o zaman engellenmiş görüntüler tamamen sayfadan kaldırılacaktır ve kapladıkları alan düzeltilecektir. Eğer bu seçenek devre dışı bırakılırsa o zaman filtrelenmiş görüntülerin yerinde yer tutucu görüntüler kullanılacaktır.</para>
+
+<variablelist>
+<varlistentry id="khtml-adblock-manual">
+<term
+><guilabel
+>Elle Yapılan Filtre</guilabel
+></term>
+<listitem>
+<para
+>Bu sekmenin ana parçası filtreleme eylemlerinde görüntü ve çerçeve isimlerinin karşılaştırılmasına karar vermek için olan URL'lerin listesidir. Özel isimler dosya isimleri tarzı düzenli ifadeler olarak verilebilinir.</para>
+
+<para
+>Her filtre dosya stili özel karakter dizisi olarak (örn. http://www.site.com/ads/*) veya eğik çizgi ile filtreleri de içine alan tam düzenli ifade olarak (örn. //(ads|dclk)\./) ifade edilebilinir.</para>
+
+<para
+>Herhangi bir dizi filtresi eşleşmiş ve kara liste filtresinin üzerinde önceliğini alan herhangi bir URL'ye izin vermek için <literal
+>@@</literal
+> ile üstünlük sağlayabilir.</para>
+
+<para
+><guilabel
+>İçe Aktar</guilabel
+> ve <guilabel
+>Dışarı Aktar</guilabel
+> geçerli filtre listesini bir düz metin dosyasına kayıt eder veya dosyadan okur. Dosyalar <userinput
+>[AdBlock]</userinput
+> başlığı ile başlar ve daha sonra tüm filtreler farklı bir satırda birbirini takip eder. Satırlar ünlem işareti ile ön ek almışlardır (<userinput
+>!</userinput
+>). Ayrıca başlık satırı yorumlar olarak işlenir ve bu açıklama veya bir dizi filtreyi etiketleme olarak kullanılabilir.</para>
+
+<para
+>Düzenleme kutusunda listeden bir girişi değiştirmek veya bu ögeyi kaldırmak için vurgulayın. Buraya yeni bir filtre dizgesi girin ve <guibutton
+> Ekle</guibutton
+> düğmesini kullarak listeye ekleyin.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry id="khtml-adblock-automatic">
+<term
+><guilabel
+>Otomatik Filtre</guilabel
+></term>
+<listitem>
+<para
+>Bu sekme isimlerin listesini ve &URL;'lerin önceden tanımlanmış AdBlock filtre girişlerini göstermektedir. Bir girdiyi etkinleştirmek için filtre adının yanındaki onay kutusunu işaretleyin ve <guilabel
+>Otomatik güncelleme aralığını</guilabel
+> ayarlayınız (öntanımlı 7 gün). </para>
+</listitem>
+</varlistentry>
+  
+</variablelist>
+
+<para
+>AdBlock filtreleri etkinleştirilirse, durum çubuğunun sağ tarafında bir simge görünecektir. Bir &RMB; kullanın ve web sayfasında tüm engellenebilir elemanlarını gösteren bağlam menüsünü eylemleri ile açmak için bu ikona tıklayınız.&systemsettings; modülünü açınız ve bir site veya geçici bir sayfa için engellemeyi devre dışı bırakınız.</para>
+
+<para
+>&LMB; tıklama açılmış web sayfasında ki tüm engellenebilir ögeleri barındıran pencereyi gösterecektir. Bu pencereden &systemsettings; modülünü açmadan doğrudan yeni filtreler ekleyebilirsiniz.</para>
+
+</article>

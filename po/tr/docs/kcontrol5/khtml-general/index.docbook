@@ -1,0 +1,196 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Turkish "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article lang="&language;" id="konq-general-behavior">
+<title
+>Genel &konqueror; Davranışı</title>
+<articleinfo>
+
+<authorgroup>
+<author
+>&Burkhard.Lueck;</author>
+<othercredit role="translator"
+><firstname
+>Kaan</firstname
+><surname
+>Özdinçer</surname
+><affiliation
+><address
+><email
+>kaanozdincer@gmail.com</email
+></address
+></affiliation
+><contrib
+>Çeviri</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2016-11-08</date>
+<releaseinfo
+>Uygulamalar 16.12</releaseinfo>
+
+</articleinfo>
+<para
+>Bu sayfada ev ve başlangıç sayfası ayarları, konqueror'un dosya yöneticisi ve tarayıcı kipi için sekmeli gezinme davranışını bulabilirsiniz.</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Konqueror başlatıldığında</guilabel
+></term>
+<listitem>
+<para
+>Bu seçenek, &konqueror; başladığında giriş sayfası, ana sayfa, boş bir sayfa veya yer imleri sayfanızdan hangisinin gösterileceğine karar verir. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Ana Sayfa</guilabel
+></term>
+<listitem
+><para
+>Araç çubuğundaki <guibutton
+>Ana Sayfa</guibutton
+> düğmesine basıldığında, tarayıcı kipindeki &konqueror;'un gideceği URL'dir(&ie; bir klasör veya web sayfası). Metin alanına yazarak veya yerel bir klasör seçmek için <guiicon
+>gözat</guiicon
+> simgesini kullanarak <guilabel
+>Ana sayfa</guilabel
+> olan bir yol belirleyebilirsiniz. Değişikliklerin yürürlüğe girmesi için &konqueror;'un yeniden başlatılması gerekir.</para>
+<para
+>&konqueror; dosya yöneticisi kipinde kullanıldığında, araç çubuğundaki <guilabel
+>Ana Sayfa</guilabel
+> düğmesi, <guilabel
+>Ev Klasörü</guilabel
+> düğmesi ile değiştirilir, böylece, ev klasörünüze gidebilirsiniz.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Bağlantıları pencere yerine sekmede aç</guilabel
+></term>
+<listitem
+><para
+>&konqueror; varsayılan olarak, sayfa başına tek bir pencere açar, ancak tek bir pencere içinde birden fazla <firstterm
+>sekme</firstterm
+> de açabilir. &konqueror; ayrıca, varsayılan olarak, herhangi bir bağlantıyı yeni bir pencerede açmak için bir &MMB; kısayoluna sahiptir. <guilabel
+>Yeni pencerede değil yeni sekmede bağlantıları aç</guilabel
+> seçeneğini etkinleştirirseniz, &MMB; yeni bir sekmede açılması için bir bağlantıda kullanılabilir.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Açılır pencereleri yeni bir pencere yerine yeni sekmede aç</guilabel
+></term>
+<listitem
+><para
+>İzin verilmişse JavaScript PopUp'lar yeni sekmede mi yoksa yeni pencerede mi açılsın.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Harici bir URL çağrıldığı zaman mevcut Konqueror penceresindeki sekmede görüntüle</guilabel
+></term>
+<listitem
+><para
+>Başka bir &kde; programında bir &URL;'ye tıklarsanız veya kfmclient'ini &URL; açması için çalıştırmışsanız, mevcut masaüstü küçültülmemiş &konqueror; arar ve bulunursa, &URL; için yeni bir sekme oluşturulur ve burada açılır. aksi takdirde, &konqueror; penceresi istenen URL'yi göstermek için açılır.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Sekmeleri arkaplanda aç</guilabel
+></term>
+<listitem
+><para
+>Sekmeli gezinme kullanıyorsanız, yeni açılmış bir sekmenin etkin (<quote
+>ön</quote
+>) sekmesi haline gelip gelmeyeceğini seçebilir veya arkaplana atılır. Yavaş bir İnternet bağlantısında, bir listede başlıklar veya başka bağlantılar bulunan bir sayfaya göz atarken, okumaya devam ederken yeni sekmeleri arka planda yüklemek isteyebilirsiniz. Bu durumda, bu ayarı etkinleştirin. Doğrudan yeni sayfaya geçmeyi tercih ederseniz, eski sayfayı daha sonra geri dönmek için arka planda devre dışı bırakın.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Yeni sekmeyi güncel sekmenin arkasında aç</guilabel
+></term>
+<listitem
+><para
+>Bu yeni bir sekmeyi son sekmeden sonra değil seçili sekmeden sonra açar.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Sadece bir sekme açıkken sekme çubuğunu gizle</guilabel
+></term>
+<listitem
+><para
+>Sekme çubuğu en az iki sekme olduğu zaman görüntülenecektir. Aksi takdirde gizli kalacaktır.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Sekmelerde kapat düğmesini göster</guilabel
+></term>
+<listitem
+><para
+>Bu, web sitesi simgeleri yerine, her bir sekme için kapama düğmelerini gösterecektir.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Bir sekmeyi kapatmak için üzerine farenin orta düğmesiyle tıkla</guilabel
+></term>
+<listitem
+><para
+>Farenin orta tuşunu veya tekerleği kullanarak bir sekmeye basarsanız, sekme kapanacaktır. Değişikliklerin etkinleşmesi için, &konqueror;'un yeniden başlatılması gerekir.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Birden fazla sekmeye sahip pencereyi kapatmadan önce onayla</guilabel
+></term>
+<listitem
+><para
+>&konqueror; içindeki birden çok sekmeli bir pencereyi kapatırsanız, &konqueror; size, kapatmak isteyip istemediğinizi soracaktır. Bu davranışı, işaret kutusundan ayarlayabilirsiniz.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Seçili sekme kapatıldığında daha önce etkin olan sekmeyi etkinleştir</guilabel
+></term>
+<listitem
+><para
+>Eğer bu işaretlenirse, seçili sekme kapatıldığında sağdaki sekme yerine bir önce kullanılan sekmeyi etkinleştirir.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</article>

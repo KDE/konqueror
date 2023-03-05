@@ -1,0 +1,103 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Turkish "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="filemanager" lang="&language;">
+<articleinfo>
+<title
+>Dosya Yönetimi</title>
+<authorgroup>
+<author
+>&Mike.McBride; &Mike.McBride.mail;</author>
+<othercredit role="translator"
+><firstname
+>Turgay</firstname
+><surname
+>GULMEZ</surname
+><affiliation
+><address
+><email
+>turgaygulmez@windowslive.com</email
+></address
+></affiliation
+><contrib
+>Çeviri</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2016-11-08</date>
+<releaseinfo
+>Uygulamalar 16.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Sistem Ayarları</keyword>
+<keyword
+>dosya yönetimi</keyword>
+</keywordset>
+</articleinfo>
+
+<para
+>Bu modüllerde, &konqueror;'ın dosya yöneticisi işlevselliğinin çeşitli yönlerini yapılandırabilirsiniz. </para>
+
+<note
+><para
+>&konqueror;'ın web tarayıcısı işlevselliği <ulink url="help:/kcontrol/khtml-behavior/index.html"
+>kendi yapılandırmamodüllerine</ulink
+> sahiptir.</para
+></note>
+
+<variablelist>
+<title
+><guilabel
+>Çeşitli Seçenekler</guilabel
+></title>
+<varlistentry>
+<term
+><guilabel
+>Ayrı pencerelerde klasörleri açmak</guilabel
+></term>
+<listitem
+> <para
+>Eğer bu seçenek işaretlenmiş ise, bir klasör açtığınız zaman sadece mevcut pencerede klasörün içeriğini göstermektense yeni bir &konqueror; penceresi oluşturulacaktır.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Çöp tenekesine kısayol açan 'Sil' menüsü girdilerini göstermek</guilabel
+></term>
+<listitem>
+<para
+>Bunu masaüstünde görüntülenecek menü komutlarını ve dosya yöneticisinin bağlam menülerini <quote
+>Silmek</quote
+> istiyorsanız onaylayın. Dosyaları her zaman <guimenuitem
+>Çöp Kutusuna Taşı</guimenuitem
+>'yı çağırıyorken &Shift; tuşuna basılı tutarak silebilirsiniz.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>&konqueror;'ın dosya yöneticisi biçimleri için olan ayarlar <guilabel
+>Görünüm Kipi</guilabel
+>, <guilabel
+>Gezinme</guilabel
+>, <guilabel
+>Servisler</guilabel
+>, <guilabel
+>Genel</guilabel
+> ve <guilabel
+>Çöp</guilabel
+> sayfaları &dolphin; tarafından da kullanılmaktadır. </para>
+
+</article>
