@@ -272,19 +272,24 @@ UrlLoader::OpenUrlAction UrlLoader::decideExecute() const {
     bool canDisplay = !KParts::PartLoader::partsForMimeType(m_mimeType).isEmpty();
 
     KMessageBox::ButtonCode code;
-    KGuiItem executeGuiItem(i18nc("Execute an executable file", "Execute it"));
+    KGuiItem executeGuiItem(i18nc("Execute an executable file", "Execute"),
+                            QIcon::fromTheme(QStringLiteral("system-run")));
+    KGuiItem displayGuiItem(i18nc("Display an executable file", "Display"),
+                            QIcon::fromTheme(QStringLiteral("document-preview")));
     QString dontShowAgainId(QLatin1String("AskExecuting")+m_mimeType);
 
     if (canDisplay) {
-        code = KMessageBox::questionTwoActionsCancel(m_mainWindow, i18nc("The user has to decide whether to execute an executable file or display it",
-                                                                                        "<tt>%1</tt> can be executed. Do you want to execute it or to display it?", m_url.path()),
-                                                                    QString(), executeGuiItem, KGuiItem(i18nc("Display an executable file", "Display it")),
-                                                                    KStandardGuiItem::cancel(), dontShowAgainId, KMessageBox::Dangerous);
+        code = KMessageBox::questionTwoActionsCancel(m_mainWindow,
+                                                     xi18nc("@info The user has to decide whether to execute an executable file or display it",
+                                                            "<filename>%1</filename> can be executed. Do you want to execute it or to display it?", m_url.path()),
+                                                     QString(), executeGuiItem, displayGuiItem,
+                                                     KStandardGuiItem::cancel(), dontShowAgainId, KMessageBox::Dangerous);
     } else {
-        code = KMessageBox::questionTwoActions(m_mainWindow, i18nc("The user has to decide whether to execute an executable file or not",
-                                                                                        "<tt>%1</tt> can be executed. Do you want to execute it?", m_url.path()),
-                                                                    QString(), executeGuiItem, KStandardGuiItem::cancel(),
-                                                                    dontShowAgainId, KMessageBox::Dangerous);}
+        code = KMessageBox::questionTwoActions(m_mainWindow,
+                                               xi18nc("@info The user has to decide whether to execute an executable file or not",
+                                                      "<filename>%1</filename> can be executed. Do you want to execute it?", m_url.path()),
+                                               QString(), executeGuiItem, KStandardGuiItem::cancel(),
+                                               dontShowAgainId, KMessageBox::Dangerous);}
     switch (code) {
         case KMessageBox::PrimaryAction:
             return OpenUrlAction::Execute;
