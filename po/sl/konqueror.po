@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-22 00:58+0000\n"
+"POT-Creation-Date: 2023-03-09 00:46+0000\n"
 "PO-Revision-Date: 2023-02-22 08:54+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -1974,32 +1974,46 @@ msgid "Resend"
 msgstr "Pošlji znova"
 
 #: src/urlloader.cpp:275
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "Execute an executable file"
+#| msgid "Execute it"
 msgctxt "Execute an executable file"
-msgid "Execute it"
+msgid "Execute"
 msgstr "Izvedi to"
 
-#: src/urlloader.cpp:280
-#, kde-format
-msgctxt ""
-"The user has to decide whether to execute an executable file or display it"
-msgid ""
-"<tt>%1</tt> can be executed. Do you want to execute it or to display it?"
-msgstr "<tt>%1</tt> lahko izvedemo. Ali želite to izvesti ali prikazati?"
-
-#: src/urlloader.cpp:281
-#, kde-format
+#: src/urlloader.cpp:277
+#, fuzzy, kde-format
+#| msgctxt "Display an executable file"
+#| msgid "Display it"
 msgctxt "Display an executable file"
-msgid "Display it"
+msgid "Display"
 msgstr "Prikaži to"
 
-#: src/urlloader.cpp:285
-#, kde-format
-msgctxt "The user has to decide whether to execute an executable file or not"
-msgid "<tt>%1</tt> can be executed. Do you want to execute it?"
+#: src/urlloader.cpp:284
+#, fuzzy, kde-kuit-format
+#| msgctxt ""
+#| "The user has to decide whether to execute an executable file or display it"
+#| msgid ""
+#| "<tt>%1</tt> can be executed. Do you want to execute it or to display it?"
+msgctxt ""
+"@info The user has to decide whether to execute an executable file or "
+"display it"
+msgid ""
+"<filename>%1</filename> can be executed. Do you want to execute it or to "
+"display it?"
+msgstr "<tt>%1</tt> lahko izvedemo. Ali želite to izvesti ali prikazati?"
+
+#: src/urlloader.cpp:290
+#, fuzzy, kde-kuit-format
+#| msgctxt ""
+#| "The user has to decide whether to execute an executable file or not"
+#| msgid "<tt>%1</tt> can be executed. Do you want to execute it?"
+msgctxt ""
+"@info The user has to decide whether to execute an executable file or not"
+msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr "<tt>%1</tt> lahko izvedemo. Ali želite to izvesti ?"
 
-#: src/urlloader.cpp:487
+#: src/urlloader.cpp:492
 #, kde-format
 msgid "Save As"
 msgstr "Shrani kot"

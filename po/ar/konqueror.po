@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-22 00:58+0000\n"
+"POT-Creation-Date: 2023-03-09 00:46+0000\n"
 "PO-Revision-Date: 2014-09-07 23:49+0300\n"
 "Last-Translator: Safa Alfulaij <safa1996alfulaij@gmail.com>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -1954,30 +1954,33 @@ msgstr "أعد الإرسال"
 #: src/urlloader.cpp:275
 #, kde-format
 msgctxt "Execute an executable file"
-msgid "Execute it"
+msgid "Execute"
 msgstr ""
 
-#: src/urlloader.cpp:280
-#, kde-format
-msgctxt ""
-"The user has to decide whether to execute an executable file or display it"
-msgid ""
-"<tt>%1</tt> can be executed. Do you want to execute it or to display it?"
-msgstr ""
-
-#: src/urlloader.cpp:281
+#: src/urlloader.cpp:277
 #, kde-format
 msgctxt "Display an executable file"
-msgid "Display it"
+msgid "Display"
 msgstr ""
 
-#: src/urlloader.cpp:285
-#, kde-format
-msgctxt "The user has to decide whether to execute an executable file or not"
-msgid "<tt>%1</tt> can be executed. Do you want to execute it?"
+#: src/urlloader.cpp:284
+#, kde-kuit-format
+msgctxt ""
+"@info The user has to decide whether to execute an executable file or "
+"display it"
+msgid ""
+"<filename>%1</filename> can be executed. Do you want to execute it or to "
+"display it?"
 msgstr ""
 
-#: src/urlloader.cpp:487
+#: src/urlloader.cpp:290
+#, kde-kuit-format
+msgctxt ""
+"@info The user has to decide whether to execute an executable file or not"
+msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
+msgstr ""
+
+#: src/urlloader.cpp:492
 #, fuzzy, kde-format
 #| msgid "Save As..."
 msgid "Save As"
