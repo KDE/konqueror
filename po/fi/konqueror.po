@@ -12,7 +12,7 @@
 # Teemu Rytilahti <tpr@d5k.net>, 2005, 2008.
 # Mikko Ikola <ikola@iki.fi>, 2005.
 # Mikko Piippo <piippo@cc.helsinki.fi>, 2007.
-# Tommi Nieminen <translator@legisign.org>, 2010, 2011, 2012, 2016, 2017, 2019, 2020, 2021, 2022.
+# Tommi Nieminen <translator@legisign.org>, 2010, 2011, 2012, 2016, 2017, 2019, 2020, 2021, 2022, 2023.
 # Lasse Liehu <lasse.liehu@gmail.com>, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
 # Jiri Grönroos <jiri.gronroos+kde@iki.fi>, 2012.
 msgid ""
@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-09 00:46+0000\n"
-"PO-Revision-Date: 2022-04-25 19:50+0300\n"
+"PO-Revision-Date: 2023-03-06 21:02+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -29,7 +29,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-POT-Import-Date: 2012-12-01 22:22:03+0000\n"
-"X-Generator: Lokalize 20.04.2\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -52,6 +52,8 @@ msgid ""
 "<p>You're running Konqueror as root. This requires enabling a highly "
 "insecure mode in the browser component.</p><p>What do you want to do?</p>"
 msgstr ""
+"<p>Käytät Konqueroria root-tunnuksella. Tämä vaatii ottamaan käyttöön hyvin "
+"turvattoman tilan selainosassa.</p><p>Mitä haluat tehdä?</p>"
 
 # pmap: =/gen=Konquerorin/
 # pmap: =/elat=Konquerorista/
@@ -475,11 +477,10 @@ msgid "Location to open"
 msgstr "Avattava kohde"
 
 #: src/konqapplication.cpp:288
-#, fuzzy, kde-format
-#| msgid "Session to open"
+#, kde-format
 msgctxt "The session asked by the user doesn't exist or can't be opened"
 msgid "Session %1 couldn't be opened"
-msgstr "Avattava istunto"
+msgstr "Istuntoa %1 ei voida avata"
 
 #: src/konqapplication.cpp:392
 #, kde-format
@@ -487,6 +488,8 @@ msgid ""
 "You can't pass URLs when using the --preload switch. The URLs will be "
 "ignored\n"
 msgstr ""
+"Verkko-osoitteita ei voi välittää käytettäessä --preload-valitsinta. Verkko-"
+"osoitteet sivuutetaan\n"
 
 #: src/konqclosedwindowsmanager.cpp:410 src/konqmainwindow.cpp:4886
 #: src/konqmainwindow.cpp:4932
@@ -1293,11 +1296,10 @@ msgid "Open bookmarks folder in new tabs"
 msgstr "Avaa kirjanmerkkikansio välilehtiin"
 
 #: src/konqmainwindow.cpp:4251
-#, fuzzy, kde-format
-#| msgid "&Open"
+#, kde-format
 msgctxt "@action:button"
 msgid "Open"
-msgstr "A&vaa"
+msgstr "Avaa"
 
 #: src/konqmainwindow.cpp:4410
 #, kde-format

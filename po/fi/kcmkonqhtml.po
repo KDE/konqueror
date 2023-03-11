@@ -6,7 +6,7 @@
 # Teemu Rytilahti <teemu.rytilahti@kde-fi.org>, 2003, 2004, 2008.
 # Tapio Kautto <eleknader@phnet.fi>, 2004.
 # Ilpo Kantonen <ilpo@iki.fi>, 2005.
-# Tommi Nieminen <translator@legisign.org>, 2009, 2016, 2018, 2019, 2020, 2021, 2022.
+# Tommi Nieminen <translator@legisign.org>, 2009, 2016, 2018, 2019, 2020, 2021, 2022, 2023.
 # Jorma Karvonen <karvonen.jorma@gmail.com>, 2010.
 # Lasse Liehu <lasse.liehu@gmail.com>, 2011, 2012, 2013, 2014, 2016.
 #
@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-22 00:58+0000\n"
-"PO-Revision-Date: 2022-03-18 23:21+0200\n"
+"PO-Revision-Date: 2023-03-06 21:01+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -29,7 +29,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-POT-Import-Date: 2012-12-01 22:22:01+0000\n"
-"X-Generator: Lokalize 20.04.2\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -515,7 +515,7 @@ msgstr ""
 #: cache/cache.ui:17
 #, kde-format
 msgid "&Enable cache"
-msgstr ""
+msgstr "Käytä väli&muistia"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, memoryCache)
 #: cache/cache.ui:29
@@ -525,18 +525,21 @@ msgid ""
 "p><p>Turning this on means that the cache will be cleared when exiting "
 "Konqueror</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Älä tallenna välimuistia levylle vaan pidä se "
+"työmuistissa.</p><p>Kun asetus on käytössä, välimuisti tyhjenee Konquerorin "
+"sulkeuduttua</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, memoryCache)
 #: cache/cache.ui:32
 #, kde-format
 msgid "Keep cache in &memory"
-msgstr ""
+msgstr "Pidä väli&muisti työmuistissa"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: cache/cache.ui:41
 #, kde-format
 msgid "&Cache size"
-msgstr ""
+msgstr "Välimuistin k&oko:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, cacheSize)
 #: cache/cache.ui:51
@@ -545,42 +548,44 @@ msgid ""
 "The maximum space on disk or memory the cache can use. When this threshold "
 "is reached, old pages will be removed to make space for new ones"
 msgstr ""
+"Välimuistin sallittu enimmäiskoko levyllä tai työmuistissa. Kun määrä "
+"saavutetaan, vanhoja sivuja poistetaan tilan tekemiseksi uusille"
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, cacheSize)
 #: cache/cache.ui:54
 #, kde-format
 msgid "Auto"
-msgstr ""
+msgstr "Automaattinen"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, cacheSize)
 #: cache/cache.ui:57
 #, kde-format
 msgid " MB"
-msgstr ""
+msgstr " Mt"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, useCustomCacheDir)
 #: cache/cache.ui:85
 #, kde-format
 msgid "Use a custom directory to keep the cache"
-msgstr ""
+msgstr "Käytä välimuistille mukautettua kansiota"
 
 #. i18n: ectx: property (title), widget (QGroupBox, useCustomCacheDir)
 #: cache/cache.ui:88
 #, kde-format
 msgid "&Custom cache directory"
-msgstr ""
+msgstr "M&ukautettu välimuistikansio"
 
 #. i18n: ectx: property (text), widget (QLabel, customCachePathLabel)
 #: cache/cache.ui:100
 #, kde-format
 msgid "Cache &Directory"
-msgstr ""
+msgstr "Välimuisti&kansio"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, customCacheDir)
 #: cache/cache.ui:113
 #, kde-format
 msgid "The custom directory to store cache"
-msgstr ""
+msgstr "Mukautettu kansio, johon välimuisti talletetaan"
 
 #. i18n: ectx: property (whatsThis), widget (QWidget, CSSConfigWidget)
 #. i18n: ectx: property (whatsThis), widget (QWidget, CSSCustomDialog)
