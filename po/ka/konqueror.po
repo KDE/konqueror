@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-09 00:46+0000\n"
-"PO-Revision-Date: 2023-02-07 07:41+0100\n"
+"PO-Revision-Date: 2023-03-10 02:13+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -713,7 +713,7 @@ msgstr ""
 #: src/konqmainwindow.cpp:2431
 #, kde-format
 msgid "Do you really want to close all other tabs?"
-msgstr ""
+msgstr "მართლა გნებავთ, ყველა სხვა ჩანართი დახუროთ?"
 
 #: src/konqmainwindow.cpp:2432 src/konqmainwindow.cpp:3506 src/konqtabs.cpp:335
 #, kde-format
@@ -724,7 +724,7 @@ msgstr "&სხვა ჩანართების დახურვა"
 #, kde-format
 msgctxt "@title:window"
 msgid "Close Other Tabs Confirmation"
-msgstr ""
+msgstr "სხვა ჩანართების დახურვის დადასტურება"
 
 #: src/konqmainwindow.cpp:2448
 #, kde-format
@@ -744,7 +744,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Enter Target"
-msgstr ""
+msgstr "შეიყვანეთ სამიზნე"
 
 #: src/konqmainwindow.cpp:2519
 #, kde-format
@@ -765,7 +765,7 @@ msgstr ""
 #, kde-format
 msgctxt "This menu entry empties the closed items history"
 msgid "Empty Closed Items History"
-msgstr ""
+msgstr "დახურული ჩანაწერების ისტორიის გასუფთავება"
 
 #: src/konqmainwindow.cpp:2739
 #, kde-format
@@ -815,7 +815,7 @@ msgstr "&ფაილის ძებნა..."
 #: src/konqmainwindow.cpp:3372
 #, kde-format
 msgid "Lock to Current Location"
-msgstr ""
+msgstr "მიმდინარე ადგილას დამაგრება"
 
 #: src/konqmainwindow.cpp:3375
 #, kde-format
@@ -929,7 +929,7 @@ msgstr "ჩანართის მარჯვნივ გადატან�
 #: src/konqmainwindow.cpp:3539
 #, kde-format
 msgid "Dump Debug Info"
-msgstr ""
+msgstr "გამართვის ინფორმაციის გამოტანა"
 
 #: src/konqmainwindow.cpp:3557
 #, kde-format
@@ -992,7 +992,7 @@ msgstr "&სანიშნეები"
 #: src/konqmainwindow.cpp:3666
 #, kde-format
 msgid "Kon&queror Introduction"
-msgstr ""
+msgstr "&Konqueror-ის შესავალი"
 
 #: src/konqmainwindow.cpp:3671
 #, kde-format
@@ -1285,7 +1285,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Web Sidebar"
-msgstr ""
+msgstr "ვების გვერდით პანელი"
 
 #: src/konqmainwindow.cpp:5013
 #, kde-format
@@ -1475,7 +1475,7 @@ msgstr ""
 #, kde-format
 msgctxt "@tooltip:session list"
 msgid "Uncheck the sessions you do not want to be restored"
-msgstr ""
+msgstr "გამორთეთ სესიები, რომლების აღდგენაც არ გნებავთ"
 
 #: src/konqsessionmanager.cpp:152
 #, kde-format
@@ -1828,17 +1828,13 @@ msgid "Resend"
 msgstr "თავიდან გაგზავნა"
 
 #: src/urlloader.cpp:275
-#, fuzzy, kde-format
-#| msgctxt "Execute an executable file"
-#| msgid "Execute it"
+#, kde-format
 msgctxt "Execute an executable file"
 msgid "Execute"
-msgstr "გაშვება"
+msgstr "შესრულება"
 
 #: src/urlloader.cpp:277
-#, fuzzy, kde-format
-#| msgctxt "Display an executable file"
-#| msgid "Display it"
+#, kde-format
 msgctxt "Display an executable file"
 msgid "Display"
 msgstr "ჩვენება"
@@ -1852,13 +1848,15 @@ msgid ""
 "<filename>%1</filename> can be executed. Do you want to execute it or to "
 "display it?"
 msgstr ""
+"შესაძლებელია <filename>%1</filename>-ის გაშვება. გნებავთ, გაუშვათ ის თუ "
+"გაჩვენოთ მისი შემცველობა?"
 
 #: src/urlloader.cpp:290
 #, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or not"
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
-msgstr ""
+msgstr "შესაძლებელია <filename>%1</filename>-ის გაშვება. გნებავთ, გაუშვათ ის?"
 
 #: src/urlloader.cpp:492
 #, kde-format
