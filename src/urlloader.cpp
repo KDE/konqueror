@@ -61,6 +61,9 @@ UrlLoader::UrlLoader(KonqMainWindow *mainWindow, KonqView *view, const QUrl &url
     QObject(mainWindow), m_mainWindow(mainWindow), m_url(url), m_mimeType(mimeType), m_request(req), m_view(view), m_trustedSource(trustedSource), m_dontEmbed(dontEmbed),
     m_jobErrorCode(0), m_protocolAllowsReading(KProtocolManager::supportsReading(m_url))
 {
+    if (!isMimeTypeKnown(m_mimeType)) {
+        m_mimeType = m_request.args.mimeType();
+    }
     m_dontPassToWebEnginePart = m_request.args.metaData().contains("DontSendToDefaultHTMLPart");
 }
 
