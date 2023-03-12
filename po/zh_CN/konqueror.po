@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-09 00:46+0000\n"
-"PO-Revision-Date: 2023-02-24 12:43\n"
+"PO-Revision-Date: 2023-03-11 04:55\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf5-trunk/messages/konqueror/konqueror.pot\n"
-"X-Crowdin-File-ID: 5264\n"
+"X-Crowdin-File: /kf5-stable/messages/konqueror/konqueror.pot\n"
+"X-Crowdin-File-ID: 4079\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -33,8 +33,6 @@ msgid ""
 "<p>You're running Konqueror as root. This requires enabling a highly "
 "insecure mode in the browser component.</p><p>What do you want to do?</p>"
 msgstr ""
-"<p>您正在以 root 权限运行 Konqueror。此操作要求在浏览器组件中启用一个非常不安"
-"全的模式。</p><p>您想要怎么做？</p>"
 
 #: src/konqapplication.cpp:127
 #, kde-format
@@ -446,10 +444,11 @@ msgid "Location to open"
 msgstr "要打开的位置"
 
 #: src/konqapplication.cpp:288
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Session to open"
 msgctxt "The session asked by the user doesn't exist or can't be opened"
 msgid "Session %1 couldn't be opened"
-msgstr "无法打开会话 %1"
+msgstr "要打开的会话"
 
 #: src/konqapplication.cpp:392
 #, kde-format
@@ -1914,7 +1913,7 @@ msgstr "重新发送"
 #| msgid "Execute it"
 msgctxt "Execute an executable file"
 msgid "Execute"
-msgstr "执行它"
+msgstr "执行程序"
 
 #: src/urlloader.cpp:277
 #, fuzzy, kde-format
@@ -1922,7 +1921,7 @@ msgstr "执行它"
 #| msgid "Display it"
 msgctxt "Display an executable file"
 msgid "Display"
-msgstr "显示"
+msgstr "显示内容"
 
 #: src/urlloader.cpp:284
 #, fuzzy, kde-kuit-format
@@ -1936,7 +1935,7 @@ msgctxt ""
 msgid ""
 "<filename>%1</filename> can be executed. Do you want to execute it or to "
 "display it?"
-msgstr "<tt>%1</tt>可以被执行。你想要执行它还是显示它的内容？"
+msgstr "<tt>%1</tt> 是可执行文件。你想要执行它，还是显示它的内容？"
 
 #: src/urlloader.cpp:290
 #, fuzzy, kde-kuit-format
@@ -1946,7 +1945,7 @@ msgstr "<tt>%1</tt>可以被执行。你想要执行它还是显示它的内容�
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or not"
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
-msgstr "<tt>%1</tt>可以被执行。你想要执行它吗？"
+msgstr "<tt>%1</tt> 是可执行文件。你想要执行它吗？"
 
 #: src/urlloader.cpp:492
 #, kde-format
