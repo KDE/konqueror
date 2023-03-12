@@ -38,7 +38,7 @@ WebEnginePartControls::WebEnginePartControls(): QObject(),
     m_certificateErrorDialogManager(new KonqWebEnginePart::CertificateErrorDialogManager(this)),
     m_navigationRecorder(new NavigationRecorder(this))
 {
-    QVector<QByteArray> localSchemes = {"error", "konq", "tar"};
+    QVector<QByteArray> localSchemes = {"error", "konq", "tar", "bookmarks"};
     const QStringList protocols = KProtocolInfo::protocols();
     for(const QString &prot : protocols){
         if (KProtocolInfo::defaultMimetype(prot) == "text/html") {
@@ -83,6 +83,7 @@ void WebEnginePartControls::setup(QWebEngineProfile* profile)
     m_profile->installUrlSchemeHandler("konq", new KonqUrlSchemeHandler(m_profile));
     m_profile->installUrlSchemeHandler("help", new WebEnginePartKIOHandler(m_profile));
     m_profile->installUrlSchemeHandler("tar", new WebEnginePartKIOHandler(m_profile));
+    m_profile->installUrlSchemeHandler("bookmarks", new WebEnginePartKIOHandler(m_profile));
 
     m_profile->setUrlRequestInterceptor(new WebEngineUrlRequestInterceptor(this));
 
