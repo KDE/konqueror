@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webkitkde\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-06 01:00+0000\n"
+"POT-Creation-Date: 2023-03-12 14:38+0000\n"
 "PO-Revision-Date: 2011-12-19 22:13+0530\n"
 "Last-Translator: A S Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
@@ -466,6 +466,68 @@ msgstr ""
 msgid "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
 msgstr ""
 
+#: src/choosepagesaveformatdlg.cpp:37
+#, kde-format
+msgid ""
+"The page is saved as a single HTML page. Only the text of the page will be "
+"saved. External resources such as images won't be saved"
+msgstr ""
+
+#: src/choosepagesaveformatdlg.cpp:40
+#, kde-format
+msgid ""
+"The complete contents of the page will be saved. The page and any external "
+"resources it requires, such as images, will be saved inside a single "
+"directory"
+msgstr ""
+
+#: src/choosepagesaveformatdlg.cpp:43
+#, kde-format
+msgid ""
+"The complete contents of the page will be saved. Both the page and any "
+"external resources it requires, such as images, will be saved in a single "
+"MHTML file"
+msgstr ""
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, ChoosePageSaveFormatDlg)
+#: src/choosepagesaveformatdlg.ui:14
+#, fuzzy, kde-format
+#| msgctxt "input dialog text for selecting html elements"
+#| msgid "Choose elements"
+msgid "Choose Save Format"
+msgstr "ਐਲੀਮੈਂਟ ਚੁਣੋ"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: src/choosepagesaveformatdlg.ui:20
+#, kde-format
+msgid "How would you like to save the page?"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_singleHTMLPage)
+#: src/choosepagesaveformatdlg.ui:27
+#, kde-format
+msgid "As a &Single HTML page"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_asDirectory)
+#: src/choosepagesaveformatdlg.ui:37
+#, kde-format
+msgid "As &directory"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_asMHTMLPage)
+#: src/choosepagesaveformatdlg.ui:44
+#, kde-format
+msgid "As single MHTML file"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, m_info)
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: src/choosepagesaveformatdlg.ui:51 src/webenginepartcertificateerrordlg.ui:23
+#, kde-format
+msgid "TextLabel"
+msgstr ""
+
 #: src/settings/webenginesettings.cpp:907
 #, kde-format
 msgid "Filter error"
@@ -884,63 +946,64 @@ msgstr "ਜਾਓ"
 msgid "Do Not Allow"
 msgstr ""
 
-#: src/webenginepart.cpp:224
-#, kde-format
-msgid "Save &Frame As..."
-msgstr "...ਵਾਂਗ ਫਰੇਮ ਸੰਭਾਲੋ(&F)"
+#: src/webenginepart.cpp:223
+#, fuzzy, kde-format
+#| msgid "Save Image As..."
+msgid "Save Full HTML Page As..."
+msgstr "...ਵਾਂਗ ਚਿੱਤਰ ਸੰਭਾਲੋ"
 
-#: src/webenginepart.cpp:228
+#: src/webenginepart.cpp:227
 #, kde-format
 msgid "Print Preview"
 msgstr ""
 
-#: src/webenginepart.cpp:232
+#: src/webenginepart.cpp:231
 #, kde-format
 msgctxt "zoom in action"
 msgid "Zoom In"
 msgstr "ਜ਼ੂਮ ਇਨ"
 
-#: src/webenginepart.cpp:237
+#: src/webenginepart.cpp:236
 #, kde-format
 msgctxt "zoom out action"
 msgid "Zoom Out"
 msgstr "ਜ਼ੂਮ ਆਉਟ"
 
-#: src/webenginepart.cpp:242
+#: src/webenginepart.cpp:241
 #, kde-format
 msgctxt "reset zoom action"
 msgid "Actual Size"
 msgstr "ਅਸਲ ਸਾਈਜ਼"
 
-#: src/webenginepart.cpp:247
+#: src/webenginepart.cpp:246
 #, kde-format
 msgid "Zoom Text Only"
 msgstr "ਕੇਵਲ ਟੈਕਸਟ ਜ਼ੂਮ ਕਰੋ"
 
-#: src/webenginepart.cpp:255
+#: src/webenginepart.cpp:254
 #, fuzzy, kde-format
 #| msgctxt "zoom in action"
 #| msgid "Zoom In"
 msgid "Zoom To DPI"
 msgstr "ਜ਼ੂਮ ਇਨ"
 
-#: src/webenginepart.cpp:268
+#: src/webenginepart.cpp:267
 #, kde-format
 msgid "Set &Encoding"
 msgstr "ਇੰਕੋਡਿੰਗ ਸੈੱਟ ਕਰੋ(&E)"
 
-#: src/webenginepart.cpp:271
+#: src/webenginepart.cpp:270
 #, kde-format
 msgid "View Do&cument Source"
 msgstr "ਡੌਕੂਮੈਂਟ ਸਰੋਤ ਵੇਖੋ(&c)"
 
-#: src/webenginepart.cpp:276 src/webenginepart.cpp:574
+#: src/webenginepart.cpp:275 src/webenginepart.cpp:575
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
 msgstr "SSL"
 
-#: src/webenginepart.cpp:282
+#: src/webenginepart.cpp:281
 #, kde-format
 msgctxt "find action \"whats this\" text"
 msgid ""
@@ -948,12 +1011,12 @@ msgid ""
 "displayed page."
 msgstr ""
 
-#: src/webenginepart.cpp:572
+#: src/webenginepart.cpp:573
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr ""
 
-#: src/webenginepart.cpp:653
+#: src/webenginepart.cpp:654
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -961,7 +1024,7 @@ msgctxt ""
 msgid "Email: "
 msgstr "ਈਮੇਲ: "
 
-#: src/webenginepart.cpp:682
+#: src/webenginepart.cpp:683
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -969,7 +1032,7 @@ msgctxt ""
 msgid " - CC: "
 msgstr " - CC: "
 
-#: src/webenginepart.cpp:684
+#: src/webenginepart.cpp:685
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -977,7 +1040,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr " - BCC: "
 
-#: src/webenginepart.cpp:686
+#: src/webenginepart.cpp:687
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -985,87 +1048,87 @@ msgctxt ""
 msgid " - Subject: "
 msgstr " - ਵਿਸ਼ਾ: "
 
-#: src/webenginepart.cpp:690 src/webenginepart.cpp:701
+#: src/webenginepart.cpp:691 src/webenginepart.cpp:702
 #, kde-format
 msgid " (In new window)"
 msgstr " (ਨਵੀਂ ਵਿੰਡੋ ਵਿੱਚ)"
 
-#: src/webenginepart.cpp:699
+#: src/webenginepart.cpp:700
 #, kde-format
 msgid " (In parent frame)"
 msgstr " (ਮੁੱਢਲੇ ਫਰੇਮ 'ਚ)"
 
-#: src/webenginepart.cpp:763
+#: src/webenginepart.cpp:764
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr "<qt>ਕੀ ਤੁਸੀਂ <b>%1</b> ਲਈ ਖੋਜ ਕਰਨੀ ਚਾਹੁੰਦੇ ਹੋ?</qt>"
 
-#: src/webenginepart.cpp:764
+#: src/webenginepart.cpp:765
 #, kde-format
 msgid "Internet Search"
 msgstr "ਇੰਟਰਨੈੱਟ ਖੋਜ"
 
-#: src/webenginepart.cpp:764
+#: src/webenginepart.cpp:765
 #, kde-format
 msgid "&Search"
 msgstr "ਖੋਜ(&S)"
 
-#: src/webenginepart.cpp:875
+#: src/webenginepart.cpp:876
 #, kde-format
 msgid "Close window?"
 msgstr "ਵਿੰਡੋ ਬੰਦ ਕਰਨੀ ਹੈ?"
 
-#: src/webenginepart.cpp:875
+#: src/webenginepart.cpp:876
 #, kde-format
 msgid "Confirmation Required"
 msgstr "ਮੰਗ ਪੁਸ਼ਟੀ"
 
-#: src/webenginepart.cpp:949
+#: src/webenginepart.cpp:950
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
 msgstr "<html>ਕੀ ਤੁਸੀਂ ਚਾਹੁੰਦੇ ਹੋ ਕਿ %1 <b>%2</b> ਲਈ ਲਾਗਇਨ ਜਾਣਕਾਰੀ ਯਾਦ ਰੱਖੇ?</html>"
 
-#: src/webenginepart.cpp:1020
+#: src/webenginepart.cpp:1021
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill forms now"
 msgstr ""
 
-#: src/webenginepart.cpp:1025
+#: src/webenginepart.cpp:1026
 #, fuzzy, kde-format
 #| msgid "Remove all cached passwords for this site"
 msgid "&Memorize Passwords in This Page Now"
 msgstr "ਇਹ ਸਾਈਟ ਲਈ ਸਭ ਕੈਸ਼ ਕੀਤੇ ਪਾਸਵਰਡ ਹਟਾਓ"
 
-#: src/webenginepart.cpp:1029
+#: src/webenginepart.cpp:1030
 #, kde-format
 msgid "&Customize Fields to Memorize for This Page..."
 msgstr ""
 
-#: src/webenginepart.cpp:1033
+#: src/webenginepart.cpp:1034
 #, kde-format
 msgid "Remove Customized Memorization Settings for This Page"
 msgstr ""
 
-#: src/webenginepart.cpp:1037
+#: src/webenginepart.cpp:1038
 #, fuzzy, kde-format
 #| msgid "&Allow password caching for this site"
 msgid "&Allow Password Caching for This Site"
 msgstr "ਇਹ ਸਾਈਟ ਲਈ ਪਾਸਵਰਡ ਕੈਸ਼ ਕਰਨਾ ਮਨਜ਼ੂਰ(&A)"
 
-#: src/webenginepart.cpp:1041
+#: src/webenginepart.cpp:1042
 #, fuzzy, kde-format
 #| msgid "Remove all cached passwords for this site"
 msgid "Remove All Memorized Passwords for This Site"
 msgstr "ਇਹ ਸਾਈਟ ਲਈ ਸਭ ਕੈਸ਼ ਕੀਤੇ ਪਾਸਵਰਡ ਹਟਾਓ"
 
-#: src/webenginepart.cpp:1045
+#: src/webenginepart.cpp:1046
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr ""
 
-#: src/webenginepart.cpp:1049
+#: src/webenginepart.cpp:1050
 #, kde-format
 msgid "&Close Wallet"
 msgstr "ਵਾਲਿਟ ਬੰਦ ਕਰੋ(&C)"
@@ -1106,17 +1169,17 @@ msgstr ""
 msgid "HTML Toolbar"
 msgstr "HTML ਟੂਲਬਾਰ"
 
-#: src/webenginepart_ext.cpp:246
+#: src/webenginepart_ext.cpp:264
 #, kde-format
 msgid "Print Document"
 msgstr ""
 
-#: src/webenginepart_ext.cpp:464
+#: src/webenginepart_ext.cpp:481
 #, kde-format
 msgid "Add URL to Filter"
 msgstr "ਫਿਲਟਰ 'ਚ URL ਸ਼ਾਮਲ"
 
-#: src/webenginepart_ext.cpp:465
+#: src/webenginepart_ext.cpp:482
 #, kde-format
 msgid "Enter the URL:"
 msgstr "URL ਦਿਓ:"
@@ -1153,12 +1216,6 @@ msgstr "ਫਿਲਟਰ ਗਲਤੀ"
 msgid "Dialog"
 msgstr ""
 
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: src/webenginepartcertificateerrordlg.ui:23
-#, kde-format
-msgid "TextLabel"
-msgstr ""
-
 #. i18n: ectx: property (title), widget (QGroupBox, details)
 #: src/webenginepartcertificateerrordlg.ui:50
 #, kde-format
@@ -1181,31 +1238,31 @@ msgstr " - ਵਿਸ਼ਾ: "
 msgid "&Issuer"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:225
+#: src/webenginepartdownloadmanager.cpp:304
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:233
+#: src/webenginepartdownloadmanager.cpp:312
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:234
+#: src/webenginepartdownloadmanager.cpp:313
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr ""
 
-#: src/webenginepartdownloadmanager.cpp:235
+#: src/webenginepartdownloadmanager.cpp:314
 #, fuzzy, kde-format
 #| msgid "Description:"
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "ਵੇਰਵਾ:"
 
-#: src/webenginepartdownloadmanager.cpp:248
+#: src/webenginepartdownloadmanager.cpp:327
 #, kde-format
 msgctxt "Finished saving BLOB URL"
 msgid "Finished saving %1 as %2"
@@ -1518,6 +1575,9 @@ msgid ""
 "%6</li></ul>"
 msgstr ""
 
+#~ msgid "Save &Frame As..."
+#~ msgstr "...ਵਾਂਗ ਫਰੇਮ ਸੰਭਾਲੋ(&F)"
+
 #, fuzzy
 #~| msgctxt "Program Name"
 #~| msgid "KWebKitPart"
@@ -1567,10 +1627,6 @@ msgstr ""
 
 #~ msgctxt "input dialog window title for selecting html elements"
 #~ msgid "Select elements"
-#~ msgstr "ਐਲੀਮੈਂਟ ਚੁਣੋ"
-
-#~ msgctxt "input dialog text for selecting html elements"
-#~ msgid "Choose elements"
 #~ msgstr "ਐਲੀਮੈਂਟ ਚੁਣੋ"
 
 #~ msgid "New Window"

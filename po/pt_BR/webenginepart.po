@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webenginepart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-06 01:00+0000\n"
+"POT-Creation-Date: 2023-03-12 14:38+0000\n"
 "PO-Revision-Date: 2022-01-04 11:29-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -532,6 +532,66 @@ msgstr "Instalado"
 msgid "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
 msgstr "<td>Tipo Mime</td><td>Descrição</td><td>Sufixos</td><td>Plugin</td>"
 
+#: src/choosepagesaveformatdlg.cpp:37
+#, kde-format
+msgid ""
+"The page is saved as a single HTML page. Only the text of the page will be "
+"saved. External resources such as images won't be saved"
+msgstr ""
+
+#: src/choosepagesaveformatdlg.cpp:40
+#, kde-format
+msgid ""
+"The complete contents of the page will be saved. The page and any external "
+"resources it requires, such as images, will be saved inside a single "
+"directory"
+msgstr ""
+
+#: src/choosepagesaveformatdlg.cpp:43
+#, kde-format
+msgid ""
+"The complete contents of the page will be saved. Both the page and any "
+"external resources it requires, such as images, will be saved in a single "
+"MHTML file"
+msgstr ""
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, ChoosePageSaveFormatDlg)
+#: src/choosepagesaveformatdlg.ui:14
+#, kde-format
+msgid "Choose Save Format"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: src/choosepagesaveformatdlg.ui:20
+#, kde-format
+msgid "How would you like to save the page?"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_singleHTMLPage)
+#: src/choosepagesaveformatdlg.ui:27
+#, kde-format
+msgid "As a &Single HTML page"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_asDirectory)
+#: src/choosepagesaveformatdlg.ui:37
+#, kde-format
+msgid "As &directory"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_asMHTMLPage)
+#: src/choosepagesaveformatdlg.ui:44
+#, kde-format
+msgid "As single MHTML file"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, m_info)
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: src/choosepagesaveformatdlg.ui:51 src/webenginepartcertificateerrordlg.ui:23
+#, kde-format
+msgid "TextLabel"
+msgstr "Etiqueta de texto"
+
 #: src/settings/webenginesettings.cpp:907
 #, kde-format
 msgid "Filter error"
@@ -956,61 +1016,62 @@ msgstr "Permitir"
 msgid "Do Not Allow"
 msgstr "Não permitir"
 
-#: src/webenginepart.cpp:224
-#, kde-format
-msgid "Save &Frame As..."
-msgstr "Salvar &quadro como..."
+#: src/webenginepart.cpp:223
+#, fuzzy, kde-format
+#| msgid "Save Image As..."
+msgid "Save Full HTML Page As..."
+msgstr "Salvar imagem como..."
 
-#: src/webenginepart.cpp:228
+#: src/webenginepart.cpp:227
 #, kde-format
 msgid "Print Preview"
 msgstr "Visualizar impressão"
 
-#: src/webenginepart.cpp:232
+#: src/webenginepart.cpp:231
 #, kde-format
 msgctxt "zoom in action"
 msgid "Zoom In"
 msgstr "Ampliar"
 
-#: src/webenginepart.cpp:237
+#: src/webenginepart.cpp:236
 #, kde-format
 msgctxt "zoom out action"
 msgid "Zoom Out"
 msgstr "Reduzir"
 
-#: src/webenginepart.cpp:242
+#: src/webenginepart.cpp:241
 #, kde-format
 msgctxt "reset zoom action"
 msgid "Actual Size"
 msgstr "Tamanho real"
 
-#: src/webenginepart.cpp:247
+#: src/webenginepart.cpp:246
 #, kde-format
 msgid "Zoom Text Only"
 msgstr "Ampliar apenas o texto"
 
-#: src/webenginepart.cpp:255
+#: src/webenginepart.cpp:254
 #, kde-format
 msgid "Zoom To DPI"
 msgstr "Ampliar para DPI"
 
-#: src/webenginepart.cpp:268
+#: src/webenginepart.cpp:267
 #, kde-format
 msgid "Set &Encoding"
 msgstr "Configurar &codificação"
 
-#: src/webenginepart.cpp:271
+#: src/webenginepart.cpp:270
 #, kde-format
 msgid "View Do&cument Source"
 msgstr "Exibir &fonte do documento"
 
-#: src/webenginepart.cpp:276 src/webenginepart.cpp:574
+#: src/webenginepart.cpp:275 src/webenginepart.cpp:575
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
 msgstr "SSL"
 
-#: src/webenginepart.cpp:282
+#: src/webenginepart.cpp:281
 #, kde-format
 msgctxt "find action \"whats this\" text"
 msgid ""
@@ -1020,12 +1081,12 @@ msgstr ""
 "<h3>Localizar o texto</h3>Exibe um diálogo que lhe permite localizar um "
 "texto na página exibida."
 
-#: src/webenginepart.cpp:572
+#: src/webenginepart.cpp:573
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr "A informação de SSL deste site parece estar corrompida."
 
-#: src/webenginepart.cpp:653
+#: src/webenginepart.cpp:654
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1033,7 +1094,7 @@ msgctxt ""
 msgid "Email: "
 msgstr "E-mail: "
 
-#: src/webenginepart.cpp:682
+#: src/webenginepart.cpp:683
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1041,7 +1102,7 @@ msgctxt ""
 msgid " - CC: "
 msgstr " - Cc: "
 
-#: src/webenginepart.cpp:684
+#: src/webenginepart.cpp:685
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1049,7 +1110,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr " - Cco: "
 
-#: src/webenginepart.cpp:686
+#: src/webenginepart.cpp:687
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1057,86 +1118,86 @@ msgctxt ""
 msgid " - Subject: "
 msgstr " - Assunto: "
 
-#: src/webenginepart.cpp:690 src/webenginepart.cpp:701
+#: src/webenginepart.cpp:691 src/webenginepart.cpp:702
 #, kde-format
 msgid " (In new window)"
 msgstr " (Em nova janela)"
 
-#: src/webenginepart.cpp:699
+#: src/webenginepart.cpp:700
 #, kde-format
 msgid " (In parent frame)"
 msgstr " (No quadro pai)"
 
-#: src/webenginepart.cpp:763
+#: src/webenginepart.cpp:764
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr "<qt>Deseja pesquisar por <b>%1</b>?</qt>"
 
-#: src/webenginepart.cpp:764
+#: src/webenginepart.cpp:765
 #, kde-format
 msgid "Internet Search"
 msgstr "Pesquisa na Internet"
 
-#: src/webenginepart.cpp:764
+#: src/webenginepart.cpp:765
 #, kde-format
 msgid "&Search"
 msgstr "Pe&squisar"
 
-#: src/webenginepart.cpp:875
+#: src/webenginepart.cpp:876
 #, kde-format
 msgid "Close window?"
 msgstr "Fechar a janela?"
 
-#: src/webenginepart.cpp:875
+#: src/webenginepart.cpp:876
 #, kde-format
 msgid "Confirmation Required"
 msgstr "Confirmação necessária"
 
-#: src/webenginepart.cpp:949
+#: src/webenginepart.cpp:950
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
 msgstr ""
 "<html>Deseja que %1 lembre da informação de login para <b>%2</b>?</html>"
 
-#: src/webenginepart.cpp:1020
+#: src/webenginepart.cpp:1021
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill forms now"
 msgstr "Preencher os campos a&gora"
 
-#: src/webenginepart.cpp:1025
+#: src/webenginepart.cpp:1026
 #, kde-format
 msgid "&Memorize Passwords in This Page Now"
 msgstr "M&emorizar senhas nesta página agora"
 
-#: src/webenginepart.cpp:1029
+#: src/webenginepart.cpp:1030
 #, kde-format
 msgid "&Customize Fields to Memorize for This Page..."
 msgstr "Per&sonalizar campos a memorizar para esta página..."
 
-#: src/webenginepart.cpp:1033
+#: src/webenginepart.cpp:1034
 #, kde-format
 msgid "Remove Customized Memorization Settings for This Page"
 msgstr ""
 "Remover as configurações de memorização personalizadas para esta página"
 
-#: src/webenginepart.cpp:1037
+#: src/webenginepart.cpp:1038
 #, kde-format
 msgid "&Allow Password Caching for This Site"
 msgstr "Permitir o &armazenamento em cache da senha para este site"
 
-#: src/webenginepart.cpp:1041
+#: src/webenginepart.cpp:1042
 #, kde-format
 msgid "Remove All Memorized Passwords for This Site"
 msgstr "Remover todas as senhas memorizadas para este site"
 
-#: src/webenginepart.cpp:1045
+#: src/webenginepart.cpp:1046
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr "&Iniciar o gerenciador da carteira"
 
-#: src/webenginepart.cpp:1049
+#: src/webenginepart.cpp:1050
 #, kde-format
 msgid "&Close Wallet"
 msgstr "&Fechar a carteira"
@@ -1177,17 +1238,17 @@ msgstr "&Gerenciamento de credenciais"
 msgid "HTML Toolbar"
 msgstr "Barra de ferramentas HTML"
 
-#: src/webenginepart_ext.cpp:246
+#: src/webenginepart_ext.cpp:264
 #, kde-format
 msgid "Print Document"
 msgstr "Imprimir documento"
 
-#: src/webenginepart_ext.cpp:464
+#: src/webenginepart_ext.cpp:481
 #, kde-format
 msgid "Add URL to Filter"
 msgstr "Adicionar URL ao filtro"
 
-#: src/webenginepart_ext.cpp:465
+#: src/webenginepart_ext.cpp:482
 #, kde-format
 msgid "Enter the URL:"
 msgstr "Digite a URL:"
@@ -1225,12 +1286,6 @@ msgstr "Erro de certificado"
 msgid "Dialog"
 msgstr "Janela"
 
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: src/webenginepartcertificateerrordlg.ui:23
-#, kde-format
-msgid "TextLabel"
-msgstr "Etiqueta de texto"
-
 #. i18n: ectx: property (title), widget (QGroupBox, details)
 #: src/webenginepartcertificateerrordlg.ui:50
 #, kde-format
@@ -1249,30 +1304,30 @@ msgstr "&Assunto"
 msgid "&Issuer"
 msgstr "&Emissor"
 
-#: src/webenginepartdownloadmanager.cpp:225
+#: src/webenginepartdownloadmanager.cpp:304
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr "Um erro ocorreu ao salvar o arquivo: %1"
 
-#: src/webenginepartdownloadmanager.cpp:233
+#: src/webenginepartdownloadmanager.cpp:312
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr "Baixando"
 
-#: src/webenginepartdownloadmanager.cpp:234
+#: src/webenginepartdownloadmanager.cpp:313
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr "Origem"
 
-#: src/webenginepartdownloadmanager.cpp:235
+#: src/webenginepartdownloadmanager.cpp:314
 #, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "Destino"
 
-#: src/webenginepartdownloadmanager.cpp:248
+#: src/webenginepartdownloadmanager.cpp:327
 #, kde-format
 msgctxt "Finished saving BLOB URL"
 msgid "Finished saving %1 as %2"
@@ -1581,6 +1636,9 @@ msgstr ""
 "li><li><b>ID do campo: </b>%3</li><li><b>O campo é somente leitura: </b>%4</"
 "li><li><b>O campo está habilitado: </b>%5</li><li><b>Completamento "
 "automático está habilitado: </b>%6</li></ul>"
+
+#~ msgid "Save &Frame As..."
+#~ msgstr "Salvar &quadro como..."
 
 #~ msgctxt "Program Name"
 #~ msgid "WebEnginePart"

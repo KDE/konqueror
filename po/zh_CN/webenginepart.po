@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-06 01:00+0000\n"
+"POT-Creation-Date: 2023-03-12 14:38+0000\n"
 "PO-Revision-Date: 2023-03-11 04:55\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -503,6 +503,66 @@ msgstr "已安装"
 msgid "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
 msgstr "<td>MIME 类型</td><td>描述</td><td>后缀</td><td>插件</td>"
 
+#: src/choosepagesaveformatdlg.cpp:37
+#, kde-format
+msgid ""
+"The page is saved as a single HTML page. Only the text of the page will be "
+"saved. External resources such as images won't be saved"
+msgstr ""
+
+#: src/choosepagesaveformatdlg.cpp:40
+#, kde-format
+msgid ""
+"The complete contents of the page will be saved. The page and any external "
+"resources it requires, such as images, will be saved inside a single "
+"directory"
+msgstr ""
+
+#: src/choosepagesaveformatdlg.cpp:43
+#, kde-format
+msgid ""
+"The complete contents of the page will be saved. Both the page and any "
+"external resources it requires, such as images, will be saved in a single "
+"MHTML file"
+msgstr ""
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, ChoosePageSaveFormatDlg)
+#: src/choosepagesaveformatdlg.ui:14
+#, kde-format
+msgid "Choose Save Format"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: src/choosepagesaveformatdlg.ui:20
+#, kde-format
+msgid "How would you like to save the page?"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_singleHTMLPage)
+#: src/choosepagesaveformatdlg.ui:27
+#, kde-format
+msgid "As a &Single HTML page"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_asDirectory)
+#: src/choosepagesaveformatdlg.ui:37
+#, kde-format
+msgid "As &directory"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_asMHTMLPage)
+#: src/choosepagesaveformatdlg.ui:44
+#, kde-format
+msgid "As single MHTML file"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, m_info)
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: src/choosepagesaveformatdlg.ui:51 src/webenginepartcertificateerrordlg.ui:23
+#, kde-format
+msgid "TextLabel"
+msgstr "文字标签"
+
 #: src/settings/webenginesettings.cpp:907
 #, kde-format
 msgid "Filter error"
@@ -909,61 +969,62 @@ msgstr "允许"
 msgid "Do Not Allow"
 msgstr "不允许"
 
-#: src/webenginepart.cpp:224
-#, kde-format
-msgid "Save &Frame As..."
-msgstr "帧另存为(&F)..."
+#: src/webenginepart.cpp:223
+#, fuzzy, kde-format
+#| msgid "Save Image As..."
+msgid "Save Full HTML Page As..."
+msgstr "图像另存为..."
 
-#: src/webenginepart.cpp:228
+#: src/webenginepart.cpp:227
 #, kde-format
 msgid "Print Preview"
 msgstr "打印预览"
 
-#: src/webenginepart.cpp:232
+#: src/webenginepart.cpp:231
 #, kde-format
 msgctxt "zoom in action"
 msgid "Zoom In"
 msgstr "放大"
 
-#: src/webenginepart.cpp:237
+#: src/webenginepart.cpp:236
 #, kde-format
 msgctxt "zoom out action"
 msgid "Zoom Out"
 msgstr "缩小"
 
-#: src/webenginepart.cpp:242
+#: src/webenginepart.cpp:241
 #, kde-format
 msgctxt "reset zoom action"
 msgid "Actual Size"
 msgstr "实际大小"
 
-#: src/webenginepart.cpp:247
+#: src/webenginepart.cpp:246
 #, kde-format
 msgid "Zoom Text Only"
 msgstr "只缩放文本"
 
-#: src/webenginepart.cpp:255
+#: src/webenginepart.cpp:254
 #, kde-format
 msgid "Zoom To DPI"
 msgstr "缩放至 DPI"
 
-#: src/webenginepart.cpp:268
+#: src/webenginepart.cpp:267
 #, kde-format
 msgid "Set &Encoding"
 msgstr "设置编码(&E)"
 
-#: src/webenginepart.cpp:271
+#: src/webenginepart.cpp:270
 #, kde-format
 msgid "View Do&cument Source"
 msgstr "查看文档源文件(&C)"
 
-#: src/webenginepart.cpp:276 src/webenginepart.cpp:574
+#: src/webenginepart.cpp:275 src/webenginepart.cpp:575
 #, kde-format
 msgctxt "Secure Sockets Layer"
 msgid "SSL"
 msgstr "SSL"
 
-#: src/webenginepart.cpp:282
+#: src/webenginepart.cpp:281
 #, kde-format
 msgctxt "find action \"whats this\" text"
 msgid ""
@@ -971,12 +1032,12 @@ msgid ""
 "displayed page."
 msgstr "<h3>查找文本</h3>显示一个对话框，让您可以在所显示的页面中查找文本。"
 
-#: src/webenginepart.cpp:572
+#: src/webenginepart.cpp:573
 #, kde-format
 msgid "The SSL information for this site appears to be corrupt."
 msgstr "此站点的 SSL 信息似乎已损坏。"
 
-#: src/webenginepart.cpp:653
+#: src/webenginepart.cpp:654
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -984,7 +1045,7 @@ msgctxt ""
 msgid "Email: "
 msgstr "电子邮件："
 
-#: src/webenginepart.cpp:682
+#: src/webenginepart.cpp:683
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -992,7 +1053,7 @@ msgctxt ""
 msgid " - CC: "
 msgstr " - 抄送："
 
-#: src/webenginepart.cpp:684
+#: src/webenginepart.cpp:685
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1000,7 +1061,7 @@ msgctxt ""
 msgid " - BCC: "
 msgstr " - 密送："
 
-#: src/webenginepart.cpp:686
+#: src/webenginepart.cpp:687
 #, kde-format
 msgctxt ""
 "status bar text when hovering email links; looks like \"Email: xy@kde.org - "
@@ -1008,84 +1069,84 @@ msgctxt ""
 msgid " - Subject: "
 msgstr " - 主题："
 
-#: src/webenginepart.cpp:690 src/webenginepart.cpp:701
+#: src/webenginepart.cpp:691 src/webenginepart.cpp:702
 #, kde-format
 msgid " (In new window)"
 msgstr " (在新窗口中)"
 
-#: src/webenginepart.cpp:699
+#: src/webenginepart.cpp:700
 #, kde-format
 msgid " (In parent frame)"
 msgstr " (在父框架中)"
 
-#: src/webenginepart.cpp:763
+#: src/webenginepart.cpp:764
 #, kde-format
 msgid "<qt>Do you want to search for <b>%1</b>?</qt>"
 msgstr "<qt>您想要搜索 <b>%1</b> 吗？</qt>"
 
-#: src/webenginepart.cpp:764
+#: src/webenginepart.cpp:765
 #, kde-format
 msgid "Internet Search"
 msgstr "互联网搜索"
 
-#: src/webenginepart.cpp:764
+#: src/webenginepart.cpp:765
 #, kde-format
 msgid "&Search"
 msgstr "搜索(&S)"
 
-#: src/webenginepart.cpp:875
+#: src/webenginepart.cpp:876
 #, kde-format
 msgid "Close window?"
 msgstr "关闭窗口吗？"
 
-#: src/webenginepart.cpp:875
+#: src/webenginepart.cpp:876
 #, kde-format
 msgid "Confirmation Required"
 msgstr "需要确认"
 
-#: src/webenginepart.cpp:949
+#: src/webenginepart.cpp:950
 #, kde-format
 msgid ""
 "<html>Do you want %1 to remember the login information for <b>%2</b>?</html>"
 msgstr "<html>您想要让 %1 记住 <b>%2</b> 的登录信息吗？</html>"
 
-#: src/webenginepart.cpp:1020
+#: src/webenginepart.cpp:1021
 #, kde-format
 msgctxt "Fill the Forms with Data from KWallet"
 msgid "&Fill forms now"
 msgstr "立刻填充表格(&F)"
 
-#: src/webenginepart.cpp:1025
+#: src/webenginepart.cpp:1026
 #, kde-format
 msgid "&Memorize Passwords in This Page Now"
 msgstr "立刻记住此页内的密码(&M)"
 
-#: src/webenginepart.cpp:1029
+#: src/webenginepart.cpp:1030
 #, kde-format
 msgid "&Customize Fields to Memorize for This Page..."
 msgstr "自定义此页内需记住的字段(&C)..."
 
-#: src/webenginepart.cpp:1033
+#: src/webenginepart.cpp:1034
 #, kde-format
 msgid "Remove Customized Memorization Settings for This Page"
 msgstr "删除此页的自定义记住设置"
 
-#: src/webenginepart.cpp:1037
+#: src/webenginepart.cpp:1038
 #, kde-format
 msgid "&Allow Password Caching for This Site"
 msgstr "允许缓存此网站的密码(&A)"
 
-#: src/webenginepart.cpp:1041
+#: src/webenginepart.cpp:1042
 #, kde-format
 msgid "Remove All Memorized Passwords for This Site"
 msgstr "删除此网站所有已记住的密码"
 
-#: src/webenginepart.cpp:1045
+#: src/webenginepart.cpp:1046
 #, kde-format
 msgid "&Launch Wallet Manager"
 msgstr "启动密码库管理器(&L)"
 
-#: src/webenginepart.cpp:1049
+#: src/webenginepart.cpp:1050
 #, kde-format
 msgid "&Close Wallet"
 msgstr "关闭密码库(&C)"
@@ -1126,17 +1187,17 @@ msgstr "登录信息管理(&C)"
 msgid "HTML Toolbar"
 msgstr "HTML 工具栏"
 
-#: src/webenginepart_ext.cpp:246
+#: src/webenginepart_ext.cpp:264
 #, kde-format
 msgid "Print Document"
 msgstr "打印文档"
 
-#: src/webenginepart_ext.cpp:464
+#: src/webenginepart_ext.cpp:481
 #, kde-format
 msgid "Add URL to Filter"
 msgstr "将 URL 添加到过滤器"
 
-#: src/webenginepart_ext.cpp:465
+#: src/webenginepart_ext.cpp:482
 #, kde-format
 msgid "Enter the URL:"
 msgstr "输入 URL："
@@ -1174,12 +1235,6 @@ msgstr "证书错误"
 msgid "Dialog"
 msgstr "对话框"
 
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: src/webenginepartcertificateerrordlg.ui:23
-#, kde-format
-msgid "TextLabel"
-msgstr "文字标签"
-
 #. i18n: ectx: property (title), widget (QGroupBox, details)
 #: src/webenginepartcertificateerrordlg.ui:50
 #, kde-format
@@ -1198,30 +1253,30 @@ msgstr "主体(&S)"
 msgid "&Issuer"
 msgstr "发行方(&S)"
 
-#: src/webenginepartdownloadmanager.cpp:225
+#: src/webenginepartdownloadmanager.cpp:304
 #, kde-format
 msgid "An error occurred while saving the file: %1"
 msgstr "保存文件时出错：%1"
 
-#: src/webenginepartdownloadmanager.cpp:233
+#: src/webenginepartdownloadmanager.cpp:312
 #, kde-format
 msgctxt "Notification about downloading a file"
 msgid "Downloading"
 msgstr "正在下载"
 
-#: src/webenginepartdownloadmanager.cpp:234
+#: src/webenginepartdownloadmanager.cpp:313
 #, kde-format
 msgctxt "Source of a file being downloaded"
 msgid "Source"
 msgstr "源文件"
 
-#: src/webenginepartdownloadmanager.cpp:235
+#: src/webenginepartdownloadmanager.cpp:314
 #, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
 msgstr "目标文件"
 
-#: src/webenginepartdownloadmanager.cpp:248
+#: src/webenginepartdownloadmanager.cpp:327
 #, kde-format
 msgctxt "Finished saving BLOB URL"
 msgid "Finished saving %1 as %2"
@@ -1528,3 +1583,6 @@ msgstr ""
 "<ul><li><b>字段内部名称：</b>%1</li><li><b>字段类型：</b>%2</li><li><b>字段 "
 "ID：</b>%3</li><li><b>字段是否为只读：</b>%4</li><li><b>字段是否已启用：</b>"
 "%5</li><li><b>是否开启自动补全：</b>%6</li></ul>"
+
+#~ msgid "Save &Frame As..."
+#~ msgstr "帧另存为(&F)..."
