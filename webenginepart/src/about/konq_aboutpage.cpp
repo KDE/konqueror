@@ -357,23 +357,25 @@ KonqUrlSchemeHandler::~KonqUrlSchemeHandler()
 
 void KonqUrlSchemeHandler::requestStarted(QWebEngineUrlRequestJob *req)
 {
-  QBuffer* buf = new QBuffer(this);
-  buf->open(QBuffer::ReadWrite);
-  connect(buf, &QIODevice::aboutToClose, buf, &QObject::deleteLater);
-  QString data;
-  QString path = req->requestUrl().path();
-  if (path.endsWith("specs")) {
-    data = s_staticData->specs();
-  } else if (path.endsWith("intro")) {
-    data = s_staticData->intro();
-  } else if (path.endsWith("tips")) {
-    data = s_staticData->tips();
-  } else if (path.endsWith("plugins")) {
-    data = s_staticData->plugins();
-  } else {
-    data = s_staticData->launch();
-  }
-  buf->write(data.toUtf8());
-  buf->seek(0);
-  req->reply("text/html", buf);
+    QBuffer* buf = new QBuffer(this);
+    buf->open(QBuffer::ReadWrite);
+    connect(buf, &QIODevice::aboutToClose, buf, &QObject::deleteLater);
+    QString data;
+    QString path = req->requestUrl().path();
+    if (path.endsWith(QStringLiteral("specs"))) {
+        data = s_staticData->specs();
+    } else if (path.endsWith(QStringLiteral("blank"))) {
+        data = QStringLiteral();
+    } else if (path.endsWith(QStringLiteral("intro"))) {
+        data = s_staticData->intro();
+    } else if (path.endsWith(QStringLiteral("tips"))) {
+        data = s_staticData->tips();
+    } else if (path.endsWith(QStringLiteral("plugins"))) {
+        data = s_staticData->plugins();
+    } else {
+        data = s_staticData->launch();
+    }
+    buf->write(data.toUtf8());
+    buf->seek(0);
+    req->reply("text/html", buf);
 }
