@@ -1,6 +1,6 @@
 # translation of konqueror.po to Polish
 # translation of konqueror.po to
-# Version: $Revision: 1646363 $
+# Version: $Revision: 1646898 $
 # Tłumaczenie autorstwa Artura Skury, marzec 2000
 # Aktualne tłumaczenie Norbert Popiołek <norbert@kde.com.pl>, czerwiec 2001
 # Norbert Popiołek <norbert@kde.com.pl>
@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-09 00:46+0000\n"
-"PO-Revision-Date: 2023-02-11 08:46+0100\n"
+"PO-Revision-Date: 2023-03-12 09:09+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -47,7 +47,7 @@ msgstr ""
 ">\n"
 ">\n"
 ">\n"
-"X-Generator: Lokalize 22.12.2\n"
+"X-Generator: Lokalize 22.12.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 
@@ -455,7 +455,7 @@ msgstr "Typ MIME dla tego URL (np. text/html lub inode/directory)"
 #: src/konqapplication.cpp:185
 #, kde-format
 msgid "mimetype"
-msgstr "Typ MIME"
+msgstr "Rodzaj MIME"
 
 #: src/konqapplication.cpp:186
 #, kde-format
@@ -1914,7 +1914,7 @@ msgstr "&Narzędzia"
 #: src/konqueror.rc:59
 #, kde-format
 msgid "&Settings"
-msgstr "&Ustawienia"
+msgstr "U&stawienia"
 
 #. i18n: ectx: Menu (window)
 #: src/konqueror.rc:78
