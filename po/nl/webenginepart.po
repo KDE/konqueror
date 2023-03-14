@@ -3,26 +3,26 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Freek de Kruijf <f.de.kruijf@hetnet.nl>, 2009.
-# Freek de Kruijf <freekdekruijf@kde.nl>, 2009, 2010, 2011, 2012, 2013, 2016, 2017, 2018, 2020, 2021, 2022.
+# Freek de Kruijf <freekdekruijf@kde.nl>, 2009, 2010, 2011, 2012, 2013, 2016, 2017, 2018, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kwebkitpart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-12 14:38+0000\n"
-"PO-Revision-Date: 2022-01-03 11:44+0100\n"
+"PO-Revision-Date: 2023-03-13 10:58+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
-"Language-Team: \n"
+"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.12.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Freek de Kruijf - t/m 2022"
+msgstr "Freek de Kruijf - t/m 2023"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
@@ -537,6 +537,9 @@ msgid ""
 "The page is saved as a single HTML page. Only the text of the page will be "
 "saved. External resources such as images won't be saved"
 msgstr ""
+"De pagina is opgeslagen als een enkele HTML pagina. Alleen de tekst van de "
+"pagina zal opgeslagen worden. Externe hulpbronnen zoals afbeeldingen zulle "
+"niet worden opgeslagen"
 
 #: src/choosepagesaveformatdlg.cpp:40
 #, kde-format
@@ -545,6 +548,9 @@ msgid ""
 "resources it requires, such as images, will be saved inside a single "
 "directory"
 msgstr ""
+"De volledige inhoud van de pagina zal opgeslagen worden. De pagina en elke "
+"externe vereiste hulpbron, zoals afbeeldingen, zullen opgeslagen worden in "
+"een enkele map"
 
 #: src/choosepagesaveformatdlg.cpp:43
 #, kde-format
@@ -553,38 +559,39 @@ msgid ""
 "external resources it requires, such as images, will be saved in a single "
 "MHTML file"
 msgstr ""
+"De volledige inhoud van de pagina zal opgeslagen worden. Beiden de pagina en "
+"elke externe vereiste hulpbron, zoals afbeeldingen, zullen opgeslagen worden "
+"in een enkel MHTML-bestand"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, ChoosePageSaveFormatDlg)
 #: src/choosepagesaveformatdlg.ui:14
-#, fuzzy, kde-format
-#| msgctxt "input dialog text for selecting html elements"
-#| msgid "Choose elements"
+#, kde-format
 msgid "Choose Save Format"
-msgstr "Elementen kiezen"
+msgstr "Opslagformaat kiezen"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: src/choosepagesaveformatdlg.ui:20
 #, kde-format
 msgid "How would you like to save the page?"
-msgstr ""
+msgstr "Hoe wilt u de pagina opslaan?"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_singleHTMLPage)
 #: src/choosepagesaveformatdlg.ui:27
 #, kde-format
 msgid "As a &Single HTML page"
-msgstr ""
+msgstr "Als een &enkele HTML-pagina"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asDirectory)
 #: src/choosepagesaveformatdlg.ui:37
 #, kde-format
 msgid "As &directory"
-msgstr ""
+msgstr "Als &map"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asMHTMLPage)
 #: src/choosepagesaveformatdlg.ui:44
 #, kde-format
 msgid "As single MHTML file"
-msgstr ""
+msgstr "Als een enkel MHTML-bestand"
 
 #. i18n: ectx: property (text), widget (QLabel, m_info)
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -1022,10 +1029,9 @@ msgid "Do Not Allow"
 msgstr "Niet toestaan"
 
 #: src/webenginepart.cpp:223
-#, fuzzy, kde-format
-#| msgid "Save Image As..."
+#, kde-format
 msgid "Save Full HTML Page As..."
-msgstr "Afbeelding opslaan als..."
+msgstr "Volledige HTML-pagina opslaan als..."
 
 #: src/webenginepart.cpp:227
 #, kde-format

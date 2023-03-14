@@ -2,20 +2,20 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Yasen Pramatarov <yasen@lindeas.com>, 2009, 2010, 2011, 2021.
-# Mincho Kondarev <mkondarev@yahoo.de>, 2022.
+# Mincho Kondarev <mkondarev@yahoo.de>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kwebkitpart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-12 14:38+0000\n"
-"PO-Revision-Date: 2022-05-21 13:00+0200\n"
+"PO-Revision-Date: 2023-03-13 17:16+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
-"Language-Team: Bulgarian <dict@ludost.net>\n"
+"Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 22.04.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -538,6 +538,9 @@ msgid ""
 "The page is saved as a single HTML page. Only the text of the page will be "
 "saved. External resources such as images won't be saved"
 msgstr ""
+"Страницата се записва като единична HTML страница. Само текстът на "
+"страницата ще бъде ще бъде запазен. Външни ресурси, като например "
+"изображения, няма да бъдат запазени."
 
 #: src/choosepagesaveformatdlg.cpp:40
 #, kde-format
@@ -546,6 +549,9 @@ msgid ""
 "resources it requires, such as images, will be saved inside a single "
 "directory"
 msgstr ""
+"Пълното съдържание на страницата ще бъде запазено. Страницата и всички "
+"външни ресурси, които тя изисква, като например изображения, ще бъдат "
+"записани в една директория"
 
 #: src/choosepagesaveformatdlg.cpp:43
 #, kde-format
@@ -554,36 +560,39 @@ msgid ""
 "external resources it requires, such as images, will be saved in a single "
 "MHTML file"
 msgstr ""
+"Пълното съдържание на страницата ще бъде запазено. Както страницата, така и "
+"всички външните ресурси, които тя изисква, като например изображения, ще "
+"бъдат записани в единичен MHTML файл"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, ChoosePageSaveFormatDlg)
 #: src/choosepagesaveformatdlg.ui:14
 #, kde-format
 msgid "Choose Save Format"
-msgstr ""
+msgstr "Избиране на формат за запазване"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: src/choosepagesaveformatdlg.ui:20
 #, kde-format
 msgid "How would you like to save the page?"
-msgstr ""
+msgstr "Как искате да запазите страницата?"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_singleHTMLPage)
 #: src/choosepagesaveformatdlg.ui:27
 #, kde-format
 msgid "As a &Single HTML page"
-msgstr ""
+msgstr "Като единична HTML &страница"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asDirectory)
 #: src/choosepagesaveformatdlg.ui:37
 #, kde-format
 msgid "As &directory"
-msgstr ""
+msgstr "Като &директория"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asMHTMLPage)
 #: src/choosepagesaveformatdlg.ui:44
 #, kde-format
 msgid "As single MHTML file"
-msgstr ""
+msgstr "Като единичен файл MHTML"
 
 #. i18n: ectx: property (text), widget (QLabel, m_info)
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -1019,10 +1028,9 @@ msgid "Do Not Allow"
 msgstr "Забраняване"
 
 #: src/webenginepart.cpp:223
-#, fuzzy, kde-format
-#| msgid "Save Image As..."
+#, kde-format
 msgid "Save Full HTML Page As..."
-msgstr "Запазване на изображението като..."
+msgstr "Запазване на цялата Html страница като..."
 
 #: src/webenginepart.cpp:227
 #, kde-format
