@@ -2,13 +2,13 @@
 # This file is distributed under the same license as the konqueror package.
 #
 # Andrej Mernik <andrejm@ubuntu.si>, 2012, 2013, 2014, 2016, 2017.
-# Matjaž Jeran <matjaz.jeran@amis.net>, 2019, 2020, 2021, 2022.
+# Matjaž Jeran <matjaz.jeran@amis.net>, 2019, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-13 00:48+0000\n"
-"PO-Revision-Date: 2022-01-04 09:25+0100\n"
+"PO-Revision-Date: 2023-03-13 09:07+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Lokalize 21.04.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -532,6 +532,8 @@ msgid ""
 "The page is saved as a single HTML page. Only the text of the page will be "
 "saved. External resources such as images won't be saved"
 msgstr ""
+"Stran je shranjena kot ena sama stran HTML. Shranjeno bo samo besedilo "
+"strani. Zunanji viri, kot so slike ne bodo shranjeni."
 
 #: src/choosepagesaveformatdlg.cpp:40
 #, kde-format
@@ -540,6 +542,8 @@ msgid ""
 "resources it requires, such as images, will be saved inside a single "
 "directory"
 msgstr ""
+"Shranjena bo celotna vsebina strani. Stran in katerikoli potrebni zunanji "
+"viri, na primer slike bodo shranjeni v enem samem imeniku"
 
 #: src/choosepagesaveformatdlg.cpp:43
 #, kde-format
@@ -548,36 +552,38 @@ msgid ""
 "external resources it requires, such as images, will be saved in a single "
 "MHTML file"
 msgstr ""
+"Shranjena bo celotna vsebina strani. Oboje stran in katerikoli potrebni "
+"zunanji viri, na primer slike bodo shranjeni v enem sami datoteki MHTML"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, ChoosePageSaveFormatDlg)
 #: src/choosepagesaveformatdlg.ui:14
 #, kde-format
 msgid "Choose Save Format"
-msgstr ""
+msgstr "Izberite format shranjevanja"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: src/choosepagesaveformatdlg.ui:20
 #, kde-format
 msgid "How would you like to save the page?"
-msgstr ""
+msgstr "Kako bi želeli shraniti stran?"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_singleHTMLPage)
 #: src/choosepagesaveformatdlg.ui:27
 #, kde-format
 msgid "As a &Single HTML page"
-msgstr ""
+msgstr "Kot eno samo stran HTML"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asDirectory)
 #: src/choosepagesaveformatdlg.ui:37
 #, kde-format
 msgid "As &directory"
-msgstr ""
+msgstr "Kot imenik"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asMHTMLPage)
 #: src/choosepagesaveformatdlg.ui:44
 #, kde-format
 msgid "As single MHTML file"
-msgstr ""
+msgstr "Kot eno datoteko MHTML"
 
 #. i18n: ectx: property (text), widget (QLabel, m_info)
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -1010,10 +1016,9 @@ msgid "Do Not Allow"
 msgstr "Ne dovoli"
 
 #: src/webenginepart.cpp:223
-#, fuzzy, kde-format
-#| msgid "Save Image As..."
+#, kde-format
 msgid "Save Full HTML Page As..."
-msgstr "Shrani sliko kot ..."
+msgstr "Shrani celotno HTML stran kot..."
 
 #: src/webenginepart.cpp:227
 #, kde-format
