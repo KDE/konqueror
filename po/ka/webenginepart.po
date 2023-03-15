@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-13 00:48+0000\n"
-"PO-Revision-Date: 2023-02-08 06:20+0100\n"
+"PO-Revision-Date: 2023-03-14 05:13+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -453,7 +453,7 @@ msgstr "დაყენებული დამატებები"
 #: src/about/konq_aboutpage.cpp:339
 #, kde-format
 msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
-msgstr ""
+msgstr "<td>დამატება</td><td>აღწერა</td><td>ფაილი</td><td>ტიპები</td>"
 
 #: src/about/konq_aboutpage.cpp:340
 #, kde-format
@@ -463,7 +463,7 @@ msgstr "დაყენებულია"
 #: src/about/konq_aboutpage.cpp:341
 #, kde-format
 msgid "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
-msgstr ""
+msgstr "<td>Mime ტიპი</td><td>აღწერა</td><td>სუფიქსები</td><td>დამატება</td>"
 
 #: src/choosepagesaveformatdlg.cpp:37
 #, kde-format
@@ -492,19 +492,19 @@ msgstr ""
 #: src/choosepagesaveformatdlg.ui:14
 #, kde-format
 msgid "Choose Save Format"
-msgstr ""
+msgstr "აირჩიეთ შენახვის ფორმატი"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: src/choosepagesaveformatdlg.ui:20
 #, kde-format
 msgid "How would you like to save the page?"
-msgstr ""
+msgstr "როგორ გნებავთ გვერდის შენახვა?"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_singleHTMLPage)
 #: src/choosepagesaveformatdlg.ui:27
 #, kde-format
 msgid "As a &Single HTML page"
-msgstr ""
+msgstr "როგორც &ერთი HTML გვერდი"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asDirectory)
 #: src/choosepagesaveformatdlg.ui:37
@@ -516,7 +516,7 @@ msgstr ""
 #: src/choosepagesaveformatdlg.ui:44
 #, kde-format
 msgid "As single MHTML file"
-msgstr ""
+msgstr "როგორც ერთი MHTML ფაილი"
 
 #. i18n: ectx: property (text), widget (QLabel, m_info)
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -940,10 +940,9 @@ msgid "Do Not Allow"
 msgstr "აკრძალვა"
 
 #: src/webenginepart.cpp:223
-#, fuzzy, kde-format
-#| msgid "Save Image As..."
+#, kde-format
 msgid "Save Full HTML Page As..."
-msgstr "ნახატის შენახვა როგორც..."
+msgstr "სრული HTML გვერდის შენახვა, როგორც..."
 
 #: src/webenginepart.cpp:227
 #, kde-format
@@ -1552,6 +1551,10 @@ msgid ""
 "li><li><b>Field is enabled: </b>%5</li><li><b>Autocompletion is enabled: </b>"
 "%6</li></ul>"
 msgstr ""
+"<ul><li><b>ველის შიდა სახელი: </b>%1</li><li><b>ველის ტიპი: </b>%2</"
+"li><li><b>ველის id: </b>%3</li><li><b>ველი მხოლოდ წაკითხვადია: </b>%4</"
+"li><li><b>ველი ჩართულია: </b>%5</li><li><b>ავტოდასრულება ჩართულია: </b>%6</"
+"li></ul>"
 
 #~ msgid "Save &Frame As..."
 #~ msgstr "&ბლოკის შენახვა როგორც..."
