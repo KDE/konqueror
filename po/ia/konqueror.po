@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-09 00:46+0000\n"
-"PO-Revision-Date: 2023-02-24 23:19+0100\n"
+"PO-Revision-Date: 2023-03-14 22:03+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.2\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1975,44 +1975,35 @@ msgid "Resend"
 msgstr "Invia de nove"
 
 #: src/urlloader.cpp:275
-#, fuzzy, kde-format
-#| msgctxt "Execute an executable file"
-#| msgid "Execute it"
+#, kde-format
 msgctxt "Execute an executable file"
 msgid "Execute"
-msgstr "Executa lo"
+msgstr "Executa"
 
 #: src/urlloader.cpp:277
-#, fuzzy, kde-format
-#| msgctxt "Display an executable file"
-#| msgid "Display it"
+#, kde-format
 msgctxt "Display an executable file"
 msgid "Display"
-msgstr "Monstra lo"
+msgstr "Monstra"
 
 #: src/urlloader.cpp:284
-#, fuzzy, kde-kuit-format
-#| msgctxt ""
-#| "The user has to decide whether to execute an executable file or display it"
-#| msgid ""
-#| "<tt>%1</tt> can be executed. Do you want to execute it or to display it?"
+#, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or "
 "display it"
 msgid ""
 "<filename>%1</filename> can be executed. Do you want to execute it or to "
 "display it?"
-msgstr "<tt>%1</tt> pote esser executate. Tu vole executarlo o monstrar lo?"
+msgstr ""
+"<filename>%1</filename> pote esser executate. Tu vole executar lo o monstrar "
+"lo?"
 
 #: src/urlloader.cpp:290
-#, fuzzy, kde-kuit-format
-#| msgctxt ""
-#| "The user has to decide whether to execute an executable file or not"
-#| msgid "<tt>%1</tt> can be executed. Do you want to execute it?"
+#, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or not"
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
-msgstr "<tt>%1</tt> pote essereexecutate.Tuvoleexecutar lo?"
+msgstr "<filename>%1</filename> pote essere executate.Tu vole executar lo?"
 
 #: src/urlloader.cpp:492
 #, kde-format
