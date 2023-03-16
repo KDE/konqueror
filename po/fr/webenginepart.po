@@ -9,20 +9,21 @@
 # Vincent Pinon <vpinon@kde.org>, 2017.
 # Simon Depiets <sdepiets@gmail.com>, 2018, 2019, 2020.
 #
+# Xavier BESNARD <xavier.besnard]neuf.fr>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: webkitkde\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-13 00:48+0000\n"
-"PO-Revision-Date: 2022-01-09 09:36+0100\n"
-"Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
-"Language-Team: French <kde-francophone@kde.org>\n"
+"PO-Revision-Date: 2023-03-14 07:42+0100\n"
+"Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
+"Language-Team: fr\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 21.12.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -555,6 +556,9 @@ msgid ""
 "The page is saved as a single HTML page. Only the text of the page will be "
 "saved. External resources such as images won't be saved"
 msgstr ""
+"La page est enregistrée comme une seule page au format « HTML ». Seul le "
+"texte de la page sera enregistré. Les ressources externes telles que les "
+"images ne seront pas enregistrées."
 
 #: src/choosepagesaveformatdlg.cpp:40
 #, kde-format
@@ -563,6 +567,9 @@ msgid ""
 "resources it requires, such as images, will be saved inside a single "
 "directory"
 msgstr ""
+"La totalité du contenu de la page sera enregistrée. La page et toutes les "
+"ressources externes dont elle a besoin, comme les images, seront "
+"enregistrées dans un seul dossier."
 
 #: src/choosepagesaveformatdlg.cpp:43
 #, kde-format
@@ -571,38 +578,39 @@ msgid ""
 "external resources it requires, such as images, will be saved in a single "
 "MHTML file"
 msgstr ""
+"La totalité du contenu de la page sera enregistrée. La page et toutes les "
+"ressources externes dont elle a besoin, comme les images, seront "
+"enregistrées dans un seul fichier au format « MHTML »."
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, ChoosePageSaveFormatDlg)
 #: src/choosepagesaveformatdlg.ui:14
-#, fuzzy, kde-format
-#| msgctxt "input dialog text for selecting html elements"
-#| msgid "Choose elements"
+#, kde-format
 msgid "Choose Save Format"
-msgstr "Choisir des éléments"
+msgstr "Sélectionner un format d'enregistrement"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: src/choosepagesaveformatdlg.ui:20
 #, kde-format
 msgid "How would you like to save the page?"
-msgstr ""
+msgstr "Comment voulez-vous enregistrer la page ?"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_singleHTMLPage)
 #: src/choosepagesaveformatdlg.ui:27
 #, kde-format
 msgid "As a &Single HTML page"
-msgstr ""
+msgstr "Comme une seule page au format « HTML »"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asDirectory)
 #: src/choosepagesaveformatdlg.ui:37
 #, kde-format
 msgid "As &directory"
-msgstr ""
+msgstr "Comme &dossier"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asMHTMLPage)
 #: src/choosepagesaveformatdlg.ui:44
 #, kde-format
 msgid "As single MHTML file"
-msgstr ""
+msgstr "Comme un seule fichier au format « MHTML »"
 
 #. i18n: ectx: property (text), widget (QLabel, m_info)
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -1049,10 +1057,9 @@ msgid "Do Not Allow"
 msgstr "Ne pas autoriser"
 
 #: src/webenginepart.cpp:223
-#, fuzzy, kde-format
-#| msgid "Save Image As..."
+#, kde-format
 msgid "Save Full HTML Page As..."
-msgstr "Enregistrer une image sous..."
+msgstr "Enregistrer la totalité de la page « HTML » sous..."
 
 #: src/webenginepart.cpp:227
 #, kde-format
