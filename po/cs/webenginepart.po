@@ -9,15 +9,15 @@ msgstr ""
 "Project-Id-Version: webkitkde\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-13 00:48+0000\n"
-"PO-Revision-Date: 2022-01-05 12:27+0100\n"
-"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
+"PO-Revision-Date: 2023-03-15 14:27+0100\n"
+"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 "X-Language: cs_CZ\n"
 "X-Source-Language: en_US\n"
 
@@ -553,31 +553,31 @@ msgstr ""
 #: src/choosepagesaveformatdlg.ui:14
 #, kde-format
 msgid "Choose Save Format"
-msgstr ""
+msgstr "Vyberte formát pro uložení"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: src/choosepagesaveformatdlg.ui:20
 #, kde-format
 msgid "How would you like to save the page?"
-msgstr ""
+msgstr "Jak byste si přáli stránku uložit?"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_singleHTMLPage)
 #: src/choosepagesaveformatdlg.ui:27
 #, kde-format
 msgid "As a &Single HTML page"
-msgstr ""
+msgstr "Jako jednu s&tranu HTML"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asDirectory)
 #: src/choosepagesaveformatdlg.ui:37
 #, kde-format
 msgid "As &directory"
-msgstr ""
+msgstr "Jako a&dresář"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asMHTMLPage)
 #: src/choosepagesaveformatdlg.ui:44
 #, kde-format
 msgid "As single MHTML file"
-msgstr ""
+msgstr "Jako jeden soubor MHTML"
 
 #. i18n: ectx: property (text), widget (QLabel, m_info)
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -997,10 +997,9 @@ msgid "Do Not Allow"
 msgstr "Nepovolovat"
 
 #: src/webenginepart.cpp:223
-#, fuzzy, kde-format
-#| msgid "Save Image As..."
+#, kde-format
 msgid "Save Full HTML Page As..."
-msgstr "Uložit obrázek jako..."
+msgstr "Uložit plnou stránku HTML jako..."
 
 #: src/webenginepart.cpp:227
 #, kde-format
@@ -1607,6 +1606,3 @@ msgid ""
 "li><li><b>Field is enabled: </b>%5</li><li><b>Autocompletion is enabled: </b>"
 "%6</li></ul>"
 msgstr ""
-
-#~ msgid "Save &Frame As..."
-#~ msgstr "Uložit &rámec jako..."
