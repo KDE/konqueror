@@ -19,9 +19,9 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-09 00:46+0000\n"
-"PO-Revision-Date: 2023-02-07 10:46-0300\n"
+"PO-Revision-Date: 2023-03-21 09:51-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
-"Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
+"Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -45,6 +45,9 @@ msgid ""
 "<p>You're running Konqueror as root. This requires enabling a highly "
 "insecure mode in the browser component.</p><p>What do you want to do?</p>"
 msgstr ""
+"<p>Você está executando o Konqueror como root. Isto requer habilitar um modo "
+"altamente inseguro no componente do navegador.</p><p>O que você deseja fazer?"
+"</p>"
 
 #: src/konqapplication.cpp:127
 #, kde-format
@@ -1982,44 +1985,34 @@ msgid "Resend"
 msgstr "Reenviar"
 
 #: src/urlloader.cpp:275
-#, fuzzy, kde-format
-#| msgctxt "Execute an executable file"
-#| msgid "Execute it"
+#, kde-format
 msgctxt "Execute an executable file"
 msgid "Execute"
 msgstr "Executar"
 
 #: src/urlloader.cpp:277
-#, fuzzy, kde-format
-#| msgctxt "Display an executable file"
-#| msgid "Display it"
+#, kde-format
 msgctxt "Display an executable file"
 msgid "Display"
 msgstr "Mostrar"
 
 #: src/urlloader.cpp:284
-#, fuzzy, kde-kuit-format
-#| msgctxt ""
-#| "The user has to decide whether to execute an executable file or display it"
-#| msgid ""
-#| "<tt>%1</tt> can be executed. Do you want to execute it or to display it?"
+#, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or "
 "display it"
 msgid ""
 "<filename>%1</filename> can be executed. Do you want to execute it or to "
 "display it?"
-msgstr "<tt>%1</tt> pode ser executado. Deseja executá-lo ou mostrá-lo?"
+msgstr ""
+"<filename>%1</filename> pode ser executado. Deseja executá-lo ou mostrá-lo?"
 
 #: src/urlloader.cpp:290
-#, fuzzy, kde-kuit-format
-#| msgctxt ""
-#| "The user has to decide whether to execute an executable file or not"
-#| msgid "<tt>%1</tt> can be executed. Do you want to execute it?"
+#, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or not"
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
-msgstr "<tt>%1</tt> pode ser executado. Deseja executá-lo?"
+msgstr "<filename>%1</filename> pode ser executado. Deseja executá-lo?"
 
 #: src/urlloader.cpp:492
 #, kde-format
