@@ -1,13 +1,15 @@
-# Translation of webkitkde into esperanto.
+# Translation of webenginepart into esperanto.
+# Copyright (C) 2009 Free Software Foundation, Inc.
+# This file is distributed under the same license as the konqueror package.
 # Axel Rousseau <axel@esperanto-jeunes.org>, 2009.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: webkitkde\n"
+"Project-Id-Version: webenginepart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-13 00:48+0000\n"
-"PO-Revision-Date: 2015-03-25 21:53+0100\n"
-"Last-Translator: Axel Rousseau <axel.rousseau@esperanto-france.org>\n"
+"PO-Revision-Date: 2023-03-22 19:14+0100\n"
+"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -49,13 +51,12 @@ msgstr ""
 
 #: src/about/konq_aboutpage.cpp:76 src/about/konq_aboutpage.cpp:136
 #: src/about/konq_aboutpage.cpp:188 src/about/konq_aboutpage.cpp:288
-#, fuzzy, kde-format
-#| msgid "Start Plugin"
+#, kde-format
 msgctxt ""
 "Link that points to the first page of the Konqueror 'about page', Starting "
 "Points contains links to Home, Network Folders, Trash, etc."
 msgid "Starting Points"
-msgstr "Starti kromprogrameton"
+msgstr ""
 
 #: src/about/konq_aboutpage.cpp:77 src/about/konq_aboutpage.cpp:137
 #: src/about/konq_aboutpage.cpp:189 src/about/konq_aboutpage.cpp:289
@@ -82,11 +83,9 @@ msgid "Home Folder"
 msgstr ""
 
 #: src/about/konq_aboutpage.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "EMAIL OF TRANSLATORS"
-#| msgid "Your emails"
+#, kde-format
 msgid "Your personal files"
-msgstr "axel@esperanto-jeunes.org"
+msgstr ""
 
 #: src/about/konq_aboutpage.cpp:88
 #, kde-format
@@ -446,10 +445,9 @@ msgid "Next: Specifications"
 msgstr ""
 
 #: src/about/konq_aboutpage.cpp:338
-#, fuzzy, kde-format
-#| msgid "Start Plugin"
+#, kde-format
 msgid "Installed Plugins"
-msgstr "Starti kromprogrameton"
+msgstr ""
 
 #: src/about/konq_aboutpage.cpp:339
 #, kde-format
@@ -775,22 +773,16 @@ msgid ""
 msgstr ""
 
 #: src/webenginepage.cpp:301
-#, fuzzy, kde-format
-#| msgid "Additional Information: %1"
+#, kde-format
 msgid "Resubmit Information"
-msgstr "Aldonaj informoj: %1"
+msgstr ""
 
 #: src/webenginepage.cpp:536
-#, fuzzy, kde-format
-#| msgid ""
-#| "This site is attempting to submit form data via email.\n"
-#| "Do you want to continue?"
+#, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
 "Do you want to allow it access?"
 msgstr ""
-"Tiu retejo provas elsendi formularajn datumojn per retpoŝto.\n"
-"Ĉu vi volas permesi tion?"
 
 #: src/webenginepage.cpp:540 src/webenginepage.cpp:657
 #: src/webenginepage.cpp:668
@@ -896,16 +888,11 @@ msgid "Attachment Removed"
 msgstr ""
 
 #: src/webenginepage.cpp:869
-#, fuzzy, kde-format
-#| msgid ""
-#| "This site is attempting to submit form data via email.\n"
-#| "Do you want to continue?"
+#, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
 "Do you want to allow this?"
 msgstr ""
-"Tiu retejo provas elsendi formularajn datumojn per retpoŝto.\n"
-"Ĉu vi volas permesi tion?"
 
 #: src/webenginepage.cpp:871
 #, kde-format
@@ -930,10 +917,9 @@ msgid "Do Not Allow"
 msgstr "Ne permesi"
 
 #: src/webenginepart.cpp:223
-#, fuzzy, kde-format
-#| msgid "Save Image As..."
+#, kde-format
 msgid "Save Full HTML Page As..."
-msgstr "Konservi bildon kiel..."
+msgstr ""
 
 #: src/webenginepart.cpp:227
 #, kde-format
@@ -964,10 +950,9 @@ msgid "Zoom Text Only"
 msgstr ""
 
 #: src/webenginepart.cpp:254
-#, fuzzy, kde-format
-#| msgid "Zoom In"
+#, kde-format
 msgid "Zoom To DPI"
-msgstr "Enzomi"
+msgstr ""
 
 #: src/webenginepart.cpp:267
 #, kde-format
@@ -1031,10 +1016,9 @@ msgid " - Subject: "
 msgstr ""
 
 #: src/webenginepart.cpp:691 src/webenginepart.cpp:702
-#, fuzzy, kde-format
-#| msgid "Open in New &Window"
+#, kde-format
 msgid " (In new window)"
-msgstr "Malfermi en nova &fenestro"
+msgstr ""
 
 #: src/webenginepart.cpp:700
 #, kde-format
@@ -1184,11 +1168,10 @@ msgid ""
 msgstr ""
 
 #: src/webenginepartcertificateerrordlg.cpp:55
-#, fuzzy, kde-format
-#| msgid "Filter error"
+#, kde-format
 msgctxt "title of a dialog asking what to do about a SSL certificate error"
 msgid "Certificate error"
-msgstr "Filtrila eraro"
+msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEnginePartCertificateErrorDlg)
 #: src/webenginepartcertificateerrordlg.ui:14
@@ -1232,11 +1215,10 @@ msgid "Source"
 msgstr ""
 
 #: src/webenginepartdownloadmanager.cpp:314
-#, fuzzy, kde-format
-#| msgid "Description:"
+#, kde-format
 msgctxt "Destination of a file download"
 msgid "Destination"
-msgstr "Priskribo:"
+msgstr ""
 
 #: src/webenginepartdownloadmanager.cpp:327
 #, kde-format
@@ -1320,10 +1302,9 @@ msgid "Send Image..."
 msgstr "Sendi bildon..."
 
 #: src/webengineview.cpp:359
-#, fuzzy, kde-format
-#| msgid "Copy Image"
+#, kde-format
 msgid "Copy Image URL"
-msgstr "Kopii bildon"
+msgstr ""
 
 #: src/webengineview.cpp:365
 #, kde-format
@@ -1336,10 +1317,9 @@ msgid "View Image (%1)"
 msgstr "Vidigi bildon (%1)"
 
 #: src/webengineview.cpp:378
-#, fuzzy, kde-format
-#| msgid "Send Image..."
+#, kde-format
 msgid "Block Image..."
-msgstr "Sendi bildon..."
+msgstr ""
 
 #: src/webengineview.cpp:386
 #, kde-format
@@ -1358,22 +1338,19 @@ msgid "Open '%1'"
 msgstr "Malfermi '%1'"
 
 #: src/webengineview.cpp:459
-#, fuzzy, kde-format
-#| msgid "Copy Email Address"
+#, kde-format
 msgid "&Copy Email Address"
-msgstr "Kopii retpoŝtadreson"
+msgstr "&Kopii retpoŝtadreson"
 
 #: src/webengineview.cpp:465
-#, fuzzy, kde-format
-#| msgid "&Copy Text"
+#, kde-format
 msgid "Copy Link &Text"
-msgstr "&Kopii tekston"
+msgstr ""
 
 #: src/webengineview.cpp:471
-#, fuzzy, kde-format
-#| msgid "&Copy Link Address"
+#, kde-format
 msgid "Copy Link &URL"
-msgstr "&Kopii ligilan adreson"
+msgstr ""
 
 #: src/webengineview.cpp:476
 #, kde-format
@@ -1381,10 +1358,9 @@ msgid "&Save Link As..."
 msgstr "&Konservi ligilon kiel..."
 
 #: src/webengineview.cpp:496
-#, fuzzy, kde-format
-#| msgid "&Pause"
+#, kde-format
 msgid "&Play/Pause"
-msgstr "&Paŭzi"
+msgstr ""
 
 #: src/webengineview.cpp:501
 #, kde-format
@@ -1402,10 +1378,9 @@ msgid "Toggle &Controls"
 msgstr ""
 
 #: src/webengineview.cpp:522
-#, fuzzy, kde-format
-#| msgid "Save Image As..."
+#, kde-format
 msgid "Sa&ve Video As..."
-msgstr "Konservi bildon kiel..."
+msgstr ""
 
 #: src/webengineview.cpp:523
 #, kde-format
@@ -1413,10 +1388,9 @@ msgid "C&opy Video URL"
 msgstr ""
 
 #: src/webengineview.cpp:525
-#, fuzzy, kde-format
-#| msgid "&Save Link As..."
+#, kde-format
 msgid "Sa&ve Audio As..."
-msgstr "&Konservi ligilon kiel..."
+msgstr ""
 
 #: src/webengineview.cpp:526
 #, kde-format
@@ -1424,10 +1398,9 @@ msgid "C&opy Audio URL"
 msgstr ""
 
 #: src/webengineview.cpp:528
-#, fuzzy, kde-format
-#| msgid "Save Image As..."
+#, kde-format
 msgid "Sa&ve Media As..."
-msgstr "Konservi bildon kiel..."
+msgstr ""
 
 #: src/webengineview.cpp:529
 #, kde-format
@@ -1435,11 +1408,10 @@ msgid "C&opy Media URL"
 msgstr ""
 
 #: src/webengineview.cpp:582
-#, fuzzy, kde-format
-#| msgid "Search for '%1' with"
+#, kde-format
 msgctxt "Search \"search provider\" for \"text\""
 msgid "Search %1 for '%2'"
-msgstr "Serĉi '%1' per"
+msgstr ""
 
 #: src/webengineview.cpp:593
 #, kde-format
@@ -1465,14 +1437,10 @@ msgid "password"
 msgstr ""
 
 #: src/webenginewallet.cpp:106
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "status bar text when hovering email links; looks like \"Email: xy@kde.org "
-#| "- CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\""
-#| msgid "Email: "
+#, kde-format
 msgctxt "Web field with type 'e-mail'"
 msgid "e-mail"
-msgstr "Retpoŝto: "
+msgstr ""
 
 #: src/webenginewallet.cpp:107
 #, kde-format
@@ -1514,13 +1482,13 @@ msgstr ""
 #, kde-format
 msgctxt "Other details about a web field"
 msgid "Details"
-msgstr ""
+msgstr "Detaloj"
 
 #: src/webfieldsdataview.cpp:125
 #, kde-format
 msgctxt "web field has the readonly attribute"
 msgid "read only"
-msgstr ""
+msgstr "nur lega"
 
 #: src/webfieldsdataview.cpp:128
 #, kde-format
@@ -1532,19 +1500,19 @@ msgstr ""
 #, kde-format
 msgctxt "web field is disabled"
 msgid "disabled"
-msgstr ""
+msgstr "malŝaltita"
 
 #: src/webfieldsdataview.cpp:159
 #, kde-format
 msgctxt "A statement about a field is true"
 msgid "yes"
-msgstr ""
+msgstr "jes"
 
 #: src/webfieldsdataview.cpp:160
 #, kde-format
 msgctxt "A statement about a field is false"
 msgid "no"
-msgstr ""
+msgstr "ne"
 
 #: src/webfieldsdataview.cpp:163
 #, kde-format
@@ -1554,96 +1522,3 @@ msgid ""
 "li><li><b>Field is enabled: </b>%5</li><li><b>Autocompletion is enabled: </b>"
 "%6</li></ul>"
 msgstr ""
-
-#~ msgid "Save &Frame As..."
-#~ msgstr "Konservi &enpaĝan kadron kiel..."
-
-#~ msgid "Dawit Alemayehu"
-#~ msgstr "Dawit Alemayehu"
-
-#~ msgid "Developer"
-#~ msgstr "Kreinto"
-
-#~ msgid "Urs Wolfer"
-#~ msgstr "Urs Wolfer"
-
-#~ msgid "Michael Howell"
-#~ msgstr "Michael Howell"
-
-#~ msgid "Laurent Montel"
-#~ msgstr "Laurent Montel"
-
-#~ msgid "Dirk Mueller"
-#~ msgstr "Dirk Mueller"
-
-#, fuzzy
-#~| msgid "Save Image As..."
-#~ msgid "Save As"
-#~ msgstr "Konservi bildon kiel..."
-
-#~ msgid "Print"
-#~ msgstr "Presi"
-
-#~ msgid "Close"
-#~ msgstr "Fermi"
-
-#~ msgid "Zoom &In"
-#~ msgstr "Zo&mi"
-
-#~ msgid "Zoom &Out"
-#~ msgstr "Ma&lzomi"
-
-#~ msgid "F&ormat"
-#~ msgstr "F&ormato"
-
-#~ msgctxt "Text direction"
-#~ msgid "Direction"
-#~ msgstr "Direkto"
-
-#~ msgid "Default"
-#~ msgstr "Defaŭlta"
-
-#~ msgctxt "@title:menu HTML frame/iframe"
-#~ msgid "Frame"
-#~ msgstr "Enpaĝa kadro"
-
-#~ msgid "Open in New &Window"
-#~ msgstr "Malfermi en nova &fenestro"
-
-#~ msgid "Open in &This Window"
-#~ msgstr "Malfermi en ĉi &tiu fenestro"
-
-#~ msgid "Open in &New Tab"
-#~ msgstr "Malfermi en &Nova Langeto"
-
-#~ msgid "Reload Frame"
-#~ msgstr "Reŝargi kadron"
-
-#~ msgid "Print Frame..."
-#~ msgstr "Presi kadron..."
-
-#~ msgid "View Frame Source"
-#~ msgstr "Montri fonton de la enpaĝa kadro"
-
-#, fuzzy
-#~| msgid "Send Image..."
-#~ msgid "Block IFrame..."
-#~ msgstr "Sendi bildon..."
-
-#~ msgid "&Play"
-#~ msgstr "&Ludi"
-
-#~ msgid "Accept"
-#~ msgstr "Akcepti"
-
-#~ msgid "Reject"
-#~ msgstr "Malakcepti"
-
-#~ msgid "Esc"
-#~ msgstr "Esc"
-
-#~ msgid "Enter the text to search for here"
-#~ msgstr "Enmetu la serĉendan tekston tie"
-
-#~ msgid "Do you want to store this password?"
-#~ msgstr "Ĉu vi volas konservi la pasvorton?"

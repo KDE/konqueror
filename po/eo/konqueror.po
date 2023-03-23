@@ -1,8 +1,5 @@
 # translation of konqueror.po to Esperanto
-# traduko de konqueror.po al
-# translation of konqueror.po to
-# translation of konqueror.po to
-# Esperantaj mesaĝoj por "kfm"
+# Esperantaj mesaĝoj por "konqueror"
 # Copyright (C) 1998,2002, 2003, 2004, 2007 Free Software Foundation, Inc.
 # Wolfram Diestel <wolfram@steloj.de>, 1998.
 # Heiko Evermann <heiko@evermann.de>, 2002, 2003.
@@ -12,14 +9,13 @@
 # Pierre-Marie Pédrot <pedrotpmx@wanadoo.fr>, 2007.
 # Cindy McKee <cfmckee@gmail.com>, 2007.
 #
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-09 00:46+0000\n"
-"PO-Revision-Date: 2007-12-31 08:40-0600\n"
-"Last-Translator: Cindy McKee <cfmckee@gmail.com>\n"
+"PO-Revision-Date: 2023-03-22 19:14+0100\n"
+"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -56,10 +52,9 @@ msgid "Web browser, file manager and document viewer."
 msgstr "Retumilo, dosieradministrilo kaj dokumenta rigardilo."
 
 #: src/konqapplication.cpp:130
-#, fuzzy, kde-format
-#| msgid "(C) 1999-2007, The Konqueror developers"
+#, kde-format
 msgid "(C) 1999-2016, The Konqueror developers"
-msgstr "© 1999-2007, La Konqueror programistoj"
+msgstr ""
 
 #: src/konqapplication.cpp:133
 #, kde-format
@@ -77,12 +72,10 @@ msgid "David Faure"
 msgstr "David Faure"
 
 #: src/konqapplication.cpp:134
-#, fuzzy, kde-format
-#| msgid "Developer (framework, parts, JavaScript, I/O library) and maintainer"
+#, kde-format
 msgid ""
 "Developer (framework, parts, JavaScript, I/O library) and former maintainer"
 msgstr ""
-"Programisto (framo, partoj, Ĝavoskripto, en/el-biblioteko) kaj prizorganto"
 
 #: src/konqapplication.cpp:135
 #, kde-format
@@ -385,10 +378,9 @@ msgid "Eduardo Robles Elvira"
 msgstr "Eduardo Robles Elvira"
 
 #: src/konqapplication.cpp:180
-#, fuzzy, kde-format
-#| msgid "Start without a default window"
+#, kde-format
 msgid "Start without a default window, when called without URLs"
-msgstr "Lanĉi sen defaŭlta fenestro"
+msgstr ""
 
 #: src/konqapplication.cpp:181
 #, kde-format
@@ -407,22 +399,19 @@ msgid "profile"
 msgstr ""
 
 #: src/konqapplication.cpp:183
-#, fuzzy, kde-format
-#| msgid "List available profiles"
+#, kde-format
 msgid "List available sessions"
-msgstr "Listigi uzeblajn profilojn"
+msgstr ""
 
 #: src/konqapplication.cpp:184
-#, fuzzy, kde-format
-#| msgid "Location to open"
+#, kde-format
 msgid "Session to open"
-msgstr "Dezirata loko"
+msgstr ""
 
 #: src/konqapplication.cpp:184
-#, fuzzy, kde-format
-#| msgid "Extensions"
+#, kde-format
 msgid "session"
-msgstr "Aldonaj programetoj"
+msgstr ""
 
 #: src/konqapplication.cpp:185
 #, kde-format
@@ -464,11 +453,10 @@ msgid "Location to open"
 msgstr "Dezirata loko"
 
 #: src/konqapplication.cpp:288
-#, fuzzy, kde-format
-#| msgid "Location to open"
+#, kde-format
 msgctxt "The session asked by the user doesn't exist or can't be opened"
 msgid "Session %1 couldn't be opened"
-msgstr "Dezirata loko"
+msgstr ""
 
 #: src/konqapplication.cpp:392
 #, kde-format
@@ -484,11 +472,10 @@ msgid "no name"
 msgstr "sennoma"
 
 #: src/konqextensionmanager.cpp:50
-#, fuzzy, kde-format
-#| msgid "Configure Extensions..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Extensions"
-msgstr "Agordi aldonajn programetojn..."
+msgstr "Agordi aldonajn programetojn"
 
 #: src/konqextensionmanager.cpp:70
 #, kde-format
@@ -537,10 +524,9 @@ msgid "Stalled"
 msgstr "Interrompita"
 
 #: src/konqguiclients.cpp:51
-#, fuzzy, kde-format
-#| msgid "Preview in %1"
+#, kde-format
 msgid "Preview &in %1"
-msgstr "Antaŭrigardo en %1"
+msgstr "Antaŭrigard&i en %1"
 
 #: src/konqguiclients.cpp:118
 #, kde-format
@@ -589,16 +575,14 @@ msgid "Open in New Tab"
 msgstr "Malfermi en Nova Langeto"
 
 #: src/konqhistoryview.cpp:63
-#, fuzzy, kde-format
-#| msgid "Open in New Tab"
+#, kde-format
 msgid "Open in Current Tab"
-msgstr "Malfermi en Nova Langeto"
+msgstr ""
 
 #: src/konqhistoryview.cpp:67
-#, fuzzy, kde-format
-#| msgid "Copy Link Address"
+#, kde-format
 msgid "&Copy Link Address"
-msgstr "Kopii ligilon"
+msgstr "&Kopii ligilon"
 
 #: src/konqhistoryview.cpp:72
 #, kde-format
@@ -626,10 +610,9 @@ msgid "By &Date"
 msgstr "Laŭ &dato"
 
 #: src/konqhistoryview.cpp:107
-#, fuzzy, kde-format
-#| msgid "Clear History"
+#, kde-format
 msgid "Search in history"
-msgstr "Forviŝi la historion"
+msgstr ""
 
 #: src/konqhistoryview.cpp:168
 #, kde-format
@@ -654,10 +637,9 @@ msgid "Access denied"
 msgstr ""
 
 #: src/konqmainwindow.cpp:1463
-#, fuzzy, kde-format
-#| msgid "&Open File..."
+#, kde-format
 msgid "Open File"
-msgstr "Malfermi d&osieron..."
+msgstr "Malfermi d&osieron"
 
 #: src/konqmainwindow.cpp:1546
 #, kde-format
@@ -696,49 +678,38 @@ msgid "Home Folder"
 msgstr "Hejma dosierujo"
 
 #: src/konqmainwindow.cpp:1952 src/konqmainwindow.cpp:3425
-#, fuzzy, kde-format
-#| msgid "Home Folder"
+#, kde-format
 msgid "Home"
-msgstr "Hejma dosierujo"
+msgstr ""
 
 #: src/konqmainwindow.cpp:1958
-#, fuzzy, kde-format
-#| msgid "Navigate to your 'Home Location'"
+#, kde-format
 msgid "Navigate to your 'Home Folder'"
-msgstr "Iri al via hejma dosierujo"
+msgstr ""
 
 #: src/konqmainwindow.cpp:1959
-#, fuzzy, kde-format
-#| msgid "Navigate to your 'Home Location'"
+#, kde-format
 msgid "Navigate to your local 'Home Folder'"
-msgstr "Iri al via hejma dosierujo"
+msgstr ""
 
 #. i18n: ectx: label, entry, group (UserSettings)
 #: src/konqmainwindow.cpp:1962 src/konqueror.kcfg:16
-#, fuzzy, kde-format
-#| msgid "Home Folder"
+#, kde-format
 msgid "Home Page"
-msgstr "Hejma dosierujo"
+msgstr ""
 
 #: src/konqmainwindow.cpp:1964
-#, fuzzy, kde-format
-#| msgid "Navigate to your 'Home Location'"
+#, kde-format
 msgid "Navigate to your 'Home Page'"
-msgstr "Iri al via hejma dosierujo"
+msgstr ""
 
 #: src/konqmainwindow.cpp:1965
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>Navigate to your 'Home Location'<br /><br />You can configure the "
-#| "location this button takes you to under <b>Settings -> Configure "
-#| "Konqueror -> General</b>.</html>"
+#, kde-format
 msgid ""
 "<html>Navigate to your 'Home Page'<br /><br />You can configure the location "
 "where this button takes you under <b>Settings -> Configure Konqueror -> "
 "General</b>.</html>"
 msgstr ""
-"<html>Iri al via hejma dosierujo<br /><br />Vi povas ŝanĝi la celon de ĉi "
-"tiu butono en <b>Agordo -> Agordi Konqueror -> Ĝenerala</b>.</html>"
 
 #: src/konqmainwindow.cpp:2280
 #, kde-format
@@ -823,11 +794,10 @@ msgid "Move selected files from %1 to:"
 msgstr "Movi elektitajn dosierojn de %1 al:"
 
 #: src/konqmainwindow.cpp:2716
-#, fuzzy, kde-format
-#| msgid "Empty Closed Tabs History"
+#, kde-format
 msgctxt "This menu entry empties the closed items history"
 msgid "Empty Closed Items History"
-msgstr "Malplenigi la Historion de Malfermitaj Langetoj"
+msgstr ""
 
 #: src/konqmainwindow.cpp:2739
 #, kde-format
@@ -891,16 +861,14 @@ msgid "&Up"
 msgstr "&Supren"
 
 #: src/konqmainwindow.cpp:3390
-#, fuzzy, kde-format
-#| msgid "Closed Tabs"
+#, kde-format
 msgid "Closed Items"
-msgstr "Fermitaj langetoj"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3403
-#, fuzzy, kde-format
-#| msgid "Extensions"
+#, kde-format
 msgid "Sessions"
-msgstr "Aldonaj programetoj"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3430
 #, kde-format
@@ -915,11 +883,10 @@ msgid "Recently Visited"
 msgstr ""
 
 #: src/konqmainwindow.cpp:3443
-#, fuzzy, kde-format
-#| msgid "Show History Sidebar"
+#, kde-format
 msgctxt "@action:inmenu Go"
 msgid "Show History"
-msgstr "Montri la historian flankobreton"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3456
 #, kde-format
@@ -927,10 +894,9 @@ msgid "Configure Extensions..."
 msgstr "Agordi aldonajn programetojn..."
 
 #: src/konqmainwindow.cpp:3460
-#, fuzzy, kde-format
-#| msgid "Configure Extensions..."
+#, kde-format
 msgid "Configure Spell Checking..."
-msgstr "Agordi aldonajn programetojn..."
+msgstr ""
 
 #: src/konqmainwindow.cpp:3466
 #, kde-format
@@ -1008,10 +974,9 @@ msgid "&Reload All Tabs"
 msgstr "&Reŝargi ĉiujn langetojn"
 
 #: src/konqmainwindow.cpp:3570
-#, fuzzy, kde-format
-#| msgid "&Reload"
+#, kde-format
 msgid "&Force Reload"
-msgstr "&Reŝargi"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3596
 #, kde-format
@@ -1045,16 +1010,11 @@ msgid "Clear Location Bar"
 msgstr "Malplenigi la lokobreton"
 
 #: src/konqmainwindow.cpp:3633
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>Clear Location bar<br /><br />Clears the content of the location "
-#| "bar.</html>"
+#, kde-format
 msgid ""
 "<html>Clear Location bar<br /><br />Clears the contents of the location bar."
 "</html>"
 msgstr ""
-"<html>Malplenigi la lokobreton<br /><br />Forviŝas la lokobretan enhavon.</"
-"html>"
 
 #: src/konqmainwindow.cpp:3638
 #, kde-format
@@ -1081,18 +1041,12 @@ msgstr ""
 "adresobreto.</html>"
 
 #: src/konqmainwindow.cpp:3681
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>Enter the parent folder<br /><br />For instance, if the current "
-#| "location is file:/home/%1 clicking this button will take you to file:/"
-#| "home.<html>"
+#, kde-format
 msgid ""
 "<html>Enter the parent folder<br /><br />For instance, if the current "
 "location is file:/home/%1 clicking this button will take you to file:/home.</"
 "html>"
 msgstr ""
-"<html>Iri al la patra dosierujo<br /><br />Ekzemple, se la nuna loko estas "
-"file:/home/%1, alklako al tiu butono navigas al file:/home.<html>"
 
 #: src/konqmainwindow.cpp:3684
 #, kde-format
@@ -1115,19 +1069,12 @@ msgid "Move backwards one step in the closed tabs history"
 msgstr "Retropaŝi unufoje en la fermfolia historio"
 
 #: src/konqmainwindow.cpp:3695
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>Reload the currently displayed document<br /><br />This may, for "
-#| "example, be needed to refresh webpages that have been modified since they "
-#| "were loaded, in order to make the changes visible.</html>"
+#, kde-format
 msgid ""
 "<html>Reload the currently displayed document<br /><br />This may, for "
 "example, be needed to refresh web pages that have been modified since they "
 "were loaded, in order to make the changes visible.</html>"
 msgstr ""
-"<html>Reŝargi la nunan dokumenton<br /><br />Estas utile, ekz. por retpaĝoj, "
-"por refreŝigi la paĝojn kiuj ŝanĝiĝis ekde ili estis ŝargataj, por aperigi "
-"la ŝanĝojn.</html>"
 
 #: src/konqmainwindow.cpp:3698
 #, kde-format
@@ -1135,19 +1082,12 @@ msgid "Reload the currently displayed document"
 msgstr "Reŝargi la nunan montratan dokumenton"
 
 #: src/konqmainwindow.cpp:3700
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>Reload all currently displayed documents in tabs<br /><br />This "
-#| "may, for example, be needed to refresh webpages that have been modified "
-#| "since they were loaded, in order to make the changes visible.<html>"
+#, kde-format
 msgid ""
 "<html>Reload all currently displayed documents in tabs<br /><br />This may, "
 "for example, be needed to refresh web pages that have been modified since "
 "they were loaded, in order to make the changes visible.</html>"
 msgstr ""
-"<html>Reŝargi ĉiujn nune vidigatajn dokumentojn kiuj estas en langetoj<br /"
-"><br />Estas utile por retpaĝoj kiuj ŝanĝiĝis ekde la ŝargo, por aperigi la "
-"ŝanĝojn.<html>"
 
 #: src/konqmainwindow.cpp:3703
 #, kde-format
@@ -1165,27 +1105,19 @@ msgstr ""
 "ĉesos kaj Konqueror montros la enhavon haviĝitan ĝis nun.</html>"
 
 #: src/konqmainwindow.cpp:3709
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>Reload the currently displayed document<br /><br />This may, for "
-#| "example, be needed to refresh webpages that have been modified since they "
-#| "were loaded, in order to make the changes visible.</html>"
+#, kde-format
 msgid ""
 "<html>Reload the currently displayed document<br /><br />This may, for "
 "example, be needed to refresh web pages that have been modified since they "
 "were loaded, in order to make the changes visible. Any images on the page "
 "are downloaded again, even if cached copies exist.</html>"
 msgstr ""
-"<html>Reŝargi la nunan dokumenton<br /><br />Estas utile, ekz. por retpaĝoj, "
-"por refreŝigi la paĝojn kiuj ŝanĝiĝis ekde ili estis ŝargataj, por aperigi "
-"la ŝanĝojn.</html>"
 
 #: src/konqmainwindow.cpp:3713
-#, fuzzy, kde-format
-#| msgid "Reload all currently displayed document in tabs"
+#, kde-format
 msgid ""
 "Force a reload of the currently displayed document and any contained images"
-msgstr "Reŝargi ĉiujn nune vidigatajn dokumentojn en langetoj"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3715
 #, kde-format
@@ -1277,10 +1209,9 @@ msgstr ""
 "faritajn en aliaj ligitaj rigardoj."
 
 #: src/konqmainwindow.cpp:3747
-#, fuzzy, kde-format
-#| msgid "C&lose Current Tab"
+#, kde-format
 msgid "&Inspect Current Page"
-msgstr "&Fermi la Nunan Langeton"
+msgstr ""
 
 #: src/konqmainwindow.cpp:3748
 #, kde-format
@@ -1312,18 +1243,16 @@ msgid ""
 msgstr ""
 
 #: src/konqmainwindow.cpp:4250
-#, fuzzy, kde-format
-#| msgid "Open Folder in Tabs"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open bookmarks folder in new tabs"
-msgstr "Malfermi dosierujon en langetoj"
+msgstr ""
 
 #: src/konqmainwindow.cpp:4251
-#, fuzzy, kde-format
-#| msgid "&Open Link"
+#, kde-format
 msgctxt "@action:button"
 msgid "Open"
-msgstr "Malfermi &ligilon"
+msgstr ""
 
 #: src/konqmainwindow.cpp:4410
 #, kde-format
@@ -1351,10 +1280,9 @@ msgid "Open the document in a new tab"
 msgstr "Malfermi la dokumenton en nova langeto"
 
 #: src/konqmainwindow.cpp:4642
-#, fuzzy, kde-format
-#| msgid "&Open With"
+#, kde-format
 msgid "&Open With"
-msgstr "Mal&fermi per %1"
+msgstr "Mal&fermi per"
 
 #: src/konqmainwindow.cpp:4655
 #, kde-format
@@ -1455,10 +1383,9 @@ msgid ""
 msgstr ""
 
 #: src/konqmainwindow.cpp:5449
-#, fuzzy, kde-format
-#| msgid "Desktop configuration"
+#, kde-format
 msgid "Unsupported proxy configuration"
-msgstr "Labortabla agordo"
+msgstr ""
 
 #: src/konqmainwindow.cpp:5449
 #, kde-format
@@ -1466,10 +1393,9 @@ msgid "Don't use a proxy"
 msgstr ""
 
 #: src/konqmainwindow.cpp:5450 src/konqmainwindow.cpp:5468
-#, fuzzy, kde-format
-#| msgid "Show Configuration Button"
+#, kde-format
 msgid "Show proxy configuration dialog"
-msgstr "Montri agordobutonon"
+msgstr ""
 
 #: src/konqmainwindow.cpp:5464
 #, kde-format
@@ -1481,10 +1407,9 @@ msgid ""
 msgstr ""
 
 #: src/konqmainwindow.cpp:5467
-#, fuzzy, kde-format
-#| msgid "Desktop configuration"
+#, kde-format
 msgid "Conflicting proxy configuration"
-msgstr "Labortabla agordo"
+msgstr ""
 
 #: src/konqmainwindow.cpp:5468
 #, kde-format
@@ -1518,17 +1443,15 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_pCurrentWindow)
 #: src/konqnewsessiondlg_base.ui:44
-#, fuzzy, kde-format
-#| msgid "Open the document in current window"
+#, kde-format
 msgid "Onl&y current window"
-msgstr "Malfermi la dokumenton en nuna fenestro"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, lblSessionName)
 #: src/konqnewsessiondlg_base.ui:56
-#, fuzzy, kde-format
-#| msgid "Extensions"
+#, kde-format
 msgid "Session n&ame:"
-msgstr "Aldonaj programetoj"
+msgstr ""
 
 #: src/konqsessiondlg.cpp:60
 #, kde-format
@@ -1537,11 +1460,10 @@ msgid "Manage Sessions"
 msgstr "Mastrumi Seancojn"
 
 #: src/konqsessiondlg.cpp:168
-#, fuzzy, kde-format
-#| msgid "Rename"
+#, kde-format
 msgctxt "@title:window"
 msgid "Rename Session"
-msgstr "Renomi"
+msgstr ""
 
 #: src/konqsessiondlg.cpp:215
 #, kde-format
@@ -1563,51 +1485,44 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, m_pNewButton)
 #: src/konqsessiondlg_base.ui:26
-#, fuzzy, kde-format
-#| msgid "Add New"
+#, kde-format
 msgctxt "@action:button New session"
 msgid "New..."
-msgstr "Aldoni novan"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, m_pSaveCurrentButton)
 #: src/konqsessiondlg_base.ui:33
-#, fuzzy, kde-format
-#| msgctxt "@action:button Save current session"
-#| msgid "Save Current"
+#, kde-format
 msgctxt "@action:button Save current session"
 msgid "Save Current..."
-msgstr "Fermi la Nunan"
+msgstr "Fermi la Nunan..."
 
 #. i18n: ectx: property (text), widget (QPushButton, m_pRenameButton)
 #: src/konqsessiondlg_base.ui:40
-#, fuzzy, kde-format
-#| msgid "Rename"
+#, kde-format
 msgctxt "@action:button Rename session"
 msgid "Rename..."
-msgstr "Renomi"
+msgstr "Alinomi..."
 
 #. i18n: ectx: property (text), widget (QPushButton, m_pDeleteButton)
 #: src/konqsessiondlg_base.ui:47
-#, fuzzy, kde-format
-#| msgid "Delete Link"
+#, kde-format
 msgctxt "@action:button Delete session"
 msgid "Delete"
-msgstr "Forigi ligilon"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_pOpenTabsInsideCurrentWindow)
 #. i18n: ectx: label, entry, group (Trash)
 #: src/konqsessiondlg_base.ui:73 src/konqueror.kcfg:517
-#, fuzzy, kde-format
-#| msgid "Open the document in current window"
+#, kde-format
 msgid "Open tabs inside current window"
-msgstr "Malfermi la dokumenton en nuna fenestro"
+msgstr ""
 
 #: src/konqsessionmanager.cpp:86
-#, fuzzy, kde-format
-#| msgid "Rename"
+#, kde-format
 msgctxt "@title:window"
 msgid "Restore Session?"
-msgstr "Renomi"
+msgstr ""
 
 #: src/konqsessionmanager.cpp:107
 #, kde-format
@@ -1623,11 +1538,10 @@ msgid "Uncheck the sessions you do not want to be restored"
 msgstr ""
 
 #: src/konqsessionmanager.cpp:152
-#, fuzzy, kde-format
-#| msgid "&Window"
+#, kde-format
 msgctxt "@item:treewidget"
 msgid "Window %1"
-msgstr "&Fenestro"
+msgstr ""
 
 #: src/konqsessionmanager.cpp:190
 #, kde-format
@@ -1635,11 +1549,10 @@ msgid "Do not ask again"
 msgstr ""
 
 #: src/konqsessionmanager.cpp:204
-#, fuzzy, kde-format
-#| msgid "Rename"
+#, kde-format
 msgctxt "@action:button yes"
 msgid "Restore Session"
-msgstr "Renomi"
+msgstr ""
 
 #: src/konqsessionmanager.cpp:205
 #, kde-format
@@ -1654,17 +1567,15 @@ msgid "Ask Me Later"
 msgstr ""
 
 #: src/konqstatusbarmessagelabel.cpp:67
-#, fuzzy, kde-format
-#| msgid "Close View"
+#, kde-format
 msgctxt "@info"
 msgid "Close"
-msgstr "Fermi rigardon"
+msgstr ""
 
 #: src/konqstatusbarmessagelabel.cpp:68
-#, fuzzy, kde-format
-#| msgid "Close View"
+#, kde-format
 msgid "Close"
-msgstr "Fermi rigardon"
+msgstr ""
 
 #: src/konqstatusbarmessagelabel.cpp:147
 #, kde-format
@@ -1672,14 +1583,7 @@ msgid "Error: %1"
 msgstr ""
 
 #: src/konqtabs.cpp:51
-#, fuzzy, kde-format
-#| msgid ""
-#| "This bar contains the list of currently open tabs. Click on a tab to make "
-#| "it active. The option to show a close button instead of the website icon "
-#| "in the left corner of the tab is configurable. You can also use keyboard "
-#| "shortcuts to navigate through tabs. The text on the tab is the title of "
-#| "the website currently open in it, put your mouse over the tab too see the "
-#| "full title in case it was truncated to fit the tab size."
+#, kde-format
 msgid ""
 "This bar contains the list of currently open tabs. Click on a tab to make it "
 "active. You can also use keyboard shortcuts to navigate through tabs. The "
@@ -1687,13 +1591,6 @@ msgid ""
 "over the tab to see the full title, in case it has been shortened to fit the "
 "tab width."
 msgstr ""
-"Tiu breto enhavas la liston de nune malfermaj langetoj. Alklaku langeton por "
-"aktivigi tiun langeton. La opcio por montri fermbutonon anstataŭ la retpaĝa "
-"piktogramo en la maldekstra angulo de la langeto estas agordebla. Vi ankaŭ "
-"povas uzi fulmoklavojn por navigi tra la langetoj. La teksto sur la langeto "
-"estas la titolo de la retpaĝo kiu troviĝas en tiu langeto. Metu vian muson "
-"super la langeto por vidi la plenan titolon, okaze ke ĝi estas mallongigita "
-"por ne transpasi la langetgrandecon."
 
 #: src/konqtabs.cpp:86
 #, kde-format
@@ -1752,10 +1649,9 @@ msgstr ""
 
 #. i18n: ectx: label, entry, group (UndoManagerSettings)
 #: src/konqueror.kcfg:26
-#, fuzzy, kde-format
-#| msgid "Maximum &number of URLs:"
+#, kde-format
 msgid "Maximum number of Closed Items"
-msgstr "&Maksimumaj retadresoj:"
+msgstr ""
 
 #. i18n: ectx: whatsthis, entry, group (UndoManagerSettings)
 #: src/konqueror.kcfg:27
@@ -1767,10 +1663,9 @@ msgstr ""
 
 #. i18n: ectx: label, entry, group (FMSettings)
 #: src/konqueror.kcfg:36
-#, fuzzy, kde-format
-#| msgid "Open the document in current window"
+#, kde-format
 msgid "Open folders in separate windows"
-msgstr "Malfermi la dokumenton en nuna fenestro"
+msgstr ""
 
 #. i18n: ectx: whatsthis, entry, group (FMSettings)
 #: src/konqueror.kcfg:37
@@ -1968,10 +1863,9 @@ msgstr "Malfari: Fermis f&olion"
 
 #: src/konqundomanager.cpp:92 src/konqundomanager.cpp:103
 #: src/konqundomanager.cpp:147
-#, fuzzy, kde-format
-#| msgid "Und&o: Closed Tab"
+#, kde-format
 msgid "Und&o: Closed Window"
-msgstr "Malfari: Fermis f&olion"
+msgstr ""
 
 #: src/konqundomanager.cpp:105
 #, kde-format
@@ -2030,974 +1924,6 @@ msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
 msgstr ""
 
 #: src/urlloader.cpp:492
-#, fuzzy, kde-format
-#| msgid "Save As..."
+#, kde-format
 msgid "Save As"
-msgstr "Konservi kiel..."
-
-#~ msgid ""
-#~ "Malformed URL\n"
-#~ "%1"
-#~ msgstr ""
-#~ "Misformita URL\n"
-#~ "%1"
-
-#~ msgid "File Management"
-#~ msgstr "Dosiera administrado"
-
-#~ msgid "Web Browsing"
-#~ msgstr "Retumado"
-
-#~ msgctxt "@title:window"
-#~ msgid "Configure"
-#~ msgstr "Agordi"
-
-#~ msgid ""
-#~ "Konqueror is a web browser, file manager and universal document viewer."
-#~ msgstr ""
-#~ "Konqueror estas via dosiermastrumilo, retumilo kaj universala "
-#~ "dokumentrigardilo."
-
-#~ msgctxt ""
-#~ "Link that points to the first page of the Konqueror 'about page', "
-#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
-#~ msgid "Starting Points"
-#~ msgstr "Komencaj aferoj"
-
-#~ msgid "Introduction"
-#~ msgstr "Enkonduko"
-
-#~ msgid "Tips"
-#~ msgstr "Konsiloj"
-
-#~ msgid "Specifications"
-#~ msgstr "Specifoj"
-
-#~ msgid "Your personal files"
-#~ msgstr "Viaj personaj dosieroj"
-
-#~ msgid "Trash"
-#~ msgstr "Rubujo"
-
-#~ msgid "Browse and restore the trash"
-#~ msgstr "Foliumi kaj restarigi el la rubujo"
-
-#~ msgid "Network Folders"
-#~ msgstr "Enretaj dosierujoj"
-
-#~ msgid "Shared files and folders"
-#~ msgstr "Komunigitaj dosieroj kaj dosierujoj"
-
-#~ msgid "Bookmarks"
-#~ msgstr "Legosignoj"
-
-#~ msgid "Next: An Introduction to Konqueror"
-#~ msgstr "Sekva: Enkonduko pri Konqueror"
-
-#~ msgid "Search the Web"
-#~ msgstr "Serĉi interrete"
-
-#~ msgid ""
-#~ "Konqueror makes working with and managing your files easy. You can browse "
-#~ "both local and networked folders while enjoying advanced features such as "
-#~ "the powerful sidebar and file previews."
-#~ msgstr ""
-#~ "Konqueror faciligas laboron kaj mastrumadon de viaj dosieroj. Vi povas "
-#~ "trarigardi lokajn kaj enretajn dosierujojn, dum vi ĝuas la progresintajn "
-#~ "funkciojn, kiel la potencan flankobreton kaj antaŭrigardojn de dosieroj."
-
-#~ msgid ""
-#~ "Konqueror is also a full featured and easy to use web browser which you "
-#~ "can use to explore the Internet. Enter the address (e.g. <a href=\"http://"
-#~ "www.kde.org\">http://www.kde.org</a>) of a web page you would like to "
-#~ "visit in the location bar and press Enter, or choose an entry from the "
-#~ "Bookmarks menu."
-#~ msgstr ""
-#~ "Konqueror  ankaŭ estas plenfunkcia kaj facile uzebla retumilo. Simple "
-#~ "donu la retadreson (ekz. <A HREF=\"http://www.kde.org\">http://www.kde."
-#~ "org</A>) de la retpaĝo, kiun vi volas rigardi en la lokobreton kaj "
-#~ "alklaku la enigan klavon. Aŭ elektu ion el la legosignoj."
-
-#~ msgid ""
-#~ "To return to the previous location, press the back button <img width='16' "
-#~ "height='16' src=\"%1\"></img> in the toolbar. "
-#~ msgstr ""
-#~ "Se vi volas reiri al la antaŭa loko, premu la butonon <img width='16' "
-#~ "height='16' src=\"%1\"></img> en la ilobreto. "
-
-#, fuzzy
-#~ msgid ""
-#~ "To quickly go to your Home folder press the home button <img width='16' "
-#~ "height='16' src=\"%1\"></img>."
-#~ msgstr ""
-#~ "Se vi volas reiri hejmen, premu la butonon <img width='16'height='16' src="
-#~ "\"%1\"></img> en la ilobreto."
-
-#~ msgid ""
-#~ "For more detailed documentation on Konqueror click <a href=\"%1\">here</"
-#~ "a>."
-#~ msgstr ""
-#~ "Por detalaj informoj pri Konqueror alklaku <A HREF=\"%1\">tie ĉi</A>."
-
-#, fuzzy
-#~| msgid "Next: Tips &amp; Tricks"
-#~ msgid "Next: Tips & Tricks"
-#~ msgstr "Sekva: konsiloj &amp; spertaĵoj"
-
-#, fuzzy
-#~| msgid ""
-#~| "Konqueror is designed to embrace and support Internet standards. The aim "
-#~| "is to fully implement the officially sanctioned standards from "
-#~| "organizations such as the W3 and OASIS, while also adding extra support "
-#~| "for other common usability features that arise as de facto standards "
-#~| "across the Internet. Along with this support, for such functions as "
-#~| "favicons, Internet Keywords, and <A HREF=\"%1\">XBEL bookmarks</A>, "
-#~| "Konqueror also implements:"
-#~ msgid ""
-#~ "Konqueror is designed to embrace and support Internet standards. The aim "
-#~ "is to fully implement the officially sanctioned standards from "
-#~ "organizations such as the W3 and OASIS, while also adding extra support "
-#~ "for other common usability features that arise as de facto standards "
-#~ "across the Internet. Along with this support, for such functions as "
-#~ "favicons, Web Shortcuts, and <A HREF=\"%1\">XBEL bookmarks</A>, Konqueror "
-#~ "also implements:"
-#~ msgstr ""
-#~ "Oni fasonis Konqueror por uzi, inkluzivi kaj subteni interretajn normojn. "
-#~ "La intenco estas plene realigi oficiale agnoskitajn normojn de "
-#~ "organizaĵoj kiel W3 kaj OASIS, kaj aldone subteni ankaŭ aliajn vaste "
-#~ "uzatajn kvazaŭnormojn de la interreto. Kune kun subteno de retejaj "
-#~ "piktogramoj, interretaj ŝlosilvortoj kaj <A HREF=\"%1\">XBEL-legosignoj</"
-#~ "A>, Konqueror havas subtenon ankaŭ por:"
-
-#~ msgid "Supported standards"
-#~ msgstr "Subtenitaj normoj"
-
-#~ msgid "Additional requirements*"
-#~ msgstr "Aldonaj postuloj*"
-
-#~ msgid ""
-#~ "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF="
-#~ "\"%2\">HTML 4.01</A>"
-#~ msgstr ""
-#~ "<A HREF=\"%1\">DOM</A> (Nivelo 1, parte nivelo 2) bazita sur <A HREF="
-#~ "\"%2\">HTML 4.01</A>"
-
-#~ msgid "built-in"
-#~ msgstr "enkonstruita"
-
-#~ msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
-#~ msgstr "<A HREF=\"%1\">Laŭtemaj stildifinoj</A> (CSS 1, parte CSS2)"
-
-#~ msgid ""
-#~ "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
-#~ msgstr ""
-#~ "<A HREF=\"%1\">ECMA-262</A>Eldono 3 (egalas krude al Ĝavoskripto 1.5)"
-
-#~ msgid ""
-#~ "JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>."
-#~ msgstr ""
-#~ "Ĝavoskripto neaktiva (ĉie). Aktivigu Ĝavoskripton <A HREF=\"%1\">tie ĉi</"
-#~ "A>."
-
-#~ msgid ""
-#~ "JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\"
-#~ "\">here</A>."
-#~ msgstr ""
-#~ "Ĝavoskripto aktiva (ĉie). Agordu Ĝavoskripton <a href=\\\"%1\\\">tie ĉi</"
-#~ "a>."
-
-#~ msgid "Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support"
-#~ msgstr "Sekura <a href=\"%1\">Ĝavo</a><sup>&reg;</sup>-subteno"
-
-#, fuzzy
-#~| msgid ""
-#~| "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">Blackdown</A>, <A HREF="
-#~| "\"%2\">IBM</A> or <A HREF=\"%3\">Sun</A>)"
-#~ msgid ""
-#~ "JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">OpenJDK</A> or <A HREF="
-#~ "\"%2\">Sun/Oracle</A>)"
-#~ msgstr ""
-#~ "JDK 1.2.0 (Ĝavo 2) - kongrua VM (<A HREF=\"%1\">Blackdown</A>, <A HREF="
-#~ "\"%2\">IBM</A> aŭ <A HREF=\"%3\">Sun</A>)"
-
-#~ msgid "Enable Java (globally) <A HREF=\"%1\">here</A>."
-#~ msgstr "Aktivigi Ĝavon (ĉie) <A HREF=\"%1\">tie ĉi</A>."
-
-#~ msgid "Secure Sockets Layer"
-#~ msgstr "Sekura kontaktoskatola nivelo (SSL)"
-
-#~ msgid "(TLS/SSL v2/3) for secure communications up to 168bit"
-#~ msgstr "(TLS/SSL v2/3) por sekura komunikado kun ŝlosiloj ĝis 168 bitoj"
-
-#~ msgid "OpenSSL"
-#~ msgstr "OpenSSL"
-
-#~ msgid "Bidirectional 16bit unicode support"
-#~ msgstr "Ambaŭdirekta 16bita Unikodo-subteno"
-
-#~ msgid "AutoCompletion for forms"
-#~ msgstr "Aŭtomata kompletigo por formularoj"
-
-#~ msgctxt "Title of an html 'group box' explaining konqueror features"
-#~ msgid "General"
-#~ msgstr "Ĝenerale"
-
-#~ msgid "Feature"
-#~ msgstr "Eblo"
-
-#~ msgid "Details"
-#~ msgstr "Detaloj"
-
-#~ msgid "Image formats"
-#~ msgstr "Bildaj tipoj"
-
-#, fuzzy
-#~| msgid "PNG<br />MNG<br />JPG<br />GIF"
-#~ msgid "PNG<br />JPG<br />GIF"
-#~ msgstr "PNG<br />MNG<br />JPG<br />GIF"
-
-#~ msgid "Transfer protocols"
-#~ msgstr "Transmetaj protokoloj"
-
-#~ msgid "HTTP 1.1 (including gzip/bzip2 compression)"
-#~ msgstr "HTTP 1.1 (inkluzive de gzip/bzip2-kunpremo)"
-
-#~ msgid "FTP"
-#~ msgstr "FTP"
-
-#, fuzzy
-#~| msgid "and <A HREF=\"%1\">many more...</A>"
-#~ msgid "and <A HREF=\"%1\">many more (see Kioslaves in KHelpCenter)...</A>"
-#~ msgstr "kaj <a href=\"%1\">multaj plu...</a>"
-
-#~ msgctxt "A feature of Konqueror"
-#~ msgid "URL-Completion"
-#~ msgstr "URL-Kompletigo"
-
-#~ msgid "Manual"
-#~ msgstr "Manlibro"
-
-#~ msgid "Popup"
-#~ msgstr "Ŝpruco"
-
-#~ msgid "(Short-) Automatic"
-#~ msgstr "(Mallong-) Aŭtomata"
-
-#~ msgctxt ""
-#~ "Link that points to the first page of the Konqueror 'about page', "
-#~ "Starting Points contains links to Home, Network Folders, Trash, etc."
-#~ msgid "<a href=\"%1\">Return to Starting Points</a>"
-#~ msgstr "<a href=\"%1\">Reiru al komencaj aferoj</a>"
-
-#, fuzzy
-#~| msgid "Tips &amp; Tricks"
-#~ msgid "Tips & Tricks"
-#~ msgstr "Konsiloj &amp; lertaĵoj"
-
-#, fuzzy
-#~| msgid ""
-#~| "Use Internet-Keywords and Web-Shortcuts: by typing \"gg: KDE\" one can "
-#~| "search the Internet, using Google, for the search phrase \"KDE\". There "
-#~| "are a lot of Web-Shortcuts predefined to make searching for software or "
-#~| "looking up certain words in an encyclopedia a breeze. You can even <a "
-#~| "href=\"%1\">create your own</a> Web-Shortcuts."
-#~ msgid ""
-#~ "Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, "
-#~ "using Google, for the search phrase \"KDE\". There are a lot of Web-"
-#~ "Shortcuts predefined to make searching for software or looking up certain "
-#~ "words in an encyclopedia a breeze. You can even <a href=\"%1\">create "
-#~ "your own</a> Web-Shortcuts."
-#~ msgstr ""
-#~ "Uzu interretajn ŝlosilvortojn kaj TTT-mallongigojn! Tajpu \"gg:KDE\" kaj "
-#~ "vi povas serĉi per la serĉilo Google la vorton \"KDE\". Ekzistas multaj "
-#~ "antaŭdifinitaj TTT-mallongigoj por facile serĉi progamaron aŭ vortojn en "
-#~ "enciklopedio kaj vi ankaŭ povas <A HREF=\"%1\">krei viajn proprajn</A> "
-#~ "TTT-mallongigojn."
-
-#, fuzzy
-#~| msgid ""
-#~| "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> "
-#~| "in the toolbar to increase the font size on your web page."
-#~ msgid ""
-#~ "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in "
-#~ "the HTML toolbar to increase the font size on your web page."
-#~ msgstr ""
-#~ "Uzu la grandigobutonon <img width= '16' height='16' SRC=\"%1\"></img> en "
-#~ "la ilobreto por pligrandigi la tiparon de la retpaĝo."
-
-#~ msgid ""
-#~ "When you want to paste a new address into the Location toolbar you might "
-#~ "want to clear the current entry by pressing the black arrow with the "
-#~ "white cross <img width='16' height='16' src=\"%1\"></img> in the toolbar."
-#~ msgstr ""
-#~ "Se vi volas entajpi novan adreson en la lokobreton vi povas rapide "
-#~ "malplenigi ĝin per la nigra sagbutono kun la blanka kruco <img width='16' "
-#~ "height='16' src=\"%1\"></img> en la ilobreto."
-
-#, fuzzy
-#~| msgid ""
-#~| "To create a link on your desktop pointing to the current page, simply "
-#~| "drag the \"Location\" label that is to the left of the Location toolbar, "
-#~| "drop it on to the desktop, and choose \"Link\"."
-#~ msgid ""
-#~ "To create a link on your desktop pointing to the current page, simply "
-#~ "drag the icon (favicon) that is to the left of the Location toolbar, drop "
-#~ "it on to the desktop, and choose \"Icon\"."
-#~ msgstr ""
-#~ "Por krei ligilon al la nuna dokumento sur via labortablo, simple trenu la "
-#~ "\"Loko\"-etikedon maldekstre de la lokobreto, faligu ĝin al la labortablo "
-#~ "kaj elektu \"Ligi\"."
-
-#~ msgid ""
-#~ "You can also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen "
-#~ "Mode\" in the Settings menu. This feature is very useful for \"Talk\" "
-#~ "sessions."
-#~ msgstr ""
-#~ "Vi trovos la <img width='16' height='16' SRC=\"%1\" /> \"Tutekranan "
-#~ "reĝimon\" en la agorda menuo. Tiu funkcio estas tre utila por \"babiladoj"
-#~ "\"."
-
-#, fuzzy
-#~| msgid ""
-#~| "Divide et impera (lat. \"Divide and conquer\") - by splitting a window "
-#~| "into two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> "
-#~| "Split View Left/Right) you can make Konqueror appear the way you like. "
-#~| "You can even load some example view-profiles (e.g. Midnight Commander), "
-#~| "or create your own ones."
-#~ msgid ""
-#~ "Divide et impera (lat. \"Divide and conquer\") - by splitting a window "
-#~ "into two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> "
-#~ "Split View Left/Right) you can make Konqueror appear the way you like."
-#~ msgstr ""
-#~ "Dividu kaj konkeru! - per divido de fenestro en du partojn ekz. Fenestro -"
-#~ "> <img width='16' height='16' src=\"%1\" /> Dividu rigardon vertikale - "
-#~ "vi povas doni deziratan aspekton al Konqueror. Ekzistas ankaŭ kelkaj "
-#~ "ŝargeblaj rigardoprofiloj (ekz. laŭ Midnight Commander), aŭ vi povas krei "
-#~ "propran rigardoprofilon."
-
-#~ msgid ""
-#~ "Use the <a href=\"%1\">user-agent</a> feature if the website you are "
-#~ "visiting asks you to use a different browser (and do not forget to send a "
-#~ "complaint to the webmaster!)"
-#~ msgstr ""
-#~ "Uzu la funkcion <a href=\"%1\">uzanto-kliento</a>, se la retpaĝo kiun vi "
-#~ "volas viziti postulas alian retumilon (kaj ne forgesu sendi plendon al la "
-#~ "retejestro!)"
-
-#~ msgid ""
-#~ "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar "
-#~ "ensures that you can keep track of the pages you have visited recently."
-#~ msgstr ""
-#~ "La <img width='16' height='16' src=\"%1\"></img> historio en via "
-#~ "flankobreto certigas ke vi konservas superrigardon pri la laste vizititaj "
-#~ "paĝoj."
-
-#~ msgid ""
-#~ "Use a caching <a href=\"%1\">proxy</a> to speed up your Internet "
-#~ "connection."
-#~ msgstr ""
-#~ "Vi povas uzi kaŝmemoran <A HREF=\"%1\">prokurservilon</A> por plirapidigi "
-#~ "vian retumadon."
-
-#, fuzzy
-#~| msgid ""
-#~| "Advanced users will appreciate the Konsole which you can embed into "
-#~| "Konqueror (Window -> <img width='16' height='16' SRC=\"%1\"></img> Show "
-#~| "Terminal Emulator)."
-#~ msgid ""
-#~ "Advanced users will appreciate the Konsole which you can embed into "
-#~ "Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
-#~ "Terminal Emulator)."
-#~ msgstr ""
-#~ "Progresintaj uzantoj ŝatos la Konzolon kiun vi povas enkorpigi en la "
-#~ "Konqueror fenestro (Fenestro -> <img width='16' height='16' SRC=\"%1\"></"
-#~ "img> Montri terminalimitilon)."
-
-#~ msgid "Next: Specifications"
-#~ msgstr "Sekva: Specifoj"
-
-#~ msgid "Installed Plugins"
-#~ msgstr "Instalitaj kromprogrametoj"
-
-#~ msgid "<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"
-#~ msgstr ""
-#~ "<td>Kromprogrameto</td><td>Priskribo</td><td>Dosiero</td><td>Tipoj</td>"
-
-#~ msgid "Installed"
-#~ msgstr "Instalita"
-
-#~ msgid ""
-#~ "<td>Mime Type</td><td>Description</td><td>Suffixes</td><td>Plugin</td>"
-#~ msgstr ""
-#~ "<td>MIME-Tipo</td><td>Priskriboj</td><td>Finaĵoj</td><td>Kromprogrameto</"
-#~ "td>"
-
-#~ msgid ""
-#~ "Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">plugins</A> (for "
-#~ "viewing <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
-#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
-#~ "SUP></A>Video, etc.)"
-#~ msgstr ""
-#~ "Netskapokomunikilaj<SUP>&reg;</SUP> <A HREF=\"%4\">kromprogrametoj</A> "
-#~ "(por rigardi <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF="
-#~ "\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</"
-#~ "SUP></A>Video, ktp.)"
-
-#~ msgid "http://konqueror.kde.org"
-#~ msgstr "http://konqueror.kde.org"
-
-#~ msgid "Limits"
-#~ msgstr "Limigoj"
-
-#~ msgid "URLs e&xpire after"
-#~ msgstr "Retadresoj e&ksvalidiĝas post"
-
-#~ msgid "Maximum &number of URLs:"
-#~ msgstr "&Maksimumaj retadresoj:"
-
-#~ msgid "Custom Fonts For"
-#~ msgstr "Tajloritaj tiparoj por"
-
-#~ msgid "URLs newer than"
-#~ msgstr "Adresoj pli novdataj ol"
-
-#~ msgid "Choose Font..."
-#~ msgstr "Elekti tiparon..."
-
-#~ msgid "URLs older than"
-#~ msgstr "Adresoj malpli novdataj ol"
-
-#~ msgid ""
-#~ "Shows the number of times visited and the dates of the first and last "
-#~ "visits, in addition to the URL"
-#~ msgstr ""
-#~ "Aldone al la adreso, montras la sumon de vizitoj kaj la datojn de la unua "
-#~ "vizito kaj lasta vizito"
-
-#~ msgid "Detailed tooltips"
-#~ msgstr "Pli informaj ŝpruchelpiloj"
-
-#~ msgid "Clear History"
-#~ msgstr "Forviŝi la historion"
-
-#, fuzzy
-#~| msgid "Web Sidebar"
-#~ msgctxt "@action:inmenu Add"
-#~ msgid "History Sidebar Module"
-#~ msgstr "Reta flankobreto"
-
-#~ msgctxt "@title:tab"
-#~ msgid "History"
-#~ msgstr "Historio"
-
-#~ msgid "Minute"
-#~ msgid_plural "Minutes"
-#~ msgstr[0] "Minuto"
-#~ msgstr[1] "Minutoj"
-
-#~ msgid "Day"
-#~ msgid_plural "Days"
-#~ msgstr[0] "Tago"
-#~ msgstr[1] "Tagoj"
-
-#~ msgid "<h1>History Sidebar</h1> You can configure the history sidebar here."
-#~ msgstr ""
-#~ "<h1>Historia flankobreto</h1>Vi povas agordi la historian breton ĉi tie."
-
-#, fuzzy
-#~| msgid "Web Sidebar"
-#~ msgctxt "@action:inmenu Add"
-#~ msgid "Places Sidebar Module"
-#~ msgstr "Reta flankobreto"
-
-#~ msgctxt "@title:tab"
-#~ msgid "Places"
-#~ msgstr "Lokoj"
-
-#~ msgid "Extended Sidebar"
-#~ msgstr "Etendiĝa flankobreto"
-
-#~ msgid "Rollback to System Default"
-#~ msgstr "Ŝanĝomalfari al sistemnormo"
-
-#~ msgid "Configure Sidebar"
-#~ msgstr "Agordi flankobreton"
-
-#~ msgid "Add New"
-#~ msgstr "Aldoni novan"
-
-#~ msgid "Multiple Views"
-#~ msgstr "Pluraj rigardoj"
-
-#~ msgid "Show Tabs Left"
-#~ msgstr "Montri langetojn maldekstre"
-
-#, fuzzy
-#~| msgid "Web Sidebar"
-#~ msgid "Close Sidebar"
-#~ msgstr "Reta flankobreto"
-
-#~ msgid "This entry already exists."
-#~ msgstr "Tiu ero jam ekzistas."
-
-#~ msgid ""
-#~ "<qt>This removes all your entries from the sidebar and adds the system "
-#~ "default ones.<br /><b>This procedure is irreversible</b><br />Do you want "
-#~ "to proceed?</qt>"
-#~ msgstr ""
-#~ "<qt>Tio forigos ĉiujn viajn erojn el la flankobreto kaj redonos la "
-#~ "sistemajn defaŭltojn. <br /><b>Tiu ago ne estas nuligebla.</b> <br />Ĉu "
-#~ "vi volas daŭri?</qt>"
-
-#~ msgid "Show Tabs Right"
-#~ msgstr "Montri la langetojn dekstre"
-
-#~ msgctxt "@title:window"
-#~ msgid "Set Name"
-#~ msgstr "Difini nomon"
-
-#~ msgid "Enter the name:"
-#~ msgstr "Donu nomon:"
-
-#~ msgid "Enter a URL:"
-#~ msgstr "Entajpu URLon:"
-
-#~ msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
-#~ msgstr "<qt>Ĉu vi vere volas forigi la <b>%1</b> langeto?</qt>"
-
-#, fuzzy
-#~| msgid ""
-#~| "You have hidden the navigation panel configuration button. To make it "
-#~| "visible again, click the right mouse button on any of the navigation "
-#~| "panel buttons and select \"Show Configuration Button\"."
-#~ msgid ""
-#~ "You have hidden the sidebar configuration button. To make it visible "
-#~ "again, click the right mouse button on any of the sidebar buttons and "
-#~ "select \"Show Configuration Button\"."
-#~ msgstr ""
-#~ "Vi kaŝis la navigpanelan agordobutonon. Por revidigi ĝin, alklaku per "
-#~ "dekstra musbutono al iu butono de la navigpanelo kaj elektu \"Montri "
-#~ "agordobutonon\"."
-
-#~ msgid "Set Name..."
-#~ msgstr "Difini nomon..."
-
-#~ msgid "Set URL..."
-#~ msgstr "Difini URLon..."
-
-#~ msgid "Set Icon..."
-#~ msgstr "Difini piktogramon..."
-
-#~ msgid "Remove"
-#~ msgstr "Forpreni"
-
-#, fuzzy
-#~| msgid "Web Sidebar"
-#~ msgid "Web module"
-#~ msgstr "Reta flankobreto"
-
-#~ msgid "&Create New Folder"
-#~ msgstr "&Krei novan dosierujon"
-
-#~ msgid "Delete Folder"
-#~ msgstr "Forigi dosierujon"
-
-#~ msgid "Delete Bookmark"
-#~ msgstr "Forigi legosignon"
-
-#~ msgid "Properties"
-#~ msgstr "Ecoj"
-
-#~ msgid "Open in New Window"
-#~ msgstr "Malfermi en nova fenestro"
-
-#~ msgid "Open Folder in Tabs"
-#~ msgstr "Malfermi Dosierujon en Langetoj"
-
-#~ msgid "Copy Link Address"
-#~ msgstr "Kopii ligilon"
-
-#, fuzzy
-#~| msgid "Create New Folder"
-#~ msgctxt "@title:window"
-#~ msgid "Create New Bookmark Folder"
-#~ msgstr "Krei novan dosierujon"
-
-#, fuzzy
-#~| msgid "New Folder"
-#~ msgid "New folder:"
-#~ msgstr "Nova dosierujo"
-
-#~ msgid ""
-#~ "Are you sure you wish to remove the bookmark folder\n"
-#~ "\"%1\"?"
-#~ msgstr ""
-#~ "Ĉu vi vere volas forigi la legosignujon \n"
-#~ "\"%1\"?"
-
-#~ msgid ""
-#~ "Are you sure you wish to remove the bookmark\n"
-#~ "\"%1\"?"
-#~ msgstr ""
-#~ "Ĉu vi vere volas forigi la legosignon \n"
-#~ "\"%1\"?"
-
-#~ msgctxt "@title:window"
-#~ msgid "Bookmark Folder Deletion"
-#~ msgstr "Legosignuja forigo"
-
-#~ msgctxt "@title:window"
-#~ msgid "Bookmark Deletion"
-#~ msgstr "Legosigna forigo"
-
-#~ msgctxt "@title:window"
-#~ msgid "Bookmark Properties"
-#~ msgstr "Legosignaj ecoj"
-
-#~ msgid "&Update"
-#~ msgstr "&Aktualigi"
-
-#~ msgid "Name:"
-#~ msgstr "Nomo:"
-
-#~ msgid "Location:"
-#~ msgstr "Loko:"
-
-#~ msgctxt "@title:window"
-#~ msgid "Add Bookmark"
-#~ msgstr "Aldoni legosignon"
-
-#~ msgid "Cannot find parent item %1 in the tree. Internal error."
-#~ msgstr "Ne eblas trovi la patran eron %1 en la arbo. Interna eraro."
-
-#~ msgid "&Create New Folder..."
-#~ msgstr "&Krei novan dosierujon..."
-
-#~ msgid "Move to Trash"
-#~ msgstr "Movi al la rubujo"
-
-#~ msgid "Rename"
-#~ msgstr "Renomi"
-
-#~ msgid "Delete Link"
-#~ msgstr "Forigi ligilon"
-
-#~ msgid "New Folder"
-#~ msgstr "Nova dosierujo"
-
-#~ msgctxt "@title:window"
-#~ msgid "Create New Folder"
-#~ msgstr "Krei novan dosierujon"
-
-#~ msgid "Enter folder name:"
-#~ msgstr "Entajpu dosierujonomon:"
-
-#~ msgctxt "@label"
-#~ msgid "Name:"
-#~ msgstr "Nomo:"
-
-#~ msgid "&Open Link"
-#~ msgstr "Malfermi &ligilon"
-
-#~ msgid "Set &Automatic Reload"
-#~ msgstr "Ŝalti &aŭtomatan reŝargon"
-
-#~ msgctxt "@title:window"
-#~ msgid "Set Refresh Timeout (0 disables)"
-#~ msgstr "Difini aktualigan tempolimon (nulo malebligas)"
-
-#~ msgid " minute"
-#~ msgid_plural " minutes"
-#~ msgstr[0] " minuto"
-#~ msgstr[1] " minutoj"
-
-#, fuzzy
-#~| msgid " sec"
-#~ msgid " second"
-#~ msgid_plural " seconds"
-#~ msgstr[0] " sek"
-#~ msgstr[1] " sek"
-
-#, fuzzy
-#~| msgid "Web Sidebar"
-#~ msgctxt "@action:inmenu Add"
-#~ msgid "Web Sidebar Module"
-#~ msgstr "Reta flankobreto"
-
-#~ msgid "&Use index.html"
-#~ msgstr "&Uzi index.html"
-
-#~ msgid "If present, open index.html when entering a folder."
-#~ msgstr ""
-#~ "Malfermi index.html, se tiu dosiero ekzistas, dum eniro en dosierujon."
-
-#, fuzzy
-#~| msgid ""
-#~| "<em>Tuning Tip:</em> If you want the Konqueror web browser to start "
-#~| "faster, you can turn off this information screen by clicking <a href="
-#~| "\"%1\">here</a>. You can re-enable it by choosing the Help -> Konqueror "
-#~| "Introduction menu option, and then pressing Settings -> Save View "
-#~| "Profile \"Web Browsing\"."
-#~ msgid ""
-#~ "<em>Tuning Tip:</em> If you want the Konqueror web browser to start "
-#~ "faster, you can turn off this information screen by clicking <a href="
-#~ "\"%1\">here</a>. You can re-enable it by choosing the Help -> Konqueror "
-#~ "Introduction menu option, and then pressing Settings -> Save View Profile "
-#~ "As... -> \"Web Browsing\"."
-#~ msgstr ""
-#~ "<em>Konsileto:</em> Por ke Konqueror lanĉiĝu pli rapide, vi povas "
-#~ "malŝalti tiun ĉi informpaĝon <a href=\"%1\">tie ĉi</a>. Vi povas reŝalti "
-#~ "ĝin per elekto de Helpo -> Konqueror-enkonduko en la menuo kaj premo de "
-#~ "Agordo -> Konservi rigardoprofilon por \"retumado\"."
-
-#~ msgid ""
-#~ "Do you want to disable showing the introduction in the webbrowsing "
-#~ "profile?"
-#~ msgstr ""
-#~ "Ĉu vi volas malaktivigi montradon de la enkonduko en la TTTumado-profilo?"
-
-#~ msgctxt "@title:window"
-#~ msgid "Faster Startup?"
-#~ msgstr "Ĉu pli rapida lanĉo?"
-
-#~ msgid "Disable"
-#~ msgstr "Malŝalti"
-
-#~ msgid "Keep"
-#~ msgstr "Konservi"
-
-#~ msgid "Profile to open"
-#~ msgstr "Dezirata profilo"
-
-#~ msgid "List available profiles"
-#~ msgstr "Listigi uzeblajn profilojn"
-
-#, fuzzy
-#~| msgid "&Save View Profile..."
-#~ msgid "&Save View Profile As..."
-#~ msgstr "&Konservi rigardoagordon..."
-
-#~ msgid "C&onfigure View Profiles..."
-#~ msgstr "Ag&ordi la rigardoprofilojn..."
-
-#~ msgid "Load &View Profile"
-#~ msgstr "Ŝargi &rigardoprofilon"
-
-#~ msgctxt "@title:window"
-#~ msgid "Profile Management"
-#~ msgstr "Administrado de profiloj"
-
-#~ msgid "&Rename Profile"
-#~ msgstr "&Renomi profilon"
-
-#~ msgid "&Delete Profile"
-#~ msgstr "&Forigi profilon"
-
-#~ msgid "&Profile name:"
-#~ msgstr "&Profilnomo:"
-
-#~ msgid "Save &URLs in profile"
-#~ msgstr "Konservi &URLojn en profilo"
-
-#~ msgid ""
-#~ "You have multiple tabs open in this window.\n"
-#~ "Loading a view profile will close them."
-#~ msgstr ""
-#~ "Vi havas kelkajn langetojn malfermitaj en ĉi tiu fenestro.\n"
-#~ "Ŝargo de rigardoprofilo fermos ilin."
-
-#~ msgid "Load View Profile"
-#~ msgstr "Ŝargi rigardoprofilon"
-
-#~ msgid ""
-#~ "This tab contains changes that have not been submitted.\n"
-#~ "Loading a profile will discard these changes."
-#~ msgstr ""
-#~ "Ĉi tiu langeto havas ŝanĝojn, kiuj ne estas senditaj.\n"
-#~ "La ŝargado de profilo forĵetos ĉi tiujn ŝanĝojn."
-
-#~ msgid " day"
-#~ msgid_plural " days"
-#~ msgstr[0] " tago"
-#~ msgstr[1] " tagoj"
-
-#~ msgid " min"
-#~ msgstr " min"
-
-#~ msgid "Input Required:"
-#~ msgstr "Bezonas enigon:"
-
-#~ msgid "&Execute Shell Command..."
-#~ msgstr "&Ruli ŝelkomandon..."
-
-#~ msgid "Executing shell commands works only on local directories."
-#~ msgstr "Rulado de ŝelkomandoj funkcias nur ĉe lokaj dosierujoj."
-
-#~ msgid "Execute Shell Command"
-#~ msgstr "Ruli ŝelkomandon"
-
-#~ msgid "Execute shell command in current directory:"
-#~ msgstr "Ruli ŝelkomandon en la nuna dosierujo:"
-
-#~ msgid "Output from command: \"%1\""
-#~ msgstr "Eligo de la komando: \"%1\""
-
-#~ msgid "Hide %1"
-#~ msgstr "Kaŝi %1"
-
-#, fuzzy
-#~| msgid "Web SideBar Plugin"
-#~ msgid "SideBar Test Plugin"
-#~ msgstr "Reta flankobreta kromprogrameto"
-
-#~ msgid "Bookmark This Location"
-#~ msgstr "Legosigni ĉi tiun lokon"
-
-#~ msgid ""
-#~ "Protocol not supported\n"
-#~ "%1"
-#~ msgstr ""
-#~ "Protokolo ne subtenata\n"
-#~ "%1"
-
-#~ msgid "Cannot create the find part, check your installation."
-#~ msgstr "Ne eblas krei la trovo-parton, kontrolu vian instalon."
-
-#, fuzzy
-#~| msgid "&Bookmarks"
-#~ msgid "My Bookmarks"
-#~ msgstr "&Legosignoj"
-
-#~ msgid "Preload for later use"
-#~ msgstr "Antaŭŝargi por posta uzo"
-
-#~ msgid "&Save View Profile \"%1\"..."
-#~ msgstr "&Konservi la rigardoprofilon \"%1\"..."
-
-#~ msgid "Configure Navigation Panel"
-#~ msgstr "Agordi navigilon"
-
-#~ msgid "Close Navigation Panel"
-#~ msgstr "Fermi navigilon"
-
-#~ msgid "Select Type"
-#~ msgstr "Elektu tipon"
-
-#~ msgid "Select type:"
-#~ msgstr "Elektu tipon:"
-
-#~ msgid "<qt><b>%1</b> does not exist</qt>"
-#~ msgstr "<qt><b>%1</b> ne ekzistas</qt>"
-
-#~ msgid "Minutes"
-#~ msgstr "Minutoj"
-
-#~ msgid "Days"
-#~ msgstr "Tagoj"
-
-#~ msgid "Your sidebar is not functional or unavailable."
-#~ msgstr "Via flankobreto ne funkcias aŭ ne estas uzebla."
-
-#~ msgid "Cannot find running history plugin in your sidebar."
-#~ msgstr ""
-#~ "Ne povas trovi aktivan historian kromprogrameton en via flankobreto."
-
-#, fuzzy
-#~| msgid "Show History Sidebar"
-#~ msgctxt "@action:inmenu Go"
-#~ msgid "Show History in Sidebar"
-#~ msgstr "Montri la historian flankobreton"
-
-#~ msgid "Select Remote Charset"
-#~ msgstr "Elektu foran signaron"
-
-#~ msgid "Reload"
-#~ msgstr "Reŝargi"
-
-#~ msgid "Default"
-#~ msgstr "Defaŭlto"
-
-#~ msgctxt "@action:button Rename session"
-#~ msgid "Rename"
-#~ msgstr "Renomi"
-
-#~ msgid ""
-#~ "Konqueror is your file manager, web browser and universal document viewer."
-#~ msgstr ""
-#~ "Konqueror estas via dosiermastrumilo, retumilo kaj universala "
-#~ "dokumentrigardilo."
-
-#~ msgid "Joseph WENNINGER"
-#~ msgstr "Joseph WENNINGER"
-
-#~ msgid "G E N E R A L"
-#~ msgstr "Ĝ E N E R A L E"
-
-#~ msgid "<img width='16' height='16' src=\"%1\"></img>"
-#~ msgstr "<img width='16' height='16' src=\"%1\"></img>"
-
-#~ msgid "Applications"
-#~ msgstr "Aplikaĵoj"
-
-#~ msgid "Installed programs"
-#~ msgstr "Instalitaj programoj"
-
-#~ msgid "&Location"
-#~ msgstr "&Loko"
-
-#~ msgid "Open &Terminal"
-#~ msgstr "Malfermi &terminalon"
-
-#~ msgid "Unknown"
-#~ msgstr "Nekonata"
-
-#~ msgid "Save &window size in profile"
-#~ msgstr "Konservi &fenestrograndecon en profilo"
-
-#~ msgid "&Speak Text"
-#~ msgstr "&Elparoli la tekston"
-
-#, fuzzy
-#~| msgid ""
-#~| "You cannot read anything except web pages with\n"
-#~| "this plugin, sorry."
-#~ msgid "You cannot read anything except web pages with this plugin, sorry."
-#~ msgstr "Vi povas legi nur retpaĝojn per ĉi tiu kromprogrameto, bedaŭrinde."
-
-#~ msgid "Cannot Read source"
-#~ msgstr "Ne eblas legi la fonton"
-
-#~ msgid "Starting KTTSD Failed"
-#~ msgstr "Lanĉo de KTTSD malsukcesis"
-
-#, fuzzy
-#~| msgid "The D-Bus call startText failed."
-#~ msgid "The D-Bus call say() failed."
-#~ msgstr "La D-Bus-voko 'startText' malsukcesis."
-
-#~ msgid "D-Bus Call Failed"
-#~ msgstr "D-Bus-voko malsukcesis"
-
-#~ msgid "Speech Toolbar"
-#~ msgstr "Elparola ilobreto"
-
-#~ msgid "The D-Bus call supportsMarkup failed."
-#~ msgstr "La D-Bus-voko 'supportsMarkup' malsukcesis."
-
-#~ msgid "The D-Bus call setText failed."
-#~ msgstr "La D-Bus-voko 'setText' malsukcesis."
-
-#~ msgid "Conquer your Desktop!"
-#~ msgstr "Konkeru vian labortablon!"
-
-#~ msgid "Storage Media"
-#~ msgstr "Enmemorigiloj"
-
-#~ msgid "Disks and removable media"
-#~ msgstr "Diskoj kaj meteblaj datumportiloj"
-
-#~ msgid "Settings"
-#~ msgstr "Agordo"
-
-#~ msgid "Home &URL:"
-#~ msgstr "Hejma &adreso:"
+msgstr "Konservi kiel"
