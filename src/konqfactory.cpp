@@ -177,7 +177,11 @@ void KonqFactory::getOffers(const QString &serviceType, QVector<KPluginMetaData>
 #endif
     if (partServiceOffers && serviceType.length() > 0 && serviceType[0].isUpper()) {
         //TODO port away from query: check whether it's still necessary to exclude kfmclient* from this vector (they aren't parts, so I think they shouldn't be included here)
-        *partServiceOffers = KPluginMetaData::findPlugins(QStringLiteral("kf5/parts"), [serviceType](const KPluginMetaData &md){return md.serviceTypes().contains(serviceType);});
+        auto filter = [serviceType](const KPluginMetaData &md){return md.serviceTypes().contains(serviceType);};
+        *partServiceOffers = KPluginMetaData::findPlugins(QStringLiteral("kf5/parts"), filter);
+        //Some parts, in particular konsolepart (at least version 22.12.3), aren't installed if kf5/parts but in the plugins directory, so we need to look for them separately
+        //TODO: remove this line when (if) all parts are installed in kf5/parts
+        partServiceOffers->append(KPluginMetaData::findPlugins(QString(), filter));
         return;
     }
 
