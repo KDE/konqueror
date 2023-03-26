@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: kfmclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-10 00:46+0000\n"
-"PO-Revision-Date: 2007-12-03 09:13-0600\n"
-"Last-Translator: Cindy McKee <cfmckee@gmail.com>\n"
+"PO-Revision-Date: 2023-03-25 16:19+0100\n"
+"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -122,39 +122,16 @@ msgstr ""
 "\n"
 
 #: kfmclient.cpp:267
-#, fuzzy, kde-format
-#| msgid "Syntax Error: Not enough arguments\n"
+#, kde-format
 msgid "Syntax error, not enough arguments\n"
-msgstr "Sintakseraro: Mankas argumento(j)\n"
+msgstr ""
 
 #: kfmclient.cpp:271
-#, fuzzy, kde-format
-#| msgid "Syntax Error: Too many arguments\n"
+#, kde-format
 msgid "Syntax error, too many arguments\n"
-msgstr "Sintakseraro: Tro multaj argumentoj\n"
+msgstr ""
 
 #: kfmclient.cpp:323
-#, fuzzy, kde-format
-#| msgid "Syntax Error: Unknown command '%1'\n"
+#, kde-format
 msgid "Syntax error, unknown command '%1'\n"
-msgstr "Sintakseraro: Nekonata komando '%1'\n"
-
-#~ msgid ""
-#~ "  kfmclient openProfile 'profile' ['url']\n"
-#~ "            # Opens a window using the given profile.\n"
-#~ "            #   'profile' is a file under ~/.kde/share/apps/konqueror/"
-#~ "profiles.\n"
-#~ "            #   'url' is an optional URL to open.\n"
-#~ "\n"
-#~ msgstr ""
-#~ "  kfmclient openProfile 'agordodosiero' ['url']\n"
-#~ "            # Malfermas fenestron uzante la donitan agordodosieron.\n"
-#~ "            #   'agordodosiero' estas dosiero sub ~/.kde/share/apps/"
-#~ "konqueror/profiles.\n"
-#~ "            #   'url' estas nedeviga URL, malfermenda.\n"
-#~ "\n"
-
-#, fuzzy
-#~| msgid "Profile %1 not found\n"
-#~ msgid "Profile '%1' not found\n"
-#~ msgstr "Ne trovis agordodosieron %1\n"
+msgstr ""

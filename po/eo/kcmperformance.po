@@ -1,22 +1,21 @@
 # translation of kcmperformance.po to Esperanto
-# translation of kcmperformance.po to
 # Copyright (C) 2003, 2007 Free Software Foundation, Inc.
 # Heiko Evermann <heiko@evermann.de>, 2003.
 # Cindy McKee <cfmckee@gmail.com>, 2007.
+# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmperformance\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-10-21 00:16+0000\n"
-"PO-Revision-Date: 2007-12-14 12:52-0600\n"
-"Last-Translator: Cindy McKee <cfmckee@gmail.com>\n"
+"PO-Revision-Date: 2023-03-25 16:10+0100\n"
+"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: kcmperformance.cpp:28
@@ -50,13 +49,7 @@ msgstr ""
 "ruliĝantaj okazoj kaj la antaŭŝargon de okazoj."
 
 #: konqueror.cpp:24
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>If enabled, an instance of Konqueror will be preloaded after the "
-#| "ordinary KDE startup sequence.</p><p>This will make the first Konqueror "
-#| "window open faster, but at the expense of longer KDE startup times (but "
-#| "you will be able to work while it is loading, so you may not even notice "
-#| "that it is taking longer).</p>"
+#, kde-format
 msgid ""
 "<p>If enabled, an instance of Konqueror will be preloaded after the ordinary "
 "Plasma startup sequence.</p><p>This will make the first Konqueror window "
@@ -64,19 +57,9 @@ msgid ""
 "be able to work while it is loading, so you may not even notice that it is "
 "taking longer).</p>"
 msgstr ""
-"<p>Se ebligita, okazo de Konkeranto antaŭŝargiĝos post normala KDE-lanĉo.</"
-"p><p>Tio signifas ke la unua Konkeranta fenestro malfermiĝas pli rapide, sed "
-"la plena KDE-lanĉo estos pli malrapida (kvankam vi povos labori dum la "
-"ŝargo, do vi eble ne rimarkos la pli longan ŝargon).</p>"
 
 #: konqueror.cpp:30
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>If enabled, KDE will always try to have one preloaded Konqueror "
-#| "instance ready; preloading a new instance in the background whenever "
-#| "there is not one available, so that windows will always open quickly.</"
-#| "p><p><b>Warning:</b> In some cases, it is actually possible that this "
-#| "will reduce perceived performance.</p>"
+#, kde-format
 msgid ""
 "<p>If enabled, Konqueror will always try to have one preloaded instance "
 "ready; preloading a new instance in the background whenever there is not one "
@@ -84,9 +67,6 @@ msgid ""
 "In some cases, it is actually possible that this will reduce perceived "
 "performance.</p>"
 msgstr ""
-"<p>Se ebligita, KDE ĉiam penos pretigi unu antaŭŝargitan okazon de "
-"Konkeranto, ŝargante ĝin en la fono laŭ bezono, por rapida uzo.</"
-"p><p><b>Averto:</b> Tio povas kaŭzi pli malbonan rendimenton></p>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
 #: konqueror_ui.ui:17
@@ -96,17 +76,15 @@ msgstr "Antaŭŝargado"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_preload_on_startup)
 #: konqueror_ui.ui:23
-#, fuzzy, kde-format
-#| msgid "Preload an instance after KDE startup"
+#, kde-format
 msgid "Preload an instance after desktop startup"
-msgstr "Antaŭŝargi okazon post KDE-lanĉo"
+msgstr "Antaŭŝargi instancon post labortabla starto"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_always_have_preloaded)
 #: konqueror_ui.ui:30
-#, fuzzy, kde-format
-#| msgid "Always try to have at least one preloaded instance"
+#, kde-format
 msgid "Always try to have one preloaded instance"
-msgstr "Ĉiam peni antaŭŝarĝi almenaŭ unu okazon"
+msgstr "Ĉiam klopodu havi unu antaŭŝargitan instancon"
 
 #: system.cpp:22
 #, kde-format
@@ -158,64 +136,3 @@ msgid ""
 msgstr ""
 "Malofte ĉi tiu opcio kaŭzas diversajn problemojn. Vidu la 'Kio estas tio?' "
 "helpon (Majuskla+F1) por detaloj."
-
-#~ msgid ""
-#~ "<p>If non-zero, this option allows keeping Konqueror instances in memory "
-#~ "after all their windows have been closed, up to the number specified in "
-#~ "this option.</p><p>When a new Konqueror instance is needed, one of these "
-#~ "preloaded instances will be reused instead, improving responsiveness at "
-#~ "the expense of the memory required by the preloaded instances.</p>"
-#~ msgstr ""
-#~ "<p>Se ne estas nulo, ĉi tiu opcio permesas la konservadon de okazoj de "
-#~ "Konkeranto en la memoro eĉ post la fermado de la fenestroj, ĝis la nombro "
-#~ "specifita en ĉi tiu opcio.</p><p>Kiam vi bezonas novan okazon de "
-#~ "Konkeranto, unu el tiuj okazoj estos reuzita, kiu signifas ke Konkeranto "
-#~ "malfermiĝas pli rapide, kvankam vi uzos multan memoron.</p>"
-
-#, fuzzy
-#~| msgid "Maximum number of instances kept &preloaded:"
-#~ msgid "&Maximum number of instances kept preloaded:"
-#~ msgstr "Maksimumaj antaŭŝargitaj &okazoj:"
-
-#~ msgid ""
-#~ "Disables the minimization of memory usage and allows you to make each "
-#~ "browsing activity independent from the others"
-#~ msgstr ""
-#~ "Malebligas la minimumigadon de memoruzado kaj permesas sendependajn "
-#~ "retumadajn okazojn"
-
-#~ msgid ""
-#~ "<p>With this option activated, only one instance of Konqueror used for "
-#~ "file browsing will exist in the memory of your computer at any moment, no "
-#~ "matter how many file browsing windows you open, thus reducing resource "
-#~ "requirements.</p><p>Be aware that this also means that, if something goes "
-#~ "wrong, all your file browsing windows will be closed simultaneously</p>"
-#~ msgstr ""
-#~ "<p>Se ĉi tiu opcio estas ebligita, nur unu okazo de Konkeranto kiel "
-#~ "dosiera foliumilo ekzistos en la memoro, eĉ se vi fakte malfermas plurajn "
-#~ "foliumilojn, sekve la energiaj postuloj malpliiĝas.</p><p>Notu, se estas "
-#~ "problemo en la sistemo, ĉiuj la foliumiloj fermiĝos samtempe.</p>"
-
-#~ msgid ""
-#~ "<p>With this option activated, only one instance of Konqueror will exist "
-#~ "in the memory of your computer at any moment, no matter how many browsing "
-#~ "windows you open, thus reducing resource requirements.</p><p>Be aware "
-#~ "that this also means that, if something goes wrong, all your browsing "
-#~ "windows will be closed simultaneously.</p>"
-#~ msgstr ""
-#~ "<p>Se ĉi tiu opcio estas ebligita, nur unu okazo de Konkeranto ekzistos "
-#~ "en la memoro, eĉ se vi fakte malfermas plurajn foliumilojn, sekve la "
-#~ "energiaj postuloj malpliiĝas.</p><p>Notu, se estas problemo en la "
-#~ "sistemo, ĉiuj la retumiloj fermiĝos samtempe.</p>"
-
-#~ msgid "Minimize Memory Usage"
-#~ msgstr "Minimumigi uzon de memoro"
-
-#~ msgid "&Never"
-#~ msgstr "&Neniam"
-
-#~ msgid "For &file browsing only (recommended)"
-#~ msgstr "Nur &dosiera foliumado (rekomendita)"
-
-#~ msgid "Alwa&ys (use with care)"
-#~ msgstr "Ĉi&am (uzu zorge)"

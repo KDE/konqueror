@@ -1,6 +1,6 @@
 # translation of konqueror.po to Polish
 # translation of konqueror.po to
-# Version: $Revision: 1646898 $
+# Version: $Revision: 1647938 $
 # Tłumaczenie autorstwa Artura Skury, marzec 2000
 # Aktualne tłumaczenie Norbert Popiołek <norbert@kde.com.pl>, czerwiec 2001
 # Norbert Popiołek <norbert@kde.com.pl>
@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-09 00:46+0000\n"
-"PO-Revision-Date: 2023-03-12 09:09+0100\n"
+"PO-Revision-Date: 2023-03-25 09:47+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -68,6 +68,8 @@ msgid ""
 "<p>You're running Konqueror as root. This requires enabling a highly "
 "insecure mode in the browser component.</p><p>What do you want to do?</p>"
 msgstr ""
+"<p>Uruchomiono Konquerora jako administrator. Wymaga to włączone wysoce "
+"niebezpiecznego trybu w składniku przeglądarki.</p><p>Co chcesz zrobić?</p>"
 
 #: src/konqapplication.cpp:127
 #, kde-format
@@ -1992,44 +1994,34 @@ msgid "Resend"
 msgstr "Wyślij ponownie"
 
 #: src/urlloader.cpp:275
-#, fuzzy, kde-format
-#| msgctxt "Execute an executable file"
-#| msgid "Execute it"
+#, kde-format
 msgctxt "Execute an executable file"
 msgid "Execute"
-msgstr "Wykonaj go"
+msgstr "Wykonaj"
 
 #: src/urlloader.cpp:277
-#, fuzzy, kde-format
-#| msgctxt "Display an executable file"
-#| msgid "Display it"
+#, kde-format
 msgctxt "Display an executable file"
 msgid "Display"
-msgstr "Wyświetl go"
+msgstr "Wyświetlanie"
 
 #: src/urlloader.cpp:284
-#, fuzzy, kde-kuit-format
-#| msgctxt ""
-#| "The user has to decide whether to execute an executable file or display it"
-#| msgid ""
-#| "<tt>%1</tt> can be executed. Do you want to execute it or to display it?"
+#, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or "
 "display it"
 msgid ""
 "<filename>%1</filename> can be executed. Do you want to execute it or to "
 "display it?"
-msgstr "<tt>%1</tt> może zostać wykonany. Wykonać, czy wyświetlić go?"
+msgstr ""
+"<filename>%1</filename> może zostać wykonany. Wykonać, czy wyświetlić go?"
 
 #: src/urlloader.cpp:290
-#, fuzzy, kde-kuit-format
-#| msgctxt ""
-#| "The user has to decide whether to execute an executable file or not"
-#| msgid "<tt>%1</tt> can be executed. Do you want to execute it?"
+#, kde-kuit-format
 msgctxt ""
 "@info The user has to decide whether to execute an executable file or not"
 msgid "<filename>%1</filename> can be executed. Do you want to execute it?"
-msgstr "<tt>%1</tt> może zostać wykonany. Wykonać go?"
+msgstr "<filename>%1</filename> może zostać wykonany. Czy wyświetlić go?"
 
 #: src/urlloader.cpp:492
 #, kde-format

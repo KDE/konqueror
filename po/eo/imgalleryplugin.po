@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: imgalleryplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-07-14 00:45+0000\n"
-"PO-Revision-Date: 2002-06-14 20:29GMT\n"
-"Last-Translator: Steffen Pietsch <Steffen.Pietsch@BerlinOnline.de>\n"
+"PO-Revision-Date: 2023-03-25 16:19+0100\n"
+"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -94,9 +94,9 @@ msgid "Folders"
 msgstr "Dosierujoj"
 
 #: imgallerydialog.cpp:145
-#, fuzzy, kde-format
+#, kde-format
 msgid "&Save to HTML file:"
-msgstr "&Konservu al:"
+msgstr ""
 
 #: imgallerydialog.cpp:147
 #, kde-format
@@ -104,9 +104,9 @@ msgid "<p>The name of the HTML file this gallery will be saved to.</p>"
 msgstr ""
 
 #: imgallerydialog.cpp:150
-#, fuzzy, kde-format
+#, kde-format
 msgid "&Recurse subfolders"
-msgstr "&Trairu subdosierujojn"
+msgstr ""
 
 #: imgallerydialog.cpp:152
 #, kde-format
@@ -257,37 +257,17 @@ msgstr ""
 " malsukcesis"
 
 #: imgalleryplugin.cpp:230
-#, fuzzy, kde-format
-#| msgid "KB"
+#, kde-format
 msgid "KiB"
-msgstr "KB"
+msgstr ""
 
 #: imgalleryplugin.cpp:344 imgalleryplugin.cpp:439
-#, fuzzy, kde-format
-#| msgid "Couldn't open file: %1"
+#, kde-format
 msgid "Could not open file: %1"
-msgstr "Ne eblis malfermi dosieron: %1"
+msgstr ""
 
 #. i18n: ectx: Menu (tools)
 #: kimgallery.rc:4
 #, kde-format
 msgid "&Tools"
 msgstr "&Iloj"
-
-#~ msgctxt "@title:window"
-#~ msgid "Configure"
-#~ msgstr "Agordi"
-
-#~ msgid "Directories"
-#~ msgstr "Dosierujoj"
-
-#~ msgid "Generate &XHTML"
-#~ msgstr "Kreu &XHTML"
-
-#~ msgid ""
-#~ "KImGalleryPlugin::slotCreateHtml: Program error, please report a bug."
-#~ msgstr ""
-#~ "KImGalleryPlugin::slotCreateHtml: Programeraro, bonvolu raporti la eraron."
-
-#~ msgid "Add Image Name"
-#~ msgstr "Aldonu bildonomon"
