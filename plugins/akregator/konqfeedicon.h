@@ -9,7 +9,7 @@
 #ifndef KONQFEEDICON_H
 #define KONQFEEDICON_H
 
-#include <qpointer.h>
+#include <QPointer>
 #include <konq_kpart_plugin.h>
 #include <QMenu>
 #include "feeddetector.h"

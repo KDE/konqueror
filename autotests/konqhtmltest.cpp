@@ -26,7 +26,7 @@
 #include <QTemporaryFile>
 #include <QScrollArea>
 #include <QProcess>
-#include <qtest.h>
+#include <QTest>
 #include <QSignalSpy>
 #include <QObject>
 #include <QStandardPaths>

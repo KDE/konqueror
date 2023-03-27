@@ -24,7 +24,7 @@
 #include <kprotocolinfo.h>
 
 #include <QApplication>
-#include <qstatusbar.h>
+#include <QStatusBar>
 #include <QStyle>
 
 using namespace Akregator;

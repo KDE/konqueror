@@ -12,7 +12,7 @@
 #include <kiconloader.h>
 #include <kmessagebox.h>
 #include <KLocalizedString>
-#include <qtimer.h>
+#include <QTimer>
 #include <kselectaction.h>
 #include <kactioncollection.h>
 #include <kpluginfactory.h>

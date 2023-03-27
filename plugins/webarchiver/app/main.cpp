@@ -5,10 +5,10 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include <qapplication.h>
-#include <qcommandlineparser.h>
-#include <qurl.h>
-#include <qicon.h>
+#include <QApplication>
+#include <QCommandLineParser>
+#include <QUrl>
+#include <QIcon>
 
 #include <kaboutdata.h>
 #include <klocalizedstring.h>

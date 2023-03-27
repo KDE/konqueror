@@ -8,9 +8,9 @@
 #ifndef WEBARCHIVECREATOR_H
 #define WEBARCHIVECREATOR_H
 
-#include <qobject.h>
+#include <QObject>
 #ifdef THUMBNAIL_USE_WEBKIT
-#include <qnetworkcookiejar.h>
+#include <QNetworkCookieJar>
 #endif // THUMBNAIL_USE_WEBKIT
 
 #include <kio/thumbcreator.h>

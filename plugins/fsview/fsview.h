@@ -11,9 +11,9 @@
 #ifndef FSVIEW_H
 #define FSVIEW_H
 
-#include <qmap.h>
-#include <qfileinfo.h>
-#include <qstring.h>
+#include <QMap>
+#include <QFileInfo>
+#include <QString>
 
 #include <kconfiggroup.h>
 

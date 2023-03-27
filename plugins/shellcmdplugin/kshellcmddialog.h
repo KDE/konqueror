@@ -7,7 +7,7 @@
 #ifndef KSHELLCMDDIALOG_H
 #define KSHELLCMDDIALOG_H
 
-#include <qdialog.h>
+#include <QDialog>
 
 class KShellCommandExecutor;
 class QPushButton;

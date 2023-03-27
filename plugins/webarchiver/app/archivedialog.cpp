@@ -9,20 +9,20 @@
 
 #include "archivedialog.h"
 
-#include <qlayout.h>
-#include <qformlayout.h>
-#include <qcombobox.h>
-#include <qcheckbox.h>
-#include <qmimedatabase.h>
-#include <qmimetype.h>
-#include <qdialogbuttonbox.h>
-#include <qtemporarydir.h>
-#include <qtemporaryfile.h>
-#include <qstandardpaths.h>
-#include <qgroupbox.h>
-#include <qdesktopservices.h>
-#include <qguiapplication.h>
-#include <qtimer.h>
+#include <QLayout>
+#include <QFormLayout>
+#include <QComboBox>
+#include <QCheckBox>
+#include <QMimeDatabase>
+#include <QMimeType>
+#include <QDialogButtonBox>
+#include <QTemporaryDir>
+#include <QTemporaryFile>
+#include <QStandardPaths>
+#include <QGroupBox>
+#include <QDesktopServices>
+#include <QGuiApplication>
+#include <QTimer>
 
 #include <klocalizedstring.h>
 #include <kurlrequester.h>

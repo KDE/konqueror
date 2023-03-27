@@ -11,7 +11,7 @@
 #ifndef KONQ_PLUGIN_SCAN_H
 #define KONQ_PLUGIN_SCAN_H
 
-#include <qfile.h>
+#include <QFile>
 #include <QVector>
 #include <kio/global.h>
 

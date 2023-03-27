@@ -11,9 +11,9 @@
 
 #include <kmainwindow.h>
 
-#include <qurl.h>
-#include <qprocess.h>
-#include <qpointer.h>
+#include <QUrl>
+#include <QProcess>
+#include <QPointer>
 
 #include <kmessagewidget.h>
 

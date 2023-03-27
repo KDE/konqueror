@@ -8,7 +8,7 @@
 
 #include <stdio.h>
 
-#include <qapplication.h>
+#include <QApplication>
 
 #include "scan.h"
 

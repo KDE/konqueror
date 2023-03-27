@@ -8,10 +8,10 @@
 
 #include "plugin_webarchiver.h"
 
-#include <qicon.h>
-#include <qurl.h>
-#include <qstandardpaths.h>
-#include <qprocess.h>
+#include <QIcon>
+#include <QUrl>
+#include <QStandardPaths>
+#include <QProcess>
 
 #include <klocalizedstring.h>
 #include <kpluginfactory.h>

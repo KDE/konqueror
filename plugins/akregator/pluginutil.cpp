@@ -15,12 +15,12 @@
 #include "feeddetector.h"
 #include "akregatorplugindebug.h"
 
-#include <qstringlist.h>
-#include <qurl.h>
-#include <qdbusconnection.h>
-#include <qdbusconnectioninterface.h>
-#include <qdbusinterface.h>
-#include <qdbusreply.h>
+#include <QStringList>
+#include <QUrl>
+#include <QDBusConnection>
+#include <QDBusConnectionInterface>
+#include <QDBusInterface>
+#include <QDBusReply>
 
 using namespace Akregator;
 

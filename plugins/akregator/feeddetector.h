@@ -9,7 +9,7 @@
 #ifndef AKREGATORFEEDDETECTOR_H
 #define AKREGATORFEEDDETECTOR_H
 
-#include <qstring.h>
+#include <QString>
 #include <QList>
 
 class QStringList;

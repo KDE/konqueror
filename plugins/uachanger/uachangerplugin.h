@@ -7,9 +7,9 @@
 #ifndef __UACHANGER_PLUGIN_H
 #define __UACHANGER_PLUGIN_H
 
-#include <qmap.h>
-#include <qstringlist.h>
-#include <qurl.h>
+#include <QMap>
+#include <QStringList>
+#include <QUrl>
 
 #include <konq_kpart_plugin.h>
 #include <kparts/readonlypart.h>

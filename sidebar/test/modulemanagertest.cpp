@@ -7,7 +7,7 @@
 #include <kdesktopfile.h>
 #include <kconfiggroup.h>
 #include <module_manager.h>
-#include <qtest.h>
+#include <QTest>
 #include <QStandardPaths>
 #include <KSharedConfig>
 

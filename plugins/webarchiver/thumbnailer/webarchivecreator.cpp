@@ -7,27 +7,27 @@
 
 #include "webarchivecreator.h"
 
-#include <qdebug.h>
-#include <qpixmap.h>
-#include <qimage.h>
-#include <qapplication.h>
-#include <qurl.h>
-#include <qtimer.h>
-#include <qmimetype.h>
-#include <qmimedatabase.h>
-#include <qtemporarydir.h>
+#include <QDebug>
+#include <QPixmap>
+#include <QImage>
+#include <QApplication>
+#include <QUrl>
+#include <QTimer>
+#include <QMimeType>
+#include <QMimeDatabase>
+#include <QTemporaryDir>
 
 #ifdef THUMBNAIL_USE_WEBKIT
 #include <qwebview.h>
 #include <qwebpage.h>
 #include <qwebsettings.h>
-#include <qnetworkcookie.h>
+#include <QNetworkCookie>
 #else // THUMBNAIL_USE_WEBKIT
-#include <qwebengineview.h>
-#include <qwebenginepage.h>
-#include <qwebengineprofile.h>
-#include <qwebenginesettings.h>
-#include <qwebenginecookiestore.h>
+#include <QWebEngineView>
+#include <QWebEnginePage>
+#include <QWebEngineProfile>
+#include <QWebEngineSettings>
+#include <QWebEngineCookieStore>
 #endif // THUMBNAIL_USE_WEBKIT
 
 #include <ktar.h>

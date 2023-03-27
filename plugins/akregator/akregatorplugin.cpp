@@ -18,8 +18,8 @@
 #include <kfileitem.h>
 #include <kfileitemlistproperties.h>
 
-#include <qdebug.h>
-#include <qaction.h>
+#include <QDebug>
+#include <QAction>
 
 using namespace Akregator;
 
