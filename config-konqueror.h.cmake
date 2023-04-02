@@ -6,3 +6,5 @@
 /* compiling for X11 */
 #cmakedefine01 KONQ_HAVE_X11
 
+/* Define to 1 to enable developer mode */
+#cmakedefine DEVELOPER_MODE

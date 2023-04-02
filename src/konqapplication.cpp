@@ -20,6 +20,7 @@
 #include "konqmainwindow.h"
 #include "konqmainwindowfactory.h"
 #include "konqmisc.h"
+#include <config-konqueror.h>
 
 #include <QDBusConnection>
 #include <QDBusMessage>
@@ -186,7 +187,9 @@ void KonquerorApplication::setupParser()
     m_parser.addOption(QCommandLineOption(QStringList{QStringLiteral("part")}, i18n("Part to use (e.g. khtml or kwebkitpart)"), i18n("service")));
     m_parser.addOption(QCommandLineOption(QStringList{QStringLiteral("select")}, i18n("For URLs that point to files, opens the directory and selects the file, instead of opening the actual file")));
     m_parser.addOption(QCommandLineOption(QStringList{QStringLiteral("tempfile")}, i18n("The files/URLs opened by the application will be deleted after use")));
-
+#ifdef DEVELOPER_MODE
+    m_parser.addOption(QCommandLineOption({QStringLiteral("force-new-process")}, i18n("Create a new Konqueror process, even if one already exists. Meant to be used only when developing Konqueror itself")));
+#endif
     m_parser.addPositionalArgument(QStringLiteral("[URL]"), i18n("Location to open"));
 }
 
@@ -253,6 +256,11 @@ int KonquerorApplication::start()
 
     m_parser.process(*this);
     m_aboutData.processCommandLine(&m_parser);
+#ifdef DEVELOPER_MODE
+    bool forceNewProcess = m_runningAsRootBehavior != NotRoot || m_parser.isSet(QStringLiteral("force-new-process"));
+#else
+    bool forceNewProcess = m_runningAsRootBehavior != NotRoot;
+#endif
 
     //Explicitly disable reusing existing instances if running as root. The behavior is not clear
     //and could be dangerous if new windows are unknowingly launched as root.
@@ -260,7 +268,9 @@ int KonquerorApplication::start()
     //so prevents the new window to be created because the new instance produces a critical failure with message:
     //Couldn't register name 'org.kde.konqueror' with DBUS - another process owns it already!
     //Moving the service creation outside the if block seems to solve the issue.
-    KDBusService dbusService(m_runningAsRootBehavior == NotRoot ? KDBusService::Unique : KDBusService::Multiple | KDBusService::NoExitOnFailure);
+    //
+    //This also disables reusing an existing instance when running in developer mode
+    KDBusService dbusService(forceNewProcess ? KDBusService::Multiple | KDBusService::NoExitOnFailure : KDBusService::Unique);
     if (m_runningAsRootBehavior == NotRoot) {
         auto activateApp = [this](const QStringList &arguments, const QString &workingDirectory) {
             m_parser.parse(arguments);

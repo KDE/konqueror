@@ -76,6 +76,8 @@ if (KF5DocTools_FOUND)
     add_subdirectory( doc )
 endif()
 
+set(DEVELOPER_MODE false CACHE BOOL "Enables developer mode, which allows running separate instances of Konqueror")
+
 ########### install files ###############
 install( PROGRAMS
    kfmclient.desktop kfmclient_html.desktop kfmclient_war.desktop kfmclient_dir.desktop
