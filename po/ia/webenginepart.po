@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-13 00:48+0000\n"
+"POT-Creation-Date: 2023-04-03 00:46+0000\n"
 "PO-Revision-Date: 2023-03-14 23:32+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -831,14 +831,14 @@ msgstr "Immagazina datos de formulario in KWallet quando on claude le dialogo"
 msgid "&Immediately memorize form data"
 msgstr "&Immediatemente memorisa datos de formulario"
 
-#: src/webenginepage.cpp:135
+#: src/webenginepage.cpp:136
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr ""
 "Le gerente del discargamento (%1) poterea non trovar se in vostre "
 "installation"
 
-#: src/webenginepage.cpp:136
+#: src/webenginepage.cpp:137
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -849,7 +849,7 @@ msgstr ""
 "\n"
 "Le integratin essera deactivate."
 
-#: src/webenginepage.cpp:294
+#: src/webenginepage.cpp:295
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -863,12 +863,12 @@ msgstr ""
 "dulicate de compra. Alteremente, pulsa le button de Continua per monstrar de "
 "novo le pagina web.</p>"
 
-#: src/webenginepage.cpp:301
+#: src/webenginepage.cpp:302
 #, kde-format
 msgid "Resubmit Information"
 msgstr "Resubmitte information"
 
-#: src/webenginepage.cpp:536
+#: src/webenginepage.cpp:537
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -877,18 +877,18 @@ msgstr ""
 "Iste sito es essayante a acceder a information re tu physic location.\n"
 "Tu vole permitter que illo accede? "
 
-#: src/webenginepage.cpp:540 src/webenginepage.cpp:657
-#: src/webenginepage.cpp:668
+#: src/webenginepage.cpp:541 src/webenginepage.cpp:658
+#: src/webenginepage.cpp:669
 #, kde-format
 msgid "Network Transmission"
 msgstr "Transmission de rete"
 
-#: src/webenginepage.cpp:541
+#: src/webenginepage.cpp:542
 #, kde-format
 msgid "Allow access"
 msgstr "Permitte  accesso "
 
-#: src/webenginepage.cpp:616
+#: src/webenginepage.cpp:617
 #, kde-format
 msgid ""
 "<qt>This untrusted page links to<br/><b>%1</b>.<br/>Do you want to follow "
@@ -897,30 +897,30 @@ msgstr ""
 "<qt> Iste ligamines de pagina indigne de fide conduce a <br /><b>%1</b>.<br /"
 "> Tu vole sequer le ligamine?</qt>"
 
-#: src/webenginepage.cpp:618
+#: src/webenginepage.cpp:619
 #, kde-format
 msgid "Security Warning"
 msgstr "Advertimento de securitate"
 
-#: src/webenginepage.cpp:619
+#: src/webenginepage.cpp:620
 #, kde-format
 msgctxt "follow link despite of security warning"
 msgid "Follow"
 msgstr "Seque"
 
-#: src/webenginepage.cpp:621
+#: src/webenginepage.cpp:622
 #, kde-format
 msgid "Security Alert"
 msgstr "Allerta de securitate"
 
-#: src/webenginepage.cpp:622
+#: src/webenginepage.cpp:623
 #, kde-format
 msgid "<qt>Access by untrusted page to<br/><b>%1</b><br/> denied.</qt>"
 msgstr ""
 "<qt> Accesso per un pagina indigne de fide a <br /><b>%1</b><br /> negate.</"
 "qt>"
 
-#: src/webenginepage.cpp:650
+#: src/webenginepage.cpp:651
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -934,12 +934,12 @@ msgstr ""
 "information.\n"
 "Tu es secur que tu vole inviar le datos non cryptate?"
 
-#: src/webenginepage.cpp:658
+#: src/webenginepage.cpp:659
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "Invia &sin cryptation"
 
-#: src/webenginepage.cpp:665
+#: src/webenginepage.cpp:666
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -948,12 +948,12 @@ msgstr ""
 "Iste sito es preste a submitter le datos del formulario via e-posta.\n"
 "Tu vole continuar?"
 
-#: src/webenginepage.cpp:669
+#: src/webenginepage.cpp:670
 #, kde-format
 msgid "&Send Email"
 msgstr "&Invia e-posta"
 
-#: src/webenginepage.cpp:718
+#: src/webenginepage.cpp:719
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -962,22 +962,22 @@ msgstr ""
 "<qt>Tu vole permitter a iste sito de attachar le files sequente al message "
 "de e-posta?</qt>"
 
-#: src/webenginepage.cpp:720
+#: src/webenginepage.cpp:721
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Confirmation de attachamento de e-posta"
 
-#: src/webenginepage.cpp:721
+#: src/webenginepage.cpp:722
 #, kde-format
 msgid "&Allow attachments"
 msgstr "Permitte &attachamentos"
 
-#: src/webenginepage.cpp:722
+#: src/webenginepage.cpp:723
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&Ignora attachamentos"
 
-#: src/webenginepage.cpp:736
+#: src/webenginepage.cpp:737
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -986,12 +986,12 @@ msgstr ""
 "Iste sito tentava de junger un file ex tu computator in le formulario de "
 "submission. Le attachamento esseva removite pro tu protection."
 
-#: src/webenginepage.cpp:739
+#: src/webenginepage.cpp:740
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Attachamento removite"
 
-#: src/webenginepage.cpp:869
+#: src/webenginepage.cpp:875
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1000,7 +1000,7 @@ msgstr ""
 "Iste sito es requirente de aperir un nove fenestra de popup.\n"
 "Tu vole permitter isto?"
 
-#: src/webenginepage.cpp:871
+#: src/webenginepage.cpp:877
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1009,17 +1009,17 @@ msgstr ""
 "<qt>Iste sito es requirente de aperir un fenestra de pupup a <p>%1</p><br/"
 ">Tu vole permitter isto?</qt>"
 
-#: src/webenginepage.cpp:875
+#: src/webenginepage.cpp:881
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Confirmation de Popup de JavaScript"
 
-#: src/webenginepage.cpp:876
+#: src/webenginepage.cpp:882
 #, kde-format
 msgid "Allow"
 msgstr "Permitte"
 
-#: src/webenginepage.cpp:877
+#: src/webenginepage.cpp:883
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Non permitte"

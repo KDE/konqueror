@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: playground-libs/webkitkde.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-13 00:48+0000\n"
+"POT-Creation-Date: 2023-04-03 00:46+0000\n"
 "PO-Revision-Date: 2009-01-20 11:17-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -758,12 +758,12 @@ msgstr ""
 msgid "&Immediately memorize form data"
 msgstr ""
 
-#: src/webenginepage.cpp:135
+#: src/webenginepage.cpp:136
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr "Níorbh fhéidir an bainisteoir íosluchtaithe (%1) a aimsiú i do chóras."
 
-#: src/webenginepage.cpp:136
+#: src/webenginepage.cpp:137
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -774,7 +774,7 @@ msgstr ""
 "\n"
 "Díchumasófar an comhtháthú."
 
-#: src/webenginepage.cpp:294
+#: src/webenginepage.cpp:295
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -783,12 +783,12 @@ msgid ""
 "Otherwise, click the Continue button to display the webpage again.</p>"
 msgstr ""
 
-#: src/webenginepage.cpp:301
+#: src/webenginepage.cpp:302
 #, kde-format
 msgid "Resubmit Information"
 msgstr "Seol Faisnéis Arís"
 
-#: src/webenginepage.cpp:536
+#: src/webenginepage.cpp:537
 #, fuzzy, kde-format
 #| msgid ""
 #| "This site is attempting to submit form data via email.\n"
@@ -800,46 +800,46 @@ msgstr ""
 "Tá an suíomh seo ag iarraidh foirm a sheoladh trí ríomhphost.\n"
 "An bhfuil fonn ort dul ar aghaidh?"
 
-#: src/webenginepage.cpp:540 src/webenginepage.cpp:657
-#: src/webenginepage.cpp:668
+#: src/webenginepage.cpp:541 src/webenginepage.cpp:658
+#: src/webenginepage.cpp:669
 #, kde-format
 msgid "Network Transmission"
 msgstr "Tarchur Líonra"
 
-#: src/webenginepage.cpp:541
+#: src/webenginepage.cpp:542
 #, kde-format
 msgid "Allow access"
 msgstr ""
 
-#: src/webenginepage.cpp:616
+#: src/webenginepage.cpp:617
 #, kde-format
 msgid ""
 "<qt>This untrusted page links to<br/><b>%1</b>.<br/>Do you want to follow "
 "the link?</qt>"
 msgstr ""
 
-#: src/webenginepage.cpp:618
+#: src/webenginepage.cpp:619
 #, kde-format
 msgid "Security Warning"
 msgstr "Rabhadh Slándála"
 
-#: src/webenginepage.cpp:619
+#: src/webenginepage.cpp:620
 #, kde-format
 msgctxt "follow link despite of security warning"
 msgid "Follow"
 msgstr "Lean ar aghaidh"
 
-#: src/webenginepage.cpp:621
+#: src/webenginepage.cpp:622
 #, kde-format
 msgid "Security Alert"
 msgstr "Foláireamh Slándála"
 
-#: src/webenginepage.cpp:622
+#: src/webenginepage.cpp:623
 #, kde-format
 msgid "<qt>Access by untrusted page to<br/><b>%1</b><br/> denied.</qt>"
 msgstr ""
 
-#: src/webenginepage.cpp:650
+#: src/webenginepage.cpp:651
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -848,12 +848,12 @@ msgid ""
 "Are you sure you want to send the data unencrypted?"
 msgstr ""
 
-#: src/webenginepage.cpp:658
+#: src/webenginepage.cpp:659
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&Seol Gan Chriptiú"
 
-#: src/webenginepage.cpp:665
+#: src/webenginepage.cpp:666
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -862,34 +862,34 @@ msgstr ""
 "Tá an suíomh seo ag iarraidh foirm a sheoladh trí ríomhphost.\n"
 "An bhfuil fonn ort dul ar aghaidh?"
 
-#: src/webenginepage.cpp:669
+#: src/webenginepage.cpp:670
 #, kde-format
 msgid "&Send Email"
 msgstr "&Seol Ríomhphost"
 
-#: src/webenginepage.cpp:718
+#: src/webenginepage.cpp:719
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
 "email message?</qt>"
 msgstr ""
 
-#: src/webenginepage.cpp:720
+#: src/webenginepage.cpp:721
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr ""
 
-#: src/webenginepage.cpp:721
+#: src/webenginepage.cpp:722
 #, kde-format
 msgid "&Allow attachments"
 msgstr ""
 
-#: src/webenginepage.cpp:722
+#: src/webenginepage.cpp:723
 #, kde-format
 msgid "&Ignore attachments"
 msgstr ""
 
-#: src/webenginepage.cpp:736
+#: src/webenginepage.cpp:737
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -898,12 +898,12 @@ msgstr ""
 "Rinne an suíomh seo iarracht ar chomhad ó do ríomhaire a cheangal leis an "
 "bhfoirm. Baineadh an t-iatán ar mhaithe le do shlándáil."
 
-#: src/webenginepage.cpp:739
+#: src/webenginepage.cpp:740
 #, kde-format
 msgid "Attachment Removed"
 msgstr ""
 
-#: src/webenginepage.cpp:869
+#: src/webenginepage.cpp:875
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -912,24 +912,24 @@ msgstr ""
 "Tá an suíomh seo ag iarraidh preabfhuinneog nua a oscailt.\n"
 "An bhfuil fonn ort é seo a cheadú?"
 
-#: src/webenginepage.cpp:871
+#: src/webenginepage.cpp:877
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
 "want to allow this?</qt>"
 msgstr ""
 
-#: src/webenginepage.cpp:875
+#: src/webenginepage.cpp:881
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Preabfhuinneoga JavaScript: Cumraíocht"
 
-#: src/webenginepage.cpp:876
+#: src/webenginepage.cpp:882
 #, kde-format
 msgid "Allow"
 msgstr "Ceadaigh"
 
-#: src/webenginepage.cpp:877
+#: src/webenginepage.cpp:883
 #, kde-format
 msgid "Do Not Allow"
 msgstr "Ná Ceadaigh"

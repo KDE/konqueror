@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-13 00:48+0000\n"
+"POT-Creation-Date: 2023-04-03 00:46+0000\n"
 "PO-Revision-Date: 2023-03-13 10:29+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -836,13 +836,13 @@ msgstr "Emmagatzema les dades del formulari en KWallet en tancar el diàleg"
 msgid "&Immediately memorize form data"
 msgstr "Memoritza &immediatament les dades del formulari"
 
-#: src/webenginepage.cpp:135
+#: src/webenginepage.cpp:136
 #, kde-format
 msgid "The download manager (%1) could not be found in your installation."
 msgstr ""
 "El gestor de descàrrega (%1) no s'ha pogut trobar en esta instal·lació."
 
-#: src/webenginepage.cpp:136
+#: src/webenginepage.cpp:137
 #, kde-format
 msgid ""
 "Try to reinstall it and make sure that it is available in $PATH. \n"
@@ -853,7 +853,7 @@ msgstr ""
 "\n"
 "S'inhabilitarà la integració."
 
-#: src/webenginepage.cpp:294
+#: src/webenginepage.cpp:295
 #, kde-format
 msgid ""
 "<qt><p>To display the requested web page again, the browser needs to resend "
@@ -867,12 +867,12 @@ msgstr ""
 "botó Cancel·la per a evitar duplicar la compra. En cas contrari, cliqueu en "
 "el botó Continua per a tornar a mostrar la pàgina web.</p>"
 
-#: src/webenginepage.cpp:301
+#: src/webenginepage.cpp:302
 #, kde-format
 msgid "Resubmit Information"
 msgstr "Torna a trametre la informació"
 
-#: src/webenginepage.cpp:536
+#: src/webenginepage.cpp:537
 #, kde-format
 msgid ""
 "This site is attempting to access information about your physical location.\n"
@@ -882,18 +882,18 @@ msgstr ""
 "ubicació física.\n"
 "Voleu permetre l'accés?"
 
-#: src/webenginepage.cpp:540 src/webenginepage.cpp:657
-#: src/webenginepage.cpp:668
+#: src/webenginepage.cpp:541 src/webenginepage.cpp:658
+#: src/webenginepage.cpp:669
 #, kde-format
 msgid "Network Transmission"
 msgstr "Transmissió de xarxa"
 
-#: src/webenginepage.cpp:541
+#: src/webenginepage.cpp:542
 #, kde-format
 msgid "Allow access"
 msgstr "Permet l'accés"
 
-#: src/webenginepage.cpp:616
+#: src/webenginepage.cpp:617
 #, kde-format
 msgid ""
 "<qt>This untrusted page links to<br/><b>%1</b>.<br/>Do you want to follow "
@@ -902,28 +902,28 @@ msgstr ""
 "<qt>Esta pàgina no fiable enllaça a<br/><b>%1</b>.<br/>Voleu seguir l'enllaç?"
 "</qt>"
 
-#: src/webenginepage.cpp:618
+#: src/webenginepage.cpp:619
 #, kde-format
 msgid "Security Warning"
 msgstr "Avís de seguretat"
 
-#: src/webenginepage.cpp:619
+#: src/webenginepage.cpp:620
 #, kde-format
 msgctxt "follow link despite of security warning"
 msgid "Follow"
 msgstr "Seguix"
 
-#: src/webenginepage.cpp:621
+#: src/webenginepage.cpp:622
 #, kde-format
 msgid "Security Alert"
 msgstr "Alerta de seguretat"
 
-#: src/webenginepage.cpp:622
+#: src/webenginepage.cpp:623
 #, kde-format
 msgid "<qt>Access by untrusted page to<br/><b>%1</b><br/> denied.</qt>"
 msgstr "<qt>S'ha denegat l'accés a la pàgina no fiable <br/><b>%1</b>.</qt>"
 
-#: src/webenginepage.cpp:650
+#: src/webenginepage.cpp:651
 #, kde-format
 msgid ""
 "Warning: This is a secure form but it is attempting to send your data back "
@@ -936,12 +936,12 @@ msgstr ""
 "Un tercer podria interceptar i veure esta informació.\n"
 "Segur que voleu enviar les dades sense encriptar?"
 
-#: src/webenginepage.cpp:658
+#: src/webenginepage.cpp:659
 #, kde-format
 msgid "&Send Unencrypted"
 msgstr "&Envia sense encriptar"
 
-#: src/webenginepage.cpp:665
+#: src/webenginepage.cpp:666
 #, kde-format
 msgid ""
 "This site is attempting to submit form data via email.\n"
@@ -950,12 +950,12 @@ msgstr ""
 "Este lloc està provant d'enviar dades de formulari via correu.\n"
 "Voleu continuar?"
 
-#: src/webenginepage.cpp:669
+#: src/webenginepage.cpp:670
 #, kde-format
 msgid "&Send Email"
 msgstr "&Envia correu"
 
-#: src/webenginepage.cpp:718
+#: src/webenginepage.cpp:719
 #, kde-format
 msgid ""
 "<qt>Do you want to allow this site to attach the following files to the "
@@ -964,22 +964,22 @@ msgstr ""
 "<qt>Voleu permetre que este lloc adjunte els fitxers següents al missatge de "
 "correu electrònic?</qt>"
 
-#: src/webenginepage.cpp:720
+#: src/webenginepage.cpp:721
 #, kde-format
 msgid "Email Attachment Confirmation"
 msgstr "Confirmació d'adjunt al correu"
 
-#: src/webenginepage.cpp:721
+#: src/webenginepage.cpp:722
 #, kde-format
 msgid "&Allow attachments"
 msgstr "Permet els &adjunts"
 
-#: src/webenginepage.cpp:722
+#: src/webenginepage.cpp:723
 #, kde-format
 msgid "&Ignore attachments"
 msgstr "&Ignora els adjunts"
 
-#: src/webenginepage.cpp:736
+#: src/webenginepage.cpp:737
 #, kde-format
 msgid ""
 "This site attempted to attach a file from your computer in the form "
@@ -988,12 +988,12 @@ msgstr ""
 "Este lloc ha provat d'adjuntar un fitxer des del vostre ordinador al "
 "formulari d'enviament. S'ha eliminat l'adjunt per a la vostra protecció."
 
-#: src/webenginepage.cpp:739
+#: src/webenginepage.cpp:740
 #, kde-format
 msgid "Attachment Removed"
 msgstr "Eliminació d'adjunt"
 
-#: src/webenginepage.cpp:869
+#: src/webenginepage.cpp:875
 #, kde-format
 msgid ""
 "This site is requesting to open a new popup window.\n"
@@ -1002,7 +1002,7 @@ msgstr ""
 "Este lloc està sol·licitant obrir una finestra emergent nova.\n"
 "Voleu permetre-ho?"
 
-#: src/webenginepage.cpp:871
+#: src/webenginepage.cpp:877
 #, kde-format
 msgid ""
 "<qt>This site is requesting to open a popup window to<p>%1</p><br/>Do you "
@@ -1011,17 +1011,17 @@ msgstr ""
 "<qt>Este lloc està demanant d'obrir una finestra emergent a <p>%1</p>. <br/"
 ">Voleu permetre-ho?</qt>"
 
-#: src/webenginepage.cpp:875
+#: src/webenginepage.cpp:881
 #, kde-format
 msgid "Javascript Popup Confirmation"
 msgstr "Confirmació de finestra emergent de JavaScript"
 
-#: src/webenginepage.cpp:876
+#: src/webenginepage.cpp:882
 #, kde-format
 msgid "Allow"
 msgstr "Permet"
 
-#: src/webenginepage.cpp:877
+#: src/webenginepage.cpp:883
 #, kde-format
 msgid "Do Not Allow"
 msgstr "No permetes"
