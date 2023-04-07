@@ -27,6 +27,7 @@
 #include <KApplicationTrader>
 #include <KParts/PartLoader>
 #include <KLocalizedString>
+#include <KIO/JobUiDelegateFactory>
 
 #include <QDebug>
 #include <QArgument>
@@ -263,9 +264,6 @@ void UrlLoader::decideOpenOrSave()
 
     m_action = answerWithService.first;
     m_service = answerWithService.second;
-    if (m_action == OpenUrlAction::Open && !m_service) {
-        m_service= KApplicationTrader::preferredService(m_mimeType);
-    }
 }
 
 UrlLoader::OpenUrlAction UrlLoader::decideExecute() const {
@@ -526,19 +524,13 @@ void UrlLoader::open()
     }
 
     KJob *job = nullptr;
-    if (m_service) {
-        KIO::ApplicationLauncherJob *j = new KIO::ApplicationLauncherJob(m_service);
-        j->setUrls({m_url});
-        j->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, m_mainWindow));
-        if (m_request.tempFile) {
-            j->setRunFlags(KIO::ApplicationLauncherJob::DeleteTemporaryFiles);
-        }
-        job = j;
-    } else {
-        KIO::OpenUrlJob *j = new KIO::OpenUrlJob(m_url);
-        j->setDeleteTemporaryFile(m_request.tempFile);
-        job = j;
+    KIO::ApplicationLauncherJob *j = new KIO::ApplicationLauncherJob(m_service);
+    j->setUrls({m_url});
+    j->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, m_mainWindow));
+    if (m_request.tempFile) {
+        j->setRunFlags(KIO::ApplicationLauncherJob::DeleteTemporaryFiles);
     }
+    job = j;
     connect(job, &KJob::finished, this, [this, job](){done(job);});
     job->start();
 }
@@ -548,7 +540,7 @@ void UrlLoader::execute()
     m_openUrlJob = new KIO::OpenUrlJob(m_url, m_mimeType, this);
     m_openUrlJob->setEnableExternalBrowser(false);
     m_openUrlJob->setRunExecutables(true);
-    m_openUrlJob->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, m_mainWindow));
+    m_openUrlJob->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, m_mainWindow));
     m_openUrlJob->setSuggestedFileName(m_request.suggestedFileName);
     m_openUrlJob->setDeleteTemporaryFile(m_request.tempFile);
     connect(m_openUrlJob, &KJob::finished, this, [this]{done(m_openUrlJob);});
