@@ -7,4 +7,17 @@ install(FILES
     plugins.html
     plugins_rtl.html
     konq.css
+    kde_infopage.css
+    kde_infopage_rtl.css
+    body-background.png
+    box-middle-left.png
+    box-middle-right.png
+    top-middle.png
+    box-top-left.png
+    box-bottom-left.png
+    box-top-middle.png
+    box-bottom-middle.png
+    box-top-right.png
+    box-bottom-right.png
+    box-center.png
     DESTINATION ${KDE_INSTALL_DATADIR}/konqueror/about)

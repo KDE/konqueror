@@ -62,9 +62,9 @@ QString KonqAboutPageSingleton::launch()
     QString home_folder = QUrl::fromLocalFile(QDir::homePath()).toString();
     QString continue_icon_path = QUrl::fromLocalFile(iconloader->iconPath(QApplication::isRightToLeft() ? "go-previous" : "go-next", KIconLoader::Small)).toString();
 
-    res = res.arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kf5/infopage/kde_infopage.css"))).toString());
+    res = res.arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("konqueror/about/kde_infopage.css"))).toString());
     if (qApp->layoutDirection() == Qt::RightToLeft) {
-        res = res.arg(QStringLiteral("@import \"%1\";")).arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kf5/infopage/kde_infopage_rtl.css"))).toString());
+        res = res.arg(QStringLiteral("@import \"%1\";")).arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("konqueror/about/kde_infopage_rtl.css"))).toString());
     } else {
         res = res.arg(QLatin1String(""));
     }
@@ -122,9 +122,9 @@ QString KonqAboutPageSingleton::intro()
     QString gohome_icon_path = QUrl::fromLocalFile(iconloader->iconPath(QStringLiteral("go-home"), KIconLoader::Small)).toString();
     QString continue_icon_path = QUrl::fromLocalFile(iconloader->iconPath(QApplication::isRightToLeft() ? "go-previous" : "go-next", KIconLoader::Small)).toString();
 
-    res = res.arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kf5/infopage/kde_infopage.css"))).toString());
+    res = res.arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("konqueror/about/kde_infopage.css"))).toString());
     if (qApp->layoutDirection() == Qt::RightToLeft) {
-        res = res.arg(QStringLiteral("@import \"%1\";")).arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kf5/infopage/kde_infopage_rtl.css"))).toString());
+        res = res.arg(QStringLiteral("@import \"%1\";")).arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("konqueror/about/kde_infopage_rtl.css"))).toString());
     } else {
         res = res.arg(QLatin1String(""));
     }
@@ -174,9 +174,9 @@ QString KonqAboutPageSingleton::specs()
         return res;
     }
 
-    res = res.arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kf5/infopage/kde_infopage.css"))).toString());
+    res = res.arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("konqueror/about/kde_infopage.css"))).toString());
     if (qApp->layoutDirection() == Qt::RightToLeft) {
-        res = res.arg(QStringLiteral("@import \"%1\";")).arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kf5/infopage/kde_infopage_rtl.css"))).toString());
+        res = res.arg(QStringLiteral("@import \"%1\";")).arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("konqueror/about/kde_infopage_rtl.css"))).toString());
     } else {
         res = res.arg(QLatin1String(""));
     }
@@ -274,9 +274,9 @@ QString KonqAboutPageSingleton::tips()
         QUrl::fromLocalFile(iconloader->iconPath(QStringLiteral("view-split-left-right"), KIconLoader::Small)).toString();
     QString continue_icon_path = QUrl::fromLocalFile(iconloader->iconPath(QApplication::isRightToLeft() ? "go-previous" : "go-next", KIconLoader::Small)).toString();
 
-    res = res.arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kf5/infopage/kde_infopage.css"))).toString());
+    res = res.arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("konqueror/about/kde_infopage.css"))).toString());
     if (qApp->layoutDirection() == Qt::RightToLeft) {
-        res = res.arg(QStringLiteral("@import \"%1\";")).arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kf5/infopage/kde_infopage_rtl.css"))).toString());
+        res = res.arg(QStringLiteral("@import \"%1\";")).arg(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("konqueror/about/kde_infopage_rtl.css"))).toString());
     } else {
         res = res.arg(QLatin1String(""));
     }
