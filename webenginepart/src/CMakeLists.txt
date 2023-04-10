@@ -110,7 +110,7 @@ install(FILES error.html DESTINATION ${KDE_INSTALL_DATADIR}/webenginepart)
 install(FILES settings/kconf_update/webenginepart.upd DESTINATION ${KDE_INSTALL_KCONFUPDATEDIR})
 
 set(USE_SYSTEM_DICTIONARIES 0 CACHE BOOL "Don't build QtWebEngine dictionaries but use the system ones")
-if((NOT ${USE_SYSTEM_DICTIONARIES}) AND ${Hunspell_FOUND})
+if((NOT USE_SYSTEM_DICTIONARIES) AND Hunspell_FOUND)
   set(WEBENGINEPART_OWN_DICTIONARY_DIR ${CMAKE_INSTALL_PREFIX}/share/konqueror/webengine_dictionaries CACHE PATH "The directory where dictionary files built for WebEnginePart will be installed")
   add_compile_definitions(WEBENGINEPART_OWN_DICTIONARY_DIR="${WEBENGINEPART_OWN_DICTIONARY_DIR}")
   target_compile_definitions(kdeinit_konqueror PUBLIC WEBENGINEPART_OWN_DICTIONARY_DIR="${WEBENGINEPART_OWN_DICTIONARY_DIR}")
