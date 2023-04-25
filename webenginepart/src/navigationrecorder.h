@@ -20,10 +20,10 @@ class WebEnginePage;
  * Class used to integrate information from WebEnginePage::acceptNavigationRequest() and from
  * WebEngineUrlRequestInterceptor::interceptRequest()
  *
- * Sometimes it's important to know both which page requested navigating to a given URL and more
+ * Sometimes it is important to know both which page requested navigating to a given URL and more
  * detailed information about the request itself
- * (for example, whether it's a GET or a POST request). Unfortunately, this kind information is only
- * available to WebEngineUrlRequestInterceptor::interceptRequest() which, in turn, doesn't have
+ * (for example, whether it is a GET or a POST request). Unfortunately, this kind information is only
+ * available to WebEngineUrlRequestInterceptor::interceptRequest() which, in turn, does not have
  * information about which page made a given request. This class provides a workaround for such situation.
  *
  * When a WebEnginePage emits the \link WebEnginePage::mainFrameNavigationRequested mainFrameNavigationRequested() \endlink
@@ -35,11 +35,12 @@ class WebEnginePage;
  * page is deleted, all information corresponding to its URL are removed.
  *
  * @note Currently, this class only records whether the request used the POST method.
- * @warning The algorithm described above is heuristic and it can't warrantee that the association
+ * @warning The algorithm described above is heuristic and it cannot guarantee that the association
  * between page and request information is always correct. In particular, if two different pages
  * request the same URL before \link WebEngineUrlRequestInterceptor::interceptRequest interceptRequest() \endlink
  * is called, when \link WebEngineUrlRequestInterceptor::interceptRequest interceptRequest() \endlink is called,
- * there's no way to know which of the two it refers to. In this case, NavigationRecorder makes
+ * there will be no way to know which page the request refers to.
+ * In this case, NavigationRecorder makes
  * the arbitrary assumption that the first call to \link WebEngineUrlRequestInterceptor::interceptRequest interceptRequest() \endlink
  * corresponds to the first call to \link WebEnginePage::acceptNavigationRequest() acceptNavigationRequest()\endlink.
  */
@@ -85,7 +86,7 @@ public:
      * @note a `false` return value may mean that no request for @p url by @p page has been
      * encountered or that it used a different method (typically GET).
      * @warning as explained in the general description of the class, the algorithm to associate
-     * requests with pages may not always be 100% accurate
+     * requests with pages need not always be 100% accurate
      */
     bool isPostRequest(const QUrl &url, WebEnginePage *page) const;
 
