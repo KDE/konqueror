@@ -263,14 +263,14 @@ void KonqUndoManager::clearClosedItemsList(bool onlyInthisWindow)
 {
     populate();
     QList<KonqClosedItem *>::iterator it = m_closedItemList.begin();
-    for (; it != m_closedItemList.end(); ++it) {
+    for (; it != m_closedItemList.end();) {
         KonqClosedItem *closedItem = *it;
         const KonqClosedTabItem *closedTabItem =
             dynamic_cast<const KonqClosedTabItem *>(closedItem);
         const KonqClosedWindowItem *closedWindowItem =
             dynamic_cast<const KonqClosedWindowItem *>(closedItem);
 
-        m_closedItemList.erase(it);
+        it = m_closedItemList.erase(it);
         if (closedTabItem) {
             delete closedTabItem;
         } else if (closedWindowItem && !onlyInthisWindow) {
