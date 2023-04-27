@@ -2,13 +2,13 @@
 # Panagiotis Papadopoulos <pano_90@gmx.net>, 2009, 2010.
 # Markus Slopianka <markus.s@kdemail.net>, 2010.
 # Johannes Obermayr <johannesobermayr@gmx.de>, 2010.
-# Frederik Schwarzer <schwarzer@kde.org>, 2010, 2011, 2012, 2016, 2022.
+# Frederik Schwarzer <schwarzer@kde.org>, 2010, 2011, 2012, 2016, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kwebkitpart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-12 14:38+0000\n"
-"PO-Revision-Date: 2022-04-15 04:20+0200\n"
+"PO-Revision-Date: 2023-04-26 19:42+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.07.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -560,11 +560,9 @@ msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, ChoosePageSaveFormatDlg)
 #: src/choosepagesaveformatdlg.ui:14
-#, fuzzy, kde-format
-#| msgctxt "input dialog text for selecting html elements"
-#| msgid "Choose elements"
+#, kde-format
 msgid "Choose Save Format"
-msgstr "Elemente auswählen"
+msgstr "Speicherformat auswählen"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: src/choosepagesaveformatdlg.ui:20

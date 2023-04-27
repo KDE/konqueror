@@ -1,6 +1,6 @@
 # Thomas Fischer <thomas.fischer@t-fischer.net>, 2004, 2005.
 # Thomas Reitelbach <tr@erdfunkstelle.de>, 2005, 2006.
-# Frederik Schwarzer <schwarzer@kde.org>, 2007, 2012.
+# Frederik Schwarzer <schwarzer@kde.org>, 2007, 2012, 2023.
 # Burkhard Lück <lueck@hube-lueck.de>, 2009, 2012.
 # Johannes Obermayr <johannesobermayr@gmx.de>, 2010.
 msgid ""
@@ -8,14 +8,15 @@ msgstr ""
 "Project-Id-Version: searchbarplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-07-25 00:45+0000\n"
-"PO-Revision-Date: 2012-10-02 21:27+0200\n"
-"Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
+"PO-Revision-Date: 2023-04-26 19:42+0200\n"
+"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 22.07.70\n"
 
 #: searchbar.cpp:65
 #, kde-format
@@ -37,10 +38,9 @@ msgid "Focus Searchbar"
 msgstr "Suchleiste aktivieren"
 
 #: searchbar.cpp:267
-#, fuzzy, kde-format
-#| msgid "Find in This Page"
+#, kde-format
 msgid "Find in Page..."
-msgstr "Diese Seite durchsuchen"
+msgstr "In Seite suchen ..."
 
 #: searchbar.cpp:287
 #, kde-format
