@@ -92,6 +92,13 @@ public:
     void restoreSessionSavedAtLogout();
 
     /**
+     * @brief Restores the application state saved by saveSessionBeforeClosingApplication if the corresponding option is enabled
+     *
+     * @return `true` if at least one `KonqMainWindow` exists and `false` if no `KonqMainWindow` exists
+     */
+    bool restoreSessionSavedAtExit();
+
+    /**
      * Restore saved session(s).
      *
      * @param sessionFilePathsList list of session files to restore.
@@ -181,6 +188,16 @@ public Q_SLOTS:
      * dbus signal).
      */
     void saveCurrentSessions(const QString &path);
+
+    /**
+     * @brief Saves the session when the application is about to be closed and the user chose to restore last state
+     *
+     * This does nothing when saving session at logout (according to `QGuiApplication::savingSession`, as that situation
+     * is handled separately.
+     *
+     * The session is saved in `last_state` in `QStandardPaths::ApplicationDataDir`
+     */
+    void saveSessionAtExit();
 
 private Q_SLOTS:
     void slotCommitData(QSessionManager &sm);

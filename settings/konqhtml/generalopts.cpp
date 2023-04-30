@@ -82,7 +82,7 @@ void KKonqGeneralOptions::addHomeUrlWidgets(QVBoxLayout *lay)
     m_emptyStartUrlWarning->hide();
     formLayout->addRow(m_emptyStartUrlWarning);
 
-    QLabel *startLabel = new QLabel(i18nc("@label:listbox", "When &Konqueror starts:"), this);
+    QLabel *startLabel = new QLabel(i18nc("@label:listbox", "When a new &Tab is created"), this);
 
     QWidget *containerWidget = new QWidget(this);
     QHBoxLayout *hboxLayout = new QHBoxLayout(containerWidget);
@@ -151,6 +151,10 @@ void KKonqGeneralOptions::addHomeUrlWidgets(QVBoxLayout *lay)
     splitLabel->setBuddy(m_splitBehaviour);
     formLayout->addRow(splitLabel, m_splitBehaviour);
     connect(m_splitBehaviour, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &KKonqGeneralOptions::slotChanged);
+
+    m_restoreLastState = new QCheckBox(i18n("When starting up, restore state from last time"), this);
+    connect(m_restoreLastState, &QCheckBox::stateChanged, this, &KKonqGeneralOptions::slotChanged);
+    formLayout->addRow(m_restoreLastState);
 }
 
 KKonqGeneralOptions::~KKonqGeneralOptions()
@@ -211,6 +215,9 @@ void KKonqGeneralOptions::load()
     const bool alwaysDuplicateWhenSplitting = userSettings.readEntry("AlwaysDuplicatePageWhenSplittingView", true);
     m_splitBehaviour->setCurrentIndex(alwaysDuplicateWhenSplitting ? 0 : 1);
 
+    const bool restoreLastState = userSettings.readEntry(QStringLiteral("RestoreLastState"), false);
+    m_restoreLastState->setChecked(restoreLastState);
+
     m_webEngineCombo->clear();
     // ## Well, the problem with using the trader to find the available parts, is that if a user
     // removed a part in keditfiletype text/html, it won't be in the list anymore. Oh well.
@@ -253,6 +260,7 @@ void KKonqGeneralOptions::defaults()
     homeURL->setText(QUrl(DEFAULT_HOMEPAGE).toString());
     startURL->setText(QUrl(DEFAULT_STARTPAGE).toString());
     m_splitBehaviour->setCurrentIndex(0);
+    m_restoreLastState->setChecked(false);
 
     bool old = m_pConfig->readDefaults();
     m_pConfig->setReadDefaults(true);
@@ -272,6 +280,7 @@ void KKonqGeneralOptions::save()
     userSettings.writeEntry("StartURL", startUrl);
     userSettings.writeEntry("HomeURL", homeURL->text());
     userSettings.writeEntry("AlwaysDuplicatePageWhenSplittingView", m_splitBehaviour->currentIndex() == 0);
+    userSettings.writeEntry("RestoreLastState", m_restoreLastState->isChecked());
 
     if (m_webEngineCombo->currentIndex() > 0) {
         // The user changed the preferred web engine, save into mimeapps.list.

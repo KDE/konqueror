@@ -320,10 +320,17 @@ int KonquerorApplication::performStart(const QString& workingDirectory, bool fir
     }
 
     WindowCreationResult result;
-    if (args.isEmpty()) {
-        result = createEmptyWindow(firstInstance);
-    } else {
+    if (!args.isEmpty()) {
         result = createWindowsForUrlArguments(args, workingDirectory);
+    } else {
+        bool sessionRestored = KonqSessionManager::self()->restoreSessionSavedAtExit();
+        if (sessionRestored) {
+            //KonqSessionManager::restoreSessionSavedAtExit only returns true if there's at least one main window,
+            //so there's no need to check whether the list is empty
+            result = WindowCreationResult{KonqMainWindow::mainWindows().at(0), 0};
+        } else {
+            result = createEmptyWindow(firstInstance);
+        }
     }
 
     KonqMainWindow *mw = result.first;

@@ -248,6 +248,19 @@ public:
         return s_lstMainWindows;
     }
 
+    /**
+     * @brief A list of all existing `KonqMainWindow`
+     *
+     * @return A list of all `KonqMainWindow`. This list can be empty
+     * @note This function is similar to mainWindowList(). The only differences is that it doesn't return a pointer,
+     * so there's no need to check for `nullptr`, and that the list can't be modified.
+     * @internal The returned list is `const` to avoid the fact that modifying it would affect ::s_lstMainWindows, but
+     * only if the latter isn't `nullptr`, which could be confusing for the user.
+     * @todo Check whether it's possible to make `s_lstMainWindows` not be a pointer: in this case, this function can be
+     * removed and mainWindowList() can be used in its place.
+     */
+    static QList<KonqMainWindow*> const mainWindows() {return s_lstMainWindows ? *s_lstMainWindows : QList<KonqMainWindow*>{};}
+
     void linkableViewCountChanged();
     void viewCountChanged();
 

@@ -368,6 +368,7 @@ KonqSessionManager::KonqSessionManager()
     enableAutosave();
 
     connect(qApp, &QGuiApplication::commitDataRequest, this, &KonqSessionManager::slotCommitData);
+    connect(qApp, &QGuiApplication::lastWindowClosed, this, &KonqSessionManager::saveSessionAtExit);
 }
 
 KonqSessionManager::~KonqSessionManager()
@@ -540,6 +541,21 @@ void KonqSessionManager::saveCurrentSessionToFile(KConfig *config, const QList<K
     configGroup.writeEntry("Number of Windows", counter);
 }
 
+void KonqSessionManager::saveSessionAtExit()
+{
+    if (qApp->isSavingSession()) {
+        return;
+    }
+    bool saveSessions = KSharedConfig::openConfig()->group(QStringLiteral("UserSettings")).readEntry(QStringLiteral("RestoreLastState"), false);
+    if (!saveSessions) {
+        return;
+    }
+    QString path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    if (!path.isEmpty()) {
+        saveCurrentSessionToFile(QDir(path).absoluteFilePath("last_session"));
+    }
+}
+
 QString KonqSessionManager::autosaveDirectory() const
 {
     return m_autosaveDir;
@@ -631,6 +647,24 @@ void KonqSessionManager::restoreSession(const QString &sessionFilePath, bool
             parent->viewManager()->openSavedWindow(configGroup, true);
         }
     }
+}
+
+bool KonqSessionManager::restoreSessionSavedAtExit()
+{
+    KConfigGroup grp = KSharedConfig::openConfig()->group(QStringLiteral("UserSettings"));
+    if (!grp.readEntry(QStringLiteral("RestoreLastState"), false)) {
+        return false;
+    }
+
+    QString lastSessionPath = QStandardPaths::locate(QStandardPaths::AppDataLocation, QStringLiteral("last_session"));
+    if (lastSessionPath.isEmpty()) {
+        return false;
+    }
+
+    restoreSession(lastSessionPath);
+    QFile(lastSessionPath).remove();
+
+    return !KonqMainWindow::mainWindows().isEmpty();
 }
 
 static void removeDiscardedSessions(const QStringList &sessionFiles, const QStringList &discardedSessions)

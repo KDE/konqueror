@@ -19,6 +19,7 @@ class QLineEdit;
 class Ui_advancedTabOptions;
 class QVBoxLayout;
 class KMessageWidget;
+class QCheckBox;
 
 class KKonqGeneralOptions : public KCModule
 {
@@ -46,6 +47,7 @@ private:
     QComboBox *m_webEngineCombo;
     QComboBox *m_splitBehaviour;
     KMessageWidget *m_emptyStartUrlWarning;
+    QCheckBox *m_restoreLastState;
 
     Ui_advancedTabOptions *tabOptions;
 };
