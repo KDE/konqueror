@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kwebkitpart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-03 00:46+0000\n"
-"PO-Revision-Date: 2023-04-29 12:15+0200\n"
+"PO-Revision-Date: 2023-05-02 22:57+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -568,25 +568,25 @@ msgstr "Speicherformat auswählen"
 #: src/choosepagesaveformatdlg.ui:20
 #, kde-format
 msgid "How would you like to save the page?"
-msgstr ""
+msgstr "Wie möchten Sie die Seite speichern?"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_singleHTMLPage)
 #: src/choosepagesaveformatdlg.ui:27
 #, kde-format
 msgid "As a &Single HTML page"
-msgstr ""
+msgstr "Als &einzelne HTML-Seite"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asDirectory)
 #: src/choosepagesaveformatdlg.ui:37
 #, kde-format
 msgid "As &directory"
-msgstr ""
+msgstr "Als &Ordner"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_asMHTMLPage)
 #: src/choosepagesaveformatdlg.ui:44
 #, kde-format
 msgid "As single MHTML file"
-msgstr ""
+msgstr "Als einzelne MHTML-Datei"
 
 #. i18n: ectx: property (text), widget (QLabel, m_info)
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -1047,10 +1047,9 @@ msgid "Do Not Allow"
 msgstr "Ablehnen"
 
 #: src/webenginepart.cpp:223
-#, fuzzy, kde-format
-#| msgid "Save Image As..."
+#, kde-format
 msgid "Save Full HTML Page As..."
-msgstr "Bild speichern unter ..."
+msgstr "Vollständige HTML-Seite speichern unter ..."
 
 #: src/webenginepart.cpp:227
 #, kde-format
