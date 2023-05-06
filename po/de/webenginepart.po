@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kwebkitpart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-12 14:38+0000\n"
-"PO-Revision-Date: 2023-05-02 22:57+0200\n"
+"PO-Revision-Date: 2023-05-05 19:50+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -1287,13 +1287,13 @@ msgstr "Geben Sie die Adresse (URL) ein:"
 #, kde-format
 msgctxt "Ignore the certificate error for this URL only for now"
 msgid "Yes, &once"
-msgstr ""
+msgstr "Ja, &einmalig"
 
 #: src/webenginepartcertificateerrordlg.cpp:45
 #, kde-format
 msgctxt "Ignore the certificate error for this URL now and in the future"
 msgid "Yes, &forever"
-msgstr ""
+msgstr "Ja, &dauerhaft"
 
 #: src/webenginepartcertificateerrordlg.cpp:49
 #, fuzzy, kde-format
@@ -1308,26 +1308,22 @@ msgstr ""
 "lautet:</p><p><tt>%2</tt></p>Möchten Sie diesen Fehler ignorieren?"
 
 #: src/webenginepartcertificateerrordlg.cpp:55
-#, fuzzy, kde-format
-#| msgctxt "@action:hide details about credentials to store"
-#| msgid "&Hide details"
+#, kde-format
 msgctxt "title of a dialog asking what to do about a SSL certificate error"
 msgid "Certificate error"
-msgstr "&Details ausblenden"
+msgstr "Zertifikatsfehler"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WebEnginePartCertificateErrorDlg)
 #: src/webenginepartcertificateerrordlg.ui:14
 #, kde-format
 msgid "Dialog"
-msgstr ""
+msgstr "Dialog"
 
 #. i18n: ectx: property (title), widget (QGroupBox, details)
 #: src/webenginepartcertificateerrordlg.ui:50
-#, fuzzy, kde-format
-#| msgctxt "@action:hide details about credentials to store"
-#| msgid "&Hide details"
+#, kde-format
 msgid "Certificate details"
-msgstr "&Details ausblenden"
+msgstr "Zertifikatsdetails"
 
 #. i18n: ectx: attribute (title), widget (QWidget, subjectTab)
 #: src/webenginepartcertificateerrordlg.ui:63
@@ -1343,7 +1339,7 @@ msgstr " – Betreff: "
 #: src/webenginepartcertificateerrordlg.ui:73
 #, kde-format
 msgid "&Issuer"
-msgstr ""
+msgstr "&Aussteller"
 
 #: src/webenginepartdownloadmanager.cpp:304
 #, kde-format
