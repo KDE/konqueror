@@ -13,6 +13,8 @@
 #include <QUrl>
 #include <QString>
 
+#include <KIO/Global>
+
 class QBuffer;
 
 class WebEnginePartErrorSchemeHandler : public QWebEngineUrlSchemeHandler{
@@ -30,7 +32,7 @@ public:
 private:
     
     struct ErrorInfo{
-        int code;
+        int code= KIO::ERR_UNKNOWN;
         QString text;
         QUrl requestUrl;
     };

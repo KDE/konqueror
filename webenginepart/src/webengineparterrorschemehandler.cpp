@@ -19,7 +19,6 @@
 #include <QMimeType>
 #include <QMimeDatabase>
 
-#include <KIO/Global>
 #include <KIO/Job>
 #include <KIconLoader>
 #include <KLocalizedString>
@@ -67,16 +66,15 @@ WebEnginePartErrorSchemeHandler::ErrorInfo WebEnginePartErrorSchemeHandler::pars
     ErrorInfo ei;
     ei.requestUrl = QUrl(url.fragment());
     if (ei.requestUrl.isValid()) {
-        QString query = url.query(QUrl::FullyDecoded);
-        QRegularExpression pattern("error=(\\d+)&errText=(.*)");
-        QRegularExpressionMatch match = pattern.match(query);
-        int error = match.captured(1).toInt();
+        QString const query = url.query(QUrl::FullyDecoded);
+        QRegularExpression const pattern("error=(\\d+)&errText=(.*)");
+        QRegularExpressionMatch const match = pattern.match(query);
+        int const error = match.captured(1).toInt();
         // error=0 isn't a valid error code, so 0 means it's missing from the URL
-        if (error == 0) {
-            error = KIO::ERR_UNKNOWN;
+        if (error != 0) {
+                ei.code = error;
         }
         ei.text = match.captured(2);
-        ei.code = error;
     }
     return ei;
 }
