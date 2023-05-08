@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-22 00:58+0000\n"
+"POT-Creation-Date: 2023-05-08 00:46+0000\n"
 "PO-Revision-Date: 2023-03-14 23:31+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -1320,8 +1320,8 @@ msgstr "Pro favor tu inserta le pagina initial personalisate"
 #: generalopts.cpp:85
 #, kde-format
 msgctxt "@label:listbox"
-msgid "When &Konqueror starts:"
-msgstr "Quando &Konqueror initia:"
+msgid "When a new &Tab is created"
+msgstr ""
 
 #: generalopts.cpp:94
 #, kde-format
@@ -1399,6 +1399,11 @@ msgstr "Sempre duplica vista currente"
 #, kde-format
 msgid "Duplicate current view only for local files"
 msgstr "Duplica vista currente solmente per files local"
+
+#: generalopts.cpp:155
+#, kde-format
+msgid "When starting up, restore state from last time"
+msgstr ""
 
 #: htmlopts.cpp:36
 #, kde-format
@@ -2269,6 +2274,10 @@ msgstr ""
 #, kde-format
 msgid "You must first enter a domain name."
 msgstr "Tu debe prime insertar un nomine de dominio."
+
+#~ msgctxt "@label:listbox"
+#~ msgid "When &Konqueror starts:"
+#~ msgstr "Quando &Konqueror initia:"
 
 #~ msgid "Accept languages:"
 #~ msgstr "Da acceptation a linguages:"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-03 00:46+0000\n"
+"POT-Creation-Date: 2023-05-08 00:46+0000\n"
 "PO-Revision-Date: 2023-03-14 05:13+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -1253,7 +1253,7 @@ msgctxt "Finished saving BLOB URL"
 msgid "Finished saving %1 as %2"
 msgstr "%1-ის %2-ის სახით შენახვა დასრულდა"
 
-#: src/webengineparterrorschemehandler.cpp:96
+#: src/webengineparterrorschemehandler.cpp:94
 #, kde-format
 msgid ""
 "<html><body><h3>Unable to display error message</h3><p>The error template "
@@ -1262,60 +1262,60 @@ msgstr ""
 "<html><body><h3>შეცდომის შეტყობინების გამოტანის შეცდომა</h3><p>შეცდომის "
 "ნიმუშის ფაილი <em>error.html</em> ვერ ვიპოვე.</p></body></html>"
 
-#: src/webengineparterrorschemehandler.cpp:105
+#: src/webengineparterrorschemehandler.cpp:103
 #, kde-format
 msgid "The requested operation could not be completed"
 msgstr "მოთხოვნილი ოპერაცია ვერ დასრულდება"
 
-#: src/webengineparterrorschemehandler.cpp:112
+#: src/webengineparterrorschemehandler.cpp:110
 #, kde-format
 msgid "Technical Reason: %1"
 msgstr "ტექნიკური მიზეზი: %1"
 
-#: src/webengineparterrorschemehandler.cpp:117
+#: src/webengineparterrorschemehandler.cpp:115
 #, kde-format
 msgid "Details of the Request:"
 msgstr "მოთხოვნის დეტალები:"
 
 #. i18n, and once for HTML.
-#: src/webengineparterrorschemehandler.cpp:120
+#: src/webengineparterrorschemehandler.cpp:118
 #, kde-format
 msgid "URL: %1"
 msgstr "მისამართი: %1"
 
 #. i18n, and once for HTML.
-#: src/webengineparterrorschemehandler.cpp:126
+#: src/webengineparterrorschemehandler.cpp:124
 #, kde-format
 msgid "Protocol: %1"
 msgstr "პროტოკოლი: %1"
 
-#: src/webengineparterrorschemehandler.cpp:130
+#: src/webengineparterrorschemehandler.cpp:128
 #, kde-format
 msgid "Date and Time: %1"
 msgstr "თარიღი: %1"
 
 #. i18n, and once for HTML.
-#: src/webengineparterrorschemehandler.cpp:134
+#: src/webengineparterrorschemehandler.cpp:132
 #, kde-format
 msgid "Additional Information: %1"
 msgstr "დამატებითი ინფორმაცია: %1"
 
-#: src/webengineparterrorschemehandler.cpp:136
+#: src/webengineparterrorschemehandler.cpp:134
 #, kde-format
 msgid "Description:"
 msgstr "აღწერა:"
 
-#: src/webengineparterrorschemehandler.cpp:143
+#: src/webengineparterrorschemehandler.cpp:141
 #, kde-format
 msgid "Possible Causes:"
 msgstr "შესაძლო შედეგები:"
 
-#: src/webengineparterrorschemehandler.cpp:151
+#: src/webengineparterrorschemehandler.cpp:149
 #, kde-format
 msgid "Possible Solutions:"
 msgstr "შესაძლო გადაწყვეტები:"
 
-#: src/webengineparterrorschemehandler.cpp:157
+#: src/webengineparterrorschemehandler.cpp:155
 #, kde-format
 msgid "Error: %1"
 msgstr "შეცდომა: %1"

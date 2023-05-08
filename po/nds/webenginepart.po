@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webkitkde\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-03 00:46+0000\n"
+"POT-Creation-Date: 2023-05-08 00:46+0000\n"
 "PO-Revision-Date: 2014-07-02 23:14+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -1318,7 +1318,7 @@ msgctxt "Finished saving BLOB URL"
 msgid "Finished saving %1 as %2"
 msgstr ""
 
-#: src/webengineparterrorschemehandler.cpp:96
+#: src/webengineparterrorschemehandler.cpp:94
 #, kde-format
 msgid ""
 "<html><body><h3>Unable to display error message</h3><p>The error template "
@@ -1327,60 +1327,60 @@ msgstr ""
 "<html><body><h3>Fehlermellen lett sik nich wiesen</h3><p>De Datei för "
 "Fehlervörlagen <em>error.html</em> lett sik nich finnen.</p></body></html>"
 
-#: src/webengineparterrorschemehandler.cpp:105
+#: src/webengineparterrorschemehandler.cpp:103
 #, kde-format
 msgid "The requested operation could not be completed"
 msgstr "De anfraagte Akschoon lett sik nich afsluten"
 
-#: src/webengineparterrorschemehandler.cpp:112
+#: src/webengineparterrorschemehandler.cpp:110
 #, kde-format
 msgid "Technical Reason: %1"
 msgstr "Technisch Oorsaak: %1"
 
-#: src/webengineparterrorschemehandler.cpp:117
+#: src/webengineparterrorschemehandler.cpp:115
 #, kde-format
 msgid "Details of the Request:"
 msgstr "Enkelheiten vun de Anfraag:"
 
 #. i18n, and once for HTML.
-#: src/webengineparterrorschemehandler.cpp:120
+#: src/webengineparterrorschemehandler.cpp:118
 #, kde-format
 msgid "URL: %1"
 msgstr "URL: %1"
 
 #. i18n, and once for HTML.
-#: src/webengineparterrorschemehandler.cpp:126
+#: src/webengineparterrorschemehandler.cpp:124
 #, kde-format
 msgid "Protocol: %1"
 msgstr "Protokoll: %1"
 
-#: src/webengineparterrorschemehandler.cpp:130
+#: src/webengineparterrorschemehandler.cpp:128
 #, kde-format
 msgid "Date and Time: %1"
 msgstr "Datum un Tiet: %1"
 
 #. i18n, and once for HTML.
-#: src/webengineparterrorschemehandler.cpp:134
+#: src/webengineparterrorschemehandler.cpp:132
 #, kde-format
 msgid "Additional Information: %1"
 msgstr "Anner Informatschonen: %1"
 
-#: src/webengineparterrorschemehandler.cpp:136
+#: src/webengineparterrorschemehandler.cpp:134
 #, kde-format
 msgid "Description:"
 msgstr "Beschrieven:"
 
-#: src/webengineparterrorschemehandler.cpp:143
+#: src/webengineparterrorschemehandler.cpp:141
 #, kde-format
 msgid "Possible Causes:"
 msgstr "Mööglich Oorsaken:"
 
-#: src/webengineparterrorschemehandler.cpp:151
+#: src/webengineparterrorschemehandler.cpp:149
 #, kde-format
 msgid "Possible Solutions:"
 msgstr "Mööglich Lösen:"
 
-#: src/webengineparterrorschemehandler.cpp:157
+#: src/webengineparterrorschemehandler.cpp:155
 #, kde-format
 msgid "Error: %1"
 msgstr "Fehler: %1"

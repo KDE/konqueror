@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: applications-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-22 00:58+0000\n"
+"POT-Creation-Date: 2023-05-08 00:46+0000\n"
 "PO-Revision-Date: 2023-03-26 17:09+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -1323,8 +1323,8 @@ msgstr "Lütfen özel başlangıç sayfasını ekleyin"
 #: generalopts.cpp:85
 #, kde-format
 msgctxt "@label:listbox"
-msgid "When &Konqueror starts:"
-msgstr "&Konqueror başlatıldığında:"
+msgid "When a new &Tab is created"
+msgstr ""
 
 #: generalopts.cpp:94
 #, kde-format
@@ -1399,6 +1399,11 @@ msgstr "Geçerli görünümü her zaman çoğalt"
 #, kde-format
 msgid "Duplicate current view only for local files"
 msgstr "Geçerli görünümü yalnızca yerel dosyalar için çoğalt"
+
+#: generalopts.cpp:155
+#, kde-format
+msgid "When starting up, restore state from last time"
+msgstr ""
 
 #: htmlopts.cpp:36
 #, kde-format
@@ -2256,6 +2261,10 @@ msgstr ""
 #, kde-format
 msgid "You must first enter a domain name."
 msgstr "Önce bir etki alanı adı girmelisiniz."
+
+#~ msgctxt "@label:listbox"
+#~ msgid "When &Konqueror starts:"
+#~ msgstr "&Konqueror başlatıldığında:"
 
 #~ msgid "Form"
 #~ msgstr "Form"

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-22 00:58+0000\n"
+"POT-Creation-Date: 2023-05-08 00:46+0000\n"
 "PO-Revision-Date: 2022-03-13 17:35+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -1320,8 +1320,8 @@ msgstr "Infoga egen startsida"
 #: generalopts.cpp:85
 #, kde-format
 msgctxt "@label:listbox"
-msgid "When &Konqueror starts:"
-msgstr "När &Konqueror startar:"
+msgid "When a new &Tab is created"
+msgstr ""
 
 #: generalopts.cpp:94
 #, kde-format
@@ -1398,6 +1398,11 @@ msgstr "Duplicera alltid aktuell vy"
 #, kde-format
 msgid "Duplicate current view only for local files"
 msgstr "Duplicera aktuell vy bara för lokala filer"
+
+#: generalopts.cpp:155
+#, kde-format
+msgid "When starting up, restore state from last time"
+msgstr ""
 
 #: htmlopts.cpp:36
 #, kde-format
@@ -2252,6 +2257,10 @@ msgstr ""
 #, kde-format
 msgid "You must first enter a domain name."
 msgstr "Du måste först ange ett domännamn."
+
+#~ msgctxt "@label:listbox"
+#~ msgid "When &Konqueror starts:"
+#~ msgstr "När &Konqueror startar:"
 
 #~ msgid "Accept languages:"
 #~ msgstr "Acceptera språk:"

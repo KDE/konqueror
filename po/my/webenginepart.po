@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-03 00:46+0000\n"
+"POT-Creation-Date: 2023-05-08 00:46+0000\n"
 "PO-Revision-Date: 2021-09-15 20:37+0630\n"
 "Last-Translator: \n"
 "Language-Team: Burmese <kde-i18n-doc@kde.org>\n"
@@ -1225,30 +1225,30 @@ msgctxt "Finished saving BLOB URL"
 msgid "Finished saving %1 as %2"
 msgstr "%1 သည် အထွက်ကုတ် %2 နှင့် ပြီးသွားခဲ့သည်"
 
-#: src/webengineparterrorschemehandler.cpp:96
+#: src/webengineparterrorschemehandler.cpp:94
 #, kde-format
 msgid ""
 "<html><body><h3>Unable to display error message</h3><p>The error template "
 "file <em>error.html</em> could not be found.</p></body></html>"
 msgstr ""
 
-#: src/webengineparterrorschemehandler.cpp:105
+#: src/webengineparterrorschemehandler.cpp:103
 #, kde-format
 msgid "The requested operation could not be completed"
 msgstr ""
 
-#: src/webengineparterrorschemehandler.cpp:112
+#: src/webengineparterrorschemehandler.cpp:110
 #, fuzzy, kde-format
 msgid "Technical Reason: %1"
 msgstr "<b>နည်းပညာဆိုင်ရာအကြောင်းအရင်း</b> - "
 
-#: src/webengineparterrorschemehandler.cpp:117
+#: src/webengineparterrorschemehandler.cpp:115
 #, fuzzy, kde-format
 msgid "Details of the Request:"
 msgstr "<b>တောင်းဆိုမှုအသေးစိတ်</b> -"
 
 #. i18n, and once for HTML.
-#: src/webengineparterrorschemehandler.cpp:120
+#: src/webengineparterrorschemehandler.cpp:118
 #, fuzzy, kde-format
 msgid "URL: %1"
 msgstr ""
@@ -1256,38 +1256,38 @@ msgstr ""
 "--tempfiles ဖွင့်/ပိတ်ခလုတ် ဖွင့်ထားလျှင် ခွင့်မပြုပါ"
 
 #. i18n, and once for HTML.
-#: src/webengineparterrorschemehandler.cpp:126
+#: src/webengineparterrorschemehandler.cpp:124
 #, fuzzy, kde-format
 msgid "Protocol: %1"
 msgstr "လုပ်ရိုးလုပ်ထုံး %1 သည် စစ်ထုတ်-လုပ်ရိုးလုပ်ထုံးတစ်ခုသာ ဖြစ်သည်။"
 
-#: src/webengineparterrorschemehandler.cpp:130
+#: src/webengineparterrorschemehandler.cpp:128
 #, fuzzy, kde-format
 msgid "Date and Time: %1"
 msgstr "<li>အချိန်နှင့်ရက်စွဲ - %1</li>"
 
 #. i18n, and once for HTML.
-#: src/webengineparterrorschemehandler.cpp:134
+#: src/webengineparterrorschemehandler.cpp:132
 #, fuzzy, kde-format
 msgid "Additional Information: %1"
 msgstr "<li>နောက်ထပ်သတင်းအချက်အလက် - %1</li>"
 
-#: src/webengineparterrorschemehandler.cpp:136
+#: src/webengineparterrorschemehandler.cpp:134
 #, fuzzy, kde-format
 msgid "Description:"
 msgstr "&Dဖော်ပြချက် -"
 
-#: src/webengineparterrorschemehandler.cpp:143
+#: src/webengineparterrorschemehandler.cpp:141
 #, fuzzy, kde-format
 msgid "Possible Causes:"
 msgstr "<b>ဖြစ်နိုင်သောအကြောင်းရင်းများ</b> -"
 
-#: src/webengineparterrorschemehandler.cpp:151
+#: src/webengineparterrorschemehandler.cpp:149
 #, fuzzy, kde-format
 msgid "Possible Solutions:"
 msgstr "<b>ဖြစ်နိုင်သောဖြေရှင်းချက်များ</b> -"
 
-#: src/webengineparterrorschemehandler.cpp:157
+#: src/webengineparterrorschemehandler.cpp:155
 #, kde-format
 msgid "Error: %1"
 msgstr "အမှား - %1"

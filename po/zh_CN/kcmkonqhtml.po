@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-22 00:58+0000\n"
+"POT-Creation-Date: 2023-05-08 00:46+0000\n"
 "PO-Revision-Date: 2023-04-29 08:34\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -1240,8 +1240,8 @@ msgstr "请插入自定义起始页"
 #: generalopts.cpp:85
 #, kde-format
 msgctxt "@label:listbox"
-msgid "When &Konqueror starts:"
-msgstr "&Konqueror 启动时："
+msgid "When a new &Tab is created"
+msgstr ""
 
 #: generalopts.cpp:94
 #, kde-format
@@ -1315,6 +1315,11 @@ msgstr "总是复制当前视图"
 #, kde-format
 msgid "Duplicate current view only for local files"
 msgstr "仅为本地文件复制当前视图"
+
+#: generalopts.cpp:155
+#, kde-format
+msgid "When starting up, restore state from last time"
+msgstr ""
 
 #: htmlopts.cpp:36
 #, kde-format
@@ -2114,3 +2119,7 @@ msgstr "输入主机名(如 www.kde.org)或以点起始的域名(如.kde.org 或
 #, kde-format
 msgid "You must first enter a domain name."
 msgstr "您必须先输入域名。"
+
+#~ msgctxt "@label:listbox"
+#~ msgid "When &Konqueror starts:"
+#~ msgstr "&Konqueror 启动时："

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-22 00:58+0000\n"
+"POT-Creation-Date: 2023-05-08 00:46+0000\n"
 "PO-Revision-Date: 2013-04-23 07:39+0300\n"
 "Last-Translator: Liudas Alisauskas <liudas@akmc.lt>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -1316,8 +1316,8 @@ msgstr ""
 #: generalopts.cpp:85
 #, kde-format
 msgctxt "@label:listbox"
-msgid "When &Konqueror starts:"
-msgstr "Kai &Konqueror paleidžiamas:"
+msgid "When a new &Tab is created"
+msgstr ""
 
 #: generalopts.cpp:94
 #, kde-format
@@ -1402,6 +1402,11 @@ msgstr ""
 #: generalopts.cpp:149
 #, kde-format
 msgid "Duplicate current view only for local files"
+msgstr ""
+
+#: generalopts.cpp:155
+#, kde-format
+msgid "When starting up, restore state from last time"
 msgstr ""
 
 #: htmlopts.cpp:36
@@ -2254,6 +2259,10 @@ msgstr ""
 #, kde-format
 msgid "You must first enter a domain name."
 msgstr "Visų pirma turite įrašyti domeno vardą."
+
+#~ msgctxt "@label:listbox"
+#~ msgid "When &Konqueror starts:"
+#~ msgstr "Kai &Konqueror paleidžiamas:"
 
 #~ msgid "Accept languages:"
 #~ msgstr "Priimtinos kalbos:"

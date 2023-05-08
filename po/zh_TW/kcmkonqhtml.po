@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-22 00:58+0000\n"
+"POT-Creation-Date: 2023-05-08 00:46+0000\n"
 "PO-Revision-Date: 2023-02-07 19:36+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
@@ -1250,8 +1250,8 @@ msgstr "請插入自訂開始頁"
 #: generalopts.cpp:85
 #, kde-format
 msgctxt "@label:listbox"
-msgid "When &Konqueror starts:"
-msgstr "Konqueror 啟動時(&K)："
+msgid "When a new &Tab is created"
+msgstr ""
 
 #: generalopts.cpp:94
 #, kde-format
@@ -1325,6 +1325,11 @@ msgstr "總是複製目前檢視"
 #, kde-format
 msgid "Duplicate current view only for local files"
 msgstr "只為本機檔案複製目前檢視"
+
+#: generalopts.cpp:155
+#, kde-format
+msgid "When starting up, restore state from last time"
+msgstr ""
 
 #: htmlopts.cpp:36
 #, kde-format
@@ -2125,6 +2130,10 @@ msgstr ""
 #, kde-format
 msgid "You must first enter a domain name."
 msgstr "您必須先輸入網域名稱。"
+
+#~ msgctxt "@label:listbox"
+#~ msgid "When &Konqueror starts:"
+#~ msgstr "Konqueror 啟動時(&K)："
 
 #~ msgid "Accept languages:"
 #~ msgstr "接受語言:"

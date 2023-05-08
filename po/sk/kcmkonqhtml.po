@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-22 00:58+0000\n"
+"POT-Creation-Date: 2023-05-08 00:46+0000\n"
 "PO-Revision-Date: 2022-04-09 15:18+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -1304,8 +1304,8 @@ msgstr "Prosím, vložte vlastnú štartovaciu stránku"
 #: generalopts.cpp:85
 #, kde-format
 msgctxt "@label:listbox"
-msgid "When &Konqueror starts:"
-msgstr "Keď sa Konqueror &spustí:"
+msgid "When a new &Tab is created"
+msgstr ""
 
 #: generalopts.cpp:94
 #, kde-format
@@ -1381,6 +1381,11 @@ msgstr "Vždy duplikovať aktuálny pohľad"
 #, kde-format
 msgid "Duplicate current view only for local files"
 msgstr "Duplikovať aktuálny pohľad iba pre miestne súbory"
+
+#: generalopts.cpp:155
+#, kde-format
+msgid "When starting up, restore state from last time"
+msgstr ""
 
 #: htmlopts.cpp:36
 #, kde-format
@@ -2221,6 +2226,10 @@ msgstr ""
 #, kde-format
 msgid "You must first enter a domain name."
 msgstr "Najprv musíte zadať doménové meno serveru."
+
+#~ msgctxt "@label:listbox"
+#~ msgid "When &Konqueror starts:"
+#~ msgstr "Keď sa Konqueror &spustí:"
 
 #~ msgid "Accept languages:"
 #~ msgstr "Akceptovať jazyky:"

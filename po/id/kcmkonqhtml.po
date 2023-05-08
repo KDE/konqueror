@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-22 00:58+0000\n"
+"POT-Creation-Date: 2023-05-08 00:46+0000\n"
 "PO-Revision-Date: 2022-10-27 14:12+0700\n"
 "Last-Translator: Wantoyèk <wantoyek@gmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -1329,8 +1329,8 @@ msgstr "Mohon, sisipkan halaman awal kustom"
 #: generalopts.cpp:85
 #, kde-format
 msgctxt "@label:listbox"
-msgid "When &Konqueror starts:"
-msgstr "Jika &Konqueror berjalan:"
+msgid "When a new &Tab is created"
+msgstr ""
 
 #: generalopts.cpp:94
 #, kde-format
@@ -1409,6 +1409,11 @@ msgstr "Selalu duplikatkan tampilan saat ini"
 #, kde-format
 msgid "Duplicate current view only for local files"
 msgstr "Duplikatkan tampilan saat ini hanya untuk file-file lokal"
+
+#: generalopts.cpp:155
+#, kde-format
+msgid "When starting up, restore state from last time"
+msgstr ""
 
 #: htmlopts.cpp:36
 #, kde-format
@@ -2273,6 +2278,10 @@ msgstr ""
 #, kde-format
 msgid "You must first enter a domain name."
 msgstr "Kamu harus memasukkan sebuah nama domain terlebih dahulu."
+
+#~ msgctxt "@label:listbox"
+#~ msgid "When &Konqueror starts:"
+#~ msgstr "Jika &Konqueror berjalan:"
 
 #~ msgid "Accept languages:"
 #~ msgstr "Setujui bahasa:"

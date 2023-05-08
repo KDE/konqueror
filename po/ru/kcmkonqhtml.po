@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-22 00:58+0000\n"
+"POT-Creation-Date: 2023-05-08 00:46+0000\n"
 "PO-Revision-Date: 2022-12-27 10:05+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -1331,8 +1331,8 @@ msgstr "Укажите начальную страницу"
 #: generalopts.cpp:85
 #, kde-format
 msgctxt "@label:listbox"
-msgid "When &Konqueror starts:"
-msgstr "При запуске &Konqueror:"
+msgid "When a new &Tab is created"
+msgstr ""
 
 #: generalopts.cpp:94
 #, kde-format
@@ -1410,6 +1410,11 @@ msgid "Duplicate current view only for local files"
 msgstr ""
 "Дублировать текущую область только при просмотре файлов, расположенных на "
 "устройстве"
+
+#: generalopts.cpp:155
+#, kde-format
+msgid "When starting up, restore state from last time"
+msgstr ""
 
 #: htmlopts.cpp:36
 #, kde-format
@@ -2265,6 +2270,10 @@ msgstr ""
 #, kde-format
 msgid "You must first enter a domain name."
 msgstr "Сначала следует ввести имя домена."
+
+#~ msgctxt "@label:listbox"
+#~ msgid "When &Konqueror starts:"
+#~ msgstr "При запуске &Konqueror:"
 
 #~ msgid "Accept languages:"
 #~ msgstr "Принимать языки:"

@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-22 00:58+0000\n"
+"POT-Creation-Date: 2023-05-08 00:46+0000\n"
 "PO-Revision-Date: 2023-01-07 10:15+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -1346,8 +1346,8 @@ msgstr "Δώστε την προασαρμοσμένη αρχική σελίδα
 #: generalopts.cpp:85
 #, kde-format
 msgctxt "@label:listbox"
-msgid "When &Konqueror starts:"
-msgstr "Όταν εκκινείται ο &Konqueror:"
+msgid "When a new &Tab is created"
+msgstr ""
 
 #: generalopts.cpp:94
 #, kde-format
@@ -1424,6 +1424,11 @@ msgstr "Πάντα να διπλασιάζεται η τρέχουσα προβ�
 #, kde-format
 msgid "Duplicate current view only for local files"
 msgstr "Να διπλασιάζεται η τρέχουσα προβολή μόνο για τοπικά αρχεία"
+
+#: generalopts.cpp:155
+#, kde-format
+msgid "When starting up, restore state from last time"
+msgstr ""
 
 #: htmlopts.cpp:36
 #, kde-format
@@ -2304,6 +2309,10 @@ msgstr ""
 #, kde-format
 msgid "You must first enter a domain name."
 msgstr "Πρέπει πρώτα να δώσετε ένα όνομα τομέα."
+
+#~ msgctxt "@label:listbox"
+#~ msgid "When &Konqueror starts:"
+#~ msgstr "Όταν εκκινείται ο &Konqueror:"
 
 #~ msgid "Accept languages:"
 #~ msgstr "Αποδοχή γλωσσών:"
