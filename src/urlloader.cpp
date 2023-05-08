@@ -259,7 +259,7 @@ void UrlLoader::decideOpenOrSave()
     if (!alwaysOpen) {
         answerWithService = askSaveOrOpen(OpenEmbedMode::Open);
     } else {
-        answerWithService = qMakePair(OpenUrlAction::Open, nullptr);
+        answerWithService = qMakePair(OpenUrlAction::Open, KApplicationTrader::preferredService(m_mimeType));
     }
 
     m_action = answerWithService.first;
