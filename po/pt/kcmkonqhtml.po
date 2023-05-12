@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-08 00:46+0000\n"
-"PO-Revision-Date: 2023-03-06 15:11+0000\n"
+"PO-Revision-Date: 2023-05-08 23:48+0100\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -1349,7 +1349,7 @@ msgstr "Por favor, insira a página inicial personalizada"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "When a new &Tab is created"
-msgstr ""
+msgstr "Quando é criada uma nova &página"
 
 #: generalopts.cpp:94
 #, kde-format
@@ -1430,7 +1430,7 @@ msgstr "Duplicar a área actual apenas para os ficheiros locais"
 #: generalopts.cpp:155
 #, kde-format
 msgid "When starting up, restore state from last time"
-msgstr ""
+msgstr "Ao arrancara, repor o estado da última vez"
 
 #: htmlopts.cpp:36
 #, kde-format
@@ -2300,7 +2300,3 @@ msgstr ""
 #, kde-format
 msgid "You must first enter a domain name."
 msgstr "Tem que inserir primeiro o nome de um domínio."
-
-#~ msgctxt "@label:listbox"
-#~ msgid "When &Konqueror starts:"
-#~ msgstr "Quando o &Konqueror iniciar:"
