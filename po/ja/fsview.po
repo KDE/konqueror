@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.10.2\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 
@@ -138,15 +138,13 @@ msgstr "深さ"
 #, kde-format
 msgid "Read 1 folder, in %2"
 msgid_plural "Read %1 folders, in %2"
-msgstr[0] "%2 中の 1 フォルダを読み込み"
-msgstr[1] "%2 中の %1 フォルダを読み込み"
+msgstr[0] "%2 中の %1 フォルダを読み込み"
 
 #: fsview_part.cpp:73
 #, kde-format
 msgid "1 folder"
 msgid_plural "%1 folders"
-msgstr[0] "1 フォルダ"
-msgstr[1] "%1 フォルダ"
+msgstr[0] "%1 フォルダ"
 
 #: fsview_part.cpp:87
 #, kde-format
@@ -390,8 +388,7 @@ msgstr "%1 のエリア (%2)"
 #, kde-format
 msgid "1 Pixel"
 msgid_plural "%1 Pixels"
-msgstr[0] "1 ピクセル"
-msgstr[1] "%1 ピクセル"
+msgstr[0] "%1 ピクセル"
 
 #: treemap.cpp:3437
 #, kde-format
