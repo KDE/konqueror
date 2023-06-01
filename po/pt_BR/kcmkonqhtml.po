@@ -18,9 +18,9 @@ msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-08 00:46+0000\n"
-"PO-Revision-Date: 2023-03-03 09:53-0300\n"
+"PO-Revision-Date: 2023-05-31 13:59-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
-"Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
+"Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -526,12 +526,15 @@ msgid ""
 "p><p>Turning this on means that the cache will be cleared when exiting "
 "Konqueror</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Não armazenar o cache no disco apenas na memória.</"
+"p><p>Ativar isso significa que o cache será limpo ao sair do Konqueror</p></"
+"body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, memoryCache)
 #: cache/cache.ui:32
 #, kde-format
 msgid "Keep cache in &memory"
-msgstr ""
+msgstr "Manter cache na &memória"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: cache/cache.ui:41
@@ -546,6 +549,9 @@ msgid ""
 "The maximum space on disk or memory the cache can use. When this threshold "
 "is reached, old pages will be removed to make space for new ones"
 msgstr ""
+"O espaço máximo em disco ou memória que o cache pode usar. Quando esse "
+"limite for atingido, as páginas antigas serão removidas para dar espaço às "
+"novas"
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, cacheSize)
 #: cache/cache.ui:54
@@ -563,25 +569,25 @@ msgstr " MB"
 #: cache/cache.ui:85
 #, kde-format
 msgid "Use a custom directory to keep the cache"
-msgstr ""
+msgstr "Usar uma pasta personalizada para manter o cache"
 
 #. i18n: ectx: property (title), widget (QGroupBox, useCustomCacheDir)
 #: cache/cache.ui:88
 #, kde-format
 msgid "&Custom cache directory"
-msgstr ""
+msgstr "Pasta de cache personali&zada"
 
 #. i18n: ectx: property (text), widget (QLabel, customCachePathLabel)
 #: cache/cache.ui:100
 #, kde-format
 msgid "Cache &Directory"
-msgstr ""
+msgstr "&Pasta do cache"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, customCacheDir)
 #: cache/cache.ui:113
 #, kde-format
 msgid "The custom directory to store cache"
-msgstr ""
+msgstr "A pasta personalizada para armazenar o cache"
 
 #. i18n: ectx: property (whatsThis), widget (QWidget, CSSConfigWidget)
 #. i18n: ectx: property (whatsThis), widget (QWidget, CSSCustomDialog)
