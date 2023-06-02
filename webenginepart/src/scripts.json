@@ -1,0 +1,18 @@
+{
+  "form detector" : {
+    "file": ":/formautofiller.js",
+    "injectionPoint" : 2,
+    "worldId" : 1,
+    "runOnSubFrames": true
+  },
+  "refresh detector" : {
+    "file" : ":/hasrefresh.js",
+    "injectionPoint" : 2,
+    "worldId" : 1
+  },
+  "query selector" : {
+    "file" : ":/queryselector.js",
+    "injectionPoint" : 2,
+    "worldId" : 1
+  }
+}

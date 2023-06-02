@@ -78,18 +78,6 @@
 #include "utils.h"
 #include <kio_version.h>
 
-QWebEngineScript WebEnginePart::detectRefreshScript() {
-    static QWebEngineScript s_detectRefreshScript;
-    if (s_detectRefreshScript.isNull()) {
-        QFile jsfile(":/hasrefresh.js");
-        jsfile.open(QIODevice::ReadOnly);
-        s_detectRefreshScript.setSourceCode(QString(jsfile.readAll()));
-        s_detectRefreshScript.setInjectionPoint(QWebEngineScript::DocumentCreation);
-        s_detectRefreshScript.setWorldId(QWebEngineScript::ApplicationWorld);
-    }
-    return s_detectRefreshScript;
-}
-
 WebEnginePart::WebEnginePart(QWidget *parentWidget, QObject *parent,
                          const KPluginMetaData& metaData,
                          const QByteArray& cachedHistory, const QStringList& /*args*/)

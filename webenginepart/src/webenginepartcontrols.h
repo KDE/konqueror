@@ -13,6 +13,8 @@
 #include <QWebEngineCertificateError>
 
 class QWebEngineProfile;
+class QWebEngineScript;
+
 class WebEnginePartCookieJar;
 class SpellCheckerManager;
 class WebEnginePartDownloadManager;
@@ -65,6 +67,50 @@ private:
      * @return a suitable `AcceptLanguage` header according to the user preferences
      */
     QString determineHttpAcceptLanguageHeader() const;
+
+    /**
+     * @brief Inserts in the profile script collection the scripts described in the `:/scripts.json` file
+     *
+     * The `:/scripts.json` file should contain information about all scripts needed to be injected in each
+     * HTML document (for example, the one used by WebEngineWallet to detect forms).
+     *
+     * The `:scripts.json` file should have the following structure:
+     * @code{.json}
+     * {
+     *      "first script name": {
+     *          "file": "path to first script file",
+     *          "injectionPoint": injectionPointAsInt,
+     *          "worldId": worldIdAsInt,
+     *          "runsOnSubFrames": true
+     *      },
+     *      "second script name": {
+     *         ...
+     *      },
+     *      ...
+     * }
+     * @endcode
+     * Each script is represented by the one of the inner objects. The corresponding key can be anything and
+     * represents a name by which the script can be recognized. It's passed to `QWebEngineScript::setName()`.
+     * The keys of the object representing a script have the following meaning:
+     * - `"file"`: it's the path of the file containing the actual source code of the script. It usually refers
+     * to a `qrc` resource
+     * - `"injectionPoint"` (optional): it's the script injection point, as described by `QWebEngineScript::InjectionPoint`.
+     *  it should be one of the values of the enum. If not given, the default injection point is used. If an invalid value
+     *  is given, the behavior is undefined
+     * - `"worldId"` (optional): it's the world id where the script should be registered. It's passed to `QWebEngineScript::setWorldId()`
+     *  If not given, the default application world is used. If a negative value is given, the behavior is undefined
+     * - `"runsOnSubFrames" (optional): if given, it's passed to `QWebEngineScript::setRunsOnSubFrames`
+     */
+    void registerScripts();
+
+    /**
+     * @brief Creates a QWebEngineScript from it's JSON description and its name
+     * @param name the name to give to the script (will be passed to QWebEngineScript::setName()
+     * @param obj the JSON object describing the script
+     * @return the script object
+     * @see registerScripts() for the description of the fields in @p object
+     */
+    static QWebEngineScript scriptFromJson(const QString &name, const QJsonObject &obj);
 
     QWebEngineProfile *m_profile;
     WebEnginePartCookieJar *m_cookieJar;

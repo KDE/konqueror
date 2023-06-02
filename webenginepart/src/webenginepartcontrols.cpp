@@ -20,7 +20,7 @@
 #include "webenginepart.h"
 #include "webenginepage.h"
 #include "navigationrecorder.h"
-#include "webenginepart_ext.h"
+#include <webenginepart_debug.h>
 
 #include <KProtocolInfo>
 #include <KSharedConfig>
@@ -33,6 +33,7 @@
 #include <QApplication>
 #include <QLocale>
 #include <QSettings>
+#include <QJsonDocument>
 
 WebEnginePartControls::WebEnginePartControls(): QObject(),
     m_profile(nullptr), m_cookieJar(nullptr), m_spellCheckerManager(nullptr), m_downloadManager(nullptr),
@@ -71,6 +72,61 @@ bool WebEnginePartControls::isReady() const
     return m_profile;
 }
 
+void WebEnginePartControls::registerScripts()
+{
+    if (!m_profile) {
+        qCDebug(WEBENGINEPART_LOG) << "Attempting to register scripts before setting the profile";
+        return;
+    }
+
+    QFile jsonFile(QStringLiteral(":/scripts.json"));
+    jsonFile.open(QIODevice::ReadOnly);
+    QJsonObject obj = QJsonDocument::fromJson(jsonFile.readAll()).object();
+    Q_ASSERT(!obj.isEmpty());
+    jsonFile.close();
+    for (auto it = obj.constBegin(); it != obj.constEnd(); ++it) {
+        QJsonObject scriptData = it.value().toObject();
+        Q_ASSERT(!scriptData.isEmpty());
+        QWebEngineScript script = scriptFromJson(it.key(), scriptData);
+        if (!script.isNull()) {
+            m_profile->scripts()->insert(script);
+        }
+    }
+}
+
+QWebEngineScript WebEnginePartControls::scriptFromJson(const QString& name, const QJsonObject& obj)
+{
+    QWebEngineScript script;
+    QString file = obj.value(QLatin1String("file")).toString();
+    if (file.isEmpty()) {
+        return script;
+    }
+    QFile sourceFile(file);
+    sourceFile.open(QIODevice::ReadOnly);
+    Q_ASSERT(sourceFile.isOpen());
+    script.setSourceCode(QString(sourceFile.readAll()));
+    QJsonValue val = obj.value(QLatin1String("injectionPoint"));
+    if (!val.isNull()) {
+        int injectionPoint = val.toInt(-1);
+        //NOTE:keep in sync with the values of QWebEngineScript::InjectionPoint
+        Q_ASSERT(injectionPoint >=QWebEngineScript::Deferred && injectionPoint <= QWebEngineScript::DocumentCreation);
+        script.setInjectionPoint(static_cast<QWebEngineScript::InjectionPoint>(injectionPoint));
+    }
+    val = obj.value(QLatin1String("worldId"));
+    if (!val.isNull()) {
+        int world= val.toInt(-1);
+        //NOTE: keep in sync with the values of QWebEngineScript::ScriptWorldId
+        Q_ASSERT(world >= QWebEngineScript::MainWorld);
+        script.setWorldId(world);
+    }
+    val = obj.value(QStringLiteral("runsOnSubFrames"));
+    if (!val.isBool()) {
+        script.setRunsOnSubFrames(val.toBool());
+    }
+    script.setName(name);
+    return script;
+}
+
 void WebEnginePartControls::setup(QWebEngineProfile* profile)
 {
     if (!profile || isReady()) {
@@ -78,9 +134,7 @@ void WebEnginePartControls::setup(QWebEngineProfile* profile)
     }
     m_profile = profile;
 
-    m_profile->scripts()->insert({WebEngineWallet::formDetectorFunctionsScript(),
-                                    WebEnginePart::detectRefreshScript(),
-                                    WebEngineHtmlExtension::querySelectorScript()});
+    registerScripts();
 
     m_profile->installUrlSchemeHandler("error", new WebEnginePartErrorSchemeHandler(m_profile));
     m_profile->installUrlSchemeHandler("konq", new KonqUrlSchemeHandler(m_profile));

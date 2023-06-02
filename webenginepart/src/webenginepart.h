@@ -107,8 +107,6 @@ public:
 
     WebEngineWallet* wallet() const;
 
-    static QWebEngineScript detectRefreshScript();
-
     /**
      * @brief Changes the page object associated with the part
      *
