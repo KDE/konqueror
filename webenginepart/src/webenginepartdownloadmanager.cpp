@@ -131,7 +131,6 @@ void WebEnginePartDownloadManager::downloadFile(QWebEngineDownloadItem* it, KPar
     }
 }
 
-
 void WebEnginePartDownloadManager::saveFile(QWebEngineDownloadItem* it)
 {
     QWidget *w = it->page() ? it->page()->view() : nullptr;
@@ -200,23 +199,17 @@ void WebEnginePartDownloadManager::saveHtmlPage(QWebEngineDownloadItem* it, WebE
     if (formatDlg->exec() == QDialog::Rejected) {
         return;
     }
-    it->setSavePageFormat(formatDlg->choosenFormat());
+    QWebEngineDownloadItem::SavePageFormat format = formatDlg->choosenFormat();
+    it->setSavePageFormat(format);
 
     QString downloadDir = QStandardPaths::writableLocation(QStandardPaths::DownloadLocation);
     QFileDialog dlg(parent, QString(), downloadDir);
     dlg.setAcceptMode(QFileDialog::AcceptSave);
 
-    QString mimeType;
-    if (it->savePageFormat() == QWebEngineDownloadItem::SingleHtmlSaveFormat) {
-        mimeType = QStringLiteral("text/html");
-    } else if (it->savePageFormat() == QWebEngineDownloadItem::MimeHtmlSaveFormat) {
-        mimeType = QStringLiteral("application/x-mimearchive");
-    } else if (it->savePageFormat() == QWebEngineDownloadItem::CompleteHtmlSaveFormat) {
-        dlg.setFileMode(QFileDialog::Directory);
-        dlg.setOption(QFileDialog::ShowDirsOnly);
-    }
+    QString mimeType = format == QWebEngineDownloadItem::MimeHtmlSaveFormat ? QStringLiteral("application/x-mimearchive") : QStringLiteral("text/html");
 
     dlg.setMimeTypeFilters(QStringList{mimeType, "application/octet-stream"});
+    dlg.selectFile(it->suggestedFileName());
 
     QDialog::DialogCode exitCode = static_cast<QDialog::DialogCode>(dlg.exec());
     if (exitCode == QDialog::Rejected) {
@@ -224,19 +217,18 @@ void WebEnginePartDownloadManager::saveHtmlPage(QWebEngineDownloadItem* it, WebE
         return;
     }
 
-    QString file = dlg.selectedFiles().at(0);
-    startDownloadJob(file, it);
+    startDownloadJob(dlg.selectedFiles().at(0), it);
 }
 
 void WebEnginePartDownloadManager::startDownloadJob(const QString &file, QWebEngineDownloadItem *it)
 {
     QFileInfo info(file);
-    if (info.isDir()) {
-        it->setDownloadDirectory(file);
-    } else {
-        it->setDownloadDirectory(info.dir().path());
-        it->setDownloadFileName(info.fileName());
-    }
+    QString relativePath = info.fileName();
+    QString dir = info.dir().path();
+
+    it->setDownloadDirectory(dir);
+    it->setDownloadFileName(relativePath);
+
     it->accept();
     it->pause();
     WebEngineDownloadJob *j = new WebEngineDownloadJob(it, this);
@@ -246,7 +238,6 @@ void WebEnginePartDownloadManager::startDownloadJob(const QString &file, QWebEng
     }
     j->start();
 }
-
 
 WebEngineDownloadJob::WebEngineDownloadJob(QWebEngineDownloadItem* it, QObject* parent) : KJob(parent), m_downloadItem(it)
 {
@@ -264,7 +255,7 @@ void WebEngineDownloadJob::start()
 
 bool WebEngineDownloadJob::doKill()
 {
-    delete m_downloadItem;
+    m_downloadItem->deleteLater();
     m_downloadItem = nullptr;
     return true;
 }

@@ -34,13 +34,13 @@ void ChoosePageSaveFormatDlg::updateInfoText(int id)
     QString info;
     switch (id) {
         case QWebEngineDownloadItem::SingleHtmlSaveFormat:
-            info = i18n("The page is saved as a single HTML page. Only the text of the page will be saved. External resources such as images won't be saved");
+            info = i18n("The page will be saved as a single HTML file. Only the text of the page will be saved. External resources such as images won't be saved");
             break;
         case QWebEngineDownloadItem::CompleteHtmlSaveFormat:
-            info = i18n("The complete contents of the page will be saved. The page and any external resources it requires, such as images, will be saved inside a single directory");
+            info = i18n("The page will be saved as an HTML file. Any external resources the page requires, such as images, will be saved inside an apposite directory");
             break;
         case QWebEngineDownloadItem::MimeHtmlSaveFormat:
-            info = i18n("The complete contents of the page will be saved. Both the page and any external resources it requires, such as images, will be saved in a single MHTML file");
+            info = i18n("The page will be saved as a MTHML file which contains both the text of the page an any external resources it requires, such as images. <br><strong>Note</strong>: not all browsers are able to display this kind of files");
             break;
         case QWebEngineDownloadItem::UnknownSaveFormat: //This should never happen
             info = QString();

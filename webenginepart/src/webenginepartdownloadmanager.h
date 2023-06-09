@@ -93,6 +93,13 @@ private Q_SLOTS:
     void saveFile(QWebEngineDownloadItem *it);
     void openFile(QWebEngineDownloadItem *it, WebEnginePage *page, bool forceNewTab = false);
     void downloadToFileCompleted(QWebEngineDownloadItem *it, WebEnginePage *page, bool forceNewTab = false);
+
+    /**
+     * @brief Sets up a new download job
+     * @overload
+     * @param file the path of the downloaded file
+     * @param it the object which will perform the actual download
+     */
     void startDownloadJob(const QString &file, QWebEngineDownloadItem *it);
 
 private:
