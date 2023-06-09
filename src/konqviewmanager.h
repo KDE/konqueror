@@ -135,6 +135,18 @@ public:
      */
     void activateTab(int position);
 
+    /**
+     * @brief The index of the current tab
+     * @return the index of the current tab
+     */
+    int currentTabIndex() const;
+
+    /**
+     * @brief The number of tabs
+     * @return the number of tabs
+     */
+    int tabsCount() const;
+
     void moveTabBackward();
     void moveTabForward();
 

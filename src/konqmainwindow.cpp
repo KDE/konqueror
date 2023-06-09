@@ -2481,6 +2481,21 @@ void KonqMainWindow::slotReloadAllTabs()
     updateViewActions();
 }
 
+int KonqMainWindow::tabsCount() const
+{
+    return m_pViewManager->tabsCount();
+}
+
+int KonqMainWindow::currentTabIndex() const
+{
+    return m_pViewManager->currentTabIndex();
+}
+
+void KonqMainWindow::activateTab(int index)
+{
+    m_pViewManager->activateTab(index);
+}
+
 void KonqMainWindow::slotActivateNextTab()
 {
     m_pViewManager->activateNextTab();

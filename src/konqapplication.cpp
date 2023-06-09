@@ -320,17 +320,17 @@ int KonquerorApplication::performStart(const QString& workingDirectory, bool fir
     }
 
     WindowCreationResult result;
+
+    bool sessionRestored = KonqSessionManager::self()->restoreSessionSavedAtExit();
     if (!args.isEmpty()) {
-        result = createWindowsForUrlArguments(args, workingDirectory);
+        //KonqSessionManager::restoreSessionSavedAtExit only returns true if there's at least one main window,
+        //so there's no need to check whether the list is empty
+        qDebug() << "SESSION RESTORED?" << sessionRestored;
+        result = createWindowsForUrlArguments(args, workingDirectory, sessionRestored ? KonqMainWindow::mainWindows().at(0) : nullptr);
+    } else if (sessionRestored){
+        result = WindowCreationResult{KonqMainWindow::mainWindows().at(0), 0};
     } else {
-        bool sessionRestored = KonqSessionManager::self()->restoreSessionSavedAtExit();
-        if (sessionRestored) {
-            //KonqSessionManager::restoreSessionSavedAtExit only returns true if there's at least one main window,
-            //so there's no need to check whether the list is empty
-            result = WindowCreationResult{KonqMainWindow::mainWindows().at(0), 0};
-        } else {
-            result = createEmptyWindow(firstInstance);
-        }
+        result = createEmptyWindow(firstInstance);
     }
 
     KonqMainWindow *mw = result.first;
@@ -343,7 +343,7 @@ int KonquerorApplication::performStart(const QString& workingDirectory, bool fir
     return result.second;
 }
 
-KonquerorApplication::WindowCreationResult KonquerorApplication::createWindowsForUrlArguments(const QStringList& args, const QString &workingDirectory)
+KonquerorApplication::WindowCreationResult KonquerorApplication::createWindowsForUrlArguments(const QStringList& args, const QString &workingDirectory, KonqMainWindow *mainwin)
 {
     QList<QUrl> urlList;
     urlList.reserve(args.length());
@@ -390,15 +390,26 @@ KonquerorApplication::WindowCreationResult KonquerorApplication::createWindowsFo
     req.tempFile = m_parser.isSet("tempfile");
     req.serviceName = m_parser.value("part");
 
-    KonqMainWindow *mainwin = KonqMainWindowFactory::createNewWindow(firstUrl, req);
     if (!mainwin) {
-        return qMakePair(nullptr, 1);
+        mainwin = KonqMainWindowFactory::createNewWindow(firstUrl, req);
+        if (!mainwin) {
+            return qMakePair(nullptr, 1);
+        }
+    } else {
+        req.browserArgs.setNewTab(true);
+        mainwin->openUrl(nullptr, firstUrl, req.args.mimeType(), req);
     }
+
     mainwin->show();
     if (!urlList.isEmpty()) {
         // Open the other urls as tabs in that window
         mainwin->openMultiURL(urlList);
     }
+
+    //Ensure the last tab is activated. This happens automatically if a new main window was created
+    //but not if an existing main window was passed as argument, which is the case if the last Konqueror
+    //session was restored
+    mainwin->activateTab(mainwin->tabsCount()-1);
     return qMakePair(mainwin, 0);
 }
 

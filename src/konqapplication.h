@@ -47,7 +47,7 @@ private:
     int openSession(const QString &session);
     WindowCreationResult createEmptyWindow(bool firstInstance);
     void preloadWindow(const QStringList &args);
-    WindowCreationResult createWindowsForUrlArguments(const QStringList &args, const QString &workingDirectory);
+    WindowCreationResult createWindowsForUrlArguments(const QStringList &args, const QString &workingDirectory, KonqMainWindow *mainwin= nullptr);
 
     /**
      * @brief What to do when running Konqueror as root

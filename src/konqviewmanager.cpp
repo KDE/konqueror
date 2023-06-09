@@ -511,6 +511,16 @@ void KonqViewManager::activatePrevTab()
     m_tabContainer->setCurrentIndex(iTab);
 }
 
+int KonqViewManager::currentTabIndex() const
+{
+    return m_tabContainer->currentIndex();
+}
+
+int KonqViewManager::tabsCount() const
+{
+    return m_tabContainer->count();
+}
+
 void KonqViewManager::activateTab(int position)
 {
     if (position < 0 || m_tabContainer->count() == 1 || position >= m_tabContainer->count()) {

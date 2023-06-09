@@ -322,6 +322,18 @@ public:
 
     bool isPreloaded() const;
 
+    /**
+     * @brief The index of the current tab
+     * @return the index of the current tab
+     */
+    int currentTabIndex() const;
+
+    /**
+     * @brief The number of tabs
+     * @return the number of tabs
+     */
+    int tabsCount() const;
+
     // Public for unit tests
     void prepareForPopupMenu(const KFileItemList &items, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &browserArgs);
 
@@ -332,6 +344,8 @@ Q_SIGNALS:
 
 public Q_SLOTS:
     void updateViewModeActions();
+
+    void activateTab(int index);
 
     void slotInternalViewModeChanged();
 
